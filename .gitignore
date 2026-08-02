@@ -2,3 +2,9 @@ node_modules/
 dist/
 .astro/
 .DS_Store
+
+# Excluded, not gitignored-by-mistake: npm's optional-dependency resolution
+# (rollup/esbuild native binaries) only fully locks the authoring platform's
+# variant, which breaks cross-platform installs (macOS dev -> Vercel's Linux
+# build). Let each environment resolve its own lockfile instead.
+package-lock.json
