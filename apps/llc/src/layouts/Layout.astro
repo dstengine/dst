@@ -1,0 +1,31 @@
+---
+import BaseLayout from "@dst/ui/BaseLayout.astro";
+import "../styles/theme.css";
+
+interface Props {
+  title: string;
+  description: string;
+  jsonLd?: Record<string, unknown>[];
+}
+const { title, description, jsonLd } = Astro.props;
+
+const nav = [
+  { href: "/", label: "Getting started" },
+  { href: "/free-zones/", label: "Free zones" },
+  { href: "/mainland/", label: "Mainland" },
+  { href: "/registration/", label: "Registration" },
+  { href: "/taxation/", label: "Taxation" },
+  { href: "/banking/", label: "Banking" },
+  { href: "/payment-processing/", label: "Payment processing" },
+];
+---
+<BaseLayout
+  title={`${title} — Company Formation in Dubai`}
+  description={description}
+  siteName="Dubai Company Formation"
+  nav={nav}
+  complianceNote="Informational content, not legal or financial advice. Always confirm current requirements with DED or your chosen free zone authority before acting."
+  jsonLd={jsonLd}
+>
+  <slot />
+</BaseLayout>

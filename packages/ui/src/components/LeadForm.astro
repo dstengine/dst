@@ -1,0 +1,81 @@
+---
+// Plain HTML form matching the network's universal lead object
+// (local/dubai/dstengine/dtos/lead.dto.md): name optional, at least one
+// contact required, extra context fields via the default slot.
+// Works with JS disabled (native POST); a small inline script progressively
+// enhances it to submit via fetch without a full page reload. No framework.
+interface Props {
+  endpoint: string;
+  submitLabel?: string;
+  formId?: string;
+}
+const { endpoint, submitLabel = "Request a consultation", formId = "lead-form" } = Astro.props;
+---
+<form class="lead-form" method="post" action={endpoint} id={formId} data-lead-form>
+  <div class="field">
+    <label for={`${formId}-name`}>Name</label>
+    <input id={`${formId}-name`} name="name" type="text" autocomplete="name" />
+  </div>
+  <div class="field">
+    <label for={`${formId}-email`}>Email</label>
+    <input id={`${formId}-email`} name="contacts.email" type="email" autocomplete="email" />
+  </div>
+  <div class="field">
+    <label for={`${formId}-phone`}>Phone / WhatsApp</label>
+    <input id={`${formId}-phone`} name="contacts.phone" type="tel" autocomplete="tel" />
+  </div>
+  <slot />
+  <button class="button" type="submit">{submitLabel}</button>
+  <p class="lead-form-status" data-lead-form-status role="status" aria-live="polite"></p>
+</form>
+
+<script>
+  // Progressive enhancement only: the form already works via plain POST.
+  document.querySelectorAll<HTMLFormElement>("form[data-lead-form]").forEach((form) => {
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const status = form.querySelector<HTMLElement>("[data-lead-form-status]");
+      const data = Object.fromEntries(new FormData(form).entries());
+      try {
+        const res = await fetch(form.action, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
+        if (!res.ok) throw new Error(String(res.status));
+        if (status) status.textContent = "Thanks — we'll be in touch shortly.";
+        form.reset();
+      } catch {
+        if (status) status.textContent = "Something went wrong — please try again, or contact us directly.";
+      }
+    });
+  });
+</script>
+
+<style>
+  .lead-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    max-width: 32rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: var(--space-3);
+  }
+  .field { display: flex; flex-direction: column; gap: 0.3em; }
+  label { font-size: var(--step--1); font-weight: 600; color: var(--ink-muted); }
+  input, select {
+    font: inherit;
+    padding: 0.6em 0.75em;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--bg);
+    color: var(--ink);
+  }
+  input:focus, select:focus {
+    outline: 2px solid var(--accent, #1F5C4E);
+    outline-offset: 1px;
+  }
+  .lead-form-status { font-size: var(--step--1); color: var(--ink-muted); min-height: 1.2em; margin: 0; }
+</style>

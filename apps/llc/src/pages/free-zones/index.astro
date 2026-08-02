@@ -1,0 +1,92 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Faq from "@dst/ui/Faq.astro";
+
+const faqItems = [
+  {
+    q: "Which Dubai free zone is best?",
+    a: "There is no single 'best' free zone — it depends on your business activity, budget, and whether you need a physical office. A media or content business, a commodities trading firm, and a solo software consultant will each be steered toward different zones by cost structure and permitted activities alone.",
+  },
+  {
+    q: "What is the difference between mainland and free zone in Dubai?",
+    a: "A free zone company is licensed within a specific economic zone and, in most cases, cannot trade directly with the UAE mainland market without additional arrangements. A mainland company registers with the Department of Economic Development and can trade anywhere in the UAE without that restriction.",
+  },
+  {
+    q: "Which free zone is the cheapest in the UAE?",
+    a: "Headline licence prices shift often enough that naming one 'cheapest' zone in writing goes stale fast. Compare current pricing directly from two or three shortlisted zones for your specific activity and visa count rather than relying on a ranked list.",
+  },
+];
+---
+<Layout
+  title="Dubai Free Zone Comparison"
+  description="A structured comparison of Dubai's business free zones by activity fit, not a ranked top-10 list — plus a decision guide for choosing between them."
+>
+  <section class="container">
+    <p class="eyebrow">Free zones</p>
+    <h1>Comparing Dubai's free zones</h1>
+    <p class="lede">
+      There are more than 40 free zones across the UAE, and most comparison
+      articles either name a handful and stop, or rank them by claimed cost
+      without saying what the ranking is for. This page is organised by
+      activity fit first — cost only matters once you already know which
+      zones are eligible for what you're building.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>Start with activity, not price</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>If your business is...</th><th>Look at</th><th>Why</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Software, IT services, digital consulting</td>
+            <td>IFZA, Meydan Free Zone, Dubai Silicon Oasis</td>
+            <td>Broad tech/consulting activity lists, straightforward remote-friendly setup</td>
+          </tr>
+          <tr>
+            <td>Media, content, marketing</td>
+            <td>Dubai Media City, Meydan Free Zone</td>
+            <td>Activity licences specifically scoped for media and creative work</td>
+          </tr>
+          <tr>
+            <td>Trading, import/export, commodities</td>
+            <td>DMCC, JAFZA</td>
+            <td>Established trading infrastructure and logistics access</td>
+          </tr>
+          <tr>
+            <td>Solo freelancer, no office needed</td>
+            <td>IFZA, RAKEZ</td>
+            <td>Lower-cost licence tiers built for single-shareholder setups</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      This is a starting shortlist, not a ranking — always confirm current
+      activity lists and pricing with the zone directly, since both change.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>Questions worth answering before you compare pricing</h2>
+    <ul>
+      <li>Do you need a UAE residence visa attached to the licence, and how many?</li>
+      <li>Will you ever need to invoice a UAE mainland client directly?</li>
+      <li>Do you need physical office space, or is a flexi-desk/virtual option enough?</li>
+      <li>Does your specific activity appear on the zone's permitted-activities list?</li>
+    </ul>
+    <p>
+      Answer those four first. They eliminate most zones from contention
+      before price ever becomes the deciding factor.
+    </p>
+  </section>
+
+  <Faq items={faqItems} />
+</Layout>
+
+<style>
+  .lede { font-size: var(--step-1); color: var(--ink-muted); max-width: 65ch; }
+</style>

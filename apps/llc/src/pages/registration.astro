@@ -1,0 +1,62 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+<Layout
+  title="Company Registration Walkthrough"
+  description="The actual steps to register a company in Dubai, from choosing an activity to receiving your trade licence."
+>
+  <section class="container">
+    <p class="eyebrow">Registration</p>
+    <h1>Registering your company, step by step</h1>
+    <p class="lede">
+      The sequence is broadly the same whether you're registering in a free
+      zone or on the mainland — what varies is who reviews each step and how
+      long approvals take.
+    </p>
+  </section>
+
+  <section class="container">
+    <ol class="steps">
+      <li>
+        <strong>Choose your business activity.</strong> This determines which
+        zones or mainland categories you're even eligible for, and it's the
+        single most common place founders lose time by picking too narrow or
+        too broad an activity code.
+      </li>
+      <li>
+        <strong>Choose your structure and jurisdiction.</strong> Free zone,
+        mainland, or offshore — see the
+        <a href="/free-zones/">free zone comparison</a> and
+        <a href="/mainland/">mainland guide</a> if you haven't already.
+      </li>
+      <li>
+        <strong>Reserve a trade name</strong> and submit initial approval —
+        usually the fastest step, often same-day.
+      </li>
+      <li>
+        <strong>Submit licence application and documents</strong> — passport
+        copies, business plan (for some activities), and, for mainland,
+        a Memorandum of Association.
+      </li>
+      <li>
+        <strong>Sign the lease or flexi-desk agreement</strong> required by
+        your jurisdiction, then receive your trade licence.
+      </li>
+      <li>
+        <strong>Apply for visas</strong> (yourself and any employees) once
+        the licence is issued.
+      </li>
+      <li>
+        <strong>Open a business bank account</strong> — start this early;
+        see <a href="/banking/">banking</a> for why it's rarely the fast
+        step people expect.
+      </li>
+    </ol>
+  </section>
+</Layout>
+
+<style>
+  .lede { font-size: var(--step-1); color: var(--ink-muted); max-width: 65ch; }
+  .steps { display: flex; flex-direction: column; gap: var(--space-2); padding-left: 1.2em; }
+  .steps li { max-width: 65ch; }
+</style>

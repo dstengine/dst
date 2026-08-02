@@ -1,0 +1,113 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+<Layout
+  title="DST — AI, Crypto & Real Estate Ventures"
+  description="DST builds and operates digital ventures across AI, Crypto, and Real Estate, starting in Dubai — the systems are ours; execution in each vertical runs through licensed local partners."
+>
+  <section class="container hero">
+    <p class="eyebrow">AI · Crypto · Real Estate</p>
+    <h1>We build the systems. Partners execute the vertical.</h1>
+    <p class="lede">
+      DST is an operating group, not a single business. We design and run the
+      digital infrastructure — sites, lead capture, CRM — behind ventures in
+      three fast-moving spaces, and pair each one with a licensed local
+      partner who handles the regulated, on-the-ground side. The first builds
+      are live in Dubai.
+    </p>
+    <div class="hero-actions">
+      <a class="button" href="#ventures">See the ventures</a>
+      <a class="button button-secondary" href="/contact/">Get in touch</a>
+    </div>
+  </section>
+
+  <section id="ventures" class="container">
+    <h2>Ventures</h2>
+    <p>
+      Each vertical gets its own brand, its own site, and its own local
+      execution partner — not a shared storefront pretending to be three
+      businesses.
+    </p>
+    <div class="venture-grid">
+      <article class="card venture">
+        <p class="eyebrow">Real estate</p>
+        <h3>Dubai property, from formation to residency</h3>
+        <p>
+          Our first and most developed vertical: content-led sites covering
+          company formation, Golden Visa residency, rentals, and the crypto
+          crossover into property — each capturing leads that route to an
+          on-the-ground brokerage partner.
+        </p>
+        <ul class="venture-links">
+          <li><a href="https://llc.dst.llc">Company formation in Dubai →</a></li>
+          <li><a href="https://visas.dst.llc">Golden Visa & residency →</a></li>
+        </ul>
+      </article>
+      <article class="card venture">
+        <p class="eyebrow">Crypto</p>
+        <h3>Where digital assets meet the physical world</h3>
+        <p>
+          Coverage of crypto regulation and events in the UAE, and the
+          practical mechanics of buying property and other assets with
+          digital currency — the crossover point most guides skip entirely.
+        </p>
+      </article>
+      <article class="card venture">
+        <p class="eyebrow">AI</p>
+        <h3>The infrastructure behind every other venture</h3>
+        <p>
+          The same systems discipline that runs our lead capture and CRM
+          across every site — applied as its own venture as the group grows
+          beyond Dubai and beyond real estate.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section id="approach" class="container">
+    <h2>How we work</h2>
+    <p>
+      The model is consistent across every vertical we open:
+    </p>
+    <ol class="approach-list">
+      <li>
+        <strong>We build the system.</strong> Content, site architecture, lead
+        capture, and CRM routing — engineered for organic search rather than
+        paid acquisition, so each site keeps earning traffic long after it
+        ships.
+      </li>
+      <li>
+        <strong>A local partner executes.</strong> We don't originate or
+        close real estate deals, hold crypto on anyone's behalf, or practice
+        regulated advice ourselves — licensed partners on the ground do that
+        part, and we route qualified leads to them.
+      </li>
+      <li>
+        <strong>Each vertical compounds the network.</strong> Sites
+        cross-link, share a design system, and point real, qualified traffic
+        at each other — a visitor researching a Golden Visa is one click from
+        the company-formation guide that half of them also need.
+      </li>
+    </ol>
+  </section>
+</Layout>
+
+<style>
+  .hero { padding-top: var(--space-5); padding-bottom: var(--space-4); }
+  .lede { font-size: var(--step-1); color: var(--ink-muted); max-width: 65ch; }
+  .hero-actions { display: flex; gap: var(--space-2); margin-top: var(--space-3); flex-wrap: wrap; }
+
+  .venture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-3);
+    margin-top: var(--space-3);
+  }
+  .venture h3 { margin-top: var(--space-1); font-size: var(--step-1); }
+  .venture-links { list-style: none; margin: var(--space-2) 0 0; padding: 0; }
+  .venture-links li { margin-top: 0.4em; }
+  .venture-links a { font-weight: 600; font-size: var(--step--1); }
+
+  .approach-list { display: flex; flex-direction: column; gap: var(--space-2); padding-left: 1.2em; }
+  .approach-list li { max-width: var(--content-width); }
+</style>

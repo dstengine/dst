@@ -1,0 +1,87 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Callout from "@dst/ui/Callout.astro";
+import Faq from "@dst/ui/Faq.astro";
+
+const faqItems = [
+  {
+    q: "Does Stripe work in the UAE?",
+    a: "Yes. The United Arab Emirates is listed as a supported country on Stripe's own global-availability page, and Stripe operates a localised UAE site with AED pricing. A surprising amount of content elsewhere online claims otherwise or hedges heavily — check Stripe's own site directly rather than a secondary blog if you've read conflicting claims.",
+  },
+  {
+    q: "Can a UAE free zone company get a Stripe account?",
+    a: "In general, yes, provided the company is properly licensed and can pass Stripe's standard business verification — company registration documents, a UAE business bank account, and a clear description of what the business does and sells. Requirements can vary by business type, and Stripe's own onboarding flow is the authoritative source for what's currently required.",
+  },
+  {
+    q: "What if my business doesn't qualify for Stripe?",
+    a: "Payoneer and Wise Business are commonly used alternatives for UAE-based businesses, particularly for receiving international client payments rather than card-present e-commerce. Local gateways such as Tap Payments, Telr, and PayTabs are built specifically for the UAE market and integrate directly with AED settlement.",
+  },
+];
+---
+<Layout
+  title="Accepting Payments: Stripe and Alternatives for a Dubai Company"
+  description="Does Stripe work with a UAE company? Yes — here's what's actually required, and the alternatives worth knowing about either way."
+  jsonLd={[]}
+>
+  <section class="container">
+    <p class="eyebrow">Payment processing</p>
+    <h1>Stripe, and payment processing for a Dubai company</h1>
+    <p class="lede">
+      This page exists because the honest answer is more useful than the
+      confused one currently sitting at the top of search results for this
+      question.
+    </p>
+  </section>
+
+  <Callout>
+    <strong>Short answer:</strong> Stripe does support UAE-registered
+    businesses — it's an officially listed country on Stripe's own platform.
+    If you've read otherwise, that source was wrong or out of date.
+  </Callout>
+
+  <section class="container">
+    <h2>What actually matters: eligibility, not availability</h2>
+    <p>
+      Once "does Stripe work here" is settled, the real question for most
+      founders is whether their specific company clears Stripe's business
+      verification — which is a function of documentation and business
+      activity, not nationality or free zone choice by itself. In practice,
+      that generally means:
+    </p>
+    <ul>
+      <li>A valid UAE trade licence matching the business activity you describe to Stripe.</li>
+      <li>A UAE business bank account in the company's name for settlement.</li>
+      <li>A clear, accurate description of what you sell — vague or mismatched activity descriptions are a common cause of delayed or declined verification.</li>
+      <li>A functioning website or app that matches the business description, for most account types.</li>
+    </ul>
+    <p>
+      Specific requirements can shift, so treat Stripe's own onboarding flow
+      and documentation as the current source of truth once you're ready to
+      apply — this page is orientation, not a substitute for that.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>Alternatives worth knowing either way</h2>
+    <p>
+      Even for businesses that qualify for Stripe, it's common for Dubai
+      companies to run a second option alongside it:
+    </p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Option</th><th>Typically used for</th></tr></thead>
+        <tbody>
+          <tr><td>Payoneer</td><td>Receiving international client/marketplace payments</td></tr>
+          <tr><td>Wise Business</td><td>Multi-currency accounts and international transfers</td></tr>
+          <tr><td>Tap Payments / Telr / PayTabs</td><td>UAE-native e-commerce checkout, AED settlement</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <Faq items={faqItems} />
+</Layout>
+
+<style>
+  .lede { font-size: var(--step-1); color: var(--ink-muted); max-width: 65ch; }
+</style>

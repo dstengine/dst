@@ -1,0 +1,13 @@
+/* llc.dst — company formation. Accent: deep, muted emerald/teal —
+   professional and fintech-adjacent (this is the site that also has to talk
+   about payment processing/Stripe), distinct from the visas site's accent. */
+:root {
+  --accent: #1F5C4E;
+  --accent-ink: #0D332A;
+  --accent-tint: #E9F0EC;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --accent: #4FAE97; --accent-ink: #BFE9DC; --accent-tint: #16261F; }
+}
+:root[data-theme="dark"] { --accent: #4FAE97; --accent-ink: #BFE9DC; --accent-tint: #16261F; }
+:root[data-theme="light"] { --accent: #1F5C4E; --accent-ink: #0D332A; --accent-tint: #E9F0EC; }

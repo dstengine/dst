@@ -1,0 +1,13 @@
+{
+  "name": "@dst/ui",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./BaseLayout.astro": "./src/layouts/BaseLayout.astro",
+    "./Faq.astro": "./src/components/Faq.astro",
+    "./LeadForm.astro": "./src/components/LeadForm.astro",
+    "./Callout.astro": "./src/components/Callout.astro",
+    "./tokens.css": "./src/styles/tokens.css"
+  }
+}

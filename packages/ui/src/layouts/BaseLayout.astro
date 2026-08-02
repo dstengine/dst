@@ -1,0 +1,96 @@
+---
+import '../styles/tokens.css';
+
+interface Props {
+  title: string;
+  description: string;
+  siteName: string;
+  nav: { href: string; label: string }[];
+  complianceNote?: string;
+  jsonLd?: Record<string, unknown>[];
+}
+
+const { title, description, siteName, nav, complianceNote, jsonLd = [] } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href="data:," />
+    {jsonLd.map((block) => (
+      <script type="application/ld+json" set:html={JSON.stringify(block)} />
+    ))}
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="site-name" href="/">{siteName}</a>
+        <nav>
+          <ul>
+            {nav.map((item) => (
+              <li><a href={item.href}>{item.label}</a></li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <p class="footer-note">{complianceNote}</p>
+        <p class="footer-copy">&copy; {new Date().getFullYear()} {siteName}. Part of the DST network.</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  .site-header {
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: var(--space-2);
+    padding-bottom: var(--space-2);
+  }
+  .site-name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: var(--step-1);
+    color: var(--ink);
+    text-decoration: none;
+  }
+  nav ul {
+    display: flex;
+    gap: var(--space-3);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+  nav a {
+    color: var(--ink-muted);
+    text-decoration: none;
+    font-size: var(--step--1);
+    font-weight: 600;
+  }
+  nav a:hover { color: var(--accent, #1F5C4E); }
+
+  .site-footer {
+    margin-top: var(--space-6);
+    border-top: 1px solid var(--border);
+    padding: var(--space-4) 0;
+    color: var(--ink-faint);
+    font-size: var(--step--1);
+  }
+  .footer-note { max-width: 60ch; margin: 0 0 var(--space-2); }
+  .footer-copy { margin: 0; }
+</style>

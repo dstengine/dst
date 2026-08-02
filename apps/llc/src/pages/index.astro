@@ -1,0 +1,114 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Callout from "@dst/ui/Callout.astro";
+---
+<Layout
+  title="How to Start a Business in Dubai"
+  description="A practical guide to starting a business in Dubai: choosing between mainland, free zone, and offshore structures, what registration actually costs, and what to sort out afterwards."
+>
+  <section class="container hero">
+    <p class="eyebrow">Company formation</p>
+    <h1>How to start a business in Dubai</h1>
+    <p class="lede">
+      Dubai remains one of the most straightforward places in the world to
+      register a company as a foreign founder — no local sponsor requirement
+      in most free zones, full profit repatriation, and a licensing process
+      that in many cases takes days rather than months. The harder question
+      isn't whether you can register a company here; it's which structure
+      actually fits what you're building.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>Three structures, one decision</h2>
+    <p>
+      Every company in Dubai falls into one of three categories, and the
+      choice between them shapes almost everything downstream — what you can
+      legally do, where you can do it, and what banking and visa options open
+      up afterwards.
+    </p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Structure</th><th>Best for</th><th>Trade-off</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Free zone</strong></td>
+            <td>Freelancers, consultancies, e-commerce, most service and tech businesses</td>
+            <td>Cannot trade directly in the UAE mainland market without a distributor or extra licensing</td>
+          </tr>
+          <tr>
+            <td><strong>Mainland</strong></td>
+            <td>Businesses that need to sell directly to UAE-based customers or bid on government contracts</td>
+            <td>More paperwork up front; office requirements are stricter</td>
+          </tr>
+          <tr>
+            <td><strong>Offshore</strong></td>
+            <td>Holding structures, asset ownership, international trading with no UAE presence needed</td>
+            <td>Cannot obtain UAE residency visas or operate locally</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Most first-time founders reading this are choosing between free zone
+      and mainland. See the <a href="/free-zones/">free zone comparison</a>
+      and the <a href="/mainland/">mainland guide</a> for the detail each one
+      deserves rather than a flattened summary here.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>What it actually costs</h2>
+    <p>
+      Free zone company formation typically starts in the low five figures
+      (AED), scaling with the number of visas and business activities
+      attached to the licence. Mainland setup costs cover a similar range but
+      often carry additional office-lease and approval fees depending on the
+      activity. Treat any number you read online — including here — as a
+      starting estimate, not a quote: fees change, and they vary by free
+      zone, activity, and visa count. Confirm current pricing directly with
+      your chosen free zone authority or DED before committing.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>After registration</h2>
+    <p>
+      Getting the licence is the beginning, not the end. Three things
+      founders consistently underestimate:
+    </p>
+    <ul>
+      <li>
+        <strong><a href="/banking/">Opening a business bank account</a></strong> —
+        often the slowest step in the whole process, and one banks approach
+        very differently depending on your nationality, business activity,
+        and expected transaction volume.
+      </li>
+      <li>
+        <strong><a href="/taxation/">Corporate tax and filing</a></strong> —
+        the UAE's corporate tax regime is recent and does apply to most
+        companies above the small-business threshold; assuming "no tax"
+        because of Dubai's reputation is a genuinely costly mistake.
+      </li>
+      <li>
+        <strong><a href="/payment-processing/">Accepting payments online</a></strong> —
+        a specific, common question for software and services businesses,
+        answered plainly on its own page rather than buried in a general FAQ.
+      </li>
+    </ul>
+  </section>
+
+  <Callout>
+    Building a software product or working as an independent developer?
+    The <a href="/payment-processing/">payment processing page</a> answers
+    the question most guides skip: what a Dubai company actually needs to
+    accept card payments through a processor like Stripe.
+  </Callout>
+</Layout>
+
+<style>
+  .hero { padding-top: var(--space-5); }
+  .lede { font-size: var(--step-1); color: var(--ink-muted); max-width: 65ch; }
+</style>

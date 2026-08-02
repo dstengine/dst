@@ -1,0 +1,16 @@
+{
+  "name": "@dst/visas",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@dst/ui": "*",
+    "astro": "^4.16.0",
+    "alpinejs": "^3.14.0"
+  }
+}

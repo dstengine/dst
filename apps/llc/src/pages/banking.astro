@@ -1,0 +1,57 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Faq from "@dst/ui/Faq.astro";
+
+const faqItems = [
+  {
+    q: "Can a foreigner open a business bank account in Dubai?",
+    a: "Yes — this is routine for a properly licensed company, but approval depends heavily on your business activity, expected transaction volumes, and source of funds documentation, not just holding a trade licence.",
+  },
+  {
+    q: "Why is opening a business bank account in Dubai slow?",
+    a: "UAE banks apply thorough compliance checks to new business accounts, particularly for free zone companies with no local trading history yet. Bringing complete documentation and a clear explanation of your business activity from the first meeting materially speeds this up.",
+  },
+];
+---
+<Layout
+  title="Business Banking for Dubai Companies"
+  description="What non-resident founders should expect when opening a business bank account in Dubai — and what documentation actually speeds it up."
+>
+  <section class="container">
+    <p class="eyebrow">Banking</p>
+    <h1>Opening a business bank account</h1>
+    <p class="lede">
+      This is consistently the slowest step after registration, and the one
+      most guides treat as a footnote. It deserves the opposite: real
+      preparation before your first bank meeting.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>What banks typically ask for</h2>
+    <ul>
+      <li>Trade licence and Memorandum of Association (or free zone equivalent).</li>
+      <li>Shareholder/director passport copies and, for non-residents, proof of address.</li>
+      <li>A clear description of your actual business activity and expected transaction volume — vague answers here are a common cause of delay or rejection.</li>
+      <li>Source-of-funds documentation for initial capital, especially for higher-value accounts.</li>
+    </ul>
+  </section>
+
+  <section class="container">
+    <h2>Which banks work with non-residents</h2>
+    <p>
+      Most major UAE banks accept applications from non-resident company
+      shareholders, but appetite for a given business activity varies bank
+      to bank and changes over time — a comparison written today can go
+      stale within months. Speak to two or three banks in parallel rather
+      than committing to the first one that responds, and expect the
+      process to take several weeks rather than days.
+    </p>
+  </section>
+
+  <Faq items={faqItems} />
+</Layout>
+
+<style>
+  .lede { font-size: var(--step-1); color: var(--ink-muted); max-width: 65ch; }
+</style>

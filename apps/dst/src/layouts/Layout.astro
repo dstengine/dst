@@ -1,0 +1,27 @@
+---
+import BaseLayout from "@dst/ui/BaseLayout.astro";
+import "../styles/theme.css";
+
+interface Props {
+  title: string;
+  description: string;
+  jsonLd?: Record<string, unknown>[];
+}
+const { title, description, jsonLd } = Astro.props;
+
+const nav = [
+  { href: "/#ventures", label: "Ventures" },
+  { href: "/#approach", label: "Approach" },
+  { href: "/contact/", label: "Contact" },
+];
+---
+<BaseLayout
+  title={`${title} — DST`}
+  description={description}
+  siteName="DST"
+  nav={nav}
+  complianceNote="DST builds and operates the systems behind each venture; execution in regulated verticals (real estate, financial services) is carried out by licensed local partners."
+  jsonLd={jsonLd}
+>
+  <slot />
+</BaseLayout>

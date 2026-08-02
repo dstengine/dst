@@ -1,0 +1,14 @@
+/* dst.llc — the group's own brand site. Accent: deep graphite-indigo —
+   reads as the parent brand rather than any one vertical, deliberately
+   apart from llc's teal and visas's bronze so the network doesn't blur
+   into one palette when a visitor moves between sites. */
+:root {
+  --accent: #2E3A59;
+  --accent-ink: #171D2D;
+  --accent-tint: #E7E9F0;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --accent: #8C97C2; --accent-ink: #DDE1EF; --accent-tint: #1B2033; }
+}
+:root[data-theme="dark"] { --accent: #8C97C2; --accent-ink: #DDE1EF; --accent-tint: #1B2033; }
+:root[data-theme="light"] { --accent: #2E3A59; --accent-ink: #171D2D; --accent-tint: #E7E9F0; }

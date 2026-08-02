@@ -1,0 +1,53 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Callout from "@dst/ui/Callout.astro";
+import Faq from "@dst/ui/Faq.astro";
+
+const faqItems = [
+  {
+    q: "Does Dubai have corporate tax?",
+    a: "Yes. The UAE introduced federal corporate tax on business profits, generally applying above a set annual profit threshold, with a preferential or zero rate for profits below it. Free zone companies can, in many cases, retain a 0% rate on qualifying income if they meet specific substance and activity conditions — this is not automatic.",
+  },
+  {
+    q: "Is Dubai still tax-free?",
+    a: "There is still no personal income tax in the UAE. Corporate tax on business profits is a separate, more recent regime, and 'Dubai has no tax' is no longer an accurate blanket statement for companies above the threshold.",
+  },
+];
+---
+<Layout
+  title="Corporate Tax and Filing in Dubai"
+  description="What corporate tax obligations actually apply to a Dubai company, and what filing looks like in practice."
+>
+  <section class="container">
+    <p class="eyebrow">Taxation</p>
+    <h1>Corporate tax and filing</h1>
+    <p class="lede">
+      Dubai's tax-free reputation is outdated for companies, even if it still
+      holds for personal income. Corporate tax is real, recent, and worth
+      planning for from day one rather than discovering at filing time.
+    </p>
+  </section>
+
+  <Callout kind="warn">
+    This page is general orientation, not tax advice. Corporate tax rules,
+    thresholds, and free zone qualifying conditions are specific to your
+    activity and structure — confirm your position with a licensed tax
+    adviser before filing.
+  </Callout>
+
+  <section class="container">
+    <h2>What most companies need to track</h2>
+    <ul>
+      <li>Annual corporate tax registration, regardless of whether tax is ultimately owed.</li>
+      <li>Maintaining financial records to the standard required for tax filing, from the first year of operation.</li>
+      <li>For free zone companies: understanding whether your specific income qualifies for the preferential rate, since this depends on activity and counterparty, not just zone membership.</li>
+      <li>VAT registration, once turnover crosses the relevant threshold — a separate obligation from corporate tax.</li>
+    </ul>
+  </section>
+
+  <Faq items={faqItems} />
+</Layout>
+
+<style>
+  .lede { font-size: var(--step-1); color: var(--ink-muted); max-width: 65ch; }
+</style>

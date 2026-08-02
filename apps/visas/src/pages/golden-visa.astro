@@ -1,0 +1,76 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Faq from "@dst/ui/Faq.astro";
+
+const faqItems = [
+  {
+    q: "Who is eligible for a Dubai Golden Visa?",
+    a: "The main categories are real-estate investors above a set property-value threshold, business owners and entrepreneurs, and specified professional categories (skilled professionals, scientists, outstanding students). The property-investment route is the most common entry point for people relocating primarily for residency rather than employment.",
+  },
+  {
+    q: "Can I get a Golden Visa if I buy property in Dubai?",
+    a: "Yes — property investment is one of the primary Golden Visa routes, provided the property value clears the required threshold and meets the programme's ownership conditions (which can include restrictions on mortgaged value and off-plan status). See the eligible-properties page for what currently qualifies.",
+  },
+  {
+    q: "What happens after 10 years of a Golden Visa in Dubai?",
+    a: "The visa is renewable, not a one-time grant — as long as the qualifying condition (the property investment, in this route) is maintained, renewal is generally straightforward rather than a fresh application from scratch.",
+  },
+];
+---
+<Layout
+  title="Golden Visa via Property Investment"
+  description="Golden Visa eligibility, property thresholds, and the actual process — for anyone considering UAE residency through real estate investment."
+>
+  <section class="container">
+    <p class="eyebrow">Golden Visa</p>
+    <h1>The Golden Visa, through property</h1>
+    <p class="lede">
+      This is the long-term residency route, and property investment is its
+      most direct path for anyone not relocating for employment. What
+      follows is the mechanics — thresholds, process, renewal — stated
+      plainly rather than wrapped in sales language.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>How the property route works</h2>
+    <ol class="steps">
+      <li>Identify a property (or portfolio) that clears the current investment threshold set by UAE federal authorities.</li>
+      <li>Confirm the property meets ownership conditions — thresholds are generally based on unmortgaged value, and off-plan properties may be treated differently from completed ones.</li>
+      <li>Submit the Golden Visa application with proof of ownership and standard supporting documents.</li>
+      <li>Complete standard medical and Emirates ID formalities, as with any UAE residency visa.</li>
+      <li>Receive the long-term visa — typically valid for 5 or 10 years depending on investment size and category.</li>
+    </ol>
+  </section>
+
+  <section class="container">
+    <h2>What it actually changes</h2>
+    <p>
+      A Golden Visa removes the need for a local sponsor and the frequent
+      renewal cycle of shorter-term visas. It extends to eligible family
+      members, which is usually the detail that matters most in practice —
+      see <a href="/family-lifestyle/">family and lifestyle</a> for what that
+      means day to day.
+    </p>
+  </section>
+
+  <Faq items={faqItems} />
+
+  <section class="container cta">
+    <h2>See what currently qualifies</h2>
+    <p>
+      Thresholds and eligible property types are specific and change over
+      time. The <a href="/eligible-properties/">eligible properties page</a>
+      is kept current rather than static, and the
+      <a href="/consultation/">consultation page</a> is the direct way to get
+      a shortlist matched to your situation.
+    </p>
+  </section>
+</Layout>
+
+<style>
+  .lede { font-size: var(--step-1); color: var(--ink-muted); max-width: 65ch; }
+  .steps { display: flex; flex-direction: column; gap: var(--space-2); padding-left: 1.2em; }
+  .steps li { max-width: 65ch; }
+  .cta { margin-top: var(--space-5); }
+</style>

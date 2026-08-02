@@ -1,0 +1,118 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+// Example dataset for the draft skeleton — in production this is generated
+// at build time (or revalidated on a schedule) from the shared Property
+// data source, not hand-written. Kept deliberately small and realistic
+// rather than exhaustive.
+const properties = [
+  { name: "1BR apartment, Business Bay", area: "Business Bay", type: "Apartment", price: 1450000 },
+  { name: "2BR apartment, Dubai Marina", area: "Dubai Marina", type: "Apartment", price: 2100000 },
+  { name: "Townhouse, Dubai Hills", area: "Dubai Hills", type: "Townhouse", price: 2650000 },
+  { name: "3BR apartment, Downtown Dubai", area: "Downtown Dubai", type: "Apartment", price: 3200000 },
+  { name: "Villa, Dubai Hills", area: "Dubai Hills", type: "Villa", price: 4800000 },
+  { name: "Penthouse, Palm Jumeirah", area: "Palm Jumeirah", type: "Apartment", price: 7600000 },
+];
+
+const GOLDEN_VISA_THRESHOLD_AED = 2000000;
+---
+<Layout
+  title="Properties Eligible for the Golden Visa"
+  description="A live-filtered shortlist of properties that meet the Golden Visa investment threshold, by area and type."
+>
+  <section class="container">
+    <p class="eyebrow">Eligible properties</p>
+    <h1>Properties that qualify today</h1>
+    <p class="lede">
+      Filtered against the current Golden Visa property-investment threshold
+      (AED {GOLDEN_VISA_THRESHOLD_AED.toLocaleString()}, unmortgaged value).
+      This list is illustrative for the draft — in production it's generated
+      from live listing data, not maintained by hand.
+    </p>
+  </section>
+
+  <section class="container" x-data={`{
+    area: 'all',
+    type: 'all',
+    properties: ${JSON.stringify(properties)},
+    get filtered() {
+      return this.properties.filter(p =>
+        (this.area === 'all' || p.area === this.area) &&
+        (this.type === 'all' || p.type === this.type)
+      );
+    }
+  }`}>
+    <div class="filters">
+      <label>
+        Area
+        <select x-model="area">
+          <option value="all">All areas</option>
+          <option>Business Bay</option>
+          <option>Dubai Marina</option>
+          <option>Dubai Hills</option>
+          <option>Downtown Dubai</option>
+          <option>Palm Jumeirah</option>
+        </select>
+      </label>
+      <label>
+        Type
+        <select x-model="type">
+          <option value="all">All types</option>
+          <option>Apartment</option>
+          <option>Townhouse</option>
+          <option>Villa</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Property</th><th>Area</th><th>Type</th><th>Price (AED)</th></tr></thead>
+        <tbody>
+          <template x-for="p in filtered" :key="p.name">
+            <tr>
+              <td x-text="p.name"></td>
+              <td x-text="p.area"></td>
+              <td x-text="p.type"></td>
+              <td x-text="p.price.toLocaleString()"></td>
+            </tr>
+          </template>
+        </tbody>
+      </table>
+    </div>
+    <p class="fallback" data-no-js>
+      This shortlist filters client-side once loaded. With JavaScript
+      disabled, every listed property above still qualifies for the Golden
+      Visa threshold shown.
+    </p>
+  </section>
+
+  <section class="container cta">
+    <h2>Want this matched to your budget directly?</h2>
+    <p>
+      <a href="/consultation/" class="button">Request a consultation</a> and
+      get a shortlist matched to your timeline and investment size, sent
+      directly rather than filtered by hand.
+    </p>
+  </section>
+</Layout>
+
+<script>
+  import Alpine from "alpinejs";
+  // Loaded only on this page — every other page on the site ships zero
+  // page-specific JS. This is the one place client state genuinely earns it.
+  document.addEventListener("alpine:init", () => {
+    document.querySelectorAll("[data-no-js]").forEach((el) => el.remove());
+  });
+  window.Alpine = Alpine;
+  Alpine.start();
+</script>
+
+<style>
+  .lede { font-size: var(--step-1); color: var(--ink-muted); max-width: 65ch; }
+  .filters { display: flex; gap: var(--space-3); margin: var(--space-3) 0; flex-wrap: wrap; }
+  .filters label { display: flex; flex-direction: column; gap: 0.3em; font-size: var(--step--1); font-weight: 600; color: var(--ink-muted); }
+  .filters select { font: inherit; padding: 0.5em 0.75em; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
+  .fallback { font-size: var(--step--1); color: var(--ink-faint); }
+  .cta { margin-top: var(--space-5); }
+</style>
