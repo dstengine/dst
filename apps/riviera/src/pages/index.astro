@@ -1,0 +1,84 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+<Layout
+  title="Living in Azizi Riviera"
+  description="What day-to-day life actually looks like in Azizi Riviera — the canal-front development in Meydan One / MBR City — beyond the listing photos."
+>
+  <section class="container hero">
+    <p class="eyebrow">Living here</p>
+    <h1>Azizi Riviera, day to day</h1>
+    <p class="lede">
+      Azizi Riviera sits along the Dubai Water Canal in MBR City, a run of
+      Mediterranean-styled low-rise buildings wrapped around a ground-floor
+      retail promenade. It's one of the largest single developments of its
+      kind in the area, which means the day-to-day here is shaped as much by
+      the promenade and the canal walkway as by any individual building.
+      This site is the local guide the listing pages skip: what's actually
+      walkable, how residents get to the sea, and where the neighbourhood's
+      own rhythm — not the citywide one — is worth following.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>What it's actually like</h2>
+    <p>
+      The development is studio-to-3-bedroom apartments across dozens of
+      mid-rise buildings, all facing either the canal or the internal
+      courtyards. The ground-floor promenade — cafes, small restaurants,
+      convenience retail, a supermarket — runs the length of several
+      buildings, so a genuine amount of daily life (coffee, groceries, a
+      casual dinner) happens without leaving the development at all. That's
+      the main practical upside over a comparable high-rise elsewhere in
+      Dubai: less dependency on a car for the small stuff.
+    </p>
+    <p>
+      The trade-off is distance from the sea itself — Riviera is canal-front,
+      not beachfront, and the <a href="/getting-to-the-water/">honest routes to
+      an actual beach</a> take a drive. It's also still filling in: parts of
+      the promenade have been open and active for longer than others, so
+      what's "there" varies a bit building to building.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>Start here</h2>
+    <div class="link-grid">
+      <a class="card link-card" href="/local-directory/">
+        <h3>Local directory</h3>
+        <p>Cafes, markets, fitness, and restaurants, organized for someone who lives here.</p>
+      </a>
+      <a class="card link-card" href="/getting-to-the-water/">
+        <h3>Getting to the water</h3>
+        <p>The canal is at your door; here's how residents actually reach the sea.</p>
+      </a>
+      <a class="card link-card" href="/money/">
+        <h3>Money</h3>
+        <p>Nearby crypto exchange options and buying property with crypto.</p>
+      </a>
+      <a class="card link-card" href="/news-events/">
+        <h3>News & events</h3>
+        <p>What's on locally — not another citywide press release.</p>
+      </a>
+      <a class="card link-card" href="/rent/">
+        <h3>Rent</h3>
+        <p>Looking to rent in Riviera specifically? Start here.</p>
+      </a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero { padding-top: var(--space-5); }
+  .lede { font-size: var(--step-1); color: var(--ink-muted); max-width: 68ch; }
+
+  .link-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-3);
+    margin-top: var(--space-3);
+  }
+  .link-card { text-decoration: none; color: inherit; display: block; }
+  .link-card h3 { margin-top: 0; font-size: var(--step-1); color: var(--accent); }
+  .link-card p { margin: 0; font-size: var(--step--1); color: var(--ink-muted); }
+</style>

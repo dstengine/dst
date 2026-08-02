@@ -1,0 +1,61 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LeadForm from "@dst/ui/LeadForm.astro";
+---
+<Layout
+  title="Renting in Azizi Riviera"
+  description="Looking to rent in Azizi Riviera specifically? Tell us your unit and timeline and get a shortlist matched to the building and view you actually want."
+>
+  <section class="container hero">
+    <p class="eyebrow">Rent</p>
+    <h1>Renting in Riviera, specifically</h1>
+    <p class="lede">
+      Riviera spans dozens of buildings with real differences between
+      them — canal-facing versus courtyard-facing, promenade-adjacent versus
+      further in, older-phase versus newer. A generic Dubai rental search
+      doesn't capture that; this page is for people who already know they
+      want Riviera and need the shortlist narrowed to the right building.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>What actually varies building to building</h2>
+    <ul>
+      <li><strong>View and orientation</strong> — canal-facing units carry a real premium over courtyard-facing ones.</li>
+      <li><strong>Distance to the promenade</strong> — matters more here than in most developments, given how much daily life happens on it.</li>
+      <li><strong>Phase and finish age</strong> — newer buildings vs. the original phase, which affects both finish quality and retail maturity nearby.</li>
+    </ul>
+  </section>
+
+  <section class="container">
+    <h2>Get a shortlist</h2>
+    <LeadForm endpoint="/api/lead" submitLabel="Request my Riviera shortlist">
+      <div class="field">
+        <label for="unit-size">Unit size</label>
+        <select id="unit-size" name="meta.unitSize">
+          <option value="">Prefer not to say</option>
+          <option value="studio">Studio</option>
+          <option value="1br">1 bedroom</option>
+          <option value="2br">2 bedroom</option>
+          <option value="3br">3 bedroom</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="view-pref">View preference</label>
+        <select id="view-pref" name="meta.viewPreference">
+          <option value="">No preference</option>
+          <option value="canal">Canal-facing</option>
+          <option value="courtyard">Courtyard-facing</option>
+        </select>
+      </div>
+    </LeadForm>
+  </section>
+</Layout>
+
+<style>
+  .hero { padding-top: var(--space-5); }
+  .lede { font-size: var(--step-1); color: var(--ink-muted); max-width: 65ch; }
+  .field { display: flex; flex-direction: column; gap: 0.3em; }
+  .field label { font-size: var(--step--1); font-weight: 600; color: var(--ink-muted); }
+  .field select { font: inherit; padding: 0.6em 0.75em; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg); }
+</style>

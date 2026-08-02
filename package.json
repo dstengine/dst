@@ -10,9 +10,11 @@
     "dev:dst": "npm run dev --workspace=apps/dst",
     "dev:llc": "npm run dev --workspace=apps/llc",
     "dev:visas": "npm run dev --workspace=apps/visas",
-    "build": "npm run build --workspace=apps/dst && npm run build --workspace=apps/llc && npm run build --workspace=apps/visas",
+    "dev:riviera": "npm run dev --workspace=apps/riviera",
+    "build": "npm run build --workspace=apps/dst && npm run build --workspace=apps/llc && npm run build --workspace=apps/visas && npm run build --workspace=apps/riviera",
     "build:dst": "npm run build --workspace=apps/dst",
     "build:llc": "npm run build --workspace=apps/llc",
-    "build:visas": "npm run build --workspace=apps/visas"
+    "build:visas": "npm run build --workspace=apps/visas",
+    "build:riviera": "npm run build --workspace=apps/riviera"
   }
 }

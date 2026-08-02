@@ -1,0 +1,30 @@
+---
+import BaseLayout from "@dst/ui/BaseLayout.astro";
+import "../styles/theme.css";
+
+interface Props {
+  title: string;
+  description: string;
+  jsonLd?: Record<string, unknown>[];
+}
+const { title, description, jsonLd } = Astro.props;
+
+const nav = [
+  { href: "/", label: "Living here" },
+  { href: "/local-directory/", label: "Local directory" },
+  { href: "/getting-to-the-water/", label: "Getting to the water" },
+  { href: "/money/", label: "Money" },
+  { href: "/news-events/", label: "News & events" },
+  { href: "/rent/", label: "Rent" },
+];
+---
+<BaseLayout
+  title={`${title} — Azizi Riviera Guide`}
+  description={description}
+  siteName="Azizi Riviera"
+  nav={nav}
+  complianceNote="Independent local guide, not affiliated with Azizi Developments. Amenities, businesses, and transit details change — confirm specifics before relying on them."
+  jsonLd={jsonLd}
+>
+  <slot />
+</BaseLayout>

@@ -1,0 +1,14 @@
+/* riviera.dst — hyper-local micro-site for Azizi Riviera (Dubai Water Canal).
+   Accent: canal/water blue — distinct hue from llc's teal, visas's bronze,
+   and dst's indigo, and deliberately not a literal "beach" cliché since the
+   site's own honesty about geography (canal-front, not beachfront) matters. */
+:root {
+  --accent: #1D6FA5;
+  --accent-ink: #0F3E5C;
+  --accent-tint: #E5F0F7;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --accent: #6FB3DE; --accent-ink: #C9E4F5; --accent-tint: #132433; }
+}
+:root[data-theme="dark"] { --accent: #6FB3DE; --accent-ink: #C9E4F5; --accent-tint: #132433; }
+:root[data-theme="light"] { --accent: #1D6FA5; --accent-ink: #0F3E5C; --accent-tint: #E5F0F7; }
