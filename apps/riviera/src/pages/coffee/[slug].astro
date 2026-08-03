@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import VenuePage from "@dst/ui/district/VenuePage.astro";
 import { coffeeVenues } from "../../content";
+import { go } from "../../outbound";
 
 export function getStaticPaths() {
   return Object.values(coffeeVenues).map((venue) => ({
@@ -29,11 +30,19 @@ const jsonLd = [
     }),
     ...(venue.phone && { telephone: venue.phone }),
     ...(venue.openingHours && { openingHours: venue.openingHours }),
+    // sameAs keeps the real destination: it's a machine-readable identity
+    // statement for search engines, not a link that passes equity.
     ...(venue.externalHref && { sameAs: [venue.externalHref] }),
     url: new URL(`/coffee/${venue.slug}/`, Astro.site).toString(),
   },
 ];
 ---
 <Layout title={`${venue.name}, ${venue.eyebrow}`} description={venue.description} jsonLd={jsonLd}>
-  <VenuePage {...venue} backHref="/coffee/" backLabel="Coffee in Azizi Riviera" />
+  <VenuePage
+    {...venue}
+    externalHref={venue.externalHref ? go(`${venue.slug}-social`) : undefined}
+    mapHref={venue.mapHref ? go(`${venue.slug}-map`) : undefined}
+    backHref="/coffee/"
+    backLabel="Coffee in Azizi Riviera"
+  />
 </Layout>

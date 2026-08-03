@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Outbound redirect hops. These exist to keep third-party destinations off
+# our link graph — there is nothing here worth crawling or indexing.
+Disallow: /go/

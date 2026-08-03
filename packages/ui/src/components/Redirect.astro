@@ -1,0 +1,34 @@
+---
+// A bare outbound hop for /go/<slug>/ routes. Deliberately renders no site
+// chrome: this is a redirect, not a page. It carries noindex/nofollow, and
+// /go/ is disallowed in robots.txt, so third-party destinations collect no
+// link equity from our pages and the hops themselves never get indexed.
+//
+// Static hosting can't issue a 3xx from a generated page, so this uses the
+// standard belt-and-braces pair — a meta refresh for clients with no JS,
+// and location.replace() so the hop doesn't land in browser history.
+interface Props {
+  to: string;
+}
+
+const { to } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="refresh" content={`0; url=${to}`} />
+    <title>Redirecting</title>
+    <link rel="icon" href="data:," />
+  </head>
+  <body>
+    <p>
+      Redirecting to <a href={to} rel="nofollow noopener external">{to}</a>.
+    </p>
+    <script is:inline define:vars={{ to }}>
+      location.replace(to);
+    </script>
+  </body>
+</html>
