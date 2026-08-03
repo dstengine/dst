@@ -3,6 +3,7 @@
 // of links into the site's other pages, then a featured CTA banner for the
 // commercial page (rent). Sites differ only in the data passed in.
 import { iconFor } from "../../icons";
+import PhotoHero from "./PhotoHero.astro";
 
 interface HubLink {
   href: string;
@@ -25,15 +26,26 @@ interface Props {
   links: HubLink[];
   cta: Cta;
   ledeWidth?: string;
+  image?: string;
+  imageAlt?: string;
 }
 
-const { eyebrow, h1, lede, sections, links, cta, ledeWidth } = Astro.props;
+const { eyebrow, h1, lede, sections, links, cta, ledeWidth, image, imageAlt } = Astro.props;
 ---
-<section class="container hero">
-  <p class="eyebrow">{eyebrow}</p>
-  <h1>{h1}</h1>
-  <p class="lede" style={ledeWidth ? `max-width: ${ledeWidth}` : undefined} set:html={lede} />
-</section>
+{image ? (
+  <header class="container hub-hero">
+    <PhotoHero eyebrow={eyebrow} title={h1} image={image} imageAlt={imageAlt} />
+  </header>
+  <section class="container">
+    <p class="lede" style={ledeWidth ? `max-width: ${ledeWidth}` : undefined} set:html={lede} />
+  </section>
+) : (
+  <section class="container hero">
+    <p class="eyebrow">{eyebrow}</p>
+    <h1>{h1}</h1>
+    <p class="lede" style={ledeWidth ? `max-width: ${ledeWidth}` : undefined} set:html={lede} />
+  </section>
+)}
 
 {sections.map((section) => (
   <section class="container">
@@ -76,6 +88,8 @@ const { eyebrow, h1, lede, sections, links, cta, ledeWidth } = Astro.props;
      reading as its own section. Match the grid's own row gap so it reads
      as one more row in the same rhythm, not a separate section. */
   .cta-section { margin-top: var(--space-3); }
+
+  .hub-hero { padding-top: var(--space-4); }
 
   .link-card-icon {
     width: 22px;

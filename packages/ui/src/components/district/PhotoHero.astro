@@ -1,0 +1,92 @@
+---
+// Photographic page opener: image with a bottom-weighted scrim carrying the
+// eyebrow, title and an optional line under it. Shared by the district index
+// and by venue pages so the two don't drift apart.
+//
+// Square corners on purpose, same reasoning as VenueCard — see that file.
+// With no image it drops back to plain type on the page rather than showing
+// an empty grey box.
+interface Props {
+  eyebrow: string;
+  title: string;
+  tagline?: string;
+  image?: string;
+  /** Describe what the image actually is — including whether it's a
+      photograph or an illustration. Falls back to the title. */
+  imageAlt?: string;
+  /** Rendered as <h1> by default; venue/section openers may want otherwise. */
+  level?: "h1" | "h2";
+}
+
+const { eyebrow, title, tagline, image, imageAlt, level = "h1" } = Astro.props;
+const Heading = level;
+---
+<div class:list={["photo-hero", { "is-plain": !image }]}>
+  {image && <img src={image} alt={imageAlt ?? title} loading="eager" />}
+  <div class="photo-hero-caption">
+    <p class="eyebrow">{eyebrow}</p>
+    <Heading>{title}</Heading>
+    {tagline && <p class="photo-hero-tagline">{tagline}</p>}
+  </div>
+</div>
+
+<style>
+  .photo-hero {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    /* Scales with the viewport so the opener stays a proper image on a wide
+       screen instead of a letterbox strip. */
+    min-height: clamp(300px, 34vw, 460px);
+    overflow: hidden;
+    background: var(--surface-sunk);
+  }
+  .photo-hero img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .photo-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(8, 10, 13, 0.88) 0%, rgba(8, 10, 13, 0.45) 38%, rgba(8, 10, 13, 0) 68%);
+  }
+
+  .photo-hero.is-plain { min-height: 0; background: none; }
+  .photo-hero.is-plain::after { display: none; }
+  .photo-hero.is-plain .photo-hero-caption { padding: 0; }
+  .photo-hero.is-plain :is(h1, h2) { color: var(--ink); text-shadow: none; }
+  .photo-hero.is-plain .photo-hero-tagline { color: var(--ink-muted); text-shadow: none; }
+
+  .photo-hero-caption {
+    position: relative;
+    z-index: 1;
+    padding: var(--space-4) var(--space-3) var(--space-3);
+    /* A rem cap, not ch: ch resolves against this box's own (body-sized)
+       font, which left a display-sized heading wrapping in a ~320px column. */
+    max-width: 42rem;
+  }
+  .photo-hero-caption .eyebrow { margin: 0 0 var(--space-1); color: #fff; opacity: 0.75; }
+  .photo-hero-caption :is(h1, h2) {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(var(--step-4), 5vw, 3.6rem);
+    letter-spacing: -0.015em;
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+  }
+  .photo-hero-tagline {
+    margin: var(--space-1) 0 0;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: var(--step-1);
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.35);
+  }
+
+  @media (max-width: 640px) {
+    .photo-hero { min-height: 260px; }
+    .photo-hero-caption :is(h1, h2) { font-size: var(--step-3); }
+  }
+</style>

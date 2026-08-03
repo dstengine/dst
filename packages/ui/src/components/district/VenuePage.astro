@@ -5,6 +5,7 @@
 // written a full guide to — see each app's src/pages/<topic>/[slug].astro.
 import { iconFor } from "../../icons";
 import VenueCard from "./VenueCard.astro";
+import PhotoHero from "./PhotoHero.astro";
 
 interface Highlight {
   title: string;
@@ -85,14 +86,7 @@ const hasPanel = Boolean(building || hourRows.length || phone || details?.length
 </nav>
 
 <header class="container venue-hero">
-  <div class:list={["venue-hero-frame", { "is-plain": !image }]}>
-    {image && <img src={image} alt={name} loading="eager" />}
-    <div class="venue-hero-caption">
-      <p class="eyebrow">{eyebrow}</p>
-      <h1>{name}</h1>
-      {tagline && <p class="venue-hero-tagline">{tagline}</p>}
-    </div>
-  </div>
+  <PhotoHero eyebrow={eyebrow} title={name} tagline={tagline} image={image} />
 </header>
 
 <div class="container venue-body">
@@ -204,68 +198,6 @@ const hasPanel = Boolean(building || hourRows.length || phone || details?.length
 
   .venue-hero { margin-top: var(--space-2); }
 
-  /* Caption sits over the photograph, anchored bottom-left, with a scrim
-     that only darkens the lower half — enough to guarantee contrast for
-     white type without flattening the image itself. Square corners, same
-     reasoning as VenueCard. */
-  .venue-hero-frame {
-    position: relative;
-    display: flex;
-    align-items: flex-end;
-    /* Scales with the viewport so the hero stays a proper image on a wide
-       screen instead of a letterbox strip, without going full-bleed tall
-       on a laptop. */
-    min-height: clamp(300px, 34vw, 460px);
-    overflow: hidden;
-    background: var(--surface-sunk);
-  }
-  .venue-hero-frame img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
-  }
-  .venue-hero-frame::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(8, 10, 13, 0.88) 0%, rgba(8, 10, 13, 0.45) 38%, rgba(8, 10, 13, 0) 68%);
-  }
-  /* Without a photograph there's nothing to overlay, so the caption drops
-     back onto the page itself rather than sitting on an empty grey box. */
-  .venue-hero-frame.is-plain {
-    min-height: 0;
-    background: none;
-  }
-  .venue-hero-frame.is-plain::after { display: none; }
-  .venue-hero-frame.is-plain .venue-hero-caption { padding: 0; }
-  .venue-hero-frame.is-plain h1,
-  .venue-hero-frame.is-plain .venue-hero-tagline { color: var(--ink); text-shadow: none; }
-  .venue-hero-frame.is-plain .venue-hero-tagline { color: var(--ink-muted); }
-
-  .venue-hero-caption {
-    position: relative;
-    z-index: 1;
-    padding: var(--space-4) var(--space-3) var(--space-3);
-    max-width: 40ch;
-  }
-  .venue-hero-caption .eyebrow { margin: 0 0 var(--space-1); color: #fff; opacity: 0.75; }
-  .venue-hero-caption h1 {
-    margin: 0;
-    color: #fff;
-    font-size: clamp(var(--step-4), 5vw, 3.6rem);
-    letter-spacing: -0.015em;
-    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
-  }
-  .venue-hero-tagline {
-    margin: var(--space-1) 0 0;
-    color: rgba(255, 255, 255, 0.85);
-    font-size: var(--step-1);
-    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.35);
-  }
-
   .venue-body {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 300px;
@@ -358,10 +290,5 @@ const hasPanel = Boolean(building || hourRows.length || phone || details?.length
   @media (max-width: 900px) {
     .venue-body { grid-template-columns: 1fr; gap: var(--space-4); }
     .venue-panel-inner { position: static; }
-  }
-
-  @media (max-width: 640px) {
-    .venue-hero-frame { min-height: 260px; }
-    .venue-hero-caption h1 { font-size: var(--step-3); }
   }
 </style>
