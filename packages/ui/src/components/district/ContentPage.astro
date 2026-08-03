@@ -16,6 +16,7 @@ interface Venue {
   name: string;
   blurb: string;
   meta?: string;
+  tag?: string;
   icon?: string;
   image?: string;
 }
@@ -26,12 +27,13 @@ interface Props {
   lede: string;
   sections: Section[];
   venues?: Venue[];
+  venuesHeading?: string;
   calloutKind?: "note" | "warn";
   callout?: string;
   ledeWidth?: string;
 }
 
-const { eyebrow, h1, lede, sections, venues, calloutKind = "warn", callout, ledeWidth } = Astro.props;
+const { eyebrow, h1, lede, sections, venues, venuesHeading, calloutKind = "warn", callout, ledeWidth } = Astro.props;
 ---
 <section class="container hero">
   <p class="eyebrow">{eyebrow}</p>
@@ -48,7 +50,8 @@ const { eyebrow, h1, lede, sections, venues, calloutKind = "warn", callout, lede
 
 {venues && venues.length > 0 && (
   <section class="container">
-    <div class="link-grid">
+    {venuesHeading && <h2>{venuesHeading}</h2>}
+    <div class="venue-grid">
       {venues.map((venue) => <VenueCard {...venue} />)}
     </div>
   </section>

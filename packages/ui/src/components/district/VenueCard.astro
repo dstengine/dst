@@ -1,9 +1,11 @@
 ---
-// A named business surfaced on a topic page (e.g. a specific café on
-// /coffee/), linking through to its own detail page. No photo by default —
-// showing a business's real photography or logo needs their own asset, not
-// something scraped from a review site or Instagram, so this falls back to
-// a plain icon until a licensed image is supplied via `image`.
+// A geo-object (café, restaurant, gym…) surfaced on a topic page or as a
+// "related" tile, linking through to its own VenuePage.
+//
+// Deliberately square-cornered: the photo runs full-bleed to the card edge,
+// and a rounded frame would either round the photo with it or leave the
+// corner mismatched. Sharp edges read as editorial/gallery rather than
+// generic web-card, which is the register these venue pages are aiming for.
 import { iconFor } from "../../icons";
 
 interface Props {
@@ -11,54 +13,120 @@ interface Props {
   name: string;
   blurb: string;
   meta?: string;
+  tag?: string;
   icon?: string;
   image?: string;
 }
 
-const { href, name, blurb, meta, icon = "pin", image } = Astro.props;
-const iconPath = iconFor(`/${icon}/`);
+const { href, name, blurb, meta, tag, icon = "pin", image } = Astro.props;
+const placeholderPath = iconFor(`/${icon}/`);
+const pinPath = iconFor("/pin/");
 ---
-<a class="card link-card venue-card" href={href} title={blurb}>
-  {image ? (
-    <img class="venue-card-image" src={image} alt="" loading="lazy" />
-  ) : (
-    iconPath && (
-      <svg class="venue-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d={iconPath} />
-      </svg>
-    )
-  )}
-  <h3>{name}</h3>
-  <p>{blurb}</p>
-  {meta && <p class="venue-card-meta">{meta}</p>}
+<a class="venue-card" href={href} title={blurb}>
+  <div class="venue-card-media">
+    {image ? (
+      <img src={image} alt="" loading="lazy" />
+    ) : (
+      placeholderPath && (
+        <svg class="venue-card-placeholder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d={placeholderPath} />
+        </svg>
+      )
+    )}
+    {tag && <span class="venue-card-tag">{tag}</span>}
+  </div>
+  <div class="venue-card-body">
+    <h3>{name}</h3>
+    <p class="venue-card-blurb">{blurb}</p>
+    {meta && (
+      <p class="venue-card-meta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={pinPath} /></svg>
+        <span>{meta}</span>
+      </p>
+    )}
+  </div>
 </a>
 
 <style>
-  /* A single venue would otherwise fill the whole grid row (1fr with
-     nothing to share it with) — cap it so it reads as a card, not a
-     banner. Doesn't affect rows with enough venues to fill naturally. */
-  .venue-card { max-width: 340px; }
-
-  .venue-card-icon {
-    width: 22px;
-    height: 22px;
-    margin-bottom: var(--space-2);
-    color: var(--accent);
+  .venue-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: inherit;
+    text-decoration: none;
+    transition: border-color 200ms ease, transform 200ms ease;
   }
-  /* Sharp corners on purpose — sits inside the card's own padding rather
-     than bleeding to its (rounded) edge, so a square-cornered photo never
-     has to fight the card's border-radius. */
-  .venue-card-image {
+  .venue-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+  .venue-card-media {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--surface-sunk);
+  }
+  .venue-card-media img {
     display: block;
     width: 100%;
-    height: 120px;
+    height: 100%;
     object-fit: cover;
     object-position: top;
-    margin-bottom: var(--space-2);
+    transition: transform 400ms ease;
   }
-  .venue-card-meta {
-    margin-top: var(--space-2);
-    font-size: var(--step--2);
+  .venue-card:hover .venue-card-media img { transform: scale(1.03); }
+
+  .venue-card-placeholder {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 32px;
+    height: 32px;
     color: var(--ink-faint);
   }
+
+  /* Status/category chip over the image — square to match the card, and
+     backed by a solid surface so it stays legible on any photograph. */
+  .venue-card-tag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.35em 0.7em;
+    background: var(--surface);
+    color: var(--ink-muted);
+    font-size: var(--step--1);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .venue-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    padding: var(--space-3);
+  }
+  .venue-card h3 {
+    margin: 0;
+    font-size: var(--step-2);
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .venue-card:hover h3 { color: var(--accent); }
+  .venue-card-blurb {
+    margin: 0;
+    font-size: var(--step--1);
+    line-height: 1.55;
+    color: var(--ink-muted);
+  }
+  .venue-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.45em;
+    margin: var(--space-1) 0 0;
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--border);
+    font-size: var(--step--1);
+    color: var(--ink-faint);
+  }
+  .venue-card-meta svg { width: 15px; height: 15px; flex-shrink: 0; color: var(--accent); }
 </style>

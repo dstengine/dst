@@ -27,7 +27,10 @@ const jsonLd = [
         addressCountry: "AE",
       },
     }),
+    ...(venue.phone && { telephone: venue.phone }),
+    ...(venue.openingHours && { openingHours: venue.openingHours }),
     ...(venue.externalHref && { sameAs: [venue.externalHref] }),
+    url: new URL(`/coffee/${venue.slug}/`, Astro.site).toString(),
   },
 ];
 ---

@@ -67,12 +67,14 @@ export const coffee = {
       ],
     },
   ],
+  venuesHeading: "Where to go",
   venues: [
     {
       href: "/coffee/homebrew/",
       name: "Homebrew",
-      blurb: "'90s-Dubai nostalgia concept, Building 24 — old-school local flavours on a modern café menu.",
-      meta: "Building 24, Shop 3 · 6am–11pm daily",
+      blurb: "Old Dubai flavours on a modern café menu, open from 6am to late.",
+      meta: "Building 24, Shop 3",
+      tag: "Coffee",
       icon: "coffee",
       image: "/venues/homebrew.jpg",
     },
@@ -85,13 +87,61 @@ export const coffeeVenues = {
     slug: "homebrew",
     eyebrow: "Coffee",
     name: "Homebrew",
+    tagline: "Nostalgic tastes, locally sourced.",
     description:
-      "A '90s-Dubai nostalgia concept on the Building 24 stretch of the promenade — old-school local flavours (think Al Reef Lebanese Bakery) reworked into a modern café menu, rather than a standard specialty-coffee list.",
-    building: "Azizi Riviera, Building 24 – Shop 3",
+      "A café built around the Dubai its founder grew up in — old-school local flavours reworked for a modern menu, rather than the specialty-coffee template most new openings reach for. It sits on the Building 24 stretch of the promenade and keeps longer hours than anything else nearby.",
+    image: "/venues/homebrew.jpg",
+    building: "Azizi Riviera, Building 24 – Shop 3, Nad Al Sheba 1",
     hours: "6:00am – 11:00pm daily",
+    // schema.org format, kept alongside the human-readable `hours` above so
+    // the two can't drift apart unnoticed.
+    openingHours: "Mo-Su 06:00-23:00",
+    phone: "+971 58 511 3251",
+    details: [
+      { label: "Neighbourhood", value: "Nad Al Sheba 1" },
+      { label: "Good for", value: "Remote work, breakfast" },
+    ],
+    highlights: [
+      {
+        title: "Order this",
+        text: "The labneh sourdough bagel — labneh, mint, and local vegetables, built as a nod to Al Reef Lebanese Bakery rather than a copy of it.",
+      },
+      {
+        title: "The room",
+        text: "Laid-back enough to work from for a few hours, which is what most of the weekday crowd is doing. Families take over later in the day.",
+      },
+      {
+        title: "Worth knowing",
+        text: "Named in Virgin Radio's top ten coffee shops in the UAE — unusual for a café inside a residential development rather than a retail district.",
+      },
+    ],
+    sections: [
+      {
+        heading: "Why it reads differently",
+        paragraphs: [
+          `Founded by <strong>Ania Kubow</strong>, a Dubai-raised software
+            developer, with a menu put together by head chef Saba, also from
+            here. The premise is specific: dishes that reference what eating
+            in Dubai was like before the city's current restaurant scene,
+            served in a room that doesn't lean on that nostalgia visually.`,
+          `The practical consequence is that the food menu carries as much
+            weight as the coffee, which is not the default on this
+            promenade.`,
+        ],
+      },
+      {
+        heading: "When to go",
+        paragraphs: [
+          `The 6am open is the outlier here — useful before a commute, and
+            earlier than the rest of Riviera's ground-floor retail. Late
+            evening is the other quiet window; the middle of the day is when
+            the room fills.`,
+        ],
+      },
+    ],
     externalHref: "https://www.instagram.com/homebrew.ae/",
     externalLabel: "Instagram",
-    image: "/venues/homebrew.jpg",
+    mapHref: "https://www.google.com/maps/search/?api=1&query=Homebrew+Coffee+Azizi+Riviera+Dubai",
   },
 };
 
