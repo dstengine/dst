@@ -27,8 +27,8 @@ export const index = {
         `Coverage tracks the construction timeline rather than the map:
           blocks that opened first carry a fuller promenade, later phases
           are still filling theirs in. And the canal that dominates every
-          listing photo is a boat route, not a beach — see <a href="/water/">where
-          people actually swim</a> for the honest version.`,
+          listing photo is a boat route, not a beach — see
+          <a href="/water/">where people swim</a>.`,
       ],
     },
   ],
@@ -45,7 +45,7 @@ export const index = {
     href: "/rent/",
     eyebrow: "Rent",
     h3: "Renting in Riviera specifically?",
-    description: "Match the right block to what actually matters — canal view, courtyard, distance from the promenade.",
+    description: "Match the right block to what matters — canal view, courtyard, distance from the promenade.",
   },
 };
 
@@ -58,7 +58,7 @@ export const coffee = {
     canal-facing stretch — most of Riviera can reach a flat white without a car.`,
   sections: [
     {
-      heading: "What's actually open",
+      heading: "What's open",
       paragraphs: [
         `Density follows the construction timeline: the earliest-opened
           blocks carry the fullest café run, while newer phases are still
@@ -95,7 +95,7 @@ export const food = {
       ],
     },
   ],
-  callout: "The supermarket's range and specific restaurants shift as the promenade fills in — treat this as a category guide, not a fixed list.",
+  callout: "The supermarket's range and specific restaurants shift as the promenade fills in.",
 };
 
 export const pools = {
@@ -133,7 +133,7 @@ export const water = {
   title: "Where to Swim Near Azizi Riviera",
   description: "Looking for somewhere to swim near Azizi Riviera? Building pool first — the canal isn't a swimming spot.",
   eyebrow: "Water",
-  h1: "Where residents actually swim",
+  h1: "Where residents swim",
   lede: `If a search for "swimming near Riviera" brought you here: start
     with your building's pool. The canal that runs alongside the
     development carries boat and water-taxi traffic — worth a walk, not a swim.`,
@@ -141,9 +141,9 @@ export const water = {
     {
       heading: "Your building's pool",
       paragraphs: [
-        `Covers most people's actual swimming, far more than the canal or
-          a beach trip does. See the <a href="/pools/">pools page</a> for
-          what's typical and how it differs by block.`,
+        `Covers most people's swimming, more than the canal or a beach
+          trip does. See the <a href="/pools/">pools page</a> for what's
+          typical and how it differs by block.`,
       ],
     },
     {
@@ -200,7 +200,7 @@ export const money = {
 
 export const news = {
   title: "Riviera News",
-  description: "What's actually changing inside Azizi Riviera — not a citywide press release.",
+  description: "What's changing inside Azizi Riviera — not a citywide press release.",
   eyebrow: "News",
   h1: "What's changing in Riviera",
   lede: `Coverage of the development itself — new promenade tenants,
@@ -210,7 +210,7 @@ export const news = {
     {
       paragraphs: [
         `Citywide stories already get covered elsewhere; this stays
-          narrow to what changes what it's actually like to live here.`,
+          narrow to what changes about living here.`,
         `The fastest-moving version of this runs on Instagram
           (<strong>@rivieradst</strong>). This page is the record that's
           still findable a year later.`,

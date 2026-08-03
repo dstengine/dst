@@ -5,7 +5,7 @@
 export const index = {
   title: "Living in MBR City",
   description:
-    "What Mohammed Bin Rashid City actually is — the district behind the developer names, its communities, and how they fit together.",
+    "What Mohammed Bin Rashid City is — the district behind the developer names, its communities, and how they fit together.",
   eyebrow: "Living here",
   h1: "MBR City, the district behind the names",
   lede: `Mohammed Bin Rashid City is one of Dubai's larger master-planned
@@ -26,7 +26,7 @@ export const index = {
         `<strong>Sobha Hartland</strong> — denser and more central, bordering
           Ras Al Khor and close to Business Bay.`,
         `<strong>Azizi Riviera</strong> — the canal-front apartment development
-          with a guide of its own at <a href="https://riviera.dst.llc">riviera.dst.llc</a>,
+          with its own site at <a href="https://riviera.dst.llc">riviera.dst.llc</a>,
           which covers its day-to-day in more depth than makes sense to
           repeat here.`,
         `Pricing, unit types, and daily rhythm differ enough between these
@@ -74,7 +74,7 @@ export const coffee = {
       paragraphs: [
         `The one community with real walkable coffee of its own. See
           <a href="https://riviera.dst.llc/coffee/">Riviera's coffee
-          page</a> for what's actually there.`,
+          page</a> for what's there.`,
       ],
     },
     {
@@ -149,8 +149,8 @@ export const pools = {
       heading: "District One's Crystal Lagoon",
       paragraphs: [
         `A large artificial lagoon, not a conventional pool — see the
-          <a href="/water/">water page</a> for what it actually offers and
-          who has access.`,
+          <a href="/water/">water page</a> for what it offers and who has
+          access.`,
       ],
     },
   ],
@@ -158,12 +158,12 @@ export const pools = {
 
 export const water = {
   title: "Where to Swim in MBR City",
-  description: "Looking for where to swim in MBR City? Building pools, District One's Crystal Lagoon and who actually has access, and the drive to the sea.",
+  description: "Looking for where to swim in MBR City? Building pools, District One's Crystal Lagoon and who has access, and the drive to the sea.",
   eyebrow: "Water",
-  h1: "Where residents actually swim",
+  h1: "Where residents swim",
   lede: `MBR City has two real water features — District One's Crystal
     Lagoon and the Riviera canal — plus the building-pool amenity most
-    communities share. Here's which of those you can actually swim in.`,
+    communities share. Here's which of those you can swim in.`,
   sections: [
     {
       heading: "District One's Crystal Lagoon",
@@ -239,7 +239,7 @@ export const money = {
 
 export const news = {
   title: "MBR City News",
-  description: "District-wide news across MBR City — what's genuinely changing across communities, not one community's own updates.",
+  description: "District-wide news across MBR City — what's changing across communities, not one community's own updates.",
   eyebrow: "News",
   h1: "What's changing, district-wide",
   lede: `Coverage of what's changing across MBR City's communities, not
@@ -289,9 +289,9 @@ export const rent = {
   eyebrow: "Rent",
   h1: "Renting in MBR City, matched to the right community",
   lede: `A District One villa, a Meydan townhouse, a Sobha Hartland
-    apartment, and a Riviera unit are genuinely different rentals with
-    different budgets. Tell us what you're after and get a shortlist that
-    reflects it, before you start touring units.`,
+    apartment, and a Riviera unit are different rentals with different
+    budgets. Tell us what you're after and get a shortlist that reflects
+    it, before you start touring units.`,
   varies: [
     { label: "Unit type", text: "villas and mansions in District One and much of Meydan against apartments in Sobha Hartland and Riviera." },
     { label: "Distance to Business Bay/Downtown", text: "Sobha Hartland is closest; District One and Meydan trade proximity for space and the lagoon or racecourse setting." },
