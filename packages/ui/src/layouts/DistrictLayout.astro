@@ -1,0 +1,44 @@
+---
+// Shared shell for every district site (riviera, mbr, and any future
+// per-development or per-district guide). The nav and page set are the
+// same across all of them by construction — a district site is defined
+// as "one that has these pages" — so it's fixed here rather than repeated
+// per app. What actually differs between sites (name, accent, compliance
+// text) comes in as config from the app's own site.config.ts.
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  siteName: string;
+  titleSuffix: string;
+  complianceNote: string;
+  partnerDisclosure?: boolean;
+  jsonLd?: Record<string, unknown>[];
+}
+
+const { title, description, siteName, titleSuffix, complianceNote, partnerDisclosure = false, jsonLd } = Astro.props;
+
+const nav = [
+  { href: "/", label: "Living here" },
+  { href: "/coffee/", label: "Coffee" },
+  { href: "/food/", label: "Food" },
+  { href: "/pools/", label: "Pools" },
+  { href: "/water/", label: "Water" },
+  { href: "/money/", label: "Money" },
+  { href: "/news/", label: "News" },
+  { href: "/events/", label: "Events" },
+  { href: "/rent/", label: "Rent" },
+];
+---
+<BaseLayout
+  title={`${title} — ${titleSuffix}`}
+  description={description}
+  siteName={siteName}
+  nav={nav}
+  complianceNote={complianceNote}
+  partnerDisclosure={partnerDisclosure}
+  jsonLd={jsonLd}
+>
+  <slot />
+</BaseLayout>

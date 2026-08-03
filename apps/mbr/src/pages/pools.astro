@@ -1,40 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ContentPage from "@dst/ui/district/ContentPage.astro";
+import { pools } from "../content";
 ---
-<Layout
-  title="Pools in MBR City"
-  description="Pool access across MBR City's communities — building pools versus District One's Crystal Lagoon, and what's actually available where."
->
-  <section class="container hero">
-    <p class="eyebrow">Pools</p>
-    <h1>Building pools, and the one district-scale exception</h1>
-    <p class="lede">
-      Pool access in MBR City is mostly a per-building amenity, the same as
-      anywhere else in Dubai — District One's Crystal Lagoon is the one
-      community-scale exception, and it's a different kind of amenity, not
-      a bigger version of a building pool.
-    </p>
-  </section>
-
-  <section class="container">
-    <h2>Building pools</h2>
-    <p>
-      A shared residents' pool is standard across apartment buildings in
-      Riviera and Sobha Hartland, and common in Meydan's mid-rise
-      buildings too — see <a href="https://riviera.dst.llc/pools/">Riviera's
-      own pools page</a> for what's typical there specifically. Villa
-      communities like District One more often have private pools per unit
-      instead of a shared building pool.
-    </p>
-  </section>
-
-  <section class="container">
-    <h2>District One's Crystal Lagoon</h2>
-    <p>
-      A large artificial lagoon, not a conventional "pool" — see the
-      <a href="/water/">water page</a> for the honest version of what it
-      offers and who actually has access to it.
-    </p>
-  </section>
+<Layout title={pools.title} description={pools.description}>
+  <ContentPage {...pools} />
 </Layout>
-

@@ -1,0 +1,64 @@
+---
+// Home-page body shared by every district site: hero, a "start here" grid
+// of links into the site's other pages, then a featured CTA banner for the
+// commercial page (rent). Sites differ only in the data passed in.
+interface HubLink {
+  href: string;
+  title: string;
+  description: string;
+}
+
+interface Cta {
+  href: string;
+  eyebrow: string;
+  h3: string;
+  description: string;
+}
+
+interface Props {
+  eyebrow: string;
+  h1: string;
+  lede: string;
+  sections: { heading?: string; paragraphs: string[] }[];
+  links: HubLink[];
+  cta: Cta;
+  ledeWidth?: string;
+}
+
+const { eyebrow, h1, lede, sections, links, cta, ledeWidth } = Astro.props;
+---
+<section class="container hero">
+  <p class="eyebrow">{eyebrow}</p>
+  <h1>{h1}</h1>
+  <p class="lede" style={ledeWidth ? `max-width: ${ledeWidth}` : undefined} set:html={lede} />
+</section>
+
+{sections.map((section) => (
+  <section class="container">
+    {section.heading && <h2>{section.heading}</h2>}
+    {section.paragraphs.map((paragraph) => <p set:html={paragraph} />)}
+  </section>
+))}
+
+<section class="container">
+  <h2>Start here</h2>
+  <div class="link-grid">
+    {links.map((link) => (
+      <a class="card link-card" href={link.href}>
+        <h3>{link.title}</h3>
+        <p>{link.description}</p>
+      </a>
+    ))}
+  </div>
+</section>
+
+<section class="container">
+  <a class="cta-banner" href={cta.href}>
+    <div>
+      <p class="eyebrow">{cta.eyebrow}</p>
+      <h3>{cta.h3}</h3>
+      <p>{cta.description}</p>
+    </div>
+    <span class="cta-banner-arrow" aria-hidden="true">&rarr;</span>
+  </a>
+</section>

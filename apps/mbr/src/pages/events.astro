@@ -1,31 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ContentPage from "@dst/ui/district/ContentPage.astro";
+import { events } from "../content";
 ---
-<Layout
-  title="MBR City Events"
-  description="District-wide events across MBR City — Meydan racing, District One's lagoon calendar, and what genuinely draws people from across the district."
->
-  <section class="container hero">
-    <p class="eyebrow">Events</p>
-    <h1>What's on, district-wide</h1>
-    <p class="lede">
-      This page covers what draws people from across MBR City's
-      communities, not what's hyper-local to just one of them. For
-      Riviera's own hyper-local calendar, see
-      <a href="https://riviera.dst.llc/events/">its dedicated page</a>.
-    </p>
-  </section>
-
-  <section class="container">
-    <h2>What counts as district-wide here</h2>
-    <p>
-      Meydan Racecourse events — most notably the Dubai World Cup — draw
-      attention and traffic across the whole district, not just Meydan
-      residents. District One's Crystal Lagoon hosts its own seasonal
-      programming that pulls from neighbouring communities too. Citywide
-      festivals get plenty of coverage elsewhere; this page deliberately
-      doesn't duplicate that.
-    </p>
-  </section>
+<Layout title={events.title} description={events.description}>
+  <ContentPage {...events} />
 </Layout>
-

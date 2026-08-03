@@ -16,49 +16,51 @@ import Layout from "../layouts/Layout.astro";
       are live in Dubai.
     </p>
     <div class="hero-actions">
-      <a class="button" href="#ventures">See the ventures</a>
+      <a class="button" href="#portfolio">See the portfolio</a>
       <a class="button button-secondary" href="/contact/">Get in touch</a>
     </div>
   </section>
 
-  <section id="ventures" class="container">
-    <h2>Ventures</h2>
+  <section id="portfolio" class="container">
+    <h2>Portfolio</h2>
     <p>
-      Each vertical gets its own brand, its own site, and its own local
-      execution partner — not a shared storefront pretending to be three
-      businesses.
+      Shipped projects and what's currently in build — each on its own
+      domain, with its own local execution partner where one applies.
     </p>
     <div class="venture-grid">
       <article class="card venture">
-        <p class="eyebrow">Real estate</p>
-        <h3>Dubai property, from formation to residency</h3>
+        <div class="venture-meta">
+          <p class="eyebrow">Company formation</p>
+          <span class="venture-status">Live</span>
+        </div>
+        <h3>llc.dst.llc</h3>
         <p>
-          Our first and most developed vertical: content-led sites covering
-          company formation, Golden Visa residency, rentals, and the crypto
-          crossover into property — each capturing leads that route to an
-          on-the-ground brokerage partner.
+          Free zones, mainland, banking, and the payment-processing
+          questions software founders actually ask before they register.
         </p>
-        <ul class="venture-links">
-          <li><a href="https://llc.dst.llc">Company formation in Dubai →</a></li>
-          <li><a href="https://visas.dst.llc">Golden Visa & residency →</a></li>
-        </ul>
+        <a class="venture-link" href="https://llc.dst.llc">Visit llc.dst.llc &rarr;</a>
       </article>
       <article class="card venture">
-        <p class="eyebrow">Crypto</p>
-        <h3>Where digital assets meet the physical world</h3>
+        <div class="venture-meta">
+          <p class="eyebrow">District guide</p>
+          <span class="venture-status">Live</span>
+        </div>
+        <h3>riviera.dst.llc</h3>
         <p>
-          Coverage of crypto regulation and events in the UAE, and the
-          practical mechanics of buying property and other assets with
-          digital currency — the crossover point most guides skip entirely.
+          A resident's guide to Azizi Riviera — coffee, food, pools, and
+          where people actually swim, not what the listing photos show.
         </p>
+        <a class="venture-link" href="https://riviera.dst.llc">Visit riviera.dst.llc &rarr;</a>
       </article>
       <article class="card venture">
-        <p class="eyebrow">AI</p>
-        <h3>The infrastructure behind every other venture</h3>
+        <div class="venture-meta">
+          <p class="eyebrow">Crypto</p>
+          <span class="venture-status venture-status-progress">In development</span>
+        </div>
+        <h3>Crypto in the UAE</h3>
         <p>
-          The same systems discipline that runs our lead capture and CRM
-          across every site — applied as its own venture as the group grows
-          beyond Dubai and beyond real estate.
+          UAE crypto regulation and events, and the mechanics of buying
+          property and other assets with digital currency.
         </p>
       </article>
     </div>
@@ -105,10 +107,20 @@ import Layout from "../layouts/Layout.astro";
     gap: var(--space-3);
     margin-top: var(--space-3);
   }
-  .venture h3 { margin-top: var(--space-1); font-size: var(--step-1); }
-  .venture-links { list-style: none; margin: var(--space-2) 0 0; padding: 0; }
-  .venture-links li { margin-top: 0.4em; }
-  .venture-links a { font-weight: 600; font-size: var(--step--1); }
+  .venture-meta { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); }
+  .venture-meta .eyebrow { margin: 0; }
+  .venture-status {
+    flex-shrink: 0;
+    font-size: var(--step--1);
+    font-weight: 600;
+    color: var(--ok);
+    background: var(--ok-bg);
+    padding: 0.15em 0.6em;
+    border-radius: 999px;
+  }
+  .venture-status-progress { color: var(--warn); background: var(--warn-bg); }
+  .venture h3 { margin-top: var(--space-1); font-size: var(--step-1); font-family: var(--font-mono); font-weight: 600; }
+  .venture-link { display: inline-block; margin-top: var(--space-2); font-weight: 600; font-size: var(--step--1); }
 
   .approach-list { display: flex; flex-direction: column; gap: var(--space-2); padding-left: 1.2em; }
   .approach-list li { max-width: var(--content-width); }

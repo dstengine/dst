@@ -1,47 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Callout from "@dst/ui/Callout.astro";
+import ContentPage from "@dst/ui/district/ContentPage.astro";
+import { food } from "../content";
 ---
-<Layout
-  title="Food in Azizi Riviera"
-  description="Restaurants and groceries in Azizi Riviera — what's on the promenade for daily meals, and where residents go for a wider selection."
->
-  <section class="container hero">
-    <p class="eyebrow">Food</p>
-    <h1>Eating in, and eating out</h1>
-    <p class="lede">
-      Between the promenade's casual dining and a supermarket on-site, a
-      genuine amount of daily food needs are covered without a car — with a
-      clear line for when residents actually drive elsewhere.
-    </p>
-  </section>
-
-  <section class="container">
-    <h2>Restaurants</h2>
-    <p>
-      Casual dining spread across the ground-floor promenade — the kind of
-      everyday-meal restaurants that suit a quick dinner rather than a
-      destination night out. For a wider or more upscale selection,
-      residents typically head to Meydan One or Downtown, both a short
-      drive away.
-    </p>
-  </section>
-
-  <section class="container">
-    <h2>Groceries and markets</h2>
-    <p>
-      A supermarket on the promenade covers routine shopping without
-      leaving the development. For a wider selection — specialty and
-      international groceries in particular — residents typically drive to
-      the larger supermarkets in Meydan or Business Bay rather than relying
-      on the on-site option for everything.
-    </p>
-  </section>
-
-  <Callout kind="warn">
-    Specific restaurants and the supermarket's own range change as the
-    promenade continues to fill in — treat this page as a description of
-    categories, not a fixed roster.
-  </Callout>
+<Layout title={food.title} description={food.description}>
+  <ContentPage {...food} />
 </Layout>
-

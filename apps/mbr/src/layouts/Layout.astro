@@ -1,6 +1,7 @@
 ---
-import BaseLayout from "@dst/ui/BaseLayout.astro";
+import DistrictLayout from "@dst/ui/DistrictLayout.astro";
 import "../styles/theme.css";
+import { site } from "../site.config";
 
 interface Props {
   title: string;
@@ -8,26 +9,7 @@ interface Props {
   jsonLd?: Record<string, unknown>[];
 }
 const { title, description, jsonLd } = Astro.props;
-
-const nav = [
-  { href: "/", label: "Living here" },
-  { href: "/coffee/", label: "Coffee" },
-  { href: "/food/", label: "Food" },
-  { href: "/pools/", label: "Pools" },
-  { href: "/water/", label: "Water" },
-  { href: "/money/", label: "Money" },
-  { href: "/news/", label: "News" },
-  { href: "/events/", label: "Events" },
-  { href: "/rent/", label: "Rent" },
-];
 ---
-<BaseLayout
-  title={`${title} — MBR City Guide`}
-  description={description}
-  siteName="MBR City"
-  nav={nav}
-  complianceNote="Independent local guide to Mohammed Bin Rashid City, not affiliated with any developer or master-community operator. Amenities, businesses, and transit details change — confirm specifics before relying on them."
-  jsonLd={jsonLd}
->
+<DistrictLayout title={title} description={description} jsonLd={jsonLd} {...site}>
   <slot />
-</BaseLayout>
+</DistrictLayout>

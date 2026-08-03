@@ -1,0 +1,42 @@
+---
+// Generic content-page body shared by every district site's coffee/food/
+// pools/water/money/news/events pages: hero, then a list of sections, then
+// an optional callout. Sites differ only in the data passed in — see each
+// app's src/content.ts.
+import Callout from "../Callout.astro";
+
+interface Section {
+  heading?: string;
+  paragraphs: string[];
+}
+
+interface Props {
+  eyebrow: string;
+  h1: string;
+  lede: string;
+  sections: Section[];
+  calloutKind?: "note" | "warn";
+  callout?: string;
+  ledeWidth?: string;
+}
+
+const { eyebrow, h1, lede, sections, calloutKind = "warn", callout, ledeWidth } = Astro.props;
+---
+<section class="container hero">
+  <p class="eyebrow">{eyebrow}</p>
+  <h1>{h1}</h1>
+  <p class="lede" style={ledeWidth ? `max-width: ${ledeWidth}` : undefined} set:html={lede} />
+</section>
+
+{sections.map((section) => (
+  <section class="container">
+    {section.heading && <h2>{section.heading}</h2>}
+    {section.paragraphs.map((paragraph) => <p set:html={paragraph} />)}
+  </section>
+))}
+
+{callout && (
+  <Callout kind={calloutKind}>
+    <p set:html={callout} />
+  </Callout>
+)}

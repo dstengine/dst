@@ -1,37 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Callout from "@dst/ui/Callout.astro";
+import ContentPage from "@dst/ui/district/ContentPage.astro";
+import { coffee } from "../content";
 ---
-<Layout
-  title="Coffee in Azizi Riviera"
-  description="Where to get coffee in Azizi Riviera — what's actually on the promenade, and how coverage varies building to building."
->
-  <section class="container hero">
-    <p class="eyebrow">Coffee</p>
-    <h1>Coffee on the promenade</h1>
-    <p class="lede">
-      The ground-floor promenade is where this actually happens — cafes are
-      one of the earliest tenant types to fill in as each stretch of
-      buildings opens, alongside casual dining and convenience retail.
-    </p>
-  </section>
-
-  <section class="container">
-    <h2>What to expect</h2>
-    <p>
-      A mix of independent cafes and small chain outlets along the
-      canal-facing promenade, walkable from most buildings without a car.
-      Coverage isn't uniform — the longer-established stretch of the
-      promenade has more open than the newer phases — so what's actually
-      running changes as the development continues to fill in.
-    </p>
-  </section>
-
-  <Callout kind="warn">
-    This page describes what's typically available, not a fixed list of
-    named cafes — the promenade's tenant mix changes as Riviera continues
-    to build out. Confirm a specific spot is open before making it the
-    reason for a visit.
-  </Callout>
+<Layout title={coffee.title} description={coffee.description}>
+  <ContentPage {...coffee} />
 </Layout>
-

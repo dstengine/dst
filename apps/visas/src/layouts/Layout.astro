@@ -12,8 +12,8 @@ const { title, description, jsonLd } = Astro.props;
 const nav = [
   { href: "/", label: "Visa types" },
   { href: "/golden-visa/", label: "Golden Visa" },
-  { href: "/eligible-properties/", label: "Eligible properties" },
-  { href: "/family-lifestyle/", label: "Family & lifestyle" },
+  { href: "/properties/", label: "Eligible properties" },
+  { href: "/family/", label: "Family & lifestyle" },
   { href: "/consultation/", label: "Consultation" },
 ];
 ---
@@ -24,6 +24,7 @@ const nav = [
   nav={nav}
   complianceNote="Informational content, not immigration or legal advice. Golden Visa thresholds and eligibility criteria are set by UAE federal authorities and can change — always confirm current requirements before making an investment decision."
   jsonLd={jsonLd}
+  partnerDisclosure
 >
   <slot />
 </BaseLayout>

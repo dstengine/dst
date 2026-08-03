@@ -1,39 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ContentPage from "@dst/ui/district/ContentPage.astro";
+import { events } from "../content";
 ---
-<Layout
-  title="Riviera Events"
-  description="Local events for Azizi Riviera residents — what's actually on in the development, not a citywide events calendar."
->
-  <section class="container hero">
-    <p class="eyebrow">Events</p>
-    <h1>What's on, locally</h1>
-    <p class="lede">
-      Community meetups, promenade openings, and seasonal happenings
-      specific to Riviera — kept separate from <a href="/news/">news</a>
-      because "what's on this week" and "what's changed in the
-      development" are different questions with different shelf lives.
-    </p>
-  </section>
-
-  <section class="container">
-    <h2>What counts as a local event here</h2>
-    <p>
-      Anything organized in or around Riviera specifically — resident
-      meetups, promenade tenant launches, seasonal activity on the canal
-      walkway. Citywide festivals and events get plenty of coverage
-      elsewhere; this page deliberately doesn't duplicate that.
-    </p>
-  </section>
-
-  <section class="container">
-    <h2>Follow along</h2>
-    <p>
-      The fastest-moving version of this lives on Instagram
-      (<strong>@rivieradst</strong>) rather than here — this page is the
-      durable, searchable record, while the Instagram account is where it
-      happens first.
-    </p>
-  </section>
+<Layout title={events.title} description={events.description}>
+  <ContentPage {...events} />
 </Layout>
-

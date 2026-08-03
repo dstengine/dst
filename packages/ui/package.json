@@ -5,9 +5,13 @@
   "type": "module",
   "exports": {
     "./BaseLayout.astro": "./src/layouts/BaseLayout.astro",
+    "./DistrictLayout.astro": "./src/layouts/DistrictLayout.astro",
     "./Faq.astro": "./src/components/Faq.astro",
     "./LeadForm.astro": "./src/components/LeadForm.astro",
     "./Callout.astro": "./src/components/Callout.astro",
+    "./district/ContentPage.astro": "./src/components/district/ContentPage.astro",
+    "./district/DistrictHub.astro": "./src/components/district/DistrictHub.astro",
+    "./district/DistrictRentForm.astro": "./src/components/district/DistrictRentForm.astro",
     "./tokens.css": "./src/styles/tokens.css"
   }
 }

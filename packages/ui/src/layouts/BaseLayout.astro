@@ -10,9 +10,10 @@ interface Props {
   jsonLd?: Record<string, unknown>[];
   logoSrc?: string;
   favicon?: boolean;
+  partnerDisclosure?: boolean;
 }
 
-const { title, description, siteName, nav, complianceNote, jsonLd = [], logoSrc, favicon = false } = Astro.props;
+const { title, description, siteName, nav, complianceNote, jsonLd = [], logoSrc, favicon = false, partnerDisclosure = false } = Astro.props;
 ---
 <!doctype html>
 <html lang="en">
@@ -77,7 +78,11 @@ const { title, description, siteName, nav, complianceNote, jsonLd = [], logoSrc,
     <footer class="site-footer">
       <div class="container">
         <p class="footer-note">{complianceNote}</p>
-        <p class="footer-copy">&copy; {new Date().getFullYear()} {siteName}. Part of the DST network.</p>
+        <p class="footer-copy">
+          &copy; {new Date().getFullYear()} {siteName}. Part of the DST network{partnerDisclosure && (
+            <>, digital partner of DEAL KEY PROPERTIES LLC, DED License No. 1523000 &middot; RERA ORN 52875</>
+          )}.
+        </p>
       </div>
     </footer>
   </body>

@@ -1,50 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ContentPage from "@dst/ui/district/ContentPage.astro";
+import { water } from "../content";
 ---
-<Layout
-  title="Where to Swim Near Azizi Riviera"
-  description="Looking for where to actually swim near Azizi Riviera? The honest answer: the building pool first, then a drive to the sea — the canal itself isn't a swim spot."
->
-  <section class="container hero">
-    <p class="eyebrow">Water</p>
-    <h1>Where to actually swim</h1>
-    <p class="lede">
-      If you searched for this because you want to know where to swim
-      near Riviera, the short answer is: your building's pool, or a drive
-      to the sea. The canal that runs along the development isn't a
-      swimming spot, despite how the listing photos make it look.
-    </p>
-  </section>
-
-  <section class="container">
-    <h2>Your building's pool</h2>
-    <p>
-      The realistic day-to-day answer. Most Riviera buildings have a
-      shared residents' pool as a standard amenity — see the
-      <a href="/pools/">pools page</a> for what's typical and how it varies
-      by building. For most residents, this covers actual swimming far more
-      than the canal or a beach trip does.
-    </p>
-  </section>
-
-  <section class="container">
-    <h2>Why not the canal</h2>
-    <p>
-      The Dubai Water Canal is active boat and water-taxi traffic, not a
-      designated or safe swimming area — it's infrastructure Riviera sits
-      alongside, not a beach substitute, whatever the marketing renders
-      suggest. Treat the canal walkway as a place to walk and run, not swim.
-    </p>
-  </section>
-
-  <section class="container">
-    <h2>The actual sea</h2>
-    <p>
-      Kite Beach, La Mer, and JBR are the nearest public beaches, roughly a
-      20–30 minute drive depending on traffic and where in Riviera you're
-      starting from. There's no direct transit link — a car or taxi is the
-      realistic way to get there for an actual sea swim.
-    </p>
-  </section>
+<Layout title={water.title} description={water.description}>
+  <ContentPage {...water} />
 </Layout>
-
