@@ -111,6 +111,30 @@ test.describe("mobile menu", () => {
     await expect(toggle).toHaveJSProperty("open", false);
   });
 
+  // The header was position:relative with z-index:auto, so it created no
+  // stacking context and page content positioned later in the document — the
+  // photo hero's caption, the sticky venue panel — painted straight through
+  // the open dropdown. Five of nine items were unclickable on the home page.
+  for (const path of ["/", "/coffee/", "/coffee/homebrew/"]) {
+    test(`every item is on top of the page content on ${path}`, async ({ page }) => {
+      await page.setViewportSize({ width: 820, height: 800 });
+      await page.goto(url("riviera", path));
+      await page.locator(".nav-toggle summary").click();
+
+      const covered = await page.locator(".nav-toggle ul a").evaluateAll((links) =>
+        links
+          .filter((a) => {
+            const r = a.getBoundingClientRect();
+            const top = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+            return !(top && (top === a || a.contains(top)));
+          })
+          .map((a) => a.textContent.trim()),
+      );
+
+      expect(covered, "menu items painted over by page content").toEqual([]);
+    });
+  }
+
   test("closes on Escape", async ({ page }) => {
     const toggle = page.locator(".nav-toggle");
     await toggle.locator("summary").click();
@@ -143,6 +167,51 @@ test.describe("content blocks stay inside the page grid", () => {
     const gridBottom = await page.locator(".link-grid").evaluate((el) => el.getBoundingClientRect().bottom);
     const bannerTop = await page.locator(".cta-banner").evaluate((el) => el.getBoundingClientRect().top);
     expect(bannerTop - gridBottom, "no gap between the grid and the CTA banner").toBeGreaterThan(8);
+  });
+});
+
+test.describe("reading measure", () => {
+  // `--content-width: 72ch` measured out at ~115 characters per line, and
+  // because ch scales with font-size the lede — set larger — ended up on a
+  // longer line than the body text under it. Larger type wants a shorter
+  // measure, not a longer one.
+  const CHARS_PER_LINE_LIMIT = 100;
+
+  // Average advance over the element's own text, which overestimates a
+  // little against a rendered line; the limit is set with that in mind.
+  const measure = (el) => {
+    const style = getComputedStyle(el);
+    const text = el.textContent.trim();
+    const probe = document.createElement("span");
+    probe.style.cssText = `position:absolute;visibility:hidden;white-space:nowrap;font:${style.font}`;
+    probe.textContent = text;
+    document.body.appendChild(probe);
+    const advance = probe.getBoundingClientRect().width / text.length;
+    probe.remove();
+    const width = el.getBoundingClientRect().width;
+    return { width, chars: Math.round(width / advance) };
+  };
+
+  test("the lede is never on a longer line than the body text", async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 900 });
+    for (const path of ["/", "/coffee/", "/rent/"]) {
+      await page.goto(url("riviera", path));
+      const { lede, body } = await page.evaluate((fn) => {
+        const measure = eval(`(${fn})`);
+        // A direct child of a page section: prose set on the page's own
+        // measure, not a paragraph nested inside a form or a card.
+        const prose = document.querySelector("main > section.container > p:not(.lede)");
+        return {
+          lede: measure(document.querySelector(".lede")),
+          body: prose ? measure(prose) : null,
+        };
+      }, measure.toString());
+
+      expect(lede.chars, `${path}: lede line too long`).toBeLessThanOrEqual(CHARS_PER_LINE_LIMIT);
+      if (!body) continue; // page has no body prose to compare against
+      expect(lede.width, `${path}: the lede is wider than the body text`).toBeLessThanOrEqual(body.width);
+      expect(body.chars, `${path}: body line too long`).toBeLessThanOrEqual(CHARS_PER_LINE_LIMIT);
+    }
   });
 });
 

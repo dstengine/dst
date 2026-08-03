@@ -98,6 +98,12 @@ const isDstHome = Astro.site?.hostname === "dst.llc";
 <style>
   .site-header {
     position: relative;
+    /* Lifts the header and, with it, the absolutely-positioned dropdown
+       above page content. Without this the header is position:relative with
+       z-index:auto, so it creates no stacking context and anything
+       positioned later in the document — the photo hero's caption, the
+       sticky venue panel — paints straight through the open menu. */
+    z-index: var(--z-header);
     border-bottom: 1px solid var(--border);
     background: var(--surface);
   }

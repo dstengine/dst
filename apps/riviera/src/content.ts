@@ -13,7 +13,6 @@ export const index = {
     retail promenade, one of the larger single developments of its kind in
     the city. Day to day here has as much to do with which stretch of the
     promenade you're near as which building you're in.`,
-  ledeWidth: "70ch",
   sections: [
     {
       heading: "What's built out and what isn't",

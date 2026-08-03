@@ -14,7 +14,6 @@ export const index = {
     through a single development's name — District One, Meydan, Sobha
     Hartland, Azizi Riviera — without necessarily clocking that all four
     share the same district, the same schools and road network.`,
-  ledeWidth: "72ch",
   sections: [
     {
       heading: "The communities, briefly",

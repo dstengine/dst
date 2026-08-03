@@ -42,8 +42,21 @@
   --space-5: 4rem;
   --space-6: 6.5rem;
 
+  /* Stacking order. Page content stays in flow and out of this scale; the
+     only thing that has to paint above it is the header, because its
+     dropdown hangs down over the page. Positioned page elements (the photo
+     hero's caption, the sticky venue panel) sit in the default layer, so
+     without an explicit rank here they win on document order and punch
+     through the open menu. */
+  --z-header: 100;
+
   --radius: 8px;
-  --content-width: 72ch;
+  /* Reading measure. Was 72ch, which measured out at ~115 characters per
+     line: `ch` is the advance of "0", far wider than the average lowercase
+     letter, so the token promised a character count it didn't deliver.
+     34rem lands around 85 — near the top of the comfortable band rather
+     than well past it. */
+  --content-width: 34rem;
   --page-width: 1180px;
 }
 
@@ -189,7 +202,16 @@ thead th { font-size: var(--step--1); text-transform: uppercase; letter-spacing:
    a page needs something different, at which point it overrides the
    specific property locally rather than redeclaring the whole rule. */
 .hero { padding-top: var(--space-5); }
-.lede { font-size: var(--step-1); color: var(--ink-muted); max-width: 65ch; }
+/* A rem cap, not ch. `ch` is the advance of "0", which is far wider than the
+   average lowercase letter, so 65ch on this face measured out at ~105 real
+   characters per line — and because ch scales with font-size, the lede ended
+   up on a *longer* line than the body text below it despite being set
+   larger. Bigger type wants a shorter measure, not a longer one. */
+.lede {
+  font-size: var(--step-1);
+  color: var(--ink-muted);
+  max-width: 34rem;
+}
 
 /* Shared "start here" link grid, used by hub pages (dst.llc ventures,
    district-site index pages) to fan out into the site's sub-pages. */
