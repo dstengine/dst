@@ -66,18 +66,31 @@ export const coffee = {
           currently trading.`,
       ],
     },
+  ],
+  venues: [
     {
-      heading: "Building 24: Homebrew",
-      paragraphs: [
-        `The name worth knowing on this stretch. Homebrew, in Building 24,
-          runs a '90s-Dubai nostalgia concept — old-school local flavours
-          reworked into a modern café menu rather than a standard
-          specialty-coffee list — and keeps early-to-late hours, 6am to
-          11pm, which covers both the morning walk crowd and a late coffee.`,
-      ],
+      href: "/coffee/homebrew/",
+      name: "Homebrew",
+      blurb: "'90s-Dubai nostalgia concept, Building 24 — old-school local flavours on a modern café menu.",
+      meta: "Building 24, Shop 3 · 6am–11pm daily",
+      icon: "coffee",
     },
   ],
   callout: "Tenants turn over as leases end. Check a specific spot is open before making it the reason for a trip.",
+};
+
+export const coffeeVenues = {
+  homebrew: {
+    slug: "homebrew",
+    eyebrow: "Coffee",
+    name: "Homebrew",
+    description:
+      "A '90s-Dubai nostalgia concept on the Building 24 stretch of the promenade — old-school local flavours (think Al Reef Lebanese Bakery) reworked into a modern café menu, rather than a standard specialty-coffee list.",
+    building: "Azizi Riviera, Building 24 – Shop 3",
+    hours: "6:00am – 11:00pm daily",
+    externalHref: "https://www.instagram.com/homebrew.ae/",
+    externalLabel: "Instagram",
+  },
 };
 
 export const food = {

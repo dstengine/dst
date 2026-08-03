@@ -4,10 +4,20 @@
 // an optional callout. Sites differ only in the data passed in — see each
 // app's src/content.ts.
 import Callout from "../Callout.astro";
+import VenueCard from "./VenueCard.astro";
 
 interface Section {
   heading?: string;
   paragraphs: string[];
+}
+
+interface Venue {
+  href: string;
+  name: string;
+  blurb: string;
+  meta?: string;
+  icon?: string;
+  image?: string;
 }
 
 interface Props {
@@ -15,12 +25,13 @@ interface Props {
   h1: string;
   lede: string;
   sections: Section[];
+  venues?: Venue[];
   calloutKind?: "note" | "warn";
   callout?: string;
   ledeWidth?: string;
 }
 
-const { eyebrow, h1, lede, sections, calloutKind = "warn", callout, ledeWidth } = Astro.props;
+const { eyebrow, h1, lede, sections, venues, calloutKind = "warn", callout, ledeWidth } = Astro.props;
 ---
 <section class="container hero">
   <p class="eyebrow">{eyebrow}</p>
@@ -34,6 +45,14 @@ const { eyebrow, h1, lede, sections, calloutKind = "warn", callout, ledeWidth } 
     {section.paragraphs.map((paragraph) => <p set:html={paragraph} />)}
   </section>
 ))}
+
+{venues && venues.length > 0 && (
+  <section class="container">
+    <div class="link-grid">
+      {venues.map((venue) => <VenueCard {...venue} />)}
+    </div>
+  </section>
+)}
 
 {callout && (
   <Callout kind={calloutKind}>

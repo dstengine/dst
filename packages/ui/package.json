@@ -12,6 +12,8 @@
     "./district/ContentPage.astro": "./src/components/district/ContentPage.astro",
     "./district/DistrictHub.astro": "./src/components/district/DistrictHub.astro",
     "./district/DistrictRentForm.astro": "./src/components/district/DistrictRentForm.astro",
+    "./district/VenueCard.astro": "./src/components/district/VenueCard.astro",
+    "./district/VenuePage.astro": "./src/components/district/VenuePage.astro",
     "./tokens.css": "./src/styles/tokens.css"
   }
 }

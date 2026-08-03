@@ -1,0 +1,63 @@
+---
+// Detail page for a single named venue (e.g. /coffee/homebrew/). Generic
+// so any topic (coffee, food, ...) can route venue slugs through it — see
+// each app's src/pages/<topic>/[slug].astro.
+interface Props {
+  eyebrow: string;
+  name: string;
+  description: string;
+  building?: string;
+  hours?: string;
+  externalHref?: string;
+  externalLabel?: string;
+  backHref: string;
+  backLabel: string;
+  image?: string;
+}
+
+const { eyebrow, name, description, building, hours, externalHref, externalLabel = "Instagram", backHref, backLabel, image } = Astro.props;
+---
+<section class="container hero">
+  <p class="eyebrow">{eyebrow}</p>
+  <h1>{name}</h1>
+  <p class="lede">{description}</p>
+</section>
+
+{image && (
+  <section class="container">
+    <img class="venue-hero-image" src={image} alt={name} />
+  </section>
+)}
+
+{(building || hours || externalHref) && (
+  <section class="container">
+    <dl class="venue-meta">
+      {building && (<><dt>Location</dt><dd>{building}</dd></>)}
+      {hours && (<><dt>Hours</dt><dd>{hours}</dd></>)}
+      {externalHref && (<><dt>More</dt><dd><a href={externalHref} title={`${name} on ${externalLabel}`}>{externalLabel} &rarr;</a></dd></>)}
+    </dl>
+  </section>
+)}
+
+<section class="container">
+  <a class="venue-back" href={backHref} title={backLabel}>&larr; {backLabel}</a>
+</section>
+
+<style>
+  .venue-hero-image {
+    display: block;
+    width: 100%;
+    max-height: 360px;
+    object-fit: cover;
+    border-radius: var(--radius);
+  }
+  .venue-meta {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-1) var(--space-3);
+    margin: 0;
+  }
+  .venue-meta dt { font-weight: 600; color: var(--ink-muted); }
+  .venue-meta dd { margin: 0; }
+  .venue-back { font-weight: 600; font-size: var(--step--1); }
+</style>

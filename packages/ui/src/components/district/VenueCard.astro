@@ -1,0 +1,62 @@
+---
+// A named business surfaced on a topic page (e.g. a specific café on
+// /coffee/), linking through to its own detail page. No photo by default —
+// showing a business's real photography or logo needs their own asset, not
+// something scraped from a review site or Instagram, so this falls back to
+// a plain icon until a licensed image is supplied via `image`.
+import { iconFor } from "../../icons";
+
+interface Props {
+  href: string;
+  name: string;
+  blurb: string;
+  meta?: string;
+  icon?: string;
+  image?: string;
+}
+
+const { href, name, blurb, meta, icon = "pin", image } = Astro.props;
+const iconPath = iconFor(`/${icon}/`);
+---
+<a class="card link-card venue-card" href={href} title={blurb}>
+  {image ? (
+    <img class="venue-card-image" src={image} alt="" />
+  ) : (
+    iconPath && (
+      <svg class="venue-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d={iconPath} />
+      </svg>
+    )
+  )}
+  <h3>{name}</h3>
+  <p>{blurb}</p>
+  {meta && <p class="venue-card-meta">{meta}</p>}
+</a>
+
+<style>
+  /* A single venue would otherwise fill the whole grid row (1fr with
+     nothing to share it with) — cap it so it reads as a card, not a
+     banner. Doesn't affect rows with enough venues to fill naturally. */
+  .venue-card { max-width: 340px; }
+
+  .venue-card-icon {
+    width: 22px;
+    height: 22px;
+    margin-bottom: var(--space-2);
+    color: var(--accent);
+  }
+  .venue-card-image {
+    display: block;
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    margin: calc(var(--space-3) * -1) calc(var(--space-3) * -1) var(--space-2);
+    width: calc(100% + var(--space-3) * 2);
+  }
+  .venue-card-meta {
+    margin-top: var(--space-2);
+    font-size: var(--step--2);
+    color: var(--ink-faint);
+  }
+</style>
