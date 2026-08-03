@@ -28,7 +28,7 @@ export const index = {
           blocks that opened first carry a fuller promenade, later phases
           are still filling theirs in. And the canal that dominates every
           listing photo is a boat route, not a beach — see
-          <a href="/water/">where people swim</a>.`,
+          <a href="/water/" title="Where to swim near Azizi Riviera">where people swim</a>.`,
       ],
     },
   ],
@@ -198,7 +198,7 @@ export const pools = {
           about that building rather than assuming it from a Riviera
           listing in general.`,
         `Sorting buildings by pool setup as part of choosing where to rent?
-          Start on the <a href="/rent/">rent page</a>.`,
+          Start on the <a href="/rent/" title="Renting in Azizi Riviera">rent page</a>.`,
       ],
     },
   ],
@@ -217,7 +217,7 @@ export const water = {
       heading: "Your building's pool",
       paragraphs: [
         `Covers most people's swimming, more than the canal or a beach
-          trip does. See the <a href="/pools/">pools page</a> for what's
+          trip does. See the <a href="/pools/" title="Pool access in Azizi Riviera">pools page</a> for what's
           typical and how it differs by block.`,
       ],
     },
@@ -280,7 +280,7 @@ export const news = {
   h1: "What's changing in Riviera",
   lede: `Coverage of the development itself — new promenade tenants,
     completed phases, management changes — kept apart from
-    <a href="/events/">events</a>, since the two age differently.`,
+    <a href="/events/" title="What's on in Azizi Riviera">events</a>, since the two age differently.`,
   sections: [
     {
       paragraphs: [
@@ -304,7 +304,7 @@ export const events = {
   sections: [
     {
       paragraphs: [
-        `Kept separate from <a href="/news/">news</a> deliberately: "what's
+        `Kept separate from <a href="/news/" title="What's changing in Azizi Riviera">news</a> deliberately: "what's
           happening this week" and "what's changed about the development"
           are different questions with different shelf lives.`,
         `Instagram (<strong>@rivieradst</strong>) moves faster than this

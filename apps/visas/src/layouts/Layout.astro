@@ -10,11 +10,11 @@ interface Props {
 const { title, description, jsonLd } = Astro.props;
 
 const nav = [
-  { href: "/", label: "Visa types" },
-  { href: "/golden/", label: "Golden Visa" },
-  { href: "/properties/", label: "Eligible properties" },
-  { href: "/family/", label: "Family & lifestyle" },
-  { href: "/consultation/", label: "Consultation" },
+  { href: "/", label: "Visa types", title: "UAE residency routes compared" },
+  { href: "/golden/", label: "Golden Visa", title: "Golden Visa via property investment" },
+  { href: "/properties/", label: "Eligible properties", title: "Properties that qualify for the Golden Visa" },
+  { href: "/family/", label: "Family & lifestyle", title: "What a Golden Visa changes day to day" },
+  { href: "/consultation/", label: "Consultation", title: "Request a Golden Visa consultation" },
 ];
 ---
 <BaseLayout

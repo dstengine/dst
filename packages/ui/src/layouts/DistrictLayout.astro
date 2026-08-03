@@ -19,16 +19,18 @@ interface Props {
 
 const { title, description, siteName, titleSuffix, complianceNote, partnerDisclosure = true, jsonLd } = Astro.props;
 
+// Titles are built from siteName so the same nav reads specifically on
+// each district site rather than repeating the bare label.
 const nav = [
-  { href: "/", label: "Living here" },
-  { href: "/coffee/", label: "Coffee" },
-  { href: "/food/", label: "Food" },
-  { href: "/pools/", label: "Pools" },
-  { href: "/water/", label: "Water" },
-  { href: "/money/", label: "Money" },
-  { href: "/news/", label: "News" },
-  { href: "/events/", label: "Events" },
-  { href: "/rent/", label: "Rent" },
+  { href: "/", label: "Living here", title: `Living in ${siteName}` },
+  { href: "/coffee/", label: "Coffee", title: `Coffee in ${siteName}` },
+  { href: "/food/", label: "Food", title: `Restaurants and groceries in ${siteName}` },
+  { href: "/pools/", label: "Pools", title: `Pool access in ${siteName}` },
+  { href: "/water/", label: "Water", title: `Where to swim near ${siteName}` },
+  { href: "/money/", label: "Money", title: `Exchange and crypto near ${siteName}` },
+  { href: "/news/", label: "News", title: `What's changing in ${siteName}` },
+  { href: "/events/", label: "Events", title: `What's on in ${siteName}` },
+  { href: "/rent/", label: "Rent", title: `Renting in ${siteName}` },
 ];
 ---
 <BaseLayout

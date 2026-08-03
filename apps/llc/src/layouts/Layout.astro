@@ -10,13 +10,14 @@ interface Props {
 const { title, description, jsonLd } = Astro.props;
 
 const nav = [
-  { href: "/", label: "Getting started" },
-  { href: "/zones/", label: "Free zones" },
-  { href: "/mainland/", label: "Mainland" },
-  { href: "/registration/", label: "Registration" },
-  { href: "/taxation/", label: "Taxation" },
-  { href: "/banking/", label: "Banking" },
-  { href: "/payments/", label: "Payment processing" },
+  { href: "/", label: "Getting started", title: "How to start a business in Dubai" },
+  { href: "/zones/", label: "Free zones", title: "Dubai free zone comparison" },
+  { href: "/mainland/", label: "Mainland", title: "Mainland company setup in Dubai" },
+  { href: "/registration/", label: "Registration", title: "Company registration, step by step" },
+  { href: "/taxation/", label: "Taxation", title: "Corporate tax and filing in Dubai" },
+  { href: "/banking/", label: "Banking", title: "Business banking for Dubai companies" },
+  { href: "/financing/", label: "Financing", title: "Business financing once the company trades" },
+  { href: "/payments/", label: "Payments", title: "Accepting card payments as a Dubai company" },
 ];
 ---
 <BaseLayout

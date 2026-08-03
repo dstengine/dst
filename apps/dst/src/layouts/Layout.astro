@@ -10,9 +10,9 @@ interface Props {
 const { title, description, jsonLd } = Astro.props;
 
 const nav = [
-  { href: "/#hubs", label: "Hubs" },
-  { href: "/#approach", label: "Approach" },
-  { href: "/contact/", label: "Contact" },
+  { href: "/#hubs", label: "Hubs", title: "What DST is building" },
+  { href: "/#approach", label: "Approach", title: "How DST works" },
+  { href: "/contact/", label: "Contact", title: "Get in touch with DST" },
 ];
 ---
 <BaseLayout

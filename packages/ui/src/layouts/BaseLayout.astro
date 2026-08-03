@@ -5,7 +5,10 @@ interface Props {
   title: string;
   description: string;
   siteName: string;
-  nav: { href: string; label: string }[];
+  // `title` expands on a nav label for the tooltip and for crawlers — a
+  // title identical to the link text adds nothing, so it's only worth
+  // setting where it says more than the label does.
+  nav: { href: string; label: string; title?: string }[];
   complianceNote?: string;
   jsonLd?: Record<string, unknown>[];
   logoSrc?: string;
@@ -46,7 +49,7 @@ const isDstHome = Astro.site?.hostname === "dst.llc";
         <nav class="site-nav">
           <ul class="nav-desktop">
             {nav.map((item) => (
-              <li><a href={item.href}>{item.label}</a></li>
+              <li><a href={item.href} title={item.title ?? item.label}>{item.label}</a></li>
             ))}
           </ul>
           <details class="nav-toggle">
@@ -55,7 +58,7 @@ const isDstHome = Astro.site?.hostname === "dst.llc";
             </summary>
             <ul>
               {nav.map((item) => (
-                <li><a href={item.href}>{item.label}</a></li>
+                <li><a href={item.href} title={item.title ?? item.label}>{item.label}</a></li>
               ))}
             </ul>
           </details>
@@ -82,7 +85,7 @@ const isDstHome = Astro.site?.hostname === "dst.llc";
         <p class="footer-note">{complianceNote}</p>
         <p class="footer-copy">
           &copy; {new Date().getFullYear()} {siteName}. Part of the{" "}
-          {isDstHome ? "DST network" : <a href="https://dst.llc">DST network</a>}
+          {isDstHome ? "DST network" : <a href="https://dst.llc" title="DST — the group behind this site">DST network</a>}
           {partnerDisclosure && (
             <>, digital partner of DEAL KEY PROPERTIES LLC, DED License No. 1523000 &middot; RERA ORN 52875</>
           )}.

@@ -26,7 +26,7 @@ export const index = {
         `<strong>Sobha Hartland</strong> — denser and more central, bordering
           Ras Al Khor and close to Business Bay.`,
         `<strong>Azizi Riviera</strong> — the canal-front apartment development
-          with its own site at <a href="https://riviera.dst.llc">riviera.dst.llc</a>,
+          with its own site at <a href="https://riviera.dst.llc" title="Living in Azizi Riviera">riviera.dst.llc</a>,
           which covers its day-to-day in more depth than makes sense to
           repeat here.`,
         `Pricing, unit types, and daily rhythm differ enough between these
@@ -73,7 +73,7 @@ export const coffee = {
       heading: "Riviera's promenade",
       paragraphs: [
         `The one community with real walkable coffee of its own. See
-          <a href="https://riviera.dst.llc/coffee/">Riviera's coffee
+          <a href="https://riviera.dst.llc/coffee/" title="Coffee in Azizi Riviera">Riviera's coffee
           page</a> for what's there.`,
       ],
     },
@@ -109,7 +109,7 @@ export const food = {
       heading: "Riviera's promenade",
       paragraphs: [
         `The exception — ground-floor dining and groceries without
-          leaving the development. See <a href="https://riviera.dst.llc/food/">Riviera's
+          leaving the development. See <a href="https://riviera.dst.llc/food/" title="Restaurants and groceries in Azizi Riviera">Riviera's
           food page</a> for detail.`,
       ],
     },
@@ -140,7 +140,7 @@ export const pools = {
       paragraphs: [
         `Standard across apartment buildings in Riviera and Sobha
           Hartland, common in Meydan's mid-rise blocks too — see
-          <a href="https://riviera.dst.llc/pools/">Riviera's own pools
+          <a href="https://riviera.dst.llc/pools/" title="Pool access in Azizi Riviera">Riviera's own pools
           page</a> for what's typical there. Villa communities like
           District One more often carry private pools per unit instead.`,
       ],
@@ -149,7 +149,7 @@ export const pools = {
       heading: "District One's Crystal Lagoon",
       paragraphs: [
         `A large artificial lagoon, not a conventional pool — see the
-          <a href="/water/">water page</a> for what it offers and who has
+          <a href="/water/" title="Where to swim near MBR City">water page</a> for what it offers and who has
           access.`,
       ],
     },
@@ -182,7 +182,7 @@ export const water = {
       paragraphs: [
         `Active boat and water-taxi traffic along Azizi Riviera, not a
           swimming spot despite the waterfront renders. See
-          <a href="https://riviera.dst.llc/water/">Riviera's own water
+          <a href="https://riviera.dst.llc/water/" title="Where to swim near Azizi Riviera">Riviera's own water
           page</a> for the full version.`,
       ],
     },
@@ -190,7 +190,7 @@ export const water = {
       heading: "Building pools",
       paragraphs: [
         `The realistic day-to-day answer for most residents — see the
-          <a href="/pools/">pools page</a>.`,
+          <a href="/pools/" title="Pool access in MBR City">pools page</a>.`,
       ],
     },
     {
@@ -244,7 +244,7 @@ export const news = {
   h1: "What's changing, district-wide",
   lede: `Coverage of what's changing across MBR City's communities, not
     what's hyper-local to one of them — kept apart from
-    <a href="/events/">events</a>, since the two age differently.`,
+    <a href="/events/" title="What's on in MBR City">events</a>, since the two age differently.`,
   sections: [
     {
       paragraphs: [
@@ -253,7 +253,7 @@ export const news = {
           phases — that scale of change, not a single building's news.`,
         `For what's changing inside one specific community, that content
           lives on that community's own site where one exists — Riviera's
-          <a href="https://riviera.dst.llc/news/">news page</a> is the
+          <a href="https://riviera.dst.llc/news/" title="What's changing in Azizi Riviera">news page</a> is the
           model this network follows as it covers more of MBR City the
           same way.`,
       ],
@@ -277,7 +277,7 @@ export const events = {
           seasonal programming that draws from neighbouring communities
           too.`,
         `For Riviera's own hyper-local calendar, see
-          <a href="https://riviera.dst.llc/events/">its events page</a>.`,
+          <a href="https://riviera.dst.llc/events/" title="What's on in Azizi Riviera">its events page</a>.`,
       ],
     },
   ],
