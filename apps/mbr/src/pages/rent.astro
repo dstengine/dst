@@ -1,0 +1,61 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LeadForm from "@dst/ui/LeadForm.astro";
+---
+<Layout
+  title="Renting in MBR City"
+  description="Looking to rent somewhere in MBR City? Tell us which community fits — District One, Meydan, Sobha Hartland, or Riviera — and get a matched shortlist."
+>
+  <section class="container hero">
+    <p class="eyebrow">Rent</p>
+    <h1>Renting in MBR City, matched to the right community</h1>
+    <p class="lede">
+      "MBR City" isn't one product — a District One villa, a Meydan
+      townhouse, a Sobha Hartland apartment, and a Riviera unit are
+      genuinely different rentals with different budgets and trade-offs.
+      This form is for narrowing that down before you start touring units.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>What actually varies community to community</h2>
+    <ul>
+      <li><strong>Unit type</strong> — villas and mansions in District One and much of Meydan versus apartments in Sobha Hartland and Riviera.</li>
+      <li><strong>Distance to Business Bay/Downtown</strong> — Sobha Hartland is closest; District One and Meydan trade proximity for more space and the lagoon/racecourse setting.</li>
+      <li><strong>Day-to-day walkability</strong> — Riviera's promenade is the outlier here; the villa communities are much more car-dependent for daily errands.</li>
+    </ul>
+  </section>
+
+  <section class="container">
+    <h2>Get a shortlist</h2>
+    <LeadForm endpoint="/api/lead" submitLabel="Request my MBR City shortlist">
+      <div class="field">
+        <label for="community">Which community interests you?</label>
+        <select id="community" name="meta.community">
+          <option value="">Not sure yet</option>
+          <option value="district-one">District One</option>
+          <option value="meydan">Meydan</option>
+          <option value="sobha-hartland">Sobha Hartland</option>
+          <option value="riviera">Azizi Riviera</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="unit-type">Unit type</label>
+        <select id="unit-type" name="meta.unitType">
+          <option value="">Prefer not to say</option>
+          <option value="apartment">Apartment</option>
+          <option value="townhouse">Townhouse</option>
+          <option value="villa">Villa</option>
+        </select>
+      </div>
+    </LeadForm>
+  </section>
+</Layout>
+
+<style>
+  .hero { padding-top: var(--space-5); }
+  .lede { font-size: var(--step-1); color: var(--ink-muted); max-width: 65ch; }
+  .field { display: flex; flex-direction: column; gap: 0.3em; }
+  .field label { font-size: var(--step--1); font-weight: 600; color: var(--ink-muted); }
+  .field select { font: inherit; padding: 0.6em 0.75em; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg); }
+</style>

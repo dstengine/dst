@@ -1,0 +1,15 @@
+/* mbr.dst — district guide for MBR City (Mohammed Bin Rashid City), the
+   broader area Riviera itself sits inside. Accent: turquoise/cyan, evoking
+   District One's Crystal Lagoon — the district's actual defining water
+   feature — and deliberately distinct in hue from riviera's plain ocean
+   blue, llc's forest teal, visas's bronze, and dst's indigo. */
+:root {
+  --accent: #0E7C86;
+  --accent-ink: #073F45;
+  --accent-tint: #E1F3F4;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --accent: #5FD1DB; --accent-ink: #C7F0F3; --accent-tint: #102A2C; }
+}
+:root[data-theme="dark"] { --accent: #5FD1DB; --accent-ink: #C7F0F3; --accent-tint: #102A2C; }
+:root[data-theme="light"] { --accent: #0E7C86; --accent-ink: #073F45; --accent-tint: #E1F3F4; }

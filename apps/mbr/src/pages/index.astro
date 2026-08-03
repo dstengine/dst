@@ -1,0 +1,113 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+<Layout
+  title="Living in MBR City"
+  description="What Mohammed Bin Rashid City actually is — the district behind the developer names, its major communities, and how they fit together."
+>
+  <section class="container hero">
+    <p class="eyebrow">Living here</p>
+    <h1>MBR City, the district behind the names</h1>
+    <p class="lede">
+      Mohammed Bin Rashid City is one of Dubai's largest master-planned
+      districts — tens of square kilometres south of Downtown and east of
+      Al Khail Road, built out community by community rather than as one
+      single project. Most people encounter it through a specific
+      development's name — District One, Meydan, Sobha Hartland, Azizi
+      Riviera — without necessarily clocking that they all sit inside the
+      same district and share its infrastructure, schools, and road network.
+      This site is the layer above those individual developments: what MBR
+      City actually is, and how its communities relate to each other.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>The communities, briefly</h2>
+    <p>
+      MBR City isn't one master developer's single-phase project — it's a
+      district hosting several distinct communities, each with its own
+      character:
+    </p>
+    <ul>
+      <li><strong>District One</strong> — villas and mansions wrapped around the Crystal Lagoon, MBR City's best-known amenity.</li>
+      <li><strong>Meydan</strong> — anchored by Meydan Racecourse, home of the Dubai World Cup, with a mix of villas and mid-rise residential.</li>
+      <li><strong>Sobha Hartland</strong> — a denser, more central pocket bordering Ras Al Khor, close to Business Bay.</li>
+      <li><strong>Azizi Riviera</strong> — the canal-front apartment development covered in full on its <a href="https://riviera.dst.llc">own dedicated site</a>, which goes deep on day-to-day life there in a way this page deliberately doesn't repeat.</li>
+    </ul>
+    <p>
+      Each has different pricing, unit types, and daily rhythm — treating
+      "MBR City" as one uniform product is the mistake this page exists to
+      correct.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>Start here</h2>
+    <div class="link-grid">
+      <a class="card link-card" href="/local-directory/">
+        <h3>Local directory</h3>
+        <p>What's actually available district-wide — dining, retail, fitness — not just inside one community.</p>
+      </a>
+      <a class="card link-card" href="/getting-to-the-water/">
+        <h3>Getting to the water</h3>
+        <p>The Crystal Lagoon, the canal, and the honest drive time to an actual beach.</p>
+      </a>
+      <a class="card link-card" href="/money/">
+        <h3>Money</h3>
+        <p>Nearby crypto exchange options and buying property with crypto.</p>
+      </a>
+      <a class="card link-card" href="/news-events/">
+        <h3>News & events</h3>
+        <p>Meydan racing, District One's lagoon events, and what's genuinely district-wide.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="container">
+    <a class="rent-banner" href="/rent/">
+      <div>
+        <p class="eyebrow">Rent</p>
+        <h3>Looking to rent somewhere in MBR City?</h3>
+        <p>Tell us which community fits and get a shortlist matched to it — District One, Meydan, Sobha Hartland, or Riviera.</p>
+      </div>
+      <span class="rent-banner-arrow" aria-hidden="true">&rarr;</span>
+    </a>
+  </section>
+</Layout>
+
+<style>
+  .hero { padding-top: var(--space-5); }
+  .lede { font-size: var(--step-1); color: var(--ink-muted); max-width: 70ch; }
+
+  .link-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-3);
+    margin-top: var(--space-3);
+  }
+  .link-card { text-decoration: none; color: inherit; display: block; }
+  .link-card h3 { margin-top: 0; font-size: var(--step-1); color: var(--accent); }
+  .link-card p { margin: 0; font-size: var(--step--1); color: var(--ink-muted); }
+
+  .rent-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    text-decoration: none;
+    color: inherit;
+    background: var(--accent-tint);
+    border: 1px solid var(--accent);
+    border-radius: var(--radius);
+    padding: var(--space-4);
+  }
+  .rent-banner h3 { margin: 0 0 0.3em; font-size: var(--step-2); color: var(--accent-ink); }
+  .rent-banner p:last-child { margin: 0; color: var(--ink-muted); max-width: 50ch; }
+  .rent-banner-arrow {
+    flex-shrink: 0;
+    font-size: var(--step-3);
+    color: var(--accent);
+    transition: transform 150ms ease-in-out;
+  }
+  .rent-banner:hover .rent-banner-arrow { transform: translateX(4px); }
+</style>

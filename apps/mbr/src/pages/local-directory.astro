@@ -1,0 +1,57 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Callout from "@dst/ui/Callout.astro";
+---
+<Layout
+  title="Local Directory"
+  description="Dining, retail, and fitness across MBR City's communities — District One, Meydan, Sobha Hartland, and Riviera — not just inside one of them."
+>
+  <section class="container hero">
+    <p class="eyebrow">Local directory</p>
+    <h1>What's available district-wide</h1>
+    <p class="lede">
+      Coverage varies a lot by community — some are still filling in retail,
+      others have had years to mature. This page is the district-level view;
+      for Riviera's promenade specifically, its own
+      <a href="https://riviera.dst.llc/local-directory/">local directory</a>
+      goes into more detail than makes sense to duplicate here.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>Retail and dining</h2>
+    <p>
+      Meydan One Mall is the district's main retail anchor — cinema,
+      dining, and a large-format mall experience most individual
+      communities don't have on their own. District One and Sobha Hartland
+      residents typically drive to it or to Downtown/Business Bay for
+      anything beyond community-level convenience retail. Riviera is the
+      exception: its ground-floor promenade covers a meaningful amount of
+      day-to-day dining and convenience shopping without leaving the
+      development.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>Fitness and outdoor</h2>
+    <p>
+      District One's defining feature here is the track around the Crystal
+      Lagoon — a genuinely well-used running and cycling loop that draws
+      people from other MBR City communities, not just District One
+      residents. Meydan has its own cycling and running infrastructure tied
+      to the racecourse grounds. Most residential buildings across the
+      district also include their own gym as a standard amenity.
+    </p>
+  </section>
+
+  <Callout kind="warn">
+    This page describes what's typically available at the district level —
+    specific tenants and venues change as communities continue to build out.
+    Confirm current details directly rather than relying on this page alone.
+  </Callout>
+</Layout>
+
+<style>
+  .hero { padding-top: var(--space-5); }
+  .lede { font-size: var(--step-1); color: var(--ink-muted); max-width: 65ch; }
+</style>
