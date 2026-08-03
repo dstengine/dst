@@ -8,9 +8,11 @@ interface Props {
   nav: { href: string; label: string }[];
   complianceNote?: string;
   jsonLd?: Record<string, unknown>[];
+  logoSrc?: string;
+  favicon?: boolean;
 }
 
-const { title, description, siteName, nav, complianceNote, jsonLd = [] } = Astro.props;
+const { title, description, siteName, nav, complianceNote, jsonLd = [], logoSrc, favicon = false } = Astro.props;
 ---
 <!doctype html>
 <html lang="en">
@@ -19,7 +21,15 @@ const { title, description, siteName, nav, complianceNote, jsonLd = [] } = Astro
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="icon" href="data:," />
+    {favicon ? (
+      <>
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+      </>
+    ) : (
+      <link rel="icon" href="data:," />
+    )}
     {jsonLd.map((block) => (
       <script type="application/ld+json" set:html={JSON.stringify(block)} />
     ))}
@@ -27,7 +37,9 @@ const { title, description, siteName, nav, complianceNote, jsonLd = [] } = Astro
   <body>
     <header class="site-header">
       <div class="container header-inner">
-        <a class="site-name" href="/">{siteName}</a>
+        <a class="site-name" href="/">
+          {logoSrc ? <img class="site-logo" src={logoSrc} alt={siteName} /> : siteName}
+        </a>
         <nav>
           <ul>
             {nav.map((item) => (
@@ -62,11 +74,22 @@ const { title, description, siteName, nav, complianceNote, jsonLd = [] } = Astro
     padding-bottom: var(--space-2);
   }
   .site-name {
+    display: flex;
+    align-items: center;
     font-family: var(--font-display);
     font-weight: 600;
     font-size: var(--step-1);
     color: var(--ink);
     text-decoration: none;
+  }
+  .site-logo {
+    /* The source art already has its own rounded-square corners baked in
+       at a much larger relative radius than the design system's --radius;
+       clipping a second, tighter CSS radius over it produced a visible
+       double-corner artifact. Let the image's own rounding stand alone. */
+    display: block;
+    height: 36px;
+    width: 36px;
   }
   nav ul {
     display: flex;
