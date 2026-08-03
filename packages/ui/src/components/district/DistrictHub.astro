@@ -91,8 +91,9 @@ function iconFor(href: string): string | undefined {
 <style>
   /* The CTA banner has no heading of its own to carry h2's margin-top,
      so without this it sits flush against the grid above it instead of
-     reading as its own section. */
-  .cta-section { margin-top: var(--space-5); }
+     reading as its own section. Match the grid's own row gap so it reads
+     as one more row in the same rhythm, not a separate section. */
+  .cta-section { margin-top: var(--space-3); }
 
   .link-card-icon {
     width: 22px;
