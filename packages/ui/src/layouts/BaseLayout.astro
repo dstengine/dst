@@ -40,12 +40,22 @@ const { title, description, siteName, nav, complianceNote, jsonLd = [], logoSrc,
         <a class="site-name" href="/">
           {logoSrc ? <img class="site-logo" src={logoSrc} alt={siteName} /> : siteName}
         </a>
-        <nav>
-          <ul>
+        <nav class="site-nav">
+          <ul class="nav-desktop">
             {nav.map((item) => (
               <li><a href={item.href}>{item.label}</a></li>
             ))}
           </ul>
+          <details class="nav-toggle">
+            <summary aria-label="Toggle menu">
+              <span class="nav-toggle-icon" aria-hidden="true"></span>
+            </summary>
+            <ul>
+              {nav.map((item) => (
+                <li><a href={item.href}>{item.label}</a></li>
+              ))}
+            </ul>
+          </details>
         </nav>
       </div>
     </header>
@@ -63,6 +73,7 @@ const { title, description, siteName, nav, complianceNote, jsonLd = [], logoSrc,
 
 <style>
   .site-header {
+    position: relative;
     border-bottom: 1px solid var(--border);
     background: var(--surface);
   }
@@ -91,7 +102,16 @@ const { title, description, siteName, nav, complianceNote, jsonLd = [], logoSrc,
     height: 36px;
     width: 36px;
   }
-  nav ul {
+  .site-nav { display: flex; align-items: center; }
+
+  /* Desktop: a plain inline row. The mobile <details> dropdown is a
+     separate, hidden-by-default element rather than something CSS
+     "forces open" here — content inside a closed <details> is suppressed
+     by the browser in a way author CSS can't override, so reusing one
+     <details> for both breakpoints left this nav at zero width on desktop
+     whenever it happened to render closed. Two elements, one per
+     breakpoint, sidesteps that entirely. */
+  .nav-desktop {
     display: flex;
     gap: var(--space-3);
     list-style: none;
@@ -99,13 +119,78 @@ const { title, description, siteName, nav, complianceNote, jsonLd = [], logoSrc,
     padding: 0;
     flex-wrap: wrap;
   }
-  nav a {
+  .nav-desktop li { display: block; }
+  .nav-toggle { display: none; }
+
+  .site-nav a {
     color: var(--ink-muted);
     text-decoration: none;
     font-size: var(--step--1);
     font-weight: 600;
   }
-  nav a:hover { color: var(--accent, #1F5C4E); }
+  .site-nav a:hover { color: var(--accent, #1F5C4E); }
+
+  /* Mobile: the wrapping inline nav read as a jumbled grid tangled with the
+     site name, so below this width it's replaced by a native <details>
+     dropdown — zero JS, same pattern as the Faq component elsewhere in
+     this design system. */
+  @media (max-width: 640px) {
+    .nav-desktop { display: none; }
+    .nav-toggle { display: block; }
+
+    .nav-toggle summary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      margin: -10px;
+      cursor: pointer;
+      list-style: none;
+    }
+    .nav-toggle summary::-webkit-details-marker { display: none; }
+    .nav-toggle summary::marker { content: ""; }
+
+    .nav-toggle-icon,
+    .nav-toggle-icon::before,
+    .nav-toggle-icon::after {
+      display: block;
+      width: 22px;
+      height: 2px;
+      border-radius: 2px;
+      background: var(--ink);
+      transition: transform 150ms ease-in-out, opacity 150ms ease-in-out, top 150ms ease-in-out;
+    }
+    .nav-toggle-icon { position: relative; }
+    .nav-toggle-icon::before,
+    .nav-toggle-icon::after { content: ""; position: absolute; left: 0; }
+    .nav-toggle-icon::before { top: -7px; }
+    .nav-toggle-icon::after { top: 7px; }
+
+    .nav-toggle[open] .nav-toggle-icon { background: transparent; }
+    .nav-toggle[open] .nav-toggle-icon::before { top: 0; transform: rotate(45deg); }
+    .nav-toggle[open] .nav-toggle-icon::after { top: 0; transform: rotate(-45deg); }
+
+    .nav-toggle ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      list-style: none;
+      margin: 0;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: var(--space-2) var(--space-3);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+    }
+    .nav-toggle li { display: block; border-top: 1px solid var(--border); }
+    .nav-toggle li:first-child { border-top: none; }
+    .nav-toggle a { display: block; padding: var(--space-2) 0; }
+  }
 
   .site-footer {
     margin-top: var(--space-6);
