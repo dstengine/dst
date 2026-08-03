@@ -8,3 +8,7 @@ dist/
 # variant, which breaks cross-platform installs (macOS dev -> Vercel's Linux
 # build). Let each environment resolve its own lockfile instead.
 package-lock.json
+
+# Playwright run artefacts
+test-results/
+playwright-report/

@@ -17,6 +17,12 @@
     "build:llc": "npm run build --workspace=apps/llc",
     "build:visas": "npm run build --workspace=apps/visas",
     "build:riviera": "npm run build --workspace=apps/riviera",
-    "build:mbr": "npm run build --workspace=apps/mbr"
+    "build:mbr": "npm run build --workspace=apps/mbr",
+    "test": "npm run build && npm run test:html && npm run test:layout",
+    "test:html": "node --test tests/build-output.test.js",
+    "test:layout": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.62.1"
   }
 }
