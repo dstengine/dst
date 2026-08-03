@@ -74,6 +74,7 @@ export const coffee = {
       blurb: "'90s-Dubai nostalgia concept, Building 24 — old-school local flavours on a modern café menu.",
       meta: "Building 24, Shop 3 · 6am–11pm daily",
       icon: "coffee",
+      image: "/venues/homebrew.jpg",
     },
   ],
   callout: "Tenants turn over as leases end. Check a specific spot is open before making it the reason for a trip.",
@@ -90,6 +91,7 @@ export const coffeeVenues = {
     hours: "6:00am – 11:00pm daily",
     externalHref: "https://www.instagram.com/homebrew.ae/",
     externalLabel: "Instagram",
+    image: "/venues/homebrew.jpg",
   },
 };
 
