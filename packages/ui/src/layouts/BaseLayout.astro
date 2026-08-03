@@ -154,11 +154,11 @@ const isDstHome = Astro.site?.hostname === "dst.llc";
   }
   .site-nav a:hover { color: var(--accent, #1F5C4E); }
 
-  /* Mobile: the wrapping inline nav read as a jumbled grid tangled with the
-     site name, so below this width it's replaced by a native <details>
-     dropdown — zero JS, same pattern as the Faq component elsewhere in
-     this design system. */
-  @media (max-width: 640px) {
+  /* Mobile and tablet: the wrapping inline nav read as a jumbled grid
+     tangled with the site name, so at and below tablet width it's
+     replaced by a native <details> dropdown — zero JS, same pattern as
+     the Faq component elsewhere in this design system. */
+  @media (max-width: 1024px) {
     .nav-desktop { display: none; }
     .nav-toggle { display: block; }
 
