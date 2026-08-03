@@ -22,6 +22,13 @@ const PAGES = [
 
 const url = (site, path) => `${baseUrl(site)}${path}`;
 
+// Analytics is inert until a measurement ID is configured, but once one is
+// these tests would reach for Google on every navigation. Keep the suite off
+// the network and independent of it being up.
+test.beforeEach(async ({ context }) => {
+  await context.route("**://*.googletagmanager.com/**", (route) => route.abort());
+});
+
 test.describe("no horizontal overflow", () => {
   // A wide element pushing the document sideways is the failure mode behind
   // every "the padding is broken" report.

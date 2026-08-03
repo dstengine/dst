@@ -10,6 +10,7 @@
     "./LeadForm.astro": "./src/components/LeadForm.astro",
     "./Callout.astro": "./src/components/Callout.astro",
     "./Redirect.astro": "./src/components/Redirect.astro",
+    "./analytics": "./src/analytics.ts",
     "./district/ContentPage.astro": "./src/components/district/ContentPage.astro",
     "./district/DistrictHub.astro": "./src/components/district/DistrictHub.astro",
     "./district/PhotoHero.astro": "./src/components/district/PhotoHero.astro",

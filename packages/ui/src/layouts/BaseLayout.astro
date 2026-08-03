@@ -1,5 +1,6 @@
 ---
 import '../styles/tokens.css';
+import Analytics from '../components/Analytics.astro';
 
 interface Props {
   title: string;
@@ -38,6 +39,7 @@ const isDstHome = Astro.site?.hostname === "dst.llc";
     {jsonLd.map((block) => (
       <script type="application/ld+json" set:html={JSON.stringify(block)} />
     ))}
+    <Analytics />
   </head>
   <body>
     <header class="site-header">

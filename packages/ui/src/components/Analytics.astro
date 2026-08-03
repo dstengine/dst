@@ -1,0 +1,25 @@
+---
+// GA4 tag, rendered from BaseLayout so every site in the network is measured
+// from one place rather than each app pasting a snippet.
+//
+// Renders nothing at all when no measurement ID is configured, which keeps
+// local builds, previews and the test suite from sending hits.
+import { GA_MEASUREMENT_ID } from "../analytics";
+
+const id = GA_MEASUREMENT_ID;
+---
+{id && (
+  <>
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${id}`}></script>
+    <script is:inline define:vars={{ id }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      // cookie_domain lets one property follow a visitor across the
+      // subdomains without starting a new session on each hop.
+      gtag("config", id, { cookie_domain: ".dst.llc" });
+    </script>
+  </>
+)}

@@ -246,6 +246,29 @@ describe("config", () => {
   });
 });
 
+describe("analytics", () => {
+  // The tag comes from BaseLayout so the network is measured from one place.
+  // Either every site carries it or none does — a site quietly missing it
+  // shows up as a hole in the funnel rather than as an error.
+  test("the tag is all-or-nothing across the network", () => {
+    const tagged = SITES.filter(({ app }) =>
+      pages.some((p) => p.app === app && p.url === "/" && p.html.includes("googletagmanager.com/gtag/js")),
+    ).map((s) => s.app);
+    assert.ok(
+      tagged.length === 0 || tagged.length === SITES.length,
+      `analytics is on some sites but not others: ${tagged.join(", ") || "(none)"}`,
+    );
+  });
+
+  // Redirect hops are noindex and exist only to bounce the visitor onward.
+  // Tagging them would book a pageview for a page nobody sees.
+  test("redirect hops are never tagged", () => {
+    for (const hop of pages.filter((p) => p.url.startsWith("/go/"))) {
+      assert.doesNotMatch(hop.html, /googletagmanager/, `${hop.app}${hop.url}: analytics on a redirect hop`);
+    }
+  });
+});
+
 describe("structured data", () => {
   test("every JSON-LD block parses and is typed", () => {
     for (const p of contentPages()) {
