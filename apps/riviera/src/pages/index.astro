@@ -3,6 +3,6 @@ import Layout from "../layouts/Layout.astro";
 import DistrictHub from "@dst/ui/district/DistrictHub.astro";
 import { index } from "../content";
 ---
-<Layout title={index.title} description={index.description}>
+<Layout {...index}>
   <DistrictHub {...index} />
 </Layout>

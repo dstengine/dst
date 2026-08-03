@@ -8,9 +8,6 @@ export const index = {
     "What day-to-day life looks like in Azizi Riviera, block by block — the canal-front development in MBR City.",
   eyebrow: "Living here",
   h1: "Azizi Riviera, block by block",
-  image: "/riviera.jpg",
-  imageAlt:
-    "Illustration of the Azizi Riviera promenade at night — a generated image, not a photograph of the development.",
   lede: `Azizi Riviera runs along the Dubai Water Canal in MBR City — a stretch
     of Mediterranean-style low-rise blocks wrapped around a ground-floor
     retail promenade, one of the larger single developments of its kind in

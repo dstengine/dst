@@ -7,9 +7,34 @@ interface Props {
   title: string;
   description: string;
   jsonLd?: Record<string, unknown>[];
+  // Page opener. Pages pass their whole content object, so these arrive
+  // alongside fields the layout ignores.
+  eyebrow?: string;
+  h1?: string;
+  lede?: string;
+  ledeWidth?: string;
+  image?: string;
+  imageAlt?: string;
 }
-const { title, description, jsonLd } = Astro.props;
+
+const { title, description, jsonLd, eyebrow, h1, lede, ledeWidth, image, imageAlt } = Astro.props;
+
+// The site's header image is the default; a page overrides it by setting
+// its own `image` in content.ts.
+const headerImage = image ?? site.headerImage;
+const headerImageAlt = imageAlt ?? (image ? undefined : site.headerImageAlt);
 ---
-<DistrictLayout title={title} description={description} jsonLd={jsonLd} {...site}>
+<DistrictLayout
+  {...site}
+  title={title}
+  description={description}
+  jsonLd={jsonLd}
+  eyebrow={eyebrow}
+  h1={h1}
+  lede={lede}
+  ledeWidth={ledeWidth}
+  image={headerImage}
+  imageAlt={headerImageAlt}
+>
   <slot />
 </DistrictLayout>

@@ -3,6 +3,6 @@ import Layout from "../layouts/Layout.astro";
 import ContentPage from "@dst/ui/district/ContentPage.astro";
 import { water } from "../content";
 ---
-<Layout title={water.title} description={water.description}>
+<Layout {...water}>
   <ContentPage {...water} />
 </Layout>

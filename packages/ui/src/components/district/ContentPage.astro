@@ -22,25 +22,15 @@ interface Venue {
 }
 
 interface Props {
-  eyebrow: string;
-  h1: string;
-  lede: string;
   sections: Section[];
   venues?: Venue[];
   venuesHeading?: string;
   calloutKind?: "note" | "warn";
   callout?: string;
-  ledeWidth?: string;
 }
 
-const { eyebrow, h1, lede, sections, venues, venuesHeading, calloutKind = "warn", callout, ledeWidth } = Astro.props;
+const { sections, venues, venuesHeading, calloutKind = "warn", callout } = Astro.props;
 ---
-<section class="container hero">
-  <p class="eyebrow">{eyebrow}</p>
-  <h1>{h1}</h1>
-  <p class="lede" style={ledeWidth ? `max-width: ${ledeWidth}` : undefined} set:html={lede} />
-</section>
-
 {sections.map((section) => (
   <section class="container">
     {section.heading && <h2>{section.heading}</h2>}

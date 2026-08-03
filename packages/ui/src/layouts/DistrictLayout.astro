@@ -6,6 +6,7 @@
 // per app. What actually differs between sites (name, accent, compliance
 // text) comes in as config from the app's own site.config.ts.
 import BaseLayout from "./BaseLayout.astro";
+import PhotoHero from "../components/district/PhotoHero.astro";
 
 interface Props {
   title: string;
@@ -15,9 +16,22 @@ interface Props {
   complianceNote: string;
   partnerDisclosure?: boolean;
   jsonLd?: Record<string, unknown>[];
+  // Page opener. Every district page has one, so it lives here rather than
+  // being repeated in each body component. `image` is resolved by the app's
+  // Layout: the site's default header unless the page overrides it.
+  eyebrow?: string;
+  h1?: string;
+  lede?: string;
+  ledeWidth?: string;
+  image?: string;
+  imageAlt?: string;
 }
 
-const { title, description, siteName, titleSuffix, complianceNote, partnerDisclosure = true, jsonLd } = Astro.props;
+const {
+  title, description, siteName, titleSuffix, complianceNote,
+  partnerDisclosure = true, jsonLd,
+  eyebrow, h1, lede, ledeWidth, image, imageAlt,
+} = Astro.props;
 
 // Titles are built from siteName so the same nav reads specifically on
 // each district site rather than repeating the bare label.
@@ -42,5 +56,26 @@ const nav = [
   partnerDisclosure={partnerDisclosure}
   jsonLd={jsonLd}
 >
+  {h1 && (
+    <header class:list={["container", "district-hero", { "has-photo": image }]}>
+      {image ? (
+        <PhotoHero eyebrow={eyebrow ?? ""} title={h1} image={image} imageAlt={imageAlt} />
+      ) : (
+        <>
+          <p class="eyebrow">{eyebrow}</p>
+          <h1>{h1}</h1>
+        </>
+      )}
+      {lede && <p class="lede" style={ledeWidth ? `max-width: ${ledeWidth}` : undefined} set:html={lede} />}
+    </header>
+  )}
   <slot />
 </BaseLayout>
+
+<style>
+  .district-hero { padding-top: var(--space-5); }
+  /* The photograph already carries the eyebrow and heading, so the block
+     above the lede needs less breathing room than the plain version. */
+  .district-hero.has-photo { padding-top: var(--space-4); }
+  .district-hero.has-photo .lede { margin-top: var(--space-3); }
+</style>

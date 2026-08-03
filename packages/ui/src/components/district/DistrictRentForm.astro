@@ -12,23 +12,13 @@ interface FormField {
 }
 
 interface Props {
-  eyebrow: string;
-  h1: string;
-  lede: string;
   varies: { label: string; text: string }[];
   formSubmitLabel: string;
   formFields: FormField[];
-  ledeWidth?: string;
 }
 
-const { eyebrow, h1, lede, varies, formSubmitLabel, formFields, ledeWidth } = Astro.props;
+const { varies, formSubmitLabel, formFields } = Astro.props;
 ---
-<section class="container hero">
-  <p class="eyebrow">{eyebrow}</p>
-  <h1>{h1}</h1>
-  <p class="lede" style={ledeWidth ? `max-width: ${ledeWidth}` : undefined} set:html={lede} />
-</section>
-
 <section class="container">
   <h2>What actually varies</h2>
   <ul>
