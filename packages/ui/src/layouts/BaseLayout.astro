@@ -13,7 +13,8 @@ interface Props {
   partnerDisclosure?: boolean;
 }
 
-const { title, description, siteName, nav, complianceNote, jsonLd = [], logoSrc, favicon = false, partnerDisclosure = false } = Astro.props;
+const { title, description, siteName, nav, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true } = Astro.props;
+const isDstHome = Astro.site?.hostname === "dst.llc";
 ---
 <!doctype html>
 <html lang="en">
@@ -38,8 +39,9 @@ const { title, description, siteName, nav, complianceNote, jsonLd = [], logoSrc,
   <body>
     <header class="site-header">
       <div class="container header-inner">
-        <a class="site-name" href="/">
-          {logoSrc ? <img class="site-logo" src={logoSrc} alt={siteName} /> : siteName}
+        <a class="site-name" href="/" title={siteName}>
+          <img class="site-logo" src={logoSrc} alt="DST" width="28" height="28" />
+          {siteName}
         </a>
         <nav class="site-nav">
           <ul class="nav-desktop">
@@ -79,7 +81,9 @@ const { title, description, siteName, nav, complianceNote, jsonLd = [], logoSrc,
       <div class="container">
         <p class="footer-note">{complianceNote}</p>
         <p class="footer-copy">
-          &copy; {new Date().getFullYear()} {siteName}. Part of the DST network{partnerDisclosure && (
+          &copy; {new Date().getFullYear()} {siteName}. Part of the{" "}
+          {isDstHome ? "DST network" : <a href="https://dst.llc">DST network</a>}
+          {partnerDisclosure && (
             <>, digital partner of DEAL KEY PROPERTIES LLC, DED License No. 1523000 &middot; RERA ORN 52875</>
           )}.
         </p>
@@ -104,6 +108,9 @@ const { title, description, siteName, nav, complianceNote, jsonLd = [], logoSrc,
   .site-name {
     display: flex;
     align-items: center;
+    gap: var(--space-1);
+    flex-shrink: 0;
+    white-space: nowrap;
     font-family: var(--font-display);
     font-weight: 600;
     font-size: var(--step-1);
@@ -116,8 +123,8 @@ const { title, description, siteName, nav, complianceNote, jsonLd = [], logoSrc,
        clipping a second, tighter CSS radius over it produced a visible
        double-corner artifact. Let the image's own rounding stand alone. */
     display: block;
-    height: 36px;
-    width: 36px;
+    height: 28px;
+    width: 28px;
   }
   .site-nav { display: flex; align-items: center; }
 
@@ -218,4 +225,5 @@ const { title, description, siteName, nav, complianceNote, jsonLd = [], logoSrc,
   }
   .footer-note { max-width: 60ch; margin: 0 0 var(--space-2); }
   .footer-copy { margin: 0; }
+  .footer-copy a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 </style>

@@ -10,10 +10,9 @@ import Layout from "../layouts/Layout.astro";
     <h1>We build the systems. Partners execute the vertical.</h1>
     <p class="lede">
       DST is an operating group, not a single business. We design and run the
-      digital infrastructure — sites, lead capture, CRM — behind ventures in
-      three fast-moving spaces, and pair each one with a licensed local
-      partner who handles the regulated, on-the-ground side. The first builds
-      are live in Dubai.
+      digital infrastructure behind ventures in three fast-moving spaces, and
+      pair each one with a licensed local partner who handles the regulated,
+      on-the-ground side. The first builds are live in Dubai.
     </p>
     <div class="hero-actions">
       <a class="button" href="#portfolio">Projects</a>
@@ -23,35 +22,29 @@ import Layout from "../layouts/Layout.astro";
 
   <section id="portfolio" class="container">
     <h2>Projects</h2>
-    <p>
-      Each on its own domain. A local partner handles execution where the
-      vertical requires one.
-    </p>
     <div class="venture-grid">
-      <article class="card venture">
+      <a class="card venture" href="https://llc.dst.llc" title="Company formation in Dubai — llc.dst.llc">
         <div class="venture-meta">
           <p class="eyebrow">Company formation</p>
           <span class="venture-status">Live</span>
         </div>
-        <h3>llc.dst.llc</h3>
+        <h3>Company formation</h3>
         <p>
           Free zones, mainland, banking, payment processing — company
           formation in Dubai.
         </p>
-        <a class="venture-link" href="https://llc.dst.llc">llc.dst.llc &rarr;</a>
-      </article>
-      <article class="card venture">
+      </a>
+      <a class="card venture" href="https://riviera.dst.llc" title="Azizi Riviera guide — riviera.dst.llc">
         <div class="venture-meta">
           <p class="eyebrow">Real estate</p>
           <span class="venture-status">Live</span>
         </div>
-        <h3>riviera.dst.llc</h3>
+        <h3>Azizi Riviera guide</h3>
         <p>
           Coffee, food, pools, water — Azizi Riviera covered building by
           building.
         </p>
-        <a class="venture-link" href="https://riviera.dst.llc">riviera.dst.llc &rarr;</a>
-      </article>
+      </a>
       <article class="card venture">
         <div class="venture-meta">
           <p class="eyebrow">Crypto</p>
@@ -119,8 +112,14 @@ import Layout from "../layouts/Layout.astro";
     border-radius: 999px;
   }
   .venture-status-progress { color: var(--warn); background: var(--warn-bg); }
-  .venture h3 { margin-top: var(--space-1); font-size: var(--step-1); font-family: var(--font-mono); font-weight: 600; }
-  .venture-link { display: inline-block; margin-top: var(--space-2); font-weight: 600; font-size: var(--step--1); }
+  .venture h3 { margin-top: var(--space-1); margin-bottom: var(--space-1); font-size: var(--step-1); font-weight: 600; }
+  a.venture {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    transition: border-color 150ms ease-in-out;
+  }
+  a.venture:hover { border-color: var(--accent, #1F5C4E); }
 
   .approach-list { display: flex; flex-direction: column; gap: var(--space-2); padding-left: 1.2em; }
   .approach-list li { max-width: var(--content-width); }

@@ -17,7 +17,7 @@ interface Props {
   jsonLd?: Record<string, unknown>[];
 }
 
-const { title, description, siteName, titleSuffix, complianceNote, partnerDisclosure = false, jsonLd } = Astro.props;
+const { title, description, siteName, titleSuffix, complianceNote, partnerDisclosure = true, jsonLd } = Astro.props;
 
 const nav = [
   { href: "/", label: "Living here" },
