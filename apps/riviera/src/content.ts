@@ -66,6 +66,16 @@ export const coffee = {
           currently trading.`,
       ],
     },
+    {
+      heading: "Building 24: Homebrew",
+      paragraphs: [
+        `The name worth knowing on this stretch. Homebrew, in Building 24,
+          runs a '90s-Dubai nostalgia concept — old-school local flavours
+          reworked into a modern café menu rather than a standard
+          specialty-coffee list — and keeps early-to-late hours, 6am to
+          11pm, which covers both the morning walk crowd and a late coffee.`,
+      ],
+    },
   ],
   callout: "Tenants turn over as leases end. Check a specific spot is open before making it the reason for a trip.",
 };
