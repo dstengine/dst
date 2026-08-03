@@ -11,7 +11,26 @@ export function getStaticPaths() {
 }
 
 const { venue } = Astro.props;
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    name: venue.name,
+    description: venue.description,
+    ...(venue.image && { image: new URL(venue.image, Astro.site).toString() }),
+    ...(venue.building && {
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: venue.building,
+        addressLocality: "Dubai",
+        addressCountry: "AE",
+      },
+    }),
+    ...(venue.externalHref && { sameAs: [venue.externalHref] }),
+  },
+];
 ---
-<Layout title={`${venue.name} — Coffee in Azizi Riviera`} description={venue.description}>
+<Layout title={`${venue.name} — Coffee in Azizi Riviera`} description={venue.description} jsonLd={jsonLd}>
   <VenuePage {...venue} backHref="/coffee/" backLabel="Coffee in Azizi Riviera" />
 </Layout>

@@ -2,6 +2,8 @@
 // Detail page for a single named venue (e.g. /coffee/homebrew/). Generic
 // so any topic (coffee, food, ...) can route venue slugs through it — see
 // each app's src/pages/<topic>/[slug].astro.
+import { iconFor } from "../../icons";
+
 interface Props {
   eyebrow: string;
   name: string;
@@ -16,6 +18,8 @@ interface Props {
 }
 
 const { eyebrow, name, description, building, hours, externalHref, externalLabel = "Instagram", backHref, backLabel, image } = Astro.props;
+const pinPath = iconFor("/pin/");
+const clockPath = iconFor("/clock/");
 ---
 <section class="container hero">
   <p class="eyebrow">{eyebrow}</p>
@@ -29,17 +33,29 @@ const { eyebrow, name, description, building, hours, externalHref, externalLabel
   </section>
 )}
 
-{(building || hours || externalHref) && (
+{(building || hours) && (
   <section class="container">
-    <dl class="venue-meta">
-      {building && (<><dt>Location</dt><dd>{building}</dd></>)}
-      {hours && (<><dt>Hours</dt><dd>{hours}</dd></>)}
-      {externalHref && (<><dt>More</dt><dd><a href={externalHref} title={`${name} on ${externalLabel}`}>{externalLabel} &rarr;</a></dd></>)}
-    </dl>
+    <ul class="venue-facts">
+      {building && (
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={pinPath} /></svg>
+          {building}
+        </li>
+      )}
+      {hours && (
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={clockPath} /></svg>
+          {hours}
+        </li>
+      )}
+    </ul>
   </section>
 )}
 
-<section class="container">
+<section class="container venue-actions">
+  {externalHref && (
+    <a class="button" href={externalHref} title={`${name} on ${externalLabel}`}>{externalLabel} &rarr;</a>
+  )}
   <a class="venue-back" href={backHref} title={backLabel}>&larr; {backLabel}</a>
 </section>
 
@@ -51,13 +67,28 @@ const { eyebrow, name, description, building, hours, externalHref, externalLabel
     object-fit: cover;
     object-position: top;
   }
-  .venue-meta {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: var(--space-1) var(--space-3);
+  .venue-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1) var(--space-4);
     margin: 0;
+    padding: 0;
+    list-style: none;
   }
-  .venue-meta dt { font-weight: 600; color: var(--ink-muted); }
-  .venue-meta dd { margin: 0; }
+  .venue-facts li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: var(--step--1);
+    color: var(--ink-muted);
+  }
+  .venue-facts svg { width: 18px; height: 18px; flex-shrink: 0; color: var(--accent); }
+  .venue-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
   .venue-back { font-weight: 600; font-size: var(--step--1); }
 </style>
