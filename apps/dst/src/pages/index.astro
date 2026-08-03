@@ -93,8 +93,10 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <style>
-  .hero { padding-top: var(--space-5); padding-bottom: var(--space-4); }
-  .lede { font-size: var(--step-1); color: var(--ink-muted); max-width: 65ch; }
+  /* .hero and .lede: shared in @dst/ui tokens.css. This page's hero is
+     followed immediately by another section, so it adds bottom padding
+     the shared default doesn't have. */
+  .hero { padding-bottom: var(--space-4); }
   .hero-actions { display: flex; gap: var(--space-2); margin-top: var(--space-3); flex-wrap: wrap; }
 
   .venture-grid {

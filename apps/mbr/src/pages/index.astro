@@ -76,50 +76,19 @@ import Layout from "../layouts/Layout.astro";
   </section>
 
   <section class="container">
-    <a class="rent-banner" href="/rent/">
+    <a class="cta-banner" href="/rent/">
       <div>
         <p class="eyebrow">Rent</p>
         <h3>Looking to rent somewhere in MBR City?</h3>
         <p>Tell us which community fits and get a shortlist matched to it — District One, Meydan, Sobha Hartland, or Riviera.</p>
       </div>
-      <span class="rent-banner-arrow" aria-hidden="true">&rarr;</span>
+      <span class="cta-banner-arrow" aria-hidden="true">&rarr;</span>
     </a>
   </section>
 </Layout>
 
 <style>
-  .hero { padding-top: var(--space-5); }
-  .lede { font-size: var(--step-1); color: var(--ink-muted); max-width: 70ch; }
-
-  .link-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: var(--space-3);
-    margin-top: var(--space-3);
-  }
-  .link-card { text-decoration: none; color: inherit; display: block; }
-  .link-card h3 { margin-top: 0; font-size: var(--step-1); color: var(--accent); }
-  .link-card p { margin: 0; font-size: var(--step--1); color: var(--ink-muted); }
-
-  .rent-banner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-3);
-    text-decoration: none;
-    color: inherit;
-    background: var(--accent-tint);
-    border: 1px solid var(--accent);
-    border-radius: var(--radius);
-    padding: var(--space-4);
-  }
-  .rent-banner h3 { margin: 0 0 0.3em; font-size: var(--step-2); color: var(--accent-ink); }
-  .rent-banner p:last-child { margin: 0; color: var(--ink-muted); max-width: 50ch; }
-  .rent-banner-arrow {
-    flex-shrink: 0;
-    font-size: var(--step-3);
-    color: var(--accent);
-    transition: transform 150ms ease-in-out;
-  }
-  .rent-banner:hover .rent-banner-arrow { transform: translateX(4px); }
+  /* .hero, .lede, .link-grid, .link-card, .cta-banner: shared in @dst/ui
+     tokens.css. Only this page's wider lede needs a local override. */
+  .lede { max-width: 70ch; }
 </style>

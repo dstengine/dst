@@ -59,6 +59,18 @@ const { title, description, siteName, nav, complianceNote, jsonLd = [], logoSrc,
         </nav>
       </div>
     </header>
+    <script>
+      // Native <details> only closes on a second click of its own summary.
+      // Close it on an outside click or Escape too, like any other menu.
+      document.querySelectorAll<HTMLDetailsElement>(".nav-toggle").forEach((toggle) => {
+        document.addEventListener("click", (event) => {
+          if (toggle.open && !toggle.contains(event.target as Node)) toggle.open = false;
+        });
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && toggle.open) toggle.open = false;
+        });
+      });
+    </script>
     <main>
       <slot />
     </main>
