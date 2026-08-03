@@ -77,7 +77,7 @@ function iconFor(href: string): string | undefined {
   </div>
 </section>
 
-<section class="container">
+<section class="container cta-section">
   <a class="cta-banner" href={cta.href} title={cta.description}>
     <div>
       <p class="eyebrow">{cta.eyebrow}</p>
@@ -89,6 +89,11 @@ function iconFor(href: string): string | undefined {
 </section>
 
 <style>
+  /* The CTA banner has no heading of its own to carry h2's margin-top,
+     so without this it sits flush against the grid above it instead of
+     reading as its own section. */
+  .cta-section { margin-top: var(--space-5); }
+
   .link-card-icon {
     width: 22px;
     height: 22px;
