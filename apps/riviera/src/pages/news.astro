@@ -1,0 +1,44 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+<Layout
+  title="Riviera News"
+  description="Local news for Azizi Riviera residents — what's actually changing in the development, not another citywide press release."
+>
+  <section class="container hero">
+    <p class="eyebrow">News</p>
+    <h1>What's changing in Riviera</h1>
+    <p class="lede">
+      Dubai has no shortage of citywide news coverage already. This page is
+      for the other kind: what's actually changing inside Riviera itself —
+      not events (see the <a href="/events/">events page</a> for those),
+      but the ongoing state of the development.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>What counts as news here</h2>
+    <p>
+      New promenade tenants opening, phases of the development completing,
+      changes to building management or amenities, and anything else that
+      changes what it's actually like to live in Riviera. Citywide stories
+      get plenty of coverage elsewhere; this page deliberately doesn't
+      duplicate that.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>Follow along</h2>
+    <p>
+      The fastest-moving version of this lives on Instagram
+      (<strong>@rivieradst</strong>) rather than here — this page is the
+      durable, searchable record, while the Instagram account is where it
+      happens first.
+    </p>
+  </section>
+</Layout>
+
+<style>
+  .hero { padding-top: var(--space-5); }
+  .lede { font-size: var(--step-1); color: var(--ink-muted); max-width: 65ch; }
+</style>

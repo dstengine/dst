@@ -1,0 +1,36 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+<Layout
+  title="MBR City News"
+  description="District-wide news across MBR City — what's genuinely changing across communities, not one community's own updates."
+>
+  <section class="container hero">
+    <p class="eyebrow">News</p>
+    <h1>What's changing, district-wide</h1>
+    <p class="lede">
+      This page covers what's changing across MBR City's communities, not
+      what's hyper-local to just one of them — and it's kept separate from
+      <a href="/events/">events</a>, since "what's changed" and "what's on
+      this week" are different questions.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>What counts as district-wide here</h2>
+    <p>
+      New Meydan One Mall tenants, infrastructure or road changes affecting
+      the district as a whole, and community developments completing new
+      phases. For what's changing inside one specific community, that
+      content lives on that community's own site where one exists —
+      Riviera's <a href="https://riviera.dst.llc/news/">own news page</a>
+      is the model this network follows as it covers more of MBR City's
+      individual communities the same way.
+    </p>
+  </section>
+</Layout>
+
+<style>
+  .hero { padding-top: var(--space-5); }
+  .lede { font-size: var(--step-1); color: var(--ink-muted); max-width: 65ch; }
+</style>

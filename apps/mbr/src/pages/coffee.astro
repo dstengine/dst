@@ -1,0 +1,51 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+<Layout
+  title="Coffee in MBR City"
+  description="Where to get coffee across MBR City's communities — Meydan One, the Riviera promenade, and what's community-level versus district-level."
+>
+  <section class="container hero">
+    <p class="eyebrow">Coffee</p>
+    <h1>Coffee across the district</h1>
+    <p class="lede">
+      Coffee coverage in MBR City splits into two kinds: what's inside your
+      own community, and what's worth a short drive to Meydan One for.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>Meydan One</h2>
+    <p>
+      The district's main concentration of cafes and coffee chains, drawing
+      from across MBR City rather than just Meydan residents — the default
+      answer for "where's good coffee near here" if you're not in walking
+      distance of a community with its own promenade.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>Inside Riviera</h2>
+    <p>
+      The one community with genuine walkable coffee coverage of its own —
+      cafes spread along the ground-floor promenade. See
+      <a href="https://riviera.dst.llc/coffee/">Riviera's own coffee page</a>
+      for what's actually there.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>District One, Meydan, Sobha Hartland</h2>
+    <p>
+      These communities lean more heavily on Meydan One and nearby
+      Business Bay/Downtown for cafes rather than having dense on-site
+      coffee retail of their own — worth knowing before assuming a
+      walkable coffee scene from renders alone.
+    </p>
+  </section>
+</Layout>
+
+<style>
+  .hero { padding-top: var(--space-5); }
+  .lede { font-size: var(--step-1); color: var(--ink-muted); max-width: 65ch; }
+</style>
