@@ -60,11 +60,18 @@ import Layout from "../layouts/Layout.astro";
         <h3>News & events</h3>
         <p>What's on locally — not another citywide press release.</p>
       </a>
-      <a class="card link-card" href="/rent/">
-        <h3>Rent</h3>
-        <p>Looking to rent in Riviera specifically? Start here.</p>
-      </a>
     </div>
+  </section>
+
+  <section class="container">
+    <a class="rent-banner" href="/rent/">
+      <div>
+        <p class="eyebrow">Rent</p>
+        <h3>Looking to rent in Riviera specifically?</h3>
+        <p>Get a shortlist narrowed to the building, view, and unit size you actually want.</p>
+      </div>
+      <span class="rent-banner-arrow" aria-hidden="true">&rarr;</span>
+    </a>
   </section>
 </Layout>
 
@@ -81,4 +88,26 @@ import Layout from "../layouts/Layout.astro";
   .link-card { text-decoration: none; color: inherit; display: block; }
   .link-card h3 { margin-top: 0; font-size: var(--step-1); color: var(--accent); }
   .link-card p { margin: 0; font-size: var(--step--1); color: var(--ink-muted); }
+
+  .rent-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    text-decoration: none;
+    color: inherit;
+    background: var(--accent-tint);
+    border: 1px solid var(--accent);
+    border-radius: var(--radius);
+    padding: var(--space-4);
+  }
+  .rent-banner h3 { margin: 0 0 0.3em; font-size: var(--step-2); color: var(--accent-ink); }
+  .rent-banner p:last-child { margin: 0; color: var(--ink-muted); max-width: 50ch; }
+  .rent-banner-arrow {
+    flex-shrink: 0;
+    font-size: var(--step-3);
+    color: var(--accent);
+    transition: transform 150ms ease-in-out;
+  }
+  .rent-banner:hover .rent-banner-arrow { transform: translateX(4px); }
 </style>

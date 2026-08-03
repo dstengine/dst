@@ -146,6 +146,15 @@ a { color: var(--accent, #1F5C4E); }
 }
 .button:hover { filter: brightness(1.08); }
 
+/* Dark-mode accents are lightened for visibility against the dark
+   background, which leaves white button text under-contrasted. Dark ink
+   on the light accent reads crisper and matches the light-mode pairing
+   (dark accent + white text) in spirit. */
+@media (prefers-color-scheme: dark) {
+  .button { color: var(--bg); }
+}
+:root[data-theme="dark"] .button { color: var(--bg); }
+
 .button-secondary {
   background: transparent;
   color: var(--ink);
