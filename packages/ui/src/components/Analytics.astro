@@ -4,26 +4,34 @@
 //
 // Renders nothing at all when no measurement ID is configured, which keeps
 // local builds, previews and the test suite from sending hits.
+//
+// The snippet is emitted verbatim, in Google's canonical shape, rather than
+// via define:vars. Two reasons, both learned the hard way:
+//   - define:vars wraps the script in an IIFE, which trapped gtag in a
+//     closure where nothing on the page could call gtag("event", …);
+//   - it also forced the measurement ID to be passed as a variable, and
+//     Search Console's ownership check scans the markup for a literal
+//     gtag('config', 'G-…') — with a variable there it reports finding no
+//     Analytics code at all.
 import { GA_MEASUREMENT_ID } from "../analytics";
 
 const id = GA_MEASUREMENT_ID;
+
+// Interpolated straight into a <script>, so refuse anything that isn't the
+// shape of a measurement ID.
+const valid = /^G-[A-Z0-9]+$/.test(id);
+if (id && !valid) {
+  throw new Error(`Analytics: "${id}" is not a valid GA4 measurement ID`);
+}
+
+const snippet = `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${id}', { cookie_domain: '.dst.llc' });`;
 ---
-{id && (
+{valid && (
   <>
     <script async src={`https://www.googletagmanager.com/gtag/js?id=${id}`}></script>
-    <script is:inline define:vars={{ id }}>
-      window.dataLayer = window.dataLayer || [];
-      // Assigned onto window rather than declared: define:vars wraps this
-      // script in an IIFE, so a plain `function gtag()` would be trapped in
-      // that closure. Config would still fire, but nothing could call
-      // gtag("event", …) later — which is how lead submissions get tracked.
-      window.gtag = function gtag() {
-        window.dataLayer.push(arguments);
-      };
-      gtag("js", new Date());
-      // cookie_domain lets one property follow a visitor across the
-      // subdomains without starting a new session on each hop.
-      gtag("config", id, { cookie_domain: ".dst.llc" });
-    </script>
+    <script is:inline set:html={snippet} />
   </>
 )}

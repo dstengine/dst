@@ -312,6 +312,21 @@ describe("analytics", () => {
     );
   });
 
+  // Search Console's ownership check scans the markup for a literal
+  // gtag('config', 'G-…'). Passing the id as a variable — which is what
+  // Astro's define:vars forces — makes it report finding no Analytics code
+  // at all, and verification fails.
+  test("the config call carries a literal measurement id", () => {
+    const home = pages.find((p) => p.app === "riviera" && p.url === "/");
+    const loader = home.html.match(/gtag\/js\?id=(G-[A-Z0-9]+)/);
+    if (!loader) return; // no measurement ID configured in this build
+    assert.match(
+      home.html,
+      new RegExp(`gtag\\(\\s*['"]config['"]\\s*,\\s*['"]${loader[1]}['"]`),
+      "config call does not use a literal measurement id",
+    );
+  });
+
   // Redirect hops are noindex and exist only to bounce the visitor onward.
   // Tagging them would book a pageview for a page nobody sees.
   test("redirect hops are never tagged", () => {
