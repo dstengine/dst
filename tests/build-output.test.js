@@ -246,6 +246,58 @@ describe("config", () => {
   });
 });
 
+describe("sitemap", () => {
+  const sitemapUrls = (app) => {
+    const dir = path.join(REPO, "apps", app, "dist");
+    const index = path.join(dir, "sitemap-index.xml");
+    assert.ok(existsSync(index), `apps/${app}: no sitemap-index.xml`);
+    const urls = [];
+    for (let i = 0; existsSync(path.join(dir, `sitemap-${i}.xml`)); i++) {
+      const xml = readFileSync(path.join(dir, `sitemap-${i}.xml`), "utf8");
+      urls.push(...[...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => m[1]));
+    }
+    return urls;
+  };
+
+  test("every site ships a sitemap listing exactly its indexable pages", () => {
+    for (const { app, host } of SITES) {
+      const listed = new Set(sitemapUrls(app).map((u) => new URL(u).pathname));
+      const indexable = pages.filter((p) => p.app === app && !p.url.startsWith("/go/")).map((p) => p.url);
+
+      assert.deepEqual(
+        indexable.filter((url) => !listed.has(url)),
+        [],
+        `${app}: built pages missing from the sitemap`,
+      );
+      assert.deepEqual(
+        [...listed].filter((url) => !indexable.includes(url)),
+        [],
+        `${app}: sitemap lists pages that were not built`,
+      );
+    }
+  });
+
+  // robots.txt disallows /go/; listing a hop in the sitemap would ask Google
+  // to crawl the exact thing we just told it to skip.
+  test("no sitemap lists a /go/ hop", () => {
+    for (const { app } of SITES) {
+      const hops = sitemapUrls(app).filter((u) => u.includes("/go/"));
+      assert.deepEqual(hops, [], `${app}: outbound hops in the sitemap`);
+    }
+  });
+
+  test("robots.txt points at a sitemap that exists", () => {
+    for (const { app, host } of SITES) {
+      const robots = readFileSync(path.join(REPO, "apps", app, "dist", "robots.txt"), "utf8");
+      const declared = (robots.match(/^Sitemap:\s*(\S+)$/m) || [])[1];
+      assert.ok(declared, `apps/${app}: robots.txt declares no sitemap`);
+      assert.equal(new URL(declared).host, host, `apps/${app}: sitemap URL points at the wrong host`);
+      const file = path.join(REPO, "apps", app, "dist", new URL(declared).pathname.slice(1));
+      assert.ok(existsSync(file), `apps/${app}: robots.txt points at ${declared}, which is not built`);
+    }
+  });
+});
+
 describe("analytics", () => {
   // The tag comes from BaseLayout so the network is measured from one place.
   // Either every site carries it or none does — a site quietly missing it

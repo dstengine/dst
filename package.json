@@ -23,6 +23,7 @@
     "test:layout": "playwright test"
   },
   "devDependencies": {
+    "@astrojs/sitemap": "3.2.1",
     "@playwright/test": "^1.62.1"
   }
 }
