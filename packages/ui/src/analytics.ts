@@ -9,6 +9,6 @@
 // The measurement ID is not a secret (it ships in the page source), so it
 // can live here. PUBLIC_GA_ID overrides it if a deploy wants a different
 // property — a staging one, say.
-const CONFIGURED_ID = "";
+const CONFIGURED_ID = "G-JBB43WWXW9";
 
 export const GA_MEASUREMENT_ID: string = import.meta.env.PUBLIC_GA_ID || CONFIGURED_ID;
