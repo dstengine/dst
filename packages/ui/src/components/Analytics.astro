@@ -13,9 +13,13 @@ const id = GA_MEASUREMENT_ID;
     <script async src={`https://www.googletagmanager.com/gtag/js?id=${id}`}></script>
     <script is:inline define:vars={{ id }}>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
+      // Assigned onto window rather than declared: define:vars wraps this
+      // script in an IIFE, so a plain `function gtag()` would be trapped in
+      // that closure. Config would still fire, but nothing could call
+      // gtag("event", …) later — which is how lead submissions get tracked.
+      window.gtag = function gtag() {
+        window.dataLayer.push(arguments);
+      };
       gtag("js", new Date());
       // cookie_domain lets one property follow a visitor across the
       // subdomains without starting a new session on each hop.

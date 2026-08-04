@@ -177,6 +177,25 @@ test.describe("content blocks stay inside the page grid", () => {
   });
 });
 
+test.describe("analytics", () => {
+  // Astro's define:vars wraps an inline script in an IIFE, so declaring
+  // `function gtag()` left it trapped in that closure: the initial config
+  // fired, but nothing on the page could call gtag("event", …) afterwards —
+  // which is how a lead-gen network records its conversions.
+  test("gtag is callable from the page", async ({ page }) => {
+    await page.goto(url("riviera", "/"));
+    const tagged = await page.locator('script[src*="googletagmanager.com/gtag/js"]').count();
+    test.skip(tagged === 0, "no measurement ID configured in this build");
+
+    const state = await page.evaluate(() => ({
+      gtag: typeof window.gtag,
+      dataLayer: Array.isArray(window.dataLayer),
+    }));
+    expect(state.gtag, "gtag is not reachable from page scope").toBe("function");
+    expect(state.dataLayer, "dataLayer missing").toBe(true);
+  });
+});
+
 test.describe("reading measure", () => {
   // `--content-width: 72ch` measured out at ~115 characters per line, and
   // because ch scales with font-size the lede — set larger — ended up on a
