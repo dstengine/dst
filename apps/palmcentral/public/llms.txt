@@ -1,0 +1,23 @@
+# Palm Central
+
+> Independent tracker for Palm Central, Nakheel's apartment development on Palm Jebel Ali's Spine. Not affiliated with or endorsed by Nakheel. Exists because most third-party listings still quote the sold-out first release — this site tracks whichever phase is actually for sale.
+
+Key facts, current as of this site's last deploy:
+- Phase 1 (October 2025, 212 residences, from AED 2.5M, handover August 2029) is sold out — resale units only.
+- Phase 2 (June 2026, 222 residences, from AED 2.7M, handover September 2030) is the current inventory.
+- Every unit type in both phases clears the AED 2 million UAE Golden Visa property threshold.
+- Location: the Spine, between Fronds M and N, Palm Jebel Ali, Dubai.
+- Developer: Nakheel.
+
+## Pages
+
+- [Overview](https://palmcentral.dst.llc/): Project summary, current Phase 2 pricing by unit type, amenities, and drive times.
+- [Prices](https://palmcentral.dst.llc/prices/): Full price list for both phases, side by side, with what changed between them.
+- [Payment plan](https://palmcentral.dst.llc/payment-plan/): The confirmed Phase 1 structure (20% booking / 50% construction / 30% handover) and what's reported but unconfirmed for Phase 2.
+- [Location](https://palmcentral.dst.llc/location/): Where the Spine sits in Palm Jebel Ali's master plan, and real drive times to Downtown, the Marina, and both airports.
+- [Golden Visa](https://palmcentral.dst.llc/golden-visa/): Eligibility against the AED 2M threshold and how the property route to residency actually works.
+- [FAQ](https://palmcentral.dst.llc/faq/): Direct answers to the questions buyers ask before booking, including availability.
+
+## Sourcing
+
+Phase 2 unit count, types, and completion date come from Nakheel's own press release. Per-type pricing comes from The National's coverage of the June 2026 launch. Phase 1 resale status comes from Property Finder. Figures not sourced this way are flagged as unconfirmed in the relevant page.

@@ -1,0 +1,13 @@
+# Company Formation in Dubai
+
+> A practical guide to starting a business in Dubai: choosing between mainland, free zone, and offshore structures, what registration actually costs, and what to sort out afterwards (banking, payments, taxation). Digital partner of a licensed local brokerage — see the site footer for the specific partner and license number.
+
+## Pages
+
+- [Overview](https://llc.dst.llc/): How to choose between mainland, free zone, and offshore, and what actually drives the decision.
+- [Zones](https://llc.dst.llc/zones/): Specific free zones compared, not a generic list.
+- [Banking](https://llc.dst.llc/banking/): Opening a corporate bank account as a new Dubai company — what's actually required.
+- [Payments](https://llc.dst.llc/payments/): Payment processing options for a new Dubai entity.
+- [Taxation](https://llc.dst.llc/taxation/): Corporate tax and VAT basics for a new UAE company.
+
+Part of the [DST](https://dst.llc/) network.

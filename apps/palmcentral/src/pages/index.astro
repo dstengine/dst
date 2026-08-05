@@ -9,6 +9,7 @@ import {
   currentPhase,
   soldOutPhase,
   currentUnits,
+  phase1Units,
   amenities,
   distances,
   faqItems,
@@ -21,11 +22,16 @@ const explore = [
   { href: "/golden-visa/", icon: "star", title: "Golden Visa", description: "Eligibility, thresholds, and the property route specifically." },
 ];
 
+// additionalProperty carries the facts an LLM/AI-answer engine is most
+// likely to be asked for and would otherwise have to infer from prose —
+// developer, current phase, starting price, handover — as unambiguous
+// key/value pairs rather than something to extract from a sentence.
 const jsonLd = [
   {
     "@context": "https://schema.org",
-    "@type": "Residence",
+    "@type": "ApartmentComplex",
     name: "Palm Central Private Residences",
+    url: "https://palmcentral.dst.llc/",
     description:
       "Beachfront apartments and townhouses on Palm Jebel Ali's central Spine, developed by Nakheel.",
     address: {
@@ -34,6 +40,14 @@ const jsonLd = [
       addressRegion: "Dubai",
       addressCountry: "AE",
     },
+    numberOfAccommodationUnits: currentPhase.units,
+    additionalProperty: [
+      { "@type": "PropertyValue", name: "Developer", value: "Nakheel" },
+      { "@type": "PropertyValue", name: "Current release phase", value: currentPhase.label },
+      { "@type": "PropertyValue", name: "Starting price (current phase)", value: currentUnits[0].priceFrom },
+      { "@type": "PropertyValue", name: "Handover (current phase)", value: currentPhase.handover },
+      { "@type": "PropertyValue", name: "Sold-out phase", value: `${soldOutPhase.label}, from ${phase1Units[0].priceFrom}` },
+    ],
   },
 ];
 ---

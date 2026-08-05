@@ -1,0 +1,18 @@
+# DST
+
+> DST is an operating group building digital infrastructure for ventures across AI, Crypto, and Real Estate, starting in Dubai. DST designs and runs the systems (content, lead capture, CRM routing); licensed local partners handle the regulated, on-the-ground execution in each vertical.
+
+## Hubs
+
+- [Riviera](https://riviera.dst.llc/): Community guide to Azizi Riviera in MBR City — coffee, food, pools, water, block by block.
+- [Palm Central](https://palmcentral.dst.llc/): Tracker for Nakheel's Palm Central development on Palm Jebel Ali — current pricing, payment plan, what's actually for sale.
+- [Company formation](https://llc.dst.llc/): Practical guide to starting a business in Dubai — mainland vs. free zone vs. offshore, real costs, banking.
+- Crypto in the UAE: in development, not yet live.
+
+## Also part of the network
+
+- [Visas](https://visas.dst.llc/): UAE residency routes, including the Golden Visa, and how to think about which one fits. Linked from the Golden Visa page on Palm Central and elsewhere, not featured in the Hubs grid above.
+
+## Note
+
+DST itself is not a licensed real estate brokerage, company-formation agent, or immigration consultancy — each vertical routes to a licensed local partner for the regulated part of the transaction. See each site's own footer disclosure for its specific partner and license number.

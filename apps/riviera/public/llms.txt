@@ -1,0 +1,17 @@
+# Azizi Riviera
+
+> What day-to-day life looks like in Azizi Riviera, block by block — the canal-front development in MBR City, Dubai. Independent local guide, not affiliated with Azizi Developments.
+
+## Pages
+
+- [Overview](https://riviera.dst.llc/): Living in Riviera, block by block.
+- [Coffee](https://riviera.dst.llc/coffee/): Where the promenade's cafés cluster.
+- [Food](https://riviera.dst.llc/food/): Restaurants and the on-site supermarket for daily meals.
+- [Pools](https://riviera.dst.llc/pools/): Pool access across the community.
+- [Water](https://riviera.dst.llc/water/): The canal walkway, water taxis, and the nearest real beaches.
+- [Money](https://riviera.dst.llc/money/): Crypto exchange near Riviera, and how buying property with crypto works in practice.
+- [News](https://riviera.dst.llc/news/): What's changing in the development.
+- [Events](https://riviera.dst.llc/events/): What's on in the community.
+- [Rent](https://riviera.dst.llc/rent/): Renting in Riviera.
+
+Part of the [DST](https://dst.llc/) network. See also [MBR City](https://mbr.dst.llc/), the wider district Riviera sits inside.

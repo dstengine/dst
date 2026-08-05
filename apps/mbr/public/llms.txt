@@ -1,0 +1,17 @@
+# Mohammed Bin Rashid City (MBR City)
+
+> What Mohammed Bin Rashid City is — the Dubai district behind the developer names (Sobha Hartland, Azizi Riviera, and others), its communities, and how they fit together. Independent local guide, not affiliated with any developer or master-community operator.
+
+## Pages
+
+- [Overview](https://mbr.dst.llc/): MBR City, the district behind the names.
+- [Coffee](https://mbr.dst.llc/coffee/): Meydan One's café scene against Riviera's walkable promenade.
+- [Food](https://mbr.dst.llc/food/): Restaurants across the district's communities.
+- [Pools](https://mbr.dst.llc/pools/): Pool access across MBR City.
+- [Water](https://mbr.dst.llc/water/): The canal, water taxis, and the nearest real beaches.
+- [Money](https://mbr.dst.llc/money/): Crypto exchange near MBR City, and how buying property with crypto works in practice.
+- [News](https://mbr.dst.llc/news/): What's changing across the district.
+- [Events](https://mbr.dst.llc/events/): What's on in MBR City.
+- [Rent](https://mbr.dst.llc/rent/): Renting in MBR City.
+
+Part of the [DST](https://dst.llc/) network. See also [Azizi Riviera](https://riviera.dst.llc/), one specific community inside MBR City.

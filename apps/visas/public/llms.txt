@@ -1,0 +1,13 @@
+# UAE Visas
+
+> An overview of UAE residency routes — from standard employment and property visas to the long-term Golden Visa — and how to think about which one fits a given situation. Digital partner of a licensed local partner for the regulated side of any application — see the site footer for specifics.
+
+## Pages
+
+- [Overview](https://visas.dst.llc/): UAE residency routes compared, and how to pick between them.
+- [Golden Visa](https://visas.dst.llc/golden/): Eligibility, thresholds, and how the long-term Golden Visa route works, including via property investment.
+- [Eligible properties](https://visas.dst.llc/properties/): What property purchases currently qualify for Golden Visa sponsorship.
+- [Family and lifestyle](https://visas.dst.llc/family/): What a Golden Visa changes day to day once granted — schooling, healthcare, sponsorship for dependents.
+- [Consultation](https://visas.dst.llc/consultation/): Request a Golden Visa consultation.
+
+Part of the [DST](https://dst.llc/) network. Cross-linked from [Palm Central](https://palmcentral.dst.llc/golden-visa/)'s Golden Visa eligibility page, since every unit there clears the AED 2M threshold.
