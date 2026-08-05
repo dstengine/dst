@@ -7,6 +7,13 @@
 */
 
 :root {
+  /* Without this, native form controls (select's own dropdown popup, its
+     arrow, checkbox/radio chrome) render with Chrome's light UA styling
+     even when the page itself has switched to the dark palette below —
+     the closed <select> box picks up our --ink/--bg fine since those are
+     plain CSS, but everything the browser draws itself doesn't. */
+  color-scheme: light dark;
+
   /* Neutrals — warm-cool off-white, not a stock cream, not stark white */
   --bg: #FAF9F6;
   --surface: #FFFFFF;
