@@ -197,6 +197,18 @@ describe("images", () => {
     }
   });
 
+  // Every content photo here illustrates something specific (a venue, a
+  // hero render) rather than sitting next to unrelated text, so alt="" is
+  // never correct — it would just drop the image from image search with
+  // nothing gained on the accessibility side.
+  test("no content image has an empty alt", () => {
+    for (const p of contentPages()) {
+      for (const tag of imgsOf(p.html)) {
+        assert.doesNotMatch(tag, /\salt=""/, `${p.app}${p.url}: <img> has an empty alt — ${tag}`);
+      }
+    }
+  });
+
   // The header art is generated, on a site people use to pick where to rent,
   // so its alt has to say it isn't a photograph of the place.
   test("the generated header image is described as an illustration", () => {

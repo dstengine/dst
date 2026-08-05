@@ -14,6 +14,7 @@ const hubs = [
     name: "Riviera",
     text: "Coffee, food, pools, water — the Riviera community, block by block.",
     image: "/riviera.jpg",
+    imageAlt: "Illustration of the Azizi Riviera promenade at night — a generated image, not a photograph of the development.",
   },
   {
     href: "https://palmcentral.dst.llc",
@@ -23,6 +24,7 @@ const hubs = [
     name: "Palm Central",
     text: "Nakheel's Palm Jebel Ali residences — current pricing, payment plan, and what's actually for sale.",
     image: "/palmcentral.jpg",
+    imageAlt: "Night aerial render of Palm Central's beachfront residences and central Spine, Palm Jebel Ali.",
   },
   {
     href: "https://llc.dst.llc",
@@ -71,7 +73,7 @@ const hubs = [
           <Tag class="venture" href={hub.href} title={hub.title}>
             <div class="venture-media">
               {hub.image ? (
-                <img src={hub.image} alt="" loading="lazy" />
+                <img src={hub.image} alt={hub.imageAlt ?? ""} loading="lazy" />
               ) : (
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d={hub.icon} />

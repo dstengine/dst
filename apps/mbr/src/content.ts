@@ -195,9 +195,10 @@ export const water = {
     {
       heading: "The coast",
       paragraphs: [
-        `Kite Beach, La Mer, and JBR sit roughly 20 to 30 minutes away by
-          car regardless of which MBR City community you start from.
-          There's no direct transit route.`,
+        `MBR City itself is inland — the nearest public beaches (Kite
+          Beach, La Mer, JBR) run 20 to 30 minutes by car depending on
+          traffic and which community you're leaving from. No metro or
+          tram gets you there, so it's a car or taxi trip every time.`,
       ],
     },
   ],
@@ -215,24 +216,26 @@ export const money = {
     {
       heading: "Nearest exchange desks",
       paragraphs: [
-        `Business Bay, DIFC, and Downtown carry most of the licensed desks
-          — a 10 to 20 minute drive from most MBR City communities, with
-          Sobha Hartland typically closest given its location. Confirm
-          current VARA licensing directly before using a specific
-          provider.`,
+        `MBR City borders Business Bay directly, and that's where most of
+          the licensed exchange desks in this part of Dubai actually sit
+          — for communities near the border like Sobha Hartland it's
+          closer to a 10-minute drive than the 20 you'd budget from
+          further into the district. VARA licensing status is worth
+          checking fresh with whichever desk you use rather than assuming
+          it hasn't changed.`,
       ],
     },
     {
       heading: "Buying with crypto",
       paragraphs: [
-        `Crypto-funded purchases across the district's communities
-          generally go through a licensed conversion step at the point of
-          sale rather than a developer holding crypto directly. Confirm
-          support with the brokerage handling the specific unit.`,
+        `Developers in MBR City don't hold crypto themselves — a licensed
+          exchange handles the conversion at the point of sale. Whether a
+          given unit's brokerage actually supports this varies by
+          listing, so it's worth asking upfront rather than assuming.`,
       ],
     },
   ],
-  callout: "DST's crypto vertical covers regulation and the buy-with-crypto process in more depth network-wide. This page is the MBR City summary.",
+  callout: "The mechanics of paying with crypto, and the regulatory side of it, get the full treatment on DST's network-wide crypto vertical — this page just covers what's specific to MBR City.",
   calloutKind: "note" as const,
 };
 
