@@ -87,9 +87,7 @@ const isDstHome = Astro.site?.hostname === "dst.llc";
         <p class="footer-note">{complianceNote}</p>
         <p class="footer-copy">
           &copy; {new Date().getFullYear()} {siteName}. Part of the{" "}
-          {isDstHome ? "DST network" : <a href="https://dst.llc" title="DST — the group behind this site">DST network</a>}
-          {partnerDisclosure && (
-            <>, digital partner of DEAL KEY PROPERTIES LLC, DED License No. 1523000 &middot; RERA ORN 52875</>
+          {isDstHome ? "DST network" : <a href="https://dst.llc" title="DST — the group behind this site">DST network</a>}{partnerDisclosure && (<>, digital partner of DEAL KEY PROPERTIES LLC, DED License No. 1523000 &middot; RERA ORN 52875</>
           )}.
         </p>
       </div>
