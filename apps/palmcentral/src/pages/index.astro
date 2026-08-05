@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Callout from "@dst/ui/Callout.astro";
 import Faq from "@dst/ui/Faq.astro";
 import LeadForm from "@dst/ui/LeadForm.astro";
+import PhotoHero from "@dst/ui/district/PhotoHero.astro";
 import { iconFor } from "@dst/ui/icons";
 import {
   currentPhase,
@@ -42,8 +43,12 @@ const jsonLd = [
   jsonLd={jsonLd}
 >
   <section class="container hero">
-    <p class="eyebrow">Nakheel · Palm Jebel Ali</p>
-    <h1>Palm Central Private Residences</h1>
+    <PhotoHero
+      eyebrow="Nakheel · Palm Jebel Ali"
+      title="Palm Central Private Residences"
+      image="/palmcentral.jpg"
+      imageAlt="Night aerial render of Palm Central's beachfront residences and central Spine, Palm Jebel Ali."
+    />
     <p class="lede">
       Beachfront apartments and townhouses on Palm Jebel Ali's central Spine,
       developed by Nakheel. Two release phases exist for this project — this
@@ -196,6 +201,7 @@ const jsonLd = [
 
 <style>
   .hero { padding-bottom: var(--space-4); }
+  .hero .lede { margin-top: var(--space-3); }
   .hero-actions { display: flex; gap: var(--space-2); margin-top: var(--space-3); flex-wrap: wrap; }
   .table-note { margin-top: var(--space-2); font-size: var(--step--1); color: var(--ink-muted); }
   .amenity-list { display: grid; gap: var(--space-1); padding-left: 1.2em; }
