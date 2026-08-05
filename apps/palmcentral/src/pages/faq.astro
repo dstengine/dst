@@ -1,0 +1,36 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Faq from "@dst/ui/Faq.astro";
+import { faqItems } from "../content";
+---
+<Layout
+  title="Frequently Asked Questions"
+  description="Palm Central FAQ: current availability, Phase 2 pricing, payment plan, Golden Visa eligibility, the developer, and exact location on Palm Jebel Ali."
+>
+  <section class="container hero">
+    <p class="eyebrow">FAQ</p>
+    <h1>Frequently asked questions</h1>
+    <p class="lede">
+      The questions people actually ask before booking, answered plainly —
+      including the one most listings skip: whether the price you're
+      looking at is still available.
+    </p>
+  </section>
+
+  <section class="container">
+    <Faq items={faqItems} />
+  </section>
+
+  <section class="container cta">
+    <h2>Still have a question?</h2>
+    <p>
+      <a href="/#interest" title="Register interest in Palm Central">Register your interest</a> and
+      ask it directly — we'll answer before you're asked to commit to
+      anything.
+    </p>
+  </section>
+</Layout>
+
+<style>
+  .cta { margin-top: var(--space-5); }
+</style>

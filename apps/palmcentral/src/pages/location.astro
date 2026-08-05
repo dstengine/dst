@@ -1,0 +1,88 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { distances } from "../content";
+---
+<Layout
+  title="Location"
+  description="Where Palm Central sits on Palm Jebel Ali's master plan, and real drive times to Dubai Marina, Downtown, and both airports."
+>
+  <section class="container hero">
+    <p class="eyebrow">Location</p>
+    <h1>The Spine, between Fronds M and N</h1>
+    <p class="lede">
+      Palm Jebel Ali's master plan splits into five zones — Trunk, Spine,
+      Fronds, Crown, and the Crescents — and Palm Central sits on the
+      Spine, the section built for community and retail rather than the
+      private villa plots on the fronds either side of it.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>Why the Spine specifically</h2>
+    <p>
+      The Fronds on Palm Jebel Ali are villa land — large private plots,
+      not apartment buildings. The Spine is the through-road connecting the
+      whole island back to the mainland, and it's where Nakheel has put
+      the community-scale buildings: retail, schools, and — with Palm
+      Central — the island's first apartment product. That's a structural
+      fact about the master plan, not a marketing choice: if you want an
+      apartment on Palm Jebel Ali rather than a villa, the Spine is
+      currently the only place that exists.
+    </p>
+    <p>
+      At full build-out, Palm Jebel Ali will be roughly twice the size of
+      Palm Jumeirah, with seven islands, sixteen fronds, and over 90km of
+      beachfront — a scale that puts Palm Central's current three buildings
+      as an early, relatively small piece of a much larger island. Worth
+      knowing before assuming the neighbourhood you see today is close to
+      finished.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>Drive times from Palm Central</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>To</th><th>Drive time</th></tr></thead>
+        <tbody>
+          {distances.map((d) => (
+            <tr><td>{d.to}</td><td>{d.time}</td></tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="container">
+    <h2>What that actually means day to day</h2>
+    <p>
+      Palm Jebel Ali is closer to Jebel Ali Port, Al Maktoum International
+      Airport, and the Expo City side of Dubai than it is to Downtown or
+      DIFC. If your work or school routine runs through the older, more
+      central part of the city, the 20–25 minute drive to Downtown is the
+      number that matters more than the shorter trip to the airport. If
+      your life already leans toward the Marina, JBR, or the newer
+      Jebel Ali / Expo corridor, the location reads differently — closer
+      to the centre of gravity than the "new island, far from everything"
+      framing some listings default to.
+    </p>
+    <p>
+      There's no confirmed public transit link to the island yet; a car
+      (yours or a taxi) is the realistic way in and out for the foreseeable
+      future, same as most new Dubai coastal developments at this stage of
+      build-out.
+    </p>
+  </section>
+
+  <section class="container cta">
+    <h2>Want the price list next?</h2>
+    <p>
+      See <a href="/prices/" title="Palm Central price list, both phases">current pricing</a> for
+      the phase that's actually for sale, or <a href="/#interest" title="Register interest in Palm Central">register your interest</a> directly.
+    </p>
+  </section>
+</Layout>
+
+<style>
+  .cta { margin-top: var(--space-5); }
+</style>

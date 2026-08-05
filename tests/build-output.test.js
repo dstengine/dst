@@ -19,6 +19,7 @@ const SITES = [
   { app: "visas", host: "visas.dst.llc" },
   { app: "riviera", host: "riviera.dst.llc" },
   { app: "mbr", host: "mbr.dst.llc" },
+  { app: "palmcentral", host: "palmcentral.dst.llc" },
 ];
 const NETWORK_HOSTS = SITES.map((s) => s.host);
 

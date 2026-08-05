@@ -1,0 +1,80 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Callout from "@dst/ui/Callout.astro";
+import { currentUnits } from "../content";
+---
+<Layout
+  title="Golden Visa Eligibility"
+  description="Every Palm Central unit type clears the AED 2 million Golden Visa threshold. What that gets you, and how the property route actually works."
+>
+  <section class="container hero">
+    <p class="eyebrow">Golden Visa</p>
+    <h1>Every unit here clears the threshold</h1>
+    <p class="lede">
+      Properties valued at AED 2 million and above generally qualify for
+      UAE Golden Visa sponsorship. The cheapest unit currently for sale at
+      Palm Central — a 1-bedroom apartment from AED 2.7M — already clears
+      it by a margin, and every larger unit type clears it further.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>Where each unit type sits against the threshold</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Unit type</th><th>From (AED)</th><th>Above the AED 2M threshold by</th></tr></thead>
+        <tbody>
+          {currentUnits.map((u) => {
+            const val = parseFloat(u.priceFrom.replace(/[^0-9.]/g, ""));
+            const over = (val - 2).toFixed(1);
+            return <tr><td>{u.type}</td><td>{u.priceFrom}</td><td>+AED {over}M</td></tr>;
+          })}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <Callout kind="note">
+    Thresholds and eligibility criteria are set by UAE federal authorities
+    and can change. This page tells you where Palm Central's pricing sits
+    relative to the AED 2M mark — confirm current requirements before
+    treating any purchase as a guaranteed Golden Visa route.
+  </Callout>
+
+  <section class="container">
+    <h2>What the Golden Visa route actually involves</h2>
+    <p>
+      Buying above the threshold is the entry condition, not the whole
+      process — there's still an application, standard medical and
+      Emirates ID formalities, and ownership conditions that can affect
+      off-plan purchases specifically (mortgaged value and off-plan status
+      are sometimes treated differently from a completed, unmortgaged
+      property). We cover the mechanics in more depth on the network's
+      dedicated visa site, including what an off-plan purchase like this
+      one does and doesn't guarantee: see
+      <a href="https://visas.dst.llc/golden/" title="Golden Visa via property investment — visas.dst.llc">Golden Visa via property investment</a>.
+    </p>
+    <p>
+      If you're weighing this against a completed-property route instead
+      of off-plan, <a href="https://visas.dst.llc/properties/" title="Properties eligible for the Golden Visa — visas.dst.llc">eligible properties</a> covers
+      what currently qualifies more broadly, and
+      <a href="https://visas.dst.llc/family/" title="Family and lifestyle under the Golden Visa — visas.dst.llc">family and lifestyle</a> covers
+      what a Golden Visa changes day to day once you have it — schooling,
+      healthcare, and sponsorship for dependents.
+    </p>
+  </section>
+
+  <section class="container cta">
+    <h2>Next step</h2>
+    <p>
+      <a href="/#interest" title="Register interest in Palm Central">Register your interest</a> in
+      a specific unit, or start with the
+      <a href="https://visas.dst.llc/consultation/" title="Request a Golden Visa consultation — visas.dst.llc">Golden Visa consultation</a> if
+      residency is the primary driver rather than the property itself.
+    </p>
+  </section>
+</Layout>
+
+<style>
+  .cta { margin-top: var(--space-5); }
+</style>

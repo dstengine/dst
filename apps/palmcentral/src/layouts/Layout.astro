@@ -1,0 +1,30 @@
+---
+import BaseLayout from "@dst/ui/BaseLayout.astro";
+import "../styles/theme.css";
+
+interface Props {
+  title: string;
+  description: string;
+  jsonLd?: Record<string, unknown>[];
+}
+const { title, description, jsonLd } = Astro.props;
+
+const nav = [
+  { href: "/", label: "Overview", title: "Palm Central overview" },
+  { href: "/prices/", label: "Prices", title: "Palm Central prices by unit type" },
+  { href: "/payment-plan/", label: "Payment plan", title: "Palm Central payment plan" },
+  { href: "/location/", label: "Location", title: "Palm Central location on Palm Jebel Ali" },
+  { href: "/golden-visa/", label: "Golden Visa", title: "Golden Visa eligibility at Palm Central" },
+  { href: "/faq/", label: "FAQ", title: "Palm Central frequently asked questions" },
+];
+---
+<BaseLayout
+  title={`${title} — Palm Central, Palm Jebel Ali`}
+  description={description}
+  siteName="Palm Central"
+  nav={nav}
+  complianceNote="Independent advisory site, not affiliated with or endorsed by Nakheel. Prices, availability, and release phases change — confirm current terms directly with the developer or a licensed broker before acting."
+  jsonLd={jsonLd}
+>
+  <slot />
+</BaseLayout>

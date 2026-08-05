@@ -7,6 +7,7 @@ export const PORTS = {
   visas: 4333,
   riviera: 4334,
   mbr: 4335,
+  palmcentral: 4336,
 };
 
 export const baseUrl = (site) => `http://localhost:${PORTS[site]}`;

@@ -18,6 +18,8 @@ const PAGES = [
   { site: "mbr", path: "/" },
   { site: "llc", path: "/" },
   { site: "dst", path: "/" },
+  { site: "palmcentral", path: "/" },
+  { site: "palmcentral", path: "/prices/" },
 ];
 
 const url = (site, path) => `${baseUrl(site)}${path}`;

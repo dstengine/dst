@@ -1,0 +1,71 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Callout from "@dst/ui/Callout.astro";
+import { currentPhase, soldOutPhase } from "../content";
+---
+<Layout
+  title="Payment Plan"
+  description="Palm Central's payment plan — what's confirmed for the sold-out Phase 1, what's reported but unconfirmed for the current Phase 2, and what to get in writing before booking."
+>
+  <section class="container hero">
+    <p class="eyebrow">Payment plan</p>
+    <h1>What the payment plan actually is</h1>
+    <p class="lede">
+      Nakheel's own release for {currentPhase.label} doesn't publish exact
+      payment terms. A few brokers list specific percentages anyway —
+      treat those as estimates until your sales contact confirms them in
+      writing, not as the developer's stated plan.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>{soldOutPhase.label} — confirmed structure (sold out)</h2>
+    <p>
+      The sold-out first phase used a documented 20/50/30 structure:
+    </p>
+    <ol class="steps">
+      <li><strong>20% at booking</strong> — due on reservation.</li>
+      <li><strong>50% during construction</strong> — split across roughly seven to eight milestone installments.</li>
+      <li><strong>30% on handover</strong> — due {soldOutPhase.handover}.</li>
+    </ol>
+    <p>
+      On the AED 2.5M entry price, that put the booking amount at AED
+      500,000 — the number that made this phase's 1-bedroom units
+      accessible relative to the total price.
+    </p>
+  </section>
+
+  <Callout kind="warn">
+    <strong>{currentPhase.label} terms aren't officially published.</strong> Several
+    broker sites describe a similar 20% booking / staged construction
+    payments / 30% handover plan for the current phase, with construction
+    installments reportedly running from late 2026 through early 2029 —
+    but this comes from secondary sources, not Nakheel's own release. Get
+    the actual schedule from your sales contact before you book on the
+    strength of a number you read on a listing site.
+  </Callout>
+
+  <section class="container">
+    <h2>What to ask for before booking</h2>
+    <ul>
+      <li>The exact installment schedule with dates, not just percentages — construction-linked payments can move if the build timeline shifts.</li>
+      <li>Whether the plan differs by unit type. On Phase 1, larger units and townhouses reportedly ran a different split than 1–2 bedroom apartments; confirm whether that still applies.</li>
+      <li>What happens to your payments if handover slips past {currentPhase.handover} — Nakheel has a strong delivery record, but the contract terms are what actually govern this, not the track record.</li>
+    </ul>
+  </section>
+
+  <section class="container cta">
+    <h2>Want the current schedule?</h2>
+    <p>
+      <a href="/#interest" title="Register interest in Palm Central">Register your interest</a> and
+      we'll come back with the actual payment schedule for the unit type
+      you're looking at, confirmed rather than estimated.
+    </p>
+  </section>
+</Layout>
+
+<style>
+  .steps { display: flex; flex-direction: column; gap: var(--space-2); padding-left: 1.2em; }
+  .steps li { max-width: 65ch; }
+  .cta { margin-top: var(--space-5); }
+</style>

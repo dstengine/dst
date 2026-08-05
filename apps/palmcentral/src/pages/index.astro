@@ -1,0 +1,204 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Callout from "@dst/ui/Callout.astro";
+import Faq from "@dst/ui/Faq.astro";
+import LeadForm from "@dst/ui/LeadForm.astro";
+import { iconFor } from "@dst/ui/icons";
+import {
+  currentPhase,
+  soldOutPhase,
+  currentUnits,
+  amenities,
+  distances,
+  faqItems,
+} from "../content";
+
+const explore = [
+  { href: "/prices/", icon: "chart", title: "Full price list", description: "Every unit type, both release phases, side by side." },
+  { href: "/payment-plan/", icon: "money", title: "Payment plan", description: "What's confirmed, what isn't, and what to ask before you book." },
+  { href: "/location/", icon: "pin", title: "Location", description: "Where the Spine sits on Palm Jebel Ali, and the real drive times." },
+  { href: "/golden-visa/", icon: "star", title: "Golden Visa", description: "Eligibility, thresholds, and the property route specifically." },
+];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Residence",
+    name: "Palm Central Private Residences",
+    description:
+      "Beachfront apartments and townhouses on Palm Jebel Ali's central Spine, developed by Nakheel.",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Palm Jebel Ali",
+      addressRegion: "Dubai",
+      addressCountry: "AE",
+    },
+  },
+];
+---
+<Layout
+  title="Private Residences"
+  description="Palm Central by Nakheel on Palm Jebel Ali — current Phase 2 pricing, payment plan, location and Golden Visa eligibility. Phase 1 is sold out; this page tracks what's actually for sale."
+  jsonLd={jsonLd}
+>
+  <section class="container hero">
+    <p class="eyebrow">Nakheel · Palm Jebel Ali</p>
+    <h1>Palm Central Private Residences</h1>
+    <p class="lede">
+      Beachfront apartments and townhouses on Palm Jebel Ali's central Spine,
+      developed by Nakheel. Two release phases exist for this project — this
+      page tracks which one is actually buyable right now, not just the
+      launch pricing most listings still quote.
+    </p>
+    <div class="hero-actions">
+      <a class="button" href="#interest" title="Register interest in Palm Central">Register interest</a>
+      <a class="button button-secondary" href="/prices/" title="See the full Palm Central price list">See prices</a>
+    </div>
+  </section>
+
+  <Callout kind="note">
+    <strong>Phase 1 ({soldOutPhase.released}, {soldOutPhase.units} residences) is sold out</strong> —
+    {soldOutPhase.status} The current inventory is <strong>{currentPhase.label}</strong>,
+    released {currentPhase.released}: {currentPhase.units} residences across the
+    same three buildings, handover {currentPhase.handover}. Prices below are
+    for Phase 2 — see the <a href="/prices/" title="Palm Central price list, both phases">full price list</a> for
+    a side-by-side comparison with the sold-out phase.
+  </Callout>
+
+  <section class="container">
+    <h2>What's for sale right now</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Unit type</th><th>From (AED)</th><th>From (USD)</th></tr>
+        </thead>
+        <tbody>
+          {currentUnits.map((u) => (
+            <tr>
+              <td>{u.type}</td>
+              <td>{u.priceFrom}</td>
+              <td>{u.priceFromUsd}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">
+      {currentPhase.units} residences, {currentPhase.buildings} buildings, handover {currentPhase.handover}.
+      {currentPhase.sourceNote}
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>What the project actually is</h2>
+    <p>
+      Palm Central is Nakheel's first apartment community on Palm Jebel Ali —
+      three low- to mid-rise buildings positioned on the island's central
+      Spine, between Fronds M and N. That's the section of the master plan
+      set aside for community and retail rather than the private villa
+      fronds on either side, which is why it's the one part of Palm Jebel
+      Ali apartment buyers can access at all in this phase of the island's
+      build-out.
+    </p>
+    <p>
+      Every residence faces either the canal-style waterway that runs along
+      the Spine or the internal courtyard, with direct beach access built
+      into the ground floor rather than a separate walk to a shared
+      amenity. Stepped massing on the upper floors is there for a practical
+      reason: it keeps sightlines to the water open from more units than a
+      flat facade would, which matters more here than the render suggests
+      once you're comparing specific floors.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>Amenities confirmed for this phase</h2>
+    <ul class="amenity-list">
+      {amenities.map((a) => (
+        <li><strong>{a.name}</strong> — {a.note}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="container">
+    <h2>Getting around from here</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>To</th><th>Drive time</th></tr></thead>
+        <tbody>
+          {distances.map((d) => (
+            <tr><td>{d.to}</td><td>{d.time}</td></tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">
+      Palm Jebel Ali sits closer to Jebel Ali Port and the new Al Maktoum
+      International Airport than to Downtown — worth weighing if your daily
+      routine runs through DIFC or Business Bay rather than the Marina/JBR
+      side of the city. More on this on the <a href="/location/" title="Palm Central location and connectivity">location page</a>.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>Explore further</h2>
+    <div class="link-grid">
+      {explore.map((item) => {
+        const path = iconFor(`/${item.icon}/`);
+        return (
+          <a class="card link-card" href={item.href} title={item.description}>
+            {path && (
+              <svg class="link-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d={path} />
+              </svg>
+            )}
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+          </a>
+        );
+      })}
+    </div>
+  </section>
+
+  <section class="container">
+    <h2>Common questions</h2>
+    <Faq items={faqItems.slice(0, 4)} />
+    <p><a href="/faq/" title="All Palm Central frequently asked questions">See all frequently asked questions →</a></p>
+  </section>
+
+  <section id="interest" class="container">
+    <h2>Register interest</h2>
+    <p class="lede">
+      Tell us what you're after and we'll match it against current Phase 2
+      availability — not a resale listing from the sold-out phase.
+    </p>
+    <LeadForm endpoint="/api/lead" submitLabel="Register my interest">
+      <div class="field">
+        <label for="unit-type">Unit type</label>
+        <select id="unit-type" name="meta.unitType">
+          <option value="">Prefer not to say</option>
+          {currentUnits.map((u) => <option value={u.type}>{u.type}</option>)}
+        </select>
+      </div>
+      <div class="field">
+        <label for="budget">Approximate budget (AED)</label>
+        <select id="budget" name="meta.investmentBudget">
+          <option value="">Prefer not to say</option>
+          <option value="2-5m">2,700,000–5,000,000</option>
+          <option value="5-8m">5,000,000–8,000,000</option>
+          <option value="8-13m">8,000,000–13,000,000</option>
+          <option value="13m+">13,000,000+</option>
+        </select>
+      </div>
+    </LeadForm>
+  </section>
+</Layout>
+
+<style>
+  .hero { padding-bottom: var(--space-4); }
+  .hero-actions { display: flex; gap: var(--space-2); margin-top: var(--space-3); flex-wrap: wrap; }
+  .table-note { margin-top: var(--space-2); font-size: var(--step--1); color: var(--ink-muted); }
+  .amenity-list { display: grid; gap: var(--space-1); padding-left: 1.2em; }
+  .amenity-list li { max-width: var(--content-width); }
+  .link-card-icon { width: 22px; height: 22px; margin-bottom: var(--space-2); color: var(--accent); }
+</style>

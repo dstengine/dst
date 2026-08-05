@@ -1,0 +1,14 @@
+/* palmcentral.dst — off-plan beachfront real estate. Accent: a warm
+   terracotta, distinct from every other accent in the network (llc's teal,
+   visas's bronze, riviera's blue, mbr's cyan) — sand and sunset rather than
+   corporate blue-green. */
+:root {
+  --accent: #B24A2C;
+  --accent-ink: #5C2415;
+  --accent-tint: #F5E3DC;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --accent: #E28A63; --accent-ink: #F6D9C6; --accent-tint: #2E1811; }
+}
+:root[data-theme="dark"] { --accent: #E28A63; --accent-ink: #F6D9C6; --accent-tint: #2E1811; }
+:root[data-theme="light"] { --accent: #B24A2C; --accent-ink: #5C2415; --accent-tint: #F5E3DC; }
