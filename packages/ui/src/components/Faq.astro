@@ -1,6 +1,9 @@
 ---
 // Renders an FAQ block as plain accordion markup (zero JS — native <details>)
 // and emits matching FAQPage JSON-LD at build time, at zero runtime cost.
+// `a` may contain a small set of inline tags (<strong>, <em>) — Google's
+// FAQPage guidelines explicitly allow that subset in the answer text, so it
+// goes into the JSON-LD as-is rather than being stripped to plain text.
 interface QA { q: string; a: string }
 interface Props { items: QA[] }
 
@@ -21,7 +24,7 @@ const jsonLd = {
   {items.map((item) => (
     <details class="faq-item">
       <summary>{item.q}</summary>
-      <p>{item.a}</p>
+      <p set:html={item.a} />
     </details>
   ))}
 </div>

@@ -87,30 +87,30 @@ export const distances = [
 export const faqItems = [
   {
     q: "Is Palm Central still available to buy, or is it sold out?",
-    a: "Phase 1 (launched October 2025, 212 residences) is sold out — only resale units remain, per Property Finder listings. The current inventory is Phase 2, released June 2026: 222 residences across the same three buildings, with new pricing and a September 2030 handover. If a site quotes Phase 1 pricing (from AED 2.5M) as currently available, that's the older release.",
+    a: "Phase 1 (launched October 2025, 212 residences) <strong>is sold out</strong> — only resale units remain, per Property Finder listings. The current inventory is <strong>Phase 2</strong>, released June 2026: 222 residences across the same three buildings, with new pricing and a September 2030 handover. If a site quotes Phase 1 pricing (from AED 2.5M) as currently available, that's the older release.",
   },
   {
     q: "What does Phase 2 of Palm Central cost?",
-    a: "Per The National's coverage of the June 2026 launch: 1-bedroom apartments from AED 2.7M, 2-bedroom from AED 4.3M, 3-bedroom from AED 7.5M, 4-bedroom from AED 12.4M, and 4–5-bedroom townhouses from AED 14.9M. No 5-bedroom apartments or penthouses have been confirmed for this phase.",
+    a: "Per The National's coverage of the June 2026 launch: <strong>1-bedroom apartments from AED 2.7M</strong>, 2-bedroom from AED 4.3M, 3-bedroom from AED 7.5M, 4-bedroom from AED 12.4M, and 4–5-bedroom townhouses from AED 14.9M. No 5-bedroom apartments or penthouses have been confirmed for this phase.",
   },
   {
     q: "When does Phase 2 hand over?",
-    a: "September 2030, per Nakheel's press release. This is later than Phase 1's August 2029 handover — a full year further out, which is worth factoring into any investment timeline comparison between the two phases.",
+    a: "<strong>September 2030</strong>, per Nakheel's press release. This is later than Phase 1's August 2029 handover — a full year further out, which is worth factoring into any investment timeline comparison between the two phases.",
   },
   {
     q: "What is the payment plan?",
-    a: "Phase 1 used a 20% booking / 50% during construction (7–8 installments) / 30% on handover structure. Nakheel's Phase 2 press release doesn't publish exact payment terms — secondary sources describe a similar staged plan, but we're not going to state percentages we can't confirm from the developer or your sales contact. Ask for the current schedule in writing before booking.",
+    a: "Phase 1 used a <strong>20% booking / 50% during construction</strong> (7–8 installments) <strong>/ 30% on handover</strong> structure. Nakheel's Phase 2 press release doesn't publish exact payment terms — secondary sources describe a similar staged plan, but we're not going to state percentages we can't confirm from the developer or your sales contact. Ask for the current schedule in writing before booking.",
   },
   {
     q: "Is Palm Central eligible for the UAE Golden Visa?",
-    a: "Properties valued at AED 2 million and above generally qualify for Golden Visa sponsorship, and every unit type in both Palm Central phases clears that threshold. See our Golden Visa page for how the property route actually works, thresholds, and what it changes day to day.",
+    a: "Properties valued at <strong>AED 2 million</strong> and above generally qualify for Golden Visa sponsorship, and every unit type in both Palm Central phases clears that threshold. See our Golden Visa page for how the property route actually works, thresholds, and what it changes day to day.",
   },
   {
     q: "Who is the developer, and is this an official Nakheel site?",
-    a: "Palm Central is developed by Nakheel — the master developer behind Palm Jumeirah, Deira Islands, and the wider Palm Jebel Ali master plan. This site is independent advisory content, not affiliated with or endorsed by Nakheel; official transactions and documentation run through Nakheel or their appointed sales channels.",
+    a: "Palm Central is developed by <strong>Nakheel</strong> — the master developer behind Palm Jumeirah, Deira Islands, and the wider Palm Jebel Ali master plan. This site is independent advisory content, not affiliated with or endorsed by Nakheel; official transactions and documentation run through Nakheel or their appointed sales channels.",
   },
   {
     q: "Where exactly is Palm Central on Palm Jebel Ali?",
-    a: "On the island's central Spine, between Fronds M and N — the part of the master plan set aside for community and retail rather than the villa fronds either side of it. See our location page for what that means for day-to-day access.",
+    a: "On the island's central <strong>Spine, between Fronds M and N</strong> — the part of the master plan set aside for community and retail rather than the villa fronds either side of it. See our location page for what that means for day-to-day access.",
   },
 ];
