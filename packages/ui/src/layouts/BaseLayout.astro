@@ -15,9 +15,12 @@ interface Props {
   logoSrc?: string;
   favicon?: boolean;
   partnerDisclosure?: boolean;
+  // Secondary links (privacy, terms) that don't belong in the primary nav —
+  // most sites don't set this, so the footer stays exactly as before.
+  footerLinks?: { href: string; label: string }[];
 }
 
-const { title, description, siteName, nav, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true } = Astro.props;
+const { title, description, siteName, nav, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [] } = Astro.props;
 const isDstHome = Astro.site?.hostname === "dst.llc";
 ---
 <!doctype html>
@@ -90,6 +93,16 @@ const isDstHome = Astro.site?.hostname === "dst.llc";
           {isDstHome ? "DST network" : <a href="https://dst.llc" title="DST — the group behind this site">DST network</a>}{partnerDisclosure && (<>, digital partner of DEAL KEY PROPERTIES LLC, DED License No. 1523000 &middot; RERA ORN 52875</>
           )}.
         </p>
+        {footerLinks.length > 0 && (
+          <p class="footer-links">
+            {footerLinks.map((link, i) => (
+              <>
+                {i > 0 && " · "}
+                <a href={link.href} title={link.label}>{link.label}</a>
+              </>
+            ))}
+          </p>
+        )}
       </div>
     </footer>
   </body>
@@ -235,4 +248,6 @@ const isDstHome = Astro.site?.hostname === "dst.llc";
   .footer-note { max-width: 60ch; margin: 0 0 var(--space-2); }
   .footer-copy { margin: 0; }
   .footer-copy a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+  .footer-links { margin: var(--space-2) 0 0; }
+  .footer-links a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 </style>
