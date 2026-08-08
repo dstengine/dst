@@ -34,7 +34,9 @@ export const soldOutPhase = {
   released: "October 2025",
   units: 212,
   handover: "August 2029",
-  status: "Sold out — resale units only, per Property Finder.",
+  // Callers already say "is sold out —" themselves; this continues that
+  // sentence rather than repeating "sold out" a second time.
+  status: "only resale units remain, per Property Finder.",
 };
 
 export interface UnitType {
@@ -50,24 +52,24 @@ export interface UnitType {
 // 4-5BR townhouses, per Nakheel's press release. Don't list units that
 // haven't been confirmed for sale.
 export const currentUnits: UnitType[] = [
-  { type: "1-Bedroom Apartment", bedrooms: "1", priceFrom: "AED 2.7M", priceFromUsd: "~$730K" },
-  { type: "2-Bedroom Apartment", bedrooms: "2", priceFrom: "AED 4.3M", priceFromUsd: "~$1.17M" },
-  { type: "3-Bedroom Apartment", bedrooms: "3", priceFrom: "AED 7.5M", priceFromUsd: "~$2.04M" },
-  { type: "4-Bedroom Apartment", bedrooms: "4", priceFrom: "AED 12.4M", priceFromUsd: "~$3.38M" },
-  { type: "4–5-Bedroom Townhouse", bedrooms: "4–5", priceFrom: "AED 14.9M", priceFromUsd: "~$4.06M" },
+  { type: "1-Bedroom Apartment", bedrooms: "1", priceFrom: "AED 2.7M", priceFromUsd: "$730K" },
+  { type: "2-Bedroom Apartment", bedrooms: "2", priceFrom: "AED 4.3M", priceFromUsd: "$1.17M" },
+  { type: "3-Bedroom Apartment", bedrooms: "3", priceFrom: "AED 7.5M", priceFromUsd: "$2.04M" },
+  { type: "4-Bedroom Apartment", bedrooms: "4", priceFrom: "AED 12.4M", priceFromUsd: "$3.38M" },
+  { type: "4–5-Bedroom Townhouse", bedrooms: "4–5", priceFrom: "AED 14.9M", priceFromUsd: "$4.06M" },
 ];
 
 // Phase 1, for context/comparison only — not currently purchasable as new
 // inventory. Kept because "what did the sold-out phase go for" is a real
 // question buyers researching the project ask.
 export const phase1Units: UnitType[] = [
-  { type: "1-Bedroom Apartment", bedrooms: "1", priceFrom: "AED 2.5M", priceFromUsd: "~$680K" },
-  { type: "2-Bedroom Apartment", bedrooms: "2", priceFrom: "AED 4.26M", priceFromUsd: "~$1.16M" },
-  { type: "3-Bedroom Apartment", bedrooms: "3", priceFrom: "AED 7.51M", priceFromUsd: "~$2.04M" },
-  { type: "4-Bedroom Apartment", bedrooms: "4", priceFrom: "AED 12.62M", priceFromUsd: "~$3.44M" },
-  { type: "5-Bedroom Apartment", bedrooms: "5", priceFrom: "AED 18M", priceFromUsd: "~$4.9M" },
-  { type: "4-Bedroom Townhouse", bedrooms: "4", priceFrom: "AED 14.18M", priceFromUsd: "~$3.86M" },
-  { type: "5-Bedroom Penthouse", bedrooms: "5", priceFrom: "AED 31.81M", priceFromUsd: "~$8.66M" },
+  { type: "1-Bedroom Apartment", bedrooms: "1", priceFrom: "AED 2.5M", priceFromUsd: "$680K" },
+  { type: "2-Bedroom Apartment", bedrooms: "2", priceFrom: "AED 4.26M", priceFromUsd: "$1.16M" },
+  { type: "3-Bedroom Apartment", bedrooms: "3", priceFrom: "AED 7.51M", priceFromUsd: "$2.04M" },
+  { type: "4-Bedroom Apartment", bedrooms: "4", priceFrom: "AED 12.62M", priceFromUsd: "$3.44M" },
+  { type: "5-Bedroom Apartment", bedrooms: "5", priceFrom: "AED 18M", priceFromUsd: "$4.9M" },
+  { type: "4-Bedroom Townhouse", bedrooms: "4", priceFrom: "AED 14.18M", priceFromUsd: "$3.86M" },
+  { type: "5-Bedroom Penthouse", bedrooms: "5", priceFrom: "AED 31.81M", priceFromUsd: "$8.66M" },
 ];
 
 export const amenities = [

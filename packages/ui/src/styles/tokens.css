@@ -181,6 +181,30 @@ a { color: var(--accent, #1F5C4E); }
   border: 1px solid var(--border);
 }
 
+/* Global, not component-scoped: <select> elements get slotted through
+   LeadForm into whatever page assembles the rest of the form fields, and
+   Astro's per-component style scoping doesn't reliably follow content
+   across that slot boundary. A plain global rule always applies regardless
+   of which component actually rendered the element. Native select chrome
+   (the OS-drawn arrow, in particular) is the one part of this design system
+   that still looks like an unstyled browser default without this.
+   !important throughout: the scoped `select { background: var(--bg); ... }`
+   in LeadForm.astro carries higher specificity (an attribute-selector scope
+   hash beats a bare element selector), and its `background` shorthand
+   silently resets background-image back to none even though this rule is
+   what actually sets it. */
+select {
+  appearance: none !important;
+  background-color: var(--bg) !important;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--ink-muted) 50%),
+    linear-gradient(135deg, var(--ink-muted) 50%, transparent 50%) !important;
+  background-position: calc(100% - 19px) center, calc(100% - 14px) center !important;
+  background-size: 5px 5px, 5px 5px !important;
+  background-repeat: no-repeat !important;
+  padding-right: 2.4em !important;
+}
+
 table { border-collapse: collapse; width: 100%; }
 th, td { text-align: left; padding: var(--space-1) var(--space-2); border-bottom: 1px solid var(--border); }
 thead th { font-size: var(--step--1); text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-faint); background: var(--surface-sunk); }
@@ -227,6 +251,12 @@ thead th { font-size: var(--step--1); text-transform: uppercase; letter-spacing:
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: var(--space-3);
   margin-top: var(--space-3);
+}
+/* auto-fit alone puts an even count of cards (4, in current use) into an
+   orphaned 3-then-1 layout at tablet widths, where three 220px columns
+   just barely fit. Pin it to 2 across that band instead. */
+@media (min-width: 640px) and (max-width: 900px) {
+  .link-grid { grid-template-columns: repeat(2, 1fr); }
 }
 .link-card { text-decoration: none; color: inherit; display: block; }
 .link-card h3 { margin-top: 0; font-size: var(--step-1); color: var(--accent); }

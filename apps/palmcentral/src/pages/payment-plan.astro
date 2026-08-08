@@ -63,21 +63,11 @@ import { siteHeaderImage, currentPhase, soldOutPhase, currentUnits } from "../co
     </ul>
   </section>
 
-  <section class="container cta">
-    <h2>Want the current schedule?</h2>
-    <p>
-      <a href="#interest" title="Register interest in Palm Central">Register your interest</a> and
-      we'll come back with the actual payment schedule for the unit type
-      you're looking at, confirmed rather than estimated.
-    </p>
-  </section>
-
   <InterestForm currentUnits={currentUnits} />
 </Layout>
 
 <style>
   .steps { display: flex; flex-direction: column; gap: var(--space-2); padding-left: 1.2em; }
   .steps li { max-width: 65ch; }
-  .cta { margin-top: var(--space-5); }
   .hero-actions { display: flex; gap: var(--space-2); margin-top: var(--space-3); flex-wrap: wrap; }
 </style>

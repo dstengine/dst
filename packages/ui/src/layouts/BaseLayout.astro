@@ -92,6 +92,10 @@ const isDstHome = Astro.site?.hostname === "dst.llc";
     </main>
     <footer class="site-footer">
       <div class="container">
+        <div class="footer-brand">
+          <img class="footer-logo" src={logoSrc} alt="DST" width="20" height="20" />
+          <span>{siteName}</span>
+        </div>
         <p class="footer-note">{complianceNote}</p>
         <p class="footer-copy">
           &copy; {new Date().getFullYear()} {footerSiteName}. Part of the{" "}
@@ -250,6 +254,17 @@ const isDstHome = Astro.site?.hostname === "dst.llc";
     color: var(--ink-faint);
     font-size: var(--step--1);
   }
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    margin: 0 0 var(--space-3);
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: var(--step-0);
+  }
+  .footer-logo { display: block; border-radius: 4px; }
   .footer-note { max-width: 60ch; margin: 0 0 var(--space-2); }
   .footer-copy { margin: 0; }
   .footer-copy a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }

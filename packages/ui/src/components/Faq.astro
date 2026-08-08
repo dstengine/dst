@@ -41,6 +41,27 @@ const jsonLd = {
     font-weight: 600;
     cursor: pointer;
     font-size: var(--step-0);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
   }
+  /* Native <details> markers differ by browser (a filled triangle in some,
+     nothing styleable in others) and don't take an open/closed transition.
+     A hand-drawn chevron reads the same everywhere and animates on toggle. */
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::marker { content: ""; }
+  .faq-item summary::after {
+    content: "";
+    flex-shrink: 0;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid var(--ink-muted);
+    border-bottom: 2px solid var(--ink-muted);
+    transform: rotate(45deg);
+    transition: transform 150ms ease;
+  }
+  .faq-item[open] summary::after { transform: rotate(-135deg); }
   .faq-item p { margin: var(--space-1) 0 0; color: var(--ink-muted); }
 </style>
