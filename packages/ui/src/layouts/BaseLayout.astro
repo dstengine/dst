@@ -18,9 +18,14 @@ interface Props {
   // Secondary links (privacy, terms) that don't belong in the primary nav —
   // most sites don't set this, so the footer stays exactly as before.
   footerLinks?: { href: string; label: string }[];
+  // Overrides `siteName` in the footer's copyright line only — the header
+  // brand next to the logo still reads plain `siteName`. For sites that
+  // want the DST name spelled out in the copyright line specifically
+  // without it showing up twice in the header too.
+  footerSiteName?: string;
 }
 
-const { title, description, siteName, nav, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [] } = Astro.props;
+const { title, description, siteName, nav, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [], footerSiteName = siteName } = Astro.props;
 const isDstHome = Astro.site?.hostname === "dst.llc";
 ---
 <!doctype html>
@@ -89,7 +94,7 @@ const isDstHome = Astro.site?.hostname === "dst.llc";
       <div class="container">
         <p class="footer-note">{complianceNote}</p>
         <p class="footer-copy">
-          &copy; {new Date().getFullYear()} {siteName}. Part of the{" "}
+          &copy; {new Date().getFullYear()} {footerSiteName}. Part of the{" "}
           {isDstHome ? "DST network" : <a href="https://dst.llc" title="DST — the group behind this site">DST network</a>}{partnerDisclosure && (<>, digital partner of DEAL KEY PROPERTIES LLC, DED License No. 1523000 &middot; RERA ORN 52875</>
           )}.
         </p>
