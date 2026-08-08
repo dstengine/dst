@@ -1,0 +1,48 @@
+---
+// Keeps "Register interest" reachable without hunting for the nav or
+// scrolling to the bottom of a long page. Works from any page — "/#interest"
+// is a normal link when navigating in from elsewhere, and a same-document
+// anchor jump when already on "/".
+// Hides itself once the real form scrolls into view (only relevant on the
+// homepage, where the form actually lives) so we're never showing two
+// "Register interest" prompts on screen at once.
+---
+<a class="sticky-cta button" href="/#interest" title="Register interest in Palm Central" data-sticky-cta>
+  Register interest
+</a>
+<script>
+  const cta = document.querySelector<HTMLElement>("[data-sticky-cta]");
+  const interestForm = document.getElementById("interest");
+  if (cta && interestForm) {
+    const observer = new IntersectionObserver(
+      ([entry]) => cta.classList.toggle("is-hidden", entry.isIntersecting),
+      { rootMargin: "0px 0px -15% 0px" },
+    );
+    observer.observe(interestForm);
+  }
+</script>
+
+<style>
+  .sticky-cta {
+    position: fixed;
+    right: var(--space-3);
+    bottom: var(--space-3);
+    z-index: 40;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+  .sticky-cta.is-hidden {
+    opacity: 0;
+    transform: translateY(0.5em);
+    pointer-events: none;
+  }
+  @media (max-width: 640px) {
+    .sticky-cta {
+      left: var(--space-3);
+      right: var(--space-3);
+      bottom: var(--space-3);
+      justify-content: center;
+      text-align: center;
+    }
+  }
+</style>

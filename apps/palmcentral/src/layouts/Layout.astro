@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@dst/ui/BaseLayout.astro";
+import StickyCta from "../components/StickyCta.astro";
 import "../styles/theme.css";
 
 interface Props {
@@ -29,4 +30,5 @@ const nav = [
   footerLinks={[{ href: "/privacy/", label: "Privacy" }]}
 >
   <slot />
+  <StickyCta />
 </BaseLayout>
