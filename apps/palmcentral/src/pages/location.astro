@@ -1,14 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { distances } from "../content";
+import PhotoHero from "@dst/ui/district/PhotoHero.astro";
+import { siteHeaderImage, distances } from "../content";
 ---
 <Layout
   title="Location"
   description="Where Palm Central sits on Palm Jebel Ali's master plan, and real drive times to Dubai Marina, Downtown, and both airports."
 >
   <section class="container hero">
-    <p class="eyebrow">Location</p>
-    <h1>The Spine, between Fronds M and N</h1>
+    <PhotoHero
+      eyebrow="Location"
+      title="The Spine, between Fronds M and N"
+      image={siteHeaderImage.src}
+      imageAlt={siteHeaderImage.alt}
+    />
     <p class="lede">
       Palm Jebel Ali's master plan splits into five zones — Trunk, Spine,
       Fronds, Crown, and the Crescents — and Palm Central sits on

@@ -1,15 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Callout from "@dst/ui/Callout.astro";
-import { currentPhase, soldOutPhase, currentUnits, phase1Units } from "../content";
+import PhotoHero from "@dst/ui/district/PhotoHero.astro";
+import { siteHeaderImage, currentPhase, soldOutPhase, currentUnits, phase1Units } from "../content";
 ---
 <Layout
   title="Prices"
   description="Palm Central prices by unit type, both release phases: the current Phase 2 (from AED 2.7M) and the sold-out Phase 1 (from AED 2.5M), side by side."
 >
   <section class="container hero">
-    <p class="eyebrow">Prices</p>
-    <h1>Palm Central prices, both phases</h1>
+    <PhotoHero
+      eyebrow="Prices"
+      title="Palm Central prices, both phases"
+      image={siteHeaderImage.src}
+      imageAlt={siteHeaderImage.alt}
+    />
     <p class="lede">
       Most listings for this project quote {soldOutPhase.label} pricing without
       flagging that it's sold out. Here's both phases, so you can see what

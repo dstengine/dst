@@ -1,15 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Callout from "@dst/ui/Callout.astro";
-import { currentUnits } from "../content";
+import PhotoHero from "@dst/ui/district/PhotoHero.astro";
+import { siteHeaderImage, currentUnits } from "../content";
 ---
 <Layout
   title="Golden Visa Eligibility"
   description="Every Palm Central unit type clears the AED 2 million Golden Visa threshold. What that gets you, and how the property route actually works."
 >
   <section class="container hero">
-    <p class="eyebrow">Golden Visa</p>
-    <h1>Every unit here clears the threshold</h1>
+    <PhotoHero
+      eyebrow="Golden Visa"
+      title="Every unit here clears the threshold"
+      image={siteHeaderImage.src}
+      imageAlt={siteHeaderImage.alt}
+    />
     <p class="lede">
       Properties valued at <strong>AED 2 million</strong> and above generally
       qualify for UAE Golden Visa sponsorship. The cheapest unit currently

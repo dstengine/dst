@@ -1,15 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Callout from "@dst/ui/Callout.astro";
-import { currentPhase, soldOutPhase } from "../content";
+import PhotoHero from "@dst/ui/district/PhotoHero.astro";
+import { siteHeaderImage, currentPhase, soldOutPhase } from "../content";
 ---
 <Layout
   title="Payment Plan"
   description="Palm Central's payment plan — what's confirmed for the sold-out Phase 1, what's reported but unconfirmed for the current Phase 2, and what to get in writing before booking."
 >
   <section class="container hero">
-    <p class="eyebrow">Payment plan</p>
-    <h1>What the payment plan actually is</h1>
+    <PhotoHero
+      eyebrow="Payment plan"
+      title="What the payment plan actually is"
+      image={siteHeaderImage.src}
+      imageAlt={siteHeaderImage.alt}
+    />
     <p class="lede">
       Nakheel's own release for {currentPhase.label} doesn't publish exact
       payment terms. A few brokers list specific percentages anyway —

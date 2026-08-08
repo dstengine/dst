@@ -11,6 +11,14 @@
 // available. Sources for Phase 2: Nakheel's own press release for unit
 // count/types/amenities/completion; The National for per-type pricing.
 
+// The site's default header photo. Every page uses this in its PhotoHero
+// unless it has good reason to pass its own image/imageAlt instead — keeping
+// it here means there's one place to update if the render changes, not six.
+export const siteHeaderImage = {
+  src: "/palmcentral.jpg",
+  alt: "Night aerial render of Palm Central's beachfront residences and central Spine, Palm Jebel Ali.",
+};
+
 export const currentPhase = {
   label: "Phase 2",
   released: "June 2026",

@@ -1,15 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Faq from "@dst/ui/Faq.astro";
-import { faqItems } from "../content";
+import PhotoHero from "@dst/ui/district/PhotoHero.astro";
+import { siteHeaderImage, faqItems } from "../content";
 ---
 <Layout
   title="Frequently Asked Questions"
   description="Palm Central FAQ: current availability, Phase 2 pricing, payment plan, Golden Visa eligibility, the developer, and exact location on Palm Jebel Ali."
 >
   <section class="container hero">
-    <p class="eyebrow">FAQ</p>
-    <h1>Frequently asked questions</h1>
+    <PhotoHero
+      eyebrow="FAQ"
+      title="Frequently asked questions"
+      image={siteHeaderImage.src}
+      imageAlt={siteHeaderImage.alt}
+    />
     <p class="lede">
       The questions people actually ask before booking, answered plainly —
       including the one most listings skip: whether the price you're

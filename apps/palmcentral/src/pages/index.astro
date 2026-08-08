@@ -6,6 +6,7 @@ import LeadForm from "@dst/ui/LeadForm.astro";
 import PhotoHero from "@dst/ui/district/PhotoHero.astro";
 import { iconFor } from "@dst/ui/icons";
 import {
+  siteHeaderImage,
   currentPhase,
   soldOutPhase,
   currentUnits,
@@ -60,8 +61,8 @@ const jsonLd = [
     <PhotoHero
       eyebrow="Nakheel · Palm Jebel Ali"
       title="Palm Central Private Residences"
-      image="/palmcentral.jpg"
-      imageAlt="Night aerial render of Palm Central's beachfront residences and central Spine, Palm Jebel Ali."
+      image={siteHeaderImage.src}
+      imageAlt={siteHeaderImage.alt}
     />
     <p class="lede">
       <strong>Beachfront apartments and townhouses</strong> on

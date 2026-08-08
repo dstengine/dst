@@ -1,13 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PhotoHero from "@dst/ui/district/PhotoHero.astro";
+import { siteHeaderImage } from "../content";
 ---
 <Layout
   title="Privacy Policy"
   description="What this site collects when you register interest in Palm Central, how it's used, who it's shared with, and how analytics works across the DST network."
 >
   <section class="container hero">
-    <p class="eyebrow">Privacy</p>
-    <h1>Privacy policy</h1>
+    <PhotoHero
+      eyebrow="Privacy"
+      title="Privacy policy"
+      image={siteHeaderImage.src}
+      imageAlt={siteHeaderImage.alt}
+    />
     <p class="lede">
       This page covers what palmcentral.dst.llc actually collects and does
       with it — not a generic template. Last updated 5 August 2026.
