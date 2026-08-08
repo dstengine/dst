@@ -19,6 +19,9 @@ import { siteHeaderImage, currentUnits } from "../content";
       This page covers what palmcentral.dst.llc actually collects and does
       with it — not a generic template. Last updated 5 August 2026.
     </p>
+    <div class="hero-actions">
+      <a class="button" href="#interest" title="Register interest in Palm Central">Register interest</a>
+    </div>
   </section>
 
   <section class="container">
@@ -121,3 +124,7 @@ import { siteHeaderImage, currentUnits } from "../content";
 
   <InterestForm currentUnits={currentUnits} />
 </Layout>
+
+<style>
+  .hero-actions { display: flex; gap: var(--space-2); margin-top: var(--space-3); flex-wrap: wrap; }
+</style>
