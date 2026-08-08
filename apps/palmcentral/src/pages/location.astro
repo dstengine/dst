@@ -1,7 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PhotoHero from "@dst/ui/district/PhotoHero.astro";
-import { siteHeaderImage, distances } from "../content";
+import InterestForm from "../components/InterestForm.astro";
+import { siteHeaderImage, distances, currentUnits } from "../content";
 ---
 <Layout
   title="Location"
@@ -84,9 +85,11 @@ import { siteHeaderImage, distances } from "../content";
     <h2>Want the price list next?</h2>
     <p>
       See <a href="/prices/" title="Palm Central price list, both phases">current pricing</a> for
-      the phase that's actually for sale, or <a href="/#interest" title="Register interest in Palm Central">register your interest</a> directly.
+      the phase that's actually for sale, or <a href="#interest" title="Register interest in Palm Central">register your interest</a> directly.
     </p>
   </section>
+
+  <InterestForm currentUnits={currentUnits} />
 </Layout>
 
 <style>

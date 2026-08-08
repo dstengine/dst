@@ -1,7 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PhotoHero from "@dst/ui/district/PhotoHero.astro";
-import { siteHeaderImage } from "../content";
+import InterestForm from "../components/InterestForm.astro";
+import { siteHeaderImage, currentUnits } from "../content";
 ---
 <Layout
   title="Privacy Policy"
@@ -91,7 +92,7 @@ import { siteHeaderImage } from "../content";
     <h2>Your options</h2>
     <p>
       To ask what we hold about you, correct it, or have it deleted, use the
-      <a href="/#interest" title="Register interest in Palm Central">form on this site</a> and
+      <a href="#interest" title="Register interest in Palm Central">form on this site</a> and
       say what you need — we'll handle it directly rather than routing you
       through a separate request process. Most browsers also let you block
       or clear analytics cookies without affecting anything else on the
@@ -117,4 +118,6 @@ import { siteHeaderImage } from "../content";
       at the top.
     </p>
   </section>
+
+  <InterestForm currentUnits={currentUnits} />
 </Layout>

@@ -2,7 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import Faq from "@dst/ui/Faq.astro";
 import PhotoHero from "@dst/ui/district/PhotoHero.astro";
-import { siteHeaderImage, faqItems } from "../content";
+import InterestForm from "../components/InterestForm.astro";
+import { siteHeaderImage, faqItems, currentUnits } from "../content";
 ---
 <Layout
   title="Frequently Asked Questions"
@@ -29,11 +30,13 @@ import { siteHeaderImage, faqItems } from "../content";
   <section class="container cta">
     <h2>Still have a question?</h2>
     <p>
-      <a href="/#interest" title="Register interest in Palm Central">Register your interest</a> and
+      <a href="#interest" title="Register interest in Palm Central">Register your interest</a> and
       ask it directly — we'll answer before you're asked to commit to
       anything.
     </p>
   </section>
+
+  <InterestForm currentUnits={currentUnits} />
 </Layout>
 
 <style>

@@ -2,7 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import Callout from "@dst/ui/Callout.astro";
 import PhotoHero from "@dst/ui/district/PhotoHero.astro";
-import { siteHeaderImage, currentPhase, soldOutPhase } from "../content";
+import InterestForm from "../components/InterestForm.astro";
+import { siteHeaderImage, currentPhase, soldOutPhase, currentUnits } from "../content";
 ---
 <Layout
   title="Payment Plan"
@@ -62,11 +63,13 @@ import { siteHeaderImage, currentPhase, soldOutPhase } from "../content";
   <section class="container cta">
     <h2>Want the current schedule?</h2>
     <p>
-      <a href="/#interest" title="Register interest in Palm Central">Register your interest</a> and
+      <a href="#interest" title="Register interest in Palm Central">Register your interest</a> and
       we'll come back with the actual payment schedule for the unit type
       you're looking at, confirmed rather than estimated.
     </p>
   </section>
+
+  <InterestForm currentUnits={currentUnits} />
 </Layout>
 
 <style>

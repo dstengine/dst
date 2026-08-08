@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Callout from "@dst/ui/Callout.astro";
 import PhotoHero from "@dst/ui/district/PhotoHero.astro";
+import InterestForm from "../components/InterestForm.astro";
 import { siteHeaderImage, currentPhase, soldOutPhase, currentUnits, phase1Units } from "../content";
 ---
 <Layout
@@ -84,11 +85,13 @@ import { siteHeaderImage, currentPhase, soldOutPhase, currentUnits, phase1Units 
   <section class="container cta">
     <h2>Ready to talk specifics?</h2>
     <p>
-      <a href="/#interest" title="Register interest in Palm Central">Register your interest</a> and
+      <a href="#interest" title="Register interest in Palm Central">Register your interest</a> and
       we'll come back with current Phase 2 availability matched to what
       you're after, not a resale listing from the sold-out phase.
     </p>
   </section>
+
+  <InterestForm currentUnits={currentUnits} />
 </Layout>
 
 <style>

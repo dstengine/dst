@@ -1,0 +1,40 @@
+---
+// The actual lead-capture form, shared by every page rather than living
+// only on the homepage. Every "Register interest" link on the site —
+// header nav, sticky CTA, inline copy — points at "#interest" as a
+// same-page anchor now, so it has to resolve to something real wherever
+// the user happens to be, not just on "/".
+import LeadForm from "@dst/ui/LeadForm.astro";
+import type { UnitType } from "../content";
+
+interface Props {
+  currentUnits: UnitType[];
+}
+const { currentUnits } = Astro.props;
+---
+<section id="interest" class="container">
+  <h2>Register interest</h2>
+  <p class="lede">
+    Tell us what you're after and we'll match it against current Phase 2
+    availability — not a resale listing from the sold-out phase.
+  </p>
+  <LeadForm endpoint="/api/lead" submitLabel="Register my interest">
+    <div class="field">
+      <label for="unit-type">Unit type</label>
+      <select id="unit-type" name="meta.unitType">
+        <option value="">Prefer not to say</option>
+        {currentUnits.map((u) => <option value={u.type}>{u.type}</option>)}
+      </select>
+    </div>
+    <div class="field">
+      <label for="budget">Approximate budget (AED)</label>
+      <select id="budget" name="meta.investmentBudget">
+        <option value="">Prefer not to say</option>
+        <option value="2-5m">2,700,000–5,000,000</option>
+        <option value="5-8m">5,000,000–8,000,000</option>
+        <option value="8-13m">8,000,000–13,000,000</option>
+        <option value="13m+">13,000,000+</option>
+      </select>
+    </div>
+  </LeadForm>
+</section>

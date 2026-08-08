@@ -4,13 +4,15 @@
 // true. The header already has its own "Register interest" link, so this
 // button stays hidden while the header is still on screen (it would just be
 // a second copy of the same thing) and appears once the header scrolls past.
-// It hides again near the real form (homepage only) so we're never showing
-// two "Register interest" prompts on screen at once.
+// It hides again near the real form so we're never showing two "Register
+// interest" prompts on screen at once — the form itself is on every page
+// now (InterestForm.astro), so "#interest" is a same-page anchor everywhere,
+// not just a link back to the homepage.
 //
 // Default state is hidden via CSS, not JS, so there's no flash of the
 // button before the header-visibility check runs.
 ---
-<a class="sticky-cta button" href="/#interest" title="Register interest in Palm Central" data-sticky-cta>
+<a class="sticky-cta button" href="#interest" title="Register interest in Palm Central" data-sticky-cta>
   Register interest
 </a>
 <script>

@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Callout from "@dst/ui/Callout.astro";
 import PhotoHero from "@dst/ui/district/PhotoHero.astro";
+import InterestForm from "../components/InterestForm.astro";
 import { siteHeaderImage, currentUnits } from "../content";
 ---
 <Layout
@@ -74,12 +75,14 @@ import { siteHeaderImage, currentUnits } from "../content";
   <section class="container cta">
     <h2>Next step</h2>
     <p>
-      <a href="/#interest" title="Register interest in Palm Central">Register your interest</a> in
+      <a href="#interest" title="Register interest in Palm Central">Register your interest</a> in
       a specific unit, or start with the
       <a href="https://visas.dst.llc/consultation/" title="Request a Golden Visa consultation — visas.dst.llc">Golden Visa consultation</a> if
       residency is the primary driver rather than the property itself.
     </p>
   </section>
+
+  <InterestForm currentUnits={currentUnits} />
 </Layout>
 
 <style>
