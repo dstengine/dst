@@ -14,6 +14,7 @@
 // context) passes a non-identity escape because of that.
 
 const CONTACT_LABELS = { phone: 'Phone', email: 'Email', whatsapp: 'WhatsApp', telegram: 'Telegram' };
+const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
 
 export function escapeHtml(value) {
   return String(value)
@@ -75,6 +76,15 @@ export function formatLeadText(lead, opts = {}) {
   // lead was on in human terms, since ref.url is often a slug that doesn't.
   if (opts.includeSource !== false && lead.ref?.title) {
     lines.push(`${bold('Page title:')} ${escape(lead.ref.title)}`);
+  }
+  // First-touch UTM tags, captured client-side from the query string at
+  // submit time (see utmFromQuery() in LeadForm.astro / DKey's main.js) -
+  // shown here so every destination gets them, not just Uspacy's own
+  // structured utm_source/medium/campaign fields (which only cover 3 of the
+  // 5 keys and don't exist on Planfix/Telegram/Linear at all).
+  if (opts.includeSource !== false && lead.ref) {
+    const utmParts = UTM_KEYS.filter((key) => lead.ref[key]).map((key) => `${key.slice(4)}=${escape(lead.ref[key])}`);
+    if (utmParts.length > 0) lines.push(`${bold('UTM:')} ${utmParts.join(', ')}`);
   }
 
   if (lead.geo && (lead.geo.city || lead.geo.country)) {

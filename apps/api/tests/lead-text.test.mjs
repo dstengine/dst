@@ -51,6 +51,20 @@ test('formatLeadText routes the Source value through a custom `link` renderer', 
   assert.match(text, /\*\*Source:\*\* <a href="https:\/\/dst\.llc\/">https:\/\/dst\.llc\/<\/a>/);
 });
 
+test('formatLeadText includes a UTM line listing only the tags that are present', () => {
+  const text = formatLeadText({
+    contacts: { phone: '1' },
+    ref: { url: 'https://dst.llc/', utm_source: 'google', utm_campaign: 'summer2026' },
+  });
+  assert.match(text, /\*\*UTM:\*\* source=google, campaign=summer2026/);
+  assert.doesNotMatch(text, /medium=/);
+});
+
+test('formatLeadText omits the UTM line when no utm_* keys are present', () => {
+  const text = formatLeadText({ contacts: { phone: '1' }, ref: { url: 'https://dst.llc/' } });
+  assert.doesNotMatch(text, /UTM:/);
+});
+
 test('formatLeadText prefers the full URL over the bare domain for Source', () => {
   const withUrl = formatLeadText({ contacts: { phone: '1' }, ref: { url: 'https://dst.llc/contact/', domain: 'dst.llc' } });
   assert.match(withUrl, /\*\*Source:\*\* https:\/\/dst\.llc\/contact\//);
