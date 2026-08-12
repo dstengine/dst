@@ -50,7 +50,9 @@ Variables), not in a committed file:
 |---|---|---|
 | `TELEGRAM_BOT_TOKEN` | Telegram adapter | Create via [@BotFather](https://t.me/BotFather) |
 | `TELEGRAM_CHAT_ID` | Telegram adapter | The chat/channel the bot should post into |
-| `PLANFIX_WEBHOOK_URL` | Planfix adapter | Planfix's inbound webhook URL for this account |
+| `PLANFIX_API_TOKEN` | Planfix adapter | Planfix has no inbound webhook URL - this is a bearer token from Account management -> Access to API -> REST API, scoped to `task_add` (+ `common_metadata` to list templates) |
+| `PLANFIX_ACCOUNT` | Planfix adapter | The account subdomain, e.g. `dstdkey` for `dstdkey.planfix.com` |
+| `PLANFIX_TEMPLATE_ID` | Planfix adapter | Optional - task template id from `GET /rest/task/templates/` |
 | `USPACY_WEBHOOK_URL` | Uspacy adapter | Uspacy.com's inbound webhook URL for this account |
 
 Without these, `/api/v1/lead` still returns `200`/`207` but the affected
