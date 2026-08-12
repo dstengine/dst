@@ -63,9 +63,13 @@ const {
     node[keys[keys.length - 1]] = value;
   }
 
-  // First-touch UTM params only - if the visitor arrived via a campaign
-  // link, that's the one that should get credit, not whatever page they
-  // happen to submit the form from.
+  // First-touch UTM params - captured and persisted by LeadTracking.astro
+  // the moment the visitor first landed (localStorage + cookie, same as
+  // history), so a form submitted pages later still carries the campaign
+  // that brought them in rather than whatever this page's own query string
+  // happens to be. Falls back to reading the current URL directly only if
+  // LeadTracking.astro's capture (window.dstGetUtm) isn't present for some
+  // reason - a site that forgot to include it shouldn't lose UTM entirely.
   const UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
   function utmFromQuery(): Record<string, string> {
     const params = new URLSearchParams(location.search);
@@ -75,6 +79,10 @@ const {
       if (value) out[key] = value;
     }
     return out;
+  }
+  function firstTouchUtm(): Record<string, string> {
+    const stored = (window as any).dstGetUtm?.();
+    return stored && Object.keys(stored).length > 0 ? stored : utmFromQuery();
   }
 
   document.querySelectorAll<HTMLFormElement>("form[data-lead-form]").forEach((form) => {
@@ -101,7 +109,7 @@ const {
         if (typeof value !== "string" || value.trim() === "") continue;
         setDeep(lead, key, value);
       }
-      lead.ref = { ...lead.ref, url: location.href, domain: location.hostname, title: document.title, ...utmFromQuery() };
+      lead.ref = { ...lead.ref, url: location.href, domain: location.hostname, title: document.title, ...firstTouchUtm() };
       lead.meta = { ...lead.meta, referrer: document.referrer || undefined, language: navigator.language };
       const geo = (window as any).__dstGeoMeta;
       if (geo?.source) lead.geo = geo;

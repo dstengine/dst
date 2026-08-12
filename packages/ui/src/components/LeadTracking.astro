@@ -10,11 +10,15 @@
 //   - history: a unified page-view + link-click log, one entry shape
 //     distinguished by "type", mirrored into localStorage and a cookie
 //     (so it survives either being cleared) and capped at 50 entries.
+//   - utm: first-touch UTM params, captured once from whichever page's query
+//     string the visitor actually landed on and never overwritten after -
+//     same persistence as history, so a form submitted pages later still
+//     carries the campaign that brought the visitor in.
 // Included once in BaseLayout so it runs on every page of every site -
-// history in particular needs to see the pages visited before whichever
+// history/utm in particular need to see the pages visited before whichever
 // one the visitor eventually converts on, not just the form page itself.
-// LeadForm.astro reads window.__dstGeoMeta / window.dstGetHistory() at
-// submit time into lead.geo / lead.meta.history.
+// LeadForm.astro reads window.__dstGeoMeta / window.dstGetHistory() /
+// window.dstGetUtm() at submit time into lead.geo / lead.meta.history / lead.ref.
 ---
 <script>
   // *** IP geolocation (shared, fetched once per page load) ***
@@ -91,6 +95,8 @@
   const COOKIE_DAYS = 365;
   const HISTORY_KEY = "history";
   const HISTORY_MAX = 50;
+  const UTM_KEY = "utm";
+  const UTM_PARAMS = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
 
   function setCookie(name: string, value: string) {
     const expires = new Date(Date.now() + COOKIE_DAYS * 864e5).toUTCString();
@@ -135,6 +141,33 @@
   }
 
   (window as any).dstGetHistory = getHistory;
+
+  // *** First-touch UTM capture ***
+  // Read once, on whichever page the visitor actually arrived on - a form
+  // submitted three pages later (after browsing away from the landing URL)
+  // should still get credit for the campaign that brought them in, not lose
+  // it because that page's own query string is empty. First-touch, not
+  // last-touch: an existing stored value is never overwritten by a later
+  // visit's UTM params (e.g. an organic revisit with no params, or a
+  // different campaign link clicked after the fact).
+  (function captureUtmFirstTouch() {
+    if (loadValue(UTM_KEY)) return; // already captured on an earlier visit
+    const params = new URLSearchParams(location.search);
+    const utm: Record<string, string> = {};
+    for (const key of UTM_PARAMS) {
+      const value = params.get(key);
+      if (value) utm[key] = value;
+    }
+    if (Object.keys(utm).length > 0) saveValue(UTM_KEY, JSON.stringify(utm));
+  })();
+
+  (window as any).dstGetUtm = function dstGetUtm(): Record<string, string> {
+    try {
+      return JSON.parse(loadValue(UTM_KEY) || "{}");
+    } catch {
+      return {};
+    }
+  };
 
   // - page: every page visited. Skips an immediate repeat (reload) so the
   //   log doesn't fill up with the same URL.
