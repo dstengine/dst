@@ -11,7 +11,7 @@ under `api/` becomes a route at the matching path.
 - `POST /api/v1/lead` - accepts the universal lead DTO (see
   `~/mind/local/dubai/dstengine/dtos/lead.dto.md`) and fans it out,
   unchanged, to every configured adapter.
-- `POST /api/v1/lead/telegram`, `/api/v1/lead/planfix`, `/api/v1/lead/uspacy`
+- `POST /api/v1/lead/telegram`, `/api/v1/lead/planfix`, `/api/v1/lead/uspacy`, `/api/v1/lead/linear`
   - each adapter's own route, callable directly with the same DTO. `/api/v1/lead`
   calls these same handlers in-process for its fan-out, so the standalone
   route and the fan-out leg can never drift apart.
@@ -54,6 +54,8 @@ Variables), not in a committed file:
 | `PLANFIX_ACCOUNT` | Planfix adapter | The account subdomain, e.g. `dstdkey` for `dstdkey.planfix.com` |
 | `PLANFIX_TEMPLATE_ID` | Planfix adapter | Optional - task template id from `GET /rest/task/templates/` |
 | `USPACY_WEBHOOK_URL` | Uspacy adapter | Uspacy.com's inbound webhook URL for this account |
+| `LINEAR_API_KEY` | Linear adapter | Personal API key from Settings -> Security & access -> Personal API keys, scoped to `Create issues` only |
+| `LINEAR_TEAM_ID` | Linear adapter | Target team's UUID (not its key, e.g. not `DST`) |
 
 Without these, `/api/v1/lead` still returns `200`/`207` but the affected
 adapter reports `ok: false` in the response instead of throwing - a missing

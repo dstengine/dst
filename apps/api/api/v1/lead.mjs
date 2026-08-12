@@ -11,11 +11,13 @@ import { applyCors } from '../../lib/cors.mjs';
 import telegramHandler from './lead/telegram.mjs';
 import planfixHandler from './lead/planfix.mjs';
 import uspacyHandler from './lead/uspacy.mjs';
+import linearHandler from './lead/linear.mjs';
 
 const adapters = [
   { name: 'telegram', handler: telegramHandler },
   { name: 'planfix', handler: planfixHandler },
   { name: 'uspacy', handler: uspacyHandler },
+  { name: 'linear', handler: linearHandler },
 ];
 
 // Runs an adapter's own Vercel handler in-process against the same request
