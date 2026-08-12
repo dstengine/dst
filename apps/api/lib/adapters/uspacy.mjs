@@ -64,19 +64,15 @@ export async function sendToUspacy(lead) {
     ...splitName(lead.name),
     ...(lead.contacts.phone ? { phone: [{ value: lead.contacts.phone, type: 'work', main: true }] } : {}),
     ...(lead.contacts.email ? { email: [{ value: lead.contacts.email, type: 'work', main: true }] } : {}),
-    // Trying Uspacy's own Telegram/WhatsApp "Social networks" field (visible
-    // in the lead UI, same widget as Facebook/Instagram/etc.) instead of
-    // leaving these two only in free-text comments - unconfirmed shape,
-    // verify against a live test lead before trusting this like `source`
-    // below turned out not to be trustworthy.
-    ...(lead.contacts.telegram || lead.contacts.whatsapp
-      ? {
-          social_networks: [
-            ...(lead.contacts.telegram ? [{ type: 'telegram', value: lead.contacts.telegram }] : []),
-            ...(lead.contacts.whatsapp ? [{ type: 'whatsapp', value: lead.contacts.whatsapp }] : []),
-          ],
-        }
-      : {}),
+    // Uspacy's lead UI shows a "Social networks" widget (Facebook/Telegram/
+    // WhatsApp/etc.), but the incoming-webhook lead endpoint rejects a
+    // `social_networks` key outright (422: "The social_networks not
+    // found.") - tried it and it turns out that field isn't part of the
+    // Lead entity's writable schema here (likely only settable on the
+    // linked Contact record, not via this endpoint). Reverted: an unknown
+    // field failing the whole request is worse than the old silent-drop
+    // problem with `source` below, since it would have blocked every lead
+    // from reaching Uspacy at all. Telegram/WhatsApp stay in `comments`.
     ...(lead.ref?.utm_source ? { utm_source: lead.ref.utm_source } : {}),
     ...(lead.ref?.utm_medium ? { utm_medium: lead.ref.utm_medium } : {}),
     ...(lead.ref?.utm_campaign ? { utm_campaign: lead.ref.utm_campaign } : {}),
