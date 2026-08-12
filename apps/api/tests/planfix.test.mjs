@@ -27,11 +27,20 @@ test('formatTaskDescription renders real HTML - <b> labels, <br> line breaks (co
   assert.match(description, /<b>Name:<\/b> Dev/);
   assert.match(description, /<b>Phone:<\/b> \+971501234567/);
   assert.match(description, /<b>Email:<\/b> a@b\.com/);
-  assert.match(description, /<b>Source:<\/b> riviera\.dst\.llc/);
+  assert.match(description, /<b>Source:<\/b> <a href="riviera\.dst\.llc">riviera\.dst\.llc<\/a>/);
   assert.match(description, /<b>Location:<\/b> Dubai, UAE/);
   assert.match(description, /unitType:<\/b> 2BR/);
   assert.match(description, /<br>/);
   assert.doesNotMatch(description, /\*/);
+});
+
+test('formatTaskDescription renders Source as a real clickable link, and Page title when present', () => {
+  const description = formatTaskDescription({
+    contacts: { phone: '1' },
+    ref: { url: 'https://riviera.dst.llc/villa-42', title: 'Villa 42 — Palm Jumeirah' },
+  });
+  assert.match(description, /<b>Source:<\/b> <a href="https:\/\/riviera\.dst\.llc\/villa-42">https:\/\/riviera\.dst\.llc\/villa-42<\/a>/);
+  assert.match(description, /<b>Page title:<\/b> Villa 42 — Palm Jumeirah/);
 });
 
 test('formatTaskDescription escapes HTML-significant characters in values', () => {
@@ -40,12 +49,21 @@ test('formatTaskDescription escapes HTML-significant characters in values', () =
   assert.match(description, /&lt;script&gt;/);
 });
 
+test('formatTaskDescription escapes quotes in the Source href so a malicious URL cannot break out of the attribute', () => {
+  const description = formatTaskDescription({
+    contacts: { phone: '1' },
+    ref: { url: 'https://dst.llc/"><script>alert(1)</script>' },
+  });
+  assert.doesNotMatch(description, /"><script>/);
+  assert.match(description, /href="https:\/\/dst\.llc\/&quot;&gt;&lt;script&gt;alert\(1\)&lt;\/script&gt;"/);
+});
+
 test('formatTaskDescription prefers the full page URL over the bare domain for Source', () => {
   const description = formatTaskDescription({
     contacts: { phone: '1' },
     ref: { url: 'https://riviera.dst.llc/rent/?utm_source=x', domain: 'riviera.dst.llc' },
   });
-  assert.match(description, /<b>Source:<\/b> https:\/\/riviera\.dst\.llc\/rent\/\?utm_source=x/);
+  assert.match(description, /<b>Source:<\/b> <a href="https:\/\/riviera\.dst\.llc\/rent\/\?utm_source=x">https:\/\/riviera\.dst\.llc\/rent\/\?utm_source=x<\/a>/);
 });
 
 test('formatTaskDescription includes form and lists all activity, not raw history', () => {

@@ -22,6 +22,7 @@ function formatTaskDescription(lead) {
     bold: (label) => `<b>${label}</b>`,
     section: (title) => `<b>${title}</b>`,
     lineBreak: '<br>',
+    link: (url, text) => `<a href="${escapeHtml(url)}">${text}</a>`,
   });
 }
 

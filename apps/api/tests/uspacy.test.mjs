@@ -37,15 +37,24 @@ test('formatComments renders real HTML - <b> labels, <br> line breaks (confirmed
   assert.doesNotMatch(comments, /\*/);
 });
 
+test('formatComments renders Source as a real clickable link, and Page title when present', () => {
+  const comments = formatComments({
+    contacts: { phone: '1' },
+    ref: { url: 'https://dstdkey.ae/villa-42', title: 'Villa 42 — Palm Jumeirah' },
+  });
+  assert.match(comments, /<b>Source:<\/b> <a href="https:\/\/dstdkey\.ae\/villa-42">https:\/\/dstdkey\.ae\/villa-42<\/a>/);
+  assert.match(comments, /<b>Page title:<\/b> Villa 42 — Palm Jumeirah/);
+});
+
 test('formatComments escapes HTML-significant characters in values', () => {
   const comments = formatComments({ contacts: { whatsapp: '<script>alert(1)</script>' } });
   assert.doesNotMatch(comments, /<script>/);
   assert.match(comments, /&lt;script&gt;/);
 });
 
-test('formatComments includes Source as text (the structured field silently drops non-dictionary values)', () => {
+test('formatComments includes Source as a link in comments (the structured `source` field is a closed dictionary and silently drops non-dictionary values)', () => {
   const comments = formatComments({ contacts: { phone: '1' }, ref: { domain: 'dst.llc' } });
-  assert.match(comments, /<b>Source:<\/b> dst\.llc/);
+  assert.match(comments, /<b>Source:<\/b> <a href="dst\.llc">dst\.llc<\/a>/);
 });
 
 test('formatComments includes form and lists all activity, not raw history', () => {

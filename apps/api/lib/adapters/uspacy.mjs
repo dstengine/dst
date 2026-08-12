@@ -31,6 +31,7 @@ function formatComments(lead) {
     bold: (label) => `<b>${label}</b>`,
     section: (title) => `<b>${title}</b>`,
     lineBreak: '<br>',
+    link: (url, text) => `<a href="${escapeHtml(url)}">${text}</a>`,
   });
 }
 
@@ -66,6 +67,12 @@ export async function sendToUspacy(lead) {
     ...(lead.ref?.utm_source ? { utm_source: lead.ref.utm_source } : {}),
     ...(lead.ref?.utm_medium ? { utm_medium: lead.ref.utm_medium } : {}),
     ...(lead.ref?.utm_campaign ? { utm_campaign: lead.ref.utm_campaign } : {}),
+    // The structured `source` field is a closed dictionary (Call/Link/
+    // Email/Advertising/Partner/Recommendation/Other, confirmed against the
+    // live UI) - it can't hold an arbitrary URL, but every lead here came
+    // from a web page, so "Link" is always the correct category. The actual
+    // URL still goes in `comments` (as a real <a href>, see formatComments).
+    ...(lead.ref?.url || lead.ref?.domain ? { source: 'Link' } : {}),
     comments: formatComments(lead),
   };
 

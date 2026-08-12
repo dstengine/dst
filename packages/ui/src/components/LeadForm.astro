@@ -101,7 +101,7 @@ const {
         if (typeof value !== "string" || value.trim() === "") continue;
         setDeep(lead, key, value);
       }
-      lead.ref = { ...lead.ref, url: location.href, domain: location.hostname, ...utmFromQuery() };
+      lead.ref = { ...lead.ref, url: location.href, domain: location.hostname, title: document.title, ...utmFromQuery() };
       lead.meta = { ...lead.meta, referrer: document.referrer || undefined, language: navigator.language };
       const geo = (window as any).__dstGeoMeta;
       if (geo?.source) lead.geo = geo;

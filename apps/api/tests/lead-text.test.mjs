@@ -27,6 +27,30 @@ test('formatLeadText includes name, contacts, form, source, and location as Mark
   assert.match(text, /\*\*Location:\*\* Dubai, UAE/);
 });
 
+test('formatLeadText includes Page title right after Source when ref.title is present', () => {
+  const text = formatLeadText({ contacts: { phone: '1' }, ref: { url: 'https://dst.llc/villa-42', title: 'Villa 42 — Palm Jumeirah' } });
+  assert.match(text, /\*\*Source:\*\* https:\/\/dst\.llc\/villa-42\n\*\*Page title:\*\* Villa 42 — Palm Jumeirah/);
+});
+
+test('formatLeadText omits Page title when ref.title is absent', () => {
+  const text = formatLeadText({ contacts: { phone: '1' }, ref: { url: 'https://dst.llc/' } });
+  assert.doesNotMatch(text, /Page title:/);
+});
+
+test('formatLeadText renders Source as plain text when no `link` option is given (Markdown adapters)', () => {
+  const text = formatLeadText({ contacts: { phone: '1' }, ref: { url: 'https://dst.llc/' } });
+  assert.match(text, /\*\*Source:\*\* https:\/\/dst\.llc\//);
+  assert.doesNotMatch(text, /<a /);
+});
+
+test('formatLeadText routes the Source value through a custom `link` renderer', () => {
+  const text = formatLeadText(
+    { contacts: { phone: '1' }, ref: { url: 'https://dst.llc/' } },
+    { link: (url, text) => `<a href="${url}">${text}</a>` }
+  );
+  assert.match(text, /\*\*Source:\*\* <a href="https:\/\/dst\.llc\/">https:\/\/dst\.llc\/<\/a>/);
+});
+
 test('formatLeadText prefers the full URL over the bare domain for Source', () => {
   const withUrl = formatLeadText({ contacts: { phone: '1' }, ref: { url: 'https://dst.llc/contact/', domain: 'dst.llc' } });
   assert.match(withUrl, /\*\*Source:\*\* https:\/\/dst\.llc\/contact\//);

@@ -19,7 +19,8 @@ export function escapeHtml(value) {
   return String(value)
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;');
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
 }
 
 export function formatLeadTitle(lead, prefix = 'Lead: ') {
@@ -36,12 +37,14 @@ export function formatLeadTitle(lead, prefix = 'Lead: ') {
  *   excludeContacts?: string[],
  *   includeSource?: boolean,
  *   lineBreak?: string,
+ *   link?: (url: string, text: string) => string,
  * }} [opts]
  */
 export function formatLeadText(lead, opts = {}) {
   const escape = opts.escape || ((value) => String(value));
   const bold = opts.bold || ((label) => `**${label}**`);
   const section = opts.section || ((title) => `**${title}**`);
+  const link = opts.link || ((_url, text) => text);
   const excludeContacts = new Set(opts.excludeContacts || []);
   const lines = [];
 
@@ -60,9 +63,18 @@ export function formatLeadText(lead, opts = {}) {
 
   // The full page URL is more useful than the bare domain when it's
   // available - it says which property/page the lead was actually looking
-  // at, not just which site.
+  // at, not just which site. Rendered through `link` (an <a href> for the
+  // HTML adapters) so it's actually clickable, not just readable text -
+  // Planfix/Uspacy have no structured "source URL" field of their own, so a
+  // real hyperlink in the description/comments is the closest equivalent.
   if (opts.includeSource !== false && lead.ref && (lead.ref.url || lead.ref.domain)) {
-    lines.push(`${bold('Source:')} ${escape(lead.ref.url || lead.ref.domain)}`);
+    const source = lead.ref.url || lead.ref.domain;
+    lines.push(`${bold('Source:')} ${link(source, escape(source))}`);
+  }
+  // The page's <title> at submit time - names which property/listing the
+  // lead was on in human terms, since ref.url is often a slug that doesn't.
+  if (opts.includeSource !== false && lead.ref?.title) {
+    lines.push(`${bold('Page title:')} ${escape(lead.ref.title)}`);
   }
 
   if (lead.geo && (lead.geo.city || lead.geo.country)) {
