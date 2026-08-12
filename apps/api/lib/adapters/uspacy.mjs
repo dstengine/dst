@@ -14,14 +14,33 @@ function formatTitle(lead) {
 
 // phone/email are excluded from comments since they already land in their
 // own structured fields on the Uspacy lead (see sendToUspacy below); Name
-// likewise goes to first_name. ref.domain is excluded since it's already
-// the structured `source` field, not just here for readability.
+// likewise goes to first_name/last_name. Source stays IN the comments
+// (unlike the structured `source` attempt below) because that structured
+// field turns out to be a closed dictionary (e.g. "FB", "Google") - an
+// arbitrary domain silently fails to save there, so text is the only place
+// it reliably shows up. Uspacy's own fields are plain text, not markdown -
+// a literal "**Name:**" reads as broken formatting there, so bold/section
+// are no-ops instead of the shared template's markdown defaults.
 function formatComments(lead) {
   return formatLeadText(lead, {
     includeName: false,
     excludeContacts: ['phone', 'email'],
-    includeSource: false,
+    bold: (label) => label,
+    section: (title) => `${title}:`,
   });
+}
+
+// A simple first-space split ("Vladimir Detailed" -> "Vladimir" /
+// "Detailed") isn't always right (middle names, "Jr.", single-word names),
+// but it's a better fit for Uspacy's separate first/last name fields than
+// dumping the whole name into first_name alone, which is what happened
+// before this - last_name always blank, and any list/search sorted or
+// filtered by last name would silently miss every lead from this network.
+function splitName(name) {
+  if (!name) return {};
+  const spaceAt = name.indexOf(' ');
+  if (spaceAt === -1) return { first_name: name };
+  return { first_name: name.slice(0, spaceAt), last_name: name.slice(spaceAt + 1) };
 }
 
 /**
@@ -37,10 +56,9 @@ export async function sendToUspacy(lead) {
 
   const body = {
     title: formatTitle(lead),
-    ...(lead.name ? { first_name: lead.name } : {}),
+    ...splitName(lead.name),
     ...(lead.contacts.phone ? { phone: [{ value: lead.contacts.phone, type: 'work', main: true }] } : {}),
     ...(lead.contacts.email ? { email: [{ value: lead.contacts.email, type: 'work', main: true }] } : {}),
-    ...(lead.ref?.domain ? { source: lead.ref.domain } : {}),
     ...(lead.ref?.utm_source ? { utm_source: lead.ref.utm_source } : {}),
     ...(lead.ref?.utm_medium ? { utm_medium: lead.ref.utm_medium } : {}),
     ...(lead.ref?.utm_campaign ? { utm_campaign: lead.ref.utm_campaign } : {}),
@@ -66,4 +84,4 @@ export async function sendToUspacy(lead) {
   return { ok: true, status: res.status };
 }
 
-export { formatTitle, formatComments };
+export { formatTitle, formatComments, splitName };

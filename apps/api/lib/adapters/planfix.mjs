@@ -10,8 +10,15 @@ function formatTaskName(lead) {
   return formatLeadTitle(lead);
 }
 
+// Planfix's task description is plain text, not markdown - a literal
+// "**Name:**" would just read as broken formatting, so bold/section here
+// are no-ops (identity / "Title:") instead of the shared template's
+// markdown defaults.
 function formatTaskDescription(lead) {
-  return formatLeadText(lead);
+  return formatLeadText(lead, {
+    bold: (label) => label,
+    section: (title) => `${title}:`,
+  });
 }
 
 /**

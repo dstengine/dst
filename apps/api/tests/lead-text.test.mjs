@@ -62,3 +62,18 @@ test('formatLeadText respects includeName, excludeContacts, and includeSource', 
   assert.doesNotMatch(text, /Source:/);
   assert.match(text, /\*\*Phone:\*\* 1/);
 });
+
+test('formatLeadText renders plain text (no markdown) when bold/section are overridden to no-ops', () => {
+  const text = formatLeadText(
+    {
+      name: 'Dev',
+      contacts: { phone: '1' },
+      meta: { history: [{ type: 'page', url: 'https://dst.llc/', title: 'DST', ts: 1 }] },
+    },
+    { bold: (label) => label, section: (title) => `${title}:` }
+  );
+  assert.match(text, /^Name: Dev$/m);
+  assert.match(text, /^Phone: 1$/m);
+  assert.match(text, /^Activity \(1 event\(s\)\):$/m);
+  assert.doesNotMatch(text, /\*/);
+});

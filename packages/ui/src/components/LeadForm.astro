@@ -91,6 +91,11 @@ const {
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
       const status = form.querySelector<HTMLElement>("[data-lead-form-status]");
+      const submitButton = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+      // Guards against a double-click (or an impatient second tap while the
+      // request is in flight) creating two leads for the same submission.
+      if (submitButton?.disabled) return;
+      if (submitButton) submitButton.disabled = true;
       const lead: Record<string, any> = {};
       for (const [key, value] of new FormData(form).entries()) {
         if (typeof value !== "string" || value.trim() === "") continue;
@@ -113,6 +118,10 @@ const {
         form.reset();
       } catch {
         if (status) status.textContent = "Something went wrong — please try again, or contact us directly.";
+        // Only re-enable on failure - a successful submit should stay
+        // disabled (the form is reset anyway) so a stray extra click right
+        // after can't fire a second one.
+        if (submitButton) submitButton.disabled = false;
       }
     });
   });

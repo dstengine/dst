@@ -16,7 +16,7 @@ test('formatTaskName falls back through name/phone/email/whatsapp/telegram', () 
   assert.equal(formatTaskName({ contacts: { email: 'a@b.com' } }), 'Lead: a@b.com');
 });
 
-test('formatTaskDescription includes contacts, ref, geo, and meta', () => {
+test('formatTaskDescription is plain text (no markdown) - Planfix does not render markdown', () => {
   const description = formatTaskDescription({
     name: 'Dev',
     contacts: { phone: '+971501234567', email: 'a@b.com' },
@@ -24,12 +24,13 @@ test('formatTaskDescription includes contacts, ref, geo, and meta', () => {
     geo: { city: 'Dubai', country: 'UAE' },
     meta: { unitType: '2BR' },
   });
-  assert.match(description, /\*\*Name:\*\* Dev/);
-  assert.match(description, /\*\*Phone:\*\* \+971501234567/);
-  assert.match(description, /\*\*Email:\*\* a@b\.com/);
-  assert.match(description, /\*\*Source:\*\* riviera\.dst\.llc/);
-  assert.match(description, /\*\*Location:\*\* Dubai, UAE/);
-  assert.match(description, /unitType:\*\* 2BR/);
+  assert.match(description, /^Name: Dev$/m);
+  assert.match(description, /^Phone: \+971501234567$/m);
+  assert.match(description, /^Email: a@b\.com$/m);
+  assert.match(description, /^Source: riviera\.dst\.llc$/m);
+  assert.match(description, /^Location: Dubai, UAE$/m);
+  assert.match(description, /unitType: 2BR/);
+  assert.doesNotMatch(description, /\*/);
 });
 
 test('formatTaskDescription includes form and lists all activity, not raw history', () => {
@@ -43,8 +44,8 @@ test('formatTaskDescription includes form and lists all activity, not raw histor
       ],
     },
   });
-  assert.match(description, /\*\*Form:\*\* Riviera rent shortlist — Rent-shortlist request for Azizi Riviera/);
-  assert.match(description, /\*\*Activity \(2 event\(s\)\)\*\*/);
+  assert.match(description, /^Form: Riviera rent shortlist — Rent-shortlist request for Azizi Riviera$/m);
+  assert.match(description, /^Activity \(2 event\(s\)\):$/m);
   assert.match(description, /- click: Rent/);
   assert.doesNotMatch(description, /\[object Object\]/);
 });
