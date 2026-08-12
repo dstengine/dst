@@ -53,7 +53,7 @@ Variables), not in a committed file:
 | `PLANFIX_API_TOKEN` | Planfix adapter | Planfix has no inbound webhook URL - this is a bearer token from Account management -> Access to API -> REST API, scoped to `task_add` (+ `common_metadata` to list templates) |
 | `PLANFIX_ACCOUNT` | Planfix adapter | The account subdomain, e.g. `dstdkey` for `dstdkey.planfix.com` |
 | `PLANFIX_TEMPLATE_ID` | Planfix adapter | Optional - task template id from `GET /rest/task/templates/` |
-| `USPACY_WEBHOOK_URL` | Uspacy adapter | Uspacy.com's inbound webhook URL for this account |
+| `USPACY_WEBHOOK_URL` | Uspacy adapter | Uspacy's incoming-webhook base URL (Automation -> Webhooks -> Incoming, access: CRM) with `/crm/v1/entities/leads` appended - the bare webhook URL only returns a list of valid service paths, it doesn't create anything by itself |
 | `LINEAR_API_KEY` | Linear adapter | Personal API key from Settings -> Security & access -> Personal API keys, scoped to `Create issues` only |
 | `LINEAR_TEAM_ID` | Linear adapter | Target team's UUID (not its key, e.g. not `DST`) |
 
