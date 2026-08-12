@@ -1,13 +1,26 @@
 // Shared lead-to-text template, used by every adapter. One structure and
 // field order everywhere, but rendered per-destination: real Markdown for
-// Telegram (Markdown parse mode) and Linear (renders it natively), plain
-// text for Planfix/Uspacy (whose fields don't render markdown - showing
-// literal ** there read as broken, not "formatted", so `bold` is a no-op
-// for them instead). `escape` stays separate from `bold`: only Telegram's
-// Markdown parser 400s the whole send on unescaped _*`[ in a lead's own
-// values, so only its adapter passes a non-identity escape.
+// Telegram (Markdown parse mode) and Linear (renders it natively), real
+// HTML for Planfix/Uspacy - their description/comments fields turn out to
+// be HTML underneath (confirmed by testing: <b>/<br> both render, a bare
+// "\n" doesn't - it collapses to a space like any other HTML whitespace),
+// they just don't understand markdown's ** syntax, so `bold` renders
+// <b>...</b> and `lineBreak` is "<br>" for those two instead of markdown
+// defaults. `escape` is the one thing that differs for a reason beyond
+// "which markup": Telegram's Markdown parser 400s the whole send on
+// unescaped _*`[ in a lead's own values, and Planfix/Uspacy render real
+// HTML so unescaped &/</> in a lead's own values would inject markup -
+// every adapter except Linear's (plain markdown, no HTML/executable
+// context) passes a non-identity escape because of that.
 
 const CONTACT_LABELS = { phone: 'Phone', email: 'Email', whatsapp: 'WhatsApp', telegram: 'Telegram' };
+
+export function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
 
 export function formatLeadTitle(lead, prefix = 'Lead: ') {
   return `${prefix}${lead.name || lead.contacts.phone || lead.contacts.email || lead.contacts.whatsapp || lead.contacts.telegram}`;
@@ -22,6 +35,7 @@ export function formatLeadTitle(lead, prefix = 'Lead: ') {
  *   includeName?: boolean,
  *   excludeContacts?: string[],
  *   includeSource?: boolean,
+ *   lineBreak?: string,
  * }} [opts]
  */
 export function formatLeadText(lead, opts = {}) {
@@ -44,8 +58,11 @@ export function formatLeadText(lead, opts = {}) {
     lines.push(`${bold('Form:')} ${escape(lead.form.name)}${lead.form.description ? ` — ${escape(lead.form.description)}` : ''}`);
   }
 
-  if (opts.includeSource !== false && lead.ref && (lead.ref.domain || lead.ref.url)) {
-    lines.push(`${bold('Source:')} ${escape(lead.ref.domain || lead.ref.url)}`);
+  // The full page URL is more useful than the bare domain when it's
+  // available - it says which property/page the lead was actually looking
+  // at, not just which site.
+  if (opts.includeSource !== false && lead.ref && (lead.ref.url || lead.ref.domain)) {
+    lines.push(`${bold('Source:')} ${escape(lead.ref.url || lead.ref.domain)}`);
   }
 
   if (lead.geo && (lead.geo.city || lead.geo.country)) {
@@ -68,5 +85,5 @@ export function formatLeadText(lead, opts = {}) {
     }
   }
 
-  return lines.join('\n');
+  return lines.join(opts.lineBreak ?? '\n');
 }

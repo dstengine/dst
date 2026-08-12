@@ -27,6 +27,23 @@ test('formatLeadText includes name, contacts, form, source, and location as Mark
   assert.match(text, /\*\*Location:\*\* Dubai, UAE/);
 });
 
+test('formatLeadText prefers the full URL over the bare domain for Source', () => {
+  const withUrl = formatLeadText({ contacts: { phone: '1' }, ref: { url: 'https://dst.llc/contact/', domain: 'dst.llc' } });
+  assert.match(withUrl, /\*\*Source:\*\* https:\/\/dst\.llc\/contact\//);
+
+  const domainOnly = formatLeadText({ contacts: { phone: '1' }, ref: { domain: 'dst.llc' } });
+  assert.match(domainOnly, /\*\*Source:\*\* dst\.llc/);
+});
+
+test('formatLeadText joins with a custom lineBreak instead of "\\n"', () => {
+  const text = formatLeadText(
+    { name: 'Dev', contacts: { phone: '1' }, meta: { a: '1' } },
+    { lineBreak: '<br>' }
+  );
+  assert.match(text, /\*\*Name:\*\* Dev<br>\*\*Phone:\*\* 1<br><br>\*\*Meta\*\*/);
+  assert.doesNotMatch(text, /\n/);
+});
+
 test('formatLeadText renders every meta.history entry as a bulleted list, in order', () => {
   const history = Array.from({ length: 7 }, (_, i) => ({ type: 'page', url: `https://dst.llc/${i}`, title: `Page ${i}`, ts: i }));
   const text = formatLeadText({ contacts: { phone: '1' }, meta: { history } });

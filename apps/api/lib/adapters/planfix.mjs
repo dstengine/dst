@@ -4,20 +4,24 @@
 // Access to API -> REST API in the Planfix UI). PLANFIX_TEMPLATE_ID is
 // optional; without it the task is created untemplated.
 
-import { formatLeadText, formatLeadTitle } from '../lead-text.mjs';
+import { formatLeadText, formatLeadTitle, escapeHtml } from '../lead-text.mjs';
 
 function formatTaskName(lead) {
   return formatLeadTitle(lead);
 }
 
-// Planfix's task description is plain text, not markdown - a literal
-// "**Name:**" would just read as broken formatting, so bold/section here
-// are no-ops (identity / "Title:") instead of the shared template's
-// markdown defaults.
+// Confirmed by testing against the live API: Planfix's task description
+// field is HTML, not markdown - it doesn't understand **bold**, but it
+// does render <b>/<br> as real bold text and line breaks. Values go
+// through escapeHtml since they're now landing inside actual markup, not
+// literal text - an unescaped "<" from a lead's own name/etc. would
+// otherwise inject stray HTML into the rendered task.
 function formatTaskDescription(lead) {
   return formatLeadText(lead, {
-    bold: (label) => label,
-    section: (title) => `${title}:`,
+    escape: escapeHtml,
+    bold: (label) => `<b>${label}</b>`,
+    section: (title) => `<b>${title}</b>`,
+    lineBreak: '<br>',
   });
 }
 

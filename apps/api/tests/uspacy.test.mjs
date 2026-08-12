@@ -21,24 +21,31 @@ test('splitName splits on the first space, single-word names go to first_name on
   assert.deepEqual(splitName(undefined), {});
 });
 
-test('formatComments is plain text (no markdown) - Uspacy fields do not render markdown', () => {
+test('formatComments renders real HTML - <b> labels, <br> line breaks (confirmed against the live API)', () => {
   const comments = formatComments({
     contacts: { phone: '+971501234567', email: 'a@b.com', whatsapp: '+971500000000', telegram: '@dev' },
     geo: { city: 'Dubai', country: 'UAE' },
     meta: { unitType: '2BR' },
   });
-  assert.match(comments, /^WhatsApp: \+971500000000$/m);
-  assert.match(comments, /^Telegram: @dev$/m);
-  assert.match(comments, /^Location: Dubai, UAE$/m);
-  assert.match(comments, /unitType: 2BR/);
+  assert.match(comments, /<b>WhatsApp:<\/b> \+971500000000/);
+  assert.match(comments, /<b>Telegram:<\/b> @dev/);
+  assert.match(comments, /<b>Location:<\/b> Dubai, UAE/);
+  assert.match(comments, /unitType:<\/b> 2BR/);
+  assert.match(comments, /<br>/);
   assert.doesNotMatch(comments, /\+971501234567/); // phone excluded - already a structured field
   assert.doesNotMatch(comments, /a@b\.com/); // email excluded - already a structured field
   assert.doesNotMatch(comments, /\*/);
 });
 
+test('formatComments escapes HTML-significant characters in values', () => {
+  const comments = formatComments({ contacts: { whatsapp: '<script>alert(1)</script>' } });
+  assert.doesNotMatch(comments, /<script>/);
+  assert.match(comments, /&lt;script&gt;/);
+});
+
 test('formatComments includes Source as text (the structured field silently drops non-dictionary values)', () => {
   const comments = formatComments({ contacts: { phone: '1' }, ref: { domain: 'dst.llc' } });
-  assert.match(comments, /^Source: dst\.llc$/m);
+  assert.match(comments, /<b>Source:<\/b> dst\.llc/);
 });
 
 test('formatComments includes form and lists all activity, not raw history', () => {
@@ -47,8 +54,8 @@ test('formatComments includes form and lists all activity, not raw history', () 
     form: { name: 'Palm Central register interest' },
     meta: { history: [{ type: 'page', url: 'https://palmcentral.dst.llc/', title: 'Palm Central', ts: 1 }] },
   });
-  assert.match(comments, /^Form: Palm Central register interest$/m);
-  assert.match(comments, /^Activity \(1 event\(s\)\):$/m);
+  assert.match(comments, /<b>Form:<\/b> Palm Central register interest/);
+  assert.match(comments, /<b>Activity \(1 event\(s\)\)<\/b>/);
   assert.match(comments, /- page: Palm Central/);
   assert.doesNotMatch(comments, /\[object Object\]/);
 });

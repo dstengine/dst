@@ -6,7 +6,7 @@
 // Uspacy's lead fields are structured (phone/email are typed arrays), so
 // this maps the DTO instead of forwarding it unchanged.
 
-import { formatLeadText, formatLeadTitle } from '../lead-text.mjs';
+import { formatLeadText, formatLeadTitle, escapeHtml } from '../lead-text.mjs';
 
 function formatTitle(lead) {
   return formatLeadTitle(lead);
@@ -18,15 +18,19 @@ function formatTitle(lead) {
 // (unlike the structured `source` attempt below) because that structured
 // field turns out to be a closed dictionary (e.g. "FB", "Google") - an
 // arbitrary domain silently fails to save there, so text is the only place
-// it reliably shows up. Uspacy's own fields are plain text, not markdown -
-// a literal "**Name:**" reads as broken formatting there, so bold/section
-// are no-ops instead of the shared template's markdown defaults.
+// it reliably shows up. Confirmed by testing against the live API: the
+// comments field is HTML, not markdown - it doesn't understand **bold**,
+// but it does render <b>/<br> as real bold text and line breaks. Values go
+// through escapeHtml since they're now landing inside actual markup, not
+// literal text.
 function formatComments(lead) {
   return formatLeadText(lead, {
     includeName: false,
     excludeContacts: ['phone', 'email'],
-    bold: (label) => label,
-    section: (title) => `${title}:`,
+    escape: escapeHtml,
+    bold: (label) => `<b>${label}</b>`,
+    section: (title) => `<b>${title}</b>`,
+    lineBreak: '<br>',
   });
 }
 
