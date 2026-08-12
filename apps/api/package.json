@@ -1,0 +1,9 @@
+{
+  "name": "@dst/api",
+  "private": true,
+  "version": "0.0.0",
+  "description": "api.dst.llc - central lead webhook. Deployed as Vercel Functions, no framework: files under api/ map directly to routes.",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs"
+  }
+}
