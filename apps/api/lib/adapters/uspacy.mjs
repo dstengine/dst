@@ -6,37 +6,22 @@
 // Uspacy's lead fields are structured (phone/email are typed arrays), so
 // this maps the DTO instead of forwarding it unchanged.
 
+import { formatLeadText, formatLeadTitle } from '../lead-text.mjs';
+
 function formatTitle(lead) {
-  return `Lead: ${lead.name || lead.contacts.phone || lead.contacts.email || lead.contacts.whatsapp || lead.contacts.telegram}`;
+  return formatLeadTitle(lead);
 }
 
+// phone/email are excluded from comments since they already land in their
+// own structured fields on the Uspacy lead (see sendToUspacy below); Name
+// likewise goes to first_name. ref.domain is excluded since it's already
+// the structured `source` field, not just here for readability.
 function formatComments(lead) {
-  const lines = [];
-
-  if (lead.contacts.whatsapp) lines.push(`WhatsApp: ${lead.contacts.whatsapp}`);
-  if (lead.contacts.telegram) lines.push(`Telegram: ${lead.contacts.telegram}`);
-
-  if (lead.form?.name) {
-    lines.push(`Form: ${lead.form.name}${lead.form.description ? ` — ${lead.form.description}` : ''}`);
-  }
-
-  if (lead.geo && (lead.geo.city || lead.geo.country)) {
-    lines.push(`Location: ${[lead.geo.city, lead.geo.country].filter(Boolean).join(', ')}`);
-  }
-
-  // meta.history is an array of {type, url/label, ts} objects, not a plain
-  // value - skip it in the generic key: value dump below (it would print as
-  // "[object Object]") and note just the count instead.
-  const { history, ...restMeta } = lead.meta || {};
-  if (Object.keys(restMeta).length > 0) {
-    lines.push('', 'Meta:');
-    for (const [key, value] of Object.entries(restMeta)) lines.push(`${key}: ${value}`);
-  }
-  if (Array.isArray(history) && history.length > 0) {
-    lines.push(`History: ${history.length} page/click event(s) before this submission`);
-  }
-
-  return lines.join('\n');
+  return formatLeadText(lead, {
+    includeName: false,
+    excludeContacts: ['phone', 'email'],
+    includeSource: false,
+  });
 }
 
 /**

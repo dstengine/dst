@@ -3,47 +3,14 @@
 // is scoped to "Create issues" only (Personal API keys -> New API key ->
 // Only select permissions), so it can't be used to read or delete anything.
 
+import { formatLeadText, formatLeadTitle } from '../lead-text.mjs';
+
 function formatIssueTitle(lead) {
-  return `Lead: ${lead.name || lead.contacts.phone || lead.contacts.email || lead.contacts.whatsapp || lead.contacts.telegram}`;
+  return formatLeadTitle(lead);
 }
 
 function formatIssueDescription(lead) {
-  const lines = [];
-
-  if (lead.name) lines.push(`Name: ${lead.name}`);
-  if (lead.contacts.phone) lines.push(`Phone: ${lead.contacts.phone}`);
-  if (lead.contacts.email) lines.push(`Email: ${lead.contacts.email}`);
-  if (lead.contacts.whatsapp) lines.push(`WhatsApp: ${lead.contacts.whatsapp}`);
-  if (lead.contacts.telegram) lines.push(`Telegram: ${lead.contacts.telegram}`);
-
-  if (lead.form?.name) {
-    lines.push(`Form: ${lead.form.name}${lead.form.description ? ` — ${lead.form.description}` : ''}`);
-  }
-
-  if (lead.ref && (lead.ref.domain || lead.ref.url)) {
-    lines.push(`Source: ${lead.ref.domain || lead.ref.url}`);
-  }
-
-  if (lead.geo && (lead.geo.city || lead.geo.country)) {
-    lines.push(`Location: ${[lead.geo.city, lead.geo.country].filter(Boolean).join(', ')}`);
-  }
-
-  // meta.history is an array of {type, url/label, ts} objects, not a plain
-  // value - skip it in the generic key: value dump below (it would print as
-  // "[object Object]") and list the most recent entries instead.
-  const { history, ...restMeta } = lead.meta || {};
-  if (Object.keys(restMeta).length > 0) {
-    lines.push('', '**Meta**');
-    for (const [key, value] of Object.entries(restMeta)) lines.push(`${key}: ${value}`);
-  }
-  if (Array.isArray(history) && history.length > 0) {
-    lines.push('', `**Recent activity** (${history.length} total)`);
-    for (const entry of history.slice(-5)) {
-      lines.push(`- ${entry.type}: ${entry.type === 'click' ? entry.label : entry.title || entry.url}`);
-    }
-  }
-
-  return lines.join('\n');
+  return formatLeadText(lead, { section: (title) => `**${title}**` });
 }
 
 const ISSUE_CREATE_MUTATION = `

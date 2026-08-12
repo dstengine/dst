@@ -41,7 +41,7 @@ test('formatIssueDescription includes form and recent activity, not raw history'
     },
   });
   assert.match(description, /Form: MBR City rent shortlist/);
-  assert.match(description, /\*\*Recent activity\*\* \(1 total\)/);
+  assert.match(description, /\*\*Recent activity \(1 total\)\*\*/);
   assert.match(description, /- page: MBR City/);
   assert.doesNotMatch(description, /\[object Object\]/);
 });

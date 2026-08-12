@@ -29,12 +29,13 @@ test('formatLeadMessage includes form name', () => {
   assert.match(text, /Form: Golden Visa consultation/);
 });
 
-test('formatLeadMessage summarizes meta.history instead of dumping it raw', () => {
+test('formatLeadMessage lists meta.history instead of dumping it raw', () => {
   const text = formatLeadMessage({
     contacts: { email: 'a@b.com' },
     meta: { history: [{ type: 'page', url: 'https://dst.llc/', title: 'DST', ts: 1 }] },
   });
-  assert.match(text, /History: 1 page\/click event\(s\)/);
+  assert.match(text, /Recent activity \(1 total\)/);
+  assert.match(text, /- page: DST/);
   assert.doesNotMatch(text, /\[object Object\]/);
 });
 
