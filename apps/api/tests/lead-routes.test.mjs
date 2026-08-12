@@ -61,12 +61,14 @@ test('lead fans out to the telegram adapter with the same lead object', async ()
   await leadRoute(req, res);
 
   assert.equal(res._body.received, true);
-  assert.equal(res._body.results.length, 1);
-  assert.equal(res._body.results[0].adapter, 'telegram');
-  // No Telegram env configured in this test run, so the adapter itself
-  // reports ok:false - what matters here is that it was actually invoked
-  // with the lead (missing-config is a clean failure, not a crash), and the
+  const byAdapter = Object.fromEntries(res._body.results.map((r) => [r.adapter, r]));
+  assert.deepEqual(Object.keys(byAdapter).sort(), ['planfix', 'telegram', 'uspacy']);
+  // No env configured for any adapter in this test run, so all report
+  // ok:false - what matters here is that they were actually invoked with
+  // the lead (missing-config is a clean failure, not a crash), and the
   // overall route reflects that as a 207 partial-failure rather than a 500.
-  assert.equal(res._body.results[0].ok, false);
+  assert.equal(byAdapter.telegram.ok, false);
+  assert.equal(byAdapter.planfix.ok, false);
+  assert.equal(byAdapter.uspacy.ok, false);
   assert.equal(res._status, 207);
 });

@@ -8,8 +8,14 @@
 
 import { parseLead } from '../../lib/lead-dto.mjs';
 import telegramHandler from './lead/telegram.mjs';
+import planfixHandler from './lead/planfix.mjs';
+import uspacyHandler from './lead/uspacy.mjs';
 
-const adapters = [{ name: 'telegram', handler: telegramHandler }];
+const adapters = [
+  { name: 'telegram', handler: telegramHandler },
+  { name: 'planfix', handler: planfixHandler },
+  { name: 'uspacy', handler: uspacyHandler },
+];
 
 // Runs an adapter's own Vercel handler in-process against the same request
 // body, instead of an HTTP call back into the deployment - same "unchanged
