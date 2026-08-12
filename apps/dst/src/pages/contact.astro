@@ -20,7 +20,8 @@ import LeadForm from "@dst/ui/LeadForm.astro";
   </section>
 
   <section class="container">
-    <LeadForm endpoint="/api/lead" submitLabel="Send message">
+    <LeadForm submitLabel="Send message">
+      <input type="hidden" name="type" value="general" />
       <div class="field">
         <label for="topic">What's this about?</label>
         <select id="topic" name="meta.topic">

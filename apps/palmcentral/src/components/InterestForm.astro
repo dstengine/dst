@@ -18,7 +18,8 @@ const { currentUnits } = Astro.props;
     Tell us what you're after and we'll match it against current Phase 2
     availability — not a resale listing from the sold-out phase.
   </p>
-  <LeadForm endpoint="/api/lead" submitLabel="Register my interest">
+  <LeadForm submitLabel="Register my interest">
+    <input type="hidden" name="type" value="palmcentral-interest" />
     <div class="field">
       <label for="unit-type">Unit type</label>
       <select id="unit-type" name="meta.unitType">

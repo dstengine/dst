@@ -7,6 +7,7 @@
 // later is a new api/v1/lead/<name>.mjs route plus one import here.
 
 import { parseLead } from '../../lib/lead-dto.mjs';
+import { applyCors } from '../../lib/cors.mjs';
 import telegramHandler from './lead/telegram.mjs';
 import planfixHandler from './lead/planfix.mjs';
 import uspacyHandler from './lead/uspacy.mjs';
@@ -42,6 +43,8 @@ function invokeAdapter(handler, lead) {
 }
 
 export default async function handler(req, res) {
+  if (applyCors(req, res)) return;
+
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
     res.status(405).json({ error: 'Method not allowed' });

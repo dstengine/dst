@@ -3,11 +3,12 @@ import assert from 'node:assert/strict';
 import telegramRoute from '../api/v1/lead/telegram.mjs';
 import leadRoute from '../api/v1/lead.mjs';
 
-function fakeReqRes(method, body) {
-  const req = { method, body };
+function fakeReqRes(method, body, headers = {}) {
+  const req = { method, body, headers };
   const res = {
     _status: 200,
     _body: null,
+    _headers: {},
     status(code) {
       this._status = code;
       return this;
@@ -16,7 +17,10 @@ function fakeReqRes(method, body) {
       this._body = body;
       return this;
     },
-    setHeader() {},
+    setHeader(name, value) {
+      this._headers[name] = value;
+    },
+    end() {},
   };
   return { req, res };
 }
@@ -71,4 +75,18 @@ test('lead fans out to the telegram adapter with the same lead object', async ()
   assert.equal(byAdapter.planfix.ok, false);
   assert.equal(byAdapter.uspacy.ok, false);
   assert.equal(res._status, 207);
+});
+
+test('lead answers an OPTIONS preflight from an allowed dst.llc origin', async () => {
+  const { req, res } = fakeReqRes('OPTIONS', null, { origin: 'https://palmcentral.dst.llc' });
+  await leadRoute(req, res);
+  assert.equal(res._status, 204);
+  assert.equal(res._headers['Access-Control-Allow-Origin'], 'https://palmcentral.dst.llc');
+});
+
+test('lead does not echo a disallowed origin', async () => {
+  const { req, res } = fakeReqRes('OPTIONS', null, { origin: 'https://evil.example' });
+  await leadRoute(req, res);
+  assert.equal(res._status, 204);
+  assert.equal(res._headers['Access-Control-Allow-Origin'], undefined);
 });

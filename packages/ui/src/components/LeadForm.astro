@@ -2,14 +2,22 @@
 // Plain HTML form matching the network's universal lead object
 // (local/dubai/dstengine/dtos/lead.dto.md): name optional, at least one
 // contact required, extra context fields via the default slot.
-// Works with JS disabled (native POST); a small inline script progressively
-// enhances it to submit via fetch without a full page reload. No framework.
+// The webhook only accepts JSON (nested {lead: {...}}), so a real submit
+// needs the inline script below - the `action`/`method` attributes are
+// just a same-page fallback if JS fails to load, not a working no-JS path.
 interface Props {
-  endpoint: string;
+  // Every site posts to the same central webhook by default - see
+  // apps/api/README.md. Only override for local testing against a
+  // different deployment.
+  endpoint?: string;
   submitLabel?: string;
   formId?: string;
 }
-const { endpoint, submitLabel = "Request a consultation", formId = "lead-form" } = Astro.props;
+const {
+  endpoint = "https://api.dst.llc/api/v1/lead",
+  submitLabel = "Request a consultation",
+  formId = "lead-form",
+} = Astro.props;
 ---
 <form class="lead-form" method="post" action={endpoint} id={formId} data-lead-form>
   <div class="field">
@@ -30,17 +38,52 @@ const { endpoint, submitLabel = "Request a consultation", formId = "lead-form" }
 </form>
 
 <script>
-  // Progressive enhancement only: the form already works via plain POST.
+  // Field names use dot-paths ("contacts.email", "meta.unitType") so a
+  // form can add arbitrary lead.meta.* fields via its slot without this
+  // component knowing about them - this nests FormData back into the
+  // {lead: {...}} object the webhook expects, skipping blank fields so an
+  // unanswered "Prefer not to say" select never creates an empty key.
+  function setDeep(target: Record<string, any>, path: string, value: string) {
+    const keys = path.split(".");
+    let node = target;
+    for (let i = 0; i < keys.length - 1; i++) {
+      const key = keys[i];
+      if (typeof node[key] !== "object" || node[key] === null) node[key] = {};
+      node = node[key];
+    }
+    node[keys[keys.length - 1]] = value;
+  }
+
+  // First-touch UTM params only - if the visitor arrived via a campaign
+  // link, that's the one that should get credit, not whatever page they
+  // happen to submit the form from.
+  const UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
+  function utmFromQuery(): Record<string, string> {
+    const params = new URLSearchParams(location.search);
+    const out: Record<string, string> = {};
+    for (const key of UTM_KEYS) {
+      const value = params.get(key);
+      if (value) out[key] = value;
+    }
+    return out;
+  }
+
   document.querySelectorAll<HTMLFormElement>("form[data-lead-form]").forEach((form) => {
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
       const status = form.querySelector<HTMLElement>("[data-lead-form-status]");
-      const data = Object.fromEntries(new FormData(form).entries());
+      const lead: Record<string, any> = {};
+      for (const [key, value] of new FormData(form).entries()) {
+        if (typeof value !== "string" || value.trim() === "") continue;
+        setDeep(lead, key, value);
+      }
+      lead.ref = { ...lead.ref, url: location.href, domain: location.hostname, ...utmFromQuery() };
+      lead.meta = { ...lead.meta, referrer: document.referrer || undefined, language: navigator.language };
       try {
         const res = await fetch(form.action, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
+          body: JSON.stringify({ lead }),
         });
         if (!res.ok) throw new Error(String(res.status));
         if (status) status.textContent = "Thanks — we'll be in touch shortly.";

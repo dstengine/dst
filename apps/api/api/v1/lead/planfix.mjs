@@ -4,9 +4,12 @@
 // /api/v1/lead fan-out.
 
 import { parseLead } from '../../../lib/lead-dto.mjs';
+import { applyCors } from '../../../lib/cors.mjs';
 import { sendToPlanfix } from '../../../lib/adapters/planfix.mjs';
 
 export default async function handler(req, res) {
+  if (applyCors(req, res)) return;
+
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
     res.status(405).json({ error: 'Method not allowed' });
