@@ -6,7 +6,8 @@ under `api/` becomes a route at the matching path.
 
 ## Routes
 
-- `GET /` - health check, returns `{ ok: true }`
+- `GET /api` - health check, returns `{ ok: true }` (files under `api/` are
+  always routed with that prefix on Vercel - there's no bare `/`)
 - `POST /api/v1/lead` - accepts the universal lead DTO (see
   `~/mind/local/dubai/dstengine/dtos/lead.dto.md`) and fans it out,
   unchanged, to every configured adapter.
