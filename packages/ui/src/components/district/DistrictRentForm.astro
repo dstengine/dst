@@ -30,7 +30,8 @@ const { varies, formSubmitLabel, formFields } = Astro.props;
 
 <section class="container">
   <h2>Get a shortlist</h2>
-  <LeadForm endpoint="/api/lead" submitLabel={formSubmitLabel}>
+  <LeadForm submitLabel={formSubmitLabel}>
+    <input type="hidden" name="type" value="district-rent" />
     {formFields.map((field) => (
       <div class="field">
         <label for={field.id}>{field.label}</label>
