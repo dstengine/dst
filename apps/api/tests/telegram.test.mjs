@@ -21,6 +21,23 @@ test('formatLeadMessage omits sections with no data', () => {
   assert.doesNotMatch(text, /Source/);
 });
 
+test('formatLeadMessage includes form name', () => {
+  const text = formatLeadMessage({
+    contacts: { email: 'a@b.com' },
+    form: { name: 'Golden Visa consultation' },
+  });
+  assert.match(text, /Form: Golden Visa consultation/);
+});
+
+test('formatLeadMessage summarizes meta.history instead of dumping it raw', () => {
+  const text = formatLeadMessage({
+    contacts: { email: 'a@b.com' },
+    meta: { history: [{ type: 'page', url: 'https://dst.llc/', title: 'DST', ts: 1 }] },
+  });
+  assert.match(text, /History: 1 page\/click event\(s\)/);
+  assert.doesNotMatch(text, /\[object Object\]/);
+});
+
 test('sendToTelegram fails cleanly when env vars are missing', async () => {
   const savedToken = process.env.TELEGRAM_BOT_TOKEN;
   const savedChat = process.env.TELEGRAM_CHAT_ID;

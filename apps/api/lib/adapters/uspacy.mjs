@@ -16,13 +16,24 @@ function formatComments(lead) {
   if (lead.contacts.whatsapp) lines.push(`WhatsApp: ${lead.contacts.whatsapp}`);
   if (lead.contacts.telegram) lines.push(`Telegram: ${lead.contacts.telegram}`);
 
+  if (lead.form?.name) {
+    lines.push(`Form: ${lead.form.name}${lead.form.description ? ` — ${lead.form.description}` : ''}`);
+  }
+
   if (lead.geo && (lead.geo.city || lead.geo.country)) {
     lines.push(`Location: ${[lead.geo.city, lead.geo.country].filter(Boolean).join(', ')}`);
   }
 
-  if (lead.meta && Object.keys(lead.meta).length > 0) {
+  // meta.history is an array of {type, url/label, ts} objects, not a plain
+  // value - skip it in the generic key: value dump below (it would print as
+  // "[object Object]") and note just the count instead.
+  const { history, ...restMeta } = lead.meta || {};
+  if (Object.keys(restMeta).length > 0) {
     lines.push('', 'Meta:');
-    for (const [key, value] of Object.entries(lead.meta)) lines.push(`${key}: ${value}`);
+    for (const [key, value] of Object.entries(restMeta)) lines.push(`${key}: ${value}`);
+  }
+  if (Array.isArray(history) && history.length > 0) {
+    lines.push(`History: ${history.length} page/click event(s) before this submission`);
   }
 
   return lines.join('\n');

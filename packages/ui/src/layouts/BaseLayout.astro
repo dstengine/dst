@@ -1,6 +1,7 @@
 ---
 import '../styles/tokens.css';
 import Analytics from '../components/Analytics.astro';
+import LeadTracking from '../components/LeadTracking.astro';
 
 interface Props {
   title: string;
@@ -48,6 +49,7 @@ const isDstHome = Astro.site?.hostname === "dst.llc";
       <script type="application/ld+json" set:html={JSON.stringify(block)} />
     ))}
     <Analytics />
+    <LeadTracking />
   </head>
   <body>
     <header class="site-header">

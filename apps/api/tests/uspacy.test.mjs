@@ -28,3 +28,14 @@ test('formatComments includes whatsapp, telegram, geo, and meta but not phone/em
   assert.doesNotMatch(comments, /\+971501234567/);
   assert.doesNotMatch(comments, /a@b\.com/);
 });
+
+test('formatComments includes form and a history count, not raw history', () => {
+  const comments = formatComments({
+    contacts: { phone: '1' },
+    form: { name: 'Palm Central register interest' },
+    meta: { history: [{ type: 'page', url: 'https://palmcentral.dst.llc/', title: 'Palm Central', ts: 1 }] },
+  });
+  assert.match(comments, /Form: Palm Central register interest/);
+  assert.match(comments, /History: 1 page\/click event\(s\)/);
+  assert.doesNotMatch(comments, /\[object Object\]/);
+});

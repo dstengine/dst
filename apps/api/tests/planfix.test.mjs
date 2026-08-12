@@ -31,3 +31,20 @@ test('formatTaskDescription includes contacts, ref, geo, and meta', () => {
   assert.match(description, /Location: Dubai, UAE/);
   assert.match(description, /unitType: 2BR/);
 });
+
+test('formatTaskDescription includes form and recent activity, not raw history', () => {
+  const description = formatTaskDescription({
+    contacts: { phone: '1' },
+    form: { name: 'Riviera rent shortlist', description: 'Rent-shortlist request for Azizi Riviera' },
+    meta: {
+      history: [
+        { type: 'page', url: 'https://riviera.dst.llc/', title: 'Riviera', ts: 1 },
+        { type: 'click', label: 'Rent', url: 'https://riviera.dst.llc/rent/', ts: 2 },
+      ],
+    },
+  });
+  assert.match(description, /Form: Riviera rent shortlist — Rent-shortlist request for Azizi Riviera/);
+  assert.match(description, /Recent activity \(2 total\)/);
+  assert.match(description, /- click: Rent/);
+  assert.doesNotMatch(description, /\[object Object\]/);
+});

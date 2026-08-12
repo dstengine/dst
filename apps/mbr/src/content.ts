@@ -300,6 +300,8 @@ export const rent = {
     { label: "Day-to-day walkability", text: "Riviera's promenade is the outlier here — the villa communities are far more car-dependent for daily errands." },
   ],
   formSubmitLabel: "Request my MBR City shortlist",
+  formName: "MBR City rent shortlist",
+  formDescription: "Rent-shortlist request for MBR City (District One, Meydan, Sobha Hartland, or Riviera)",
   formFields: [
     {
       id: "community",

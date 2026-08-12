@@ -1,0 +1,156 @@
+---
+// Ports the lead-metadata collection from DKey (dkey-theme/js/main.js) to
+// the DST network, same mechanism and shape - just renamed dkey_ -> dst_:
+//   - geo: requested at the moment of form interaction (not on page load,
+//     so the permission prompt reads as a response to intent rather than
+//     random), GPS first with an IP-based fallback (ipapi.co) if denied,
+//     unavailable, or geolocation doesn't exist; GPS gives coordinates only,
+//     so a country/city name is filled in after the fact via free, keyless
+//     reverse geocoding (Nominatim/OpenStreetMap), best-effort.
+//   - history: a unified page-view + link-click log, one entry shape
+//     distinguished by "type", mirrored into localStorage and a cookie
+//     (so it survives either being cleared) and capped at 50 entries.
+// Included once in BaseLayout so it runs on every page of every site -
+// history in particular needs to see the pages visited before whichever
+// one the visitor eventually converts on, not just the form page itself.
+// LeadForm.astro reads window.__dstGeoMeta / window.dstGetHistory() at
+// submit time into lead.geo / lead.meta.history.
+---
+<script>
+  // *** IP geolocation (shared, fetched once per page load) ***
+  const ipGeoPromise: Promise<any> = fetch("https://ipapi.co/json/")
+    .then((r) => r.json())
+    .catch(() => null);
+
+  (window as any).__dstGeoMeta = { source: "", lat: "", lng: "", accuracy: "", country: "", city: "", region: "" };
+
+  function applyIpFallbackGeo() {
+    ipGeoPromise.then((data) => {
+      if (!data || data.error) return;
+      (window as any).__dstGeoMeta = {
+        source: "ip",
+        lat: data.latitude || "",
+        lng: data.longitude || "",
+        accuracy: "",
+        country: data.country_name || "",
+        city: data.city || "",
+        region: data.region || "",
+      };
+    });
+  }
+
+  // GPS gives coordinates only, not a place name - fill in country/city
+  // after the fact via reverse geocoding. Best-effort: if it errors, times
+  // out, or the visitor already submitted before it resolves, the
+  // submission just goes out with lat/lng and no country/city.
+  function reverseGeocodeGps(lat: number, lng: number) {
+    fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lng}&zoom=10&addressdetails=1`)
+      .then((r) => r.json())
+      .then((data) => {
+        const addr = data && data.address;
+        const geo = (window as any).__dstGeoMeta;
+        if (!addr || geo.source !== "gps") return;
+        (window as any).__dstGeoMeta = Object.assign({}, geo, {
+          country: addr.country || "",
+          city: addr.city || addr.town || addr.village || addr.county || "",
+          region: addr.state || "",
+        });
+      })
+      .catch(() => {});
+  }
+
+  let geoRequested = false;
+  (window as any).dstRequestLeadLocation = function dstRequestLeadLocation() {
+    if (geoRequested) return; // ask at most once per page load
+    geoRequested = true;
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          (window as any).__dstGeoMeta = {
+            source: "gps",
+            lat: pos.coords.latitude,
+            lng: pos.coords.longitude,
+            accuracy: pos.coords.accuracy,
+            country: "",
+            city: "",
+            region: "",
+          };
+          reverseGeocodeGps(pos.coords.latitude, pos.coords.longitude);
+        },
+        () => applyIpFallbackGeo(), // denied, timed out, or position unavailable
+        { timeout: 8000, maximumAge: 300000 }
+      );
+    } else {
+      applyIpFallbackGeo();
+    }
+  };
+
+  // *** Persisted activity history: page views + link clicks ***
+  const PREFIX = "dst_";
+  const COOKIE_DAYS = 365;
+  const HISTORY_KEY = "history";
+  const HISTORY_MAX = 50;
+
+  function setCookie(name: string, value: string) {
+    const expires = new Date(Date.now() + COOKIE_DAYS * 864e5).toUTCString();
+    document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/; SameSite=Lax`;
+  }
+
+  function getCookie(name: string) {
+    const escaped = name.replace(/([.$?*|{}()[\]\\/+^])/g, "\\$1");
+    const match = document.cookie.match(new RegExp(`(?:^|; )${escaped}=([^;]*)`));
+    return match ? decodeURIComponent(match[1]) : null;
+  }
+
+  function saveValue(key: string, value: string) {
+    const full = PREFIX + key;
+    try {
+      localStorage.setItem(full, value);
+    } catch {}
+    setCookie(full, value);
+  }
+
+  function loadValue(key: string): string | null {
+    const full = PREFIX + key;
+    try {
+      const fromStorage = localStorage.getItem(full);
+      if (fromStorage !== null) return fromStorage;
+    } catch {}
+    return getCookie(full);
+  }
+
+  function getHistory(): Array<Record<string, unknown>> {
+    try {
+      return JSON.parse(loadValue(HISTORY_KEY) || "[]");
+    } catch {
+      return [];
+    }
+  }
+
+  function addToHistory(entry: Record<string, unknown>) {
+    const history = getHistory();
+    history.push(Object.assign({ ts: Date.now() }, entry));
+    saveValue(HISTORY_KEY, JSON.stringify(history.slice(-HISTORY_MAX)));
+  }
+
+  (window as any).dstGetHistory = getHistory;
+
+  // - page: every page visited. Skips an immediate repeat (reload) so the
+  //   log doesn't fill up with the same URL.
+  const lastEntry = getHistory().slice(-1)[0];
+  if (!lastEntry || lastEntry.type !== "page" || lastEntry.url !== location.href) {
+    addToHistory({ type: "page", url: location.href, title: document.title });
+  }
+
+  // - click: every real link click. "#"/javascript: hrefs are UI toggles
+  //   (menu, popup close), not real navigation/interest, so skipped.
+  document.addEventListener("click", (event) => {
+    const link = (event.target as HTMLElement)?.closest?.("a[href]") as HTMLAnchorElement | null;
+    if (!link) return;
+    const href = link.getAttribute("href") || "";
+    if (href === "#" || href.startsWith("javascript:")) return;
+    const label = (link.getAttribute("aria-label") || link.textContent || "").trim().replace(/\s+/g, " ").slice(0, 80);
+    addToHistory({ type: "click", label, url: link.href });
+  });
+</script>

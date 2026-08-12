@@ -31,3 +31,17 @@ test('formatIssueDescription includes contacts, ref, geo, and meta', () => {
   assert.match(description, /Location: Dubai, UAE/);
   assert.match(description, /unitType: 2BR/);
 });
+
+test('formatIssueDescription includes form and recent activity, not raw history', () => {
+  const description = formatIssueDescription({
+    contacts: { phone: '1' },
+    form: { name: 'MBR City rent shortlist' },
+    meta: {
+      history: [{ type: 'page', url: 'https://mbr.dst.llc/', title: 'MBR City', ts: 1 }],
+    },
+  });
+  assert.match(description, /Form: MBR City rent shortlist/);
+  assert.match(description, /\*\*Recent activity\*\* \(1 total\)/);
+  assert.match(description, /- page: MBR City/);
+  assert.doesNotMatch(description, /\[object Object\]/);
+});

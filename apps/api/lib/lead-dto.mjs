@@ -19,12 +19,26 @@
  * @property {string} [sol]
  * @property {string} [xmr]
  *
+ * @typedef {Object} LeadGeo
+ * @property {string} [source] "" | "gps" | "ip"
+ * @property {number|string} [lat]
+ * @property {number|string} [lng]
+ * @property {number|string} [accuracy]
+ * @property {string} [country]
+ * @property {string} [city]
+ * @property {string} [region]
+ *
+ * @typedef {Object} LeadForm
+ * @property {string} [name]
+ * @property {string} [description]
+ *
  * @typedef {Object} Lead
  * @property {string} [name]
  * @property {LeadContacts} contacts
  * @property {Object} [meta]
- * @property {Object} [geo]
+ * @property {LeadGeo} [geo]
  * @property {LeadRef} [ref]
+ * @property {LeadForm} [form]
  */
 
 /**

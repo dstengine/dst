@@ -20,7 +20,11 @@ import LeadForm from "@dst/ui/LeadForm.astro";
   </section>
 
   <section class="container">
-    <LeadForm submitLabel="Send message">
+    <LeadForm
+      submitLabel="Send message"
+      formName="DST general contact"
+      formDescription="Catch-all contact form for partnerships, press, or a venture not yet listed"
+    >
       <input type="hidden" name="type" value="general" />
       <div class="field">
         <label for="topic">What's this about?</label>

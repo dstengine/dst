@@ -24,6 +24,10 @@ function formatLeadMessage(lead) {
   if (lead.contacts.telegram) contactLines.push(`Telegram: ${escapeHtml(lead.contacts.telegram)}`);
   lines.push(...contactLines);
 
+  if (lead.form?.name) {
+    lines.push(`Form: ${escapeHtml(lead.form.name)}`);
+  }
+
   if (lead.ref && (lead.ref.domain || lead.ref.url)) {
     lines.push(`Source: ${escapeHtml(lead.ref.domain || lead.ref.url)}`);
   }
@@ -32,11 +36,19 @@ function formatLeadMessage(lead) {
     lines.push(`Location: ${escapeHtml([lead.geo.city, lead.geo.country].filter(Boolean).join(', '))}`);
   }
 
-  if (lead.meta && Object.keys(lead.meta).length > 0) {
-    const metaText = Object.entries(lead.meta)
+  // meta.history is an array of {type, url/label, ts} objects (page views +
+  // link clicks leading up to the conversion) - too long for a chat message
+  // and Object.entries would print it as "[object Object]" anyway, so it
+  // gets a one-line count here instead of joining the generic meta dump.
+  const { history, ...restMeta } = lead.meta || {};
+  if (Object.keys(restMeta).length > 0) {
+    const metaText = Object.entries(restMeta)
       .map(([key, value]) => `${escapeHtml(key)}: ${escapeHtml(value)}`)
       .join('\n');
     lines.push('', '<b>Meta</b>', metaText);
+  }
+  if (Array.isArray(history) && history.length > 0) {
+    lines.push(`History: ${history.length} page/click event(s) before this submission`);
   }
 
   return lines.join('\n');

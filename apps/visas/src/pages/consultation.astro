@@ -17,7 +17,11 @@ import LeadForm from "@dst/ui/LeadForm.astro";
   </section>
 
   <section class="container">
-    <LeadForm submitLabel="Request my shortlist">
+    <LeadForm
+      submitLabel="Request my shortlist"
+      formName="Golden Visa consultation"
+      formDescription="Request a shortlist of Golden-Visa-eligible properties"
+    >
       <input type="hidden" name="type" value="golden-visa-consultation" />
       <div class="field">
         <label for="timeline">When are you hoping to complete this?</label>

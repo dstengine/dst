@@ -328,6 +328,8 @@ export const rent = {
     { label: "Phase and finish age", text: "the original stretch versus newer buildings, which affects both finish quality and how built-out the nearby retail is." },
   ],
   formSubmitLabel: "Request my Riviera shortlist",
+  formName: "Riviera rent shortlist",
+  formDescription: "Rent-shortlist request for Azizi Riviera, by block/unit size/view",
   formFields: [
     {
       id: "unit-size",

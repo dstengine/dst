@@ -15,9 +15,11 @@ interface Props {
   varies: { label: string; text: string }[];
   formSubmitLabel: string;
   formFields: FormField[];
+  formName: string;
+  formDescription: string;
 }
 
-const { varies, formSubmitLabel, formFields } = Astro.props;
+const { varies, formSubmitLabel, formFields, formName, formDescription } = Astro.props;
 ---
 <section class="container">
   <h2>What actually varies</h2>
@@ -30,7 +32,7 @@ const { varies, formSubmitLabel, formFields } = Astro.props;
 
 <section class="container">
   <h2>Get a shortlist</h2>
-  <LeadForm submitLabel={formSubmitLabel}>
+  <LeadForm submitLabel={formSubmitLabel} formName={formName} formDescription={formDescription}>
     <input type="hidden" name="type" value="district-rent" />
     {formFields.map((field) => (
       <div class="field">
