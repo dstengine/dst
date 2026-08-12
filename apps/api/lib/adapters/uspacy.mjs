@@ -64,6 +64,19 @@ export async function sendToUspacy(lead) {
     ...splitName(lead.name),
     ...(lead.contacts.phone ? { phone: [{ value: lead.contacts.phone, type: 'work', main: true }] } : {}),
     ...(lead.contacts.email ? { email: [{ value: lead.contacts.email, type: 'work', main: true }] } : {}),
+    // Trying Uspacy's own Telegram/WhatsApp "Social networks" field (visible
+    // in the lead UI, same widget as Facebook/Instagram/etc.) instead of
+    // leaving these two only in free-text comments - unconfirmed shape,
+    // verify against a live test lead before trusting this like `source`
+    // below turned out not to be trustworthy.
+    ...(lead.contacts.telegram || lead.contacts.whatsapp
+      ? {
+          social_networks: [
+            ...(lead.contacts.telegram ? [{ type: 'telegram', value: lead.contacts.telegram }] : []),
+            ...(lead.contacts.whatsapp ? [{ type: 'whatsapp', value: lead.contacts.whatsapp }] : []),
+          ],
+        }
+      : {}),
     ...(lead.ref?.utm_source ? { utm_source: lead.ref.utm_source } : {}),
     ...(lead.ref?.utm_medium ? { utm_medium: lead.ref.utm_medium } : {}),
     ...(lead.ref?.utm_campaign ? { utm_campaign: lead.ref.utm_campaign } : {}),
