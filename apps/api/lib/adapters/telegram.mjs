@@ -5,19 +5,16 @@
 
 import { formatLeadText } from '../lead-text.mjs';
 
-function escapeHtml(value) {
-  return String(value)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;');
+// Telegram's (legacy) Markdown parse mode 400s the whole send if these
+// characters appear unescaped and don't happen to pair up - a lead's own
+// name/phone/etc. is untrusted input, so every value goes through this
+// before being interpolated into the shared markdown template.
+function escapeMarkdown(value) {
+  return String(value).replace(/([_*`[])/g, '\\$1');
 }
 
 function formatLeadMessage(lead) {
-  return formatLeadText(lead, {
-    header: '<b>New lead</b>',
-    escape: escapeHtml,
-    section: (title) => `<b>${escapeHtml(title)}</b>`,
-  });
+  return formatLeadText(lead, { escape: escapeMarkdown });
 }
 
 /**
@@ -38,7 +35,7 @@ export async function sendToTelegram(lead) {
     body: JSON.stringify({
       chat_id: chatId,
       text: formatLeadMessage(lead),
-      parse_mode: 'HTML',
+      parse_mode: 'Markdown',
       disable_web_page_preview: true,
     }),
   });

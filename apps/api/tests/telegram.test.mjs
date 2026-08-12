@@ -9,10 +9,9 @@ test('formatLeadMessage includes name and phone', () => {
   assert.match(text, /\+971501234567/);
 });
 
-test('formatLeadMessage escapes HTML-significant characters', () => {
-  const text = formatLeadMessage({ name: '<script>alert(1)</script>', contacts: { phone: '1' } });
-  assert.doesNotMatch(text, /<script>/);
-  assert.match(text, /&lt;script&gt;/);
+test('formatLeadMessage escapes Telegram Markdown-significant characters', () => {
+  const text = formatLeadMessage({ name: '*bold* _italic_ [link](url) `code`', contacts: { phone: '1' } });
+  assert.match(text, /\\\*bold\\\* \\_italic\\_ \\\[link\]\(url\) \\`code\\`/);
 });
 
 test('formatLeadMessage omits sections with no data', () => {
@@ -26,7 +25,7 @@ test('formatLeadMessage includes form name', () => {
     contacts: { email: 'a@b.com' },
     form: { name: 'Golden Visa consultation' },
   });
-  assert.match(text, /Form: Golden Visa consultation/);
+  assert.match(text, /\*\*Form:\*\* Golden Visa consultation/);
 });
 
 test('formatLeadMessage lists meta.history instead of dumping it raw', () => {
@@ -34,7 +33,7 @@ test('formatLeadMessage lists meta.history instead of dumping it raw', () => {
     contacts: { email: 'a@b.com' },
     meta: { history: [{ type: 'page', url: 'https://dst.llc/', title: 'DST', ts: 1 }] },
   });
-  assert.match(text, /Recent activity \(1 total\)/);
+  assert.match(text, /\*\*Activity \(1 event\(s\)\)\*\*/);
   assert.match(text, /- page: DST/);
   assert.doesNotMatch(text, /\[object Object\]/);
 });

@@ -24,15 +24,15 @@ test('formatIssueDescription includes contacts, ref, geo, and meta', () => {
     geo: { city: 'Dubai', country: 'UAE' },
     meta: { unitType: '2BR' },
   });
-  assert.match(description, /Name: Dev/);
-  assert.match(description, /Phone: \+971501234567/);
-  assert.match(description, /Email: a@b\.com/);
-  assert.match(description, /Source: riviera\.dst\.llc/);
-  assert.match(description, /Location: Dubai, UAE/);
-  assert.match(description, /unitType: 2BR/);
+  assert.match(description, /\*\*Name:\*\* Dev/);
+  assert.match(description, /\*\*Phone:\*\* \+971501234567/);
+  assert.match(description, /\*\*Email:\*\* a@b\.com/);
+  assert.match(description, /\*\*Source:\*\* riviera\.dst\.llc/);
+  assert.match(description, /\*\*Location:\*\* Dubai, UAE/);
+  assert.match(description, /unitType:\*\* 2BR/);
 });
 
-test('formatIssueDescription includes form and recent activity, not raw history', () => {
+test('formatIssueDescription includes form and lists all activity, not raw history', () => {
   const description = formatIssueDescription({
     contacts: { phone: '1' },
     form: { name: 'MBR City rent shortlist' },
@@ -40,8 +40,8 @@ test('formatIssueDescription includes form and recent activity, not raw history'
       history: [{ type: 'page', url: 'https://mbr.dst.llc/', title: 'MBR City', ts: 1 }],
     },
   });
-  assert.match(description, /Form: MBR City rent shortlist/);
-  assert.match(description, /\*\*Recent activity \(1 total\)\*\*/);
+  assert.match(description, /\*\*Form:\*\* MBR City rent shortlist/);
+  assert.match(description, /\*\*Activity \(1 event\(s\)\)\*\*/);
   assert.match(description, /- page: MBR City/);
   assert.doesNotMatch(description, /\[object Object\]/);
 });

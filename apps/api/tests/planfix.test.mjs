@@ -24,15 +24,15 @@ test('formatTaskDescription includes contacts, ref, geo, and meta', () => {
     geo: { city: 'Dubai', country: 'UAE' },
     meta: { unitType: '2BR' },
   });
-  assert.match(description, /Name: Dev/);
-  assert.match(description, /Phone: \+971501234567/);
-  assert.match(description, /Email: a@b\.com/);
-  assert.match(description, /Source: riviera\.dst\.llc/);
-  assert.match(description, /Location: Dubai, UAE/);
-  assert.match(description, /unitType: 2BR/);
+  assert.match(description, /\*\*Name:\*\* Dev/);
+  assert.match(description, /\*\*Phone:\*\* \+971501234567/);
+  assert.match(description, /\*\*Email:\*\* a@b\.com/);
+  assert.match(description, /\*\*Source:\*\* riviera\.dst\.llc/);
+  assert.match(description, /\*\*Location:\*\* Dubai, UAE/);
+  assert.match(description, /unitType:\*\* 2BR/);
 });
 
-test('formatTaskDescription includes form and recent activity, not raw history', () => {
+test('formatTaskDescription includes form and lists all activity, not raw history', () => {
   const description = formatTaskDescription({
     contacts: { phone: '1' },
     form: { name: 'Riviera rent shortlist', description: 'Rent-shortlist request for Azizi Riviera' },
@@ -43,8 +43,8 @@ test('formatTaskDescription includes form and recent activity, not raw history',
       ],
     },
   });
-  assert.match(description, /Form: Riviera rent shortlist — Rent-shortlist request for Azizi Riviera/);
-  assert.match(description, /Recent activity \(2 total\)/);
+  assert.match(description, /\*\*Form:\*\* Riviera rent shortlist — Rent-shortlist request for Azizi Riviera/);
+  assert.match(description, /\*\*Activity \(2 event\(s\)\)\*\*/);
   assert.match(description, /- click: Rent/);
   assert.doesNotMatch(description, /\[object Object\]/);
 });

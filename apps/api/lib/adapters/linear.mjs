@@ -10,7 +10,7 @@ function formatIssueTitle(lead) {
 }
 
 function formatIssueDescription(lead) {
-  return formatLeadText(lead, { section: (title) => `**${title}**` });
+  return formatLeadText(lead);
 }
 
 const ISSUE_CREATE_MUTATION = `

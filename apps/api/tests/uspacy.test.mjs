@@ -21,22 +21,22 @@ test('formatComments includes whatsapp, telegram, geo, and meta but not phone/em
     geo: { city: 'Dubai', country: 'UAE' },
     meta: { unitType: '2BR' },
   });
-  assert.match(comments, /WhatsApp: \+971500000000/);
-  assert.match(comments, /Telegram: @dev/);
-  assert.match(comments, /Location: Dubai, UAE/);
-  assert.match(comments, /unitType: 2BR/);
+  assert.match(comments, /\*\*WhatsApp:\*\* \+971500000000/);
+  assert.match(comments, /\*\*Telegram:\*\* @dev/);
+  assert.match(comments, /\*\*Location:\*\* Dubai, UAE/);
+  assert.match(comments, /unitType:\*\* 2BR/);
   assert.doesNotMatch(comments, /\+971501234567/);
   assert.doesNotMatch(comments, /a@b\.com/);
 });
 
-test('formatComments includes form and lists recent activity, not raw history', () => {
+test('formatComments includes form and lists all activity, not raw history', () => {
   const comments = formatComments({
     contacts: { phone: '1' },
     form: { name: 'Palm Central register interest' },
     meta: { history: [{ type: 'page', url: 'https://palmcentral.dst.llc/', title: 'Palm Central', ts: 1 }] },
   });
-  assert.match(comments, /Form: Palm Central register interest/);
-  assert.match(comments, /Recent activity \(1 total\)/);
+  assert.match(comments, /\*\*Form:\*\* Palm Central register interest/);
+  assert.match(comments, /\*\*Activity \(1 event\(s\)\)\*\*/);
   assert.match(comments, /- page: Palm Central/);
   assert.doesNotMatch(comments, /\[object Object\]/);
 });
@@ -47,6 +47,6 @@ test('formatComments omits Name and Source (already structured fields elsewhere)
     contacts: { whatsapp: '+971500000000' },
     ref: { domain: 'dst.llc' },
   });
-  assert.doesNotMatch(comments, /Name: Dev/);
-  assert.doesNotMatch(comments, /Source: dst\.llc/);
+  assert.doesNotMatch(comments, /Name:/);
+  assert.doesNotMatch(comments, /Source:/);
 });
