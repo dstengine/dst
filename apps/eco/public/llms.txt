@@ -1,14 +1,14 @@
 # DST Eco
 
-> eco.dst.llc describes the environmental work done by the people behind DST: conifer planting in the Urals (ongoing, predates the company), environmental work starting in Yerevan (not yet completed), and an open search for environmental contacts in Dubai. It is a small, self-funded effort, not a corporate sustainability programme.
+> eco.dst.llc is DST's eco portfolio: a running record of individual, self-funded environmental initiatives, each documented on its own page as it actually happens. It is not a corporate sustainability programme and has no fixed set of initiatives — entries get added as facts come in.
 
 ## Important framing
 
 - Nothing described here is a carbon offset. No credits are sold, no neutrality claim is made, and none of this activity is counted against DST's own footprint.
-- Two of the three initiatives (Yerevan, Dubai) are stated as intentions rather than achievements, and are labelled as such on the page itself.
-- Tree counts, hectares, dates and partner organisations are deliberately not published until confirmed, rather than estimated.
+- Each portfolio entry has its own page under /portfolio/. Photo and location are optional fields, filled in only when actually available — never estimated.
+- The current entry is a planting of Douglas fir saplings in Sverdlovsk region, Russia, funded by DST's founder via a friend (Max F.) who sourced and planted them.
 
 ## Links
 
-- [Instagram @eco.dst.llc](https://www.instagram.com/eco.dst.llc/): dated posts and photographs from the plantings — the primary record of this work.
+- [Instagram @eco.dst.llc](https://www.instagram.com/eco.dst.llc/): dated posts and photographs — the primary record of this work.
 - [dst.llc](https://dst.llc): the group's commercial work. Deliberately not cross-sold from the eco site.

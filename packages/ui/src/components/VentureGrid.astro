@@ -1,0 +1,110 @@
+---
+// Extracted 1:1 from the dst.llc hub grid — same markup, same class names,
+// same CSS. Any site using this component renders identically to how the
+// hub grid always has; do not rename classes or restructure the markup
+// here without checking dst.llc, since that's the one place this can't
+// visually drift from.
+export interface VentureCardItem {
+  href?: string;
+  title?: string;
+  eyebrow: string;
+  status: string;
+  inProgress?: boolean;
+  name: string;
+  text: string;
+  image?: string;
+  imageAlt?: string;
+  icon?: string;
+}
+interface Props {
+  items: VentureCardItem[];
+}
+const { items } = Astro.props;
+---
+<div class="venture-grid">
+  {items.map((item) => {
+    const Tag = item.href ? "a" : "article";
+    return (
+      <Tag class="venture" href={item.href} title={item.title}>
+        <div class="venture-media">
+          {item.image ? (
+            <img src={item.image} alt={item.imageAlt ?? ""} loading="lazy" />
+          ) : (
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d={item.icon} />
+            </svg>
+          )}
+        </div>
+        <div class="venture-body">
+          <div class="venture-meta">
+            <p class="eyebrow">{item.eyebrow}</p>
+            <span class:list={["venture-status", { "venture-status-progress": item.inProgress }]}>{item.status}</span>
+          </div>
+          <h3>{item.name}</h3>
+          <p>{item.text}</p>
+        </div>
+      </Tag>
+    );
+  })}
+  <slot />
+</div>
+
+<style>
+  .venture-grid {
+    display: grid;
+    /* auto-fill, not auto-fit: auto-fit collapses columns nothing is ever
+       placed in and hands their space to the remaining 1fr tracks — fine
+       with dst.llc's five cards (every column gets used somewhere), but a
+       sparse grid (a lone eco portfolio entry) would have its one or two
+       used columns balloon to fill the row. auto-fill keeps the full
+       column count computed from the 260px minimum either way, so a
+       card's width doesn't depend on how many other cards exist. */
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-3);
+    margin-top: var(--space-3);
+  }
+  .venture {
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: inherit;
+    text-decoration: none;
+    transition: border-color 200ms ease, transform 200ms ease;
+  }
+  a.venture:hover { border-color: var(--accent, #1F5C4E); transform: translateY(-2px); }
+
+  .venture-media {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: linear-gradient(140deg, var(--surface-sunk), var(--surface));
+  }
+  .venture-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 400ms ease;
+  }
+  a.venture:hover .venture-media img { transform: scale(1.03); }
+  .venture-media svg { width: 30px; height: 30px; color: var(--ink-faint); }
+
+  .venture-body { padding: var(--space-3); }
+  .venture-meta { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); }
+  .venture-meta .eyebrow { margin: 0; }
+  .venture-status {
+    flex-shrink: 0;
+    font-size: var(--step--1);
+    font-weight: 600;
+    color: var(--ok);
+    background: var(--ok-bg);
+    padding: 0.15em 0.6em;
+    border-radius: 999px;
+  }
+  .venture-status-progress { color: var(--warn); background: var(--warn-bg); }
+  .venture h3 { margin-top: var(--space-2); margin-bottom: var(--space-1); font-size: var(--step-1); font-weight: 600; }
+  .venture-body p { margin: 0; font-size: var(--step--1); color: var(--ink-muted); }
+</style>

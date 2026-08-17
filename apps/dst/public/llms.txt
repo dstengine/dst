@@ -8,7 +8,7 @@
 - [Palm Central](https://palmcentral.dst.llc/): Tracker for Nakheel's Palm Central development on Palm Jebel Ali — current pricing, payment plan, what's actually for sale.
 - [Company formation](https://llc.dst.llc/): Practical guide to starting a business in Dubai — mainland vs. free zone vs. offshore, real costs, banking.
 - Crypto in the UAE: in development, not yet live.
-- [Environment](https://eco.dst.llc/): DST's own environmental work — conifer planting in the Urals, work starting in Yerevan, an open search for environmental contacts in Dubai. Not a commercial vertical and not a carbon-offset programme; nothing there is sold.
+- [Eco](https://eco.dst.llc/): DST's eco portfolio — a running record of individual, funded environmental initiatives, each on its own page. Not a commercial vertical and not a carbon-offset programme; nothing there is sold.
 
 ## Also part of the network
 

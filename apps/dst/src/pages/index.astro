@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { ICONS } from "@dst/ui/icons";
+import VentureGrid from "@dst/ui/VentureGrid.astro";
 
 // Every hub card carries a media panel so the grid reads as one row of
 // equals. Hubs without their own photography yet fall back to a mark on a
@@ -28,8 +29,8 @@ const hubs = [
   },
   {
     href: "https://eco.dst.llc",
-    title: "DST's environmental work — eco.dst.llc",
-    eyebrow: "Environment",
+    title: "DST's eco portfolio — eco.dst.llc",
+    eyebrow: "Eco",
     status: "Live",
     name: "Eco",
     // Not a vertical: nothing here is sold. It sits in the grid because it
@@ -79,32 +80,7 @@ const hubs = [
 
   <section id="hubs" class="container">
     <h2>Hubs</h2>
-    <div class="venture-grid">
-      {hubs.map((hub) => {
-        const Tag = hub.href ? "a" : "article";
-        return (
-          <Tag class="venture" href={hub.href} title={hub.title}>
-            <div class="venture-media">
-              {hub.image ? (
-                <img src={hub.image} alt={hub.imageAlt ?? ""} loading="lazy" />
-              ) : (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d={hub.icon} />
-                </svg>
-              )}
-            </div>
-            <div class="venture-body">
-              <div class="venture-meta">
-                <p class="eyebrow">{hub.eyebrow}</p>
-                <span class:list={["venture-status", { "venture-status-progress": hub.inProgress }]}>{hub.status}</span>
-              </div>
-              <h3>{hub.name}</h3>
-              <p>{hub.text}</p>
-            </div>
-          </Tag>
-        );
-      })}
-    </div>
+    <VentureGrid items={hubs} />
   </section>
 
   <section id="approach" class="container">
@@ -141,59 +117,6 @@ const hubs = [
      the shared default doesn't have. */
   .hero { padding-bottom: var(--space-4); }
   .hero-actions { display: flex; gap: var(--space-2); margin-top: var(--space-3); flex-wrap: wrap; }
-
-  .venture-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: var(--space-3);
-    margin-top: var(--space-3);
-  }
-  /* Square-cornered, full-bleed media, same register as the venue cards on
-     the district sites — see @dst/ui VenueCard. */
-  .venture {
-    display: flex;
-    flex-direction: column;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    color: inherit;
-    text-decoration: none;
-    transition: border-color 200ms ease, transform 200ms ease;
-  }
-  a.venture:hover { border-color: var(--accent, #1F5C4E); transform: translateY(-2px); }
-
-  .venture-media {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-    background: linear-gradient(140deg, var(--surface-sunk), var(--surface));
-  }
-  .venture-media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 400ms ease;
-  }
-  a.venture:hover .venture-media img { transform: scale(1.03); }
-  .venture-media svg { width: 30px; height: 30px; color: var(--ink-faint); }
-
-  .venture-body { padding: var(--space-3); }
-  .venture-meta { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); }
-  .venture-meta .eyebrow { margin: 0; }
-  .venture-status {
-    flex-shrink: 0;
-    font-size: var(--step--1);
-    font-weight: 600;
-    color: var(--ok);
-    background: var(--ok-bg);
-    padding: 0.15em 0.6em;
-    border-radius: 999px;
-  }
-  .venture-status-progress { color: var(--warn); background: var(--warn-bg); }
-  .venture h3 { margin-top: var(--space-2); margin-bottom: var(--space-1); font-size: var(--step-1); font-weight: 600; }
-  .venture-body p { margin: 0; font-size: var(--step--1); color: var(--ink-muted); }
 
   .approach-list { display: flex; flex-direction: column; gap: var(--space-2); padding-left: 1.2em; }
   .approach-list li { max-width: var(--content-width); }

@@ -10,9 +10,7 @@ interface Props {
 const { title, description, jsonLd } = Astro.props;
 
 const nav = [
-  { href: "/#urals", label: "Urals", title: "Conifer planting in the Urals" },
-  { href: "/#next", label: "What's next", title: "Yerevan and Dubai — what we're working on" },
-  { href: "/#contact", label: "Contact", title: "Get in touch about environmental work" },
+  { href: "/#portfolio", label: "Portfolio", title: "DST's eco portfolio — plantings and initiatives" },
 ];
 ---
 <BaseLayout
@@ -21,6 +19,7 @@ const nav = [
   siteName="DST Eco"
   footerSiteName="DST"
   nav={nav}
+  instagram="https://www.instagram.com/eco.dst.llc/"
   {/* The network-wide partner disclosure is about regulated verticals
       routing to licensed local partners. Nothing here is a regulated
       service, so that note would be noise; this site carries its own

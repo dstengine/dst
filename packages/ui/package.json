@@ -9,6 +9,7 @@
     "./Faq.astro": "./src/components/Faq.astro",
     "./LeadForm.astro": "./src/components/LeadForm.astro",
     "./Callout.astro": "./src/components/Callout.astro",
+    "./VentureGrid.astro": "./src/components/VentureGrid.astro",
     "./Redirect.astro": "./src/components/Redirect.astro",
     "./analytics": "./src/analytics.ts",
     "./district/ContentPage.astro": "./src/components/district/ContentPage.astro",

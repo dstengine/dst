@@ -1,68 +1,45 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Callout from "@dst/ui/Callout.astro";
+import VentureGrid from "@dst/ui/VentureGrid.astro";
+import { stories } from "../data/stories";
 
-// Every factual claim below is deliberately unquantified. Tree counts,
-// hectares, dates, species and partner organisations are left out rather
-// than estimated — an invented number is precisely what makes an
-// environmental page worthless. Fill these in once they're confirmed.
+// Same card shape as the dst.llc hub grid: eyebrow + status pill up top,
+// name and one line of text below. The funder/location detail lives on
+// the story's own page, not squeezed onto the card.
+const items = stories.map((story) => ({
+  href: `/portfolio/${story.slug}/`,
+  title: story.title,
+  eyebrow: story.species ?? "Eco portfolio",
+  status: "Live",
+  name: story.title,
+  text: story.body[0],
+  image: story.photo,
+  imageAlt: story.photoAlt,
+}));
 ---
 <Layout
-  title="Environmental work"
-  description="What DST actually does about the environment: conifer planting in the Urals, work starting in Yerevan, and an open search for environmental contacts in Dubai."
+  title="Eco portfolio"
+  description="DST's eco portfolio — a running record of individual, funded environmental initiatives, added as they happen."
 >
   <section class="container hero">
-    <p class="eyebrow">Environment</p>
-    <h1>What we actually do about the environment</h1>
+    <p class="eyebrow">Eco</p>
+    <h1>What we actually do</h1>
     <p class="lede">
       Most company pages under this heading are a stock photograph of a leaf
-      and a paragraph about caring deeply. This one is a list of things that
-      have either happened or are being worked on, with the ones that
-      haven't happened yet labelled as such.
+      and a paragraph about caring deeply. This is a portfolio instead:
+      specific, funded initiatives, each added once it's actually happened —
+      not a recurring programme with a reporting cycle.
     </p>
   </section>
 
-  <section class="container" id="urals">
-    <h2>Conifer planting in the Urals</h2>
-    <p>
-      The part of this with the longest history: planting coniferous trees in
-      the Urals. It grew out of the personal background of the people behind
-      DST rather than a corporate initiative — which is also why it predates
-      the company and isn't structured as a programme with a reporting cycle.
-    </p>
-    <p>
-      Conifers are the sensible choice for that region for reasons worth
-      stating plainly: they're native to it, they survive the winters without
-      intervention, and they hold soil on ground that would otherwise erode.
-      A planting suited to its site needs no maintenance budget to stay
-      alive — which is what separates reforestation that lasts from the kind
-      that photographs well in year one and is gone by year five.
-    </p>
-  </section>
-
-  <section class="container" id="next">
-    <h2>What's being worked on now</h2>
-
-    <h3>Yerevan</h3>
-    <p>
-      The intention is to take part in environmental work in Yerevan and —
-      just as importantly — to document it properly, so there's a record
-      rather than a claim. Nothing is finished here yet. When it is, this
-      section will say what was done and when.
-    </p>
-
-    <h3>Dubai</h3>
-    <p>
-      Dubai is where DST operates day to day, and it's where we have the
-      fewest environmental contacts. That's the honest state of it. We're
-      looking for organisations, initiatives and people already doing
-      credible environmental work in the UAE — not to sponsor a logo
-      placement, but to find something worth actually taking part in.
-    </p>
-    <p>
-      If you run something along those lines, or know someone who does, the
-      contact details are at the bottom of this page.
-    </p>
+  <section class="container" id="portfolio">
+    <h2>Eco portfolio</h2>
+    <VentureGrid items={items}>
+      <div class="venture-placeholder">
+        <p>Next entries land here as they happen.</p>
+      </div>
+    </VentureGrid>
   </section>
 
   <Callout>
@@ -71,36 +48,21 @@ import Callout from "@dst/ui/Callout.astro";
     neutrality claim. It's work we do because we want to, described as
     plainly as we can manage.
   </Callout>
-
-  <section class="container">
-    <h2>Why this sits on its own site</h2>
-    <p>
-      Environmental work kept as a tab on a commercial site tends to read as
-      decoration for the commercial part. Its own domain lets it stay small
-      and specific without having to justify itself against a sales page —
-      and lets this page admit that two of the three things on it haven't
-      happened yet, which a marketing page would never do.
-    </p>
-    <p>
-      DST's commercial work — real estate, company formation, and the rest —
-      lives at <a href="https://dst.llc" title="DST — the group's main site">dst.llc</a>.
-      It is deliberately not cross-sold from here.
-    </p>
-  </section>
-
-  <section class="container" id="contact">
-    <h2>Contact</h2>
-    <p>
-      Updates and photographs from the plantings go to Instagram, which is
-      the most honest format for this: dated posts, in order, rather than a
-      curated summary written after the fact.
-    </p>
-    <p>
-      <a href="https://www.instagram.com/eco.dst.llc/" rel="me noopener" title="DST Eco on Instagram">@eco.dst.llc on Instagram</a>
-    </p>
-    <p>
-      For anything else — particularly environmental contacts in Dubai —
-      reach us through <a href="https://dst.llc" title="DST — contact">dst.llc</a>.
-    </p>
-  </section>
 </Layout>
+
+<style>
+  .venture-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 12rem;
+    padding: var(--space-3);
+    border: 1px dashed var(--border);
+    text-align: center;
+  }
+  .venture-placeholder p {
+    margin: 0;
+    font-size: var(--step--1);
+    color: var(--ink-faint);
+  }
+</style>

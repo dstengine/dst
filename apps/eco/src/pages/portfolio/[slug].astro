@@ -1,0 +1,78 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { stories, type Story } from "../../data/stories";
+
+export function getStaticPaths() {
+  return stories.map((story) => ({
+    params: { slug: story.slug },
+    props: { story },
+  }));
+}
+
+const { story } = Astro.props as { story: Story };
+---
+<Layout title={story.title} description={story.body[0]}>
+  <section class="container hero">
+    <p class="eyebrow"><a href="/#portfolio" title="Back to the eco portfolio">Eco portfolio</a></p>
+    <h1>{story.title}</h1>
+    {(story.species || story.plantedBy || story.location) && (
+      <p class="story-meta">
+        {story.species && <span>{story.species}</span>}
+        {story.plantedBy && <span>Funded by {story.plantedBy}</span>}
+        {story.location && (
+          <span>
+            {story.location.mapUrl ? (
+              <a href={story.location.mapUrl} target="_blank" rel="noopener" title="View location on the map">
+                {story.location.name}
+              </a>
+            ) : story.location.name}
+          </span>
+        )}
+      </p>
+    )}
+  </section>
+
+  {story.photo && (
+    <section class="container">
+      <div class="story-photo">
+        <img src={story.photo} alt={story.photoAlt ?? ""} />
+      </div>
+    </section>
+  )}
+
+  <section class="container story-content">
+    {story.body.map((p) => <p>{p}</p>)}
+  </section>
+
+  <section class="container">
+    <p><a href="/#portfolio" title="Back to the eco portfolio">← Back to the eco portfolio</a></p>
+  </section>
+</Layout>
+
+<style>
+  .story-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 var(--space-2);
+    font-size: 0.875rem;
+    color: var(--ink-faint);
+    margin-top: var(--space-2);
+  }
+  .story-meta span:not(:last-child)::after {
+    content: "·";
+    margin-left: var(--space-2);
+    color: var(--border);
+  }
+  .story-meta a { color: inherit; }
+  .story-photo {
+    /* Matches the global paragraph measure (--content-width) so the photo
+       doesn't jump to the full container width while the body text below
+       it stays capped for readability — without this the two visually
+       don't line up at all. */
+    max-width: var(--content-width);
+    margin: 0 0 var(--space-3);
+    border: 1px solid var(--border);
+  }
+  .story-photo img { width: 100%; height: auto; display: block; }
+  .story-content p + p { margin-top: var(--space-2); }
+</style>
