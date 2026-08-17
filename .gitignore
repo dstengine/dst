@@ -12,3 +12,9 @@ package-lock.json
 # Playwright run artefacts
 test-results/
 playwright-report/
+
+# Vercel CLI local state, per-app env secrets
+.vercel/
+.env
+.env.*
+!.env.example

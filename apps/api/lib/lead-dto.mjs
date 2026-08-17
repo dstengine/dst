@@ -39,7 +39,16 @@
  * @property {LeadGeo} [geo]
  * @property {LeadRef} [ref]
  * @property {LeadForm} [form]
+ * @property {string} [company] honeypot - see ~/mind/local/dubai/dstengine/dtos/lead.dto.md.
+ *   Real forms leave it empty and hidden by CSS; a filled value means
+ *   whatever submitted this didn't read the page, only its inputs.
  */
+
+// Same rejection path as "no contact" below (ok:false, generic error) -
+// deliberately not a distinct status/flag. A bot that gets a different
+// response for tripping the honeypot than for any other invalid submission
+// can use that difference to learn which field to leave alone next time.
+const HONEYPOT_FIELD = 'company';
 
 /**
  * Validates the wire body `{ lead: {...} }` against the minimum the DTO
@@ -57,6 +66,9 @@ export function parseLead(body) {
   const lead = /** @type {any} */ (body).lead;
   if (!lead || typeof lead !== 'object') {
     return { ok: false, error: 'Missing "lead" object' };
+  }
+  if (typeof lead[HONEYPOT_FIELD] === 'string' && lead[HONEYPOT_FIELD].trim() !== '') {
+    return { ok: false, error: 'lead.contacts needs at least one of email, phone, telegram, whatsapp' };
   }
   const contacts = lead.contacts && typeof lead.contacts === 'object' ? lead.contacts : {};
   const hasContact = ['email', 'phone', 'telegram', 'whatsapp'].some(

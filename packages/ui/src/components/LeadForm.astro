@@ -41,6 +41,16 @@ const {
     <label for={`${formId}-phone`}>Phone / WhatsApp</label>
     <input id={`${formId}-phone`} name="contacts.phone" type="tel" autocomplete="tel" />
   </div>
+  {/* Honeypot - see lead.dto.md. Off-screen via CSS, not type="hidden" or
+      display:none - both of those are exactly what a bot checks for before
+      deciding a field is safe to skip. A real visitor never reaches it;
+      tabindex=-1 keeps it out of keyboard tab order and aria-hidden keeps
+      it out of screen readers, so it's invisible by every means a human
+      actually uses, not just visually. */}
+  <div class="field lead-form-hp" aria-hidden="true">
+    <label for={`${formId}-company`}>Company</label>
+    <input id={`${formId}-company`} name="company" type="text" tabindex="-1" autocomplete="off" />
+  </div>
   <slot />
   <button class="button" type="submit">{submitLabel}</button>
   <p class="lead-form-status" data-lead-form-status role="status" aria-live="polite"></p>
@@ -147,6 +157,17 @@ const {
     padding: var(--space-3);
   }
   .field { display: flex; flex-direction: column; gap: 0.3em; }
+  /* Off-screen, not display:none/visibility:hidden - a bot's DOM scraper
+     often checks computed visibility before deciding what to fill, and
+     those two are the first properties it checks for. Positioning off
+     the viewport instead still leaves the field "visible" by that check. */
+  .lead-form-hp {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
   label { font-size: var(--step--1); font-weight: 600; color: var(--ink-muted); }
   input, select {
     font: inherit;

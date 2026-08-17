@@ -28,6 +28,22 @@ test('accepts a lead with only telegram as contact', () => {
   assert.equal(result.ok, true);
 });
 
+test('rejects a lead with the honeypot field filled', () => {
+  const result = parseLead({ lead: { contacts: { phone: '+971501234567' }, company: 'Acme Inc' } });
+  assert.equal(result.ok, false);
+});
+
+test('rejects the honeypot the same way as a missing contact, so a bot can\'t tell the two apart', () => {
+  const honeypot = parseLead({ lead: { contacts: { phone: '+971501234567' }, company: 'Acme Inc' } });
+  const noContact = parseLead({ lead: { contacts: {} } });
+  assert.equal(honeypot.error, noContact.error);
+});
+
+test('accepts a lead with an empty honeypot field', () => {
+  const result = parseLead({ lead: { contacts: { phone: '+971501234567' }, company: '' } });
+  assert.equal(result.ok, true);
+});
+
 test('passes through optional fields unchanged', () => {
   const input = {
     lead: {
