@@ -39,6 +39,12 @@ const isDstHome = Astro.site?.hostname === "dst.llc";
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {/* iOS Safari auto-links any digit run that looks like a phone number
+        - e.g. the DED License No. in the footer - into a blue tel: link.
+        This site doesn't rely on that auto-detection anywhere (call
+        buttons are explicit <a href="tel:">), so it's pure false-positive
+        styling on numbers that aren't phone numbers. */}
+    <meta name="format-detection" content="telephone=no" />
     {favicon ? (
       <>
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
