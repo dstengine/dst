@@ -1,0 +1,14 @@
+/* eco.dst — the group's environmental work. Accent: spruce green, taken
+   from the conifer planting this site is actually about. Deliberately
+   deeper and less fintech-adjacent than llc's emerald teal, so the two
+   don't read as the same site in a tab strip. */
+:root {
+  --accent: #2E5B36;
+  --accent-ink: #16301B;
+  --accent-tint: #E8F0E9;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --accent: #6FAE79; --accent-ink: #C8E6CD; --accent-tint: #17251A; }
+}
+:root[data-theme="dark"] { --accent: #6FAE79; --accent-ink: #C8E6CD; --accent-tint: #17251A; }
+:root[data-theme="light"] { --accent: #2E5B36; --accent-ink: #16301B; --accent-tint: #E8F0E9; }

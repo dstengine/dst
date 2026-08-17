@@ -12,7 +12,7 @@
     "dev:visas": "npm run dev --workspace=apps/visas",
     "dev:riviera": "npm run dev --workspace=apps/riviera",
     "dev:mbr": "npm run dev --workspace=apps/mbr",
-    "build": "npm run build --workspace=apps/dst && npm run build --workspace=apps/llc && npm run build --workspace=apps/visas && npm run build --workspace=apps/riviera && npm run build --workspace=apps/mbr && npm run build --workspace=apps/palmcentral",
+    "build": "npm run build --workspace=apps/dst && npm run build --workspace=apps/llc && npm run build --workspace=apps/visas && npm run build --workspace=apps/riviera && npm run build --workspace=apps/mbr && npm run build --workspace=apps/palmcentral && npm run build --workspace=apps/eco",
     "build:dst": "npm run build --workspace=apps/dst",
     "build:llc": "npm run build --workspace=apps/llc",
     "build:visas": "npm run build --workspace=apps/visas",
@@ -22,7 +22,9 @@
     "test:html": "node --test tests/build-output.test.js",
     "test:layout": "playwright test",
     "build:palmcentral": "npm run build --workspace=apps/palmcentral",
-    "dev:palmcentral": "npm run dev --workspace=apps/palmcentral"
+    "dev:palmcentral": "npm run dev --workspace=apps/palmcentral",
+    "build:eco": "npm run build --workspace=apps/eco",
+    "dev:eco": "npm run dev --workspace=apps/eco"
   },
   "devDependencies": {
     "@playwright/test": "^1.62.1"
