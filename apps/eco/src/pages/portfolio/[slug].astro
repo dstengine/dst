@@ -3,76 +3,301 @@ import Layout from "../../layouts/Layout.astro";
 import { stories, type Story } from "../../data/stories";
 
 export function getStaticPaths() {
-  return stories.map((story) => ({
+  return stories.map((story, i) => ({
     params: { slug: story.slug },
-    props: { story },
+    props: { story, index: i + 1 },
   }));
 }
 
-const { story } = Astro.props as { story: Story };
+const { story, index } = Astro.props as { story: Story; index: number };
+const recordNo = String(index).padStart(2, "0");
+const { lat, lng } = story.location ?? {};
 ---
 <Layout title={story.title} description={story.body[0]}>
-  <section class="container hero">
-    <p class="eyebrow"><a href="/#portfolio" title="Back to the eco portfolio">Eco portfolio</a></p>
+  {/* Type-first opener, not a caption over a photograph. The characteristic
+      artifact of this subject isn't scenery — it's a field record: what was
+      planted, by whom, at coordinates anyone can check. The coordinates get
+      display size because "an actual place, not a claim" is this whole
+      site's argument; the photograph follows as evidence, below. */}
+  <header class="record container">
+    <p class="record-no">Eco portfolio · Record {recordNo}</p>
     <h1>{story.title}</h1>
-    {(story.species || story.plantedBy || story.location) && (
-      <p class="story-meta">
-        {story.species && <span>{story.species}</span>}
-        {story.plantedBy && <span>Funded by {story.plantedBy}</span>}
-        {story.location && (
-          <span>
-            {story.location.mapUrl ? (
-              <a href={story.location.mapUrl} target="_blank" rel="noopener" title="View location on the map">
-                {story.location.name}
-              </a>
-            ) : story.location.name}
-          </span>
-        )}
+    {story.binomial && <p class="record-binomial">{story.binomial}</p>}
+
+    {lat != null && lng != null && (
+      <p class="record-coords">
+        <span>{lat.toFixed(6)}°<abbr title="north">N</abbr></span>
+        <span>{lng.toFixed(6)}°<abbr title="east">E</abbr></span>
       </p>
     )}
-  </section>
+
+  </header>
 
   {story.photo && (
-    <section class="container">
-      <div class="story-photo">
-        <img src={story.photo} alt={story.photoAlt ?? ""} />
+    <figure class="evidence">
+      <img src={story.photo} alt={story.photoAlt ?? ""} loading="eager" />
+      {story.photoAlt && (
+        <figcaption class="container"><p>{story.photoAlt}</p></figcaption>
+      )}
+    </figure>
+  )}
+
+  {/* Prose keeps a readable measure; the record's own data takes the column
+      beside it rather than leaving that half of a wide screen empty. Same
+      1fr + fixed-rail split the network's property pages use. */}
+  <div class="container body">
+    <div class="prose">
+      {story.body.map((p) => <p>{p}</p>)}
+    </div>
+
+    <aside class="record-panel">
+      <dl>
+        {story.species && (
+          <div>
+            <dt>Species</dt>
+            <dd>{story.species}{story.binomial && <em>{story.binomial}</em>}</dd>
+          </div>
+        )}
+        {story.location && (
+          <div>
+            <dt>Site</dt>
+            <dd>{story.location.name}</dd>
+          </div>
+        )}
+        {story.plantedBy && (
+          <div>
+            <dt>Planted by</dt>
+            <dd>{story.plantedBy}</dd>
+          </div>
+        )}
+        {lat != null && lng != null && (
+          <div>
+            <dt>Position</dt>
+            <dd class="record-panel-coords">
+              {lat.toFixed(6)}°N<br />{lng.toFixed(6)}°E
+            </dd>
+          </div>
+        )}
+      </dl>
+      {story.location?.mapUrl && (
+        <a class="button button-secondary record-panel-action" href={story.location.mapUrl} target="_blank" rel="noopener">
+          Open in Google Maps
+        </a>
+      )}
+    </aside>
+  </div>
+
+  {story.gallery && story.gallery.length > 0 && (
+    <section class="container plates">
+      <h2>Plates</h2>
+      <div class="plate-grid">
+        {story.gallery.map((photo, i) => (
+          <figure class="plate">
+            <img src={photo.src} alt={photo.alt} loading="lazy" />
+            <figcaption>
+              <span class="plate-no">{String(i + 1).padStart(2, "0")}</span>
+              {photo.alt}
+            </figcaption>
+          </figure>
+        ))}
       </div>
     </section>
   )}
 
-  <section class="container story-content">
-    {story.body.map((p) => <p>{p}</p>)}
-  </section>
+  {lat != null && lng != null && (
+    <section class="container locate">
+      <h2>Locate</h2>
+      <div class="locate-map">
+        <iframe
+          src={`https://www.openstreetmap.org/export/embed.html?bbox=${lng - 0.02}%2C${lat - 0.01}%2C${lng + 0.02}%2C${lat + 0.01}&layer=mapnik&marker=${lat}%2C${lng}`}
+          loading="lazy"
+          title={`Map — ${story.location?.name ?? story.title}`}
+        />
+      </div>
+    </section>
+  )}
 
-  <section class="container">
-    <p><a href="/#portfolio" title="Back to the eco portfolio">← Back to the eco portfolio</a></p>
-  </section>
+  <nav class="container record-back">
+    <a href="/#portfolio">← All records</a>
+  </nav>
 </Layout>
 
 <style>
-  .story-meta {
+  /* --- Opener --------------------------------------------------------- */
+  .record { padding-top: var(--space-5); }
+
+  .record-no {
+    margin: 0 0 var(--space-3);
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .record h1 {
+    margin: 0;
+    max-width: 18ch;
+    font-size: clamp(var(--step-3), 5vw, 3.4rem);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+  }
+  .record-binomial {
+    margin: var(--space-1) 0 0;
+    font-style: italic;
+    font-size: var(--step-1);
+    color: var(--ink-muted);
+  }
+
+  /* The signature element: the measured position, at display size. */
+  .record-coords {
     display: flex;
     flex-wrap: wrap;
-    gap: 0 var(--space-2);
-    font-size: 0.875rem;
+    gap: 0 var(--space-4);
+    margin: var(--space-4) 0 0;
+    font-family: var(--font-mono);
+    font-size: clamp(1.35rem, 3.4vw, 2.1rem);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .record-coords abbr {
+    text-decoration: none;
     color: var(--ink-faint);
-    margin-top: var(--space-2);
+    margin-left: 0.25em;
+    font-size: 0.7em;
   }
-  .story-meta span:not(:last-child)::after {
-    content: "·";
-    margin-left: var(--space-2);
-    color: var(--border);
+
+  /* --- Body: prose + record rail --------------------------------------- */
+  .body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: var(--space-5);
+    align-items: start;
+    padding-top: var(--space-5);
   }
-  .story-meta a { color: inherit; }
-  .story-photo {
-    /* Matches the global paragraph measure (--content-width) so the photo
-       doesn't jump to the full container width while the body text below
-       it stays capped for readability — without this the two visually
-       don't line up at all. */
-    max-width: var(--content-width);
-    margin: 0 0 var(--space-3);
+  @media (max-width: 900px) {
+    .body { grid-template-columns: 1fr; gap: var(--space-4); }
+  }
+
+  .prose p + p { margin-top: var(--space-2); }
+
+  .record-panel {
+    position: sticky;
+    top: var(--space-3);
+    padding: var(--space-3);
+    background: var(--surface);
     border: 1px solid var(--border);
   }
-  .story-photo img { width: 100%; height: auto; display: block; }
-  .story-content p + p { margin-top: var(--space-2); }
+  @media (max-width: 900px) {
+    .record-panel { position: static; }
+  }
+  .record-panel dl { display: grid; gap: var(--space-3); margin: 0; }
+  .record-panel dt {
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .record-panel dd {
+    margin: 0.35em 0 0;
+    max-width: none;
+    font-size: var(--step--1);
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .record-panel dd em {
+    display: block;
+    color: var(--ink-muted);
+  }
+  .record-panel-coords {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+  /* An action that leaves the site, not a link inside a sentence — it gets
+     a button's affordance. Full width so it reads as the panel's footer
+     rather than a stray control floating in the corner. */
+  .record-panel-action {
+    justify-content: center;
+    width: 100%;
+    margin-top: var(--space-3);
+    font-size: var(--step--1);
+  }
+
+  /* --- Evidence photograph -------------------------------------------- */
+  .evidence {
+    margin: var(--space-5) 0 0;
+  }
+  .evidence img {
+    display: block;
+    width: 100%;
+    max-height: 70vh;
+    object-fit: cover;
+    background: var(--surface-sunk);
+  }
+  /* Caption sits on the same left edge as the prose below it — it carries
+     the .container class for exactly that, so the full-bleed photo is the
+     only thing that breaks the page's vertical alignment. */
+  .evidence figcaption p {
+    margin: var(--space-2) 0 0;
+    font-size: var(--step--1);
+    line-height: 1.5;
+    color: var(--ink-faint);
+  }
+  .plate figcaption {
+    margin-top: var(--space-2);
+    font-size: var(--step--1);
+    line-height: 1.5;
+    color: var(--ink-faint);
+  }
+
+  /* --- Prose ----------------------------------------------------------- */
+
+  /* --- Plates ---------------------------------------------------------- */
+  .plate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-3);
+    margin-top: var(--space-3);
+  }
+  .plate { margin: 0; }
+  .plate img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background: var(--surface-sunk);
+  }
+  .plate-no {
+    font-family: var(--font-mono);
+    color: var(--accent);
+    margin-right: 0.6em;
+  }
+
+  /* --- Map ------------------------------------------------------------- */
+  .locate-map {
+    margin-top: var(--space-3);
+    border: 1px solid var(--border);
+  }
+  .locate-map iframe {
+    display: block;
+    width: 100%;
+    height: clamp(300px, 34vw, 440px);
+    border: 0;
+  }
+
+  /* --- Footer nav ------------------------------------------------------ */
+  .record-back {
+    margin-top: var(--space-5);
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+  }
+  /* Navigation, not a link inside a sentence — the arrow and its position
+     already say what it is, so it doesn't need the underline that prose
+     links carry to be distinguishable from surrounding text. */
+  .record-back a {
+    color: var(--ink-muted);
+    text-decoration: none;
+  }
+  .record-back a:hover { color: var(--accent); }
 </style>
