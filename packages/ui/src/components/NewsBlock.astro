@@ -37,6 +37,11 @@ const latest = [...items].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date 
 )}
 
 <style>
+  /* The h2 inside the head row has its margin zeroed so it sits on the
+     same baseline as the "All news" link, which also drops the
+     margin-top every other h2 uses to separate one section from the next.
+     Put that spacing back on the section itself. */
+  .news-block { margin-top: var(--space-5); }
   .news-block-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-2); }
   .news-block-head h2 { margin: 0; }
   .news-block-all { flex-shrink: 0; font-size: var(--step--1); font-weight: 600; text-decoration: none; }
