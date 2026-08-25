@@ -11,12 +11,14 @@ import SourceLine from "./SourceLine.astro";
 import ImageNote from "./ImageNote.astro";
 import { ICONS } from "../icons.ts";
 import { formatDate } from "../date.ts";
+import { readingMinutes } from "@dst/content/reading";
 
 interface Props {
   item: NewsItem;
   backHref: string;
 }
 const { item, backHref } = Astro.props;
+const minutes = readingMinutes(item);
 
 // `jsonLd` on the item is a manual override for cases automation doesn't
 // fit; otherwise built from whatever fields are actually present, since an
@@ -58,6 +60,7 @@ const relatedItems = (item.related ?? []).map((card) => ({
     <p class="news-article-meta">
       {item.category && <span class="news-article-category">{item.category}</span>}
       <time datetime={item.date}>{formatDate(item.date)}</time>
+      {minutes > 0 && <span class="news-article-reading">{minutes} min read</span>}
     </p>
     <h1>{item.title}</h1>
   </header>
@@ -126,6 +129,7 @@ const relatedItems = (item.related ?? []).map((card) => ({
   .news-article-meta { display: flex; align-items: center; gap: var(--space-2); margin: 0 0 var(--space-1); font-size: var(--step--1); color: var(--ink-faint); }
   .news-article-category { font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent, #1F5C4E); }
   .news-article-header h1 { margin: 0; }
+  .news-article-reading { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
 
   .news-article-figure { margin: var(--space-4) 0 0; }
   .news-article-figure img { display: block; width: 100%; max-height: 60vh; object-fit: cover; background: var(--surface-sunk); border-radius: var(--radius); }
