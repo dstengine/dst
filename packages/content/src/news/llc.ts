@@ -16,7 +16,7 @@ export const items: NewsItem[] = [
     imageAlt:
       "The three routes a free zone company can take to the mainland under Resolution 11 of 2025: a mainland branch licence, a free-zone-held branch licence at AED 10,000 a year, or an activity permit of up to six months at AED 5,000.",
     imageKind: "illustration",
-    imageCredit: "Diagram: DST, from the resolution text",
+    imageCredit: "DST, from the resolution text",
     source: {
       name: "Dubai Legislation Portal",
       url: "https://dlp.dubai.gov.ae/Legislation%20Reference/2025/Executive%20Council%20Resolution%20No.%20(11)%20of%202025%20Regulating%20the%20Conduct%20of%20Free%20Zone%20Establishments%E2%80%99%20Activities.html",
