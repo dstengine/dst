@@ -12,6 +12,14 @@ export const items: NewsItem[] = [
       "Nakheel opened a new phase of Palm Central Private Residences on Palm Jebel Ali — 222 homes across three low- to mid-rise buildings, one- to four-bedroom apartments and four- to five-bedroom townhouses.",
     date: "2026-06-24",
     category: "Development",
+    // Nakheel's own visualisation, used as published — no recolouring, no
+    // reframing. Altering a developer's render would produce a building
+    // nobody designed, on a page carrying that building's real prices.
+    image: "/palmcentral.jpg",
+    imageAlt:
+      "Night aerial render of Palm Central's beachfront residences on Palm Jebel Ali, with the lit beach curve and the Dubai skyline behind.",
+    imageKind: "render",
+    imageCredit: "Render: Nakheel",
     source: {
       name: "Nakheel",
       url: "https://www.nakheel.com/en/media-centre/press-releases/news-detail/2026/06/24/nakheel-releases-next-phase-of-palm-central-private-residences-amid-accelerating-demand-for-beachfront-living-on-palm-jebel-ali",
