@@ -25,12 +25,14 @@ interface Props {
   ledeWidth?: string;
   image?: string;
   imageAlt?: string;
+  /** What the opener actually is — anything but a photograph is labelled. */
+  imageKind?: "photo" | "illustration" | "render" | "generated";
 }
 
 const {
   title, description, siteName, titleSuffix, complianceNote,
   partnerDisclosure = true, jsonLd,
-  eyebrow, h1, lede, ledeWidth, image, imageAlt,
+  eyebrow, h1, lede, ledeWidth, image, imageAlt, imageKind,
 } = Astro.props;
 
 // Titles are built from siteName so the same nav reads specifically on
@@ -59,7 +61,7 @@ const nav = [
   {h1 && (
     <header class:list={["container", "district-hero", { "has-photo": image }]}>
       {image ? (
-        <PhotoHero eyebrow={eyebrow ?? ""} title={h1} image={image} imageAlt={imageAlt} />
+        <PhotoHero eyebrow={eyebrow ?? ""} title={h1} image={image} imageAlt={imageAlt} imageKind={imageKind} />
       ) : (
         <>
           <p class="eyebrow">{eyebrow}</p>

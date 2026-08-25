@@ -20,6 +20,7 @@ const LABELS: Record<ImageKind, string> = {
   photo: "Photograph",
   illustration: "Illustration, not a photograph",
   render: "Render, not a photograph",
+  generated: "AI-generated, not a photograph",
 };
 const label = kind ? LABELS[kind] : undefined;
 const show = Boolean(caption || label || credit);

@@ -23,6 +23,9 @@ const { title, description, jsonLd, eyebrow, h1, lede, ledeWidth, image, imageAl
 // its own `image` in content.ts.
 const headerImage = image ?? site.headerImage;
 const headerImageAlt = imageAlt ?? (image ? undefined : site.headerImageAlt);
+// A page supplying its own image is supplying a real photograph (a venue
+// shot); only the site default is the generated one.
+const headerImageKind = image ? "photo" : site.headerImageKind;
 ---
 <DistrictLayout
   {...site}
@@ -35,6 +38,7 @@ const headerImageAlt = imageAlt ?? (image ? undefined : site.headerImageAlt);
   ledeWidth={ledeWidth}
   image={headerImage}
   imageAlt={headerImageAlt}
+  imageKind={headerImageKind}
 >
   <slot />
 </DistrictLayout>

@@ -16,13 +16,25 @@ interface Props {
   imageAlt?: string;
   /** Rendered as <h1> by default; venue/section openers may want otherwise. */
   level?: "h1" | "h2";
+  /** Says what the picture is. Anything that isn't a photograph gets a
+      visible mark, since a page-wide opener is the image most likely to be
+      taken for a photograph of the place. */
+  imageKind?: "photo" | "illustration" | "render" | "generated";
 }
 
-const { eyebrow, title, tagline, image, imageAlt, level = "h1" } = Astro.props;
+const { eyebrow, title, tagline, image, imageAlt, level = "h1", imageKind } = Astro.props;
 const Heading = level;
+
+const KIND_LABEL: Record<string, string> = {
+  illustration: "Illustration, not a photograph",
+  render: "Render, not a photograph",
+  generated: "AI-generated, not a photograph",
+};
+const kindLabel = imageKind && imageKind !== "photo" ? KIND_LABEL[imageKind] : undefined;
 ---
 <div class:list={["photo-hero", { "is-plain": !image }]}>
   {image && <img src={image} alt={imageAlt ?? title} loading="eager" />}
+  {image && kindLabel && <p class="photo-hero-kind">{kindLabel}</p>}
   <div class="photo-hero-caption">
     <p class="eyebrow">{eyebrow}</p>
     <Heading>{title}</Heading>
@@ -61,6 +73,26 @@ const Heading = level;
   .photo-hero.is-plain .photo-hero-caption { padding: 0; }
   .photo-hero.is-plain :is(h1, h2) { color: var(--ink); text-shadow: none; }
   .photo-hero.is-plain .photo-hero-tagline { color: var(--ink-muted); text-shadow: none; }
+
+  /* Bottom-right, out of the way of the heading but on the image itself —
+     it has to travel with the picture, not sit in body copy below it. */
+  .photo-hero-kind {
+    position: absolute;
+    right: var(--space-2);
+    bottom: var(--space-2);
+    z-index: 1;
+    margin: 0;
+    padding: 0.25em 0.6em;
+    border-radius: var(--radius);
+    background: rgba(8, 10, 13, 0.55);
+    color: rgba(255, 255, 255, 0.92);
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    letter-spacing: 0.02em;
+  }
+  @media (max-width: 640px) {
+    .photo-hero-kind { font-size: 0.8rem; }
+  }
 
   .photo-hero-caption {
     position: relative;

@@ -9,4 +9,7 @@ export const site = {
   headerImage: "/riviera.jpg",
   headerImageAlt:
     "Illustration of the Azizi Riviera promenade at night — a generated image, not a photograph of the development.",
+  // Machine-made, of no particular building. Said on the page rather than
+  // only in the alt text, since an opener this size reads as a photograph.
+  headerImageKind: "generated" as const,
 };

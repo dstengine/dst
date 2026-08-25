@@ -17,6 +17,9 @@
 export const siteHeaderImage = {
   src: "/palmcentral.jpg",
   alt: "Night aerial render of Palm Central's beachfront residences and central Spine, Palm Jebel Ali.",
+  // Nakheel visualisation of a development still under construction —
+  // labelled on the page, not just in the alt text.
+  kind: "render" as const,
 };
 
 export const currentPhase = {

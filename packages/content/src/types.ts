@@ -12,7 +12,11 @@ export interface Source {
 // Whether a picture is evidence or an impression. Property listings across
 // this market routinely present renders as photographs; saying which is
 // which costs nothing and is the whole difference between the two.
-export type ImageKind = "photo" | "illustration" | "render";
+// "render" is a developer's visualisation of something not built yet;
+// "generated" is a machine-made image of no particular place. Naming the
+// second separately matters — calling it an illustration would hide the
+// one thing a reader would want to know about it.
+export type ImageKind = "photo" | "illustration" | "render" | "generated";
 
 // Maps onto @dst/ui/VentureGrid.astro's VentureCardItem.
 export interface RelatedCard {
