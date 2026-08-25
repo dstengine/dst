@@ -67,7 +67,10 @@ const latest = [...items].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date 
     text-transform: uppercase;
     color: var(--ink-muted);
   }
-  .news-block-all { flex-shrink: 0; font-size: var(--step--1); font-weight: 600; text-decoration: none; }
+  /* inline-flex + min-height: on a phone this was a 24px-tall target sitting
+     beside a heading, well under the 44px below which taps start landing on
+     whatever is next to them. The box grows, the text stays put. */
+  .news-block-all { display: inline-flex; align-items: center; min-height: 44px; flex-shrink: 0; font-size: var(--step--1); font-weight: 600; text-decoration: none; }
   .news-block-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
   /* The global `p, li` measure caps prose at a readable 34rem. These rows
      are data, not paragraphs — capped, they leave half a laptop screen

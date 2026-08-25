@@ -187,6 +187,8 @@ const shareImage = shareable && Astro.site ? new URL(image, Astro.site).href : u
   .site-name {
     display: flex;
     align-items: center;
+    /* The logo is the way back to the front page and was a 29px target. */
+    min-height: 44px;
     gap: var(--space-1);
     flex-shrink: 0;
     white-space: nowrap;
