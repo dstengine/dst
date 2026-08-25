@@ -226,6 +226,14 @@ const relatedItems = (item.related ?? []).map((card) => ({
   .figure-diagram img { object-fit: contain; background: transparent; height: auto; max-height: none; }
 
   .prose { margin-top: var(--space-4); max-width: none; }
+  /* Justified, with hyphenation on. Justification without hyphens opens
+     rivers of white space in a column this narrow — the two go together or
+     not at all. */
+  .prose p {
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
   /* Roughly one line of leading. At --space-2 the gap was half the
      line-height and paragraphs ran together. */
   .prose p + p { margin-top: var(--space-3); }
