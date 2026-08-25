@@ -7,8 +7,10 @@ interface Props {
   title: string;
   description: string;
   jsonLd?: Record<string, unknown>[];
+  /** og:image for this page — see BaseLayout. */
+  image?: string;
 }
-const { title, description, jsonLd } = Astro.props;
+const { title, description, jsonLd, image } = Astro.props;
 
 const nav = [
   { href: "/", label: "Overview", title: "Palm Central overview" },
@@ -30,6 +32,7 @@ const nav = [
   nav={nav}
   complianceNote="Independent advisory site, not affiliated with or endorsed by Nakheel. Prices, availability, and release phases change — confirm current terms directly with the developer or a licensed broker before acting."
   jsonLd={jsonLd}
+  image={image}
   footerLinks={[{ href: "/privacy/", label: "Privacy" }]}
 >
   <slot />

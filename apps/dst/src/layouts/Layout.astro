@@ -6,8 +6,10 @@ interface Props {
   title: string;
   description: string;
   jsonLd?: Record<string, unknown>[];
+  /** og:image for this page — see BaseLayout. */
+  image?: string;
 }
-const { title, description, jsonLd } = Astro.props;
+const { title, description, jsonLd, image } = Astro.props;
 
 const nav = [
   { href: "/#hubs", label: "Hubs", title: "What DST is building" },
@@ -24,6 +26,7 @@ const nav = [
   nav={nav}
   complianceNote="DST builds and operates the systems behind each venture; execution in regulated verticals (real estate, financial services) is carried out by licensed local partners."
   jsonLd={jsonLd}
+  image={image}
   logoSrc="/logo-mini.png"
   favicon
 >

@@ -6,8 +6,10 @@ interface Props {
   title: string;
   description: string;
   jsonLd?: Record<string, unknown>[];
+  /** og:image for this page — see BaseLayout. */
+  image?: string;
 }
-const { title, description, jsonLd } = Astro.props;
+const { title, description, jsonLd, image } = Astro.props;
 
 const nav = [
   { href: "/", label: "Getting started", title: "How to start a business in Dubai" },
@@ -29,6 +31,7 @@ const nav = [
   nav={nav}
   complianceNote="Informational content, not legal or financial advice. Always confirm current requirements with DED or your chosen free zone authority before acting."
   jsonLd={jsonLd}
+  image={image}
   partnerDisclosure={false}
 >
   <slot />

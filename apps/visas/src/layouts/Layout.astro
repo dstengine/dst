@@ -6,8 +6,10 @@ interface Props {
   title: string;
   description: string;
   jsonLd?: Record<string, unknown>[];
+  /** og:image for this page — see BaseLayout. */
+  image?: string;
 }
-const { title, description, jsonLd } = Astro.props;
+const { title, description, jsonLd, image } = Astro.props;
 
 const nav = [
   { href: "/", label: "Visa types", title: "UAE residency routes compared" },
@@ -26,6 +28,7 @@ const nav = [
   nav={nav}
   complianceNote="Informational content, not immigration or legal advice. Golden Visa thresholds and eligibility criteria are set by UAE federal authorities and can change — always confirm current requirements before making an investment decision."
   jsonLd={jsonLd}
+  image={image}
   partnerDisclosure
 >
   <slot />

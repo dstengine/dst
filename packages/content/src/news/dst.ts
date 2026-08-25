@@ -27,6 +27,6 @@ export const items: NewsItem[] = [
       "January was the strongest month of the period, at Dh72.16 billion across 15,896 transactions. June closed with 13,766 sales worth Dh32.66 billion.",
     ],
     expertise:
-      "The two published months are worth dividing out. January averaged Dh4.54 million per sale; June averaged Dh2.37 million. So while transactions fell 13% between them, value fell 55% — the gap is the average ticket, which halved. On those figures the market shifted toward cheaper stock rather than simply slowing down. Two months are not a trend, and summer is reliably the quieter half of a Dubai year, but it is the average ticket that carries the information here: a headline total mixes price and volume together and hides which one moved.",
+      "The two published months are worth dividing out. January averaged Dh4.54 million per sale; June averaged Dh2.37 million. So while transactions fell 13% between them, value fell 55% — the gap is the average ticket, which fell 48%. On those figures the market shifted toward cheaper stock rather than simply slowing down. Two months are not a trend, and summer is reliably the quieter half of a Dubai year, but it is the average ticket that carries the information here: a headline total mixes price and volume together and hides which one moved.",
   },
 ];

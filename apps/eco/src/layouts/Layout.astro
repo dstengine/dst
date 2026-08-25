@@ -6,8 +6,10 @@ interface Props {
   title: string;
   description: string;
   jsonLd?: Record<string, unknown>[];
+  /** og:image for this page — see BaseLayout. */
+  image?: string;
 }
-const { title, description, jsonLd } = Astro.props;
+const { title, description, jsonLd, image } = Astro.props;
 
 const nav = [
   { href: "/#portfolio", label: "Portfolio", title: "DST's eco portfolio — plantings and initiatives" },
@@ -30,6 +32,7 @@ const nav = [
   partnerDisclosure={false}
   complianceNote="This page describes DST's own environmental activity. It is not a carbon-offset programme: nothing here is sold, certified, or counted as an offset credit."
   jsonLd={jsonLd}
+  image={image}
 >
   <slot />
 </BaseLayout>

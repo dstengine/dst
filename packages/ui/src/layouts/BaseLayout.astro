@@ -27,10 +27,23 @@ interface Props {
   // Sites with an Instagram account get an icon link in the header —
   // sites without one show nothing rather than a dead placeholder icon.
   instagram?: string;
+  /** Share picture for og:image, resolved to an absolute URL. Pages that
+      have their own lead image should pass it; otherwise the card falls
+      back to a text-only summary rather than showing the wrong picture. */
+  image?: string;
 }
 
-const { title, description, siteName, nav, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [], footerSiteName = siteName, instagram } = Astro.props;
+const { title, description, siteName, nav, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [], footerSiteName = siteName, instagram, image } = Astro.props;
 const isDstHome = Astro.site?.hostname === "dst.llc";
+
+// Absolute URLs: canonical and og:image are both meaningless as relative
+// paths — a crawler or a chat client resolves them against its own host.
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
+// SVG is excluded on purpose: Telegram, WhatsApp and Facebook don't render
+// it in a link preview, so passing one produces an empty card rather than
+// no card. A text-only summary is the better failure.
+const shareable = image && !/\.svgz?($|\?)/i.test(image);
+const shareImage = shareable && Astro.site ? new URL(image, Astro.site).href : undefined;
 ---
 <!doctype html>
 <html lang="en">
@@ -45,6 +58,19 @@ const isDstHome = Astro.site?.hostname === "dst.llc";
         buttons are explicit <a href="tel:">), so it's pure false-positive
         styling on numbers that aren't phone numbers. */}
     <meta name="format-detection" content="telephone=no" />
+    {/* Without these a link shared into WhatsApp, Telegram or LinkedIn
+        renders as a bare URL with no title, summary or picture — on a
+        network whose whole plan is being passed around and linked to. */}
+    {canonical && <link rel="canonical" href={canonical} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {canonical && <meta property="og:url" content={canonical} />}
+    {shareImage && <meta property="og:image" content={shareImage} />}
+    <meta name="twitter:card" content={shareImage ? "summary_large_image" : "summary"} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
     {favicon ? (
       <>
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
