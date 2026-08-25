@@ -1,5 +1,4 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "//": "Vercel skips a build when the commit didn't touch this project's Root Directory. That is wrong for this repo: every app is built from @dst/ui and @dst/content, so a change to either must rebuild all of them. Without this, a commit touching only packages/ deploys nowhere and production silently drifts behind main — which is exactly what happened. Exit 0 skips the build, exit 1 runs it.",
   "ignoreCommand": "git rev-parse HEAD^ >/dev/null 2>&1 || exit 1; git diff --quiet HEAD^ HEAD -- . ../../packages"
 }
