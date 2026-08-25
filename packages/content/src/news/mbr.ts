@@ -21,7 +21,7 @@ export const items: NewsItem[] = [
       verifiedOn: "2026-08-25",
     },
     body: [
-      "The Dubai Metro Blue Line reached 10% completion within five months of its June 2025 groundbreaking, with the RTA targeting 30% by the end of 2026 and an opening on September 9, 2029. Over 500 engineers and 3,000 workers are deployed across 12 sites.",
+      "The Dubai Metro Blue Line reached <strong>10% completion</strong> within five months of its June 2025 groundbreaking, with the RTA targeting 30% by the end of 2026 and an opening on September 9, 2029. Over 500 engineers and 3,000 workers are deployed across 12 sites.",
       "The line runs 30km with 14 stations in two directions: 21km and 10 stations from Creek Interchange through Dubai Festival City, Dubai Creek Harbour and International City to Dubai Academic City, plus 9km and four stations from Centrepoint Interchange through Mirdif and Al Warqa to International City. The Emaar station will be the world's tallest metro station at 74 metres, built for 240,000 daily passengers by 2040.",
     ],
     expertise:

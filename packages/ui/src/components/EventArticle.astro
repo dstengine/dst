@@ -119,20 +119,23 @@ const relatedItems = (item.related ?? []).map((card) => ({
     <section class="event-article-outcome">
       <h2>What happened</h2>
       <div class="prose">
-        {item.outcome.map((p) => <p>{p}</p>)}
+        {item.outcome.map((p) => <p set:html={p} />)}
       </div>
     </section>
   )}
 
   {item.body && item.body.length > 0 && (
     <div class="prose">
-      {item.body.map((p) => <p>{p}</p>)}
+      {/* set:html so a paragraph can carry <strong> on the fact it turns
+          on — a figure, a resolution number, a date. Content is authored in
+          this repo, never user input, same as the district ContentPage. */}
+      {item.body.map((p) => <p set:html={p} />)}
     </div>
   )}
 
   {item.expertise && (
     <div class="prose event-article-expertise">
-      <p>{item.expertise}</p>
+      <p set:html={item.expertise} />
     </div>
   )}
 

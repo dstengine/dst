@@ -23,7 +23,7 @@ export const items: NewsItem[] = [
       verifiedOn: "2026-08-25",
     },
     body: [
-      "Dubai closed the first half of 2026 with Dh286.43 billion in property sales across 79,229 transactions — roughly 433 sales a day and close to Dh1.57 billion changing hands daily.",
+      "Dubai closed the first half of 2026 with <strong>Dh286.43 billion</strong> in property sales across 79,229 transactions — roughly 433 sales a day and close to Dh1.57 billion changing hands daily.",
       "January was the strongest month of the period, at Dh72.16 billion across 15,896 transactions. June closed with 13,766 sales worth Dh32.66 billion.",
     ],
     expertise:

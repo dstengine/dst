@@ -26,10 +26,24 @@ export const items: NewsItem[] = [
       verifiedOn: "2026-08-25",
     },
     body: [
-      "Nakheel released the next phase of Palm Central Private Residences on Palm Jebel Ali on June 24, 2026 — 222 homes spread across three low- to mid-rise buildings, a mix of one- to four-bedroom apartments and four- to five-bedroom townhouses.",
+      "Nakheel released the next phase of Palm Central Private Residences on Palm Jebel Ali on June 24, 2026 — <strong>222 homes</strong> spread across three low- to mid-rise buildings, a mix of one- to four-bedroom apartments and four- to five-bedroom townhouses.",
       "It follows the project's first release in October 2025, which Nakheel says drew strong demand for beachfront living on Palm Jebel Ali — seven interconnected islands and more than 90 kilometres of beachfront, part of the Dubai 2040 Urban Master Plan. Completion across the wider Palm Jebel Ali development is scheduled for September 2030.",
     ],
     expertise:
       "A second release this close behind the first is usually a signal of absorbed inventory, not just a pre-planned rollout — worth watching for how it prices against the October 2025 phase once official numbers are out.",
+    related: [
+      {
+        href: "/prices/",
+        title: "Palm Central prices",
+        text: "Current pricing by unit type, and how this phase sits against the first release.",
+        eyebrow: "Prices",
+      },
+      {
+        href: "/payment-plan/",
+        title: "Payment plan",
+        text: "The instalment structure through to handover, set out in full.",
+        eyebrow: "Payment",
+      },
+    ],
   },
 ];
