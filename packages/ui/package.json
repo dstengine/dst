@@ -20,6 +20,8 @@
     "./EventsBlock.astro": "./src/components/EventsBlock.astro",
     "./NewsArticle.astro": "./src/components/NewsArticle.astro",
     "./EventArticle.astro": "./src/components/EventArticle.astro",
+    "./SourceLine.astro": "./src/components/SourceLine.astro",
+    "./ImageNote.astro": "./src/components/ImageNote.astro",
     "./analytics": "./src/analytics.ts",
     "./date": "./src/date.ts",
     "./district/ContentPage.astro": "./src/components/district/ContentPage.astro",

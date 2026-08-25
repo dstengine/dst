@@ -1,0 +1,57 @@
+---
+// Says whether a picture is evidence or an impression, in the visible
+// caption rather than only in the alt text.
+//
+// This market runs the other way: developer renders are presented as
+// photographs of buildings that do not exist yet, and the reader is left
+// to guess. Naming it costs one line. The alt text already carried this
+// on some images — but only a screen reader ever saw it.
+import type { ImageKind } from "@dst/content/types";
+
+interface Props {
+  kind?: ImageKind;
+  credit?: string;
+  /** Caption text, when the picture also needs describing. */
+  caption?: string;
+}
+const { kind, credit, caption } = Astro.props;
+
+const LABELS: Record<ImageKind, string> = {
+  photo: "Photograph",
+  illustration: "Illustration, not a photograph",
+  render: "Render, not a photograph",
+};
+const label = kind ? LABELS[kind] : undefined;
+const show = Boolean(caption || label || credit);
+---
+{show && (
+  <figcaption class="image-note">
+    {caption && <span class="image-note-caption">{caption}</span>}
+    {label && (
+      <span class:list={["image-note-kind", { "image-note-kind-warn": kind !== "photo" }]}>{label}</span>
+    )}
+    {credit && <span class="image-note-credit">{credit}</span>}
+  </figcaption>
+)}
+
+<style>
+  .image-note {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5em var(--space-2);
+    margin-top: var(--space-2);
+    font-size: var(--step--1);
+    line-height: 1.5;
+    color: var(--ink-faint);
+  }
+  .image-note-caption { color: var(--ink-muted); }
+  .image-note-kind {
+    font-family: var(--font-mono);
+    font-size: 0.92em;
+    letter-spacing: 0.02em;
+  }
+  /* A picture that isn't a photograph is the case worth noticing, so it
+     gets the flag colour rather than blending into the caption. */
+  .image-note-kind-warn { color: var(--warn); }
+</style>

@@ -1,0 +1,44 @@
+---
+// "Source: Nakheel · verified 25 Aug 2026".
+//
+// The name is plain text on purpose — source URLs are an audit trail and
+// never reach rendered HTML (see the news/events spec). The verified date
+// is the part nobody else publishes: a property portal will quote a price
+// without ever saying when anyone last checked it, so a reader has no way
+// to tell a fact confirmed this week from one left over from last year.
+import type { Source } from "@dst/content/types";
+import { formatDate } from "../date.ts";
+
+interface Props {
+  source: Source;
+}
+const { source } = Astro.props;
+---
+<p class="source-line">
+  <span>Source: {source.name}</span>
+  {source.verifiedOn && (
+    <>
+      <span class="source-line-sep" aria-hidden="true">·</span>
+      <span class="source-line-checked">
+        verified <time datetime={source.verifiedOn}>{formatDate(source.verifiedOn)}</time>
+      </span>
+    </>
+  )}
+</p>
+
+<style>
+  .source-line {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5em;
+    margin: var(--space-4) 0 0;
+    font-size: var(--step--1);
+    color: var(--ink-faint);
+  }
+  .source-line-sep { color: var(--border); }
+  .source-line-checked {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+</style>

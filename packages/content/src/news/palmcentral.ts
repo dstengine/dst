@@ -15,6 +15,7 @@ export const items: NewsItem[] = [
     source: {
       name: "Nakheel",
       url: "https://www.nakheel.com/en/media-centre/press-releases/news-detail/2026/06/24/nakheel-releases-next-phase-of-palm-central-private-residences-amid-accelerating-demand-for-beachfront-living-on-palm-jebel-ali",
+      verifiedOn: "2026-08-25",
     },
     body: [
       "Nakheel released the next phase of Palm Central Private Residences on Palm Jebel Ali on June 24, 2026 — 222 homes spread across three low- to mid-rise buildings, a mix of one- to four-bedroom apartments and four- to five-bedroom townhouses.",

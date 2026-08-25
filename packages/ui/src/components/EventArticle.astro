@@ -6,6 +6,8 @@
 import type { EventItem } from "@dst/content/types";
 import LeadForm from "./LeadForm.astro";
 import VentureGrid from "./VentureGrid.astro";
+import SourceLine from "./SourceLine.astro";
+import ImageNote from "./ImageNote.astro";
 import { ICONS } from "../icons.ts";
 import { formatDate } from "../date.ts";
 
@@ -81,6 +83,7 @@ const relatedItems = (item.related ?? []).map((card) => ({
   {item.image && (
     <figure class="event-article-figure">
       <img src={item.image} alt={item.imageAlt ?? ""} loading="eager" />
+      <ImageNote kind={item.imageKind} credit={item.imageCredit} />
     </figure>
   )}
 
@@ -128,7 +131,7 @@ const relatedItems = (item.related ?? []).map((card) => ({
     </section>
   )}
 
-  {item.source && <p class="event-article-source">Source: {item.source.name}</p>}
+  {item.source && <SourceLine source={item.source} />}
 
   <nav class="event-article-back">
     <a href={backHref} title="All events">&larr; All events</a>
@@ -161,7 +164,6 @@ const relatedItems = (item.related ?? []).map((card) => ({
 
   .event-article-related { margin-top: var(--space-4); }
 
-  .event-article-source { margin-top: var(--space-4); font-size: var(--step--1); color: var(--ink-faint); }
 
   .event-article-back { margin-top: var(--space-4); font-family: var(--font-mono); font-size: var(--step--1); }
   .event-article-back a { color: var(--ink-muted); text-decoration: none; }

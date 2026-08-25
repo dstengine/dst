@@ -6,8 +6,13 @@
 export interface Source {
   name: string; // rendered as plain text
   url: string; // audit trail only — never rendered
-  verifiedOn?: string;
+  verifiedOn?: string; // ISO date the claim was last checked against the source; rendered
 }
+
+// Whether a picture is evidence or an impression. Property listings across
+// this market routinely present renders as photographs; saying which is
+// which costs nothing and is the whole difference between the two.
+export type ImageKind = "photo" | "illustration" | "render";
 
 // Maps onto @dst/ui/VentureGrid.astro's VentureCardItem.
 export interface RelatedCard {
@@ -46,6 +51,8 @@ interface ItemBase {
   category?: string;
   image?: string;
   imageAlt?: string;
+  imageKind?: ImageKind; // absent -> no claim is made either way
+  imageCredit?: string; // who made or supplied it
   related?: RelatedCard[];
   geo?: Geo;
   form?: ItemForm;

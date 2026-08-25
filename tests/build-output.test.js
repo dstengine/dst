@@ -505,6 +505,44 @@ describe("news and events", () => {
     }
   });
 
+  // The verified date is the one thing here no competing site publishes —
+  // it was collected in the data for a while but rendered nowhere, which is
+  // exactly the kind of silent regression worth a test.
+  test("an item whose source carries verifiedOn renders that date", () => {
+    const withDate = [...allNews, ...allEvents].filter((i) => i.source?.verifiedOn && i.body?.length);
+    assert.ok(withDate.length > 0, "expected at least one item with a verified date to exercise this");
+    for (const item of withDate) {
+      const kind = "date" in item ? "news" : "events";
+      const page = neDetailPages().find((p) => p.url === `/${kind}/${item.slug}/`);
+      if (!page) continue;
+      assert.match(
+        page.html,
+        /class="source-line-checked"/,
+        `${page.app}${page.url}: source has verifiedOn=${item.source.verifiedOn} but the page renders no verified date`,
+      );
+      assert.match(
+        page.html,
+        new RegExp(`<time datetime="${item.source.verifiedOn}"`),
+        `${page.app}${page.url}: verified date is not marked up as <time datetime="${item.source.verifiedOn}">`,
+      );
+    }
+  });
+
+  // A render presented as a photograph is the default failure mode of this
+  // market; if a kind is declared, the page has to say so in visible text.
+  test("a declared image kind is stated in the visible caption", () => {
+    const LABEL = { photo: "Photograph", illustration: "Illustration, not a photograph", render: "Render, not a photograph" };
+    for (const item of [...allNews, ...allEvents].filter((i) => i.imageKind && i.body?.length)) {
+      const kind = "date" in item ? "news" : "events";
+      const page = neDetailPages().find((p) => p.url === `/${kind}/${item.slug}/`);
+      if (!page) continue;
+      assert.ok(
+        decode(page.html).includes(LABEL[item.imageKind]),
+        `${page.app}${page.url}: imageKind="${item.imageKind}" but the caption never says "${LABEL[item.imageKind]}"`,
+      );
+    }
+  });
+
   // Broader than the check above: source.url must not leak anywhere in the
   // page at all, not just next to the "Source:" line — this caught a real
   // bug where NewsArticle's auto-built JSON-LD put it in `isBasedOn`.

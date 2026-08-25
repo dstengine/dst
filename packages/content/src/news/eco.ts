@@ -19,6 +19,7 @@ export const items: NewsItem[] = [
     image: "/stories/douglas-fir-shilovka-01.jpg",
     imageAlt:
       "A young Douglas fir sapling freshly planted in tall grass near the Shaytanka river — the first record published on eco.dst.llc.",
+    imageKind: "photo",
     geo: {
       name: "Nikolo-Pavlovsky district, Sverdlovsk region — near Shilovka, on the Shaytanka river",
       lat: 57.769599,
