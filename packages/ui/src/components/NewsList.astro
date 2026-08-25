@@ -60,12 +60,18 @@ const sorted = [...items].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date 
     background: var(--surface-sunk);
   }
   .item-row-body { min-width: 0; }
+  /* The global `p, li` measure caps prose at a readable 34rem. A dated row
+     is data, not a paragraph — capped, it strands half a wide screen and
+     cuts the divider rules short. The summary line keeps its own measure
+     below, where the cap is doing real work. */
+  .item-row { max-width: none; }
   .item-row-meta {
     display: flex;
     align-items: baseline;
     flex-wrap: wrap;
     gap: var(--space-2);
     margin: 0;
+    max-width: none;
     font-size: var(--step--1);
     color: var(--ink-faint);
   }

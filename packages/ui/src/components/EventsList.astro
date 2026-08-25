@@ -99,12 +99,16 @@ const past = items.filter((e) => e.start < todayIso).sort((a, b) => (a.start < b
     background: var(--surface-sunk);
   }
   .item-row-body { min-width: 0; }
+  /* See NewsList: dated rows are data and ignore the prose measure; the
+     summary line below keeps it. */
+  .item-row { max-width: none; }
   .item-row-meta {
     display: flex;
     align-items: baseline;
     flex-wrap: wrap;
     gap: var(--space-1);
     margin: 0;
+    max-width: none;
     font-size: var(--step--1);
     color: var(--ink-faint);
   }

@@ -69,6 +69,10 @@ const latest = [...items].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date 
   }
   .news-block-all { flex-shrink: 0; font-size: var(--step--1); font-weight: 600; text-decoration: none; }
   .news-block-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+  /* The global `p, li` measure caps prose at a readable 34rem. These rows
+     are data, not paragraphs — capped, they leave half a laptop screen
+     empty and cut the divider rules short of the container. */
+  .news-block-list li { max-width: none; }
   .news-block-item {
     display: flex;
     gap: var(--space-3);
