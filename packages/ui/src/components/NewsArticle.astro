@@ -127,15 +127,17 @@ const relatedItems = (item.related ?? []).map((card) => ({
 </article>
 
 <style>
-  .news-article { padding-top: var(--space-5); padding-bottom: var(--space-5); }
-  /* Centred, not left-aligned. The measure keeps lines readable, but a
-     608px column pinned to the left edge of a 1180px container reads as a
-     cut-off page — especially under a full-width diagram. Medium runs the
-     same column width and centres it, which is why theirs doesn't. */
-  .news-article-header,
-  .news-article-form,
-  .prose { margin-inline: auto; }
-  .news-article-header { max-width: var(--content-width); }
+  /* One column for the whole article, centred — every block inside runs
+     edge to edge of it. Previously each block set its own width (measure
+     on the text, full container on images, fit-content on diagrams) and
+     the page came out as a ragged stack of three different alignments.
+     Wider than the bare reading measure so a diagram still has room. */
+  .news-article {
+    max-width: 46rem;
+    padding-top: var(--space-5);
+    padding-bottom: var(--space-5);
+  }
+  .news-article-header { max-width: none; }
   .news-article-meta { display: flex; align-items: center; gap: var(--space-2); margin: 0 0 var(--space-1); font-size: var(--step--1); color: var(--ink-faint); }
   .news-article-category { font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent, #1F5C4E); }
   .news-article-header h1 { margin: 0; }
@@ -154,19 +156,9 @@ const relatedItems = (item.related ?? []).map((card) => ({
      up nowhere near the thing it describes. Capped short of the container
      so a diagram reads as wider than the text column without becoming a
      separate full-bleed band. */
-  .figure-diagram {
-    width: fit-content;
-    max-width: min(100%, 60rem);
-    margin-inline: auto;
-  }
-  .figure-diagram img {
-    object-fit: contain;
-    background: transparent;
-    width: auto;
-    max-width: 100%;
-  }
+  .figure-diagram img { object-fit: contain; background: transparent; height: auto; max-height: none; }
 
-  .prose { margin-top: var(--space-4); max-width: var(--content-width); }
+  .prose { margin-top: var(--space-4); max-width: none; }
   /* Roughly one line of leading. At --space-2 the gap was half the
      line-height and paragraphs ran together. */
   .prose p + p { margin-top: var(--space-3); }
@@ -176,7 +168,7 @@ const relatedItems = (item.related ?? []).map((card) => ({
   .locate-map { margin-top: var(--space-2); border: 1px solid var(--border); }
   .locate-map iframe { display: block; width: 100%; height: clamp(300px, 34vw, 440px); border: 0; }
 
-  .news-article-form { margin-top: var(--space-4); max-width: var(--content-width); }
+  .news-article-form { margin-top: var(--space-4); }
 
   .news-article-related { margin-top: var(--space-4); }
 
