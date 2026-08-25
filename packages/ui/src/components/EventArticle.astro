@@ -230,6 +230,11 @@ const relatedItems = (item.related ?? []).map((card) => ({
      rivers of white space in a column this narrow — the two go together or
      not at all. */
   .prose p {
+    /* The global `p, li` measure is 38rem; the article column is 46rem. Left
+       in place it held every paragraph ~80px short of the figure above it,
+       so the text looked inset from its own column. The column is the
+       measure here. */
+    max-width: none;
     text-align: justify;
     hyphens: auto;
     -webkit-hyphens: auto;
