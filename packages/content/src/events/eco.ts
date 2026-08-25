@@ -11,6 +11,11 @@ export const items: EventItem[] = [
     end: "2026-10-22",
     venue: "Dubai International Convention and Exhibition Centre, Dubai World Trade Centre",
     city: "Dubai",
+    geo: {
+      name: "Dubai World Trade Centre",
+      lat: 25.224198,
+      lng: 55.286468,
+    },
     organizer: "Dubai Electricity and Water Authority (DEWA)",
     category: "Exhibition",
     source: {

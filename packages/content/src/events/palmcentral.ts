@@ -10,8 +10,15 @@ export const items: EventItem[] = [
       "The 22nd International Property Show runs September 7–9, 2026 at Dubai World Trade Centre, bringing developers, investors and institutions together. Entry is free for professional visitors.",
     start: "2026-09-07",
     end: "2026-09-09",
+    startTime: "10:00",
+    endTime: "18:00",
     venue: "Dubai World Trade Centre, Halls 4–8",
     city: "Dubai",
+    geo: {
+      name: "Dubai World Trade Centre",
+      lat: 25.224198,
+      lng: 55.286468,
+    },
     organizer: "Dubai World Trade Centre",
     category: "Exhibition",
     source: {

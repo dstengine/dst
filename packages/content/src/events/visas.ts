@@ -10,8 +10,15 @@ export const items: EventItem[] = [
       "The 28th IREX Residency & Citizenship Conclave runs January 30–31, 2027 at Anantara Downtown — residency and citizenship-by-investment programmes from 12+ countries, aimed at investors already based here.",
     start: "2027-01-30",
     end: "2027-01-31",
+    startTime: "11:00",
+    endTime: "19:00",
     venue: "Anantara Downtown, Business Bay",
     city: "Dubai",
+    geo: {
+      name: "Anantara Downtown Dubai, Business Bay",
+      lat: 25.185777,
+      lng: 55.263824,
+    },
     organizer: "GMN Media",
     category: "Conclave",
     source: {

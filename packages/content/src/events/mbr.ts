@@ -10,6 +10,11 @@ export const items: EventItem[] = [
     start: "2027-03-27",
     venue: "Meydan Racecourse",
     city: "Dubai",
+    geo: {
+      name: "Meydan Racecourse",
+      lat: 25.157635,
+      lng: 55.303194,
+    },
     organizer: "Dubai Racing Club",
     category: "Racing",
     source: {

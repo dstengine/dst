@@ -67,6 +67,16 @@ export interface NewsItem extends ItemBase {
 export interface EventItem extends ItemBase {
   start: string; // ISO "YYYY-MM-DD"
   end?: string;
+  // Local clock time, "HH:MM". A date alone answers "which day" but not
+  // "morning or evening", which is the first thing anyone deciding whether
+  // to attend needs. Omitted rather than guessed when the organiser hasn't
+  // published it.
+  startTime?: string;
+  endTime?: string;
+  // Fixed offset, not an IANA zone: the UAE has no daylight saving, so
+  // +04:00 is correct year-round and needs no zone database to resolve.
+  // Set explicitly for an event held outside the Gulf.
+  utcOffset?: string;
   venue?: string;
   city?: string;
   organizer?: string;

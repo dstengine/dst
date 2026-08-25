@@ -18,6 +18,14 @@ interface Props {
 }
 const { item, backHref, ticketHref } = Astro.props;
 
+// Schema.org takes a full timestamp when the clock time is known — a
+// date-only startDate tells Google the day but not the hour, and event
+// rich results lean on the hour.
+const offset = item.utcOffset ?? "+04:00";
+const stamp = (day: string, time?: string) => (time ? `${day}T${time}:00${offset}` : day);
+const startStamp = stamp(item.start, item.startTime);
+const endStamp = item.end || item.endTime ? stamp(item.end ?? item.start, item.endTime) : undefined;
+
 const jsonLd =
   item.jsonLd ??
   {
@@ -25,8 +33,8 @@ const jsonLd =
     "@type": "Event",
     name: item.title,
     description: item.summary,
-    startDate: item.start,
-    ...(item.end ? { endDate: item.end } : {}),
+    startDate: startStamp,
+    ...(endStamp ? { endDate: endStamp } : {}),
     eventStatus: "https://schema.org/EventScheduled",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     ...(item.venue || item.city
@@ -62,8 +70,13 @@ const relatedItems = (item.related ?? []).map((card) => ({
   <header class="event-article-header">
     <p class="event-article-meta">
       {item.category && <span class="event-article-category">{item.category}</span>}
-      <time datetime={item.start}>{formatDate(item.start)}</time>
-      {item.end && <span>&ndash; <time datetime={item.end}>{formatDate(item.end)}</time></span>}
+      <time datetime={startStamp}>{formatDate(item.start)}</time>
+      {item.end && <span>&ndash; <time datetime={endStamp}>{formatDate(item.end)}</time></span>}
+      {item.startTime && (
+        <span class="event-article-time">
+          {item.startTime}{item.endTime && <>&ndash;{item.endTime}</>}
+        </span>
+      )}
     </p>
     <h1>{item.title}</h1>
     {(item.venue || item.city || item.organizer) && (
@@ -74,11 +87,16 @@ const relatedItems = (item.related ?? []).map((card) => ({
     )}
   </header>
 
-  {item.ticket && ticketHref && (
-    <p class="event-article-ticket">
+  <p class="event-article-actions">
+    {item.ticket && ticketHref && (
       <a class="button" href={ticketHref} title={item.ticket.label ?? "Register"}>{item.ticket.label ?? "Register"}</a>
-    </p>
-  )}
+    )}
+    {/* Secondary to the ticket link, but present on every event: a plain
+        .ics file, no account and no calendar service in between. */}
+    <a class="button button-secondary" href={`${backHref}${item.slug}.ics`} download title={`Add ${item.title} to your calendar`}>
+      Add to calendar
+    </a>
+  </p>
 
   {item.image && (
     <figure class="event-article-figure">
@@ -144,10 +162,16 @@ const relatedItems = (item.related ?? []).map((card) => ({
   .event-article-meta { display: flex; align-items: center; gap: var(--space-2); margin: 0 0 var(--space-1); font-size: var(--step--1); color: var(--ink-faint); }
   .event-article-category { font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent, #1F5C4E); }
   .event-article-header h1 { margin: 0; }
+  /* Clock time is data, like the date beside it. */
+  .event-article-time {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+  }
   .event-article-details { margin: var(--space-1) 0 0; color: var(--ink-muted); }
   .event-article-organizer { color: var(--ink-faint); }
 
-  .event-article-ticket { margin-top: var(--space-3); }
+  .event-article-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-3); }
 
   .event-article-figure { margin: var(--space-4) 0 0; }
   .event-article-figure img { display: block; width: 100%; max-height: 60vh; object-fit: cover; background: var(--surface-sunk); border-radius: var(--radius); }

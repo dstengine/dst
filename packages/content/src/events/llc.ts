@@ -11,6 +11,11 @@ export const items: EventItem[] = [
     end: "2026-12-11",
     venue: "Dubai Exhibition Centre",
     city: "Dubai",
+    geo: {
+      name: "Dubai Exhibition Centre, Expo City Dubai",
+      lat: 24.959572,
+      lng: 55.145022,
+    },
     organizer: "Dubai World Trade Centre",
     category: "Conference",
     source: {

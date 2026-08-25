@@ -10,6 +10,7 @@
     ".": "./src/index.ts",
     "./types": "./src/types.ts",
     "./news": "./src/news/index.ts",
-    "./events": "./src/events/index.ts"
+    "./events": "./src/events/index.ts",
+    "./ics": "./src/ics.ts"
   }
 }
