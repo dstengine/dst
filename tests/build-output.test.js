@@ -543,6 +543,38 @@ describe("news and events", () => {
     }
   });
 
+  // A page still presenting a finished event as upcoming is how these
+  // listings rot. The build can't know the date, so the flag ships hidden
+  // and a script reveals it — meaning the markup has to be there for every
+  // event, not just the ones already past at build time.
+  test("every event page ships the ended flag for the script to reveal", () => {
+    for (const item of allEvents.filter((e) => e.body?.length)) {
+      const page = neDetailPages().find((p) => p.url === `/events/${item.slug}/`);
+      if (!page) continue;
+      const last = item.end ?? item.start;
+      assert.match(
+        page.html,
+        new RegExp(`data-event-ended[^>]*datetime="${last}"`),
+        `${page.app}${page.url}: no ended flag carrying the event's last day (${last})`,
+      );
+      assert.match(page.html, /data-event-ended[^>]*hidden/, `${page.app}${page.url}: ended flag is not hidden by default`);
+    }
+  });
+
+  test("an event with an outcome renders it, and one without leaves no empty block", () => {
+    for (const item of allEvents.filter((e) => e.body?.length)) {
+      const page = neDetailPages().find((p) => p.url === `/events/${item.slug}/`);
+      if (!page) continue;
+      const has = Array.isArray(item.outcome) && item.outcome.length > 0;
+      if (has) {
+        assert.match(page.html, /class="event-article-outcome"/, `${page.app}${page.url}: outcome set but not rendered`);
+        assert.ok(decode(page.html).includes(item.outcome[0].slice(0, 40)), `${page.app}${page.url}: outcome text missing`);
+      } else {
+        assert.doesNotMatch(page.html, /What happened<\/h2>/, `${page.app}${page.url}: "What happened" heading with no outcome behind it`);
+      }
+    }
+  });
+
   // Broader than the check above: source.url must not leak anywhere in the
   // page at all, not just next to the "Source:" line — this caught a real
   // bug where NewsArticle's auto-built JSON-LD put it in `isBasedOn`.

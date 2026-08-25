@@ -8,6 +8,7 @@ import LeadForm from "./LeadForm.astro";
 import VentureGrid from "./VentureGrid.astro";
 import SourceLine from "./SourceLine.astro";
 import ImageNote from "./ImageNote.astro";
+import CountdownScript from "./CountdownScript.astro";
 import { ICONS } from "../icons.ts";
 import { formatDate } from "../date.ts";
 
@@ -77,6 +78,12 @@ const relatedItems = (item.related ?? []).map((card) => ({
           {item.startTime}{item.endTime && <>&ndash;{item.endTime}</>}
         </span>
       )}
+      {/* Revealed client-side once the last day has passed — a static build
+          can't know, and a page still presenting a finished event as
+          upcoming is the usual way these listings rot. */}
+      <span class="event-article-ended" data-event-ended datetime={item.end ?? item.start} hidden>
+        Ended
+      </span>
     </p>
     <h1>{item.title}</h1>
     {(item.venue || item.city || item.organizer) && (
@@ -103,6 +110,18 @@ const relatedItems = (item.related ?? []).map((card) => ({
       <img src={item.image} alt={item.imageAlt ?? ""} loading="eager" />
       <ImageNote kind={item.imageKind} credit={item.imageCredit} />
     </figure>
+  )}
+
+  {/* Above the original description on purpose: once something has
+      happened, what came of it is the news, and the announcement is
+      background. */}
+  {item.outcome && item.outcome.length > 0 && (
+    <section class="event-article-outcome">
+      <h2>What happened</h2>
+      <div class="prose">
+        {item.outcome.map((p) => <p>{p}</p>)}
+      </div>
+    </section>
   )}
 
   {item.body && item.body.length > 0 && (
@@ -154,6 +173,7 @@ const relatedItems = (item.related ?? []).map((card) => ({
   <nav class="event-article-back">
     <a href={backHref} title="All events">&larr; All events</a>
   </nav>
+  <CountdownScript />
 </article>
 
 <style>
@@ -172,6 +192,19 @@ const relatedItems = (item.related ?? []).map((card) => ({
   .event-article-organizer { color: var(--ink-faint); }
 
   .event-article-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-3); }
+
+  .event-article-ended {
+    font-family: var(--font-mono);
+    font-size: 0.92em;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--warn);
+    background: var(--warn-bg);
+    padding: 0.1em 0.5em;
+    border-radius: 999px;
+  }
+  .event-article-outcome { margin-top: var(--space-4); }
+  .event-article-outcome h2 { margin-bottom: 0; }
 
   .event-article-figure { margin: var(--space-4) 0 0; }
   .event-article-figure img { display: block; width: 100%; max-height: 60vh; object-fit: cover; background: var(--surface-sunk); border-radius: var(--radius); }

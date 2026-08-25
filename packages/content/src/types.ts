@@ -81,4 +81,8 @@ export interface EventItem extends ItemBase {
   city?: string;
   organizer?: string;
   ticket?: { url: string; label?: string }; // -> /go/<slug>/, visible button
+  // What actually came of it, written after the fact. Ticketing platforms
+  // leave a past event as a dead page advertising a date that has gone;
+  // an entry that says what happened stays worth landing on.
+  outcome?: string[];
 }
