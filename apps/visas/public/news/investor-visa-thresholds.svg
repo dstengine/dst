@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" role="img" aria-label="Dubai property-linked residency thresholds: the two-year investor visa no longer has a minimum for sole owners, down from Dh750,000; the five-year retirement visa still requires Dh1 million; the ten-year Golden Visa still requires Dh2 million.">
+  <style>
+    /* Self-contained palette: a page can't style an SVG loaded via &lt;img&gt;.
+       Mirrors the network tokens and this site's ochre accent. */
+    .bg { fill: #FAF9F6; }
+    .ink { fill: #14181F; }
+    .muted { fill: #565F6B; }
+    .faint { fill: #6D727A; }
+    .track { fill: #E2DFD7; }
+    .rule { stroke: #E2DFD7; }
+    .bar { fill: #8A5A2B; }
+    .bar-soft { fill: #C9A87E; }
+    .gone { stroke: #A6772C; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #191C20; }
+      .ink { fill: #DCDFE3; }
+      .muted { fill: #9BA1AA; }
+      .faint { fill: #7A7F86; }
+      .track { fill: #2B2F35; }
+      .rule { stroke: #2B2F35; }
+      .bar { fill: #D9A468; }
+      .bar-soft { fill: #7A5C38; }
+      .gone { stroke: #D9AE6C; }
+    }
+    text { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; }
+    .caps { font-size: 17px; letter-spacing: 0.14em; }
+    .route { font-size: 25px; }
+    .amount { font-size: 30px; font-weight: 600; }
+    .note { font-size: 17px; }
+    .tiny { font-size: 15.5px; }
+  </style>
+
+  <rect class="bg" width="1200" height="600" />
+
+  <text class="caps faint" x="80" y="72">PROPERTY THRESHOLD BY ROUTE · DUBAI</text>
+  <line class="rule" x1="80" y1="100" x2="1120" y2="100" stroke-width="1" />
+
+  <!-- Bars are scaled to the amount: Dh2m runs the full 500px, so the three
+       routes are comparable at a glance. The run stops short of the right
+       margin so each figure sits after its own bar rather than on top of
+       it. -->
+
+  <!-- 2-year: the change. No bar, because there is no longer a floor. -->
+  <g transform="translate(80 150)">
+    <text class="route ink" x="0" y="0">2-year investor</text>
+    <text class="tiny faint" x="0" y="28">sole owner, fully paid</text>
+    <rect class="track" x="400" y="-22" width="500" height="4" rx="2" opacity="0.6" />
+    <circle class="bar" cx="400" cy="-20" r="9" />
+    <text class="amount ink" x="430" y="-10">No minimum</text>
+    <g transform="translate(430 24)">
+      <text class="note faint" x="0" y="0">was Dh750,000</text>
+      <line class="gone" x1="46" y1="-6" x2="176" y2="-6" stroke-width="2" />
+    </g>
+  </g>
+
+  <line class="rule" x1="80" y1="240" x2="1120" y2="240" stroke-width="1" />
+
+  <!-- 5-year: unchanged -->
+  <g transform="translate(80 300)">
+    <text class="route ink" x="0" y="0">5-year retirement</text>
+    <text class="tiny faint" x="0" y="28">age 55+</text>
+    <rect class="track" x="400" y="-22" width="500" height="4" rx="2" opacity="0.6" />
+    <rect class="bar-soft" x="400" y="-28" width="250" height="16" rx="8" />
+    <text class="amount ink" x="680" y="-10">Dh1m</text>
+    <text class="note faint" x="680" y="24">unchanged</text>
+  </g>
+
+  <line class="rule" x1="80" y1="390" x2="1120" y2="390" stroke-width="1" />
+
+  <!-- 10-year: unchanged, and the one people confuse with the above -->
+  <g transform="translate(80 450)">
+    <text class="route ink" x="0" y="0">10-year Golden Visa</text>
+    <text class="tiny faint" x="0" y="28">one property or a portfolio</text>
+    <rect class="track" x="400" y="-22" width="500" height="4" rx="2" opacity="0.6" />
+    <rect class="bar" x="400" y="-28" width="500" height="16" rx="8" />
+    <text class="amount ink" x="930" y="-10">Dh2m</text>
+    <text class="note faint" x="930" y="24">unchanged</text>
+  </g>
+
+  <line class="rule" x1="80" y1="530" x2="1120" y2="530" stroke-width="1" />
+  <!-- The caveat travels with the chart: without it the figure reads as
+       settled policy, which is exactly what the source says it isn't. -->
+  <text class="tiny faint" x="80" y="566">The 2-year change appeared on the DLD's Cube Center without a formal announcement — confirm before acting</text>
+</svg>

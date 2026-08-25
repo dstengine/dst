@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" role="img" aria-label="Under Dubai Executive Council Resolution 11 of 2025, a free zone company can reach the mainland three ways: a mainland branch licence, a free-zone-based branch licence at AED 10,000 a year, or an activity permit of up to six months at AED 5,000. Separate books are required for mainland activity.">
+  <style>
+    /* Self-contained palette: a page can't style an SVG loaded via &lt;img&gt;.
+       Mirrors the network tokens and this site's green accent. */
+    .bg { fill: #FAF9F6; }
+    .ink { fill: #14181F; }
+    .muted { fill: #565F6B; }
+    .faint { fill: #6D727A; }
+    .card { fill: #FFFFFF; stroke: #E2DFD7; }
+    .rule { stroke: #E2DFD7; }
+    .accent { fill: #1F5C4E; }
+    .accent-stroke { stroke: #1F5C4E; }
+    .accent-tint { fill: #E9F0EC; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #191C20; }
+      .ink { fill: #DCDFE3; }
+      .muted { fill: #9BA1AA; }
+      .faint { fill: #7A7F86; }
+      .card { fill: #14171A; stroke: #2B2F35; }
+      .rule { stroke: #2B2F35; }
+      .accent { fill: #4FAE97; }
+      .accent-stroke { stroke: #4FAE97; }
+      .accent-tint { fill: #16261F; }
+    }
+    text { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; }
+    .caps { font-size: 17px; letter-spacing: 0.14em; }
+    .origin { font-size: 24px; }
+    .route { font-size: 21px; }
+    .fee { font-size: 27px; font-weight: 600; }
+    .tiny { font-size: 15.5px; }
+  </style>
+
+  <rect class="bg" width="1200" height="600" />
+
+  <text class="caps faint" x="80" y="70">REACHING THE MAINLAND · RESOLUTION 11 OF 2025</text>
+  <line class="rule" x1="80" y1="98" x2="1120" y2="98" stroke-width="1" />
+
+  <!-- Origin -->
+  <g transform="translate(80 190)">
+    <rect class="accent-tint" x="0" y="-42" width="250" height="84" rx="8" />
+    <text class="origin ink" x="24" y="-8">Free zone</text>
+    <text class="origin ink" x="24" y="24">company</text>
+  </g>
+
+  <!-- Connectors: one source, three permitted routes. -->
+  <g class="accent-stroke" fill="none" stroke-width="2">
+    <path d="M330 190 H 400 V 130 H 470" />
+    <path d="M330 190 H 400 V 300 H 470" />
+    <path d="M330 190 H 400 V 440 H 470" />
+  </g>
+  <circle class="accent" cx="330" cy="190" r="7" />
+
+  <!-- Route 1 -->
+  <g transform="translate(470 130)">
+    <rect class="card" x="0" y="-46" width="650" height="92" rx="8" stroke-width="1" />
+    <text class="route ink" x="26" y="-14">Branch licence — mainland branch</text>
+    <text class="tiny faint" x="26" y="14">DET-licensed branch established in the emirate</text>
+  </g>
+
+  <!-- Route 2 -->
+  <g transform="translate(470 300)">
+    <rect class="card" x="0" y="-56" width="650" height="112" rx="8" stroke-width="1" />
+    <text class="route ink" x="26" y="-22">Branch licence — held from the free zone</text>
+    <text class="tiny faint" x="26" y="6">renewable annually</text>
+    <text class="fee accent" x="624" y="34" text-anchor="end">AED 10,000 / year</text>
+  </g>
+
+  <!-- Route 3 -->
+  <g transform="translate(470 440)">
+    <rect class="card" x="0" y="-56" width="650" height="112" rx="8" stroke-width="1" />
+    <text class="route ink" x="26" y="-22">Activity permit</text>
+    <text class="tiny faint" x="26" y="6">specific activities, up to six months</text>
+    <text class="fee accent" x="624" y="34" text-anchor="end">AED 5,000</text>
+  </g>
+
+  <line class="rule" x1="80" y1="540" x2="1120" y2="540" stroke-width="1" />
+  <!-- The ongoing obligation is the part worth planning for, so it travels
+       with the diagram rather than living only in the body text. -->
+  <text class="tiny faint" x="80" y="576">Mainland activity must be booked separately from free zone activity — an ongoing obligation, not a filing</text>
+</svg>
