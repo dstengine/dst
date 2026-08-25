@@ -12,6 +12,11 @@ export const items: NewsItem[] = [
       "Dubai recorded Dh286.43 billion of property sales across 79,229 transactions in the first half of 2026 — an average of 433 sales and about Dh1.57 billion changing hands every day.",
     date: "2026-07-14",
     category: "Market",
+    image: "/news/dubai-property-h1-2026.svg",
+    imageAlt:
+      "Dubai property sales in H1 2026: Dh286.43 billion across 79,229 transactions, 433 sales a day, with January at Dh72.16 billion against June at Dh32.66 billion.",
+    imageKind: "illustration",
+    imageCredit: "Diagram: DST",
     source: {
       name: "Khaleej Times",
       url: "https://www.khaleejtimes.com/business/dubai-property-sales-hit-dh286b-as-market-momentum-stays-strong-in-h1-2026",

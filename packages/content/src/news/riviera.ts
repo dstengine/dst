@@ -10,6 +10,11 @@ export const items: NewsItem[] = [
       "Azizi has entered the last stage of delivery at Riviera: 53 of the 75 buildings handed over, all of phases 1 to 3 complete, and the remaining 22 buildings scheduled through Q2 2026.",
     date: "2025-08-13",
     category: "Development",
+    image: "/news/azizi-riviera-handover.svg",
+    imageAlt:
+      "One square per building: 53 of Riviera's 75 buildings handed over — all of phases 1 to 3 plus five of phase 4 — with 22 still to come as of August 2025.",
+    imageKind: "illustration",
+    imageCredit: "Diagram: DST",
     source: {
       name: "Middle East Construction News",
       url: "https://meconstructionnews.com/64270/azizi-riviera-in-mbr-city-enters-final-stage-of-delivery",

@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" width="1200" height="640" role="img" aria-label="Azizi Riviera handover progress: 53 of 75 buildings delivered — all of phases 1 to 3 plus five buildings of phase 4 — with 22 buildings still to come as of August 2025.">
+  <style>
+    /* Self-contained palette: a page can't style an SVG loaded via &lt;img&gt;.
+       Mirrors the network tokens and this site's canal blue. */
+    .bg { fill: #FAF9F6; }
+    .ink { fill: #14181F; }
+    .faint { fill: #6D727A; }
+    .rule { stroke: #E2DFD7; }
+    .done { fill: #1D6FA5; }
+    .done-p4 { fill: #7FB2D4; }
+    .todo { fill: none; stroke: #C4C7C1; stroke-width: 2; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #191C20; }
+      .ink { fill: #DCDFE3; }
+      .faint { fill: #7A7F86; }
+      .rule { stroke: #2B2F35; }
+      .done { fill: #6FB3DE; }
+      .done-p4 { fill: #3C6F92; }
+      .todo { fill: none; stroke: #3A3F46; stroke-width: 2; }
+    }
+    text { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; }
+    .caps { font-size: 17px; letter-spacing: 0.14em; }
+    .huge { font-size: 96px; font-weight: 600; letter-spacing: -0.02em; }
+    .label { font-size: 21px; }
+    .tiny { font-size: 15.5px; }
+  </style>
+
+  <rect class="bg" width="1200" height="640" />
+
+  <!-- One square per building, so the remaining work is countable rather
+       than described. -->
+  <text class="huge ink" x="80" y="128">53<tspan class="faint" font-size="52">/75</tspan></text>
+  <text class="caps faint" x="80" y="164">BUILDINGS HANDED OVER &#183; AUG 2025</text>
+
+  <text class="label ink" x="1120" y="96" text-anchor="end">~16,000 residences</text>
+  <text class="tiny faint" x="1120" y="126" text-anchor="end">mid- and high-rise, along the canal</text>
+  <text class="tiny faint" x="1120" y="156" text-anchor="end">remaining 22 targeted through Q2 2026</text>
+
+  <rect class="done" x="80" y="200" width="56" height="56" rx="6" />
+  <rect class="done" x="148" y="200" width="56" height="56" rx="6" />
+  <rect class="done" x="216" y="200" width="56" height="56" rx="6" />
+  <rect class="done" x="284" y="200" width="56" height="56" rx="6" />
+  <rect class="done" x="352" y="200" width="56" height="56" rx="6" />
+  <rect class="done" x="420" y="200" width="56" height="56" rx="6" />
+  <rect class="done" x="488" y="200" width="56" height="56" rx="6" />
+  <rect class="done" x="556" y="200" width="56" height="56" rx="6" />
+  <rect class="done" x="624" y="200" width="56" height="56" rx="6" />
+  <rect class="done" x="692" y="200" width="56" height="56" rx="6" />
+  <rect class="done" x="760" y="200" width="56" height="56" rx="6" />
+  <rect class="done" x="828" y="200" width="56" height="56" rx="6" />
+  <rect class="done" x="896" y="200" width="56" height="56" rx="6" />
+  <rect class="done" x="964" y="200" width="56" height="56" rx="6" />
+  <rect class="done" x="1032" y="200" width="56" height="56" rx="6" />
+  <rect class="done" x="80" y="268" width="56" height="56" rx="6" />
+  <rect class="done" x="148" y="268" width="56" height="56" rx="6" />
+  <rect class="done" x="216" y="268" width="56" height="56" rx="6" />
+  <rect class="done" x="284" y="268" width="56" height="56" rx="6" />
+  <rect class="done" x="352" y="268" width="56" height="56" rx="6" />
+  <rect class="done" x="420" y="268" width="56" height="56" rx="6" />
+  <rect class="done" x="488" y="268" width="56" height="56" rx="6" />
+  <rect class="done" x="556" y="268" width="56" height="56" rx="6" />
+  <rect class="done" x="624" y="268" width="56" height="56" rx="6" />
+  <rect class="done" x="692" y="268" width="56" height="56" rx="6" />
+  <rect class="done" x="760" y="268" width="56" height="56" rx="6" />
+  <rect class="done" x="828" y="268" width="56" height="56" rx="6" />
+  <rect class="done" x="896" y="268" width="56" height="56" rx="6" />
+  <rect class="done" x="964" y="268" width="56" height="56" rx="6" />
+  <rect class="done" x="1032" y="268" width="56" height="56" rx="6" />
+  <rect class="done" x="80" y="336" width="56" height="56" rx="6" />
+  <rect class="done" x="148" y="336" width="56" height="56" rx="6" />
+  <rect class="done" x="216" y="336" width="56" height="56" rx="6" />
+  <rect class="done" x="284" y="336" width="56" height="56" rx="6" />
+  <rect class="done" x="352" y="336" width="56" height="56" rx="6" />
+  <rect class="done" x="420" y="336" width="56" height="56" rx="6" />
+  <rect class="done" x="488" y="336" width="56" height="56" rx="6" />
+  <rect class="done" x="556" y="336" width="56" height="56" rx="6" />
+  <rect class="done" x="624" y="336" width="56" height="56" rx="6" />
+  <rect class="done" x="692" y="336" width="56" height="56" rx="6" />
+  <rect class="done" x="760" y="336" width="56" height="56" rx="6" />
+  <rect class="done" x="828" y="336" width="56" height="56" rx="6" />
+  <rect class="done" x="896" y="336" width="56" height="56" rx="6" />
+  <rect class="done" x="964" y="336" width="56" height="56" rx="6" />
+  <rect class="done" x="1032" y="336" width="56" height="56" rx="6" />
+  <rect class="done" x="80" y="404" width="56" height="56" rx="6" />
+  <rect class="done" x="148" y="404" width="56" height="56" rx="6" />
+  <rect class="done" x="216" y="404" width="56" height="56" rx="6" />
+  <rect class="done-p4" x="284" y="404" width="56" height="56" rx="6" />
+  <rect class="done-p4" x="352" y="404" width="56" height="56" rx="6" />
+  <rect class="done-p4" x="420" y="404" width="56" height="56" rx="6" />
+  <rect class="done-p4" x="488" y="404" width="56" height="56" rx="6" />
+  <rect class="done-p4" x="556" y="404" width="56" height="56" rx="6" />
+  <rect class="todo" x="624" y="404" width="56" height="56" rx="6" />
+  <rect class="todo" x="692" y="404" width="56" height="56" rx="6" />
+  <rect class="todo" x="760" y="404" width="56" height="56" rx="6" />
+  <rect class="todo" x="828" y="404" width="56" height="56" rx="6" />
+  <rect class="todo" x="896" y="404" width="56" height="56" rx="6" />
+  <rect class="todo" x="964" y="404" width="56" height="56" rx="6" />
+  <rect class="todo" x="1032" y="404" width="56" height="56" rx="6" />
+  <rect class="todo" x="80" y="472" width="56" height="56" rx="6" />
+  <rect class="todo" x="148" y="472" width="56" height="56" rx="6" />
+  <rect class="todo" x="216" y="472" width="56" height="56" rx="6" />
+  <rect class="todo" x="284" y="472" width="56" height="56" rx="6" />
+  <rect class="todo" x="352" y="472" width="56" height="56" rx="6" />
+  <rect class="todo" x="420" y="472" width="56" height="56" rx="6" />
+  <rect class="todo" x="488" y="472" width="56" height="56" rx="6" />
+  <rect class="todo" x="556" y="472" width="56" height="56" rx="6" />
+  <rect class="todo" x="624" y="472" width="56" height="56" rx="6" />
+  <rect class="todo" x="692" y="472" width="56" height="56" rx="6" />
+  <rect class="todo" x="760" y="472" width="56" height="56" rx="6" />
+  <rect class="todo" x="828" y="472" width="56" height="56" rx="6" />
+  <rect class="todo" x="896" y="472" width="56" height="56" rx="6" />
+  <rect class="todo" x="964" y="472" width="56" height="56" rx="6" />
+  <rect class="todo" x="1032" y="472" width="56" height="56" rx="6" />
+
+  <line class="rule" x1="80" y1="576" x2="1120" y2="576" stroke-width="1" />
+
+  <g transform="translate(80 612)">
+    <rect class="done" x="0" y="-13" width="18" height="18" rx="4" />
+    <text class="tiny faint" x="28" y="2">phases 1&#8211;3 complete (48)</text>
+    <rect class="done-p4" x="330" y="-13" width="18" height="18" rx="4" />
+    <text class="tiny faint" x="358" y="2">phase 4 delivered (5)</text>
+    <rect class="todo" x="620" y="-13" width="18" height="18" rx="4" />
+    <text class="tiny faint" x="648" y="2">still to come (22)</text>
+  </g>
+</svg>
