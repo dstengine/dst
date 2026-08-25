@@ -28,6 +28,6 @@ export const items: EventItem[] = [
       "The programme covers water technology, solar, climate solutions, waste treatment and wind energy, and it is the largest event of its kind in the region across the energy, water and sustainability sectors.",
     ],
     expertise:
-      "Most of what is exhibited here is industrial-scale infrastructure rather than the kind of work this portfolio records, and the two should not be confused. It is listed because it is where the people running credible environmental projects in this region are actually in one room — which is how DST expects to find work worth funding in the UAE, an area where the group currently has the fewest environmental contacts of anywhere it operates.",
+      "Most of what is exhibited here is industrial-scale infrastructure — desalination, grid solar, waste treatment — rather than the kind of small, verifiable planting this portfolio records, and the two are easy to conflate under the same word. It is listed anyway because it is the one week in the year when the people actually running environmental projects in this region are in one room, which is worth more than any exhibitor's stand.",
   },
 ];

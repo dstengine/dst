@@ -49,6 +49,6 @@ export const items: EventItem[] = [
       "The summit is where a good deal of the policy direction that later shows up as regulation in the UAE gets aired first — government service design, AI in the public sector, and the economic agenda behind Dubai's longer-range plans.",
     ],
     expertise:
-      "DST tracks this one because the gap between what is discussed here and what turns into an actual rule is often short. Several of the regulatory shifts the network's verticals write about — free zone licensing, residency categories, digital government services — were visible as policy direction at a summit before they existed as a resolution.",
+      "The gap between what gets aired here and what turns into an actual rule is often short. Free zone licensing, residency categories and digital government services all appeared as policy direction from a summit stage before they existed as a resolution — which makes the programme worth reading as an early draft of the next year's regulation rather than as a conference agenda.",
   },
 ];

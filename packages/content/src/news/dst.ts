@@ -27,6 +27,6 @@ export const items: NewsItem[] = [
       "January was the strongest month of the period, at Dh72.16 billion across 15,896 transactions. June closed with 13,766 sales worth Dh32.66 billion.",
     ],
     expertise:
-      "Volume at this level is the reason the group runs its property verticals as separate, narrow sites rather than one catalogue: at 433 transactions a day, a buyer's real problem is not finding listings but narrowing them, and a site scoped to a single development or district answers a question a city-wide portal cannot. It is also worth reading the headline number carefully — a half-year total says the market is liquid, not that any particular building is a good buy.",
+      "The two published months are worth dividing out. January averaged Dh4.54 million per sale; June averaged Dh2.37 million. So while transactions fell 13% between them, value fell 55% — the gap is the average ticket, which halved. On those figures the market shifted toward cheaper stock rather than simply slowing down. Two months are not a trend, and summer is reliably the quieter half of a Dubai year, but it is the average ticket that carries the information here: a headline total mixes price and volume together and hides which one moved.",
   },
 ];
