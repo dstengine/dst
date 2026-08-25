@@ -219,8 +219,19 @@ const relatedItems = (item.related ?? []).map((card) => ({
   .event-article-figure { margin: var(--space-4) 0 0; }
   .event-article-figure img { display: block; width: 100%; max-height: 60vh; object-fit: cover; background: var(--surface-sunk); border-radius: var(--radius); }
   /* See NewsArticle: a diagram is fitted whole, since cropping it loses
-     data rather than scenery. */
-  .figure-diagram img { object-fit: contain; background: transparent; }
+     data rather than scenery, and the figure shrinks to the picture so the
+     caption sits under it rather than off to the left. */
+  .figure-diagram {
+    width: fit-content;
+    max-width: min(100%, 60rem);
+    margin-inline: auto;
+  }
+  .figure-diagram img {
+    object-fit: contain;
+    background: transparent;
+    width: auto;
+    max-width: 100%;
+  }
 
   .prose { margin-top: var(--space-4); max-width: var(--content-width); }
   /* Roughly one line of leading. At --space-2 the gap was half the

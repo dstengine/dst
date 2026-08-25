@@ -146,8 +146,25 @@ const relatedItems = (item.related ?? []).map((card) => ({
   /* Cropping a photograph loses scenery; cropping a diagram loses data. On
      a wide, short window `cover` was cutting 71px off a chart — enough to
      take a whole line of it — so anything that isn't a photograph is
-     fitted whole instead. */
-  .figure-diagram img { object-fit: contain; background: transparent; }
+     fitted whole instead.
+
+     The figure then has to shrink to the picture rather than stay
+     full-width: with `contain` inside a stretched figure the image centres
+     itself and the caption stays pinned to the figure's left edge, ending
+     up nowhere near the thing it describes. Capped short of the container
+     so a diagram reads as wider than the text column without becoming a
+     separate full-bleed band. */
+  .figure-diagram {
+    width: fit-content;
+    max-width: min(100%, 60rem);
+    margin-inline: auto;
+  }
+  .figure-diagram img {
+    object-fit: contain;
+    background: transparent;
+    width: auto;
+    max-width: 100%;
+  }
 
   .prose { margin-top: var(--space-4); max-width: var(--content-width); }
   /* Roughly one line of leading. At --space-2 the gap was half the
