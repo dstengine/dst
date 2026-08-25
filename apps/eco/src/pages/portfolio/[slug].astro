@@ -182,7 +182,9 @@ const { lat, lng } = story.location ?? {};
     .body { grid-template-columns: 1fr; gap: var(--space-4); }
   }
 
-  .prose p + p { margin-top: var(--space-2); }
+  /* Roughly one line of leading. At --space-2 the gap was half the
+     line-height and paragraphs ran together. */
+  .prose p + p { margin-top: var(--space-3); }
 
   .record-panel {
     position: sticky;

@@ -22,7 +22,10 @@
 
   --ink: #14181F;
   --ink-muted: #565F6B;
-  --ink-faint: #8A8F97;
+  /* Was #8A8F97, which measured 3.09:1 here — under the 4.5:1 WCAG AA
+     needs at this size. It carries dates, captions and source lines, so
+     "decorative grey" was never the right read for it. Now 4.6:1. */
+  --ink-faint: #6D727A;
 
   /* Semantic (status), separate from any vertical's accent */
   --ok: #2A7A55;
@@ -82,9 +85,12 @@
     --surface-sunk: #0E1013;
     --border: #2B2F35;
 
-    --ink: #EDEEEE;
+    /* Not a near-white: #EDEEEE ran 18:1 against this background, and that
+       much contrast blooms on OLED and is hardest on readers with
+       astigmatism. 13.8:1 is still far above AA and stops the glow. */
+    --ink: #DCDFE3;
     --ink-muted: #9BA1AA;
-    --ink-faint: #6C7178;
+    --ink-faint: #7A7F86; /* was #6C7178 at 4.27:1 — under AA */
 
     --ok: #7FCBA6;
     --ok-bg: #16261F;
@@ -95,12 +101,12 @@
 
 :root[data-theme="dark"] {
   --bg: #121417; --surface: #191C20; --surface-sunk: #0E1013; --border: #2B2F35;
-  --ink: #EDEEEE; --ink-muted: #9BA1AA; --ink-faint: #6C7178;
+  --ink: #DCDFE3; --ink-muted: #9BA1AA; --ink-faint: #7A7F86;
   --ok: #7FCBA6; --ok-bg: #16261F; --warn: #D9AE6C; --warn-bg: #2C2313;
 }
 :root[data-theme="light"] {
   --bg: #FAF9F6; --surface: #FFFFFF; --surface-sunk: #F1EFEA; --border: #E2DFD7;
-  --ink: #14181F; --ink-muted: #565F6B; --ink-faint: #8A8F97;
+  --ink: #14181F; --ink-muted: #565F6B; --ink-faint: #6D727A;
   --ok: #2A7A55; --ok-bg: #E4F1EA; --warn: #A6772C; --warn-bg: #F3E9D6;
 }
 
@@ -132,6 +138,11 @@ h3 { font-size: var(--step-2); margin-top: var(--space-4); }
 h4 { font-size: var(--step-1); }
 
 p, li { max-width: var(--content-width); }
+
+/* Avoids a last line left holding a single word, and keeps the browser
+   from making the final line drastically shorter than the rest. Ignored
+   by engines that don't support it, which simply get today's behaviour. */
+p { text-wrap: pretty; }
 
 a { color: var(--accent, #1F5C4E); }
 
