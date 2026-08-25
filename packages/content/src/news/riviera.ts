@@ -15,6 +15,8 @@ export const items: NewsItem[] = [
       "One square per building: 53 of Riviera's 75 buildings handed over — all of phases 1 to 3 plus five of phase 4 — with 22 still to come as of August 2025.",
     imageKind: "illustration",
     imageCredit: "DST",
+    imageWidth: 1200,
+    imageHeight: 640,
     source: {
       name: "Middle East Construction News",
       url: "https://meconstructionnews.com/64270/azizi-riviera-in-mbr-city-enters-final-stage-of-delivery",

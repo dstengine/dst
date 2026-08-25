@@ -15,6 +15,8 @@ export const items: NewsItem[] = [
       "Construction timeline of the Dubai Metro Blue Line: 10% complete in November 2025, a 30% target for the end of 2026, and opening in September 2029, with a note that the route runs east of MBR City.",
     imageKind: "illustration",
     imageCredit: "DST, from RTA figures",
+    imageWidth: 1200,
+    imageHeight: 520,
     source: {
       name: "Dubai Media Office",
       url: "https://www.mediaoffice.ae/en/news/2025/november/09-11/rta",

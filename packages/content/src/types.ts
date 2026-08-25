@@ -57,6 +57,11 @@ interface ItemBase {
   imageAlt?: string;
   imageKind?: ImageKind; // absent -> no claim is made either way
   imageCredit?: string; // who made or supplied it
+  // Intrinsic size, so the browser reserves the space before the file
+  // arrives. Without it the article reflows as the picture loads, which is
+  // what Core Web Vitals measures as layout shift.
+  imageWidth?: number;
+  imageHeight?: number;
   related?: RelatedCard[];
   geo?: Geo;
   form?: ItemForm;

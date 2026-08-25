@@ -20,6 +20,8 @@ export const items: NewsItem[] = [
       "Dubai property thresholds by residency route: the two-year investor visa has no minimum for sole owners, down from Dh750,000; the five-year retirement visa still asks Dh1 million; the ten-year Golden Visa still asks Dh2 million.",
     imageKind: "illustration",
     imageCredit: "DST",
+    imageWidth: 1200,
+    imageHeight: 600,
     source: {
       name: "Gulf News",
       url: "https://gulfnews.com/living-in-uae/visa-immigration/dubai-residency-by-investment-guide-1.500523250",

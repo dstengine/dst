@@ -69,20 +69,45 @@ async function shoot(browser, url, { mobile }) {
   // Let webfonts settle so the model doesn't report a flash-of-fallback as a defect.
   await page.waitForTimeout(600);
   const buf = await page.screenshot({ fullPage: true });
+  // Head data is invisible in a screenshot, so the reviewer used to report
+  // canonical/OG/JSON-LD as missing on every run whether they were there or
+  // not. Hand it the facts and it can spend its attention on the page.
+  const facts = await page.evaluate(() => {
+    const meta = (sel) => document.querySelector(sel)?.getAttribute("content") ?? null;
+    const imgs = [...document.querySelectorAll("article img, main img")];
+    return {
+      lang: document.documentElement.lang || null,
+      title: document.title || null,
+      description: meta('meta[name="description"]'),
+      canonical: document.querySelector('link[rel="canonical"]')?.href ?? null,
+      og: {
+        title: meta('meta[property="og:title"]'),
+        description: meta('meta[property="og:description"]'),
+        image: meta('meta[property="og:image"]'),
+        url: meta('meta[property="og:url"]'),
+      },
+      twitterCard: meta('meta[name="twitter:card"]'),
+      jsonLdTypes: [...document.querySelectorAll('script[type="application/ld+json"]')]
+        .flatMap((s) => { try { return [JSON.parse(s.textContent)].flat().map((b) => b["@type"]); } catch { return ["unparseable"]; } }),
+      headings: [...document.querySelectorAll("h1,h2,h3")].map((h) => `${h.tagName}: ${h.textContent.trim().slice(0, 60)}`),
+      images: imgs.map((i) => ({ alt: i.alt || null, hasDimensions: Boolean(i.getAttribute("width") && i.getAttribute("height")), loading: i.getAttribute("loading") })),
+      hasHorizontalScroll: document.documentElement.scrollWidth > document.documentElement.clientWidth + 1,
+    };
+  });
   await context.close();
-  return buf;
+  return { buf, facts };
 }
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // The free tier shares an upstream pool and hands out 429s regularly, so a
 // single attempt says nothing about whether the page is fine.
-async function reviewWithRetries(key, images, url) {
+async function reviewWithRetries(key, images, url, facts) {
   let last;
   for (const model of MODELS) {
     for (let i = 1; i <= 3; i++) {
       try {
-        const answer = await review(key, images, url, model);
+        const answer = await review(key, images, url, model, facts);
         return { answer, model };
       } catch (err) {
         last = err;
@@ -100,7 +125,7 @@ async function reviewWithRetries(key, images, url) {
   throw last ?? new Error("no model produced an answer");
 }
 
-async function review(key, images, url, model) {
+async function review(key, images, url, model, facts) {
   const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
     method: "POST",
     headers: {
@@ -115,7 +140,13 @@ async function review(key, images, url, model) {
         {
           role: "user",
           content: [
-            { type: "text", text: `${PROMPT}\n\nСтраница: ${url}` },
+            {
+              type: "text",
+              text:
+                `${PROMPT}\n\nСтраница: ${url}\n\n` +
+                `Данные из HTML (их не видно на скриншоте — не сообщай как отсутствующее то, что здесь есть):\n` +
+                "```json\n" + JSON.stringify(facts, null, 1) + "\n```",
+            },
             ...images.map((b64) => ({
               type: "image_url",
               image_url: { url: `data:image/png;base64,${b64}` },
@@ -156,8 +187,10 @@ let failures = 0;
 for (const url of urls) {
   console.log(`\n${"=".repeat(72)}\n${url}\n${"=".repeat(72)}`);
   try {
-    const shots = [await shoot(browser, url, { mobile: false })];
-    if (wantMobile) shots.push(await shoot(browser, url, { mobile: true }));
+    const desktop = await shoot(browser, url, { mobile: false });
+    const shots = [desktop.buf];
+    const facts = desktop.facts;
+    if (wantMobile) shots.push((await shoot(browser, url, { mobile: true })).buf);
 
     if (keep) {
       const stem = url.replace(/https?:\/\//, "").replace(/[^a-z0-9]+/gi, "-").replace(/-+$/, "");
@@ -168,7 +201,7 @@ for (const url of urls) {
       });
     }
 
-    const { answer, model } = await reviewWithRetries(key, shots.map((b) => b.toString("base64")), url);
+    const { answer, model } = await reviewWithRetries(key, shots.map((b) => b.toString("base64")), url, facts);
     console.log(`  модель: ${model}\n`);
     console.log(answer.trim());
   } catch (err) {

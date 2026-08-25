@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" role="img" aria-label="Dubai property sales in the first half of 2026: Dh286.43 billion across 79,229 transactions, averaging 433 sales and about Dh1.57 billion a day. January was the strongest month at Dh72.16 billion from 15,896 transactions; June closed at Dh32.66 billion from 13,766.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" role="img" aria-label="Dubai property sales in the first half of 2026: Dh286.43 billion across 79,229 transactions, averaging 433 sales and about Dh1.57 billion a day. January was the strongest month published at Dh72.16 billion from 15,896 transactions; June closed at Dh32.66 billion from 13,766.">
   <style>
     /* Self-contained palette: a page can't style an SVG loaded via &lt;img&gt;.
        Mirrors the network tokens and the hub's indigo accent. */
@@ -26,48 +26,89 @@
     .big { font-size: 40px; font-weight: 600; }
     .label { font-size: 20px; }
     .tiny { font-size: 15.5px; }
+
+    /* Media queries inside an SVG resolve against the size it is rendered
+       at, so the diagram can answer a narrow column itself. At phone width
+       every label here comes out around 4px — technically present and
+       unreadable. Type roughly triples and the long captions swap for short
+       ones; a horizontal scrollbar would be the alternative, and nobody
+       finds those. */
+    .wide { display: inline; }
+    .narrow { display: none; }
+    @media (max-width: 620px) {
+      .wide { display: none; }
+      .narrow { display: inline; }
+      .caps { font-size: 46px; letter-spacing: 0.1em; }
+      .huge { font-size: 150px; }
+      .big { font-size: 92px; }
+      .label { font-size: 58px; }
+      .tiny { font-size: 44px; }
+    }
   </style>
 
   <rect class="bg" width="1200" height="600" />
 
-  <text class="caps faint" x="80" y="72">DUBAI PROPERTY SALES &#183; H1 2026</text>
-  <line class="rule" x1="80" y1="100" x2="1120" y2="100" stroke-width="1" />
+  <!-- Wide: headline, rate, then the two months as bars. -->
+  <g class="wide">
+    <text class="caps faint" x="80" y="72">DUBAI PROPERTY SALES &#183; H1 2026</text>
+    <line class="rule" x1="80" y1="100" x2="1120" y2="100" stroke-width="1" />
 
-  <!-- Headline total -->
-  <text class="huge ink" x="80" y="200">Dh286.43b</text>
-  <text class="label muted" x="80" y="240">across 79,229 transactions</text>
+    <text class="huge ink" x="80" y="200">Dh286.43b</text>
+    <text class="label muted" x="80" y="240">across 79,229 transactions</text>
 
-  <!-- The rate is what makes the total mean something operationally. -->
-  <g transform="translate(700 150)">
-    <text class="big ink" x="0" y="0">433</text>
-    <text class="tiny faint" x="0" y="28">sales a day</text>
-    <text class="big ink" x="220" y="0">Dh1.57b</text>
-    <text class="tiny faint" x="220" y="28">changing hands daily</text>
+    <g transform="translate(700 150)">
+      <text class="big ink" x="0" y="0">433</text>
+      <text class="tiny faint" x="0" y="28">sales a day</text>
+      <text class="big ink" x="220" y="0">Dh1.57b</text>
+      <text class="tiny faint" x="220" y="28">changing hands daily</text>
+    </g>
+
+    <line class="rule" x1="80" y1="300" x2="1120" y2="300" stroke-width="1" />
+    <text class="caps faint" x="80" y="348">STRONGEST AND LATEST MONTH PUBLISHED</text>
+
+    <g transform="translate(80 400)">
+      <text class="label ink" x="0" y="0">January</text>
+      <rect class="track" x="200" y="-22" width="700" height="26" rx="13" opacity="0.5" />
+      <rect class="bar" x="200" y="-22" width="700" height="26" rx="13" />
+      <text class="label ink" x="930" y="0">Dh72.16b</text>
+      <text class="tiny faint" x="0" y="26">15,896 transactions</text>
+    </g>
+
+    <g transform="translate(80 490)">
+      <text class="label ink" x="0" y="0">June</text>
+      <rect class="track" x="200" y="-22" width="700" height="26" rx="13" opacity="0.5" />
+      <rect class="bar-soft" x="200" y="-22" width="317" height="26" rx="13" />
+      <text class="label ink" x="930" y="0">Dh32.66b</text>
+      <text class="tiny faint" x="0" y="26">13,766 transactions</text>
+    </g>
+
+    <line class="rule" x1="80" y1="540" x2="1120" y2="540" stroke-width="1" />
+    <text class="tiny faint" x="80" y="576">A half-year total says the market is liquid — not that any particular building is a good buy</text>
   </g>
 
-  <line class="rule" x1="80" y1="300" x2="1120" y2="300" stroke-width="1" />
+  <!-- Narrow: same figures, stacked, nothing to scroll to. Everything is
+       laid out to finish inside the 600-high viewBox — content placed past
+       it is simply cut off, since the box can't be changed from CSS. -->
+  <g class="narrow">
+    <text class="caps faint" x="60" y="70">H1 2026</text>
+    <text class="huge ink" x="60" y="190">Dh286.43b</text>
+    <text class="label muted" x="60" y="250">79,229 transactions</text>
+    <text class="label muted" x="60" y="312">433 sales a day</text>
 
-  <!-- Only two months were published, so this is the two of them side by
-       side rather than a six-month curve that would have to be guessed. -->
-  <text class="caps faint" x="80" y="348">STRONGEST AND LATEST MONTH PUBLISHED</text>
+    <line class="rule" x1="60" y1="352" x2="1140" y2="352" stroke-width="3" />
 
-  <g transform="translate(80 400)">
-    <text class="label ink" x="0" y="0">January</text>
-    <rect class="track" x="200" y="-22" width="700" height="26" rx="13" opacity="0.5" />
-    <rect class="bar" x="200" y="-22" width="700" height="26" rx="13" />
-    <text class="label ink" x="930" y="0">Dh72.16b</text>
-    <text class="tiny faint" x="0" y="26">15,896 transactions</text>
+    <g transform="translate(60 412)">
+      <text class="label ink" x="0" y="0">January</text>
+      <text class="label ink" x="1080" y="0" text-anchor="end">Dh72.16b</text>
+      <rect class="track" x="0" y="18" width="1080" height="30" rx="15" opacity="0.5" />
+      <rect class="bar" x="0" y="18" width="1080" height="30" rx="15" />
+    </g>
+
+    <g transform="translate(60 522)">
+      <text class="label ink" x="0" y="0">June</text>
+      <text class="label ink" x="1080" y="0" text-anchor="end">Dh32.66b</text>
+      <rect class="track" x="0" y="18" width="1080" height="30" rx="15" opacity="0.5" />
+      <rect class="bar-soft" x="0" y="18" width="489" height="30" rx="15" />
+    </g>
   </g>
-
-  <g transform="translate(80 490)">
-    <text class="label ink" x="0" y="0">June</text>
-    <rect class="track" x="200" y="-22" width="700" height="26" rx="13" opacity="0.5" />
-    <rect class="bar-soft" x="200" y="-22" width="317" height="26" rx="13" />
-    <text class="label ink" x="930" y="0">Dh32.66b</text>
-    <text class="tiny faint" x="0" y="26">13,766 transactions</text>
-  </g>
-
-  <line class="rule" x1="80" y1="540" x2="1120" y2="540" stroke-width="1" />
-  <!-- Guards against the obvious misreading of a headline market figure. -->
-  <text class="tiny faint" x="80" y="576">A half-year total says the market is liquid — not that any particular building is a good buy</text>
 </svg>

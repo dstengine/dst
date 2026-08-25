@@ -17,6 +17,8 @@ export const items: NewsItem[] = [
       "Dubai property sales in H1 2026: Dh286.43 billion across 79,229 transactions, 433 sales a day, with January at Dh72.16 billion against June at Dh32.66 billion.",
     imageKind: "illustration",
     imageCredit: "DST",
+    imageWidth: 1200,
+    imageHeight: 600,
     source: {
       name: "Khaleej Times",
       url: "https://www.khaleejtimes.com/business/dubai-property-sales-hit-dh286b-as-market-momentum-stays-strong-in-h1-2026",

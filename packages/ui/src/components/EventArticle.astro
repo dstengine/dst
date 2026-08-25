@@ -107,7 +107,7 @@ const relatedItems = (item.related ?? []).map((card) => ({
 
   {item.image && (
     <figure class:list={["event-article-figure", { "figure-diagram": item.imageKind && item.imageKind !== "photo" }]}>
-      <img src={item.image} alt={item.imageAlt ?? ""} loading="eager" />
+      <img src={item.image} alt={item.imageAlt ?? ""} loading="eager" width={item.imageWidth} height={item.imageHeight} />
       <ImageNote kind={item.imageKind} credit={item.imageCredit} />
     </figure>
   )}
@@ -244,18 +244,6 @@ const relatedItems = (item.related ?? []).map((card) => ({
      line. Ragged right is the better reading experience there. */
   @media (max-width: 640px) {
     .prose p { text-align: left; hyphens: manual; -webkit-hyphens: manual; }
-  }
-
-  /* A 1200px-wide chart scaled into a 342px column renders its labels at
-     ~4px — present but unreadable. Below the breakpoint the diagram keeps a
-     legible width and scrolls sideways instead, the way a wide table does. */
-  @media (max-width: 700px) {
-    .figure-diagram {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      overscroll-behavior-x: contain;
-    }
-    .figure-diagram img { min-width: 56rem; max-width: none; }
   }
   /* Roughly one line of leading. At --space-2 the gap was half the
      line-height and paragraphs ran together. */
