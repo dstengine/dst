@@ -7,6 +7,7 @@
 // the whole page. Run it before saying a page is done.
 //
 //   node tools/review-pages.mjs <url|path> [more...] [--mobile] [--keep]
+//                                [--context "что на странице временное"]
 //
 // Paths are resolved against a running dev server, so:
 //   node tools/review-pages.mjs http://localhost:4322/news/some-slug/
@@ -31,6 +32,13 @@ const PROMPT = [
   "Не рассуждай о том, чего на скриншоте не видно (мета-теги, разметка, скрипты, хостинг, производительность) — часть этих данных приложена ниже, остальное считай неизвестным и не перечисляй как недостаток.",
   "Если серьёзных проблем нет — так и скажи, не набирай список ради объёма.",
 ].join("\n");
+
+// A screenshot carries no note about what is finished and what is standing in
+// for something else, so the reviewer grades a placeholder as if it were the
+// shipped interface and the answer fills up with work nobody intends to do.
+// Pass --context to say what is provisional.
+const CONTEXT_PREFACE =
+  "Контекст от разработчика — учти его и не разбирай как готовую работу то, что здесь названо временным:";
 
 // stealth/ox-alpha first, then other free vision models. The free tier runs
 // on a shared upstream pool that hands out 429s for minutes at a time, so a
@@ -112,12 +120,12 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // The free tier shares an upstream pool and hands out 429s regularly, so a
 // single attempt says nothing about whether the page is fine.
-async function reviewWithRetries(key, images, url, facts) {
+async function reviewWithRetries(key, images, url, facts, context) {
   let last;
   for (const model of MODELS) {
     for (let i = 1; i <= 3; i++) {
       try {
-        const answer = await review(key, images, url, model, facts);
+        const answer = await review(key, images, url, model, facts, context);
         return { answer, model };
       } catch (err) {
         last = err;
@@ -135,7 +143,7 @@ async function reviewWithRetries(key, images, url, facts) {
   throw last ?? new Error("no model produced an answer");
 }
 
-async function review(key, images, url, model, facts) {
+async function review(key, images, url, model, facts, context) {
   const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
     method: "POST",
     headers: {
@@ -153,7 +161,9 @@ async function review(key, images, url, model, facts) {
             {
               type: "text",
               text:
-                `${PROMPT}\n\nСтраница: ${url}\n\n` +
+                `${PROMPT}\n\n` +
+                (context ? `${CONTEXT_PREFACE}\n${context}\n\n` : "") +
+                `Страница: ${url}\n\n` +
                 `Данные из HTML (их не видно на скриншоте — не сообщай как отсутствующее то, что здесь есть):\n` +
                 "```json\n" + JSON.stringify(facts, null, 1) + "\n```",
             },
@@ -181,11 +191,19 @@ async function review(key, images, url, model, facts) {
 
 const args = process.argv.slice(2);
 const wantMobile = args.includes("--mobile");
+const ctxAt = args.indexOf("--context");
+const context = ctxAt !== -1 ? args[ctxAt + 1] : null;
+if (ctxAt !== -1 && !context) {
+  console.error("--context нужен текст: --context \"схема — заглушка\"");
+  process.exit(1);
+}
 const keep = args.includes("--keep");
-const urls = args.filter((a) => !a.startsWith("--"));
+// ctxAt + 1 is the context text, not a url. Guarded on ctxAt: without the
+// flag ctxAt is -1 and an unguarded ctxAt + 1 would drop the first url.
+const urls = args.filter((a, i) => !a.startsWith("--") && !(ctxAt !== -1 && i === ctxAt + 1));
 
 if (urls.length === 0) {
-  console.error("usage: node tools/review-pages.mjs <url> [more urls] [--mobile] [--keep]");
+  console.error('usage: node tools/review-pages.mjs <url> [more urls] [--mobile] [--keep] [--context "..."]');
   process.exit(1);
 }
 
@@ -211,7 +229,7 @@ for (const url of urls) {
       });
     }
 
-    const { answer, model } = await reviewWithRetries(key, shots.map((b) => b.toString("base64")), url, facts);
+    const { answer, model } = await reviewWithRetries(key, shots.map((b) => b.toString("base64")), url, facts, context);
     console.log(`  модель: ${model}\n`);
     console.log(answer.trim());
   } catch (err) {
