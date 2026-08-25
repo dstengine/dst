@@ -5,6 +5,7 @@
 // acceptable drift for a network that rebuilds regularly, not a live app.
 import type { EventItem } from "@dst/content/types";
 import { formatDate } from "../date.ts";
+import CountdownScript from "./CountdownScript.astro";
 
 interface Props {
   items: EventItem[];
@@ -30,6 +31,7 @@ const past = items.filter((e) => e.start < todayIso).sort((a, b) => (a.start < b
                   <div class="item-row-body">
                     <p class="item-row-meta">
                       <time datetime={item.start}>{formatDate(item.start)}</time>
+                      <span class="item-row-countdown" data-countdown datetime={item.start}></span>
                       {item.venue && <span>· {item.venue}</span>}
                     </p>
                     <h3>{item.title}</h3>
@@ -40,6 +42,7 @@ const past = items.filter((e) => e.start < todayIso).sort((a, b) => (a.start < b
             );
           })}
         </ul>
+        <CountdownScript />
       </div>
     )}
     {past.length > 0 && (
@@ -98,12 +101,26 @@ const past = items.filter((e) => e.start < todayIso).sort((a, b) => (a.start < b
   .item-row-body { min-width: 0; }
   .item-row-meta {
     display: flex;
-    align-items: center;
+    align-items: baseline;
+    flex-wrap: wrap;
     gap: var(--space-1);
     margin: 0;
     font-size: var(--step--1);
     color: var(--ink-faint);
   }
+  /* Dates are data, not prose — same monospaced tabular treatment they get
+     in the homepage blocks and that coordinates get on the eco records. */
+  .item-row-meta time {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+  }
+  .item-row-countdown:not(:empty) {
+    font-family: var(--font-mono);
+    color: var(--accent, #1F5C4E);
+  }
+  /* Past events keep the muted date: nothing is being scanned for there. */
+  .item-row-past .item-row-meta time { color: var(--ink-faint); }
   .item-row-body h3 { margin: 0.2em 0 0; font-size: var(--step-1); }
   .item-row-summary { margin: 0.2em 0 0; font-size: var(--step--1); color: var(--ink-muted); }
 </style>

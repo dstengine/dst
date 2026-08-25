@@ -2,6 +2,11 @@
 // Compact ~3-item embed for homepages (TODO 41/42). Renders nothing at all
 // when the feed is empty — that's the actual mechanism behind "show a news
 // block when there's news" (TODO 40): no empty section, no placeholder.
+//
+// Deliberately not styled like a content section: this is a summary strip,
+// so its heading runs at utility size rather than the display size a
+// chapter heading gets. A one-line block under a 2rem serif heading reads
+// as a section that failed to load.
 import type { NewsItem } from "@dst/content/types";
 import { formatDate } from "../date.ts";
 
@@ -26,6 +31,9 @@ const latest = [...items].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date 
         return (
           <li>
             <Tag class="news-block-item" href={hasPage ? `/news/${item.slug}/` : undefined} title={hasPage ? item.title : undefined}>
+              {/* Past tense: the date is the filing stamp, the headline is
+                  the point. Reversed on the events side, where the date is
+                  the point. */}
               <time datetime={item.date}>{formatDate(item.date)}</time>
               <span class="news-block-title">{item.title}</span>
             </Tag>
@@ -42,21 +50,49 @@ const latest = [...items].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date 
      margin-top every other h2 uses to separate one section from the next.
      Put that spacing back on the section itself. */
   .news-block { margin-top: var(--space-5); }
-  .news-block-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-2); }
-  .news-block-head h2 { margin: 0; }
+  .news-block-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-2);
+    padding-bottom: var(--space-1);
+    border-bottom: 1px solid var(--border);
+  }
+  .news-block-head h2 {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
   .news-block-all { flex-shrink: 0; font-size: var(--step--1); font-weight: 600; text-decoration: none; }
-  .news-block-list { list-style: none; margin: var(--space-2) 0 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-1); }
+  .news-block-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
   .news-block-item {
     display: flex;
-    gap: var(--space-2);
+    gap: var(--space-3);
     align-items: baseline;
-    padding: var(--space-1) 0;
+    padding: var(--space-2) 0;
     border-top: 1px solid var(--border);
     color: inherit;
     text-decoration: none;
   }
   li:first-child .news-block-item { border-top: none; }
-  .news-block-item time { flex-shrink: 0; font-size: var(--step--1); color: var(--ink-faint); }
+  /* Monospace, tabular figures: dates are checkable data, set the same way
+     coordinates are on the eco records rather than as running prose. */
+  .news-block-item time {
+    flex-shrink: 0;
+    min-width: 7.5em;
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    font-size: var(--step--1);
+    color: var(--ink-faint);
+  }
   a.news-block-item:hover .news-block-title { color: var(--accent, #1F5C4E); }
   .news-block-title { font-weight: 600; }
+
+  @media (max-width: 600px) {
+    .news-block-item { flex-direction: column; gap: 0.2em; }
+  }
 </style>

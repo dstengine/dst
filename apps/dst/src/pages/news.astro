@@ -101,5 +101,11 @@ const networkItems = latestNews(
   a.network-news-inner:hover .network-news-title { color: var(--accent, #1F5C4E); }
   .network-news-site { flex-shrink: 0; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent, #1F5C4E); }
   .network-news-title { flex: 1 1 auto; min-width: 12rem; }
-  .network-news-inner time { flex-shrink: 0; color: var(--ink-faint); }
+  /* Same monospaced tabular dates as the blocks and lists use. */
+  .network-news-inner time {
+    flex-shrink: 0;
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    color: var(--ink-faint);
+  }
 </style>

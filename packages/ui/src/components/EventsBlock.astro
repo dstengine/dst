@@ -2,8 +2,13 @@
 // Compact ~3-item embed for homepages (TODO 41/42) — the events counterpart
 // of NewsBlock.astro. Shows only upcoming events; renders nothing when
 // there are none, same "show it only when there's something to show" rule.
+//
+// Structurally the mirror of the news block rather than a copy of it: a
+// news item's date is a filing stamp, an event's date is the whole point,
+// so here the date leads and carries a countdown.
 import type { EventItem } from "@dst/content/types";
 import { formatDate } from "../date.ts";
+import CountdownScript from "./CountdownScript.astro";
 
 interface Props {
   items: EventItem[];
@@ -30,13 +35,20 @@ const upcoming = items
         return (
           <li>
             <Tag class="events-block-item" href={hasPage ? `/events/${item.slug}/` : undefined} title={hasPage ? item.title : undefined}>
-              <time datetime={item.start}>{formatDate(item.start)}</time>
+              <span class="events-block-when">
+                <time datetime={item.start}>{formatDate(item.start)}</time>
+                {/* Filled in by CountdownScript; stays empty without JS,
+                    where the absolute date above already says everything
+                    that matters. */}
+                <span class="events-block-countdown" data-countdown datetime={item.start}></span>
+              </span>
               <span class="events-block-title">{item.title}</span>
             </Tag>
           </li>
         );
       })}
     </ul>
+    <CountdownScript />
   </section>
 )}
 
@@ -44,21 +56,58 @@ const upcoming = items
   /* See NewsBlock: the head row zeroes the h2's margin for baseline
      alignment, so the section carries the inter-section spacing instead. */
   .events-block { margin-top: var(--space-5); }
-  .events-block-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-2); }
-  .events-block-head h2 { margin: 0; }
+  .events-block-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-2);
+    padding-bottom: var(--space-1);
+    border-bottom: 1px solid var(--border);
+  }
+  .events-block-head h2 {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
   .events-block-all { flex-shrink: 0; font-size: var(--step--1); font-weight: 600; text-decoration: none; }
-  .events-block-list { list-style: none; margin: var(--space-2) 0 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-1); }
+  .events-block-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
   .events-block-item {
     display: flex;
-    gap: var(--space-2);
+    gap: var(--space-3);
     align-items: baseline;
-    padding: var(--space-1) 0;
+    padding: var(--space-2) 0;
     border-top: 1px solid var(--border);
     color: inherit;
     text-decoration: none;
   }
   li:first-child .events-block-item { border-top: none; }
-  .events-block-item time { flex-shrink: 0; font-size: var(--step--1); color: var(--ink-faint); }
+
+  .events-block-when {
+    flex-shrink: 0;
+    min-width: 7.5em;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    font-size: var(--step--1);
+  }
+  /* The date reads at full ink here, unlike the news block's: for something
+     that hasn't happened yet, "when" is the thing the reader is scanning for. */
+  .events-block-when time { color: var(--ink); }
+  .events-block-countdown:not(:empty) {
+    margin-top: 0.15em;
+    color: var(--accent, #1F5C4E);
+  }
+
   a.events-block-item:hover .events-block-title { color: var(--accent, #1F5C4E); }
   .events-block-title { font-weight: 600; }
+
+  @media (max-width: 600px) {
+    .events-block-item { flex-direction: column; gap: 0.2em; }
+    .events-block-when { flex-direction: row; gap: 0.6em; }
+  }
 </style>

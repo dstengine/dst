@@ -62,11 +62,18 @@ const sorted = [...items].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date 
   .item-row-body { min-width: 0; }
   .item-row-meta {
     display: flex;
-    align-items: center;
+    align-items: baseline;
+    flex-wrap: wrap;
     gap: var(--space-2);
     margin: 0;
     font-size: var(--step--1);
     color: var(--ink-faint);
+  }
+  /* Dates are data, not prose — same monospaced tabular treatment used in
+     the homepage blocks and on the eco records' coordinates. */
+  .item-row-meta time {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
   }
   .item-row-category {
     font-weight: 600;
