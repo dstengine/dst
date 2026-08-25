@@ -66,7 +66,7 @@ const relatedItems = (item.related ?? []).map((card) => ({
   </header>
 
   {item.image && (
-    <figure class="news-article-figure">
+    <figure class:list={["news-article-figure", { "figure-diagram": item.imageKind && item.imageKind !== "photo" }]}>
       <img src={item.image} alt={item.imageAlt ?? ""} loading="eager" />
       <ImageNote kind={item.imageKind} credit={item.imageCredit} />
     </figure>
@@ -133,6 +133,11 @@ const relatedItems = (item.related ?? []).map((card) => ({
 
   .news-article-figure { margin: var(--space-4) 0 0; }
   .news-article-figure img { display: block; width: 100%; max-height: 60vh; object-fit: cover; background: var(--surface-sunk); border-radius: var(--radius); }
+  /* Cropping a photograph loses scenery; cropping a diagram loses data. On
+     a wide, short window `cover` was cutting 71px off a chart — enough to
+     take a whole line of it — so anything that isn't a photograph is
+     fitted whole instead. */
+  .figure-diagram img { object-fit: contain; background: transparent; }
 
   .prose { margin-top: var(--space-4); max-width: var(--content-width); }
   /* Roughly one line of leading. At --space-2 the gap was half the
