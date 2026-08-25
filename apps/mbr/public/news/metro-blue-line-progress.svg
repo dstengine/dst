@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520" role="img" aria-label="Construction timeline of the Dubai Metro Blue Line: groundbreaking June 2025, 10 per cent complete by November 2025, 30 per cent targeted by the end of 2026, opening 9 September 2029.">
+  <style>
+    /* The page can't style an SVG loaded through &lt;img&gt;, so the diagram
+       carries its own palette and answers the colour scheme itself. Values
+       mirror the network's tokens. */
+    .bg { fill: #FAF9F6; }
+    .ink { fill: #14181F; }
+    .muted { fill: #565F6B; }
+    .faint { fill: #6D727A; }
+    .track { fill: #E2DFD7; }
+    .rule { stroke: #E2DFD7; }
+    .line { fill: #2C5CC5; }
+    .line-stroke { stroke: #2C5CC5; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #191C20; }
+      .ink { fill: #DCDFE3; }
+      .muted { fill: #9BA1AA; }
+      .faint { fill: #7A7F86; }
+      .track { fill: #2B2F35; }
+      .rule { stroke: #2B2F35; }
+      .line { fill: #6E9BF0; }
+      .line-stroke { stroke: #6E9BF0; }
+    }
+    text { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; }
+    .label { font-size: 21px; }
+    .small { font-size: 18px; }
+    .huge { font-size: 108px; font-weight: 600; letter-spacing: -0.02em; }
+    .caps { font-size: 17px; letter-spacing: 0.14em; }
+    /* The station list is the widest line in the diagram; at .small it ran
+       past the right edge. */
+    .tiny { font-size: 15.5px; }
+  </style>
+
+  <rect class="bg" width="1200" height="520" />
+
+  <!-- Headline figure: the news is the number. -->
+  <text class="huge ink" x="80" y="150">10%</text>
+  <text class="caps faint" x="80" y="192">COMPLETE · NOV 2025</text>
+
+  <!-- Scale, right-aligned against the figure. -->
+  <text class="label muted" x="1120" y="120" text-anchor="end">30 km · 14 stations</text>
+  <text class="small faint" x="1120" y="152" text-anchor="end">15.5 km underground · 14.5 km elevated</text>
+  <text class="small faint" x="1120" y="182" text-anchor="end">opens 9 September 2029</text>
+
+  <line class="rule" x1="80" y1="240" x2="1120" y2="240" stroke-width="1" />
+
+  <!-- Progress track. Full width is the whole line; the filled part is what
+       had been built at the date above, and the notch is the 2026 target. -->
+  <g transform="translate(80 300)">
+    <rect class="track" x="0" y="0" width="1040" height="26" rx="13" />
+    <rect class="line" x="0" y="0" width="104" height="26" rx="13" />
+
+    <!-- 30% target marker -->
+    <line class="line-stroke" x1="312" y1="-16" x2="312" y2="42" stroke-width="2" stroke-dasharray="5 5" />
+    <text class="small muted" x="312" y="-28" text-anchor="middle">30% target</text>
+    <text class="small faint" x="312" y="70" text-anchor="middle">end of 2026</text>
+
+    <!-- Kept short: the "end of 2026" label under the target marker sits at
+         x=312, and longer captions here collided with it. -->
+    <text class="small faint" x="0" y="70">Jun 2025</text>
+    <text class="small faint" x="1040" y="70" text-anchor="end">Sep 2029</text>
+  </g>
+
+  <line class="rule" x1="80" y1="420" x2="1120" y2="420" stroke-width="1" />
+
+  <!-- The point of the story for this district: the route runs east and
+       does not serve MBR City. -->
+  <text class="label ink" x="80" y="470">Route runs east of MBR City — the district is not on the line</text>
+  <text class="tiny faint" x="80" y="498">Creek Harbour · Festival City · International City · Silicon Oasis · Academic City · Mirdif · Al Warqa</text>
+</svg>

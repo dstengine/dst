@@ -10,6 +10,11 @@ export const items: NewsItem[] = [
       "Dubai's 30km, 14-station Blue Line hit 10% completion five months after breaking ground and is targeting 30% by the end of 2026, for a September 2029 opening — on a route that does not serve MBR City.",
     date: "2025-11-09",
     category: "Transport",
+    image: "/news/metro-blue-line-progress.svg",
+    imageAlt:
+      "Construction timeline of the Dubai Metro Blue Line: 10% complete in November 2025, a 30% target for the end of 2026, and opening in September 2029, with a note that the route runs east of MBR City.",
+    imageKind: "illustration",
+    imageCredit: "Diagram: DST, from RTA figures",
     source: {
       name: "Dubai Media Office",
       url: "https://www.mediaoffice.ae/en/news/2025/november/09-11/rta",
