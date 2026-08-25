@@ -1,0 +1,61 @@
+---
+// Compact ~3-item embed for homepages (TODO 41/42) — the events counterpart
+// of NewsBlock.astro. Shows only upcoming events; renders nothing when
+// there are none, same "show it only when there's something to show" rule.
+import type { EventItem } from "@dst/content/types";
+import { formatDate } from "../date.ts";
+
+interface Props {
+  items: EventItem[];
+  limit?: number;
+  heading?: string;
+}
+const { items, limit = 3, heading = "Events" } = Astro.props;
+const todayIso = new Date().toISOString().slice(0, 10);
+const upcoming = items
+  .filter((e) => e.start >= todayIso)
+  .sort((a, b) => (a.start < b.start ? -1 : a.start > b.start ? 1 : 0))
+  .slice(0, limit);
+---
+{upcoming.length > 0 && (
+  <section class="container events-block">
+    <div class="events-block-head">
+      <h2>{heading}</h2>
+      <a class="events-block-all" href="/events/" title="All events">All events &rarr;</a>
+    </div>
+    <ul class="events-block-list">
+      {upcoming.map((item) => {
+        const hasPage = Array.isArray(item.body) && item.body.length > 0;
+        const Tag = hasPage ? "a" : "div";
+        return (
+          <li>
+            <Tag class="events-block-item" href={hasPage ? `/events/${item.slug}/` : undefined} title={hasPage ? item.title : undefined}>
+              <time datetime={item.start}>{formatDate(item.start)}</time>
+              <span class="events-block-title">{item.title}</span>
+            </Tag>
+          </li>
+        );
+      })}
+    </ul>
+  </section>
+)}
+
+<style>
+  .events-block-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-2); }
+  .events-block-head h2 { margin: 0; }
+  .events-block-all { flex-shrink: 0; font-size: var(--step--1); font-weight: 600; text-decoration: none; }
+  .events-block-list { list-style: none; margin: var(--space-2) 0 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-1); }
+  .events-block-item {
+    display: flex;
+    gap: var(--space-2);
+    align-items: baseline;
+    padding: var(--space-1) 0;
+    border-top: 1px solid var(--border);
+    color: inherit;
+    text-decoration: none;
+  }
+  li:first-child .events-block-item { border-top: none; }
+  .events-block-item time { flex-shrink: 0; font-size: var(--step--1); color: var(--ink-faint); }
+  a.events-block-item:hover .events-block-title { color: var(--accent, #1F5C4E); }
+  .events-block-title { font-weight: 600; }
+</style>

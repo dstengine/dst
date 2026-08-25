@@ -14,4 +14,8 @@
 - [Events](https://riviera.dst.llc/events/): What's on in the community.
 - [Rent](https://riviera.dst.llc/rent/): Renting in Riviera.
 
+## News & events feed
+
+Short, first-party items only — an empty feed at any time means there's nothing to report yet, not a missing page. Sources are named in the article text ("Source: X"), never linked as a live URL; the one exception is an event's ticket/registration link, which routes through /go/<slug>/ (noindex, nofollow) rather than linking out directly.
+
 Part of the [DST](https://dst.llc/) network. See also [MBR City](https://mbr.dst.llc/), the wider district Riviera sits inside.

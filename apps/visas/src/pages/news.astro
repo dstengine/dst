@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import NewsList from "@dst/ui/NewsList.astro";
+import { newsBySite } from "@dst/content/news";
+
+const items = newsBySite("visas");
+---
+<Layout
+  title="Golden Visa & residency news"
+  description="Updates on UAE residency routes and the Golden Visa — threshold changes, new guidance, and this site's own updates."
+>
+  <section class="container hero">
+    <p class="eyebrow">News</p>
+    <h1>What's changing in UAE residency</h1>
+    <p class="lede">
+      Threshold and eligibility changes for the Golden Visa and other
+      residency routes, kept apart from the reference pages themselves.
+    </p>
+  </section>
+
+  <section class="container">
+    <NewsList items={items} />
+  </section>
+</Layout>

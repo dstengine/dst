@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import EventsList from "@dst/ui/EventsList.astro";
+import { eventsBySite } from "@dst/content/events";
+
+const items = eventsBySite("palmcentral");
+---
+<Layout
+  title="Palm Central events"
+  description="Sales launches and viewings for Palm Central, when there are any scheduled."
+>
+  <section class="container hero">
+    <p class="eyebrow">Events</p>
+    <h1>Palm Central events</h1>
+    <p class="lede">
+      Sales launches and viewings, published here once there's something
+      scheduled.
+    </p>
+  </section>
+
+  <section class="container">
+    <EventsList items={items} />
+  </section>
+</Layout>

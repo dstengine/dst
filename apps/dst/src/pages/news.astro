@@ -1,0 +1,105 @@
+---
+import Layout from "../layouts/Layout.astro";
+import NewsList from "@dst/ui/NewsList.astro";
+import { formatDate } from "@dst/ui/date";
+import { newsBySite, allNews, latestNews } from "@dst/content/news";
+
+const SITE_HOSTS: Record<string, string> = {
+  llc: "llc.dst.llc",
+  visas: "visas.dst.llc",
+  riviera: "riviera.dst.llc",
+  mbr: "mbr.dst.llc",
+  palmcentral: "palmcentral.dst.llc",
+  eco: "eco.dst.llc",
+};
+const SITE_LABELS: Record<string, string> = {
+  llc: "Company formation",
+  visas: "Visas",
+  riviera: "Riviera",
+  mbr: "MBR City",
+  palmcentral: "Palm Central",
+  eco: "Eco",
+};
+
+const items = newsBySite("dst");
+
+// The hub carries its own news first, then a network-wide roundup below,
+// each item labelled with its source site. This isn't NewsList — a
+// cross-site item's detail page lives on that site's own host
+// (riviera.dst.llc/news/slug, not dst.llc/news/slug), which NewsList's
+// same-site relative links can't express.
+const networkItems = latestNews(
+  allNews.filter((item) => item.site !== "dst"),
+  10,
+).map((item) => {
+  const hasPage = Array.isArray(item.body) && item.body.length > 0;
+  return {
+    ...item,
+    hasPage,
+    href: hasPage ? `https://${SITE_HOSTS[item.site]}/news/${item.slug}/` : undefined,
+    siteLabel: SITE_LABELS[item.site] ?? item.site,
+  };
+});
+---
+<Layout
+  title="DST news"
+  description="What moves the markets DST works in, and what the group is doing in them, with a roundup of what's changing across the network's sites."
+>
+  <section class="container hero">
+    <p class="eyebrow">News</p>
+    <h1>What's changing at DST</h1>
+    {/* Deliberately not "new integrations / how the network's systems
+        work": how leads and internal plumbing are wired is not something a
+        reader came here for, and advertising it reads badly to a
+        prospective client. What the group is doing, not how it is built. */}
+    <p class="lede">
+      What moves the markets the group works in, and what DST is doing in
+      them — followed by a roundup of what's changing across the network's
+      individual sites.
+    </p>
+  </section>
+
+  <section class="container">
+    <NewsList items={items} />
+  </section>
+
+  {networkItems.length > 0 && (
+    <section class="container network-news">
+      <h2>Across the network</h2>
+      <ul class="network-news-list">
+        {networkItems.map((item) => {
+          const Tag = item.href ? "a" : "div";
+          return (
+            <li class="network-news-row">
+              <Tag class="network-news-inner" href={item.href} title={item.href ? item.title : undefined}>
+                <span class="network-news-site">{item.siteLabel}</span>
+                <span class="network-news-title">{item.title}</span>
+                <time datetime={item.date}>{formatDate(item.date)}</time>
+              </Tag>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+  )}
+</Layout>
+
+<style>
+  .network-news-list { list-style: none; margin: var(--space-2) 0 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-1); }
+  .network-news-row { border-top: 1px solid var(--border); }
+  .network-news-row:first-child { border-top: none; }
+  .network-news-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--space-2);
+    padding: var(--space-1) 0;
+    color: inherit;
+    text-decoration: none;
+    font-size: var(--step--1);
+  }
+  a.network-news-inner:hover .network-news-title { color: var(--accent, #1F5C4E); }
+  .network-news-site { flex-shrink: 0; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent, #1F5C4E); }
+  .network-news-title { flex: 1 1 auto; min-width: 12rem; }
+  .network-news-inner time { flex-shrink: 0; color: var(--ink-faint); }
+</style>

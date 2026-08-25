@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "dependencies": {
+    "@dst/content": "*"
+  },
   "exports": {
     "./BaseLayout.astro": "./src/layouts/BaseLayout.astro",
     "./DistrictLayout.astro": "./src/layouts/DistrictLayout.astro",
@@ -11,7 +14,14 @@
     "./Callout.astro": "./src/components/Callout.astro",
     "./VentureGrid.astro": "./src/components/VentureGrid.astro",
     "./Redirect.astro": "./src/components/Redirect.astro",
+    "./NewsList.astro": "./src/components/NewsList.astro",
+    "./EventsList.astro": "./src/components/EventsList.astro",
+    "./NewsBlock.astro": "./src/components/NewsBlock.astro",
+    "./EventsBlock.astro": "./src/components/EventsBlock.astro",
+    "./NewsArticle.astro": "./src/components/NewsArticle.astro",
+    "./EventArticle.astro": "./src/components/EventArticle.astro",
     "./analytics": "./src/analytics.ts",
+    "./date": "./src/date.ts",
     "./district/ContentPage.astro": "./src/components/district/ContentPage.astro",
     "./district/DistrictHub.astro": "./src/components/district/DistrictHub.astro",
     "./district/PhotoHero.astro": "./src/components/district/PhotoHero.astro",

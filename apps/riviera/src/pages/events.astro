@@ -1,8 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ContentPage from "@dst/ui/district/ContentPage.astro";
+import EventsList from "@dst/ui/EventsList.astro";
 import { events } from "../content";
+import { eventsBySite } from "@dst/content/events";
+
+const items = eventsBySite("riviera");
 ---
 <Layout {...events}>
   <ContentPage {...events} />
+  <section class="container">
+    <EventsList items={items} />
+  </section>
 </Layout>

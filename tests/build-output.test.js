@@ -9,6 +9,8 @@ import { readFileSync, existsSync } from "node:fs";
 import { readdir } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { allNews } from "../packages/content/src/news/index.ts";
+import { allEvents } from "../packages/content/src/events/index.ts";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -21,7 +23,11 @@ const SITES = [
   { app: "mbr", host: "mbr.dst.llc" },
   { app: "palmcentral", host: "palmcentral.dst.llc" },
 ];
-const NETWORK_HOSTS = SITES.map((s) => s.host);
+// eco.dst.llc isn't a full SITES entry (see the "news and events" describe
+// block below for why), but it's still a legitimate network-internal host
+// other sites link to directly — dst.llc's hub grid already linked to it
+// before this file's news/events additions existed.
+const NETWORK_HOSTS = [...SITES.map((s) => s.host), "eco.dst.llc"];
 
 const TITLE_LIMIT = 60;
 
@@ -223,8 +229,18 @@ describe("district header image", () => {
   // It was a property of the index page's content, so only the index had it.
   // It belongs to the site: every page gets it unless the page overrides.
   test("riviera's site header image is on every district page", () => {
+    // News/event detail pages follow the same pattern as a venue detail
+    // page (e.g. /coffee/homebrew/, excluded below too): they render their
+    // own single h1 in the body via NewsArticle/EventArticle rather than
+    // through DistrictLayout's own header, so there's no site-default
+    // image slot on them to begin with — the list pages above them still
+    // carry it.
     const districtPages = pages.filter(
-      (p) => p.app === "riviera" && !p.url.startsWith("/go/") && !p.url.startsWith("/coffee/homebrew"),
+      (p) =>
+        p.app === "riviera" &&
+        !p.url.startsWith("/go/") &&
+        !p.url.startsWith("/coffee/homebrew") &&
+        !/^\/(news|events)\/[^/]+\/$/.test(p.url),
     );
     assert.ok(districtPages.length >= 9, `expected the full district page set, got ${districtPages.length}`);
     for (const p of districtPages) {
@@ -359,6 +375,144 @@ describe("structured data", () => {
           assert.ok(block["@context"], `${p.app}${p.url}: JSON-LD without @context`);
           assert.ok(block["@type"], `${p.app}${p.url}: JSON-LD without @type`);
         }
+      }
+    }
+  });
+});
+
+// News/events-specific checks, scoped to their own site list rather than
+// the shared SITES/NETWORK_HOSTS above. `pages`/`contentPages()` above
+// deliberately exclude eco (adding it would newly apply unrelated
+// pre-existing checks — e.g. "every anchor carries a title attribute" —
+// to eco's existing portfolio pages, which is out of scope here). This
+// block builds its own local page set covering all 7 sites instead.
+describe("news and events", () => {
+  const NEWS_EVENTS_SITES = [...SITES, { app: "eco", host: "eco.dst.llc" }];
+  const NEWS_EVENTS_HOSTS = NEWS_EVENTS_SITES.map((s) => s.host);
+
+  /** Every built page across all 7 sites, including eco. */
+  const nePages = [];
+
+  before(async () => {
+    for (const { app } of NEWS_EVENTS_SITES) {
+      const dist = path.join(REPO, "apps", app, "dist");
+      assert.ok(existsSync(dist), `apps/${app}/dist is missing — run "npm run build" first`);
+      const entries = await readdir(dist, { recursive: true, withFileTypes: true });
+      for (const e of entries) {
+        if (!e.isFile() || e.name !== "index.html") continue;
+        const file = path.join(e.parentPath ?? e.path, e.name);
+        const url = "/" + path.relative(dist, file).replace(/index\.html$/, "");
+        nePages.push({ app, url, file, html: readFileSync(file, "utf8") });
+      }
+    }
+  });
+
+  const isNewsOrEventDetail = (p) => /^\/(news|events)\/[^/]+\/$/.test(p.url);
+  const isNewsOrEventList = (p) => p.url === "/news/" || p.url === "/events/";
+  const neDetailPages = () => nePages.filter(isNewsOrEventDetail);
+
+  test("news/event detail pages carry no direct external link except through /go/", () => {
+    // Scoped to the <article> content itself, not the whole page — the
+    // header/footer chrome (e.g. eco's Instagram icon) is shared,
+    // pre-existing site furniture unrelated to this feature, not something
+    // this pass is responsible for routing through /go/.
+    const direct = [];
+    for (const p of neDetailPages()) {
+      const m = p.html.match(/<article[^>]*>[\s\S]*?<\/article>/);
+      if (!m) continue;
+      for (const tag of anchorsOf(m[0])) {
+        const href = hrefOf(tag);
+        if (!href?.startsWith("http")) continue;
+        const host = new URL(href).host;
+        if (!NEWS_EVENTS_HOSTS.includes(host)) direct.push(`${p.app}${p.url} -> ${href}`);
+      }
+    }
+    assert.deepEqual(direct, [], `direct outbound links inside a news/event article body (should route through /go/): ${JSON.stringify(direct, null, 1)}`);
+  });
+
+  test("a news/event JSON-LD block is typed NewsArticle/Article for news and Event for events, with the minimum fields for that type", () => {
+    for (const p of neDetailPages()) {
+      const isEvent = p.url.startsWith("/events/");
+      for (const m of p.html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
+        let data;
+        assert.doesNotThrow(() => (data = JSON.parse(m[1])), `${p.app}${p.url}: JSON-LD does not parse`);
+        const blocks = [data].flat().filter((b) => (isEvent ? b["@type"] === "Event" : b["@type"] === "NewsArticle" || b["@type"] === "Article"));
+        if (blocks.length === 0) continue; // some other JSON-LD block (e.g. from the layout) — not this page's item block
+        for (const block of blocks) {
+          if (isEvent) {
+            assert.ok(block.name, `${p.app}${p.url}: Event JSON-LD missing "name" — ${JSON.stringify(block)}`);
+            assert.ok(block.startDate, `${p.app}${p.url}: Event JSON-LD missing "startDate" — ${JSON.stringify(block)}`);
+            assert.ok(block.eventStatus, `${p.app}${p.url}: Event JSON-LD missing "eventStatus" — ${JSON.stringify(block)}`);
+          } else {
+            assert.ok(block.headline, `${p.app}${p.url}: ${block["@type"]} JSON-LD missing "headline" — ${JSON.stringify(block)}`);
+            assert.ok(block.datePublished, `${p.app}${p.url}: ${block["@type"]} JSON-LD missing "datePublished" — ${JSON.stringify(block)}`);
+          }
+        }
+      }
+    }
+  });
+
+  test("a thin item (no body) produced no detail page, and no list page links to a missing slug", () => {
+    for (const p of nePages.filter(isNewsOrEventList)) {
+      const kind = p.url === "/news/" ? "news" : "events";
+      const built = new Set(nePages.filter((x) => x.app === p.app && x.url.startsWith(`/${kind}/`)).map((x) => x.url));
+      for (const tag of anchorsOf(p.html)) {
+        const href = hrefOf(tag);
+        if (!href || !href.startsWith(`/${kind}/`)) continue;
+        assert.ok(built.has(href), `${p.app}${p.url}: links to "${href}", which has no built detail page (thin items must not get a link)`);
+      }
+    }
+  });
+
+  test("a site with an empty news/events array renders no block on its homepage", () => {
+    for (const { app } of NEWS_EVENTS_SITES) {
+      const home = nePages.find((p) => p.app === app && p.url === "/");
+      if (!home) continue;
+      const hasNewsList = />\s*<ul class="item-list"/.test(home.html) || /class="news-block-list"/.test(home.html);
+      const hasEventsList = /class="events-block-list"/.test(home.html);
+      const hasNewsSection = /<section class="container news-block"/.test(home.html);
+      const hasEventsSection = /<section class="container events-block"/.test(home.html);
+      console.log(`${app} homepage: news-block=${hasNewsSection} events-block=${hasEventsSection}`);
+      // The components themselves already guarantee "empty array -> no
+      // markup" (unit-testable in isolation); this just confirms the real
+      // per-site data feeding the homepage doesn't accidentally contradict
+      // that — a site whose homepage shows a block must have at least one
+      // item behind it.
+      if (hasNewsSection) assert.ok(hasNewsList, `${app}: homepage shows a news-block section with no list markup inside it`);
+      if (hasEventsSection) assert.ok(hasEventsList, `${app}: homepage shows an events-block section with no list markup inside it`);
+    }
+  });
+
+  test("a detail page with no image/geo/form leaves no empty wrapper behind", () => {
+    for (const p of neDetailPages()) {
+      assert.doesNotMatch(p.html, /<figure class="(news|event)-article-figure">\s*<\/figure>/, `${p.app}${p.url}: empty figure wrapper with no image`);
+      assert.doesNotMatch(p.html, /<section class="locate">\s*<h2>Locate<\/h2>\s*<div class="locate-map">\s*<\/div>\s*<\/section>/, `${p.app}${p.url}: empty locate/map wrapper`);
+      if (!/class="locate"/.test(p.html)) {
+        assert.doesNotMatch(p.html, /Locate<\/h2>/, `${p.app}${p.url}: "Locate" heading present without the locate section`);
+      }
+      assert.doesNotMatch(p.html, /<section class="(news|event)-article-form">\s*<\/section>/, `${p.app}${p.url}: empty form wrapper`);
+    }
+  });
+
+  test("source, when present, is rendered as plain text, never as a link to source.url", () => {
+    for (const p of neDetailPages()) {
+      const m = p.html.match(/Source:\s*([^<]+)</);
+      if (!m) continue;
+      // If a "Source: X" line exists, X must not itself be wrapped in an <a>
+      // pointing at an external URL right next to it — the audit-trail URL
+      // must never reach rendered HTML at all.
+      assert.doesNotMatch(p.html.slice(p.html.indexOf("Source:") - 50, p.html.indexOf("Source:") + 200), /<a\s[^>]*href="https?:\/\//, `${p.app}${p.url}: source line appears to carry a live external link`);
+    }
+  });
+
+  // Broader than the check above: source.url must not leak anywhere in the
+  // page at all, not just next to the "Source:" line — this caught a real
+  // bug where NewsArticle's auto-built JSON-LD put it in `isBasedOn`.
+  test("source.url never appears anywhere in a news/event page's HTML", () => {
+    const sourceUrls = [...allNews, ...allEvents].map((item) => item.source?.url).filter(Boolean);
+    for (const p of neDetailPages()) {
+      for (const url of sourceUrls) {
+        assert.ok(!p.html.includes(url), `${p.app}${p.url}: contains a source.url that should only ever be an audit trail — ${url}`);
       }
     }
   });

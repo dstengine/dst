@@ -1,0 +1,18 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import EventArticle from "@dst/ui/EventArticle.astro";
+import { eventsBySite } from "@dst/content/events";
+import { outbound } from "../../outbound";
+
+export function getStaticPaths() {
+  const items = eventsBySite("riviera").filter((item) => Array.isArray(item.body) && item.body.length > 0);
+  return items.map((item) => ({ params: { slug: item.slug }, props: { item } }));
+}
+
+const { item } = Astro.props;
+const ticketSlug = `${item.slug}-ticket`;
+const ticketHref = item.ticket && outbound[ticketSlug] ? `/go/${ticketSlug}/` : undefined;
+---
+<Layout title={item.title} description={item.summary}>
+  <EventArticle item={item} backHref="/events/" ticketHref={ticketHref} />
+</Layout>

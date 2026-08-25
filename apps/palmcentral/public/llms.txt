@@ -17,6 +17,12 @@ Key facts, current as of this site's last deploy:
 - [Location](https://palmcentral.dst.llc/location/): Where the Spine sits in Palm Jebel Ali's master plan, and real drive times to Downtown, the Marina, and both airports.
 - [Golden Visa](https://palmcentral.dst.llc/golden-visa/): Eligibility against the AED 2M threshold and how the property route to residency actually works.
 - [FAQ](https://palmcentral.dst.llc/faq/): Direct answers to the questions buyers ask before booking, including availability.
+- [News](https://palmcentral.dst.llc/news/): Pricing and release-phase changes at Palm Central.
+- [Events](https://palmcentral.dst.llc/events/): Sales launches and viewings, when there are any scheduled.
+
+## News & events feed
+
+Short, first-party items only — an empty feed at any time means there's nothing to report yet, not a missing page. Sources are named in the article text ("Source: X"), never linked as a live URL; the one exception is an event's ticket/registration link, which routes through /go/<slug>/ (noindex, nofollow) rather than linking out directly.
 
 ## Sourcing
 

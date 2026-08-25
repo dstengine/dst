@@ -1,0 +1,109 @@
+---
+// Body of /events/ across the network — same dated-row treatment as
+// NewsList, split into Upcoming / Past by `start` against build time.
+// Astro builds are static, so "now" is fixed at build time; that's an
+// acceptable drift for a network that rebuilds regularly, not a live app.
+import type { EventItem } from "@dst/content/types";
+import { formatDate } from "../date.ts";
+
+interface Props {
+  items: EventItem[];
+}
+const { items } = Astro.props;
+const todayIso = new Date().toISOString().slice(0, 10);
+const upcoming = items.filter((e) => e.start >= todayIso).sort((a, b) => (a.start < b.start ? -1 : a.start > b.start ? 1 : 0));
+const past = items.filter((e) => e.start < todayIso).sort((a, b) => (a.start < b.start ? 1 : a.start > b.start ? -1 : 0));
+---
+{items.length > 0 && (
+  <div class="events-lists">
+    {upcoming.length > 0 && (
+      <div class="events-group">
+        <h3 class="events-group-heading">Upcoming</h3>
+        <ul class="item-list">
+          {upcoming.map((item) => {
+            const hasPage = Array.isArray(item.body) && item.body.length > 0;
+            const Tag = hasPage ? "a" : "div";
+            return (
+              <li class="item-row">
+                <Tag class="item-row-inner" href={hasPage ? `/events/${item.slug}/` : undefined} title={hasPage ? item.title : undefined}>
+                  {item.image && <img class="item-row-thumb" src={item.image} alt={item.imageAlt ?? ""} loading="lazy" />}
+                  <div class="item-row-body">
+                    <p class="item-row-meta">
+                      <time datetime={item.start}>{formatDate(item.start)}</time>
+                      {item.venue && <span>· {item.venue}</span>}
+                    </p>
+                    <h3>{item.title}</h3>
+                    <p class="item-row-summary">{item.summary}</p>
+                  </div>
+                </Tag>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    )}
+    {past.length > 0 && (
+      <div class="events-group">
+        <h3 class="events-group-heading">Past</h3>
+        <ul class="item-list">
+          {past.map((item) => {
+            const hasPage = Array.isArray(item.body) && item.body.length > 0;
+            const Tag = hasPage ? "a" : "div";
+            return (
+              <li class="item-row item-row-past">
+                <Tag class="item-row-inner" href={hasPage ? `/events/${item.slug}/` : undefined} title={hasPage ? item.title : undefined}>
+                  {item.image && <img class="item-row-thumb" src={item.image} alt={item.imageAlt ?? ""} loading="lazy" />}
+                  <div class="item-row-body">
+                    <p class="item-row-meta">
+                      <time datetime={item.start}>{formatDate(item.start)}</time>
+                      {item.venue && <span>· {item.venue}</span>}
+                    </p>
+                    <h3>{item.title}</h3>
+                    <p class="item-row-summary">{item.summary}</p>
+                  </div>
+                </Tag>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    )}
+  </div>
+)}
+
+<style>
+  .events-lists { display: flex; flex-direction: column; gap: var(--space-4); margin-top: var(--space-3); }
+  .events-group-heading { margin: 0 0 var(--space-1); font-size: var(--step-0); }
+  .item-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-2); }
+  .item-row { border-top: 1px solid var(--border); }
+  .item-row:first-child { border-top: none; }
+  .item-row-inner {
+    display: flex;
+    gap: var(--space-3);
+    align-items: flex-start;
+    padding: var(--space-2) 0;
+    color: inherit;
+    text-decoration: none;
+  }
+  a.item-row-inner:hover h3 { color: var(--accent, #1F5C4E); }
+  .item-row-past { opacity: 0.75; }
+  .item-row-thumb {
+    flex-shrink: 0;
+    width: 96px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    background: var(--surface-sunk);
+  }
+  .item-row-body { min-width: 0; }
+  .item-row-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    margin: 0;
+    font-size: var(--step--1);
+    color: var(--ink-faint);
+  }
+  .item-row-body h3 { margin: 0.2em 0 0; font-size: var(--step-1); }
+  .item-row-summary { margin: 0.2em 0 0; font-size: var(--step--1); color: var(--ink-muted); }
+</style>

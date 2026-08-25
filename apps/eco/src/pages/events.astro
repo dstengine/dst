@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import EventsList from "@dst/ui/EventsList.astro";
+import { eventsBySite } from "@dst/content/events";
+
+const items = eventsBySite("eco");
+---
+<Layout
+  title="Eco events"
+  description="Planting days and other in-person eco events, when there are any to list."
+>
+  <section class="container hero">
+    <p class="eyebrow">Events</p>
+    <h1>Eco events</h1>
+    <p class="lede">
+      Planting days and other in-person activity, published here once
+      there's something scheduled.
+    </p>
+  </section>
+
+  <section class="container">
+    <EventsList items={items} />
+  </section>
+</Layout>

@@ -9,5 +9,11 @@
 - [Banking](https://llc.dst.llc/banking/): Opening a corporate bank account as a new Dubai company — what's actually required.
 - [Payments](https://llc.dst.llc/payments/): Payment processing options for a new Dubai entity.
 - [Taxation](https://llc.dst.llc/taxation/): Corporate tax and VAT basics for a new UAE company.
+- [News](https://llc.dst.llc/news/): Regulatory changes and updates to this site's own guidance.
+- [Events](https://llc.dst.llc/events/): Sessions on Dubai company formation, when there are any scheduled.
+
+## News & events feed
+
+Short, first-party items only — an empty feed at any time means there's nothing to report yet, not a missing page. Sources are named in the article text ("Source: X"), never linked as a live URL; the one exception is an event's ticket/registration link, which routes through /go/<slug>/ (noindex, nofollow) rather than linking out directly.
 
 Part of the [DST](https://dst.llc/) network.

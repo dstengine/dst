@@ -4,7 +4,11 @@ import Callout from "@dst/ui/Callout.astro";
 import Faq from "@dst/ui/Faq.astro";
 import InterestForm from "../components/InterestForm.astro";
 import PhotoHero from "@dst/ui/district/PhotoHero.astro";
+import NewsBlock from "@dst/ui/NewsBlock.astro";
+import EventsBlock from "@dst/ui/EventsBlock.astro";
 import { iconFor } from "@dst/ui/icons";
+import { newsBySite } from "@dst/content/news";
+import { eventsBySite } from "@dst/content/events";
 import {
   siteHeaderImage,
   currentPhase,
@@ -15,6 +19,9 @@ import {
   distances,
   faqItems,
 } from "../content";
+
+const newsItems = newsBySite("palmcentral");
+const eventItems = eventsBySite("palmcentral");
 
 const explore = [
   { href: "/prices/", icon: "chart", title: "Full price list", description: "Every unit type, both release phases, side by side." },
@@ -187,6 +194,9 @@ const jsonLd = [
     <Faq items={faqItems.slice(0, 4)} />
     <p><a href="/faq/" title="All Palm Central frequently asked questions">See all frequently asked questions →</a></p>
   </section>
+
+  <NewsBlock items={newsItems} />
+  <EventsBlock items={eventItems} />
 
   <InterestForm currentUnits={currentUnits} />
 </Layout>

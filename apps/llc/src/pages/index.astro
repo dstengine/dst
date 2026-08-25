@@ -1,6 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Callout from "@dst/ui/Callout.astro";
+import NewsBlock from "@dst/ui/NewsBlock.astro";
+import EventsBlock from "@dst/ui/EventsBlock.astro";
+import { newsBySite } from "@dst/content/news";
+import { eventsBySite } from "@dst/content/events";
+
+const newsItems = newsBySite("llc");
+const eventItems = eventsBySite("llc");
 ---
 <Layout
   title="How to Start a Business"
@@ -106,5 +113,8 @@ import Callout from "@dst/ui/Callout.astro";
     the question most guides skip: what a Dubai company actually needs to
     accept card payments through a processor like Stripe.
   </Callout>
+
+  <NewsBlock items={newsItems} />
+  <EventsBlock items={eventItems} />
 </Layout>
 

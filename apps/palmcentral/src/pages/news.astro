@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import NewsList from "@dst/ui/NewsList.astro";
+import { newsBySite } from "@dst/content/news";
+
+const items = newsBySite("palmcentral");
+---
+<Layout
+  title="Palm Central news"
+  description="Updates on Palm Central — pricing changes, release phases, and this site's own updates."
+>
+  <section class="container hero">
+    <p class="eyebrow">News</p>
+    <h1>What's changing at Palm Central</h1>
+    <p class="lede">
+      Pricing and release-phase changes at Palm Central, kept apart from
+      the reference pages themselves.
+    </p>
+  </section>
+
+  <section class="container">
+    <NewsList items={items} />
+  </section>
+</Layout>

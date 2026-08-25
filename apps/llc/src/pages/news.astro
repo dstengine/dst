@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import NewsList from "@dst/ui/NewsList.astro";
+import { newsBySite } from "@dst/content/news";
+
+const items = newsBySite("llc");
+---
+<Layout
+  title="Company formation news"
+  description="Updates on Dubai company formation — regulatory changes, new guidance, and updates to this site's own tools."
+>
+  <section class="container hero">
+    <p class="eyebrow">News</p>
+    <h1>What's changing in Dubai company formation</h1>
+    <p class="lede">
+      Regulatory changes and updates that affect setting up or running a
+      Dubai company, kept apart from the reference pages themselves.
+    </p>
+  </section>
+
+  <section class="container">
+    <NewsList items={items} />
+  </section>
+</Layout>

@@ -1,0 +1,57 @@
+---
+// Compact ~3-item embed for homepages (TODO 41/42). Renders nothing at all
+// when the feed is empty — that's the actual mechanism behind "show a news
+// block when there's news" (TODO 40): no empty section, no placeholder.
+import type { NewsItem } from "@dst/content/types";
+import { formatDate } from "../date.ts";
+
+interface Props {
+  items: NewsItem[];
+  limit?: number;
+  heading?: string;
+}
+const { items, limit = 3, heading = "News" } = Astro.props;
+const latest = [...items].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0)).slice(0, limit);
+---
+{latest.length > 0 && (
+  <section class="container news-block">
+    <div class="news-block-head">
+      <h2>{heading}</h2>
+      <a class="news-block-all" href="/news/" title="All news">All news &rarr;</a>
+    </div>
+    <ul class="news-block-list">
+      {latest.map((item) => {
+        const hasPage = Array.isArray(item.body) && item.body.length > 0;
+        const Tag = hasPage ? "a" : "div";
+        return (
+          <li>
+            <Tag class="news-block-item" href={hasPage ? `/news/${item.slug}/` : undefined} title={hasPage ? item.title : undefined}>
+              <time datetime={item.date}>{formatDate(item.date)}</time>
+              <span class="news-block-title">{item.title}</span>
+            </Tag>
+          </li>
+        );
+      })}
+    </ul>
+  </section>
+)}
+
+<style>
+  .news-block-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-2); }
+  .news-block-head h2 { margin: 0; }
+  .news-block-all { flex-shrink: 0; font-size: var(--step--1); font-weight: 600; text-decoration: none; }
+  .news-block-list { list-style: none; margin: var(--space-2) 0 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-1); }
+  .news-block-item {
+    display: flex;
+    gap: var(--space-2);
+    align-items: baseline;
+    padding: var(--space-1) 0;
+    border-top: 1px solid var(--border);
+    color: inherit;
+    text-decoration: none;
+  }
+  li:first-child .news-block-item { border-top: none; }
+  .news-block-item time { flex-shrink: 0; font-size: var(--step--1); color: var(--ink-faint); }
+  a.news-block-item:hover .news-block-title { color: var(--accent, #1F5C4E); }
+  .news-block-title { font-weight: 600; }
+</style>

@@ -1,0 +1,98 @@
+---
+import Layout from "../layouts/Layout.astro";
+import EventsList from "@dst/ui/EventsList.astro";
+import { formatDate } from "@dst/ui/date";
+import { eventsBySite, allEvents, upcomingEvents } from "@dst/content/events";
+
+const SITE_HOSTS: Record<string, string> = {
+  llc: "llc.dst.llc",
+  visas: "visas.dst.llc",
+  riviera: "riviera.dst.llc",
+  mbr: "mbr.dst.llc",
+  palmcentral: "palmcentral.dst.llc",
+  eco: "eco.dst.llc",
+};
+const SITE_LABELS: Record<string, string> = {
+  llc: "Company formation",
+  visas: "Visas",
+  riviera: "Riviera",
+  mbr: "MBR City",
+  palmcentral: "Palm Central",
+  eco: "Eco",
+};
+
+const items = eventsBySite("dst");
+
+// Same hub roundup the news page carries, so the two pages behave alike —
+// only upcoming ones, since a hub listing something that already happened
+// is worse than listing nothing. Cross-site detail pages live on their own
+// host, which is why this isn't EventsList.
+const networkItems = upcomingEvents(
+  allEvents.filter((item) => item.site !== "dst"),
+  10,
+).map((item) => {
+  const hasPage = Array.isArray(item.body) && item.body.length > 0;
+  return {
+    ...item,
+    href: hasPage ? `https://${SITE_HOSTS[item.site]}/events/${item.slug}/` : undefined,
+    siteLabel: SITE_LABELS[item.site] ?? item.site,
+  };
+});
+---
+<Layout
+  title="DST events"
+  description="Group-level events from DST, with a roundup of what's coming up across the network's sites."
+>
+  <section class="container hero">
+    <p class="eyebrow">Events</p>
+    <h1>DST events</h1>
+    <p class="lede">
+      Group-level events, published here once there's something
+      scheduled — a vertical's own events live on that vertical's site.
+    </p>
+  </section>
+
+  <section class="container">
+    <EventsList items={items} />
+  </section>
+
+  {networkItems.length > 0 && (
+    <section class="container network-events">
+      <h2>Coming up across the network</h2>
+      <ul class="network-events-list">
+        {networkItems.map((item) => {
+          const Tag = item.href ? "a" : "div";
+          return (
+            <li class="network-events-row">
+              <Tag class="network-events-inner" href={item.href} title={item.href ? item.title : undefined}>
+                <span class="network-events-site">{item.siteLabel}</span>
+                <span class="network-events-title">{item.title}</span>
+                <time datetime={item.start}>{formatDate(item.start)}</time>
+              </Tag>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+  )}
+</Layout>
+
+<style>
+  .network-events-list { list-style: none; margin: var(--space-2) 0 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-1); }
+  .network-events-row { border-top: 1px solid var(--border); }
+  .network-events-row:first-child { border-top: none; }
+  .network-events-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--space-2);
+    padding: var(--space-1) 0;
+    color: inherit;
+    text-decoration: none;
+    font-size: var(--step--1);
+  }
+  a.network-events-inner:hover .network-events-title { color: var(--accent, #1F5C4E); }
+  .network-events-site { flex-shrink: 0; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent, #1F5C4E); }
+  .network-events-title { flex: 1 1 auto; min-width: 12rem; }
+  .network-events-inner time { flex-shrink: 0; color: var(--ink-faint); }
+</style>

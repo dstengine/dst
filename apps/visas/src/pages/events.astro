@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import EventsList from "@dst/ui/EventsList.astro";
+import { eventsBySite } from "@dst/content/events";
+
+const items = eventsBySite("visas");
+---
+<Layout
+  title="Residency events"
+  description="Sessions on UAE residency routes and the Golden Visa, when there are any scheduled."
+>
+  <section class="container hero">
+    <p class="eyebrow">Events</p>
+    <h1>Residency and Golden Visa events</h1>
+    <p class="lede">
+      Sessions on residency routes and the Golden Visa, published here
+      once there's something scheduled.
+    </p>
+  </section>
+
+  <section class="container">
+    <EventsList items={items} />
+  </section>
+</Layout>

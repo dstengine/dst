@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import NewsList from "@dst/ui/NewsList.astro";
+import { newsBySite } from "@dst/content/news";
+
+const items = newsBySite("eco");
+---
+<Layout
+  title="Eco news"
+  description="Updates on DST's eco portfolio — new records, initiatives, and how the portfolio itself is run."
+>
+  <section class="container hero">
+    <p class="eyebrow">News</p>
+    <h1>What's new in the eco portfolio</h1>
+    <p class="lede">
+      Updates about the portfolio itself — new records, how it's run —
+      kept separate from the individual planting records below.
+    </p>
+  </section>
+
+  <section class="container">
+    <NewsList items={items} />
+  </section>
+</Layout>

@@ -2,6 +2,13 @@
 import Layout from "../layouts/Layout.astro";
 import { ICONS } from "@dst/ui/icons";
 import VentureGrid from "@dst/ui/VentureGrid.astro";
+import NewsBlock from "@dst/ui/NewsBlock.astro";
+import EventsBlock from "@dst/ui/EventsBlock.astro";
+import { newsBySite } from "@dst/content/news";
+import { eventsBySite } from "@dst/content/events";
+
+const newsItems = newsBySite("dst");
+const eventItems = eventsBySite("dst");
 
 // Every hub card carries a media panel so the grid reads as one row of
 // equals. Hubs without their own photography yet fall back to a mark on a
@@ -82,6 +89,9 @@ const hubs = [
     <h2>Hubs</h2>
     <VentureGrid items={hubs} />
   </section>
+
+  <NewsBlock items={newsItems} />
+  <EventsBlock items={eventItems} />
 
   <section id="approach" class="container">
     <h2>How we work</h2>

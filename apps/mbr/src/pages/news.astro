@@ -1,8 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ContentPage from "@dst/ui/district/ContentPage.astro";
+import NewsList from "@dst/ui/NewsList.astro";
 import { news } from "../content";
+import { newsBySite } from "@dst/content/news";
+
+const items = newsBySite("mbr");
 ---
 <Layout {...news}>
   <ContentPage {...news} />
+  <section class="container">
+    <NewsList items={items} />
+  </section>
 </Layout>

@@ -8,6 +8,13 @@
 - Each portfolio entry has its own page under /portfolio/. Photo and location are optional fields, filled in only when actually available — never estimated.
 - The current entry is a planting of Douglas fir saplings in Sverdlovsk region, Russia, funded by DST's founder via a friend (Max F.) who sourced and planted them.
 
+## News & events
+
+- [News](https://eco.dst.llc/news/): Updates about the portfolio itself — new records, how it's run — kept separate from the individual planting records under /portfolio/. Short, first-party items only; an empty feed means nothing to report yet, not a missing page.
+- [Events](https://eco.dst.llc/events/): Planting days and other in-person activity, published once something is scheduled.
+
+Sources, where cited, are named in the article text ("Source: X"), never linked as a live URL.
+
 ## Links
 
 - [Instagram @eco.dst.llc](https://www.instagram.com/eco.dst.llc/): dated posts and photographs — the primary record of this work.

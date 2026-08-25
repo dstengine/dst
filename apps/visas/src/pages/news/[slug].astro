@@ -1,0 +1,15 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import NewsArticle from "@dst/ui/NewsArticle.astro";
+import { newsBySite } from "@dst/content/news";
+
+export function getStaticPaths() {
+  const items = newsBySite("visas").filter((item) => Array.isArray(item.body) && item.body.length > 0);
+  return items.map((item) => ({ params: { slug: item.slug }, props: { item } }));
+}
+
+const { item } = Astro.props;
+---
+<Layout title={item.title} description={item.summary}>
+  <NewsArticle item={item} backHref="/news/" />
+</Layout>

@@ -1,5 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import NewsBlock from "@dst/ui/NewsBlock.astro";
+import EventsBlock from "@dst/ui/EventsBlock.astro";
+import { newsBySite } from "@dst/content/news";
+import { eventsBySite } from "@dst/content/events";
+
+const newsItems = newsBySite("visas");
+const eventItems = eventsBySite("visas");
 ---
 <Layout
   title="UAE Residency Visas"
@@ -59,5 +66,8 @@ import Layout from "../layouts/Layout.astro";
       changes day to day once you have it.
     </p>
   </section>
+
+  <NewsBlock items={newsItems} />
+  <EventsBlock items={eventItems} />
 </Layout>
 

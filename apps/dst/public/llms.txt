@@ -14,6 +14,13 @@
 
 - [Visas](https://visas.dst.llc/): UAE residency routes, including the Golden Visa, and how to think about which one fits. Linked from the Golden Visa page on Palm Central and elsewhere, not featured in the Hubs grid above.
 
+## News & events
+
+- [News](https://dst.llc/news/): DST's own updates (new integrations, new ventures), plus a network-wide roundup pulled from every vertical's own feed, each item labelled with its source site.
+- [Events](https://dst.llc/events/): Group-level events, when there are any scheduled — a vertical's own events live on that vertical's site.
+
+Short, first-party items only. Sources, where cited, are named in the article text ("Source: X"), never linked as a live URL; the one exception is an event's ticket/registration link, which routes through /go/<slug>/ (noindex, nofollow).
+
 ## Note
 
 DST itself is not a licensed real estate brokerage, company-formation agent, or immigration consultancy — each vertical routes to a licensed local partner for the regulated part of the transaction. See each site's own footer disclosure for its specific partner and license number.
