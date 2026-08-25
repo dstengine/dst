@@ -1,0 +1,164 @@
+---
+// Full-size viewer for any image marked `data-lightbox`, built on the
+// native <dialog> — no library, and nothing happens to the page without
+// JS beyond the images staying exactly as they were.
+//
+// On a record whose whole argument is "this is a real place", the
+// photographs are the evidence; a 240px thumbnail nobody can enlarge
+// wastes them.
+---
+<dialog class="lightbox" data-lightbox-dialog aria-label="Photo viewer">
+  <button class="lightbox-close" type="button" data-lightbox-close aria-label="Close viewer">&times;</button>
+  <button class="lightbox-nav lightbox-prev" type="button" data-lightbox-prev aria-label="Previous photo">&#8249;</button>
+  <figure class="lightbox-figure">
+    <img data-lightbox-image alt="" />
+    <figcaption data-lightbox-caption></figcaption>
+  </figure>
+  <button class="lightbox-nav lightbox-next" type="button" data-lightbox-next aria-label="Next photo">&#8250;</button>
+</dialog>
+
+<script is:inline>
+  (() => {
+    const dialog = document.querySelector("[data-lightbox-dialog]");
+    const images = [...document.querySelectorAll("img[data-lightbox]")];
+    if (!dialog || images.length === 0) return;
+
+    const view = dialog.querySelector("[data-lightbox-image]");
+    const caption = dialog.querySelector("[data-lightbox-caption]");
+    const prev = dialog.querySelector("[data-lightbox-prev]");
+    const next = dialog.querySelector("[data-lightbox-next]");
+    let index = 0;
+    let opener = null;
+
+    // A single image has nothing to page through.
+    if (images.length < 2) {
+      prev.hidden = true;
+      next.hidden = true;
+    }
+
+    const show = (i) => {
+      index = (i + images.length) % images.length;
+      const img = images[index];
+      view.src = img.getAttribute("data-lightbox-src") || img.currentSrc || img.src;
+      view.alt = img.alt || "";
+      caption.textContent = img.getAttribute("data-lightbox-caption") || img.alt || "";
+      caption.hidden = !caption.textContent;
+    };
+
+    const open = (i, from) => {
+      opener = from;
+      show(i);
+      dialog.showModal();
+    };
+
+    images.forEach((img, i) => {
+      // Pointer users get the image itself; keyboard users need a real
+      // control, so each thumbnail is made focusable and activatable.
+      img.style.cursor = "zoom-in";
+      img.tabIndex = 0;
+      img.setAttribute("role", "button");
+      img.addEventListener("click", () => open(i, img));
+      img.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          open(i, img);
+        }
+      });
+    });
+
+    prev.addEventListener("click", () => show(index - 1));
+    next.addEventListener("click", () => show(index + 1));
+    dialog.querySelector("[data-lightbox-close]").addEventListener("click", () => dialog.close());
+
+    dialog.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") { e.preventDefault(); show(index - 1); }
+      if (e.key === "ArrowRight") { e.preventDefault(); show(index + 1); }
+    });
+
+    // Clicking the backdrop closes; clicking the photo itself must not.
+    dialog.addEventListener("click", (e) => {
+      if (e.target === dialog) dialog.close();
+    });
+
+    // Return focus to the thumbnail that opened it, or the page loses the
+    // reader's place entirely.
+    dialog.addEventListener("close", () => {
+      view.removeAttribute("src");
+      opener?.focus();
+    });
+  })();
+</script>
+
+<style>
+  .lightbox {
+    width: min(96vw, 1400px);
+    max-width: none;
+    max-height: 94vh;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--ink);
+    overflow: visible;
+  }
+  .lightbox::backdrop { background: rgb(0 0 0 / 0.82); }
+
+  .lightbox[open] {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .lightbox-figure { margin: 0; min-width: 0; }
+  .lightbox-figure img {
+    display: block;
+    width: 100%;
+    max-height: 84vh;
+    object-fit: contain;
+    background: var(--surface-sunk);
+  }
+  .lightbox-figure figcaption {
+    margin-top: var(--space-2);
+    font-size: var(--step--1);
+    line-height: 1.5;
+    color: #E8E8E8;
+    text-shadow: 0 1px 2px rgb(0 0 0 / 0.6);
+  }
+
+  .lightbox-nav,
+  .lightbox-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(255 255 255 / 0.25);
+    background: rgb(0 0 0 / 0.45);
+    color: #fff;
+    cursor: pointer;
+    font-family: var(--font-body);
+    line-height: 1;
+  }
+  .lightbox-nav { width: 48px; height: 48px; border-radius: 999px; font-size: 1.8rem; }
+  .lightbox-nav:hover,
+  .lightbox-close:hover { background: rgb(0 0 0 / 0.75); }
+  .lightbox-nav:focus-visible,
+  .lightbox-close:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+  .lightbox-close {
+    position: absolute;
+    top: -2.75rem;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    font-size: 1.5rem;
+  }
+
+  /* On a phone the side arrows would crowd the photo out; swipe-free
+     paging moves under it instead. */
+  @media (max-width: 640px) {
+    .lightbox[open] { grid-template-columns: 1fr; }
+    .lightbox-nav { position: static; width: 44px; height: 44px; }
+    .lightbox-prev { grid-row: 2; justify-self: start; }
+    .lightbox-next { grid-row: 2; justify-self: end; margin-top: -44px; }
+  }
+</style>

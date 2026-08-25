@@ -22,6 +22,7 @@
     "./EventArticle.astro": "./src/components/EventArticle.astro",
     "./SourceLine.astro": "./src/components/SourceLine.astro",
     "./ImageNote.astro": "./src/components/ImageNote.astro",
+    "./Lightbox.astro": "./src/components/Lightbox.astro",
     "./analytics": "./src/analytics.ts",
     "./date": "./src/date.ts",
     "./district/ContentPage.astro": "./src/components/district/ContentPage.astro",

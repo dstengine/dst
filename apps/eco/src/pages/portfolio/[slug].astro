@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Lightbox from "@dst/ui/Lightbox.astro";
 import { stories, type Story } from "../../data/stories";
 
 export function getStaticPaths() {
@@ -35,7 +36,7 @@ const { lat, lng } = story.location ?? {};
 
   {story.photo && (
     <figure class="evidence">
-      <img src={story.photo} alt={story.photoAlt ?? ""} loading="eager" />
+      <img src={story.photo} alt={story.photoAlt ?? ""} loading="eager" data-lightbox data-lightbox-caption={story.photoAlt} />
       {story.photoAlt && (
         <figcaption class="container"><p>{story.photoAlt}</p></figcaption>
       )}
@@ -93,7 +94,7 @@ const { lat, lng } = story.location ?? {};
       <div class="plate-grid">
         {story.gallery.map((photo, i) => (
           <figure class="plate">
-            <img src={photo.src} alt={photo.alt} loading="lazy" />
+            <img src={photo.src} alt={photo.alt} loading="lazy" data-lightbox data-lightbox-caption={photo.alt} />
             <figcaption>
               <span class="plate-no">{String(i + 1).padStart(2, "0")}</span>
               {photo.alt}
@@ -120,6 +121,8 @@ const { lat, lng } = story.location ?? {};
   <nav class="container record-back">
     <a href="/#portfolio">← All records</a>
   </nav>
+
+  <Lightbox />
 </Layout>
 
 <style>
