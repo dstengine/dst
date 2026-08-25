@@ -172,6 +172,24 @@ const relatedItems = (item.related ?? []).map((card) => ({
     hyphens: auto;
     -webkit-hyphens: auto;
   }
+  /* Justification needs room to distribute: on a phone the column is short
+     enough that it opens rivers between words and hyphenates every other
+     line. Ragged right is the better reading experience there. */
+  @media (max-width: 640px) {
+    .prose p { text-align: left; hyphens: manual; -webkit-hyphens: manual; }
+  }
+
+  /* A 1200px-wide chart scaled into a 342px column renders its labels at
+     ~4px — present but unreadable. Below the breakpoint the diagram keeps a
+     legible width and scrolls sideways instead, the way a wide table does. */
+  @media (max-width: 700px) {
+    .figure-diagram {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior-x: contain;
+    }
+    .figure-diagram img { min-width: 56rem; max-width: none; }
+  }
   /* Roughly one line of leading. At --space-2 the gap was half the
      line-height and paragraphs ran together. */
   .prose p + p { margin-top: var(--space-3); }
