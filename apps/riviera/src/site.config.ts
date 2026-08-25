@@ -8,7 +8,7 @@ export const site = {
   // setting its own `image` (and `imageAlt`) in content.ts.
   headerImage: "/riviera.jpg",
   headerImageAlt:
-    "Illustration of the Azizi Riviera promenade at night — a generated image, not a photograph of the development.",
+    "Illustration of the Azizi Riviera promenade at night: lit low-rise blocks along a canal, palms and walkways at the water's edge.",
   // Machine-made, of no particular building. Said on the page rather than
   // only in the alt text, since an opener this size reads as a photograph.
   headerImageKind: "generated" as const,

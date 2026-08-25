@@ -8,6 +8,7 @@
 //
 //   node tools/review-pages.mjs <url|path> [more...] [--mobile] [--keep]
 //                                [--context "что на странице временное"]
+//                                [--ask "свой вопрос вместо стандартного"]
 //
 // Paths are resolved against a running dev server, so:
 //   node tools/review-pages.mjs http://localhost:4322/news/some-slug/
@@ -20,15 +21,19 @@ import { readFileSync, mkdirSync, writeFileSync } from "node:fs";
 import { homedir } from "node:os";
 import path from "node:path";
 
-// The question is the user's, verbatim. The paragraph after it exists
-// because the model kept answering from what it assumed a page like this
-// would contain — inventing missing meta tags, absent analytics, a wrong
-// hosting setup — instead of from the picture in front of it.
-const PROMPT = [
+// The default question is the user's, verbatim, split into the parts a custom
+// --ask should and shouldn't replace.
+const DEFAULT_QUESTION = [
   "Перечисли косяки и недоработки, если они присутствуют, которые не допустила бы IT компания при разработке многомиллионного сайта.",
   "",
-  "Исходи из того, что видно на скриншоте: вёрстка, выравнивание, отступы, типографика, читаемость, контраст, иерархия, поведение на мобильном, сам текст и его смысл.",
   "Отдельно ответь: что на этой странице выглядит непрофессионально — что выдаёт любителя, шаблон или недоделку, а не работу студии. Что именно создаёт это впечатление и чем это лечится.",
+].join("\n");
+
+// Kept whatever the question is: without it the model answered from what it
+// assumed a page like this would contain — inventing missing meta tags, absent
+// analytics, a wrong hosting setup — instead of from the picture in front of it.
+const GROUNDING = [
+  "Исходи из того, что видно на скриншоте: вёрстка, выравнивание, отступы, типографика, читаемость, контраст, иерархия, поведение на мобильном, сам текст и его смысл.",
   "Не рассуждай о том, чего на скриншоте не видно (мета-теги, разметка, скрипты, хостинг, производительность) — часть этих данных приложена ниже, остальное считай неизвестным и не перечисляй как недостаток.",
   "Если серьёзных проблем нет — так и скажи, не набирай список ради объёма.",
 ].join("\n");
@@ -120,12 +125,12 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // The free tier shares an upstream pool and hands out 429s regularly, so a
 // single attempt says nothing about whether the page is fine.
-async function reviewWithRetries(key, images, url, facts, context) {
+async function reviewWithRetries(key, images, url, facts, context, question) {
   let last;
   for (const model of MODELS) {
     for (let i = 1; i <= 3; i++) {
       try {
-        const answer = await review(key, images, url, model, facts, context);
+        const answer = await review(key, images, url, model, facts, context, question);
         return { answer, model };
       } catch (err) {
         last = err;
@@ -143,7 +148,7 @@ async function reviewWithRetries(key, images, url, facts, context) {
   throw last ?? new Error("no model produced an answer");
 }
 
-async function review(key, images, url, model, facts, context) {
+async function review(key, images, url, model, facts, context, question) {
   const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
     method: "POST",
     headers: {
@@ -161,7 +166,7 @@ async function review(key, images, url, model, facts, context) {
             {
               type: "text",
               text:
-                `${PROMPT}\n\n` +
+                `${question}\n\n` +
                 (context ? `${CONTEXT_PREFACE}\n${context}\n\n` : "") +
                 `Страница: ${url}\n\n` +
                 `Данные из HTML (их не видно на скриншоте — не сообщай как отсутствующее то, что здесь есть):\n` +
@@ -197,13 +202,23 @@ if (ctxAt !== -1 && !context) {
   console.error("--context нужен текст: --context \"схема — заглушка\"");
   process.exit(1);
 }
+const askAt = args.indexOf("--ask");
+const ask = askAt !== -1 ? args[askAt + 1] : null;
+if (askAt !== -1 && !ask) {
+  console.error("--ask нужен текст: --ask \"читается ли заголовок на телефоне?\"");
+  process.exit(1);
+}
+const question = `${ask ?? DEFAULT_QUESTION}\n\n${GROUNDING}`;
 const keep = args.includes("--keep");
 // ctxAt + 1 is the context text, not a url. Guarded on ctxAt: without the
 // flag ctxAt is -1 and an unguarded ctxAt + 1 would drop the first url.
-const urls = args.filter((a, i) => !a.startsWith("--") && !(ctxAt !== -1 && i === ctxAt + 1));
+// The value after --context / --ask is that flag's text, not a url. Guarded on
+// the index: without the flag it is -1 and an unguarded +1 drops the first url.
+const takesValue = new Set([ctxAt, askAt].filter((i) => i !== -1).map((i) => i + 1));
+const urls = args.filter((a, i) => !a.startsWith("--") && !takesValue.has(i));
 
 if (urls.length === 0) {
-  console.error('usage: node tools/review-pages.mjs <url> [more urls] [--mobile] [--keep] [--context "..."]');
+  console.error('usage: node tools/review-pages.mjs <url> [more urls] [--mobile] [--keep] [--context "..."] [--ask "..."]');
   process.exit(1);
 }
 
@@ -229,7 +244,7 @@ for (const url of urls) {
       });
     }
 
-    const { answer, model } = await reviewWithRetries(key, shots.map((b) => b.toString("base64")), url, facts, context);
+    const { answer, model } = await reviewWithRetries(key, shots.map((b) => b.toString("base64")), url, facts, context, question);
     console.log(`  модель: ${model}\n`);
     console.log(answer.trim());
   } catch (err) {

@@ -22,7 +22,7 @@ const hubs = [
     name: "Riviera",
     text: "Coffee, food, pools, water — the Riviera community, block by block.",
     image: "/riviera.jpg",
-    imageAlt: "Illustration of the Azizi Riviera promenade at night — a generated image, not a photograph of the development.",
+    imageAlt: "Illustration of the Azizi Riviera promenade at night: lit low-rise blocks along a canal, palms and walkways at the water's edge.",
   },
   {
     href: "https://palmcentral.dst.llc",
@@ -128,6 +128,9 @@ const hubs = [
   .hero { padding-bottom: var(--space-4); }
   .hero-actions { display: flex; gap: var(--space-2); margin-top: var(--space-3); flex-wrap: wrap; }
 
-  .approach-list { display: flex; flex-direction: column; gap: var(--space-2); padding-left: 1.2em; }
+  /* space-4, not space-2: at 14px the gap between items was narrower than
+     the 28.8px leading inside one, so three items read as a single block of
+     text with numbers in it. Separation has to beat the line spacing. */
+  .approach-list { display: flex; flex-direction: column; gap: var(--space-4); padding-left: 1.2em; }
   .approach-list li { max-width: var(--content-width); }
 </style>
