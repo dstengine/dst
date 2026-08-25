@@ -27,29 +27,10 @@
     .label { font-size: 20px; }
     .tiny { font-size: 15.5px; }
 
-    /* Media queries inside an SVG resolve against the size it is rendered
-       at, so the diagram can answer a narrow column itself. At phone width
-       every label here comes out around 4px — technically present and
-       unreadable. Type roughly triples and the long captions swap for short
-       ones; a horizontal scrollbar would be the alternative, and nobody
-       finds those. */
-    .wide { display: inline; }
-    .narrow { display: none; }
-    @media (max-width: 620px) {
-      .wide { display: none; }
-      .narrow { display: inline; }
-      .caps { font-size: 46px; letter-spacing: 0.1em; }
-      .huge { font-size: 150px; }
-      .big { font-size: 92px; }
-      .label { font-size: 58px; }
-      .tiny { font-size: 44px; }
-    }
   </style>
 
   <rect class="bg" width="1200" height="600" />
 
-  <!-- Wide: headline, rate, then the two months as bars. -->
-  <g class="wide">
     <text class="caps faint" x="80" y="72">DUBAI PROPERTY SALES &#183; H1 2026</text>
     <line class="rule" x1="80" y1="100" x2="1120" y2="100" stroke-width="1" />
 
@@ -64,7 +45,7 @@
     </g>
 
     <line class="rule" x1="80" y1="300" x2="1120" y2="300" stroke-width="1" />
-    <text class="caps faint" x="80" y="348">STRONGEST AND LATEST MONTH PUBLISHED</text>
+    <text class="caps faint" x="80" y="348">JANUARY VS JUNE &#183; THE TWO MONTHS PUBLISHED</text>
 
     <g transform="translate(80 400)">
       <text class="label ink" x="0" y="0">January</text>
@@ -83,32 +64,5 @@
     </g>
 
     <line class="rule" x1="80" y1="540" x2="1120" y2="540" stroke-width="1" />
-    <text class="tiny faint" x="80" y="576">A half-year total says the market is liquid — not that any particular building is a good buy</text>
-  </g>
-
-  <!-- Narrow: same figures, stacked, nothing to scroll to. Everything is
-       laid out to finish inside the 600-high viewBox — content placed past
-       it is simply cut off, since the box can't be changed from CSS. -->
-  <g class="narrow">
-    <text class="caps faint" x="60" y="70">H1 2026</text>
-    <text class="huge ink" x="60" y="190">Dh286.43b</text>
-    <text class="label muted" x="60" y="250">79,229 transactions</text>
-    <text class="label muted" x="60" y="312">433 sales a day</text>
-
-    <line class="rule" x1="60" y1="352" x2="1140" y2="352" stroke-width="3" />
-
-    <g transform="translate(60 412)">
-      <text class="label ink" x="0" y="0">January</text>
-      <text class="label ink" x="1080" y="0" text-anchor="end">Dh72.16b</text>
-      <rect class="track" x="0" y="18" width="1080" height="30" rx="15" opacity="0.5" />
-      <rect class="bar" x="0" y="18" width="1080" height="30" rx="15" />
-    </g>
-
-    <g transform="translate(60 522)">
-      <text class="label ink" x="0" y="0">June</text>
-      <text class="label ink" x="1080" y="0" text-anchor="end">Dh32.66b</text>
-      <rect class="track" x="0" y="18" width="1080" height="30" rx="15" opacity="0.5" />
-      <rect class="bar-soft" x="0" y="18" width="489" height="30" rx="15" />
-    </g>
-  </g>
+  <text class="tiny faint" x="80" y="576">A half-year total says the market is liquid — not that any particular building is a good buy</text>
 </svg>

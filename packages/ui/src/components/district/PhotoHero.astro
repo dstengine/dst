@@ -19,7 +19,7 @@ interface Props {
   /** Says what the picture is. Anything that isn't a photograph gets a
       visible mark, since a page-wide opener is the image most likely to be
       taken for a photograph of the place. */
-  imageKind?: "photo" | "illustration" | "render" | "generated";
+  imageKind?: "photo" | "diagram" | "illustration" | "render" | "generated";
 }
 
 const { eyebrow, title, tagline, image, imageAlt, level = "h1", imageKind } = Astro.props;
@@ -27,6 +27,7 @@ const Heading = level;
 
 // Naming the kind is enough — "Render" already says it isn't a photograph.
 const KIND_LABEL: Record<string, string> = {
+  diagram: "Diagram",
   illustration: "Illustration",
   render: "Render",
   generated: "AI-generated",

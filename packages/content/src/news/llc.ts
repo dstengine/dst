@@ -15,7 +15,7 @@ export const items: NewsItem[] = [
     image: "/news/free-zone-mainland-routes.svg",
     imageAlt:
       "The three routes a free zone company can take to the mainland under Resolution 11 of 2025: a mainland branch licence, a free-zone-held branch licence at AED 10,000 a year, or an activity permit of up to six months at AED 5,000.",
-    imageKind: "illustration",
+    imageKind: "diagram",
     imageCredit: "DST, from the resolution text",
     imageWidth: 1200,
     imageHeight: 600,

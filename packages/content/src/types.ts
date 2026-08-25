@@ -12,11 +12,14 @@ export interface Source {
 // Whether a picture is evidence or an impression. Property listings across
 // this market routinely present renders as photographs; saying which is
 // which costs nothing and is the whole difference between the two.
+// "diagram" is a drawing of real figures; "illustration" is a picture that
+// isn't. Calling a chart an illustration reads as if the numbers in it were
+// invented too.
 // "render" is a developer's visualisation of something not built yet;
 // "generated" is a machine-made image of no particular place. Naming the
 // second separately matters — calling it an illustration would hide the
 // one thing a reader would want to know about it.
-export type ImageKind = "photo" | "illustration" | "render" | "generated";
+export type ImageKind = "photo" | "diagram" | "illustration" | "render" | "generated";
 
 // Maps onto @dst/ui/VentureGrid.astro's VentureCardItem.
 export interface RelatedCard {
@@ -62,6 +65,10 @@ interface ItemBase {
   // what Core Web Vitals measures as layout shift.
   imageWidth?: number;
   imageHeight?: number;
+  // Portrait variant served to narrow screens. A diagram legible on a
+  // desktop is unreadable scaled into a phone column, and a landscape
+  // viewBox has no room for type large enough to fix that.
+  imageNarrow?: string;
   related?: RelatedCard[];
   geo?: Geo;
   form?: ItemForm;

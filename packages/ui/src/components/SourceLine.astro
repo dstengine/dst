@@ -19,8 +19,11 @@ const { source } = Astro.props;
   {source.verifiedOn && (
     <>
       <span class="source-line-sep" aria-hidden="true">·</span>
-      <span class="source-line-checked">
-        verified <time datetime={source.verifiedOn}>{formatDate(source.verifiedOn)}</time>
+      {/* Spelled out rather than left as "verified": readers — and review
+          tools — kept reading a later check date as a contradiction with
+          the publication date instead of as what it is. */}
+      <span class="source-line-checked" title={`Last checked against ${source.name} on this date`}>
+        checked against the source <time datetime={source.verifiedOn}>{formatDate(source.verifiedOn)}</time>
       </span>
     </>
   )}

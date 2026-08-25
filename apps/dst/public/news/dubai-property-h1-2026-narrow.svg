@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" width="1200" height="1500" role="img" aria-label="Dubai property sales in the first half of 2026: Dh286.43 billion across 79,229 transactions, averaging 433 sales and about Dh1.57 billion a day. January was the strongest month published at Dh72.16 billion from 15,896 transactions; June closed at Dh32.66 billion from 13,766.">
+  <style>
+    /* Portrait companion to dubai-property-h1-2026.svg, served to narrow
+       screens through a picture element. A separate file rather than a media query
+       inside the wide one: type large enough to read on a phone needs more
+       vertical room than the landscape viewBox has, and viewBox can't be
+       changed from CSS. Same figures, nothing dropped. */
+    .bg { fill: #FAF9F6; }
+    .ink { fill: #14181F; }
+    .muted { fill: #565F6B; }
+    .faint { fill: #6D727A; }
+    .rule { stroke: #E2DFD7; }
+    .track { fill: #E2DFD7; }
+    .bar { fill: #2E3A59; }
+    .bar-soft { fill: #8790AF; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #191C20; }
+      .ink { fill: #DCDFE3; }
+      .muted { fill: #9BA1AA; }
+      .faint { fill: #7A7F86; }
+      .rule { stroke: #2B2F35; }
+      .track { fill: #2B2F35; }
+      .bar { fill: #8C97C2; }
+      .bar-soft { fill: #4A5372; }
+    }
+    text { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; }
+    .caps { font-size: 44px; letter-spacing: 0.1em; }
+    .huge { font-size: 150px; font-weight: 600; letter-spacing: -0.03em; }
+    .label { font-size: 54px; }
+    .sub { font-size: 44px; }
+  </style>
+
+  <rect class="bg" width="1200" height="1500" />
+
+  <text class="caps faint" x="70" y="100">DUBAI PROPERTY SALES</text>
+  <text class="caps faint" x="70" y="170">H1 2026</text>
+  <line class="rule" x1="70" y1="215" x2="1130" y2="215" stroke-width="3" />
+
+  <text class="huge ink" x="70" y="360">Dh286.43b</text>
+  <text class="label muted" x="70" y="440">79,229 transactions</text>
+
+  <line class="rule" x1="70" y1="500" x2="1130" y2="500" stroke-width="3" />
+
+  <text class="label ink" x="70" y="590">433</text>
+  <text class="sub faint" x="70" y="650">sales a day</text>
+  <text class="label ink" x="620" y="590">Dh1.57b</text>
+  <text class="sub faint" x="620" y="650">daily turnover</text>
+
+  <line class="rule" x1="70" y1="710" x2="1130" y2="710" stroke-width="3" />
+  <text class="caps faint" x="70" y="790">JANUARY VS JUNE</text>
+  <text class="sub faint" x="70" y="850">the two months published</text>
+
+  <g transform="translate(70 950)">
+    <text class="label ink" x="0" y="0">January</text>
+    <text class="label ink" x="1060" y="0" text-anchor="end">Dh72.16b</text>
+    <rect class="track" x="0" y="30" width="1060" height="40" rx="20" opacity="0.5" />
+    <rect class="bar" x="0" y="30" width="1060" height="40" rx="20" />
+    <text class="sub faint" x="0" y="140">15,896 transactions</text>
+  </g>
+
+  <g transform="translate(70 1180)">
+    <text class="label ink" x="0" y="0">June</text>
+    <text class="label ink" x="1060" y="0" text-anchor="end">Dh32.66b</text>
+    <rect class="track" x="0" y="30" width="1060" height="40" rx="20" opacity="0.5" />
+    <rect class="bar-soft" x="0" y="30" width="480" height="40" rx="20" />
+    <text class="sub faint" x="0" y="140">13,766 transactions</text>
+  </g>
+
+  <line class="rule" x1="70" y1="1390" x2="1130" y2="1390" stroke-width="3" />
+  <text class="sub faint" x="70" y="1455">Liquidity, not a buy signal</text>
+</svg>

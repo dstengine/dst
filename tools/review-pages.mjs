@@ -19,8 +19,18 @@ import { readFileSync, mkdirSync, writeFileSync } from "node:fs";
 import { homedir } from "node:os";
 import path from "node:path";
 
-const PROMPT =
-  "Перечисли косяки и недоработки, если они присутствуют, которые не допустила бы IT компания при разработке многомиллионного сайта";
+// The question is the user's, verbatim. The paragraph after it exists
+// because the model kept answering from what it assumed a page like this
+// would contain — inventing missing meta tags, absent analytics, a wrong
+// hosting setup — instead of from the picture in front of it.
+const PROMPT = [
+  "Перечисли косяки и недоработки, если они присутствуют, которые не допустила бы IT компания при разработке многомиллионного сайта.",
+  "",
+  "Исходи из того, что видно на скриншоте: вёрстка, выравнивание, отступы, типографика, читаемость, контраст, иерархия, поведение на мобильном, сам текст и его смысл.",
+  "Отдельно ответь: что на этой странице выглядит непрофессионально — что выдаёт любителя, шаблон или недоделку, а не работу студии. Что именно создаёт это впечатление и чем это лечится.",
+  "Не рассуждай о том, чего на скриншоте не видно (мета-теги, разметка, скрипты, хостинг, производительность) — часть этих данных приложена ниже, остальное считай неизвестным и не перечисляй как недостаток.",
+  "Если серьёзных проблем нет — так и скажи, не набирай список ради объёма.",
+].join("\n");
 
 // stealth/ox-alpha first, then other free vision models. The free tier runs
 // on a shared upstream pool that hands out 429s for minutes at a time, so a
@@ -89,7 +99,7 @@ async function shoot(browser, url, { mobile }) {
       twitterCard: meta('meta[name="twitter:card"]'),
       jsonLdTypes: [...document.querySelectorAll('script[type="application/ld+json"]')]
         .flatMap((s) => { try { return [JSON.parse(s.textContent)].flat().map((b) => b["@type"]); } catch { return ["unparseable"]; } }),
-      headings: [...document.querySelectorAll("h1,h2,h3")].map((h) => `${h.tagName}: ${h.textContent.trim().slice(0, 60)}`),
+      headings: [...document.querySelectorAll("h1,h2,h3")].map((h) => ({ tag: h.tagName.toLowerCase(), text: h.textContent.trim().slice(0, 80) })),
       images: imgs.map((i) => ({ alt: i.alt || null, hasDimensions: Boolean(i.getAttribute("width") && i.getAttribute("height")), loading: i.getAttribute("loading") })),
       hasHorizontalScroll: document.documentElement.scrollWidth > document.documentElement.clientWidth + 1,
     };
