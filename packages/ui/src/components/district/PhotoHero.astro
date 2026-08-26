@@ -106,7 +106,9 @@ const kindLabel = imageKind && imageKind !== "photo" ? KIND_LABEL[imageKind] : u
        font, which left a display-sized heading wrapping in a ~320px column. */
     max-width: 42rem;
   }
-  .photo-hero-caption .eyebrow { margin: 0 0 var(--space-1); color: #fff; opacity: 0.75; }
+  /* Opaque white, not 0.75: the gradient under it varies with the photo, and
+     a label the reader has to work at is not worth the extra softness. */
+  .photo-hero-caption .eyebrow { margin: 0 0 var(--space-1); color: #fff; }
   .photo-hero-caption :is(h1, h2) {
     margin: 0;
     color: #fff;

@@ -28,16 +28,19 @@ interface Props {
   sections: { heading?: string; paragraphs: string[] }[];
   links: HubLink[];
   cta: Cta;
+  /** "Start here" read as a landing-page CTA on a site that is a standing
+      reference. What the grid actually holds is the everyday topics. */
+  linksHeading?: string;
 }
 
-const { sections, links, cta } = Astro.props;
+const { sections, links, cta, linksHeading = "Day to day" } = Astro.props;
 ---
 {/* What's coming up, above the grid: it's the one thing on the page with a
     deadline attached, and it's short. */}
 <slot name="lead" />
 
 <section class="container">
-  <h2>Start here</h2>
+  <h2>{linksHeading}</h2>
   <div class="link-grid">
     {links.map((link) => (
       <a class="card link-card" href={link.href} title={link.description}>

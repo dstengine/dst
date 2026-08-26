@@ -37,8 +37,6 @@ export const index = {
     { href: "/pools/", title: "Pools", description: "Your building's pool is the one you get — there's no shared one." },
     { href: "/water/", title: "Water", description: "The canal is for walking. The nearest real swim is a drive." },
     { href: "/money/", title: "Money", description: "Changing cash nearby, and what paying in crypto actually involves." },
-    { href: "/news/", title: "News", description: "What's opened, closed or changed inside the development." },
-    { href: "/events/", title: "Events", description: "What's on nearby, with dates." },
   ],
   cta: {
     href: "/rent/",

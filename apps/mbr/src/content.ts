@@ -40,8 +40,6 @@ export const index = {
     { href: "/pools/", title: "Pools", description: "Building pools against District One's Crystal Lagoon." },
     { href: "/water/", title: "Water", description: "The lagoon, the canal, and the real drive time to a beach." },
     { href: "/money/", title: "Money", description: "Nearby exchange, and buying with crypto in practice." },
-    { href: "/news/", title: "News", description: "What's changing district-wide, not one community's own updates." },
-    { href: "/events/", title: "Events", description: "Meydan racing, the lagoon's calendar, what draws a crowd." },
   ],
   cta: {
     href: "/rent/",
