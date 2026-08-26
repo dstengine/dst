@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "dst", "runtimeExecutable": "npx", "runtimeArgs": ["astro", "dev", "--root", "apps/dst", "--port", "4322"], "port": 4322 }
+  ]
+}

@@ -29,7 +29,7 @@ const { items, columns } = Astro.props;
     const Tag = item.href ? "a" : "article";
     return (
       <Tag class="venture" href={item.href} title={item.title}>
-        <div class="venture-media">
+        <div class:list={["venture-media", !item.image && "venture-media-mark"]}>
           {item.image ? (
             <img src={item.image} alt={item.imageAlt ?? ""} loading="lazy" />
           ) : (
@@ -113,7 +113,23 @@ const { items, columns } = Astro.props;
     transition: transform 400ms ease;
   }
   a.venture:hover .venture-media img { transform: scale(1.03); }
-  .venture-media svg { width: 30px; height: 30px; color: var(--ink-faint); }
+  /* A card with no photograph used to show a 30px grey glyph on an almost
+     invisible gradient, which reads as an image that failed to load. It is a
+     cover in its own right instead: the brand tint, a fine rule grid, and the
+     mark at a size that looks chosen rather than defaulted. */
+  .venture-media-mark {
+    background: var(--accent-tint);
+    background-image:
+      linear-gradient(to right, color-mix(in srgb, var(--accent) 12%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in srgb, var(--accent) 12%, transparent) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+  .venture-media-mark svg {
+    width: min(34%, 96px);
+    height: auto;
+    color: var(--accent);
+    opacity: 0.8;
+  }
 
   .venture-body { padding: var(--space-3); }
   .venture-meta { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); }

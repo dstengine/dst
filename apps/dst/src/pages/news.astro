@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import NewsList from "@dst/ui/NewsList.astro";
-import { formatDate } from "@dst/ui/date";
+import FeedCards from "@dst/ui/FeedCards.astro";
 import { newsBySite, allNews, latestNews } from "@dst/content/news";
 
 const SITE_HOSTS: Record<string, string> = {
@@ -25,19 +25,25 @@ const items = newsBySite("dst");
 
 // The hub carries its own news first, then a network-wide roundup below,
 // each item labelled with its source site. This isn't NewsList — a
-// cross-site item's detail page lives on that site's own host
-// (riviera.dst.llc/news/slug, not dst.llc/news/slug), which NewsList's
-// same-site relative links can't express.
-const networkItems = latestNews(
+// cross-site item's detail page and its image both live on that site's own
+// host (riviera.dst.llc/news/slug), which NewsList's same-site relative
+// links can't express.
+const networkCards = latestNews(
   allNews.filter((item) => item.site !== "dst"),
-  10,
+  9,
 ).map((item) => {
+  const host = SITE_HOSTS[item.site];
   const hasPage = Array.isArray(item.body) && item.body.length > 0;
   return {
-    ...item,
-    hasPage,
-    href: hasPage ? `https://${SITE_HOSTS[item.site]}/news/${item.slug}/` : undefined,
-    siteLabel: SITE_LABELS[item.site] ?? item.site,
+    href: hasPage && host ? `https://${host}/news/${item.slug}/` : undefined,
+    // The site, not the category: on a roundup, where an item comes from is
+    // the thing a reader is sorting by.
+    eyebrow: SITE_LABELS[item.site] ?? item.site,
+    date: item.date,
+    title: item.title,
+    text: item.summary,
+    image: item.image && host ? `https://${host}${item.image}` : undefined,
+    imageAlt: item.imageAlt,
   };
 });
 ---
@@ -60,54 +66,29 @@ const networkItems = latestNews(
   </section>
 
   <section class="container">
-    <NewsList items={items} />
+    {/* The roundup below carries a heading, so without one here the group's
+        own news is the only unlabelled thing on the page. */}
+    <h2>From the group</h2>
+    {items.length > 0 ? (
+      <NewsList items={items} />
+    ) : (
+      /* An empty feed used to render nothing at all, leaving the heading
+         hanging over the next section. Say why it's empty instead. */
+      <p class="feed-empty">
+        Nothing filed at group level yet. What the individual sites are
+        publishing is below.
+      </p>
+    )}
   </section>
 
-  {networkItems.length > 0 && (
-    <section class="container network-news">
+  {networkCards.length > 0 && (
+    <section class="container">
       <h2>Across the network</h2>
-      <ul class="network-news-list">
-        {networkItems.map((item) => {
-          const Tag = item.href ? "a" : "div";
-          return (
-            <li class="network-news-row">
-              <Tag class="network-news-inner" href={item.href} title={item.href ? item.title : undefined}>
-                <span class="network-news-site">{item.siteLabel}</span>
-                <span class="network-news-title">{item.title}</span>
-                <time datetime={item.date}>{formatDate(item.date)}</time>
-              </Tag>
-            </li>
-          );
-        })}
-      </ul>
+      <FeedCards items={networkCards} />
     </section>
   )}
 </Layout>
 
 <style>
-  .network-news-list { list-style: none; margin: var(--space-2) 0 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-1); }
-  /* Rows are data, not prose — the global 34rem `li` measure would strand
-     half a wide screen and cut the divider rules short. */
-  .network-news-row { border-top: 1px solid var(--border); max-width: none; }
-  .network-news-row:first-child { border-top: none; }
-  .network-news-inner {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: var(--space-2);
-    padding: var(--space-1) 0;
-    color: inherit;
-    text-decoration: none;
-    font-size: var(--step--1);
-  }
-  a.network-news-inner:hover .network-news-title { color: var(--accent, #1F5C4E); }
-  .network-news-site { flex-shrink: 0; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent, #1F5C4E); }
-  .network-news-title { flex: 1 1 auto; min-width: 12rem; }
-  /* Same monospaced tabular dates as the blocks and lists use. */
-  .network-news-inner time {
-    flex-shrink: 0;
-    font-family: var(--font-mono);
-    font-variant-numeric: tabular-nums;
-    color: var(--ink-faint);
-  }
+  .feed-empty { margin-top: var(--space-2); color: var(--ink-muted); }
 </style>

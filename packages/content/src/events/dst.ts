@@ -2,6 +2,54 @@ import type { EventItem } from "../types.ts";
 
 export const items: EventItem[] = [
   {
+    slug: "blockchain-life-dubai-2026",
+    site: "dst",
+    title: "Blockchain Life 2026",
+    summary:
+      "The 17th edition of the web3, mining and crypto forum returns to Dubai on December 1–2, 2026, at Festival Arena, with an AI Future stage added to the programme.",
+    start: "2026-12-01",
+    end: "2026-12-02",
+    venue: "Festival Arena",
+    city: "Dubai",
+    organizer: "Blockchain Life",
+    category: "Forum",
+    source: {
+      name: "Blockchain Life",
+      url: "https://blockchain-life.com/autumn2026/",
+      verifiedOn: "2026-08-26",
+    },
+    body: [
+      "Blockchain Life holds its 17th forum at Festival Arena, Dubai Festival City, on <strong>December 1 and 2, 2026</strong>, covering web3, mining, cryptocurrencies and — new this edition — a dedicated AI Future stage.",
+      "The organisers expect 15,000+ attendees from 130+ countries, 200+ speakers and 200+ booths.",
+    ],
+    expertise:
+      "This one runs six days before GITEX opens at Expo City, which makes the first half of December the densest stretch of the Dubai tech calendar this year — a consequence of GITEX vacating its October slot that nobody planned. Anyone flying in for both can do it on one trip; anyone competing for the same audience's attention now has a week rather than two months of separation. As always, the headline numbers are the organisers' projections.",
+  },
+  {
+    slug: "gitex-global-dubai-2026",
+    site: "dst",
+    title: "GITEX GLOBAL 2026",
+    summary:
+      "GITEX runs December 7–11, 2026 — its first edition at the Dubai Exhibition Centre in Expo City, after 45 years at Dubai World Trade Centre.",
+    start: "2026-12-07",
+    end: "2026-12-11",
+    venue: "Dubai Exhibition Centre, Expo City",
+    city: "Dubai",
+    organizer: "Dubai World Trade Centre",
+    category: "Exhibition",
+    source: {
+      name: "GITEX GLOBAL",
+      url: "https://www.gitex.com/",
+      verifiedOn: "2026-08-26",
+    },
+    body: [
+      "The 46th GITEX runs from <strong>December 7 to 11, 2026</strong>. The summit day on the 7th is at Dubai World Trade Centre; the exhibition itself runs December 8–11 at the Dubai Exhibition Centre in Expo City Dubai — 2.2 million square feet, about 1.5 times the old halls.",
+      "The venue puts expected participation at more than 200,000 attendees from 180+ countries, 6,800 exhibiting companies and 400+ government entities.",
+    ],
+    expertise:
+      "Worth checking the split before booking anything: the two days are in two different places, roughly 30 kilometres apart, and the December dates replace an October slot the region had planned around for four decades. Expo City has the space and the parking the old site never did; what it does not have is the ring of hotels and offices that grew up around Trade Centre, so the logistics that used to be a taxi ride are now a commute.",
+  },
+  {
     slug: "step-conference-dubai-2026",
     site: "dst",
     title: "Step Conference 2026",

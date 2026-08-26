@@ -7,9 +7,11 @@
 // centre — right for a reader who already came for the fact, wrong for a page
 // whose job is to make the network look worth reading.
 //
-// An event card carries no photograph and doesn't want one: the date is the
-// thing a reader is deciding about, so it becomes the cover. That's a design,
-// not a placeholder — a stock skyline over every conference would say less.
+// A card with no picture puts its date on the cover instead. For an event
+// that is the point of the card anyway — the date is what a reader is deciding
+// about, and a stock skyline over every conference would say less. For a news
+// item without artwork it beats both a blank panel and a lopsided grid where
+// one card has a cover and the next starts with a headline.
 import { formatDate } from "../date.ts";
 
 export interface FeedCardItem {
@@ -55,15 +57,15 @@ const parts = (iso: string) => {
     const when = parts(item.date);
     return (
       <Tag class="feed-card" href={item.href} title={item.href ? item.title : undefined}>
-        <div class:list={["feed-cover", item.event && "feed-cover-date"]}>
-          {item.event ? (
+        <div class:list={["feed-cover", !item.image && "feed-cover-date"]}>
+          {item.image ? (
+            <img src={item.image} alt={item.imageAlt ?? ""} loading="lazy" />
+          ) : (
             <div class="feed-date" aria-hidden="true">
               <span class="feed-date-day">{when.day}</span>
               <span class="feed-date-month">{when.month}</span>
               <span class="feed-date-year">{when.year}</span>
             </div>
-          ) : (
-            item.image && <img src={item.image} alt={item.imageAlt ?? ""} loading="lazy" />
           )}
         </div>
         <div class="feed-body">
@@ -100,12 +102,20 @@ const parts = (iso: string) => {
   }
   @container (min-width: 560px) {
     .feed-cards-pinned { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .feed-cards-pinned > :last-child:nth-child(odd) { grid-column: span 2; }
+    /* An odd card out spans the row rather than leaving a gap — and turns
+       sideways while it does, for the same reason a lone card does below. */
+    .feed-cards-pinned > :last-child:nth-child(odd) {
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    }
+    .feed-cards-pinned > :last-child:nth-child(odd) .feed-cover { height: 100%; max-height: none; aspect-ratio: auto; }
+    .feed-cards-pinned > :last-child:nth-child(odd) .feed-body { align-self: center; padding: var(--space-4); }
   }
   @container (min-width: 760px) {
     .feed-cards { grid-template-columns: repeat(var(--feed-columns, auto-fill), minmax(var(--feed-min, 260px), 1fr)); }
     .feed-cards-pinned { --feed-min: 0; }
-    .feed-cards-pinned > :last-child:nth-child(odd) { grid-column: auto; }
+    .feed-cards-pinned > :last-child:nth-child(odd) { grid-column: auto; display: flex; }
   }
 
   /* A lone card stretched across the grid blew its 16:9 cover up to the full
@@ -117,6 +127,12 @@ const parts = (iso: string) => {
        first of four and the side-by-side layout below plays out inside 265px. */
     .feed-cards.feed-cards-single { grid-template-columns: minmax(0, 1fr); }
     .feed-cards-single .feed-card { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
+    /* Grid stretch doesn't apply to an item with an aspect-ratio, so the
+       cover kept its 16:9 height and left an empty band under it whenever the
+       text beside it ran taller. Dropping the ratio is part of the fix: with
+       it still in force the height drives the width and the cover spills over
+       the column of text next to it. */
+    .feed-cards-single .feed-cover { height: 100%; max-height: none; aspect-ratio: auto; }
     .feed-cards-single .feed-body { align-self: center; padding: var(--space-4); }
     /* The date is the cover here, and at grid-card size it sat as a small mark
        in a large empty field. */
@@ -155,7 +171,13 @@ const parts = (iso: string) => {
   }
   a.feed-card:hover .feed-cover img { transform: scale(1.03); }
 
-  .feed-cover-date { background: var(--accent-tint); }
+  .feed-cover-date {
+    background: var(--accent-tint);
+    /* A photograph deserves whatever height its ratio asks for; a date does
+       not. Left at 16:9, a card that spans the full row turned three lines of
+       numbers into a 450px field of flat colour. */
+    max-height: 220px;
+  }
   .feed-date {
     display: flex;
     max-width: 100%;
@@ -188,8 +210,16 @@ const parts = (iso: string) => {
     color: var(--accent);
     font-weight: 600;
   }
-  .feed-countdown:not(:empty)::before { content: "· "; }
-  .feed-past { color: var(--ink-muted); }
+  .feed-countdown:not(:empty)::before { content: "\00b7 "; }
+  /* A chip, not a bare word: after a category and a date it read as a third
+     run-on fragment of the same sentence. */
+  .feed-past {
+    padding: 0.15em 0.5em;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: 0.85em;
+    color: var(--ink-muted);
+  }
 
   .feed-card h3 {
     margin-top: var(--space-2);

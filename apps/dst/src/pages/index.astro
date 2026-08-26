@@ -57,6 +57,14 @@ const hubs = [
     icon: ICONS.briefcase,
   },
   {
+    eyebrow: "Islands",
+    status: "In development",
+    inProgress: true,
+    name: "Dubai islands",
+    text: "The man-made islands off Dubai — who builds them, what stands on each one, and what it costs to live there.",
+    icon: ICONS.islands,
+  },
+  {
     eyebrow: "Crypto",
     status: "In development",
     inProgress: true,
@@ -94,8 +102,8 @@ const hubs = [
     <VentureGrid items={hubs} columns={3} />
   </section>
 
-  <NewsBlock items={newsItems} />
   <EventsBlock items={eventItems} />
+  <NewsBlock items={newsItems} />
 
   <section id="approach" class="container">
     <h2>How we work</h2>
