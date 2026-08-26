@@ -45,6 +45,7 @@ const parts = (iso: string) => {
   };
 };
 ---
+<div class="feed-shell">
 <div
   class:list={["feed-cards", columns && "feed-cards-pinned", items.length === 1 && "feed-cards-single"]}
   style={columns ? `--feed-columns: ${columns}` : undefined}
@@ -81,33 +82,45 @@ const parts = (iso: string) => {
     );
   })}
 </div>
+</div>
 
 <style>
+  /* Container queries, not media queries: these cards sit in a full-width
+     section on one page, in a 46rem article column on another, and in a ~310px
+     sidebar column on the district template. Keyed to the viewport, the
+     side-by-side layout below switched on in that 310px column too and clipped
+     the date clean off the cover. What matters is the space the cards have. */
+  .feed-shell { container-type: inline-size; }
+
   .feed-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr));
     gap: var(--space-3);
     margin-top: var(--space-3);
   }
-  @media (min-width: 560px) and (max-width: 759px) {
+  @container (min-width: 560px) {
     .feed-cards-pinned { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .feed-cards-pinned > :last-child:nth-child(odd) { grid-column: span 2; }
   }
-  @media (min-width: 760px) {
+  @container (min-width: 760px) {
     .feed-cards { grid-template-columns: repeat(var(--feed-columns, auto-fill), minmax(var(--feed-min, 260px), 1fr)); }
     .feed-cards-pinned { --feed-min: 0; }
+    .feed-cards-pinned > :last-child:nth-child(odd) { grid-column: auto; }
   }
 
   /* A lone card stretched across the grid blew its 16:9 cover up to the full
      width of the page — a chart three times the size of the headline under it.
-     On its own it turns sideways instead: cover on the left at a sane size,
+     Given room it turns sideways instead: cover on the left at a sane size,
      text beside it. It also stops a single-entry feed reading as a fragment. */
-  @media (min-width: 760px) {
+  @container (min-width: 620px) {
+    /* The row is one track wide, or auto-fill drops the lone card into the
+       first of four and the side-by-side layout below plays out inside 265px. */
+    .feed-cards.feed-cards-single { grid-template-columns: minmax(0, 1fr); }
     .feed-cards-single .feed-card { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
     .feed-cards-single .feed-body { align-self: center; padding: var(--space-4); }
     /* The date is the cover here, and at grid-card size it sat as a small mark
        in a large empty field. */
-    .feed-cards-single .feed-date-day { font-size: clamp(3.5rem, 7vw, 5.5rem); }
+    .feed-cards-single .feed-date-day { font-size: clamp(3.5rem, 9cqw, 5.5rem); }
     .feed-cards-single .feed-date-month { font-size: var(--step-0); }
     .feed-cards-single .feed-date-year { font-size: var(--step-0); }
   }
@@ -145,6 +158,7 @@ const parts = (iso: string) => {
   .feed-cover-date { background: var(--accent-tint); }
   .feed-date {
     display: flex;
+    max-width: 100%;
     flex-direction: column;
     align-items: center;
     line-height: 1;
