@@ -1,4 +1,5 @@
 ---
+import { go } from "../../outbound";
 import Layout from "../../layouts/Layout.astro";
 import Lightbox from "@dst/ui/Lightbox.astro";
 import { stories, type Story } from "../../data/stories";
@@ -81,7 +82,7 @@ const { lat, lng } = story.location ?? {};
         )}
       </dl>
       {story.location?.mapUrl && (
-        <a class="button button-secondary record-panel-action" href={story.location.mapUrl} target="_blank" rel="noopener">
+        <a class="button button-secondary record-panel-action" href={go(`${story.slug}-map`)} target="_blank" rel="noopener">
           Open in Google Maps
         </a>
       )}

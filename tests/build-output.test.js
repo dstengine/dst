@@ -23,12 +23,6 @@ const SITES = [
   { app: "mbr", host: "mbr.dst.llc" },
   { app: "palmcentral", host: "palmcentral.dst.llc" },
 ];
-// eco.dst.llc isn't a full SITES entry (see the "news and events" describe
-// block below for why), but it's still a legitimate network-internal host
-// other sites link to directly — dst.llc's hub grid already linked to it
-// before this file's news/events additions existed.
-const NETWORK_HOSTS = [...SITES.map((s) => s.host), "eco.dst.llc"];
-
 const TITLE_LIMIT = 60;
 
 /** Every built page: { app, url, file, html }. */
@@ -159,20 +153,8 @@ describe("links", () => {
     assert.deepEqual(broken, [], `internal links with no target: ${JSON.stringify(broken, null, 1)}`);
   });
 
-  // Third-party links must run through /go/ so external domains collect no
-  // link equity. Network-internal links stay direct on purpose.
-  test("third-party links go through /go/, not straight out", () => {
-    const direct = [];
-    for (const p of contentPages()) {
-      for (const tag of anchorsOf(p.html)) {
-        const href = hrefOf(tag);
-        if (!href?.startsWith("http")) continue;
-        const host = new URL(href).host;
-        if (!NETWORK_HOSTS.includes(host)) direct.push(`${p.app}${p.url} -> ${href}`);
-      }
-    }
-    assert.deepEqual(direct, [], `direct outbound links: ${JSON.stringify(direct, null, 1)}`);
-  });
+  // Links out of the network are checked in tests/outbound-links.test.js,
+  // which crawls all seven apps rather than the six listed here.
 });
 
 describe("outbound hops", () => {
@@ -381,7 +363,7 @@ describe("structured data", () => {
 });
 
 // News/events-specific checks, scoped to their own site list rather than
-// the shared SITES/NETWORK_HOSTS above. `pages`/`contentPages()` above
+// the shared SITES above. `pages`/`contentPages()` above
 // deliberately exclude eco (adding it would newly apply unrelated
 // pre-existing checks — e.g. "every anchor carries a title attribute" —
 // to eco's existing portfolio pages, which is out of scope here). This
