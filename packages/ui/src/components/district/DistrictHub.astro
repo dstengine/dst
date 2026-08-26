@@ -1,8 +1,14 @@
 ---
-// Home-page body shared by every district site: a "start here" grid of
-// links into the site's other pages, then a featured CTA banner for the
-// commercial page (rent). The page opener is rendered by DistrictLayout.
+// Home-page body shared by every district site: a "start here" grid of links
+// into the site's other pages, then whatever the page slots in (the news and
+// events blocks), then the district write-up, then a featured CTA banner for
+// the commercial page (rent). The page opener is rendered by DistrictLayout.
 // Sites differ only in the data passed in.
+//
+// The write-up used to come first. Someone who has just landed wants to know
+// where to go and what is happening, and reading two paragraphs of background
+// is not how they want to find out — so the links and the dated blocks come
+// first and the background sits under them, for the reader who wants it.
 import { iconFor } from "../../icons";
 
 interface HubLink {
@@ -26,13 +32,6 @@ interface Props {
 
 const { sections, links, cta } = Astro.props;
 ---
-{sections.map((section) => (
-  <section class="container">
-    {section.heading && <h2>{section.heading}</h2>}
-    {section.paragraphs.map((paragraph) => <p set:html={paragraph} />)}
-  </section>
-))}
-
 <section class="container">
   <h2>Start here</h2>
   <div class="link-grid">
@@ -49,6 +48,16 @@ const { sections, links, cta } = Astro.props;
     ))}
   </div>
 </section>
+
+{/* News and events, passed in by the page that owns the data. */}
+<slot />
+
+{sections.map((section) => (
+  <section class="container">
+    {section.heading && <h2>{section.heading}</h2>}
+    {section.paragraphs.map((paragraph) => <p set:html={paragraph} />)}
+  </section>
+))}
 
 <section class="container cta-section">
   <a class="cta-banner" href={cta.href} title={cta.description}>

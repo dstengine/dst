@@ -11,7 +11,8 @@ const newsItems = newsBySite("mbr");
 const eventItems = eventsBySite("mbr");
 ---
 <Layout {...index}>
-  <DistrictHub {...index} />
-  <NewsBlock items={newsItems} />
-  <EventsBlock items={eventItems} />
+  <DistrictHub {...index}>
+    <EventsBlock items={eventItems} />
+    <NewsBlock items={newsItems} />
+  </DistrictHub>
 </Layout>
