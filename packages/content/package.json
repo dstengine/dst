@@ -12,6 +12,8 @@
     "./news": "./src/news/index.ts",
     "./events": "./src/events/index.ts",
     "./ics": "./src/ics.ts",
-    "./reading": "./src/reading.ts"
+    "./reading": "./src/reading.ts",
+    "./lastmod": "./src/lastmod.ts",
+    "./lastmod.json": "./src/lastmod.json"
   }
 }

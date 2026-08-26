@@ -1,4 +1,5 @@
 ---
+import { itemContext } from '../schema';
 // Detail page body for a single news item. Every block below renders only
 // when its data is present (see the news/events spec's page anatomy) — a
 // missing optional field leaves no empty wrapper behind, not just hidden
@@ -66,6 +67,12 @@ const minutes = readingMinutes(item);
 // fit; otherwise built from whatever fields are actually present, since an
 // Article block with none of its optional fields filled is worse than no
 // block at all.
+// Absolute, because a crawler resolves a relative URL in JSON-LD against
+// nothing in particular; and tied to the page's own graph, so the article
+// has a named publisher instead of standing on its own.
+const absolute = (url: string) => (Astro.site ? new URL(url, Astro.site).href : url);
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
+
 const jsonLd =
   item.jsonLd ??
   {
@@ -74,7 +81,8 @@ const jsonLd =
     headline: item.title,
     description: item.summary,
     datePublished: item.date,
-    ...(item.image ? { image: item.image } : {}),
+    ...(canonical ? itemContext(canonical) : {}),
+    ...(item.image ? { image: absolute(item.image) } : {}),
     // Not isBasedOn: item.source.url — the URL is an internal audit trail
     // only (see the news/events spec's rule 1) and must never reach
     // rendered output, JSON-LD included. The source's name alone is public.

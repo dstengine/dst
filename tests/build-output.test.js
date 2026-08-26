@@ -355,7 +355,11 @@ describe("structured data", () => {
         assert.doesNotThrow(() => (data = JSON.parse(m[1])), `${p.app}${p.url}: JSON-LD does not parse`);
         for (const block of [data].flat()) {
           assert.ok(block["@context"], `${p.app}${p.url}: JSON-LD without @context`);
-          assert.ok(block["@type"], `${p.app}${p.url}: JSON-LD without @type`);
+          // The page graph holds its typed nodes in @graph; a standalone
+          // block is typed at the top level.
+          for (const n of block["@graph"] ?? [block]) {
+            assert.ok(n["@type"], `${p.app}${p.url}: JSON-LD node without @type`);
+          }
         }
       }
     }

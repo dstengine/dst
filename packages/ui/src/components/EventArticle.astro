@@ -1,4 +1,5 @@
 ---
+import { itemContext } from '../schema';
 // Detail page body for a single event — same block-only-when-present rule
 // as NewsArticle.astro, plus the two things an event has that a news item
 // doesn't: dates/venue/organizer in the header, and a ticket button right
@@ -75,6 +76,12 @@ const stamp = (day: string, time?: string) => (time ? `${day}T${time}:00${offset
 const startStamp = stamp(item.start, item.startTime);
 const endStamp = item.end || item.endTime ? stamp(item.end ?? item.start, item.endTime) : undefined;
 
+// Absolute, because a crawler resolves a relative URL in JSON-LD against
+// nothing in particular; and tied to the page's own graph, so the event
+// has a named publisher instead of standing on its own.
+const absolute = (url: string) => (Astro.site ? new URL(url, Astro.site).href : url);
+const canonicalUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
+
 const jsonLd =
   item.jsonLd ??
   {
@@ -82,6 +89,8 @@ const jsonLd =
     "@type": "Event",
     name: item.title,
     description: item.summary,
+    ...(canonicalUrl ? itemContext(canonicalUrl) : {}),
+    ...(item.image ? { image: absolute(item.image) } : {}),
     startDate: startStamp,
     ...(endStamp ? { endDate: endStamp } : {}),
     eventStatus: "https://schema.org/EventScheduled",
@@ -99,7 +108,7 @@ const jsonLd =
         }
       : {}),
     ...(item.organizer ? { organizer: { "@type": "Organization", name: item.organizer } } : {}),
-    ...(item.ticket && ticketHref ? { offers: { "@type": "Offer", url: ticketHref } } : {}),
+    ...(item.ticket && ticketHref ? { offers: { "@type": "Offer", url: absolute(ticketHref) } } : {}),
   };
 
 const relatedItems = (item.related ?? []).map((card) => ({

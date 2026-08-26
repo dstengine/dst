@@ -3,6 +3,8 @@ import '../styles/tokens.css';
 import Analytics from '../components/Analytics.astro';
 import LeadTracking from '../components/LeadTracking.astro';
 import { navIconFor } from '../icons';
+import { pageGraph } from '../schema';
+import { lastModified } from '@dst/content/lastmod';
 
 interface Props {
   title: string;
@@ -42,15 +44,38 @@ const isDstHome = Astro.site?.hostname === "dst.llc";
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
 // SVG is excluded on purpose: Telegram, WhatsApp and Facebook don't render
 // it in a link preview, so passing one produces an empty card rather than
-// no card. A text-only summary is the better failure.
+// no card. A page with no usable picture of its own falls back to the
+// site's share card — every site has one, drawn by tools/share-cards.mjs
+// from its own accent and its own words, so a shared link is never a bare
+// grey rectangle.
 const shareable = image && !/\.svgz?($|\?)/i.test(image);
-const shareImage = shareable && Astro.site ? new URL(image, Astro.site).href : undefined;
+const shareImage = Astro.site
+  ? new URL(shareable ? image! : "/share.png", Astro.site).href
+  : undefined;
 
 // Roughly how much room the inline nav wants, in px: label text, the gaps
 // between items, and the site name beside it. The header's content column
 // caps at 1180px and the name eats into that, so anything over ~900 wraps
 // onto a second row. llc (ten long labels, "Dubai Company Formation")
 // measures 1189 and did wrap; riviera's nine short ones measure 759 and fit.
+// Who published this page, which site it belongs to, and where it sits.
+// Emitted on every page of every host: the Organization node carries one
+// @id network-wide, which is what ties seven separate hostnames back to a
+// single company.
+const graph = Astro.site
+  ? pageGraph({
+      origin: Astro.site.origin,
+      siteName,
+      pathname: Astro.url.pathname,
+      canonical: canonical!,
+      title,
+      description,
+      image: shareImage,
+      dateModified: lastModified(Astro.site.hostname, Astro.url.pathname),
+      nav,
+    })
+  : undefined;
+
 const navFootprint =
   nav.reduce((sum, item) => sum + item.label.length, 0) * 8 +
   nav.length * 24 +
@@ -92,6 +117,7 @@ const denseNav = navFootprint > 900;
     ) : (
       <link rel="icon" href="data:," />
     )}
+    {graph && <script type="application/ld+json" set:html={JSON.stringify(graph)} />}
     {jsonLd.map((block) => (
       <script type="application/ld+json" set:html={JSON.stringify(block)} />
     ))}
