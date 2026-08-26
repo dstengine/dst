@@ -14,6 +14,7 @@
     "./ics": "./src/ics.ts",
     "./reading": "./src/reading.ts",
     "./lastmod": "./src/lastmod.ts",
-    "./lastmod.json": "./src/lastmod.json"
+    "./lastmod.json": "./src/lastmod.json",
+    "./network": "./src/network.ts"
   }
 }

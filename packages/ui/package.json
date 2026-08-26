@@ -35,6 +35,7 @@
     "./district/VenuePage.astro": "./src/components/district/VenuePage.astro",
     "./icons": "./src/icons.ts",
     "./tokens.css": "./src/styles/tokens.css",
-    "./schema": "./src/schema.ts"
+    "./schema": "./src/schema.ts",
+    "./NetworkLinks.astro": "./src/components/NetworkLinks.astro"
   }
 }

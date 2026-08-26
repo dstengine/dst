@@ -1,0 +1,85 @@
+---
+// Links across the network, in two shapes.
+//
+// `links` — a short curated row, shown in the footer of every vertical, so
+// a reader (and a crawler) arriving on any page can reach the sites next
+// door rather than only the hub.
+//
+// `sites` — the hub's full listing, where each site is named with the
+// pages worth going straight to. Deep links, because a hub that only ever
+// points at six home pages leaves every inner page of every vertical
+// reachable from nowhere but its own nav.
+import type { NetworkLink, NetworkSite } from "@dst/content/network";
+
+interface Props {
+  heading: string;
+  intro?: string;
+  links?: NetworkLink[];
+  sites?: NetworkSite[];
+}
+
+const { heading, intro, links = [], sites = [] } = Astro.props;
+const empty = links.length === 0 && sites.length === 0;
+---
+{!empty && (
+  <section class:list={["network-links", sites.length > 0 && "network-links-wide"]}>
+    <h2>{heading}</h2>
+    {intro && <p class="network-intro">{intro}</p>}
+    {sites.length > 0 ? (
+      <ul class="network-sites">
+        {sites.map((site) => (
+          <li>
+            <a class="network-site-name" href={`https://${site.host}`} title={`${site.name} — ${site.blurb}`}>
+              {site.name}
+            </a>
+            <p class="network-blurb">{site.blurb}</p>
+            <p class="network-deep">
+              {site.links.map((link, i) => (
+                <>
+                  {i > 0 && <span aria-hidden="true"> · </span>}
+                  <a href={link.href} title={link.title}>{link.label}</a>
+                </>
+              ))}
+            </p>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p class="network-row">
+        {links.map((link, i) => (
+          <>
+            {i > 0 && <span aria-hidden="true"> · </span>}
+            <a href={link.href} title={link.title}>{link.label}</a>
+          </>
+        ))}
+      </p>
+    )}
+  </section>
+)}
+
+<style>
+  .network-links { display: flex; flex-direction: column; gap: var(--space-2); }
+  .network-links h2 {
+    font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink-muted); font-weight: 600; margin: 0;
+  }
+  .network-row { margin: 0; line-height: 1.8; }
+  .network-intro { margin: 0; color: var(--ink-muted); max-width: 46ch; }
+
+  .network-links-wide { gap: var(--space-3); }
+  .network-sites {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; gap: var(--space-3);
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  }
+  .network-sites li { display: flex; flex-direction: column; gap: 0.35rem; min-width: 0; }
+  .network-site-name { font-weight: 600; }
+  /* The site name is a standalone link, not part of a sentence, so on a
+     phone it needs a thumb-sized target. The deep links below it are read
+     as a line of text and stay inline. */
+  @media (max-width: 640px) {
+    .network-site-name { display: inline-flex; align-items: center; min-height: 44px; }
+  }
+  .network-blurb { margin: 0; color: var(--ink-muted); font-size: 0.92rem; }
+  .network-deep { margin: 0; font-size: 0.92rem; }
+</style>

@@ -10,9 +10,35 @@
         "--root",
         "apps/dst",
         "--port",
+        "4321"
+      ],
+      "port": 4321
+    },
+    {
+      "name": "llc",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "astro",
+        "dev",
+        "--root",
+        "apps/llc",
+        "--port",
         "4322"
       ],
       "port": 4322
+    },
+    {
+      "name": "visas",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "astro",
+        "dev",
+        "--root",
+        "apps/visas",
+        "--port",
+        "4323"
+      ],
+      "port": 4323
     },
     {
       "name": "riviera",
@@ -23,9 +49,35 @@
         "--root",
         "apps/riviera",
         "--port",
+        "4324"
+      ],
+      "port": 4324
+    },
+    {
+      "name": "mbr",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "astro",
+        "dev",
+        "--root",
+        "apps/mbr",
+        "--port",
         "4325"
       ],
       "port": 4325
+    },
+    {
+      "name": "palmcentral",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "astro",
+        "dev",
+        "--root",
+        "apps/palmcentral",
+        "--port",
+        "4326"
+      ],
+      "port": 4326
     },
     {
       "name": "eco",
@@ -35,19 +87,6 @@
         "dev",
         "--root",
         "apps/eco",
-        "--port",
-        "4326"
-      ],
-      "port": 4326
-    },
-    {
-      "name": "llc",
-      "runtimeExecutable": "npx",
-      "runtimeArgs": [
-        "astro",
-        "dev",
-        "--root",
-        "apps/llc",
         "--port",
         "4327"
       ],

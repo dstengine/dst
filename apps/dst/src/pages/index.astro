@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import { ICONS } from "@dst/ui/icons";
 import VentureGrid from "@dst/ui/VentureGrid.astro";
+import NetworkLinks from "@dst/ui/NetworkLinks.astro";
+import { NETWORK } from "@dst/content/network";
 import NewsBlock from "@dst/ui/NewsBlock.astro";
 import EventsBlock from "@dst/ui/EventsBlock.astro";
 import { newsBySite } from "@dst/content/news";
@@ -100,6 +102,18 @@ const hubs = [
   <section id="hubs" class="container">
     <h2>Hubs</h2>
     <VentureGrid items={hubs} columns={3} />
+  </section>
+
+  {/* The cards above lead to six home pages. This leads to the pages
+      people actually come looking for — prices, free zones, the Golden
+      Visa — which otherwise sit behind another click and are reachable
+      from nowhere outside their own site's nav. */}
+  <section id="straight-to" class="container">
+    <NetworkLinks
+      heading="Straight to"
+      intro="The pages most people are after, without going through a home page first."
+      sites={NETWORK}
+    />
   </section>
 
   <EventsBlock items={eventItems} />
