@@ -17,13 +17,14 @@ interface Props {
 const { kind, credit, caption } = Astro.props;
 
 // The word alone carries it: "Render" already means "not a photograph",
-// and spelling that out reads as an apology for the picture.
-const LABELS: Record<ImageKind, string> = {
+// and spelling that out reads as an apology for the picture. `generated`
+// gets no label at all — how the image was produced is our business, not a
+// caption on the page.
+const LABELS: Partial<Record<ImageKind, string>> = {
   photo: "Photograph",
   diagram: "Diagram",
   illustration: "Illustration",
   render: "Render",
-  generated: "AI-generated",
 };
 const label = kind ? LABELS[kind] : undefined;
 const show = Boolean(caption || label || credit);

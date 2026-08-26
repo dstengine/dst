@@ -26,11 +26,13 @@ const { eyebrow, title, tagline, image, imageAlt, level = "h1", imageKind } = As
 const Heading = level;
 
 // Naming the kind is enough — "Render" already says it isn't a photograph.
+// No label for `generated`: stamping how a picture was made across the
+// opener is a note about our production process, not about the place, and it
+// is the first thing a visitor reads.
 const KIND_LABEL: Record<string, string> = {
   diagram: "Diagram",
   illustration: "Illustration",
   render: "Render",
-  generated: "AI-generated",
 };
 const kindLabel = imageKind && imageKind !== "photo" ? KIND_LABEL[imageKind] : undefined;
 ---

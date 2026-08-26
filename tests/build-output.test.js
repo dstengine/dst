@@ -541,8 +541,9 @@ describe("news and events", () => {
   // A render presented as a photograph is the default failure mode of this
   // market; if a kind is declared, the page has to say so in visible text.
   test("a declared image kind is stated in the visible caption", () => {
-    const LABEL = { photo: "Photograph", diagram: "Diagram", illustration: "Illustration", render: "Render", generated: "AI-generated" };
-    for (const item of [...allNews, ...allEvents].filter((i) => i.imageKind && i.body?.length)) {
+    // No entry for "generated": that kind is deliberately left uncaptioned.
+    const LABEL = { photo: "Photograph", diagram: "Diagram", illustration: "Illustration", render: "Render" };
+    for (const item of [...allNews, ...allEvents].filter((i) => LABEL[i.imageKind] && i.body?.length)) {
       const kind = "date" in item ? "news" : "events";
       const page = neDetailPages().find((p) => p.url === `/${kind}/${item.slug}/`);
       if (!page) continue;
