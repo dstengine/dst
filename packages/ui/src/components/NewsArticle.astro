@@ -4,9 +4,11 @@
 // missing optional field leaves no empty wrapper behind, not just hidden
 // content, since a stray `<section>` with nothing in it is what a
 // downstream test here specifically catches.
-import type { NewsItem } from "@dst/content/types";
+import type { EventItem, NewsItem } from "@dst/content/types";
 import LeadForm from "./LeadForm.astro";
 import VentureGrid from "./VentureGrid.astro";
+import FeedCards from "./FeedCards.astro";
+import CountdownScript from "./CountdownScript.astro";
 import SourceLine from "./SourceLine.astro";
 import ImageNote from "./ImageNote.astro";
 import { ICONS } from "../icons.ts";
@@ -16,8 +18,48 @@ import { readingMinutes } from "@dst/content/reading";
 interface Props {
   item: NewsItem;
   backHref: string;
+  /** The rest of the site's news. Without it an article is a dead end: the
+      only way on is the back link, since `related` is filled in by hand and
+      most items don't have any. */
+  more?: NewsItem[];
+  /** Fallback for a site with only one news item: an article there would
+      otherwise still end in a back link and nothing else. */
+  moreEvents?: EventItem[];
 }
-const { item, backHref } = Astro.props;
+const { item, backHref, more = [], moreEvents = [] } = Astro.props;
+
+const moreCards = more
+  .filter((other) => other.slug !== item.slug && Array.isArray(other.body) && other.body.length > 0)
+  .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0))
+  .slice(0, 3)
+  .map((other) => ({
+    href: `/news/${other.slug}/`,
+    eyebrow: other.category,
+    date: other.date,
+    title: other.title,
+    text: other.summary,
+    image: other.image,
+    imageAlt: other.imageAlt,
+  }));
+
+const todayIso = new Date().toISOString().slice(0, 10);
+const eventCards = moreEvents
+  .filter((e) => e.start >= todayIso && Array.isArray(e.body) && e.body.length > 0)
+  .sort((a, b) => (a.start < b.start ? -1 : 1))
+  .slice(0, 3)
+  .map((e) => ({
+    href: `/events/${e.slug}/`,
+    eyebrow: e.category,
+    date: e.start,
+    title: e.title,
+    text: [e.venue, e.city].filter(Boolean).join(" · ") || e.summary,
+    event: true,
+  }));
+const tail = moreCards.length > 0
+  ? { heading: "More news", cards: moreCards }
+  : eventCards.length > 0
+    ? { heading: "Coming up", cards: eventCards }
+    : null;
 const minutes = readingMinutes(item);
 
 // `jsonLd` on the item is a manual override for cases automation doesn't
@@ -128,6 +170,16 @@ const relatedItems = (item.related ?? []).map((card) => ({
 
   {item.source && <SourceLine source={item.source} />}
 
+  {tail && (
+    <section class="news-article-more">
+      <h2>{tail.heading}</h2>
+      <FeedCards items={tail.cards} columns={tail.cards.length} />
+      {/* Only when the tail is events: the countdown markup is inert without
+          it, and a news article otherwise has nothing to count down to. */}
+      {tail.cards[0].event && <CountdownScript />}
+    </section>
+  )}
+
   <nav class="news-article-back">
     <a href={backHref} title="All news">&larr; All news</a>
   </nav>
@@ -197,6 +249,7 @@ const relatedItems = (item.related ?? []).map((card) => ({
   .news-article-form { margin-top: var(--space-4); }
 
   .news-article-related { margin-top: var(--space-4); }
+  .news-article-more { margin-top: var(--space-5); }
 
 
   .news-article-back { margin-top: var(--space-4); font-family: var(--font-mono); font-size: var(--step--1); }

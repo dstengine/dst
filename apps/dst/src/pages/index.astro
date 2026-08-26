@@ -72,22 +72,26 @@ const hubs = [
 >
   <section class="container hero">
     <p class="eyebrow">AI · Crypto · Real Estate</p>
-    <h1>We build the systems. Partners execute the vertical.</h1>
-    <p class="lede">
-      DST is an operating group, not a single business. We design and run the
-      digital infrastructure behind ventures in three fast-moving spaces, and
-      pair each one with a licensed local partner who handles the regulated,
-      on-the-ground side. The first builds are live in Dubai.
-    </p>
-    <div class="hero-actions">
-      <a class="button" href="#hubs" title="What DST is building">Hubs</a>
-      <a class="button button-secondary" href="/contact/" title="Get in touch with DST">Get in touch</a>
+    <div class="hero-columns">
+      <h1>We build the systems. Partners execute the vertical.</h1>
+      <div class="hero-text">
+        <p class="lede">
+          DST is an operating group, not a single business. We design and run the
+          digital infrastructure behind ventures in three fast-moving spaces, and
+          pair each one with a licensed local partner who handles the regulated,
+          on-the-ground side. The first builds are live in Dubai.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="#hubs" title="What DST is building">See the hubs</a>
+          <a class="button button-secondary" href="/contact/" title="Get in touch with DST">Get in touch</a>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="hubs" class="container">
     <h2>Hubs</h2>
-    <VentureGrid items={hubs} />
+    <VentureGrid items={hubs} columns={3} />
   </section>
 
   <NewsBlock items={newsItems} />
@@ -127,6 +131,24 @@ const hubs = [
      the shared default doesn't have. */
   .hero { padding-bottom: var(--space-4); }
   .hero-actions { display: flex; gap: var(--space-2); margin-top: var(--space-3); flex-wrap: wrap; }
+
+  /* One column on a phone, in source order. On a wide screen the heading ran
+     the full 1132px of the container while the paragraph under it stopped at
+     544px, leaving the right half of the first screen empty — the reader sees
+     an unfinished layout, not a deliberate one. Side by side, the heading gets
+     a display measure and the container is actually used. */
+  @media (min-width: 900px) {
+    .hero-columns {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: var(--space-5);
+      align-items: start;
+    }
+    .hero-columns h1 { margin-top: 0; }
+    /* The lede's own 34rem cap is what made the two blocks disagree; inside a
+       column of its own the column is the measure. */
+    .hero-columns .lede { max-width: none; }
+  }
 
   /* space-4, not space-2: at 14px the gap between items was narrower than
      the 28.8px leading inside one, so three items read as a single block of

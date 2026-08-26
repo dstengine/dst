@@ -3,11 +3,11 @@
 // of NewsBlock.astro. Shows only upcoming events; renders nothing when
 // there are none, same "show it only when there's something to show" rule.
 //
-// Structurally the mirror of the news block rather than a copy of it: a
-// news item's date is a filing stamp, an event's date is the whole point,
-// so here the date leads and carries a countdown.
+// Same cards as the news block, with one difference that matters: a news
+// item's date is a filing stamp, an event's date is the whole point, so the
+// card leads with the date as its cover and carries a countdown.
 import type { EventItem } from "@dst/content/types";
-import { formatDate } from "../date.ts";
+import FeedCards from "./FeedCards.astro";
 import CountdownScript from "./CountdownScript.astro";
 
 interface Props {
@@ -21,33 +21,26 @@ const upcoming = items
   .filter((e) => e.start >= todayIso)
   .sort((a, b) => (a.start < b.start ? -1 : a.start > b.start ? 1 : 0))
   .slice(0, limit);
+
+const cards = upcoming.map((item) => {
+  const hasPage = Array.isArray(item.body) && item.body.length > 0;
+  return {
+    href: hasPage ? `/events/${item.slug}/` : undefined,
+    eyebrow: item.category,
+    date: item.start,
+    title: item.title,
+    text: [item.venue, item.city].filter(Boolean).join(" · ") || item.summary,
+    event: true,
+  };
+});
 ---
-{upcoming.length > 0 && (
+{cards.length > 0 && (
   <section class="container events-block">
     <div class="events-block-head">
       <h2>{heading}</h2>
       <a class="events-block-all" href="/events/" title="All events">All events &rarr;</a>
     </div>
-    <ul class="events-block-list">
-      {upcoming.map((item) => {
-        const hasPage = Array.isArray(item.body) && item.body.length > 0;
-        const Tag = hasPage ? "a" : "div";
-        return (
-          <li>
-            <Tag class="events-block-item" href={hasPage ? `/events/${item.slug}/` : undefined} title={hasPage ? item.title : undefined}>
-              <span class="events-block-when">
-                <time datetime={item.start}>{formatDate(item.start)}</time>
-                {/* Filled in by CountdownScript; stays empty without JS,
-                    where the absolute date above already says everything
-                    that matters. */}
-                <span class="events-block-countdown" data-countdown datetime={item.start}></span>
-              </span>
-              <span class="events-block-title">{item.title}</span>
-            </Tag>
-          </li>
-        );
-      })}
-    </ul>
+    <FeedCards items={cards} columns={cards.length} />
     <CountdownScript />
   </section>
 )}
@@ -60,59 +53,16 @@ const upcoming = items
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    gap: var(--space-2);
-    padding-bottom: var(--space-1);
-    border-bottom: 1px solid var(--border);
+    gap: var(--space-3);
   }
-  .events-block-head h2 {
-    margin: 0;
-    font-family: var(--font-mono);
+  .events-block-head h2 { margin: 0; }
+  .events-block-all {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    flex-shrink: 0;
     font-size: var(--step--1);
     font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-muted);
-  }
-  /* inline-flex + min-height: on a phone this was a 24px-tall target sitting
-     beside a heading, well under the 44px below which taps start landing on
-     whatever is next to them. The box grows, the text stays put. */
-  .events-block-all { display: inline-flex; align-items: center; min-height: 44px; flex-shrink: 0; font-size: var(--step--1); font-weight: 600; text-decoration: none; }
-  .events-block-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
-  /* See NewsBlock: rows are data, so they ignore the prose measure. */
-  .events-block-list li { max-width: none; }
-  .events-block-item {
-    display: flex;
-    gap: var(--space-3);
-    align-items: baseline;
-    padding: var(--space-2) 0;
-    border-top: 1px solid var(--border);
-    color: inherit;
     text-decoration: none;
-  }
-  li:first-child .events-block-item { border-top: none; }
-
-  .events-block-when {
-    flex-shrink: 0;
-    min-width: 7.5em;
-    display: flex;
-    flex-direction: column;
-    font-family: var(--font-mono);
-    font-variant-numeric: tabular-nums;
-    font-size: var(--step--1);
-  }
-  /* The date reads at full ink here, unlike the news block's: for something
-     that hasn't happened yet, "when" is the thing the reader is scanning for. */
-  .events-block-when time { color: var(--ink); }
-  .events-block-countdown:not(:empty) {
-    margin-top: 0.15em;
-    color: var(--accent, #1F5C4E);
-  }
-
-  a.events-block-item:hover .events-block-title { color: var(--accent, #1F5C4E); }
-  .events-block-title { font-weight: 600; }
-
-  @media (max-width: 600px) {
-    .events-block-item { flex-direction: column; gap: 0.2em; }
-    .events-block-when { flex-direction: row; gap: 0.6em; }
   }
 </style>

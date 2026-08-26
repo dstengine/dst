@@ -2,18 +2,22 @@
 import Layout from "../../layouts/Layout.astro";
 import EventArticle from "@dst/ui/EventArticle.astro";
 import { eventsBySite } from "@dst/content/events";
+import { newsBySite } from "@dst/content/news";
 
 // eco has no ticketed events yet, so no outbound.ts / go/[slug].astro on
 // this app — the /go/<slug>-ticket/ path below only resolves once a site
 // registers that slug in its own outbound.ts (see riviera's, which does).
 export function getStaticPaths() {
   const items = eventsBySite("eco").filter((item) => Array.isArray(item.body) && item.body.length > 0);
-  return items.map((item) => ({ params: { slug: item.slug }, props: { item } }));
+  // The rest of the feed travels with each page so the article can end
+  // with somewhere to go instead of only a back link.
+  return items.map((item) => ({ params: { slug: item.slug }, props: { item, more: items } }));
 }
 
-const { item } = Astro.props;
+const moreNews = newsBySite("eco");
+const { item, more } = Astro.props;
 const ticketHref = item.ticket ? `/go/${item.slug}-ticket/` : undefined;
 ---
 <Layout title={item.title} description={item.summary} image={item.image}>
-  <EventArticle item={item} backHref="/events/" ticketHref={ticketHref} />
+  <EventArticle item={item} more={more} moreNews={moreNews} backHref="/events/" ticketHref={ticketHref} />
 </Layout>

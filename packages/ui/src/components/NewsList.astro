@@ -1,92 +1,29 @@
 ---
-// Body of /news/ across the network. A dated list, not a card grid —
-// VentureGrid stays reserved for the "related" block on item pages (see
-// VentureGrid.astro's own comment on why it can't drift). A thumbnail is
-// optional per item; an item only links to its own page when it has a
-// `body` — a thin item with no detail page renders as a self-contained
-// row instead (rule 7 in the news/events spec).
+// Body of /news/ across the network. The same cards as the blocks on a front
+// page and the feed under an article: one format for a feed item everywhere it
+// appears, so the listing isn't a weaker version of the block that linked to
+// it. An item only links to its own page when it has a `body` — a thin item
+// with no detail page renders as a self-contained card instead (rule 7 in the
+// news/events spec).
 import type { NewsItem } from "@dst/content/types";
-import { formatDate } from "../date.ts";
+import FeedCards from "./FeedCards.astro";
 
 interface Props {
   items: NewsItem[];
 }
 const { items } = Astro.props;
 const sorted = [...items].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
+const cards = sorted.map((item) => {
+  const hasPage = Array.isArray(item.body) && item.body.length > 0;
+  return {
+    href: hasPage ? `/news/${item.slug}/` : undefined,
+    eyebrow: item.category,
+    date: item.date,
+    title: item.title,
+    text: item.summary,
+    image: item.image,
+    imageAlt: item.imageAlt,
+  };
+});
 ---
-{sorted.length > 0 && (
-  <ul class="item-list">
-    {sorted.map((item) => {
-      const hasPage = Array.isArray(item.body) && item.body.length > 0;
-      const Tag = hasPage ? "a" : "div";
-      return (
-        <li class="item-row">
-          <Tag class="item-row-inner" href={hasPage ? `/news/${item.slug}/` : undefined} title={hasPage ? item.title : undefined}>
-            {item.image && <img class="item-row-thumb" src={item.image} alt={item.imageAlt ?? ""} loading="lazy" />}
-            <div class="item-row-body">
-              <p class="item-row-meta">
-                {item.category && <span class="item-row-category">{item.category}</span>}
-                <time datetime={item.date}>{formatDate(item.date)}</time>
-              </p>
-              <h3>{item.title}</h3>
-              <p class="item-row-summary">{item.summary}</p>
-            </div>
-          </Tag>
-        </li>
-      );
-    })}
-  </ul>
-)}
-
-<style>
-  .item-list { list-style: none; margin: var(--space-3) 0 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-2); }
-  .item-row { border-top: 1px solid var(--border); }
-  .item-row:first-child { border-top: none; }
-  .item-row-inner {
-    display: flex;
-    gap: var(--space-3);
-    align-items: flex-start;
-    padding: var(--space-2) 0;
-    color: inherit;
-    text-decoration: none;
-  }
-  a.item-row-inner:hover h3 { color: var(--accent, #1F5C4E); }
-  .item-row-thumb {
-    flex-shrink: 0;
-    width: 96px;
-    height: 72px;
-    object-fit: cover;
-    border-radius: var(--radius);
-    background: var(--surface-sunk);
-  }
-  .item-row-body { min-width: 0; }
-  /* The global `p, li` measure caps prose at a readable 34rem. A dated row
-     is data, not a paragraph — capped, it strands half a wide screen and
-     cuts the divider rules short. The summary line keeps its own measure
-     below, where the cap is doing real work. */
-  .item-row { max-width: none; }
-  .item-row-meta {
-    display: flex;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: var(--space-2);
-    margin: 0;
-    max-width: none;
-    font-size: var(--step--1);
-    color: var(--ink-faint);
-  }
-  /* Dates are data, not prose — same monospaced tabular treatment used in
-     the homepage blocks and on the eco records' coordinates. */
-  .item-row-meta time {
-    font-family: var(--font-mono);
-    font-variant-numeric: tabular-nums;
-  }
-  .item-row-category {
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--accent, #1F5C4E);
-  }
-  .item-row-body h3 { margin: 0.2em 0 0; font-size: var(--step-1); }
-  .item-row-summary { margin: 0.2em 0 0; font-size: var(--step--1); color: var(--ink-muted); }
-</style>
+{cards.length > 0 && <FeedCards items={cards} />}

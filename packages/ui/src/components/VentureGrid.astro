@@ -1,9 +1,9 @@
 ---
 // Extracted 1:1 from the dst.llc hub grid — same markup, same class names,
-// same CSS. Any site using this component renders identically to how the
-// hub grid always has; do not rename classes or restructure the markup
-// here without checking dst.llc, since that's the one place this can't
-// visually drift from.
+// same CSS. It stayed frozen so no other site could drag the hub's own grid
+// around by accident. The column cap below is the first deliberate change to
+// it: the markup is still identical, and the hub's five cards no longer come
+// out as four and a stray.
 export interface VentureCardItem {
   href?: string;
   title?: string;
@@ -18,10 +18,13 @@ export interface VentureCardItem {
 }
 interface Props {
   items: VentureCardItem[];
+  /** Pin the column count at desktop widths, when the caller knows its own
+      card count and auto-fill would leave one card alone on the last row. */
+  columns?: number;
 }
-const { items } = Astro.props;
+const { items, columns } = Astro.props;
 ---
-<div class="venture-grid">
+<div class:list={["venture-grid", columns && "venture-grid-pinned"]} style={columns ? `--venture-columns: ${columns}` : undefined}>
   {items.map((item) => {
     const Tag = item.href ? "a" : "article";
     return (
@@ -62,6 +65,26 @@ const { items } = Astro.props;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: var(--space-3);
     margin-top: var(--space-3);
+  }
+
+  /* An orphan is a card sitting alone on the last row. At desktop widths the
+     260px minimum gave four columns, so the hub's five cards came out 4 + 1
+     and the fifth read as an afterthought rather than a peer. A caller that
+     pins its column count gets a deterministic layout at every width instead:
+     three across on desktop, two on a tablet with a lone last card widened to
+     span both, one on a phone. Callers that don't pin keep auto-fill, which is
+     the right answer when the card count isn't known up front. */
+  @media (min-width: 560px) and (max-width: 759px) {
+    .venture-grid-pinned { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .venture-grid-pinned > :last-child:nth-child(odd) { grid-column: span 2; }
+  }
+  @media (min-width: 760px) {
+    .venture-grid {
+      /* The pinned minimum is 0: the caller has taken responsibility for the
+         count, and a 260px floor would push three columns past a 768px screen. */
+      grid-template-columns: repeat(var(--venture-columns, auto-fill), minmax(var(--venture-min, 260px), 1fr));
+    }
+    .venture-grid-pinned { --venture-min: 0; }
   }
   .venture {
     display: flex;

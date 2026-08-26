@@ -3,9 +3,10 @@
 // as NewsArticle.astro, plus the two things an event has that a news item
 // doesn't: dates/venue/organizer in the header, and a ticket button right
 // under it while intent is still fresh.
-import type { EventItem } from "@dst/content/types";
+import type { EventItem, NewsItem } from "@dst/content/types";
 import LeadForm from "./LeadForm.astro";
 import VentureGrid from "./VentureGrid.astro";
+import FeedCards from "./FeedCards.astro";
 import SourceLine from "./SourceLine.astro";
 import ImageNote from "./ImageNote.astro";
 import CountdownScript from "./CountdownScript.astro";
@@ -16,8 +17,55 @@ interface Props {
   item: EventItem;
   backHref: string;
   ticketHref?: string; // resolved by the route to /go/<slug>/, not item.ticket.url directly
+  /** The rest of the site's events, so an event page isn't a dead end: the
+      only way on used to be the back link, since `related` is filled in by
+      hand and most items don't have any. */
+  more?: EventItem[];
+  /** Fallback for a site with only one event, same reason as on the news
+      side: an article has to end with somewhere to go. */
+  moreNews?: NewsItem[];
 }
-const { item, backHref, ticketHref } = Astro.props;
+const { item, backHref, ticketHref, more = [], moreNews = [] } = Astro.props;
+
+const todayIso = new Date().toISOString().slice(0, 10);
+const moreCards = more
+  .filter((other) => other.slug !== item.slug && Array.isArray(other.body) && other.body.length > 0)
+  // What's still to come first, then past events most recent first.
+  .sort((a, b) => {
+    const aUp = a.start >= todayIso;
+    const bUp = b.start >= todayIso;
+    if (aUp !== bUp) return aUp ? -1 : 1;
+    return aUp ? (a.start < b.start ? -1 : 1) : (a.start < b.start ? 1 : -1);
+  })
+  .slice(0, 3)
+  .map((other) => ({
+    href: `/events/${other.slug}/`,
+    eyebrow: other.category,
+    date: other.start,
+    title: other.title,
+    text: [other.venue, other.city].filter(Boolean).join(" · ") || other.summary,
+    event: true,
+    past: other.start < todayIso,
+  }));
+
+const newsCards = moreNews
+  .filter((n) => Array.isArray(n.body) && n.body.length > 0)
+  .sort((a, b) => (a.date < b.date ? 1 : -1))
+  .slice(0, 3)
+  .map((n) => ({
+    href: `/news/${n.slug}/`,
+    eyebrow: n.category,
+    date: n.date,
+    title: n.title,
+    text: n.summary,
+    image: n.image,
+    imageAlt: n.imageAlt,
+  }));
+const tail = moreCards.length > 0
+  ? { heading: "More events", cards: moreCards }
+  : newsCards.length > 0
+    ? { heading: "Latest news", cards: newsCards }
+    : null;
 
 // Schema.org takes a full timestamp when the clock time is known — a
 // date-only startDate tells Google the day but not the hour, and event
@@ -180,6 +228,13 @@ const relatedItems = (item.related ?? []).map((card) => ({
 
   {item.source && <SourceLine source={item.source} />}
 
+  {tail && (
+    <section class="event-article-more">
+      <h2>{tail.heading}</h2>
+      <FeedCards items={tail.cards} columns={tail.cards.length} />
+    </section>
+  )}
+
   <nav class="event-article-back">
     <a href={backHref} title="All events">&larr; All events</a>
   </nav>
@@ -264,6 +319,7 @@ const relatedItems = (item.related ?? []).map((card) => ({
   .event-article-form { margin-top: var(--space-4); }
 
   .event-article-related { margin-top: var(--space-4); }
+  .event-article-more { margin-top: var(--space-5); }
 
 
   .event-article-back { margin-top: var(--space-4); font-family: var(--font-mono); font-size: var(--step--1); }

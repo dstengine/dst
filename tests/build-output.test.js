@@ -468,10 +468,20 @@ describe("news and events", () => {
     for (const { app } of NEWS_EVENTS_SITES) {
       const home = nePages.find((p) => p.app === app && p.url === "/");
       if (!home) continue;
-      const hasNewsList = />\s*<ul class="item-list"/.test(home.html) || /class="news-block-list"/.test(home.html);
-      const hasEventsList = /class="events-block-list"/.test(home.html);
-      const hasNewsSection = /<section class="container news-block"/.test(home.html);
-      const hasEventsSection = /<section class="container events-block"/.test(home.html);
+      // Matched on the card markup rather than a list class: the blocks render
+      // the same FeedCards as the listings and the article feed, so "the
+      // section has something in it" is one check for all of them.
+      const section = (cls) => {
+        const start = home.html.indexOf(`<section class="container ${cls}"`);
+        if (start === -1) return null;
+        return home.html.slice(start, start + 8000);
+      };
+      const newsSection = section("news-block");
+      const eventsSection = section("events-block");
+      const hasNewsSection = newsSection !== null;
+      const hasEventsSection = eventsSection !== null;
+      const hasNewsList = hasNewsSection && /class="feed-card[ "]/.test(newsSection);
+      const hasEventsList = hasEventsSection && /class="feed-card[ "]/.test(eventsSection);
       console.log(`${app} homepage: news-block=${hasNewsSection} events-block=${hasEventsSection}`);
       // The components themselves already guarantee "empty array -> no
       // markup" (unit-testable in isolation); this just confirms the real

@@ -14,6 +14,7 @@
     "./Callout.astro": "./src/components/Callout.astro",
     "./VentureGrid.astro": "./src/components/VentureGrid.astro",
     "./Redirect.astro": "./src/components/Redirect.astro",
+    "./FeedCards.astro": "./src/components/FeedCards.astro",
     "./NewsList.astro": "./src/components/NewsList.astro",
     "./EventsList.astro": "./src/components/EventsList.astro",
     "./NewsBlock.astro": "./src/components/NewsBlock.astro",
