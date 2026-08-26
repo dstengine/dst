@@ -45,6 +45,17 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : un
 // no card. A text-only summary is the better failure.
 const shareable = image && !/\.svgz?($|\?)/i.test(image);
 const shareImage = shareable && Astro.site ? new URL(image, Astro.site).href : undefined;
+
+// Roughly how much room the inline nav wants, in px: label text, the gaps
+// between items, and the site name beside it. The header's content column
+// caps at 1180px and the name eats into that, so anything over ~900 wraps
+// onto a second row. llc (ten long labels, "Dubai Company Formation")
+// measures 1189 and did wrap; riviera's nine short ones measure 759 and fit.
+const navFootprint =
+  nav.reduce((sum, item) => sum + item.label.length, 0) * 8 +
+  nav.length * 24 +
+  siteName.length * 11;
+const denseNav = navFootprint > 900;
 ---
 <!doctype html>
 <html lang="en">
@@ -95,8 +106,8 @@ const shareImage = shareable && Astro.site ? new URL(image, Astro.site).href : u
           {siteName}
         </a>
         <div class="header-actions">
-          <nav class="site-nav">
-            <ul class="nav-desktop">
+          <nav class:list={["site-nav", denseNav && "site-nav-dense"]}>
+            <ul class:list={["nav-desktop", denseNav && "nav-desktop-dense"]}>
               {nav.map((item) => (
                 <li>
                   <a href={item.href} title={item.title ?? item.label}>
@@ -275,10 +286,13 @@ const shareImage = shareable && Astro.site ? new URL(image, Astro.site).href : u
   }
   .site-nav a:hover .nav-icon { opacity: 1; }
   /* The vertical menu always keeps its marks — that is where they earn their
-     place, one per row to scan down. The horizontal row drops them as soon as
-     it gets tight: the longest nav in the network is ten items, and there the
-     marks are what tips it into wrapping onto a second line. */
-  @media (max-width: 1200px) {
+     place, one per row to scan down. The horizontal row is the opposite case:
+     the marks buy nothing next to a label already in view, and they cost
+     width. A row of eight or more wraps onto a second line with them (llc has
+     ten), and a narrow window wraps whatever the count, so they come off in
+     both cases. */
+  .nav-desktop-dense .nav-icon { display: none; }
+  @media (max-width: 1400px) {
     .nav-desktop .nav-icon { display: none; }
   }
 
@@ -299,97 +313,112 @@ const shareImage = shareable && Astro.site ? new URL(image, Astro.site).href : u
     .site-name { font-size: var(--step--1); }
   }
 
+  /* Which of the two navs is on screen. The dropdown's own styling sits
+     below, outside any breakpoint: it only takes effect where the toggle is
+     shown, and keeping it breakpoint-free lets a second rule show the same
+     dropdown on a site whose inline row would wrap. */
   @media (max-width: 1024px) {
     .nav-desktop { display: none; }
     .nav-toggle { display: block; }
+  }
+  /* A long nav gets a tightened row — smaller type, no icons, narrower gaps
+     — which is enough to hold one line on a wide screen: llc's ten items and
+     its 335px name fit from 1164px up. Below that the row wraps, so there
+     such a site gets the dropdown instead. */
+  @media (max-width: 1200px) {
+    .site-nav-dense .nav-desktop { display: none; }
+    .site-nav-dense .nav-toggle { display: block; }
+  }
+  .nav-desktop-dense { gap: var(--space-2); }
+  .nav-desktop-dense a { font-size: 0.875rem; }
 
-    .nav-toggle summary {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      width: 24px;
-      height: 24px;
-      cursor: pointer;
-      list-style: none;
-    }
-    /* The 44px touch target is an overlay rather than the box itself. As a
-       44px box with a -10px margin it hung past the header's right padding
-       and pushed the whole document 3px sideways at 390px. */
-    .nav-toggle summary::before {
-      content: "";
-      position: absolute;
-      inset: -10px;
-    }
-    .nav-toggle summary::-webkit-details-marker { display: none; }
-    .nav-toggle summary::marker { content: ""; }
 
-    .nav-toggle-icon,
-    .nav-toggle-icon::before,
-    .nav-toggle-icon::after {
-      display: block;
-      width: 22px;
-      height: 2px;
-      border-radius: 2px;
-      background: var(--ink);
-      transition: transform 150ms ease-in-out, opacity 150ms ease-in-out, top 150ms ease-in-out;
-    }
-    .nav-toggle-icon { position: relative; }
-    .nav-toggle-icon::before,
-    .nav-toggle-icon::after { content: ""; position: absolute; left: 0; }
-    .nav-toggle-icon::before { top: -7px; }
-    .nav-toggle-icon::after { top: 7px; }
+  .nav-toggle summary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    list-style: none;
+  }
+  /* The 44px touch target is an overlay rather than the box itself. As a
+     44px box with a -10px margin it hung past the header's right padding
+     and pushed the whole document 3px sideways at 390px. */
+  .nav-toggle summary::before {
+    content: "";
+    position: absolute;
+    inset: -10px;
+  }
+  .nav-toggle summary::-webkit-details-marker { display: none; }
+  .nav-toggle summary::marker { content: ""; }
 
-    .nav-toggle[open] .nav-toggle-icon { background: transparent; }
-    .nav-toggle[open] .nav-toggle-icon::before { top: 0; transform: rotate(45deg); }
-    .nav-toggle[open] .nav-toggle-icon::after { top: 0; transform: rotate(-45deg); }
+  .nav-toggle-icon,
+  .nav-toggle-icon::before,
+  .nav-toggle-icon::after {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--ink);
+    transition: transform 150ms ease-in-out, opacity 150ms ease-in-out, top 150ms ease-in-out;
+  }
+  .nav-toggle-icon { position: relative; }
+  .nav-toggle-icon::before,
+  .nav-toggle-icon::after { content: ""; position: absolute; left: 0; }
+  .nav-toggle-icon::before { top: -7px; }
+  .nav-toggle-icon::after { top: 7px; }
 
-    /* [open], not just .nav-toggle: a bare `display: flex` overrode the
-       browser's own hiding of a closed <details>, so the shut menu still took
-       part in layout and pushed the document 3px sideways at 390px. */
-    /* Anchored to the button rather than to the header, so the panel opens
-       under the hamburger instead of spanning the window. A menu that takes
-       the full width reads as part of the page; a panel reads as a menu. */
-    .nav-toggle { position: relative; }
-    .nav-toggle[open] ul {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      list-style: none;
-      margin: 0;
-      position: absolute;
-      z-index: 1;
-      top: calc(100% + var(--space-2));
-      right: 0;
-      left: auto;
-      width: max-content;
-      min-width: 12rem;
-      /* Never wider than the window minus the header's own padding, so a
-         long label can't push the panel off the right edge. */
-      max-width: min(18rem, calc(100vw - var(--space-4)));
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: var(--space-1) var(--space-3);
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
-    }
-    .nav-toggle[open] li { display: block; border-top: 1px solid var(--border); }
-    .nav-toggle[open] li:first-child { border-top: none; }
-    .nav-toggle[open] a { display: flex; padding: var(--space-2) 0; }
+  .nav-toggle[open] .nav-toggle-icon { background: transparent; }
+  .nav-toggle[open] .nav-toggle-icon::before { top: 0; transform: rotate(45deg); }
+  .nav-toggle[open] .nav-toggle-icon::after { top: 0; transform: rotate(-45deg); }
 
-    /* The page behind the open menu dims. It also gives the outside-click
-       handler something to catch on a page too short to have anything else
-       under the header. On the header, not on the toggle: the header keeps
-       its own colour, and the scrim starts exactly below it. */
-    .site-header:has(.nav-toggle[open])::after {
-      content: "";
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.45);
-    }
+  /* [open], not just .nav-toggle: a bare `display: flex` overrode the
+     browser's own hiding of a closed <details>, so the shut menu still took
+     part in layout and pushed the document 3px sideways at 390px. */
+  /* Anchored to the button rather than to the header, so the panel opens
+     under the hamburger instead of spanning the window. A menu that takes
+     the full width reads as part of the page; a panel reads as a menu. */
+  .nav-toggle { position: relative; }
+  .nav-toggle[open] ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    list-style: none;
+    margin: 0;
+    position: absolute;
+    z-index: 1;
+    top: calc(100% + var(--space-2));
+    right: 0;
+    left: auto;
+    width: max-content;
+    min-width: 12rem;
+    /* Never wider than the window minus the header's own padding, so a
+       long label can't push the panel off the right edge. */
+    max-width: min(18rem, calc(100vw - var(--space-4)));
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: var(--space-1) var(--space-3);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  }
+  .nav-toggle[open] li { display: block; border-top: 1px solid var(--border); }
+  .nav-toggle[open] li:first-child { border-top: none; }
+  .nav-toggle[open] a { display: flex; padding: var(--space-2) 0; }
+
+  /* The page behind the open menu dims. It also gives the outside-click
+     handler something to catch on a page too short to have anything else
+     under the header. On the header, not on the toggle: the header keeps
+     its own colour, and the scrim starts exactly below it. */
+  .site-header:has(.nav-toggle[open])::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.45);
   }
 
   .site-footer {

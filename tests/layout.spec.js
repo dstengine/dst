@@ -85,6 +85,30 @@ test.describe("header", () => {
     );
     expect(new Set(tops).size, `nav wrapped onto ${new Set(tops).size} rows`).toBe(1);
   });
+
+  // llc has the longest nav in the network — ten items beside a site name
+  // 335px wide — and in production it broke onto a second line at every
+  // desktop width. Whichever nav is on screen, the header stays one row.
+  test("a long nav never wraps, at any desktop width", async ({ page }) => {
+    for (const width of [1100, 1280, 1440, 1920]) {
+      await page.setViewportSize({ width, height: 800 });
+      await page.goto(url("llc", "/"));
+
+      const shown = page.locator(".nav-desktop:visible, .nav-toggle:visible");
+      await expect(shown, `no nav shown @ ${width}`).toHaveCount(1);
+
+      const header = page.locator(".site-header");
+      const height = await header.evaluate((el) => el.getBoundingClientRect().height);
+      expect(height, `header grew to ${height}px @ ${width}, so something wrapped`).toBeLessThan(90);
+
+      if (await page.locator(".nav-desktop").isVisible()) {
+        const tops = await page.locator(".nav-desktop li").evaluateAll((els) =>
+          els.map((el) => Math.round(el.getBoundingClientRect().top)),
+        );
+        expect(new Set(tops).size, `nav wrapped onto ${new Set(tops).size} rows @ ${width}`).toBe(1);
+      }
+    }
+  });
 });
 
 test.describe("mobile menu", () => {

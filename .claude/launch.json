@@ -39,6 +39,19 @@
         "4326"
       ],
       "port": 4326
+    },
+    {
+      "name": "llc",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "astro",
+        "dev",
+        "--root",
+        "apps/llc",
+        "--port",
+        "4327"
+      ],
+      "port": 4327
     }
   ]
 }
