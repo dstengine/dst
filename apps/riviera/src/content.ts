@@ -8,43 +8,43 @@ export const index = {
     "What day-to-day life looks like in Azizi Riviera, block by block — the canal-front development in MBR City.",
   eyebrow: "Living here",
   h1: "Azizi Riviera, block by block",
-  lede: `Azizi Riviera runs along the Dubai Water Canal in MBR City — a stretch
-    of Mediterranean-style low-rise blocks wrapped around a ground-floor
-    retail promenade, one of the larger single developments of its kind in
-    the city. Day to day here has as much to do with which stretch of the
-    promenade you're near as which building you're in.`,
+  lede: `Azizi Riviera is a long run of low-rise blocks along the Dubai Water
+    Canal in MBR City, with shops and cafés on the ground floor of many of
+    them. Which stretch of the promenade you're on matters more here than
+    which building you're in — so that's how this site is organised.`,
   sections: [
     {
       heading: "What's built out and what isn't",
       paragraphs: [
-        `Studios through three-bedroom units fill dozens of mid-rise blocks,
-          each facing either the canal or an internal courtyard. Ground-floor
-          retail — cafés, a handful of restaurants, a supermarket, general
-          shops — runs the length of several buildings, which cuts down on
-          car trips for the small stuff more than a comparable tower
-          elsewhere in Dubai would.`,
-        `Coverage tracks the construction timeline rather than the map:
-          blocks that opened first carry a fuller promenade, later phases
-          are still filling theirs in. And the canal that dominates every
-          listing photo is a boat route, not a beach — see
-          <a href="/water/" title="Where to swim near Azizi Riviera">where people swim</a>.`,
+        `Blocks run from studios to three-bedrooms, each facing either the
+          canal or an internal courtyard. Several have shops on the ground
+          floor — cafés, a few restaurants, a supermarket, the everyday
+          things — so most small errands here are a walk rather than a drive,
+          which is not true of a comparable tower elsewhere in Dubai.`,
+        `How much of that you actually get depends on when your block opened
+          rather than where it sits on the map: the earliest phases have the
+          fullest run of shops, the later ones are still filling theirs in.
+          Worth checking the stretch you're looking at, not the development
+          as a whole. And the water in every listing photo is a boat canal,
+          not a beach — <a href="/water/" title="Where to swim near Azizi Riviera">the nearest real swim</a>
+          is a short drive.`,
       ],
     },
   ],
   links: [
-    { href: "/coffee/", title: "Coffee", description: "Where the promenade's cafés cluster, block by block." },
-    { href: "/food/", title: "Food", description: "Restaurants and the on-site supermarket for daily meals." },
-    { href: "/pools/", title: "Pools", description: "A building amenity here, not shared across the development." },
-    { href: "/water/", title: "Water", description: "Good for a walk. For a swim, look elsewhere on this page." },
-    { href: "/money/", title: "Money", description: "Nearby exchange, and buying with crypto in practice." },
-    { href: "/news/", title: "News", description: "What's changing inside the development." },
-    { href: "/events/", title: "Events", description: "What's on locally, kept separate from news." },
+    { href: "/coffee/", title: "Coffee", description: "Which blocks you can walk to a decent coffee from." },
+    { href: "/food/", title: "Food", description: "Where to eat tonight, and the supermarket for the rest of the week." },
+    { href: "/pools/", title: "Pools", description: "Your building's pool is the one you get — there's no shared one." },
+    { href: "/water/", title: "Water", description: "The canal is for walking. The nearest real swim is a drive." },
+    { href: "/money/", title: "Money", description: "Changing cash nearby, and what paying in crypto actually involves." },
+    { href: "/news/", title: "News", description: "What's opened, closed or changed inside the development." },
+    { href: "/events/", title: "Events", description: "What's on nearby, with dates." },
   ],
   cta: {
     href: "/rent/",
     eyebrow: "Rent",
     h3: "Renting in Riviera specifically?",
-    description: "Match the right block to what matters — canal view, courtyard, distance from the promenade.",
+    description: "Tell us what matters — canal view, quiet courtyard, how far from the promenade — and get a shortlist of blocks that fit.",
   },
 };
 

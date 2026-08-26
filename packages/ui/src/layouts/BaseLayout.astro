@@ -2,6 +2,7 @@
 import '../styles/tokens.css';
 import Analytics from '../components/Analytics.astro';
 import LeadTracking from '../components/LeadTracking.astro';
+import { navIconFor } from '../icons';
 
 interface Props {
   title: string;
@@ -97,7 +98,16 @@ const shareImage = shareable && Astro.site ? new URL(image, Astro.site).href : u
           <nav class="site-nav">
             <ul class="nav-desktop">
               {nav.map((item) => (
-                <li><a href={item.href} title={item.title ?? item.label}>{item.label}</a></li>
+                <li>
+                  <a href={item.href} title={item.title ?? item.label}>
+                    {navIconFor(item.href) && (
+                      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d={navIconFor(item.href)} />
+                      </svg>
+                    )}
+                    <span>{item.label}</span>
+                  </a>
+                </li>
               ))}
             </ul>
             <details class="nav-toggle">
@@ -106,7 +116,16 @@ const shareImage = shareable && Astro.site ? new URL(image, Astro.site).href : u
               </summary>
               <ul>
                 {nav.map((item) => (
-                  <li><a href={item.href} title={item.title ?? item.label}>{item.label}</a></li>
+                  <li>
+                    <a href={item.href} title={item.title ?? item.label}>
+                      {navIconFor(item.href) && (
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <path d={navIconFor(item.href)} />
+                        </svg>
+                      )}
+                      <span>{item.label}</span>
+                    </a>
+                  </li>
                 ))}
               </ul>
             </details>
@@ -245,6 +264,23 @@ const shareImage = shareable && Astro.site ? new URL(image, Astro.site).href : u
     font-weight: 600;
   }
   .site-nav a:hover { color: var(--accent, #1F5C4E); }
+  .site-nav a { display: inline-flex; align-items: center; gap: 0.5em; }
+  /* Sized in em so the mark tracks the label rather than the root font, and
+     muted a step below the text: it labels the item, it isn't the item. */
+  .nav-icon {
+    width: 1.15em;
+    height: 1.15em;
+    flex-shrink: 0;
+    opacity: 0.65;
+  }
+  .site-nav a:hover .nav-icon { opacity: 1; }
+  /* The vertical menu always keeps its marks — that is where they earn their
+     place, one per row to scan down. The horizontal row drops them as soon as
+     it gets tight: the longest nav in the network is ten items, and there the
+     marks are what tips it into wrapping onto a second line. */
+  @media (max-width: 1200px) {
+    .nav-desktop .nav-icon { display: none; }
+  }
 
   /* Mobile and tablet: the wrapping inline nav read as a jumbled grid
      tangled with the site name, so at and below tablet width it's
@@ -311,6 +347,10 @@ const shareImage = shareable && Astro.site ? new URL(image, Astro.site).href : u
     /* [open], not just .nav-toggle: a bare `display: flex` overrode the
        browser's own hiding of a closed <details>, so the shut menu still took
        part in layout and pushed the document 3px sideways at 390px. */
+    /* Anchored to the button rather than to the header, so the panel opens
+       under the hamburger instead of spanning the window. A menu that takes
+       the full width reads as part of the page; a panel reads as a menu. */
+    .nav-toggle { position: relative; }
     .nav-toggle[open] ul {
       display: flex;
       flex-direction: column;
@@ -318,18 +358,38 @@ const shareImage = shareable && Astro.site ? new URL(image, Astro.site).href : u
       list-style: none;
       margin: 0;
       position: absolute;
-      top: 100%;
-      left: 0;
+      z-index: 1;
+      top: calc(100% + var(--space-2));
       right: 0;
+      left: auto;
+      width: max-content;
+      min-width: 12rem;
+      /* Never wider than the window minus the header's own padding, so a
+         long label can't push the panel off the right edge. */
+      max-width: min(18rem, calc(100vw - var(--space-4)));
       background: var(--surface);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: var(--space-2) var(--space-3);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: var(--space-1) var(--space-3);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
     }
     .nav-toggle[open] li { display: block; border-top: 1px solid var(--border); }
     .nav-toggle[open] li:first-child { border-top: none; }
-    .nav-toggle[open] a { display: block; padding: var(--space-2) 0; }
+    .nav-toggle[open] a { display: flex; padding: var(--space-2) 0; }
+
+    /* The page behind the open menu dims. It also gives the outside-click
+       handler something to catch on a page too short to have anything else
+       under the header. On the header, not on the toggle: the header keeps
+       its own colour, and the scrim starts exactly below it. */
+    .site-header:has(.nav-toggle[open])::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.45);
+    }
   }
 
   .site-footer {
