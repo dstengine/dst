@@ -7,7 +7,7 @@
 //
 // The write-up used to come first. Someone who has just landed wants to know
 // where to go and what is happening, and reading two paragraphs of background
-// is not how they want to find out — so the links and the dated blocks come
+// is not how they want to find out — so the dated blocks and the links come
 // first and the background sits under them, for the reader who wants it.
 import { iconFor } from "../../icons";
 
@@ -32,6 +32,10 @@ interface Props {
 
 const { sections, links, cta } = Astro.props;
 ---
+{/* What's coming up, above the grid: it's the one thing on the page with a
+    deadline attached, and it's short. */}
+<slot name="lead" />
+
 <section class="container">
   <h2>Start here</h2>
   <div class="link-grid">
@@ -49,7 +53,7 @@ const { sections, links, cta } = Astro.props;
   </div>
 </section>
 
-{/* News and events, passed in by the page that owns the data. */}
+{/* News, under the grid — worth reading, but nothing here expires. */}
 <slot />
 
 {sections.map((section) => (

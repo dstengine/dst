@@ -12,7 +12,7 @@ const eventItems = eventsBySite("mbr");
 ---
 <Layout {...index}>
   <DistrictHub {...index}>
-    <EventsBlock items={eventItems} />
+    <EventsBlock slot="lead" items={eventItems} />
     <NewsBlock items={newsItems} />
   </DistrictHub>
 </Layout>
