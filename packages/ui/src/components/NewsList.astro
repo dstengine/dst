@@ -12,6 +12,10 @@ interface Props {
   items: NewsItem[];
 }
 const { items } = Astro.props;
+// A photograph fills its cover; a diagram is fitted whole. Unmarked images
+// are fitted too — that is the safe way round, since a cropped chart loses
+// the numbers while a fitted photo only sits in a slightly smaller box.
+const fitFor = (kind?: string) => (kind === "photo" || kind === "render" || kind === "generated" ? "cover" : "contain") as "cover" | "contain";
 const sorted = [...items].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
 const cards = sorted.map((item) => {
   const hasPage = Array.isArray(item.body) && item.body.length > 0;
@@ -23,6 +27,7 @@ const cards = sorted.map((item) => {
     text: item.summary,
     image: item.image,
     imageAlt: item.imageAlt,
+    imageFit: fitFor(item.imageKind),
   };
 });
 ---

@@ -44,6 +44,7 @@ const networkCards = latestNews(
     text: item.summary,
     image: item.image && host ? `https://${host}${item.image}` : undefined,
     imageAlt: item.imageAlt,
+    imageFit: (item.imageKind === "photo" || item.imageKind === "render" ? "cover" : "contain") as "cover" | "contain",
   };
 });
 ---

@@ -1,7 +1,44 @@
 {
   "version": "0.0.1",
   "configurations": [
-    { "name": "dst", "runtimeExecutable": "npx", "runtimeArgs": ["astro", "dev", "--root", "apps/dst", "--port", "4322"], "port": 4322 },
-    { "name": "riviera", "runtimeExecutable": "npx", "runtimeArgs": ["astro", "dev", "--root", "apps/riviera", "--port", "4325"], "port": 4325 }
+    {
+      "name": "dst",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "astro",
+        "dev",
+        "--root",
+        "apps/dst",
+        "--port",
+        "4322"
+      ],
+      "port": 4322
+    },
+    {
+      "name": "riviera",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "astro",
+        "dev",
+        "--root",
+        "apps/riviera",
+        "--port",
+        "4325"
+      ],
+      "port": 4325
+    },
+    {
+      "name": "eco",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "astro",
+        "dev",
+        "--root",
+        "apps/eco",
+        "--port",
+        "4326"
+      ],
+      "port": 4326
+    }
   ]
 }

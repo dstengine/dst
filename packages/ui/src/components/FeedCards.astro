@@ -25,6 +25,9 @@ export interface FeedCardItem {
   text?: string;
   image?: string;
   imageAlt?: string;
+  /** How the picture meets its box. A photograph fills it; a diagram is
+      fitted whole, because cropping a chart cuts off the numbers. */
+  imageFit?: "cover" | "contain";
   /** Events render a date cover and a countdown instead of an image. */
   event?: boolean;
   /** Marks an event that has already happened. */
@@ -59,7 +62,7 @@ const parts = (iso: string) => {
       <Tag class="feed-card" href={item.href} title={item.href ? item.title : undefined}>
         <div class:list={["feed-cover", !item.image && "feed-cover-date"]}>
           {item.image ? (
-            <img src={item.image} alt={item.imageAlt ?? ""} loading="lazy" />
+            <img class:list={[item.imageFit === "cover" && "feed-cover-fill"]} src={item.image} alt={item.imageAlt ?? ""} loading="lazy" />
           ) : (
             <div class="feed-date" aria-hidden="true">
               <span class="feed-date-day">{when.day}</span>
@@ -116,6 +119,14 @@ const parts = (iso: string) => {
     .feed-cards { grid-template-columns: repeat(var(--feed-columns, auto-fill), minmax(var(--feed-min, 260px), 1fr)); }
     .feed-cards-pinned { --feed-min: 0; }
     .feed-cards-pinned > :last-child:nth-child(odd) { grid-column: auto; display: flex; }
+    /* Unless it is the only card there is: then it stays side by side. This
+       rule has to out-specify the one above it, or a single-item feed came
+       out as one full-width card with the cover blown up to the picture's own
+       proportions — a portrait photo 1483px tall on a 1132px card. */
+    .feed-cards-single.feed-cards-pinned > :last-child:nth-child(odd) {
+      display: grid;
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    }
   }
 
   /* A lone card stretched across the grid blew its 16:9 cover up to the full
@@ -133,6 +144,16 @@ const parts = (iso: string) => {
        it still in force the height drives the width and the cover spills over
        the column of text next to it. */
     .feed-cards-single .feed-cover { height: 100%; max-height: none; aspect-ratio: auto; }
+    /* Out of flow, so the cover takes the row's height rather than the
+       picture's: a portrait photo otherwise stretched the card to 1710px. */
+    .feed-cards-single .feed-cover img,
+    .feed-cards-pinned > :last-child:nth-child(odd) .feed-cover img {
+      position: absolute;
+      inset: 0;
+    }
+    /* A floor as well as a ceiling: side by side, the cover's height comes
+       from the text beside it, and a two-line summary left a 90px sliver. */
+    .feed-cards-single .feed-card { min-height: 15rem; }
     .feed-cards-single .feed-body { align-self: center; padding: var(--space-4); }
     /* The date is the cover here, and at grid-card size it sat as a small mark
        in a large empty field. */
@@ -164,12 +185,15 @@ const parts = (iso: string) => {
   .feed-cover img {
     width: 100%;
     height: 100%;
-    /* contain, not cover: every news image in the network is a diagram, and
-       cropping a chart cuts off the numbers it exists to show. */
+    /* contain by default: a diagram cropped is a chart with its numbers cut
+       off. A photograph says so with imageFit and fills the box instead. */
     object-fit: contain;
     transition: transform 0.4s ease;
   }
   a.feed-card:hover .feed-cover img { transform: scale(1.03); }
+  /* Qualified by the element: `.feed-cover img` above is one step more
+     specific than a lone class, so the bare selector never won. */
+  .feed-cover img.feed-cover-fill { object-fit: cover; }
 
   .feed-cover-date {
     background: var(--accent-tint);
