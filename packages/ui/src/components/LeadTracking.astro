@@ -3,10 +3,20 @@
 // the DST network, same mechanism and shape - just renamed dkey_ -> dst_:
 //   - geo: requested at the moment of form interaction (not on page load,
 //     so the permission prompt reads as a response to intent rather than
-//     random), GPS first with an IP-based fallback (ipapi.co) if denied,
-//     unavailable, or geolocation doesn't exist; GPS gives coordinates only,
-//     so a country/city name is filled in after the fact via free, keyless
+//     random), GPS first with an IP-based fallback if denied, unavailable,
+//     or geolocation doesn't exist; GPS gives coordinates only, so a
+//     country/city name is filled in after the fact via free, keyless
 //     reverse geocoding (Nominatim/OpenStreetMap), best-effort.
+//     The IP fallback asks our own API, which reads the coarse location
+//     Vercel's edge already puts on the request. It used to ask ipapi.co
+//     on every page load, which sent every visitor's address to a third
+//     party before the visitor had done anything, and whose free tier is
+//     rated per client IP - over the limit it answers 429 with no CORS
+//     headers, so the failure showed up as a CORS error in the console on
+//     all seven sites. api/v1/lead fills the same fields server-side as a
+//     backstop, so a lead carries a location even if this never runs.
+//     The partner's DKey site has its own mechanism and does not use
+//     this API.
 //   - history: a unified page-view + link-click log, one entry shape
 //     distinguished by "type", mirrored into localStorage and a cookie
 //     (so it survives either being cleared) and capped at 50 entries.
@@ -21,26 +31,28 @@
 // window.dstGetUtm() at submit time into lead.geo / lead.meta.history / lead.ref.
 ---
 <script>
-  // *** IP geolocation (shared, fetched once per page load) ***
-  const ipGeoPromise: Promise<any> = fetch("https://ipapi.co/json/")
-    .then((r) => r.json())
-    .catch(() => null);
+  // *** IP geolocation, from our own API, and only once the visitor has
+  // engaged with a form - see the note above for what this replaced ***
+  const GEO_ENDPOINT = "https://api.dst.llc/api/v1/geo";
 
   (window as any).__dstGeoMeta = { source: "", lat: "", lng: "", accuracy: "", country: "", city: "", region: "" };
 
   function applyIpFallbackGeo() {
-    ipGeoPromise.then((data) => {
-      if (!data || data.error) return;
-      (window as any).__dstGeoMeta = {
-        source: "ip",
-        lat: data.latitude || "",
-        lng: data.longitude || "",
-        accuracy: "",
-        country: data.country_name || "",
-        city: data.city || "",
-        region: data.region || "",
-      };
-    });
+    fetch(GEO_ENDPOINT)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data) => {
+        if (!data || !data.source) return;
+        (window as any).__dstGeoMeta = {
+          source: "ip",
+          lat: data.lat || "",
+          lng: data.lng || "",
+          accuracy: "",
+          country: data.country || "",
+          city: data.city || "",
+          region: data.region || "",
+        };
+      })
+      .catch(() => {});
   }
 
   // GPS gives coordinates only, not a place name - fill in country/city

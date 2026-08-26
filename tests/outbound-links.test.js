@@ -31,8 +31,7 @@ const isNetworkHost = (host) => host === "dst.llc" || host.endsWith(".dst.llc");
 const ALLOWED = {
   "www.googletagmanager.com": "the analytics tag, loaded as a script",
   "www.openstreetmap.org": "the keyless map embed used on venue and event pages",
-  "ipapi.co": "coarse visitor location, fetched at runtime for lead context",
-  "nominatim.openstreetmap.org": "reverse geocoding for the same lead context",
+  "nominatim.openstreetmap.org": "names the place behind GPS coordinates, once the visitor has granted them",
 };
 
 // Attributes a browser follows or fetches. `content` is in the list for the

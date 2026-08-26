@@ -8,6 +8,7 @@
 
 import { parseLead } from '../../lib/lead-dto.mjs';
 import { applyCors } from '../../lib/cors.mjs';
+import { withRequestGeo } from '../../lib/geo.mjs';
 import telegramHandler from './lead/telegram.mjs';
 import planfixHandler from './lead/planfix.mjs';
 import uspacyHandler from './lead/uspacy.mjs';
@@ -59,9 +60,14 @@ export default async function handler(req, res) {
     return;
   }
 
+  // Location from the edge, unless the visitor gave a precise one. Done
+  // here rather than in the browser so it can't be missing when a
+  // third-party lookup is rate-limited, and can't be edited by the client.
+  const lead = withRequestGeo(parsed.lead, req);
+
   const results = await Promise.all(
     adapters.map(async (adapter) => {
-      const { body } = await invokeAdapter(adapter.handler, parsed.lead);
+      const { body } = await invokeAdapter(adapter.handler, lead);
       return { adapter: adapter.name, ...body };
     })
   );
