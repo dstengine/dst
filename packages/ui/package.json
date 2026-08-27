@@ -36,6 +36,7 @@
     "./icons": "./src/icons.ts",
     "./tokens.css": "./src/styles/tokens.css",
     "./schema": "./src/schema.ts",
-    "./NetworkLinks.astro": "./src/components/NetworkLinks.astro"
+    "./NetworkLinks.astro": "./src/components/NetworkLinks.astro",
+    "./Photo.astro": "./src/components/Photo.astro"
   }
 }

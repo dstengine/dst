@@ -1,4 +1,5 @@
 ---
+import Photo from "@dst/ui/Photo.astro";
 import { go } from "../../outbound";
 import Layout from "../../layouts/Layout.astro";
 import Lightbox from "@dst/ui/Lightbox.astro";
@@ -37,7 +38,7 @@ const { lat, lng } = story.location ?? {};
 
   {story.photo && (
     <figure class="evidence">
-      <img src={story.photo} alt={story.photoAlt ?? ""} loading="eager" data-lightbox data-lightbox-caption={story.photoAlt} />
+      <Photo src={story.photo} alt={story.photoAlt ?? ""} loading="eager" fetchpriority="high" sizes="(max-width: 60rem) 100vw, 60rem" data-lightbox data-lightbox-caption={story.photoAlt} />
       {story.photoAlt && (
         <figcaption class="container"><p>{story.photoAlt}</p></figcaption>
       )}
@@ -95,7 +96,7 @@ const { lat, lng } = story.location ?? {};
       <div class="plate-grid">
         {story.gallery.map((photo, i) => (
           <figure class="plate">
-            <img src={photo.src} alt={photo.alt} loading="lazy" data-lightbox data-lightbox-caption={photo.alt} />
+            <Photo src={photo.src} alt={photo.alt} sizes="(max-width: 700px) 100vw, 340px" data-lightbox data-lightbox-caption={photo.alt} />
             <figcaption>
               <span class="plate-no">{String(i + 1).padStart(2, "0")}</span>
               {photo.alt}

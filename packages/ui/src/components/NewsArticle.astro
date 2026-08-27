@@ -1,4 +1,5 @@
 ---
+import Photo from "./Photo.astro";
 import { itemContext } from '../schema';
 // Detail page body for a single news item. Every block below renders only
 // when its data is present (see the news/events spec's page anatomy) — a
@@ -117,14 +118,16 @@ const relatedItems = (item.related ?? []).map((card) => ({
 
   {item.image && (
     <figure class:list={["news-article-figure", { "figure-diagram": item.imageKind && item.imageKind !== "photo" }]}>
-      {item.imageNarrow ? (
-        <picture>
-          <source media="(max-width: 640px)" srcset={item.imageNarrow} />
-          <img src={item.image} alt={item.imageAlt ?? ""} loading="eager" width={item.imageWidth} height={item.imageHeight} />
-        </picture>
-      ) : (
-        <img src={item.image} alt={item.imageAlt ?? ""} loading="eager" width={item.imageWidth} height={item.imageHeight} />
-      )}
+      <Photo
+        src={item.image}
+        alt={item.imageAlt ?? ""}
+        narrow={item.imageNarrow}
+        loading="eager"
+        fetchpriority="high"
+        sizes="(max-width: 46rem) 100vw, 46rem"
+        width={item.imageWidth}
+        height={item.imageHeight}
+      />
       <ImageNote kind={item.imageKind} credit={item.imageCredit} />
     </figure>
   )}

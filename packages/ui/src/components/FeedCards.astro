@@ -12,6 +12,7 @@
 // about, and a stock skyline over every conference would say less. For a news
 // item without artwork it beats both a blank panel and a lopsided grid where
 // one card has a cover and the next starts with a headline.
+import Photo from "./Photo.astro";
 import { formatDate } from "../date.ts";
 
 export interface FeedCardItem {
@@ -62,7 +63,7 @@ const parts = (iso: string) => {
       <Tag class="feed-card" href={item.href} title={item.href ? item.title : undefined}>
         <div class:list={["feed-cover", !item.image && "feed-cover-date"]}>
           {item.image ? (
-            <img class:list={[item.imageFit === "cover" && "feed-cover-fill"]} src={item.image} alt={item.imageAlt ?? ""} loading="lazy" />
+            <Photo class:list={[item.imageFit === "cover" && "feed-cover-fill"]} src={item.image} alt={item.imageAlt ?? ""} sizes="(max-width: 700px) 100vw, 380px" />
           ) : (
             <div class="feed-date" aria-hidden="true">
               <span class="feed-date-day">{when.day}</span>

@@ -1,0 +1,442 @@
+{
+  "dst.llc": {
+    "/eco.jpg": {
+      "width": 1600,
+      "height": 800,
+      "avif": [
+        [
+          480,
+          "/eco-480.avif"
+        ],
+        [
+          768,
+          "/eco-768.avif"
+        ],
+        [
+          1024,
+          "/eco-1024.avif"
+        ],
+        [
+          1440,
+          "/eco-1440.avif"
+        ],
+        [
+          1600,
+          "/eco-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/eco-480.webp"
+        ],
+        [
+          768,
+          "/eco-768.webp"
+        ],
+        [
+          1024,
+          "/eco-1024.webp"
+        ],
+        [
+          1440,
+          "/eco-1440.webp"
+        ],
+        [
+          1600,
+          "/eco-1600.webp"
+        ]
+      ]
+    },
+    "/events/future-world-forum-dubai.jpg": {
+      "width": 1380,
+      "height": 752,
+      "avif": [
+        [
+          480,
+          "/events/future-world-forum-dubai-480.avif"
+        ],
+        [
+          768,
+          "/events/future-world-forum-dubai-768.avif"
+        ],
+        [
+          1024,
+          "/events/future-world-forum-dubai-1024.avif"
+        ],
+        [
+          1380,
+          "/events/future-world-forum-dubai-1380.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/events/future-world-forum-dubai-480.webp"
+        ],
+        [
+          768,
+          "/events/future-world-forum-dubai-768.webp"
+        ],
+        [
+          1024,
+          "/events/future-world-forum-dubai-1024.webp"
+        ],
+        [
+          1380,
+          "/events/future-world-forum-dubai-1380.webp"
+        ]
+      ]
+    },
+    "/palmcentral.jpg": {
+      "width": 1600,
+      "height": 900,
+      "avif": [
+        [
+          480,
+          "/palmcentral-480.avif"
+        ],
+        [
+          768,
+          "/palmcentral-768.avif"
+        ],
+        [
+          1024,
+          "/palmcentral-1024.avif"
+        ],
+        [
+          1440,
+          "/palmcentral-1440.avif"
+        ],
+        [
+          1600,
+          "/palmcentral-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/palmcentral-480.webp"
+        ],
+        [
+          768,
+          "/palmcentral-768.webp"
+        ],
+        [
+          1024,
+          "/palmcentral-1024.webp"
+        ],
+        [
+          1440,
+          "/palmcentral-1440.webp"
+        ],
+        [
+          1600,
+          "/palmcentral-1600.webp"
+        ]
+      ]
+    },
+    "/riviera.jpg": {
+      "width": 800,
+      "height": 400,
+      "avif": [
+        [
+          480,
+          "/riviera-480.avif"
+        ],
+        [
+          768,
+          "/riviera-768.avif"
+        ],
+        [
+          800,
+          "/riviera-800.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/riviera-480.webp"
+        ],
+        [
+          768,
+          "/riviera-768.webp"
+        ],
+        [
+          800,
+          "/riviera-800.webp"
+        ]
+      ]
+    }
+  },
+  "eco.dst.llc": {
+    "/stories/douglas-fir-shilovka-01.jpg": {
+      "width": 975,
+      "height": 1280,
+      "avif": [
+        [
+          480,
+          "/stories/douglas-fir-shilovka-01-480.avif"
+        ],
+        [
+          768,
+          "/stories/douglas-fir-shilovka-01-768.avif"
+        ],
+        [
+          975,
+          "/stories/douglas-fir-shilovka-01-975.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/stories/douglas-fir-shilovka-01-480.webp"
+        ],
+        [
+          768,
+          "/stories/douglas-fir-shilovka-01-768.webp"
+        ],
+        [
+          975,
+          "/stories/douglas-fir-shilovka-01-975.webp"
+        ]
+      ]
+    },
+    "/stories/douglas-fir-shilovka-02.jpg": {
+      "width": 975,
+      "height": 1280,
+      "avif": [
+        [
+          480,
+          "/stories/douglas-fir-shilovka-02-480.avif"
+        ],
+        [
+          768,
+          "/stories/douglas-fir-shilovka-02-768.avif"
+        ],
+        [
+          975,
+          "/stories/douglas-fir-shilovka-02-975.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/stories/douglas-fir-shilovka-02-480.webp"
+        ],
+        [
+          768,
+          "/stories/douglas-fir-shilovka-02-768.webp"
+        ],
+        [
+          975,
+          "/stories/douglas-fir-shilovka-02-975.webp"
+        ]
+      ]
+    },
+    "/stories/douglas-fir-shilovka-03.jpg": {
+      "width": 975,
+      "height": 1280,
+      "avif": [
+        [
+          480,
+          "/stories/douglas-fir-shilovka-03-480.avif"
+        ],
+        [
+          768,
+          "/stories/douglas-fir-shilovka-03-768.avif"
+        ],
+        [
+          975,
+          "/stories/douglas-fir-shilovka-03-975.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/stories/douglas-fir-shilovka-03-480.webp"
+        ],
+        [
+          768,
+          "/stories/douglas-fir-shilovka-03-768.webp"
+        ],
+        [
+          975,
+          "/stories/douglas-fir-shilovka-03-975.webp"
+        ]
+      ]
+    },
+    "/stories/douglas-fir-shilovka-04.jpg": {
+      "width": 975,
+      "height": 1280,
+      "avif": [
+        [
+          480,
+          "/stories/douglas-fir-shilovka-04-480.avif"
+        ],
+        [
+          768,
+          "/stories/douglas-fir-shilovka-04-768.avif"
+        ],
+        [
+          975,
+          "/stories/douglas-fir-shilovka-04-975.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/stories/douglas-fir-shilovka-04-480.webp"
+        ],
+        [
+          768,
+          "/stories/douglas-fir-shilovka-04-768.webp"
+        ],
+        [
+          975,
+          "/stories/douglas-fir-shilovka-04-975.webp"
+        ]
+      ]
+    }
+  },
+  "palmcentral.dst.llc": {
+    "/palmcentral.jpg": {
+      "width": 1600,
+      "height": 900,
+      "avif": [
+        [
+          480,
+          "/palmcentral-480.avif"
+        ],
+        [
+          768,
+          "/palmcentral-768.avif"
+        ],
+        [
+          1024,
+          "/palmcentral-1024.avif"
+        ],
+        [
+          1440,
+          "/palmcentral-1440.avif"
+        ],
+        [
+          1600,
+          "/palmcentral-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/palmcentral-480.webp"
+        ],
+        [
+          768,
+          "/palmcentral-768.webp"
+        ],
+        [
+          1024,
+          "/palmcentral-1024.webp"
+        ],
+        [
+          1440,
+          "/palmcentral-1440.webp"
+        ],
+        [
+          1600,
+          "/palmcentral-1600.webp"
+        ]
+      ]
+    }
+  },
+  "riviera.dst.llc": {
+    "/riviera.jpg": {
+      "width": 1440,
+      "height": 720,
+      "avif": [
+        [
+          480,
+          "/riviera-480.avif"
+        ],
+        [
+          768,
+          "/riviera-768.avif"
+        ],
+        [
+          1024,
+          "/riviera-1024.avif"
+        ],
+        [
+          1440,
+          "/riviera-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/riviera-480.webp"
+        ],
+        [
+          768,
+          "/riviera-768.webp"
+        ],
+        [
+          1024,
+          "/riviera-1024.webp"
+        ],
+        [
+          1440,
+          "/riviera-1440.webp"
+        ]
+      ]
+    },
+    "/venues/homebrew.jpg": {
+      "width": 1600,
+      "height": 1411,
+      "avif": [
+        [
+          480,
+          "/venues/homebrew-480.avif"
+        ],
+        [
+          768,
+          "/venues/homebrew-768.avif"
+        ],
+        [
+          1024,
+          "/venues/homebrew-1024.avif"
+        ],
+        [
+          1440,
+          "/venues/homebrew-1440.avif"
+        ],
+        [
+          1600,
+          "/venues/homebrew-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/homebrew-480.webp"
+        ],
+        [
+          768,
+          "/venues/homebrew-768.webp"
+        ],
+        [
+          1024,
+          "/venues/homebrew-1024.webp"
+        ],
+        [
+          1440,
+          "/venues/homebrew-1440.webp"
+        ],
+        [
+          1600,
+          "/venues/homebrew-1600.webp"
+        ]
+      ]
+    }
+  }
+}

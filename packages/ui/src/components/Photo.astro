@@ -1,0 +1,76 @@
+---
+// A picture from an app's public/ folder, served as avif or webp at a width
+// suited to the viewport, with its intrinsic size on the tag so the browser
+// reserves the space before the file lands.
+//
+// Falls back to a bare <img> on the original file whenever the manifest has
+// nothing for that path — a picture added since the last `npm run images`
+// still renders, just unoptimised.
+import { imageSources } from "@dst/content/images";
+
+interface Props {
+  src: string;
+  alt?: string;
+  /** How wide the picture is laid out, for the browser to pick a variant
+      from. Defaults to full width, which is right for a hero and wrong for
+      a card — pass the card's own measure there. */
+  sizes?: string;
+  loading?: "eager" | "lazy";
+  fetchpriority?: "high" | "low" | "auto";
+  class?: string;
+  /** Portrait variant for narrow screens, as in NewsArticle's figures. */
+  narrow?: string;
+  /** Set when the layout crops the picture (object-fit: cover) and the
+      intrinsic ratio would otherwise reserve the wrong height. */
+  sized?: boolean;
+  [key: string]: unknown;
+}
+
+const {
+  src,
+  alt = "",
+  sizes = "100vw",
+  loading = "lazy",
+  fetchpriority,
+  class: className,
+  narrow,
+  sized = true,
+  ...rest
+} = Astro.props;
+
+const sources = imageSources(Astro.site?.hostname, src);
+const dimensions = sized && sources ? { width: sources.width, height: sources.height } : {};
+---
+{sources ? (
+  <picture>
+    {narrow && <source media="(max-width: 640px)" srcset={narrow} />}
+    <source type="image/avif" srcset={sources.avif} sizes={sizes} />
+    <source type="image/webp" srcset={sources.webp} sizes={sizes} />
+    <img
+      src={src}
+      alt={alt}
+      loading={loading}
+      fetchpriority={fetchpriority}
+      class={className}
+      {...dimensions}
+      {...rest}
+    />
+  </picture>
+) : narrow ? (
+  <picture>
+    <source media="(max-width: 640px)" srcset={narrow} />
+    <img src={src} alt={alt} loading={loading} fetchpriority={fetchpriority} class={className} {...rest} />
+  </picture>
+) : (
+  <img src={src} alt={alt} loading={loading} fetchpriority={fetchpriority} class={className} {...rest} />
+)}
+
+<style>
+  /* The <picture> generates no box of its own, so every layout that sizes
+     `.something img` as a direct child keeps working unchanged — otherwise
+     an img on height: 100% would resolve against an auto-height inline
+     wrapper instead of the card it sits in. */
+  picture {
+    display: contents;
+  }
+</style>

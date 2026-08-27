@@ -1,4 +1,5 @@
 ---
+import Photo from "./Photo.astro";
 // Extracted 1:1 from the dst.llc hub grid — same markup, same class names,
 // same CSS. It stayed frozen so no other site could drag the hub's own grid
 // around by accident. The column cap below is the first deliberate change to
@@ -31,7 +32,7 @@ const { items, columns } = Astro.props;
       <Tag class="venture" href={item.href} title={item.title}>
         <div class:list={["venture-media", !item.image && "venture-media-mark"]}>
           {item.image ? (
-            <img src={item.image} alt={item.imageAlt ?? ""} loading="lazy" />
+            <Photo src={item.image} alt={item.imageAlt ?? ""} sizes="(max-width: 700px) 100vw, 420px" />
           ) : (
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d={item.icon} />
