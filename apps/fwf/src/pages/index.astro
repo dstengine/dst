@@ -9,6 +9,7 @@ import { formatDate } from "@dst/ui/date";
 import { checkedOn, forum, forumDate, otherEvents, ticketsFrom, ticketsTo } from "../content";
 import { go } from "../outbound";
 import { itemContext } from "@dst/ui/schema";
+import { ICONS } from "@dst/ui/icons";
 
 const newsItems = newsBySite("fwf");
 
@@ -106,7 +107,10 @@ const jsonLd = [
       than filling the gap.
     </p>
     <p>
-      <a class="ics" href="/forum.ics" title="Download the date as a calendar file">Add the date to your calendar</a>
+      <a class="button button-secondary" href="/forum.ics" download title="Download the date as a calendar file">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={ICONS.events} /></svg>
+        Add the date to your calendar
+      </a>
     </p>
   </section>
 
@@ -182,16 +186,10 @@ const jsonLd = [
 
   <section class="container">
     <EventsBlock items={otherEvents} heading="The same week, and the same subjects" />
-    <p class="table-note">
-      <a href="/events/" title="Dubai conferences on smart cities, PropTech, fintech and mobility">The full Dubai calendar</a>
-    </p>
   </section>
 
   <section class="container">
     <NewsBlock items={newsItems} heading="What's happening in the subjects it covers" />
-    <p class="table-note">
-      <a href="/news/" title="All Dubai smart city, PropTech, fintech and mobility news">All news</a>
-    </p>
   </section>
 
   <CountdownScript />
@@ -210,7 +208,6 @@ const jsonLd = [
   .muted { margin-left: 0.6em; color: var(--ink-muted); }
   .muted:not(:empty)::before { content: "· "; }
   .table-note { font-size: var(--step--1); color: var(--ink-muted); }
-  .ics { font-size: var(--step--1); }
   /* Five sectors, and auto-fit puts four across at desktop and leaves the
      fifth alone on the next row. Three across splits them 3-then-2, which
      reads as a deliberate block rather than an orphan. */

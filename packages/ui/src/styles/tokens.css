@@ -189,6 +189,10 @@ a { color: var(--accent, #1F5C4E); }
   cursor: pointer;
 }
 .button:hover { filter: brightness(1.08); }
+/* An icon inside a button. Sized here rather than at the one call site that
+   had a rule for it: the first button with an icon outside that component
+   drew a 90px calendar and pushed its label onto three lines. */
+.button svg { flex: none; width: 1.1em; height: 1.1em; }
 
 /* Dark-mode accents are lightened for visibility against the dark
    background, which leaves white button text under-contrasted. Dark ink

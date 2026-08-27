@@ -125,6 +125,15 @@ const parts = (iso: string) => {
     .feed-cards { grid-template-columns: repeat(var(--feed-columns, auto-fill), minmax(var(--feed-min, 260px), 1fr)); }
     .feed-cards-pinned { --feed-min: 0; }
     .feed-cards-pinned > :first-child:nth-last-child(odd) { grid-column: auto; display: flex; }
+    /* The card goes back to being a plain column here, so its cover has to go
+       back to a plain cover: the rule above only undid the layout, and the
+       first card of an odd-numbered row kept height:100% and no ratio. Given
+       a long headline the row's coloured band stepped down 30px on that card
+       alone. Not for a lone card, which stays side by side at this width. */
+    .feed-cards:not(.feed-cards-single).feed-cards-pinned > :first-child:nth-last-child(odd) .feed-cover {
+      height: auto;
+      aspect-ratio: 16 / 9;
+    }
     /* Unless it is the only card there is: then it stays side by side. This
        rule has to out-specify the one above it, or a single-item feed came
        out as one full-width card with the cover blown up to the picture's own
@@ -181,6 +190,12 @@ const parts = (iso: string) => {
 
   .feed-cover {
     position: relative;
+    /* The card is a stretched flex column, so a cover with an aspect-ratio
+       was the item that gave way when the text beside it in the row ran
+       longer: in a row of three, one cover came out 161px tall and the other
+       two 193px, and the coloured band stepped down mid-row. The cover keeps
+       its ratio; the slack goes to the body. */
+    flex: none;
     display: flex;
     align-items: center;
     justify-content: center;

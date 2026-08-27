@@ -373,6 +373,40 @@ test.describe("venue page", () => {
   });
 });
 
+test.describe("feed cards", () => {
+  // The cover is the coloured band at the top of every card in a row, and it
+  // was the flex item that gave way when one card's headline ran two lines:
+  // at 1280 a row of three came out 161/193/193 and the band stepped down on
+  // the first card alone.
+  for (const [site, path] of [["fwf", "/"], ["dst", "/"]]) {
+    test(`${site}${path}: covers in a row are the same height`, async ({ page }) => {
+      await page.setViewportSize({ width: 1280, height: 900 });
+      await page.goto(url(site, path));
+
+      const rows = await page.evaluate(() => {
+        const groups = [];
+        for (const grid of document.querySelectorAll(".feed-cards")) {
+          const cards = [...grid.querySelectorAll(":scope > .feed-card")];
+          // Only cards that share a row: a wrapped grid legitimately differs.
+          const byTop = new Map();
+          for (const card of cards) {
+            const top = Math.round(card.getBoundingClientRect().top);
+            const h = Math.round(card.querySelector(".feed-cover").getBoundingClientRect().height);
+            byTop.set(top, [...(byTop.get(top) ?? []), h]);
+          }
+          for (const heights of byTop.values()) if (heights.length > 1) groups.push(heights);
+        }
+        return groups;
+      });
+
+      expect(rows.length, "no multi-card row to measure").toBeGreaterThan(0);
+      for (const heights of rows) {
+        expect(new Set(heights).size, `covers in one row measured ${heights.join("/")}`).toBe(1);
+      }
+    });
+  }
+});
+
 test.describe("skip link", () => {
   // The header carries a nav of eight or more links plus the network menu.
   // Without a skip link a keyboard user tabs through all of it on every
