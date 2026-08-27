@@ -1,0 +1,68 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Callout from "@dst/ui/Callout.astro";
+import { go } from "../outbound";
+---
+<Layout
+  title="About this site"
+  description="Who publishes fwf.lol, why an independent guide to Future World Forum Dubai exists, and how its facts are checked and dated."
+>
+  <section class="container hero">
+    <p class="eyebrow">About</p>
+    <h1>What this site is</h1>
+    <p class="lede">
+      An independent guide to <strong>Future World Forum Dubai 2026</strong>,
+      published by DST. It is not the organiser, not affiliated with Futur
+      World Expo, and sells nothing.
+    </p>
+  </section>
+
+  <Callout kind="warn">
+    <strong>Not official.</strong> Nothing here is an announcement. The
+    organiser's ticket listing is the authoritative source for the date, the
+    price and the terms — confirm details there, or with the organiser, before
+    you book anything.
+  </Callout>
+
+  <section class="container">
+    <h2>Why it exists</h2>
+    <p>
+      The forum's own website does not currently resolve, and its ticket
+      listing is a single page written to sell a seat rather than to answer
+      questions. That leaves a straightforward gap: what is actually known
+      about this event, stated once, with the date it was checked next to it.
+    </p>
+    <p>
+      Alongside that sits a feed of news in the subjects the forum covers —
+      smart cities, PropTech, digital finance and mobility in Dubai — because
+      those stories are the reason anyone would consider going.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>How facts get onto these pages</h2>
+    <ul class="rules">
+      <li><strong>Published sources only.</strong> Each claim traces to the organiser's listing or to the body that made the announcement — a government media office, a regulator, a land department.</li>
+      <li><strong>Dated.</strong> Anything that can change carries the date it was last checked.</li>
+      <li><strong>Gaps are named.</strong> Where nothing has been published — the venue, the speakers, the session times — the page says that rather than inferring it.</li>
+      <li><strong>Inference is labelled.</strong> Where this site reads something into the facts, the sentence says it is doing so.</li>
+      <li><strong>Nothing is sold here.</strong> The ticket link goes to the organiser's seller. This site takes no commission on it.</li>
+    </ul>
+  </section>
+
+  <section class="container">
+    <h2>Corrections</h2>
+    <p>
+      If something here is wrong or has moved on — and on an event with an
+      unannounced venue, it will — the correction belongs on the page. The
+      organiser's contact details are on
+      <a href={go("tickets")} rel="nofollow sponsored" title="Ticket page for Future World Forum Dubai on Eventbrite">the ticket page</a>;
+      for this site, write to the address on <a href="https://dst.llc" title="DST — the group behind this site">dst.llc</a>.
+    </p>
+  </section>
+</Layout>
+
+<style>
+  .rules { max-width: 68ch; }
+  .rules li { margin-bottom: var(--space-2); }
+</style>

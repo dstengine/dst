@@ -1,0 +1,95 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Callout from "@dst/ui/Callout.astro";
+import { forum, forumDate } from "../content";
+import { go } from "../outbound";
+---
+<Layout
+  title="Future World Forum Dubai programme"
+  description="What Future World Forum Dubai 2026 covers: fintech and crypto, AI and data, PropTech, urban cybersecurity, and smart infrastructure and mobility — and who each track is aimed at."
+>
+  <section class="container hero">
+    <p class="eyebrow">Programme</p>
+    <h1>What the forum covers</h1>
+    <p class="lede">
+      Future World Forum Dubai publishes its programme as five sectors rather
+      than a timetable. One day, {forum.startTime}–{forum.endTime}, on
+      {forumDate}. Below is each sector in the organiser's own framing,
+      condensed, with what it means in practice for the people who show up.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>The five sectors</h2>
+    {forum.programme!.map((track) => (
+      <article class="track">
+        <h3>{track.heading}</h3>
+        <p>{track.text}</p>
+      </article>
+    ))}
+  </section>
+
+  <Callout kind="note">
+    <strong>No session times, speakers or exhibitor list have been published.</strong>
+    As of 27 August 2026 the sectors above are the whole of the published
+    programme. A one-day event usually settles its running order six to eight
+    weeks out; this page is updated when that appears.
+  </Callout>
+
+  <section class="container">
+    <h2>Who it is addressed to</h2>
+    <p>
+      The organiser names its intended audience explicitly, which is more
+      useful than it sounds — it tells you which side of the room you would be
+      in, and whether the answer is "buying" or "selling".
+    </p>
+    <ul class="tags">
+      {forum.audience!.map((who) => <li>{who}</li>)}
+    </ul>
+    <p>
+      Read together with the sectors, that is a room of public-sector buyers
+      and technology vendors with investors along the edges. It is a
+      business-development day more than a research one: nobody is presenting
+      a paper, and the value on offer is who you meet in a city that actually
+      deploys this category of system.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>Getting a seat</h2>
+    <p>
+      Tickets run in a wide band and sales close well before the date — see
+      <a href="/tickets/" title="Ticket prices, the deadline and the refund policy">the ticket page</a> for
+      the figures, or go straight to the seller.
+    </p>
+    <p>
+      <a class="button" href={go("tickets")} rel="nofollow sponsored" title="Ticket page for Future World Forum Dubai on Eventbrite">Tickets on Eventbrite</a>
+    </p>
+  </section>
+</Layout>
+
+<style>
+  .track {
+    border-top: 1px solid var(--border);
+    padding-top: var(--space-3);
+    margin-top: var(--space-3);
+  }
+  .track h3 { margin: 0 0 var(--space-1); font-size: var(--step-1); color: var(--accent); }
+  .track p { margin: 0; max-width: 68ch; }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+    list-style: none;
+    margin: var(--space-3) 0;
+    padding: 0;
+  }
+  .tags li {
+    padding: 0.3em 0.8em;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    font-size: var(--step--1);
+    color: var(--ink-muted);
+  }
+</style>

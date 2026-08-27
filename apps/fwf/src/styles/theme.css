@@ -1,0 +1,15 @@
+/* fwf.lol — an independent guide to one conference. Accent: an indigo
+   violet, the one hue no other site in the network uses (llc's teal,
+   visas's bronze, riviera's blue, mbr's cyan, palmcentral's terracotta,
+   eco's green). It also reads as "conference", not "listing": this site
+   sells nothing and shouldn't wear a property brand's colours. */
+:root {
+  --accent: #5145C4;
+  --accent-ink: #241D73;
+  --accent-tint: #E7E4F7;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --accent: #A79BF5; --accent-ink: #DDD8FB; --accent-tint: #1E1A3D; }
+}
+:root[data-theme="dark"] { --accent: #A79BF5; --accent-ink: #DDD8FB; --accent-tint: #1E1A3D; }
+:root[data-theme="light"] { --accent: #5145C4; --accent-ink: #241D73; --accent-tint: #E7E4F7; }

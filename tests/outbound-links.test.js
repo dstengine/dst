@@ -20,10 +20,16 @@ import { fileURLToPath } from "node:url";
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
 /** Every app in the network. eco included — see the note above. */
-const APPS = ["dst", "llc", "visas", "riviera", "mbr", "palmcentral", "eco"];
+const APPS = ["dst", "llc", "visas", "riviera", "mbr", "palmcentral", "eco", "fwf"];
 
-/** dst.llc itself and any subdomain of it. */
-const isNetworkHost = (host) => host === "dst.llc" || host.endsWith(".dst.llc");
+/** dst.llc itself and any subdomain of it, plus the network's own domains
+    that don't sit under it — fwf.lol is published by DST but is a site
+    about a third party's event, so it carries its own name. */
+const OWN_DOMAINS = ["fwf.lol"];
+const isNetworkHost = (host) =>
+  host === "dst.llc" ||
+  host.endsWith(".dst.llc") ||
+  OWN_DOMAINS.some((own) => host === own || host.endsWith(`.${own}`));
 
 // The only third parties a built page is allowed to reach, each one a
 // deliberate decision. A new host here is a decision too — it should be

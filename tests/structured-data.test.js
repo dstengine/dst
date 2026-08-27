@@ -15,7 +15,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const APPS = ["dst", "llc", "visas", "riviera", "mbr", "palmcentral", "eco"];
+const APPS = ["dst", "llc", "visas", "riviera", "mbr", "palmcentral", "eco", "fwf"];
 const ORGANIZATION_ID = "https://dst.llc/#organization";
 
 /** Every built page: { app, url, canonical, html, blocks, graph } */

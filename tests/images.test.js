@@ -20,6 +20,7 @@ const SITES = [
   { app: "riviera", host: "riviera.dst.llc" },
   { app: "mbr", host: "mbr.dst.llc" },
   { app: "palmcentral", host: "palmcentral.dst.llc" },
+  { app: "fwf", host: "fwf.lol" },
   { app: "eco", host: "eco.dst.llc" },
 ];
 

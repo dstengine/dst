@@ -1,0 +1,38 @@
+---
+import BaseLayout from "@dst/ui/BaseLayout.astro";
+import { disclaimer } from "../content";
+import "../styles/theme.css";
+
+interface Props {
+  title: string;
+  description: string;
+  jsonLd?: Record<string, unknown>[];
+  /** og:image for this page — see BaseLayout. */
+  image?: string;
+}
+const { title, description, jsonLd, image } = Astro.props;
+
+const nav = [
+  { href: "/", label: "Overview", title: "Future World Forum Dubai 2026 — what is known" },
+  { href: "/programme/", label: "Programme", title: "The five sectors the forum's programme covers" },
+  { href: "/tickets/", label: "Tickets", title: "Ticket prices, the sales deadline and the refund policy" },
+  { href: "/venue/", label: "Venue", title: "Where the forum is held, and what has not been announced" },
+  { href: "/faq/", label: "FAQ", title: "Questions people ask about Future World Forum Dubai" },
+  { href: "/news/", label: "News", title: "Dubai smart city, PropTech, fintech and mobility news" },
+  { href: "/about/", label: "About", title: "Who publishes this site and how its facts are checked" },
+];
+---
+<BaseLayout
+  title={`${title} — FWF Dubai`}
+  description={description}
+  siteName="FWF Dubai"
+  footerSiteName="fwf.lol"
+  nav={nav}
+  complianceNote={disclaimer}
+  jsonLd={jsonLd}
+  image={image}
+  partnerDisclosure={false}
+  footerLinks={[{ href: "/about/", label: "About this site" }]}
+>
+  <slot />
+</BaseLayout>

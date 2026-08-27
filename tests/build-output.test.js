@@ -22,6 +22,7 @@ const SITES = [
   { app: "riviera", host: "riviera.dst.llc" },
   { app: "mbr", host: "mbr.dst.llc" },
   { app: "palmcentral", host: "palmcentral.dst.llc" },
+  { app: "fwf", host: "fwf.lol" },
 ];
 const TITLE_LIMIT = 60;
 

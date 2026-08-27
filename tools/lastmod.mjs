@@ -21,6 +21,7 @@ const HOSTS = {
   riviera: "riviera.dst.llc",
   mbr: "mbr.dst.llc",
   palmcentral: "palmcentral.dst.llc",
+  fwf: "fwf.lol",
   eco: "eco.dst.llc",
 };
 

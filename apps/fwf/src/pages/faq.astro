@@ -1,0 +1,72 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Faq from "@dst/ui/Faq.astro";
+import { formatDate } from "@dst/ui/date";
+import { forum, forumDate, ticketsFrom, ticketsTo } from "../content";
+
+const salesEnd = formatDate(forum.tickets!.salesEnd!);
+
+// Answers are written to stand on their own in a search result, which is
+// what the FAQPage markup puts them into. Every one of them is answerable
+// from the organiser's listing or is an explicit "not published".
+const faqItems = [
+  {
+    q: "When is Future World Forum Dubai 2026?",
+    a: `Monday ${forumDate}, from ${forum.startTime} to ${forum.endTime} Gulf Standard Time (UTC+4). It is a single day.`,
+  },
+  {
+    q: "Where is Future World Forum Dubai held?",
+    a: "In Dubai. The organiser's listing names no venue — only the city — and had not announced one as of 27 August 2026. Confirm the location with the organiser before booking travel.",
+  },
+  {
+    q: "How much do tickets cost?",
+    a: `The listed band runs from ${ticketsFrom} to ${ticketsTo}. The spread suggests a delegate seat at the low end and an exhibitor or sponsor package at the top, though the listing does not label the tiers.`,
+  },
+  {
+    q: "When do ticket sales close?",
+    a: `${salesEnd}, about seven weeks before the event itself.`,
+  },
+  {
+    q: "Can I get a refund?",
+    a: "Refunds are available up to seven days before the event, through Eventbrite, which is where the tickets are sold.",
+  },
+  {
+    q: "Who organises it?",
+    a: `${forum.organizer}, which sells the tickets through Eventbrite.`,
+  },
+  {
+    q: "Is futureworldforum.com the official website?",
+    a: "It is the website printed on the ticket listing, but as of 27 August 2026 the domain does not resolve to a working site — it sits unconnected at its host. The ticket listing itself is live and marked as scheduled.",
+  },
+  {
+    q: "What does the programme cover?",
+    a: "Five sectors: fintech and crypto, AI and data-driven solutions, PropTech and smart real estate, cyber resilient cities, and smart infrastructure and mobility. No session times, speakers or exhibitor list have been published.",
+  },
+  {
+    q: "Is this the same as the Dubai Future Forum?",
+    a: "No. The Dubai Future Forum is a separate, larger event run by the Dubai Future Foundation at the Museum of the Future. Future World Forum Dubai is a one-day conference and expo organised by Futur World Expo. The names are similar and are easy to confuse.",
+  },
+  {
+    q: "Is this site run by the organiser?",
+    a: "No. It is an independent guide with no affiliation to the organiser and no involvement in ticket sales. Everything here is read from published sources and dated.",
+  },
+];
+---
+<Layout
+  title="Future World Forum Dubai FAQ"
+  description="Future World Forum Dubai 2026: dates, venue, ticket prices, refunds, the organiser, and how it differs from the Dubai Future Forum. Answered from the published listing."
+>
+  <section class="container hero">
+    <p class="eyebrow">FAQ</p>
+    <h1>Questions before booking</h1>
+    <p class="lede">
+      Answered from the organiser's own listing, checked on 27 August 2026.
+      Where nothing has been published, the answer says so instead of
+      guessing.
+    </p>
+  </section>
+
+  <section class="container">
+    <Faq items={faqItems} />
+  </section>
+</Layout>

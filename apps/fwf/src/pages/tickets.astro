@@ -1,0 +1,86 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Callout from "@dst/ui/Callout.astro";
+import { formatDate } from "@dst/ui/date";
+import { forum, forumDate, ticketsFrom, ticketsTo } from "../content";
+import { go } from "../outbound";
+
+const salesEnd = formatDate(forum.tickets!.salesEnd!);
+---
+<Layout
+  title="Future World Forum Dubai tickets"
+  description={`Future World Forum Dubai 2026 tickets: ${ticketsFrom} to ${ticketsTo}, sales close ${salesEnd}, refunds up to seven days before. What the price band does and doesn't tell you.`}
+>
+  <section class="container hero">
+    <p class="eyebrow">Tickets</p>
+    <h1>What a seat costs</h1>
+    <p class="lede">
+      Tickets for {forumDate} are sold on Eventbrite by the organiser, in a
+      band from <strong>{ticketsFrom}</strong> to <strong>{ticketsTo}</strong>.
+      This site does not sell tickets and takes nothing from the sale — the
+      figures here are read off the listing so you can decide before clicking.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>The numbers</h2>
+    <div class="table-wrap">
+      <table>
+        <tbody>
+          <tr><th scope="row">Lowest listed</th><td>{ticketsFrom}</td></tr>
+          <tr><th scope="row">Highest listed</th><td>{ticketsTo}</td></tr>
+          <tr><th scope="row">Sales close</th><td>{salesEnd} — seven weeks before the event</td></tr>
+          <tr><th scope="row">Refunds</th><td>{forum.tickets!.refundPolicy}</td></tr>
+          <tr><th scope="row">Sold by</th><td>Eventbrite, on behalf of {forum.organizer}</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">Read from the listing on 27 August 2026. Prices on the seller's page are what count.</p>
+    <p>
+      <a class="button" href={go("tickets")} rel="nofollow sponsored" title="Ticket page for Future World Forum Dubai on Eventbrite">Tickets on Eventbrite</a>
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>What the band means</h2>
+    <p>
+      A spread from under fifty dollars to over three thousand is not a
+      pricing tier for the same thing. On a one-day conference and expo it
+      almost always separates three products: a delegate seat at the bottom,
+      a premium or group pass in the middle, and an exhibitor or sponsor
+      package at the top, where the fee buys floor space rather than a chair.
+    </p>
+    <p>
+      The listing does not spell that out, so treat the reading above as an
+      inference from the shape of the price band and not as a fact about this
+      event. If you are considering anything above the entry tier, ask the
+      organiser in writing what the tier includes — stand size, staff passes,
+      speaking slot, attendee list — before paying.
+    </p>
+  </section>
+
+  <Callout kind="warn">
+    <strong>The deadline is the thing to diarise.</strong> Sales close
+    {salesEnd}, and refunds stop seven days before {forumDate}. Between those
+    two dates a ticket is neither buyable nor returnable, which is a narrower
+    window than most events leave.
+  </Callout>
+
+  <section class="container">
+    <h2>Before you pay</h2>
+    <ul class="checks">
+      <li><strong>Ask where it is.</strong> The listing names no venue — see <a href="/venue/" title="What is known about the venue">the venue page</a>.</li>
+      <li><strong>Ask what your tier includes</strong>, in writing, if you are buying above entry level.</li>
+      <li><strong>Book refundable travel</strong> until the venue is confirmed.</li>
+      <li><strong>Keep the Eventbrite receipt</strong> — the refund window runs from the platform, not the organiser.</li>
+      <li><strong>Check the date again</strong> a week before you fly. This page is updated when the listing changes.</li>
+    </ul>
+  </section>
+</Layout>
+
+<style>
+  th[scope="row"] { width: 12rem; color: var(--ink-muted); font-weight: 600; white-space: nowrap; }
+  .table-note { font-size: var(--step--1); color: var(--ink-muted); }
+  .checks { max-width: 68ch; }
+  .checks li { margin-bottom: var(--space-2); }
+</style>

@@ -6,8 +6,9 @@ import { items as riviera } from "./riviera.ts";
 import { items as mbr } from "./mbr.ts";
 import { items as palmcentral } from "./palmcentral.ts";
 import { items as eco } from "./eco.ts";
+import { items as fwf } from "./fwf.ts";
 
-const BY_SITE: Record<string, EventItem[]> = { dst, llc, visas, riviera, mbr, palmcentral, eco };
+const BY_SITE: Record<string, EventItem[]> = { dst, llc, visas, riviera, mbr, palmcentral, eco, fwf };
 
 export const allEvents: EventItem[] = Object.values(BY_SITE).flat();
 

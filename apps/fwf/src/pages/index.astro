@@ -1,0 +1,181 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Callout from "@dst/ui/Callout.astro";
+import CountdownScript from "@dst/ui/CountdownScript.astro";
+import NewsBlock from "@dst/ui/NewsBlock.astro";
+import { newsBySite } from "@dst/content/news";
+import { formatDate } from "@dst/ui/date";
+import { forum, forumDate, ticketsFrom, ticketsTo } from "../content";
+import { go } from "../outbound";
+import { itemContext } from "@dst/ui/schema";
+
+const newsItems = newsBySite("fwf");
+
+const explore = [
+  { href: "/programme/", title: "Programme", description: "The five sectors the day is built around, and who each one is aimed at." },
+  { href: "/tickets/", title: "Tickets", description: `${ticketsFrom} to ${ticketsTo}, with sales closing ${formatDate(forum.tickets!.salesEnd!)}.` },
+  { href: "/venue/", title: "Venue", description: "What the listing says about the location — and what it doesn't." },
+  { href: "/faq/", title: "FAQ", description: "The questions that come up before booking, answered from the listing." },
+];
+
+// The event's own markup lives here, on the page a search for the forum
+// lands on. Only the fields the organiser has actually published: a
+// location with no venue in it is worse than a location left thin, and
+// invented times are what event rich results are policed for.
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    // Ties the event to the same publisher and page node the layout's own
+    // graph emits, rather than leaving it standing on its own.
+    ...itemContext(new URL(Astro.url.pathname, Astro.site).href),
+    name: forum.title,
+    startDate: `${forum.start}T${forum.startTime}:00+04:00`,
+    endDate: `${forum.start}T${forum.endTime}:00+04:00`,
+    eventStatus: "https://schema.org/EventScheduled",
+    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+    description: forum.summary,
+    location: {
+      "@type": "Place",
+      name: "Dubai",
+      address: { "@type": "PostalAddress", addressLocality: "Dubai", addressCountry: "AE" },
+    },
+    organizer: { "@type": "Organization", name: forum.organizer },
+    offers: {
+      "@type": "AggregateOffer",
+      lowPrice: forum.tickets!.priceFrom,
+      highPrice: forum.tickets!.priceTo,
+      priceCurrency: forum.tickets!.currency,
+      availability: "https://schema.org/InStock",
+      validThrough: `${forum.tickets!.salesEnd}T23:59:59+04:00`,
+      // The hop, not the seller: structured data on this network names no
+      // third-party URL outside sameAs, and /go/ is where an outbound link
+      // lives here. Same rule EventArticle applies to a ticketed event.
+      url: Astro.site ? new URL(go("tickets"), Astro.site).href : go("tickets"),
+    },
+  },
+];
+---
+<Layout
+  title="Future World Forum Dubai 2026"
+  description="Future World Forum Dubai 2026: 16 November, 10:00–17:30, Dubai. An independent guide to the dates, ticket prices, programme and what the organiser has not yet announced."
+  jsonLd={jsonLd}
+>
+  <section class="container hero">
+    <p class="eyebrow">Independent guide · updated 27 August 2026</p>
+    <h1>Future World Forum Dubai 2026</h1>
+    <p class="lede">
+      A <strong>one-day conference and expo</strong> on urban technology, listed
+      for <strong>{forumDate}</strong> in Dubai, <strong>10:00–17:30</strong>.
+      This site tracks what the organiser has actually published — the dates,
+      the price band, the five sectors on the programme — and says plainly
+      which parts are still missing.
+    </p>
+    <div class="hero-actions">
+      <a class="button" href={go("tickets")} rel="nofollow sponsored" title="Ticket page for Future World Forum Dubai on Eventbrite">Tickets on Eventbrite</a>
+      <a class="button button-secondary" href="/programme/" title="What the forum's programme covers">See the programme</a>
+    </div>
+  </section>
+
+  <section class="container">
+    <h2>The facts, as listed</h2>
+    <div class="table-wrap">
+      <table>
+        <tbody>
+          <tr>
+            <th scope="row">Date</th>
+            <td>
+              <time datetime={forum.start}>Monday {forumDate}</time>
+              <span class="muted" data-countdown datetime={forum.start}></span>
+            </td>
+          </tr>
+          <tr><th scope="row">Hours</th><td>{forum.startTime}–{forum.endTime} Gulf Standard Time (UTC+4)</td></tr>
+          <tr><th scope="row">Format</th><td>In person, one day — conference and expo</td></tr>
+          <tr><th scope="row">City</th><td>Dubai. No venue has been announced.</td></tr>
+          <tr><th scope="row">Organiser</th><td>{forum.organizer}</td></tr>
+          <tr><th scope="row">Tickets</th><td>{ticketsFrom} – {ticketsTo}, sales close {formatDate(forum.tickets!.salesEnd!)}</td></tr>
+          <tr><th scope="row">Refunds</th><td>{forum.tickets!.refundPolicy}</td></tr>
+          <tr><th scope="row">Status</th><td>Listed as scheduled</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">
+      Every row above comes from the organiser's ticket listing, checked on
+      27 August 2026. Where the listing is silent, this page says so rather
+      than filling the gap.
+    </p>
+    <p>
+      <a class="ics" href="/forum.ics" title="Download the date as a calendar file">Add the date to your calendar</a>
+    </p>
+  </section>
+
+  <Callout kind="warn">
+    <strong>Check the venue before you book travel.</strong> The listing gives
+    the date, the hours, the price band and a sales deadline of
+    {formatDate(forum.tickets!.salesEnd!)} — but the location field says only
+    "Dubai", and the website printed on the listing,
+    futureworldforum.com, does not currently resolve to a site. The ticket
+    page itself is live and marked as scheduled. Ask the organiser for the
+    venue in writing before spending anything non-refundable.
+  </Callout>
+
+  <section class="container">
+    <h2>What the day covers</h2>
+    <p>
+      The programme is published by sector rather than by session. Five of
+      them, all pointed at the same question — what a city runs on when the
+      infrastructure is software.
+    </p>
+    <div class="link-grid">
+      {forum.programme!.map((track) => (
+        <article class="card">
+          <h3>{track.heading}</h3>
+          <p>{track.text}</p>
+        </article>
+      ))}
+    </div>
+    <p class="table-note">
+      Sector descriptions are the organiser's, condensed. No speakers,
+      session times or exhibitor list had been published as of 27 August 2026.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>Before you decide</h2>
+    <div class="link-grid">
+      {explore.map((item) => (
+        <a class="card link-card" href={item.href} title={item.title}>
+          <h3>{item.title}</h3>
+          <p>{item.description}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="container">
+    <NewsBlock items={newsItems} heading="What's happening in the subjects it covers" />
+    <p class="table-note">
+      <a href="/news/" title="All Dubai smart city, PropTech, fintech and mobility news">All news</a>
+    </p>
+  </section>
+
+  <CountdownScript />
+</Layout>
+
+<style>
+  .hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-3); }
+  /* A key/value table, not a data grid: the row headings are labels, so
+     they take the muted weight the body copy doesn't. */
+  th[scope="row"] {
+    width: 10rem;
+    color: var(--ink-muted);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .muted { margin-left: 0.6em; color: var(--ink-muted); }
+  .muted:not(:empty)::before { content: "· "; }
+  .table-note { font-size: var(--step--1); color: var(--ink-muted); }
+  .ics { font-size: var(--step--1); }
+  .card h3 { margin-top: 0; font-size: var(--step-0); }
+  .card p { margin: 0; font-size: var(--step--1); color: var(--ink-muted); }
+</style>

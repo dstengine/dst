@@ -1,0 +1,17 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import NewsArticle from "@dst/ui/NewsArticle.astro";
+import { newsBySite } from "@dst/content/news";
+
+export function getStaticPaths() {
+  const items = newsBySite("fwf").filter((item) => Array.isArray(item.body) && item.body.length > 0);
+  // The rest of the feed travels with each page so the article can end
+  // with somewhere to go instead of only a back link.
+  return items.map((item) => ({ params: { slug: item.slug }, props: { item, more: items } }));
+}
+
+const { item, more } = Astro.props;
+---
+<Layout title={item.title} description={item.summary} image={item.image}>
+  <NewsArticle item={item} more={more} backHref="/news/" />
+</Layout>

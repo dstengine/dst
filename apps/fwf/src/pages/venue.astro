@@ -1,0 +1,82 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Callout from "@dst/ui/Callout.astro";
+import { forum, forumDate } from "../content";
+import { go } from "../outbound";
+---
+<Layout
+  title="Future World Forum Dubai venue"
+  description="Where Future World Forum Dubai 2026 is held: what the listing says, what it doesn't, and how to plan travel for 16 November without a confirmed venue."
+>
+  <section class="container hero">
+    <p class="eyebrow">Venue</p>
+    <h1>Where it is held</h1>
+    <p class="lede">
+      The honest answer, as of 27 August 2026: <strong>Dubai, and no further</strong>.
+      The ticket listing's location field carries the city and nothing else —
+      no venue name, no district, no hall. Everything below is about how to
+      plan around that rather than pretending it has been answered.
+    </p>
+  </section>
+
+  <Callout kind="warn">
+    <strong>No venue has been announced.</strong> The listing gives a city, a
+    date ({forumDate}) and hours ({forum.startTime}–{forum.endTime}). If a
+    page elsewhere names a specific hall for this event, check where it got
+    it — it is not on the organiser's own listing.
+  </Callout>
+
+  <section class="container">
+    <h2>How to plan anyway</h2>
+    <p>
+      Dubai's conference traffic concentrates in a handful of places, and any
+      of them is a plausible answer: the Dubai World Trade Centre near
+      Za'abeel, the Madinat Jumeirah conference centre on the coast, the
+      Dubai Exhibition Centre out at Expo City, or a hotel ballroom in
+      Business Bay or on Sheikh Zayed Road. They are up to forty minutes
+      apart in traffic, which is exactly why the gap matters.
+    </p>
+    <p>
+      What that means in practice: a central hotel between Downtown and
+      Business Bay is within reach of every one of those, and the metro's Red
+      Line covers most of them. Book a room you can cancel, and hold off on
+      anything tied to a specific side of the city until the venue is named.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>Practicalities for the day</h2>
+    <div class="table-wrap">
+      <table>
+        <tbody>
+          <tr><th scope="row">Date</th><td><time datetime={forum.start}>{forumDate}</time>, a Monday</td></tr>
+          <tr><th scope="row">Hours</th><td>{forum.startTime}–{forum.endTime}, Gulf Standard Time (UTC+4)</td></tr>
+          <tr><th scope="row">November weather</th><td>Around 25–31°C by day — the pleasant end of the Dubai year, and the reason conference season runs now</td></tr>
+          <tr><th scope="row">Working week</th><td>Monday is a normal working day in the UAE; the weekend is Saturday and Sunday</td></tr>
+          <tr><th scope="row">Entry</th><td>Most nationalities get a visa on arrival or an eVisa — check your own before booking</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">
+      Date and hours from the listing; the rest is general Dubai context, not
+      something the organiser has stated.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>Ask the organiser</h2>
+    <p>
+      The venue is a fair question to put directly, and the answer is worth
+      having in writing before you book flights. Contact details sit on the
+      ticket page.
+    </p>
+    <p>
+      <a class="button button-secondary" href={go("tickets")} rel="nofollow sponsored" title="Ticket page for Future World Forum Dubai on Eventbrite">Organiser's ticket page</a>
+    </p>
+  </section>
+</Layout>
+
+<style>
+  th[scope="row"] { width: 12rem; color: var(--ink-muted); font-weight: 600; white-space: nowrap; }
+  .table-note { font-size: var(--step--1); color: var(--ink-muted); }
+</style>

@@ -24,10 +24,19 @@ if (id && !valid) {
   throw new Error(`Analytics: "${id}" is not a valid GA4 measurement ID`);
 }
 
+// One cookie on .dst.llc keeps a session intact as someone moves between
+// the verticals, which is the point of cross-linking them. A host outside
+// that domain cannot write it — the browser drops a cookie for a domain
+// the page isn't on, and the site would report no sessions at all. Those
+// hosts get 'auto', which is the same measurement without the shared
+// session that would be meaningless for them anyway.
+const host = Astro.site?.hostname ?? "";
+const cookieDomain = host === "dst.llc" || host.endsWith(".dst.llc") ? "'.dst.llc'" : "'auto'";
+
 const snippet = `window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', '${id}', { cookie_domain: '.dst.llc' });`;
+gtag('config', '${id}', { cookie_domain: ${cookieDomain} });`;
 ---
 {valid && (
   <>
