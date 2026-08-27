@@ -2,6 +2,80 @@ import type { EventItem } from "../types.ts";
 
 export const items: EventItem[] = [
   {
+    slug: "future-world-forum-dubai-2026",
+    site: "dst",
+    title: "Future World Forum Dubai",
+    summary:
+      "A one-day smart-city conference \u2014 fintech and crypto, AI, PropTech, cyber resilience, mobility \u2014 on November 16, 2026 in Dubai. Tickets from $49; the venue is still unannounced.",
+    start: "2026-11-16",
+    startTime: "10:00",
+    endTime: "17:30",
+    city: "Dubai",
+    organizer: "Futur World Expo",
+    category: "Conference",
+    image: "/events/future-world-forum-dubai.jpg",
+    imageAlt: "A conference venue at dusk under a Dubai skyline, its facade lit with the words Future World Forum Dubai",
+    imageKind: "generated",
+    imageWidth: 1380,
+    imageHeight: 752,
+    source: {
+      name: "Eventbrite",
+      url: "https://www.eventbrite.com/e/future-world-forum-dubai-tickets-1324931388449",
+      verifiedOn: "2026-08-27",
+    },
+    ticket: {
+      url: "https://www.eventbrite.com/e/future-world-forum-dubai-tickets-1324931388449",
+      label: "Tickets on Eventbrite",
+    },
+    tickets: {
+      priceFrom: 49,
+      priceTo: 3096,
+      currency: "USD",
+      salesEnd: "2026-09-25",
+      refundPolicy: "Up to 7 days before the event",
+    },
+    body: [
+      "The Future World Forum is a single-day conference and expo held in Dubai on <strong>Monday, November 16, 2026</strong>, running from 10:00 to 17:30. It bills itself as a gathering for urban innovation \u2014 the technologies, the money behind them, and the policy that decides which of the two moves first \u2014 and it puts five sectors that usually meet at separate events under one roof for a day.",
+      "That framing is the point of it. A crypto conference draws people who already agree with each other about crypto; a smart-city forum draws the municipal side, the infrastructure side and the capital side into the same room, which is where most of the friction in these projects actually sits. Dubai is a reasonable place to try it: the city runs its own smart-city programme, the regulator has taken a defined position on digital assets rather than deferring, and the property sector is well ahead of most markets in putting transactions on a screen instead of a counter.",
+      "The organiser sells this as a working day rather than a lecture series \u2014 the stated aims are partnerships, exhibitor visibility and access to policymakers, in that order. Exhibitor packages sit at the upper end of the ticket range.",
+      "Tickets run from <strong>$49 to $3,096</strong>, refundable up to seven days before the date, and the listing closes sales on <strong>September 25, 2026</strong> \u2014 nearly two months ahead of the event, which is an unusually early cut-off and worth putting in the calendar if you are undecided.",
+    ],
+    programme: [
+      {
+        heading: "Fintech and crypto",
+        text: "Blockchain in production rather than in principle, DeFi, and where digital-asset investment sits inside the UAE regulatory framework \u2014 the part of the programme with the clearest local hook, since the rules here are written rather than pending.",
+      },
+      {
+        heading: "AI and data-driven operations",
+        text: "Forecasting demand, tightening operations, cybersecurity, and the use of analytics in planning decisions that used to be made on committee judgement.",
+      },
+      {
+        heading: "PropTech and smart real estate",
+        text: "Digital twins for planning, building systems that report on themselves, and financing structures that follow from having reliable data about an asset \u2014 the track closest to how property is actually bought and sold in this market.",
+      },
+      {
+        heading: "Cyber-resilient cities",
+        text: "Protecting interconnected municipal systems and the data they generate. A single utility, transport network or permit system now has the blast radius of all three.",
+      },
+      {
+        heading: "Smart infrastructure and mobility",
+        text: "Intelligent transport, mobility-as-a-service, clean utilities and the circular economy \u2014 the physical layer under everything above it.",
+      },
+    ],
+    audience: [
+      "Government officials",
+      "CIOs and CTOs",
+      "Investors and VCs",
+      "Developers and PropTech",
+      "Data scientists and AI researchers",
+      "Urban planners",
+      "Finance, banking and crypto",
+      "Tech companies",
+    ],
+    expertise:
+      "Three things are worth knowing before booking. The venue is not announced \u2014 the listing gives the location as Dubai and nothing further, which for a paid conference eleven weeks out is unusual, and it makes the practical questions (which end of the city, how long from your hotel, is parking a problem) unanswerable for now. The organiser's own description is headed 2025 while the listing sells a Monday in November 2026, so one of the two has not been updated. And the public track record is thin: 22 events and 314 attendees in total across a year of hosting, an average in the low tens, against a ticket ceiling of three thousand dollars. None of that makes the event fictional, and the sector mix genuinely is a gap in Dubai's autumn calendar \u2014 nothing else here puts municipal, crypto and PropTech people in one room. It does mean the top tier buys access to something whose scale nobody has demonstrated yet, which is a different proposition from GITEX or Blockchain Life, where the numbers are at least published and checkable. At $49 the downside is a day; at $3,096 it is worth asking the organiser for the venue and the expected head count in writing before the September cut-off.",
+  },
+  {
     slug: "blockchain-life-dubai-2026",
     site: "dst",
     title: "Blockchain Life 2026",

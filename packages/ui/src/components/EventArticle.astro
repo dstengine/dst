@@ -82,6 +82,74 @@ const endStamp = item.end || item.endTime ? stamp(item.end ?? item.start, item.e
 const absolute = (url: string) => (Astro.site ? new URL(url, Astro.site).href : url);
 const canonicalUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
 
+// How long the day runs, from the clock times rather than repeated by hand.
+const duration = (() => {
+  if (!item.startTime || !item.endTime || item.end) return undefined;
+  const [sh, sm] = item.startTime.split(":").map(Number);
+  const [eh, em] = item.endTime.split(":").map(Number);
+  const minutes = eh * 60 + em - (sh * 60 + sm);
+  if (!Number.isFinite(minutes) || minutes <= 0) return undefined;
+  const h = Math.floor(minutes / 60);
+  const m = minutes % 60;
+  return [h && `${h} hour${h === 1 ? "" : "s"}`, m && `${m} minutes`].filter(Boolean).join(" ");
+})();
+
+const currency = item.tickets?.currency ?? "AED";
+const money = (amount: number) =>
+  new Intl.NumberFormat("en-AE", { style: "currency", currency, maximumFractionDigits: 0 }).format(amount);
+const price = (() => {
+  const t = item.tickets;
+  if (!t || t.priceFrom === undefined) return undefined;
+  if (t.priceTo === undefined || t.priceTo === t.priceFrom) return money(t.priceFrom);
+  return `${money(t.priceFrom)} – ${money(t.priceTo)}`;
+})();
+
+// The facts someone weighs before deciding, in the order they weigh them.
+// Anything the organiser hasn't published is left out rather than filled
+// with a placeholder — an empty row is worse than a shorter list.
+const glance: { label: string; value: string }[] = [
+  item.startTime && {
+    label: "Time",
+    value: item.endTime ? `${item.startTime} – ${item.endTime}` : `From ${item.startTime}`,
+  },
+  duration && { label: "Duration", value: duration },
+  { label: "Format", value: "In person" },
+  (item.venue || item.city) && {
+    label: "Where",
+    value: [item.venue, item.city].filter(Boolean).join(", "),
+  },
+  price && { label: "Tickets", value: price },
+  item.tickets?.salesEnd && { label: "Sales close", value: formatDate(item.tickets.salesEnd) },
+  item.tickets?.refundPolicy && { label: "Refunds", value: item.tickets.refundPolicy },
+  item.organizer && { label: "Organizer", value: item.organizer },
+].filter(Boolean) as { label: string; value: string }[];
+
+// AggregateOffer when there's a range, plain Offer when there's one price —
+// the two are not interchangeable in the spec, and a range submitted as an
+// Offer is what makes a price disappear from the rich result.
+const offers = (() => {
+  if (!item.ticket || !ticketHref) return undefined;
+  const url = absolute(ticketHref);
+  const t = item.tickets;
+  const validThrough = t?.salesEnd ? `${t.salesEnd}T23:59:59${offset}` : undefined;
+  const common = {
+    url,
+    availability: "https://schema.org/InStock",
+    ...(validThrough ? { validThrough } : {}),
+  };
+  if (t?.priceFrom === undefined) return { "@type": "Offer", ...common };
+  if (t.priceTo === undefined || t.priceTo === t.priceFrom) {
+    return { "@type": "Offer", price: t.priceFrom, priceCurrency: currency, ...common };
+  }
+  return {
+    "@type": "AggregateOffer",
+    lowPrice: t.priceFrom,
+    highPrice: t.priceTo,
+    priceCurrency: currency,
+    ...common,
+  };
+})();
+
 const jsonLd =
   item.jsonLd ??
   {
@@ -108,7 +176,7 @@ const jsonLd =
         }
       : {}),
     ...(item.organizer ? { organizer: { "@type": "Organization", name: item.organizer } } : {}),
-    ...(item.ticket && ticketHref ? { offers: { "@type": "Offer", url: absolute(ticketHref) } } : {}),
+    ...(offers ? { offers } : {}),
   };
 
 const relatedItems = (item.related ?? []).map((card) => ({
@@ -176,6 +244,17 @@ const relatedItems = (item.related ?? []).map((card) => ({
     </figure>
   )}
 
+  {glance.length > 1 && (
+    <dl class="event-glance">
+      {glance.map((fact) => (
+        <div class="event-glance-row">
+          <dt>{fact.label}</dt>
+          <dd>{fact.value}</dd>
+        </div>
+      ))}
+    </dl>
+  )}
+
   {/* Above the original description on purpose: once something has
       happened, what came of it is the news, and the announcement is
       background. */}
@@ -195,6 +274,29 @@ const relatedItems = (item.related ?? []).map((card) => ({
           this repo, never user input, same as the district ContentPage. */}
       {item.body.map((p) => <p set:html={p} />)}
     </div>
+  )}
+
+  {item.programme && item.programme.length > 0 && (
+    <section class="event-programme">
+      <h2>Programme</h2>
+      <dl>
+        {item.programme.map((track) => (
+          <div class="event-programme-track">
+            <dt>{track.heading}</dt>
+            <dd set:html={track.text} />
+          </div>
+        ))}
+      </dl>
+    </section>
+  )}
+
+  {item.audience && item.audience.length > 0 && (
+    <section class="event-audience">
+      <h2>Who it's for</h2>
+      <ul>
+        {item.audience.map((who) => <li>{who}</li>)}
+      </ul>
+    </section>
   )}
 
   {item.expertise && (
@@ -262,7 +364,19 @@ const relatedItems = (item.related ?? []).map((card) => ({
     padding-bottom: var(--space-5);
   }
   .event-article-header { max-width: none; }
-  .event-article-meta { display: flex; align-items: center; gap: var(--space-2); margin: 0 0 var(--space-1); font-size: var(--step--1); color: var(--ink-faint); }
+  /* Wraps as whole items. Without this the row squeezes each child instead,
+     and on a phone "Nov 16, 2026" broke across three lines beside a clock
+     time doing the same. */
+  .event-article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem var(--space-2);
+    margin: 0 0 var(--space-1);
+    font-size: var(--step--1);
+    color: var(--ink-faint);
+  }
+  .event-article-meta > * { white-space: nowrap; }
   .event-article-category { font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent, #1F5C4E); }
   .event-article-header h1 { margin: 0; }
   /* Clock time is data, like the date beside it. */
@@ -320,6 +434,66 @@ const relatedItems = (item.related ?? []).map((card) => ({
      line-height and paragraphs ran together. */
   .prose p + p { margin-top: var(--space-3); }
   .event-article-expertise p { color: var(--ink-muted); font-style: italic; }
+
+  /* The decision panel: two columns on anything wider than a phone, label
+     over value below that. Rows rather than a bare <dl> grid so a value
+     that wraps stays aligned with its own label. */
+  .event-glance {
+    margin: var(--space-4) 0 0;
+    padding: var(--space-3);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface-sunk);
+    display: grid;
+    gap: var(--space-2);
+  }
+  .event-glance-row {
+    display: grid;
+    grid-template-columns: 9rem 1fr;
+    gap: var(--space-2);
+    align-items: baseline;
+  }
+  .event-glance dt {
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .event-glance dd {
+    margin: 0;
+    color: var(--ink);
+    /* Prices and times line up down the column. */
+    font-variant-numeric: tabular-nums;
+  }
+  @media (max-width: 560px) {
+    .event-glance-row { grid-template-columns: 1fr; gap: 0.15rem; }
+  }
+
+  .event-programme { margin-top: var(--space-4); }
+  .event-programme dl { margin: var(--space-2) 0 0; display: grid; gap: var(--space-3); }
+  .event-programme dt { font-weight: 600; color: var(--ink); }
+  .event-programme dd { margin: 0.35rem 0 0; color: var(--ink-muted); max-width: none; }
+
+  .event-audience { margin-top: var(--space-4); }
+  /* Tags, not a bulleted list: these are parallel labels, and a column of
+     bullets makes eight short phrases look like eight paragraphs. */
+  .event-audience ul {
+    margin: var(--space-2) 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+  }
+  .event-audience li {
+    max-width: none;
+    padding: 0.25em 0.7em;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: var(--step--1);
+    color: var(--ink-muted);
+  }
 
   .locate { margin-top: var(--space-4); }
   .locate-map { margin-top: var(--space-2); border: 1px solid var(--border); }

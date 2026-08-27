@@ -97,6 +97,26 @@ export interface EventItem extends ItemBase {
   city?: string;
   organizer?: string;
   ticket?: { url: string; label?: string }; // -> /go/<slug>/, visible button
+  // What a seat costs and until when. A ticketing platform puts this at the
+  // top of its page because it is the second question after the date, and a
+  // listing that makes someone click through to a third party to learn the
+  // price has sent them away before it was any use to them. It also feeds
+  // the AggregateOffer in the event's markup, which is what puts a price
+  // range in a search result.
+  tickets?: {
+    priceFrom?: number;
+    priceTo?: number;
+    currency?: string; // ISO 4217, e.g. "USD" — defaults to AED for a UAE event
+    salesEnd?: string; // ISO "YYYY-MM-DD"
+    refundPolicy?: string;
+  };
+  // The programme as the organiser frames it: one entry per track, theme or
+  // session. Separate from `body` because these are a list of parallel
+  // things, and a list set as running paragraphs reads as neither.
+  programme?: { heading: string; text: string }[];
+  // Who the event is addressed to, in the organiser's own terms. Short
+  // phrases, not sentences — this renders as a row of tags.
+  audience?: string[];
   // What actually came of it, written after the fact. Ticketing platforms
   // leave a past event as a dead page advertising a date that has gone;
   // an entry that says what happened stays worth landing on.
