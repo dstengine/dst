@@ -107,24 +107,29 @@ const parts = (iso: string) => {
   @container (min-width: 560px) {
     .feed-cards-pinned { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     /* An odd card out spans the row rather than leaving a gap — and turns
-       sideways while it does, for the same reason a lone card does below. */
-    .feed-cards-pinned > :last-child:nth-child(odd) {
+       sideways while it does, for the same reason a lone card does below.
+       It's the first card that gets the space, not the last: in a feed
+       sorted soonest-first, the one being given a whole row is the one the
+       reader is most likely to act on. `:first-child:nth-last-child(odd)`
+       is "first of an odd number of cards" — the same count test as before,
+       read from the other end. */
+    .feed-cards-pinned > :first-child:nth-last-child(odd) {
       grid-column: span 2;
       display: grid;
       grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
     }
-    .feed-cards-pinned > :last-child:nth-child(odd) .feed-cover { height: 100%; max-height: none; aspect-ratio: auto; }
-    .feed-cards-pinned > :last-child:nth-child(odd) .feed-body { align-self: center; padding: var(--space-4); }
+    .feed-cards-pinned > :first-child:nth-last-child(odd) .feed-cover { height: 100%; max-height: none; aspect-ratio: auto; }
+    .feed-cards-pinned > :first-child:nth-last-child(odd) .feed-body { align-self: center; padding: var(--space-4); }
   }
   @container (min-width: 760px) {
     .feed-cards { grid-template-columns: repeat(var(--feed-columns, auto-fill), minmax(var(--feed-min, 260px), 1fr)); }
     .feed-cards-pinned { --feed-min: 0; }
-    .feed-cards-pinned > :last-child:nth-child(odd) { grid-column: auto; display: flex; }
+    .feed-cards-pinned > :first-child:nth-last-child(odd) { grid-column: auto; display: flex; }
     /* Unless it is the only card there is: then it stays side by side. This
        rule has to out-specify the one above it, or a single-item feed came
        out as one full-width card with the cover blown up to the picture's own
        proportions — a portrait photo 1483px tall on a 1132px card. */
-    .feed-cards-single.feed-cards-pinned > :last-child:nth-child(odd) {
+    .feed-cards-single.feed-cards-pinned > :first-child:nth-last-child(odd) {
       display: grid;
       grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
     }
@@ -148,7 +153,7 @@ const parts = (iso: string) => {
     /* Out of flow, so the cover takes the row's height rather than the
        picture's: a portrait photo otherwise stretched the card to 1710px. */
     .feed-cards-single .feed-cover img,
-    .feed-cards-pinned > :last-child:nth-child(odd) .feed-cover img {
+    .feed-cards-pinned > :first-child:nth-last-child(odd) .feed-cover img {
       position: absolute;
       inset: 0;
     }
