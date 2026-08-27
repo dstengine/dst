@@ -189,10 +189,34 @@ describe("images", () => {
   // hero render) rather than sitting next to unrelated text, so alt="" is
   // never correct — it would just drop the image from image search with
   // nothing gained on the accessibility side.
+  //
+  // aria-hidden is the exception, and it is the same distinction stated the
+  // other way: the header and footer marks sit immediately beside the site
+  // name, so describing them made the link announce itself twice. An empty
+  // alt there is a decision, not an omission — and it has to be declared to
+  // count as one.
   test("no content image has an empty alt", () => {
     for (const p of contentPages()) {
       for (const tag of imgsOf(p.html)) {
+        if (/aria-hidden="true"/.test(tag)) continue;
         assert.doesNotMatch(tag, /\salt=""/, `${p.app}${p.url}: <img> has an empty alt — ${tag}`);
+      }
+    }
+  });
+
+  // The pair above only holds if a decorative image really is decorative.
+  // Anything hidden from assistive technology must be chrome, never a
+  // picture the page is about.
+  test("only site chrome is hidden from assistive technology", () => {
+    for (const p of contentPages()) {
+      for (const tag of imgsOf(p.html)) {
+        if (!/aria-hidden="true"/.test(tag)) continue;
+        const src = (tag.match(/src="([^"]+)"/) || [])[1] ?? "";
+        assert.match(
+          src,
+          /logo/,
+          `${p.app}${p.url}: a picture that isn't a logo is hidden from screen readers — ${tag}`,
+        );
       }
     }
   });

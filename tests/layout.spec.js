@@ -220,6 +220,63 @@ test.describe("analytics", () => {
     expect(state.gtag, "gtag is not reachable from page scope").toBe("function");
     expect(state.dataLayer, "dataLayer missing").toBe(true);
   });
+
+  // Page views alone can't tell a visit that produced a lead from one that
+  // bounced, which is the only number this network exists to move. These
+  // stub gtag rather than reach Google, and stub fetch rather than create a
+  // real lead.
+  const captureEvents = async (page) => {
+    await page.evaluate(() => {
+      window.__events = [];
+      window.gtag = (...args) => window.__events.push(args);
+    });
+  };
+
+  test("a lead form reports starting and completing", async ({ page }) => {
+    await page.goto(url("dst", "/contact/"));
+    await captureEvents(page);
+
+    await page.locator('form[data-lead-form] input[name="contacts.email"]').focus();
+    await expect
+      .poll(() => page.evaluate(() => window.__events.map((e) => e[1])))
+      .toContain("form_start");
+
+    const events = await page.evaluate(async () => {
+      window.fetch = async () => ({ ok: true, status: 200 });
+      const form = document.querySelector("form[data-lead-form]");
+      form.querySelector('input[name="contacts.email"]').value = "probe@example.com";
+      form.requestSubmit();
+      await new Promise((r) => setTimeout(r, 300));
+      return window.__events;
+    });
+
+    const lead = events.find((e) => e[1] === "generate_lead");
+    expect(lead, `no generate_lead among ${JSON.stringify(events)}`).toBeTruthy();
+    // The form has to be identifiable, or the event says a lead happened
+    // somewhere in the network and nothing more.
+    expect(lead[2].form_name, "generate_lead carries no form name").toBeTruthy();
+    expect(lead[2].site, "generate_lead carries no site").toBeTruthy();
+  });
+
+  test("a ticket link and a calendar file are both counted", async ({ page }) => {
+    await page.goto(url("dst", "/events/future-world-forum-dubai-2026/"));
+    await captureEvents(page);
+
+    const events = await page.evaluate(() => {
+      document.addEventListener("click", (e) => e.preventDefault(), true);
+      document.querySelector('a[href^="/go/"]').click();
+      document.querySelector('a[href$=".ics"]').click();
+      return window.__events;
+    });
+
+    const names = events.map((e) => e[1]);
+    expect(names).toContain("outbound_click");
+    expect(names).toContain("add_to_calendar");
+    // The hop's slug, not the third party's URL — the destination stays out
+    // of the reports the same way it stays out of the markup.
+    const hop = events.find((e) => e[1] === "outbound_click")[2].hop;
+    expect(hop).toBe("future-world-forum-dubai-2026-ticket");
+  });
 });
 
 test.describe("reading measure", () => {

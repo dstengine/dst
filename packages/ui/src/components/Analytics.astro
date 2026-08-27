@@ -31,7 +31,35 @@ gtag('config', '${id}', { cookie_domain: '.dst.llc' });`;
 ---
 {valid && (
   <>
+    {/* The tag is fetched from a second origin on every page. Opening the
+        connection while the HTML is still parsing takes the DNS, TCP and
+        TLS round trips off the critical path. */}
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
     <script async src={`https://www.googletagmanager.com/gtag/js?id=${id}`}></script>
     <script is:inline set:html={snippet} />
   </>
 )}
+
+{/* One delegated listener for the outward moves worth counting, rather
+    than a handler wired into each component that happens to render such a
+    link. track() is a no-op when the tag isn't on the page, so this costs
+    nothing on a preview or a local build. */}
+<script>
+  import { track } from "../track";
+
+  addEventListener("click", (event) => {
+    const link = (event.target as Element | null)?.closest?.("a");
+    if (!link) return;
+    const href = link.getAttribute("href") ?? "";
+
+    if (href.startsWith("/go/")) {
+      // The hop's own slug, which names the destination without putting a
+      // third-party URL into the report.
+      track("outbound_click", { hop: href.replace(/^\/go\/|\/$/g, ""), text: link.textContent?.trim() });
+    } else if (href.endsWith(".ics")) {
+      track("add_to_calendar", { event_slug: href.split("/").pop()?.replace(/\.ics$/, "") });
+    } else if (href.startsWith("tel:")) {
+      track("phone_click");
+    }
+  });
+</script>

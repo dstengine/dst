@@ -57,6 +57,16 @@ const {
 </form>
 
 <script>
+  import { track } from "../track";
+  // Which form on the network this is, for the analytics event. The
+  // hidden field is the same value the lead itself carries as form.name,
+  // so a report and a CRM record name the form identically; falls back to
+  // the element id where a form doesn't set one.
+  function formName(form: HTMLFormElement): string {
+    const field = form.querySelector<HTMLInputElement>('input[name="form.name"]');
+    return field?.value || form.id || "lead-form";
+  }
+
   // Field names use dot-paths ("contacts.email", "meta.unitType") so a
   // form can add arbitrary lead.meta.* fields via its slot without this
   // component knowing about them - this nests FormData back into the
@@ -102,7 +112,10 @@ const {
     // reads as random and gets declined out of reflex.
     form.addEventListener(
       "focusin",
-      () => (window as any).dstRequestLeadLocation?.(),
+      () => {
+        (window as any).dstRequestLeadLocation?.();
+        track("form_start", { form_name: formName(form) });
+      },
       { once: true }
     );
 
@@ -133,9 +146,14 @@ const {
         });
         if (!res.ok) throw new Error(String(res.status));
         if (status) status.textContent = "Thanks — we'll be in touch shortly.";
+        track("generate_lead", { form_name: formName(form) });
         form.reset();
       } catch {
         if (status) status.textContent = "Something went wrong — please try again, or contact us directly.";
+        // Counted too: a form that starts far more often than it completes
+        // is either broken or asking too much, and page views can't show
+        // the difference.
+        track("lead_failed", { form_name: formName(form) });
         // Only re-enable on failure - a successful submit should stay
         // disabled (the form is reset anyway) so a stray extra click right
         // after can't fire a second one.

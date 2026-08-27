@@ -108,6 +108,10 @@ const denseNav = navFootprint > 900;
         renders as a bare URL with no title, summary or picture — on a
         network whose whole plan is being passed around and linked to. */}
     {canonical && <link rel="canonical" href={canonical} />}
+    {/* The lead endpoint is only called once someone touches a form, so
+        resolving DNS ahead of time is worth it and holding a socket open on
+        every page is not. */}
+    <link rel="dns-prefetch" href="https://api.dst.llc" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={siteName} />
     <meta property="og:title" content={title} />
@@ -137,7 +141,10 @@ const denseNav = navFootprint > 900;
     <header class="site-header">
       <div class="container header-inner">
         <a class="site-name" href="/" title={siteName}>
-          <img class="site-logo" src={logoSrc} alt="DST" width="28" height="28" />
+          {/* Decorative: the site name sits right beside it, and an alt of
+              "DST" made the link announce itself twice — "DST DST" on the
+              hub, where the name is the same word. */}
+          <img class="site-logo" src={logoSrc} alt="" aria-hidden="true" width="28" height="28" />
           {siteName}
         </a>
         <div class="header-actions">
@@ -206,7 +213,7 @@ const denseNav = navFootprint > 900;
     <footer class="site-footer">
       <div class="container">
         <div class="footer-brand">
-          <img class="footer-logo" src={logoSrc} alt="DST" width="20" height="20" />
+          <img class="footer-logo" src={logoSrc} alt="" aria-hidden="true" width="20" height="20" />
           <span>{siteName}</span>
         </div>
         {related.length > 0 && (
