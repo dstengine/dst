@@ -36,6 +36,11 @@
     "test:images": "node --test tests/images.test.js"
   },
   "devDependencies": {
-    "@playwright/test": "^1.62.1"
+    "@playwright/test": "^1.62.1",
+    "rollup": "4.62.4"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.62.4",
+    "@rollup/rollup-linux-arm64-gnu": "4.62.4"
   }
 }
