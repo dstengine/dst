@@ -107,13 +107,13 @@ const hubs = [
   {/* The cards above lead to six home pages. This leads to the pages
       people actually come looking for — prices, free zones, the Golden
       Visa — which otherwise sit behind another click and are reachable
-      from nowhere outside their own site's nav. */}
+      from nowhere outside their own site's nav.
+
+      No intro line: it explained the section's own reason for existing to
+      a visitor who only wanted the list, directly under six cards that had
+      just said what each site is. */}
   <section id="straight-to" class="container">
-    <NetworkLinks
-      heading="Straight to"
-      intro="The pages most people are after, without going through a home page first."
-      sites={NETWORK}
-    />
+    <NetworkLinks heading="Go straight to" sites={NETWORK} />
   </section>
 
   <EventsBlock items={eventItems} />
