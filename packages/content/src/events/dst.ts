@@ -25,7 +25,7 @@ export const items: EventItem[] = [
     },
     ticket: {
       url: "https://www.eventbrite.com/e/future-world-forum-dubai-tickets-1324931388449",
-      label: "Tickets on Eventbrite",
+      label: "Tickets",
     },
     tickets: {
       priceFrom: 49,

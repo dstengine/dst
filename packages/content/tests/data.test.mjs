@@ -132,3 +132,68 @@ describe("related cards never point outside the site (eco: only eco or dst.llc)"
     });
   }
 });
+
+describe("ticketing facts", () => {
+  test("a price range runs low to high, in a real currency", () => {
+    for (const item of allEvents) {
+      const t = item.tickets;
+      if (!t) continue;
+      const where = `events/${item.site}/${item.slug}`;
+      if (t.priceFrom !== undefined) {
+        assert.ok(Number.isFinite(t.priceFrom) && t.priceFrom >= 0, `${where}: priceFrom=${t.priceFrom}`);
+      }
+      if (t.priceFrom !== undefined && t.priceTo !== undefined) {
+        assert.ok(t.priceTo >= t.priceFrom, `${where}: priceTo ${t.priceTo} is below priceFrom ${t.priceFrom}`);
+      }
+      if (t.currency !== undefined) {
+        assert.match(t.currency, /^[A-Z]{3}$/, `${where}: currency "${t.currency}" is not an ISO 4217 code`);
+      }
+      console.log(`${where}: ${t.priceFrom ?? "?"}–${t.priceTo ?? "?"} ${t.currency ?? "AED"}`);
+    }
+  });
+
+  test("sales close on or before the event starts", () => {
+    for (const item of allEvents) {
+      const salesEnd = item.tickets?.salesEnd;
+      if (!salesEnd) continue;
+      const where = `events/${item.site}/${item.slug}`;
+      assert.ok(!Number.isNaN(new Date(salesEnd).getTime()), `${where}: salesEnd "${salesEnd}" did not parse`);
+      assert.ok(salesEnd <= item.start, `${where}: sales close ${salesEnd}, after the event starts ${item.start}`);
+      console.log(`${where}: sales close ${salesEnd}, event starts ${item.start}`);
+    }
+  });
+
+  test("a priced event has somewhere to buy from", () => {
+    for (const item of allEvents) {
+      if (item.tickets?.priceFrom === undefined) continue;
+      assert.ok(item.ticket?.url, `events/${item.site}/${item.slug}: has a price but no ticket link`);
+    }
+  });
+});
+
+describe("programme and audience", () => {
+  test("every programme track has a heading and a description", () => {
+    for (const item of allEvents) {
+      for (const [i, track] of (item.programme ?? []).entries()) {
+        const where = `events/${item.site}/${item.slug}: programme[${i}]`;
+        assert.ok(track.heading?.trim(), `${where}: empty heading`);
+        assert.ok(track.text?.trim(), `${where} "${track.heading}": empty text`);
+      }
+      if (item.programme) console.log(`events/${item.site}/${item.slug}: ${item.programme.length} tracks`);
+    }
+  });
+
+  test("audience entries are tags, not sentences", () => {
+    for (const item of allEvents) {
+      for (const who of item.audience ?? []) {
+        const where = `events/${item.site}/${item.slug}`;
+        assert.ok(who.trim(), `${where}: empty audience entry`);
+        // These render inside a pill. Anything sentence-length wraps to two
+        // lines and the row stops reading as a row of tags.
+        assert.ok(who.length <= 40, `${where}: audience entry too long for a tag — "${who}"`);
+        assert.ok(!who.endsWith("."), `${where}: audience entry reads as a sentence — "${who}"`);
+      }
+      if (item.audience) console.log(`events/${item.site}/${item.slug}: audience ${item.audience.join(", ")}`);
+    }
+  });
+});

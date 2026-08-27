@@ -107,22 +107,32 @@ const price = (() => {
 // The facts someone weighs before deciding, in the order they weigh them.
 // Anything the organiser hasn't published is left out rather than filled
 // with a placeholder — an empty row is worse than a shorter list.
-const glance: { label: string; value: string }[] = [
+const glance: { label: string; value: string; icon: string }[] = [
   item.startTime && {
     label: "Time",
     value: item.endTime ? `${item.startTime} – ${item.endTime}` : `From ${item.startTime}`,
+    icon: ICONS.clock,
   },
-  duration && { label: "Duration", value: duration },
-  { label: "Format", value: "In person" },
+  duration && { label: "Duration", value: duration, icon: ICONS.hourglass },
+  { label: "Format", value: "In person", icon: ICONS.users },
   (item.venue || item.city) && {
     label: "Where",
     value: [item.venue, item.city].filter(Boolean).join(", "),
+    icon: ICONS.pin,
   },
-  price && { label: "Tickets", value: price },
-  item.tickets?.salesEnd && { label: "Sales close", value: formatDate(item.tickets.salesEnd) },
-  item.tickets?.refundPolicy && { label: "Refunds", value: item.tickets.refundPolicy },
-  item.organizer && { label: "Organizer", value: item.organizer },
-].filter(Boolean) as { label: string; value: string }[];
+  price && { label: "Tickets", value: price, icon: ICONS.ticket },
+  item.tickets?.salesEnd && {
+    label: "Sales close",
+    value: formatDate(item.tickets.salesEnd),
+    icon: ICONS.events,
+  },
+  item.tickets?.refundPolicy && {
+    label: "Refunds",
+    value: item.tickets.refundPolicy,
+    icon: ICONS.money,
+  },
+  item.organizer && { label: "Organizer", value: item.organizer, icon: ICONS.briefcase },
+].filter(Boolean) as { label: string; value: string; icon: string }[];
 
 // AggregateOffer when there's a range, plain Offer when there's one price —
 // the two are not interchangeable in the spec, and a range submitted as an
@@ -221,11 +231,15 @@ const relatedItems = (item.related ?? []).map((card) => ({
 
   <p class="event-article-actions">
     {item.ticket && ticketHref && (
-      <a class="button" href={ticketHref} title={item.ticket.label ?? "Register"}>{item.ticket.label ?? "Register"}</a>
+      <a class="button" href={ticketHref} title={item.ticket.label ?? "Register"}>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={ICONS.ticket} /></svg>
+        {item.ticket.label ?? "Register"}
+      </a>
     )}
     {/* Secondary to the ticket link, but present on every event: a plain
         .ics file, no account and no calendar service in between. */}
     <a class="button button-secondary" href={`${backHref}${item.slug}.ics`} download title={`Add ${item.title} to your calendar`}>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={ICONS.events} /></svg>
       Add to calendar
     </a>
   </p>
@@ -248,7 +262,10 @@ const relatedItems = (item.related ?? []).map((card) => ({
     <dl class="event-glance">
       {glance.map((fact) => (
         <div class="event-glance-row">
-          <dt>{fact.label}</dt>
+          <dt>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={fact.icon} /></svg>
+            <span>{fact.label}</span>
+          </dt>
           <dd>{fact.value}</dd>
         </div>
       ))}
@@ -389,6 +406,14 @@ const relatedItems = (item.related ?? []).map((card) => ({
   .event-article-organizer { color: var(--ink-faint); }
 
   .event-article-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-3); }
+  /* The buttons are laid out by the shared .button rule; this only puts the
+     mark beside the label without disturbing its padding or height. */
+  .event-article-actions .button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55em;
+  }
+  .event-article-actions .button svg { flex: none; width: 1.1em; height: 1.1em; }
 
   .event-article-ended {
     font-family: var(--font-mono);
@@ -454,12 +479,16 @@ const relatedItems = (item.related ?? []).map((card) => ({
     align-items: baseline;
   }
   .event-glance dt {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
     font-family: var(--font-mono);
     font-size: var(--step--1);
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--ink-faint);
   }
+  .event-glance dt svg { flex: none; width: 1.15em; height: 1.15em; }
   .event-glance dd {
     margin: 0;
     color: var(--ink);

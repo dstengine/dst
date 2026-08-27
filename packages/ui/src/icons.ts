@@ -16,6 +16,9 @@ export const ICONS: Record<string, string> = {
   rent: "M15 7a4 4 0 1 1-4 4M15 7a4 4 0 0 0-4-4M15 7v2m-4 2H4l2 2m0-4-2 2",
   pin: "M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21ZM12 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z",
   clock: "M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18ZM12 7v5l3.5 2",
+  // A stub with the notch a barrier tears along, and a perforated line.
+  ticket: "M3 8V6a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v2a2 2 0 0 0 0 4v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-6a2 2 0 0 0 0-4ZM15 5v2M15 11v2M15 17v2",
+  hourglass: "M6 2h12M6 22h12M7 2c0 5 5 6.2 5 10S7 17 7 22M17 2c0 5-5 6.2-5 10s5 5 5 10",
   phone: "M7 3H4.5A1.5 1.5 0 0 0 3 4.6C3 12.5 11.5 21 19.4 21A1.5 1.5 0 0 0 21 19.5V17l-4-2-2 2.5c-2.5-1.2-4.8-3.5-6-6L11.5 9 9.5 5Z",
   link: "M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1",
   briefcase: "M3 8h18v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8ZM9 8V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v3M3 13h18",
