@@ -87,7 +87,9 @@ id_for() {
   var="ID_${project//-/_}"
   id="${!var:-}"
   if [ -z "$id" ]; then
-    id="$(vercel project inspect "$project" 2>&1 | awk '/^ *ID\b/ { print $2; exit }')"
+    # \b in a pattern is a backspace to the awk that ships with macOS, not a
+    # word boundary — hence the character classes.
+    id="$(vercel project inspect "$project" 2>&1 | awk '/^[[:space:]]*ID[[:space:]]/ { print $2; exit }')"
     [[ "$id" == prj_* ]] || die "could not resolve a project ID for $project — is the CLI logged in?"
     echo "$var=$id" >> "$CACHE"
     export "$var=$id"

@@ -18,3 +18,26 @@ Exit 0 skips the build, exit 1 runs it. So: build when the commit touched
 this app's own directory or the shared packages; skip when it only
 touched a sibling app. The `rev-parse` guard builds rather than skips
 when there is no parent commit to compare against.
+
+## Deploying one site by hand
+
+`tools/deploy.sh llc` sends a single site out without a push. Several at
+once: `tools/deploy.sh llc,mbr`. All of them: `--all`. A preview URL
+instead of production: `--preview`. What would run, without running it:
+`--dry-run`. The site-to-project map: `--list`.
+
+It uploads the repo to one project, which builds it from its own Root
+Directory just as a git build would — the same build, aimed at one
+project instead of every project a commit touches.
+
+Two things to keep in mind:
+
+- **The upload is the working tree, not a commit.** A dirty tree is
+  refused unless you pass `--dirty`; otherwise production ends up running
+  code that exists on no branch, and the next push quietly reverts it.
+- **Production runs ahead of the branch until you push.** Fine for an
+  hour, a menace for a week.
+
+Project IDs come from `vercel project inspect` on first use and are cached
+in `.vercel/project-ids.env`, which is gitignored. The CLI has to be
+logged in (`vercel whoami`).

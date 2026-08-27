@@ -366,3 +366,54 @@ test.describe("venue page", () => {
     await expect(card).not.toContainText(/visit/i);
   });
 });
+
+test.describe("skip link", () => {
+  // The header carries a nav of eight or more links plus the network menu.
+  // Without a skip link a keyboard user tabs through all of it on every
+  // page before reaching the content — and a skip link that stays hidden
+  // when focused, or that only scrolls without moving focus, is no better
+  // than none. Both halves are checked here because both have to hold.
+  for (const site of ["dst", "riviera"]) {
+    test(`${site}: the first tab stop jumps to the content`, async ({ page }) => {
+      await page.setViewportSize({ width: 1280, height: 900 });
+      await page.goto(url(site, "/"));
+
+      const link = page.locator(".skip-link");
+      await page.keyboard.press("Tab");
+      await expect(link).toBeFocused();
+
+      // Visible once focused: off-screen until then, on-screen after.
+      const box = await link.boundingBox();
+      expect(box.y, "the focused skip link is still off the top of the page").toBeGreaterThanOrEqual(0);
+
+      await page.keyboard.press("Enter");
+      // Focus, not just the scroll position: the next Tab has to continue
+      // from the content rather than from the second link in the header.
+      const focused = await page.evaluate(() => document.activeElement?.id);
+      expect(focused, "activating the skip link did not move focus to <main>").toBe("content");
+    });
+  }
+});
+
+test.describe("reduced motion", () => {
+  test("a reader who asks for less motion gets none", async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: "reduce" });
+    await page.setViewportSize({ width: 1280, height: 900 });
+    await page.goto(url("dst", "/"));
+
+    // The feed card is the liveliest thing on the page: it lifts on hover
+    // and eases its cover. Both come from transitions, which the global
+    // rule collapses to a tick.
+    const durations = await page.evaluate(() =>
+      [...document.querySelectorAll(".feed-card, .venture-card, .cta-banner-arrow")].map(
+        (el) => getComputedStyle(el).transitionDuration,
+      ),
+    );
+    expect(durations.length, "no animated element on the page to check").toBeGreaterThan(0);
+    for (const duration of durations) {
+      for (const part of duration.split(",")) {
+        expect(Number.parseFloat(part), `transition still runs for ${duration}`).toBeLessThan(0.002);
+      }
+    }
+  });
+});

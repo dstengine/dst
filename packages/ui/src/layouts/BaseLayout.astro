@@ -146,6 +146,11 @@ const denseNav = navFootprint > 900;
     <LeadTracking />
   </head>
   <body>
+    {/* First tab stop on every page. The header carries a nav of eight or
+        more links plus the network menu, and without this a keyboard or
+        switch user tabs through all of it again on each page before
+        reaching a word of the content. Off-screen until focused. */}
+    <a class="skip-link" href="#content">Skip to content</a>
     <header class="site-header">
       <div class="container header-inner">
         <a class="site-name" href="/" title={siteName}>
@@ -215,7 +220,10 @@ const denseNav = navFootprint > 900;
         });
       });
     </script>
-    <main>
+    {/* tabindex="-1" so the skip link actually moves focus here rather than
+        only scrolling: without it the next Tab goes back to the second link
+        in the header. */}
+    <main id="content" tabindex="-1">
       <slot />
     </main>
     <footer class="site-footer">
@@ -252,6 +260,32 @@ const denseNav = navFootprint > 900;
 </html>
 
 <style>
+  .skip-link {
+    position: absolute;
+    left: var(--space-3);
+    top: 0;
+    z-index: 100;
+    /* Above the viewport rather than clipped to a pixel: a link that is
+       merely invisible still gets read out in the wrong place by some
+       screen readers, and one that is display: none can never be focused. */
+    transform: translateY(-150%);
+    /* A control like any other: once it is on screen it has to be big
+       enough to hit, which at this font size padding alone doesn't reach. */
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0.6em 1em;
+    background: var(--accent, #1F5C4E);
+    color: #fff;
+    border-radius: 0 0 var(--radius) var(--radius);
+    text-decoration: none;
+    font-size: var(--step--1);
+  }
+  .skip-link:focus { transform: translateY(0); }
+  /* The target takes focus programmatically, which would otherwise draw a
+     ring around the whole page. */
+  main:focus { outline: none; }
+
   .site-header {
     position: relative;
     /* Lifts the header and, with it, the absolutely-positioned dropdown

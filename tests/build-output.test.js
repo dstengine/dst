@@ -114,6 +114,11 @@ describe("links", () => {
     const missing = [];
     for (const p of contentPages()) {
       for (const tag of anchorsOf(p.html)) {
+        // A link to a place on this same page is not a destination anyone
+        // needs described, and the one we have — the skip link — would only
+        // get a title repeating its own text, which some screen readers then
+        // announce twice. Same reason the logos carry alt="".
+        if (hrefOf(tag)?.startsWith("#")) continue;
         if (!/\stitle="/.test(tag)) missing.push(`${p.app}${p.url} -> ${hrefOf(tag)}`);
       }
     }

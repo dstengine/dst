@@ -329,3 +329,20 @@ thead th { font-size: var(--step--1); text-transform: uppercase; letter-spacing:
 .field select { font: inherit; padding: 0.6em 0.75em; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg); }
 
 ::selection { background: var(--accent-tint, #E9F0EC); }
+
+/* Motion is decoration everywhere it appears here — a card lifting on hover,
+   a cover easing in, a caret turning. For a reader who has asked their system
+   for less of it, that decoration can mean nausea or a migraine, so honour the
+   request rather than making them sit through it.
+   Not `animation: none`: an animation cut dead can leave an element stuck at
+   its starting frame. A single tick runs it to the end state instantly. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
