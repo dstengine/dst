@@ -30,6 +30,12 @@ function fold(line: string): string {
   return out.join("\r\n");
 }
 
+/** Sites whose host isn't `<site>.dst.llc`. */
+// dst is deliberately absent: its UIDs have gone out as dst.dst.llc, and a
+// changed UID reads as a second event in a calendar that already has the
+// first one.
+const UID_HOSTS: Record<string, string> = { fwf: "fwf.lol" };
+
 const stampUtc = (d: Date) => d.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
 const dateOnly = (iso: string) => iso.replace(/-/g, "");
 
@@ -51,7 +57,9 @@ export function toIcs(item: EventItem, pageUrl: string, now: Date = new Date()):
     "CALSCALE:GREGORIAN",
     "METHOD:PUBLISH",
     "BEGIN:VEVENT",
-    `UID:${item.slug}@${item.site}.dst.llc`,
+    // The UID's domain part has to be a host we actually own, and not every
+    // site is a *.dst.llc vertical — fwf.lol is its own domain.
+    `UID:${item.slug}@${UID_HOSTS[item.site] ?? `${item.site}.dst.llc`}`,
     `DTSTAMP:${stampUtc(now)}`,
   ];
 

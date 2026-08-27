@@ -78,7 +78,19 @@
     "/prices/": "2026-08-25T23:44:35+04:00",
     "/privacy/": "2026-08-25T23:44:35+04:00"
   },
-  "fwf.lol": {},
+  "fwf.lol": {
+    "/about/": "2026-08-28T01:39:41+04:00",
+    "/faq/": "2026-08-28T01:39:41+04:00",
+    "/": "2026-08-28T01:39:41+04:00",
+    "/news/dubai-land-department-tokenisation-pilot/": "2026-08-28T01:39:41+04:00",
+    "/news/dubai-second-in-bcg-intelligent-cities-index/": "2026-08-28T01:39:41+04:00",
+    "/news/": "2026-08-28T01:39:41+04:00",
+    "/news/rta-starts-commercial-robotaxi-operations/": "2026-08-28T01:39:41+04:00",
+    "/news/vara-rules-for-virtual-asset-derivatives/": "2026-08-28T01:39:41+04:00",
+    "/programme/": "2026-08-28T01:39:41+04:00",
+    "/tickets/": "2026-08-28T01:39:41+04:00",
+    "/venue/": "2026-08-28T01:39:41+04:00"
+  },
   "eco.dst.llc": {
     "/events/": "2026-08-26T01:28:06+04:00",
     "/events/wetex-2026/": "2026-08-26T04:24:32+04:00",
