@@ -40,6 +40,12 @@ const networkCards = upcomingEvents(
     date: item.start,
     title: item.title,
     text: [item.venue, item.city].filter(Boolean).join(" · ") || item.summary,
+    // The picture belongs to the vertical's own host, so it is named
+    // absolutely — the manifest resolves it against that host and still
+    // serves avif rather than the original jpeg.
+    image: item.image && host ? `https://${host}${item.image}` : undefined,
+    imageAlt: item.imageAlt,
+    imageFit: "cover" as const,
     event: true,
   };
 });

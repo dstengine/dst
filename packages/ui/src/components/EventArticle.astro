@@ -46,6 +46,9 @@ const moreCards = more
     date: other.start,
     title: other.title,
     text: [other.venue, other.city].filter(Boolean).join(" · ") || other.summary,
+    image: other.image,
+    imageAlt: other.imageAlt,
+    imageFit: "cover" as const,
     event: true,
     past: other.start < todayIso,
   }));

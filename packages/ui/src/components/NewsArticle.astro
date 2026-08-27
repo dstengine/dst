@@ -55,6 +55,9 @@ const eventCards = moreEvents
     date: e.start,
     title: e.title,
     text: [e.venue, e.city].filter(Boolean).join(" · ") || e.summary,
+    image: e.image,
+    imageAlt: e.imageAlt,
+    imageFit: "cover" as const,
     event: true,
   }));
 const tail = moreCards.length > 0
