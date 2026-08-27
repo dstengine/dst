@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/Layout.astro";
+import EventsList from "@dst/ui/EventsList.astro";
+import { forum, forumDate, otherEvents } from "../content";
+---
+<Layout
+  title="Dubai future-tech events"
+  description="A calendar of the Dubai conferences on the subjects Future World Forum covers — smart cities, PropTech, digital finance and mobility — with dates, venues and what each one actually is."
+>
+  <section class="container hero">
+    <p class="eyebrow">Calendar</p>
+    <h1>Dubai future-tech events</h1>
+    <p class="lede">
+      Future World Forum is one date in a crowded season. These are the other
+      Dubai events on the same subjects, with the detail the listings tend to
+      bury: who runs it, where it actually is, and what kind of room you would
+      be walking into.
+    </p>
+    <p>
+      Looking for the forum itself?
+      <a href="/" title="Future World Forum Dubai 2026 — dates, tickets and programme">Future World Forum Dubai 2026</a>,
+      {forumDate}, is on the front page.
+    </p>
+  </section>
+
+  <section class="container">
+    <EventsList items={otherEvents} />
+  </section>
+
+  <section class="container">
+    <h2>Why these and not others</h2>
+    <p>
+      Every entry here has a named organiser, a confirmed venue and a source
+      that can be checked — the same bar this site holds
+      {forum.title} to, and the reason its own venue line still reads
+      "not announced". Dubai's calendar has dozens of technology events; the
+      ones listed are those whose subjects overlap the forum's five sectors
+      and whose details are actually published.
+    </p>
+  </section>
+</Layout>

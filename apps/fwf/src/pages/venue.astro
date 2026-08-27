@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Callout from "@dst/ui/Callout.astro";
-import { forum, forumDate } from "../content";
+import { checkedOn, forum, forumDate } from "../content";
 import { go } from "../outbound";
 ---
 <Layout
@@ -12,7 +12,7 @@ import { go } from "../outbound";
     <p class="eyebrow">Venue</p>
     <h1>Where it is held</h1>
     <p class="lede">
-      The honest answer, as of 27 August 2026: <strong>Dubai, and no further</strong>.
+      The honest answer, as of {checkedOn}: <strong>Dubai, and no further</strong>.
       The ticket listing's location field carries the city and nothing else —
       no venue name, no district, no hall. Everything below is about how to
       plan around that rather than pretending it has been answered.

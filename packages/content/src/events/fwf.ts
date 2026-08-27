@@ -77,4 +77,89 @@ export const items: EventItem[] = [
     expertise:
       "The venue is the gap worth watching. Everything else about the listing is specific — date, hours, price band, sales cutoff — while the location says only \"Dubai\". For an event eight weeks from its ticket deadline that is unusual, and it is the single question to put to the organiser before spending anything that isn't refundable. This site tracks the listing and will say plainly if that changes, in either direction.",
   },
+  {
+    slug: "dubai-future-forum-2026",
+    site: "fwf",
+    title: "Dubai Future Forum 2026",
+    summary:
+      "The Dubai Future Foundation's gathering of futurists at the Museum of the Future, 17–18 November 2026 — the day after Future World Forum, and the event it is most often confused with.",
+    start: "2026-11-17",
+    end: "2026-11-18",
+    venue: "Museum of the Future",
+    city: "Dubai",
+    geo: {
+      name: "Museum of the Future, Sheikh Zayed Road, Dubai",
+      lat: 25.219,
+      lng: 55.2822,
+    },
+    organizer: "Dubai Future Foundation",
+    category: "Conference",
+    source: {
+      name: "Dubai Future Foundation",
+      url: "https://www.dubaifuture.ae/dubai-future-forum-2026/",
+      verifiedOn: "2026-08-28",
+    },
+    body: [
+      "The Dubai Future Forum returns to the Museum of the Future on 17 and 18 November 2026, in its fifth edition. It is run by the Dubai Future Foundation — a government body — and gathers futurists, policymakers, scientists and researchers rather than exhibitors.",
+      "The 2025 edition drew 2,500 participants from 100 organisations, with around 150 speakers across some 70 sessions, which is the scale to expect. Registration for 2026 had not opened as of late August 2026; the foundation says it will be announced.",
+      "It falls the day after Future World Forum Dubai. Anyone flying in for one is in the city for the other.",
+    ],
+    expertise:
+      "This is the event people mean about half the time they type \"future world forum dubai\" into a search box. The names are nearly identical, the dates are consecutive, and only one of the two is run by a government foundation with a named venue and a five-year record. They are not competitors so much as different products: this one is a policy and foresight gathering with no expo floor, and nothing is sold in the room.",
+  },
+  {
+    slug: "gitex-global-2026",
+    site: "fwf",
+    title: "GITEX Global 2026",
+    summary:
+      "The region's largest technology exhibition, 7–11 December 2026 at Dubai Exhibition Centre — the smart-city and government-technology floor that the smaller forums orbit.",
+    start: "2026-12-07",
+    end: "2026-12-11",
+    venue: "Dubai Exhibition Centre",
+    city: "Dubai",
+    geo: {
+      name: "Dubai Exhibition Centre, Expo City Dubai",
+      lat: 24.959572,
+      lng: 55.145022,
+    },
+    organizer: "Dubai World Trade Centre",
+    category: "Exhibition",
+    source: {
+      name: "Dubai Exhibition Centre",
+      url: "https://www.dubaiexhibitioncentre.com/en/whats-on/gitex-global-2026",
+      verifiedOn: "2026-08-28",
+    },
+    body: [
+      "GITEX Global runs 7–11 December 2026 at Dubai Exhibition Centre in Expo City: over 200,000 attendees from more than 180 countries, 6,800 exhibiting companies, 400-plus government entities and around 2,000 startups.",
+      "For the subjects this site follows it is the widest floor of the year. Smart-city systems, government platforms, mobility and urban AI all have their own halls, and most of the vendors who take a stand at a one-day forum in November are here in December at ten times the scale.",
+    ],
+    expertise:
+      "Worth knowing when you are budgeting. A week at GITEX and a seat at a one-day forum are not the same purchase, and if the reason for going is to meet suppliers rather than to be met, the December floor covers in one day what a small November conference covers in its entirety. The case for the smaller room is the opposite one: it is small enough to speak to someone.",
+  },
+  {
+    slug: "proptech-connect-middle-east-2026",
+    site: "fwf",
+    title: "PropTech Connect Middle East 2026",
+    summary:
+      "Held 4–5 February 2026 at the Grand Hyatt Dubai with the Dubai Land Department, drawing more than 4,000 industry professionals. Past — kept here for what it showed.",
+    start: "2026-02-04",
+    end: "2026-02-05",
+    venue: "Grand Hyatt Dubai",
+    city: "Dubai",
+    organizer: "PropTech Connect, with the Dubai Land Department",
+    category: "Conference",
+    source: {
+      name: "Dubai Land Department",
+      url: "https://dubailand.gov.ae/en/news-media/proptech-connect-2026-kicks-off-tomorrow-with-more-than-4-000-industry-professionals-participating/",
+      verifiedOn: "2026-08-28",
+    },
+    body: [
+      "PropTech Connect Middle East ran on 4 and 5 February 2026 at the Grand Hyatt Dubai, organised with the Dubai Land Department, with more than 4,000 industry professionals taking part. The programme covered digital solutions, AI, blockchain and data analytics in real estate, and the land department used it to talk about governance and tokenised investment.",
+    ],
+    outcome: [
+      "The land department framed the event around its own tokenisation work, which by then had moved from pilot to issuing token ownership certificates against titles it registers itself.",
+    ],
+    expertise:
+      "It is on this page as a reference point rather than as an opportunity. A government registry putting its name on a private conference is the clearest signal available of which technology track Dubai is actually funding — and PropTech is on the forum's November programme for the same reason.",
+  },
 ];

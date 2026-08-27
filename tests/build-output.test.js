@@ -534,12 +534,15 @@ describe("news and events", () => {
   // The verified date is the one thing here no competing site publishes —
   // it was collected in the data for a while but rendered nowhere, which is
   // exactly the kind of silent regression worth a test.
+  // Matched on app as well as URL: a slug is unique within a site, not across
+  // the network — the same real conference is covered by more than one site,
+  // and matching on URL alone checked one site's data against another's page.
   test("an item whose source carries verifiedOn renders that date", () => {
     const withDate = [...allNews, ...allEvents].filter((i) => i.source?.verifiedOn && i.body?.length);
     assert.ok(withDate.length > 0, "expected at least one item with a verified date to exercise this");
     for (const item of withDate) {
       const kind = "date" in item ? "news" : "events";
-      const page = neDetailPages().find((p) => p.url === `/${kind}/${item.slug}/`);
+      const page = neDetailPages().find((p) => p.app === item.site && p.url === `/${kind}/${item.slug}/`);
       if (!page) continue;
       assert.match(
         page.html,
@@ -561,7 +564,7 @@ describe("news and events", () => {
     const LABEL = { photo: "Photograph", diagram: "Diagram", illustration: "Illustration", render: "Render" };
     for (const item of [...allNews, ...allEvents].filter((i) => LABEL[i.imageKind] && i.body?.length)) {
       const kind = "date" in item ? "news" : "events";
-      const page = neDetailPages().find((p) => p.url === `/${kind}/${item.slug}/`);
+      const page = neDetailPages().find((p) => p.app === item.site && p.url === `/${kind}/${item.slug}/`);
       if (!page) continue;
       assert.ok(
         decode(page.html).includes(LABEL[item.imageKind]),
@@ -576,7 +579,7 @@ describe("news and events", () => {
   // event, not just the ones already past at build time.
   test("every event page ships the ended flag for the script to reveal", () => {
     for (const item of allEvents.filter((e) => e.body?.length)) {
-      const page = neDetailPages().find((p) => p.url === `/events/${item.slug}/`);
+      const page = neDetailPages().find((p) => p.app === item.site && p.url === `/events/${item.slug}/`);
       if (!page) continue;
       const last = item.end ?? item.start;
       assert.match(
@@ -590,7 +593,7 @@ describe("news and events", () => {
 
   test("an event with an outcome renders it, and one without leaves no empty block", () => {
     for (const item of allEvents.filter((e) => e.body?.length)) {
-      const page = neDetailPages().find((p) => p.url === `/events/${item.slug}/`);
+      const page = neDetailPages().find((p) => p.app === item.site && p.url === `/events/${item.slug}/`);
       if (!page) continue;
       const has = Array.isArray(item.outcome) && item.outcome.length > 0;
       if (has) {

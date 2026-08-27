@@ -2,7 +2,7 @@
 
 > Independent guide to Future World Forum Dubai 2026, a one-day conference and expo on urban technology. Not the organiser, not affiliated with Futur World Expo, and not a ticket seller. It exists because the forum's own website (futureworldforum.com) does not resolve and its ticket listing is the only live source of information about the event.
 
-Key facts, read from the organiser's ticket listing and checked 27 August 2026:
+Key facts, read from the organiser's ticket listing and checked 28 August 2026:
 - Date: Monday 16 November 2026, 10:00–17:30 Gulf Standard Time (UTC+4). One day.
 - City: Dubai. No venue has been announced — the listing's location field carries the city only.
 - Organiser: Futur World Expo. Tickets sold through Eventbrite.
@@ -18,11 +18,14 @@ Key facts, read from the organiser's ticket listing and checked 27 August 2026:
 - [Tickets](https://fwf.lol/tickets/): The price band, the sales deadline, the refund window, and what to ask before paying above entry level.
 - [Venue](https://fwf.lol/venue/): What the listing says about the location, and how to plan travel without a confirmed venue.
 - [FAQ](https://fwf.lol/faq/): Dates, venue, prices, refunds, the organiser, and the name collision with the Dubai Future Forum.
+- [Calendar](https://fwf.lol/events/): Other Dubai conferences on the same subjects — Dubai Future Forum (17–18 November 2026, Museum of the Future), GITEX Global (7–11 December 2026), and PropTech Connect Middle East (past, February 2026). Each has a detail page under /events/<slug>/ and an .ics file.
 - [News](https://fwf.lol/news/): Dubai smart city, PropTech, fintech and mobility news — the subjects the forum covers.
 - [About](https://fwf.lol/about/): Who publishes this site and how its facts are checked.
 
 ## Sourcing
 
 Every fact about the event traces to the organiser's Eventbrite listing, including its structured data, and carries the date it was last checked. News items trace to the body that made the announcement — Dubai Media Office, the Virtual Assets Regulatory Authority, the Dubai Land Department. Sources are named in the article text ("Source: X"), never linked as a live URL; the one exception is the ticket link, which routes through /go/<slug>/ (noindex, nofollow) rather than linking out directly.
+
+What has not been announced for Future World Forum — the venue, the speakers, the running order, the ticket tiers, the exhibitor list — is listed on the front page as an open set rather than treated as settled. Any of it may still be published; each item carries the date it was last checked, and lands on the relevant page with the date it was confirmed.
 
 Where nothing has been published — the venue, the speakers, the session times — the pages say so rather than inferring it. Where this site does read something into the facts, such as what the ticket price band implies about tiers, the sentence says it is doing so.

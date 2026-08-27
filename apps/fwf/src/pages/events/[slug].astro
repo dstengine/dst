@@ -1,0 +1,19 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import EventArticle from "@dst/ui/EventArticle.astro";
+import { newsBySite } from "@dst/content/news";
+import { otherEvents } from "../../content";
+
+// The forum itself is deliberately not in here: its page is the home page,
+// and a second copy under /events/ would be the same event twice.
+export function getStaticPaths() {
+  const items = otherEvents.filter((item) => Array.isArray(item.body) && item.body.length > 0);
+  return items.map((item) => ({ params: { slug: item.slug }, props: { item, more: items } }));
+}
+
+const moreNews = newsBySite("fwf");
+const { item, more } = Astro.props;
+---
+<Layout title={item.title} description={item.summary} image={item.image}>
+  <EventArticle item={item} more={more} moreNews={moreNews} backHref="/events/" />
+</Layout>

@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Callout from "@dst/ui/Callout.astro";
-import { forum, forumDate } from "../content";
+import { checkedOn, forum, forumDate } from "../content";
 import { go } from "../outbound";
 ---
 <Layout
@@ -31,7 +31,7 @@ import { go } from "../outbound";
 
   <Callout kind="note">
     <strong>No session times, speakers or exhibitor list have been published.</strong>
-    As of 27 August 2026 the sectors above are the whole of the published
+    As of {checkedOn} the sectors above are the whole of the published
     programme. A one-day event usually settles its running order six to eight
     weeks out; this page is updated when that appears.
   </Callout>

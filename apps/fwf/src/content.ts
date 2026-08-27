@@ -4,7 +4,16 @@
 // stale on the page nobody remembered to edit.
 import { eventsBySite } from "@dst/content/events";
 
-export const forum = eventsBySite("fwf")[0];
+const events = eventsBySite("fwf");
+
+/** The forum this site is named after. Its page is the home page, not an
+    entry under /events/ — the calendar around it is context, not the point. */
+export const forum = events.find((e) => e.slug === "future-world-forum-dubai-2026")!;
+
+/** Everything else in the calendar: the Dubai events on the same subjects,
+    which is what makes this site worth a visit in a week when the forum
+    itself has published nothing new. */
+export const otherEvents = events.filter((e) => e.slug !== forum.slug);
 
 /** "16 November 2026" — the long form used in prose. */
 export const forumDate = new Date(`${forum.start}T00:00:00Z`).toLocaleDateString("en-GB", {
@@ -16,6 +25,10 @@ export const forumDate = new Date(`${forum.start}T00:00:00Z`).toLocaleDateString
 
 export const ticketsFrom = `${forum.tickets!.currency} ${forum.tickets!.priceFrom}`;
 export const ticketsTo = `${forum.tickets!.currency} ${forum.tickets!.priceTo!.toLocaleString("en-GB")}`;
+
+/** When the forum's listing was last read. One constant rather than a date
+    typed into six pages, because it is the figure that has to be right. */
+export const checkedOn = "28 August 2026";
 
 /** What this site is, in one sentence, wherever it has to be said again. */
 export const disclaimer =

@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Callout from "@dst/ui/Callout.astro";
 import { formatDate } from "@dst/ui/date";
-import { forum, forumDate, ticketsFrom, ticketsTo } from "../content";
+import { checkedOn, forum, forumDate, ticketsFrom, ticketsTo } from "../content";
 import { go } from "../outbound";
 
 const salesEnd = formatDate(forum.tickets!.salesEnd!);
@@ -35,7 +35,7 @@ const salesEnd = formatDate(forum.tickets!.salesEnd!);
         </tbody>
       </table>
     </div>
-    <p class="table-note">Read from the listing on 27 August 2026. Prices on the seller's page are what count.</p>
+    <p class="table-note">Read from the listing on {checkedOn}. Prices on the seller's page are what count.</p>
     <p>
       <a class="button" href={go("tickets")} rel="nofollow sponsored" title="Ticket page for Future World Forum Dubai on Eventbrite">Tickets on Eventbrite</a>
     </p>

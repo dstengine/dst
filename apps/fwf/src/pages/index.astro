@@ -3,9 +3,10 @@ import Layout from "../layouts/Layout.astro";
 import Callout from "@dst/ui/Callout.astro";
 import CountdownScript from "@dst/ui/CountdownScript.astro";
 import NewsBlock from "@dst/ui/NewsBlock.astro";
+import EventsBlock from "@dst/ui/EventsBlock.astro";
 import { newsBySite } from "@dst/content/news";
 import { formatDate } from "@dst/ui/date";
-import { forum, forumDate, ticketsFrom, ticketsTo } from "../content";
+import { checkedOn, forum, forumDate, otherEvents, ticketsFrom, ticketsTo } from "../content";
 import { go } from "../outbound";
 import { itemContext } from "@dst/ui/schema";
 
@@ -62,7 +63,7 @@ const jsonLd = [
   jsonLd={jsonLd}
 >
   <section class="container hero">
-    <p class="eyebrow">Independent guide · updated 27 August 2026</p>
+    <p class="eyebrow">Independent guide · checked {checkedOn}</p>
     <h1>Future World Forum Dubai 2026</h1>
     <p class="lede">
       A <strong>one-day conference and expo</strong> on urban technology, listed
@@ -100,8 +101,8 @@ const jsonLd = [
       </table>
     </div>
     <p class="table-note">
-      Every row above comes from the organiser's ticket listing, checked on
-      27 August 2026. Where the listing is silent, this page says so rather
+      Every row above comes from the organiser's ticket listing, read on
+      {checkedOn}. Where the listing is silent, this page says so rather
       than filling the gap.
     </p>
     <p>
@@ -136,7 +137,7 @@ const jsonLd = [
     </div>
     <p class="table-note">
       Sector descriptions are the organiser's, condensed. No speakers,
-      session times or exhibitor list had been published as of 27 August 2026.
+      session times or exhibitor list had been published as of {checkedOn}.
     </p>
   </section>
 
@@ -150,6 +151,40 @@ const jsonLd = [
         </a>
       ))}
     </div>
+  </section>
+
+  <section class="container">
+    <h2>Still to be announced</h2>
+    <p>
+      None of this is missing for good — a one-day conference usually settles
+      its details in the weeks before it runs, and an event with a live ticket
+      listing eleven weeks out has every reason to publish more. This is the
+      list this site is watching, and each line is dated the moment it lands.
+    </p>
+    <div class="table-wrap">
+      <table>
+        <tbody>
+          <tr><th scope="row">Venue</th><td>Not announced. The single detail worth having before you book travel.</td></tr>
+          <tr><th scope="row">Speakers</th><td>None named. A one-day programme normally publishes its headline names first.</td></tr>
+          <tr><th scope="row">Running order</th><td>Sectors only, no session times.</td></tr>
+          <tr><th scope="row">Ticket tiers</th><td>A price band with no labels — what separates {ticketsFrom} from {ticketsTo} is not stated.</td></tr>
+          <tr><th scope="row">Exhibitors</th><td>No list, though the event is billed as a conference and expo.</td></tr>
+          <tr><th scope="row">Official website</th><td>futureworldforum.com does not resolve. If it comes back, it becomes the source this page defers to.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">
+      Last read {checkedOn}. Anything on this list that gets published lands
+      on the relevant page here with the date it was confirmed — and if the
+      event changes in the other direction, that gets said just as plainly.
+    </p>
+  </section>
+
+  <section class="container">
+    <EventsBlock items={otherEvents} heading="The same week, and the same subjects" />
+    <p class="table-note">
+      <a href="/events/" title="Dubai conferences on smart cities, PropTech, fintech and mobility">The full Dubai calendar</a>
+    </p>
   </section>
 
   <section class="container">
