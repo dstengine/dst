@@ -6,6 +6,7 @@ import { navIconFor } from '../icons';
 import { pageGraph } from '../schema';
 import NetworkLinks from '../components/NetworkLinks.astro';
 import { NETWORK, relatedLinks } from '@dst/content/network';
+import type { NetworkSite } from '@dst/content/network';
 import { lastModified } from '@dst/content/lastmod';
 
 interface Props {
@@ -36,9 +37,16 @@ interface Props {
       have their own lead image should pass it; otherwise the card falls
       back to a text-only summary rather than showing the wrong picture. */
   image?: string;
+  /** The hub's full listing of the network, with the pages worth arriving
+      on directly. In the footer rather than the body: on the home page it
+      was a second navigation block under the one that already named the
+      same six sites, and here it reaches every page of the hub instead of
+      one — which is the whole point of it, since for some of those inner
+      pages the hub is the only site linking to them at all. */
+  footerSites?: NetworkSite[];
 }
 
-const { title, description, siteName, nav, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [], footerSiteName = siteName, instagram, image } = Astro.props;
+const { title, description, siteName, nav, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [], footerSiteName = siteName, instagram, image, footerSites = [] } = Astro.props;
 const isDstHome = Astro.site?.hostname === "dst.llc";
 
 // Absolute URLs: canonical and og:image are both meaningless as relative
@@ -218,6 +226,9 @@ const denseNav = navFootprint > 900;
         </div>
         {related.length > 0 && (
           <NetworkLinks heading="Elsewhere in the DST network" links={related} />
+        )}
+        {footerSites.length > 0 && (
+          <NetworkLinks heading="Straight to" sites={footerSites} />
         )}
         <p class="footer-note">{complianceNote}</p>
         <p class="footer-copy">

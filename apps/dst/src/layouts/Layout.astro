@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@dst/ui/BaseLayout.astro";
+import { NETWORK } from "@dst/content/network";
 import "../styles/theme.css";
 
 interface Props {
@@ -28,6 +29,7 @@ const nav = [
   jsonLd={jsonLd}
   image={image}
   logoSrc="/logo-mini.png"
+  footerSites={NETWORK}
   favicon
 >
   <slot />

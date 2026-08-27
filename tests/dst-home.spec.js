@@ -365,7 +365,7 @@ test.describe("dst home · the mobile menu", () => {
   });
 
   test("opens, covers the page, and every item is reachable", async ({ page }) => {
-    await page.locator("summary").click();
+    await page.locator("details.nav-toggle > summary").click();
     const items = page.locator("details.nav-toggle a");
     const n = await items.count();
     expect(n, "the menu is empty").toBeGreaterThan(0);
@@ -377,8 +377,8 @@ test.describe("dst home · the mobile menu", () => {
   });
 
   test("closes again", async ({ page }) => {
-    await page.locator("summary").click();
-    await page.locator("summary").click();
+    await page.locator("details.nav-toggle > summary").click();
+    await page.locator("details.nav-toggle > summary").click();
     expect(await page.locator("details.nav-toggle").evaluate((d) => d.open)).toBe(false);
   });
 });

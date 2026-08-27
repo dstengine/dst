@@ -2,8 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import { ICONS } from "@dst/ui/icons";
 import VentureGrid from "@dst/ui/VentureGrid.astro";
-import NetworkLinks from "@dst/ui/NetworkLinks.astro";
-import { NETWORK } from "@dst/content/network";
 import NewsBlock from "@dst/ui/NewsBlock.astro";
 import EventsBlock from "@dst/ui/EventsBlock.astro";
 import { newsBySite } from "@dst/content/news";
@@ -102,18 +100,6 @@ const hubs = [
   <section id="hubs" class="container">
     <h2>Hubs</h2>
     <VentureGrid items={hubs} columns={3} />
-  </section>
-
-  {/* The cards above lead to six home pages. This leads to the pages
-      people actually come looking for — prices, free zones, the Golden
-      Visa — which otherwise sit behind another click and are reachable
-      from nowhere outside their own site's nav.
-
-      No intro line: it explained the section's own reason for existing to
-      a visitor who only wanted the list, directly under six cards that had
-      just said what each site is. */}
-  <section id="straight-to" class="container">
-    <NetworkLinks heading="Go straight to" sites={NETWORK} />
   </section>
 
   <EventsBlock items={eventItems} />
