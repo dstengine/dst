@@ -1,0 +1,31 @@
+---
+// One inline mark from the shared set. The 24-grid stroke attributes were
+// written out by hand at every call site that wanted an icon, which is how
+// the set ended up used in three places and skipped everywhere else.
+//
+// Renders nothing for a name the set doesn't have, rather than an empty
+// square: a missing mark should cost the page nothing.
+import { ICONS } from "../icons";
+
+interface Props {
+  name: string;
+  /** Extra class, for a call site that needs to size or space it. */
+  class?: string;
+}
+const { name, class: className } = Astro.props;
+const d = ICONS[name];
+---
+{d && (
+  <svg
+    class={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+  >
+    <path d={d} />
+  </svg>
+)}

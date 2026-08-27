@@ -299,6 +299,48 @@
       ]
     }
   },
+  "fwf.lol": {
+    "/fwf-hero.jpg": {
+      "width": 1380,
+      "height": 752,
+      "avif": [
+        [
+          480,
+          "/fwf-hero-480.avif"
+        ],
+        [
+          768,
+          "/fwf-hero-768.avif"
+        ],
+        [
+          1024,
+          "/fwf-hero-1024.avif"
+        ],
+        [
+          1380,
+          "/fwf-hero-1380.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/fwf-hero-480.webp"
+        ],
+        [
+          768,
+          "/fwf-hero-768.webp"
+        ],
+        [
+          1024,
+          "/fwf-hero-1024.webp"
+        ],
+        [
+          1380,
+          "/fwf-hero-1380.webp"
+        ]
+      ]
+    }
+  },
   "palmcentral.dst.llc": {
     "/palmcentral.jpg": {
       "width": 1600,

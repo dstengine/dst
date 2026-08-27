@@ -15,6 +15,7 @@
     "./VentureGrid.astro": "./src/components/VentureGrid.astro",
     "./Redirect.astro": "./src/components/Redirect.astro",
     "./FeedCards.astro": "./src/components/FeedCards.astro",
+    "./Icon.astro": "./src/components/Icon.astro",
     "./CountdownScript.astro": "./src/components/CountdownScript.astro",
     "./NewsList.astro": "./src/components/NewsList.astro",
     "./EventsList.astro": "./src/components/EventsList.astro",

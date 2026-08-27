@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Callout from "@dst/ui/Callout.astro";
+import Icon from "@dst/ui/Icon.astro";
 import { checkedOn, forum, forumDate } from "../content";
 import { go } from "../outbound";
 ---
@@ -63,7 +64,10 @@ import { go } from "../outbound";
       the figures, or go straight to the seller.
     </p>
     <p>
-      <a class="button" href={go("tickets")} rel="nofollow sponsored" title="Ticket page for Future World Forum Dubai on Eventbrite">Tickets on Eventbrite</a>
+      <a class="button" href={go("tickets")} rel="nofollow sponsored" title="Ticket page for Future World Forum Dubai on Eventbrite">
+        <Icon name="ticket" />
+        Tickets on Eventbrite
+      </a>
     </p>
   </section>
 </Layout>

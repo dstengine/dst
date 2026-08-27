@@ -6,10 +6,11 @@ import NewsBlock from "@dst/ui/NewsBlock.astro";
 import EventsBlock from "@dst/ui/EventsBlock.astro";
 import { newsBySite } from "@dst/content/news";
 import { formatDate } from "@dst/ui/date";
-import { checkedOn, forum, forumDate, otherEvents, ticketsFrom, ticketsTo } from "../content";
+import { checkedOn, forum, forumDate, otherEvents, siteHeaderImage, ticketsFrom, ticketsTo } from "../content";
 import { go } from "../outbound";
 import { itemContext } from "@dst/ui/schema";
-import { ICONS } from "@dst/ui/icons";
+import Icon from "@dst/ui/Icon.astro";
+import PhotoHero from "@dst/ui/district/PhotoHero.astro";
 
 const newsItems = newsBySite("fwf");
 
@@ -64,8 +65,14 @@ const jsonLd = [
   jsonLd={jsonLd}
 >
   <section class="container hero">
-    <p class="eyebrow">Independent guide · checked {checkedOn}</p>
-    <h1>Future World Forum Dubai 2026</h1>
+    <PhotoHero
+      eyebrow="Independent guide"
+      title="Future World Forum Dubai 2026"
+      tagline={`Checked ${checkedOn}`}
+      image={siteHeaderImage.src}
+      imageAlt={siteHeaderImage.alt}
+      imageKind={siteHeaderImage.kind}
+    />
     <p class="lede">
       A <strong>one-day conference and expo</strong> on urban technology, listed
       for <strong>{forumDate}</strong> in Dubai, <strong>10:00–17:30</strong>.
@@ -74,8 +81,14 @@ const jsonLd = [
       which parts are still missing.
     </p>
     <div class="hero-actions">
-      <a class="button" href={go("tickets")} rel="nofollow sponsored" title="Ticket page for Future World Forum Dubai on Eventbrite">Tickets on Eventbrite</a>
-      <a class="button button-secondary" href="/programme/" title="What the forum's programme covers">See the programme</a>
+      <a class="button" href={go("tickets")} rel="nofollow sponsored" title="Ticket page for Future World Forum Dubai on Eventbrite">
+        <Icon name="ticket" />
+        Tickets on Eventbrite
+      </a>
+      <a class="button button-secondary" href="/programme/" title="What the forum's programme covers">
+        <Icon name="list" />
+        See the programme
+      </a>
     </div>
   </section>
 
@@ -108,7 +121,7 @@ const jsonLd = [
     </p>
     <p>
       <a class="button button-secondary" href="/forum.ics" download title="Download the date as a calendar file">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={ICONS.events} /></svg>
+        <Icon name="events" />
         Add the date to your calendar
       </a>
     </p>
