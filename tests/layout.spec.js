@@ -20,6 +20,12 @@ const PAGES = [
   { site: "dst", path: "/" },
   { site: "palmcentral", path: "/" },
   { site: "palmcentral", path: "/prices/" },
+  // fwf runs the same BaseLayout on its own domain, with the longest site
+  // name in the network beside an eight-item nav.
+  { site: "fwf", path: "/" },
+  { site: "fwf", path: "/events/" },
+  { site: "fwf", path: "/tickets/" },
+  { site: "fwf", path: "/news/" },
 ];
 
 const url = (site, path) => `${baseUrl(site)}${path}`;
@@ -373,7 +379,7 @@ test.describe("skip link", () => {
   // page before reaching the content — and a skip link that stays hidden
   // when focused, or that only scrolls without moving focus, is no better
   // than none. Both halves are checked here because both have to hold.
-  for (const site of ["dst", "riviera"]) {
+  for (const site of ["dst", "riviera", "fwf"]) {
     test(`${site}: the first tab stop jumps to the content`, async ({ page }) => {
       await page.setViewportSize({ width: 1280, height: 900 });
       await page.goto(url(site, "/"));

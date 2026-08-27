@@ -31,4 +31,8 @@ const cards = sorted.map((item) => {
   };
 });
 ---
-{cards.length > 0 && <FeedCards items={cards} />}
+{/* Two or fewer cards get their column count pinned, the way the front-page
+    blocks already do: left to auto-fill they sit in the first two tracks of a
+    four-track row and leave half the page empty. Three or more fill the row on
+    their own. */}
+{cards.length > 0 && <FeedCards items={cards} columns={cards.length <= 2 ? cards.length : undefined} />}

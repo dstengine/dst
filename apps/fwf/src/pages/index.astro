@@ -127,7 +127,7 @@ const jsonLd = [
       them, all pointed at the same question — what a city runs on when the
       infrastructure is software.
     </p>
-    <div class="link-grid">
+    <div class="link-grid sector-grid">
       {forum.programme!.map((track) => (
         <article class="card">
           <h3>{track.heading}</h3>
@@ -211,6 +211,12 @@ const jsonLd = [
   .muted:not(:empty)::before { content: "· "; }
   .table-note { font-size: var(--step--1); color: var(--ink-muted); }
   .ics { font-size: var(--step--1); }
+  /* Five sectors, and auto-fit puts four across at desktop and leaves the
+     fifth alone on the next row. Three across splits them 3-then-2, which
+     reads as a deliberate block rather than an orphan. */
+  @media (min-width: 900px) {
+    .sector-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
   .card h3 { margin-top: 0; font-size: var(--step-0); }
   .card p { margin: 0; font-size: var(--step--1); color: var(--ink-muted); }
 </style>

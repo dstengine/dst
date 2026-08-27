@@ -45,14 +45,14 @@ const past = items
     {upcoming.length > 0 && (
       <div class="events-group">
         <h3 class="events-group-heading">Upcoming</h3>
-        <FeedCards items={upcoming} />
+        <FeedCards items={upcoming} columns={upcoming.length <= 2 ? upcoming.length : undefined} />
         <CountdownScript />
       </div>
     )}
     {past.length > 0 && (
       <div class="events-group events-group-past">
         <h3 class="events-group-heading">Past</h3>
-        <FeedCards items={past} />
+        <FeedCards items={past} columns={past.length <= 2 ? past.length : undefined} />
       </div>
     )}
   </div>

@@ -240,7 +240,10 @@ const parts = (iso: string) => {
     color: var(--accent);
     font-weight: 600;
   }
-  .feed-countdown:not(:empty)::before { content: "\00b7 "; }
+  /* A non-breaking space, not a plain one: the countdown is a flex item, so
+     the trailing space in generated content collapsed and every card read
+     "Nov 17, 2026 ·in 3 months". */
+  .feed-countdown:not(:empty)::before { content: "\00b7\00a0"; }
   /* A chip, not a bare word: after a category and a date it read as a third
      run-on fragment of the same sentence. */
   .feed-past {
