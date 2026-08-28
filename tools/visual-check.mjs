@@ -90,12 +90,18 @@ async function domFindings(page, width) {
       // column wraps because the column is narrow, which is the design; a
       // heading sharing a flex row with a link is being squeezed by it.
       const hr = h.getBoundingClientRect();
+      // …and only when that something is a small thing, a link or a badge.
+      // A two-column hero puts a display heading beside a full lede column
+      // on purpose; that is a layout, not a squeeze.
       const beside = [...(parent?.children ?? [])].some((sib) => {
         if (sib === h) return false;
         const sr = sib.getBoundingClientRect();
-        return sr.width > 0 && sr.top < hr.bottom && sr.bottom > hr.top;
+        const overlapsRow = sr.width > 0 && sr.top < hr.bottom && sr.bottom > hr.top;
+        return overlapsRow && sr.width < parentWidth * 0.35;
       });
-      if (lines >= 4 && share < 0.75 && beside)
+      // Three lines is already the fault: at 480px the heading beside the
+      // link broke into three and the four-line threshold said nothing.
+      if (lines >= 3 && share < 0.72 && beside)
         say("heading squeezed into a narrow column", h, `${lines} lines across ${Math.round(share * 100)}% of the row`);
     }
 
