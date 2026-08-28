@@ -27,12 +27,12 @@ const cityName = (slug: string) => cities.find((c) => c.slug === slug)?.name ?? 
       {show.runs.map((run) => (
         <li>
           <a href={`/${run.city}/`} title={`Musicals playing ${cityName(run.city)}`}>{cityName(run.city)}</a>
-          {run.start ? <span> — {run.start}</span> : <span class="tba">Dates to be announced</span>}
+          <span class="run-when">{run.start ? `— ${run.start}` : "— dates not announced"}</span>
           {run.ticketSlug && <> · <a href={go(run.ticketSlug)} rel="nofollow" title={`Buy tickets for ${show.title} in ${cityName(run.city)}`}>tickets</a></>}
         </li>
       ))}
     </ul>
-    <p class="note">Read {checkedOn}. A run is listed here once it is on sale with a named seller.</p>
+    <p class="note">Listings last read {checkedOn}. A run appears here once it is on sale with a named seller.</p>
   </section>
 
   <section class="container">
@@ -54,5 +54,6 @@ const cityName = (slug: string) => cities.find((c) => c.slug === slug)?.name ?? 
     padding: var(--space-2) 0;
     border-bottom: 1px solid var(--border);
   }
+  .run-when { color: var(--ink-muted); }
   .note { color: var(--ink-muted); font-size: var(--step--1); }
 </style>

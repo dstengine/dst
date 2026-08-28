@@ -15,8 +15,8 @@ const chicago = shows[0]!;
     <p class="lede">
       Most listings sites fill the gaps. This one leaves them visible: a show
       appears here when it is on sale somewhere, and its dates, venue and
-      prices appear when the seller publishes them — not before. Read
-      {checkedOn}.
+      prices appear when the seller publishes them — not before. Listings
+      last read on {checkedOn}.
     </p>
   </section>
 
@@ -31,7 +31,7 @@ const chicago = shows[0]!;
       cities are guessed at, so a thin page here means a thin season, not a
       site that has stopped looking.
     </p>
-    <div class="link-grid">
+    <div class="link-grid city-grid">
       {cities.map((city) => (
         <a class="card link-card" href={`/${city.slug}/`} title={`Musicals playing ${city.name}`}>
           <h3>{city.name}</h3>
@@ -64,3 +64,10 @@ const chicago = shows[0]!;
     </p>
   </section>
 </Layout>
+
+<style>
+  /* One city, and for a while it will be one. auto-fit would stretch a
+     single card the width of the page and make a thin season look like a
+     layout bug; auto-fill leaves the empty tracks empty. */
+  .city-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+</style>

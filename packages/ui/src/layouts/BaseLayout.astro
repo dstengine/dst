@@ -44,9 +44,14 @@ interface Props {
       one — which is the whole point of it, since for some of those inner
       pages the hub is the only site linking to them at all. */
   footerSites?: NetworkSite[];
+  /** Whether the footer names DST as the network behind the site. A site
+      that is not being tied to the group yet passes false — the line is a
+      link to dst.llc, and a link is exactly what such a site must not
+      carry until someone decides it should. */
+  networkFooter?: boolean;
 }
 
-const { title, description, siteName, nav, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [], footerSiteName = siteName, instagram, image, footerSites = [] } = Astro.props;
+const { title, description, siteName, nav, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [], footerSiteName = siteName, instagram, image, footerSites = [], networkFooter = true } = Astro.props;
 const isDstHome = Astro.site?.hostname === "dst.llc";
 
 // Absolute URLs: canonical and og:image are both meaningless as relative
@@ -240,9 +245,9 @@ const denseNav = navFootprint > 900;
         )}
         <p class="footer-note">{complianceNote}</p>
         <p class="footer-copy">
-          &copy; {new Date().getFullYear()} {footerSiteName}. Part of the{" "}
+          &copy; {new Date().getFullYear()} {footerSiteName}.{networkFooter && (<>{" "}Part of the{" "}
           {isDstHome ? "DST network" : <a href="https://dst.llc" title="DST — the group behind this site">DST network</a>}{partnerDisclosure && (<>, digital partner of DEAL KEY PROPERTIES LLC, DED License No. 1523000 &middot; RERA ORN 52875</>
-          )}.
+          )}.</>)}
         </p>
         {footerLinks.length > 0 && (
           <p class="footer-links">

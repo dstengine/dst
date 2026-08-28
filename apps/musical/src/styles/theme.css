@@ -38,10 +38,10 @@
 }
 .pending dd { margin: 0; max-width: 60ch; }
 
-/* "To be announced", inline. Reads as a status, not as a link — the first
-   draft of this had it underlined in the accent and people clicked it. */
+/* "Not announced", as a value in its own right. Reads as a status rather
+   than a link — the first draft had it underlined in the accent, which is
+   the one thing on a listings page nobody should be tempted to click. */
 .tba {
-  margin-right: 0.7em;
   color: var(--accent);
   font-family: var(--font-mono);
   font-size: 0.78em;
@@ -49,4 +49,3 @@
   text-transform: uppercase;
   white-space: nowrap;
 }
-.tba::after { content: " ·"; color: var(--ink-faint); }

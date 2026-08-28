@@ -71,22 +71,52 @@ function sources(pageFile) {
 
 const appOf = (file) => path.relative(REPO, file).split(path.sep)[1];
 
-/** The source page that produced a built URL, dynamic routes included. */
-function pageFor(app, url) {
-  const dir = path.join(REPO, "apps", app, "src", "pages");
+/** Every source page that could have produced a built URL.
+
+    Usually one. But a site can carry two dynamic routes at the same level —
+    musical.today has cities at `[city].astro` and shows at `[show]/` — and
+    from the built path alone there is no telling which one produced
+    /chicago/. Rather than guess, return both and let the caller take the
+    newest date among them: both routes render the same content file anyway,
+    so the answer only differs when one of the route files itself is edited. */
+function pagesFor(app, url) {
+  const root = path.join(REPO, "apps", app, "src", "pages");
   const segments = url.split("/").filter(Boolean);
-  const candidates = [
-    path.join(dir, ...segments, "index.astro"),
-    path.join(dir, ...segments.slice(0, -1), `${segments.at(-1) ?? ""}.astro`),
-  ];
-  for (const c of candidates) if (existsSync(c)) return c;
-  // A dynamic route: /news/foo/ comes from pages/news/[slug].astro.
-  const parent = path.join(dir, ...segments.slice(0, -1));
-  if (existsSync(parent)) {
-    const dynamic = readdirSync(parent).find((f) => /^\[.+\]\.astro$/.test(f));
-    if (dynamic) return path.join(parent, dynamic);
+  if (!segments.length) {
+    const home = path.join(root, "index.astro");
+    return existsSync(home) ? [home] : [];
   }
-  return null;
+  return resolvePage(root, segments);
+}
+
+const isDir = (p) => existsSync(p) && statSync(p).isDirectory();
+
+function resolvePage(dir, [head, ...rest]) {
+  if (!isDir(dir)) return [];
+  const entries = readdirSync(dir, { withFileTypes: true });
+
+  if (rest.length) {
+    const dirs = [path.join(dir, head)];
+    for (const e of entries) {
+      if (e.isDirectory() && /^\[.+\]$/.test(e.name)) dirs.push(path.join(dir, e.name));
+    }
+    return dirs.flatMap((d) => resolvePage(d, rest));
+  }
+
+  // The last segment: a static page wins outright over a dynamic route.
+  const exact = [path.join(dir, head, "index.astro"), path.join(dir, `${head}.astro`)]
+    .filter((c) => existsSync(c) && statSync(c).isFile());
+  if (exact.length) return exact;
+
+  const dynamic = [];
+  for (const e of entries) {
+    if (e.isFile() && /^\[.+\]\.astro$/.test(e.name)) dynamic.push(path.join(dir, e.name));
+    else if (e.isDirectory() && /^\[.+\]$/.test(e.name)) {
+      const index = path.join(dir, e.name, "index.astro");
+      if (existsSync(index)) dynamic.push(index);
+    }
+  }
+  return dynamic;
 }
 
 const walk = (dir) =>
@@ -109,9 +139,9 @@ for (const [app, host] of Object.entries(HOSTS)) {
     const url = "/" + path.relative(dist, file).replace(/index\.html$/, "");
     if (url.startsWith("/go/")) continue; // noindex, never in a sitemap
     pages++;
-    const page = pageFor(app, url);
-    if (!page) continue;
-    const dates = sources(page).map(lastCommit).filter(Boolean).sort();
+    const candidates = pagesFor(app, url);
+    if (!candidates.length) continue;
+    const dates = candidates.flatMap(sources).map(lastCommit).filter(Boolean).sort();
     if (!dates.length) continue;
     out[host][url] = dates.at(-1);
     dated++;

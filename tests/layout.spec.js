@@ -26,6 +26,12 @@ const PAGES = [
   { site: "fwf", path: "/events/" },
   { site: "fwf", path: "/tickets/" },
   { site: "fwf", path: "/news/" },
+  // musical carries two dynamic routes at the root — a city and a show —
+  // and a promoted block that repeats across all three templates.
+  { site: "musical", path: "/" },
+  { site: "musical", path: "/dubai/" },
+  { site: "musical", path: "/chicago/" },
+  { site: "musical", path: "/chicago/history/" },
 ];
 
 const url = (site, path) => `${baseUrl(site)}${path}`;
