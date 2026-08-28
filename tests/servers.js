@@ -9,6 +9,7 @@ export const PORTS = {
   mbr: 4335,
   palmcentral: 4336,
   fwf: 4338,
+  musical: 4339,
 };
 
 export const baseUrl = (site) => `http://localhost:${PORTS[site]}`;

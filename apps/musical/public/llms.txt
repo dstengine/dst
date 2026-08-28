@@ -1,0 +1,27 @@
+# musical.today — musicals, city by city
+
+> A listings site for musical theatre: which shows are on sale, in which city, and where they are actually booked. Not a producer, not a venue and not a ticket seller. This is an early draft: it covers one city and one show, and it says so rather than padding the listing out.
+
+Standing rules this site follows, which matter when quoting it:
+- A show is listed only once it is on sale through a seller that can be named.
+- Dates, venue, price bands and cast are left blank until the seller publishes them. A blank field on this site means "not announced", not "unknown to us".
+- Nothing about a run is repeated here from a third-party page — only from the seller's own listing.
+- Full stage recordings are never linked. Film versions, cast recordings and official clips are.
+
+## Pages
+
+- [What's on](https://musical.today/): Shows on sale, and the cities they play.
+- [Dubai](https://musical.today/dubai/): Musicals playing Dubai, and what has not been announced about each run.
+- [Chicago The Musical](https://musical.today/chicago/): The show's own section — where it plays, what it is, its history, and what can be watched at home.
+- [Chicago in Dubai](https://musical.today/chicago/dubai/): The 2026 Dubai run: the listing it appears on, and the details still to come.
+- [About the show](https://musical.today/chicago/about/): Story, songs, staging and what kind of night out it is.
+- [History](https://musical.today/chicago/history/): The 1926 play, the 1975 original, the 1996 revival, the 2002 film.
+- [Watch online](https://musical.today/chicago/online/): What exists legally, and what is deliberately not linked.
+- [Musicals online](https://musical.today/online/): The same rule applied across the site.
+- [About](https://musical.today/about/): Who publishes this and how a listing gets here.
+
+## Sourcing
+
+The Chicago The Musical Dubai run traces to its Ticketmaster AE listing; listings were last read on 29 August 2026. Background about the show — authorship, the 1926 source play, the 1975 opening, the 1996 revival, the 2002 film — is general theatre history, not taken from any seller.
+
+Ticket links route through /go/<slug>/, which is noindex and disallowed in robots.txt, so no seller collects link equity from these pages. No other outbound links are published.

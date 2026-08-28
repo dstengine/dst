@@ -1,0 +1,35 @@
+---
+import BaseLayout from "@dst/ui/BaseLayout.astro";
+import { disclaimer } from "../content";
+import "../styles/theme.css";
+
+interface Props {
+  title: string;
+  description: string;
+  jsonLd?: Record<string, unknown>[];
+  /** og:image for this page — see BaseLayout. */
+  image?: string;
+}
+const { title, description, jsonLd, image } = Astro.props;
+
+const nav = [
+  { href: "/", label: "What's on", title: "Musicals on sale now, city by city" },
+  { href: "/dubai/", label: "Dubai", title: "Musicals playing Dubai in 2026" },
+  { href: "/chicago/", label: "Chicago", title: "Chicago The Musical: the show, its history, and where it plays" },
+  { href: "/online/", label: "Online", title: "Musicals you can legally watch at home" },
+  { href: "/about/", label: "About", title: "Who publishes this site and how its listings are checked" },
+];
+---
+<BaseLayout
+  title={`${title} — musical.today`}
+  description={description}
+  siteName="musical.today"
+  nav={nav}
+  complianceNote={disclaimer}
+  jsonLd={jsonLd}
+  image={image}
+  partnerDisclosure={false}
+  footerLinks={[{ href: "/about/", label: "About this site" }]}
+>
+  <slot />
+</BaseLayout>

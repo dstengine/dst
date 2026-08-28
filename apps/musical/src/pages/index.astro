@@ -1,0 +1,66 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Promo from "../components/Promo.astro";
+import { checkedOn, cities, shows } from "../content";
+
+const chicago = shows[0]!;
+---
+<Layout
+  title="Musicals on sale now"
+  description="A listings site for musicals: what is on sale, city by city, starting with Chicago The Musical in Dubai in 2026. Dates and prices only once they are published."
+>
+  <section class="container hero">
+    <p class="eyebrow">Musicals, city by city</p>
+    <h1>What's on, and what is only announced</h1>
+    <p class="lede">
+      Most listings sites fill the gaps. This one leaves them visible: a show
+      appears here when it is on sale somewhere, and its dates, venue and
+      prices appear when the seller publishes them — not before. Read
+      {checkedOn}.
+    </p>
+  </section>
+
+  <div class="container">
+    <Promo />
+  </div>
+
+  <section class="container">
+    <h2>Cities</h2>
+    <p>
+      One city so far. The list grows as runs are confirmed rather than as
+      cities are guessed at, so a thin page here means a thin season, not a
+      site that has stopped looking.
+    </p>
+    <div class="link-grid">
+      {cities.map((city) => (
+        <a class="card link-card" href={`/${city.slug}/`} title={`Musicals playing ${city.name}`}>
+          <h3>{city.name}</h3>
+          <p>{city.country}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="container">
+    <h2>{chicago.title}</h2>
+    <p>{chicago.tagline}</p>
+    <div class="link-grid">
+      {chicago.sections.map((section) => (
+        <a class="card link-card" href={`/${chicago.slug}/${section.slug}/`} title={section.title}>
+          <h3>{section.label}</h3>
+          <p>{section.description}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="container">
+    <h2>At home</h2>
+    <p>
+      Musicals you can legally watch or hear without a ticket — film versions,
+      cast recordings and the clips productions publish themselves — are
+      collected on <a href="/online/" title="Musicals you can legally watch or hear at home">the online page</a>. Reuploads of full
+      stage recordings are not, however easy they are to find.
+    </p>
+  </section>
+</Layout>

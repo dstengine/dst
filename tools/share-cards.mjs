@@ -15,7 +15,7 @@ import { fileURLToPath } from "node:url";
 import sharp from "sharp";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const APPS = ["dst", "llc", "visas", "riviera", "mbr", "palmcentral", "eco", "fwf"];
+const APPS = ["dst", "llc", "visas", "riviera", "mbr", "palmcentral", "eco", "fwf", "musical"];
 
 const W = 1200;
 const H = 630;

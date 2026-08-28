@@ -20,12 +20,12 @@ import { fileURLToPath } from "node:url";
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
 /** Every app in the network. eco included — see the note above. */
-const APPS = ["dst", "llc", "visas", "riviera", "mbr", "palmcentral", "eco", "fwf"];
+const APPS = ["dst", "llc", "visas", "riviera", "mbr", "palmcentral", "eco", "fwf", "musical"];
 
 /** dst.llc itself and any subdomain of it, plus the network's own domains
     that don't sit under it — fwf.lol is published by DST but is a site
     about a third party's event, so it carries its own name. */
-const OWN_DOMAINS = ["fwf.lol"];
+const OWN_DOMAINS = ["fwf.lol", "musical.today"];
 const isNetworkHost = (host) =>
   host === "dst.llc" ||
   host.endsWith(".dst.llc") ||

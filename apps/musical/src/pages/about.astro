@@ -1,0 +1,43 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { checkedOn, disclaimer } from "../content";
+---
+<Layout
+  title="About this site"
+  description="Who publishes musical.today, how its listings are checked, and why unannounced dates and venues are left blank rather than filled in."
+>
+  <section class="container hero">
+    <p class="eyebrow">About</p>
+    <h1>About this site</h1>
+    <p class="lede">{disclaimer}</p>
+  </section>
+
+  <section class="container prose">
+    <h2>How a listing gets here</h2>
+    <p>
+      A show appears when it is on sale through a seller that can be named,
+      and the entry carries only what that seller's listing states. Dates,
+      venue, price bands and cast are left blank until they are published —
+      marked "to be announced" rather than filled in with the most plausible
+      answer. Listings were last read on {checkedOn}.
+    </p>
+    <h2>Links out</h2>
+    <p>
+      The only outbound links are to ticket sellers, and they go through a
+      redirect that is closed to search engines. This site earns nothing from
+      them; it is a listings site, not a reseller, and it takes no booking and
+      handles no payment.
+    </p>
+    <h2>Corrections</h2>
+    <p>
+      If something here is wrong — a date that moved, a run that was cancelled,
+      a show that never existed — it should be corrected rather than argued
+      with. This page will carry a contact route once the site is past its
+      first draft.
+    </p>
+  </section>
+</Layout>
+
+<style>
+  .prose p { max-width: 68ch; }
+</style>

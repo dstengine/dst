@@ -29,13 +29,14 @@ REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 CACHE="$REPO/.vercel/project-ids.env"   # .vercel/ is gitignored
 
 # Site -> Vercel project. The hub is plain `dst`; the rest carry the prefix.
-SITES=(dst llc visas riviera mbr palmcentral eco api fwf)
+SITES=(dst llc visas riviera mbr palmcentral eco api fwf musical)
 project_for() {
   case "$1" in
     dst) echo "dst" ;;
     # fwf.lol is its own domain rather than a *.dst.llc vertical, so its
     # project carries its own name instead of the group prefix.
     fwf) echo "fwf" ;;
+    musical) echo "musical" ;;
     *)   echo "dst-$1" ;;
   esac
 }

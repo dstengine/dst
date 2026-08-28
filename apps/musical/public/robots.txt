@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Outbound redirect hops. These exist to keep ticket sellers off our link
+# graph — there is nothing here worth crawling or indexing.
+Disallow: /go/
+
+Sitemap: https://musical.today/sitemap-index.xml

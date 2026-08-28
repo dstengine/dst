@@ -22,6 +22,7 @@ const HOSTS = {
   mbr: "mbr.dst.llc",
   palmcentral: "palmcentral.dst.llc",
   fwf: "fwf.lol",
+  musical: "musical.today",
   eco: "eco.dst.llc",
 };
 

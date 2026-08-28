@@ -1,0 +1,52 @@
+/* musical.today — a listings site for musicals, one show at a time.
+   Accent: stage crimson. Every other site in the network wears a hue that
+   says property or paperwork (llc's teal, visas's bronze, riviera's blue,
+   mbr's cyan, palmcentral's terracotta, eco's green, fwf's indigo); a
+   theatre listing is the one place a curtain red is the obvious answer. */
+:root {
+  --accent: #C0185C;
+  --accent-ink: #7A0B39;
+  --accent-tint: #FBE6EE;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --accent: #F58BB4; --accent-ink: #FBD3E1; --accent-tint: #3B0F23; }
+}
+:root[data-theme="dark"] { --accent: #F58BB4; --accent-ink: #FBD3E1; --accent-tint: #3B0F23; }
+:root[data-theme="light"] { --accent: #C0185C; --accent-ink: #7A0B39; --accent-tint: #FBE6EE; }
+
+/* Key/value facts. A show has half a dozen of them and most are still
+   unannounced, so they are a description list rather than a table: on a
+   phone a two-column table scrolls its own labels out of view. */
+.pending {
+  margin: var(--space-3) 0 0;
+  border-top: 1px solid var(--border);
+}
+.pending-row {
+  display: grid;
+  gap: 0.15em var(--space-3);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--border);
+}
+@media (min-width: 720px) {
+  .pending-row { grid-template-columns: 12rem 1fr; align-items: baseline; }
+}
+.pending dt {
+  color: var(--ink-muted);
+  font-size: var(--step--1);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.pending dd { margin: 0; max-width: 60ch; }
+
+/* "To be announced", inline. Reads as a status, not as a link — the first
+   draft of this had it underlined in the accent and people clicked it. */
+.tba {
+  margin-right: 0.7em;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.78em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.tba::after { content: " ·"; color: var(--ink-faint); }

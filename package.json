@@ -12,7 +12,7 @@
     "dev:visas": "npm run dev --workspace=apps/visas",
     "dev:riviera": "npm run dev --workspace=apps/riviera",
     "dev:mbr": "npm run dev --workspace=apps/mbr",
-    "build": "npm run build --workspace=apps/dst && npm run build --workspace=apps/llc && npm run build --workspace=apps/visas && npm run build --workspace=apps/riviera && npm run build --workspace=apps/mbr && npm run build --workspace=apps/palmcentral && npm run build --workspace=apps/eco && npm run build --workspace=apps/fwf",
+    "build": "npm run build --workspace=apps/dst && npm run build --workspace=apps/llc && npm run build --workspace=apps/visas && npm run build --workspace=apps/riviera && npm run build --workspace=apps/mbr && npm run build --workspace=apps/palmcentral && npm run build --workspace=apps/eco && npm run build --workspace=apps/fwf && npm run build --workspace=apps/musical",
     "build:dst": "npm run build --workspace=apps/dst",
     "build:llc": "npm run build --workspace=apps/llc",
     "build:visas": "npm run build --workspace=apps/visas",
@@ -33,7 +33,9 @@
     "share-cards": "node tools/share-cards.mjs",
     "test:network": "node --test tests/network-links.test.js",
     "images": "node tools/images.mjs",
-    "test:images": "node --test tests/images.test.js"
+    "test:images": "node --test tests/images.test.js",
+    "build:musical": "npm run build --workspace=apps/musical",
+    "dev:musical": "npm run dev --workspace=apps/musical"
   },
   "devDependencies": {
     "@playwright/test": "^1.62.1",

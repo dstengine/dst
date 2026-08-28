@@ -1,0 +1,58 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Promo from "../../components/Promo.astro";
+import { cities, checkedOn, shows, type Show } from "../../content";
+import { go } from "../../outbound";
+
+export function getStaticPaths() {
+  return shows.map((show) => ({ params: { show: show.slug }, props: { show } }));
+}
+
+interface Props { show: Show }
+const { show } = Astro.props;
+const cityName = (slug: string) => cities.find((c) => c.slug === slug)?.name ?? slug;
+---
+<Layout title={show.title} description={show.summary}>
+  <section class="container hero">
+    <p class="eyebrow">The show</p>
+    <h1>{show.title}</h1>
+    <p class="lede">{show.tagline}</p>
+  </section>
+
+  <div class="container"><Promo level={2} compact /></div>
+
+  <section class="container">
+    <h2>Where it plays</h2>
+    <ul class="runs">
+      {show.runs.map((run) => (
+        <li>
+          <a href={`/${run.city}/`} title={`Musicals playing ${cityName(run.city)}`}>{cityName(run.city)}</a>
+          {run.start ? <span> — {run.start}</span> : <span class="tba">Dates to be announced</span>}
+          {run.ticketSlug && <> · <a href={go(run.ticketSlug)} rel="nofollow" title={`Buy tickets for ${show.title} in ${cityName(run.city)}`}>tickets</a></>}
+        </li>
+      ))}
+    </ul>
+    <p class="note">Read {checkedOn}. A run is listed here once it is on sale with a named seller.</p>
+  </section>
+
+  <section class="container">
+    <h2>Read on</h2>
+    <div class="link-grid">
+      {show.sections.map((section) => (
+        <a class="card link-card" href={`/${show.slug}/${section.slug}/`} title={section.title}>
+          <h3>{section.label}</h3>
+          <p>{section.description}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .runs { padding-left: 0; list-style: none; }
+  .runs li {
+    padding: var(--space-2) 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .note { color: var(--ink-muted); font-size: var(--step--1); }
+</style>

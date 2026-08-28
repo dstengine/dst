@@ -23,6 +23,7 @@ const SITES = [
   { app: "mbr", host: "mbr.dst.llc" },
   { app: "palmcentral", host: "palmcentral.dst.llc" },
   { app: "fwf", host: "fwf.lol" },
+  { app: "musical", host: "musical.today" },
 ];
 const TITLE_LIMIT = 60;
 
