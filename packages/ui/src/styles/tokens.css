@@ -256,6 +256,35 @@ thead th { font-size: var(--step--1); text-transform: uppercase; letter-spacing:
 }
 .table-wrap table { min-width: 34rem; }
 
+/* A key/value table is not a data grid, and on a phone it must not scroll.
+   Its first column is the label — scroll it out of view and every value
+   below is orphaned: "16 November 2026", "Dubai. No venue has been
+   announced." with nothing left on screen saying what they answer. Rows
+   stack instead: label, then value, and the row rule separates the pairs.
+   Selected by `:has(th[scope="row"])` so a real column-headed table (thead
+   with th's across the top) keeps scrolling, where scrolling is right. */
+@media (max-width: 640px) {
+  .table-wrap:has(th[scope="row"]) {
+    overflow-x: visible;
+    background: none;
+  }
+  .table-wrap:has(th[scope="row"]) table { min-width: 0; }
+  .table-wrap:has(th[scope="row"]) :is(tr, th[scope="row"], td) {
+    display: block;
+    width: auto;
+  }
+  .table-wrap:has(th[scope="row"]) th[scope="row"] {
+    padding-bottom: 0;
+    border-bottom: 0;
+    white-space: normal;
+    font-size: var(--step--1);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .table-wrap:has(th[scope="row"]) td { padding-top: 0.15em; }
+  .table-wrap:has(th[scope="row"]) tr:last-child td { border-bottom: 0; }
+}
+
 /* Shared page-shell patterns — every page in the network opens with a
    hero (eyebrow + h1 + lede) at minimum; identical across every app until
    a page needs something different, at which point it overrides the

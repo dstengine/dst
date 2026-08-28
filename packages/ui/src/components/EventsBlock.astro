@@ -54,13 +54,18 @@ const cards = upcoming.map((item) => {
   /* See NewsBlock: the head row zeroes the h2's margin for baseline
      alignment, so the section carries the inter-section spacing instead. */
   .events-block { margin-top: var(--space-5); }
+  /* wrap, and a heading that may grow but not be squeezed: with the link
+     held at its full width beside it, a multi-word heading on a phone was
+     compressed into a 6rem column and broke onto five lines. Short of room,
+     the link drops to its own line instead. */
   .events-block-head {
     display: flex;
+    flex-wrap: wrap;
     align-items: baseline;
     justify-content: space-between;
-    gap: var(--space-3);
+    gap: var(--space-1) var(--space-3);
   }
-  .events-block-head h2 { margin: 0; }
+  .events-block-head h2 { margin: 0; flex: 1 1 14rem; }
   .events-block-all {
     display: inline-flex;
     align-items: center;

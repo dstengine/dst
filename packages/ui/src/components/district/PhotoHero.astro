@@ -70,7 +70,18 @@ const kindLabel = imageKind && imageKind !== "photo" ? KIND_LABEL[imageKind] : u
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(8, 10, 13, 0.88) 0%, rgba(8, 10, 13, 0.45) 38%, rgba(8, 10, 13, 0) 68%);
+    /* Deep enough to carry white text over anything the picture puts under
+       it. At 0.45 across the caption band the eyebrow landed on a lit sign
+       in the fwf photo and the two sets of white letters read as one. The
+       band the caption occupies is now held dark; the top of the picture is
+       left alone. */
+    background: linear-gradient(
+      to top,
+      rgba(8, 10, 13, 0.93) 0%,
+      rgba(8, 10, 13, 0.82) 35%,
+      rgba(8, 10, 13, 0.5) 62%,
+      rgba(8, 10, 13, 0) 88%
+    );
   }
 
   .photo-hero.is-plain { min-height: 0; background: none; }
@@ -126,6 +137,18 @@ const kindLabel = imageKind && imageKind !== "photo" ? KIND_LABEL[imageKind] : u
 
   @media (max-width: 640px) {
     .photo-hero { min-height: 260px; }
+    /* The box is shorter but the caption isn't, so it reaches further up
+       into the picture — the same stops leave the eyebrow on a thinner part
+       of the scrim than they do on a desktop-height hero. */
+    .photo-hero::after {
+      background: linear-gradient(
+        to top,
+        rgba(8, 10, 13, 0.94) 0%,
+        rgba(8, 10, 13, 0.82) 45%,
+        rgba(8, 10, 13, 0.45) 72%,
+        rgba(8, 10, 13, 0) 92%
+      );
+    }
     .photo-hero-caption :is(h1, h2) { font-size: var(--step-3); }
   }
 </style>

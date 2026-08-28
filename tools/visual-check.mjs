@@ -1,0 +1,240 @@
+#!/usr/bin/env node
+// Finds the visual faults a screenshot shows and a unit test doesn't.
+//
+//   node tools/visual-check.mjs <url|url...> [--widths 390,1280] [--shots <dir>]
+//
+// Written after a round of "проработай, чтобы я не находил за тобой багов":
+// every check here is a bug that was actually shipped, not a rule invented
+// in the abstract.
+//
+//   1. white text over a photograph that the photograph is too bright for —
+//      the hero eyebrow landed on a lit sign and the two sets of white
+//      letters read as one word;
+//   2. a key/value table that scrolls sideways on a phone, carrying its
+//      label column out of view and orphaning every value;
+//   3. a heading squeezed into a narrow column by whatever sits beside it,
+//      breaking onto five lines;
+//   4. text clipped by a box it doesn't fit (line-clamp excepted — that one
+//      is deliberate);
+//   5. tap targets under 44px;
+//   6. the page itself scrolling sideways.
+//
+// Exit status 1 if anything is found, so it can gate a deploy.
+import { chromium } from "playwright";
+import sharp from "sharp";
+import path from "node:path";
+import { mkdtempSync } from "node:fs";
+import { tmpdir } from "node:os";
+
+const args = process.argv.slice(2);
+const flag = (name, fallback) => {
+  const i = args.indexOf(`--${name}`);
+  return i === -1 ? fallback : args[i + 1];
+};
+const urls = args.filter((a) => !a.startsWith("--") && !/^\d/.test(a) && a.includes("//"));
+const widths = flag("widths", "390,1280").split(",").map(Number);
+const shotDir = flag("shots", mkdtempSync(path.join(tmpdir(), "visual-")));
+if (!urls.length) {
+  console.error("usage: node tools/visual-check.mjs <url> [more urls] [--widths 390,1280]");
+  process.exit(2);
+}
+
+const relLuminance = ([r, g, b]) => {
+  const f = (c) => {
+    const s = c / 255;
+    return s <= 0.03928 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;
+  };
+  return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b);
+};
+const contrast = (a, b) => {
+  const [hi, lo] = [relLuminance(a), relLuminance(b)].sort((x, y) => y - x);
+  return (hi + 0.05) / (lo + 0.05);
+};
+const parseColor = (css) => (css.match(/[\d.]+/g) ?? []).slice(0, 3).map(Number);
+
+/** What the DOM alone can answer. */
+async function domFindings(page, width) {
+  return page.evaluate((width) => {
+    const found = [];
+    const say = (kind, node, detail) =>
+      found.push({ kind, where: `${node.tagName.toLowerCase()}${node.className && typeof node.className === "string" ? "." + node.className.trim().split(/\s+/)[0] : ""}`, text: (node.textContent ?? "").trim().slice(0, 60), detail });
+
+    if (document.documentElement.scrollWidth > window.innerWidth + 1)
+      found.push({ kind: "page scrolls sideways", where: "html", text: "", detail: `${document.documentElement.scrollWidth}px in a ${window.innerWidth}px viewport` });
+
+    for (const el of document.querySelectorAll("*")) {
+      const cs = getComputedStyle(el);
+      if (cs.display === "none" || cs.visibility === "hidden") continue;
+      const scrolls = el.scrollWidth > el.clientWidth + 2 && /auto|scroll/.test(cs.overflowX);
+
+      // A label column scrolled out of view takes the meaning with it.
+      if (scrolls && el.querySelector('th[scope="row"]'))
+        say("key/value table scrolls sideways", el, `${el.scrollWidth}px of content in ${el.clientWidth}px — the label column scrolls away`);
+
+      // Clipped text. A line clamp is a decision; this is an accident.
+      const clipped = /hidden|clip/.test(cs.overflowX + cs.overflowY) && cs.webkitLineClamp === "none";
+      if (clipped && el.children.length === 0 && (el.scrollWidth > el.clientWidth + 2 || el.scrollHeight > el.clientHeight + 2))
+        say("text clipped by its box", el, `${el.scrollWidth}×${el.scrollHeight} in ${el.clientWidth}×${el.clientHeight}`);
+    }
+
+    // A heading broken over many lines is usually a heading being squeezed
+    // by something beside it, not a long heading.
+    for (const h of document.querySelectorAll("h1, h2, h3")) {
+      const range = document.createRange();
+      range.selectNodeContents(h);
+      const lines = range.getClientRects().length;
+      const parent = h.parentElement;
+      const parentWidth = parent?.getBoundingClientRect().width ?? 0;
+      const share = parentWidth ? h.getBoundingClientRect().width / parentWidth : 1;
+      // Only when something is actually beside it. A card title in a narrow
+      // column wraps because the column is narrow, which is the design; a
+      // heading sharing a flex row with a link is being squeezed by it.
+      const hr = h.getBoundingClientRect();
+      const beside = [...(parent?.children ?? [])].some((sib) => {
+        if (sib === h) return false;
+        const sr = sib.getBoundingClientRect();
+        return sr.width > 0 && sr.top < hr.bottom && sr.bottom > hr.top;
+      });
+      if (lines >= 4 && share < 0.75 && beside)
+        say("heading squeezed into a narrow column", h, `${lines} lines across ${Math.round(share * 100)}% of the row`);
+    }
+
+    // Anything you tap needs somewhere to be tapped.
+    if (width <= 640) {
+      for (const el of document.querySelectorAll("a, button, [role=button]")) {
+        const r = el.getBoundingClientRect();
+        if (r.width === 0 || r.height === 0) continue;
+        // A drawer parked off-canvas is not a small tap target — it is a
+        // closed menu. checkVisibility misses transforms, so test the box.
+        if (el.checkVisibility && !el.checkVisibility({ opacityProperty: true, visibilityProperty: true })) continue;
+        if (r.right < 0 || r.left > window.innerWidth || r.bottom < 0) continue;
+        const inFlow = getComputedStyle(el).display !== "inline";
+        if (inFlow && r.height < 44) say("tap target under 44px", el, `${Math.round(r.width)}×${Math.round(r.height)}`);
+      }
+    }
+    return found;
+  }, width);
+}
+
+/** Text over a picture: what the picture actually puts behind the letters. */
+async function contrastFindings(page, shot) {
+  const candidates = await page.evaluate(() => {
+    const over = [];
+    for (const el of document.querySelectorAll("h1, h2, h3, p, span, a, li")) {
+      if (!el.textContent?.trim() || el.querySelector("h1,h2,h3,p,li")) continue;
+      const r = el.getBoundingClientRect();
+      if (r.width < 8 || r.height < 8) continue;
+      // Is a picture *behind* it? A logo beside the text is not: the image
+      // has to be taken out of flow and cover the letters. Walking up for
+      // any ancestor containing an <img> reported every site wordmark.
+      let n = el.parentElement, backed = false;
+      while (n && n !== document.body && !backed) {
+        for (const img of n.querySelectorAll(":scope > img, :scope > picture > img")) {
+          const p = getComputedStyle(img).position;
+          if (p !== "absolute" && p !== "fixed") continue;
+          const ir = img.getBoundingClientRect();
+          const covered = ir.left <= r.left && ir.right >= r.right && ir.top <= r.top && ir.bottom >= r.bottom;
+          if (covered) { backed = true; break; }
+        }
+        n = n.parentElement;
+      }
+      if (!backed) continue;
+      // Tag it, so the backdrop shot can hide exactly these. Measuring a
+      // region with its own letters still in it measures the letters: the
+      // darkest tenth of the pixels came out white and every label over a
+      // picture was reported at ~2:1 whatever was behind it.
+      el.setAttribute("data-visual-check-hide", "");
+      over.push({
+        color: getComputedStyle(el).color,
+        text: el.textContent.trim().slice(0, 50),
+        tag: el.tagName.toLowerCase(),
+        rect: { x: r.x + scrollX, y: r.y + scrollY, w: r.width, h: r.height },
+      });
+    }
+    return over;
+  });
+  if (!candidates.length) return [];
+
+  // Hide the text and photograph what was under it — sampling the shot with
+  // the letters still in it measures the letters, not their background.
+  await page.evaluate(() => {
+    document.querySelectorAll("[data-visual-check-hide]").forEach((e) => (e.style.visibility = "hidden"));
+  });
+  await page.screenshot({ path: shot, fullPage: true });
+  await page.evaluate(() => {
+    document.querySelectorAll("[data-visual-check-hide]").forEach((e) => {
+      e.style.visibility = "";
+      e.removeAttribute("data-visual-check-hide");
+    });
+  });
+
+  const image = sharp(shot);
+  const meta = await image.metadata();
+  const findings = [];
+  for (const c of candidates) {
+    const left = Math.max(0, Math.round(c.rect.x));
+    const top = Math.max(0, Math.round(c.rect.y));
+    const width = Math.min(Math.round(c.rect.w), meta.width - left);
+    const height = Math.min(Math.round(c.rect.h), meta.height - top);
+    if (width < 4 || height < 4) continue;
+    const { data, info } = await sharp(shot)
+      .extract({ left, top, width, height })
+      .raw()
+      .toBuffer({ resolveWithObject: true });
+
+    // The worst pixel that matters, not the average: a bright sign behind
+    // two words is invisible in a mean over the whole line.
+    const ink = parseColor(c.color);
+    let worst = Infinity;
+    const step = info.channels;
+    const ratios = [];
+    for (let i = 0; i < data.length; i += step) {
+      ratios.push(contrast(ink, [data[i], data[i + 1], data[i + 2]]));
+    }
+    ratios.sort((a, b) => a - b);
+    // 10th percentile: ignores a few stray pixels, catches a lit sign.
+    worst = ratios[Math.floor(ratios.length * 0.1)];
+    const floor = c.tag === "h1" || c.tag === "h2" ? 3 : 4.5;
+    if (worst < floor)
+      findings.push({
+        kind: "text over a picture it can't be read on",
+        where: c.tag,
+        text: c.text,
+        detail: `contrast ${worst.toFixed(2)}:1 against the picture behind it, needs ${floor}:1`,
+      });
+  }
+  return findings;
+}
+
+const browser = await chromium.launch();
+let problems = 0;
+for (const url of urls) {
+  for (const width of widths) {
+    const ctx = await browser.newContext({
+      viewport: { width, height: 900 },
+      deviceScaleFactor: 1,
+      isMobile: width <= 640,
+      hasTouch: width <= 640,
+    });
+    const page = await ctx.newPage();
+    await page.goto(url, { waitUntil: "networkidle", timeout: 45_000 });
+    await page.waitForTimeout(400);
+    const label = `${url} @${width}`;
+    const name = url.replace(/[^a-z0-9]+/gi, "-").replace(/^-|-$/g, "");
+    const findings = [
+      ...(await domFindings(page, width)),
+      ...(await contrastFindings(page, path.join(shotDir, `${name}-${width}.png`))),
+    ];
+    if (findings.length) {
+      problems += findings.length;
+      console.log(`\n${label}`);
+      for (const f of findings) console.log(`  ${f.kind}: ${f.where} "${f.text}" — ${f.detail}`);
+    } else {
+      console.log(`${label} — clean`);
+    }
+    await ctx.close();
+  }
+}
+await browser.close();
+console.log(`\nshots in ${shotDir}`);
+process.exit(problems ? 1 : 0);
