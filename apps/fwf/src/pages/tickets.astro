@@ -25,17 +25,33 @@ const salesEnd = formatDate(forum.tickets!.salesEnd!);
 
   <section class="container">
     <h2>The numbers</h2>
-    <div class="table-wrap">
-      <table>
-        <tbody>
-          <tr><th scope="row">Lowest listed</th><td>{ticketsFrom}</td></tr>
-          <tr><th scope="row">Highest listed</th><td>{ticketsTo}</td></tr>
-          <tr><th scope="row">Sales close</th><td>{salesEnd} — seven weeks before the event</td></tr>
-          <tr><th scope="row">Refunds</th><td>{forum.tickets!.refundPolicy}</td></tr>
-          <tr><th scope="row">Sold by</th><td>Eventbrite, on behalf of {forum.organizer}</td></tr>
-        </tbody>
-      </table>
+    <div class="figure-grid">
+      <div class="figure">
+        <p class="figure-label">Lowest listed</p>
+        <p class="figure-value">{ticketsFrom}</p>
+        <p class="figure-note">The entry tier, whatever it turns out to include</p>
+      </div>
+      <div class="figure">
+        <p class="figure-label">Highest listed</p>
+        <p class="figure-value">{ticketsTo}</p>
+        <p class="figure-note">Almost certainly an exhibitor or sponsor package</p>
+      </div>
+      <div class="figure">
+        <p class="figure-label">Sales close</p>
+        <p class="figure-value">{salesEnd}</p>
+        <p class="figure-note">Seven weeks before the event</p>
+      </div>
     </div>
+    <dl class="pending">
+      <div class="pending-row">
+        <dt>Refunds</dt>
+        <dd>{forum.tickets!.refundPolicy}</dd>
+      </div>
+      <div class="pending-row">
+        <dt>Sold by</dt>
+        <dd>Eventbrite, on behalf of {forum.organizer}</dd>
+      </div>
+    </dl>
     <p class="table-note">Read from the listing on {checkedOn}. Prices on the seller's page are what count.</p>
     <p>
       <a class="button" href={go("tickets")} rel="nofollow sponsored" title="Ticket page for Future World Forum Dubai on Eventbrite">

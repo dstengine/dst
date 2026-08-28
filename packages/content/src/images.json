@@ -302,7 +302,7 @@
   "fwf.lol": {
     "/fwf-hero.jpg": {
       "width": 1380,
-      "height": 752,
+      "height": 602,
       "avif": [
         [
           480,
@@ -337,6 +337,86 @@
         [
           1380,
           "/fwf-hero-1380.webp"
+        ]
+      ]
+    },
+    "/fwf-plaza.jpg": {
+      "width": 1380,
+      "height": 282,
+      "avif": [
+        [
+          480,
+          "/fwf-plaza-480.avif"
+        ],
+        [
+          768,
+          "/fwf-plaza-768.avif"
+        ],
+        [
+          1024,
+          "/fwf-plaza-1024.avif"
+        ],
+        [
+          1380,
+          "/fwf-plaza-1380.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/fwf-plaza-480.webp"
+        ],
+        [
+          768,
+          "/fwf-plaza-768.webp"
+        ],
+        [
+          1024,
+          "/fwf-plaza-1024.webp"
+        ],
+        [
+          1380,
+          "/fwf-plaza-1380.webp"
+        ]
+      ]
+    },
+    "/fwf-skyline.jpg": {
+      "width": 1380,
+      "height": 260,
+      "avif": [
+        [
+          480,
+          "/fwf-skyline-480.avif"
+        ],
+        [
+          768,
+          "/fwf-skyline-768.avif"
+        ],
+        [
+          1024,
+          "/fwf-skyline-1024.avif"
+        ],
+        [
+          1380,
+          "/fwf-skyline-1380.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/fwf-skyline-480.webp"
+        ],
+        [
+          768,
+          "/fwf-skyline-768.webp"
+        ],
+        [
+          1024,
+          "/fwf-skyline-1024.webp"
+        ],
+        [
+          1380,
+          "/fwf-skyline-1380.webp"
         ]
       ]
     }

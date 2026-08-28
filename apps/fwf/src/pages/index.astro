@@ -10,7 +10,7 @@ import { checkedOn, forum, forumDate, otherEvents, siteHeaderImage, ticketsFrom,
 import { go } from "../outbound";
 import { itemContext } from "@dst/ui/schema";
 import Icon from "@dst/ui/Icon.astro";
-import PhotoHero from "@dst/ui/district/PhotoHero.astro";
+import Photo from "@dst/ui/Photo.astro";
 
 const newsItems = newsBySite("fwf");
 
@@ -64,67 +64,75 @@ const jsonLd = [
   description="Future World Forum Dubai 2026: 16 November, 10:00–17:30, Dubai. An independent guide to the dates, ticket prices, programme and what the organiser has not yet announced."
   jsonLd={jsonLd}
 >
-  <section class="container hero">
-    <PhotoHero
-      eyebrow="Independent guide"
-      title="Future World Forum Dubai 2026"
-      tagline={`Checked ${checkedOn}`}
-      image={siteHeaderImage.src}
-      imageAlt={siteHeaderImage.alt}
-      imageKind={siteHeaderImage.kind}
-    />
-    <p class="lede">
-      A <strong>one-day conference and expo</strong> on urban technology, listed
-      for <strong>{forumDate}</strong> in Dubai, <strong>10:00–17:30</strong>.
-      This site tracks what the organiser has actually published — the dates,
-      the price band, the five sectors on the programme — and says plainly
-      which parts are still missing.
-    </p>
-    <div class="hero-actions">
-      <a class="button" href={go("tickets")} rel="nofollow sponsored" title="Ticket page for Future World Forum Dubai on Eventbrite">
-        <Icon name="ticket" />
-        Tickets on Eventbrite
-      </a>
-      <a class="button button-secondary" href="/programme/" title="What the forum's programme covers">
-        <Icon name="list" />
-        See the programme
-      </a>
+  <!-- The opener runs the full width of the screen rather than sitting in a
+       box inside it: a boxed photograph reads as an illustration on a page,
+       and this one has to read as the event. -->
+  <section class="opener">
+    <Photo class="opener-image" src={siteHeaderImage.src} alt={siteHeaderImage.alt} loading="eager" fetchpriority="high" sizes="100vw" />
+    <div class="opener-body container">
+      <p class="opener-kicker">Independent guide</p>
+      <h1>Future World Forum <span class="opener-break"></span>Dubai 2026</h1>
+      <p class="opener-lede">
+        A one-day conference and expo on urban technology, listed for
+        {forumDate} in Dubai.<span class="opener-lede-more"> This site tracks
+        what the organiser has actually published — and says plainly what is
+        still missing.</span>
+      </p>
+      <div class="hero-actions">
+        <a class="button" href={go("tickets")} rel="nofollow sponsored" title="Ticket page for Future World Forum Dubai on Eventbrite">
+          <Icon name="ticket" />
+          Tickets on Eventbrite
+        </a>
+        <a class="button button-secondary" href="/programme/" title="What the forum's programme covers">
+          <Icon name="list" />
+          See the programme
+        </a>
+      </div>
     </div>
   </section>
 
-  <section class="container">
-    <h2>The facts, as listed</h2>
-    <div class="table-wrap">
-      <table>
-        <tbody>
-          <tr>
-            <th scope="row">Date</th>
-            <td>
-              <time datetime={forum.start}>Monday {forumDate}</time>
-              <span class="muted" data-countdown datetime={forum.start}></span>
-            </td>
-          </tr>
-          <tr><th scope="row">Hours</th><td>{forum.startTime}–{forum.endTime} Gulf Standard Time (UTC+4)</td></tr>
-          <tr><th scope="row">Format</th><td>In person, one day — conference and expo</td></tr>
-          <tr><th scope="row">City</th><td>Dubai. The venue is still to be announced.</td></tr>
-          <tr><th scope="row">Organiser</th><td>{forum.organizer}</td></tr>
-          <tr><th scope="row">Tickets</th><td>{ticketsFrom} – {ticketsTo}, sales close {formatDate(forum.tickets!.salesEnd!)}</td></tr>
-          <tr><th scope="row">Refunds</th><td>{forum.tickets!.refundPolicy}</td></tr>
-          <tr><th scope="row">Status</th><td>Listed as scheduled</td></tr>
-        </tbody>
-      </table>
+  <!-- The four figures a reader came for, at the size they deserve. This
+       was a seven-row table, which is the right shape for an appendix and
+       the wrong one for the headline facts of the page. -->
+  <section class="figures">
+    <div class="container">
+      <div class="figure-grid">
+        <div class="figure">
+          <p class="figure-label">Date</p>
+          <p class="figure-value"><time datetime={forum.start}>16 Nov</time></p>
+          <p class="figure-note">
+            Monday, 2026
+            <span class="figure-countdown" data-countdown datetime={forum.start}></span>
+          </p>
+        </div>
+        <div class="figure">
+          <p class="figure-label">Hours</p>
+          <p class="figure-value">{forum.startTime}–{forum.endTime}</p>
+          <p class="figure-note">Gulf Standard Time, UTC+4</p>
+        </div>
+        <div class="figure">
+          <p class="figure-label">Tickets</p>
+          <p class="figure-value">{ticketsFrom}<span class="figure-plus">+</span></p>
+          <p class="figure-note">up to {ticketsTo} · sales close {formatDate(forum.tickets!.salesEnd!)}</p>
+        </div>
+        <div class="figure">
+          <p class="figure-label">Where</p>
+          <p class="figure-value">Dubai</p>
+          <p class="figure-note">Venue to be announced</p>
+        </div>
+      </div>
+      <div class="figures-foot">
+        <p class="figures-source">
+          Every figure read off the organiser's ticket listing on {checkedOn}.
+          One day, in person — conference and expo, run by {forum.organizer}.
+          {forum.tickets!.refundPolicy}
+        </p>
+        <a class="button button-secondary" href="/forum.ics" download title="Download the date as a calendar file">
+          <Icon name="events" />
+          Add to calendar
+        </a>
+      </div>
     </div>
-    <p class="table-note">
-      Every row above comes from the organiser's ticket listing, read on
-      {checkedOn}. Where the listing is silent, this page says so rather
-      than filling the gap.
-    </p>
-    <p>
-      <a class="button button-secondary" href="/forum.ics" download title="Download the date as a calendar file">
-        <Icon name="events" />
-        Add the date to your calendar
-      </a>
-    </p>
   </section>
 
   <Callout kind="warn">
@@ -139,62 +147,87 @@ const jsonLd = [
 
   <section class="container">
     <h2>What the day covers</h2>
-    <p>
+    <p class="section-lede">
       The programme is published by sector rather than by session. Five of
       them, all pointed at the same question — what a city runs on when the
       infrastructure is software.
     </p>
-    <div class="link-grid sector-grid">
-      {forum.programme!.map((track) => (
-        <article class="card">
-          <h3>{track.heading}</h3>
-          <p>{track.text}</p>
-        </article>
+    <ol class="sectors">
+      {forum.programme!.map((track, i) => (
+        <li class="sector">
+          <span class="sector-index">{String(i + 1).padStart(2, "0")}</span>
+          <div>
+            <h3>{track.heading}</h3>
+            <p>{track.text}</p>
+          </div>
+        </li>
       ))}
-    </div>
+    </ol>
     <p class="table-note">
       Sector descriptions are the organiser's, condensed. No speakers,
       session times or exhibitor list had been published as of {checkedOn}.
     </p>
   </section>
 
-  <section class="container">
-    <h2>Before you decide</h2>
-    <div class="link-grid">
-      {explore.map((item) => (
-        <a class="card link-card" href={item.href} title={item.title}>
-          <h3>{item.title}</h3>
-          <p>{item.description}</p>
-        </a>
-      ))}
-    </div>
-  </section>
+  <!-- A band of the same photograph, cropped to the skyline, between the
+       published half of the page and the unpublished half. -->
+  <aside class="band">
+    <Photo class="band-image" src="/fwf-plaza.jpg" alt="Visitors crossing a lit plaza outside a conference entrance at dusk" sizes="100vw" />
+    <p class="band-line">Eleven weeks out, this is what the organiser has not said yet.</p>
+  </aside>
 
   <section class="container">
     <h2>Still to be announced</h2>
-    <p>
+    <p class="section-lede">
       None of this is missing for good — a one-day conference usually settles
-      its details in the weeks before it runs, and an event with a live ticket
-      listing eleven weeks out has every reason to publish more. This is the
-      list this site is watching, and each line is dated the moment it lands.
+      its details in the weeks before it runs. This is the list this site is
+      watching, and each line is dated the moment it lands.
     </p>
-    <div class="table-wrap">
-      <table>
-        <tbody>
-          <tr><th scope="row">Venue</th><td><strong>To be announced.</strong> The single detail worth having before you book travel.</td></tr>
-          <tr><th scope="row">Speakers</th><td><strong>To be announced.</strong> A one-day programme normally publishes its headline names first.</td></tr>
-          <tr><th scope="row">Running order</th><td><strong>To be announced.</strong> Sectors are published; session times are not.</td></tr>
-          <tr><th scope="row">Ticket tiers</th><td>A price band with no labels — what separates {ticketsFrom} from {ticketsTo} is not stated.</td></tr>
-          <tr><th scope="row">Exhibitors</th><td><strong>To be announced.</strong> No list yet, though the event is billed as a conference and expo.</td></tr>
-          <tr><th scope="row">Official website</th><td>futureworldforum.com does not resolve. If it comes back, it becomes the source this page defers to.</td></tr>
-        </tbody>
-      </table>
-    </div>
+    <dl class="pending">
+      <div class="pending-row">
+        <dt>Venue</dt>
+        <dd><span class="tba">To be announced</span> The single detail worth having before you book travel.</dd>
+      </div>
+      <div class="pending-row">
+        <dt>Speakers</dt>
+        <dd><span class="tba">To be announced</span> A one-day programme normally publishes its headline names first.</dd>
+      </div>
+      <div class="pending-row">
+        <dt>Running order</dt>
+        <dd><span class="tba">To be announced</span> Sectors are published; session times are not.</dd>
+      </div>
+      <div class="pending-row">
+        <dt>Ticket tiers</dt>
+        <dd><span class="tba">Unlabelled</span> A price band with no labels — what separates {ticketsFrom} from {ticketsTo} is not stated.</dd>
+      </div>
+      <div class="pending-row">
+        <dt>Exhibitors</dt>
+        <dd><span class="tba">To be announced</span> No list yet, though the event is billed as a conference and expo.</dd>
+      </div>
+      <div class="pending-row">
+        <dt>Official website</dt>
+        <dd><span class="tba">Offline</span> futureworldforum.com does not resolve. If it comes back, it becomes the source this page defers to.</dd>
+      </div>
+    </dl>
     <p class="table-note">
       Last read {checkedOn}. Anything on this list that gets published lands
       on the relevant page here with the date it was confirmed — and if the
       event changes in the other direction, that gets said just as plainly.
     </p>
+  </section>
+
+  <section class="container">
+    <h2>Before you decide</h2>
+    <ul class="decide">
+      {explore.map((item) => (
+        <li>
+          <a href={item.href} title={item.title}>
+            <span class="decide-title">{item.title}</span>
+            <span class="decide-text">{item.description}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
   </section>
 
   <section class="container">
@@ -209,24 +242,188 @@ const jsonLd = [
 </Layout>
 
 <style>
-  .hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-3); }
-  /* A key/value table, not a data grid: the row headings are labels, so
-     they take the muted weight the body copy doesn't. */
-  th[scope="row"] {
-    width: 10rem;
-    color: var(--ink-muted);
-    font-weight: 600;
-    white-space: nowrap;
+  /* ---- opener ------------------------------------------------------ */
+  .opener {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    min-height: clamp(480px, 82vh, 760px);
+    margin-bottom: 0;
+    overflow: hidden;
+    background: #0a0c10;
   }
-  .muted { margin-left: 0.6em; color: var(--ink-muted); }
-  .muted:not(:empty)::before { content: "· "; }
-  .table-note { font-size: var(--step--1); color: var(--ink-muted); }
-  /* Five sectors, and auto-fit puts four across at desktop and leaves the
-     fifth alone on the next row. Three across splits them 3-then-2, which
-     reads as a deliberate block rather than an orphan. */
+  .opener :global(.opener-image) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 22%;
+  }
+  .opener::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(6, 8, 11, 0.95) 0%, rgba(6, 8, 11, 0.88) 38%, rgba(6, 8, 11, 0.55) 68%, rgba(6, 8, 11, 0.3) 100%);
+  }
+  .opener-body {
+    position: relative;
+    z-index: 1;
+    padding-top: var(--space-6);
+    padding-bottom: var(--space-4);
+  }
+  .opener-kicker {
+    margin: 0 0 var(--space-2);
+    color: rgba(255, 255, 255, 0.72);
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  /* The line break is a typographic choice at the width it was made for.
+     Narrower than that, the title wraps where it fits. */
+  .opener-break { display: none; }
   @media (min-width: 900px) {
-    .sector-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .opener-break { display: block; }
   }
-  .card h3 { margin-top: 0; font-size: var(--step-0); }
-  .card p { margin: 0; font-size: var(--step--1); color: var(--ink-muted); }
+  .opener h1 {
+    margin: 0;
+    max-width: 16em;
+    color: #fff;
+    /* Larger than the shared scale goes: on this page the title is the
+       identity of the event, not the label of a document. */
+    font-size: clamp(2.6rem, 1.2rem + 5.6vw, 5.4rem);
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+  }
+  /* On a phone, cover zooms the photograph until the sign fills the frame,
+     and no scrim makes a title over lit three-foot letters look deliberate.
+     So the phone gets the picture as a band and the title beneath it, on
+     the page. Type over photography is a wide-screen decision here. */
+  @media (max-width: 640px) {
+    .opener { display: block; min-height: 0; background: none; }
+    .opener::after { display: none; }
+    .opener :global(.opener-image) {
+      position: static;
+      width: 100%;
+      height: clamp(190px, 48vw, 280px);
+    }
+    .opener :global(.opener-image) { height: clamp(150px, 40vw, 210px); }
+    .opener-body { padding-top: var(--space-3); padding-bottom: 0; }
+    /* Everything above the ticket button costs it its place on the first
+       screen: at 360×640 the button sat at y=794. The picture is shorter,
+       the title smaller, and the lede keeps its first sentence only. */
+    .opener h1 { font-size: clamp(2rem, 1.4rem + 3.4vw, 2.6rem); }
+    .opener-lede-more { display: none; }
+    .hero-actions { margin-top: var(--space-3); }
+    .opener-kicker { color: var(--accent); }
+    .opener h1 { color: var(--ink); }
+    .opener-lede { color: var(--ink-muted); font-size: var(--step-0); }
+    .opener :global(.button-secondary) {
+      border-color: var(--border);
+      background: transparent;
+      color: var(--ink);
+      backdrop-filter: none;
+    }
+  }
+  .opener-lede {
+    margin: var(--space-3) 0 0;
+    max-width: 34rem;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: var(--step-1);
+  }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-4); }
+  /* On the photograph, the quiet button needs its own edge — the page
+     border colour disappears into a night shot. */
+  .opener :global(.button-secondary) {
+    border-color: rgba(255, 255, 255, 0.45);
+    background: rgba(10, 12, 16, 0.5);
+    color: #fff;
+    backdrop-filter: blur(6px);
+  }
+
+  /* ---- sectors ----------------------------------------------------- */
+  .section-lede { max-width: 42rem; color: var(--ink-muted); }
+  .sectors { margin: var(--space-4) 0 0; padding: 0; list-style: none; border-top: 1px solid var(--border); }
+  /* p and li carry the shared reading measure. These are rows of a layout,
+     not paragraphs — the measure belongs on the prose inside them. */
+  .sector, .decide li { max-width: none; }
+  .sector {
+    display: grid;
+    grid-template-columns: 2.75rem 1fr;
+    gap: var(--space-3);
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .sector-index {
+    color: var(--accent);
+    font-family: var(--font-display, var(--font-body));
+    font-size: var(--step-2);
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+  .sector h3 { margin: 0 0 var(--space-1); font-size: var(--step-1); text-wrap: balance; }
+  .sector p { margin: 0; max-width: 46rem; color: var(--ink-muted); font-size: var(--step--1); }
+  @media (min-width: 900px) {
+    .sector { grid-template-columns: 4.5rem 20rem 1fr; align-items: baseline; }
+    .sector > div { display: contents; }
+    .sector h3 { margin: 0; }
+  }
+
+  /* ---- band -------------------------------------------------------- */
+  .band {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: clamp(160px, 22vw, 260px);
+    margin: var(--space-6) 0;
+    overflow: hidden;
+    background: #0a0c10;
+  }
+  .band :global(.band-image) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .band::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(6, 8, 11, 0.92) 0%, rgba(6, 8, 11, 0.72) 55%, rgba(6, 8, 11, 0.45) 100%);
+  }
+  .band-line {
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+    padding: 0 var(--space-3);
+    width: 100%;
+    max-width: var(--page-width);
+    color: #fff;
+    font-family: var(--font-display, var(--font-body));
+    font-size: clamp(1.3rem, 0.9rem + 1.4vw, 2.1rem);
+    line-height: 1.2;
+    max-inline-size: 24em;
+  }
+
+  /* ---- before you decide ------------------------------------------- */
+  .decide { margin: var(--space-4) 0 0; padding: 0; list-style: none; border-top: 1px solid var(--border); }
+  .decide li { border-bottom: 1px solid var(--border); }
+  .decide a {
+    display: grid;
+    gap: var(--space-1) var(--space-3);
+    padding: var(--space-3) 0;
+    text-decoration: none;
+    color: inherit;
+  }
+  .decide a:hover .decide-title { color: var(--accent); }
+  .decide-title { font-size: var(--step-1); font-family: var(--font-display, var(--font-body)); }
+  .decide-title::after { content: " →"; color: var(--accent); }
+  .decide-text { color: var(--ink-muted); font-size: var(--step--1); }
+  @media (min-width: 720px) {
+    .decide a { grid-template-columns: 14rem 1fr; align-items: baseline; }
+  }
+
+  .table-note { font-size: var(--step--1); color: var(--ink-muted); }
 </style>

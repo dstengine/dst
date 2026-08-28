@@ -47,17 +47,28 @@ import { go } from "../outbound";
 
   <section class="container">
     <h2>Practicalities for the day</h2>
-    <div class="table-wrap">
-      <table>
-        <tbody>
-          <tr><th scope="row">Date</th><td><time datetime={forum.start}>{forumDate}</time>, a Monday</td></tr>
-          <tr><th scope="row">Hours</th><td>{forum.startTime}–{forum.endTime}, Gulf Standard Time (UTC+4)</td></tr>
-          <tr><th scope="row">November weather</th><td>Around 25–31°C by day — the pleasant end of the Dubai year, and the reason conference season runs now</td></tr>
-          <tr><th scope="row">Working week</th><td>Monday is a normal working day in the UAE; the weekend is Saturday and Sunday</td></tr>
-          <tr><th scope="row">Entry</th><td>Most nationalities get a visa on arrival or an eVisa — check your own before booking</td></tr>
-        </tbody>
-      </table>
-    </div>
+    <dl class="pending">
+      <div class="pending-row">
+        <dt>Date</dt>
+        <dd><time datetime={forum.start}>{forumDate}</time>, a Monday</dd>
+      </div>
+      <div class="pending-row">
+        <dt>Hours</dt>
+        <dd>{forum.startTime}–{forum.endTime}, Gulf Standard Time (UTC+4)</dd>
+      </div>
+      <div class="pending-row">
+        <dt>November weather</dt>
+        <dd>Around 25–31°C by day — the pleasant end of the Dubai year, and the reason conference season runs now</dd>
+      </div>
+      <div class="pending-row">
+        <dt>Working week</dt>
+        <dd>Monday is a normal working day in the UAE; the weekend is Saturday and Sunday</dd>
+      </div>
+      <div class="pending-row">
+        <dt>Entry</dt>
+        <dd>Most nationalities get a visa on arrival or an eVisa — check your own before booking</dd>
+      </div>
+    </dl>
     <p class="table-note">
       Date and hours from the listing; the rest is general Dubai context, not
       something the organiser has stated.
