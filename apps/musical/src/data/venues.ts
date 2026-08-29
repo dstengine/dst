@@ -56,6 +56,17 @@ export const venues: Venue[] = [
     operator: "Legends Global",
     owner: "Dubai Holding",
     officialSlug: "venue-coca-cola-arena",
+    image: "/venues/coca-cola-arena.jpg",
+    imageAlt:
+      "The Coca-Cola Arena in City Walk at night, its LED facade lit red, with the Burj Khalifa behind it.",
+    // Shot from across City Walk with a lot of sky above it: centred, the
+    // opener's crop keeps the palm trees and loses the building.
+    imagePosition: "center 78%",
+    imageCredit: "Ninoksha Maria",
+    imageLicense: "CC BY-SA 4.0",
+    imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    imageSourceUrl:
+      "https://commons.wikimedia.org/wiki/File:Westlife_at_Coca-Cola_Arena_-_1.jpg",
     summary:
       "Seventeen thousand seats under one roof in City Walk, and the only indoor arena of its size in the region. Chicago plays it for five nights in December 2026 — an arena staging of a show built for a house a tenth the size.",
     transit:
@@ -112,6 +123,14 @@ export const venues: Venue[] = [
     address: "Shinmachi, Nishi-ku, Osaka 550-0012",
     lat: 34.678546,
     lon: 135.4952992,
+    image: "/venues/orix-theater.jpg",
+    imageAlt:
+      "The Orix Theater in Shinmachi, Osaka, the long facade of the 1968 hall.",
+    imageCredit: "Tokumeigakarinoaoshima",
+    imageLicense: "CC BY-SA 4.0",
+    imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    imageSourceUrl:
+      "https://commons.wikimedia.org/wiki/File:ORIX_Theatre.jpg",
     summary:
       "Osaka's long-running Shinmachi theatre, and the second and last Japanese stop of the 2026 dates — four days after Tokyo closes. It opened in 1968 as the Osaka Kosei Nenkin Kaikan and was the largest concert hall in the city.",
     details: [
@@ -139,6 +158,14 @@ export const venues: Venue[] = [
     lon: -0.201422,
     capacity: 1670,
     opened: "26 December 1910",
+    image: "/venues/new-wimbledon-theatre.jpg",
+    imageAlt:
+      "The New Wimbledon Theatre on the Broadway, its dome and the gilded figure of Laetitia above the entrance.",
+    imageCredit: "Shazz",
+    imageLicense: "CC BY-SA 2.0",
+    imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/",
+    imageSourceUrl:
+      "https://commons.wikimedia.org/wiki/File:New_Wimbledon_Theatre_-_geograph.org.uk_-_3809753.jpg",
     summary:
       "The only theatre in Britain ever built with a Turkish bath in the basement, and the house where Oliver! was played for the first time anywhere, in 1960, before anyone in the West End had seen it. The gilded figure on the dome is Laetitia; she spent the Second World War in storage, in case German bombers were using her to find their way.",
     transit:
@@ -169,6 +196,14 @@ export const venues: Venue[] = [
     officialSlug: "venue-theatre-royal-plymouth",
     capacity: 1320,
     opened: "1982",
+    image: "/venues/theatre-royal-plymouth.jpg",
+    imageAlt:
+      "The Theatre Royal Plymouth at Derry's Cross, Peter Moro's 1982 block in pale stone and glass.",
+    imageCredit: "painma",
+    imageLicense: "CC BY-SA 4.0",
+    imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    imageSourceUrl:
+      "https://commons.wikimedia.org/wiki/File:Theatre_Royal,_Plymouth.jpg",
     summary:
       "Three auditoriums in one organisation — the 1,300-seat Lyric for the big touring musicals, the 200-seat Drum and the 50-seat Lab — plus a workshop across town where sets and costumes are actually built. It is one of the few regional theatres that makes as much as it receives.",
     details: [
@@ -224,6 +259,14 @@ export const venues: Venue[] = [
     lon: -1.466673,
     capacity: 1068,
     opened: "1897",
+    image: "/venues/sheffield-lyceum.jpg",
+    imageAlt:
+      "The Lyceum Theatre on Tudor Square, Sheffield, with the statue of Mercury on its corner dome.",
+    imageCredit: "Harry Mitchell",
+    imageLicense: "CC BY-SA 3.0",
+    imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
+    imageSourceUrl:
+      "https://commons.wikimedia.org/wiki/File:Lyceum_Theatre,_Sheffield_(1).JPG",
     summary:
       "The last Edwardian auditorium left in Sheffield, and the only theatre outside London still standing that W. G. R. Sprague designed. It closed in 1969, dodged a demolition application in 1975, and came back in 1990 after a £12 million restoration.",
     details: [
@@ -251,6 +294,14 @@ export const venues: Venue[] = [
     lon: -2.978177,
     capacity: 2348,
     opened: "9 March 1925",
+    image: "/venues/liverpool-empire.jpg",
+    imageAlt:
+      "The Liverpool Empire on Lime Street, its wide stone front facing the station.",
+    imageCredit: "Mike Pennington",
+    imageLicense: "CC BY-SA 2.0",
+    imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/",
+    imageSourceUrl:
+      "https://commons.wikimedia.org/wiki/File:Empire_Theatre,_Lime_Street,_Liverpool_-_geograph.org.uk_-_4767710.jpg",
     summary:
       "The largest two-tier auditorium in the United Kingdom, and the second theatre to stand on this corner of Lime Street. The first opened in 1866 and was pulled down in 1924 to make room for it.",
     transit:
@@ -336,6 +387,14 @@ export const venues: Venue[] = [
     lon: -4.268689,
     capacity: 1785,
     opened: "12 September 1904",
+    image: "/venues/kings-theatre-glasgow.jpg",
+    imageAlt:
+      "The King's Theatre on Bath Street, Glasgow, Frank Matcham's red sandstone front.",
+    imageCredit: "Stinglehammer",
+    imageLicense: "CC BY-SA 4.0",
+    imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    imageSourceUrl:
+      "https://commons.wikimedia.org/wiki/File:King%27s_Theatre,_Glasgow_02.jpg",
     summary:
       "Frank Matcham built it in 1904 as the sister house to the Theatre Royal across town, and Historic Environment Scotland calls it an important example of an Edwardian theatre. Four levels, 1,785 seats, and a pantomime every year since long before anyone reading this was born.",
     details: [
@@ -391,6 +450,14 @@ export const venues: Venue[] = [
     lon: -2.251366,
     capacity: 1920,
     opened: "1912",
+    image: "/venues/opera-house-manchester.jpg",
+    imageAlt:
+      "The Opera House on Quay Street, Manchester, its fifteen-bay classical front and fluted columns.",
+    imageCredit: "Gerald England",
+    imageLicense: "CC BY-SA 2.0",
+    imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/",
+    imageSourceUrl:
+      "https://commons.wikimedia.org/wiki/File:Opera_House,_Manchester_-_geograph.org.uk_-_5624967.jpg",
     summary:
       "It has been the New Theatre, the New Queen's Theatre, the Opera House and, for five years from 1979, a bingo hall. The Palace Trust bought it back in 1984, and 1,920 seats on Quay Street now take the largest touring musicals to reach Manchester.",
     details: [
@@ -417,6 +484,14 @@ export const venues: Venue[] = [
     lat: 53.957135,
     lon: -1.082282,
     opened: "20 January 1902",
+    image: "/venues/grand-opera-house-york.jpg",
+    imageAlt:
+      "The Grand Opera House on the corner of Clifford Street, York, the old corn exchange front in red brick.",
+    imageCredit: "Malcolmxl5",
+    imageLicense: "CC BY-SA 4.0",
+    imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    imageSourceUrl:
+      "https://commons.wikimedia.org/wiki/File:Grand_Opera_House,_York_Feb_2022_02.jpg",
     summary:
       "It was a corn exchange first. William Peacock bought the 1868 building and the warehouse behind it, spent £24,000 joining them together, and opened the result as a theatre in January 1902 with a pantomime starring Florrie Forde.",
     details: [
@@ -473,6 +548,14 @@ export const venues: Venue[] = [
     officialSlug: "venue-nottingham-royal-concert-hall",
     capacity: 2499,
     opened: "27 November 1982",
+    image: "/venues/nottingham-royal-concert-hall.jpg",
+    imageAlt:
+      "The Royal Concert Hall on South Sherwood Street, Nottingham, beside the Theatre Royal's portico.",
+    imageCredit: "Bryn Holmes",
+    imageLicense: "CC BY-SA 2.0",
+    imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/",
+    imageSourceUrl:
+      "https://commons.wikimedia.org/wiki/File:Theatre_Royal-Royal_Concert_Hall,_South_Sherwood_Street_-_geograph.org.uk_-_7397361.jpg",
     summary:
       "A concert hall sharing a building with Nottingham's Theatre Royal, opened in 1982 with Elton John on the first night. It stands where Frank Matcham's Empire Palace of 1898 stood until the road-wideners took it in 1969.",
     transit:
@@ -613,6 +696,14 @@ export const venues: Venue[] = [
     officialSlug: "venue-norwich-theatre-royal",
     capacity: 1308,
     opened: "1758",
+    image: "/venues/norwich-theatre-royal.jpg",
+    imageAlt:
+      "Norwich Theatre Royal on Theatre Street, its 1935 front above the entrance canopy.",
+    imageCredit: "Adrian S Pye",
+    imageLicense: "CC BY-SA 2.0",
+    imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/",
+    imageSourceUrl:
+      "https://commons.wikimedia.org/wiki/File:Norwich_Theatre_Royal_-_geograph.org.uk_-_7566091.jpg",
     summary:
       "Founded in 1758 by the Norwich architect Thomas Ivory on the model of Drury Lane, which makes it one of the oldest established theatres in the country. It has been rebuilt three times, burned down once and bombed once, and it is still on the same street.",
     details: [
@@ -640,6 +731,14 @@ export const venues: Venue[] = [
     lon: -0.139913,
     capacity: 952,
     opened: "27 June 1807",
+    image: "/venues/theatre-royal-brighton.jpg",
+    imageAlt:
+      "The Theatre Royal on New Road, Brighton, red brick above the colonnade, with the vertical sign on the corner.",
+    imageCredit: "Hassocks5489",
+    imageLicense: "CC0",
+    imageLicenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/",
+    imageSourceUrl:
+      "https://commons.wikimedia.org/wiki/File:Theatre_Royal,_New_Road,_Brighton_(NHLE_Code_1380103)_(May_2020)_(2).JPG",
     summary:
       "The Prince of Wales, later George IV, gave his assent for it, and it opened in June 1807 with Hamlet. Under 952 seats over four levels it is the smallest house on this tour, and for most of the twentieth century it was where London producers found out whether a play worked.",
     details: [
@@ -748,6 +847,14 @@ export const venues: Venue[] = [
     lon: -5.050594,
     officialSlug: "venue-hall-for-cornwall",
     opened: "1846",
+    image: "/venues/hall-for-cornwall.jpg",
+    imageAlt:
+      "Hall for Cornwall on Back Quay, Truro, the Italianate granite front and clocktower.",
+    imageCredit: "Ian S",
+    imageLicense: "CC BY-SA 2.0",
+    imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/",
+    imageSourceUrl:
+      "https://commons.wikimedia.org/wiki/File:Hall_for_Cornwall_on_Back_Quay,_Truro_-_geograph.org.uk_-_4429068.jpg",
     summary:
       "It was Truro's market hall and council chamber before it was a theatre, and it kept the name City Hall until 1997. The Italianate granite front on Boscawen Street, the clock of 1854 and the tower of 1858 are all still there; the auditorium behind them is not the one the Victorians built.",
     details: [
@@ -775,6 +882,14 @@ export const venues: Venue[] = [
     lon: -1.259838,
     capacity: 1785,
     opened: "26 February 1934",
+    image: "/venues/new-theatre-oxford.jpg",
+    imageAlt:
+      "New Theatre Oxford on George Street, its 1930s front between the shopfronts.",
+    imageCredit: "Steve Daniels",
+    imageLicense: "CC BY-SA 2.0",
+    imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/",
+    imageSourceUrl:
+      "https://commons.wikimedia.org/wiki/File:New_Theatre_Oxford_Geograph-4785233-by-Steve-Daniels.jpg",
     summary:
       "A theatre has stood on this corner of George Street since 1836, and the first one was barred from staging plays during university terms — so it put on concerts and music hall instead. The present Art Deco house, 1,785 seats, opened in 1934 and spent twenty-six years called the Apollo.",
     details: [
@@ -803,6 +918,14 @@ export const venues: Venue[] = [
     officialSlug: "venue-hull-new-theatre",
     capacity: 1351,
     opened: "1939",
+    image: "/venues/hull-new-theatre.jpg",
+    imageAlt:
+      "Hull New Theatre on Kingston Square, after the rebuild that reopened it in 2017.",
+    imageCredit: "Ian S",
+    imageLicense: "CC BY-SA 2.0",
+    imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/",
+    imageSourceUrl:
+      "https://commons.wikimedia.org/wiki/File:Hull_New_Theatre,_Hull_-_geograph.org.uk_-_5233236.jpg",
     summary:
       "It opened in 1939 as the permanent home the Hull Repertory Theatre Company had never had, and it closed again in January 2016 for the biggest rebuild of its life. The Royal Ballet reopened it on 16 September 2017, in the middle of Hull's year as UK City of Culture.",
     details: [
@@ -828,6 +951,14 @@ export const venues: Venue[] = [
     lat: 53.321823,
     lon: -3.817405,
     opened: "1982",
+    image: "/venues/venue-cymru.jpg",
+    imageAlt:
+      "Venue Cymru on the Llandudno seafront, the low modern block against the bay.",
+    imageCredit: "Bill Boaden",
+    imageLicense: "CC BY-SA 2.0",
+    imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/",
+    imageSourceUrl:
+      "https://commons.wikimedia.org/wiki/File:Venue_Cymru_(geograph_5294767).jpg",
     summary:
       "Theatre, arena and conference centre on the Llandudno seafront, and the third or fourth name for entertainment on this site: the Victoria Palace of 1894 became the Llandudno Opera House, then the Hippodrome, then the Arcadia, before the Aberconwy Centre replaced it all in 1982.",
     details: [
@@ -855,6 +986,14 @@ export const venues: Venue[] = [
     lon: -1.389423,
     capacity: 1860,
     opened: "1 July 1907",
+    image: "/venues/sunderland-empire.jpg",
+    imageAlt:
+      "The Sunderland Empire on High Street West, its tower and dome carrying the statue of Terpsichore.",
+    imageCredit: "Colin Park",
+    imageLicense: "CC BY-SA 2.0",
+    imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/",
+    imageSourceUrl:
+      "https://commons.wikimedia.org/wiki/File:Sunderland_-_High_St_West_%5E_Empire_Theatre_-_geograph.org.uk_-_7939436.jpg",
     summary:
       "Four tiers — stalls, dress circle, upper circle and gallery — which almost no British theatre still has, and room for 2,200 once the standing places are counted. Vesta Tilley laid the foundation stone in 1906 and came back to open it the following July.",
     details: [
@@ -908,6 +1047,14 @@ export const venues: Venue[] = [
     lon: -0.560027,
     capacity: 1300,
     opened: "June 1992",
+    image: "/venues/woking-theatre.jpg",
+    imageAlt:
+      "The New Victoria Theatre on Victoria Way, Woking, the glazed front of the complex.",
+    imageCredit: "User:Hassocks5489",
+    imageLicense: "CC0",
+    imageLicenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/",
+    imageSourceUrl:
+      "https://commons.wikimedia.org/wiki/File:New_Victoria_Theatre,_Victoria_Way,_Woking_(June_2015)_(2).jpg",
     summary:
       "One of the largest receiving houses outside London, inside a complex that also holds the smaller Rhoda McGaw Theatre and a six-screen cinema. Chicago has played it before.",
     details: [
@@ -936,6 +1083,14 @@ export const venues: Venue[] = [
     officialSlug: "venue-everyman-theatre-cheltenham",
     capacity: 718,
     opened: "1 October 1891",
+    image: "/venues/everyman-theatre-cheltenham.jpg",
+    imageAlt:
+      "The Everyman Theatre on Regent Street, Cheltenham, Frank Matcham's front of 1891.",
+    imageCredit: "bazzadarambler",
+    imageLicense: "CC BY 2.0",
+    imageLicenseUrl: "https://creativecommons.org/licenses/by/2.0/",
+    imageSourceUrl:
+      "https://commons.wikimedia.org/wiki/File:Everyman_Theatre,_Cheltenham-4077863023.jpg",
     summary:
       "Frank Matcham's New Theatre and Opera House opened in October 1891 with Lillie Langtry on the stage and about 1,500 people on benches. It seats 718 now, which makes it the smallest room on this tour and the one where you can see faces from the back.",
     details: [

@@ -44,6 +44,22 @@ export interface Venue {
   /** Key in outbound.ts for the venue's own website. */
   officialSlug?: string;
   summary?: string;
+  /** Photograph of the building, in this app's public/ folder. Every one is
+      a licensed picture of *this* building, verified against the file page
+      it came from — a photograph of the wrong theatre is a factual error on
+      a page that names the architect. */
+  image?: string;
+  imageAlt?: string;
+  /** CSS object-position, when the building is not in the middle of the
+      frame and the opener's crop would cut it off. */
+  imagePosition?: string;
+  /** Attribution. The licences these pictures come under require the
+      photographer's name, the licence and a way back to the original, so
+      the four travel together or the picture does not ship. */
+  imageCredit?: string;
+  imageLicense?: string;
+  imageLicenseUrl?: string;
+  imageSourceUrl?: string;
   details?: { label: string; value: string }[];
   highlights?: { title: string; text: string }[];
   sections?: { heading?: string; paragraphs: string[] }[];

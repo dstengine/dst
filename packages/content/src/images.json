@@ -381,6 +381,856 @@
       ]
     }
   },
+  "musical.today": {
+    "/venues/coca-cola-arena.jpg": {
+      "width": 1920,
+      "height": 1280,
+      "avif": [
+        [
+          480,
+          "/venues/coca-cola-arena-480.avif"
+        ],
+        [
+          768,
+          "/venues/coca-cola-arena-768.avif"
+        ],
+        [
+          1024,
+          "/venues/coca-cola-arena-1024.avif"
+        ],
+        [
+          1440,
+          "/venues/coca-cola-arena-1440.avif"
+        ],
+        [
+          1920,
+          "/venues/coca-cola-arena-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/coca-cola-arena-480.webp"
+        ],
+        [
+          768,
+          "/venues/coca-cola-arena-768.webp"
+        ],
+        [
+          1024,
+          "/venues/coca-cola-arena-1024.webp"
+        ],
+        [
+          1440,
+          "/venues/coca-cola-arena-1440.webp"
+        ],
+        [
+          1920,
+          "/venues/coca-cola-arena-1920.webp"
+        ]
+      ]
+    },
+    "/venues/everyman-theatre-cheltenham.jpg": {
+      "width": 1920,
+      "height": 1741,
+      "avif": [
+        [
+          480,
+          "/venues/everyman-theatre-cheltenham-480.avif"
+        ],
+        [
+          768,
+          "/venues/everyman-theatre-cheltenham-768.avif"
+        ],
+        [
+          1024,
+          "/venues/everyman-theatre-cheltenham-1024.avif"
+        ],
+        [
+          1440,
+          "/venues/everyman-theatre-cheltenham-1440.avif"
+        ],
+        [
+          1920,
+          "/venues/everyman-theatre-cheltenham-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/everyman-theatre-cheltenham-480.webp"
+        ],
+        [
+          768,
+          "/venues/everyman-theatre-cheltenham-768.webp"
+        ],
+        [
+          1024,
+          "/venues/everyman-theatre-cheltenham-1024.webp"
+        ],
+        [
+          1440,
+          "/venues/everyman-theatre-cheltenham-1440.webp"
+        ],
+        [
+          1920,
+          "/venues/everyman-theatre-cheltenham-1920.webp"
+        ]
+      ]
+    },
+    "/venues/grand-opera-house-york.jpg": {
+      "width": 1186,
+      "height": 930,
+      "avif": [
+        [
+          480,
+          "/venues/grand-opera-house-york-480.avif"
+        ],
+        [
+          768,
+          "/venues/grand-opera-house-york-768.avif"
+        ],
+        [
+          1024,
+          "/venues/grand-opera-house-york-1024.avif"
+        ],
+        [
+          1186,
+          "/venues/grand-opera-house-york-1186.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/grand-opera-house-york-480.webp"
+        ],
+        [
+          768,
+          "/venues/grand-opera-house-york-768.webp"
+        ],
+        [
+          1024,
+          "/venues/grand-opera-house-york-1024.webp"
+        ],
+        [
+          1186,
+          "/venues/grand-opera-house-york-1186.webp"
+        ]
+      ]
+    },
+    "/venues/hall-for-cornwall.jpg": {
+      "width": 1600,
+      "height": 1062,
+      "avif": [
+        [
+          480,
+          "/venues/hall-for-cornwall-480.avif"
+        ],
+        [
+          768,
+          "/venues/hall-for-cornwall-768.avif"
+        ],
+        [
+          1024,
+          "/venues/hall-for-cornwall-1024.avif"
+        ],
+        [
+          1440,
+          "/venues/hall-for-cornwall-1440.avif"
+        ],
+        [
+          1600,
+          "/venues/hall-for-cornwall-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/hall-for-cornwall-480.webp"
+        ],
+        [
+          768,
+          "/venues/hall-for-cornwall-768.webp"
+        ],
+        [
+          1024,
+          "/venues/hall-for-cornwall-1024.webp"
+        ],
+        [
+          1440,
+          "/venues/hall-for-cornwall-1440.webp"
+        ],
+        [
+          1600,
+          "/venues/hall-for-cornwall-1600.webp"
+        ]
+      ]
+    },
+    "/venues/hull-new-theatre.jpg": {
+      "width": 1200,
+      "height": 799,
+      "avif": [
+        [
+          480,
+          "/venues/hull-new-theatre-480.avif"
+        ],
+        [
+          768,
+          "/venues/hull-new-theatre-768.avif"
+        ],
+        [
+          1024,
+          "/venues/hull-new-theatre-1024.avif"
+        ],
+        [
+          1200,
+          "/venues/hull-new-theatre-1200.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/hull-new-theatre-480.webp"
+        ],
+        [
+          768,
+          "/venues/hull-new-theatre-768.webp"
+        ],
+        [
+          1024,
+          "/venues/hull-new-theatre-1024.webp"
+        ],
+        [
+          1200,
+          "/venues/hull-new-theatre-1200.webp"
+        ]
+      ]
+    },
+    "/venues/kings-theatre-glasgow.jpg": {
+      "width": 1920,
+      "height": 1080,
+      "avif": [
+        [
+          480,
+          "/venues/kings-theatre-glasgow-480.avif"
+        ],
+        [
+          768,
+          "/venues/kings-theatre-glasgow-768.avif"
+        ],
+        [
+          1024,
+          "/venues/kings-theatre-glasgow-1024.avif"
+        ],
+        [
+          1440,
+          "/venues/kings-theatre-glasgow-1440.avif"
+        ],
+        [
+          1920,
+          "/venues/kings-theatre-glasgow-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/kings-theatre-glasgow-480.webp"
+        ],
+        [
+          768,
+          "/venues/kings-theatre-glasgow-768.webp"
+        ],
+        [
+          1024,
+          "/venues/kings-theatre-glasgow-1024.webp"
+        ],
+        [
+          1440,
+          "/venues/kings-theatre-glasgow-1440.webp"
+        ],
+        [
+          1920,
+          "/venues/kings-theatre-glasgow-1920.webp"
+        ]
+      ]
+    },
+    "/venues/liverpool-empire.jpg": {
+      "width": 1024,
+      "height": 682,
+      "avif": [
+        [
+          480,
+          "/venues/liverpool-empire-480.avif"
+        ],
+        [
+          768,
+          "/venues/liverpool-empire-768.avif"
+        ],
+        [
+          1024,
+          "/venues/liverpool-empire-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/liverpool-empire-480.webp"
+        ],
+        [
+          768,
+          "/venues/liverpool-empire-768.webp"
+        ],
+        [
+          1024,
+          "/venues/liverpool-empire-1024.webp"
+        ]
+      ]
+    },
+    "/venues/new-theatre-oxford.jpg": {
+      "width": 1500,
+      "height": 1125,
+      "avif": [
+        [
+          480,
+          "/venues/new-theatre-oxford-480.avif"
+        ],
+        [
+          768,
+          "/venues/new-theatre-oxford-768.avif"
+        ],
+        [
+          1024,
+          "/venues/new-theatre-oxford-1024.avif"
+        ],
+        [
+          1440,
+          "/venues/new-theatre-oxford-1440.avif"
+        ],
+        [
+          1500,
+          "/venues/new-theatre-oxford-1500.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/new-theatre-oxford-480.webp"
+        ],
+        [
+          768,
+          "/venues/new-theatre-oxford-768.webp"
+        ],
+        [
+          1024,
+          "/venues/new-theatre-oxford-1024.webp"
+        ],
+        [
+          1440,
+          "/venues/new-theatre-oxford-1440.webp"
+        ],
+        [
+          1500,
+          "/venues/new-theatre-oxford-1500.webp"
+        ]
+      ]
+    },
+    "/venues/new-wimbledon-theatre.jpg": {
+      "width": 800,
+      "height": 600,
+      "avif": [
+        [
+          480,
+          "/venues/new-wimbledon-theatre-480.avif"
+        ],
+        [
+          768,
+          "/venues/new-wimbledon-theatre-768.avif"
+        ],
+        [
+          800,
+          "/venues/new-wimbledon-theatre-800.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/new-wimbledon-theatre-480.webp"
+        ],
+        [
+          768,
+          "/venues/new-wimbledon-theatre-768.webp"
+        ],
+        [
+          800,
+          "/venues/new-wimbledon-theatre-800.webp"
+        ]
+      ]
+    },
+    "/venues/norwich-theatre-royal.jpg": {
+      "width": 1920,
+      "height": 1342,
+      "avif": [
+        [
+          480,
+          "/venues/norwich-theatre-royal-480.avif"
+        ],
+        [
+          768,
+          "/venues/norwich-theatre-royal-768.avif"
+        ],
+        [
+          1024,
+          "/venues/norwich-theatre-royal-1024.avif"
+        ],
+        [
+          1440,
+          "/venues/norwich-theatre-royal-1440.avif"
+        ],
+        [
+          1920,
+          "/venues/norwich-theatre-royal-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/norwich-theatre-royal-480.webp"
+        ],
+        [
+          768,
+          "/venues/norwich-theatre-royal-768.webp"
+        ],
+        [
+          1024,
+          "/venues/norwich-theatre-royal-1024.webp"
+        ],
+        [
+          1440,
+          "/venues/norwich-theatre-royal-1440.webp"
+        ],
+        [
+          1920,
+          "/venues/norwich-theatre-royal-1920.webp"
+        ]
+      ]
+    },
+    "/venues/nottingham-royal-concert-hall.jpg": {
+      "width": 1600,
+      "height": 1200,
+      "avif": [
+        [
+          480,
+          "/venues/nottingham-royal-concert-hall-480.avif"
+        ],
+        [
+          768,
+          "/venues/nottingham-royal-concert-hall-768.avif"
+        ],
+        [
+          1024,
+          "/venues/nottingham-royal-concert-hall-1024.avif"
+        ],
+        [
+          1440,
+          "/venues/nottingham-royal-concert-hall-1440.avif"
+        ],
+        [
+          1600,
+          "/venues/nottingham-royal-concert-hall-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/nottingham-royal-concert-hall-480.webp"
+        ],
+        [
+          768,
+          "/venues/nottingham-royal-concert-hall-768.webp"
+        ],
+        [
+          1024,
+          "/venues/nottingham-royal-concert-hall-1024.webp"
+        ],
+        [
+          1440,
+          "/venues/nottingham-royal-concert-hall-1440.webp"
+        ],
+        [
+          1600,
+          "/venues/nottingham-royal-concert-hall-1600.webp"
+        ]
+      ]
+    },
+    "/venues/opera-house-manchester.jpg": {
+      "width": 1280,
+      "height": 842,
+      "avif": [
+        [
+          480,
+          "/venues/opera-house-manchester-480.avif"
+        ],
+        [
+          768,
+          "/venues/opera-house-manchester-768.avif"
+        ],
+        [
+          1024,
+          "/venues/opera-house-manchester-1024.avif"
+        ],
+        [
+          1280,
+          "/venues/opera-house-manchester-1280.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/opera-house-manchester-480.webp"
+        ],
+        [
+          768,
+          "/venues/opera-house-manchester-768.webp"
+        ],
+        [
+          1024,
+          "/venues/opera-house-manchester-1024.webp"
+        ],
+        [
+          1280,
+          "/venues/opera-house-manchester-1280.webp"
+        ]
+      ]
+    },
+    "/venues/orix-theater.jpg": {
+      "width": 1920,
+      "height": 1440,
+      "avif": [
+        [
+          480,
+          "/venues/orix-theater-480.avif"
+        ],
+        [
+          768,
+          "/venues/orix-theater-768.avif"
+        ],
+        [
+          1024,
+          "/venues/orix-theater-1024.avif"
+        ],
+        [
+          1440,
+          "/venues/orix-theater-1440.avif"
+        ],
+        [
+          1920,
+          "/venues/orix-theater-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/orix-theater-480.webp"
+        ],
+        [
+          768,
+          "/venues/orix-theater-768.webp"
+        ],
+        [
+          1024,
+          "/venues/orix-theater-1024.webp"
+        ],
+        [
+          1440,
+          "/venues/orix-theater-1440.webp"
+        ],
+        [
+          1920,
+          "/venues/orix-theater-1920.webp"
+        ]
+      ]
+    },
+    "/venues/sheffield-lyceum.jpg": {
+      "width": 1920,
+      "height": 1433,
+      "avif": [
+        [
+          480,
+          "/venues/sheffield-lyceum-480.avif"
+        ],
+        [
+          768,
+          "/venues/sheffield-lyceum-768.avif"
+        ],
+        [
+          1024,
+          "/venues/sheffield-lyceum-1024.avif"
+        ],
+        [
+          1440,
+          "/venues/sheffield-lyceum-1440.avif"
+        ],
+        [
+          1920,
+          "/venues/sheffield-lyceum-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/sheffield-lyceum-480.webp"
+        ],
+        [
+          768,
+          "/venues/sheffield-lyceum-768.webp"
+        ],
+        [
+          1024,
+          "/venues/sheffield-lyceum-1024.webp"
+        ],
+        [
+          1440,
+          "/venues/sheffield-lyceum-1440.webp"
+        ],
+        [
+          1920,
+          "/venues/sheffield-lyceum-1920.webp"
+        ]
+      ]
+    },
+    "/venues/sunderland-empire.jpg": {
+      "width": 1920,
+      "height": 1440,
+      "avif": [
+        [
+          480,
+          "/venues/sunderland-empire-480.avif"
+        ],
+        [
+          768,
+          "/venues/sunderland-empire-768.avif"
+        ],
+        [
+          1024,
+          "/venues/sunderland-empire-1024.avif"
+        ],
+        [
+          1440,
+          "/venues/sunderland-empire-1440.avif"
+        ],
+        [
+          1920,
+          "/venues/sunderland-empire-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/sunderland-empire-480.webp"
+        ],
+        [
+          768,
+          "/venues/sunderland-empire-768.webp"
+        ],
+        [
+          1024,
+          "/venues/sunderland-empire-1024.webp"
+        ],
+        [
+          1440,
+          "/venues/sunderland-empire-1440.webp"
+        ],
+        [
+          1920,
+          "/venues/sunderland-empire-1920.webp"
+        ]
+      ]
+    },
+    "/venues/theatre-royal-brighton.jpg": {
+      "width": 1800,
+      "height": 2400,
+      "avif": [
+        [
+          480,
+          "/venues/theatre-royal-brighton-480.avif"
+        ],
+        [
+          768,
+          "/venues/theatre-royal-brighton-768.avif"
+        ],
+        [
+          1024,
+          "/venues/theatre-royal-brighton-1024.avif"
+        ],
+        [
+          1440,
+          "/venues/theatre-royal-brighton-1440.avif"
+        ],
+        [
+          1800,
+          "/venues/theatre-royal-brighton-1800.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/theatre-royal-brighton-480.webp"
+        ],
+        [
+          768,
+          "/venues/theatre-royal-brighton-768.webp"
+        ],
+        [
+          1024,
+          "/venues/theatre-royal-brighton-1024.webp"
+        ],
+        [
+          1440,
+          "/venues/theatre-royal-brighton-1440.webp"
+        ],
+        [
+          1800,
+          "/venues/theatre-royal-brighton-1800.webp"
+        ]
+      ]
+    },
+    "/venues/theatre-royal-plymouth.jpg": {
+      "width": 1400,
+      "height": 920,
+      "avif": [
+        [
+          480,
+          "/venues/theatre-royal-plymouth-480.avif"
+        ],
+        [
+          768,
+          "/venues/theatre-royal-plymouth-768.avif"
+        ],
+        [
+          1024,
+          "/venues/theatre-royal-plymouth-1024.avif"
+        ],
+        [
+          1400,
+          "/venues/theatre-royal-plymouth-1400.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/theatre-royal-plymouth-480.webp"
+        ],
+        [
+          768,
+          "/venues/theatre-royal-plymouth-768.webp"
+        ],
+        [
+          1024,
+          "/venues/theatre-royal-plymouth-1024.webp"
+        ],
+        [
+          1400,
+          "/venues/theatre-royal-plymouth-1400.webp"
+        ]
+      ]
+    },
+    "/venues/venue-cymru.jpg": {
+      "width": 1920,
+      "height": 1280,
+      "avif": [
+        [
+          480,
+          "/venues/venue-cymru-480.avif"
+        ],
+        [
+          768,
+          "/venues/venue-cymru-768.avif"
+        ],
+        [
+          1024,
+          "/venues/venue-cymru-1024.avif"
+        ],
+        [
+          1440,
+          "/venues/venue-cymru-1440.avif"
+        ],
+        [
+          1920,
+          "/venues/venue-cymru-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/venue-cymru-480.webp"
+        ],
+        [
+          768,
+          "/venues/venue-cymru-768.webp"
+        ],
+        [
+          1024,
+          "/venues/venue-cymru-1024.webp"
+        ],
+        [
+          1440,
+          "/venues/venue-cymru-1440.webp"
+        ],
+        [
+          1920,
+          "/venues/venue-cymru-1920.webp"
+        ]
+      ]
+    },
+    "/venues/woking-theatre.jpg": {
+      "width": 1920,
+      "height": 1120,
+      "avif": [
+        [
+          480,
+          "/venues/woking-theatre-480.avif"
+        ],
+        [
+          768,
+          "/venues/woking-theatre-768.avif"
+        ],
+        [
+          1024,
+          "/venues/woking-theatre-1024.avif"
+        ],
+        [
+          1440,
+          "/venues/woking-theatre-1440.avif"
+        ],
+        [
+          1920,
+          "/venues/woking-theatre-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/woking-theatre-480.webp"
+        ],
+        [
+          768,
+          "/venues/woking-theatre-768.webp"
+        ],
+        [
+          1024,
+          "/venues/woking-theatre-1024.webp"
+        ],
+        [
+          1440,
+          "/venues/woking-theatre-1440.webp"
+        ],
+        [
+          1920,
+          "/venues/woking-theatre-1920.webp"
+        ]
+      ]
+    }
+  },
   "palmcentral.dst.llc": {
     "/palmcentral.jpg": {
       "width": 1600,

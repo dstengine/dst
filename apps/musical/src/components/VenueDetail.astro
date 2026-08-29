@@ -71,8 +71,9 @@ const related = [
     name: v.name,
     blurb: blurbFor(v),
     meta: cityBySlug(v.city)?.name,
-    // No theatre photography licensed yet, so every card takes the mark
-    // cover. It is the same cover the network's other card grids use.
+    ...(v.image ? { image: v.image, imageAlt: v.imageAlt } : {}),
+    // Nineteen of the thirty-six have a licensed photograph; the rest take
+    // the network's no-photo cover until one is found for them.
     icon: "stage",
   }));
 
@@ -87,6 +88,7 @@ const placeLd: Record<string, unknown> = {
   ...(venue.lat && venue.lon ? { geo: { "@type": "GeoCoordinates", latitude: venue.lat, longitude: venue.lon } } : {}),
   ...(venue.capacity ? { maximumAttendeeCapacity: venue.capacity } : {}),
   ...(venue.summary ? { description: venue.summary } : {}),
+  ...(venue.image && Astro.site ? { photo: new URL(venue.image, Astro.site).href } : {}),
 };
 
 // Two different jobs, and one string cannot do both. The head wants the
@@ -121,6 +123,12 @@ const description = venue.summary
     name={venue.name}
     tagline={venue.capacity ? `${venue.capacity.toLocaleString("en-GB")} seats` : undefined}
     description={lede}
+    image={venue.image}
+    imageAlt={venue.imageAlt}
+    imagePosition={venue.imagePosition}
+    imageCredit={venue.imageCredit && venue.imageLicense
+      ? { name: venue.imageCredit, license: venue.imageLicense, licenseUrl: venue.imageLicenseUrl, sourceUrl: venue.imageSourceUrl }
+      : undefined}
     building={venue.address}
     details={details}
     highlights={venue.highlights}

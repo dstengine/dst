@@ -21,9 +21,13 @@ interface Props {
       visible mark, since a page-wide opener is the image most likely to be
       taken for a photograph of the place. */
   imageKind?: "photo" | "diagram" | "illustration" | "render" | "generated";
+  /** CSS object-position, for a picture whose subject is not in the middle.
+      The opener crops to about 2.6:1 on a wide screen, and a building shot
+      from across the road sits in the lower half of its frame. */
+  imagePosition?: string;
 }
 
-const { eyebrow, title, tagline, image, imageAlt, level = "h1", imageKind } = Astro.props;
+const { eyebrow, title, tagline, image, imageAlt, level = "h1", imageKind, imagePosition } = Astro.props;
 const Heading = level;
 
 // Naming the kind is enough — "Render" already says it isn't a photograph.
@@ -38,7 +42,16 @@ const KIND_LABEL: Record<string, string> = {
 const kindLabel = imageKind && imageKind !== "photo" ? KIND_LABEL[imageKind] : undefined;
 ---
 <div class:list={["photo-hero", { "is-plain": !image }]}>
-  {image && <Photo src={image} alt={imageAlt ?? title} loading="eager" fetchpriority="high" sizes="100vw" />}
+  {image && (
+    <Photo
+      src={image}
+      alt={imageAlt ?? title}
+      loading="eager"
+      fetchpriority="high"
+      sizes="100vw"
+      style={imagePosition ? `object-position: ${imagePosition}` : undefined}
+    />
+  )}
   {image && kindLabel && <p class="photo-hero-kind">{kindLabel}</p>}
   <div class="photo-hero-caption">
     <p class="eyebrow">{eyebrow}</p>

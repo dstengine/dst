@@ -37,6 +37,14 @@ interface Props {
   tagline?: string;
   description: string;
   image?: string;
+  imageAlt?: string;
+  /** CSS object-position for the opener — see PhotoHero. */
+  imagePosition?: string;
+  /** Where the picture came from. A photograph under a Creative Commons
+      licence may only be published with its photographer, its licence and a
+      way back to the original, so the caption is part of the picture rather
+      than a decoration on it. */
+  imageCredit?: { name: string; license: string; licenseUrl?: string; sourceUrl?: string };
   gallery?: string[];
   building?: string;
   hours?: string | HoursRow[];
@@ -61,6 +69,9 @@ const {
   tagline,
   description,
   image,
+  imageAlt,
+  imagePosition,
+  imageCredit,
   gallery,
   building,
   hours,
@@ -90,7 +101,16 @@ const hasPanel = Boolean(building || hourRows.length || phone || details?.length
 </nav>
 
 <header class="container venue-hero">
-  <PhotoHero eyebrow={eyebrow} title={name} tagline={tagline} image={image} />
+  <PhotoHero eyebrow={eyebrow} title={name} tagline={tagline} image={image} imageAlt={imageAlt} imagePosition={imagePosition} />
+  {image && imageCredit && (
+    <p class="venue-credit">
+      Photograph by {imageCredit.sourceUrl
+        ? <a href={imageCredit.sourceUrl} rel="nofollow" title={`${imageCredit.name}'s original of this photograph`}>{imageCredit.name}</a>
+        : imageCredit.name}, {imageCredit.licenseUrl
+        ? <a href={imageCredit.licenseUrl} rel="nofollow license" title={`The ${imageCredit.license} licence in full`}>{imageCredit.license}</a>
+        : imageCredit.license}.
+    </p>
+  )}
 </header>
 
 <div class="container venue-body">
@@ -208,6 +228,11 @@ const hasPanel = Boolean(building || hourRows.length || phone || details?.length
   .venue-crumb a:hover { text-decoration: underline; }
 
   .venue-hero { margin-top: var(--space-2); }
+  .venue-credit {
+    margin: var(--space-2) 0 0;
+    color: var(--ink-faint);
+    font-size: var(--step--1);
+  }
 
   .venue-body {
     display: grid;
