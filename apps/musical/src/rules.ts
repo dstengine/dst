@@ -65,17 +65,31 @@ export const cityHasPage = (city: City): boolean =>
 
 export const citiesWithPages = (): City[] => cities.filter(cityHasPage);
 
-/** Runs of the same show elsewhere: tour neighbours first, because that is
-    the next chance to see it, then everything else by date. */
+/** Runs of the same show elsewhere: the stops on either side of this one,
+    because they are the nearest other chance to see it, then the rest of the
+    calendar by date.
+
+    Nearest, not first. Sorting the whole tour by date put the same six
+    opening stops on all thirty-three pages — a hundred and fifty words of
+    identical text per page, under a heading that promised nearby ones. */
 export function otherRuns(run: Run, limit = 6): Run[] {
+  const byDate = (a: Run, b: Run) => (a.start ?? "").localeCompare(b.start ?? "");
   const rest = runsFor(run.show).filter((r) => r.slug !== run.slug);
-  const sameGroup = (r: Run) => Boolean(run.group) && r.group === run.group;
-  return rest
-    .sort((a, b) => {
-      if (sameGroup(a) !== sameGroup(b)) return sameGroup(a) ? -1 : 1;
-      return (a.start ?? "").localeCompare(b.start ?? "");
-    })
-    .slice(0, limit);
+  if (!run.group) return rest.sort(byDate).slice(0, limit);
+
+  const ordered = runsInGroup(run.group).sort(byDate);
+  const here = ordered.findIndex((r) => r.slug === run.slug);
+  const near = ordered
+    .filter((r) => r.slug !== run.slug)
+    .sort((a, b) => Math.abs(ordered.indexOf(a) - here) - Math.abs(ordered.indexOf(b) - here))
+    .slice(0, limit)
+    .sort(byDate);
+  // Padding a tour stop with the runs outside its tour looks generous and
+  // is not: the same two cards then sit on forty pages. The link to every
+  // date is underneath, and it goes to the whole calendar rather than to
+  // the two of it that happen to be first.
+  const elsewhere = rest.filter((r) => r.group !== run.group).sort(byDate);
+  return (near.length >= 2 ? near : [...near, ...elsewhere]).slice(0, limit);
 }
 
 /** Other events worth showing next to this one: anything else in the same
@@ -171,6 +185,16 @@ export function runIntro(run: Run): string {
   return [placing, tour, selling].filter(Boolean).join(" ");
 }
 
+/** The card line for a grid of stops on one tour, where the cards sit six
+    across and their sentences are read as a block. The full line would be
+    "Stop 5 of 33 on the UK & Ireland Tour 2027; Newcastle is next" six
+    times over, on thirty-three pages that differ by two words a card — so
+    a stop among its own tour says only who is selling it. */
+export function runSellerLine(run: Run): string {
+  const { selling, placing } = introClauses(run);
+  return selling ?? placing;
+}
+
 /** What a card says under the title. The card already prints the dates and
     the theatre on its own meta line, so a composed line that says "Five
     nights at Theatre Royal Plymouth" tells the reader nothing twice: it
@@ -191,6 +215,25 @@ export function formatRun(run: Run): string {
   const sameMonth = run.start.slice(0, 7) === run.end.slice(0, 7);
   const from = sameMonth ? fmt(run.start, { day: "numeric" }) : fmt(run.start, { day: "numeric", month: "long" });
   return `${from} – ${fmt(run.end, { day: "numeric", month: "long", year: "numeric" })}`;
+}
+
+/** The run's dates with their weekdays: "Tuesday 16 to Saturday 20 February
+    2027". Arithmetic, not a claim — but it is the first thing anyone works
+    out for themselves when deciding whether a run covers a weekend, and it
+    is different on every page. */
+export function formatRunDays(run: Run): string | undefined {
+  if (!run.start || run.openRun) return undefined;
+  // Built from parts rather than one format: en-GB puts a comma after the
+  // weekday ("Saturday, 20 February"), which reads as a dateline.
+  const part = (iso: string, opts: Intl.DateTimeFormatOptions) =>
+    new Date(`${iso}T00:00:00Z`).toLocaleDateString("en-GB", { timeZone: "UTC", ...opts });
+  const named = (iso: string, opts: Intl.DateTimeFormatOptions) =>
+    `${part(iso, { weekday: "long" })} ${part(iso, opts)}`;
+  const full = { day: "numeric", month: "long", year: "numeric" } as const;
+  if (!run.end || run.end === run.start) return named(run.start, full);
+  const sameMonth = run.start.slice(0, 7) === run.end.slice(0, 7);
+  const from = named(run.start, sameMonth ? { day: "numeric" } : { day: "numeric", month: "long" });
+  return `${from} to ${named(run.end, full)}`;
 }
 
 /** Where a venue lives. A venue important enough to carry rootSlug is served

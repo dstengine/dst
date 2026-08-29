@@ -11,8 +11,8 @@ import RunTable from "./RunTable.astro";
 import EventCards from "./EventCards.astro";
 import { go } from "../outbound";
 import {
-  checkedOn, cityBySlug, cityHasPage, formatRun, showBySlug, statusOf, runsAtVenue,
-  venues, venuePath, type Venue,
+  checkedOn, cityBySlug, cityHasPage, formatRun, runsInGroup, showBySlug, statusOf,
+  runsAtVenue, venueBySlug, venues, venuePath, type Venue,
 } from "../content";
 
 interface Props { venue: Venue }
@@ -32,24 +32,44 @@ const details = [
   { label: "Last checked", value: checkedOn },
 ];
 
-// What a theatre without a written summary says on its card: what is coming,
-// not how many rows it has in the data.
+// One line per neighbouring theatre: what is booked there and when. The
+// venue's own summary belongs on the venue's own page — printed here it
+// makes a page that is mostly somebody else's writing.
 const blurbFor = (v: Venue): string => {
   const soon = runsAtVenue(v.slug).filter((r) => statusOf(r) !== "ended")[0];
   const title = soon ? showBySlug(soon.show)?.title ?? soon.show : undefined;
   return soon && title ? `${title}, ${formatRun(soon)}.` : "No dates on this site's calendar yet.";
 };
 
-// Other theatres this site knows: the same city first — that is the useful
-// comparison — then the rest of the country.
-const related = venues
-  .filter((v) => v.slug !== venue.slug)
-  .sort((a, b) => Number(b.city === venue.city) - Number(a.city === venue.city))
+// Other theatres this site knows. Not "the first three in the file": that
+// put the same three summaries, a hundred and seventy words of them, on
+// every one of thirty-three otherwise thin pages. The theatres either side
+// of this one on the tour are both different per page and the thing a
+// reader actually asks — where else is it, and when.
+const tourNeighbours = (() => {
+  const run = here[0];
+  if (!run?.group) return [];
+  const ordered = runsInGroup(run.group)
+    .sort((a, b) => (a.start ?? "").localeCompare(b.start ?? ""));
+  const at = ordered.findIndex((r) => r.slug === run.slug);
+  return ordered
+    .filter((r) => r.slug !== run.slug && r.venue)
+    .sort((a, b) => Math.abs(ordered.indexOf(a) - at) - Math.abs(ordered.indexOf(b) - at))
+    .map((r) => venueBySlug(r.venue!))
+    .filter((v): v is Venue => Boolean(v));
+})();
+
+const related = [
+  ...tourNeighbours,
+  ...venues.filter((v) => v.city === venue.city),
+  ...venues,
+]
+  .filter((v, i, all) => v.slug !== venue.slug && all.findIndex((o) => o.slug === v.slug) === i)
   .slice(0, 3)
   .map((v) => ({
     href: venuePath(v),
     name: v.name,
-    blurb: v.summary ?? blurbFor(v),
+    blurb: blurbFor(v),
     meta: cityBySlug(v.city)?.name,
     // No theatre photography licensed yet, so every card takes the mark
     // cover. It is the same cover the network's other card grids use.

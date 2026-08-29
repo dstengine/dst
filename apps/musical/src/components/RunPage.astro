@@ -17,7 +17,7 @@ import StatusBadge from "./StatusBadge.astro";
 import TicketButtons from "./TicketButtons.astro";
 import { go } from "../outbound";
 import {
-  checkedOn, cityBySlug, cityHasPage, formatRun, groupBySlug, otherRuns,
+  checkedOn, cityBySlug, cityHasPage, formatRun, formatRunDays, groupBySlug, otherRuns,
   relatedRuns, runIntro, spell, statusOf, venueBySlug, venuePath, type Run, type Show,
 } from "../content";
 
@@ -37,7 +37,7 @@ const elsewhere = otherRuns(run);
 const related = relatedRuns(run);
 
 const glance = [
-  { label: "Dates", value: formatRun(run), icon: ICONS.events },
+  { label: "Dates", value: formatRunDays(run) ?? formatRun(run), icon: ICONS.events },
   venue && { label: "Theatre", value: venue.name, icon: ICONS.pin, href: venuePath(venue) },
   { label: "City", value: `${city.name}, ${city.country}`, icon: ICONS.map, ...(cityHasPage(city) ? { href: `/${city.slug}/` } : {}) },
   run.runningTime && { label: "Running time", value: run.runningTime, icon: ICONS.clock },
@@ -191,8 +191,8 @@ const eventLd: Record<string, unknown> = {
   {elsewhere.length > 0 && (
     <section class="container" id="elsewhere">
       <h2>The same show elsewhere</h2>
-      <p>{group ? `Nearby stops on the ${group.name}, and the rest of the calendar.` : "Every other run currently listed."}</p>
-      <EventCards runs={elsewhere} eyebrow="tour" />
+      <p>{group ? `The stops either side of this one on the ${group.name}.` : "Every other run currently listed."}</p>
+      <EventCards runs={elsewhere} eyebrow="tour" compact />
       <p class="more"><a href={`/${show.slug}/tickets/`} title={`Every run of ${show.title} and every seller`}>All {show.title} dates and sellers</a></p>
     </section>
   )}
