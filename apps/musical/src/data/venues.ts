@@ -228,6 +228,12 @@ export const venues: Venue[] = [
     officialSlug: "venue-wales-millennium-centre",
     capacity: 1897,
     opened: "26 November 2004",
+    image: "/venues/wales-millennium-centre.jpg",
+    imageAlt:
+      "The Wales Millennium Centre at night in Cardiff Bay, its bilingual inscription lit across the bronze shell.",
+    imageCredit: "Michael",
+    imageLicense: "Public domain",
+    imageSourceSlug: "photo-wales-millennium-centre",
     summary:
       "Wales's national arts centre, seven and a half acres of Cardiff Bay behind a slate-and-bronze front, built after the plan it replaced — an opera house for the same site — was abandoned. The Donald Gordon Theatre seats 1,897 and its stage is among the largest in Europe.",
     details: [
@@ -325,6 +331,13 @@ export const venues: Venue[] = [
     officialSlug: "venue-newcastle-theatre-royal",
     capacity: 1249,
     opened: "20 February 1837",
+    image: "/venues/newcastle-theatre-royal.jpg",
+    imageAlt:
+      "The Theatre Royal's columned portico on Grey Street, Newcastle, floodlit at dusk.",
+    imageCredit: "PaulTurner",
+    imageLicense: "CC BY-SA 4.0",
+    imageLicenseSlug: "licence-cc-by-sa-4-0",
+    imageSourceSlug: "photo-newcastle-theatre-royal",
     summary:
       "Grade I listed, which almost no working theatre is, and the centrepiece of Richard Grainger's Grey Street. It opened in 1837 with The Merchant of Venice; a fire after a performance of Macbeth in 1899 gutted the inside, and what audiences sit in now is Frank Matcham's replacement, finished on the last day of 1901.",
     details: [
@@ -353,6 +366,13 @@ export const venues: Venue[] = [
     officialSlug: "venue-bournemouth-pavilion",
     capacity: 1448,
     opened: "19 March 1929",
+    image: "/venues/bournemouth-pavilion.jpg",
+    imageAlt:
+      "The Pavilion's frontage above Westover Road, Bournemouth, with building-work hoardings across the terrace below.",
+    imageCredit: "Robert Lamb",
+    imageLicense: "CC BY-SA 2.0",
+    imageLicenseSlug: "licence-cc-by-sa-2-0",
+    imageSourceSlug: "photo-bournemouth-pavilion",
     summary:
       "A theatre and a ballroom under one roof, argued about for forty years before it was built: the council had the money in 1892 and residents who objected to licensed premises kept blocking it until after the First World War. The Duke of Gloucester finally opened it in 1929, at a cost of £250,000.",
     details: [
@@ -416,6 +436,13 @@ export const venues: Venue[] = [
     officialSlug: "venue-his-majestys-theatre-aberdeen",
     capacity: 1400,
     opened: "3 December 1906",
+    image: "/venues/his-majestys-theatre-aberdeen.jpg",
+    imageAlt:
+      "His Majesty's Theatre in Aberdeen granite, its green dome above Rosemount Viaduct beside the glass foyer extension.",
+    imageCredit: "Bill Harrison",
+    imageLicense: "CC BY-SA 2.0",
+    imageLicenseSlug: "licence-cc-by-sa-2-0",
+    imageSourceSlug: "photo-his-majestys-theatre-aberdeen",
     summary:
       "Granite-clad, Matcham-designed and the largest theatre in the north-east of Scotland, looking across Rosemount Viaduct at Union Terrace Gardens. It was built to one man's specification: Robert Arthur wanted a house of his own after fifteen years of leasing other people's.",
     details: [
@@ -511,6 +538,13 @@ export const venues: Venue[] = [
     officialSlug: "venue-blackpool-opera-house",
     capacity: 2812,
     opened: "10 June 1889",
+    image: "/venues/blackpool-opera-house.jpg",
+    imageAlt:
+      "The tiled arch lettered Winter Gardens on Church Street, Blackpool; the Opera House stands inside the same complex.",
+    imageCredit: "Steve Daniels",
+    imageLicense: "CC BY-SA 2.0",
+    imageLicenseSlug: "licence-cc-by-sa-2-0",
+    imageSourceSlug: "photo-blackpool-opera-house",
     summary:
       "The third largest theatre in the United Kingdom, after the Hammersmith Apollo and the Edinburgh Playhouse — and the third building of that name on the site inside the Winter Gardens — Matcham's original of 1889 was outgrown, its 1911 replacement was demolished, and the present modernist house opened in 1939.",
     details: [
@@ -576,6 +610,13 @@ export const venues: Venue[] = [
     officialSlug: "venue-alhambra-theatre-bradford",
     capacity: 1456,
     opened: "18 March 1914",
+    image: "/venues/alhambra-theatre-bradford.jpg",
+    imageAlt:
+      "The Alhambra's domed corner rotunda and colonnade on Morley Street, Bradford.",
+    imageCredit: "Stephen Armstrong",
+    imageLicense: "CC BY-SA 2.0",
+    imageLicenseSlug: "licence-cc-by-sa-2-0",
+    imageSourceSlug: "photo-alhambra-theatre-bradford",
     summary:
       "Named after the palace in Granada and built for £20,000 by the pantomime impresario Francis Laidler, who wanted Bradford to have a house as good as anything in Leeds. The domed turret with its paired Corinthian columns is still one of the two landmarks on the city's skyline.",
     details: [
@@ -603,6 +644,13 @@ export const venues: Venue[] = [
     lon: 0.696904,
     capacity: 1630,
     opened: "July 1964",
+    image: "/venues/cliffs-pavilion-southend.jpg",
+    imageAlt:
+      "The Cliffs Pavilion above its terrace at Westcliff-on-Sea, its name across the clock tower.",
+    imageCredit: "Kim Fyson",
+    imageLicense: "CC BY-SA 2.0",
+    imageLicenseSlug: "licence-cc-by-sa-2-0",
+    imageSourceSlug: "photo-cliffs-pavilion-southend",
     summary:
       "The largest purpose-built arts venue in Essex, and the largest-capacity theatre in the east of England, sitting on the clifftop at Westcliff-on-Sea. The council bought the site in 1935 and the war and then the budget left it empty for so long that locals called it Southend's white elephant.",
     details: [
@@ -630,6 +678,14 @@ export const venues: Venue[] = [
     lon: 0.283403,
     capacity: 1689,
     opened: "13 June 1963",
+    image: "/venues/congress-theatre-eastbourne.jpg",
+    imageAlt:
+      "The Congress Theatre seen across the lawns of Devonshire Park, Eastbourne, its fly tower rising behind the foyer glazing.",
+    imagePosition: "center 42%",
+    imageCredit: "Andrew Diack",
+    imageLicense: "CC BY-SA 2.0",
+    imageLicenseSlug: "licence-cc-by-sa-2-0",
+    imageSourceSlug: "photo-congress-theatre-eastbourne",
     summary:
       "One of the largest theatres in the south of England, and one of the very few post-war ones listed at Grade II*. Duke Ellington played his last recorded concert here on 1 December 1973 and died five months later.",
     details: [
@@ -658,6 +714,13 @@ export const venues: Venue[] = [
     officialSlug: "venue-birmingham-hippodrome",
     capacity: 1935,
     opened: "1899",
+    image: "/venues/birmingham-hippodrome.jpg",
+    imageAlt:
+      "The Hippodrome's glazed foyer on Hurst Street, Birmingham, under its vertical name sign.",
+    imageCredit: "Oosoom at English Wikipedia",
+    imageLicense: "CC BY-SA 3.0",
+    imageLicenseSlug: "licence-cc-by-sa-3-0",
+    imageSourceSlug: "photo-birmingham-hippodrome",
     summary:
       "More than 600,000 people a year come through the doors, which makes this the busiest single theatre in the United Kingdom and the busiest dance venue outside London. It is the home stage of the Birmingham Royal Ballet, and it started life as a set of assembly rooms with a circus ring and a Moorish tower.",
     details: [
@@ -755,6 +818,13 @@ export const venues: Venue[] = [
     officialSlug: "venue-grand-opera-house-belfast",
     capacity: 1058,
     opened: "23 December 1895",
+    image: "/venues/grand-opera-house-belfast.jpg",
+    imageAlt:
+      "The Grand Opera House's red brick and terracotta frontage on Great Victoria Street, Belfast.",
+    imageCredit: "Joseph Mischyshyn",
+    imageLicense: "CC BY-SA 2.0",
+    imageLicenseSlug: "licence-cc-by-sa-2-0",
+    imageSourceSlug: "photo-grand-opera-house-belfast",
     summary:
       "The Theatres Trust rates its auditorium as probably the best surviving example in the UK of theatre architecture in the oriental style. Frank Matcham opened it two days before Christmas in 1895; it closed in 1972, came back in 1980, and was restored again in 2020 at a cost of £12.2 million.",
     details: [
@@ -782,6 +852,13 @@ export const venues: Venue[] = [
     lon: -2.598943,
     capacity: 1951,
     opened: "16 December 1912",
+    image: "/venues/bristol-hippodrome.jpg",
+    imageAlt:
+      "The Hippodrome's canopy and poster boards on St Augustine's Parade, Bristol.",
+    imageCredit: "Robert Powell",
+    imageLicense: "CC BY-SA 3.0",
+    imageLicenseSlug: "licence-cc-by-sa-3-0",
+    imageSourceSlug: "photo-bristol-hippodrome",
     summary:
       "Matcham built it for Oswald Stoll with a water tank at the front of the stage that held 100,000 gallons, and a glass screen that could be raised to keep the orchestra dry. The dome still opens, though air conditioning has made that a party trick rather than a necessity.",
     details: [
@@ -1004,6 +1081,13 @@ export const venues: Venue[] = [
     lon: 0.217884,
     capacity: 1025,
     opened: "14 April 1983",
+    image: "/venues/orchard-theatre-dartford.jpg",
+    imageAlt:
+      "The Orchard Theatre in Dartford, its brick clock tower standing beside the auditorium block.",
+    imageCredit: "Doyle of London",
+    imageLicense: "CC BY-SA 4.0",
+    imageLicenseSlug: "licence-cc-by-sa-4-0",
+    imageSourceSlug: "photo-orchard-theatre-dartford",
     summary:
       "A 1,025-seat receiving house built by Dartford Borough Council and opened by the Duke of Kent in April 1983. In September 2023 the council closed it over the reinforced autoclaved aerated concrete in its structure, and its programme moved to a temporary building called Orchard West — so check the address on your ticket before you travel.",
     details: [
@@ -1099,6 +1183,16 @@ export const venues: Venue[] = [
     lon: -2.176709,
     capacity: 1600,
     opened: "1929",
+    image: "/venues/regent-theatre-stoke.jpg",
+    imageAlt:
+      "The Regent Theatre's white faience frontage on Piccadilly, Hanley, above its glass entrance canopy.",
+    // A portrait shot: centred, the opener crops to a band of blank tiling
+    // and loses the sign and the canopy that say which building this is.
+    imagePosition: "center 70%",
+    imageCredit: "Futurilla",
+    imageLicense: "CC BY 2.0",
+    imageLicenseSlug: "licence-cc-by-2-0",
+    imageSourceSlug: "photo-regent-theatre-stoke",
     summary:
       "It was a super cinema first — one of a chain of Regents, opened in 1929 for cine-variety, with a Wurlitzer and a stage for the acts between films. As the Gaumont it took the Beatles, Shirley Bassey and Stevie Wonder; it became a full-time theatre only in 1999.",
     details: [
@@ -1126,6 +1220,13 @@ export const venues: Venue[] = [
     lon: -3.184984,
     capacity: 3059,
     opened: "12 August 1929",
+    image: "/venues/edinburgh-playhouse.jpg",
+    imageAlt:
+      "Greenside Place at the top of Leith Walk, Edinburgh, with the Playhouse's sign along the building on the right.",
+    imageCredit: "Richard West",
+    imageLicense: "CC BY-SA 2.0",
+    imageLicenseSlug: "licence-cc-by-sa-2-0",
+    imageSourceSlug: "photo-edinburgh-playhouse",
     summary:
       "The largest theatre in Scotland and the second largest in the United Kingdom. It opened in 1929 as a super-cinema modelled on the Roxy in New York, closed in the early 1970s, and was saved from demolition by a petition of fifteen thousand signatures.",
     details: [

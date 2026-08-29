@@ -382,6 +382,278 @@
     }
   },
   "musical.today": {
+    "/venues/alhambra-theatre-bradford.jpg": {
+      "width": 1024,
+      "height": 768,
+      "avif": [
+        [
+          480,
+          "/venues/alhambra-theatre-bradford-480.avif"
+        ],
+        [
+          768,
+          "/venues/alhambra-theatre-bradford-768.avif"
+        ],
+        [
+          1024,
+          "/venues/alhambra-theatre-bradford-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/alhambra-theatre-bradford-480.webp"
+        ],
+        [
+          768,
+          "/venues/alhambra-theatre-bradford-768.webp"
+        ],
+        [
+          1024,
+          "/venues/alhambra-theatre-bradford-1024.webp"
+        ]
+      ]
+    },
+    "/venues/birmingham-hippodrome.jpg": {
+      "width": 1920,
+      "height": 1493,
+      "avif": [
+        [
+          480,
+          "/venues/birmingham-hippodrome-480.avif"
+        ],
+        [
+          768,
+          "/venues/birmingham-hippodrome-768.avif"
+        ],
+        [
+          1024,
+          "/venues/birmingham-hippodrome-1024.avif"
+        ],
+        [
+          1440,
+          "/venues/birmingham-hippodrome-1440.avif"
+        ],
+        [
+          1920,
+          "/venues/birmingham-hippodrome-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/birmingham-hippodrome-480.webp"
+        ],
+        [
+          768,
+          "/venues/birmingham-hippodrome-768.webp"
+        ],
+        [
+          1024,
+          "/venues/birmingham-hippodrome-1024.webp"
+        ],
+        [
+          1440,
+          "/venues/birmingham-hippodrome-1440.webp"
+        ],
+        [
+          1920,
+          "/venues/birmingham-hippodrome-1920.webp"
+        ]
+      ]
+    },
+    "/venues/blackpool-opera-house.jpg": {
+      "width": 1500,
+      "height": 1125,
+      "avif": [
+        [
+          480,
+          "/venues/blackpool-opera-house-480.avif"
+        ],
+        [
+          768,
+          "/venues/blackpool-opera-house-768.avif"
+        ],
+        [
+          1024,
+          "/venues/blackpool-opera-house-1024.avif"
+        ],
+        [
+          1440,
+          "/venues/blackpool-opera-house-1440.avif"
+        ],
+        [
+          1500,
+          "/venues/blackpool-opera-house-1500.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/blackpool-opera-house-480.webp"
+        ],
+        [
+          768,
+          "/venues/blackpool-opera-house-768.webp"
+        ],
+        [
+          1024,
+          "/venues/blackpool-opera-house-1024.webp"
+        ],
+        [
+          1440,
+          "/venues/blackpool-opera-house-1440.webp"
+        ],
+        [
+          1500,
+          "/venues/blackpool-opera-house-1500.webp"
+        ]
+      ]
+    },
+    "/venues/bournemouth-pavilion.jpg": {
+      "width": 1920,
+      "height": 1440,
+      "avif": [
+        [
+          480,
+          "/venues/bournemouth-pavilion-480.avif"
+        ],
+        [
+          768,
+          "/venues/bournemouth-pavilion-768.avif"
+        ],
+        [
+          1024,
+          "/venues/bournemouth-pavilion-1024.avif"
+        ],
+        [
+          1440,
+          "/venues/bournemouth-pavilion-1440.avif"
+        ],
+        [
+          1920,
+          "/venues/bournemouth-pavilion-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/bournemouth-pavilion-480.webp"
+        ],
+        [
+          768,
+          "/venues/bournemouth-pavilion-768.webp"
+        ],
+        [
+          1024,
+          "/venues/bournemouth-pavilion-1024.webp"
+        ],
+        [
+          1440,
+          "/venues/bournemouth-pavilion-1440.webp"
+        ],
+        [
+          1920,
+          "/venues/bournemouth-pavilion-1920.webp"
+        ]
+      ]
+    },
+    "/venues/bristol-hippodrome.jpg": {
+      "width": 1920,
+      "height": 1440,
+      "avif": [
+        [
+          480,
+          "/venues/bristol-hippodrome-480.avif"
+        ],
+        [
+          768,
+          "/venues/bristol-hippodrome-768.avif"
+        ],
+        [
+          1024,
+          "/venues/bristol-hippodrome-1024.avif"
+        ],
+        [
+          1440,
+          "/venues/bristol-hippodrome-1440.avif"
+        ],
+        [
+          1920,
+          "/venues/bristol-hippodrome-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/bristol-hippodrome-480.webp"
+        ],
+        [
+          768,
+          "/venues/bristol-hippodrome-768.webp"
+        ],
+        [
+          1024,
+          "/venues/bristol-hippodrome-1024.webp"
+        ],
+        [
+          1440,
+          "/venues/bristol-hippodrome-1440.webp"
+        ],
+        [
+          1920,
+          "/venues/bristol-hippodrome-1920.webp"
+        ]
+      ]
+    },
+    "/venues/cliffs-pavilion-southend.jpg": {
+      "width": 1600,
+      "height": 1200,
+      "avif": [
+        [
+          480,
+          "/venues/cliffs-pavilion-southend-480.avif"
+        ],
+        [
+          768,
+          "/venues/cliffs-pavilion-southend-768.avif"
+        ],
+        [
+          1024,
+          "/venues/cliffs-pavilion-southend-1024.avif"
+        ],
+        [
+          1440,
+          "/venues/cliffs-pavilion-southend-1440.avif"
+        ],
+        [
+          1600,
+          "/venues/cliffs-pavilion-southend-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/cliffs-pavilion-southend-480.webp"
+        ],
+        [
+          768,
+          "/venues/cliffs-pavilion-southend-768.webp"
+        ],
+        [
+          1024,
+          "/venues/cliffs-pavilion-southend-1024.webp"
+        ],
+        [
+          1440,
+          "/venues/cliffs-pavilion-southend-1440.webp"
+        ],
+        [
+          1600,
+          "/venues/cliffs-pavilion-southend-1600.webp"
+        ]
+      ]
+    },
     "/venues/coca-cola-arena.jpg": {
       "width": 1920,
       "height": 1280,
@@ -430,6 +702,102 @@
         ]
       ]
     },
+    "/venues/congress-theatre-eastbourne.jpg": {
+      "width": 1920,
+      "height": 1280,
+      "avif": [
+        [
+          480,
+          "/venues/congress-theatre-eastbourne-480.avif"
+        ],
+        [
+          768,
+          "/venues/congress-theatre-eastbourne-768.avif"
+        ],
+        [
+          1024,
+          "/venues/congress-theatre-eastbourne-1024.avif"
+        ],
+        [
+          1440,
+          "/venues/congress-theatre-eastbourne-1440.avif"
+        ],
+        [
+          1920,
+          "/venues/congress-theatre-eastbourne-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/congress-theatre-eastbourne-480.webp"
+        ],
+        [
+          768,
+          "/venues/congress-theatre-eastbourne-768.webp"
+        ],
+        [
+          1024,
+          "/venues/congress-theatre-eastbourne-1024.webp"
+        ],
+        [
+          1440,
+          "/venues/congress-theatre-eastbourne-1440.webp"
+        ],
+        [
+          1920,
+          "/venues/congress-theatre-eastbourne-1920.webp"
+        ]
+      ]
+    },
+    "/venues/edinburgh-playhouse.jpg": {
+      "width": 1920,
+      "height": 1440,
+      "avif": [
+        [
+          480,
+          "/venues/edinburgh-playhouse-480.avif"
+        ],
+        [
+          768,
+          "/venues/edinburgh-playhouse-768.avif"
+        ],
+        [
+          1024,
+          "/venues/edinburgh-playhouse-1024.avif"
+        ],
+        [
+          1440,
+          "/venues/edinburgh-playhouse-1440.avif"
+        ],
+        [
+          1920,
+          "/venues/edinburgh-playhouse-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/edinburgh-playhouse-480.webp"
+        ],
+        [
+          768,
+          "/venues/edinburgh-playhouse-768.webp"
+        ],
+        [
+          1024,
+          "/venues/edinburgh-playhouse-1024.webp"
+        ],
+        [
+          1440,
+          "/venues/edinburgh-playhouse-1440.webp"
+        ],
+        [
+          1920,
+          "/venues/edinburgh-playhouse-1920.webp"
+        ]
+      ]
+    },
     "/venues/everyman-theatre-cheltenham.jpg": {
       "width": 1920,
       "height": 1741,
@@ -475,6 +843,54 @@
         [
           1920,
           "/venues/everyman-theatre-cheltenham-1920.webp"
+        ]
+      ]
+    },
+    "/venues/grand-opera-house-belfast.jpg": {
+      "width": 1920,
+      "height": 1280,
+      "avif": [
+        [
+          480,
+          "/venues/grand-opera-house-belfast-480.avif"
+        ],
+        [
+          768,
+          "/venues/grand-opera-house-belfast-768.avif"
+        ],
+        [
+          1024,
+          "/venues/grand-opera-house-belfast-1024.avif"
+        ],
+        [
+          1440,
+          "/venues/grand-opera-house-belfast-1440.avif"
+        ],
+        [
+          1920,
+          "/venues/grand-opera-house-belfast-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/grand-opera-house-belfast-480.webp"
+        ],
+        [
+          768,
+          "/venues/grand-opera-house-belfast-768.webp"
+        ],
+        [
+          1024,
+          "/venues/grand-opera-house-belfast-1024.webp"
+        ],
+        [
+          1440,
+          "/venues/grand-opera-house-belfast-1440.webp"
+        ],
+        [
+          1920,
+          "/venues/grand-opera-house-belfast-1920.webp"
         ]
       ]
     },
@@ -563,6 +979,54 @@
         [
           1600,
           "/venues/hall-for-cornwall-1600.webp"
+        ]
+      ]
+    },
+    "/venues/his-majestys-theatre-aberdeen.jpg": {
+      "width": 1600,
+      "height": 1200,
+      "avif": [
+        [
+          480,
+          "/venues/his-majestys-theatre-aberdeen-480.avif"
+        ],
+        [
+          768,
+          "/venues/his-majestys-theatre-aberdeen-768.avif"
+        ],
+        [
+          1024,
+          "/venues/his-majestys-theatre-aberdeen-1024.avif"
+        ],
+        [
+          1440,
+          "/venues/his-majestys-theatre-aberdeen-1440.avif"
+        ],
+        [
+          1600,
+          "/venues/his-majestys-theatre-aberdeen-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/his-majestys-theatre-aberdeen-480.webp"
+        ],
+        [
+          768,
+          "/venues/his-majestys-theatre-aberdeen-768.webp"
+        ],
+        [
+          1024,
+          "/venues/his-majestys-theatre-aberdeen-1024.webp"
+        ],
+        [
+          1440,
+          "/venues/his-majestys-theatre-aberdeen-1440.webp"
+        ],
+        [
+          1600,
+          "/venues/his-majestys-theatre-aberdeen-1600.webp"
         ]
       ]
     },
@@ -766,6 +1230,54 @@
         ]
       ]
     },
+    "/venues/newcastle-theatre-royal.jpg": {
+      "width": 1920,
+      "height": 1280,
+      "avif": [
+        [
+          480,
+          "/venues/newcastle-theatre-royal-480.avif"
+        ],
+        [
+          768,
+          "/venues/newcastle-theatre-royal-768.avif"
+        ],
+        [
+          1024,
+          "/venues/newcastle-theatre-royal-1024.avif"
+        ],
+        [
+          1440,
+          "/venues/newcastle-theatre-royal-1440.avif"
+        ],
+        [
+          1920,
+          "/venues/newcastle-theatre-royal-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/newcastle-theatre-royal-480.webp"
+        ],
+        [
+          768,
+          "/venues/newcastle-theatre-royal-768.webp"
+        ],
+        [
+          1024,
+          "/venues/newcastle-theatre-royal-1024.webp"
+        ],
+        [
+          1440,
+          "/venues/newcastle-theatre-royal-1440.webp"
+        ],
+        [
+          1920,
+          "/venues/newcastle-theatre-royal-1920.webp"
+        ]
+      ]
+    },
     "/venues/norwich-theatre-royal.jpg": {
       "width": 1920,
       "height": 1342,
@@ -902,6 +1414,54 @@
         ]
       ]
     },
+    "/venues/orchard-theatre-dartford.jpg": {
+      "width": 1920,
+      "height": 1440,
+      "avif": [
+        [
+          480,
+          "/venues/orchard-theatre-dartford-480.avif"
+        ],
+        [
+          768,
+          "/venues/orchard-theatre-dartford-768.avif"
+        ],
+        [
+          1024,
+          "/venues/orchard-theatre-dartford-1024.avif"
+        ],
+        [
+          1440,
+          "/venues/orchard-theatre-dartford-1440.avif"
+        ],
+        [
+          1920,
+          "/venues/orchard-theatre-dartford-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/orchard-theatre-dartford-480.webp"
+        ],
+        [
+          768,
+          "/venues/orchard-theatre-dartford-768.webp"
+        ],
+        [
+          1024,
+          "/venues/orchard-theatre-dartford-1024.webp"
+        ],
+        [
+          1440,
+          "/venues/orchard-theatre-dartford-1440.webp"
+        ],
+        [
+          1920,
+          "/venues/orchard-theatre-dartford-1920.webp"
+        ]
+      ]
+    },
     "/venues/orix-theater.jpg": {
       "width": 1920,
       "height": 1440,
@@ -947,6 +1507,46 @@
         [
           1920,
           "/venues/orix-theater-1920.webp"
+        ]
+      ]
+    },
+    "/venues/regent-theatre-stoke.jpg": {
+      "width": 1273,
+      "height": 1800,
+      "avif": [
+        [
+          480,
+          "/venues/regent-theatre-stoke-480.avif"
+        ],
+        [
+          768,
+          "/venues/regent-theatre-stoke-768.avif"
+        ],
+        [
+          1024,
+          "/venues/regent-theatre-stoke-1024.avif"
+        ],
+        [
+          1273,
+          "/venues/regent-theatre-stoke-1273.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/regent-theatre-stoke-480.webp"
+        ],
+        [
+          768,
+          "/venues/regent-theatre-stoke-768.webp"
+        ],
+        [
+          1024,
+          "/venues/regent-theatre-stoke-1024.webp"
+        ],
+        [
+          1273,
+          "/venues/regent-theatre-stoke-1273.webp"
         ]
       ]
     },
@@ -1179,6 +1779,54 @@
         [
           1920,
           "/venues/venue-cymru-1920.webp"
+        ]
+      ]
+    },
+    "/venues/wales-millennium-centre.jpg": {
+      "width": 1920,
+      "height": 1080,
+      "avif": [
+        [
+          480,
+          "/venues/wales-millennium-centre-480.avif"
+        ],
+        [
+          768,
+          "/venues/wales-millennium-centre-768.avif"
+        ],
+        [
+          1024,
+          "/venues/wales-millennium-centre-1024.avif"
+        ],
+        [
+          1440,
+          "/venues/wales-millennium-centre-1440.avif"
+        ],
+        [
+          1920,
+          "/venues/wales-millennium-centre-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/wales-millennium-centre-480.webp"
+        ],
+        [
+          768,
+          "/venues/wales-millennium-centre-768.webp"
+        ],
+        [
+          1024,
+          "/venues/wales-millennium-centre-1024.webp"
+        ],
+        [
+          1440,
+          "/venues/wales-millennium-centre-1440.webp"
+        ],
+        [
+          1920,
+          "/venues/wales-millennium-centre-1920.webp"
         ]
       ]
     },
