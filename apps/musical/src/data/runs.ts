@@ -108,7 +108,7 @@ export const runs: Run[] = [
     end: "2027-03-06",
     sellers: [],
     summary:
-      "Announced, not on sale. Five nights at the Sheffield Lyceum in March 2027, with no seller listed against them yet.",
+      "Five nights at the Sheffield Lyceum, in the week the tour turns north. The dates are fixed; the box office is not open on them yet.",
   },
   {
     slug: "liverpool",
@@ -221,7 +221,7 @@ export const runs: Run[] = [
     end: "2027-07-10",
     sellers: [],
     summary:
-      "Twelve days in Dublin, and the only stop whose theatre has not been named. The dates are on the tour's own listing; the venue is not, and this page will not invent one.",
+      "Twelve days in Dublin, and the only stop whose theatre has not been named. The dates come from the tour's own listing; the venue is not on it, so it is not named here either.",
     tags: ["long-stop", "ireland"],
   },
   {
@@ -370,7 +370,7 @@ export const runs: Run[] = [
     end: "2027-10-30",
     sellers: [],
     summary:
-      "Six nights at the Orchard Theatre in October 2027, announced without a seller. There is nothing to book here yet.",
+      "Six nights at the Orchard Theatre in October 2027 — a Dartford stop between two much larger ones, and the last of the tour's three dateless box offices.",
   },
   {
     slug: "woking",

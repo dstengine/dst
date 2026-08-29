@@ -11,8 +11,8 @@ import RunTable from "./RunTable.astro";
 import EventCards from "./EventCards.astro";
 import { go } from "../outbound";
 import {
-  checkedOn, cityBySlug, cityHasPage, statusOf, runsAtVenue, venues,
-  venuePath, type Venue,
+  checkedOn, cityBySlug, cityHasPage, formatRun, showBySlug, statusOf, runsAtVenue,
+  venues, venuePath, type Venue,
 } from "../content";
 
 interface Props { venue: Venue }
@@ -32,6 +32,14 @@ const details = [
   { label: "Last checked", value: checkedOn },
 ];
 
+// What a theatre without a written summary says on its card: what is coming,
+// not how many rows it has in the data.
+const blurbFor = (v: Venue): string => {
+  const soon = runsAtVenue(v.slug).filter((r) => statusOf(r) !== "ended")[0];
+  const title = soon ? showBySlug(soon.show)?.title ?? soon.show : undefined;
+  return soon && title ? `${title}, ${formatRun(soon)}.` : "No dates on this site's calendar yet.";
+};
+
 // Other theatres this site knows: the same city first — that is the useful
 // comparison — then the rest of the country.
 const related = venues
@@ -41,7 +49,7 @@ const related = venues
   .map((v) => ({
     href: venuePath(v),
     name: v.name,
-    blurb: v.summary ?? `${cityBySlug(v.city)?.name ?? v.city} — ${runsAtVenue(v.slug).length} run listed here.`,
+    blurb: v.summary ?? blurbFor(v),
     meta: cityBySlug(v.city)?.name,
     // No theatre photography licensed yet, so every card takes the mark
     // cover. It is the same cover the network's other card grids use.
@@ -61,8 +69,20 @@ const placeLd: Record<string, unknown> = {
   ...(venue.summary ? { description: venue.summary } : {}),
 };
 
+// Two different jobs, and one string cannot do both. The head wants the
+// venue's name and city in the first words; the page wants a sentence a
+// person would read, which is why an unwritten venue opens on what is
+// booked there rather than on its own name repeated back at the reader.
+const next = upcoming[0];
+const nextShow = next ? showBySlug(next.show)?.title ?? next.show : undefined;
+const lede = venue.summary
+  ?? (next && nextShow
+    ? next.openRun
+      ? `${nextShow} has been playing here since ${formatRun(next).replace(/^Playing since /, "")}.`
+      : `${nextShow} plays here, ${formatRun(next)}.`
+    : "Nothing on this site's calendar is booked here at the moment. The address and the directions are below.");
 const description = venue.summary
-  ?? `${venue.name} in ${city.name}: address, how to get there, and what is playing — ${here.length === 1 ? "one run" : `${here.length} runs`} listed.`;
+  ?? `${venue.name} in ${city.name}: address, how to get there, and what is playing.`;
 ---
 <Layout
   title={`${venue.name}, ${city.name}`}
@@ -80,7 +100,7 @@ const description = venue.summary
     eyebrow={`${city.name}, ${city.country}`}
     name={venue.name}
     tagline={venue.capacity ? `${venue.capacity.toLocaleString("en-GB")} seats` : undefined}
-    description={description}
+    description={lede}
     building={venue.address}
     details={details}
     highlights={venue.highlights}
@@ -103,7 +123,7 @@ const description = venue.summary
     <section slot="after" class="container">
       <h2>What is playing here</h2>
       {upcoming.length > 0
-        ? <EventCards runs={upcoming} lead="event" />
+        ? <EventCards runs={upcoming} lead="event" eyebrow="tour" venueInMeta={false} />
         : <p>Nothing on this site's calendar is playing here at the moment.</p>}
       {past.length > 0 && (
         <RunTable runs={past} lead="event" cityColumn={false} caption="Already played." />

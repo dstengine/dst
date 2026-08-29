@@ -44,9 +44,9 @@ function groupSpan(slug: string): string {
 }
 
 const glance = [
-  { label: "Cities", value: `${cityCount} listed`, icon: ICONS.map },
+  { label: "Cities", value: String(cityCount), icon: ICONS.map },
   openRun && openVenue && {
-    label: "Home",
+    label: "Home theatre",
     value: openVenue.name,
     icon: ICONS.pin,
     href: venuePath(openVenue),
@@ -85,7 +85,7 @@ const jump = [
   <section class="container" id="playing">
     <h2>Where it plays</h2>
     <p>Soonest first. Every city has its own page, with the theatre, the dates and the seller.</p>
-    <EventCards runs={upcoming.slice(0, 6)} />
+    <EventCards runs={upcoming.slice(0, 6)} eyebrow="tour" />
     {upcoming.length > 6 && (
       <p class="more">
         <a href={`/${show.slug}/tickets/`} title={`All ${all.length} runs of ${show.title}, with every seller`}>All {all.length} runs and every seller</a>

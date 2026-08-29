@@ -32,7 +32,7 @@ const chicago = shows[0]!;
     <p>Soonest first. Each card goes to that run's own page — the theatre, the dates, who is selling and what is not yet known.</p>
     <EventCards runs={soon} />
     <p class="more">
-      <a href={`/${chicago.slug}/tickets/`} title="Every run this site tracks, with every seller">All {upcoming.length} upcoming runs</a>
+      <a href={`/${chicago.slug}/tickets/`} title="Every run this site tracks, with every seller">All {upcoming.length} dates, and who is selling each one</a>
       <span class="checked">Read from each production's own listing on {checkedOn}.</span>
     </p>
   </section>
@@ -44,9 +44,10 @@ const chicago = shows[0]!;
   <section class="container" id="cities">
     <h2>Cities</h2>
     <p>
-      A city gets its own page once it has more than one event to compare —
-      until then its listing lives on the event's page, where the facts are,
-      rather than at a second address that repeats them.
+      A city page is the local answer: which theatres take touring musicals,
+      what is booked into them and when the season runs. Cities with one event
+      are listed on that event's page instead, and every theatre has a page of
+      its own either way.
     </p>
     <div class="link-grid city-grid">
       {cityPages.map((city) => (
@@ -82,11 +83,11 @@ const chicago = shows[0]!;
   <section class="container">
     <h2>At home</h2>
     <p>
-      Some of it plays here: numbers the productions publish themselves and cast
-      recordings on the rights holders' own channels are collected on
-      {" "}<a href="/online/" title="Musicals you can legally watch at home">the online page</a>, embedded rather than
-      linked away. Reuploads of full stage recordings are not — not out of
-      caution, but because they stop working.
+      No, you cannot watch the whole show at home. You can watch the numbers the
+      productions filmed themselves and the cast recordings the rights holders
+      put up, and they play on
+      {" "}<a href="/online/" title="Musicals you can legally watch at home">the online page</a> rather than
+      somewhere else.
     </p>
   </section>
 </Layout>
@@ -100,6 +101,8 @@ const chicago = shows[0]!;
     gap: 0.5em var(--space-3);
     margin-top: var(--space-3);
   }
+  /* One line of text is 29px tall and a thumb is not. */
+  .more a { display: inline-flex; align-items: center; min-height: 44px; }
   /* The date the listings were read, kept next to the listings it applies to
      rather than in a panel of site statistics at the top of the page. */
   .checked { color: var(--ink-faint); font-size: var(--step--1); }

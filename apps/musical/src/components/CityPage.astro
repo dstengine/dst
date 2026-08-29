@@ -13,7 +13,7 @@ import Layout from "../layouts/Layout.astro";
 import RunTable from "./RunTable.astro";
 import EventCards from "./EventCards.astro";
 import {
-  checkedOn, formatRun, runsInCity, statusOf, venuePath, venuesInCity, type City,
+  checkedOn, formatRun, runsInCity, spell, statusOf, venuePath, venuesInCity, type City,
 } from "../content";
 
 interface Props { city: City }
@@ -27,7 +27,7 @@ const next = upcoming.find((r) => r.start);
 const mapped = venues.filter((v) => v.lat && v.lon);
 
 const glance = [
-  { label: "Listed", value: upcoming.length === 1 ? "One event" : `${upcoming.length} events`, icon: ICONS.events },
+  { label: "Musicals", value: upcoming.length === 1 ? "One" : spell(upcoming.length), icon: ICONS.events },
   next && { label: "Next", value: formatRun(next), icon: ICONS.clock, href: `/${next.show}/${next.slug}/` },
   venues.length > 0 && { label: "Theatres", value: venues.map((v) => v.name).join(", "), icon: ICONS.pin },
   { label: "Country", value: city.country, icon: ICONS.map },
@@ -79,9 +79,9 @@ const glance = [
   )}
 
   <Callout kind="note">
-    <strong>This list grows by confirmation, not by guesswork.</strong> An event
-    joins it when there are dates and a named seller — or dates and an honest
-    "no seller yet" — and never on the strength of a rumour.
+    <strong>Check the date before you book a flight.</strong> Everything here was
+    read from the production's own listing on {checkedOn}; runs move and
+    performances sell out, and the seller's page is the one that is current.
   </Callout>
 </Layout>
 

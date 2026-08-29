@@ -4,7 +4,7 @@
 // because thirty-six venue pages with no index is thirty-six orphans.
 import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
 import Layout from "../../layouts/Layout.astro";
-import { checkedOn, cityBySlug, runsAtVenue, statusOf, venuePath, venues } from "../../content";
+import { checkedOn, cityBySlug, formatRun, runsAtVenue, statusOf, venuePath, venues } from "../../content";
 
 const rows = venues
   .map((venue) => {
@@ -14,7 +14,10 @@ const rows = venues
       venue,
       city: city?.name ?? venue.city,
       country: city?.country ?? "",
-      upcoming: here.filter((r) => statusOf(r) !== "ended").length,
+      // What is booked, not how many rows the building has: a directory line
+      // that says "1 run listed" describes the database, and the reader is
+      // choosing an evening.
+      next: here.filter((r) => statusOf(r) !== "ended")[0],
     };
   })
   .sort((a, b) => a.country.localeCompare(b.country) || a.city.localeCompare(b.city) || a.venue.name.localeCompare(b.venue.name));
@@ -44,13 +47,13 @@ const arena = venues.find((v) => v.capacity && v.capacity > 5000);
     <section class="container">
       <h2>{country}</h2>
       <ul class="venue-list">
-        {rows.filter((r) => r.country === country).map(({ venue, city, upcoming }) => (
+        {rows.filter((r) => r.country === country).map(({ venue, city, next }) => (
           <li>
             <a href={venuePath(venue)} title={`${venue.name}, ${city}`}>{venue.name}</a>
             <span class="venue-meta">
               {city}
               {venue.capacity ? ` · ${venue.capacity.toLocaleString("en-GB")} seats` : ""}
-              {upcoming > 0 ? ` · ${upcoming === 1 ? "1 run listed" : `${upcoming} runs listed`}` : ""}
+              {next ? ` · ${formatRun(next)}` : ""}
             </span>
           </li>
         ))}

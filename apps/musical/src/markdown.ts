@@ -44,7 +44,7 @@ export function runMarkdown(show: Show, run: Run): string {
     "",
     line("Dates", formatRun(run)),
     line("Status", statusLabel(run)),
-    line("Length", n ? (n === 1 ? "one night" : `${n} days`) : undefined),
+    line("Nights", n ? (n === 1 ? "one" : String(n)) : undefined),
     line("Venue", venue ? `${venue.name}${venue.address ? `, ${venue.address}` : ""}` : "not announced"),
     line("City", city ? `${city.name}, ${city.country}` : run.city),
     line("Part of", group?.name),

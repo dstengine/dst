@@ -6,8 +6,13 @@
 //
 // A run with nothing on sale gets no button at all — an inert "Tickets" that
 // leads to a page without a price is worse than an honest gap.
+//
+// Under the buttons, who actually takes the money. A button that says only
+// "Tickets" answers where to press and not what happens next, and this site
+// sells nothing: the reader is about to be handed to somebody else, and
+// should read that here rather than work it out from the address bar.
 import { go } from "../outbound";
-import { statusOf, ticketButtons, type Run } from "../content";
+import { sellsItsOwn, statusOf, ticketButtons, type Run } from "../content";
 
 interface Props {
   run: Run;
@@ -30,13 +35,22 @@ const status = statusOf(run);
     ))}
   </p>
 )}
+{buttons.length > 0 && (
+  <p class="ticket-seller">
+    {buttons.length > 1
+      ? "They sell the same performances. The booking is completed on the seller's own site."
+      : sellsItsOwn(run)
+        ? "The theatre sells its own tickets. The booking is completed on its site."
+        : `Sold by ${buttons[0]!.seller.name}. The booking is completed on their site.`}
+  </p>
+)}
 {buttons.length === 0 && run.infoSlug && (
   <p class="ticket-actions">
     <a class="button button-secondary" href={go(run.infoSlug)} rel="nofollow" title={`Venue information for ${showName} in ${cityName}`}>Venue information</a>
   </p>
 )}
 {buttons.length === 0 && status === "announced" && (
-  <p class="ticket-none">Dates are announced; no seller has been listed against them yet.</p>
+  <p class="ticket-none">No tickets are on sale for these dates yet.</p>
 )}
 
 <style>
@@ -44,7 +58,27 @@ const status = statusOf(run);
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-2);
+    /* Buttons are not prose: the 60ch measure that keeps the lede readable
+       was breaking a row of two sellers onto two lines. */
+    max-width: none;
     margin: var(--space-3) 0 0;
   }
+  /* The one thing the page is for, sized like it. The network button is
+     built for a link in a paragraph; this is the whole reason a reader
+     opened the page, and at the shared size it read as an afterthought
+     beside the headline. */
+  .ticket-actions :global(.button) {
+    padding: 0.9em 1.7em;
+    font-size: var(--step-1);
+    /* A seller's name wraps on a phone; centred, the two lines read as a
+       label rather than as a paragraph that happens to sit in a box. */
+    justify-content: center;
+    text-align: center;
+  }
   .ticket-none { margin: var(--space-3) 0 0; color: var(--ink-muted); }
+  .ticket-seller {
+    margin: var(--space-2) 0 0;
+    color: var(--ink-muted);
+    font-size: var(--step--1);
+  }
 </style>

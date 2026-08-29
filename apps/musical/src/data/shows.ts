@@ -94,11 +94,11 @@ export const shows: Show[] = [
         label: "Watch online",
         title: "Chicago The Musical: what to watch online",
         description:
-          "The numbers the production publishes itself and the cast recordings on the rights holders' channels — embedded here, playing here.",
+          "The numbers the production publishes itself and the cast recordings on the rights holders' channels, playing on the page.",
         template: "online",
         body: [
-          "There is no ticket for the version you can watch tonight, and there does not need to be. The production keeps its own YouTube channel, the 1997 cast album sits on the rights holders' channels, and every one of them allows embedding — so they play on this page rather than sending you somewhere.",
-          "What is not here: full stage recordings uploaded by people who did not make them. Not out of caution — they simply stop working, and a dead embed is worse than none.",
+          "There is no ticket for the version you can watch tonight, and there does not need to be. The production keeps its own YouTube channel, the 1997 cast album sits on the rights holders' channels, and each of them lets their video play on other sites — so it plays here rather than sending you away.",
+          "What is not here: full stage recordings uploaded by people who did not make them. Not out of caution — they simply stop working, and a dead player is worse than none.",
         ],
       },
       {

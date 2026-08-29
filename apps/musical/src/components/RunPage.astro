@@ -17,8 +17,8 @@ import StatusBadge from "./StatusBadge.astro";
 import TicketButtons from "./TicketButtons.astro";
 import { go } from "../outbound";
 import {
-  checkedOn, cityBySlug, cityHasPage, formatRun, groupBySlug, nights, otherRuns,
-  relatedRuns, runIntro, statusOf, venueBySlug, venuePath, type Run, type Show,
+  checkedOn, cityBySlug, cityHasPage, formatRun, groupBySlug, otherRuns,
+  relatedRuns, runIntro, spell, statusOf, venueBySlug, venuePath, type Run, type Show,
 } from "../content";
 
 interface Props { show: Show; run: Run }
@@ -28,7 +28,7 @@ const city = cityBySlug(run.city)!;
 const venue = run.venue ? venueBySlug(run.venue) : undefined;
 const group = run.group ? groupBySlug(run.group) : undefined;
 const status = statusOf(run);
-const nightCount = nights(run);
+const sellerCount = spell(run.sellers.length);
 const title = `${show.title} in ${city.name}`;
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
 const absolute = (path: string) => (Astro.site ? new URL(path, Astro.site).href : path);
@@ -38,7 +38,6 @@ const related = relatedRuns(run);
 
 const glance = [
   { label: "Dates", value: formatRun(run), icon: ICONS.events },
-  nightCount && { label: "Length", value: nightCount === 1 ? "One night" : `${nightCount} days`, icon: ICONS.hourglass },
   venue && { label: "Theatre", value: venue.name, icon: ICONS.pin, href: venuePath(venue) },
   { label: "City", value: `${city.name}, ${city.country}`, icon: ICONS.map, ...(cityHasPage(city) ? { href: `/${city.slug}/` } : {}) },
   run.runningTime && { label: "Running time", value: run.runningTime, icon: ICONS.clock },
@@ -51,6 +50,9 @@ const glance = [
   { label: "Last checked", value: checkedOn, icon: ICONS.list },
 ].filter(Boolean) as { label: string; value: string; icon: string; href?: string }[];
 
+// A contents box earns its place on a long page. Three anchors above the
+// facts a reader came for is furniture, so it waits for a fourth and sits
+// under them.
 const jump = [
   run.sellers.length > 1 && { id: "sellers", label: "Where to buy" },
   venue && { id: "venue", label: "The theatre" },
@@ -146,17 +148,17 @@ const eventLd: Record<string, unknown> = {
     <TicketButtons run={run} showName={show.title} cityName={city.name} />
     {run.start && !run.openRun && (
       <p class="run-calendar">
-        <a href={`/${show.slug}/${run.slug}.ics`} title={`Add ${title} to a calendar`}>Add to calendar (.ics)</a>
+        <a href={`/${show.slug}/${run.slug}.ics`} title={`Add ${title} to a calendar`}>Add to calendar</a>
       </p>
     )}
-    <OnThisPage items={jump} />
     <Glance facts={glance} />
+    {jump.length > 3 && <OnThisPage items={jump} />}
   </section>
 
   {run.sellers.length > 1 && (
     <section class="container" id="sellers">
       <h2>Where to buy</h2>
-      <p>Two sellers list this run. They are selling the same performances; the price and the fees are theirs, not ours.</p>
+      <p>{sellerCount} sellers list this run. They are selling the same performances; the price and the fees are theirs, not ours.</p>
       <ul class="sellers">
         {run.sellers.map((seller) => (
           <li>
@@ -190,7 +192,7 @@ const eventLd: Record<string, unknown> = {
     <section class="container" id="elsewhere">
       <h2>The same show elsewhere</h2>
       <p>{group ? `Nearby stops on the ${group.name}, and the rest of the calendar.` : "Every other run currently listed."}</p>
-      <EventCards runs={elsewhere} />
+      <EventCards runs={elsewhere} eyebrow="tour" />
       <p class="more"><a href={`/${show.slug}/tickets/`} title={`Every run of ${show.title} and every seller`}>All {show.title} dates and sellers</a></p>
     </section>
   )}

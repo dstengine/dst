@@ -97,30 +97,40 @@ export const upcomingRuns = (): Run[] =>
     .sort((a, b) => (a.openRun ? "" : a.start ?? "9999").localeCompare(b.openRun ? "" : b.start ?? "9999"));
 
 /** Small numbers are words in running text — the hand-written summaries say
-    "Twelve days", and a composed one should not answer "5 days" beside them. */
+    "Twelve days", and a composed one should not answer "5 nights" beside them. */
 const WORDS = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve"];
-const spell = (n: number): string => {
+export const spell = (n: number): string => {
   const word = WORDS[n];
   return word ? word[0]!.toUpperCase() + word.slice(1) : String(n);
 };
 
-/** An opening sentence for a run nobody has written one for, composed from
-    what is true about it: how long it plays, where it sits in its tour, and
-    who is selling. Never a template with holes — every clause is a fact or
-    it is left out. */
-export function runIntro(run: Run): string {
-  if (run.summary) return run.summary;
+/** True when the only seller is the theatre's own box office — half the tour
+    is booked that way, and repeating the building's name as if it were a
+    third party reads like a mistake. */
+export const sellsItsOwn = (run: Run): boolean => {
+  if (run.sellers.length !== 1 || !run.venue) return false;
+  return venueBySlug(run.venue)?.name === run.sellers[0]!.name;
+};
+
+/** The clauses an unwritten run can honestly be described with, kept apart
+    because different places want different ones: a run page opens with all
+    of them, a card wants only the ones its own meta line has not said. */
+function introClauses(run: Run): { placing: string; tour?: string; selling?: string } {
   const city = cityBySlug(run.city)?.name ?? run.city;
   const venue = run.venue ? venueBySlug(run.venue)?.name : undefined;
   const n = nights(run);
   const group = run.group ? groupBySlug(run.group) : undefined;
   const parts: string[] = [];
 
-  const length = n === 1 ? "One night" : n ? `${spell(n)} days` : "Dates announced";
+  const length = n === 1 ? "One night" : n ? `${spell(n)} nights` : "Dates announced";
   // "Theatre Royal Plymouth, Plymouth" — a venue named after its city says the
   // city already, and the sentence should not say it twice.
   const named = venue?.toLowerCase().includes(city.toLowerCase());
-  parts.push(venue ? `${length} at ${venue}${named ? "" : `, ${city}`}.` : `${length} in ${city}.`);
+  const placing = run.openRun
+    ? `An open run: no closing date has been announced.`
+    : venue
+      ? `${length} at ${venue}${named ? "" : `, ${city}`}.`
+      : `${length} in ${city}.`;
 
   if (group) {
     const ordered = runsInGroup(group.slug).sort((a, b) => (a.start ?? "").localeCompare(b.start ?? ""));
@@ -139,11 +149,36 @@ export function runIntro(run: Run): string {
   }
 
   const status = statusOf(run);
-  if (status === "announced") parts.push("No seller has been listed against these dates yet.");
-  else if (status === "on-sale" && run.sellers.length === 1) parts.push(`${run.sellers[0]!.name} is selling it.`);
-  else if (status === "on-sale") parts.push(`${run.sellers.length} sellers list it.`);
+  const selling =
+    status === "announced"
+      ? "No seller has been listed against these dates yet."
+      : status === "on-sale" && run.sellers.length === 1
+        ? sellsItsOwn(run)
+          ? "The theatre is selling the tickets itself."
+          : `${run.sellers[0]!.name} is selling it.`
+        : status === "on-sale"
+          ? `${spell(run.sellers.length)} sellers list it.`
+          : undefined;
 
-  return parts.join(" ");
+  return { placing, tour: parts[0], selling };
+}
+
+/** An opening sentence for a run nobody has written one for. Never a template
+    with holes — every clause is a fact or it is left out. */
+export function runIntro(run: Run): string {
+  if (run.summary) return run.summary;
+  const { placing, tour, selling } = introClauses(run);
+  return [placing, tour, selling].filter(Boolean).join(" ");
+}
+
+/** What a card says under the title. The card already prints the dates and
+    the theatre on its own meta line, so a composed line that says "Five
+    nights at Theatre Royal Plymouth" tells the reader nothing twice: it
+    takes the tour position and the seller instead. */
+export function runCardLine(run: Run): string {
+  if (run.summary) return run.summary.match(/^.*?[.?!](?=\s|$)/)?.[0] ?? run.summary;
+  const { placing, tour, selling } = introClauses(run);
+  return [tour, selling].filter(Boolean).join(" ") || placing;
 }
 
 /** "5–13 February 2027", "27 July – 7 August 2027", "since 14 November 1996". */
