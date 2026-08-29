@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@dst/ui/BaseLayout.astro";
+import LeadTracking from "@dst/ui/LeadTracking.astro";
 import "../styles/theme.css";
 
 interface Props {
@@ -34,5 +35,6 @@ const nav = [
   image={image}
   partnerDisclosure={false}
 >
+  <LeadTracking slot="tracking" />
   <slot />
 </BaseLayout>

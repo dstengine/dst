@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@dst/ui/BaseLayout.astro";
+import LeadTracking from "@dst/ui/LeadTracking.astro";
 import { disclaimer } from "../content";
 import "../styles/theme.css";
 
@@ -35,5 +36,6 @@ const nav = [
   partnerDisclosure={false}
   footerLinks={[{ href: "/about/", label: "About this site" }]}
 >
+  <LeadTracking slot="tracking" />
   <slot />
 </BaseLayout>

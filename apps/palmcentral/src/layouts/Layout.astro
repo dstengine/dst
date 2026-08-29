@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@dst/ui/BaseLayout.astro";
+import LeadTracking from "@dst/ui/LeadTracking.astro";
 import StickyCta from "../components/StickyCta.astro";
 import "../styles/theme.css";
 
@@ -35,6 +36,7 @@ const nav = [
   image={image}
   footerLinks={[{ href: "/privacy/", label: "Privacy" }]}
 >
+  <LeadTracking slot="tracking" />
   <slot />
   <StickyCta />
 </BaseLayout>

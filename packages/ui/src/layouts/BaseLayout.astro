@@ -1,7 +1,6 @@
 ---
 import '../styles/tokens.css';
 import Analytics from '../components/Analytics.astro';
-import LeadTracking from '../components/LeadTracking.astro';
 import { ICONS, navIconFor } from '../icons';
 import { pageGraph } from '../schema';
 import type { Publisher } from '../schema';
@@ -143,8 +142,8 @@ const lateIcons = navFootprint > 700;
     {canonical && <link rel="canonical" href={canonical} />}
     {/* The lead endpoint is only called once someone touches a form, so
         resolving DNS ahead of time is worth it and holding a socket open on
-        every page is not. */}
-    <link rel="dns-prefetch" href="https://api.dst.llc" />
+        every page is not. Only for sites that carry the pipeline at all. */}
+    {Astro.slots.has("tracking") && <link rel="dns-prefetch" href="https://api.dst.llc" />}
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={siteName} />
     <meta property="og:title" content={title} />
@@ -168,7 +167,11 @@ const lateIcons = navFootprint > 700;
       <script type="application/ld+json" set:html={JSON.stringify(block)} />
     ))}
     <Analytics />
-    <LeadTracking />
+    {/* The lead pipeline is DST's, not every site's: it writes dst_ cookies
+        and talks to api.dst.llc, so the layout no longer decides who is on
+        it. A site hands it in — musical.today, which is not presented as
+        part of the network, hands in nothing and ships none of the code. */}
+    <slot name="tracking" />
   </head>
   <body>
     {/* First tab stop on every page. The header carries a nav of eight or

@@ -6,6 +6,7 @@
 // per app. What actually differs between sites (name, accent, compliance
 // text) comes in as config from the app's own site.config.ts.
 import BaseLayout from "./BaseLayout.astro";
+import LeadTracking from "../components/LeadTracking.astro";
 import PhotoHero from "../components/district/PhotoHero.astro";
 
 interface Props {
@@ -58,6 +59,7 @@ const nav = [
   partnerDisclosure={partnerDisclosure}
   jsonLd={jsonLd}
 >
+  <LeadTracking slot="tracking" />
   {h1 && (
     <header class:list={["container", "district-hero", { "has-photo": image }]}>
       {image ? (

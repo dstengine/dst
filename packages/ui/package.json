@@ -11,6 +11,7 @@
     "./DistrictLayout.astro": "./src/layouts/DistrictLayout.astro",
     "./Faq.astro": "./src/components/Faq.astro",
     "./LeadForm.astro": "./src/components/LeadForm.astro",
+    "./LeadTracking.astro": "./src/components/LeadTracking.astro",
     "./Callout.astro": "./src/components/Callout.astro",
     "./VentureGrid.astro": "./src/components/VentureGrid.astro",
     "./Redirect.astro": "./src/components/Redirect.astro",

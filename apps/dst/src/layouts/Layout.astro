@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@dst/ui/BaseLayout.astro";
+import LeadTracking from "@dst/ui/LeadTracking.astro";
 import { NETWORK } from "@dst/content/network";
 import "../styles/theme.css";
 
@@ -32,5 +33,6 @@ const nav = [
   footerSites={NETWORK}
   favicon
 >
+  <LeadTracking slot="tracking" />
   <slot />
 </BaseLayout>
