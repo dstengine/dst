@@ -67,7 +67,7 @@ export const venues: Venue[] = [
     imageLicenseSlug: "licence-cc-by-sa-4-0",
     imageSourceSlug: "photo-coca-cola-arena",
     summary:
-      "Seventeen thousand seats under one roof in City Walk, and the only indoor arena of its size in the region. Chicago plays it for five nights in December 2026 — an arena staging of a show built for a house a tenth the size.",
+      "Seventeen thousand seats under one roof in City Walk, and the only indoor arena of its size in the region. Chicago plays it eight times over five days in December 2026 — an arena staging of a show built for a house a tenth the size.",
     transit:
       "City Walk, off Al Safa Street between Financial Centre Road and Sheikh Zayed Road. Taxi or a short drive from Business Bay and Downtown Dubai.",
     details: [

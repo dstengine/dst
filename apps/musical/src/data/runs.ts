@@ -31,12 +31,9 @@ export const runs: Run[] = [
     venue: "coca-cola-arena",
     start: "2026-12-16",
     end: "2026-12-20",
-    sellers: [
-      { slug: "tickets-dubai-arena", name: "Coca-Cola Arena", official: true },
-      { slug: "tickets-dubai-ticketmaster", name: "Ticketmaster AE" },
-    ],
+    sellers: [{ slug: "tickets-dubai-ticketmaster", name: "Ticketmaster AE" }],
     summary:
-      "Five nights in December, in a room that holds seventeen thousand people. Chicago was built for a Broadway house a tenth that size, which is the whole reason to see what it does with an arena. Two sellers list it: the arena's own box office and Ticketmaster AE.",
+      "Eight performances over five days in December, in a room that holds seventeen thousand people. Chicago was built for a Broadway house a tenth that size, which is the whole reason to see what it does with an arena. The first two days are matinees only; the last three add an evening.",
     tags: ["arena", "gulf"],
   },
   {
@@ -188,7 +185,9 @@ export const runs: Run[] = [
     city: "blackpool",
     group: "uk",
     venue: "blackpool-opera-house",
-    start: "2027-06-07",
+    // The Winter Gardens box office lists the first night as Tuesday the 8th,
+    // not the Monday the tour listing implied.
+    start: "2027-06-08",
     end: "2027-06-12",
     sellers: [{ slug: "tickets-blackpool", name: "Winter Gardens Blackpool" }],
   },

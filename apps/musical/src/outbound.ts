@@ -15,8 +15,8 @@ export const outbound: Record<string, string> = {
     "https://www.telecharge.com/Chicago-tickets?AID=BWY0049300&utm_source=show_site&utm_campaign=chicagoSS&utm_medium=web&utm_id=BWY0049300",
   "tickets-tokyo": "https://www.kyodotokyo.com/chicago-en/",
   "tickets-osaka": "https://eplus.jp/sf/detail/0227890001?P6=001&P1=0402&P59=1",
-  "tickets-dubai-arena": "https://coca-cola-arena.com/",
-  "tickets-dubai-ticketmaster": "https://www.ticketmaster.ae/event/chicago-the-musical-tickets/1998162905",
+  "tickets-dubai-ticketmaster":
+    "https://www.ticketmaster.ae/artist/chicago-the-musical-tickets/1443524",
   "venue-coca-cola-arena": "https://coca-cola-arena.com/",
   "venue-ambassador-theatre": "https://www.shubert.nyc/theatres/ambassador",
   "tickets-aberdeen": "https://www.aberdeenperformingarts.com/whats-on/chicago-2027/",
@@ -109,7 +109,7 @@ export const outbound: Record<string, string> = {
   "licence-cc0": "https://creativecommons.org/publicdomain/zero/1.0/",
 };
 
-/** Path for an outbound link, e.g. go("tickets-dubai-arena") -> "/go/tickets-dubai-arena/" */
+/** Path for an outbound link, e.g. go("tickets-dubai-ticketmaster") -> "/go/tickets-dubai-ticketmaster/" */
 export function go(slug: string): string {
   return `/go/${slug}/`;
 }
