@@ -1,0 +1,56 @@
+---
+// Runs as cards, in the same card language the rest of the network uses:
+// a cover, the city, a status badge and the one fact that decides whether a
+// ticket can be bought today.
+//
+// Cards, not a table, wherever a reader is browsing — the front page, a city,
+// a venue, "the same show elsewhere". RunTable stays where a page is a
+// reference to be scanned in full: a 33-stop tour, the ticket index, runs
+// that have already played.
+import VentureGrid from "@dst/ui/VentureGrid.astro";
+import { ICONS } from "@dst/ui/icons";
+import {
+  cityBySlug, formatRun, runIntro, showBySlug, statusLabel, statusOf, venueBySlug,
+  type Run,
+} from "../content";
+
+interface Props {
+  runs: Run[];
+  /** Which fact leads the card. A page about one show leads with the city;
+      a page about one city or one theatre leads with the show. */
+  lead?: "city" | "event";
+  columns?: number;
+}
+const { runs, lead = "city", columns } = Astro.props;
+
+// Three across from a tablet up, once there are three to place: at four the
+// cards drop to 265px and the venue line starts wrapping every time. A single
+// card keeps auto-fill, so it stays card-sized instead of spanning the row.
+const across = columns ?? (runs.length >= 3 ? 3 : undefined);
+
+// A card is a decision, not a read: it gets the opening sentence, not the
+// whole opening.
+const firstSentence = (text: string) => text.match(/^.*?[.?!](?=\s|$)/)?.[0] ?? text;
+
+const items = runs.map((run) => {
+  const city = cityBySlug(run.city)?.name ?? run.city;
+  const show = showBySlug(run.show)?.title ?? run.show;
+  const venue = run.venue ? venueBySlug(run.venue)?.name : undefined;
+  return {
+    href: `/${run.show}/${run.slug}/`,
+    title: `${show} in ${city}: dates, theatre and sellers`,
+    eyebrow: lead === "city" ? show : city,
+    name: lead === "city" ? city : show,
+    status: statusLabel(run),
+    // Amber, the same badge the network uses for "in progress": announced
+    // dates with nobody selling them yet are exactly that.
+    inProgress: statusOf(run) === "announced",
+    text: firstSentence(runIntro(run)),
+    meta: venue ? `${formatRun(run)} · ${venue}` : formatRun(run),
+    // No production photography licensed yet, so every card takes the mark
+    // cover. Swap in `image` per run the day there is one.
+    icon: ICONS.stage,
+  };
+});
+---
+<VentureGrid items={items} columns={across} />

@@ -258,6 +258,22 @@ select {
 
 table { border-collapse: collapse; width: 100%; }
 th, td { text-align: left; padding: var(--space-1) var(--space-2); border-bottom: 1px solid var(--border); }
+/* The cover a card gets when the photograph does not exist yet. A 32px grey
+   glyph on a grey box reads as an image that failed to load; this reads as a
+   cover somebody chose — the site's tint, a fine rule grid, and the mark at a
+   deliberate size. Shared, because every card grid needs the same answer. */
+.mark-cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-tint);
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--accent) 12%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--accent) 12%, transparent) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+.mark-cover > svg { width: min(34%, 96px); height: auto; color: var(--accent); opacity: 0.8; }
+
 thead th { font-size: var(--step--1); text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-faint); background: var(--surface-sunk); }
 
 /* Wide tables scroll inside their own box rather than pushing the page

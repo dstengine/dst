@@ -7,9 +7,11 @@ import Glance from "@dst/ui/Glance.astro";
 import Callout from "@dst/ui/Callout.astro";
 import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
 import MapEmbed from "@dst/ui/MapEmbed.astro";
+import VenueCard from "@dst/ui/district/VenueCard.astro";
 import { ICONS } from "@dst/ui/icons";
 import Layout from "../layouts/Layout.astro";
 import RunTable from "./RunTable.astro";
+import EventCards from "./EventCards.astro";
 import {
   checkedOn, formatRun, runsInCity, statusOf, venuePath, venuesInCity, type City,
 } from "../content";
@@ -47,19 +49,22 @@ const glance = [
   <section class="container">
     <h2>{upcoming.length === 1 ? "What is on" : "What is on, soonest first"}</h2>
     {upcoming.length > 0
-      ? <RunTable runs={upcoming} lead="event" cityColumn={false} caption={`Every musical this site tracks in ${city.name}. The seller's own page is where the price is.`} />
+      ? <><p>Every musical this site tracks in {city.name}. The seller's own page is where the price is.</p><EventCards runs={upcoming} lead="event" /></>
       : <p>Nothing is currently on sale in {city.name}.</p>}
   </section>
 
   {venues.length > 0 && (
     <section class="container">
       <h2>{venues.length === 1 ? "The theatre" : "The theatres"}</h2>
-      <div class="link-grid">
+      <div class="venue-grid">
         {venues.map((venue) => (
-          <a class="card link-card" href={venuePath(venue)} title={`${venue.name}: address, capacity and what plays there`}>
-            <h3>{venue.name}</h3>
-            <p>{venue.summary ?? venue.address ?? city.name}</p>
-          </a>
+          <VenueCard
+            href={venuePath(venue)}
+            name={venue.name}
+            blurb={venue.summary ?? venue.address ?? city.name}
+            meta={venue.capacity ? `${venue.capacity.toLocaleString("en-GB")} seats` : city.name}
+            icon="stage"
+          />
         ))}
       </div>
       {mapped.length === 1 && <MapEmbed lat={mapped[0]!.lat!} lon={mapped[0]!.lon!} name={mapped[0]!.name} />}
@@ -79,3 +84,14 @@ const glance = [
     "no seller yet" — and never on the strength of a rumour.
   </Callout>
 </Layout>
+
+<style>
+  /* The same grid the venue template uses for its own cards, so a theatre
+     looks like a theatre wherever the reader meets one. */
+  .venue-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-3);
+    margin-top: var(--space-3);
+  }
+</style>

@@ -1,28 +1,15 @@
 ---
 // The front page. It has one job: show what is actually on, soonest first,
 // and make the hero event look like the standard rather than the exception.
-import Glance from "@dst/ui/Glance.astro";
-import { ICONS } from "@dst/ui/icons";
 import Layout from "../layouts/Layout.astro";
 import Promo from "../components/Promo.astro";
-import RunTable from "../components/RunTable.astro";
-import {
-  checkedOn, citiesWithPages, cityBySlug, runs, shows, upcomingRuns, venues,
-} from "../content";
+import EventCards from "../components/EventCards.astro";
+import { checkedOn, citiesWithPages, shows, upcomingRuns, venues } from "../content";
 
 const upcoming = upcomingRuns();
-const soon = upcoming.slice(0, 8);
+const soon = upcoming.slice(0, 6);
 const cityPages = citiesWithPages();
-const cityCount = new Set(runs.map((r) => r.city)).size;
-const countries = new Set(runs.map((r) => cityBySlug(r.city)?.country).filter(Boolean)).size;
 const chicago = shows[0]!;
-
-const glance = [
-  { label: "Runs listed", value: `${runs.length}`, icon: ICONS.events },
-  { label: "Cities", value: `${cityCount} in ${countries} countries`, icon: ICONS.map },
-  { label: "Venues", value: `${venues.length} with pages`, icon: ICONS.pin, href: "/venues/" },
-  { label: "Last checked", value: checkedOn, icon: ICONS.list },
-];
 ---
 <Layout
   title="Musicals on sale now"
@@ -38,14 +25,15 @@ const glance = [
       idea of what a ticket costs. This site lists all of it: the theatre, the
       dates, and who is actually selling, with the day each listing was read.
     </p>
-    <Glance facts={glance} />
   </section>
 
   <section class="container">
     <h2>On sale now</h2>
-    <RunTable runs={soon} lead="event" caption="Soonest first. Each row goes to that run's own page — theatre, times, sellers and what is not yet known." />
+    <p>Soonest first. Each card goes to that run's own page — the theatre, the dates, who is selling and what is not yet known.</p>
+    <EventCards runs={soon} />
     <p class="more">
       <a href={`/${chicago.slug}/tickets/`} title="Every run this site tracks, with every seller">All {upcoming.length} upcoming runs</a>
+      <span class="checked">Read from each production's own listing on {checkedOn}.</span>
     </p>
   </section>
 
@@ -105,5 +93,14 @@ const glance = [
 
 <style>
   .city-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
-  .more { margin-top: var(--space-3); }
+  .more {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5em var(--space-3);
+    margin-top: var(--space-3);
+  }
+  /* The date the listings were read, kept next to the listings it applies to
+     rather than in a panel of site statistics at the top of the page. */
+  .checked { color: var(--ink-faint); font-size: var(--step--1); }
 </style>

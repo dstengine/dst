@@ -60,16 +60,26 @@ const arena = venues.find((v) => v.capacity && v.capacity > 5000);
 </Layout>
 
 <style>
-  .venue-list { margin: var(--space-3) 0 0; padding: 0; list-style: none; }
+  /* A directory, so it stays a list rather than thirty-six identical cards —
+     but in columns, because a single column of short names down the left of a
+     1280px page is half a page of nothing. */
+  .venue-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    column-gap: var(--space-4);
+    margin: var(--space-3) 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  /* Name over meta, always — inline meta wrapped on some names and not on
+     others, and three columns of that read as a ragged edge. */
   .venue-list li {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 0.35rem var(--space-2);
+    max-width: none;
+    padding-bottom: 0.5rem;
     border-bottom: 1px solid var(--border);
   }
-  /* The row is a list of names on a phone, and a name is the tap target —
-     so the padding belongs to the link rather than to the row around it. */
-  .venue-list a { display: inline-block; padding: 0.55rem 0; }
-  .venue-meta { color: var(--ink-muted); font-size: var(--step--1); }
+  /* The name is the tap target, so it carries the height rather than the row
+     around it. */
+  .venue-list a { display: flex; align-items: center; min-height: 44px; }
+  .venue-meta { display: block; color: var(--ink-muted); font-size: var(--step--1); }
 </style>

@@ -1,5 +1,6 @@
 ---
 import Photo from "./Photo.astro";
+import { ICONS } from "../icons";
 // Extracted 1:1 from the dst.llc hub grid — same markup, same class names,
 // same CSS. It stayed frozen so no other site could drag the hub's own grid
 // around by accident. The column cap below is the first deliberate change to
@@ -16,6 +17,9 @@ export interface VentureCardItem {
   image?: string;
   imageAlt?: string;
   icon?: string;
+  /** A fact line under the text, set off by a rule: dates, a place, a price.
+      Cards that don't pass one look exactly as they did. */
+  meta?: string;
 }
 interface Props {
   items: VentureCardItem[];
@@ -24,13 +28,14 @@ interface Props {
   columns?: number;
 }
 const { items, columns } = Astro.props;
+const metaIcon = ICONS.events;
 ---
 <div class:list={["venture-grid", columns && "venture-grid-pinned"]} style={columns ? `--venture-columns: ${columns}` : undefined}>
   {items.map((item) => {
     const Tag = item.href ? "a" : "article";
     return (
       <Tag class="venture" href={item.href} title={item.title}>
-        <div class:list={["venture-media", !item.image && "venture-media-mark"]}>
+        <div class:list={["venture-media", !item.image && "mark-cover"]}>
           {item.image ? (
             <Photo src={item.image} alt={item.imageAlt ?? ""} sizes="(max-width: 700px) 100vw, 420px" />
           ) : (
@@ -46,6 +51,12 @@ const { items, columns } = Astro.props;
           </div>
           <h3>{item.name}</h3>
           <p>{item.text}</p>
+          {item.meta && (
+            <p class="venture-fact">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={metaIcon} /></svg>
+              <span>{item.meta}</span>
+            </p>
+          )}
         </div>
       </Tag>
     );
@@ -105,6 +116,11 @@ const { items, columns } = Astro.props;
     justify-content: center;
     aspect-ratio: 16 / 9;
     overflow: hidden;
+  }
+  /* The photograph's own backdrop. Excluded on .mark-cover, which brings the
+     shared no-photo cover from tokens.css — scoped styles load after that
+     file, so without the exclusion this would quietly win and grey it out. */
+  .venture-media:not(.mark-cover) {
     background: linear-gradient(140deg, var(--surface-sunk), var(--surface));
   }
   .venture-media img {
@@ -114,23 +130,9 @@ const { items, columns } = Astro.props;
     transition: transform 400ms ease;
   }
   a.venture:hover .venture-media img { transform: scale(1.03); }
-  /* A card with no photograph used to show a 30px grey glyph on an almost
-     invisible gradient, which reads as an image that failed to load. It is a
-     cover in its own right instead: the brand tint, a fine rule grid, and the
-     mark at a size that looks chosen rather than defaulted. */
-  .venture-media-mark {
-    background: var(--accent-tint);
-    background-image:
-      linear-gradient(to right, color-mix(in srgb, var(--accent) 12%, transparent) 1px, transparent 1px),
-      linear-gradient(to bottom, color-mix(in srgb, var(--accent) 12%, transparent) 1px, transparent 1px);
-    background-size: 28px 28px;
-  }
-  .venture-media-mark svg {
-    width: min(34%, 96px);
-    height: auto;
-    color: var(--accent);
-    opacity: 0.8;
-  }
+  /* The no-photograph cover is .mark-cover in tokens.css — every card grid
+     in the network shares it, so a site without licensed photography looks
+     the same wherever its cards appear. */
 
   .venture-body { padding: var(--space-3); }
   .venture-meta { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); }
@@ -147,4 +149,14 @@ const { items, columns } = Astro.props;
   .venture-status-progress { color: var(--warn); background: var(--warn-bg); }
   .venture h3 { margin-top: var(--space-2); margin-bottom: var(--space-1); font-size: var(--step-1); font-weight: 600; }
   .venture-body p { margin: 0; font-size: var(--step--1); color: var(--ink-muted); }
+  .venture-body .venture-fact {
+    display: flex;
+    align-items: center;
+    gap: 0.45em;
+    margin-top: var(--space-2);
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--border);
+    color: var(--ink-faint);
+  }
+  .venture-fact svg { width: 15px; height: 15px; flex-shrink: 0; color: var(--accent); }
 </style>

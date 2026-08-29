@@ -12,7 +12,7 @@ import OnThisPage from "@dst/ui/OnThisPage.astro";
 import CountdownScript from "@dst/ui/CountdownScript.astro";
 import { ICONS } from "@dst/ui/icons";
 import Layout from "../layouts/Layout.astro";
-import RunTable from "./RunTable.astro";
+import EventCards from "./EventCards.astro";
 import StatusBadge from "./StatusBadge.astro";
 import TicketButtons from "./TicketButtons.astro";
 import { go } from "../outbound";
@@ -189,7 +189,8 @@ const eventLd: Record<string, unknown> = {
   {elsewhere.length > 0 && (
     <section class="container" id="elsewhere">
       <h2>The same show elsewhere</h2>
-      <RunTable runs={elsewhere} caption={group ? `Nearby stops on the ${group.name}, and the rest of the calendar.` : "Every other run currently listed."} />
+      <p>{group ? `Nearby stops on the ${group.name}, and the rest of the calendar.` : "Every other run currently listed."}</p>
+      <EventCards runs={elsewhere} />
       <p class="more"><a href={`/${show.slug}/tickets/`} title={`Every run of ${show.title} and every seller`}>All {show.title} dates and sellers</a></p>
     </section>
   )}
@@ -197,7 +198,8 @@ const eventLd: Record<string, unknown> = {
   {related.length > 0 && (
     <section class="container" id="related">
       <h2>Related events</h2>
-      <RunTable runs={related} lead="event" cityColumn={false} caption={`Also on in ${city.name}.`} />
+      <p>Also on in {city.name}.</p>
+      <EventCards runs={related} lead="event" />
     </section>
   )}
   <CountdownScript />

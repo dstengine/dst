@@ -96,6 +96,14 @@ export const upcomingRuns = (): Run[] =>
     .filter((r) => statusOf(r) !== "ended")
     .sort((a, b) => (a.openRun ? "" : a.start ?? "9999").localeCompare(b.openRun ? "" : b.start ?? "9999"));
 
+/** Small numbers are words in running text — the hand-written summaries say
+    "Twelve days", and a composed one should not answer "5 days" beside them. */
+const WORDS = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve"];
+const spell = (n: number): string => {
+  const word = WORDS[n];
+  return word ? word[0]!.toUpperCase() + word.slice(1) : String(n);
+};
+
 /** An opening sentence for a run nobody has written one for, composed from
     what is true about it: how long it plays, where it sits in its tour, and
     who is selling. Never a template with holes — every clause is a fact or
@@ -108,8 +116,11 @@ export function runIntro(run: Run): string {
   const group = run.group ? groupBySlug(run.group) : undefined;
   const parts: string[] = [];
 
-  const length = n === 1 ? "One night" : n ? `${n} days` : "Dates announced";
-  parts.push(venue ? `${length} at ${venue}, ${city}.` : `${length} in ${city}.`);
+  const length = n === 1 ? "One night" : n ? `${spell(n)} days` : "Dates announced";
+  // "Theatre Royal Plymouth, Plymouth" — a venue named after its city says the
+  // city already, and the sentence should not say it twice.
+  const named = venue?.toLowerCase().includes(city.toLowerCase());
+  parts.push(venue ? `${length} at ${venue}${named ? "" : `, ${city}`}.` : `${length} in ${city}.`);
 
   if (group) {
     const ordered = runsInGroup(group.slug).sort((a, b) => (a.start ?? "").localeCompare(b.start ?? ""));

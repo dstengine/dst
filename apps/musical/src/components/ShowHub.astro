@@ -9,7 +9,7 @@ import OnThisPage from "@dst/ui/OnThisPage.astro";
 import { ICONS } from "@dst/ui/icons";
 import Layout from "../layouts/Layout.astro";
 import Clips from "./Clips.astro";
-import RunTable from "./RunTable.astro";
+import EventCards from "./EventCards.astro";
 import {
   checkedOn, cityBySlug, formatRun, groups, runsFor, runsInGroup, statusOf,
   upcomingRuns, venueBySlug, venuePath, type Show,
@@ -84,8 +84,9 @@ const jump = [
 
   <section class="container" id="playing">
     <h2>Where it plays</h2>
-    <RunTable runs={upcoming.slice(0, 10)} caption="Soonest first. Every city has its own page, with the theatre, the dates and the seller." />
-    {upcoming.length > 10 && (
+    <p>Soonest first. Every city has its own page, with the theatre, the dates and the seller.</p>
+    <EventCards runs={upcoming.slice(0, 6)} />
+    {upcoming.length > 6 && (
       <p class="more">
         <a href={`/${show.slug}/tickets/`} title={`All ${all.length} runs of ${show.title}, with every seller`}>All {all.length} runs and every seller</a>
       </p>

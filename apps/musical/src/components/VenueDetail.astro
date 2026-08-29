@@ -8,6 +8,7 @@ import MapEmbed from "@dst/ui/MapEmbed.astro";
 import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
 import Layout from "../layouts/Layout.astro";
 import RunTable from "./RunTable.astro";
+import EventCards from "./EventCards.astro";
 import { go } from "../outbound";
 import {
   checkedOn, cityBySlug, cityHasPage, statusOf, runsAtVenue, venues,
@@ -42,6 +43,9 @@ const related = venues
     name: v.name,
     blurb: v.summary ?? `${cityBySlug(v.city)?.name ?? v.city} — ${runsAtVenue(v.slug).length} run listed here.`,
     meta: cityBySlug(v.city)?.name,
+    // No theatre photography licensed yet, so every card takes the mark
+    // cover. It is the same cover the network's other card grids use.
+    icon: "stage",
   }));
 
 const placeLd: Record<string, unknown> = {
@@ -85,7 +89,6 @@ const description = venue.summary
     externalLabel="Official site"
     related={related}
     relatedHeading="Other theatres on this site"
-    relatedMedia={false}
     backHref="/venues/"
     backLabel="All venues"
   >
@@ -100,7 +103,7 @@ const description = venue.summary
     <section slot="after" class="container">
       <h2>What is playing here</h2>
       {upcoming.length > 0
-        ? <RunTable runs={upcoming} lead="event" cityColumn={false} />
+        ? <EventCards runs={upcoming} lead="event" />
         : <p>Nothing on this site's calendar is playing here at the moment.</p>}
       {past.length > 0 && (
         <RunTable runs={past} lead="event" cityColumn={false} caption="Already played." />
