@@ -64,6 +64,35 @@ export const outbound: Record<string, string> = {
   "venue-venue-cymru": "https://www.venuecymru.co.uk/",
   "info-llandudno": "https://www.venuecymru.co.uk/chicago-3",
   "venue-wales-millennium-centre": "https://www.wmc.org.uk/",
+
+  // The file page each venue photograph came from, and the licence it is
+  // published under. Both are named in the caption under the picture
+  // because the licence requires it — and both go through the hop, like
+  // every other outbound address on this site.
+  "photo-coca-cola-arena": "https://commons.wikimedia.org/wiki/File:Westlife_at_Coca-Cola_Arena_-_1.jpg",
+  "photo-everyman-theatre-cheltenham": "https://commons.wikimedia.org/wiki/File:Everyman_Theatre,_Cheltenham-4077863023.jpg",
+  "photo-grand-opera-house-york": "https://commons.wikimedia.org/wiki/File:Grand_Opera_House,_York_Feb_2022_02.jpg",
+  "photo-hall-for-cornwall": "https://commons.wikimedia.org/wiki/File:Hall_for_Cornwall_on_Back_Quay,_Truro_-_geograph.org.uk_-_4429068.jpg",
+  "photo-hull-new-theatre": "https://commons.wikimedia.org/wiki/File:Hull_New_Theatre,_Hull_-_geograph.org.uk_-_5233236.jpg",
+  "photo-kings-theatre-glasgow": "https://commons.wikimedia.org/wiki/File:King%27s_Theatre,_Glasgow_02.jpg",
+  "photo-liverpool-empire": "https://commons.wikimedia.org/wiki/File:Empire_Theatre,_Lime_Street,_Liverpool_-_geograph.org.uk_-_4767710.jpg",
+  "photo-new-theatre-oxford": "https://commons.wikimedia.org/wiki/File:New_Theatre_Oxford_Geograph-4785233-by-Steve-Daniels.jpg",
+  "photo-new-wimbledon-theatre": "https://commons.wikimedia.org/wiki/File:New_Wimbledon_Theatre_-_geograph.org.uk_-_3809753.jpg",
+  "photo-norwich-theatre-royal": "https://commons.wikimedia.org/wiki/File:Norwich_Theatre_Royal_-_geograph.org.uk_-_7566091.jpg",
+  "photo-nottingham-royal-concert-hall": "https://commons.wikimedia.org/wiki/File:Theatre_Royal-Royal_Concert_Hall,_South_Sherwood_Street_-_geograph.org.uk_-_7397361.jpg",
+  "photo-opera-house-manchester": "https://commons.wikimedia.org/wiki/File:Opera_House,_Manchester_-_geograph.org.uk_-_5624967.jpg",
+  "photo-orix-theater": "https://commons.wikimedia.org/wiki/File:ORIX_Theatre.jpg",
+  "photo-sheffield-lyceum": "https://commons.wikimedia.org/wiki/File:Lyceum_Theatre,_Sheffield_(1).JPG",
+  "photo-sunderland-empire": "https://commons.wikimedia.org/wiki/File:Sunderland_-_High_St_West_%5E_Empire_Theatre_-_geograph.org.uk_-_7939436.jpg",
+  "photo-theatre-royal-brighton": "https://commons.wikimedia.org/wiki/File:Theatre_Royal,_New_Road,_Brighton_(NHLE_Code_1380103)_(May_2020)_(2).JPG",
+  "photo-theatre-royal-plymouth": "https://commons.wikimedia.org/wiki/File:Theatre_Royal,_Plymouth.jpg",
+  "photo-venue-cymru": "https://commons.wikimedia.org/wiki/File:Venue_Cymru_(geograph_5294767).jpg",
+  "photo-woking-theatre": "https://commons.wikimedia.org/wiki/File:New_Victoria_Theatre,_Victoria_Way,_Woking_(June_2015)_(2).jpg",
+  "licence-cc-by-2-0": "https://creativecommons.org/licenses/by/2.0/",
+  "licence-cc-by-sa-2-0": "https://creativecommons.org/licenses/by-sa/2.0/",
+  "licence-cc-by-sa-3-0": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "licence-cc-by-sa-4-0": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "licence-cc0": "https://creativecommons.org/publicdomain/zero/1.0/",
 };
 
 /** Path for an outbound link, e.g. go("tickets-dubai-arena") -> "/go/tickets-dubai-arena/" */

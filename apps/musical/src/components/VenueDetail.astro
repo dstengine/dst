@@ -127,7 +127,12 @@ const description = venue.summary
     imageAlt={venue.imageAlt}
     imagePosition={venue.imagePosition}
     imageCredit={venue.imageCredit && venue.imageLicense
-      ? { name: venue.imageCredit, license: venue.imageLicense, licenseUrl: venue.imageLicenseUrl, sourceUrl: venue.imageSourceUrl }
+      ? {
+          name: venue.imageCredit,
+          license: venue.imageLicense,
+          licenseUrl: venue.imageLicenseSlug ? go(venue.imageLicenseSlug) : undefined,
+          sourceUrl: venue.imageSourceSlug ? go(venue.imageSourceSlug) : undefined,
+        }
       : undefined}
     building={venue.address}
     details={details}

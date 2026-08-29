@@ -39,8 +39,6 @@ const ALLOWED = {
   "www.openstreetmap.org": "the keyless map embed used on venue and event pages",
   "nominatim.openstreetmap.org": "names the place behind GPS coordinates, once the visitor has granted them",
   "www.youtube-nocookie.com": "video the uploader allows to be embedded, in YouTube's no-cookie player",
-  "commons.wikimedia.org": "the file page a Creative Commons photograph came from — the licence requires a link to the original, and a nofollow /go/ hop would not be one",
-  "creativecommons.org": "the licence a photograph is published under, named in its caption as the licence requires",
 };
 
 // Fields of a VideoObject that say where the embedded media lives rather

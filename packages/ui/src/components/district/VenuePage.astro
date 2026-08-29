@@ -43,7 +43,9 @@ interface Props {
   /** Where the picture came from. A photograph under a Creative Commons
       licence may only be published with its photographer, its licence and a
       way back to the original, so the caption is part of the picture rather
-      than a decoration on it. */
+      than a decoration on it. The caller supplies the two addresses, which
+      lets a site that routes everything outbound through a hop pass its own
+      hop rather than the destination. */
   imageCredit?: { name: string; license: string; licenseUrl?: string; sourceUrl?: string };
   gallery?: string[];
   building?: string;
@@ -105,9 +107,9 @@ const hasPanel = Boolean(building || hourRows.length || phone || details?.length
   {image && imageCredit && (
     <p class="venue-credit">
       Photograph by {imageCredit.sourceUrl
-        ? <a href={imageCredit.sourceUrl} rel="nofollow" title={`${imageCredit.name}'s original of this photograph`}>{imageCredit.name}</a>
+        ? <a href={imageCredit.sourceUrl} title={`${imageCredit.name}'s original of this photograph`}>{imageCredit.name}</a>
         : imageCredit.name}, {imageCredit.licenseUrl
-        ? <a href={imageCredit.licenseUrl} rel="nofollow license" title={`The ${imageCredit.license} licence in full`}>{imageCredit.license}</a>
+        ? <a href={imageCredit.licenseUrl} rel="license" title={`The ${imageCredit.license} licence in full`}>{imageCredit.license}</a>
         : imageCredit.license}.
     </p>
   )}

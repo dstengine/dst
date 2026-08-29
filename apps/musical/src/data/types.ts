@@ -55,11 +55,14 @@ export interface Venue {
   imagePosition?: string;
   /** Attribution. The licences these pictures come under require the
       photographer's name, the licence and a way back to the original, so
-      the four travel together or the picture does not ship. */
+      the four travel together or the picture does not ship. The two
+      addresses are keys in outbound.ts, not URLs: every external address on
+      this site lives there and is reached through /go/, attribution
+      included. */
   imageCredit?: string;
   imageLicense?: string;
-  imageLicenseUrl?: string;
-  imageSourceUrl?: string;
+  imageLicenseSlug?: string;
+  imageSourceSlug?: string;
   details?: { label: string; value: string }[];
   highlights?: { title: string; text: string }[];
   sections?: { heading?: string; paragraphs: string[] }[];
