@@ -1,0 +1,138 @@
+---
+// The show's own page: /chicago/. It is the top of everything about one
+// event — every run, the tour, the history, the video, the theatre it lives
+// in — and it is the page the rest of the site treats as the format. A
+// second show gets this same page from the same data, with nothing here
+// naming Chicago.
+import Glance from "@dst/ui/Glance.astro";
+import OnThisPage from "@dst/ui/OnThisPage.astro";
+import { ICONS } from "@dst/ui/icons";
+import Layout from "../layouts/Layout.astro";
+import Clips from "./Clips.astro";
+import RunTable from "./RunTable.astro";
+import {
+  checkedOn, cityBySlug, formatRun, groups, runsFor, runsInGroup, statusOf,
+  upcomingRuns, venueBySlug, venuePath, type Show,
+} from "../content";
+
+interface Props { show: Show }
+const { show } = Astro.props;
+
+const all = runsFor(show.slug);
+const upcoming = upcomingRuns().filter((r) => r.show === show.slug);
+const openRun = all.find((r) => r.openRun);
+const openVenue = openRun?.venue ? venueBySlug(openRun.venue) : undefined;
+const next = upcoming.find((r) => !r.openRun);
+const nextCity = next ? cityBySlug(next.city)?.name : undefined;
+const cityCount = new Set(all.map((r) => r.city)).size;
+const showGroups = groups.filter((g) => all.some((r) => r.group === g.slug));
+const clips = (show.clips ?? []).slice(0, 2);
+
+// First night to last, read off the group's own stops rather than typed into
+// the card — a tour that gains a date changes this line by itself.
+function groupSpan(slug: string): string {
+  const dated = runsInGroup(slug).filter((r) => r.start).sort((a, b) => a.start!.localeCompare(b.start!));
+  const first = dated[0];
+  const last = dated[dated.length - 1];
+  if (!first || !last) return "";
+  const day = (iso: string, withYear: boolean) =>
+    new Date(`${iso}T00:00:00Z`).toLocaleDateString("en-GB", {
+      timeZone: "UTC", day: "numeric", month: "long", ...(withYear ? { year: "numeric" } : {}),
+    });
+  const end = last.end ?? last.start!;
+  return `${day(first.start!, first.start!.slice(0, 4) !== end.slice(0, 4))} – ${day(end, true)}`;
+}
+
+const glance = [
+  { label: "Cities", value: `${cityCount} listed`, icon: ICONS.map },
+  openRun && openVenue && {
+    label: "Home",
+    value: openVenue.name,
+    icon: ICONS.pin,
+    href: venuePath(openVenue),
+  },
+  openRun && {
+    label: "Open run",
+    value: `${cityBySlug(openRun.city)?.name ?? openRun.city}, since ${formatRun(openRun).replace("Playing since ", "")}`,
+    icon: ICONS.stage,
+    href: `/${show.slug}/${openRun.slug}/`,
+  },
+  next && nextCity && { label: "Next", value: `${nextCity}, ${formatRun(next)}`, icon: ICONS.events, href: `/${show.slug}/${next.slug}/` },
+  { label: "On sale", value: `${all.filter((r) => statusOf(r) === "on-sale").length} of ${all.length} runs`, icon: ICONS.ticket },
+  { label: "Last checked", value: checkedOn, icon: ICONS.list },
+].filter(Boolean) as { label: string; value: string; icon: string; href?: string }[];
+
+const jump = [
+  { id: "playing", label: "Where it plays" },
+  showGroups.length > 0 && { id: "tours", label: "Tours" },
+  { id: "read", label: "Read on" },
+  clips.length > 0 && { id: "watch", label: "Watch" },
+].filter(Boolean) as { id: string; label: string }[];
+---
+<Layout title={show.title} description={show.summary}>
+  <section class="container hero">
+    <p class="eyebrow">The event we cover in full</p>
+    <h1>{show.title}</h1>
+    <p class="lede">{show.hook[0]}</p>
+    <OnThisPage items={jump} />
+    <Glance facts={glance} />
+  </section>
+
+  <section class="container prose">
+    {show.hook.slice(1).map((paragraph) => <p>{paragraph}</p>)}
+  </section>
+
+  <section class="container" id="playing">
+    <h2>Where it plays</h2>
+    <RunTable runs={upcoming.slice(0, 10)} caption="Soonest first. Every city has its own page, with the theatre, the dates and the seller." />
+    {upcoming.length > 10 && (
+      <p class="more">
+        <a href={`/${show.slug}/tickets/`} title={`All ${all.length} runs of ${show.title}, with every seller`}>All {all.length} runs and every seller</a>
+      </p>
+    )}
+  </section>
+
+  {showGroups.length > 0 && (
+    <section class="container" id="tours">
+      <h2>Tours</h2>
+      <div class="link-grid">
+        {showGroups.map((group) => (
+          <a class="card link-card" href={`/${show.slug}/${group.slug}/`} title={group.title}>
+            <h3>{group.name}</h3>
+            <p>{group.blurb}</p>
+            <p class="card-meta">{groupSpan(group.slug)}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <section class="container" id="read">
+    <h2>Read on</h2>
+    <div class="link-grid">
+      {show.sections.map((section) => (
+        <a class="card link-card" href={`/${show.slug}/${section.slug}/`} title={section.title}>
+          <h3>{section.label}</h3>
+          <p>{section.description}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  {clips.length > 0 && (
+    <section class="container" id="watch">
+      <h2>Two minutes, no ticket</h2>
+      <p>What it looks and sounds like, from channels the rights holders run themselves.</p>
+      <Clips clips={clips} showSlug={show.slug} heading={3} />
+      <p class="more">
+        <a href={`/${show.slug}/online/`} title={`Everything from ${show.title} you can legally watch`}>Everything you can legally watch</a>
+      </p>
+    </section>
+  )}
+</Layout>
+
+<style>
+  .prose p { max-width: 68ch; }
+  .more { margin-top: var(--space-3); }
+  .card-meta { margin: var(--space-2) 0 0; color: var(--ink-faint); font-family: var(--font-mono); font-size: var(--step--1); }
+</style>

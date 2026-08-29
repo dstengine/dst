@@ -1,39 +1,50 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { checkedOn, disclaimer } from "../content";
+import { checkedOn, disclaimer, runs, shows, venues } from "../content";
 ---
 <Layout
   title="About this site"
-  description="Who publishes musical.today, how its listings are checked, and why unannounced dates and venues are left blank rather than filled in."
+  description="How musical.today builds a listing: one source per fact, the seller named next to every ticket link, and nothing filled in that has not been published."
 >
   <section class="container hero">
     <p class="eyebrow">About</p>
     <h1>About this site</h1>
-    <p class="lede">{disclaimer}</p>
+    <p class="lede">
+      Most listings sites are a search box in front of an affiliate feed. This
+      one is a hand-built calendar: {runs.length} runs, {venues.length} venues,
+      each read from the production's own source and stamped with the day it was
+      read. {disclaimer}
+    </p>
   </section>
 
   <section class="container prose">
     <h2>How a listing gets here</h2>
     <p>
-      A show appears when it is on sale through a seller that can be named,
-      and the entry carries only what that seller's listing states. Dates,
-      venue, price bands and cast are left blank until they are published —
-      marked "to be announced" rather than filled in with the most plausible
-      answer. Listings were last read on {checkedOn}.
+      A run is added from the production's own listing — dates, theatre, seller
+      — and nothing else is invented to fill the row. Where a theatre has not
+      been announced, the page says so; where nobody is selling tickets yet, it
+      says that instead of pointing at a resale site. Listings were last read on
+      {" "}{checkedOn}, and that date is printed on every page it applies to.
+    </p>
+    <h2>Every event gets the full treatment</h2>
+    <p>
+      The format you see on {shows[0]!.title} — a page per run, a page per
+      theatre, the history, the video, the calendar file — is the standard here,
+      not a one-off. An event earns it by being worth the attention; nothing
+      about the format is specific to one show.
     </p>
     <h2>Links out</h2>
     <p>
-      The only outbound links are to ticket sellers, and they go through a
-      redirect that is closed to search engines. This site earns nothing from
-      them; it is a listings site, not a reseller, and it takes no booking and
-      handles no payment.
+      The only outbound links are to sellers and to venues' own sites, and they
+      go through a redirect closed to search engines. Every button says who it
+      leads to before you press it. This site takes no booking, handles no
+      payment and sets no price.
     </p>
     <h2>Corrections</h2>
     <p>
-      If something here is wrong — a date that moved, a run that was cancelled,
-      a show that never existed — it should be corrected rather than argued
-      with. This page will carry a contact route once the site is past its
-      first draft.
+      Dates move and runs are cancelled. If something here is wrong it should be
+      corrected rather than argued with; this page will carry a contact route as
+      soon as the site is past its first season.
     </p>
   </section>
 </Layout>

@@ -1,0 +1,121 @@
+---
+// A theatre or arena, with what plays there. Built on the network's venue
+// template — the one the district guides use — because a venue page is a
+// venue page: hero, facts panel, prose, related places. What this site adds
+// through its slots is the map and the calendar of runs.
+import VenuePage from "@dst/ui/district/VenuePage.astro";
+import MapEmbed from "@dst/ui/MapEmbed.astro";
+import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
+import Layout from "../layouts/Layout.astro";
+import RunTable from "./RunTable.astro";
+import { go } from "../outbound";
+import {
+  checkedOn, cityBySlug, cityHasPage, statusOf, runsAtVenue, venues,
+  venuePath, type Venue,
+} from "../content";
+
+interface Props { venue: Venue }
+const { venue } = Astro.props;
+
+const city = cityBySlug(venue.city)!;
+const here = runsAtVenue(venue.slug);
+const upcoming = here.filter((r) => statusOf(r) !== "ended");
+const past = here.filter((r) => statusOf(r) === "ended");
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
+
+// The address is already the panel's first block (`building`), so it is not
+// repeated as a row underneath it.
+const details = [
+  ...(venue.details ?? []),
+  { label: "City", value: `${city.name}, ${city.country}` },
+  { label: "Last checked", value: checkedOn },
+];
+
+// Other theatres this site knows: the same city first — that is the useful
+// comparison — then the rest of the country.
+const related = venues
+  .filter((v) => v.slug !== venue.slug)
+  .sort((a, b) => Number(b.city === venue.city) - Number(a.city === venue.city))
+  .slice(0, 3)
+  .map((v) => ({
+    href: venuePath(v),
+    name: v.name,
+    blurb: v.summary ?? `${cityBySlug(v.city)?.name ?? v.city} — ${runsAtVenue(v.slug).length} run listed here.`,
+    meta: cityBySlug(v.city)?.name,
+  }));
+
+const placeLd: Record<string, unknown> = {
+  "@context": "https://schema.org",
+  "@type": "PerformingArtsTheatre",
+  name: venue.name,
+  ...(canonical ? { url: canonical, "@id": `${canonical}#place` } : {}),
+  ...(venue.address
+    ? { address: { "@type": "PostalAddress", streetAddress: venue.address, addressLocality: city.name, addressCountry: city.country } }
+    : { address: { "@type": "PostalAddress", addressLocality: city.name, addressCountry: city.country } }),
+  ...(venue.lat && venue.lon ? { geo: { "@type": "GeoCoordinates", latitude: venue.lat, longitude: venue.lon } } : {}),
+  ...(venue.capacity ? { maximumAttendeeCapacity: venue.capacity } : {}),
+  ...(venue.summary ? { description: venue.summary } : {}),
+};
+
+const description = venue.summary
+  ?? `${venue.name} in ${city.name}: address, how to get there, and what is playing — ${here.length === 1 ? "one run" : `${here.length} runs`} listed.`;
+---
+<Layout
+  title={`${venue.name}, ${city.name}`}
+  description={description.slice(0, 300)}
+  jsonLd={[placeLd]}
+>
+  <div class="container venue-crumbs">
+    <Breadcrumbs
+      crumbs={[{ href: "/venues/", label: "Venues" }]}
+      current={venue.name}
+      homeLabel="What's on"
+    />
+  </div>
+  <VenuePage
+    eyebrow={`${city.name}, ${city.country}`}
+    name={venue.name}
+    tagline={venue.capacity ? `${venue.capacity.toLocaleString("en-GB")} seats` : undefined}
+    description={description}
+    building={venue.address}
+    details={details}
+    highlights={venue.highlights}
+    sections={venue.sections}
+    externalHref={venue.officialSlug ? go(venue.officialSlug) : undefined}
+    externalLabel="Official site"
+    related={related}
+    relatedHeading="Other theatres on this site"
+    relatedMedia={false}
+    backHref="/venues/"
+    backLabel="All venues"
+  >
+    {venue.transit && (
+      <section class="venue-section">
+        <h2>Getting there</h2>
+        <p>{venue.transit}</p>
+      </section>
+    )}
+    {venue.lat && venue.lon && <MapEmbed lat={venue.lat} lon={venue.lon} name={venue.name} />}
+
+    <section slot="after" class="container">
+      <h2>What is playing here</h2>
+      {upcoming.length > 0
+        ? <RunTable runs={upcoming} lead="event" cityColumn={false} />
+        : <p>Nothing on this site's calendar is playing here at the moment.</p>}
+      {past.length > 0 && (
+        <RunTable runs={past} lead="event" cityColumn={false} caption="Already played." />
+      )}
+      {cityHasPage(city) && (
+        <p class="venue-city">
+          <a href={`/${city.slug}/`} title={`Musicals playing ${city.name}`}>Everything on in {city.name}</a>
+        </p>
+      )}
+    </section>
+  </VenuePage>
+</Layout>
+
+<style>
+  .venue-crumbs { padding-top: var(--space-4); }
+  .venue-section h2 { margin-top: var(--space-4); }
+  .venue-city { margin-top: var(--space-3); }
+</style>

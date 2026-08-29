@@ -49,6 +49,8 @@ interface Props {
   mapHref?: string;
   related?: Related[];
   relatedHeading?: string;
+  /** Passed through to the cards — see VenueCard's `media`. */
+  relatedMedia?: boolean;
   backHref: string;
   backLabel: string;
 }
@@ -71,6 +73,7 @@ const {
   mapHref,
   related,
   relatedHeading = "Nearby",
+  relatedMedia = true,
   backHref,
   backLabel,
 } = Astro.props;
@@ -111,6 +114,11 @@ const hasPanel = Boolean(building || hourRows.length || phone || details?.length
         {section.paragraphs.map((paragraph) => <p set:html={paragraph} />)}
       </section>
     ))}
+
+    {/* Blocks only one caller has: a map, a list of what is playing here.
+        Renders nothing when nothing is passed, so the district sites that
+        have used this template since it was written are unchanged. */}
+    <slot />
   </div>
 
   {hasPanel && (
@@ -179,11 +187,13 @@ const hasPanel = Boolean(building || hourRows.length || phone || details?.length
   </section>
 )}
 
+<slot name="after" />
+
 {related && related.length > 0 && (
   <section class="container venue-related">
     <h2>{relatedHeading}</h2>
     <div class="venue-grid">
-      {related.map((venue) => <VenueCard {...venue} />)}
+      {related.map((venue) => <VenueCard {...venue} media={relatedMedia} />)}
     </div>
   </section>
 )}

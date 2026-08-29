@@ -1,0 +1,104 @@
+---
+// Every run in one table: city, theatre, dates, status, and the way in. It
+// carries the tour overview, the tickets page, the city pages and the front
+// page, so a reader comparing two stops is comparing the same columns.
+//
+// On a phone it stops being a table and becomes a stack of cards. A row of
+// five columns squeezed into 360px is unreadable, and a table that scrolls
+// sideways hides the city — which is the column people came for.
+import { cityBySlug, formatRun, showBySlug, statusOf, ticketButtons, venueBySlug, venuePath, type Run } from "../content";
+import StatusBadge from "./StatusBadge.astro";
+
+interface Props {
+  runs: Run[];
+  /** Which column leads. A show's own pages compare cities; a city page
+      compares events. The rest of the table is identical either way, and so
+      is the link: every row goes to the run's page. */
+  lead?: "city" | "event";
+  /** Whether the city gets a column of its own. It does when the rows are
+      events in different places; it does not on a page that is already about
+      one city or one building, where the column would repeat itself down the
+      whole table. */
+  cityColumn?: boolean;
+  caption?: string;
+}
+const { runs, lead = "city", cityColumn = lead === "event", caption } = Astro.props;
+const rows = runs.map((run) => {
+  const city = cityBySlug(run.city)?.name ?? run.city;
+  const show = showBySlug(run.show);
+  return {
+    run,
+    city,
+    title: show?.title ?? run.show,
+    href: `/${run.show}/${run.slug}/`,
+    label: lead === "event" ? show?.title ?? run.show : city,
+    venue: run.venue ? venueBySlug(run.venue) : undefined,
+    buttons: ticketButtons(run),
+  };
+});
+---
+<div class="run-table">
+  {caption && <p class="run-table-caption">{caption}</p>}
+  <table>
+    <thead>
+      <tr><th scope="col">{lead === "event" ? "Event" : "City"}</th>{cityColumn && <th scope="col">City</th>}<th scope="col">Theatre</th><th scope="col">Dates</th><th scope="col">Status</th><th scope="col">Tickets</th></tr>
+    </thead>
+    <tbody>
+      {rows.map(({ run, city, title, href, label, venue, buttons }) => (
+        <tr>
+          <th scope="row">
+            <a href={href} title={`${title} in ${city}`}>{label}</a>
+          </th>
+          {cityColumn && <td>{city}</td>}
+          <td>
+            {venue
+              ? <a href={venuePath(venue)} title={`${venue.name}, ${city}`}>{venue.name}</a>
+              : <span class="tba">Not announced</span>}
+          </td>
+          <td>{formatRun(run)}</td>
+          <td><StatusBadge run={run} /></td>
+          <td>
+            {buttons.length > 0
+              ? <a href={buttons[0]!.href} rel="nofollow" title={`Buy tickets for ${title} in ${city} from ${buttons[0]!.seller.name}`}>{buttons.length === 1 ? buttons[0]!.seller.name : `${buttons.length} sellers`}</a>
+              : <span class="tba">{statusOf(run) === "ended" ? "Run ended" : "Not on sale"}</span>}
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .run-table { margin: var(--space-4) 0 0; }
+  .run-table-caption { margin: 0 0 var(--space-2); color: var(--ink-muted); }
+  .run-table table { width: 100%; border-collapse: collapse; }
+  .run-table th, .run-table td {
+    text-align: left;
+    padding: var(--space-2) var(--space-2) var(--space-2) 0;
+    border-bottom: 1px solid var(--border);
+    vertical-align: baseline;
+  }
+  .run-table thead th {
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-weight: 400;
+  }
+  .run-table tbody th { font-weight: 600; }
+  .run-table td { color: var(--ink-muted); }
+  .tba { color: var(--ink-faint); }
+
+  @media (max-width: 720px) {
+    .run-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+    .run-table tr {
+      display: grid;
+      gap: 0.15rem;
+      padding: var(--space-3) 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .run-table th, .run-table td { border: 0; padding: 0; }
+    .run-table tbody th { font-size: var(--step-1); }
+  }
+</style>

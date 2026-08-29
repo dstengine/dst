@@ -1,0 +1,27 @@
+---
+// Everything one level under a show: a run in a city, a tour overview, or an
+// editorial section. They share the level deliberately — /chicago/manchester/
+// and /chicago/history/ are both things you might type after the show's name
+// — so routes.ts checks their slugs against each other and fails the build
+// on a collision rather than letting one of them quietly win.
+import GroupPage from "../../components/GroupPage.astro";
+import RunPage from "../../components/RunPage.astro";
+import SectionPage from "../../components/SectionPage.astro";
+import { assertRoutesAreUnique, groupBySlug, runBySlug, showBySlug, shows, showEntries, type ShowEntry } from "../../content";
+
+export function getStaticPaths() {
+  assertRoutesAreUnique();
+  return shows.flatMap((show) =>
+    showEntries(show.slug)
+      .filter((entry) => entry.kind !== "clip")
+      .map((entry) => ({ params: { show: show.slug, slug: entry.slug }, props: { entry } })),
+  );
+}
+
+interface Props { entry: ShowEntry }
+const { entry } = Astro.props;
+const show = showBySlug(entry.show)!;
+---
+{entry.kind === "run" && <RunPage show={show} run={runBySlug(show.slug, entry.slug)!} />}
+{entry.kind === "group" && <GroupPage show={show} group={groupBySlug(entry.slug)!} />}
+{entry.kind === "section" && <SectionPage show={show} section={show.sections.find((s) => s.slug === entry.slug)!} />}

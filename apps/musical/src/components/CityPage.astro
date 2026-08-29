@@ -1,0 +1,81 @@
+---
+// A city page exists once a city has something to compare — two events, or a
+// standing reason of its own (see cityHasPage in ../rules.ts). So this page
+// is never a second copy of a run page: it answers "what is on here", which
+// the run page cannot, and it lists the theatres that answer it next season.
+import Glance from "@dst/ui/Glance.astro";
+import Callout from "@dst/ui/Callout.astro";
+import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
+import MapEmbed from "@dst/ui/MapEmbed.astro";
+import { ICONS } from "@dst/ui/icons";
+import Layout from "../layouts/Layout.astro";
+import RunTable from "./RunTable.astro";
+import {
+  checkedOn, formatRun, runsInCity, statusOf, venuePath, venuesInCity, type City,
+} from "../content";
+
+interface Props { city: City }
+const { city } = Astro.props;
+
+const inCity = runsInCity(city.slug).sort((a, b) => (a.start ?? "").localeCompare(b.start ?? ""));
+const upcoming = inCity.filter((r) => statusOf(r) !== "ended");
+const past = inCity.filter((r) => statusOf(r) === "ended");
+const venues = venuesInCity(city.slug);
+const next = upcoming.find((r) => r.start);
+const mapped = venues.filter((v) => v.lat && v.lon);
+
+const glance = [
+  { label: "Listed", value: upcoming.length === 1 ? "One event" : `${upcoming.length} events`, icon: ICONS.events },
+  next && { label: "Next", value: formatRun(next), icon: ICONS.clock, href: `/${next.show}/${next.slug}/` },
+  venues.length > 0 && { label: "Theatres", value: venues.map((v) => v.name).join(", "), icon: ICONS.pin },
+  { label: "Country", value: city.country, icon: ICONS.map },
+  { label: "Last checked", value: checkedOn, icon: ICONS.list },
+].filter(Boolean) as { label: string; value: string; icon: string; href?: string }[];
+---
+<Layout
+  title={`Musicals in ${city.name}`}
+  description={`Musicals playing ${city.name}: what is on sale, which theatre, and who is selling. Listings read ${checkedOn}.`}
+>
+  <section class="container hero">
+    <Breadcrumbs crumbs={[]} current={city.name} homeLabel="What's on" />
+    <p class="eyebrow">{city.country}</p>
+    <h1>Musicals in {city.name}</h1>
+    {city.summary && <p class="lede">{city.summary}</p>}
+    <Glance facts={glance} />
+  </section>
+
+  <section class="container">
+    <h2>{upcoming.length === 1 ? "What is on" : "What is on, soonest first"}</h2>
+    {upcoming.length > 0
+      ? <RunTable runs={upcoming} lead="event" cityColumn={false} caption={`Every musical this site tracks in ${city.name}. The seller's own page is where the price is.`} />
+      : <p>Nothing is currently on sale in {city.name}.</p>}
+  </section>
+
+  {venues.length > 0 && (
+    <section class="container">
+      <h2>{venues.length === 1 ? "The theatre" : "The theatres"}</h2>
+      <div class="link-grid">
+        {venues.map((venue) => (
+          <a class="card link-card" href={venuePath(venue)} title={`${venue.name}: address, capacity and what plays there`}>
+            <h3>{venue.name}</h3>
+            <p>{venue.summary ?? venue.address ?? city.name}</p>
+          </a>
+        ))}
+      </div>
+      {mapped.length === 1 && <MapEmbed lat={mapped[0]!.lat!} lon={mapped[0]!.lon!} name={mapped[0]!.name} />}
+    </section>
+  )}
+
+  {past.length > 0 && (
+    <section class="container">
+      <h2>Already played</h2>
+      <RunTable runs={past} lead="event" cityColumn={false} caption="Kept rather than deleted: a city that has had a show once tends to get it again." />
+    </section>
+  )}
+
+  <Callout kind="note">
+    <strong>This list grows by confirmation, not by guesswork.</strong> An event
+    joins it when there are dates and a named seller — or dates and an honest
+    "no seller yet" — and never on the strength of a rumour.
+  </Callout>
+</Layout>

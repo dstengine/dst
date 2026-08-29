@@ -1,0 +1,222 @@
+---
+// One run of one show in one city: the page a reader lands on from a search
+// for "chicago the musical manchester tickets". Everything a ticketing site
+// puts on that page is here — status, dates, theatre, sellers, a calendar
+// file, a map, an FAQ, and where else the show plays — and every block is
+// absent rather than empty when the fact behind it has not been published.
+import Glance from "@dst/ui/Glance.astro";
+import Faq from "@dst/ui/Faq.astro";
+import MapEmbed from "@dst/ui/MapEmbed.astro";
+import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
+import OnThisPage from "@dst/ui/OnThisPage.astro";
+import CountdownScript from "@dst/ui/CountdownScript.astro";
+import { ICONS } from "@dst/ui/icons";
+import Layout from "../layouts/Layout.astro";
+import RunTable from "./RunTable.astro";
+import StatusBadge from "./StatusBadge.astro";
+import TicketButtons from "./TicketButtons.astro";
+import { go } from "../outbound";
+import {
+  checkedOn, cityBySlug, cityHasPage, formatRun, groupBySlug, nights, otherRuns,
+  relatedRuns, runIntro, statusOf, venueBySlug, venuePath, type Run, type Show,
+} from "../content";
+
+interface Props { show: Show; run: Run }
+const { show, run } = Astro.props;
+
+const city = cityBySlug(run.city)!;
+const venue = run.venue ? venueBySlug(run.venue) : undefined;
+const group = run.group ? groupBySlug(run.group) : undefined;
+const status = statusOf(run);
+const nightCount = nights(run);
+const title = `${show.title} in ${city.name}`;
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
+const absolute = (path: string) => (Astro.site ? new URL(path, Astro.site).href : path);
+
+const elsewhere = otherRuns(run);
+const related = relatedRuns(run);
+
+const glance = [
+  { label: "Dates", value: formatRun(run), icon: ICONS.events },
+  nightCount && { label: "Length", value: nightCount === 1 ? "One night" : `${nightCount} days`, icon: ICONS.hourglass },
+  venue && { label: "Theatre", value: venue.name, icon: ICONS.pin, href: venuePath(venue) },
+  { label: "City", value: `${city.name}, ${city.country}`, icon: ICONS.map, ...(cityHasPage(city) ? { href: `/${city.slug}/` } : {}) },
+  run.runningTime && { label: "Running time", value: run.runningTime, icon: ICONS.clock },
+  run.language && { label: "Language", value: run.language, icon: ICONS.document },
+  run.sellers.length > 0 && {
+    label: "Tickets",
+    value: run.sellers.map((s) => s.name).join(", "),
+    icon: ICONS.ticket,
+  },
+  { label: "Last checked", value: checkedOn, icon: ICONS.list },
+].filter(Boolean) as { label: string; value: string; icon: string; href?: string }[];
+
+const jump = [
+  run.sellers.length > 1 && { id: "sellers", label: "Where to buy" },
+  venue && { id: "venue", label: "The theatre" },
+  { id: "faq", label: "Questions" },
+  elsewhere.length > 0 && { id: "elsewhere", label: "Other cities" },
+].filter(Boolean) as { id: string; label: string }[];
+
+// Dates are local to the city, which is worth saying once rather than
+// implying — a run in Osaka read from Dubai is a different day.
+const faq = run.faq ?? [
+  {
+    q: `When is ${show.title} in ${city.name}?`,
+    a: run.openRun
+      ? `It plays an open run — ${formatRun(run).toLowerCase()}, with no closing date announced.`
+      : `${formatRun(run)}${venue ? `, at ${venue.name}` : ""}. Dates are local to ${city.name}.`,
+  },
+  venue
+    ? { q: `Which theatre is it in?`, a: `${venue.name}${venue.address ? `, ${venue.address}` : ""}.` }
+    : { q: `Which theatre is it in?`, a: `The theatre has not been announced. The dates are published; the venue is not, and this page will not guess at one.` },
+  {
+    q: "Where do I buy tickets?",
+    a: run.sellers.length === 0
+      ? "Nowhere yet. These dates are announced without a seller; when one is listed it will appear here."
+      : run.sellers.length === 1
+        ? `From ${run.sellers[0]!.name}, on their own site. Nothing is sold on this page.`
+        : `From ${run.sellers.map((s) => s.name).join(" or ")}. Both sell the same run; nothing is sold on this page.`,
+  },
+  { q: "Is this the official site?", a: "No. This is an independent listings site. It is not the producer, not the theatre and not a ticket seller." },
+];
+
+// TheaterEvent, with an offer per seller and the theatre as a place that has
+// coordinates — the two things that decide whether this shows up as an event
+// in a search result rather than as a blue link.
+const eventLd: Record<string, unknown> = {
+  "@context": "https://schema.org",
+  "@type": "TheaterEvent",
+  name: title,
+  ...(canonical ? { url: canonical, "@id": `${canonical}#event` } : {}),
+  ...(run.start ? { startDate: run.start } : {}),
+  ...(run.end ? { endDate: run.end } : {}),
+  eventStatus: "https://schema.org/EventScheduled",
+  ...(canonical ? { publisher: { "@id": "https://musical.today/#organization" }, mainEntityOfPage: { "@id": `${canonical}#webpage` } } : {}),
+  eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+  description: runIntro(run),
+  workPerformed: { "@type": "CreativeWork", name: show.title },
+  ...(venue
+    ? {
+        location: {
+          "@type": "PerformingArtsTheatre",
+          name: venue.name,
+          ...(venue.address ? { address: { "@type": "PostalAddress", streetAddress: venue.address, addressLocality: city.name, addressCountry: city.country } } : {}),
+          ...(venue.lat && venue.lon ? { geo: { "@type": "GeoCoordinates", latitude: venue.lat, longitude: venue.lon } } : {}),
+          ...(canonical ? { url: absolute(venuePath(venue)) } : {}),
+        },
+      }
+    : { location: { "@type": "Place", name: city.name, address: { "@type": "PostalAddress", addressLocality: city.name, addressCountry: city.country } } }),
+  ...(run.sellers.length > 0
+    ? {
+        offers: run.sellers.map((seller) => ({
+          "@type": "Offer",
+          url: absolute(go(seller.slug)),
+          availability: "https://schema.org/InStock",
+          seller: { "@type": "Organization", name: seller.name },
+        })),
+      }
+    : {}),
+};
+---
+<Layout
+  title={title}
+  description={`${show.title} in ${city.name}: ${formatRun(run)}${venue ? ` at ${venue.name}` : ""}. Dates, theatre and who is selling.`}
+  jsonLd={[eventLd]}
+>
+  <section class="container hero">
+    <Breadcrumbs
+      crumbs={[
+        { href: `/${show.slug}/`, label: show.title },
+        ...(group ? [{ href: `/${show.slug}/${group.slug}/`, label: group.name }] : []),
+      ]}
+      current={city.name}
+      homeLabel="What's on"
+    />
+    <p class="eyebrow">{group ? group.name : "Run"}</p>
+    <h1>{title}</h1>
+    <p class="run-meta">
+      <StatusBadge run={run} />
+      <time datetime={run.start}>{formatRun(run)}</time>
+      {run.start && status !== "ended" && !run.openRun && (
+        <span class="run-countdown" data-countdown datetime={run.start}></span>
+      )}
+    </p>
+    <p class="lede">{runIntro(run)}</p>
+    <TicketButtons run={run} showName={show.title} cityName={city.name} />
+    {run.start && !run.openRun && (
+      <p class="run-calendar">
+        <a href={`/${show.slug}/${run.slug}.ics`} title={`Add ${title} to a calendar`}>Add to calendar (.ics)</a>
+      </p>
+    )}
+    <OnThisPage items={jump} />
+    <Glance facts={glance} />
+  </section>
+
+  {run.sellers.length > 1 && (
+    <section class="container" id="sellers">
+      <h2>Where to buy</h2>
+      <p>Two sellers list this run. They are selling the same performances; the price and the fees are theirs, not ours.</p>
+      <ul class="sellers">
+        {run.sellers.map((seller) => (
+          <li>
+            <a class="button button-secondary" href={go(seller.slug)} rel="nofollow" title={`Buy tickets for ${title} from ${seller.name}`}>{seller.name}</a>
+            <span>{seller.official ? "The production's own seller" : "Ticket agent"}{seller.covers ? ` · ${seller.covers}` : ""}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  {venue && (
+    <section class="container" id="venue">
+      <h2>The theatre</h2>
+      <p>
+        <a href={venuePath(venue)} title={`${venue.name}: address, capacity and what else plays there`}>{venue.name}</a>
+        {venue.address && <> — {venue.address}</>}
+      </p>
+      {venue.summary && <p class="venue-summary">{venue.summary}</p>}
+      {venue.transit && <p class="venue-transit"><strong>Getting there.</strong> {venue.transit}</p>}
+      {venue.lat && venue.lon && <MapEmbed lat={venue.lat} lon={venue.lon} name={venue.name} />}
+    </section>
+  )}
+
+  <section class="container" id="faq">
+    <h2>Questions</h2>
+    <Faq items={faq} />
+  </section>
+
+  {elsewhere.length > 0 && (
+    <section class="container" id="elsewhere">
+      <h2>The same show elsewhere</h2>
+      <RunTable runs={elsewhere} caption={group ? `Nearby stops on the ${group.name}, and the rest of the calendar.` : "Every other run currently listed."} />
+      <p class="more"><a href={`/${show.slug}/tickets/`} title={`Every run of ${show.title} and every seller`}>All {show.title} dates and sellers</a></p>
+    </section>
+  )}
+
+  {related.length > 0 && (
+    <section class="container" id="related">
+      <h2>Related events</h2>
+      <RunTable runs={related} lead="event" cityColumn={false} caption={`Also on in ${city.name}.`} />
+    </section>
+  )}
+  <CountdownScript />
+</Layout>
+
+<style>
+  .run-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--space-2);
+    margin: var(--space-3) 0 0;
+    color: var(--ink-muted);
+  }
+  .run-countdown { color: var(--ink-faint); font-family: var(--font-mono); font-size: var(--step--1); }
+  .run-calendar { margin: var(--space-3) 0 0; font-size: var(--step--1); }
+  .sellers { margin: var(--space-3) 0 0; padding: 0; list-style: none; display: grid; gap: var(--space-3); }
+  .sellers li { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); }
+  .sellers span { color: var(--ink-muted); }
+  .venue-summary, .venue-transit { max-width: 68ch; color: var(--ink-muted); }
+  .more { margin: var(--space-3) 0 0; }
+</style>

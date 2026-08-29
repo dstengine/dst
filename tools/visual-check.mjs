@@ -105,6 +105,75 @@ async function domFindings(page, width) {
         say("heading squeezed into a narrow column", h, `${lines} lines across ${Math.round(share * 100)}% of the row`);
     }
 
+    // Text the page background swallows. The pixel check below catches
+    // letters over a photograph; this catches the plainer version of the
+    // same bug — a colour that was chosen for one background and rendered
+    // on another. A venue hero with no picture printed its eyebrow in the
+    // white meant for the photo, on a white page.
+    {
+      const rgba = (css) => {
+        const n = (css.match(/[\d.]+/g) ?? []).map(Number);
+        return n.length >= 4 ? n : [...n.slice(0, 3), 1];
+      };
+      // Is a picture painted behind this text? A photo hero puts an <img>
+      // under the words rather than a background-image, and the flat check
+      // would then measure the white letters against the card colour the
+      // photo hides and call a legible hero unreadable. Only something that
+      // covers the whole line counts — a thumbnail beside a caption is not
+      // behind it.
+      const pictureBehind = (node, rect, el) =>
+        [...node.querySelectorAll("img, picture, video, canvas, svg")].some((media) => {
+          if (media.contains(el)) return false;
+          const m = media.getBoundingClientRect();
+          return m.left <= rect.left && m.right >= rect.right && m.top <= rect.top && m.bottom >= rect.bottom;
+        });
+      // What is actually behind an element: the first ancestor that paints.
+      const backdrop = (el) => {
+        const rect = el.getBoundingClientRect();
+        for (let node = el; node && node !== document.documentElement; node = node.parentElement) {
+          const cs = getComputedStyle(node);
+          if (cs.backgroundImage !== "none") return null; // a picture: the pixel check owns it
+          if (getComputedStyle(node, "::before").backgroundImage !== "none") return null;
+          if (getComputedStyle(node, "::after").backgroundImage !== "none") return null;
+          if (pictureBehind(node, rect, el)) return null;
+          const [r, g, b, a] = rgba(cs.backgroundColor);
+          if (a >= 0.9) return [r, g, b];
+        }
+        const [r, g, b, a] = rgba(getComputedStyle(document.documentElement).backgroundColor);
+        return a >= 0.9 ? [r, g, b] : [255, 255, 255];
+      };
+      const lum = ([r, g, b]) => {
+        const f = (c) => { const s = c / 255; return s <= 0.03928 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4; };
+        return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b);
+      };
+      const ratio = (a, b) => {
+        const [hi, lo] = [lum(a), lum(b)].sort((x, y) => y - x);
+        return (hi + 0.05) / (lo + 0.05);
+      };
+      for (const el of document.querySelectorAll("h1, h2, h3, h4, p, li, a, span, dt, dd, td, th, figcaption, button")) {
+        const text = (el.textContent ?? "").trim();
+        if (!text || el.querySelector("h1,h2,h3,h4,p,li,dt,dd,td,th")) continue;
+        // A separator dot the page hides from assistive tech is decoration,
+        // not text; holding it to reading contrast only invites a fix that
+        // makes the punctuation louder than the words around it.
+        if (el.closest('[aria-hidden="true"]')) continue;
+        const cs = getComputedStyle(el);
+        if (cs.display === "none" || cs.visibility === "hidden" || Number(cs.opacity) < 0.5) continue;
+        const r = el.getBoundingClientRect();
+        if (r.width < 2 || r.height < 2) continue;
+        const behind = backdrop(el);
+        if (!behind) continue;
+        const [tr, tg, tb, ta] = rgba(cs.color);
+        if (ta < 0.5) continue;
+        const size = parseFloat(cs.fontSize);
+        const large = size >= 24 || (size >= 18.66 && Number(cs.fontWeight) >= 700);
+        const need = large ? 3 : 4.5;
+        const got = ratio([tr, tg, tb], behind);
+        if (got < need)
+          say("text too faint for its background", el, `contrast ${got.toFixed(2)}:1, needs ${need}:1`);
+      }
+    }
+
     // Anything you tap needs somewhere to be tapped.
     if (width <= 640) {
       for (const el of document.querySelectorAll("a, button, [role=button]")) {

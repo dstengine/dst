@@ -1,0 +1,49 @@
+---
+// A jump list for a page long enough that scrolling to find one fact is a
+// chore — the ticket sellers on a run page, the getting-there note on a
+// venue. Only worth rendering past a few entries, which is the caller's
+// call: pass the sections that exist and it hides itself below `min`.
+interface Props {
+  items: { id: string; label: string }[];
+  min?: number;
+  heading?: string;
+}
+const { items, min = 3, heading = "On this page" } = Astro.props;
+---
+{items.length >= min && (
+  <nav class="on-this-page" aria-label={heading}>
+    <p class="on-this-page-heading">{heading}</p>
+    <ul>
+      {items.map((item) => (
+        <li><a href={`#${item.id}`} title={item.label}>{item.label}</a></li>
+      ))}
+    </ul>
+  </nav>
+)}
+
+<style>
+  .on-this-page {
+    margin: var(--space-4) 0 0;
+    padding: var(--space-3);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+  .on-this-page-heading {
+    margin: 0 0 var(--space-2);
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .on-this-page ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1rem;
+  }
+  .on-this-page a { color: var(--ink-muted); }
+  .on-this-page a:hover { color: var(--accent); }
+</style>

@@ -38,6 +38,10 @@
     "./tokens.css": "./src/styles/tokens.css",
     "./schema": "./src/schema.ts",
     "./NetworkLinks.astro": "./src/components/NetworkLinks.astro",
-    "./Photo.astro": "./src/components/Photo.astro"
+    "./Photo.astro": "./src/components/Photo.astro",
+    "./Glance.astro": "./src/components/Glance.astro",
+    "./Breadcrumbs.astro": "./src/components/Breadcrumbs.astro",
+    "./MapEmbed.astro": "./src/components/MapEmbed.astro",
+    "./OnThisPage.astro": "./src/components/OnThisPage.astro"
   }
 }

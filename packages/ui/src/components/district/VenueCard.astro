@@ -17,13 +17,19 @@ interface Props {
   tag?: string;
   icon?: string;
   image?: string;
+  /** Whether the card has a picture area at all. A grid where a few cards
+      lack a photo keeps the frame so the rows stay even; a grid where none
+      of them has one — a site with no licensed photography — drops it, since
+      an empty 4:3 box on every card reads as a broken page. */
+  media?: boolean;
 }
 
-const { href, name, blurb, meta, tag, icon = "pin", image } = Astro.props;
+const { href, name, blurb, meta, tag, icon = "pin", image, media = true } = Astro.props;
 const placeholderPath = iconFor(`/${icon}/`);
 const pinPath = iconFor("/pin/");
 ---
 <a class="venue-card" href={href} title={blurb}>
+  {media && (
   <div class="venue-card-media">
     {image ? (
       <Photo src={image} alt={name} sizes="(max-width: 700px) 100vw, 380px" />
@@ -36,6 +42,7 @@ const pinPath = iconFor("/pin/");
     )}
     {tag && <span class="venue-card-tag">{tag}</span>}
   </div>
+  )}
   <div class="venue-card-body">
     <h3>{name}</h3>
     <p class="venue-card-blurb">{blurb}</p>

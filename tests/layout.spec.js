@@ -32,6 +32,12 @@ const PAGES = [
   { site: "musical", path: "/dubai/" },
   { site: "musical", path: "/chicago/" },
   { site: "musical", path: "/chicago/history/" },
+  { site: "musical", path: "/chicago/manchester/" },
+  { site: "musical", path: "/chicago/uk/" },
+  { site: "musical", path: "/chicago/online/all-that-jazz/" },
+  { site: "musical", path: "/broadway/" },
+  { site: "musical", path: "/venue/opera-house-manchester/" },
+  { site: "musical", path: "/venues/" },
 ];
 
 const url = (site, path) => `${baseUrl(site)}${path}`;
@@ -462,4 +468,32 @@ test.describe("reduced motion", () => {
       }
     }
   });
+});
+
+
+// An underline under every link in a paragraph turns running text into a
+// ruled page: the reader's eye is dragged to the rules rather than to the
+// sentence. Colour and weight carry a link in body text; the underline comes
+// back on hover and on keyboard focus, and stays permanently in the footer,
+// where the type is small and muted and colour alone is not enough.
+//
+// This has to be measured rather than read out of the markup: the underline
+// is a browser default, so it is in nobody's stylesheet and no static check
+// can see it.
+test.describe("links in running text carry no underline", () => {
+  for (const { site, path } of PAGES) {
+    test(`${site}${path}`, async ({ page }) => {
+      await page.goto(url(site, path));
+      const underlined = await page.evaluate(() => {
+        // Buttons, cards and banners are surfaces, not links in a sentence,
+        // and the footer keeps its underlines on purpose.
+        const exempt = ".button, .link-card, .cta-banner, .site-footer, nav";
+        return [...document.querySelectorAll("main a, article a")]
+          .filter((a) => !a.closest(exempt))
+          .filter((a) => getComputedStyle(a).textDecorationLine.split(" ").includes("underline"))
+          .map((a) => `${a.getAttribute("href")} — ${(a.textContent || "").trim().slice(0, 40)}`);
+      });
+      expect([...new Set(underlined)], "links underlined in body text").toEqual([]);
+    });
+  }
 });

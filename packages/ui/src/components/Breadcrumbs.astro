@@ -1,0 +1,52 @@
+---
+// The trail a deep page needs so a reader arriving from search knows where
+// they landed. The BreadcrumbList in the structured data is built from the
+// URL in schema.ts; this is the visible half, and it may show a step the URL
+// does not have — a tour a stop belongs to, for instance — because grouping
+// is navigation, not addressing.
+interface Crumb {
+  href: string;
+  label: string;
+  title?: string;
+}
+interface Props {
+  /** Without the site root: that is added here so every trail starts alike. */
+  crumbs: Crumb[];
+  /** The current page. Rendered as text, since it is where you already are. */
+  current: string;
+  homeLabel?: string;
+}
+const { crumbs, current, homeLabel = "Home" } = Astro.props;
+---
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/" title={homeLabel}>{homeLabel}</a></li>
+    {crumbs.map((crumb) => (
+      <li><a href={crumb.href} title={crumb.title ?? crumb.label}>{crumb.label}</a></li>
+    ))}
+    <li aria-current="page">{current}</li>
+  </ol>
+</nav>
+
+<style>
+  .crumbs { margin: 0 0 var(--space-3); }
+  .crumbs ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.35rem 0.5rem;
+    font-size: var(--step--1);
+    color: var(--ink-faint);
+  }
+  .crumbs li + li::before {
+    content: "›";
+    margin-right: 0.5rem;
+    color: var(--ink-faint);
+  }
+  .crumbs a { color: var(--ink-muted); }
+  .crumbs a:hover { color: var(--accent); }
+  .crumbs [aria-current="page"] { color: var(--ink-faint); }
+</style>

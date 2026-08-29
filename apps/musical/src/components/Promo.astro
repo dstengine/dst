@@ -1,35 +1,46 @@
 ---
-// The show this site leads with, in a block that runs across the home page,
-// the Dubai page and the show's own pages. The artwork is a drawing rather
-// than a photograph on purpose: production stills are the producer's, and
-// this site has no licence to any of them. It is an SVG for now — a real
-// key art image replaces it when there is one to use.
-import { go } from "../outbound";
-import { showBySlug } from "../content";
+// The event this site leads with, in a block that runs across the front
+// page, the city pages and the show's own pages. It is not what the site is
+// about — it is what the site does with an event worth the attention, and
+// the next one gets the same treatment.
+//
+// The button says Tickets and goes to the run's own page, not to a seller.
+// The seller is a decision, and the run page is where the reader has what
+// they need to make it: dates, theatre, who is selling, what is not known.
+//
+// The artwork is a drawing rather than a photograph on purpose: production
+// stills are the producer's, and this site has no licence to any of them.
+import { cityBySlug, formatRun, runBySlug, showBySlug, featuredRun, venueBySlug } from "../content";
+import StatusBadge from "./StatusBadge.astro";
 
 interface Props {
   /** Heading level, so the block can sit under an h1 or as a page section. */
   level?: 2 | 3;
   compact?: boolean;
+  /** Defaults to the site's featured run. */
+  show?: string;
+  run?: string;
 }
-const { level = 2, compact = false } = Astro.props;
-const show = showBySlug("chicago")!;
-const run = show.runs[0]!;
+const { level = 2, compact = false, show: showSlug = featuredRun.show, run: runSlug = featuredRun.run } = Astro.props;
+const show = showBySlug(showSlug)!;
+const run = runBySlug(showSlug, runSlug)!;
+const city = cityBySlug(run.city)!;
+const venue = run.venue ? venueBySlug(run.venue) : undefined;
 const Heading = `h${level}` as "h2" | "h3";
+const href = `/${show.slug}/${run.slug}/`;
 ---
 <aside class:list={["promo", compact && "promo-compact"]}>
   <div class="promo-text">
-    <p class="eyebrow">On sale now</p>
-    <Heading class="promo-title">{show.title} — Dubai 2026</Heading>
-    <p class="promo-line">{show.tagline}</p>
-    {run.ticketSlug && (
-      <p class="promo-actions">
-        <a class="button" href={go(run.ticketSlug)} rel="nofollow" title={`Buy tickets for ${show.title} in Dubai on Ticketmaster AE`}>Tickets on Ticketmaster AE</a>
-        <a class="button button-secondary" href="/chicago/dubai/" title="What has been announced about the Chicago The Musical run in Dubai">What is known about the run</a>
-      </p>
-    )}
+    <p class="eyebrow">The event we are following closest</p>
+    <Heading class="promo-title">{show.title} in {city.name}</Heading>
+    <p class="promo-line">{venue ? `${venue.name} · ` : ""}{formatRun(run)}</p>
+    <p class="promo-status"><StatusBadge run={run} /></p>
+    <p class="promo-actions">
+      <a class="button" href={href} title={`${show.title} in ${city.name}: dates, theatre and sellers`}>Tickets</a>
+      <a class="button button-secondary" href={`/${show.slug}/`} title={`Every run of ${show.title}, and what the show is`}>All {show.title} dates</a>
+    </p>
   </div>
-  <svg class="promo-art" viewBox="0 0 240 200" role="img" aria-label="A theatre stage with its curtains drawn back">
+    <svg class="promo-art" viewBox="0 0 240 200" role="img" aria-label="A theatre stage with its curtains drawn back">
     <defs>
       <linearGradient id="promo-drape" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0" stop-color="var(--accent)" stop-opacity="0.95" />
@@ -68,6 +79,7 @@ const Heading = `h${level}` as "h2" | "h3";
   .promo-text > :global(*) { max-width: 54ch; }
   .promo-title { margin: 0.1em 0 0.4em; font-size: var(--step-2); }
   .promo-line { margin: 0; color: var(--ink-muted); }
+  .promo-status { margin: var(--space-2) 0 0; }
   .promo-actions {
     display: flex;
     flex-wrap: wrap;

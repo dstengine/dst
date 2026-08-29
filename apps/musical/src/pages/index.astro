@@ -1,22 +1,51 @@
 ---
+// The front page. It has one job: show what is actually on, soonest first,
+// and make the hero event look like the standard rather than the exception.
+import Glance from "@dst/ui/Glance.astro";
+import { ICONS } from "@dst/ui/icons";
 import Layout from "../layouts/Layout.astro";
 import Promo from "../components/Promo.astro";
-import { checkedOn, cities, shows } from "../content";
+import RunTable from "../components/RunTable.astro";
+import {
+  checkedOn, citiesWithPages, cityBySlug, runs, shows, upcomingRuns, venues,
+} from "../content";
 
+const upcoming = upcomingRuns();
+const soon = upcoming.slice(0, 8);
+const cityPages = citiesWithPages();
+const cityCount = new Set(runs.map((r) => r.city)).size;
+const countries = new Set(runs.map((r) => cityBySlug(r.city)?.country).filter(Boolean)).size;
 const chicago = shows[0]!;
+
+const glance = [
+  { label: "Runs listed", value: `${runs.length}`, icon: ICONS.events },
+  { label: "Cities", value: `${cityCount} in ${countries} countries`, icon: ICONS.map },
+  { label: "Venues", value: `${venues.length} with pages`, icon: ICONS.pin, href: "/venues/" },
+  { label: "Last checked", value: checkedOn, icon: ICONS.list },
+];
 ---
 <Layout
   title="Musicals on sale now"
-  description="A listings site for musicals: what is on sale, city by city, starting with Chicago The Musical in Dubai in 2026. Dates and prices only once they are published."
+  description="Musicals, city by city: what is on sale, which theatre, which dates, and who is actually selling. Every listing read from the production's own source and dated."
 >
   <section class="container hero">
     <p class="eyebrow">Musicals, city by city</p>
-    <h1>What's on, and what is only announced</h1>
+    <h1>What is on, where, and who is selling it</h1>
     <p class="lede">
-      Most listings sites fill the gaps. This one leaves them visible: a show
-      appears here when it is on sale somewhere, and its dates, venue and
-      prices appear when the seller publishes them — not before. Listings
-      last read on {checkedOn}.
+      A musical is not one event. The production filling a 17,000-seat arena in
+      Dubai this December is the same show that plays a theatre on the north
+      Wales coast in October 2027 — different room, different seller, different
+      idea of what a ticket costs. This site lists all of it: the theatre, the
+      dates, and who is actually selling, with the day each listing was read.
+    </p>
+    <Glance facts={glance} />
+  </section>
+
+  <section class="container">
+    <h2>On sale now</h2>
+    <RunTable runs={soon} lead="event" caption="Soonest first. Each row goes to that run's own page — theatre, times, sellers and what is not yet known." />
+    <p class="more">
+      <a href={`/${chicago.slug}/tickets/`} title="Every run this site tracks, with every seller">All {upcoming.length} upcoming runs</a>
     </p>
   </section>
 
@@ -24,20 +53,24 @@ const chicago = shows[0]!;
     <Promo />
   </div>
 
-  <section class="container">
+  <section class="container" id="cities">
     <h2>Cities</h2>
     <p>
-      One city so far. The list grows as runs are confirmed rather than as
-      cities are guessed at, so a thin page here means a thin season, not a
-      site that has stopped looking.
+      A city gets its own page once it has more than one event to compare —
+      until then its listing lives on the event's page, where the facts are,
+      rather than at a second address that repeats them.
     </p>
     <div class="link-grid city-grid">
-      {cities.map((city) => (
+      {cityPages.map((city) => (
         <a class="card link-card" href={`/${city.slug}/`} title={`Musicals playing ${city.name}`}>
           <h3>{city.name}</h3>
-          <p>{city.country}</p>
+          <p>{city.summary ?? city.country}</p>
         </a>
       ))}
+      <a class="card link-card" href="/venues/" title="Every theatre and arena on this site">
+        <h3>All venues</h3>
+        <p>{venues.length} theatres and arenas, with what plays in each and how to get there.</p>
+      </a>
     </div>
   </section>
 
@@ -45,6 +78,10 @@ const chicago = shows[0]!;
     <h2>{chicago.title}</h2>
     <p>{chicago.tagline}</p>
     <div class="link-grid">
+      <a class="card link-card" href={`/${chicago.slug}/`} title={`${chicago.title}: every run, the history, the video`}>
+        <h3>Everything on the show</h3>
+        <p>Every run, the tour, a hundred years of it, and what you can watch tonight for nothing.</p>
+      </a>
       {chicago.sections.map((section) => (
         <a class="card link-card" href={`/${chicago.slug}/${section.slug}/`} title={section.title}>
           <h3>{section.label}</h3>
@@ -57,17 +94,16 @@ const chicago = shows[0]!;
   <section class="container">
     <h2>At home</h2>
     <p>
-      Musicals you can legally watch or hear without a ticket — film versions,
-      cast recordings and the clips productions publish themselves — are
-      collected on <a href="/online/" title="Musicals you can legally watch or hear at home">the online page</a>. Reuploads of full
-      stage recordings are not, however easy they are to find.
+      Some of it plays here: numbers the productions publish themselves and cast
+      recordings on the rights holders' own channels are collected on
+      {" "}<a href="/online/" title="Musicals you can legally watch at home">the online page</a>, embedded rather than
+      linked away. Reuploads of full stage recordings are not — not out of
+      caution, but because they stop working.
     </p>
   </section>
 </Layout>
 
 <style>
-  /* One city, and for a while it will be one. auto-fit would stretch a
-     single card the width of the page and make a thin season look like a
-     layout bug; auto-fill leaves the empty tracks empty. */
   .city-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+  .more { margin-top: var(--space-3); }
 </style>

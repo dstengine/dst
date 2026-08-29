@@ -12,6 +12,7 @@ import FeedCards from "./FeedCards.astro";
 import SourceLine from "./SourceLine.astro";
 import ImageNote from "./ImageNote.astro";
 import CountdownScript from "./CountdownScript.astro";
+import Glance from "./Glance.astro";
 import { ICONS } from "../icons.ts";
 import { formatDate } from "../date.ts";
 
@@ -264,19 +265,7 @@ const relatedItems = (item.related ?? []).map((card) => ({
     </figure>
   )}
 
-  {glance.length > 1 && (
-    <dl class="event-glance">
-      {glance.map((fact) => (
-        <div class="event-glance-row">
-          <dt>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={fact.icon} /></svg>
-            <span>{fact.label}</span>
-          </dt>
-          <dd>{fact.value}</dd>
-        </div>
-      ))}
-    </dl>
-  )}
+  <Glance facts={glance} />
 
   {/* Above the original description on purpose: once something has
       happened, what came of it is the news, and the announcement is
@@ -468,42 +457,6 @@ const relatedItems = (item.related ?? []).map((card) => ({
   /* The decision panel: two columns on anything wider than a phone, label
      over value below that. Rows rather than a bare <dl> grid so a value
      that wraps stays aligned with its own label. */
-  .event-glance {
-    margin: var(--space-4) 0 0;
-    padding: var(--space-3);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    background: var(--surface-sunk);
-    display: grid;
-    gap: var(--space-2);
-  }
-  .event-glance-row {
-    display: grid;
-    grid-template-columns: 9rem 1fr;
-    gap: var(--space-2);
-    align-items: baseline;
-  }
-  .event-glance dt {
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-    font-family: var(--font-mono);
-    font-size: var(--step--1);
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--ink-faint);
-  }
-  .event-glance dt svg { flex: none; width: 1.15em; height: 1.15em; }
-  .event-glance dd {
-    margin: 0;
-    color: var(--ink);
-    /* Prices and times line up down the column. */
-    font-variant-numeric: tabular-nums;
-  }
-  @media (max-width: 560px) {
-    .event-glance-row { grid-template-columns: 1fr; gap: 0.15rem; }
-  }
-
   .event-programme { margin-top: var(--space-4); }
   .event-programme dl { margin: var(--space-2) 0 0; display: grid; gap: var(--space-3); }
   .event-programme dt { font-weight: 600; color: var(--ink); }

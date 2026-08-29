@@ -1,0 +1,50 @@
+---
+// The ticket call to action, and the only place on the site that renders
+// one. The wording comes from ticketButtons() in ../rules.ts: one seller and
+// the button says "Tickets", several and each says who it goes to, because
+// at that point the reader is choosing between them.
+//
+// A run with nothing on sale gets no button at all — an inert "Tickets" that
+// leads to a page without a price is worse than an honest gap.
+import { go } from "../outbound";
+import { statusOf, ticketButtons, type Run } from "../content";
+
+interface Props {
+  run: Run;
+  showName: string;
+  cityName: string;
+}
+const { run, showName, cityName } = Astro.props;
+const buttons = ticketButtons(run);
+const status = statusOf(run);
+---
+{buttons.length > 0 && (
+  <p class="ticket-actions">
+    {buttons.map((button, i) => (
+      <a
+        class:list={["button", i > 0 && "button-secondary"]}
+        href={button.href}
+        rel="nofollow"
+        title={`Buy tickets for ${showName} in ${cityName} from ${button.seller.name}`}
+      >{button.label}</a>
+    ))}
+  </p>
+)}
+{buttons.length === 0 && run.infoSlug && (
+  <p class="ticket-actions">
+    <a class="button button-secondary" href={go(run.infoSlug)} rel="nofollow" title={`Venue information for ${showName} in ${cityName}`}>Venue information</a>
+  </p>
+)}
+{buttons.length === 0 && status === "announced" && (
+  <p class="ticket-none">Dates are announced; no seller has been listed against them yet.</p>
+)}
+
+<style>
+  .ticket-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin: var(--space-3) 0 0;
+  }
+  .ticket-none { margin: var(--space-3) 0 0; color: var(--ink-muted); }
+</style>

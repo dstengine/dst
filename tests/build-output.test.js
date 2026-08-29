@@ -110,6 +110,47 @@ describe("page metadata", () => {
   });
 });
 
+describe("navigation", () => {
+  /** The header nav, both halves of it: the inline row and the drawer that
+      replaces it on a phone. Everything else on a page that is marked up as
+      a <nav> — breadcrumbs, the jump list — is deliberately not included:
+      those are text, and an icon beside every crumb would be noise. */
+  const siteNavs = (html) => [...html.matchAll(/<nav class="site-nav[^"]*"[\s\S]*?<\/nav>/g)].map((m) => m[0]);
+
+  // A menu of words is a wall of words. Icons went in so the eye can find
+  // the row it wants without reading it, and a nav item added later without
+  // one leaves a hole exactly where the eye was trained to look.
+  test("every header nav link carries an icon", () => {
+    const missing = [];
+    for (const p of contentPages()) {
+      const navs = siteNavs(p.html);
+      assert.ok(navs.length > 0, `${p.app}${p.url}: no site nav`);
+      for (const nav of navs) {
+        for (const link of nav.match(/<a\s[\s\S]*?<\/a>/g) ?? []) {
+          if (!/<svg/.test(link)) missing.push(`${p.app}${p.url} -> ${(link.match(/href="([^"]*)"/) || [])[1]}`);
+        }
+      }
+    }
+    assert.deepEqual(missing, [], `nav links without an icon: ${JSON.stringify([...new Set(missing)], null, 1)}`);
+  });
+
+  // Both halves have to hold the same menu: the drawer is what a phone gets,
+  // and a link that exists only on desktop is a link half the traffic never
+  // sees.
+  test("the drawer holds the same links as the inline row", () => {
+    for (const p of contentPages()) {
+      for (const nav of siteNavs(p.html)) {
+        const [row, drawer] = [
+          nav.slice(0, nav.indexOf("<details")),
+          nav.slice(nav.indexOf("<details")),
+        ];
+        const hrefs = (part) => [...part.matchAll(/<a[^>]*href="([^"]*)"/g)].map((m) => m[1]);
+        assert.deepEqual(hrefs(drawer), hrefs(row), `${p.app}${p.url}: the drawer and the inline nav differ`);
+      }
+    }
+  });
+});
+
 describe("links", () => {
   // Every link got a descriptive title attribute; coverage was 5% before.
   test("every anchor carries a title attribute", () => {
@@ -285,6 +326,33 @@ describe("config", () => {
       assert.doesNotMatch(site, /\.example/, `apps/${app}: site is a placeholder — ${site}`);
       assert.equal(new URL(site).host, host, `apps/${app}: site does not match its host`);
     }
+  });
+});
+
+describe("llms.txt", () => {
+  // The convention (llmstxt.org) is a Markdown map of the site at its root.
+  // It is only worth anything if it is true: a link to a page that no longer
+  // exists is worse than no file, because whatever reads it quotes a 404.
+  test("every site ships one, and every URL in it is a page that exists", () => {
+    const missing = [];
+    for (const { app, host } of SITES) {
+      const file = path.join(REPO, "apps", app, "dist", "llms.txt");
+      assert.ok(existsSync(file), `apps/${app}: no llms.txt in dist`);
+      const text = readFileSync(file, "utf8");
+      assert.ok(/^#\s/m.test(text), `apps/${app}/llms.txt: no "# name" line`);
+      assert.ok(/^>\s/m.test(text), `apps/${app}/llms.txt: no "> summary" line`);
+      for (const [, url] of text.matchAll(/\]\((https?:\/\/[^)]+)\)/g)) {
+        const parsed = new URL(url);
+        // Another site in the network is checked by its own run of this
+        // test; what matters here is that a site's own map is honest.
+        if (parsed.host !== host) continue;
+        const built =
+          pages.some((p) => p.app === app && p.url === parsed.pathname) ||
+          existsSync(path.join(REPO, "apps", app, "dist", parsed.pathname.replace(/^\//, "")));
+        if (!built) missing.push(`${app}: ${url}`);
+      }
+    }
+    assert.deepEqual(missing, [], `llms.txt links to pages that were not built:\n${missing.join("\n")}`);
   });
 });
 

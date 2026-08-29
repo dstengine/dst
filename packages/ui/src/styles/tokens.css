@@ -24,13 +24,17 @@
   --ink-muted: #565F6B;
   /* Was #8A8F97, which measured 3.09:1 here — under the 4.5:1 WCAG AA
      needs at this size. It carries dates, captions and source lines, so
-     "decorative grey" was never the right read for it. Now 4.6:1. */
-  --ink-faint: #6D727A;
+     "decorative grey" was never the right read for it. Then #6D727A, which
+     cleared AA on --bg but only reached 4.21:1 on --surface-sunk, where
+     table headers and glance labels sit. Now 5.09:1 / 4.67:1. */
+  --ink-faint: #666B73;
 
   /* Semantic (status), separate from any vertical's accent */
   --ok: #2A7A55;
   --ok-bg: #E4F1EA;
-  --warn: #A6772C;
+  /* Was #A6772C, 3.29:1 on --warn-bg — the "In development" badge is
+     small text, so that is under AA. Now 4.53. */
+  --warn: #8A6222;
   --warn-bg: #F3E9D6;
 
   /* Type */
@@ -95,7 +99,10 @@
        astigmatism. 13.8:1 is still far above AA and stops the glow. */
     --ink: #DCDFE3;
     --ink-muted: #9BA1AA;
-    --ink-faint: #7A7F86; /* was #6C7178 at 4.27:1 — under AA */
+    /* Was #6C7178 at 4.27:1, then #7A7F86, which cleared AA on --bg and
+       --surface-sunk but ran 4.24:1 on --surface, where glance labels sit.
+       Now 4.9 / 4.79 / 5.34. */
+    --ink-faint: #83888F;
 
     --ok: #7FCBA6;
     --ok-bg: #16261F;
@@ -106,13 +113,13 @@
 
 :root[data-theme="dark"] {
   --bg: #121417; --surface: #191C20; --surface-sunk: #0E1013; --border: #2B2F35;
-  --ink: #DCDFE3; --ink-muted: #9BA1AA; --ink-faint: #7A7F86;
+  --ink: #DCDFE3; --ink-muted: #9BA1AA; --ink-faint: #83888F;
   --ok: #7FCBA6; --ok-bg: #16261F; --warn: #D9AE6C; --warn-bg: #2C2313;
 }
 :root[data-theme="light"] {
   --bg: #FAF9F6; --surface: #FFFFFF; --surface-sunk: #F1EFEA; --border: #E2DFD7;
-  --ink: #14181F; --ink-muted: #565F6B; --ink-faint: #6D727A;
-  --ok: #2A7A55; --ok-bg: #E4F1EA; --warn: #A6772C; --warn-bg: #F3E9D6;
+  --ink: #14181F; --ink-muted: #565F6B; --ink-faint: #666B73;
+  --ok: #2A7A55; --ok-bg: #E4F1EA; --warn: #8A6222; --warn-bg: #F3E9D6;
 }
 
 * { box-sizing: border-box; }
@@ -149,7 +156,23 @@ p, li { max-width: var(--content-width); }
    by engines that don't support it, which simply get today's behaviour. */
 p { text-wrap: pretty; }
 
-a { color: var(--accent, #1F5C4E); }
+/* A link in running text is carried by colour, not by a rule drawn under
+   every sentence that happens to contain one. The underline returns on
+   hover and on keyboard focus, where it confirms what is about to be
+   clicked, and it stays on permanently in the footer — small, muted text
+   made almost entirely of links, where colour alone is not enough.
+
+   :where() keeps the hover rule at the specificity of a bare `a`, so
+   .button, .link-card and .cta-banner still win with their own
+   `text-decoration: none` and do not sprout an underline on hover. */
+a {
+  color: var(--accent, #1F5C4E);
+  text-decoration: none;
+}
+
+a:where(:hover, :focus-visible) { text-decoration: underline; }
+
+.site-footer a { text-decoration: underline; }
 
 .eyebrow {
   font-family: var(--font-body);

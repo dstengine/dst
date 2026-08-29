@@ -1,0 +1,21 @@
+---
+// The root namespace: cities, prioritised events and prioritised venues all
+// answer here, because that is what people type — /dubai/, /chicago/,
+// /broadway/. Which one a slug is comes from routes.ts, and the same file
+// proves at build time that no two of them claim the same address.
+import CityPage from "../components/CityPage.astro";
+import ShowHub from "../components/ShowHub.astro";
+import VenueDetail from "../components/VenueDetail.astro";
+import { assertRoutesAreUnique, cityBySlug, rootEntries, showBySlug, venueBySlug, type RootEntry } from "../content";
+
+export function getStaticPaths() {
+  assertRoutesAreUnique();
+  return rootEntries().map((entry) => ({ params: { root: entry.slug }, props: { entry } }));
+}
+
+interface Props { entry: RootEntry }
+const { entry } = Astro.props;
+---
+{entry.kind === "city" && <CityPage city={cityBySlug(entry.slug)!} />}
+{entry.kind === "show" && <ShowHub show={showBySlug(entry.slug)!} />}
+{entry.kind === "venue" && <VenueDetail venue={venueBySlug(entry.venue)!} />}

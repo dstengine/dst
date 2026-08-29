@@ -1,0 +1,74 @@
+---
+// One recording, with the reason it is worth three minutes. The embed is the
+// same one the listing uses; what this page adds is where the number sits in
+// the show and what makes this performance of it different from the others.
+import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
+import Layout from "../layouts/Layout.astro";
+import Clips from "./Clips.astro";
+import { checkedOn, type Clip, type Show } from "../content";
+
+interface Props { show: Show; clip: Clip }
+const { show, clip } = Astro.props;
+
+const others = (show.clips ?? []).filter((c) => c.slug !== clip.slug);
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
+
+const videoLd = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: clip.title,
+  description: clip.note ?? `${clip.title}, from ${show.title}.`,
+  embedUrl: `https://www.youtube-nocookie.com/embed/${clip.id}`,
+  ...(canonical ? { url: canonical } : {}),
+  publisher: { "@type": "Organization", name: clip.channel },
+};
+---
+<Layout title={clip.title} description={clip.note ?? `${clip.title} — ${show.title}, playing here.`} jsonLd={[videoLd]}>
+  <section class="container hero">
+    <Breadcrumbs
+      crumbs={[
+        { href: `/${show.slug}/`, label: show.title },
+        { href: `/${show.slug}/online/`, label: "Watch online" },
+      ]}
+      current={clip.title}
+      homeLabel="What's on"
+    />
+    <p class="eyebrow">{show.title} · online</p>
+    <h1>{clip.title}</h1>
+    {clip.note && <p class="lede">{clip.note}</p>}
+  </section>
+
+  <section class="container">
+    <Clips clips={[clip]} heading={2} />
+  </section>
+
+  {clip.body && (
+    <section class="container prose">
+      {clip.body.map((paragraph) => <p>{paragraph}</p>)}
+    </section>
+  )}
+
+  <section class="container">
+    <p class="sources">
+      Uploaded by {clip.channel}; embedding checked {clip.checkedOn}. Nothing here is rehosted — the file
+      stays on YouTube, and the frame above is theirs.
+    </p>
+    <p class="onward">
+      <a href={`/${show.slug}/tickets/`} title={`Every run of ${show.title} on sale now`}>Where {show.title} is playing</a>
+      {" · "}
+      <a href={`/${show.slug}/online/`} title={`Everything from ${show.title} you can legally watch`}>Everything online</a>
+    </p>
+  </section>
+
+  {others.length > 0 && (
+    <section class="container">
+      <h2>Also worth the three minutes</h2>
+      <Clips clips={others} showSlug={show.slug} heading={3} />
+    </section>
+  )}
+</Layout>
+
+<style>
+  .prose p { max-width: 68ch; }
+  .sources, .onward { margin-top: var(--space-4); max-width: 68ch; color: var(--ink-muted); font-size: var(--step--1); }
+</style>

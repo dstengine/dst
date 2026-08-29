@@ -1,0 +1,120 @@
+---
+// The editorial pages under a show: /chicago/about/, /chicago/history/,
+// /chicago/online/, /chicago/tickets/. One template, four endings — the
+// prose is the same shape every time, and the block after it is chosen by
+// the section's own `template` field rather than by a page of its own.
+//
+// Adding a section is a record in data/shows.ts. That is the whole change.
+import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
+import Layout from "../layouts/Layout.astro";
+import Clips from "./Clips.astro";
+import RunTable from "./RunTable.astro";
+import Timeline from "./Timeline.astro";
+import { go } from "../outbound";
+import { checkedOn, milestones, runsFor, songs, statusOf, upcomingRuns, type Section, type Show } from "../content";
+
+interface Props { show: Show; section: Section }
+const { show, section } = Astro.props;
+
+const all = runsFor(show.slug);
+const upcoming = upcomingRuns().filter((r) => r.show === show.slug);
+const past = all.filter((r) => statusOf(r) === "ended");
+---
+<Layout title={section.title} description={section.description}>
+  <section class="container hero">
+    <Breadcrumbs crumbs={[{ href: `/${show.slug}/`, label: show.title }]} current={section.label} homeLabel="What's on" />
+    <p class="eyebrow">{show.title}</p>
+    <h1>{section.title}</h1>
+    <p class="lede">{section.body[0]}</p>
+  </section>
+
+  <section class="container prose">
+    {section.body.slice(1).map((paragraph) => <p>{paragraph}</p>)}
+  </section>
+
+  {section.template === "history" && (
+    <section class="container">
+      <h2>A hundred years, in order</h2>
+      <Timeline items={milestones} />
+      <p class="sources">
+        Dates, houses and performance counts follow the show's own listings and the Wikipedia articles
+        "Chicago (musical)" and "Chicago (2002 film)", read {checkedOn}. Where the sources disagree on a
+        number, the smaller one is printed.
+      </p>
+      <p class="onward">
+        A century on, the tickets are still the point:
+        {" "}<a href={`/${show.slug}/tickets/`} title={`Every run of ${show.title} on sale now`}>where it plays today</a>.
+      </p>
+    </section>
+  )}
+
+  {section.template === "songs" && (
+    <section class="container">
+      {[1, 2].map((act) => (
+        <>
+          <h2>Act {act === 1 ? "one" : "two"}</h2>
+          <ol class="songs">
+            {songs.filter((song) => song.act === act).map((song) => (
+              <li>
+                <p class="song-title">{song.title}</p>
+                <p class="song-cast">{song.sungBy}</p>
+                {song.note && <p class="song-note">{song.note}</p>}
+              </li>
+            ))}
+          </ol>
+        </>
+      ))}
+      <p class="onward">
+        Four of them play on this site, in the uploaders' own frames:
+        {" "}<a href={`/${show.slug}/online/`} title={`${show.title}: what you can legally watch`}>what you can watch now</a>.
+      </p>
+    </section>
+  )}
+
+  {section.template === "online" && show.clips && (
+    <section class="container">
+      <h2>Playing here</h2>
+      <Clips clips={show.clips} showSlug={show.slug} heading={3} />
+      <p class="sources">
+        Every embed was checked against YouTube's oEmbed endpoint on {checkedOn}: if the uploader had switched
+        embedding off, the clip would not be on this page.
+      </p>
+      <p class="onward">
+        None of it is the room, the band eight feet away or the hat trick landing in silence.
+        {" "}<a href={`/${show.slug}/tickets/`} title={`Every run of ${show.title} on sale now`}>The stage version is still touring</a>.
+      </p>
+    </section>
+  )}
+
+  {section.template === "tickets" && (
+    <>
+      <section class="container">
+        <h2>On sale and announced</h2>
+        <RunTable runs={upcoming} caption="Soonest first. Each city has its own page with the theatre, the times and the seller." />
+      </section>
+      {past.length > 0 && (
+        <section class="container">
+          <h2>Already played</h2>
+          <RunTable runs={past} caption="Kept on the site rather than deleted — a city that has had the show once tends to get it again." />
+        </section>
+      )}
+      <section class="container">
+        <p class="sources">
+          Listings read from the production's own site on {checkedOn}:
+          {" "}<a href={go("chicago-official")} rel="nofollow" title={`The official ${show.title} site`}>chicagothemusical.com</a>.
+          Prices and availability live with the seller, and change faster than any listings site can follow.
+        </p>
+      </section>
+    </>
+  )}
+</Layout>
+
+<style>
+  .prose p { max-width: 68ch; }
+  .songs { margin: var(--space-3) 0 0; padding: 0 0 0 var(--space-4); }
+  .songs li { margin-bottom: var(--space-3); }
+  .song-title { margin: 0; font-weight: 600; }
+  .song-cast { margin: 0.1em 0 0; color: var(--ink-faint); font-family: var(--font-mono); font-size: var(--step--1); }
+  .song-note { margin: 0.3em 0 0; color: var(--ink-muted); max-width: 68ch; }
+  .sources, .onward { margin-top: var(--space-4); max-width: 68ch; color: var(--ink-muted); font-size: var(--step--1); }
+</style>

@@ -12,13 +12,25 @@ interface Props {
 }
 const { title, description, jsonLd, image } = Astro.props;
 
+// The menu is about the site, not about one city: the hero event has a place
+// in it because it is the worked example, and the rest is how anyone else
+// arrives — by city, by building, or by what plays at home.
 const nav = [
-  { href: "/", label: "What's on", title: "Musicals on sale now, city by city" },
-  { href: "/dubai/", label: "Dubai", title: "Musicals playing Dubai in 2026" },
-  { href: "/chicago/", label: "Chicago", title: "Chicago The Musical: the show, its history, and where it plays" },
-  { href: "/online/", label: "Online", title: "Musicals you can legally watch at home" },
-  { href: "/about/", label: "About", title: "Who publishes this site and how its listings are checked" },
+  { href: "/", label: "What's on", title: "Musicals on sale now, city by city", icon: "home" },
+  { href: "/#cities", label: "Cities", title: "Cities with more than one musical listed", icon: "map" },
+  { href: "/venues/", label: "Venues", title: "Every theatre and arena on this site", icon: "pin" },
+  { href: "/chicago/", label: "Chicago", title: "Chicago The Musical: every run, its history and what to watch", icon: "stage" },
+  { href: "/online/", label: "Online", title: "Musicals you can legally watch at home", icon: "play" },
+  { href: "/about/", label: "About", title: "How these listings are built and checked", icon: "id" },
 ];
+
+// The site is not tied to the group yet, so the markup has to say the same
+// thing the footer does — see ~/mind/ai/dubai/musical.today.md.
+const publisher = {
+  id: "https://musical.today/#organization",
+  name: "musical.today",
+  url: "https://musical.today/",
+};
 ---
 <BaseLayout
   title={`${title} — musical.today`}
@@ -28,10 +40,14 @@ const nav = [
   complianceNote={disclaimer}
   jsonLd={jsonLd}
   image={image}
+  publisher={publisher}
   partnerDisclosure={false}
-  {/* Not linked to the group until someone says so — see ~/mind/ai/dubai/musical.today.md. */}
   networkFooter={false}
-  footerLinks={[{ href: "/about/", label: "About this site" }]}
+  footerLinks={[
+    { href: "/venues/", label: "Venues" },
+    { href: "/online/", label: "Online" },
+    { href: "/about/", label: "About this site" },
+  ]}
 >
   <slot />
 </BaseLayout>

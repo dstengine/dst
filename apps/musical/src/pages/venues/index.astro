@@ -1,0 +1,75 @@
+---
+// Every theatre on the site, by country and city. It exists because a reader
+// who knows the building and not the season has nowhere else to start — and
+// because thirty-six venue pages with no index is thirty-six orphans.
+import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
+import Layout from "../../layouts/Layout.astro";
+import { checkedOn, cityBySlug, runsAtVenue, statusOf, venuePath, venues } from "../../content";
+
+const rows = venues
+  .map((venue) => {
+    const city = cityBySlug(venue.city);
+    const here = runsAtVenue(venue.slug);
+    return {
+      venue,
+      city: city?.name ?? venue.city,
+      country: city?.country ?? "",
+      upcoming: here.filter((r) => statusOf(r) !== "ended").length,
+    };
+  })
+  .sort((a, b) => a.country.localeCompare(b.country) || a.city.localeCompare(b.city) || a.venue.name.localeCompare(b.venue.name));
+
+const countries = [...new Set(rows.map((r) => r.country))];
+const arena = venues.find((v) => v.capacity && v.capacity > 5000);
+---
+<Layout
+  title="Venues"
+  description={`Every theatre and arena on this site — ${venues.length} of them across ${countries.length} countries — with what plays there, how to get there and where to sit.`}
+>
+  <section class="container hero">
+    <Breadcrumbs crumbs={[]} current="Venues" homeLabel="What's on" />
+    <p class="eyebrow">{venues.length} buildings</p>
+    <h1>Venues</h1>
+    <p class="lede">
+      {arena && (
+        <>One of these buildings holds {arena.capacity!.toLocaleString("en-GB")} people; the rest were built for
+        a fraction of that, and the same production plays them all. </>
+      )}
+      The room is most of the evening — so every building here has its own page:
+      address, how to arrive, what is booked into it and when. Read {checkedOn}.
+    </p>
+  </section>
+
+  {countries.map((country) => (
+    <section class="container">
+      <h2>{country}</h2>
+      <ul class="venue-list">
+        {rows.filter((r) => r.country === country).map(({ venue, city, upcoming }) => (
+          <li>
+            <a href={venuePath(venue)} title={`${venue.name}, ${city}`}>{venue.name}</a>
+            <span class="venue-meta">
+              {city}
+              {venue.capacity ? ` · ${venue.capacity.toLocaleString("en-GB")} seats` : ""}
+              {upcoming > 0 ? ` · ${upcoming === 1 ? "1 run listed" : `${upcoming} runs listed`}` : ""}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+</Layout>
+
+<style>
+  .venue-list { margin: var(--space-3) 0 0; padding: 0; list-style: none; }
+  .venue-list li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.35rem var(--space-2);
+    border-bottom: 1px solid var(--border);
+  }
+  /* The row is a list of names on a phone, and a name is the tap target —
+     so the padding belongs to the link rather than to the row around it. */
+  .venue-list a { display: inline-block; padding: 0.55rem 0; }
+  .venue-meta { color: var(--ink-muted); font-size: var(--step--1); }
+</style>

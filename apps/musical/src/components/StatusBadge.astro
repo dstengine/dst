@@ -1,0 +1,27 @@
+---
+// Where a run stands, in one word. Four states, and each of them means
+// something different to a reader holding a credit card: playing with no end
+// date, on sale, dated but not sellable yet, over.
+import { statusLabel, statusOf, type Run } from "../content";
+
+interface Props { run: Run }
+const { run } = Astro.props;
+const status = statusOf(run);
+---
+<span class:list={["status", `status-${status}`]}>{statusLabel(run)}</span>
+
+<style>
+  .status {
+    display: inline-block;
+    padding: 0.25em 0.6em;
+    border-radius: 999px;
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border: 1px solid currentColor;
+  }
+  .status-on-sale, .status-open-run { color: var(--accent); background: var(--accent-tint); }
+  .status-announced { color: var(--ink-muted); }
+  .status-ended { color: var(--ink-faint); }
+</style>

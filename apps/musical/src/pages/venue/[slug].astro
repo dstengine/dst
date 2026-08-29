@@ -1,0 +1,17 @@
+---
+// Every theatre that is not important enough to sit at the root. A venue
+// carrying rootSlug is served from /<rootSlug>/ and is skipped here, so each
+// venue has exactly one address rather than two that compete.
+import VenueDetail from "../../components/VenueDetail.astro";
+import { venues, type Venue } from "../../content";
+
+export function getStaticPaths() {
+  return venues
+    .filter((venue) => !venue.rootSlug)
+    .map((venue) => ({ params: { slug: venue.slug }, props: { venue } }));
+}
+
+interface Props { venue: Venue }
+const { venue } = Astro.props;
+---
+<VenueDetail venue={venue} />

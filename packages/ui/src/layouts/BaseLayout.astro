@@ -2,8 +2,9 @@
 import '../styles/tokens.css';
 import Analytics from '../components/Analytics.astro';
 import LeadTracking from '../components/LeadTracking.astro';
-import { navIconFor } from '../icons';
+import { ICONS, navIconFor } from '../icons';
 import { pageGraph } from '../schema';
+import type { Publisher } from '../schema';
 import NetworkLinks from '../components/NetworkLinks.astro';
 import { NETWORK, relatedLinks } from '@dst/content/network';
 import type { NetworkSite } from '@dst/content/network';
@@ -16,7 +17,10 @@ interface Props {
   // `title` expands on a nav label for the tooltip and for crawlers — a
   // title identical to the link text adds nothing, so it's only worth
   // setting where it says more than the label does.
-  nav: { href: string; label: string; title?: string }[];
+  // `icon` names a mark from the shared set for a link the network-wide
+  // href map can't know about — a city, a show, a venue. Without it the
+  // icon is still resolved from the href, so every other site is unchanged.
+  nav: { href: string; label: string; title?: string; icon?: string }[];
   complianceNote?: string;
   jsonLd?: Record<string, unknown>[];
   logoSrc?: string;
@@ -44,6 +48,10 @@ interface Props {
       one — which is the whole point of it, since for some of those inner
       pages the hub is the only site linking to them at all. */
   footerSites?: NetworkSite[];
+  /** Who the structured data names as publisher. Defaults to DST; a site
+      that is not being tied to the group passes its own, so the markup says
+      the same thing the footer does. */
+  publisher?: Publisher;
   /** Whether the footer names DST as the network behind the site. A site
       that is not being tied to the group yet passes false — the line is a
       link to dst.llc, and a link is exactly what such a site must not
@@ -51,7 +59,7 @@ interface Props {
   networkFooter?: boolean;
 }
 
-const { title, description, siteName, nav, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [], footerSiteName = siteName, instagram, image, footerSites = [], networkFooter = true } = Astro.props;
+const { title, description, siteName, nav, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [], footerSiteName = siteName, instagram, image, footerSites = [], networkFooter = true, publisher } = Astro.props;
 const isDstHome = Astro.site?.hostname === "dst.llc";
 
 // Absolute URLs: canonical and og:image are both meaningless as relative
@@ -95,14 +103,26 @@ const graph = Astro.site
       image: shareImage,
       dateModified: lastModified(Astro.site.hostname, Astro.url.pathname),
       nav,
+      publisher,
     })
   : undefined;
+
+// A nav item's mark: the one it names, or the one its href implies. Every
+// item in the network has an icon or the row looks half-finished, which is
+// what tests/build-output.test.js now checks.
+const navIcon = (item: { href: string; icon?: string }) =>
+  item.icon ? ICONS[item.icon] : navIconFor(item.href);
 
 const navFootprint =
   nav.reduce((sum, item) => sum + item.label.length, 0) * 8 +
   nav.length * 24 +
   siteName.length * 11;
 const denseNav = navFootprint > 900;
+// A short row has width to spare: it keeps its marks all the way down to the
+// point where the dropdown takes over. A fuller one drops them earlier, or it
+// wraps. One threshold, applied to each site's own row, rather than a single
+// width guessed for nine different navs.
+const lateIcons = navFootprint > 700;
 ---
 <!doctype html>
 <html lang="en">
@@ -167,13 +187,13 @@ const denseNav = navFootprint > 900;
         </a>
         <div class="header-actions">
           <nav class:list={["site-nav", denseNav && "site-nav-dense"]}>
-            <ul class:list={["nav-desktop", denseNav && "nav-desktop-dense"]}>
+            <ul class:list={["nav-desktop", denseNav && "nav-desktop-dense", lateIcons && "nav-icons-late"]}>
               {nav.map((item) => (
                 <li>
                   <a href={item.href} title={item.title ?? item.label}>
-                    {navIconFor(item.href) && (
+                    {navIcon(item) && (
                       <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d={navIconFor(item.href)} />
+                        <path d={navIcon(item)} />
                       </svg>
                     )}
                     <span>{item.label}</span>
@@ -189,9 +209,9 @@ const denseNav = navFootprint > 900;
                 {nav.map((item) => (
                   <li>
                     <a href={item.href} title={item.title ?? item.label}>
-                      {navIconFor(item.href) && (
+                      {navIcon(item) && (
                         <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                          <path d={navIconFor(item.href)} />
+                          <path d={navIcon(item)} />
                         </svg>
                       )}
                       <span>{item.label}</span>
@@ -341,6 +361,12 @@ const denseNav = navFootprint > 900;
     justify-content: center;
     flex-shrink: 0;
     color: var(--ink-muted);
+    /* The mark is 20px; the thing a thumb has to hit is not. The box grows
+       to 44px and the negative inline margin gives most of that back to the
+       row, so the header keeps the spacing the 20px glyph implies. */
+    min-width: 44px;
+    min-height: 44px;
+    margin-inline: -0.5rem;
   }
   .social-icon svg { width: 20px; height: 20px; }
   .social-icon:hover { color: var(--accent, #1F5C4E); }
@@ -388,7 +414,7 @@ const denseNav = navFootprint > 900;
      both cases. */
   .nav-desktop-dense .nav-icon { display: none; }
   @media (max-width: 1400px) {
-    .nav-desktop .nav-icon { display: none; }
+    .nav-icons-late .nav-icon { display: none; }
   }
 
   /* Mobile and tablet: the wrapping inline nav read as a jumbled grid

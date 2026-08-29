@@ -88,6 +88,10 @@ const kindLabel = imageKind && imageKind !== "photo" ? KIND_LABEL[imageKind] : u
   .photo-hero.is-plain::after { display: none; }
   .photo-hero.is-plain .photo-hero-caption { padding: 0; }
   .photo-hero.is-plain :is(h1, h2) { color: var(--ink); text-shadow: none; }
+  /* White is right over a photograph and invisible without one: a venue with
+     no licensed picture was printing its eyebrow in white on the page
+     background. */
+  .photo-hero.is-plain .eyebrow { color: var(--accent); }
   .photo-hero.is-plain .photo-hero-tagline { color: var(--ink-muted); text-shadow: none; }
 
   /* Bottom-right, out of the way of the heading but on the image itself —

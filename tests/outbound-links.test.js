@@ -38,7 +38,13 @@ const ALLOWED = {
   "www.googletagmanager.com": "the analytics tag, loaded as a script",
   "www.openstreetmap.org": "the keyless map embed used on venue and event pages",
   "nominatim.openstreetmap.org": "names the place behind GPS coordinates, once the visitor has granted them",
+  "www.youtube-nocookie.com": "video the uploader allows to be embedded, in YouTube's no-cookie player",
 };
+
+// Fields of a VideoObject that say where the embedded media lives rather
+// than sending a reader off the page. The host still has to be one the page
+// is already allowed to embed, so this is not a way round ALLOWED.
+const MEDIA_FIELDS = new Set(["embedUrl", "contentUrl"]);
 
 // Attributes a browser follows or fetches. `content` is in the list for the
 // meta refresh on /go/ hops and for og:image.
@@ -173,6 +179,7 @@ describe("outbound links, network-wide", () => {
   test("structured data names no third party except through sameAs", () => {
     const offenders = [];
     const sameAs = [];
+    const media = [];
     for (const p of pages()) {
       for (const [, json] of p.text.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
         let data;
@@ -191,6 +198,7 @@ describe("outbound links, network-wide", () => {
             }
             if (isNetworkHost(host) || host === "schema.org") return;
             if (field === "sameAs") sameAs.push(`${p.app}${p.url} -> ${value}`);
+            else if (MEDIA_FIELDS.has(field) && ALLOWED[host]) media.push(`${p.app}${p.url} -> ${value}`);
             else offenders.push(`${p.app}${p.url}: ${field} -> ${value}`);
           } else if (Array.isArray(value)) value.forEach((v) => visit(v, field));
           else if (value && typeof value === "object") for (const k of Object.keys(value)) visit(value[k], k);
@@ -199,6 +207,7 @@ describe("outbound links, network-wide", () => {
       }
     }
     for (const s of sameAs) console.log(`  sameAs: ${s}`);
+    for (const m of media) console.log(`  media: ${m}`);
     assert.deepEqual(offenders, [], `third-party URLs in structured data:\n${offenders.join("\n")}`);
   });
 });

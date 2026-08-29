@@ -1,0 +1,44 @@
+---
+// An OpenStreetMap frame for a place we hold coordinates for. Same embed the
+// portfolio pages use, with the box drawn round the point rather than a
+// guessed zoom level, and a link out for anyone who wants directions.
+//
+// Lazy on purpose: a map below the fold should not cost the first paint.
+interface Props {
+  lat: number;
+  lon: number;
+  /** Named in the iframe title, so a screen reader hears which place. */
+  name: string;
+  /** Half-width of the box in degrees. 0.004 is roughly a few streets. */
+  span?: number;
+  zoom?: number;
+}
+const { lat, lon, name, span = 0.004, zoom = 16 } = Astro.props;
+const bbox = [lon - span, lat - span / 2, lon + span, lat + span / 2].map((n) => n.toFixed(5)).join("%2C");
+const src = `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${lat}%2C${lon}`;
+const full = `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lon}#map=${zoom}/${lat}/${lon}`;
+---
+<figure class="locate-map">
+  <iframe src={src} title={`Map showing ${name}`} loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <figcaption>
+    <a href={full} target="_blank" rel="noopener" title={`Open ${name} on OpenStreetMap`}>Open the map for directions</a>
+  </figcaption>
+</figure>
+
+<style>
+  .locate-map { margin: var(--space-4) 0 0; }
+  .locate-map iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    min-height: 240px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface-sunk);
+  }
+  .locate-map figcaption {
+    margin-top: var(--space-2);
+    font-size: var(--step--1);
+    color: var(--ink-faint);
+  }
+</style>

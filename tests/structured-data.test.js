@@ -18,6 +18,16 @@ const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const APPS = ["dst", "llc", "visas", "riviera", "mbr", "palmcentral", "eco", "fwf", "musical"];
 const ORGANIZATION_ID = "https://dst.llc/#organization";
 
+// Who each host names as its publisher. Every site says DST unless it is
+// deliberately not tied to the group — musical.today publishes itself, and
+// the markup has to agree with the footer or one of them is lying. What the
+// test still enforces is that a host names one publisher, the same one, on
+// every page it serves.
+const PUBLISHER = {
+  musical: "https://musical.today/#organization",
+};
+const publisherFor = (app) => PUBLISHER[app] ?? ORGANIZATION_ID;
+
 /** Every built page: { app, url, canonical, html, blocks, graph } */
 const pages = [];
 
@@ -53,16 +63,26 @@ before(async () => {
 const node = (page, type) => page.graph?.["@graph"].find((n) => n["@type"] === type);
 
 describe("the network graph", () => {
-  test("every page names the same organization as its publisher", () => {
+  test("every page names its host's publisher, and names it everywhere", () => {
     for (const p of pages) {
       const where = `${p.app}${p.url}`;
+      const expected = publisherFor(p.app);
       assert.ok(p.graph, `${where}: no @graph block`);
       const org = node(p, "Organization");
       assert.ok(org, `${where}: no Organization node`);
-      assert.equal(org["@id"], ORGANIZATION_ID, `${where}: organization has a different @id`);
+      assert.equal(org["@id"], expected, `${where}: organization has a different @id`);
       const site = node(p, "WebSite");
       assert.ok(site, `${where}: no WebSite node`);
-      assert.equal(site.publisher?.["@id"], ORGANIZATION_ID, `${where}: site names no publisher`);
+      assert.equal(site.publisher?.["@id"], expected, `${where}: site names no publisher`);
+    }
+  });
+
+  // A site kept out of the group has to be kept out of it here too: naming
+  // dst.llc anywhere in the graph would tie it back through the markup.
+  test("a site with its own publisher names no other one", () => {
+    for (const p of pages.filter((p) => PUBLISHER[p.app])) {
+      const json = JSON.stringify(p.blocks);
+      assert.ok(!json.includes("dst.llc"), `${p.app}${p.url}: names dst.llc in its structured data`);
     }
   });
 
@@ -124,13 +144,13 @@ describe("the network graph", () => {
   test("an article or event block names its publisher and its page", () => {
     const items = pages.flatMap((p) =>
       p.blocks
-        .filter((b) => ["NewsArticle", "Article", "Event"].includes(b["@type"]))
+        .filter((b) => ["NewsArticle", "Article", "Event", "TheaterEvent"].includes(b["@type"]))
         .map((b) => ({ p, b })),
     );
     assert.ok(items.length > 10, `expected the feed's item pages, found ${items.length}`);
     for (const { p, b } of items) {
       const where = `${p.app}${p.url} (${b["@type"]})`;
-      assert.equal(b.publisher?.["@id"], ORGANIZATION_ID, `${where}: no publisher`);
+      assert.equal(b.publisher?.["@id"], publisherFor(p.app), `${where}: no publisher`);
       assert.equal(b.mainEntityOfPage?.["@id"], `${p.canonical}#webpage`, `${where}: not tied to its page`);
     }
     console.log(`  ${items.length} article and event blocks, all attributed`);

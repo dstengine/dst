@@ -1,38 +1,58 @@
 ---
+// The site-wide online page. It plays what it is allowed to play — and the
+// rule is now the practical one: on YouTube, embedding not disabled by the
+// uploader, checked through oEmbed before it goes on a page.
 import Layout from "../layouts/Layout.astro";
-import Callout from "@dst/ui/Callout.astro";
+import Clips from "../components/Clips.astro";
+import { checkedOn, shows } from "../content";
+
+const withClips = shows.filter((show) => (show.clips ?? []).length > 0);
+const total = withClips.reduce((n, show) => n + (show.clips?.length ?? 0), 0);
 ---
 <Layout
   title="Musicals online"
-  description="Musicals you can legally watch or hear at home: film versions, cast recordings and the clips productions publish themselves — and why full stage recordings are not linked here."
+  description="Musicals you can watch right now, legally and for nothing: numbers the productions publish themselves and cast recordings on the rights holders' own channels, playing on this page."
 >
   <section class="container hero">
     <p class="eyebrow">At home</p>
-    <h1>Musicals online</h1>
+    <h1>Musicals you can watch right now</h1>
     <p class="lede">
-      A stage musical is not usually something you can stream. What exists
-      legally is a film version, a cast recording, and whatever the
-      production itself puts out — and that is what this page collects.
+      A stage musical is the one art form that mostly refuses to be recorded —
+      and yet the producers themselves put whole numbers on YouTube, and the
+      labels put the cast albums up beside them. {total} of them play on this
+      page, in the frame their owners provide, checked {checkedOn}.
     </p>
   </section>
 
-  <section class="container">
-    <h2>What is linked here</h2>
-    <ul>
-      <li><strong>Official clips.</strong> Numbers a production or a broadcaster published on its own channel: award-show performances, trailers, rehearsal footage.</li>
-      <li><strong>Film adaptations.</strong> Where a musical has one, on the services that actually licensed it.</li>
-      <li><strong>Cast recordings.</strong> The original and revival albums, which for most shows are the only complete record of the score.</li>
-    </ul>
-    <h2>What is not</h2>
-    <ul>
-      <li><strong>Bootlegs and reuploads</strong> of full stage performances, however many views they have.</li>
-      <li><strong>Aggregator pages</strong> that promise a stream and deliver a survey.</li>
-    </ul>
-  </section>
+  {withClips.map((show) => (
+    <section class="container">
+      <h2><a href={`/${show.slug}/online/`} title={`Everything from ${show.title} you can legally watch`}>{show.title}</a></h2>
+      <p>{show.tagline}</p>
+      <Clips clips={show.clips!} showSlug={show.slug} heading={3} />
+    </section>
+  ))}
 
-  <Callout kind="note">
-    <strong>Nothing is embedded here yet.</strong> Each clip is checked as an
-    official upload before it goes on the page, and none has been checked yet.
-    An empty section is better than a page of dead or infringing embeds.
-  </Callout>
+  <section class="container prose">
+    <h2>What is here and what is not</h2>
+    <p>
+      Here: numbers a production or a broadcaster published on its own channel,
+      and cast recordings on the rights holders' channels. Each one is checked
+      against YouTube's own embed endpoint before it goes up — if the uploader
+      has switched embedding off, it does not appear.
+    </p>
+    <p>
+      Not here: full stage performances filmed from a seat and uploaded by
+      someone who did not make them. The reason is practical before it is
+      principled — they get taken down, and a page of dead frames is worse than
+      a shorter page.
+    </p>
+    <p>
+      None of it is a substitute for the room. It is a good way to find out
+      whether you want the room.
+    </p>
+  </section>
 </Layout>
+
+<style>
+  .prose p { max-width: 68ch; }
+</style>

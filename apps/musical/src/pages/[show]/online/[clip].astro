@@ -1,0 +1,18 @@
+---
+// One clip, one page. The listing at /<show>/online/ plays all of them; this
+// is where a single recording gets the paragraph explaining why it is worth
+// the three minutes.
+import ClipPage from "../../../components/ClipPage.astro";
+import { showBySlug, shows, type Clip, type Show } from "../../../content";
+
+export function getStaticPaths() {
+  return shows.flatMap((show) =>
+    (show.clips ?? []).map((clip) => ({ params: { show: show.slug, clip: clip.slug }, props: { clip } })),
+  );
+}
+
+interface Props { clip: Clip }
+const { clip } = Astro.props;
+const show = showBySlug(Astro.params.show!)! as Show;
+---
+<ClipPage show={show} clip={clip} />

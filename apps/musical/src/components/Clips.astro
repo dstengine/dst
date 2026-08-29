@@ -1,0 +1,70 @@
+---
+// Video that plays here rather than sending you away. Every id below was
+// checked through YouTube's oEmbed endpoint before it was added — if the
+// uploader has disabled embedding, or the video is gone, that request fails
+// and the clip does not go on the page:
+//
+//   curl -s "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=<ID>&format=json"
+//
+// The channel is printed under each one for the same reason a seller is
+// named next to a ticket button: you should be able to see whose upload you
+// are watching.
+import type { Clip } from "../content";
+
+interface Props {
+  clips: Clip[];
+  /** Link each clip's caption to its own page. */
+  showSlug?: string;
+  heading?: 2 | 3;
+}
+const { clips, showSlug, heading = 3 } = Astro.props;
+const Heading = `h${heading}` as "h2" | "h3";
+---
+<div class="clips">
+  {clips.map((clip) => (
+    <figure class="clip">
+      <div class="clip-frame">
+        <iframe
+          src={`https://www.youtube-nocookie.com/embed/${clip.id}`}
+          title={clip.title}
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <figcaption>
+        <Heading class="clip-title">
+          {showSlug
+            ? <a href={`/${showSlug}/online/${clip.slug}/`} title={clip.title}>{clip.title}</a>
+            : clip.title}
+        </Heading>
+        {clip.note && <p class="clip-note">{clip.note}</p>}
+        <p class="clip-source">{clip.channel} · embed checked {clip.checkedOn}</p>
+      </figcaption>
+    </figure>
+  ))}
+</div>
+
+<style>
+  .clips { display: grid; gap: var(--space-4); margin: var(--space-4) 0 0; }
+  @media (min-width: 900px) {
+    .clips { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  .clip { margin: 0; }
+  .clip-frame {
+    aspect-ratio: 16 / 9;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--surface-sunk);
+  }
+  .clip-frame iframe { display: block; width: 100%; height: 100%; border: 0; }
+  .clip-title { margin: var(--space-2) 0 0.3em; font-size: var(--step-0); }
+  .clip-note { margin: 0; color: var(--ink-muted); }
+  .clip-source {
+    margin: 0.35em 0 0;
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    color: var(--ink-faint);
+  }
+</style>

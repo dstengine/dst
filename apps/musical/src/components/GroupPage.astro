@@ -1,0 +1,64 @@
+---
+// A tour, seen whole. The stops themselves live at /chicago/<city>/ — a city
+// outlives a season, so it keeps the flat address — and this page is the
+// thing that makes them a season: the shape of the route, how much of it is
+// already sellable, and the first and last night.
+import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
+import Glance from "@dst/ui/Glance.astro";
+import { ICONS } from "@dst/ui/icons";
+import Layout from "../layouts/Layout.astro";
+import RunTable from "./RunTable.astro";
+import { go } from "../outbound";
+import { checkedOn, cityBySlug, formatRun, runsInGroup, statusOf, type RunGroup, type Show } from "../content";
+
+interface Props { show: Show; group: RunGroup }
+const { show, group } = Astro.props;
+
+const stops = runsInGroup(group.slug).sort((a, b) => (a.start ?? "").localeCompare(b.start ?? ""));
+const onSale = stops.filter((r) => statusOf(r) === "on-sale");
+const waiting = stops.filter((r) => statusOf(r) === "announced");
+const first = stops[0];
+const last = stops[stops.length - 1];
+const cityName = (slug: string) => cityBySlug(slug)?.name ?? slug;
+
+const glance = [
+  { label: "Stops", value: `${stops.length} cities`, icon: ICONS.map },
+  first?.start && { label: "Opens", value: `${formatRun(first).split(" – ")[0]}, ${cityName(first.city)}`, icon: ICONS.events },
+  last?.end && { label: "Closes", value: `${formatRun(last)}, ${cityName(last.city)}`, icon: ICONS.events },
+  { label: "On sale", value: `${onSale.length} of ${stops.length}`, icon: ICONS.ticket },
+  { label: "Last checked", value: checkedOn, icon: ICONS.list },
+].filter(Boolean) as { label: string; value: string; icon: string }[];
+---
+<Layout title={group.title} description={`${group.blurb} Every stop with its theatre, dates and seller.`}>
+  <section class="container hero">
+    <Breadcrumbs crumbs={[{ href: `/${show.slug}/`, label: show.title }]} current={group.name} homeLabel="What's on" />
+    <p class="eyebrow">Tour</p>
+    <h1>{group.title}</h1>
+    <p class="lede">{group.body[0]}</p>
+    <Glance facts={glance} />
+  </section>
+
+  <section class="container prose">
+    {group.body.slice(1).map((paragraph) => <p>{paragraph}</p>)}
+  </section>
+
+  <section class="container">
+    <h2>Every stop</h2>
+    <RunTable runs={stops} caption="In the order the tour plays them. Each city has its own page." />
+    {waiting.length > 0 && (
+      <p class="note">
+        {waiting.length === 1 ? "One stop is" : `${waiting.length} stops are`} announced without a seller:
+        {" "}{waiting.map((r) => cityName(r.city)).join(", ")}. They are listed here rather than left out.
+      </p>
+    )}
+    <p class="note">
+      Source: the production's own tour listing, read {checkedOn}.
+      {" "}<a href={go("chicago-uk-tour")} rel="nofollow" title={`The ${group.name} on the production's own site`}>The official tour page</a>.
+    </p>
+  </section>
+</Layout>
+
+<style>
+  .prose p { max-width: 68ch; }
+  .note { margin-top: var(--space-3); color: var(--ink-muted); font-size: var(--step--1); max-width: 68ch; }
+</style>

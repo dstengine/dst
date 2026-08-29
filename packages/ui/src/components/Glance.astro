@@ -1,0 +1,78 @@
+---
+// The facts someone weighs before deciding, in the order they weigh them.
+// Lifted out of EventArticle.astro unchanged when a second kind of page — a
+// run of a musical, a venue — needed exactly the same block; the markup,
+// the class names and the CSS are the ones that were already shipping.
+//
+// A row whose value is missing is not passed in. An empty row is worse than
+// a shorter list, so the caller filters and this renders what survives.
+interface Fact {
+  label: string;
+  value: string;
+  /** Path from ICONS, already resolved by the caller. */
+  icon: string;
+  /** Turns the value into a link — a venue, a seller, a city page. */
+  href?: string;
+}
+
+interface Props {
+  facts: Fact[];
+  /** Below this many rows the block is noise; the caller usually wants 2. */
+  min?: number;
+  class?: string;
+}
+const { facts, min = 2, class: className } = Astro.props;
+---
+{facts.length >= min && (
+  <dl class:list={["event-glance", className]}>
+    {facts.map((fact) => (
+      <div class="event-glance-row">
+        <dt>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={fact.icon} /></svg>
+          <span>{fact.label}</span>
+        </dt>
+        <dd>{fact.href ? <a href={fact.href} title={fact.value}>{fact.value}</a> : fact.value}</dd>
+      </div>
+    ))}
+  </dl>
+)}
+
+<style>
+  .event-glance {
+    margin: var(--space-4) 0 0;
+    padding: var(--space-3);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface-sunk);
+    display: grid;
+    gap: var(--space-2);
+  }
+  .event-glance-row {
+    display: grid;
+    grid-template-columns: 9rem 1fr;
+    gap: var(--space-2);
+    align-items: baseline;
+  }
+  .event-glance dt {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .event-glance dt svg { flex: none; width: 1.15em; height: 1.15em; }
+  .event-glance dd {
+    margin: 0;
+    color: var(--ink);
+    /* Prices and times line up down the column. */
+    font-variant-numeric: tabular-nums;
+  }
+  /* A key/value table never scrolls sideways on a phone — the label is half
+     the content, and taking it off screen orphans every value. It stacks. */
+  @media (max-width: 560px) {
+    .event-glance-row { grid-template-columns: 1fr; gap: 0.15rem; }
+  }
+</style>
