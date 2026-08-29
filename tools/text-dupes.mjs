@@ -99,7 +99,7 @@ const avg = scored.reduce((s, p) => s + p.pct, 0) / scored.length;
 const bavg = scored.reduce((s, p) => s + p.bpct, 0) / scored.length;
 console.log(`\nsite average: ${(avg * 100).toFixed(1)}% shared with any page, ${(bavg * 100).toFixed(1)}% boilerplate`);
 
-const focus = process.argv[3];
+const focus = process.argv.slice(3).find((a) => !a.startsWith("--"));
 if (focus) {
   const p = scored.find((x) => x.url === focus);
   console.log(`\n=== ${focus} (${p.words}w, ${(p.pct*100).toFixed(0)}% shared)\n`);
