@@ -2,6 +2,34 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "juegos-mundiales-robots-humanoides-2026",
+    site: "cmx",
+    title: "Un robot corrió los 100 metros en 8.86",
+    summary:
+      "En los Juegos Mundiales de Robots Humanoides de Pekín, Tiangong Ultra bajó de la marca de Usain Bolt. Hace un año el mismo robot corría los 100 metros en 21.50 segundos.",
+    date: "2026-08-30",
+    category: "Mundo",
+    source: {
+      name: "Wikipedia: World Humanoid Robot Games",
+      url: "https://en.wikipedia.org/wiki/World_Humanoid_Robot_Games",
+      verifiedOn: "2026-08-30",
+    },
+    body: [
+      "La cifra que importa no es <strong>8.86 segundos</strong>. Es <strong>21.50</strong> &mdash; lo que el mismo robot tardaba hace <strong>doce meses</strong>",
+      "## Qué son estos juegos",
+      "Los <strong>Juegos Mundiales de Robots Humanoides</strong> se celebraron del <strong>22 al 26 de agosto de 2026</strong> en <strong>Pekín</strong>. Compitieron <strong>2 056 robots</strong> de <strong>666 equipos</strong> en <strong>51 pruebas</strong>: 30 competitivas y 21 de escenario. La edición inaugural, en 2025, tuvo 280 equipos y poco más de 500 robots en 26 pruebas",
+      "## Las marcas",
+      "El robot <strong>Tiangong Ultra</strong> corrió los <strong>100 metros en 8.86 segundos</strong> en una semifinal, por debajo del récord humano de Usain Bolt (<strong>9.58</strong>, de 2009). En los <strong>400 metros</strong> marcó <strong>38.15</strong>, contra el récord humano de 43.03. En <strong>1 500 metros</strong> hizo <strong>2:21.64</strong>. En salto de altura el nuevo récord quedó en <strong>2.88 metros</strong>, 43 centímetros por encima de la marca de Javier Sotomayor",
+      "## Por qué no significa lo que parece",
+      "Un robot no corre como un humano. No tiene que respirar, no acumula ácido láctico y puede estar diseñado con proporciones que a un cuerpo humano le costarían la espalda. Comparar sus tiempos con los de Bolt es entretenido y no mide lo mismo",
+      "Lo que sí mide es la velocidad de mejora. Reducir a la mitad el tiempo de los 100 metros en un año, y triplicar la altura del salto respecto a los 0.95 metros de 2025, describe una curva de progreso que casi ninguna otra área de la robótica tiene",
+      "## Lo que siguió sin funcionar",
+      "Robots que tropezaron, que se rompieron y alguno que se incendió. Y el reproche que se repitió en la cobertura: corren rapidísimo y todavía no saben conectar un cable. La destreza fina &mdash; agarrar, orientar, insertar &mdash; sigue siendo mucho más difícil que correr en línea recta",
+    ],
+    expertise:
+      "Los récords de velocidad son la parte fotogénica y la menos informativa. Correr es un problema de equilibrio dinámico repetitivo, que el aprendizaje por refuerzo resuelve bien porque se puede simular millones de veces. Manipular objetos del mundo real no se simula igual de bien, y por eso el salto de una prueba a la otra no ocurre solo",
+  },
+  {
     slug: "s301-la-estrella-mas-rapida",
     site: "cmx",
     title: "La estrella más rápida de la Vía Láctea",

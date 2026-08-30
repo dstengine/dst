@@ -2,6 +2,66 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "moderna-vacuna-melanoma-fase-3",
+    site: "mxo",
+    title: "La vacuna contra el melanoma sí funcionó",
+    summary:
+      "El ensayo de fase 3 de la vacuna individualizada de Moderna y Merck se detuvo antes de tiempo por buenos resultados: retrasa la recaída del melanoma operado. Es la primera vez que una vacuna de ARN mensajero contra el cáncer lo logra.",
+    date: "2026-08-30",
+    category: "Mundo",
+    source: {
+      name: "BioPharma Dive",
+      url: "https://www.biopharmadive.com/news/moderna-merck-cancer-vaccine-landmark-result-melanoma/828238/",
+      verifiedOn: "2026-08-30",
+    },
+    body: [
+      "Un ensayo clínico que se detiene antes de tiempo casi siempre es una mala noticia. Éste se detuvo porque los resultados eran tan claros que seguir habría sido injusto para el grupo de control",
+      "## Qué se probó",
+      "El ensayo <strong>INTerpath-001</strong>, de <strong>fase 3</strong>, inscribió a <strong>1 137 personas</strong> a las que ya se les había extirpado quirúrgicamente un melanoma. Dos tercios recibieron <strong>intismeran</strong> &mdash; la vacuna individualizada de ARN mensajero de <strong>Moderna</strong> &mdash; junto con <strong>Keytruda</strong>, la inmunoterapia de Merck. El resto recibió sólo Keytruda",
+      "El comité independiente que vigila el estudio encontró mejoras <em>estadísticamente significativas y clínicamente relevantes</em> en el grupo combinado, y autorizó terminar el ensayo en el análisis intermedio",
+      "## Qué significa «individualizada»",
+      "No es una vacuna que se fabrique en lotes. Se secuencia el tumor de cada paciente, se identifican hasta <strong>34 neoantígenos</strong> &mdash; proteínas mutadas que sólo aparecen en sus células cancerosas &mdash; y se fabrica un ARN mensajero que le enseña a su sistema inmune a reconocer esas 34 señales concretas",
+      "Es decir: cada dosis existe para una sola persona. Ése es el logro y también el problema, porque es un modelo de producción que ninguna farmacéutica ha operado a gran escala",
+      "## Lo que todavía no se sabe",
+      "Las cifras. Las empresas anunciaron que el ensayo tuvo éxito pero <strong>no publicaron los datos detallados</strong>; se presentarán en un congreso médico sin fecha anunciada. Los analistas esperaban al menos un 20 por ciento de reducción del riesgo, y consideraban que entre 35 y 40 por ciento sería un resultado claramente diferenciado",
+      "Tampoco hay ruta regulatoria anunciada, ni precio, ni plazo. Hay ensayos en marcha en cáncer de riñón, vejiga y pulmón",
+      "## Por qué se está contando como un hito",
+      "Porque es el <strong>primer ensayo aleatorizado de fase 3</strong> que demuestra el beneficio de este tipo de vacuna. Las vacunas terapéuticas contra el cáncer llevan décadas de resultados prometedores en fases tempranas que no se sostenían después. Ésta se sostuvo",
+    ],
+    expertise:
+      "Conviene separar dos cosas que el anuncio junta. Que el ensayo funcionara es un hecho verificado por un comité independiente; cuánto funcionó es todavía una cifra que nadie fuera de las empresas ha visto. Hasta que se presenten los datos en un congreso, cualquier titular con un porcentaje viene de expectativas de analistas, no del estudio",
+  },
+  {
+    slug: "record-temperatura-oceano-2026",
+    site: "mxo",
+    title: "El océano nunca había estado tan caliente",
+    summary:
+      "El 22 de agosto la temperatura media de la superficie del mar llegó a 21.1 °C, récord absoluto. Lo insólito es la fecha: agosto debería ser temporada de enfriamiento, no de máximos.",
+    date: "2026-08-30",
+    category: "Mundo",
+    source: {
+      name: "Al Jazeera",
+      url: "https://www.aljazeera.com/news/2026/8/25/global-ocean-temperatures-hit-record-high-as-el-nino-intensifies",
+      verifiedOn: "2026-08-30",
+    },
+    body: [
+      "El récord no es el número. Es el mes",
+      "## El dato",
+      "El <strong>22 de agosto</strong> la temperatura media de la superficie del océano global alcanzó <strong>21.1 °C</strong>, según el servicio europeo <strong>Copernicus</strong>. El máximo anterior para un solo día era de <strong>21.09 °C</strong>, medido en <strong>marzo de 2024</strong>",
+      "## Por qué la fecha importa más que la cifra",
+      "El océano global tiene su propio calendario. Alcanza sus temperaturas más altas en <strong>marzo y abril</strong>, después del verano austral, porque el hemisferio sur tiene mucha más superficie de agua que de tierra. Agosto es, en ese ciclo, temporada de bajada",
+      "Batir en agosto un récord que pertenecía a marzo significa que la curva entera se movió, no que hubo un día raro",
+      "## El Niño encima",
+      "La <strong>NOAA</strong> informó el <strong>13 de agosto</strong> que El Niño se está fortaleciendo, con más de <strong>90 por ciento</strong> de probabilidad de un evento muy fuerte durante el otoño e invierno boreales y hasta 2027. Para el trimestre <strong>octubre&ndash;diciembre</strong> calcula un <strong>69 por ciento</strong> de probabilidad de un evento que supere a todos los registrados desde <strong>1950</strong>",
+      "> El Niño está añadiendo calor al sistema, pero lo hace encima de décadas de calentamiento provocado por el ser humano.\n— Samantha Burgess, responsable de estrategia climática en Copernicus",
+      "Las dos cosas se suman y no se confunden: El Niño es un ciclo que va y viene cada pocos años; la línea base sobre la que oscila es la que subió",
+      "## Qué falta por ver",
+      "El agua seguirá calentándose hasta que El Niño llegue a su punto máximo, previsto entre <strong>noviembre y enero</strong>. Para México eso se traduce en una temporada de huracanes y un invierno que conviene mirar con el pronóstico en la mano y no con la memoria del año pasado",
+    ],
+    expertise:
+      "El error de lectura más común con estos récords es tratarlos como noticia de un día. La cifra útil no es 21.1 sino la comparación con marzo de 2024: un récord estacionalmente imposible, batido fuera de temporada. Eso es lo que distingue una anomalía de una tendencia, y es también lo único que se puede afirmar hoy sin esperar al pico de El Niño",
+  },
+  {
     slug: "capuchinos-cazan-cuando-falta-fruta",
     site: "mxo",
     title: "Cuando falta fruta, estos monos cazan",
