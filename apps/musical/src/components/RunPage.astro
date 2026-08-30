@@ -145,12 +145,12 @@ const eventLd: Record<string, unknown> = {
       )}
     </p>
     <p class="lede">{runIntro(run)}</p>
-    <TicketButtons run={run} showName={show.title} cityName={city.name} />
-    {run.start && !run.openRun && (
-      <p class="run-calendar">
-        <a href={`/${show.slug}/${run.slug}.ics`} title={`Add ${title} to a calendar`}>Add to calendar</a>
-      </p>
-    )}
+    <TicketButtons
+      run={run}
+      showName={show.title}
+      cityName={city.name}
+      calendarHref={run.start && !run.openRun ? `/${show.slug}/${run.slug}.ics` : undefined}
+    />
     <Glance facts={glance} />
     {jump.length > 3 && <OnThisPage items={jump} />}
   </section>
@@ -208,16 +208,19 @@ const eventLd: Record<string, unknown> = {
 </Layout>
 
 <style>
+  /* center, not baseline: the status badge is a bordered capsule, and a
+     baseline row hangs its box below the date's baseline by the depth of
+     its own padding — which lifts the badge visibly above the line of text
+     it belongs to. */
   .run-meta {
     display: flex;
     flex-wrap: wrap;
-    align-items: baseline;
+    align-items: center;
     gap: var(--space-2);
     margin: var(--space-3) 0 0;
     color: var(--ink-muted);
   }
   .run-countdown { color: var(--ink-faint); font-family: var(--font-mono); font-size: var(--step--1); }
-  .run-calendar { margin: var(--space-3) 0 0; font-size: var(--step--1); }
   .sellers { margin: var(--space-3) 0 0; padding: 0; list-style: none; display: grid; gap: var(--space-3); }
   .sellers li { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); }
   .sellers span { color: var(--ink-muted); }

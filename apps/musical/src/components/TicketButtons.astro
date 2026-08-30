@@ -18,8 +18,13 @@ interface Props {
   run: Run;
   showName: string;
   cityName: string;
+  /* The .ics link, when the run has a date to put in a calendar. It renders
+     here rather than in its own paragraph below: buying and saving the date
+     are the same decision, and a bare text link under a solid button read as
+     an orphan rather than as the second half of a pair. */
+  calendarHref?: string;
 }
-const { run, showName, cityName } = Astro.props;
+const { run, showName, cityName, calendarHref } = Astro.props;
 const buttons = ticketButtons(run);
 const status = statusOf(run);
 ---
@@ -33,6 +38,14 @@ const status = statusOf(run);
         title={`Buy tickets for ${showName} in ${cityName} from ${button.seller.name}`}
       >{button.label}</a>
     ))}
+    {calendarHref && (
+      <a class="button button-secondary" href={calendarHref} title={`Add ${showName} in ${cityName} to a calendar`}>Add to calendar</a>
+    )}
+  </p>
+)}
+{buttons.length === 0 && calendarHref && (
+  <p class="ticket-actions">
+    <a class="button button-secondary" href={calendarHref} title={`Add ${showName} in ${cityName} to a calendar`}>Add to calendar</a>
   </p>
 )}
 {buttons.length > 0 && (
@@ -63,13 +76,13 @@ const status = statusOf(run);
     max-width: none;
     margin: var(--space-3) 0 0;
   }
-  /* The one thing the page is for, sized like it. The network button is
-     built for a link in a paragraph; this is the whole reason a reader
-     opened the page, and at the shared size it read as an afterthought
-     beside the headline. */
+  /* Bigger than the network button, which is built for a link inside a
+     paragraph — but only by a step. At --step-1 with 0.9em padding this
+     measured 78px tall against a 28px line of type beside it, and read as
+     an app's sticky CTA dropped into an editorial page. */
   .ticket-actions :global(.button) {
-    padding: 0.9em 1.7em;
-    font-size: var(--step-1);
+    padding: 0.75em 1.5em;
+    font-size: var(--step-0);
     /* A seller's name wraps on a phone; centred, the two lines read as a
        label rather than as a paragraph that happens to sit in a box. */
     justify-content: center;
