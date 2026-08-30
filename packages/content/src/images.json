@@ -2190,6 +2190,54 @@
         ]
       ]
     },
+    "/venues/ambassador-theatre.jpg": {
+      "width": 1920,
+      "height": 1280,
+      "avif": [
+        [
+          480,
+          "/venues/ambassador-theatre-480.avif"
+        ],
+        [
+          768,
+          "/venues/ambassador-theatre-768.avif"
+        ],
+        [
+          1024,
+          "/venues/ambassador-theatre-1024.avif"
+        ],
+        [
+          1440,
+          "/venues/ambassador-theatre-1440.avif"
+        ],
+        [
+          1920,
+          "/venues/ambassador-theatre-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/ambassador-theatre-480.webp"
+        ],
+        [
+          768,
+          "/venues/ambassador-theatre-768.webp"
+        ],
+        [
+          1024,
+          "/venues/ambassador-theatre-1024.webp"
+        ],
+        [
+          1440,
+          "/venues/ambassador-theatre-1440.webp"
+        ],
+        [
+          1920,
+          "/venues/ambassador-theatre-1920.webp"
+        ]
+      ]
+    },
     "/venues/birmingham-hippodrome.jpg": {
       "width": 1920,
       "height": 1493,
@@ -3507,6 +3555,54 @@
         [
           1400,
           "/venues/theatre-royal-plymouth-1400.webp"
+        ]
+      ]
+    },
+    "/venues/tokyu-theatre-orb.jpg": {
+      "width": 1920,
+      "height": 1280,
+      "avif": [
+        [
+          480,
+          "/venues/tokyu-theatre-orb-480.avif"
+        ],
+        [
+          768,
+          "/venues/tokyu-theatre-orb-768.avif"
+        ],
+        [
+          1024,
+          "/venues/tokyu-theatre-orb-1024.avif"
+        ],
+        [
+          1440,
+          "/venues/tokyu-theatre-orb-1440.avif"
+        ],
+        [
+          1920,
+          "/venues/tokyu-theatre-orb-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/tokyu-theatre-orb-480.webp"
+        ],
+        [
+          768,
+          "/venues/tokyu-theatre-orb-768.webp"
+        ],
+        [
+          1024,
+          "/venues/tokyu-theatre-orb-1024.webp"
+        ],
+        [
+          1440,
+          "/venues/tokyu-theatre-orb-1440.webp"
+        ],
+        [
+          1920,
+          "/venues/tokyu-theatre-orb-1920.webp"
         ]
       ]
     },
