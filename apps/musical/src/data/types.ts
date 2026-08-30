@@ -53,12 +53,14 @@ export interface Venue {
   /** CSS object-position, when the building is not in the middle of the
       frame and the opener's crop would cut it off. */
   imagePosition?: string;
-  /** Attribution. The licences these pictures come under require the
-      photographer's name, the licence and a way back to the original, so
-      the four travel together or the picture does not ship. The two
-      addresses are keys in outbound.ts, not URLs: every external address on
-      this site lives there and is reached through /go/, attribution
-      included. */
+  /** Attribution, where the licence asks for it. CC BY and CC BY-SA give the
+      picture away on one condition — that the photographer is named — so a
+      picture known to be under one of those does not publish without a
+      credit. CC0 and public domain ask for nothing, and there the credit is
+      a courtesy we print when we know the name and leave off when we do not.
+      The two addresses are keys in outbound.ts, not URLs: every external
+      address on this site lives there and is reached through /go/,
+      attribution included. */
   imageCredit?: string;
   imageLicense?: string;
   imageLicenseSlug?: string;
@@ -76,6 +78,21 @@ export interface City {
       ../rules.ts for why that is off by default. */
   featured?: boolean;
   summary?: string;
+  /** A cover for the run pages set here: the view a reader recognises as
+      this place, not the theatre — the theatre has its own page and its own
+      photograph. Verified to be this city, because a page that names the
+      city and shows another one is a factual error. */
+  image?: string;
+  imageAlt?: string;
+  /** CSS object-position, when the subject is not in the middle and the
+      cover's crop would lose it. */
+  imagePosition?: string;
+  /** See the same fields on Venue: credit where the licence asks for it,
+      and the two addresses are outbound.ts keys, not URLs. */
+  imageCredit?: string;
+  imageLicense?: string;
+  imageLicenseSlug?: string;
+  imageSourceSlug?: string;
 }
 
 /** A tour: many runs sold as one season. It gets an overview page, but not a

@@ -6,6 +6,7 @@ import Photo from "../Photo.astro";
 // written a full guide to — see each app's src/pages/<topic>/[slug].astro.
 import { iconFor } from "../../icons";
 import VenueCard from "./VenueCard.astro";
+import PhotoCredit from "../PhotoCredit.astro";
 import PhotoHero from "./PhotoHero.astro";
 
 interface Highlight {
@@ -105,13 +106,7 @@ const hasPanel = Boolean(building || hourRows.length || phone || details?.length
 <header class="container venue-hero">
   <PhotoHero eyebrow={eyebrow} title={name} tagline={tagline} image={image} imageAlt={imageAlt} imagePosition={imagePosition} />
   {image && imageCredit && (
-    <p class="venue-credit">
-      Photograph by {imageCredit.sourceUrl
-        ? <a href={imageCredit.sourceUrl} title={`${imageCredit.name}'s original of this photograph`}>{imageCredit.name}</a>
-        : imageCredit.name}, {imageCredit.licenseUrl
-        ? <a href={imageCredit.licenseUrl} rel="license" title={`The ${imageCredit.license} licence in full`}>{imageCredit.license}</a>
-        : imageCredit.license}.
-    </p>
+    <PhotoCredit {...imageCredit} />
   )}
 </header>
 
@@ -230,11 +225,6 @@ const hasPanel = Boolean(building || hourRows.length || phone || details?.length
   .venue-crumb a:hover { text-decoration: underline; }
 
   .venue-hero { margin-top: var(--space-2); }
-  .venue-credit {
-    margin: var(--space-2) 0 0;
-    color: var(--ink-faint);
-    font-size: var(--step--1);
-  }
 
   .venue-body {
     display: grid;

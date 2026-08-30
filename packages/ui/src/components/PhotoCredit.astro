@@ -1,0 +1,35 @@
+---
+// The line under a photograph naming who took it and under what licence.
+// Creative Commons requires both, plus a way back to the original, so this
+// is part of publishing the picture rather than a decoration on it — a
+// picture whose credit is missing does not get published at all.
+//
+// The caller supplies the two addresses rather than the component building
+// them, which is what lets a site that routes everything outbound through a
+// hop pass its own hop where another would pass the destination.
+interface Props {
+  name: string;
+  license: string;
+  licenseUrl?: string;
+  sourceUrl?: string;
+  /** Extra class for page-specific spacing. */
+  class?: string;
+}
+const { name, license, licenseUrl, sourceUrl, class: className } = Astro.props;
+---
+
+<p class:list={["photo-credit", className]}>
+  Photograph by {sourceUrl
+    ? <a href={sourceUrl} title={`${name}'s original of this photograph`}>{name}</a>
+    : name}, {licenseUrl
+    ? <a href={licenseUrl} rel="license" title={`The ${license} licence in full`}>{license}</a>
+    : license}.
+</p>
+
+<style>
+  .photo-credit {
+    margin: var(--space-2) 0 0;
+    color: var(--ink-faint);
+    font-size: var(--step--1);
+  }
+</style>

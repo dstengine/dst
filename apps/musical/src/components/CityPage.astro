@@ -3,6 +3,8 @@
 // standing reason of its own (see cityHasPage in ../rules.ts). So this page
 // is never a second copy of a run page: it answers "what is on here", which
 // the run page cannot, and it lists the theatres that answer it next season.
+import Photo from "@dst/ui/Photo.astro";
+import PhotoCredit from "@dst/ui/PhotoCredit.astro";
 import Glance from "@dst/ui/Glance.astro";
 import Callout from "@dst/ui/Callout.astro";
 import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
@@ -10,6 +12,7 @@ import MapEmbed from "@dst/ui/MapEmbed.astro";
 import VenueCard from "@dst/ui/district/VenueCard.astro";
 import { ICONS } from "@dst/ui/icons";
 import Layout from "../layouts/Layout.astro";
+import { go } from "../outbound";
 import RunTable from "./RunTable.astro";
 import EventCards from "./EventCards.astro";
 import {
@@ -40,6 +43,23 @@ const glance = [
 >
   <section class="container hero">
     <Breadcrumbs crumbs={[]} current={city.name} homeLabel="What's on" />
+    {city.image && (
+      <figure class="city-cover">
+        <Photo src={city.image} alt={city.imageAlt ?? city.name} loading="eager"
+          fetchpriority="high" sizes="(min-width: 60rem) 56rem, 100vw"
+          style={city.imagePosition ? `object-position: ${city.imagePosition}` : undefined} />
+        {city.imageCredit && city.imageLicense && (
+          <figcaption>
+            <PhotoCredit
+              name={city.imageCredit}
+              license={city.imageLicense}
+              licenseUrl={city.imageLicenseSlug ? go(city.imageLicenseSlug) : undefined}
+              sourceUrl={city.imageSourceSlug ? go(city.imageSourceSlug) : undefined}
+            />
+          </figcaption>
+        )}
+      </figure>
+    )}
     <p class="eyebrow">{city.country}</p>
     <h1>Musicals in {city.name}</h1>
     {city.summary && <p class="lede">{city.summary}</p>}
@@ -93,5 +113,16 @@ const glance = [
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: var(--space-3);
     margin-top: var(--space-3);
+  }
+  /* The card's picture at full size, and the only place it is credited:
+     a card is a link and cannot hold a caption with two links inside it. */
+  .city-cover { margin: var(--space-4) 0; }
+  .city-cover :global(img) {
+    width: 100%;
+    height: clamp(180px, 26vw, 320px);
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--radius);
+    display: block;
   }
 </style>

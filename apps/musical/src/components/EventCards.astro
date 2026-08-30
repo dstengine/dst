@@ -44,11 +44,12 @@ const { runs, lead = "city", eyebrow = "show", venueInMeta = true, compact = fal
 const across = columns ?? 3;
 
 const items = runs.map((run) => {
-  const city = cityBySlug(run.city)?.name ?? run.city;
+  const place = cityBySlug(run.city);
+  const city = place?.name ?? run.city;
   const show = showBySlug(run.show)?.title ?? run.show;
   const venue = run.venue ? venueBySlug(run.venue)?.name : undefined;
   const tour = eyebrow === "tour"
-    ? (run.group ? groupBySlug(run.group)?.name : undefined) ?? cityBySlug(run.city)?.country
+    ? (run.group ? groupBySlug(run.group)?.name : undefined) ?? place?.country
     : undefined;
   return {
     href: `/${run.show}/${run.slug}/`,
@@ -61,8 +62,14 @@ const items = runs.map((run) => {
     inProgress: statusOf(run) === "announced",
     text: compact ? runSellerLine(run) : runCardLine(run),
     meta: venue && venueInMeta ? `${formatRun(run)} · ${venue}` : formatRun(run),
-    // No production photography licensed yet, so every card takes the mark
-    // cover. Swap in `image` per run the day there is one.
+    // The city, not the show: there is no production photography licensed
+    // yet, and a reader scanning thirty-three stops recognises Newcastle
+    // faster than they read it. The mark stays as the fallback for a city
+    // with no picture. Photographers and licences are named on /about/,
+    // because a card has no room for a caption and no room for the two
+    // links a caption needs.
+    image: place?.image,
+    imageAlt: place?.imageAlt,
     icon: ICONS.stage,
   };
 });

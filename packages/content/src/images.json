@@ -382,6 +382,1782 @@
     }
   },
   "musical.today": {
+    "/cities/aberdeen.jpg": {
+      "width": 1920,
+      "height": 768,
+      "avif": [
+        [
+          480,
+          "/cities/aberdeen-480.avif"
+        ],
+        [
+          768,
+          "/cities/aberdeen-768.avif"
+        ],
+        [
+          1024,
+          "/cities/aberdeen-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/aberdeen-1440.avif"
+        ],
+        [
+          1920,
+          "/cities/aberdeen-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/aberdeen-480.webp"
+        ],
+        [
+          768,
+          "/cities/aberdeen-768.webp"
+        ],
+        [
+          1024,
+          "/cities/aberdeen-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/aberdeen-1440.webp"
+        ],
+        [
+          1920,
+          "/cities/aberdeen-1920.webp"
+        ]
+      ]
+    },
+    "/cities/belfast.jpg": {
+      "width": 1920,
+      "height": 1440,
+      "avif": [
+        [
+          480,
+          "/cities/belfast-480.avif"
+        ],
+        [
+          768,
+          "/cities/belfast-768.avif"
+        ],
+        [
+          1024,
+          "/cities/belfast-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/belfast-1440.avif"
+        ],
+        [
+          1920,
+          "/cities/belfast-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/belfast-480.webp"
+        ],
+        [
+          768,
+          "/cities/belfast-768.webp"
+        ],
+        [
+          1024,
+          "/cities/belfast-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/belfast-1440.webp"
+        ],
+        [
+          1920,
+          "/cities/belfast-1920.webp"
+        ]
+      ]
+    },
+    "/cities/birmingham.jpg": {
+      "width": 1920,
+      "height": 892,
+      "avif": [
+        [
+          480,
+          "/cities/birmingham-480.avif"
+        ],
+        [
+          768,
+          "/cities/birmingham-768.avif"
+        ],
+        [
+          1024,
+          "/cities/birmingham-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/birmingham-1440.avif"
+        ],
+        [
+          1920,
+          "/cities/birmingham-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/birmingham-480.webp"
+        ],
+        [
+          768,
+          "/cities/birmingham-768.webp"
+        ],
+        [
+          1024,
+          "/cities/birmingham-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/birmingham-1440.webp"
+        ],
+        [
+          1920,
+          "/cities/birmingham-1920.webp"
+        ]
+      ]
+    },
+    "/cities/blackpool.jpg": {
+      "width": 1920,
+      "height": 1080,
+      "avif": [
+        [
+          480,
+          "/cities/blackpool-480.avif"
+        ],
+        [
+          768,
+          "/cities/blackpool-768.avif"
+        ],
+        [
+          1024,
+          "/cities/blackpool-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/blackpool-1440.avif"
+        ],
+        [
+          1920,
+          "/cities/blackpool-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/blackpool-480.webp"
+        ],
+        [
+          768,
+          "/cities/blackpool-768.webp"
+        ],
+        [
+          1024,
+          "/cities/blackpool-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/blackpool-1440.webp"
+        ],
+        [
+          1920,
+          "/cities/blackpool-1920.webp"
+        ]
+      ]
+    },
+    "/cities/bournemouth.jpg": {
+      "width": 1920,
+      "height": 1080,
+      "avif": [
+        [
+          480,
+          "/cities/bournemouth-480.avif"
+        ],
+        [
+          768,
+          "/cities/bournemouth-768.avif"
+        ],
+        [
+          1024,
+          "/cities/bournemouth-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/bournemouth-1440.avif"
+        ],
+        [
+          1920,
+          "/cities/bournemouth-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/bournemouth-480.webp"
+        ],
+        [
+          768,
+          "/cities/bournemouth-768.webp"
+        ],
+        [
+          1024,
+          "/cities/bournemouth-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/bournemouth-1440.webp"
+        ],
+        [
+          1920,
+          "/cities/bournemouth-1920.webp"
+        ]
+      ]
+    },
+    "/cities/bradford.jpg": {
+      "width": 1920,
+      "height": 1272,
+      "avif": [
+        [
+          480,
+          "/cities/bradford-480.avif"
+        ],
+        [
+          768,
+          "/cities/bradford-768.avif"
+        ],
+        [
+          1024,
+          "/cities/bradford-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/bradford-1440.avif"
+        ],
+        [
+          1920,
+          "/cities/bradford-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/bradford-480.webp"
+        ],
+        [
+          768,
+          "/cities/bradford-768.webp"
+        ],
+        [
+          1024,
+          "/cities/bradford-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/bradford-1440.webp"
+        ],
+        [
+          1920,
+          "/cities/bradford-1920.webp"
+        ]
+      ]
+    },
+    "/cities/brighton.jpg": {
+      "width": 1920,
+      "height": 1080,
+      "avif": [
+        [
+          480,
+          "/cities/brighton-480.avif"
+        ],
+        [
+          768,
+          "/cities/brighton-768.avif"
+        ],
+        [
+          1024,
+          "/cities/brighton-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/brighton-1440.avif"
+        ],
+        [
+          1920,
+          "/cities/brighton-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/brighton-480.webp"
+        ],
+        [
+          768,
+          "/cities/brighton-768.webp"
+        ],
+        [
+          1024,
+          "/cities/brighton-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/brighton-1440.webp"
+        ],
+        [
+          1920,
+          "/cities/brighton-1920.webp"
+        ]
+      ]
+    },
+    "/cities/bristol.jpg": {
+      "width": 1920,
+      "height": 887,
+      "avif": [
+        [
+          480,
+          "/cities/bristol-480.avif"
+        ],
+        [
+          768,
+          "/cities/bristol-768.avif"
+        ],
+        [
+          1024,
+          "/cities/bristol-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/bristol-1440.avif"
+        ],
+        [
+          1920,
+          "/cities/bristol-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/bristol-480.webp"
+        ],
+        [
+          768,
+          "/cities/bristol-768.webp"
+        ],
+        [
+          1024,
+          "/cities/bristol-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/bristol-1440.webp"
+        ],
+        [
+          1920,
+          "/cities/bristol-1920.webp"
+        ]
+      ]
+    },
+    "/cities/cardiff.jpg": {
+      "width": 1920,
+      "height": 866,
+      "avif": [
+        [
+          480,
+          "/cities/cardiff-480.avif"
+        ],
+        [
+          768,
+          "/cities/cardiff-768.avif"
+        ],
+        [
+          1024,
+          "/cities/cardiff-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/cardiff-1440.avif"
+        ],
+        [
+          1920,
+          "/cities/cardiff-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/cardiff-480.webp"
+        ],
+        [
+          768,
+          "/cities/cardiff-768.webp"
+        ],
+        [
+          1024,
+          "/cities/cardiff-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/cardiff-1440.webp"
+        ],
+        [
+          1920,
+          "/cities/cardiff-1920.webp"
+        ]
+      ]
+    },
+    "/cities/cheltenham.jpg": {
+      "width": 1600,
+      "height": 900,
+      "avif": [
+        [
+          480,
+          "/cities/cheltenham-480.avif"
+        ],
+        [
+          768,
+          "/cities/cheltenham-768.avif"
+        ],
+        [
+          1024,
+          "/cities/cheltenham-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/cheltenham-1440.avif"
+        ],
+        [
+          1600,
+          "/cities/cheltenham-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/cheltenham-480.webp"
+        ],
+        [
+          768,
+          "/cities/cheltenham-768.webp"
+        ],
+        [
+          1024,
+          "/cities/cheltenham-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/cheltenham-1440.webp"
+        ],
+        [
+          1600,
+          "/cities/cheltenham-1600.webp"
+        ]
+      ]
+    },
+    "/cities/dartford.jpg": {
+      "width": 1920,
+      "height": 363,
+      "avif": [
+        [
+          480,
+          "/cities/dartford-480.avif"
+        ],
+        [
+          768,
+          "/cities/dartford-768.avif"
+        ],
+        [
+          1024,
+          "/cities/dartford-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/dartford-1440.avif"
+        ],
+        [
+          1920,
+          "/cities/dartford-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/dartford-480.webp"
+        ],
+        [
+          768,
+          "/cities/dartford-768.webp"
+        ],
+        [
+          1024,
+          "/cities/dartford-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/dartford-1440.webp"
+        ],
+        [
+          1920,
+          "/cities/dartford-1920.webp"
+        ]
+      ]
+    },
+    "/cities/dubai.jpg": {
+      "width": 1920,
+      "height": 1280,
+      "avif": [
+        [
+          480,
+          "/cities/dubai-480.avif"
+        ],
+        [
+          768,
+          "/cities/dubai-768.avif"
+        ],
+        [
+          1024,
+          "/cities/dubai-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/dubai-1440.avif"
+        ],
+        [
+          1920,
+          "/cities/dubai-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/dubai-480.webp"
+        ],
+        [
+          768,
+          "/cities/dubai-768.webp"
+        ],
+        [
+          1024,
+          "/cities/dubai-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/dubai-1440.webp"
+        ],
+        [
+          1920,
+          "/cities/dubai-1920.webp"
+        ]
+      ]
+    },
+    "/cities/dublin.jpg": {
+      "width": 1920,
+      "height": 823,
+      "avif": [
+        [
+          480,
+          "/cities/dublin-480.avif"
+        ],
+        [
+          768,
+          "/cities/dublin-768.avif"
+        ],
+        [
+          1024,
+          "/cities/dublin-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/dublin-1440.avif"
+        ],
+        [
+          1920,
+          "/cities/dublin-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/dublin-480.webp"
+        ],
+        [
+          768,
+          "/cities/dublin-768.webp"
+        ],
+        [
+          1024,
+          "/cities/dublin-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/dublin-1440.webp"
+        ],
+        [
+          1920,
+          "/cities/dublin-1920.webp"
+        ]
+      ]
+    },
+    "/cities/eastbourne.jpg": {
+      "width": 1920,
+      "height": 1080,
+      "avif": [
+        [
+          480,
+          "/cities/eastbourne-480.avif"
+        ],
+        [
+          768,
+          "/cities/eastbourne-768.avif"
+        ],
+        [
+          1024,
+          "/cities/eastbourne-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/eastbourne-1440.avif"
+        ],
+        [
+          1920,
+          "/cities/eastbourne-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/eastbourne-480.webp"
+        ],
+        [
+          768,
+          "/cities/eastbourne-768.webp"
+        ],
+        [
+          1024,
+          "/cities/eastbourne-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/eastbourne-1440.webp"
+        ],
+        [
+          1920,
+          "/cities/eastbourne-1920.webp"
+        ]
+      ]
+    },
+    "/cities/edinburgh.jpg": {
+      "width": 1920,
+      "height": 886,
+      "avif": [
+        [
+          480,
+          "/cities/edinburgh-480.avif"
+        ],
+        [
+          768,
+          "/cities/edinburgh-768.avif"
+        ],
+        [
+          1024,
+          "/cities/edinburgh-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/edinburgh-1440.avif"
+        ],
+        [
+          1920,
+          "/cities/edinburgh-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/edinburgh-480.webp"
+        ],
+        [
+          768,
+          "/cities/edinburgh-768.webp"
+        ],
+        [
+          1024,
+          "/cities/edinburgh-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/edinburgh-1440.webp"
+        ],
+        [
+          1920,
+          "/cities/edinburgh-1920.webp"
+        ]
+      ]
+    },
+    "/cities/glasgow.jpg": {
+      "width": 1920,
+      "height": 1080,
+      "avif": [
+        [
+          480,
+          "/cities/glasgow-480.avif"
+        ],
+        [
+          768,
+          "/cities/glasgow-768.avif"
+        ],
+        [
+          1024,
+          "/cities/glasgow-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/glasgow-1440.avif"
+        ],
+        [
+          1920,
+          "/cities/glasgow-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/glasgow-480.webp"
+        ],
+        [
+          768,
+          "/cities/glasgow-768.webp"
+        ],
+        [
+          1024,
+          "/cities/glasgow-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/glasgow-1440.webp"
+        ],
+        [
+          1920,
+          "/cities/glasgow-1920.webp"
+        ]
+      ]
+    },
+    "/cities/hull.jpg": {
+      "width": 1920,
+      "height": 1084,
+      "avif": [
+        [
+          480,
+          "/cities/hull-480.avif"
+        ],
+        [
+          768,
+          "/cities/hull-768.avif"
+        ],
+        [
+          1024,
+          "/cities/hull-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/hull-1440.avif"
+        ],
+        [
+          1920,
+          "/cities/hull-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/hull-480.webp"
+        ],
+        [
+          768,
+          "/cities/hull-768.webp"
+        ],
+        [
+          1024,
+          "/cities/hull-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/hull-1440.webp"
+        ],
+        [
+          1920,
+          "/cities/hull-1920.webp"
+        ]
+      ]
+    },
+    "/cities/liverpool.jpg": {
+      "width": 1920,
+      "height": 258,
+      "avif": [
+        [
+          480,
+          "/cities/liverpool-480.avif"
+        ],
+        [
+          768,
+          "/cities/liverpool-768.avif"
+        ],
+        [
+          1024,
+          "/cities/liverpool-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/liverpool-1440.avif"
+        ],
+        [
+          1920,
+          "/cities/liverpool-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/liverpool-480.webp"
+        ],
+        [
+          768,
+          "/cities/liverpool-768.webp"
+        ],
+        [
+          1024,
+          "/cities/liverpool-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/liverpool-1440.webp"
+        ],
+        [
+          1920,
+          "/cities/liverpool-1920.webp"
+        ]
+      ]
+    },
+    "/cities/llandudno.jpg": {
+      "width": 1920,
+      "height": 1440,
+      "avif": [
+        [
+          480,
+          "/cities/llandudno-480.avif"
+        ],
+        [
+          768,
+          "/cities/llandudno-768.avif"
+        ],
+        [
+          1024,
+          "/cities/llandudno-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/llandudno-1440.avif"
+        ],
+        [
+          1920,
+          "/cities/llandudno-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/llandudno-480.webp"
+        ],
+        [
+          768,
+          "/cities/llandudno-768.webp"
+        ],
+        [
+          1024,
+          "/cities/llandudno-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/llandudno-1440.webp"
+        ],
+        [
+          1920,
+          "/cities/llandudno-1920.webp"
+        ]
+      ]
+    },
+    "/cities/manchester.jpg": {
+      "width": 1920,
+      "height": 1080,
+      "avif": [
+        [
+          480,
+          "/cities/manchester-480.avif"
+        ],
+        [
+          768,
+          "/cities/manchester-768.avif"
+        ],
+        [
+          1024,
+          "/cities/manchester-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/manchester-1440.avif"
+        ],
+        [
+          1920,
+          "/cities/manchester-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/manchester-480.webp"
+        ],
+        [
+          768,
+          "/cities/manchester-768.webp"
+        ],
+        [
+          1024,
+          "/cities/manchester-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/manchester-1440.webp"
+        ],
+        [
+          1920,
+          "/cities/manchester-1920.webp"
+        ]
+      ]
+    },
+    "/cities/milton-keynes.jpg": {
+      "width": 1920,
+      "height": 872,
+      "avif": [
+        [
+          480,
+          "/cities/milton-keynes-480.avif"
+        ],
+        [
+          768,
+          "/cities/milton-keynes-768.avif"
+        ],
+        [
+          1024,
+          "/cities/milton-keynes-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/milton-keynes-1440.avif"
+        ],
+        [
+          1920,
+          "/cities/milton-keynes-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/milton-keynes-480.webp"
+        ],
+        [
+          768,
+          "/cities/milton-keynes-768.webp"
+        ],
+        [
+          1024,
+          "/cities/milton-keynes-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/milton-keynes-1440.webp"
+        ],
+        [
+          1920,
+          "/cities/milton-keynes-1920.webp"
+        ]
+      ]
+    },
+    "/cities/new-york.jpg": {
+      "width": 1920,
+      "height": 1280,
+      "avif": [
+        [
+          480,
+          "/cities/new-york-480.avif"
+        ],
+        [
+          768,
+          "/cities/new-york-768.avif"
+        ],
+        [
+          1024,
+          "/cities/new-york-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/new-york-1440.avif"
+        ],
+        [
+          1920,
+          "/cities/new-york-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/new-york-480.webp"
+        ],
+        [
+          768,
+          "/cities/new-york-768.webp"
+        ],
+        [
+          1024,
+          "/cities/new-york-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/new-york-1440.webp"
+        ],
+        [
+          1920,
+          "/cities/new-york-1920.webp"
+        ]
+      ]
+    },
+    "/cities/newcastle.jpg": {
+      "width": 1920,
+      "height": 1080,
+      "avif": [
+        [
+          480,
+          "/cities/newcastle-480.avif"
+        ],
+        [
+          768,
+          "/cities/newcastle-768.avif"
+        ],
+        [
+          1024,
+          "/cities/newcastle-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/newcastle-1440.avif"
+        ],
+        [
+          1920,
+          "/cities/newcastle-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/newcastle-480.webp"
+        ],
+        [
+          768,
+          "/cities/newcastle-768.webp"
+        ],
+        [
+          1024,
+          "/cities/newcastle-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/newcastle-1440.webp"
+        ],
+        [
+          1920,
+          "/cities/newcastle-1920.webp"
+        ]
+      ]
+    },
+    "/cities/norwich.jpg": {
+      "width": 1920,
+      "height": 1286,
+      "avif": [
+        [
+          480,
+          "/cities/norwich-480.avif"
+        ],
+        [
+          768,
+          "/cities/norwich-768.avif"
+        ],
+        [
+          1024,
+          "/cities/norwich-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/norwich-1440.avif"
+        ],
+        [
+          1920,
+          "/cities/norwich-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/norwich-480.webp"
+        ],
+        [
+          768,
+          "/cities/norwich-768.webp"
+        ],
+        [
+          1024,
+          "/cities/norwich-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/norwich-1440.webp"
+        ],
+        [
+          1920,
+          "/cities/norwich-1920.webp"
+        ]
+      ]
+    },
+    "/cities/nottingham.jpg": {
+      "width": 1920,
+      "height": 1440,
+      "avif": [
+        [
+          480,
+          "/cities/nottingham-480.avif"
+        ],
+        [
+          768,
+          "/cities/nottingham-768.avif"
+        ],
+        [
+          1024,
+          "/cities/nottingham-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/nottingham-1440.avif"
+        ],
+        [
+          1920,
+          "/cities/nottingham-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/nottingham-480.webp"
+        ],
+        [
+          768,
+          "/cities/nottingham-768.webp"
+        ],
+        [
+          1024,
+          "/cities/nottingham-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/nottingham-1440.webp"
+        ],
+        [
+          1920,
+          "/cities/nottingham-1920.webp"
+        ]
+      ]
+    },
+    "/cities/osaka.jpg": {
+      "width": 1920,
+      "height": 1440,
+      "avif": [
+        [
+          480,
+          "/cities/osaka-480.avif"
+        ],
+        [
+          768,
+          "/cities/osaka-768.avif"
+        ],
+        [
+          1024,
+          "/cities/osaka-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/osaka-1440.avif"
+        ],
+        [
+          1920,
+          "/cities/osaka-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/osaka-480.webp"
+        ],
+        [
+          768,
+          "/cities/osaka-768.webp"
+        ],
+        [
+          1024,
+          "/cities/osaka-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/osaka-1440.webp"
+        ],
+        [
+          1920,
+          "/cities/osaka-1920.webp"
+        ]
+      ]
+    },
+    "/cities/oxford.jpg": {
+      "width": 1799,
+      "height": 1199,
+      "avif": [
+        [
+          480,
+          "/cities/oxford-480.avif"
+        ],
+        [
+          768,
+          "/cities/oxford-768.avif"
+        ],
+        [
+          1024,
+          "/cities/oxford-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/oxford-1440.avif"
+        ],
+        [
+          1799,
+          "/cities/oxford-1799.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/oxford-480.webp"
+        ],
+        [
+          768,
+          "/cities/oxford-768.webp"
+        ],
+        [
+          1024,
+          "/cities/oxford-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/oxford-1440.webp"
+        ],
+        [
+          1799,
+          "/cities/oxford-1799.webp"
+        ]
+      ]
+    },
+    "/cities/plymouth.jpg": {
+      "width": 1920,
+      "height": 1473,
+      "avif": [
+        [
+          480,
+          "/cities/plymouth-480.avif"
+        ],
+        [
+          768,
+          "/cities/plymouth-768.avif"
+        ],
+        [
+          1024,
+          "/cities/plymouth-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/plymouth-1440.avif"
+        ],
+        [
+          1920,
+          "/cities/plymouth-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/plymouth-480.webp"
+        ],
+        [
+          768,
+          "/cities/plymouth-768.webp"
+        ],
+        [
+          1024,
+          "/cities/plymouth-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/plymouth-1440.webp"
+        ],
+        [
+          1920,
+          "/cities/plymouth-1920.webp"
+        ]
+      ]
+    },
+    "/cities/sheffield.jpg": {
+      "width": 1920,
+      "height": 1440,
+      "avif": [
+        [
+          480,
+          "/cities/sheffield-480.avif"
+        ],
+        [
+          768,
+          "/cities/sheffield-768.avif"
+        ],
+        [
+          1024,
+          "/cities/sheffield-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/sheffield-1440.avif"
+        ],
+        [
+          1920,
+          "/cities/sheffield-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/sheffield-480.webp"
+        ],
+        [
+          768,
+          "/cities/sheffield-768.webp"
+        ],
+        [
+          1024,
+          "/cities/sheffield-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/sheffield-1440.webp"
+        ],
+        [
+          1920,
+          "/cities/sheffield-1920.webp"
+        ]
+      ]
+    },
+    "/cities/southend.jpg": {
+      "width": 1920,
+      "height": 1440,
+      "avif": [
+        [
+          480,
+          "/cities/southend-480.avif"
+        ],
+        [
+          768,
+          "/cities/southend-768.avif"
+        ],
+        [
+          1024,
+          "/cities/southend-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/southend-1440.avif"
+        ],
+        [
+          1920,
+          "/cities/southend-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/southend-480.webp"
+        ],
+        [
+          768,
+          "/cities/southend-768.webp"
+        ],
+        [
+          1024,
+          "/cities/southend-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/southend-1440.webp"
+        ],
+        [
+          1920,
+          "/cities/southend-1920.webp"
+        ]
+      ]
+    },
+    "/cities/stoke.jpg": {
+      "width": 1600,
+      "height": 900,
+      "avif": [
+        [
+          480,
+          "/cities/stoke-480.avif"
+        ],
+        [
+          768,
+          "/cities/stoke-768.avif"
+        ],
+        [
+          1024,
+          "/cities/stoke-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/stoke-1440.avif"
+        ],
+        [
+          1600,
+          "/cities/stoke-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/stoke-480.webp"
+        ],
+        [
+          768,
+          "/cities/stoke-768.webp"
+        ],
+        [
+          1024,
+          "/cities/stoke-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/stoke-1440.webp"
+        ],
+        [
+          1600,
+          "/cities/stoke-1600.webp"
+        ]
+      ]
+    },
+    "/cities/sunderland.jpg": {
+      "width": 1920,
+      "height": 605,
+      "avif": [
+        [
+          480,
+          "/cities/sunderland-480.avif"
+        ],
+        [
+          768,
+          "/cities/sunderland-768.avif"
+        ],
+        [
+          1024,
+          "/cities/sunderland-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/sunderland-1440.avif"
+        ],
+        [
+          1920,
+          "/cities/sunderland-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/sunderland-480.webp"
+        ],
+        [
+          768,
+          "/cities/sunderland-768.webp"
+        ],
+        [
+          1024,
+          "/cities/sunderland-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/sunderland-1440.webp"
+        ],
+        [
+          1920,
+          "/cities/sunderland-1920.webp"
+        ]
+      ]
+    },
+    "/cities/tokyo.jpg": {
+      "width": 1920,
+      "height": 850,
+      "avif": [
+        [
+          480,
+          "/cities/tokyo-480.avif"
+        ],
+        [
+          768,
+          "/cities/tokyo-768.avif"
+        ],
+        [
+          1024,
+          "/cities/tokyo-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/tokyo-1440.avif"
+        ],
+        [
+          1920,
+          "/cities/tokyo-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/tokyo-480.webp"
+        ],
+        [
+          768,
+          "/cities/tokyo-768.webp"
+        ],
+        [
+          1024,
+          "/cities/tokyo-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/tokyo-1440.webp"
+        ],
+        [
+          1920,
+          "/cities/tokyo-1920.webp"
+        ]
+      ]
+    },
+    "/cities/truro.jpg": {
+      "width": 1920,
+      "height": 1012,
+      "avif": [
+        [
+          480,
+          "/cities/truro-480.avif"
+        ],
+        [
+          768,
+          "/cities/truro-768.avif"
+        ],
+        [
+          1024,
+          "/cities/truro-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/truro-1440.avif"
+        ],
+        [
+          1920,
+          "/cities/truro-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/truro-480.webp"
+        ],
+        [
+          768,
+          "/cities/truro-768.webp"
+        ],
+        [
+          1024,
+          "/cities/truro-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/truro-1440.webp"
+        ],
+        [
+          1920,
+          "/cities/truro-1920.webp"
+        ]
+      ]
+    },
+    "/cities/wimbledon.jpg": {
+      "width": 1920,
+      "height": 1286,
+      "avif": [
+        [
+          480,
+          "/cities/wimbledon-480.avif"
+        ],
+        [
+          768,
+          "/cities/wimbledon-768.avif"
+        ],
+        [
+          1024,
+          "/cities/wimbledon-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/wimbledon-1440.avif"
+        ],
+        [
+          1920,
+          "/cities/wimbledon-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/wimbledon-480.webp"
+        ],
+        [
+          768,
+          "/cities/wimbledon-768.webp"
+        ],
+        [
+          1024,
+          "/cities/wimbledon-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/wimbledon-1440.webp"
+        ],
+        [
+          1920,
+          "/cities/wimbledon-1920.webp"
+        ]
+      ]
+    },
+    "/cities/woking.jpg": {
+      "width": 1920,
+      "height": 1080,
+      "avif": [
+        [
+          480,
+          "/cities/woking-480.avif"
+        ],
+        [
+          768,
+          "/cities/woking-768.avif"
+        ],
+        [
+          1024,
+          "/cities/woking-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/woking-1440.avif"
+        ],
+        [
+          1920,
+          "/cities/woking-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/woking-480.webp"
+        ],
+        [
+          768,
+          "/cities/woking-768.webp"
+        ],
+        [
+          1024,
+          "/cities/woking-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/woking-1440.webp"
+        ],
+        [
+          1920,
+          "/cities/woking-1920.webp"
+        ]
+      ]
+    },
+    "/cities/york.jpg": {
+      "width": 1920,
+      "height": 813,
+      "avif": [
+        [
+          480,
+          "/cities/york-480.avif"
+        ],
+        [
+          768,
+          "/cities/york-768.avif"
+        ],
+        [
+          1024,
+          "/cities/york-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/york-1440.avif"
+        ],
+        [
+          1920,
+          "/cities/york-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/york-480.webp"
+        ],
+        [
+          768,
+          "/cities/york-768.webp"
+        ],
+        [
+          1024,
+          "/cities/york-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/york-1440.webp"
+        ],
+        [
+          1920,
+          "/cities/york-1920.webp"
+        ]
+      ]
+    },
     "/venues/alhambra-theatre-bradford.jpg": {
       "width": 1024,
       "height": 768,

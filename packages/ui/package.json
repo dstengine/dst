@@ -40,6 +40,7 @@
     "./schema": "./src/schema.ts",
     "./NetworkLinks.astro": "./src/components/NetworkLinks.astro",
     "./Photo.astro": "./src/components/Photo.astro",
+    "./PhotoCredit.astro": "./src/components/PhotoCredit.astro",
     "./Glance.astro": "./src/components/Glance.astro",
     "./Breadcrumbs.astro": "./src/components/Breadcrumbs.astro",
     "./MapEmbed.astro": "./src/components/MapEmbed.astro",
