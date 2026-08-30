@@ -1,8 +1,13 @@
 ---
 // The line under a photograph naming who took it and under what licence.
-// Creative Commons requires both, plus a way back to the original, so this
-// is part of publishing the picture rather than a decoration on it — a
-// picture whose credit is missing does not get published at all.
+// It renders for one case only: the picture was taken from a source whose
+// licence asks to be named. There it is part of publishing the picture
+// rather than a decoration on it, and the caller passes the name, the
+// licence and a way back to the original.
+//
+// A picture that came from anywhere else carries no line. An absent credit
+// is not an omission to be filled in — printing a licence over a picture
+// that is not under one would be the actual error.
 //
 // The caller supplies the two addresses rather than the component building
 // them, which is what lets a site that routes everything outbound through a

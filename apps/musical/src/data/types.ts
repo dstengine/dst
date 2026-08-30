@@ -45,19 +45,18 @@ export interface Venue {
   officialSlug?: string;
   summary?: string;
   /** Photograph of the building, in this app's public/ folder. Every one is
-      a licensed picture of *this* building, verified against the file page
-      it came from — a photograph of the wrong theatre is a factual error on
-      a page that names the architect. */
+      a picture of *this* building — a photograph of the wrong theatre is a
+      factual error on a page that names the architect. */
   image?: string;
   imageAlt?: string;
   /** CSS object-position, when the building is not in the middle of the
       frame and the opener's crop would cut it off. */
   imagePosition?: string;
-  /** Attribution, where the licence asks for it. CC BY and CC BY-SA give the
-      picture away on one condition — that the photographer is named — so a
-      picture known to be under one of those does not publish without a
-      credit. CC0 and public domain ask for nothing, and there the credit is
-      a courtesy we print when we know the name and leave off when we do not.
+  /** Attribution, and only where the source asks for it. A picture taken
+      from a file page under CC BY or CC BY-SA publishes with these fields
+      filled in, because being named is the one condition those licences
+      set. A picture from anywhere else leaves them out and no line renders:
+      we mark a licence when we know we are under one, not by default.
       The two addresses are keys in outbound.ts, not URLs: every external
       address on this site lives there and is reached through /go/,
       attribution included. */
