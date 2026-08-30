@@ -226,12 +226,17 @@ a:where(:hover, :focus-visible) { text-decoration: underline; }
    background, which leaves white button text under-contrasted. Dark ink
    on the light accent reads crisper and matches the light-mode pairing
    (dark accent + white text) in spirit. */
+/* Both selectors carry :not(.button-secondary): a secondary button has a
+   transparent background, so painting its label in --bg makes it the
+   background. The plain `.button` form of this rule used to lose to
+   `.button-secondary` on source order alone; once the :root guard raised
+   its specificity that stopped being true, and the label disappeared. */
 @media (prefers-color-scheme: dark) {
-  /* :not() because a reader on a dark OS can pick light: then the accent is
-     the dark light-mode one and the button text has to stay pale. */
-  :root:not([data-theme="light"]) .button { color: var(--bg); }
+  /* :root:not() because a reader on a dark OS can pick light: then the
+     accent is the dark light-mode one and the label has to stay pale. */
+  :root:not([data-theme="light"]) .button:not(.button-secondary) { color: var(--bg); }
 }
-:root[data-theme="dark"] .button { color: var(--bg); }
+:root[data-theme="dark"] .button:not(.button-secondary) { color: var(--bg); }
 
 .button-secondary {
   background: transparent;
