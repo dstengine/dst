@@ -1,33 +1,72 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-// Example dataset for the draft skeleton — in production this is generated
-// at build time (or revalidated on a schedule) from the shared Property
-// data source, not hand-written. Kept deliberately small and realistic
-// rather than exhaustive.
+// Developments, not units. A row is a project whose entry price already
+// clears the Golden Visa threshold — not an offer on a specific apartment,
+// which is a regulated advertisement and belongs to the licensed broker,
+// not to this page.
+//
+// `from` is the lowest price we could verify, and `basis` says what kind of
+// number it is: a recorded Land Department transaction is not the same thing
+// as a developer's asking price, and the two must not share a column without
+// saying which is which. Figures come from raw/objects; nothing is estimated.
+const CHECKED_ON = "28 August 2026";
+
 const properties = [
-  { name: "1BR apartment, Business Bay", area: "Business Bay", type: "Apartment", price: 1450000 },
-  { name: "2BR apartment, Dubai Marina", area: "Dubai Marina", type: "Apartment", price: 2100000 },
-  { name: "Townhouse, Dubai Hills", area: "Dubai Hills", type: "Townhouse", price: 2650000 },
-  { name: "3BR apartment, Downtown Dubai", area: "Downtown Dubai", type: "Apartment", price: 3200000 },
-  { name: "Villa, Dubai Hills", area: "Dubai Hills", type: "Villa", price: 4800000 },
-  { name: "Penthouse, Palm Jumeirah", area: "Palm Jumeirah", type: "Apartment", price: 7600000 },
+  {
+    name: "Mamsha Al Saadiyat", developer: "Aldar",
+    area: "Saadiyat Island, Abu Dhabi", types: ["Apartment", "Villa", "Townhouse"],
+    from: 2200000, basis: "market asking price",
+  },
+  {
+    name: "Serenia Living", developer: "Palma Development",
+    area: "Palm Jumeirah, Dubai", types: ["Apartment", "Villa"],
+    from: 2475000, basis: "lowest recorded DLD sale",
+  },
+  {
+    name: "Yas Acres", developer: "Aldar",
+    area: "Yas Island, Abu Dhabi", types: ["Villa", "Townhouse"],
+    from: 2490000, basis: "market asking price",
+  },
+  {
+    name: "Bluewaters Bay", developer: "Dubai Holding / Meraas",
+    area: "Bluewaters Island, Dubai", types: ["Apartment"],
+    from: 2560000, basis: "developer asking price",
+  },
+  {
+    name: "Azure Residences", developer: "Nakheel",
+    area: "Palm Jumeirah, Dubai", types: ["Apartment"],
+    from: 2825000, basis: "lowest recorded DLD sale",
+  },
+  {
+    name: "Palm Beach Towers", developer: "Nakheel",
+    area: "Palm Jumeirah, Dubai", types: ["Apartment"],
+    from: 2999999, basis: "lowest recorded DLD sale",
+  },
 ];
+
+const areas = [...new Set(properties.map((p) => p.area))].sort();
+const types = [...new Set(properties.flatMap((p) => p.types))].sort();
 
 const GOLDEN_VISA_THRESHOLD_AED = 2000000;
 ---
 <Layout
   title="Eligible Properties"
-  description="A live-filtered shortlist of properties that meet the Golden Visa investment threshold, by area and type."
+  description="Developments whose entry price already clears the Golden Visa investment threshold, filterable by area and type."
 >
   <section class="container">
     <p class="eyebrow">Eligible properties</p>
-    <h1>Properties that qualify today</h1>
+    <h1>Where the entry price already qualifies</h1>
     <p class="lede">
-      Filtered against the current Golden Visa property-investment threshold
-      (AED {GOLDEN_VISA_THRESHOLD_AED.toLocaleString()}, unmortgaged value).
-      This list is illustrative for the draft — in production it's generated
-      from live listing data, not maintained by hand.
+      The Golden Visa property route asks for AED {GOLDEN_VISA_THRESHOLD_AED.toLocaleString()}
+      of unmortgaged value. These are developments where the cheapest verified
+      price is above that line, so the smallest unit in them clears it rather
+      than only the large ones.
+    </p>
+    <p class="note">
+      Island developments, not listings — no individual unit is offered on
+      this page. Every figure below is read from source and validated;
+      last checked {CHECKED_ON}.
     </p>
   </section>
 
@@ -38,7 +77,7 @@ const GOLDEN_VISA_THRESHOLD_AED = 2000000;
     get filtered() {
       return this.properties.filter(p =>
         (this.area === 'all' || p.area === this.area) &&
-        (this.type === 'all' || p.type === this.type)
+        (this.type === 'all' || p.types.includes(this.type))
       );
     }
   }`}>
@@ -47,34 +86,34 @@ const GOLDEN_VISA_THRESHOLD_AED = 2000000;
         Area
         <select x-model="area">
           <option value="all">All areas</option>
-          <option>Business Bay</option>
-          <option>Dubai Marina</option>
-          <option>Dubai Hills</option>
-          <option>Downtown Dubai</option>
-          <option>Palm Jumeirah</option>
+          {areas.map((a) => <option>{a}</option>)}
         </select>
       </label>
       <label>
         Type
         <select x-model="type">
           <option value="all">All types</option>
-          <option>Apartment</option>
-          <option>Townhouse</option>
-          <option>Villa</option>
+          {types.map((t) => <option>{t}</option>)}
         </select>
       </label>
     </div>
 
     <div class="table-wrap">
       <table>
-        <thead><tr><th>Property</th><th>Area</th><th>Type</th><th>Price (AED)</th></tr></thead>
+        <thead><tr><th>Development</th><th>Area</th><th>Type</th><th>From (AED)</th></tr></thead>
         <tbody>
           <template x-for="p in filtered" :key="p.name">
             <tr>
-              <td x-text="p.name"></td>
-              <td x-text="p.area"></td>
-              <td x-text="p.type"></td>
-              <td x-text="p.price.toLocaleString()"></td>
+              <td>
+                <span x-text="p.name"></span>
+                <small x-show="p.developer" x-text="p.developer"></small>
+              </td>
+              <td data-label="Area"><span x-text="p.area"></span></td>
+              <td data-label="Type"><span x-text="p.types.join(', ')"></span></td>
+              <td data-label="From (AED)" class="price">
+                <span x-text="p.from.toLocaleString()"></span>
+                <small x-text="p.basis"></small>
+              </td>
             </tr>
           </template>
         </tbody>
@@ -82,8 +121,7 @@ const GOLDEN_VISA_THRESHOLD_AED = 2000000;
     </div>
     <p class="fallback" data-no-js>
       This shortlist filters client-side once loaded. With JavaScript
-      disabled, every listed property above still qualifies for the Golden
-      Visa threshold shown.
+      disabled, every development above still clears the threshold shown.
     </p>
   </section>
 
@@ -112,7 +150,36 @@ const GOLDEN_VISA_THRESHOLD_AED = 2000000;
   .filters { display: flex; gap: var(--space-3); margin: var(--space-3) 0; flex-wrap: wrap; }
   .filters label { display: flex; flex-direction: column; gap: 0.3em; font-size: var(--step--1); font-weight: 600; color: var(--ink-muted); }
   .filters select { font: inherit; padding: 0.5em 0.75em; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
+  .note { font-size: var(--step--1); color: var(--ink-muted); }
+  td small { display: block; font-size: var(--step--2); color: var(--ink-faint); font-weight: 400; }
+  .price { font-variant-numeric: tabular-nums; white-space: nowrap; }
   .fallback { font-size: var(--step--1); color: var(--ink-faint); }
+
+  /* Below this width the fourth column — the price, which is the whole point
+     of the page — slides off the right edge of the scroller and a phone
+     reader sees a table with no numbers in it. So the rows stop being rows. */
+  @media (max-width: 44rem) {
+    /* tokens.css holds data grids at min-width: 34rem so they scroll rather
+       than crush. Stacked rows have no columns left to crush, so the floor
+       comes off and the scroller with it. */
+    .table-wrap { overflow-x: visible; background: none; }
+    .table-wrap table { min-width: 0; }
+    thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+    table, tbody, tr, td { display: block; width: 100%; }
+    tr { border: 1px solid var(--border); border-radius: var(--radius); padding: var(--space-2); margin-bottom: var(--space-2); }
+    tr:last-child { margin-bottom: 0; }
+    td { border: 0; padding: 0.15em 0; display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-2); }
+    td::before { content: attr(data-label); color: var(--ink-faint); font-size: var(--step--2); flex: none; }
+    td > span { min-width: 0; text-align: right; }
+    /* Label and figure share the first line; what kind of figure it is gets
+       its own line beneath, or the two collide at this width. */
+    .price { flex-wrap: wrap; }
+    .price small { flex: 1 0 100%; text-align: right; }
+    td:first-child { display: block; font-weight: 600; padding-bottom: 0.4em; }
+    td small { display: inline; }
+    td:first-child small { display: block; font-weight: 400; }
+    .price { text-align: right; }
+  }
   .cta { margin-top: var(--space-5); }
   .cta .button { margin-top: var(--space-1); }
 </style>
