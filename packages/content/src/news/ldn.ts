@@ -2,6 +2,41 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "va-exhibitions-closing-dates",
+    site: "ldn",
+    title: "The V&A closing dates worth putting in a diary",
+    summary:
+      "Four V&A exhibitions have published closing dates and one opens in November. Schiaparelli goes first, on 8 November &mdash; and it is the one with the shortest run left.",
+    date: "2026-08-29",
+    category: "Exhibitions",
+    source: {
+      name: "Victoria and Albert Museum",
+      url: "https://www.vam.ac.uk/exhibitions/schiaparelli-fashion-becomes-art",
+      verifiedOn: "2026-08-30",
+    },
+    body: [
+      "Museums announce openings loudly and closings quietly, which is exactly backwards from the visitor&rsquo;s point of view. An opening is an invitation with no deadline attached; a closing date is the only piece of information that ever makes anybody actually go.",
+      "So here are the V&amp;A&rsquo;s, in the order they run out.",
+      "## 8 November &mdash; Schiaparelli: Fashion Becomes Art",
+      "Closing <strong>Sunday 8 November 2026</strong> at V&amp;A South Kensington. Tickets are <strong>&pound;28</strong> on weekdays and <strong>&pound;30</strong> at weekends.",
+      "This is the first British exhibition devoted to Elsa Schiaparelli, and the scale of it is the reason it is worth the deadline: over <strong>400 objects</strong>, including <strong>100 ensembles</strong>, alongside some <strong>50 artworks</strong> by Dal&iacute;, Picasso and Man Ray.",
+      "That mix is the whole argument of the show. Schiaparelli worked with the Surrealists rather than borrowing from them &mdash; the lobster, the shoe worn as a hat, the trompe-l&rsquo;&oelig;il knits are collaborations, not references. Hanging the paintings beside the clothes is the only way to make that case, and it is the reason this is a fashion exhibition that people who do not go to fashion exhibitions tend to come out of talking.",
+      "## 15 November &mdash; Inside Aardman",
+      "<em>Inside Aardman: Wallace &amp; Gromit and Friends</em> closes <strong>15 November 2026</strong> at <strong>Young V&amp;A</strong> in Bethnal Green. Tickets <strong>&pound;12.50</strong>.",
+      "Worth knowing which building this is in: Young V&amp;A is a different site from South Kensington, and a family planning a single day out cannot do this one and Schiaparelli without crossing London in between.",
+      "## 10 January &mdash; two shows, two buildings",
+      "<em>The Music is Black: A British Story</em> closes <strong>10 January 2027</strong> at <strong>V&amp;A East</strong>, <strong>&pound;22.50</strong>. <em>Rising Voices: Contemporary Art from Asia, Australia and the Pacific</em> closes the same day at South Kensington, <strong>&pound;17</strong>.",
+      "Sharing a closing date across two sites is a scheduling detail with a practical consequence: the first weekend of January will be the busy one at both, and the quiet weeks are the ones before Christmas.",
+      "## 7 November &mdash; the one that opens",
+      "<em>Constantinople to Istanbul: One City, Two Empires</em> opens <strong>Saturday 7 November 2026</strong> at South Kensington &mdash; the day before Schiaparelli closes.",
+      "Which makes that weekend the only one where both are on. If there is a single date in this piece to write down, it is <strong>Saturday 7 or Sunday 8 November</strong>.",
+      "## What is not here",
+      "Opening dates for the other shows are not listed above because the museum has not published them all, and a guide that guesses at one is worse than a guide that leaves it out. What is printed here is what the V&amp;A itself has stated, checked on the day this was written.",
+    ],
+    expertise:
+      "Weekday tickets to Schiaparelli are &pound;2 cheaper, which is not the reason to go on a weekday. The reason is that a 400-object show with 100 ensembles is a slow one &mdash; the garments reward standing still in front of them &mdash; and a Saturday in the final fortnight of a closing exhibition is the one condition under which that is impossible.",
+  },
+  {
     slug: "notting-hill-carnival-turns-60",
     site: "ldn",
     title: "Notting Hill Carnival turns sixty",
