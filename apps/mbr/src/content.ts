@@ -348,9 +348,43 @@ export const rent = {
     budgets. Tell us what you're after and get a shortlist that reflects
     it, before you start touring units.`,
   varies: [
-    { label: "Unit type", text: "villas and mansions in District One and much of Meydan against apartments in Sobha Hartland and Riviera." },
-    { label: "Distance to Business Bay/Downtown", text: "Sobha Hartland is closest; District One and Meydan trade proximity for space and the lagoon or racecourse setting." },
-    { label: "Day-to-day walkability", text: "Riviera's promenade is the outlier here — the villa communities are far more car-dependent for daily errands." },
+    {
+      label: "Unit type, and what it costs",
+      text: `villas and mansions in District One and much of Meydan against
+        apartments in Sobha Hartland and Riviera. A Riviera studio averages
+        around AED 54,000 a year, a Sobha Hartland apartment around
+        AED 138,000, a Sobha Hartland villa around AED 879,000 on contracts
+        registered with the Dubai Land Department. Sixteen times over, inside
+        one district. (Bayut and DLD data, checked 30 August 2026.)`,
+    },
+    {
+      label: "Annual lease or holiday home",
+      text: `the two sit in the same buildings and quote in different units.
+        That Riviera studio is about AED 4,500 a month on an annual contract;
+        furnished and let by the night it runs several times that, and the
+        nightly rate is the one that swings &mdash; against the European
+        calendar, not with it. Dubai's short-stay season runs from autumn
+        through spring and empties out over the summer, when the heat sends
+        demand the other way. A monthly figure means nothing until you know
+        which market quoted it, and in which month.`,
+    },
+    {
+      label: "How many cheques",
+      text: `annual rent is quoted against one, two, four or six payments,
+        and the same unit is cheaper on fewer of them. Two listings for what
+        looks like the same apartment at different prices are often one
+        landlord at two cheque counts.`,
+    },
+    {
+      label: "Distance to Business Bay/Downtown",
+      text: `Sobha Hartland is closest; District One and Meydan trade
+        proximity for space and the lagoon or racecourse setting.`,
+    },
+    {
+      label: "Day-to-day walkability",
+      text: `Riviera's promenade is the outlier here &mdash; the villa
+        communities are far more car-dependent for daily errands.`,
+    },
   ],
   formSubmitLabel: "Request my MBR City shortlist",
   formName: "MBR City rent shortlist",
