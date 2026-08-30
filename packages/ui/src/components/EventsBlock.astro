@@ -21,8 +21,11 @@ interface Props {
   eventsBase?: string;
   /** Wording for the see-all link, for a site not writing in English. */
   allLabel?: string;
+  /** Locale for dates on this page. Defaults to the network's English;
+      a site writing in another language passes its own. */
+  locale?: string;
 }
-const { items, limit = 3, heading = "Events", eventsBase = "/events/", allLabel = "All events" } = Astro.props;
+const { items, limit = 3, heading = "Events", eventsBase = "/events/", allLabel = "All events", locale } = Astro.props;
 const todayIso = new Date().toISOString().slice(0, 10);
 const upcoming = items
   .filter((e) => e.start >= todayIso)
@@ -52,7 +55,7 @@ const cards = upcoming.map((item) => {
       <h2>{heading}</h2>
       <a class="events-block-all" href={eventsBase} title={allLabel}>{allLabel} &rarr;</a>
     </div>
-    <FeedCards items={cards} columns={cards.length} />
+    <FeedCards items={cards} columns={cards.length} locale={locale} />
     <CountdownScript />
   </section>
 )}

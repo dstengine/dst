@@ -11,14 +11,16 @@
 <script is:inline>
   (() => {
     const DAY = 86400000;
+    // Built from the page's own lang rather than hard-coded English, so a
+    // site in another language gets "en 6 días" and "mañana" without this
+    // file knowing anything about that language. numeric:"auto" is what
+    // turns 0 and 1 days into "today" and "tomorrow" in every locale.
+    const rtf = new Intl.RelativeTimeFormat(document.documentElement.lang || "en", { numeric: "auto" });
     const ahead = (days) => {
-      if (days === 0) return "today";
-      if (days === 1) return "tomorrow";
-      if (days < 14) return `in ${days} days`;
-      if (days < 60) return `in ${Math.round(days / 7)} weeks`;
-      if (days < 345) return `in ${Math.round(days / 30.4)} months`;
-      const years = Math.round(days / 365);
-      return years <= 1 ? "in a year" : `in ${years} years`;
+      if (days < 14) return rtf.format(days, "day");
+      if (days < 60) return rtf.format(Math.round(days / 7), "week");
+      if (days < 345) return rtf.format(Math.round(days / 30.4), "month");
+      return rtf.format(Math.round(days / 365), "year");
     };
     const midnightUtc = (d) => Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate());
     const today = midnightUtc(new Date());

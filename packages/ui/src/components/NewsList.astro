@@ -15,8 +15,11 @@ interface Props {
       ("/noticias/", "/eventos/") so its URLs are in the language of the
       words on the page. */
   newsBase?: string;
+  /** Locale for dates on this page. Defaults to the network's English;
+      a site writing in another language passes its own. */
+  locale?: string;
 }
-const { items, newsBase = "/news/" } = Astro.props;
+const { items, newsBase = "/news/", locale } = Astro.props;
 // A photograph fills its cover; a diagram is fitted whole. Unmarked images
 // are fitted too — that is the safe way round, since a cropped chart loses
 // the numbers while a fitted photo only sits in a slightly smaller box.
@@ -40,4 +43,4 @@ const cards = sorted.map((item) => {
     blocks already do: left to auto-fill they sit in the first two tracks of a
     four-track row and leave half the page empty. Three or more fill the row on
     their own. */}
-{cards.length > 0 && <FeedCards items={cards} columns={cards.length <= 2 ? cards.length : undefined} />}
+{cards.length > 0 && <FeedCards items={cards} columns={cards.length <= 2 ? cards.length : undefined} locale={locale} />}

@@ -38,8 +38,11 @@ interface Props {
       to DST like the rest of the graph; a site that publishes itself passes
       its own, or the block contradicts the page around it. */
   publisher?: Publisher;
+  /** Locale for dates on this page. Defaults to the network's English;
+      a site writing in another language passes its own. */
+  locale?: string;
 }
-const { item, backHref, ticketHref, more = [], moreNews = [], newsBase = "/news/", eventsBase = "/events/", publisher } = Astro.props;
+const { item, backHref, ticketHref, more = [], moreNews = [], newsBase = "/news/", eventsBase = "/events/", publisher, locale = "en-US"} = Astro.props;
 
 const todayIso = new Date().toISOString().slice(0, 10);
 const moreCards = more
@@ -139,7 +142,7 @@ const glance: { label: string; value: string; icon: string }[] = [
   price && { label: "Tickets", value: price, icon: ICONS.ticket },
   item.tickets?.salesEnd && {
     label: "Sales close",
-    value: formatDate(item.tickets.salesEnd),
+    value: formatDate(item.tickets.salesEnd, locale),
     icon: ICONS.events,
   },
   item.tickets?.refundPolicy && {
@@ -222,8 +225,8 @@ const relatedItems = (item.related ?? []).map((card) => ({
   <header class="event-article-header">
     <p class="event-article-meta">
       {item.category && <span class="event-article-category">{item.category}</span>}
-      <time datetime={startStamp}>{formatDate(item.start)}</time>
-      {item.end && <span>&ndash; <time datetime={endStamp}>{formatDate(item.end)}</time></span>}
+      <time datetime={startStamp}>{formatDate(item.start, locale)}</time>
+      {item.end && <span>&ndash; <time datetime={endStamp}>{formatDate(item.end, locale)}</time></span>}
       {item.startTime && (
         <span class="event-article-time">
           {item.startTime}{item.endTime && <>&ndash;{item.endTime}</>}
@@ -360,12 +363,12 @@ const relatedItems = (item.related ?? []).map((card) => ({
     </section>
   )}
 
-  {item.source && <SourceLine source={item.source} />}
+  {item.source && <SourceLine source={item.source} locale={locale} />}
 
   {tail && (
     <section class="event-article-more">
       <h2>{tail.heading}</h2>
-      <FeedCards items={tail.cards} columns={tail.cards.length} />
+      <FeedCards items={tail.cards} columns={tail.cards.length} locale={locale} />
     </section>
   )}
 

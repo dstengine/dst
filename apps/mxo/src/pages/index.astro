@@ -16,12 +16,12 @@ const eventItems = eventsBySite(site);
   </section>
   {eventItems.length > 0 && (
     <section class="container">
-      <EventsBlock items={eventItems} heading="Eventos" eventsBase={eventsBase} allLabel="Todos los eventos" />
+      <EventsBlock locale="es-MX" items={eventItems} heading="Eventos" eventsBase={eventsBase} allLabel="Todos los eventos" />
     </section>
   )}
   {newsItems.length > 0 && (
     <section class="container">
-      <NewsBlock items={newsItems} heading="Noticias" newsBase={newsBase} allLabel="Todas las noticias" />
+      <NewsBlock locale="es-MX" items={newsItems} heading="Noticias" newsBase={newsBase} allLabel="Todas las noticias" />
     </section>
   )}
 </Layout>

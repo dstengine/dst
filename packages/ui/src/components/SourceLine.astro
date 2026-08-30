@@ -11,8 +11,10 @@ import { formatDate } from "../date.ts";
 
 interface Props {
   source: Source;
+  /** Locale for the checked-on date. Defaults to the network's English. */
+  locale?: string;
 }
-const { source } = Astro.props;
+const { source, locale = "en-US"} = Astro.props;
 ---
 <p class="source-line">
   <span>Source: {source.name}</span>
@@ -23,7 +25,7 @@ const { source } = Astro.props;
           tools — kept reading a later check date as a contradiction with
           the publication date instead of as what it is. */}
       <span class="source-line-checked" title={`Last checked against ${source.name} on this date`}>
-        checked against the source <time datetime={source.verifiedOn}>{formatDate(source.verifiedOn)}</time>
+        checked against the source <time datetime={source.verifiedOn}>{formatDate(source.verifiedOn, locale)}</time>
       </span>
     </>
   )}

@@ -38,8 +38,11 @@ interface Props {
       to DST like the rest of the graph; a site that publishes itself passes
       its own, or the block contradicts the page around it. */
   publisher?: Publisher;
+  /** Locale for dates on this page. Defaults to the network's English;
+      a site writing in another language passes its own. */
+  locale?: string;
 }
-const { item, backHref, more = [], moreEvents = [], newsBase = "/news/", eventsBase = "/events/", publisher } = Astro.props;
+const { item, backHref, more = [], moreEvents = [], newsBase = "/news/", eventsBase = "/events/", publisher, locale = "en-US"} = Astro.props;
 
 const moreCards = more
   .filter((other) => other.slug !== item.slug && Array.isArray(other.body) && other.body.length > 0)
@@ -124,7 +127,7 @@ const relatedItems = (item.related ?? []).map((card) => ({
   <header class="news-article-header">
     <p class="news-article-meta">
       {item.category && <span class="news-article-category">{item.category}</span>}
-      <time datetime={item.date}>{formatDate(item.date)}</time>
+      <time datetime={item.date}>{formatDate(item.date, locale)}</time>
       {minutes > 0 && <span class="news-article-reading">{minutes} min read</span>}
     </p>
     <h1>{item.title}</h1>
@@ -193,12 +196,12 @@ const relatedItems = (item.related ?? []).map((card) => ({
     </section>
   )}
 
-  {item.source && <SourceLine source={item.source} />}
+  {item.source && <SourceLine source={item.source} locale={locale} />}
 
   {tail && (
     <section class="news-article-more">
       <h2>{tail.heading}</h2>
-      <FeedCards items={tail.cards} columns={tail.cards.length} />
+      <FeedCards items={tail.cards} columns={tail.cards.length} locale={locale} />
       {/* Only when the tail is events: the countdown markup is inert without
           it, and a news article otherwise has nothing to count down to. */}
       {tail.cards[0].event && <CountdownScript />}

@@ -39,14 +39,20 @@ interface Props {
   items: FeedCardItem[];
   /** Pin the column count when the caller knows how many cards there are. */
   columns?: number;
+  /** Locale for dates on this page. Defaults to the network's English;
+      a site writing in another language passes its own. */
+  locale?: string;
 }
-const { items, columns } = Astro.props;
+const { items, columns, locale = "en-US"} = Astro.props;
 
+// en-GB rather than en-US for the cover month only: it abbreviates
+// September as "Sept", which is what the network has always shown.
+const monthLocale = locale === "en-US" ? "en-GB" : locale;
 const parts = (iso: string) => {
   const d = new Date(`${iso}T00:00:00Z`);
   return {
     day: String(d.getUTCDate()).padStart(2, "0"),
-    month: d.toLocaleString("en-GB", { month: "short", timeZone: "UTC" }).toUpperCase(),
+    month: d.toLocaleString(monthLocale, { month: "short", timeZone: "UTC" }).toUpperCase(),
     year: d.getUTCFullYear(),
   };
 };
@@ -75,7 +81,7 @@ const parts = (iso: string) => {
         <div class="feed-body">
           <p class="feed-meta">
             {item.eyebrow && <span class="feed-eyebrow">{item.eyebrow}</span>}
-            <time datetime={item.date}>{formatDate(item.date)}</time>
+            <time datetime={item.date}>{formatDate(item.date, locale)}</time>
             {/* Filled in by CountdownScript where it's loaded; empty without
                 JavaScript, where the date above already says everything. */}
             {item.event && !item.past && <span class="feed-countdown" data-countdown datetime={item.date}></span>}

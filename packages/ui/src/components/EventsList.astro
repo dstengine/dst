@@ -14,8 +14,11 @@ interface Props {
       ("/noticias/", "/eventos/") so its URLs are in the language of the
       words on the page. */
   eventsBase?: string;
+  /** Locale for dates on this page. Defaults to the network's English;
+      a site writing in another language passes its own. */
+  locale?: string;
 }
-const { items, eventsBase = "/events/" } = Astro.props;
+const { items, eventsBase = "/events/", locale } = Astro.props;
 const todayIso = new Date().toISOString().slice(0, 10);
 
 const toCard = (item: EventItem, past: boolean) => {
@@ -50,14 +53,14 @@ const past = items
     {upcoming.length > 0 && (
       <div class="events-group">
         <h3 class="events-group-heading">Upcoming</h3>
-        <FeedCards items={upcoming} columns={upcoming.length <= 2 ? upcoming.length : undefined} />
+        <FeedCards items={upcoming} columns={upcoming.length <= 2 ? upcoming.length : undefined} locale={locale} />
         <CountdownScript />
       </div>
     )}
     {past.length > 0 && (
       <div class="events-group events-group-past">
         <h3 class="events-group-heading">Past</h3>
-        <FeedCards items={past} columns={past.length <= 2 ? past.length : undefined} />
+        <FeedCards items={past} columns={past.length <= 2 ? past.length : undefined} locale={locale} />
       </div>
     )}
   </div>

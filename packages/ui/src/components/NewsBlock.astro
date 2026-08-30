@@ -22,8 +22,11 @@ interface Props {
   newsBase?: string;
   /** Wording for the see-all link, for a site not writing in English. */
   allLabel?: string;
+  /** Locale for dates on this page. Defaults to the network's English;
+      a site writing in another language passes its own. */
+  locale?: string;
 }
-const { items, limit = 3, heading = "News", newsBase = "/news/", allLabel = "All news" } = Astro.props;
+const { items, limit = 3, heading = "News", newsBase = "/news/", allLabel = "All news", locale } = Astro.props;
 // A photograph fills its cover; a diagram is fitted whole. Unmarked images
 // are fitted too — that is the safe way round, since a cropped chart loses
 // the numbers while a fitted photo only sits in a slightly smaller box.
@@ -50,7 +53,7 @@ const cards = latest.map((item) => {
       <h2>{heading}</h2>
       <a class="news-block-all" href={newsBase} title={allLabel}>{allLabel} &rarr;</a>
     </div>
-    <FeedCards items={cards} columns={cards.length} />
+    <FeedCards items={cards} columns={cards.length} locale={locale} />
   </section>
 )}
 
