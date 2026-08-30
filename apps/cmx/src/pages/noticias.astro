@@ -11,7 +11,7 @@ const items = newsBySite(site);
 const thin = items.length < 3;
 ---
 <Layout title={news.title} description={news.description} noindex={thin}>
-  <section class="container">
+  <section class="container hero">
     <h1>{news.h1}</h1>
     <p class="lede">{news.lede}</p>
   </section>
