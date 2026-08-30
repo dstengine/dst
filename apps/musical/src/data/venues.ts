@@ -895,13 +895,13 @@ export const venues: Venue[] = [
     slug: "milton-keynes-theatre",
     name: "Milton Keynes Theatre",
     city: "milton-keynes",
+    // Rendered, not photographed: the only freely licensed picture of this
+    // building on Commons is 640px and eleven years old. Nobody to credit,
+    // so no credit line renders.
     image: "/venues/milton-keynes-theatre.jpg",
+    imagePosition: "center 15%",
     imageAlt:
-      "The cantilevered canopy over the entrance to Milton Keynes Theatre, the theatre's banners hanging from its columns.",
-    imageCredit: "Mr Biz",
-    imageLicense: "CC BY-SA 2.0",
-    imageLicenseSlug: "licence-cc-by-sa-2-0",
-    imageSourceSlug: "photo-milton-keynes-theatre",
+      "Milton Keynes Theatre at night, its neon name lit blue above the glazed front and the foyer glowing behind it.",
     address: "500 Midsummer Boulevard, Milton Keynes, MK9 3NZ",
     lat: 52.044324,
     lon: -0.749001,

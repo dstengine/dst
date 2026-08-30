@@ -89,7 +89,6 @@ export const outbound: Record<string, string> = {
   "photo-venue-cymru": "https://commons.wikimedia.org/wiki/File:Venue_Cymru_(geograph_5294767).jpg",
   "photo-woking-theatre": "https://commons.wikimedia.org/wiki/File:New_Victoria_Theatre,_Victoria_Way,_Woking_(June_2015)_(2).jpg",
   "photo-ambassador-theatre": "https://commons.wikimedia.org/wiki/File:W_49_St_Dec_2021_17.jpg",
-  "photo-milton-keynes-theatre": "https://commons.wikimedia.org/wiki/File:Milton_Keynes_Theatre_-_geograph.org.uk_-_746463.jpg",
   "photo-tokyu-theatre-orb": "https://commons.wikimedia.org/wiki/File:Shibuya_Hikarie_Tokyu_Theatre_Orb_(49333094033).jpg",
   "photo-alhambra-theatre-bradford": "https://commons.wikimedia.org/wiki/File:The_Alhambra_Theatre,_Bradford_-_geograph.org.uk_-_7153310.jpg",
   "photo-birmingham-hippodrome": "https://commons.wikimedia.org/wiki/File:Birmingham_Hippodrome.jpg",

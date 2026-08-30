@@ -2975,16 +2975,24 @@
       ]
     },
     "/venues/milton-keynes-theatre.jpg": {
-      "width": 640,
-      "height": 480,
+      "width": 1152,
+      "height": 922,
       "avif": [
         [
           480,
           "/venues/milton-keynes-theatre-480.avif"
         ],
         [
-          640,
-          "/venues/milton-keynes-theatre-640.avif"
+          768,
+          "/venues/milton-keynes-theatre-768.avif"
+        ],
+        [
+          1024,
+          "/venues/milton-keynes-theatre-1024.avif"
+        ],
+        [
+          1152,
+          "/venues/milton-keynes-theatre-1152.avif"
         ]
       ],
       "webp": [
@@ -2993,8 +3001,16 @@
           "/venues/milton-keynes-theatre-480.webp"
         ],
         [
-          640,
-          "/venues/milton-keynes-theatre-640.webp"
+          768,
+          "/venues/milton-keynes-theatre-768.webp"
+        ],
+        [
+          1024,
+          "/venues/milton-keynes-theatre-1024.webp"
+        ],
+        [
+          1152,
+          "/venues/milton-keynes-theatre-1152.webp"
         ]
       ]
     },
