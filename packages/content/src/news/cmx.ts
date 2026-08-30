@@ -2,6 +2,63 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "s301-la-estrella-mas-rapida",
+    site: "cmx",
+    title: "La estrella más rápida de la Vía Láctea",
+    summary:
+      "S301 da una vuelta al agujero negro del centro de la galaxia cada 8.7 años, al 8 por ciento de la velocidad de la luz. Es la estrella más rápida registrada, y sirve para medir algo que nunca se ha medido.",
+    date: "2026-08-30",
+    category: "Mundo",
+    source: {
+      name: "Smithsonian Magazine",
+      url: "https://www.smithsonianmag.com/smart-news/this-star-orbits-our-galaxys-heart-at-a-record-breaking-speed-and-could-help-uncover-secrets-about-the-behemoth-black-hole-there-180989393/",
+      verifiedOn: "2026-08-30",
+    },
+    body: [
+      "Una estrella entera moviéndose al <strong>8 por ciento de la velocidad de la luz</strong>. No un fotón, no una partícula: una estrella, con su masa y su tamaño, a <strong>90 millones de kilómetros por hora</strong>",
+      "## Qué es S301",
+      "Es una estrella que orbita <strong>Sagitario A*</strong>, el agujero negro supermasivo del centro de la Vía Láctea. Completa una vuelta cada <strong>8.7 años</strong>, y en su punto más cercano pasa a sólo <strong>12 veces</strong> la distancia entre la Tierra y el Sol. Es la estrella más rápida registrada en nuestra galaxia",
+      "La detectó el <strong>Very Large Telescope Interferometer</strong> del Observatorio Europeo Austral, en Chile, en la primavera de 2023. El estudio se publicó el <strong>19 de agosto de 2026</strong> en <em>Nature</em>, firmado por Stefan Gillessen, del Instituto Max Planck de Física Extraterrestre, y Juan Osorno, del Observatorio de París",
+      "## Para qué sirve una estrella así",
+      "Para pesar un agujero negro basta con ver cómo giran las cosas a su alrededor. Para saber si <em>gira</em> él mismo, hace falta algo más fino. La relatividad general predice que un agujero negro en rotación arrastra el espacio-tiempo a su alrededor, y que ese arrastre tuerce ligeramente las órbitas cercanas",
+      "S301 es la sonda ideal porque pasa muy cerca y muy rápido. Si su órbita se desvía en la próxima década de lo que predice un agujero negro quieto, la desviación mide el giro",
+      "> La estrella entra en una dirección, cada vez más rápido, y luego da una vuelta muy cerrada alrededor del agujero negro.\n— Stefan Gillessen, Instituto Max Planck de Física Extraterrestre",
+      "El giro de Sagitario A* nunca se ha medido directamente. Ziri Younsi, del University College de Londres, califica el hallazgo de importantísimo: la medición pondría a prueba la relatividad y, de paso, diría algo sobre la historia de la Vía Láctea, porque la rotación de un agujero negro guarda memoria de cómo creció",
+      "## El calendario",
+      "Nada de esto se resuelve pronto. Hace falta seguir la órbita durante los próximos <strong>diez años</strong> para ver la desviación. Es ciencia de paciencia: la estrella lleva girando ahí desde antes de que existiera el telescopio que la vio, y seguirá girando después",
+    ],
+    expertise:
+      "El número que suele repetirse mal es el 8 por ciento de la velocidad de la luz, como si fuera el récord en sí. Lo interesante es el otro: 8.7 años por vuelta. Una órbita corta significa que un equipo humano puede ver varias completas en una carrera profesional, y ésa es la razón real por la que S301 sirve y otras estrellas más cercanas no",
+  },
+  {
+    slug: "museo-del-gato-reforma",
+    site: "cmx",
+    title: "Abrió un museo del gato en Reforma",
+    summary:
+      "El Museo del Gato abrió el 8 de agosto en Paseo de la Reforma 87, en la Tabacalera. Lo opera La Gatería, el primer café de gatos de América Latina, y financia un programa móvil de esterilización.",
+    date: "2026-08-30",
+    category: "Ciudad",
+    source: {
+      name: "Milenio",
+      url: "https://www.milenio.com/comunidad/museo-del-gato-en-cdmx-fecha-de-apertura-ubicacion-horarios-costo",
+      verifiedOn: "2026-08-30",
+    },
+    body: [
+      "En el número <strong>87 de Paseo de la Reforma</strong>, en la <strong>Tabacalera</strong>, abrió el <strong>8 de agosto</strong> un museo dedicado enteramente al gato doméstico",
+      "## Qué es",
+      "Lo opera <strong>La Gatería</strong>, que fue el <strong>primer café de gatos de América Latina</strong>. El recorrido mezcla historia, arte y experiencias inmersivas alrededor de una sola especie, y está pensado para visitantes de todas las edades",
+      "## Horarios y costo",
+      "Abre de <strong>lunes a viernes de 11:00 a 21:00</strong>, <strong>sábados de 10:00 a 21:00</strong> y <strong>domingos de 10:00 a 20:00</strong>. La entrada cuesta <strong>350 pesos</strong> de lunes a jueves y <strong>380 pesos</strong> de viernes a domingo",
+      "Conviene tener el dato claro antes de ir: es una atracción privada con precio de atracción privada, no un museo público de los que cuestan entre 40 y 90 pesos. Es una visita que se planea, no una a la que se entra de paso",
+      "## La parte que no se ve en el recorrido",
+      "El proyecto sostiene un <strong>programa móvil de esterilización</strong> para perros y gatos en situación vulnerable en la Ciudad de México y su periferia. Es la razón por la que el boleto se parece más al de un zoológico que al de una galería: una parte del precio financia una operación que ocurre fuera del edificio",
+      "## Dónde queda",
+      "Reforma 87 está a la altura de la Tabacalera, entre el Monumento a la Revolución y la Alameda &mdash; una de las pocas zonas de la ciudad donde tres museos quedan a diez minutos caminando uno de otro. El Museo del Gato no compite con ellos; los complementa para quien va con niños y no aguanta dos salas de pintura seguidas",
+    ],
+    expertise:
+      "El costo es lo que decide si la visita vale la pena, y depende de con quién se vaya. Para un adulto solo, 350 pesos por una sola especie es caro contra lo que hay a diez minutos a la redonda. Para una familia con niños que ya no quieren ver otro cuadro, es de las pocas cosas en el centro que se sostiene una hora entera sin negociación",
+  },
+  {
     slug: "casa-del-lago-unam-sustentable",
     site: "cmx",
     title: "Casa del Lago capta su propia lluvia",
