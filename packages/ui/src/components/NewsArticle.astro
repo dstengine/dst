@@ -1,4 +1,5 @@
 ---
+import ArticleBody from "./ArticleBody.astro";
 import Photo from "./Photo.astro";
 import { itemContext } from '../schema';
 import type { Publisher } from '../schema';
@@ -150,12 +151,7 @@ const relatedItems = (item.related ?? []).map((card) => ({
   )}
 
   {item.body && item.body.length > 0 && (
-    <div class="prose">
-      {/* set:html so a paragraph can carry <strong> on the fact it turns
-          on — a figure, a resolution number, a date. Content is authored in
-          this repo, never user input, same as the district ContentPage. */}
-      {item.body.map((p) => <p set:html={p} />)}
-    </div>
+    <ArticleBody blocks={item.body} />
   )}
 
   {item.expertise && (

@@ -25,13 +25,3 @@ De quien organiza, o del medio que lo reportó: El Universal, Milenio, Infobae M
 Cuando en el texto aparece una voz de Reddit, es una cita textual de una publicación pública, atribuida al subreddit y no a la persona.
 
 Lo que no se ha anunciado se dice que no se ha anunciado. Un cierre sin fecha, una temática sin confirmar y un horario que todavía no sale son tres cosas que aquí se nombran, no se rellenan.
-
-## Eventos
-
-- [FILIJ 2026: el libro infantil y juvenil](https://mxo.lol/eventos/filij-2026/): Edición 44, del 13 al 22 de noviembre de 2026 en el CENART, de 9:00 a 19:00 y con entrada gratuita.
-
-## Noticias
-
-- [La FILIJ regresa al CENART con entrada gratuita](https://mxo.lol/noticias/filij-2026-regresa-al-cenart/): La edición 44 de la Feria Internacional del Libro Infantil y Juvenil vuelve al Centro Nacional de las Artes en noviembre, con entrada libre.
-- [Kusama pasó de 320 mil visitantes](https://mxo.lol/noticias/kusama-320-mil-visitantes/): La muestra de Kusama en México cerró con más de 320 mil personas — una cifra que reordena lo que se considera posible para una exposición aquí.
-- [kurimanzutto recibe la obra poética de John Giorno](https://mxo.lol/noticias/john-giorno-en-kurimanzutto/): La galería presenta trabajo del poeta y artista estadounidense, desde sus piezas tempranas en adelante.

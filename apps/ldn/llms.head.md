@@ -23,13 +23,3 @@ The organiser, or the publication that reported it: Time Out London, the Evening
 Where a voice from Reddit appears in the text, it is a direct quotation from a public post, attributed to the subreddit rather than to the person.
 
 What has not been announced is said to be unannounced. A closing date nobody has given, a theme not yet confirmed and a running order still to come are three things this site names rather than fills in.
-
-## Events
-
-- [Notting Hill Carnival 2026](https://ldn.lol/events/notting-hill-carnival-2026/): Three days over the August bank holiday for Carnival's sixtieth year: Panorama on the Saturday, J'Ouvert and the Children's Day parade on the Sunday, the main parade on the Monday.
-
-## News
-
-- [Notting Hill Carnival turns sixty](https://ldn.lol/news/notting-hill-carnival-turns-60/): Carnival marks sixty years since the first one in 1966, with a plaque unveiled to its pioneers and a record number of stewards on the route.
-- [A partial lunar eclipse, visible from London](https://ldn.lol/news/partial-lunar-eclipse-over-london/): The eclipse was visible across London without any equipment — no glasses, no filter, just a clear patch of sky.
-- [What is actually hanging in London right now](https://ldn.lol/news/ten-exhibitions-on-in-london/): Time Out's running list of the ten best exhibitions currently open across central London, kept current rather than published once.

@@ -23,13 +23,3 @@ The organiser, or the publication that reported it: Time Out New York, Gothamist
 Where a voice from Reddit appears in the text, it is a direct quotation from a public post, attributed to the subreddit rather than to the person.
 
 What has not been announced is said to be unannounced. A closing date nobody has given, a theme not yet confirmed and a running order still to come are three things this site names rather than fills in.
-
-## Events
-
-- [NYC Broadway Week: two-for-one at 25 shows](https://nyc42.lol/events/broadway-week-fall-2026/): Two weeks of 2-for-1 Broadway tickets across 25 productions, from 8 to 20 September 2026. Tickets have been on sale since 18 August.
-
-## News
-
-- [The Brooklyn Museum sets out its autumn](https://nyc42.lol/news/brooklyn-museum-fall-2026/): A manga takeover and more than fifty European old masters headline the Brooklyn Museum's announced programme for autumn 2026.
-- [Disney will sail from New York again in 2027](https://nyc42.lol/news/disney-cruises-return-to-nyc/): Disney has confirmed a return to New York for 2027, with Caribbean sailings and New England foliage itineraries leaving from the city.
-- [Hudson foliage cruise tickets are on sale](https://nyc42.lol/news/hudson-river-foliage-cruises/): Sightseeing operators have opened sales for this autumn's Hudson River foliage cruises — the season is short and the boats are booked well before the leaves turn.

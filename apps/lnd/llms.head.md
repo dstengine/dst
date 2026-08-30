@@ -23,13 +23,3 @@ The borough press, or the organiser: Hackney Citizen, Wandsworth Guardian, East 
 Where a voice from Reddit appears in the text, it is a direct quotation from a public post, attributed to the subreddit rather than to the person.
 
 What has not been announced is said to be unannounced. A closing date nobody has given, a theme not yet confirmed and a running order still to come are three things this site names rather than fills in.
-
-## Events
-
-- [The Big Brine](https://lnd.lol/events/the-big-brine-hackney-bridge/): Two days at Hackney Bridge given over to everything fermented, pickled and brined, with chef demos and live music. 12–13 September 2026.
-- [The Giant Summer Flea](https://lnd.lol/events/giant-summer-flea-olympic-park/): A one-day flea market at Queen Elizabeth Olympic Park, Sunday 6 September 2026.
-
-## News
-
-- [Which lines are shut over the bank holiday](https://lnd.lol/news/bank-holiday-tube-and-tfl-closures/): The full list of London Underground and TfL closures over the August bank holiday weekend — engineering work lands hardest outside zone 1.
-- [East Summer School returns to the Olympic Park](https://lnd.lol/news/olympic-park-summer-school/): The free summer school at Queen Elizabeth Olympic Park is running again and looking for young Londoners to take part.

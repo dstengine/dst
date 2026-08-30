@@ -130,6 +130,19 @@
         "4341"
       ],
       "port": 4341
+    },
+    {
+      "name": "cmx",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "astro",
+        "dev",
+        "--root",
+        "apps/cmx",
+        "--port",
+        "4344"
+      ],
+      "port": 4344
     }
   ]
 }

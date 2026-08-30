@@ -1,0 +1,76 @@
+---
+/* The body of a news item or an event, one array entry per block.
+   Shared by NewsArticle and EventArticle so a long piece reads the same on
+   both, and so a new block type is added once.
+
+   A plain string is a paragraph. Two prefixes do more:
+
+     "## Something"   a subheading. A piece long enough to need them is
+                      unreadable without them, and a reader who came for one
+                      fact needs somewhere to land.
+     "> Quoted text"  a quotation. An "\n— source" line inside the same
+                      entry becomes the attribution under it.
+
+   set:html on the text, because a paragraph carries <strong> on the fact it
+   turns on and entities for typographic punctuation. Content is authored in
+   this repo, never user input. */
+interface Props {
+  blocks: string[];
+  class?: string;
+}
+const { blocks, class: className } = Astro.props;
+
+type Block =
+  | { kind: "p"; html: string }
+  | { kind: "h"; html: string }
+  | { kind: "quote"; html: string; cite?: string };
+
+const parsed: Block[] = blocks.map((raw) => {
+  const s = raw.trim();
+  if (s.startsWith("## ")) return { kind: "h", html: s.slice(3).trim() };
+  if (s.startsWith("> ")) {
+    const lines = s.slice(2).split("\n");
+    const citeAt = lines.findIndex((l) => l.trim().startsWith("—"));
+    const cite = citeAt === -1 ? undefined : lines[citeAt].trim().replace(/^—\s*/, "");
+    const text = (citeAt === -1 ? lines : lines.slice(0, citeAt)).join(" ").trim();
+    return { kind: "quote", html: text, cite };
+  }
+  return { kind: "p", html: s };
+});
+---
+<div class:list={["prose", className]}>
+  {parsed.map((b) =>
+    b.kind === "h" ? (
+      <h2 set:html={b.html} />
+    ) : b.kind === "quote" ? (
+      <blockquote class="article-quote">
+        <p set:html={b.html} />
+        {b.cite && <cite set:html={b.cite} />}
+      </blockquote>
+    ) : (
+      <p set:html={b.html} />
+    ),
+  )}
+</div>
+
+<style>
+  /* A rule rather than a box: the quotation is someone else's voice inside
+     the piece, not a callout pulled out of it. */
+  .article-quote {
+    margin: var(--space-4) 0;
+    padding-left: var(--space-3);
+    border-left: 2px solid var(--accent);
+  }
+  .article-quote p {
+    font-size: var(--step-1);
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .article-quote cite {
+    display: block;
+    margin-top: var(--space-2);
+    font-size: var(--step--1);
+    font-style: normal;
+    color: var(--ink-faint);
+  }
+</style>

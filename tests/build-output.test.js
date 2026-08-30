@@ -387,6 +387,29 @@ describe("llms.txt", () => {
     }
     assert.deepEqual(missing, [], `llms.txt links to pages that were not built:\n${missing.join("\n")}`);
   });
+
+  // The other direction, and the one that actually goes wrong: a map stops
+  // being true by omission long before it breaks by a dead link. Every
+  // article and event page has to appear in its own site's llms.txt — which
+  // in practice means running `node tools/llms.mjs` after editing content.
+  test("every article and event page appears in its site's llms.txt", () => {
+    const absent = [];
+    for (const { app } of SITES) {
+      const file = path.join(REPO, "apps", app, "dist", "llms.txt");
+      if (!existsSync(file)) continue;
+      if (!existsSync(path.join(REPO, "apps", app, "llms.head.md"))) continue;
+      const text = readFileSync(file, "utf8");
+      const feeds = pages.filter(
+        (p) => p.app === app && /^\/(news|events|noticias|eventos)\/[^/]+\/$/.test(p.url),
+      );
+      for (const page of feeds) if (!text.includes(page.url)) absent.push(`${app}: ${page.url}`);
+    }
+    assert.deepEqual(
+      absent,
+      [],
+      `pages missing from llms.txt — run "node tools/llms.mjs":\n${absent.join("\n")}`,
+    );
+  });
 });
 
 describe("sitemap", () => {
