@@ -154,8 +154,10 @@ export const food = {
       heading: "Restaurants",
       paragraphs: [
         `Casual dining spans the promenade, geared toward a quick meal
-          rather than a night out. For that, Meydan One and Downtown are
-          both a short drive.`,
+          rather than a night out. For that it is a drive — the restaurants
+          at Meydan Racecourse, or Downtown. Meydan One Mall is often named
+          as the local option; it has not opened, and its development is on
+          hold.`,
       ],
     },
     {

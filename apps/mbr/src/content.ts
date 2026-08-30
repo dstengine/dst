@@ -35,9 +35,9 @@ export const index = {
     },
   ],
   links: [
-    { href: "/coffee/", title: "Coffee", description: "Meydan One's café scene against Riviera's walkable promenade." },
-    { href: "/food/", title: "Food", description: "One retail anchor, one exception, everyone else driving." },
-    { href: "/pools/", title: "Pools", description: "Building pools against District One's Crystal Lagoon." },
+    { href: "/coffee/", title: "Coffee", description: "The racecourse terrace, Riviera's promenade, and why the rest drives." },
+    { href: "/food/", title: "Food", description: "The racecourse carries the district; the mall everyone cites is not built." },
+    { href: "/pools/", title: "Pools", description: "Building pools, and the 18-hectare lagoon that is not one." },
     { href: "/water/", title: "Water", description: "The lagoon, the canal, and the real drive time to a beach." },
     { href: "/money/", title: "Money", description: "Nearby exchange, and buying with crypto in practice." },
   ],
@@ -51,35 +51,42 @@ export const index = {
 
 export const coffee = {
   title: "Coffee in MBR City",
-  description: "Where to get coffee across MBR City's communities — Meydan One against Riviera's walkable promenade.",
+  description: "Where to get coffee across MBR City's communities — the racecourse terrace, Riviera's promenade, and why the rest of the district drives.",
   eyebrow: "Coffee",
-  h1: "Coffee across the district",
-  lede: `Two answers depending on where you're standing: what's inside your
-    own community, and what's worth the short drive to Meydan One.`,
+  h1: "The best coffee in the district is at a racecourse",
+  lede: `Not a joke and not a recommendation dressed up as one: with Meydan
+    One Mall still unbuilt, the district's café options are the racecourse,
+    one promenade, and Business Bay. Which of the three applies to you depends
+    entirely on which community you live in.`,
   sections: [
     {
-      heading: "Meydan One",
+      heading: "Meydan Racecourse and hotel",
       paragraphs: [
-        `The district's main concentration of cafés and chains, drawing
-          from across MBR City rather than just Meydan residents — the
-          default answer if you're not near a community with its own
-          promenade.`,
+        `<strong>Rationed Cafe</strong> at the Grandstand and the
+          <strong>Millennium Lounge</strong> at The Meydan Hotel — morning
+          coffee, light lunches and afternoon tea on a terrace facing the
+          track — are the district's own answer, open outside race days.
+          It is a drive rather than a walk from every community here, but it
+          is inside MBR City, which nothing else at this level is.`,
       ],
     },
     {
       heading: "Riviera's promenade",
       paragraphs: [
-        `The one community with real walkable coffee of its own. See
+        `The only community with walkable coffee of its own: independents
+          and a couple of chains along the canal. See
           <a href="https://riviera.dst.llc/coffee/" title="Coffee in Azizi Riviera">Riviera's coffee
-          page</a> for what's there.`,
+          page</a> for what is there, including the roastery it is best known
+          for.`,
       ],
     },
     {
       heading: "District One, Meydan, Sobha Hartland",
       paragraphs: [
-        `These lean on Meydan One or nearby Business Bay for cafés rather
-          than carrying dense retail of their own — worth knowing before
-          picturing a walkable coffee scene from a render.`,
+        `These carry no dense retail of their own and lean on Business Bay,
+          minutes away across Al Khail Road, or on the racecourse. Worth
+          knowing before picturing a walkable café scene from a render —
+          the render is usually of Meydan One Mall, which has not opened.`,
       ],
     },
   ],
@@ -87,36 +94,61 @@ export const coffee = {
 
 export const food = {
   title: "Food in MBR City",
-  description: "Dining and groceries across MBR City's communities — Meydan One's retail anchor, Riviera's promenade, and everywhere else.",
+  description: "Dining and groceries across MBR City's communities — what the racecourse carries, what Riviera walks to, and the mall that has not opened.",
   eyebrow: "Food",
-  h1: "Where the district eats",
-  lede: `One real anchor, one walkable exception, everyone else driving to
-    one or the other.`,
+  h1: "The anchor everyone plans around is not built",
+  lede: `Read almost anything about this district and you will be told its
+    dining revolves around Meydan One Mall. It has not opened. Development is
+    on hold and no completion date is set, so the question of where MBR City
+    actually eats has a different answer.`,
   sections: [
     {
-      heading: "Meydan One Mall",
+      heading: "The racecourse, which is the real anchor",
       paragraphs: [
-        `The main retail and dining anchor — cinema, restaurants, a
-          large-format mall most individual communities don't have on
-          their own. District One and Sobha Hartland residents drive here
-          or to Downtown for anything beyond convenience retail.`,
+        `Meydan Racecourse and The Meydan Hotel carry the district's only
+          real concentration of restaurants, and they are open year-round
+          rather than only on race days. The Grandstand side holds
+          <strong>The Little Fox by Rowley's</strong>, <strong>Salt</strong>,
+          <strong>Yamanote</strong>, <strong>McGettigan's</strong> and
+          <strong>Rationed Cafe</strong>; the hotel adds
+          <strong>Farriers</strong> for all-day dining, the
+          <strong>Millennium Lounge</strong> on the racecourse terrace, and
+          <strong>Equus</strong> at the rooftop pool.`,
+        `It is an unusual answer to "where do I eat near home" and it is the
+          honest one. Nothing else inside the district's boundaries comes
+          close for range.`,
       ],
     },
     {
       heading: "Riviera's promenade",
       paragraphs: [
-        `The exception — ground-floor dining and groceries without
-          leaving the development. See <a href="https://riviera.dst.llc/food/" title="Restaurants and groceries in Azizi Riviera">Riviera's
-          food page</a> for detail.`,
+        `The one community you can eat in without driving: ground-floor
+          dining and a supermarket along the canal front. See
+          <a href="https://riviera.dst.llc/food/" title="Restaurants and groceries in Azizi Riviera">Riviera's
+          food page</a> for what is actually open there — it is a shorter list
+          than the renders suggest, and it is still filling in.`,
       ],
     },
     {
-      heading: "Groceries district-wide",
+      heading: "Meydan One Mall, when it arrives",
       paragraphs: [
-        `Larger supermarkets sit in Meydan and Business Bay. Most
-          individual communities have convenience-level grocery at best;
-          Riviera's on-site supermarket is the closest thing to an
-          exception.`,
+        `The plan is genuinely large — over 600 shops, around 100
+          restaurants and cafés, a 21-screen cinema, and a 150 by 80 metre
+          retractable roof for the winter months. It was originally due in
+          2020.`,
+        `Its status today is under development, on hold, with no date set.
+          Worth knowing before buying into a community on the strength of it,
+          because a mall that has slipped six years is not a delivery date,
+          it is a hope. Checked 30 August 2026.`,
+      ],
+    },
+    {
+      heading: "Groceries",
+      paragraphs: [
+        `Most communities here have convenience-level grocery at best.
+          Larger supermarkets mean a drive to Meydan or Business Bay.
+          Riviera's on-site supermarket is the nearest thing to an exception,
+          and it is one supermarket.`,
       ],
     },
   ],
@@ -124,30 +156,53 @@ export const food = {
 
 export const pools = {
   title: "Pools in MBR City",
-  description: "Pool access across MBR City's communities — building pools against District One's Crystal Lagoon.",
+  description: "Pool access across MBR City's communities — building pools, and the Crystal Lagoon that is not one.",
   eyebrow: "Pools",
-  h1: "Building pools, and one district-scale exception",
-  lede: `Pool access here is mostly a per-building amenity, same as
-    anywhere in Dubai. District One's Crystal Lagoon is the one
-    community-scale exception, and it's a different kind of amenity —
-    not a bigger pool.`,
+  h1: "Building pools, and 18 hectares that are not a pool",
+  lede: `Almost everywhere in the district, swimming means the pool in your
+    own building. The exception is not a bigger pool — it is a lagoon with a
+    beach, and the distinction matters more than it sounds.`,
   sections: [
     {
-      heading: "Building pools",
+      heading: "The Crystal Lagoon",
       paragraphs: [
-        `Standard across apartment buildings in Riviera and Sobha
-          Hartland, common in Meydan's mid-rise blocks too — see
-          <a href="https://riviera.dst.llc/pools/" title="Pool access in Azizi Riviera">Riviera's own pools
-          page</a> for what's typical there. Villa communities like
-          District One more often carry private pools per unit instead.`,
+        `The water at the centre of District One covers <strong>18.71
+          hectares</strong>, with two further stretches of 8.69 and 1.28
+          hectares, and roughly 14 kilometres of shoreline around the whole
+          system. It opened in 2017.`,
+        `It is filtered rather than chlorinated at pool strength, using
+          technology licensed from Crystal Lagoons, the Chilean company that
+          holds the patents — which is why a body of water this size can be
+          held at swimming clarity at all. You can swim in it, paddle a kayak
+          across it and walk a sand beach beside it, none of which a building
+          pool offers.`,
+        `The catch is who gets in: it is a private amenity for District One
+          residents, not a district-wide one. Living in Sobha Hartland or
+          Riviera does not come with lagoon access, and no amount of
+          proximity changes that.`,
       ],
     },
     {
-      heading: "District One's Crystal Lagoon",
+      heading: "Building pools, which is what most people actually get",
       paragraphs: [
-        `A large artificial lagoon, not a conventional pool — see the
-          <a href="/water/" title="Where to swim near MBR City">water page</a> for what it offers and who has
-          access.`,
+        `Standard across apartment buildings in Riviera and Sobha Hartland,
+          and common in Meydan's mid-rise blocks — see
+          <a href="https://riviera.dst.llc/pools/" title="Pool access in Azizi Riviera">Riviera's own pools
+          page</a> for what is typical there. Villa communities including
+          District One more often carry a private pool per unit instead, which
+          is the other reason a District One villa and a District One
+          apartment are different propositions.`,
+        `If a shared pool matters to you, it is a per-building question and
+          it has to be asked per building. Two towers on the same street
+          routinely differ.`,
+      ],
+    },
+    {
+      heading: "Where else the water is",
+      paragraphs: [
+        `The <a href="/water/" title="Where to swim near MBR City">water page</a> covers the rest — what is
+          reachable without living in the right community, and what a
+          twenty-minute drive opens up.`,
       ],
     },
   ],
@@ -248,9 +303,9 @@ export const news = {
   sections: [
     {
       paragraphs: [
-        `New Meydan One Mall tenants, road or infrastructure changes that
-          affect the district as a whole, communities completing new
-          phases — that scale of change, not a single building's news.`,
+        `Meydan One Mall finally setting a date, road or infrastructure
+          changes that affect the district as a whole, communities completing
+          new phases — that scale of change, not a single building's news.`,
         `For what's changing inside one specific community, that content
           lives on that community's own site where one exists — Riviera's
           <a href="https://riviera.dst.llc/news/" title="What's changing in Azizi Riviera">news page</a> is the
