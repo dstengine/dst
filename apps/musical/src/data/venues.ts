@@ -895,6 +895,13 @@ export const venues: Venue[] = [
     slug: "milton-keynes-theatre",
     name: "Milton Keynes Theatre",
     city: "milton-keynes",
+    image: "/venues/milton-keynes-theatre.jpg",
+    imageAlt:
+      "The cantilevered canopy over the entrance to Milton Keynes Theatre, the theatre's banners hanging from its columns.",
+    imageCredit: "Mr Biz",
+    imageLicense: "CC BY-SA 2.0",
+    imageLicenseSlug: "licence-cc-by-sa-2-0",
+    imageSourceSlug: "photo-milton-keynes-theatre",
     address: "500 Midsummer Boulevard, Milton Keynes, MK9 3NZ",
     lat: 52.044324,
     lon: -0.749001,

@@ -2974,6 +2974,30 @@
         ]
       ]
     },
+    "/venues/milton-keynes-theatre.jpg": {
+      "width": 640,
+      "height": 480,
+      "avif": [
+        [
+          480,
+          "/venues/milton-keynes-theatre-480.avif"
+        ],
+        [
+          640,
+          "/venues/milton-keynes-theatre-640.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/milton-keynes-theatre-480.webp"
+        ],
+        [
+          640,
+          "/venues/milton-keynes-theatre-640.webp"
+        ]
+      ]
+    },
     "/venues/new-theatre-oxford.jpg": {
       "width": 1500,
       "height": 1125,

@@ -65,9 +65,9 @@ const items = runs.map((run) => {
     // The city, not the show: there is no production photography licensed
     // yet, and a reader scanning thirty-three stops recognises Newcastle
     // faster than they read it. The mark stays as the fallback for a city
-    // with no picture. Photographers and licences are named on /about/,
-    // because a card has no room for a caption and no room for the two
-    // links a caption needs.
+    // with no picture. A card is a link, so it can hold neither a caption nor
+    // the two links a caption needs: the photographer and the licence are
+    // named on the city's own page, where the same picture runs full size.
     image: place?.image,
     imageAlt: place?.imageAlt,
     icon: ICONS.stage,
