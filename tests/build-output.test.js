@@ -335,6 +335,33 @@ describe("config", () => {
   });
 });
 
+describe("theme", () => {
+  // Two halves that have to travel together. The control is only useful if
+  // the head script is there to read what it stored, and the head script is
+  // only reachable if the control is there to store anything — and neither
+  // failure shows up as a broken build, only as a dead button or a flash of
+  // the wrong theme on the next page load.
+  test("every page carries the toggle and the pre-paint script", () => {
+    for (const p of contentPages()) {
+      assert.match(p.html, /id="theme-toggle"/, `${p.url}: no theme toggle`);
+      assert.match(
+        p.html,
+        /localStorage\.getItem\("theme"\)/,
+        `${p.url}: no pre-paint theme script in the head`,
+      );
+    }
+  });
+
+  // The script has to run before the first paint. A module or deferred
+  // script is exactly late enough to paint the default theme first.
+  test("the pre-paint script is inline and blocking", () => {
+    const html = contentPages()[0].html;
+    const tag = html.slice(0, html.indexOf('localStorage.getItem("theme")')).lastIndexOf("<script");
+    const open = html.slice(tag, html.indexOf(">", tag));
+    assert.doesNotMatch(open, /\b(defer|async|type="module")/, `theme script is deferred: ${open}`);
+  });
+});
+
 describe("llms.txt", () => {
   // The convention (llmstxt.org) is a Markdown map of the site at its root.
   // It is only worth anything if it is true: a link to a page that no longer

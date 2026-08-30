@@ -1,4 +1,5 @@
 ---
+import ThemeToggle from "../components/ThemeToggle.astro";
 import '../styles/tokens.css';
 import Analytics from '../components/Analytics.astro';
 import { ICONS, navIconFor } from '../icons';
@@ -145,6 +146,20 @@ const lateIcons = navFootprint > 700;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {/* Both schemes exist, so form controls, scrollbars and the address bar
+        follow the page rather than staying light. */}
+    <meta name="color-scheme" content="light dark" />
+    {/* Before the first paint, or the page flashes the default theme and then
+        corrects itself. Inline and synchronous on purpose: a module script
+        is deferred, which is exactly late enough to see the flash. */}
+    <script is:inline>
+      (() => {
+        try {
+          const v = localStorage.getItem("theme");
+          if (v === "light" || v === "dark") document.documentElement.setAttribute("data-theme", v);
+        } catch { /* private mode: fall through to the reader's own setting */ }
+      })();
+    </script>
     <title>{title}</title>
     <meta name="description" content={description} />
     {/* iOS Safari auto-links any digit run that looks like a phone number
@@ -251,6 +266,7 @@ const lateIcons = navFootprint > 700;
               </svg>
             </a>
           )}
+          <ThemeToggle />
         </div>
       </div>
     </header>
@@ -328,6 +344,14 @@ const lateIcons = navFootprint > 700;
     font-size: var(--step--1);
   }
   .skip-link:focus { transform: translateY(0); }
+  /* The dark-mode accent is the light one, so white on it ran 1.68:1 — the
+     first tab stop on every page, unreadable, and invisible to review
+     because it only appears under focus. Dark ink on the pale accent, the
+     same swap `.button` already makes. */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .skip-link { color: var(--bg); }
+  }
+  :root[data-theme="dark"] .skip-link { color: var(--bg); }
   /* The target takes focus programmatically, which would otherwise draw a
      ring around the whole page. */
   main:focus { outline: none; }

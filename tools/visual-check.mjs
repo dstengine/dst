@@ -2,6 +2,7 @@
 // Finds the visual faults a screenshot shows and a unit test doesn't.
 //
 //   node tools/visual-check.mjs <url|url...> [--widths 390,1280] [--shots <dir>]
+//                                 [--scheme light|dark|both]
 //
 // Written after a round of "проработай, чтобы я не находил за тобой багов":
 // every check here is a bug that was actually shipped, not a rule invented
@@ -34,8 +35,14 @@ const flag = (name, fallback) => {
 const urls = args.filter((a) => !a.startsWith("--") && !/^\d/.test(a) && a.includes("//"));
 const widths = flag("widths", "390,1280").split(",").map(Number);
 const shotDir = flag("shots", mkdtempSync(path.join(tmpdir(), "visual-")));
+// The network renders in the reader's colour scheme, and since the theme
+// toggle it renders in whichever one they picked. Contrast is the check most
+// likely to pass in one and fail in the other, so dark is checkable here
+// rather than only by eye. Default stays light so existing invocations mean
+// what they meant before.
+const schemes = flag("scheme", "light") === "both" ? ["light", "dark"] : [flag("scheme", "light")];
 if (!urls.length) {
-  console.error("usage: node tools/visual-check.mjs <url> [more urls] [--widths 390,1280]");
+  console.error("usage: node tools/visual-check.mjs <url> [more urls] [--widths 390,1280] [--scheme light|dark|both]");
   process.exit(2);
 }
 
@@ -326,11 +333,13 @@ const browser = await chromium.launch();
 let problems = 0;
 for (const url of urls) {
   for (const width of widths) {
+   for (const colorScheme of schemes) {
     const ctx = await browser.newContext({
       viewport: { width, height: 900 },
       deviceScaleFactor: 1,
       isMobile: width <= 640,
       hasTouch: width <= 640,
+      colorScheme,
     });
     const page = await ctx.newPage();
     // networkidle is the right wait for a static page, but a page that embeds
@@ -345,8 +354,9 @@ for (const url of urls) {
       console.log(`${url} @${width} — network never went idle, checked after load`);
     }
     await page.waitForTimeout(400);
-    const label = `${url} @${width}`;
-    const name = url.replace(/[^a-z0-9]+/gi, "-").replace(/^-|-$/g, "");
+    const suffix = schemes.length > 1 ? ` ${colorScheme}` : "";
+    const label = `${url} @${width}${suffix}`;
+    const name = `${url.replace(/[^a-z0-9]+/gi, "-").replace(/^-|-$/g, "")}${schemes.length > 1 ? `-${colorScheme}` : ""}`;
     const findings = [
       ...(await domFindings(page, width)),
       ...(await contrastFindings(page, path.join(shotDir, `${name}-${width}.png`))),
@@ -359,6 +369,7 @@ for (const url of urls) {
       console.log(`${label} — clean`);
     }
     await ctx.close();
+   }
   }
 }
 await browser.close();

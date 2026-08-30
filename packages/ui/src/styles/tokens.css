@@ -91,7 +91,9 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  /* The un-stamped state: no stored choice, so the reader's own setting
+     decides. :not() keeps an explicit light choice winning on a dark OS. */
+  :root:not([data-theme="light"]) {
     --bg: #121417;
     --surface: #191C20;
     --surface-sunk: #0E1013;
@@ -225,7 +227,9 @@ a:where(:hover, :focus-visible) { text-decoration: underline; }
    on the light accent reads crisper and matches the light-mode pairing
    (dark accent + white text) in spirit. */
 @media (prefers-color-scheme: dark) {
-  .button { color: var(--bg); }
+  /* :not() because a reader on a dark OS can pick light: then the accent is
+     the dark light-mode one and the button text has to stay pale. */
+  :root:not([data-theme="light"]) .button { color: var(--bg); }
 }
 :root[data-theme="dark"] .button { color: var(--bg); }
 
