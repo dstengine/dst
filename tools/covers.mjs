@@ -1,4 +1,5 @@
-// Generates one cover per event that has none, through fal.ai.
+// Generates one cover per event and per news item that has none, through
+// fal.ai.
 //
 //   node tools/covers.mjs            # generate what is missing
 //   node tools/covers.mjs --dry      # list what would be generated
@@ -106,15 +107,30 @@ async function generate(site, slug, entry) {
   return tier;
 }
 
+// Events and news are separate blocks in covers.json but share one output
+// folder per site, so a slug used by both would silently overwrite. They do
+// not collide today and this keeps it that way.
+const jobs = [];
+const seen = new Set();
+for (const block of [PROMPTS.covers, PROMPTS.news ?? {}])
+  for (const [site, entries] of Object.entries(block))
+    for (const [slug, entry] of Object.entries(entries)) {
+      const key = `${site}/${slug}`;
+      if (seen.has(key)) throw new Error(`two prompts for ${key} — they would overwrite each other`);
+      seen.add(key);
+      jobs.push([site, slug, entry]);
+    }
+
 let n = 0, usd = 0;
-for (const [site, entries] of Object.entries(PROMPTS.covers))
-  for (const [slug, entry] of Object.entries(entries)) {
+{
+  for (const [site, slug, entry] of jobs) {
     const tier = await generate(site, slug, entry);
     if (!tier) continue;
     n++;
     // Both models bill by megapixel.
     usd += ((WIDTH * HEIGHT) / 1e6) * tier.perMp;
   }
+}
 
 if (!n) console.log("nothing missing");
 else if (DRY) console.log(`\n${n} to generate — about $${usd.toFixed(3)}`);

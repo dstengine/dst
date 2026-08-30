@@ -1,5 +1,101 @@
 {
   "cmx.lol": {
+    "/covers/betsabee-romero-homenaje-a-monsivais.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/betsabee-romero-homenaje-a-monsivais-480.avif"
+        ],
+        [
+          768,
+          "/covers/betsabee-romero-homenaje-a-monsivais-768.avif"
+        ],
+        [
+          1024,
+          "/covers/betsabee-romero-homenaje-a-monsivais-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/betsabee-romero-homenaje-a-monsivais-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/betsabee-romero-homenaje-a-monsivais-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/betsabee-romero-homenaje-a-monsivais-480.webp"
+        ],
+        [
+          768,
+          "/covers/betsabee-romero-homenaje-a-monsivais-768.webp"
+        ],
+        [
+          1024,
+          "/covers/betsabee-romero-homenaje-a-monsivais-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/betsabee-romero-homenaje-a-monsivais-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/betsabee-romero-homenaje-a-monsivais-1536.webp"
+        ]
+      ]
+    },
+    "/covers/casa-del-lago-unam-sustentable.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/casa-del-lago-unam-sustentable-480.avif"
+        ],
+        [
+          768,
+          "/covers/casa-del-lago-unam-sustentable-768.avif"
+        ],
+        [
+          1024,
+          "/covers/casa-del-lago-unam-sustentable-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/casa-del-lago-unam-sustentable-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/casa-del-lago-unam-sustentable-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/casa-del-lago-unam-sustentable-480.webp"
+        ],
+        [
+          768,
+          "/covers/casa-del-lago-unam-sustentable-768.webp"
+        ],
+        [
+          1024,
+          "/covers/casa-del-lago-unam-sustentable-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/casa-del-lago-unam-sustentable-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/casa-del-lago-unam-sustentable-1536.webp"
+        ]
+      ]
+    },
     "/covers/del-color-de-la-sandia-cenart.jpg": {
       "width": 1536,
       "height": 864,
@@ -45,6 +141,54 @@
         [
           1536,
           "/covers/del-color-de-la-sandia-cenart-1536.webp"
+        ]
+      ]
+    },
+    "/covers/fin-de-semana-del-31-de-octubre.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/fin-de-semana-del-31-de-octubre-480.avif"
+        ],
+        [
+          768,
+          "/covers/fin-de-semana-del-31-de-octubre-768.avif"
+        ],
+        [
+          1024,
+          "/covers/fin-de-semana-del-31-de-octubre-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/fin-de-semana-del-31-de-octubre-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/fin-de-semana-del-31-de-octubre-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/fin-de-semana-del-31-de-octubre-480.webp"
+        ],
+        [
+          768,
+          "/covers/fin-de-semana-del-31-de-octubre-768.webp"
+        ],
+        [
+          1024,
+          "/covers/fin-de-semana-del-31-de-octubre-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/fin-de-semana-del-31-de-octubre-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/fin-de-semana-del-31-de-octubre-1536.webp"
         ]
       ]
     },
@@ -143,9 +287,393 @@
           "/covers/gran-premio-ciudad-de-mexico-2026-1536.webp"
         ]
       ]
+    },
+    "/covers/juegos-mundiales-robots-humanoides-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/juegos-mundiales-robots-humanoides-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/juegos-mundiales-robots-humanoides-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/juegos-mundiales-robots-humanoides-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/juegos-mundiales-robots-humanoides-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/juegos-mundiales-robots-humanoides-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/juegos-mundiales-robots-humanoides-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/juegos-mundiales-robots-humanoides-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/juegos-mundiales-robots-humanoides-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/juegos-mundiales-robots-humanoides-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/juegos-mundiales-robots-humanoides-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/metrobus-cierres-por-mantenimiento.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/metrobus-cierres-por-mantenimiento-480.avif"
+        ],
+        [
+          768,
+          "/covers/metrobus-cierres-por-mantenimiento-768.avif"
+        ],
+        [
+          1024,
+          "/covers/metrobus-cierres-por-mantenimiento-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/metrobus-cierres-por-mantenimiento-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/metrobus-cierres-por-mantenimiento-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/metrobus-cierres-por-mantenimiento-480.webp"
+        ],
+        [
+          768,
+          "/covers/metrobus-cierres-por-mantenimiento-768.webp"
+        ],
+        [
+          1024,
+          "/covers/metrobus-cierres-por-mantenimiento-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/metrobus-cierres-por-mantenimiento-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/metrobus-cierres-por-mantenimiento-1536.webp"
+        ]
+      ]
+    },
+    "/covers/museo-del-gato-reforma.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/museo-del-gato-reforma-480.avif"
+        ],
+        [
+          768,
+          "/covers/museo-del-gato-reforma-768.avif"
+        ],
+        [
+          1024,
+          "/covers/museo-del-gato-reforma-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/museo-del-gato-reforma-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/museo-del-gato-reforma-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/museo-del-gato-reforma-480.webp"
+        ],
+        [
+          768,
+          "/covers/museo-del-gato-reforma-768.webp"
+        ],
+        [
+          1024,
+          "/covers/museo-del-gato-reforma-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/museo-del-gato-reforma-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/museo-del-gato-reforma-1536.webp"
+        ]
+      ]
+    },
+    "/covers/plaza-de-la-conchita-jardin-polinizador.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/plaza-de-la-conchita-jardin-polinizador-480.avif"
+        ],
+        [
+          768,
+          "/covers/plaza-de-la-conchita-jardin-polinizador-768.avif"
+        ],
+        [
+          1024,
+          "/covers/plaza-de-la-conchita-jardin-polinizador-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/plaza-de-la-conchita-jardin-polinizador-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/plaza-de-la-conchita-jardin-polinizador-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/plaza-de-la-conchita-jardin-polinizador-480.webp"
+        ],
+        [
+          768,
+          "/covers/plaza-de-la-conchita-jardin-polinizador-768.webp"
+        ],
+        [
+          1024,
+          "/covers/plaza-de-la-conchita-jardin-polinizador-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/plaza-de-la-conchita-jardin-polinizador-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/plaza-de-la-conchita-jardin-polinizador-1536.webp"
+        ]
+      ]
+    },
+    "/covers/s301-la-estrella-mas-rapida.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/s301-la-estrella-mas-rapida-480.avif"
+        ],
+        [
+          768,
+          "/covers/s301-la-estrella-mas-rapida-768.avif"
+        ],
+        [
+          1024,
+          "/covers/s301-la-estrella-mas-rapida-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/s301-la-estrella-mas-rapida-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/s301-la-estrella-mas-rapida-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/s301-la-estrella-mas-rapida-480.webp"
+        ],
+        [
+          768,
+          "/covers/s301-la-estrella-mas-rapida-768.webp"
+        ],
+        [
+          1024,
+          "/covers/s301-la-estrella-mas-rapida-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/s301-la-estrella-mas-rapida-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/s301-la-estrella-mas-rapida-1536.webp"
+        ]
+      ]
+    },
+    "/covers/semovi-nuevo-contrato-ecobici.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/semovi-nuevo-contrato-ecobici-480.avif"
+        ],
+        [
+          768,
+          "/covers/semovi-nuevo-contrato-ecobici-768.avif"
+        ],
+        [
+          1024,
+          "/covers/semovi-nuevo-contrato-ecobici-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/semovi-nuevo-contrato-ecobici-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/semovi-nuevo-contrato-ecobici-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/semovi-nuevo-contrato-ecobici-480.webp"
+        ],
+        [
+          768,
+          "/covers/semovi-nuevo-contrato-ecobici-768.webp"
+        ],
+        [
+          1024,
+          "/covers/semovi-nuevo-contrato-ecobici-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/semovi-nuevo-contrato-ecobici-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/semovi-nuevo-contrato-ecobici-1536.webp"
+        ]
+      ]
     }
   },
   "dst.llc": {
+    "/covers/dubai-tokenised-property-secondary-market.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/dubai-tokenised-property-secondary-market-480.avif"
+        ],
+        [
+          768,
+          "/covers/dubai-tokenised-property-secondary-market-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dubai-tokenised-property-secondary-market-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/dubai-tokenised-property-secondary-market-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/dubai-tokenised-property-secondary-market-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dubai-tokenised-property-secondary-market-480.webp"
+        ],
+        [
+          768,
+          "/covers/dubai-tokenised-property-secondary-market-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dubai-tokenised-property-secondary-market-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/dubai-tokenised-property-secondary-market-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/dubai-tokenised-property-secondary-market-1536.webp"
+        ]
+      ]
+    },
+    "/covers/gitex-moves-to-expo-city-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/gitex-moves-to-expo-city-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/gitex-moves-to-expo-city-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/gitex-moves-to-expo-city-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/gitex-moves-to-expo-city-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/gitex-moves-to-expo-city-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/gitex-moves-to-expo-city-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/gitex-moves-to-expo-city-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/gitex-moves-to-expo-city-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/gitex-moves-to-expo-city-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/gitex-moves-to-expo-city-2026-1536.webp"
+        ]
+      ]
+    },
     "/eco.jpg": {
       "width": 1600,
       "height": 800,
@@ -446,6 +974,198 @@
     }
   },
   "fwf.lol": {
+    "/covers/dubai-land-department-tokenisation-pilot.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/dubai-land-department-tokenisation-pilot-480.avif"
+        ],
+        [
+          768,
+          "/covers/dubai-land-department-tokenisation-pilot-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dubai-land-department-tokenisation-pilot-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/dubai-land-department-tokenisation-pilot-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/dubai-land-department-tokenisation-pilot-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dubai-land-department-tokenisation-pilot-480.webp"
+        ],
+        [
+          768,
+          "/covers/dubai-land-department-tokenisation-pilot-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dubai-land-department-tokenisation-pilot-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/dubai-land-department-tokenisation-pilot-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/dubai-land-department-tokenisation-pilot-1536.webp"
+        ]
+      ]
+    },
+    "/covers/dubai-second-in-bcg-intelligent-cities-index.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/dubai-second-in-bcg-intelligent-cities-index-480.avif"
+        ],
+        [
+          768,
+          "/covers/dubai-second-in-bcg-intelligent-cities-index-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dubai-second-in-bcg-intelligent-cities-index-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/dubai-second-in-bcg-intelligent-cities-index-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/dubai-second-in-bcg-intelligent-cities-index-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dubai-second-in-bcg-intelligent-cities-index-480.webp"
+        ],
+        [
+          768,
+          "/covers/dubai-second-in-bcg-intelligent-cities-index-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dubai-second-in-bcg-intelligent-cities-index-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/dubai-second-in-bcg-intelligent-cities-index-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/dubai-second-in-bcg-intelligent-cities-index-1536.webp"
+        ]
+      ]
+    },
+    "/covers/rta-starts-commercial-robotaxi-operations.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/rta-starts-commercial-robotaxi-operations-480.avif"
+        ],
+        [
+          768,
+          "/covers/rta-starts-commercial-robotaxi-operations-768.avif"
+        ],
+        [
+          1024,
+          "/covers/rta-starts-commercial-robotaxi-operations-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/rta-starts-commercial-robotaxi-operations-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/rta-starts-commercial-robotaxi-operations-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/rta-starts-commercial-robotaxi-operations-480.webp"
+        ],
+        [
+          768,
+          "/covers/rta-starts-commercial-robotaxi-operations-768.webp"
+        ],
+        [
+          1024,
+          "/covers/rta-starts-commercial-robotaxi-operations-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/rta-starts-commercial-robotaxi-operations-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/rta-starts-commercial-robotaxi-operations-1536.webp"
+        ]
+      ]
+    },
+    "/covers/vara-rules-for-virtual-asset-derivatives.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/vara-rules-for-virtual-asset-derivatives-480.avif"
+        ],
+        [
+          768,
+          "/covers/vara-rules-for-virtual-asset-derivatives-768.avif"
+        ],
+        [
+          1024,
+          "/covers/vara-rules-for-virtual-asset-derivatives-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/vara-rules-for-virtual-asset-derivatives-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/vara-rules-for-virtual-asset-derivatives-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/vara-rules-for-virtual-asset-derivatives-480.webp"
+        ],
+        [
+          768,
+          "/covers/vara-rules-for-virtual-asset-derivatives-768.webp"
+        ],
+        [
+          1024,
+          "/covers/vara-rules-for-virtual-asset-derivatives-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/vara-rules-for-virtual-asset-derivatives-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/vara-rules-for-virtual-asset-derivatives-1536.webp"
+        ]
+      ]
+    },
     "/fwf-hero.jpg": {
       "width": 1380,
       "height": 602,
@@ -672,6 +1392,54 @@
         ]
       ]
     },
+    "/covers/notting-hill-carnival-turns-60.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/notting-hill-carnival-turns-60-480.avif"
+        ],
+        [
+          768,
+          "/covers/notting-hill-carnival-turns-60-768.avif"
+        ],
+        [
+          1024,
+          "/covers/notting-hill-carnival-turns-60-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/notting-hill-carnival-turns-60-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/notting-hill-carnival-turns-60-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/notting-hill-carnival-turns-60-480.webp"
+        ],
+        [
+          768,
+          "/covers/notting-hill-carnival-turns-60-768.webp"
+        ],
+        [
+          1024,
+          "/covers/notting-hill-carnival-turns-60-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/notting-hill-carnival-turns-60-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/notting-hill-carnival-turns-60-1536.webp"
+        ]
+      ]
+    },
     "/covers/open-house-festival-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -717,6 +1485,102 @@
         [
           1536,
           "/covers/open-house-festival-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/partial-lunar-eclipse-over-london.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/partial-lunar-eclipse-over-london-480.avif"
+        ],
+        [
+          768,
+          "/covers/partial-lunar-eclipse-over-london-768.avif"
+        ],
+        [
+          1024,
+          "/covers/partial-lunar-eclipse-over-london-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/partial-lunar-eclipse-over-london-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/partial-lunar-eclipse-over-london-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/partial-lunar-eclipse-over-london-480.webp"
+        ],
+        [
+          768,
+          "/covers/partial-lunar-eclipse-over-london-768.webp"
+        ],
+        [
+          1024,
+          "/covers/partial-lunar-eclipse-over-london-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/partial-lunar-eclipse-over-london-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/partial-lunar-eclipse-over-london-1536.webp"
+        ]
+      ]
+    },
+    "/covers/ten-exhibitions-on-in-london.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/ten-exhibitions-on-in-london-480.avif"
+        ],
+        [
+          768,
+          "/covers/ten-exhibitions-on-in-london-768.avif"
+        ],
+        [
+          1024,
+          "/covers/ten-exhibitions-on-in-london-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/ten-exhibitions-on-in-london-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/ten-exhibitions-on-in-london-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/ten-exhibitions-on-in-london-480.webp"
+        ],
+        [
+          768,
+          "/covers/ten-exhibitions-on-in-london-768.webp"
+        ],
+        [
+          1024,
+          "/covers/ten-exhibitions-on-in-london-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/ten-exhibitions-on-in-london-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/ten-exhibitions-on-in-london-1536.webp"
         ]
       ]
     },
@@ -767,9 +1631,105 @@
           "/covers/totally-thames-2026-1536.webp"
         ]
       ]
+    },
+    "/covers/va-exhibitions-closing-dates.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/va-exhibitions-closing-dates-480.avif"
+        ],
+        [
+          768,
+          "/covers/va-exhibitions-closing-dates-768.avif"
+        ],
+        [
+          1024,
+          "/covers/va-exhibitions-closing-dates-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/va-exhibitions-closing-dates-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/va-exhibitions-closing-dates-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/va-exhibitions-closing-dates-480.webp"
+        ],
+        [
+          768,
+          "/covers/va-exhibitions-closing-dates-768.webp"
+        ],
+        [
+          1024,
+          "/covers/va-exhibitions-closing-dates-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/va-exhibitions-closing-dates-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/va-exhibitions-closing-dates-1536.webp"
+        ]
+      ]
     }
   },
   "lnd.lol": {
+    "/covers/bank-holiday-tube-and-tfl-closures.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/bank-holiday-tube-and-tfl-closures-480.avif"
+        ],
+        [
+          768,
+          "/covers/bank-holiday-tube-and-tfl-closures-768.avif"
+        ],
+        [
+          1024,
+          "/covers/bank-holiday-tube-and-tfl-closures-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/bank-holiday-tube-and-tfl-closures-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/bank-holiday-tube-and-tfl-closures-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/bank-holiday-tube-and-tfl-closures-480.webp"
+        ],
+        [
+          768,
+          "/covers/bank-holiday-tube-and-tfl-closures-768.webp"
+        ],
+        [
+          1024,
+          "/covers/bank-holiday-tube-and-tfl-closures-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/bank-holiday-tube-and-tfl-closures-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/bank-holiday-tube-and-tfl-closures-1536.webp"
+        ]
+      ]
+    },
     "/covers/giant-summer-flea-olympic-park.jpg": {
       "width": 1536,
       "height": 864,
@@ -815,6 +1775,102 @@
         [
           1536,
           "/covers/giant-summer-flea-olympic-park-1536.webp"
+        ]
+      ]
+    },
+    "/covers/olympic-park-summer-school.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/olympic-park-summer-school-480.avif"
+        ],
+        [
+          768,
+          "/covers/olympic-park-summer-school-768.avif"
+        ],
+        [
+          1024,
+          "/covers/olympic-park-summer-school-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/olympic-park-summer-school-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/olympic-park-summer-school-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/olympic-park-summer-school-480.webp"
+        ],
+        [
+          768,
+          "/covers/olympic-park-summer-school-768.webp"
+        ],
+        [
+          1024,
+          "/covers/olympic-park-summer-school-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/olympic-park-summer-school-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/olympic-park-summer-school-1536.webp"
+        ]
+      ]
+    },
+    "/covers/sl12-superloop-gants-hill-rainham.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/sl12-superloop-gants-hill-rainham-480.avif"
+        ],
+        [
+          768,
+          "/covers/sl12-superloop-gants-hill-rainham-768.avif"
+        ],
+        [
+          1024,
+          "/covers/sl12-superloop-gants-hill-rainham-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/sl12-superloop-gants-hill-rainham-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/sl12-superloop-gants-hill-rainham-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/sl12-superloop-gants-hill-rainham-480.webp"
+        ],
+        [
+          768,
+          "/covers/sl12-superloop-gants-hill-rainham-768.webp"
+        ],
+        [
+          1024,
+          "/covers/sl12-superloop-gants-hill-rainham-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/sl12-superloop-gants-hill-rainham-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/sl12-superloop-gants-hill-rainham-1536.webp"
         ]
       ]
     },
@@ -4278,6 +5334,150 @@
     }
   },
   "mxo.lol": {
+    "/covers/capuchinos-cazan-cuando-falta-fruta.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/capuchinos-cazan-cuando-falta-fruta-480.avif"
+        ],
+        [
+          768,
+          "/covers/capuchinos-cazan-cuando-falta-fruta-768.avif"
+        ],
+        [
+          1024,
+          "/covers/capuchinos-cazan-cuando-falta-fruta-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/capuchinos-cazan-cuando-falta-fruta-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/capuchinos-cazan-cuando-falta-fruta-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/capuchinos-cazan-cuando-falta-fruta-480.webp"
+        ],
+        [
+          768,
+          "/covers/capuchinos-cazan-cuando-falta-fruta-768.webp"
+        ],
+        [
+          1024,
+          "/covers/capuchinos-cazan-cuando-falta-fruta-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/capuchinos-cazan-cuando-falta-fruta-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/capuchinos-cazan-cuando-falta-fruta-1536.webp"
+        ]
+      ]
+    },
+    "/covers/cova-de-les-dones-inscripciones-romanas.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/cova-de-les-dones-inscripciones-romanas-480.avif"
+        ],
+        [
+          768,
+          "/covers/cova-de-les-dones-inscripciones-romanas-768.avif"
+        ],
+        [
+          1024,
+          "/covers/cova-de-les-dones-inscripciones-romanas-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/cova-de-les-dones-inscripciones-romanas-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/cova-de-les-dones-inscripciones-romanas-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/cova-de-les-dones-inscripciones-romanas-480.webp"
+        ],
+        [
+          768,
+          "/covers/cova-de-les-dones-inscripciones-romanas-768.webp"
+        ],
+        [
+          1024,
+          "/covers/cova-de-les-dones-inscripciones-romanas-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/cova-de-les-dones-inscripciones-romanas-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/cova-de-les-dones-inscripciones-romanas-1536.webp"
+        ]
+      ]
+    },
+    "/covers/cuatro-cienegas-borrego-cimarron.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/cuatro-cienegas-borrego-cimarron-480.avif"
+        ],
+        [
+          768,
+          "/covers/cuatro-cienegas-borrego-cimarron-768.avif"
+        ],
+        [
+          1024,
+          "/covers/cuatro-cienegas-borrego-cimarron-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/cuatro-cienegas-borrego-cimarron-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/cuatro-cienegas-borrego-cimarron-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/cuatro-cienegas-borrego-cimarron-480.webp"
+        ],
+        [
+          768,
+          "/covers/cuatro-cienegas-borrego-cimarron-768.webp"
+        ],
+        [
+          1024,
+          "/covers/cuatro-cienegas-borrego-cimarron-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/cuatro-cienegas-borrego-cimarron-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/cuatro-cienegas-borrego-cimarron-1536.webp"
+        ]
+      ]
+    },
     "/covers/fil-guadalajara-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -4326,6 +5526,54 @@
         ]
       ]
     },
+    "/covers/filij-2026-regresa-al-cenart.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/filij-2026-regresa-al-cenart-480.avif"
+        ],
+        [
+          768,
+          "/covers/filij-2026-regresa-al-cenart-768.avif"
+        ],
+        [
+          1024,
+          "/covers/filij-2026-regresa-al-cenart-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/filij-2026-regresa-al-cenart-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/filij-2026-regresa-al-cenart-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/filij-2026-regresa-al-cenart-480.webp"
+        ],
+        [
+          768,
+          "/covers/filij-2026-regresa-al-cenart-768.webp"
+        ],
+        [
+          1024,
+          "/covers/filij-2026-regresa-al-cenart-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/filij-2026-regresa-al-cenart-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/filij-2026-regresa-al-cenart-1536.webp"
+        ]
+      ]
+    },
     "/covers/filij-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -4371,6 +5619,342 @@
         [
           1536,
           "/covers/filij-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/hirosaki-mil-ochocientas-personas-castillo.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/hirosaki-mil-ochocientas-personas-castillo-480.avif"
+        ],
+        [
+          768,
+          "/covers/hirosaki-mil-ochocientas-personas-castillo-768.avif"
+        ],
+        [
+          1024,
+          "/covers/hirosaki-mil-ochocientas-personas-castillo-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/hirosaki-mil-ochocientas-personas-castillo-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/hirosaki-mil-ochocientas-personas-castillo-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/hirosaki-mil-ochocientas-personas-castillo-480.webp"
+        ],
+        [
+          768,
+          "/covers/hirosaki-mil-ochocientas-personas-castillo-768.webp"
+        ],
+        [
+          1024,
+          "/covers/hirosaki-mil-ochocientas-personas-castillo-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/hirosaki-mil-ochocientas-personas-castillo-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/hirosaki-mil-ochocientas-personas-castillo-1536.webp"
+        ]
+      ]
+    },
+    "/covers/john-giorno-en-kurimanzutto.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/john-giorno-en-kurimanzutto-480.avif"
+        ],
+        [
+          768,
+          "/covers/john-giorno-en-kurimanzutto-768.avif"
+        ],
+        [
+          1024,
+          "/covers/john-giorno-en-kurimanzutto-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/john-giorno-en-kurimanzutto-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/john-giorno-en-kurimanzutto-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/john-giorno-en-kurimanzutto-480.webp"
+        ],
+        [
+          768,
+          "/covers/john-giorno-en-kurimanzutto-768.webp"
+        ],
+        [
+          1024,
+          "/covers/john-giorno-en-kurimanzutto-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/john-giorno-en-kurimanzutto-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/john-giorno-en-kurimanzutto-1536.webp"
+        ]
+      ]
+    },
+    "/covers/kusama-320-mil-visitantes.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/kusama-320-mil-visitantes-480.avif"
+        ],
+        [
+          768,
+          "/covers/kusama-320-mil-visitantes-768.avif"
+        ],
+        [
+          1024,
+          "/covers/kusama-320-mil-visitantes-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/kusama-320-mil-visitantes-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/kusama-320-mil-visitantes-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/kusama-320-mil-visitantes-480.webp"
+        ],
+        [
+          768,
+          "/covers/kusama-320-mil-visitantes-768.webp"
+        ],
+        [
+          1024,
+          "/covers/kusama-320-mil-visitantes-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/kusama-320-mil-visitantes-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/kusama-320-mil-visitantes-1536.webp"
+        ]
+      ]
+    },
+    "/covers/moderna-vacuna-melanoma-fase-3.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/moderna-vacuna-melanoma-fase-3-480.avif"
+        ],
+        [
+          768,
+          "/covers/moderna-vacuna-melanoma-fase-3-768.avif"
+        ],
+        [
+          1024,
+          "/covers/moderna-vacuna-melanoma-fase-3-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/moderna-vacuna-melanoma-fase-3-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/moderna-vacuna-melanoma-fase-3-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/moderna-vacuna-melanoma-fase-3-480.webp"
+        ],
+        [
+          768,
+          "/covers/moderna-vacuna-melanoma-fase-3-768.webp"
+        ],
+        [
+          1024,
+          "/covers/moderna-vacuna-melanoma-fase-3-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/moderna-vacuna-melanoma-fase-3-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/moderna-vacuna-melanoma-fase-3-1536.webp"
+        ]
+      ]
+    },
+    "/covers/record-temperatura-oceano-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/record-temperatura-oceano-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/record-temperatura-oceano-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/record-temperatura-oceano-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/record-temperatura-oceano-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/record-temperatura-oceano-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/record-temperatura-oceano-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/record-temperatura-oceano-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/record-temperatura-oceano-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/record-temperatura-oceano-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/record-temperatura-oceano-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/telescopio-roman-lanzamiento.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/telescopio-roman-lanzamiento-480.avif"
+        ],
+        [
+          768,
+          "/covers/telescopio-roman-lanzamiento-768.avif"
+        ],
+        [
+          1024,
+          "/covers/telescopio-roman-lanzamiento-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/telescopio-roman-lanzamiento-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/telescopio-roman-lanzamiento-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/telescopio-roman-lanzamiento-480.webp"
+        ],
+        [
+          768,
+          "/covers/telescopio-roman-lanzamiento-768.webp"
+        ],
+        [
+          1024,
+          "/covers/telescopio-roman-lanzamiento-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/telescopio-roman-lanzamiento-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/telescopio-roman-lanzamiento-1536.webp"
+        ]
+      ]
+    },
+    "/covers/tren-ligero-texcoco-la-paz.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/tren-ligero-texcoco-la-paz-480.avif"
+        ],
+        [
+          768,
+          "/covers/tren-ligero-texcoco-la-paz-768.avif"
+        ],
+        [
+          1024,
+          "/covers/tren-ligero-texcoco-la-paz-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/tren-ligero-texcoco-la-paz-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/tren-ligero-texcoco-la-paz-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/tren-ligero-texcoco-la-paz-480.webp"
+        ],
+        [
+          768,
+          "/covers/tren-ligero-texcoco-la-paz-768.webp"
+        ],
+        [
+          1024,
+          "/covers/tren-ligero-texcoco-la-paz-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/tren-ligero-texcoco-la-paz-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/tren-ligero-texcoco-la-paz-1536.webp"
         ]
       ]
     }
@@ -4760,6 +6344,54 @@
         ]
       ]
     },
+    "/covers/broadway-week-which-shows-are-worth-it.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/broadway-week-which-shows-are-worth-it-480.avif"
+        ],
+        [
+          768,
+          "/covers/broadway-week-which-shows-are-worth-it-768.avif"
+        ],
+        [
+          1024,
+          "/covers/broadway-week-which-shows-are-worth-it-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/broadway-week-which-shows-are-worth-it-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/broadway-week-which-shows-are-worth-it-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/broadway-week-which-shows-are-worth-it-480.webp"
+        ],
+        [
+          768,
+          "/covers/broadway-week-which-shows-are-worth-it-768.webp"
+        ],
+        [
+          1024,
+          "/covers/broadway-week-which-shows-are-worth-it-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/broadway-week-which-shows-are-worth-it-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/broadway-week-which-shows-are-worth-it-1536.webp"
+        ]
+      ]
+    },
     "/covers/broadway-week-wicked.jpg": {
       "width": 1536,
       "height": 864,
@@ -4805,6 +6437,150 @@
         [
           1536,
           "/covers/broadway-week-wicked-1536.webp"
+        ]
+      ]
+    },
+    "/covers/brooklyn-museum-fall-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/brooklyn-museum-fall-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/brooklyn-museum-fall-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/brooklyn-museum-fall-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/brooklyn-museum-fall-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/brooklyn-museum-fall-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/brooklyn-museum-fall-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/brooklyn-museum-fall-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/brooklyn-museum-fall-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/brooklyn-museum-fall-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/brooklyn-museum-fall-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/disney-cruises-return-to-nyc.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/disney-cruises-return-to-nyc-480.avif"
+        ],
+        [
+          768,
+          "/covers/disney-cruises-return-to-nyc-768.avif"
+        ],
+        [
+          1024,
+          "/covers/disney-cruises-return-to-nyc-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/disney-cruises-return-to-nyc-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/disney-cruises-return-to-nyc-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/disney-cruises-return-to-nyc-480.webp"
+        ],
+        [
+          768,
+          "/covers/disney-cruises-return-to-nyc-768.webp"
+        ],
+        [
+          1024,
+          "/covers/disney-cruises-return-to-nyc-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/disney-cruises-return-to-nyc-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/disney-cruises-return-to-nyc-1536.webp"
+        ]
+      ]
+    },
+    "/covers/hudson-river-foliage-cruises.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/hudson-river-foliage-cruises-480.avif"
+        ],
+        [
+          768,
+          "/covers/hudson-river-foliage-cruises-768.avif"
+        ],
+        [
+          1024,
+          "/covers/hudson-river-foliage-cruises-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/hudson-river-foliage-cruises-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/hudson-river-foliage-cruises-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/hudson-river-foliage-cruises-480.webp"
+        ],
+        [
+          768,
+          "/covers/hudson-river-foliage-cruises-768.webp"
+        ],
+        [
+          1024,
+          "/covers/hudson-river-foliage-cruises-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/hudson-river-foliage-cruises-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/hudson-river-foliage-cruises-1536.webp"
         ]
       ]
     },

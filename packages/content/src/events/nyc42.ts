@@ -150,7 +150,7 @@ export const items: EventItem[] = [
     end: "2026-09-20",
     city: "New York City",
     venue: "Lyric Theatre, 213 West 42nd Street, Manhattan",
-    geo: { lat: 40.756820, lon: -73.987484 },
+    geo: { name: "Lyric Theatre", lat: 40.756820, lng: -73.987484 },
     category: "Theatre",
     organizer: "New York City Tourism + Conventions",
     source: {
@@ -186,7 +186,7 @@ export const items: EventItem[] = [
     end: "2026-09-20",
     city: "New York City",
     venue: "Walter Kerr Theatre, 219 West 48th Street, Manhattan",
-    geo: { lat: 40.760681, lon: -73.985585 },
+    geo: { name: "Walter Kerr Theatre", lat: 40.760681, lng: -73.985585 },
     category: "Theatre",
     organizer: "New York City Tourism + Conventions",
     source: {
@@ -223,7 +223,7 @@ export const items: EventItem[] = [
     end: "2026-09-20",
     city: "New York City",
     venue: "Marquis Theatre, 210 West 46th Street, Manhattan",
-    geo: { lat: 40.758904, lon: -73.986185 },
+    geo: { name: "Marquis Theatre", lat: 40.758904, lng: -73.986185 },
     category: "Theatre",
     organizer: "New York City Tourism + Conventions",
     source: {
@@ -260,7 +260,7 @@ export const items: EventItem[] = [
     end: "2026-09-20",
     city: "New York City",
     venue: "Lena Horne Theatre, 256 West 47th Street, Manhattan",
-    geo: { lat: 40.759975, lon: -73.986966 },
+    geo: { name: "Lena Horne Theatre", lat: 40.759975, lng: -73.986966 },
     category: "Theatre",
     organizer: "New York City Tourism + Conventions",
     source: {
@@ -298,7 +298,7 @@ export const items: EventItem[] = [
     end: "2026-09-20",
     city: "New York City",
     venue: "Lyceum Theatre, 149 West 45th Street, Manhattan",
-    geo: { lat: 40.757869, lon: -73.984501 },
+    geo: { name: "Lyceum Theatre", lat: 40.757869, lng: -73.984501 },
     category: "Theatre",
     organizer: "New York City Tourism + Conventions",
     source: {
@@ -334,7 +334,7 @@ export const items: EventItem[] = [
     end: "2026-09-20",
     city: "New York City",
     venue: "Minskoff Theatre, 1515 Broadway, Manhattan",
-    geo: { lat: 40.758063, lon: -73.986205 },
+    geo: { name: "Minskoff Theatre", lat: 40.758063, lng: -73.986205 },
     category: "Theatre",
     organizer: "New York City Tourism + Conventions",
     source: {
@@ -372,7 +372,7 @@ export const items: EventItem[] = [
     end: "2026-09-20",
     city: "New York City",
     venue: "Gershwin Theatre, 222 West 51st Street, Manhattan",
-    geo: { lat: 40.762362, lon: -73.985204 },
+    geo: { name: "Gershwin Theatre", lat: 40.762362, lng: -73.985204 },
     category: "Theatre",
     organizer: "New York City Tourism + Conventions",
     source: {
@@ -408,7 +408,7 @@ export const items: EventItem[] = [
     end: "2026-09-20",
     city: "New York City",
     venue: "Ambassador Theatre, 219 West 49th Street, Manhattan",
-    geo: { lat: 40.761235, lon: -73.984990 },
+    geo: { name: "Ambassador Theatre", lat: 40.761235, lng: -73.984990 },
     category: "Theatre",
     organizer: "New York City Tourism + Conventions",
     source: {

@@ -78,6 +78,16 @@ interface Props {
 
 const { title, description, siteName, nav, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [], footerSiteName = siteName, instagram, image, footerSites = [], networkFooter = true, publisher, lang = "en", noindex = false, prose = false } = Astro.props;
 const isDstHome = Astro.site?.hostname === "dst.llc";
+// The two strings the shell says on its own, in the language of the page.
+// Everything else in the chrome comes from the app; these were hardcoded in
+// English and so spoke English on the two sites that publish in Spanish.
+// Keyed on the `lang` the site already passes, so a site gets them right by
+// declaring its language rather than by remembering two more props.
+const CHROME: Record<string, { skip: string; menu: string }> = {
+  en: { skip: "Skip to content", menu: "Toggle menu" },
+  es: { skip: "Saltar al contenido", menu: "Abrir menú" },
+};
+const chrome = CHROME[lang.slice(0, 2)] ?? CHROME.en;
 
 // Absolute URLs: canonical and og:image are both meaningless as relative
 // paths — a crawler or a chat client resolves them against its own host.
@@ -211,7 +221,7 @@ const lateIcons = navFootprint > 700;
         more links plus the network menu, and without this a keyboard or
         switch user tabs through all of it again on each page before
         reaching a word of the content. Off-screen until focused. */}
-    <a class="skip-link" href="#content">Skip to content</a>
+    <a class="skip-link" href="#content">{chrome.skip}</a>
     <header class="site-header">
       <div class="container header-inner">
         <a class="site-name" href="/" title={siteName}>
@@ -238,7 +248,7 @@ const lateIcons = navFootprint > 700;
               ))}
             </ul>
             <details class="nav-toggle">
-              <summary aria-label="Toggle menu">
+              <summary aria-label={chrome.menu}>
                 <span class="nav-toggle-icon" aria-hidden="true"></span>
               </summary>
               <ul>

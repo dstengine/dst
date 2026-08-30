@@ -4,6 +4,11 @@ export const items: NewsItem[] = [
   {
     slug: "va-exhibitions-closing-dates",
     site: "ldn",
+    image: "/covers/va-exhibitions-closing-dates.jpg",
+    imageAlt: "A row of gallery doorways receding, the nearest shutter half lowered under a clock",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "The V&A closing dates worth putting in a diary",
     summary:
       "Four V&A exhibitions have published closing dates and one opens in November. Schiaparelli goes first, on 8 November — and it is the one with the shortest run left.",
@@ -38,7 +43,13 @@ export const items: NewsItem[] = [
   },
   {
     slug: "notting-hill-carnival-turns-60",
+    featured: 2,
     site: "ldn",
+    image: "/covers/notting-hill-carnival-turns-60.jpg",
+    imageAlt: "A blank plaque on a brick wall with feathers and ribbons fanning out behind it",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Notting Hill Carnival turns sixty",
     summary:
       "A plaque at Westbourne Park names seventy people who built Carnival — unveiled for its sixtieth year, and for seventy years since London Transport went recruiting in the Caribbean.",
@@ -72,6 +83,11 @@ export const items: NewsItem[] = [
   {
     slug: "partial-lunar-eclipse-over-london",
     site: "ldn",
+    image: "/covers/partial-lunar-eclipse-over-london.jpg",
+    imageAlt: "A dark disc hanging over a row of rooftops at night",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "A partial lunar eclipse, visible from London",
     summary:
       "London's second eclipse in a fortnight: 93% of the Moon in shadow at 5.12am on Friday 28 August, no glasses needed, and Parliament Hill the one obvious place to stand.",
@@ -102,7 +118,13 @@ export const items: NewsItem[] = [
   },
   {
     slug: "ten-exhibitions-on-in-london",
+    featured: 1,
     site: "ldn",
+    image: "/covers/ten-exhibitions-on-in-london.jpg",
+    imageAlt: "Ten empty picture frames of different sizes hung across a gallery wall",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "What is actually hanging in London right now",
     summary:
       "Ten shows are on the critics' list. Six of them close before January, one has sold more advance tickets than anything in Tate's 128-year history, and two of the best are free.",

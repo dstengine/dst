@@ -13,6 +13,11 @@ export const items: NewsItem[] = [
   {
     slug: "dubai-second-in-bcg-intelligent-cities-index",
     site: "fwf",
+    image: "/covers/dubai-second-in-bcg-intelligent-cities-index.jpg",
+    imageAlt: "A three-step podium in cut paper ringed by small tower shapes",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Dubai second in BCG's Intelligent Cities Index",
     summary:
       "Boston Consulting Group's inaugural Intelligent Cities Index put Dubai second of 61 cities worldwide, and first of all of them on adoption of AI and smart-city technology.",
@@ -33,7 +38,13 @@ export const items: NewsItem[] = [
   },
   {
     slug: "rta-starts-commercial-robotaxi-operations",
+    featured: 1,
     site: "fwf",
+    image: "/covers/rta-starts-commercial-robotaxi-operations.jpg",
+    imageAlt: "A car seen from above with a roof sensor and scanning arcs spreading over a street grid",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Dubai's robotaxis go commercial",
     summary:
       "The RTA began paid driverless taxi operations on 30 March 2026 with an initial 100 vehicles, bookable through the Uber and Apollo Go apps.",
@@ -55,6 +66,11 @@ export const items: NewsItem[] = [
   {
     slug: "vara-rules-for-virtual-asset-derivatives",
     site: "fwf",
+    image: "/covers/vara-rules-for-virtual-asset-derivatives.jpg",
+    imageAlt: "Two overlapping paper sheets with a rising step chart and a padlock",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "VARA adds rules for crypto derivatives",
     summary:
       "Version 2.1 of Dubai's Exchange Services Rulebook added a framework for exchange-traded derivatives in virtual assets, effective immediately for licensed exchanges.",
@@ -74,7 +90,13 @@ export const items: NewsItem[] = [
   },
   {
     slug: "dubai-land-department-tokenisation-pilot",
+    featured: 2,
     site: "fwf",
+    image: "/covers/dubai-land-department-tokenisation-pilot.jpg",
+    imageAlt: "A paper tower breaking apart at one edge into small hexagon tiles, with a key below",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Dubai pilots tokenised property titles",
     summary:
       "The Dubai Land Department's tokenisation pilot, run with VARA and the Dubai Future Foundation, projects AED 60 billion in tokenised property by 2033 — about 7% of the emirate's transactions.",

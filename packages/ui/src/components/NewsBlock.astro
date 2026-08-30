@@ -31,7 +31,19 @@ const { items, limit = 3, heading = "News", newsBase = "/news/", allLabel = "All
 // are fitted too — that is the safe way round, since a cropped chart loses
 // the numbers while a fitted photo only sits in a slightly smaller box.
 const fitFor = (kind?: string) => (kind === "photo" || kind === "render" || kind === "generated" ? "cover" : "contain") as "cover" | "contain";
-const latest = [...items].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0)).slice(0, limit);
+// Ranked items lead, then the rest newest-first. `featured` is a rank, not
+// a flag: 1 is the story to lead with, and only a handful on a site carry a
+// number — a feed where everything is promoted promotes nothing. Same
+// comparator as EventsList, so the front page and the listing agree.
+const byRankThenDate = (a: NewsItem, b: NewsItem) => {
+  if (a.featured !== b.featured) {
+    if (a.featured === undefined) return 1;
+    if (b.featured === undefined) return -1;
+    return a.featured - b.featured;
+  }
+  return a.date < b.date ? 1 : a.date > b.date ? -1 : 0;
+};
+const latest = [...items].sort(byRankThenDate).slice(0, limit);
 
 const cards = latest.map((item) => {
   const hasPage = Array.isArray(item.body) && item.body.length > 0;

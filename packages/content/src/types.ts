@@ -78,6 +78,13 @@ interface ItemBase {
   form?: ItemForm;
   expertise?: string;
   jsonLd?: Record<string, unknown>; // manual override of the auto-built block
+  // Where this sits among the site's items of this kind, for the front page.
+  // 1 is the one to lead with, and only a handful on a site get a number at
+  // all — a feed where everything is highlighted highlights nothing.
+  // Ranked rather than a boolean because "the most important thing that
+  // hasn't happened yet" is a different question from "is this important",
+  // and the front page has to answer the first one.
+  featured?: number;
 }
 
 export interface NewsItem extends ItemBase {
@@ -121,13 +128,6 @@ export interface EventItem extends ItemBase {
   // Who the event is addressed to, in the organiser's own terms. Short
   // phrases, not sentences — this renders as a row of tags.
   audience?: string[];
-  // Where this sits among the site's events, for the front page. 1 is the
-  // one to lead with, and only a handful of events on a site get a number
-  // at all — a feed where everything is highlighted highlights nothing.
-  // Ranked rather than a boolean because "the most important event that
-  // hasn't happened yet" is a different question from "is this important",
-  // and the front page has to answer the first one.
-  featured?: number;
   // What actually came of it, written after the fact. Ticketing platforms
   // leave a past event as a dead page advertising a date that has gone;
   // an entry that says what happened stays worth landing on.

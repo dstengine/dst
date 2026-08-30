@@ -6,7 +6,13 @@ import type { NewsItem } from "../types.ts";
 export const items: NewsItem[] = [
   {
     slug: "dubai-tokenised-property-secondary-market",
+    featured: 1,
     site: "dst",
+    image: "/covers/dubai-tokenised-property-secondary-market.jpg",
+    imageAlt: "A paper building facade cut into tiles, a few of them floating free",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Dubai opens a regulated market for tokenised property",
     summary:
       "Fractional stakes in Dubai Land Department title deeds became tradable between investors on February 20, 2026, under VARA supervision — the pilot behind it had drawn investors from over 50 nationalities and more than Dh18.5 million.",
@@ -27,7 +33,13 @@ export const items: NewsItem[] = [
   },
   {
     slug: "gitex-moves-to-expo-city-2026",
+    featured: 2,
     site: "dst",
+    image: "/covers/gitex-moves-to-expo-city-2026.jpg",
+    imageAlt: "Two exhibition halls in cut paper with a broad arrow crossing between them",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "GITEX leaves the World Trade Centre after 45 years",
     summary:
       "Dubai's largest technology show moves to the Dubai Exhibition Centre at Expo City for its 2026 edition, and shifts from its long-standing October slot to December 7–11.",

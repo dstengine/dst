@@ -3,7 +3,13 @@ import type { NewsItem } from "../types.ts";
 export const items: NewsItem[] = [
   {
     slug: "sl12-superloop-gants-hill-rainham",
+    featured: 1,
     site: "lnd",
+    image: "/covers/sl12-superloop-gants-hill-rainham.jpg",
+    imageAlt: "A looping bus route line threaded with stop markers, a double-decker at one end",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "The Superloop reaches Havering on 5 September",
     summary:
       "The SL12 runs Gants Hill to Rainham from 5 September, free for its first week, and cuts a journey of just over an hour down to about forty minutes.",
@@ -38,6 +44,11 @@ export const items: NewsItem[] = [
   {
     slug: "bank-holiday-tube-and-tfl-closures",
     site: "lnd",
+    image: "/covers/bank-holiday-tube-and-tfl-closures.jpg",
+    imageAlt: "Three parallel route lines in cut paper, two broken by gaps with a barrier across one",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Which lines are shut over the bank holiday",
     summary:
       "The Northern line is out above Archway, the Windrush line is on buses south of Canada Water, and Barons Court loses its westbound trains until November. The full outer-London list.",
@@ -74,6 +85,11 @@ export const items: NewsItem[] = [
   {
     slug: "olympic-park-summer-school",
     site: "lnd",
+    image: "/covers/olympic-park-summer-school.jpg",
+    imageAlt: "Workshop tables seen from above in a park, a stadium arc curving behind",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "East Summer School returns to the Olympic Park",
     summary:
       "Three hundred young people, twenty-four workshops, six institutions from BBC Music Studios to ABBA Voyage — and the only entry requirement is living or studying in one of four boroughs.",

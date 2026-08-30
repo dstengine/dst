@@ -18,7 +18,7 @@ export const items: EventItem[] = [
     utcOffset: "-06:00",
     city: "Guadalajara",
     venue: "Expo Guadalajara, Avenida Mariano Otero 1499, Colonia Verde Valle, Guadalajara, Jalisco",
-    geo: { lat: 20.654251, lon: -103.391867 },
+    geo: { name: "Expo Guadalajara", lat: 20.654251, lng: -103.391867 },
     category: "Ferias",
     organizer: "Universidad de Guadalajara",
     source: {

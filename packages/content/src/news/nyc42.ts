@@ -3,7 +3,13 @@ import type { NewsItem } from "../types.ts";
 export const items: NewsItem[] = [
   {
     slug: "broadway-week-which-shows-are-worth-it",
+    featured: 1,
     site: "nyc42",
+    image: "/covers/broadway-week-which-shows-are-worth-it.jpg",
+    imageAlt: "Rows of empty theatre seats in front of a closed red curtain",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Broadway Week: which of the 25 is it for",
     summary:
       "Twenty-five shows take the two-for-one from 8 to 20 September. They are not equally worth it, and the reason has less to do with the shows than with what each one costs the rest of the year.",
@@ -41,6 +47,11 @@ export const items: NewsItem[] = [
   {
     slug: "brooklyn-museum-fall-2026",
     site: "nyc42",
+    image: "/covers/brooklyn-museum-fall-2026.jpg",
+    imageAlt: "Six framed panels hung in two rows on a gallery wall above a bench",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "The Brooklyn Museum sets out its autumn",
     summary:
       "Six new shows open in October: manga in the Great Hall, fifty European masterpieces from the Pearlman Collection, Hopi kachina dolls and an installation in the lobby about the Tuskegee Airmen.",
@@ -73,7 +84,13 @@ export const items: NewsItem[] = [
   },
   {
     slug: "hudson-river-foliage-cruises",
+    featured: 2,
     site: "nyc42",
+    image: "/covers/hudson-river-foliage-cruises.jpg",
+    imageAlt: "A river curving between autumn hills with a small boat leaving a wake",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Hudson foliage cruise tickets are on sale",
     summary:
       "Circle Line has two foliage sailings this September: an eight-hour run to Bear Mountain on the 19th and 20th, and a four-hour trip toward Hook Mountain on the 26th and 27th. Last year sold out.",
@@ -104,6 +121,11 @@ export const items: NewsItem[] = [
   {
     slug: "disney-cruises-return-to-nyc",
     site: "nyc42",
+    image: "/covers/disney-cruises-return-to-nyc.jpg",
+    imageAlt: "A white multi-deck cruise liner in cut paper against a low city skyline",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Disney will sail from New York again in 2027",
     summary:
       "The Disney Wish returns to New York in autumn 2027 after four years away: seven sailings, five of them to Bermuda, one a foliage run to Boston, Saint John and Halifax. Booking opens 8 September.",

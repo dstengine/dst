@@ -262,6 +262,25 @@ async function contrastFindings(page, shot) {
         n = n.parentElement;
       }
       if (!backed) continue;
+      // ...but not if something opaque is painted between the letters and the
+      // picture. A button over a hero photo is the case: it has a solid fill,
+      // and the reader never sees the photo behind its label. The measurement
+      // below hides the element to photograph what is under it, and hiding it
+      // takes its own background with it — so the photo showed through and a
+      // button running 11:1 against its own fill was reported at 1.06:1
+      // against the picture. Every run of this tool raised it; it was never
+      // real.
+      let opaque = false;
+      for (let n2 = el; n2 && n2 !== document.body; n2 = n2.parentElement) {
+        const cs2 = getComputedStyle(n2);
+        const m = cs2.backgroundColor.match(/[\d.]+/g);
+        if (m && (m.length < 4 || Number(m[3]) >= 0.9)) {
+          const r2 = n2.getBoundingClientRect();
+          if (r2.left <= r.left && r2.right >= r.right && r2.top <= r.top && r2.bottom >= r.bottom) { opaque = true; break; }
+        }
+        if (cs2.backgroundImage !== "none") break; // the picture itself
+      }
+      if (opaque) continue;
       // Tag it, so the backdrop shot can hide exactly these. Measuring a
       // region with its own letters still in it measures the letters: the
       // darkest tenth of the pixels came out white and every label over a

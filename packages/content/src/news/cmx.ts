@@ -3,7 +3,13 @@ import type { NewsItem } from "../types.ts";
 export const items: NewsItem[] = [
   {
     slug: "juegos-mundiales-robots-humanoides-2026",
+    featured: 1,
     site: "cmx",
+    image: "/covers/juegos-mundiales-robots-humanoides-2026.jpg",
+    imageAlt: "Un robot de papel recortado a media zancada sobre un carril de pista, con un cronómetro arriba",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Un robot corrió los 100 metros en 8.86",
     summary:
       "En los Juegos Mundiales de Robots Humanoides de Pekín, Tiangong Ultra bajó de la marca de Usain Bolt. Hace un año el mismo robot corría los 100 metros en 21.50 segundos.",
@@ -32,6 +38,11 @@ export const items: NewsItem[] = [
   {
     slug: "s301-la-estrella-mas-rapida",
     site: "cmx",
+    image: "/covers/s301-la-estrella-mas-rapida.jpg",
+    imageAlt: "Una estrella diminuta que deja una estela curva de puntos al pasar junto a un círculo negro",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "La estrella más rápida de la Vía Láctea",
     summary:
       "S301 da una vuelta al agujero negro del centro de la galaxia cada 8.7 años, al 8 por ciento de la velocidad de la luz. Es la estrella más rápida registrada, y sirve para medir algo que nunca se ha medido.",
@@ -60,7 +71,13 @@ export const items: NewsItem[] = [
   },
   {
     slug: "museo-del-gato-reforma",
+    featured: 2,
     site: "cmx",
+    image: "/covers/museo-del-gato-reforma.jpg",
+    imageAlt: "La silueta de un gato enroscado en una ventana iluminada de una fachada de papel",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Abrió un museo del gato en Reforma",
     summary:
       "El Museo del Gato abrió el 8 de agosto en Paseo de la Reforma 87, en la Tabacalera. Lo opera La Gatería, el primer café de gatos de América Latina, y financia un programa móvil de esterilización.",
@@ -89,6 +106,11 @@ export const items: NewsItem[] = [
   {
     slug: "casa-del-lago-unam-sustentable",
     site: "cmx",
+    image: "/covers/casa-del-lago-unam-sustentable.jpg",
+    imageAlt: "Un techo de pabellón con lluvia de tiras de papel cayendo hacia una cisterna",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Casa del Lago capta su propia lluvia",
     summary:
       "Dos años de obra en el recinto de Chapultepec: 60 mil litros de agua de lluvia por temporada, 60% menos consumo eléctrico y el primer plan integral de este tipo en un centro cultural de la UNAM.",
@@ -120,6 +142,11 @@ export const items: NewsItem[] = [
   {
     slug: "metrobus-cierres-por-mantenimiento",
     site: "cmx",
+    image: "/covers/metrobus-cierres-por-mantenimiento.jpg",
+    imageAlt: "Una línea de transporte con estaciones marcadas, cortada por tramos con conos y barreras",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "El Metrobús cerrará 15 estaciones por turnos",
     summary:
       "Líneas 2, 3 y 5, en fines de semana alternados hasta noviembre. Tres de los cierres caen en estaciones de transbordo del Centro, y uno no dura un fin de semana sino dos.",
@@ -153,6 +180,11 @@ export const items: NewsItem[] = [
   {
     slug: "fin-de-semana-del-31-de-octubre",
     site: "cmx",
+    image: "/covers/fin-de-semana-del-31-de-octubre.jpg",
+    imageAlt: "El cuadro partido a la mitad: flores de cempasúchil de un lado, una franja a cuadros del otro",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Desfile y Fórmula 1, el mismo fin de semana",
     summary:
       "El Gran Desfile de Día de Muertos y la clasificación del Gran Premio caen a la misma hora del sábado 31 de octubre, en extremos opuestos de la ciudad. Cómo se resuelve.",
@@ -188,6 +220,11 @@ export const items: NewsItem[] = [
   {
     slug: "plaza-de-la-conchita-jardin-polinizador",
     site: "cmx",
+    image: "/covers/plaza-de-la-conchita-jardin-polinizador.jpg",
+    imageAlt: "Una plaza vista desde arriba con un área verde recortada, flores, abejas y mariposas",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "La Plaza de la Conchita tendrá jardín polinizador",
     summary:
       "Coyoacán interviene 3,352 metros cuadrados de áreas verdes en la Plaza de la Conchita para convertirlas en jardín polinizador, con autorización del INAH y presupuesto participativo.",
@@ -220,6 +257,11 @@ export const items: NewsItem[] = [
   {
     slug: "semovi-nuevo-contrato-ecobici",
     site: "cmx",
+    image: "/covers/semovi-nuevo-contrato-ecobici.jpg",
+    imageAlt: "Una fila de bicicletas en su anclaje, en capas de papel, con un marcador de posición encima",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Semovi endurece el contrato de Ecobici",
     summary:
       "El nuevo contrato de Ecobici corre hasta 2036 y sube el sistema de 9,308 a 15 mil bicicletas. Hoy sólo una de cada diez trae localizador satelital; ahora todas deberán traerlo.",
@@ -253,6 +295,11 @@ export const items: NewsItem[] = [
   {
     slug: "betsabee-romero-homenaje-a-monsivais",
     site: "cmx",
+    image: "/covers/betsabee-romero-homenaje-a-monsivais.jpg",
+    imageAlt: "Un muro de objetos enmarcados: lupas, una máscara de luchador y un televisor antiguo",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Betsabeé Romero arma a Monsiváis en el Estanquillo",
     summary:
       "Salas de lupas, lentes grabados, máscaras de lucha libre y televisores de bulbo: Betsabeé Romero convierte el Museo del Estanquillo en una lectura de Monsiváis. Abrió el 29 de agosto.",

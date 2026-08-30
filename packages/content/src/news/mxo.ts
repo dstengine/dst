@@ -3,7 +3,13 @@ import type { NewsItem } from "../types.ts";
 export const items: NewsItem[] = [
   {
     slug: "moderna-vacuna-melanoma-fase-3",
+    featured: 1,
     site: "mxo",
+    image: "/covers/moderna-vacuna-melanoma-fase-3.jpg",
+    imageAlt: "Una jeringa de papel en diagonal junto a barras que suben, sobre la forma de un escudo",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "La vacuna contra el melanoma sí funcionó",
     summary:
       "El ensayo de fase 3 de la vacuna individualizada de Moderna y Merck se detuvo antes de tiempo por buenos resultados: retrasa la recaída del melanoma operado. Es la primera vez que una vacuna de ARN mensajero contra el cáncer lo logra.",
@@ -34,6 +40,11 @@ export const items: NewsItem[] = [
   {
     slug: "record-temperatura-oceano-2026",
     site: "mxo",
+    image: "/covers/record-temperatura-oceano-2026.jpg",
+    imageAlt: "Olas de papel en capas que pasan del azul frío al naranja cálido hacia el frente",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "El océano nunca había estado tan caliente",
     summary:
       "El 22 de agosto la temperatura media de la superficie del mar llegó a 21.1 °C, récord absoluto. Lo insólito es la fecha: agosto debería ser temporada de enfriamiento, no de máximos.",
@@ -64,6 +75,11 @@ export const items: NewsItem[] = [
   {
     slug: "capuchinos-cazan-cuando-falta-fruta",
     site: "mxo",
+    image: "/covers/capuchinos-cazan-cuando-falta-fruta.jpg",
+    imageAlt: "Un mono en la rama de una selva de papel, con frutas de un lado y ninguna del otro",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Cuando falta fruta, estos monos cazan",
     summary:
       "Cinco mil horas de observación en Brasil registraron 446 casos de capuchinos comiendo vertebrados. Cazan más cuando escasea la fruta, y eso da una pista sobre cómo empezamos a comer carne.",
@@ -94,6 +110,11 @@ export const items: NewsItem[] = [
   {
     slug: "hirosaki-mil-ochocientas-personas-castillo",
     site: "mxo",
+    image: "/covers/hirosaki-mil-ochocientas-personas-castillo.jpg",
+    imageAlt: "La torre de un castillo japonés sobre rodillos, con una cuerda gruesa tendida hacia el borde",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "1 800 personas movieron un castillo a mano",
     summary:
       "El torreón del castillo de Hirosaki pesa 400 toneladas y lleva once años fuera de su sitio. En agosto, 1 800 voluntarios elegidos por sorteo lo jalaron con cuerdas dos metros y medio de regreso.",
@@ -124,6 +145,11 @@ export const items: NewsItem[] = [
   {
     slug: "cova-de-les-dones-inscripciones-romanas",
     site: "mxo",
+    image: "/covers/cova-de-les-dones-inscripciones-romanas.jpg",
+    imageAlt: "La boca de una cueva recortada en capas de roca, con un pasaje que se pierde en la oscuridad",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "La cueva valenciana de las mujeres romanas",
     summary:
       "A 200 metros de la entrada de la Cova de les Dones, en Valencia, hay 110 inscripciones latinas: la mayor concentración conocida en un santuario rupestre romano. Nombran a una diosa llamada sólo «la Señora».",
@@ -153,7 +179,13 @@ export const items: NewsItem[] = [
   },
   {
     slug: "telescopio-roman-lanzamiento",
+    featured: 2,
     site: "mxo",
+    image: "/covers/telescopio-roman-lanzamiento.jpg",
+    imageAlt: "Un telescopio espacial de papel con un cono de visión muy amplio lleno de estrellas",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "El telescopio Roman ya está en el espacio",
     summary:
       "La NASA lanzó el 30 de agosto el telescopio espacial Nancy Grace Roman: un campo de visión más de cien veces mayor que el del Hubble y las primeras imágenes previstas para diciembre.",
@@ -183,6 +215,11 @@ export const items: NewsItem[] = [
   {
     slug: "cuatro-cienegas-borrego-cimarron",
     site: "mxo",
+    image: "/covers/cuatro-cienegas-borrego-cimarron.jpg",
+    imageAlt: "Un borrego cimarrón en una loma del desierto, un bisonte al fondo y pozas de agua abajo",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Los bisontes funcionaron; ahora va el borrego",
     summary:
       "Cuarenta y siete bisontes devolvieron a Cuatro Ciénegas gato montés, pecaríes y venados. La siguiente pieza que la fundación quiere reponer es el borrego cimarrón: una manada fundacional de 12 a 15 ejemplares.",
@@ -216,6 +253,11 @@ export const items: NewsItem[] = [
   {
     slug: "tren-ligero-texcoco-la-paz",
     site: "mxo",
+    image: "/covers/tren-ligero-texcoco-la-paz.jpg",
+    imageAlt: "Una línea de tren ligero con estaciones marcadas y un tranvía al final, un lago detrás",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "El tren de Texcoco: once estaciones, 30 minutos",
     summary:
       "El Edomex publicó el proyecto del Tren Ligero Texcoco–La Paz: 21 kilómetros, once estaciones, media hora de punta a punta contra los setenta minutos de hoy.",
@@ -248,6 +290,11 @@ export const items: NewsItem[] = [
   {
     slug: "filij-2026-regresa-al-cenart",
     site: "mxo",
+    image: "/covers/filij-2026-regresa-al-cenart.jpg",
+    imageAlt: "Un libro abierto que se convierte en una carpa de papel, rodeado de animales de papel doblado",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "La FILIJ regresa al CENART con entrada gratuita",
     summary:
       "La 44 edición de la Feria Internacional del Libro Infantil y Juvenil será del 13 al 22 de noviembre en el CENART, con entrada gratuita y convocatoria abierta para visitas escolares.",
@@ -279,6 +326,11 @@ export const items: NewsItem[] = [
   {
     slug: "kusama-320-mil-visitantes",
     site: "mxo",
+    image: "/covers/kusama-320-mil-visitantes.jpg",
+    imageAlt: "Un campo denso de círculos de papel de todos los tamaños con una sala espejada al centro",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Kusama pasó de 320 mil visitantes",
     summary:
       "Más de 320 mil personas vieron «Obsesión Infinita» en el Museo Tamayo entre 2014 y 2015. Al final el museo abrió 36 horas seguidas y casi 10 mil personas entraron en ese maratón.",
@@ -311,6 +363,11 @@ export const items: NewsItem[] = [
   {
     slug: "john-giorno-en-kurimanzutto",
     site: "mxo",
+    image: "/covers/john-giorno-en-kurimanzutto.jpg",
+    imageAlt: "Un teléfono de disco montado en una pared de galería, con discos de vinilo y una tira de papel",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "kurimanzutto recibe la obra poética de John Giorno",
     summary:
       "Poesía en los muros, en vinilos que el visitante elige, en un video de diez horas y en un teléfono. La primera individual de John Giorno en la Ciudad de México está en kurimanzutto hasta el 10 de octubre.",

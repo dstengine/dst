@@ -171,6 +171,16 @@ const parts = (iso: string) => {
       height: auto;
       aspect-ratio: 16 / 9;
     }
+    /* And its body has to go back to a plain body, for the same reason: the
+       560px rule gave the odd card the deeper padding and the vertical
+       centring that go with the side-by-side layout, and neither was undone
+       when the layout was. In a row of three that left card one sitting on
+       4px more padding than the two beside it — visible as one card whose
+       text starts lower and further in than its neighbours. */
+    .feed-cards:not(.feed-cards-single).feed-cards-pinned > :first-child:nth-last-child(odd) .feed-body {
+      align-self: auto;
+      padding: var(--space-3);
+    }
     /* Unless it is the only card there is: then it stays side by side. This
        rule has to out-specify the one above it, or a single-item feed came
        out as one full-width card with the cover blown up to the picture's own

@@ -4,7 +4,9 @@
     "ldn": "warm off-white ground with pillar-box red and deep charcoal paper",
     "lnd": "deep navy blue ground with pale blue and chalk white paper, one small red accent",
     "cmx": "warm cream ground with magenta and deep plum paper, small gold highlights",
-    "mxo": "deep forest green ground with terracotta and warm cream paper"
+    "mxo": "deep forest green ground with terracotta and warm cream paper",
+    "dst": "deep slate blue ground with pale grey-blue and warm cream paper, one small brass accent",
+    "fwf": "deep indigo ground with periwinkle and pale lilac paper, small cream highlights"
   },
   "covers": {
     "nyc42": {
@@ -73,6 +75,86 @@
         "subject": "paper boats and kites folded from book pages rising on a diagonal, playful scattered confetti squares",
         "detail": "built as folded paper boats and kites rising on a strong diagonal from the lower left to the upper right, each one a separate sheet with a visible fold line and cast shadow, trailing kite strings as thin cut strips, scattered confetti squares in the upper corner"
       }
+    }
+  },
+  "news": {
+    "dst": {
+      "dubai-tokenised-property-secondary-market": {
+        "subject": "a building elevation cut into a grid of small equal tiles, a few tiles lifted away and floating free of the facade, a flat exchange arrow loop below",
+        "detail": "built as three planes — the tiled elevation flat against the ground, a dozen tiles suspended above it at varying heights with hard shadows cast back onto the wall, and a low band of paper beneath holding two interlocking arrows; the lifted tiles read as pieces of one whole, not as debris"
+      },
+      "gitex-moves-to-expo-city-2026": "a large exhibition hall shape with a domed roof on the right, an older rectangular hall on the left, a broad arrow of layered paper crossing between them"
+    },
+    "fwf": {
+      "rta-starts-commercial-robotaxi-operations": {
+        "subject": "a car silhouette in flat paper seen from above, a sensor dome on its roof, concentric scanning arcs radiating outward across a grid of streets",
+        "detail": "built as a plan view: a street grid of thin cut strips as the ground, one car shape centred on it, four or five concentric arcs spreading from its roof in decreasing paper tones, the empty driver's seat implied by leaving the cabin an open cut rather than a filled shape"
+      },
+      "dubai-second-in-bcg-intelligent-cities-index": "a podium of three stacked paper blocks with the second one tallest in tone, a ring of small city tower silhouettes around them",
+      "vara-rules-for-virtual-asset-derivatives": "two paper contract sheets overlapping at an angle, a stepped line chart cut from paper rising across them, a small padlock shape at the corner",
+      "dubai-land-department-tokenisation-pilot": "a flat paper tower block whose right edge breaks apart into a drifting field of small hexagon tiles, a single key shape lying across the lower corner, no sheet or document shape anywhere"
+    },
+    "nyc42": {
+      "broadway-week-which-shows-are-worth-it": {
+        "subject": "rows of small paper theatre seats seen from directly above, arranged in clear pairs, one seat of every pair in a bright saturated tone and the other pale, a heavy curtain strip closing the top edge",
+        "detail": "the pairing is the whole picture: eight rows of seats recede up the frame, and in every row the seats are unmistakably grouped two by two, the left of each pair bright and the right pale, so the doubling reads instantly from a thumbnail; the seats are simple rounded paper cushions with a soft drop shadow, the aisle a clean channel of ground colour up the middle, and a single band of curtain closes the top; no tickets, no signs, no rectangles with borders, no flat panels of any kind"
+      },
+      "brooklyn-museum-fall-2026": "six framed panel shapes hung in two rows on a gallery wall, each a different paper tone, one panel a tall vertical scroll, a bench silhouette below",
+      "hudson-river-foliage-cruises": "a wide river band curving between two layered hill masses in autumn tones, a small boat shape on the water leaving a paper wake",
+      "disney-cruises-return-to-nyc": "a tall white multi-deck cruise liner in flat paper seen from the side, rows of small round portholes along the hull, two rounded funnels, calm harbour water below and a low city skyline behind"
+    },
+    "ldn": {
+      "ten-exhibitions-on-in-london": {
+        "subject": "ten empty picture frames of different proportions hung across a gallery wall in an irregular salon arrangement",
+        "detail": "built as a salon hang: ten frames of markedly different sizes and orientations, each cut from a different paper tone and mount depth so the wall reads as layered rather than flat, hung tight with uneven gaps, three of them slightly overlapping; the frames stay empty, the composition is the subject"
+      },
+      "va-exhibitions-closing-dates": "a row of gallery doorways in receding depth, the nearest one with its shutter half lowered, a small clock disc above",
+      "notting-hill-carnival-turns-60": "a rectangular commemorative plaque shape mounted on a brick wall of cut paper courses, a spray of small feather and ribbon shapes fanning from behind it",
+      "partial-lunar-eclipse-over-london": "a large pale cream disc with a dark navy disc overlapping its upper right so a clean curved bite is cut out of it, a low band of layered rooftop shapes beneath, deep night ground"
+    },
+    "lnd": {
+      "sl12-superloop-gants-hill-rainham": {
+        "subject": "a long looping bus route line in flat paper crossing the frame, eleven stop discs threaded along it, a double-deck bus silhouette at one end",
+        "detail": "built as one continuous cut ribbon making a wide loop from the lower left to the upper right, laid over a faint grid of streets, with evenly spaced stop discs punched along it and a flat double-deck bus silhouette sitting on the ribbon near its start; the loop is the composition and reaches all four edges"
+      },
+      "bank-holiday-tube-and-tfl-closures": "three parallel route lines in flat paper, two of them broken by cut gaps, a barrier shape standing across one gap",
+      "olympic-park-summer-school": "a cluster of workshop table shapes seen from above in a park, a stadium arc curving behind them, small tool and instrument silhouettes scattered on the tables"
+    },
+    "cmx": {
+      "juegos-mundiales-robots-humanoides-2026": {
+        "subject": "a running track lane band sweeping across the frame, a stylised robot figure cut from flat paper mid-stride on it, a stopwatch disc above",
+        "detail": "built as a sprint: three lane bands running left to right in graded paper tones, the robot a jointed flat-paper figure of simple geometric segments leaning forward at speed with a hard shadow under it, motion lines as three thin cut strips trailing behind, a plain stopwatch disc with no numerals in the upper right"
+      },
+      "museo-del-gato-reforma": {
+        "subject": "a cat silhouette curled in a sunlit window opening cut into a facade of flat paper, a row of smaller window openings beside it",
+        "detail": "built as a facade seen straight on: a wall of cut paper with five window openings in a row, four of them empty and dark, the second one lit warm with a single flat cat silhouette curled on its sill; the lit window is the focal point and everything else stays quiet"
+      },
+      "s301-la-estrella-mas-rapida": "a small bright star shape trailing a long curved path of graded dots that sweeps close past a large black circle set low in one corner, deep night ground, no concentric rings",
+      "casa-del-lago-unam-sustentable": "a pavilion roof shape with rain falling as thin vertical paper strips, a cistern tank shape below collecting them, layered tree canopies behind",
+      "metrobus-cierres-por-mantenimiento": "a thick transit line of flat paper running corner to corner with fifteen station discs along it, three sections of the line lifted clean away leaving gaps, striped barrier shapes and traffic cones standing in the gaps",
+      "fin-de-semana-del-31-de-octubre": "the frame split down the middle by a vertical cut, marigold flower discs massed on the left half, a chequered racing band sweeping across the right",
+      "plaza-de-la-conchita-jardin-polinizador": "a paved plaza shape seen from above with an irregular green area cut into it, flower discs scattered across the green, small bee and butterfly shapes above",
+      "semovi-nuevo-contrato-ecobici": "a row of bicycle silhouettes in a docking rank, receding in flat paper layers, a small satellite marker pin above one of them",
+      "betsabee-romero-homenaje-a-monsivais": "a wall of small framed objects — magnifying lens discs, a wrestling mask shape, a boxy television silhouette — arranged in an irregular grid"
+    },
+    "mxo": {
+      "moderna-vacuna-melanoma-fase-3": {
+        "subject": "a syringe silhouette in flat paper laid diagonally, a stepped bar chart rising beside it, a shield shape behind them",
+        "detail": "built in three layers: a broad shield outline as the ground plane, a clean stepped bar chart of five ascending bars cut from graded paper in front of it, and one long syringe silhouette laid across the whole thing on a diagonal with a hard shadow; clinical and calm, no drama, no red"
+      },
+      "telescopio-roman-lanzamiento": {
+        "subject": "a space telescope silhouette in flat paper against a dark field, a very wide cone of view opening from its aperture, a scatter of small star discs across the cone",
+        "detail": "built to show the width of the field: the telescope is small and sits low at the left, and the cone opening from it spreads across the whole frame in three graded paper tones, filled with star discs of four different sizes; the emptiness outside the cone is as much of the composition as the cone itself"
+      },
+      "record-temperatura-oceano-2026": "a wide ocean of layered paper waves in graded tones, cool blue at the far horizon warming to hot orange in the foreground, a single thin ribbon lifting away from the water surface",
+      "capuchinos-cazan-cuando-falta-fruta": "a layered forest canopy in flat paper with a monkey silhouette on a branch, a few fruit discs on one side and none on the other",
+      "hirosaki-mil-ochocientas-personas-castillo": "a tiered castle keep silhouette in flat paper resting on a track of rollers, a long thick rope cut from paper running from it to the frame edge",
+      "cova-de-les-dones-inscripciones-romanas": "a cave mouth opening cut into layered rock strata, a narrow passage receding into darkness, faint tally marks scored on the rock faces",
+      "cuatro-cienegas-borrego-cimarron": "a bighorn sheep silhouette standing on a layered desert ridge, a bison silhouette smaller and further back, pools of water cut as flat discs below",
+      "tren-ligero-texcoco-la-paz": "a straight light rail line in flat paper crossing the frame with eleven station discs along it, a tram silhouette at one end, a lake shape behind",
+      "filij-2026-regresa-al-cenart": "a small open book shape opening into a paper tent, a scatter of folded paper animals around it",
+      "kusama-320-mil-visitantes": "a dense field of flat paper discs of many sizes covering the whole frame, a mirrored room opening cut into the middle of them",
+      "john-giorno-en-kurimanzutto": "a gallery wall of flat paper with a rotary telephone handset shape mounted on it, a stack of vinyl record discs below, a long paper strip unrolling down the wall"
     }
   }
 }
