@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import ContentPage from "@dst/ui/district/ContentPage.astro";
 import { coffee } from "../content";
 ---
-<Layout {...coffee}>
+<Layout
+  prose {...coffee}>
   <ContentPage {...coffee} />
 </Layout>

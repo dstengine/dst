@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import ContentPage from "@dst/ui/district/ContentPage.astro";
 import { pools } from "../content";
 ---
-<Layout {...pools}>
+<Layout
+  prose {...pools}>
   <ContentPage {...pools} />
 </Layout>

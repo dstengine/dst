@@ -62,13 +62,20 @@ interface Props {
       indexing yet, but it is the only route to them and must stay
       crawlable. Lifts itself once the section fills up. */
   noindex?: boolean;
+  /** A page with nothing on it but text. The container is wide because most
+      pages fill it with a grid; a paragraph stops at its reading measure, so
+      on a text-only page the headings run full-bleed while every line under
+      them stops halfway and the right half of the screen sits empty. This
+      narrows the container to the measure instead, so heading and paragraph
+      share both edges. Set it only when nothing on the page wants the width. */
+  prose?: boolean;
   /** BCP 47 tag for the page's language. Defaults to English; a site in
       another language passes its own so `<html lang>` and the structured
       data agree with the words on the page. */
   lang?: string;
 }
 
-const { title, description, siteName, nav, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [], footerSiteName = siteName, instagram, image, footerSites = [], networkFooter = true, publisher, lang = "en", noindex = false } = Astro.props;
+const { title, description, siteName, nav, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [], footerSiteName = siteName, instagram, image, footerSites = [], networkFooter = true, publisher, lang = "en", noindex = false, prose = false } = Astro.props;
 const isDstHome = Astro.site?.hostname === "dst.llc";
 
 // Absolute URLs: canonical and og:image are both meaningless as relative
@@ -262,7 +269,7 @@ const lateIcons = navFootprint > 700;
     {/* tabindex="-1" so the skip link actually moves focus here rather than
         only scrolling: without it the next Tab goes back to the second link
         in the header. */}
-    <main id="content" tabindex="-1">
+    <main id="content" tabindex="-1" class={prose ? "prose" : undefined}>
       <slot />
     </main>
     <footer class="site-footer">

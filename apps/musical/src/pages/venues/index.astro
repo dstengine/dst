@@ -26,6 +26,7 @@ const countries = [...new Set(rows.map((r) => r.country))];
 const arena = venues.find((v) => v.capacity && v.capacity > 5000);
 ---
 <Layout
+  prose
   title="Venues"
   description={`Every theatre and arena on this site — ${venues.length} of them across ${countries.length} countries — with what plays there, how to get there and where to sit.`}
 >

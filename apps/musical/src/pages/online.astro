@@ -10,6 +10,7 @@ const withClips = shows.filter((show) => (show.clips ?? []).length > 0);
 const total = withClips.reduce((n, show) => n + (show.clips?.length ?? 0), 0);
 ---
 <Layout
+  prose
   title="Musicals online"
   description="Musicals you can watch right now, legally and for nothing: numbers the productions publish themselves and cast recordings on the rights holders' own channels, playing on this page."
 >

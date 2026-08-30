@@ -2,7 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import { about } from "../content";
 ---
-<Layout title={about.title} description={about.description}>
+<Layout
+  prose title={about.title} description={about.description}>
   <section class="container hero">
     <h1>{about.h1}</h1>
     <p class="lede">{about.lede}</p>
@@ -42,21 +43,6 @@ import { about } from "../content";
 </Layout>
 
 <style>
-  /* A page that is nothing but prose. The network container is 1180px wide
-     because most pages fill it with cards; here every paragraph stops at the
-     34rem reading measure, so a full-width container leaves the right half of
-     the screen empty and the headings overhang the text by 500px. Narrow the
-     container to the measure instead, and let the text fill it, so heading and
-     paragraph share the same left and right edge. */
-  .container {
-    max-width: 46rem;
-  }
-  .lede,
-  .container > p,
-  .rules p {
-    max-width: none;
-  }
-
   .rules {
     margin: var(--space-3) 0 0;
     padding: 0;

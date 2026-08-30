@@ -4,13 +4,15 @@ import LeadTracking from "@dst/ui/LeadTracking.astro";
 import "../styles/theme.css";
 
 interface Props {
+  /** Forwarded to BaseLayout: see its `prose` prop. */
+  prose?: boolean;
   title: string;
   description: string;
   jsonLd?: Record<string, unknown>[];
   /** og:image for this page — see BaseLayout. */
   image?: string;
 }
-const { title, description, jsonLd, image } = Astro.props;
+const { title, description, jsonLd, image, prose } = Astro.props;
 
 const nav = [
   { href: "/", label: "Getting started", title: "How to start a business in Dubai" },
@@ -26,6 +28,7 @@ const nav = [
 ];
 ---
 <BaseLayout
+  prose={prose}
   title={`${title} — Company Formation in Dubai`}
   description={description}
   siteName="Dubai Company Formation"

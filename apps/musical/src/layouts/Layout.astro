@@ -4,13 +4,15 @@ import { disclaimer } from "../content";
 import "../styles/theme.css";
 
 interface Props {
+  /** Forwarded to BaseLayout: see its `prose` prop. */
+  prose?: boolean;
   title: string;
   description: string;
   jsonLd?: Record<string, unknown>[];
   /** og:image for this page — see BaseLayout. */
   image?: string;
 }
-const { title, description, jsonLd, image } = Astro.props;
+const { title, description, jsonLd, image, prose } = Astro.props;
 
 // The menu is about the site, not about one city: the hero event has a place
 // in it because it is the worked example, and the rest is how anyone else
@@ -33,6 +35,7 @@ const publisher = {
 };
 ---
 <BaseLayout
+  prose={prose}
   title={`${title} — musical.today`}
   description={description}
   siteName="musical.today"

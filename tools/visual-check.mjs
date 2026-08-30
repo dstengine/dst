@@ -174,6 +174,47 @@ async function domFindings(page, width) {
       }
     }
 
+    // A page of nothing but prose, laid out in a container built for cards.
+    // The network container is wide because most pages fill it with a grid;
+    // a paragraph stops at its reading measure. That is fine wherever
+    // something else fills the width — a hero lede sitting short above a row
+    // of cards is deliberate typography. It stops being fine when the whole
+    // page is text: the headings run full-bleed, every line under them stops
+    // halfway, and the right half of the screen is empty, which reads as a
+    // broken alignment rather than a measure. So this is a page-level test,
+    // not a section-level one. Caught by hand twice before it was taught:
+    // on visas/golden and on the .lol about pages.
+    if (width >= 900) {
+      const main = document.querySelector("main");
+      const wide = main && main.getBoundingClientRect().width >= 600;
+      // Anything that legitimately earns a wide container.
+      const fills = wide && [...main.querySelectorAll(
+        "img, picture, table, iframe, canvas, video, .card, .grid, [class*=grid], [class*=cards], [class*=columns]"
+      )].some((n) => n.getBoundingClientRect().width > main.getBoundingClientRect().width * 0.7);
+
+      if (wide && !fills) {
+        for (const sec of main.querySelectorAll("section, article, .container")) {
+          const cs = getComputedStyle(sec);
+          if (cs.display === "none" || cs.visibility === "hidden") continue;
+          const box = sec.getBoundingClientRect();
+          if (box.width < 600) continue;
+
+          const heading = sec.querySelector(":scope > h1, :scope > h2, :scope > h3");
+          if (!heading) continue;
+          const hw = heading.getBoundingClientRect().width;
+          if (hw < box.width * 0.8) continue;
+
+          const paras = [...sec.querySelectorAll(":scope > p")]
+            .filter((n) => (n.textContent ?? "").trim().length > 60);
+          if (!paras.length) continue;
+          const widest = Math.max(...paras.map((n) => n.getBoundingClientRect().width));
+          if (hw - widest > 240)
+            say("prose page in a card-width container", sec,
+                `heading runs ${Math.round(hw)}px, text stops at ${Math.round(widest)}px — ${Math.round(hw - widest)}px of overhang`);
+        }
+      }
+    }
+
     // Anything you tap needs somewhere to be tapped.
     if (width <= 640) {
       for (const el of document.querySelectorAll("a, button, [role=button]")) {
@@ -292,7 +333,17 @@ for (const url of urls) {
       hasTouch: width <= 640,
     });
     const page = await ctx.newPage();
-    await page.goto(url, { waitUntil: "networkidle", timeout: 45_000 });
+    // networkidle is the right wait for a static page, but a page that embeds
+    // something external — a YouTube iframe, a /go/ redirect — never reaches
+    // it, and the throw used to abort the whole run and truncate the results
+    // silently. That is how a sweep once came back clean on a page that was
+    // never actually visited. Fall back to `load`, and say so.
+    try {
+      await page.goto(url, { waitUntil: "networkidle", timeout: 20_000 });
+    } catch {
+      await page.goto(url, { waitUntil: "load", timeout: 25_000 });
+      console.log(`${url} @${width} — network never went idle, checked after load`);
+    }
     await page.waitForTimeout(400);
     const label = `${url} @${width}`;
     const name = url.replace(/[^a-z0-9]+/gi, "-").replace(/^-|-$/g, "");

@@ -23,7 +23,9 @@ const videoLd = {
   publisher: { "@type": "Organization", name: clip.channel },
 };
 ---
-<Layout title={clip.title} description={clip.note ?? `${clip.title} — ${show.title}, playing here.`} jsonLd={[videoLd]}>
+<Layout
+  prose
+  title={clip.title} description={clip.note ?? `${clip.title} — ${show.title}, playing here.`} jsonLd={[videoLd]}>
   <section class="container hero">
     <Breadcrumbs
       crumbs={[

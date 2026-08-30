@@ -4,6 +4,8 @@ import "../styles/theme.css";
 import { site } from "../site.config";
 
 interface Props {
+  /** Forwarded to DistrictLayout, and on to BaseLayout. */
+  prose?: boolean;
   title: string;
   description: string;
   jsonLd?: Record<string, unknown>[];
@@ -17,7 +19,7 @@ interface Props {
   imageAlt?: string;
 }
 
-const { title, description, jsonLd, eyebrow, h1, lede, ledeWidth, image, imageAlt } = Astro.props;
+const { title, description, jsonLd, eyebrow, h1, lede, ledeWidth, image, imageAlt, prose } = Astro.props;
 
 // The site's header image is the default; a page overrides it by setting
 // its own `image` in content.ts.
@@ -28,6 +30,7 @@ const headerImageAlt = imageAlt ?? (image ? undefined : site.headerImageAlt);
 const headerImageKind = image ? "photo" : site.headerImageKind;
 ---
 <DistrictLayout
+  prose={prose}
   {...site}
   title={title}
   description={description}

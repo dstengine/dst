@@ -85,6 +85,9 @@
      sit next to (BBC 616px, Guardian 620px, Medium 680px). */
   --content-width: 38rem;
   --page-width: 1180px;
+  /* The reading measure plus the container padding: what a text-only page
+     is narrowed to. See `main.prose` below. */
+  --prose-width: 46rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -329,6 +332,26 @@ thead th { font-size: var(--step--1); text-transform: uppercase; letter-spacing:
    a page needs something different, at which point it overrides the
    specific property locally rather than redeclaring the whole rule. */
 .hero { padding-top: var(--space-5); }
+
+/* A page of nothing but text, opted in with BaseLayout's `prose` prop. The
+   container above is sized for a card grid; prose stops at its reading
+   measure, so on a text-only page the headings ran the full 1180px while
+   every line under them stopped around 550px, leaving the right half of the
+   screen empty. Narrowing the container to the measure — and letting the text
+   fill it — puts heading and paragraph on the same two edges. Everything else
+   on such a page (a notice, an FAQ, a CTA) lines up with them, which is the
+   part that was actually reading as broken. It applies to every direct
+   child of main, not just the containers: a callout or an FAQ block sits
+   beside the sections rather than inside one, and left at full width those
+   were the pieces that looked misaligned. */
+main.prose > * {
+  max-width: var(--prose-width);
+  margin-inline: auto;
+}
+main.prose .container > p,
+main.prose .lede {
+  max-width: none;
+}
 /* A rem cap, not ch. `ch` is the advance of "0", which is far wider than the
    average lowercase letter, so 65ch on this face measured out at ~105 real
    characters per line — and because ch scales with font-size, the lede ended

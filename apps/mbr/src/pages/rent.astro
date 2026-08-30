@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import DistrictRentForm from "@dst/ui/district/DistrictRentForm.astro";
 import { rent } from "../content";
 ---
-<Layout {...rent}>
+<Layout
+  prose {...rent}>
   <DistrictRentForm {...rent} />
 </Layout>
