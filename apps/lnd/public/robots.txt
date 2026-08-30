@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# No Sitemap line yet: there is no sitemap while every page is noindex.
+# Both go in together with the content.

@@ -35,7 +35,17 @@
     "images": "node tools/images.mjs",
     "test:images": "node --test tests/images.test.js",
     "build:musical": "npm run build --workspace=apps/musical",
-    "dev:musical": "npm run dev --workspace=apps/musical"
+    "dev:musical": "npm run dev --workspace=apps/musical",
+    "build:nyc42": "npm run build --workspace=apps/nyc42",
+    "dev:nyc42": "npm run dev --workspace=apps/nyc42",
+    "build:ldn": "npm run build --workspace=apps/ldn",
+    "dev:ldn": "npm run dev --workspace=apps/ldn",
+    "build:lnd": "npm run build --workspace=apps/lnd",
+    "dev:lnd": "npm run dev --workspace=apps/lnd",
+    "build:cmx": "npm run build --workspace=apps/cmx",
+    "dev:cmx": "npm run dev --workspace=apps/cmx",
+    "build:mxo": "npm run build --workspace=apps/mxo",
+    "dev:mxo": "npm run dev --workspace=apps/mxo"
   },
   "devDependencies": {
     "@playwright/test": "^1.62.1",

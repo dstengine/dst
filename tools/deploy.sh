@@ -4,7 +4,7 @@
 #
 #   tools/deploy.sh llc            one site to production
 #   tools/deploy.sh llc,mbr        two
-#   tools/deploy.sh --all          all eight
+#   tools/deploy.sh --all          every site
 #   tools/deploy.sh --preview llc  a preview URL instead of production
 #   tools/deploy.sh --dry-run llc  print what would run
 #   tools/deploy.sh --list         the site -> project map
@@ -28,15 +28,17 @@ set -euo pipefail
 REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 CACHE="$REPO/.vercel/project-ids.env"   # .vercel/ is gitignored
 
-# Site -> Vercel project. The hub is plain `dst`; the rest carry the prefix.
-SITES=(dst llc visas riviera mbr palmcentral eco api fwf musical)
+# Site -> Vercel project. The hub is plain `dst`; the *.dst.llc verticals
+# carry the prefix; a site on its own domain carries its own name.
+SITES=(dst llc visas riviera mbr palmcentral eco api fwf musical nyc42 ldn lnd cmx mxo)
 project_for() {
   case "$1" in
     dst) echo "dst" ;;
-    # fwf.lol is its own domain rather than a *.dst.llc vertical, so its
-    # project carries its own name instead of the group prefix.
-    fwf) echo "fwf" ;;
-    musical) echo "musical" ;;
+    # Sites on their own domains rather than *.dst.llc verticals, so their
+    # projects carry their own names instead of the group prefix. The five
+    # .lol ones are year-long experiments and are independent of the group
+    # and of each other — shared code, never a shared footprint.
+    fwf|musical|nyc42|ldn|lnd|cmx|mxo) echo "$1" ;;
     *)   echo "dst-$1" ;;
   esac
 }
@@ -73,7 +75,7 @@ done
 
 for site in "${targets[@]}"; do
   # shellcheck disable=SC2076
-  [[ " ${SITES[*]} " == *" $site "* ]] || die "no site called \"$site\" (--list for the eight there are)"
+  [[ " ${SITES[*]} " == *" $site "* ]] || die "no site called \"$site\" (--list for the ones there are)"
   [ -d "$REPO/apps/$site" ] || die "apps/$site is not in the repo"
 done
 

@@ -41,3 +41,24 @@ Two things to keep in mind:
 Project IDs come from `vercel project inspect` on first use and are cached
 in `.vercel/project-ids.env`, which is gitignored. The CLI has to be
 logged in (`vercel whoami`).
+
+## The .lol experiments
+
+`nyc42`, `ldn`, `lnd`, `cmx` and `mxo` are five domains registered in
+August 2026 to test portal concepts for a year, with a keep-or-drop
+decision due in summer 2027. Each is its own Vercel project named after
+the app, on its own domain, and each is a **separate site**: no links
+between them and none to dst.llc.
+
+Their `vercel.json` deliberately does *not* watch `../../packages`:
+
+    ignoreCommand: git rev-parse HEAD^ >/dev/null 2>&1 || exit 1;
+                   git diff --quiet HEAD^ HEAD -- .
+
+They build nothing from `@dst/ui` or `@dst/content` yet, so a
+packages-only commit has nothing to rebuild here — and keeping them out of
+that fan-out is what stops five throwaway sites from eating the build
+allowance every time a shared component moves. **When one of them adopts
+`@dst/ui`, its `ignoreCommand` has to grow `../../packages`**, or it will
+silently drift behind the components it renders — the failure this file
+was written about.
