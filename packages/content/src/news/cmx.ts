@@ -11,7 +11,7 @@ export const items: NewsItem[] = [
     category: "Ciudad",
     source: {
       name: "El Universal Metrópoli",
-      url: "https://www.eluniversal.com.mx/metropoli/metropoli/rehabilitan-plaza-de-la-conchita-en-coyoacan-tendra-nuevo-jardin-poli",
+      url: "https://www.eluniversal.com.mx/metropoli/rehabilitan-plaza-de-la-conchita-en-coyoacan-tendra-nuevo-jardin-polinizador/",
       verifiedOn: "2026-08-30",
     },
     body: [
@@ -31,7 +31,7 @@ export const items: NewsItem[] = [
     category: "Movilidad",
     source: {
       name: "El Universal Metrópoli",
-      url: "https://www.eluniversal.com.mx/metropoli/metropoli/semovi-impone-mas-obligaciones-a-nuevo-contrato-de-ecobici/",
+      url: "https://www.eluniversal.com.mx/metropoli/semovi-impone-mas-obligaciones-a-nuevo-contrato-de-ecobici/",
       verifiedOn: "2026-08-30",
     },
     body: [
@@ -49,7 +49,7 @@ export const items: NewsItem[] = [
     category: "Arte",
     source: {
       name: "El Universal Cultura",
-      url: "https://www.eluniversal.com.mx/cultura/cultura/la-artista-betsabee-romero-rinde-homenaje-a-carlos-monsivais-con-nueva-ex",
+      url: "https://www.eluniversal.com.mx/cultura/la-artista-betsabee-romero-rinde-homenaje-a-carlos-monsivais-con-nueva-exposicion/",
       verifiedOn: "2026-08-30",
     },
     body: [

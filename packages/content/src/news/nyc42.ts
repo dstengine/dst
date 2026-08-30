@@ -11,7 +11,7 @@ export const items: NewsItem[] = [
     category: "Museums",
     source: {
       name: "Time Out New York",
-      url: "https://www.timeout.com/newyork/things-to-do/newyork/news/the-brooklyn-museum-announces-2026-fall-exhibitions-including-",
+      url: "https://www.timeout.com/newyork/news/the-brooklyn-museum-announces-2026-fall-exhibitions-including-a-manga-takeover-and-50-new-european-masterpieces-082626",
       verifiedOn: "2026-08-30",
     },
     body: [
@@ -31,7 +31,7 @@ export const items: NewsItem[] = [
     category: "Outdoors",
     source: {
       name: "Time Out New York",
-      url: "https://www.timeout.com/newyork/news/newyork/news/the-best-way-to-experience-nyc-fall-foliage-is-on-these-scenic-hudson-",
+      url: "https://www.timeout.com/newyork/news/the-best-way-to-experience-nyc-fall-foliage-is-on-these-scenic-hudson-river-cruises-and-tickets-are-on-sale-right-now-082826",
       verifiedOn: "2026-08-30",
     },
     body: [
@@ -42,19 +42,19 @@ export const items: NewsItem[] = [
   {
     slug: "disney-cruises-return-to-nyc",
     site: "nyc42",
-    title: "Disney is sailing from New York again",
+    title: "Disney will sail from New York again in 2027",
     summary:
-      "Disney has confirmed a return to New York, with Caribbean sailings and New England foliage itineraries leaving from the city.",
+      "Disney has confirmed a return to New York for 2027, with Caribbean sailings and New England foliage itineraries leaving from the city.",
     date: "2026-08-27",
     category: "Travel",
     source: {
       name: "Time Out New York",
-      url: "https://www.timeout.com/newyork/news/newyork/news/disney-cruises-are-officially-returning-to-nyc-with-caribbean-sails-an",
+      url: "https://www.timeout.com/newyork/news/disney-cruises-are-officially-returning-to-nyc-with-caribbean-sails-and-new-england-foliage-tours-set-for-2027-082726",
       verifiedOn: "2026-08-30",
     },
     body: [
-      "Disney Cruise Line is returning to New York, with two kinds of itinerary announced: Caribbean sailings, and New England foliage runs up the coast.",
-      "For anyone in the city this mostly means one thing — an itinerary that starts where you already live, with no flight in front of it.",
+      "Disney Cruise Line is returning to New York in 2027, with two kinds of itinerary announced: Caribbean sailings, and New England foliage runs up the coast.",
+      "The date is the point: this is an announcement, not a sailing schedule you can book around this autumn. For anyone in the city it means an itinerary that starts where you already live, with no flight in front of it &mdash; a year from now.",
     ],
   },
 ];

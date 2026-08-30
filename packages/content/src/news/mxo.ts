@@ -29,7 +29,7 @@ export const items: NewsItem[] = [
     category: "Arte",
     source: {
       name: "El Universal Cultura",
-      url: "https://www.eluniversal.com.mx/cultura/cultura/la-exposicion-de-yayoi-kusama-que-obsesiono-a-mexico/",
+      url: "https://www.eluniversal.com.mx/cultura/la-exposicion-de-yayoi-kusama-que-obsesiono-a-mexico/",
       verifiedOn: "2026-08-30",
     },
     body: [
@@ -47,7 +47,7 @@ export const items: NewsItem[] = [
     category: "Arte",
     source: {
       name: "El Universal Cultura",
-      url: "https://www.eluniversal.com.mx/cultura/cultura/galeria-kurimanzutto-recibe-la-obra-poetica-del-artista-john-giorno/",
+      url: "https://www.eluniversal.com.mx/cultura/galeria-kurimanzutto-recibe-la-obra-poetica-del-artista-john-giorno/",
       verifiedOn: "2026-08-30",
     },
     body: [

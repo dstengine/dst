@@ -11,7 +11,7 @@ export const items: NewsItem[] = [
     category: "Carnival",
     source: {
       name: "BBC London",
-      url: "https://www.bbc.co.uk/news/england/london/news/articles/cx2zndw0wdwo",
+      url: "https://www.bbc.co.uk/news/articles/cx2zndw0wdwo",
       verifiedOn: "2026-08-30",
     },
     body: [
@@ -31,7 +31,7 @@ export const items: NewsItem[] = [
     category: "Sky",
     source: {
       name: "Evening Standard",
-      url: "https://www.standard.co.uk/news/london/news/london/partial-lunar-eclipse-2026-london-uk-viewing-time-blood-moon-b1294744",
+      url: "https://www.standard.co.uk/news/london/partial-lunar-eclipse-2026-london-uk-viewing-time-blood-moon-b1294744.html",
       verifiedOn: "2026-08-30",
     },
     body: [
@@ -49,7 +49,7 @@ export const items: NewsItem[] = [
     category: "Art",
     source: {
       name: "Time Out London",
-      url: "https://www.timeout.com/london/art/london/art/top-10-art-exhibitions-in-london",
+      url: "https://www.timeout.com/london/art/top-10-art-exhibitions-in-london",
       verifiedOn: "2026-08-30",
     },
     body: [
