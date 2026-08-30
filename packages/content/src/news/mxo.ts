@@ -39,7 +39,7 @@ export const items: NewsItem[] = [
     site: "mxo",
     title: "El tren de Texcoco: once estaciones, 30 minutos",
     summary:
-      "El Edomex publicó el proyecto del Tren Ligero Texcoco&ndash;La Paz: 21 kilómetros, once estaciones, media hora de punta a punta contra los setenta minutos de hoy.",
+      "El Edomex publicó el proyecto del Tren Ligero Texcoco–La Paz: 21 kilómetros, once estaciones, media hora de punta a punta contra los setenta minutos de hoy.",
     date: "2026-08-27",
     category: "Movilidad",
     source: {

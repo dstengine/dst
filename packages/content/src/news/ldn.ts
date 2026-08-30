@@ -6,7 +6,7 @@ export const items: NewsItem[] = [
     site: "ldn",
     title: "The V&A closing dates worth putting in a diary",
     summary:
-      "Four V&A exhibitions have published closing dates and one opens in November. Schiaparelli goes first, on 8 November &mdash; and it is the one with the shortest run left.",
+      "Four V&A exhibitions have published closing dates and one opens in November. Schiaparelli goes first, on 8 November — and it is the one with the shortest run left.",
     date: "2026-08-29",
     category: "Exhibitions",
     source: {
