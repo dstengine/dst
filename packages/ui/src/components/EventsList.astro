@@ -9,14 +9,19 @@ import CountdownScript from "./CountdownScript.astro";
 
 interface Props {
   items: EventItem[];
+  /** Where this site keeps its feed. Defaults to the English paths every
+      DST host uses; a site publishing in another language passes its own
+      ("/noticias/", "/eventos/") so its URLs are in the language of the
+      words on the page. */
+  eventsBase?: string;
 }
-const { items } = Astro.props;
+const { items, eventsBase = "/events/" } = Astro.props;
 const todayIso = new Date().toISOString().slice(0, 10);
 
 const toCard = (item: EventItem, past: boolean) => {
   const hasPage = Array.isArray(item.body) && item.body.length > 0;
   return {
-    href: hasPage ? `/events/${item.slug}/` : undefined,
+    href: hasPage ? `${eventsBase}${item.slug}/` : undefined,
     eyebrow: item.category,
     date: item.start,
     title: item.title,

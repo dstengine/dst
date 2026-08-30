@@ -24,6 +24,11 @@ const HOSTS = {
   fwf: "fwf.lol",
   musical: "musical.today",
   eco: "eco.dst.llc",
+  nyc42: "nyc42.lol",
+  ldn: "ldn.lol",
+  lnd: "lnd.lol",
+  cmx: "cmx.lol",
+  mxo: "mxo.lol",
 };
 
 const gitDates = new Map();

@@ -1,0 +1,13 @@
+/* nyc42.lol — accent taken from the city's own visual world rather than
+   from the network's palette: these five sites are independent of the DST
+   group and of each other, so nothing here has to sit next to a sibling. */
+:root {
+  --accent: #9A6B00;
+  --accent-ink: #6B4A00;
+  --accent-tint: #FBF0D6;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --accent: #F0C24A; --accent-ink: #FAE6B4; --accent-tint: #332400; }
+}
+:root[data-theme="dark"] { --accent: #F0C24A; --accent-ink: #FAE6B4; --accent-tint: #332400; }
+:root[data-theme="light"] { --accent: #9A6B00; --accent-ink: #6B4A00; --accent-tint: #FBF0D6; }

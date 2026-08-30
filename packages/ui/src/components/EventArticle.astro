@@ -1,6 +1,7 @@
 ---
 import Photo from "./Photo.astro";
 import { itemContext } from '../schema';
+import type { Publisher } from '../schema';
 // Detail page body for a single event — same block-only-when-present rule
 // as NewsArticle.astro, plus the two things an event has that a news item
 // doesn't: dates/venue/organizer in the header, and a ticket button right
@@ -27,8 +28,18 @@ interface Props {
   /** Fallback for a site with only one event, same reason as on the news
       side: an article has to end with somewhere to go. */
   moreNews?: NewsItem[];
+  /** Where this site keeps its feed. Defaults to the English paths every
+      DST host uses; a site publishing in another language passes its own
+      ("/noticias/", "/eventos/") so its URLs are in the language of the
+      words on the page. */
+  newsBase?: string;
+  eventsBase?: string;
+  /** Who the article's own Article/Event block names as publisher. Defaults
+      to DST like the rest of the graph; a site that publishes itself passes
+      its own, or the block contradicts the page around it. */
+  publisher?: Publisher;
 }
-const { item, backHref, ticketHref, more = [], moreNews = [] } = Astro.props;
+const { item, backHref, ticketHref, more = [], moreNews = [], newsBase = "/news/", eventsBase = "/events/", publisher } = Astro.props;
 
 const todayIso = new Date().toISOString().slice(0, 10);
 const moreCards = more
@@ -42,7 +53,7 @@ const moreCards = more
   })
   .slice(0, 3)
   .map((other) => ({
-    href: `/events/${other.slug}/`,
+    href: `${eventsBase}${other.slug}/`,
     eyebrow: other.category,
     date: other.start,
     title: other.title,
@@ -59,7 +70,7 @@ const newsCards = moreNews
   .sort((a, b) => (a.date < b.date ? 1 : -1))
   .slice(0, 3)
   .map((n) => ({
-    href: `/news/${n.slug}/`,
+    href: `${newsBase}${n.slug}/`,
     eyebrow: n.category,
     date: n.date,
     title: n.title,
@@ -172,7 +183,7 @@ const jsonLd =
     "@type": "Event",
     name: item.title,
     description: item.summary,
-    ...(canonicalUrl ? itemContext(canonicalUrl) : {}),
+    ...(canonicalUrl ? itemContext(canonicalUrl, publisher) : {}),
     ...(item.image ? { image: absolute(item.image) } : {}),
     startDate: startStamp,
     ...(endStamp ? { endDate: endStamp } : {}),

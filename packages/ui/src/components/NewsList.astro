@@ -10,8 +10,13 @@ import FeedCards from "./FeedCards.astro";
 
 interface Props {
   items: NewsItem[];
+  /** Where this site keeps its feed. Defaults to the English paths every
+      DST host uses; a site publishing in another language passes its own
+      ("/noticias/", "/eventos/") so its URLs are in the language of the
+      words on the page. */
+  newsBase?: string;
 }
-const { items } = Astro.props;
+const { items, newsBase = "/news/" } = Astro.props;
 // A photograph fills its cover; a diagram is fitted whole. Unmarked images
 // are fitted too — that is the safe way round, since a cropped chart loses
 // the numbers while a fitted photo only sits in a slightly smaller box.
@@ -20,7 +25,7 @@ const sorted = [...items].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date 
 const cards = sorted.map((item) => {
   const hasPage = Array.isArray(item.body) && item.body.length > 0;
   return {
-    href: hasPage ? `/news/${item.slug}/` : undefined,
+    href: hasPage ? `${newsBase}${item.slug}/` : undefined,
     eyebrow: item.category,
     date: item.date,
     title: item.title,

@@ -1,0 +1,39 @@
+---
+import BaseLayout from "@dst/ui/BaseLayout.astro";
+import { publisher } from "../content";
+import "../styles/theme.css";
+
+interface Props {
+  title: string;
+  description: string;
+  jsonLd?: Record<string, unknown>[];
+  image?: string;
+  noindex?: boolean;
+}
+const { title, description, jsonLd, image, noindex } = Astro.props;
+
+const nav = [
+  { href: "/", label: "What's on", icon: "home" },
+  { href: "/news/", label: "News", icon: "news" },
+  { href: "/events/", label: "Events", icon: "events" },
+  { href: "/about/", label: "About", icon: "id" },
+];
+
+import { publisher } from "../content";
+---
+<BaseLayout
+  title={`${title} — lnd.lol`}
+  description={description}
+  siteName="lnd.lol"
+  lang="en-GB"
+  nav={nav}
+  jsonLd={jsonLd}
+  image={image}
+  noindex={noindex}
+  publisher={publisher}
+  partnerDisclosure={false}
+  networkFooter={false}
+  footerLinks={[{ href: "/about/", label: "About" }]}
+>
+  <slot />
+</BaseLayout>

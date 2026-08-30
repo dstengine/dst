@@ -1,9 +1,24 @@
 import { defineConfig } from "astro/config";
+import sitemap from "@astrojs/sitemap";
+import { readFileSync } from "node:fs";
 
-// No sitemap yet, on purpose: every page here is noindex until there is
-// something to index, and a sitemap listing pages we ask crawlers to skip
-// contradicts itself. It goes in with the content, along with @dst/ui.
+// Same lastmod wiring as the rest of the repo: dates come from git history
+// via tools/lastmod.mjs, and a page whose date we don't know goes out
+// without one rather than with a guess.
+const lastmod = JSON.parse(
+  readFileSync(new URL("../../packages/content/src/lastmod.json", import.meta.url), "utf8"),
+);
+
 export default defineConfig({
   site: "https://mxo.lol",
+  integrations: [
+    sitemap({
+      serialize(item) {
+        const { hostname, pathname } = new URL(item.url);
+        const date = lastmod[hostname]?.[pathname];
+        return date ? { ...item, lastmod: date } : item;
+      },
+    }),
+  ],
   output: "static",
 });

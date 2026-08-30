@@ -1,0 +1,27 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import NewsArticle from "@dst/ui/NewsArticle.astro";
+import { site, newsBase, eventsBase, publisher } from "../../content";
+import { newsBySite } from "@dst/content/news";
+import { eventsBySite } from "@dst/content/events";
+
+export function getStaticPaths() {
+  // No body, no page — the feed card says everything the entry has.
+  const items = newsBySite("mxo").filter((i) => Array.isArray(i.body) && i.body.length > 0);
+  return items.map((item) => ({ params: { slug: item.slug }, props: { item, more: items } }));
+}
+
+const moreEvents = eventsBySite(site);
+const { item, more } = Astro.props;
+---
+<Layout title={item.title} description={item.summary} image={item.image}>
+  <NewsArticle
+    item={item}
+    more={more}
+    moreEvents={moreEvents}
+    backHref={newsBase}
+    newsBase={newsBase}
+    eventsBase={eventsBase}
+    publisher={publisher}
+  />
+</Layout>

@@ -1,0 +1,13 @@
+# nyc42
+
+> What's on in New York City. A small listings site: every entry names the source it came from and the day it was checked against it.
+
+## Sections
+
+- [News](https://nyc42.lol/news/): What changed in New York, a few things a week.
+- [Events](https://nyc42.lol/events/): New York events, only on dates confirmed with the organiser.
+- [About](https://nyc42.lol/about/): The five rules this site runs to, and how long it runs for.
+
+## Sources
+
+Facts are read from the organiser or the publication that reported them, and each entry prints that source and the date it was last checked. Nothing is listed on a date that could not be confirmed. The site publishes what is on and what is open — not politics, crime or reviews.

@@ -56,6 +56,11 @@ export interface PageGraphInput {
   nav?: { href: string; label: string }[];
   /** Defaults to DST. A host that publishes itself passes its own. */
   publisher?: Publisher;
+  /** BCP 47 tag for the language the site is written in. Defaults to
+      English, which is every DST host. A site written in another language
+      has to say so here as well as in `<html lang>`, or the markup tells a
+      crawler the opposite of what the page does. */
+  lang?: string;
 }
 
 const websiteId = (origin: string) => `${origin}/#website`;
@@ -114,7 +119,7 @@ export function pageGraph(input: PageGraphInput): Record<string, unknown> {
         "@id": websiteId(input.origin),
         name: input.siteName,
         url: `${input.origin}/`,
-        inLanguage: "en",
+        inLanguage: input.lang ?? "en",
         publisher: { "@id": publisher.id },
         ...(input.origin === "https://dst.llc" || publisher.id !== ORGANIZATION_ID
           ? {}

@@ -1,0 +1,13 @@
+/* cmx.lol — accent taken from the city's own visual world rather than
+   from the network's palette: these five sites are independent of the DST
+   group and of each other, so nothing here has to sit next to a sibling. */
+:root {
+  --accent: #C2005F;
+  --accent-ink: #8A0043;
+  --accent-tint: #FCE4EF;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --accent: #FF7ABF; --accent-ink: #FFC7E2; --accent-tint: #3A0021; }
+}
+:root[data-theme="dark"] { --accent: #FF7ABF; --accent-ink: #FFC7E2; --accent-tint: #3A0021; }
+:root[data-theme="light"] { --accent: #C2005F; --accent-ink: #8A0043; --accent-tint: #FCE4EF; }

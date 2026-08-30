@@ -1,0 +1,72 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { about } from "../content";
+---
+<Layout title={about.title} description={about.description}>
+  <section class="container">
+    <h1>{about.h1}</h1>
+    <p class="lede">{about.lede}</p>
+  </section>
+
+  <section class="container">
+    <h2>What this is</h2>
+    <p set:html={`<strong>ldn.lol</strong> covers central London — exhibitions, carnival, theatre and the weekend. It is a what&rsquo;s-on site, not a news site: the papers that cover this city do the news faster and better, and this site links to them rather than competing with them.`} />
+  </section>
+
+  <section class="container">
+    <h2>The rules</h2>
+    <ol class="rules">
+      <li>
+        <h3>Every fact names where it came from, and when we last looked</h3>
+        <p>Not &ldquo;updated regularly&rdquo;. A source and a date, printed on the entry itself, so you can see how fresh the thing you are reading actually is.</p>
+      </li>
+      <li>
+        <h3>Nothing is listed on a date we could not confirm</h3>
+        <p>Dates come from the organiser, not from another listings page. An event whose date we could not confirm waits until we can.</p>
+      </li>
+      <li>
+        <h3>What&rsquo;s on, not what went wrong</h3>
+        <p>This site covers what is happening, what is open and what changed for the better. Not politics, not crime, not tragedy, and not arguments. There is no newsroom behind it and no standing to take a side, and a listings page is a poor place to try.</p>
+      </li>
+      <li>
+        <h3>No reviews and no rankings</h3>
+        <p>We will tell you that a thing exists, where it is and when it starts. Whether it is any good is not ours to say, and a &ldquo;best of&rdquo; list from a site this size would be a guess with a number on it.</p>
+      </li>
+      <li>
+        <h3>A page exists when there is something to put on it</h3>
+        <p>No empty sections waiting to be filled, and no index page padded out to look busy. When a section is thinner than the pages it links to, it stays out of search results until it is not.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="container">
+    <h2>How long this runs</h2>
+    <p>This is one of five city domains registered in August 2026 and run for a year. In the summer of 2027 each one is either worth keeping or it is not. Nothing here is trying to look bigger than that.</p>
+  </section>
+</Layout>
+
+<style>
+  .rules {
+    margin: var(--space-3) 0 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: rule;
+    display: grid;
+    gap: var(--space-3);
+  }
+  .rules li {
+    counter-increment: rule;
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 0 var(--space-2);
+    align-items: baseline;
+  }
+  .rules li::before {
+    content: counter(rule);
+    color: var(--accent);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+  .rules h3 { margin: 0; font-size: var(--step-0); }
+  .rules p { margin: 0.25em 0 0; grid-column: 2; max-width: 62ch; color: var(--ink-muted); }
+</style>

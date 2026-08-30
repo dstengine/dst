@@ -14,8 +14,15 @@ interface Props {
   items: EventItem[];
   limit?: number;
   heading?: string;
+  /** Where this site keeps its feed. Defaults to the English paths every
+      DST host uses; a site publishing in another language passes its own
+      ("/noticias/", "/eventos/") so its URLs are in the language of the
+      words on the page. */
+  eventsBase?: string;
+  /** Wording for the see-all link, for a site not writing in English. */
+  allLabel?: string;
 }
-const { items, limit = 3, heading = "Events" } = Astro.props;
+const { items, limit = 3, heading = "Events", eventsBase = "/events/", allLabel = "All events" } = Astro.props;
 const todayIso = new Date().toISOString().slice(0, 10);
 const upcoming = items
   .filter((e) => e.start >= todayIso)
@@ -25,7 +32,7 @@ const upcoming = items
 const cards = upcoming.map((item) => {
   const hasPage = Array.isArray(item.body) && item.body.length > 0;
   return {
-    href: hasPage ? `/events/${item.slug}/` : undefined,
+    href: hasPage ? `${eventsBase}${item.slug}/` : undefined,
     eyebrow: item.category,
     date: item.start,
     title: item.title,
@@ -43,7 +50,7 @@ const cards = upcoming.map((item) => {
   <section class="container events-block">
     <div class="events-block-head">
       <h2>{heading}</h2>
-      <a class="events-block-all" href="/events/" title="All events">All events &rarr;</a>
+      <a class="events-block-all" href={eventsBase} title={allLabel}>{allLabel} &rarr;</a>
     </div>
     <FeedCards items={cards} columns={cards.length} />
     <CountdownScript />

@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
 
-# No Sitemap line yet: there is no sitemap while every page is noindex.
-# Both go in together with the content.
+# No /go/ hops on this site yet; the rule goes in with the first one.
+Disallow: /go/
+
+Sitemap: https://ldn.lol/sitemap-index.xml

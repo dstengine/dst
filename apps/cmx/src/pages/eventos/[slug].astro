@@ -1,0 +1,26 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import EventArticle from "@dst/ui/EventArticle.astro";
+import { site, newsBase, eventsBase, publisher } from "../../content";
+import { eventsBySite } from "@dst/content/events";
+import { newsBySite } from "@dst/content/news";
+
+export function getStaticPaths() {
+  const items = eventsBySite("cmx").filter((i) => Array.isArray(i.body) && i.body.length > 0);
+  return items.map((item) => ({ params: { slug: item.slug }, props: { item, more: items } }));
+}
+
+const moreNews = newsBySite(site);
+const { item, more } = Astro.props;
+---
+<Layout title={item.title} description={item.summary} image={item.image}>
+  <EventArticle
+    item={item}
+    more={more}
+    moreNews={moreNews}
+    backHref={eventsBase}
+    newsBase={newsBase}
+    eventsBase={eventsBase}
+    publisher={publisher}
+  />
+</Layout>

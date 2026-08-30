@@ -23,6 +23,12 @@ const SITES = [
   { app: "fwf", host: "fwf.lol" },
   { app: "musical", host: "musical.today" },
   { app: "eco", host: "eco.dst.llc" },
+  // The five .lol city experiments — separate sites, checked like the rest.
+  { app: "nyc42", host: "nyc42.lol" },
+  { app: "ldn", host: "ldn.lol" },
+  { app: "lnd", host: "lnd.lol" },
+  { app: "cmx", host: "cmx.lol" },
+  { app: "mxo", host: "mxo.lol" },
 ];
 
 /** Same rule as the generator: chrome is not content. */

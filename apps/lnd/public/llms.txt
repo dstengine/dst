@@ -1,0 +1,13 @@
+# lnd
+
+> Greater London outside the centre: the boroughs, their parks, their transport and their weekends. Zone 1 is covered elsewhere; this starts where that stops.
+
+## Sections
+
+- [News](https://lnd.lol/news/): Borough news, checked against the source that reported it.
+- [Events](https://lnd.lol/events/): Events across the boroughs rather than the centre.
+- [About](https://lnd.lol/about/): The five rules this site runs to, and how long it runs for.
+
+## Sources
+
+Facts are read from the organiser or the publication that reported them, and each entry prints that source and the date it was last checked. Nothing is listed on a date that could not be confirmed. The site publishes what is on and what is open — not politics, crime or reviews.

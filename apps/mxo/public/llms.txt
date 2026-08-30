@@ -1,0 +1,13 @@
+# mxo
+
+> La agenda cultural de México: ferias, festivales y exposiciones de todo el país, con fecha confirmada y fuente citada.
+
+## Secciones
+
+- [Noticias](https://mxo.lol/noticias/): Qué cambió en la agenda, verificado contra la fuente.
+- [Eventos](https://mxo.lol/eventos/): La agenda nacional, cada fecha confirmada con quien organiza.
+- [Acerca](https://mxo.lol/acerca/): Las cinco reglas del sitio y cuánto va a durar.
+
+## Fuentes
+
+Los datos se leen de quien organiza o del medio que los reportó, y cada entrada imprime esa fuente y la fecha en que se verificó. Nada se publica con una fecha que no se pudo confirmar. El sitio publica lo que hay y lo que abre — ni política, ni crimen, ni reseñas.

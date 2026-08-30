@@ -1,46 +1,27 @@
 ---
-// Placeholder. No copy has been written for this domain yet, so the page
-// says the one true thing there is to say — which name you have reached —
-// and nothing that would have to be unsaid later.
-//
-// When the content lands: drop noindex, adopt @dst/ui's BaseLayout with its
-// own publisher, and add the sitemap back to astro.config.mjs.
-const title = "nyc42";
----
-<!doctype html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="noindex, follow" />
-    <title>{title}</title>
-    <link rel="icon" href="data:," />
-  </head>
-  <body>
-    <main>
-      <h1>nyc42<span aria-hidden="true">.lol</span></h1>
-      <p>New York</p>
-    </main>
-  </body>
-</html>
+import Layout from "../layouts/Layout.astro";
+import NewsBlock from "@dst/ui/NewsBlock.astro";
+import EventsBlock from "@dst/ui/EventsBlock.astro";
+import { home, site, newsBase, eventsBase } from "../content";
+import { newsBySite } from "@dst/content/news";
+import { eventsBySite } from "@dst/content/events";
 
-<style>
-  :root { color-scheme: light dark; --bg: #fbfaf8; --ink: #16181d; --muted: #6b7280; }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #101215; --ink: #f2f3f5; --muted: #8b929c; }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; min-height: 100dvh; display: grid; place-items: center;
-    background: var(--bg); color: var(--ink);
-    font: 400 1rem/1.5 ui-sans-serif, -apple-system, "Helvetica Neue", Arial, sans-serif;
-    padding: 2rem;
-  }
-  main { text-align: center; }
-  h1 {
-    margin: 0; font-weight: 600; letter-spacing: -0.02em;
-    font-size: clamp(2.5rem, 12vw, 5rem);
-  }
-  h1 span { color: var(--muted); font-weight: 400; }
-  p { margin: 0.75rem 0 0; color: var(--muted); font-size: 1rem; letter-spacing: 0.02em; }
-</style>
+const newsItems = newsBySite(site);
+const eventItems = eventsBySite(site);
+---
+<Layout title={home.title} description={home.description}>
+  <section class="container">
+    <h1>{home.h1}</h1>
+    <p class="lede">{home.lede}</p>
+  </section>
+  {eventItems.length > 0 && (
+    <section class="container">
+      <EventsBlock items={eventItems} heading="Events" eventsBase={eventsBase} />
+    </section>
+  )}
+  {newsItems.length > 0 && (
+    <section class="container">
+      <NewsBlock items={newsItems} heading="News" newsBase={newsBase} />
+    </section>
+  )}
+</Layout>

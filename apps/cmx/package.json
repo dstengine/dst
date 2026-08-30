@@ -9,6 +9,9 @@
     "preview": "astro preview"
   },
   "dependencies": {
+    "@astrojs/sitemap": "3.2.1",
+    "@dst/content": "*",
+    "@dst/ui": "*",
     "astro": "^4.16.0"
   }
 }

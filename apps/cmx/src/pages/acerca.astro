@@ -1,0 +1,72 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { about } from "../content";
+---
+<Layout title={about.title} description={about.description}>
+  <section class="container">
+    <h1>{about.h1}</h1>
+    <p class="lede">{about.lede}</p>
+  </section>
+
+  <section class="container">
+    <h2>Qué es esto</h2>
+    <p set:html={`<strong>cmx.lol</strong> cubre la Ciudad de México: qué hay, qué cambió y cuándo. No es un periódico ni pretende serlo — los diarios que cubren esta ciudad lo hacen más rápido y mejor, y este sitio los enlaza en lugar de competir con ellos.`} />
+  </section>
+
+  <section class="container">
+    <h2>Las reglas</h2>
+    <ol class="rules">
+      <li>
+        <h3>Cada dato dice de dónde salió y cuándo lo revisamos</h3>
+        <p>No &laquo;actualizado con frecuencia&raquo;. Una fuente y una fecha, impresas en la entrada misma, para que se vea qué tan reciente es lo que está leyendo.</p>
+      </li>
+      <li>
+        <h3>Nada se publica con una fecha que no pudimos confirmar</h3>
+        <p>Las fechas vienen de quien organiza, no de otro listado. Un evento cuya fecha no pudimos confirmar espera hasta que se pueda.</p>
+      </li>
+      <li>
+        <h3>Lo que está pasando, no lo que salió mal</h3>
+        <p>Este sitio cubre lo que hay, lo que abre y lo que cambió para bien. Ni política, ni crimen, ni tragedia, ni pleitos. No hay una redacción detrás ni autoridad para tomar partido, y un listado es mal lugar para intentarlo.</p>
+      </li>
+      <li>
+        <h3>Sin reseñas ni rankings</h3>
+        <p>Le decimos que algo existe, dónde es y cuándo empieza. Si es bueno o no, no nos toca decirlo, y un &laquo;los mejores&raquo; hecho por un sitio de este tamaño sería una corazonada con número.</p>
+      </li>
+      <li>
+        <h3>Una página existe cuando hay algo que poner en ella</h3>
+        <p>Sin secciones vacías esperando llenarse ni índices inflados para aparentar. Cuando una sección es más delgada que las páginas a las que lleva, se queda fuera de los buscadores hasta que deje de serlo.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="container">
+    <h2>Cuánto va a durar</h2>
+    <p>Es uno de cinco dominios de ciudad registrados en agosto de 2026 y sostenidos por un año. En el verano de 2027 cada uno vale la pena o no. Nada aquí intenta parecer más grande que eso.</p>
+  </section>
+</Layout>
+
+<style>
+  .rules {
+    margin: var(--space-3) 0 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: rule;
+    display: grid;
+    gap: var(--space-3);
+  }
+  .rules li {
+    counter-increment: rule;
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 0 var(--space-2);
+    align-items: baseline;
+  }
+  .rules li::before {
+    content: counter(rule);
+    color: var(--accent);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+  .rules h3 { margin: 0; font-size: var(--step-0); }
+  .rules p { margin: 0.25em 0 0; grid-column: 2; max-width: 62ch; color: var(--ink-muted); }
+</style>

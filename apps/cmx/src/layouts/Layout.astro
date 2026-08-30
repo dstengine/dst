@@ -1,0 +1,39 @@
+---
+import BaseLayout from "@dst/ui/BaseLayout.astro";
+import { publisher } from "../content";
+import "../styles/theme.css";
+
+interface Props {
+  title: string;
+  description: string;
+  jsonLd?: Record<string, unknown>[];
+  image?: string;
+  noindex?: boolean;
+}
+const { title, description, jsonLd, image, noindex } = Astro.props;
+
+const nav = [
+  { href: "/", label: "Qué hacer", icon: "home" },
+  { href: "/noticias/", label: "Noticias", icon: "news" },
+  { href: "/eventos/", label: "Eventos", icon: "events" },
+  { href: "/acerca/", label: "Acerca", icon: "id" },
+];
+
+import { publisher } from "../content";
+---
+<BaseLayout
+  title={`${title} — cmx.lol`}
+  description={description}
+  siteName="cmx.lol"
+  lang="es-MX"
+  nav={nav}
+  jsonLd={jsonLd}
+  image={image}
+  noindex={noindex}
+  publisher={publisher}
+  partnerDisclosure={false}
+  networkFooter={false}
+  footerLinks={[{ href: "/acerca/", label: "Acerca" }]}
+>
+  <slot />
+</BaseLayout>

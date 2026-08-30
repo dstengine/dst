@@ -1,0 +1,13 @@
+# cmx
+
+> Qué hacer en la Ciudad de México. Un sitio pequeño: cada entrada dice de dónde salió el dato y el día en que se verificó.
+
+## Secciones
+
+- [Noticias](https://cmx.lol/noticias/): Qué cambió en la ciudad, unas cuantas cosas por semana.
+- [Eventos](https://cmx.lol/eventos/): Eventos con fecha confirmada con quien organiza.
+- [Acerca](https://cmx.lol/acerca/): Las cinco reglas del sitio y cuánto va a durar.
+
+## Fuentes
+
+Los datos se leen de quien organiza o del medio que los reportó, y cada entrada imprime esa fuente y la fecha en que se verificó. Nada se publica con una fecha que no se pudo confirmar. El sitio publica lo que hay y lo que abre — ni política, ni crimen, ni reseñas.

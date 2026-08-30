@@ -1,0 +1,13 @@
+# ldn
+
+> What's on in central London — exhibitions, carnival, theatre and the weekend. Every entry names its source and the day it was checked.
+
+## Sections
+
+- [News](https://ldn.lol/news/): What changed in central London, a few things a week.
+- [Events](https://ldn.lol/events/): Central London events on dates confirmed with the organiser.
+- [About](https://ldn.lol/about/): The five rules this site runs to, and how long it runs for.
+
+## Sources
+
+Facts are read from the organiser or the publication that reported them, and each entry prints that source and the date it was last checked. Nothing is listed on a date that could not be confirmed. The site publishes what is on and what is open — not politics, crime or reviews.

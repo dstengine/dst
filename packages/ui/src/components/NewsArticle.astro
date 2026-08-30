@@ -1,6 +1,7 @@
 ---
 import Photo from "./Photo.astro";
 import { itemContext } from '../schema';
+import type { Publisher } from '../schema';
 // Detail page body for a single news item. Every block below renders only
 // when its data is present (see the news/events spec's page anatomy) — a
 // missing optional field leaves no empty wrapper behind, not just hidden
@@ -27,15 +28,25 @@ interface Props {
   /** Fallback for a site with only one news item: an article there would
       otherwise still end in a back link and nothing else. */
   moreEvents?: EventItem[];
+  /** Where this site keeps its feed. Defaults to the English paths every
+      DST host uses; a site publishing in another language passes its own
+      ("/noticias/", "/eventos/") so its URLs are in the language of the
+      words on the page. */
+  newsBase?: string;
+  eventsBase?: string;
+  /** Who the article's own Article/Event block names as publisher. Defaults
+      to DST like the rest of the graph; a site that publishes itself passes
+      its own, or the block contradicts the page around it. */
+  publisher?: Publisher;
 }
-const { item, backHref, more = [], moreEvents = [] } = Astro.props;
+const { item, backHref, more = [], moreEvents = [], newsBase = "/news/", eventsBase = "/events/", publisher } = Astro.props;
 
 const moreCards = more
   .filter((other) => other.slug !== item.slug && Array.isArray(other.body) && other.body.length > 0)
   .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0))
   .slice(0, 3)
   .map((other) => ({
-    href: `/news/${other.slug}/`,
+    href: `${newsBase}${other.slug}/`,
     eyebrow: other.category,
     date: other.date,
     title: other.title,
@@ -50,7 +61,7 @@ const eventCards = moreEvents
   .sort((a, b) => (a.start < b.start ? -1 : 1))
   .slice(0, 3)
   .map((e) => ({
-    href: `/events/${e.slug}/`,
+    href: `${eventsBase}${e.slug}/`,
     eyebrow: e.category,
     date: e.start,
     title: e.title,
@@ -85,7 +96,7 @@ const jsonLd =
     headline: item.title,
     description: item.summary,
     datePublished: item.date,
-    ...(canonical ? itemContext(canonical) : {}),
+    ...(canonical ? itemContext(canonical, publisher) : {}),
     ...(item.image ? { image: absolute(item.image) } : {}),
     // Not isBasedOn: item.source.url — the URL is an internal audit trail
     // only (see the news/events spec's rule 1) and must never reach

@@ -1,0 +1,13 @@
+/* mxo.lol — accent taken from the city's own visual world rather than
+   from the network's palette: these five sites are independent of the DST
+   group and of each other, so nothing here has to sit next to a sibling. */
+:root {
+  --accent: #006341;
+  --accent-ink: #00452D;
+  --accent-tint: #DFF1E8;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --accent: #5FCB94; --accent-ink: #B7E8CE; --accent-tint: #04291B; }
+}
+:root[data-theme="dark"] { --accent: #5FCB94; --accent-ink: #B7E8CE; --accent-tint: #04291B; }
+:root[data-theme="light"] { --accent: #006341; --accent-ink: #00452D; --accent-tint: #DFF1E8; }

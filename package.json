@@ -12,7 +12,7 @@
     "dev:visas": "npm run dev --workspace=apps/visas",
     "dev:riviera": "npm run dev --workspace=apps/riviera",
     "dev:mbr": "npm run dev --workspace=apps/mbr",
-    "build": "npm run build --workspace=apps/dst && npm run build --workspace=apps/llc && npm run build --workspace=apps/visas && npm run build --workspace=apps/riviera && npm run build --workspace=apps/mbr && npm run build --workspace=apps/palmcentral && npm run build --workspace=apps/eco && npm run build --workspace=apps/fwf && npm run build --workspace=apps/musical",
+    "build": "npm run build --workspace=apps/dst && npm run build --workspace=apps/llc && npm run build --workspace=apps/visas && npm run build --workspace=apps/riviera && npm run build --workspace=apps/mbr && npm run build --workspace=apps/palmcentral && npm run build --workspace=apps/eco && npm run build --workspace=apps/fwf && npm run build --workspace=apps/musical && npm run build --workspace=apps/nyc42 && npm run build --workspace=apps/ldn && npm run build --workspace=apps/lnd && npm run build --workspace=apps/cmx && npm run build --workspace=apps/mxo",
     "build:dst": "npm run build --workspace=apps/dst",
     "build:llc": "npm run build --workspace=apps/llc",
     "build:visas": "npm run build --workspace=apps/visas",

@@ -56,9 +56,19 @@ interface Props {
       link to dst.llc, and a link is exactly what such a site must not
       carry until someone decides it should. */
   networkFooter?: boolean;
+  /** Keep this page out of the index while still letting a crawler follow
+      it onward. For an index page that holds fewer entries than the pages
+      it links to: it is thinner than its own children, so it is not worth
+      indexing yet, but it is the only route to them and must stay
+      crawlable. Lifts itself once the section fills up. */
+  noindex?: boolean;
+  /** BCP 47 tag for the page's language. Defaults to English; a site in
+      another language passes its own so `<html lang>` and the structured
+      data agree with the words on the page. */
+  lang?: string;
 }
 
-const { title, description, siteName, nav, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [], footerSiteName = siteName, instagram, image, footerSites = [], networkFooter = true, publisher } = Astro.props;
+const { title, description, siteName, nav, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [], footerSiteName = siteName, instagram, image, footerSites = [], networkFooter = true, publisher, lang = "en", noindex = false } = Astro.props;
 const isDstHome = Astro.site?.hostname === "dst.llc";
 
 // Absolute URLs: canonical and og:image are both meaningless as relative
@@ -124,7 +134,7 @@ const denseNav = navFootprint > 900;
 const lateIcons = navFootprint > 700;
 ---
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -140,6 +150,7 @@ const lateIcons = navFootprint > 700;
         renders as a bare URL with no title, summary or picture — on a
         network whose whole plan is being passed around and linked to. */}
     {canonical && <link rel="canonical" href={canonical} />}
+    {noindex && <meta name="robots" content="noindex, follow" />}
     {/* The lead endpoint is only called once someone touches a form, so
         resolving DNS ahead of time is worth it and holding a socket open on
         every page is not. Only for sites that carry the pipeline at all. */}

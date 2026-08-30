@@ -24,6 +24,12 @@ const SITES = [
   { app: "palmcentral", host: "palmcentral.dst.llc" },
   { app: "fwf", host: "fwf.lol" },
   { app: "musical", host: "musical.today" },
+  // The five .lol city experiments — separate sites, checked like the rest.
+  { app: "nyc42", host: "nyc42.lol" },
+  { app: "ldn", host: "ldn.lol" },
+  { app: "lnd", host: "lnd.lol" },
+  { app: "cmx", host: "cmx.lol" },
+  { app: "mxo", host: "mxo.lol" },
 ];
 const TITLE_LIMIT = 60;
 
