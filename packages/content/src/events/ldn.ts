@@ -4,6 +4,11 @@ export const items: EventItem[] = [
   {
     slug: "london-design-festival-2026",
     site: "ldn",
+    image: "/covers/london-design-festival-2026.jpg",
+    imageAlt: "A grid of paper furniture silhouettes in red and charcoal",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "London Design Festival 2026",
     summary:
       "Nine days, eleven design districts and a light installation inside St Paul's Cathedral. The 24th festival runs 12–20 September, and most of it is free to walk into.",
@@ -40,6 +45,11 @@ export const items: EventItem[] = [
   {
     slug: "open-house-festival-2026",
     site: "ldn",
+    image: "/covers/open-house-festival-2026.jpg",
+    imageAlt: "Layered paper building facades with one small red door standing open",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Open House Festival 2026",
     summary:
       "For nine days in September, buildings across all 33 boroughs open their doors for free. The 35th edition runs 12–20 September, and the ticketed places went on sale in August.",
@@ -73,6 +83,11 @@ export const items: EventItem[] = [
   {
     slug: "totally-thames-2026",
     site: "ldn",
+    image: "/covers/totally-thames-2026.jpg",
+    imageAlt: "A paper river winding under a bridge span",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Totally Thames 2026",
     summary:
       "A month of art, performance and river adventures along the Thames through September — a film installation on Blackfriars Bridge, a dance duet in the Brunel tunnel shaft, an opera about water.",
@@ -115,6 +130,11 @@ export const items: EventItem[] = [
   {
     slug: "lord-mayors-show-2026",
     site: "ldn",
+    image: "/covers/lord-mayors-show-2026.jpg",
+    imageAlt: "A red paper ceremonial coach under a line of bunting",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Lord Mayor's Show 2026",
     summary:
       "Saturday 14 November, 11am, from Mansion House: an eight-century-old procession that closes almost the whole City of London and costs nothing to watch.",
@@ -152,6 +172,11 @@ export const items: EventItem[] = [
   {
     slug: "notting-hill-carnival-2026",
     site: "ldn",
+    image: "/covers/notting-hill-carnival-2026.jpg",
+    imageAlt: "A tall red paper feather plume above scattered confetti",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Notting Hill Carnival 2026",
     summary:
       "Three days over the August bank holiday for Carnival's sixtieth year: Panorama on the Saturday, J'Ouvert and Children's Day on the Sunday, the main parade on the Monday. Free, and enormous.",

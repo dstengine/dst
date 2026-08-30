@@ -4,6 +4,11 @@ export const items: EventItem[] = [
   {
     slug: "fil-guadalajara-2026",
     site: "mxo",
+    image: "/covers/fil-guadalajara-2026.jpg",
+    imageAlt: "Un arco de papel verde con una puerta iluminada debajo",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "FIL Guadalajara 2026: 40 años, Italia invitada",
     summary:
       "La Feria Internacional del Libro de Guadalajara cumple 40 ediciones del 28 de noviembre al 6 de diciembre, con Italia como país Invitado de Honor y 61 autores italianos en Expo Guadalajara.",
@@ -62,6 +67,11 @@ export const items: EventItem[] = [
   {
     slug: "filij-2026",
     site: "mxo",
+    image: "/covers/filij-2026.jpg",
+    imageAlt: "Barcos de papel y confeti sobre fondo verde",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "FILIJ 2026: el libro infantil y juvenil",
     summary:
       "La 44 Feria Internacional del Libro Infantil y Juvenil ocupa el CENART del 13 al 22 de noviembre. Entrada gratuita, diez días, y convocatoria abierta para visitas escolares.",

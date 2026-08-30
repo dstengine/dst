@@ -4,6 +4,11 @@ export const items: EventItem[] = [
   {
     slug: "new-york-comic-con-2026",
     site: "nyc42",
+    image: "/covers/new-york-comic-con-2026.jpg",
+    imageAlt: "A cut-paper starburst in amber bursting out of a dark ground",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "New York Comic Con 2026",
     summary:
       "Four days at the Javits Center, 8–11 October, for NYCC's twentieth anniversary — with a Coney Island theme and the panel schedule already published.",
@@ -44,6 +49,11 @@ export const items: EventItem[] = [
   {
     slug: "village-halloween-parade-2026",
     site: "nyc42",
+    image: "/covers/village-halloween-parade-2026.jpg",
+    imageAlt: "Paper lanterns strung along a curve under a crescent moon",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Village Halloween Parade 2026",
     summary:
       "The 53rd parade goes up Sixth Avenue at 7pm on Saturday 31 October. Watching is free, joining in is free if you are in costume, and it happens rain or shine.",
@@ -81,6 +91,11 @@ export const items: EventItem[] = [
   {
     slug: "open-house-new-york-weekend-2026",
     site: "nyc42",
+    image: "/covers/open-house-new-york-weekend-2026.jpg",
+    imageAlt: "A paper cutaway of stacked building floors with a rooftop water tower",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Open House New York Weekend 2026",
     summary:
       "Three hundred buildings across the five boroughs open for one weekend, 16–18 October. The full lineup is revealed on 25 September and tickets go on 2 October.",
@@ -121,6 +136,11 @@ export const items: EventItem[] = [
   {
     slug: "broadway-week-harry-potter",
     site: "nyc42",
+    image: "/covers/broadway-week-harry-potter.jpg",
+    imageAlt: "A paper proscenium arch with curtains and a single shaft of light",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Harry Potter at Broadway Week",
     summary:
       "The two-for-one runs 8 to 20 September at the Lyric. It is the largest saving on the Broadway Week list, and the reason is the house rather than the play.",
@@ -152,6 +172,11 @@ export const items: EventItem[] = [
   {
     slug: "broadway-week-hadestown",
     site: "nyc42",
+    image: "/covers/broadway-week-hadestown.jpg",
+    imageAlt: "A paper staircase descending into darkness",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Hadestown at Broadway Week",
     summary:
       "Anaïs Mitchell's Orpheus and Eurydice takes the two-for-one from 8 to 20 September at the Walter Kerr. The one on the list most likely to be the best evening rather than the best deal.",
@@ -184,6 +209,11 @@ export const items: EventItem[] = [
   {
     slug: "broadway-week-stranger-things",
     site: "nyc42",
+    image: "/covers/broadway-week-stranger-things.jpg",
+    imageAlt: "Bare paper trees mirrored above and below a horizon",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Stranger Things at Broadway Week",
     summary:
       "The First Shadow takes the two-for-one from 8 to 20 September at the Marquis. Recent, effects-heavy and in a big house — which is what makes the offer valuable and the seat allocation risky.",
@@ -216,6 +246,11 @@ export const items: EventItem[] = [
   {
     slug: "broadway-week-six",
     site: "nyc42",
+    image: "/covers/broadway-week-six.jpg",
+    imageAlt: "Six paper microphones in a row with a small crown above the middle one",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Six at Broadway Week",
     summary:
       "Eighty minutes, no interval, Tudor England as a pop concert. On the two-for-one from 8 to 20 September at the Lena Horne — the cheapest way this fortnight to put two people in a Broadway theatre.",
@@ -249,6 +284,11 @@ export const items: EventItem[] = [
   {
     slug: "broadway-week-oh-mary",
     site: "nyc42",
+    image: "/covers/broadway-week-oh-mary.jpg",
+    imageAlt: "A tied-back paper drape and a single lit spot on an empty stage",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Oh Mary! at Broadway Week",
     summary:
       "The comedy on the Broadway Week list, at the Lyceum from 8 to 20 September. In a house this small the offer buys proximity rather than merely a seat.",
@@ -280,6 +320,11 @@ export const items: EventItem[] = [
   {
     slug: "broadway-week-the-lion-king",
     site: "nyc42",
+    image: "/covers/broadway-week-the-lion-king.jpg",
+    imageAlt: "A paper sun rising behind a lone tree over layered savannah bands",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "The Lion King at Broadway Week",
     summary:
       "On the two-for-one from 8 to 20 September at the Minskoff. One of the safest evenings in New York — and one of the three shows on the list where the offer is doing the least work.",
@@ -313,6 +358,11 @@ export const items: EventItem[] = [
   {
     slug: "broadway-week-wicked",
     site: "nyc42",
+    image: "/covers/broadway-week-wicked.jpg",
+    imageAlt: "A green paper hat curled on an amber disc",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Wicked at Broadway Week",
     summary:
       "Two-for-one at the Gershwin from 8 to 20 September. A long-runner in Broadway's largest house — reliable, and reliably discounted the rest of the year too.",
@@ -344,6 +394,11 @@ export const items: EventItem[] = [
   {
     slug: "broadway-week-chicago",
     site: "nyc42",
+    image: "/covers/broadway-week-chicago.jpg",
+    imageAlt: "A bentwood chair silhouette against a paper sunburst",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Chicago at Broadway Week",
     summary:
       "The longest-running American musical on Broadway takes the two-for-one from 8 to 20 September at the Ambassador. A safe evening, and the offer's least necessary use.",
@@ -377,6 +432,11 @@ export const items: EventItem[] = [
   {
     slug: "broadway-week-fall-2026",
     site: "nyc42",
+    image: "/covers/broadway-week-fall-2026.jpg",
+    imageAlt: "A row of paper theatre marquee canopies",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "NYC Broadway Week: two-for-one at 25 shows",
     summary:
       "Two weeks of 2-for-1 Broadway tickets across 25 productions, from 8 to 20 September 2026. Tickets have been on sale since 18 August.",

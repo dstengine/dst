@@ -1,4 +1,150 @@
 {
+  "cmx.lol": {
+    "/covers/del-color-de-la-sandia-cenart.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/del-color-de-la-sandia-cenart-480.avif"
+        ],
+        [
+          768,
+          "/covers/del-color-de-la-sandia-cenart-768.avif"
+        ],
+        [
+          1024,
+          "/covers/del-color-de-la-sandia-cenart-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/del-color-de-la-sandia-cenart-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/del-color-de-la-sandia-cenart-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/del-color-de-la-sandia-cenart-480.webp"
+        ],
+        [
+          768,
+          "/covers/del-color-de-la-sandia-cenart-768.webp"
+        ],
+        [
+          1024,
+          "/covers/del-color-de-la-sandia-cenart-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/del-color-de-la-sandia-cenart-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/del-color-de-la-sandia-cenart-1536.webp"
+        ]
+      ]
+    },
+    "/covers/gran-desfile-dia-de-muertos-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/gran-desfile-dia-de-muertos-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/gran-desfile-dia-de-muertos-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/gran-desfile-dia-de-muertos-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/gran-desfile-dia-de-muertos-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/gran-desfile-dia-de-muertos-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/gran-desfile-dia-de-muertos-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/gran-desfile-dia-de-muertos-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/gran-desfile-dia-de-muertos-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/gran-desfile-dia-de-muertos-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/gran-desfile-dia-de-muertos-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/gran-premio-ciudad-de-mexico-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/gran-premio-ciudad-de-mexico-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/gran-premio-ciudad-de-mexico-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/gran-premio-ciudad-de-mexico-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/gran-premio-ciudad-de-mexico-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/gran-premio-ciudad-de-mexico-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/gran-premio-ciudad-de-mexico-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/gran-premio-ciudad-de-mexico-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/gran-premio-ciudad-de-mexico-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/gran-premio-ciudad-de-mexico-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/gran-premio-ciudad-de-mexico-2026-1536.webp"
+        ]
+      ]
+    }
+  },
   "dst.llc": {
     "/eco.jpg": {
       "width": 1600,
@@ -377,6 +523,346 @@
         [
           1380,
           "/fwf-plaza-1380.webp"
+        ]
+      ]
+    }
+  },
+  "ldn.lol": {
+    "/covers/london-design-festival-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/london-design-festival-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/london-design-festival-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/london-design-festival-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/london-design-festival-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/london-design-festival-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/london-design-festival-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/london-design-festival-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/london-design-festival-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/london-design-festival-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/london-design-festival-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/lord-mayors-show-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/lord-mayors-show-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/lord-mayors-show-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/lord-mayors-show-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/lord-mayors-show-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/lord-mayors-show-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/lord-mayors-show-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/lord-mayors-show-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/lord-mayors-show-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/lord-mayors-show-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/lord-mayors-show-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/notting-hill-carnival-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/notting-hill-carnival-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/notting-hill-carnival-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/notting-hill-carnival-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/notting-hill-carnival-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/notting-hill-carnival-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/notting-hill-carnival-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/notting-hill-carnival-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/notting-hill-carnival-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/notting-hill-carnival-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/notting-hill-carnival-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/open-house-festival-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/open-house-festival-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/open-house-festival-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/open-house-festival-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/open-house-festival-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/open-house-festival-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/open-house-festival-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/open-house-festival-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/open-house-festival-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/open-house-festival-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/open-house-festival-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/totally-thames-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/totally-thames-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/totally-thames-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/totally-thames-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/totally-thames-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/totally-thames-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/totally-thames-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/totally-thames-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/totally-thames-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/totally-thames-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/totally-thames-2026-1536.webp"
+        ]
+      ]
+    }
+  },
+  "lnd.lol": {
+    "/covers/giant-summer-flea-olympic-park.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/giant-summer-flea-olympic-park-480.avif"
+        ],
+        [
+          768,
+          "/covers/giant-summer-flea-olympic-park-768.avif"
+        ],
+        [
+          1024,
+          "/covers/giant-summer-flea-olympic-park-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/giant-summer-flea-olympic-park-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/giant-summer-flea-olympic-park-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/giant-summer-flea-olympic-park-480.webp"
+        ],
+        [
+          768,
+          "/covers/giant-summer-flea-olympic-park-768.webp"
+        ],
+        [
+          1024,
+          "/covers/giant-summer-flea-olympic-park-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/giant-summer-flea-olympic-park-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/giant-summer-flea-olympic-park-1536.webp"
+        ]
+      ]
+    },
+    "/covers/the-big-brine-hackney-bridge.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/the-big-brine-hackney-bridge-480.avif"
+        ],
+        [
+          768,
+          "/covers/the-big-brine-hackney-bridge-768.avif"
+        ],
+        [
+          1024,
+          "/covers/the-big-brine-hackney-bridge-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/the-big-brine-hackney-bridge-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/the-big-brine-hackney-bridge-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/the-big-brine-hackney-bridge-480.webp"
+        ],
+        [
+          768,
+          "/covers/the-big-brine-hackney-bridge-768.webp"
+        ],
+        [
+          1024,
+          "/covers/the-big-brine-hackney-bridge-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/the-big-brine-hackney-bridge-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/the-big-brine-hackney-bridge-1536.webp"
         ]
       ]
     }
@@ -3787,6 +4273,682 @@
         [
           1920,
           "/venues/woking-theatre-1920.webp"
+        ]
+      ]
+    }
+  },
+  "mxo.lol": {
+    "/covers/fil-guadalajara-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/fil-guadalajara-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/fil-guadalajara-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/fil-guadalajara-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/fil-guadalajara-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/fil-guadalajara-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/fil-guadalajara-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/fil-guadalajara-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/fil-guadalajara-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/fil-guadalajara-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/fil-guadalajara-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/filij-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/filij-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/filij-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/filij-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/filij-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/filij-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/filij-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/filij-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/filij-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/filij-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/filij-2026-1536.webp"
+        ]
+      ]
+    }
+  },
+  "nyc42.lol": {
+    "/covers/broadway-week-chicago.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/broadway-week-chicago-480.avif"
+        ],
+        [
+          768,
+          "/covers/broadway-week-chicago-768.avif"
+        ],
+        [
+          1024,
+          "/covers/broadway-week-chicago-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/broadway-week-chicago-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/broadway-week-chicago-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/broadway-week-chicago-480.webp"
+        ],
+        [
+          768,
+          "/covers/broadway-week-chicago-768.webp"
+        ],
+        [
+          1024,
+          "/covers/broadway-week-chicago-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/broadway-week-chicago-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/broadway-week-chicago-1536.webp"
+        ]
+      ]
+    },
+    "/covers/broadway-week-fall-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/broadway-week-fall-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/broadway-week-fall-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/broadway-week-fall-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/broadway-week-fall-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/broadway-week-fall-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/broadway-week-fall-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/broadway-week-fall-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/broadway-week-fall-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/broadway-week-fall-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/broadway-week-fall-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/broadway-week-hadestown.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/broadway-week-hadestown-480.avif"
+        ],
+        [
+          768,
+          "/covers/broadway-week-hadestown-768.avif"
+        ],
+        [
+          1024,
+          "/covers/broadway-week-hadestown-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/broadway-week-hadestown-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/broadway-week-hadestown-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/broadway-week-hadestown-480.webp"
+        ],
+        [
+          768,
+          "/covers/broadway-week-hadestown-768.webp"
+        ],
+        [
+          1024,
+          "/covers/broadway-week-hadestown-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/broadway-week-hadestown-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/broadway-week-hadestown-1536.webp"
+        ]
+      ]
+    },
+    "/covers/broadway-week-harry-potter.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/broadway-week-harry-potter-480.avif"
+        ],
+        [
+          768,
+          "/covers/broadway-week-harry-potter-768.avif"
+        ],
+        [
+          1024,
+          "/covers/broadway-week-harry-potter-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/broadway-week-harry-potter-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/broadway-week-harry-potter-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/broadway-week-harry-potter-480.webp"
+        ],
+        [
+          768,
+          "/covers/broadway-week-harry-potter-768.webp"
+        ],
+        [
+          1024,
+          "/covers/broadway-week-harry-potter-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/broadway-week-harry-potter-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/broadway-week-harry-potter-1536.webp"
+        ]
+      ]
+    },
+    "/covers/broadway-week-oh-mary.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/broadway-week-oh-mary-480.avif"
+        ],
+        [
+          768,
+          "/covers/broadway-week-oh-mary-768.avif"
+        ],
+        [
+          1024,
+          "/covers/broadway-week-oh-mary-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/broadway-week-oh-mary-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/broadway-week-oh-mary-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/broadway-week-oh-mary-480.webp"
+        ],
+        [
+          768,
+          "/covers/broadway-week-oh-mary-768.webp"
+        ],
+        [
+          1024,
+          "/covers/broadway-week-oh-mary-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/broadway-week-oh-mary-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/broadway-week-oh-mary-1536.webp"
+        ]
+      ]
+    },
+    "/covers/broadway-week-six.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/broadway-week-six-480.avif"
+        ],
+        [
+          768,
+          "/covers/broadway-week-six-768.avif"
+        ],
+        [
+          1024,
+          "/covers/broadway-week-six-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/broadway-week-six-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/broadway-week-six-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/broadway-week-six-480.webp"
+        ],
+        [
+          768,
+          "/covers/broadway-week-six-768.webp"
+        ],
+        [
+          1024,
+          "/covers/broadway-week-six-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/broadway-week-six-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/broadway-week-six-1536.webp"
+        ]
+      ]
+    },
+    "/covers/broadway-week-stranger-things.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/broadway-week-stranger-things-480.avif"
+        ],
+        [
+          768,
+          "/covers/broadway-week-stranger-things-768.avif"
+        ],
+        [
+          1024,
+          "/covers/broadway-week-stranger-things-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/broadway-week-stranger-things-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/broadway-week-stranger-things-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/broadway-week-stranger-things-480.webp"
+        ],
+        [
+          768,
+          "/covers/broadway-week-stranger-things-768.webp"
+        ],
+        [
+          1024,
+          "/covers/broadway-week-stranger-things-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/broadway-week-stranger-things-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/broadway-week-stranger-things-1536.webp"
+        ]
+      ]
+    },
+    "/covers/broadway-week-the-lion-king.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/broadway-week-the-lion-king-480.avif"
+        ],
+        [
+          768,
+          "/covers/broadway-week-the-lion-king-768.avif"
+        ],
+        [
+          1024,
+          "/covers/broadway-week-the-lion-king-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/broadway-week-the-lion-king-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/broadway-week-the-lion-king-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/broadway-week-the-lion-king-480.webp"
+        ],
+        [
+          768,
+          "/covers/broadway-week-the-lion-king-768.webp"
+        ],
+        [
+          1024,
+          "/covers/broadway-week-the-lion-king-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/broadway-week-the-lion-king-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/broadway-week-the-lion-king-1536.webp"
+        ]
+      ]
+    },
+    "/covers/broadway-week-wicked.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/broadway-week-wicked-480.avif"
+        ],
+        [
+          768,
+          "/covers/broadway-week-wicked-768.avif"
+        ],
+        [
+          1024,
+          "/covers/broadway-week-wicked-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/broadway-week-wicked-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/broadway-week-wicked-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/broadway-week-wicked-480.webp"
+        ],
+        [
+          768,
+          "/covers/broadway-week-wicked-768.webp"
+        ],
+        [
+          1024,
+          "/covers/broadway-week-wicked-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/broadway-week-wicked-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/broadway-week-wicked-1536.webp"
+        ]
+      ]
+    },
+    "/covers/new-york-comic-con-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/new-york-comic-con-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/new-york-comic-con-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/new-york-comic-con-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/new-york-comic-con-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/new-york-comic-con-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/new-york-comic-con-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/new-york-comic-con-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/new-york-comic-con-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/new-york-comic-con-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/new-york-comic-con-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/open-house-new-york-weekend-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/open-house-new-york-weekend-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/open-house-new-york-weekend-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/open-house-new-york-weekend-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/open-house-new-york-weekend-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/open-house-new-york-weekend-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/open-house-new-york-weekend-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/open-house-new-york-weekend-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/open-house-new-york-weekend-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/open-house-new-york-weekend-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/open-house-new-york-weekend-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/village-halloween-parade-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/village-halloween-parade-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/village-halloween-parade-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/village-halloween-parade-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/village-halloween-parade-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/village-halloween-parade-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/village-halloween-parade-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/village-halloween-parade-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/village-halloween-parade-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/village-halloween-parade-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/village-halloween-parade-2026-1536.webp"
         ]
       ]
     }

@@ -4,6 +4,11 @@ export const items: EventItem[] = [
   {
     slug: "giant-summer-flea-olympic-park",
     site: "lnd",
+    image: "/covers/giant-summer-flea-olympic-park.jpg",
+    imageAlt: "Paper market stalls with awnings and crates on a navy ground",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "The Giant Summer Flea",
     summary:
       "A one-day flea market at Queen Elizabeth Olympic Park, Sunday 6 September 2026.",
@@ -24,6 +29,11 @@ export const items: EventItem[] = [
   {
     slug: "the-big-brine-hackney-bridge",
     site: "lnd",
+    image: "/covers/the-big-brine-hackney-bridge.jpg",
+    imageAlt: "Rows of paper preserving jars on shelves with cut citrus discs",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "The Big Brine",
     summary:
       "Two days at Hackney Bridge given over to everything fermented, pickled and brined, with chef demos and live music. 12–13 September 2026.",

@@ -4,6 +4,11 @@ export const items: EventItem[] = [
   {
     slug: "gran-premio-ciudad-de-mexico-2026",
     site: "cmx",
+    image: "/covers/gran-premio-ciudad-de-mexico-2026.jpg",
+    imageAlt: "Una cinta de papel a cuadros que serpentea sobre fondo crema",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Gran Premio de la Ciudad de México 2026",
     summary:
       "La Fórmula 1 vuelve al Autódromo Hermanos Rodríguez del 30 de octubre al 1 de noviembre, con la carrera el domingo a las 2pm y un reglamento técnico nuevo.",
@@ -57,6 +62,11 @@ export const items: EventItem[] = [
   {
     slug: "gran-desfile-dia-de-muertos-2026",
     site: "cmx",
+    image: "/covers/gran-desfile-dia-de-muertos-2026.jpg",
+    imageAlt: "Papel picado en la parte alta y flores de cempasúchil abajo",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Gran Desfile de Día de Muertos 2026",
     summary:
       "Sábado 31 de octubre sobre Paseo de la Reforma: más de cuatro horas de carros alegóricos, catrinas monumentales y danza. La temática todavía no se anuncia.",
@@ -94,6 +104,11 @@ export const items: EventItem[] = [
   {
     slug: "del-color-de-la-sandia-cenart",
     site: "cmx",
+    image: "/covers/del-color-de-la-sandia-cenart.jpg",
+    imageAlt: "Dos rebanadas de sandía recortadas en papel",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Del color de la sandía",
     summary:
       "Ciclo de fiestas patrias en el Centro Nacional de las Artes durante septiembre: música mexicana, danza folclórica y ópera, buena parte con entrada libre.",
