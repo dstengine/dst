@@ -7,6 +7,13 @@
 // centre — right for a reader who already came for the fact, wrong for a page
 // whose job is to make the network look worth reading.
 //
+// The date cover belongs to events only. It was written as the fallback for
+// any card without a picture, which was fine while most news carried one — but
+// a site with no photography at all turned every card into a slab of accent
+// tint, four of them to a screen, and the accent stopped reading as an accent.
+// A date block also says something an event means and a news item does not:
+// there is a day you can turn up. News without a picture now opens on its
+// headline, and keeps its date in the meta line where it already was.
 // A card with no picture puts its date on the cover instead. For an event
 // that is the point of the card anyway — the date is what a reader is deciding
 // about, and a stock skyline over every conference would say less. For a news
@@ -67,17 +74,19 @@ const parts = (iso: string) => {
     const when = parts(item.date);
     return (
       <Tag class="feed-card" href={item.href} title={item.href ? item.title : undefined}>
-        <div class:list={["feed-cover", !item.image && "feed-cover-date"]}>
-          {item.image ? (
-            <Photo class:list={[item.imageFit === "cover" && "feed-cover-fill"]} src={item.image} alt={item.imageAlt ?? ""} sizes="(max-width: 700px) 100vw, 380px" />
-          ) : (
-            <div class="feed-date" aria-hidden="true">
-              <span class="feed-date-day">{when.day}</span>
-              <span class="feed-date-month">{when.month}</span>
-              <span class="feed-date-year">{when.year}</span>
-            </div>
-          )}
-        </div>
+        {(item.image || item.event) && (
+          <div class:list={["feed-cover", !item.image && "feed-cover-date"]}>
+            {item.image ? (
+              <Photo class:list={[item.imageFit === "cover" && "feed-cover-fill"]} src={item.image} alt={item.imageAlt ?? ""} sizes="(max-width: 700px) 100vw, 380px" />
+            ) : (
+              <div class="feed-date" aria-hidden="true">
+                <span class="feed-date-day">{when.day}</span>
+                <span class="feed-date-month">{when.month}</span>
+                <span class="feed-date-year">{when.year}</span>
+              </div>
+            )}
+          </div>
+        )}
         <div class="feed-body">
           <p class="feed-meta">
             {item.eyebrow && <span class="feed-eyebrow">{item.eyebrow}</span>}

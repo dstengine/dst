@@ -15,7 +15,7 @@ export const home = {
   title: "Greater London, beyond the centre",
   description: "Greater London beyond the centre — what's happening borough by borough.",
   h1: "Greater London, beyond the centre",
-  lede: `London past zone 1: the boroughs, their parks, their transport and their weekends. The centre has enough listings pages; this one starts where they stop.`,
+  lede: `London past zone 1: the boroughs, their parks, their transport and their weekends.`,
 };
 
 export const news = {

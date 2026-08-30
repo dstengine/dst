@@ -15,7 +15,7 @@ export const home = {
   title: "Qué hacer en la Ciudad de México",
   description: "Qué hacer en la Ciudad de México: exposiciones, ferias y cómo funciona la ciudad.",
   h1: "Qué hacer en la Ciudad de México",
-  lede: `Una lista corta de lo que está pasando en la ciudad y de lo que cambió esta semana. Cada entrada dice de dónde salió el dato y el día en que se verificó.`,
+  lede: `Museos y exposiciones, parques y plazas, y lo que la ciudad abre o cambia. Qué hay, qué cambió esta semana, y cuándo.`,
 };
 
 export const news = {

@@ -15,7 +15,7 @@ export const home = {
   title: "What's on in central London",
   description: "What's on in central London — exhibitions, carnival, theatre and the weekend.",
   h1: "What's on in central London",
-  lede: `Culture and what's on inside the centre: exhibitions, carnival, theatre, and what the weekend actually holds. Every entry names its source and the day it was checked.`,
+  lede: `Culture inside the centre: exhibitions, carnival, theatre, and what the weekend actually holds.`,
 };
 
 export const news = {

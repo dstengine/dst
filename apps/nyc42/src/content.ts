@@ -15,7 +15,7 @@ export const home = {
   title: "What's on in New York City",
   description: "What's on in New York City, checked against the source and dated.",
   h1: "What's on in New York City",
-  lede: `A short list of what is happening in New York, and what changed this week. Every entry names the source it came from and the day it was checked against it.`,
+  lede: `Museums and theatre, the river and the parks, and the things the seasons open and close. What is on, what changed this week, and when.`,
 };
 
 export const news = {
