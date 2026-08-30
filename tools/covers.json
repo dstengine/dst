@@ -1,0 +1,45 @@
+{
+  "palettes": {
+    "nyc42": "deep charcoal brown ground with warm amber and ochre paper, small cream highlights",
+    "ldn": "warm off-white ground with pillar-box red and deep charcoal paper",
+    "lnd": "deep navy blue ground with pale blue and chalk white paper, one small red accent",
+    "cmx": "warm cream ground with magenta and deep plum paper, small gold highlights",
+    "mxo": "deep forest green ground with terracotta and warm cream paper"
+  },
+  "covers": {
+    "nyc42": {
+      "new-york-comic-con-2026": "a bold starburst explosion shape breaking across angled comic panel gutters, dense halftone dot field radiating outward, one blank speech balloon silhouette",
+      "village-halloween-parade-2026": "a procession of paper lantern and mask silhouettes along a diagonal, a crescent moon disc above",
+      "open-house-new-york-weekend-2026": "a stack of building cross-sections cut from paper, staircases and floor plates exposed, one rooftop water tower silhouette",
+      "broadway-week-fall-2026": "a row of theatre marquee canopy shapes, layered ticket rectangles fanned across the foreground",
+      "broadway-week-harry-potter": "a tall stage proscenium arch, heavy curtain folds, one narrow diagonal beam of light crossing it",
+      "broadway-week-hadestown": "a staircase descending into darkness, a single warm glowing lamp disc, smoky layered bands",
+      "broadway-week-stranger-things": "an inverted forest of bare tree silhouettes mirrored along the horizon, a thin jagged rift of light",
+      "broadway-week-six": "six tall microphone silhouettes in a row, a simple crown shape above the centre one",
+      "broadway-week-oh-mary": "a small intimate proscenium, one velvet drape swagged to the side, a single bright spotlight circle on the boards",
+      "broadway-week-the-lion-king": "a large sun disc rising over layered savannah horizon bands, a lone acacia tree silhouette",
+      "broadway-week-wicked": "a spiral of layered emerald green paper against amber, a tall pointed hat silhouette at the edge",
+      "broadway-week-chicago": "art deco fan and sunburst shapes, a bentwood chair silhouette, stacked jazz-age chevrons"
+    },
+    "ldn": {
+      "london-design-festival-2026": "a modular grid of abstract furniture and object silhouettes, some cells empty, precise alignment",
+      "open-house-festival-2026": "layered terraced building facades in receding planes, one door standing open with light behind it",
+      "totally-thames-2026": "a wide river ribbon curving through the frame, two bridge arch spans crossing it, small boat shapes",
+      "lord-mayors-show-2026": "a ceremonial coach wheel and ornate carriage lantern shapes, layered bunting pennants above",
+      "notting-hill-carnival-2026": "tall paper feather plumes and layered ribbon streamers rising in a diagonal sweep, scattered confetti squares"
+    },
+    "lnd": {
+      "giant-summer-flea-olympic-park": "a row of striped market stall awnings, stacked crates and hanging bunting triangles",
+      "the-big-brine-hackney-bridge": "rows of paper preserving jars with domed lids on a shelf, cut lemon and cucumber discs beside them"
+    },
+    "cmx": {
+      "gran-premio-ciudad-de-mexico-2026": "a racing circuit ribbon looping through the frame, chequered pattern fading at one edge, speed chevrons",
+      "gran-desfile-dia-de-muertos-2026": "layered papel picado banners with cut geometric patterns, marigold flower discs massed below",
+      "del-color-de-la-sandia-cenart": "geometric watermelon slice wedges arranged as a fan, seeds as small dots, bold flat shapes"
+    },
+    "mxo": {
+      "fil-guadalajara-2026": "open books cut from flat paper, pages fanned into a wide arch spanning the frame, a bright doorway shape beneath the arch",
+      "filij-2026": "paper boats and kites folded from book pages rising on a diagonal, playful scattered confetti squares"
+    }
+  }
+}
