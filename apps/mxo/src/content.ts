@@ -34,7 +34,7 @@ export const events = {
 
 export const about = {
   title: "Acerca",
-  description: "Un sitio pequeño con la agenda cultural de México, con unas cuantas reglas.",
+  description: "La agenda cultural de México, con fuente y fecha en cada entrada.",
   h1: "Acerca de mxo",
-  lede: `Un sitio pequeño con la agenda cultural de México, con unas cuantas reglas.`,
+  lede: `La agenda cultural de México, con fuente y fecha en cada entrada.`,
 };

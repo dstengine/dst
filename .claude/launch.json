@@ -117,6 +117,19 @@
         "4329"
       ],
       "port": 4329
+    },
+    {
+      "name": "nyc42",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "astro",
+        "dev",
+        "--root",
+        "apps/nyc42",
+        "--port",
+        "4341"
+      ],
+      "port": 4341
     }
   ]
 }

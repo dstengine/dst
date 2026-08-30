@@ -1,6 +1,6 @@
 # cmx
 
-> Qué hacer en la Ciudad de México. Un sitio pequeño: cada entrada dice de dónde salió el dato y el día en que se verificó.
+> Qué hacer en la Ciudad de México. Cada entrada dice de dónde salió el dato y el día en que se verificó.
 
 ## Secciones
 

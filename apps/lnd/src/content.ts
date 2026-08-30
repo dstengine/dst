@@ -34,7 +34,7 @@ export const events = {
 
 export const about = {
   title: "About",
-  description: "A small listings site for Greater London outside the centre, run to a short set of rules.",
+  description: "What is on across the London boroughs, with a source and a date on every entry.",
   h1: "About lnd",
-  lede: `A small listings site for Greater London outside the centre, run to a short set of rules.`,
+  lede: `What is on across the London boroughs, with a source and a date on every entry.`,
 };

@@ -34,7 +34,7 @@ export const events = {
 
 export const about = {
   title: "Acerca",
-  description: "Un sitio pequeño de qué hacer en la Ciudad de México, con unas cuantas reglas.",
+  description: "Qué hacer en la Ciudad de México, con fuente y fecha en cada entrada.",
   h1: "Acerca de cmx",
-  lede: `Un sitio pequeño de qué hacer en la Ciudad de México, con unas cuantas reglas.`,
+  lede: `Qué hacer en la Ciudad de México, con fuente y fecha en cada entrada.`,
 };

@@ -1,6 +1,6 @@
 # nyc42
 
-> What's on in New York City. A small listings site: every entry names the source it came from and the day it was checked against it.
+> What's on in New York City. Every entry names the source it came from and the day it was checked against it.
 
 ## Sections
 

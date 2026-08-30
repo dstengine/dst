@@ -34,7 +34,7 @@ export const events = {
 
 export const about = {
   title: "About",
-  description: "A small listings site for New York City, run to a short set of rules.",
+  description: "What is on in New York City, with a source and a date on every entry.",
   h1: "About nyc42",
-  lede: `A small listings site for New York City, run to a short set of rules.`,
+  lede: `What is on in New York City, with a source and a date on every entry.`,
 };
