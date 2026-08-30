@@ -7,6 +7,7 @@
 #   tools/deploy.sh --all          every site
 #   tools/deploy.sh --preview llc  a preview URL instead of production
 #   tools/deploy.sh --dry-run llc  print what would run
+#   tools/deploy.sh --force llc    rebuild without the cached build
 #   tools/deploy.sh --list         the site -> project map
 #
 # Why this exists: a push rebuilds every app whose directory or ../../packages
@@ -53,6 +54,7 @@ usage() {
 prod=1
 dry=0
 dirty=0
+force=0
 targets=()
 
 while [ $# -gt 0 ]; do
@@ -61,6 +63,10 @@ while [ $# -gt 0 ]; do
     --preview) prod=0 ;;
     --dry-run) dry=1 ;;
     --dirty)   dirty=1 ;;
+    # A build that fails with no error of its own, right after "Restored
+    # build cache from previous deployment", is the cache and not the code.
+    # It has bitten twice; this is the way out of it.
+    --force)   force=1 ;;
     --list)
       for site in "${SITES[@]}"; do printf '  %-12s %s\n' "$site" "$(project_for "$site")"; done
       exit 0 ;;
@@ -111,6 +117,7 @@ for site in "${targets[@]}"; do
   id="$(id_for "$project")"
   set -- vercel deploy --yes --cwd "$REPO"
   [ "$prod" = 1 ] && set -- "$@" --prod
+  [ "$force" = 1 ] && set -- "$@" --force
 
   if [ "$dry" = 1 ]; then
     echo "VERCEL_ORG_ID=$ORG_ID VERCEL_PROJECT_ID=$id $*"
