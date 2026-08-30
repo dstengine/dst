@@ -3,6 +3,7 @@ import type { EventItem } from "../types.ts";
 export const items: EventItem[] = [
   {
     slug: "fil-guadalajara-2026",
+    featured: 1,
     site: "mxo",
     image: "/covers/fil-guadalajara-2026.jpg",
     imageAlt: "Un arco de papel verde con una puerta iluminada debajo",
@@ -66,6 +67,7 @@ export const items: EventItem[] = [
   },
   {
     slug: "filij-2026",
+    featured: 2,
     site: "mxo",
     image: "/covers/filij-2026.jpg",
     imageAlt: "Barcos de papel y confeti sobre fondo verde",

@@ -44,6 +44,7 @@
     "./Glance.astro": "./src/components/Glance.astro",
     "./Breadcrumbs.astro": "./src/components/Breadcrumbs.astro",
     "./MapEmbed.astro": "./src/components/MapEmbed.astro",
-    "./OnThisPage.astro": "./src/components/OnThisPage.astro"
+    "./OnThisPage.astro": "./src/components/OnThisPage.astro",
+    "./labels": "./src/labels.ts"
   }
 }

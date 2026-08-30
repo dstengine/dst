@@ -3,6 +3,7 @@ import type { EventItem } from "../types.ts";
 export const items: EventItem[] = [
   {
     slug: "gran-premio-ciudad-de-mexico-2026",
+    featured: 1,
     site: "cmx",
     image: "/covers/gran-premio-ciudad-de-mexico-2026.jpg",
     imageAlt: "Una cinta de papel a cuadros que serpentea sobre fondo crema",
@@ -61,6 +62,7 @@ export const items: EventItem[] = [
   },
   {
     slug: "gran-desfile-dia-de-muertos-2026",
+    featured: 2,
     site: "cmx",
     image: "/covers/gran-desfile-dia-de-muertos-2026.jpg",
     imageAlt: "Papel picado en la parte alta y flores de cempasúchil abajo",

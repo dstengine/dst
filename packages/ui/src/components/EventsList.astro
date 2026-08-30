@@ -5,6 +5,7 @@
 // rebuilds regularly, not a live app.
 import type { EventItem } from "@dst/content/types";
 import FeedCards from "./FeedCards.astro";
+import { withLabels, type ArticleLabels } from "../labels.ts";
 import CountdownScript from "./CountdownScript.astro";
 
 interface Props {
@@ -17,9 +18,28 @@ interface Props {
   /** Locale for dates on this page. Defaults to the network's English;
       a site writing in another language passes its own. */
   locale?: string;
+  /** The two group headings, for a site not writing in English. */
+  labels?: Partial<ArticleLabels>;
 }
-const { items, eventsBase = "/events/", locale } = Astro.props;
+const { items, eventsBase = "/events/", locale, labels: labelOverrides } = Astro.props;
+const L = withLabels(labelOverrides);
 const todayIso = new Date().toISOString().slice(0, 10);
+
+// Ranked events come first, in rank order, then everything else by date.
+// This is the promotion: a city agenda is not a flat list — Comic Con and a
+// Saturday flea market are not the same size of thing — and a reader
+// scanning the listing should meet the big ones first rather than in
+// whatever order the calendar happens to put them. Only a handful of events
+// on a site carry a rank; a list where everything is promoted promotes
+// nothing.
+const byRankThenDate = (a: EventItem, b: EventItem) => {
+  if (a.featured !== b.featured) {
+    if (a.featured === undefined) return 1;
+    if (b.featured === undefined) return -1;
+    return a.featured - b.featured;
+  }
+  return a.start < b.start ? -1 : a.start > b.start ? 1 : 0;
+};
 
 const toCard = (item: EventItem, past: boolean) => {
   const hasPage = Array.isArray(item.body) && item.body.length > 0;
@@ -41,7 +61,7 @@ const toCard = (item: EventItem, past: boolean) => {
 
 const upcoming = items
   .filter((e) => e.start >= todayIso)
-  .sort((a, b) => (a.start < b.start ? -1 : a.start > b.start ? 1 : 0))
+  .sort(byRankThenDate)
   .map((e) => toCard(e, false));
 const past = items
   .filter((e) => e.start < todayIso)
@@ -52,15 +72,15 @@ const past = items
   <div class="events-lists">
     {upcoming.length > 0 && (
       <div class="events-group">
-        <h3 class="events-group-heading">Upcoming</h3>
-        <FeedCards items={upcoming} columns={upcoming.length <= 2 ? upcoming.length : undefined} locale={locale} />
+        <h3 class="events-group-heading">{L.upcoming}</h3>
+        <FeedCards items={upcoming} columns={upcoming.length <= 2 ? upcoming.length : undefined} locale={locale} labels={L} />
         <CountdownScript />
       </div>
     )}
     {past.length > 0 && (
       <div class="events-group events-group-past">
-        <h3 class="events-group-heading">Past</h3>
-        <FeedCards items={past} columns={past.length <= 2 ? past.length : undefined} locale={locale} />
+        <h3 class="events-group-heading">{L.pastGroup}</h3>
+        <FeedCards items={past} columns={past.length <= 2 ? past.length : undefined} locale={locale} labels={L} />
       </div>
     )}
   </div>

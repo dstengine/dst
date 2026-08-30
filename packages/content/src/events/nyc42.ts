@@ -3,6 +3,7 @@ import type { EventItem } from "../types.ts";
 export const items: EventItem[] = [
   {
     slug: "new-york-comic-con-2026",
+    featured: 1,
     site: "nyc42",
     image: "/covers/new-york-comic-con-2026.jpg",
     imageAlt: "A cut-paper starburst in amber bursting out of a dark ground",
@@ -48,6 +49,7 @@ export const items: EventItem[] = [
   },
   {
     slug: "village-halloween-parade-2026",
+    featured: 3,
     site: "nyc42",
     image: "/covers/village-halloween-parade-2026.jpg",
     imageAlt: "Paper lanterns strung along a curve under a crescent moon",
@@ -431,6 +433,7 @@ export const items: EventItem[] = [
   },
   {
     slug: "broadway-week-fall-2026",
+    featured: 2,
     site: "nyc42",
     image: "/covers/broadway-week-fall-2026.jpg",
     imageAlt: "A row of paper theatre marquee canopies",

@@ -13,8 +13,10 @@ interface Props {
   credit?: string;
   /** Caption text, when the picture also needs describing. */
   caption?: string;
+  /** The four words below, for a site not writing in English. */
+  labels?: Partial<Record<Exclude<ImageKind, "generated">, string>>;
 }
-const { kind, credit, caption } = Astro.props;
+const { kind, credit, caption, labels } = Astro.props;
 
 // The word alone carries it: "Render" already means "not a photograph",
 // and spelling that out reads as an apology for the picture. `generated`
@@ -25,6 +27,7 @@ const LABELS: Partial<Record<ImageKind, string>> = {
   diagram: "Diagram",
   illustration: "Illustration",
   render: "Render",
+  ...labels,
 };
 const label = kind ? LABELS[kind] : undefined;
 const show = Boolean(caption || label || credit);

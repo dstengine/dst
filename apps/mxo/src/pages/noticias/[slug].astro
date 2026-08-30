@@ -1,7 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import NewsArticle from "@dst/ui/NewsArticle.astro";
-import { site, newsBase, eventsBase, publisher } from "../../content";
+import { site, newsBase, eventsBase, publisher, labels } from "../../content";
 import { newsBySite } from "@dst/content/news";
 import { eventsBySite } from "@dst/content/events";
 
@@ -24,5 +24,6 @@ const { item, more } = Astro.props;
     newsBase={newsBase}
     eventsBase={eventsBase}
     publisher={publisher}
+    labels={labels}
   />
 </Layout>

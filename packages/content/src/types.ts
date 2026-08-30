@@ -5,7 +5,11 @@
 
 export interface Source {
   name: string; // rendered as plain text
-  url: string; // audit trail only — never rendered
+  // Audit trail: never rendered as a link in body copy or in JSON-LD. An
+  // event page may send a reader here through its /go/ hop when there is no
+  // seller to send them to instead — see the ticket button in
+  // @dst/ui/EventArticle.astro.
+  url: string;
   verifiedOn?: string; // ISO date the claim was last checked against the source; rendered
 }
 
@@ -117,6 +121,13 @@ export interface EventItem extends ItemBase {
   // Who the event is addressed to, in the organiser's own terms. Short
   // phrases, not sentences — this renders as a row of tags.
   audience?: string[];
+  // Where this sits among the site's events, for the front page. 1 is the
+  // one to lead with, and only a handful of events on a site get a number
+  // at all — a feed where everything is highlighted highlights nothing.
+  // Ranked rather than a boolean because "the most important event that
+  // hasn't happened yet" is a different question from "is this important",
+  // and the front page has to answer the first one.
+  featured?: number;
   // What actually came of it, written after the fact. Ticketing platforms
   // leave a past event as a dead page advertising a date that has gone;
   // an entry that says what happened stays worth landing on.

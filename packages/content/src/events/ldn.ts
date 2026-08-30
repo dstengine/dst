@@ -3,6 +3,7 @@ import type { EventItem } from "../types.ts";
 export const items: EventItem[] = [
   {
     slug: "london-design-festival-2026",
+    featured: 1,
     site: "ldn",
     image: "/covers/london-design-festival-2026.jpg",
     imageAlt: "A grid of paper furniture silhouettes in red and charcoal",
@@ -129,6 +130,7 @@ export const items: EventItem[] = [
   },
   {
     slug: "lord-mayors-show-2026",
+    featured: 2,
     site: "ldn",
     image: "/covers/lord-mayors-show-2026.jpg",
     imageAlt: "A red paper ceremonial coach under a line of bunting",
@@ -171,6 +173,7 @@ export const items: EventItem[] = [
   },
   {
     slug: "notting-hill-carnival-2026",
+    featured: 3,
     site: "ldn",
     image: "/covers/notting-hill-carnival-2026.jpg",
     imageAlt: "A tall red paper feather plume above scattered confetti",

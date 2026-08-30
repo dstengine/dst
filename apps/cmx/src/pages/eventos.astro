@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import EventsList from "@dst/ui/EventsList.astro";
-import { events, site, eventsBase } from "../content";
+import { events, site, eventsBase, labels } from "../content";
 import { eventsBySite } from "@dst/content/events";
 
 const items = eventsBySite(site);
@@ -13,6 +13,6 @@ const thin = items.length < 3;
     <p class="lede">{events.lede}</p>
   </section>
   <section class="container">
-    <EventsList locale="es-MX" items={items} eventsBase={eventsBase} />
+    <EventsList locale="es-MX" items={items} eventsBase={eventsBase} labels={labels} />
   </section>
 </Layout>

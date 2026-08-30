@@ -17,6 +17,7 @@ import SourceLine from "./SourceLine.astro";
 import ImageNote from "./ImageNote.astro";
 import { ICONS } from "../icons.ts";
 import { formatDate } from "../date.ts";
+import { withLabels, type ArticleLabels } from "../labels.ts";
 import { readingMinutes } from "@dst/content/reading";
 
 interface Props {
@@ -42,8 +43,12 @@ interface Props {
   /** Locale for dates on this page. Defaults to the network's English;
       a site writing in another language passes its own. */
   locale?: string;
+  /** The words this component puts on the page that don't come from the
+      item. See EventArticle and ../labels.ts — English by default. */
+  labels?: Partial<ArticleLabels>;
 }
-const { item, backHref, more = [], moreEvents = [], newsBase = "/news/", eventsBase = "/events/", publisher, locale = "en-US"} = Astro.props;
+const { item, backHref, more = [], moreEvents = [], newsBase = "/news/", eventsBase = "/events/", publisher, locale = "en-US", labels: labelOverrides } = Astro.props;
+const L = withLabels(labelOverrides);
 
 const moreCards = more
   .filter((other) => other.slug !== item.slug && Array.isArray(other.body) && other.body.length > 0)
@@ -76,9 +81,9 @@ const eventCards = moreEvents
     event: true,
   }));
 const tail = moreCards.length > 0
-  ? { heading: "More news", cards: moreCards }
+  ? { heading: L.moreNews, cards: moreCards }
   : eventCards.length > 0
-    ? { heading: "Coming up", cards: eventCards }
+    ? { heading: L.comingUp, cards: eventCards }
     : null;
 const minutes = readingMinutes(item);
 
@@ -114,8 +119,8 @@ const jsonLd =
 const relatedItems = (item.related ?? []).map((card) => ({
   href: card.href,
   title: card.title, // VentureGrid's anchor title attribute
-  eyebrow: card.eyebrow ?? "Related",
-  status: "Read more",
+  eyebrow: card.eyebrow ?? L.related,
+  status: L.readMore,
   name: card.title,
   text: card.text,
   image: card.image,
@@ -129,7 +134,7 @@ const relatedItems = (item.related ?? []).map((card) => ({
     <p class="news-article-meta">
       {item.category && <span class="news-article-category">{item.category}</span>}
       <time datetime={item.date}>{formatDate(item.date, locale)}</time>
-      {minutes > 0 && <span class="news-article-reading">{minutes} min read</span>}
+      {minutes > 0 && <span class="news-article-reading">{L.minRead(minutes)}</span>}
     </p>
     <h1>{item.title}</h1>
   </header>
@@ -146,7 +151,7 @@ const relatedItems = (item.related ?? []).map((card) => ({
         width={item.imageWidth}
         height={item.imageHeight}
       />
-      <ImageNote kind={item.imageKind} credit={item.imageCredit} />
+      <ImageNote kind={item.imageKind} credit={item.imageCredit} labels={L.imageKinds} />
     </figure>
   )}
 
@@ -162,12 +167,12 @@ const relatedItems = (item.related ?? []).map((card) => ({
 
   {item.geo && (
     <section class="locate">
-      <h2>Locate</h2>
+      <h2>{L.locate}</h2>
       <div class="locate-map">
         <iframe
           src={`https://www.openstreetmap.org/export/embed.html?bbox=${item.geo.lng - 0.02}%2C${item.geo.lat - 0.01}%2C${item.geo.lng + 0.02}%2C${item.geo.lat + 0.01}&layer=mapnik&marker=${item.geo.lat}%2C${item.geo.lng}`}
           loading="lazy"
-          title={`Map — ${item.geo.name}`}
+          title={L.mapTitle(item.geo.name)}
         />
       </div>
     </section>
@@ -187,17 +192,17 @@ const relatedItems = (item.related ?? []).map((card) => ({
 
   {relatedItems.length > 0 && (
     <section class="news-article-related">
-      <h2>Related</h2>
+      <h2>{L.related}</h2>
       <VentureGrid items={relatedItems} />
     </section>
   )}
 
-  {item.source && <SourceLine source={item.source} locale={locale} />}
+  {item.source && <SourceLine source={item.source} locale={locale} labels={L} />}
 
   {tail && (
     <section class="news-article-more">
       <h2>{tail.heading}</h2>
-      <FeedCards items={tail.cards} columns={tail.cards.length} locale={locale} />
+      <FeedCards items={tail.cards} columns={tail.cards.length} locale={locale} labels={L} />
       {/* Only when the tail is events: the countdown markup is inert without
           it, and a news article otherwise has nothing to count down to. */}
       {tail.cards[0].event && <CountdownScript />}
@@ -205,7 +210,7 @@ const relatedItems = (item.related ?? []).map((card) => ({
   )}
 
   <nav class="news-article-back">
-    <a href={backHref} title="All news">&larr; All news</a>
+    <a href={backHref} title={L.allNews}>&larr; {L.allNews}</a>
   </nav>
 </article>
 

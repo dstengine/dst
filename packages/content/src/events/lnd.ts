@@ -3,6 +3,7 @@ import type { EventItem } from "../types.ts";
 export const items: EventItem[] = [
   {
     slug: "giant-summer-flea-olympic-park",
+    featured: 1,
     site: "lnd",
     image: "/covers/giant-summer-flea-olympic-park.jpg",
     imageAlt: "Paper market stalls with awnings and crates on a navy ground",

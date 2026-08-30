@@ -1,7 +1,8 @@
 User-agent: *
 Allow: /
 
-# No /go/ hops on this site yet; the rule goes in with the first one.
+# Outbound redirect hops. These exist to keep third-party destinations off
+# our link graph — there is nothing here worth crawling or indexing.
 Disallow: /go/
 
 Sitemap: https://mxo.lol/sitemap-index.xml

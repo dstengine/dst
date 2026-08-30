@@ -17,11 +17,17 @@ import CountdownScript from "./CountdownScript.astro";
 import Glance from "./Glance.astro";
 import { ICONS } from "../icons.ts";
 import { formatDate } from "../date.ts";
+import { withLabels, type ArticleLabels } from "../labels.ts";
 
 interface Props {
   item: EventItem;
   backHref: string;
   ticketHref?: string; // resolved by the route to /go/<slug>/, not item.ticket.url directly
+  /** Where to send a reader when there is no seller on file: the /go/ hop
+      to the event's own source. Every event page should end its header with
+      something to press — a page that answers "should I go?" and then
+      offers no way to act on the answer has stopped halfway. */
+  sourceHref?: string;
   /** The rest of the site's events, so an event page isn't a dead end: the
       only way on used to be the back link, since `related` is filled in by
       hand and most items don't have any. */
@@ -42,8 +48,14 @@ interface Props {
   /** Locale for dates on this page. Defaults to the network's English;
       a site writing in another language passes its own. */
   locale?: string;
+  /** The words this component puts on the page that don't come from the
+      item — headings, glance labels, button text. English by default, so
+      the eleven English sites pass nothing; a Spanish site passes its own
+      set and its chrome stops contradicting its copy. */
+  labels?: Partial<ArticleLabels>;
 }
-const { item, backHref, ticketHref, more = [], moreNews = [], newsBase = "/news/", eventsBase = "/events/", publisher, locale = "en-US"} = Astro.props;
+const { item, backHref, ticketHref, sourceHref, more = [], moreNews = [], newsBase = "/news/", eventsBase = "/events/", publisher, locale = "en-US", labels: labelOverrides } = Astro.props;
+const L = withLabels(labelOverrides);
 
 const todayIso = new Date().toISOString().slice(0, 10);
 const moreCards = more
@@ -83,9 +95,9 @@ const newsCards = moreNews
     imageAlt: n.imageAlt,
   }));
 const tail = moreCards.length > 0
-  ? { heading: "More events", cards: moreCards }
+  ? { heading: L.moreEvents, cards: moreCards }
   : newsCards.length > 0
-    ? { heading: "Latest news", cards: newsCards }
+    ? { heading: L.latestNews, cards: newsCards }
     : null;
 
 // Schema.org takes a full timestamp when the clock time is known — a
@@ -109,14 +121,12 @@ const duration = (() => {
   const [eh, em] = item.endTime.split(":").map(Number);
   const minutes = eh * 60 + em - (sh * 60 + sm);
   if (!Number.isFinite(minutes) || minutes <= 0) return undefined;
-  const h = Math.floor(minutes / 60);
-  const m = minutes % 60;
-  return [h && `${h} hour${h === 1 ? "" : "s"}`, m && `${m} minutes`].filter(Boolean).join(" ");
+  return L.durationValue(Math.floor(minutes / 60), minutes % 60);
 })();
 
 const currency = item.tickets?.currency ?? "AED";
 const money = (amount: number) =>
-  new Intl.NumberFormat("en-AE", { style: "currency", currency, maximumFractionDigits: 0 }).format(amount);
+  new Intl.NumberFormat(locale, { style: "currency", currency, maximumFractionDigits: 0 }).format(amount);
 const price = (() => {
   const t = item.tickets;
   if (!t || t.priceFrom === undefined) return undefined;
@@ -129,29 +139,29 @@ const price = (() => {
 // with a placeholder — an empty row is worse than a shorter list.
 const glance: { label: string; value: string; icon: string }[] = [
   item.startTime && {
-    label: "Time",
-    value: item.endTime ? `${item.startTime} – ${item.endTime}` : `From ${item.startTime}`,
+    label: L.time,
+    value: item.endTime ? `${item.startTime} – ${item.endTime}` : L.timeFrom(item.startTime),
     icon: ICONS.clock,
   },
-  duration && { label: "Duration", value: duration, icon: ICONS.hourglass },
-  { label: "Format", value: "In person", icon: ICONS.users },
+  duration && { label: L.duration, value: duration, icon: ICONS.hourglass },
+  { label: L.format, value: L.inPerson, icon: ICONS.users },
   (item.venue || item.city) && {
-    label: "Where",
+    label: L.where,
     value: [item.venue, item.city].filter(Boolean).join(", "),
     icon: ICONS.pin,
   },
-  price && { label: "Tickets", value: price, icon: ICONS.ticket },
+  price && { label: L.ticketsRow, value: price, icon: ICONS.ticket },
   item.tickets?.salesEnd && {
-    label: "Sales close",
+    label: L.salesClose,
     value: formatDate(item.tickets.salesEnd, locale),
     icon: ICONS.events,
   },
   item.tickets?.refundPolicy && {
-    label: "Refunds",
+    label: L.refunds,
     value: item.tickets.refundPolicy,
     icon: ICONS.money,
   },
-  item.organizer && { label: "Organizer", value: item.organizer, icon: ICONS.briefcase },
+  item.organizer && { label: L.organizer, value: item.organizer, icon: ICONS.briefcase },
 ].filter(Boolean) as { label: string; value: string; icon: string }[];
 
 // AggregateOffer when there's a range, plain Offer when there's one price —
@@ -209,11 +219,20 @@ const jsonLd =
     ...(offers ? { offers } : {}),
   };
 
+// The primary button. A seller if we have one; failing that, the page the
+// event was written from, which for most of these is the organiser's own
+// site and is where a ticket would be sold if there is one to sell.
+const action = (() => {
+  if (item.ticket && ticketHref) return { href: ticketHref, label: item.ticket.label ?? L.register };
+  if (sourceHref) return { href: sourceHref, label: L.tickets };
+  return undefined;
+})();
+
 const relatedItems = (item.related ?? []).map((card) => ({
   href: card.href,
   title: card.title, // VentureGrid's anchor title attribute
-  eyebrow: card.eyebrow ?? "Related",
-  status: "Read more",
+  eyebrow: card.eyebrow ?? L.related,
+  status: L.readMore,
   name: card.title,
   text: card.text,
   image: card.image,
@@ -237,30 +256,30 @@ const relatedItems = (item.related ?? []).map((card) => ({
           can't know, and a page still presenting a finished event as
           upcoming is the usual way these listings rot. */}
       <span class="event-article-ended" data-event-ended datetime={item.end ?? item.start} hidden>
-        Ended
+        {L.ended}
       </span>
     </p>
     <h1>{item.title}</h1>
     {(item.venue || item.city || item.organizer) && (
       <p class="event-article-details">
         {[item.venue, item.city].filter(Boolean).join(", ")}
-        {item.organizer && <span class="event-article-organizer"> &middot; Organized by {item.organizer}</span>}
+        {item.organizer && <span class="event-article-organizer"> &middot; {L.organizedBy} {item.organizer}</span>}
       </p>
     )}
   </header>
 
   <p class="event-article-actions">
-    {item.ticket && ticketHref && (
-      <a class="button" href={ticketHref} title={item.ticket.label ?? "Register"}>
+    {action && (
+      <a class="button" href={action.href} title={`${action.label} — ${item.title}`}>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={ICONS.ticket} /></svg>
-        {item.ticket.label ?? "Register"}
+        {action.label}
       </a>
     )}
     {/* Secondary to the ticket link, but present on every event: a plain
         .ics file, no account and no calendar service in between. */}
-    <a class="button button-secondary" href={`${backHref}${item.slug}.ics`} download title={`Add ${item.title} to your calendar`}>
+    <a class="button button-secondary" href={`${backHref}${item.slug}.ics`} download title={L.addToCalendarTitle(item.title)}>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={ICONS.events} /></svg>
-      Add to calendar
+      {L.addToCalendar}
     </a>
   </p>
 
@@ -276,7 +295,7 @@ const relatedItems = (item.related ?? []).map((card) => ({
         width={item.imageWidth}
         height={item.imageHeight}
       />
-      <ImageNote kind={item.imageKind} credit={item.imageCredit} />
+      <ImageNote kind={item.imageKind} credit={item.imageCredit} labels={L.imageKinds} />
     </figure>
   )}
 
@@ -287,7 +306,7 @@ const relatedItems = (item.related ?? []).map((card) => ({
       background. */}
   {item.outcome && item.outcome.length > 0 && (
     <section class="event-article-outcome">
-      <h2>What happened</h2>
+      <h2>{L.whatHappened}</h2>
       <div class="prose">
         {item.outcome.map((p) => <p set:html={p} />)}
       </div>
@@ -300,7 +319,7 @@ const relatedItems = (item.related ?? []).map((card) => ({
 
   {item.programme && item.programme.length > 0 && (
     <section class="event-programme">
-      <h2>Programme</h2>
+      <h2>{L.programme}</h2>
       <dl>
         {item.programme.map((track) => (
           <div class="event-programme-track">
@@ -314,7 +333,7 @@ const relatedItems = (item.related ?? []).map((card) => ({
 
   {item.audience && item.audience.length > 0 && (
     <section class="event-audience">
-      <h2>Who it's for</h2>
+      <h2>{L.whoItsFor}</h2>
       <ul>
         {item.audience.map((who) => <li>{who}</li>)}
       </ul>
@@ -329,12 +348,12 @@ const relatedItems = (item.related ?? []).map((card) => ({
 
   {item.geo && (
     <section class="locate">
-      <h2>Locate</h2>
+      <h2>{L.locate}</h2>
       <div class="locate-map">
         <iframe
           src={`https://www.openstreetmap.org/export/embed.html?bbox=${item.geo.lng - 0.02}%2C${item.geo.lat - 0.01}%2C${item.geo.lng + 0.02}%2C${item.geo.lat + 0.01}&layer=mapnik&marker=${item.geo.lat}%2C${item.geo.lng}`}
           loading="lazy"
-          title={`Map — ${item.geo.name}`}
+          title={L.mapTitle(item.geo.name)}
         />
       </div>
     </section>
@@ -354,22 +373,22 @@ const relatedItems = (item.related ?? []).map((card) => ({
 
   {relatedItems.length > 0 && (
     <section class="event-article-related">
-      <h2>Related</h2>
+      <h2>{L.related}</h2>
       <VentureGrid items={relatedItems} />
     </section>
   )}
 
-  {item.source && <SourceLine source={item.source} locale={locale} />}
+  {item.source && <SourceLine source={item.source} locale={locale} labels={L} />}
 
   {tail && (
     <section class="event-article-more">
       <h2>{tail.heading}</h2>
-      <FeedCards items={tail.cards} columns={tail.cards.length} locale={locale} />
+      <FeedCards items={tail.cards} columns={tail.cards.length} locale={locale} labels={L} />
     </section>
   )}
 
   <nav class="event-article-back">
-    <a href={backHref} title="All events">&larr; All events</a>
+    <a href={backHref} title={L.allEvents}>&larr; {L.allEvents}</a>
   </nav>
   <CountdownScript />
 </article>

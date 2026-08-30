@@ -21,6 +21,7 @@
 // one card has a cover and the next starts with a headline.
 import Photo from "./Photo.astro";
 import { formatDate } from "../date.ts";
+import { EN, type ArticleLabels } from "../labels.ts";
 
 export interface FeedCardItem {
   href?: string;
@@ -38,6 +39,11 @@ export interface FeedCardItem {
   imageFit?: "cover" | "contain";
   /** Events render a date cover and a countdown instead of an image. */
   event?: boolean;
+  /** Set when the picture already carries the date — a poster, a printed
+      programme. Then the cover is left alone, because two dates on one
+      card is worse than none. Nothing in the network sets it yet; the
+      generated covers deliberately carry no lettering at all. */
+  dateInImage?: boolean;
   /** Marks an event that has already happened. */
   past?: boolean;
 }
@@ -49,12 +55,27 @@ interface Props {
   /** Locale for dates on this page. Defaults to the network's English;
       a site writing in another language passes its own. */
   locale?: string;
+  /** Already merged by the article or block above; English on its own. */
+  labels?: ArticleLabels;
 }
-const { items, columns, locale = "en-US"} = Astro.props;
+const { items, columns, locale = "en-US", labels: L = EN } = Astro.props;
 
 // en-GB rather than en-US for the cover month only: it abbreviates
 // September as "Sept", which is what the network has always shown.
 const monthLocale = locale === "en-US" ? "en-GB" : locale;
+/* An event card carries the date cover. It used to lose it as soon as the
+   event had a picture, and the card came out as artwork with a headline —
+   the one thing a reader is deciding about, gone. Nothing about the block
+   changes when there is a picture: the same numbers at the same size in the
+   same place. Only what is behind it changes, from a flat panel of accent
+   tint to the picture under a wash of that same tint.
+
+   A picture that already has the date printed on it — a poster, a printed
+   programme — opts out, because two dates on one card is worse than none.
+   Nothing sets it yet; the covers deliberately carry no lettering at all.
+   News keeps its date in the meta line, where a filing stamp belongs. */
+const dated = (item: FeedCardItem) => Boolean(item.event && !item.dateInImage);
+
 const parts = (iso: string) => {
   const d = new Date(`${iso}T00:00:00Z`);
   return {
@@ -75,10 +96,11 @@ const parts = (iso: string) => {
     return (
       <Tag class="feed-card" href={item.href} title={item.href ? item.title : undefined}>
         {(item.image || item.event) && (
-          <div class:list={["feed-cover", !item.image && "feed-cover-date"]}>
-            {item.image ? (
+          <div class:list={["feed-cover", dated(item) && "feed-cover-date", dated(item) && item.image && "feed-cover-backed"]}>
+            {item.image && (
               <Photo class:list={[item.imageFit === "cover" && "feed-cover-fill"]} src={item.image} alt={item.imageAlt ?? ""} sizes="(max-width: 700px) 100vw, 380px" />
-            ) : (
+            )}
+            {dated(item) && (
               <div class="feed-date" aria-hidden="true">
                 <span class="feed-date-day">{when.day}</span>
                 <span class="feed-date-month">{when.month}</span>
@@ -94,7 +116,7 @@ const parts = (iso: string) => {
             {/* Filled in by CountdownScript where it's loaded; empty without
                 JavaScript, where the date above already says everything. */}
             {item.event && !item.past && <span class="feed-countdown" data-countdown datetime={item.date}></span>}
-            {item.past && <span class="feed-past">Past</span>}
+            {item.past && <span class="feed-past">{L.past}</span>}
           </p>
           <h3>{item.title}</h3>
           {item.text && <p class="feed-text">{item.text}</p>}
@@ -230,6 +252,31 @@ const parts = (iso: string) => {
   /* Qualified by the element: `.feed-cover img` above is one step more
      specific than a lone class, so the bare selector never won. */
   .feed-cover img.feed-cover-fill { object-fit: cover; }
+
+  /* The picture behind the date, rather than in place of it. Nothing about
+     the block itself changes — same numerals at the same size in the same
+     place — only what is behind them, from a flat panel of accent tint to
+     the cover art. The scrim over that art is neutral and as light as it can
+     be: enough to hold white at 4.5:1 over the brightest thing a cover has
+     put under it, and not a second colour cast on a picture that already has
+     its own. White rather than accent ink for the same reason — over a
+     photograph the ink is a colour on a colour, and in one of the two themes
+     it is the wrong one. */
+  .feed-cover-backed .feed-date::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* 0.64, not less: the pale covers are the ones that set this floor —
+       a cream ground under a lighter scrim measured 3.3:1 against white. */
+    background: rgb(0 0 0 / 0.64);
+  }
+  .feed-cover-backed .feed-date {
+    position: absolute;
+    inset: 0;
+    justify-content: center;
+    color: #fff;
+  }
+  .feed-cover-backed .feed-date > * { position: relative; }
 
   .feed-cover-date {
     background: var(--accent-tint);

@@ -13,6 +13,9 @@ export default defineConfig({
   site: "https://lnd.lol",
   integrations: [
     sitemap({
+      // /go/ hops are noindex and disallowed in robots.txt; a sitemap entry
+      // would contradict both.
+      filter: (page) => !page.includes("/go/"),
       serialize(item) {
         const { hostname, pathname } = new URL(item.url);
         const date = lastmod[hostname]?.[pathname];

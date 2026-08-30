@@ -8,10 +8,19 @@
   },
   "covers": {
     "nyc42": {
-      "new-york-comic-con-2026": "a bold starburst explosion shape breaking across angled comic panel gutters, dense halftone dot field radiating outward, one blank speech balloon silhouette",
-      "village-halloween-parade-2026": "a procession of paper lantern and mask silhouettes along a diagonal, a crescent moon disc above",
+      "new-york-comic-con-2026": {
+        "subject": "an irregular arrangement of comic book panels of markedly different sizes and tones, tilted a few degrees off square, one blank speech balloon overlapping two of them, halftone dot fields inside three panels",
+        "detail": "nine or ten panels, never a tidy grid and never four equal squares — tall narrow ones beside wide short ones, each a different paper tone across amber, ochre, cream and deep brown, the whole arrangement rotated slightly so no edge is parallel to the frame. Wide gutters with hard shadow between the sheets, one panel torn along a diagonal, a starburst shape breaking out from behind the panels at the lower left rather than dominating the centre"
+      },
+      "village-halloween-parade-2026": {
+        "subject": "a procession of paper lantern and mask silhouettes along a diagonal, a crescent moon disc above",
+        "detail": "built as a long diagonal procession of lantern and mask silhouettes climbing from the lower left to the upper right, each figure a flat sheet slightly overlapping the next, a large crescent disc high on the right, a low band of torn skyline paper along the bottom"
+      },
       "open-house-new-york-weekend-2026": "a stack of building cross-sections cut from paper, staircases and floor plates exposed, one rooftop water tower silhouette",
-      "broadway-week-fall-2026": "a row of theatre marquee canopy shapes, layered ticket rectangles fanned across the foreground",
+      "broadway-week-fall-2026": {
+        "subject": "a wide fan of overlapping ticket rectangles across the lower half, three long horizontal rows of small round bulb discs above them, tall narrow curtain strips closing both sides of the frame",
+        "detail": "entirely abstract and flat — no building, no facade, no marquee board, no perspective and no floor. Every element is a separate sheet of matte paper lying almost flat against the ground with a soft shadow under its edge: the tickets are plain unmarked rectangles fanned like a dealt hand, the bulbs are evenly spaced circles in three straight rows, the curtains are simple vertical paper strips with folded edges. Nothing in the picture is a sign or a board that could carry writing"
+      },
       "broadway-week-harry-potter": "a tall stage proscenium arch, heavy curtain folds, one narrow diagonal beam of light crossing it",
       "broadway-week-hadestown": "a staircase descending into darkness, a single warm glowing lamp disc, smoky layered bands",
       "broadway-week-stranger-things": "an inverted forest of bare tree silhouettes mirrored along the horizon, a thin jagged rift of light",
@@ -22,24 +31,48 @@
       "broadway-week-chicago": "art deco fan and sunburst shapes, a bentwood chair silhouette, stacked jazz-age chevrons"
     },
     "ldn": {
-      "london-design-festival-2026": "a modular grid of abstract furniture and object silhouettes, some cells empty, precise alignment",
+      "london-design-festival-2026": {
+        "subject": "a modular grid of abstract furniture and object silhouettes, some cells empty, precise alignment",
+        "detail": "built as a precise modular grid of nine cells, each holding one abstract object silhouette in a different paper weight, three cells deliberately empty, hairline gutters between them and a single cell lifted off the ground with a hard shadow beneath it"
+      },
       "open-house-festival-2026": "layered terraced building facades in receding planes, one door standing open with light behind it",
       "totally-thames-2026": "a wide river ribbon curving through the frame, two bridge arch spans crossing it, small boat shapes",
-      "lord-mayors-show-2026": "a ceremonial coach wheel and ornate carriage lantern shapes, layered bunting pennants above",
-      "notting-hill-carnival-2026": "tall paper feather plumes and layered ribbon streamers rising in a diagonal sweep, scattered confetti squares"
+      "lord-mayors-show-2026": {
+        "subject": "a ceremonial coach wheel and ornate carriage lantern shapes, layered bunting pennants above",
+        "detail": "built around one large ornate coach wheel dominating the right half in cut paper spokes, a carriage lantern shape to its left, three tiers of layered bunting pennants strung across the upper third, deep shadow separating each tier"
+      },
+      "notting-hill-carnival-2026": {
+        "subject": "tall paper feather plumes and layered ribbon streamers rising in a diagonal sweep, scattered confetti squares",
+        "detail": "built as a broad diagonal sweep of tall feather plumes and ribbon streamers rising from the lower left, each plume a stack of three paper tones, a scatter of small square confetti across the upper right, the ground kept almost empty"
+      }
     },
     "lnd": {
-      "giant-summer-flea-olympic-park": "a row of striped market stall awnings, stacked crates and hanging bunting triangles",
+      "giant-summer-flea-olympic-park": {
+        "subject": "a row of striped market stall awnings, stacked crates and hanging bunting triangles",
+        "detail": "built as a row of five striped stall awnings in receding perspective, scalloped edges, stacked crates in the foreground shadow, a string of bunting triangles crossing above them, one awning catching light"
+      },
       "the-big-brine-hackney-bridge": "rows of paper preserving jars with domed lids on a shelf, cut lemon and cucumber discs beside them"
     },
     "cmx": {
-      "gran-premio-ciudad-de-mexico-2026": "a racing circuit ribbon looping through the frame, chequered pattern fading at one edge, speed chevrons",
-      "gran-desfile-dia-de-muertos-2026": "layered papel picado banners with cut geometric patterns, marigold flower discs massed below",
+      "gran-premio-ciudad-de-mexico-2026": {
+        "subject": "a racing circuit ribbon looping through the frame, chequered pattern fading at one edge, speed chevrons",
+        "detail": "built as one wide circuit ribbon looping through the frame in a flat figure of eight, the ribbon cut from three tones of paper so its banking reads as depth, a chequered pattern dissolving into separate squares at the right edge, speed chevrons stacked along the lower left"
+      },
+      "gran-desfile-dia-de-muertos-2026": {
+        "subject": "layered papel picado banners with cut geometric patterns, marigold flower discs massed below",
+        "detail": "built as four tiers of papel picado banners strung across the upper two thirds, each tier a different cut pattern and paper tone with shadow falling on the tier behind, a dense massed field of marigold discs filling the lower third"
+      },
       "del-color-de-la-sandia-cenart": "geometric watermelon slice wedges arranged as a fan, seeds as small dots, bold flat shapes"
     },
     "mxo": {
-      "fil-guadalajara-2026": "open books cut from flat paper, pages fanned into a wide arch spanning the frame, a bright doorway shape beneath the arch",
-      "filij-2026": "paper boats and kites folded from book pages rising on a diagonal, playful scattered confetti squares"
+      "fil-guadalajara-2026": {
+        "subject": "open books cut from flat paper, pages fanned into a wide arch spanning the frame, a bright doorway shape beneath the arch",
+        "detail": "built as open books cut from flat paper and stacked into a wide architectural arch spanning the frame, pages fanning outward as separate overlapping sheets, a tall bright doorway shape beneath the arch, the stacks receding in three depths"
+      },
+      "filij-2026": {
+        "subject": "paper boats and kites folded from book pages rising on a diagonal, playful scattered confetti squares",
+        "detail": "built as folded paper boats and kites rising on a strong diagonal from the lower left to the upper right, each one a separate sheet with a visible fold line and cast shadow, trailing kite strings as thin cut strips, scattered confetti squares in the upper corner"
+      }
     }
   }
 }

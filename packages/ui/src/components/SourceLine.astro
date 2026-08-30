@@ -8,24 +8,27 @@
 // to tell a fact confirmed this week from one left over from last year.
 import type { Source } from "@dst/content/types";
 import { formatDate } from "../date.ts";
+import { EN, type ArticleLabels } from "../labels.ts";
 
 interface Props {
   source: Source;
   /** Locale for the checked-on date. Defaults to the network's English. */
   locale?: string;
+  /** Already merged by the article above; English when rendered alone. */
+  labels?: ArticleLabels;
 }
-const { source, locale = "en-US"} = Astro.props;
+const { source, locale = "en-US", labels: L = EN } = Astro.props;
 ---
 <p class="source-line">
-  <span>Source: {source.name}</span>
+  <span>{L.source}: {source.name}</span>
   {source.verifiedOn && (
     <>
       <span class="source-line-sep" aria-hidden="true">·</span>
       {/* Spelled out rather than left as "verified": readers — and review
           tools — kept reading a later check date as a contradiction with
           the publication date instead of as what it is. */}
-      <span class="source-line-checked" title={`Last checked against ${source.name} on this date`}>
-        checked against the source <time datetime={source.verifiedOn}>{formatDate(source.verifiedOn, locale)}</time>
+      <span class="source-line-checked" title={L.checkedTitle(source.name)}>
+        {L.checkedAgainstSource} <time datetime={source.verifiedOn}>{formatDate(source.verifiedOn, locale)}</time>
       </span>
     </>
   )}

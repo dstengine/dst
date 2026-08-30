@@ -34,7 +34,18 @@ function fold(line: string): string {
 // dst is deliberately absent: its UIDs have gone out as dst.dst.llc, and a
 // changed UID reads as a second event in a calendar that already has the
 // first one.
-const UID_HOSTS: Record<string, string> = { fwf: "fwf.lol", musical: "musical.today" };
+const UID_HOSTS: Record<string, string> = {
+  fwf: "fwf.lol",
+  musical: "musical.today",
+  // The five city experiments, each on its own domain rather than under
+  // dst.llc — and deliberately not linked to it. A UID naming the group
+  // would say in a calendar file what the sites do not say on the page.
+  nyc42: "nyc42.lol",
+  ldn: "ldn.lol",
+  lnd: "lnd.lol",
+  cmx: "cmx.lol",
+  mxo: "mxo.lol",
+};
 
 const stampUtc = (d: Date) => d.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
 const dateOnly = (iso: string) => iso.replace(/-/g, "");
