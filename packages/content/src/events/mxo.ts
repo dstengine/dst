@@ -2,6 +2,64 @@ import type { EventItem } from "../types.ts";
 
 export const items: EventItem[] = [
   {
+    slug: "fil-guadalajara-2026",
+    site: "mxo",
+    title: "FIL Guadalajara 2026: 40 años, Italia invitada",
+    summary:
+      "La Feria Internacional del Libro de Guadalajara cumple 40 ediciones del 28 de noviembre al 6 de diciembre, con Italia como país Invitado de Honor y 61 autores italianos en Expo Guadalajara.",
+    start: "2026-11-28",
+    end: "2026-12-06",
+    utcOffset: "-06:00",
+    city: "Guadalajara",
+    venue: "Expo Guadalajara, Avenida Mariano Otero 1499, Colonia Verde Valle, Guadalajara, Jalisco",
+    geo: { lat: 20.654251, lon: -103.391867 },
+    category: "Ferias",
+    organizer: "Universidad de Guadalajara",
+    source: {
+      name: "FIL Guadalajara",
+      url: "https://www.fil.com.mx/",
+      verifiedOn: "2026-08-30",
+    },
+    programme: [
+      {
+        heading: "Pabellón de Italia",
+        text: "El corazón del programa del país Invitado de Honor: más de treinta editoriales italianas exponen ahí, y hay una librería con venta de libros de autores italianos en su lengua original y en traducción al español.",
+      },
+      {
+        heading: "61 autoras y autores italianos",
+        text: "De la narrativa, el ensayo, la ilustración, el cómic y la literatura infantil y juvenil. Entre ellos Alessandro Baricco, Viola Ardone, Stefania Auci, Claudia Durastanti, Milo Manara, Francesca Melandri, Veronica Raimo y Emanuele Coccia.",
+      },
+      {
+        heading: "Diez exposiciones por toda la ciudad",
+        text: "La participación italiana no se queda en el recinto: exposiciones, conciertos, cine, gastronomía e intercambios académicos se extienden por Guadalajara durante los nueve días.",
+      },
+      {
+        heading: "Premio de Literaturas Indígenas de América",
+        text: "Se entrega el 4 de diciembre a las 16:00 al poeta guatemalteco garífuna Wingston González por Un poquito más allá: 300 mil pesos y una escultura del artista jalisciense Camilo Ramírez.",
+      },
+      {
+        heading: "Venta nocturna del viernes 4",
+        text: "Ese viernes la Feria extiende su horario hasta las 23:00 horas; el cierre de ventas es a esa hora y el recinto cierra a las 23:30.",
+      },
+    ],
+    body: [
+      "La <strong>Feria Internacional del Libro de Guadalajara</strong> llega a su <strong>edición 40</strong> del <strong>28 de noviembre al 6 de diciembre de 2026</strong> en <strong>Expo Guadalajara</strong>. El país Invitado de Honor es <strong>Italia</strong>, que vuelve a ocupar ese lugar <strong>dieciocho años</strong> después de su última participación",
+      "## Una feria de negocios a la que el público entra",
+      "Es el rasgo que la distingue de Fráncfort, de Bolonia y de casi cualquier otra feria grande del mundo: la FIL fue fundada por la <strong>Universidad de Guadalajara</strong> como una feria para profesionales <em>donde el público es bienvenido</em>. Los agentes literarios negocian derechos de traducción en los mismos pasillos por los que camina alguien que vino a comprar una novela",
+      "Las cifras de un año normal explican para qué sirve esa mezcla: más de <strong>900 escritores</strong>, <strong>18 mil profesionales</strong> del sector editorial, <strong>2 800 casas editoriales</strong> de más de <strong>60 países</strong> y un público cercano al <strong>millón de visitantes</strong>. En más de <strong>43 mil metros cuadrados</strong> se desarrollan más de <strong>tres mil actividades</strong> a lo largo de nueve días",
+      "## Por qué importa que el invitado sea Italia",
+      "El español es el <strong>principal mercado de exportación de derechos de traducción</strong> de la industria editorial italiana, y concentró el <strong>15 por ciento</strong> de sus ventas en 2024. No es un gesto diplomático: es la feria donde ese negocio se hace",
+      "> Mostraremos en México la Italia de hoy y la vitalidad de su propuesta editorial mediante un programa que reunirá a más de 60 autoras y autores, jóvenes y consagrados, de la narrativa, el ensayo, la ilustración, el cómic y la literatura infantil y juvenil.\n— Innocenzo Cipolletta, presidente de la Asociación Italiana de Editores",
+      "El programa italiano se articula alrededor de una frase de <strong>Umberto Eco</strong> &mdash; «el mundo nos habla como un gran libro» &mdash; a diez años de su muerte. Se presentó en julio en el Palacio de la Farnesina, en Roma, con el ministro de Asuntos Exteriores Antonio Tajani, el presidente de la FIL José Trinidad Padilla López y la directora general Marisol Schulz Manaut",
+      "## Cuándo ir, si se puede elegir",
+      "Los dos fines de semana son los días llenos. Entre semana el recinto respira, y es cuando conviene ir si el plan es mirar mesas y no sólo llegar a una presentación concreta. El <strong>viernes 4 de diciembre</strong> hay <strong>venta nocturna</strong>: la Feria abre hasta las <strong>23:00</strong> horas, con cierre del recinto a las 23:30",
+      "## Cómo llegar",
+      "Expo Guadalajara está en <strong>Avenida Mariano Otero 1499</strong>, colonia Verde Valle. Es el recinto ferial de la ciudad, al sur del centro, sobre una avenida por la que pasan varias rutas del transporte urbano; en los días de FIL el tránsito alrededor es el peor del año y conviene llegar sin coche",
+    ],
+    expertise:
+      "Nueve días y tres mil actividades no se recorren improvisando. Lo que funciona es elegir dos o tres presentaciones del programa oficial, anotarlas con hora y salón, y dejar el resto del día para caminar los pasillos: el hallazgo en la FIL casi siempre es una editorial pequeña que uno no buscaba, no el autor famoso al que no se alcanzó a entrar",
+  },
+  {
     slug: "filij-2026",
     site: "mxo",
     title: "FILIJ 2026: el libro infantil y juvenil",
