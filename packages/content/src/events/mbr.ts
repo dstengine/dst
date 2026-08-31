@@ -4,6 +4,11 @@ export const items: EventItem[] = [
   {
     slug: "dubai-world-cup-2027",
     site: "mbr",
+    image: "/covers/dubai-world-cup-2027.jpg",
+    imageAlt: "Horses in cut-paper silhouette galloping past a long grandstand",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Dubai World Cup 2027",
     summary:
       "The world's richest horse race returns to Meydan Racecourse for its 30th running, with a $30.5M purse — the single biggest draw on MBR City's calendar.",

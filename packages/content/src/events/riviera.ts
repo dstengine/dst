@@ -4,6 +4,11 @@ export const items: EventItem[] = [
   {
     slug: "dubai-fitness-challenge-2026",
     site: "riviera",
+    image: "/covers/dubai-fitness-challenge-2026.jpg",
+    imageAlt: "A running track looping through a field of low city blocks, seen from above",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Dubai Fitness Challenge 2026",
     summary:
       "The city-wide 30x30 challenge runs October 31 to November 29 — 30 minutes of activity a day for 30 days, with Dubai Run, Dubai Ride and free classes across the city.",

@@ -4,6 +4,11 @@ export const items: EventItem[] = [
   {
     slug: "international-property-show-2026",
     site: "palmcentral",
+    image: "/covers/international-property-show-2026.jpg",
+    imageAlt: "A row of small paper building models with a large key lying beside them",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     // Layout appends " — Palm Central, Palm Jebel Ali", leaving 29 characters.
     title: "International Property Show",
     summary:

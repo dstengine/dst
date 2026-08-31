@@ -6,7 +6,13 @@
     "cmx": "warm cream ground with magenta and deep plum paper, small gold highlights",
     "mxo": "deep forest green ground with terracotta and warm cream paper",
     "dst": "deep slate blue ground with pale grey-blue and warm cream paper, one small brass accent",
-    "fwf": "deep indigo ground with periwinkle and pale lilac paper, small cream highlights"
+    "fwf": "deep indigo ground with periwinkle and pale lilac paper, small cream highlights",
+    "eco": "deep forest green ground with sage and moss paper, warm cream highlights",
+    "llc": "deep teal-green ground with pale jade and warm cream paper, one small brass accent",
+    "mbr": "deep teal ground with pale aqua and chalk white paper, small sand highlights",
+    "palmcentral": "warm sand ground with terracotta and burnt orange paper, small cream highlights",
+    "riviera": "clear mid-blue ground with pale sky and chalk white paper, small sand highlights",
+    "visas": "warm sand ground with tobacco brown and ochre paper, small cream highlights"
   },
   "covers": {
     "nyc42": {
@@ -64,7 +70,8 @@
         "subject": "layered papel picado banners with cut geometric patterns, marigold flower discs massed below",
         "detail": "built as four tiers of papel picado banners strung across the upper two thirds, each tier a different cut pattern and paper tone with shadow falling on the tier behind, a dense massed field of marigold discs filling the lower third"
       },
-      "del-color-de-la-sandia-cenart": "geometric watermelon slice wedges arranged as a fan, seeds as small dots, bold flat shapes"
+      "del-color-de-la-sandia-cenart": "geometric watermelon slice wedges arranged as a fan, seeds as small dots, bold flat shapes",
+      "monsivais-en-el-estanquillo": "a loose constellation of small cut-paper silhouettes floating in irregular rows — a hat, a bicycle, a guitar, a pair of round spectacles, a dog — each casting its own soft shadow on a plain ground"
     },
     "mxo": {
       "fil-guadalajara-2026": {
@@ -75,6 +82,36 @@
         "subject": "paper boats and kites folded from book pages rising on a diagonal, playful scattered confetti squares",
         "detail": "built as folded paper boats and kites rising on a strong diagonal from the lower left to the upper right, each one a separate sheet with a visible fold line and cast shadow, trailing kite strings as thin cut strips, scattered confetti squares in the upper corner"
       }
+    },
+    "dst": {
+      "blockchain-life-dubai-2026": "a wide arena bowl seen from directly above as concentric paper rings, a chain of small linked hexagons running straight across the middle",
+      "gitex-global-dubai-2026": "a wide domed exhibition hall in flat paper with a latticed roof, a broad avenue of small pavilion shapes leading up to it",
+      "step-conference-dubai-2026": "a flight of wide flat paper steps rising across the frame, each tread a different tone, a cluster of low office blocks standing behind them",
+      "world-governments-summit-2027": "a large circular table cut from flat paper seen from above with evenly spaced seats around its rim, a faint globe grid across its surface"
+    },
+    "eco": {
+      "wetex-2026": "a large water droplet shape overlapping a sun disc, slim turbine blades and pipe forms in layered paper below them"
+    },
+    "fwf": {
+      "future-world-forum-dubai-2026": "a wide circular forum floor in layered paper seen at a low angle, concentric rings of seating, a tall slim tower shape rising at its centre",
+      "dubai-future-forum-2026": "a smooth upright paper torus ring standing on a low mound, its surface completely plain and unmarked, small palm shapes at its base, no ornament and no writing on the ring",
+      "gitex-global-2026": "a grid of small pavilion roofs in flat paper seen from above with wide aisles between them, one larger domed roof at the centre",
+      "proptech-connect-middle-east-2026": "a cluster of flat paper tower blocks with thin connecting lines and small round nodes strung between their rooftops"
+    },
+    "llc": {
+      "gitex-global-2026": "a dense grid of small square pavilion platforms in flat paper seen from a high angle, wide aisles crossing between them, a ribbed arched canopy spanning overhead, no walls, no framed panels, no posters"
+    },
+    "mbr": {
+      "dubai-world-cup-2027": "a row of horse silhouettes in flat paper galloping in profile across the frame, layered bands of turf beneath them, a long low grandstand roof behind"
+    },
+    "palmcentral": {
+      "international-property-show-2026": "a row of small building models of different heights standing on a wide flat paper table, a large key shape lying beside them"
+    },
+    "riviera": {
+      "dubai-fitness-challenge-2026": "a looping running-track ribbon of flat paper winding through a dense field of low city blocks seen from above, small round markers spaced along it, trees scattered between the blocks"
+    },
+    "visas": {
+      "irex-residency-citizenship-conclave-dubai-2027": "a wide arc of layered paper landmass shapes with a single small house standing on the nearest one, a thin dotted line curving between two of the shapes, no globe, no map, no labels of any kind"
     }
   },
   "news": {

@@ -384,6 +384,54 @@
         ]
       ]
     },
+    "/covers/monsivais-en-el-estanquillo.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/monsivais-en-el-estanquillo-480.avif"
+        ],
+        [
+          768,
+          "/covers/monsivais-en-el-estanquillo-768.avif"
+        ],
+        [
+          1024,
+          "/covers/monsivais-en-el-estanquillo-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/monsivais-en-el-estanquillo-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/monsivais-en-el-estanquillo-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/monsivais-en-el-estanquillo-480.webp"
+        ],
+        [
+          768,
+          "/covers/monsivais-en-el-estanquillo-768.webp"
+        ],
+        [
+          1024,
+          "/covers/monsivais-en-el-estanquillo-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/monsivais-en-el-estanquillo-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/monsivais-en-el-estanquillo-1536.webp"
+        ]
+      ]
+    },
     "/covers/museo-del-gato-reforma.jpg": {
       "width": 1536,
       "height": 864,
@@ -578,6 +626,54 @@
     }
   },
   "dst.llc": {
+    "/covers/blockchain-life-dubai-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/blockchain-life-dubai-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/blockchain-life-dubai-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/blockchain-life-dubai-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/blockchain-life-dubai-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/blockchain-life-dubai-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/blockchain-life-dubai-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/blockchain-life-dubai-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/blockchain-life-dubai-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/blockchain-life-dubai-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/blockchain-life-dubai-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/dubai-tokenised-property-secondary-market.jpg": {
       "width": 1536,
       "height": 864,
@@ -626,6 +722,54 @@
         ]
       ]
     },
+    "/covers/gitex-global-dubai-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/gitex-global-dubai-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/gitex-global-dubai-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/gitex-global-dubai-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/gitex-global-dubai-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/gitex-global-dubai-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/gitex-global-dubai-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/gitex-global-dubai-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/gitex-global-dubai-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/gitex-global-dubai-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/gitex-global-dubai-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/gitex-moves-to-expo-city-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -671,6 +815,102 @@
         [
           1536,
           "/covers/gitex-moves-to-expo-city-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/step-conference-dubai-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/step-conference-dubai-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/step-conference-dubai-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/step-conference-dubai-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/step-conference-dubai-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/step-conference-dubai-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/step-conference-dubai-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/step-conference-dubai-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/step-conference-dubai-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/step-conference-dubai-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/step-conference-dubai-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/world-governments-summit-2027.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/world-governments-summit-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/world-governments-summit-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/world-governments-summit-2027-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/world-governments-summit-2027-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/world-governments-summit-2027-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/world-governments-summit-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/world-governments-summit-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/world-governments-summit-2027-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/world-governments-summit-2027-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/world-governments-summit-2027-1536.webp"
         ]
       ]
     },
@@ -844,6 +1084,54 @@
     }
   },
   "eco.dst.llc": {
+    "/covers/wetex-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/wetex-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/wetex-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/wetex-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/wetex-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/wetex-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/wetex-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/wetex-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/wetex-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/wetex-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/wetex-2026-1536.webp"
+        ]
+      ]
+    },
     "/stories/douglas-fir-shilovka-01.jpg": {
       "width": 975,
       "height": 1280,
@@ -974,6 +1262,54 @@
     }
   },
   "fwf.lol": {
+    "/covers/dubai-future-forum-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/dubai-future-forum-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/dubai-future-forum-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dubai-future-forum-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/dubai-future-forum-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/dubai-future-forum-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dubai-future-forum-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/dubai-future-forum-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dubai-future-forum-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/dubai-future-forum-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/dubai-future-forum-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/dubai-land-department-tokenisation-pilot.jpg": {
       "width": 1536,
       "height": 864,
@@ -1067,6 +1403,150 @@
         [
           1536,
           "/covers/dubai-second-in-bcg-intelligent-cities-index-1536.webp"
+        ]
+      ]
+    },
+    "/covers/future-world-forum-dubai-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/future-world-forum-dubai-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/future-world-forum-dubai-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/future-world-forum-dubai-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/future-world-forum-dubai-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/future-world-forum-dubai-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/future-world-forum-dubai-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/future-world-forum-dubai-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/future-world-forum-dubai-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/future-world-forum-dubai-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/future-world-forum-dubai-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/gitex-global-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/gitex-global-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/gitex-global-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/gitex-global-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/gitex-global-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/gitex-global-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/gitex-global-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/gitex-global-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/gitex-global-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/gitex-global-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/gitex-global-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/proptech-connect-middle-east-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/proptech-connect-middle-east-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/proptech-connect-middle-east-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/proptech-connect-middle-east-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/proptech-connect-middle-east-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/proptech-connect-middle-east-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/proptech-connect-middle-east-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/proptech-connect-middle-east-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/proptech-connect-middle-east-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/proptech-connect-middle-east-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/proptech-connect-middle-east-2026-1536.webp"
         ]
       ]
     },
@@ -1681,6 +2161,56 @@
       ]
     }
   },
+  "llc.dst.llc": {
+    "/covers/gitex-global-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/gitex-global-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/gitex-global-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/gitex-global-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/gitex-global-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/gitex-global-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/gitex-global-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/gitex-global-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/gitex-global-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/gitex-global-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/gitex-global-2026-1536.webp"
+        ]
+      ]
+    }
+  },
   "lnd.lol": {
     "/covers/bank-holiday-tube-and-tfl-closures.jpg": {
       "width": 1536,
@@ -1919,6 +2449,56 @@
         [
           1536,
           "/covers/the-big-brine-hackney-bridge-1536.webp"
+        ]
+      ]
+    }
+  },
+  "mbr.dst.llc": {
+    "/covers/dubai-world-cup-2027.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/dubai-world-cup-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/dubai-world-cup-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dubai-world-cup-2027-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/dubai-world-cup-2027-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/dubai-world-cup-2027-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dubai-world-cup-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/dubai-world-cup-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dubai-world-cup-2027-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/dubai-world-cup-2027-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/dubai-world-cup-2027-1536.webp"
         ]
       ]
     }
@@ -6730,6 +7310,54 @@
     }
   },
   "palmcentral.dst.llc": {
+    "/covers/international-property-show-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/international-property-show-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/international-property-show-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/international-property-show-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/international-property-show-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/international-property-show-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/international-property-show-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/international-property-show-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/international-property-show-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/international-property-show-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/international-property-show-2026-1536.webp"
+        ]
+      ]
+    },
     "/palmcentral.jpg": {
       "width": 1600,
       "height": 900,
@@ -6780,6 +7408,54 @@
     }
   },
   "riviera.dst.llc": {
+    "/covers/dubai-fitness-challenge-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/dubai-fitness-challenge-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/dubai-fitness-challenge-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dubai-fitness-challenge-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/dubai-fitness-challenge-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/dubai-fitness-challenge-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dubai-fitness-challenge-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/dubai-fitness-challenge-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dubai-fitness-challenge-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/dubai-fitness-challenge-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/dubai-fitness-challenge-2026-1536.webp"
+        ]
+      ]
+    },
     "/riviera.jpg": {
       "width": 1440,
       "height": 720,
@@ -6865,6 +7541,56 @@
         [
           1600,
           "/venues/homebrew-1600.webp"
+        ]
+      ]
+    }
+  },
+  "visas.dst.llc": {
+    "/covers/irex-residency-citizenship-conclave-dubai-2027.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/irex-residency-citizenship-conclave-dubai-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/irex-residency-citizenship-conclave-dubai-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/irex-residency-citizenship-conclave-dubai-2027-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/irex-residency-citizenship-conclave-dubai-2027-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/irex-residency-citizenship-conclave-dubai-2027-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/irex-residency-citizenship-conclave-dubai-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/irex-residency-citizenship-conclave-dubai-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/irex-residency-citizenship-conclave-dubai-2027-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/irex-residency-citizenship-conclave-dubai-2027-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/irex-residency-citizenship-conclave-dubai-2027-1536.webp"
         ]
       ]
     }

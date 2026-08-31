@@ -4,6 +4,11 @@ export const items: EventItem[] = [
   {
     slug: "wetex-2026",
     site: "eco",
+    image: "/covers/wetex-2026.jpg",
+    imageAlt: "A water droplet overlapping a sun disc, with turbine blades and hills in layered paper below",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "WETEX 2026",
     summary:
       "DEWA's Water, Energy, Technology and Environment Exhibition runs October 20–22, 2026 at Dubai World Trade Centre — the region's largest event across energy, water and sustainability.",

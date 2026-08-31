@@ -4,6 +4,11 @@ export const items: EventItem[] = [
   {
     slug: "irex-residency-citizenship-conclave-dubai-2027",
     site: "visas",
+    image: "/covers/irex-residency-citizenship-conclave-dubai-2027.jpg",
+    imageAlt: "Two paper landmasses with a small house on one and a dotted arc curving to the other",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     // Layout appends " — Dubai Residency & Golden Visa", leaving 28 characters.
     title: "IREX Residency Conclave",
     summary:

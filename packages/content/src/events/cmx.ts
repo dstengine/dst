@@ -154,6 +154,11 @@ export const items: EventItem[] = [
   {
     slug: "monsivais-en-el-estanquillo",
     site: "cmx",
+    image: "/covers/monsivais-en-el-estanquillo.jpg",
+    imageAlt: "Siluetas de papel flotando en filas: un sombrero, una bicicleta, una guitarra, unos anteojos y un perro",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Porque ahora pienso en ti, más que ayer, mucho más",
     summary:
       "Cinco instalaciones inmersivas de Betsabeé Romero sobre el universo de Carlos Monsiváis: la primera instalación que el Museo del Estanquillo alberga en sus casi veinte años.",

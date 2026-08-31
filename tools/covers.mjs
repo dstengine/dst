@@ -79,7 +79,13 @@ async function generate(site, slug, entry) {
   if (fs.existsSync(out) && !FORCE) return false;
   if (DRY) { console.log(`would generate ${site}/${slug} (${tier.model})`); return tier; }
 
-  const prompt = [subject, detail, PROMPTS.palettes[site], STYLE].filter(Boolean).join(". ");
+  // .filter(Boolean) would have quietly dropped a missing palette and
+  // produced a cover in whatever colours the model felt like, which is the
+  // one fault nobody notices until the card is on the page next to six that
+  // match. A site without a palette is a mistake, not a default.
+  const palette = PROMPTS.palettes[site];
+  if (!palette) throw new Error(`no palette for ${site} — add one to covers.json`);
+  const prompt = [subject, detail, palette, STYLE].filter(Boolean).join(". ");
   const res = await fetch(`https://fal.run/${tier.model}`, {
     method: "POST",
     headers: { Authorization: "Key " + KEY, "Content-Type": "application/json" },

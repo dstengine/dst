@@ -11,6 +11,11 @@ export const items: EventItem[] = [
   {
     slug: "future-world-forum-dubai-2026",
     site: "fwf",
+    image: "/covers/future-world-forum-dubai-2026.jpg",
+    imageAlt: "A circular forum floor in layered paper with concentric rings of seating",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Future World Forum Dubai 2026",
     summary:
       "A one-day conference and expo on urban technology, listed for 16 November 2026 in Dubai, 10:00–17:30. Tickets run from USD 49 and sales close on 25 September 2026.",
@@ -80,6 +85,11 @@ export const items: EventItem[] = [
   {
     slug: "dubai-future-forum-2026",
     site: "fwf",
+    image: "/covers/dubai-future-forum-2026.jpg",
+    imageAlt: "A plain paper ring standing upright on a low mound between two pale panels",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Dubai Future Forum 2026",
     summary:
       "The Dubai Future Foundation's gathering of futurists at the Museum of the Future, 17–18 November 2026 — the day after Future World Forum, and the event it is most often confused with.",
@@ -110,6 +120,11 @@ export const items: EventItem[] = [
   {
     slug: "gitex-global-2026",
     site: "fwf",
+    image: "/covers/gitex-global-2026.jpg",
+    imageAlt: "A grid of pavilion roofs seen from above with a domed hall at the centre",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "GITEX Global 2026",
     summary:
       "The region's largest technology exhibition, 7–11 December 2026 at Dubai Exhibition Centre — the smart-city and government-technology floor that the smaller forums orbit.",
@@ -139,6 +154,11 @@ export const items: EventItem[] = [
   {
     slug: "proptech-connect-middle-east-2026",
     site: "fwf",
+    image: "/covers/proptech-connect-middle-east-2026.jpg",
+    imageAlt: "Paper tower blocks with thin lines and nodes strung between their rooftops",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "PropTech Connect Middle East 2026",
     summary:
       "Held 4–5 February 2026 at the Grand Hyatt Dubai with the Dubai Land Department, drawing more than 4,000 industry professionals. Past — kept here for what it showed.",

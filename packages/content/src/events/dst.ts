@@ -78,6 +78,11 @@ export const items: EventItem[] = [
   {
     slug: "blockchain-life-dubai-2026",
     site: "dst",
+    image: "/covers/blockchain-life-dubai-2026.jpg",
+    imageAlt: "An arena bowl seen from above as concentric paper rings, a chain of linked hexagons across the middle",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Blockchain Life 2026",
     summary:
       "The 17th edition of the web3, mining and crypto forum returns to Dubai on December 1–2, 2026, at Festival Arena, with an AI Future stage added to the programme.",
@@ -102,6 +107,11 @@ export const items: EventItem[] = [
   {
     slug: "gitex-global-dubai-2026",
     site: "dst",
+    image: "/covers/gitex-global-dubai-2026.jpg",
+    imageAlt: "A domed exhibition hall in cut paper with an avenue of small pavilions leading to it",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "GITEX GLOBAL 2026",
     summary:
       "GITEX runs December 7–11, 2026 — its first edition at the Dubai Exhibition Centre in Expo City, after 45 years at Dubai World Trade Centre.",
@@ -126,6 +136,11 @@ export const items: EventItem[] = [
   {
     slug: "step-conference-dubai-2026",
     site: "dst",
+    image: "/covers/step-conference-dubai-2026.jpg",
+    imageAlt: "A flight of wide paper steps rising across the frame with low office blocks behind",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Step Conference 2026",
     summary:
       "Dubai's largest technology festival held its 14th edition on February 11–12, 2026 at Dubai Internet City, themed \"Intelligence Everywhere: The AI Economy\".",
@@ -153,6 +168,11 @@ export const items: EventItem[] = [
   {
     slug: "world-governments-summit-2027",
     site: "dst",
+    image: "/covers/world-governments-summit-2027.jpg",
+    imageAlt: "A round table seen from above with evenly spaced seats around its rim",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "World Governments Summit 2027",
     summary:
       "Dubai hosts the World Governments Summit on February 1–3, 2027, following the largest participation in the summit's history.",

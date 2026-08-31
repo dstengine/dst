@@ -4,6 +4,11 @@ export const items: EventItem[] = [
   {
     slug: "gitex-global-2026",
     site: "llc",
+    image: "/covers/gitex-global-2026.jpg",
+    imageAlt: "A grid of small exhibition stands in cut paper seen from a high angle",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "GITEX Global 2026",
     summary:
       "The region's largest tech and startup conference — over 200,000 attendees, 6,800+ exhibiting companies, 2,000 startups — at Dubai Exhibition Centre.",

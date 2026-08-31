@@ -17,7 +17,9 @@ export const items: EventItem[] = [
     end: "2026-12-06",
     utcOffset: "-06:00",
     city: "Guadalajara",
-    venue: "Expo Guadalajara, Avenida Mariano Otero 1499, Colonia Verde Valle, Guadalajara, Jalisco",
+    // City and state trimmed off the end: the card prints "venue · city" and
+    // this one came out "…Verde Valle, Guadalajara, Jalisco · Guadalajara".
+    venue: "Expo Guadalajara, Avenida Mariano Otero 1499, Colonia Verde Valle",
     geo: { name: "Expo Guadalajara", lat: 20.654251, lng: -103.391867 },
     category: "Ferias",
     organizer: "Universidad de Guadalajara",
