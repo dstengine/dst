@@ -14,14 +14,6 @@ const eventItems = eventsBySite(site);
     <h1>{home.h1}</h1>
     <p class="lede">{home.lede}</p>
   </section>
-  {eventItems.length > 0 && (
-    <section class="container">
-      <EventsBlock locale="es-MX" items={eventItems} heading="Eventos" eventsBase={eventsBase} allLabel="Todos los eventos" />
-    </section>
-  )}
-  {newsItems.length > 0 && (
-    <section class="container">
-      <NewsBlock locale="es-MX" items={newsItems} heading="Noticias" newsBase={newsBase} allLabel="Todas las noticias" />
-    </section>
-  )}
+  <EventsBlock locale="es-MX" items={eventItems} heading="Eventos" eventsBase={eventsBase} allLabel="Todos los eventos" />
+  <NewsBlock locale="es-MX" items={newsItems} heading="Noticias" newsBase={newsBase} allLabel="Todas las noticias" />
 </Layout>
