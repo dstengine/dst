@@ -4,12 +4,11 @@
 import Layout from "../layouts/Layout.astro";
 import Promo from "../components/Promo.astro";
 import EventCards from "../components/EventCards.astro";
-import { checkedOn, citiesWithPages, shows, upcomingRuns, venues } from "../content";
+import { citiesWithPages, runsFor, shows, upcomingRuns, venues } from "../content";
 
 const upcoming = upcomingRuns();
 const soon = upcoming.slice(0, 6);
 const cityPages = citiesWithPages();
-const chicago = shows[0]!;
 ---
 <Layout
   title="Musicals on sale now"
@@ -32,8 +31,15 @@ const chicago = shows[0]!;
     <p>Soonest first. Each card goes to that run's own page — the theatre, the dates, who is selling and what is not yet known.</p>
     <EventCards runs={soon} />
     <p class="more">
-      <a href={`/${chicago.slug}/tickets/`} title="Every run this site tracks, with every seller">All {upcoming.length} dates, and who is selling each one</a>
-      <span class="checked">Read from each production's own listing on {checkedOn}.</span>
+      {shows.map((show) => (
+        <a href={`/${show.slug}/tickets/`} title={`Every run of ${show.title} this site tracks, with every seller`}>
+          All {runsFor(show.slug).length} dates of {show.title}
+        </a>
+      ))}
+      {/* Two shows, read on two different days: one date here would be wrong
+          for one of them. The date lives on each show's own page, where it
+          belongs to the listings it describes. */}
+      <span class="checked">Read from each production's own listing, on the date its page carries.</span>
     </p>
   </section>
 
@@ -63,22 +69,27 @@ const chicago = shows[0]!;
     </div>
   </section>
 
-  <section class="container">
-    <h2>{chicago.title}</h2>
-    <p>{chicago.tagline}</p>
-    <div class="link-grid">
-      <a class="card link-card" href={`/${chicago.slug}/`} title={`${chicago.title}: every run, the history, the video`}>
-        <h3>Everything on the show</h3>
-        <p>Every run, the tour, a hundred years of it, and what you can watch tonight for nothing.</p>
-      </a>
-      {chicago.sections.map((section) => (
-        <a class="card link-card" href={`/${chicago.slug}/${section.slug}/`} title={section.title}>
-          <h3>{section.label}</h3>
-          <p>{section.description}</p>
+  {shows.map((show) => (
+    <section class="container">
+      <h2>{show.title}</h2>
+      <p>{show.tagline}</p>
+      <div class="link-grid">
+        {/* The show's own summary rather than a written-out promise: one show
+            here has a history and a video and the other has a tour, and a
+            fixed line would be selling one of them something it has not got. */}
+        <a class="card link-card" href={`/${show.slug}/`} title={`${show.title}: every run, and what is on this site about it`}>
+          <h3>Everything on the show</h3>
+          <p>{show.summary}</p>
         </a>
-      ))}
-    </div>
-  </section>
+        {show.sections.map((section) => (
+          <a class="card link-card" href={`/${show.slug}/${section.slug}/`} title={section.title}>
+            <h3>{section.label}</h3>
+            <p>{section.description}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+  ))}
 
   <section class="container">
     <h2>At home</h2>

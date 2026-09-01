@@ -98,6 +98,9 @@ export interface City {
     level in anyone's URL. */
 export interface RunGroup {
   slug: string;
+  /** The show the season belongs to. Two shows can both call their tour
+      "uk" — the slug is only unique inside a show, exactly as a run's is. */
+  show: string;
   name: string;
   title: string;
   blurb: string;
@@ -161,6 +164,16 @@ export interface Show {
   title: string;
   tagline: string;
   summary: string;
+  /** The line above the title, saying what this site does with this show.
+      Not every show gets the full treatment, and the page should not imply
+      it does. */
+  eyebrow: string;
+  /** When this show's listings were last read at their source. Per show,
+      because they are read on the day the show is added: one date across
+      two shows would be a claim about a reading that never happened.
+      Pages covering both shows keep the site-wide constant, which is the
+      older of the dates and therefore the safe one. */
+  checkedOn: string;
   /** The opening of the show's own page: the surprising true thing first,
       the listing second. Kept in the data because it is editorial, and
       editorial belongs where the facts are, not inside a template. */

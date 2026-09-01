@@ -49,7 +49,7 @@ const blurbFor = (v: Venue): string => {
 const tourNeighbours = (() => {
   const run = here[0];
   if (!run?.group) return [];
-  const ordered = runsInGroup(run.group)
+  const ordered = runsInGroup(run.show, run.group)
     .sort((a, b) => (a.start ?? "").localeCompare(b.start ?? ""));
   const at = ordered.findIndex((r) => r.slug === run.slug);
   return ordered

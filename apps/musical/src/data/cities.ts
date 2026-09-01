@@ -421,4 +421,14 @@ export const cities: City[] = [
     imageLicenseSlug: "licence-cc-by-sa-4-0",
     imageSourceSlug: "photo-city-edinburgh",
   },
+  {
+    slug: "canterbury",
+    name: "Canterbury",
+    country: "United Kingdom",
+  },
+  {
+    slug: "southampton",
+    name: "Southampton",
+    country: "United Kingdom",
+  },
 ];

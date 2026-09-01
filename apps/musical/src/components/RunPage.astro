@@ -26,7 +26,7 @@ const { show, run } = Astro.props;
 
 const city = cityBySlug(run.city)!;
 const venue = run.venue ? venueBySlug(run.venue) : undefined;
-const group = run.group ? groupBySlug(run.group) : undefined;
+const group = run.group ? groupBySlug(run.show, run.group) : undefined;
 const status = statusOf(run);
 const sellerCount = spell(run.sellers.length);
 const title = `${show.title} in ${city.name}`;
@@ -47,7 +47,7 @@ const glance = [
     value: run.sellers.map((s) => s.name).join(", "),
     icon: ICONS.ticket,
   },
-  { label: "Last checked", value: checkedOn, icon: ICONS.list },
+  { label: "Last checked", value: show.checkedOn, icon: ICONS.list },
 ].filter(Boolean) as { label: string; value: string; icon: string; href?: string }[];
 
 // A contents box earns its place on a long page. Three anchors above the

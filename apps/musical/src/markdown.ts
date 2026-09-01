@@ -35,7 +35,7 @@ const sellerLine = (run: Run) =>
 export function runMarkdown(show: Show, run: Run): string {
   const city = cityBySlug(run.city);
   const venue = run.venue ? venueBySlug(run.venue) : undefined;
-  const group = run.group ? groupBySlug(run.group) : undefined;
+  const group = run.group ? groupBySlug(run.show, run.group) : undefined;
   const n = nights(run);
   return join([
     `# ${show.title} in ${city?.name ?? run.city}`,
@@ -54,7 +54,7 @@ export function runMarkdown(show: Show, run: Run): string {
     line("Age guidance", run.ageGuidance),
     line("Page", abs(`/${show.slug}/${run.slug}/`)),
     line("Calendar file", run.start && !run.openRun ? abs(`/${show.slug}/${run.slug}.ics`) : undefined),
-    line("Last checked", checkedOn),
+    line("Last checked", show.checkedOn),
   ]);
 }
 
@@ -113,7 +113,7 @@ export function cityMarkdown(city: City): string {
 }
 
 export function groupMarkdown(show: Show, group: RunGroup): string {
-  const stops = runsInGroup(group.slug).sort((a, b) => (a.start ?? "").localeCompare(b.start ?? ""));
+  const stops = runsInGroup(group.show, group.slug).sort((a, b) => (a.start ?? "").localeCompare(b.start ?? ""));
   return join([
     `# ${group.title}`,
     "",
@@ -128,7 +128,7 @@ export function groupMarkdown(show: Show, group: RunGroup): string {
     }),
     "",
     line("Page", abs(`/${show.slug}/${group.slug}/`)),
-    line("Last checked", checkedOn),
+    line("Last checked", show.checkedOn),
   ]);
 }
 
@@ -152,7 +152,7 @@ export function sectionMarkdown(show: Show, section: Section): string {
     ...extra,
     "",
     line("Page", abs(`/${show.slug}/${section.slug}/`)),
-    line("Last checked", checkedOn),
+    line("Last checked", show.checkedOn),
   ]);
 }
 
@@ -189,7 +189,7 @@ export function showMarkdown(show: Show): string {
       .filter((g) => runsFor(show.slug).some((r) => r.group === g.slug))
       .map((g) => `- ${g.name}: ${g.blurb} — ${abs(`/${show.slug}/${g.slug}/`)}`),
     "",
-    line("Last checked", checkedOn),
+    line("Last checked", show.checkedOn),
   ]);
 }
 

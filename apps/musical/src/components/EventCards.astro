@@ -49,7 +49,7 @@ const items = runs.map((run) => {
   const show = showBySlug(run.show)?.title ?? run.show;
   const venue = run.venue ? venueBySlug(run.venue)?.name : undefined;
   const tour = eyebrow === "tour"
-    ? (run.group ? groupBySlug(run.group)?.name : undefined) ?? place?.country
+    ? (run.group ? groupBySlug(run.show, run.group)?.name : undefined) ?? place?.country
     : undefined;
   return {
     href: `/${run.show}/${run.slug}/`,

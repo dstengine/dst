@@ -25,13 +25,13 @@ const openVenue = openRun?.venue ? venueBySlug(openRun.venue) : undefined;
 const next = upcoming.find((r) => !r.openRun);
 const nextCity = next ? cityBySlug(next.city)?.name : undefined;
 const cityCount = new Set(all.map((r) => r.city)).size;
-const showGroups = groups.filter((g) => all.some((r) => r.group === g.slug));
+const showGroups = groups.filter((g) => g.show === show.slug && all.some((r) => r.group === g.slug));
 const clips = (show.clips ?? []).slice(0, 2);
 
 // First night to last, read off the group's own stops rather than typed into
 // the card — a tour that gains a date changes this line by itself.
 function groupSpan(slug: string): string {
-  const dated = runsInGroup(slug).filter((r) => r.start).sort((a, b) => a.start!.localeCompare(b.start!));
+  const dated = runsInGroup(show.slug, slug).filter((r) => r.start).sort((a, b) => a.start!.localeCompare(b.start!));
   const first = dated[0];
   const last = dated[dated.length - 1];
   if (!first || !last) return "";
@@ -59,7 +59,7 @@ const glance = [
   },
   next && nextCity && { label: "Next", value: `${nextCity}, ${formatRun(next)}`, icon: ICONS.events, href: `/${show.slug}/${next.slug}/` },
   { label: "On sale", value: `${all.filter((r) => statusOf(r) === "on-sale").length} of ${all.length} runs`, icon: ICONS.ticket },
-  { label: "Last checked", value: checkedOn, icon: ICONS.list },
+  { label: "Last checked", value: show.checkedOn, icon: ICONS.list },
 ].filter(Boolean) as { label: string; value: string; icon: string; href?: string }[];
 
 const jump = [
@@ -71,7 +71,7 @@ const jump = [
 ---
 <Layout title={show.title} description={show.summary}>
   <section class="container hero">
-    <p class="eyebrow">The event we cover in full</p>
+    <p class="eyebrow">{show.eyebrow}</p>
     <h1>{show.title}</h1>
     <p class="lede">{show.hook[0]}</p>
     <OnThisPage items={jump} />

@@ -22,9 +22,11 @@ export const runBySlug = (show: string, slug: string) =>
   runs.find((r) => r.show === show && r.slug === slug);
 export const venueBySlug = (slug: string) => venues.find((v) => v.slug === slug);
 export const cityBySlug = (slug: string) => cities.find((c) => c.slug === slug);
-export const groupBySlug = (slug: string) => groups.find((g) => g.slug === slug);
+export const groupBySlug = (show: string, slug: string) =>
+  groups.find((g) => g.show === show && g.slug === slug);
 export const runsFor = (show: string) => runs.filter((r) => r.show === show);
-export const runsInGroup = (group: string) => runs.filter((r) => r.group === group);
+export const runsInGroup = (show: string, group: string) =>
+  runs.filter((r) => r.show === show && r.group === group);
 export const runsInCity = (city: string) => runs.filter((r) => r.city === city);
 export const runsAtVenue = (venue: string) => runs.filter((r) => r.venue === venue);
 export const venuesInCity = (city: string) => venues.filter((v) => v.city === city);
@@ -77,7 +79,7 @@ export function otherRuns(run: Run, limit = 6): Run[] {
   const rest = runsFor(run.show).filter((r) => r.slug !== run.slug);
   if (!run.group) return rest.sort(byDate).slice(0, limit);
 
-  const ordered = runsInGroup(run.group).sort(byDate);
+  const ordered = runsInGroup(run.show, run.group).sort(byDate);
   const here = ordered.findIndex((r) => r.slug === run.slug);
   const near = ordered
     .filter((r) => r.slug !== run.slug)
@@ -133,7 +135,7 @@ function introClauses(run: Run): { placing: string; tour?: string; selling?: str
   const city = cityBySlug(run.city)?.name ?? run.city;
   const venue = run.venue ? venueBySlug(run.venue)?.name : undefined;
   const n = nights(run);
-  const group = run.group ? groupBySlug(run.group) : undefined;
+  const group = run.group ? groupBySlug(run.show, run.group) : undefined;
   const parts: string[] = [];
 
   const length = n === 1 ? "One night" : n ? `${spell(n)} nights` : "Dates announced";
@@ -147,7 +149,7 @@ function introClauses(run: Run): { placing: string; tour?: string; selling?: str
       : `${length} in ${city}.`;
 
   if (group) {
-    const ordered = runsInGroup(group.slug).sort((a, b) => (a.start ?? "").localeCompare(b.start ?? ""));
+    const ordered = runsInGroup(run.show, group.slug).sort((a, b) => (a.start ?? "").localeCompare(b.start ?? ""));
     const index = ordered.findIndex((r) => r.slug === run.slug);
     if (index === 0) parts.push(`It opens the ${group.name}.`);
     else if (index === ordered.length - 1) parts.push(`It closes the ${group.name}.`);

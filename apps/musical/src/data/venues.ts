@@ -1266,4 +1266,149 @@ export const venues: Venue[] = [
       },
     ],
   },
+  {
+    slug: "palace-theatre-manchester",
+    name: "Palace Theatre",
+    city: "manchester",
+    address: "97 Oxford Street, Manchester, M1 6FT",
+    lat: 53.475022,
+    lon: -2.240906,
+    capacity: 1955,
+    opened: "18 May 1891",
+    operator: "ATG Entertainment",
+    officialSlug: "venue-palace-theatre-manchester",
+    summary:
+      "Alfred Darbyshire built it, Frank Matcham redecorated it five years later, and Bertie Crewe rebuilt the inside in 1913 — three architects on one auditorium, which is why it does not read as the work of any of them. It takes the touring musicals too big for the Opera House down the road.",
+    details: [
+      { label: "Opened", value: "18 May 1891" },
+      { label: "Architect", value: "Alfred Darbyshire; interior rebuilt by Bertie Crewe, 1913" },
+      { label: "Operator", value: "ATG Entertainment" },
+      { label: "Listed", value: "Grade II, since 8 June 1977" },
+    ],
+    sections: [
+      {
+        heading: "The building",
+        paragraphs: [
+          "A German bomb hit it directly in September 1940, during the Manchester Blitz, and it kept working. The 1,955 seats it has now are the remainder of a house that once held far more — the 1913 rebuild alone took it down to 2,600.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "theatre-royal-glasgow",
+    name: "Theatre Royal",
+    city: "glasgow",
+    address: "Hope Street, Glasgow, G2 3QA",
+    lat: 55.866271,
+    lon: -4.256233,
+    capacity: 1541,
+    opened: "1867",
+    owner: "Scottish Opera",
+    operator: "Ambassador Theatre Group",
+    officialSlug: "venue-theatre-royal-glasgow",
+    summary:
+      "Scotland’s oldest working theatre, home of Scottish Opera, and the largest surviving auditorium by Charles J. Phipps in Britain — which it is only because it burned down twice and he rebuilt it twice.",
+    details: [
+      { label: "Opened", value: "1867" },
+      { label: "Architect", value: "Rebuilt by Charles J. Phipps, 1880 and 1895" },
+      { label: "Owner", value: "Scottish Opera" },
+      { label: "Operator", value: "Ambassador Theatre Group, since 2005" },
+      { label: "Listed", value: "Category A" },
+    ],
+    sections: [
+      {
+        heading: "Two fires and a third",
+        paragraphs: [
+          "Fire destroyed the auditorium in 1879 and Phipps rebuilt it in French Renaissance style. Fire destroyed it again in 1895, and he rebuilt it a second time — in six months, and with so few changes that the room reads as one design rather than two.",
+          "A third fire, in November 1969, burned for a few hours and cost the life of a firefighter. Scottish Television, then working out of the building, moved to Edinburgh while it was repaired.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "marlowe-theatre-canterbury",
+    name: "Marlowe Theatre",
+    city: "canterbury",
+    address: "The Friars, Canterbury, CT1 2AS",
+    lat: 51.281097,
+    lon: 1.078605,
+    capacity: 1200,
+    opened: "4 October 2011",
+    operator: "The Marlowe Trust",
+    officialSlug: "venue-marlowe-theatre-canterbury",
+    summary:
+      "The third building to carry the name, and the only one built as a theatre. It cost £25.6 million and came in within budget, which for a theatre is the rarer achievement of the two.",
+    details: [
+      { label: "Opened", value: "4 October 2011" },
+      { label: "Architect", value: "Keith Williams" },
+      { label: "Operator", value: "The Marlowe Trust" },
+      { label: "Also here", value: "A 150-seat studio theatre" },
+    ],
+    sections: [
+      {
+        heading: "Three Marlowes",
+        paragraphs: [
+          "The first was a pre-war theatre on St Margaret’s Street that became a cinema in the 1920s, took the Marlowe name in 1949 and closed in 1981.",
+          "The second was the Friars Cinema, built in 1933 for Oscar Deutsch’s Odeon chain, which held the world premiere of A Canterbury Tale on 11 May 1944 and reopened as a theatre in July 1984 after the city council spent £2.35 million on it.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "bord-gais-energy-theatre",
+    name: "Bord Gáis Energy Theatre",
+    city: "dublin",
+    address: "Grand Canal Square, Dublin, D02 PA03",
+    lat: 53.344215,
+    lon: -6.239962,
+    capacity: 2111,
+    opened: "18 March 2010",
+    operator: "Live Nation Ireland",
+    officialSlug: "venue-bord-gais-energy-theatre",
+    summary:
+      "Ireland’s largest fixed-seat theatre, designed by Daniel Libeskind on Grand Canal Square, and the only stage in the country built to take a West End show at full size.",
+    details: [
+      { label: "Opened", value: "18 March 2010" },
+      { label: "Architect", value: "Studio Libeskind, with RHWL and McCauley Daye O’Connell" },
+      { label: "Cost", value: "€80 million" },
+      { label: "Operator", value: "Live Nation Ireland" },
+    ],
+    sections: [
+      {
+        heading: "Two names",
+        paragraphs: [
+          "It opened as the Grand Canal Theatre, with Swan Lake danced by the Russian State Ballet of Siberia, and was renamed on 7 March 2012 under a naming-rights deal.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "mayflower-theatre-southampton",
+    name: "Mayflower Theatre",
+    city: "southampton",
+    address: "22–26 Commercial Road, Southampton, SO15 1GE",
+    lat: 50.908589,
+    lon: -1.410226,
+    capacity: 2300,
+    opened: "22 December 1928",
+    operator: "Mayflower Theatre Trust",
+    officialSlug: "venue-mayflower-theatre-southampton",
+    summary:
+      "The largest theatre in the south of England outside London, and a building that spent thirty-six years as a cinema in the middle of its life.",
+    details: [
+      { label: "Opened", value: "22 December 1928, as the Empire Theatre" },
+      { label: "Architect", value: "William and T. R. Milburn" },
+      { label: "Operator", value: "Mayflower Theatre Trust" },
+      { label: "Listed", value: "Grade II" },
+    ],
+    sections: [
+      {
+        heading: "Empire, Gaumont, Mayflower",
+        paragraphs: [
+          "It played as the Empire until 1950 and as the Gaumont until 1986, then reopened under its present name on 24 February 1987 with Peter Pan.",
+          "A three-month closure in the summer of 2018 replaced 1,659 seats in the stalls and circle and redecorated the auditorium.",
+        ],
+      },
+    ],
+  },
 ];

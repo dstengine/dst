@@ -2,14 +2,18 @@ import type { Show } from "./types";
 import { historySection } from "./history";
 import { songsSection } from "./songs";
 
-// The shows this site covers. One so far, and it is the hero event: the
-// format below — a page per run, a page per venue, a history, the legal
-// video — is what any show worth prioritising gets here.
+// The shows this site covers. Chicago is the hero event and carries the full
+// format — a page per run, a page per venue, a history, the songs, the legal
+// video. Cats arrives with the part that is load-bearing for a listings site:
+// the runs, the venues, the sellers and an About. The editorial sections come
+// when there is something sourced to put in them, not to fill the shape.
 
 export const shows: Show[] = [
   {
     slug: "chicago",
     title: "Chicago The Musical",
+    eyebrow: "The event we cover in full",
+    checkedOn: "29 August 2026",
     tagline:
       "Kander and Ebb's 1975 vaudeville about murder as a career move, and the longest-running American musical on Broadway.",
     summary:
@@ -110,6 +114,48 @@ export const shows: Show[] = [
         template: "tickets",
         body: [
           "Every run of Chicago this site tracks, with whoever is actually selling it. Some stops are sold by the theatre, some by an agent, and Dubai is sold by two sellers at once. Three stops have dates but no seller yet; they are marked as such rather than left out.",
+          "Nothing is sold here. Every button lands on the seller's own page, and the price you see there is the price.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "cats",
+    title: "Cats",
+    eyebrow: "Every stop on the tour, and who sells it",
+    checkedOn: "1 September 2026",
+    tagline:
+      "Andrew Lloyd Webber set T. S. Eliot's book of light verse about cats to music, and it ran for twenty-one years in the West End.",
+    summary:
+      "Cats on tour: twenty-three theatres across Britain and Ireland between October 2026 and June 2027, with the venue, the dates and the seller for each.",
+    hook: [
+      "The pitch was unfundable. A sung-through musical with no plot, based on a book of light verse a poet wrote for his godchildren in 1939, in which the performers are cats. Andrew Lloyd Webber mortgaged his house to help pay for it.",
+      "It opened at the New London Theatre on 11 May 1981 and closed twenty-one years later to the day, after 8,949 performances. Broadway ran it for 7,485. For seventeen years it was the longest-running musical London had ever had, and for a stretch it was the longest-running show on Broadway too.",
+      "Below is every stop on the 2026–27 tour of Britain and Ireland — the theatre, the dates and who is actually selling the tickets.",
+    ],
+    sections: [
+      {
+        slug: "about",
+        label: "About the show",
+        title: "What Cats actually is",
+        description:
+          "A book of poems, a ball, one cat chosen, and the song everybody already knows. What kind of evening it is, and what it is not.",
+        body: [
+          "There is no story in the ordinary sense. A tribe of cats, the Jellicles, gather once a year for a ball at which one of them is chosen to ascend to the Heaviside Layer and be born again. Between the gathering and the choosing, the cats introduce themselves — which is where the poems come in.",
+          "The text is T. S. Eliot's <em>Old Possum's Book of Practical Cats</em>, published in 1939 and written for his godchildren. Almost every lyric is Eliot, set nearly as written. That is the show's real oddity: a musical whose book is a poetry collection, and whose author had been dead for sixteen years when it opened.",
+          "The exception is the one number everybody can hum. “Memory” has a lyric by Trevor Nunn, the production's director, assembled from two other Eliot poems — “Rhapsody on a Windy Night” and “Preludes” — because Grizabella needed a song and the book did not contain one.",
+          "What a ticket buys is dance. Gillian Lynne's choreography is the spine of the evening, John Napier's design puts the audience at a cat's eye level in a junkyard built at three times life size, and the cast are in front of you for most of three hours in costume and makeup. It is the rare musical that works for someone who does not follow plots — and the rare one that frustrates someone who wants one.",
+        ],
+      },
+      {
+        slug: "tickets",
+        label: "Tickets",
+        title: "Cats on tour: where to buy tickets",
+        description:
+          "Twenty-three stops in one table — city, theatre, dates, and who is selling. Sales happen on the seller's own site.",
+        template: "tickets",
+        body: [
+          "Every stop on the UK and Ireland tour, with whoever is actually selling it. At most theatres that is the theatre itself; the rest are sold by ATG. Every stop had a seller from the day the tour was announced, so nothing here is waiting on a sale date.",
           "Nothing is sold here. Every button lands on the seller's own page, and the price you see there is the price.",
         ],
       },

@@ -42,7 +42,7 @@ export function showEntries(show: string): ShowEntry[] {
   return [
     ...runs.filter((r) => r.show === show).map((r) => ({ kind: "run" as const, show, slug: r.slug })),
     ...groups
-      .filter((g) => runs.some((r) => r.show === show && r.group === g.slug))
+      .filter((g) => g.show === show && runs.some((r) => r.group === g.slug))
       .map((g) => ({ kind: "group" as const, show, slug: g.slug })),
     ...s.sections.map((sec) => ({ kind: "section" as const, show, slug: sec.slug })),
     ...(s.clips ?? []).map((c) => ({ kind: "clip" as const, show, slug: `online/${c.slug}` })),

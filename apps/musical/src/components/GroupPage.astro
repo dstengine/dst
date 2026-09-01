@@ -14,7 +14,7 @@ import { checkedOn, cityBySlug, formatRun, runsInGroup, statusOf, type RunGroup,
 interface Props { show: Show; group: RunGroup }
 const { show, group } = Astro.props;
 
-const stops = runsInGroup(group.slug).sort((a, b) => (a.start ?? "").localeCompare(b.start ?? ""));
+const stops = runsInGroup(group.show, group.slug).sort((a, b) => (a.start ?? "").localeCompare(b.start ?? ""));
 const onSale = stops.filter((r) => statusOf(r) === "on-sale");
 const waiting = stops.filter((r) => statusOf(r) === "announced");
 const first = stops[0];
@@ -26,7 +26,7 @@ const glance = [
   first?.start && { label: "Opens", value: `${formatRun(first).split(" – ")[0]}, ${cityName(first.city)}`, icon: ICONS.events },
   last?.end && { label: "Closes", value: `${formatRun(last)}, ${cityName(last.city)}`, icon: ICONS.events },
   { label: "On sale", value: `${onSale.length} of ${stops.length}`, icon: ICONS.ticket },
-  { label: "Last checked", value: checkedOn, icon: ICONS.list },
+  { label: "Last checked", value: show.checkedOn, icon: ICONS.list },
 ].filter(Boolean) as { label: string; value: string; icon: string }[];
 ---
 <Layout title={group.title} description={`${group.blurb} Every stop with its theatre, dates and seller.`}>
@@ -52,7 +52,7 @@ const glance = [
       </p>
     )}
     <p class="note">
-      Source: the production's own tour listing, read {checkedOn}.
+      Source: the production's own tour listing, read {show.checkedOn}.
       {" "}<a href={go("chicago-uk-tour")} rel="nofollow" title={`The ${group.name} on the production's own site`}>The official tour page</a>.
     </p>
   </section>

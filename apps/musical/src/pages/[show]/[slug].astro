@@ -23,5 +23,5 @@ const { entry } = Astro.props;
 const show = showBySlug(entry.show)!;
 ---
 {entry.kind === "run" && <RunPage show={show} run={runBySlug(show.slug, entry.slug)!} />}
-{entry.kind === "group" && <GroupPage show={show} group={groupBySlug(entry.slug)!} />}
+{entry.kind === "group" && <GroupPage show={show} group={groupBySlug(show.slug, entry.slug)!} />}
 {entry.kind === "section" && <SectionPage show={show} section={show.sections.find((s) => s.slug === entry.slug)!} />}
