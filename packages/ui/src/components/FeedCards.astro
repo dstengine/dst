@@ -243,6 +243,14 @@ const parts = (iso: string) => {
        two 193px, and the coloured band stepped down mid-row. The cover keeps
        its ratio; the slack goes to the body. */
     flex: none;
+    /* Explicit, not left to stretch. `flex: none` on a column flex item with
+       both an aspect-ratio and a max-height gives WebKit two ways to size the
+       cross axis, and it takes the ratio: the date cover, capped at 220px
+       tall, came out 220 x 16/9 = 391px wide inside a 552px card and sat
+       against the left edge with a third of the card empty beside it. Safari
+       only — Chrome stretches — so it survived every check until it was seen.
+       A definite width leaves the ratio only the height to determine. */
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
