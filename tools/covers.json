@@ -162,7 +162,11 @@
       },
       "bank-holiday-tube-and-tfl-closures": "three parallel route lines in flat paper, two of them broken by cut gaps, a barrier shape standing across one gap",
       "olympic-park-summer-school": "a cluster of workshop table shapes seen from above in a park, a stadium arc curving behind them, small tool and instrument silhouettes scattered on the tables",
-      "eclipse-walk-tower-hamlets-cemetery-park": "a scatter of small crescent shapes cast across a ground of grass-toned paper, a broad canopy of overlapping leaf shapes above them, one large crescent disc high in the corner"
+      "eclipse-walk-tower-hamlets-cemetery-park": "a scatter of small crescent shapes cast across a ground of grass-toned paper, a broad canopy of overlapping leaf shapes above them, one large crescent disc high in the corner",
+      "venice-has-programmed-a-film-of-210-minutes": {
+        "subject": "a single paper film reel unspooling into a long strip that runs far past one small cinema seat",
+        "detail": "built as one continuous line: a flat paper reel disc at the upper left, a strip of film with regular sprocket perforations unwinding from it and travelling across and down the frame in long shallow curves until it leaves the right edge, one small empty cinema seat shape cut from darker paper sitting alone near the lower left dwarfed by the length of the strip, hard shadows under the strip, no clock, no numbers, no text, no lettering, no people"
+      }
     },
     "cmx": {
       "juegos-mundiales-robots-humanoides-2026": {
@@ -180,7 +184,11 @@
       "plaza-de-la-conchita-jardin-polinizador": "a paved plaza shape seen from above with an irregular green area cut into it, flower discs scattered across the green, small bee and butterfly shapes above",
       "semovi-nuevo-contrato-ecobici": "a row of bicycle silhouettes in a docking rank, receding in flat paper layers, a small satellite marker pin above one of them",
       "betsabee-romero-homenaje-a-monsivais": "a wall of small framed objects — magnifying lens discs, a wrestling mask shape, a boxy television silhouette — arranged in an irregular grid",
-      "ecobici-15-mil-bicicletas-tres-alcaldias": "a row of simple side-on bicycle shapes in flat cut paper standing in a docking rank, three of them in a brighter contrasting tone at the right end, a small satellite arc curving above the row"
+      "ecobici-15-mil-bicicletas-tres-alcaldias": "a row of simple side-on bicycle shapes in flat cut paper standing in a docking rank, three of them in a brighter contrasting tone at the right end, a small satellite arc curving above the row",
+      "venecia-2026-dos-leones-antes-del-jurado": {
+        "subject": "two flat paper lion figures in gold standing side by side in front of a drawn theatre curtain, an empty row of cinema seats behind them",
+        "detail": "built as a shallow stage: a deep curtain of vertical cut-paper folds filling the upper two thirds, two simple stylised lion silhouettes in warm gold paper standing on a low platform in front of it with hard shadows falling back onto the curtain, a single row of small empty seat shapes in darker paper crossing the lower edge, no trophy, no text, no lettering, no faces, no crowd"
+      }
     },
     "mxo": {
       "moderna-vacuna-melanoma-fase-3": {

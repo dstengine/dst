@@ -2,6 +2,41 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "venice-has-programmed-a-film-of-210-minutes",
+    site: "lnd",
+    image: "/covers/venice-has-programmed-a-film-of-210-minutes.jpg",
+    imageAlt: "A paper reel of film unspooling far past the edge of a small cinema seat",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Venice has programmed a film of two hundred and ten minutes",
+    cardTitle: "A film of 210 minutes",
+    titleSeo: "The longest film at Venice 2026",
+    summary:
+      "The 83rd Mostra opens on 2 September with twenty films in competition. Its artistic director has warned that the selection runs long, and the longest of them is three and a half hours.",
+    date: "2026-09-01",
+    category: "Film",
+    source: {
+      name: "Screen International",
+      url: "https://www.screendaily.com/news/venice-film-festival-reveals-2026-lineup/5218820.article",
+      verifiedOn: "2026-09-01",
+    },
+    body: [
+      "There is a quiet confidence in putting a film of three and a half hours in front of an audience and simply trusting them to stay. Venice has done it, and rather than apologise for it, has said so in advance.",
+      "## The long one",
+      "Of the <strong>twenty titles</strong> announced for competition on 23 July, the longest is <strong>Dau</strong>, by <strong>Ilya Khrzhanovsky</strong>, at <strong>210 minutes</strong>. Artistic director <strong>Alberto Barbera</strong> has said that this year&rsquo;s selection runs long generally &mdash; which is a courteous way of telling people to look at the running times before they book two things in an evening.",
+      "## The festival around it",
+      "The <strong>83rd Venice Film Festival</strong> runs from <strong>2 to 12 September 2026</strong> on the <strong>Lido</strong>. The jury is chaired by <strong>Maggie Gyllenhaal</strong>. It opens with <strong>Ink</strong>, by Danny Boyle, with Guy Pearce, and closes with Giovanni Veronesi&rsquo;s <strong>God Laughs</strong>. Honorary Golden Lions go to <strong>Ellen Burstyn</strong> and <strong>George Clooney</strong>. Also in competition: Werner Herzog, Martin McDonagh, Hirokazu Koreeda, Lee Chang-dong, Nanni Moretti, Florian Zeller and Shinya Tsukamoto.",
+      "## Why length is a decision and not an accident",
+      "A long film is expensive to show. It occupies a screen that could have held two shorter ones, it thins out the number of times it can play in a day, and it asks something of an audience that no marketing department has ever found a way to make sound appealing.",
+      "A festival is the one place where that arithmetic can be set aside, because nobody is counting the day&rsquo;s takings against the seat. Which is why the very long film tends to have its life at festivals and then a rather harder time afterwards &mdash; and why a running time of 210 minutes in a competition line-up is worth noticing. Somebody looked at it and decided it was worth the screen.",
+      "## The civilised way to do it",
+      "One is not obliged to treat a long film as an endurance test. Eat beforehand rather than during, sit further back than instinct suggests, and take the interval &mdash; if there is one &mdash; as intended rather than as a chance to check a telephone. The pleasure of a very long film is that it stops being a thing one is watching and becomes, for an afternoon, simply where one is.",
+    ],
+    expertise:
+      "Running times are published with festival line-ups and almost never with general releases, which makes a festival programme the one reliable place to find out what you are committing to. If a long film matters to you, the festival screening is likely to be the best conditions it ever gets: a full house that chose to be there, one uninterrupted projection, and nobody leaving at the ninety-minute mark to catch a train.",
+  },
+  {
     slug: "eclipse-walk-tower-hamlets-cemetery-park",
     site: "lnd",
     image: "/covers/eclipse-walk-tower-hamlets-cemetery-park.jpg",

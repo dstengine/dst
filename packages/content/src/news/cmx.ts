@@ -2,6 +2,40 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "venecia-2026-dos-leones-antes-del-jurado",
+    site: "cmx",
+    image: "/covers/venecia-2026-dos-leones-antes-del-jurado.jpg",
+    imageAlt: "Dos leones de papel dorado colocados frente a un telón, y detrás una fila de asientos vacíos",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Venecia entrega dos premios antes de que empiece el festival",
+    cardTitle: "Dos Leones antes del jurado",
+    titleSeo: "Venecia 2026: Leones de Oro honoríficos",
+    summary:
+      "La 83ª Mostra abre el 2 de septiembre en el Lido. Los Leones de Oro honoríficos ya tienen dueño: Ellen Burstyn y George Clooney.",
+    date: "2026-09-01",
+    category: "Cine",
+    source: {
+      name: "Screen International",
+      url: "https://www.screendaily.com/news/venice-film-festival-reveals-2026-lineup/5218820.article",
+      verifiedOn: "2026-09-01",
+    },
+    body: [
+      "Un festival con jurado es un festival que dice no saber todavía. Venecia se guarda una excepción: dos premios que decide sola, sin deliberar, y que anuncia antes de proyectar nada",
+      "## Los dos nombres",
+      "Los <strong>Leones de Oro honoríficos</strong> de 2026 son para <strong>Ellen Burstyn</strong> y <strong>George Clooney</strong>. No compiten contra nadie, no dependen del jurado y no se anuncian al final: son la lectura que el festival hace de una carrera entera",
+      "## Lo que sí está en disputa",
+      "El resto sigue las reglas normales. La <strong>83ª Mostra</strong> corre del <strong>2 al 12 de septiembre de 2026</strong> en el <strong>Lido</strong>, con <strong>Alberto Barbera</strong> como director artístico. El jurado lo preside <strong>Maggie Gyllenhaal</strong>, con Kaouther Ben Hania, Daniel Blumberg, Francesco Casetti, Xavier Giannoli, Shahrbanoo Sadat y Johnnie To. Siete personas para <strong>veinte títulos</strong>, anunciados el 23 de julio",
+      "Abre <strong>Ink</strong>, de <strong>Danny Boyle</strong>, con Guy Pearce. Cierra <strong>God Laughs</strong>, de Giovanni Veronesi. En competencia están Werner Herzog, Martin McDonagh, Hirokazu Koreeda, Lee Chang-dong, Nanni Moretti, Florian Zeller y Shinya Tsukamoto",
+      "## Por qué un festival reparte premios que no compiten",
+      "Porque mide dos cosas distintas. El León de Oro premia una película: un objeto terminado, comparable con otros diecinueve durante once días. El honorífico premia una permanencia, que ningún jurado reunido para once días puede evaluar",
+      "Separarlos también le resuelve un problema práctico. Una carrera de cincuenta años dentro de una competencia la desequilibra: el nombre pesa más que la película que trajo. Sacándolo de la contienda, el festival puede rendirle homenaje sin que eso le cueste el premio a otro",
+    ],
+    expertise:
+      "El honorífico es el que conviene mirar para entender qué está pensando un festival de sí mismo. La competencia la arma un jurado que cambia cada año; los honoríficos los decide la dirección, y ahí se ve qué tradición cree estar continuando. Este año son una actriz del Hollywood de los setenta y un actor que se hizo director: dos versiones de una carrera larga, ninguna de ellas europea",
+  },
+  {
     slug: "ecobici-15-mil-bicicletas-tres-alcaldias",
     site: "cmx",
     image: "/covers/ecobici-15-mil-bicicletas-tres-alcaldias.jpg",

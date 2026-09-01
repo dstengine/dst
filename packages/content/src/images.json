@@ -671,6 +671,54 @@
           "/covers/semovi-nuevo-contrato-ecobici-1536.webp"
         ]
       ]
+    },
+    "/covers/venecia-2026-dos-leones-antes-del-jurado.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/venecia-2026-dos-leones-antes-del-jurado-480.avif"
+        ],
+        [
+          768,
+          "/covers/venecia-2026-dos-leones-antes-del-jurado-768.avif"
+        ],
+        [
+          1024,
+          "/covers/venecia-2026-dos-leones-antes-del-jurado-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/venecia-2026-dos-leones-antes-del-jurado-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/venecia-2026-dos-leones-antes-del-jurado-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/venecia-2026-dos-leones-antes-del-jurado-480.webp"
+        ],
+        [
+          768,
+          "/covers/venecia-2026-dos-leones-antes-del-jurado-768.webp"
+        ],
+        [
+          1024,
+          "/covers/venecia-2026-dos-leones-antes-del-jurado-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/venecia-2026-dos-leones-antes-del-jurado-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/venecia-2026-dos-leones-antes-del-jurado-1536.webp"
+        ]
+      ]
     }
   },
   "dst.llc": {
@@ -2833,6 +2881,54 @@
         [
           1536,
           "/covers/the-big-brine-hackney-bridge-1536.webp"
+        ]
+      ]
+    },
+    "/covers/venice-has-programmed-a-film-of-210-minutes.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/venice-has-programmed-a-film-of-210-minutes-480.avif"
+        ],
+        [
+          768,
+          "/covers/venice-has-programmed-a-film-of-210-minutes-768.avif"
+        ],
+        [
+          1024,
+          "/covers/venice-has-programmed-a-film-of-210-minutes-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/venice-has-programmed-a-film-of-210-minutes-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/venice-has-programmed-a-film-of-210-minutes-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/venice-has-programmed-a-film-of-210-minutes-480.webp"
+        ],
+        [
+          768,
+          "/covers/venice-has-programmed-a-film-of-210-minutes-768.webp"
+        ],
+        [
+          1024,
+          "/covers/venice-has-programmed-a-film-of-210-minutes-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/venice-has-programmed-a-film-of-210-minutes-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/venice-has-programmed-a-film-of-210-minutes-1536.webp"
         ]
       ]
     }
