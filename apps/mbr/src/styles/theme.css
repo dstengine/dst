@@ -6,12 +6,10 @@
    Darkened from #0E7C86: accent text on --accent-tint measured 4.32:1,
    under AA, and the eyebrow on a sunk panel the same. Now 5.08 / 5.06. */
 :root {
-  --accent: #0C7079;
-  --accent-ink: #073F45;
-  --accent-tint: #E1F3F4;
+  --accent-light: #0C7079;
+  --accent-ink-light: #073F45;
+  --accent-tint-light: #E1F3F4;
+  --accent-dark: #5FD1DB;
+  --accent-ink-dark: #C7F0F3;
+  --accent-tint-dark: #102A2C;
 }
-@media (prefers-color-scheme: dark) {
-  :root { --accent: #5FD1DB; --accent-ink: #C7F0F3; --accent-tint: #102A2C; }
-}
-:root[data-theme="dark"] { --accent: #5FD1DB; --accent-ink: #C7F0F3; --accent-tint: #102A2C; }
-:root[data-theme="light"] { --accent: #0C7079; --accent-ink: #073F45; --accent-tint: #E1F3F4; }

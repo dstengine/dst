@@ -1,9 +1,10 @@
 /*
   Shared design tokens for the DST Dubai network.
   Neutrals, type scale, and spacing are shared across every site.
-  --accent / --accent-ink / --accent-tint are deliberately NOT set here —
-  each app defines its own accent in src/styles/theme.css so every vertical
-  reads as distinct while sharing the same underlying system.
+  Each app still picks its own accent in src/styles/theme.css, so every
+  vertical reads as distinct while sharing the same underlying system — but
+  it declares only the two palettes. Which one applies is decided here; see
+  the accent section below.
 */
 
 :root {
@@ -125,6 +126,44 @@
   --bg: #FAF9F6; --surface: #FFFFFF; --surface-sunk: #F1EFEA; --border: #E2DFD7;
   --ink: #14181F; --ink-muted: #565F6B; --ink-faint: #666B73;
   --ok: #2A7A55; --ok-bg: #E4F1EA; --warn: #8A6222; --warn-bg: #F3E9D6;
+}
+
+/* Accent — the one part of the palette each site sets for itself. A site's
+   src/styles/theme.css declares two palettes and nothing else:
+
+     :root {
+       --accent-light: …; --accent-ink-light: …; --accent-tint-light: …;
+       --accent-dark:  …; --accent-ink-dark:  …; --accent-tint-dark:  …;
+     }
+
+   Which of the two applies is decided here, once, for the whole network.
+   It used to be decided in every theme.css: four blocks per site, with the
+   dark triple written out twice and the light triple written out twice. So
+   a new site reproduced the switching mechanism by hand, and the state that
+   is easiest to forget — an explicit light choice on a dark OS — would have
+   failed silently, with the accent staying dark while the rest of the page
+   went light.
+
+   There is no [data-theme="light"] rule below, and none is needed: bare
+   :root is already the light palette, and the media query steps aside for
+   an explicit light choice. */
+:root {
+  --accent: var(--accent-light);
+  --accent-ink: var(--accent-ink-light);
+  --accent-tint: var(--accent-tint-light);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --accent: var(--accent-dark);
+    --accent-ink: var(--accent-ink-dark);
+    --accent-tint: var(--accent-tint-dark);
+  }
+}
+/* After the media query, so an explicit dark choice wins on a light OS. */
+:root[data-theme="dark"] {
+  --accent: var(--accent-dark);
+  --accent-ink: var(--accent-ink-dark);
+  --accent-tint: var(--accent-tint-dark);
 }
 
 * { box-sizing: border-box; }

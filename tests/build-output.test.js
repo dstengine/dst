@@ -352,6 +352,37 @@ describe("theme", () => {
     }
   });
 
+  // Every site used to spell the light/dark switch out for itself: four
+  // blocks in its own theme.css, with the dark triple written twice and the
+  // light triple written twice. The switch now lives in tokens.css and a
+  // site declares only its two palettes. A site that brings the mechanism
+  // back is maintaining it by hand again, and the state nobody checks by eye
+  // — an explicit light choice on a dark OS — is the one that breaks, with
+  // the accent staying dark while the rest of the page goes light.
+  test("each site declares two accent palettes and no switching of its own", () => {
+    const NEEDED = [
+      "--accent-light", "--accent-ink-light", "--accent-tint-light",
+      "--accent-dark", "--accent-ink-dark", "--accent-tint-dark",
+    ];
+    for (const { app } of SITES) {
+      const file = path.join(REPO, "apps", app, "src", "styles", "theme.css");
+      const css = readFileSync(file, "utf8");
+      for (const name of NEEDED) {
+        assert.match(css, new RegExp(`${name}\\s*:`), `apps/${app}: theme.css does not declare ${name}`);
+      }
+      assert.doesNotMatch(
+        css,
+        /\[data-theme=/,
+        `apps/${app}: theme.css switches themes itself — tokens.css does that for the whole network`,
+      );
+      assert.doesNotMatch(
+        css,
+        /--accent(-ink|-tint)?\s*:/,
+        `apps/${app}: theme.css sets --accent directly — declare --accent-light / --accent-dark and let tokens.css pick`,
+      );
+    }
+  });
+
   // The script has to run before the first paint. A module or deferred
   // script is exactly late enough to paint the default theme first.
   test("the pre-paint script is inline and blocking", () => {
@@ -359,6 +390,48 @@ describe("theme", () => {
     const tag = html.slice(0, html.indexOf('localStorage.getItem("theme")')).lastIndexOf("<script");
     const open = html.slice(tag, html.indexOf(">", tag));
     assert.doesNotMatch(open, /\b(defer|async|type="module")/, `theme script is deferred: ${open}`);
+  });
+});
+
+describe("page grid", () => {
+  // EventsBlock and NewsBlock each render their own <section class="container">.
+  // Six home pages wrapped one in a second container anyway, which doubles the
+  // gutter — 48px instead of 24px on desktop, 28px instead of 14px on a phone —
+  // so the top of the page and the feed under it sat on two different grids.
+  // Nothing failed and no test caught it; it just looked slightly off, on six
+  // sites at once, until someone measured.
+  const VOID = new Set(["area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"]);
+
+  test("no .container sits inside another .container", () => {
+    const offenders = [];
+    for (const p of contentPages()) {
+      // Script and style bodies are not markup; a "<" in either would throw
+      // the tag scan off.
+      const html = p.html
+        .replace(/<script\b[\s\S]*?<\/script>/g, "")
+        .replace(/<style\b[\s\S]*?<\/style>/g, "");
+      const stack = [];
+      let depth = 0;
+      for (const m of html.matchAll(/<(\/?)([a-zA-Z][a-zA-Z0-9-]*)([^>]*)>/g)) {
+        const [, slash, tag, attrs] = m;
+        const name = tag.toLowerCase();
+        if (VOID.has(name)) continue;
+        if (slash) {
+          if (stack.length && stack.pop()) depth--;
+          continue;
+        }
+        if (attrs.trimEnd().endsWith("/")) continue;
+        const isContainer = /class="[^"]*\bcontainer\b/.test(attrs);
+        if (isContainer && depth > 0) offenders.push(`${p.app}${p.url}`);
+        stack.push(isContainer);
+        if (isContainer) depth += 1;
+      }
+    }
+    assert.deepEqual(
+      [...new Set(offenders)],
+      [],
+      `a container inside a container doubles the page gutter: ${JSON.stringify([...new Set(offenders)], null, 1)}`,
+    );
   });
 });
 

@@ -4,15 +4,13 @@
    eco's green). It also reads as "conference", not "listing": this site
    sells nothing and shouldn't wear a property brand's colours. */
 :root {
-  --accent: #5145C4;
-  --accent-ink: #241D73;
-  --accent-tint: #E7E4F7;
+  --accent-light: #5145C4;
+  --accent-ink-light: #241D73;
+  --accent-tint-light: #E7E4F7;
+  --accent-dark: #A79BF5;
+  --accent-ink-dark: #DDD8FB;
+  --accent-tint-dark: #1E1A3D;
 }
-@media (prefers-color-scheme: dark) {
-  :root { --accent: #A79BF5; --accent-ink: #DDD8FB; --accent-tint: #1E1A3D; }
-}
-:root[data-theme="dark"] { --accent: #A79BF5; --accent-ink: #DDD8FB; --accent-tint: #1E1A3D; }
-:root[data-theme="light"] { --accent: #5145C4; --accent-ink: #241D73; --accent-tint: #E7E4F7; }
 
 /* The shared feed card fills a coverless card with a flat block of accent
    tint and three lines of date. At the size it ends up on this page that

@@ -2,12 +2,10 @@
    from the network's palette: these five sites are independent of the DST
    group and of each other, so nothing here has to sit next to a sibling. */
 :root {
-  --accent: #BE1B14;
-  --accent-ink: #84120D;
-  --accent-tint: #FCE7E5;
+  --accent-light: #BE1B14;
+  --accent-ink-light: #84120D;
+  --accent-tint-light: #FCE7E5;
+  --accent-dark: #FF9A93;
+  --accent-ink-dark: #FFD3CF;
+  --accent-tint-dark: #3A0F0C;
 }
-@media (prefers-color-scheme: dark) {
-  :root { --accent: #FF9A93; --accent-ink: #FFD3CF; --accent-tint: #3A0F0C; }
-}
-:root[data-theme="dark"] { --accent: #FF9A93; --accent-ink: #FFD3CF; --accent-tint: #3A0F0C; }
-:root[data-theme="light"] { --accent: #BE1B14; --accent-ink: #84120D; --accent-tint: #FCE7E5; }

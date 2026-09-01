@@ -2,12 +2,10 @@
    distinct from the llc site's teal, and chosen deliberately away from
    literal gold/luxury cliché while still reading warm and human. */
 :root {
-  --accent: #8A5A2B;
-  --accent-ink: #4A2E14;
-  --accent-tint: #F3E9DC;
+  --accent-light: #8A5A2B;
+  --accent-ink-light: #4A2E14;
+  --accent-tint-light: #F3E9DC;
+  --accent-dark: #D9A468;
+  --accent-ink-dark: #F0D8B8;
+  --accent-tint-dark: #2C2216;
 }
-@media (prefers-color-scheme: dark) {
-  :root { --accent: #D9A468; --accent-ink: #F0D8B8; --accent-tint: #2C2216; }
-}
-:root[data-theme="dark"] { --accent: #D9A468; --accent-ink: #F0D8B8; --accent-tint: #2C2216; }
-:root[data-theme="light"] { --accent: #8A5A2B; --accent-ink: #4A2E14; --accent-tint: #F3E9DC; }

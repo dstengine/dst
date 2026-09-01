@@ -4,15 +4,13 @@
    mbr's cyan, palmcentral's terracotta, eco's green, fwf's indigo); a
    theatre listing is the one place a curtain red is the obvious answer. */
 :root {
-  --accent: #C0185C;
-  --accent-ink: #7A0B39;
-  --accent-tint: #FBE6EE;
+  --accent-light: #C0185C;
+  --accent-ink-light: #7A0B39;
+  --accent-tint-light: #FBE6EE;
+  --accent-dark: #F58BB4;
+  --accent-ink-dark: #FBD3E1;
+  --accent-tint-dark: #3B0F23;
 }
-@media (prefers-color-scheme: dark) {
-  :root { --accent: #F58BB4; --accent-ink: #FBD3E1; --accent-tint: #3B0F23; }
-}
-:root[data-theme="dark"] { --accent: #F58BB4; --accent-ink: #FBD3E1; --accent-tint: #3B0F23; }
-:root[data-theme="light"] { --accent: #C0185C; --accent-ink: #7A0B39; --accent-tint: #FBE6EE; }
 
 /* Key/value facts. A show has half a dozen of them and most are still
    unannounced, so they are a description list rather than a table: on a

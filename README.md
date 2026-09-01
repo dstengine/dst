@@ -124,7 +124,19 @@ right after "Restored build cache from previous deployment".
 2. Add `dev:<name>` / `build:<name>` to the root `package.json` and include
    the app in the root `build` script.
 3. Give it an accent in `src/styles/theme.css` and a palette in
-   `tools/covers.json` — a site without one cannot generate covers.
+   `tools/covers.json` — a site without one cannot generate covers. The
+   accent is two palettes and nothing else:
+
+   ```css
+   :root {
+     --accent-light: …; --accent-ink-light: …; --accent-tint-light: …;
+     --accent-dark:  …; --accent-ink-dark:  …; --accent-tint-dark:  …;
+   }
+   ```
+
+   Which one applies is `tokens.css`'s job, not the site's. Don't write a
+   `[data-theme]` rule here — the switch has three states, the third is easy
+   to get wrong, and a test rejects a `theme.css` that reimplements it.
 4. Add it to `SITES` in `tools/deploy.sh`, and to the table above.
 5. Cross-link it from `apps/dst` and related verticals — unless it is a
    `.lol` experiment, which links to nothing in the network.

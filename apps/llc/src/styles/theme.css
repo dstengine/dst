@@ -2,12 +2,10 @@
    professional and fintech-adjacent (this is the site that also has to talk
    about payment processing/Stripe), distinct from the visas site's accent. */
 :root {
-  --accent: #1F5C4E;
-  --accent-ink: #0D332A;
-  --accent-tint: #E9F0EC;
+  --accent-light: #1F5C4E;
+  --accent-ink-light: #0D332A;
+  --accent-tint-light: #E9F0EC;
+  --accent-dark: #4FAE97;
+  --accent-ink-dark: #BFE9DC;
+  --accent-tint-dark: #16261F;
 }
-@media (prefers-color-scheme: dark) {
-  :root { --accent: #4FAE97; --accent-ink: #BFE9DC; --accent-tint: #16261F; }
-}
-:root[data-theme="dark"] { --accent: #4FAE97; --accent-ink: #BFE9DC; --accent-tint: #16261F; }
-:root[data-theme="light"] { --accent: #1F5C4E; --accent-ink: #0D332A; --accent-tint: #E9F0EC; }

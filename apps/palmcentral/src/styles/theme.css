@@ -4,12 +4,10 @@
    corporate blue-green. Darkened from #B24A2C, which ran 4.32:1 for accent
    text on --accent-tint — under AA. Now 4.86. */
 :root {
-  --accent: #A64428;
-  --accent-ink: #5C2415;
-  --accent-tint: #F5E3DC;
+  --accent-light: #A64428;
+  --accent-ink-light: #5C2415;
+  --accent-tint-light: #F5E3DC;
+  --accent-dark: #E28A63;
+  --accent-ink-dark: #F6D9C6;
+  --accent-tint-dark: #2E1811;
 }
-@media (prefers-color-scheme: dark) {
-  :root { --accent: #E28A63; --accent-ink: #F6D9C6; --accent-tint: #2E1811; }
-}
-:root[data-theme="dark"] { --accent: #E28A63; --accent-ink: #F6D9C6; --accent-tint: #2E1811; }
-:root[data-theme="light"] { --accent: #A64428; --accent-ink: #5C2415; --accent-tint: #F5E3DC; }

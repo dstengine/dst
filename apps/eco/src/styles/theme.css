@@ -3,12 +3,10 @@
    deeper and less fintech-adjacent than llc's emerald teal, so the two
    don't read as the same site in a tab strip. */
 :root {
-  --accent: #2E5B36;
-  --accent-ink: #16301B;
-  --accent-tint: #E8F0E9;
+  --accent-light: #2E5B36;
+  --accent-ink-light: #16301B;
+  --accent-tint-light: #E8F0E9;
+  --accent-dark: #6FAE79;
+  --accent-ink-dark: #C8E6CD;
+  --accent-tint-dark: #17251A;
 }
-@media (prefers-color-scheme: dark) {
-  :root { --accent: #6FAE79; --accent-ink: #C8E6CD; --accent-tint: #17251A; }
-}
-:root[data-theme="dark"] { --accent: #6FAE79; --accent-ink: #C8E6CD; --accent-tint: #17251A; }
-:root[data-theme="light"] { --accent: #2E5B36; --accent-ink: #16301B; --accent-tint: #E8F0E9; }
