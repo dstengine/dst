@@ -1277,6 +1277,14 @@ export const venues: Venue[] = [
     opened: "18 May 1891",
     operator: "ATG Entertainment",
     officialSlug: "venue-palace-theatre-manchester",
+    image: "/venues/palace-theatre-manchester.jpg",
+    imagePosition: "center top",
+    imageAlt:
+      "The Palace Theatre on Oxford Street, Manchester, its faience front rising over the entrance arches.",
+    imageCredit: "Stephen McKay",
+    imageLicense: "CC BY-SA 2.0",
+    imageLicenseSlug: "licence-cc-by-sa-2-0",
+    imageSourceSlug: "photo-palace-theatre-manchester",
     summary:
       "Alfred Darbyshire built it, Frank Matcham redecorated it five years later, and Bertie Crewe rebuilt the inside in 1913 — three architects on one auditorium, which is why it does not read as the work of any of them. It takes the touring musicals too big for the Opera House down the road.",
     details: [
@@ -1306,6 +1314,14 @@ export const venues: Venue[] = [
     owner: "Scottish Opera",
     operator: "Ambassador Theatre Group",
     officialSlug: "venue-theatre-royal-glasgow",
+    image: "/venues/theatre-royal-glasgow.jpg",
+    imagePosition: "center 75%",
+    imageAlt:
+      "The Theatre Royal on Hope Street, Glasgow, its long pale flank and stage door along the pavement.",
+    imageCredit: "Stinglehammer",
+    imageLicense: "CC BY-SA 4.0",
+    imageLicenseSlug: "licence-cc-by-sa-4-0",
+    imageSourceSlug: "photo-theatre-royal-glasgow",
     summary:
       "Scotland’s oldest working theatre, home of Scottish Opera, and the largest surviving auditorium by Charles J. Phipps in Britain — which it is only because it burned down twice and he rebuilt it twice.",
     details: [
@@ -1336,6 +1352,13 @@ export const venues: Venue[] = [
     opened: "4 October 2011",
     operator: "The Marlowe Trust",
     officialSlug: "venue-marlowe-theatre-canterbury",
+    image: "/venues/marlowe-theatre-canterbury.jpg",
+    imageAlt:
+      "The Marlowe Theatre in Canterbury, its brick fly tower standing over a colonnaded glass foyer.",
+    imageCredit: "IreneAl",
+    imageLicense: "CC BY-SA 4.0",
+    imageLicenseSlug: "licence-cc-by-sa-4-0",
+    imageSourceSlug: "photo-marlowe-theatre-canterbury",
     summary:
       "The third building to carry the name, and the only one built as a theatre. It cost £25.6 million and came in within budget, which for a theatre is the rarer achievement of the two.",
     details: [
@@ -1365,6 +1388,13 @@ export const venues: Venue[] = [
     opened: "18 March 2010",
     operator: "Live Nation Ireland",
     officialSlug: "venue-bord-gais-energy-theatre",
+    image: "/venues/bord-gais-energy-theatre.jpg",
+    imageAlt:
+      "The Bord Gáis Energy Theatre on Grand Canal Square, Dublin, its angled glass front lit at dusk.",
+    imageCredit: "Miguel Mendez",
+    imageLicense: "CC BY 2.0",
+    imageLicenseSlug: "licence-cc-by-2-0",
+    imageSourceSlug: "photo-bord-gais-energy-theatre",
     summary:
       "Ireland’s largest fixed-seat theatre, designed by Daniel Libeskind on Grand Canal Square, and the only stage in the country built to take a West End show at full size.",
     details: [
@@ -1393,6 +1423,14 @@ export const venues: Venue[] = [
     opened: "22 December 1928",
     operator: "Mayflower Theatre Trust",
     officialSlug: "venue-mayflower-theatre-southampton",
+    image: "/venues/mayflower-theatre-southampton.jpg",
+    imagePosition: "center 65%",
+    imageAlt:
+      "The Mayflower Theatre on Commercial Road, Southampton, its 1928 front above the marquee.",
+    imageCredit: "Turquoisefish",
+    imageLicense: "CC BY-SA 3.0",
+    imageLicenseSlug: "licence-cc-by-sa-3-0",
+    imageSourceSlug: "photo-mayflower-theatre-southampton",
     summary:
       "The largest theatre in the south of England outside London, and a building that spent thirty-six years as a cinema in the middle of its life.",
     details: [

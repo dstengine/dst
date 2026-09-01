@@ -8,6 +8,8 @@ export const groups: RunGroup[] = [
   {
     slug: "uk",
     show: "chicago",
+    image: "/covers/chicago-uk.jpg",
+    imageAlt: "Cut-paper illustration: a chain of stepping-stone discs crossing a folded island shape.",
     name: "UK & Ireland Tour 2027",
     title: "Chicago: the UK & Ireland tour, 2027",
     blurb: "Thirty-three stops from Wimbledon in February to Edinburgh in November.",
@@ -19,6 +21,8 @@ export const groups: RunGroup[] = [
   {
     slug: "international",
     show: "chicago",
+    image: "/covers/chicago-international.jpg",
+    imageAlt: "Cut-paper illustration: three discs spaced along the curve of a folded globe.",
     name: "International 2026",
     title: "Chicago in Tokyo, Osaka and Dubai, 2026",
     blurb: "Tokyo and Osaka in the summer, Dubai in December.",
@@ -29,6 +33,8 @@ export const groups: RunGroup[] = [
   {
     slug: "uk",
     show: "cats",
+    image: "/covers/cats-uk.jpg",
+    imageAlt: "Cut-paper illustration: a trail of paw-print discs crossing a folded island shape.",
     name: "UK & Ireland Tour 2026–27",
     title: "Cats: the UK & Ireland tour, 2026–27",
     blurb: "Twenty-three stops from Plymouth in October to Newcastle the following June.",

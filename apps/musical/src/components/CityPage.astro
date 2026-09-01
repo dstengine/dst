@@ -91,6 +91,7 @@ const glance = [
             name={venue.name}
             blurb={venue.summary ?? venue.address ?? city.name}
             meta={venue.capacity ? `${venue.capacity.toLocaleString("en-GB")} seats` : city.name}
+            image={venue.image}
             icon="stage"
           />
         ))}

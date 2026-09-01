@@ -4,22 +4,27 @@ import Callout from "@dst/ui/Callout.astro";
 import Icon from "@dst/ui/Icon.astro";
 import { checkedOn, forum, forumDate } from "../content";
 import { go } from "../outbound";
+import PageHero from "@dst/ui/PageHero.astro";
 ---
 <Layout
   prose
   title="Future World Forum Dubai venue"
   description="Where Future World Forum Dubai 2026 is held: what the listing says, what it doesn't, and how to plan travel for 16 November without a confirmed venue."
 >
-  <section class="container hero">
-    <p class="eyebrow">Venue</p>
-    <h1>Where it is held</h1>
+  <PageHero
+    eyebrow="Venue"
+    title="Where it is held"
+    image="/covers/venue.jpg"
+    imageAlt="Cut-paper illustration: a glass-fronted pavilion of layered panels under a wide entrance canopy."
+    imageKind="generated"
+  >
     <p class="lede">
       The honest answer, as of {checkedOn}: <strong>Dubai, and no further</strong>.
       The ticket listing's location field carries the city and nothing else —
       no venue name, no district, no hall. Everything below is about how to
       plan around that rather than pretending it has been answered.
     </p>
-  </section>
+  </PageHero>
 
   <Callout kind="warn">
     <strong>The venue is still to be announced.</strong> The listing gives a city, a

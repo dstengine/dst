@@ -1,15 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import LeadForm from "@dst/ui/LeadForm.astro";
+import PageHero from "@dst/ui/PageHero.astro";
 ---
 <Layout
   prose
   title="Contact"
   description="Get in touch with DST — about a specific venture, a partnership, or the group generally."
 >
-  <section class="container">
-    <p class="eyebrow">Contact</p>
-    <h1>Get in touch</h1>
+  <PageHero
+    eyebrow="Contact"
+    title="Get in touch"
+    image="/covers/contact.jpg"
+    imageAlt="Cut-paper illustration: an envelope opening into a fan of thin parallel lines."
+    imageKind="generated"
+  >
     <p class="lede">
       Looking for one of the verticals specifically? The
       <a href="https://llc.dst.llc" title="Company formation in Dubai">company formation</a> and
@@ -18,7 +23,7 @@ import LeadForm from "@dst/ui/LeadForm.astro";
       for anything else — partnerships, press, or a venture that doesn't
       exist yet.
     </p>
-  </section>
+  </PageHero>
 
   <section class="container">
     <LeadForm

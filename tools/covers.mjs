@@ -1,4 +1,4 @@
-// Generates one cover per event and per news item that has none, through
+// Generates one cover per event, news item and page that has none, through
 // fal.ai.
 //
 //   node tools/covers.mjs            # generate what is missing
@@ -118,7 +118,11 @@ async function generate(site, slug, entry) {
 // not collide today and this keeps it that way.
 const jobs = [];
 const seen = new Set();
-for (const block of [PROMPTS.covers, PROMPTS.news ?? {}])
+// Three blocks now: an event, a news item, and a page that is neither —
+// a service page, an about page, a section under a show. Same house style
+// and same palette per site, because a cover's job is the same wherever it
+// runs: to say which site you are on before you have read a word.
+for (const block of [PROMPTS.covers, PROMPTS.news ?? {}, PROMPTS.pages ?? {}])
   for (const [site, entries] of Object.entries(block))
     for (const [slug, entry] of Object.entries(entries)) {
       const key = `${site}/${slug}`;

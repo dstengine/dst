@@ -2,21 +2,26 @@
 import Layout from "../layouts/Layout.astro";
 import Callout from "@dst/ui/Callout.astro";
 import { go } from "../outbound";
+import PageHero from "@dst/ui/PageHero.astro";
 ---
 <Layout
   prose
   title="About this site"
   description="Who publishes fwf.lol, why an independent guide to Future World Forum Dubai exists, and how its facts are checked and dated."
 >
-  <section class="container hero">
-    <p class="eyebrow">About</p>
-    <h1>What this site is</h1>
+  <PageHero
+    eyebrow="About"
+    title="What this site is"
+    image="/covers/about.jpg"
+    imageAlt="Cut-paper illustration: a folded paper fan opening into a wide semicircle."
+    imageKind="generated"
+  >
     <p class="lede">
       An independent guide to <strong>Future World Forum Dubai 2026</strong>,
       published by DST. It is not the organiser, not affiliated with Futur
       World Expo, and sells nothing.
     </p>
-  </section>
+  </PageHero>
 
   <Callout kind="warn">
     <strong>Not official.</strong> Nothing here is an announcement. The

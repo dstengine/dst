@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Faq from "@dst/ui/Faq.astro";
 import { formatDate } from "@dst/ui/date";
 import { checkedOn, forum, forumDate, ticketsFrom, ticketsTo } from "../content";
+import PageHero from "@dst/ui/PageHero.astro";
 
 const salesEnd = formatDate(forum.tickets!.salesEnd!);
 
@@ -57,15 +58,19 @@ const faqItems = [
   title="Future World Forum Dubai FAQ"
   description="Future World Forum Dubai 2026: dates, venue, ticket prices, refunds, the organiser, and how it differs from the Dubai Future Forum. Answered from the published listing."
 >
-  <section class="container hero">
-    <p class="eyebrow">FAQ</p>
-    <h1>Questions before booking</h1>
+  <PageHero
+    eyebrow="FAQ"
+    title="Questions before booking"
+    image="/covers/faq.jpg"
+    imageAlt="Cut-paper illustration: a grid of rounded tiles with one tile lifted and turned over."
+    imageKind="generated"
+  >
     <p class="lede">
       Answered from the organiser's own listing, read on {checkedOn}.
       Where nothing has been published, the answer says so instead of
       guessing.
     </p>
-  </section>
+  </PageHero>
 
   <section class="container">
     <Faq items={faqItems} />

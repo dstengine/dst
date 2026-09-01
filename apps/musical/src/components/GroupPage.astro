@@ -4,6 +4,7 @@
 // thing that makes them a season: the shape of the route, how much of it is
 // already sellable, and the first and last night.
 import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
+import PageHero from "@dst/ui/PageHero.astro";
 import Glance from "@dst/ui/Glance.astro";
 import { ICONS } from "@dst/ui/icons";
 import Layout from "../layouts/Layout.astro";
@@ -30,13 +31,19 @@ const glance = [
 ].filter(Boolean) as { label: string; value: string; icon: string }[];
 ---
 <Layout title={group.title} description={`${group.blurb} Every stop with its theatre, dates and seller.`}>
-  <section class="container hero">
+  <div class="container crumbs">
     <Breadcrumbs crumbs={[{ href: `/${show.slug}/`, label: show.title }]} current={group.name} homeLabel="What's on" />
-    <p class="eyebrow">Tour</p>
-    <h1>{group.title}</h1>
+  </div>
+  <PageHero
+    eyebrow="Tour"
+    title={group.title}
+    image={group.image}
+    imageAlt={group.imageAlt}
+    imageKind="generated"
+  >
     <p class="lede">{group.body[0]}</p>
     <Glance facts={glance} />
-  </section>
+  </PageHero>
 
   <section class="container prose">
     {group.body.slice(1).map((paragraph) => <p>{paragraph}</p>)}
@@ -59,6 +66,7 @@ const glance = [
 </Layout>
 
 <style>
+  .crumbs { padding-top: var(--space-4); }
   .prose p { max-width: 68ch; }
   .note { margin-top: var(--space-3); color: var(--ink-muted); font-size: var(--step--1); max-width: 68ch; }
 </style>

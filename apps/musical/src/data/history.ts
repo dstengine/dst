@@ -81,6 +81,8 @@ export const milestones: Milestone[] = [
 
 export const historySection: Section = {
   slug: "history",
+  image: "/covers/chicago-history.jpg",
+  imageAlt: "Cut-paper illustration: a receding row of layered arched theatre fronts.",
   label: "History",
   title: "Chicago The Musical: a hundred-year history",
   description:

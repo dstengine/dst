@@ -12,7 +12,8 @@
     "mbr": "deep teal ground with pale aqua and chalk white paper, small sand highlights",
     "palmcentral": "warm sand ground with terracotta and burnt orange paper, small cream highlights",
     "riviera": "clear mid-blue ground with pale sky and chalk white paper, small sand highlights",
-    "visas": "warm sand ground with tobacco brown and ochre paper, small cream highlights"
+    "visas": "warm sand ground with tobacco brown and ochre paper, small cream highlights",
+    "musical": "warm cream ground with crimson and deep burgundy paper, small brass highlights"
   },
   "covers": {
     "nyc42": {
@@ -228,6 +229,96 @@
     },
     "eco": {
       "uae-mangroves-halfway-to-100-million": "a wide band of shallow water in flat paper across the lower half, a dense thicket of arched stilt roots rising out of it under a solid canopy of rounded green leaf shapes, the thicket filling the left half of the frame and open empty water in the right half"
+    }
+  },
+  "pages": {
+    "llc": {
+      "banking": "a tall arched bank doorway beside a stack of flat discs",
+      "financing": "a rising staircase of stacked bars next to a slender arch",
+      "mainland": "a wide flat shoreline of layered strips meeting a cluster of towers",
+      "payments": "two overlapping circles passing a small square between them",
+      "registration": "a folded document with a round wax seal and a ribbon tail",
+      "taxation": "a balance beam with two shallow trays, one holding a stack of discs",
+      "zones": "a grid of walled enclosures seen from above, one corner left open"
+    },
+    "mbr": {
+      "coffee": "a cup on a saucer with a curl of steam and a single bean shape",
+      "food": "a round platter divided into segments with two slender bars beside it",
+      "money": "a fan of overlapping rectangles beside a single large disc",
+      "pools": "a rectangular pool of layered blue strips with a ladder and a diving board",
+      "rent": "a key with a circular bow crossing the base of a tall tower",
+      "water": "concentric ripple rings crossed by a straight canal band"
+    },
+    "visas": {
+      "consultation": "two facing chairs across a low round table",
+      "family": "four rounded arches of different heights standing side by side",
+      "golden": "an upright rectangle with a rosette disc at its centre",
+      "properties": "three tower blocks of different heights with a key shape at their base"
+    },
+    "fwf": {
+      "about": "a folded paper fan opening into a wide semicircle",
+      "faq": "a grid of rounded tiles with one tile lifted and turned over",
+      "programme": "a vertical column of stacked horizontal bars of varying length",
+      "tickets": "a torn ticket stub with a perforated edge and a punched circle",
+      "venue": "a glass-fronted pavilion of layered panels under a wide entrance canopy"
+    },
+    "ldn": {
+      "about": "a folded map of a wide river bend crossed by three bridges"
+    },
+    "lnd": {
+      "about": "a rooftop line of chimney pots under a thin crescent moon"
+    },
+    "cmx": {
+      "acerca": {
+        "subject": "an angular volcano silhouette rising behind a grid of low flat rooftops",
+        "detail": "a city seen from a distance at dusk, rooftops as simple stacked rectangles"
+      }
+    },
+    "mxo": {
+      "acerca": "a wide valley of layered ridges with agave shapes in the foreground"
+    },
+    "nyc42": {
+      "about": "a street grid of narrow blocks crossed by one long diagonal avenue"
+    },
+    "dst": {
+      "contact": "an envelope opening into a fan of thin parallel lines",
+      "hub-llc": "a folded document with a wax seal standing in front of a cluster of flat tower shapes",
+      "hub-islands": "an archipelago of five curved frond-shaped islands in a flat sea, seen from directly above",
+      "hub-crypto": {
+        "subject": "a large hexagonal disc of layered paper overlapping two flat tower silhouettes",
+        "detail": "the disc is a plain flat hexagon of coloured paper with nothing printed on it, and every shape is cut paper rather than a photographed object"
+      }
+    },
+    "musical": {
+      "about": "a proscenium arch with one curtain drawn back",
+      "venues": {
+        "subject": "a row of theatre fronts of different heights, with columns, arched doors and canopies",
+        "detail": "the marquee boards and signs above the doors are blank panels of flat colour with nothing written on them"
+      },
+      "online": "a rounded screen with a play triangle and a curtain fold behind it",
+      "chicago-about": "a tilted fedora hat resting on a bentwood chair",
+      "chicago-history": "a receding row of layered arched theatre fronts",
+      "chicago-tickets": {
+        "subject": "a fan of overlapping torn paper stubs with perforated edges",
+        "detail": "every stub is blank and unprinted, plain coloured paper with no writing, no numbers, no barcode and no seat markings"
+      },
+      "chicago-songs": "a row of vertical bars rising and falling under a single spotlight cone",
+      "chicago-online": "a rounded screen with a play triangle and a strip of film sprockets",
+      "chicago-uk": "a chain of stepping-stone discs crossing a folded island shape",
+      "chicago-international": "three discs spaced along the curve of a folded globe",
+      "cats-about": "a curled cat silhouette on a stack of angular junkyard shapes",
+      "cats-tickets": {
+        "subject": "a single torn paper stub with a perforated edge and one paw-shaped punch hole",
+        "detail": "the stub is completely blank and unprinted, plain paper with no writing, no numbers and no barcode anywhere"
+      },
+      "cats-uk": "a trail of paw-print discs crossing a folded island shape"
+    },
+    "palmcentral": {
+      "prices": "a stepped row of flat bars rising left to right beside a single tall tower",
+      "payment-plan": "a row of evenly spaced discs joined by a thin line, the last one larger than the rest"
+    },
+    "eco": {
+      "group": "three interlocking flat rings of different sizes on an open ground"
     }
   }
 }

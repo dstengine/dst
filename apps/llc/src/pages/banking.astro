@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Faq from "@dst/ui/Faq.astro";
+import PageHero from "@dst/ui/PageHero.astro";
 
 const faqItems = [
   {
@@ -18,15 +19,19 @@ const faqItems = [
   title="Business Banking"
   description="What non-resident founders should expect when opening a business bank account in Dubai — and what documentation actually speeds it up."
 >
-  <section class="container">
-    <p class="eyebrow">Banking</p>
-    <h1>Opening a business bank account</h1>
+  <PageHero
+    eyebrow="Banking"
+    title="Opening a business bank account"
+    image="/covers/banking.jpg"
+    imageAlt="Cut-paper illustration: a tall arched bank doorway beside a stack of flat discs."
+    imageKind="generated"
+  >
     <p class="lede">
       This is consistently the slowest step after registration, and the one
       most guides treat as a footnote. It deserves the opposite: real
       preparation before your first bank meeting.
     </p>
-  </section>
+  </PageHero>
 
   <section class="container">
     <h2>What banks typically ask for</h2>

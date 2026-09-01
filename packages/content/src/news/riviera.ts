@@ -64,6 +64,8 @@ export const items: NewsItem[] = [
     related: [
       {
         href: "/rent/",
+        image: "/riviera.jpg",
+        imageAlt: "The Azizi Riviera promenade at night: lit low-rise blocks along the canal.",
         title: "Renting in Riviera",
         text: "Matching a block to what matters — canal view, courtyard, distance from the promenade.",
         eyebrow: "Rent",

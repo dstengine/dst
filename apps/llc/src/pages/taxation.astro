@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Callout from "@dst/ui/Callout.astro";
 import Faq from "@dst/ui/Faq.astro";
+import PageHero from "@dst/ui/PageHero.astro";
 
 const faqItems = [
   {
@@ -19,15 +20,19 @@ const faqItems = [
   title="Corporate Tax and Filing"
   description="What corporate tax obligations actually apply to a Dubai company, and what filing looks like in practice."
 >
-  <section class="container">
-    <p class="eyebrow">Taxation</p>
-    <h1>Corporate tax and filing</h1>
+  <PageHero
+    eyebrow="Taxation"
+    title="Corporate tax and filing"
+    image="/covers/taxation.jpg"
+    imageAlt="Cut-paper illustration: a balance beam with two shallow trays, one holding a stack of discs."
+    imageKind="generated"
+  >
     <p class="lede">
       Dubai's tax-free reputation is outdated for companies, even if it still
       holds for personal income. Corporate tax is real, recent, and worth
       planning for from day one rather than discovering at filing time.
     </p>
-  </section>
+  </PageHero>
 
   <Callout kind="warn">
     This page is general orientation, not tax advice. Corporate tax rules,

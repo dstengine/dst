@@ -1,13 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { about } from "../content";
+import PageHero from "@dst/ui/PageHero.astro";
 ---
 <Layout
   prose title={about.title} description={about.description}>
-  <section class="container hero">
-    <h1>{about.h1}</h1>
+  <PageHero
+    title={about.h1}
+    image="/covers/acerca.jpg"
+    imageAlt="Cut-paper illustration: an angular volcano silhouette rising behind a grid of low flat rooftops."
+    imageKind="generated"
+  >
     <p class="lede">{about.lede}</p>
-  </section>
+  </PageHero>
 
   <section class="container">
     <h2>Qué es esto</h2>

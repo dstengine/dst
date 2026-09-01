@@ -1,0 +1,41 @@
+---
+// A page opener with a cover: the same one DistrictLayout gives its sites,
+// for the sites that do not use DistrictLayout. Eyebrow and heading sit on
+// the picture; the lede comes through the slot, because a lede is usually
+// written with the page's own numbers in it and passing it as a string
+// would mean giving that up.
+//
+// With no image it falls back to plain type, so a page can be wired up
+// before its cover exists rather than after.
+import PhotoHero from "./district/PhotoHero.astro";
+
+interface Props {
+  eyebrow?: string;
+  title: string;
+  image?: string;
+  /** What the picture is, including that it is an illustration — every
+      cover on these pages is drawn, and none of them depicts anything. */
+  imageAlt?: string;
+  imageKind?: "photo" | "diagram" | "illustration" | "render" | "generated";
+}
+const { eyebrow, title, image, imageAlt, imageKind } = Astro.props;
+---
+<header class:list={["container", "page-hero", { "has-photo": image }]}>
+  {image ? (
+    <PhotoHero eyebrow={eyebrow ?? ""} title={title} image={image} imageAlt={imageAlt} imageKind={imageKind} />
+  ) : (
+    <>
+      {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+      <h1>{title}</h1>
+    </>
+  )}
+  <slot />
+</header>
+
+<style>
+  .page-hero { padding-top: var(--space-5); }
+  /* The picture already carries the eyebrow and the heading, so what is
+     left above the lede needs less room than the plain version. */
+  .page-hero.has-photo { padding-top: var(--space-4); }
+  .page-hero.has-photo :global(.lede) { margin-top: var(--space-3); }
+</style>

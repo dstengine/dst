@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Faq from "@dst/ui/Faq.astro";
+import PageHero from "@dst/ui/PageHero.astro";
 
 const faqItems = [
   {
@@ -21,9 +22,13 @@ const faqItems = [
   title="Free Zone Comparison"
   description="A structured comparison of Dubai's business free zones by activity fit, not a ranked top-10 list — plus a decision guide for choosing between them."
 >
-  <section class="container">
-    <p class="eyebrow">Free zones</p>
-    <h1>Comparing Dubai's free zones</h1>
+  <PageHero
+    eyebrow="Free zones"
+    title="Comparing Dubai's free zones"
+    image="/covers/zones.jpg"
+    imageAlt="Cut-paper illustration: a grid of walled enclosures seen from above, one corner left open."
+    imageKind="generated"
+  >
     <p class="lede">
       There are more than 40 free zones across the UAE, and most comparison
       articles either name a handful and stop, or rank them by claimed cost
@@ -31,7 +36,7 @@ const faqItems = [
       activity fit first — cost only matters once you already know which
       zones are eligible for what you're building.
     </p>
-  </section>
+  </PageHero>
 
   <section class="container">
     <h2>Start with activity, not price</h2>

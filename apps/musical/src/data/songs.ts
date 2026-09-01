@@ -37,6 +37,8 @@ export const songs: Song[] = [
 
 export const songsSection: Section = {
   slug: "songs",
+  image: "/covers/chicago-songs.jpg",
+  imageAlt: "Cut-paper illustration: a row of vertical bars rising and falling under a single spotlight cone.",
   label: "The songs",
   title: "Chicago The Musical: every song, in order",
   description:

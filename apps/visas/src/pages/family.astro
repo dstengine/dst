@@ -1,14 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PageHero from "@dst/ui/PageHero.astro";
 ---
 <Layout
   prose
   title="Family & Lifestyle"
   description="What a Golden Visa actually changes day to day for a family — schooling, healthcare, and settling in — beyond the legal mechanics."
 >
-  <section class="container hero">
-    <p class="eyebrow">Family & lifestyle</p>
-    <h1>What changes, day to day</h1>
+  <PageHero
+    eyebrow="Family & lifestyle"
+    title="What changes, day to day"
+    image="/covers/family.jpg"
+    imageAlt="Cut-paper illustration: four rounded arches of different heights standing side by side."
+    imageKind="generated"
+  >
     <p class="lede">
       Most of what's written about the Golden Visa stops at eligibility and
       thresholds. What actually matters once you're through that process is
@@ -16,7 +21,7 @@ import Layout from "../layouts/Layout.astro";
       re-applying every year alongside a shorter-term visa, and healthcare
       access that doesn't depend on an employer.
     </p>
-  </section>
+  </PageHero>
 
   <section class="container">
     <h2>Family sponsorship</h2>

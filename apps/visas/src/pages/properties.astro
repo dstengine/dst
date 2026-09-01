@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PageHero from "@dst/ui/PageHero.astro";
 
 // Developments, not units. A row is a project whose entry price already
 // clears the Golden Visa threshold — not an offer on a specific apartment,
@@ -54,9 +55,13 @@ const GOLDEN_VISA_THRESHOLD_AED = 2000000;
   title="Eligible Properties"
   description="Developments whose entry price already clears the Golden Visa investment threshold, filterable by area and type."
 >
-  <section class="container">
-    <p class="eyebrow">Eligible properties</p>
-    <h1>Where the entry price already qualifies</h1>
+  <PageHero
+    eyebrow="Eligible properties"
+    title="Where the entry price already qualifies"
+    image="/covers/properties.jpg"
+    imageAlt="Cut-paper illustration: three tower blocks of different heights with a key shape at their base."
+    imageKind="generated"
+  >
     <p class="lede">
       The Golden Visa property route asks for AED {GOLDEN_VISA_THRESHOLD_AED.toLocaleString()}
       of unmortgaged value. These are developments where the cheapest verified
@@ -68,7 +73,7 @@ const GOLDEN_VISA_THRESHOLD_AED = 2000000;
       this page. Every figure below is read from source and validated;
       last checked {CHECKED_ON}.
     </p>
-  </section>
+  </PageHero>
 
   <section class="container" x-data={`{
     area: 'all',

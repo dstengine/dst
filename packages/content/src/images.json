@@ -1,5 +1,53 @@
 {
   "cmx.lol": {
+    "/covers/acerca.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/acerca-480.avif"
+        ],
+        [
+          768,
+          "/covers/acerca-768.avif"
+        ],
+        [
+          1024,
+          "/covers/acerca-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/acerca-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/acerca-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/acerca-480.webp"
+        ],
+        [
+          768,
+          "/covers/acerca-768.webp"
+        ],
+        [
+          1024,
+          "/covers/acerca-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/acerca-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/acerca-1536.webp"
+        ]
+      ]
+    },
     "/covers/betsabee-romero-homenaje-a-monsivais.jpg": {
       "width": 1536,
       "height": 864,
@@ -818,6 +866,54 @@
         ]
       ]
     },
+    "/covers/contact.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/contact-480.avif"
+        ],
+        [
+          768,
+          "/covers/contact-768.avif"
+        ],
+        [
+          1024,
+          "/covers/contact-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/contact-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/contact-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/contact-480.webp"
+        ],
+        [
+          768,
+          "/covers/contact-768.webp"
+        ],
+        [
+          1024,
+          "/covers/contact-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/contact-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/contact-1536.webp"
+        ]
+      ]
+    },
     "/covers/dubai-tokenised-property-secondary-market.jpg": {
       "width": 1536,
       "height": 864,
@@ -959,6 +1055,150 @@
         [
           1536,
           "/covers/gitex-moves-to-expo-city-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/hub-crypto.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/hub-crypto-480.avif"
+        ],
+        [
+          768,
+          "/covers/hub-crypto-768.avif"
+        ],
+        [
+          1024,
+          "/covers/hub-crypto-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/hub-crypto-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/hub-crypto-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/hub-crypto-480.webp"
+        ],
+        [
+          768,
+          "/covers/hub-crypto-768.webp"
+        ],
+        [
+          1024,
+          "/covers/hub-crypto-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/hub-crypto-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/hub-crypto-1536.webp"
+        ]
+      ]
+    },
+    "/covers/hub-islands.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/hub-islands-480.avif"
+        ],
+        [
+          768,
+          "/covers/hub-islands-768.avif"
+        ],
+        [
+          1024,
+          "/covers/hub-islands-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/hub-islands-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/hub-islands-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/hub-islands-480.webp"
+        ],
+        [
+          768,
+          "/covers/hub-islands-768.webp"
+        ],
+        [
+          1024,
+          "/covers/hub-islands-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/hub-islands-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/hub-islands-1536.webp"
+        ]
+      ]
+    },
+    "/covers/hub-llc.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/hub-llc-480.avif"
+        ],
+        [
+          768,
+          "/covers/hub-llc-768.avif"
+        ],
+        [
+          1024,
+          "/covers/hub-llc-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/hub-llc-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/hub-llc-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/hub-llc-480.webp"
+        ],
+        [
+          768,
+          "/covers/hub-llc-768.webp"
+        ],
+        [
+          1024,
+          "/covers/hub-llc-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/hub-llc-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/hub-llc-1536.webp"
         ]
       ]
     },
@@ -1228,6 +1468,54 @@
     }
   },
   "eco.dst.llc": {
+    "/covers/group.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/group-480.avif"
+        ],
+        [
+          768,
+          "/covers/group-768.avif"
+        ],
+        [
+          1024,
+          "/covers/group-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/group-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/group-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/group-480.webp"
+        ],
+        [
+          768,
+          "/covers/group-768.webp"
+        ],
+        [
+          1024,
+          "/covers/group-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/group-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/group-1536.webp"
+        ]
+      ]
+    },
     "/covers/uae-mangroves-halfway-to-100-million.jpg": {
       "width": 1536,
       "height": 864,
@@ -1454,6 +1742,54 @@
     }
   },
   "fwf.lol": {
+    "/covers/about.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/about-480.avif"
+        ],
+        [
+          768,
+          "/covers/about-768.avif"
+        ],
+        [
+          1024,
+          "/covers/about-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/about-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/about-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/about-480.webp"
+        ],
+        [
+          768,
+          "/covers/about-768.webp"
+        ],
+        [
+          1024,
+          "/covers/about-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/about-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/about-1536.webp"
+        ]
+      ]
+    },
     "/covers/agentic-ai-half-of-uae-government-services.jpg": {
       "width": 1536,
       "height": 864,
@@ -1646,6 +1982,54 @@
         ]
       ]
     },
+    "/covers/faq.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/faq-480.avif"
+        ],
+        [
+          768,
+          "/covers/faq-768.avif"
+        ],
+        [
+          1024,
+          "/covers/faq-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/faq-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/faq-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/faq-480.webp"
+        ],
+        [
+          768,
+          "/covers/faq-768.webp"
+        ],
+        [
+          1024,
+          "/covers/faq-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/faq-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/faq-1536.webp"
+        ]
+      ]
+    },
     "/covers/future-world-forum-dubai-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -1739,6 +2123,54 @@
         [
           1536,
           "/covers/gitex-global-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/programme.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/programme-480.avif"
+        ],
+        [
+          768,
+          "/covers/programme-768.avif"
+        ],
+        [
+          1024,
+          "/covers/programme-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/programme-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/programme-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/programme-480.webp"
+        ],
+        [
+          768,
+          "/covers/programme-768.webp"
+        ],
+        [
+          1024,
+          "/covers/programme-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/programme-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/programme-1536.webp"
         ]
       ]
     },
@@ -1838,6 +2270,54 @@
         ]
       ]
     },
+    "/covers/tickets.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/tickets-480.avif"
+        ],
+        [
+          768,
+          "/covers/tickets-768.avif"
+        ],
+        [
+          1024,
+          "/covers/tickets-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/tickets-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/tickets-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/tickets-480.webp"
+        ],
+        [
+          768,
+          "/covers/tickets-768.webp"
+        ],
+        [
+          1024,
+          "/covers/tickets-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/tickets-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/tickets-1536.webp"
+        ]
+      ]
+    },
     "/covers/vara-rules-for-virtual-asset-derivatives.jpg": {
       "width": 1536,
       "height": 864,
@@ -1883,6 +2363,54 @@
         [
           1536,
           "/covers/vara-rules-for-virtual-asset-derivatives-1536.webp"
+        ]
+      ]
+    },
+    "/covers/venue.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/venue-480.avif"
+        ],
+        [
+          768,
+          "/covers/venue-768.avif"
+        ],
+        [
+          1024,
+          "/covers/venue-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/venue-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/venue-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/venue-480.webp"
+        ],
+        [
+          768,
+          "/covers/venue-768.webp"
+        ],
+        [
+          1024,
+          "/covers/venue-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/venue-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/venue-1536.webp"
         ]
       ]
     },
@@ -1968,6 +2496,54 @@
     }
   },
   "ldn.lol": {
+    "/covers/about.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/about-480.avif"
+        ],
+        [
+          768,
+          "/covers/about-768.avif"
+        ],
+        [
+          1024,
+          "/covers/about-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/about-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/about-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/about-480.webp"
+        ],
+        [
+          768,
+          "/covers/about-768.webp"
+        ],
+        [
+          1024,
+          "/covers/about-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/about-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/about-1536.webp"
+        ]
+      ]
+    },
     "/covers/bfi-london-film-festival-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -2498,6 +3074,54 @@
     }
   },
   "llc.dst.llc": {
+    "/covers/banking.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/banking-480.avif"
+        ],
+        [
+          768,
+          "/covers/banking-768.avif"
+        ],
+        [
+          1024,
+          "/covers/banking-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/banking-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/banking-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/banking-480.webp"
+        ],
+        [
+          768,
+          "/covers/banking-768.webp"
+        ],
+        [
+          1024,
+          "/covers/banking-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/banking-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/banking-1536.webp"
+        ]
+      ]
+    },
     "/covers/difc-passes-10000-active-companies.jpg": {
       "width": 1536,
       "height": 864,
@@ -2543,6 +3167,54 @@
         [
           1536,
           "/covers/difc-passes-10000-active-companies-1536.webp"
+        ]
+      ]
+    },
+    "/covers/financing.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/financing-480.avif"
+        ],
+        [
+          768,
+          "/covers/financing-768.avif"
+        ],
+        [
+          1024,
+          "/covers/financing-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/financing-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/financing-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/financing-480.webp"
+        ],
+        [
+          768,
+          "/covers/financing-768.webp"
+        ],
+        [
+          1024,
+          "/covers/financing-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/financing-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/financing-1536.webp"
         ]
       ]
     },
@@ -2593,9 +3265,297 @@
           "/covers/gitex-global-2026-1536.webp"
         ]
       ]
+    },
+    "/covers/mainland.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/mainland-480.avif"
+        ],
+        [
+          768,
+          "/covers/mainland-768.avif"
+        ],
+        [
+          1024,
+          "/covers/mainland-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/mainland-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/mainland-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/mainland-480.webp"
+        ],
+        [
+          768,
+          "/covers/mainland-768.webp"
+        ],
+        [
+          1024,
+          "/covers/mainland-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/mainland-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/mainland-1536.webp"
+        ]
+      ]
+    },
+    "/covers/payments.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/payments-480.avif"
+        ],
+        [
+          768,
+          "/covers/payments-768.avif"
+        ],
+        [
+          1024,
+          "/covers/payments-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/payments-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/payments-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/payments-480.webp"
+        ],
+        [
+          768,
+          "/covers/payments-768.webp"
+        ],
+        [
+          1024,
+          "/covers/payments-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/payments-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/payments-1536.webp"
+        ]
+      ]
+    },
+    "/covers/registration.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/registration-480.avif"
+        ],
+        [
+          768,
+          "/covers/registration-768.avif"
+        ],
+        [
+          1024,
+          "/covers/registration-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/registration-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/registration-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/registration-480.webp"
+        ],
+        [
+          768,
+          "/covers/registration-768.webp"
+        ],
+        [
+          1024,
+          "/covers/registration-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/registration-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/registration-1536.webp"
+        ]
+      ]
+    },
+    "/covers/taxation.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/taxation-480.avif"
+        ],
+        [
+          768,
+          "/covers/taxation-768.avif"
+        ],
+        [
+          1024,
+          "/covers/taxation-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/taxation-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/taxation-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/taxation-480.webp"
+        ],
+        [
+          768,
+          "/covers/taxation-768.webp"
+        ],
+        [
+          1024,
+          "/covers/taxation-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/taxation-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/taxation-1536.webp"
+        ]
+      ]
+    },
+    "/covers/zones.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/zones-480.avif"
+        ],
+        [
+          768,
+          "/covers/zones-768.avif"
+        ],
+        [
+          1024,
+          "/covers/zones-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/zones-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/zones-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/zones-480.webp"
+        ],
+        [
+          768,
+          "/covers/zones-768.webp"
+        ],
+        [
+          1024,
+          "/covers/zones-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/zones-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/zones-1536.webp"
+        ]
+      ]
     }
   },
   "lnd.lol": {
+    "/covers/about.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/about-480.avif"
+        ],
+        [
+          768,
+          "/covers/about-768.avif"
+        ],
+        [
+          1024,
+          "/covers/about-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/about-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/about-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/about-480.webp"
+        ],
+        [
+          768,
+          "/covers/about-768.webp"
+        ],
+        [
+          1024,
+          "/covers/about-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/about-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/about-1536.webp"
+        ]
+      ]
+    },
     "/covers/bank-holiday-tube-and-tfl-closures.jpg": {
       "width": 1536,
       "height": 864,
@@ -2934,6 +3894,54 @@
     }
   },
   "mbr.dst.llc": {
+    "/covers/coffee.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/coffee-480.avif"
+        ],
+        [
+          768,
+          "/covers/coffee-768.avif"
+        ],
+        [
+          1024,
+          "/covers/coffee-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/coffee-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/coffee-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/coffee-480.webp"
+        ],
+        [
+          768,
+          "/covers/coffee-768.webp"
+        ],
+        [
+          1024,
+          "/covers/coffee-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/coffee-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/coffee-1536.webp"
+        ]
+      ]
+    },
     "/covers/dubai-metro-gold-line-approved.jpg": {
       "width": 1536,
       "height": 864,
@@ -3027,6 +4035,246 @@
         [
           1536,
           "/covers/dubai-world-cup-2027-1536.webp"
+        ]
+      ]
+    },
+    "/covers/food.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/food-480.avif"
+        ],
+        [
+          768,
+          "/covers/food-768.avif"
+        ],
+        [
+          1024,
+          "/covers/food-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/food-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/food-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/food-480.webp"
+        ],
+        [
+          768,
+          "/covers/food-768.webp"
+        ],
+        [
+          1024,
+          "/covers/food-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/food-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/food-1536.webp"
+        ]
+      ]
+    },
+    "/covers/money.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/money-480.avif"
+        ],
+        [
+          768,
+          "/covers/money-768.avif"
+        ],
+        [
+          1024,
+          "/covers/money-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/money-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/money-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/money-480.webp"
+        ],
+        [
+          768,
+          "/covers/money-768.webp"
+        ],
+        [
+          1024,
+          "/covers/money-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/money-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/money-1536.webp"
+        ]
+      ]
+    },
+    "/covers/pools.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/pools-480.avif"
+        ],
+        [
+          768,
+          "/covers/pools-768.avif"
+        ],
+        [
+          1024,
+          "/covers/pools-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/pools-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/pools-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/pools-480.webp"
+        ],
+        [
+          768,
+          "/covers/pools-768.webp"
+        ],
+        [
+          1024,
+          "/covers/pools-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/pools-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/pools-1536.webp"
+        ]
+      ]
+    },
+    "/covers/rent.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/rent-480.avif"
+        ],
+        [
+          768,
+          "/covers/rent-768.avif"
+        ],
+        [
+          1024,
+          "/covers/rent-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/rent-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/rent-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/rent-480.webp"
+        ],
+        [
+          768,
+          "/covers/rent-768.webp"
+        ],
+        [
+          1024,
+          "/covers/rent-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/rent-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/rent-1536.webp"
+        ]
+      ]
+    },
+    "/covers/water.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/water-480.avif"
+        ],
+        [
+          768,
+          "/covers/water-768.avif"
+        ],
+        [
+          1024,
+          "/covers/water-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/water-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/water-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/water-480.webp"
+        ],
+        [
+          768,
+          "/covers/water-768.webp"
+        ],
+        [
+          1024,
+          "/covers/water-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/water-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/water-1536.webp"
         ]
       ]
     }
@@ -3413,6 +4661,46 @@
         [
           1920,
           "/cities/bristol-1920.webp"
+        ]
+      ]
+    },
+    "/cities/canterbury.jpg": {
+      "width": 1280,
+      "height": 985,
+      "avif": [
+        [
+          480,
+          "/cities/canterbury-480.avif"
+        ],
+        [
+          768,
+          "/cities/canterbury-768.avif"
+        ],
+        [
+          1024,
+          "/cities/canterbury-1024.avif"
+        ],
+        [
+          1280,
+          "/cities/canterbury-1280.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/canterbury-480.webp"
+        ],
+        [
+          768,
+          "/cities/canterbury-768.webp"
+        ],
+        [
+          1024,
+          "/cities/canterbury-1024.webp"
+        ],
+        [
+          1280,
+          "/cities/canterbury-1280.webp"
         ]
       ]
     },
@@ -4424,6 +5712,46 @@
         ]
       ]
     },
+    "/cities/southampton.jpg": {
+      "width": 1280,
+      "height": 853,
+      "avif": [
+        [
+          480,
+          "/cities/southampton-480.avif"
+        ],
+        [
+          768,
+          "/cities/southampton-768.avif"
+        ],
+        [
+          1024,
+          "/cities/southampton-1024.avif"
+        ],
+        [
+          1280,
+          "/cities/southampton-1280.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/southampton-480.webp"
+        ],
+        [
+          768,
+          "/cities/southampton-768.webp"
+        ],
+        [
+          1024,
+          "/cities/southampton-1024.webp"
+        ],
+        [
+          1280,
+          "/cities/southampton-1280.webp"
+        ]
+      ]
+    },
     "/cities/southend.jpg": {
       "width": 1920,
       "height": 1440,
@@ -4808,6 +6136,630 @@
         ]
       ]
     },
+    "/covers/about.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/about-480.avif"
+        ],
+        [
+          768,
+          "/covers/about-768.avif"
+        ],
+        [
+          1024,
+          "/covers/about-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/about-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/about-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/about-480.webp"
+        ],
+        [
+          768,
+          "/covers/about-768.webp"
+        ],
+        [
+          1024,
+          "/covers/about-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/about-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/about-1536.webp"
+        ]
+      ]
+    },
+    "/covers/cats-about.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/cats-about-480.avif"
+        ],
+        [
+          768,
+          "/covers/cats-about-768.avif"
+        ],
+        [
+          1024,
+          "/covers/cats-about-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/cats-about-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/cats-about-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/cats-about-480.webp"
+        ],
+        [
+          768,
+          "/covers/cats-about-768.webp"
+        ],
+        [
+          1024,
+          "/covers/cats-about-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/cats-about-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/cats-about-1536.webp"
+        ]
+      ]
+    },
+    "/covers/cats-tickets.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/cats-tickets-480.avif"
+        ],
+        [
+          768,
+          "/covers/cats-tickets-768.avif"
+        ],
+        [
+          1024,
+          "/covers/cats-tickets-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/cats-tickets-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/cats-tickets-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/cats-tickets-480.webp"
+        ],
+        [
+          768,
+          "/covers/cats-tickets-768.webp"
+        ],
+        [
+          1024,
+          "/covers/cats-tickets-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/cats-tickets-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/cats-tickets-1536.webp"
+        ]
+      ]
+    },
+    "/covers/cats-uk.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/cats-uk-480.avif"
+        ],
+        [
+          768,
+          "/covers/cats-uk-768.avif"
+        ],
+        [
+          1024,
+          "/covers/cats-uk-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/cats-uk-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/cats-uk-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/cats-uk-480.webp"
+        ],
+        [
+          768,
+          "/covers/cats-uk-768.webp"
+        ],
+        [
+          1024,
+          "/covers/cats-uk-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/cats-uk-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/cats-uk-1536.webp"
+        ]
+      ]
+    },
+    "/covers/chicago-about.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/chicago-about-480.avif"
+        ],
+        [
+          768,
+          "/covers/chicago-about-768.avif"
+        ],
+        [
+          1024,
+          "/covers/chicago-about-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/chicago-about-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/chicago-about-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/chicago-about-480.webp"
+        ],
+        [
+          768,
+          "/covers/chicago-about-768.webp"
+        ],
+        [
+          1024,
+          "/covers/chicago-about-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/chicago-about-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/chicago-about-1536.webp"
+        ]
+      ]
+    },
+    "/covers/chicago-history.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/chicago-history-480.avif"
+        ],
+        [
+          768,
+          "/covers/chicago-history-768.avif"
+        ],
+        [
+          1024,
+          "/covers/chicago-history-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/chicago-history-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/chicago-history-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/chicago-history-480.webp"
+        ],
+        [
+          768,
+          "/covers/chicago-history-768.webp"
+        ],
+        [
+          1024,
+          "/covers/chicago-history-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/chicago-history-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/chicago-history-1536.webp"
+        ]
+      ]
+    },
+    "/covers/chicago-international.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/chicago-international-480.avif"
+        ],
+        [
+          768,
+          "/covers/chicago-international-768.avif"
+        ],
+        [
+          1024,
+          "/covers/chicago-international-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/chicago-international-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/chicago-international-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/chicago-international-480.webp"
+        ],
+        [
+          768,
+          "/covers/chicago-international-768.webp"
+        ],
+        [
+          1024,
+          "/covers/chicago-international-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/chicago-international-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/chicago-international-1536.webp"
+        ]
+      ]
+    },
+    "/covers/chicago-online.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/chicago-online-480.avif"
+        ],
+        [
+          768,
+          "/covers/chicago-online-768.avif"
+        ],
+        [
+          1024,
+          "/covers/chicago-online-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/chicago-online-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/chicago-online-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/chicago-online-480.webp"
+        ],
+        [
+          768,
+          "/covers/chicago-online-768.webp"
+        ],
+        [
+          1024,
+          "/covers/chicago-online-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/chicago-online-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/chicago-online-1536.webp"
+        ]
+      ]
+    },
+    "/covers/chicago-songs.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/chicago-songs-480.avif"
+        ],
+        [
+          768,
+          "/covers/chicago-songs-768.avif"
+        ],
+        [
+          1024,
+          "/covers/chicago-songs-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/chicago-songs-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/chicago-songs-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/chicago-songs-480.webp"
+        ],
+        [
+          768,
+          "/covers/chicago-songs-768.webp"
+        ],
+        [
+          1024,
+          "/covers/chicago-songs-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/chicago-songs-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/chicago-songs-1536.webp"
+        ]
+      ]
+    },
+    "/covers/chicago-tickets.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/chicago-tickets-480.avif"
+        ],
+        [
+          768,
+          "/covers/chicago-tickets-768.avif"
+        ],
+        [
+          1024,
+          "/covers/chicago-tickets-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/chicago-tickets-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/chicago-tickets-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/chicago-tickets-480.webp"
+        ],
+        [
+          768,
+          "/covers/chicago-tickets-768.webp"
+        ],
+        [
+          1024,
+          "/covers/chicago-tickets-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/chicago-tickets-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/chicago-tickets-1536.webp"
+        ]
+      ]
+    },
+    "/covers/chicago-uk.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/chicago-uk-480.avif"
+        ],
+        [
+          768,
+          "/covers/chicago-uk-768.avif"
+        ],
+        [
+          1024,
+          "/covers/chicago-uk-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/chicago-uk-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/chicago-uk-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/chicago-uk-480.webp"
+        ],
+        [
+          768,
+          "/covers/chicago-uk-768.webp"
+        ],
+        [
+          1024,
+          "/covers/chicago-uk-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/chicago-uk-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/chicago-uk-1536.webp"
+        ]
+      ]
+    },
+    "/covers/online.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/online-480.avif"
+        ],
+        [
+          768,
+          "/covers/online-768.avif"
+        ],
+        [
+          1024,
+          "/covers/online-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/online-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/online-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/online-480.webp"
+        ],
+        [
+          768,
+          "/covers/online-768.webp"
+        ],
+        [
+          1024,
+          "/covers/online-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/online-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/online-1536.webp"
+        ]
+      ]
+    },
+    "/covers/venues.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/venues-480.avif"
+        ],
+        [
+          768,
+          "/covers/venues-768.avif"
+        ],
+        [
+          1024,
+          "/covers/venues-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/venues-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/venues-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/venues-480.webp"
+        ],
+        [
+          768,
+          "/covers/venues-768.webp"
+        ],
+        [
+          1024,
+          "/covers/venues-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/venues-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/venues-1536.webp"
+        ]
+      ]
+    },
     "/venues/alhambra-theatre-bradford.jpg": {
       "width": 1024,
       "height": 768,
@@ -4981,6 +6933,46 @@
         [
           1500,
           "/venues/blackpool-opera-house-1500.webp"
+        ]
+      ]
+    },
+    "/venues/bord-gais-energy-theatre.jpg": {
+      "width": 1280,
+      "height": 853,
+      "avif": [
+        [
+          480,
+          "/venues/bord-gais-energy-theatre-480.avif"
+        ],
+        [
+          768,
+          "/venues/bord-gais-energy-theatre-768.avif"
+        ],
+        [
+          1024,
+          "/venues/bord-gais-energy-theatre-1024.avif"
+        ],
+        [
+          1280,
+          "/venues/bord-gais-energy-theatre-1280.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/bord-gais-energy-theatre-480.webp"
+        ],
+        [
+          768,
+          "/venues/bord-gais-energy-theatre-768.webp"
+        ],
+        [
+          1024,
+          "/venues/bord-gais-energy-theatre-1024.webp"
+        ],
+        [
+          1280,
+          "/venues/bord-gais-energy-theatre-1280.webp"
         ]
       ]
     },
@@ -5624,6 +7616,86 @@
         ]
       ]
     },
+    "/venues/marlowe-theatre-canterbury.jpg": {
+      "width": 1280,
+      "height": 853,
+      "avif": [
+        [
+          480,
+          "/venues/marlowe-theatre-canterbury-480.avif"
+        ],
+        [
+          768,
+          "/venues/marlowe-theatre-canterbury-768.avif"
+        ],
+        [
+          1024,
+          "/venues/marlowe-theatre-canterbury-1024.avif"
+        ],
+        [
+          1280,
+          "/venues/marlowe-theatre-canterbury-1280.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/marlowe-theatre-canterbury-480.webp"
+        ],
+        [
+          768,
+          "/venues/marlowe-theatre-canterbury-768.webp"
+        ],
+        [
+          1024,
+          "/venues/marlowe-theatre-canterbury-1024.webp"
+        ],
+        [
+          1280,
+          "/venues/marlowe-theatre-canterbury-1280.webp"
+        ]
+      ]
+    },
+    "/venues/mayflower-theatre-southampton.jpg": {
+      "width": 1280,
+      "height": 960,
+      "avif": [
+        [
+          480,
+          "/venues/mayflower-theatre-southampton-480.avif"
+        ],
+        [
+          768,
+          "/venues/mayflower-theatre-southampton-768.avif"
+        ],
+        [
+          1024,
+          "/venues/mayflower-theatre-southampton-1024.avif"
+        ],
+        [
+          1280,
+          "/venues/mayflower-theatre-southampton-1280.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/mayflower-theatre-southampton-480.webp"
+        ],
+        [
+          768,
+          "/venues/mayflower-theatre-southampton-768.webp"
+        ],
+        [
+          1024,
+          "/venues/mayflower-theatre-southampton-1024.webp"
+        ],
+        [
+          1280,
+          "/venues/mayflower-theatre-southampton-1280.webp"
+        ]
+      ]
+    },
     "/venues/milton-keynes-theatre.jpg": {
       "width": 1152,
       "height": 922,
@@ -6024,6 +8096,46 @@
         ]
       ]
     },
+    "/venues/palace-theatre-manchester.jpg": {
+      "width": 1280,
+      "height": 871,
+      "avif": [
+        [
+          480,
+          "/venues/palace-theatre-manchester-480.avif"
+        ],
+        [
+          768,
+          "/venues/palace-theatre-manchester-768.avif"
+        ],
+        [
+          1024,
+          "/venues/palace-theatre-manchester-1024.avif"
+        ],
+        [
+          1280,
+          "/venues/palace-theatre-manchester-1280.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/palace-theatre-manchester-480.webp"
+        ],
+        [
+          768,
+          "/venues/palace-theatre-manchester-768.webp"
+        ],
+        [
+          1024,
+          "/venues/palace-theatre-manchester-1024.webp"
+        ],
+        [
+          1280,
+          "/venues/palace-theatre-manchester-1280.webp"
+        ]
+      ]
+    },
     "/venues/regent-theatre-stoke.jpg": {
       "width": 1273,
       "height": 1800,
@@ -6205,6 +8317,46 @@
         [
           1800,
           "/venues/theatre-royal-brighton-1800.webp"
+        ]
+      ]
+    },
+    "/venues/theatre-royal-glasgow.jpg": {
+      "width": 1280,
+      "height": 720,
+      "avif": [
+        [
+          480,
+          "/venues/theatre-royal-glasgow-480.avif"
+        ],
+        [
+          768,
+          "/venues/theatre-royal-glasgow-768.avif"
+        ],
+        [
+          1024,
+          "/venues/theatre-royal-glasgow-1024.avif"
+        ],
+        [
+          1280,
+          "/venues/theatre-royal-glasgow-1280.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/theatre-royal-glasgow-480.webp"
+        ],
+        [
+          768,
+          "/venues/theatre-royal-glasgow-768.webp"
+        ],
+        [
+          1024,
+          "/venues/theatre-royal-glasgow-1024.webp"
+        ],
+        [
+          1280,
+          "/venues/theatre-royal-glasgow-1280.webp"
         ]
       ]
     },
@@ -6442,6 +8594,54 @@
     }
   },
   "mxo.lol": {
+    "/covers/acerca.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/acerca-480.avif"
+        ],
+        [
+          768,
+          "/covers/acerca-768.avif"
+        ],
+        [
+          1024,
+          "/covers/acerca-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/acerca-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/acerca-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/acerca-480.webp"
+        ],
+        [
+          768,
+          "/covers/acerca-768.webp"
+        ],
+        [
+          1024,
+          "/covers/acerca-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/acerca-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/acerca-1536.webp"
+        ]
+      ]
+    },
     "/covers/capuchinos-cazan-cuando-falta-fruta.jpg": {
       "width": 1536,
       "height": 864,
@@ -7164,6 +9364,54 @@
     }
   },
   "nyc42.lol": {
+    "/covers/about.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/about-480.avif"
+        ],
+        [
+          768,
+          "/covers/about-768.avif"
+        ],
+        [
+          1024,
+          "/covers/about-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/about-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/about-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/about-480.webp"
+        ],
+        [
+          768,
+          "/covers/about-768.webp"
+        ],
+        [
+          1024,
+          "/covers/about-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/about-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/about-1536.webp"
+        ]
+      ]
+    },
     "/covers/broadway-week-chicago.jpg": {
       "width": 1536,
       "height": 864,
@@ -8126,6 +10374,102 @@
         ]
       ]
     },
+    "/covers/payment-plan.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/payment-plan-480.avif"
+        ],
+        [
+          768,
+          "/covers/payment-plan-768.avif"
+        ],
+        [
+          1024,
+          "/covers/payment-plan-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/payment-plan-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/payment-plan-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/payment-plan-480.webp"
+        ],
+        [
+          768,
+          "/covers/payment-plan-768.webp"
+        ],
+        [
+          1024,
+          "/covers/payment-plan-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/payment-plan-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/payment-plan-1536.webp"
+        ]
+      ]
+    },
+    "/covers/prices.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/prices-480.avif"
+        ],
+        [
+          768,
+          "/covers/prices-768.avif"
+        ],
+        [
+          1024,
+          "/covers/prices-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/prices-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/prices-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/prices-480.webp"
+        ],
+        [
+          768,
+          "/covers/prices-768.webp"
+        ],
+        [
+          1024,
+          "/covers/prices-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/prices-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/prices-1536.webp"
+        ]
+      ]
+    },
     "/palmcentral.jpg": {
       "width": 1600,
       "height": 900,
@@ -8362,6 +10706,54 @@
     }
   },
   "visas.dst.llc": {
+    "/covers/consultation.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/consultation-480.avif"
+        ],
+        [
+          768,
+          "/covers/consultation-768.avif"
+        ],
+        [
+          1024,
+          "/covers/consultation-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/consultation-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/consultation-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/consultation-480.webp"
+        ],
+        [
+          768,
+          "/covers/consultation-768.webp"
+        ],
+        [
+          1024,
+          "/covers/consultation-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/consultation-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/consultation-1536.webp"
+        ]
+      ]
+    },
     "/covers/entry-visa-opens-to-six-more-nationalities.jpg": {
       "width": 1536,
       "height": 864,
@@ -8410,6 +10802,102 @@
         ]
       ]
     },
+    "/covers/family.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/family-480.avif"
+        ],
+        [
+          768,
+          "/covers/family-768.avif"
+        ],
+        [
+          1024,
+          "/covers/family-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/family-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/family-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/family-480.webp"
+        ],
+        [
+          768,
+          "/covers/family-768.webp"
+        ],
+        [
+          1024,
+          "/covers/family-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/family-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/family-1536.webp"
+        ]
+      ]
+    },
+    "/covers/golden.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/golden-480.avif"
+        ],
+        [
+          768,
+          "/covers/golden-768.avif"
+        ],
+        [
+          1024,
+          "/covers/golden-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/golden-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/golden-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/golden-480.webp"
+        ],
+        [
+          768,
+          "/covers/golden-768.webp"
+        ],
+        [
+          1024,
+          "/covers/golden-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/golden-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/golden-1536.webp"
+        ]
+      ]
+    },
     "/covers/irex-residency-citizenship-conclave-dubai-2027.jpg": {
       "width": 1536,
       "height": 864,
@@ -8455,6 +10943,54 @@
         [
           1536,
           "/covers/irex-residency-citizenship-conclave-dubai-2027-1536.webp"
+        ]
+      ]
+    },
+    "/covers/properties.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/properties-480.avif"
+        ],
+        [
+          768,
+          "/covers/properties-768.avif"
+        ],
+        [
+          1024,
+          "/covers/properties-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/properties-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/properties-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/properties-480.webp"
+        ],
+        [
+          768,
+          "/covers/properties-768.webp"
+        ],
+        [
+          1024,
+          "/covers/properties-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/properties-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/properties-1536.webp"
         ]
       ]
     }

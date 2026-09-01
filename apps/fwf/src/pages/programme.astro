@@ -4,22 +4,27 @@ import Callout from "@dst/ui/Callout.astro";
 import Icon from "@dst/ui/Icon.astro";
 import { checkedOn, forum, forumDate } from "../content";
 import { go } from "../outbound";
+import PageHero from "@dst/ui/PageHero.astro";
 ---
 <Layout
   prose
   title="Future World Forum Dubai programme"
   description="What Future World Forum Dubai 2026 covers: fintech and crypto, AI and data, PropTech, urban cybersecurity, and smart infrastructure and mobility — and who each track is aimed at."
 >
-  <section class="container hero">
-    <p class="eyebrow">Programme</p>
-    <h1>What the forum covers</h1>
+  <PageHero
+    eyebrow="Programme"
+    title="What the forum covers"
+    image="/covers/programme.jpg"
+    imageAlt="Cut-paper illustration: a vertical column of stacked horizontal bars of varying length."
+    imageKind="generated"
+  >
     <p class="lede">
       Future World Forum Dubai publishes its programme as five sectors rather
       than a timetable. One day, {forum.startTime}–{forum.endTime}, on
       {forumDate}. Below is each sector in the organiser's own framing,
       condensed, with what it means in practice for the people who show up.
     </p>
-  </section>
+  </PageHero>
 
   <section class="container">
     <h2>The five sectors</h2>

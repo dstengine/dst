@@ -11,8 +11,10 @@ const newsItems = newsBySite("dst");
 const eventItems = eventsBySite("dst");
 
 // Every hub card carries a media panel so the grid reads as one row of
-// equals. Hubs without their own photography yet fall back to a mark on a
-// tinted panel rather than leaving a hole where the image will go.
+// equals. The three live ventures show their own photography or render; the
+// three still in development take a drawn cover, so the row is one set of
+// pictures rather than half pictures and half marks. The icon stays on each
+// as the last fallback if a file ever goes missing.
 const hubs = [
   {
     href: "https://riviera.dst.llc",
@@ -54,6 +56,8 @@ const hubs = [
     status: "Live",
     name: "Company formation",
     text: "Free zones, mainland, banking, payment processing — company formation in Dubai.",
+    image: "/covers/hub-llc.jpg",
+    imageAlt: "Cut-paper illustration: a sealed document standing in front of a cluster of towers.",
     icon: ICONS.briefcase,
   },
   {
@@ -62,6 +66,8 @@ const hubs = [
     inProgress: true,
     name: "Dubai islands",
     text: "The man-made islands off Dubai — who builds them, what stands on each one, and what it costs to live there.",
+    image: "/covers/hub-islands.jpg",
+    imageAlt: "Cut-paper illustration: five frond-shaped islands in a flat sea, seen from above.",
     icon: ICONS.islands,
   },
   {
@@ -70,6 +76,8 @@ const hubs = [
     inProgress: true,
     name: "Crypto in the UAE",
     text: "UAE crypto regulation and events, and the mechanics of buying property and other assets with digital currency.",
+    image: "/covers/hub-crypto.jpg",
+    imageAlt: "Cut-paper illustration: a hexagonal disc overlapping two tower silhouettes.",
     icon: ICONS.money,
   },
 ];

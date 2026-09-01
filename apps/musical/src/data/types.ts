@@ -111,6 +111,9 @@ export interface RunGroup {
   title: string;
   blurb: string;
   body: string[];
+  /** As on Section: a drawn cover, depicting nothing. */
+  image?: string;
+  imageAlt?: string;
 }
 
 export interface Run {
@@ -163,6 +166,11 @@ export interface Section {
   body: string[];
   /** Rendered by a template of its own rather than as plain prose. */
   template?: "history" | "online" | "tickets" | "songs";
+  /** The page's cover. Drawn, not photographed, and it depicts nothing —
+      there is no production photography licensed for this site, and a
+      picture that looked like one would be a claim we cannot make. */
+  image?: string;
+  imageAlt?: string;
 }
 
 export interface Show {

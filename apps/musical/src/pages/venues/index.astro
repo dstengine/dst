@@ -5,6 +5,7 @@
 import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
 import Layout from "../../layouts/Layout.astro";
 import { checkedOn, cityBySlug, formatRun, runsAtVenue, statusOf, venuePath, venues } from "../../content";
+import PageHero from "@dst/ui/PageHero.astro";
 
 const rows = venues
   .map((venue) => {
@@ -30,10 +31,14 @@ const arena = venues.find((v) => v.capacity && v.capacity > 5000);
   title="Venues"
   description={`Every theatre and arena on this site — ${venues.length} of them across ${countries.length} countries — with what plays there, how to get there and where to sit.`}
 >
-  <section class="container hero">
+  <PageHero
+    eyebrow="{venues.length} buildings"
+    title="Venues"
+    image="/covers/venues.jpg"
+    imageAlt="Cut-paper illustration: a row of theatre fronts of different heights, with columns, arched doors and canopies."
+    imageKind="generated"
+  >
     <Breadcrumbs crumbs={[]} current="Venues" homeLabel="What's on" />
-    <p class="eyebrow">{venues.length} buildings</p>
-    <h1>Venues</h1>
     <p class="lede">
       {arena && (
         <>One of these buildings holds {arena.capacity!.toLocaleString("en-GB")} people; the rest were built for
@@ -42,7 +47,7 @@ const arena = venues.find((v) => v.capacity && v.capacity > 5000);
       The room is most of the evening — so every building here has its own page:
       address, how to arrive, what is booked into it and when. Read {checkedOn}.
     </p>
-  </section>
+  </PageHero>
 
   {countries.map((country) => (
     <section class="container">

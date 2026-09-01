@@ -314,10 +314,18 @@ describe("district header image", () => {
     assert.doesNotMatch(venue.html, /src="\/riviera\.jpg"/, "venue page also got the site default — override failed");
   });
 
-  test("a site with no header image falls back to a plain heading", () => {
+  // mbr's district pages each carry their own drawn cover now, so the old
+  // form of this test — "mbr renders no photo hero anywhere" — no longer says
+  // anything true. What still has to hold is the rule underneath it: the
+  // photo hero is the treatment for a page that has a picture, and a page
+  // without one gets a plain heading rather than an empty band.
+  test("a photo hero appears only where the page has a picture", () => {
     for (const p of pages.filter((x) => x.app === "mbr")) {
-      assert.doesNotMatch(p.html, /class="[^"]*photo-hero/, `${p.app}${p.url}: rendered a photo hero without an image`);
+      if (!/class="[^"]*photo-hero/.test(p.html)) continue;
+      assert.match(p.html, /<img[^>]+src="\/covers\//, `${p.app}${p.url}: rendered a photo hero without an image`);
     }
+    const home = pages.find((x) => x.app === "mbr" && x.url === "/");
+    assert.doesNotMatch(home.html, /class="[^"]*photo-hero/, "mbr home has no cover of its own and should keep the plain heading");
   });
 });
 

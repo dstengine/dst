@@ -1,14 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PageHero from "@dst/ui/PageHero.astro";
 ---
 <Layout
   prose
   title="Mainland Company Setup"
   description="When a mainland licence is actually required, how it differs from a free zone company, and what the process involves."
 >
-  <section class="container">
-    <p class="eyebrow">Mainland</p>
-    <h1>Mainland company setup</h1>
+  <PageHero
+    eyebrow="Mainland"
+    title="Mainland company setup"
+    image="/covers/mainland.jpg"
+    imageAlt="Cut-paper illustration: a wide flat shoreline of layered strips meeting a cluster of towers."
+    imageKind="generated"
+  >
     <p class="lede">
       A mainland company is registered with the Department of Economic
       Development (DED) rather than a free zone authority. The practical
@@ -16,7 +21,7 @@ import Layout from "../layouts/Layout.astro";
       government entities and mainland-based customers — without the
       distributor arrangements a free zone company would need.
     </p>
-  </section>
+  </PageHero>
 
   <section class="container">
     <h2>When mainland is actually the right call</h2>

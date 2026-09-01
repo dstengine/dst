@@ -83,6 +83,8 @@ export const shows: Show[] = [
     sections: [
       {
         slug: "about",
+        image: "/covers/chicago-about.jpg",
+        imageAlt: "Cut-paper illustration: a tilted fedora hat resting on a bentwood chair.",
         label: "About the show",
         title: "What Chicago The Musical actually is",
         description:
@@ -98,6 +100,8 @@ export const shows: Show[] = [
       songsSection,
       {
         slug: "online",
+        image: "/covers/chicago-online.jpg",
+        imageAlt: "Cut-paper illustration: a rounded screen with a play triangle and a strip of film sprockets.",
         label: "Watch online",
         title: "Chicago The Musical: what to watch online",
         description:
@@ -110,6 +114,8 @@ export const shows: Show[] = [
       },
       {
         slug: "tickets",
+        image: "/covers/chicago-tickets.jpg",
+        imageAlt: "Cut-paper illustration: a fan of overlapping torn paper stubs with perforated edges.",
         label: "Tickets",
         title: "Chicago The Musical: where to buy tickets",
         description:
@@ -141,6 +147,8 @@ export const shows: Show[] = [
     sections: [
       {
         slug: "about",
+        image: "/covers/cats-about.jpg",
+        imageAlt: "Cut-paper illustration: a curled cat silhouette on a stack of angular junkyard shapes.",
         label: "About the show",
         title: "What Cats actually is",
         description:
@@ -154,6 +162,8 @@ export const shows: Show[] = [
       },
       {
         slug: "tickets",
+        image: "/covers/cats-tickets.jpg",
+        imageAlt: "Cut-paper illustration: a single torn paper stub with a perforated edge and one paw-shaped punch hole.",
         label: "Tickets",
         title: "Cats on tour: where to buy tickets",
         description:

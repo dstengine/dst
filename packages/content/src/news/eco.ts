@@ -75,6 +75,8 @@ export const items: NewsItem[] = [
         // eco's linking rule: related cards point only into eco itself or
         // to dst.llc, never across to an unrelated vertical.
         href: "https://dst.llc",
+        image: "/covers/group.jpg",
+        imageAlt: "Cut-paper illustration: three interlocking rings of different sizes.",
         title: "DST",
         text: "The operating group behind eco.dst.llc and its other ventures.",
         eyebrow: "DST",

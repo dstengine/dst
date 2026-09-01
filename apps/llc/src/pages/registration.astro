@@ -1,14 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PageHero from "@dst/ui/PageHero.astro";
 ---
 <Layout
   prose
   title="Company Registration"
   description="The actual steps to register a company in Dubai, what each one gates, and the deadline that starts before you notice it."
 >
-  <section class="container">
-    <p class="eyebrow">Registration</p>
-    <h1>Registering your company, step by step</h1>
+  <PageHero
+    eyebrow="Registration"
+    title="Registering your company, step by step"
+    image="/covers/registration.jpg"
+    imageAlt="Cut-paper illustration: a folded document with a round wax seal and a ribbon tail."
+    imageKind="generated"
+  >
     <p class="lede">
       The sequence is broadly the same whether you're registering in a free
       zone or on the mainland — what varies is who reviews each step and how
@@ -16,7 +21,7 @@ import Layout from "../layouts/Layout.astro";
       that a clock starts at incorporation and runs whether or not the
       company has done any business.
     </p>
-  </section>
+  </PageHero>
 
   <section class="container">
     <ol class="steps">

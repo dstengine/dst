@@ -17,9 +17,14 @@ interface Props {
   ledeWidth?: string;
   image?: string;
   imageAlt?: string;
+  /** Every page cover on this site is drawn rather than photographed. The
+      opener prints no label for "generated" — how a picture was made is our
+      business — but the field has to travel or ImageNote elsewhere would
+      have to guess. */
+  imageKind?: "photo" | "diagram" | "illustration" | "render" | "generated";
 }
 
-const { title, description, jsonLd, eyebrow, h1, lede, ledeWidth, image, imageAlt, prose } = Astro.props;
+const { title, description, jsonLd, eyebrow, h1, lede, ledeWidth, image, imageAlt, imageKind, prose } = Astro.props;
 
 // The site's header image is the default; a page overrides it by setting
 // its own `image` in content.ts.
@@ -38,6 +43,7 @@ const headerImageAlt = imageAlt ?? (image ? undefined : site.headerImageAlt);
   ledeWidth={ledeWidth}
   image={headerImage}
   imageAlt={headerImageAlt}
+  imageKind={image ? (imageKind ?? "generated") : undefined}
 >
   <slot />
 </DistrictLayout>

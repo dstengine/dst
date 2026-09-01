@@ -75,18 +75,24 @@ export const items: NewsItem[] = [
     related: [
       {
         href: "/zones/",
+        image: "/covers/zones.jpg",
+        imageAlt: "Cut-paper illustration: a grid of walled enclosures seen from above, one corner left open.",
         title: "Dubai free zone comparison",
         text: "Which free zone actually fits an activity — compared by fit rather than ranked into a top-10.",
         eyebrow: "Free zones",
       },
       {
         href: "/mainland/",
+        image: "/covers/mainland.jpg",
+        imageAlt: "Cut-paper illustration: a flat shoreline of layered strips meeting a cluster of towers.",
         title: "Mainland company setup",
         text: "When a mainland licence is genuinely required, and how it differs from holding a branch.",
         eyebrow: "Mainland",
       },
       {
         href: "/taxation/",
+        image: "/covers/taxation.jpg",
+        imageAlt: "Cut-paper illustration: a balance beam with two shallow trays, one holding a stack of discs.",
         title: "Corporate tax and filing",
         text: "What the tax and filing obligations look like once activity runs on both sides.",
         eyebrow: "Tax",

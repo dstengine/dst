@@ -72,12 +72,16 @@ export const items: NewsItem[] = [
     related: [
       {
         href: "/prices/",
+        image: "/covers/prices.jpg",
+        imageAlt: "Cut-paper illustration: a stepped row of bars rising towards a single tall tower.",
         title: "Palm Central prices",
         text: "Current pricing by unit type, and how this phase sits against the first release.",
         eyebrow: "Prices",
       },
       {
         href: "/payment-plan/",
+        image: "/covers/payment-plan.jpg",
+        imageAlt: "Cut-paper illustration: a row of discs joined by a thin line, the last one larger than the rest.",
         title: "Payment plan",
         text: "The instalment structure through to handover, set out in full.",
         eyebrow: "Payment",

@@ -1,22 +1,27 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { checkedOn, disclaimer, runs, shows, venues } from "../content";
+import PageHero from "@dst/ui/PageHero.astro";
 ---
 <Layout
   prose
   title="About this site"
   description="How musical.today builds a listing: one source per fact, the seller named next to every ticket link, and nothing filled in that has not been published."
 >
-  <section class="container hero">
-    <p class="eyebrow">About</p>
-    <h1>About this site</h1>
+  <PageHero
+    eyebrow="About"
+    title="About this site"
+    image="/covers/about.jpg"
+    imageAlt="Cut-paper illustration: a proscenium arch with one curtain drawn back."
+    imageKind="generated"
+  >
     <p class="lede">
       Most listings sites are a search box in front of an affiliate feed. This
       one is a hand-built calendar: {runs.length} runs, {venues.length} venues,
       each read from the production's own source and stamped with the day it was
       read. {disclaimer}
     </p>
-  </section>
+  </PageHero>
 
   <section class="container prose">
     <h2>How a listing gets here</h2>

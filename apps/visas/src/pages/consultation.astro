@@ -1,21 +1,26 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import LeadForm from "@dst/ui/LeadForm.astro";
+import PageHero from "@dst/ui/PageHero.astro";
 ---
 <Layout
   prose
   title="Request a Consultation"
   description="Tell us your timeline and budget, and get a shortlist of Golden-Visa-eligible properties matched to your situation."
 >
-  <section class="container">
-    <p class="eyebrow">Consultation</p>
-    <h1>Request a consultation</h1>
+  <PageHero
+    eyebrow="Consultation"
+    title="Request a consultation"
+    image="/covers/consultation.jpg"
+    imageAlt="Cut-paper illustration: two facing chairs across a low round table."
+    imageKind="generated"
+  >
     <p class="lede">
       A few details help us send a shortlist that's actually relevant, rather
       than a generic listings link. Nothing here is submitted anywhere
       binding — this starts a conversation, not an application.
     </p>
-  </section>
+  </PageHero>
 
   <section class="container">
     <LeadForm

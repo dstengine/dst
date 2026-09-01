@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Faq from "@dst/ui/Faq.astro";
+import PageHero from "@dst/ui/PageHero.astro";
 
 const faqItems = [
   {
@@ -22,16 +23,20 @@ const faqItems = [
   title="Golden Visa via Property"
   description="Golden Visa eligibility, property thresholds, and the actual process — for anyone considering UAE residency through real estate investment."
 >
-  <section class="container">
-    <p class="eyebrow">Golden Visa</p>
-    <h1>The Golden Visa, through property</h1>
+  <PageHero
+    eyebrow="Golden Visa"
+    title="The Golden Visa, through property"
+    image="/covers/golden.jpg"
+    imageAlt="Cut-paper illustration: an upright rectangle with a rosette disc at its centre."
+    imageKind="generated"
+  >
     <p class="lede">
       This is the long-term residency route, and property investment is its
       most direct path for anyone not relocating for employment. What
       follows is the mechanics — thresholds, process, renewal — stated
       plainly rather than wrapped in sales language.
     </p>
-  </section>
+  </PageHero>
 
   <section class="container">
     <h2>How the property route works</h2>

@@ -105,6 +105,11 @@ export const outbound: Record<string, string> = {
   "photo-newcastle-theatre-royal": "https://commons.wikimedia.org/wiki/File:Theatre_Royal_Newcastle_1145840.jpg",
   "photo-orchard-theatre-dartford": "https://commons.wikimedia.org/wiki/File:Orchard_Theatre,_Dartford_(Southeast_View).jpg",
   "photo-regent-theatre-stoke": "https://commons.wikimedia.org/wiki/File:Regent_Theatre,_Stoke-on-Trent.jpg",
+  "photo-palace-theatre-manchester": "https://commons.wikimedia.org/wiki/File:The_Palace_Theatre,_Manchester_-_geograph.org.uk_-_7952560.jpg",
+  "photo-theatre-royal-glasgow": "https://commons.wikimedia.org/wiki/File:Theatre_Royal,_Hope_Street,_Glasgow.jpg",
+  "photo-marlowe-theatre-canterbury": "https://commons.wikimedia.org/wiki/File:The_Marlowe_Theatre_photo.jpg",
+  "photo-bord-gais-energy-theatre": "https://commons.wikimedia.org/wiki/File:Bord_G%C3%A1is_Energy_Theatre_(8225076312).jpg",
+  "photo-mayflower-theatre-southampton": "https://commons.wikimedia.org/wiki/File:MayflowerTheatre.JPG",
   "photo-wales-millennium-centre": "https://commons.wikimedia.org/wiki/File:Wales_Millennium_Centre_Illuminated_Facade.jpg",
 
   // The file page each city cover came from, and its licence. A cover is
@@ -118,6 +123,8 @@ export const outbound: Record<string, string> = {
   "photo-city-bradford": "https://commons.wikimedia.org/wiki/File:Bradfordskyline.jpeg",
   "photo-city-brighton": "https://commons.wikimedia.org/wiki/File:Palace_Pier_April_2018_02.jpg",
   "photo-city-bristol": "https://commons.wikimedia.org/wiki/File:Cabot_Tower_View_-_The_Centre,_Redcliffe_and_Bristol_Old_City_-_August_2025.jpg",
+  "photo-city-canterbury": "https://commons.wikimedia.org/wiki/File:Canterbury_Cathedral_-_Portal_Nave_Cross-spire.jpeg",
+  "photo-city-southampton": "https://commons.wikimedia.org/wiki/File:Southampton_Bargate_at_Dusk_(1).jpg",
   "photo-city-cardiff": "https://commons.wikimedia.org/wiki/File:Cardiff%27s_skyline_2020.jpg",
   "photo-city-cheltenham": "https://commons.wikimedia.org/wiki/File:Cheltenham_town_centre_-_geograph.org.uk_-_6368018.jpg",
   "photo-city-dartford": "https://commons.wikimedia.org/wiki/File:Queen_Elizabeth_II_Bridge,_Dartford,_England_-_Feb_2009.jpg",
@@ -179,6 +186,7 @@ export const outbound: Record<string, string> = {
   "venue-marlowe-theatre-canterbury": "https://marlowetheatre.com/",
   "venue-bord-gais-energy-theatre": "https://www.bordgaisenergytheatre.ie/",
   "venue-mayflower-theatre-southampton": "https://www.mayflower.org.uk/",
+  "licence-cc-by-2-0": "https://creativecommons.org/licenses/by/2.0/",
   "licence-cc-by-sa-2-0": "https://creativecommons.org/licenses/by-sa/2.0/",
   "licence-cc-by-sa-3-0": "https://creativecommons.org/licenses/by-sa/3.0/",
   "licence-cc-by-sa-4-0": "https://creativecommons.org/licenses/by-sa/4.0/",

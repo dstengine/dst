@@ -1,21 +1,26 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PageHero from "@dst/ui/PageHero.astro";
 ---
 <Layout
   prose
   title="Business Financing"
   description="Financing a Dubai company once it trades: working capital, invoice financing, and what changes when the buyer of a property is a company rather than a person."
 >
-  <section class="container">
-    <p class="eyebrow">Financing</p>
-    <h1>Financing your business</h1>
+  <PageHero
+    eyebrow="Financing"
+    title="Financing your business"
+    image="/covers/financing.jpg"
+    imageAlt="Cut-paper illustration: a rising staircase of stacked bars next to a slender arch."
+    imageKind="generated"
+  >
     <p class="lede">
       Financing questions arrive later than registration questions, and the
       reason is unglamorous: almost every lender wants to see the company
       trade before it will lend to it. A company with a licence and no
       history is, to a UAE bank, a company with no history.
     </p>
-  </section>
+  </PageHero>
 
   <section class="container">
     <h2>Business credit and working capital</h2>

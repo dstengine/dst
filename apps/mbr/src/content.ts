@@ -54,6 +54,8 @@ export const coffee = {
   description: "Where to get coffee across MBR City's communities — the racecourse terrace, Riviera's promenade, and why the rest of the district drives.",
   eyebrow: "Coffee",
   h1: "The best coffee in the district is at a racecourse",
+  image: "/covers/coffee.jpg",
+  imageAlt: "Cut-paper illustration: a cup on a saucer with a curl of steam and a single bean shape.",
   lede: `Not a joke and not a recommendation dressed up as one: with Meydan
     One Mall still unbuilt, the district's café options are the racecourse,
     one promenade, and Business Bay. Which of the three applies to you depends
@@ -97,6 +99,8 @@ export const food = {
   description: "Dining and groceries across MBR City's communities — what the racecourse carries, what Riviera walks to, and the mall that has not opened.",
   eyebrow: "Food",
   h1: "The anchor everyone plans around is not built",
+  image: "/covers/food.jpg",
+  imageAlt: "Cut-paper illustration: a round platter divided into segments with two slender bars beside it.",
   lede: `Read almost anything about this district and you will be told its
     dining revolves around Meydan One Mall. It has not opened. Development is
     on hold and no completion date is set, so the question of where MBR City
@@ -159,6 +163,8 @@ export const pools = {
   description: "Pool access across MBR City's communities — building pools, and the Crystal Lagoon that is not one.",
   eyebrow: "Pools",
   h1: "Building pools, and 18 hectares that are not a pool",
+  image: "/covers/pools.jpg",
+  imageAlt: "Cut-paper illustration: a rectangular pool of layered blue strips with a ladder and a diving board.",
   lede: `Almost everywhere in the district, swimming means the pool in your
     own building. The exception is not a bigger pool — it is a lagoon with a
     beach, and the distinction matters more than it sounds.`,
@@ -213,6 +219,8 @@ export const water = {
   description: "Looking for where to swim in MBR City? Building pools, District One's Crystal Lagoon and who has access, and the drive to the sea.",
   eyebrow: "Water",
   h1: "Where residents swim",
+  image: "/covers/water.jpg",
+  imageAlt: "Cut-paper illustration: concentric ripple rings crossed by a straight canal band.",
   lede: `MBR City has two real water features — District One's Crystal
     Lagoon and the Riviera canal — plus the building-pool amenity most
     communities share. Here's which of those you can swim in.`,
@@ -262,6 +270,8 @@ export const money = {
   description: "Crypto exchange near MBR City, and how buying property with crypto works in practice.",
   eyebrow: "Money",
   h1: "Crypto, close to the district",
+  image: "/covers/money.jpg",
+  imageAlt: "Cut-paper illustration: a fan of overlapping rectangles beside a single large disc.",
   lede: `MBR City's location bordering Business Bay puts licensed exchange
     infrastructure within easy reach regardless of which community you're
     in.`,
@@ -343,6 +353,8 @@ export const rent = {
   description: "Looking to rent somewhere in MBR City? Get a shortlist matched to the right community — District One, Meydan, Sobha Hartland, or Riviera.",
   eyebrow: "Rent",
   h1: "Renting in MBR City, matched to the right community",
+  image: "/covers/rent.jpg",
+  imageAlt: "Cut-paper illustration: a key with a circular bow crossing the base of a tall tower.",
   lede: `A District One villa, a Meydan townhouse, a Sobha Hartland
     apartment, and a Riviera unit are different rentals with different
     budgets. Tell us what you're after and get a shortlist that reflects

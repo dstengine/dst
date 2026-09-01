@@ -6,6 +6,7 @@
 //
 // Adding a section is a record in data/shows.ts. That is the whole change.
 import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
+import PageHero from "@dst/ui/PageHero.astro";
 import Layout from "../layouts/Layout.astro";
 import Clips from "./Clips.astro";
 import RunTable from "./RunTable.astro";
@@ -21,12 +22,18 @@ const upcoming = upcomingRuns().filter((r) => r.show === show.slug);
 const past = all.filter((r) => statusOf(r) === "ended");
 ---
 <Layout title={section.title} description={section.description}>
-  <section class="container hero">
+  <div class="container crumbs">
     <Breadcrumbs crumbs={[{ href: `/${show.slug}/`, label: show.title }]} current={section.label} homeLabel="What's on" />
-    <p class="eyebrow">{show.title}</p>
-    <h1>{section.title}</h1>
+  </div>
+  <PageHero
+    eyebrow={show.title}
+    title={section.title}
+    image={section.image}
+    imageAlt={section.imageAlt}
+    imageKind="generated"
+  >
     <p class="lede">{section.body[0]}</p>
-  </section>
+  </PageHero>
 
   <section class="container prose">
     {section.body.slice(1).map((paragraph) => <p>{paragraph}</p>)}
@@ -110,6 +117,9 @@ const past = all.filter((r) => statusOf(r) === "ended");
 </Layout>
 
 <style>
+  /* The crumbs used to sit inside the opener; with a picture there they
+     stand on their own above it. */
+  .crumbs { padding-top: var(--space-4); }
   .prose p { max-width: 68ch; }
   .songs { margin: var(--space-3) 0 0; padding: 0 0 0 var(--space-4); }
   .songs li { margin-bottom: var(--space-3); }

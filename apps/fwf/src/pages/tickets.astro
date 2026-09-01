@@ -5,6 +5,7 @@ import Icon from "@dst/ui/Icon.astro";
 import { formatDate } from "@dst/ui/date";
 import { checkedOn, forum, forumDate, ticketsFrom, ticketsTo } from "../content";
 import { go } from "../outbound";
+import PageHero from "@dst/ui/PageHero.astro";
 
 const salesEnd = formatDate(forum.tickets!.salesEnd!);
 ---
@@ -12,16 +13,20 @@ const salesEnd = formatDate(forum.tickets!.salesEnd!);
   title="Future World Forum Dubai tickets"
   description={`Future World Forum Dubai 2026 tickets: ${ticketsFrom} to ${ticketsTo}, sales close ${salesEnd}, refunds up to seven days before. What the price band does and doesn't tell you.`}
 >
-  <section class="container hero">
-    <p class="eyebrow">Tickets</p>
-    <h1>What a seat costs</h1>
+  <PageHero
+    eyebrow="Tickets"
+    title="What a seat costs"
+    image="/covers/tickets.jpg"
+    imageAlt="Cut-paper illustration: a torn ticket stub with a perforated edge and a punched circle."
+    imageKind="generated"
+  >
     <p class="lede">
       Tickets for {forumDate} are sold on Eventbrite by the organiser, in a
       band from <strong>{ticketsFrom}</strong> to <strong>{ticketsTo}</strong>.
       This site does not sell tickets and takes nothing from the sale — the
       figures here are read off the listing so you can decide before clicking.
     </p>
-  </section>
+  </PageHero>
 
   <section class="container">
     <h2>The numbers</h2>

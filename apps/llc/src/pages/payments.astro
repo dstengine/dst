@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Callout from "@dst/ui/Callout.astro";
 import Faq from "@dst/ui/Faq.astro";
+import PageHero from "@dst/ui/PageHero.astro";
 
 const faqItems = [
   {
@@ -23,15 +24,19 @@ const faqItems = [
   description="Does Stripe work with a UAE company? Yes — here's what's actually required, and the alternatives worth knowing about either way."
   jsonLd={[]}
 >
-  <section class="container">
-    <p class="eyebrow">Payment processing</p>
-    <h1>Stripe, and payment processing for a Dubai company</h1>
+  <PageHero
+    eyebrow="Payment processing"
+    title="Stripe, and payment processing for a Dubai company"
+    image="/covers/payments.jpg"
+    imageAlt="Cut-paper illustration: two overlapping circles passing a small square between them."
+    imageKind="generated"
+  >
     <p class="lede">
       This page exists because the honest answer is more useful than the
       confused one currently sitting at the top of search results for this
       question.
     </p>
-  </section>
+  </PageHero>
 
   <Callout>
     <strong>Short answer:</strong> Stripe does support UAE-registered

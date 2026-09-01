@@ -73,12 +73,16 @@ export const items: NewsItem[] = [
     related: [
       {
         href: "/golden/",
+        image: "/covers/golden.jpg",
+        imageAlt: "Cut-paper illustration: an upright rectangle with a rosette disc at its centre.",
         title: "Golden Visa via property",
         text: "The ten-year route in full: eligibility, thresholds and what the process actually involves.",
         eyebrow: "Golden Visa",
       },
       {
         href: "/properties/",
+        image: "/covers/properties.jpg",
+        imageAlt: "Cut-paper illustration: three tower blocks of different heights with a key shape at their base.",
         title: "Properties that qualify",
         text: "A filtered shortlist of listings that meet the investment threshold, by area and type.",
         eyebrow: "Properties",
