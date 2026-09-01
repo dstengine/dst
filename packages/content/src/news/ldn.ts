@@ -2,6 +2,43 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "venice-opens-the-autumn-with-a-british-film",
+    site: "ldn",
+    image: "/covers/venice-opens-the-autumn-with-a-british-film.jpg",
+    imageAlt: "A paper stage curtain drawn back from a blank screen, a band of lagoon water below and a small winged lion above",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Venice opens the autumn, and a British film opens Venice",
+    cardTitle: "A British film opens Venice",
+    titleSeo: "Venice Film Festival 2026 opens",
+    summary:
+      "Danny Boyle's Ink starts the 83rd Mostra on 2 September. It is the first of the three festivals that decide what London's cinemas show in October.",
+    date: "2026-09-01",
+    category: "Film",
+    source: {
+      name: "Screen International",
+      url: "https://www.screendaily.com/news/venice-film-festival-reveals-2026-lineup/5218820.article",
+      verifiedOn: "2026-09-01",
+    },
+    body: [
+      "The autumn film season does not begin in London. It begins on a strip of sand outside Venice, and by the time it reaches a cinema here the argument about what is good has largely been had without us.",
+      "## What starts tomorrow",
+      "The <strong>83rd Venice Film Festival</strong> runs from <strong>2 to 12 September 2026</strong> on the <strong>Lido</strong>, under artistic director <strong>Alberto Barbera</strong>. The competition jury is chaired by <strong>Maggie Gyllenhaal</strong>.",
+      "It opens with <strong>Ink</strong>, directed by <strong>Danny Boyle</strong>, with Guy Pearce. It closes with <strong>God Laughs</strong>, by Giovanni Veronesi. Honorary Golden Lions go to <strong>Ellen Burstyn</strong> and <strong>George Clooney</strong>.",
+      "## The British end of the competition",
+      "Two of the twenty competition titles announced on 23 July come from directors working out of these islands: Boyle&rsquo;s <strong>Ink</strong>, and <strong>Wild Horse Nine</strong> from <strong>Martin McDonagh</strong>.",
+      "Around them: Werner Herzog with <strong>Bucking Fastard</strong>, Hirokazu Koreeda with <strong>Look Back</strong>, Lee Chang-dong with <strong>Possible Love</strong>, plus Nanni Moretti, Florian Zeller and Shinya Tsukamoto. Barbera warned that this year&rsquo;s selection runs long; the longest is Ilya Khrzhanovsky&rsquo;s <strong>Dau</strong>, at <strong>210 minutes</strong>.",
+      "## Why a Londoner should care about the Lido",
+      "Venice is the first of three festivals &mdash; Venice, Telluride, Toronto &mdash; that between them settle which autumn films get bought, which get a proper release and which quietly go to a streaming service. A title that lands well on the Lido this fortnight is a title that turns up on a London screen with a poster full of stars on it.",
+      "It is also the reason the next fortnight matters here specifically. The <strong>BFI London Film Festival</strong> publishes its full programme on <strong>Wednesday 2 September</strong> &mdash; the same day Venice opens &mdash; and runs <strong>7 to 18 October</strong>. A good part of what appears on that programme is being shown to an audience for the first time this week.",
+      "## The honest caveat",
+      "A Golden Lion is a jury of seven people in a room. It predicts distribution far better than it predicts what anyone will actually enjoy, and the films that turn out to matter from a given September are regularly the ones that left Venice with nothing.",
+    ],
+    expertise:
+      "The useful thing to do with the Venice reviews is not to build a watchlist from the winners. It is to note the titles that reviewers disagree about most sharply &mdash; those are the ones worth seeing at a festival rather than waiting for, because a consensus film will still be a consensus film in March, and a divisive one is best seen before you have been told what to think of it.",
+  },
+  {
     slug: "va-exhibitions-closing-dates",
     site: "ldn",
     image: "/covers/va-exhibitions-closing-dates.jpg",

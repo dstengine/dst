@@ -2,6 +2,43 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "venecia-2026-una-sola-pelicula-latinoamericana",
+    site: "mxo",
+    image: "/covers/venecia-2026-una-sola-pelicula-latinoamericana.jpg",
+    imageAlt: "Un campo de cuadros de papel color crema y uno solo en terracota, apartado del resto",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "América Latina llega a Venecia con una sola película",
+    cardTitle: "Una sola película latinoamericana",
+    titleSeo: "Venecia 2026: una película latinoamericana",
+    summary:
+      "La 83ª Mostra abre el 2 de septiembre. En la competencia anunciada en julio hay veinte títulos y uno solo cruza el Atlántico desde este lado",
+    date: "2026-09-01",
+    category: "Cine",
+    source: {
+      name: "Screen International",
+      url: "https://www.screendaily.com/news/venice-film-festival-reveals-2026-lineup/5218820.article",
+      verifiedOn: "2026-09-01",
+    },
+    body: [
+      "El dato no es que Venecia sea eurocéntrica. Eso ya se sabe. El dato es cuánto: de los veinte títulos que la Mostra anunció el <strong>23 de julio</strong> para su competencia, exactamente <strong>uno</strong> viene de América Latina",
+      "## Cuál es",
+      "<strong>Ritorno a Buenos Aires</strong>, de <strong>Marco Bechis</strong>, una coproducción argentino-italiana. No hay película mexicana en competencia",
+      "Bechis es el caso raro que la estadística no captura bien: nació en Santiago, creció entre Argentina e Italia, y su cine lleva cuarenta años moviéndose entre las dos orillas. Contarlo como &laquo;una película latinoamericana&raquo; es correcto y también insuficiente",
+      "## Qué es la 83ª Mostra",
+      "El festival corre del <strong>2 al 12 de septiembre de 2026</strong> en el <strong>Lido</strong> de Venecia, con <strong>Alberto Barbera</strong> como director artístico. El jurado de la competencia lo preside <strong>Maggie Gyllenhaal</strong>, y lo integran Kaouther Ben Hania, Daniel Blumberg, Francesco Casetti, Xavier Giannoli, Shahrbanoo Sadat y Johnnie To",
+      "Abre <strong>Ink</strong>, de <strong>Danny Boyle</strong>, con Guy Pearce. Cierra <strong>God Laughs</strong>, de Giovanni Veronesi. Los Leones de Oro honoríficos son para <strong>Ellen Burstyn</strong> y <strong>George Clooney</strong>",
+      "## Lo demás de la lista",
+      "En competencia también están Werner Herzog (<strong>Bucking Fastard</strong>), Martin McDonagh (<strong>Wild Horse Nine</strong>), Hirokazu Koreeda (<strong>Look Back</strong>), Lee Chang-dong (<strong>Possible Love</strong>), Nanni Moretti, Florian Zeller y Shinya Tsukamoto",
+      "Barbera advirtió que esta selección trae películas largas. La más larga es <strong>Dau</strong>, de Ilya Khrzhanovsky: <strong>210 minutos</strong>",
+      "## Por qué importa el conteo",
+      "Venecia es la primera de las tres puertas de la temporada de premios, y por donde entra una película en septiembre suele decidirse qué distribuidor la compra y en cuántos países se estrena. Una sola presencia latinoamericana en competencia no es una opinión sobre el cine de la región: es una previsión bastante concreta de qué tan seguido va a poder verse en salas el año que viene",
+    ],
+    expertise:
+      "La competencia no es todo el festival. Orizzonti, la Settimana della Critica y las Giornate degli Autori suelen concentrar más presencia latinoamericana que la sección principal, y son las secciones donde se compran los derechos de las óperas primas. Si el interés es qué cine de la región va a llegar a las salas, esa lista dice más que la de los veinte",
+  },
+  {
     slug: "kia-ev3-pesqueria-nuevo-leon",
     site: "mxo",
     image: "/covers/kia-ev3-pesqueria-nuevo-leon.jpg",

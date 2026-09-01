@@ -2,6 +2,43 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "venice-hands-out-a-lion-new-york-refuses-to-rank",
+    site: "nyc42",
+    image: "/covers/venice-hands-out-a-lion-new-york-refuses-to-rank.jpg",
+    imageAlt: "Two paper stacks of film frames: one topped by a small trophy, the other spread out in an even row with nothing above it",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Venice hands out a Lion; New York refuses to rank anything",
+    cardTitle: "Venice ranks. New York doesn't.",
+    titleSeo: "Venice 2026 vs the New York Film Festival",
+    summary:
+      "The 83rd Venice festival opens 2 September with a jury, a competition and a Golden Lion. NYFF opens 13 days later with none of the three, and that is a decision.",
+    date: "2026-09-01",
+    category: "Film",
+    source: {
+      name: "Screen International",
+      url: "https://www.screendaily.com/news/venice-film-festival-reveals-2026-lineup/5218820.article",
+      verifiedOn: "2026-09-01",
+    },
+    body: [
+      "Two of the autumn&rsquo;s major film festivals open thirteen days apart, and they are built on opposite answers to the same question: should a festival tell you which film was best?",
+      "## Venice says yes",
+      "The <strong>83rd Venice Film Festival</strong> runs <strong>2 to 12 September 2026</strong> on the Lido. It has a competition &mdash; <strong>twenty titles</strong> in the line-up announced on 23 July &mdash; and a jury chaired by <strong>Maggie Gyllenhaal</strong>, with Kaouther Ben Hania, Daniel Blumberg, Francesco Casetti, Xavier Giannoli, Shahrbanoo Sadat and Johnnie To. At the end of it, seven people award a <strong>Golden Lion</strong>.",
+      "It opens with <strong>Ink</strong>, by <strong>Danny Boyle</strong>, and closes with Giovanni Veronesi&rsquo;s <strong>God Laughs</strong>. Honorary Golden Lions go to <strong>Ellen Burstyn</strong> and <strong>George Clooney</strong>. In competition: Werner Herzog, Martin McDonagh, Hirokazu Koreeda, Lee Chang-dong, Nanni Moretti, Florian Zeller, Shinya Tsukamoto. The longest film is Ilya Khrzhanovsky&rsquo;s <strong>Dau</strong>, at <strong>210 minutes</strong>.",
+      "## New York says no",
+      "The <strong>New York Film Festival</strong> opens on <strong>25 September</strong>. It has no competition, no jury and no top prize. What it has is a <strong>Main Slate</strong> &mdash; <strong>32 films</strong> this year, <strong>17 of them by directors making their Main Slate debut</strong> &mdash; and the selection itself is the whole statement.",
+      "## Which one tells you more",
+      "A Golden Lion is a very good predictor of distribution and a poor predictor of what you will want to watch. It is one verdict, produced by seven people who spent eleven days in the same screening rooms, and it compresses a fortnight of disagreement into a single name.",
+      "A slate with no ranking cannot do that, which is its weakness and its point: nothing in it is presented as the winner, so every title in it has to be argued for individually. It also means a New York audience gets no shortcut &mdash; you cannot show up for &laquo;the one that won&raquo;, because there isn&rsquo;t one.",
+      "## The overlap is the interesting part",
+      "Venice runs 2 to 12 September. NYFF runs 25 September to 12 October. The gap is thirteen days, which in festival terms is nothing: a film that premieres on the Lido this week can be on a New York screen with the reviews already written, the discourse already formed, and the audience already told what to think.",
+      "That is the argument for seeing the ones nobody has ranked yet.",
+    ],
+    expertise:
+      "Venice reviews land during NYFF&rsquo;s ticket window, and that is worth using rather than avoiding. Single tickets go on sale <strong>15 September</strong> &mdash; three days after Venice closes &mdash; so the first wave of festival criticism is public before anything has to be booked. The titles worth spending a booking on are the ones the reviews split over, not the ones they agree about.",
+  },
+  {
     slug: "broadway-week-which-shows-are-worth-it",
     featured: 1,
     site: "nyc42",
