@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "@dst/ui/BaseLayout.astro";
 import LeadTracking from "@dst/ui/LeadTracking.astro";
-import { disclaimer } from "../content";
+import { site } from "../site.config";
 import "../styles/theme.css";
 
 interface Props {
@@ -27,17 +27,13 @@ const nav = [
 ];
 ---
 <BaseLayout
+  {...site}
   prose={prose}
-  title={`${title} — FWF Dubai`}
+  title={title}
   description={description}
-  siteName="Future World Forum"
-  footerSiteName="fwf.lol"
   nav={nav}
-  complianceNote={disclaimer}
   jsonLd={jsonLd}
   image={image}
-  partnerDisclosure={false}
-  footerLinks={[{ href: "/about/", label: "About this site" }]}
 >
   <LeadTracking slot="tracking" />
   <slot />

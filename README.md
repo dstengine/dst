@@ -121,9 +121,14 @@ right after "Restored build cache from previous deployment".
 1. Copy the shape of an existing app with the same feature groups —
    `nyc42` for a plain feed site, `riviera` for a district, `llc` for a
    lead-capture vertical.
-2. Add `dev:<name>` / `build:<name>` to the root `package.json` and include
+2. Write its `src/site.config.ts`: the site's name, its title suffix, its
+   language, its publisher, and whether it names DST in the footer. That
+   file is the whole of what a copied app must not inherit, which is why it
+   is a file and not props in `Layout.astro` — the layout is copied, the
+   config is written. A test rejects a layout that sets any of it itself.
+3. Add `dev:<name>` / `build:<name>` to the root `package.json` and include
    the app in the root `build` script.
-3. Give it an accent in `src/styles/theme.css` and a palette in
+4. Give it an accent in `src/styles/theme.css` and a palette in
    `tools/covers.json` — a site without one cannot generate covers. The
    accent is two palettes and nothing else:
 
@@ -137,8 +142,8 @@ right after "Restored build cache from previous deployment".
    Which one applies is `tokens.css`'s job, not the site's. Don't write a
    `[data-theme]` rule here — the switch has three states, the third is easy
    to get wrong, and a test rejects a `theme.css` that reimplements it.
-4. Add it to `SITES` in `tools/deploy.sh`, and to the table above.
-5. Cross-link it from `apps/dst` and related verticals — unless it is a
+5. Add it to `SITES` in `tools/deploy.sh`, and to the table above.
+6. Cross-link it from `apps/dst` and related verticals — unless it is a
    `.lol` experiment, which links to nothing in the network.
 
 See `~/mind/ai/dubai/seo/guidelines.md` and the per-vertical concept docs

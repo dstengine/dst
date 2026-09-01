@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@dst/ui/BaseLayout.astro";
+import { site } from "../site.config";
 import LeadTracking from "@dst/ui/LeadTracking.astro";
 import "../styles/theme.css";
 
@@ -28,15 +29,13 @@ const nav = [
 ];
 ---
 <BaseLayout
+  {...site}
   prose={prose}
-  title={`${title} — Company Formation in Dubai`}
+  title={title}
   description={description}
-  siteName="Dubai Company Formation"
   nav={nav}
-  complianceNote="Informational content, not legal or financial advice. Always confirm current requirements with DED or your chosen free zone authority before acting."
   jsonLd={jsonLd}
   image={image}
-  partnerDisclosure={false}
 >
   <LeadTracking slot="tracking" />
   <slot />

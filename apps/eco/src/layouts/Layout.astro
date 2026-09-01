@@ -1,5 +1,5 @@
 ---
-import { go } from "../outbound";
+import { site } from "../site.config";
 import BaseLayout from "@dst/ui/BaseLayout.astro";
 import LeadTracking from "@dst/ui/LeadTracking.astro";
 import "../styles/theme.css";
@@ -20,19 +20,10 @@ const nav = [
 ];
 ---
 <BaseLayout
-  title={`${title} — DST Eco`}
+  {...site}
+  title={title}
   description={description}
-  siteName="DST Eco"
-  footerSiteName="DST"
   nav={nav}
-  instagram={go("instagram")}
-  {/* The network-wide partner disclosure is about regulated verticals
-      routing to licensed local partners. Nothing here is a regulated
-      service, so that note would be noise; this site carries its own
-      compliance line instead — the offset disclaimer, which is the claim
-      an environmental page actually has to be careful about. */}
-  partnerDisclosure={false}
-  complianceNote="This page describes DST's own environmental activity. It is not a carbon-offset programme: nothing here is sold, certified, or counted as an offset credit."
   jsonLd={jsonLd}
   image={image}
 >

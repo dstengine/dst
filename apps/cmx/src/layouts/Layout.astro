@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "@dst/ui/BaseLayout.astro";
-import { publisher } from "../content";
+import { site } from "../site.config";
 import "../styles/theme.css";
 
 interface Props {
@@ -23,19 +23,14 @@ const nav = [
 
 ---
 <BaseLayout
+  {...site}
   prose={prose}
-  title={`${title} — cmx.lol`}
+  title={title}
   description={description}
-  siteName="cmx.lol"
-  lang="es-MX"
   nav={nav}
   jsonLd={jsonLd}
   image={image}
   noindex={noindex}
-  publisher={publisher}
-  partnerDisclosure={false}
-  networkFooter={false}
-  footerLinks={[{ href: "/acerca/", label: "Acerca" }]}
 >
   <slot />
 </BaseLayout>

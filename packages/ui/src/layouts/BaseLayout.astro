@@ -12,6 +12,12 @@ import { lastModified } from '@dst/content/lastmod';
 
 interface Props {
   title: string;
+  /** Appended to `title` after an em dash. Every site puts its own name at
+      the end of every page title; the string lives in the app's
+      site.config.ts so a new site declares it once instead of composing the
+      same template literal in its own layout — which is where it used to be,
+      and where it was easy to copy a sibling's name in along with it. */
+  titleSuffix?: string;
   description: string;
   siteName: string;
   // `title` expands on a nav label for the tooltip and for crawlers — a
@@ -76,7 +82,8 @@ interface Props {
   lang?: string;
 }
 
-const { title, description, siteName, nav, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [], footerSiteName = siteName, instagram, image, footerSites = [], networkFooter = true, publisher, lang = "en", noindex = false, prose = false } = Astro.props;
+const { title, titleSuffix, description, siteName, nav, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [], footerSiteName = siteName, instagram, image, footerSites = [], networkFooter = true, publisher, lang = "en", noindex = false, prose = false } = Astro.props;
+const pageTitle = titleSuffix ? `${title} \u2014 ${titleSuffix}` : title;
 const isDstHome = Astro.site?.hostname === "dst.llc";
 // The two strings the shell says on its own, in the language of the page.
 // Everything else in the chrome comes from the app; these were hardcoded in
@@ -125,7 +132,7 @@ const graph = Astro.site
       siteName,
       pathname: Astro.url.pathname,
       canonical: canonical!,
-      title,
+      title: pageTitle,
       description,
       image: shareImage,
       dateModified: lastModified(Astro.site.hostname, Astro.url.pathname),
@@ -170,7 +177,7 @@ const lateIcons = navFootprint > 700;
         } catch { /* private mode: fall through to the reader's own setting */ }
       })();
     </script>
-    <title>{title}</title>
+    <title>{pageTitle}</title>
     <meta name="description" content={description} />
     {/* iOS Safari auto-links any digit run that looks like a phone number
         - e.g. the DED License No. in the footer - into a blue tel: link.
@@ -189,12 +196,12 @@ const lateIcons = navFootprint > 700;
     {Astro.slots.has("tracking") && <link rel="dns-prefetch" href="https://api.dst.llc" />}
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={siteName} />
-    <meta property="og:title" content={title} />
+    <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     {canonical && <meta property="og:url" content={canonical} />}
     {shareImage && <meta property="og:image" content={shareImage} />}
     <meta name="twitter:card" content={shareImage ? "summary_large_image" : "summary"} />
-    <meta name="twitter:title" content={title} />
+    <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
     {favicon ? (
       <>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@dst/ui/BaseLayout.astro";
+import { site } from "../site.config";
 import LeadTracking from "@dst/ui/LeadTracking.astro";
 import "../styles/theme.css";
 
@@ -25,15 +26,13 @@ const nav = [
 ];
 ---
 <BaseLayout
+  {...site}
   prose={prose}
-  title={`${title} — Dubai Residency & Golden Visa`}
+  title={title}
   description={description}
-  siteName="Dubai Residency"
   nav={nav}
-  complianceNote="Informational content, not immigration or legal advice. Golden Visa thresholds and eligibility criteria are set by UAE federal authorities and can change — always confirm current requirements before making an investment decision."
   jsonLd={jsonLd}
   image={image}
-  partnerDisclosure
 >
   <LeadTracking slot="tracking" />
   <slot />

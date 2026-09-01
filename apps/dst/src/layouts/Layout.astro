@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "@dst/ui/BaseLayout.astro";
 import LeadTracking from "@dst/ui/LeadTracking.astro";
-import { NETWORK } from "@dst/content/network";
+import { site } from "../site.config";
 import "../styles/theme.css";
 
 interface Props {
@@ -24,17 +24,13 @@ const nav = [
 ];
 ---
 <BaseLayout
+  {...site}
   prose={prose}
-  title={`${title} — DST`}
+  title={title}
   description={description}
-  siteName="DST"
   nav={nav}
-  complianceNote="DST builds and operates the systems behind each venture; execution in regulated verticals (real estate, financial services) is carried out by licensed local partners."
   jsonLd={jsonLd}
   image={image}
-  logoSrc="/logo-mini.png"
-  footerSites={NETWORK}
-  favicon
 >
   <LeadTracking slot="tracking" />
   <slot />

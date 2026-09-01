@@ -335,6 +335,39 @@ describe("config", () => {
   });
 });
 
+describe("site identity", () => {
+  // A site's own name, its title suffix, its language and its publisher used
+  // to be spelled inline in each app's Layout.astro — and a new app is made
+  // by copying an existing Layout.astro. A copy that keeps a sibling's
+  // siteName or lang builds cleanly, passes every other check, and ships the
+  // wrong name or the wrong language on every page it has. The strings live
+  // in src/site.config.ts now and the layout spreads them, so a copied
+  // layout carries no identity to forget to change.
+  const OWNED = [
+    "siteName", "titleSuffix", "footerSiteName", "lang", "publisher",
+    "networkFooter", "partnerDisclosure", "complianceNote", "footerLinks",
+    "footerSites", "instagram", "logoSrc",
+  ];
+
+  test("every app keeps its identity in site.config.ts, not in its layout", () => {
+    for (const { app } of SITES) {
+      assert.ok(
+        existsSync(path.join(REPO, "apps", app, "src", "site.config.ts")),
+        `apps/${app}: no src/site.config.ts`,
+      );
+      const layout = readFileSync(path.join(REPO, "apps", app, "src", "layouts", "Layout.astro"), "utf8");
+      assert.match(layout, /\{\.\.\.site\}/, `apps/${app}: Layout.astro does not spread its site config`);
+      for (const prop of OWNED) {
+        assert.doesNotMatch(
+          layout,
+          new RegExp(`\\b${prop}=`),
+          `apps/${app}: Layout.astro sets ${prop} itself — that belongs in site.config.ts`,
+        );
+      }
+    }
+  });
+});
+
 describe("theme", () => {
   // Two halves that have to travel together. The control is only useful if
   // the head script is there to read what it stored, and the head script is

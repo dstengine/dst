@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "@dst/ui/BaseLayout.astro";
-import { disclaimer } from "../content";
+import { site } from "../site.config";
 import "../styles/theme.css";
 
 interface Props {
@@ -26,31 +26,15 @@ const nav = [
   { href: "/about/", label: "About", title: "How these listings are built and checked", icon: "id" },
 ];
 
-// The site is not tied to the group yet, so the markup has to say the same
-// thing the footer does — see ~/mind/ai/dubai/musical.today.md.
-const publisher = {
-  id: "https://musical.today/#organization",
-  name: "musical.today",
-  url: "https://musical.today/",
-};
 ---
 <BaseLayout
+  {...site}
   prose={prose}
-  title={`${title} — musical.today`}
+  title={title}
   description={description}
-  siteName="musical.today"
   nav={nav}
-  complianceNote={disclaimer}
   jsonLd={jsonLd}
   image={image}
-  publisher={publisher}
-  partnerDisclosure={false}
-  networkFooter={false}
-  footerLinks={[
-    { href: "/venues/", label: "Venues" },
-    { href: "/online/", label: "Online" },
-    { href: "/about/", label: "About this site" },
-  ]}
 >
   <slot />
 </BaseLayout>

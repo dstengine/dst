@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "@dst/ui/BaseLayout.astro";
-import { publisher } from "../content";
+import { site } from "../site.config";
 import "../styles/theme.css";
 
 interface Props {
@@ -23,19 +23,14 @@ const nav = [
 
 ---
 <BaseLayout
+  {...site}
   prose={prose}
-  title={`${title} — lnd.lol`}
+  title={title}
   description={description}
-  siteName="lnd.lol"
-  lang="en-GB"
   nav={nav}
   jsonLd={jsonLd}
   image={image}
   noindex={noindex}
-  publisher={publisher}
-  partnerDisclosure={false}
-  networkFooter={false}
-  footerLinks={[{ href: "/about/", label: "About" }]}
 >
   <slot />
 </BaseLayout>
