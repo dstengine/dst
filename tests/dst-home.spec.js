@@ -288,21 +288,29 @@ test.describe("dst home · touch and keyboard", () => {
 
   test("tab order follows the page, top to bottom", async ({ page }) => {
     await page.goto(HOME);
-    const tops = [];
+    const centres = [];
     for (let i = 0; i < 12; i++) {
       await page.keyboard.press("Tab");
-      const top = await page.evaluate(() => {
+      const centre = await page.evaluate(() => {
         const el = document.activeElement;
         if (!el || el === document.body) return null;
-        // Absolute document position: focusing a control scrolls it into view,
-        // so a viewport-relative top says where the page scrolled to, not where
-        // the control sits on the page.
-        return Math.round(el.getBoundingClientRect().top + window.scrollY);
+        const box = el.getBoundingClientRect();
+        // The vertical centre, not the top edge. Controls in the same row are
+        // different heights — the theme toggle is a 44px tap target beside
+        // 24px nav links — so the taller one's top edge sits 7px higher than
+        // its neighbours' while it is plainly in the same row and plainly
+        // next in order. Measuring tops read that as focus jumping back up
+        // the page. Centres line up: 36 for the toggle, 33 for the links.
+        //
+        // Absolute document position: focusing a control scrolls it into
+        // view, so a viewport-relative box says where the page scrolled to,
+        // not where the control sits on the page.
+        return Math.round(box.top + window.scrollY + box.height / 2);
       });
-      if (top !== null) tops.push(top);
+      if (centre !== null) centres.push(centre);
     }
-    const backwards = tops.filter((t, i) => i > 0 && t < tops[i - 1] - 5);
-    expect(backwards, `focus jumps back up the page: ${tops.join(", ")}`).toEqual([]);
+    const backwards = centres.filter((c, i) => i > 0 && c < centres[i - 1] - 5);
+    expect(backwards, `focus jumps back up the page: ${centres.join(", ")}`).toEqual([]);
   });
 });
 
