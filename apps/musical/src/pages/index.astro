@@ -9,6 +9,8 @@ import { citiesWithPages, runsFor, shows, upcomingRuns, venues } from "../conten
 const upcoming = upcomingRuns();
 const soon = upcoming.slice(0, 6);
 const cityPages = citiesWithPages();
+const lead = shows.find((show) => show.featured) ?? shows[0]!;
+const alsoListed = shows.filter((show) => show !== lead);
 ---
 <Layout
   title="Musicals on sale now"
@@ -69,27 +71,43 @@ const cityPages = citiesWithPages();
     </div>
   </section>
 
-  {shows.map((show) => (
-    <section class="container">
-      <h2>{show.title}</h2>
-      <p>{show.tagline}</p>
-      <div class="link-grid">
+  {/* One section for the show this site is about, and a line for the rest.
+      A second show listed in full is not a second subject: giving it the
+      same grid would say the site had two, which it has not. */}
+  <section class="container">
+    <h2>{lead.title}</h2>
+    <p>{lead.tagline}</p>
+    <div class="link-grid">
         {/* One line per show, written for it. A single fixed line would have
             promised Cats a history and a video it has not got; the show's own
             summary would have been accurate and flat. */}
-        <a class="card link-card" href={`/${show.slug}/`} title={`${show.title}: every run, and what is on this site about it`}>
-          <h3>Everything on the show</h3>
-          <p>{show.hubCard}</p>
+      <a class="card link-card" href={`/${lead.slug}/`} title={`${lead.title}: every run, and what is on this site about it`}>
+        <h3>Everything on the show</h3>
+        <p>{lead.hubCard}</p>
+      </a>
+      {lead.sections.map((section) => (
+        <a class="card link-card" href={`/${lead.slug}/${section.slug}/`} title={section.title}>
+          <h3>{section.label}</h3>
+          <p>{section.description}</p>
         </a>
-        {show.sections.map((section) => (
-          <a class="card link-card" href={`/${show.slug}/${section.slug}/`} title={section.title}>
-            <h3>{section.label}</h3>
-            <p>{section.description}</p>
+      ))}
+    </div>
+  </section>
+
+  {alsoListed.length > 0 && (
+    <section class="container">
+      <h2>Also listed</h2>
+      <p>Every run, theatre and seller, checked the same way — without the editorial pages the lead show carries.</p>
+      <div class="link-grid">
+        {alsoListed.map((show) => (
+          <a class="card link-card" href={`/${show.slug}/`} title={`${show.title}: every stop, its theatre and its seller`}>
+            <h3>{show.title}</h3>
+            <p>{show.hubCard}</p>
           </a>
         ))}
       </div>
     </section>
-  ))}
+  )}
 
   <section class="container">
     <h2>At home</h2>

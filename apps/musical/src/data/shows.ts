@@ -12,6 +12,7 @@ export const shows: Show[] = [
   {
     slug: "chicago",
     title: "Chicago The Musical",
+    featured: true,
     eyebrow: "The event we cover in full",
     hubCard:
       "Every run, the tour, a hundred years of it, and what you can watch tonight for nothing.",

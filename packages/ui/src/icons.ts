@@ -24,6 +24,8 @@ export const ICONS: Record<string, string> = {
   briefcase: "M3 8h18v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8ZM9 8V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v3M3 13h18",
   chart: "M4 20V10M10 20V4M16 20v-7M22 20H2",
   star: "M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.8L5.7 21l1.7-7-5.4-4.7 7.1-.6L12 2Z",
+  // A cat's head: two ear points over a round jaw, eyes as dots, a nose.
+  cat: "M4.5 4.5 5 10a7 7 0 0 0 14 0l.5-5.5-3.7 3a9 9 0 0 0-7.6 0ZM9.5 12h.01M14.5 12h.01M12 14.6l-1 1h2Z",
   // A proscenium: two tabs of curtain drawn back over a stage floor.
   stage: "M3 4h18M4 4c0 5-.6 8-2 9 2.2.6 3.4 2 3.5 4M20 4c0 5 .6 8 2 9-2.2.6-3.4 2-3.5 4M2 21h20M8.5 17c1-1.5 2.2-2.2 3.5-2.2s2.5.7 3.5 2.2",
   play: "M3 5h18a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1ZM10 9l5 2.5L10 14V9Z",

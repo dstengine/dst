@@ -164,6 +164,10 @@ export interface Show {
   title: string;
   tagline: string;
   summary: string;
+  /** The show this site is built around. It gets the front page's own
+      section and the header; everything else is listed in full and linked,
+      which is a different job from being the site's subject. */
+  featured?: boolean;
   /** The line above the title, saying what this site does with this show.
       Not every show gets the full treatment, and the page should not imply
       it does. */
