@@ -5,7 +5,7 @@
 // that must not survive it.
 export const site = {
   siteName: "Dubai Company Formation",
-  titleSuffix: "Company Formation in Dubai",
+  titleSuffix: "Dubai Company Formation",
   complianceNote:
     "Informational content, not legal or financial advice. Always confirm current requirements with DED or your chosen free zone authority before acting.",
   partnerDisclosure: false,

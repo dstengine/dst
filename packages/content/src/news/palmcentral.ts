@@ -10,7 +10,6 @@ export const items: NewsItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "Nakheel releases 44 villas on Frond F",
-    titleSeo: "44 villas released on Frond F",
     summary:
       "Ten architectural designs across the Beach and Coral Collections, five to seven bedrooms, directly on the shoreline of Palm Jebel Ali. Handovers begin late 2026.",
     date: "2026-08-20",

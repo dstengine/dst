@@ -5,7 +5,7 @@
 // that must not survive it.
 export const site = {
   siteName: "Palm Central",
-  titleSuffix: "Palm Central, Palm Jebel Ali",
+  titleSuffix: "Palm Central",
   footerSiteName: "Palm Central DST",
   complianceNote:
     "Independent advisory site, not affiliated with or endorsed by Nakheel. Prices, availability, and release phases change — confirm current terms directly with the developer or a licensed broker before acting.",

@@ -10,7 +10,7 @@ export const items: NewsItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "Six more nationalities can now get a visa on arrival",
-    titleSeo: "Visa on arrival: six more",
+    titleSeo: "Visa on arrival: six more nationalities",
     summary:
       "The ICP has added Indonesia, Vietnam, Thailand, the Philippines, Kenya and South Africa — and six new countries of residence. Dh100 for 14 days, Dh250 for 60.",
     date: "2026-06-25",

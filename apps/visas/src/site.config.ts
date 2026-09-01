@@ -5,7 +5,7 @@
 // that must not survive it.
 export const site = {
   siteName: "Dubai Residency",
-  titleSuffix: "Dubai Residency & Golden Visa",
+  titleSuffix: "Dubai Residency",
   complianceNote:
     "Informational content, not immigration or legal advice. Golden Visa thresholds and eligibility criteria are set by UAE federal authorities and can change — always confirm current requirements before making an investment decision.",
   partnerDisclosure: true,
