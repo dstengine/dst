@@ -110,11 +110,6 @@ const shareImage = Astro.site
   ? new URL(shareable ? image! : "/share.png", Astro.site).href
   : undefined;
 
-// Roughly how much room the inline nav wants, in px: label text, the gaps
-// between items, and the site name beside it. The header's content column
-// caps at 1180px and the name eats into that, so anything over ~900 wraps
-// onto a second row. llc (ten long labels, "Dubai Company Formation")
-// measures 1189 and did wrap; riviera's nine short ones measure 759 and fit.
 // The sites next door. Driven by the host rather than a prop, so every
 // page of every vertical carries the same short row without each app
 // having to remember to pass it. The hub sets its own, fuller listing on
@@ -147,6 +142,11 @@ const graph = Astro.site
 const navIcon = (item: { href: string; icon?: string }) =>
   item.icon ? ICONS[item.icon] : navIconFor(item.href);
 
+// Roughly how much room the inline nav wants, in px: label text, the gaps
+// between items, and the site name beside it. Over ~900 the row needs the
+// tightened treatment — smaller type, no marks, narrower gaps — to hold one
+// line. llc's ten items beside "Dubai Company Formation" measure 1093;
+// riviera's nine short ones measure 759 and need nothing.
 const navFootprint =
   nav.reduce((sum, item) => sum + item.label.length, 0) * 8 +
   nav.length * 24 +
@@ -505,9 +505,15 @@ const lateIcons = navFootprint > 700;
     .nav-toggle { display: block; }
   }
   /* A long nav gets a tightened row — smaller type, no icons, narrower gaps
-     — which is enough to hold one line on a wide screen: llc's ten items and
-     its 335px name fit from 1164px up. Below that the row wraps, so there
-     such a site gets the dropdown instead. */
+     — which is enough to hold one line on a wide screen. Below 1200 the row
+     wraps even tightened, so there such a site gets the dropdown instead.
+     Measure the whole budget when changing a long nav, not just the labels:
+     the row shares .header-actions with the theme toggle, so what the items
+     actually get is the capped 1180px column minus the site name, minus the
+     toggle and its gap. Missing the toggle out of that sum is what put llc's
+     tenth item on a second row at every desktop width. As it stands llc's
+     row needs 700px and has 29px to spare at 1201, the tightest width it is
+     shown at. */
   @media (max-width: 1200px) {
     .site-nav-dense .nav-desktop { display: none; }
     .site-nav-dense .nav-toggle { display: block; }
