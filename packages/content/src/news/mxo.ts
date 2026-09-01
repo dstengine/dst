@@ -2,6 +2,41 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "kia-ev3-pesqueria-nuevo-leon",
+    site: "mxo",
+    image: "/covers/kia-ev3-pesqueria-nuevo-leon.jpg",
+    imageAlt: "Un auto de papel recortado con una batería en el piso y un cable de carga en curva",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "El primer KIA eléctrico de México",
+    summary:
+      "649 millones de dólares para producir el EV3 en Nuevo León. Es el primer vehículo eléctrico fabricado en la historia del estado",
+    date: "2026-08-05",
+    category: "Industria",
+    source: {
+      name: "El Universal",
+      url: "https://www.eluniversal.com.mx/estados/nuevo-leon-fabricara-el-primer-kia-electrico-hecho-en-mexico-presentan-el-ev3-con-inversion-de-649-millones-de-dolares/",
+      verifiedOn: "2026-09-01",
+    },
+    body: [
+      "México lleva casi un siglo ensamblando autos para otros mercados. Lo que no había hecho en Nuevo León era fabricar uno eléctrico",
+      "## La inversión",
+      "KIA anunció <strong>649 millones de dólares</strong> para su planta de <strong>Pesquería, Nuevo León</strong>, destinados a producir el <strong>EV3</strong>, su primer vehículo eléctrico fabricado en México",
+      "Con esto, la inversión acumulada de la armadora en Pesquería llega a alrededor de <strong>4 mil millones de dólares</strong>",
+      "## Lo que ya hay en Pesquería",
+      "La operación de KIA en el estado sostiene <strong>16 mil empleos directos</strong> y más de <strong>80 mil</strong> si se cuentan cadena de suministro y red de distribución. La planta recibió el <strong>Gold Plant Quality Award</strong> de J.D. Power en 2026",
+      "El gobernador <strong>Samuel García</strong> adelantó además un polo industrial de <strong>220 hectáreas</strong> en Pesquería para KIA y sus proveedores",
+      "## Por qué importa dónde se fabrica una batería",
+      "Un auto eléctrico no se ensambla igual que uno de combustión. La línea cambia, el proveedor cambia y, sobre todo, cambia el peso relativo de la batería dentro del costo del vehículo. Un país que ensambla eléctricos sin fabricar celdas capta una porción del valor mucho menor que la que capta ensamblando de combustión",
+      "Por eso el anuncio se lee mejor como un primer paso que como una llegada: la línea de EV3 en Pesquería pone a México en el mapa de la electromovilidad, y la pregunta siguiente &mdash; quién hace las celdas y dónde &mdash; sigue abierta",
+      "## La frase",
+      "García lo presentó en la Explanada del Palacio de Gobierno: &laquo;este producto va a ser un exitazo... es el símbolo de la electromovilidad&raquo;. Por KIA México habló su presidente, <strong>Young Sam Kim</strong>",
+    ],
+    expertise:
+      "El indicador a vigilar no es el monto sino el contenido regional. La regla de origen del T-MEC exige porcentajes altos de valor norteamericano para que un vehículo cruce sin arancel, y en un eléctrico ese cálculo lo domina la batería. De ahí depende que el EV3 hecho en Pesquería se exporte o se quede en el mercado interno",
+  },
+  {
     slug: "moderna-vacuna-melanoma-fase-3",
     featured: 1,
     site: "mxo",

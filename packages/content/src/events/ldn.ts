@@ -2,6 +2,46 @@ import type { EventItem } from "../types.ts";
 
 export const items: EventItem[] = [
   {
+    slug: "bfi-london-film-festival-2026",
+    site: "ldn",
+    image: "/covers/bfi-london-film-festival-2026.jpg",
+    imageAlt: "A fanned stack of red paper rectangles with a dark aperture ring resting over them",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "BFI London Film Festival 2026",
+    summary:
+      "The 70th LFF runs 7–18 October. Ten films compete for Best Film, the full programme lands on 2 September and tickets open on 17 September.",
+    start: "2026-10-07",
+    end: "2026-10-18",
+    city: "London",
+    venue: "BFI Southbank and other cinemas",
+    category: "Festival",
+    organizer: "British Film Institute",
+    source: {
+      name: "British Film Institute",
+      url: "https://www.bfi.org.uk/london-film-festival/news/official-competition-films-70th-bfi-london-film-festival",
+      verifiedOn: "2026-09-01",
+    },
+    body: [
+      "A film festival reaching its seventieth edition has outlived most of the distribution models it was built to serve, which is a reasonable thing to think about while queueing for a ticket.",
+      "The <strong>70th BFI London Film Festival runs from Wednesday 7 to Sunday 18 October 2026</strong>.",
+      "## Four competitions, not one",
+      "The festival runs <strong>four competitive categories</strong>: <strong>Best Film</strong>, <strong>Best Documentary</strong> (the Grierson Award), <strong>Best First Feature</strong> (the Sutherland Award) and the <strong>Short Film Award</strong>. The <strong>Audience Awards</strong> return for 2026.",
+      "<strong>Ten films</strong> are in Official Competition for Best Film, chosen from ten countries: the UK, Ireland, Brazil, Denmark, France, Germany, Hungary, Italy, Japan and Poland. The LFF Awards Jury announces the winner on <strong>Sunday 18 October</strong>.",
+      "Festival director Kristy Matheson framed the selection around its returning names: &laquo;As we celebrate the 70th edition of the BFI London Film Festival, it&rsquo;s an honour to have a number of alumni filmmakers represented in the Official Competition...&raquo;",
+      "The shortlists for the other competitive categories are announced in September.",
+      "## The two dates to put in a calendar",
+      "<strong>Wednesday 2 September</strong> &mdash; the full programme is revealed.",
+      "<strong>Thursday 17 September</strong> &mdash; tickets go on sale, with BFI Members booking early.",
+      "The gap between them is the useful fortnight. The programme is public for two weeks before anything can be bought, which means the festival hands everyone the same information and then makes them wait &mdash; and the people who spend that fortnight building a shortlist are the ones who get the screenings they wanted.",
+      "## What a festival screening is for",
+      "Most of what plays at LFF will reach a cinema or a streaming service eventually. What will not repeat is the room: a first UK audience, frequently with the director in it, watching something before any consensus about it exists. That is the part the ticket buys.",
+    ],
+    expertise:
+      "Competition titles are the hardest tickets and rarely the best use of a first festival. The films with distribution deals already signed will be in cinemas within months; the ones worth a festival seat are the documentaries and first features, which are the categories where a London screening is sometimes the only one a film gets in this country.",
+  },
+  {
     slug: "london-design-festival-2026",
     featured: 1,
     site: "ldn",

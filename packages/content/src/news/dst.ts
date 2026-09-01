@@ -5,6 +5,40 @@ import type { NewsItem } from "../types.ts";
 // anyone outside the company, and advertising it reads badly to a client.
 export const items: NewsItem[] = [
   {
+    slug: "186-new-developers-entered-dubai-in-2026",
+    site: "dst",
+    image: "/covers/186-new-developers-entered-dubai-in-2026.jpg",
+    imageAlt: "A dense field of paper tower silhouettes with smaller new ones filling the gaps, a blank licence card in front",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "186 new developers entered Dubai this year",
+    summary:
+      "Between January and mid-August 2026 the Dubai Land Department registered 186 new real estate development companies — about 25 a month. 180 of them were licensed by one authority.",
+    date: "2026-08-15",
+    category: "Market",
+    source: {
+      name: "Gulf News",
+      url: "https://gulfnews.com/business/property/dubai-attracts-186-new-property-developers-in-first-seven-months-of-2026-1.500641994",
+      verifiedOn: "2026-09-01",
+    },
+    body: [
+      "A developer count is a duller number than a transaction volume, and a more honest one. Transactions measure what buyers did last quarter; new licences measure what companies believe about the next three years, because a development licence is only worth taking out if you intend to build.",
+      "Between the start of 2026 and <strong>mid-August</strong>, <strong>186</strong> new real estate development companies were registered in Dubai, according to Dubai Land Department data. That works out at roughly <strong>25 a month</strong>.",
+      "## Where the licences came from",
+      "The split is lopsided, and the lopsidedness is the interesting part:",
+      "<strong>Department of Economy and Tourism &mdash; 180.</strong> <strong>Trakhees</strong> (Dubai Ports, Customs and Free Zone Corporation) &mdash; <strong>3</strong>. <strong>Mohammed bin Rashid Establishment for Small and Medium Enterprises Development</strong> &mdash; <strong>2</strong>. <strong>Expo City Dubai</strong> &mdash; <strong>1</strong>.",
+      "Ninety-seven per cent of the new entrants took the mainland route. That is not the shape a market has when its growth is coming from free-zone structures or offshore holding vehicles &mdash; it is the shape of companies setting up to sell to the emirate&rsquo;s own buyers under the emirate&rsquo;s own regulator.",
+      "## What 25 a month actually means",
+      "Two readings sit on top of this figure and they do not cancel each other out.",
+      "The first is confidence: nobody licenses a development company into a market they expect to thin out. The second is competition. A buyer choosing off-plan in late 2026 is choosing among more names than a buyer in 2024 was, and a meaningful share of those names have no delivered project behind them yet.",
+      "## The question a licence does not answer",
+      "A development licence says a company may build. It does not say the company has land, funding, a contractor, or an escrow account with anything in it. Those are separate registrations, and the gap between them is where an off-plan buyer&rsquo;s risk actually lives.",
+    ],
+    expertise:
+      "The count of developers is a market-level signal, not a shortlist. Before committing to an off-plan unit from a name registered this year, the two checks worth doing are the project&rsquo;s escrow account number and the developer&rsquo;s completed-project history &mdash; both are on the Dubai Land Department&rsquo;s own systems, and 186 new companies is precisely the reason to do them.",
+  },
+  {
     slug: "dubai-tokenised-property-secondary-market",
     featured: 1,
     site: "dst",

@@ -2,6 +2,41 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "entry-visa-opens-to-six-more-nationalities",
+    site: "visas",
+    image: "/covers/entry-visa-opens-to-six-more-nationalities.jpg",
+    imageAlt: "Six blank passport-shaped cards in two rows, one carrying a single red stamp",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Six nationalities added",
+    summary:
+      "The ICP has added Indonesia, Vietnam, Thailand, the Philippines, Kenya and South Africa — and six new countries of residence. Dh100 for 14 days, Dh250 for 60.",
+    date: "2026-06-25",
+    category: "Residency",
+    source: {
+      name: "Khaleej Times",
+      url: "https://www.khaleejtimes.com/uae/uae-expands-entry-visit-visa-eligibility",
+      verifiedOn: "2026-09-01",
+    },
+    body: [
+      "The rule that changed here is a conditional one, and the condition is the part people misread. This is not a passport-based entitlement. It is an entitlement that depends on <strong>where you live</strong> as much as on which passport you hold.",
+      "## The six new nationalities",
+      "The Federal Authority for Identity, Citizenship, Customs and Port Security has extended entry-visa eligibility to nationals of <strong>Indonesia</strong>, <strong>Vietnam</strong>, <strong>Thailand</strong>, <strong>the Philippines</strong>, <strong>Kenya</strong> and <strong>South Africa</strong>, joining India on the list.",
+      "## The six new countries of residence",
+      "The list of qualifying residences has widened too. Alongside the <strong>United States</strong>, the <strong>United Kingdom</strong> and <strong>EU member states</strong>, an applicant may now hold valid residency in <strong>Singapore</strong>, <strong>Japan</strong>, <strong>South Korea</strong>, <strong>Australia</strong>, <strong>New Zealand</strong> or <strong>Canada</strong>.",
+      "Both conditions have to hold at once: an eligible nationality <em>and</em> a valid residence permit from an approved country. A Kenyan national resident in Kenya is not covered by this change; a Kenyan national resident in Canada is.",
+      "## What each visa costs and does",
+      "<strong>14-day visa &mdash; Dh100.</strong> Extendable once during the stay.",
+      "<strong>60-day visa &mdash; Dh250.</strong> Single entry, and <strong>not extendable</strong>.",
+      "The asymmetry is worth pausing on. The cheaper visa is the flexible one; the longer visa is the rigid one. Someone planning a two-month stay with an uncertain end date is choosing between a 60-day visa that cannot move and a 14-day visa that can be extended once &mdash; and the second is not obviously the wrong answer.",
+      "## The overstay figure",
+      "Overstaying carries a fine of <strong>Dh50 per day</strong>. On a non-extendable 60-day visa, that is the number to hold in mind when booking a return flight for the sixtieth day rather than the fifty-eighth.",
+    ],
+    expertise:
+      "A visa on arrival is granted at the counter, not before the flight &mdash; which means the residence permit is the document to have ready in hand, not filed in an email. The single most common cause of a refusal in this category is a residence permit that expires during the intended stay, since the entry visa cannot outlive the residency that qualified it.",
+  },
+  {
     slug: "two-year-investor-visa-minimum-dropped",
     site: "visas",
     // Layout appends " — Dubai Residency & Golden Visa", leaving 28

@@ -11,6 +11,41 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "agentic-ai-half-of-uae-government-services",
+    site: "fwf",
+    image: "/covers/agentic-ai-half-of-uae-government-services.jpg",
+    imageAlt: "A grid of paper tiles with half of them replaced by linked hexagonal nodes",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Half of UAE services move to AI agents",
+    summary:
+      "Sheikh Mohammed has set a two-year target for 50% of federal sectors, services and operations to run on agentic AI — systems that plan and act, not just answer.",
+    date: "2026-04-23",
+    category: "AI",
+    source: {
+      name: "Khaleej Times",
+      url: "https://www.khaleejtimes.com/uae/government/sheikh-mohammed-announces-50-of-uae-govt-services-to-run-on-ai-agents-in-2-years",
+      verifiedOn: "2026-09-01",
+    },
+    body: [
+      "The word doing the work in this announcement is <strong>agentic</strong>. A chatbot answers; an agent decides and acts. Moving a government service onto the first is a communications project. Moving it onto the second is a change to who executes the decision.",
+      "## What was announced",
+      "Sheikh Mohammed bin Rashid Al Maktoum, Vice-President and Prime Minister of the UAE and Ruler of Dubai, announced that within <strong>two years</strong>, <strong>50%</strong> of UAE government sectors, services and operations will run on agentic AI &mdash; following a directive from President Sheikh Mohamed bin Zayed Al Nahyan.",
+      "&laquo;AI is no longer a tool. It analyses, decides, executes, and improves in real time. It will become our executive partner to enhance services, accelerate decisions, and raise efficiency.&raquo;",
+      "## Who is running it",
+      "Implementation is overseen by <strong>Sheikh Mansour bin Zayed</strong>, with execution driven by a dedicated taskforce chaired by <strong>Mohammad Al Gergawi</strong>.",
+      "Progress is to be measured by <strong>adoption speed, implementation quality and AI mastery</strong>, with a phased rollout across ministries and federal entities based on performance assessment. All federal employees are to receive AI training.",
+      "## Why this is a different order of change from digitisation",
+      "The last twenty years of UAE government technology moved counters onto screens. The service still waited for a human decision; the screen only changed where the queue was.",
+      "An agentic system removes the wait by removing the human step &mdash; which is exactly what makes it faster and exactly what makes it harder. A digitised process that goes wrong produces a delay. An autonomous process that goes wrong produces a decision, at volume, before anyone reads it.",
+      "## What it means for a resident",
+      "For most services the visible change will be latency: applications that resolve in the session rather than in three working days. The invisible change is the appeal route. A system that decides autonomously needs a published way to be told it was wrong, and that mechanism &mdash; not the model &mdash; is what will determine whether the target reads as an improvement two years from now.",
+    ],
+    expertise:
+      "&laquo;50% of services&raquo; is a count of services, not of transactions, and the two diverge sharply: a government&rsquo;s handful of highest-volume services usually account for most of its actual traffic. Whether this target is felt by residents depends entirely on whether those few sit inside the 50% or outside it.",
+  },
+  {
     slug: "dubai-second-in-bcg-intelligent-cities-index",
     site: "fwf",
     image: "/covers/dubai-second-in-bcg-intelligent-cities-index.jpg",

@@ -36,7 +36,8 @@
       "broadway-week-oh-mary": "a small intimate proscenium, one velvet drape swagged to the side, a single bright spotlight circle on the boards",
       "broadway-week-the-lion-king": "a large sun disc rising over layered savannah horizon bands, a lone acacia tree silhouette",
       "broadway-week-wicked": "a spiral of layered emerald green paper against amber, a tall pointed hat silhouette at the edge",
-      "broadway-week-chicago": "art deco fan and sunburst shapes, a bentwood chair silhouette, stacked jazz-age chevrons"
+      "broadway-week-chicago": "art deco fan and sunburst shapes, a bentwood chair silhouette, stacked jazz-age chevrons",
+      "new-york-film-festival-2026": "a wide strip of film frames curving across the frame, five of the frames in noticeably different paper tones, a small projector beam triangle opening from the left edge"
     },
     "ldn": {
       "london-design-festival-2026": {
@@ -52,7 +53,8 @@
       "notting-hill-carnival-2026": {
         "subject": "tall paper feather plumes and layered ribbon streamers rising in a diagonal sweep, scattered confetti squares",
         "detail": "built as a broad diagonal sweep of tall feather plumes and ribbon streamers rising from the lower left, each plume a stack of three paper tones, a scatter of small square confetti across the upper right, the ground kept almost empty"
-      }
+      },
+      "bfi-london-film-festival-2026": "a tall stack of ten flat rectangles fanned like a shuffled deck, a large paper aperture ring overlapping them at the upper right, a long ruled baseline beneath"
     },
     "lnd": {
       "giant-summer-flea-olympic-park": {
@@ -120,7 +122,8 @@
         "subject": "a building elevation cut into a grid of small equal tiles, a few tiles lifted away and floating free of the facade, a flat exchange arrow loop below",
         "detail": "built as three planes — the tiled elevation flat against the ground, a dozen tiles suspended above it at varying heights with hard shadows cast back onto the wall, and a low band of paper beneath holding two interlocking arrows; the lifted tiles read as pieces of one whole, not as debris"
       },
-      "gitex-moves-to-expo-city-2026": "a large exhibition hall shape with a domed roof on the right, an older rectangular hall on the left, a broad arrow of layered paper crossing between them"
+      "gitex-moves-to-expo-city-2026": "a large exhibition hall shape with a domed roof on the right, an older rectangular hall on the left, a broad arrow of layered paper crossing between them",
+      "186-new-developers-entered-dubai-in-2026": "a dense field of small identical tower silhouettes standing in loose rows, a scattering of much smaller new towers filling the gaps between them, one flat licence rectangle lying at the front"
     },
     "fwf": {
       "rta-starts-commercial-robotaxi-operations": {
@@ -129,7 +132,8 @@
       },
       "dubai-second-in-bcg-intelligent-cities-index": "a podium of three stacked paper blocks with the second one tallest in tone, a ring of small city tower silhouettes around them",
       "vara-rules-for-virtual-asset-derivatives": "two paper contract sheets overlapping at an angle, a stepped line chart cut from paper rising across them, a small padlock shape at the corner",
-      "dubai-land-department-tokenisation-pilot": "a flat paper tower block whose right edge breaks apart into a drifting field of small hexagon tiles, a single key shape lying across the lower corner, no sheet or document shape anywhere"
+      "dubai-land-department-tokenisation-pilot": "a flat paper tower block whose right edge breaks apart into a drifting field of small hexagon tiles, a single key shape lying across the lower corner, no sheet or document shape anywhere",
+      "agentic-ai-half-of-uae-government-services": "a grid of small service tiles with exactly half of them replaced by simple hexagonal node shapes joined by thin connecting lines, a soft directional shadow under each tile"
     },
     "nyc42": {
       "broadway-week-which-shows-are-worth-it": {
@@ -155,7 +159,8 @@
         "detail": "built as one continuous cut ribbon making a wide loop from the lower left to the upper right, laid over a faint grid of streets, with evenly spaced stop discs punched along it and a flat double-deck bus silhouette sitting on the ribbon near its start; the loop is the composition and reaches all four edges"
       },
       "bank-holiday-tube-and-tfl-closures": "three parallel route lines in flat paper, two of them broken by cut gaps, a barrier shape standing across one gap",
-      "olympic-park-summer-school": "a cluster of workshop table shapes seen from above in a park, a stadium arc curving behind them, small tool and instrument silhouettes scattered on the tables"
+      "olympic-park-summer-school": "a cluster of workshop table shapes seen from above in a park, a stadium arc curving behind them, small tool and instrument silhouettes scattered on the tables",
+      "eclipse-walk-tower-hamlets-cemetery-park": "a scatter of small crescent shapes cast across a ground of grass-toned paper, a broad canopy of overlapping leaf shapes above them, one large crescent disc high in the corner"
     },
     "cmx": {
       "juegos-mundiales-robots-humanoides-2026": {
@@ -172,7 +177,8 @@
       "fin-de-semana-del-31-de-octubre": "the frame split down the middle by a vertical cut, marigold flower discs massed on the left half, a chequered racing band sweeping across the right",
       "plaza-de-la-conchita-jardin-polinizador": "a paved plaza shape seen from above with an irregular green area cut into it, flower discs scattered across the green, small bee and butterfly shapes above",
       "semovi-nuevo-contrato-ecobici": "a row of bicycle silhouettes in a docking rank, receding in flat paper layers, a small satellite marker pin above one of them",
-      "betsabee-romero-homenaje-a-monsivais": "a wall of small framed objects — magnifying lens discs, a wrestling mask shape, a boxy television silhouette — arranged in an irregular grid"
+      "betsabee-romero-homenaje-a-monsivais": "a wall of small framed objects — magnifying lens discs, a wrestling mask shape, a boxy television silhouette — arranged in an irregular grid",
+      "ecobici-15-mil-bicicletas-tres-alcaldias": "a row of simple side-on bicycle shapes in flat cut paper standing in a docking rank, three of them in a brighter contrasting tone at the right end, a small satellite arc curving above the row"
     },
     "mxo": {
       "moderna-vacuna-melanoma-fase-3": {
@@ -191,7 +197,26 @@
       "tren-ligero-texcoco-la-paz": "a straight light rail line in flat paper crossing the frame with eleven station discs along it, a tram silhouette at one end, a lake shape behind",
       "filij-2026-regresa-al-cenart": "a small open book shape opening into a paper tent, a scatter of folded paper animals around it",
       "kusama-320-mil-visitantes": "a dense field of flat paper discs of many sizes covering the whole frame, a mirrored room opening cut into the middle of them",
-      "john-giorno-en-kurimanzutto": "a gallery wall of flat paper with a rotary telephone handset shape mounted on it, a stack of vinyl record discs below, a long paper strip unrolling down the wall"
+      "john-giorno-en-kurimanzutto": "a gallery wall of flat paper with a rotary telephone handset shape mounted on it, a stack of vinyl record discs below, a long paper strip unrolling down the wall",
+      "kia-ev3-pesqueria-nuevo-leon": "a simple flat car profile in cut paper with a large battery rectangle set into its floor, a factory sawtooth roofline behind it, a plug-and-cable curve looping in the foreground"
+    },
+    "llc": {
+      "difc-passes-10000-active-companies": "a rising staircase of five flat paper columns of increasing height across the frame, each column built from many thin stacked sheets, a long ruled horizontal line crossing just below the top of the tallest one"
+    },
+    "visas": {
+      "entry-visa-opens-to-six-more-nationalities": "six identical blank passport-shaped rectangles laid out in two rows of three, each a different flat paper tone, a single small square entry stamp resting on one of them, plain empty ground, no monument, no building, no landmark, no map"
+    },
+    "riviera": {
+      "dubai-completed-104-projects-in-six-months": "rows of low completed building blocks in flat paper with their scaffolding strips peeled away and lying folded beside them, a long horizon band behind"
+    },
+    "mbr": {
+      "dubai-metro-gold-line-approved": "a cross-section of ground cut from layered paper filling the whole frame, a thin skyline strip along the very top, a long horizontal tunnel bore driven deep through the lower half with a row of small rectangular station boxes hanging from the surface down to it on thin vertical shafts"
+    },
+    "palmcentral": {
+      "palm-jebel-ali-frond-f-villas": "a single palm frond shape in flat paper seen from above, a row of small identical house forms set along one edge of it, a wide band of layered water tones beyond"
+    },
+    "eco": {
+      "uae-mangroves-halfway-to-100-million": "a wide band of shallow water in flat paper across the lower half, a dense thicket of arched stilt roots rising out of it under a solid canopy of rounded green leaf shapes, the thicket filling the left half of the frame and open empty water in the right half"
     }
   }
 }

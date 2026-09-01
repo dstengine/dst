@@ -2,6 +2,48 @@ import type { EventItem } from "../types.ts";
 
 export const items: EventItem[] = [
   {
+    slug: "new-york-film-festival-2026",
+    site: "nyc42",
+    image: "/covers/new-york-film-festival-2026.jpg",
+    imageAlt: "A paper film strip crossing the frame, five frames in brighter tones, a projector beam at the edge",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "New York Film Festival 2026",
+    summary:
+      "The 64th NYFF runs 25 September to 12 October: 32 films in the Main Slate, opening with James Gray's Paper Tiger and closing with Ava DuVernay's 14th, screening in all five boroughs.",
+    start: "2026-09-25",
+    end: "2026-10-12",
+    city: "New York",
+    venue: "Lincoln Center and venues in all five boroughs",
+    category: "Festival",
+    organizer: "Film at Lincoln Center",
+    source: {
+      name: "Film at Lincoln Center",
+      url: "https://www.filmlinc.org/nyff/",
+      verifiedOn: "2026-09-01",
+    },
+    body: [
+      "The New York Film Festival does not hand out a top prize. It has no competition, no jury and no winner &mdash; which is unusual enough among major festivals to be the first thing worth knowing about it. What it has instead is a <strong>Main Slate</strong>: a selection, argued over by programmers, that is the whole statement.",
+      "The <strong>64th edition runs from 25 September to 12 October 2026</strong>.",
+      "## The Main Slate",
+      "<strong>32 films</strong>, including <strong>17 directors making their Main Slate debut</strong>. The selection brings together new work by returning NYFF filmmakers and titles from festivals earlier in the year.",
+      "Dennis Lim, the festival&rsquo;s artistic director, said it is &laquo;hard to recall a prior Main Slate program in which the state of the world has been as urgently reflected in so many creative ways&raquo;.",
+      "Among the names in the slate: <strong>Pedro Almod&oacute;var</strong>, <strong>Mike Leigh</strong>, <strong>Lee Chang-dong</strong>, <strong>Pawe&#322; Pawlikowski</strong> and <strong>Ry&ucirc;suke Hamaguchi</strong>.",
+      "## The three tentpole slots",
+      "<strong>Opening Night &mdash; Paper Tiger</strong>, directed by James Gray.",
+      "<strong>Centerpiece &mdash; Behemoth!</strong>, directed by Tony Gilroy.",
+      "<strong>Closing Night &mdash; 14th</strong>, a documentary directed by Ava DuVernay.",
+      "## It is not only a Lincoln Center festival any more",
+      "Screenings take place across <strong>all five boroughs</strong>: at <strong>Lincoln Center</strong>, <strong>BAM</strong> in Brooklyn, the <strong>Museum of the Moving Image</strong> in Queens, <strong>Alamo Drafthouse Cinema</strong>, and <strong>AMC Bay Plaza Cinema</strong> in the Bronx.",
+      "That spread changes the practical shape of the festival. A Main Slate title screening at Bay Plaza is the same film with the same print as the one at Alice Tully Hall, usually with a fraction of the queue.",
+      "## Tickets",
+      "Passes went on sale first. <strong>Single tickets go on sale 15 September at noon.</strong>",
+    ],
+    expertise:
+      "The rush line is the part regulars use and visitors miss. Sold-out NYFF screenings routinely release returned seats at the venue shortly before the show, and the outer-borough venues almost never reach the point of needing one. If a title is gone at Lincoln Center, check the same film&rsquo;s second screening in Queens or the Bronx before assuming it is unavailable.",
+  },
+  {
     slug: "new-york-comic-con-2026",
     featured: 1,
     site: "nyc42",

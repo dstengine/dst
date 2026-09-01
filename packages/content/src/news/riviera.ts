@@ -2,6 +2,38 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "dubai-completed-104-projects-in-six-months",
+    site: "riviera",
+    image: "/covers/dubai-completed-104-projects-in-six-months.jpg",
+    imageAlt: "Three finished paper buildings with their scaffolding peeled away and folded beside them",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "104 projects finished in six months",
+    summary:
+      "Dubai completed 104 real estate projects in the first half of 2026 — up 52% — delivering more than 24,000 units worth around Dh111 billion.",
+    date: "2026-08-20",
+    category: "Development",
+    source: {
+      name: "Gulf News",
+      url: "https://gulfnews.com/business/property/dubai-adds-more-than-24000-property-units-in-six-months-1.500646931",
+      verifiedOn: "2026-09-01",
+    },
+    body: [
+      "Launches are announcements; completions are handovers. Only one of the two puts keys in anyone&rsquo;s hand, and the first half of 2026 was unusually good at the second kind.",
+      "## The numbers",
+      "<strong>104 real estate projects</strong> were completed in Dubai between January and June 2026, a <strong>52% increase</strong> on the same period a year earlier. Those projects added <strong>more than 24,000</strong> residential and commercial units, up <strong>36%</strong> year on year, with an investment value of around <strong>Dh111 billion</strong>.",
+      "Sheikh Hamdan bin Mohammed bin Rashid Al Maktoum, Crown Prince of Dubai and Deputy Prime Minister, said the projects &laquo;added more than 24,000 new real estate units in Dubai, up 36% compared with last year&raquo;.",
+      "## Why the completion rate matters more than the launch rate",
+      "Every off-plan market in the world can produce launch numbers. The question a buyer holding a 2027 handover date actually needs answered is whether this city&rsquo;s contractors, utilities connections and inspection authorities can absorb the volume already sold.",
+      "A 52% rise in completions against a 36% rise in units says something specific: the average completed project got <strong>smaller</strong>. More buildings, each delivering fewer homes. That is what a market looks like when mid-sized developers are finishing, rather than a handful of large towers landing at once.",
+      "## What it does not tell you",
+      "A completion figure is city-wide. It says nothing about whether a particular community got its promised retail, its landscaping, or its second access road &mdash; the parts that arrive after the handover certificate and are not counted in anyone&rsquo;s half-year total.",
+    ],
+    expertise:
+      "For anyone tracking a handover, the useful document is not the city-wide figure but the project&rsquo;s own completion percentage on the Dubai Land Department&rsquo;s project register, which is updated from the consultant&rsquo;s reports rather than the developer&rsquo;s marketing. A project sitting at the same percentage across two quarters is the signal worth acting on.",
+  },
+  {
     slug: "azizi-riviera-final-handover-phase",
     site: "riviera",
     // Layout appends " — Azizi Riviera Guide".

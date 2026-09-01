@@ -2,6 +2,43 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "ecobici-15-mil-bicicletas-tres-alcaldias",
+    site: "cmx",
+    image: "/covers/ecobici-15-mil-bicicletas-tres-alcaldias.jpg",
+    imageAlt: "Tres bicicletas de papel recortado en fila, con un arco satelital sobre ellas",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Ecobici pasa a 15 mil bicicletas",
+    summary:
+      "De 9 308 a 15 000 bicicletas y de 687 a 1 111 cicloestaciones. Iztapalapa, Iztacalco y Tlalpan entran al sistema a partir de septiembre",
+    date: "2026-08-28",
+    category: "Movilidad",
+    source: {
+      name: "La Crónica de Hoy",
+      url: "https://www.cronica.com.mx/metropoli/2026/08/28/ecobici-crecera-a-15-mil-bicicletas-y-llegara-a-iztapalapa-iztacalco-y-tlalpan/",
+      verifiedOn: "2026-09-01",
+    },
+    body: [
+      "El dato que cambia el sistema no es el número de bicicletas. Es que el <strong>100%</strong> de la flota va a llevar localizador satelital, cuando hoy sólo lo tiene el <strong>10%</strong>",
+      "## Las cifras",
+      "Ecobici pasa de <strong>9 308 a 15 000 bicicletas</strong> &mdash; un aumento de alrededor del <strong>60%</strong> &mdash; y de <strong>687 a 1 111 cicloestaciones</strong>, es decir <strong>424 nuevas</strong>. La transformación arranca en <strong>septiembre de 2026</strong>",
+      "## Tres alcaldías que faltaban",
+      "El sistema se extiende a <strong>Iztapalapa</strong>, <strong>Iztacalco</strong> y <strong>Tlalpan</strong>, y con ellas pasa de <strong>seis a nueve alcaldías</strong>. Las que ya operaban son Azcapotzalco, Álvaro Obregón, Benito Juárez, Coyoacán, Cuauhtémoc y Miguel Hidalgo",
+      "Aquí está el punto de fondo. Esas tres alcaldías concentran cerca de <strong>60 mil viajes diarios en bicicleta</strong>, y sólo Iztapalapa representa el <strong>19%</strong> de los viajes ciclistas de toda la ciudad. Durante quince años el sistema público de bicicletas estuvo donde ya había infraestructura, no donde ya había ciclistas",
+      "## Qué cuesta y quién lo paga",
+      "El contrato es plurianual a <strong>diez años</strong>, con una inversión máxima anunciada de <strong>2 434 millones de pesos</strong>. El subsidio de la ciudad queda fijo en <strong>135 millones de pesos anuales</strong> durante esos diez años. La membresía anual para el usuario es de <strong>588 pesos</strong>",
+      "Un subsidio fijo a diez años con una flota que crece 60% significa, en la práctica, que el costo público por bicicleta baja cada año del contrato. Esa es la apuesta",
+      "## El GPS y el problema real",
+      "El sistema también abre un <strong>centro de mantenimiento en la zona sur</strong>",
+      "El localizador en toda la flota no está ahí para vigilar al usuario: está para el rebalanceo. El defecto cotidiano de cualquier sistema de bicicleta pública es la estación vacía a las ocho de la mañana y llena a las seis de la tarde, y eso se resuelve sabiendo dónde está cada unidad en tiempo real. Con 10% de cobertura eso era una estimación; con 100% es un dato",
+      "## Los funcionarios que lo anunciaron",
+      "El anuncio corrió a cargo de <strong>Clara Brugada</strong>, jefa de Gobierno de la Ciudad de México, <strong>Héctor Ulises García Nieto</strong>, secretario de Movilidad, y <strong>Juan Pablo de Botton Falcón</strong>, secretario de Administración y Finanzas",
+    ],
+    expertise:
+      "El número a seguir no será el de bicicletas sino el de estaciones llenas en hora pico. Un sistema que crece 60% en flota pero mantiene la misma logística de rebalanceo entrega más bicicletas mal repartidas, no más viajes. El centro de mantenimiento del sur y el GPS al 100% son, en ese sentido, la parte relevante del anuncio",
+  },
+  {
     slug: "juegos-mundiales-robots-humanoides-2026",
     featured: 1,
     site: "cmx",

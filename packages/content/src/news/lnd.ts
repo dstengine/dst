@@ -2,6 +2,41 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "eclipse-walk-tower-hamlets-cemetery-park",
+    site: "lnd",
+    image: "/covers/eclipse-walk-tower-hamlets-cemetery-park.jpg",
+    imageAlt: "Small crescents of light scattered across paper grass beneath a leaf canopy",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "An eclipse read through seven graves in Bow",
+    summary:
+      "The Friends of Tower Hamlets Cemetery Park built a walk around the 12 August eclipse, using tree canopies as pinhole projectors and seven 19th-century graves as the route.",
+    date: "2026-08-12",
+    category: "Community",
+    source: {
+      name: "East London Advertiser",
+      url: "https://www.eastlondonadvertiser.co.uk/news/26486399.tower-hamlets-cemetery-park-marked-eclipse/",
+      verifiedOn: "2026-09-01",
+    },
+    body: [
+      "The best instrument for watching a partial eclipse is not a telescope. It is a tree.",
+      "A leaf canopy is a field of thousands of small irregular gaps, and each one works as a pinhole camera. On an ordinary afternoon they project overlapping discs of the sun onto the ground, which read as dappled light. During an eclipse each disc becomes a crescent &mdash; and a whole woodland floor turns into a projection of what is happening overhead.",
+      "## What happened at the cemetery park",
+      "On the evening of <strong>12 August</strong>, the <strong>Friends of Tower Hamlets Cemetery Park</strong> ran an <strong>Eclipse Walk</strong> through the park in east London. A few minutes after <strong>7pm</strong>, the sun&rsquo;s projections through the canopy shifted from circles into scattered crescents across the grass.",
+      "Participants also used eclipse glasses, pinhole cameras, colanders and perforated spoons &mdash; each of which does the same job as the canopy, with fewer holes.",
+      "## Seven graves as a route",
+      "The walk was designed by <strong>Dr Mayanka Mukherji</strong>, Heritage Projects Lead at the Friends of Tower Hamlets Cemetery Park, who connected seven 19th-century graves to themes of light and the sun.",
+      "Among those whose graves the route passes: <strong>William Henry Perkin</strong>, the chemist; <strong>Lucy Atkinson</strong>, the explorer; <strong>Clara Grant</strong>, known as the &laquo;Bundle Woman of Bow&raquo;; and <strong>Elizabeth Best</strong>, a leader of the 1888 matchgirls&rsquo; strike.",
+      "The walk also drew on eclipse stories from a range of cultures &mdash; the explanations people reached for before the mechanism was understood.",
+      "## Why a cemetery is the right room for this",
+      "Tower Hamlets Cemetery Park stopped being a working burial ground long ago and became something rarer in inner east London: seven and a half hectares of woodland that nobody cleared. That woodland is what made the projection work, and the graves under it are what gave the evening its second subject.",
+      "It is a good example of what a local heritage group can do that a science centre cannot &mdash; hold an astronomical event and a neighbourhood&rsquo;s nineteenth century in the same ninety minutes, on foot.",
+    ],
+    expertise:
+      "The canopy trick works on any partial eclipse and needs no equipment at all, which makes it the one to remember. Stand under a leafy tree and look at the ground rather than the sky &mdash; and if there is no tree, a colander held a metre above a sheet of paper does the same thing. Looking directly at a partially eclipsed sun without proper eclipse glasses causes damage that is not felt at the time.",
+  },
+  {
     slug: "sl12-superloop-gants-hill-rainham",
     featured: 1,
     site: "lnd",
