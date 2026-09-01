@@ -36,14 +36,4 @@
 }
 .pending dd { margin: 0; max-width: 60ch; }
 
-/* "Not announced", as a value in its own right. Reads as a status rather
-   than a link — the first draft had it underlined in the accent, which is
-   the one thing on a listings page nobody should be tempted to click. */
-.tba {
-  color: var(--accent);
-  font-family: var(--font-mono);
-  font-size: 0.78em;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
+/* `.tba` itself is in tokens.css; this site adds nothing to it. */

@@ -71,6 +71,12 @@ interface ItemBase {
   // h1 for no reason is a title Google is more likely to rewrite.
   titleSeo?: string;
   summary: string; // list blurb + meta description
+  // Facts added after publication, oldest first. A story that is still
+  // moving is better served by one page that grows than by a second page
+  // repeating it: the URL keeps whatever it has earned, and a reader coming
+  // back can see what is new without rereading the rest. Each entry carries
+  // the date the fact arrived, not the date it was written about.
+  updates?: { on: string; text: string }[];
   body?: string[]; // absent -> no detail page (rule 7)
   source?: Source;
   category?: string;

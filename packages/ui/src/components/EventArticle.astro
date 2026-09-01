@@ -315,6 +315,23 @@ const relatedItems = (item.related ?? []).map((card) => ({
     </section>
   )}
 
+  {/* A story that kept moving after we published it. Placed above the
+      original piece because the new fact is the reason to be on the page,
+      and the piece underneath is now the background to it. */}
+  {item.updates && item.updates.length > 0 && (
+    <section class="article-updates">
+      <h2>{L.updates}</h2>
+      <dl>
+        {item.updates.map((u) => (
+          <div class="article-update">
+            <dt><time datetime={u.on}>{formatDate(u.on, locale)}</time></dt>
+            <dd set:html={u.text} />
+          </div>
+        ))}
+      </dl>
+    </section>
+  )}
+
   {item.body && item.body.length > 0 && (
     <ArticleBody blocks={item.body} />
   )}
@@ -535,4 +552,12 @@ const relatedItems = (item.related ?? []).map((card) => ({
     text-decoration: none;
   }
   .event-article-back a:hover { color: var(--accent); }
+
+  .article-updates { margin-top: var(--space-4); }
+  .article-updates dl { margin: var(--space-2) 0 0; display: grid; gap: var(--space-3); }
+  /* The date is the point of the row, so it leads the line rather than
+     sitting under it: a reader scanning for what is new reads down the
+     dates, not down the sentences. */
+  .article-update dt { font-family: var(--font-mono); font-size: var(--step--1); color: var(--ink-muted); }
+  .article-update dd { margin: 0.25rem 0 0; max-width: 46rem; }
 </style>

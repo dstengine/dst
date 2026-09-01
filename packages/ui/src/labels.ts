@@ -45,6 +45,8 @@ export interface ArticleLabels {
 
   // Section headings
   whatHappened: string;
+  /** Heading over the dated facts added since publication. */
+  updates: string;
   programme: string;
   whoItsFor: string;
   locate: string;
@@ -104,6 +106,7 @@ export const EN: ArticleLabels = {
   organizer: "Organizer",
 
   whatHappened: "What happened",
+  updates: "Since we published",
   programme: "Programme",
   whoItsFor: "Who it's for",
   locate: "Locate",

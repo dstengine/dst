@@ -115,15 +115,7 @@
 /* Six outlined pills down one column read as a warning label repeated six
    times. The status is one short mono phrase in the accent, with a rule
    under it — said once per row, not shouted. */
-.tba {
-  margin-right: 0.7em;
-  color: var(--accent);
-  font-family: var(--font-mono);
-  font-size: 0.78em;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
+.tba { margin-right: 0.7em; }
 /* Underlined accent text is a link. This one is a status, so it carries
    its difference in the face and the case instead of a rule. */
 .tba::after { content: " ·"; color: var(--ink-faint); }

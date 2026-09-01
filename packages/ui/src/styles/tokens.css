@@ -481,6 +481,21 @@ main.prose .lede {
 
 ::selection { background: var(--accent-tint, #E9F0EC); }
 
+/* "To be announced", as a value in its own right rather than an empty cell.
+   Reads as a status and not a link — the first draft had it underlined in
+   the accent, which is the one thing on a listings page nobody should be
+   tempted to click. Shared because an unannounced detail is a fact of every
+   event site, not of one. */
+.tba {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.78em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+
 /* Motion is decoration everywhere it appears here — a card lifting on hover,
    a cover easing in, a caret turning. For a reader who has asked their system
    for less of it, that decoration can mean nausea or a migraine, so honour the
