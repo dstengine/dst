@@ -45,7 +45,8 @@
     "build:cmx": "npm run build --workspace=apps/cmx",
     "dev:cmx": "npm run dev --workspace=apps/cmx",
     "build:mxo": "npm run build --workspace=apps/mxo",
-    "dev:mxo": "npm run dev --workspace=apps/mxo"
+    "dev:mxo": "npm run dev --workspace=apps/mxo",
+    "events": "node tools/events-scan.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.62.1",

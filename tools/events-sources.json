@@ -1,0 +1,200 @@
+[
+  {
+    "site": "dubai",
+    "for": [
+      "dst",
+      "llc",
+      "visas",
+      "riviera",
+      "mbr",
+      "palmcentral",
+      "fwf"
+    ],
+    "name": "Time Out Dubai",
+    "url": "https://www.timeout.com/dubai/blog/feed.rss",
+    "kind": "rss",
+    "city": "Dubai",
+    "notes": "What is opening and what is on. Leads, not listings.",
+    "require": "/dubai/"
+  },
+  {
+    "site": "dubai",
+    "for": [
+      "dst",
+      "llc",
+      "riviera",
+      "mbr",
+      "palmcentral"
+    ],
+    "name": "Khaleej Times, entertainment",
+    "url": "https://www.khaleejtimes.com/api/v1/collections/entertainment.rss",
+    "kind": "rss",
+    "city": "Dubai"
+  },
+  {
+    "site": "dubai",
+    "for": [
+      "dst",
+      "llc",
+      "riviera",
+      "mbr",
+      "palmcentral"
+    ],
+    "name": "Khaleej Times, life and living",
+    "url": "https://www.khaleejtimes.com/api/v1/collections/lifestyle.rss",
+    "kind": "rss",
+    "city": "Dubai"
+  },
+  {
+    "site": "dubai",
+    "for": [
+      "dst",
+      "llc",
+      "visas",
+      "mbr"
+    ],
+    "name": "Dubai Media Office",
+    "url": "https://mediaoffice.ae/sitemap.xml",
+    "kind": "sitemap",
+    "match": "/news/",
+    "city": "Dubai",
+    "notes": "Government announcements. The primary source for anything an authority decided."
+  },
+  {
+    "site": "dubai",
+    "for": [
+      "riviera",
+      "mbr",
+      "palmcentral",
+      "fwf"
+    ],
+    "name": "Visit Dubai, festivals and events",
+    "url": "https://www.visitdubai.com/sitemap.xml",
+    "kind": "sitemap",
+    "match": "festivals-and-events",
+    "city": "Dubai",
+    "off": true,
+    "notes": "Retired: the sitemap is behind Akamai and answers Access Denied."
+  },
+  {
+    "site": "london",
+    "for": [
+      "ldn",
+      "lnd"
+    ],
+    "name": "Time Out London",
+    "url": "https://www.timeout.com/london/blog/feed.rss",
+    "kind": "rss",
+    "city": "London",
+    "notes": "The most productive single source for both London sites.",
+    "require": "/london/"
+  },
+  {
+    "site": "london",
+    "for": [
+      "ldn",
+      "lnd"
+    ],
+    "name": "Londonist",
+    "url": "https://londonist.com/feed",
+    "kind": "rss",
+    "city": "London"
+  },
+  {
+    "site": "london",
+    "for": [
+      "ldn",
+      "lnd"
+    ],
+    "name": "Evening Standard",
+    "url": "https://www.standard.co.uk/rss",
+    "kind": "rss",
+    "city": "London",
+    "notes": "General news: most items are not events. Skim for the culture ones.",
+    "require": "/(culture|going-out|lifestyle|london)/"
+  },
+  {
+    "site": "new-york",
+    "for": [
+      "nyc42"
+    ],
+    "name": "Time Out New York",
+    "url": "https://www.timeout.com/newyork/blog/feed.rss",
+    "kind": "rss",
+    "city": "New York",
+    "require": "/newyork/"
+  },
+  {
+    "site": "new-york",
+    "for": [
+      "nyc42"
+    ],
+    "name": "NYC Tourism events",
+    "url": "https://www.nyctourism.com/sitemap.xml",
+    "kind": "sitemap",
+    "match": "/events/",
+    "city": "New York",
+    "notes": "The listing page is rendered in the browser; the sitemap is the way in."
+  },
+  {
+    "site": "mexico",
+    "for": [
+      "cmx",
+      "mxo"
+    ],
+    "name": "Chilango",
+    "url": "https://www.chilango.com/feed/",
+    "kind": "rss",
+    "city": "Ciudad de México"
+  },
+  {
+    "site": "mexico",
+    "for": [
+      "cmx",
+      "mxo"
+    ],
+    "name": "México es Cultura",
+    "url": "https://mexicoescultura.com/actividades",
+    "kind": "watch",
+    "city": "Ciudad de México",
+    "match": "20[0-9]{2}|enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre",
+    "notes": "A listing page with no feed: watched for lines that were not there last time."
+  },
+  {
+    "site": "musical",
+    "for": [
+      "musical"
+    ],
+    "name": "Chicago: UK & Ireland tour dates",
+    "url": "https://chicagothemusical.com/uk-tour/",
+    "kind": "watch",
+    "match": "20[0-9]{2}",
+    "city": "United Kingdom",
+    "notes": "No structured data and no feed: a new stop is a new line on the page."
+  },
+  {
+    "site": "musical",
+    "for": [
+      "musical"
+    ],
+    "name": "Chicago: international dates",
+    "url": "https://chicagothemusical.com/international/",
+    "kind": "watch",
+    "match": "20[0-9]{2}",
+    "city": "International",
+    "notes": "Two lines of dates in the page, which is all this one has to say."
+  },
+  {
+    "site": "musical",
+    "for": [
+      "musical"
+    ],
+    "name": "Cats: UK & Ireland tour dates",
+    "url": "https://uktour.catsthemusical.com/tickets",
+    "kind": "watch",
+    "match": "20[0-9]{2}",
+    "city": "United Kingdom",
+    "off": true,
+    "notes": "Retired for this tool: the Webflow page renders its dates in the browser, so a plain fetch reads none of them. Check it with the browser tools when the tour is being updated."
+  }
+]
