@@ -142,7 +142,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Open House New York Weekend 2026",
     summary:
-      "Three hundred buildings across the five boroughs open for one weekend, 16–18 October. The full lineup is revealed on 25 September and tickets go on 2 October.",
+      "Three hundred buildings across the five boroughs open for one weekend, 16–18 October. OHNY has the lineup down for 25 September and tickets for 2 October.",
     start: "2026-10-16",
     end: "2026-10-18",
     city: "New York",
@@ -162,7 +162,7 @@ export const items: EventItem[] = [
       "The infrastructure is the part worth queuing for. Among the 2026 destinations already previewed is the <strong>Department of Sanitation&rsquo;s Brooklyn District 3 Garage</strong> and the <strong>DOT Sign Shop</strong> in Maspeth, Queens &mdash; the place where the city&rsquo;s street signs are actually made. Those are buildings no amount of money gets you into on an ordinary Tuesday, and they explain more about how New York works than any tower does.",
       "Also previewed: the <strong>Flatiron Building</strong>, <strong>Rockefeller Center Gardens</strong> and the <strong>Brooklyn Army Terminal</strong>.",
       "## The calendar before the calendar",
-      "OHNY is unusual in that the month before the festival has its own schedule, and missing a date on it costs you access rather than information.",
+      "OHNY is unusual in that the month before the festival has its own schedule, and missing a date on it costs you access rather than information. The dates below are the festival&rsquo;s own, and its site is where they would move first.",
       "Most sites you can simply show up to. A minority require <strong>tickets</strong>, because of space or security &mdash; and those are the ones that go in minutes on release day.",
       "## Five boroughs, and that is the instruction",
       "The festival is designed as a citywide event, not a Manhattan one, and the way to use it is to stay in one borough for a day rather than crossing three. A Sanitation garage in Brooklyn and a sign shop in Queens are not consolation prizes for missing the Flatiron; they are the festival.",

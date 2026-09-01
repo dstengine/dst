@@ -23,7 +23,7 @@ export const items: NewsItem[] = [
     },
     body: [
       "The autumn film season does not begin in London. It begins on a strip of sand outside Venice, and by the time it reaches a cinema here the argument about what is good has largely been had without us.",
-      "## What starts tomorrow",
+      "## What opens on 2 September",
       "The <strong>83rd Venice Film Festival</strong> runs from <strong>2 to 12 September 2026</strong> on the <strong>Lido</strong>, under artistic director <strong>Alberto Barbera</strong>. The competition jury is chaired by <strong>Maggie Gyllenhaal</strong>.",
       "It opens with <strong>Ink</strong>, directed by <strong>Danny Boyle</strong>, with Guy Pearce. It closes with <strong>God Laughs</strong>, by Giovanni Veronesi. Honorary Golden Lions go to <strong>Ellen Burstyn</strong> and <strong>George Clooney</strong>.",
       "## The British end of the competition",
