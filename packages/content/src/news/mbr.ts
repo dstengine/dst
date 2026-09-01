@@ -9,7 +9,8 @@ export const items: NewsItem[] = [
     imageKind: "generated",
     imageWidth: 1536,
     imageHeight: 864,
-    title: "The Gold Line: 42 km, all underground",
+    title: "The Gold Line is approved: 42 km, entirely underground",
+    titleSeo: "The Gold Line: 42 km, all underground",
     summary:
       "Dubai has approved a third metro line — 18 stations from Al Ghubaiba to Jumeirah Golf Estates, AED 34 billion, opening 9 September 2032. It interchanges with Etihad Rail at Meydan.",
     date: "2026-04-22",

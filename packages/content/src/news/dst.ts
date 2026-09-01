@@ -48,6 +48,7 @@ export const items: NewsItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "Dubai opens a regulated market for tokenised property",
+    cardTitle: "Tokenised property gets a market",
     summary:
       "Fractional stakes in Dubai Land Department title deeds became tradable between investors on February 20, 2026, under VARA supervision — the pilot behind it had drawn investors from over 50 nationalities and more than Dh18.5 million.",
     date: "2026-02-20",
@@ -75,6 +76,7 @@ export const items: NewsItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "GITEX leaves the World Trade Centre after 45 years",
+    cardTitle: "GITEX leaves the World Trade Centre",
     summary:
       "Dubai's largest technology show moves to the Dubai Exhibition Centre at Expo City for its 2026 edition, and shifts from its long-standing October slot to December 7–11.",
     date: "2025-10-08",

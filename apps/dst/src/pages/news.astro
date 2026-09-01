@@ -41,6 +41,7 @@ const networkCards = latestNews(
     eyebrow: SITE_LABELS[item.site] ?? item.site,
     date: item.date,
     title: item.title,
+    short: item.cardTitle,
     text: item.summary,
     image: item.image && host ? `https://${host}${item.image}` : undefined,
     imageAlt: item.imageAlt,

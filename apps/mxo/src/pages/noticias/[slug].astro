@@ -14,7 +14,7 @@ export function getStaticPaths() {
 const moreEvents = eventsBySite(site);
 const { item, more } = Astro.props;
 ---
-<Layout title={item.title} description={item.summary} image={item.image}>
+<Layout title={item.titleSeo ?? item.title} description={item.summary} image={item.image}>
   <NewsArticle
     locale="es-MX"
     item={item}

@@ -9,7 +9,9 @@ export const items: NewsItem[] = [
     imageKind: "generated",
     imageWidth: 1536,
     imageHeight: 864,
-    title: "El primer KIA eléctrico de México",
+    title: "El primer KIA eléctrico hecho en México se fabricará en Pesquería",
+    cardTitle: "El primer KIA eléctrico de México",
+    titleSeo: "El primer KIA eléctrico de México",
     summary:
       "649 millones de dólares para producir el EV3 en Nuevo León. Es el primer vehículo eléctrico fabricado en la historia del estado",
     date: "2026-08-05",
@@ -404,6 +406,7 @@ export const items: NewsItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "kurimanzutto recibe la obra poética de John Giorno",
+    cardTitle: "kurimanzutto recibe a John Giorno",
     summary:
       "Poesía en los muros, en vinilos que el visitante elige, en un video de diez horas y en un teléfono. La primera individual de John Giorno en la Ciudad de México está en kurimanzutto hasta el 10 de octubre.",
     date: "2026-08-26",

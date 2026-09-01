@@ -49,6 +49,7 @@ const cards = upcoming.map((item) => {
     eyebrow: item.category,
     date: item.start,
     title: item.title,
+    short: item.cardTitle,
     text: [item.venue, item.city].filter(Boolean).join(" · ") || item.summary,
     // An event with a picture of its own shows it; the rest keep the date
     // cover, which for an event is the thing being decided about anyway.

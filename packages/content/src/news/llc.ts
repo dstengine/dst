@@ -9,7 +9,8 @@ export const items: NewsItem[] = [
     imageKind: "generated",
     imageWidth: 1536,
     imageHeight: 864,
-    title: "DIFC passes 10,000 companies",
+    title: "DIFC passes 10,000 companies for the first time",
+    titleSeo: "DIFC passes 10,000 companies",
     summary:
       "2,318 new firms joined in the first half of 2026, taking the active register to 10,018 — 30% growth in twelve months. Regulated financial firms reached 1,134.",
     date: "2026-07-28",

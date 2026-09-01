@@ -17,7 +17,7 @@ const { item, more } = Astro.props;
 const ticketHref = item.ticket ? go(`${item.slug}-ticket`) : undefined;
 const sourceHref = item.source?.url ? go(`${item.slug}-source`) : undefined;
 ---
-<Layout title={item.title} description={item.summary} image={item.image}>
+<Layout title={item.titleSeo ?? item.title} description={item.summary} image={item.image}>
   <EventArticle
     item={item}
     ticketHref={ticketHref}

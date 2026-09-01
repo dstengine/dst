@@ -56,6 +56,20 @@ interface ItemBase {
   slug: string;
   site: string;
   title: string;
+  // Shown on the feed card instead of `title`. The card column is about
+  // 215px wide, and a headline past roughly 45 characters wraps to four
+  // lines there: the row grows to match and the summary beneath it is
+  // clamped to three lines and cut mid-sentence. The full `title` stays on
+  // the card's own anchor as its title attribute, and remains the h1 on the
+  // page the card leads to — this shortens what is drawn, not what is said.
+  cardTitle?: string;
+  // Used for <title> and og:title instead of `title`. Those compete in a
+  // search result against a 60-character budget that the site's own suffix
+  // eats into first, which is a constraint the h1 does not have: the h1 sits
+  // under a header that has already said which site this is. Set this only
+  // when the headline genuinely does not fit — a title that differs from the
+  // h1 for no reason is a title Google is more likely to rewrite.
+  titleSeo?: string;
   summary: string; // list blurb + meta description
   body?: string[]; // absent -> no detail page (rule 7)
   source?: Source;

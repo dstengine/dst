@@ -30,6 +30,12 @@ export interface FeedCardItem {
   /** ISO date: publication date for news, start date for an event. */
   date: string;
   title: string;
+  /** Shown in place of `title` when the headline is too long for a column
+      215px wide. The h3 is not clamped — a four-line headline raises every
+      card in the row and squeezes the summary under it into an ellipsis.
+      `title` still goes on the anchor's title attribute, so the full
+      headline stays one hover away and the h1 behind the card is unchanged. */
+  short?: string;
   /** Summary for news; venue and city for an event. */
   text?: string;
   image?: string;
@@ -118,7 +124,7 @@ const parts = (iso: string) => {
             {item.event && !item.past && <span class="feed-countdown" data-countdown datetime={item.date}></span>}
             {item.past && <span class="feed-past">{L.past}</span>}
           </p>
-          <h3>{item.title}</h3>
+          <h3>{item.short ?? item.title}</h3>
           {item.text && <p class="feed-text">{item.text}</p>}
         </div>
       </Tag>

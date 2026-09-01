@@ -9,7 +9,9 @@ export const items: NewsItem[] = [
     imageKind: "generated",
     imageWidth: 1536,
     imageHeight: 864,
-    title: "Ecobici pasa a 15 mil bicicletas",
+    title: "Ecobici pasa a 15 mil bicicletas y llega a tres alcaldías nuevas",
+    cardTitle: "Ecobici pasa a 15 mil bicicletas",
+    titleSeo: "Ecobici pasa a 15 mil bicicletas",
     summary:
       "De 9 308 a 15 000 bicicletas y de 687 a 1 111 cicloestaciones. Iztapalapa, Iztacalco y Tlalpan entran al sistema a partir de septiembre",
     date: "2026-08-28",
@@ -185,6 +187,7 @@ export const items: NewsItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "El Metrobús cerrará 15 estaciones por turnos",
+    cardTitle: "El Metrobús cerrará 15 estaciones",
     summary:
       "Líneas 2, 3 y 5, en fines de semana alternados hasta noviembre. Tres de los cierres caen en estaciones de transbordo del Centro, y uno no dura un fin de semana sino dos.",
     date: "2026-08-25",

@@ -18,7 +18,9 @@ export const items: NewsItem[] = [
     imageKind: "generated",
     imageWidth: 1536,
     imageHeight: 864,
-    title: "Half of UAE services move to AI agents",
+    title: "Half of UAE government services move to AI agents",
+    cardTitle: "Half of UAE services move to AI agents",
+    titleSeo: "Half of UAE services move to AI agents",
     summary:
       "Sheikh Mohammed has set a two-year target for 50% of federal sectors, services and operations to run on agentic AI — systems that plan and act, not just answer.",
     date: "2026-04-23",

@@ -17,6 +17,6 @@ const { item, more } = Astro.props;
 const ticketSlug = `${item.slug}-ticket`;
 const ticketHref = item.ticket && outbound[ticketSlug] ? `/go/${ticketSlug}/` : undefined;
 ---
-<Layout title={item.title} description={item.summary} image={item.image}>
+<Layout title={item.titleSeo ?? item.title} description={item.summary} image={item.image}>
   <EventArticle item={item} more={more} moreNews={moreNews} backHref="/events/" ticketHref={ticketHref} />
 </Layout>

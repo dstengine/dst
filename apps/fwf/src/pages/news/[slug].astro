@@ -12,6 +12,6 @@ export function getStaticPaths() {
 
 const { item, more } = Astro.props;
 ---
-<Layout title={item.title} description={item.summary} image={item.image}>
+<Layout title={item.titleSeo ?? item.title} description={item.summary} image={item.image}>
   <NewsArticle item={item} more={more} backHref="/news/" />
 </Layout>
