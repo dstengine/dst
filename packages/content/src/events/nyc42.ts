@@ -162,7 +162,7 @@ export const items: EventItem[] = [
       "The infrastructure is the part worth queuing for. Among the 2026 destinations already previewed is the <strong>Department of Sanitation&rsquo;s Brooklyn District 3 Garage</strong> and the <strong>DOT Sign Shop</strong> in Maspeth, Queens &mdash; the place where the city&rsquo;s street signs are actually made. Those are buildings no amount of money gets you into on an ordinary Tuesday, and they explain more about how New York works than any tower does.",
       "Also previewed: the <strong>Flatiron Building</strong>, <strong>Rockefeller Center Gardens</strong> and the <strong>Brooklyn Army Terminal</strong>.",
       "## The calendar before the calendar",
-      "OHNY is unusual in that the month before the festival has its own schedule, and missing a date on it costs you access rather than information. The dates below are the festival&rsquo;s own, and its site is where they would move first.",
+      "OHNY is unusual in that the month before the festival has its own schedule, and missing a date on it costs you access rather than information.",
       "Most sites you can simply show up to. A minority require <strong>tickets</strong>, because of space or security &mdash; and those are the ones that go in minutes on release day.",
       "## Five boroughs, and that is the instruction",
       "The festival is designed as a citywide event, not a Manhattan one, and the way to use it is to stay in one borough for a day rather than crossing three. A Sanitation garage in Brooklyn and a sign shop in Queens are not consolation prizes for missing the Flatiron; they are the festival.",
