@@ -74,12 +74,12 @@ const cityPages = citiesWithPages();
       <h2>{show.title}</h2>
       <p>{show.tagline}</p>
       <div class="link-grid">
-        {/* The show's own summary rather than a written-out promise: one show
-            here has a history and a video and the other has a tour, and a
-            fixed line would be selling one of them something it has not got. */}
+        {/* One line per show, written for it. A single fixed line would have
+            promised Cats a history and a video it has not got; the show's own
+            summary would have been accurate and flat. */}
         <a class="card link-card" href={`/${show.slug}/`} title={`${show.title}: every run, and what is on this site about it`}>
           <h3>Everything on the show</h3>
-          <p>{show.summary}</p>
+          <p>{show.hubCard}</p>
         </a>
         {show.sections.map((section) => (
           <a class="card link-card" href={`/${show.slug}/${section.slug}/`} title={section.title}>

@@ -168,6 +168,10 @@ export interface Show {
       Not every show gets the full treatment, and the page should not imply
       it does. */
   eyebrow: string;
+  /** The front page's card for the show, written for that show. Not the
+      summary: the summary is a description of a listing, and this is the
+      line that has to make someone open it. */
+  hubCard: string;
   /** When this show's listings were last read at their source. Per show,
       because they are read on the day the show is added: one date across
       two shows would be a claim about a reading that never happened.

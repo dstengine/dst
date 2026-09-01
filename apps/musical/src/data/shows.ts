@@ -13,6 +13,8 @@ export const shows: Show[] = [
     slug: "chicago",
     title: "Chicago The Musical",
     eyebrow: "The event we cover in full",
+    hubCard:
+      "Every run, the tour, a hundred years of it, and what you can watch tonight for nothing.",
     checkedOn: "29 August 2026",
     tagline:
       "Kander and Ebb's 1975 vaudeville about murder as a career move, and the longest-running American musical on Broadway.",
@@ -123,6 +125,8 @@ export const shows: Show[] = [
     slug: "cats",
     title: "Cats",
     eyebrow: "Every stop on the tour, and who sells it",
+    hubCard:
+      "Twenty-three theatres between Plymouth in October and Newcastle the following June, and the seller for every one of them.",
     checkedOn: "1 September 2026",
     tagline:
       "Andrew Lloyd Webber set T. S. Eliot's book of light verse about cats to music, and it ran for twenty-one years in the West End.",
