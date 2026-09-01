@@ -3,6 +3,9 @@
 // standing reason of its own (see cityHasPage in ../rules.ts). So this page
 // is never a second copy of a run page: it answers "what is on here", which
 // the run page cannot, and it lists the theatres that answer it next season.
+// What is on is a table rather than cards: the card's picture here is the
+// city's own cover, which the reader has just scrolled past, and taking the
+// picture off leaves two blank marks stacked over the theatre cards below.
 import Photo from "@dst/ui/Photo.astro";
 import PhotoCredit from "@dst/ui/PhotoCredit.astro";
 import Glance from "@dst/ui/Glance.astro";
@@ -14,7 +17,6 @@ import { ICONS } from "@dst/ui/icons";
 import Layout from "../layouts/Layout.astro";
 import { go } from "../outbound";
 import RunTable from "./RunTable.astro";
-import EventCards from "./EventCards.astro";
 import {
   checkedOn, formatRun, runsInCity, spell, statusOf, venuePath, venuesInCity, type City,
 } from "../content";
@@ -66,10 +68,16 @@ const glance = [
     <Glance facts={glance} />
   </section>
 
+  {city.intro && (
+    <section class="container prose">
+      {city.intro.map((paragraph) => <p>{paragraph}</p>)}
+    </section>
+  )}
+
   <section class="container">
     <h2>{upcoming.length === 1 ? "What is on" : "What is on, soonest first"}</h2>
     {upcoming.length > 0
-      ? <><p>Every musical this site tracks in {city.name}. The seller's own page is where the price is.</p><EventCards runs={upcoming} lead="event" /></>
+      ? <><p>Every musical this site tracks in {city.name}. The seller's own page is where the price is.</p><RunTable runs={upcoming} lead="event" cityColumn={false} /></>
       : <p>Nothing is currently on sale in {city.name}.</p>}
   </section>
 
@@ -106,6 +114,7 @@ const glance = [
 </Layout>
 
 <style>
+  .prose p { max-width: 68ch; }
   /* The same grid the venue template uses for its own cards, so a theatre
      looks like a theatre wherever the reader meets one. */
   .venue-grid {

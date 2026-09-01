@@ -77,6 +77,12 @@ export interface City {
       ../rules.ts for why that is off by default. */
   featured?: boolean;
   summary?: string;
+  /** The city page in its own words: which houses here take a touring
+      musical, and how this season sits in them. Hand-written per city and
+      built only out of what the venue and run data already say, because the
+      one thing a city page has that a run page has not is a reason to read
+      it. Without it the page is a heading over two cards. */
+  intro?: string[];
   /** A cover for the run pages set here: the view a reader recognises as
       this place, not the theatre — the theatre has its own page and its own
       photograph. Verified to be this city, because a page that names the

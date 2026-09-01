@@ -4,11 +4,61 @@
 import Layout from "../layouts/Layout.astro";
 import Promo from "../components/Promo.astro";
 import EventCards from "../components/EventCards.astro";
-import { citiesWithPages, runsFor, shows, upcomingRuns, venues } from "../content";
+import VentureGrid from "@dst/ui/VentureGrid.astro";
+import { ICONS } from "@dst/ui/icons";
+import {
+  citiesWithPages, cityBySlug, formatRun, runsFor, runsInCity, shows, showBySlug, spell,
+  statusOf, upcomingRuns, venueBySlug, venues, type Venue,
+} from "../content";
 
 const upcoming = upcomingRuns();
 const soon = upcoming.slice(0, 6);
 const cityPages = citiesWithPages();
+// Cities, soonest first and only as many as anyone will actually look at.
+// Twenty-two picture cards is a directory, and a directory is what /venues/
+// is for; six is a listing. The rest keep their links, on one line under it,
+// because a city page that nothing points at may as well not be built.
+const cityDate = new Map<string, string>();
+for (const run of upcoming) {
+  if (run.start && !cityDate.has(run.city)) cityDate.set(run.city, run.start);
+}
+const citiesByDate = [...cityPages].sort((a, b) => {
+  // A city marked featured is a standing decision about this site's markets,
+  // and it outranks whatever happens to be playing next.
+  if (Boolean(a.featured) !== Boolean(b.featured)) return a.featured ? -1 : 1;
+  return (cityDate.get(a.slug) ?? "9999").localeCompare(cityDate.get(b.slug) ?? "9999");
+});
+const cityCards = citiesByDate.slice(0, 6).map((city) => {
+  const here = runsInCity(city.slug)
+    .filter((r) => statusOf(r) !== "ended")
+    .sort((a, b) => (a.start ?? "9999").localeCompare(b.start ?? "9999"));
+  const next = here.find((r) => r.start);
+  const houses = [...new Set(here.map((r) => r.venue).filter(Boolean))]
+    .map((slug) => venueBySlug(slug!))
+    .filter(Boolean) as Venue[];
+  // One theatre gets its size as well, because that is the fact that decides
+  // what the evening is like; two get their names and no room for more.
+  const where = houses.length === 1 && houses[0]!.capacity
+    ? `${houses[0]!.name}, ${houses[0]!.capacity!.toLocaleString("en-GB")} seats.`
+    : houses.map((v) => v.name).join(" and ") + ".";
+  const titles = [...new Set(here.map((r) => showBySlug(r.show)?.title ?? r.show))];
+  return {
+    href: `/${city.slug}/`,
+    title: `Musicals playing ${city.name}`,
+    eyebrow: city.country,
+    name: city.name,
+    status: here.length === 1 ? "One musical" : `${spell(here.length)} musicals`,
+    // The theatre, not the shows: the show names are already on every card in
+    // the row above this one, and the house is the thing that differs.
+    text: houses.length > 0 ? where : titles.join(" and "),
+    meta: next ? formatRun(next) : undefined,
+    image: city.image,
+    imageAlt: city.imageAlt,
+    icon: ICONS.map,
+  };
+});
+const citiesRest = citiesByDate.slice(6);
+
 const lead = shows.find((show) => show.featured) ?? shows[0]!;
 const alsoListed = shows.filter((show) => show !== lead);
 ---
@@ -57,18 +107,16 @@ const alsoListed = shows.filter((show) => show !== lead);
       are listed on that event's page instead, and every theatre has a page of
       its own either way.
     </p>
-    <div class="link-grid city-grid">
-      {cityPages.map((city) => (
-        <a class="card link-card" href={`/${city.slug}/`} title={`Musicals playing ${city.name}`}>
-          <h3>{city.name}</h3>
-          <p>{city.summary ?? city.country}</p>
-        </a>
-      ))}
-      <a class="card link-card" href="/venues/" title="Every theatre and arena on this site">
-        <h3>All venues</h3>
-        <p>{venues.length} theatres and arenas, with what plays in each and how to get there.</p>
-      </a>
-    </div>
+    <VentureGrid items={cityCards} columns={3} />
+    {citiesRest.length > 0 && (
+      <p class="more city-rest">
+        <span>Also on:</span>
+        {citiesRest.map((city) => (
+          <a href={`/${city.slug}/`} title={`Musicals playing ${city.name}`}>{city.name}</a>
+        ))}
+        <a href="/venues/" title="Every theatre and arena on this site">all {venues.length} theatres</a>
+      </p>
+    )}
   </section>
 
   {/* One section for the show this site is about, and a line for the rest.
@@ -98,7 +146,7 @@ const alsoListed = shows.filter((show) => show !== lead);
     <section class="container">
       <h2>Also listed</h2>
       <p>Every run, theatre and seller, checked the same way — without the editorial pages the lead show carries.</p>
-      <div class="link-grid">
+      <div class="link-grid also-grid">
         {alsoListed.map((show) => (
           <a class="card link-card" href={`/${show.slug}/`} title={`${show.title}: every stop, its theatre and its seller`}>
             <h3>{show.title}</h3>
@@ -122,7 +170,14 @@ const alsoListed = shows.filter((show) => show !== lead);
 </Layout>
 
 <style>
-  .city-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+  /* Sixteen city names on one line, reading as a line and not as sixteen
+     buttons: the gap does the separating, and the label sits in front of
+     them at the same baseline. */
+  /* One card should look like one card, not like a banner: auto-fit gives a
+     lone item the whole row. */
+  .also-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+  .city-rest { gap: 0.4em var(--space-2); }
+  .city-rest span { color: var(--ink-faint); font-size: var(--step--1); }
   .more {
     display: flex;
     flex-wrap: wrap;
