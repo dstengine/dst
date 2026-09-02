@@ -185,7 +185,10 @@ describe("links", () => {
           if (href?.startsWith("/")) linked.add(href.split("#")[0]);
         }
       }
+      // A noindex page is unlinked on purpose — /go/ hops, and /li/, which
+      // carries the LiveInternet counter and is opened by hand.
       const orphans = own
+        .filter((p) => !/<meta name="robots" content="noindex/.test(p.html))
         .map((p) => p.url)
         .filter((url) => url !== "/" && !url.startsWith("/go/") && !linked.has(url));
       assert.deepEqual(orphans, [], `${app}: pages nothing links to: ${orphans.join(", ")}`);
@@ -604,15 +607,25 @@ describe("sitemap", () => {
   test("every site ships a sitemap listing exactly its indexable pages", () => {
     for (const { app, host } of SITES) {
       const listed = new Set(sitemapUrls(app).map((u) => new URL(u).pathname));
-      const indexable = pages.filter((p) => p.app === app && !p.url.startsWith("/go/")).map((p) => p.url);
+      // Indexable means what it says: a page that asks robots to skip it —
+      // a /go/ hop, or /li/ with the LiveInternet counter — belongs in
+      // neither the sitemap nor this list.
+      const indexable = pages
+        .filter((p) => p.app === app && !p.url.startsWith("/go/"))
+        .filter((p) => !/<meta name="robots" content="noindex/.test(p.html))
+        .map((p) => p.url);
 
       assert.deepEqual(
         indexable.filter((url) => !listed.has(url)),
         [],
         `${app}: built pages missing from the sitemap`,
       );
+      // The other direction is the weaker claim on purpose: everything the
+      // sitemap names has to exist, but a noindex page being listed is a
+      // separate (and milder) fault than one that was never built.
+      const built = pages.filter((p) => p.app === app).map((p) => p.url);
       assert.deepEqual(
-        [...listed].filter((url) => !indexable.includes(url)),
+        [...listed].filter((url) => !built.includes(url)),
         [],
         `${app}: sitemap lists pages that were not built`,
       );

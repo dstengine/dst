@@ -1,0 +1,48 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+<Layout
+  prose
+  noindex
+  title="Counter check"
+  description="A single page carrying the LiveInternet counter, kept off the rest of the network."
+>
+  <section class="container">
+    <h1>Counter check</h1>
+    <p>
+      The LiveInternet counter used to sit in the footer of every page on the
+      network. It lives here instead, on one page and nowhere else, so it can
+      be checked deliberately rather than fired on every visit. The badge below
+      is the counter's own image — it is left visible on purpose.
+    </p>
+
+    {/* LiveInternet. is:inline because Astro would otherwise bundle this as a
+        module and defer it, and the script writes to an element that has to
+        already be in the document. The placeholder src is a transparent 1x1
+        GIF as a data URI, so nothing is fetched until the script swaps it. */}
+    <p>
+      <img
+        id="licnt0F14"
+        width="31"
+        height="31"
+        title="LiveInternet"
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+        alt="LiveInternet counter"
+      />
+    </p>
+    <script is:inline>
+      (function (d, s) {
+        d.getElementById("licnt0F14").src =
+          "https://counter.yadro.ru/hit?t50.3;r" +
+          escape(d.referrer) +
+          (typeof s == "undefined" ? "" : ";s" + s.width + "*" + s.height + "*" + (s.colorDepth ? s.colorDepth : s.pixelDepth)) +
+          ";u" +
+          escape(d.URL) +
+          ";h" +
+          escape(d.title.substring(0, 150)) +
+          ";" +
+          Math.random();
+      })(document, screen);
+    </script>
+  </section>
+</Layout>

@@ -32,9 +32,16 @@ interface Props {
       show's name six times over is wallpaper, so the tour or the country
       takes the line instead. */
   eyebrow?: "show" | "tour";
+  /** Whether the city photograph belongs on the card. It does wherever the
+      cards are different places — a tour, the front page, the same show
+      elsewhere. It does not where every card is the *same* place: on a
+      theatre's own page and under "Also on in this city", one photograph
+      would run identically down every card, which reads as two pictures of
+      two different things and is neither. The mark takes over there. */
+  photo?: boolean;
   columns?: number;
 }
-const { runs, lead = "city", eyebrow = "show", venueInMeta = true, compact = false, columns } = Astro.props;
+const { runs, lead = "city", eyebrow = "show", venueInMeta = true, compact = false, photo = true, columns } = Astro.props;
 
 // Three across from a tablet up: at four the cards drop to 265px and the
 // venue line starts wrapping every time. One or two runs keep the same
@@ -68,8 +75,8 @@ const items = runs.map((run) => {
     // with no picture. A card is a link, so it can hold neither a caption nor
     // the two links a caption needs: the photographer and the licence are
     // named on the city's own page, where the same picture runs full size.
-    image: place?.image,
-    imageAlt: place?.imageAlt,
+    image: photo ? place?.image : undefined,
+    imageAlt: photo ? place?.imageAlt : undefined,
     icon: ICONS.stage,
   };
 });

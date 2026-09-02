@@ -162,7 +162,7 @@ const description = venue.summary
     <section slot="after" class="container">
       <h2>What is playing here</h2>
       {upcoming.length > 0
-        ? <EventCards runs={upcoming} lead="event" eyebrow="tour" venueInMeta={false} />
+        ? <EventCards runs={upcoming} lead="event" eyebrow="tour" venueInMeta={false} photo={false} />
         : <p>Nothing on this site's calendar is playing here at the moment.</p>}
       {past.length > 0 && (
         <RunTable runs={past} lead="event" cityColumn={false} caption="Already played." />
