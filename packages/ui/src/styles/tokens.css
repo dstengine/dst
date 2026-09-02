@@ -51,7 +51,12 @@
      so the scale keeps its proportions. */
   --step--1: 0.9375rem;
   --step-0: 1.125rem;
-  --step-1: 1.44rem;
+  /* The one body step that scales. A lede is set larger than the text under
+     it, and at a fixed 23px it opened every page on a phone with nine lines
+     of grey — the reader met a wall before they met the site. It comes down
+     to about 20px at 390 and is unchanged from ~1100px up, where the
+     desktop value was never the problem. */
+  --step-1: clamp(1.25rem, 1.05rem + 0.9vw, 1.44rem);
   /* The display sizes scale with the viewport; the body sizes above don't.
      18px body reads the same on a phone as on a desktop, but a 49px
      headline that works on a wide screen eats half of a 375px one and
@@ -388,6 +393,13 @@ thead th { font-size: var(--step--1); text-transform: uppercase; letter-spacing:
    a page needs something different, at which point it overrides the
    specific property locally rather than redeclaring the whole rule. */
 .hero { padding-top: var(--space-5); }
+/* On a phone that 4rem, plus a 73px sticky header, put the headline a
+   quarter of the way down the first screen with nothing in the gap. The
+   room above a title is what makes it look placed rather than dropped; a
+   quarter of a small screen is just an empty band. */
+@media (max-width: 700px) {
+  .hero { padding-top: var(--space-3); }
+}
 
 /* A page of nothing but text, opted in with BaseLayout's `prose` prop. The
    container above is sized for a card grid; prose stops at its reading

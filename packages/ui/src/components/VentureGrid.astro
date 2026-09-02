@@ -10,7 +10,9 @@ export interface VentureCardItem {
   href?: string;
   title?: string;
   eyebrow: string;
-  status: string;
+  /** Optional: a card that has nothing to badge renders no pill at all.
+   * An empty one still painted its background and read as a clipped stub. */
+  status?: string;
   inProgress?: boolean;
   name: string;
   text: string;
@@ -47,7 +49,9 @@ const metaIcon = ICONS.events;
         <div class="venture-body">
           <div class="venture-meta">
             <p class="eyebrow">{item.eyebrow}</p>
-            <span class:list={["venture-status", { "venture-status-progress": item.inProgress }]}>{item.status}</span>
+            {item.status && (
+              <span class:list={["venture-status", { "venture-status-progress": item.inProgress }]}>{item.status}</span>
+            )}
           </div>
           <h3>{item.name}</h3>
           <p>{item.text}</p>

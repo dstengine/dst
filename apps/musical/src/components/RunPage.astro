@@ -4,6 +4,7 @@
 // puts on that page is here — status, dates, theatre, sellers, a calendar
 // file, a map, an FAQ, and where else the show plays — and every block is
 // absent rather than empty when the fact behind it has not been published.
+import Icon from "@dst/ui/Icon.astro";
 import Glance from "@dst/ui/Glance.astro";
 import Faq from "@dst/ui/Faq.astro";
 import MapEmbed from "@dst/ui/MapEmbed.astro";
@@ -162,7 +163,7 @@ const eventLd: Record<string, unknown> = {
       <ul class="sellers">
         {run.sellers.map((seller) => (
           <li>
-            <a class="button button-secondary" href={go(seller.slug)} rel="nofollow" title={`Buy tickets for ${title} from ${seller.name}`}>{seller.name}</a>
+            <a class="button button-secondary" href={go(seller.slug)} rel="nofollow" title={`Buy tickets for ${title} from ${seller.name}`}><Icon name="ticket" />{seller.name}</a>
             <span>{seller.official ? "The production's own seller" : "Ticket agent"}{seller.covers ? ` · ${seller.covers}` : ""}</span>
           </li>
         ))}

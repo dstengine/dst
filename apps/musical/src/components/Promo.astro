@@ -8,9 +8,14 @@
 // The seller is a decision, and the run page is where the reader has what
 // they need to make it: dates, theatre, who is selling, what is not known.
 //
-// The artwork is a drawing rather than a photograph on purpose: production
-// stills are the producer's, and this site has no licence to any of them.
+// The picture is the city, not the show. Production stills are the
+// producer's and this site is licensed to none of them; the city is a place
+// anyone may photograph, it is the half of "Chicago in Dubai" a reader can
+// actually recognise, and it is the same photograph the run cards carry
+// three sections above. Where a city has none, the drawn stage stands in.
 import { cityBySlug, formatRun, runBySlug, showBySlug, featuredRun, venueBySlug } from "../content";
+import Icon from "@dst/ui/Icon.astro";
+import Photo from "@dst/ui/Photo.astro";
 import StatusBadge from "./StatusBadge.astro";
 
 interface Props {
@@ -30,35 +35,41 @@ const Heading = `h${level}` as "h2" | "h3";
 const href = `/${show.slug}/${run.slug}/`;
 ---
 <aside class:list={["promo", compact && "promo-compact"]}>
+  {city.image ? (
+    <figure class="promo-media">
+      <Photo src={city.image} alt={city.imageAlt ?? city.name} sizes="(min-width: 50rem) 15rem, 100vw" />
+    </figure>
+  ) : (
+    <svg class="promo-art" viewBox="0 0 240 200" role="img" aria-label="A theatre stage with its curtains drawn back">
+      <defs>
+        <linearGradient id="promo-drape" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="var(--accent)" stop-opacity="0.95" />
+          <stop offset="1" stop-color="var(--accent)" stop-opacity="0.55" />
+        </linearGradient>
+      </defs>
+      <rect x="0" y="0" width="240" height="200" fill="var(--surface-sunk)" />
+      <rect x="40" y="30" width="160" height="140" fill="var(--bg)" />
+      <path d="M40 30 h44 c-6 40 -14 62 -30 84 c14 20 18 38 16 56 h-30 z" fill="url(#promo-drape)" />
+      <path d="M200 30 h-44 c6 40 14 62 30 84 c-14 20 -18 38 -16 56 h30 z" fill="url(#promo-drape)" />
+      <rect x="40" y="20" width="160" height="14" rx="3" fill="var(--accent)" />
+      <g fill="var(--surface)">
+        <circle cx="56" cy="27" r="3" /><circle cx="80" cy="27" r="3" /><circle cx="104" cy="27" r="3" />
+        <circle cx="128" cy="27" r="3" /><circle cx="152" cy="27" r="3" /><circle cx="176" cy="27" r="3" />
+      </g>
+      <rect x="94" y="120" width="52" height="50" fill="var(--accent-tint)" />
+      <rect x="40" y="170" width="160" height="6" fill="var(--accent-ink)" />
+    </svg>
+  )}
   <div class="promo-text">
     <p class="eyebrow">The event we are following closest</p>
     <Heading class="promo-title">{show.title} in {city.name}</Heading>
     <p class="promo-line">{venue ? `${venue.name} · ` : ""}{formatRun(run)}</p>
     <p class="promo-status"><StatusBadge run={run} /></p>
     <p class="promo-actions">
-      <a class="button" href={href} title={`${show.title} in ${city.name}: dates, theatre and sellers`}>Tickets</a>
-      <a class="button button-secondary" href={`/${show.slug}/`} title={`Every run of ${show.title}, and what the show is`}>All {show.title} dates</a>
+      <a class="button" href={href} title={`${show.title} in ${city.name}: dates, theatre and sellers`}><Icon name="ticket" />Tickets</a>
+      <a class="button button-secondary" href={`/${show.slug}/`} title={`Every run of ${show.title}, and what the show is`}><Icon name="events" />All dates</a>
     </p>
   </div>
-    <svg class="promo-art" viewBox="0 0 240 200" role="img" aria-label="A theatre stage with its curtains drawn back">
-    <defs>
-      <linearGradient id="promo-drape" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="var(--accent)" stop-opacity="0.95" />
-        <stop offset="1" stop-color="var(--accent)" stop-opacity="0.55" />
-      </linearGradient>
-    </defs>
-    <rect x="0" y="0" width="240" height="200" fill="var(--surface-sunk)" />
-    <rect x="40" y="30" width="160" height="140" fill="var(--bg)" />
-    <path d="M40 30 h44 c-6 40 -14 62 -30 84 c14 20 18 38 16 56 h-30 z" fill="url(#promo-drape)" />
-    <path d="M200 30 h-44 c6 40 14 62 30 84 c-14 20 -18 38 -16 56 h30 z" fill="url(#promo-drape)" />
-    <rect x="40" y="20" width="160" height="14" rx="3" fill="var(--accent)" />
-    <g fill="var(--surface)">
-      <circle cx="56" cy="27" r="3" /><circle cx="80" cy="27" r="3" /><circle cx="104" cy="27" r="3" />
-      <circle cx="128" cy="27" r="3" /><circle cx="152" cy="27" r="3" /><circle cx="176" cy="27" r="3" />
-    </g>
-    <rect x="94" y="120" width="52" height="50" fill="var(--accent-tint)" />
-    <rect x="40" y="170" width="160" height="6" fill="var(--accent-ink)" />
-  </svg>
 </aside>
 
 <style>
@@ -74,7 +85,11 @@ const href = `/${show.slug}/${run.slug}/`;
     background: var(--surface);
   }
   @media (min-width: 800px) {
+    /* Text first on a wide screen, picture beside it; on a phone the order
+       is the other way round, which is what the DOM says. */
     .promo { grid-template-columns: 1fr 15rem; }
+    .promo-text { order: 1; }
+    .promo-media, .promo-art { order: 2; }
   }
   .promo-text > :global(*) { max-width: 54ch; }
   .promo-title { margin: 0.1em 0 0.4em; font-size: var(--step-2); }
@@ -86,6 +101,15 @@ const href = `/${show.slug}/${run.slug}/`;
     gap: var(--space-2);
     margin: var(--space-3) 0 0;
   }
+  .promo-media { margin: 0; }
+  .promo-media :global(img) {
+    width: 100%;
+    height: clamp(150px, 34vw, 220px);
+    object-fit: cover;
+    border-radius: var(--radius);
+    display: block;
+  }
+  .promo-compact .promo-media { display: none; }
   .promo-art {
     width: 100%;
     height: auto;
@@ -97,5 +121,17 @@ const href = `/${show.slug}/${run.slug}/`;
   .promo-compact .promo-art { display: none; }
   @media (max-width: 799px) {
     .promo-art { max-height: 8rem; }
+    /* The block is nearly a screen tall on a phone; space-4 on all four
+       sides made it two. */
+    .promo { padding: var(--space-3); }
+    .promo-title { font-size: var(--step-1); }
+    /* One under the other, each the full width of the card. Side by side
+       they came out as a short solid button and a wide outlined one whose
+       label wrapped around its icon, which reads as two accidents rather
+       than as a pair. */
+    .promo-actions :global(.button) {
+      flex: 1 1 100%;
+      justify-content: center;
+    }
   }
 </style>

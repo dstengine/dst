@@ -11,6 +11,7 @@
 // "Tickets" answers where to press and not what happens next, and this site
 // sells nothing: the reader is about to be handed to somebody else, and
 // should read that here rather than work it out from the address bar.
+import Icon from "@dst/ui/Icon.astro";
 import { go } from "../outbound";
 import { sellsItsOwn, statusOf, ticketButtons, type Run } from "../content";
 
@@ -36,16 +37,16 @@ const status = statusOf(run);
         href={button.href}
         rel="nofollow"
         title={`Buy tickets for ${showName} in ${cityName} from ${button.seller.name}`}
-      >{button.label}</a>
+      ><Icon name="ticket" />{button.label}</a>
     ))}
     {calendarHref && (
-      <a class="button button-secondary" href={calendarHref} title={`Add ${showName} in ${cityName} to a calendar`}>Add to calendar</a>
+      <a class="button button-secondary" href={calendarHref} title={`Add ${showName} in ${cityName} to a calendar`}><Icon name="events" />Add to calendar</a>
     )}
   </p>
 )}
 {buttons.length === 0 && calendarHref && (
   <p class="ticket-actions">
-    <a class="button button-secondary" href={calendarHref} title={`Add ${showName} in ${cityName} to a calendar`}>Add to calendar</a>
+    <a class="button button-secondary" href={calendarHref} title={`Add ${showName} in ${cityName} to a calendar`}><Icon name="events" />Add to calendar</a>
   </p>
 )}
 {buttons.length > 0 && (
@@ -59,7 +60,7 @@ const status = statusOf(run);
 )}
 {buttons.length === 0 && run.infoSlug && (
   <p class="ticket-actions">
-    <a class="button button-secondary" href={go(run.infoSlug)} rel="nofollow" title={`Venue information for ${showName} in ${cityName}`}>Venue information</a>
+    <a class="button button-secondary" href={go(run.infoSlug)} rel="nofollow" title={`Venue information for ${showName} in ${cityName}`}><Icon name="pin" />Venue information</a>
   </p>
 )}
 {buttons.length === 0 && status === "announced" && (
@@ -87,6 +88,12 @@ const status = statusOf(run);
        label rather than as a paragraph that happens to sit in a box. */
     justify-content: center;
     text-align: center;
+  }
+  /* On a phone the row wraps anyway, and a short solid button sitting above
+     a wider outlined one reads as a mistake rather than as a pair. Full
+     width each, stacked, the same as the promo block. */
+  @media (max-width: 520px) {
+    .ticket-actions :global(.button) { flex: 1 1 100%; }
   }
   .ticket-none { margin: var(--space-3) 0 0; color: var(--ink-muted); }
   .ticket-seller {

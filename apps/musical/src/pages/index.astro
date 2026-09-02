@@ -7,7 +7,7 @@ import EventCards from "../components/EventCards.astro";
 import VentureGrid from "@dst/ui/VentureGrid.astro";
 import { ICONS } from "@dst/ui/icons";
 import {
-  citiesWithPages, cityBySlug, formatRun, runsFor, runsInCity, shows, showBySlug, spell,
+  citiesWithPages, cityBySlug, formatRun, runsFor, runsInCity, shows, showBySlug,
   statusOf, upcomingRuns, venueBySlug, venues, type Venue,
 } from "../content";
 
@@ -47,7 +47,10 @@ const cityCards = citiesByDate.slice(0, 6).map((city) => {
     title: `Musicals playing ${city.name}`,
     eyebrow: city.country,
     name: city.name,
-    status: here.length === 1 ? "One musical" : `${spell(here.length)} musicals`,
+    // No count pill on a city card. "One musical" is not something a
+    // reader can act on — the card already names the theatre and the date —
+    // and a badge that exists to fill the corner is what a cheap page looks
+    // like from across the room.
     // The theatre, not the shows: the show names are already on every card in
     // the row above this one, and the house is the thing that differs.
     text: houses.length > 0 ? where : titles.join(" and "),

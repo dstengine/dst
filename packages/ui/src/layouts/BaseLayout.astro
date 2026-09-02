@@ -375,6 +375,7 @@ const lateIcons = navFootprint > 700;
 
   .site-header {
     position: relative;
+    /* Overridden to sticky on a phone — see the mobile block below. */
     /* Lifts the header and, with it, the absolutely-positioned dropdown
        above page content. Without this the header is position:relative with
        z-index:auto, so it creates no stacking context and anything
@@ -503,6 +504,25 @@ const lateIcons = navFootprint > 700;
   @media (max-width: 1024px) {
     .nav-desktop { display: none; }
     .nav-toggle { display: block; }
+    /* Where the row collapses to a burger, the burger takes the outside
+       edge and the theme toggle moves in beside the name. The thumb reaches
+       the corner of a phone; the control it should find there is the one
+       that opens the site, not the one that changes its colour. Order
+       rather than markup, because on a wide screen the nav still reads
+       first: links, then the toggle that acts on them. */
+    .site-nav { order: 3; }
+  }
+
+  /* Fixed on a phone. The nav is the only way between sections on a screen
+     this size, and a reader four thousand pixels into a run table was
+     scrolling back to the top to reach it. Sticky rather than fixed so the
+     header keeps its place in the flow and nothing has to be padded down
+     to clear it; the surface is opaque, so content passes under it. */
+  @media (max-width: 700px) {
+    .site-header { position: sticky; top: 0; }
+    /* An in-page anchor must not land under the header it just scrolled
+       past. 4rem is the header at this width plus a little air. */
+    :global(main [id]) { scroll-margin-top: 4rem; }
   }
   /* A long nav gets a tightened row — smaller type, no icons, narrower gaps
      — which is enough to hold one line on a wide screen. Below 1200 the row
@@ -517,6 +537,7 @@ const lateIcons = navFootprint > 700;
   @media (max-width: 1200px) {
     .site-nav-dense .nav-desktop { display: none; }
     .site-nav-dense .nav-toggle { display: block; }
+    .site-nav-dense { order: 3; }
   }
   .nav-desktop-dense { gap: var(--space-2); }
   .nav-desktop-dense a { font-size: 0.875rem; }
@@ -570,6 +591,11 @@ const lateIcons = navFootprint > 700;
      under the hamburger instead of spanning the window. A menu that takes
      the full width reads as part of the page; a panel reads as a menu. */
   .nav-toggle { position: relative; }
+  /* Chromium lays a closed <details>' children out without painting them: the
+     shut list measured 40px wide and, now that the burger sits at the right
+     edge, stuck 2px past the viewport. Hidden explicitly, it takes no space
+     on either side. */
+  .nav-toggle:not([open]) ul { display: none; }
   .nav-toggle[open] ul {
     display: flex;
     flex-direction: column;
