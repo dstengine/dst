@@ -103,6 +103,21 @@ visually, not just the one you were working on:
 node tools/visual-check.mjs <url> --widths 390,944,1280 --scheme both
 ```
 
+## Pictures
+
+```bash
+set -a && . ~/dst/.env && set +a       # FAL_AI_API_KEY
+node tools/covers.mjs --dry            # what is missing, and what it costs
+node tools/covers.mjs && node tools/images.mjs
+```
+
+Spend is capped at a dollar a day by `tools/fal-budget.mjs`, which reserves
+before each request and refuses the one that would cross the line — the run
+stops there rather than carrying on with the cheaper half of a set. The
+running total is `tools/fal-spend.json`, one line per day, committed. Raising
+the ceiling means editing `LIMIT` and committing that, on purpose; there is
+no environment variable for it.
+
 ## Shipping
 
 ```bash

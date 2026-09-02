@@ -19,6 +19,10 @@
 // Needs FAL_AI_API_KEY from ~/dst/.env. fal.ai authenticates with
 // `Authorization: Key <token>` — not Bearer, which returns 401.
 //
+// Spend runs through tools/fal-budget.mjs, which stops the run at a dollar a
+// day. The reservation happens before the request, not after: a total added
+// up at the end tells you what you already spent.
+//
 // The pictures are deliberately abstract. A generated image that looked
 // like reportage of a real event would be a lie no caption could undo, so
 // none of them depicts its event: each carries the subject as flat shapes.
@@ -34,6 +38,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import sharp from "sharp";
+import { BudgetExceeded, LIMIT, headroom, spend, spentToday } from "./fal-budget.mjs";
 
 const KEY = process.env.FAL_AI_API_KEY;
 if (!KEY) {
@@ -86,6 +91,10 @@ async function generate(site, slug, entry) {
   const palette = PROMPTS.palettes[site];
   if (!palette) throw new Error(`no palette for ${site} — add one to covers.json`);
   const prompt = [subject, detail, palette, STYLE].filter(Boolean).join(". ");
+  // Both models bill by megapixel. Reserved before the call — if this throws,
+  // nothing has been asked for and nothing has been paid for.
+  const cost = ((WIDTH * HEIGHT) / 1e6) * tier.perMp;
+  spend(cost, `${site}/${slug}`);
   const res = await fetch(`https://fal.run/${tier.model}`, {
     method: "POST",
     headers: { Authorization: "Key " + KEY, "Content-Type": "application/json" },
@@ -97,6 +106,9 @@ async function generate(site, slug, entry) {
     }),
   });
   if (!res.ok) {
+    // Refunded: fal bills a generation, not a rejected request. Without this
+    // a wrong key would burn the whole day's budget on 401s.
+    spend(-cost);
     console.error(`FAIL ${site}/${slug}: ${res.status} ${(await res.text()).slice(0, 200)}`);
     return false;
   }
@@ -131,17 +143,29 @@ for (const block of [PROMPTS.covers, PROMPTS.news ?? {}, PROMPTS.pages ?? {}])
       jobs.push([site, slug, entry]);
     }
 
-let n = 0, usd = 0;
-{
+let n = 0, usd = 0, stopped = null;
+try {
   for (const [site, slug, entry] of jobs) {
     const tier = await generate(site, slug, entry);
     if (!tier) continue;
     n++;
-    // Both models bill by megapixel.
     usd += ((WIDTH * HEIGHT) / 1e6) * tier.perMp;
   }
+} catch (err) {
+  // Stop, do not skip on. The next job costs money too, and a run that
+  // quietly generated the cheap half of a set is worse than one that halted.
+  if (!(err instanceof BudgetExceeded)) throw err;
+  stopped = err.message;
+}
+
+if (stopped) {
+  console.error(`\n${stopped}`);
+  if (n) console.error(`${n} generated before stopping — about $${usd.toFixed(3)}.`);
+  process.exit(1);
 }
 
 if (!n) console.log("nothing missing");
 else if (DRY) console.log(`\n${n} to generate — about $${usd.toFixed(3)}`);
 else console.log(`\n${n} images — about $${usd.toFixed(3)}. Next: node tools/images.mjs`);
+console.log(`fal.ai today: $${spentToday().toFixed(3)} of $${LIMIT.toFixed(2)}, $${headroom().toFixed(3)} left.`);
+if (DRY && usd > headroom()) console.log("That does not fit in what is left today.");
