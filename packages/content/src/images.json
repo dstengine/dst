@@ -48,6 +48,54 @@
         ]
       ]
     },
+    "/covers/apple-cambia-de-director-general.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/apple-cambia-de-director-general-480.avif"
+        ],
+        [
+          768,
+          "/covers/apple-cambia-de-director-general-768.avif"
+        ],
+        [
+          1024,
+          "/covers/apple-cambia-de-director-general-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/apple-cambia-de-director-general-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/apple-cambia-de-director-general-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/apple-cambia-de-director-general-480.webp"
+        ],
+        [
+          768,
+          "/covers/apple-cambia-de-director-general-768.webp"
+        ],
+        [
+          1024,
+          "/covers/apple-cambia-de-director-general-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/apple-cambia-de-director-general-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/apple-cambia-de-director-general-1536.webp"
+        ]
+      ]
+    },
     "/covers/betsabee-romero-homenaje-a-monsivais.jpg": {
       "width": 1536,
       "height": 864,
@@ -818,6 +866,54 @@
         ]
       ]
     },
+    "/covers/apple-hands-the-company-to-an-engineer.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/apple-hands-the-company-to-an-engineer-480.avif"
+        ],
+        [
+          768,
+          "/covers/apple-hands-the-company-to-an-engineer-768.avif"
+        ],
+        [
+          1024,
+          "/covers/apple-hands-the-company-to-an-engineer-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/apple-hands-the-company-to-an-engineer-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/apple-hands-the-company-to-an-engineer-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/apple-hands-the-company-to-an-engineer-480.webp"
+        ],
+        [
+          768,
+          "/covers/apple-hands-the-company-to-an-engineer-768.webp"
+        ],
+        [
+          1024,
+          "/covers/apple-hands-the-company-to-an-engineer-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/apple-hands-the-company-to-an-engineer-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/apple-hands-the-company-to-an-engineer-1536.webp"
+        ]
+      ]
+    },
     "/covers/blockchain-life-dubai-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -1250,6 +1346,54 @@
         ]
       ]
     },
+    "/covers/uae-fuel-prices-september-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/uae-fuel-prices-september-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/uae-fuel-prices-september-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/uae-fuel-prices-september-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/uae-fuel-prices-september-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/uae-fuel-prices-september-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/uae-fuel-prices-september-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/uae-fuel-prices-september-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/uae-fuel-prices-september-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/uae-fuel-prices-september-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/uae-fuel-prices-september-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/world-governments-summit-2027.jpg": {
       "width": 1536,
       "height": 864,
@@ -1468,6 +1612,54 @@
     }
   },
   "eco.dst.llc": {
+    "/covers/a-60-percent-carbon-cut-changes-hands.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/a-60-percent-carbon-cut-changes-hands-480.avif"
+        ],
+        [
+          768,
+          "/covers/a-60-percent-carbon-cut-changes-hands-768.avif"
+        ],
+        [
+          1024,
+          "/covers/a-60-percent-carbon-cut-changes-hands-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/a-60-percent-carbon-cut-changes-hands-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/a-60-percent-carbon-cut-changes-hands-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/a-60-percent-carbon-cut-changes-hands-480.webp"
+        ],
+        [
+          768,
+          "/covers/a-60-percent-carbon-cut-changes-hands-768.webp"
+        ],
+        [
+          1024,
+          "/covers/a-60-percent-carbon-cut-changes-hands-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/a-60-percent-carbon-cut-changes-hands-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/a-60-percent-carbon-cut-changes-hands-1536.webp"
+        ]
+      ]
+    },
     "/covers/group.jpg": {
       "width": 1536,
       "height": 864,
@@ -1742,6 +1934,54 @@
     }
   },
   "fwf.lol": {
+    "/covers/a-hardware-engineer-inherits-the-software-era.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/a-hardware-engineer-inherits-the-software-era-480.avif"
+        ],
+        [
+          768,
+          "/covers/a-hardware-engineer-inherits-the-software-era-768.avif"
+        ],
+        [
+          1024,
+          "/covers/a-hardware-engineer-inherits-the-software-era-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/a-hardware-engineer-inherits-the-software-era-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/a-hardware-engineer-inherits-the-software-era-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/a-hardware-engineer-inherits-the-software-era-480.webp"
+        ],
+        [
+          768,
+          "/covers/a-hardware-engineer-inherits-the-software-era-768.webp"
+        ],
+        [
+          1024,
+          "/covers/a-hardware-engineer-inherits-the-software-era-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/a-hardware-engineer-inherits-the-software-era-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/a-hardware-engineer-inherits-the-software-era-1536.webp"
+        ]
+      ]
+    },
     "/covers/about.jpg": {
       "width": 1536,
       "height": 864,
@@ -1979,6 +2219,54 @@
         [
           1536,
           "/covers/dubai-second-in-bcg-intelligent-cities-index-1536.webp"
+        ]
+      ]
+    },
+    "/covers/eu-classifies-chatgpt-as-a-search-engine.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/eu-classifies-chatgpt-as-a-search-engine-480.avif"
+        ],
+        [
+          768,
+          "/covers/eu-classifies-chatgpt-as-a-search-engine-768.avif"
+        ],
+        [
+          1024,
+          "/covers/eu-classifies-chatgpt-as-a-search-engine-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/eu-classifies-chatgpt-as-a-search-engine-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/eu-classifies-chatgpt-as-a-search-engine-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/eu-classifies-chatgpt-as-a-search-engine-480.webp"
+        ],
+        [
+          768,
+          "/covers/eu-classifies-chatgpt-as-a-search-engine-768.webp"
+        ],
+        [
+          1024,
+          "/covers/eu-classifies-chatgpt-as-a-search-engine-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/eu-classifies-chatgpt-as-a-search-engine-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/eu-classifies-chatgpt-as-a-search-engine-1536.webp"
         ]
       ]
     },
@@ -2544,6 +2832,54 @@
         ]
       ]
     },
+    "/covers/apples-chairman-now-has-a-policy-job.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/apples-chairman-now-has-a-policy-job-480.avif"
+        ],
+        [
+          768,
+          "/covers/apples-chairman-now-has-a-policy-job-768.avif"
+        ],
+        [
+          1024,
+          "/covers/apples-chairman-now-has-a-policy-job-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/apples-chairman-now-has-a-policy-job-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/apples-chairman-now-has-a-policy-job-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/apples-chairman-now-has-a-policy-job-480.webp"
+        ],
+        [
+          768,
+          "/covers/apples-chairman-now-has-a-policy-job-768.webp"
+        ],
+        [
+          1024,
+          "/covers/apples-chairman-now-has-a-policy-job-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/apples-chairman-now-has-a-policy-job-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/apples-chairman-now-has-a-policy-job-1536.webp"
+        ]
+      ]
+    },
     "/covers/bfi-london-film-festival-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -3074,6 +3410,54 @@
     }
   },
   "llc.dst.llc": {
+    "/covers/apple-published-its-succession-134-days-early.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/apple-published-its-succession-134-days-early-480.avif"
+        ],
+        [
+          768,
+          "/covers/apple-published-its-succession-134-days-early-768.avif"
+        ],
+        [
+          1024,
+          "/covers/apple-published-its-succession-134-days-early-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/apple-published-its-succession-134-days-early-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/apple-published-its-succession-134-days-early-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/apple-published-its-succession-134-days-early-480.webp"
+        ],
+        [
+          768,
+          "/covers/apple-published-its-succession-134-days-early-768.webp"
+        ],
+        [
+          1024,
+          "/covers/apple-published-its-succession-134-days-early-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/apple-published-its-succession-134-days-early-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/apple-published-its-succession-134-days-early-1536.webp"
+        ]
+      ]
+    },
     "/covers/banking.jpg": {
       "width": 1536,
       "height": 864,
@@ -3649,6 +4033,54 @@
         [
           1536,
           "/covers/eclipse-walk-tower-hamlets-cemetery-park-1536.webp"
+        ]
+      ]
+    },
+    "/covers/fifteen-years-of-apple-in-numbers.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/fifteen-years-of-apple-in-numbers-480.avif"
+        ],
+        [
+          768,
+          "/covers/fifteen-years-of-apple-in-numbers-768.avif"
+        ],
+        [
+          1024,
+          "/covers/fifteen-years-of-apple-in-numbers-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/fifteen-years-of-apple-in-numbers-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/fifteen-years-of-apple-in-numbers-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/fifteen-years-of-apple-in-numbers-480.webp"
+        ],
+        [
+          768,
+          "/covers/fifteen-years-of-apple-in-numbers-768.webp"
+        ],
+        [
+          1024,
+          "/covers/fifteen-years-of-apple-in-numbers-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/fifteen-years-of-apple-in-numbers-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/fifteen-years-of-apple-in-numbers-1536.webp"
         ]
       ]
     },
@@ -9314,6 +9746,54 @@
         ]
       ]
     },
+    "/covers/veinticinco-anos-para-llegar-a-la-cima.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/veinticinco-anos-para-llegar-a-la-cima-480.avif"
+        ],
+        [
+          768,
+          "/covers/veinticinco-anos-para-llegar-a-la-cima-768.avif"
+        ],
+        [
+          1024,
+          "/covers/veinticinco-anos-para-llegar-a-la-cima-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/veinticinco-anos-para-llegar-a-la-cima-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/veinticinco-anos-para-llegar-a-la-cima-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/veinticinco-anos-para-llegar-a-la-cima-480.webp"
+        ],
+        [
+          768,
+          "/covers/veinticinco-anos-para-llegar-a-la-cima-768.webp"
+        ],
+        [
+          1024,
+          "/covers/veinticinco-anos-para-llegar-a-la-cima-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/veinticinco-anos-para-llegar-a-la-cima-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/veinticinco-anos-para-llegar-a-la-cima-1536.webp"
+        ]
+      ]
+    },
     "/covers/venecia-2026-una-sola-pelicula-latinoamericana.jpg": {
       "width": 1536,
       "height": 864,
@@ -9409,6 +9889,54 @@
         [
           1536,
           "/covers/about-1536.webp"
+        ]
+      ]
+    },
+    "/covers/apple-from-350-billion-to-four-trillion.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/apple-from-350-billion-to-four-trillion-480.avif"
+        ],
+        [
+          768,
+          "/covers/apple-from-350-billion-to-four-trillion-768.avif"
+        ],
+        [
+          1024,
+          "/covers/apple-from-350-billion-to-four-trillion-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/apple-from-350-billion-to-four-trillion-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/apple-from-350-billion-to-four-trillion-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/apple-from-350-billion-to-four-trillion-480.webp"
+        ],
+        [
+          768,
+          "/covers/apple-from-350-billion-to-four-trillion-768.webp"
+        ],
+        [
+          1024,
+          "/covers/apple-from-350-billion-to-four-trillion-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/apple-from-350-billion-to-four-trillion-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/apple-from-350-billion-to-four-trillion-1536.webp"
         ]
       ]
     },

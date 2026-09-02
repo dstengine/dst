@@ -2,6 +2,42 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "fifteen-years-of-apple-in-numbers",
+    site: "lnd",
+    image: "/covers/fifteen-years-of-apple-in-numbers.jpg",
+    imageAlt: "Torn paper bars rising steadily from left to right, one of them red, a long wedge tapering away beneath them",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Fifteen years, four trillion dollars, and a closing balance",
+    cardTitle: "Fifteen years, in figures",
+    titleSeo: "Tim Cook's fifteen years at Apple, in numbers",
+    summary:
+      "Tim Cook handed Apple over on 1 September. The figures he leaves behind are worth reading slowly, because one of them is rather harder than it looks.",
+    date: "2026-09-01",
+    category: "Tech",
+    source: {
+      name: "Apple Newsroom",
+      url: "https://www.apple.com/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo/",
+      verifiedOn: "2026-09-02",
+    },
+    body: [
+      "There is a particular pleasure in a set of accounts that closes cleanly, and <strong>Tim Cook</strong>'s do. He ceased to be Apple's chief executive on <strong>1 September 2026</strong>, fifteen years after taking the post, and became executive chairman. <strong>John Ternus</strong> has the job now.",
+      "## The ledger",
+      "Market value at the start: roughly <strong>$350 billion</strong>. At the end: about <strong>$4 trillion</strong>. Revenue: <strong>$108 billion</strong> in FY2011, <strong>$416 billion</strong> in FY2025. Services, which barely counted as a line at the beginning, is a business of more than <strong>$100 billion</strong> by itself. Headcount up by over <strong>100,000</strong>. Active devices in use: more than <strong>2.5 billion</strong>, across <strong>200-plus countries and territories</strong>.",
+      "One may quarrel with what any of it means. One cannot easily quarrel with the arithmetic.",
+      "## The figure that deserves more attention than it gets",
+      "Buried among the rest: the carbon footprint is <strong>60% below 2015 levels</strong>. That is the entry worth pausing on, because it runs the opposite way to everything above it. Revenue roughly quadrupled; the emissions fell by three-fifths in absolute terms. Almost every corporate environmental claim one encounters is a ratio dressed up as a reduction. This one is not.",
+      "## The successor",
+      "<strong>Ternus</strong> joined in <strong>2001</strong> and was <strong>senior vice president of Hardware Engineering</strong> &mdash; responsible for the physical iPhone, iPad, Mac, Apple Watch and AirPods. Twenty-five years in the building, and the promotion was announced on <strong>20 April</strong> to take effect on 1 September, so nobody had to be startled by it.",
+      "Cook's description of him, for the record: he &laquo;has the mind of an engineer, the soul of an innovator, and the heart to lead with integrity&raquo;. Handsome, if a trifle upholstered.",
+      "## What the next set of accounts cannot look like",
+      "Whoever came next was never going to repeat an elevenfold increase in market value; there is simply not that much room above four trillion dollars. Which means the interesting question is no longer growth at all, but whether a company of this size can still be surprising &mdash; a rather more difficult thing to put in a table.",
+    ],
+    expertise:
+      "If you take one habit from these figures, take the base-year check. <strong>&laquo;60% below 2015&raquo;</strong> is a real claim because it names its starting point and is stated in absolute terms; <strong>&laquo;60% more efficient&raquo;</strong> would say almost nothing, since efficiency per unit improves while the total rises. Most published environmental numbers are the second kind. It takes three seconds to tell them apart, and it is worth the three seconds.",
+  },
+  {
     slug: "venice-has-programmed-a-film-of-210-minutes",
     site: "lnd",
     image: "/covers/venice-has-programmed-a-film-of-210-minutes.jpg",

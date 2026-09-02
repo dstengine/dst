@@ -2,6 +2,42 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "a-60-percent-carbon-cut-changes-hands",
+    site: "eco",
+    image: "/covers/a-60-percent-carbon-cut-changes-hands.jpg",
+    imageAlt: "A tall paper column beside a much shorter one of the same width, a leaf leaning against the base of the shorter",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "A 60% carbon cut just changed hands",
+    cardTitle: "Apple's climate number gets a new owner",
+    summary:
+      "Apple says its carbon footprint is 60% below 2015. On 1 September the person who has to keep saying that became someone else &mdash; and he is the one who signed off the hardware.",
+    date: "2026-09-01",
+    category: "Environment",
+    source: {
+      name: "Apple Newsroom",
+      url: "https://www.apple.com/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo/",
+      verifiedOn: "2026-09-02",
+    },
+    body: [
+      "Corporate climate figures are usually discussed as though they belong to the company. They belong to a person, and on <strong>1 September 2026</strong> Apple's changed owner.",
+      "## The number",
+      "Apple states that its carbon footprint is <strong>60% below 2015 levels</strong>. That reduction was achieved over the fifteen years <strong>Tim Cook</strong> was chief executive, a period in which the company also went from <strong>$108 billion</strong> of revenue in FY2011 to <strong>$416 billion</strong> in FY2025 and added more than <strong>100,000</strong> employees.",
+      "Cutting absolute emissions by 60% while quadrupling revenue is the difficult version of the exercise. The easy version &mdash; the one most published figures describe &mdash; is intensity: emissions per unit of something that is itself growing.",
+      "## Who now owns it",
+      "<strong>John Ternus</strong>, chief executive since 1 September, joined Apple in <strong>2001</strong> and spent his career in <strong>hardware engineering</strong>, latterly as the senior vice president responsible for it. He was not adjacent to the footprint. Materials, manufacturing and packaging are hardware decisions, and hardware is what he ran.",
+      "That is an unusual and rather demanding inheritance. A chief executive who arrives from finance or from software can treat the environmental programme as something reported to them. This one signed off the products it measures.",
+      "## Where the difficulty sits",
+      "There are more than <strong>2.5 billion</strong> active Apple devices in use across <strong>200-plus countries and territories</strong>. Every one of them was manufactured, shipped and will eventually be disposed of, and the great majority of a device maker's footprint sits in exactly those three places rather than in its offices.",
+      "So the number that changed hands is not an office number. It is a supply chain number, and supply chains are slow: a decision taken about a material this year shows up in a footprint several years later, under whoever is running the company by then.",
+      "## What to watch, and when",
+      "Not the announcement. The next annual environmental report is the first document in which a 60% figure is either extended or quietly restated, and it will be the first one this chief executive is answerable for. Fifteen years of reductions is a long enough run that continuing it is unremarkable and breaking it is very visible &mdash; which is, in practice, the strongest incentive a climate target ever has.",
+    ],
+    expertise:
+      "When you read any corporate climate claim, check three things before the percentage: the <strong>base year</strong>, whether the figure is <strong>absolute or per-unit</strong>, and whether it includes the supply chain. Apple's claim is against <strong>2015</strong> and is stated as a footprint rather than an intensity, which is the harder of the two to move. A figure quoted without its base year is not a claim, it is a decoration.",
+  },
+  {
     slug: "uae-mangroves-halfway-to-100-million",
     site: "eco",
     image: "/covers/uae-mangroves-halfway-to-100-million.jpg",

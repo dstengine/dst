@@ -2,6 +2,43 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "apples-chairman-now-has-a-policy-job",
+    site: "ldn",
+    image: "/covers/apples-chairman-now-has-a-policy-job.jpg",
+    imageAlt: "Two paper columns flanking a red panel, a small folded white sheet floating between them, low steps beneath",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Apple has created a job whose stated task is talking to governments",
+    cardTitle: "Apple's chairman: a policy job",
+    titleSeo: "Apple&rsquo;s chairman now has a policy remit",
+    summary:
+      "Tim Cook stopped being chief executive on 1 September. His new role comes with a remit Apple wrote down: engaging with policymakers around the world.",
+    date: "2026-09-01",
+    category: "Tech",
+    source: {
+      name: "Apple Newsroom",
+      url: "https://www.apple.com/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo/",
+      verifiedOn: "2026-09-02",
+    },
+    body: [
+      "The headline on 1 September was that Apple changed chief executive. The more revealing detail is what it decided the outgoing one should do next.",
+      "## The wording",
+      "<strong>Tim Cook</strong> became <strong>executive chairman</strong>, and Apple described the role as including engaging with policymakers around the world. Not an honorary chairmanship, not a general advisory arrangement &mdash; a named remit, held by the person who ran the company for fifteen years.",
+      "<strong>John Ternus</strong>, at Apple since <strong>2001</strong> and previously <strong>senior vice president of Hardware Engineering</strong>, took the chief executive's job the same day. <strong>Arthur Levinson</strong>, chairman for the past fifteen years, became lead independent director.",
+      "## What that says about the shape of the work",
+      "A company splits a job in two when one half has grown enough to need its own person. Apple has effectively concluded that dealing with regulators is no longer something a chief executive does between other things.",
+      "That is a judgement about the environment rather than about either man. A firm selling into <strong>200-plus countries and territories</strong> with more than <strong>2.5 billion</strong> active devices is answerable to a great many rule-making bodies at once, and those rules increasingly govern the product itself &mdash; what a store may charge, what a device must be able to connect to, what a service must let a user take away.",
+      "## Why it reads differently from London",
+      "Britain and the European Union have spent this decade writing exactly that kind of rule, which makes them a substantial share of the diary attached to Cook's new job. The practical effect for anyone here is not abstract: the terms on which a phone works, what can be installed on it and what a marketplace may charge are now set as much in regulatory proceedings as in product decisions.",
+      "So a governance line in a corporate announcement is, indirectly, a statement about how much of the product is decided in rooms with no engineers in them.",
+      "## What has not changed",
+      "Nothing for anyone using an Apple device this week. Ternus inherits a company that grew from about <strong>$350 billion</strong> to roughly <strong>$4 trillion</strong> in market value under Cook, with revenue up from <strong>$108 billion</strong> in FY2011 to <strong>$416 billion</strong> in FY2025. Continuity was rather the point of promoting a twenty-five-year insider.",
+    ],
+    expertise:
+      "Watch which of the two now appears in regulatory proceedings. The division only means anything if Cook genuinely fronts them and Ternus genuinely does not; if the chief executive keeps turning up at hearings, the split was cosmetic and the workload simply moved. That is visible in public filings and published hearing lists, and it will be clear within a year.",
+  },
+  {
     slug: "venice-opens-the-autumn-with-a-british-film",
     site: "ldn",
     image: "/covers/venice-opens-the-autumn-with-a-british-film.jpg",

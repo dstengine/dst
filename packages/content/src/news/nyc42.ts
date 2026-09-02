@@ -2,6 +2,43 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "apple-from-350-billion-to-four-trillion",
+    site: "nyc42",
+    image: "/covers/apple-from-350-billion-to-four-trillion.jpg",
+    imageAlt: "A staircase of paper steps climbing from the lower left to a flat top at the right, a single marker lying at the top",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "$350 billion to $4 trillion: the number that ended on 1 September",
+    cardTitle: "$350bn to $4tn, and then a handover",
+    titleSeo: "Apple: $350bn to $4tn under Tim Cook",
+    summary:
+      "Tim Cook handed Apple to John Ternus on 1 September. The run he closes out is the largest single-tenure value creation the market has recorded, and it is not repeatable.",
+    date: "2026-09-01",
+    category: "Business",
+    source: {
+      name: "Apple Newsroom",
+      url: "https://www.apple.com/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo/",
+      verifiedOn: "2026-09-02",
+    },
+    body: [
+      "Wall Street measures a chief executive in one currency, and by that measure <strong>Tim Cook</strong>'s tenure at Apple closed on <strong>1 September 2026</strong> with a figure that will be quoted for a long time.",
+      "## The run",
+      "Apple's market value went from about <strong>$350 billion</strong> when Cook took over in 2011 to roughly <strong>$4 trillion</strong> when he handed off. Revenue climbed from <strong>$108 billion</strong> in FY2011 to <strong>$416 billion</strong> in FY2025. Services alone became a business worth more than <strong>$100 billion</strong> a year &mdash; larger, on its own, than most of the companies it is listed alongside.",
+      "That is roughly <strong>$3.65 trillion</strong> of added market value over fifteen years. There is no second entry close to it.",
+      "## Why it cannot happen again",
+      "The arithmetic forbids it. Repeating the multiple would mean a company worth <strong>$44 trillion</strong>, which is a large fraction of every listed company on earth. The next chief executive is structurally barred from being judged the way the last one was, and any analyst still reaching for that yardstick is using a broken instrument.",
+      "So the successor's scorecard has to be built out of something else: margin, the installed base, and whether the services line keeps compounding once the device count stops.",
+      "## The successor",
+      "<strong>John Ternus</strong>, chief executive since 1 September, joined Apple in <strong>2001</strong> and was <strong>senior vice president of Hardware Engineering</strong>. An operator, from inside, with no mandate to break anything &mdash; the appointment markets read as continuity, announced on <strong>20 April</strong> and executed on schedule <strong>134 days</strong> later.",
+      "Cook stays as <strong>executive chairman</strong> with a stated remit that includes engaging with policymakers worldwide; <strong>Arthur Levinson</strong> became lead independent director.",
+      "## The number nobody trades on",
+      "One line in the record does not fit the others: Apple's carbon footprint is <strong>60% below 2015 levels</strong>, achieved across the same years the revenue quadrupled. It moves no share price. It is also the only figure in the set that got harder to produce every year the others got bigger.",
+    ],
+    expertise:
+      "Treat &laquo;value created under a CEO&raquo; with care as a metric. It bundles the company's own execution with fifteen years of a rising market and a historic re-rating of large technology &mdash; a passive index holder captured a good deal of the same period. The figure that isolates management is closer to the <strong>services line</strong>, which had to be built rather than re-rated, and which is where a successor's record will actually show up first.",
+  },
+  {
     slug: "venice-hands-out-a-lion-new-york-refuses-to-rank",
     site: "nyc42",
     image: "/covers/venice-hands-out-a-lion-new-york-refuses-to-rank.jpg",

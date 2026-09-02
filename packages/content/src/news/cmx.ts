@@ -2,6 +2,42 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "apple-cambia-de-director-general",
+    site: "cmx",
+    image: "/covers/apple-cambia-de-director-general.jpg",
+    imageAlt: "Un campo de discos de papel idénticos en filas regulares, todos a la misma altura y con la misma sombra",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Apple cambió de director general y en M&eacute;xico no cambia nada &mdash; todav&iacute;a",
+    cardTitle: "Apple cambia de director general",
+    titleSeo: "Apple: John Ternus sustituye a Tim Cook",
+    summary:
+      "John Ternus asumi&oacute; el 1 de septiembre. La empresa opera en m&aacute;s de 200 pa&iacute;ses y territorios, as&iacute; que la decisi&oacute;n llega a todos los mercados el mismo d&iacute;a, incluido este.",
+    date: "2026-09-01",
+    category: "Tecnolog&iacute;a",
+    source: {
+      name: "Apple Newsroom",
+      url: "https://www.apple.com/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo/",
+      verifiedOn: "2026-09-02",
+    },
+    body: [
+      "Hay decisiones corporativas que ocurren en un pa&iacute;s y tardan a&ntilde;os en notarse en el resto. Esta no: Apple vende en <strong>m&aacute;s de 200 pa&iacute;ses y territorios</strong>, y el <strong>1 de septiembre de 2026</strong> todos ellos amanecieron con un director general distinto.",
+      "## Qu&eacute; pas&oacute; exactamente",
+      "<strong>John Ternus</strong> es el nuevo director ejecutivo de Apple. <strong>Tim Cook</strong>, que ocup&oacute; el cargo durante quince a&ntilde;os, pas&oacute; a ser <strong>presidente ejecutivo</strong> del consejo, con una funci&oacute;n que la propia empresa describe como el trato con reguladores y autoridades de todo el mundo. <strong>Arthur Levinson</strong>, presidente del consejo durante los &uacute;ltimos quince a&ntilde;os, qued&oacute; como consejero independiente principal.",
+      "El cambio se anunci&oacute; el <strong>20 de abril</strong> y se ejecut&oacute; en la fecha prometida.",
+      "## La escala de lo que cambia de manos",
+      "Bajo Cook, el valor de mercado de Apple pas&oacute; de unos <strong>350 mil millones de d&oacute;lares</strong> a cerca de <strong>4 billones</strong>. Los ingresos subieron de <strong>108 mil millones</strong> en el a&ntilde;o fiscal 2011 a <strong>416 mil millones</strong> en 2025. La divisi&oacute;n de servicios super&oacute; por s&iacute; sola los <strong>100 mil millones</strong>. Hay m&aacute;s de <strong>2 500 millones</strong> de dispositivos activos en uso.",
+      "## Por qu&eacute; importa desde aqu&iacute;",
+      "Para quien compre un tel&eacute;fono esta semana, nada. El precio, la garant&iacute;a y las tiendas siguen igual, y esa continuidad es precisamente el motivo por el que se eligi&oacute; a alguien de dentro: Ternus entr&oacute; a la empresa en <strong>2001</strong> y dirig&iacute;a la <strong>ingenier&iacute;a de hardware</strong> &mdash; el iPhone, el iPad, la Mac, el Apple Watch y los AirPods f&iacute;sicos.",
+      "Lo que s&iacute; cambia es qui&eacute;n decide c&oacute;mo ser&aacute; ese tel&eacute;fono dentro de cinco a&ntilde;os, y con qu&eacute; criterio. Un ingeniero de hardware al mando de una empresa cuyo problema abierto m&aacute;s dif&iacute;cil es de software es una apuesta, no un tr&aacute;mite.",
+      "## El dato que casi nadie cita",
+      "En el mismo balance aparece que la huella de carbono de Apple est&aacute; <strong>60% por debajo de los niveles de 2015</strong>. Es una reducci&oacute;n absoluta, no por unidad, lograda mientras los ingresos se cuadruplicaban. De todas las cifras del recuento, es la &uacute;nica que se volv&iacute;a m&aacute;s dif&iacute;cil cada a&ntilde;o que las dem&aacute;s crec&iacute;an.",
+    ],
+    expertise:
+      "Al leer cualquier relevo directivo, la pregunta &uacute;til no es qui&eacute;n entra sino <strong>qu&eacute; se qued&oacute; el que sale</strong>. Aqu&iacute; Cook conserva un papel con l&iacute;mites escritos &mdash; reguladores y autoridades &mdash; y no una asesor&iacute;a difusa. Cuando el saliente se queda sin funciones definidas, en la pr&aacute;ctica sigue mandando y nadie sabe a qui&eacute;n preguntarle.",
+  },
+  {
     slug: "venecia-2026-dos-leones-antes-del-jurado",
     site: "cmx",
     image: "/covers/venecia-2026-dos-leones-antes-del-jurado.jpg",

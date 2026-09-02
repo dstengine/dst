@@ -2,6 +2,43 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "apple-published-its-succession-134-days-early",
+    site: "llc",
+    image: "/covers/apple-published-its-succession-134-days-early.jpg",
+    imageAlt: "Two paper discs set far apart on a long pale band running across the frame",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Apple published its succession 134 days before it happened",
+    cardTitle: "134 days of notice",
+    titleSeo: "The 134-day succession notice",
+    summary:
+      "Announced 20 April, effective 1 September. The gap is the part a company of any size can copy, and almost none do.",
+    date: "2026-09-01",
+    category: "Business",
+    source: {
+      name: "Apple Newsroom",
+      url: "https://www.apple.com/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo/",
+      verifiedOn: "2026-09-02",
+    },
+    body: [
+      "On <strong>20 April 2026</strong> Apple said that <strong>Tim Cook</strong> would become executive chairman and <strong>John Ternus</strong> would become chief executive. The change took effect on <strong>1 September 2026</strong>. Between those two dates there were <strong>134 days</strong> in which everyone who deals with Apple knew exactly what was coming and exactly when.",
+      "## Why that gap is unusual",
+      "The default corporate pattern is to announce a leadership change and enact it in the same press release, often before markets open. It is defensible &mdash; it shortens the window in which a departing executive is a lame duck &mdash; and it has one large cost: every counterparty learns simultaneously that a decision affecting them was taken entirely without them.",
+      "A dated handover inverts that. Suppliers, regulators, large customers and staff all get the same information at the same time, with months to act on it. Nobody has to guess, and nobody gets to claim they were surprised.",
+      "## What was actually specified",
+      "Not just the names. Apple set out the shape of all three roles: Ternus, previously <strong>senior vice president of Hardware Engineering</strong> and at the company since <strong>2001</strong>, takes the chief executive's job; Cook takes <strong>executive chairman</strong> with a stated remit that includes engaging with policymakers around the world; and <strong>Arthur Levinson</strong>, non-executive chairman for fifteen years, becomes <strong>lead independent director</strong>.",
+      "Three defined positions, one effective date. That is a governance document, not an announcement.",
+      "## The transferable part",
+      "None of this depends on being Apple. A company with twelve people has the same problem in miniature: the founder is the single point of failure, everyone knows it, and nobody will say so until the week it becomes urgent.",
+      "The mechanism that Apple used costs nothing to imitate &mdash; name the successor, name the date, name what the outgoing person will still do &mdash; and it converts the most disruptive event in a company's life into a scheduled one. The reason it is rare is not expense. It is that it requires the decision to be genuinely made before it is announced.",
+      "## For a company being set up now",
+      "The version of this that matters at incorporation is duller and even easier: write down who signs if the person who normally signs is unreachable, and put a date on when that arrangement is reviewed. Most structures are drafted as though the people in them are permanent. Apple, at <strong>$416 billion</strong> of annual revenue, did not assume that. A new company has less excuse.",
+    ],
+    expertise:
+      "Read the sequence rather than the headline: the board approved the plan, the plan was published with an effective date, and the outgoing chief executive kept a <strong>named and bounded</strong> role rather than a vague advisory one. Vague continuing roles are where succession goes wrong &mdash; an unbounded &laquo;founder emeritus&raquo; leaves it unclear who decides, which is the exact ambiguity the exercise was meant to remove.",
+  },
+  {
     slug: "difc-passes-10000-active-companies",
     site: "llc",
     image: "/covers/difc-passes-10000-active-companies.jpg",

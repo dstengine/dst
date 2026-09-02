@@ -2,6 +2,43 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "veinticinco-anos-para-llegar-a-la-cima",
+    site: "mxo",
+    image: "/covers/veinticinco-anos-para-llegar-a-la-cima.jpg",
+    imageAlt: "Una escalera de papel que asciende en escalones iguales hasta un borde alto",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Veinticinco a&ntilde;os dentro del mismo edificio",
+    cardTitle: "De ingeniero a director general",
+    titleSeo: "John Ternus, 25 a&ntilde;os en Apple",
+    summary:
+      "John Ternus entr&oacute; a Apple en 2001 y la dirige desde el 1 de septiembre de 2026. Es una carrera que la industria tecnol&oacute;gica dice ya no premiar.",
+    date: "2026-09-01",
+    category: "Tecnolog&iacute;a",
+    source: {
+      name: "Apple Newsroom",
+      url: "https://www.apple.com/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo/",
+      verifiedOn: "2026-09-02",
+    },
+    body: [
+      "La versi&oacute;n oficial de c&oacute;mo se hace una carrera en tecnolog&iacute;a es que uno cambia de empresa cada tres o cuatro a&ntilde;os, porque la lealtad no paga y el ascenso llega desde fuera. El <strong>1 de septiembre de 2026</strong> la empresa m&aacute;s valiosa del mundo hizo lo contrario.",
+      "## La trayectoria",
+      "<strong>John Ternus</strong> entr&oacute; a Apple en <strong>2001</strong>. Veinticinco a&ntilde;os despu&eacute;s, sin haber salido, es su director ejecutivo. Lleg&oacute; al puesto desde la <strong>vicepresidencia senior de Ingenier&iacute;a de Hardware</strong>: el responsable de que el iPhone, el iPad, la Mac, el Apple Watch y los AirPods existan como objetos fabricables.",
+      "No es un perfil de estratega ni de finanzas. Es el perfil de alguien que pas&oacute; un cuarto de siglo resolviendo problemas f&iacute;sicos con tolerancias medidas en fracciones de mil&iacute;metro.",
+      "## A qui&eacute;n sustituye",
+      "<strong>Tim Cook</strong> dirigi&oacute; Apple quince a&ntilde;os y ahora es <strong>presidente ejecutivo</strong> del consejo. Su descripci&oacute;n del sucesor, textual: tiene &laquo;la mente de un ingeniero, el alma de un innovador y el coraz&oacute;n para dirigir con integridad&raquo;.",
+      "Cook tambi&eacute;n hizo una carrera larga dentro de la casa antes de llegar al puesto. Dos relevos seguidos resueltos desde adentro no son casualidad: son una pol&iacute;tica.",
+      "## Lo que hered&oacute;",
+      "Valor de mercado de cerca de <strong>4 billones de d&oacute;lares</strong>, frente a unos <strong>350 mil millones</strong> en 2011. Ingresos de <strong>416 mil millones</strong> en el a&ntilde;o fiscal 2025, contra <strong>108 mil millones</strong> en 2011. M&aacute;s de <strong>100 000</strong> empleados sumados en el periodo y m&aacute;s de <strong>2 500 millones</strong> de dispositivos activos en <strong>m&aacute;s de 200 pa&iacute;ses y territorios</strong>.",
+      "## Por qu&eacute; la promoci&oacute;n interna es la parte interesante",
+      "Una empresa que asciende desde dentro est&aacute; diciendo que su conocimiento cr&iacute;tico no est&aacute; escrito en ning&uacute;n manual: vive en gente que lleva d&eacute;cadas ah&iacute;. Es una fortaleza y una fragilidad al mismo tiempo, y explica por qu&eacute; el anuncio se hizo el <strong>20 de abril</strong> para una fecha efectiva del 1 de septiembre &mdash; cuatro meses y medio de aviso p&uacute;blico para un traspaso que, en teor&iacute;a, no requer&iacute;a ninguna presentaci&oacute;n.",
+      "La duda leg&iacute;tima es la contraria: veinticinco a&ntilde;os dentro ense&ntilde;an a no romper lo que funciona, y hay momentos en los que eso es exactamente lo que hace falta romper.",
+    ],
+    expertise:
+      "Para leer un ascenso interno conviene mirar la <strong>funci&oacute;n de origen</strong>, no los a&ntilde;os. Un director general que viene de finanzas u operaciones optimiza lo que ya existe; uno que viene de ingenier&iacute;a de producto suele defender el producto por encima del margen. Ternus viene de la segunda, y eso se notar&aacute; primero en decisiones aburridas &mdash; materiales, reparabilidad, cu&aacute;nto dura un modelo en cat&aacute;logo &mdash; mucho antes que en un anuncio.",
+  },
+  {
     slug: "venecia-2026-una-sola-pelicula-latinoamericana",
     site: "mxo",
     image: "/covers/venecia-2026-una-sola-pelicula-latinoamericana.jpg",
