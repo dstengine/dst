@@ -856,3 +856,31 @@ describe("news and events", () => {
     }
   });
 });
+
+// A site built from data drifts toward the template: every new page carries
+// the same furniture, and one day the furniture outweighs the facts. That is
+// the state a search engine reads as a doorway, and no other test on this
+// repo can see it — each page is individually correct.
+//
+// The numbers below are a ratchet, not a target. Each is today's measured
+// average with a little headroom. Raising one is allowed; doing it silently
+// is not, which is the whole point of writing them down. musical's 35 is a
+// recorded debt: sixty run stops share their venue paragraphs and their
+// question list, and the fix for that is sixty written sentences, not code.
+describe("how much of each site is the template", () => {
+  const CEILING = {
+    dst: 25, llc: 10, visas: 10, riviera: 10, mbr: 10, palmcentral: 20,
+    eco: 10, fwf: 20, musical: 35, nyc42: 27, ldn: 25, lnd: 25, cmx: 32, mxo: 25,
+  };
+
+  test("no site is more template than the ceiling it recorded", async () => {
+    const { analyse } = await import("../tools/text-dupes.mjs");
+    const over = [];
+    for (const [app, ceiling] of Object.entries(CEILING)) {
+      const { boilerAvg } = analyse(path.join(REPO, "apps", app, "dist"));
+      const pct = boilerAvg * 100;
+      if (pct > ceiling) over.push(`${app}: ${pct.toFixed(1)}% boilerplate, ceiling ${ceiling}%`);
+    }
+    assert.deepEqual(over, [], `a template grew:\n  ${over.join("\n  ")}`);
+  });
+});

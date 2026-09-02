@@ -4,22 +4,31 @@
 // `a` may contain a small set of inline tags (<strong>, <em>) — Google's
 // FAQPage guidelines explicitly allow that subset in the answer text, so it
 // goes into the JSON-LD as-is rather than being stripped to plain text.
-interface QA { q: string; a: string }
+//
+// `generic` marks an answer that is the same wherever it appears: a site-wide
+// policy, a disclaimer, anything already said in the footer. Those still show
+// on the page — a reader asking the question deserves the answer where they
+// are — but they are kept out of the markup. Structured data is a claim about
+// *this* page, and the identical claim repeated across sixty pages is what a
+// search engine reads as a template rather than as an answer. A block whose
+// answers are all generic emits no FAQPage at all.
+interface QA { q: string; a: string; generic?: boolean }
 interface Props { items: QA[] }
 
 const { items } = Astro.props;
 
-const jsonLd = {
+const specific = items.filter((item) => !item.generic);
+const jsonLd = specific.length > 0 ? {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: items.map((item) => ({
+  mainEntity: specific.map((item) => ({
     "@type": "Question",
     name: item.q,
     acceptedAnswer: { "@type": "Answer", text: item.a },
   })),
-};
+} : null;
 ---
-<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+{jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
 <div class="faq">
   {items.map((item) => (
     <details class="faq-item">

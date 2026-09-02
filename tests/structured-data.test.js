@@ -234,3 +234,75 @@ describe("freshness", () => {
     }
   });
 });
+
+// Structured data is a claim about the page it sits on. The same claim
+// repeated across dozens of pages stops being a claim and becomes a
+// template — the thing a search engine reads as a doorway. These checks
+// exist because sixty run pages once carried the same four answers, one of
+// them word for word what the footer already said.
+describe("markup that is about this page and not about the template", () => {
+  /** Every Q&A published as FAQPage, and where. */
+  const answers = () => {
+    const seen = new Map();
+    for (const p of pages)
+      for (const block of p.blocks.filter((b) => b["@type"] === "FAQPage"))
+        for (const q of block.mainEntity ?? []) {
+          const key = `${q.name} || ${q.acceptedAnswer?.text}`;
+          if (!seen.has(key)) seen.set(key, []);
+          seen.get(key).push(`${p.app}${p.url}`);
+        }
+    return seen;
+  };
+
+  // Two is the honest maximum: one theatre, two shows, one true answer to
+  // "which theatre is it in". Three is already a pattern, and a pattern
+  // belongs on the page rather than in the markup — mark it `generic` in the
+  // Faq item and it stays visible without being published as a claim.
+  test("no FAQ answer is published as markup on more than two pages", () => {
+    for (const [key, where] of answers())
+      assert.ok(
+        where.length <= 2,
+        `this answer is in the FAQPage markup of ${where.length} pages — mark it generic:\n  ${key.slice(0, 120)}\n  ${where.slice(0, 3).join(", ")}…`,
+      );
+  });
+
+  // The footer already says it on every page. Saying it again as a question
+  // is a hundred and forty words of nothing, sixty times over.
+  test("no FAQ answer repeats the site's own footer note", () => {
+    const norm = (s) => s.replace(/<[^>]+>/g, " ").replace(/[^a-z0-9 ]/gi, " ").replace(/\s+/g, " ").trim().toLowerCase();
+    const notes = new Map();
+    for (const p of pages) {
+      const note = norm((p.html.match(/<p class="footer-note"[^>]*>([\s\S]*?)<\/p>/) || [])[1] ?? "");
+      if (note) notes.set(p.app, note);
+    }
+    for (const [key, where] of answers()) {
+      const note = notes.get(where[0].split("/")[0]);
+      if (!note) continue;
+      const answer = norm(key.split(" || ")[1] ?? "");
+      // Six words in common is the same sentence rephrased, not a coincidence.
+      const words = answer.split(" ");
+      const runs = words.map((_, i) => words.slice(i, i + 6).join(" ")).filter((r) => r.split(" ").length === 6);
+      const echo = runs.find((r) => note.includes(r));
+      assert.ok(!echo, `${where[0]}: an FAQ answer repeats the footer note — "${echo}"`);
+    }
+  });
+
+  test("no two pages of a site share a title or a meta description", () => {
+    for (const app of APPS) {
+      for (const what of ["title", "description"]) {
+        const seen = new Map();
+        for (const p of pages.filter((p) => p.app === app)) {
+          const v =
+            what === "title"
+              ? (p.html.match(/<title>([\s\S]*?)<\/title>/) || [])[1]
+              : attr(p.html, /<meta name="description" content="([^"]*)"/);
+          if (!v) continue;
+          if (!seen.has(v)) seen.set(v, []);
+          seen.get(v).push(p.url);
+        }
+        for (const [v, urls] of seen)
+          assert.equal(urls.length, 1, `${app}: ${urls.length} pages share a ${what} — ${urls.slice(0, 3).join(", ")}\n  "${v.slice(0, 90)}"`);
+      }
+    }
+  });
+});

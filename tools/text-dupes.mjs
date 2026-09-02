@@ -10,10 +10,16 @@
 // It counts 6-word runs. A run found on two pages is a cross-link; one found
 // on five or more is a template, and that is the number to watch. Pass a
 // page path as a second argument to print that page's text.
+//
+// `analyse(dist)` is exported so the test suite scores a site with exactly
+// this code rather than a second copy of it that drifts.
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join, relative } from "node:path";
 
-const root = process.argv[2];
+/** A 6-word run on this many pages is a template, not a coincidence. */
+export const MANY = 5;
+
+export function analyse(root) {
 const files = [];
 (function walk(dir) {
   for (const e of readdirSync(dir)) {
@@ -59,7 +65,6 @@ for (const p of pages) for (const s of p.shingles) seen.set(s, (seen.get(s) ?? 0
 
 // Boilerplate is text that appears on MANY pages. Two pages sharing a
 // sentence is a cross-link; twenty pages sharing one is a template.
-const MANY = 5;
 const scored = pages.map((p) => {
   let shared = 0;
   let boiler = 0;
@@ -71,6 +76,16 @@ const scored = pages.map((p) => {
     pct: p.shingles.size ? shared / p.shingles.size : 0,
     bpct: p.shingles.size ? boiler / p.shingles.size : 0 };
 });
+
+const avg = (get) => scored.reduce((s, p) => s + get(p), 0) / (scored.length || 1);
+return { pages: scored, phrases: seen, sharedAvg: avg((p) => p.pct), boilerAvg: avg((p) => p.bpct) };
+}
+
+// Everything below is the command line. Nothing above it prints.
+if (import.meta.url === `file://${process.argv[1]}`) {
+const root = process.argv[2];
+const { pages, phrases: seen, sharedAvg: avg, boilerAvg: bavg } = analyse(root);
+const scored = pages;
 
 console.log(`pages ${pages.length}\n`);
 console.log("— duplicate <title>");
@@ -95,8 +110,6 @@ console.log("\n— thinnest pages");
 scored.slice().sort((a, b) => a.words - b.words).slice(0, 10)
   .forEach((p) => console.log(`  ${String(p.words).padStart(5)}w  ${(p.pct * 100).toFixed(0)}% shared  ${p.url}`));
 
-const avg = scored.reduce((s, p) => s + p.pct, 0) / scored.length;
-const bavg = scored.reduce((s, p) => s + p.bpct, 0) / scored.length;
 console.log(`\nsite average: ${(avg * 100).toFixed(1)}% shared with any page, ${(bavg * 100).toFixed(1)}% boilerplate`);
 
 const focus = process.argv.slice(3).find((a) => !a.startsWith("--"));
@@ -104,4 +117,5 @@ if (focus) {
   const p = scored.find((x) => x.url === focus);
   console.log(`\n=== ${focus} (${p.words}w, ${(p.pct*100).toFixed(0)}% shared)\n`);
   console.log(p.text);
+}
 }

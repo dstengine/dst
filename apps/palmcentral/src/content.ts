@@ -120,7 +120,7 @@ export const faqItems = [
   },
   {
     q: "Who is the developer, and is this an official Nakheel site?",
-    a: "Palm Central is developed by <strong>Nakheel</strong> — the master developer behind Palm Jumeirah, Deira Islands, and the wider Palm Jebel Ali master plan. This site is independent advisory content, not affiliated with or endorsed by Nakheel; official transactions and documentation run through Nakheel or their appointed sales channels.",
+    a: "Palm Central is developed by <strong>Nakheel</strong> — the master developer behind Palm Jumeirah, Deira Islands, and the wider Palm Jebel Ali master plan. This is not Nakheel's own site: every transaction and every document goes through Nakheel or one of their appointed sales channels.",
   },
   {
     q: "Where exactly is Palm Central on Palm Jebel Ali?",
