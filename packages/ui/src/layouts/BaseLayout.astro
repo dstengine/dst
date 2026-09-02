@@ -317,12 +317,21 @@ const lateIcons = navFootprint > 700;
         {footerSites.length > 0 && (
           <NetworkLinks heading="Straight to" sites={footerSites} />
         )}
+        {/* data-nosnippet, so the disclaimer and the licence line can never be
+            pulled as a page's description in a search result. They are here to
+            be found by anyone who looks for them, not to introduce the site.
+            The attribute is honoured on div, span and section — hence the
+            wrapper rather than the attribute on the paragraphs themselves.
+            It hides nothing from the index: the text stays crawlable, it just
+            stops being snippet material. */}
+        <div data-nosnippet>
         <p class="footer-note">{complianceNote}</p>
         <p class="footer-copy">
           &copy; {new Date().getFullYear()} {footerSiteName}.{networkFooter && (<>{" "}Part of the{" "}
           {isDstHome ? "DST network" : <a href="https://dst.llc" title="DST — the group behind this site">DST network</a>}{partnerDisclosure && (<>, digital partner of DEAL KEY PROPERTIES LLC, DED License No. 1523000 &middot; RERA ORN 52875</>
           )}.</>)}
         </p>
+        </div>
         {footerLinks.length > 0 && (
           <p class="footer-links">
             {footerLinks.map((link, i) => (
