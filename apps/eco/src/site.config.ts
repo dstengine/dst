@@ -17,5 +17,5 @@ export const site = {
   // environmental page actually has to be careful about.
   partnerDisclosure: false,
   complianceNote:
-    "This page describes DST's own environmental activity. It is not a carbon-offset programme: nothing here is sold, certified, or counted as an offset credit.",
+    "DST's own environmental activity, not a carbon-offset programme: nothing here is sold, certified or counted as a credit.",
 };

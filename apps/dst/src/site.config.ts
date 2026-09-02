@@ -9,7 +9,7 @@ export const site = {
   siteName: "DST",
   titleSuffix: "DST",
   complianceNote:
-    "DST builds and operates the systems behind each venture; execution in regulated verticals (real estate, financial services) is carried out by licensed local partners.",
+    "DST builds and operates the systems; regulated work — real estate, financial services — is carried out by licensed local partners.",
   logoSrc: "/logo-mini.png",
   favicon: true,
   // The hub lists the whole network in its footer, so every page of it

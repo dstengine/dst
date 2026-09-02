@@ -8,6 +8,6 @@ export const site = {
   titleSuffix: "Palm Central",
   footerSiteName: "Palm Central DST",
   complianceNote:
-    "Independent advisory site, not affiliated with or endorsed by Nakheel. Prices, availability, and release phases change — confirm current terms directly with the developer or a licensed broker before acting.",
+    "Independent advisory site, not affiliated with or endorsed by Nakheel. Prices and release phases change; confirm current terms with the developer or a licensed broker.",
   footerLinks: [{ href: "/privacy/", label: "Privacy" }],
 };

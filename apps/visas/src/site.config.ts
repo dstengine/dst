@@ -7,6 +7,6 @@ export const site = {
   siteName: "Dubai Residency",
   titleSuffix: "Dubai Residency",
   complianceNote:
-    "Informational content, not immigration or legal advice. Golden Visa thresholds and eligibility criteria are set by UAE federal authorities and can change — always confirm current requirements before making an investment decision.",
+    "Informational, not immigration or legal advice. UAE federal authorities set the Golden Visa thresholds and change them; confirm the current ones before you invest.",
   partnerDisclosure: true,
 };

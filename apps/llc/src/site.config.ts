@@ -7,6 +7,6 @@ export const site = {
   siteName: "Dubai Company Formation",
   titleSuffix: "Dubai Company Formation",
   complianceNote:
-    "Informational content, not legal or financial advice. Always confirm current requirements with DED or your chosen free zone authority before acting.",
+    "Informational, not legal or financial advice. Confirm current requirements with DED or your chosen free zone authority.",
   partnerDisclosure: false,
 };

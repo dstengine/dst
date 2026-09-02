@@ -43,4 +43,4 @@ export const siteHeaderImage = {
 
 /** What this site is, in one sentence, wherever it has to be said again. */
 export const disclaimer =
-  "Independent guide. Not the organiser, not affiliated with Futur World Expo, and not a ticket seller — confirm every detail on the official ticket page before you book anything.";
+  "Independent guide, not affiliated with Futur World Expo. Booking happens on the official ticket page, and the details there are the ones that count.";

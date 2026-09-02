@@ -2,7 +2,7 @@ export const site = {
   siteName: "Azizi Riviera",
   titleSuffix: "Azizi Riviera Guide",
   complianceNote:
-    "Independent local guide, not affiliated with Azizi Developments. Amenities, businesses, and transit details change — confirm specifics before relying on them.",
+    "Independent local guide, not affiliated with Azizi Developments. Shops, amenities and transit change; check anything time-sensitive.",
   partnerDisclosure: true,
   // Default page opener for the whole site. Any page can override it by
   // setting its own `image` (and `imageAlt`) in content.ts.

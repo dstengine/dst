@@ -26,7 +26,7 @@ export const checkedOn = "29 August 2026";
 
 /** What this site is, wherever it has to be said again. */
 export const disclaimer =
-  "Independent listings site. Not a producer, not a venue and not a ticket seller — every booking happens on the seller's own page, and prices and dates should be confirmed there.";
+  "Independent listings site. Every booking happens on the seller's own page, and the price and dates there are the ones that count.";
 
 /** The run the cross-site promo block leads with. */
 export const featuredRun = { show: "chicago", run: "dubai" };
