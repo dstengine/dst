@@ -260,16 +260,38 @@ describe("images", () => {
 
   // The pair above only holds if a decorative image really is decorative.
   // Anything hidden from assistive technology must be chrome, never a
-  // picture the page is about.
+  // picture the page is about. Two things qualify: the logo marks beside the
+  // site name, and the analytics counter in the footer — which is not a
+  // picture at all but a 1x1 transparent GIF a script points at a logging
+  // endpoint, and has nothing to describe to anybody.
   test("only site chrome is hidden from assistive technology", () => {
     for (const p of contentPages()) {
       for (const tag of imgsOf(p.html)) {
         if (!/aria-hidden="true"/.test(tag)) continue;
+        if (/class="[^"]*\bcounter\b/.test(tag)) continue;
         const src = (tag.match(/src="([^"]+)"/) || [])[1] ?? "";
         assert.match(
           src,
           /logo/,
           `${p.app}${p.url}: a picture that isn't a logo is hidden from screen readers — ${tag}`,
+        );
+      }
+    }
+  });
+
+  // The counter is exempted above, so it has to actually be the thing that
+  // was exempted: invisible, undescribed, and not fetching anything until
+  // its script runs.
+  test("the analytics counter is an invisible placeholder, not an image", () => {
+    for (const p of contentPages()) {
+      for (const tag of imgsOf(p.html)) {
+        if (!/class="[^"]*\bcounter\b/.test(tag)) continue;
+        assert.match(tag, /aria-hidden="true"/, `${p.app}${p.url}: the counter must be hidden from screen readers`);
+        assert.match(tag, /\salt=""/, `${p.app}${p.url}: the counter has nothing to describe`);
+        assert.match(
+          tag,
+          /src="data:image\/gif;base64,/,
+          `${p.app}${p.url}: the counter must ship as an inert placeholder and be pointed at a host by its script`,
         );
       }
     }

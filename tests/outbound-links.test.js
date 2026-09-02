@@ -42,6 +42,7 @@ const ALLOWED = {
   "www.openstreetmap.org": "the keyless map embed used on venue and event pages",
   "nominatim.openstreetmap.org": "names the place behind GPS coordinates, once the visitor has granted them",
   "www.youtube-nocookie.com": "video the uploader allows to be embedded, in YouTube's no-cookie player",
+  "counter.yadro.ru": "the LiveInternet counter in the footer, a second set of numbers beside GA",
 };
 
 // Fields of a VideoObject that say where the embedded media lives rather
