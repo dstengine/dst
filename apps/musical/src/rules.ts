@@ -434,12 +434,56 @@ export const formatDay = (iso: string): string =>
     year: "numeric",
   });
 
-/** Money as the seller's own market writes it. No currency conversion: a
-    Tokyo run priced in yen is quoted in yen, because that is the number on
-    the seller's page and the only one a reader can check. */
+/** The currency a stop is priced in, decided by where the stop is rather
+    than typed by hand. Five countries, five currencies, and no way to write
+    GBP on a Dublin price by accident — tests/prices.test.js checks the data
+    against this rather than trusting the literal in runs.ts. */
+const CURRENCY_BY_COUNTRY: Record<string, string> = {
+  "United Kingdom": "GBP",
+  Ireland: "EUR",
+  Japan: "JPY",
+  "United Arab Emirates": "AED",
+  "United States": "USD",
+};
+
+export const currencyFor = (city: City): string | undefined => CURRENCY_BY_COUNTRY[city.country];
+
+/** Each market's own way of writing its money. Formatting every currency in
+    en-GB gave "JP¥13,000" and "US$99" — correct, and not how a page about a
+    Tokyo run should read.
+
+    en-JP rather than ja-JP for yen: ja-JP returns the full-width ￥ (U+FFE5),
+    which is right inside Japanese text and a foreign body in an English
+    sentence. en-JP gives the half-width ¥ and the same grouping. The page is
+    in English about a Japanese theatre, so the number is Japanese and the
+    typography is not. */
+const LOCALE: Record<string, string> = {
+  GBP: "en-GB",
+  EUR: "en-IE",
+  JPY: "en-JP",
+  AED: "en-AE",
+  USD: "en-US",
+};
+
+/** Money as the seller's own market writes it. No currency conversion, ever:
+    a Tokyo run priced in yen is quoted in yen, because that is the number on
+    the seller's page and the only one a reader can check at the till. A
+    converted figure would be the one number here nobody could verify, and it
+    would be wrong by the time it was read. */
+/** Currencies written without a fractional part. Yen has none. The dirham
+    has fils, and nobody prices in them: dkeyproperties.ae, which sells in
+    this market every day, prints "AED <number_format(price)>" — code first,
+    thousands separated, no decimals at all — and AED is one of the audiences
+    this site is for, so it is written the way that audience reads it.
+
+    Rounding a real fraction away would be dishonest rather than tidy, so
+    tests/prices.test.js requires prices in these currencies to be whole
+    numbers in the data instead of quietly rounding them here. */
+const ZERO_DECIMAL = new Set(["JPY", "AED"]);
+
 export function formatPrice(amount: number, currency: string): string {
-  const zeroDecimal = currency === "JPY";
-  return new Intl.NumberFormat("en-GB", {
+  const zeroDecimal = ZERO_DECIMAL.has(currency);
+  return new Intl.NumberFormat(LOCALE[currency] ?? "en-GB", {
     style: "currency",
     currency,
     minimumFractionDigits: zeroDecimal ? 0 : amount % 1 === 0 ? 0 : 2,
@@ -460,11 +504,20 @@ export function priceValidUntil(price: Price): string {
     from. Undefined when nobody has checked, or when everything on file has
     expired — both of which the page renders as silence, not as a guess. */
 export function priceFrom(run: Run): { price: Price; seller: Seller } | undefined {
-  const live = run.sellers
-    .filter((s): s is Seller & { price: Price } => !!s.price && priceIsFresh(s.price))
-    .sort((a, b) => a.price.from - b.price.from);
-  const best = live[0];
-  return best ? { price: best.price, seller: best } : undefined;
+  const live = run.sellers.filter((s): s is Seller & { price: Price } => !!s.price && priceIsFresh(s.price));
+  if (live.length === 0) return undefined;
+
+  // Cheapest, but only among sellers quoting the same money. Sorting on the
+  // number alone made 25 EUR cheaper than 24 GBP, which it is not — the site
+  // does not convert, so it must not compare across currencies either. The
+  // run's own market wins; where a seller quotes something else, it is left
+  // to the sellers table rather than picked because its number looked small.
+  const city = cityBySlug(run.city);
+  const home = city ? currencyFor(city) : undefined;
+  const inHome = home ? live.filter((s) => s.price.currency === home) : [];
+  const pool = inHome.length > 0 ? inHome : live.filter((s) => s.price.currency === live[0]!.price.currency);
+  const best = [...pool].sort((a, b) => a.price.from - b.price.from)[0]!;
+  return { price: best.price, seller: best };
 }
 
 /** "from £25" for a button or a badge. */

@@ -11,6 +11,16 @@ import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 
 const { runs } = await import("../apps/musical/src/data/runs.ts");
+const { cities } = await import("../apps/musical/src/data/cities.ts");
+
+// Must match CURRENCY_BY_COUNTRY in apps/musical/src/rules.ts.
+const CURRENCY = {
+  "United Kingdom": "GBP",
+  Ireland: "EUR",
+  Japan: "JPY",
+  "United Arab Emirates": "AED",
+  "United States": "USD",
+};
 
 const STALE_DAYS = 42; // must match PRICE_STALE_DAYS in apps/musical/src/rules.ts
 const today = new Date().toISOString().slice(0, 10);
@@ -51,6 +61,42 @@ describe("ticket prices", () => {
       if (price.to !== undefined)
         assert.ok(price.to >= price.from, `${run.show}/${run.slug}: range runs backwards`);
     }
+  });
+
+  test("a price is in the currency of the country it is sold in", () => {
+    for (const { run, price } of priced) {
+      const city = cities.find((c) => c.slug === run.city);
+      assert.ok(city, `${run.show}/${run.slug}: no city record`);
+      const expected = CURRENCY[city.country];
+      assert.ok(expected, `${city.country} has no currency on file — add it to CURRENCY_BY_COUNTRY`);
+      assert.equal(
+        price.currency,
+        expected,
+        `${run.show}/${run.slug} is in ${city.country}, so ${price.currency} is a typo for ${expected}`,
+      );
+    }
+  });
+
+  test("every country a run plays in has a currency on file", () => {
+    const playing = new Set(runs.filter((r) => r.status !== "ended").map((r) => r.city));
+    for (const city of cities.filter((c) => playing.has(c.slug)))
+      assert.ok(
+        CURRENCY[city.country],
+        `${city.name} is in ${city.country}, which has no currency — a price there could not be written`,
+      );
+  });
+
+  // Must match ZERO_DECIMAL in apps/musical/src/rules.ts. These render with
+  // no fractional part, so a fraction in the data would be rounded away on
+  // the page and the reader would be quoted a price nobody is asking.
+  test("prices in a currency written without decimals are whole numbers", () => {
+    for (const { run, price } of priced)
+      if (["JPY", "AED"].includes(price.currency))
+        assert.equal(
+          price.from % 1,
+          0,
+          `${run.show}/${run.slug}: ${price.from} ${price.currency} would be rounded on the page`,
+        );
   });
 
   test("a run that is over does not carry a live price", () => {
