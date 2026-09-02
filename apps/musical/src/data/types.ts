@@ -224,6 +224,12 @@ export interface Show {
       Pages covering both shows keep the site-wide constant, which is the
       older of the dates and therefore the safe one. */
   checkedOn: string;
+  /** The production's own site: the slug in outbound.ts, and the domain as
+      it is printed in the source line. Per show, because it is the thing
+      being cited — a Cats page that credits chicagothemusical.com is citing
+      a source that does not cover it, which is worse than citing none. */
+  officialSlug: string;
+  officialDomain: string;
   /** The opening of the show's own page: the surprising true thing first,
       the listing second. Kept in the data because it is editorial, and
       editorial belongs where the facts are, not inside a template. */

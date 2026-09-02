@@ -12,6 +12,8 @@ export const shows: Show[] = [
   {
     slug: "chicago",
     title: "Chicago The Musical",
+    officialSlug: "chicago-official",
+    officialDomain: "chicagothemusical.com",
     featured: true,
     eyebrow: "The event we cover in full",
     hubCard:
@@ -131,6 +133,8 @@ export const shows: Show[] = [
   {
     slug: "cats",
     title: "Cats",
+    officialSlug: "cats-official",
+    officialDomain: "catsthemusical.com",
     eyebrow: "Every stop on the tour, and who sells it",
     hubCard:
       "Twenty-three theatres between Plymouth in October and Newcastle the following June, and the seller for every one of them.",

@@ -107,8 +107,8 @@ const past = all.filter((r) => statusOf(r) === "ended");
       )}
       <section class="container">
         <p class="sources">
-          Listings read from the production's own site on {checkedOn}:
-          {" "}<a href={go("chicago-official")} rel="nofollow" title={`The official ${show.title} site`}>chicagothemusical.com</a>.
+          Listings read from the production's own site on {show.checkedOn}:
+          {" "}<a href={go(show.officialSlug)} rel="nofollow" title={`The official ${show.title} site`}>{show.officialDomain}</a>.
           Prices and availability live with the seller, and change faster than any listings site can follow.
         </p>
       </section>

@@ -297,6 +297,46 @@ describe("images", () => {
     }
   });
 
+  // A Cats page once credited chicagothemusical.com, and dated the reading
+  // to the day Chicago was read rather than the day Cats was. Citing a
+  // source that does not cover the page is worse than citing none: it looks
+  // like diligence and is the opposite. The domain and the date both have to
+  // belong to the show whose page it is.
+  //
+  // shows.ts is read as text rather than imported: it pulls in its
+  // neighbours without file extensions, which Astro resolves and node does
+  // not. The three fields wanted here are literals, so a regex over the
+  // source is enough and does not need the module to load.
+  test("a show's source line cites that show's own site", () => {
+    const src = readFileSync("apps/musical/src/data/shows.ts", "utf8");
+    const shows = [
+      ...src.matchAll(
+        /slug: "([a-z-]+)",\s*\n\s*title: "[^"]*",\s*\n\s*officialSlug: "([^"]+)",\s*\n\s*officialDomain: "([^"]+)",/g,
+      ),
+    ].map(([, slug, officialSlug, officialDomain]) => ({ slug, officialSlug, officialDomain }));
+    assert.ok(shows.length >= 2, "could not read the shows' official sites out of shows.ts");
+    for (const p of pages) {
+      if (p.app !== "musical" || !p.html.includes("Listings read from")) continue;
+      const show = shows.find((sh) => p.url.startsWith(`/${sh.slug}/`));
+      if (!show) continue;
+      const line = p.html.match(/Listings read from[\s\S]{0,400}?<\/p>/)[0];
+      assert.ok(
+        line.includes(show.officialDomain),
+        `musical${p.url}: the source line does not name ${show.officialDomain}`,
+      );
+      assert.ok(
+        line.includes(`/go/${show.officialSlug}/`),
+        `musical${p.url}: the source link does not go to ${show.officialSlug}`,
+      );
+      for (const other of shows)
+        if (other.slug !== show.slug)
+          assert.ok(
+            !line.includes(other.officialDomain),
+            `musical${p.url}: cites ${other.officialDomain}, which does not cover this page`,
+          );
+    }
+  });
+
   // The header art is generated, on a site people use to pick where to rent,
   // so its alt has to say it isn't a photograph of the place.
   test("the generated header image is described as an illustration", () => {
