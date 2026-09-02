@@ -7,7 +7,7 @@ import { publisher } from "./content";
 
 export const site = {
   siteName: "nyc42.lol",
-  titleSuffix: "nyc42.lol",
+  titleSuffix: "New York 42",
   lang: "en-US",
   publisher,
   // Independent of the DST group and of the other four city sites: no

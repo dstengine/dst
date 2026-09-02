@@ -7,7 +7,7 @@ import { disclaimer } from "./content";
 
 export const site = {
   siteName: "Future World Forum",
-  titleSuffix: "FWF Dubai",
+  titleSuffix: "Future World Forum Dubai",
   footerSiteName: "fwf.lol",
   complianceNote: disclaimer,
   partnerDisclosure: false,

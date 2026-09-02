@@ -20,7 +20,7 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "Dubai is putting delivery drones over its parks and beaches",
     cardTitle: "Delivery drones over parks and beaches",
-    titleSeo: "Drone delivery lands in Dubai's parks",
+    titleSeo: "Drone delivery in Dubai’s parks",
     summary:
       "Dubai Municipality and Keeta Drone are bringing aerial delivery to public leisure sites — the first case where the customer has no fixed address.",
     date: "2026-09-01",
@@ -54,7 +54,7 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "Fifteen kilometres of Dubai are being handed to machines",
     cardTitle: "A 15 km zone for seven autonomous modes",
-    titleSeo: "Dubai's 15 km autonomous transport zone",
+    titleSeo: "Dubai’s autonomous transport zone",
     summary:
       "The Dubai Autonomous Zone covers Al Jaddaf, Dubai Creek Harbour and Dubai Festival City, and is meant to run seven driverless modes by mid-2027.",
     date: "2026-09-02",
@@ -88,7 +88,7 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "IFA opens in Berlin with 1,900 brands from 49 countries",
     cardTitle: "IFA: 1,900 brands, 49 countries",
-    titleSeo: "IFA Berlin 2026 runs 4–8 September",
+    titleSeo: "IFA Berlin 2026: 4–8 September",
     summary:
       "Europe's consumer technology show runs 4–8 September at Messe Berlin, drawing visitors from 140 countries — a floor built on things you can pick up.",
     date: "2026-09-02",
@@ -122,7 +122,7 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "The AI era's biggest company is now run by the person who made the metal",
     cardTitle: "Hardware person, software decade",
-    titleSeo: "Apple's new CEO is a hardware engineer",
+    titleSeo: "Apple’s new CEO is an engineer",
     summary:
       "John Ternus ran the physical iPhone, iPad, Mac and Watch for years. On 1 September he took over a company whose hardest open problem is software.",
     date: "2026-09-01",
@@ -158,7 +158,7 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "The EU has decided ChatGPT is a search engine",
     cardTitle: "ChatGPT is now a search engine, legally",
-    titleSeo: "EU designates ChatGPT a very large search engine",
+    titleSeo: "EU calls ChatGPT a search engine",
     summary:
       "On 31 August the European Commission designated ChatGPT a very large online search engine under the Digital Services Act. The classification says more about how systems get governed than about the product.",
     date: "2026-08-31",
@@ -196,7 +196,7 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "Half of UAE government services move to AI agents",
     cardTitle: "Half of UAE services move to AI agents",
-    titleSeo: "Half of UAE services move to AI agents",
+    titleSeo: "Half of UAE services go to AI",
     summary:
       "Sheikh Mohammed has set a two-year target for 50% of federal sectors, services and operations to run on agentic AI — systems that plan and act, not just answer.",
     date: "2026-04-23",
@@ -232,6 +232,7 @@ export const items: NewsItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "Dubai second in BCG's Intelligent Cities Index",
+    titleSeo: "Dubai second on BCG’s index",
     summary:
       "Boston Consulting Group's inaugural Intelligent Cities Index put Dubai second of 61 cities worldwide, and first of all of them on adoption of AI and smart-city technology.",
     date: "2026-08-04",
@@ -285,6 +286,7 @@ export const items: NewsItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "VARA adds rules for crypto derivatives",
+    titleSeo: "VARA rules for crypto derivatives",
     summary:
       "Version 2.1 of Dubai's Exchange Services Rulebook added a framework for exchange-traded derivatives in virtual assets, effective immediately for licensed exchanges.",
     date: "2026-03-31",
@@ -311,6 +313,7 @@ export const items: NewsItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "Dubai pilots tokenised property titles",
+    titleSeo: "Dubai pilots tokenised titles",
     summary:
       "The Dubai Land Department's tokenisation pilot, run with VARA and the Dubai Future Foundation, projects AED 60 billion in tokenised property by 2033 — about 7% of the emirate's transactions.",
     date: "2025-03-19",

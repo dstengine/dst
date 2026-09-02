@@ -11,7 +11,7 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "Oxford Street loses its traffic in the second half of October",
     cardTitle: "Oxford Street goes traffic-free",
-    titleSeo: "Oxford Street pedestrianisation: what changes",
+    titleSeo: "Oxford Street goes traffic-free",
     summary:
       "Nine hundred metres from Orchard Street to Great Portland Street, including Oxford Circus, close to buses, taxis, cycles and everything else on wheels.",
     date: "2026-09-02",
@@ -153,7 +153,7 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "Fifteen years, four trillion dollars, and a closing balance",
     cardTitle: "Fifteen years, in figures",
-    titleSeo: "Tim Cook's fifteen years at Apple, in numbers",
+    titleSeo: "Tim Cook’s fifteen years, in numbers",
     summary:
       "Tim Cook handed Apple over on 1 September. The figures he leaves behind are worth reading slowly, because one of them is rather harder than it looks.",
     date: "2026-09-01",
@@ -259,6 +259,7 @@ export const items: NewsItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "The Superloop reaches Havering on 5 September",
+    titleSeo: "The Superloop reaches Havering",
     summary:
       "The SL12 runs Gants Hill to Rainham from 5 September, free for its first week, and cuts a journey of just over an hour down to about forty minutes.",
     date: "2026-08-28",
@@ -339,6 +340,7 @@ export const items: NewsItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "East Summer School returns to the Olympic Park",
+    titleSeo: "East Summer School, Olympic Park",
     summary:
       "Three hundred young people, twenty-four workshops, six institutions from BBC Music Studios to ABBA Voyage — and the only entry requirement is living or studying in one of four boroughs.",
     date: "2026-08-26",

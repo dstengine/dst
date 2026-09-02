@@ -7,7 +7,7 @@ import { disclaimer } from "./content";
 
 export const site = {
   siteName: "musical.today",
-  titleSuffix: "musical.today",
+  titleSuffix: "Musical Today",
   complianceNote: disclaimer,
   // The site is not tied to the group, so the markup has to say the same
   // thing the footer does — see ~/mind/ai/dubai/musical.today.md.

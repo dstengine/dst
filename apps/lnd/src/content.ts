@@ -12,7 +12,7 @@ export const newsBase = "/news/";
 export const eventsBase = "/events/";
 
 export const home = {
-  title: "Greater London, beyond the centre",
+  title: "Beyond the centre",
   description: "Greater London beyond the centre — what's happening borough by borough.",
   h1: "Greater London, beyond the centre",
   lede: `London past zone 1: the boroughs, their parks, their transport and their weekends.`,

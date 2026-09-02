@@ -7,7 +7,7 @@ import { publisher } from "./content";
 
 export const site = {
   siteName: "lnd.lol",
-  titleSuffix: "lnd.lol",
+  titleSuffix: "Greater London",
   lang: "en-GB",
   publisher,
   networkFooter: false,
