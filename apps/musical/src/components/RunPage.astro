@@ -19,6 +19,7 @@ import TicketButtons from "./TicketButtons.astro";
 import { go } from "../outbound";
 import {
   checkedOn, cityBySlug, cityHasPage, faqHeading, formatRun, formatRunDays, groupBySlug, otherRuns,
+  priceFrom, priceIsFresh, priceLabel, priceTiers, priceValidUntil, formatPrice,
   relatedRuns, runFaq, runIntro, spell, statusOf, venueBySlug, venuePath, type Run, type Show,
 } from "../content";
 
@@ -37,14 +38,24 @@ const absolute = (path: string) => (Astro.site ? new URL(path, Astro.site).href 
 const elsewhere = otherRuns(run);
 const related = relatedRuns(run);
 
+// The cheapest seat anyone has actually seen advertised for this run, or
+// nothing. rules.ts drops it once it is six weeks old rather than let the
+// page quote a price a reader cannot still buy.
+const priced = priceFrom(run);
+const tiers = priceTiers(run);
 const glance = [
   { label: "Dates", value: formatRunDays(run) ?? formatRun(run), icon: ICONS.events },
   venue && { label: "Theatre", value: venue.name, icon: ICONS.pin, href: venuePath(venue) },
   { label: "City", value: `${city.name}, ${city.country}`, icon: ICONS.map, ...(cityHasPage(city) ? { href: `/${city.slug}/` } : {}) },
   run.runningTime && { label: "Running time", value: run.runningTime, icon: ICONS.clock },
   run.language && { label: "Language", value: run.language, icon: ICONS.document },
+  priced && {
+    label: "Tickets from",
+    value: `${formatPrice(priced.price.from, priced.price.currency)}${priced.price.note ? `, ${priced.price.note}` : ""}`,
+    icon: ICONS.ticket,
+  },
   run.sellers.length > 0 && {
-    label: "Tickets",
+    label: priced ? "Sold by" : "Tickets",
     value: run.sellers.map((s) => s.name).join(", "),
     icon: ICONS.ticket,
   },
@@ -94,12 +105,28 @@ const eventLd: Record<string, unknown> = {
     : { location: { "@type": "Place", name: city.name, address: { "@type": "PostalAddress", addressLocality: city.name, addressCountry: city.country } } }),
   ...(run.sellers.length > 0
     ? {
-        offers: run.sellers.map((seller) => ({
-          "@type": "Offer",
-          url: absolute(go(seller.slug)),
-          availability: "https://schema.org/InStock",
-          seller: { "@type": "Organization", name: seller.name },
-        })),
+        // A price in the markup is what turns an event result from a blue
+        // link into one with a "from" figure beside it. Only fresh prices
+        // reach it: priceFrom() has already dropped anything stale, and a
+        // seller without one gets an offer with a URL and no number rather
+        // than an invented one.
+        offers: run.sellers.map((seller) => {
+          const fresh = seller.price && priceIsFresh(seller.price) ? seller.price : undefined;
+          return {
+            "@type": "Offer",
+            url: absolute(go(seller.slug)),
+            availability: "https://schema.org/InStock",
+            seller: { "@type": "Organization", name: seller.name },
+            ...(fresh
+              ? {
+                  price: fresh.from,
+                  priceCurrency: fresh.currency,
+                  ...(fresh.to ? { highPrice: fresh.to, lowPrice: fresh.from } : {}),
+                  priceValidUntil: priceValidUntil(fresh),
+                }
+              : {}),
+          };
+        }),
       }
     : {}),
 };

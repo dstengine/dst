@@ -76,7 +76,18 @@ export const runs: Run[] = [
     venue: "new-wimbledon-theatre",
     start: "2027-02-05",
     end: "2027-02-13",
-    sellers: [{ slug: "tickets-chicago-wimbledon", name: "ATG Tickets" }],
+    sellers: [
+      {
+        slug: "tickets-chicago-wimbledon",
+        name: "ATG Tickets",
+        price: {
+          from: 18,
+          currency: "GBP",
+          checkedOn: "2026-09-02",
+          note: "across every performance of this run",
+        },
+      },
+    ],
     summary:
       "The tour opens here. Nine days at the New Wimbledon Theatre in February 2027, and then Chicago spends the next ten months crossing Britain and Ireland \u2014 thirty-three stops, of which this is the first.",
     tags: ["tour-opener"],
@@ -129,7 +140,18 @@ export const runs: Run[] = [
     venue: "liverpool-empire",
     start: "2027-03-24",
     end: "2027-03-27",
-    sellers: [{ slug: "tickets-chicago-liverpool", name: "ATG Tickets" }],
+    sellers: [
+      {
+        slug: "tickets-chicago-liverpool",
+        name: "ATG Tickets",
+        price: {
+          from: 25,
+          currency: "GBP",
+          checkedOn: "2026-09-02",
+          note: "across every performance of this run",
+        },
+      },
+    ],
     summary:
       "Four nights, the shortest stop of the British tour and shorter than anything except Osaka. Cats takes the same Liverpool Empire stage for eleven nights six weeks later.",
   },
@@ -169,7 +191,18 @@ export const runs: Run[] = [
     venue: "kings-theatre-glasgow",
     start: "2027-05-10",
     end: "2027-05-15",
-    sellers: [{ slug: "tickets-chicago-glasgow", name: "ATG Tickets" }],
+    sellers: [
+      {
+        slug: "tickets-chicago-glasgow",
+        name: "ATG Tickets",
+        price: {
+          from: 20,
+          currency: "GBP",
+          checkedOn: "2026-09-02",
+          note: "across every performance of this run",
+        },
+      },
+    ],
     summary:
       "The tour's longest break ends here. Chicago plays nothing between Bournemouth on 10 April and this opening night a month later, then runs almost without a gap to Edinburgh in November.",
   },
@@ -195,7 +228,18 @@ export const runs: Run[] = [
     venue: "opera-house-manchester",
     start: "2027-05-25",
     end: "2027-05-29",
-    sellers: [{ slug: "tickets-chicago-manchester", name: "ATG Tickets" }],
+    sellers: [
+      {
+        slug: "tickets-chicago-manchester",
+        name: "ATG Tickets",
+        price: {
+          from: 18,
+          currency: "GBP",
+          checkedOn: "2026-09-02",
+          note: "across every performance of this run",
+        },
+      },
+    ],
     summary:
       "Five nights at the Opera House — not the Palace, where Cats played, and one of only three cities where the two shows use different stages. The Opera House holds 1,920, the Palace slightly more.",
   },
@@ -207,7 +251,18 @@ export const runs: Run[] = [
     venue: "grand-opera-house-york",
     start: "2027-05-31",
     end: "2027-06-05",
-    sellers: [{ slug: "tickets-chicago-york", name: "ATG Tickets" }],
+    sellers: [
+      {
+        slug: "tickets-chicago-york",
+        name: "ATG Tickets",
+        price: {
+          from: 18,
+          currency: "GBP",
+          checkedOn: "2026-09-02",
+          note: "across every performance of this run",
+        },
+      },
+    ],
     summary:
       "Six nights at the Grand Opera House, which opened in January 1902. York is one of twelve British cities Chicago plays that Cats does not.",
   },
@@ -222,7 +277,11 @@ export const runs: Run[] = [
     start: "2027-06-08",
     end: "2027-06-12",
     sellers: [
-      { slug: "tickets-chicago-blackpool", name: "Winter Gardens Blackpool" },
+      {
+        slug: "tickets-chicago-blackpool",
+        name: "Winter Gardens Blackpool",
+        price: { from: 25.95, currency: "GBP", checkedOn: "2026-09-02" },
+      },
     ],
     summary:
       "Six nights in the Opera House, which seats 2,812: after Edinburgh, the largest room the British tour plays, and nearly four times the Cheltenham house at the other end of it.",
@@ -239,6 +298,12 @@ export const runs: Run[] = [
       {
         slug: "tickets-chicago-nottingham",
         name: "Royal Concert Hall Nottingham",
+        price: {
+          from: 24,
+          currency: "GBP",
+          checkedOn: "2026-09-02",
+          note: "across every performance of this run",
+        },
       },
     ],
     summary:
@@ -276,7 +341,18 @@ export const runs: Run[] = [
     venue: "cliffs-pavilion-southend",
     start: "2027-07-13",
     end: "2027-07-17",
-    sellers: [{ slug: "tickets-chicago-southend", name: "Trafalgar Tickets" }],
+    sellers: [
+      {
+        slug: "tickets-chicago-southend",
+        name: "Trafalgar Tickets",
+        price: {
+          from: 33,
+          currency: "GBP",
+          checkedOn: "2026-09-02",
+          note: "across every performance of this run",
+        },
+      },
+    ],
     summary:
       "Five nights at the Cliffs Pavilion, which opened in July 1964 — one of the few post-war buildings on a tour otherwise made of Victorian and Edwardian theatres.",
   },
@@ -289,7 +365,16 @@ export const runs: Run[] = [
     start: "2027-07-19",
     end: "2027-07-24",
     sellers: [
-      { slug: "tickets-chicago-eastbourne", name: "Trafalgar Tickets" },
+      {
+        slug: "tickets-chicago-eastbourne",
+        name: "Trafalgar Tickets",
+        price: {
+          from: 26,
+          currency: "GBP",
+          checkedOn: "2026-09-02",
+          note: "across every performance of this run",
+        },
+      },
     ],
     summary:
       "Six nights at the Congress Theatre, opened in June 1963, the second of two consecutive seaside stops on the south coast.",
@@ -329,7 +414,18 @@ export const runs: Run[] = [
     venue: "theatre-royal-brighton",
     start: "2027-08-16",
     end: "2027-08-21",
-    sellers: [{ slug: "tickets-chicago-brighton", name: "ATG Tickets" }],
+    sellers: [
+      {
+        slug: "tickets-chicago-brighton",
+        name: "ATG Tickets",
+        price: {
+          from: 20,
+          currency: "GBP",
+          checkedOn: "2026-09-02",
+          note: "across every performance of this run",
+        },
+      },
+    ],
     summary:
       "Six nights in a theatre that opened in June 1807: the second-oldest building on the tour and, at 952 seats, the second-smallest. Only Norwich is older and only Cheltenham is tighter.",
   },
@@ -355,7 +451,18 @@ export const runs: Run[] = [
     venue: "bristol-hippodrome",
     start: "2027-08-31",
     end: "2027-09-04",
-    sellers: [{ slug: "tickets-chicago-bristol", name: "ATG Tickets" }],
+    sellers: [
+      {
+        slug: "tickets-chicago-bristol",
+        name: "ATG Tickets",
+        price: {
+          from: 20,
+          currency: "GBP",
+          checkedOn: "2026-09-02",
+          note: "across every performance of this run",
+        },
+      },
+    ],
     summary:
       "Five nights at the Hippodrome, a 1,951-seat house opened in December 1912. Cats had the same stage for five nights nine months earlier.",
   },
@@ -367,7 +474,18 @@ export const runs: Run[] = [
     venue: "milton-keynes-theatre",
     start: "2027-09-06",
     end: "2027-09-11",
-    sellers: [{ slug: "tickets-chicago-milton-keynes", name: "ATG Tickets" }],
+    sellers: [
+      {
+        slug: "tickets-chicago-milton-keynes",
+        name: "ATG Tickets",
+        price: {
+          from: 18,
+          currency: "GBP",
+          checkedOn: "2026-09-02",
+          note: "across every performance of this run",
+        },
+      },
+    ],
     summary:
       "Six nights at Milton Keynes Theatre, which opened in October 1999 and is among the newest buildings on the tour. Cats played the same house in June.",
   },
@@ -391,7 +509,18 @@ export const runs: Run[] = [
     venue: "new-theatre-oxford",
     start: "2027-09-20",
     end: "2027-09-25",
-    sellers: [{ slug: "tickets-chicago-oxford", name: "ATG Tickets" }],
+    sellers: [
+      {
+        slug: "tickets-chicago-oxford",
+        name: "ATG Tickets",
+        price: {
+          from: 18,
+          currency: "GBP",
+          checkedOn: "2026-09-02",
+          note: "across every performance of this run",
+        },
+      },
+    ],
     summary:
       "Six nights at the New Theatre, open since February 1934. Cats played five nights on the same stage in March, six months before Chicago arrives.",
   },
@@ -403,7 +532,13 @@ export const runs: Run[] = [
     venue: "hull-new-theatre",
     start: "2027-09-27",
     end: "2027-10-02",
-    sellers: [{ slug: "tickets-chicago-hull", name: "Hull Theatres" }],
+    sellers: [
+      {
+        slug: "tickets-chicago-hull",
+        name: "Hull Theatres",
+        price: { from: 24, currency: "GBP", checkedOn: "2026-09-02" },
+      },
+    ],
     summary:
       "Six nights at the Hull New Theatre, a 1939 house of 1,351 seats. Cats opened its own visit here almost a year earlier, for five.",
   },
@@ -428,7 +563,18 @@ export const runs: Run[] = [
     venue: "sunderland-empire",
     start: "2027-10-11",
     end: "2027-10-16",
-    sellers: [{ slug: "tickets-chicago-sunderland", name: "ATG Tickets" }],
+    sellers: [
+      {
+        slug: "tickets-chicago-sunderland",
+        name: "ATG Tickets",
+        price: {
+          from: 18,
+          currency: "GBP",
+          checkedOn: "2026-09-02",
+          note: "across every performance of this run",
+        },
+      },
+    ],
     summary:
       "Six nights at the Empire, 1,860 seats and open since July 1907. Cats played the same theatre in January, and five stops remain after this one.",
   },
@@ -452,7 +598,18 @@ export const runs: Run[] = [
     venue: "woking-theatre",
     start: "2027-11-01",
     end: "2027-11-06",
-    sellers: [{ slug: "tickets-chicago-woking", name: "ATG Tickets" }],
+    sellers: [
+      {
+        slug: "tickets-chicago-woking",
+        name: "ATG Tickets",
+        price: {
+          from: 18,
+          currency: "GBP",
+          checkedOn: "2026-09-02",
+          note: "across every performance of this run",
+        },
+      },
+    ],
     summary:
       "Six nights at the New Victoria, a 1992 building and one of the newest on the tour. Three stops remain after Woking before Chicago finishes in Edinburgh.",
   },
@@ -481,7 +638,18 @@ export const runs: Run[] = [
     venue: "regent-theatre-stoke",
     start: "2027-11-15",
     end: "2027-11-20",
-    sellers: [{ slug: "tickets-chicago-stoke", name: "ATG Tickets" }],
+    sellers: [
+      {
+        slug: "tickets-chicago-stoke",
+        name: "ATG Tickets",
+        price: {
+          from: 18,
+          currency: "GBP",
+          checkedOn: "2026-09-02",
+          note: "across every performance of this run",
+        },
+      },
+    ],
     summary:
       "Six nights at the Regent, a 1929 house of 1,600 seats, and the last stop before the tour ends in Edinburgh the following week.",
   },
@@ -493,7 +661,18 @@ export const runs: Run[] = [
     venue: "edinburgh-playhouse",
     start: "2027-11-23",
     end: "2027-11-27",
-    sellers: [{ slug: "tickets-chicago-edinburgh", name: "ATG Tickets" }],
+    sellers: [
+      {
+        slug: "tickets-chicago-edinburgh",
+        name: "ATG Tickets",
+        price: {
+          from: 20,
+          currency: "GBP",
+          checkedOn: "2026-09-02",
+          note: "across every performance of this run",
+        },
+      },
+    ],
     summary:
       "The last stop. Five nights at the Playhouse in late November 2027, and a tour that started in Wimbledon in February is over.",
     tags: ["tour-finale"],
@@ -529,7 +708,12 @@ export const runs: Run[] = [
     start: "2026-10-20",
     end: "2026-10-24",
     sellers: [
-      { slug: "tickets-cats-hull", name: "Hull Theatres", official: true },
+      {
+        slug: "tickets-cats-hull",
+        name: "Hull Theatres",
+        official: true,
+        price: { from: 29, currency: "GBP", checkedOn: "2026-09-02" },
+      },
     ],
     summary:
       "Five nights at the Hull New Theatre, and then the tour moves inland. Chicago reaches the same 1,351-seat house almost a year later, and stays a night longer.",
@@ -561,7 +745,17 @@ export const runs: Run[] = [
     start: "2026-11-10",
     end: "2026-11-21",
     sellers: [
-      { slug: "tickets-cats-manchester", name: "ATG Tickets", official: true },
+      {
+        slug: "tickets-cats-manchester",
+        name: "ATG Tickets",
+        official: true,
+        price: {
+          from: 21,
+          currency: "GBP",
+          checkedOn: "2026-09-02",
+          note: "across every performance of this run",
+        },
+      },
     ],
     summary:
       "Manchester is one of three cities where the two shows do not share a stage: Cats is at the Palace, Chicago at the Opera House up the road. Twelve nights, in the larger of the two.",
@@ -575,7 +769,17 @@ export const runs: Run[] = [
     start: "2026-11-24",
     end: "2026-11-28",
     sellers: [
-      { slug: "tickets-cats-bristol", name: "ATG Tickets", official: true },
+      {
+        slug: "tickets-cats-bristol",
+        name: "ATG Tickets",
+        official: true,
+        price: {
+          from: 26,
+          currency: "GBP",
+          checkedOn: "2026-09-02",
+          note: "across every performance of this run",
+        },
+      },
     ],
     summary:
       "Five nights at the Hippodrome, a 1912 house that seats 1,951 — near the top end of what this tour plays. Chicago follows into the same auditorium in the summer of 2027.",
@@ -603,7 +807,17 @@ export const runs: Run[] = [
     start: "2026-12-08",
     end: "2026-12-27",
     sellers: [
-      { slug: "tickets-cats-glasgow", name: "ATG Tickets", official: true },
+      {
+        slug: "tickets-cats-glasgow",
+        name: "ATG Tickets",
+        official: true,
+        price: {
+          from: 21,
+          currency: "GBP",
+          checkedOn: "2026-09-02",
+          note: "across every performance of this run",
+        },
+      },
     ],
     summary:
       "Twenty nights, from 8 to 27 December — the longest single stay of any run listed on this site, and the only one that plays through Christmas. Chicago comes to Glasgow too, but to the King's, not the Theatre Royal.",
@@ -621,6 +835,12 @@ export const runs: Run[] = [
         slug: "tickets-cats-nottingham",
         name: "Royal Concert Hall",
         official: true,
+        price: {
+          from: 31.5,
+          currency: "GBP",
+          checkedOn: "2026-09-02",
+          note: "across every performance of this run",
+        },
       },
     ],
     summary:

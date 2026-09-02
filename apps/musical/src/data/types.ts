@@ -10,6 +10,32 @@
 // whose theatre has not been named yet.
 
 /** Somewhere tickets for a run can actually be bought. */
+/** What a seller is asking, as read off their own page on a named day.
+    Never estimated, never carried over from another stop, never averaged:
+    a made-up "from" price is the one thing on this site a reader could act
+    on and be wrong about at the till.
+
+    `from` is the cheapest seat the seller advertises for this run, in the
+    major unit of `currency`. `checkedOn` is not optional, because a price
+    without a date is a claim the site cannot stand behind three months
+    later — see PRICE_STALE_DAYS in ../rules.ts, which stops showing it. */
+export interface Price {
+  from: number;
+  /** Top of the advertised range, when the seller publishes one. */
+  to?: number;
+  /** ISO 4217: GBP, EUR, USD, AED, JPY. */
+  currency: string;
+  /** ISO day the number was read. Required. */
+  checkedOn: string;
+  /** What the number leaves out, in the seller's own terms — almost always
+      the booking fee. Printed next to the price, not hidden in a tooltip. */
+  note?: string;
+  /** Premium, VIP and package tiers, when the seller names and prices them.
+      A tier with no price is still worth listing: it tells a reader the
+      option exists. */
+  tiers?: { name: string; from?: number; note?: string }[];
+}
+
 export interface Seller {
   /** Key in outbound.ts; the link is rendered as /go/<slug>/. */
   slug: string;
@@ -20,6 +46,8 @@ export interface Seller {
   official?: boolean;
   /** What this seller covers, when sellers split a run between them. */
   covers?: string;
+  /** What they are asking, when somebody has looked. */
+  price?: Price;
 }
 
 export interface Venue {

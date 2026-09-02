@@ -5,7 +5,7 @@
 // Components do not repeat any of this. A template that decides for itself
 // whether to show a ticket button is a template that will disagree with the
 // next one.
-import type { City, Run, Seller, Venue } from "./data/types";
+import type { City, Price, Run, Seller, Venue } from "./data/types";
 import { cities } from "./data/cities";
 import { runs } from "./data/runs";
 import { venues } from "./data/venues";
@@ -331,6 +331,9 @@ export function runFaq(
     `How do I get tickets for ${show.title}?`,
   ][v("buy-q", 5)]!;
 
+  const found = priceFrom(run);
+  const tiers = priceTiers(run);
+
   // One seller, one sentence, and until now the same sentence on fifty-six
   // pages. The fact is unavoidable; the wording is not.
   const one = (name: string) =>
@@ -341,6 +344,36 @@ export function runFaq(
       `${name} handle the sale. You finish the booking on their own page.`,
       `From ${name} directly. We list the dates and link out; the transaction is theirs.`,
     ][v("buy-a", 5)]!;
+
+  // A fourth question, and only where there is a checked price to answer it
+  // with. "How much are tickets?" answered with "it depends" is the kind of
+  // question a listings site adds to look complete; this one either has the
+  // number or does not ask.
+  const money = found ? formatPrice(found.price.from, found.price.currency) : "";
+  const where = found?.price.note ? `, ${found.price.note}` : "";
+  const also =
+    tiers.length > 0
+      ? `. They also list ${tiers.map((t) => (t.from ? `${t.name} from ${formatPrice(t.from, t.currency)}` : t.name)).join(" and ")}`
+      : "";
+
+  const priceQ = found
+    ? [
+        {
+          q: [
+            "How much are tickets?",
+            "What do they cost?",
+            `What does ${show.title} cost here?`,
+            "What is the cheapest seat?",
+            "How much am I looking at?",
+          ][v("price-q", 5)]!,
+          a: [
+            `The cheapest seat on sale with ${found.seller.name} for the ${city.name} dates is ${money}${where}. That was on their page on ${formatDay(found.price.checkedOn)}${also}; prices move, and theirs is the one that counts.`,
+            `${money} is the lowest ${found.seller.name} were asking for ${city.name} when the page was read, on ${formatDay(found.price.checkedOn)}${where}${also}. Theirs is the price that counts, not this one.`,
+            `${found.seller.name} start at ${money} for ${city.name}${where}${also}. Checked on ${formatDay(found.price.checkedOn)} — a run sells from the cheap seats up, so expect the figure to have moved.`,
+          ][v("price-a", 3)]!
+        },
+      ]
+    : [];
 
   return [
     {
@@ -367,5 +400,84 @@ export function runFaq(
             ? one(run.sellers[0]!.name)
             : `From ${run.sellers.map((s) => s.name).join(" or ")}. Both sell the same run; nothing is sold on this page.`,
     },
+    ...priceQ,
   ];
+}
+
+
+/** How long a ticket price is allowed to speak for itself. Sellers move
+    prices constantly and this site is rebuilt, not live: past this many days
+    the number stops being shown and stops appearing in the markup, and the
+    page falls back to saying who sells rather than what it costs.
+
+    Six weeks is the compromise. Shorter and a run checked once a month is
+    silent most of the time; longer and the site is quoting a price nobody
+    can still buy. A wrong price is the one error here a reader finds out
+    about at the till, so it expires rather than ages. */
+export const PRICE_STALE_DAYS = 42;
+
+const daysSince = (iso: string): number =>
+  Math.floor((Date.parse(`${today()}T00:00:00Z`) - Date.parse(`${iso}T00:00:00Z`)) / 86400000);
+
+export const priceIsFresh = (price: Price): boolean => {
+  const age = daysSince(price.checkedOn);
+  return age >= 0 && age <= PRICE_STALE_DAYS;
+};
+
+/** "2 September 2026". A price is a claim with a date on it, and an ISO
+    string in running prose reads like a log line. */
+export const formatDay = (iso: string): string =>
+  new Date(`${iso}T00:00:00Z`).toLocaleDateString("en-GB", {
+    timeZone: "UTC",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+
+/** Money as the seller's own market writes it. No currency conversion: a
+    Tokyo run priced in yen is quoted in yen, because that is the number on
+    the seller's page and the only one a reader can check. */
+export function formatPrice(amount: number, currency: string): string {
+  const zeroDecimal = currency === "JPY";
+  return new Intl.NumberFormat("en-GB", {
+    style: "currency",
+    currency,
+    minimumFractionDigits: zeroDecimal ? 0 : amount % 1 === 0 ? 0 : 2,
+    maximumFractionDigits: zeroDecimal ? 0 : 2,
+  }).format(amount);
+}
+
+/** The day this quote stops being one, in the markup. Google reads
+    priceValidUntil as "after this, do not show the number" — which is
+    exactly the staleness rule, published rather than kept private. */
+export function priceValidUntil(price: Price): string {
+  const d = new Date(`${price.checkedOn}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + PRICE_STALE_DAYS);
+  return d.toISOString().slice(0, 10);
+}
+
+/** The cheapest fresh price across a run's sellers, with the seller it came
+    from. Undefined when nobody has checked, or when everything on file has
+    expired — both of which the page renders as silence, not as a guess. */
+export function priceFrom(run: Run): { price: Price; seller: Seller } | undefined {
+  const live = run.sellers
+    .filter((s): s is Seller & { price: Price } => !!s.price && priceIsFresh(s.price))
+    .sort((a, b) => a.price.from - b.price.from);
+  const best = live[0];
+  return best ? { price: best.price, seller: best } : undefined;
+}
+
+/** "from £25" for a button or a badge. */
+export const priceLabel = (run: Run): string | undefined => {
+  const found = priceFrom(run);
+  return found ? `from ${formatPrice(found.price.from, found.price.currency)}` : undefined;
+};
+
+/** Named premium tiers across every fresh price on the run. Sellers call
+    them different things — VIP, Premium, Meet the Cast — so the seller's own
+    word is kept rather than flattened into one of ours. */
+export function priceTiers(run: Run): { name: string; from?: number; currency: string; note?: string }[] {
+  return run.sellers
+    .filter((s) => s.price && priceIsFresh(s.price))
+    .flatMap((s) => (s.price!.tiers ?? []).map((t) => ({ ...t, currency: s.price!.currency })));
 }

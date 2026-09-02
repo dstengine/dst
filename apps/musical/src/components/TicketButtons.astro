@@ -13,7 +13,7 @@
 // should read that here rather than work it out from the address bar.
 import Icon from "@dst/ui/Icon.astro";
 import { go } from "../outbound";
-import { sellsItsOwn, statusOf, ticketButtons, type Run } from "../content";
+import { priceLabel, sellsItsOwn, statusOf, ticketButtons, type Run } from "../content";
 
 interface Props {
   run: Run;
@@ -28,6 +28,11 @@ interface Props {
 const { run, showName, cityName, calendarHref } = Astro.props;
 const buttons = ticketButtons(run);
 const status = statusOf(run);
+// "Tickets from £25" on the button itself, when somebody has checked and the
+// check is recent. A price is the thing a reader is actually deciding on,
+// and making them press to find it out is the extra step this site cannot
+// afford — it already costs them one hop to the seller.
+const from = priceLabel(run);
 ---
 {buttons.length > 0 && (
   <p class="ticket-actions">
@@ -37,7 +42,7 @@ const status = statusOf(run);
         href={button.href}
         rel="nofollow"
         title={`Buy tickets for ${showName} in ${cityName} from ${button.seller.name}`}
-      ><Icon name="ticket" />{button.label}</a>
+      ><Icon name="ticket" />{button.label}{i === 0 && from && buttons.length === 1 && <span class="ticket-from"> {from}</span>}</a>
     ))}
     {calendarHref && (
       <a class="button button-secondary" href={calendarHref} title={`Add ${showName} in ${cityName} to a calendar`}><Icon name="events" />Add to calendar</a>
@@ -96,6 +101,10 @@ const status = statusOf(run);
     .ticket-actions :global(.button) { flex: 1 1 100%; }
   }
   .ticket-none { margin: var(--space-3) 0 0; color: var(--ink-muted); }
+  /* The price rides on the button rather than under it: a reader deciding
+     whether to press wants the number inside the thing they are pressing.
+     Lighter than the label so "Tickets" still reads first. */
+  .ticket-from { font-weight: 400; opacity: 0.85; }
   .ticket-seller {
     margin: var(--space-2) 0 0;
     color: var(--ink-muted);

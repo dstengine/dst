@@ -3,7 +3,7 @@
 // live apart on purpose: data in ./data, decisions in ./rules.ts, URLs in
 // ./routes.ts. Adding a city or a seller is a change to one file in ./data
 // and to nothing else.
-export type { City, Clip, Run, RunGroup, Section, Seller, Show, Venue } from "./data/types";
+export type { City, Clip, Price, Run, RunGroup, Section, Seller, Show, Venue } from "./data/types";
 export { cities } from "./data/cities";
 export { venues } from "./data/venues";
 export { runs } from "./data/runs";

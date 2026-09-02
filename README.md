@@ -164,3 +164,26 @@ right after "Restored build cache from previous deployment".
 See `~/mind/ai/dubai/seo/guidelines.md` and the per-vertical concept docs
 under `~/mind/ai/dubai/*.dst.llc.md` for content and SEO direction — this
 repo is code, not the source of truth for site strategy.
+
+## Ticket prices
+
+`node tools/prices.mjs <tsv>` reads what sellers advertise off their own
+pages and prints it. It writes nothing: prices go into `runs.ts` by hand,
+because a wrong one is the only error on this site a reader finds out about
+at the till.
+
+It trusts two sources unequally. A schema.org `Offer` in the seller's own
+JSON-LD, on an event whose name matches the show, is written as-is — sellers
+publish one per performance, so the figure taken is the minimum across them.
+A "from £25" in the visible text is flagged for a human instead: on the first
+pass three of nine such matches were a group discount ("£5 off"), a
+membership fee ("Join now from £35") and a schools rate, none of them a price
+anyone could buy a seat at.
+
+Prices expire. `PRICE_STALE_DAYS` in `apps/musical/src/rules.ts` is 42 days;
+past that the number leaves the page and the markup rather than ageing on
+them, and `priceValidUntil` publishes the same date to search engines. A site
+rebuilt weekly cannot promise a live price, so it promises a dated one.
+
+Sites behind a bot check are reported as blocked. We do not try to get past
+one.

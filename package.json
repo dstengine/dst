@@ -18,7 +18,7 @@
     "build:visas": "npm run build --workspace=apps/visas",
     "build:riviera": "npm run build --workspace=apps/riviera",
     "build:mbr": "npm run build --workspace=apps/mbr",
-    "test": "npm run build && npm run test:html && npm run test:links && npm run test:schema && npm run test:images && npm run test:network && npm run test:budget && npm run test:layout",
+    "test": "npm run build && npm run test:html && npm run test:links && npm run test:schema && npm run test:images && npm run test:network && npm run test:budget && npm run test:prices && npm run test:layout",
     "test:html": "node --test tests/build-output.test.js",
     "test:layout": "playwright test",
     "build:palmcentral": "npm run build --workspace=apps/palmcentral",
@@ -47,7 +47,8 @@
     "dev:cmx": "npm run dev --workspace=apps/cmx",
     "build:mxo": "npm run build --workspace=apps/mxo",
     "dev:mxo": "npm run dev --workspace=apps/mxo",
-    "events": "node tools/events-scan.mjs"
+    "events": "node tools/events-scan.mjs",
+    "test:prices": "node --experimental-strip-types --test tests/prices.test.js"
   },
   "devDependencies": {
     "@playwright/test": "^1.62.1",
