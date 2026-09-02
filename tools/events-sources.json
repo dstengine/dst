@@ -66,15 +66,15 @@
       "riviera",
       "mbr",
       "palmcentral",
-      "fwf"
+      "fwf",
+      "dst"
     ],
     "name": "Visit Dubai, festivals and events",
-    "url": "https://www.visitdubai.com/sitemap.xml",
+    "url": "https://www.visitdubai.com/en-sitemap.xml",
     "kind": "sitemap",
     "match": "festivals-and-events",
     "city": "Dubai",
-    "off": true,
-    "notes": "Retired: the sitemap is behind Akamai and answers Access Denied."
+    "notes": "Was retired when the sitemap index answered Access Denied behind Akamai; it answers 200 again as of 2 September 2026. Points at the English child sitemap, not the index, so one fetch reaches the listings."
   },
   {
     "site": "london",
@@ -196,5 +196,33 @@
     "city": "United Kingdom",
     "off": true,
     "notes": "Retired for this tool: the Webflow page renders its dates in the browser, so a plain fetch reads none of them. Check it with the browser tools when the tour is being updated."
+  },
+  {
+    "site": "dubai",
+    "for": [
+      "riviera",
+      "mbr",
+      "palmcentral",
+      "dst"
+    ],
+    "name": "Dubai Design District (d3)",
+    "url": "https://dubaidesigndistrict.com/sitemap.xml",
+    "kind": "sitemap",
+    "match": "/the-community/events/",
+    "city": "Dubai",
+    "notes": "The nearest cultural venue to MBR City with a public programme of its own. Own listings, not an aggregator."
+  },
+  {
+    "site": "dubai",
+    "for": [
+      "riviera",
+      "mbr",
+      "dst"
+    ],
+    "name": "Dubai Racing Club",
+    "url": "https://dubairacingclub.com/feed/",
+    "kind": "rss",
+    "city": "Dubai",
+    "notes": "Meydan is about 1.5 km from Riviera. The feed carries club announcements rather than fixtures — fixture dates come from the Emirates Racing Authority schedule."
   }
 ]

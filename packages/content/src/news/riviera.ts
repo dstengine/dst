@@ -2,6 +2,42 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "ras-al-khor-switches-to-winter-hours",
+    site: "riviera",
+    image: "/covers/ras-al-khor-switches-to-winter-hours.jpg",
+    imageAlt: "Three thin sand-coloured stems rising between a pale sky and a band of blue water",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "The flamingo hide four kilometres away changes its hours on 1 October",
+    cardTitle: "Ras Al Khor goes back to winter hours",
+    titleSeo: "Ras Al Khor goes to winter hours",
+    summary:
+      "From October the sanctuary opens 7:30am to 5:30pm, and the birds that make it worth the trip start arriving in numbers. Entry and all three hides are free.",
+    date: "2026-09-02",
+    category: "Nearby",
+    source: {
+      name: "Visit Dubai",
+      url: "https://www.visitdubai.com/en/places-to-visit/ras-al-khor-wildlife-sanctuary",
+      verifiedOn: "2026-09-02",
+    },
+    body: [
+      "Riviera's nearest genuinely wild place is four kilometres away at the head of the creek, and it is about to become worth visiting again.",
+      "## The change",
+      "<strong>Ras Al Khor Wildlife Sanctuary</strong> runs <strong>7:30am to 5:30pm from October to March</strong>, and <strong>6:00am to 6:00pm from April to September</strong>. <strong>Entry is free.</strong>",
+      "There are <strong>three bird hides</strong> around the perimeter, free to enter and open daily &mdash; the <strong>Mangrove Hide</strong> to the south and the <strong>Flamingo Hide</strong> to the west being the two normally open.",
+      "## What the winter hours actually mean",
+      "The summer schedule opens at six in the morning because six in the morning is the only tolerable hour. The winter one starts ninety minutes later and closes half an hour earlier, which sounds like less access and is in practice a great deal more: the whole of a winter afternoon is usable, and the light at the end of it is the best the site gets.",
+      "## The birds",
+      "Flamingos are present year round, but the numbers move. Winter is when the population is large enough that the hide is looking at a flock rather than at a handful of birds, and it is the reason the sanctuary has a season at all in the way residents talk about it.",
+      "## The part that is still open",
+      "A development programme covering roughly <strong>6.4 square kilometres</strong> of the sanctuary has its first phase due for completion by the end of 2026, at a reported cost of <strong>Dh650 million</strong>. What that changes about public access has not been set out, and nothing here assumes it.",
+    ],
+    expertise:
+      "The Flamingo Hide on the western edge is the one reachable from the MBR City side without going round the creek, which is what makes this a local trip from Riviera rather than a half-day. Hides face fixed directions, so the light matters more than the hour: the western hide has the sun behind the viewer in the afternoon and straight into the lens in the morning. Neither hide takes bookings and neither has shade on the approach.",
+  },
+
+  {
     slug: "dubai-completed-104-projects-in-six-months",
     site: "riviera",
     image: "/covers/dubai-completed-104-projects-in-six-months.jpg",

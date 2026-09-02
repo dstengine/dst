@@ -12008,6 +12008,54 @@
         ]
       ]
     },
+    "/covers/dubai-design-week-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/dubai-design-week-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/dubai-design-week-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dubai-design-week-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/dubai-design-week-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/dubai-design-week-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dubai-design-week-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/dubai-design-week-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dubai-design-week-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/dubai-design-week-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/dubai-design-week-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/dubai-fitness-challenge-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -12053,6 +12101,102 @@
         [
           1536,
           "/covers/dubai-fitness-challenge-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/meydan-racing-season-2026-27.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/meydan-racing-season-2026-27-480.avif"
+        ],
+        [
+          768,
+          "/covers/meydan-racing-season-2026-27-768.avif"
+        ],
+        [
+          1024,
+          "/covers/meydan-racing-season-2026-27-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/meydan-racing-season-2026-27-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/meydan-racing-season-2026-27-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/meydan-racing-season-2026-27-480.webp"
+        ],
+        [
+          768,
+          "/covers/meydan-racing-season-2026-27-768.webp"
+        ],
+        [
+          1024,
+          "/covers/meydan-racing-season-2026-27-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/meydan-racing-season-2026-27-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/meydan-racing-season-2026-27-1536.webp"
+        ]
+      ]
+    },
+    "/covers/ras-al-khor-switches-to-winter-hours.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/ras-al-khor-switches-to-winter-hours-480.avif"
+        ],
+        [
+          768,
+          "/covers/ras-al-khor-switches-to-winter-hours-768.avif"
+        ],
+        [
+          1024,
+          "/covers/ras-al-khor-switches-to-winter-hours-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/ras-al-khor-switches-to-winter-hours-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/ras-al-khor-switches-to-winter-hours-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/ras-al-khor-switches-to-winter-hours-480.webp"
+        ],
+        [
+          768,
+          "/covers/ras-al-khor-switches-to-winter-hours-768.webp"
+        ],
+        [
+          1024,
+          "/covers/ras-al-khor-switches-to-winter-hours-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/ras-al-khor-switches-to-winter-hours-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/ras-al-khor-switches-to-winter-hours-1536.webp"
         ]
       ]
     },
