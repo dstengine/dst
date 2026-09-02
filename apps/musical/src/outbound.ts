@@ -186,7 +186,6 @@ export const outbound: Record<string, string> = {
   "venue-marlowe-theatre-canterbury": "https://marlowetheatre.com/",
   "venue-bord-gais-energy-theatre": "https://www.bordgaisenergytheatre.ie/",
   "venue-mayflower-theatre-southampton": "https://www.mayflower.org.uk/",
-  "licence-cc-by-2-0": "https://creativecommons.org/licenses/by/2.0/",
   "licence-cc-by-sa-2-0": "https://creativecommons.org/licenses/by-sa/2.0/",
   "licence-cc-by-sa-3-0": "https://creativecommons.org/licenses/by-sa/3.0/",
   "licence-cc-by-sa-4-0": "https://creativecommons.org/licenses/by-sa/4.0/",

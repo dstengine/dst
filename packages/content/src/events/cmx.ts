@@ -119,6 +119,7 @@ export const items: EventItem[] = [
     utcOffset: "-06:00",
     city: "Ciudad de México",
     venue: "Centro Nacional de las Artes, Country Club Churubusco",
+    geo: { name: "Centro Nacional de las Artes", lat: 19.355607, lng: -99.137182 },
     category: "Festival",
     organizer: "Centro Nacional de las Artes",
     source: {

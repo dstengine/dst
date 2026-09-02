@@ -86,6 +86,7 @@ export const items: EventItem[] = [
     utcOffset: "-06:00",
     city: "Ciudad de México",
     venue: "Centro Nacional de las Artes, Río Churubusco 79, Country Club Churubusco, Coyoacán",
+    geo: { name: "Centro Nacional de las Artes", lat: 19.355607, lng: -99.137182 },
     category: "Ferias",
     organizer: "Secretaría de Cultura",
     source: {

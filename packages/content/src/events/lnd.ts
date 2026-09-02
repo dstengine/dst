@@ -16,6 +16,7 @@ export const items: EventItem[] = [
     start: "2026-09-06",
     city: "London",
     venue: "Queen Elizabeth Olympic Park, E20",
+    geo: { name: "Queen Elizabeth Olympic Park", lat: 51.544960, lng: -0.017177 },
     category: "Markets",
     source: {
       name: "Londonist",
@@ -42,6 +43,7 @@ export const items: EventItem[] = [
     end: "2026-09-13",
     city: "London",
     venue: "Hackney Bridge, E15",
+    geo: { name: "Hackney Bridge", lat: 51.544300, lng: -0.021258 },
     category: "Food",
     source: {
       name: "Londonist",

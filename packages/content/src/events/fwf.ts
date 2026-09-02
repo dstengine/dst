@@ -165,6 +165,7 @@ export const items: EventItem[] = [
     start: "2026-02-04",
     end: "2026-02-05",
     venue: "Grand Hyatt Dubai",
+    geo: { name: "Grand Hyatt Dubai", lat: 25.227888, lng: 55.328391 },
     city: "Dubai",
     organizer: "PropTech Connect, with the Dubai Land Department",
     category: "Conference",
