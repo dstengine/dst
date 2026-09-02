@@ -18,8 +18,8 @@ import StatusBadge from "./StatusBadge.astro";
 import TicketButtons from "./TicketButtons.astro";
 import { go } from "../outbound";
 import {
-  checkedOn, cityBySlug, cityHasPage, formatRun, formatRunDays, groupBySlug, otherRuns,
-  relatedRuns, runIntro, spell, statusOf, venueBySlug, venuePath, type Run, type Show,
+  checkedOn, cityBySlug, cityHasPage, faqHeading, formatRun, formatRunDays, groupBySlug, otherRuns,
+  relatedRuns, runFaq, runIntro, spell, statusOf, venueBySlug, venuePath, type Run, type Show,
 } from "../content";
 
 interface Props { show: Show; run: Run }
@@ -54,42 +54,17 @@ const glance = [
 // A contents box earns its place on a long page. Three anchors above the
 // facts a reader came for is furniture, so it waits for a fourth and sits
 // under them.
+const heading = faqHeading(run);
 const jump = [
   run.sellers.length > 1 && { id: "sellers", label: "Where to buy" },
   venue && { id: "venue", label: "The theatre" },
-  { id: "faq", label: "Questions" },
+  { id: "faq", label: heading },
   elsewhere.length > 0 && { id: "elsewhere", label: "Other cities" },
 ].filter(Boolean) as { id: string; label: string }[];
 
 // Dates are local to the city, which is worth saying once rather than
 // implying — a run in Osaka read from Dubai is a different day.
-const faq = run.faq ?? [
-  {
-    q: `When is ${show.title} in ${city.name}?`,
-    a: run.openRun
-      ? `It plays an open run — ${formatRun(run).toLowerCase()}, with no closing date announced.`
-      : `${formatRun(run)}${venue ? `, at ${venue.name}` : ""}. Dates are local to ${city.name}.`,
-  },
-  venue
-    ? { q: `Which theatre is it in?`, a: `${venue.name}${venue.address ? `, ${venue.address}` : ""}.` }
-    : { q: `Which theatre is it in?`, a: `The theatre has not been announced. The dates are published; the venue is not, and this page will not guess at one.` },
-  {
-    // Generic: the seller's name changes, the sentence does not — twenty-two
-    // stops share one agent, so this exact answer sat in the markup of
-    // twenty-two pages. It stays on the page and out of the JSON-LD.
-    q: "Where do I buy tickets?",
-    generic: true,
-    a: run.sellers.length === 0
-      ? "Nowhere yet. These dates are announced without a seller; when one is listed it will appear here."
-      : run.sellers.length === 1
-        ? `From ${run.sellers[0]!.name}, on their own site. Nothing is sold on this page.`
-        : `From ${run.sellers.map((s) => s.name).join(" or ")}. Both sell the same run; nothing is sold on this page.`,
-  },
-  // "Is this the official site?" is gone from here entirely. The footer says
-  // it on every page of the site already, in the same words — repeating it as
-  // a question added a hundred and forty identical words to sixty pages and
-  // answered nothing the reader had not already been told.
-];
+const faq = runFaq(run, show, city, venue);
 
 // TheaterEvent, with an offer per seller and the theatre as a place that has
 // coordinates — the two things that decide whether this shows up as an event
@@ -192,7 +167,7 @@ const eventLd: Record<string, unknown> = {
   )}
 
   <section class="container" id="faq">
-    <h2>Questions</h2>
+    <h2>{heading}</h2>
     <Faq items={faq} />
   </section>
 

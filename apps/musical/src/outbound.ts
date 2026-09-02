@@ -165,7 +165,7 @@ export const outbound: Record<string, string> = {
   "tickets-cats-bristol": "https://www.atgtickets.com/shows/cats/bristol-hippodrome/",
   "tickets-cats-llandudno": "https://www.venuecymru.co.uk/cats",
   "tickets-cats-glasgow": "https://www.atgtickets.com/shows/cats/theatre-royal-glasgow/",
-  "tickets-cats-nottingham": "https://trch.co.uk/whats-on/cats-14tr",
+  "tickets-cats-nottingham": "https://www.trch.co.uk/whats-on/cats-14tr",
   "tickets-cats-canterbury": "https://marlowetheatre.com/shows/cats/",
   "tickets-cats-sunderland": "https://www.atgtickets.com/shows/cats/sunderland-empire/calendar/",
   "tickets-cats-aberdeen": "https://www.aberdeenperformingarts.com/whats-on/cats/",

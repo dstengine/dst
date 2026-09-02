@@ -242,3 +242,130 @@ export function formatRunDays(run: Run): string | undefined {
     from the root and from nowhere else — one canonical address each. */
 export const venuePath = (venue: Venue): string =>
   venue.rootSlug ? `/${venue.rootSlug}/` : `/venue/${venue.slug}/`;
+
+/** FNV-1a. Only used to shuffle, never to pick directly. */
+function hash(seed: string): number {
+  let h = 0x811c9dc5;
+  for (let i = 0; i < seed.length; i++) {
+    h ^= seed.charCodeAt(i);
+    h = Math.imul(h, 0x01000193) >>> 0;
+  }
+  return h;
+}
+
+/** A stable choice among n wordings, spread evenly over every run on the site.
+    Taking the hash modulo n looked right and was not: one phrasing landed on
+    twenty-two of sixty pages and another on three, which is the lopsidedness
+    it was supposed to remove. So the runs are ranked by a hash of their slug
+    and the field name, and the rank picks the wording — even by construction,
+    and uncorrelated between fields because each field ranks them differently.
+
+    Ranking, not shuffling per page, because the result has to be identical on
+    every build: prose that reshuffled itself would churn lastmod on sixty
+    pages and tell search engines the site changed when it had not. */
+const rankings = new Map<string, Map<string, number>>();
+
+export function variant(run: Run, field: string, n: number): number {
+  const key = `${field}/${n}`;
+  let table = rankings.get(key);
+  if (!table) {
+    const order = runs
+      .map((r) => ({ id: `${r.show}/${r.slug}`, h: hash(`${field}:${r.show}/${r.slug}`) }))
+      .sort((a, b) => a.h - b.h || a.id.localeCompare(b.id));
+    table = new Map(order.map((r, i) => [r.id, i % n]));
+    rankings.set(key, table);
+  }
+  return table.get(`${run.show}/${run.slug}`) ?? 0;
+}
+
+/** The heading over the questions. Sixty pages that all say "Questions" read
+    as one template with the nouns swapped, which is what it was. */
+const FAQ_HEADINGS = [
+  "Questions",
+  "Before you book",
+  "Worth knowing",
+  "The practical bit",
+  "Details",
+  "Things people ask",
+  "Good to know",
+];
+
+export const faqHeading = (run: Run): string =>
+  FAQ_HEADINGS[variant(run, "heading", FAQ_HEADINGS.length)]!;
+
+/** The three questions every stop answers, asked differently from stop to
+    stop. Naming the show in the question helps a reader who arrived from a
+    search and is not certain what they are looking at; on a page whose title
+    already says it twice it is noise. So some pages name it and some do not,
+    and which is which is fixed by the run's own slug. */
+export function runFaq(
+  run: Run,
+  show: { title: string },
+  city: City,
+  venue: Venue | undefined,
+): { q: string; a: string; generic?: boolean }[] {
+  if (run.faq) return run.faq;
+  const v = (kind: string, n: number) => variant(run, kind, n);
+
+  const whenQ = [
+    `When is ${show.title} in ${city.name}?`,
+    "What are the dates?",
+    `When does it play in ${city.name}?`,
+    `Which nights is ${show.title} on?`,
+    "When is it on?",
+  ][v("when-q", 5)]!;
+
+  const whereQ = [
+    "Which theatre is it in?",
+    `Where in ${city.name} is it playing?`,
+    "Which venue?",
+    `Where does ${show.title} play here?`,
+    "Where is it?",
+  ][v("where-q", 5)]!;
+
+  const buyQ = [
+    "Where do I buy tickets?",
+    "How do I book?",
+    "Where are tickets sold?",
+    "Who is selling tickets?",
+    `How do I get tickets for ${show.title}?`,
+  ][v("buy-q", 5)]!;
+
+  // One seller, one sentence, and until now the same sentence on fifty-six
+  // pages. The fact is unavoidable; the wording is not.
+  const one = (name: string) =>
+    [
+      `From ${name}, on their own site. Nothing is sold on this page.`,
+      `${name} sell them. Booking is completed on their site, not this one.`,
+      `Through ${name}. This page lists the run; it does not sell it.`,
+      `${name} handle the sale. You finish the booking on their own page.`,
+      `From ${name} directly. We list the dates and link out; the transaction is theirs.`,
+    ][v("buy-a", 5)]!;
+
+  return [
+    {
+      q: whenQ,
+      a: run.openRun
+        ? `It plays an open run — ${formatRun(run).toLowerCase()}, with no closing date announced.`
+        : `${formatRun(run)}${venue ? `, at ${venue.name}` : ""}. Dates are local to ${city.name}.`,
+    },
+    {
+      q: whereQ,
+      a: venue
+        ? `${venue.name}${venue.address ? `, ${venue.address}` : ""}.`
+        : "The theatre has not been announced. The dates are published; the venue is not, and this page will not guess at one.",
+    },
+    {
+      // Still generic, and still kept out of the JSON-LD: five wordings across
+      // fifty-six pages is better than one, but it is not a fact about a stop.
+      q: buyQ,
+      generic: true,
+      a:
+        run.sellers.length === 0
+          ? "Nowhere yet. These dates are announced without a seller; when one is listed it will appear here."
+          : run.sellers.length === 1
+            ? one(run.sellers[0]!.name)
+            : `From ${run.sellers.map((s) => s.name).join(" or ")}. Both sell the same run; nothing is sold on this page.`,
+    },
+  ];
+}
