@@ -805,7 +805,7 @@ export const venues: Venue[] = [
     imageLicenseSlug: "licence-cc0",
     imageSourceSlug: "photo-theatre-royal-brighton",
     summary:
-      "The Prince of Wales, later George IV, gave his assent for it, and it opened in June 1807 with Hamlet. Under 952 seats over four levels it is the smallest house on this tour, and for most of the twentieth century it was where London producers found out whether a play worked.",
+      "The Prince of Wales, later George IV, gave his assent for it, and it opened in June 1807 with Hamlet. Under 952 seats over four levels, it is the second-smallest house on this tour after Cheltenham, and for most of the twentieth century it was where London producers found out whether a play worked.",
     details: [
       { label: "Opened", value: "27 June 1807" },
       { label: "Rebuilt", value: "1854, by Charles J. Phipps" },
