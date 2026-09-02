@@ -866,6 +866,54 @@
         ]
       ]
     },
+    "/covers/296-homes-above-ten-million-dollars.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/296-homes-above-ten-million-dollars-480.avif"
+        ],
+        [
+          768,
+          "/covers/296-homes-above-ten-million-dollars-768.avif"
+        ],
+        [
+          1024,
+          "/covers/296-homes-above-ten-million-dollars-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/296-homes-above-ten-million-dollars-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/296-homes-above-ten-million-dollars-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/296-homes-above-ten-million-dollars-480.webp"
+        ],
+        [
+          768,
+          "/covers/296-homes-above-ten-million-dollars-768.webp"
+        ],
+        [
+          1024,
+          "/covers/296-homes-above-ten-million-dollars-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/296-homes-above-ten-million-dollars-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/296-homes-above-ten-million-dollars-1536.webp"
+        ]
+      ]
+    },
     "/covers/apple-hands-the-company-to-an-engineer.jpg": {
       "width": 1536,
       "height": 864,
@@ -1055,6 +1103,54 @@
         [
           1536,
           "/covers/dubai-tokenised-property-secondary-market-1536.webp"
+        ]
+      ]
+    },
+    "/covers/gitex-2026-lands-in-december.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/gitex-2026-lands-in-december-480.avif"
+        ],
+        [
+          768,
+          "/covers/gitex-2026-lands-in-december-768.avif"
+        ],
+        [
+          1024,
+          "/covers/gitex-2026-lands-in-december-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/gitex-2026-lands-in-december-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/gitex-2026-lands-in-december-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/gitex-2026-lands-in-december-480.webp"
+        ],
+        [
+          768,
+          "/covers/gitex-2026-lands-in-december-768.webp"
+        ],
+        [
+          1024,
+          "/covers/gitex-2026-lands-in-december-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/gitex-2026-lands-in-december-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/gitex-2026-lands-in-december-1536.webp"
         ]
       ]
     },
@@ -1295,6 +1391,102 @@
         [
           1536,
           "/covers/hub-llc-1536.webp"
+        ]
+      ]
+    },
+    "/covers/international-property-show-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/international-property-show-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/international-property-show-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/international-property-show-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/international-property-show-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/international-property-show-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/international-property-show-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/international-property-show-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/international-property-show-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/international-property-show-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/international-property-show-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/middle-east-energy-2026-opens.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/middle-east-energy-2026-opens-480.avif"
+        ],
+        [
+          768,
+          "/covers/middle-east-energy-2026-opens-768.avif"
+        ],
+        [
+          1024,
+          "/covers/middle-east-energy-2026-opens-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/middle-east-energy-2026-opens-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/middle-east-energy-2026-opens-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/middle-east-energy-2026-opens-480.webp"
+        ],
+        [
+          768,
+          "/covers/middle-east-energy-2026-opens-768.webp"
+        ],
+        [
+          1024,
+          "/covers/middle-east-energy-2026-opens-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/middle-east-energy-2026-opens-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/middle-east-energy-2026-opens-1536.webp"
         ]
       ]
     },
@@ -2078,6 +2270,54 @@
         ]
       ]
     },
+    "/covers/drones-deliver-to-dubai-parks-and-beaches.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/drones-deliver-to-dubai-parks-and-beaches-480.avif"
+        ],
+        [
+          768,
+          "/covers/drones-deliver-to-dubai-parks-and-beaches-768.avif"
+        ],
+        [
+          1024,
+          "/covers/drones-deliver-to-dubai-parks-and-beaches-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/drones-deliver-to-dubai-parks-and-beaches-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/drones-deliver-to-dubai-parks-and-beaches-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/drones-deliver-to-dubai-parks-and-beaches-480.webp"
+        ],
+        [
+          768,
+          "/covers/drones-deliver-to-dubai-parks-and-beaches-768.webp"
+        ],
+        [
+          1024,
+          "/covers/drones-deliver-to-dubai-parks-and-beaches-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/drones-deliver-to-dubai-parks-and-beaches-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/drones-deliver-to-dubai-parks-and-beaches-1536.webp"
+        ]
+      ]
+    },
     "/covers/dubai-future-forum-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -2318,6 +2558,54 @@
         ]
       ]
     },
+    "/covers/fifteen-kilometres-of-autonomous-dubai.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/fifteen-kilometres-of-autonomous-dubai-480.avif"
+        ],
+        [
+          768,
+          "/covers/fifteen-kilometres-of-autonomous-dubai-768.avif"
+        ],
+        [
+          1024,
+          "/covers/fifteen-kilometres-of-autonomous-dubai-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/fifteen-kilometres-of-autonomous-dubai-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/fifteen-kilometres-of-autonomous-dubai-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/fifteen-kilometres-of-autonomous-dubai-480.webp"
+        ],
+        [
+          768,
+          "/covers/fifteen-kilometres-of-autonomous-dubai-768.webp"
+        ],
+        [
+          1024,
+          "/covers/fifteen-kilometres-of-autonomous-dubai-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/fifteen-kilometres-of-autonomous-dubai-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/fifteen-kilometres-of-autonomous-dubai-1536.webp"
+        ]
+      ]
+    },
     "/covers/future-world-forum-dubai-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -2411,6 +2699,54 @@
         [
           1536,
           "/covers/gitex-global-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/ifa-berlin-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/ifa-berlin-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/ifa-berlin-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/ifa-berlin-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/ifa-berlin-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/ifa-berlin-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/ifa-berlin-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/ifa-berlin-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/ifa-berlin-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/ifa-berlin-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/ifa-berlin-2026-1536.webp"
         ]
       ]
     },
@@ -2880,6 +3216,54 @@
         ]
       ]
     },
+    "/covers/bayeux-tapestry-at-the-british-museum.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/bayeux-tapestry-at-the-british-museum-480.avif"
+        ],
+        [
+          768,
+          "/covers/bayeux-tapestry-at-the-british-museum-768.avif"
+        ],
+        [
+          1024,
+          "/covers/bayeux-tapestry-at-the-british-museum-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/bayeux-tapestry-at-the-british-museum-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/bayeux-tapestry-at-the-british-museum-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/bayeux-tapestry-at-the-british-museum-480.webp"
+        ],
+        [
+          768,
+          "/covers/bayeux-tapestry-at-the-british-museum-768.webp"
+        ],
+        [
+          1024,
+          "/covers/bayeux-tapestry-at-the-british-museum-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/bayeux-tapestry-at-the-british-museum-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/bayeux-tapestry-at-the-british-museum-1536.webp"
+        ]
+      ]
+    },
     "/covers/bfi-london-film-festival-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -2925,6 +3309,102 @@
         [
           1536,
           "/covers/bfi-london-film-festival-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/frieze-sculpture-in-regents-park.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/frieze-sculpture-in-regents-park-480.avif"
+        ],
+        [
+          768,
+          "/covers/frieze-sculpture-in-regents-park-768.avif"
+        ],
+        [
+          1024,
+          "/covers/frieze-sculpture-in-regents-park-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/frieze-sculpture-in-regents-park-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/frieze-sculpture-in-regents-park-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/frieze-sculpture-in-regents-park-480.webp"
+        ],
+        [
+          768,
+          "/covers/frieze-sculpture-in-regents-park-768.webp"
+        ],
+        [
+          1024,
+          "/covers/frieze-sculpture-in-regents-park-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/frieze-sculpture-in-regents-park-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/frieze-sculpture-in-regents-park-1536.webp"
+        ]
+      ]
+    },
+    "/covers/lady-in-blue-takes-the-fourth-plinth.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/lady-in-blue-takes-the-fourth-plinth-480.avif"
+        ],
+        [
+          768,
+          "/covers/lady-in-blue-takes-the-fourth-plinth-768.avif"
+        ],
+        [
+          1024,
+          "/covers/lady-in-blue-takes-the-fourth-plinth-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/lady-in-blue-takes-the-fourth-plinth-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/lady-in-blue-takes-the-fourth-plinth-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/lady-in-blue-takes-the-fourth-plinth-480.webp"
+        ],
+        [
+          768,
+          "/covers/lady-in-blue-takes-the-fourth-plinth-768.webp"
+        ],
+        [
+          1024,
+          "/covers/lady-in-blue-takes-the-fourth-plinth-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/lady-in-blue-takes-the-fourth-plinth-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/lady-in-blue-takes-the-fourth-plinth-1536.webp"
         ]
       ]
     },
@@ -3021,6 +3501,54 @@
         [
           1536,
           "/covers/lord-mayors-show-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/nature-and-us-opens-a-gallery-shut-since-1943.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/nature-and-us-opens-a-gallery-shut-since-1943-480.avif"
+        ],
+        [
+          768,
+          "/covers/nature-and-us-opens-a-gallery-shut-since-1943-768.avif"
+        ],
+        [
+          1024,
+          "/covers/nature-and-us-opens-a-gallery-shut-since-1943-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/nature-and-us-opens-a-gallery-shut-since-1943-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/nature-and-us-opens-a-gallery-shut-since-1943-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/nature-and-us-opens-a-gallery-shut-since-1943-480.webp"
+        ],
+        [
+          768,
+          "/covers/nature-and-us-opens-a-gallery-shut-since-1943-768.webp"
+        ],
+        [
+          1024,
+          "/covers/nature-and-us-opens-a-gallery-shut-since-1943-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/nature-and-us-opens-a-gallery-shut-since-1943-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/nature-and-us-opens-a-gallery-shut-since-1943-1536.webp"
         ]
       ]
     },
@@ -3988,6 +4516,54 @@
         ]
       ]
     },
+    "/covers/bus-routes-67-and-149-consultation.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/bus-routes-67-and-149-consultation-480.avif"
+        ],
+        [
+          768,
+          "/covers/bus-routes-67-and-149-consultation-768.avif"
+        ],
+        [
+          1024,
+          "/covers/bus-routes-67-and-149-consultation-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/bus-routes-67-and-149-consultation-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/bus-routes-67-and-149-consultation-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/bus-routes-67-and-149-consultation-480.webp"
+        ],
+        [
+          768,
+          "/covers/bus-routes-67-and-149-consultation-768.webp"
+        ],
+        [
+          1024,
+          "/covers/bus-routes-67-and-149-consultation-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/bus-routes-67-and-149-consultation-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/bus-routes-67-and-149-consultation-1536.webp"
+        ]
+      ]
+    },
     "/covers/eclipse-walk-tower-hamlets-cemetery-park.jpg": {
       "width": 1536,
       "height": 864,
@@ -4180,6 +4756,102 @@
         ]
       ]
     },
+    "/covers/open-house-festival-turns-35.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/open-house-festival-turns-35-480.avif"
+        ],
+        [
+          768,
+          "/covers/open-house-festival-turns-35-768.avif"
+        ],
+        [
+          1024,
+          "/covers/open-house-festival-turns-35-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/open-house-festival-turns-35-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/open-house-festival-turns-35-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/open-house-festival-turns-35-480.webp"
+        ],
+        [
+          768,
+          "/covers/open-house-festival-turns-35-768.webp"
+        ],
+        [
+          1024,
+          "/covers/open-house-festival-turns-35-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/open-house-festival-turns-35-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/open-house-festival-turns-35-1536.webp"
+        ]
+      ]
+    },
+    "/covers/oxford-street-goes-traffic-free.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/oxford-street-goes-traffic-free-480.avif"
+        ],
+        [
+          768,
+          "/covers/oxford-street-goes-traffic-free-768.avif"
+        ],
+        [
+          1024,
+          "/covers/oxford-street-goes-traffic-free-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/oxford-street-goes-traffic-free-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/oxford-street-goes-traffic-free-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/oxford-street-goes-traffic-free-480.webp"
+        ],
+        [
+          768,
+          "/covers/oxford-street-goes-traffic-free-768.webp"
+        ],
+        [
+          1024,
+          "/covers/oxford-street-goes-traffic-free-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/oxford-street-goes-traffic-free-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/oxford-street-goes-traffic-free-1536.webp"
+        ]
+      ]
+    },
     "/covers/sl12-superloop-gants-hill-rainham.jpg": {
       "width": 1536,
       "height": 864,
@@ -4273,6 +4945,54 @@
         [
           1536,
           "/covers/the-big-brine-hackney-bridge-1536.webp"
+        ]
+      ]
+    },
+    "/covers/totally-thames-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/totally-thames-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/totally-thames-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/totally-thames-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/totally-thames-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/totally-thames-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/totally-thames-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/totally-thames-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/totally-thames-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/totally-thames-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/totally-thames-2026-1536.webp"
         ]
       ]
     },
@@ -9940,6 +10660,54 @@
         ]
       ]
     },
+    "/covers/broadway-autumn-is-a-play-season.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/broadway-autumn-is-a-play-season-480.avif"
+        ],
+        [
+          768,
+          "/covers/broadway-autumn-is-a-play-season-768.avif"
+        ],
+        [
+          1024,
+          "/covers/broadway-autumn-is-a-play-season-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/broadway-autumn-is-a-play-season-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/broadway-autumn-is-a-play-season-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/broadway-autumn-is-a-play-season-480.webp"
+        ],
+        [
+          768,
+          "/covers/broadway-autumn-is-a-play-season-768.webp"
+        ],
+        [
+          1024,
+          "/covers/broadway-autumn-is-a-play-season-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/broadway-autumn-is-a-play-season-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/broadway-autumn-is-a-play-season-1536.webp"
+        ]
+      ]
+    },
     "/covers/broadway-week-chicago.jpg": {
       "width": 1536,
       "height": 864,
@@ -10516,6 +11284,54 @@
         ]
       ]
     },
+    "/covers/fire-museum-reopens-after-two-years.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/fire-museum-reopens-after-two-years-480.avif"
+        ],
+        [
+          768,
+          "/covers/fire-museum-reopens-after-two-years-768.avif"
+        ],
+        [
+          1024,
+          "/covers/fire-museum-reopens-after-two-years-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/fire-museum-reopens-after-two-years-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/fire-museum-reopens-after-two-years-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/fire-museum-reopens-after-two-years-480.webp"
+        ],
+        [
+          768,
+          "/covers/fire-museum-reopens-after-two-years-768.webp"
+        ],
+        [
+          1024,
+          "/covers/fire-museum-reopens-after-two-years-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/fire-museum-reopens-after-two-years-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/fire-museum-reopens-after-two-years-1536.webp"
+        ]
+      ]
+    },
     "/covers/hudson-river-foliage-cruises.jpg": {
       "width": 1536,
       "height": 864,
@@ -10561,6 +11377,54 @@
         [
           1536,
           "/covers/hudson-river-foliage-cruises-1536.webp"
+        ]
+      ]
+    },
+    "/covers/lenape-legacies-at-the-museum-of-the-city.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/lenape-legacies-at-the-museum-of-the-city-480.avif"
+        ],
+        [
+          768,
+          "/covers/lenape-legacies-at-the-museum-of-the-city-768.avif"
+        ],
+        [
+          1024,
+          "/covers/lenape-legacies-at-the-museum-of-the-city-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/lenape-legacies-at-the-museum-of-the-city-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/lenape-legacies-at-the-museum-of-the-city-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/lenape-legacies-at-the-museum-of-the-city-480.webp"
+        ],
+        [
+          768,
+          "/covers/lenape-legacies-at-the-museum-of-the-city-768.webp"
+        ],
+        [
+          1024,
+          "/covers/lenape-legacies-at-the-museum-of-the-city-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/lenape-legacies-at-the-museum-of-the-city-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/lenape-legacies-at-the-museum-of-the-city-1536.webp"
         ]
       ]
     },
@@ -10705,6 +11569,54 @@
         [
           1536,
           "/covers/open-house-new-york-weekend-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/transit-museum-bus-festival-turns-fifty.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/transit-museum-bus-festival-turns-fifty-480.avif"
+        ],
+        [
+          768,
+          "/covers/transit-museum-bus-festival-turns-fifty-768.avif"
+        ],
+        [
+          1024,
+          "/covers/transit-museum-bus-festival-turns-fifty-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/transit-museum-bus-festival-turns-fifty-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/transit-museum-bus-festival-turns-fifty-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/transit-museum-bus-festival-turns-fifty-480.webp"
+        ],
+        [
+          768,
+          "/covers/transit-museum-bus-festival-turns-fifty-768.webp"
+        ],
+        [
+          1024,
+          "/covers/transit-museum-bus-festival-turns-fifty-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/transit-museum-bus-festival-turns-fifty-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/transit-museum-bus-festival-turns-fifty-1536.webp"
         ]
       ]
     },
