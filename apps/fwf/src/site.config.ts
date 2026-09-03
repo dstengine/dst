@@ -11,5 +11,12 @@ export const site = {
   footerSiteName: "fwf.lol",
   complianceNote: disclaimer,
   partnerDisclosure: false,
+  // The site opens dark. Its own hero is a night photograph of a lit
+  // facade, its accent is a violet that carries on a dark ground and goes
+  // flat on a white one, and the subject is an evening conference — a
+  // reader arriving on a light page sees a design that was drawn for the
+  // other one. The toggle is still in the header, and a reader who presses
+  // it is remembered.
+  defaultTheme: "dark" as const,
   footerLinks: [{ href: "/about/", label: "About this site" }],
 };

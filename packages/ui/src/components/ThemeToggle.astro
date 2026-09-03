@@ -8,6 +8,10 @@
    already has by default and does not have to be told about, and a third
    icon on a control this small asks a question nobody was asking.
 
+   A site may declare its own default (`defaultTheme` in its site.config),
+   and then that, not the system, is what an untouched page shows. It stays
+   a default: this button still works, and a stored press still wins.
+
    The script that stamps the stored choice is inline in the head, not here:
    it has to run before the first paint or the page flashes the wrong theme.
    See BaseLayout. This component only draws the control and the click. */
@@ -31,6 +35,13 @@
     btn.hidden = false;
 
     const system = window.matchMedia("(prefers-color-scheme: dark)");
+    // The site's own default, if it declared one. Stamped on <html> by
+    // BaseLayout and never rewritten, so it survives every press of this
+    // button — unlike data-theme, which is what the button writes.
+    const siteDefault = (() => {
+      const v = document.documentElement.dataset.defaultTheme;
+      return v === "light" || v === "dark" ? v : null;
+    })();
 
     const stored = () => {
       try {
@@ -39,8 +50,10 @@
       } catch { return null; }
     };
 
-    // What the reader is actually looking at, whoever decided it.
-    const current = () => stored() ?? (system.matches ? "dark" : "light");
+    // What the reader is actually looking at, whoever decided it. Three
+    // deciders in priority order: this reader's stored press, this site's
+    // declared default, this machine's system setting.
+    const current = () => stored() ?? siteDefault ?? (system.matches ? "dark" : "light");
 
     const draw = () => {
       const mode = current();
@@ -53,8 +66,9 @@
     draw();
     // While nothing is stored the page is following the system, so the icon
     // has to follow it too — otherwise a reader whose machine switches at
-    // sunset is looking at a sun on a dark page.
-    system.addEventListener("change", () => { if (!stored()) draw(); });
+    // sunset is looking at a sun on a dark page. A site with its own default
+    // is not following the system, so it does not redraw.
+    system.addEventListener("change", () => { if (!stored() && !siteDefault) draw(); });
 
     btn.addEventListener("click", () => {
       const next = current() === "dark" ? "light" : "dark";

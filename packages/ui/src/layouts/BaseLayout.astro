@@ -54,6 +54,21 @@ interface Props {
       one — which is the whole point of it, since for some of those inner
       pages the hub is the only site linking to them at all. */
   footerSites?: NetworkSite[];
+  /** Which scheme this site opens in when the reader has not chosen one.
+
+      Left unset — which is every site until it says otherwise — the page
+      follows the reader's own system setting, including when the system
+      flips while the page is open. That is the right default: the reader's
+      operating system already knows the answer, and a site overriding it
+      is claiming to know better.
+
+      A site sets it when its own design has an opinion the palette depends
+      on. It is a *default*, not a lock: the toggle is still there, and a
+      stored choice still wins on the very first paint, because the head
+      script that reads it runs after this attribute is stamped and before
+      anything is painted. */
+  defaultTheme?: "light" | "dark";
+
   /** Who the structured data names as publisher. Defaults to DST; a site
       that is not being tied to the group passes its own, so the markup says
       the same thing the footer does. */
@@ -82,7 +97,7 @@ interface Props {
   lang?: string;
 }
 
-const { title, titleSuffix, description, siteName, nav, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [], footerSiteName = siteName, instagram, image, footerSites = [], networkFooter = true, publisher, lang = "en", noindex = false, prose = false } = Astro.props;
+const { title, titleSuffix, description, siteName, nav, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [], footerSiteName = siteName, instagram, image, footerSites = [], networkFooter = true, publisher, defaultTheme, lang = "en", noindex = false, prose = false } = Astro.props;
 const pageTitle = titleSuffix ? `${title} \u2014 ${titleSuffix}` : title;
 const isDstHome = Astro.site?.hostname === "dst.llc";
 // The two strings the shell says on its own, in the language of the page.
@@ -159,13 +174,21 @@ const denseNav = navFootprint > 900;
 const lateIcons = navFootprint > 700;
 ---
 <!doctype html>
-<html lang={lang}>
+<html
+  lang={lang}
+  data-theme={defaultTheme}
+  {/* Never rewritten by the toggle, which is why it is a second attribute
+      rather than a reading of `data-theme`: the toggle has to know what the
+      page falls back to once a stored choice is cleared, and by then
+      `data-theme` is whatever the reader last pressed. */}
+  data-default-theme={defaultTheme}
+>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     {/* Both schemes exist, so form controls, scrollbars and the address bar
         follow the page rather than staying light. */}
-    <meta name="color-scheme" content="light dark" />
+    <meta name="color-scheme" content={defaultTheme === "dark" ? "dark light" : "light dark"} />
     {/* Before the first paint, or the page flashes the default theme and then
         corrects itself. Inline and synchronous on purpose: a module script
         is deferred, which is exactly late enough to see the flash. */}
