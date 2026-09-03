@@ -33,13 +33,34 @@ const {
     <label for={`${formId}-name`}>Name</label>
     <input id={`${formId}-name`} name="name" type="text" autocomplete="name" />
   </div>
+  {/* One of the two is required, and the visitor picks which. Marking both
+      `required` would be a lie the browser enforces; marking one would pick
+      for them — and which one is convenient is not ours to decide, since
+      half this network's readers are abroad and half would rather be
+      reached on WhatsApp. So the rule is stated in words here, and checked
+      on submit. */}
+  <p class="lead-form-hint" id={`${formId}-contact-hint`}>
+    Leave an email or a phone number — whichever suits you. One is enough.
+  </p>
   <div class="field">
     <label for={`${formId}-email`}>Email</label>
-    <input id={`${formId}-email`} name="contacts.email" type="email" autocomplete="email" />
+    <input
+      id={`${formId}-email`}
+      name="contacts.email"
+      type="email"
+      autocomplete="email"
+      aria-describedby={`${formId}-contact-hint`}
+    />
   </div>
   <div class="field">
     <label for={`${formId}-phone`}>Phone / WhatsApp</label>
-    <input id={`${formId}-phone`} name="contacts.phone" type="tel" autocomplete="tel" />
+    <input
+      id={`${formId}-phone`}
+      name="contacts.phone"
+      type="tel"
+      autocomplete="tel"
+      aria-describedby={`${formId}-contact-hint`}
+    />
   </div>
   {/* Honeypot - see lead.dto.md. Off-screen via CSS, not type="hidden" or
       display:none - both of those are exactly what a bot checks for before
@@ -119,9 +140,44 @@ const {
       { once: true }
     );
 
+    // The contact fields, whichever ones a given form chose to render.
+    // Read from the DOM rather than named here, so a form that offers
+    // Telegram or WhatsApp instead is covered without editing this.
+    const contactFields = () =>
+      [...form.querySelectorAll<HTMLInputElement>('input[name^="contacts."]')];
+
+    // A rejected submit leaves the custom message on the field; typing has
+    // to clear it, or the browser keeps refusing a form that is now valid.
+    for (const field of contactFields()) {
+      field.addEventListener("input", () => {
+        for (const other of contactFields()) other.setCustomValidity("");
+      });
+    }
+
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
       const status = form.querySelector<HTMLElement>("[data-lead-form-status]");
+
+      // The API requires at least one contact and returns 400 without one.
+      // For twenty-eight days it was getting name-only submissions and the
+      // visitor was being shown "Something went wrong — please try again",
+      // so they tried again, identically, about nine times each. Nothing was
+      // wrong with the network and retrying could never work; the form had
+      // simply never said that a contact was needed. Caught here, before
+      // anything is sent, and named.
+      const contacts = contactFields();
+      if (contacts.length > 0 && !contacts.some((f) => f.value.trim() !== "")) {
+        const message = "Please leave an email or a phone number so we can reply.";
+        const first = contacts[0]!;
+        first.setCustomValidity(message);
+        // Both: the browser's own bubble points at the field, the status
+        // line survives being dismissed and is what a screen reader reads.
+        form.reportValidity();
+        if (status) status.textContent = message;
+        first.focus();
+        return;
+      }
+
       const submitButton = form.querySelector<HTMLButtonElement>('button[type="submit"]');
       // Guards against a double-click (or an impatient second tap while the
       // request is in flight) creating two leads for the same submission.
@@ -138,22 +194,37 @@ const {
       if (geo?.source) lead.geo = geo;
       const history = (window as any).dstGetHistory?.();
       if (history?.length) lead.meta.history = history;
+      let failed = "network";
       try {
         const res = await fetch(form.action, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ lead }),
         });
-        if (!res.ok) throw new Error(String(res.status));
+        if (!res.ok) {
+          failed = res.status >= 400 && res.status < 500 ? "4xx" : "server";
+          throw new Error(String(res.status));
+        }
         if (status) status.textContent = "Thanks — we'll be in touch shortly.";
         track("generate_lead", { form_name: formName(form) });
         form.reset();
       } catch {
-        if (status) status.textContent = "Something went wrong — please try again, or contact us directly.";
+        // Split, because the two cases need different things from the
+        // visitor: a bad request is not going to succeed on a retry, and
+        // telling them to try again wastes their time. Anything else
+        // genuinely is worth one more press.
+        if (status) {
+          status.textContent = failed === "4xx"
+            ? "We could not accept that — please check the details and try once more."
+            : "Something went wrong — please try again, or contact us directly.";
+        }
         // Counted too: a form that starts far more often than it completes
         // is either broken or asking too much, and page views can't show
         // the difference.
-        track("lead_failed", { form_name: formName(form) });
+        // `reason` separates the three, so the next time this shows up in
+        // GA it says which of them it is instead of one undifferentiated
+        // count of eighteen.
+        track("lead_failed", { form_name: formName(form), reason: failed });
         // Only re-enable on failure - a successful submit should stay
         // disabled (the form is reset anyway) so a stray extra click right
         // after can't fire a second one.
@@ -187,6 +258,11 @@ const {
     overflow: hidden;
   }
   label { font-size: var(--step--1); font-weight: 600; color: var(--ink-muted); }
+  .lead-form-hint {
+    margin: 0;
+    font-size: var(--step--1);
+    color: var(--ink-muted);
+  }
   input, select {
     font: inherit;
     padding: 0.6em 0.75em;
