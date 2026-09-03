@@ -2,6 +2,78 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "small-business-relief-still-files-a-return",
+    site: "llc",
+    image: "/covers/small-business-relief-still-files-a-return.jpg",
+    imageAlt: "A small cut-paper form sheet on a teal ground beside a much larger one, both with the same ruled lines",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Relief from the tax is not relief from the return",
+    cardTitle: "Small Business Relief still files",
+    titleSeo: "Relief still means filing a return",
+    summary:
+      "The FTA has reminded companies under the Dh3 million threshold that electing Small Business Relief means a simplified return, not no return. The deadline is 30 September.",
+    date: "2026-09-03",
+    category: "Tax",
+    source: {
+      name: "Federal Tax Authority",
+      url: "https://www.zawya.com/en/press-release/government-news/fta-confirms-taxable-persons-eligible-for-the-small-business-relief-must-submit-simplified-corporate-tax-returns-418896",
+      verifiedOn: "2026-09-03",
+    },
+    body: [
+      "The most expensive misreading of UAE corporate tax is the one that sounds like good news. On 3 August the <strong>Federal Tax Authority</strong> issued a reminder aimed squarely at it.",
+      "## The reminder",
+      "Businesses eligible for <strong>Small Business Relief</strong> must still submit a corporate tax return. The relief reduces what the return contains; it does not remove the obligation to file one.",
+      "## What the relief actually does",
+      "Small Business Relief treats an eligible resident person as having earned <strong>no taxable income</strong> for corporate tax purposes, provided revenue does not exceed <strong>Dh3 million</strong> in the relevant tax period <em>and in all previous tax periods</em>. That second clause is the one that catches people: a single earlier year above the threshold ends eligibility.",
+      "The relief is not automatic. It is <strong>elected through the corporate tax return itself</strong>, which is the mechanical reason a return has to exist at all.",
+      "## The date",
+      "A business whose financial year ended <strong>31 December 2025</strong> must file and pay by <strong>30 September 2026</strong>. The general rule is nine months from the end of the tax period.",
+      "## The obligations that survive the relief",
+      "The FTA lists them plainly: register for corporate tax, submit the simplified return, and maintain records sufficient to support what the return says. <strong>H.E. Abdulaziz Mohammed Al Mulla</strong>, the Authority's Director General, framed the announcement as part of a service-improvement programme rather than a change of rule.",
+    ],
+    expertise:
+      "The phrase to read twice is \"and all previous tax periods\". Eligibility is not assessed year by year against a Dh3 million line; one prior period over it disqualifies the company permanently for this relief, so a business that had a strong 2024 and a quiet 2025 does not qualify on the strength of 2025. The other trap is the word simplified. A simplified return is still a return with a filing date attached, and the late-filing penalty does not care that the tax due was nil — which is exactly the combination that produces a fine on a company that owed nothing.",
+  },
+
+  {
+    slug: "e-invoicing-provider-deadline-moves-to-october",
+    site: "llc",
+    image: "/covers/e-invoicing-provider-deadline-moves-to-october.jpg",
+    imageAlt: "A cut-paper invoice sheet on a teal ground with a jade arrow bending around it to a second sheet",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "The e-invoicing provider deadline moved, the go-live date did not",
+    cardTitle: "E-invoicing deadline moves to October",
+    titleSeo: "ASP deadline moves to 30 October",
+    summary:
+      "Companies above Dh50 million now have until 30 October to appoint an accredited service provider. Phase 1 still goes live on 1 January 2027.",
+    date: "2026-09-03",
+    category: "Tax",
+    source: {
+      name: "Deloitte Middle East",
+      url: "https://www.deloitte.com/middle-east/en/services/tax/perspectives/uae-e-invoicing-asp-appointment-deadline-extended-but-go-live-remains-01012027.html",
+      verifiedOn: "2026-09-03",
+    },
+    body: [
+      "An extension that does not move the finish line is not an extension of the project. It is a shorter runway to the same aircraft.",
+      "## What moved",
+      "The <strong>Ministry of Finance</strong> has pushed the deadline for appointing an <strong>Accredited Service Provider</strong> from <strong>31 July 2026</strong> to <strong>30 October 2026</strong> &mdash; roughly three months.",
+      "## What did not",
+      "<strong>Phase 1 go-live remains 1 January 2027.</strong> The extension applies to the appointment step only.",
+      "## Who this is about",
+      "Phase 1 covers businesses with <strong>revenue of Dh50 million or more</strong>. The mandate itself applies to <strong>business-to-business and business-to-government</strong> transactions.",
+      "## What an ASP is for",
+      "An Accredited Service Provider is licensed by the Ministry of Finance and the FTA, and handles <strong>transmission, validation and reporting to the Federal Tax Authority</strong>, alongside readiness assessment and testing. An in-scope business cannot exchange compliant e-invoices without one.",
+      "A voluntary phase has been open since July 2026, which is the window in which testing is meant to happen.",
+    ],
+    expertise:
+      "Read the extension as a warning rather than a reprieve. Appointing a provider is the short part; mapping master data, tax codes and document types onto the required schema is the long part, and it cannot start in earnest until the provider is chosen. A company that uses the full extension to 30 October leaves itself nine weeks to integrate and test before 1 January. The other thing worth checking early is which of your document types are actually in scope — B2B and B2G are named, and a business whose revenue is largely B2C may find the mandate touches a much smaller share of its invoicing than the headline revenue threshold suggests.",
+  },
+
+  {
     slug: "apple-published-its-succession-134-days-early",
     site: "llc",
     image: "/covers/apple-published-its-succession-134-days-early.jpg",

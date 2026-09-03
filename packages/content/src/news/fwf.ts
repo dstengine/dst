@@ -11,6 +11,41 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "dubai-chambers-teaches-agentic-ai-to-14000-firms",
+    site: "fwf",
+    image: "/covers/dubai-chambers-teaches-agentic-ai-to-14000-firms.jpg",
+    imageAlt: "A grid of small periwinkle paper squares on an indigo ground, a few of them lifted forward and joined by pale lilac threads",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Dubai Chambers opens agentic AI training to 14,000 member companies",
+    cardTitle: "Agentic AI training for 14,000 firms",
+    titleSeo: "Agentic AI for 14,000 Dubai firms",
+    summary:
+      "A new e-learning platform, Dubai Chambers Academy, is putting agentic AI tracks in front of the Chamber of Commerce's business groups and councils.",
+    date: "2026-09-03",
+    category: "AI",
+    source: {
+      name: "Dubai Government Media Office",
+      url: "https://www.mediaoffice.ae/en/news/2026/september/01-09/dubai-chambers-launches-agentic-ai-training-for-14000-member-companies",
+      verifiedOn: "2026-09-03",
+    },
+    body: [
+      "Cities announce AI strategies constantly. What is rarer is a city announcing that it will teach its small companies to use one.",
+      "## The announcement",
+      "On <strong>1 September 2026</strong> <strong>Dubai Chambers</strong> launched specialised training tracks in <strong>agentic AI</strong> for the <strong>14,000-plus member companies</strong> in the Dubai Chamber of Commerce's Business Groups and Business Councils.",
+      "## Where it lives",
+      "<strong>Dubai Chambers Academy</strong>, a newly launched e-learning platform operating under Dubai Chambers.",
+      "## What agentic AI is taken to mean here",
+      "<strong>H.E. Eng. Sultan bin Saeed Al Mansoori</strong>, Chairman of Dubai Chambers, defined it in operational terms: technology that can manage complex tasks, support decision-making, raise productivity and open new avenues for growth. <strong>H.E. Mohammad Ali Rashed Lootah</strong>, President and CEO, was present at the launch.",
+      "## What has not been published",
+      "Neither a delivery period nor a price. The announcement does not say whether the tracks are free to members, and does not set out a schedule.",
+    ],
+    expertise:
+      "The interesting part is the audience rather than the technology. Agentic AI adoption so far has been a large-enterprise story, because agents need process documentation, system access and someone to own the failure modes — all things a 20-person trading company does not have. Aiming the training at chamber members is a bet that the binding constraint is knowledge rather than infrastructure, which is arguable. Watch for two things as the programme fills out: whether the tracks are sector-specific (a logistics agent and a retail agent are not the same problem), and whether anything is said about governance, since the standard failure of an agentic deployment in a small firm is an agent given more system permissions than anyone intended.",
+  },
+
+  {
     slug: "drones-deliver-to-dubai-parks-and-beaches",
     site: "fwf",
     image: "/covers/drones-deliver-to-dubai-parks-and-beaches.jpg",

@@ -2,6 +2,76 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "jebel-ali-village-hands-over-892-homes",
+    site: "palmcentral",
+    image: "/covers/jebel-ali-village-hands-over-892-homes.jpg",
+    imageAlt: "A row of small terracotta paper houses on a warm sand ground with a cream key shape resting across them",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Jebel Ali Village starts handing over 892 homes",
+    cardTitle: "892 homes handed over at Jebel Ali Village",
+    titleSeo: "Jebel Ali Village hands over 892 homes",
+    summary:
+      "Handovers began on 17 August across an 80-hectare community built for about 5,500 residents, next to Sheikh Zayed Road and Discovery Gardens metro.",
+    date: "2026-09-03",
+    category: "Handovers",
+    source: {
+      name: "Nakheel",
+      url: "https://www.nakheel.com/en/media-centre/press-releases/news-detail/2026/08/17/nakheel-begins-handover-of-892-homes-at-jebel-ali-village",
+      verifiedOn: "2026-09-03",
+    },
+    body: [
+      "Jebel Ali Village is one of the oldest names in Dubai housing. On <strong>17 August 2026</strong> it began handing over its newest 892 homes.",
+      "## The scale",
+      "<strong>892 homes</strong>, on an <strong>80-hectare</strong> site expected to hold roughly <strong>5,500 residents</strong>. The mix includes duplexes with double-height living areas.",
+      "## What is there on day one",
+      "Landscaped parks, pedestrian routes, cycling paths, sports facilities, children's play areas, a community pond, and swimming pools within the residential clusters.",
+      "## What is still to come",
+      "A community centre carrying retail, a clubhouse, a gym, padel courts and event lawns. These are named by the developer as future additions, not as delivered.",
+      "## Where it is",
+      "Adjacent to <strong>Sheikh Zayed Road</strong>, near <strong>Ibn Battuta Mall</strong> and <strong>Discovery Gardens Metro Station</strong>. <strong>Khalid Al Malik</strong>, CEO of Dubai Holding Real Estate, framed the handover around the district's history rather than its newness, describing Jebel Ali Village as long having held a place in Dubai's residential story.",
+    ],
+    expertise:
+      "The line to hold onto is the split between what is handed over and what is announced. Parks, paths and pools are in; the clubhouse, gym, padel courts and retail are listed as future additions with no date attached, which is the normal shape of a first handover and the normal source of the first year's complaints. The location does real work here in a way it does not in most new Dubai communities: a metro station within reach is unusual for a villa district, and Discovery Gardens on the Red Line is what makes this a commutable address without a second car.",
+  },
+
+  {
+    slug: "palm-jebel-ali-is-a-quarter-built",
+    site: "palmcentral",
+    image: "/covers/palm-jebel-ali-is-a-quarter-built.jpg",
+    imageAlt: "A fan of terracotta paper fronds on a warm sand ground, the nearest quarter of each filled in solid and the rest left as outline",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Palm Jebel Ali is about a quarter built, by its developer's own board",
+    cardTitle: "Palm Jebel Ali: a quarter built",
+    titleSeo: "Palm Jebel Ali is about a quarter built",
+    summary:
+      "Nakheel's own progress figures put the island at 26.75% overall — substructure 93%, superstructure 68%, building work 22%, MEP 19%.",
+    date: "2026-09-03",
+    category: "Construction",
+    source: {
+      name: "Nakheel",
+      url: "https://www.nakheel.com/en/construction-progress/palm-jebel-ali",
+      verifiedOn: "2026-09-03",
+    },
+    body: [
+      "Every large Dubai project is described twice: once in launches and once in percentages. Nakheel publishes the second kind for Palm Jebel Ali, and it is the more useful number.",
+      "## The headline figure",
+      "<strong>26.75% overall progress</strong>, as of <strong>March 2026</strong>.",
+      "## By frond",
+      "<strong>Frond O</strong> leads at <strong>37.44%</strong>, followed by <strong>N at 29.20%</strong>, <strong>K at 27.71%</strong>, <strong>L at 24.71%</strong>, <strong>M at 22.10%</strong> and <strong>P at 20.50%</strong>.",
+      "## By trade, which is the more revealing cut",
+      "<strong>Substructure 93.27%</strong>. <strong>Superstructure 68.40%</strong>. <strong>Infrastructure 65.05%</strong>. <strong>Building work 21.64%</strong>. <strong>MEP 18.76%</strong>.",
+      "## What that shape means",
+      "Foundations are all but finished and frames are well advanced, while the trades that turn a frame into a house &mdash; finishes and building services &mdash; are only about a fifth done. That is the normal order of construction, and it is also the reason an island that looks structurally complete from the water is still years from occupation.",
+    ],
+    expertise:
+      "Read the trade breakdown rather than the overall percentage, because the two tell different stories about time. Substructure at 93% and MEP at 19% is not a project four months from finishing; it is a project that has done the fast, heavy work and has yet to do the slow, labour-intensive part, and finishing trades are where Dubai schedules most often slip. The frond numbers are worth checking against whichever frond a particular unit sits on — a 17-point spread between Frond O and Frond P is more than a rounding difference. Note the date too: these figures are Nakheel's own and were current in March, so they understate where the island stands now by roughly two quarters of work.",
+  },
+
+  {
     slug: "palm-jebel-ali-frond-f-villas",
     site: "palmcentral",
     image: "/covers/palm-jebel-ali-frond-f-villas.jpg",

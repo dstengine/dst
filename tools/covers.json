@@ -38,7 +38,11 @@
       "broadway-week-the-lion-king": "a large sun disc rising over layered savannah horizon bands, a lone acacia tree silhouette",
       "broadway-week-wicked": "a spiral of layered emerald green paper against amber, a tall pointed hat silhouette at the edge",
       "broadway-week-chicago": "art deco fan and sunburst shapes, a bentwood chair silhouette, stacked jazz-age chevrons",
-      "new-york-film-festival-2026": "a wide strip of film frames curving across the frame, five of the frames in noticeably different paper tones, a small projector beam triangle opening from the left edge"
+      "new-york-film-festival-2026": "a wide strip of film frames curving across the frame, five of the frames in noticeably different paper tones, a small projector beam triangle opening from the left edge",
+      "snoopy-in-style-nyc": {
+        "subject": "a large pitched-roof dog house filling the left half of the frame beside a tall column of pinned fabric swatches",
+        "detail": "flat cut-paper on a deep charcoal brown ground — one big cream dog-house silhouette with a round doorway occupying the whole left half at generous scale, and on the right a vertical stack of five large amber and ochre rectangular fabric swatches, each pinned at its top corner and hanging slightly askew; the two halves balance in weight; soft shadows; no lettering, no numerals, no text of any kind"
+      }
     },
     "ldn": {
       "london-design-festival-2026": {
@@ -55,14 +59,16 @@
         "subject": "tall paper feather plumes and layered ribbon streamers rising in a diagonal sweep, scattered confetti squares",
         "detail": "built as a broad diagonal sweep of tall feather plumes and ribbon streamers rising from the lower left, each plume a stack of three paper tones, a scatter of small square confetti across the upper right, the ground kept almost empty"
       },
-      "bfi-london-film-festival-2026": "a tall stack of ten flat rectangles fanned like a shuffled deck, a large paper aperture ring overlapping them at the upper right, a long ruled baseline beneath"
+      "bfi-london-film-festival-2026": "a tall stack of ten flat rectangles fanned like a shuffled deck, a large paper aperture ring overlapping them at the upper right, a long ruled baseline beneath",
+      "bermondsey-street-festival-2026": "flat paper collage filling the frame, a red triangular bunting line strung in a shallow curve across the upper third, two market stalls beneath it drawn as charcoal box counters each under its own striped pitched awning, clearly two separate stalls, soft shadows, no lettering, no numerals, no text of any kind"
     },
     "lnd": {
       "giant-summer-flea-olympic-park": {
         "subject": "a row of striped market stall awnings, stacked crates and hanging bunting triangles",
         "detail": "built as a row of five striped stall awnings in receding perspective, scalloped edges, stacked crates in the foreground shadow, a string of bunting triangles crossing above them, one awning catching light"
       },
-      "the-big-brine-hackney-bridge": "rows of paper preserving jars with domed lids on a shelf, cut lemon and cucumber discs beside them"
+      "the-big-brine-hackney-bridge": "rows of paper preserving jars with domed lids on a shelf, cut lemon and cucumber discs beside them",
+      "lambeth-fringe-2026": "a cluster of small pale blue paper doorways of different heights standing side by side, one of them lit chalk white"
     },
     "cmx": {
       "gran-premio-ciudad-de-mexico-2026": {
@@ -74,7 +80,8 @@
         "detail": "built as four tiers of papel picado banners strung across the upper two thirds, each tier a different cut pattern and paper tone with shadow falling on the tier behind, a dense massed field of marigold discs filling the lower third"
       },
       "del-color-de-la-sandia-cenart": "geometric watermelon slice wedges arranged as a fan, seeds as small dots, bold flat shapes",
-      "monsivais-en-el-estanquillo": "a loose constellation of small cut-paper silhouettes floating in irregular rows — a hat, a bicycle, a guitar, a pair of round spectacles, a dog — each casting its own soft shadow on a plain ground"
+      "monsivais-en-el-estanquillo": "a loose constellation of small cut-paper silhouettes floating in irregular rows — a hat, a bicycle, a guitar, a pair of round spectacles, a dog — each casting its own soft shadow on a plain ground",
+      "festival-xochiska-2026": "a cut-paper wrestling mask in two contrasting colours, a row of vertical paper stripes standing behind it"
     },
     "mxo": {
       "fil-guadalajara-2026": {
@@ -84,22 +91,29 @@
       "filij-2026": {
         "subject": "paper boats and kites folded from book pages rising on a diagonal, playful scattered confetti squares",
         "detail": "built as folded paper boats and kites rising on a strong diagonal from the lower left to the upper right, each one a separate sheet with a visible fold line and cast shadow, trailing kite strings as thin cut strips, scattered confetti squares in the upper corner"
+      },
+      "festival-internacional-cervantino-2026": {
+        "subject": "three separate free-standing stone archways of different sizes lined up one behind another in receding perspective",
+        "detail": "cut-paper on a warm ground — a large terracotta archway at the front, a mid-sized cream archway standing behind it, a smaller terracotta archway behind that, each a complete free-standing arch with two legs and an opening beneath, aligned down the centre so the eye passes through all three openings, deep shadows separating the planes; three distinct arches, never a single band or rainbow; no lettering, no numerals, no text of any kind"
       }
     },
     "dst": {
       "blockchain-life-dubai-2026": "a wide arena bowl seen from directly above as concentric paper rings, a chain of small linked hexagons running straight across the middle",
       "gitex-global-dubai-2026": "a wide domed exhibition hall in flat paper with a latticed roof, a broad avenue of small pavilion shapes leading up to it",
       "step-conference-dubai-2026": "a flight of wide flat paper steps rising across the frame, each tread a different tone, a cluster of low office blocks standing behind them",
-      "world-governments-summit-2027": "a large circular table cut from flat paper seen from above with evenly spaced seats around its rim, a faint globe grid across its surface"
+      "world-governments-summit-2027": "a large circular table cut from flat paper seen from above with evenly spaced seats around its rim, a faint globe grid across its surface",
+      "expand-north-star-2026": "a scatter of small cut-paper squares converging from all sides on one larger cream square, thin brass lines drawn between them"
     },
     "eco": {
-      "wetex-2026": "a large water droplet shape overlapping a sun disc, slim turbine blades and pipe forms in layered paper below them"
+      "wetex-2026": "a large water droplet shape overlapping a sun disc, slim turbine blades and pipe forms in layered paper below them",
+      "world-green-economy-summit-2026": "four sage paper columns of increasing height standing in a row, a single cream band running across and tying their tops together"
     },
     "fwf": {
       "future-world-forum-dubai-2026": "a wide circular forum floor in layered paper seen at a low angle, concentric rings of seating, a tall slim tower shape rising at its centre",
       "dubai-future-forum-2026": "a smooth upright paper torus ring standing on a low mound, its surface completely plain and unmarked, small palm shapes at its base, no ornament and no writing on the ring",
       "gitex-global-2026": "a grid of small pavilion roofs in flat paper seen from above with wide aisles between them, one larger domed roof at the centre",
-      "proptech-connect-middle-east-2026": "a cluster of flat paper tower blocks with thin connecting lines and small round nodes strung between their rooftops"
+      "proptech-connect-middle-east-2026": "a cluster of flat paper tower blocks with thin connecting lines and small round nodes strung between their rooftops",
+      "dubai-future-week-2026": "flat paper collage filling the frame, five broad pale lilac and periwinkle paper bands of clearly different widths fanning out wide from a single point at the lower left corner and spreading right across the whole frame, hard-edged with soft shadows, no lettering, no numerals, no text of any kind"
     },
     "llc": {
       "gitex-global-2026": "a dense grid of small square pavilion platforms in flat paper seen from a high angle, wide aisles crossing between them, a ribbed arched canopy spanning overhead, no walls, no framed panels, no posters"
@@ -138,7 +152,8 @@
       "gitex-2026-lands-in-december": "flat paper collage on deep indigo, twelve identical rectangles in a single row, the last three raised to a higher line than the other nine, soft shadows, generous empty space, no lettering, no numerals, no text of any kind",
       "296-homes-above-ten-million-dollars": "flat paper collage on warm sand, two vertical columns of layered paper, the right column about one sixth taller than the left, soft shadows, wide empty margins, no lettering, no numerals, no text of any kind",
       "middle-east-energy-2026-opens": "flat paper collage, a dense grid of small squares in graded amber and rust tones filling the lower two thirds of the frame, pale ground above, soft shadows, no lettering, no numerals, no text of any kind",
-      "international-property-show-2026": "flat paper collage on cool grey, five separate upright rectangles of exactly equal height standing in a row with clear even gaps between them, each rectangle a different flat shade of teal sand and slate, wide empty space above and below the row, soft shadows, no bands, no stripes across them, no lettering, no numerals, no text of any kind"
+      "international-property-show-2026": "flat paper collage on cool grey, five separate upright rectangles of exactly equal height standing in a row with clear even gaps between them, each rectangle a different flat shade of teal sand and slate, wide empty space above and below the row, soft shadows, no bands, no stripes across them, no lettering, no numerals, no text of any kind",
+      "dmcc-gives-lab-grown-diamonds-their-own-desk": "flat paper collage filling the frame, two large faceted gem shapes cut from solid paper standing side by side at the centre at exactly the same size and outline, one pale grey-blue and one warm cream, a single thin brass strip laid vertically in the gap between them, soft shadows, no lettering, no numerals, no text of any kind"
     },
     "fwf": {
       "rta-starts-commercial-robotaxi-operations": {
@@ -156,7 +171,8 @@
       "eu-classifies-chatgpt-as-a-search-engine": "a flat paper magnifying glass shape overlapping a paper speech bubble of similar size so the two forms share a single cut edge, one soft shadow beneath, no lettering",
       "drones-deliver-to-dubai-parks-and-beaches": "flat paper collage, a small simple quadcopter silhouette in white paper high in the frame above a wide horizontal band of layered green and sand paper, pale sky, soft shadows, no lettering, no numerals, no text of any kind",
       "fifteen-kilometres-of-autonomous-dubai": "flat paper collage on deep charcoal, seven thin horizontal strips of paper in different muted colours running side by side across the frame, slightly uneven ends, soft shadows, no lettering, no numerals, no text of any kind",
-      "ifa-berlin-2026": "flat paper collage on pale bone white, a wide sweeping arc made of many small rectangles in varied muted colours crossing the frame, soft shadows, generous empty space, no lettering, no numerals, no text of any kind"
+      "ifa-berlin-2026": "flat paper collage on pale bone white, a wide sweeping arc made of many small rectangles in varied muted colours crossing the frame, soft shadows, generous empty space, no lettering, no numerals, no text of any kind",
+      "dubai-chambers-teaches-agentic-ai-to-14000-firms": "a grid of small periwinkle paper squares, a few of them lifted forward off the grid and joined to it by thin pale lilac threads"
     },
     "nyc42": {
       "broadway-week-which-shows-are-worth-it": {
@@ -171,7 +187,8 @@
       "lenape-legacies-at-the-museum-of-the-city": "flat paper collage, a wide horizontal band made of many small interlocking rectangles in deep purple and cream paper running across a dark charcoal ground, soft shadows, generous empty space above and below, no lettering, no numerals, no text of any kind",
       "transit-museum-bus-festival-turns-fifty": "flat paper collage, three long simplified bus silhouettes in cream sage green and faded blue paper parked side by side on a pale grey band, open sky above, soft shadows, no lettering, no numerals, no text of any kind",
       "broadway-autumn-is-a-play-season": "flat paper collage on deep navy, fifteen narrow vertical strips in a row, eleven of them pale cream and four of them deep red, even spacing, soft shadows, no lettering, no numerals, no text of any kind",
-      "fire-museum-reopens-after-two-years": "flat paper collage, a tall narrow building facade in deep red and rust paper with two large arched openings cut at the base showing a warm cream interior, plain slate ground either side, soft shadows, no lettering, no numerals, no text of any kind"
+      "fire-museum-reopens-after-two-years": "flat paper collage, a tall narrow building facade in deep red and rust paper with two large arched openings cut at the base showing a warm cream interior, plain slate ground either side, soft shadows, no lettering, no numerals, no text of any kind",
+      "the-parade-turns-100-a-century-and-two-years-late": "a row of amber and ochre paper balloon shapes floating at different heights, each tethered by a thin cream line to the bottom edge"
     },
     "ldn": {
       "ten-exhibitions-on-in-london": {
@@ -186,7 +203,8 @@
       "bayeux-tapestry-at-the-british-museum": "flat paper collage, a single very long narrow ribbon of undyed oatmeal linen coloured paper running horizontally the entire width of the frame and continuing past both edges, its height only a twelfth of the frame, resting on a plain muted sage green ground, faint horizontal fibre texture along the ribbon, soft shadow beneath it, nothing else in the picture, no border, no frame, no orange, no blue, no lettering, no numerals, no figures, no text of any kind",
       "nature-and-us-opens-a-gallery-shut-since-1943": "flat paper collage, a tall arched doorway shape cut from warm ochre paper opening onto a pale cream panel behind it, deep green surround, soft shadows, generous empty space, no lettering, no numerals, no text of any kind",
       "lady-in-blue-takes-the-fourth-plinth": "flat paper collage, a tall simplified figure cut from deep blue paper standing on a pale stone-coloured rectangular block, wide open pale sky around it, soft shadows, no lettering, no numerals, no text of any kind",
-      "frieze-sculpture-in-regents-park": "flat paper collage on pale bone white, a broad horizontal band of mown-grass green paper across the lower third, five or six irregular abstract sculptural shapes in bronze terracotta and deep green paper standing upright on that band at clearly different sizes and spacings, pale empty sky filling the upper two thirds, soft shadows, no orange field, no lettering, no numerals, no text of any kind"
+      "frieze-sculpture-in-regents-park": "flat paper collage on pale bone white, a broad horizontal band of mown-grass green paper across the lower third, five or six irregular abstract sculptural shapes in bronze terracotta and deep green paper standing upright on that band at clearly different sizes and spacings, pale empty sky filling the upper two thirds, soft shadows, no orange field, no lettering, no numerals, no text of any kind",
+      "michael-ball-takes-the-coliseum-as-willy-wonka": "a tall red paper top hat standing upright with a charcoal ticket shape tucked into its hatband"
     },
     "lnd": {
       "sl12-superloop-gants-hill-rainham": {
@@ -207,7 +225,11 @@
       "oxford-street-goes-traffic-free": "flat paper collage, a long empty pale cream band running horizontally between two rows of dark grey rectangular blocks, soft shadows, wide clear space in the centre, no lettering, no numerals, no vehicles, no text of any kind",
       "open-house-festival-turns-35": "flat paper collage, a grid of many small simple house silhouettes in varied muted paper colours, roughly a third of them with a small rectangular doorway cut out showing a lighter colour behind, soft shadows, no lettering, no numerals, no text of any kind",
       "bus-routes-67-and-149-consultation": "flat paper collage on pale grey, two long straight horizontal lines running the full width of the frame one above the other, the upper line a continuous unbroken strip of deep red paper, the lower line broken into short widely separated dashes of faded grey paper, generous empty space above and below, soft shadows, no ribbons, no curves, no lettering, no numerals, no text of any kind",
-      "totally-thames-2026": "flat paper collage, a row of stubby deep red columns standing in a broad horizontal band of dark blue paper water, pale sky above, reflections suggested with lighter paper, soft shadows, no lettering, no numerals, no text of any kind"
+      "totally-thames-2026": "flat paper collage, a row of stubby deep red columns standing in a broad horizontal band of dark blue paper water, pale sky above, reflections suggested with lighter paper, soft shadows, no lettering, no numerals, no text of any kind",
+      "the-marathon-runs-twice-in-2027": {
+        "subject": "two separate winding ribbons of identical shape laid one above the other, each ending in a small red square",
+        "detail": "a deep navy ground with two pale blue paper ribbons, clearly two, laid parallel across the full width — the upper and lower ribbons follow exactly the same winding path so they read as one route printed twice, a small chalk-white gap between them the whole way, each ribbon ending at the right in a small solid red square; hard edges and soft shadows; no lettering, no numerals, no text of any kind"
+      }
     },
     "cmx": {
       "juegos-mundiales-robots-humanoides-2026": {
@@ -233,7 +255,8 @@
       "apple-cambia-de-director-general": {
         "subject": "a wide even grid of identical small paper discs filling the frame, every one lifted slightly off the ground and casting the same shadow",
         "detail": "a regular grid of about forty identical small paper discs fills the frame edge to edge in even rows and columns; all of them sit at the same height above the ground with identical soft shadows, so the picture reads as one change arriving everywhere at once rather than spreading outward from a point; no map, no pins, no lettering"
-      }
+      },
+      "el-metro-cumple-57-y-lo-festeja-con-cumbia": "a large orange paper circle with a single diagonal band across it, ringed by small paper figure silhouettes arranged in a semicircle below"
     },
     "mxo": {
       "moderna-vacuna-melanoma-fase-3": {
@@ -255,34 +278,52 @@
       "john-giorno-en-kurimanzutto": "a gallery wall of flat paper with a rotary telephone handset shape mounted on it, a stack of vinyl record discs below, a long paper strip unrolling down the wall",
       "kia-ev3-pesqueria-nuevo-leon": "a simple flat car profile in cut paper with a large battery rectangle set into its floor, a factory sawtooth roofline behind it, a plug-and-cable curve looping in the foreground",
       "venecia-2026-una-sola-pelicula-latinoamericana": "a large field of small flat paper squares in a muted cream tone arranged in even rows, and one single square in a vivid terracotta tone set slightly apart from the field with a strong shadow under it, deep forest green ground",
-      "veinticinco-anos-para-llegar-a-la-cima": "a long narrow paper staircase seen from the side rising through twenty-five evenly cut steps, a single small figure shape at the very top, the lower steps in receding paper tones"
+      "veinticinco-anos-para-llegar-a-la-cima": "a long narrow paper staircase seen from the side rising through twenty-five evenly cut steps, a single small figure shape at the very top, the lower steps in receding paper tones",
+      "morelia-anuncia-96-peliculas-mexicanas": "a regular grid of ninety-six small paper rectangles, forty of them in a distinctly different tone, scattered evenly through the grid"
     },
     "llc": {
       "difc-passes-10000-active-companies": "a rising staircase of five flat paper columns of increasing height across the frame, each column built from many thin stacked sheets, a long ruled horizontal line crossing just below the top of the tallest one",
       "apple-published-its-succession-134-days-early": {
         "subject": "two small paper discs placed far apart on a long horizontal paper band, joined by a thin line running between them",
         "detail": "a single long horizontal band of paper spans the frame; two small circular paper discs sit on it, one near the left end and one near the right, with a thin line connecting them across the gap; the distance between the two discs is the whole subject; flat lay from directly above, clean cut edges and soft shadows; no lettering, no numerals, no calendar grid, no animals, no stamp, no text of any kind"
-      }
+      },
+      "small-business-relief-still-files-a-return": "a small cut-paper form sheet with ruled lines beside a much larger sheet carrying the same ruled lines, both flat on the ground",
+      "e-invoicing-provider-deadline-moves-to-october": "flat paper collage filling the frame, two identical blank cream sheets with plain ruled lines standing upright side by side, a broad jade paper arrow curving from the left sheet up and over and down onto the right one, soft shadows, blank sheets, no lettering, no numerals, no words, no text of any kind"
     },
     "visas": {
-      "entry-visa-opens-to-six-more-nationalities": "six identical blank passport-shaped rectangles laid out in two rows of three, each a different flat paper tone, a single small square entry stamp resting on one of them, plain empty ground, no monument, no building, no landmark, no map"
+      "entry-visa-opens-to-six-more-nationalities": "six identical blank passport-shaped rectangles laid out in two rows of three, each a different flat paper tone, a single small square entry stamp resting on one of them, plain empty ground, no monument, no building, no landmark, no map",
+      "dubai-tourist-visas-inside-48-hours": "two cut-paper clock faces, the second much smaller than the first, a flat ochre arrow pointing from the large one to the small one",
+      "medical-visas-get-a-single-front-door": "three separate cut-paper doorways on the left merging into one taller ochre doorway on the right"
     },
     "riviera": {
       "dubai-completed-104-projects-in-six-months": "rows of low completed building blocks in flat paper with their scaffolding strips peeled away and lying folded beside them, a long horizon band behind",
-      "ras-al-khor-switches-to-winter-hours": "flat paper collage on clear mid-blue, a low horizontal band of chalk white paper across the lower third suggesting shallow water, three tall thin sand-coloured stems rising from it at uneven heights, a wide pale sky above, soft shadows, no birds, no flamingos, no lettering, no numerals, no text of any kind"
+      "ras-al-khor-switches-to-winter-hours": "flat paper collage on clear mid-blue, a low horizontal band of chalk white paper across the lower third suggesting shallow water, three tall thin sand-coloured stems rising from it at uneven heights, a wide pale sky above, soft shadows, no birds, no flamingos, no lettering, no numerals, no text of any kind",
+      "the-junction-riviera-leaves-by-is-being-rebuilt": {
+        "subject": "two straight road ribbons crossing at right angles in the middle of the frame, the pale blue one carried over the chalk-white one on a short ramp",
+        "detail": "built as two flat planes on a clear mid-blue ground — the chalk-white road laid straight across the full width with evenly spaced dashed lane markings, and the pale blue road running straight from top to bottom, rising onto a ramp so it passes above the white one at the crossing and casting a hard shadow onto it; a slim sand-coloured path curves beneath the crossing; both roads read as long straight roads, not as loose ribbons; no lettering, no numerals, no text of any kind"
+      },
+      "a-waitrose-opens-on-the-other-side-of-meydan": "a small chalk-white shopfront with a pale sky awning and a sand-coloured basket shape resting beside the door"
     },
     "mbr": {
-      "dubai-metro-gold-line-approved": "a cross-section of ground cut from layered paper filling the whole frame, a thin skyline strip along the very top, a long horizontal tunnel bore driven deep through the lower half with a row of small rectangular station boxes hanging from the surface down to it on thin vertical shafts"
+      "dubai-metro-gold-line-approved": "a cross-section of ground cut from layered paper filling the whole frame, a thin skyline strip along the very top, a long horizontal tunnel bore driven deep through the lower half with a row of small rectangular station boxes hanging from the surface down to it on thin vertical shafts",
+      "al-meydan-street-gets-a-billion-dirham-rebuild": {
+        "subject": "two straight roads crossing at right angles, one carried over the other on a short ramp",
+        "detail": "flat cut-paper on a deep teal ground — a broad chalk-white road running straight across the full width with evenly spaced dashed lane markings, and a pale aqua road running straight from top to bottom, rising on a ramp to pass above the white one at the crossing and casting a hard shadow onto it; both read as long straight roads with clear lane markings, not as loose ribbons; small sand-coloured blocks stand at the corners; no lettering, no numerals, no text of any kind"
+      },
+      "nad-al-sheba-gardens-mall-opens": "a low two-storey cut-paper building with a chalk-white awning along its front and sand-coloured tree shapes standing beside it"
     },
     "palmcentral": {
-      "palm-jebel-ali-frond-f-villas": "a single palm frond shape in flat paper seen from above, a row of small identical house forms set along one edge of it, a wide band of layered water tones beyond"
+      "palm-jebel-ali-frond-f-villas": "a single palm frond shape in flat paper seen from above, a row of small identical house forms set along one edge of it, a wide band of layered water tones beyond",
+      "jebel-ali-village-hands-over-892-homes": "a row of small terracotta paper houses with a single cream key shape laid horizontally across their roofs",
+      "palm-jebel-ali-is-a-quarter-built": "a fan of terracotta paper fronds spreading from one point, the nearest quarter of each frond filled solid and the rest left as a thin outline"
     },
     "eco": {
       "uae-mangroves-halfway-to-100-million": "a wide band of shallow water in flat paper across the lower half, a dense thicket of arched stilt roots rising out of it under a solid canopy of rounded green leaf shapes, the thicket filling the left half of the frame and open empty water in the right half",
       "a-60-percent-carbon-cut-changes-hands": {
         "subject": "two flat paper columns side by side, the left one tall and the right one only a little over a third as tall, a single leaf leaning against the base of the short one",
         "detail": "only two shapes and the difference between them: a tall narrow paper column on the left, and beside it a second column of the same width reaching only a little over a third of its height; both cut from paper with clean edges and one soft shadow each on a plain ground; a single small leaf leans against the foot of the shorter column; no third column, no row of blocks, no ascending sequence, no perspective, no lettering, no numbers"
-      }
+      },
+      "dp-world-names-its-first-methanol-dual-fuel-ship": "a simple sage paper ship hull in profile with two cream fuel droplets floating above it, one noticeably larger than the other"
     }
   },
   "pages": {

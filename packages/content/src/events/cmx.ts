@@ -2,6 +2,50 @@ import type { EventItem } from "../types.ts";
 
 export const items: EventItem[] = [
   {
+    slug: "festival-xochiska-2026",
+    site: "cmx",
+    image: "/covers/festival-xochiska-2026.jpg",
+    imageAlt: "Una máscara de papel recortada en dos colores sobre un fondo crema, con franjas verticales detrás",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Festival Xochiska 2026",
+    summary:
+      "Quince bandas de ska y punk más una función de lucha libre, el sábado 5 de septiembre en el Centro Deportivo Xochimilco, por $450.",
+    start: "2026-09-05",
+    startTime: "12:00",
+    utcOffset: "-06:00",
+    city: "Ciudad de México",
+    venue: "Centro Deportivo Xochimilco, Francisco Goitia S/N, Santiago Tepalcatlalpan, Xochimilco",
+    category: "Música",
+    organizer: "Festival Xochiska",
+    tickets: {
+      priceFrom: 450,
+      currency: "MXN",
+    },
+    source: {
+      name: "Chilango",
+      url: "http://www.chilango.com/que-hacer/musica/festival-xochiska-cdmx-victimas-del-doctor-cerebro",
+      verifiedOn: "2026-09-03",
+    },
+    body: [
+      "Hay festivales que ponen una segunda pista de baile. Éste pone un ring.",
+      "## Cuándo y dónde",
+      "<strong>Sábado 5 de septiembre de 2026</strong>, en el <strong>Centro Deportivo Xochimilco</strong> (Francisco Goitia S/N, Santiago Tepalcatlalpan). Las puertas abren a las <strong>11:00</strong> y la música empieza a las <strong>12:00</strong>.",
+      "## El cartel",
+      "Más de <strong>15 bandas</strong>, entre ellas <strong>Los Calzones</strong>, <strong>Sekta Core</strong>, <strong>Las Víctimas del Doctor Cerebro</strong> y <strong>Los Korukos</strong>.",
+      "## Y la lucha libre",
+      "En el mismo recinto hay una función a cargo de la <strong>Promotora del Sur</strong> que conmemora los <strong>40 años de carrera del Dr. Wagner</strong>. No es un intermedio: es la otra mitad del programa.",
+      "## Boletos y acceso",
+      "<strong>$450</strong> pesos, a través de la aplicación <strong>FANKI</strong>. El acceso es para mayores de <strong>18 años</strong> con INE o pasaporte; los menores deben ir acompañados.",
+      "## Qué no entra",
+      "Alimentos, bebidas alcohólicas, armas, cámaras profesionales, paraguas y vapeadores.",
+    ],
+    expertise:
+      "Xochimilco es el punto de la ciudad donde el Metro se acaba y empieza otra cosa, así que el traslado merece pensarse antes que el cartel: Línea 2 hasta Tasqueña y de ahí el Tren Ligero hasta la estación Francisco Goitia, que deja el deportivo a distancia caminable. La vuelta es la parte delicada, porque el Tren Ligero tiene horario de cierre y un festival que arranca a mediodía puede terminar cerca de él. La lista de prohibiciones incluye paraguas, y septiembre es el mes más lluvioso del año en la ciudad — impermeable, no sombrilla. Y el requisito de identificación es literal: sin INE o pasaporte no hay acceso, aunque el boleto esté comprado.",
+  },
+
+  {
     slug: "gran-premio-ciudad-de-mexico-2026",
     featured: 1,
     site: "cmx",

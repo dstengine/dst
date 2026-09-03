@@ -2,6 +2,41 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "el-metro-cumple-57-y-lo-festeja-con-cumbia",
+    site: "cmx",
+    image: "/covers/el-metro-cumple-57-y-lo-festeja-con-cumbia.jpg",
+    imageAlt: "Un c&iacute;rculo de papel naranja con una franja diagonal, rodeado de peque&ntilde;as figuras de papel en semic&iacute;rculo",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "El Metro cumple 57 a&ntilde;os y lo celebra con cuatro d&iacute;as de conciertos gratis",
+    cardTitle: "El Metro cumple 57 y lo festeja con cumbia",
+    titleSeo: "Conciertos gratis por el 57 aniversario del Metro",
+    summary:
+      "Del 2 al 5 de septiembre, en la Glorieta de Insurgentes: Aar&oacute;n y Su Grupo Ilusi&oacute;n, Los Askis, La Sonora Dinamita y Son Tepito, sin costo.",
+    date: "2026-09-02",
+    category: "Ciudad",
+    source: {
+      name: "Chilango",
+      url: "http://www.chilango.com/que-hacer/musica/conciertos-gratis-aniversario-metro-cdmx",
+      verifiedOn: "2026-09-03",
+    },
+    body: [
+      "El sistema de transporte que mueve a la ciudad cumple a&ntilde;os y, en lugar de un informe, pone una pista de baile en la Glorieta de Insurgentes.",
+      "## Las fechas",
+      "Los conciertos van del <strong>2 al 5 de septiembre de 2026</strong> en la <strong>Glorieta de Insurgentes</strong>, en la colonia Roma, por el <strong>57 aniversario</strong> del Metro. La entrada es <strong>gratuita</strong>.",
+      "## Qui&eacute;n toca",
+      "El <strong>jueves 3</strong> hay seis actos de <strong>11:00 a 16:00</strong>, encabezados por <strong>Aar&oacute;n y Su Grupo Ilusi&oacute;n</strong>. El <strong>viernes 4</strong> se presentan <strong>Los Askis</strong> a las <strong>13:40</strong> junto con otros seis grupos. El <strong>s&aacute;bado 5</strong> cierran siete actos, entre ellos <strong>Los Karmann Ghia</strong> y <strong>Dance OG</strong>. En el cartel completo aparecen tambi&eacute;n <strong>La Sonora Dinamita</strong> y <strong>Son Tepito</strong>.",
+      "## Por qu&eacute; en esa glorieta y no en otra",
+      "La Glorieta de Insurgentes es una estaci&oacute;n con techo de cielo: el cruce de la L&iacute;nea 1 con el Metrob&uacute;s, y una plaza hundida por la que se pasa aunque uno no vaya a nada. Programar ah&iacute; significa que el p&uacute;blico no tiene que decidir asistir &mdash; le toca de paso.",
+      "## El detalle institucional",
+      "La organizaci&oacute;n corre por cuenta del propio <strong>Metro de la Ciudad de M&eacute;xico</strong>, bajo la direcci&oacute;n de <strong>Adri&aacute;n Rubalcava</strong>, con el lema <strong>#57A&ntilde;osEnMovimiento</strong>.",
+    ],
+    expertise:
+      "Un cartel gratuito de cuatro d&iacute;as en una glorieta de paso se comporta distinto a un festival con boleto: no hay aforo que administre la entrada, as&iacute; que la hora hace todo el trabajo. Los horarios publicados &mdash; de 11:00 a 16:00 el jueves, 13:40 el viernes &mdash; caen en horario laboral entre semana, que es justamente cuando la glorieta est&aacute; m&aacute;s vac&iacute;a y el sonido se escucha mejor. El s&aacute;bado, con siete actos y sin nadie que tenga que volver a la oficina, es el d&iacute;a en que conviene llegar temprano. Y conviene revisar el orden de presentaci&oacute;n el mismo d&iacute;a: en eventos gratuitos de calle los horarios se recorren con m&aacute;s facilidad que en un recinto cerrado.",
+  },
+
+  {
     slug: "apple-cambia-de-director-general",
     site: "cmx",
     image: "/covers/apple-cambia-de-director-general.jpg",

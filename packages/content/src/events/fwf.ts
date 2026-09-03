@@ -9,6 +9,43 @@ import type { EventItem } from "../types.ts";
 
 export const items: EventItem[] = [
   {
+    slug: "dubai-future-week-2026",
+    site: "fwf",
+    image: "/covers/dubai-future-week-2026.jpg",
+    imageAlt: "Five pale lilac paper bands of different widths fanning out from one periwinkle point on an indigo ground",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Dubai Future Week 2026",
+    summary:
+      "Four days from 18 November folding the Dubai Future Forum, Dubai AI Week, the Foresight Awards and Prototypes for Humanity into one programme across Emirates Towers and the Museum of the Future.",
+    start: "2026-11-18",
+    end: "2026-11-21",
+    venue: "Emirates Towers and the Museum of the Future",
+    city: "Dubai",
+    organizer: "Dubai Future Foundation",
+    category: "Foresight",
+    source: {
+      name: "Dubai Government Media Office",
+      url: "https://www.mediaoffice.ae/en/news/2026/september/01-09/under-hamdan-bin-mohammeds-directives-dubai-future-week-to-be-held-from-18-to-21-november-2026",
+      verifiedOn: "2026-09-03",
+    },
+    body: [
+      "Dubai has spent several years running its futures events separately. From November it runs them as one week.",
+      "## The dates",
+      "<strong>18&ndash;21 November 2026</strong>, across <strong>Emirates Towers</strong> and the <strong>Museum of the Future</strong>, organised by the <strong>Dubai Future Foundation</strong> under the directives of <strong>Sheikh Hamdan bin Mohammed bin Rashid Al Maktoum</strong>, Crown Prince of Dubai.",
+      "## What it absorbs",
+      "Dubai Future Week consolidates several events that previously stood alone: the <strong>Dubai Future Forum</strong>, <strong>Dubai AI Week</strong>, <strong>AI Grandmaster</strong>, the <strong>Dubai Foresight Awards</strong>, the <strong>Dubai Future Solutions &mdash; Prototypes for Humanity</strong> exhibition, and <strong>TED Talks</strong>.",
+      "## The five tracks",
+      "The programme is organised around people rather than technologies, under the line <strong>For the Human of the Future</strong>: <strong>How We'll Live</strong> (cities, homes, mobility, climate resilience), <strong>How We'll Think</strong> (education, AI, cognition, information literacy), <strong>How We'll Innovate</strong> (robotics, automation, quantum, space), <strong>How We'll Feel</strong> (health, food, wellness, longevity) and <strong>How We'll Do Business</strong> (finance, entrepreneurship, regulation).",
+      "## The size",
+      "More than <strong>10,000 participants</strong> are expected &mdash; inventors, investors, policymakers, entrepreneurs and technologists.",
+    ],
+    expertise:
+      "The consolidation is the story, and it changes how to plan a trip. Anyone who previously blocked separate dates for the Future Forum and AI Week now needs one four-day window, and the two-venue split matters: Emirates Towers and the Museum of the Future are close but not adjacent, so sessions in different tracks on the same day may be in different buildings. The track structure is also a genuine signal rather than branding — organising by \"how we'll live\" instead of by technology tends to produce cross-disciplinary panels, which is better for scanning a field and worse for depth in any one of them. For a PropTech reader, the track to target is How We'll Live.",
+  },
+
+  {
     slug: "future-world-forum-dubai-2026",
     site: "fwf",
     image: "/covers/future-world-forum-dubai-2026.jpg",

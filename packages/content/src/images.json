@@ -288,6 +288,102 @@
         ]
       ]
     },
+    "/covers/el-metro-cumple-57-y-lo-festeja-con-cumbia.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/el-metro-cumple-57-y-lo-festeja-con-cumbia-480.avif"
+        ],
+        [
+          768,
+          "/covers/el-metro-cumple-57-y-lo-festeja-con-cumbia-768.avif"
+        ],
+        [
+          1024,
+          "/covers/el-metro-cumple-57-y-lo-festeja-con-cumbia-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/el-metro-cumple-57-y-lo-festeja-con-cumbia-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/el-metro-cumple-57-y-lo-festeja-con-cumbia-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/el-metro-cumple-57-y-lo-festeja-con-cumbia-480.webp"
+        ],
+        [
+          768,
+          "/covers/el-metro-cumple-57-y-lo-festeja-con-cumbia-768.webp"
+        ],
+        [
+          1024,
+          "/covers/el-metro-cumple-57-y-lo-festeja-con-cumbia-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/el-metro-cumple-57-y-lo-festeja-con-cumbia-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/el-metro-cumple-57-y-lo-festeja-con-cumbia-1536.webp"
+        ]
+      ]
+    },
+    "/covers/festival-xochiska-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/festival-xochiska-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/festival-xochiska-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/festival-xochiska-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/festival-xochiska-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/festival-xochiska-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/festival-xochiska-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/festival-xochiska-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/festival-xochiska-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/festival-xochiska-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/festival-xochiska-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/fin-de-semana-del-31-de-octubre.jpg": {
       "width": 1536,
       "height": 864,
@@ -1058,6 +1154,54 @@
         ]
       ]
     },
+    "/covers/dmcc-gives-lab-grown-diamonds-their-own-desk.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/dmcc-gives-lab-grown-diamonds-their-own-desk-480.avif"
+        ],
+        [
+          768,
+          "/covers/dmcc-gives-lab-grown-diamonds-their-own-desk-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dmcc-gives-lab-grown-diamonds-their-own-desk-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/dmcc-gives-lab-grown-diamonds-their-own-desk-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/dmcc-gives-lab-grown-diamonds-their-own-desk-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dmcc-gives-lab-grown-diamonds-their-own-desk-480.webp"
+        ],
+        [
+          768,
+          "/covers/dmcc-gives-lab-grown-diamonds-their-own-desk-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dmcc-gives-lab-grown-diamonds-their-own-desk-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/dmcc-gives-lab-grown-diamonds-their-own-desk-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/dmcc-gives-lab-grown-diamonds-their-own-desk-1536.webp"
+        ]
+      ]
+    },
     "/covers/dubai-tokenised-property-secondary-market.jpg": {
       "width": 1536,
       "height": 864,
@@ -1103,6 +1247,54 @@
         [
           1536,
           "/covers/dubai-tokenised-property-secondary-market-1536.webp"
+        ]
+      ]
+    },
+    "/covers/expand-north-star-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/expand-north-star-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/expand-north-star-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/expand-north-star-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/expand-north-star-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/expand-north-star-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/expand-north-star-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/expand-north-star-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/expand-north-star-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/expand-north-star-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/expand-north-star-2026-1536.webp"
         ]
       ]
     },
@@ -1852,6 +2044,54 @@
         ]
       ]
     },
+    "/covers/dp-world-names-its-first-methanol-dual-fuel-ship.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/dp-world-names-its-first-methanol-dual-fuel-ship-480.avif"
+        ],
+        [
+          768,
+          "/covers/dp-world-names-its-first-methanol-dual-fuel-ship-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dp-world-names-its-first-methanol-dual-fuel-ship-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/dp-world-names-its-first-methanol-dual-fuel-ship-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/dp-world-names-its-first-methanol-dual-fuel-ship-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dp-world-names-its-first-methanol-dual-fuel-ship-480.webp"
+        ],
+        [
+          768,
+          "/covers/dp-world-names-its-first-methanol-dual-fuel-ship-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dp-world-names-its-first-methanol-dual-fuel-ship-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/dp-world-names-its-first-methanol-dual-fuel-ship-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/dp-world-names-its-first-methanol-dual-fuel-ship-1536.webp"
+        ]
+      ]
+    },
     "/covers/group.jpg": {
       "width": 1536,
       "height": 864,
@@ -1993,6 +2233,54 @@
         [
           1536,
           "/covers/wetex-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/world-green-economy-summit-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/world-green-economy-summit-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/world-green-economy-summit-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/world-green-economy-summit-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/world-green-economy-summit-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/world-green-economy-summit-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/world-green-economy-summit-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/world-green-economy-summit-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/world-green-economy-summit-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/world-green-economy-summit-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/world-green-economy-summit-2026-1536.webp"
         ]
       ]
     },
@@ -2318,6 +2606,54 @@
         ]
       ]
     },
+    "/covers/dubai-chambers-teaches-agentic-ai-to-14000-firms.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/dubai-chambers-teaches-agentic-ai-to-14000-firms-480.avif"
+        ],
+        [
+          768,
+          "/covers/dubai-chambers-teaches-agentic-ai-to-14000-firms-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dubai-chambers-teaches-agentic-ai-to-14000-firms-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/dubai-chambers-teaches-agentic-ai-to-14000-firms-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/dubai-chambers-teaches-agentic-ai-to-14000-firms-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dubai-chambers-teaches-agentic-ai-to-14000-firms-480.webp"
+        ],
+        [
+          768,
+          "/covers/dubai-chambers-teaches-agentic-ai-to-14000-firms-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dubai-chambers-teaches-agentic-ai-to-14000-firms-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/dubai-chambers-teaches-agentic-ai-to-14000-firms-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/dubai-chambers-teaches-agentic-ai-to-14000-firms-1536.webp"
+        ]
+      ]
+    },
     "/covers/dubai-future-forum-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -2363,6 +2699,54 @@
         [
           1536,
           "/covers/dubai-future-forum-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/dubai-future-week-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/dubai-future-week-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/dubai-future-week-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dubai-future-week-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/dubai-future-week-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/dubai-future-week-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dubai-future-week-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/dubai-future-week-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dubai-future-week-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/dubai-future-week-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/dubai-future-week-2026-1536.webp"
         ]
       ]
     },
@@ -3264,6 +3648,54 @@
         ]
       ]
     },
+    "/covers/bermondsey-street-festival-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/bermondsey-street-festival-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/bermondsey-street-festival-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/bermondsey-street-festival-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/bermondsey-street-festival-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/bermondsey-street-festival-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/bermondsey-street-festival-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/bermondsey-street-festival-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/bermondsey-street-festival-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/bermondsey-street-festival-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/bermondsey-street-festival-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/bfi-london-film-festival-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -3501,6 +3933,54 @@
         [
           1536,
           "/covers/lord-mayors-show-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/michael-ball-takes-the-coliseum-as-willy-wonka.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/michael-ball-takes-the-coliseum-as-willy-wonka-480.avif"
+        ],
+        [
+          768,
+          "/covers/michael-ball-takes-the-coliseum-as-willy-wonka-768.avif"
+        ],
+        [
+          1024,
+          "/covers/michael-ball-takes-the-coliseum-as-willy-wonka-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/michael-ball-takes-the-coliseum-as-willy-wonka-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/michael-ball-takes-the-coliseum-as-willy-wonka-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/michael-ball-takes-the-coliseum-as-willy-wonka-480.webp"
+        ],
+        [
+          768,
+          "/covers/michael-ball-takes-the-coliseum-as-willy-wonka-768.webp"
+        ],
+        [
+          1024,
+          "/covers/michael-ball-takes-the-coliseum-as-willy-wonka-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/michael-ball-takes-the-coliseum-as-willy-wonka-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/michael-ball-takes-the-coliseum-as-willy-wonka-1536.webp"
         ]
       ]
     },
@@ -4082,6 +4562,54 @@
         ]
       ]
     },
+    "/covers/e-invoicing-provider-deadline-moves-to-october.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/e-invoicing-provider-deadline-moves-to-october-480.avif"
+        ],
+        [
+          768,
+          "/covers/e-invoicing-provider-deadline-moves-to-october-768.avif"
+        ],
+        [
+          1024,
+          "/covers/e-invoicing-provider-deadline-moves-to-october-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/e-invoicing-provider-deadline-moves-to-october-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/e-invoicing-provider-deadline-moves-to-october-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/e-invoicing-provider-deadline-moves-to-october-480.webp"
+        ],
+        [
+          768,
+          "/covers/e-invoicing-provider-deadline-moves-to-october-768.webp"
+        ],
+        [
+          1024,
+          "/covers/e-invoicing-provider-deadline-moves-to-october-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/e-invoicing-provider-deadline-moves-to-october-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/e-invoicing-provider-deadline-moves-to-october-1536.webp"
+        ]
+      ]
+    },
     "/covers/financing.jpg": {
       "width": 1536,
       "height": 864,
@@ -4319,6 +4847,54 @@
         [
           1536,
           "/covers/registration-1536.webp"
+        ]
+      ]
+    },
+    "/covers/small-business-relief-still-files-a-return.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/small-business-relief-still-files-a-return-480.avif"
+        ],
+        [
+          768,
+          "/covers/small-business-relief-still-files-a-return-768.avif"
+        ],
+        [
+          1024,
+          "/covers/small-business-relief-still-files-a-return-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/small-business-relief-still-files-a-return-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/small-business-relief-still-files-a-return-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/small-business-relief-still-files-a-return-480.webp"
+        ],
+        [
+          768,
+          "/covers/small-business-relief-still-files-a-return-768.webp"
+        ],
+        [
+          1024,
+          "/covers/small-business-relief-still-files-a-return-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/small-business-relief-still-files-a-return-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/small-business-relief-still-files-a-return-1536.webp"
         ]
       ]
     },
@@ -4708,6 +5284,54 @@
         ]
       ]
     },
+    "/covers/lambeth-fringe-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/lambeth-fringe-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/lambeth-fringe-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/lambeth-fringe-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/lambeth-fringe-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/lambeth-fringe-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/lambeth-fringe-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/lambeth-fringe-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/lambeth-fringe-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/lambeth-fringe-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/lambeth-fringe-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/olympic-park-summer-school.jpg": {
       "width": 1536,
       "height": 864,
@@ -4948,6 +5572,54 @@
         ]
       ]
     },
+    "/covers/the-marathon-runs-twice-in-2027.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/the-marathon-runs-twice-in-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/the-marathon-runs-twice-in-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/the-marathon-runs-twice-in-2027-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/the-marathon-runs-twice-in-2027-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/the-marathon-runs-twice-in-2027-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/the-marathon-runs-twice-in-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/the-marathon-runs-twice-in-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/the-marathon-runs-twice-in-2027-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/the-marathon-runs-twice-in-2027-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/the-marathon-runs-twice-in-2027-1536.webp"
+        ]
+      ]
+    },
     "/covers/totally-thames-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -5046,6 +5718,54 @@
     }
   },
   "mbr.dst.llc": {
+    "/covers/al-meydan-street-gets-a-billion-dirham-rebuild.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/al-meydan-street-gets-a-billion-dirham-rebuild-480.avif"
+        ],
+        [
+          768,
+          "/covers/al-meydan-street-gets-a-billion-dirham-rebuild-768.avif"
+        ],
+        [
+          1024,
+          "/covers/al-meydan-street-gets-a-billion-dirham-rebuild-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/al-meydan-street-gets-a-billion-dirham-rebuild-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/al-meydan-street-gets-a-billion-dirham-rebuild-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/al-meydan-street-gets-a-billion-dirham-rebuild-480.webp"
+        ],
+        [
+          768,
+          "/covers/al-meydan-street-gets-a-billion-dirham-rebuild-768.webp"
+        ],
+        [
+          1024,
+          "/covers/al-meydan-street-gets-a-billion-dirham-rebuild-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/al-meydan-street-gets-a-billion-dirham-rebuild-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/al-meydan-street-gets-a-billion-dirham-rebuild-1536.webp"
+        ]
+      ]
+    },
     "/covers/coffee.jpg": {
       "width": 1536,
       "height": 864,
@@ -5283,6 +6003,54 @@
         [
           1536,
           "/covers/money-1536.webp"
+        ]
+      ]
+    },
+    "/covers/nad-al-sheba-gardens-mall-opens.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/nad-al-sheba-gardens-mall-opens-480.avif"
+        ],
+        [
+          768,
+          "/covers/nad-al-sheba-gardens-mall-opens-768.avif"
+        ],
+        [
+          1024,
+          "/covers/nad-al-sheba-gardens-mall-opens-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/nad-al-sheba-gardens-mall-opens-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/nad-al-sheba-gardens-mall-opens-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/nad-al-sheba-gardens-mall-opens-480.webp"
+        ],
+        [
+          768,
+          "/covers/nad-al-sheba-gardens-mall-opens-768.webp"
+        ],
+        [
+          1024,
+          "/covers/nad-al-sheba-gardens-mall-opens-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/nad-al-sheba-gardens-mall-opens-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/nad-al-sheba-gardens-mall-opens-1536.webp"
         ]
       ]
     },
@@ -9938,6 +10706,54 @@
         ]
       ]
     },
+    "/covers/festival-internacional-cervantino-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/festival-internacional-cervantino-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/festival-internacional-cervantino-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/festival-internacional-cervantino-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/festival-internacional-cervantino-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/festival-internacional-cervantino-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/festival-internacional-cervantino-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/festival-internacional-cervantino-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/festival-internacional-cervantino-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/festival-internacional-cervantino-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/festival-internacional-cervantino-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/fil-guadalajara-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -10319,6 +11135,54 @@
         [
           1536,
           "/covers/moderna-vacuna-melanoma-fase-3-1536.webp"
+        ]
+      ]
+    },
+    "/covers/morelia-anuncia-96-peliculas-mexicanas.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/morelia-anuncia-96-peliculas-mexicanas-480.avif"
+        ],
+        [
+          768,
+          "/covers/morelia-anuncia-96-peliculas-mexicanas-768.avif"
+        ],
+        [
+          1024,
+          "/covers/morelia-anuncia-96-peliculas-mexicanas-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/morelia-anuncia-96-peliculas-mexicanas-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/morelia-anuncia-96-peliculas-mexicanas-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/morelia-anuncia-96-peliculas-mexicanas-480.webp"
+        ],
+        [
+          768,
+          "/covers/morelia-anuncia-96-peliculas-mexicanas-768.webp"
+        ],
+        [
+          1024,
+          "/covers/morelia-anuncia-96-peliculas-mexicanas-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/morelia-anuncia-96-peliculas-mexicanas-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/morelia-anuncia-96-peliculas-mexicanas-1536.webp"
         ]
       ]
     },
@@ -11572,6 +12436,102 @@
         ]
       ]
     },
+    "/covers/snoopy-in-style-nyc.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/snoopy-in-style-nyc-480.avif"
+        ],
+        [
+          768,
+          "/covers/snoopy-in-style-nyc-768.avif"
+        ],
+        [
+          1024,
+          "/covers/snoopy-in-style-nyc-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/snoopy-in-style-nyc-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/snoopy-in-style-nyc-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/snoopy-in-style-nyc-480.webp"
+        ],
+        [
+          768,
+          "/covers/snoopy-in-style-nyc-768.webp"
+        ],
+        [
+          1024,
+          "/covers/snoopy-in-style-nyc-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/snoopy-in-style-nyc-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/snoopy-in-style-nyc-1536.webp"
+        ]
+      ]
+    },
+    "/covers/the-parade-turns-100-a-century-and-two-years-late.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/the-parade-turns-100-a-century-and-two-years-late-480.avif"
+        ],
+        [
+          768,
+          "/covers/the-parade-turns-100-a-century-and-two-years-late-768.avif"
+        ],
+        [
+          1024,
+          "/covers/the-parade-turns-100-a-century-and-two-years-late-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/the-parade-turns-100-a-century-and-two-years-late-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/the-parade-turns-100-a-century-and-two-years-late-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/the-parade-turns-100-a-century-and-two-years-late-480.webp"
+        ],
+        [
+          768,
+          "/covers/the-parade-turns-100-a-century-and-two-years-late-768.webp"
+        ],
+        [
+          1024,
+          "/covers/the-parade-turns-100-a-century-and-two-years-late-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/the-parade-turns-100-a-century-and-two-years-late-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/the-parade-turns-100-a-century-and-two-years-late-1536.webp"
+        ]
+      ]
+    },
     "/covers/transit-museum-bus-festival-turns-fifty.jpg": {
       "width": 1536,
       "height": 864,
@@ -11766,6 +12726,54 @@
         ]
       ]
     },
+    "/covers/jebel-ali-village-hands-over-892-homes.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/jebel-ali-village-hands-over-892-homes-480.avif"
+        ],
+        [
+          768,
+          "/covers/jebel-ali-village-hands-over-892-homes-768.avif"
+        ],
+        [
+          1024,
+          "/covers/jebel-ali-village-hands-over-892-homes-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/jebel-ali-village-hands-over-892-homes-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/jebel-ali-village-hands-over-892-homes-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/jebel-ali-village-hands-over-892-homes-480.webp"
+        ],
+        [
+          768,
+          "/covers/jebel-ali-village-hands-over-892-homes-768.webp"
+        ],
+        [
+          1024,
+          "/covers/jebel-ali-village-hands-over-892-homes-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/jebel-ali-village-hands-over-892-homes-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/jebel-ali-village-hands-over-892-homes-1536.webp"
+        ]
+      ]
+    },
     "/covers/palm-jebel-ali-frond-f-villas.jpg": {
       "width": 1536,
       "height": 864,
@@ -11811,6 +12819,54 @@
         [
           1536,
           "/covers/palm-jebel-ali-frond-f-villas-1536.webp"
+        ]
+      ]
+    },
+    "/covers/palm-jebel-ali-is-a-quarter-built.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/palm-jebel-ali-is-a-quarter-built-480.avif"
+        ],
+        [
+          768,
+          "/covers/palm-jebel-ali-is-a-quarter-built-768.avif"
+        ],
+        [
+          1024,
+          "/covers/palm-jebel-ali-is-a-quarter-built-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/palm-jebel-ali-is-a-quarter-built-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/palm-jebel-ali-is-a-quarter-built-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/palm-jebel-ali-is-a-quarter-built-480.webp"
+        ],
+        [
+          768,
+          "/covers/palm-jebel-ali-is-a-quarter-built-768.webp"
+        ],
+        [
+          1024,
+          "/covers/palm-jebel-ali-is-a-quarter-built-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/palm-jebel-ali-is-a-quarter-built-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/palm-jebel-ali-is-a-quarter-built-1536.webp"
         ]
       ]
     },
@@ -11960,6 +13016,54 @@
     }
   },
   "riviera.dst.llc": {
+    "/covers/a-waitrose-opens-on-the-other-side-of-meydan.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/a-waitrose-opens-on-the-other-side-of-meydan-480.avif"
+        ],
+        [
+          768,
+          "/covers/a-waitrose-opens-on-the-other-side-of-meydan-768.avif"
+        ],
+        [
+          1024,
+          "/covers/a-waitrose-opens-on-the-other-side-of-meydan-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/a-waitrose-opens-on-the-other-side-of-meydan-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/a-waitrose-opens-on-the-other-side-of-meydan-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/a-waitrose-opens-on-the-other-side-of-meydan-480.webp"
+        ],
+        [
+          768,
+          "/covers/a-waitrose-opens-on-the-other-side-of-meydan-768.webp"
+        ],
+        [
+          1024,
+          "/covers/a-waitrose-opens-on-the-other-side-of-meydan-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/a-waitrose-opens-on-the-other-side-of-meydan-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/a-waitrose-opens-on-the-other-side-of-meydan-1536.webp"
+        ]
+      ]
+    },
     "/covers/dubai-completed-104-projects-in-six-months.jpg": {
       "width": 1536,
       "height": 864,
@@ -12200,6 +13304,54 @@
         ]
       ]
     },
+    "/covers/the-junction-riviera-leaves-by-is-being-rebuilt.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/the-junction-riviera-leaves-by-is-being-rebuilt-480.avif"
+        ],
+        [
+          768,
+          "/covers/the-junction-riviera-leaves-by-is-being-rebuilt-768.avif"
+        ],
+        [
+          1024,
+          "/covers/the-junction-riviera-leaves-by-is-being-rebuilt-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/the-junction-riviera-leaves-by-is-being-rebuilt-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/the-junction-riviera-leaves-by-is-being-rebuilt-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/the-junction-riviera-leaves-by-is-being-rebuilt-480.webp"
+        ],
+        [
+          768,
+          "/covers/the-junction-riviera-leaves-by-is-being-rebuilt-768.webp"
+        ],
+        [
+          1024,
+          "/covers/the-junction-riviera-leaves-by-is-being-rebuilt-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/the-junction-riviera-leaves-by-is-being-rebuilt-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/the-junction-riviera-leaves-by-is-being-rebuilt-1536.webp"
+        ]
+      ]
+    },
     "/riviera.jpg": {
       "width": 1440,
       "height": 720,
@@ -12335,6 +13487,54 @@
         [
           1536,
           "/covers/consultation-1536.webp"
+        ]
+      ]
+    },
+    "/covers/dubai-tourist-visas-inside-48-hours.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/dubai-tourist-visas-inside-48-hours-480.avif"
+        ],
+        [
+          768,
+          "/covers/dubai-tourist-visas-inside-48-hours-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dubai-tourist-visas-inside-48-hours-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/dubai-tourist-visas-inside-48-hours-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/dubai-tourist-visas-inside-48-hours-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dubai-tourist-visas-inside-48-hours-480.webp"
+        ],
+        [
+          768,
+          "/covers/dubai-tourist-visas-inside-48-hours-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dubai-tourist-visas-inside-48-hours-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/dubai-tourist-visas-inside-48-hours-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/dubai-tourist-visas-inside-48-hours-1536.webp"
         ]
       ]
     },
@@ -12527,6 +13727,54 @@
         [
           1536,
           "/covers/irex-residency-citizenship-conclave-dubai-2027-1536.webp"
+        ]
+      ]
+    },
+    "/covers/medical-visas-get-a-single-front-door.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/medical-visas-get-a-single-front-door-480.avif"
+        ],
+        [
+          768,
+          "/covers/medical-visas-get-a-single-front-door-768.avif"
+        ],
+        [
+          1024,
+          "/covers/medical-visas-get-a-single-front-door-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/medical-visas-get-a-single-front-door-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/medical-visas-get-a-single-front-door-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/medical-visas-get-a-single-front-door-480.webp"
+        ],
+        [
+          768,
+          "/covers/medical-visas-get-a-single-front-door-768.webp"
+        ],
+        [
+          1024,
+          "/covers/medical-visas-get-a-single-front-door-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/medical-visas-get-a-single-front-door-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/medical-visas-get-a-single-front-door-1536.webp"
         ]
       ]
     },

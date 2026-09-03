@@ -2,6 +2,41 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "michael-ball-takes-the-coliseum-as-willy-wonka",
+    site: "ldn",
+    image: "/covers/michael-ball-takes-the-coliseum-as-willy-wonka.jpg",
+    imageAlt: "A tall red paper top hat on a warm off-white ground with a charcoal ticket shape tucked into its band",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Charlie and the Chocolate Factory returns, with Michael Ball at the Coliseum",
+    cardTitle: "Michael Ball is the Coliseum's Wonka",
+    titleSeo: "Michael Ball is the Coliseum's Willy Wonka",
+    summary:
+      "A new production runs 4 June to 18 September 2027 at the London Coliseum, directed by Nikolai Foster. Priority booking opens on 29 September.",
+    date: "2026-09-03",
+    category: "Theatre",
+    source: {
+      name: "Charlie and the Chocolate Factory",
+      url: "https://charliethemusical.com/",
+      verifiedOn: "2026-09-03",
+    },
+    body: [
+      "The last West End Wonka ran for three years at Drury Lane and then vanished for a decade. He is back, in the largest theatre in London.",
+      "## The run",
+      "<strong>4 June to 18 September 2027</strong> at the <strong>London Coliseum</strong>, billed as a strictly limited season. <strong>Michael Ball OBE</strong> plays Willy Wonka.",
+      "## Who is making it",
+      "Directed by <strong>Nikolai Foster</strong>, artistic director of Curve in Leicester. Set design by <strong>Leslie Travers</strong>, costumes by the Olivier-winning <strong>Katrina Lindsay</strong>. The book is <strong>David Greig</strong>'s, the music <strong>Marc Shaiman</strong>'s, with lyrics by <strong>Scott Wittman</strong> and Shaiman.",
+      "## The songs",
+      "The score keeps the 1971 film's best-known numbers &mdash; <em>Pure Imagination</em>, <em>The Candy Man</em>, <em>I've Got a Golden Ticket</em> &mdash; alongside the original Shaiman and Wittman material written for the stage version.",
+      "## Booking",
+      "The production's own site has priority sign-up open now, with tickets from <strong>29 September</strong>.",
+    ],
+    expertise:
+      "The venue is the detail that changes the show. The Coliseum seats around 2,350 and is English National Opera's house, which makes it the largest theatre in the West End and a very different room from the Theatre Royal Drury Lane, where the 2013 production ran. Chocolate rivers and glass lifts scale up well; intimate scenes do not, and how Foster handles that is the interesting question. Practically: a strictly limited summer season at a house that size means a great many seats and a short window, so the good news for anyone booking is that the balcony at the Coliseum has the steepest rake in London and the worst reputation — the rear stalls are usually the better value at the same price.",
+  },
+
+  {
     slug: "bayeux-tapestry-at-the-british-museum",
     site: "ldn",
     image: "/covers/bayeux-tapestry-at-the-british-museum.jpg",

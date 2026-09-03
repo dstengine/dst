@@ -2,6 +2,42 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "the-marathon-runs-twice-in-2027",
+    site: "lnd",
+    image: "/covers/the-marathon-runs-twice-in-2027.jpg",
+    imageAlt: "Two pale blue paper ribbons of identical shape laid side by side on a deep navy ground, one small red marker at the end of each",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "The London Marathon will be run twice, on consecutive days, once only",
+    cardTitle: "The marathon runs twice in 2027",
+    titleSeo: "The London Marathon runs twice in 2027",
+    summary:
+      "Saturday 24 and Sunday 25 April 2027: 100,000 people over the same Greenwich-to-Westminster route, after 1.33 million entered the 2026 ballot.",
+    date: "2026-09-03",
+    category: "Sport",
+    source: {
+      name: "London Marathon Events",
+      url: "https://www.londonmarathonevents.co.uk/london-marathon/article/announcing-2027-tcs-london-marathon-double-two-days-one-event-100000-people",
+      verifiedOn: "2026-09-03",
+    },
+    body: [
+      "One million, three hundred and thirty thousand people entered the ballot for the 2026 London Marathon. Rather fewer than fifty thousand ran it. The organisers have decided to do something about the arithmetic.",
+      "## The Double",
+      "The <strong>2027 TCS London Marathon</strong> will be run on <strong>Saturday 24 and Sunday 25 April</strong> &mdash; two days, <strong>100,000 participants</strong> between them, on the <strong>same Greenwich-to-Westminster route</strong> both days.",
+      "It is explicitly <strong>one year only</strong>. Chief executive <strong>Hugh Brasher</strong> calls it the event's most ambitious evolution to date and a once-in-a-generation, one-time-only reimagining.",
+      "## What it is meant to achieve",
+      "Beyond clearing some of the ballot backlog, the organisers are aiming at what they describe as the largest fundraising moment in UK sport, with projected fundraising above <strong>£150 million</strong>.",
+      "## How the ballot works now",
+      "Everyone who has already applied goes into a ballot for <strong>both</strong> Saturday and Sunday, with results announced by random draw in <strong>early July</strong>. Nobody may run in person on both days, though it is possible to run one day and complete the virtual <strong>TCS London Marathon MyWay</strong> as well.",
+      "## The rest of the week",
+      "The Double closes a full week of events: an extended <strong>Running Show</strong>, the <strong>TCS London Marathon &amp; Friday Night Lights 5K</strong>, and the <strong>TCS Mini London Marathon</strong> on <strong>Friday 23 April</strong>, with more than <strong>20,000</strong> young runners.",
+    ],
+    expertise:
+      "For anyone who lives on the route rather than running it, the phrase to note is \"the same iconic route\". Two days means two closures of the same roads, and the boroughs that carry the course through the middle stretch — Greenwich, Lewisham, Tower Hamlets, Southwark — will be shut for a weekend rather than a Sunday. Businesses along the Isle of Dogs and Rotherhithe stretches feel this most, because those are the sections where the diversion is longest. The one consolation is that the closure pattern is already well understood; what changes is its duration, not its shape. Spectating is the other side of that coin: the same vantage points will be half as crowded on any given day.",
+  },
+
+  {
     slug: "oxford-street-goes-traffic-free",
     site: "lnd",
     image: "/covers/oxford-street-goes-traffic-free.jpg",

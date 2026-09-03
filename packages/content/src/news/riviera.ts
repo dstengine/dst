@@ -2,6 +2,77 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "the-junction-riviera-leaves-by-is-being-rebuilt",
+    site: "riviera",
+    image: "/covers/the-junction-riviera-leaves-by-is-being-rebuilt.jpg",
+    imageAlt: "Two paper roads with dashed lane markings crossing at right angles on a clear mid-blue ground, the pale blue one carried over the chalk-white one on a ramp",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "The junction most of Riviera leaves by is being rebuilt",
+    cardTitle: "Riviera's exit junction gets rebuilt",
+    titleSeo: "Riviera's exit junction rebuild",
+    summary:
+      "RTA's second Al Meydan Street contract covers First Al Khail Street through Al Khail Road to Muscat Street, with a flyover interchange and cycle underpasses. Done by end-2028.",
+    date: "2026-09-03",
+    category: "Infrastructure",
+    source: {
+      name: "Dubai Government Media Office",
+      url: "https://www.mediaoffice.ae/en/news/2026/august/30-08/rta-maydan-street",
+      verifiedOn: "2026-09-03",
+    },
+    body: [
+      "There are only so many ways out of Riviera, and the RTA has just put a contract on the busiest of them.",
+      "## The relevant half of the award",
+      "On <strong>30 August</strong> the RTA awarded two contracts on Al Meydan Street worth <strong>Dh1.161 billion</strong> together. The one that touches Riviera is the second: <strong>Al Meydan Street from First Al Khail Street, across Al Khail Road, to Muscat Street</strong>.",
+      "It builds a <strong>grade-separated interchange at Al Meydan Street and Muscat Street</strong> &mdash; <strong>1,400 metres of bridges</strong>, rated at <strong>14,400 vehicles an hour</strong> &mdash; and adds roughly <strong>2 kilometres</strong> of new surface road linking through to Latifa bint Hamdan Street.",
+      "## The part that is not about cars",
+      "The same contract includes an <strong>integrated cycling network with underpasses</strong>. Riviera's own paths currently stop where the arterial roads start; underpasses are what turns them into a route rather than a loop.",
+      "## The timetable",
+      "<strong>End of 2028.</strong> Both contracts run to the same date.",
+      "## The wider figures",
+      "Across both contracts the RTA is rebuilding about <strong>17 kilometres</strong> of road and <strong>3,700 metres</strong> of bridges, claiming an <strong>18% increase</strong> in north&ndash;south capacity and a run from the Dubai&ndash;Al Ain Road to Umm Suqeim cut from <strong>30 minutes to 10</strong>. <strong>Mattar Al Tayer</strong>, the RTA's Director General, called the street one of Dubai's key strategic corridors.",
+    ],
+    expertise:
+      "For a Riviera resident the honest reading is that the benefit is 2028 and the cost is now. Al Khail Road crossings are where the queues form on this stretch, and the fix for that is precisely the structure being built — which means the works sit on the exact movement most affected. Worth planning around: the Meydan Road approach is the alternative while the Muscat Street interchange is under construction, and it is the same approach that carries racecourse traffic on Friday evenings from November onwards. The cycle underpasses are the sleeper item here; if they are delivered as described they connect Riviera's paths to Meydan and Nad Al Sheba for the first time.",
+  },
+
+  {
+    slug: "a-waitrose-opens-on-the-other-side-of-meydan",
+    site: "riviera",
+    image: "/covers/a-waitrose-opens-on-the-other-side-of-meydan.jpg",
+    imageAlt: "A small chalk-white shopfront on a clear mid-blue ground with a pale sky awning and a sand-coloured basket beside it",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "A Waitrose opens on the other side of Meydan",
+    cardTitle: "A Waitrose opens past Meydan",
+    titleSeo: "A Waitrose opens across Meydan",
+    summary:
+      "Nad Al Sheba Gardens Mall opened in August: two storeys, a Waitrose anchor, cafés, fitness space and a nursery, inside a gated community east of the racecourse.",
+    date: "2026-09-03",
+    category: "Nearby",
+    source: {
+      name: "Retail & Leisure International",
+      url: "https://www.rli.uk.com/new-mall-to-open-in-dubai-in-august/",
+      verifiedOn: "2026-09-03",
+    },
+    body: [
+      "Riviera's weekly shop has always meant choosing a direction rather than a shop. There is now one more direction.",
+      "## What opened",
+      "<strong>Nad Al Sheba Gardens Mall</strong>, a <strong>two-storey</strong> community scheme, opened in <strong>August 2026</strong> inside the Nad Al Sheba Gardens residential district &mdash; east of Meydan, on the far side of the racecourse from Riviera.",
+      "## The anchor",
+      "<strong>Waitrose</strong>, operating in the UAE under Spinneys' licence. Early tenants alongside it include <strong>Kokoro Handroll Bar</strong> and <strong>Bake My Day</strong>.",
+      "## The rest of it",
+      "Cafés and restaurants, health and fitness space, and a <strong>nursery</strong>. It is a neighbourhood centre by design, not a mall.",
+      "## Who built it",
+      "The community is <strong>developed by Meraas</strong> and <strong>owned by Shamal</strong>, whose CEO <strong>Abdulla Binhabtoor</strong> describes the district as a calm environment rather than a busy one. Nad Al Sheba Gardens sits about <strong>ten minutes from Downtown Dubai</strong>.",
+    ],
+    expertise:
+      "The distance is short and the route is not. Nad Al Sheba Gardens is close to Riviera as the crow flies but the racecourse and its approach roads sit between them, so the drive is longer than the map suggests and is worst on race evenings from November. Judge it on what it is: a two-storey community centre inside a gated villa district, which means a genuinely good supermarket, a handful of cafés, and very little else — the kind of place that replaces a grocery run rather than an afternoon. Whether it is worth the trip from Riviera depends almost entirely on whether you want the Waitrose specifically, because everything else in it exists closer to home.",
+  },
+
+  {
     slug: "ras-al-khor-switches-to-winter-hours",
     site: "riviera",
     image: "/covers/ras-al-khor-switches-to-winter-hours.jpg",

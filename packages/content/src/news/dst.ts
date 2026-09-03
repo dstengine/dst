@@ -5,6 +5,42 @@ import type { NewsItem } from "../types.ts";
 // anyone outside the company, and advertising it reads badly to a client.
 export const items: NewsItem[] = [
   {
+    slug: "dmcc-gives-lab-grown-diamonds-their-own-desk",
+    site: "dst",
+    image: "/covers/dmcc-gives-lab-grown-diamonds-their-own-desk.jpg",
+    imageAlt: "Two cut-paper gem shapes side by side on a slate ground, one pale grey-blue and one cream, a thin brass line between them",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "DMCC splits lab-grown diamonds off into a trading desk of their own",
+    cardTitle: "Lab-grown diamonds get their own desk",
+    titleSeo: "DMCC gives lab-grown diamonds their own desk",
+    summary:
+      "UAE lab-grown diamond volumes rose 91.5% in a year to 76.9 million carats. DMCC has stopped treating them as a footnote to the natural stone trade.",
+    date: "2026-09-03",
+    category: "Trade",
+    source: {
+      name: "Dubai Government Media Office",
+      url: "https://www.mediaoffice.ae/en/news/2026/august/30-08/dmcc-establishes-lab-grown-diamond-sector-as-uae-trade-hits-recod",
+      verifiedOn: "2026-09-03",
+    },
+    body: [
+      "A market gets its own desk when the old desk stops describing it. On 30 August the <strong>DMCC</strong> gave lab-grown diamonds one.",
+      "## What changed",
+      "DMCC has established a <strong>Lab-Grown Diamond Vertical</strong> as a standalone platform, separate from the natural diamond and coloured stone activities it had been filed under. The stated reason is that the two have different economics: one is mined, and one is manufactured and therefore scalable.",
+      "## The numbers behind it",
+      "UAE lab-grown diamond trade reached <strong>76.9 million carats</strong> in 2025, a <strong>91.5% increase</strong> year on year. Volumes have risen <strong>109% since 2022</strong>, when they stood at 36.8 million carats.",
+      "Value moved differently. The trade was worth <strong>$1.3 billion</strong>, up <strong>7.5%</strong> &mdash; volume nearly doubling while value rose by single digits is the price curve doing what a manufactured good's price curve does.",
+      "For scale, the UAE's total diamond trade was <strong>$41.7 billion</strong> in 2025. Lab-grown is about three per cent of that by value and a great deal more than that by carat.",
+      "## Why a vertical rather than a category",
+      "<strong>Ahmed Bin Sulayem</strong>, DMCC's Executive Chairman and CEO, put it as a question of infrastructure rather than of taste: lab-grown diamonds, he said, have reached the point where they need dedicated market infrastructure and a distinct economic case of their own.",
+      "The practical content of that is grading, certification, storage and dispute rules written for a product whose supply is a function of factory capacity rather than of geology.",
+    ],
+    expertise:
+      "The divergence between the two figures is the whole story and it is easy to misread. A 91.5% rise in carats against a 7.5% rise in value means the average price per carat fell sharply over the year — which is what happens to any manufactured good as production capacity catches up with demand, and is not by itself a sign of weak demand. The reason a separate vertical matters commercially is that a falling unit price is intolerable inside a category whose valuation conventions were written for a scarce good: the same warehouse and financing terms cannot serve both. For anyone setting up a stones business in a DMCC free zone, the change to watch for is whether the licence activity list splits in the same way the vertical has.",
+  },
+
+  {
     slug: "gitex-2026-lands-in-december",
     site: "dst",
     image: "/covers/gitex-2026-lands-in-december.jpg",

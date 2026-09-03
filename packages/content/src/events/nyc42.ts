@@ -2,6 +2,46 @@ import type { EventItem } from "../types.ts";
 
 export const items: EventItem[] = [
   {
+    slug: "snoopy-in-style-nyc",
+    site: "nyc42",
+    image: "/covers/snoopy-in-style-nyc.jpg",
+    imageAlt: "A cream paper dog-house silhouette on a deep brown ground with amber fabric swatches pinned in a row beside it",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Snoopy in Style NYC",
+    summary:
+      "A free 16,000-square-foot Peanuts exhibition in the Meatpacking District, open daily 10am–6pm through September 26. Ten zones, designer plush and Schulz Museum archives.",
+    start: "2026-09-02",
+    end: "2026-09-26",
+    startTime: "10:00",
+    endTime: "18:00",
+    utcOffset: "-04:00",
+    venue: "25 Little West 12th Street",
+    city: "New York",
+    organizer: "Peanuts",
+    category: "Exhibitions",
+    source: {
+      name: "Peanuts",
+      url: "https://www.peanuts.com/snoopy-in-style-nyc",
+      verifiedOn: "2026-09-03",
+    },
+    body: [
+      "A beagle who has never worn clothes has somehow become a fashion exhibition. He opened on September 2, which is not an accident: Fashion Week and the US Open are both in town.",
+      "## The practical details",
+      "<strong>25 Little West 12th Street</strong>, in the Meatpacking District. <strong>September 2 to 26</strong>, <strong>10am to 6pm daily</strong>, and <strong>admission is free</strong>. Hours can vary for special events.",
+      "## What is in it",
+      "About <strong>16,000 square feet</strong> across <strong>ten immersive zones</strong>, looking at Charles M. Schulz's strip through fashion, creativity and culture. Installations are curated by the <strong>Charles M. Schulz Museum and Research Center</strong>, and the archives on show include material about Schulz's own connections to New York, to tennis, and to his friendship with <strong>Billie Jean King</strong>.",
+      "## The clothes",
+      "Custom Snoopy and Woodstock plush dolls dressed by named designers &mdash; among them <strong>Christopher John Rogers</strong>, <strong>Sandy Liang</strong>, <strong>LUAR</strong>, <strong>BODE</strong>, <strong>Coach</strong>, <strong>Levi's</strong>, <strong>Michael Kors Collection</strong>, <strong>Madhappy</strong> and <strong>New York or Nowhere</strong>.",
+      "## The rest of it",
+      "A gift shop curated by <strong>Sarah Andelman</strong>, and <strong>Joe Cool's Listening Lounge</strong>, given over to Vince Guaraldi's music.",
+    ],
+    expertise:
+      "Free and three and a half weeks long is a combination that produces its own crowd problem, and this one has a specific shape: the exhibition sits between Fashion Week and the US Open, so the middle weekends are the worst of it. A 10am opening on a weekday is the quiet hour. The zone most people underrate is the Schulz Museum's archive material rather than the designer plush — the plush is what photographs, but the archives are the part with the Billie Jean King material in them, and it is genuinely difficult to see outside Santa Rosa. Note also that this is a pop-up rather than a museum: there is no reason to expect an extension past September 26.",
+  },
+
+  {
     slug: "new-york-film-festival-2026",
     site: "nyc42",
     image: "/covers/new-york-film-festival-2026.jpg",

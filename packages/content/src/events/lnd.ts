@@ -2,6 +2,44 @@ import type { EventItem } from "../types.ts";
 
 export const items: EventItem[] = [
   {
+    slug: "lambeth-fringe-2026",
+    site: "lnd",
+    image: "/covers/lambeth-fringe-2026.jpg",
+    imageAlt: "A cluster of small pale blue paper doorways of different heights on a deep navy ground, one lit chalk white",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Lambeth Fringe 2026",
+    summary:
+      "Five weeks of theatre, comedy, cabaret and music in pubs, chapels and small theatres across the borough, from 24 September to 25 October.",
+    start: "2026-09-24",
+    end: "2026-10-25",
+    utcOffset: "+01:00",
+    venue: "Venues across the London Borough of Lambeth",
+    city: "London",
+    organizer: "The Bread & Roses Theatre",
+    category: "Festivals",
+    source: {
+      name: "Lambeth Fringe",
+      url: "https://lambethfringe.com/",
+      verifiedOn: "2026-09-03",
+    },
+    body: [
+      "Edinburgh in August costs a fortune and requires a train. Lambeth in autumn requires the Northern line.",
+      "## The dates",
+      "<strong>24 September to 25 October 2026</strong> &mdash; five weeks, across venues in the <strong>London Borough of Lambeth</strong>.",
+      "## Who is behind it",
+      "The team at <strong>The Bread &amp; Roses Theatre</strong> in Clapham, who have run it yearly since <strong>2015</strong> and expanded it across multiple venues in 2024.",
+      "## The shape of it",
+      "Theatre, comedy, cabaret, music and family work, staged in small rooms rather than in one festival site &mdash; theatres, pubs and chapels around the borough. Named supporters and associated venues include the <strong>Bread &amp; Roses Pub</strong>, <strong>St John's Waterloo</strong>, <strong>The Bridge at Waterloo</strong>, <strong>This is Clapham</strong>, <strong>Brixton BID</strong> and <strong>We Are Waterloo</strong>.",
+      "## Its stated remit",
+      "The festival is open to all, with an explicit remit to platform the work of women, LGBTQ+, global-majority and working-class artists.",
+    ],
+    expertise:
+      "A fringe spread across a borough rather than gathered on one site rewards a different sort of planning: two shows in an evening is comfortable if they share a venue and rather ambitious if one is in Waterloo and the other in Clapham, since the connection is a bus more often than a tube. The rooms are small — Bread & Roses seats around fifty — so a well-reviewed show can sell out inside a week, which is not something Edinburgh-hardened audiences expect from a fringe. And do look at the church venues. St John's Waterloo is an unusually fine room for music, and a chapel acoustic flatters a small ensemble in a way a pub back room does not.",
+  },
+
+  {
     slug: "giant-summer-flea-olympic-park",
     featured: 1,
     site: "lnd",

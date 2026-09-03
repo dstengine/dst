@@ -2,6 +2,41 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "the-parade-turns-100-a-century-and-two-years-late",
+    site: "nyc42",
+    image: "/covers/the-parade-turns-100-a-century-and-two-years-late.jpg",
+    imageAlt: "A row of amber and ochre paper balloon shapes on a deep brown ground, each tethered by thin cream lines",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Macy's parade reaches its 100th edition, 102 years after the first one",
+    cardTitle: "The parade hits 100 on its 102nd year",
+    titleSeo: "Macy's parade reaches its 100th edition",
+    summary:
+      "November 26 brings a record 100 inflatable elements, a Hogwarts Great Hall float, a new Sorcerer's Apprentice Mickey and the return of Underdog.",
+    date: "2026-09-03",
+    category: "Parades",
+    source: {
+      name: "Time Out New York",
+      url: "https://timeout.com/newyork/news/a-new-harry-potter-float-will-bring-magic-to-macys-100th-thanksgiving-day-parade-in-nyc-090226",
+      verifiedOn: "2026-09-03",
+    },
+    body: [
+      "The Macy's Thanksgiving Day Parade began in 1924. It reaches its hundredth edition in 2026, and the two-year gap between those numbers is the whole trick: the parade did not run in 1942, 1943 or 1944.",
+      "## The date",
+      "<strong>Thursday, November 26, 2026</strong>, over the usual <strong>2.5-mile route</strong> from the Upper West Side down to Macy's Herald Square.",
+      "## The number they are chasing",
+      "A <strong>record lineup of 100 inflatable elements</strong> &mdash; the round figure being, transparently, the point.",
+      "## What is new in the air and on the ground",
+      "A <strong>Harry Potter float</strong> built as the Great Hall at Hogwarts, complete with the <strong>Sorting Hat</strong> and all four house banners. A new <strong>Sorcerer's Apprentice Mickey</strong> balloon. The return of <strong>Underdog</strong>. And a float honoring <strong>Tony Sarg</strong>, the puppeteer who designed the first balloons and effectively invented what the parade looks like.",
+      "## Where to see one of them early",
+      "The Harry Potter float makes its public debut at a <strong>Macy's Studio preview on November 17</strong>, nine days ahead of the parade itself.",
+    ],
+    expertise:
+      "The Sarg float is the one worth knowing about before you stand on Central Park West for three hours. Tony Sarg turned the parade from a march with animals borrowed from the Central Park Zoo into a procession of giant helium puppets in the late 1920s, which is why the event reads as a balloon parade rather than a marching-band parade — every element in the sky on November 26 is downstream of one puppeteer's idea. Practical note on the centennial: a milestone year draws milestone crowds, and the reliable trick remains the same as every year — the stretch along Central Park West in the 70s fills earliest, and the blocks below Columbus Circle fill last.",
+  },
+
+  {
     slug: "fire-museum-reopens-after-two-years",
     site: "nyc42",
     image: "/covers/fire-museum-reopens-after-two-years.jpg",

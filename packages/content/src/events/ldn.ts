@@ -2,6 +2,45 @@ import type { EventItem } from "../types.ts";
 
 export const items: EventItem[] = [
   {
+    slug: "bermondsey-street-festival-2026",
+    site: "ldn",
+    image: "/covers/bermondsey-street-festival-2026.jpg",
+    imageAlt: "A red paper bunting line strung across a warm off-white ground above two charcoal market stall shapes",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Bermondsey Street Festival 2026",
+    summary:
+      "The street shuts to traffic on Saturday 19 September, 10am to 5pm, for the festival's twentieth year. Free, volunteer-run, and spread across three areas.",
+    start: "2026-09-19",
+    startTime: "10:00",
+    endTime: "17:00",
+    utcOffset: "+01:00",
+    venue: "Bermondsey Street, SE1",
+    city: "London",
+    organizer: "Bermondsey Street Festival",
+    category: "Festivals",
+    source: {
+      name: "Bermondsey Street Festival",
+      url: "https://bermondseystreetfestival.com/",
+      verifiedOn: "2026-09-03",
+    },
+    body: [
+      "Bermondsey Street is a narrow Georgian run between London Bridge and the Blue. For one Saturday a year the cars come off it.",
+      "## When",
+      "<strong>Saturday 19 September 2026</strong>, <strong>10am to 5pm</strong>. It is <strong>free</strong>, and it is the festival's <strong>twentieth year</strong>.",
+      "## Where, precisely",
+      "The festival runs in three parts: <strong>On The Street</strong> along Bermondsey Street itself, the <strong>Family Fun Hub</strong>, and <strong>Tanner Street Park</strong>.",
+      "## What is on it",
+      "Music, food, independent stalls and street entertainers along the closed road, with the family programme handled separately so the two do not compete for the same pavement.",
+      "## Who runs it",
+      "Volunteers. It is funded by grant support from <strong>Southwark Council</strong> and by sponsorship &mdash; <strong>Team London Bridge</strong> and <strong>Store House</strong> as platinum sponsors, with <strong>Lolo</strong> and <strong>The Woolpack</strong> among the gold.",
+    ],
+    expertise:
+      "This is a street party rather than an event with a site, and the difference shows in how you approach it. Bermondsey Street has no capacity to expand, so the crowd density is set by the width of the road: mid-morning is comfortable, and by two o'clock the stretch between Tanner Street and Long Lane is shoulder to shoulder. London Bridge is the obvious station and the busiest approach; Borough and Bermondsey both put you on the quieter end. Tanner Street Park is where to head if the street itself has filled — it is the part of the festival with room in it, and it is a two-minute walk from the middle of the crush.",
+  },
+
+  {
     slug: "bfi-london-film-festival-2026",
     site: "ldn",
     image: "/covers/bfi-london-film-festival-2026.jpg",

@@ -2,6 +2,42 @@ import type { EventItem } from "../types.ts";
 
 export const items: EventItem[] = [
   {
+    slug: "expand-north-star-2026",
+    site: "dst",
+    image: "/covers/expand-north-star-2026.jpg",
+    imageAlt: "A scatter of small cut-paper squares on a slate ground converging on one larger cream square, thin brass lines between them",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Expand North Star 2026",
+    summary:
+      "The tenth edition of the startup and investor show runs 8–10 December at Dubai Exhibition Centre. Last year it drew 2,050 startups from 96 countries and 1,300 investors.",
+    start: "2026-12-08",
+    end: "2026-12-10",
+    venue: "Dubai Exhibition Centre, Expo City",
+    city: "Dubai",
+    organizer: "GITEX Global",
+    category: "Business",
+    source: {
+      name: "Expand North Star",
+      url: "https://expandnorthstar.com/",
+      verifiedOn: "2026-09-03",
+    },
+    body: [
+      "GITEX fills the Trade Centre in October with companies that already have customers. Six weeks later the same organisers fill Expo City with the ones that do not yet.",
+      "## The dates",
+      "<strong>Expand North Star</strong> runs <strong>8&ndash;10 December 2026</strong> at the <strong>Dubai Exhibition Centre</strong> in Expo City. It is the <strong>tenth edition</strong>, and it is organised by GITEX Global.",
+      "## The size of it, as measured last year",
+      "The 2025 edition drew <strong>2,050 exhibiting startups from 96 countries</strong>, <strong>more than 1,300 investors</strong>, <strong>6,500 founders</strong> and <strong>400 speakers</strong>, with <strong>5,340 pre-arranged meetings</strong> booked on site. The organisers describe the investor cohort as managing more than <strong>$1 trillion</strong> in assets between them.",
+      "## What is inside it",
+      "Five components carry the programme. <strong>Founders Academy</strong> is a three-day learning track. <strong>NS Play</strong> covers AR, VR and lifestyle technology. <strong>DigiHealth-Biotech</strong> takes healthcare. The <strong>Investor Programme</strong> is billed by the organisers as the largest VC gathering in the global south, and <strong>Supernova 0X</strong> is the pitch competition, structured by venture stage rather than by sector.",
+      "Around them sit a Founder's Pass giving access to single-day startup pods, and thematic tracks on restructuring, alternative capital, commercial deep tech and emerging-market growth corridors.",
+    ],
+    expertise:
+      "The number to plan around is 5,340 pre-arranged meetings, not the 2,050 exhibitors. This is a matching event rather than a browsing one, and the value is almost entirely in the meeting scheduler, which opens weeks before the doors do. A stand booked without the meetings booked is a stand in a hall of two thousand other stands. Note also the venue: Expo City is not the World Trade Centre, and the December date puts it well clear of GITEX week — anyone budgeting one Dubai trip for both is budgeting two.",
+  },
+
+  {
     slug: "future-world-forum-dubai-2026",
     site: "dst",
     title: "Future World Forum Dubai",

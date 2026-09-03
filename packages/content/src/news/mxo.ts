@@ -2,6 +2,41 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "morelia-anuncia-96-peliculas-mexicanas",
+    site: "mxo",
+    image: "/covers/morelia-anuncia-96-peliculas-mexicanas.jpg",
+    imageAlt: "Noventa y seis rect&aacute;ngulos de papel en cuadr&iacute;cula, cuarenta de ellos en un tono distinto",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Morelia selecciona 96 pel&iacute;culas mexicanas y cuatro de ellas vienen de comunidades ind&iacute;genas",
+    cardTitle: "Morelia anuncia 96 pel&iacute;culas mexicanas",
+    titleSeo: "FICM 2026: 96 cintas mexicanas",
+    summary:
+      "El 40% de la Selecci&oacute;n Oficial del 24 Festival Internacional de Cine de Morelia est&aacute; dirigido por mujeres. El festival va del 16 al 25 de octubre.",
+    date: "2026-09-02",
+    category: "Cine",
+    source: {
+      name: "IMCINE",
+      url: "https://www.imcine.gob.mx/nota.php?id=326",
+      verifiedOn: "2026-09-03",
+    },
+    body: [
+      "Una cifra sirve para medir un festival y otra para medir un pa&iacute;s. El <strong>24 Festival Internacional de Cine de Morelia</strong> public&oacute; las dos al mismo tiempo.",
+      "## La selecci&oacute;n",
+      "La <strong>Selecci&oacute;n Oficial</strong> re&uacute;ne <strong>96 pel&iacute;culas mexicanas</strong>. El <strong>40%</strong> est&aacute; dirigido por mujeres y <strong>cuatro</strong> por cineastas de comunidades ind&iacute;genas.",
+      "## C&oacute;mo est&aacute; dividida",
+      "Las secciones son <strong>Michoac&aacute;n</strong> (cortometraje y largometraje), <strong>Cortometraje Mexicano</strong> &mdash; con sus ramas de animaci&oacute;n, documental y ficci&oacute;n &mdash;, <strong>Largometraje Documental Mexicano</strong> y <strong>Largometraje Mexicano</strong>.",
+      "## Las fechas",
+      "Del <strong>16 al 25 de octubre de 2026</strong> en <strong>Morelia, Michoac&aacute;n</strong>, con funciones presenciales y una extensi&oacute;n virtual a trav&eacute;s de <strong>Nuestro Cine Mx</strong>.",
+      "## El dato que explica la lista",
+      "Buena parte de los t&iacute;tulos lleva marcado su apoyo p&uacute;blico: <strong>FOCINE</strong>, <strong>EFICINE</strong>, <strong>PROCINE</strong> y el <strong>ECAMC</strong>. La selecci&oacute;n de un festival privado &mdash; el FICM es una asociaci&oacute;n civil sin fines de lucro, fundada en <strong>2003</strong> &mdash; termina siendo, de paso, el inventario m&aacute;s legible de lo que financi&oacute; el Estado.",
+    ],
+    expertise:
+      "Al leer una Selecci&oacute;n Oficial conviene mirar primero la secci&oacute;n de cortometraje, no la de largo. En Morelia el corto no es la antesala del programa: es donde el festival construy&oacute; su reputaci&oacute;n y donde aparecen los nombres que dentro de cinco a&ntilde;os estar&aacute;n en la competencia larga. La secci&oacute;n Michoac&aacute;n cumple una funci&oacute;n distinta &mdash; reservar lugar a la producci&oacute;n del estado anfitri&oacute;n &mdash; y es la que mejor indica si un festival regional sigue siendo regional. Sobre la extensi&oacute;n virtual: hist&oacute;ricamente no incluye todo el programa ni por el mismo tiempo, as&iacute; que vale revisar t&iacute;tulo por t&iacute;tulo antes de dar por hecho que algo se podr&aacute; ver a distancia.",
+  },
+
+  {
     slug: "veinticinco-anos-para-llegar-a-la-cima",
     site: "mxo",
     image: "/covers/veinticinco-anos-para-llegar-a-la-cima.jpg",

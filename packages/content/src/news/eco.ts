@@ -2,6 +2,41 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "dp-world-names-its-first-methanol-dual-fuel-ship",
+    site: "eco",
+    image: "/covers/dp-world-names-its-first-methanol-dual-fuel-ship.jpg",
+    imageAlt: "A simple sage paper ship hull on a deep green ground with two cream fuel droplets above it, one larger than the other",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "DP World names its first ship that can run on methanol",
+    cardTitle: "A first methanol dual-fuel ship",
+    titleSeo: "DP World names a methanol dual-fuel ship",
+    summary:
+      "The 1,250 TEU DP World London can burn methanol or conventional fuel. It was delivered in April and first bunkered methanol in Rotterdam in June.",
+    date: "2026-09-03",
+    category: "Shipping",
+    source: {
+      name: "Dubai Government Media Office",
+      url: "https://www.mediaoffice.ae/en/news/2026/august/31-08/dp-worlds-shipping-solutions-names-its-first-methanol-dual-fuel-vessel",
+      verifiedOn: "2026-09-03",
+    },
+    body: [
+      "Shipping is hard to decarbonise for an unglamorous reason: a ship lasts twenty-five years, so the fuel decision is made once and lived with. On <strong>31 August</strong> DP World named a ship that defers the decision.",
+      "## The vessel",
+      "<strong>DP World London</strong>: <strong>1,250 TEU</strong>, <strong>148 metres</strong>, Portuguese-flagged, owned by the German operator <strong>Elbdeich Reederei</strong> and run by DP World's Shipping Solutions. She was <strong>delivered in April 2026</strong>.",
+      "## What dual-fuel means here",
+      "A five-cylinder main engine that can run on <strong>either methanol or conventional marine fuel</strong>, with <strong>exhaust gas recirculation</strong> fitted to cut emissions and meet international standards.",
+      "## The date that matters more than the naming",
+      "The first methanol bunkering took place in <strong>Rotterdam on 25 June 2026</strong>. A dual-fuel engine that has never taken the alternative fuel is a conventional ship with an option attached; the bunkering is what makes it real.",
+      "## What was not said",
+      "The announcement gives no emissions-reduction percentage, no fleet-wide count of methanol-capable vessels and no order book. <strong>Martin Gaard Christiansen</strong>, CEO of Shipping Solutions EAM, framed the ship in terms of heritage and direction rather than tonnes avoided.",
+    ],
+    expertise:
+      "Dual-fuel is a hedge, and it should be read as one rather than as a conversion. The environmental result depends entirely on what goes into the tank: methanol made from natural gas offers modest well-to-wake savings, while green methanol made from renewable power and captured carbon offers large ones, and the announcement does not say which was bunkered in Rotterdam. That is the question to ask of any methanol vessel claim. The vessel size is also worth noting — at 1,250 TEU this is a feeder, not a mainline container ship, which is the sensible place to start because feeders return to the same few ports and can therefore rely on bunkering infrastructure that barely exists anywhere else.",
+  },
+
+  {
     slug: "a-60-percent-carbon-cut-changes-hands",
     site: "eco",
     image: "/covers/a-60-percent-carbon-cut-changes-hands.jpg",

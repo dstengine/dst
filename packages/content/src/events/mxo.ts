@@ -2,6 +2,46 @@ import type { EventItem } from "../types.ts";
 
 export const items: EventItem[] = [
   {
+    slug: "festival-internacional-cervantino-2026",
+    site: "mxo",
+    image: "/covers/festival-internacional-cervantino-2026.jpg",
+    imageAlt: "Tres arcos de papel de distinto tamaño anidados uno dentro de otro, en terracota y crema sobre un fondo verde",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Festival Internacional Cervantino 2026",
+    summary:
+      "La 54ª edición va del 3 al 18 de octubre en Guanajuato, con Francia como país invitado de honor y programación en seis ciudades del estado.",
+    start: "2026-10-03",
+    end: "2026-10-18",
+    utcOffset: "-06:00",
+    city: "Guanajuato",
+    venue: "Teatro Juárez, Teatro Principal, Teatro Cervantes y otras sedes de Guanajuato",
+    category: "Festivales",
+    organizer: "Secretaría de Cultura",
+    source: {
+      name: "Festival Internacional Cervantino",
+      url: "https://festivalcervantino.gob.mx/",
+      verifiedOn: "2026-09-03",
+    },
+    body: [
+      "Una ciudad de callejones y escalinatas, construida sobre un cauce de río, se convierte durante quince días de octubre en el escenario más incómodo y más bello del país.",
+      "## Las fechas",
+      "La <strong>54ª edición</strong> del Festival Internacional Cervantino va del <strong>3 al 18 de octubre de 2026</strong>, organizada por la <strong>Secretaría de Cultura</strong>.",
+      "## El país invitado",
+      "<strong>Francia</strong> es el país invitado de honor de esta edición.",
+      "## Dónde ocurre",
+      "En la ciudad de Guanajuato, las sedes incluyen el <strong>Teatro Juárez</strong>, el <strong>Teatro Principal</strong>, el <strong>Teatro Cervantes</strong>, la <strong>Explanada de la Alhóndiga de Granaditas</strong>, la <strong>Plaza San Fernando</strong>, la <strong>Plaza Allende</strong>, <strong>Los Pastitos</strong> y la <strong>Universidad de Guanajuato</strong>. La programación se extiende además a <strong>León</strong>, <strong>San Miguel de Allende</strong>, <strong>Salamanca</strong>, <strong>Silao</strong> y <strong>Purísima del Rincón</strong>.",
+      "## Algunos nombres del programa",
+      "<strong>Mondo Cane</strong>, el proyecto de Mike Patton; <strong>&laquo;FuturesPast&raquo;</strong> del <strong>Bangarra Dance Theatre</strong>; <strong>&laquo;Carmen&raquo;</strong> de la <strong>Compañía Antonio Gades</strong>; y <strong>&laquo;Tosca&raquo;</strong> de Puccini a cargo de la <strong>Compañía Nacional de Ópera</strong>.",
+      "## Boletos",
+      "La venta es a través de <strong>Ticketmaster</strong>.",
+    ],
+    expertise:
+      "El Cervantino tiene dos festivales dentro: el de sala, con boleto y horario, y el de calle, que ocurre en plazas y explanadas sin costo. Quien viaja por el primero suele descubrir que el segundo le ocupó más horas. La restricción real es el hospedaje — Guanajuato es una ciudad pequeña y las dos semanas de octubre son las de mayor ocupación del año, así que la reserva se hace antes que la compra de boletos, no después. Sobre el traslado: la traza de callejones y escaleras hace que las distancias en el mapa engañen; entre dos sedes que parecen contiguas puede haber una subida considerable, y encadenar dos funciones con media hora de margen rara vez sale bien. Las sedes fuera de la capital — León, San Miguel, Salamanca — piden coche o autobús foráneo y prácticamente un día entero.",
+  },
+
+  {
     slug: "fil-guadalajara-2026",
     featured: 1,
     site: "mxo",

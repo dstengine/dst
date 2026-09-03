@@ -2,6 +2,76 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "al-meydan-street-gets-a-billion-dirham-rebuild",
+    site: "mbr",
+    image: "/covers/al-meydan-street-gets-a-billion-dirham-rebuild.jpg",
+    imageAlt: "Two chalk-white paper roads with dashed lane markings crossing diagonally on a teal ground, one carried over the other on small sand-coloured piers",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "The road the district is built along is being rebuilt around it",
+    cardTitle: "Al Meydan Street: a Dh1.16bn rebuild",
+    titleSeo: "Al Meydan Street gets a Dh1.16bn rebuild",
+    summary:
+      "RTA has awarded two contracts worth Dh1.161 billion covering 17km of road and 3,700m of bridges, with two grade-separated interchanges. Completion is end-2028.",
+    date: "2026-09-03",
+    category: "Infrastructure",
+    source: {
+      name: "Dubai Government Media Office",
+      url: "https://www.mediaoffice.ae/en/news/2026/august/30-08/rta-maydan-street",
+      verifiedOn: "2026-09-03",
+    },
+    body: [
+      "MBR City was laid out along a street that was never built to carry a city. On 30 August the <strong>RTA</strong> awarded the contracts that change that.",
+      "## The award",
+      "Two contracts, <strong>Dh1.161 billion</strong> between them, covering roughly <strong>17 kilometres of road</strong> and <strong>3,700 metres of bridges</strong>. Completion is scheduled for the <strong>end of 2028</strong>.",
+      "## The first contract",
+      "It runs <strong>Al Meydan Street from Latifa bint Hamdan Street to Umm Suqeim Street</strong>, about <strong>14 kilometres</strong>, and takes in <strong>Al Marabea' Street</strong> from Dubai Hills to Sheikh Mohammed bin Zayed Road. At the Al Marabea'/Al Meydan junction it builds a <strong>grade-separated interchange</strong> with 1,600 metres of bridges and a capacity of <strong>14,400 vehicles an hour</strong>, plus a direct three-lane connection to Sheikh Mohammed bin Zayed Road rated at <strong>7,800 vehicles an hour</strong> and a 700-metre elevated link on the Dubai&ndash;Al Ain Road towards Nad Al Hamar.",
+      "## The second contract",
+      "It takes <strong>Al Meydan Street from First Al Khail Street, across Al Khail Road, to Muscat Street</strong>, adds about <strong>2 kilometres</strong> of new surface road connecting to Latifa bint Hamdan Street, and builds a second <strong>grade-separated interchange at Al Meydan/Muscat Street</strong> &mdash; 1,400 metres of bridges, again <strong>14,400 vehicles an hour</strong>. It also includes an integrated cycling network with underpasses.",
+      "## What the RTA says it buys",
+      "North&ndash;south capacity up <strong>18%</strong>, and the run from Al Manama Street and the Dubai&ndash;Al Ain Road to Umm Suqeim cut from <strong>30 minutes to 10</strong>. <strong>Mattar Al Tayer</strong>, the RTA's Director General, called Al Meydan Street one of Dubai's key strategic corridors. The RTA puts the population served at <strong>more than 500,000</strong> across the surrounding communities.",
+    ],
+    expertise:
+      "Two things in this award matter more to residents than the headline number. The first is the cycling network with underpasses in contract two: MBR City has cycle paths that end at arterial roads, and a grade-separated crossing is the difference between a network and a set of disconnected loops. The second is the completion date. End-2028 means the district lives through roughly two years of construction on its main street first, and the deepest disruption will be at the two interchange sites — Al Marabea'/Al Meydan and Al Meydan/Muscat Street — rather than spread evenly along the 17 kilometres. Anyone choosing between addresses inside the district would do well to look at which of those two junctions they would be commuting through.",
+  },
+
+  {
+    slug: "nad-al-sheba-gardens-mall-opens",
+    site: "mbr",
+    image: "/covers/nad-al-sheba-gardens-mall-opens.jpg",
+    imageAlt: "A low two-storey cut-paper building on a teal ground, a chalk-white awning along its front and sand-coloured trees beside it",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "A community mall opens on the district's eastern edge, with Waitrose in it",
+    cardTitle: "Nad Al Sheba Gardens Mall opens",
+    titleSeo: "Nad Al Sheba Gardens Mall opens",
+    summary:
+      "A two-storey scheme inside Meraas' Nad Al Sheba Gardens, anchored by Waitrose, with cafés, restaurants, fitness space and a nursery.",
+    date: "2026-09-03",
+    category: "Retail",
+    source: {
+      name: "Retail & Leisure International",
+      url: "https://www.rli.uk.com/new-mall-to-open-in-dubai-in-august/",
+      verifiedOn: "2026-09-03",
+    },
+    body: [
+      "The gap between a master plan and a place to live is usually a supermarket. Nad Al Sheba Gardens has closed it.",
+      "## What opened",
+      "<strong>Nad Al Sheba Gardens Mall</strong>, a <strong>two-storey</strong> community scheme inside the Nad Al Sheba Gardens residential district. It opened in <strong>August 2026</strong>.",
+      "## Who built it",
+      "The community is <strong>developed by Meraas</strong> and <strong>owned by Shamal</strong>. <strong>Abdulla Binhabtoor</strong>, Shamal's CEO, describes the district as a calm rather than a busy environment &mdash; which is a reasonable description of the retail as well, since this is a neighbourhood centre rather than a destination mall.",
+      "## What is in it",
+      "<strong>Waitrose</strong> is the anchor supermarket. Early tenants also include <strong>Kokoro Handroll Bar</strong> and <strong>Bake My Day</strong>. Beyond the food, the scheme carries cafés and restaurants, health and fitness space, and a <strong>nursery</strong>.",
+      "## Where it sits",
+      "Nad Al Sheba Gardens is roughly <strong>ten minutes from Downtown Dubai</strong>, with DIFC, Business Bay and Meydan all close by. For MBR City it is the eastern neighbour rather than an outing.",
+    ],
+    expertise:
+      "The nursery is the line worth noticing in a district this new. A community centre that opens with food and coffee is convenient; one that opens with childcare in it changes the daily geography for a household, because the school run and the shop become one trip rather than two. On the retail itself, temper expectations by category: this is a two-storey neighbourhood scheme, so it will cover groceries, coffee and a haircut well and will not replace a trip to Dubai Mall or Mall of the Emirates for anything else. The practical question for MBR City residents is parking at peak hours, since a community mall serving a gated district draws from well outside it once a Waitrose is in it.",
+  },
+
+  {
     slug: "dubai-metro-gold-line-approved",
     site: "mbr",
     image: "/covers/dubai-metro-gold-line-approved.jpg",

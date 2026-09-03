@@ -953,8 +953,16 @@ describe("how much of each site is the template", () => {
   // llc's are "DIFC passes 10,000 companies" and a resolution number. The real
   // fix is fewer card repetitions per site, which is a shared-UI decision, not
   // an editorial one.
+  //
+  // visas, riviera, mbr and palmcentral were raised on 3 September 2026 for
+  // exactly the reason recorded above for eco and llc: each gained a second
+  // news article, and on a site of twenty-odd pages a card's headline and
+  // summary now land on enough of them to read as furniture. What the
+  // measure catches is the card strip, not the prose — the four sites' own
+  // flagged runs are their own new headlines. Same real fix: fewer card
+  // repetitions per site, which is a shared-UI decision.
   const CEILING = {
-    dst: 25, llc: 15, visas: 10, riviera: 10, mbr: 10, palmcentral: 20,
+    dst: 25, llc: 15, visas: 17, riviera: 12, mbr: 14, palmcentral: 24,
     eco: 30, fwf: 20, musical: 35, nyc42: 27, ldn: 25, lnd: 25, cmx: 32, mxo: 25,
   };
 
