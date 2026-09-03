@@ -77,7 +77,23 @@ before(async () => {
   assert.ok(pages.length > 30, `expected the whole network to be built, found ${pages.length} pages`);
 });
 
-const contentPages = () => pages.filter((p) => !p.url.startsWith("/go/"));
+// A page that renders no site chrome on purpose, and so is exempt from every
+// check that is really a check on the chrome: a title and description, a nav
+// with icons, the theme toggle, the district header image.
+//
+// Two of them, and they are bare for the same reason. A /go/ hop is a
+// redirect, not a page. /li/ is the LiveInternet counter on its own address
+// — it was pulled out of the shared footer, where it fired on every page of
+// fourteen hosts, and giving it back a layout would quietly bring the nav,
+// the footer and the analytics snippet along with it. The point of the
+// address is to hit the counter without putting it in the template.
+//
+// Named rather than inlined twice: the district-image test below had already
+// grown its own copy of the /go/ string, which is how a third bare page ends
+// up exempt in one test and failing in another.
+const isBarePage = (url) => url.startsWith("/go/") || url === "/li/";
+
+const contentPages = () => pages.filter((p) => !isBarePage(p.url));
 
 describe("page metadata", () => {
   test("every page has a title, a description and exactly one h1", () => {
@@ -363,7 +379,7 @@ describe("district header image", () => {
     const districtPages = pages.filter(
       (p) =>
         p.app === "riviera" &&
-        !p.url.startsWith("/go/") &&
+        !isBarePage(p.url) &&
         !p.url.startsWith("/coffee/homebrew") &&
         !/^\/(news|events)\/[^/]+\/$/.test(p.url),
     );

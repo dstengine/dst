@@ -16,6 +16,7 @@
     "./VentureGrid.astro": "./src/components/VentureGrid.astro",
     "./PageHero.astro": "./src/components/PageHero.astro",
     "./Hero.astro": "./src/components/Hero.astro",
+    "./LiCounter.astro": "./src/components/LiCounter.astro",
     "./Redirect.astro": "./src/components/Redirect.astro",
     "./FeedCards.astro": "./src/components/FeedCards.astro",
     "./Icon.astro": "./src/components/Icon.astro",

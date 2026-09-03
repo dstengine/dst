@@ -16,8 +16,9 @@ export default defineConfig({
   integrations: [
     sitemap({
       // /go/ hops are noindex and disallowed in robots.txt; a sitemap entry
-      // would contradict both.
-      filter: (page) => !page.includes("/go/"),
+      // would contradict both. /li/ carries the LiveInternet counter and is
+      // noindex for the same reason — it exists to be opened deliberately.
+      filter: (page) => !page.includes("/go/") && !page.endsWith("/li/"),
       // Google uses lastmod to decide what is worth recrawling. Pages
       // whose date we don't know are left without one — a made-up date
       // trains the crawler to ignore the field.

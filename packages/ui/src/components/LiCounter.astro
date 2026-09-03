@@ -1,0 +1,62 @@
+---
+// The LiveInternet counter, and nothing else.
+//
+// A whole document rather than a component dropped into BaseLayout, on
+// purpose. The counter used to sit in the network's shared footer and fired
+// on every page of fourteen hosts; it was pulled out of there and given its
+// own address so it is hit deliberately. Wrapping that address in the site
+// chrome would have brought the nav, the footer, the analytics snippet and
+// the network links back along with it — a page carrying a counter, when
+// what was asked for is a page that *is* the counter.
+//
+// So: no BaseLayout, no stylesheet, no fonts, no Analytics. Same shape as
+// Redirect.astro, and for the same reason.
+//
+// noindex/nofollow because there is nothing here to index, and the page is
+// kept out of every sitemap. The badge is the counter's own image and is
+// left visible — that is how you can tell from the page itself that the
+// script ran.
+interface Props {
+  /** The counter's element id from the LiveInternet snippet. */
+  id?: string;
+}
+const { id = "licnt0F14" } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Counter</title>
+    <link rel="icon" href="data:," />
+  </head>
+  <body>
+    {/* is:inline because Astro would otherwise bundle this as a module and
+        defer it, and the script writes to an element that has to already be
+        in the document. The placeholder src is a transparent 1x1 GIF as a
+        data URI, so nothing is fetched until the script swaps it. */}
+    <img
+      id={id}
+      width="31"
+      height="31"
+      title="LiveInternet"
+      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+      alt="LiveInternet counter"
+    />
+    <script is:inline define:vars={{ id }}>
+      (function (d, s) {
+        d.getElementById(id).src =
+          "https://counter.yadro.ru/hit?t50.3;r" +
+          escape(d.referrer) +
+          (typeof s == "undefined" ? "" : ";s" + s.width + "*" + s.height + "*" + (s.colorDepth ? s.colorDepth : s.pixelDepth)) +
+          ";u" +
+          escape(d.URL) +
+          ";h" +
+          escape(d.title.substring(0, 150)) +
+          ";" +
+          Math.random();
+      })(document, screen);
+    </script>
+  </body>
+</html>

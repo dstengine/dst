@@ -48,7 +48,11 @@ before(async () => {
       if (!e.isFile() || e.name !== "index.html") continue;
       const file = path.join(e.parentPath ?? e.path, e.name);
       const url = "/" + path.relative(dist, file).replace(/index\.html$/, "");
-      if (url.startsWith("/go/")) continue;
+      // Pages that render no site chrome carry no structured data either,
+      // which is correct rather than missing: a /go/ hop is a redirect, and
+      // /li/ is the LiveInternet counter on its own bare address, kept out
+      // of the shared footer on purpose. Neither is a page to describe.
+      if (url.startsWith("/go/") || url === "/li/") continue;
       const html = readFileSync(file, "utf8");
       const blocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) =>
         JSON.parse(m[1]),
