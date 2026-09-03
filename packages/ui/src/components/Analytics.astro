@@ -56,6 +56,18 @@ gtag('config', '${id}', { cookie_domain: ${cookieDomain} });`;
 <script>
   import { track } from "../track";
 
+  // A call to action is a styled link, not a <button>: the network's four
+  // real <button> elements are the theme toggle, the form submit and the
+  // lightbox controls. The submit is already counted, more precisely, as
+  // generate_lead or lead_failed. The theme toggle sits on all 385 pages
+  // and would out-number every other event on the network several times
+  // over to answer a question `prefers-color-scheme` mostly answers first.
+  const CTA = ".button, .button-secondary, .link-card, .cta-banner";
+
+  /** A card's label can be a whole paragraph. Reports want the thing that
+      was clicked, not the copy around it. */
+  const label = (el: Element) => el.textContent?.trim().replace(/\s+/g, " ").slice(0, 60);
+
   addEventListener("click", (event) => {
     const link = (event.target as Element | null)?.closest?.("a");
     if (!link) return;
@@ -69,6 +81,29 @@ gtag('config', '${id}', { cookie_domain: ${cookieDomain} });`;
       track("add_to_calendar", { event_slug: href.split("/").pop()?.replace(/\.ics$/, "") });
     } else if (href.startsWith("tel:")) {
       track("phone_click");
+    } else if (link.matches(CTA)) {
+      // Everything above already says what it was, and says it better, so
+      // this branch is deliberately last: a Tickets button is an
+      // outbound_click, not a second, blurrier cta_click for the same tap.
+      // What is left is the network's internal calls to action — the ones
+      // that move a visitor towards a form rather than off the site.
+      track("cta_click", {
+        cta_text: label(link),
+        // The path only. A full URL would carry the query string, and the
+        // query string is where UTM tags and anything a visitor typed live.
+        cta_href: href.split(/[?#]/)[0] || href,
+        cta_kind: link.classList.contains("link-card")
+          ? "card"
+          : link.classList.contains("cta-banner")
+            ? "banner"
+            : link.classList.contains("button-secondary")
+              ? "button-secondary"
+              : "button",
+        // An in-page jump and a move to another page are both worth
+        // counting and are not the same act; without this they add up into
+        // a number that answers neither.
+        cta_target: href.startsWith("#") ? "anchor" : "page",
+      });
     }
   });
 </script>

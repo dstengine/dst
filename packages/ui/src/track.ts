@@ -10,6 +10,15 @@
 // Marking which of these count as Key Events is done in the GA interface,
 // not here: Admin -> Events -> mark as key event. `generate_lead` is the
 // one that matters; the rest are diagnostics around it.
+//
+// The same applies to the parameters below. GA4 drops an event-scoped
+// parameter from every report until it is registered under Admin -> Custom
+// definitions, so `site`, `cta_text` and the rest arrive in the payload,
+// are visible in DebugView and Realtime, and are missing from the standard
+// reports until someone registers them by hand. That is GA's design, not a
+// bug here: the events still count correctly, only the breakdown is
+// unavailable. `hostName` is a built-in dimension, so which site an event
+// came from is answerable without registering anything.
 
 /** GA4 event names we send. Keeping them in a union stops a typo becoming
     a second, silently separate event in the reports. */
@@ -19,7 +28,8 @@ export type TrackEvent =
   | "form_start"
   | "outbound_click"
   | "add_to_calendar"
-  | "phone_click";
+  | "phone_click"
+  | "cta_click";
 
 /** Sends an event if analytics is on the page, and does nothing otherwise —
     a local build, a preview, or a visitor who blocked the tag. Never throws:
