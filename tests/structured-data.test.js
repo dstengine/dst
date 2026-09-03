@@ -162,6 +162,60 @@ describe("the network graph", () => {
     }
     console.log(`  ${items.length} article and event blocks, all attributed`);
   });
+
+  // Who wrote it, which is a different question from who published it, and
+  // the one AI search engines weigh. The answer is the organisation on every
+  // host — the same @id as the publisher, so the graph gains an edge and not
+  // a second entity. It is deliberately not a person: nobody here signs a
+  // byline, and inventing a plausible one would be a fabricated credential.
+  //
+  // The split below is schema.org's, not ours. `author` belongs to
+  // CreativeWork, so a WebPage and a NewsArticle can carry one and an Event
+  // cannot — an authored Event is markup a validator rejects. An event names
+  // its `organizer` instead, which answers the same question truthfully.
+  test("every page names the organisation as its author, and never a person", () => {
+    for (const p of pages) {
+      const page = node(p, "WebPage");
+      assert.equal(
+        page?.author?.["@id"],
+        publisherFor(p.app),
+        `${p.app}${p.url}: WebPage names no author, or the wrong one`,
+      );
+    }
+
+    const articles = pages.flatMap((p) =>
+      p.blocks.filter((b) => ["NewsArticle", "Article"].includes(b["@type"])).map((b) => ({ p, b })),
+    );
+    assert.ok(articles.length > 10, `expected the news pages, found ${articles.length}`);
+    for (const { p, b } of articles) {
+      assert.equal(
+        b.author?.["@id"],
+        publisherFor(p.app),
+        `${p.app}${p.url}: the article names no author, or the wrong one`,
+      );
+    }
+
+    // A Person anywhere in the graph would mean someone invented a byline.
+    const people = [];
+    for (const p of pages) {
+      const seen = JSON.stringify(p.blocks);
+      if (seen.includes('"Person"')) people.push(`${p.app}${p.url}`);
+    }
+    assert.deepEqual(people, [], `markup names a Person:\n${people.join("\n")}`);
+
+    const authoredEvents = pages.flatMap((p) =>
+      p.blocks
+        .filter((b) => ["Event", "TheaterEvent"].includes(b["@type"]) && b.author)
+        .map(() => `${p.app}${p.url}`),
+    );
+    assert.deepEqual(
+      authoredEvents,
+      [],
+      `an Event is not a CreativeWork and cannot carry an author:\n${authoredEvents.join("\n")}`,
+    );
+
+    console.log(`  ${pages.length} pages and ${articles.length} articles authored by their own host`);
+  });
 });
 
 describe("share pictures", () => {

@@ -1,7 +1,7 @@
 ---
 import ArticleBody from "./ArticleBody.astro";
 import Photo from "./Photo.astro";
-import { itemContext } from '../schema';
+import { itemContext, authoredBy } from '../schema';
 import type { Publisher } from '../schema';
 // Detail page body for a single news item. Every block below renders only
 // when its data is present (see the news/events spec's page anatomy) — a
@@ -108,6 +108,7 @@ const jsonLd =
     description: item.summary,
     datePublished: item.date,
     ...(canonical ? itemContext(canonical, publisher) : {}),
+    ...authoredBy(publisher),
     ...(item.image ? { image: absolute(item.image) } : {}),
     // Not isBasedOn: item.source.url — the URL is an internal audit trail
     // only (see the news/events spec's rule 1) and must never reach

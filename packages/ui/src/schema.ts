@@ -37,6 +37,23 @@ const organizationNode = (p: Publisher) => ({
   ...(p.logo ? { logo: { "@type": "ImageObject", ...p.logo } } : {}),
 });
 
+/** Who wrote it, for the CreativeWork nodes that can carry an author.
+
+    The organisation, never a person. Nobody on this network signs a byline,
+    and a plausible-looking invented one is a fabricated credential — the
+    thing E-E-A-T exists to catch, pointed the wrong way. The organisation
+    is the honest answer and it is already the accountable party: each item
+    prints the source it was written from and the date that was checked.
+
+    It resolves to the same @id as the publisher, so the graph gains an edge
+    rather than a second entity to reconcile. A host that publishes itself
+    passes its own, exactly as with `publisher` — a shared author node would
+    tie the .lol sites and musical.today back to DST through the markup,
+    which is the association their footers are careful not to make. */
+export const authoredBy = (publisher: Publisher = DST_PUBLISHER) => ({
+  author: { "@id": publisher.id },
+});
+
 export interface PageGraphInput {
   /** Origin of this host, e.g. "https://llc.dst.llc". */
   origin: string;
@@ -131,6 +148,9 @@ export function pageGraph(input: PageGraphInput): Record<string, unknown> {
         url: input.canonical,
         name: input.title,
         description: input.description,
+        // A WebPage *is* a CreativeWork, so every page of the network can
+        // name its author even where the thing described on it cannot.
+        ...authoredBy(publisher),
         isPartOf: { "@id": websiteId(input.origin) },
         ...(input.image ? { primaryImageOfPage: { "@type": "ImageObject", url: input.image } } : {}),
         ...(input.dateModified ? { dateModified: input.dateModified } : {}),
@@ -142,7 +162,13 @@ export function pageGraph(input: PageGraphInput): Record<string, unknown> {
 }
 
 /** What an Article or Event block on a page points at, so the item is tied
-    to the same publisher and page as the graph above. */
+    to the same publisher and page as the graph above.
+
+    Deliberately no `author` here: this is shared by NewsArticle and Event,
+    and `author` is a CreativeWork property. An Event is not a CreativeWork,
+    so an author on one is markup a validator rejects and a crawler ignores.
+    Articles take `authoredBy` above; an event says who runs it with
+    `organizer`, which is the true answer to the same question. */
 export function itemContext(canonical: string, publisher: Publisher = DST_PUBLISHER) {
   return {
     publisher: { "@id": publisher.id },
