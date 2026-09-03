@@ -40,8 +40,11 @@ interface Props {
       two different things and is neither. The mark takes over there. */
   photo?: boolean;
   columns?: number;
+  /** Passed straight through: the front page puts the city on the picture
+      because its cards are the first thing at the fold. */
+  labelOnMedia?: boolean;
 }
-const { runs, lead = "city", eyebrow = "show", venueInMeta = true, compact = false, photo = true, columns } = Astro.props;
+const { runs, lead = "city", eyebrow = "show", venueInMeta = true, compact = false, photo = true, columns, labelOnMedia = false } = Astro.props;
 
 // Three across from a tablet up: at four the cards drop to 265px and the
 // venue line starts wrapping every time. One or two runs keep the same
@@ -81,4 +84,4 @@ const items = runs.map((run) => {
   };
 });
 ---
-<VentureGrid items={items} columns={across} />
+<VentureGrid items={items} columns={across} labelOnMedia={labelOnMedia} />

@@ -1,0 +1,70 @@
+---
+// The page opener, in two columns rather than one.
+//
+// Every hero on the network was a text column and nothing else. The reading
+// measure caps a paragraph at 38rem (tokens.css), the container is 1180px,
+// so 53-60% of every first screen was empty on a desktop — measured across
+// all fourteen homepages, none of which had anything in that space. The
+// column is not the fault; the emptiness beside it is.
+//
+// What goes in the gap is the `aside` slot, and it takes live data the site
+// already holds — the next run, the newest article, the number that decides
+// whether to read on. Not an illustration. A hero that has nothing true to
+// put there passes no aside and stays one column, which is the old
+// behaviour and looks deliberate rather than half-filled.
+//
+// The other half of the concept is a height budget. Hero height ranged from
+// 354px to 1387px across the network — 39% to 154% of a 900px fold — which
+// meant two sites pushed their first real heading off the screen entirely.
+// `lede` exists so that the opening paragraph is a prop with a documented
+// ceiling rather than however much prose fitted.
+interface Props {
+  eyebrow?: string;
+  title: string;
+  /** The opening paragraph. Keep it to roughly 220 characters: past that
+      the first content heading drops below the fold on a 900px screen,
+      which is the fault this component exists to fix. Longer belongs in
+      the page body, where a reader has already chosen to be. */
+  lede?: string;
+  /** Set when the aside is decorative or repeats what is already on the
+      page, so screen readers and search engines are not told it twice. */
+  asideLabel?: string;
+}
+const { eyebrow, title, lede, asideLabel } = Astro.props;
+const hasAside = Astro.slots.has("aside");
+---
+
+<section class:list={["container", "hero", { "hero-split": hasAside }]}>
+  <div class="hero-main">
+    {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+    <h1>{title}</h1>
+    {lede && <p class="lede">{lede}</p>}
+    <slot />
+  </div>
+  {hasAside && (
+    <aside class="hero-aside" aria-label={asideLabel}>
+      <slot name="aside" />
+    </aside>
+  )}
+</section>
+
+<style>
+  /* One column until there is genuinely room for two. Below this the aside
+     sits under the lede, where it reads as the first thing after the
+     introduction rather than as a sidebar squeezed to nothing. */
+  .hero-split {
+    display: grid;
+    gap: var(--space-3);
+    align-items: start;
+  }
+  @media (min-width: 900px) {
+    .hero-split {
+      grid-template-columns: minmax(0, 1fr) minmax(15rem, 20rem);
+      gap: var(--space-5);
+    }
+    /* The aside is the shorter column and looks dropped when it starts at
+       the eyebrow; aligning it to the headline puts the two on one line. */
+    .hero-aside { margin-top: calc(var(--step-1) * 1.6); }
+  }
+  .hero-main > :global(.lede:last-child) { margin-bottom: 0; }
+</style>

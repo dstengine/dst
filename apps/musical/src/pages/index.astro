@@ -2,13 +2,14 @@
 // The front page. It has one job: show what is actually on, soonest first,
 // and make the hero event look like the standard rather than the exception.
 import Layout from "../layouts/Layout.astro";
+import Hero from "@dst/ui/Hero.astro";
 import Promo from "../components/Promo.astro";
 import EventCards from "../components/EventCards.astro";
 import VentureGrid from "@dst/ui/VentureGrid.astro";
 import { ICONS } from "@dst/ui/icons";
 import {
   citiesWithPages, cityBySlug, formatRun, runsFor, runsInCity, shows, showBySlug,
-  statusOf, upcomingRuns, venueBySlug, venues, type Venue,
+  statusOf, ticketButtons, upcomingRuns, venueBySlug, venues, type Venue,
 } from "../content";
 
 const upcoming = upcomingRuns();
@@ -64,27 +65,54 @@ const citiesRest = citiesByDate.slice(6);
 
 const lead = shows.find((show) => show.featured) ?? shows[0]!;
 const alsoListed = shows.filter((show) => show !== lead);
+
+// What goes beside the headline: the very next run, which is the one fact a
+// visitor came for and the only one that changes on its own. Everything in
+// it is already on the page further down — this is the same card promoted
+// to where it can be seen without scrolling, not a second source of truth.
+// The soonest *dated* run, not upcoming[0]: the open Broadway run sorts
+// first and has no next date, so "Next up — playing since 14 November 1996"
+// is both true and useless. A run with a date is the thing a visitor can
+// act on this month.
+const next = upcoming.find((run) => run.start && !run.openRun) ?? upcoming[0];
+const nextShow = next ? showBySlug(next.show) : undefined;
+const nextCity = next ? cityBySlug(next.city) : undefined;
+const nextVenue = next?.venue ? venueBySlug(next.venue) : undefined;
+const nextTickets = next ? ticketButtons(next) : [];
 ---
 <Layout
   title="Musicals on sale now"
   description="Musicals, city by city: what is on sale, which theatre, which dates, and who is actually selling. Every listing read from the production's own source and dated."
 >
-  <section class="container hero">
-    <p class="eyebrow">Musicals, city by city</p>
-    <h1>What is on, where, and who is selling it</h1>
-    <p class="lede">
-      A musical is not one event. The production filling a 17,000-seat arena in
-      Dubai this December is the same show that plays a theatre on the north
-      Wales coast in October 2027 — different room, different seller, different
-      idea of what a ticket costs. This site lists all of it: the theatre, the
-      dates, and who is actually selling, with the day each listing was read.
-    </p>
-  </section>
+  <Hero
+    eyebrow="Musicals, city by city"
+    title="What is on, where, and who is selling it"
+    lede="The same show fills a 17,000-seat arena in Dubai and a seaside theatre in north Wales — different room, different seller, different idea of what a ticket costs. This site lists all of it."
+    asideLabel="The next run"
+  >
+    {next && (
+      <a
+        class="next-run"
+        slot="aside"
+        href={`/${next.show}/${next.slug}/`}
+        title={`${nextShow?.title ?? next.show} in ${nextCity?.name ?? next.city}: dates, theatre and sellers`}
+      >
+        <p class="eyebrow">Next up</p>
+        <p class="next-run-show">{nextShow?.title ?? next.show}</p>
+        {(nextVenue || nextCity) && (
+          <p class="next-run-where">
+            {[nextVenue?.name, nextCity?.name].filter(Boolean).join(", ")}
+          </p>
+        )}
+        <p class="next-run-when">{formatRun(next)}</p>
+        {nextTickets.length > 0 && <span class="next-run-cta">{nextTickets[0]!.label}</span>}
+      </a>
+    )}
+  </Hero>
 
   <section class="container">
     <h2>On sale now</h2>
-    <p>Soonest first. Each card goes to that run's own page — the theatre, the dates, who is selling and what is not yet known.</p>
-    <EventCards runs={soon} />
+    <EventCards runs={soon} labelOnMedia />
     <p class="more">
       {shows.map((show) => (
         <a href={`/${show.slug}/tickets/`} title={`Every run of ${show.title} this site tracks, with every seller`}>
@@ -173,6 +201,36 @@ const alsoListed = shows.filter((show) => show !== lead);
 </Layout>
 
 <style>
+  /* The next run, promoted into the hero. It is a card and it is a link,
+     so it gets a card's surface and a link's affordance — but no shadow
+     and no accent rail, because it sits beside an h1 and must not compete
+     with it. The measure cap that running text carries would be nonsense
+     in a 20rem column, so it is lifted here. */
+  .next-run {
+    display: block;
+    padding: var(--space-3);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: inherit;
+    text-decoration: none;
+  }
+  .next-run:hover { border-color: var(--accent); }
+  .next-run p { max-width: none; margin: 0; }
+  .next-run .eyebrow { margin-bottom: var(--space-1); }
+  .next-run-show { font-family: var(--font-display); font-size: var(--step-1); font-weight: 600; line-height: 1.2; }
+  .next-run-where { color: var(--ink-muted); }
+  .next-run-when { font-variant-numeric: tabular-nums; margin-top: 0.25em !important; }
+  /* Reads as the button it behaves like without being one: the whole card
+     is the link, so a nested button would be a second target for the same
+     destination. */
+  .next-run-cta {
+    display: inline-block;
+    margin-top: var(--space-2);
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .next-run:hover .next-run-cta { text-decoration: underline; }
   /* Sixteen city names on one line, reading as a line and not as sixteen
      buttons: the gap does the separating, and the label sits in front of
      them at the same baseline. */

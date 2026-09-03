@@ -198,7 +198,29 @@ h2 { font-size: var(--step-3); margin-top: var(--space-5); }
 h3 { font-size: var(--step-2); margin-top: var(--space-4); }
 h4 { font-size: var(--step-1); }
 
-p, li { max-width: var(--content-width); }
+/* The reading measure, as an inherited property rather than a rule aimed at
+   every paragraph in the document.
+
+   `p, li { max-width: 38rem }` is right about running text and wrong about
+   everything else: a card, a hero aside, a glance table, a footer column and
+   a nav list all set their own width, and a 38rem cap inside a 20rem box is
+   either invisible or, when the box is wider than the measure, a ragged edge
+   nobody asked for. The evidence that it was wrong is that nine components
+   had already grown a `max-width: none` line to escape it.
+
+   So the measure is a value that inherits. Running text gets it because
+   nothing has said otherwise; a component that owns its width sets
+   `--measure: none` once, at its root, and its whole subtree is free —
+   one line instead of one line per element, and no specificity fight. */
+:root { --measure: var(--content-width); }
+p, li { max-width: var(--measure); }
+
+/* The containers that own their width, released as a group. Each is a box
+   whose size is decided by a grid track or a panel, not by legibility.
+   :where() keeps this at zero specificity so a component can still say
+   something different about its own insides. */
+:where(.card, .link-card, .cta-banner, .event-card, .hero-aside,
+       nav, footer, dl, table, figcaption, .eyebrow) { --measure: none; }
 
 /* Avoids a last line left holding a single word, and keeps the browser
    from making the final line drastically shorter than the rest. Ignored

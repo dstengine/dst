@@ -28,8 +28,16 @@ interface Props {
   /** Pin the column count at desktop widths, when the caller knows its own
       card count and auto-fill would leave one card alone on the last row. */
   columns?: number;
+  /** Put the card's name on the photograph instead of under it.
+
+      For grids that sit at the fold, where a card cropped in half shows a
+      picture and nothing that says what the picture is of. The heading
+      moves — it is not repeated — so there is still one h3 per card. Only
+      for grids whose images are photographs with room at the bottom; on the
+      mark cover the name falls back to the body, where it has contrast. */
+  labelOnMedia?: boolean;
 }
-const { items, columns } = Astro.props;
+const { items, columns, labelOnMedia = false } = Astro.props;
 const metaIcon = ICONS.events;
 ---
 <div class:list={["venture-grid", columns && "venture-grid-pinned"]} style={columns ? `--venture-columns: ${columns}` : undefined}>
@@ -39,7 +47,10 @@ const metaIcon = ICONS.events;
       <Tag class="venture" href={item.href} title={item.title}>
         <div class:list={["venture-media", !item.image && "mark-cover"]}>
           {item.image ? (
-            <Photo src={item.image} alt={item.imageAlt ?? ""} sizes="(max-width: 700px) 100vw, 420px" />
+            <>
+              <Photo src={item.image} alt={item.imageAlt ?? ""} sizes="(max-width: 700px) 100vw, 420px" />
+              {labelOnMedia && <h3 class="venture-media-name">{item.name}</h3>}
+            </>
           ) : (
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d={item.icon} />
@@ -53,7 +64,7 @@ const metaIcon = ICONS.events;
               <span class:list={["venture-status", { "venture-status-progress": item.inProgress }]}>{item.status}</span>
             )}
           </div>
-          <h3>{item.name}</h3>
+          {!(labelOnMedia && item.image) && <h3>{item.name}</h3>}
           <p>{item.text}</p>
           {item.meta && (
             <p class="venture-fact">
@@ -163,4 +174,23 @@ const metaIcon = ICONS.events;
     color: var(--ink-faint);
   }
   .venture-fact svg { width: 15px; height: 15px; flex-shrink: 0; color: var(--accent); }
+
+  /* The name on the photograph. The scrim is sized for the worst case these
+     grids actually contain — a white sky or a floodlit facade filling the
+     bottom of the frame — not for an average picture, which is how text over
+     an image gets shipped unreadable. Solid at the base, gone by 60%, so the
+     top of the photograph is untouched. */
+  .venture-media-name {
+    position: absolute;
+    inset: auto 0 0;
+    margin: 0;
+    padding: 2.5em var(--space-3) var(--space-3);
+    color: #FFFFFF;
+    font-size: var(--step-1);
+    font-weight: 600;
+    line-height: 1.15;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(to top, rgba(8, 10, 13, 0.92), rgba(8, 10, 13, 0.72) 45%, rgba(8, 10, 13, 0) 100%);
+    pointer-events: none;
+  }
 </style>
