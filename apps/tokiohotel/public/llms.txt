@@ -2,25 +2,58 @@
 
 > A tour archive for one band: where Tokio Hotel play next, where they played last, and the routings of the ten tours in between. Every date names the source that confirmed it and the day it was last checked. Nothing goes up on a date we could not confirm, and a venue announced without a room says so rather than being filled in.
 
-Written by hand rather than generated: this site has no news or events feed, so its map is short enough to stay true.
+Written by hand rather than generated: this site has no news or events feed, and its map is short enough to stay true.
 
 ## Dates
-
-- [Tokio Hotel on tour](https://tokiohotel.vvm.space/): the seventeen-night Arena Tour 2026, London 28 October to Madrid 23 November, with the line-up and where the facts come from.
+- [Tokio Hotel on tour](https://tokiohotel.vvm.space/): the seventeen-night Arena Tour 2026, the album it carries, and where the facts come from.
 
 ## Tours
+- [Ten tours since 2005](https://tokiohotel.vvm.space/tours/): every Tokio Hotel tour in order.
+- [Arena Tour 2026](https://tokiohotel.vvm.space/tours/arena-tour-2026/): seventeen dates, ten countries, London to Madrid — the run behind the album Encore.
+- [The Tour 2025](https://tokiohotel.vvm.space/tours/the-tour-2025/): announced eighteen months ahead, alongside a one-night twentieth-anniversary show.
+- [Beyond the World Tour 2023–2024](https://tokiohotel.vvm.space/tours/beyond-the-world-2023/): announced for 2021, moved twice, and the last time the band crossed the Atlantic.
+- [Melancholic Paradise Tour 2019–2020](https://tokiohotel.vvm.space/tours/melancholic-paradise-2019/): three venues into the Americas leg when the pandemic closed the rest.
+- [Dream Machine Tour 2017–2018](https://tokiohotel.vvm.space/tours/dream-machine-2017/): the first tour made outside Universal, with a North American leg cancelled over equipment.
+- [Feel It All World Tour 2015](https://tokiohotel.vvm.space/tours/feel-it-all-2015/): four numbered parts, and Part 4 night by night: sixteen shows from Irkutsk to Minsk, recovered from our own 2015 archive.
+- [Welcome to Humanoid City Tour 2010–2011](https://tokiohotel.vvm.space/tours/humanoid-city-2010/): thirty-two European cities in eight weeks; the Milan night became a live album.
+- [1000 Hotels World Tour 2008](https://tokiohotel.vvm.space/tours/1000-hotels-2008/): forty-three shows without a break, then surgery on the singer's vocal cords.
+- [Zimmer 483 Tour 2007](https://tokiohotel.vvm.space/tours/zimmer-483-2007/): started two weeks late because the band wanted a different stage.
+- [Schrei Tour 2005–2006](https://tokiohotel.vvm.space/tours/schrei-2005/): the first one: four teenagers and a number-one single.
 
-- [Ten tours since 2005](https://tokiohotel.vvm.space/tours/): every Tokio Hotel tour in order, from Schrei to the 2026 arenas.
-- [Arena Tour 2026](https://tokiohotel.vvm.space/tours/arena-tour-2026/): all seventeen dates, ten countries, venue by venue.
-- [Feel It All World Tour 2015](https://tokiohotel.vvm.space/tours/feel-it-all-2015/): the eastern leg, sixteen consecutive nights from Irkutsk to Minsk — recovered from our own 2015 listings site, and not carried date for date anywhere else.
+## Albums
+- [Eight studio albums](https://tokiohotel.vvm.space/albums/): release dates, labels and singles.
+- [Encore (2026)](https://tokiohotel.vvm.space/albums/encore/): the eighth studio album, out 16 October 2026 — twelve days before the tour opens.
+- [2001 (2022)](https://tokiohotel.vvm.space/albums/2001/): named for the year the four of them met, after the longest gap of their career.
+- [Dream Machine (2017)](https://tokiohotel.vvm.space/albums/dream-machine/): the first album made outside Universal.
+- [Kings of Suburbia (2014)](https://tokiohotel.vvm.space/albums/kings-of-suburbia/): English only, electropop, number one in thirty countries.
+- [Humanoid (2009)](https://tokiohotel.vvm.space/albums/humanoid/): recorded twice, in German and English, released worldwide under one title.
+- [Scream (2007)](https://tokiohotel.vvm.space/albums/scream/): the first English album: the first two records sung again.
+- [Zimmer 483 (2007)](https://tokiohotel.vvm.space/albums/zimmer-483/): over 375,000 copies in two months.
+- [Schrei (2005)](https://tokiohotel.vvm.space/albums/schrei/): the debut, partly re-recorded a year later when the singer's voice broke.
 
 ## Cities
-
-- [City by city](https://tokiohotel.vvm.space/cities/): the cities with something to say about them.
-- [Tokio Hotel in London](https://tokiohotel.vvm.space/cities/london/): 28 October 2026, OVO Arena Wembley, the only UK date of the run.
+- [City by city](https://tokiohotel.vvm.space/cities/): every stop on the run, and the two cities that are not on it.
+- [Tokio Hotel in London](https://tokiohotel.vvm.space/cities/london/): 28 October 2026, OVO Arena Wembley — the only UK date of the run.
+- [Tokio Hotel in Paris](https://tokiohotel.vvm.space/cities/paris/): 30 October and 21 November 2026 — the only city that gets two nights.
+- [Tokio Hotel in Hamburg](https://tokiohotel.vvm.space/cities/hamburg/): 1 November 2026, Barclays Arena.
+- [Tokio Hotel in Brussels](https://tokiohotel.vvm.space/cities/brussels/): 2 November 2026, Forest National.
+- [Tokio Hotel in Amsterdam](https://tokiohotel.vvm.space/cities/amsterdam/): 4 November 2026, AFAS Live.
+- [Tokio Hotel in Frankfurt](https://tokiohotel.vvm.space/cities/frankfurt/): 5 November 2026, Festhalle.
+- [Tokio Hotel in Berlin](https://tokiohotel.vvm.space/cities/berlin/): 7 November 2026, Uber Arena.
+- [Tokio Hotel in Nuremberg](https://tokiohotel.vvm.space/cities/nuremberg/): 8 November 2026, venue not announced.
+- [Tokio Hotel in Zürich](https://tokiohotel.vvm.space/cities/zurich/): 10 November 2026, Hallenstadion.
+- [Tokio Hotel in Milan](https://tokiohotel.vvm.space/cities/milan/): 11 November 2026, Unipol Forum.
+- [Tokio Hotel in Leipzig](https://tokiohotel.vvm.space/cities/leipzig/): 13 November 2026, venue not announced.
+- [Tokio Hotel in Vienna](https://tokiohotel.vvm.space/cities/vienna/): 15 November 2026, Wiener Stadthalle.
+- [Tokio Hotel in Munich](https://tokiohotel.vvm.space/cities/munich/): 16 November 2026, Olympiahalle.
+- [Tokio Hotel in Esch-sur-Alzette](https://tokiohotel.vvm.space/cities/esch-sur-alzette/): 18 November 2026, Rockhal.
+- [Tokio Hotel in Düsseldorf](https://tokiohotel.vvm.space/cities/dusseldorf/): 19 November 2026, venue not announced.
+- [Tokio Hotel in Madrid](https://tokiohotel.vvm.space/cities/madrid/): 23 November 2026, Palacio Vistalegre — the last night.
 - [Tokio Hotel in New York](https://tokiohotel.vvm.space/cities/new-york/): nothing upcoming; last played 4 December 2024.
 - [Tokio Hotel in Mexico City](https://tokiohotel.vvm.space/cities/mexico-city/): nothing upcoming; last played 6 December 2024.
 
-## About
+## History
+- [Twenty-five years, in order](https://tokiohotel.vvm.space/history/): Magdeburg 2001 to Wembley 2026, dated.
 
+## About
 - [About this site](https://tokiohotel.vvm.space/about/): what it publishes, what it will not, and that it is not affiliated with the band.

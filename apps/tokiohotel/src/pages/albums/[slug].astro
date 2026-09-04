@@ -1,0 +1,99 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
+import Glance from "@dst/ui/Glance.astro";
+import SourceNote from "../../components/SourceNote.astro";
+import { ICONS } from "@dst/ui/icons";
+import { albums, type Album } from "../../data/albums";
+import { tourBySlug } from "../../data/tours";
+import { formatDate } from "@dst/ui/date";
+
+export function getStaticPaths() {
+  return albums.map((album) => ({ params: { slug: album.slug }, props: { album } }));
+}
+
+const { album } = Astro.props as { album: Album };
+const tour = album.tour ? tourBySlug(album.tour) : undefined;
+
+const title = album.title;
+const description = `${album.title}: studio album number ${album.number}, ${album.upcoming ? "due" : "released"} ${album.released} on ${album.label}. ${album.blurb}`;
+
+const facts = [
+  { label: album.upcoming ? "Due" : "Released", value: formatDate(album.released, "en-GB"), icon: ICONS.events },
+  ...(album.alsoReleased
+    ? [{ label: "And in", value: `${album.alsoReleased.where}, ${formatDate(album.alsoReleased.date, "en-GB")}`, icon: ICONS.map }]
+    : []),
+  { label: "Label", value: album.label, icon: ICONS.building },
+  { label: "Language", value: album.language, icon: ICONS.chat },
+  { label: "Studio album", value: `Number ${album.number} of eight`, icon: ICONS.play },
+  ...(tour ? [{ label: "Toured as", value: `${tour.name} ${tour.years}`, icon: ICONS.stage, href: `/tours/${tour.slug}/` }] : []),
+];
+
+const index = albums.indexOf(album);
+const previous = index > 0 ? albums[index - 1] : undefined;
+const next = index < albums.length - 1 ? albums[index + 1] : undefined;
+---
+<Layout prose title={title} description={description}>
+  <section class="container hero">
+    <Breadcrumbs crumbs={[{ href: "/albums/", label: "Albums" }]} current={album.title} homeLabel="Dates" />
+    <h1>{album.title}</h1>
+    <p class="lede">{album.blurb}</p>
+    <Glance facts={facts} />
+  </section>
+
+  <section class="container">
+    {album.body.map((p) => <p>{p}</p>)}
+  </section>
+
+  {album.singles && (
+    <section class="container">
+      <h2>Singles</h2>
+      <ol class="singles">
+        {album.singles.map((single) => (
+          <li>
+            <span class="when">{single.released}</span>
+            <span class="what">
+              <strong>{single.title}</strong>
+              {single.note && <span class="note">{single.note}</span>}
+            </span>
+          </li>
+        ))}
+      </ol>
+    </section>
+  )}
+
+  <section class="container">
+    <SourceNote source={album.source} />
+    <nav class="pager" aria-label="Albums">
+      {previous ? <a href={`/albums/${previous.slug}/`}>&larr; {previous.title}</a> : <span />}
+      {next ? <a href={`/albums/${next.slug}/`}>{next.title} &rarr;</a> : <span />}
+    </nav>
+  </section>
+</Layout>
+
+<style>
+  .singles {
+    margin: var(--space-3) 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: var(--space-2);
+  }
+  .singles li { display: grid; gap: 0.1rem 1.25rem; }
+  .when { font-variant-numeric: tabular-nums; color: var(--ink-faint); font-size: 0.92rem; }
+  .what { display: grid; gap: 0.1rem; }
+  .note { color: var(--ink-muted); font-size: 0.95rem; }
+  .pager {
+    margin-top: var(--space-3);
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: 40rem) {
+    .singles li { grid-template-columns: 8rem 1fr; align-items: baseline; }
+  }
+</style>

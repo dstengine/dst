@@ -1,75 +1,87 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Dates from "../components/Dates.astro";
+import Glance from "@dst/ui/Glance.astro";
+import { ICONS } from "@dst/ui/icons";
 import { home, origin } from "../content";
-import { band, tours, tourBySlug, checkedOn } from "../data/tours";
+import { band, checkedOn } from "../data/band";
+import { tourBySlug } from "../data/tours";
+import "../data/cities";
+import { albumBySlug } from "../data/albums";
 import { musicGroup, musicEvent } from "../schema";
 
 const arena = tourBySlug("arena-tour-2026")!;
 const shows = arena.shows!;
+const encore = albumBySlug("encore")!;
 const canonical = `${origin}/`;
 
 const countries = [...new Set(shows.map((s) => s.country))].length;
-const opener = shows[0];
-const closer = shows[shows.length - 1];
+const cityCount = [...new Set(shows.map((s) => s.city))].length;
 
-const jsonLd = [
-  musicGroup,
-  ...shows.map((show) => musicEvent(show, arena.name, canonical)),
+const facts = [
+  { label: "Opening night", value: "28 October 2026, London", icon: ICONS.events, href: "/cities/london/" },
+  { label: "Last night", value: "23 November 2026, Madrid", icon: ICONS.pin, href: "/cities/madrid/" },
+  { label: "Shows", value: `${shows.length} across ${cityCount} cities`, icon: ICONS.stage, href: "/tours/arena-tour-2026/" },
+  { label: "Countries", value: String(countries), icon: ICONS.map, href: "/cities/" },
+  { label: "New album", value: "Encore, 16 October 2026", icon: ICONS.play, href: "/albums/encore/" },
+  { label: "Last checked", value: checkedOn, icon: ICONS.clock },
 ];
+
+const jsonLd = [musicGroup, ...shows.map((show) => musicEvent(show, arena.name, canonical))];
 ---
 <Layout title={home.title} description={home.description} jsonLd={jsonLd}>
   <section class="container hero">
     <h1>{home.h1}</h1>
     <p class="lede">{home.lede}</p>
+    <Glance facts={facts} />
   </section>
 
   <section class="container">
     <h2>Arena Tour 2026</h2>
     <p>
-      {shows.length} nights, {countries} countries, twenty-seven days. It opens in {opener.city} on
-      28 October and finishes in {closer.city} on 23 November. One city on the run gets the band
-      twice &mdash; Paris, on the way out and on the way back.
+      Seventeen shows in twenty-seven days. Ten countries, eight of the nights in Germany, and one
+      city — Paris — that gets the band twice. There is no Americas leg and no second British date.
+    </p>
+    <p>
+      What makes the run worth the notice is the timing. <a href="/albums/encore/">Encore</a>, the
+      eighth studio album, is out on 16 October 2026: twelve days before opening night, which makes
+      Wembley one of the first rooms anywhere to hear most of it played live.
     </p>
     <Dates shows={shows} />
     <p class="source-line">
-      Routing from {arena.source!.name}; the London date confirmed against OVO Arena Wembley.
-      Last checked {checkedOn}.
+      Routing from {arena.source.name}. Last checked {checkedOn}.
+      <a href={`/tours/${arena.slug}/`}>More on this tour</a>.
     </p>
-    <p><a href={`/tours/${arena.slug}/`}>More on the 2026 run</a></p>
   </section>
 
   <section class="container">
     <h2>The band</h2>
     <p>
-      {band.name} formed in {band.origin} in {band.formed}:
+      {band.name} formed in {band.origin} in {band.formed}, as {band.formerName}:
       {band.members.map((m, i) => (
         <>{i > 0 && (i === band.members.length - 1 ? " and " : ", ")}{m.name} ({m.role})</>
-      ))}. Twenty-five years later they are still the same four people, which is the part of the
-      story most bands of that vintage cannot tell.
+      ))}. Two of them are twins who had been playing the city since they were ten; the other two
+      were in the audience.
     </p>
     <p>
-      Ten tours stand behind the 2026 arenas, from the Schrei Tour in 2005 onwards.
-      <a href="/tours/">The full list is here</a> &mdash; including one leg we can document
-      night by night because we published it ourselves at the time.
+      Twenty-five years later it is still those four people, with nobody replaced &mdash; which is
+      the part of the story most bands of that vintage cannot tell.
+      <a href="/history/">The whole run of it is here</a>, in dated order.
     </p>
   </section>
 
   <section class="container">
-    <h2>Cities</h2>
-    <p>
-      A city gets a page when there is something to say about it.
-      <a href="/cities/london/">London</a> has the only United Kingdom date of the run;
-      <a href="/cities/new-york/">New York</a> and
-      <a href="/cities/mexico-city/">Mexico City</a> have nothing upcoming, and say so.
-    </p>
+    <h2>Where to go next</h2>
+    <ul class="next">
+      <li><a href="/tours/">Ten tours since 2005</a> &mdash; including one leg we can document night by night because we published it ourselves in 2015.</li>
+      <li><a href="/albums/">Eight studio albums</a> &mdash; dates, labels, and the singles that announced each one.</li>
+      <li><a href="/cities/">City by city</a> &mdash; every stop on the run, and the two cities that are not on it.</li>
+      <li><a href="/history/">Twenty-five years in order</a> &mdash; Magdeburg 2001 to Wembley 2026.</li>
+    </ul>
   </section>
 </Layout>
 
 <style>
-  .source-line {
-    margin-top: var(--space-2);
-    color: var(--ink-faint);
-    font-size: 0.9rem;
-  }
+  .source-line { margin-top: var(--space-2); color: var(--ink-faint); font-size: 0.9rem; }
+  .next { margin: var(--space-2) 0 0; padding-left: 1.2rem; display: grid; gap: 0.5rem; }
 </style>

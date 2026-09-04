@@ -1,0 +1,41 @@
+---
+// "Source: Wikipedia: Tokio Hotel · checked against the source 4 Sep 2026".
+//
+// The network's SourceLine prints the name as plain text, because on the
+// DST sites a source URL is an audit trail and never reaches HTML. Here it
+// does reach HTML, through the /go/ hop: this is an archive, its whole
+// claim is that you can go and check, and a name you cannot follow is a
+// weaker claim than one you can. Sources with no link print as text.
+import { formatDate } from "@dst/ui/date";
+import { go } from "../outbound";
+import type { Source } from "../data/band";
+
+interface Props {
+  source: Source;
+  label?: string;
+}
+const { source, label = "Source" } = Astro.props;
+---
+<p class="source-note">
+  <span>
+    {label}:{" "}
+    {source.url
+      ? <a href={go(source.url)} rel="nofollow">{source.name}</a>
+      : source.name}
+  </span>
+  <span aria-hidden="true">·</span>
+  <span>
+    checked <time datetime={source.verifiedOn}>{formatDate(source.verifiedOn, "en-GB")}</time>
+  </span>
+</p>
+
+<style>
+  .source-note {
+    margin: var(--space-2) 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 0.5rem;
+    color: var(--ink-faint);
+    font-size: 0.9rem;
+  }
+</style>

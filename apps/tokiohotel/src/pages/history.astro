@@ -1,0 +1,81 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
+import SourceNote from "../components/SourceNote.astro";
+import { history as copy } from "../content";
+import { orderedTimeline } from "../data/timeline";
+import { WIKIPEDIA, band } from "../data/band";
+---
+<Layout prose title={copy.title} description={copy.description}>
+  <section class="container hero">
+    <Breadcrumbs crumbs={[]} current={copy.title} homeLabel="Dates" />
+    <h1>{copy.h1}</h1>
+    <p class="lede">{copy.lede}</p>
+  </section>
+
+  <section class="container">
+    <ol class="timeline">
+      {orderedTimeline.map((moment) => (
+        <li>
+          <span class="when">{moment.when}</span>
+          <span class="body">
+            <strong>{moment.title}</strong>
+            <span class="text">{moment.text}</span>
+          </span>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="container">
+    <h2>The line-up</h2>
+    <p>
+      Unchanged since {band.lineupUnchangedSince}:
+      {band.members.map((m, i) => (
+        <>{i > 0 && (i === band.members.length - 1 ? " and " : ", ")}{m.name} ({m.role})</>
+      ))}.
+    </p>
+    <SourceNote source={WIKIPEDIA} />
+  </section>
+</Layout>
+
+<style>
+  .timeline {
+    margin: var(--space-3) 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: var(--space-3);
+  }
+  .timeline li {
+    display: grid;
+    gap: 0.25rem 1.5rem;
+    position: relative;
+  }
+  .when {
+    font-variant-numeric: tabular-nums;
+    color: var(--accent-ink);
+    font-weight: 600;
+    font-size: 0.92rem;
+  }
+  .body { display: grid; gap: 0.25rem; }
+  .text { color: var(--ink-muted); }
+
+  @media (min-width: 44rem) {
+    .timeline {
+      border-left: 2px solid var(--border);
+      padding-left: var(--space-3);
+    }
+    .timeline li { grid-template-columns: 11rem 1fr; align-items: baseline; }
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: calc(var(--space-3) * -1 - 6px);
+      top: 0.45rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+  }
+</style>

@@ -2,7 +2,9 @@
 import Layout from "../../layouts/Layout.astro";
 import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
 import { tours as copy } from "../../content";
-import { tours, checkedOn } from "../../data/tours";
+import { tours } from "../../data/tours";
+import { checkedOn } from "../../data/band";
+import { albumForTour } from "../../data/albums";
 ---
 <Layout prose title={copy.title} description={copy.description}>
   <section class="container hero">
@@ -13,17 +15,24 @@ import { tours, checkedOn } from "../../data/tours";
 
   <section class="container">
     <ol class="tours">
-      {tours.map((tour) => (
-        <li>
-          <span class="years">{tour.years}</span>
-          <span class="body">
-            <strong>
-              {tour.page ? <a href={`/tours/${tour.slug}/`}>{tour.name}</a> : tour.name}
-            </strong>
-            <span class="blurb">{tour.blurb}</span>
-          </span>
-        </li>
-      ))}
+      {tours.map((tour) => {
+        const album = albumForTour(tour.slug);
+        return (
+          <li>
+            <span class="years">{tour.years}</span>
+            <span class="body">
+              <strong><a href={`/tours/${tour.slug}/`}>{tour.name}</a></strong>
+              <span class="blurb">{tour.blurb}</span>
+              {album && (
+                <span class="album">
+                  Behind <a href={`/albums/${album.slug}/`}>{album.title}</a>
+                  {tour.shows && <> &middot; {tour.shows.length} dates on this site</>}
+                </span>
+              )}
+            </span>
+          </li>
+        );
+      })}
     </ol>
     <p class="source-line">Last checked {checkedOn}.</p>
   </section>
@@ -44,13 +53,10 @@ import { tours, checkedOn } from "../../data/tours";
     border-bottom: 1px solid var(--border);
   }
   .tours li:last-child { border-bottom: 0; }
-  .years {
-    font-variant-numeric: tabular-nums;
-    color: var(--ink-faint);
-    font-size: 0.92rem;
-  }
-  .body { display: grid; gap: 0.15rem; }
+  .years { font-variant-numeric: tabular-nums; color: var(--ink-faint); font-size: 0.92rem; }
+  .body { display: grid; gap: 0.2rem; }
   .blurb { color: var(--ink-muted); }
+  .album { font-size: 0.9rem; color: var(--ink-faint); }
   .source-line { margin-top: var(--space-3); color: var(--ink-faint); font-size: 0.9rem; }
 
   @media (min-width: 40rem) {

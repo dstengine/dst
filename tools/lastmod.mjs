@@ -29,6 +29,7 @@ const HOSTS = {
   lnd: "lnd.lol",
   cmx: "cmx.lol",
   mxo: "mxo.lol",
+  tokiohotel: "tokiohotel.vvm.space",
 };
 
 const gitDates = new Map();

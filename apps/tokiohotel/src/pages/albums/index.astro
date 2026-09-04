@@ -1,0 +1,79 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
+import SourceNote from "../../components/SourceNote.astro";
+import { albums as copy } from "../../content";
+import { albums } from "../../data/albums";
+import { DISCOGRAPHY } from "../../data/band";
+import { tourBySlug } from "../../data/tours";
+
+const year = (iso: string) => iso.slice(0, 4);
+---
+<Layout prose title={copy.title} description={copy.description}>
+  <section class="container hero">
+    <Breadcrumbs crumbs={[]} current={copy.title} homeLabel="Dates" />
+    <h1>{copy.h1}</h1>
+    <p class="lede">{copy.lede}</p>
+  </section>
+
+  <section class="container">
+    <ol class="albums">
+      {albums.map((album) => {
+        const tour = album.tour ? tourBySlug(album.tour) : undefined;
+        return (
+          <li>
+            <span class="year">{year(album.released)}</span>
+            <span class="body">
+              <strong>
+                <a href={`/albums/${album.slug}/`}>{album.title}</a>
+                {album.upcoming && <span class="pill">Announced</span>}
+              </strong>
+              <span class="blurb">{album.blurb}</span>
+              <span class="meta">
+                {album.language} &middot; {album.label}
+                {tour && <> &middot; toured as <a href={`/tours/${tour.slug}/`}>{tour.name}</a></>}
+              </span>
+            </span>
+          </li>
+        );
+      })}
+    </ol>
+    <SourceNote source={DISCOGRAPHY} />
+  </section>
+</Layout>
+
+<style>
+  .albums {
+    margin: var(--space-3) 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: var(--space-2);
+  }
+  .albums li {
+    display: grid;
+    gap: 0.1rem 1.25rem;
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--border);
+  }
+  .albums li:last-child { border-bottom: 0; }
+  .year { font-variant-numeric: tabular-nums; color: var(--ink-faint); font-size: 0.92rem; }
+  .body { display: grid; gap: 0.2rem; }
+  .blurb { color: var(--ink-muted); }
+  .meta { font-size: 0.9rem; color: var(--ink-faint); }
+  .pill {
+    margin-left: 0.5rem;
+    padding: 0.1rem 0.45rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    background: var(--accent-tint);
+    color: var(--accent-ink);
+  }
+
+  @media (min-width: 40rem) {
+    .albums li { grid-template-columns: 6rem 1fr; align-items: baseline; }
+  }
+</style>

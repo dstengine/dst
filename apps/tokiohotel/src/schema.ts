@@ -3,7 +3,8 @@
 // so the markup cannot drift from the visible text.
 import { itemContext } from "@dst/ui/schema";
 import { publisher, origin } from "./content";
-import { band, type Show } from "./data/tours";
+import { band } from "./data/band";
+import type { Show } from "./data/tours";
 
 export const musicGroup = {
   "@type": "MusicGroup",

@@ -2,7 +2,12 @@
 import Layout from "../../layouts/Layout.astro";
 import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
 import { cities as copy } from "../../content";
-import { cities, checkedOn } from "../../data/tours";
+import { upcomingCities, pastOnlyCities } from "../../data/cities";
+import { checkedOn } from "../../data/band";
+import { formatDate } from "@dst/ui/date";
+
+const stops = upcomingCities().sort((a, b) => a.shows[0].date.localeCompare(b.shows[0].date));
+const past = pastOnlyCities();
 ---
 <Layout prose title={copy.title} description={copy.description}>
   <section class="container hero">
@@ -12,14 +17,38 @@ import { cities, checkedOn } from "../../data/tours";
   </section>
 
   <section class="container">
-    <ul class="cities">
-      {cities.map((city) => (
+    <h2>On the 2026 run</h2>
+    <ol class="cities">
+      {stops.map((city) => (
+        <li>
+          <span class="night">Night {city.night}</span>
+          <span class="body">
+            <strong><a href={`/cities/${city.slug}/`}>{city.name}</a></strong>
+            <span class="meta">
+              {city.country} &middot; {formatDate(city.shows[0].date, "en-GB")}
+              {city.shows.length > 1 && <> and {formatDate(city.shows[1].date, "en-GB")}</>}
+              {city.shows[0].venue && <> &middot; {city.shows[0].venue}</>}
+            </span>
+          </span>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="container">
+    <h2>Not on it</h2>
+    <p>
+      Two cities get asked about more than any others on the map, and neither has anything
+      announced. They have pages anyway, because &ldquo;no&rdquo; with a date attached is an answer
+      and silence is not.
+    </p>
+    <ul class="past">
+      {past.map((city) => (
         <li>
           <strong><a href={`/cities/${city.slug}/`}>{city.name}</a></strong>
-          <span class="status">
-            {city.upcoming?.length
-              ? `Playing ${city.upcoming[0].show.date}`
-              : `Nothing upcoming — last played ${city.lastVisit!.date}`}
+          <span class="meta">
+            Nothing upcoming &middot; last played {formatDate(city.lastVisit!.date, "en-GB")},
+            {" "}{city.lastVisit!.venue}
           </span>
         </li>
       ))}
@@ -29,14 +58,26 @@ import { cities, checkedOn } from "../../data/tours";
 </Layout>
 
 <style>
-  .cities {
+  .cities, .past {
     margin: var(--space-3) 0 0;
     padding: 0;
     list-style: none;
     display: grid;
     gap: var(--space-2);
   }
-  .cities li { display: grid; gap: 0.1rem; }
-  .status { color: var(--ink-muted); font-size: 0.95rem; }
+  .cities li, .past li {
+    display: grid;
+    gap: 0.1rem 1.25rem;
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--border);
+  }
+  .cities li:last-child, .past li:last-child { border-bottom: 0; }
+  .night { font-variant-numeric: tabular-nums; color: var(--ink-faint); font-size: 0.92rem; }
+  .body { display: grid; gap: 0.15rem; }
+  .meta { color: var(--ink-muted); font-size: 0.95rem; }
   .source-line { margin-top: var(--space-3); color: var(--ink-faint); font-size: 0.9rem; }
+
+  @media (min-width: 40rem) {
+    .cities li { grid-template-columns: 6rem 1fr; align-items: baseline; }
+  }
 </style>

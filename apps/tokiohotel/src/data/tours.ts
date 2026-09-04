@@ -1,25 +1,22 @@
-// Every fact on this site lives here once, with the source that confirmed
-// it. Nothing goes in without one — a date we could not confirm waits.
-
-export interface Source {
-  name: string;
-  url?: string;
-  verifiedOn: string;
-}
+// Ten tours, in order. Every one gets a page: where a routing survives it is
+// printed date for date, and where it does not, what happened on the road
+// does the work instead. Nothing here is invented to fill a page — a tour
+// with nothing to say would not have one.
+import { checkedOn, WIKIPEDIA, type Source } from "./band";
 
 export interface Show {
   /** ISO date. Every show on this site has one; that is the point of it. */
   date: string;
   city: string;
   country: string;
-  /** Left out rather than guessed when the routing was announced without
-      a room. "Not announced" is a truthful cell; an invented venue is not. */
+  /** Left out rather than guessed when the routing was announced without a
+      room. "Not announced" is a truthful cell; an invented venue is not. */
   venue?: string;
   /** Outbound slug for a seller we have on file, resolved by /go/. */
   ticket?: string;
   /** Doors or curtain, when the venue prints it. Local time. */
   startTime?: string;
-  /** A city page on this site, when the city has one. */
+  /** A city page on this site. Filled in by cities.ts, not by hand. */
   cityPage?: string;
 }
 
@@ -29,31 +26,26 @@ export interface Tour {
   years: string;
   /** One line for the index. */
   blurb: string;
-  /** Only tours we can fill a page for get one; the rest are index rows. */
-  page?: boolean;
-  summary?: string[];
+  /** The lede on the tour's own page: two or three paragraphs. */
+  summary: string[];
+  /** More, under headings, when there is more. */
+  sections?: { heading: string; paragraphs: string[] }[];
   shows?: Show[];
-  source?: Source;
+  /** What the routing we print covers, when it is not the whole tour. */
+  showsHeading?: string;
+  showsNote?: string;
+  source: Source;
 }
 
-export const band = {
-  name: "Tokio Hotel",
-  formed: "2001",
-  origin: "Magdeburg, Germany",
-  members: [
-    { name: "Bill Kaulitz", role: "vocals" },
-    { name: "Tom Kaulitz", role: "guitar" },
-    { name: "Georg Listing", role: "bass" },
-    { name: "Gustav Schäfer", role: "drums" },
-  ],
+const ARCHIVE: Source = {
+  name: "sensation.vvm.space, recovered from the Internet Archive",
+  verifiedOn: checkedOn,
 };
 
-/** The date every "last checked" line on the site prints. One constant, so
-    the site cannot claim two different freshnesses on two pages. */
-export const checkedOn = "2026-09-04";
+const VENUE: Source = { name: "OVO Arena Wembley", url: "ovo-arena-events", verifiedOn: checkedOn };
 
-const arenaTour2026: Show[] = [
-  { date: "2026-10-28", city: "London", country: "United Kingdom", venue: "OVO Arena Wembley", startTime: "18:00", ticket: "axs-wembley", cityPage: "/cities/london/" },
+export const arenaTour2026: Show[] = [
+  { date: "2026-10-28", city: "London", country: "United Kingdom", venue: "OVO Arena Wembley", startTime: "18:00", ticket: "axs-wembley" },
   { date: "2026-10-30", city: "Paris", country: "France", venue: "Adidas Arena" },
   { date: "2026-11-01", city: "Hamburg", country: "Germany", venue: "Barclays Arena" },
   { date: "2026-11-02", city: "Brussels", country: "Belgium", venue: "Forest National, Vorst" },
@@ -73,10 +65,10 @@ const arenaTour2026: Show[] = [
 ];
 
 // Recovered from our own archive of sensation.vvm.space, a listings site
-// this operator ran in 2015 and 2016. Sixteen consecutive nights of the
-// Feel It All leg east of Berlin, in the order they were played — a routing
-// no current source still carries, which is the whole reason it is here.
-const feelItAllEast2015: Show[] = [
+// this operator ran in 2015 and 2016. Sixteen consecutive nights of what the
+// band themselves called Part 4 of the Feel It All tour, in the order they
+// were played — a routing no current source still carries date for date.
+export const feelItAllEast2015: Show[] = [
   { date: "2015-10-10", city: "Irkutsk", country: "Russia" },
   { date: "2015-10-12", city: "Krasnoyarsk", country: "Russia" },
   { date: "2015-10-14", city: "Novosibirsk", country: "Russia" },
@@ -97,97 +89,167 @@ const feelItAllEast2015: Show[] = [
 
 export const tours: Tour[] = [
   {
-    slug: "arena-tour-2026",
-    name: "Arena Tour",
-    years: "2026",
-    blurb: "Seventeen arena nights across ten countries, London first and Madrid last.",
-    page: true,
+    slug: "schrei-2005",
+    name: "Schrei Tour",
+    years: "2005–2006",
+    blurb: "The first one. Four teenagers, a number-one single, and a country that had not seen this in a decade.",
     summary: [
-      "Seventeen shows in twenty-seven days, from London on 28 October to Madrid on 23 November 2026. Ten countries, and eight of the seventeen nights in Germany — a routing that reads exactly like a band playing the territory that has always been theirs, with the rest of Europe on the way there and back.",
-      "Two nights sit in Paris, on 30 October and 21 November, which makes Paris the only city on the run to get the band twice. Everywhere else gets one night and no return.",
+      "The tour behind the debut, played by a band whose oldest member was eighteen and whose singer was sixteen. “Durch den Monsun” had gone to number one in Germany and Austria in August 2005; the album followed in September; the road followed the album.",
+      "It is the only Tokio Hotel tour that never had to compete with a back catalogue. Everything they could play, they had written in the previous two years.",
     ],
-    shows: arenaTour2026,
-    source: { name: "Songkick", verifiedOn: checkedOn },
+    source: WIKIPEDIA,
+  },
+  {
+    slug: "zimmer-483-2007",
+    name: "Zimmer 483 Tour",
+    years: "2007",
+    blurb: "Started two weeks late because the band did not like the stage.",
+    summary: [
+      "Scheduled to open in March 2007 behind an album that had gone straight to number one, and pushed back a fortnight — not by illness or ticketing, but because the band wanted a different stage design and were in a position to ask for one.",
+      "The year around it is the year the band stopped being German: the English album Scream came out on 4 June, the first British concert was on 19 June, and the first North American dates followed in February 2008.",
+    ],
+    source: WIKIPEDIA,
+  },
+  {
+    slug: "1000-hotels-2008",
+    name: "1000 Hotels World Tour",
+    years: "2008",
+    blurb: "Forty-three shows without a break, then surgery on the singer's vocal cords.",
+    summary: [
+      "It opened in Brussels on 3 March 2008 and ran through the Netherlands, Luxembourg, France, Spain, Portugal, Italy, Serbia and Scandinavia, due to finish on 9 April.",
+      "It did not finish on 9 April. In Marseille on 14 March the singer's voice went: he handed more of the set to the audience and the band played sixteen songs instead of twenty-one. Two days later the Lisbon show was cancelled minutes before it should have started, and the rest of the tour — plus a North American run — went with it.",
+    ],
+    sections: [
+      {
+        heading: "What it cost",
+        paragraphs: [
+          "Bill Kaulitz had played forty-three concerts without a break. On 30 March he had surgery on his larynx to remove a cyst that had formed on his vocal cords, the result of an untreated throat infection. He could not speak for ten days and spent four weeks in vocal rehabilitation.",
+          "The medical verdict, reported at the time, was that finishing the tour would have damaged the voice permanently. This is the single hardest fact in twenty-five years of this band's touring, and it is why every routing since has looked more cautious than it needs to.",
+        ],
+      },
+      {
+        heading: "How it ended",
+        paragraphs: [
+          "They started playing again in May 2008 and went back out for a second half built around open-air dates, wrapping up on 13 July in Werchter, Belgium — the same small country the tour had opened in four months earlier.",
+        ],
+      },
+    ],
+    source: WIKIPEDIA,
+  },
+  {
+    slug: "humanoid-city-2010",
+    name: "Welcome to Humanoid City Tour",
+    years: "2010–2011",
+    blurb: "Thirty-two European cities in eight weeks, one of which became a live album.",
+    summary: [
+      "Twenty-second of February to fourteenth of April 2010: thirty-two cities across Europe, the densest routing the band has ever played. The Milan show was recorded and released on 20 July 2010 as the live album Humanoid City Live.",
+      "The year kept going after Europe. A South American run ended in Mexico on 2 December 2010; Tokyo followed on 15 December — the city the band is named after, thirty-five years of German pop history after somebody picked the name for the sound of it.",
+    ],
+    sections: [
+      {
+        heading: "And then a long silence",
+        paragraphs: [
+          "This is the last tour before the gap. Bill and Tom Kaulitz moved to Los Angeles not long after it ended, and the next Tokio Hotel tour was five years away.",
+        ],
+      },
+    ],
+    source: WIKIPEDIA,
   },
   {
     slug: "feel-it-all-2015",
     name: "Feel It All World Tour",
     years: "2015",
-    blurb: "The eastern leg, sixteen consecutive nights, recovered from our own 2015 archive.",
-    page: true,
+    blurb: "Four parts, deliberately. Clubs first, then America, then Latin America, then sixteen nights east of Berlin.",
     summary: [
-      "Between 10 October and 8 November 2015 the Feel It All tour played sixteen cities east of Berlin, opening in Irkutsk — closer to Beijing than to Moscow — and finishing in Minsk a month later.",
-      "This routing is here because we have it first-hand. It was published at the time on sensation.vvm.space, a listings site run by this operator, and recovered in 2026 from the web archive of that site. No current listing still carries the leg date for date.",
+      "The comeback tour, and the only one the band split into numbered parts. Part 1 opened in Europe on 6 March 2015 as “the Club Experience” — arenas traded for rooms small enough to stand close in, by a band that had spent 2010 filling thirty-two arenas. Part 2 was the United States, Part 3 Latin America, Part 4 the east.",
+      "Part 4 is the reason this site exists in the shape it does. We have it night by night, because we published it at the time.",
     ],
     shows: feelItAllEast2015,
-    source: { name: "sensation.vvm.space, recovered from the Internet Archive", verifiedOn: checkedOn },
+    showsHeading: "Part 4, night by night",
+    showsNote:
+      "Sixteen consecutive shows between 10 October and 8 November 2015, opening in Irkutsk — closer to Beijing than to Moscow — and closing in Minsk a month later. This routing was published at the time on sensation.vvm.space, a listings site run by this operator; the site closed and the leg went with it. It was recovered from the web archive in 2026. No current listing carries it date for date.",
+    source: ARCHIVE,
   },
-  { slug: "schrei-2005", name: "Schrei Tour", years: "2005–2006", blurb: "The first tour, behind the debut album." },
-  { slug: "zimmer-483-2007", name: "Zimmer 483 Tour", years: "2007", blurb: "The second album takes them out of Germany." },
-  { slug: "1000-hotels-2008", name: "1000 Hotels Tour", years: "2008", blurb: "The first tour built for arenas." },
-  { slug: "humanoid-city-2010", name: "Welcome to Humanoid City Tour", years: "2010–2011", blurb: "The Humanoid staging, and the last tour before the long gap." },
-  { slug: "dream-machine-2017", name: "Dream Machine Tour", years: "2017–2018", blurb: "Back on the road after Feel It All." },
-  { slug: "melancholic-paradise-2019", name: "Melancholic Paradise Tour", years: "2019–2020", blurb: "Cut short in 2020." },
-  { slug: "beyond-the-world-2023", name: "Beyond the World Tour", years: "2023–2024", blurb: "The tour that last brought them to New York and Mexico City." },
-  { slug: "the-tour-2025", name: "The Tour", years: "2025", blurb: "The run immediately before the 2026 arenas." },
+  {
+    slug: "dream-machine-2017",
+    name: "Dream Machine Tour",
+    years: "2017–2018",
+    blurb: "The first tour outside Universal, and a North American leg cancelled by the band's own equipment.",
+    summary: [
+      "Behind the first album the band made after leaving Universal. The 2018 North American dates, announced on 25 September 2017, were later cancelled over technical problems with the band's own gear — a rare thing to admit publicly, and the reason this tour is remembered as two-thirds of a tour.",
+    ],
+    source: WIKIPEDIA,
+  },
+  {
+    slug: "melancholic-paradise-2019",
+    name: "Melancholic Paradise Tour",
+    years: "2019–2020",
+    blurb: "Three venues into the Americas leg when the world shut.",
+    summary: [
+      "Announced on 29 October 2018 with European dates and a promise of new songs alongside the familiar ones; North and Latin American legs were added in October 2019 for 2020.",
+      "Three shows of that leg were played. The rest was cancelled at the last minute as the pandemic closed borders and venues, and the band would not play a full tour again for three years.",
+    ],
+    source: WIKIPEDIA,
+  },
+  {
+    slug: "beyond-the-world-2023",
+    name: "Beyond the World Tour",
+    years: "2023–2024",
+    blurb: "Announced for 2021, moved twice, finally played — and the last time they crossed the Atlantic.",
+    summary: [
+      "Announced on 7 December 2020 for autumn 2021. Postponed in May 2021 to spring 2022 as the pandemic ran on. Postponed again on 6 March 2022, the band saying it did not feel right to carry on as usual; most of the shows were moved into 2023 and every ticket stayed valid.",
+      "It finally ran in 2023, and got a second life the following year: a Latin American and North American leg announced on 20 June 2024, played through the end of November and into December, with dates in the United States, Canada, Mexico and South America.",
+    ],
+    sections: [
+      {
+        heading: "The last American nights",
+        paragraphs: [
+          "That 2024 leg is why the New York and Mexico City pages on this site read the way they do. New York got 4 December 2024 at Palladium Times Square; Mexico City got 6 December at the Velódromo Olímpico Agustín Melgar. Nothing has been announced on either continent since, and the 2026 routing stops at Madrid.",
+        ],
+      },
+    ],
+    source: WIKIPEDIA,
+  },
+  {
+    slug: "the-tour-2025",
+    name: "The Tour",
+    years: "2025",
+    blurb: "Announced eighteen months ahead, and bracketed by a one-night anniversary show.",
+    summary: [
+      "Announced on 5 December 2023 with European dates — an unusually long run-up, and a sign of a band planning in years again rather than in seasons.",
+      "The year it landed in also held a single night of its own: on 15 August 2025 the band played a one-off concert marking twenty years since “Durch den Monsun”, twenty years to the month after the single that started everything entered the German chart.",
+    ],
+    source: WIKIPEDIA,
+  },
+  {
+    slug: "arena-tour-2026",
+    name: "Arena Tour",
+    years: "2026",
+    blurb: "Seventeen arena nights across ten countries, twelve days after a new album lands.",
+    summary: [
+      "Seventeen shows in twenty-seven days, from London on 28 October to Madrid on 23 November 2026. Ten countries; eight of the seventeen nights in Germany, which is what a band's home territory looks like on a map.",
+      "It was announced on 19 March 2025, alongside the anniversary show — eighteen months of notice for a run that will be, in practice, the Encore tour: the eighth studio album is out on 16 October 2026, twelve days before the opening night.",
+    ],
+    sections: [
+      {
+        heading: "How the routing reads",
+        paragraphs: [
+          "Paris is the only city that gets the band twice, on 30 October and again on 21 November — once on the way out, once on the way back. Everywhere else gets one night and no return.",
+          "There is no Americas leg. There is no second British date. If you are reading this from outside the ten countries below, the honest answer is that nothing has been announced for you, and this site will say so until something is.",
+        ],
+      },
+      {
+        heading: "What they will be playing",
+        paragraphs: [
+          "Four songs from Encore have been public for months — “Changes” since November 2025, “California Nights” since February, “Memory Lane” since May, “Without You” since July — and the full tracklist since 20 August 2026. Everything else on the record will be twelve days old on opening night.",
+        ],
+      },
+    ],
+    shows: arenaTour2026,
+    showsHeading: "All seventeen dates",
+    source: { name: "Songkick, with the London date confirmed against OVO Arena Wembley", verifiedOn: checkedOn },
+  },
 ];
 
 export const tourBySlug = (slug: string) => tours.find((t) => t.slug === slug);
-export const tourPages = () => tours.filter((t) => t.page);
-
-export interface City {
-  slug: string;
-  name: string;
-  country: string;
-  /** Upcoming shows on this site, by tour slug. */
-  upcoming?: { tour: string; show: Show }[];
-  /** The last time the band played here, when there is nothing upcoming. */
-  lastVisit?: { date: string; venue: string; tour: string };
-  /** A site of ours that covers this city and carries the listing. */
-  cityGuide?: { host: string; url: string; label: string };
-  summary: string[];
-  source: Source;
-}
-
-export const cities: City[] = [
-  {
-    slug: "london",
-    name: "London",
-    country: "United Kingdom",
-    upcoming: [{ tour: "arena-tour-2026", show: arenaTour2026[0] }],
-    cityGuide: {
-      host: "ldn.lol",
-      url: "https://ldn.lol/events/tokio-hotel-ovo-arena-2026/",
-      label: "the full listing on ldn.lol",
-    },
-    summary: [
-      "London opens the 2026 Arena Tour on Wednesday 28 October at OVO Arena Wembley, three days after the clocks go back — so a 6pm start is an after-dark one, and the walk from Wembley Park down Olympic Way is the walk you get.",
-      "It is the only United Kingdom date on the run. The tour crosses to Paris two days later and does not come back.",
-    ],
-    source: { name: "OVO Arena Wembley", url: "ovo-arena-events", verifiedOn: checkedOn },
-  },
-  {
-    slug: "new-york",
-    name: "New York",
-    country: "United States",
-    lastVisit: { date: "2024-12-04", venue: "Palladium Times Square", tour: "beyond-the-world-2023" },
-    summary: [
-      "Nothing upcoming. The 2026 Arena Tour is a European run — seventeen dates, none of them in the Americas.",
-      "The last New York show was on 4 December 2024 at Palladium Times Square, near the end of the Beyond the World Tour.",
-    ],
-    source: { name: "Songkick", verifiedOn: checkedOn },
-  },
-  {
-    slug: "mexico-city",
-    name: "Mexico City",
-    country: "Mexico",
-    lastVisit: { date: "2024-12-06", venue: "Velódromo Olímpico Agustín Melgar", tour: "beyond-the-world-2023" },
-    summary: [
-      "Nothing upcoming, and nothing announced for the Americas at all: the 2026 routing stops at Madrid.",
-      "The last Mexico City show was on 6 December 2024 at the Velódromo Olímpico Agustín Melgar, two nights after New York and at the close of the Beyond the World Tour.",
-    ],
-    source: { name: "Songkick", verifiedOn: checkedOn },
-  },
-];
-
-export const cityBySlug = (slug: string) => cities.find((c) => c.slug === slug);
+export { checkedOn, VENUE };

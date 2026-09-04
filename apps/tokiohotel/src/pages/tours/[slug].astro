@@ -1,43 +1,90 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
+import SourceNote from "../../components/SourceNote.astro";
 import Dates from "../../components/Dates.astro";
 import { origin } from "../../content";
-import { tourPages, checkedOn, type Tour } from "../../data/tours";
+import { tours, type Tour } from "../../data/tours";
+import "../../data/cities";
+import { checkedOn } from "../../data/band";
+import { albumForTour } from "../../data/albums";
 import { musicGroup, musicEvent } from "../../schema";
 
 export function getStaticPaths() {
-  return tourPages().map((tour) => ({ params: { slug: tour.slug }, props: { tour } }));
+  return tours.map((tour) => ({ params: { slug: tour.slug }, props: { tour } }));
 }
 
 const { tour } = Astro.props as { tour: Tour };
-const shows = tour.shows!;
 const canonical = `${origin}/tours/${tour.slug}/`;
-
+const album = albumForTour(tour.slug);
+const shows = tour.shows ?? [];
 const cities = [...new Set(shows.map((s) => s.city))].length;
 const countries = [...new Set(shows.map((s) => s.country))].length;
-const title = `${tour.name} ${tour.years}`;
-const description = `${tour.name}, ${tour.years}: ${shows.length} dates in ${cities} cities, each one with the source that confirmed it.`;
 
-// Only a routing that is still current is markup a crawler should treat as
-// an event. The 2015 leg is history, and history goes out as prose.
+const title = `${tour.name} ${tour.years}`;
+const description = shows.length
+  ? `${tour.name}, ${tour.years}: ${shows.length} dates in ${cities} cities, each with the source that confirmed it.`
+  : `${tour.name}, ${tour.years} — ${tour.blurb}`;
+
+// Only a routing that is still ahead is markup a crawler should read as an
+// event. History goes out as prose.
 const upcoming = shows.some((s) => s.date >= checkedOn);
 const jsonLd = upcoming ? [musicGroup, ...shows.map((s) => musicEvent(s, tour.name, canonical))] : [];
+
+const index = tours.indexOf(tour);
+const previous = index > 0 ? tours[index - 1] : undefined;
+const next = index < tours.length - 1 ? tours[index + 1] : undefined;
 ---
 <Layout prose title={title} description={description} jsonLd={jsonLd}>
   <section class="container hero">
     <Breadcrumbs crumbs={[{ href: "/tours/", label: "Tours" }]} current={title} homeLabel="Dates" />
     <h1>{title}</h1>
-    {tour.summary?.map((p) => <p class="lede">{p}</p>)}
+    {tour.summary.map((p) => <p class="lede">{p}</p>)}
+    {album && (
+      <p class="album-line">
+        The record behind it: <a href={`/albums/${album.slug}/`}>{album.title}</a>,
+        {" "}{album.upcoming ? "out" : "released"} {album.released}.
+      </p>
+    )}
   </section>
 
+  {tour.sections?.map((section) => (
+    <section class="container">
+      <h2>{section.heading}</h2>
+      {section.paragraphs.map((p) => <p>{p}</p>)}
+    </section>
+  ))}
+
+  {shows.length > 0 && (
+    <section class="container">
+      <h2>{tour.showsHeading ?? `${shows.length} dates`}</h2>
+      {tour.showsNote && <p>{tour.showsNote}</p>}
+      <Dates shows={shows} />
+      {countries > 1 && (
+        <p class="meta">{shows.length} shows &middot; {cities} cities &middot; {countries} countries.</p>
+      )}
+    </section>
+  )}
+
   <section class="container">
-    <h2>{shows.length} dates{countries > 1 ? `, ${countries} countries` : ""}</h2>
-    <Dates shows={shows} />
-    <p class="source-line">Source: {tour.source!.name}. Last checked {tour.source!.verifiedOn}.</p>
+    <SourceNote source={tour.source} />
+    <nav class="pager" aria-label="Tours">
+      {previous ? <a href={`/tours/${previous.slug}/`}>&larr; {previous.name}</a> : <span />}
+      {next ? <a href={`/tours/${next.slug}/`}>{next.name} &rarr;</a> : <span />}
+    </nav>
   </section>
 </Layout>
 
 <style>
-  .source-line { margin-top: var(--space-2); color: var(--ink-faint); font-size: 0.9rem; }
+  .album-line { color: var(--ink-muted); }
+  .meta { margin-top: var(--space-2); color: var(--ink-faint); font-size: 0.9rem; }
+  .pager {
+    margin-top: var(--space-3);
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+  }
 </style>

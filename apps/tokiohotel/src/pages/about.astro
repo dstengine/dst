@@ -1,7 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { about } from "../content";
-import { checkedOn } from "../data/tours";
+import { checkedOn, WIKIPEDIA } from "../data/band";
+import SourceNote from "../components/SourceNote.astro";
 ---
 <Layout prose title={about.title} description={about.description}>
   <section class="container hero">
@@ -45,10 +46,21 @@ import { checkedOn } from "../data/tours";
       </li>
       <li>
         <h3>A page exists when there is something to put on it</h3>
-        <p>Six of the ten tours here are index rows rather than pages, because a routing we cannot document is a heading over an empty page.</p>
+        <p>Eight of the ten tours have no surviving routing, so their pages carry what happened on the road instead of a list of rooms. A city gets a page when there is a date coming or a date that was the last one &mdash; not one per city on principle.</p>
       </li>
     </ol>
-    <p class="source-line">This site is not affiliated with Tokio Hotel or their management. Last checked {checkedOn}.</p>
+    <p class="source-line">This site is not affiliated with Tokio Hotel, their management or any ticket seller. It sells nothing. Last checked {checkedOn}.</p>
+  </section>
+
+  <section class="container">
+    <h2>Where the facts come from</h2>
+    <p>
+      Three places, and they are named on the pages they appear on. Tour routings and the London
+      date come from the venues and from the tour&rsquo;s own listings. The history, the albums and
+      the singles come from the band&rsquo;s Wikipedia article and its discography. The 2015 eastern
+      leg comes from our own archive.
+    </p>
+    <SourceNote source={WIKIPEDIA} label="Principal source" />
   </section>
 </Layout>
 
