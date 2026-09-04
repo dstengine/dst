@@ -59,7 +59,7 @@ const rows = runs.map((run) => {
           <td><StatusBadge run={run} /></td>
           <td>
             {buttons.length > 0
-              ? <a href={buttons[0]!.href} rel="nofollow" title={`Buy tickets for ${title} in ${city} from ${buttons[0]!.seller.name}`}>{buttons.length === 1 ? buttons[0]!.seller.name : `${buttons.length} sellers`}</a>
+              ? <a href={buttons[0]!.href} rel="nofollow" data-ticket title={`Buy tickets for ${title} in ${city} from ${buttons[0]!.seller.name}`}>{buttons.length === 1 ? buttons[0]!.seller.name : `${buttons.length} sellers`}</a>
               : <span class="tba">{statusOf(run) === "ended" ? "Run ended" : "Not on sale"}</span>}
           </td>
         </tr>

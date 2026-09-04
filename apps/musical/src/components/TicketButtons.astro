@@ -36,11 +36,16 @@ const from = priceLabel(run);
 ---
 {buttons.length > 0 && (
   <p class="ticket-actions">
+    {/* data-ticket makes the click a ticket_click rather than a generic
+        outbound hop — see the delegated listener in @dst/ui Analytics.astro.
+        Only the seller links carry it: "Add to calendar" and "Venue
+        information" sit in the same row and are not someone going to buy. */}
     {buttons.map((button, i) => (
       <a
         class:list={["button", i > 0 && "button-secondary"]}
         href={button.href}
         rel="nofollow"
+        data-ticket
         title={`Buy tickets for ${showName} in ${cityName} from ${button.seller.name}`}
       ><Icon name="ticket" />{button.label}{i === 0 && from && buttons.length === 1 && <span class="ticket-from"> {from}</span>}</a>
     ))}

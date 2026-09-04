@@ -27,6 +27,7 @@ export type TrackEvent =
   | "lead_failed"
   | "form_start"
   | "outbound_click"
+  | "ticket_click"
   | "add_to_calendar"
   | "phone_click"
   | "cta_click";

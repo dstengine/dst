@@ -73,7 +73,23 @@ gtag('config', '${id}', { cookie_domain: ${cookieDomain} });`;
     if (!link) return;
     const href = link.getAttribute("href") ?? "";
 
-    if (href.startsWith("/go/")) {
+    // A ticket link is a /go/ hop like any other, and counting it as one
+    // would be true and useless: the reports would hold a single
+    // outbound_click total mixing "buy a ticket" with "read the theatre's
+    // own page", and the first of those is the only thing this network is
+    // for. So the link says what it is, and gets its own name.
+    //
+    // Deliberately before the /go/ branch, not beside it — one tap must
+    // produce one event, or every ticket click is counted twice and the
+    // outbound_click total stops meaning anything.
+    if (link.hasAttribute("data-ticket")) {
+      track("ticket_click", {
+        // The seller, by the same slug outbound_click uses, so the two can
+        // be read together without a second registered dimension.
+        hop: href.replace(/^\/go\/|\/$/g, ""),
+        text: label(link),
+      });
+    } else if (href.startsWith("/go/")) {
       // The hop's own slug, which names the destination without putting a
       // third-party URL into the report.
       track("outbound_click", { hop: href.replace(/^\/go\/|\/$/g, ""), text: link.textContent?.trim() });
@@ -83,8 +99,8 @@ gtag('config', '${id}', { cookie_domain: ${cookieDomain} });`;
       track("phone_click");
     } else if (link.matches(CTA)) {
       // Everything above already says what it was, and says it better, so
-      // this branch is deliberately last: a Tickets button is an
-      // outbound_click, not a second, blurrier cta_click for the same tap.
+      // this branch is deliberately last: a Tickets button is a
+      // ticket_click, not a second, blurrier cta_click for the same tap.
       // What is left is the network's internal calls to action — the ones
       // that move a visitor towards a form rather than off the site.
       track("cta_click", {
