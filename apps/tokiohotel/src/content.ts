@@ -3,7 +3,7 @@
 // rather than the group — see VERCEL.md.
 export const publisher = {
   id: "https://tokiohotel.vvm.space/#organization",
-  name: "tokiohotel",
+  name: "Tokio Hotel Encore Tour",
   url: "https://tokiohotel.vvm.space/",
 };
 
@@ -12,9 +12,9 @@ export const origin = "https://tokiohotel.vvm.space";
 export const home = {
   title: "Tokio Hotel tour dates",
   description:
-    "Every Tokio Hotel tour date we can confirm: the Arena Tour 2026, the Summer Encore run in 2027, the ten tours behind them, and the albums each one carried.",
+    "Every Tokio Hotel tour date we can confirm: the Arena Tour 2026, the Summer Encore run in 2027, the nine tours behind them, and the albums each one carried.",
   h1: "Tokio Hotel on tour",
-  lede: `A new album on 16 October 2026, seventeen arena nights starting twelve days later, and fourteen more outdoors the summer after. Behind them, ten tours and twenty-five years with the same four people. Every date here names its source and the day we last looked.`,
+  lede: `A new album on 16 October 2026, seventeen arena nights starting twelve days later, and fourteen more outdoors the summer after. Behind them, nine tours and twenty-five years with the same four people. Every date here names its source and the day we last looked.`,
 };
 
 export const tours = {

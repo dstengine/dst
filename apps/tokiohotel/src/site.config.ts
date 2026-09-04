@@ -6,7 +6,7 @@
 import { publisher } from "./content";
 
 export const site = {
-  siteName: "tokiohotel",
+  siteName: "Tokio Hotel Encore Tour",
   titleSuffix: "Tokio Hotel tours",
   lang: "en",
   publisher,
