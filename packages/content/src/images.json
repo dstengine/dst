@@ -3552,6 +3552,102 @@
         ]
       ]
     },
+    "/covers/anastacia-ovo-arena-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/anastacia-ovo-arena-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/anastacia-ovo-arena-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/anastacia-ovo-arena-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/anastacia-ovo-arena-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/anastacia-ovo-arena-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/anastacia-ovo-arena-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/anastacia-ovo-arena-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/anastacia-ovo-arena-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/anastacia-ovo-arena-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/anastacia-ovo-arena-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/andre-rieu-ovo-arena-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/andre-rieu-ovo-arena-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/andre-rieu-ovo-arena-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/andre-rieu-ovo-arena-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/andre-rieu-ovo-arena-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/andre-rieu-ovo-arena-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/andre-rieu-ovo-arena-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/andre-rieu-ovo-arena-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/andre-rieu-ovo-arena-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/andre-rieu-ovo-arena-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/andre-rieu-ovo-arena-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/apples-chairman-now-has-a-policy-job.jpg": {
       "width": 1536,
       "height": 864,
@@ -4224,6 +4320,54 @@
         ]
       ]
     },
+    "/covers/simple-plan-ovo-arena-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/simple-plan-ovo-arena-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/simple-plan-ovo-arena-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/simple-plan-ovo-arena-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/simple-plan-ovo-arena-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/simple-plan-ovo-arena-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/simple-plan-ovo-arena-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/simple-plan-ovo-arena-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/simple-plan-ovo-arena-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/simple-plan-ovo-arena-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/simple-plan-ovo-arena-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/ten-exhibitions-on-in-london.jpg": {
       "width": 1536,
       "height": 864,
@@ -4269,6 +4413,54 @@
         [
           1536,
           "/covers/ten-exhibitions-on-in-london-1536.webp"
+        ]
+      ]
+    },
+    "/covers/tokio-hotel-ovo-arena-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/tokio-hotel-ovo-arena-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/tokio-hotel-ovo-arena-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/tokio-hotel-ovo-arena-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/tokio-hotel-ovo-arena-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/tokio-hotel-ovo-arena-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/tokio-hotel-ovo-arena-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/tokio-hotel-ovo-arena-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/tokio-hotel-ovo-arena-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/tokio-hotel-ovo-arena-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/tokio-hotel-ovo-arena-2026-1536.webp"
         ]
       ]
     },

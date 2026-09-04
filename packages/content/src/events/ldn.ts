@@ -260,6 +260,11 @@ export const items: EventItem[] = [
   },
   {
     slug: "tokio-hotel-ovo-arena-2026",
+    image: "/covers/tokio-hotel-ovo-arena-2026.jpg",
+    imageAlt: "A charcoal paper triangle standing centre-frame with a small red pennant at its peak and a wide red band passing behind it",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     featured: 3,
     site: "ldn",
     title: "Tokio Hotel at OVO Arena Wembley",
@@ -340,6 +345,11 @@ export const items: EventItem[] = [
 
   {
     slug: "andre-rieu-ovo-arena-2026",
+    image: "/covers/andre-rieu-ovo-arena-2026.jpg",
+    imageAlt: "A charcoal paper arc turning in a wide spiral with a red bow shape laid across it and small red circles trailing away",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     site: "ldn",
     title: "André Rieu at OVO Arena Wembley",
     cardTitle: "André Rieu at Wembley",
@@ -379,6 +389,11 @@ export const items: EventItem[] = [
 
   {
     slug: "anastacia-ovo-arena-2026",
+    image: "/covers/anastacia-ovo-arena-2026.jpg",
+    imageAlt: "Three nested red paper rings with short radiating slivers behind them, resting on a long charcoal baseline",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     site: "ldn",
     title: "Anastacia at OVO Arena Wembley",
     cardTitle: "Anastacia at Wembley",
@@ -420,6 +435,11 @@ export const items: EventItem[] = [
 
   {
     slug: "simple-plan-ovo-arena-2026",
+    image: "/covers/simple-plan-ovo-arena-2026.jpg",
+    imageAlt: "A small red paper square at the lower left joined to a large charcoal square by a fan of straight rays above a row of short bars",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     site: "ldn",
     title: "Simple Plan at OVO Arena Wembley",
     cardTitle: "Simple Plan at Wembley",
