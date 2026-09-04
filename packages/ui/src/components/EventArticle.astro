@@ -297,7 +297,7 @@ const relatedItems = (item.related ?? []).map((card) => ({
         width={item.imageWidth}
         height={item.imageHeight}
       />
-      <ImageNote kind={item.imageKind} credit={item.imageCredit} labels={L.imageKinds} />
+      <ImageNote kind={item.imageKind} credit={item.imageCredit} caption={item.imageCaption} labels={L.imageKinds} />
     </figure>
   )}
 

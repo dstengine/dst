@@ -84,6 +84,10 @@ interface ItemBase {
   imageAlt?: string;
   imageKind?: ImageKind; // absent -> no claim is made either way
   imageCredit?: string; // who made or supplied it
+  // When and where the picture was taken. A photograph of a past show on
+  // the page of a future one is honest only if the page says so: without
+  // this line the reader takes it for a picture of the night being sold.
+  imageCaption?: string;
   // Intrinsic size, so the browser reserves the space before the file
   // arrives. Without it the article reflows as the picture loads, which is
   // what Core Web Vitals measures as layout shift.
