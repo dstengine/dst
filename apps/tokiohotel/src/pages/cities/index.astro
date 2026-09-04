@@ -1,0 +1,42 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
+import { cities as copy } from "../../content";
+import { cities, checkedOn } from "../../data/tours";
+---
+<Layout prose title={copy.title} description={copy.description}>
+  <section class="container hero">
+    <Breadcrumbs crumbs={[]} current={copy.title} homeLabel="Dates" />
+    <h1>{copy.h1}</h1>
+    <p class="lede">{copy.lede}</p>
+  </section>
+
+  <section class="container">
+    <ul class="cities">
+      {cities.map((city) => (
+        <li>
+          <strong><a href={`/cities/${city.slug}/`}>{city.name}</a></strong>
+          <span class="status">
+            {city.upcoming?.length
+              ? `Playing ${city.upcoming[0].show.date}`
+              : `Nothing upcoming — last played ${city.lastVisit!.date}`}
+          </span>
+        </li>
+      ))}
+    </ul>
+    <p class="source-line">Last checked {checkedOn}.</p>
+  </section>
+</Layout>
+
+<style>
+  .cities {
+    margin: var(--space-3) 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: var(--space-2);
+  }
+  .cities li { display: grid; gap: 0.1rem; }
+  .status { color: var(--ink-muted); font-size: 0.95rem; }
+  .source-line { margin-top: var(--space-3); color: var(--ink-faint); font-size: 0.9rem; }
+</style>

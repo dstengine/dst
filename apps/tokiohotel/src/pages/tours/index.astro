@@ -1,0 +1,59 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
+import { tours as copy } from "../../content";
+import { tours, checkedOn } from "../../data/tours";
+---
+<Layout prose title={copy.title} description={copy.description}>
+  <section class="container hero">
+    <Breadcrumbs crumbs={[]} current={copy.title} homeLabel="Dates" />
+    <h1>{copy.h1}</h1>
+    <p class="lede">{copy.lede}</p>
+  </section>
+
+  <section class="container">
+    <ol class="tours">
+      {tours.map((tour) => (
+        <li>
+          <span class="years">{tour.years}</span>
+          <span class="body">
+            <strong>
+              {tour.page ? <a href={`/tours/${tour.slug}/`}>{tour.name}</a> : tour.name}
+            </strong>
+            <span class="blurb">{tour.blurb}</span>
+          </span>
+        </li>
+      ))}
+    </ol>
+    <p class="source-line">Last checked {checkedOn}.</p>
+  </section>
+</Layout>
+
+<style>
+  .tours {
+    margin: var(--space-3) 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: var(--space-2);
+  }
+  .tours li {
+    display: grid;
+    gap: 0.1rem 1.25rem;
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--border);
+  }
+  .tours li:last-child { border-bottom: 0; }
+  .years {
+    font-variant-numeric: tabular-nums;
+    color: var(--ink-faint);
+    font-size: 0.92rem;
+  }
+  .body { display: grid; gap: 0.15rem; }
+  .blurb { color: var(--ink-muted); }
+  .source-line { margin-top: var(--space-3); color: var(--ink-faint); font-size: 0.9rem; }
+
+  @media (min-width: 40rem) {
+    .tours li { grid-template-columns: 8rem 1fr; align-items: baseline; }
+  }
+</style>

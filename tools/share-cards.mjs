@@ -16,7 +16,7 @@ import sharp from "sharp";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const APPS = ["dst", "llc", "visas", "riviera", "mbr", "palmcentral", "eco", "fwf", "musical",
-  "nyc42", "ldn", "lnd", "cmx", "mxo"];
+  "nyc42", "ldn", "lnd", "cmx", "mxo", "tokiohotel"];
 
 const W = 1200;
 const H = 630;
@@ -56,7 +56,14 @@ for (const app of APPS) {
   const description = attr(html, /<meta name="description" content="([^"]*)"/) ?? "";
   const host = new URL(attr(html, /<link rel="canonical" href="([^"]*)"/)).hostname;
   const theme = readFileSync(path.join(REPO, "apps", app, "src", "styles", "theme.css"), "utf8");
-  const accent = (theme.match(/--accent:\s*([^;]+);/) || [])[1].trim();
+  // The older sites declare one `--accent`; the self-publishing ones declare
+  // a light/dark pair and no bare token. The card is drawn on a dark ground,
+  // so the light-mode accent is the one that reads on it. Without this the
+  // tool threw on the first .lol site and wrote no cards at all.
+  const accentMatch =
+    theme.match(/--accent:\s*([^;]+);/) || theme.match(/--accent-light:\s*([^;]+);/);
+  if (!accentMatch) throw new Error(`apps/${app}/src/styles/theme.css declares no accent`);
+  const accent = accentMatch[1].trim();
 
   // 40 characters is what fits the 1008px text column at 46px Helvetica.
   const lines = wrap(description.replace(/&#39;/g, "’"), 40, 3);

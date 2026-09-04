@@ -1,0 +1,77 @@
+---
+// A run of shows, one row each. Deliberately not a table: on a phone a
+// table either scrolls sideways or squeezes the venue into two characters,
+// and the venue is the half of the row people actually read. This stacks.
+import { go } from "../outbound";
+import type { Show } from "../data/tours";
+
+interface Props {
+  shows: Show[];
+  /** Rows link to the city page when the reader is not already on one. */
+  linkCities?: boolean;
+}
+const { shows, linkCities = true } = Astro.props;
+
+const day = (iso: string) =>
+  new Date(`${iso}T12:00:00Z`).toLocaleDateString("en-GB", {
+    weekday: "short", day: "numeric", month: "short", year: "numeric", timeZone: "UTC",
+  });
+---
+<ol class="dates">
+  {shows.map((show) => (
+    <li>
+      <time datetime={show.date}>{day(show.date)}</time>
+      <span class="where">
+        <strong>
+          {linkCities && show.cityPage ? <a href={show.cityPage}>{show.city}</a> : show.city}
+        </strong>
+        <span class="country">{show.country}</span>
+      </span>
+      <span class="venue">{show.venue ?? "Venue not announced"}</span>
+      {show.ticket ? (
+        <a class="button" href={go(show.ticket)} rel="nofollow">Tickets</a>
+      ) : (
+        <span class="no-ticket">&mdash;</span>
+      )}
+    </li>
+  ))}
+</ol>
+
+<style>
+  .dates {
+    margin: var(--space-3) 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .dates li {
+    background: var(--surface);
+    padding: var(--space-2);
+    display: grid;
+    gap: 0.15rem 1rem;
+    align-items: baseline;
+  }
+  .dates time {
+    font-variant-numeric: tabular-nums;
+    color: var(--ink-muted);
+    font-size: 0.92rem;
+  }
+  .where { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 0.5rem; }
+  .where strong { font-size: 1.05rem; }
+  .country, .venue { color: var(--ink-muted); font-size: 0.92rem; }
+  .no-ticket { color: var(--ink-muted); }
+  .dates .button { justify-self: start; margin-top: 0.4rem; }
+
+  @media (min-width: 40rem) {
+    .dates li {
+      grid-template-columns: 12rem minmax(8rem, 1fr) minmax(0, 1.4fr) auto;
+      align-items: center;
+    }
+    .dates .button, .no-ticket { justify-self: end; margin-top: 0; }
+  }
+</style>

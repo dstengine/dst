@@ -1,0 +1,26 @@
+# tokiohotel.vvm.space
+
+> A tour archive for one band: where Tokio Hotel play next, where they played last, and the routings of the ten tours in between. Every date names the source that confirmed it and the day it was last checked. Nothing goes up on a date we could not confirm, and a venue announced without a room says so rather than being filled in.
+
+Written by hand rather than generated: this site has no news or events feed, so its map is short enough to stay true.
+
+## Dates
+
+- [Tokio Hotel on tour](https://tokiohotel.vvm.space/): the seventeen-night Arena Tour 2026, London 28 October to Madrid 23 November, with the line-up and where the facts come from.
+
+## Tours
+
+- [Ten tours since 2005](https://tokiohotel.vvm.space/tours/): every Tokio Hotel tour in order, from Schrei to the 2026 arenas.
+- [Arena Tour 2026](https://tokiohotel.vvm.space/tours/arena-tour-2026/): all seventeen dates, ten countries, venue by venue.
+- [Feel It All World Tour 2015](https://tokiohotel.vvm.space/tours/feel-it-all-2015/): the eastern leg, sixteen consecutive nights from Irkutsk to Minsk — recovered from our own 2015 listings site, and not carried date for date anywhere else.
+
+## Cities
+
+- [City by city](https://tokiohotel.vvm.space/cities/): the cities with something to say about them.
+- [Tokio Hotel in London](https://tokiohotel.vvm.space/cities/london/): 28 October 2026, OVO Arena Wembley, the only UK date of the run.
+- [Tokio Hotel in New York](https://tokiohotel.vvm.space/cities/new-york/): nothing upcoming; last played 4 December 2024.
+- [Tokio Hotel in Mexico City](https://tokiohotel.vvm.space/cities/mexico-city/): nothing upcoming; last played 6 December 2024.
+
+## About
+
+- [About this site](https://tokiohotel.vvm.space/about/): what it publishes, what it will not, and that it is not affiliated with the band.

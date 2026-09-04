@@ -259,6 +259,45 @@ export const items: EventItem[] = [
       "The Show is a morning event with an afternoon attached, and the two are different. The procession goes out at 11am and returns in the early afternoon &mdash; the return leg is the same participants, the same route in reverse, and a fraction of the crowd. If 11am at the front is not realistic, the return is not a consolation prize.",
   },
   {
+    slug: "tokio-hotel-ovo-arena-2026",
+    featured: 3,
+    site: "ldn",
+    title: "Tokio Hotel at OVO Arena Wembley",
+    cardTitle: "Tokio Hotel at Wembley",
+    summary:
+      "Wednesday 28 October, 6pm: the German band open their 2026 arena tour in London, seventeen dates before Madrid closes it in November.",
+    start: "2026-10-28",
+    startTime: "18:00",
+    // BST ends on 25 October 2026, so the show falls three days into GMT.
+    utcOffset: "+00:00",
+    city: "London",
+    venue: "OVO Arena Wembley, Arena Square, Engineers Way, HA9 0AA",
+    category: "Music",
+    organizer: "OVO Arena Wembley",
+    ticket: {
+      url: "https://www.axs.com/uk/events/893660/tokio-hotel-tickets?skin=wembley",
+      label: "Tickets on AXS",
+    },
+    source: {
+      name: "OVO Arena Wembley",
+      url: "https://www.ovoarena.co.uk/events",
+      verifiedOn: "2026-09-04",
+    },
+    body: [
+      "A tour has to start somewhere, and this one starts here. Of the seventeen dates Tokio Hotel have announced for their 2026 arena run, London is the first &mdash; two days before Paris, and nearly a month before Madrid closes it on 23 November.",
+      "## When and where",
+      "<strong>Wednesday 28 October 2026</strong> at <strong>OVO Arena Wembley</strong>, with the venue listing a <strong>6pm</strong> start. Tickets are sold through <strong>AXS</strong>.",
+      "## Who they are",
+      "Four musicians from Magdeburg who formed in 2001: <strong>Bill Kaulitz</strong> on vocals, his twin brother <strong>Tom Kaulitz</strong> on guitar, <strong>Georg Listing</strong> on bass and <strong>Gustav Sch&auml;fer</strong> on drums. Twenty-five years is an unusual length of time for a band that arrived as a teenage phenomenon, and unusual too for one that has kept the same four members throughout.",
+      "## The run this belongs to",
+      "The 2026 tour takes in London, Paris twice, Hamburg, Brussels, Amsterdam, Frankfurt, Berlin, Nuremberg, Zurich, Milan, Leipzig, Vienna, Munich, Esch-sur-Alzette, D&uuml;sseldorf and Madrid. It is a European run: no North American or Latin American dates have been announced alongside it.",
+      "## Getting there",
+      "Wembley Park is the closest station and the one the arena itself points people at, on the Jubilee and Metropolitan lines. Wembley Stadium station, on the Chiltern line out of Marylebone, is the other option. A weeknight show at this end of the Jubilee line means the last trains matter more than they would in the centre.",
+    ],
+    expertise:
+      "An October Wednesday at Wembley Park is a different proposition from a Saturday one: the arena and the stadium share a station, and on a night when only the arena is in use the walk from Wembley Park is quick. The thing to check before travelling is not the venue but the line &mdash; Jubilee weekend and evening closures are frequent at this end, and Transport for London publish them the week before. The 6pm start printed by the arena is the door-to-curtain figure venues use for the whole evening, support included, so it is not the time the headline act appears.",
+  },
+  {
     slug: "notting-hill-carnival-2026",
     featured: 3,
     site: "ldn",

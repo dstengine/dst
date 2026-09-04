@@ -1,0 +1,66 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { about } from "../content";
+import { checkedOn } from "../data/tours";
+---
+<Layout prose title={about.title} description={about.description}>
+  <section class="container hero">
+    <h1>{about.h1}</h1>
+    <p class="lede">{about.lede}</p>
+  </section>
+
+  <section class="container">
+    <h2>What this is</h2>
+    <p>
+      A tour archive for one band. Where they play next, where they played last, and the routings
+      of the tours in between &mdash; each entry naming the source that confirmed it and the day we
+      last looked.
+    </p>
+    <p>
+      It exists because one of those routings was ours. The 2015 eastern leg of the Feel It All
+      tour was published, night by night, on a listings site this operator ran at the time; the
+      site closed, and the leg went with it. It was recovered from the web archive in 2026 and is
+      back on <a href="/tours/feel-it-all-2015/">its own page</a>.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>The rules</h2>
+    <ol class="rules">
+      <li>
+        <h3>Every date names a source, and the day we last checked it</h3>
+        <p>Not &ldquo;updated regularly&rdquo;. A name and a date, printed on the page, so you can see how fresh the thing you are reading is.</p>
+      </li>
+      <li>
+        <h3>An unconfirmed date is not printed</h3>
+        <p>Dates come from the venue or from the tour&rsquo;s own listing. A show we could not confirm waits until we can, and a venue that was announced without a room says so rather than being filled in.</p>
+      </li>
+      <li>
+        <h3>Tickets go to the seller, through a hop</h3>
+        <p>Where there is a seller on file the button goes there and nowhere else. This site sells nothing and takes no commission.</p>
+      </li>
+      <li>
+        <h3>Tours, not lives</h3>
+        <p>What the band plays and where. Not what they are alleged to have said, not who they are seeing, not anything a court is handling.</p>
+      </li>
+      <li>
+        <h3>A page exists when there is something to put on it</h3>
+        <p>Six of the ten tours here are index rows rather than pages, because a routing we cannot document is a heading over an empty page.</p>
+      </li>
+    </ol>
+    <p class="source-line">This site is not affiliated with Tokio Hotel or their management. Last checked {checkedOn}.</p>
+  </section>
+</Layout>
+
+<style>
+  .rules {
+    margin: var(--space-3) 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: var(--space-3);
+  }
+  .rules h3 { margin: 0 0 0.35rem; font-size: 1.05rem; }
+  .rules p { margin: 0; }
+  .source-line { margin-top: var(--space-3); color: var(--ink-faint); font-size: 0.9rem; }
+</style>

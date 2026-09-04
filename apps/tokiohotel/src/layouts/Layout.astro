@@ -1,0 +1,35 @@
+---
+import BaseLayout from "@dst/ui/BaseLayout.astro";
+import { site } from "../site.config";
+import "../styles/theme.css";
+
+interface Props {
+  /** Forwarded to BaseLayout: see its `prose` prop. */
+  prose?: boolean;
+  title: string;
+  description: string;
+  jsonLd?: Record<string, unknown>[];
+  image?: string;
+  noindex?: boolean;
+}
+const { title, description, jsonLd, image, noindex, prose } = Astro.props;
+
+const nav = [
+  { href: "/", label: "Dates", icon: "events" },
+  { href: "/tours/", label: "Tours", icon: "stage" },
+  { href: "/cities/", label: "Cities", icon: "map" },
+  { href: "/about/", label: "About", icon: "id" },
+];
+---
+<BaseLayout
+  {...site}
+  prose={prose}
+  title={title}
+  description={description}
+  nav={nav}
+  jsonLd={jsonLd}
+  image={image}
+  noindex={noindex}
+>
+  <slot />
+</BaseLayout>

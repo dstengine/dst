@@ -12,7 +12,7 @@
     "dev:visas": "npm run dev --workspace=apps/visas",
     "dev:riviera": "npm run dev --workspace=apps/riviera",
     "dev:mbr": "npm run dev --workspace=apps/mbr",
-    "build": "npm run build --workspace=apps/dst && npm run build --workspace=apps/llc && npm run build --workspace=apps/visas && npm run build --workspace=apps/riviera && npm run build --workspace=apps/mbr && npm run build --workspace=apps/palmcentral && npm run build --workspace=apps/eco && npm run build --workspace=apps/fwf && npm run build --workspace=apps/musical && npm run build --workspace=apps/nyc42 && npm run build --workspace=apps/ldn && npm run build --workspace=apps/lnd && npm run build --workspace=apps/cmx && npm run build --workspace=apps/mxo",
+    "build": "npm run build --workspace=apps/dst && npm run build --workspace=apps/llc && npm run build --workspace=apps/visas && npm run build --workspace=apps/riviera && npm run build --workspace=apps/mbr && npm run build --workspace=apps/palmcentral && npm run build --workspace=apps/eco && npm run build --workspace=apps/fwf && npm run build --workspace=apps/musical && npm run build --workspace=apps/nyc42 && npm run build --workspace=apps/ldn && npm run build --workspace=apps/lnd && npm run build --workspace=apps/cmx && npm run build --workspace=apps/mxo && npm run build --workspace=apps/tokiohotel",
     "build:dst": "npm run build --workspace=apps/dst",
     "build:llc": "npm run build --workspace=apps/llc",
     "build:visas": "npm run build --workspace=apps/visas",
@@ -48,7 +48,9 @@
     "build:mxo": "npm run build --workspace=apps/mxo",
     "dev:mxo": "npm run dev --workspace=apps/mxo",
     "events": "node tools/events-scan.mjs",
-    "test:prices": "node --experimental-strip-types --test tests/prices.test.js"
+    "test:prices": "node --experimental-strip-types --test tests/prices.test.js",
+    "build:tokiohotel": "npm run build --workspace=apps/tokiohotel",
+    "dev:tokiohotel": "npm run dev --workspace=apps/tokiohotel"
   },
   "devDependencies": {
     "@playwright/test": "^1.62.1",

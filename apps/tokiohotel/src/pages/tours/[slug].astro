@@ -1,0 +1,43 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
+import Dates from "../../components/Dates.astro";
+import { origin } from "../../content";
+import { tourPages, checkedOn, type Tour } from "../../data/tours";
+import { musicGroup, musicEvent } from "../../schema";
+
+export function getStaticPaths() {
+  return tourPages().map((tour) => ({ params: { slug: tour.slug }, props: { tour } }));
+}
+
+const { tour } = Astro.props as { tour: Tour };
+const shows = tour.shows!;
+const canonical = `${origin}/tours/${tour.slug}/`;
+
+const cities = [...new Set(shows.map((s) => s.city))].length;
+const countries = [...new Set(shows.map((s) => s.country))].length;
+const title = `${tour.name} ${tour.years}`;
+const description = `${tour.name}, ${tour.years}: ${shows.length} dates in ${cities} cities, each one with the source that confirmed it.`;
+
+// Only a routing that is still current is markup a crawler should treat as
+// an event. The 2015 leg is history, and history goes out as prose.
+const upcoming = shows.some((s) => s.date >= checkedOn);
+const jsonLd = upcoming ? [musicGroup, ...shows.map((s) => musicEvent(s, tour.name, canonical))] : [];
+---
+<Layout prose title={title} description={description} jsonLd={jsonLd}>
+  <section class="container hero">
+    <Breadcrumbs crumbs={[{ href: "/tours/", label: "Tours" }]} current={title} homeLabel="Dates" />
+    <h1>{title}</h1>
+    {tour.summary?.map((p) => <p class="lede">{p}</p>)}
+  </section>
+
+  <section class="container">
+    <h2>{shows.length} dates{countries > 1 ? `, ${countries} countries` : ""}</h2>
+    <Dates shows={shows} />
+    <p class="source-line">Source: {tour.source!.name}. Last checked {tour.source!.verifiedOn}.</p>
+  </section>
+</Layout>
+
+<style>
+  .source-line { margin-top: var(--space-2); color: var(--ink-faint); font-size: 0.9rem; }
+</style>

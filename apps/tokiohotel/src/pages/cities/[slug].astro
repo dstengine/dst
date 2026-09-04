@@ -1,0 +1,69 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
+import Dates from "../../components/Dates.astro";
+import { origin } from "../../content";
+import { cities, tourBySlug, type City } from "../../data/tours";
+import { musicGroup, musicEvent } from "../../schema";
+import { go } from "../../outbound";
+
+export function getStaticPaths() {
+  return cities.map((city) => ({ params: { slug: city.slug }, props: { city } }));
+}
+
+const { city } = Astro.props as { city: City };
+const canonical = `${origin}/cities/${city.slug}/`;
+const title = `Tokio Hotel in ${city.name}`;
+const description = city.upcoming?.length
+  ? `Tokio Hotel play ${city.name} on ${city.upcoming[0].show.date}. Date, venue and where the tickets are.`
+  : `No Tokio Hotel date in ${city.name} is announced. When they last played, and what the current tour does instead.`;
+
+const jsonLd = city.upcoming?.length
+  ? [musicGroup, ...city.upcoming.map((u) => musicEvent(u.show, tourBySlug(u.tour)!.name, canonical))]
+  : [];
+---
+<Layout prose title={title} description={description} jsonLd={jsonLd}>
+  <section class="container hero">
+    <Breadcrumbs crumbs={[{ href: "/cities/", label: "Cities" }]} current={city.name} homeLabel="Dates" />
+    <h1>{title}</h1>
+    {city.summary.map((p) => <p class="lede">{p}</p>)}
+  </section>
+
+  {city.upcoming?.length ? (
+    <section class="container">
+      <h2>The date</h2>
+      <Dates shows={city.upcoming.map((u) => u.show)} linkCities={false} />
+      <p>
+        Part of the <a href={`/tours/${city.upcoming[0].tour}/`}>{tourBySlug(city.upcoming[0].tour)!.name}</a>.
+      </p>
+      {city.cityGuide && (
+        <p>
+          Our {city.cityGuide.host} guide covers this one from the city&rsquo;s side &mdash; how the
+          evening sits in the week, and how you get there:
+          <a href={city.cityGuide.url}>{city.cityGuide.label}</a>.
+        </p>
+      )}
+    </section>
+  ) : (
+    <section class="container">
+      <h2>Last time</h2>
+      <p>
+        {city.lastVisit!.date} &mdash; {city.lastVisit!.venue}, on the
+        <a href={`/tours/`}>{tourBySlug(city.lastVisit!.tour)!.name}</a>.
+        Nothing has been announced since.
+      </p>
+      <p><a href="/">The dates that are announced are here</a>.</p>
+    </section>
+  )}
+
+  <section class="container">
+    <p class="source-line">
+      Source: {city.source.url ? <a href={go(city.source.url)} rel="nofollow">{city.source.name}</a> : city.source.name}.
+      Last checked {city.source.verifiedOn}.
+    </p>
+  </section>
+</Layout>
+
+<style>
+  .source-line { color: var(--ink-faint); font-size: 0.9rem; }
+</style>
