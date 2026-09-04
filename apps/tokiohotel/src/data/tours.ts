@@ -255,7 +255,7 @@ export const tours: Tour[] = [
         heading: "How the routing reads",
         paragraphs: [
           "Paris is the only city that gets the band twice, on 30 October and again on 21 November — once on the way out, once on the way back. Everywhere else gets one night and no return.",
-          "There is no Americas leg, and no second British date. If you are reading this from outside the ten countries below, the honest answer is that this run has nothing for you — though the summer after it does reach four countries this one skips, and one town it has never played on a tour of this size.",
+          "There is no Americas leg, and no second British date. If you are reading this from outside the ten countries below, the honest answer is that this run has nothing for you — though the summer after it does add Poland, and puts the band in the town they formed in.",
         ],
       },
       {
@@ -290,7 +290,7 @@ export const tours: Tour[] = [
         heading: "Where the rooms are not yet named",
         paragraphs: [
           "Two of the fourteen have a venue: Progresja Summer Stage in Warsaw, and the Frequency Festival at Sankt Pölten, which runs across three days from 19 August. The other twelve are on sale with a city and a date and nothing else, which is normal this far out for open-airs and is exactly how they are printed below.",
-          "Rome, Warsaw and Sankt Pölten are countries the 2026 run does not visit at all. Hamburg, Frankfurt, Berlin and Dortmund get a second look at a band they will already have seen nine months earlier, in a very different room.",
+          "Poland is the one country here that the arena tour does not reach; Italy, Austria and Germany are on both runs, in different cities. Only three cities repeat: Hamburg, Frankfurt and Berlin get a second look at a band they will already have seen nine or ten months earlier, in a very different room. The other eleven stops here are places the arena tour never reaches.",
         ],
       },
       {

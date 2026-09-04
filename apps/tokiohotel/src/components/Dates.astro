@@ -43,13 +43,18 @@ const day = (iso: string) =>
     padding: 0;
     list-style: none;
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
     gap: 1px;
     background: var(--border);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     overflow: hidden;
   }
+  /* tokens.css caps `p, li` at the reading measure, which is right for running
+     text and wrong for a row: it left the list's border showing past the end of
+     every row whose venue was short. */
   .dates li {
+    max-width: none;
     background: var(--surface);
     padding: var(--space-2);
     display: grid;

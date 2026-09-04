@@ -8,8 +8,8 @@
 // thirty-one times. Anything a city gets beyond that is in NOTES, and comes
 // from the history, with a source.
 //
-// A city can now appear on both runs — Hamburg, Berlin, Frankfurt and
-// Dortmund all do — so a city holds a list of stops, one per tour, and not a
+// A city can now appear on both runs — Hamburg, Berlin and Frankfurt
+// all do — so a city holds a list of stops, one per tour, and not a
 // single position in a single routing.
 import { tourBySlug, type Show, type Tour } from "./tours";
 import { checkedOn, OFFICIAL, WIKIPEDIA, type Source } from "./band";

@@ -90,8 +90,8 @@ const jsonLd = playing
           {stop.previous ? (
             <>
               They come here from <a href={stop.previous.cityPage!}>{stop.previous.city}</a>,
-              {" "}{nights(stop.previous.date, stop.shows[0].date)} night
-              {nights(stop.previous.date, stop.shows[0].date) === 1 ? "" : "s"} earlier.
+              {" "}{nights(stop.previous.date, stop.shows[0].date)}
+              {" "}night{nights(stop.previous.date, stop.shows[0].date) === 1 ? "" : "s"} earlier.
             </>
           ) : (
             <>This is opening night: nothing comes before it.</>
@@ -100,8 +100,8 @@ const jsonLd = playing
           {stop.next ? (
             <>
               They go on to <a href={stop.next.cityPage!}>{stop.next.city}</a>
-              {" "}{nights(stop.shows[stop.shows.length - 1].date, stop.next.date)} night
-              {nights(stop.shows[stop.shows.length - 1].date, stop.next.date) === 1 ? "" : "s"} later.
+              {" "}{nights(stop.shows[stop.shows.length - 1].date, stop.next.date)}
+              {" "}night{nights(stop.shows[stop.shows.length - 1].date, stop.next.date) === 1 ? "" : "s"} later.
             </>
           ) : (
             <>Nothing follows it: the tour ends here.</>
@@ -113,9 +113,11 @@ const jsonLd = playing
 
   {both && (
     <section class="container">
-      <h2>Twice in ten months</h2>
+      <h2>On both runs</h2>
       <p>
-        This is one of four cities on both announced runs. The arena night and the summer night are
+        {city.name} is one of three cities on both announced tours &mdash; the others are
+        {" "}{["Hamburg", "Frankfurt", "Berlin"].filter((n) => n !== city.name).join(" and ")}.
+        The arena night and the summer night are about
         {" "}{Math.round(nights(city.shows[0].date, city.shows[city.shows.length - 1].date) / 30)} months
         apart, indoors and then outdoors, and nothing says the two shows are the same show.
       </p>
