@@ -337,4 +337,125 @@ export const items: EventItem[] = [
     expertise:
       "The one decision worth making in advance is which day. Sunday and Monday get described together often enough that people arrive on the Monday expecting the Sunday&rsquo;s crowd, which is a different event at a different density. If it is a first Carnival, or there are children involved, Sunday is the day &mdash; and Saturday if what you actually came for is the music",
   },
+
+  {
+    slug: "andre-rieu-ovo-arena-2026",
+    site: "ldn",
+    title: "André Rieu at OVO Arena Wembley",
+    cardTitle: "André Rieu at Wembley",
+    summary:
+      "Two nights, 17 and 18 September, with the Johann Strauss Orchestra. The arena lists a 6pm start; AXS puts doors at 6.30pm and the stage at 7.30pm on the Friday.",
+    start: "2026-09-17",
+    end: "2026-09-18",
+    startTime: "18:00",
+    utcOffset: "+01:00",
+    city: "London",
+    venue: "OVO Arena Wembley, Arena Square, Engineers Way, HA9 0AA",
+    category: "Music",
+    organizer: "OVO Arena Wembley",
+    ticket: {
+      url: "https://www.axs.com/uk/series/31513/andre-rieu-at-ovo-arena-wembley-tickets?skin=wembley",
+      label: "Both nights on AXS",
+    },
+    source: {
+      name: "OVO Arena Wembley, with the Friday times confirmed on AXS",
+      url: "https://www.ovoarena.co.uk/events",
+      verifiedOn: "2026-09-04",
+    },
+    body: [
+      "Most acts at this arena get one night. Rieu gets two, on the Thursday and the Friday, and sells them the way he has sold every UK visit for two decades &mdash; as an evening out rather than a concert.",
+      "## When",
+      "<strong>Thursday 17</strong> and <strong>Friday 18 September 2026</strong>. The arena publishes <strong>6pm</strong> for the run; for the Friday, AXS lists <strong>doors at 6.30pm</strong> and the show at <strong>7.30pm</strong>. The two nights are sold together as one AXS series.",
+      "## What the evening is",
+      "Rieu tours with the <strong>Johann Strauss Orchestra</strong>, which he founded, and the programme moves between waltzes, light classics, musicals and film scores rather than staying in one of them. The staging is part of the proposition: the orchestra plays in costume, on a set built for the room.",
+      "## The scale of it",
+      "The arena&rsquo;s own listing puts it plainly &mdash; more than <strong>40 million albums</strong> sold, over <strong>700,000 people</strong> at his concerts in a year, and <strong>13 UK top-ten albums</strong>. He is billed as the King of Waltz, and in the UK the cinema broadcasts of these shows have outsold a good deal of what was in the cinemas with them.",
+      "## Getting there",
+      "Wembley Park, on the Jubilee and Metropolitan lines, is the station the arena points at. Wembley Stadium, on the Chiltern line from Marylebone, is the alternative.",
+    ],
+    expertise:
+      "Two-night runs at Wembley behave differently from single nights, and the difference is worth a moment before booking. The Thursday is the quieter of the two to travel to and usually the easier to get a decent seat on late; the Friday absorbs everyone who could not take a weeknight, and Wembley Park at 10.30pm on a Friday is a different station from Wembley Park at 10.30pm on a Thursday. The other thing to know about this particular audience is that it arrives early. Rieu&rsquo;s crowd is not a support-act crowd &mdash; the room is close to full when the orchestra walks on, which means the bars and the lifts are busiest well before the advertised start rather than during it.",
+  },
+
+  {
+    slug: "anastacia-ovo-arena-2026",
+    site: "ldn",
+    title: "Anastacia at OVO Arena Wembley",
+    cardTitle: "Anastacia at Wembley",
+    summary:
+      "Saturday 26 September, doors 6pm and stage 7.30pm. The #NTK Tour 2026 reaches Wembley with Roachford and Acrobvt supporting.",
+    start: "2026-09-26",
+    startTime: "18:00",
+    utcOffset: "+01:00",
+    city: "London",
+    venue: "OVO Arena Wembley, Arena Square, Engineers Way, HA9 0AA",
+    category: "Music",
+    organizer: "OVO Arena Wembley",
+    ticket: {
+      url: "https://www.axs.com/uk/events/1123850/anastacia-tickets?skin=wembley",
+      label: "Tickets on AXS",
+    },
+    source: {
+      name: "AXS, the venue's own ticket source, cross-checked against the arena listing",
+      url: "https://www.axs.com/uk/events/1123850/anastacia-tickets?skin=wembley",
+      verifiedOn: "2026-09-04",
+    },
+    programme: [
+      { heading: "Anastacia", text: "Headlining the #NTK Tour 2026." },
+      { heading: "Roachford", text: "Support." },
+      { heading: "Acrobvt", text: "Support." },
+    ],
+    body: [
+      "A Saturday night with two support acts on the bill is a full evening rather than a headline set with a warm-up, and this one is billed that way: Anastacia, plus Roachford and Acrobvt.",
+      "## When",
+      "<strong>Saturday 26 September 2026</strong>. <strong>Doors at 6pm</strong>, and AXS lists the show at <strong>7.30pm</strong> &mdash; an hour and a half of room between the two, which is what a three-act bill needs.",
+      "## Where",
+      "<strong>OVO Arena Wembley</strong>, Arena Square, HA9 0AA. Tickets are sold through <strong>AXS</strong>, which is the arena&rsquo;s own ticket source rather than a resale site.",
+      "## Getting there",
+      "Wembley Park on the Jubilee and Metropolitan lines, or Wembley Stadium from Marylebone. On a Saturday it is worth checking whether the stadium next door is also in use, because the two share the walk.",
+    ],
+    expertise:
+      "The gap between doors and stage time is the useful number on this listing. Six o&rsquo;clock doors with a 7.30pm start means the first support is on well before the headline, and anyone arriving for 7.30 will have missed a chunk of the bill they paid for. It also means the reverse is true: if what you came for is Anastacia and not the evening, there is no reason to be at Wembley Park at six. The other Saturday-specific point is the stadium. Wembley Park serves both venues, and an arena night that coincides with a stadium event turns a four-minute walk into a queued one &mdash; the arena&rsquo;s own what&rsquo;s-on page is the place to check that before setting off.",
+  },
+
+  {
+    slug: "simple-plan-ovo-arena-2026",
+    site: "ldn",
+    title: "Simple Plan at OVO Arena Wembley",
+    cardTitle: "Simple Plan at Wembley",
+    summary:
+      "Saturday 3 October, doors 6pm and stage 7.30pm: the Bigger Than You Think! Europe Tour 2026, with Stand Atlantic and Charlotte Sands.",
+    start: "2026-10-03",
+    startTime: "18:00",
+    utcOffset: "+01:00",
+    city: "London",
+    venue: "OVO Arena Wembley, Arena Square, Engineers Way, HA9 0AA",
+    category: "Music",
+    organizer: "OVO Arena Wembley",
+    ticket: {
+      url: "https://www.axs.com/uk/events/1241818/simple-plan-tickets?skin=wembley",
+      label: "Tickets on AXS",
+    },
+    source: {
+      name: "AXS, the venue's own ticket source, cross-checked against the arena listing",
+      url: "https://www.axs.com/uk/events/1241818/simple-plan-tickets?skin=wembley",
+      verifiedOn: "2026-09-04",
+    },
+    programme: [
+      { heading: "Simple Plan", text: "Headlining the Bigger Than You Think! Europe Tour 2026." },
+      { heading: "Stand Atlantic", text: "Support." },
+      { heading: "Charlotte Sands", text: "Support." },
+    ],
+    body: [
+      "The tour is called Bigger Than You Think!, and the London date is the kind of booking that tests the claim: an arena on a Saturday, with two support acts, for a band whose audience largely met them somewhere other than an arena.",
+      "## When",
+      "<strong>Saturday 3 October 2026</strong>, <strong>doors 6pm</strong>, show at <strong>7.30pm</strong> according to AXS.",
+      "## Who else is on it",
+      "<strong>Stand Atlantic</strong> and <strong>Charlotte Sands</strong> both support. The arena&rsquo;s own listing spells the first of them differently from AXS; AXS is the ticket source and is the spelling used here.",
+      "## Where, and how to reach it",
+      "<strong>OVO Arena Wembley</strong>, Arena Square, HA9 0AA &mdash; Wembley Park on the Jubilee and Metropolitan lines, or Wembley Stadium station on the Chiltern line out of Marylebone.",
+    ],
+    expertise:
+      "Three bands and a 6pm door is a long evening, and the arena&rsquo;s standing floor is where that gets felt: by the time the headline starts, anyone who came in at six has been on their feet for an hour and a half. Seated tickets are the better choice for a bill this length unless the floor is the point. Worth knowing too that this is the second Saturday arena show at Wembley inside eight days &mdash; Anastacia has the 26th &mdash; so if the Jubilee line has engineering work scheduled for one of those weekends, it is the sort of thing that gets announced once and catches people twice.",
+  },
 ];
