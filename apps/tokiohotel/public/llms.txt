@@ -1,14 +1,15 @@
 # tokiohotel.vvm.space
 
-> A tour archive for one band: where Tokio Hotel play next, where they played last, and the routings of the ten tours in between. Every date names the source that confirmed it and the day it was last checked. Nothing goes up on a date we could not confirm, and a venue announced without a room says so rather than being filled in.
+> A tour archive for one band: where Tokio Hotel play next, where they played last, and the routings of the eleven tours in between. Every date names the source that confirmed it and the day it was last checked. Nothing goes up on a date we could not confirm, and a venue announced without a room says so rather than being filled in.
 
 Written by hand rather than generated: this site has no news or events feed, and its map is short enough to stay true.
 
 ## Dates
-- [Tokio Hotel on tour](https://tokiohotel.vvm.space/): the seventeen-night Arena Tour 2026, the album it carries, and where the facts come from.
+- [Tokio Hotel on tour](https://tokiohotel.vvm.space/): both announced runs — the seventeen-night Arena Tour 2026 and the fourteen-date Summer Encore 2027 — the album they carry, and where the facts come from.
 
 ## Tours
-- [Ten tours since 2005](https://tokiohotel.vvm.space/tours/): every Tokio Hotel tour in order.
+- [Eleven tours since 2005](https://tokiohotel.vvm.space/tours/): every Tokio Hotel tour in order.
+- [Summer Encore 2027](https://tokiohotel.vvm.space/tours/summer-encore-2027/): fourteen open-air dates, Rome to Hanover — including Magdeburg, the city the band formed in.
 - [Arena Tour 2026](https://tokiohotel.vvm.space/tours/arena-tour-2026/): seventeen dates, ten countries, London to Madrid — the run behind the album Encore.
 - [The Tour 2025](https://tokiohotel.vvm.space/tours/the-tour-2025/): announced eighteen months ahead, alongside a one-night twentieth-anniversary show.
 - [Beyond the World Tour 2023–2024](https://tokiohotel.vvm.space/tours/beyond-the-world-2023/): announced for 2021, moved twice, and the last time the band crossed the Atlantic.
@@ -32,14 +33,14 @@ Written by hand rather than generated: this site has no news or events feed, and
 - [Schrei (2005)](https://tokiohotel.vvm.space/albums/schrei/): the debut, partly re-recorded a year later when the singer's voice broke.
 
 ## Cities
-- [City by city](https://tokiohotel.vvm.space/cities/): every stop on the run, and the two cities that are not on it.
+- [City by city](https://tokiohotel.vvm.space/cities/): every stop on both runs, and the two cities that are on neither.
 - [Tokio Hotel in London](https://tokiohotel.vvm.space/cities/london/): 28 October 2026, OVO Arena Wembley — the only UK date of the run.
 - [Tokio Hotel in Paris](https://tokiohotel.vvm.space/cities/paris/): 30 October and 21 November 2026 — the only city that gets two nights.
-- [Tokio Hotel in Hamburg](https://tokiohotel.vvm.space/cities/hamburg/): 1 November 2026, Barclays Arena.
+- [Tokio Hotel in Hamburg](https://tokiohotel.vvm.space/cities/hamburg/): 1 November 2026, Barclays Arena, and again 23 August 2027.
 - [Tokio Hotel in Brussels](https://tokiohotel.vvm.space/cities/brussels/): 2 November 2026, Forest National.
 - [Tokio Hotel in Amsterdam](https://tokiohotel.vvm.space/cities/amsterdam/): 4 November 2026, AFAS Live.
-- [Tokio Hotel in Frankfurt](https://tokiohotel.vvm.space/cities/frankfurt/): 5 November 2026, Festhalle.
-- [Tokio Hotel in Berlin](https://tokiohotel.vvm.space/cities/berlin/): 7 November 2026, Uber Arena.
+- [Tokio Hotel in Frankfurt](https://tokiohotel.vvm.space/cities/frankfurt/): 5 November 2026, Festhalle, and again 11 August 2027.
+- [Tokio Hotel in Berlin](https://tokiohotel.vvm.space/cities/berlin/): 7 November 2026, Uber Arena, and again 25 August 2027.
 - [Tokio Hotel in Nuremberg](https://tokiohotel.vvm.space/cities/nuremberg/): 8 November 2026, venue not announced.
 - [Tokio Hotel in Zürich](https://tokiohotel.vvm.space/cities/zurich/): 10 November 2026, Hallenstadion.
 - [Tokio Hotel in Milan](https://tokiohotel.vvm.space/cities/milan/): 11 November 2026, Unipol Forum.
@@ -49,11 +50,22 @@ Written by hand rather than generated: this site has no news or events feed, and
 - [Tokio Hotel in Esch-sur-Alzette](https://tokiohotel.vvm.space/cities/esch-sur-alzette/): 18 November 2026, Rockhal.
 - [Tokio Hotel in Düsseldorf](https://tokiohotel.vvm.space/cities/dusseldorf/): 19 November 2026, venue not announced.
 - [Tokio Hotel in Madrid](https://tokiohotel.vvm.space/cities/madrid/): 23 November 2026, Palacio Vistalegre — the last night.
+- [Tokio Hotel in Magdeburg](https://tokiohotel.vvm.space/cities/magdeburg/): 15 August 2027 — where the band formed in 2001.
+- [Tokio Hotel in Rome](https://tokiohotel.vvm.space/cities/rome/): 14 July 2027, opening the Summer Encore run.
+- [Tokio Hotel in Warsaw](https://tokiohotel.vvm.space/cities/warsaw/): 19 July 2027, Progresja Summer Stage.
+- [Tokio Hotel in Aurich](https://tokiohotel.vvm.space/cities/aurich/): 5 August 2027, venue not announced.
+- [Tokio Hotel in Dortmund](https://tokiohotel.vvm.space/cities/dortmund/): 6 August 2027, venue not announced.
+- [Tokio Hotel in Würzburg](https://tokiohotel.vvm.space/cities/wurzburg/): 8 August 2027, venue not announced.
+- [Tokio Hotel in Mönchengladbach](https://tokiohotel.vvm.space/cities/monchengladbach/): 10 August 2027, venue not announced.
+- [Tokio Hotel in Dresden](https://tokiohotel.vvm.space/cities/dresden/): 13 August 2027, venue not announced.
+- [Tokio Hotel in Halle (Saale)](https://tokiohotel.vvm.space/cities/halle-saale/): 17 August 2027, venue not announced.
+- [Tokio Hotel in Sankt Pölten](https://tokiohotel.vvm.space/cities/sankt-polten/): 19 August 2027, Frequency Festival — the only festival on either run.
+- [Tokio Hotel in Hanover](https://tokiohotel.vvm.space/cities/hanover/): 27 August 2027, closing the Summer Encore run.
 - [Tokio Hotel in New York](https://tokiohotel.vvm.space/cities/new-york/): nothing upcoming; last played 4 December 2024.
 - [Tokio Hotel in Mexico City](https://tokiohotel.vvm.space/cities/mexico-city/): nothing upcoming; last played 6 December 2024.
 
 ## History
-- [Twenty-five years, in order](https://tokiohotel.vvm.space/history/): Magdeburg 2001 to Wembley 2026, dated.
+- [Twenty-five years, in order](https://tokiohotel.vvm.space/history/): Magdeburg 2001 to Wembley 2026 and back to Magdeburg in 2027, dated.
 
 ## About
 - [About this site](https://tokiohotel.vvm.space/about/): what it publishes, what it will not, and that it is not affiliated with the band.

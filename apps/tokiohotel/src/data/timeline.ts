@@ -59,6 +59,10 @@ export const timeline: Moment[] = [
     text: "The eighth studio album, its name confirmed by an Amazon pre-order listing before the band said it themselves. Out twelve days before the tour opens." },
   { when: "28 October 2026", sort: "2026-10-28", title: "Wembley",
     text: "The Arena Tour opens at OVO Arena Wembley: seventeen nights, ten countries, finishing in Madrid on 23 November." },
+  { when: "14 July 2027", sort: "2027-07-14", title: "Summer Encore opens in Rome",
+    text: "A second announced run, fourteen open-air dates through July and August, in four countries the arena tour mostly does not reach." },
+  { when: "15 August 2027", sort: "2027-08-15", title: "Magdeburg",
+    text: "Twenty-six years after the four of them formed the band there, the city is a date on a European summer tour — between Dresden and Halle, in the middle of the German block." },
 ];
 
 export const orderedTimeline = [...timeline].sort((a, b) => a.sort.localeCompare(b.sort));

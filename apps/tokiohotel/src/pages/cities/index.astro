@@ -2,11 +2,22 @@
 import Layout from "../../layouts/Layout.astro";
 import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
 import { cities as copy } from "../../content";
-import { upcomingCities, pastOnlyCities } from "../../data/cities";
+import { citiesOn, pastOnlyCities } from "../../data/cities";
+import { tourBySlug } from "../../data/tours";
 import { checkedOn } from "../../data/band";
 import { formatDate } from "@dst/ui/date";
 
-const stops = upcomingCities().sort((a, b) => a.shows[0].date.localeCompare(b.shows[0].date));
+// Grouped by tour, not merged into one list: two runs a year apart are two
+// different maps, and a city on both appears on both.
+const runs = ["arena-tour-2026", "summer-encore-2027"].map((slug) => {
+  const tour = tourBySlug(slug)!;
+  return {
+    tour,
+    stops: citiesOn(slug)
+      .map((city) => ({ city, stop: city.stops.find((s) => s.tour.slug === slug)! }))
+      .sort((a, b) => a.stop.night - b.stop.night),
+  };
+});
 const past = pastOnlyCities();
 ---
 <Layout prose title={copy.title} description={copy.description}>
@@ -16,24 +27,26 @@ const past = pastOnlyCities();
     <p class="lede">{copy.lede}</p>
   </section>
 
-  <section class="container">
-    <h2>On the 2026 run</h2>
-    <ol class="cities">
-      {stops.map((city) => (
-        <li>
-          <span class="night">Night {city.night}</span>
-          <span class="body">
-            <strong><a href={`/cities/${city.slug}/`}>{city.name}</a></strong>
-            <span class="meta">
-              {city.country} &middot; {formatDate(city.shows[0].date, "en-GB")}
-              {city.shows.length > 1 && <> and {formatDate(city.shows[1].date, "en-GB")}</>}
-              {city.shows[0].venue && <> &middot; {city.shows[0].venue}</>}
+  {runs.map(({ tour, stops }) => (
+    <section class="container">
+      <h2><a href={`/tours/${tour.slug}/`}>{tour.name} {tour.years}</a></h2>
+      <p class="meta">{tour.blurb}</p>
+      <ol class="cities">
+        {stops.map(({ city, stop }) => (
+          <li>
+            <span class="night">Night {stop.night}</span>
+            <span class="body">
+              <strong><a href={`/cities/${city.slug}/`}>{city.name}</a></strong>
+              <span class="meta">
+                {city.country} &middot; {stop.shows.map((s) => formatDate(s.date, "en-GB")).join(" and ")}
+                {stop.shows[0].venue && <> &middot; {stop.shows[0].venue}</>}
+              </span>
             </span>
-          </span>
-        </li>
-      ))}
-    </ol>
-  </section>
+          </li>
+        ))}
+      </ol>
+    </section>
+  ))}
 
   <section class="container">
     <h2>Not on it</h2>

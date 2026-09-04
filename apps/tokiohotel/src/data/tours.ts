@@ -1,8 +1,8 @@
-// Ten tours, in order. Every one gets a page: where a routing survives it is
+// Eleven tours, in order. Every one gets a page: where a routing survives it is
 // printed date for date, and where it does not, what happened on the road
 // does the work instead. Nothing here is invented to fill a page — a tour
 // with nothing to say would not have one.
-import { checkedOn, WIKIPEDIA, type Source } from "./band";
+import { checkedOn, OFFICIAL, WIKIPEDIA, type Source } from "./band";
 
 export interface Show {
   /** ISO date. Every show on this site has one; that is the point of it. */
@@ -46,22 +46,22 @@ const VENUE: Source = { name: "OVO Arena Wembley", url: "ovo-arena-events", veri
 
 export const arenaTour2026: Show[] = [
   { date: "2026-10-28", city: "London", country: "United Kingdom", venue: "OVO Arena Wembley", startTime: "18:00", ticket: "axs-wembley" },
-  { date: "2026-10-30", city: "Paris", country: "France", venue: "Adidas Arena" },
-  { date: "2026-11-01", city: "Hamburg", country: "Germany", venue: "Barclays Arena" },
-  { date: "2026-11-02", city: "Brussels", country: "Belgium", venue: "Forest National, Vorst" },
-  { date: "2026-11-04", city: "Amsterdam", country: "Netherlands", venue: "AFAS Live" },
-  { date: "2026-11-05", city: "Frankfurt", country: "Germany", venue: "Festhalle" },
-  { date: "2026-11-07", city: "Berlin", country: "Germany", venue: "Uber Arena" },
-  { date: "2026-11-08", city: "Nuremberg", country: "Germany" },
-  { date: "2026-11-10", city: "Zürich", country: "Switzerland", venue: "Hallenstadion" },
-  { date: "2026-11-11", city: "Milan", country: "Italy", venue: "Unipol Forum, Assago" },
-  { date: "2026-11-13", city: "Leipzig", country: "Germany" },
-  { date: "2026-11-15", city: "Vienna", country: "Austria", venue: "Wiener Stadthalle" },
-  { date: "2026-11-16", city: "Munich", country: "Germany", venue: "Olympiahalle" },
-  { date: "2026-11-18", city: "Esch-sur-Alzette", country: "Luxembourg", venue: "Rockhal" },
-  { date: "2026-11-19", city: "Düsseldorf", country: "Germany" },
-  { date: "2026-11-21", city: "Paris", country: "France" },
-  { date: "2026-11-23", city: "Madrid", country: "Spain", venue: "Palacio Vistalegre" },
+  { date: "2026-10-30", city: "Paris", country: "France", venue: "Adidas Arena", ticket: "bit-paris-oct" },
+  { date: "2026-11-01", city: "Hamburg", country: "Germany", venue: "Barclays Arena", ticket: "bit-hamburg" },
+  { date: "2026-11-02", city: "Brussels", country: "Belgium", venue: "Forest National, Vorst", ticket: "bit-brussels" },
+  { date: "2026-11-04", city: "Amsterdam", country: "Netherlands", venue: "AFAS Live", ticket: "bit-amsterdam" },
+  { date: "2026-11-05", city: "Frankfurt", country: "Germany", venue: "Festhalle", ticket: "bit-frankfurt" },
+  { date: "2026-11-07", city: "Berlin", country: "Germany", venue: "Uber Arena", ticket: "bit-berlin" },
+  { date: "2026-11-08", city: "Nuremberg", country: "Germany", ticket: "bit-nuremberg" },
+  { date: "2026-11-10", city: "Zürich", country: "Switzerland", venue: "Hallenstadion", ticket: "bit-zurich" },
+  { date: "2026-11-11", city: "Milan", country: "Italy", venue: "Unipol Forum, Assago", ticket: "bit-milan" },
+  { date: "2026-11-13", city: "Leipzig", country: "Germany", ticket: "bit-leipzig" },
+  { date: "2026-11-15", city: "Vienna", country: "Austria", venue: "Wiener Stadthalle", ticket: "bit-vienna" },
+  { date: "2026-11-16", city: "Munich", country: "Germany", venue: "Olympiahalle", ticket: "bit-munich" },
+  { date: "2026-11-18", city: "Esch-sur-Alzette", country: "Luxembourg", venue: "Rockhal", ticket: "bit-esch" },
+  { date: "2026-11-19", city: "Düsseldorf", country: "Germany", ticket: "bit-dusseldorf" },
+  { date: "2026-11-21", city: "Paris", country: "France", ticket: "bit-paris-nov" },
+  { date: "2026-11-23", city: "Madrid", country: "Spain", venue: "Palacio Vistalegre", ticket: "bit-madrid" },
 ];
 
 // Recovered from our own archive of sensation.vvm.space, a listings site
@@ -85,6 +85,26 @@ export const feelItAllEast2015: Show[] = [
   { date: "2015-11-04", city: "Voronezh", country: "Russia" },
   { date: "2015-11-06", city: "Kyiv", country: "Ukraine" },
   { date: "2015-11-08", city: "Minsk", country: "Belarus" },
+];
+
+// The second tour on the band's own site, and the one no listing carried
+// when this page was first written. Fourteen entries: two European cities,
+// a festival, and eleven German open-air nights in August.
+export const summerEncore2027: Show[] = [
+  { date: "2027-07-14", city: "Rome", country: "Italy", ticket: "vivaticket-rome" },
+  { date: "2027-07-19", city: "Warsaw", country: "Poland", venue: "Progresja Summer Stage", ticket: "ebilet-warsaw" },
+  { date: "2027-08-05", city: "Aurich", country: "Germany", ticket: "eventim-aurich" },
+  { date: "2027-08-06", city: "Dortmund", country: "Germany", ticket: "eventim-dortmund" },
+  { date: "2027-08-08", city: "Würzburg", country: "Germany", ticket: "eventim-wurzburg" },
+  { date: "2027-08-10", city: "Mönchengladbach", country: "Germany", ticket: "eventim-monchengladbach" },
+  { date: "2027-08-11", city: "Frankfurt am Main", country: "Germany", ticket: "eventim-frankfurt" },
+  { date: "2027-08-13", city: "Dresden", country: "Germany", ticket: "eventim-dresden" },
+  { date: "2027-08-15", city: "Magdeburg", country: "Germany", ticket: "eventim-magdeburg" },
+  { date: "2027-08-17", city: "Halle (Saale)", country: "Germany", ticket: "eventim-halle" },
+  { date: "2027-08-19", city: "Sankt Pölten", country: "Austria", venue: "Frequency Festival", ticket: "frequency-tickets" },
+  { date: "2027-08-23", city: "Hamburg", country: "Germany", ticket: "eventim-hamburg" },
+  { date: "2027-08-25", city: "Berlin", country: "Germany", ticket: "eventim-berlin" },
+  { date: "2027-08-27", city: "Hanover", country: "Germany", ticket: "eventim-hanover" },
 ];
 
 export const tours: Tour[] = [
@@ -235,7 +255,7 @@ export const tours: Tour[] = [
         heading: "How the routing reads",
         paragraphs: [
           "Paris is the only city that gets the band twice, on 30 October and again on 21 November — once on the way out, once on the way back. Everywhere else gets one night and no return.",
-          "There is no Americas leg. There is no second British date. If you are reading this from outside the ten countries below, the honest answer is that nothing has been announced for you, and this site will say so until something is.",
+          "There is no Americas leg, and no second British date. If you are reading this from outside the ten countries below, the honest answer is that this run has nothing for you — though the summer after it does reach four countries this one skips, and one town it has never played on a tour of this size.",
         ],
       },
       {
@@ -247,7 +267,43 @@ export const tours: Tour[] = [
     ],
     shows: arenaTour2026,
     showsHeading: "All seventeen dates",
-    source: { name: "Songkick, with the London date confirmed against OVO Arena Wembley", verifiedOn: checkedOn },
+    source: OFFICIAL,
+  },
+  {
+    slug: "summer-encore-2027",
+    name: "Summer Encore",
+    years: "2027",
+    blurb: "Fourteen open-air nights the summer after — including, on 15 August, the town they formed in.",
+    summary: [
+      "The Arena Tour is not the end of it. A second run is on sale for the summer that follows: fourteen dates from Rome on 14 July to Hanover on 27 August 2027, most of them German open-airs in a three-week block through August.",
+      "The two runs are opposites. The arena tour is indoors, in the dark, in ten countries, over twenty-seven days at the end of the year. This one is outdoors, in daylight, in four, and eleven of its fourteen nights are in Germany — the shape a band takes when it has stopped needing to prove the reach and starts playing the summer circuit at home.",
+    ],
+    sections: [
+      {
+        heading: "The 15th of August",
+        paragraphs: [
+          "Magdeburg is on the list. That is where the four of them met and where the band was formed in 2001, and on this routing it is not a stop between two others — it sits in the middle of the German block, on a Sunday, between Dresden and Halle.",
+          "They have played the city before. They have rarely played it as one of fourteen dates on a run that also takes in Rome and a festival main stage.",
+        ],
+      },
+      {
+        heading: "Where the rooms are not yet named",
+        paragraphs: [
+          "Two of the fourteen have a venue: Progresja Summer Stage in Warsaw, and the Frequency Festival at Sankt Pölten, which runs across three days from 19 August. The other twelve are on sale with a city and a date and nothing else, which is normal this far out for open-airs and is exactly how they are printed below.",
+          "Rome, Warsaw and Sankt Pölten are countries the 2026 run does not visit at all. Hamburg, Frankfurt, Berlin and Dortmund get a second look at a band they will already have seen nine months earlier, in a very different room.",
+        ],
+      },
+      {
+        heading: "About the ticket links",
+        paragraphs: [
+          "The band's own site marks eleven of these dates with an asterisk and the words “Advertising – Affiliate Links”: those buttons route through a tracking domain that pays a commission per click. The links here go to the same Eventim events with the affiliate code taken off. Same seller, same price, one redirect fewer, and nobody is paid for your click.",
+        ],
+      },
+    ],
+    shows: summerEncore2027,
+    showsHeading: "All fourteen dates",
+    showsNote: "Venue is printed where one has been announced. Twelve of the fourteen are on sale as a city and a date.",
+    source: OFFICIAL,
   },
 ];
 

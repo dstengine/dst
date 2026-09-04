@@ -8,7 +8,7 @@ import { ICONS } from "@dst/ui/icons";
 import { formatDate } from "@dst/ui/date";
 import { origin } from "../../content";
 import { cities, type City } from "../../data/cities";
-import { tourBySlug, arenaTour2026 } from "../../data/tours";
+import { tourBySlug } from "../../data/tours";
 import { musicGroup, musicEvent } from "../../schema";
 
 export function getStaticPaths() {
@@ -17,13 +17,16 @@ export function getStaticPaths() {
 
 const { city } = Astro.props as { city: City };
 const canonical = `${origin}/cities/${city.slug}/`;
-const arena = tourBySlug("arena-tour-2026")!;
 const playing = city.shows.length > 0;
+const first = city.shows[0];
+const both = city.stops.length > 1;
 
 const title = `Tokio Hotel in ${city.name}`;
 const description = playing
-  ? `Tokio Hotel play ${city.name} on ${formatDate(city.shows[0].date, "en-GB")}${city.shows[0].venue ? `, ${city.shows[0].venue}` : ""} — night ${city.night} of seventeen on the Arena Tour 2026.`
-  : `No Tokio Hotel date is announced in ${city.name}. When they last played there, and what the current tour does instead.`;
+  ? both
+    ? `Tokio Hotel play ${city.name} twice: ${city.stops.map((s) => `${formatDate(s.shows[0].date, "en-GB")} on the ${s.tour.name} ${s.tour.years}`).join(", and ")}.`
+    : `Tokio Hotel play ${city.name} on ${formatDate(first.date, "en-GB")}${first.venue ? `, ${first.venue}` : ""} — night ${city.stops[0].night} of ${city.stops[0].total} on the ${city.stops[0].tour.name} ${city.stops[0].tour.years}.`
+  : `No Tokio Hotel date is announced in ${city.name}. When they last played there, and what the announced tours do instead.`;
 
 // The gap either side of a stop, in nights. Derived, not written: it is the
 // one thing a routing tells you that no listing bothers to print.
@@ -32,17 +35,24 @@ const nights = (a: string, b: string) =>
 
 const facts = playing
   ? [
-      { label: "Date", value: formatDate(city.shows[0].date, "en-GB"), icon: ICONS.events },
+      { label: "Next date", value: formatDate(first.date, "en-GB"), icon: ICONS.events },
       ...(city.shows.length > 1
-        ? [{ label: "And again", value: formatDate(city.shows[1].date, "en-GB"), icon: ICONS.events }]
+        ? [{
+            label: "And again",
+            value: city.shows.slice(1).map((s) => formatDate(s.date, "en-GB")).join(" · "),
+            icon: ICONS.events,
+          }]
         : []),
-      ...(city.shows[0].venue
-        ? [{ label: "Venue", value: city.shows[0].venue, icon: ICONS.pin }]
-        : [{ label: "Venue", value: "Not announced", icon: ICONS.pin }]),
-      ...(city.shows[0].startTime
-        ? [{ label: "Starts", value: `${city.shows[0].startTime} local time`, icon: ICONS.clock }]
+      { label: "Venue", value: first.venue ?? "Not announced", icon: ICONS.pin },
+      ...(first.startTime
+        ? [{ label: "Starts", value: `${first.startTime} local time`, icon: ICONS.clock }]
         : []),
-      { label: "Night", value: `${city.night} of ${arenaTour2026.length}`, icon: ICONS.list, href: "/tours/arena-tour-2026/" },
+      ...city.stops.map((s) => ({
+        label: s.tour.years,
+        value: `Night ${s.night} of ${s.total}, ${s.tour.name}`,
+        icon: ICONS.stage,
+        href: `/tours/${s.tour.slug}/`,
+      })),
       { label: "Country", value: city.country, icon: ICONS.map },
     ]
   : [
@@ -53,7 +63,7 @@ const facts = playing
     ];
 
 const jsonLd = playing
-  ? [musicGroup, ...city.shows.map((s) => musicEvent(s, arena.name, canonical))]
+  ? [musicGroup, ...city.stops.flatMap((s) => s.shows.map((show) => musicEvent(show, s.tour.name, canonical)))]
   : [];
 ---
 <Layout prose title={title} description={description} jsonLd={jsonLd}>
@@ -64,47 +74,58 @@ const jsonLd = playing
     <Glance facts={facts} />
   </section>
 
-  {playing && (
+  {playing && city.stops.map((stop) => (
     <section class="container">
-      <h2>The date{city.shows.length > 1 ? "s" : ""}</h2>
-      <Dates shows={city.shows} linkCities={false} />
+      <h2>{both ? `${stop.tour.name} ${stop.tour.years}` : `The date${stop.shows.length > 1 ? "s" : ""}`}</h2>
+      <Dates shows={stop.shows} linkCities={false} />
       <p>
-        Part of the <a href={`/tours/${arena.slug}/`}>{arena.name} {arena.years}</a>, behind the
-        album <a href="/albums/encore/">Encore</a>, which lands on 16 October 2026.
+        Night {stop.night} of {stop.total} on the
+        {" "}<a href={`/tours/${stop.tour.slug}/`}>{stop.tour.name} {stop.tour.years}</a>.
+        {stop.tour.slug === "arena-tour-2026" && (
+          <> The run is behind the album <a href="/albums/encore/">Encore</a>, which lands on 16 October 2026.</>
+        )}
+      </p>
+      {(stop.previous || stop.next) && (
+        <p>
+          {stop.previous ? (
+            <>
+              They come here from <a href={stop.previous.cityPage!}>{stop.previous.city}</a>,
+              {" "}{nights(stop.previous.date, stop.shows[0].date)} night
+              {nights(stop.previous.date, stop.shows[0].date) === 1 ? "" : "s"} earlier.
+            </>
+          ) : (
+            <>This is opening night: nothing comes before it.</>
+          )}
+          {" "}
+          {stop.next ? (
+            <>
+              They go on to <a href={stop.next.cityPage!}>{stop.next.city}</a>
+              {" "}{nights(stop.shows[stop.shows.length - 1].date, stop.next.date)} night
+              {nights(stop.shows[stop.shows.length - 1].date, stop.next.date) === 1 ? "" : "s"} later.
+            </>
+          ) : (
+            <>Nothing follows it: the tour ends here.</>
+          )}
+        </p>
+      )}
+    </section>
+  ))}
+
+  {both && (
+    <section class="container">
+      <h2>Twice in ten months</h2>
+      <p>
+        This is one of four cities on both announced runs. The arena night and the summer night are
+        {" "}{Math.round(nights(city.shows[0].date, city.shows[city.shows.length - 1].date) / 30)} months
+        apart, indoors and then outdoors, and nothing says the two shows are the same show.
       </p>
     </section>
   )}
 
-  {playing && (city.previous || city.next) && (
-    <section class="container">
-      <h2>Where it sits in the run</h2>
-      <p>
-        {city.previous ? (
-          <>
-            The band come here from <a href={city.previous.cityPage!}>{city.previous.city}</a>,
-            {" "}{nights(city.previous.date, city.shows[0].date)} night
-            {nights(city.previous.date, city.shows[0].date) === 1 ? "" : "s"} earlier.
-          </>
-        ) : (
-          <>This is opening night: nothing comes before it.</>
-        )}
-        {" "}
-        {city.next ? (
-          <>
-            They go on to <a href={city.next.cityPage!}>{city.next.city}</a>
-            {" "}{nights(city.shows[city.shows.length - 1].date, city.next.date)} night
-            {nights(city.shows[city.shows.length - 1].date, city.next.date) === 1 ? "" : "s"} later.
-          </>
-        ) : (
-          <>Nothing follows it: the tour ends here.</>
-        )}
-      </p>
-      <p class="meta">
-        The routing runs {formatDate(arenaTour2026[0].date, "en-GB")} to
-        {" "}{formatDate(arenaTour2026[arenaTour2026.length - 1].date, "en-GB")} &mdash;
-        {" "}<a href="/cities/">every stop is here</a>.
-      </p>
-    </section>
+  {playing && (
+    <p class="container meta">
+      Every stop on both tours is on <a href="/cities/">the cities page</a>.
+    </p>
   )}
 
   {city.notes && (

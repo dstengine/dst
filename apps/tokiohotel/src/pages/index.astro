@@ -11,23 +11,31 @@ import { albumBySlug } from "../data/albums";
 import { musicGroup, musicEvent } from "../schema";
 
 const arena = tourBySlug("arena-tour-2026")!;
+const summer = tourBySlug("summer-encore-2027")!;
 const shows = arena.shows!;
+const summerShows = summer.shows!;
 const encore = albumBySlug("encore")!;
 const canonical = `${origin}/`;
 
-const countries = [...new Set(shows.map((s) => s.country))].length;
+const all = [...shows, ...summerShows];
+const countries = [...new Set(all.map((s) => s.country))].length;
 const cityCount = [...new Set(shows.map((s) => s.city))].length;
 
 const facts = [
   { label: "Opening night", value: "28 October 2026, London", icon: ICONS.events, href: "/cities/london/" },
   { label: "Last night", value: "23 November 2026, Madrid", icon: ICONS.pin, href: "/cities/madrid/" },
   { label: "Shows", value: `${shows.length} across ${cityCount} cities`, icon: ICONS.stage, href: "/tours/arena-tour-2026/" },
-  { label: "Countries", value: String(countries), icon: ICONS.map, href: "/cities/" },
+  { label: "Then", value: `${summerShows.length} more, summer 2027`, icon: ICONS.stage, href: "/tours/summer-encore-2027/" },
+  { label: "Countries", value: `${countries} across both runs`, icon: ICONS.map, href: "/cities/" },
   { label: "New album", value: "Encore, 16 October 2026", icon: ICONS.play, href: "/albums/encore/" },
   { label: "Last checked", value: checkedOn, icon: ICONS.clock },
 ];
 
-const jsonLd = [musicGroup, ...shows.map((show) => musicEvent(show, arena.name, canonical))];
+const jsonLd = [
+  musicGroup,
+  ...shows.map((show) => musicEvent(show, arena.name, canonical)),
+  ...summerShows.map((show) => musicEvent(show, summer.name, canonical)),
+];
 ---
 <Layout prose title={home.title} description={home.description} jsonLd={jsonLd}>
   <section class="container hero">
@@ -55,6 +63,26 @@ const jsonLd = [musicGroup, ...shows.map((show) => musicEvent(show, arena.name, 
   </section>
 
   <section class="container">
+    <h2>Summer Encore 2027</h2>
+    <p>
+      There is a second run, and it is the one most listings miss. Fourteen open-air dates from Rome
+      on 14 July to Hanover on 27 August 2027 &mdash; four countries, eleven of the fourteen nights
+      in Germany, and one of them, on 15 August, in
+      {" "}<a href="/cities/magdeburg/">Magdeburg</a>, the city the four of them formed the band in
+      twenty-six years earlier.
+    </p>
+    <p>
+      Twelve of the fourteen are on sale with a city and a date and no room yet, which is normal for
+      an open-air this far out and is printed here exactly that way rather than filled in.
+    </p>
+    <Dates shows={summerShows} />
+    <p class="source-line">
+      Routing from {summer.source.name}. Last checked {checkedOn}.
+      <a href={`/tours/${summer.slug}/`}>More on this tour</a>.
+    </p>
+  </section>
+
+  <section class="container">
     <h2>The band</h2>
     <p>
       {band.name} formed in {band.origin} in {band.formed}, as {band.formerName}:
@@ -73,9 +101,9 @@ const jsonLd = [musicGroup, ...shows.map((show) => musicEvent(show, arena.name, 
   <section class="container">
     <h2>Where to go next</h2>
     <ul class="next">
-      <li><a href="/tours/">Ten tours since 2005</a> &mdash; including one leg we can document night by night because we published it ourselves in 2015.</li>
+      <li><a href="/tours/">Eleven tours since 2005</a> &mdash; including one leg we can document night by night because we published it ourselves in 2015.</li>
       <li><a href="/albums/">Eight studio albums</a> &mdash; dates, labels, and the singles that announced each one.</li>
-      <li><a href="/cities/">City by city</a> &mdash; every stop on the run, and the two cities that are not on it.</li>
+      <li><a href="/cities/">City by city</a> &mdash; every stop on both runs, and the two cities that are on neither.</li>
       <li><a href="/history/">Twenty-five years in order</a> &mdash; Magdeburg 2001 to Wembley 2026.</li>
     </ul>
   </section>

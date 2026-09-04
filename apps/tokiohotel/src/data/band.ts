@@ -23,6 +23,15 @@ export const DISCOGRAPHY: Source = {
   verifiedOn: checkedOn,
 };
 
+// The band's own site. The best source there is for a routing, and the one
+// this site now leads with: it carries both tours, and it carried the second
+// one before any listing did.
+export const OFFICIAL: Source = {
+  name: "tokiohotel.com",
+  url: "tokiohotel-com",
+  verifiedOn: checkedOn,
+};
+
 export const band = {
   name: "Tokio Hotel",
   formed: "2001",

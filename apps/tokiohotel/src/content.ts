@@ -12,16 +12,16 @@ export const origin = "https://tokiohotel.vvm.space";
 export const home = {
   title: "Tokio Hotel tour dates",
   description:
-    "Every Tokio Hotel tour date we can confirm: the seventeen-night Arena Tour 2026, the ten tours behind it, and the albums each one carried.",
+    "Every Tokio Hotel tour date we can confirm: the Arena Tour 2026, the Summer Encore run in 2027, the ten tours behind them, and the albums each one carried.",
   h1: "Tokio Hotel on tour",
-  lede: `A new album on 16 October 2026, and seventeen arena nights starting twelve days later. Behind them, ten tours and twenty-five years with the same four people. Every date here names its source and the day we last looked.`,
+  lede: `A new album on 16 October 2026, seventeen arena nights starting twelve days later, and fourteen more outdoors the summer after. Behind them, ten tours and twenty-five years with the same four people. Every date here names its source and the day we last looked.`,
 };
 
 export const tours = {
   title: "Tours",
   description: "Ten Tokio Hotel tours since 2005, in order, with what happened on each one.",
-  h1: "Ten tours since 2005",
-  lede: `From four teenagers behind a number-one single to seventeen arenas in late 2026. Two of these have a routing we can print date for date; all ten have something that happened on them.`,
+  h1: "Eleven tours since 2005",
+  lede: `From four teenagers behind a number-one single to two announced runs, thirty-one nights, across 2026 and 2027. Three of these have a routing we can print date for date; all eleven have something that happened on them.`,
 };
 
 export const albums = {
