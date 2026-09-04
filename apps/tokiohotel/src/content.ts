@@ -3,7 +3,7 @@
 // rather than the group — see VERCEL.md.
 export const publisher = {
   id: "https://tokiohotel.vvm.space/#organization",
-  name: "tokiohotel.vvm.space",
+  name: "tokiohotel",
   url: "https://tokiohotel.vvm.space/",
 };
 

@@ -1,4 +1,4 @@
-# tokiohotel.vvm.space
+# tokiohotel
 
 > A tour archive for one band: where Tokio Hotel play next, where they played last, and the routings of the eleven tours in between. Every date names the source that confirmed it and the day it was last checked. Nothing goes up on a date we could not confirm, and a venue announced without a room says so rather than being filled in.
 
