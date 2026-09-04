@@ -83,6 +83,14 @@ const next = index < albums.length - 1 ? albums[index + 1] : undefined;
   .when { font-variant-numeric: tabular-nums; color: var(--ink-faint); font-size: 0.92rem; }
   .what { display: grid; gap: 0.1rem; }
   .note { color: var(--ink-muted); font-size: 0.95rem; }
+  .pager a {
+    /* 44px minimum: these sat at 29px and the detector was right — a
+       previous/next pair is the one control on the page a thumb reaches for. */
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0.35rem 0;
+  }
   .pager {
     margin-top: var(--space-3);
     padding-top: var(--space-2);

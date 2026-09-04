@@ -78,6 +78,14 @@ const next = index < tours.length - 1 ? tours[index + 1] : undefined;
 <style>
   .album-line { color: var(--ink-muted); }
   .meta { margin-top: var(--space-2); color: var(--ink-faint); font-size: 0.9rem; }
+  .pager a {
+    /* 44px minimum: these sat at 29px and the detector was right — a
+       previous/next pair is the one control on the page a thumb reaches for. */
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0.35rem 0;
+  }
   .pager {
     margin-top: var(--space-3);
     padding-top: var(--space-2);

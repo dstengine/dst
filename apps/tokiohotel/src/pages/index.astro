@@ -29,7 +29,7 @@ const facts = [
 
 const jsonLd = [musicGroup, ...shows.map((show) => musicEvent(show, arena.name, canonical))];
 ---
-<Layout title={home.title} description={home.description} jsonLd={jsonLd}>
+<Layout prose title={home.title} description={home.description} jsonLd={jsonLd}>
   <section class="container hero">
     <h1>{home.h1}</h1>
     <p class="lede">{home.lede}</p>
