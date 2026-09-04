@@ -61,7 +61,15 @@
       },
       "bfi-london-film-festival-2026": "a tall stack of ten flat rectangles fanned like a shuffled deck, a large paper aperture ring overlapping them at the upper right, a long ruled baseline beneath",
       "bermondsey-street-festival-2026": "flat paper collage filling the frame, a red triangular bunting line strung in a shallow curve across the upper third, two market stalls beneath it drawn as charcoal box counters each under its own striped pitched awning, clearly two separate stalls, soft shadows, no lettering, no numerals, no text of any kind",
-      "tokio-hotel-ovo-arena-2026": "a bold charcoal paper triangle standing centred in the middle of the frame like a tall tent, a wide pillar-box red horizontal band passing behind it from edge to edge, a small cluster of red paper squares floating above its peak, balanced even margins of plain off-white ground on the left and the right, no border bands",
+      "tokio-hotel-ovo-arena-2026": {
+        "subject": "two young men on an arena stage seen from behind, both with an arm thrown high. On the left a man with long dark hair to his shoulders, a guitar slung at his hip. On the right a slim man with pale blond hair and a fringed stage costume. A long ribbon of paper streamers arcs across the frame above their raised hands",
+        "background": "a rig of slender charcoal lighting bars overhead and a low row of small dark paper shapes for the arena crowd along the bottom edge, plain unbroken paper background everywhere else",
+        "control": {
+          "file": "tools/control/ldn/tokio-hotel-ovo-arena-2026.jpg",
+          "licence": "CC0",
+          "source": "Wikimedia Commons, Tokio Hotel at Christopher Street Day Berlin 2023-07-22 114.jpg, cropped to 16:9"
+        }
+      },
       "andre-rieu-ovo-arena-2026": "three nested paper arcs turning in a wide open spiral, a fan of five slender bow-shaped slivers laid across the outermost arc, a trail of small circles scattering off to the right",
       "anastacia-ovo-arena-2026": "three concentric cut-paper rings of decreasing size stepping down a diagonal from upper left to lower right, a burst of short radiating slivers behind the largest ring, one long low horizontal bar beneath them, plain unbroken background running to all four edges, no border bands, no coloured margins",
       "simple-plan-ovo-arena-2026": "one small paper square at the lower left and one very large square at the upper right, joined by a fan of five straight tapering rays, a row of short vertical bars along the baseline"
