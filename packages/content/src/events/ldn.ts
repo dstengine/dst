@@ -261,7 +261,7 @@ export const items: EventItem[] = [
   {
     slug: "tokio-hotel-ovo-arena-2026",
     image: "/covers/tokio-hotel-ovo-arena-2026.jpg",
-    imageAlt: "A charcoal paper triangle standing centre-frame with a small red pennant at its peak and a wide red band passing behind it",
+    imageAlt: "Two cut-paper figures seen from behind on a stage, arms raised, one with a guitar, red and charcoal streamers arcing overhead",
     imageKind: "generated",
     imageWidth: 1536,
     imageHeight: 864,
