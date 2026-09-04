@@ -293,12 +293,6 @@ export const tours: Tour[] = [
           "Poland is the one country here that the arena tour does not reach; Italy, Austria and Germany are on both runs, in different cities. Only three cities repeat: Hamburg, Frankfurt and Berlin get a second look at a band they will already have seen nine or ten months earlier, in a very different room. The other eleven stops here are places the arena tour never reaches.",
         ],
       },
-      {
-        heading: "About the ticket links",
-        paragraphs: [
-          "The band's own site marks eleven of these dates with an asterisk and the words “Advertising – Affiliate Links”: those buttons route through a tracking domain that pays a commission per click. The links here go to the same Eventim events with the affiliate code taken off. Same seller, same price, one redirect fewer, and nobody is paid for your click.",
-        ],
-      },
     ],
     shows: summerEncore2027,
     showsHeading: "All fourteen dates",

@@ -33,6 +33,30 @@ const description = playing
 const nights = (a: string, b: string) =>
   Math.round((Date.parse(b) - Date.parse(a)) / 86_400_000);
 
+const WORDS = ["no", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
+const word = (n: number) => WORDS[n] ?? String(n);
+
+// A gap of one night reads nothing like a gap of seventeen, and thirty-one
+// stop pages saying "they come here from X, N nights earlier" is a template
+// wearing different numbers. Same fact, sentence shaped to the fact.
+function arrival(stop: (typeof city.stops)[number]): string {
+  if (!stop.previous) return "This is opening night: nothing comes before it.";
+  const gap = nights(stop.previous.date, stop.shows[0].date);
+  const from = stop.previous.city;
+  if (gap === 1) return `There is no day off before it — they play ${from} the night before.`;
+  if (gap === 2) return `They come here from ${from}, two nights earlier.`;
+  return `They come here from ${from}, after ${word(gap - 1)} nights without a show.`;
+}
+
+function departure(stop: (typeof city.stops)[number]): string {
+  if (!stop.next) return "Nothing follows it: the tour ends here.";
+  const gap = nights(stop.shows[stop.shows.length - 1].date, stop.next.date);
+  const to = stop.next.city;
+  if (gap === 1) return `${to} is the following evening, with nothing in between.`;
+  if (gap === 2) return `${to} follows, two nights later.`;
+  return `Then ${word(gap - 1)} nights off before ${to}.`;
+}
+
 const facts = playing
   ? [
       { label: "Next date", value: formatDate(first.date, "en-GB"), icon: ICONS.events },
@@ -85,29 +109,9 @@ const jsonLd = playing
           <> The run is behind the album <a href="/albums/encore/">Encore</a>, which lands on 16 October 2026.</>
         )}
       </p>
-      {(stop.previous || stop.next) && (
-        <p>
-          {stop.previous ? (
-            <>
-              They come here from <a href={stop.previous.cityPage!}>{stop.previous.city}</a>,
-              {" "}{nights(stop.previous.date, stop.shows[0].date)}
-              {" "}night{nights(stop.previous.date, stop.shows[0].date) === 1 ? "" : "s"} earlier.
-            </>
-          ) : (
-            <>This is opening night: nothing comes before it.</>
-          )}
-          {" "}
-          {stop.next ? (
-            <>
-              They go on to <a href={stop.next.cityPage!}>{stop.next.city}</a>
-              {" "}{nights(stop.shows[stop.shows.length - 1].date, stop.next.date)}
-              {" "}night{nights(stop.shows[stop.shows.length - 1].date, stop.next.date) === 1 ? "" : "s"} later.
-            </>
-          ) : (
-            <>Nothing follows it: the tour ends here.</>
-          )}
-        </p>
-      )}
+      <p>
+        {arrival(stop)} {departure(stop)}
+      </p>
     </section>
   ))}
 

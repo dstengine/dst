@@ -2,19 +2,6 @@
 // /go/<slug>/ resolves to. Outbound links run through that hop so external
 // domains collect no link equity from our pages, and /go/ is disallowed in
 // robots.txt so the hops never get crawled or indexed themselves.
-//
-// Two rules about what goes in here, both of which cost us something:
-//
-// 1. No affiliate links. The band's own site marks its 2027 German dates
-//    with an asterisk and the line "Advertising – Affiliate Links": those
-//    buttons run through short.contrapromotion.com and pay somebody per
-//    click. We resolved every one of them and link the Eventim event it
-//    actually leads to. Same destination, no commission, one redirect fewer.
-// 2. No inherited tracking. The Arena Tour buttons on tokiohotel.com carry
-//    utm_source=artist_email and an affiliate code from the band's mailing
-//    list. Pasting those onto a web page would be repeating a claim about
-//    where the click came from that is simply untrue, so the query string
-//    is stripped and only the event URL kept.
 export const outbound: Record<string, string> = {
   "tokiohotel-com": "https://tokiohotel.com/",
   "ovo-arena-events": "https://www.ovoarena.co.uk/events",
