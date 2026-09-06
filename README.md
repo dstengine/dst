@@ -133,6 +133,23 @@ a `packages/` change touches all fifteen — against a Hobby limit of 100
 builds a day. Use `--force` when a build fails with no error of its own
 right after "Restored build cache from previous deployment".
 
+## The 16:20 digest
+
+```bash
+python3 tools/ga-report.py --dry-run     # print it, send nothing
+python3 tools/ga-report.py --period week
+```
+
+One GA4 digest a day to Telegram, from a cron entry at 16:20. The period
+picks itself rather than living in the crontab: the first Friday of a month
+reports the month, any other Friday the week, every other day the last 24
+hours. A monthly Friday does not also send a weekly one.
+
+The daily one is read by `dateHour` and bucketed into the trailing 24 hours
+against the 24 before them — a digest sent at 16:20 cannot compare a
+part-day against a whole one without printing a minus sign every afternoon.
+`tools/ga.py` remains the wide table for reading at a terminal.
+
 ## Adding a vertical
 
 1. Copy the shape of an existing app with the same feature groups —
