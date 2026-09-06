@@ -2,6 +2,42 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "gpt-6-astra-saturo-tres-examenes",
+    site: "mxo",
+    image: "/covers/gpt-6-astra-saturo-tres-examenes.jpg",
+    imageAlt: "Sobre un fondo verde profundo, tres barras de papel crema de alturas crecientes y una cuarta en terracota, más baja que las dos que la preceden",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "El modelo que saturó tres exámenes a la vez",
+    cardTitle: "GPT-6 Astra saturó FrontierMath",
+    titleSeo: "GPT-6 Astra: 97,6% en FrontierMath",
+    summary:
+      "OpenAI presentó GPT-6 Astra el 3 de septiembre. Saturó el nivel más difícil de FrontierMath con 97,6%, ARC-AGI-3 con 99,9% y sacó 96,0% en el examen de ciencias de posgrado.",
+    date: "2026-09-06",
+    category: "Mundo",
+    source: {
+      name: "OpenAI",
+      url: "https://openai.com/index/gpt-6-astra/",
+      verifiedOn: "2026-09-06",
+    },
+    body: [
+      "Saturar un examen quiere decir que ya no sirve para medir: casi todas las preguntas quedan bien y las que fallan no distinguen a nadie. La semana pasada le pasó a tres a la vez",
+      "## Los números",
+      "<strong>OpenAI</strong> presentó <strong>GPT-6 Astra</strong> el <strong>3 de septiembre de 2026</strong>. En <strong>FrontierMath Tier 4</strong>, el nivel más difícil de un examen de matemáticas hecho con matemáticos profesionales, obtuvo <strong>97,6%</strong>. En <strong>ARC-AGI-3</strong>, <strong>99,9%</strong>. En <strong>GPQA Diamond</strong>, preguntas de nivel doctorado en biología, química y física, <strong>96,0%</strong>",
+      "## Lo que dijeron los que ponen los exámenes",
+      "<strong>Greg Kamradt</strong>, de la ARC Prize Foundation, sobre ARC-AGI-3: «Astra superó nuestra línea base de eficiencia humana en el 96% de los niveles», y lo llamó un cambio de escalón, no una mejora más",
+      "<strong>Greg Burnham</strong>, de EpochAI, fue más corto: «La historia es: fin de una era, principio de otra»",
+      "## La parte que no es un examen",
+      "OpenAI publicó junto al anuncio <strong>dos resultados nuevos sobre los huecos entre números primos</strong> — la distancia que separa un primo del siguiente, uno de los problemas viejos de la teoría de números. No es una demostración célebre resuelta; es la diferencia entre un modelo que contesta preguntas de matemáticas y uno que aporta un renglón a un problema abierto",
+      "## Y donde no ganó",
+      "Conviene decirlo porque casi nadie lo dice. En <strong>Humanity’s Last Exam</strong>, con herramientas, Astra sacó <strong>57,2%</strong>, por debajo del <strong>65,0%</strong> de <strong>Claude Fable 5.1</strong> y de otros dos modelos de la misma tabla. En el índice de Artificial Analysis quedó en <strong>61,2</strong> contra 65,7. Las tablas son de OpenAI y ahí están",
+    ],
+    expertise:
+      "Un examen saturado es una noticia de dos filos: dice que el modelo ya llegó al techo de esa prueba, y también que la prueba dejó de servir para comparar lo que venga después. FrontierMath se diseñó en 2024 justamente porque los exámenes anteriores se habían agotado, y duró dos años. Lo que conviene mirar de aquí en adelante no son los porcentajes sino los dos resultados sobre números primos: un porcentaje se compara con otro porcentaje, pero un resultado matemático lo revisan personas, con nombre, y o se sostiene o no. Ese es el único marcador que no se puede saturar",
+  },
+
+  {
     slug: "mexico-cuarto-lugar-mundial-en-pib-turistico",
     site: "mxo",
     image: "/covers/mexico-cuarto-lugar-mundial-en-pib-turistico.jpg",

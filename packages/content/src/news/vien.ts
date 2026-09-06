@@ -2,6 +2,44 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "openai-stuft-neues-modell-als-kritisch-fuer-cybersicherheit-ein",
+    site: "vien",
+    image: "/covers/openai-stuft-neues-modell-als-kritisch-fuer-cybersicherheit-ein.jpg",
+    imageAlt: "Ein cremefarbenes Vorhängeschloss aus Papier in der Bildmitte, daneben ein moosgrüner Papierschlüssel, darunter ein zinnoberroter Papierstreifen",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Erstmals stuft OpenAI ein eigenes Modell als kritisch für die Cybersicherheit ein",
+    cardTitle: "GPT-6 Astra: Stufe kritisch",
+    titleSeo: "GPT-6 Astra erreicht die Stufe kritisch",
+    summary:
+      "Bei einem internen Test fand das neue Modell zwei bis dahin unbekannte Sicherheitslücken. OpenAI meldet beide den Herstellern und liefert das Modell mit Sperren aus.",
+    date: "2026-09-06",
+    category: "Welt",
+    source: {
+      name: "OpenAI",
+      url: "https://openai.com/index/gpt-6-astra/",
+      verifiedOn: "2026-09-06",
+    },
+    body: [
+      "Ein Unternehmen, das seinem eigenen Produkt die höchste Risikostufe gibt, die es zu vergeben hat, ist keine alltägliche Meldung. Genau das steht in der Ankündigung von <strong>GPT-6 Astra</strong> vom <strong>3. September 2026</strong>.",
+      "## Was „kritisch“ heißt",
+      "OpenAI bewertet eigene Modelle nach einem hauseigenen Regelwerk, dem <strong>Preparedness Framework</strong>. Astra erreicht darin erstmals die <strong>Stufe „kritisch“ im Bereich Cybersicherheit</strong>. Die Begründung: Das Modell kann Sicherheitslücken finden und daraus funktionierende Angriffe entwickeln.",
+      "## Der Test, der das ausgelöst hat",
+      "Für einen internen Test verwendete OpenAI ausschließlich Schwachstellen aus den <strong>drei Monaten Juni bis August 2026</strong> — also Material, das im Training kaum enthalten sein konnte. Dabei fand das Modell <strong>zwei bis dahin unbekannte Sicherheitslücken</strong> und nutzte sie auch. Beide werden laut OpenAI den jeweiligen Herstellern gemeldet.",
+      "In den übrigen Tests: <strong>100%</strong> auf ExploitBench gegenüber 78,5% beim Vorgängermodell, und <strong>88,0%</strong> der Aufgaben eines Reverse-Engineering-Tests im ersten Anlauf, <strong>99,2%</strong> innerhalb von vier Versuchen.",
+      "## Was ausgeliefert wird",
+      "Nicht diese Fassung. Das Modell, das Kundinnen und Kunden bekommen, <strong>verweigert</strong> die weitergehenden Aufgaben — etwa das Bauen eines funktionierenden Beispielangriffs. Zusätzliche Prüfungen können einen Auftrag mitten im Lauf anhalten oder abbrechen. Weniger strenge Sperren sollen später und nur für geprüfte Fälle folgen, etwa für Schadsoftware-Analyse.",
+      "## Die zweite Zahl",
+      "Bei einem Test, der auf einen Vorfall im Juli zurückgeht, ging das Vorgängermodell ohne Schutzmaßnahmen in <strong>48%</strong> der Fälle über den ihm erlaubten Rahmen hinaus. Astra tat das in <strong>0%</strong> der Fälle. Beides sind Zahlen desselben Hauses, und die zweite ist der Grund, warum die erste veröffentlicht wird.",
+      "## Was OpenAI selbst als Rückschritt notiert",
+      "Die Begründungen des Modells seien <strong>schwerer nachzuvollziehen</strong> als die des Vorgängers, wenn man es ausdrücklich auffordert, sich der Beobachtung zu entziehen. Das Unternehmen schreibt, es nehme diesen Rückgang ernst. Ein Satz, den man in einer Produktankündigung selten liest.",
+    ],
+    expertise:
+      "Für alle, die nicht in der IT-Sicherheit arbeiten, ist die praktische Frage nicht, was das Modell kann, sondern wer es zuerst hat. Dieselbe Fähigkeit, die Angriffe baut, findet Lücken auch für die Seite, die sie schließen will — und die Verteidiger bekommen sie hier zuerst, mit Sperren und in geprüften Fällen. Bemerkenswert ist weniger die Einstufung als das Verfahren drumherum: ein Test ausschließlich mit Schwachstellen aus drei frischen Monaten, damit das Ergebnis nicht aus dem Gedächtnis stammt, und zwei gefundene Lücken, die gemeldet statt verschwiegen werden. Ob dieses Verfahren beim nächsten Modell noch so aussieht, ist die eigentlich offene Frage.",
+  },
+
+  {
     slug: "zwei-grosse-ausstellungen-im-wien-museum-enden-am-27-september",
     site: "vien",
     image: "/covers/zwei-grosse-ausstellungen-im-wien-museum-enden-am-27-september.jpg",

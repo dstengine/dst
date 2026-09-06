@@ -65,7 +65,13 @@ const PER_SOURCE = 12;
 const argv = process.argv.slice(2);
 const flag = (name) => argv.includes(`--${name}`);
 const value = (name) => { const i = argv.indexOf(`--${name}`); return i < 0 ? undefined : argv[i + 1]; };
-const sites = argv.filter((a) => !a.startsWith("--") && argv[argv.indexOf(a) - 1] !== "--probe");
+// Flags that take the next word. Listed, because a bare word is otherwise a
+// site name — and `--min 1` was silently read as "the site called 1", which
+// answered "No sources for 1" and looked like a registry problem rather
+// than a parsing one. Also indexed by position: `indexOf` finds the first
+// copy of a repeated word, not the one being looked at.
+const TAKES_VALUE = new Set(["--probe", "--min"]);
+const sites = argv.filter((a, i) => !a.startsWith("--") && !TAKES_VALUE.has(argv[i - 1]));
 
 const today = new Date().toISOString().slice(0, 10);
 const iso = (d) => new Date(Date.now() + d * 86_400_000).toISOString().slice(0, 10);

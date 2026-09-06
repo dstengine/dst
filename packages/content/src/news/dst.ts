@@ -5,6 +5,45 @@ import type { NewsItem } from "../types.ts";
 // anyone outside the company, and advertising it reads badly to a client.
 export const items: NewsItem[] = [
   {
+    slug: "openai-ships-gpt-6-astra",
+    site: "dst",
+    image: "/covers/openai-ships-gpt-6-astra.jpg",
+    imageAlt: "Six paper rectangles in a row on a slate blue ground, each one taller than the one before it, the last of them in warm amber",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "OpenAI’s new model is built to use a computer, not to chat",
+    cardTitle: "GPT-6 Astra is out",
+    titleSeo: "GPT-6 Astra: price, availability, benchmarks",
+    summary:
+      "GPT-6 Astra shipped on 3 September at $10 and $50 per million tokens, through the OpenAI API, Microsoft Azure and AWS Bedrock. It is not top of every table, and enterprise access is off by default.",
+    date: "2026-09-06",
+    category: "AI",
+    source: {
+      name: "OpenAI",
+      url: "https://openai.com/index/gpt-6-astra/",
+      verifiedOn: "2026-09-06",
+    },
+    body: [
+      "The benchmark that says most about this release is not a maths score. It is <strong>72.6%</strong> on a computer-use test that the previous model passed at 65.7% — while taking about <strong>47% less time per task</strong>, roughly forty minutes instead of seventy-five. That is a procurement number, not a research one.",
+      "## What shipped, and where",
+      "<strong>OpenAI</strong> released <strong>GPT-6 Astra</strong> on <strong>3 September 2026</strong>, first to a limited set of organisations and then to ChatGPT <strong>Plus, Pro, Business and Enterprise</strong> users. For developers it is <strong>gpt-6-astra</strong> in the OpenAI API, and it is also available through <strong>Microsoft Azure</strong> and <strong>Amazon Bedrock</strong>.",
+      "One line matters for anyone running a workspace: <strong>enterprise access is off by default at launch</strong>, and an administrator has to turn it on.",
+      "## What it costs",
+      "<strong>$10 per million input tokens and $50 per million output tokens</strong> at standard rates, with separate rates for cache reads and writes. A <strong>Fast mode</strong> in the API runs up to twice the speed at twice the price. Usage is included in existing subscription allowances, with credits available on top.",
+      "## What it is actually for",
+      "Long tasks in real software, rather than answers in a chat window. OpenAI reports <strong>59.3%</strong> on Agents’ Last Exam — professional work in real applications, from financial modelling to media production — against 55.5% for Claude Opus 5 and 53.6% for its own previous model, while using about <strong>65% fewer output tokens</strong>. On <strong>BenchCAD</strong>, which asks a model to rebuild a 3D object as CAD code, it reports <strong>95.9%</strong> at an estimated API cost roughly 43% below its predecessor.",
+      "The company also claims a <strong>1.9×</strong> faster completion of browser tasks when the model is paired with an updated Codex harness.",
+      "## Where it is not first",
+      "Worth reading before anyone quotes a clean sweep. On <strong>Humanity’s Last Exam</strong> with tools, Astra scores <strong>57.2%</strong> — below <strong>Claude Fable 5.1</strong> at 65.0% and below two other Claude models in the same table. On the <strong>Artificial Analysis Intelligence Index</strong> it scores <strong>61.2</strong> against Fable 5.1’s 65.7. The gains are concentrated in computer use, coding and science, and OpenAI’s own tables say so.",
+      "## The security clause",
+      "Astra is the first model OpenAI has classified as meeting the <strong>Critical threshold in cybersecurity</strong> under its Preparedness Framework. It scored <strong>100%</strong> on ExploitBench, and during an internal evaluation it found and used <strong>two previously unknown vulnerabilities</strong>, which OpenAI says it is disclosing to the maintainers. The shipped model refuses the more advanced offensive tasks, and extra safety checks can pause or stop a job mid-run — in the API, the task simply stops.",
+    ],
+    expertise:
+      "For a business the useful frame is not «is it smarter» but «what does an hour of it cost, and who signs off». Three things follow from this release. First, the price is a specialist’s: at $50 per million output tokens nobody should be routing a support inbox through it, and the efficiency claims — fewer output tokens, less wall-clock time per task — are the argument for using it on long agentic work where a cheaper model burns the saving in retries. Second, the availability path runs through Azure and Bedrock, which for most regulated buyers is the only path that clears procurement at all; the API listing is the easy part. Third, plan for the interruptions: OpenAI is explicit that the new safety checks can pause or stop legitimate work, and that in the API a stopped task does not resume. Any workflow you build on this needs to survive being halted halfway, which is a design constraint rather than a footnote.",
+  },
+
+  {
     slug: "dld-puts-the-developer-journey-in-one-place",
     site: "dst",
     image: "/covers/dld-puts-the-developer-journey-in-one-place.jpg",

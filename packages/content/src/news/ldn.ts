@@ -2,6 +2,44 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "self-driving-taxis-on-uber-in-london",
+    site: "ldn",
+    image: "/covers/self-driving-taxis-on-uber-in-london.jpg",
+    imageAlt: "A small red car standing on a torn strip of charcoal paper laid across a warm off-white ground, three short cream dashes marking a lane down the middle of it",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "An Uber in London can now arrive with nobody driving it",
+    cardTitle: "Self-driving Ubers in London",
+    titleSeo: "Self-driving taxis on Uber in London",
+    summary:
+      "From 3 September an UberX, Uber Electric or Uber Comfort anywhere in London except the airports can be a Wayve car driving itself, at the fare you were already quoted.",
+    date: "2026-09-06",
+    category: "Transport",
+    source: {
+      name: "Wayve",
+      url: "https://wayve.ai/press/wayve-uber-launch-autonomous-rides/",
+      verifiedOn: "2026-09-06",
+    },
+    body: [
+      "The first autonomous trips in the United Kingdom did not start with a launch event in a closed car park. They started with an ordinary Uber request, from an ordinary London street, at the price the app had already quoted.",
+      "## What changed on 3 September",
+      "<strong>Wayve</strong> and <strong>Uber</strong> began matching London riders with cars driving themselves. Request an <strong>UberX</strong>, <strong>Uber Electric</strong> or <strong>Uber Comfort</strong> and one of them may arrive; the fare is the upfront one in the app and there is <strong>no extra charge</strong>. The service covers <strong>anywhere in London except the airports</strong>.",
+      "It is the first time autonomous trips have been available anywhere in the UK, and Wayve’s first commercial public service anywhere in the world.",
+      "## Somebody is still in the front seat",
+      "This is supervised autonomy, not an empty car. A <strong>trained, TfL-licensed private hire driver</strong> rides in the vehicle to oversee the trip and take over if needed. <strong>Transport for London</strong> granted the private hire licences in <strong>August</strong>. Removing the person in the front seat is a separate approval, from the Driver and Vehicle Standards Agency, and is not expected this year.",
+      "## How many cars, honestly",
+      "Fewer than you would guess. Wayve’s own announcement says only that it is starting with «a small number of vehicles in this initial phase»; <strong>Bloomberg</strong> and <strong>Time Out</strong> both put the fleet at <strong>15</strong> — electric <strong>Ford Mustang Mach-E</strong> cars carrying the Wayve AI Driver and its surround sensors.",
+      "## If you would rather not",
+      "You can decline before it arrives, and you can opt in the other way too: Uber says more than <strong>140,000 Londoners</strong> had already set a preference for autonomous rides. Inside, the screen speaks <strong>64 languages</strong>.",
+      "## What Wayve says",
+      "<strong>Alex Kendall</strong>, CEO and co-founder of Wayve: «We’re proud to introduce the Wayve AI Driver to the public for the first time right here» — in the city the company was built in.",
+    ],
+    expertise:
+      "Fifteen cars across Greater London is a rounding error next to the size of Uber’s fleet here, so treat being matched with one as a coincidence rather than a plan: there is no button that summons it. What is worth watching is not the car but the paperwork. Everything announced this week runs with a licensed driver aboard, which legally makes it a private hire vehicle like any other — the interesting threshold is the DVSA approval that would let that seat be empty, and nothing about the September launch brings that date closer on its own. The other number to keep an eye on is the map: London except the airports is a deliberate exclusion, because airport runs are where private hire actually makes its money and where the road layout is hardest.",
+  },
+
+  {
     slug: "kew-costs-ten-pounds-on-a-tuesday",
     site: "ldn",
     image: "/covers/kew-costs-ten-pounds-on-a-tuesday.jpg",

@@ -29,5 +29,6 @@ Was nicht angekündigt ist, wird als nicht angekündigt bezeichnet. Ein Enddatum
 
 ## Nachrichten
 
+- [Erstmals stuft OpenAI ein eigenes Modell als kritisch für die Cybersicherheit ein](https://vien.lol/nachrichten/openai-stuft-neues-modell-als-kritisch-fuer-cybersicherheit-ein/): Bei einem internen Test fand das neue Modell zwei bis dahin unbekannte Sicherheitslücken. OpenAI meldet beide den Herstellern und liefert das Modell mit Sperren aus.
 - [Zwei große Ausstellungen im Wien Museum enden am 27. September](https://vien.lol/nachrichten/zwei-grosse-ausstellungen-im-wien-museum-enden-am-27-september/): „Schiele & Peschka“ und „Arena Wien“ laufen beide nur noch bis 27. September. Im musa bleibt dagegen bis 29. November Zeit — das ist der Unterschied zwischen drei Wochen und zwei Monaten.
 - [Wien ist 2026 die zweitlebenswerteste Stadt der Welt](https://vien.lol/nachrichten/wien-ist-2026-zweitlebenswerteste-stadt-der-welt/): Der Liveability Index der EIU sieht Kopenhagen mit 100 von 100 vorn, Wien knapp dahinter, Melbourne auf Platz drei. 173 Städte, 30 Indikatoren, weltweiter Schnitt unverändert bei 76,1.
