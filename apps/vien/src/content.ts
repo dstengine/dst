@@ -69,6 +69,7 @@ export const labels: Partial<ArticleLabels> = {
   inPerson: "Vor Ort",
   where: "Wo",
   ticketsRow: "Tickets",
+  free: "Kostenlos",
   salesClose: "Verkaufsschluss",
   refunds: "Rückerstattung",
   organizer: "Veranstalter",

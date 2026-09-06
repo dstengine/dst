@@ -40,6 +40,8 @@ export interface ArticleLabels {
   online: string;
   where: string;
   ticketsRow: string;
+  /** What the Tickets row says when a seat costs nothing. */
+  free: string;
   salesClose: string;
   refunds: string;
   organizer: string;
@@ -103,6 +105,7 @@ export const EN: ArticleLabels = {
   online: "Online",
   where: "Where",
   ticketsRow: "Tickets",
+  free: "Free",
   salesClose: "Sales close",
   refunds: "Refunds",
   organizer: "Organizer",

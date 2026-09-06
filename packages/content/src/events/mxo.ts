@@ -129,6 +129,7 @@ export const items: EventItem[] = [
     geo: { name: "Centro Nacional de las Artes", lat: 19.355607, lng: -99.137182 },
     category: "Ferias",
     organizer: "Secretaría de Cultura",
+    tickets: { priceFrom: 0 },
     source: {
       name: "Excélsior",
       url: "https://www.excelsior.com.mx/cultura/filij-2026-regresa-cenart-con-entrada-gratuita-fechas",

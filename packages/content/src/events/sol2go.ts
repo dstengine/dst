@@ -422,6 +422,7 @@ export const items: EventItem[] = [
     city: "London",
     organizer: "Superteam UK",
     category: "Co-working",
+    tickets: { priceFrom: 0 },
     source: {
       name: "Superteam UK, via the Solana Foundation events calendar",
       url: "https://lu.ma/london-sep-11",
@@ -458,6 +459,7 @@ export const items: EventItem[] = [
     city: "Thessaloniki",
     organizer: "Anodos Labs and Superteam Balkan",
     category: "Meetup",
+    tickets: { priceFrom: 0 },
     source: {
       name: "Anodos Labs and Superteam Balkan, via the Solana Foundation events calendar",
       url: "https://lu.ma/q242rqc4",
@@ -495,6 +497,7 @@ export const items: EventItem[] = [
     online: true,
     organizer: "SOL BROTHERS Studio",
     category: "Online",
+    tickets: { priceFrom: 0 },
     source: {
       name: "SOL BROTHERS Studio, via the Solana Foundation events calendar",
       url: "https://lu.ma/0j8gx7i1",
@@ -530,6 +533,7 @@ export const items: EventItem[] = [
     online: true,
     organizer: "Superteam Canada",
     category: "Online",
+    tickets: { priceFrom: 0 },
     source: {
       name: "Superteam Canada, via the Solana Foundation events calendar",
       url: "https://lu.ma/aq7rqqmn",
@@ -633,6 +637,7 @@ export const items: EventItem[] = [
     city: "London",
     organizer: "Capvise Global",
     category: "Side event",
+    tickets: { priceFrom: 0 },
     source: {
       name: "Capvise Global, via the Solana Foundation events calendar",
       url: "https://lu.ma/xykfcf1a",
@@ -667,6 +672,7 @@ export const items: EventItem[] = [
     city: "London",
     organizer: "Onchain Finance Institute",
     category: "Side event",
+    tickets: { priceFrom: 0 },
     source: {
       name: "Onchain Finance Institute, via the Solana Foundation events calendar",
       url: "https://lu.ma/aqntywn2",
@@ -702,6 +708,7 @@ export const items: EventItem[] = [
     online: true,
     organizer: "Superteam Canada",
     category: "Online",
+    tickets: { priceFrom: 0 },
     source: {
       name: "Superteam Canada, via the Solana Foundation events calendar",
       url: "https://lu.ma/8uhc300o",
@@ -737,6 +744,7 @@ export const items: EventItem[] = [
     online: true,
     organizer: "Superteam Canada",
     category: "Online",
+    tickets: { priceFrom: 0 },
     source: {
       name: "Superteam Canada, via the Solana Foundation events calendar",
       url: "https://lu.ma/sejn139p",
@@ -814,6 +822,7 @@ export const items: EventItem[] = [
     geo: { lat: 40.1831239, lng: 44.5262954 },
     organizer: "Solana Armenia",
     category: "Meetup",
+    tickets: { priceFrom: 0 },
     source: {
       name: "Solana Armenia",
       url: "https://luma.com/404vst65",
