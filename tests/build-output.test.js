@@ -924,6 +924,21 @@ describe("news and events", () => {
     }
   });
 
+  // Every event gets a page. An entry with no `body` renders as a card that
+  // links nowhere: the reader is shown a date and a city and given no way to
+  // find out anything else, which is worse than not listing the event at all.
+  // Eleven of these had accumulated on sol2go before anyone said so out loud.
+  // If a source is too thin to write a page from, the answer is to leave the
+  // event out until it isn't — not to publish half of one.
+  test("no event is listed without a page behind it", () => {
+    const pageless = allEvents.filter((e) => !Array.isArray(e.body) || e.body.length === 0);
+    assert.deepEqual(
+      pageless.map((e) => `${e.site}/${e.slug}`),
+      [],
+      "events with no body render as dead cards — give them a page or drop them",
+    );
+  });
+
   // A page still presenting a finished event as upcoming is how these
   // listings rot. The build can't know the date, so the flag ships hidden
   // and a script reveals it — meaning the markup has to be there for every
