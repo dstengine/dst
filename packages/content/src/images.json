@@ -15026,6 +15026,54 @@
         ]
       ]
     },
+    "/covers/co-working-fridays-london-september-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/co-working-fridays-london-september-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/co-working-fridays-london-september-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/co-working-fridays-london-september-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/co-working-fridays-london-september-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/co-working-fridays-london-september-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/co-working-fridays-london-september-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/co-working-fridays-london-september-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/co-working-fridays-london-september-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/co-working-fridays-london-september-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/co-working-fridays-london-september-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/crypto-expo-dubai-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -15122,6 +15170,54 @@
         ]
       ]
     },
+    "/covers/ethglobal-lisbon-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/ethglobal-lisbon-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/ethglobal-lisbon-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/ethglobal-lisbon-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/ethglobal-lisbon-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/ethglobal-lisbon-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/ethglobal-lisbon-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/ethglobal-lisbon-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/ethglobal-lisbon-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/ethglobal-lisbon-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/ethglobal-lisbon-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/ethglobal-tokyo-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -15167,6 +15263,150 @@
         [
           1536,
           "/covers/ethglobal-tokyo-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/islanddao-v5-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/islanddao-v5-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/islanddao-v5-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/islanddao-v5-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/islanddao-v5-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/islanddao-v5-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/islanddao-v5-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/islanddao-v5-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/islanddao-v5-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/islanddao-v5-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/islanddao-v5-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/money-layer-breakpoint-week-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/money-layer-breakpoint-week-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/money-layer-breakpoint-week-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/money-layer-breakpoint-week-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/money-layer-breakpoint-week-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/money-layer-breakpoint-week-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/money-layer-breakpoint-week-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/money-layer-breakpoint-week-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/money-layer-breakpoint-week-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/money-layer-breakpoint-week-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/money-layer-breakpoint-week-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/pr1me-london-dinner-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/pr1me-london-dinner-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/pr1me-london-dinner-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/pr1me-london-dinner-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/pr1me-london-dinner-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/pr1me-london-dinner-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/pr1me-london-dinner-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/pr1me-london-dinner-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/pr1me-london-dinner-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/pr1me-london-dinner-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/pr1me-london-dinner-2026-1536.webp"
         ]
       ]
     },
@@ -15311,6 +15551,102 @@
         [
           1536,
           "/covers/solana-armenia-meetup-yerevan-july-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/solana-capital-forum-singapore-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/solana-capital-forum-singapore-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/solana-capital-forum-singapore-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/solana-capital-forum-singapore-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/solana-capital-forum-singapore-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/solana-capital-forum-singapore-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/solana-capital-forum-singapore-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/solana-capital-forum-singapore-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/solana-capital-forum-singapore-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/solana-capital-forum-singapore-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/solana-capital-forum-singapore-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/solana-ecosystem-call-september-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/solana-ecosystem-call-september-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/solana-ecosystem-call-september-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/solana-ecosystem-call-september-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/solana-ecosystem-call-september-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/solana-ecosystem-call-september-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/solana-ecosystem-call-september-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/solana-ecosystem-call-september-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/solana-ecosystem-call-september-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/solana-ecosystem-call-september-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/solana-ecosystem-call-september-2026-1536.webp"
         ]
       ]
     },
@@ -15647,6 +15983,198 @@
         [
           1536,
           "/covers/solana-summit-singapore-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/superteam-canada-community-call-december-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/superteam-canada-community-call-december-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/superteam-canada-community-call-december-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/superteam-canada-community-call-december-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/superteam-canada-community-call-december-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/superteam-canada-community-call-december-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/superteam-canada-community-call-december-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/superteam-canada-community-call-december-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/superteam-canada-community-call-december-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/superteam-canada-community-call-december-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/superteam-canada-community-call-december-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/superteam-canada-community-call-november-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/superteam-canada-community-call-november-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/superteam-canada-community-call-november-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/superteam-canada-community-call-november-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/superteam-canada-community-call-november-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/superteam-canada-community-call-november-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/superteam-canada-community-call-november-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/superteam-canada-community-call-november-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/superteam-canada-community-call-november-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/superteam-canada-community-call-november-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/superteam-canada-community-call-november-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/superteam-canada-community-call-october-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/superteam-canada-community-call-october-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/superteam-canada-community-call-october-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/superteam-canada-community-call-october-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/superteam-canada-community-call-october-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/superteam-canada-community-call-october-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/superteam-canada-community-call-october-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/superteam-canada-community-call-october-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/superteam-canada-community-call-october-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/superteam-canada-community-call-october-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/superteam-canada-community-call-october-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/the-future-of-finance-thessaloniki-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/the-future-of-finance-thessaloniki-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/the-future-of-finance-thessaloniki-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/the-future-of-finance-thessaloniki-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/the-future-of-finance-thessaloniki-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/the-future-of-finance-thessaloniki-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/the-future-of-finance-thessaloniki-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/the-future-of-finance-thessaloniki-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/the-future-of-finance-thessaloniki-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/the-future-of-finance-thessaloniki-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/the-future-of-finance-thessaloniki-2026-1536.webp"
         ]
       ]
     }

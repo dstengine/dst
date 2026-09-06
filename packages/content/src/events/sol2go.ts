@@ -411,6 +411,12 @@ export const items: EventItem[] = [
   {
     slug: "co-working-fridays-london-september-2026",
     site: "sol2go",
+    image: "/covers/co-working-fridays-london-september-2026.jpg",
+    imageAlt:
+      "A square courtyard in violet paper enclosed by a run of pale column slabs, a grid of short cream jets rising from the paving inside it",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Co-Working Fridays: London Chapter",
     summary:
       "A free Friday desk at Somerset House, 11 September, 10:00 to 20:00. The London chapter runs it most weeks.",
@@ -447,6 +453,12 @@ export const items: EventItem[] = [
   {
     slug: "the-future-of-finance-thessaloniki-2026",
     site: "sol2go",
+    image: "/covers/the-future-of-finance-thessaloniki-2026.jpg",
+    imageAlt:
+      "A long low boat hull cut from pale paper on a band of violet water, with a tall cylindrical tower standing beside it on the quay",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "The Future of Finance — Thessaloniki",
     cardTitle: "The Future of Finance, Thessaloniki",
     summary:
@@ -485,6 +497,12 @@ export const items: EventItem[] = [
   {
     slug: "solana-ecosystem-call-september-2026",
     site: "sol2go",
+    image: "/covers/solana-ecosystem-call-september-2026.jpg",
+    imageAlt:
+      "Many small pale paper squares arranged in a wide ring on a violet ground, one larger cream square alone at the centre of it",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "The Solana Ecosystem Call — September",
     cardTitle: "Solana Ecosystem Call, September",
     summary:
@@ -521,6 +539,12 @@ export const items: EventItem[] = [
   {
     slug: "superteam-canada-community-call-october-2026",
     site: "sol2go",
+    image: "/covers/superteam-canada-community-call-october-2026.jpg",
+    imageAlt:
+      "A dense wall of small violet paper squares in even rows, with the three-bar Solana mark hanging at its centre in the red and white of the Canadian flag",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Superteam Canada Community Call — October",
     cardTitle: "Superteam Canada call, October",
     summary:
@@ -557,6 +581,12 @@ export const items: EventItem[] = [
   {
     slug: "solana-capital-forum-singapore-2026",
     site: "sol2go",
+    image: "/covers/solana-capital-forum-singapore-2026.jpg",
+    imageAlt:
+      "A close row of tall narrow tower slabs in violet paper standing on a pale cream band, an even skyline broken by a few shorter blocks",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Solana Capital Forum Singapore",
     summary:
       "6 October in Orchard, 12:00 to 20:00 — a private forum capped at 150 allocators, investors, policymakers and infrastructure providers.",
@@ -593,6 +623,12 @@ export const items: EventItem[] = [
   {
     slug: "islanddao-v5-2026",
     site: "sol2go",
+    image: "/covers/islanddao-v5-2026.jpg",
+    imageAlt:
+      "A map seen from overhead: a small mint island at the centre of a violet sea, ringed by one wide pale band, tiny cream boat shapes scattered around it",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "IslandDAO v5",
     summary:
       "IslandDAO's month-long residency goes to Latin America for the first time: Florianópolis, 19 October to 11 November, with a hackathon, investor days and a demo day inside it.",
@@ -626,6 +662,12 @@ export const items: EventItem[] = [
   {
     slug: "money-layer-breakpoint-week-2026",
     site: "sol2go",
+    image: "/covers/money-layer-breakpoint-week-2026.jpg",
+    imageAlt:
+      "Broad flat horizontal layers of violet paper stacked edge to edge across the frame, one pale pink and one mint band lying among them",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Money Layer — Breakpoint Week",
     cardTitle: "Money Layer, Breakpoint week",
     summary:
@@ -661,6 +703,12 @@ export const items: EventItem[] = [
   {
     slug: "pr1me-london-dinner-2026",
     site: "sol2go",
+    image: "/covers/pr1me-london-dinner-2026.jpg",
+    imageAlt:
+      "One long pale table slab running the full width of the frame seen from above, an even row of small cream discs down its length",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Pr1me London — dinner for web3 finance",
     cardTitle: "Pr1me London dinner",
     summary:
@@ -696,6 +744,12 @@ export const items: EventItem[] = [
   {
     slug: "superteam-canada-community-call-november-2026",
     site: "sol2go",
+    image: "/covers/superteam-canada-community-call-november-2026.jpg",
+    imageAlt:
+      "A dense wall of small violet paper squares in even rows, with the three-bar Solana mark hanging at its centre in the red and white of the Canadian flag",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Superteam Canada Community Call — November",
     cardTitle: "Superteam Canada call, November",
     summary:
@@ -732,6 +786,12 @@ export const items: EventItem[] = [
   {
     slug: "superteam-canada-community-call-december-2026",
     site: "sol2go",
+    image: "/covers/superteam-canada-community-call-december-2026.jpg",
+    imageAlt:
+      "A dense wall of small violet paper squares in even rows, with the three-bar Solana mark hanging at its centre in the red and white of the Canadian flag",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Superteam Canada Community Call — December",
     cardTitle: "Superteam Canada call, December",
     summary:
@@ -853,6 +913,12 @@ export const items: EventItem[] = [
   {
     slug: "ethglobal-lisbon-2026",
     site: "sol2go",
+    image: "/covers/ethglobal-lisbon-2026.jpg",
+    imageAlt:
+      "A broad rise paved with dense rows of small violet diamonds, one small mint block standing alone at its crest",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "ETHGlobal Lisbon 2026",
     summary:
       "800+ hackers, $100,000 in prizes and one rule change: for the first time at an ETHGlobal event, you did not have to start from an empty repository.",

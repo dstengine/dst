@@ -1,0 +1,13 @@
+<!-- The Solana mark in the colours of the Canadian flag, for the Superteam
+     Canada community calls. Same idea as the Armenian one beside it: three
+     bars, three bands, colours in the order they fly — red, white, red.
+     Red is the Government of Canada's own #D80621; the geometry is
+     Solana's.
+
+     A national chapter gets its flag; an event that merely happens in a
+     country does not. Applied by tools/marks/apply.mjs. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 397.7 311.7" width="397.7" height="311.7">
+  <path fill="#D80621" d="M64.6 3.8C67.1 1.4 70.4 0 73.8 0h317.4c5.8 0 8.7 7 4.6 11.1l-62.7 62.7c-2.4 2.4-5.7 3.8-9.2 3.8H6.5c-5.8 0-8.7-7-4.6-11.1L64.6 3.8z"/>
+  <path fill="#FFFFFF" d="M333.1 120.1c-2.4-2.4-5.7-3.8-9.2-3.8H6.5c-5.8 0-8.7 7-4.6 11.1l62.7 62.7c2.4 2.4 5.7 3.8 9.2 3.8h317.4c5.8 0 8.7-7 4.6-11.1l-62.7-62.7z"/>
+  <path fill="#D80621" d="M64.6 237.9c2.4-2.4 5.7-3.8 9.2-3.8h317.4c5.8 0 8.7 7 4.6 11.1l-62.7 62.7c-2.4 2.4-5.7 3.8-9.2 3.8H6.5c-5.8 0-8.7-7-4.6-11.1l62.7-62.7z"/>
+</svg>
