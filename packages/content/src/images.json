@@ -14978,6 +14978,54 @@
         ]
       ]
     },
+    "/covers/blockchain-life-2026-dubai.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/blockchain-life-2026-dubai-480.avif"
+        ],
+        [
+          768,
+          "/covers/blockchain-life-2026-dubai-768.avif"
+        ],
+        [
+          1024,
+          "/covers/blockchain-life-2026-dubai-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/blockchain-life-2026-dubai-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/blockchain-life-2026-dubai-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/blockchain-life-2026-dubai-480.webp"
+        ],
+        [
+          768,
+          "/covers/blockchain-life-2026-dubai-768.webp"
+        ],
+        [
+          1024,
+          "/covers/blockchain-life-2026-dubai-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/blockchain-life-2026-dubai-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/blockchain-life-2026-dubai-1536.webp"
+        ]
+      ]
+    },
     "/covers/breakpoint-2026-london.jpg": {
       "width": 1536,
       "height": 864,
@@ -15026,6 +15074,54 @@
         ]
       ]
     },
+    "/covers/buildstation-belgrade-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/buildstation-belgrade-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/buildstation-belgrade-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/buildstation-belgrade-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/buildstation-belgrade-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/buildstation-belgrade-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/buildstation-belgrade-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/buildstation-belgrade-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/buildstation-belgrade-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/buildstation-belgrade-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/buildstation-belgrade-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/co-working-fridays-london-september-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -15071,6 +15167,54 @@
         [
           1536,
           "/covers/co-working-fridays-london-september-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/coworking-fridays-belgrade-september-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/coworking-fridays-belgrade-september-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/coworking-fridays-belgrade-september-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/coworking-fridays-belgrade-september-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/coworking-fridays-belgrade-september-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/coworking-fridays-belgrade-september-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/coworking-fridays-belgrade-september-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/coworking-fridays-belgrade-september-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/coworking-fridays-belgrade-september-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/coworking-fridays-belgrade-september-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/coworking-fridays-belgrade-september-2026-1536.webp"
         ]
       ]
     },
@@ -15935,6 +16079,54 @@
         [
           1536,
           "/covers/solana-summit-korea-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/solana-summit-serbia-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/solana-summit-serbia-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/solana-summit-serbia-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/solana-summit-serbia-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/solana-summit-serbia-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/solana-summit-serbia-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/solana-summit-serbia-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/solana-summit-serbia-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/solana-summit-serbia-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/solana-summit-serbia-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/solana-summit-serbia-2026-1536.webp"
         ]
       ]
     },
