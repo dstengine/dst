@@ -384,6 +384,54 @@
         ]
       ]
     },
+    "/covers/festival-cafe-y-chocolate-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/festival-cafe-y-chocolate-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/festival-cafe-y-chocolate-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/festival-cafe-y-chocolate-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/festival-cafe-y-chocolate-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/festival-cafe-y-chocolate-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/festival-cafe-y-chocolate-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/festival-cafe-y-chocolate-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/festival-cafe-y-chocolate-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/festival-cafe-y-chocolate-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/festival-cafe-y-chocolate-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/festival-xochiska-2026.jpg": {
       "width": 1536,
       "height": 864,

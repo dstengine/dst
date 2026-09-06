@@ -2,6 +2,50 @@ import type { EventItem } from "../types.ts";
 
 export const items: EventItem[] = [
   {
+    slug: "festival-cafe-y-chocolate-2026",
+    site: "cmx",
+    image: "/covers/festival-cafe-y-chocolate-2026.jpg",
+    imageAlt: "Una taza de papel rosa pálido recortada sobre un fondo crema, con una flor naranja de cinco pétalos apoyada en su costado izquierdo y una vaina de cacao abierta, en color vino, junto a ella",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Festival Cultural del Café y el Chocolate, edición Día de Muertos",
+    cardTitle: "Café y Chocolate, edición Día de Muertos",
+    titleSeo: "Festival Café y Chocolate 2026 en Coyoacán",
+    summary:
+      "Tres días de café, cacao y todo lo que lleva una ofrenda, del 2 al 4 de octubre en el Museo Nacional de Culturas Populares, en Coyoacán, con entrada libre.",
+    start: "2026-10-02",
+    end: "2026-10-04",
+    startTime: "11:00",
+    endTime: "19:00",
+    utcOffset: "-06:00",
+    city: "Ciudad de México",
+    venue: "Museo Nacional de Culturas Populares, Avenida Hidalgo 289, Del Carmen, Coyoacán",
+    geo: { lat: 19.3499524, lng: -99.1610279 },
+    category: "Festival",
+    organizer: "Café y Chocolate Fest",
+    tickets: { priceFrom: 0 },
+    source: {
+      name: "Café y Chocolate Fest",
+      url: "https://www.instagram.com/cafeychocolatefest_/p/DcbwTXzk4xX/",
+      verifiedOn: "2026-09-06",
+    },
+    body: [
+      "El festival lleva años ocupando el patio del Museo Nacional de Culturas Populares en octubre. Esta edición se arma alrededor del Día de Muertos, que es la temporada en que el cacao deja de ser un antojo y vuelve a ser un ingrediente de ofrenda",
+      "## Cuándo y dónde",
+      "<strong>Viernes 2, sábado 3 y domingo 4 de octubre de 2026</strong>, de <strong>11:00 a 19:00</strong>, en el <strong>Museo Nacional de Culturas Populares</strong>, <strong>Avenida Hidalgo 289</strong>, colonia Del Carmen, Coyoacán",
+      "## Cuánto cuesta",
+      "Nada. <strong>Entrada libre</strong> los tres días",
+      "## Qué hay",
+      "Productores de café, cacao y chocolate; <strong>catas de café</strong> y <strong>talleres sensoriales</strong>; <strong>ceremonias de cacao</strong>; catrinas y alebrijes; música, danza y teatro; cuenta cuentos; y lo que se necesita para poner una ofrenda",
+      "## Cómo llegar",
+      "El museo está a cuatro calles del centro de Coyoacán. En Metro, <strong>Viveros/Derechos Humanos</strong> de la <strong>Línea 3</strong> queda a unos quince minutos caminando; <strong>Coyoacán</strong>, de la misma línea, a veinte. El fin de semana el centro se llena, así que llegar en transporte ahorra la vuelta buscando dónde dejar el coche",
+    ],
+    expertise:
+      "Conviene separar este festival de los otros dos que ocurren cerca y en las mismas semanas: la Feria Artesanal del Café y el Chocolate, del 11 al 13 de septiembre, y Cacao Para Todos, en el Museo Diego Rivera Anahuacalli, del 29 de octubre al 1 de noviembre. Los tres son gratuitos, los tres son en Coyoacán y los nombres se parecen lo suficiente para que más de una agenda los confunda. Este es el del museo de Culturas Populares, y son el 2, 3 y 4 de octubre. El dato viene del cartel que publicó el propio organizador; el calendario en línea del museo no lo tiene cargado, lo cual dice más de la agenda del sitio que del festival",
+  },
+
+  {
     slug: "grito-2026-alcaldia-miguel-hidalgo",
     site: "cmx",
     image: "/covers/grito-2026-alcaldia-miguel-hidalgo.jpg",
