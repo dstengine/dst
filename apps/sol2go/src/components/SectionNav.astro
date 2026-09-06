@@ -1,19 +1,35 @@
 ---
-// The row of section links, on the calendar and on every section page. It
-// is the only navigation these pages get: they are too many for the menu
-// bar and too few to need one of their own.
+// The row of section links, on the calendar, on every section page and in
+// the events block on the front page. It is the only navigation these pages
+// get: they are too many for the menu bar and too few to need one of their
+// own.
 import type { Section } from "../sections";
 
 interface Props {
   sections: Section[];
   /** Slug of the section being read, if any — it prints as text, not a link. */
   current?: string;
+  /** The calendar itself, as the first item in the row. Given here rather
+      than assumed, because the front page's block already carries an "All
+      events" link of its own and a second one beside it leads nowhere new.
+      Pass `current="all"` on the calendar page for the same reason a
+      section marks itself: the row should say where the reader is. */
+  allHref?: string;
 }
-const { sections, current } = Astro.props;
+const { sections, current, allHref } = Astro.props;
 ---
 {sections.length > 0 && (
   <nav class="sections" aria-label="Events by country and kind">
     <ul>
+      {allHref && (
+        <li>
+          {current === "all" ? (
+            <span aria-current="page">All</span>
+          ) : (
+            <a href={allHref} title="The whole Solana events calendar">All</a>
+          )}
+        </li>
+      )}
       {sections.map((s) => (
         <li>
           {s.slug === current ? (

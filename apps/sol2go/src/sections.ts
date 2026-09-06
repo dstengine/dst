@@ -4,12 +4,16 @@
 // events serbia", "solana hackathons") that the calendar page cannot rank
 // for because it is about neither.
 //
-// A section exists only when more than two events are in it. Two entries do
-// not make a page worth landing on; they make a thinner copy of the
-// calendar at a second address, which is the classic way a small site
-// spends its crawl budget arguing with itself. The threshold is checked at
-// build time, so a section appears the day a third event lands in it and
-// disappears again if one is removed.
+// A country page exists once two events are in it; a kind needs three. The
+// difference is whose word the heading is. A country is where a reader
+// already is, and "what is on in Armenia" is a question asked whether the
+// answer is two dates or twenty — two of them is already the comparison the
+// page is opened for. A kind is a label we chose, and a page for a label
+// with two entries under it is a slice of our own taxonomy rather than an
+// answer to anything: it repeats the calendar at a second address, which is
+// how a small site spends its crawl budget arguing with itself. Both
+// thresholds are checked at build time, so a section appears the day it is
+// earned and disappears again if an event is removed.
 //
 // Both kinds live in the root rather than under /country/ or /tag/: the
 // words a reader searches for are "solana hackathons", and a path segment
@@ -72,8 +76,9 @@ export interface Section {
   items: EventItem[];
 }
 
-/** More than two, per the rule at the top of this file. */
-const ENOUGH = 2;
+/** Per the rule at the top of this file. */
+const ENOUGH_COUNTRY = 2;
+const ENOUGH_KIND = 3;
 
 function group<T>(items: T[], key: (item: T) => string | undefined): Map<string, T[]> {
   const out = new Map<string, T[]>();
@@ -93,7 +98,7 @@ export function sections(items: EventItem[]): Section[] {
   const out: Section[] = [];
 
   for (const [country, list] of group(items, (e) => e.country)) {
-    if (list.length <= ENOUGH) continue;
+    if (list.length < ENOUGH_COUNTRY) continue;
     const named = COUNTRIES[country] ?? {};
     const slug = named.slug ?? slugify(country);
     if (RESERVED.has(slug)) continue;
@@ -113,7 +118,7 @@ export function sections(items: EventItem[]): Section[] {
   }
 
   for (const [category, list] of group(items, (e) => e.category)) {
-    if (list.length <= ENOUGH) continue;
+    if (list.length < ENOUGH_KIND) continue;
     const named = CATEGORIES[category];
     if (!named) continue;
     if (RESERVED.has(named.slug)) continue;

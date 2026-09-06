@@ -19,14 +19,7 @@ const { section, all } = Astro.props;
     <p class="lede">{section.lede}</p>
   </section>
   <section class="container">
-    <SectionNav sections={all} current={section.slug} />
+    <SectionNav sections={all} current={section.slug} allHref={eventsBase} />
     <EventsList items={section.items} eventsBase={eventsBase} />
-    <p class="section-back"><a href={eventsBase} title="The Solana events calendar">The whole Solana calendar</a></p>
   </section>
 </Layout>
-
-<style>
-  .section-back {
-    margin-top: var(--space-3);
-  }
-</style>

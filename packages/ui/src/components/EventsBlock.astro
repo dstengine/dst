@@ -26,6 +26,11 @@ interface Props {
   locale?: string;
 }
 const { items, limit = 3, heading = "Events", eventsBase = "/events/", allLabel = "All events", locale } = Astro.props;
+// A `nav` slot sits between the head row and the cards: a site whose
+// calendar is cut into sections puts that row of links here, so the front
+// page offers the same way in as the calendar does. Empty on every site
+// that has no such row, which is why it is a slot and not a prop — the
+// block should not know what a section is.
 const todayIso = new Date().toISOString().slice(0, 10);
 // Same order as the full listing at /events/ — date, ascending, and nothing
 // else. A front page that led with the biggest while the listing it links to
@@ -61,6 +66,7 @@ const cards = upcoming.map((item) => {
       <h2>{heading}</h2>
       <a class="events-block-all" href={eventsBase} title={allLabel}>{allLabel}<span class="events-block-arrow" aria-hidden="true"> &rarr;</span></a>
     </div>
+    <slot name="nav" />
     <FeedCards items={cards} columns={cards.length} locale={locale} />
     <CountdownScript />
   </section>
