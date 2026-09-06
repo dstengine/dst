@@ -32,9 +32,9 @@ export const site = {
     addresses: [
       { chain: "Solana", address: "AExkP1sv4Ngx2GhJjLXv6392Yr14YPDvW7Pd6F2CBn5n" },
       { chain: "Tron", address: "TECFRdhJibvFxvJncm8oHYcRFH7EWF4DtP" },
-      { chain: "Ton", address: "UQBDdwEHADNgrj2jP9bsXjBK-5J-L8TYmAl_fOEVqQAj7Hts" },
+      { chain: "Ton (Gram)", address: "UQBDdwEHADNgrj2jP9bsXjBK-5J-L8TYmAl_fOEVqQAj7Hts" },
       { chain: "Ethereum", address: "0xa2Fe6fe5208a0aC9AEb287fFEcEa7A0ef277D0f9" },
-      { chain: "BTC", address: "bc1qgl8x7hp4fsptfzcpvtaau0d6umhuaacsc8pl2y" },
+      { chain: "Bitcoin", address: "bc1qgl8x7hp4fsptfzcpvtaau0d6umhuaacsc8pl2y" },
     ],
   },
 };
