@@ -21,6 +21,21 @@ import type { EventItem } from "@dst/content/types";
 // collided with one would either lose the route or silently shadow it.
 const RESERVED = new Set(["about", "events", "news", "go", "li"]);
 
+// Countries whose slug or heading the default would get wrong. "uk" rather
+// than "united-kingdom" because it is what people type and what the country
+// is called in a URL everywhere else; `the` because a heading that reads
+// "events in United Kingdom" reads like a form field. Everything not listed
+// here takes the slugified name and no article, which is right for most
+// countries and is why this table is small.
+const COUNTRIES: Record<string, { slug?: string; the?: boolean; short?: string }> = {
+  "United Kingdom": { slug: "uk", the: true, short: "UK" },
+  "United Arab Emirates": { slug: "uae", the: true, short: "UAE" },
+  "United States": { slug: "usa", the: true, short: "USA" },
+  Netherlands: { the: true },
+  Philippines: { the: true },
+  "Czech Republic": { the: true },
+};
+
 // The plural a section is named by, and the phrase its heading is built
 // from. Derived rather than tabulated, a "Co-working" section would be at
 // /co-workings/ and a "Residency" at /residencys/ — so it is tabulated.
@@ -79,16 +94,20 @@ export function sections(items: EventItem[]): Section[] {
 
   for (const [country, list] of group(items, (e) => e.country)) {
     if (list.length <= ENOUGH) continue;
-    const slug = slugify(country);
+    const named = COUNTRIES[country] ?? {};
+    const slug = named.slug ?? slugify(country);
     if (RESERVED.has(slug)) continue;
+    // "in the UK", "in Serbia" — the article belongs to the country, so it
+    // is carried with the country rather than written into each string.
+    const where = `${named.the ? "the " : ""}${named.short ?? country}`;
     out.push({
       slug,
       kind: "country",
-      label: country,
-      title: `Events in ${country}`,
-      description: `Solana and crypto events in ${country}, on dates confirmed with the organiser and with the source on every entry.`,
-      h1: `Solana events in ${country}`,
-      lede: `Every event on this calendar that happens in ${country} — the date as the organiser published it, and a link to where we read it.`,
+      label: named.short ?? country,
+      title: `Events in ${where}`,
+      description: `Solana and crypto events in ${where}, on dates confirmed with the organiser and with the source on every entry.`,
+      h1: `Solana events in ${where}`,
+      lede: `Every event on this calendar that happens in ${where} — the date as the organiser published it, and a link to where we read it.`,
       items: [...list].sort(byStart),
     });
   }
