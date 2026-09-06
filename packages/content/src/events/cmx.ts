@@ -2,6 +2,48 @@ import type { EventItem } from "../types.ts";
 
 export const items: EventItem[] = [
   {
+    slug: "grito-2026-alcaldia-miguel-hidalgo",
+    site: "cmx",
+    image: "/covers/grito-2026-alcaldia-miguel-hidalgo.jpg",
+    imageAlt: "Una campana de papel magenta colgada de un hilo sobre un fondo crema, y debajo una hilera de banderines triangulares del mismo color",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Grito de Independencia 2026 en la explanada de Miguel Hidalgo",
+    cardTitle: "El Grito en Miguel Hidalgo",
+    titleSeo: "El Grito 2026 en la alcaldía Miguel Hidalgo",
+    summary:
+      "Tres conciertos gratuitos en la explanada de la alcaldía el 15 de septiembre: Embajadores de la Cumbia Dinamita a las 19:00, Los Yaguaru a las 21:00 y Paty Cantú a las 23:15.",
+    start: "2026-09-15",
+    startTime: "15:00",
+    utcOffset: "-06:00",
+    city: "Ciudad de México",
+    venue: "Explanada de la alcaldía Miguel Hidalgo, Avenida Parque Lira 94, Observatorio",
+    geo: { lat: 19.4070465, lng: -99.1906501 },
+    category: "Fiestas patrias",
+    organizer: "Alcaldía Miguel Hidalgo",
+    tickets: { priceFrom: 0 },
+    source: {
+      name: "Chilango",
+      url: "http://www.chilango.com/que-hacer/grito-de-independencia-2026-concierto-gratis-los-yaguaru-y-paty-cantu-en-cdmx",
+      verifiedOn: "2026-09-06",
+    },
+    body: [
+      "El Zócalo no es el único lugar donde se grita. Cada alcaldía monta el suyo, y el de Miguel Hidalgo terminó con un cartel que aguanta la comparación",
+      "## Cuándo y dónde",
+      "<strong>Martes 15 de septiembre de 2026</strong>, en la <strong>explanada de la alcaldía Miguel Hidalgo</strong>, en <strong>Avenida Parque Lira 94</strong>, colonia Observatorio. Las actividades empiezan a las <strong>15:00</strong> y los conciertos a las <strong>19:00</strong>",
+      "## El cartel, por horario",
+      "<strong>19:00</strong> — <strong>Embajadores de la Cumbia Dinamita</strong>. <strong>21:00</strong> — <strong>Los Yaguaru</strong>. <strong>23:15</strong> — <strong>Paty Cantú</strong>",
+      "## Cuánto cuesta",
+      "Nada. <strong>Entrada libre</strong>",
+      "## Cómo llegar sin coche",
+      "Es de los puntos mejor conectados de la ciudad para una noche así: <strong>Parque Lira</strong> del Metrobús Línea 2, <strong>Constituyentes</strong> del Metro Línea 7, <strong>Los Pinos/Constituyentes</strong> del Cablebús Línea 3 y <strong>Tacubaya</strong>, que junta las líneas <strong>1, 7 y 9</strong> del Metro",
+    ],
+    expertise:
+      "La decisión práctica no es a cuál ir sino cómo salir. El horario está armado al revés de lo que conviene: el número principal empieza a las 23:15, y el Metro cierra a medianoche entre semana. Quien se quede hasta el final de Paty Cantú va a estar buscando transporte a la una de la mañana en una explanada que acaba de vaciarse. Con cuatro estaciones alrededor, el plan sensato es llegar en transporte y regresar en otra cosa, o quedarse hasta Los Yaguaru y salir con la línea 7 todavía abierta",
+  },
+
+  {
     slug: "festival-xochiska-2026",
     site: "cmx",
     image: "/covers/festival-xochiska-2026.jpg",

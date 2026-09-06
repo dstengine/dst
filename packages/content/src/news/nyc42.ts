@@ -2,6 +2,42 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "moma-what-closes-and-what-opens-this-autumn",
+    site: "nyc42",
+    image: "/covers/moma-what-closes-and-what-opens-this-autumn.jpg",
+    imageAlt: "Five empty pale picture frames in pale wood hanging in a row on a dark brown wall, the one at the left tilted well off level and the other four hanging square",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Frida and Diego closes at MoMA on Saturday, and five shows open behind it",
+    cardTitle: "MoMA: what closes, what opens",
+    titleSeo: "MoMA autumn 2026: closing and opening dates",
+    summary:
+      "The Kahlo and Rivera show ends 12 September and the Peggy Weil on 4 October. Between 15 September and 14 November, six more open — here are all the dates in one place.",
+    date: "2026-09-06",
+    category: "Museums",
+    source: {
+      name: "MoMA",
+      url: "https://www.moma.org/calendar/exhibitions/",
+      verifiedOn: "2026-09-06",
+    },
+    body: [
+      "A museum’s calendar is read backwards. The opening dates are a plan; the closing dates are a deadline, and only one of the two can be missed.",
+      "## Going, and going soon",
+      "<strong>Frida and Diego: The Last Dream</strong> — through <strong>12 September</strong>, with a member last look on the 13th. <strong>Art Lab: Sound</strong> — through <strong>13 September</strong>. <strong>The Modern Window: Julien Ceccaldi</strong> — through <strong>30 September</strong>. <strong>Peggy Weil: Core Memory</strong> — through <strong>4 October</strong>.",
+      "## Running on, with room to plan",
+      "<strong>Pierre Huyghe: UUmwelt</strong> to <strong>29 November</strong>; <strong>Architects of Liberation: Modernism in Western Africa</strong> to <strong>2 January 2027</strong>; <strong>Odili Donald Odita: Songs from Life</strong> to <strong>21 February 2027</strong>; and <strong>It’s Alive! A Century of Animation from the Collection</strong>, which opened on <strong>1 August</strong> and runs to <strong>summer 2027</strong>.",
+      "## What opens before November",
+      "<strong>Sarah Michelson: nowhere</strong>, 15 September to 11 October. <strong>Taking Back Our Space: Photographic Perspectives</strong>, from <strong>20 September</strong> to 2 May 2027. <strong>Full Disclosure: The Edge of Information Design</strong> and <strong>Nilima Sheikh: Fractured Skies</strong>, both from <strong>27 September</strong> to <strong>13 June 2027</strong>. <strong>The Surrealist Book: Tomorrow Lives in Mirrors</strong>, from <strong>4 October</strong> to 23 January 2027. <strong>Jakob Kudsk Steensen: Wetland</strong>, from <strong>12 October</strong> to 7 March 2027.",
+      "Then <strong>Brancusi: The Artist and His Studio</strong> from <strong>25 October</strong> to 27 February 2027, and <strong>Na Mira: NO SMOKING</strong> from <strong>14 November</strong> to 15 February 2027.",
+      "## Outside the building",
+      "<strong>Yoko Ono: IMAGINE PEACE</strong> has been up since <strong>3 September</strong> and stays into spring 2027. At MoMA PS1 and Socrates Sculpture Park, <strong>Ecologies of Care</strong> and <strong>In the Making 2026</strong> both run <strong>19 September to 15 November</strong>.",
+    ],
+    expertise:
+      "The useful pattern in that list is that this autumn’s openings are unusually long. Five of the shows arriving between 20 September and 25 October run into 2027, and two of them — Full Disclosure and Nilima Sheikh — sit on the calendar until June. That is nine months of no urgency at all, which is exactly the kind of show that gets missed. The genuinely time-bound part of the season is over by 4 October: Frida and Diego this Saturday, then Ceccaldi and the Weil. Plan the autumn around those four closings and everything else will still be there in the new year. One caveat on dates that end in a season rather than a day — «summer 2027», «spring 2027» — those are the ones a museum revises, so treat them as intentions rather than as bookings.",
+  },
+
+  {
     slug: "seven-days-of-free-classes-in-bed-stuy",
     site: "nyc42",
     image: "/covers/seven-days-of-free-classes-in-bed-stuy.jpg",

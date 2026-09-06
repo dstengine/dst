@@ -2,6 +2,42 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "the-monument-may-finally-get-a-visitor-centre",
+    site: "lnd",
+    image: "/covers/the-monument-may-finally-get-a-visitor-centre.jpg",
+    imageAlt: "A tall narrow cream paper column on a deep navy ground, a small orange-red flame shape floating above it and a low orange-red block standing at its foot",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "After 349 years, the Monument may finally get somewhere to explain itself",
+    cardTitle: "A visitor centre for the Monument",
+    titleSeo: "The Monument is to get a visitor centre",
+    summary:
+      "The brutalist block next door is coming down, and the ground floor of what replaces it is set aside for a cultural and visitor centre — with an exhibition about the Great Fire, and a café.",
+    date: "2026-09-06",
+    category: "Heritage",
+    source: {
+      name: "ianVisits",
+      url: "https://www.ianvisits.co.uk/articles/new-exhibition-and-visitor-centre-planned-for-the-monument-92078/",
+      verifiedOn: "2026-09-06",
+    },
+    body: [
+      "Three hundred and eleven steps, a view of the City, and — at the bottom — a ticket desk. For a column built to commemorate the fire that destroyed four fifths of London, the Monument has never had room to say very much about it.",
+      "## What is proposed",
+      "The building next door is <strong>Faryners House</strong> at <strong>25 Monument Street</strong>, a brutalist office block by <strong>Richard Seifert</strong> built in <strong>1971–3</strong>. It is to be demolished and replaced, and the <strong>City of London Corporation</strong> describes the replacement as <strong>13,338 sqm</strong> of flexible office floorspace «alongside a new cultural and visitor centre».",
+      "That centre is where the Monument’s exhibition would go: a display about the <strong>Great Fire of London</strong> and its aftermath, and — inevitably, and not unwelcome after 311 steps — a café.",
+      "## The name is not a coincidence",
+      "Faryners House is named for <strong>Thomas Farriner</strong>, the baker in Pudding Lane whose premises the fire began in on <strong>2 September 1666</strong>, and who was accused of starting it without the charge ever being fully proven. A 1970s office block named after him is to be replaced by a building that will house the exhibition explaining what happened. There are worse ways for a street to keep its own accounts.",
+      "## What was dropped",
+      "An earlier and smaller plan would have turned a redundant toilet block beside the Monument into a mini-museum. That has been cancelled and the toilets are to be demolished instead — though replacements could be provided inside the new centre, which on balance leaves the corner of Fish Street Hill better off than it was.",
+      "## How firm is any of this",
+      "Not very, yet, and it is worth saying so plainly. The office scheme has the Corporation’s approval; the visitor centre depends on final agreements that have not been signed. Main construction is expected to begin in about a year, which puts the exhibition itself several years out.",
+    ],
+    expertise:
+      "Two things are worth separating here, because press coverage tends to run them together. The consented scheme is an office building — that part is decided, and 13,338 square metres of it is the reason the site is being developed at all. The visitor centre is a ground-floor use inside that building, and a use is a matter of agreement rather than of planning permission, which is precisely why every account of it is written in the conditional. The one to watch is not the demolition, which will happen regardless, but whoever ends up holding the lease on that ground floor. As for the Monument itself: it is open now, the climb is 311 steps, and nothing about this changes that for several years. If you have been putting it off on the grounds that there is nothing to see at the bottom, that remains true until roughly the end of the decade.",
+  },
+
+  {
     slug: "nineteen-boroughs-close-a-road-for-a-bicycle",
     site: "lnd",
     image: "/covers/nineteen-boroughs-close-a-road-for-a-bicycle.jpg",

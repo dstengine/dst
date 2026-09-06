@@ -576,6 +576,54 @@
         ]
       ]
     },
+    "/covers/grito-2026-alcaldia-miguel-hidalgo.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/grito-2026-alcaldia-miguel-hidalgo-480.avif"
+        ],
+        [
+          768,
+          "/covers/grito-2026-alcaldia-miguel-hidalgo-768.avif"
+        ],
+        [
+          1024,
+          "/covers/grito-2026-alcaldia-miguel-hidalgo-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/grito-2026-alcaldia-miguel-hidalgo-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/grito-2026-alcaldia-miguel-hidalgo-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/grito-2026-alcaldia-miguel-hidalgo-480.webp"
+        ],
+        [
+          768,
+          "/covers/grito-2026-alcaldia-miguel-hidalgo-768.webp"
+        ],
+        [
+          1024,
+          "/covers/grito-2026-alcaldia-miguel-hidalgo-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/grito-2026-alcaldia-miguel-hidalgo-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/grito-2026-alcaldia-miguel-hidalgo-1536.webp"
+        ]
+      ]
+    },
     "/covers/juegos-mundiales-robots-humanoides-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -6577,6 +6625,54 @@
         [
           1536,
           "/covers/the-marathon-runs-twice-in-2027-1536.webp"
+        ]
+      ]
+    },
+    "/covers/the-monument-may-finally-get-a-visitor-centre.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/the-monument-may-finally-get-a-visitor-centre-480.avif"
+        ],
+        [
+          768,
+          "/covers/the-monument-may-finally-get-a-visitor-centre-768.avif"
+        ],
+        [
+          1024,
+          "/covers/the-monument-may-finally-get-a-visitor-centre-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/the-monument-may-finally-get-a-visitor-centre-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/the-monument-may-finally-get-a-visitor-centre-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/the-monument-may-finally-get-a-visitor-centre-480.webp"
+        ],
+        [
+          768,
+          "/covers/the-monument-may-finally-get-a-visitor-centre-768.webp"
+        ],
+        [
+          1024,
+          "/covers/the-monument-may-finally-get-a-visitor-centre-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/the-monument-may-finally-get-a-visitor-centre-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/the-monument-may-finally-get-a-visitor-centre-1536.webp"
         ]
       ]
     },
@@ -13633,6 +13729,54 @@
         [
           1536,
           "/covers/lenape-legacies-at-the-museum-of-the-city-1536.webp"
+        ]
+      ]
+    },
+    "/covers/moma-what-closes-and-what-opens-this-autumn.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/moma-what-closes-and-what-opens-this-autumn-480.avif"
+        ],
+        [
+          768,
+          "/covers/moma-what-closes-and-what-opens-this-autumn-768.avif"
+        ],
+        [
+          1024,
+          "/covers/moma-what-closes-and-what-opens-this-autumn-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/moma-what-closes-and-what-opens-this-autumn-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/moma-what-closes-and-what-opens-this-autumn-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/moma-what-closes-and-what-opens-this-autumn-480.webp"
+        ],
+        [
+          768,
+          "/covers/moma-what-closes-and-what-opens-this-autumn-768.webp"
+        ],
+        [
+          1024,
+          "/covers/moma-what-closes-and-what-opens-this-autumn-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/moma-what-closes-and-what-opens-this-autumn-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/moma-what-closes-and-what-opens-this-autumn-1536.webp"
         ]
       ]
     },
