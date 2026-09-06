@@ -27,6 +27,12 @@ interface Props {
   // href map can't know about — a city, a show, a venue. Without it the
   // icon is still resolved from the href, so every other site is unchanged.
   nav: { href: string; label: string; title?: string; icon?: string }[];
+  /** Title attribute on the wordmark, which links home from every page.
+      Defaults to the site's name, which is the right answer only when
+      the name is one a reader recognises; where it is not, this is a
+      slot on every page of the site that can carry the head keyword
+      instead. */
+  homeTitle?: string;
   complianceNote?: string;
   jsonLd?: Record<string, unknown>[];
   logoSrc?: string;
@@ -97,7 +103,7 @@ interface Props {
   lang?: string;
 }
 
-const { title, titleSuffix, description, siteName, nav, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [], footerSiteName = siteName, instagram, image, footerSites = [], networkFooter = true, publisher, defaultTheme, lang = "en", noindex = false, prose = false } = Astro.props;
+const { title, titleSuffix, description, siteName, nav, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [], footerSiteName = siteName, homeTitle, instagram, image, footerSites = [], networkFooter = true, publisher, defaultTheme, lang = "en", noindex = false, prose = false } = Astro.props;
 const pageTitle = titleSuffix ? `${title} \u2014 ${titleSuffix}` : title;
 const isDstHome = Astro.site?.hostname === "dst.llc";
 // The two strings the shell says on its own, in the language of the page.
@@ -254,7 +260,7 @@ const lateIcons = navFootprint > 700;
     <a class="skip-link" href="#content">{chrome.skip}</a>
     <header class="site-header">
       <div class="container header-inner">
-        <a class="site-name" href="/" title={siteName}>
+        <a class="site-name" href="/" title={homeTitle ?? siteName}>
           {/* Decorative: the site name sits right beside it, and an alt of
               "DST" made the link announce itself twice — "DST DST" on the
               hub, where the name is the same word. */}

@@ -38,7 +38,7 @@ export const items: EventItem[] = [
     },
     ticket: { url: "https://cryptoexpodubai.com/dubai#tickets", label: "Tickets" },
     body: [
-      "The nearest thing on this calendar, and the one least like the rest of it. Where Breakpoint and the Hacker House are addressed to people who write code, Crypto Expo Dubai is addressed to the people who license, custody and allocate — and it says so in its own strapline: “Where Digital Assets Meet Institutional Capital.”",
+      "Not a Solana event, and the one least like the rest of this calendar. Where Solana Breakpoint and the Hacker House are addressed to people who write code, Crypto Expo Dubai is addressed to the people who license, custody and allocate — and it says so in its own strapline: “Where Digital Assets Meet Institutional Capital.”",
       "## The dates and the hall",
       "<strong>9 and 10 September 2026</strong>, <strong>10:00 to 18:00</strong>, at the <strong>Dubai World Trade Centre</strong>. It is the <strong>eighth edition</strong>.",
       "## The numbers the organiser publishes",
@@ -107,7 +107,7 @@ export const items: EventItem[] = [
     title: "Crypto World's Fair",
     cardTitle: "Crypto World's Fair hackathon",
     summary:
-      "Colosseum's online hackathon runs four weeks from 14 September to 12 October, across eight ecosystems at once. Winners can take $250,000 from its accelerator.",
+      "Colosseum's online hackathon runs four weeks from 14 September to 12 October, across eight ecosystems at once, Solana among them. Winners can take $250,000 from its accelerator.",
     start: "2026-09-14",
     end: "2026-10-12",
     city: "Online",
@@ -190,7 +190,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Scale or Die",
     summary:
-      "A one-day engineering conference in London on 14 November, 09:30 to 18:30, the day before Breakpoint opens.",
+      "A one-day Solana engineering conference in London on 14 November, 09:30 to 18:30, the day before Breakpoint opens.",
     start: "2026-11-14",
     startTime: "09:30",
     endTime: "18:30",
@@ -205,7 +205,7 @@ export const items: EventItem[] = [
     },
     ticket: { url: "https://luma.com/scale-or-die-26", label: "Register" },
     body: [
-      "Scale or Die is the technical day that Breakpoint's main stage no longer has room for. One day, one track, London, and it happens the day before the conference opens.",
+      "Scale or Die is the technical day that Solana Breakpoint's main stage no longer has room for. One day, one track, London, and it happens the day before the conference opens.",
       "## The details",
       "<strong>14 November 2026</strong>, <strong>09:30 to 18:30</strong>, in London. The address is released to registered guests rather than published.",
       "## Why the day before",
@@ -419,7 +419,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Co-Working Fridays: London Chapter",
     summary:
-      "A free Friday desk at Somerset House, 11 September, 10:00 to 20:00. The London chapter runs it most weeks.",
+      "A free Friday desk at Somerset House, 11 September, 10:00 to 20:00, for anyone building on Solana. The London chapter runs it most weeks.",
     start: "2026-09-11",
     startTime: "10:00",
     endTime: "20:00",
@@ -462,7 +462,7 @@ export const items: EventItem[] = [
     title: "The Future of Finance — Thessaloniki",
     cardTitle: "The Future of Finance, Thessaloniki",
     summary:
-      "Anodos Labs and Superteam Balkan take over a cruise boat moored by the White Tower on 13 September, 19:30 to 22:00 — the closing party of Thessaloniki International Fair week.",
+      "Anodos Labs and Superteam Balkan, the Solana chapter for the region, take over a cruise boat moored by the White Tower on 13 September, 19:30 to 22:00 — the closing party of Thessaloniki International Fair week.",
     start: "2026-09-13",
     startTime: "19:30",
     endTime: "22:00",
@@ -546,9 +546,10 @@ export const items: EventItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "Superteam Canada Community Call — October",
+    titleSeo: "Superteam Canada Community Call, October",
     cardTitle: "Superteam Canada call, October",
     summary:
-      "Thirty minutes on Discord on 1 October, 16:00 to 16:30 UTC, hosted by Simon. The first of three on the calendar, a month apart.",
+      "Thirty minutes on Discord on 1 October, 16:00 to 16:30 UTC, hosted by Simon, from the chapter building the Solana ecosystem in Canada. The first of three, a month apart.",
     start: "2026-10-01",
     startTime: "16:00",
     endTime: "16:30",
@@ -631,7 +632,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "IslandDAO v5",
     summary:
-      "IslandDAO's month-long residency goes to Latin America for the first time: Florianópolis, 19 October to 11 November, with a hackathon, investor days and a demo day inside it.",
+      "IslandDAO's month-long residency for the Solana ecosystem goes to Latin America for the first time: Florianópolis, 19 October to 11 November, with a hackathon, investor days and a demo day inside it.",
     start: "2026-10-19",
     end: "2026-11-11",
     utcOffset: "-03:00",
@@ -671,7 +672,7 @@ export const items: EventItem[] = [
     title: "Money Layer — Breakpoint Week",
     cardTitle: "Money Layer, Breakpoint week",
     summary:
-      "Capvise brings its founder-and-fund format to Breakpoint week: London, 16 November, 18:30 to 22:00, under the heading “Money. Markets. Machines.”",
+      "Capvise brings its founder-and-fund format to Solana's Breakpoint week: London, 16 November, 18:30 to 22:00, under the heading “Money. Markets. Machines.”",
     start: "2026-11-16",
     startTime: "18:30",
     endTime: "22:00",
@@ -712,7 +713,7 @@ export const items: EventItem[] = [
     title: "Pr1me London — dinner for web3 finance",
     cardTitle: "Pr1me London dinner",
     summary:
-      "A Breakpoint-week dinner for web3 accounting and finance, London, 16 November, 19:00 to 22:00 — and the guest list is restricted by job title, in writing.",
+      "A Solana Breakpoint-week dinner for web3 accounting and finance, London, 16 November, 19:00 to 22:00 — and the guest list is restricted by job title, in writing.",
     start: "2026-11-16",
     startTime: "19:00",
     endTime: "22:00",
@@ -751,9 +752,10 @@ export const items: EventItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "Superteam Canada Community Call — November",
+    titleSeo: "Superteam Canada Community Call, November",
     cardTitle: "Superteam Canada call, November",
     summary:
-      "The second of the three, 5 November, 17:00 to 17:30 UTC on Discord. The clock moves an hour in UTC and the listing does not say why.",
+      "The second of the three Solana calls from Superteam Canada, 5 November, 17:00 to 17:30 UTC on Discord. The clock moves an hour in UTC and the listing does not say why.",
     start: "2026-11-05",
     startTime: "17:00",
     endTime: "17:30",
@@ -793,9 +795,10 @@ export const items: EventItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "Superteam Canada Community Call — December",
+    titleSeo: "Superteam Canada Community Call, December",
     cardTitle: "Superteam Canada call, December",
     summary:
-      "The last one on the calendar: 3 December, 17:00 to 17:30 UTC on Discord. Nothing is published beyond it.",
+      "The last Solana call Superteam Canada has scheduled: 3 December, 17:00 to 17:30 UTC on Discord. Nothing is published beyond it.",
     start: "2026-12-03",
     startTime: "17:00",
     endTime: "17:30",
@@ -934,7 +937,7 @@ export const items: EventItem[] = [
       verifiedOn: "2026-09-06",
     },
     body: [
-      "Lisbon is on this calendar for one reason, and it is not the prize pool. It is where ETHGlobal changed the oldest rule in hackathons.",
+      "Not a Solana event. Lisbon is on this calendar for one reason and it is not the prize pool: it is where ETHGlobal changed the oldest rule in hackathons, and a rule change at one hackathon is read by everyone who runs one.",
       "## The rule that changed",
       "Until Lisbon, the terms were: empty repository only, existing code not allowed. In July they became <strong>“any repo you bring”</strong>, with existing code <strong>welcomed</strong>. Team size stayed 1–5 and sponsor SDKs stayed capped at three — ETHGlobal's own summary is “two items, the rest unchanged”, which undersells it.",
       "## The three ways to enter",

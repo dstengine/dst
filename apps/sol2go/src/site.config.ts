@@ -7,7 +7,11 @@ import { publisher } from "./content";
 
 export const site = {
   siteName: "sol2go.lol",
-  titleSuffix: "sol2go",
+  // Nobody searches for "sol2go", so the suffix — the most expensive
+  // sixty characters on the page — went to a name that taught a reader
+  // nothing. A brand belongs in a title once it is one; until then the
+  // slot is worth more as the word the site is actually about.
+  titleSuffix: "Solana events",
   lang: "en",
   publisher,
   // Independent of the DST group and of the other .lol sites: no footer

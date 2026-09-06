@@ -14,16 +14,21 @@ interface Props {
 }
 const { title, description, jsonLd, image, noindex, prose } = Astro.props;
 
+// The label is what fits in the bar; the title is what the link is about.
+// A title attribute that repeats its own label spends a slot on nothing —
+// on this site every one of them can say Solana instead, which is the word
+// the site is for and the one no menu item happened to contain.
 const nav = [
-  { href: "/", label: "What's on", icon: "home" },
-  { href: "/news/", label: "News", icon: "news" },
-  { href: "/events/", label: "Events", icon: "events" },
-  { href: "/about/", label: "About", icon: "id" },
+  { href: "/", label: "What's on", title: "Solana events, meetups and hackathons", icon: "home" },
+  { href: "/news/", label: "News", title: "Solana ecosystem news", icon: "news" },
+  { href: "/events/", label: "Events", title: "The Solana events calendar", icon: "events" },
+  { href: "/about/", label: "About", title: "About sol2go, a Solana calendar and newsfeed", icon: "id" },
 ];
 
 ---
 <BaseLayout
   {...site}
+  homeTitle="Solana events, meetups and hackathons"
   prose={prose}
   title={title}
   description={description}

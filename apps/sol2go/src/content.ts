@@ -12,23 +12,23 @@ export const newsBase = "/news/";
 export const eventsBase = "/events/";
 
 export const home = {
-  title: "Solana events, meetups and hackathons",
+  title: "Meetups, hackathons and conferences",
   description: "Solana meetups, hackathons and conferences, with the source and the date it was checked on every entry.",
   h1: "Where Solana meets in person",
   lede: `Hackathons, conferences and city meetups across the Solana ecosystem, plus the wider crypto calendar they sit in. Dates come from the organiser, and every entry says when we last looked.`,
 };
 
 export const news = {
-  title: "News",
+  title: "Ecosystem news",
   description: "What changed in the Solana ecosystem: releases, tooling, programmes and the calendar around them.",
-  h1: "What changed in the ecosystem",
+  h1: "What changed in the Solana ecosystem",
   lede: `Releases, tooling and programmes — the things that change what a builder can do this month. Not a price feed.`,
 };
 
 export const events = {
-  title: "Events",
-  description: "Hackathons, conferences and meetups on dates confirmed with the organiser.",
-  h1: "The calendar",
+  title: "Calendar",
+  description: "Solana hackathons, conferences and meetups, on dates confirmed with the organiser.",
+  h1: "The Solana calendar",
   lede: `Hackathons, conferences and meetups, on dates confirmed with the organiser. Anything whose date we could not confirm waits until we can.`,
 };
 
