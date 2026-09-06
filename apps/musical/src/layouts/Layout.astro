@@ -11,8 +11,10 @@ interface Props {
   jsonLd?: Record<string, unknown>[];
   /** og:image for this page — see BaseLayout. */
   image?: string;
+  /** Kept out of the index while a page is thinner than what it links to. */
+  noindex?: boolean;
 }
-const { title, description, jsonLd, image, prose } = Astro.props;
+const { title, description, jsonLd, image, prose, noindex } = Astro.props;
 
 // The menu is about the site, not about one city: the hero event has a place
 // in it because it is the worked example, and the rest is how anyone else
@@ -23,6 +25,7 @@ const nav = [
   { href: "/venues/", label: "Venues", title: "Every theatre and arena on this site", icon: "pin" },
   { href: "/chicago/", label: "Chicago", title: "Chicago The Musical: every run, its history and what to watch", icon: "stage" },
   { href: "/cats/", label: "Cats", title: "Cats on tour: every stop, its theatre and its seller", icon: "cat" },
+  { href: "/news/", label: "News", title: "What changed in the listings, with a source on every entry", icon: "news" },
   { href: "/online/", label: "Online", title: "Musicals you can legally watch at home", icon: "play" },
   { href: "/about/", label: "About", title: "How these listings are built and checked", icon: "id" },
 ];
@@ -36,6 +39,7 @@ const nav = [
   nav={nav}
   jsonLd={jsonLd}
   image={image}
+  noindex={noindex}
 >
   <slot />
 </BaseLayout>

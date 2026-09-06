@@ -14,8 +14,11 @@ import { items as ldn } from "./ldn.ts";
 import { items as lnd } from "./lnd.ts";
 import { items as cmx } from "./cmx.ts";
 import { items as mxo } from "./mxo.ts";
+// musical.today publishes itself too: the feed exists so a listings site has
+// somewhere to put what changes the listings.
+import { items as musical } from "./musical.ts";
 
-const BY_SITE: Record<string, NewsItem[]> = { dst, llc, visas, riviera, mbr, palmcentral, eco, fwf, nyc42, ldn, lnd, cmx, mxo };
+const BY_SITE: Record<string, NewsItem[]> = { dst, llc, visas, riviera, mbr, palmcentral, eco, fwf, nyc42, ldn, lnd, cmx, mxo, musical };
 
 export const allNews: NewsItem[] = Object.values(BY_SITE).flat();
 

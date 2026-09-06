@@ -26,7 +26,7 @@ export const items: EventItem[] = [
     body: [
       "GITEX fills the Trade Centre in October with companies that already have customers. Six weeks later the same organisers fill Expo City with the ones that do not yet.",
       "## The dates",
-      "<strong>Expand North Star</strong> runs <strong>8&ndash;10 December 2026</strong> at the <strong>Dubai Exhibition Centre</strong> in Expo City. It is the <strong>tenth edition</strong>, and it is organised by GITEX Global.",
+      "<strong>Expand North Star</strong> runs <strong>8–10 December 2026</strong> at the <strong>Dubai Exhibition Centre</strong> in Expo City. It is the <strong>tenth edition</strong>, and it is organised by GITEX Global.",
       "## The size of it, as measured last year",
       "The 2025 edition drew <strong>2,050 exhibiting startups from 96 countries</strong>, <strong>more than 1,300 investors</strong>, <strong>6,500 founders</strong> and <strong>400 speakers</strong>, with <strong>5,340 pre-arranged meetings</strong> booked on site. The organisers describe the investor cohort as managing more than <strong>$1 trillion</strong> in assets between them.",
       "## What is inside it",

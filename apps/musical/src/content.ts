@@ -28,5 +28,15 @@ export const checkedOn = "29 August 2026";
 export const disclaimer =
   "Independent listings site. Every booking happens on the seller's own page, and the price and dates there are the ones that count.";
 
+/** Where this site keeps its feed, and what the index page says it is. */
+export const newsBase = "/news/";
+
+export const news = {
+  title: "News",
+  description: "What changed in the listings on this site, each entry checked against the source that published it.",
+  h1: "What changed in the listings",
+  lede: `Runs announced, theatres renamed, productions that set the terms for the ones after them — each entry checked against the source that published it.`,
+};
+
 /** The run the cross-site promo block leads with. */
 export const featuredRun = { show: "chicago", run: "dubai" };

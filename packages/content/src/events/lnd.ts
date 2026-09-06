@@ -27,11 +27,11 @@ export const items: EventItem[] = [
     body: [
       "Edinburgh in August costs a fortune and requires a train. Lambeth in autumn requires the Northern line.",
       "## The dates",
-      "<strong>24 September to 25 October 2026</strong> &mdash; five weeks, across venues in the <strong>London Borough of Lambeth</strong>.",
+      "<strong>24 September to 25 October 2026</strong> — five weeks, across venues in the <strong>London Borough of Lambeth</strong>.",
       "## Who is behind it",
       "The team at <strong>The Bread &amp; Roses Theatre</strong> in Clapham, who have run it yearly since <strong>2015</strong> and expanded it across multiple venues in 2024.",
       "## The shape of it",
-      "Theatre, comedy, cabaret, music and family work, staged in small rooms rather than in one festival site &mdash; theatres, pubs and chapels around the borough. Named supporters and associated venues include the <strong>Bread &amp; Roses Pub</strong>, <strong>St John's Waterloo</strong>, <strong>The Bridge at Waterloo</strong>, <strong>This is Clapham</strong>, <strong>Brixton BID</strong> and <strong>We Are Waterloo</strong>.",
+      "Theatre, comedy, cabaret, music and family work, staged in small rooms rather than in one festival site — theatres, pubs and chapels around the borough. Named supporters and associated venues include the <strong>Bread &amp; Roses Pub</strong>, <strong>St John's Waterloo</strong>, <strong>The Bridge at Waterloo</strong>, <strong>This is Clapham</strong>, <strong>Brixton BID</strong> and <strong>We Are Waterloo</strong>.",
       "## Its stated remit",
       "The festival is open to all, with an explicit remit to platform the work of women, LGBTQ+, global-majority and working-class artists.",
     ],

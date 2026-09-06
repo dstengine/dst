@@ -2,6 +2,76 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "dubai-holds-its-first-environment-conference-this-week",
+    site: "eco",
+    image: "/covers/dubai-holds-its-first-environment-conference-this-week.jpg",
+    imageAlt: "Six sage paper leaves arranged in a ring on a deep forest green ground, with a warm cream circle at the centre",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Dubai holds its first environment conference on 7 and 8 September",
+    cardTitle: "A first environment conference",
+    titleSeo: "Dubai Environment Conference and Exhibition 2026",
+    summary:
+      "The Dubai Environment and Climate Change Authority stages the emirate’s first Environment Conference and Exhibition at the Grand Hyatt, across six themes that include food security, the circular economy and environmental AI.",
+    date: "2026-09-06",
+    category: "Environment",
+    source: {
+      name: "Gulf News",
+      url: "https://gulfnews.com/uae/environment/dubai-to-host-first-environment-conference-and-exhibition-in-september-1.500637032",
+      verifiedOn: "2026-09-06",
+    },
+    body: [
+      "A city that has hosted a UN climate summit holding its first environment conference sounds like a contradiction. It is not: one was the world’s meeting, and this is the emirate’s own.",
+      "## What and when",
+      "The <strong>Dubai Environment Conference &amp; Exhibition</strong> runs on <strong>7 and 8 September 2026</strong> at the <strong>Grand Hyatt Dubai</strong>, organised by the <strong>Dubai Environment and Climate Change Authority</strong> under the patronage of <strong>Sheikh Ahmed bin Saeed Al Maktoum</strong>, Chairman of the Dubai Supreme Council of Energy. Its theme is «Protecting Our Environment, Preserving Our Future».",
+      "## The six subjects",
+      "<strong>Biodiversity</strong>, <strong>natural resources</strong>, <strong>food security</strong>, <strong>climate change</strong>, the <strong>circular economy</strong> and <strong>environmental artificial intelligence</strong>.",
+      "## What is on the floor",
+      "Alongside panel discussions and research presentations, an exhibition of environmental technologies covering <strong>air, soil and water quality</strong>, sustainable food supply chains, <strong>recycling and electronic waste</strong>, water resource management, <strong>coastal monitoring</strong>, and satellite tracking of vegetation with real-time environmental data collection.",
+      "## Who said what",
+      "<strong>Ahmed Mohammed bin Thani</strong>, Director-General of DECCA: «The conference and exhibition represent a new milestone in Dubai’s efforts to consolidate its position as a global centre for environmental innovation and leadership.»",
+    ],
+    expertise:
+      "The programme is more revealing than the framing. Five of the six themes are conventional environmental policy; the sixth, environmental artificial intelligence, is the one that tells you what the authority thinks its next few years look like, and it sits beside two hard monitoring subjects — coastal observation and satellite vegetation tracking. Read together, those three suggest the emphasis is shifting from targets to measurement, which is the less glamorous half of environmental policy and the half that determines whether any target means anything. That is worth watching for a specific reason: Dubai publishes ambitious strategies more readily than it publishes the underlying data series, and monitoring infrastructure is what eventually makes independent verification possible. The test for this conference, and for the next one, is whether anything demonstrated on the exhibition floor turns into a public dataset with a stable address and a documented method. Food security appearing as a headline theme is the other signal — in a desert economy that imports most of what it eats, it is a water and logistics subject wearing an agricultural label.",
+  },
+
+  {
+    slug: "solar-is-now-the-largest-installed-technology-on-earth",
+    site: "eco",
+    image: "/covers/solar-is-now-the-largest-installed-technology-on-earth.jpg",
+    imageAlt: "A large sage paper square on a deep forest green ground beside three smaller moss squares of decreasing size, a warm cream line beneath them all",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Solar passed 600 GW in a single year and is now the largest installed technology on earth",
+    cardTitle: "Solar, now the largest fleet",
+    titleSeo: "IEA: solar PV additions passed 600 GW in 2025",
+    summary:
+      "The IEA’s Global Energy Review 2026 puts 2025 solar additions above 600 GW for the first time, taking the cumulative fleet to about 2,800 GW — more installed capacity than any other generating technology.",
+    date: "2026-09-06",
+    category: "Energy",
+    source: {
+      name: "International Energy Agency",
+      url: "https://www.iea.org/reports/global-energy-review-2026/technology-solar-pv-and-wind",
+      verifiedOn: "2026-09-06",
+    },
+    body: [
+      "There is a moment when a technology stops being an alternative and becomes the default, and it is visible only in the capacity tables.",
+      "## The threshold",
+      "Solar PV additions in <strong>2025</strong> rose around <strong>12%</strong> and passed <strong>600 GW</strong> for the first time, taking cumulative installed solar capacity to roughly <strong>2,800 GW</strong> — making solar the technology with the <strong>largest installed capacity globally</strong>.",
+      "## How broad it is",
+      "<strong>Thirty countries</strong> each installed more than <strong>1 GW</strong> in the year, nearly double the number that did so in <strong>2020</strong>. Solar accounted for more than <strong>three quarters</strong> of the <strong>800 GW</strong> of renewable capacity added worldwide; wind took about <strong>20%</strong>.",
+      "## Wind, quietly",
+      "Wind additions reached roughly <strong>160 GW</strong>, a record, with growth up nearly <strong>40%</strong> on the previous year despite continuing supply chain difficulties.",
+      "## Where it happened",
+      "<strong>China</strong> added close to <strong>500 GW</strong> of renewables, over <strong>60%</strong> of the global total, including <strong>370 GW</strong> of solar and <strong>117 GW</strong> of wind. <strong>India</strong> grew fastest among major markets at around <strong>60%</strong>, on <strong>50 GW</strong> of solar. The <strong>European Union</strong> added a record <strong>85 GW</strong>, with Spain and Germany leading the solar expansion.",
+    ],
+    expertise:
+      "Installed capacity is the number that changes first and explains least. A gigawatt of solar and a gigawatt of gas do not produce the same electricity, because the solar plant works when the sun is up and the gas plant works when it is told to; the crossover being reported here is a nameplate crossover, and the generation crossover happens later and by a smaller margin. That is not a reason to dismiss it. Capacity leads because it is where the money and the manufacturing go, and 30 countries clearing a gigawatt in a year is a supply-chain fact that will still be true in five years regardless of any single government’s policy. The concentration is the caveat worth carrying: with China responsible for more than 60% of additions, the global figure is substantially one country’s industrial policy, and the module prices that make a Gulf solar tender viable are set by that same industry. For a region building at utility scale, the second-order consequence of a fleet this large is that the binding constraint moves from panels to everything around them — grid connections, storage duration and the hours after sunset, which is exactly why tenders here now arrive with battery capacity attached rather than as solar alone.",
+  },
+
+  {
     slug: "dp-world-names-its-first-methanol-dual-fuel-ship",
     site: "eco",
     image: "/covers/dp-world-names-its-first-methanol-dual-fuel-ship.jpg",
@@ -47,7 +117,7 @@ export const items: NewsItem[] = [
     title: "A 60% carbon cut just changed hands",
     cardTitle: "Apple's climate number gets a new owner",
     summary:
-      "Apple says its carbon footprint is 60% below 2015. On 1 September the person who has to keep saying that became someone else &mdash; and he is the one who signed off the hardware.",
+      "Apple says its carbon footprint is 60% below 2015. On 1 September the person who has to keep saying that became someone else — and he is the one who signed off the hardware.",
     date: "2026-09-01",
     category: "Environment",
     source: {
@@ -59,7 +129,7 @@ export const items: NewsItem[] = [
       "Corporate climate figures are usually discussed as though they belong to the company. They belong to a person, and on <strong>1 September 2026</strong> Apple's changed owner.",
       "## The number",
       "Apple states that its carbon footprint is <strong>60% below 2015 levels</strong>. That reduction was achieved over the fifteen years <strong>Tim Cook</strong> was chief executive, a period in which the company also went from <strong>$108 billion</strong> of revenue in FY2011 to <strong>$416 billion</strong> in FY2025 and added more than <strong>100,000</strong> employees.",
-      "Cutting absolute emissions by 60% while quadrupling revenue is the difficult version of the exercise. The easy version &mdash; the one most published figures describe &mdash; is intensity: emissions per unit of something that is itself growing.",
+      "Cutting absolute emissions by 60% while quadrupling revenue is the difficult version of the exercise. The easy version — the one most published figures describe — is intensity: emissions per unit of something that is itself growing.",
       "## Who now owns it",
       "<strong>John Ternus</strong>, chief executive since 1 September, joined Apple in <strong>2001</strong> and spent his career in <strong>hardware engineering</strong>, latterly as the senior vice president responsible for it. He was not adjacent to the footprint. Materials, manufacturing and packaging are hardware decisions, and hardware is what he ran.",
       "That is an unusual and rather demanding inheritance. A chief executive who arrives from finance or from software can treat the environmental programme as something reported to them. This one signed off the products it measures.",
@@ -67,7 +137,7 @@ export const items: NewsItem[] = [
       "There are more than <strong>2.5 billion</strong> active Apple devices in use across <strong>200-plus countries and territories</strong>. Every one of them was manufactured, shipped and will eventually be disposed of, and the great majority of a device maker's footprint sits in exactly those three places rather than in its offices.",
       "So the number that changed hands is not an office number. It is a supply chain number, and supply chains are slow: a decision taken about a material this year shows up in a footprint several years later, under whoever is running the company by then.",
       "## What to watch, and when",
-      "Not the announcement. The next annual environmental report is the first document in which a 60% figure is either extended or quietly restated, and it will be the first one this chief executive is answerable for. Fifteen years of reductions is a long enough run that continuing it is unremarkable and breaking it is very visible &mdash; which is, in practice, the strongest incentive a climate target ever has.",
+      "Not the announcement. The next annual environmental report is the first document in which a 60% figure is either extended or quietly restated, and it will be the first one this chief executive is answerable for. Fifteen years of reductions is a long enough run that continuing it is unremarkable and breaking it is very visible — which is, in practice, the strongest incentive a climate target ever has.",
     ],
     expertise:
       "When you read any corporate climate claim, check three things before the percentage: the <strong>base year</strong>, whether the figure is <strong>absolute or per-unit</strong>, and whether it includes the supply chain. Apple's claim is against <strong>2015</strong> and is stated as a footprint rather than an intensity, which is the harder of the two to move. A figure quoted without its base year is not a claim, it is a decoration.",
@@ -91,13 +161,13 @@ export const items: NewsItem[] = [
       verifiedOn: "2026-09-01",
     },
     body: [
-      "Halfway with four years to run sounds comfortable until you remember what the denominator used to be. The UAE&rsquo;s 2030 mangrove target was originally <strong>30 million</strong> trees. It was raised to <strong>100 million</strong> &mdash; so the current <strong>51 million</strong> is not half of the original ambition, it is nearly twice it.",
+      "Halfway with four years to run sounds comfortable until you remember what the denominator used to be. The UAE’s 2030 mangrove target was originally <strong>30 million</strong> trees. It was raised to <strong>100 million</strong> — so the current <strong>51 million</strong> is not half of the original ambition, it is nearly twice it.",
       "## Where the programme stands",
       "Approximately <strong>51 million</strong> mangroves have been planted, <strong>51%</strong> of the <strong>100 million</strong> target for <strong>2030</strong>.",
       "Hiba Obaid Al Shehhi, Assistant Undersecretary for the Biodiversity and Aquatic Life Sector at the Ministry of Climate Change and Environment, described a shift in approach: marine conservation is no longer focused solely on protecting existing natural resources, but increasingly involves <strong>restoring damaged ecosystems</strong>.",
       "## The other numbers in the same programme",
       "<strong>Marine and coastal protected areas: 12%</strong> of national waters, against a <strong>30% target for 2030</strong>. There are <strong>16</strong> protected areas in the UAE.",
-      "This is the figure carrying the real gap. Mangrove planting is a schedule; raising protected coverage from 12% to 30% is a set of decisions about who may fish, anchor and build where &mdash; and those move slowly for reasons that have nothing to do with horticulture.",
+      "This is the figure carrying the real gap. Mangrove planting is a schedule; raising protected coverage from 12% to 30% is a set of decisions about who may fish, anchor and build where — and those move slowly for reasons that have nothing to do with horticulture.",
       "## Coral",
       "A project in <strong>Fujairah</strong> aims to establish <strong>1.5 million coral colonies over five years</strong>, covering more than <strong>300,000 square metres</strong>. Since 2018, <strong>66,173</strong> coral pieces have been cultivated across <strong>22,827 square metres</strong>. Research has mapped <strong>210 coral locations</strong> and identified more than <strong>55 hard coral species</strong>.",
       "Set those side by side and the scale of the new project is clear: it proposes to do roughly twenty times as much area in five years as the previous eight produced.",
@@ -107,7 +177,7 @@ export const items: NewsItem[] = [
       "A mangrove is three pieces of infrastructure at once: a carbon store that holds far more per hectare below ground than above it, a nursery that fish stocks depend on, and a wave break that reduces what a coastline has to be engineered to withstand. Counting trees is a proxy for all three, which is why the count gets published.",
     ],
     expertise:
-      "Planted mangrove counts and surviving mangrove counts are different measurements, and the gap between them is where these programmes are actually judged. Survival depends on tidal elevation at the planting site more than on the number of seedlings put in &mdash; a stand set even slightly too high or too low in the tidal frame will thin out over its first three years regardless of how carefully it was planted.",
+      "Planted mangrove counts and surviving mangrove counts are different measurements, and the gap between them is where these programmes are actually judged. Survival depends on tidal elevation at the planting site more than on the number of seedlings put in — a stand set even slightly too high or too low in the tidal frame will thin out over its first three years regardless of how carefully it was planted.",
   },
   {
     slug: "eco-dst-llc-launched",
@@ -126,7 +196,7 @@ export const items: NewsItem[] = [
       "Environmental line items in company reports are easy to state and hard to verify. Publishing each planting as its own record with coordinates is a deliberate choice: it invites anyone to go and check, instead of asking them to take a summary figure on faith.",
     image: "/stories/douglas-fir-shilovka-01.jpg",
     imageAlt:
-      "A young Douglas fir sapling freshly planted in tall grass near the Shaytanka river — the first record published on eco.dst.llc.",
+      "Cut-paper illustration: three interlocking rings of different sizes.",
     imageKind: "photo",
     geo: {
       name: "Nikolo-Pavlovsky district, Sverdlovsk region — near Shilovka, on the Shaytanka river",

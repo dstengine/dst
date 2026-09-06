@@ -2,6 +2,76 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "the-blue-line-finished-its-first-tunnel-in-two-months",
+    site: "mbr",
+    image: "/covers/the-blue-line-finished-its-first-tunnel-in-two-months.jpg",
+    imageAlt: "A long chalk-white paper tube crossing a deep teal ground, a pale aqua circle at its leading end and a small sand-coloured marker behind it",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "The Blue Line’s first tunnel was finished in two months, at 30 metres a day",
+    cardTitle: "First Blue Line tunnel, in two months",
+    titleSeo: "Blue Line finishes its first tunnel",
+    summary:
+      "Al Wugeisha, a 2,000-tonne boring machine, broke into its first station two months after tunnelling began — more than twice the daily rate achieved on the original Metro. The line opens on 9 September 2029.",
+    date: "2026-09-06",
+    category: "Transport",
+    source: {
+      name: "The National",
+      url: "https://www.thenationalnews.com/news/uae/2026/07/09/first-phase-of-tunnelling-complete-on-dubai-metro-blue-line/",
+      verifiedOn: "2026-09-06",
+    },
+    body: [
+      "Metro lines are not usually late because of the trains. They are late because of the hole, which is why the first tunnelling number of a project is the one worth reading.",
+      "## What was completed",
+      "The <strong>RTA</strong> announced in <strong>July 2026</strong> that the first phase of excavation on the <strong>Blue Line</strong> was complete, <strong>two months</strong> after tunnelling officially began. Tunnelling was inaugurated in <strong>May</strong> by <strong>Sheikh Mohammed bin Rashid</strong>. The machine has broken into its first station and continues towards <strong>Al Warqa</strong>.",
+      "## The machine",
+      "<strong>Al Wugeisha</strong> — the name comes from the Arabic for the baskets pearl divers used — is <strong>163 metres</strong> long and weighs around <strong>2,000 tonnes</strong>. It excavates roughly <strong>30 metres a day</strong>, <strong>more than double</strong> the rate achieved during construction of the original Metro, and installs its own tunnel lining segments as it goes.",
+      "## The line",
+      "<strong>30 kilometres</strong>, of which <strong>15</strong> are underground. <strong>Fourteen stations</strong> connecting Mirdif, Dubai Silicon Oasis, Dubai Creek Harbour and International City, linking five urban regions: Bur Dubai and Deira, Downtown and Business Bay, Dubai Silicon Oasis, Dubai Marina and JBR, and Expo City. Cost, <strong>Dh20.5 billion</strong>. Opening date, <strong>9 September 2029</strong>.",
+      "## What it does to the network",
+      "On completion the Dubai Metro becomes <strong>131 kilometres</strong> of track, <strong>78 stations</strong> and <strong>168 trains</strong>. The RTA projects a <strong>20% reduction</strong> in road congestion. The <strong>Gold Line</strong> — 42 kilometres, around <strong>$9 billion</strong>, entirely underground — follows on <strong>9 September 2032</strong>.",
+    ],
+    expertise:
+      "Thirty metres a day is a real number and a partial one. Tunnel boring rates are highest in uniform ground on a straight alignment and collapse near stations, cross-passages and utility crossings, where the machine stops for days at a time; a first drive between two points chosen to be straightforward is exactly where a project posts its best figure. The honest test comes on the drives that pass under existing infrastructure. For MBR City the more useful question is not the schedule but the map. The Blue Line serves the eastern arc of the city, and its value to a district on the Meydan side is indirect — it is an interchange proposition rather than a walk-to-the-station one, and the journey that improves is the trip to Creek Harbour or International City rather than the trip to Downtown, which the Red Line already does. Residents weighing a 2029 date against a purchase decision should also note the difference between a line opening and a line being useful: frequency, interchange walking times and the bus network feeding the stations are all decided much later, and they determine whether a nearby station changes anyone’s morning.",
+  },
+
+  {
+    slug: "dubai-is-the-outlier-in-the-world-cities-forecast",
+    site: "mbr",
+    image: "/covers/dubai-is-the-outlier-in-the-world-cities-forecast.jpg",
+    imageAlt: "A row of small chalk-white paper squares along a level line on a deep teal ground, with one square dropped well below the line in pale aqua",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Savills forecasts a 10% fall in Dubai prime values, against a flat world",
+    cardTitle: "Dubai, the outlier in the forecast",
+    titleSeo: "Savills sees Dubai prime down 10%",
+    summary:
+      "Across 30 cities Savills expects prime capital values to rise 0.5% in the second half of 2026. Dubai is the one large exception in the forecast, at around minus 10%, on oversupply and geopolitical uncertainty.",
+    date: "2026-09-06",
+    category: "Market",
+    source: {
+      name: "Savills",
+      url: "https://www.savills.com/research_articles/255800/393831-0",
+      verifiedOn: "2026-09-06",
+    },
+    body: [
+      "A district that is still being built has a specific interest in the word oversupply, because it is the word that describes the district.",
+      "## The forecast",
+      "In its <strong>World Cities Prime Residential Index</strong> published on <strong>19 August 2026</strong>, <strong>Savills</strong> expects prime capital values across the <strong>30 cities</strong> it tracks to rise <strong>0.5%</strong> in the second half of 2026: growth in 16 markets, flat in 10, declines in four. <strong>Dubai</strong> is described as <strong>the clear outlier</strong>, with values forecast to fall by around <strong>10%</strong> on <strong>oversupply and geopolitical uncertainty</strong>.",
+      "## Where Dubai sits in the half just gone",
+      "Dubai recorded <strong>declines in both capital values and rents</strong> in the six months to June 2026 — grouped by Savills with <strong>Berlin</strong> and <strong>Bangkok</strong>. The index average over the same period was <strong>+0.6%</strong> on values and <strong>+1.1%</strong> on rents.",
+      "## What the rest of the field is doing",
+      "<strong>Cape Town</strong> is forecast to lead, at <strong>4% to 5.9%</strong>. <strong>Singapore</strong>, <strong>Seoul</strong>, <strong>Kuala Lumpur</strong>, <strong>Lisbon</strong>, <strong>Madrid</strong> and <strong>Barcelona</strong> are put at <strong>2% to 3.9%</strong>. North America’s major cities are expected to be broadly flat. <strong>London</strong> and <strong>San Francisco</strong> are forecast to fall modestly, up to <strong>-1.9%</strong>; <strong>Sydney</strong> by <strong>-2% to -3.9%</strong>.",
+      "## The mechanism Savills names",
+      "The report’s organising idea is that supply, not sentiment, separates the winners from the losers: markets that combine <strong>constrained supply</strong>, household wealth creation and sustained international demand outperform, while <strong>elevated supply</strong> or heightened uncertainty holds a market back.",
+    ],
+    expertise:
+      "The uncomfortable part of this forecast is that it is a supply argument, and supply is the one variable a buyer can check independently. Handover pipelines are published, and a district where several thousand units complete inside eighteen months is describing its own next two years whatever any index says. That is worth doing before deciding whether a global forecaster’s number applies to a specific building — prime and mainstream do not move together, and a 10% headline drawn from top-tier villa and penthouse transactions can coexist with a stable mid-market. Two cautions in both directions. Savills is forecasting the top slice of the market in a city where the top slice is unusually thin and unusually exposed to a small number of large transactions, so the figure carries wide error bars. But a forecaster with no position in the market saying the quiet part in print is more useful than a broker’s outlook, and the sensible response to it is not to argue with the number but to price the risk it describes: buy for use rather than for exit, and treat any purchase whose case depends on capital growth inside three years as a bet rather than a plan.",
+  },
+
+  {
     slug: "al-meydan-street-gets-a-billion-dirham-rebuild",
     site: "mbr",
     image: "/covers/al-meydan-street-gets-a-billion-dirham-rebuild.jpg",
@@ -26,11 +96,11 @@ export const items: NewsItem[] = [
       "## The award",
       "Two contracts, <strong>Dh1.161 billion</strong> between them, covering roughly <strong>17 kilometres of road</strong> and <strong>3,700 metres of bridges</strong>. Completion is scheduled for the <strong>end of 2028</strong>.",
       "## The first contract",
-      "It runs <strong>Al Meydan Street from Latifa bint Hamdan Street to Umm Suqeim Street</strong>, about <strong>14 kilometres</strong>, and takes in <strong>Al Marabea' Street</strong> from Dubai Hills to Sheikh Mohammed bin Zayed Road. At the Al Marabea'/Al Meydan junction it builds a <strong>grade-separated interchange</strong> with 1,600 metres of bridges and a capacity of <strong>14,400 vehicles an hour</strong>, plus a direct three-lane connection to Sheikh Mohammed bin Zayed Road rated at <strong>7,800 vehicles an hour</strong> and a 700-metre elevated link on the Dubai&ndash;Al Ain Road towards Nad Al Hamar.",
+      "It runs <strong>Al Meydan Street from Latifa bint Hamdan Street to Umm Suqeim Street</strong>, about <strong>14 kilometres</strong>, and takes in <strong>Al Marabea' Street</strong> from Dubai Hills to Sheikh Mohammed bin Zayed Road. At the Al Marabea'/Al Meydan junction it builds a <strong>grade-separated interchange</strong> with 1,600 metres of bridges and a capacity of <strong>14,400 vehicles an hour</strong>, plus a direct three-lane connection to Sheikh Mohammed bin Zayed Road rated at <strong>7,800 vehicles an hour</strong> and a 700-metre elevated link on the Dubai–Al Ain Road towards Nad Al Hamar.",
       "## The second contract",
-      "It takes <strong>Al Meydan Street from First Al Khail Street, across Al Khail Road, to Muscat Street</strong>, adds about <strong>2 kilometres</strong> of new surface road connecting to Latifa bint Hamdan Street, and builds a second <strong>grade-separated interchange at Al Meydan/Muscat Street</strong> &mdash; 1,400 metres of bridges, again <strong>14,400 vehicles an hour</strong>. It also includes an integrated cycling network with underpasses.",
+      "It takes <strong>Al Meydan Street from First Al Khail Street, across Al Khail Road, to Muscat Street</strong>, adds about <strong>2 kilometres</strong> of new surface road connecting to Latifa bint Hamdan Street, and builds a second <strong>grade-separated interchange at Al Meydan/Muscat Street</strong> — 1,400 metres of bridges, again <strong>14,400 vehicles an hour</strong>. It also includes an integrated cycling network with underpasses.",
       "## What the RTA says it buys",
-      "North&ndash;south capacity up <strong>18%</strong>, and the run from Al Manama Street and the Dubai&ndash;Al Ain Road to Umm Suqeim cut from <strong>30 minutes to 10</strong>. <strong>Mattar Al Tayer</strong>, the RTA's Director General, called Al Meydan Street one of Dubai's key strategic corridors. The RTA puts the population served at <strong>more than 500,000</strong> across the surrounding communities.",
+      "North–south capacity up <strong>18%</strong>, and the run from Al Manama Street and the Dubai–Al Ain Road to Umm Suqeim cut from <strong>30 minutes to 10</strong>. <strong>Mattar Al Tayer</strong>, the RTA's Director General, called Al Meydan Street one of Dubai's key strategic corridors. The RTA puts the population served at <strong>more than 500,000</strong> across the surrounding communities.",
     ],
     expertise:
       "Two things in this award matter more to residents than the headline number. The first is the cycling network with underpasses in contract two: MBR City has cycle paths that end at arterial roads, and a grade-separated crossing is the difference between a network and a set of disconnected loops. The second is the completion date. End-2028 means the district lives through roughly two years of construction on its main street first, and the deepest disruption will be at the two interchange sites — Al Marabea'/Al Meydan and Al Meydan/Muscat Street — rather than spread evenly along the 17 kilometres. Anyone choosing between addresses inside the district would do well to look at which of those two junctions they would be commuting through.",
@@ -61,7 +131,7 @@ export const items: NewsItem[] = [
       "## What opened",
       "<strong>Nad Al Sheba Gardens Mall</strong>, a <strong>two-storey</strong> community scheme inside the Nad Al Sheba Gardens residential district. It opened in <strong>August 2026</strong>.",
       "## Who built it",
-      "The community is <strong>developed by Meraas</strong> and <strong>owned by Shamal</strong>. <strong>Abdulla Binhabtoor</strong>, Shamal's CEO, describes the district as a calm rather than a busy environment &mdash; which is a reasonable description of the retail as well, since this is a neighbourhood centre rather than a destination mall.",
+      "The community is <strong>developed by Meraas</strong> and <strong>owned by Shamal</strong>. <strong>Abdulla Binhabtoor</strong>, Shamal's CEO, describes the district as a calm rather than a busy environment — which is a reasonable description of the retail as well, since this is a neighbourhood centre rather than a destination mall.",
       "## What is in it",
       "<strong>Waitrose</strong> is the anchor supermarket. Early tenants also include <strong>Kokoro Handroll Bar</strong> and <strong>Bake My Day</strong>. Beyond the food, the scheme carries cafés and restaurants, health and fitness space, and a <strong>nursery</strong>.",
       "## Where it sits",
@@ -91,7 +161,7 @@ export const items: NewsItem[] = [
       verifiedOn: "2026-09-01",
     },
     body: [
-      "The detail that separates this line from the two before it is not its length or its cost. It is that none of it is on a viaduct. The Gold Line is <strong>Dubai&rsquo;s first fully underground metro line</strong>, running at depths of up to <strong>40 metres</strong>.",
+      "The detail that separates this line from the two before it is not its length or its cost. It is that none of it is on a viaduct. The Gold Line is <strong>Dubai’s first fully underground metro line</strong>, running at depths of up to <strong>40 metres</strong>.",
       "## What was approved",
       "Sheikh Mohammed bin Rashid Al Maktoum approved the Gold Line on <strong>22 April 2026</strong>: <strong>42 kilometres</strong>, <strong>18 stations</strong>, an investment of around <strong>AED 34 billion</strong>, and a completion date of <strong>9 September 2032</strong>.",
       "It expands the network by roughly <strong>35%</strong>, from 120 km to 162 km, and runs from <strong>Al Ghubaiba</strong> in Bur Dubai south-west to <strong>Jumeirah Golf Estates</strong>.",
@@ -101,7 +171,7 @@ export const items: NewsItem[] = [
       "## Who it is for",
       "The Gold Line connects <strong>15 strategic locations</strong>, serves around <strong>1.5 million people</strong>, and supports mobility across <strong>55 development projects</strong> currently under construction. Authorities expect it to remove more than <strong>40 million road journeys a year</strong>.",
       "## The timeline behind the timeline",
-      "Tenders are scheduled to be issued in <strong>2026</strong>, with the contract award to follow in <strong>2027</strong>. A 2032 opening from a 2027 award is five years of tunnelling &mdash; which, for 42 km of bored tunnel and 18 underground stations, is the schedule rather than the ambition.",
+      "Tenders are scheduled to be issued in <strong>2026</strong>, with the contract award to follow in <strong>2027</strong>. A 2032 opening from a 2027 award is five years of tunnelling — which, for 42 km of bored tunnel and 18 underground stations, is the schedule rather than the ambition.",
     ],
     expertise:
       "For anyone weighing a property decision against this line, the date that matters is the 2027 contract award, not the 2032 opening. Station locations are firm enough to price in only once the civil contracts are signed; before that, an alignment on a published map is a plan, and plans near Meydan have moved before.",

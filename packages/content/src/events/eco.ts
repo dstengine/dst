@@ -26,13 +26,13 @@ export const items: EventItem[] = [
     body: [
       "Climate conferences mostly argue about whether to act. This one has picked a different argument: what to do with the things that already work.",
       "## The dates",
-      "<strong>21&ndash;22 October 2026</strong> at the <strong>Dubai World Trade Centre</strong>. It is the <strong>twelfth edition</strong>, organised by the <strong>Dubai Supreme Council of Energy</strong>, <strong>DEWA</strong> and the <strong>World Green Economy Organization</strong>.",
+      "<strong>21–22 October 2026</strong> at the <strong>Dubai World Trade Centre</strong>. It is the <strong>twelfth edition</strong>, organised by the <strong>Dubai Supreme Council of Energy</strong>, <strong>DEWA</strong> and the <strong>World Green Economy Organization</strong>.",
       "## The theme",
       "<strong>From Success to Scale: Showcasing the Green Economy.</strong> <strong>H.E. Saeed Mohammed Al Tayer</strong>, Vice Chairman of the DSCE and DEWA's MD and CEO, describes the summit as moving the conversation beyond climate action towards demonstrating how the transition is already happening and how to expand it.",
       "## The four pillars",
       "<strong>Energy technology and infrastructure.</strong> <strong>Business strategy and transition.</strong> <strong>Water and food security.</strong> <strong>Finance.</strong> Artificial intelligence, governance and system enablers run across all four rather than sitting in one.",
       "## The size of it",
-      "The organisers expect <strong>more than 3,300 participants</strong> from <strong>over 30 countries</strong>, <strong>more than 80 international speakers</strong> &mdash; ministers, chief executives and innovators &mdash; and <strong>over 300 media representatives</strong>.",
+      "The organisers expect <strong>more than 3,300 participants</strong> from <strong>over 30 countries</strong>, <strong>more than 80 international speakers</strong> — ministers, chief executives and innovators — and <strong>over 300 media representatives</strong>.",
     ],
     expertise:
       "The pillar to watch is finance, and not because it is the most interesting on paper. Two of the other three — energy infrastructure and water and food security — are subjects on which the UAE has projects to show, so the sessions there tend to be demonstrations. Finance is where the unresolved question sits: scaling a proven technology is a cost-of-capital problem, and that is the pillar where the arguments are still live. Note that the summit runs the week before Expo-scale events elsewhere in the calendar and sits at the Trade Centre rather than Expo City, which makes it a workable two-day trip on its own rather than something to bolt onto another visit.",

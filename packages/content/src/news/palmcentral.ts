@@ -2,6 +2,76 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "the-airport-next-door-awards-55-billion-dirhams",
+    site: "palmcentral",
+    image: "/covers/the-airport-next-door-awards-55-billion-dirhams.jpg",
+    imageAlt: "A wide terracotta paper band on a warm sand ground with four burnt-orange fingers extending from it, a small cream marker at the widest point",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "The airport next door will award Dh55 billion of contracts before the year ends",
+    cardTitle: "Dh55bn of contracts at DWC",
+    titleSeo: "Dh55bn of Al Maktoum airport contracts",
+    summary:
+      "Dubai Airports has awarded Dh13 billion this year for the Al Maktoum International expansion and expects to award Dh55 billion more by December. First phase opens in 2032 at 150 million passengers a year.",
+    date: "2026-09-06",
+    category: "Infrastructure",
+    source: {
+      name: "The National",
+      url: "https://www.thenationalnews.com/business/aviation/2026/08/26/dubai-to-award-dh55bn-in-contracts-by-year-end-for-al-maktoum-airport-expansion/",
+      verifiedOn: "2026-09-06",
+    },
+    body: [
+      "The nearest thing to a guarantee that a district will exist in ten years is a construction site next to it that cannot be cancelled without embarrassment.",
+      "## The number",
+      "<strong>Dubai Airports</strong> expects to award <strong>Dh55 billion</strong> (about <strong>$14.9 billion</strong>) of contracts for the <strong>Al Maktoum International Airport</strong> expansion <strong>by the end of 2026</strong>, on top of <strong>Dh13 billion</strong> already awarded this year.",
+      "## What is already in the ground",
+      "Chief executive <strong>Paul Griffiths</strong> put the work to date at <strong>10 million work hours over 15 months</strong>, with <strong>17,000 piles</strong> installed and <strong>45 million cubic metres</strong> of earth moved. There are <strong>9,000 workers</strong> on site now; peak labour demand is put at around <strong>120,000</strong>.",
+      "## The scale it is being built to",
+      "The first phase opens in <strong>2032</strong> with capacity for <strong>150 million passengers</strong> a year. Ultimate capacity is <strong>more than 260 million passengers</strong> and <strong>12 million tonnes</strong> of cargo. <strong>Dubai International</strong> is described as nearing maximum capacity, which is the reason the second airport has to work.",
+      "## The route map argument",
+      "Griffiths made a specific point about aircraft rather than terminals: long-range narrow-bodies such as the <strong>Airbus A321XLR</strong> could <strong>triple</strong> the number of cities the airport can serve directly, taking the reachable network to roughly <strong>600 destinations</strong>. He also said construction was continuing «unhindered by regional conflict».",
+    ],
+    expertise:
+      "For the southern Dubai corridor the airport is the single largest input into every other assumption, and it is worth being precise about how it arrives. A 2032 opening means the first material change to daily life is not flights but employment: 120,000 workers at peak is a housing, transport and retail demand that lands years before the first passenger, and it lands closest to the communities nearest the site. That is the effect to plan for in the late 2020s, and it is a different effect from the one people usually price in, which is proximity to a working international terminal. The second thing to hold lightly is the contract number. Dh55 billion of awards by December is a statement of intent by a state-owned client, and the useful confirmation is not the announcement but the award notices themselves, because a slipped tender is the earliest visible sign of a slipped programme. The third is connectivity: an airport at the far end of the emirate is only close to a district if the road and rail to it exist, and the transport links serving DWC are on their own timetables, none of which is 2032.",
+  },
+
+  {
+    slug: "supply-is-the-thing-that-separates-world-cities",
+    site: "palmcentral",
+    image: "/covers/supply-is-the-thing-that-separates-world-cities.jpg",
+    imageAlt: "Two terracotta paper columns on a warm sand ground, one narrow and tall and one broad and short, with a burnt-orange line running level across both",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "The best half-year in prime property belonged to the cities that could not build",
+    cardTitle: "Constrained supply won the half",
+    titleSeo: "Savills: constrained supply led H1",
+    summary:
+      "Tokyo led the Savills index at 7.0% in six months, Cape Town at 4.7%, Seoul at 4.1% — each on limited prime stock. Where supply was plentiful, values fell. Dubai is forecast down around 10%.",
+    date: "2026-09-06",
+    category: "Market",
+    source: {
+      name: "Savills",
+      url: "https://www.savills.com/research_articles/255800/393831-0",
+      verifiedOn: "2026-09-06",
+    },
+    body: [
+      "A waterfront that is being manufactured is, by definition, new supply. That makes the finding in this half-year index awkward and worth reading closely.",
+      "## What the index found",
+      "Across the <strong>30 cities</strong> tracked by the <strong>Savills World Cities Prime Residential Index</strong>, published <strong>19 August 2026</strong>, prime capital values rose <strong>0.6%</strong> in the six months to June and rents rose <strong>1.1%</strong>. Sixty per cent of cities were stable or positive.",
+      "## Who led, and why",
+      "<strong>Tokyo</strong> was the strongest market at <strong>7.0%</strong> over six months and <strong>20.4%</strong> over the year to June. <strong>Cape Town</strong> delivered <strong>4.7%</strong> as limited prime stock continued to outpace demand; <strong>Seoul</strong>, <strong>4.1%</strong>. Southern Europe — <strong>Lisbon</strong>, <strong>Madrid</strong>, <strong>Barcelona</strong>, <strong>Athens</strong>, <strong>Rome</strong> — was positive throughout, with Lisbon and <strong>Geneva</strong> both above <strong>3.0%</strong>.",
+      "## Who did not",
+      "Four of the five Chinese cities tracked recorded declines. <strong>Dubai</strong>, <strong>Berlin</strong> and <strong>Bangkok</strong> fell on both values and rents. For the second half of 2026 Savills forecasts a <strong>0.5%</strong> average rise across the index, with <strong>Dubai</strong> the clear outlier at around <strong>-10%</strong>, attributed to <strong>oversupply</strong> and geopolitical uncertainty.",
+      "## The stated rule",
+      "Savills’ own summary is that cities combining <strong>constrained supply</strong>, household wealth creation and sustained international demand outperform, and that those with <strong>elevated supply</strong> or heightened uncertainty lag. In the same period, prime yields were broadly stable, and the era of synchronised global growth is described as, for now, past.",
+    ],
+    expertise:
+      "The honest way to hold this against a manufactured waterfront is to separate two kinds of supply. Generic supply — another tower of the same apartment in the same corridor — is what a scarcity argument cannot survive, and it is what the Dubai forecast is about. Non-replicable supply is different: a beachfront plot on a specific frond is not made less scarce by a thousand apartments completing ten kilometres inland, because the buyer of one is not the buyer of the other. Tokyo and Cape Town are in the index precisely because their prime stock is of the second kind. What that means practically is that the useful comparison is never the citywide index; it is the number of directly substitutable properties, which on a single frond may be measured in dozens. The counterweight is timing. Non-replicable does not mean liquid, and an asset with few substitutes also has few buyers on any given month, so the exit is slow even when the scarcity argument holds. Anyone reading a global index for reassurance should take the supply finding seriously and then check the only figure that settles it locally — how many comparable units are due to complete within walking distance, and when.",
+  },
+
+  {
     slug: "jebel-ali-village-hands-over-892-homes",
     site: "palmcentral",
     image: "/covers/jebel-ali-village-hands-over-892-homes.jpg",
@@ -65,7 +135,7 @@ export const items: NewsItem[] = [
       "## By trade, which is the more revealing cut",
       "<strong>Substructure 93.27%</strong>. <strong>Superstructure 68.40%</strong>. <strong>Infrastructure 65.05%</strong>. <strong>Building work 21.64%</strong>. <strong>MEP 18.76%</strong>.",
       "## What that shape means",
-      "Foundations are all but finished and frames are well advanced, while the trades that turn a frame into a house &mdash; finishes and building services &mdash; are only about a fifth done. That is the normal order of construction, and it is also the reason an island that looks structurally complete from the water is still years from occupation.",
+      "Foundations are all but finished and frames are well advanced, while the trades that turn a frame into a house — finishes and building services — are only about a fifth done. That is the normal order of construction, and it is also the reason an island that looks structurally complete from the water is still years from occupation.",
     ],
     expertise:
       "Read the trade breakdown rather than the overall percentage, because the two tell different stories about time. Substructure at 93% and MEP at 19% is not a project four months from finishing; it is a project that has done the fast, heavy work and has yet to do the slow, labour-intensive part, and finishing trades are where Dubai schedules most often slip. The frond numbers are worth checking against whichever frond a particular unit sits on — a 17-point spread between Frond O and Frond P is more than a rounding difference. Note the date too: these figures are Nakheel's own and were current in March, so they understate where the island stands now by roughly two quarters of work.",
@@ -93,8 +163,8 @@ export const items: NewsItem[] = [
       "Forty-four villas is a small release, and on a frond that is the point: every one of them sits directly on the shoreline, and a frond has only so much shoreline.",
       "## What was released",
       "Nakheel has unveiled <strong>44 beachfront villas</strong> on <strong>Frond F</strong> at <strong>Palm Jebel Ali</strong>, drawn from its <strong>Beach</strong> and <strong>Coral</strong> Collections and spanning <strong>10 distinct architectural designs</strong>.",
-      "<strong>Beach Collection</strong> &mdash; five- and six-bedroom villas, approximately <strong>7,500 to 8,500 sq ft</strong>.",
-      "<strong>Coral Collection</strong> &mdash; six- and seven-bedroom residences, approximately <strong>11,500 to 12,500 sq ft</strong>.",
+      "<strong>Beach Collection</strong> — five- and six-bedroom villas, approximately <strong>7,500 to 8,500 sq ft</strong>.",
+      "<strong>Coral Collection</strong> — six- and seven-bedroom residences, approximately <strong>11,500 to 12,500 sq ft</strong>.",
       "All face the Arabian Gulf with direct beach access.",
       "## Ten designs for forty-four houses",
       "That ratio is unusual and it is deliberate. A frond built from two or three repeated types reads as a development from the water; ten designs across forty-four plots means a run of neighbouring houses rarely repeats. The designs were produced with <strong>NAGA Architects</strong>, <strong>SAOTA</strong>, <strong>LW Design Group</strong> and <strong>LOCI Architecture</strong>.",
@@ -123,7 +193,7 @@ export const items: NewsItem[] = [
     // buildings on this page are not built yet.
     image: "/palmcentral.jpg",
     imageAlt:
-      "Night aerial render of Palm Central's beachfront residences on Palm Jebel Ali, with the lit beach curve and the Dubai skyline behind.",
+      "Cut-paper illustration: a row of discs joined by a thin line, the last one larger than the rest.",
     imageKind: "render",
     imageCredit: "DST",
     imageWidth: 1600,

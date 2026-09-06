@@ -2,6 +2,76 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "dubai-issued-66078-golden-visas-in-six-months",
+    site: "visas",
+    image: "/covers/dubai-issued-66078-golden-visas-in-six-months.jpg",
+    imageAlt: "A dense grid of small tobacco-brown paper rectangles on a warm sand ground, one of them lifted clear of the grid in ochre",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Dubai issued 66,078 golden visas in the first half of 2026",
+    cardTitle: "66,078 golden visas in six months",
+    titleSeo: "Dubai issued 66,078 golden visas in H1",
+    summary:
+      "GDRFA Dubai’s half-year figures: 66,078 golden visas, 29,456 five-year multiple-entry tourist visas and more than seven million visa and residency transactions between January and June.",
+    date: "2026-09-06",
+    category: "Golden visa",
+    source: {
+      name: "Gulf News",
+      url: "https://gulfnews.com/uae/government/dubai-grants-66000-golden-visas-as-5-year-tourist-visa-surges-1.500608837",
+      verifiedOn: "2026-09-06",
+    },
+    body: [
+      "A residency category stops being exclusive at some point, and the only honest way to find that point is to count.",
+      "## The numbers",
+      "The <strong>General Directorate of Residency and Foreigners Affairs — Dubai</strong> reported <strong>66,078 golden visas</strong> issued between <strong>January and June 2026</strong>, alongside <strong>29,456</strong> five-year multiple-entry tourist visas. Across every category the directorate processed <strong>more than seven million</strong> visa and residency transactions in the same six months, with a reported <strong>95% customer satisfaction</strong> rate.",
+      "## Who reported it",
+      "<strong>Lieutenant General Mohammed Ahmed Al Marri</strong>, Director General of GDRFA Dubai: «The results reflect our commitment to delivering efficient, flexible and digitally driven services that enhance customer experience and support Dubai’s position as a leading global destination.» <strong>Major General Khalaf Ahmed Al Ghaith</strong>, Assistant Director General of the Entry Permits and Residency Sector, presented the sector detail.",
+      "## What the two numbers say together",
+      "Seven million transactions against 66,078 golden visas is the ratio worth holding on to. The golden visa is the category that gets written about; it is a fraction of a percent of what the directorate actually does, and the bulk of that work is ordinary entry permits, renewals, cancellations and status changes for people already here.",
+      "## The five-year tourist visa",
+      "At <strong>29,456</strong> issued in six months, the five-year multiple-entry visit visa is now a mainstream product rather than a curiosity — roughly <strong>one for every two</strong> golden visas granted in the same period.",
+    ],
+    expertise:
+      "Half-year issuance figures are useful for one thing and misleading for another. They are a good measure of throughput: a directorate that clears seven million transactions in six months is not the bottleneck in anyone’s application, and the practical delays applicants meet are almost always upstream — a medical, an attestation, an employer’s establishment card. They are a poor measure of how hard the golden visa is to get, because the published total mixes categories with entirely different tests: an investor route, a specialist-talent nomination and a top-of-class student nomination all land in the same figure. Anyone reading 66,078 as evidence that the bar has dropped should note that no category-level breakdown was published, which is exactly the number that would settle the question. On the five-year visit visa, the practical caution is that it is a multiple-entry permission, not a residence: it does not carry an Emirates ID, it does not open a bank account on its own terms, and stays are still capped per entry. It is a travel document for people whose life is somewhere else.",
+  },
+
+  {
+    slug: "europes-new-travel-permit-slips-to-2027",
+    site: "visas",
+    image: "/covers/europes-new-travel-permit-slips-to-2027.jpg",
+    imageAlt: "A tobacco-brown paper arrow on a warm sand ground, its tip cut off and set further along, leaving a clear gap in the middle",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Europe’s €20 travel permit slips to 2027 while the border queues stay",
+    cardTitle: "ETIAS slips to 2027",
+    titleSeo: "ETIAS delayed to 2027 as EES queues bite",
+    summary:
+      "eu-LISA has accepted that ETIAS cannot launch by the end of 2026. The biometric Entry/Exit System it depends on went fully live in April and is producing waits IATA has put at three to six hours.",
+    date: "2026-09-06",
+    category: "Travel",
+    source: {
+      name: "AFAR",
+      url: "https://www.afar.com/magazine/europe-delays-etias-travel-authorization-until-2027",
+      verifiedOn: "2026-09-06",
+    },
+    body: [
+      "Two European border systems were meant to arrive in order. The first one arrived, and the queue it produced is why the second one has not.",
+      "## What was reported",
+      "The <strong>Financial Times</strong> reported that <strong>eu-LISA</strong>, the EU agency that operates the bloc’s large-scale IT systems, has acknowledged that launching <strong>ETIAS</strong> by the end of 2026 is <strong>no longer feasible</strong>. The launch moves to <strong>2027</strong>. The official ETIAS site was, at the time of the report, still showing the last quarter of 2026.",
+      "## What ETIAS is",
+      "A travel authorisation rather than a visa, in the manner of the American ESTA. It costs <strong>€20</strong> once, permits stays of up to <strong>90 days in any 180</strong>, and is valid for <strong>three years or until the passport expires</strong>, whichever comes first. It will apply to travellers from non-EU countries visiting the <strong>30 participating European states</strong>.",
+      "## Why it slipped",
+      "ETIAS sits on top of the <strong>Entry/Exit System</strong>, which became fully operational in <strong>April 2026</strong>. EES replaces passport stamps with fingerprints and facial recognition at the border, and <strong>IATA</strong> warned of «challenging waiting times» of <strong>three to six hours</strong> as the biometric enrolment worked through arriving passengers.",
+      "## What it means for now",
+      "Nothing new to apply for, and nothing new to pay, on any European trip taken before the launch. What remains is the first-entry biometric enrolment under EES, which is a one-off per traveller and is where the time goes.",
+    ],
+    expertise:
+      "The useful planning assumption is that the two systems have opposite shapes. EES is a border-side cost paid once and then largely gone: the first crossing after enrolment is the slow one, and the ones after it should be faster than the old stamping. ETIAS is a pre-travel cost that is trivial in money and awkward in timing, because it is an approval that has to exist before boarding — airlines check it at the gate, and an application that goes to manual review does not care about a same-day flight. That is why the delay is worth noticing even though nothing is being asked of anyone today: the operational risk was never the €20, it was the traveller who books on a Thursday and flies on a Friday. Until a firm date exists, treat any commercial site offering to secure ETIAS in advance as selling something that cannot yet be bought. When the date does land, the thing to check is the transitional arrangement rather than the launch day itself — earlier EU planning described a grace period in which arrivals without an authorisation are still admitted, and the difference between the launch and the end of that period is what actually changes at the airport.",
+  },
+
+  {
     slug: "dubai-tourist-visas-inside-48-hours",
     site: "visas",
     image: "/covers/dubai-tourist-visas-inside-48-hours.jpg",
@@ -24,12 +94,12 @@ export const items: NewsItem[] = [
     body: [
       "Most visa reforms change who may come. This one changes how long they wait to find out.",
       "## The change",
-      "The <strong>General Directorate of Residency and Foreigners Affairs &mdash; Dubai (GDRFA)</strong> confirmed in <strong>June 2026</strong> that single-entry tourist visas are expected to be issued <strong>within 48 hours</strong>.",
+      "The <strong>General Directorate of Residency and Foreigners Affairs — Dubai (GDRFA)</strong> confirmed in <strong>June 2026</strong> that single-entry tourist visas are expected to be issued <strong>within 48 hours</strong>.",
       "The visas concerned are the standard <strong>30-day and 60-day single-entry</strong> ones. Applications go through GDRFA's own digital services, the GDRFA DXB app, or an authorised tourism office or travel agent.",
       "## What it is not",
       "This is <strong>not a new visa category</strong>. Nothing about eligibility, duration or fees changes. What changes is the service standard attached to a document that already existed.",
       "## The condition attached to the clock",
-      "The 48 hours run from the point at which <strong>all documents have been submitted and verified</strong> &mdash; not from the moment an application is opened. An incomplete file does not start the clock; it queues behind its own missing pages.",
+      "The 48 hours run from the point at which <strong>all documents have been submitted and verified</strong> — not from the moment an application is opened. An incomplete file does not start the clock; it queues behind its own missing pages.",
     ],
     expertise:
       "The distinction between a new visa and a faster visa matters more than it sounds, because it tells you what to do when the 48 hours pass without an answer. There is no separate fast-track product to escalate to and no premium tier to buy: a delay almost always means a document was rejected at verification rather than that the application is sitting in a queue, so the productive response is to re-check what was uploaded rather than to reapply. Also worth noting for anyone timing a trip: this covers single entry only. Multi-entry visit visas and the 90-day variants are a different application and carry no comparable published turnaround.",
@@ -95,14 +165,14 @@ export const items: NewsItem[] = [
       "The list of qualifying residences has widened too. Alongside the <strong>United States</strong>, the <strong>United Kingdom</strong> and <strong>EU member states</strong>, an applicant may now hold valid residency in <strong>Singapore</strong>, <strong>Japan</strong>, <strong>South Korea</strong>, <strong>Australia</strong>, <strong>New Zealand</strong> or <strong>Canada</strong>.",
       "Both conditions have to hold at once: an eligible nationality <em>and</em> a valid residence permit from an approved country. A Kenyan national resident in Kenya is not covered by this change; a Kenyan national resident in Canada is.",
       "## What each visa costs and does",
-      "<strong>14-day visa &mdash; Dh100.</strong> Extendable once during the stay.",
-      "<strong>60-day visa &mdash; Dh250.</strong> Single entry, and <strong>not extendable</strong>.",
-      "The asymmetry is worth pausing on. The cheaper visa is the flexible one; the longer visa is the rigid one. Someone planning a two-month stay with an uncertain end date is choosing between a 60-day visa that cannot move and a 14-day visa that can be extended once &mdash; and the second is not obviously the wrong answer.",
+      "<strong>14-day visa — Dh100.</strong> Extendable once during the stay.",
+      "<strong>60-day visa — Dh250.</strong> Single entry, and <strong>not extendable</strong>.",
+      "The asymmetry is worth pausing on. The cheaper visa is the flexible one; the longer visa is the rigid one. Someone planning a two-month stay with an uncertain end date is choosing between a 60-day visa that cannot move and a 14-day visa that can be extended once — and the second is not obviously the wrong answer.",
       "## The overstay figure",
       "Overstaying carries a fine of <strong>Dh50 per day</strong>. On a non-extendable 60-day visa, that is the number to hold in mind when booking a return flight for the sixtieth day rather than the fifty-eighth.",
     ],
     expertise:
-      "A visa on arrival is granted at the counter, not before the flight &mdash; which means the residence permit is the document to have ready in hand, not filed in an email. The single most common cause of a refusal in this category is a residence permit that expires during the intended stay, since the entry visa cannot outlive the residency that qualified it.",
+      "A visa on arrival is granted at the counter, not before the flight — which means the residence permit is the document to have ready in hand, not filed in an email. The single most common cause of a refusal in this category is a residence permit that expires during the intended stay, since the entry visa cannot outlive the residency that qualified it.",
   },
   {
     slug: "two-year-investor-visa-minimum-dropped",
@@ -120,7 +190,7 @@ export const items: NewsItem[] = [
     category: "Residency",
     image: "/news/investor-visa-thresholds.svg",
     imageAlt:
-      "Dubai property thresholds by residency route: the two-year investor visa has no minimum for sole owners, down from Dh750,000; the five-year retirement visa still asks Dh1 million; the ten-year Golden Visa still asks Dh2 million.",
+      "Cut-paper illustration: three tower blocks of different heights with a key shape at their base.",
     imageKind: "diagram",
     imageCredit: "DST",
     imageWidth: 1200,
