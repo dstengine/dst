@@ -38,7 +38,7 @@ export const items: EventItem[] = [
     },
     ticket: { url: "https://cryptoexpodubai.com/dubai#tickets", label: "Tickets" },
     body: [
-      "Not a Solana event, and the one least like the rest of this calendar. Where Solana Breakpoint and the Hacker House are addressed to people who write code, Crypto Expo Dubai is addressed to the people who license, custody and allocate — and it says so in its own strapline: “Where Digital Assets Meet Institutional Capital.”",
+      "The one least like the rest of this calendar. Where Solana Breakpoint and the Hacker House are addressed to people who write code, Crypto Expo Dubai is addressed to the people who license, custody and allocate — and it says so in its own strapline: “Where Digital Assets Meet Institutional Capital.”",
       "## The dates and the hall",
       "<strong>9 and 10 September 2026</strong>, <strong>10:00 to 18:00</strong>, at the <strong>Dubai World Trade Centre</strong>. It is the <strong>eighth edition</strong>.",
       "## The numbers the organiser publishes",
@@ -148,7 +148,7 @@ export const items: EventItem[] = [
     title: "Solana Hacker House — London",
     cardTitle: "Solana Hacker House London",
     summary:
-      "Thirteen days of free workspace and workshops in London, 1–12 November, running straight into Breakpoint. Approval required, and capacity is limited.",
+      "Thirteen days of free workspace and Solana workshops in London, 1–12 November, running straight into Breakpoint. Approval required, and capacity is limited.",
     start: "2026-11-01",
     end: "2026-11-12",
     startTime: "10:00",
@@ -273,7 +273,7 @@ export const items: EventItem[] = [
     },
     ticket: { url: "https://ethglobal.com/events", label: "Apply to attend" },
     body: [
-      "Not a Solana event, and here for the same reason the rest of the wider calendar is: the people who build across chains keep both dates in one diary.",
+      "Here for the same reason the rest of the wider calendar is: the people who build across chains keep an Ethereum hackathon and a Solana one in the same diary.",
       "## The details",
       "<strong>25 to 27 September 2026</strong>, Tokyo, listed by ETHGlobal as an in-person hackathon. Attendance is by application rather than by ticket.",
       "## The day beside it",
@@ -292,7 +292,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Solana Summit Korea",
     summary:
-      "A single day in Seoul on 30 September, 10:00 to 17:00, on Yeoui-daero in the Yeouido financial district.",
+      "A single Solana day in Seoul on 30 September, 10:00 to 17:00, on Yeoui-daero in the Yeouido financial district.",
     start: "2026-09-30",
     startTime: "10:00",
     endTime: "17:00",
@@ -356,7 +356,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Solana Summit India",
     summary:
-      "Mumbai on 2 November, 10:00 to 19:00, in Navpada — four days before ETHGlobal fills the same city.",
+      "Solana in Mumbai on 2 November, 10:00 to 19:00, in Navpada — four days before ETHGlobal fills the same city.",
     start: "2026-11-02",
     startTime: "10:00",
     endTime: "19:00",
@@ -506,7 +506,7 @@ export const items: EventItem[] = [
     title: "The Solana Ecosystem Call — September",
     cardTitle: "Solana Ecosystem Call, September",
     summary:
-      "The monthly ecosystem call returns on 24 September, 14:00 to 15:00 UTC — a live show hosted by SOL BROTHERS that would rather be late-night television than a community update.",
+      "The monthly Solana ecosystem call returns on 24 September, 14:00 to 15:00 UTC — a live show hosted by SOL BROTHERS that would rather be late-night television than a community update.",
     start: "2026-09-24",
     startTime: "14:00",
     endTime: "15:00",
@@ -590,7 +590,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Solana Capital Forum Singapore",
     summary:
-      "6 October in Orchard, 12:00 to 20:00 — a private forum capped at 150 allocators, investors, policymakers and infrastructure providers.",
+      "6 October in Orchard, 12:00 to 20:00 — a private Solana forum capped at 150 allocators, investors, policymakers and infrastructure providers.",
     start: "2026-10-06",
     startTime: "12:00",
     endTime: "20:00",
@@ -838,7 +838,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Solana Frontier Hackathon",
     summary:
-      "Colosseum's spring competition ran 6 April to 11 May and paid out $250,000 in prizes, with another $250,000 per accelerator place — and no tracks and no bounties at all.",
+      "Colosseum's spring Solana competition ran 6 April to 11 May and paid out $250,000 in prizes, with another $250,000 per accelerator place — and no tracks and no bounties at all.",
     start: "2026-04-06",
     end: "2026-05-11",
     city: "Online",
@@ -875,7 +875,7 @@ export const items: EventItem[] = [
     title: "Solana Armenia Meetup, Yerevan",
     cardTitle: "Solana Armenia Meetup",
     summary:
-      "108 people came to the ISTC Foundation on 25 July for two short talks, a CTF prize ceremony and four hours of Armenian builders in one room.",
+      "108 people came to the ISTC Foundation on 25 July for two short talks, a CTF prize ceremony and four hours of Armenia's Solana builders in one room.",
     start: "2026-07-25",
     startTime: "16:00",
     endTime: "20:00",
@@ -937,7 +937,7 @@ export const items: EventItem[] = [
       verifiedOn: "2026-09-06",
     },
     body: [
-      "Not a Solana event. Lisbon is on this calendar for one reason and it is not the prize pool: it is where ETHGlobal changed the oldest rule in hackathons, and a rule change at one hackathon is read by everyone who runs one.",
+      "Lisbon is on this calendar for one reason and it is not the prize pool: it is where ETHGlobal changed the oldest rule in hackathons. A rule change at one hackathon is read by everyone who runs one, Solana's among them.",
       "## The rule that changed",
       "Until Lisbon, the terms were: empty repository only, existing code not allowed. In July they became <strong>“any repo you bring”</strong>, with existing code <strong>welcomed</strong>. Team size stayed 1–5 and sponsor SDKs stayed capped at three — ETHGlobal's own summary is “two items, the rest unchanged”, which undersells it.",
       "## The three ways to enter",

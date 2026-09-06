@@ -35,6 +35,6 @@ export const events = {
 export const about = {
   title: "About",
   description: "A calendar and a newsfeed for the Solana ecosystem, with a source and a date on every entry.",
-  h1: "About sol2go",
+  h1: "About sol2go, a Solana calendar and newsfeed",
   lede: `A calendar and a newsfeed for the Solana ecosystem, with a source and a date on every entry. Not financial advice, and nothing here is a recommendation to buy anything.`,
 };

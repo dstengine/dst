@@ -12,6 +12,10 @@ export const site = {
   // nothing. A brand belongs in a title once it is one; until then the
   // slot is worth more as the word the site is actually about.
   titleSuffix: "Solana events",
+  // What this site is for, in one word, for tools/seo-check.mjs: the
+  // thing that has to appear in the title, the h1 and the description of
+  // every page a reader could arrive on from a search.
+  keyword: "Solana",
   lang: "en",
   publisher,
   // Independent of the DST group and of the other .lol sites: no footer

@@ -1,0 +1,7 @@
+{
+  "sol2go": {
+    "/events/crypto-expo-dubai-2026/": "An institutional digital-asset expo, not a Solana event. The page says what it is doing on the calendar; writing Solana into its summary would be writing a claim the source does not make.",
+    "/events/ethglobal-lisbon-2026/": "An Ethereum hackathon, listed for the rule change it made. Same reason.",
+    "/events/ethglobal-tokyo-2026/": "An Ethereum hackathon, listed because people who build across chains keep both dates in one diary. Same reason."
+  }
+}

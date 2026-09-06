@@ -50,7 +50,7 @@ export const items: NewsItem[] = [
     cardTitle: "The two gates Alpenglow needed first",
     titleSeo: "What Alpenglow needed before 150ms",
     summary:
-      "Alpenglow targets roughly 150ms finality against today's 12.8 seconds. Two prerequisite feature gates went live on mainnet in July; the consensus change itself reaches devnet in Agave 4.3.",
+      "Alpenglow targets roughly 150ms finality on Solana against today's 12.8 seconds. Two prerequisite feature gates went live on mainnet in July; the consensus change itself reaches devnet in Agave 4.3.",
     date: "2026-09-02",
     category: "Upgrades",
     featured: 2,
