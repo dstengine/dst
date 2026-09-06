@@ -669,6 +669,46 @@ describe("sitemap", () => {
     }
   });
 
+  // sitemaps.org/protocol.html defines four fields for a URL. Three of them
+  // were missing for years and the fourth, lastmod, was on the URLs but not
+  // on the index — so the index said nothing about whether anything below it
+  // had moved.
+  test("every sitemap URL carries loc, lastmod, changefreq and priority", () => {
+    for (const { app } of SITES) {
+      const dir = path.join(REPO, "apps", app, "dist");
+      for (let i = 0; existsSync(path.join(dir, `sitemap-${i}.xml`)); i++) {
+        const xml = readFileSync(path.join(dir, `sitemap-${i}.xml`), "utf8");
+        const entries = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)].map((m) => m[1]);
+        assert.ok(entries.length, `${app}: sitemap-${i}.xml lists nothing`);
+        const missing = entries
+          .filter((e) => !/<lastmod>/.test(e) || !/<changefreq>/.test(e) || !/<priority>/.test(e))
+          .map((e) => (e.match(/<loc>(.*?)<\/loc>/) || [])[1]);
+        assert.deepEqual(missing, [], `${app}: sitemap entries missing fields`);
+        // The order the schema requires, not merely the presence of each.
+        for (const e of entries) {
+          const order = [...e.matchAll(/<(loc|lastmod|changefreq|priority)>/g)].map((m) => m[1]);
+          assert.deepEqual(order, ["loc", "lastmod", "changefreq", "priority"], `${app}: wrong element order`);
+        }
+      }
+    }
+  });
+
+  // A crawler reads the index to decide which child sitemaps are worth
+  // fetching. Without lastmod there it has nothing to decide on.
+  test("the sitemap index dates every sitemap it names", () => {
+    for (const { app } of SITES) {
+      const xml = readFileSync(path.join(REPO, "apps", app, "dist", "sitemap-index.xml"), "utf8");
+      const entries = [...xml.matchAll(/<sitemap>([\s\S]*?)<\/sitemap>/g)].map((m) => m[1]);
+      assert.ok(entries.length, `${app}: empty sitemap index`);
+      for (const e of entries) {
+        const loc = (e.match(/<loc>(.*?)<\/loc>/) || [])[1];
+        const date = (e.match(/<lastmod>(.*?)<\/lastmod>/) || [])[1];
+        assert.ok(date, `${app}: no lastmod on ${loc} in sitemap-index.xml`);
+        assert.ok(!Number.isNaN(Date.parse(date)), `${app}: unreadable lastmod ${date}`);
+      }
+    }
+  });
+
   // robots.txt disallows /go/; listing a hop in the sitemap would ask Google
   // to crawl the exact thing we just told it to skip.
   test("no sitemap lists a /go/ hop", () => {

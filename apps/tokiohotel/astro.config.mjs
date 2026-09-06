@@ -1,6 +1,7 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import { readFileSync } from "node:fs";
+import { sitemapEntry, sitemapIndexLastmod } from "../../tools/sitemap.mjs";
 
 // Same lastmod wiring as the rest of the repo: dates come from git history
 // via tools/lastmod.mjs, and a page whose date we don't know goes out
@@ -16,12 +17,13 @@ export default defineConfig({
       // /go/ hops are noindex and disallowed in robots.txt; a sitemap entry
       // would contradict both.
       filter: (page) => !page.includes("/go/"),
-      serialize(item) {
-        const { hostname, pathname } = new URL(item.url);
-        const date = lastmod[hostname]?.[pathname];
-        return date ? { ...item, lastmod: date } : item;
-      },
+      // loc, lastmod, changefreq and priority — every field the
+      // protocol defines for a URL. See tools/sitemap.mjs for what
+      // each one is derived from and why.
+      serialize: sitemapEntry(lastmod),
     }),
+    // After sitemap(), so it rewrites the index that one just wrote.
+    sitemapIndexLastmod(),
   ],
   output: "static",
 });

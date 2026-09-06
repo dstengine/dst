@@ -1,6 +1,7 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import { readFileSync } from "node:fs";
+import { sitemapEntry, sitemapIndexLastmod } from "../../tools/sitemap.mjs";
 
 // When each page's content last changed, generated from git history by
 // tools/lastmod.mjs. Read as JSON rather than imported from @dst/content
@@ -19,15 +20,13 @@ export default defineConfig({
       // would contradict both. /li/ carries the LiveInternet counter and is
       // noindex for the same reason — it exists to be opened deliberately.
       filter: (page) => !page.includes("/go/") && !page.endsWith("/li/"),
-      // Google uses lastmod to decide what is worth recrawling. Pages
-      // whose date we don't know are left without one — a made-up date
-      // trains the crawler to ignore the field.
-      serialize(item) {
-        const { hostname, pathname } = new URL(item.url);
-        const date = lastmod[hostname]?.[pathname];
-        return date ? { ...item, lastmod: date } : item;
-      },
+      // loc, lastmod, changefreq and priority — every field the
+      // protocol defines for a URL. See tools/sitemap.mjs for what
+      // each one is derived from and why.
+      serialize: sitemapEntry(lastmod),
     }),
+    // After sitemap(), so it rewrites the index that one just wrote.
+    sitemapIndexLastmod(),
   ],
   output: "static",
 });

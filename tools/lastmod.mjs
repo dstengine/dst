@@ -49,6 +49,89 @@ function lastCommit(file) {
   return date;
 }
 
+/** The lines one item occupies in a data file, 1-based and inclusive.
+
+    A site's whole feed lives in one file — every sol2go event in
+    packages/content/src/events/sol2go.ts — so the file's own last commit is
+    the same date for all thirty pages built from it. That is how a sitemap
+    ends up saying the entire site changed this afternoon, which is precisely
+    the noise lastmod exists to avoid, and it is the state every .lol site
+    was in.
+
+    So the item is located by its own slug and dated by its own lines. The
+    range is found in the current file; `git log -L` is what follows those
+    lines back through history, including through the edits that moved them. */
+function itemRange(file, slug) {
+  let text = "";
+  try { text = readFileSync(file, "utf8"); } catch { return null; }
+  const at = text.search(new RegExp(`slug:\\s*["']${slug.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}["']`));
+  if (at < 0) return null;
+
+  // Back to the brace that opens the object this slug sits in.
+  let depth = 0;
+  let start = -1;
+  for (let i = at; i >= 0; i--) {
+    const c = text[i];
+    if (c === "}") depth++;
+    else if (c === "{") { if (depth === 0) { start = i; break; } depth--; }
+  }
+  if (start < 0) return null;
+
+  // Forward to its match, stepping over strings so a brace inside a sentence
+  // does not close the object early.
+  let end = -1;
+  depth = 0;
+  let quote = null;
+  for (let i = start; i < text.length; i++) {
+    const c = text[i];
+    if (quote) {
+      if (c === "\\") i++;
+      else if (c === quote) quote = null;
+      continue;
+    }
+    if (c === '"' || c === "'" || c === "`") { quote = c; continue; }
+    if (c === "{") depth++;
+    else if (c === "}") { depth--; if (depth === 0) { end = i; break; } }
+  }
+  if (end < 0) return null;
+
+  const lineAt = (offset) => text.slice(0, offset).split("\n").length;
+  return [lineAt(start), lineAt(end)];
+}
+
+const rangeDates = new Map();
+/** Last commit that touched a range of lines in a file, as an ISO date. */
+function lastCommitLines(file, from, to) {
+  const key = `${file}:${from},${to}`;
+  if (rangeDates.has(key)) return rangeDates.get(key);
+  let date = null;
+  try {
+    const out = execFileSync(
+      "git",
+      ["log", "-1", "--format=%cI", `-L${from},${to}:${path.relative(REPO, file)}`],
+      { cwd: REPO, maxBuffer: 64 * 1024 * 1024 },
+    ).toString();
+    date = out.split("\n").find((l) => /^\d{4}-\d{2}-\d{2}T/.test(l.trim()))?.trim() ?? null;
+  } catch {
+    date = null;
+  }
+  rangeDates.set(key, date);
+  return date;
+}
+
+/** The date a page's content last changed, from one of its source files.
+
+    A data file that holds the item this page is built from is dated by that
+    item's lines; everything else — a route, a config, a file with no entry
+    for this slug — by the file. */
+function dateFor(file, url) {
+  const slug = url.split("/").filter(Boolean).at(-1);
+  if (!slug || !file.endsWith(".ts")) return lastCommit(file);
+  const range = itemRange(file, slug);
+  if (!range) return lastCommit(file);
+  return lastCommitLines(file, range[0], range[1]) ?? lastCommit(file);
+}
+
 // What the page says, not what it looks like. Layouts and components are
 // deliberately not counted: restyling the header changes every page in the
 // network, and if that moved every lastmod, the field would say "all 72
@@ -271,7 +354,21 @@ for (const [app, host] of Object.entries(HOSTS)) {
     pages++;
     const candidates = pagesFor(app, url);
     if (!candidates.length) continue;
-    const dates = candidates.flatMap(sources).map(lastCommit).filter(Boolean).sort();
+    // A page built from one item is dated by that item, and by nothing else
+    // that happens to sit in the same feed or the same barrel. Before this,
+    // an event page counted the site's news file and its content.ts among
+    // its sources — so publishing one news item moved the date of all
+    // thirty event pages, and a change to a section heading moved every
+    // page on the site. Route files still count: editing the template does
+    // change the page. Where no data file claims the slug — the front page,
+    // /about/, an index — everything counts, as before.
+    const files = candidates.flatMap(sources);
+    const slug = url.split("/").filter(Boolean).at(-1);
+    const routes = files.filter((f) => f.endsWith(".astro"));
+    const data = files.filter((f) => !f.endsWith(".astro"));
+    const owning = slug ? data.filter((f) => itemRange(f, slug)) : [];
+    const counted = [...routes, ...(owning.length ? owning : data)];
+    const dates = counted.map((f) => dateFor(f, url)).filter(Boolean).sort();
     if (!dates.length) continue;
     out[host][url] = dates.at(-1);
     dated++;
