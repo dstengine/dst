@@ -5,6 +5,8 @@ import { site, newsBase, eventsBase, publisher } from "../../content";
 import { eventsBySite } from "@dst/content/events";
 import { go } from "../../outbound";
 import { newsBySite } from "@dst/content/news";
+import SectionNav from "../../components/SectionNav.astro";
+import { sections } from "../../sections";
 
 export function getStaticPaths() {
   const items = eventsBySite("sol2go").filter((i) => Array.isArray(i.body) && i.body.length > 0);
@@ -13,6 +15,9 @@ export function getStaticPaths() {
 
 const moreNews = newsBySite(site);
 const { item, more } = Astro.props;
+// The sections this event is in, if any — a country page and a kind page
+// are the two most likely next clicks from an event someone found useful.
+const mine = sections(eventsBySite("sol2go")).filter((s) => s.items.some((i) => i.slug === item.slug));
 // A seller if we have one, the source if we don't — see src/outbound.ts.
 const ticketHref = item.ticket ? go(`${item.slug}-ticket`) : undefined;
 const sourceHref = item.source?.url ? go(`${item.slug}-source`) : undefined;
@@ -29,4 +34,20 @@ const sourceHref = item.source?.url ? go(`${item.slug}-source`) : undefined;
     eventsBase={eventsBase}
     publisher={publisher}
   />
+  {mine.length > 0 && (
+    <section class="container event-sections">
+      <h2>More on the calendar</h2>
+      <SectionNav sections={mine} />
+    </section>
+  )}
 </Layout>
+
+<style>
+  .event-sections {
+    margin-block: var(--space-4);
+  }
+  .event-sections h2 {
+    margin-bottom: var(--space-2);
+    font-size: 1.05rem;
+  }
+</style>

@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/Layout.astro";
+import EventsList from "@dst/ui/EventsList.astro";
+import SectionNav from "../components/SectionNav.astro";
+import { eventsBase } from "../content";
+import { sections } from "../sections";
+import { eventsBySite } from "@dst/content/events";
+
+export function getStaticPaths() {
+  const all = sections(eventsBySite("sol2go"));
+  return all.map((section) => ({ params: { section: section.slug }, props: { section, all } }));
+}
+
+const { section, all } = Astro.props;
+---
+<Layout title={section.title} description={section.description}>
+  <section class="container hero">
+    <h1>{section.h1}</h1>
+    <p class="lede">{section.lede}</p>
+  </section>
+  <section class="container">
+    <SectionNav sections={all} current={section.slug} />
+    <EventsList items={section.items} eventsBase={eventsBase} />
+    <p class="section-back"><a href={eventsBase} title="The Solana events calendar">The whole Solana calendar</a></p>
+  </section>
+</Layout>
+
+<style>
+  .section-back {
+    margin-top: var(--space-3);
+  }
+</style>

@@ -130,6 +130,12 @@ export interface EventItem extends ItemBase {
   utcOffset?: string;
   venue?: string;
   city?: string;
+  // Named rather than derived from the city, because a lookup table of every
+  // city a listing might carry is a table that is wrong the first time an
+  // event happens somewhere new. It is what the country section pages are
+  // built from, so a missing one silently drops an event out of its own
+  // country — hence: fill it in whenever a city is filled in.
+  country?: string;
   // An event that happens on a call rather than in a room. The glance table
   // used to tell every reader an event was "In person", which for a Discord
   // community call is simply untrue, and the markup said the same thing to

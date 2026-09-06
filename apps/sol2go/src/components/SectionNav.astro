@@ -1,0 +1,64 @@
+---
+// The row of section links, on the calendar and on every section page. It
+// is the only navigation these pages get: they are too many for the menu
+// bar and too few to need one of their own.
+import type { Section } from "../sections";
+
+interface Props {
+  sections: Section[];
+  /** Slug of the section being read, if any — it prints as text, not a link. */
+  current?: string;
+}
+const { sections, current } = Astro.props;
+---
+{sections.length > 0 && (
+  <nav class="sections" aria-label="Events by country and kind">
+    <ul>
+      {sections.map((s) => (
+        <li>
+          {s.slug === current ? (
+            <span aria-current="page">{s.label}</span>
+          ) : (
+            <a href={`/${s.slug}/`} title={s.h1}>{s.label}</a>
+          )}
+        </li>
+      ))}
+    </ul>
+  </nav>
+)}
+
+<style>
+  .sections {
+    margin-bottom: var(--space-3);
+  }
+  .sections ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .sections a,
+  .sections span {
+    display: block;
+    padding: 0.5em 0.9em;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  .sections a {
+    color: var(--ink-muted);
+    text-decoration: none;
+  }
+  .sections a:where(:hover, :focus-visible) {
+    background: var(--surface-sunk);
+    color: var(--ink);
+  }
+  .sections span {
+    background: var(--surface-sunk);
+    color: var(--ink);
+    font-weight: 600;
+  }
+</style>
