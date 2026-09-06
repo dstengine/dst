@@ -1,0 +1,198 @@
+---
+// A tip jar for the footer. Opt-in: a site gets it by declaring `donate` in
+// its config, so the other seventeen are untouched.
+//
+// The addresses are printed in full rather than hidden behind a QR code or a
+// "show address" toggle: someone paying from a hardware wallet reads the
+// last four characters off the screen to check them against the device, and
+// a page that only reveals the string after a click cannot be checked that
+// way. Click-to-copy is the convenience on top of that, never instead of it.
+interface Props {
+  /** Chain name and receiving address, in the order they should be read. */
+  addresses: { chain: string; address: string }[];
+  /** The heading. A site's own words — this component does not invent one. */
+  heading: string;
+}
+const { addresses, heading } = Astro.props;
+---
+
+<section class="donate" aria-labelledby="donate-heading" data-nosnippet>
+  <h2 class="donate-heading" id="donate-heading">{heading}</h2>
+  <ul class="donate-list">
+    {addresses.map((a) => (
+      <li class="donate-row">
+        <span class="donate-chain">{a.chain}</span>
+        {/* A button, not a span with a click handler: this does something,
+            so it has to be reachable by keyboard and announce itself as
+            operable. The address inside it stays selectable, which is the
+            fallback when the clipboard API is unavailable — an insecure
+            origin, or a browser that refuses the permission. */}
+        <button
+          type="button"
+          class="donate-address"
+          data-address={a.address}
+          title={`Copy the ${a.chain} address`}
+        >
+          <code>{a.address}</code>
+        </button>
+      </li>
+    ))}
+  </ul>
+  {/* One live region for the whole list. Per-row ones would each have to be
+      in the DOM from the start, and five empty status regions is five things
+      a screen reader walks past on the way out of the page. */}
+  <p class="donate-status" role="status" aria-live="polite"></p>
+</section>
+
+<script>
+  const section = document.querySelector<HTMLElement>(".donate");
+  if (section) {
+    const status = section.querySelector<HTMLElement>(".donate-status");
+    let clearAt: number | undefined;
+
+    // Falls back to a selection when the clipboard is not writable, which is
+    // every insecure origin and any browser that denies the permission. The
+    // reader is then one Ctrl+C from the same result instead of nothing.
+    const select = (el: Element) => {
+      const range = document.createRange();
+      range.selectNodeContents(el);
+      const sel = window.getSelection();
+      sel?.removeAllRanges();
+      sel?.addRange(range);
+    };
+
+    section.addEventListener("click", async (event) => {
+      const button = (event.target as Element | null)?.closest<HTMLButtonElement>(".donate-address");
+      if (!button) return;
+      const address = button.dataset.address ?? "";
+      const chain = button.parentElement?.querySelector(".donate-chain")?.textContent ?? "";
+      let copied = false;
+      try {
+        await navigator.clipboard.writeText(address);
+        copied = true;
+      } catch {
+        const code = button.querySelector("code");
+        if (code) select(code);
+      }
+      button.dataset.copied = copied ? "yes" : "no";
+      if (status) status.textContent = copied ? `${chain} address copied` : `${chain} address selected — press Ctrl+C`;
+      window.clearTimeout(clearAt);
+      clearAt = window.setTimeout(() => {
+        delete button.dataset.copied;
+        if (status) status.textContent = "";
+      }, 2400);
+    });
+  }
+</script>
+
+<style>
+  .donate {
+    /* Leads the footer, above the wordmark, so the rule goes underneath it. */
+    margin-bottom: var(--space-3);
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .donate-heading {
+    margin: 0 0 var(--space-2);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ink-muted);
+  }
+
+  .donate-list {
+    /* One column on a phone, two side by side from tablet width up. The
+       track minimum is what the longest address here needs to sit on one
+       line — a third column would fit the page and not the address, and an
+       address broken across lines is the one thing a reader has to check
+       character by character. */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    gap: var(--space-1) var(--space-3);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  /* The chain name sits above its address rather than beside it. Beside it
+     costs the address a fifth of the column, which is the difference between
+     a 44-character string on one line and on two — and an address broken
+     across lines is the one thing a reader has to check character by
+     character. */
+  .donate-row {
+    display: grid;
+    gap: 2px;
+  }
+
+  .donate-chain {
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  .donate-address {
+    /* A 44-character string on a 320px screen: it wraps, and the button
+       grows to hold it rather than clipping or scrolling the page sideways. */
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    /* The tap target minimum, which a single line of 0.8rem mono is under. */
+    min-height: 44px;
+    padding: var(--space-1);
+    margin: 0;
+    text-align: left;
+    background: none;
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    color: var(--ink-muted);
+    cursor: pointer;
+  }
+
+  .donate-address code {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    line-height: 1.5;
+    /* Selectable, so the address is still usable with the clipboard denied. */
+    user-select: text;
+    overflow-wrap: anywhere;
+  }
+
+  .donate-address:hover,
+  .donate-address:focus-visible {
+    background: var(--surface-sunk);
+    border-color: var(--border);
+    color: var(--ink);
+  }
+
+  /* The copy confirmation, drawn on the row that was clicked. Generated
+     content because it is feedback on an action, not content of the page —
+     the same words go to a screen reader through .donate-status instead. */
+  .donate-address[data-copied]::after {
+    content: "Copied";
+    flex: none;
+    font-size: 0.75rem;
+    font-family: var(--font-body);
+    color: var(--ok);
+  }
+
+  .donate-address[data-copied="no"]::after {
+    content: "Press Ctrl+C";
+    color: var(--ink-faint);
+  }
+
+  .donate-status {
+    /* Announced, not drawn: the visible confirmation is the ::after above,
+       and printing it twice on one row reads as a bug. */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+</style>

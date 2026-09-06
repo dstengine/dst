@@ -24,4 +24,17 @@ export const site = {
   networkFooter: false,
   partnerDisclosure: false,
   footerLinks: [{ href: "/about/", label: "About" }],
+  // A tip jar, and the only place on the site that asks for anything. The
+  // heading is a pun and stays as written: the tokens going one way are the
+  // chain's, the ones coming back are the model's.
+  donate: {
+    heading: "Donate some tokens for some tokens",
+    addresses: [
+      { chain: "Solana", address: "AExkP1sv4Ngx2GhJjLXv6392Yr14YPDvW7Pd6F2CBn5n" },
+      { chain: "Tron", address: "TECFRdhJibvFxvJncm8oHYcRFH7EWF4DtP" },
+      { chain: "Ton", address: "UQBDdwEHADNgrj2jP9bsXjBK-5J-L8TYmAl_fOEVqQAj7Hts" },
+      { chain: "Ethereum", address: "0xa2Fe6fe5208a0aC9AEb287fFEcEa7A0ef277D0f9" },
+      { chain: "BTC", address: "bc1qgl8x7hp4fsptfzcpvtaau0d6umhuaacsc8pl2y" },
+    ],
+  },
 };

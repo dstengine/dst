@@ -64,7 +64,7 @@ const cards = latest.map((item) => {
   <section class="container news-block">
     <div class="news-block-head">
       <h2>{heading}</h2>
-      <a class="news-block-all" href={newsBase} title={allLabel}>{allLabel} &rarr;</a>
+      <a class="news-block-all" href={newsBase} title={allLabel}>{allLabel}<span class="news-block-arrow" aria-hidden="true"> &rarr;</span></a>
     </div>
     <FeedCards items={cards} columns={cards.length} locale={locale} />
   </section>
@@ -98,5 +98,31 @@ const cards = latest.map((item) => {
     font-size: var(--step--1);
     font-weight: 600;
     text-decoration: none;
+  }
+
+  /* Below this width the head row wraps and the link lands on a line of its
+     own, where a short phrase in accent colour reads as a stray caption
+     rather than the way on to the rest of the feed. The basis is set here
+     rather than left to the wrap, so the breakpoint and the wrap are the
+     same number and the link is never a button on a line it shares with the
+     heading. Outlined, not filled: this is navigation, and a solid accent
+     button here would outrank the page's actual calls to action. */
+  @media (max-width: 34rem) {
+    .news-block-all {
+      flex: 1 0 100%;
+      justify-content: center;
+      padding: 0.7em 1.3em;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: transparent;
+    }
+    .news-block-all:where(:hover, :focus-visible) {
+      background: var(--surface-sunk);
+      text-decoration: none;
+    }
+    /* The arrow was doing the work of saying "this leads somewhere". The
+       button shape says it already, and an arrow inside a button reads as a
+       second, different control. */
+    .news-block-arrow { display: none; }
   }
 </style>
