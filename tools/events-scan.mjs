@@ -29,7 +29,17 @@
 //
 // `kind` is how the page hands over its listings — jsonld, rss, ics,
 // sitemap, or watch, which keeps a copy of the page and reports the lines
-// that were not on it last time. `auto` tries the first four in order. --probe reports what a
+// that were not on it last time.
+//
+// One shape worth knowing, because it looks closed and is not: a Luma
+// calendar page publishes no event markup, no feed and no ics link, so a
+// probe of luma.com/<name> reports nothing usable. Every Luma calendar
+// still has an iCalendar endpoint —
+//
+//   https://api.lu.ma/ics/get?entity=calendar&id=<cal id>
+//
+// — and the id (`cal-…`) is in the page source. Point the source there with
+// kind "ics" and the whole calendar reads normally. `auto` tries the first four in order. --probe reports what a
 // candidate source actually publishes, so adding one is a single command
 // rather than an afternoon of reading someone's markup.
 import { readFileSync, writeFileSync, existsSync, readdirSync } from "node:fs";
