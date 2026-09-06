@@ -111,6 +111,7 @@ export const items: EventItem[] = [
     start: "2026-09-14",
     end: "2026-10-12",
     city: "Online",
+    online: true,
     organizer: "Colosseum",
     category: "Hackathon",
     featured: 2,
@@ -491,6 +492,7 @@ export const items: EventItem[] = [
     endTime: "15:00",
     utcOffset: "+00:00",
     city: "Online",
+    online: true,
     organizer: "SOL BROTHERS Studio",
     category: "Online",
     source: {
@@ -525,6 +527,7 @@ export const items: EventItem[] = [
     endTime: "16:30",
     utcOffset: "+00:00",
     city: "Online",
+    online: true,
     organizer: "Superteam Canada",
     category: "Online",
     source: {
@@ -696,6 +699,7 @@ export const items: EventItem[] = [
     endTime: "17:30",
     utcOffset: "+00:00",
     city: "Online",
+    online: true,
     organizer: "Superteam Canada",
     category: "Online",
     source: {
@@ -730,6 +734,7 @@ export const items: EventItem[] = [
     endTime: "17:30",
     utcOffset: "+00:00",
     city: "Online",
+    online: true,
     organizer: "Superteam Canada",
     category: "Online",
     source: {
@@ -766,6 +771,7 @@ export const items: EventItem[] = [
     start: "2026-04-06",
     end: "2026-05-11",
     city: "Online",
+    online: true,
     organizer: "Colosseum",
     category: "Hackathon",
     source: {

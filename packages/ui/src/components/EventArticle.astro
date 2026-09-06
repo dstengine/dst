@@ -146,8 +146,10 @@ const glance: { label: string; value: string; icon: string }[] = [
     icon: ICONS.clock,
   },
   duration && { label: L.duration, value: duration, icon: ICONS.hourglass },
-  { label: L.format, value: L.inPerson, icon: ICONS.users },
-  (item.venue || item.city) && {
+  { label: L.format, value: item.online ? L.online : L.inPerson, icon: ICONS.users },
+  // An online event with no venue has nowhere to print: "Format: Online"
+  // followed by "Where: Online" is one fact wearing two rows.
+  (item.venue || (item.city && !item.online)) && {
     label: L.where,
     value: [item.venue, item.city].filter(Boolean).join(", "),
     icon: ICONS.pin,
@@ -204,8 +206,23 @@ const jsonLd =
     startDate: startStamp,
     ...(endStamp ? { endDate: endStamp } : {}),
     eventStatus: "https://schema.org/EventScheduled",
-    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-    ...(item.venue || item.city
+    eventAttendanceMode: item.online
+      ? "https://schema.org/OnlineEventAttendanceMode"
+      : "https://schema.org/OfflineEventAttendanceMode",
+    // An online event's location is a URL, not a Place — schema.org is
+    // explicit about it, and a call filed as a Place in a city called
+    // "Online" is a lie told twice, once to the reader and once to Google.
+    // The URL goes through this site's own /go/ hop, never the raw source:
+    // an organiser's address in structured data is a third party named in
+    // our markup, which is the one thing the outbound rules forbid. With no
+    // hop to point at, the location is left out — the attendance mode has
+    // already said what matters.
+    ...(item.online
+      ? (() => {
+          const at = ticketHref ?? sourceHref;
+          return at ? { location: { "@type": "VirtualLocation", url: absolute(at) } } : {};
+        })()
+      : item.venue || item.city
       ? {
           location: {
             "@type": "Place",

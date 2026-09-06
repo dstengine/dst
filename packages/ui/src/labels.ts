@@ -37,6 +37,7 @@ export interface ArticleLabels {
   durationValue: (hours: number, minutes: number) => string;
   format: string;
   inPerson: string;
+  online: string;
   where: string;
   ticketsRow: string;
   salesClose: string;
@@ -99,6 +100,7 @@ export const EN: ArticleLabels = {
       .join(" "),
   format: "Format",
   inPerson: "In person",
+  online: "Online",
   where: "Where",
   ticketsRow: "Tickets",
   salesClose: "Sales close",

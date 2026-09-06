@@ -130,6 +130,11 @@ export interface EventItem extends ItemBase {
   utcOffset?: string;
   venue?: string;
   city?: string;
+  // An event that happens on a call rather than in a room. The glance table
+  // used to tell every reader an event was "In person", which for a Discord
+  // community call is simply untrue, and the markup said the same thing to
+  // search engines. Set this and both say Online instead.
+  online?: boolean;
   organizer?: string;
   ticket?: { url: string; label?: string }; // -> /go/<slug>/, visible button
   // What a seat costs and until when. A ticketing platform puts this at the
