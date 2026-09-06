@@ -1,0 +1,74 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { about } from "../content";
+import PageHero from "@dst/ui/PageHero.astro";
+---
+<Layout
+  prose title={about.title} description={about.description}>
+  <PageHero
+    title={about.h1}
+    image="/covers/about.jpg"
+    imageAlt="Cut-paper illustration: overlapping angular arcs converging on a single point, like routes meeting at one place."
+    imageKind="generated"
+  >
+    <p class="lede">{about.lede}</p>
+  </PageHero>
+
+  <section class="container">
+    <h2>What this is</h2>
+    <p set:html={`<strong>sol2go.lol</strong> is a calendar and a newsfeed for the Solana ecosystem: hackathons, conferences and city meetups, and the releases and programmes that change what a builder can do. The wider crypto calendar is here too, because that is the calendar these events sit in.`} />
+  </section>
+
+  <section class="container">
+    <h2>The rules</h2>
+    <ol class="rules">
+      <li>
+        <h3>Every fact names where it came from, and when we last looked</h3>
+        <p>Not “updated regularly”. A source and a date, printed on the entry itself, so you can see how fresh the thing you are reading actually is.</p>
+      </li>
+      <li>
+        <h3>Nothing is listed on a date we could not confirm</h3>
+        <p>Dates come from the organiser, not from another listings page. An event whose date we could not confirm waits until we can, and a date that has been given only as a month is printed as a month.</p>
+      </li>
+      <li>
+        <h3>Events and what people build, not prices</h3>
+        <p>This is a calendar and a builder's newsfeed. Where a story genuinely turns on a market number, that number carries a plain warning that it is not advice — and it is still not why the story is here.</p>
+      </li>
+      <li>
+        <h3>Nothing here is financial advice</h3>
+        <p>No token is recommended, promoted or rated on this site, and nothing on it should be read as a suggestion to buy, sell or hold anything. We do not take payment to list an event.</p>
+      </li>
+      <li>
+        <h3>A page exists when there is something to put on it</h3>
+        <p>No empty sections waiting to be filled, and no index padded out to look busy. A section appears once there is something on it.</p>
+      </li>
+    </ol>
+  </section>
+
+</Layout>
+
+<style>
+  .rules {
+    margin: var(--space-3) 0 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: rule;
+    display: grid;
+    gap: var(--space-3);
+  }
+  .rules li {
+    counter-increment: rule;
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 0 var(--space-2);
+    align-items: baseline;
+  }
+  .rules li::before {
+    content: counter(rule);
+    color: var(--accent);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+  .rules h3 { margin: 0; font-size: var(--step-0); }
+  .rules p { margin: 0.25em 0 0; grid-column: 2; max-width: 62ch; color: var(--ink-muted); }
+</style>

@@ -1,0 +1,11 @@
+/* vien.lol — accent taken from the city's own visual world rather than
+   from the network's palette: these domains are independent of the DST
+   group and of each other, so nothing here has to sit next to a sibling. */
+:root {
+  --accent-light: #A8341F;
+  --accent-ink-light: #78210F;
+  --accent-tint-light: #FBE7E1;
+  --accent-dark: #F2856B;
+  --accent-ink-dark: #FBC3B4;
+  --accent-tint-dark: #3A1008;
+}

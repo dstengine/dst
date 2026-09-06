@@ -21,6 +21,8 @@ const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 // would overwrite a designed logo with a generated one.
 const SITES = {
   nyc42: { label: "42" },
+  sol2go: { label: "sol" },
+  vien: { label: "vien" },
   ldn: { label: "ldn" },
   lnd: { label: "lnd" },
   cmx: { label: "cmx" },
@@ -31,7 +33,9 @@ const SITES = {
     so the mark and the site can never drift apart. */
 function accentOf(app) {
   const css = readFileSync(path.join(REPO, "apps", app, "src/styles/theme.css"), "utf8");
-  const m = css.match(/:root\s*\{[^}]*--accent:\s*(#[0-9a-fA-F]{3,8})/);
+  // Sites declare --accent-light and --accent-dark; older ones declared a
+  // single --accent. Take the light one, which is what the mark is drawn on.
+  const m = css.match(/:root\s*\{[^}]*--accent(?:-light)?:\s*(#[0-9a-fA-F]{3,8})/);
   if (!m) throw new Error(`${app}: no --accent in theme.css`);
   return m[1];
 }

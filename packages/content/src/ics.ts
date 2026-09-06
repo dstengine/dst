@@ -41,6 +41,8 @@ const UID_HOSTS: Record<string, string> = {
   // dst.llc — and deliberately not linked to it. A UID naming the group
   // would say in a calendar file what the sites do not say on the page.
   nyc42: "nyc42.lol",
+  sol2go: "sol2go.lol",
+  vien: "vien.lol",
   ldn: "ldn.lol",
   lnd: "lnd.lol",
   cmx: "cmx.lol",

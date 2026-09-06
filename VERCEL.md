@@ -46,19 +46,21 @@ logged in (`vercel whoami`).
 
 `nyc42`, `ldn`, `lnd`, `cmx` and `mxo` are five domains registered in
 August 2026 to test portal concepts for a year, with a keep-or-drop
-decision due in summer 2027. Each is its own Vercel project named after
+decision due in summer 2027. `sol2go` and `vien` joined them on
+6 September 2026 on the same terms. Each is its own Vercel project named after
 the app, on its own domain, and each is a **separate site**: no links
 between them and none to dst.llc.
 
-Their `vercel.json` deliberately does *not* watch `../../packages`:
+Their `vercel.json` watches `../../packages` alongside its own directory:
 
     ignoreCommand: git rev-parse HEAD^ >/dev/null 2>&1 || exit 1;
-                   git diff --quiet HEAD^ HEAD -- .
+                   git diff --quiet HEAD^ HEAD -- . ../../packages
 
-They build nothing from `@dst/ui` or `@dst/content` yet, so a
-packages-only commit has nothing to rebuild here — and keeping them out of
-that fan-out is what stops five throwaway sites from eating the build
-allowance every time a shared component moves. **When one of them adopts
-`@dst/ui`, its `ignoreCommand` has to grow `../../packages`**, or it will
-silently drift behind the components it renders — the failure this file
-was written about.
+It did not, once. These sites were meant to build nothing from `@dst/ui`
+or `@dst/content`, so keeping them out of that fan-out stopped throwaway
+sites from eating the build allowance every time a shared component moved.
+Then they adopted the shared components and the ignore rule stayed as it
+was, and they silently drifted behind the components they render — the
+failure this file was written about. **A .lol site that imports from
+`packages/` must have `../../packages` in its `ignoreCommand`**, and every
+one of them now does; `sol2go` and `vien` were created with it.

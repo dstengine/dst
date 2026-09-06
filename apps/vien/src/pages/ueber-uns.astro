@@ -1,0 +1,74 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { about } from "../content";
+import PageHero from "@dst/ui/PageHero.astro";
+---
+<Layout
+  prose title={about.title} description={about.description}>
+  <PageHero
+    title={about.h1}
+    image="/covers/ueber-uns.jpg"
+    imageAlt="Papierschnitt-Illustration: ein steiler Dachgiebel mit gemustertem Ziegelband über einer Reihe niedriger Fassaden."
+    imageKind="generated"
+  >
+    <p class="lede">{about.lede}</p>
+  </PageHero>
+
+  <section class="container">
+    <h2>Was das hier ist</h2>
+    <p set:html={`<strong>vien.lol</strong> berichtet über Wien und Österreich — Museen und Konzerthäuser, Parks und Plätze, und das, was in der Stadt öffnet oder sich ändert. Was läuft, was sich geändert hat, und wann.`} />
+  </section>
+
+  <section class="container">
+    <h2>Die Regeln</h2>
+    <ol class="rules">
+      <li>
+        <h3>Jede Angabe nennt ihre Quelle und den Tag, an dem wir zuletzt nachgesehen haben</h3>
+        <p>Nicht „laufend aktualisiert“. Eine Quelle und ein Datum, direkt im Eintrag, damit sichtbar ist, wie frisch das ist, was Sie gerade lesen.</p>
+      </li>
+      <li>
+        <h3>Kein Termin ohne bestätigtes Datum</h3>
+        <p>Termine kommen von den Veranstaltern, nicht aus einem anderen Kalender. Was wir nicht bestätigen konnten, wartet, bis wir es können.</p>
+      </li>
+      <li>
+        <h3>Was läuft, nicht was schiefging</h3>
+        <p>Diese Seite berichtet darüber, was stattfindet, was öffnet und was sich zum Besseren geändert hat. Keine Politik, keine Kriminalität, keine Tragödien und keine Streitfälle. Wer Partei ergreifen muss, gehört zu einem Medium, das die Sache weiterverfolgen kann.</p>
+      </li>
+      <li>
+        <h3>Wir wählen aus und sagen, warum</h3>
+        <p>Ein Kalender verdient sich seinen Platz durch die Auswahl. Das Beste an etwas herauszuheben ist die Arbeit, kein Kompromiss — was hier nicht passiert, ist ein Verriss. Ein namentlich genanntes Haus schlechtzureden ist nicht der Zweck dieser Seite.</p>
+      </li>
+      <li>
+        <h3>Eine Seite entsteht, wenn es etwas daraufzustellen gibt</h3>
+        <p>Keine leeren Abschnitte, die auf Inhalt warten, und kein Verzeichnis, das nur voll aussehen soll. Ein Abschnitt erscheint, sobald etwas darin steht.</p>
+      </li>
+    </ol>
+  </section>
+
+</Layout>
+
+<style>
+  .rules {
+    margin: var(--space-3) 0 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: rule;
+    display: grid;
+    gap: var(--space-3);
+  }
+  .rules li {
+    counter-increment: rule;
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 0 var(--space-2);
+    align-items: baseline;
+  }
+  .rules li::before {
+    content: counter(rule);
+    color: var(--accent);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+  .rules h3 { margin: 0; font-size: var(--step-0); }
+  .rules p { margin: 0.25em 0 0; grid-column: 2; max-width: 62ch; color: var(--ink-muted); }
+</style>

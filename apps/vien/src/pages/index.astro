@@ -1,0 +1,19 @@
+---
+import Layout from "../layouts/Layout.astro";
+import NewsBlock from "@dst/ui/NewsBlock.astro";
+import EventsBlock from "@dst/ui/EventsBlock.astro";
+import { home, site, newsBase, eventsBase } from "../content";
+import { newsBySite } from "@dst/content/news";
+import { eventsBySite } from "@dst/content/events";
+
+const newsItems = newsBySite(site);
+const eventItems = eventsBySite(site);
+---
+<Layout title={home.title} description={home.description}>
+  <section class="container hero">
+    <h1>{home.h1}</h1>
+    <p class="lede">{home.lede}</p>
+  </section>
+  <EventsBlock locale="de-AT" items={eventItems} heading="Termine" eventsBase={eventsBase} allLabel="Alle Termine" />
+  <NewsBlock locale="de-AT" items={newsItems} heading="Nachrichten" newsBase={newsBase} allLabel="Alle Nachrichten" />
+</Layout>

@@ -25,6 +25,8 @@ const SITES = [
   { app: "eco", host: "eco.dst.llc" },
   // The five .lol city experiments — separate sites, checked like the rest.
   { app: "nyc42", host: "nyc42.lol" },
+  { app: "sol2go", host: "sol2go.lol" },
+  { app: "vien", host: "vien.lol" },
   { app: "ldn", host: "ldn.lol" },
   { app: "lnd", host: "lnd.lol" },
   { app: "cmx", host: "cmx.lol" },

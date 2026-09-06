@@ -17,7 +17,7 @@ import { fileURLToPath } from "node:url";
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const APPS = ["dst", "llc", "visas", "riviera", "mbr", "palmcentral", "eco", "fwf", "musical",
   // The five .lol city experiments, each of which publishes itself.
-  "nyc42", "ldn", "lnd", "cmx", "mxo",
+  "nyc42", "ldn", "lnd", "cmx", "mxo", "sol2go", "vien",
   // A tour archive on its own vvm.space host, tied to neither the group nor
   // the .lol five.
   "tokiohotel"];
@@ -31,6 +31,8 @@ const ORGANIZATION_ID = "https://dst.llc/#organization";
 const PUBLISHER = {
   musical: "https://musical.today/#organization",
   nyc42: "https://nyc42.lol/#organization",
+  sol2go: "https://sol2go.lol/#organization",
+  vien: "https://vien.lol/#organization",
   ldn: "https://ldn.lol/#organization",
   lnd: "https://lnd.lol/#organization",
   cmx: "https://cmx.lol/#organization",

@@ -26,6 +26,8 @@ const SITES = [
   { app: "musical", host: "musical.today" },
   // The five .lol city experiments — separate sites, checked like the rest.
   { app: "nyc42", host: "nyc42.lol" },
+  { app: "sol2go", host: "sol2go.lol" },
+  { app: "vien", host: "vien.lol" },
   { app: "ldn", host: "ldn.lol" },
   { app: "lnd", host: "lnd.lol" },
   { app: "cmx", host: "cmx.lol" },
@@ -1005,9 +1007,15 @@ describe("how much of each site is the template", () => {
   // job — it is telling us the card strip is now the single largest source of
   // duplicate text on a small site, and it will keep saying so until the strip
   // stops printing a full summary on every page that carries it.
+  //
+  // sol2go and vien launched on 6 September 2026 and start at 30, which is
+  // where a site with a handful of entries sits: with few pages, the shared
+  // chrome is a large share of every one of them, and the number falls on its
+  // own as content arrives. It is a starting line, not a licence.
   const CEILING = {
     dst: 25, llc: 16, visas: 19, riviera: 13, mbr: 16, palmcentral: 24,
     eco: 30, fwf: 20, musical: 35, nyc42: 27, ldn: 25, lnd: 25, cmx: 32, mxo: 25,
+    sol2go: 30, vien: 30,
   };
 
   test("no site is more template than the ceiling it recorded", async () => {

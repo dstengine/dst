@@ -143,6 +143,32 @@
         "4344"
       ],
       "port": 4344
+    },
+    {
+      "name": "sol2go",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "astro",
+        "dev",
+        "--root",
+        "apps/sol2go",
+        "--port",
+        "4346"
+      ],
+      "port": 4346
+    },
+    {
+      "name": "vien",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "astro",
+        "dev",
+        "--root",
+        "apps/vien",
+        "--port",
+        "4347"
+      ],
+      "port": 4347
     }
   ]
 }

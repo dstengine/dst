@@ -21,7 +21,7 @@ const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
 /** Every app in the network. eco included — see the note above. */
 const APPS = ["dst", "llc", "visas", "riviera", "mbr", "palmcentral", "eco", "fwf", "musical",
-  "nyc42", "ldn", "lnd", "cmx", "mxo",
+  "nyc42", "ldn", "lnd", "cmx", "mxo", "sol2go", "vien",
   // A tour archive on its own vvm.space host, tied to neither the group nor
   // the .lol five.
   "tokiohotel"];
@@ -31,7 +31,7 @@ const APPS = ["dst", "llc", "visas", "riviera", "mbr", "palmcentral", "eco", "fw
     about a third party's event, so it carries its own name. */
 const OWN_DOMAINS = ["fwf.lol", "musical.today",
   // The five city experiments, each its own site on its own domain.
-  "nyc42.lol", "ldn.lol", "lnd.lol", "cmx.lol", "mxo.lol",
+  "nyc42.lol", "ldn.lol", "lnd.lol", "cmx.lol", "mxo.lol", "sol2go.lol", "vien.lol",
   // The tour archive. Named exactly, not as a vvm.space wildcard: most of
   // that zone is old A records pointing at machines that are no longer ours.
   "tokiohotel.vvm.space"];

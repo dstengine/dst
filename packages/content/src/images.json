@@ -14881,6 +14881,922 @@
       ]
     }
   },
+  "sol2go.lol": {
+    "/covers/about.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/about-480.avif"
+        ],
+        [
+          768,
+          "/covers/about-768.avif"
+        ],
+        [
+          1024,
+          "/covers/about-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/about-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/about-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/about-480.webp"
+        ],
+        [
+          768,
+          "/covers/about-768.webp"
+        ],
+        [
+          1024,
+          "/covers/about-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/about-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/about-1536.webp"
+        ]
+      ]
+    },
+    "/covers/before-solana-gets-150ms-finality-two-gates-had-to-open.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/before-solana-gets-150ms-finality-two-gates-had-to-open-480.avif"
+        ],
+        [
+          768,
+          "/covers/before-solana-gets-150ms-finality-two-gates-had-to-open-768.avif"
+        ],
+        [
+          1024,
+          "/covers/before-solana-gets-150ms-finality-two-gates-had-to-open-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/before-solana-gets-150ms-finality-two-gates-had-to-open-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/before-solana-gets-150ms-finality-two-gates-had-to-open-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/before-solana-gets-150ms-finality-two-gates-had-to-open-480.webp"
+        ],
+        [
+          768,
+          "/covers/before-solana-gets-150ms-finality-two-gates-had-to-open-768.webp"
+        ],
+        [
+          1024,
+          "/covers/before-solana-gets-150ms-finality-two-gates-had-to-open-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/before-solana-gets-150ms-finality-two-gates-had-to-open-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/before-solana-gets-150ms-finality-two-gates-had-to-open-1536.webp"
+        ]
+      ]
+    },
+    "/covers/breakpoint-2026-london.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/breakpoint-2026-london-480.avif"
+        ],
+        [
+          768,
+          "/covers/breakpoint-2026-london-768.avif"
+        ],
+        [
+          1024,
+          "/covers/breakpoint-2026-london-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/breakpoint-2026-london-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/breakpoint-2026-london-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/breakpoint-2026-london-480.webp"
+        ],
+        [
+          768,
+          "/covers/breakpoint-2026-london-768.webp"
+        ],
+        [
+          1024,
+          "/covers/breakpoint-2026-london-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/breakpoint-2026-london-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/breakpoint-2026-london-1536.webp"
+        ]
+      ]
+    },
+    "/covers/crypto-worlds-fair-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/crypto-worlds-fair-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/crypto-worlds-fair-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/crypto-worlds-fair-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/crypto-worlds-fair-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/crypto-worlds-fair-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/crypto-worlds-fair-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/crypto-worlds-fair-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/crypto-worlds-fair-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/crypto-worlds-fair-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/crypto-worlds-fair-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/ethglobal-tokyo-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/ethglobal-tokyo-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/ethglobal-tokyo-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/ethglobal-tokyo-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/ethglobal-tokyo-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/ethglobal-tokyo-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/ethglobal-tokyo-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/ethglobal-tokyo-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/ethglobal-tokyo-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/ethglobal-tokyo-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/ethglobal-tokyo-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/rent-came-down-and-every-account-is-now-over-funded.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/rent-came-down-and-every-account-is-now-over-funded-480.avif"
+        ],
+        [
+          768,
+          "/covers/rent-came-down-and-every-account-is-now-over-funded-768.avif"
+        ],
+        [
+          1024,
+          "/covers/rent-came-down-and-every-account-is-now-over-funded-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/rent-came-down-and-every-account-is-now-over-funded-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/rent-came-down-and-every-account-is-now-over-funded-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/rent-came-down-and-every-account-is-now-over-funded-480.webp"
+        ],
+        [
+          768,
+          "/covers/rent-came-down-and-every-account-is-now-over-funded-768.webp"
+        ],
+        [
+          1024,
+          "/covers/rent-came-down-and-every-account-is-now-over-funded-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/rent-came-down-and-every-account-is-now-over-funded-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/rent-came-down-and-every-account-is-now-over-funded-1536.webp"
+        ]
+      ]
+    },
+    "/covers/scale-or-die-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/scale-or-die-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/scale-or-die-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/scale-or-die-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/scale-or-die-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/scale-or-die-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/scale-or-die-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/scale-or-die-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/scale-or-die-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/scale-or-die-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/scale-or-die-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/solana-frontier-hackathon-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/solana-frontier-hackathon-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/solana-frontier-hackathon-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/solana-frontier-hackathon-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/solana-frontier-hackathon-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/solana-frontier-hackathon-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/solana-frontier-hackathon-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/solana-frontier-hackathon-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/solana-frontier-hackathon-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/solana-frontier-hackathon-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/solana-frontier-hackathon-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/solana-hacker-house-london-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/solana-hacker-house-london-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/solana-hacker-house-london-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/solana-hacker-house-london-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/solana-hacker-house-london-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/solana-hacker-house-london-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/solana-hacker-house-london-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/solana-hacker-house-london-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/solana-hacker-house-london-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/solana-hacker-house-london-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/solana-hacker-house-london-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/solana-startup-connect-ghana-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/solana-startup-connect-ghana-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/solana-startup-connect-ghana-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/solana-startup-connect-ghana-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/solana-startup-connect-ghana-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/solana-startup-connect-ghana-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/solana-startup-connect-ghana-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/solana-startup-connect-ghana-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/solana-startup-connect-ghana-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/solana-startup-connect-ghana-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/solana-startup-connect-ghana-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/solana-summit-canada-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/solana-summit-canada-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/solana-summit-canada-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/solana-summit-canada-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/solana-summit-canada-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/solana-summit-canada-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/solana-summit-canada-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/solana-summit-canada-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/solana-summit-canada-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/solana-summit-canada-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/solana-summit-canada-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/solana-summit-india-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/solana-summit-india-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/solana-summit-india-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/solana-summit-india-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/solana-summit-india-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/solana-summit-india-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/solana-summit-india-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/solana-summit-india-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/solana-summit-india-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/solana-summit-india-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/solana-summit-india-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/solana-summit-korea-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/solana-summit-korea-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/solana-summit-korea-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/solana-summit-korea-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/solana-summit-korea-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/solana-summit-korea-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/solana-summit-korea-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/solana-summit-korea-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/solana-summit-korea-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/solana-summit-korea-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/solana-summit-korea-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/solana-summit-singapore-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/solana-summit-singapore-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/solana-summit-singapore-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/solana-summit-singapore-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/solana-summit-singapore-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/solana-summit-singapore-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/solana-summit-singapore-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/solana-summit-singapore-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/solana-summit-singapore-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/solana-summit-singapore-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/solana-summit-singapore-2026-1536.webp"
+        ]
+      ]
+    }
+  },
+  "vien.lol": {
+    "/covers/ueber-uns.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/ueber-uns-480.avif"
+        ],
+        [
+          768,
+          "/covers/ueber-uns-768.avif"
+        ],
+        [
+          1024,
+          "/covers/ueber-uns-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/ueber-uns-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/ueber-uns-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/ueber-uns-480.webp"
+        ],
+        [
+          768,
+          "/covers/ueber-uns-768.webp"
+        ],
+        [
+          1024,
+          "/covers/ueber-uns-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/ueber-uns-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/ueber-uns-1536.webp"
+        ]
+      ]
+    },
+    "/covers/viennale-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/viennale-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/viennale-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/viennale-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/viennale-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/viennale-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/viennale-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/viennale-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/viennale-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/viennale-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/viennale-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/wien-ist-2026-zweitlebenswerteste-stadt-der-welt.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/wien-ist-2026-zweitlebenswerteste-stadt-der-welt-480.avif"
+        ],
+        [
+          768,
+          "/covers/wien-ist-2026-zweitlebenswerteste-stadt-der-welt-768.avif"
+        ],
+        [
+          1024,
+          "/covers/wien-ist-2026-zweitlebenswerteste-stadt-der-welt-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/wien-ist-2026-zweitlebenswerteste-stadt-der-welt-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/wien-ist-2026-zweitlebenswerteste-stadt-der-welt-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/wien-ist-2026-zweitlebenswerteste-stadt-der-welt-480.webp"
+        ],
+        [
+          768,
+          "/covers/wien-ist-2026-zweitlebenswerteste-stadt-der-welt-768.webp"
+        ],
+        [
+          1024,
+          "/covers/wien-ist-2026-zweitlebenswerteste-stadt-der-welt-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/wien-ist-2026-zweitlebenswerteste-stadt-der-welt-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/wien-ist-2026-zweitlebenswerteste-stadt-der-welt-1536.webp"
+        ]
+      ]
+    },
+    "/covers/wien-modern-39.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/wien-modern-39-480.avif"
+        ],
+        [
+          768,
+          "/covers/wien-modern-39-768.avif"
+        ],
+        [
+          1024,
+          "/covers/wien-modern-39-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/wien-modern-39-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/wien-modern-39-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/wien-modern-39-480.webp"
+        ],
+        [
+          768,
+          "/covers/wien-modern-39-768.webp"
+        ],
+        [
+          1024,
+          "/covers/wien-modern-39-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/wien-modern-39-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/wien-modern-39-1536.webp"
+        ]
+      ]
+    },
+    "/covers/zwei-grosse-ausstellungen-im-wien-museum-enden-am-27-september.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/zwei-grosse-ausstellungen-im-wien-museum-enden-am-27-september-480.avif"
+        ],
+        [
+          768,
+          "/covers/zwei-grosse-ausstellungen-im-wien-museum-enden-am-27-september-768.avif"
+        ],
+        [
+          1024,
+          "/covers/zwei-grosse-ausstellungen-im-wien-museum-enden-am-27-september-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/zwei-grosse-ausstellungen-im-wien-museum-enden-am-27-september-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/zwei-grosse-ausstellungen-im-wien-museum-enden-am-27-september-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/zwei-grosse-ausstellungen-im-wien-museum-enden-am-27-september-480.webp"
+        ],
+        [
+          768,
+          "/covers/zwei-grosse-ausstellungen-im-wien-museum-enden-am-27-september-768.webp"
+        ],
+        [
+          1024,
+          "/covers/zwei-grosse-ausstellungen-im-wien-museum-enden-am-27-september-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/zwei-grosse-ausstellungen-im-wien-museum-enden-am-27-september-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/zwei-grosse-ausstellungen-im-wien-museum-enden-am-27-september-1536.webp"
+        ]
+      ]
+    }
+  },
   "visas.dst.llc": {
     "/covers/consultation.jpg": {
       "width": 1536,

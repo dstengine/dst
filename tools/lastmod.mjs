@@ -25,6 +25,8 @@ const HOSTS = {
   musical: "musical.today",
   eco: "eco.dst.llc",
   nyc42: "nyc42.lol",
+  sol2go: "sol2go.lol",
+  vien: "vien.lol",
   ldn: "ldn.lol",
   lnd: "lnd.lol",
   cmx: "cmx.lol",

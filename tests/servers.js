@@ -15,6 +15,8 @@ export const PORTS = {
   lnd: 4343,
   cmx: 4344,
   mxo: 4345,
+  sol2go: 4346,
+  vien: 4347,
 };
 
 export const baseUrl = (site) => `http://localhost:${PORTS[site]}`;

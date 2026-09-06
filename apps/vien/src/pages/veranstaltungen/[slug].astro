@@ -1,0 +1,34 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import EventArticle from "@dst/ui/EventArticle.astro";
+import { site, newsBase, eventsBase, publisher, labels } from "../../content";
+import { eventsBySite } from "@dst/content/events";
+import { go } from "../../outbound";
+import { newsBySite } from "@dst/content/news";
+
+export function getStaticPaths() {
+  const items = eventsBySite("vien").filter((i) => Array.isArray(i.body) && i.body.length > 0);
+  return items.map((item) => ({ params: { slug: item.slug }, props: { item, more: items } }));
+}
+
+const moreNews = newsBySite(site);
+const { item, more } = Astro.props;
+// A seller if we have one, the source if we don't — see src/outbound.ts.
+const ticketHref = item.ticket ? go(`${item.slug}-ticket`) : undefined;
+const sourceHref = item.source?.url ? go(`${item.slug}-source`) : undefined;
+---
+<Layout title={item.titleSeo ?? item.title} description={item.summary} image={item.image}>
+  <EventArticle
+    locale="de-AT"
+    item={item}
+    ticketHref={ticketHref}
+    sourceHref={sourceHref}
+    more={more}
+    moreNews={moreNews}
+    backHref={eventsBase}
+    newsBase={newsBase}
+    eventsBase={eventsBase}
+    publisher={publisher}
+    labels={labels}
+  />
+</Layout>

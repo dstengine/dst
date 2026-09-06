@@ -51,6 +51,8 @@ takes the whole group or none of it.
 | `lnd` | lnd.lol | Greater London, beyond the centre | Feed |
 | `cmx` | cmx.lol | Qué hacer en la Ciudad de México | Feed |
 | `mxo` | mxo.lol | La agenda de México | Feed |
+| `sol2go` | sol2go.lol | Solana meetups, hackathons and the crypto calendar | Feed |
+| `vien` | vien.lol | Was in Wien los ist — Wien und Österreich, auf Deutsch | Feed |
 
 Two things the table does not show and that the code enforces:
 

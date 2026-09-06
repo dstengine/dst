@@ -13,7 +13,9 @@
     "palmcentral": "warm sand ground with terracotta and burnt orange paper, small cream highlights",
     "riviera": "clear mid-blue ground with pale sky and chalk white paper, small sand highlights",
     "visas": "warm sand ground with tobacco brown and ochre paper, small cream highlights",
-    "musical": "warm cream ground with crimson and deep burgundy paper, small brass highlights"
+    "musical": "warm cream ground with crimson and deep burgundy paper, small brass highlights",
+    "sol2go": "deep violet ground with lilac and pale mint paper, small cream highlights",
+    "vien": "warm cream ground with deep vermilion red and moss green paper, small gold highlights"
   },
   "covers": {
     "nyc42": {
@@ -140,6 +142,29 @@
     },
     "visas": {
       "irex-residency-citizenship-conclave-dubai-2027": "a wide arc of layered paper landmass shapes with a single small house standing on the nearest one, a thin dotted line curving between two of the shapes, no globe, no map, no labels of any kind"
+    },
+    "sol2go": {
+      "breakpoint-2026-london": {
+        "subject": "a tall exhibition hall with a barrel-vaulted glass roof cut as flat sheets, a wide band of small crowd shapes below it",
+        "detail": "the vault built from six or seven long curved strips of violet and lilac paper of slightly different tones, each with a hard shadow beneath its lower edge; below it a broad horizontal band of small flat mint and cream rectangles standing in for a crowd, no faces and no figures, the band running off both sides of the frame; one narrow cream strip of light falling diagonally across the vault"
+      },
+      "crypto-worlds-fair-2026": "a ring of eight flat pavilion shapes of different heights arranged around one small cream disc, each pavilion a different paper tone",
+      "solana-hacker-house-london-2026": "rows of flat desk rectangles receding toward a low horizon under one long horizontal ceiling band",
+      "scale-or-die-2026": "a steeply ascending stack of narrow vertical bars of increasing height, one bar torn along its top edge",
+      "solana-summit-canada-2026": "a wide gabled market hall silhouette with a row of arched openings cut out beneath it",
+      "ethglobal-tokyo-2026": "a tall two-post gate form standing in front of a dense grid of small squares",
+      "solana-summit-korea-2026": "a stepped skyline of flat towers of even width with one wide river band crossing the lower frame",
+      "solana-summit-singapore-2026": "three tall columns joined at the top by one long flat deck, a wide bay band below",
+      "solana-summit-india-2026": "a row of five arched openings of different widths with layered sea shapes behind them",
+      "solana-startup-connect-ghana-2026": "interlocking flat chevrons woven into one broad diagonal band across the frame",
+      "solana-frontier-hackathon-2026": "a wide layered horizon of stacked paper bands with one small flag shape near the right edge"
+    },
+    "vien": {
+      "viennale-2026": {
+        "subject": "a long film strip crossing the frame on a slight diagonal, three of its frames in brighter tones, a projector beam opening from one edge",
+        "detail": "the strip cut as one continuous band with square perforations punched along both edges, eight frames visible, three of them filled with deep vermilion and moss green paper and the rest left as the cream ground; a wide triangular beam of pale cream paper opening from the left edge and passing behind the strip, hard shadow under the strip's lower edge"
+      },
+      "wien-modern-39": "a wide river band winding across the lower frame beneath a staggered row of tall vertical bars of differing heights"
     }
   },
   "news": {
@@ -363,6 +388,14 @@
     "musical": {
       "chicago-takes-an-arena-stage-in-dubai": "a wide shallow bowl shape with a narrow bright rectangle at its centre and five small chevrons above it",
       "rent-turns-thirty-in-a-renamed-theatre": "a flat building facade with a row of doors and one blank nameplate above them, set slightly askew"
+    },
+    "sol2go": {
+      "rent-came-down-and-every-account-is-now-over-funded": "a tall stack of flat discs with the top third of the stack lifted clear and floating just above the rest",
+      "before-solana-gets-150ms-finality-two-gates-had-to-open": "two narrow upright gate forms standing open, a long arrow shape passing between them across the frame"
+    },
+    "vien": {
+      "zwei-grosse-ausstellungen-im-wien-museum-enden-am-27-september": "two empty picture frames side by side on a flat wall, the right-hand one tilted and lifted slightly off it",
+      "wien-ist-2026-zweitlebenswerteste-stadt-der-welt": "three stacked vertical bars of nearly equal height with the tallest at the left, a thin rule running across all three"
     }
   },
   "pages": {
@@ -453,6 +486,12 @@
     },
     "eco": {
       "group": "three interlocking flat rings of different sizes on an open ground"
+    },
+    "sol2go": {
+      "about": "a wide fan of angular routes converging on one flat disc, small nodes along each route"
+    },
+    "vien": {
+      "ueber-uns": "a steep gabled roof with a banded diamond tile pattern rising above a row of low flat façades"
     }
   }
 }

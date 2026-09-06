@@ -24,6 +24,8 @@ const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 // host, and what each feed is called in this site's own language and URLs.
 const SITES = {
   nyc42: { host: "nyc42.lol", news: "news", events: "events", newsLabel: "News", eventsLabel: "Events" },
+  sol2go: { host: "sol2go.lol", news: "news", events: "events", newsLabel: "News", eventsLabel: "Events" },
+  vien: { host: "vien.lol", news: "nachrichten", events: "veranstaltungen", newsLabel: "Nachrichten", eventsLabel: "Termine" },
   ldn: { host: "ldn.lol", news: "news", events: "events", newsLabel: "News", eventsLabel: "Events" },
   lnd: { host: "lnd.lol", news: "news", events: "events", newsLabel: "News", eventsLabel: "Events" },
   cmx: { host: "cmx.lol", news: "noticias", events: "eventos", newsLabel: "Noticias", eventsLabel: "Eventos" },

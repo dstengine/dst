@@ -1,0 +1,11 @@
+/* sol2go.lol — accent taken from the ecosystem the site covers rather than
+   from the network's palette: these domains are independent of the DST
+   group and of each other, so nothing here has to sit next to a sibling. */
+:root {
+  --accent-light: #6B24C4;
+  --accent-ink-light: #4A1590;
+  --accent-tint-light: #F1E8FD;
+  --accent-dark: #B98BFF;
+  --accent-ink-dark: #DCC7FF;
+  --accent-tint-dark: #24103F;
+}
