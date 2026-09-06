@@ -15314,6 +15314,54 @@
         ]
       ]
     },
+    "/covers/digitec-2026-yerevan.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/digitec-2026-yerevan-480.avif"
+        ],
+        [
+          768,
+          "/covers/digitec-2026-yerevan-768.avif"
+        ],
+        [
+          1024,
+          "/covers/digitec-2026-yerevan-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/digitec-2026-yerevan-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/digitec-2026-yerevan-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/digitec-2026-yerevan-480.webp"
+        ],
+        [
+          768,
+          "/covers/digitec-2026-yerevan-768.webp"
+        ],
+        [
+          1024,
+          "/covers/digitec-2026-yerevan-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/digitec-2026-yerevan-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/digitec-2026-yerevan-1536.webp"
+        ]
+      ]
+    },
     "/covers/ethglobal-lisbon-2026.jpg": {
       "width": 1536,
       "height": 864,
