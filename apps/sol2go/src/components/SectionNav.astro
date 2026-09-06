@@ -41,7 +41,11 @@ const { sections, current } = Astro.props;
   }
   .sections a,
   .sections span {
-    display: block;
+    /* 44px tall on a phone: these are the one row of links on the page a
+       thumb is meant to hit, and 35px was under the target size. */
+    min-height: 44px;
+    display: flex;
+    align-items: center;
     padding: 0.5em 0.9em;
     border: 1px solid var(--border);
     border-radius: var(--radius);
