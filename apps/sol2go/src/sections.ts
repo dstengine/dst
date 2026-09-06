@@ -43,7 +43,11 @@ const COUNTRIES: Record<string, { slug?: string; the?: boolean; short?: string }
 // The plural a section is named by, and the phrase its heading is built
 // from. Derived rather than tabulated, a "Co-working" section would be at
 // /co-workings/ and a "Residency" at /residencys/ — so it is tabulated.
-const CATEGORIES: Record<string, { slug: string; plural: string }> = {
+// `short` is the chip in the section row, where the label is read at a
+// glance beside a dozen others and the heading's phrasing is too long to
+// scan. Only set it where the two genuinely differ: "Solana calls and
+// online events" is the right heading and the wrong chip.
+const CATEGORIES: Record<string, { slug: string; plural: string; short?: string }> = {
   Summit: { slug: "summits", plural: "summits" },
   Hackathon: { slug: "hackathons", plural: "hackathons" },
   Conference: { slug: "conferences", plural: "conferences" },
@@ -53,7 +57,7 @@ const CATEGORIES: Record<string, { slug: string; plural: string }> = {
   "Hacker House": { slug: "hacker-houses", plural: "hacker houses" },
   "Co-working": { slug: "co-working", plural: "co-working days" },
   "Side event": { slug: "side-events", plural: "side events" },
-  Online: { slug: "online", plural: "calls and online events" },
+  Online: { slug: "online", plural: "calls and online events", short: "Online" },
 };
 
 const slugify = (s: string) =>
@@ -125,7 +129,7 @@ export function sections(items: EventItem[]): Section[] {
     out.push({
       slug: named.slug,
       kind: "category",
-      label: named.plural[0].toUpperCase() + named.plural.slice(1),
+      label: named.short ?? named.plural[0].toUpperCase() + named.plural.slice(1),
       title: `Solana ${named.plural}`,
       description: `Solana ${named.plural} from across the ecosystem, on dates confirmed with the organiser and with the source on every entry.`,
       h1: `Solana ${named.plural}`,
