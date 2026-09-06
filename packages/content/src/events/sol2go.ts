@@ -805,7 +805,7 @@ export const items: EventItem[] = [
     slug: "solana-armenia-meetup-yerevan-july-2026",
     site: "sol2go",
     image: "/covers/solana-armenia-meetup-yerevan-july-2026.jpg",
-    imageAlt: "A low wide room in violet paper with a small raised platform at one end, flat cream and mint rectangles scattered across the floor and one tall mint band standing apart at the right",
+    imageAlt: "A low wide room in violet paper with the three-bar Solana mark hanging on the back wall in the red, blue and apricot of the Armenian flag, a small raised platform at one end and flat cream and mint rectangles scattered across the floor",
     imageKind: "generated",
     imageWidth: 1536,
     imageHeight: 864,

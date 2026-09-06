@@ -1,0 +1,19 @@
+<!-- The Solana mark in the colours of the Armenian flag, for the cover of
+     the Solana Armenia meetup in Yerevan. The three bars of the mark and
+     the three bands of the flag are the same count in the same order, so
+     the colours go on top to bottom exactly as they fly: red, blue,
+     apricot. Flag colours are the official ones (#D90012 / #0033A0 /
+     #F2A800), the geometry is Solana's own.
+
+     Composited onto the cover by sharp; this file is the source, so the
+     picture can be rebuilt rather than only re-uploaded. The mark sits on
+     the back wall at width 360, left 585, top 150 of the 1536x864 cover,
+     over its own alpha dimmed to 0.34 and blurred 16px, offset 10 across
+     and 14 down — a sign hanging on the wall rather than a sticker on the
+     photograph. Re-running tools/covers.mjs regenerates the room without
+     the mark; this step goes on top of it. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 397.7 311.7" width="397.7" height="311.7">
+  <path fill="#D90012" d="M64.6 3.8C67.1 1.4 70.4 0 73.8 0h317.4c5.8 0 8.7 7 4.6 11.1l-62.7 62.7c-2.4 2.4-5.7 3.8-9.2 3.8H6.5c-5.8 0-8.7-7-4.6-11.1L64.6 3.8z"/>
+  <path fill="#0033A0" d="M333.1 120.1c-2.4-2.4-5.7-3.8-9.2-3.8H6.5c-5.8 0-8.7 7-4.6 11.1l62.7 62.7c2.4 2.4 5.7 3.8 9.2 3.8h317.4c5.8 0 8.7-7 4.6-11.1l-62.7-62.7z"/>
+  <path fill="#F2A800" d="M64.6 237.9c2.4-2.4 5.7-3.8 9.2-3.8h317.4c5.8 0 8.7 7 4.6 11.1l-62.7 62.7c-2.4 2.4-5.7 3.8-9.2 3.8H6.5c-5.8 0-8.7-7-4.6-11.1l62.7-62.7z"/>
+</svg>
