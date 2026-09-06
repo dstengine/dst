@@ -25,21 +25,22 @@ const { items, eventsBase = "/events/", locale, labels: labelOverrides } = Astro
 const L = withLabels(labelOverrides);
 const todayIso = new Date().toISOString().slice(0, 10);
 
-// Ranked events come first, in rank order, then everything else by date.
-// This is the promotion: a city agenda is not a flat list — Comic Con and a
-// Saturday flea market are not the same size of thing — and a reader
-// scanning the listing should meet the big ones first rather than in
-// whatever order the calendar happens to put them. Only a handful of events
-// on a site carry a rank; a list where everything is promoted promotes
-// nothing.
-const byRankThenDate = (a: EventItem, b: EventItem) => {
-  if (a.featured !== b.featured) {
-    if (a.featured === undefined) return 1;
-    if (b.featured === undefined) return -1;
-    return a.featured - b.featured;
-  }
-  return a.start < b.start ? -1 : a.start > b.start ? 1 : 0;
-};
+// Upcoming events run in date order. Nothing else.
+//
+// They used to run ranked-first: a handful of events carried a `featured`
+// number and jumped the queue, on the argument that a city agenda is not a
+// flat list and a reader should meet the big ones first. That argument is
+// wrong for a calendar, and a calendar is what this is. A listing that put
+// 15 November above 14 September above 1 November read as broken — because
+// the one thing a reader asks a date-ordered list is "what is next", and
+// answering it with "the biggest" answers a question nobody asked. The
+// promotion belongs on the front page and in the size of the card, not in
+// the order of the dates.
+//
+// `featured` survives on EventItem and still ranks news; it no longer moves
+// an event.
+const byDate = (a: EventItem, b: EventItem) =>
+  a.start < b.start ? -1 : a.start > b.start ? 1 : 0;
 
 const toCard = (item: EventItem, past: boolean) => {
   const hasPage = Array.isArray(item.body) && item.body.length > 0;
@@ -62,7 +63,7 @@ const toCard = (item: EventItem, past: boolean) => {
 
 const upcoming = items
   .filter((e) => e.start >= todayIso)
-  .sort(byRankThenDate)
+  .sort(byDate)
   .map((e) => toCard(e, false));
 const past = items
   .filter((e) => e.start < todayIso)

@@ -27,19 +27,14 @@ interface Props {
 }
 const { items, limit = 3, heading = "Events", eventsBase = "/events/", allLabel = "All events", locale } = Astro.props;
 const todayIso = new Date().toISOString().slice(0, 10);
-// Same order as the full listing at /events/ — ranked events first, then by
-// date. A front page that led with the next thing while the listing it links
-// to led with the biggest would be two answers to one question.
+// Same order as the full listing at /events/ — date, ascending, and nothing
+// else. A front page that led with the biggest while the listing it links to
+// led with the next thing would be two answers to one question; both now
+// answer the only question a calendar is asked, which is what is next. See
+// EventsList for why the `featured` rank stopped moving events.
 const upcoming = items
   .filter((e) => e.start >= todayIso)
-  .sort((a, b) => {
-    if (a.featured !== b.featured) {
-      if (a.featured === undefined) return 1;
-      if (b.featured === undefined) return -1;
-      return a.featured - b.featured;
-    }
-    return a.start < b.start ? -1 : a.start > b.start ? 1 : 0;
-  })
+  .sort((a, b) => (a.start < b.start ? -1 : a.start > b.start ? 1 : 0))
   .slice(0, limit);
 
 const cards = upcoming.map((item) => {

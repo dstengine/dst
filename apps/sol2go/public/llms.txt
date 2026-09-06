@@ -34,6 +34,7 @@ What has not been announced is said to be unannounced. A venue nobody has given,
 - [ETHGlobal Tokyo 2026](https://sol2go.lol/events/ethglobal-tokyo-2026/): A three-day in-person hackathon in Tokyo, 25–27 September, with the Pragma Tokyo conference alongside it on the 26th.
 - [Solana Summit Canada](https://sol2go.lol/events/solana-summit-canada-2026/): Two days in Toronto on 23–24 September at St. Lawrence Market North, the Canadian stop on the Solana Summit circuit.
 - [Crypto World's Fair](https://sol2go.lol/events/crypto-worlds-fair-2026/): Colosseum's online hackathon runs four weeks from 14 September to 12 October, across eight ecosystems at once. Winners can take $250,000 from its accelerator.
+- [Crypto Expo Dubai 2026](https://sol2go.lol/events/crypto-expo-dubai-2026/): The eighth edition takes the Dubai World Trade Centre on 9 and 10 September, pitched at institutions rather than builders: 7,000+ attendees, 100+ exhibitors, 140+ speakers from 40+ countries.
 - [Solana Frontier Hackathon](https://sol2go.lol/events/solana-frontier-hackathon-2026/): Colosseum's spring competition ran 6 April to 11 May and paid out $250,000 in prizes, with another $250,000 per accelerator place — and no tracks and no bounties at all.
 
 ## News
