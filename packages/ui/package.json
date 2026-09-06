@@ -13,6 +13,7 @@
     "./LeadForm.astro": "./src/components/LeadForm.astro",
     "./LeadTracking.astro": "./src/components/LeadTracking.astro",
     "./Callout.astro": "./src/components/Callout.astro",
+    "./ChipNav.astro": "./src/components/ChipNav.astro",
     "./VentureGrid.astro": "./src/components/VentureGrid.astro",
     "./PageHero.astro": "./src/components/PageHero.astro",
     "./Hero.astro": "./src/components/Hero.astro",

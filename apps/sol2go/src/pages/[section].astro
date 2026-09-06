@@ -19,7 +19,7 @@ const { section, all } = Astro.props;
     <p class="lede">{section.lede}</p>
   </section>
   <section class="container">
-    <SectionNav sections={all} current={section.slug} allHref={eventsBase} />
+    <SectionNav sections={all} current={`/${section.slug}/`} allHref={eventsBase} />
     <EventsList items={section.items} eventsBase={eventsBase} />
   </section>
 </Layout>

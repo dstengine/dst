@@ -16,7 +16,7 @@ const thin = items.length < 3;
     <p class="lede">{events.lede}</p>
   </section>
   <section class="container">
-    <SectionNav sections={sectionLinks} current="all" allHref={eventsBase} />
+    <SectionNav sections={sectionLinks} current={eventsBase} allHref={eventsBase} />
     <EventsList items={items} eventsBase={eventsBase} />
   </section>
 </Layout>

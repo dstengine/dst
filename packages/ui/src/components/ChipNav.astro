@@ -1,0 +1,83 @@
+---
+// A row of links where one of them is where you already are: the site's
+// own slices of one feed, offered as a switch rather than as prose. Built
+// for sol2go's country and kind sections, kept here and kept ignorant of
+// what a slice is — it takes hrefs and labels, so the next site to cut a
+// feed into districts, cities or tags gets the same control without
+// teaching this file a new vocabulary.
+//
+// Not a <select>: these are links to pages that exist, and a menu that
+// needs a tap before it will say what is in it hides the one thing the row
+// is for, which is the reader seeing that Armenia has a page at all.
+export interface ChipNavItem {
+  href: string;
+  label: string;
+  /** Tooltip and, for a screen reader, the fuller name of the destination. */
+  title?: string;
+}
+
+interface Props {
+  items: ChipNavItem[];
+  /** href of the page being read, if it is one of them — it prints as
+      text, not as a link back to itself. */
+  current?: string;
+  /** What this row is a row of, for a reader who arrives on it by keyboard. */
+  label: string;
+}
+const { items, current, label } = Astro.props;
+---
+{items.length > 0 && (
+  <nav class="chip-nav" aria-label={label}>
+    <ul>
+      {items.map((item) => (
+        <li>
+          {item.href === current ? (
+            <span aria-current="page">{item.label}</span>
+          ) : (
+            <a href={item.href} title={item.title ?? item.label}>{item.label}</a>
+          )}
+        </li>
+      ))}
+    </ul>
+  </nav>
+)}
+
+<style>
+  .chip-nav {
+    margin-bottom: var(--space-3);
+  }
+  .chip-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .chip-nav a,
+  .chip-nav span {
+    /* 44px tall on a phone: these are the one row of links on the page a
+       thumb is meant to hit, and 35px was under the target size. */
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    padding: 0.5em 0.9em;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  .chip-nav a {
+    color: var(--ink-muted);
+    text-decoration: none;
+  }
+  .chip-nav a:where(:hover, :focus-visible) {
+    background: var(--surface-sunk);
+    color: var(--ink);
+  }
+  .chip-nav span {
+    background: var(--surface-sunk);
+    color: var(--ink);
+    font-weight: 600;
+  }
+</style>
