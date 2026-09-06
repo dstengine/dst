@@ -1105,7 +1105,7 @@ export const items: EventItem[] = [
     title: "Blockchain Life 2026",
     cardTitle: "Blockchain Life 2026, Dubai",
     summary:
-      "The seventeenth Blockchain Life takes the Festival Arena in Dubai on 1 and 2 December, with a new AI Future forum inside it and a claimed 15,000 attendees from 130+ countries.",
+      "The seventeenth Blockchain Life takes Dubai's Festival Arena on 1 and 2 December: a claimed 15,000 attendees, a new AI Future forum inside it, and the week the region's Solana builders plan around.",
     start: "2026-12-01",
     end: "2026-12-02",
     utcOffset: "+04:00",
