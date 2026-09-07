@@ -1,0 +1,41 @@
+---
+// The site's own sections, drawn as a ChipNav. Everything here is the join
+// between @dst/content's sections and the row of chips: the shape of a
+// section, the "all" chip that leads back to the undivided feed, and the
+// labels — which arrive as props because three languages run on this
+// network and a hard-coded "All" would be wrong on five sites.
+//
+// It renders nothing when a site has earned no sections, so a page can
+// include it unconditionally and get the row on the day the second event
+// in a country is published.
+import ChipNav from "./ChipNav.astro";
+
+export interface SectionLink {
+  slug: string;
+  label: string;
+  /** The section's own heading, used as the link's title attribute. */
+  h1: string;
+}
+
+interface Props {
+  sections: SectionLink[];
+  /** Href of the page being read, if it is one of these. */
+  current?: string;
+  /** The undivided feed, as the first chip. Given rather than assumed: the
+      front page's block already carries an "all" link of its own, and a
+      second one beside it leads nowhere new. */
+  allHref?: string;
+  /** What that first chip says, and what it promises on hover. */
+  allLabel?: string;
+  allTitle?: string;
+  /** Names the row for a screen reader — "Events by country and kind". */
+  label: string;
+}
+const { sections, current, allHref, allLabel = "All", allTitle, label } = Astro.props;
+
+const items = [
+  ...(allHref ? [{ href: allHref, label: allLabel, title: allTitle ?? allLabel }] : []),
+  ...sections.map((s) => ({ href: `/${s.slug}/`, label: s.label, title: s.h1 })),
+];
+---
+{sections.length > 0 && <ChipNav items={items} current={current} label={label} />}

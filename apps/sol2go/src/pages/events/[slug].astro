@@ -5,8 +5,8 @@ import { site, newsBase, eventsBase, publisher } from "../../content";
 import { eventsBySite } from "@dst/content/events";
 import { go } from "../../outbound";
 import { newsBySite } from "@dst/content/news";
-import SectionNav from "../../components/SectionNav.astro";
-import { sections } from "../../sections";
+import SectionNav from "@dst/ui/SectionNav.astro";
+import { sections, NAV } from "../../sections";
 
 export function getStaticPaths() {
   const items = eventsBySite("sol2go").filter((i) => Array.isArray(i.body) && i.body.length > 0);
@@ -37,7 +37,7 @@ const sourceHref = item.source?.url ? go(`${item.slug}-source`) : undefined;
   {mine.length > 0 && (
     <section class="container event-sections">
       <h2>More on the calendar</h2>
-      <SectionNav sections={mine} />
+      <SectionNav sections={mine} label={NAV.label} />
     </section>
   )}
 </Layout>

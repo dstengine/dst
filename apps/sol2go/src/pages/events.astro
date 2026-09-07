@@ -1,9 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import EventsList from "@dst/ui/EventsList.astro";
-import SectionNav from "../components/SectionNav.astro";
+import SectionNav from "@dst/ui/SectionNav.astro";
 import { events, site, eventsBase } from "../content";
-import { sections } from "../sections";
+import { sections, NAV } from "../sections";
 import { eventsBySite } from "@dst/content/events";
 
 const items = eventsBySite(site);
@@ -16,7 +16,7 @@ const thin = items.length < 3;
     <p class="lede">{events.lede}</p>
   </section>
   <section class="container">
-    <SectionNav sections={sectionLinks} current={eventsBase} allHref={eventsBase} />
+    <SectionNav sections={sectionLinks} current={eventsBase} allHref={eventsBase} {...NAV} />
     <EventsList items={items} eventsBase={eventsBase} />
   </section>
 </Layout>

@@ -19,7 +19,7 @@ export const items: EventItem[] = [
     venue: "Bermondsey Street, SE1",
     city: "London",
     organizer: "Bermondsey Street Festival",
-    category: "Festivals",
+    category: "Festival",
     source: {
       name: "Bermondsey Street Festival",
       url: "https://bermondseystreetfestival.com/",

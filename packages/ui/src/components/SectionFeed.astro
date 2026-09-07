@@ -1,0 +1,66 @@
+---
+// The body of a section page. A section is a slice of the site's whole
+// feed, and a site's feed is two feeds — what is on, and what happened —
+// so a slice of it can hold either or both. "Theatre" on nyc42 is nine
+// shows and two articles about them, and splitting that across two thin
+// pages would be splitting one subject to suit our own filing.
+//
+// The two headings only appear when both halves do. With one list on the
+// page the h1 has already named it, and a subheading repeating the h1 is a
+// line of furniture.
+import type { EventItem, NewsItem } from "@dst/content/types";
+import type { FeedItem } from "@dst/content/sections";
+import EventsList from "./EventsList.astro";
+import NewsList from "./NewsList.astro";
+import type { ArticleLabels } from "../labels.ts";
+
+interface Props {
+  items: FeedItem[];
+  eventsBase?: string;
+  newsBase?: string;
+  locale?: string;
+  labels?: Partial<ArticleLabels>;
+  /** Subheadings, in the site's own language. Only drawn when both show. */
+  eventsHeading?: string;
+  newsHeading?: string;
+}
+const {
+  items,
+  eventsBase,
+  newsBase,
+  locale,
+  labels,
+  eventsHeading = "Events",
+  newsHeading = "News",
+} = Astro.props;
+
+// An event carries a start date and a news item does not; that is the whole
+// of the difference the page needs to know about.
+const events = items.filter((i): i is EventItem => "start" in i);
+const news = items.filter((i): i is NewsItem => !("start" in i));
+const both = events.length > 0 && news.length > 0;
+---
+{events.length > 0 && (
+  <>
+    {both && <h2 class="section-feed-heading">{eventsHeading}</h2>}
+    <EventsList items={events} eventsBase={eventsBase} locale={locale} labels={labels} />
+  </>
+)}
+{news.length > 0 && (
+  <>
+    {both && <h2 class="section-feed-heading">{newsHeading}</h2>}
+    <NewsList items={news} newsBase={newsBase} locale={locale} />
+  </>
+)}
+
+<style>
+  /* Space above, not below: the heading belongs to the list under it, and
+     the gap that separates the two halves of the page is the one over the
+     second heading. */
+  .section-feed-heading {
+    margin: 2.5rem 0 1rem;
+  }
+  .section-feed-heading:first-child {
+    margin-top: 0;
+  }
+</style>

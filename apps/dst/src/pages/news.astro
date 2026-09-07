@@ -1,8 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import SectionNav from "@dst/ui/SectionNav.astro";
 import NewsList from "@dst/ui/NewsList.astro";
 import FeedCards from "@dst/ui/FeedCards.astro";
 import { newsBySite, allNews, latestNews } from "@dst/content/news";
+import { eventsBySite } from "@dst/content/events";
+import { sections, NAV } from "../sections";
 
 const SITE_HOSTS: Record<string, string> = {
   llc: "llc.dst.llc",
@@ -22,6 +25,7 @@ const SITE_LABELS: Record<string, string> = {
 };
 
 const items = newsBySite("dst");
+const sectionLinks = sections([...eventsBySite("dst"), ...items]);
 
 // The hub carries its own news first, then a network-wide roundup below,
 // each item labelled with its source site. This isn't NewsList — a
@@ -71,6 +75,7 @@ const networkCards = latestNews(
     {/* The roundup below carries a heading, so without one here the group's
         own news is the only unlabelled thing on the page. */}
     <h2>From the group</h2>
+    <SectionNav sections={sectionLinks} {...NAV} />
     {items.length > 0 ? (
       <NewsList items={items} />
     ) : (

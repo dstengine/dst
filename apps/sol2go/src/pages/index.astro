@@ -2,9 +2,9 @@
 import Layout from "../layouts/Layout.astro";
 import NewsBlock from "@dst/ui/NewsBlock.astro";
 import EventsBlock from "@dst/ui/EventsBlock.astro";
-import SectionNav from "../components/SectionNav.astro";
+import SectionNav from "@dst/ui/SectionNav.astro";
 import { home, site, newsBase, eventsBase } from "../content";
-import { sections } from "../sections";
+import { sections, NAV } from "../sections";
 import { newsBySite } from "@dst/content/news";
 import { eventsBySite } from "@dst/content/events";
 
@@ -18,7 +18,7 @@ const sectionLinks = sections(eventItems);
     <p class="lede">{home.lede}</p>
   </section>
   <EventsBlock items={eventItems} heading="Events" eventsBase={eventsBase}>
-    <SectionNav slot="nav" sections={sectionLinks} />
+    <SectionNav slot="nav" sections={sectionLinks} {...NAV} />
   </EventsBlock>
   <NewsBlock items={newsItems} heading="News" newsBase={newsBase} />
 </Layout>

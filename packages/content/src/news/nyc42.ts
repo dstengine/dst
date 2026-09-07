@@ -119,7 +119,7 @@ export const items: NewsItem[] = [
     summary:
       "November 26 brings a record 100 inflatable elements, a Hogwarts Great Hall float, a new Sorcerer's Apprentice Mickey and the return of Underdog.",
     date: "2026-09-03",
-    category: "Parades",
+    category: "Parade",
     source: {
       name: "Time Out New York",
       url: "https://timeout.com/newyork/news/a-new-harry-potter-float-will-bring-magic-to-macys-100th-thanksgiving-day-parade-in-nyc-090226",
@@ -263,7 +263,7 @@ export const items: NewsItem[] = [
     summary:
       "Eleven plays to four musicals, and eight of the fifteen are revivals. That ratio says more about the economics than any grosses report.",
     date: "2026-09-02",
-    category: "Theater",
+    category: "Theatre",
     source: {
       name: "Playbill",
       url: "https://playbill.com/",

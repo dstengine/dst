@@ -92,7 +92,7 @@ export const items: NewsItem[] = [
     summary:
       "Brent traded at $96.90 on 4 September, down 2.5% on the day but up 11% on the month and 44% on the year. The pump price rise of 1 September was the local edge of this.",
     date: "2026-09-05",
-    category: "Markets",
+    category: "Market",
     source: {
       name: "Fortune",
       url: "https://fortune.com/article/price-of-oil-09-04-2026/",

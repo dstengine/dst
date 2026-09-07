@@ -1,13 +1,17 @@
 ---
+// A subject page. Which subjects exist is decided in ../sections.ts against
+// the data, so this file never needs editing when one earns or loses its
+// page.
 import Layout from "../layouts/Layout.astro";
-import EventsList from "@dst/ui/EventsList.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
-import { eventsBase } from "../content";
+import SectionFeed from "@dst/ui/SectionFeed.astro";
+import { newsBase, eventsBase } from "../content";
 import { sections, NAV } from "../sections";
 import { eventsBySite } from "@dst/content/events";
+import { newsBySite } from "@dst/content/news";
 
 export function getStaticPaths() {
-  const all = sections(eventsBySite("sol2go"));
+  const all = sections([...eventsBySite("mxo"), ...newsBySite("mxo")]);
   return all.map((section) => ({ params: { section: section.slug }, props: { section, all } }));
 }
 
@@ -19,7 +23,7 @@ const { section, all } = Astro.props;
     <p class="lede">{section.lede}</p>
   </section>
   <section class="container">
-    <SectionNav sections={all} current={`/${section.slug}/`} allHref={eventsBase} {...NAV} />
-    <EventsList items={section.items} eventsBase={eventsBase} />
+    <SectionNav sections={all} current={`/${section.slug}/`} allHref="/" {...NAV} />
+    <SectionFeed items={section.items} eventsBase={eventsBase} newsBase={newsBase} />
   </section>
 </Layout>

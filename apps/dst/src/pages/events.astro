@@ -1,9 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import SectionNav from "@dst/ui/SectionNav.astro";
 import EventsList from "@dst/ui/EventsList.astro";
 import FeedCards from "@dst/ui/FeedCards.astro";
 import CountdownScript from "@dst/ui/CountdownScript.astro";
 import { eventsBySite, allEvents, upcomingEvents } from "@dst/content/events";
+import { newsBySite } from "@dst/content/news";
+import { sections, NAV } from "../sections";
 
 const SITE_HOSTS: Record<string, string> = {
   llc: "llc.dst.llc",
@@ -23,6 +26,7 @@ const SITE_LABELS: Record<string, string> = {
 };
 
 const items = eventsBySite("dst");
+const sectionLinks = sections([...items, ...newsBySite("dst")]);
 
 // Same hub roundup the news page carries, so the two pages behave alike —
 // only upcoming ones, since a hub listing something that already happened
@@ -66,6 +70,7 @@ const networkCards = upcomingEvents(
 
   <section class="container">
     <h2>From the group</h2>
+    <SectionNav sections={sectionLinks} {...NAV} />
     {items.length > 0 ? (
       <EventsList items={items} />
     ) : (
