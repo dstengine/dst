@@ -165,7 +165,18 @@ describe("ticketing facts", () => {
 
   test("a priced event has somewhere to buy from", () => {
     for (const item of allEvents) {
-      if (item.tickets?.priceFrom === undefined) continue;
+      const { priceFrom, priceTo } = item.tickets ?? {};
+      if (priceFrom === undefined) continue;
+      // priceFrom: 0 is how a free event states its price, and a free event
+      // has nothing to buy — demanding a seller for one asks for a link that
+      // should not exist. A range starting at zero is a different thing: some
+      // tier is paid, so there is something to sell.
+      if (priceFrom === 0 && priceTo === undefined) continue;
+      // A finished event has nothing left to sell. Its page keeps the price as
+      // a record of what the evening cost; a live sales link there would go
+      // nowhere, so the archive is not asked for one.
+      const today = new Date().toISOString().slice(0, 10);
+      if ((item.end ?? item.start) < today) continue;
       assert.ok(item.ticket?.url, `events/${item.site}/${item.slug}: has a price but no ticket link`);
     }
   });

@@ -4,6 +4,7 @@
 // a template gets copied — these strings are exactly the part of a copy
 // that must not survive it.
 import { go } from "./outbound";
+import { feed } from "./content";
 
 export const site = {
   siteName: "DST Eco",
@@ -22,4 +23,6 @@ export const site = {
   partnerDisclosure: false,
   complianceNote:
     "DST's own environmental activity, not a carbon-offset programme: nothing here is sold, certified or counted as a credit.",
+  /** Turns on the RSS autodiscovery link in the head. */
+  feedTitle: feed.title,
 };

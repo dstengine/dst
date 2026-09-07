@@ -18,6 +18,7 @@
     "./lastmod.json": "./src/lastmod.json",
     "./network": "./src/network.ts",
     "./images": "./src/images.ts",
-    "./images.json": "./src/images.json"
+    "./images.json": "./src/images.json",
+    "./rss": "./src/rss.ts"
   }
 }

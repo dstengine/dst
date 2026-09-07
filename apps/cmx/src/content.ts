@@ -46,3 +46,16 @@ export const about = {
 // The set is shared — see @dst/ui's labels — and this site adds nothing
 // to it today. When it needs a word of its own, spread and override.
 export const labels: Partial<ArticleLabels> = ES;
+
+/**
+ * The site's RSS channel. It lives here rather than in the route because
+ * site.config.ts needs the title too — the head's autodiscovery link is
+ * what a reader's tool reads to offer the subscription, and a title written
+ * out twice is a title that drifts.
+ */
+export const feed = {
+  title: "Agenda CDMX — noticias",
+  description: "Qué cambia en la Ciudad de México: exposiciones, ferias y cómo funciona la ciudad, con la fuente en cada entrada.",
+  /** RFC 5646. Without it an aggregator files this site under the wrong language. */
+  language: "es-MX",
+};

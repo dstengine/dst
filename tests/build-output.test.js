@@ -758,6 +758,61 @@ describe("event calendars", () => {
   });
 });
 
+describe("news feeds", () => {
+  const FEEDS = [
+    "cmx", "dst", "eco", "fwf", "ldn", "llc", "lnd", "mbr", "musical", "mxo",
+    "nyc42", "palmcentral", "riviera", "sol2go", "vien", "visas",
+  ];
+  const read = (app) => {
+    const file = path.join(REPO, "apps", app, "dist", "rss.xml");
+    assert.ok(existsSync(file), `apps/${app}: no rss.xml — the feed was not built`);
+    return readFileSync(file, "utf8");
+  };
+
+  test("every site publishes a feed that says what it is", () => {
+    for (const app of FEEDS) {
+      const xml = read(app);
+      const items = xml.split("\n").filter((l) => l.trim() === "<item>").length;
+      // <language> is what keeps a reader from filing a Spanish site under
+      // English; rel="self" is the feed's own address, which is how an
+      // aggregator re-finds it after the page that advertised it moves.
+      for (const required of ["<language>", 'rel="self"', "<lastBuildDate>"]) {
+        assert.ok(xml.includes(required), `${app}/rss.xml: missing ${required}`);
+      }
+      assert.ok(items > 0, `${app}/rss.xml: no items in it`);
+      console.log(`  ${app.padEnd(12)} ${String(items).padStart(2)} items`);
+    }
+  });
+
+  test("every link in a feed leads to a page that was built", () => {
+    // A feed entry is copied into readers and cached far from us; a dead link
+    // in one is read long after the page it named stopped existing.
+    const dead = [];
+    for (const app of FEEDS) {
+      const xml = read(app);
+      for (const m of xml.matchAll(/<(?:link|guid[^>]*)>(https:[^<]+)</g)) {
+        const url = m[1].trim();
+        const { pathname } = new URL(url);
+        if (pathname === "/") continue;
+        const file = path.join(REPO, "apps", app, "dist", pathname, "index.html");
+        if (!existsSync(file)) dead.push(`${app}: ${url}`);
+      }
+    }
+    assert.deepEqual(dead, [], `feed entries pointing at pages that do not exist:\n  ${dead.join("\n  ")}`);
+  });
+
+  test("every page advertises the feed, because autodiscovery is the submission", () => {
+    // Feedly and Inoreader do not have a submission form: they read this tag.
+    // A feed nobody can discover from the page is a file nobody fetches.
+    const missing = [];
+    for (const app of FEEDS) {
+      const html = readFileSync(path.join(REPO, "apps", app, "dist", "index.html"), "utf8");
+      if (!/<link[^>]+type="application\/rss\+xml"[^>]+href="\/rss\.xml"/.test(html)) missing.push(app);
+    }
+    assert.deepEqual(missing, [], `home pages with no autodiscovery link:\n  ${missing.join("\n  ")}`);
+  });
+});
+
 describe("sitemap", () => {
   const sitemapUrls = (app) => {
     const dir = path.join(REPO, "apps", app, "dist");

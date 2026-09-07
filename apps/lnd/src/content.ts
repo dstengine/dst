@@ -38,3 +38,16 @@ export const about = {
   h1: "About London Boroughs, a Greater London listings site",
   lede: `What is on across the London boroughs, with a source and a date on every entry.`,
 };
+
+/**
+ * The site's RSS channel. It lives here rather than in the route because
+ * site.config.ts needs the title too — the head's autodiscovery link is
+ * what a reader's tool reads to offer the subscription, and a title written
+ * out twice is a title that drifts.
+ */
+export const feed = {
+  title: "London Boroughs — news",
+  description: "Greater London beyond the centre, borough by borough, with the source on every entry.",
+  /** RFC 5646. Without it an aggregator files this site under the wrong language. */
+  language: "en-GB",
+};

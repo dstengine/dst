@@ -131,3 +131,16 @@ export const faqItems = [
     a: "On the island's central <strong>Spine, between Fronds M and N</strong> — the part of the master plan set aside for community and retail rather than the villa fronds either side of it. See our location page for what that means for day-to-day access.",
   },
 ];
+
+/**
+ * The site's RSS channel. It lives here rather than in the route because
+ * site.config.ts needs the title too — the head's autodiscovery link is
+ * what a reader's tool reads to offer the subscription, and a title written
+ * out twice is a title that drifts.
+ */
+export const feed = {
+  title: "Palm Central — news",
+  description: "What is changing around Palm Central, with the source on every entry.",
+  /** RFC 5646. Without it an aggregator files this site under the wrong language. */
+  language: "en",
+};

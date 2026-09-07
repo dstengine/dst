@@ -1,3 +1,5 @@
+import { feed } from "./content";
+
 export const site = {
   siteName: "Azizi Riviera",
   titleSuffix: "Azizi Riviera Guide",
@@ -17,4 +19,6 @@ export const site = {
   // Machine-made, of no particular building. Said on the page rather than
   // only in the alt text, since an opener this size reads as a photograph.
   headerImageKind: "generated" as const,
+  /** Turns on the RSS autodiscovery link in the head. */
+  feedTitle: feed.title,
 };

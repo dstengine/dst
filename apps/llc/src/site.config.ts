@@ -3,6 +3,8 @@
 // else. It lives outside Layout.astro because that file is a template, and
 // a template gets copied — these strings are exactly the part of a copy
 // that must not survive it.
+import { feed } from "./content";
+
 export const site = {
   siteName: "Dubai Company Formation",
   // The tooltip on the wordmark, and the one slot on every page of the site
@@ -18,4 +20,6 @@ export const site = {
   complianceNote:
     "Informational, not legal or financial advice. Confirm current requirements with DED or your chosen free zone authority.",
   partnerDisclosure: false,
+  /** Turns on the RSS autodiscovery link in the head. */
+  feedTitle: feed.title,
 };

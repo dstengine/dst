@@ -38,3 +38,16 @@ export const about = {
   h1: "About sol2go, a Solana calendar and newsfeed",
   lede: `A calendar and a newsfeed for the Solana ecosystem, with a source and a date on every entry. Not financial advice, and nothing here is a recommendation to buy anything.`,
 };
+
+/**
+ * The site's RSS channel. It lives here rather than in the route because
+ * site.config.ts needs the title too — the head's autodiscovery link is
+ * what a reader's tool reads to offer the subscription, and a title written
+ * out twice is a title that drifts.
+ */
+export const feed = {
+  title: "sol2go — Solana news",
+  description: "Solana meetups, hackathons and conferences, with the source and the date it was checked.",
+  /** RFC 5646. Without it an aggregator files this site under the wrong language. */
+  language: "en",
+};

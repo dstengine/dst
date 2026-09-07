@@ -3,7 +3,7 @@
 // else. It lives outside Layout.astro because that file is a template, and
 // a template gets copied — these strings are exactly the part of a copy
 // that must not survive it.
-import { disclaimer } from "./content";
+import { disclaimer, feed} from "./content";
 
 export const site = {
   siteName: "Musical Today",
@@ -32,4 +32,6 @@ export const site = {
     { href: "/online/", label: "Online" },
     { href: "/about/", label: "About this site" },
   ],
+  /** Turns on the RSS autodiscovery link in the head. */
+  feedTitle: feed.title,
 };

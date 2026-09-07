@@ -18,6 +18,8 @@ interface Props {
   titleSuffix: string;
   complianceNote: string;
   partnerDisclosure?: boolean;
+  /** Forwarded to BaseLayout: turns on the RSS autodiscovery link. */
+  feedTitle?: string;
   jsonLd?: Record<string, unknown>[];
   // Page opener. Every district page has one, so it lives here rather than
   // being repeated in each body component. `image` is resolved by the app's
@@ -34,7 +36,7 @@ interface Props {
 
 const {
   title, description, siteName, titleSuffix, complianceNote,
-  partnerDisclosure = true, jsonLd,
+  partnerDisclosure = true, jsonLd, feedTitle,
   eyebrow, h1, lede, ledeWidth, image, imageAlt, imageKind,
   prose,
 } = Astro.props;
@@ -63,6 +65,7 @@ const nav = [
   nav={nav}
   complianceNote={complianceNote}
   partnerDisclosure={partnerDisclosure}
+  feedTitle={feedTitle}
   jsonLd={jsonLd}
 >
   <LeadTracking slot="tracking" />

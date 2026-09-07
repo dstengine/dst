@@ -161,6 +161,10 @@ export const items: EventItem[] = [
       priceTo: 61750,
       currency: "MXN",
     },
+    ticket: {
+      url: "https://www.mexicogp.mx/boletos-generales/",
+      label: "Boletos en el sitio oficial",
+    },
     source: {
       name: "Time Out México",
       url: "https://www.timeoutmexico.mx/ciudad-de-mexico/que-hacer/gran-premio-de-la-ciudad-de-mexico",

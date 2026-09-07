@@ -44,3 +44,16 @@ export const news = {
 
 /** The run the cross-site promo block leads with. */
 export const featuredRun = { show: "chicago", run: "dubai" };
+
+/**
+ * The site's RSS channel. It lives here rather than in the route because
+ * site.config.ts needs the title too — the head's autodiscovery link is
+ * what a reader's tool reads to offer the subscription, and a title written
+ * out twice is a title that drifts.
+ */
+export const feed = {
+  title: "Musical Today — news",
+  description: "What changed in the listings: dates, venues and sellers, each entry checked against the source that published it.",
+  /** RFC 5646. Without it an aggregator files this site under the wrong language. */
+  language: "en",
+};

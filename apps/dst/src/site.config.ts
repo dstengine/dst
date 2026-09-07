@@ -4,6 +4,7 @@
 // a template gets copied — these strings are exactly the part of a copy
 // that must not survive it.
 import { NETWORK } from "@dst/content/network";
+import { feed } from "./content";
 
 export const site = {
   siteName: "DST",
@@ -24,4 +25,6 @@ export const site = {
   // The hub lists the whole network in its footer, so every page of it
   // reaches the inner pages no other site links to.
   footerSites: NETWORK,
+  /** Turns on the RSS autodiscovery link in the head. */
+  feedTitle: feed.title,
 };

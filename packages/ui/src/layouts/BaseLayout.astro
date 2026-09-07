@@ -105,13 +105,18 @@ interface Props {
       another language passes its own so `<html lang>` and the structured
       data agree with the words on the page. */
   lang?: string;
+  /** Title of this site's RSS feed, which turns on autodiscovery in the
+      head. Autodiscovery *is* the submission: Feedly and Inoreader find a
+      feed by reading the site URL, and a feed no tool can find from the page
+      is a feed nobody subscribes to. Absent on a site that publishes none. */
+  feedTitle?: string;
   /** A tip jar in the footer, with its own heading and one row per chain.
       Opt-in: a site that declares nothing here renders nothing, which is
       every site but the one that asked for it. */
   donate?: { heading: string; addresses: { chain: string; address: string }[] };
 }
 
-const { title, titleSuffix, keyword, description, siteName, nav, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [], footerSiteName = siteName, homeTitle, instagram, image, footerSites = [], networkFooter = true, publisher, defaultTheme, lang = "en", noindex = false, prose = false, donate } = Astro.props;
+const { title, titleSuffix, keyword, description, siteName, nav, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [], footerSiteName = siteName, homeTitle, instagram, image, footerSites = [], networkFooter = true, publisher, defaultTheme, lang = "en", feedTitle, noindex = false, prose = false, donate } = Astro.props;
 // The suffix is the most expensive characters on the page, and it is only
 // worth them when it adds something the title has not already said.
 //
@@ -248,6 +253,11 @@ const lateIcons = navFootprint > 700;
         renders as a bare URL with no title, summary or picture — on a
         network whose whole plan is being passed around and linked to. */}
     {canonical && <link rel="canonical" href={canonical} />}
+    {/* The feed's title is what a reader's tool shows when it offers the
+        subscription, so it says which site this is rather than "RSS". */}
+    {feedTitle && (
+      <link rel="alternate" type="application/rss+xml" title={feedTitle} href="/rss.xml" />
+    )}
     {noindex && <meta name="robots" content="noindex, follow" />}
     {/* The lead endpoint is only called once someone touches a form, so
         resolving DNS ahead of time is worth it and holding a socket open on
