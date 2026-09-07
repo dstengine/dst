@@ -5,6 +5,10 @@
 // that must not survive it.
 export const site = {
   siteName: "Palm Central",
+  // The tooltip on the wordmark, and the one slot on every page of the site
+  // that is free to say what the site is: the link's own text is the name,
+  // so a title repeating it would say nothing twice.
+  homeTitle: "Palm Central on Palm Jebel Ali: prices, plan and location",
   titleSuffix: "Palm Central",
   // What this site is for, in one phrase, for tools/seo-check.mjs and for
   // BaseLayout: the words that have to appear in the title, the h1 and the

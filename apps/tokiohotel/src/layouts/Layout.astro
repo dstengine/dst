@@ -15,12 +15,12 @@ interface Props {
 const { title, description, jsonLd, image, noindex, prose } = Astro.props;
 
 const nav = [
-  { href: "/", label: "Dates", icon: "events" },
-  { href: "/tours/", label: "Tours", icon: "stage" },
-  { href: "/albums/", label: "Albums", icon: "play" },
-  { href: "/cities/", label: "Cities", icon: "map" },
-  { href: "/history/", label: "History", icon: "clock" },
-  { href: "/about/", label: "About", icon: "id" },
+  { href: "/", label: "Dates", title: "Tokio Hotel Encore Tour dates, as the venues list them", icon: "events" },
+  { href: "/tours/", label: "Tours", title: "Eleven Tokio Hotel tours since 2005", icon: "stage" },
+  { href: "/albums/", label: "Albums", title: "Eight Tokio Hotel studio albums, in order", icon: "play" },
+  { href: "/cities/", label: "Cities", title: "Tokio Hotel, city by city", icon: "map" },
+  { href: "/history/", label: "History", title: "Tokio Hotel: twenty-five years, in order", icon: "clock" },
+  { href: "/about/", label: "About", title: "What this Tokio Hotel archive is and where its facts come from", icon: "id" },
 ];
 ---
 <BaseLayout

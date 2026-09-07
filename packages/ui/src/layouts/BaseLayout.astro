@@ -143,6 +143,7 @@ const isDstHome = Astro.site?.hostname === "dst.llc";
 const CHROME: Record<string, { skip: string; menu: string }> = {
   en: { skip: "Skip to content", menu: "Toggle menu" },
   es: { skip: "Saltar al contenido", menu: "Abrir menú" },
+  de: { skip: "Zum Inhalt springen", menu: "Menü öffnen" },
 };
 const chrome = CHROME[lang.slice(0, 2)] ?? CHROME.en;
 
@@ -289,7 +290,12 @@ const lateIcons = navFootprint > 700;
     <a class="skip-link" href="#content">{chrome.skip}</a>
     <header class="site-header">
       <div class="container header-inner">
-        <a class="site-name" href="/" title={homeTitle ?? siteName}>
+        {/* No `title` unless the site wrote one. The fallback used to be
+            the site name, which is the text of the link itself — a tooltip
+            that reads back the word under the cursor. An empty attribute is
+            worth more than that: the browser then shows nothing, and the
+            slot stays free for the day the site has something to say. */}
+        <a class="site-name" href="/" title={homeTitle}>
           {/* Decorative: the site name sits right beside it, and an alt of
               "DST" made the link announce itself twice — "DST DST" on the
               hub, where the name is the same word. */}
@@ -301,7 +307,7 @@ const lateIcons = navFootprint > 700;
             <ul class:list={["nav-desktop", denseNav && "nav-desktop-dense", lateIcons && "nav-icons-late"]}>
               {nav.map((item) => (
                 <li>
-                  <a href={item.href} title={item.title ?? item.label}>
+                  <a href={item.href} title={item.title}>
                     {navIcon(item) && (
                       <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <path d={navIcon(item)} />
@@ -319,7 +325,7 @@ const lateIcons = navFootprint > 700;
               <ul>
                 {nav.map((item) => (
                   <li>
-                    <a href={item.href} title={item.title ?? item.label}>
+                    <a href={item.href} title={item.title}>
                       {navIcon(item) && (
                         <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                           <path d={navIcon(item)} />
@@ -332,8 +338,11 @@ const lateIcons = navFootprint > 700;
               </ul>
             </details>
           </nav>
+          {/* Whose account, not which network: the glyph already says
+              Instagram, and a reader who cannot see the glyph is told the
+              network and not the thing they need to know. */}
           {instagram && (
-            <a class="social-icon" href={instagram} target="_blank" rel="me noopener" aria-label="Instagram" title="Instagram">
+            <a class="social-icon" href={instagram} target="_blank" rel="me noopener" aria-label={`${siteName} on Instagram`} title={`${siteName} on Instagram`}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <rect x="3" y="3" width="18" height="18" rx="5"></rect>
                 <circle cx="12" cy="12" r="4"></circle>

@@ -15,10 +15,10 @@ interface Props {
 const { title, description, jsonLd, image, noindex, prose } = Astro.props;
 
 const nav = [
-  { href: "/", label: "Was ist los", icon: "home" },
-  { href: "/nachrichten/", label: "Nachrichten", icon: "news" },
-  { href: "/veranstaltungen/", label: "Termine", icon: "events" },
-  { href: "/ueber-uns/", label: "Über uns", icon: "id" },
+  { href: "/", label: "Was ist los", title: "Was heute in Wien los ist", icon: "home" },
+  { href: "/nachrichten/", label: "Nachrichten", title: "Nachrichten aus Wien, mit Quelle bei jedem Eintrag", icon: "news" },
+  { href: "/veranstaltungen/", label: "Termine", title: "Der Veranstaltungskalender für Wien", icon: "events" },
+  { href: "/ueber-uns/", label: "Über uns", title: "Wer diese Seite macht und wie jedes Datum geprüft wird", icon: "id" },
 ];
 
 ---

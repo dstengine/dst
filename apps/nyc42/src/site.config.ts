@@ -7,6 +7,10 @@ import { publisher } from "./content";
 
 export const site = {
   siteName: "nyc42.lol",
+  // The tooltip on the wordmark, and the one slot on every page of the site
+  // that is free to say what the site is: the link's own text is the name,
+  // so a title repeating it would say nothing twice.
+  homeTitle: "New York events and news, with a source on every entry",
   titleSuffix: "New York 42",
   // What this site is for, in one phrase, for tools/seo-check.mjs and for
   // BaseLayout: the words that have to appear in the title, the h1 and the

@@ -7,6 +7,10 @@ import { publisher } from "./content";
 
 export const site = {
   siteName: "sol2go.lol",
+  // The tooltip on the wordmark, and the one slot on every page of the site
+  // that is free to say what the site is: the link's own text is the name,
+  // so a title repeating it would say nothing twice.
+  homeTitle: "Solana events, meetups and hackathons",
   // Nobody searches for "sol2go", so the suffix — the most expensive
   // sixty characters on the page — went to a name that taught a reader
   // nothing. A brand belongs in a title once it is one; until then the

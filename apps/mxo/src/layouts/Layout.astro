@@ -15,10 +15,10 @@ interface Props {
 const { title, description, jsonLd, image, noindex, prose } = Astro.props;
 
 const nav = [
-  { href: "/", label: "Qué hacer", icon: "home" },
-  { href: "/noticias/", label: "Noticias", icon: "news" },
-  { href: "/eventos/", label: "Eventos", icon: "events" },
-  { href: "/acerca/", label: "Acerca", icon: "id" },
+  { href: "/", label: "Qué hacer", title: "Qué hacer hoy en México", icon: "home" },
+  { href: "/noticias/", label: "Noticias", title: "Noticias de México, y del mundo contadas desde aquí", icon: "news" },
+  { href: "/eventos/", label: "Eventos", title: "Ferias y festivales en todo México", icon: "events" },
+  { href: "/acerca/", label: "Acerca", title: "Quién publica este sitio y cómo se verifica cada fecha", icon: "id" },
 ];
 
 ---

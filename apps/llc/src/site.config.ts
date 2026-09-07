@@ -5,6 +5,10 @@
 // that must not survive it.
 export const site = {
   siteName: "Dubai Company Formation",
+  // The tooltip on the wordmark, and the one slot on every page of the site
+  // that is free to say what the site is: the link's own text is the name,
+  // so a title repeating it would say nothing twice.
+  homeTitle: "Dubai company formation, zone by zone",
   titleSuffix: "Dubai Company Formation",
   // What this site is for, in one phrase, for tools/seo-check.mjs and for
   // BaseLayout: the words that have to appear in the title, the h1 and the

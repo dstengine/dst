@@ -192,6 +192,33 @@ describe("navigation", () => {
       }
     }
   });
+
+  // The wordmark and every menu link get a title, and none of them repeats
+  // the word already under the cursor. These are the only tooltips on the
+  // site that appear on every page of it, which makes them the cheapest
+  // place to say what the site is and the most expensive place to say
+  // nothing. The rule caught its own violation: the layout used to fall
+  // back to the link's own text, so sixteen of seventeen sites shipped a
+  // wordmark whose tooltip read the site name back.
+  test("no header link's title repeats its own text", () => {
+    const strip = (s) => s.replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").replace(/&#39;/g, "'").replace(/&quot;/g, '"').replace(/\s+/g, " ").trim();
+    const echoes = [];
+    const untitled = [];
+    for (const p of contentPages()) {
+      const header = (p.html.match(/<header class="site-header"[\s\S]*?<\/header>/) || [])[0];
+      assert.ok(header, `${p.app}${p.url}: no site header`);
+      for (const link of header.match(/<a\s[\s\S]*?<\/a>/g) ?? []) {
+        const label = strip(link);
+        if (!label) continue; // the Instagram mark is an icon with an aria-label
+        const title = (link.match(/title="([^"]*)"/) || [])[1];
+        const where = `${p.app}${p.url} -> ${label}`;
+        if (title === undefined) untitled.push(where);
+        else if (strip(title).toLowerCase() === label.toLowerCase()) echoes.push(where);
+      }
+    }
+    assert.deepEqual(echoes, [], `titles that say the label again: ${JSON.stringify([...new Set(echoes)], null, 1)}`);
+    assert.deepEqual(untitled, [], `header links with no title: ${JSON.stringify([...new Set(untitled)], null, 1)}`);
+  });
 });
 
 describe("links", () => {

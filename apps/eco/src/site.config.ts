@@ -7,6 +7,10 @@ import { go } from "./outbound";
 
 export const site = {
   siteName: "DST Eco",
+  // The tooltip on the wordmark, and the one slot on every page of the site
+  // that is free to say what the site is: the link's own text is the name,
+  // so a title repeating it would say nothing twice.
+  homeTitle: "DST's tree planting and other eco initiatives",
   titleSuffix: "DST Eco",
   footerSiteName: "DST",
   instagram: go("instagram"),

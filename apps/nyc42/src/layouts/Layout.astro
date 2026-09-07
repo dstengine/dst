@@ -15,10 +15,10 @@ interface Props {
 const { title, description, jsonLd, image, noindex, prose } = Astro.props;
 
 const nav = [
-  { href: "/", label: "What's on", icon: "home" },
-  { href: "/news/", label: "News", icon: "news" },
-  { href: "/events/", label: "Events", icon: "events" },
-  { href: "/about/", label: "About", icon: "id" },
+  { href: "/", label: "What's on", title: "What's on in New York today", icon: "home" },
+  { href: "/news/", label: "News", title: "New York news, with a source on every entry", icon: "news" },
+  { href: "/events/", label: "Events", title: "The New York events calendar", icon: "events" },
+  { href: "/about/", label: "About", title: "Who publishes this and how every date is checked", icon: "id" },
 ];
 
 ---
