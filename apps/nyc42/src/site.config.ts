@@ -6,7 +6,7 @@
 import { publisher } from "./content";
 
 export const site = {
-  siteName: "nyc42.lol",
+  siteName: "New York 42",
   // The tooltip on the wordmark, and the one slot on every page of the site
   // that is free to say what the site is: the link's own text is the name,
   // so a title repeating it would say nothing twice.

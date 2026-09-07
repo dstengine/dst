@@ -5,7 +5,7 @@ import type { ArticleLabels } from "@dst/ui/labels";
 // this host rather than the group — see VERCEL.md.
 export const publisher = {
   id: "https://vien.lol/#organization",
-  name: "vien.lol",
+  name: "Veranstaltungen Wien",
   url: "https://vien.lol/",
 };
 
@@ -35,9 +35,9 @@ export const events = {
 };
 
 export const about = {
-  title: "Über vien.lol, einen Wien-Kalender",
+  title: "Über Veranstaltungen Wien, einen Wiener Kalender",
   description: "Was in Wien los ist, mit Quelle und Prüfdatum bei jedem Eintrag.",
-  h1: "Über vien.lol, einen Wiener Kalender",
+  h1: "Über Veranstaltungen Wien, einen Wiener Kalender",
   lede: `Was in Wien und in Österreich los ist, mit Quelle und Prüfdatum bei jedem Eintrag.`,
 };
 

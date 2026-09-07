@@ -1,4 +1,4 @@
-# vien.lol — was in Wien los ist
+# Veranstaltungen Wien — was in Wien los ist
 
 > Termine und Nachrichten für Wien und Österreich. Jeder Eintrag nennt die Quelle, aus der er stammt, und den Tag, an dem er dagegen geprüft wurde. Unabhängige Publikation: keine Behörde, kein Ticketverkauf, keinem Haus zugehörig.
 

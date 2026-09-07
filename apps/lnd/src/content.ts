@@ -3,7 +3,7 @@
 // name this host rather than the group — see VERCEL.md.
 export const publisher = {
   id: "https://lnd.lol/#organization",
-  name: "lnd.lol",
+  name: "London Boroughs",
   url: "https://lnd.lol/",
 };
 
@@ -33,8 +33,8 @@ export const events = {
 };
 
 export const about = {
-  title: "About lnd.lol, a Greater London guide",
+  title: "About London Boroughs, a Greater London guide",
   description: "What is on across the London boroughs, with a source and a date on every entry.",
-  h1: "About lnd.lol, a Greater London listings site",
+  h1: "About London Boroughs, a Greater London listings site",
   lede: `What is on across the London boroughs, with a source and a date on every entry.`,
 };

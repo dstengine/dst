@@ -6,12 +6,12 @@
 import { publisher } from "./content";
 
 export const site = {
-  siteName: "mxo.lol",
+  siteName: "Ferias y Festivales de México",
   // The tooltip on the wordmark, and the one slot on every page of the site
   // that is free to say what the site is: the link's own text is the name,
   // so a title repeating it would say nothing twice.
   homeTitle: "Qué hacer en México, con la fuente a la vista",
-  titleSuffix: "mxo.lol",
+  titleSuffix: "México",
   // What this site is for, in one phrase, for tools/seo-check.mjs and for
   // BaseLayout: the words that have to appear in the title, the h1 and the
   // description of every page a reader could arrive on from a search — and

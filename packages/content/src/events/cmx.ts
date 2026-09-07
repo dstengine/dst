@@ -10,8 +10,8 @@ export const items: EventItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "Festival Cultural del Café y el Chocolate, edición Día de Muertos",
+    titleSeo: "Café y Chocolate 2026 en Coyoacán",
     cardTitle: "Café y Chocolate, edición Día de Muertos",
-    titleSeo: "Festival Café y Chocolate 2026 en Coyoacán",
     summary:
       "Tres días de café, cacao y todo lo que lleva una ofrenda, del 2 al 4 de octubre en el Museo Nacional de Culturas Populares, en Coyoacán, con entrada libre.",
     start: "2026-10-02",
@@ -54,8 +54,8 @@ export const items: EventItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "Grito de Independencia 2026 en la explanada de Miguel Hidalgo",
+    titleSeo: "El Grito 2026 en Miguel Hidalgo",
     cardTitle: "El Grito en Miguel Hidalgo",
-    titleSeo: "El Grito 2026 en la alcaldía Miguel Hidalgo",
     summary:
       "Tres conciertos gratuitos en la explanada de la alcaldía el 15 de septiembre: Embajadores de la Cumbia Dinamita a las 19:00, Los Yaguaru a las 21:00 y Paty Cantú a las 23:15.",
     start: "2026-09-15",
@@ -291,6 +291,7 @@ export const items: EventItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "Porque ahora pienso en ti, más que ayer, mucho más",
+    titleSeo: "Monsiváis en el Museo del Estanquillo",
     summary:
       "Cinco instalaciones inmersivas de Betsabeé Romero sobre el universo de Carlos Monsiváis: la primera instalación que el Museo del Estanquillo alberga en sus casi veinte años.",
     start: "2026-08-29",

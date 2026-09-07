@@ -1,4 +1,4 @@
-# mxo.lol — qué hacer en México
+# Ferias y Festivales de México — qué hacer en México
 
 > Cartelera y noticias de México, a escala nacional: lo que abre, lo que pasa y cuándo, en todo el país y no sólo en la capital. Cada entrada nombra la fuente de la que salió y el día en que se verificó contra ella. Publicación independiente: no es medio de gobierno, no vende boletos y no representa a ningún recinto.
 

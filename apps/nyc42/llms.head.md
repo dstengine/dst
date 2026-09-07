@@ -1,4 +1,4 @@
-# nyc42.lol — what's on in New York City
+# New York 42 — what's on in New York City
 
 > Listings and news for New York City. Every entry names the source it came from and the day it was checked against it. Independent publication: not a government outlet, not a ticket seller, not affiliated with any venue.
 

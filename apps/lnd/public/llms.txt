@@ -1,4 +1,4 @@
-# lnd.lol — what's on in the outer London boroughs
+# London Boroughs — what's on in the London boroughs beyond the centre
 
 > Listings and news for the outer London boroughs — Hackney, Wandsworth, Sutton, Southwark, Newham and their neighbours, not central London. Every entry names the source it came from and the day it was checked against it. Independent publication: not a government outlet, not a ticket seller, not affiliated with any venue.
 

@@ -5,7 +5,7 @@ import type { ArticleLabels } from "@dst/ui/labels";
 // name this host rather than the group — see VERCEL.md.
 export const publisher = {
   id: "https://mxo.lol/#organization",
-  name: "mxo.lol",
+  name: "Ferias y Festivales de México",
   url: "https://mxo.lol/",
 };
 
@@ -35,9 +35,9 @@ export const events = {
 };
 
 export const about = {
-  title: "Acerca de mxo.lol, una guía de México",
+  title: "Acerca de Ferias y Festivales de México",
   description: "La agenda cultural de México, con fuente y fecha en cada entrada.",
-  h1: "Acerca de mxo.lol, una guía de México",
+  h1: "Acerca de Ferias y Festivales de México",
   lede: `La agenda cultural de México, con fuente y fecha en cada entrada.`,
 };
 

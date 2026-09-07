@@ -262,7 +262,7 @@ if (london) {
   london.cityGuide = {
     host: "ldn.lol",
     url: "https://ldn.lol/events/tokio-hotel-ovo-arena-2026/",
-    label: "the full listing on ldn.lol",
+    label: "the full listing on London Today",
     note: "how the evening sits in the week, and how you get to Wembley Park",
   };
   london.source = { name: "OVO Arena Wembley", url: "ovo-arena-events", verifiedOn: checkedOn };

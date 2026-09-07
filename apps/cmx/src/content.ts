@@ -5,7 +5,7 @@ import type { ArticleLabels } from "@dst/ui/labels";
 // name this host rather than the group — see VERCEL.md.
 export const publisher = {
   id: "https://cmx.lol/#organization",
-  name: "cmx.lol",
+  name: "Agenda CDMX",
   url: "https://cmx.lol/",
 };
 
@@ -35,9 +35,9 @@ export const events = {
 };
 
 export const about = {
-  title: "Acerca de cmx.lol, una guía de la CDMX",
+  title: "Acerca de Agenda CDMX, una guía de la Ciudad de México",
   description: "Qué hacer en la Ciudad de México, con fuente y fecha en cada entrada.",
-  h1: "Acerca de cmx.lol, una guía de la Ciudad de México",
+  h1: "Acerca de Agenda CDMX, una guía de la Ciudad de México",
   lede: `Qué hacer en la Ciudad de México, con fuente y fecha en cada entrada.`,
 };
 

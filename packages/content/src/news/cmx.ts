@@ -10,8 +10,8 @@ export const items: NewsItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "La explanada de Miguel Hidalgo pone tres actos gratis la noche del Grito",
+    titleSeo: "Grito 2026 en Miguel Hidalgo: el cartel",
     cardTitle: "El Grito en Miguel Hidalgo: tres actos gratis",
-    titleSeo: "Grito 2026 en Miguel Hidalgo: horarios y cartel",
     summary:
       "El 15 de septiembre, en Parque Lira 94: Embajadores de la Cumbia Dinamita a las 19:00, Los Yaguaru a las 21:00 y Paty Cantú a las 23:15. Entrada libre.",
     date: "2026-09-06",
@@ -82,8 +82,8 @@ export const items: NewsItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "El Metro cumple 57 años y lo celebra con cuatro días de conciertos gratis",
+    titleSeo: "El Metro cumple 57 años con conciertos",
     cardTitle: "El Metro cumple 57 y lo festeja con cumbia",
-    titleSeo: "Conciertos gratis por el 57 aniversario del Metro",
     summary:
       "Del 2 al 5 de septiembre, en la Glorieta de Insurgentes: Aarón y Su Grupo Ilusión, Los Askis, La Sonora Dinamita y Son Tepito, sin costo.",
     date: "2026-09-02",
@@ -364,6 +364,7 @@ export const items: NewsItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "El Metrobús cerrará 15 estaciones por turnos",
+    titleSeo: "El Metrobús cierra 15 estaciones",
     cardTitle: "El Metrobús cerrará 15 estaciones",
     summary:
       "Líneas 2, 3 y 5, en fines de semana alternados hasta noviembre. Tres de los cierres caen en estaciones de transbordo del Centro, y uno no dura un fin de semana sino dos.",
@@ -403,6 +404,7 @@ export const items: NewsItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "Desfile y Fórmula 1, el mismo fin de semana",
+    titleSeo: "Desfile y F1, el mismo fin de semana",
     summary:
       "El Gran Desfile de Día de Muertos y la clasificación del Gran Premio caen a la misma hora del sábado 31 de octubre, en extremos opuestos de la ciudad. Cómo se resuelve.",
     date: "2026-08-30",
@@ -443,6 +445,7 @@ export const items: NewsItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "La Plaza de la Conchita tendrá jardín polinizador",
+    titleSeo: "Jardín polinizador en la Conchita",
     summary:
       "Coyoacán interviene 3,352 metros cuadrados de áreas verdes en la Plaza de la Conchita para convertirlas en jardín polinizador, con autorización del INAH y presupuesto participativo.",
     date: "2026-08-28",
@@ -518,6 +521,7 @@ export const items: NewsItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "Betsabeé Romero arma a Monsiváis en el Estanquillo",
+    titleSeo: "Betsabeé Romero en el Estanquillo",
     summary:
       "Salas de lupas, lentes grabados, máscaras de lucha libre y televisores de bulbo: Betsabeé Romero convierte el Museo del Estanquillo en una lectura de Monsiváis. Abrió el 29 de agosto.",
     date: "2026-08-26",

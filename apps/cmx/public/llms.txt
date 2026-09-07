@@ -1,4 +1,4 @@
-# cmx.lol — qué hacer en la Ciudad de México
+# Agenda CDMX — qué hacer en la Ciudad de México
 
 > Cartelera y noticias de la Ciudad de México, sólo CDMX. Cada entrada nombra la fuente de la que salió y el día en que se verificó contra ella. Publicación independiente: no es medio de gobierno, no vende boletos y no representa a ningún recinto.
 

@@ -3,7 +3,7 @@
 // this host rather than the group — see VERCEL.md.
 export const publisher = {
   id: "https://sol2go.lol/#organization",
-  name: "sol2go.lol",
+  name: "sol2go",
   url: "https://sol2go.lol/",
 };
 
