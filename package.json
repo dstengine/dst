@@ -30,6 +30,7 @@
     "test:links": "node --test tests/outbound-links.test.js",
     "test:schema": "node --test tests/structured-data.test.js",
     "lastmod": "node tools/lastmod.mjs",
+    "redirects": "node --experimental-strip-types tools/redirects.mjs",
     "share-cards": "node tools/share-cards.mjs",
     "test:network": "node --test tests/network-links.test.js",
     "test:source": "node --test tests/source-conventions.test.js",

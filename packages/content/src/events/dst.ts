@@ -127,7 +127,7 @@ export const items: EventItem[] = [
     venue: "Festival Arena",
     city: "Dubai",
     organizer: "Blockchain Life",
-    category: "Forum",
+    category: "Conference",
     source: {
       name: "Blockchain Life",
       url: "https://blockchain-life.com/autumn2026/",
@@ -230,7 +230,7 @@ export const items: EventItem[] = [
     end: "2027-02-03",
     city: "Dubai",
     organizer: "World Governments Summit Organisation",
-    category: "Summit",
+    category: "Conference",
     source: {
       name: "World Governments Summit",
       url: "https://www.worldgovernmentssummit.org/media-hub/news/detail/world-governments-summit-2027-set-from-1-to-3-february",

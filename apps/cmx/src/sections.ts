@@ -19,10 +19,12 @@ const TAGS: Record<string, Vocabulary> = {
   Festival: { slug: "festivales", plural: "festivales" },
   Movilidad: { slug: "movilidad", plural: "movilidad", label: "Movilidad" },
   Música: { slug: "musica", plural: "música", label: "Música" },
+  // "Arte" decía lo mismo sobre las mismas entradas — la muestra de
+  // Monsiváis en el Estanquillo estaba en las dos — y "exposiciones" es lo
+  // que se busca.
   Exposición: { slug: "exposiciones", plural: "exposiciones" },
   Deporte: { slug: "deporte", plural: "deporte", label: "Deporte" },
   Cine: { slug: "cine", plural: "cine", label: "Cine" },
-  Arte: { slug: "arte", plural: "arte", label: "Arte" },
   Cultura: { slug: "cultura", plural: "cultura", label: "Cultura" },
   Tecnología: { slug: "tecnologia", plural: "tecnología", label: "Tecnología" },
   Ciencia: { slug: "ciencia", plural: "ciencia", label: "Ciencia" },

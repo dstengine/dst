@@ -525,7 +525,7 @@ export const items: NewsItem[] = [
     summary:
       "Salas de lupas, lentes grabados, máscaras de lucha libre y televisores de bulbo: Betsabeé Romero convierte el Museo del Estanquillo en una lectura de Monsiváis. Abrió el 29 de agosto.",
     date: "2026-08-26",
-    category: "Arte",
+    category: "Exposición",
     source: {
       name: "El Universal Cultura",
       url: "https://www.eluniversal.com.mx/cultura/la-artista-betsabee-romero-rinde-homenaje-a-carlos-monsivais-con-nueva-exposicion/",

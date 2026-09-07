@@ -11,6 +11,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { allNews } from "../packages/content/src/news/index.ts";
 import { allEvents } from "../packages/content/src/events/index.ts";
+import { redirects } from "../packages/content/src/redirects.ts";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -652,6 +653,49 @@ describe("llms.txt", () => {
       [],
       `pages missing from llms.txt — run "node tools/llms.mjs":\n${absent.join("\n")}`,
     );
+  });
+});
+
+// A moved address owes a 301, and nothing in the build remembers that the
+// old one existed — so the register in packages/content/src/redirects.ts is
+// the only record, and these keep it true. Each of them is a way for a
+// redirect to be worse than none: one that lands nowhere, one the site
+// shadows with a live page of the same name, one that hops twice, and a
+// register that has not reached the file Vercel actually reads.
+describe("redirects", () => {
+  const entries = Object.entries(redirects).flatMap(([app, list]) =>
+    list.map((r) => ({ app, ...r })),
+  );
+  const urlsOf = (app) => new Set(pages.filter((p) => p.app === app).map((p) => p.url));
+
+  test("every redirect lands on a page that exists", () => {
+    const broken = entries.filter((r) => !urlsOf(r.app).has(r.to)).map((r) => `${r.app}${r.from} -> ${r.to}`);
+    assert.deepEqual(broken, [], `a redirect to nowhere:\n  ${broken.join("\n  ")}`);
+  });
+
+  test("no redirect is shadowed by a page at the same address", () => {
+    const shadowed = entries.filter((r) => urlsOf(r.app).has(r.from)).map((r) => `${r.app}${r.from}`);
+    assert.deepEqual(shadowed, [], `the site still builds a page here, so the redirect never fires:\n  ${shadowed.join("\n  ")}`);
+  });
+
+  test("no redirect points at another redirect", () => {
+    const froms = new Set(entries.map((r) => `${r.app}${r.from}`));
+    const chained = entries.filter((r) => froms.has(`${r.app}${r.to}`)).map((r) => `${r.app}${r.from} -> ${r.to}`);
+    assert.deepEqual(chained, [], `a hop to a hop — point it at the destination:\n  ${chained.join("\n  ")}`);
+  });
+
+  test("every app's vercel.json says what the register says", () => {
+    const stale = [];
+    for (const { app } of SITES) {
+      const file = path.join(REPO, "apps", app, "vercel.json");
+      if (!existsSync(file)) continue;
+      const served = (JSON.parse(readFileSync(file, "utf8")).redirects ?? []).map((r) => r.destination);
+      for (const r of redirects[app] ?? []) {
+        // Both spellings of the old path are written, so each entry is two.
+        if (served.filter((d) => d === r.to).length < 2) stale.push(`${app}${r.from} -> ${r.to}`);
+      }
+    }
+    assert.deepEqual(stale, [], `in the register and not in vercel.json — run npm run redirects:\n  ${stale.join("\n  ")}`);
   });
 });
 

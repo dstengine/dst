@@ -24,7 +24,10 @@ const RESERVED = ["about", "events", "news", "go", "li"];
 const TAGS: Record<string, Vocabulary> = {
   Music: { slug: "music", plural: "music", label: "Music" },
   Festival: { slug: "festivals", plural: "festivals" },
-  Art: { slug: "art", plural: "art", label: "Art" },
+  // "Art" was a second name for this and had its own page. The two said the
+  // same thing about the same five entries — a plinth, a sculpture park, the
+  // Bayeux Tapestry — and "exhibitions in London" is what people type.
+  // /art/ redirects here; see packages/content/src/redirects.ts.
   Exhibitions: { slug: "exhibitions", plural: "exhibitions" },
   Museums: { slug: "museums", plural: "museums" },
   Theatre: { slug: "theatre", plural: "theatre", label: "Theatre" },

@@ -233,7 +233,7 @@ export const items: NewsItem[] = [
     summary:
       "Tschabalala Self's Lady in Blue goes up in Trafalgar Square from 10 September and stays until summer 2028 — the longest commitment in public art here.",
     date: "2026-09-02",
-    category: "Art",
+    category: "Exhibitions",
     source: {
       name: "Mayor of London",
       url: "https://www.london.gov.uk/programmes-strategies/arts-and-culture/current-culture-projects/fourth-plinth-trafalgar-square",
@@ -267,7 +267,7 @@ export const items: NewsItem[] = [
     summary:
       "From 16 September to 1 November, eleven artists take over the English Gardens on the theme of hybridity. No ticket, no booking, no queue.",
     date: "2026-09-02",
-    category: "Art",
+    category: "Exhibitions",
     source: {
       name: "Frieze",
       url: "https://www.frieze.com/fairs/frieze-sculpture",
@@ -490,7 +490,7 @@ export const items: NewsItem[] = [
     summary:
       "Ten shows are on the critics' list. Six of them close before January, one has sold more advance tickets than anything in Tate's 128-year history, and two of the best are free.",
     date: "2026-08-27",
-    category: "Art",
+    category: "Exhibitions",
     source: {
       name: "Time Out London",
       url: "https://www.timeout.com/london/art/top-10-art-exhibitions-in-london",

@@ -17,7 +17,7 @@ export const items: EventItem[] = [
     venue: "Dubai World Trade Centre",
     city: "Dubai",
     organizer: "Dubai Supreme Council of Energy, DEWA and the World Green Economy Organization",
-    category: "Sustainability",
+    category: "Environment",
     source: {
       name: "Dubai Supreme Council of Energy",
       url: "https://dubaisce.gov.ae/en/world-green-economy-summit-2026-to-highlight-international-success-stories-through-four-main-thematic-pillars/",
