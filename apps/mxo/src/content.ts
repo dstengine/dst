@@ -21,23 +21,23 @@ export const home = {
 };
 
 export const news = {
-  title: "Noticias",
+  title: "Qué cambió en la agenda de México",
   description: "Unas cuantas cosas por semana, cada una verificada contra la fuente que la reportó.",
-  h1: "Qué cambió en la agenda",
+  h1: "Qué cambió en la agenda de México",
   lede: `Unas cuantas cosas por semana, cada una verificada contra la fuente que la reportó.`,
 };
 
 export const events = {
-  title: "Eventos",
+  title: "Eventos en México, por fecha",
   description: "La agenda nacional: cada fecha confirmada con quien organiza, no copiada de otro listado.",
   h1: "México, por fecha",
   lede: `La agenda nacional: cada fecha confirmada con quien organiza, no copiada de otro listado.`,
 };
 
 export const about = {
-  title: "Acerca",
+  title: "Acerca de mxo.lol, una guía de México",
   description: "La agenda cultural de México, con fuente y fecha en cada entrada.",
-  h1: "Acerca de mxo",
+  h1: "Acerca de mxo.lol, una guía de México",
   lede: `La agenda cultural de México, con fuente y fecha en cada entrada.`,
 };
 

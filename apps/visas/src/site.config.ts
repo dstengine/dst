@@ -6,6 +6,11 @@
 export const site = {
   siteName: "Dubai Residency",
   titleSuffix: "Dubai Residency",
+  // What this site is for, in one phrase, for tools/seo-check.mjs and for
+  // BaseLayout: the words that have to appear in the title, the h1 and the
+  // description of every page a reader could arrive on from a search — and
+  // the words the title suffix exists to supply when they are missing.
+  keyword: "UAE",
   complianceNote:
     "Informational, not immigration or legal advice. UAE federal authorities set the Golden Visa thresholds and change them; confirm the current ones before you invest.",
   partnerDisclosure: true,

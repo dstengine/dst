@@ -19,22 +19,22 @@ export const home = {
 };
 
 export const news = {
-  title: "News",
+  title: "Greater London news, borough by borough",
   description: "Borough news, checked against the source that reported it. A few things a week rather than everything.",
-  h1: "What changed across the boroughs",
+  h1: "What changed across Greater London",
   lede: `Borough news, checked against the source that reported it. A few things a week rather than everything.`,
 };
 
 export const events = {
-  title: "Events",
+  title: "Greater London events, by date",
   description: "Dates confirmed against the organiser, across the boroughs rather than the centre.",
   h1: "Greater London, by date",
   lede: `Dates confirmed against the organiser, across the boroughs rather than the centre.`,
 };
 
 export const about = {
-  title: "About",
+  title: "About lnd.lol, a Greater London guide",
   description: "What is on across the London boroughs, with a source and a date on every entry.",
-  h1: "About lnd",
+  h1: "About lnd.lol, a Greater London listings site",
   lede: `What is on across the London boroughs, with a source and a date on every entry.`,
 };

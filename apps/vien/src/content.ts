@@ -21,23 +21,23 @@ export const home = {
 };
 
 export const news = {
-  title: "Nachrichten",
+  title: "Was sich in Wien geändert hat",
   description: "Kein Ticker. Ein paar Dinge pro Woche, die es zu wissen lohnt und die wir prüfen konnten.",
   h1: "Was sich in Wien geändert hat",
   lede: `Kein Ticker. Ein paar Dinge pro Woche, die es zu wissen lohnt und die wir gegen die Quelle prüfen konnten.`,
 };
 
 export const events = {
-  title: "Termine",
+  title: "Veranstaltungen in Wien, nach Datum",
   description: "Termine, die wir bei den Veranstaltern bestätigt haben. Ohne bestätigtes Datum steht hier nichts.",
   h1: "Wien nach Datum",
   lede: `Termine, die wir bei den Veranstaltern bestätigt haben. Was kein bestätigtes Datum hat, wartet, bis es eines gibt.`,
 };
 
 export const about = {
-  title: "Über uns",
+  title: "Über vien.lol, einen Wien-Kalender",
   description: "Was in Wien los ist, mit Quelle und Prüfdatum bei jedem Eintrag.",
-  h1: "Über vien.lol",
+  h1: "Über vien.lol, einen Wiener Kalender",
   lede: `Was in Wien und in Österreich los ist, mit Quelle und Prüfdatum bei jedem Eintrag.`,
 };
 

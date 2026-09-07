@@ -6,6 +6,11 @@
 export const site = {
   siteName: "Dubai Company Formation",
   titleSuffix: "Dubai Company Formation",
+  // What this site is for, in one phrase, for tools/seo-check.mjs and for
+  // BaseLayout: the words that have to appear in the title, the h1 and the
+  // description of every page a reader could arrive on from a search — and
+  // the words the title suffix exists to supply when they are missing.
+  keyword: "Dubai",
   complianceNote:
     "Informational, not legal or financial advice. Confirm current requirements with DED or your chosen free zone authority.",
   partnerDisclosure: false,

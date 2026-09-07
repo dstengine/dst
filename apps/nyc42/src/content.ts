@@ -19,22 +19,22 @@ export const home = {
 };
 
 export const news = {
-  title: "News",
+  title: "What changed in New York",
   description: "Not a wire feed. A few things a week that are worth knowing about and that we could check.",
   h1: "What changed in New York",
   lede: `Not a wire feed. A few things a week that are worth knowing about and that we could check.`,
 };
 
 export const events = {
-  title: "Events",
+  title: "New York events, by date",
   description: "Dates we have confirmed against the organiser. An event with no confirmed date is not listed until it has one.",
   h1: "New York, by date",
   lede: `Dates we have confirmed against the organiser. An event with no confirmed date is not listed until it has one.`,
 };
 
 export const about = {
-  title: "About",
+  title: "About nyc42.lol, a New York guide",
   description: "What is on in New York City, with a source and a date on every entry.",
-  h1: "About nyc42",
+  h1: "About nyc42.lol, a New York listings site",
   lede: `What is on in New York City, with a source and a date on every entry.`,
 };

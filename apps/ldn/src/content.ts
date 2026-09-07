@@ -19,22 +19,22 @@ export const home = {
 };
 
 export const news = {
-  title: "News",
+  title: "What changed in central London",
   description: "A few things a week from the centre, each one checked against the source that reported it.",
   h1: "What changed in central London",
   lede: `A few things a week from the centre, each one checked against the source that reported it.`,
 };
 
 export const events = {
-  title: "Events",
+  title: "Central London events, by date",
   description: "Dates confirmed against the organiser. Nothing goes up on a date we could not confirm.",
   h1: "Central London, by date",
   lede: `Dates confirmed against the organiser. Nothing goes up on a date we could not confirm.`,
 };
 
 export const about = {
-  title: "About",
+  title: "About ldn.lol, a central London guide",
   description: "What is on in central London, with a source and a date on every entry.",
-  h1: "About ldn",
+  h1: "About ldn.lol, a central London listings site",
   lede: `What is on in central London, with a source and a date on every entry.`,
 };

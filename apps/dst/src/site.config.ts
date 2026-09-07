@@ -8,6 +8,11 @@ import { NETWORK } from "@dst/content/network";
 export const site = {
   siteName: "DST",
   titleSuffix: "DST",
+  // What this site is for, in one phrase, for tools/seo-check.mjs and for
+  // BaseLayout: the words that have to appear in the title, the h1 and the
+  // description of every page a reader could arrive on from a search — and
+  // the words the title suffix exists to supply when they are missing.
+  keyword: "Dubai",
   complianceNote:
     "DST builds and operates the systems; regulated work — real estate, financial services — is carried out by licensed local partners.",
   logoSrc: "/logo-mini.png",

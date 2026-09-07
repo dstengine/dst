@@ -8,6 +8,11 @@ import { disclaimer } from "./content";
 export const site = {
   siteName: "Future World Forum",
   titleSuffix: "Future World Forum Dubai",
+  // What this site is for, in one phrase, for tools/seo-check.mjs and for
+  // BaseLayout: the words that have to appear in the title, the h1 and the
+  // description of every page a reader could arrive on from a search — and
+  // the words the title suffix exists to supply when they are missing.
+  keyword: "Dubai",
   footerSiteName: "fwf.lol",
   complianceNote: disclaimer,
   partnerDisclosure: false,

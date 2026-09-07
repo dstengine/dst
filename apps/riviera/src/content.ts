@@ -273,7 +273,7 @@ export const money = {
 };
 
 export const news = {
-  title: "Riviera News",
+  title: "What is changing in Azizi Riviera",
   description: "What's changing inside Azizi Riviera — not a citywide press release.",
   eyebrow: "News",
   h1: "What's changing in Riviera",
@@ -294,7 +294,7 @@ export const news = {
 };
 
 export const events = {
-  title: "Riviera Events",
+  title: "What is on in and around Azizi Riviera",
   description: "What's on locally in Azizi Riviera — resident meetups and promenade launches, not a citywide calendar.",
   eyebrow: "Events",
   h1: "What's on, locally",

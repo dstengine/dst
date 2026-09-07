@@ -8,6 +8,11 @@ import { disclaimer } from "./content";
 export const site = {
   siteName: "musical.today",
   titleSuffix: "Musical Today",
+  // What this site is for, in one phrase, for tools/seo-check.mjs and for
+  // BaseLayout: the words that have to appear in the title, the h1 and the
+  // description of every page a reader could arrive on from a search — and
+  // the words the title suffix exists to supply when they are missing.
+  keyword: "musical",
   complianceNote: disclaimer,
   // The site is not tied to the group, so the markup has to say the same
   // thing the footer does — see ~/mind/ai/dubai/musical.today.md.

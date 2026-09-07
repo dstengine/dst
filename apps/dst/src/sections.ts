@@ -40,11 +40,20 @@ export function sections(items: FeedItem[]): Section[] {
       // "the Dubai property market" reads as a heading and not as a title
       // case noun, so the two are kept apart rather than upper-casing the
       // first letter of whatever comes out of the table.
-      const heading = g.key === "Market" ? "The Dubai property market" : g.label;
+      // The chip says "Tech" because a row of chips is read at a glance; a
+      // page heading that says "Tech" says nothing at all.
+      const HEADINGS: Record<string, { h1: string; title: string }> = {
+        Market: { h1: "The Dubai property market", title: "Dubai property market news" },
+        Tech: { h1: "Technology", title: "The technology DST follows" },
+        AI: { h1: "AI", title: "The AI news DST follows" },
+        Crypto: { h1: "Crypto", title: "The crypto news DST follows" },
+        "Real estate": { h1: "Real estate", title: "Dubai real estate, as DST reads it" },
+      };
+      const named = HEADINGS[g.key] ?? { h1: g.label, title: g.label };
       return {
-        title: heading,
+        title: named.title,
         description: `What DST reads and publishes on ${what}, with the source and the date on every entry.`,
-        h1: heading,
+        h1: named.h1,
         lede: `What the group publishes on ${what} — each entry with the figure it turns on, the source it came from, and the date we read it.`,
       };
     },

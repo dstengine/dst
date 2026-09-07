@@ -21,23 +21,23 @@ export const home = {
 };
 
 export const news = {
-  title: "Noticias",
+  title: "Qué cambió en la Ciudad de México",
   description: "No es un teletipo. Unas cuantas cosas por semana que vale la pena saber y que pudimos verificar.",
-  h1: "Qué cambió en la ciudad",
+  h1: "Qué cambió en la Ciudad de México",
   lede: `No es un teletipo. Unas cuantas cosas por semana que vale la pena saber y que pudimos verificar.`,
 };
 
 export const events = {
-  title: "Eventos",
+  title: "Eventos en la Ciudad de México, por fecha",
   description: "Fechas confirmadas con quien organiza. Un evento sin fecha confirmada no se publica hasta tenerla.",
   h1: "La Ciudad de México, por fecha",
   lede: `Fechas confirmadas con quien organiza. Un evento sin fecha confirmada no se publica hasta tenerla.`,
 };
 
 export const about = {
-  title: "Acerca",
+  title: "Acerca de cmx.lol, una guía de la CDMX",
   description: "Qué hacer en la Ciudad de México, con fuente y fecha en cada entrada.",
-  h1: "Acerca de cmx",
+  h1: "Acerca de cmx.lol, una guía de la Ciudad de México",
   lede: `Qué hacer en la Ciudad de México, con fuente y fecha en cada entrada.`,
 };
 

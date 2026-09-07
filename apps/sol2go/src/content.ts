@@ -19,21 +19,21 @@ export const home = {
 };
 
 export const news = {
-  title: "Ecosystem news",
+  title: "Solana ecosystem news",
   description: "What changed in the Solana ecosystem: releases, tooling, programmes and the calendar around them.",
   h1: "What changed in the Solana ecosystem",
   lede: `Releases, tooling and programmes — the things that change what a builder can do this month. Not a price feed.`,
 };
 
 export const events = {
-  title: "Calendar",
+  title: "The Solana events calendar",
   description: "Solana hackathons, conferences and meetups, on dates confirmed with the organiser.",
   h1: "The Solana calendar",
   lede: `Hackathons, conferences and meetups, on dates confirmed with the organiser. Anything whose date we could not confirm waits until we can.`,
 };
 
 export const about = {
-  title: "About",
+  title: "About sol2go and its Solana events calendar",
   description: "A calendar and a newsfeed for the Solana ecosystem, with a source and a date on every entry.",
   h1: "About sol2go, a Solana calendar and newsfeed",
   lede: `A calendar and a newsfeed for the Solana ecosystem, with a source and a date on every entry. Not financial advice, and nothing here is a recommendation to buy anything.`,

@@ -18,36 +18,36 @@ export const home = {
 };
 
 export const tours = {
-  title: "Tours",
+  title: "Tokio Hotel tours, every leg",
   description: "Ten Tokio Hotel tours since 2005, in order, with what happened on each one.",
-  h1: "Eleven tours since 2005",
+  h1: "Eleven Tokio Hotel tours since 2005",
   lede: `From four teenagers behind a number-one single to two announced runs, thirty-one nights, across 2026 and 2027. Three of these have a routing we can print date for date; all eleven have something that happened on them.`,
 };
 
 export const albums = {
-  title: "Albums",
+  title: "Tokio Hotel albums, all eight",
   description: "Eight Tokio Hotel studio albums, with release dates, labels and the singles that announced them.",
-  h1: "Eight studio albums",
+  h1: "Eight Tokio Hotel studio albums",
   lede: `Two of them are the same songs in two languages. One was partly re-recorded because the singer's voice broke. The eighth arrives on 16 October 2026.`,
 };
 
 export const cities = {
-  title: "Cities",
+  title: "Tokio Hotel tours, city by city",
   description: "Where Tokio Hotel play next, city by city — and the two cities that keep being looked for and are not on the map.",
-  h1: "City by city",
+  h1: "Tokio Hotel, city by city",
   lede: `Sixteen cities on the 2026 run, each with its night, its room and its place in the routing. Plus New York and Mexico City, which have nothing upcoming and say so.`,
 };
 
 export const history = {
-  title: "History",
+  title: "Tokio Hotel history, year by year",
   description: "Tokio Hotel from Magdeburg in 2001 to Wembley in 2026, in dated order.",
-  h1: "Twenty-five years, in order",
+  h1: "Tokio Hotel: twenty-five years, in order",
   lede: `Two twelve-year-olds, two friends from the audience, a name taken from a review, and a quarter of a century with nobody replaced.`,
 };
 
 export const about = {
-  title: "About",
+  title: "About this Tokio Hotel tour archive",
   description: "What this site is, where the dates come from, and what it will not print.",
-  h1: "About this site",
+  h1: "About this Tokio Hotel tour archive",
   lede: `A tour archive for one band, with a source and a date on every entry.`,
 };
