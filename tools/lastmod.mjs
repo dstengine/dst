@@ -9,6 +9,7 @@
 //
 //   npm run build && node tools/lastmod.mjs
 import { execFileSync } from "node:child_process";
+import { createHash } from "node:crypto";
 import { readdirSync, readFileSync, writeFileSync, existsSync, statSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -337,9 +338,46 @@ const walk = (dir) =>
     e.isDirectory() ? walk(path.join(dir, e.name)) : [path.join(dir, e.name)],
   );
 
+/** What a built page says, with the things that are not the page removed.
+
+    Astro's scoped-style ids change whenever a component file changes, and
+    `dateModified` is this file's own previous answer read back — neither is
+    the page's content, and both would make every page look edited. */
+function pageHash(file) {
+  try {
+    const html = readFileSync(file, "utf8")
+      .replace(/ ?data-astro-cid-[a-z0-9]+/g, "")
+      .replace(/astro-[a-z0-9]{8,}/g, "")
+      .replace(/"dateModified":"[^"]*"/g, "");
+    return createHash("sha1").update(html).digest("hex").slice(0, 16);
+  } catch {
+    return null;
+  }
+}
+
+// The dates as they stand, and what the pages looked like when they were
+// written. A rename that touches every route file is a change to the source
+// of all 866 pages and to the content of none of them — and the git history
+// cannot tell the two apart, because in the history they are the same edit.
+// The built page can: if it comes out byte for byte what it was, the page
+// did not change, whatever moved underneath it. So a hash only ever holds a
+// date still; it never advances one, and a chrome-only edit still moves
+// nothing because the date it would fall back to is unchanged anyway.
+const HASH_FILE = path.join(REPO, "packages/content/src/lastmod.hashes.json");
+const readJson = (file) => {
+  try { return JSON.parse(readFileSync(file, "utf8")); } catch { return null; }
+};
+const previous = readJson(path.join(REPO, "packages/content/src/lastmod.json")) ?? {};
+const previousHashes = readJson(HASH_FILE);
+// No hash file yet: there is no evidence that anything changed, so every
+// date already recorded stands and this run only writes the hashes down.
+const seeding = previousHashes === null;
+
 const out = {};
+const hashes = {};
 let pages = 0;
 let dated = 0;
+let held = 0;
 for (const [app, host] of Object.entries(HOSTS)) {
   const dist = path.join(REPO, "apps", app, "dist");
   if (!existsSync(dist)) {
@@ -347,6 +385,7 @@ for (const [app, host] of Object.entries(HOSTS)) {
     process.exit(1);
   }
   out[host] = {};
+  hashes[host] = {};
   for (const file of walk(dist)) {
     if (path.basename(file) !== "index.html") continue;
     const url = "/" + path.relative(dist, file).replace(/index\.html$/, "");
@@ -370,14 +409,24 @@ for (const [app, host] of Object.entries(HOSTS)) {
     const counted = [...routes, ...(owning.length ? owning : data)];
     const dates = counted.map((f) => dateFor(f, url)).filter(Boolean).sort();
     if (!dates.length) continue;
-    out[host][url] = dates.at(-1);
+
+    const hash = pageHash(file);
+    if (hash) hashes[host][url] = hash;
+    const was = previous[host]?.[url];
+    const wasHash = previousHashes?.[host]?.[url];
+    const unchanged = was && (seeding || (hash && wasHash === hash));
+    out[host][url] = unchanged ? was : dates.at(-1);
+    if (unchanged && was !== dates.at(-1)) held++;
     dated++;
   }
 }
 
 const target = path.join(REPO, "packages/content/src/lastmod.json");
 writeFileSync(target, JSON.stringify(out, null, 2) + "\n");
+writeFileSync(HASH_FILE, JSON.stringify(hashes, null, 2) + "\n");
 console.log(`${dated} of ${pages} pages dated -> packages/content/src/lastmod.json`);
+if (seeding) console.log("  no hashes on record — every date already written stands");
+else if (held) console.log(`  ${held} pages kept their date: the built page is unchanged`);
 for (const [host, urls] of Object.entries(out)) {
   const dates = Object.values(urls).sort();
   console.log(`  ${host.padEnd(20)} ${Object.keys(urls).length} pages, newest ${dates.at(-1)?.slice(0, 10)}`);

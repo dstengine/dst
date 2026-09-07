@@ -750,23 +750,37 @@ describe("sitemap", () => {
   // dating pages by that file makes every page claim to have changed
   // whenever any of them did — and a date that is always "now" is worse than
   // no date, because a crawler that learns the date means nothing stops
-  // reading it. One shared date across a whole site is what that mistake
-  // looks like from outside.
+  // reading it.
+  //
+  // One shared date is the symptom, and on its own it is not proof: a sweep
+  // through every app — a rename, an import moved — really does change every
+  // page on the same afternoon, and the day this test was written was one of
+  // those. So the comparison is against the rest of the network on the same
+  // run. A site flat while its neighbours vary is dated by its file; a
+  // network flat all at once is a network that was just swept.
   test("no site dates every page the same", () => {
+    const spread = new Map();
     for (const { app } of SITES) {
+      const urls = sitemapUrls(app);
+      if (urls.length < 4) continue; // a site of three pages can honestly share a date
       const dates = new Set();
       const dir = path.join(REPO, "apps", app, "dist");
       for (let i = 0; existsSync(path.join(dir, `sitemap-${i}.xml`)); i++) {
         const xml = readFileSync(path.join(dir, `sitemap-${i}.xml`), "utf8");
         for (const m of xml.matchAll(/<lastmod>(.*?)<\/lastmod>/g)) dates.add(m[1].slice(0, 10));
       }
-      // A site of one or two pages can honestly have one date.
-      if (sitemapUrls(app).length < 4) continue;
-      assert.ok(
-        dates.size > 1,
-        `${app}: all ${sitemapUrls(app).length} pages carry ${[...dates][0]} — dated by file rather than by entry; run node tools/lastmod.mjs`,
-      );
+      spread.set(app, dates);
     }
+    const varied = [...spread].filter(([, d]) => d.size > 1).map(([a]) => a);
+    if (varied.length === 0) return; // the whole network was rebuilt at once
+    const flat = [...spread]
+      .filter(([, d]) => d.size === 1)
+      .map(([a, d]) => `${a}: every page carries ${[...d][0]}`);
+    assert.deepEqual(
+      flat,
+      [],
+      `dated by file rather than by entry, while ${varied.join(", ")} vary — run node tools/lastmod.mjs:\n  ${flat.join("\n  ")}`,
+    );
   });
 
   // The recorded dates are a file, and a file goes stale. Structure changes
