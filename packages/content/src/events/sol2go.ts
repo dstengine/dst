@@ -68,7 +68,7 @@ export const items: EventItem[] = [
       "Ticket prices. The organiser sends you to a booking page rather than printing a table, so we are not quoting a figure. The full agenda, the exhibitor list and the floor plan each have a page on the site; the side event, the awards and the HashMining &amp; AI Summit are named in the navigation without dates of their own.",
     ],
     expertise:
-      "Read the audience list before you buy, because it is the whole review. Six segments are named and not one of them is a developer: this is a licensing, custody and allocation room, in the city that has spent five years building a licensing regime worth flying to. If you are raising, selling infrastructure or trying to get a straight answer out of a regulator, two days at the World Trade Centre is a cheaper way to do it than two months of email. If you came to talk about consensus, this is the wrong hall in the right city, and the London fortnight in November is the one to save the flight for.",
+      "Read the audience list before you buy, because it is the whole review. Six segments are named and not one of them is a developer: this is a licensing, custody and allocation room, and two of the people on the programme supervise virtual assets for a living. If you are raising, selling infrastructure or trying to get a straight answer out of a regulator, two days at the World Trade Centre is a cheaper way to do it than two months of email. If you came to talk about consensus, this is the wrong hall, and the London fortnight in November is the one to save the flight for.",
   },
 
   {

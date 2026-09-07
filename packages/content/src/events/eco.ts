@@ -48,7 +48,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "WETEX 2026",
     summary:
-      "DEWA's Water, Energy, Technology and Environment Exhibition runs October 20–22, 2026 at Dubai World Trade Centre — the region's largest event across energy, water and sustainability.",
+      "DEWA's Water, Energy, Technology and Environment Exhibition runs October 20–22, 2026 at Dubai World Trade Centre, billed by its organiser as the region's largest across energy, water and sustainability.",
     start: "2026-10-20",
     end: "2026-10-22",
     venue: "Dubai International Convention and Exhibition Centre, Dubai World Trade Centre",
