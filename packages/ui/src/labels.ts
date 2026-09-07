@@ -24,6 +24,13 @@ export interface ArticleLabels {
   // Actions
   tickets: string;
   register: string;
+  /**
+   * The button on an event that sells nothing and registers nobody: it goes
+   * to the page the event was written from. "Register" was wrong there —
+   * the link opens the organiser's own page, and a button naming an action
+   * the page cannot perform is a button that has not been looked at.
+   */
+  moreDetails: string;
   addToCalendar: string;
   /** Title attribute on the calendar button, given the event's own name. */
   addToCalendarTitle: (title: string) => string;
@@ -90,6 +97,7 @@ export const EN: ArticleLabels = {
 
   tickets: "Tickets",
   register: "Register",
+  moreDetails: "More details",
   addToCalendar: "Add to calendar",
   addToCalendarTitle: (title) => `Add ${title} to your calendar`,
 

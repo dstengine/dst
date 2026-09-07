@@ -55,6 +55,7 @@ export const labels: Partial<ArticleLabels> = {
 
   tickets: "Boletos",
   register: "Registrarse",
+  moreDetails: "Más información",
   addToCalendar: "Agregar al calendario",
   addToCalendarTitle: (title) => `Agregar ${title} a tu calendario`,
 

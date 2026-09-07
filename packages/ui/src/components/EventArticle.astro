@@ -251,7 +251,12 @@ const action = (() => {
   // Nothing is being sold, so nothing is called tickets. A free community
   // meetup with a Tickets button reads as a page that has not been looked
   // at, and on a past one it reads as a page nobody maintains.
-  if (sourceHref) return { href: sourceHref, label: isFree ? L.register : L.tickets };
+  //
+  // Nor is it called Register: this href is the page the event was written
+  // from, and on the three free events that reached it — a coffee festival,
+  // a neighbourhood Grito, a children's book fair — it opens a programme,
+  // not a form. The button now says what the link does.
+  if (sourceHref) return { href: sourceHref, label: isFree ? L.moreDetails : L.tickets };
   return undefined;
 })();
 
