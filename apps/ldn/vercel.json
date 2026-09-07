@@ -5,12 +5,12 @@
     {
       "source": "/art",
       "destination": "/exhibitions/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/art/",
       "destination": "/exhibitions/",
-      "permanent": true
+      "statusCode": 301
     }
   ]
 }

@@ -33,7 +33,10 @@ for (const app of readdirSync(path.join(REPO, "apps"))) {
             [from.replace(/\/$/, ""), from].map((source) => ({
               source,
               destination: to,
-              permanent: true,
+              // 301 by number, not `permanent: true` — Vercel reads that as
+              // 308, which Google treats the same and older tooling does
+              // not. The two cannot both be set.
+              statusCode: 301,
             })),
           ),
         }

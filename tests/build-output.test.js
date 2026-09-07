@@ -689,10 +689,12 @@ describe("redirects", () => {
     for (const { app } of SITES) {
       const file = path.join(REPO, "apps", app, "vercel.json");
       if (!existsSync(file)) continue;
-      const served = (JSON.parse(readFileSync(file, "utf8")).redirects ?? []).map((r) => r.destination);
+      const served = JSON.parse(readFileSync(file, "utf8")).redirects ?? [];
       for (const r of redirects[app] ?? []) {
-        // Both spellings of the old path are written, so each entry is two.
-        if (served.filter((d) => d === r.to).length < 2) stale.push(`${app}${r.from} -> ${r.to}`);
+        // Both spellings of the old path are written, so each entry is two —
+        // and each is a 301: `permanent: true` would leave a 308.
+        const hops = served.filter((h) => h.destination === r.to && h.statusCode === 301);
+        if (hops.length < 2) stale.push(`${app}${r.from} -> ${r.to}`);
       }
     }
     assert.deepEqual(stale, [], `in the register and not in vercel.json — run npm run redirects:\n  ${stale.join("\n  ")}`);
