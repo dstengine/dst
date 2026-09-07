@@ -707,7 +707,12 @@ describe("event calendars", () => {
     dst: "events", llc: "events", visas: "events", riviera: "events", mbr: "events",
     palmcentral: "events", eco: "events", fwf: "events", nyc42: "events", ldn: "events",
     lnd: "events", sol2go: "events", cmx: "eventos", mxo: "eventos", vien: "veranstaltungen",
+    musical: "events",
   };
+  // Where the calendar is offered. Everywhere that is the events index, whose
+  // address is the calendar's name; on musical the runs are the front page and
+  // there is no /events/ to put it on.
+  const OFFERED_ON = { musical: "" };
   const read = (app) => {
     const file = path.join(REPO, "apps", app, "dist", `${CALENDARS[app]}.ics`);
     assert.ok(existsSync(file), `apps/${app}: no ${CALENDARS[app]}.ics — the subscribable calendar was not built`);
@@ -749,10 +754,11 @@ describe("event calendars", () => {
   test("the events page offers the calendar, or nobody ever finds it", () => {
     const missing = [];
     for (const [app, base] of Object.entries(CALENDARS)) {
-      const html = readFileSync(path.join(REPO, "apps", app, "dist", base, "index.html"), "utf8");
+      const page = OFFERED_ON[app] ?? base;
+      const html = readFileSync(path.join(REPO, "apps", app, "dist", page, "index.html"), "utf8");
       // webcal:, not https: — the scheme is what makes a calendar app treat
       // this as a subscription rather than a one-off file to save.
-      if (!html.includes(`webcal://`) || !html.includes(`/${base}.ics`)) missing.push(`${app}/${base}/`);
+      if (!html.includes(`webcal://`) || !html.includes(`/${base}.ics`)) missing.push(`/${page}/ on ${app}`);
     }
     assert.deepEqual(missing, [], `events pages with no link to their own calendar:\n  ${missing.join("\n  ")}`);
   });

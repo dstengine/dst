@@ -10,6 +10,7 @@ import { cities } from "./data/cities";
 import { runs } from "./data/runs";
 import { venues } from "./data/venues";
 import { groups } from "./data/groups";
+import { shows } from "./data/shows";
 import { go } from "./outbound";
 
 export type RunStatus = "open-run" | "on-sale" | "announced" | "ended";
@@ -534,3 +535,37 @@ export function priceTiers(run: Run): { name: string; from?: number; currency: s
     .filter((s) => s.price && priceIsFresh(s.price))
     .flatMap((s) => (s.price!.tiers ?? []).map((t) => ({ ...t, currency: s.price!.currency })));
 }
+
+/** A run in the shape the network's ICS generator reads. One mapping, used
+    by the single-run download and by the whole-site calendar, so a stop that
+    someone adds by hand and the same stop arriving by subscription are the
+    same entry rather than two.
+
+    An open run is not here and cannot be: a calendar has to be told when to
+    put the thing, and "playing since 1996, closing unannounced" has no day
+    to give it. Nor has a stop announced without dates. Both are on the site;
+    neither is in a diary. */
+export function icsItem(run: Run) {
+  const show = shows.find((s) => s.slug === run.show);
+  const city = cityBySlug(run.city);
+  const venue = run.venue ? venueBySlug(run.venue) : undefined;
+  return {
+    // The run slug is only unique inside its show, and a UID has to be
+    // unique inside the calendar.
+    slug: `${run.show}-${run.slug}`,
+    site: "musical",
+    title: `${show?.title ?? run.show} — ${city?.name ?? run.city}`,
+    summary: `${formatRun(run)}. ${runIntro(run)}`,
+    start: run.start!,
+    ...(run.end ? { end: run.end } : {}),
+    ...(venue ? { venue: venue.name } : {}),
+    ...(city ? { city: city.name } : {}),
+    ...(venue?.lat && venue?.lon ? { geo: { lat: venue.lat, lng: venue.lon } } : {}),
+  };
+}
+
+/** Every run that can honestly be given a day in someone's calendar. */
+export const datedRuns = (): Run[] =>
+  runs
+    .filter((run) => run.start && !run.openRun)
+    .sort((a, b) => a.start!.localeCompare(b.start!));

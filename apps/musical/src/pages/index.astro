@@ -7,8 +7,9 @@ import Promo from "../components/Promo.astro";
 import EventCards from "../components/EventCards.astro";
 import VentureGrid from "@dst/ui/VentureGrid.astro";
 import { ICONS } from "@dst/ui/icons";
+import Icon from "@dst/ui/Icon.astro";
 import {
-  citiesWithPages, cityBySlug, formatRun, runsFor, runsInCity, shows, showBySlug,
+  citiesWithPages, cityBySlug, datedRuns, formatRun, runsFor, runsInCity, shows, showBySlug,
   statusOf, ticketButtons, upcomingRuns, venueBySlug, venues, type Venue,
 } from "../content";
 
@@ -124,6 +125,24 @@ const nextTickets = next ? ticketButtons(next) : [];
           belongs to the listings it describes. */}
       <span class="checked">Read from each production's own listing, on the date its page carries.</span>
     </p>
+
+    {/* A tour asks a different question from a weekend listing: not what is
+        on now, but when it reaches you. Subscribing answers that once and
+        keeps answering it as stops are added. webcal:, not https: — the
+        scheme is the whole difference between subscribing and saving a file. */}
+    <a
+      class="subscribe"
+      href="webcal://musical.today/events.ics"
+      title="Opens your calendar app and subscribes to every dated run"
+    >
+      <Icon name="events" />
+      <span class="subscribe-text">
+        <span class="subscribe-label">Subscribe to every date</span>
+        <span class="subscribe-note">
+          All {datedRuns().length} dated runs, city by city, kept up to date in your own calendar.
+        </span>
+      </span>
+    </a>
   </section>
 
   <div class="container">
@@ -230,7 +249,38 @@ const nextTickets = next ? ticketButtons(next) : [];
     color: var(--accent);
     font-weight: 600;
   }
-  .next-run:hover .next-run-cta { text-decoration: underline; }
+  /* No underline on hover. The whole card is the link, so underlining one
+     line inside it says that line is the target and the rest is not; the
+     border carries the hover state. */
+  /* Subscribing to the tour, under the dates it is about. Same shape the
+     rest of the network uses for its calendars, written here because this
+     site keeps its own run model and does not render EventsList. */
+  .subscribe {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    margin-top: var(--space-3);
+    padding: var(--space-3);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: var(--step--1);
+    color: inherit;
+    text-decoration: none;
+  }
+  .subscribe:hover,
+  .subscribe:focus-visible { border-color: var(--accent); }
+  /* :global because Icon.astro renders the svg, not this file, and Astro
+     scopes every part of a selector. Unsized, the mark comes out 95px. */
+  .subscribe :global(svg) {
+    flex: none;
+    width: 1.4em;
+    height: 1.4em;
+    color: var(--accent);
+    margin-top: 0.1em;
+  }
+  .subscribe-text { display: flex; flex-direction: column; gap: 0.15em; }
+  .subscribe-label { font-weight: 600; color: var(--accent); }
+  .subscribe-note { color: var(--ink-muted); }
   /* Sixteen city names on one line, reading as a line and not as sixteen
      buttons: the gap does the separating, and the label sits in front of
      them at the same baseline. */
