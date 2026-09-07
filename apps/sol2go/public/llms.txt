@@ -56,5 +56,6 @@ What has not been announced is said to be unannounced. A venue nobody has given,
 
 ## News
 
+- [Alpenglow finally has dates, and the first one is a stake percentage](https://sol2go.lol/news/alpenglow-now-has-dates-and-the-first-one-is-a-stake-percentage/): Anza's release schedule puts 10 per cent of stake on Agave 4.3 by 8 September, 25 per cent by 14 September, general adoption by 21 September and feature activation from 28 September.
 - [Rent came down, and every account is now over-funded](https://sol2go.lol/news/rent-came-down-and-every-account-is-now-over-funded/): Solana cut rent, so every existing account now holds more SOL than it needs. A new Token Program instruction takes the surplus out without closing anything — and this is only phase one of five.
 - [Before Solana gets 150ms finality, two gates had to open](https://sol2go.lol/news/before-solana-gets-150ms-finality-two-gates-had-to-open/): Alpenglow targets roughly 150ms finality on Solana against today's 12.8 seconds. Two prerequisite feature gates went live on mainnet in July; the consensus change itself reaches devnet in Agave 4.3.

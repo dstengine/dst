@@ -2,6 +2,41 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "what-a-dubai-visit-visa-asks-of-the-person-sponsoring-it",
+    site: "visas",
+    image: "/covers/what-a-dubai-visit-visa-asks-of-the-person-sponsoring-it.jpg",
+    imageAlt: "Three tobacco-brown paper cards of increasing height standing on a sand ground, each with a small cream band across it",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "What a Dubai visit visa asks of the person sponsoring it",
+    cardTitle: "Sponsoring a visitor: the salary floors",
+    titleSeo: "Dubai visit visa: sponsor salary rules",
+    summary:
+      "GDRFA Dubai has set out what a resident must earn to bring someone over: Dh4,000 for a parent or child, Dh8,000 for a sibling, Dh15,000 for a friend.",
+    date: "2026-09-07",
+    category: "Visit visas",
+    source: {
+      name: "GDRFA Dubai, as summarised by KPMG",
+      url: "https://kpmg.com/xx/en/our-insights/gms-flash-alert/2026/flash-alert-2026-210.html",
+      verifiedOn: "2026-09-07",
+    },
+    body: [
+      "The question a resident actually asks is never «can my mother visit». It is «what do I have to prove», and until this summer the answer depended on which Amer centre you walked into.",
+      "## Three salary floors",
+      "The <strong>General Directorate of Residency and Foreigners Affairs</strong> in Dubai set them out by closeness of relation. A <strong>first-degree relative</strong> — parent, spouse, child — needs a sponsor earning at least <strong>Dh4,000 a month</strong>. A <strong>second- or third-degree relative</strong> — sibling, grandparent, cousin — needs <strong>Dh8,000</strong>. A <strong>friend</strong> needs <strong>Dh15,000</strong>.",
+      "## What the visa itself can be",
+      "Single-entry or multiple-entry, valid for <strong>30, 60 or 90 days</strong>, with total stays of up to <strong>120 days a year</strong>. Single-entry visas run <strong>Dh200 to Dh400</strong> and multiple-entry <strong>Dh300 to Dh700</strong>, before the refundable deposit — Dh1,000 or Dh2,000 — VAT, medical insurance and service charges.",
+      "## The documents",
+      "The sponsor's Emirates ID and passport copy; the visitor's passport with at least six months left and a photograph; proof of income, as a salary certificate, labour contract or business documents; proof of where the visitor will stay; and an attested certificate for the relationship where one is claimed.",
+      "## The line that catches people out",
+      "The relationship has to be documented, not asserted. A cousin at the Dh8,000 tier and a friend at Dh15,000 are the same person to the counter unless the paperwork says otherwise — and attestation is the step that takes weeks, not the application.",
+    ],
+    expertise:
+      "The deposit is the part worth planning around, because it is not a fee: it is money held against the visitor leaving on time, and it comes back only after departure is recorded. Two visitors on multiple-entry visas can therefore tie up Dh4,000 for months, which matters more to a household budget than the visa price everyone compares. The 120-day annual ceiling is the other quiet constraint — it is cumulative across visas, so a parent who came for 90 days in spring cannot take another 90 in autumn, and the second application is refused on a total nobody was tracking. Count the days already spent before choosing the validity, not after.",
+  },
+
+  {
     slug: "dubai-issued-66078-golden-visas-in-six-months",
     site: "visas",
     image: "/covers/dubai-issued-66078-golden-visas-in-six-months.jpg",

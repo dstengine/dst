@@ -2,6 +2,41 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "albertina-zeigt-picasso-und-bacon-ab-18-september",
+    site: "vien",
+    image: "/covers/albertina-zeigt-picasso-und-bacon-ab-18-september.jpg",
+    imageAlt: "Zwei ausgeschnittene Papierfiguren aus vermillionrotem und moosgrünem Papier, einander zugewandt, auf cremefarbenem Grund",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Die Albertina stellt Picasso und Bacon einander gegenüber — ab 18. September",
+    cardTitle: "Picasso – Bacon in der Albertina",
+    titleSeo: "Albertina: Picasso – Bacon ab 18. September",
+    summary:
+      "Rund 70 Hauptwerke aus internationalen Sammlungen, von 18. September bis 31. Jänner 2027: zwei Maler, die den menschlichen Körper neu erfunden haben.",
+    date: "2026-09-07",
+    category: "Museen",
+    source: {
+      name: "Albertina",
+      url: "https://www.albertina.at/ausstellungen/picasso-bacon/",
+      verifiedOn: "2026-09-07",
+    },
+    body: [
+      "Der eine hat den anderen ein Leben lang beobachtet. Umgekehrt ist das nie passiert — und genau diese Einseitigkeit ist der Ausgangspunkt der Ausstellung.",
+      "## Termine",
+      "<strong>18. September 2026</strong> bis <strong>31. Jänner 2027</strong> in der <strong>Albertina</strong>. Es ist die große Herbstausstellung des Hauses.",
+      "## Was zu sehen ist",
+      "Rund <strong>70 Hauptwerke</strong> aus internationalen Museen und Privatsammlungen — von <strong>Chicago</strong> über <strong>Mexiko-Stadt</strong> bis <strong>London</strong>, <strong>Paris</strong> und <strong>Stockholm</strong>. Gezeigt wird, wie <strong>Pablo Picasso</strong> und <strong>Francis Bacon</strong> den menschlichen Körper radikal neu erfunden haben.",
+      "## Das Verhältnis der beiden",
+      "Picasso war für Bacon ein Maßstab, an dem er sich zeitlebens gemessen hat. Picasso selbst wurde von Bacon nie beeinflusst, hat dessen Laufbahn aber verfolgt. Die Ausstellung nennt das eine Gegenüberstellung, keinen Dialog — und das ist der ehrlichere Begriff.",
+      "## Warum das kein Doppelporträt ist",
+      "Zwei Namen auf einem Plakat heißen meist: zwei Hälften, nacheinander. Hier geht es um das, was in der Generationenfolge weitergegeben wird, und das ist nur im direkten Nebeneinander zu sehen.",
+    ],
+    expertise:
+      "Rund 70 Werke sind für eine Albertina-Herbstausstellung eine mittlere Größe, und das ist bei Leihgaben dieser Klasse ein gutes Zeichen: Hauptwerke von Bacon reisen selten, und jede zusätzliche Leihgabe verlängert die Verhandlungen um Monate. Für den Besuch heißt es praktisch, dass zwei Stunden reichen und dass sich der Andrang auf die ersten Wochen und auf die letzten zehn Tage verteilt — der ruhigste Zeitraum liegt erfahrungsgemäß in der zweiten Novemberhälfte. Wer die Gegenüberstellung wirklich sehen will, sollte nicht chronologisch durchgehen, sondern die Räume zweimal ablaufen: beim zweiten Mal in umgekehrter Richtung, weil Bacons Bezüge auf Picasso dann in der Reihenfolge stehen, in der sie entstanden sind.",
+  },
+
+  {
     slug: "openai-stuft-neues-modell-als-kritisch-fuer-cybersicherheit-ein",
     site: "vien",
     image: "/covers/openai-stuft-neues-modell-als-kritisch-fuer-cybersicherheit-ein.jpg",

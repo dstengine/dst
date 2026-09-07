@@ -5,6 +5,41 @@ import type { NewsItem } from "../types.ts";
 // anyone outside the company, and advertising it reads badly to a client.
 export const items: NewsItem[] = [
   {
+    slug: "dubai-property-passes-half-a-trillion-in-eight-months",
+    site: "dst",
+    image: "/covers/dubai-property-passes-half-a-trillion-in-eight-months.jpg",
+    imageAlt: "A tall stack of thin paper bars on a slate ground, the topmost bar shorter than the one below it, a single brass rule drawn across the stack",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Dubai property passed half a trillion dirhams before September began",
+    cardTitle: "Half a trillion in eight months",
+    titleSeo: "Dubai property: Dh523bn in eight months",
+    summary:
+      "January to August closed at Dh523.44 billion across 148,564 transactions. August alone was Dh46.22 billion — and sales were barely more than half of it.",
+    date: "2026-09-07",
+    category: "Real estate",
+    source: {
+      name: "Voice of Emirates",
+      url: "https://www.voiceofemirates.com/en/business/business-reports/2026/09/01/sales-recorded-349-83-billion-dirhams-aed-523-44-billion-in-dubai-real-estate-transactions-in-8-months/",
+      verifiedOn: "2026-09-07",
+    },
+    body: [
+      "The headline number is the one nobody can hold in their head, so start with the one you can: in August, Dubai registered a property transaction roughly every three minutes of the working month.",
+      "## The eight months",
+      "From January to the end of August the emirate recorded <strong>Dh523.44 billion</strong> across <strong>148,564 transactions</strong>. Sales were <strong>Dh349.83 billion</strong> over 112,020 of them; mortgages <strong>Dh134.34 billion</strong> over 30,645; gifts <strong>Dh39.27 billion</strong> over 5,899.",
+      "## August on its own",
+      "<strong>Dh46.22 billion</strong> across <strong>15,960 transactions</strong>. Sales accounted for <strong>Dh27.89 billion</strong> and 11,600 of them — 10,124 residential units, 684 buildings, 793 plots of land. Mortgages added Dh14.36 billion, gifts Dh3.97 billion.",
+      "## The number that is not about buying",
+      "A third of the eight-month value is not a sale at all. <strong>Dh134.34 billion of mortgages</strong> is money moving against property that already has an owner, and <strong>Dh39.27 billion of gifts</strong> is property changing hands inside families without a price. Read only the sales line and you have described two thirds of the market.",
+      "## What it does not say",
+      "None of this is a price. Value and count together give an average, and an average across villas on the Palm and studios in Jumeirah Village Circle describes nothing anyone can buy. The figure that moves a decision is the price per square foot in one tower, and that is not in this release.",
+    ],
+    expertise:
+      "The mortgage share is the line worth watching month to month, because it is the one that responds to something other than sentiment. Sales volume can be pushed by a launch calendar — a developer opening a tower moves thousands of transactions in a week — but mortgage value tracks what banks will lend against, and banks re-underwrite continuously. When mortgage value grows faster than sales value, the existing stock is being revalued upward; when it lags, new supply is carrying the market on payment plans rather than on credit. Eight months in, the two are moving close enough together that neither is telling a story the other contradicts.",
+  },
+
+  {
     slug: "openai-ships-gpt-6-astra",
     site: "dst",
     image: "/covers/openai-ships-gpt-6-astra.jpg",

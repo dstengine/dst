@@ -2,6 +2,41 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "marks-and-spencer-is-doing-a-london-fashion-week-show",
+    site: "ldn",
+    image: "/covers/marks-and-spencer-is-doing-a-london-fashion-week-show.jpg",
+    imageAlt: "A long charcoal paper strip laid across a warm off-white ground with small red paper figures spaced along it",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Marks & Spencer is doing a runway show at London Fashion Week",
+    cardTitle: "M&S joins London Fashion Week",
+    titleSeo: "London Fashion Week: 17-21 September",
+    summary:
+      "London Fashion Week runs 17 to 21 September, with M&S making its debut on the schedule, Mulberry's first collection under Christopher Kane and McQueen's London return.",
+    date: "2026-09-07",
+    category: "Fashion",
+    source: {
+      name: "British Fashion Council",
+      url: "https://www.britishfashioncouncil.co.uk/BFCNEWS/5094/THE-BRITISH-FASHION-COUNCIL-ANNOUNCES-PROVISIONAL-SCHEDULE-FOR-LONDON-FASHION-WEEK-SEPTEMBER-2026",
+      verifiedOn: "2026-09-07",
+    },
+    body: [
+      "A high street chain that sells more knickers than anyone in Britain is showing on the same schedule as Erdem. Whatever else London Fashion Week is doing this season, it is not pretending to be exclusive.",
+      "## The dates",
+      "<strong>Thursday 17</strong> to <strong>Monday 21 September</strong>, on the <strong>British Fashion Council</strong>'s provisional schedule.",
+      "## The debuts",
+      "<strong>Marks & Spencer</strong> shows for the first time — a see-now-buy-now collection of womenswear and menswear, in the retailer's centenary year in fashion. <strong>Mulberry</strong> presents <strong>Christopher Kane</strong>'s first collection for the house. <strong>McQueen</strong> returns with <strong>Seán McGirr</strong>'s London debut, showing men's and womenswear together.",
+      "## Who else is on it",
+      "<strong>Burberry</strong>, <strong>Barbour</strong>, <strong>Erdem</strong>, <strong>Simone Rocha</strong>, <strong>Richard Quinn</strong>, <strong>Roksanda</strong>, <strong>Emilia Wickstead</strong> and <strong>Harris Reed</strong>, alongside Aaron Esh, Ashley Williams, Chopova Lowena, KNWLS and Paolo Carzana.",
+      "## The one that is not a show",
+      "<strong>H&M</strong> is doing something else entirely — a reworking of the fashion show format with photographer <strong>Nick Knight</strong> and <strong>SHOWstudio</strong>.",
+    ],
+    expertise:
+      "See-now-buy-now is the detail that tells you what M&S is actually attempting. A conventional runway sells to buyers for delivery six months out, which is a trade event that happens to have an audience; see-now-buy-now sells to the person watching, that evening, which turns the show into a shopfront. Very few houses can do it, because it requires the stock to already exist in volume — and a retailer with a hundred years of supply chain is precisely the sort of business that can. For anyone hoping to see any of this in person: the shows themselves are invitation-only, but the schedule reliably grows a public tier of talks, installations and store events during the week, and those are announced late rather than in the provisional schedule.",
+  },
+
+  {
     slug: "self-driving-taxis-on-uber-in-london",
     site: "ldn",
     image: "/covers/self-driving-taxis-on-uber-in-london.jpg",

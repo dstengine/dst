@@ -2,6 +2,41 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "alpenglow-now-has-dates-and-the-first-one-is-a-stake-percentage",
+    site: "sol2go",
+    image: "/covers/alpenglow-now-has-dates-and-the-first-one-is-a-stake-percentage.jpg",
+    imageAlt: "Four lilac paper bars of increasing height on a deep violet ground, the tallest one topped with a small pale mint square",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Alpenglow finally has dates, and the first one is a stake percentage",
+    cardTitle: "Alpenglow: the rollout calendar",
+    titleSeo: "Alpenglow rollout: the Agave 4.3 dates",
+    summary:
+      "Anza's release schedule puts 10 per cent of stake on Agave 4.3 by 8 September, 25 per cent by 14 September, general adoption by 21 September and feature activation from 28 September.",
+    date: "2026-09-07",
+    category: "Upgrades",
+    source: {
+      name: "Anza, via Solana Compass",
+      url: "https://solanacompass.com/news/anza-publishes-agave-43-release-schedule-alpenglow-consensus-targets-september-28-mainnet-activation",
+      verifiedOn: "2026-09-07",
+    },
+    body: [
+      "A consensus change does not ship on a date. It ships on a percentage, and the date is only when someone decides the percentage is high enough.",
+      "## The schedule",
+      "<strong>Anza</strong> has published the rollout for <strong>Agave 4.3</strong>: <strong>10 per cent</strong> of stake by <strong>8 September</strong>, <strong>25 per cent</strong> by <strong>14 September</strong>, general adoption recommended by <strong>21 September</strong>, and feature activation beginning <strong>28 September</strong>.",
+      "## Why the week of silence in the middle matters",
+      "The network runs 4.3 widely for a week before anything in it switches on. That week is the whole safety argument: if the release is going to misbehave under real load, it does so while the old consensus is still the one deciding what is final.",
+      "## What activates",
+      "<strong>Alpenglow</strong> replaces <strong>Tower BFT</strong> as the voting protocol and keeps <strong>Proof of History</strong> as the ordering mechanism. <strong>Votor</strong> finalises in two rounds, and on the fast path — <strong>80 per cent</strong> of stake agreeing — a block is final in roughly <strong>150 milliseconds</strong>.",
+      "## The date is a start, not a finish",
+      "<strong>28 September</strong> is when feature activation <em>begins</em>. Completion across the network is expected to run into October, which is why the same upgrade is honestly described with two different months.",
+    ],
+    expertise:
+      "The number to watch through September is not the calendar, it is the stake curve against it — 10, 25 and general are targets, and a validator set that lags them is the signal that something in the release is unpleasant to run rather than that operators are slow. Alpenglow's fast path needs 80 per cent of stake voting in agreement, so a rollout that stalls at, say, 70 per cent does not fail; it simply falls back to the slower path and the 150-millisecond figure quietly stops applying. That is the failure mode to expect if anything goes wrong: not an outage, but a network that has activated the upgrade and is not getting the headline number from it.",
+  },
+
+  {
     slug: "rent-came-down-and-every-account-is-now-over-funded",
     site: "sol2go",
     image: "/covers/rent-came-down-and-every-account-is-now-over-funded.jpg",

@@ -2,6 +2,41 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "eleven-design-districts-and-not-one-of-them-is-a-venue",
+    site: "lnd",
+    image: "/covers/eleven-design-districts-and-not-one-of-them-is-a-venue.jpg",
+    imageAlt: "Eleven pale blue paper squares of varying sizes scattered across a deep navy ground, one of them chalk white",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "The London Design Festival has eleven districts, and not one of them is a building",
+    cardTitle: "Eleven design districts, no venue",
+    titleSeo: "London Design Festival: 12-20 September",
+    summary:
+      "The 24th festival runs 12 to 20 September across eleven neighbourhood districts, from Walthamstow to Park Royal, with landmark installations including one inside St Paul's.",
+    date: "2026-09-07",
+    category: "Architecture",
+    source: {
+      name: "London Design Festival",
+      url: "https://www.londondesignfestival.com/",
+      verifiedOn: "2026-09-07",
+    },
+    body: [
+      "Most festivals ask where the venue is. This one has spent twenty-four years answering: everywhere, and you will need a bus.",
+      "## The dates",
+      "<strong>12 to 20 September</strong>, the <strong>24th edition</strong>.",
+      "## The eleven districts",
+      "<strong>Bankside</strong>, <strong>Brompton</strong>, <strong>Blackhorse Creates</strong> in Walthamstow, <strong>Chelsea</strong>, <strong>Dalston to Stokey</strong>, <strong>EC1</strong> in Clerkenwell, <strong>Fleet Street Quarter</strong>, <strong>Mayfair</strong>, <strong>Park Royal</strong>, <strong>Shoreditch Design Week</strong> and <strong>Soho</strong>. Six boroughs and the City between them, and two of the eleven — Blackhorse Creates and Park Royal — sit in places most visitors have no other reason to go.",
+      "## The landmark projects",
+      "<strong>The Point of Unity and Soul</strong>, light and media art inside <strong>St Paul's Cathedral</strong>; <strong>The Art of Sound</strong> from <strong>Max Cooper</strong> and <strong>Chris Watson</strong> with L-Acoustics; and <strong>The Speaking Oasis</strong>, on palm weaving in architecture.",
+      "## What it costs",
+      "Much of the district programme is open and free; the <strong>Global Design Forum</strong> has free tickets. Individual exhibitions set their own terms, and the festival does not sell one pass for the lot.",
+    ],
+    expertise:
+      "One district a day is the way to do this, and the choice of district matters more than the choice of exhibit. Clerkenwell and Shoreditch are dense enough that wandering works — the shows are a few minutes apart and half of them are in showrooms that are open anyway. Park Royal and Blackhorse Creates are the opposite: they are industrial estates with studios in them, the walk between stops is long, and going without a plan is how an afternoon becomes a bus journey. If you have one evening rather than a week, take St Paul's: a light installation in a Wren interior is the sort of thing that is only possible for nine days, and unlike a showroom it does not depend on getting there before six.",
+  },
+
+  {
     slug: "the-monument-may-finally-get-a-visitor-centre",
     site: "lnd",
     image: "/covers/the-monument-may-finally-get-a-visitor-centre.jpg",

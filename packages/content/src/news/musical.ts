@@ -7,6 +7,41 @@ import type { NewsItem } from "../types.ts";
 // of the site: a claim appears here when a named source has published it.
 export const items: NewsItem[] = [
   {
+    slug: "broadway-has-four-new-musicals-this-autumn",
+    site: "musical",
+    image: "/covers/broadway-has-four-new-musicals-this-autumn.jpg",
+    imageAlt: "Four crimson paper rectangles of different heights standing in a row on a cream ground, a thin burgundy band beneath them",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Broadway has four new musicals this autumn, and one of them is sixty-six years late",
+    cardTitle: "Four new Broadway musicals",
+    titleSeo: "Broadway autumn 2026: four new musicals",
+    summary:
+      "Wanted, Galileo, a reimagined Fantasticks and a Dolly Parton bio-musical are the whole of the autumn's new musical slate — two originals, two that arrive with a history.",
+    date: "2026-09-07",
+    category: "Productions",
+    source: {
+      name: "Time Out New York",
+      url: "https://www.timeout.com/newyork/news/broadways-20262027-season-has-been-announcedhere-are-all-the-shows-to-get-excited-about-this-fall-090326",
+      verifiedOn: "2026-09-07",
+    },
+    body: [
+      "The longest-running musical in the world has never played Broadway. That changes in October, which tells you something about how the autumn slate was assembled.",
+      "## The four",
+      "<strong>Wanted</strong> opens at the <strong>James Earl Jones Theatre</strong> on <strong>15 October</strong>, with Solea Pfeiffer, Liisi LaFontaine, Luke James and Ledisi. <strong>Galileo</strong> casts Tony nominee <strong>Raúl Esparza</strong> as the astronomer. <strong>The Fantasticks</strong> begins previews at the <strong>Hayes Theatre</strong> on <strong>22 October</strong> and opens <strong>16 November</strong>. <strong>Dolly: A True Original Musical</strong> starts previews at the <strong>St. James</strong> on <strong>7 December</strong> and opens <strong>19 January 2027</strong>.",
+      "## The one that has been running since 1960",
+      "<strong>The Fantasticks</strong> ran off-Broadway for forty-two years and has never had a Broadway production. This one reimagines it as a gay love story, with Ruthie Ann Miles, Leslie Rodriguez Kritzer and David Patrick Kelly.",
+      "## The opening night that is a birthday",
+      "<strong>19 January 2027</strong> is <strong>Dolly Parton's 81st</strong>. Opening nights are scheduled around critics and holidays; scheduling one around the subject's birthday is a decision about what the evening is for.",
+      "## Four is the number to notice",
+      "Two originals and two revivals-by-another-name, against an autumn of new plays. A season that leans on plays is a season where producers are pricing risk carefully — musicals cost several times as much to put on and take longer to recoup.",
+    ],
+    expertise:
+      "Watch the gap between first preview and opening night, because it is the most honest signal a production gives about its own confidence. Three or four weeks is a show doing normal technical work; six or more is a show still being rewritten in front of paying audiences. On this slate The Fantasticks has about three and a half weeks, which reads as a settled production, while Dolly's six-week runway across the holidays is the standard shape for a bio-musical that wants to sell tickets through Christmas before the reviews land. If you are buying, previews are cheaper and the show is not finished; that is the trade, and on a musical with an out-of-town history it is a smaller gamble than it looks.",
+  },
+
+  {
     slug: "chicago-takes-an-arena-stage-in-dubai",
     site: "musical",
     image: "/covers/chicago-takes-an-arena-stage-in-dubai.jpg",

@@ -2,6 +2,41 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "exempt-from-the-tax-still-means-a-filing-on-30-september",
+    site: "llc",
+    image: "/covers/exempt-from-the-tax-still-means-a-filing-on-30-september.jpg",
+    imageAlt: "A jade paper form with an empty tick box, a second identical form behind it turned slightly, on a deep teal ground",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Exempt from the tax still means a filing on 30 September",
+    cardTitle: "Exempt, and still filing",
+    titleSeo: "Corporate tax: exempt still file",
+    summary:
+      "The FTA's September reminder covers a group that assumes it is out of scope: registered exempt persons owe an annual declaration on the same nine-month clock.",
+    date: "2026-09-07",
+    category: "Tax",
+    source: {
+      name: "Federal Tax Authority",
+      url: "https://tax.gov.ae/en/media.centre/news.aspx",
+      verifiedOn: "2026-09-07",
+    },
+    body: [
+      "There is a category of company in the UAE that owes no corporate tax and still owes the Federal Tax Authority a document. It is the category most likely to miss the date, because everything it has been told about itself uses the word exempt.",
+      "## The rule",
+      "A taxable person files a return and pays within <strong>nine months</strong> of the end of its tax period. For a financial year that ended <strong>31 December 2025</strong>, that is <strong>30 September 2026</strong>. An <strong>exempt person that is required to register</strong> submits an <strong>annual declaration</strong> to the FTA on the same nine-month clock.",
+      "## Who this catches",
+      "Registration and exemption are separate questions. A qualifying public benefit entity, a qualifying investment fund, a pension or social security fund — the exemption removes the liability, not the paperwork, and the declaration is how the Authority confirms the conditions still hold.",
+      "## Small Business Relief is not an exit either",
+      "The Authority made the same point about relief in early September: electing <strong>Small Business Relief</strong> gives a simplified return, not the absence of one. Two different reliefs, one shared misunderstanding.",
+      "## Where it is done",
+      "Registration, returns, declarations and payment all run through <strong>EmaraTax</strong>, either directly or through an approved tax agent. The deadline applies whether or not tax is owed, and the Authority does not extend it.",
+    ],
+    expertise:
+      "The practical trap is that exemption is usually granted at a moment when nobody is thinking about a filing calendar — at formation, or when a fund is structured — and the obligation then sits with whoever inherits the entity's admin two years later. Treat the annual declaration as the price of keeping the status rather than as a tax matter, and diarise it against the financial year end rather than against September: a fund with a 30 June year end owes its declaration in March, and the September noise will not remind it. The other thing worth checking now is whether the entity is registered at all. Exemption without registration is a different failure, and it is the more expensive one.",
+  },
+
+  {
     slug: "free-zone-distributors-need-a-second-auditors-report",
     site: "llc",
     image: "/covers/free-zone-distributors-need-a-second-auditors-report.jpg",

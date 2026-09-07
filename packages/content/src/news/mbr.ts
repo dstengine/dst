@@ -2,6 +2,41 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "the-blue-line-is-a-quarter-built",
+    site: "mbr",
+    image: "/covers/the-blue-line-is-a-quarter-built.jpg",
+    imageAlt: "A pale aqua paper bar on a deep teal ground, filled a quarter of the way along with chalk white, a small sand marker above the fill",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "The Blue Line is a quarter built, three years before it carries anyone",
+    cardTitle: "Blue Line reaches 26 per cent",
+    titleSeo: "Dubai Metro Blue Line hits 26 per cent",
+    summary:
+      "Construction on the Dubai Metro's Blue Line stands at 26 per cent in early September, against a target of 30 per cent by the end of the year and an opening set for 9 September 2029.",
+    date: "2026-09-07",
+    category: "Transport",
+    source: {
+      name: "RaillyNews, reporting the RTA",
+      url: "https://raillynews.com/2026/09/progress-update-on-dubai-metro-blue-line-project-26-completion-achieved/",
+      verifiedOn: "2026-09-07",
+    },
+    body: [
+      "A metro line is measured in per cent for years before it is measured in minutes, and the per cent is the only thing a resident can actually check against a promise.",
+      "## Where it stands",
+      "The <strong>Blue Line</strong> is <strong>26 per cent</strong> complete in early September. It was <strong>20 per cent</strong> in May, and the <strong>RTA</strong> is aiming at <strong>30 per cent by the end of 2026</strong>.",
+      "## The date at the end of it",
+      "<strong>9 September 2029</strong>. Dubai opens metro lines on the ninth of the ninth, and has done since the Red Line in 2009 — a habit that makes the target unusually easy to hold anyone to.",
+      "## What it means from here",
+      "The Blue Line does not run through Mohammed bin Rashid City. Its value to this district is indirect: it takes load off the Red and Green lines at the interchanges, and it puts Dubai Creek Harbour, International City and Academic City on the network for people who currently drive across town to reach them.",
+      "## The line that will matter here",
+      "That is the <strong>Gold Line</strong>, and it is a separate project with a separate date. Its planned interchange with the national rail network sits at <strong>Meydan</strong> — the first time this district would have a station that is not a road.",
+    ],
+    expertise:
+      "Six percentage points in four months is a civil-works rate, not a systems rate, and the two behave completely differently: tunnelling and viaduct construction progress steadily and predictably, while the last quarter of any metro project is signalling, testing and trial running, which is where schedules slip. So 26 per cent in 2026 tells you the alignment is being built roughly to plan; it says nothing yet about 2029. The number that would genuinely de-risk the date is the systems contract award and the start of dynamic testing, usually two years out. For anyone here making a property decision on the strength of a future station, the Gold Line at Meydan is the relevant line and it is at an earlier stage than this one — approval is not construction.",
+  },
+
+  {
     slug: "the-blue-line-finished-its-first-tunnel-in-two-months",
     site: "mbr",
     image: "/covers/the-blue-line-finished-its-first-tunnel-in-two-months.jpg",

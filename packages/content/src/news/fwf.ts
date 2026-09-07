@@ -11,6 +11,41 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "four-million-driverless-kilometres-and-a-satisfaction-score",
+    site: "fwf",
+    image: "/covers/four-million-driverless-kilometres-and-a-satisfaction-score.jpg",
+    imageAlt: "A long periwinkle paper ribbon looping across a deep indigo ground, a small lilac square riding on it",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Dubai's robotaxis have driven four million kilometres, and the number that matters is the other one",
+    cardTitle: "Four million driverless kilometres",
+    titleSeo: "Dubai robotaxis pass four million kilometres",
+    summary:
+      "The RTA puts the programme past four million kilometres with 97 per cent customer satisfaction — a pairing that says more about the service than either figure alone.",
+    date: "2026-09-07",
+    category: "Mobility",
+    source: {
+      name: "Dubai Media Office",
+      url: "https://www.mediaoffice.ae/en/news/2026/august/19-08/dubai-accelerates-autonomous-mobility-as-robotaxi-hits-4-million-km",
+      verifiedOn: "2026-09-07",
+    },
+    body: [
+      "Every autonomous vehicle programme in the world publishes a distance. Almost none of them publishes what the passengers thought, which is the half that decides whether the distance ever becomes a business.",
+      "## The two figures",
+      "Dubai's robotaxi programme has passed <strong>four million kilometres</strong>, across thousands of customer journeys, with customer satisfaction reported at <strong>97 per cent</strong>.",
+      "## Why the pairing is the story",
+      "Distance is a test statistic: it says the software has seen enough situations to be worth arguing about. Satisfaction is a service statistic: it says people who could have taken a normal taxi did not regret the choice. A programme with the first and not the second is still a pilot, whatever it charges.",
+      "## The target the figures are pointed at",
+      "The emirate's stated goal is <strong>25 per cent of daily trips autonomous by 2030</strong>. That is not a fleet size; it is a share of a growing total, which means the denominator is moving too.",
+      "## What four million is, in city terms",
+      "Roughly a hundred laps of the planet, driven inside one urban road network, with its roundabouts, its unsignalled U-turns and its August heat. The value is not the total. It is that the same few junctions have now been driven thousands of times each.",
+    ],
+    expertise:
+      "Treat a satisfaction score on an autonomous service as a measure of the ride, not of the driving — passengers rate pickup accuracy, cabin cleanliness and whether the car braked in a way that felt considered, and those are the things an operator can tune fastest. The figure to watch next is disengagement or remote-assistance rate per thousand kilometres, which nobody in the region publishes yet and which is the one that would let this fleet be compared with Phoenix or San Francisco. Until it appears, four million kilometres is best read as a statement about operating hours and coverage rather than about capability: a fleet running a small, well-mapped zone accumulates distance quickly, and the hard kilometres are the ones outside it.",
+  },
+
+  {
     slug: "the-train-reaches-dubai-on-30-september",
     site: "fwf",
     image: "/covers/the-train-reaches-dubai-on-30-september.jpg",

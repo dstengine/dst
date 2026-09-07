@@ -2,6 +2,41 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "fifty-buffalo-are-walking-through-two-boroughs",
+    site: "nyc42",
+    image: "/covers/fifty-buffalo-are-walking-through-two-boroughs.jpg",
+    imageAlt: "A row of amber paper animal silhouettes of the same shape and different sizes moving across a deep charcoal brown ground",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Fifty life-size buffalo are walking through Lower Manhattan and Downtown Brooklyn",
+    cardTitle: "Fifty buffalo, two boroughs",
+    titleSeo: "Return of the Buffalo: free, 18-19 September",
+    summary:
+      "Return of the Buffalo: Tatanka Owe Akupi brings a herd of fifty puppets through Lower Manhattan on 18 September and Downtown Brooklyn on 19 September. It is free.",
+    date: "2026-09-07",
+    category: "Free",
+    source: {
+      name: "NYC Tourism + Conventions",
+      url: "https://www.nyctourism.com/events/return-of-the-buffalo/",
+      verifiedOn: "2026-09-07",
+    },
+    body: [
+      "The puppets are the size of the animal. That is the whole idea, and it is the reason this cannot be watched from a phone screen.",
+      "## Two afternoons, two boroughs",
+      "A herd of <strong>fifty life-size buffalo puppets</strong> moves through <strong>Lower Manhattan on 18 September</strong> and <strong>Downtown Brooklyn on 19 September</strong>, presented with <strong>St. Ann's Warehouse</strong>. Live music, poetry, ceremony and performance travel with it.",
+      "## Who carries them",
+      "Around <strong>150 New Yorkers</strong> operate the puppets along the route, accompanied by marching bands, gospel choirs and dancers at stops along the way.",
+      "## What they are made of",
+      "Plywood, metal and burlap — recycled and recyclable — built by the Cape Town collective <strong>Ukwanda Puppets</strong> under puppetry director <strong>Craig Leo</strong>. The piece is by playwright <strong>Amir Nizar Zuabi</strong>, made with Elders from Lenape and Lakota communities.",
+      "## How to see it properly",
+      "It is a procession, not a stage show: there is no seat and no ticket. Stand somewhere the herd has to funnel — a narrow crossing, a park entrance — rather than on an open plaza where fifty animals spread out and stop looking like a herd.",
+    ],
+    expertise:
+      "Free processions are governed by the width of the street, and both routes run through the two densest pedestrian grids in the city on a Friday evening and a Saturday afternoon. The practical advice is to pick a point roughly two thirds along rather than at the start: the front of a route is where the crowd that arrived early is standing, and the back is where the puppets have loosened into single file. Bring nothing you cannot carry for two hours, because there is nowhere to sit and the herd sets the pace. And if you want photographs of the puppets rather than of the backs of heads, the stops matter more than the marching — the performances along the way are where the herd stands still.",
+  },
+
+  {
     slug: "moma-what-closes-and-what-opens-this-autumn",
     site: "nyc42",
     image: "/covers/moma-what-closes-and-what-opens-this-autumn.jpg",

@@ -2,6 +2,41 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "festival-del-pan-dulce-en-el-monumento-a-la-revolucion",
+    site: "cmx",
+    image: "/covers/festival-del-pan-dulce-en-el-monumento-a-la-revolucion.jpg",
+    imageAlt: "Círculos de papel magenta y ciruela de distintos tamaños sobre fondo crema, uno de ellos con surcos concéntricos recortados",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "El primer Festival del Pan Dulce Mexicano convierte la explanada de la Revolución en panadería",
+    cardTitle: "Festival del Pan Dulce, gratis",
+    titleSeo: "Festival del Pan Dulce: 11-13 septiembre",
+    summary:
+      "Del viernes 11 al domingo 13 de septiembre, entrada libre en la explanada del Monumento a la Revolución: conchas, orejas, cuernitos, cochinitos y campechanas.",
+    date: "2026-09-07",
+    category: "Ciudad",
+    source: {
+      name: "Chilango",
+      url: "https://www.chilango.com/que-hacer/ferias/festival-del-pan-dulce-mexicano-monumento-a-la-revolucion-cdmx-fecha-detalle/",
+      verifiedOn: "2026-09-07",
+    },
+    body: [
+      "Hay ferias que traen algo de fuera. Ésta pone en una explanada lo que la ciudad ya compra todas las mañanas, y ahí está lo interesante: obliga a mirar de cerca algo que nadie mira.",
+      "## Cuándo y dónde",
+      "<strong>Viernes 11 al domingo 13 de septiembre</strong>, en la explanada del <strong>Monumento a la Revolución</strong> (Plaza de la República s/n, colonia Tabacalera, alcaldía Cuauhtémoc). La <strong>entrada es gratuita</strong>.",
+      "## Qué se va a encontrar",
+      "<strong>Conchas</strong>, <strong>orejas</strong>, <strong>cuernitos</strong>, donas, hot cakes, <strong>cubiletes</strong>, chilindrinas, ojos de buey, banderillas, <strong>cochinitos</strong>, <strong>campechanas</strong> y besos. Es la primera edición.",
+      "## Cómo llegar",
+      "<strong>Metro Revolución</strong>, línea 2, y <strong>Metrobús Plaza de la República</strong>, línea 1. Las dos dejan a pie de explanada, que es exactamente el tipo de sede que no conviene alcanzar en coche un sábado.",
+      "## La parte que no está en el cartel",
+      "Un festival de pan es un festival de horarios: lo recién salido se acaba, y lo que queda a las seis de la tarde no es lo mismo que se sacó a las once de la mañana. La hora decide más que el puesto.",
+    ],
+    expertise:
+      "La explanada del Monumento a la Revolución es una plancha de cantera sin un solo árbol, y septiembre es el mes más lluvioso del año en la ciudad — la combinación significa sol directo hasta que cae el agua y ningún sitio donde guarecerse cuando cae. El plan sensato es ir temprano el viernes, que es cuando hay pan recién hecho y todavía no hay la cola del fin de semana, y llevar efectivo: en ferias de este tamaño la terminal de un puesto pequeño depende de una señal que se satura con la gente. Y si el objetivo es probar mucho, conviene repartirse: una pieza por puesto entre varias personas rinde el triple que una bolsa comprada en el primero.",
+  },
+
+  {
     slug: "el-grito-de-miguel-hidalgo-con-paty-cantu",
     site: "cmx",
     image: "/covers/el-grito-de-miguel-hidalgo-con-paty-cantu.jpg",

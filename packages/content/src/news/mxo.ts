@@ -2,6 +2,41 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "la-feria-de-francisco-i-madero-abre-el-11-de-septiembre",
+    site: "mxo",
+    image: "/covers/la-feria-de-francisco-i-madero-abre-el-11-de-septiembre.jpg",
+    imageAlt: "Banderines de papel terracota y crema colgados en dos hileras sobre fondo verde bosque, uno de ellos girado de canto",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "La Feria de Francisco I. Madero abre el 11 de septiembre y cierra con el Grito adentro",
+    cardTitle: "Feria Madero, del 11 al 19",
+    titleSeo: "Feria Madero Coahuila: 11 al 19 de septiembre",
+    summary:
+      "Nueve días en Francisco I. Madero, Coahuila, con bailes, artesanía y gastronomía regional — y las fiestas patrias cayendo dentro del programa, no al lado de él.",
+    date: "2026-09-07",
+    category: "Ferias",
+    source: {
+      name: "Ferias en México",
+      url: "https://www.feriasenmexico.com.mx/feria-madero-coahuila-2026/",
+      verifiedOn: "2026-09-07",
+    },
+    body: [
+      "Casi todas las ferias del país compiten con el 15 de septiembre. Ésta hizo lo contrario: se lo metió dentro.",
+      "## Las fechas",
+      "<strong>Del 11 al 19 de septiembre</strong>, en <strong>Francisco I. Madero</strong>, Coahuila, en el marco del aniversario de la fundación del poblado.",
+      "## El programa",
+      "<strong>Bailes masivos</strong>, exposiciones <strong>artesanales</strong> y de <strong>gastronomía típica</strong> de la región, presentaciones artísticas y musicales, concursos culturales, <strong>danzas folclóricas</strong> y juegos mecánicos.",
+      "## Lo que cae en medio",
+      "Como la feria cruza el <strong>15 y 16 de septiembre</strong>, el programa incluye los actos cívicos: honores a la bandera, el <strong>Grito de Independencia</strong> y espectáculos de pirotecnia. No son un añadido de última hora; están en el calendario de la feria.",
+      "## Por qué eso cambia la feria",
+      "Una feria de nueve días que contiene la noche del Grito no tiene un día fuerte: tiene dos temporadas. Los primeros días son de exposición y de familia; a partir del 14 la sede se convierte en la plaza del pueblo el día más concurrido del año.",
+    ],
+    expertise:
+      "La Comarca Lagunera en septiembre es de días de más de treinta grados y noches que bajan de golpe, y una feria al aire libre de nueve días se vive de noche por esa razón — el programa artesanal y gastronómico funciona por la tarde, y los bailes cuando ya se puede estar de pie. Para quien viaje de fuera, la decisión relevante es la fecha, no el día de la semana: hospedarse en Francisco I. Madero la noche del 15 es otro mercado que hospedarse el 12, y Torreón, a menos de una hora, absorbe esa diferencia. Y conviene revisar el programa cívico por separado del artístico: los horarios de los actos oficiales se publican tarde y mueven todo lo demás de la noche.",
+  },
+
+  {
     slug: "gpt-6-astra-saturo-tres-examenes",
     site: "mxo",
     image: "/covers/gpt-6-astra-saturo-tres-examenes.jpg",

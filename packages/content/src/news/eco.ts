@@ -2,6 +2,41 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "the-sixth-phase-finishes-this-quarter-and-the-park-passes-4000mw",
+    site: "eco",
+    image: "/covers/the-sixth-phase-finishes-this-quarter-and-the-park-passes-4000mw.jpg",
+    imageAlt: "Rows of sage paper rectangles tilted at the same angle across a forest green ground, the last row a shade paler than the rest",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "The last 800MW of the solar park's sixth phase is due this quarter",
+    cardTitle: "800MW left in phase six",
+    titleSeo: "MBR Solar Park: 800MW due in Q4 2026",
+    summary:
+      "DEWA puts the Mohammed bin Rashid Al Maktoum Solar Park at 3,860MW today, with the remaining 800MW of phase six scheduled to be commissioned by the end of the year.",
+    date: "2026-09-07",
+    category: "Energy",
+    source: {
+      name: "Gulf Business, reporting DEWA",
+      url: "https://gulfbusiness.com/en/2026/utilities/dewa-accelerates-clean-energy-transition/",
+      verifiedOn: "2026-09-07",
+    },
+    body: [
+      "A solar park is one of the few large things that can be described honestly by a single number, because the number is what it produces rather than what it cost.",
+      "## Where the park stands",
+      "The <strong>Mohammed bin Rashid Al Maktoum Solar Park</strong> is at <strong>3,860MW</strong>. The remaining <strong>800MW</strong> of its sixth phase is scheduled to be commissioned by the <strong>fourth quarter of 2026</strong>, and the park is expected to pass <strong>8,000MW by 2030</strong>.",
+      "## What that is as a share",
+      "<strong>DEWA</strong> puts clean energy at more than <strong>21.5 per cent</strong> of its total production capacity. The park is the bulk of it, on a single site south of the city.",
+      "## The part that is not solar",
+      "Two projects in the same programme do something photovoltaics cannot. The <strong>250MW Hatta hydroelectric plant</strong> — the first pumped-storage scheme in the GCC — holds <strong>1,500MWh</strong> for the hours after sunset. The first phase of the <strong>Warsan green data centre</strong>, more than <strong>100MW</strong>, is due in the second half of this year.",
+      "## Why storage is the harder number",
+      "Capacity says what can be generated at noon. Storage says what is available at eight in the evening, when demand in a Gulf city is still high and the panels have stopped. A park that grows faster than its storage moves the problem rather than solving it.",
+    ],
+    expertise:
+      "Read the two figures as a ratio rather than as a pair of achievements. Nearly 4,000MW of daytime generation against 1,500MWh of pumped storage means the storage covers minutes of full output, not hours — it is there to smooth and to firm, not to carry the evening. That is a normal position for a grid at this stage, and it is why gas capacity is not being retired alongside the solar build. The number that will say the transition has changed character is not the next gigawatt on the park; it is the first battery procurement measured in gigawatt-hours rather than megawatts, which is what the seventh phase tender has been shaped to buy.",
+  },
+
+  {
     slug: "dubai-holds-its-first-environment-conference-this-week",
     site: "eco",
     image: "/covers/dubai-holds-its-first-environment-conference-this-week.jpg",

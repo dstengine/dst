@@ -2,6 +2,41 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "the-months-biggest-deal-was-a-palm-jumeirah-flat-at-79-million",
+    site: "palmcentral",
+    image: "/covers/the-months-biggest-deal-was-a-palm-jumeirah-flat-at-79-million.jpg",
+    imageAlt: "A single tall terracotta paper rectangle standing well clear of a row of shorter burnt orange ones on a sand ground",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "August's biggest Dubai deal was a Palm Jumeirah flat at Dh79 million",
+    cardTitle: "Dh79m on the Palm in August",
+    titleSeo: "Palm Jumeirah tops August: Dh79m sale",
+    summary:
+      "A unit at Orla Infinity by Omniyat led the emirate's August sales at Dh79 million, ahead of a Dh65 million home at Jumeirah Residences Asora Bay.",
+    date: "2026-09-07",
+    category: "Market",
+    source: {
+      name: "Arabian Business",
+      url: "https://www.arabianbusiness.com/real-estate/dubai-property-market-august-2026",
+      verifiedOn: "2026-09-07",
+    },
+    body: [
+      "In a month of nearly twelve thousand sales across Dubai, the largest single one was not a villa, not a plot and not a tower. It was a flat on a man-made island that was finished twenty years ago.",
+      "## The two at the top",
+      "A property at <strong>Orla Infinity by Omniyat</strong> on <strong>Palm Jumeirah</strong> sold for <strong>Dh79 million</strong>. Behind it, a <strong>725.25 sq m</strong> home at <strong>Jumeirah Residences Asora Bay</strong> went for <strong>Dh65 million</strong>.",
+      "## The month around them",
+      "Dubai recorded <strong>Dh46.22 billion</strong> in total property transactions in August, of which <strong>Dh27.89 billion</strong> was sales across <strong>11,600</strong> transactions — 10,124 units, 684 buildings and 793 plots.",
+      "## Why the older island keeps winning these",
+      "Palm Jumeirah is finished. A buyer at this level is not buying a plan, a handover date or a construction update; they are buying a beach that exists, neighbours who already live there and a road that already works. Very little else in the emirate can offer that, and none of it is on water.",
+      "## What it says for Palm Jebel Ali",
+      "Not much yet, and that is the honest answer. The second island is selling a version of the same proposition with the completed part removed, which is why its prices sit where they do and why the comparison worth making is with Palm Jumeirah in 2007 rather than with Palm Jumeirah today.",
+    ],
+    expertise:
+      "One deal is not a market, and a top-of-month sale is the least representative number published: it says what a single buyer paid for a specific view, and Orla Infinity is a small-count, high-specification building where a handful of units set the entire price record. The useful read is positional rather than numeric — the top of Dubai's market keeps landing on completed waterfront rather than on new launches, month after month. That gap between finished and off-plan is the thing to track on this island as handovers begin: the moment a Palm Jebel Ali resale trades meaningfully above its original off-plan price, the second island has started behaving like the first one, and not before.",
+  },
+
+  {
     slug: "the-airport-next-door-awards-55-billion-dirhams",
     site: "palmcentral",
     image: "/covers/the-airport-next-door-awards-55-billion-dirhams.jpg",

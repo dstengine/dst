@@ -2,6 +2,41 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "the-train-to-abu-dhabi-starts-running-on-30-september",
+    site: "riviera",
+    image: "/covers/the-train-to-abu-dhabi-starts-running-on-30-september.jpg",
+    imageAlt: "A chalk white paper line running the width of a mid-blue ground, two pale sky rectangles set on it at either end",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "From 30 September there is a train to Abu Dhabi, and it does not leave from here",
+    cardTitle: "The Abu Dhabi train opens",
+    titleSeo: "Etihad Rail reaches Dubai 30 September",
+    summary:
+      "Etihad Rail's passenger service reaches Dubai on 30 September at Al Yalayis, roughly 57 minutes from Abu Dhabi — and about 40 kilometres from Meydan.",
+    date: "2026-09-07",
+    category: "Nearby",
+    source: {
+      name: "Gulf News",
+      url: "https://gulfnews.com/living-in-uae/ask-us/uae-september-2026-new-etihad-rail-route-tax-changes-and-key-dates-to-know-1.500657564",
+      verifiedOn: "2026-09-07",
+    },
+    body: [
+      "The interesting thing about a first railway is not the journey time. It is that a city which has only ever measured distance in traffic suddenly has a number that does not change at five in the afternoon.",
+      "## What opens",
+      "On <strong>30 September</strong> the <strong>Etihad Rail</strong> passenger service extends to Dubai, linking <strong>Mohamed bin Zayed City</strong> station in Abu Dhabi with <strong>Al Yalayis</strong> station in Dubai. The scheduled journey between the two emirates is about <strong>57 minutes</strong>.",
+      "## Where Al Yalayis is from Meydan",
+      "South-west, out past Jebel Ali, roughly <strong>40 kilometres</strong> by road from Meydan — which is to say the station is not a local amenity here. Reaching it is a drive or a metro-and-taxi combination, and that leg is not 57 minutes.",
+      "## Who it is actually for",
+      "Anyone whose Abu Dhabi trip is currently a two-hour drive each way with no way to work through it. Against that, an hour on rails plus the run to Al Yalayis is still a different kind of day.",
+      "## What it does not do yet",
+      "It is one line and two stations, not a network. Nothing about the September opening connects Meydan, Business Bay or the airport to it directly; those are later phases and they have no dates attached.",
+    ],
+    expertise:
+      "For a resident on this side of Meydan the honest calculation is door to door, and it turns on where in Abu Dhabi you are going rather than on the rail time. Mohamed bin Zayed City is not the corniche: an appointment on Al Maryah Island adds a taxi at the far end that eats most of what the train saved against driving. Where the service will change behaviour first is the reverse commute — someone living in Abu Dhabi and working in Dubai South or the free zones around Jebel Ali, for whom Al Yalayis is genuinely close to the destination. Watch the second phase of stations rather than the first: the moment a station opens inside the built-up part of Dubai, the arithmetic changes for everyone here at once.",
+  },
+
+  {
     slug: "a-500-metre-bridge-opens-on-the-way-into-town",
     site: "riviera",
     image: "/covers/a-500-metre-bridge-opens-on-the-way-into-town.jpg",
