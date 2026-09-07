@@ -1,15 +1,23 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import SectionNav from "@dst/ui/SectionNav.astro";
 import ContentPage from "@dst/ui/district/ContentPage.astro";
 import NewsList from "@dst/ui/NewsList.astro";
 import { news } from "../content";
 import { newsBySite } from "@dst/content/news";
+import { eventsBySite } from "@dst/content/events";
+import { sections, NAV } from "../sections";
 
 const items = newsBySite("mbr");
+
+// The subject row. Empty until a subject earns a page, and then it
+// appears here without this file changing — see ../sections.ts.
+const sectionLinks = sections([...eventsBySite("mbr"), ...newsBySite("mbr")]);
 ---
 <Layout {...news}>
   <ContentPage {...news} />
   <section class="container">
+    <SectionNav sections={sectionLinks} {...NAV} />
     <NewsList items={items} />
   </section>
 </Layout>

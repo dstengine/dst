@@ -1,9 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import SectionNav from "@dst/ui/SectionNav.astro";
 import NewsList from "@dst/ui/NewsList.astro";
 import { newsBySite } from "@dst/content/news";
+import { eventsBySite } from "@dst/content/events";
+import { sections, NAV } from "../sections";
 
 const items = newsBySite("visas");
+
+// The subject row. Empty until a subject earns a page, and then it
+// appears here without this file changing — see ../sections.ts.
+const sectionLinks = sections([...eventsBySite("visas"), ...newsBySite("visas")]);
 ---
 <Layout
   title="Golden Visa & residency news"
@@ -19,6 +26,7 @@ const items = newsBySite("visas");
   </section>
 
   <section class="container">
+    <SectionNav sections={sectionLinks} {...NAV} />
     <NewsList items={items} />
   </section>
 </Layout>

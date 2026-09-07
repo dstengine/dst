@@ -1,0 +1,31 @@
+---
+// A subject page. Which subjects exist is decided in ../sections.ts against
+// the data, so this file never needs editing when one earns or loses its
+// page. The hero comes from the district layout, as it does on every other
+// page of this site.
+import Layout from "../layouts/Layout.astro";
+import SectionNav from "@dst/ui/SectionNav.astro";
+import SectionFeed from "@dst/ui/SectionFeed.astro";
+import { sections, NAV } from "../sections";
+import { eventsBySite } from "@dst/content/events";
+import { newsBySite } from "@dst/content/news";
+
+export function getStaticPaths() {
+  const all = sections([...eventsBySite("mbr"), ...newsBySite("mbr")]);
+  return all.map((section) => ({ params: { section: section.slug }, props: { section, all } }));
+}
+
+const { section, all } = Astro.props;
+---
+<Layout
+  title={section.title}
+  description={section.description}
+  eyebrow="By subject"
+  h1={section.h1}
+  lede={section.lede}
+>
+  <section class="container">
+    <SectionNav sections={all} current={`/${section.slug}/`} {...NAV} />
+    <SectionFeed items={section.items} />
+  </section>
+</Layout>

@@ -1,7 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import SectionNav from "@dst/ui/SectionNav.astro";
 import EventsList from "@dst/ui/EventsList.astro";
 import { forum, forumDate, otherEvents } from "../content";
+import { eventsBySite } from "@dst/content/events";
+import { newsBySite } from "@dst/content/news";
+import { sections, NAV } from "../sections";
+
+// The subject row. Empty until a subject earns a page, and then it
+// appears here without this file changing — see ../sections.ts.
+const sectionLinks = sections([...eventsBySite("fwf"), ...newsBySite("fwf")]);
 ---
 <Layout
   title="Dubai future-tech events"
@@ -24,6 +32,7 @@ import { forum, forumDate, otherEvents } from "../content";
   </section>
 
   <section class="container">
+    <SectionNav sections={sectionLinks} {...NAV} />
     <EventsList items={otherEvents} />
   </section>
 
