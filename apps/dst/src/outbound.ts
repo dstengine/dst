@@ -2,13 +2,14 @@
 // /go/<slug>/ resolves to. Outbound links run through that hop so external
 // domains collect no link equity from our pages, and /go/ is disallowed in
 // robots.txt so the hops never get crawled or indexed themselves.
+import { siteId } from "./content";
 import { eventsBySite } from "@dst/content/events";
 
 export const outbound: Record<string, string> = {};
 
 // Same derivation as llc's and riviera's outbound.ts — `${slug}-ticket` is
 // the convention events/[slug].astro looks up when building ticketHref.
-for (const event of eventsBySite("dst")) {
+for (const event of eventsBySite(siteId)) {
   if (event.ticket) outbound[`${event.slug}-ticket`] = event.ticket.url;
 }
 

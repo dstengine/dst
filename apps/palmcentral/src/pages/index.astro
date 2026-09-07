@@ -9,19 +9,10 @@ import EventsBlock from "@dst/ui/EventsBlock.astro";
 import { iconFor } from "@dst/ui/icons";
 import { newsBySite } from "@dst/content/news";
 import { eventsBySite } from "@dst/content/events";
-import {
-  siteHeaderImage,
-  currentPhase,
-  soldOutPhase,
-  currentUnits,
-  phase1Units,
-  amenities,
-  distances,
-  faqItems,
-} from "../content";
+import { siteId, siteHeaderImage, currentPhase, soldOutPhase, currentUnits, phase1Units, amenities, distances, faqItems } from "../content";
 
-const newsItems = newsBySite("palmcentral");
-const eventItems = eventsBySite("palmcentral");
+const newsItems = newsBySite(siteId);
+const eventItems = eventsBySite(siteId);
 
 const explore = [
   { href: "/prices/", icon: "chart", title: "Full price list", description: "Every unit type, both release phases, side by side." },

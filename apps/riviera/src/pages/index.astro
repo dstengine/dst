@@ -3,12 +3,12 @@ import Layout from "../layouts/Layout.astro";
 import DistrictHub from "@dst/ui/district/DistrictHub.astro";
 import NewsBlock from "@dst/ui/NewsBlock.astro";
 import EventsBlock from "@dst/ui/EventsBlock.astro";
-import { index } from "../content";
+import { siteId, index } from "../content";
 import { newsBySite } from "@dst/content/news";
 import { eventsBySite } from "@dst/content/events";
 
-const newsItems = newsBySite("riviera");
-const eventItems = eventsBySite("riviera");
+const newsItems = newsBySite(siteId);
+const eventItems = eventsBySite(siteId);
 ---
 <Layout {...index}>
   <DistrictHub {...index}>

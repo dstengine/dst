@@ -7,7 +7,7 @@ export const publisher = {
   url: "https://sol2go.lol/",
 };
 
-export const site = "sol2go";
+export const siteId = "sol2go";
 export const newsBase = "/news/";
 export const eventsBase = "/events/";
 

@@ -1,17 +1,18 @@
 ---
+import { siteId } from "../../content";
 import Layout from "../../layouts/Layout.astro";
 import EventArticle from "@dst/ui/EventArticle.astro";
 import { eventsBySite } from "@dst/content/events";
 import { newsBySite } from "@dst/content/news";
 
 export function getStaticPaths() {
-  const items = eventsBySite("dst").filter((item) => Array.isArray(item.body) && item.body.length > 0);
+  const items = eventsBySite(siteId).filter((item) => Array.isArray(item.body) && item.body.length > 0);
   // The rest of the feed travels with each page so the article can end
   // with somewhere to go instead of only a back link.
   return items.map((item) => ({ params: { slug: item.slug }, props: { item, more: items } }));
 }
 
-const moreNews = newsBySite("dst");
+const moreNews = newsBySite(siteId);
 const { item, more } = Astro.props;
 const ticketHref = item.ticket ? `/go/${item.slug}-ticket/` : undefined;
 ---

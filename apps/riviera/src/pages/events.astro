@@ -3,16 +3,16 @@ import Layout from "../layouts/Layout.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import ContentPage from "@dst/ui/district/ContentPage.astro";
 import EventsList from "@dst/ui/EventsList.astro";
-import { events } from "../content";
+import { siteId, events } from "../content";
 import { eventsBySite } from "@dst/content/events";
 import { newsBySite } from "@dst/content/news";
 import { sections, NAV } from "../sections";
 
-const items = eventsBySite("riviera");
+const items = eventsBySite(siteId);
 
 // The subject row. Empty until a subject earns a page, and then it
 // appears here without this file changing — see ../sections.ts.
-const sectionLinks = sections([...eventsBySite("riviera"), ...newsBySite("riviera")]);
+const sectionLinks = sections([...eventsBySite(siteId), ...newsBySite(siteId)]);
 ---
 <Layout {...events}>
   <ContentPage {...events} />

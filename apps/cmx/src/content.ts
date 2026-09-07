@@ -1,3 +1,4 @@
+import { ES } from "@dst/ui/labels";
 import type { ArticleLabels } from "@dst/ui/labels";
 
 // The site publishes itself: these five domains are independent of the DST
@@ -9,7 +10,7 @@ export const publisher = {
   url: "https://cmx.lol/",
 };
 
-export const site = "cmx";
+export const siteId = "cmx";
 export const newsBase = "/noticias/";
 export const eventsBase = "/eventos/";
 
@@ -41,68 +42,7 @@ export const about = {
   lede: `Qué hacer en la Ciudad de México, con fuente y fecha en cada entrada.`,
 };
 
-// The words the shared article components put on the page. Without this
-// they default to English, which is what put "Format", "Where" and "All
-// events" around Spanish copy on a page that declares itself es-MX.
-//
-// It lives here rather than in @dst/ui because each app builds in isolation
-// on Vercel and cannot import from a sibling — so the other Spanish site
-// carries its own copy of this, deliberately.
-export const labels: Partial<ArticleLabels> = {
-  ended: "Finalizado",
-  organizedBy: "Organiza",
-  minRead: (n) => `${n} min de lectura`,
-
-  tickets: "Boletos",
-  register: "Registrarse",
-  moreDetails: "Más información",
-  addToCalendar: "Agregar al calendario",
-  addToCalendarTitle: (title) => `Agregar ${title} a tu calendario`,
-
-  time: "Horario",
-  timeFrom: (start) => `Desde las ${start}`,
-  duration: "Duración",
-  durationValue: (hours, minutes) =>
-    [hours && `${hours} hora${hours === 1 ? "" : "s"}`, minutes && `${minutes} minutos`]
-      .filter(Boolean)
-      .join(" "),
-  format: "Formato",
-  inPerson: "Presencial",
-  where: "Dónde",
-  ticketsRow: "Boletos",
-  free: "Gratis",
-  salesClose: "Cierre de venta",
-  refunds: "Reembolsos",
-  organizer: "Organizador",
-
-  whatHappened: "Qué pasó",
-  updates: "Desde que publicamos",
-  programme: "Programa",
-  speakers: "Ponentes",
-  whoItsFor: "Para quién es",
-  locate: "Ubicación",
-  related: "Relacionado",
-  moreEvents: "Más eventos",
-  moreNews: "Más noticias",
-  latestNews: "Últimas noticias",
-  comingUp: "Próximamente",
-
-  readMore: "Leer más",
-  allEvents: "Todos los eventos",
-  allNews: "Todas las noticias",
-  upcoming: "Próximos",
-  pastGroup: "Pasados",
-  past: "Pasado",
-  mapTitle: (place) => `Mapa — ${place}`,
-
-  source: "Fuente",
-  checkedAgainstSource: "verificado con la fuente el",
-  checkedTitle: (name) => `Última verificación con ${name} en esta fecha`,
-
-  imageKinds: {
-    photo: "Fotografía",
-    diagram: "Diagrama",
-    illustration: "Ilustración",
-    render: "Render",
-  },
-};
+// The words the shared article components put on the page, in Spanish.
+// The set is shared — see @dst/ui's labels — and this site adds nothing
+// to it today. When it needs a word of its own, spread and override.
+export const labels: Partial<ArticleLabels> = ES;

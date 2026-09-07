@@ -1,4 +1,5 @@
 ---
+import { siteId } from "../content";
 import Layout from "../layouts/Layout.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import NewsList from "@dst/ui/NewsList.astro";
@@ -6,15 +7,15 @@ import { newsBySite } from "@dst/content/news";
 import { eventsBySite } from "@dst/content/events";
 import { sections, NAV } from "../sections";
 
-const items = newsBySite("llc");
+const items = newsBySite(siteId);
 
 // The subject row. Empty until a subject earns a page, and then it
 // appears here without this file changing — see ../sections.ts.
-const sectionLinks = sections([...eventsBySite("llc"), ...newsBySite("llc")]);
+const sectionLinks = sections([...eventsBySite(siteId), ...newsBySite(siteId)]);
 ---
 <Layout
   title="Business setup news"
-  description="Updates on Dubai company formation — regulatory changes, new guidance, and updates to this site's own tools."
+  description="Updates on Dubai company formation — regulatory changes, new guidance, and updates to this siteId's own tools."
 >
   <section class="container hero">
     <p class="eyebrow">News</p>

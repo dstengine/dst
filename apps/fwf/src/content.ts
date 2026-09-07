@@ -2,9 +2,13 @@
 // quotes one set of figures. When the organiser changes the listing, the
 // event file changes and the whole site follows — rather than a date left
 // stale on the page nobody remembered to edit.
+// The key this site's entries carry in @dst/content. One copy, because a
+// site id typed into a page is a site id that can be typed wrong there.
+export const siteId = "fwf";
+
 import { eventsBySite } from "@dst/content/events";
 
-const events = eventsBySite("fwf");
+const events = eventsBySite(siteId);
 
 /** The forum this site is named after. Its page is the home page, not an
     entry under /events/ — the calendar around it is context, not the point. */

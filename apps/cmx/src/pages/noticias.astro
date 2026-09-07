@@ -2,13 +2,13 @@
 import Layout from "../layouts/Layout.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import NewsList from "@dst/ui/NewsList.astro";
-import { news, site, newsBase } from "../content";
+import { news, siteId, newsBase } from "../content";
 import { newsBySite } from "@dst/content/news";
 import { eventsBySite } from "@dst/content/events";
 import { sections, NAV } from "../sections";
 
-const items = newsBySite(site);
-const sectionLinks = sections([...eventsBySite(site), ...items]);
+const items = newsBySite(siteId);
+const sectionLinks = sections([...eventsBySite(siteId), ...items]);
 // An index holding fewer than three entries is thinner than the pages it
 // links to, so it stays out of the index until it has something to be an
 // index of. It keeps `follow` either way — the articles must stay reachable.

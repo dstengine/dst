@@ -5,7 +5,7 @@
 //
 // Venue entries are derived from the venue data rather than listed by hand,
 // so adding a venue with an externalHref registers its redirect automatically.
-import { coffeeVenues } from "./content";
+import { siteId, coffeeVenues } from "./content";
 import { eventsBySite } from "@dst/content/events";
 
 export const outbound: Record<string, string> = {};
@@ -17,7 +17,7 @@ for (const venue of Object.values(coffeeVenues)) {
 
 // Same derivation for event ticket/registration links — `${slug}-ticket`
 // is the convention events/[slug].astro looks up when building ticketHref.
-for (const event of eventsBySite("riviera")) {
+for (const event of eventsBySite(siteId)) {
   if (event.ticket) outbound[`${event.slug}-ticket`] = event.ticket.url;
 }
 

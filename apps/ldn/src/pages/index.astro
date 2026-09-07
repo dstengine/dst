@@ -3,13 +3,13 @@ import Layout from "../layouts/Layout.astro";
 import NewsBlock from "@dst/ui/NewsBlock.astro";
 import EventsBlock from "@dst/ui/EventsBlock.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
-import { home, site, newsBase, eventsBase } from "../content";
+import { home, siteId, newsBase, eventsBase } from "../content";
 import { newsBySite } from "@dst/content/news";
 import { eventsBySite } from "@dst/content/events";
 import { sections, NAV } from "../sections";
 
-const newsItems = newsBySite(site);
-const eventItems = eventsBySite(site);
+const newsItems = newsBySite(siteId);
+const eventItems = eventsBySite(siteId);
 const sectionLinks = sections([...eventItems, ...newsItems]);
 ---
 <Layout title={home.title} description={home.description}>

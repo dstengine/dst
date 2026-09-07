@@ -3,6 +3,7 @@
 // the data, so this file never needs editing when one earns or loses its
 // page. The hero comes from the district layout, as it does on every other
 // page of this site.
+import { siteId } from "../content";
 import Layout from "../layouts/Layout.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import SectionFeed from "@dst/ui/SectionFeed.astro";
@@ -11,7 +12,7 @@ import { eventsBySite } from "@dst/content/events";
 import { newsBySite } from "@dst/content/news";
 
 export function getStaticPaths() {
-  const all = sections([...eventsBySite("mbr"), ...newsBySite("mbr")]);
+  const all = sections([...eventsBySite(siteId), ...newsBySite(siteId)]);
   return all.map((section) => ({ params: { section: section.slug }, props: { section, all } }));
 }
 

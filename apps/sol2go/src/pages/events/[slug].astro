@@ -1,7 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import EventArticle from "@dst/ui/EventArticle.astro";
-import { site, newsBase, eventsBase, publisher } from "../../content";
+import { siteId, newsBase, eventsBase, publisher } from "../../content";
 import { eventsBySite } from "@dst/content/events";
 import { go } from "../../outbound";
 import { newsBySite } from "@dst/content/news";
@@ -9,15 +9,15 @@ import SectionNav from "@dst/ui/SectionNav.astro";
 import { sections, NAV } from "../../sections";
 
 export function getStaticPaths() {
-  const items = eventsBySite("sol2go").filter((i) => Array.isArray(i.body) && i.body.length > 0);
+  const items = eventsBySite(siteId).filter((i) => Array.isArray(i.body) && i.body.length > 0);
   return items.map((item) => ({ params: { slug: item.slug }, props: { item, more: items } }));
 }
 
-const moreNews = newsBySite(site);
+const moreNews = newsBySite(siteId);
 const { item, more } = Astro.props;
 // The sections this event is in, if any — a country page and a kind page
 // are the two most likely next clicks from an event someone found useful.
-const mine = sections(eventsBySite("sol2go")).filter((s) => s.items.some((i) => i.slug === item.slug));
+const mine = sections(eventsBySite(siteId)).filter((s) => s.items.some((i) => i.slug === item.slug));
 // A seller if we have one, the source if we don't — see src/outbound.ts.
 const ticketHref = item.ticket ? go(`${item.slug}-ticket`) : undefined;
 const sourceHref = item.source?.url ? go(`${item.slug}-source`) : undefined;

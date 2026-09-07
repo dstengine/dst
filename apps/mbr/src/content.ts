@@ -2,6 +2,10 @@
 // components — the same ones riviera.dst.llc uses. This file is what
 // actually changes between the two.
 
+// The key this site's entries carry in @dst/content. One copy, because a
+// site id typed into a page is a site id that can be typed wrong there.
+export const siteId = "mbr";
+
 export const index = {
   title: "Living in MBR City",
   description:

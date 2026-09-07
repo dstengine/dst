@@ -1,4 +1,5 @@
 ---
+import { siteId } from "../content";
 import Layout from "../layouts/Layout.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import NewsList from "@dst/ui/NewsList.astro";
@@ -6,11 +7,11 @@ import { newsBySite } from "@dst/content/news";
 import { eventsBySite } from "@dst/content/events";
 import { sections, NAV } from "../sections";
 
-const items = newsBySite("fwf");
+const items = newsBySite(siteId);
 
 // The subject row. Empty until a subject earns a page, and then it
 // appears here without this file changing — see ../sections.ts.
-const sectionLinks = sections([...eventsBySite("fwf"), ...newsBySite("fwf")]);
+const sectionLinks = sections([...eventsBySite(siteId), ...newsBySite(siteId)]);
 ---
 <Layout
   title="Smart city and PropTech news"

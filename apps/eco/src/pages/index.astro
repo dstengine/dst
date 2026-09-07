@@ -1,4 +1,5 @@
 ---
+import { siteId } from "../content";
 import Layout from "../layouts/Layout.astro";
 import Callout from "@dst/ui/Callout.astro";
 import VentureGrid from "@dst/ui/VentureGrid.astro";
@@ -8,8 +9,8 @@ import { stories } from "../data/stories";
 import { newsBySite } from "@dst/content/news";
 import { eventsBySite } from "@dst/content/events";
 
-const newsItems = newsBySite("eco");
-const eventItems = eventsBySite("eco");
+const newsItems = newsBySite(siteId);
+const eventItems = eventsBySite(siteId);
 
 // Same card shape as the dst.llc hub grid: eyebrow + status pill up top,
 // name and one line of text below. The funder/location detail lives on

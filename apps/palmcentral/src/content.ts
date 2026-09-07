@@ -14,6 +14,10 @@
 // The site's default header photo. Every page uses this in its PhotoHero
 // unless it has good reason to pass its own image/imageAlt instead — keeping
 // it here means there's one place to update if the render changes, not six.
+// The key this site's entries carry in @dst/content. One copy, because a
+// site id typed into a page is a site id that can be typed wrong there.
+export const siteId = "palmcentral";
+
 export const siteHeaderImage = {
   src: "/palmcentral.jpg",
   alt: "Night aerial render of Palm Central's beachfront residences and central Spine, Palm Jebel Ali.",

@@ -1,4 +1,5 @@
 ---
+import { siteId } from "../content";
 import Layout from "../layouts/Layout.astro";
 import Callout from "@dst/ui/Callout.astro";
 import NewsBlock from "@dst/ui/NewsBlock.astro";
@@ -6,8 +7,8 @@ import EventsBlock from "@dst/ui/EventsBlock.astro";
 import { newsBySite } from "@dst/content/news";
 import { eventsBySite } from "@dst/content/events";
 
-const newsItems = newsBySite("llc");
-const eventItems = eventsBySite("llc");
+const newsItems = newsBySite(siteId);
+const eventItems = eventsBySite(siteId);
 ---
 <Layout
   title="How to Start a Business"

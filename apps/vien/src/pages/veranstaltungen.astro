@@ -2,13 +2,13 @@
 import Layout from "../layouts/Layout.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import EventsList from "@dst/ui/EventsList.astro";
-import { events, site, eventsBase, labels } from "../content";
+import { events, siteId, eventsBase, labels } from "../content";
 import { eventsBySite } from "@dst/content/events";
 import { newsBySite } from "@dst/content/news";
 import { sections, NAV } from "../sections";
 
-const items = eventsBySite(site);
-const sectionLinks = sections([...items, ...newsBySite(site)]);
+const items = eventsBySite(siteId);
+const sectionLinks = sections([...items, ...newsBySite(siteId)]);
 const thin = items.length < 3;
 ---
 <Layout title={events.title} description={events.description} noindex={thin}>

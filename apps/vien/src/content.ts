@@ -1,3 +1,4 @@
+import { DE } from "@dst/ui/labels";
 import type { ArticleLabels } from "@dst/ui/labels";
 
 // The site publishes itself: these domains are independent of the DST group
@@ -9,7 +10,7 @@ export const publisher = {
   url: "https://vien.lol/",
 };
 
-export const site = "vien";
+export const siteId = "vien";
 export const newsBase = "/nachrichten/";
 export const eventsBase = "/veranstaltungen/";
 
@@ -41,68 +42,7 @@ export const about = {
   lede: `Was in Wien und in Österreich los ist, mit Quelle und Prüfdatum bei jedem Eintrag.`,
 };
 
-// The words the shared article components put on the page. Without this
-// they default to English, which would put "Format", "Where" and "All
-// events" around German copy on a page that declares itself de-AT.
-//
-// It lives here rather than in @dst/ui because each app builds in isolation
-// on Vercel and cannot import from a sibling — so every non-English site
-// carries its own copy of this, deliberately.
-export const labels: Partial<ArticleLabels> = {
-  ended: "Vorbei",
-  organizedBy: "Veranstaltet von",
-  minRead: (n) => `${n} Min. Lesezeit`,
-
-  tickets: "Tickets",
-  register: "Anmelden",
-  moreDetails: "Mehr Infos",
-  addToCalendar: "Zum Kalender hinzufügen",
-  addToCalendarTitle: (title) => `${title} zum Kalender hinzufügen`,
-
-  time: "Uhrzeit",
-  timeFrom: (start) => `Ab ${start}`,
-  duration: "Dauer",
-  durationValue: (hours, minutes) =>
-    [hours && `${hours} Stunde${hours === 1 ? "" : "n"}`, minutes && `${minutes} Minuten`]
-      .filter(Boolean)
-      .join(" "),
-  format: "Format",
-  inPerson: "Vor Ort",
-  where: "Wo",
-  ticketsRow: "Tickets",
-  free: "Kostenlos",
-  salesClose: "Verkaufsschluss",
-  refunds: "Rückerstattung",
-  organizer: "Veranstalter",
-
-  whatHappened: "Worum es geht",
-  updates: "Seit der Veröffentlichung",
-  programme: "Programm",
-  speakers: "Vortragende",
-  whoItsFor: "Für wen",
-  locate: "Lage",
-  related: "Passend dazu",
-  moreEvents: "Weitere Termine",
-  moreNews: "Weitere Nachrichten",
-  latestNews: "Neueste Nachrichten",
-  comingUp: "Demnächst",
-
-  readMore: "Weiterlesen",
-  allEvents: "Alle Termine",
-  allNews: "Alle Nachrichten",
-  upcoming: "Demnächst",
-  pastGroup: "Vorbei",
-  past: "Vorbei",
-  mapTitle: (place) => `Karte — ${place}`,
-
-  source: "Quelle",
-  checkedAgainstSource: "gegen die Quelle geprüft am",
-  checkedTitle: (name) => `Zuletzt gegen ${name} geprüft an diesem Datum`,
-
-  imageKinds: {
-    photo: "Fotografie",
-    diagram: "Diagramm",
-    illustration: "Illustration",
-    render: "Rendering",
-  },
-};
+// The words the shared article components put on the page, in German.
+// The set is shared — see @dst/ui's labels — and this site adds nothing
+// to it today. When it needs a word of its own, spread and override.
+export const labels: Partial<ArticleLabels> = DE;

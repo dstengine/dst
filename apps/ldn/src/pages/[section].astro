@@ -1,18 +1,18 @@
 ---
-// A subject page: /music/, /festivals/. One slice of the whole site — what
+// A subject page: /music/, /festivals/. One slice of the whole siteId — what
 // is on and what has been written about it — at an address that says what
 // it is. Which slices exist is decided in ../sections.ts against the data,
 // so this file never needs editing when a subject earns or loses its page.
 import Layout from "../layouts/Layout.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import SectionFeed from "@dst/ui/SectionFeed.astro";
-import { newsBase, eventsBase } from "../content";
+import { siteId, newsBase, eventsBase } from "../content";
 import { sections, NAV } from "../sections";
 import { eventsBySite } from "@dst/content/events";
 import { newsBySite } from "@dst/content/news";
 
 export function getStaticPaths() {
-  const all = sections([...eventsBySite("ldn"), ...newsBySite("ldn")]);
+  const all = sections([...eventsBySite(siteId), ...newsBySite(siteId)]);
   return all.map((section) => ({ params: { section: section.slug }, props: { section, all } }));
 }
 

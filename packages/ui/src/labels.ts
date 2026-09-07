@@ -152,6 +152,133 @@ export const EN: ArticleLabels = {
   },
 };
 
+/**
+ * The other two languages the network publishes in. They live here, not in
+ * the app, because the second Spanish site copied the first one's file
+ * verbatim — sixty lines that then had to be corrected twice whenever a
+ * label was added, and were, once, only corrected once.
+ *
+ * An app spreads the set and overrides what its own register needs:
+ * `{ ...ES, tickets: "Boletos" }`. Nothing here names a city or a site.
+ */
+export const ES: Partial<ArticleLabels> = {
+  ended: "Finalizado",
+  organizedBy: "Organiza",
+  minRead: (n) => `${n} min de lectura`,
+
+  tickets: "Boletos",
+  register: "Registrarse",
+  moreDetails: "Más información",
+  addToCalendar: "Agregar al calendario",
+  addToCalendarTitle: (title) => `Agregar ${title} a tu calendario`,
+
+  time: "Horario",
+  timeFrom: (start) => `Desde las ${start}`,
+  duration: "Duración",
+  durationValue: (hours, minutes) =>
+    [hours && `${hours} hora${hours === 1 ? "" : "s"}`, minutes && `${minutes} minutos`]
+      .filter(Boolean)
+      .join(" "),
+  format: "Formato",
+  inPerson: "Presencial",
+  where: "Dónde",
+  ticketsRow: "Boletos",
+  free: "Gratis",
+  salesClose: "Cierre de venta",
+  refunds: "Reembolsos",
+  organizer: "Organizador",
+
+  whatHappened: "Qué pasó",
+  updates: "Desde que publicamos",
+  programme: "Programa",
+  speakers: "Ponentes",
+  whoItsFor: "Para quién es",
+  locate: "Ubicación",
+  related: "Relacionado",
+  moreEvents: "Más eventos",
+  moreNews: "Más noticias",
+  latestNews: "Últimas noticias",
+  comingUp: "Próximamente",
+
+  readMore: "Leer más",
+  allEvents: "Todos los eventos",
+  allNews: "Todas las noticias",
+  upcoming: "Próximos",
+  pastGroup: "Pasados",
+  past: "Pasado",
+  mapTitle: (place) => `Mapa — ${place}`,
+
+  source: "Fuente",
+  checkedAgainstSource: "verificado con la fuente el",
+  checkedTitle: (name) => `Última verificación con ${name} en esta fecha`,
+
+  imageKinds: {
+    photo: "Fotografía",
+    diagram: "Diagrama",
+    illustration: "Ilustración",
+    render: "Render",
+  },
+};
+
+export const DE: Partial<ArticleLabels> = {
+  ended: "Vorbei",
+  organizedBy: "Veranstaltet von",
+  minRead: (n) => `${n} Min. Lesezeit`,
+
+  tickets: "Tickets",
+  register: "Anmelden",
+  moreDetails: "Mehr Infos",
+  addToCalendar: "Zum Kalender hinzufügen",
+  addToCalendarTitle: (title) => `${title} zum Kalender hinzufügen`,
+
+  time: "Uhrzeit",
+  timeFrom: (start) => `Ab ${start}`,
+  duration: "Dauer",
+  durationValue: (hours, minutes) =>
+    [hours && `${hours} Stunde${hours === 1 ? "" : "n"}`, minutes && `${minutes} Minuten`]
+      .filter(Boolean)
+      .join(" "),
+  format: "Format",
+  inPerson: "Vor Ort",
+  where: "Wo",
+  ticketsRow: "Tickets",
+  free: "Kostenlos",
+  salesClose: "Verkaufsschluss",
+  refunds: "Rückerstattung",
+  organizer: "Veranstalter",
+
+  whatHappened: "Worum es geht",
+  updates: "Seit der Veröffentlichung",
+  programme: "Programm",
+  speakers: "Vortragende",
+  whoItsFor: "Für wen",
+  locate: "Lage",
+  related: "Passend dazu",
+  moreEvents: "Weitere Termine",
+  moreNews: "Weitere Nachrichten",
+  latestNews: "Neueste Nachrichten",
+  comingUp: "Demnächst",
+
+  readMore: "Weiterlesen",
+  allEvents: "Alle Termine",
+  allNews: "Alle Nachrichten",
+  upcoming: "Demnächst",
+  pastGroup: "Vorbei",
+  past: "Vorbei",
+  mapTitle: (place) => `Karte — ${place}`,
+
+  source: "Quelle",
+  checkedAgainstSource: "gegen die Quelle geprüft am",
+  checkedTitle: (name) => `Zuletzt gegen ${name} geprüft an diesem Datum`,
+
+  imageKinds: {
+    photo: "Fotografie",
+    diagram: "Diagramm",
+    illustration: "Illustration",
+    render: "Rendering",
+  },
+};
+
 /** The caller's overrides on top of English, so a partial set is legal. */
 export function withLabels(labels?: Partial<ArticleLabels>): ArticleLabels {
   if (!labels) return EN;

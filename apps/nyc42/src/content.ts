@@ -7,7 +7,7 @@ export const publisher = {
   url: "https://nyc42.lol/",
 };
 
-export const site = "nyc42";
+export const siteId = "nyc42";
 export const newsBase = "/news/";
 export const eventsBase = "/events/";
 

@@ -1,4 +1,5 @@
 ---
+import { siteId } from "../content";
 import Layout from "../layouts/Layout.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import EventsList from "@dst/ui/EventsList.astro";
@@ -6,11 +7,11 @@ import { eventsBySite } from "@dst/content/events";
 import { newsBySite } from "@dst/content/news";
 import { sections, NAV } from "../sections";
 
-const items = eventsBySite("llc");
+const items = eventsBySite(siteId);
 
 // The subject row. Empty until a subject earns a page, and then it
 // appears here without this file changing — see ../sections.ts.
-const sectionLinks = sections([...eventsBySite("llc"), ...newsBySite("llc")]);
+const sectionLinks = sections([...eventsBySite(siteId), ...newsBySite(siteId)]);
 ---
 <Layout
   title="Business setup events"

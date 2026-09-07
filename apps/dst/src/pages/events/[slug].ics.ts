@@ -1,5 +1,6 @@
 // Serves /events/<slug>.ics so "add to calendar" is a plain file download,
 // with no account and no third-party calendar service involved.
+import { siteId } from "../../content";
 import type { APIRoute } from "astro";
 import { eventsBySite } from "@dst/content/events";
 import { toIcs } from "@dst/content/ics";
@@ -7,7 +8,7 @@ import { toIcs } from "@dst/content/ics";
 const SITE = "https://dst.llc";
 
 export function getStaticPaths() {
-  return eventsBySite("dst").map((item) => ({ params: { slug: item.slug }, props: { item } }));
+  return eventsBySite(siteId).map((item) => ({ params: { slug: item.slug }, props: { item } }));
 }
 
 export const GET: APIRoute = ({ props }) => {

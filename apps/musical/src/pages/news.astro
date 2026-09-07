@@ -2,9 +2,9 @@
 import Layout from "../layouts/Layout.astro";
 import NewsList from "@dst/ui/NewsList.astro";
 import { newsBySite } from "@dst/content/news";
-import { news, newsBase } from "../content";
+import { siteId, news, newsBase } from "../content";
 
-const items = newsBySite("musical");
+const items = newsBySite(siteId);
 // Fewer than three entries is an index thinner than the pages it links to,
 // so it stays out of search until it has something to be an index of. It
 // keeps `follow` either way — the articles must stay reachable.

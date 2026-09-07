@@ -2,6 +2,10 @@
 // components; this file is what actually changes between this site and
 // mbr.dst.llc.
 
+// The key this site's entries carry in @dst/content. One copy, because a
+// site id typed into a page is a site id that can be typed wrong there.
+export const siteId = "riviera";
+
 export const index = {
   title: "Living in Azizi Riviera",
   description:

@@ -2,6 +2,7 @@
 // A subject page over the group's own feed. Which subjects exist is decided
 // in ../sections.ts against the data, so this file never needs editing when
 // one earns or loses its page.
+import { siteId } from "../content";
 import Layout from "../layouts/Layout.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import SectionFeed from "@dst/ui/SectionFeed.astro";
@@ -10,7 +11,7 @@ import { eventsBySite } from "@dst/content/events";
 import { newsBySite } from "@dst/content/news";
 
 export function getStaticPaths() {
-  const all = sections([...eventsBySite("dst"), ...newsBySite("dst")]);
+  const all = sections([...eventsBySite(siteId), ...newsBySite(siteId)]);
   return all.map((section) => ({ params: { section: section.slug }, props: { section, all } }));
 }
 

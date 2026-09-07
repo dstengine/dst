@@ -1,4 +1,5 @@
 ---
+import { siteId } from "../content";
 import Layout from "../layouts/Layout.astro";
 import { ICONS } from "@dst/ui/icons";
 import VentureGrid from "@dst/ui/VentureGrid.astro";
@@ -7,8 +8,8 @@ import EventsBlock from "@dst/ui/EventsBlock.astro";
 import { newsBySite } from "@dst/content/news";
 import { eventsBySite } from "@dst/content/events";
 
-const newsItems = newsBySite("dst");
-const eventItems = eventsBySite("dst");
+const newsItems = newsBySite(siteId);
+const eventItems = eventsBySite(siteId);
 
 // Every hub card carries a media panel so the grid reads as one row of
 // equals. The three live ventures show their own photography or render; the
@@ -119,9 +120,9 @@ const hubs = [
     </p>
     <ol class="approach-list">
       <li>
-        <strong>We build the system.</strong> Content, site architecture, lead
+        <strong>We build the system.</strong> Content, siteId architecture, lead
         capture, and CRM routing — engineered for organic search rather than
-        paid acquisition, so each site keeps earning traffic long after it
+        paid acquisition, so each siteId keeps earning traffic long after it
         ships.
       </li>
       <li>

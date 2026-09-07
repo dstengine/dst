@@ -1,4 +1,5 @@
 ---
+import { siteId } from "../content";
 import Layout from "../layouts/Layout.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import EventsList from "@dst/ui/EventsList.astro";
@@ -25,12 +26,12 @@ const SITE_LABELS: Record<string, string> = {
   eco: "Eco",
 };
 
-const items = eventsBySite("dst");
-const sectionLinks = sections([...items, ...newsBySite("dst")]);
+const items = eventsBySite(siteId);
+const sectionLinks = sections([...items, ...newsBySite(siteId)]);
 
 // Same hub roundup the news page carries, so the two pages behave alike —
 // only upcoming ones, since a hub listing something that already happened
-// is worse than listing nothing. Cross-site detail pages live on their own
+// is worse than listing nothing. Cross-siteId detail pages live on their own
 // host, which is why this isn't EventsList.
 const networkCards = upcomingEvents(
   allEvents.filter((item) => item.site !== "dst"),

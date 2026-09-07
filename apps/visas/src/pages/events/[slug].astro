@@ -1,4 +1,5 @@
 ---
+import { siteId } from "../../content";
 import Layout from "../../layouts/Layout.astro";
 import EventArticle from "@dst/ui/EventArticle.astro";
 import { eventsBySite } from "@dst/content/events";
@@ -7,13 +8,13 @@ import { newsBySite } from "@dst/content/news";
 // No ticketed events for visas yet — see riviera's events/[slug].astro for
 // the outbound.ts-backed /go/ pattern this would use once one exists.
 export function getStaticPaths() {
-  const items = eventsBySite("visas").filter((item) => Array.isArray(item.body) && item.body.length > 0);
+  const items = eventsBySite(siteId).filter((item) => Array.isArray(item.body) && item.body.length > 0);
   // The rest of the feed travels with each page so the article can end
   // with somewhere to go instead of only a back link.
   return items.map((item) => ({ params: { slug: item.slug }, props: { item, more: items } }));
 }
 
-const moreNews = newsBySite("visas");
+const moreNews = newsBySite(siteId);
 const { item, more } = Astro.props;
 ---
 <Layout title={item.titleSeo ?? item.title} description={item.summary} image={item.image}>

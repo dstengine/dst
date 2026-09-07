@@ -6,13 +6,13 @@ import NewsBlock from "@dst/ui/NewsBlock.astro";
 import EventsBlock from "@dst/ui/EventsBlock.astro";
 import { newsBySite } from "@dst/content/news";
 import { formatDate } from "@dst/ui/date";
-import { checkedOn, forum, forumDate, otherEvents, siteHeaderImage, ticketsFrom, ticketsTo } from "../content";
+import { siteId, checkedOn, forum, forumDate, otherEvents, siteHeaderImage, ticketsFrom, ticketsTo } from "../content";
 import { go } from "../outbound";
 import { itemContext } from "@dst/ui/schema";
 import Icon from "@dst/ui/Icon.astro";
 import Photo from "@dst/ui/Photo.astro";
 
-const newsItems = newsBySite("fwf");
+const newsItems = newsBySite(siteId);
 
 const explore = [
   { href: "/programme/", title: "Programme", description: "The five sectors the day is built around, and who each one is aimed at." },
@@ -74,7 +74,7 @@ const jsonLd = [
       <h1>Future World Forum <span class="opener-break"></span>Dubai 2026</h1>
       <p class="opener-lede">
         A one-day conference and expo on urban technology, listed for
-        {forumDate} in Dubai.<span class="opener-lede-more"> This site tracks
+        {forumDate} in Dubai.<span class="opener-lede-more"> This siteId tracks
         what the organiser has actually published — and says plainly what is
         still missing.</span>
       </p>
@@ -180,7 +180,7 @@ const jsonLd = [
     <h2>Still to be announced</h2>
     <p class="section-lede">
       None of this is missing for good — a one-day conference usually settles
-      its details in the weeks before it runs. This is the list this site is
+      its details in the weeks before it runs. This is the list this siteId is
       watching, and each line is dated the moment it lands.
     </p>
     <dl class="pending">

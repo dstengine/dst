@@ -2,12 +2,12 @@
 import Layout from "../../layouts/Layout.astro";
 import NewsArticle from "@dst/ui/NewsArticle.astro";
 import { newsBySite } from "@dst/content/news";
-import { newsBase } from "../../content";
+import { siteId, newsBase } from "../../content";
 import { site } from "../../site.config";
 
 export function getStaticPaths() {
   // No body, no page — the feed card says everything the entry has.
-  const items = newsBySite("musical").filter((i) => Array.isArray(i.body) && i.body.length > 0);
+  const items = newsBySite(siteId).filter((i) => Array.isArray(i.body) && i.body.length > 0);
   return items.map((item) => ({ params: { slug: item.slug }, props: { item, more: items } }));
 }
 

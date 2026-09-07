@@ -2,6 +2,7 @@
 // /go/<slug>/ resolves to. Outbound links run through that hop so external
 // domains collect no link equity from our pages, and /go/ is disallowed in
 // robots.txt so the hops never get crawled or indexed themselves.
+import { siteId } from "./content";
 import { eventsBySite } from "@dst/content/events";
 
 export const outbound: Record<string, string> = {};
@@ -17,7 +18,7 @@ export const outbound: Record<string, string> = {};
 // page that answers "should I go?" and then strands the reader, so where
 // there is no seller the hop goes to where the facts came from. What the
 // button is allowed to say depends on `source.official`.
-for (const event of eventsBySite("ldn")) {
+for (const event of eventsBySite(siteId)) {
   if (event.ticket) outbound[`${event.slug}-ticket`] = event.ticket.url;
   if (event.source?.url) outbound[`${event.slug}-source`] = event.source.url;
 }

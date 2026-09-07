@@ -1,4 +1,5 @@
 ---
+import { siteId } from "../content";
 import Layout from "../layouts/Layout.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import NewsList from "@dst/ui/NewsList.astro";
@@ -24,13 +25,13 @@ const SITE_LABELS: Record<string, string> = {
   eco: "Eco",
 };
 
-const items = newsBySite("dst");
-const sectionLinks = sections([...eventsBySite("dst"), ...items]);
+const items = newsBySite(siteId);
+const sectionLinks = sections([...eventsBySite(siteId), ...items]);
 
 // The hub carries its own news first, then a network-wide roundup below,
 // each item labelled with its source site. This isn't NewsList — a
-// cross-site item's detail page and its image both live on that site's own
-// host (riviera.dst.llc/news/slug), which NewsList's same-site relative
+// cross-siteId item's detail page and its image both live on that siteId's own
+// host (riviera.dst.llc/news/slug), which NewsList's same-siteId relative
 // links can't express.
 const networkCards = latestNews(
   allNews.filter((item) => item.site !== "dst"),
@@ -40,7 +41,7 @@ const networkCards = latestNews(
   const hasPage = Array.isArray(item.body) && item.body.length > 0;
   return {
     href: hasPage && host ? `https://${host}/news/${item.slug}/` : undefined,
-    // The site, not the category: on a roundup, where an item comes from is
+    // The siteId, not the category: on a roundup, where an item comes from is
     // the thing a reader is sorting by.
     eyebrow: SITE_LABELS[item.site] ?? item.site,
     date: item.date,

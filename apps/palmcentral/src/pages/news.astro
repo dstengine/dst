@@ -1,4 +1,5 @@
 ---
+import { siteId } from "../content";
 import Layout from "../layouts/Layout.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import NewsList from "@dst/ui/NewsList.astro";
@@ -6,15 +7,15 @@ import { newsBySite } from "@dst/content/news";
 import { eventsBySite } from "@dst/content/events";
 import { sections, NAV } from "../sections";
 
-const items = newsBySite("palmcentral");
+const items = newsBySite(siteId);
 
 // The subject row. Empty until a subject earns a page, and then it
 // appears here without this file changing — see ../sections.ts.
-const sectionLinks = sections([...eventsBySite("palmcentral"), ...newsBySite("palmcentral")]);
+const sectionLinks = sections([...eventsBySite(siteId), ...newsBySite(siteId)]);
 ---
 <Layout
   title="News from Palm Jebel Ali"
-  description="Updates on Palm Central — pricing changes, release phases, and this site's own updates."
+  description="Updates on Palm Central — pricing changes, release phases, and this siteId's own updates."
 >
   <section class="container hero">
     <p class="eyebrow">News</p>

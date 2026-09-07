@@ -2,12 +2,12 @@
 import Layout from "../layouts/Layout.astro";
 import EventsList from "@dst/ui/EventsList.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
-import { eventsBase } from "../content";
+import { siteId, eventsBase } from "../content";
 import { sections, NAV } from "../sections";
 import { eventsBySite } from "@dst/content/events";
 
 export function getStaticPaths() {
-  const all = sections(eventsBySite("sol2go"));
+  const all = sections(eventsBySite(siteId));
   return all.map((section) => ({ params: { section: section.slug }, props: { section, all } }));
 }
 
