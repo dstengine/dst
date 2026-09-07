@@ -111,6 +111,17 @@ interface ItemBase {
   featured?: number;
 }
 
+/** One person on an event's programme, as their organiser publishes them. */
+export interface Speaker {
+  name: string;
+  /** Their title, in the organiser's own words: "Executive Director of Markets". */
+  role?: string;
+  /** The body they speak for. Separate from `role` so the markup can say `affiliation`. */
+  org?: string;
+  /** One clause on why this name matters. Plain text — this is not a body block. */
+  note?: string;
+}
+
 export interface NewsItem extends ItemBase {
   date: string; // ISO "YYYY-MM-DD"
 }
@@ -160,6 +171,21 @@ export interface EventItem extends ItemBase {
   // session. Separate from `body` because these are a list of parallel
   // things, and a list set as running paragraphs reads as neither.
   programme?: { heading: string; text: string }[];
+  // The people on the programme, as the organiser publishes them. A named
+  // speaker is the one fact on a conference page that a reader recognises —
+  // "140+ speakers" tells nobody whether to go, and one regulator's name
+  // does. Everything here is copied from a source that names them; a person
+  // is never inferred from a job title or a past edition, and a line-up that
+  // has not been announced simply has no entry.
+  //
+  // `role` and `org` stay separate so the markup can say `affiliation`, and
+  // `note` carries the reason this person is worth the line — that is the
+  // part a listing normally leaves out and the part a reader is deciding on.
+  speakers?: Speaker[];
+  // What to call them, when "Speakers" is the wrong word: a jury, a
+  // line-up, the states taking part. Written in the site's own language,
+  // because it replaces a translated label.
+  speakersHeading?: string;
   // Who the event is addressed to, in the organiser's own terms. Short
   // phrases, not sentences — this renders as a row of tags.
   audience?: string[];

@@ -58,6 +58,8 @@ export interface ArticleLabels {
   /** Heading over the dated facts added since publication. */
   updates: string;
   programme: string;
+  /** Heading over the people on the programme; an item may override it. */
+  speakers: string;
   whoItsFor: string;
   locate: string;
   related: string;
@@ -121,6 +123,7 @@ export const EN: ArticleLabels = {
   whatHappened: "What happened",
   updates: "Since we published",
   programme: "Programme",
+  speakers: "Speakers",
   whoItsFor: "Who it's for",
   locate: "Locate",
   related: "Related",

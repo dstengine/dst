@@ -78,6 +78,7 @@ export const labels: Partial<ArticleLabels> = {
   whatHappened: "Worum es geht",
   updates: "Seit der Veröffentlichung",
   programme: "Programm",
+  speakers: "Vortragende",
   whoItsFor: "Für wen",
   locate: "Lage",
   related: "Passend dazu",

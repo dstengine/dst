@@ -205,13 +205,24 @@ describe("the network graph", () => {
       );
     }
 
-    // A Person anywhere in the graph would mean someone invented a byline.
+    // A Person in a byline slot means someone invented an author. The check
+    // used to be a string search for "Person" anywhere in the graph, which
+    // was right while nobody on these sites had a name — and wrong the day
+    // an event listed its speakers, who are people, correctly filed under
+    // `performer`. So it looks at the slot, not the type: bylines name the
+    // organisation, and a person may appear anywhere a person really is.
+    const BYLINE = ["author", "publisher", "creator", "editor", "copyrightHolder"];
     const people = [];
-    for (const p of pages) {
-      const seen = JSON.stringify(p.blocks);
-      if (seen.includes('"Person"')) people.push(`${p.app}${p.url}`);
-    }
-    assert.deepEqual(people, [], `markup names a Person:\n${people.join("\n")}`);
+    const walk = (value, where, at) => {
+      if (Array.isArray(value)) return value.forEach((v) => walk(v, where, at));
+      if (!value || typeof value !== "object") return;
+      if (value["@type"] === "Person" && BYLINE.includes(where)) {
+        people.push(`${at} — ${where}: ${value.name ?? "unnamed"}`);
+      }
+      for (const [key, v] of Object.entries(value)) walk(v, key, at);
+    };
+    for (const p of pages) walk(p.blocks, "", `${p.app}${p.url}`);
+    assert.deepEqual(people, [], `markup gives a byline to a person:\n${people.join("\n")}`);
 
     const authoredEvents = pages.flatMap((p) =>
       p.blocks

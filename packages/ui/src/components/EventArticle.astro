@@ -239,6 +239,20 @@ const jsonLd =
           },
         }
       : {}),
+    // The people, in the field search engines read them from. `performer` is
+    // schema.org's word for whoever is on the stage, and a conference
+    // speaker is on the stage; `affiliation` is why `org` is its own field
+    // rather than a comma in the name.
+    ...(item.speakers && item.speakers.length > 0
+      ? {
+          performer: item.speakers.map((person) => ({
+            "@type": "Person",
+            name: person.name,
+            ...(person.role ? { jobTitle: person.role } : {}),
+            ...(person.org ? { affiliation: { "@type": "Organization", name: person.org } } : {}),
+          })),
+        }
+      : {}),
     ...(item.organizer ? { organizer: { "@type": "Organization", name: item.organizer } } : {}),
     ...(offers ? { offers } : {}),
   };
@@ -377,6 +391,25 @@ const relatedItems = (item.related ?? []).map((card) => ({
           </div>
         ))}
       </dl>
+    </section>
+  )}
+
+  {item.speakers && item.speakers.length > 0 && (
+    <section class="event-speakers">
+      <h2>{item.speakersHeading ?? L.speakers}</h2>
+      <ul>
+        {item.speakers.map((person) => (
+          <li>
+            <p class="event-speaker-name">{person.name}</p>
+            {(person.role || person.org) && (
+              <p class="event-speaker-role">
+                {[person.role, person.org].filter(Boolean).join(", ")}
+              </p>
+            )}
+            {person.note && <p class="event-speaker-note">{person.note}</p>}
+          </li>
+        ))}
+      </ul>
     </section>
   )}
 
@@ -539,6 +572,34 @@ const relatedItems = (item.related ?? []).map((card) => ({
   .event-programme dl { margin: var(--space-2) 0 0; display: grid; gap: var(--space-3); }
   .event-programme dt { font-weight: 600; color: var(--ink); }
   .event-programme dd { margin: 0.35rem 0 0; color: var(--ink-muted); max-width: none; }
+
+  /* Cards, not tags: a speaker carries three lines where an audience label
+     carries three words, and the pill shape that suits one bursts on the
+     other. The grid holds one column on a phone and fills the width from
+     the point two names fit side by side without either wrapping. */
+  .event-speakers { margin-top: var(--space-4); }
+  .event-speakers ul {
+    margin: var(--space-2) 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: var(--space-2);
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+  }
+  .event-speakers li {
+    max-width: none;
+    padding: var(--space-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+  .event-speaker-name { margin: 0; font-weight: 600; color: var(--ink); max-width: none; }
+  .event-speaker-role {
+    margin: 0.2rem 0 0;
+    color: var(--ink-muted);
+    font-size: var(--step--1);
+    max-width: none;
+  }
+  .event-speaker-note { margin: 0.45rem 0 0; color: var(--ink-muted); max-width: none; }
 
   .event-audience { margin-top: var(--space-4); }
   /* Tags, not a bulleted list: these are parallel labels, and a column of

@@ -131,8 +131,20 @@ export const items: EventItem[] = [
     source: {
       name: "Blockchain Life",
       url: "https://blockchain-life.com/autumn2026/",
-      verifiedOn: "2026-08-26",
+      verifiedOn: "2026-09-07",
     },
+    // Six of the 200 the organiser advertises, taken from the edition's own
+    // page. A head count is not a reason to fly anywhere; a name is. Errol
+    // Musk is listed there too and is left out here: the page identifies him
+    // by whose father he is, which is not a qualification.
+    speakers: [
+      { name: "Paolo Ardoino", role: "CEO", org: "Tether" },
+      { name: "Sergey Nazarov", role: "Co-Founder", org: "Chainlink" },
+      { name: "Ben Zhou", role: "Co-Founder and CEO", org: "Bybit" },
+      { name: "Bobby Ong", role: "Co-Founder", org: "CoinGecko" },
+      { name: "Pascal Gauthier", role: "Chairman and CEO", org: "Ledger" },
+      { name: "Yat Siu", role: "Co-Founder and Executive Chairman", org: "Animoca Brands" },
+    ],
     body: [
       "Blockchain Life holds its 17th forum at Festival Arena, Dubai Festival City, on <strong>December 1 and 2, 2026</strong>, covering web3, mining, cryptocurrencies and — new this edition — a dedicated AI Future stage.",
       "The organisers expect 15,000+ attendees from 130+ countries, 200+ speakers and 200+ booths.",

@@ -38,6 +38,22 @@ export const items: EventItem[] = [
       verifiedOn: "2026-09-06",
     },
     ticket: { url: "https://cryptoexpodubai.com/dubai#tickets", label: "Tickets" },
+    // Two of the 140 the organiser advertises, and the two that say what
+    // kind of room this is. Both are listed by name on the event's own site,
+    // checked on the date in `source`.
+    speakers: [
+      {
+        name: "Simon O’Brien",
+        role: "Executive Director of Markets",
+        org: "Financial Services Regulatory Authority, Abu Dhabi Global Market",
+        note: "Led the development of ADGM’s virtual asset regulatory framework.",
+      },
+      {
+        name: "Sohaib Memon",
+        role: "Virtual Assets Supervisory Officer",
+        org: "Capital Market Authority",
+      },
+    ],
     body: [
       "The one least like the rest of this calendar. Where Solana Breakpoint and the Hacker House are addressed to people who write code, Crypto Expo Dubai is addressed to the people who license, custody and allocate — and it says so in its own strapline: “Where Digital Assets Meet Institutional Capital.”",
       "## The dates and the hall",
@@ -1146,9 +1162,27 @@ export const items: EventItem[] = [
     ],
     source: {
       name: "Blockchain Life",
-      url: "https://blockchain-life.com/",
-      verifiedOn: "2026-09-06",
+      // The edition's own page rather than the site root: the root is
+      // whatever forum comes next, and this entry is about this December.
+      url: "https://blockchain-life.com/autumn2026/",
+      verifiedOn: "2026-09-07",
     },
+    // Six of the 200 the organiser lists, chosen for this site's reader:
+    // protocol and market-infrastructure people rather than exchange chief
+    // executives. The full list is on the edition's own page, which is the
+    // source above.
+    speakers: [
+      { name: "Sergey Nazarov", role: "Co-Founder", org: "Chainlink" },
+      { name: "Sandeep Nailwal", role: "Co-Founder", org: "Polygon" },
+      { name: "Arthur Breitman", role: "Co-Founder", org: "Tezos" },
+      {
+        name: "Kostas Chalkias",
+        role: "Co-Founder and Chief Cryptographer",
+        org: "Mysten Labs",
+      },
+      { name: "Yoann Turpin", role: "Co-Founder", org: "Wintermute" },
+      { name: "Paolo Ardoino", role: "CEO", org: "Tether" },
+    ],
     ticket: { url: "https://blockchain-life.com/", label: "Tickets" },
     body: [
       "Blockchain Life is the biggest general crypto forum in the Gulf's calendar, and it is on this one for the ordinary reason: everything else that week is downstream of it. The organisers describe it as the <strong>17th international forum on Web3, mining, cryptocurrencies and AI</strong>, and put the numbers at 15,000+ attendees from 130+ countries, 200+ speakers, 200+ booths and three stages.",
