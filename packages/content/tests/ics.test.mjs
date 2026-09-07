@@ -1,7 +1,7 @@
 import { test, describe } from "node:test";
 import assert from "node:assert/strict";
-import { toIcs } from "../src/ics.ts";
-import { allEvents } from "../src/events/index.ts";
+import { toIcs, toIcsCalendar } from "../src/ics.ts";
+import { allEvents, eventsBySite } from "../src/events/index.ts";
 
 const NOW = new Date("2026-08-25T12:00:00Z");
 const base = {
@@ -78,6 +78,70 @@ describe("ics: every real event produces a valid file", () => {
       }
       assert.ok(field(ics, "DTSTART"), `${item.site}/${item.slug}: no DTSTART`);
       console.log(`  ${item.site}/${item.slug}: ${field(ics, "DTSTART")}`);
+    }
+  });
+});
+
+describe("ics: the subscribable calendar", () => {
+  const meta = {
+    name: "London Today — what's on",
+    description: "Exhibitions, carnival and theatre in central London.",
+    url: "https://ldn.lol/events/",
+    source: "https://ldn.lol/events.ics",
+  };
+  const cal = (items) => toIcsCalendar(items, (i) => `https://ldn.lol/events/${i.slug}/`, meta, NOW);
+
+  test("one wrapper holds every event", () => {
+    const items = [base, { ...base, slug: "second", start: "2026-09-09" }, { ...base, slug: "third", start: "2026-09-11" }];
+    const ics = cal(items);
+    assert.equal(lines(ics).filter((l) => l === "BEGIN:VCALENDAR").length, 1);
+    assert.equal(lines(ics).filter((l) => l === "BEGIN:VEVENT").length, 3);
+    console.log(`  3 events, ${lines(ics).length} lines, one VCALENDAR`);
+  });
+
+  test("events come out in date order however they went in", () => {
+    const items = [
+      { ...base, slug: "late", start: "2026-12-01" },
+      { ...base, slug: "early", start: "2026-09-07" },
+      { ...base, slug: "middle", start: "2026-10-15" },
+    ];
+    const order = lines(cal(items)).filter((l) => l.startsWith("UID:")).map((l) => l.slice(4).split("@")[0]);
+    console.log("  ", order.join(" -> "));
+    assert.deepEqual(order, ["early", "middle", "late"]);
+  });
+
+  test("a subscriber is told what this is and where to re-read it", () => {
+    const ics = cal([base]);
+    // NAME and SOURCE are RFC 7986; the X-WR-* twins are what Google and
+    // Apple have honoured for far longer, so both have to be present.
+    assert.equal(field(ics, "NAME"), `NAME:${meta.name}`);
+    assert.equal(field(ics, "X-WR-CALNAME"), `X-WR-CALNAME:${meta.name}`);
+    assert.equal(field(ics, "SOURCE"), `SOURCE;VALUE=URI:${meta.source}`);
+    assert.equal(field(ics, "REFRESH-INTERVAL"), "REFRESH-INTERVAL;VALUE=DURATION:PT12H");
+    assert.equal(field(ics, "X-PUBLISHED-TTL"), "X-PUBLISHED-TTL:PT12H");
+    console.log("  ", field(ics, "SOURCE"), "|", field(ics, "REFRESH-INTERVAL"));
+  });
+
+  test("no METHOD, which belongs to an invitation rather than a feed", () => {
+    // A single event is imported once and METHOD:PUBLISH describes that.
+    // A calendar a client re-fetches on its own schedule is not iTIP traffic.
+    assert.ok(toIcs(base, "https://ldn.lol/x/", NOW).includes("METHOD:PUBLISH"));
+    assert.ok(!cal([base]).includes("METHOD:"), "the subscribable calendar should carry no METHOD");
+  });
+
+  test("every site's real calendar folds, escapes and ends cleanly", () => {
+    for (const site of ["dst", "llc", "visas", "riviera", "mbr", "palmcentral", "eco", "fwf", "nyc42", "ldn", "lnd", "cmx", "mxo", "sol2go", "vien"]) {
+      const items = eventsBySite(site).filter((i) => Array.isArray(i.body) && i.body.length > 0);
+      const ics = toIcsCalendar(items, (i) => `https://example.test/events/${i.slug}/`, { ...meta, name: site }, NOW);
+      const over = lines(ics).filter((l) => Buffer.byteLength(l, "utf8") > 75);
+      assert.deepEqual(over, [], `${site}: unfolded lines`);
+      assert.ok(ics.endsWith("END:VCALENDAR\r\n"), `${site}: file does not close the calendar`);
+      assert.equal(lines(ics).filter((l) => l === "BEGIN:VEVENT").length, items.length, `${site}: event count`);
+      // A UID has to be unique inside one calendar or a client will treat
+      // two entries as edits of the same appointment.
+      const uids = lines(ics).filter((l) => l.startsWith("UID:"));
+      assert.equal(new Set(uids).size, uids.length, `${site}: duplicate UID in one calendar`);
+      console.log(`  ${site.padEnd(12)} ${String(items.length).padStart(2)} events, ${lines(ics).length} lines`);
     }
   });
 });

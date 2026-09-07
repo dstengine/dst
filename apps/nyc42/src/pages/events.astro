@@ -18,6 +18,7 @@ const thin = items.length < 3;
   </section>
   <section class="container">
     <SectionNav sections={sectionLinks} allHref="/" {...NAV} />
-    <EventsList items={items} eventsBase={eventsBase} />
+    <EventsList items={items} eventsBase={eventsBase}
+      calendarHref={new URL("/events.ics", Astro.site).href} />
   </section>
 </Layout>

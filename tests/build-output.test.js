@@ -701,6 +701,63 @@ describe("redirects", () => {
   });
 });
 
+describe("event calendars", () => {
+  // app -> the path its events live under, which is also the calendar's name.
+  const CALENDARS = {
+    dst: "events", llc: "events", visas: "events", riviera: "events", mbr: "events",
+    palmcentral: "events", eco: "events", fwf: "events", nyc42: "events", ldn: "events",
+    lnd: "events", sol2go: "events", cmx: "eventos", mxo: "eventos", vien: "veranstaltungen",
+  };
+  const read = (app) => {
+    const file = path.join(REPO, "apps", app, "dist", `${CALENDARS[app]}.ics`);
+    assert.ok(existsSync(file), `apps/${app}: no ${CALENDARS[app]}.ics — the subscribable calendar was not built`);
+    return readFileSync(file, "utf8");
+  };
+  // RFC 5545 §3.1 folds long lines and continues them with a leading space,
+  // so a URL past 75 octets arrives in pieces. Reading the file without
+  // undoing that reports a truncated address as a dead link.
+  const unfolded = (app) => read(app).replace(/\r\n[ \t]/g, "");
+
+  test("every site with events publishes one subscribable calendar", () => {
+    for (const [app, base] of Object.entries(CALENDARS)) {
+      const ics = read(app);
+      const events = ics.split("\r\n").filter((l) => l === "BEGIN:VEVENT").length;
+      // A calendar is worth subscribing to only if it says what it is and
+      // where to come back for it; without SOURCE a client has no refresh URL.
+      for (const required of ["X-WR-CALNAME:", "SOURCE;VALUE=URI:", "REFRESH-INTERVAL;"]) {
+        assert.ok(ics.includes(required), `${app}/${base}.ics: missing ${required}`);
+      }
+      assert.ok(events > 0, `${app}/${base}.ics: no events in it`);
+      console.log(`  ${app.padEnd(12)} ${String(events).padStart(2)} events`);
+    }
+  });
+
+  test("every URL in a calendar leads to a page that was built", () => {
+    // This file ends up inside someone's phone and outlives the visit that
+    // produced it, so a dead link here is worse than a dead link on a page.
+    const dead = [];
+    for (const app of Object.keys(CALENDARS)) {
+      for (const m of unfolded(app).matchAll(/^URL:(.*)$/gm)) {
+        const url = m[1].trim();
+        const file = path.join(REPO, "apps", app, "dist", new URL(url).pathname, "index.html");
+        if (!existsSync(file)) dead.push(`${app}: ${url}`);
+      }
+    }
+    assert.deepEqual(dead, [], `calendar entries pointing at pages that do not exist:\n  ${dead.join("\n  ")}`);
+  });
+
+  test("the events page offers the calendar, or nobody ever finds it", () => {
+    const missing = [];
+    for (const [app, base] of Object.entries(CALENDARS)) {
+      const html = readFileSync(path.join(REPO, "apps", app, "dist", base, "index.html"), "utf8");
+      // webcal:, not https: — the scheme is what makes a calendar app treat
+      // this as a subscription rather than a one-off file to save.
+      if (!html.includes(`webcal://`) || !html.includes(`/${base}.ics`)) missing.push(`${app}/${base}/`);
+    }
+    assert.deepEqual(missing, [], `events pages with no link to their own calendar:\n  ${missing.join("\n  ")}`);
+  });
+});
+
 describe("sitemap", () => {
   const sitemapUrls = (app) => {
     const dir = path.join(REPO, "apps", app, "dist");

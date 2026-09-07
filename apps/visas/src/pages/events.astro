@@ -28,6 +28,7 @@ const sectionLinks = sections([...eventsBySite(siteId), ...newsBySite(siteId)]);
 
   <section class="container">
     <SectionNav sections={sectionLinks} {...NAV} />
-    <EventsList items={items} />
+    <EventsList items={items}
+      calendarHref={new URL("/events.ics", Astro.site).href} />
   </section>
 </Layout>

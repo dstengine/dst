@@ -5,6 +5,7 @@
 // rebuilds regularly, not a live app.
 import type { EventItem } from "@dst/content/types";
 import FeedCards from "./FeedCards.astro";
+import Icon from "./Icon.astro";
 import { withLabels, type ArticleLabels } from "../labels.ts";
 import CountdownScript from "./CountdownScript.astro";
 
@@ -20,10 +21,19 @@ interface Props {
   locale?: string;
   /** The two group headings, for a site not writing in English. */
   labels?: Partial<ArticleLabels>;
+  /** Absolute https URL of this site's whole-calendar .ics. Absent on a
+      site that doesn't publish one, and the block then isn't drawn. */
+  calendarHref?: string;
 }
-const { items, eventsBase = "/events/", locale, labels: labelOverrides } = Astro.props;
+const { items, eventsBase = "/events/", locale, labels: labelOverrides, calendarHref } = Astro.props;
 const L = withLabels(labelOverrides);
 const todayIso = new Date().toISOString().slice(0, 10);
+
+// webcal: is what hands the URL straight to a calendar app as a
+// subscription. The same address over https downloads the file instead,
+// which is the one-off import the per-event button already does — so the
+// scheme is the whole difference between the two things.
+const subscribeHref = calendarHref?.replace(/^https?:/, "webcal:");
 
 // Upcoming events run in date order. Nothing else.
 //
@@ -85,6 +95,15 @@ const past = items
         <FeedCards items={past} columns={past.length <= 2 ? past.length : undefined} locale={locale} labels={L} />
       </div>
     )}
+    {subscribeHref && (
+      <a class="events-subscribe" href={subscribeHref} title={L.subscribeCalendarTitle}>
+        <Icon name="events" />
+        <span class="events-subscribe-text">
+          <span class="events-subscribe-label">{L.subscribeCalendar}</span>
+          <span class="events-subscribe-note">{L.subscribeCalendarNote}</span>
+        </span>
+      </a>
+    )}
   </div>
 )}
 
@@ -94,4 +113,38 @@ const past = items
   /* A past event is still worth having on the page — it's evidence the site
      covers this beat — but it shouldn't compete with what's still to come. */
   .events-group-past { opacity: 0.85; }
+
+  /* Sits under the dates, because it is the thing to do after reading them.
+     The whole block is the target, not the label inside it: a two-line offer
+     whose top line alone is clickable makes the reader aim, and on a phone
+     the note is the larger half of what they are aiming at. */
+  .events-subscribe {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    padding: var(--space-3);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: var(--step--1);
+    color: inherit;
+    text-decoration: none;
+  }
+  .events-subscribe:hover,
+  .events-subscribe:focus-visible { border-color: var(--accent); }
+  /* :global on the svg because Icon.astro renders it, not this file, and
+     Astro scopes every part of a selector — including the descendant. The
+     unsized mark came out 95px square. Glance.astro gets away with a plain
+     `dt svg` only because it writes its own svg inline. */
+  .events-subscribe :global(svg) {
+    flex: none;
+    width: 1.4em;
+    height: 1.4em;
+    color: var(--accent);
+    /* Optical alignment with the label's cap height rather than its box. */
+    margin-top: 0.1em;
+  }
+  .events-subscribe-text { display: flex; flex-direction: column; gap: 0.15em; }
+  .events-subscribe-label { font-weight: 600; color: var(--accent); }
+  .events-subscribe:hover .events-subscribe-label { text-decoration: underline; }
+  .events-subscribe-note { color: var(--muted); }
 </style>

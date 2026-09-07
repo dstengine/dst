@@ -75,6 +75,15 @@ export interface ArticleLabels {
   upcoming: string;
   /** Heading over the group of events that have happened. */
   pastGroup: string;
+  /** Link to the site's whole-calendar .ics, which is subscribed to rather
+      than downloaded — unlike the per-event file, which is imported once. */
+  subscribeCalendar: string;
+  /** The line under it. A subscription is worth explaining: most readers
+      have only ever met the one-off "add to calendar" button. */
+  subscribeCalendarNote: string;
+  /** Its title attribute. A webcal: link hands the page to another
+      application, which is worth saying before it happens. */
+  subscribeCalendarTitle: string;
   /** Chip on one card that has. Separate from the heading above because a
       language that inflects for number needs a singular here. */
   past: string;
@@ -137,6 +146,9 @@ export const EN: ArticleLabels = {
   allNews: "All news",
   upcoming: "Upcoming",
   pastGroup: "Past",
+  subscribeCalendar: "Subscribe to this calendar",
+  subscribeCalendarNote: "Every date on this page, kept up to date in your own calendar.",
+  subscribeCalendarTitle: "Opens your calendar app and subscribes to these dates",
   past: "Past",
   mapTitle: (place) => `Map — ${place}`,
 
@@ -205,6 +217,9 @@ export const ES: Partial<ArticleLabels> = {
   allNews: "Todas las noticias",
   upcoming: "Próximos",
   pastGroup: "Pasados",
+  subscribeCalendar: "Suscribirse a este calendario",
+  subscribeCalendarNote: "Todas las fechas de esta página, siempre al día en tu calendario.",
+  subscribeCalendarTitle: "Abre tu app de calendario y se suscribe a estas fechas",
   past: "Pasado",
   mapTitle: (place) => `Mapa — ${place}`,
 
@@ -264,6 +279,9 @@ export const DE: Partial<ArticleLabels> = {
   allNews: "Alle Nachrichten",
   upcoming: "Demnächst",
   pastGroup: "Vorbei",
+  subscribeCalendar: "Diesen Kalender abonnieren",
+  subscribeCalendarNote: "Alle Termine dieser Seite, laufend aktuell im eigenen Kalender.",
+  subscribeCalendarTitle: "Öffnet die Kalender-App und abonniert diese Termine",
   past: "Vorbei",
   mapTitle: (place) => `Karte — ${place}`,
 

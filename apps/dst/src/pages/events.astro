@@ -73,7 +73,8 @@ const networkCards = upcomingEvents(
     <h2>From the group</h2>
     <SectionNav sections={sectionLinks} {...NAV} />
     {items.length > 0 ? (
-      <EventsList items={items} />
+      <EventsList items={items}
+        calendarHref={new URL("/events.ics", Astro.site).href} />
     ) : (
       <p class="feed-empty">
         Nothing scheduled at group level right now. What's coming up across

@@ -59,16 +59,17 @@ function dayAfter(iso: string): string {
   return dateOnly(d.toISOString().slice(0, 10));
 }
 
-export function toIcs(item: EventItem, pageUrl: string, now: Date = new Date()): string {
+/**
+ * The VEVENT block for one entry, without the calendar wrapper around it.
+ * Both outputs below are the same event data — a single download and a
+ * subscribable calendar — so the mapping from an EventItem to iCalendar
+ * lives here once.
+ */
+function vevent(item: EventItem, pageUrl: string, now: Date): string[] {
   const offset = item.utcOffset ?? "+04:00";
   const timed = Boolean(item.startTime);
 
   const lines: string[] = [
-    "BEGIN:VCALENDAR",
-    "VERSION:2.0",
-    "PRODID:-//DST//events//EN",
-    "CALSCALE:GREGORIAN",
-    "METHOD:PUBLISH",
     "BEGIN:VEVENT",
     // The UID's domain part has to be a host we actually own, and not every
     // site is a *.dst.llc vertical — fwf.lol is its own domain.
@@ -94,8 +95,83 @@ export function toIcs(item: EventItem, pageUrl: string, now: Date = new Date()):
   if (location) lines.push(`LOCATION:${escapeText(location)}`);
   if (item.geo) lines.push(`GEO:${item.geo.lat};${item.geo.lng}`);
   lines.push(`URL:${pageUrl}`);
-  lines.push("END:VEVENT", "END:VCALENDAR");
+  lines.push("END:VEVENT");
+  return lines;
+}
 
-  // CRLF throughout — Outlook rejects bare LF.
-  return lines.map(fold).join("\r\n") + "\r\n";
+/** CRLF throughout — Outlook rejects bare LF. */
+const serialise = (lines: string[]) => lines.map(fold).join("\r\n") + "\r\n";
+
+export function toIcs(item: EventItem, pageUrl: string, now: Date = new Date()): string {
+  return serialise([
+    "BEGIN:VCALENDAR",
+    "VERSION:2.0",
+    "PRODID:-//DST//events//EN",
+    "CALSCALE:GREGORIAN",
+    // A single file is handed to a calendar app to import, which is what
+    // METHOD:PUBLISH describes. The subscribable calendar below carries no
+    // METHOD: that property belongs to iTIP transport, not to a feed a
+    // client re-fetches on its own schedule.
+    "METHOD:PUBLISH",
+    ...vevent(item, pageUrl, now),
+    "END:VCALENDAR",
+  ]);
+}
+
+/** What a whole-site calendar needs beyond the events themselves. */
+export interface CalendarMeta {
+  /** Shown as the calendar's name once someone has subscribed. */
+  name: string;
+  /** One line on what is in it, in the site's own language. */
+  description: string;
+  /** The site's events page — where a reader goes to see the same thing. */
+  url: string;
+  /** This file's own address, so a client knows where to re-fetch it. */
+  source: string;
+}
+
+/**
+ * Every published event on one site as a single subscribable calendar.
+ *
+ * Two audiences, both of which already exist. A reader subscribes once and
+ * the site keeps their calendar current without an account anywhere — a far
+ * stickier subscription than a feed, because nobody unsubscribes from a
+ * calendar and it speaks up the day before. And community listings software
+ * (Mobilizon, Gancio) imports events from exactly this: an ICS feed it
+ * re-reads on a schedule. There we are a source rather than a promoter,
+ * which is the only footing worth having with a local calendar.
+ *
+ * Everything with a page goes in, past included. The archives here run to a
+ * few dozen entries at most, and a past event on these sites carries its
+ * `outcome` rather than being left as a dead date — so a cut-off would be a
+ * policy invented ahead of any need for one.
+ */
+export function toIcsCalendar(
+  items: EventItem[],
+  pageUrlFor: (item: EventItem) => string,
+  meta: CalendarMeta,
+  now: Date = new Date(),
+): string {
+  const ordered = [...items].sort((a, b) => (a.start < b.start ? -1 : a.start > b.start ? 1 : 0));
+  return serialise([
+    "BEGIN:VCALENDAR",
+    "VERSION:2.0",
+    "PRODID:-//DST//events//EN",
+    "CALSCALE:GREGORIAN",
+    // RFC 7986 names these; the X-WR-* twins are what Google and Apple have
+    // read since long before that RFC, and both still win in some clients.
+    `NAME:${escapeText(meta.name)}`,
+    `X-WR-CALNAME:${escapeText(meta.name)}`,
+    `DESCRIPTION:${escapeText(meta.description)}`,
+    `X-WR-CALDESC:${escapeText(meta.description)}`,
+    `URL:${meta.url}`,
+    `SOURCE;VALUE=URI:${meta.source}`,
+    // How often a subscriber should come back. Twice a day is honest for a
+    // listings site that publishes a few times a week: often enough that a
+    // new date lands before it matters, rare enough to cost nobody anything.
+    "REFRESH-INTERVAL;VALUE=DURATION:PT12H",
+    "X-PUBLISHED-TTL:PT12H",
+    ...ordered.flatMap((item) => vevent(item, pageUrlFor(item), now)),
+    "END:VCALENDAR",
+  ]);
 }
