@@ -144,7 +144,9 @@ const past = items
     margin-top: 0.1em;
   }
   .events-subscribe-text { display: flex; flex-direction: column; gap: 0.15em; }
+  /* No underline on hover: the whole card is the target, so underlining the
+     label says the label is the link and the rest of the block is not. The
+     border colour carries the hover state instead. */
   .events-subscribe-label { font-weight: 600; color: var(--accent); }
-  .events-subscribe:hover .events-subscribe-label { text-decoration: underline; }
   .events-subscribe-note { color: var(--muted); }
 </style>
