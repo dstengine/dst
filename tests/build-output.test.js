@@ -745,6 +745,59 @@ describe("sitemap", () => {
     }
   });
 
+  // The rule the recorded dates exist to keep, from AGENTS.md: lastmod is
+  // per page, not per file. A site's whole feed lives in one source file, so
+  // dating pages by that file makes every page claim to have changed
+  // whenever any of them did — and a date that is always "now" is worse than
+  // no date, because a crawler that learns the date means nothing stops
+  // reading it. One shared date across a whole site is what that mistake
+  // looks like from outside.
+  test("no site dates every page the same", () => {
+    for (const { app } of SITES) {
+      const dates = new Set();
+      const dir = path.join(REPO, "apps", app, "dist");
+      for (let i = 0; existsSync(path.join(dir, `sitemap-${i}.xml`)); i++) {
+        const xml = readFileSync(path.join(dir, `sitemap-${i}.xml`), "utf8");
+        for (const m of xml.matchAll(/<lastmod>(.*?)<\/lastmod>/g)) dates.add(m[1].slice(0, 10));
+      }
+      // A site of one or two pages can honestly have one date.
+      if (sitemapUrls(app).length < 4) continue;
+      assert.ok(
+        dates.size > 1,
+        `${app}: all ${sitemapUrls(app).length} pages carry ${[...dates][0]} — dated by file rather than by entry; run node tools/lastmod.mjs`,
+      );
+    }
+  });
+
+  // The recorded dates are a file, and a file goes stale. Structure changes
+  // — a route added, a slug renamed, a section earned — land in dist before
+  // anything writes them into the map, and the tool that writes it reads git,
+  // so it cannot run until the change is committed. Both directions are
+  // faults, and each names the same fix, because the fix is the same.
+  test("the recorded dates match the pages that exist", () => {
+    const recorded = JSON.parse(
+      readFileSync(path.join(REPO, "packages/content/src/lastmod.json"), "utf8"),
+    );
+    const undated = [];
+    const orphaned = [];
+    for (const { app, host } of SITES) {
+      const map = recorded[host] ?? {};
+      const listed = sitemapUrls(app).map((u) => new URL(u).pathname);
+      for (const url of listed) if (!map[url]) undated.push(`${app}${url}`);
+      // The other direction is checked against the pages on disk, not the
+      // sitemap: /li/ is a real page that the sitemap leaves out on purpose,
+      // and dating it is right. A /go/ hop is a redirect and is dated by
+      // nothing.
+      const built = new Set(pages.filter((q) => q.app === app && !q.url.startsWith("/go/")).map((q) => q.url));
+      for (const url of Object.keys(map)) {
+        if (!built.has(url)) orphaned.push(`${app}${url}`);
+      }
+    }
+    const fix = "commit the change, then run node tools/lastmod.mjs and rebuild";
+    assert.deepEqual(undated, [], `pages with no recorded date — ${fix}:\n  ${undated.join("\n  ")}`);
+    assert.deepEqual(orphaned, [], `dates recorded for pages that no longer exist — ${fix}:\n  ${orphaned.join("\n  ")}`);
+  });
+
   test("robots.txt points at a sitemap that exists", () => {
     for (const { app, host } of SITES) {
       const robots = readFileSync(path.join(REPO, "apps", app, "dist", "robots.txt"), "utf8");
