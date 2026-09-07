@@ -931,7 +931,17 @@ describe("sitemap", () => {
     }
     const varied = [...spread].filter(([, d]) => d.size > 1).map(([a]) => a);
     if (varied.length === 0) return; // the whole network was rebuilt at once
+    // A sweep does not land evenly: a site whose pages are dated by their own
+    // entry keeps the older dates its entries carry, so a few sites still
+    // vary while the rest go flat on the day of the sweep. What tells the two
+    // apart is which day the flat sites landed on. A site dated by its file
+    // drifts to whenever that file was last touched, which is its own
+    // business; a site flattened by a sweep carries the same day the swept
+    // pages elsewhere carry.
+    const sweepDay = [...spread.values()].flatMap((d) => [...d]).sort().at(-1);
+    const swept = varied.some((app) => spread.get(app).has(sweepDay));
     const flat = [...spread]
+      .filter(([, d]) => !(swept && d.has(sweepDay)))
       .filter(([, d]) => d.size === 1)
       .map(([a, d]) => `${a}: every page carries ${[...d][0]}`);
     assert.deepEqual(
