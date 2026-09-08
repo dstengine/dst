@@ -5040,6 +5040,102 @@
         ]
       ]
     },
+    "/covers/frieze-london-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/frieze-london-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/frieze-london-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/frieze-london-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/frieze-london-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/frieze-london-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/frieze-london-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/frieze-london-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/frieze-london-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/frieze-london-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/frieze-london-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/frieze-sculpture-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/frieze-sculpture-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/frieze-sculpture-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/frieze-sculpture-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/frieze-sculpture-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/frieze-sculpture-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/frieze-sculpture-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/frieze-sculpture-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/frieze-sculpture-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/frieze-sculpture-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/frieze-sculpture-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/frieze-sculpture-in-regents-park.jpg": {
       "width": 1536,
       "height": 864,
@@ -5229,6 +5325,54 @@
         [
           1536,
           "/covers/london-design-festival-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/london-fashion-week-september-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/london-fashion-week-september-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/london-fashion-week-september-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/london-fashion-week-september-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/london-fashion-week-september-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/london-fashion-week-september-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/london-fashion-week-september-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/london-fashion-week-september-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/london-fashion-week-september-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/london-fashion-week-september-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/london-fashion-week-september-2026-1536.webp"
         ]
       ]
     },
@@ -14932,6 +15076,54 @@
         ]
       ]
     },
+    "/covers/climate-week-nyc-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/climate-week-nyc-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/climate-week-nyc-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/climate-week-nyc-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/climate-week-nyc-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/climate-week-nyc-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/climate-week-nyc-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/climate-week-nyc-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/climate-week-nyc-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/climate-week-nyc-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/climate-week-nyc-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/disney-cruises-return-to-nyc.jpg": {
       "width": 1536,
       "height": 864,
@@ -14977,6 +15169,54 @@
         [
           1536,
           "/covers/disney-cruises-return-to-nyc-1536.webp"
+        ]
+      ]
+    },
+    "/covers/feast-of-san-gennaro-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/feast-of-san-gennaro-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/feast-of-san-gennaro-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/feast-of-san-gennaro-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/feast-of-san-gennaro-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/feast-of-san-gennaro-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/feast-of-san-gennaro-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/feast-of-san-gennaro-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/feast-of-san-gennaro-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/feast-of-san-gennaro-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/feast-of-san-gennaro-2026-1536.webp"
         ]
       ]
     },

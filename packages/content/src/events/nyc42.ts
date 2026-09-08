@@ -587,4 +587,122 @@ export const items: EventItem[] = [
     expertise:
       "Festival Day is the famous one and the Bookend events are the better ones. The week before is when individual bookshops, bars and libraries across the borough host single readings — smaller rooms, one author, and no need to choose between eight stages running at the same hour. Plan Sunday backwards from the two panels you actually want and accept that you will miss the rest; the Literary Marketplace is worth an hour on its own, and it is quietest before noon. Borough Hall is on the 2/3, 4/5 and R at Borough Hall and Court Street, which is as easy as arriving anywhere in Brooklyn gets.",
   },
+
+  {
+    slug: "feast-of-san-gennaro-2026",
+    site: "nyc42",
+    image: "/covers/feast-of-san-gennaro-2026.jpg",
+    imageAlt: "A string of small amber lamps hung in a line across a dark brown ground",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Feast of San Gennaro 2026",
+    summary:
+      "Eleven days of Little Italy given over to the feast, September 17 to 27, free to walk into, with the Grand Procession on Saturday the 26th from 2pm.",
+    start: "2026-09-17",
+    end: "2026-09-27",
+    utcOffset: "-04:00",
+    venue: "Mulberry Street, Little Italy",
+    city: "New York",
+    country: "United States",
+    organizer: "Figli di San Gennaro",
+    category: "Festival",
+    tickets: { priceFrom: 0, currency: "USD" },
+    source: {
+      name: "Feast of San Gennaro",
+      url: "https://sangennaronyc.org/",
+      verifiedOn: "2026-09-08",
+    },
+    ticket: { url: "https://sangennaronyc.org/", label: "More details" },
+    body: [
+      "For eleven days a working stretch of downtown stops being a street. The Feast of San Gennaro is the oldest and largest of New York's Italian-American street feasts, and the thing to understand before going is that it is a religious procession with a fair around it, not a fair with a saint's name on it.",
+      "## The dates",
+      "<strong>September 17 to September 27, 2026</strong>, in Little Italy.",
+      "## Where it runs",
+      "<strong>Mulberry Street</strong> between Canal and Houston, <strong>Hester Street</strong> between Baxter and Centre, and <strong>Grand Street</strong> between Baxter and Centre Market Place.",
+      "## The Grand Procession",
+      "<strong>Saturday, September 26, 2pm to 4pm</strong>: the statue is carried through the streets, with live music. The <strong>Solemn High Mass</strong> is on <strong>September 19</strong>.",
+      "## What it costs",
+      "Nothing to walk in. The daily opening and closing times are not published on the feast's own site, so no hours appear here.",
+    ],
+    faq: [
+      {
+        q: "Is the Feast of San Gennaro free?",
+        a: "Yes. The streets are open and there is <strong>no admission charge</strong>; you pay only for what you eat and for the games.",
+      },
+      {
+        q: "When is the Feast of San Gennaro 2026?",
+        a: "<strong>September 17 to September 27, 2026</strong>, eleven days in Little Italy.",
+      },
+      {
+        q: "When is the Grand Procession?",
+        a: "<strong>Saturday, September 26, from 2pm to 4pm</strong>, with the statue carried through the streets and live music.",
+      },
+      {
+        q: "Which streets does the feast cover?",
+        a: "Mulberry Street from Canal to Houston, Hester Street from Baxter to Centre, and Grand Street from Baxter to Centre Market Place.",
+      },
+    ],
+    expertise:
+      "Two weekends and nine weekdays, and they are not the same event. The weekend nights on Mulberry are shoulder-to-shoulder, which is the picture everyone has of the feast and also the reason people leave after twenty minutes; a Tuesday evening is the same food and the same stalls with room to stand still. If the point of going is the procession, that is Saturday the 26th and it is the one date that cannot be moved. And the side streets matter: Hester and Grand carry the same feast with a fraction of the crowd, and the queues on Mulberry are for the stands nearest the entrance, not for the best of them.",
+  },
+
+  {
+    slug: "climate-week-nyc-2026",
+    site: "nyc42",
+    image: "/covers/climate-week-nyc-2026.jpg",
+    imageAlt: "A row of tall dark towers of falling height across a pale amber ground, one orange circle low behind them",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Climate Week NYC 2026",
+    summary:
+      "Eight days of climate business and policy events across the city, September 20 to 27, run by the Climate Group alongside the UN General Assembly, drawing over a hundred thousand people a year.",
+    start: "2026-09-20",
+    end: "2026-09-27",
+    utcOffset: "-04:00",
+    city: "New York",
+    country: "United States",
+    organizer: "Climate Group",
+    category: "Summit",
+    source: {
+      name: "Climate Week NYC",
+      url: "https://www.climateweeknyc.org/",
+      verifiedOn: "2026-09-08",
+    },
+    ticket: { url: "https://www.climateweeknyc.org/", label: "The calendar" },
+    body: [
+      "For one week in September the city carries a second conference on top of itself, and most of it is not in one building. Climate Week NYC is a calendar rather than a venue: hundreds of separately run events across Manhattan and Brooklyn, held under one name and one set of dates.",
+      "## The dates",
+      "<strong>September 20 to September 27, 2026</strong>, across New York City.",
+      "## Who runs it",
+      "The <strong>Climate Group</strong>, an international non-profit. It sets the dates and the main programme; the rest of the calendar is filled by organisations registering their own events under it.",
+      "## The scale",
+      "The organisers put attendance at <strong>over 100,000 people a year</strong>, which makes it the largest annual gathering of its kind in the city.",
+      "## What is on the 2026 calendar",
+      "Among the featured events: investor and family-office summits, clean energy trade and the grid, methane reduction, the circular economy and aluminium recycling, and the electricity demand of AI.",
+      "## Getting in",
+      "There is no single ticket. Each event on the calendar sets its own terms — some open, some by registration, some invitation only — so the calendar entry is the thing to read, not the week.",
+    ],
+    faq: [
+      {
+        q: "When is Climate Week NYC 2026?",
+        a: "<strong>September 20 to September 27, 2026</strong>, across New York City.",
+      },
+      {
+        q: "Is there one ticket for Climate Week NYC?",
+        a: "No. Climate Week is a calendar of separately run events, and <strong>each one sets its own admission</strong> — some open to anyone, some by registration, some invitation only.",
+      },
+      {
+        q: "Who organises Climate Week NYC?",
+        a: "The Climate Group, an international non-profit, which sets the dates and the main programme while other organisations register their own events under it.",
+      },
+      {
+        q: "How big is Climate Week NYC?",
+        a: "The organisers put attendance at over 100,000 people a year.",
+      },
+    ],
+    expertise:
+      "The mistake is treating it as a conference you attend. There is no badge that opens the week: the main programme is a small share of it, and the hundreds of events around it are run by whoever registered them, each with its own door policy. What that means in practice is that the useful planning happens on the calendar page a fortnight out, when the open events are still taking registrations — by the week itself the ones worth going to are full. The second thing worth knowing is what it does to the city: it runs alongside the UN General Assembly, and midtown east of Fifth is slower all week.",
+  },
 ];

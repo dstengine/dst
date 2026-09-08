@@ -523,4 +523,165 @@ export const items: EventItem[] = [
     expertise:
       "The opening sequence is the thing to arrive for, and one o'clock on the square is a different proposition from one o'clock anywhere else in London — the space fills from the north steps down, so the National Gallery side gives you a view of the whole stage and the fountains do not. If you are bringing children, the craft workshops and puppet shows sit away from the main stage and run through the afternoon, which means the four-to-six window is the manageable one: the square is at its fullest, but the family programming is not where the crush is.",
   },
+
+  {
+    slug: "frieze-sculpture-2026",
+    site: "ldn",
+    image: "/covers/frieze-sculpture-2026.jpg",
+    imageAlt: "Three large abstract solids — a red circle, a red block and a charcoal circle — standing together on an open cream ground",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Frieze Sculpture 2026",
+    summary:
+      "Eleven international artists in the English Gardens of The Regent's Park, free and outdoors, from 16 September to 1 November — seven weeks, three of which have nothing to do with the fair.",
+    start: "2026-09-16",
+    end: "2026-11-01",
+    utcOffset: "+01:00",
+    venue: "The Regent's Park",
+    city: "London",
+    organizer: "Frieze",
+    category: "Exhibitions",
+    tickets: { priceFrom: 0, priceTo: 0, currency: "GBP" },
+    source: {
+      name: "Frieze",
+      url: "https://www.frieze.com/fairs/frieze-sculpture",
+      verifiedOn: "2026-09-08",
+    },
+    ticket: { url: "https://www.frieze.com/fairs/frieze-sculpture", label: "More details" },
+    body: [
+      "The part of Frieze that costs nothing is also the part that lasts seven weeks. Frieze Sculpture puts large works out in the open in The Regent's Park, and the gate is the park gate.",
+      "## The dates",
+      "<strong>16 September to 1 November 2026</strong>, in the <strong>English Gardens</strong> of <strong>The Regent's Park</strong>.",
+      "## What it costs",
+      "<strong>Nothing.</strong> It is an outdoor public exhibition in a royal park.",
+      "## Who is in it",
+      "The <strong>14th edition</strong>, curated by <strong>Fatoş Üstek</strong> for the fourth year, with <strong>eleven international artists</strong> — among them <strong>Angel Otero</strong>, <strong>Conrad Shawcross</strong>, <strong>Tarini Sethi</strong> and <strong>Ivana Bašić</strong>.",
+      "## Tours",
+      "A programme of <strong>free curator-led tours</strong> runs in September and November, starting at the <strong>St. Andrew's Gate</strong> entrance.",
+    ],
+    faq: [
+      {
+        q: "Is Frieze Sculpture free?",
+        a: "Yes. It is an outdoor exhibition in The Regent's Park with <strong>no ticket and no admission charge</strong>, and the curator-led tours are free as well.",
+      },
+      {
+        q: "When is Frieze Sculpture 2026?",
+        a: "<strong>16 September to 1 November 2026</strong> — seven weeks, opening a month before Frieze London and running a fortnight after it.",
+      },
+      {
+        q: "Where in The Regent's Park is it?",
+        a: "In the English Gardens. The free curator-led tours start at the St. Andrew's Gate entrance.",
+      },
+      {
+        q: "Do I need a Frieze London ticket to see the sculptures?",
+        a: "No. Frieze Sculpture is separate from the fair and open to anyone in the park.",
+      },
+    ],
+    expertise:
+      "The dates are the useful part. Frieze Sculpture opens on 16 September and the fair does not start until 14 October, which means there are four weeks when the works are up and the park is empty — and another fortnight after the tents come down. Going in fair week is going on the two busiest days of the seven weeks for no reason. The other thing worth knowing is that the English Gardens are a small part of a very large park: it is a twenty-minute walk from the Regent's Park tube, and St. Andrew's Gate is the entrance that puts you in the middle of it.",
+  },
+
+  {
+    slug: "frieze-london-2026",
+    site: "ldn",
+    image: "/covers/frieze-london-2026.jpg",
+    imageAlt: "Two red fair tents standing side by side on an open cream ground",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Frieze London and Frieze Masters 2026",
+    summary:
+      "The two fairs run together in The Regent's Park from 14 to 18 October, contemporary work in one tent and six thousand years of art history in the other.",
+    start: "2026-10-14",
+    end: "2026-10-18",
+    utcOffset: "+01:00",
+    venue: "The Regent's Park",
+    city: "London",
+    organizer: "Frieze",
+    category: "Exhibitions",
+    source: {
+      name: "Frieze",
+      url: "https://www.frieze.com/fairs/frieze-london",
+      verifiedOn: "2026-09-08",
+    },
+    ticket: { url: "https://www.frieze.com/fairs/frieze-london", label: "Tickets" },
+    body: [
+      "For five days in October the art market moves into two temporary buildings in a park, and the rest of the city rearranges itself around them.",
+      "## The dates",
+      "<strong>14 to 18 October 2026</strong>, <strong>The Regent's Park</strong>.",
+      "## Two fairs, not one",
+      "<strong>Frieze London</strong> shows contemporary work; <strong>Frieze Masters</strong> shows art from antiquity to the late twentieth century. They run concurrently in the same park, and Frieze announces them together.",
+      "## What is free that week",
+      "<strong>Frieze Sculpture</strong> is outdoors in the English Gardens and free to anyone, and it is already open — from 16 September to 1 November.",
+      "## What is not yet published",
+      "The 2026 ticket prices are not on the fair's own pages at the time of writing, so none appear here.",
+    ],
+    faq: [
+      {
+        q: "When is Frieze London 2026?",
+        a: "<strong>14 to 18 October 2026</strong>, in The Regent's Park, alongside Frieze Masters.",
+      },
+      {
+        q: "What is the difference between Frieze London and Frieze Masters?",
+        a: "Frieze London shows contemporary art; <strong>Frieze Masters</strong> shows work from antiquity to the late twentieth century. They run at the same time in the same park.",
+      },
+      {
+        q: "Is there anything at Frieze that is free?",
+        a: "Yes — <strong>Frieze Sculpture</strong> in the English Gardens of The Regent's Park is free and open from 16 September to 1 November, with no fair ticket needed.",
+      },
+    ],
+    expertise:
+      "Frieze week is the week the whole London art calendar is timed against: the auction houses put their evening sales in it, and the galleries across Mayfair and the East End open their strongest shows to catch the people who flew in for the fair. That is the case for being in London that week and the case against paying to be in the tent — most of what is worth seeing that week is in the galleries and free. If the fair itself is the point, the last day is the quiet one and the first is by invitation.",
+  },
+
+  {
+    slug: "london-fashion-week-september-2026",
+    site: "ldn",
+    image: "/covers/london-fashion-week-september-2026.jpg",
+    imageAlt: "A long charcoal rail across a cream ground with five garments hanging from it, two of them red",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "London Fashion Week September 2026",
+    summary:
+      "The British Fashion Council's September shows run from Thursday 17 to Monday 21 September, with the designer list published and the schedule open to read.",
+    start: "2026-09-17",
+    end: "2026-09-21",
+    utcOffset: "+01:00",
+    city: "London",
+    organizer: "British Fashion Council",
+    category: "Fashion",
+    source: {
+      name: "London Fashion Week",
+      url: "https://londonfashionweek.co.uk/",
+      verifiedOn: "2026-09-08",
+    },
+    ticket: { url: "https://londonfashionweek.co.uk/", label: "The schedule" },
+    body: [
+      "Five days in September when several hundred names — houses, graduates, one supermarket chain and a satchel maker — are on the same schedule.",
+      "## The dates",
+      "<strong>Thursday 17 to Monday 21 September 2026</strong>. It is run by the <strong>British Fashion Council</strong>.",
+      "## Who is showing",
+      "The designer list is published in full and runs to several hundred entries, from <strong>Burberry</strong>, <strong>JW Anderson</strong>, <strong>Simone Rocha</strong>, <strong>Erdem</strong>, <strong>Roksanda</strong> and <strong>Mulberry</strong> to university collections and single-maker studios.",
+      "## Whether you can go",
+      "The official site publishes the schedule and the designer community, and <strong>says nothing about public admission</strong>. Shows are attended by invitation; where a designer opens something to the public it is announced by the designer, not by the week. No claim about access appears here that the organisers have not made.",
+    ],
+    faq: [
+      {
+        q: "When is London Fashion Week September 2026?",
+        a: "<strong>Thursday 17 to Monday 21 September 2026</strong>, run by the British Fashion Council.",
+      },
+      {
+        q: "Can the public attend London Fashion Week?",
+        a: "The official site publishes the schedule and the designer list but <strong>makes no statement about public admission</strong>. Shows are by invitation; anything opened to the public is announced by the individual designer.",
+      },
+      {
+        q: "Who is showing at London Fashion Week 2026?",
+        a: "Several hundred names, including Burberry, JW Anderson, Simone Rocha, Erdem, Roksanda and Mulberry, alongside university collections and small studios.",
+      },
+    ],
+    expertise:
+      "The schedule being public and the shows being private is the thing that catches people out every season: the site will tell you exactly when Burberry is on and give you no way to be there. What is actually open in that week happens around the shows — designer presentations in shops, university graduate showcases, and the Soho and Mayfair windows that get changed for it. Those are announced by whoever is running them, usually late, which is why the useful move is to follow two or three designers rather than the week.",
+  },
 ];

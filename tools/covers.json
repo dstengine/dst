@@ -48,6 +48,14 @@
       "brooklyn-book-festival-2026": {
         "subject": "a close row of tall narrow rectangles standing upright side by side across the frame, each one a flat block of a different colour and a slightly different height, their tops uneven, nothing marked on any of them",
         "idiom": "vector"
+      },
+      "feast-of-san-gennaro-2026": {
+        "idiom": "vector",
+        "subject": "a long line of small flat arches strung one after another across the frame from edge to edge, each arch hung with a row of round lamps, nothing above or below them"
+      },
+      "climate-week-nyc-2026": {
+        "idiom": "vector",
+        "subject": "a dense row of tall rectangles of different heights standing side by side across the frame like a skyline, one single flat circle low behind them"
       }
     },
     "ldn": {
@@ -76,7 +84,19 @@
           "source": "Wikimedia Commons, Tokio Hotel at Christopher Street Day Berlin 2023-07-22 114.jpg, cropped to 16:9"
         }
       },
-      "diwali-on-the-square-2026": "a row of small oil lamps standing evenly spaced along one straight ledge across the frame, a single flame above each lamp"
+      "diwali-on-the-square-2026": "a row of small oil lamps standing evenly spaced along one straight ledge across the frame, a single flame above each lamp",
+      "frieze-sculpture-2026": {
+        "idiom": "vector",
+        "subject": "three large abstract solid forms of different shapes standing apart from one another on an open flat ground, a low horizontal line behind them"
+      },
+      "frieze-london-2026": {
+        "idiom": "vector",
+        "subject": "two long low tent shapes side by side across the frame, each a plain shallow arc over a plain rectangle, an open flat ground around them"
+      },
+      "london-fashion-week-september-2026": {
+        "idiom": "vector",
+        "subject": "one long horizontal rail running across the frame with six plain garment shapes hanging from it, each a simple flat triangle under a small hook, an empty flat ground behind them"
+      }
     },
     "lnd": {
       "giant-summer-flea-olympic-park": {
