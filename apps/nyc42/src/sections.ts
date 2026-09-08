@@ -57,17 +57,24 @@ export function sections(items: FeedItem[]): Section[] {
     tags: TAGS,
     placeOf: (i) => (NEW_YORK.has(i.city ?? "") ? undefined : i.country ?? i.city),
     copy: (g) => {
-      // A place section here is by definition somewhere the site is not, so
-      // it cannot borrow the "in New York" heading the subject pages use —
-      // that would be the false sentence the keyword rule exists to stop.
-      // It says what it is instead, and the description carries New York
-      // honestly, because who the page is written for is the true part.
+      // A place section here is somewhere the site is not, and the wording
+      // follows the reader rather than the writer: whoever searches for
+      // this page is planning a trip to the United States, not leaving
+      // New York. So it says "in the USA" in the words of the query, and
+      // the last line of the lede — not the first — is where the site's
+      // own city gets mentioned. Opening with what a page is not argues
+      // against the query it could win.
+      //
+      // The full name, not the label: /usa/ is the address because that is
+      // what people type, but a heading reads "the United States". The
+      // chip in the section row keeps the short label, where a heading's
+      // worth of words would not fit.
       if (g.kind === "place") {
         return {
-          title: `Events across the ${g.label}`,
-          description: `Festivals, conventions and shows across the ${g.label} — the ones worth leaving New York for, with the source behind every entry.`,
-          h1: `Across the ${g.label}`,
-          lede: `Everything on this site that happens outside the city — the date as the organiser published it, and a link to where we read it.`,
+          title: `Events in the ${g.key}`,
+          description: `Festivals, conventions and races in the ${g.key} — the dates as the organisers published them, with the source behind every entry.`,
+          h1: `Events in the ${g.key}`,
+          lede: `Big American events with published dates, from the Rose Parade in January to the desert in August — each date as the organiser gave it, and a link to where we read it. New York's own listings are on the rest of the site.`,
         };
       }
       const what = g.voc.plural ?? g.key.toLowerCase();
