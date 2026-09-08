@@ -234,6 +234,28 @@ export const items: EventItem[] = [
       "## Cómo verlo",
       "Reforma se cierra desde temprano y el desfile avanza despacio, que es la condición de todo desfile con carros grandes: lo que para el espectador es lentitud, para la logística es la única velocidad posible",
     ],
+    faq: [
+      {
+        q: "¿Cuándo es el Gran Desfile de Día de Muertos 2026?",
+        a: "El <strong>sábado 31 de octubre de 2026</strong>, con <strong>Paseo de la Reforma</strong> como eje del recorrido.",
+      },
+      {
+        q: "¿El desfile es el Día de Muertos?",
+        a: "No. La fiesta es el <strong>1 y 2 de noviembre</strong>, en casas y panteones. El desfile es el acto público de la ciudad y cae el sábado anterior.",
+      },
+      {
+        q: "¿Cuánto dura?",
+        a: "<strong>Más de cuatro horas.</strong> Llegar tarde no significa perdérselo: significa verlo desde el final de la ruta.",
+      },
+      {
+        q: "¿Ya se sabe la temática de este año?",
+        a: "Todavía no se anuncia. Lo confirmado son las <strong>instalaciones y ofrendas en las 16 alcaldías</strong>, no sólo sobre el corredor del desfile.",
+      },
+      {
+        q: "¿Cuánta gente va?",
+        a: "Más de <strong>un millón trescientos mil asistentes</strong>.",
+      },
+    ],
     expertise:
       "El tramo entre el Ángel y el Zócalo es el más congestionado; el arranque, más arriba sobre Reforma, es donde todavía se ve pasar cada carro completo. Y como el desfile dura más de cuatro horas, llegar tarde no significa perdérselo: significa verlo desde el final de la ruta, con menos gente y con los carros ya en movimiento",
   },
