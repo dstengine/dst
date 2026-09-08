@@ -29,6 +29,7 @@ Was nicht angekündigt ist, wird als nicht angekündigt bezeichnet. Ein Enddatum
 
 ## Nachrichten
 
+- [Die biologische Uhr blieb nach vier Wochen stehen, obwohl das Medikament weiterarbeitete](https://vien.lol/nachrichten/warum-die-biologische-uhr-nach-vier-wochen-stehen-blieb/): Sechs Modelle lasen bei behandelten Patienten ein niedrigeres biologisches Alter. Nach vier Wochen bewegte sich der Wert nicht mehr, die Proteine dagegen schon.
 - [Seit August markiert Claude jeden Satz — und das Lesegerät dazu gibt es nur auf Antrag](https://vien.lol/nachrichten/warum-claude-seit-august-jeden-satz-markiert/): Anthropic versieht seit 2. August alles, was Claude schreibt, mit einer unsichtbaren Markierung. Sie steckt nicht in den Wörtern, sondern in deren Auswahl.
 - [Die Albertina stellt Picasso und Bacon einander gegenüber — ab 18. September](https://vien.lol/nachrichten/albertina-zeigt-picasso-und-bacon-ab-18-september/): Rund 70 Hauptwerke aus internationalen Sammlungen, von 18. September bis 31. Jänner 2027: zwei Maler, die den menschlichen Körper neu erfunden haben.
 - [Erstmals stuft OpenAI ein eigenes Modell als kritisch für die Cybersicherheit ein](https://vien.lol/nachrichten/openai-stuft-neues-modell-als-kritisch-fuer-cybersicherheit-ein/): Bei einem internen Test fand das neue Modell zwei bis dahin unbekannte Sicherheitslücken. OpenAI meldet beide den Herstellern und liefert das Modell mit Sperren aus.

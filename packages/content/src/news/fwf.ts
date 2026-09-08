@@ -11,6 +11,46 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "aging-endpoints-inside-a-disease-trial",
+    site: "fwf",
+    image: "/covers/aging-endpoints-inside-a-disease-trial.jpg",
+    imageAlt: "A torn periwinkle paper band across a deep indigo ground with a small cream marker standing at each end",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "The cheapest experiment in longevity research is the one you bolt onto a trial you were running anyway",
+    cardTitle: "Two questions, one trial",
+    titleSeo: "Aging clocks in a drug trial",
+    summary:
+      "A Nature Biotechnology paper proposes measuring biological age inside ordinary disease trials, using blood already drawn, and sets out what regulators would need first.",
+    date: "2026-09-08",
+    category: "AI",
+    source: {
+      name: "Nature Biotechnology",
+      url: "https://www.nature.com/articles/s41587-026-03286-y",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "Two drugs dominate the conversation about slowing human aging, metformin and rapamycin. Both were approved for something else, prescribed for decades, and only then looked at for this. The delay was not caused by a shortage of curiosity. It was caused by the fact that nobody had collected the right measurements while the drugs were being tested.",
+      "A study published on <strong>7 September 2026</strong> is a working example of collecting them at the time, and its argument is about method rather than about any one molecule.",
+      "## The proposal in one line",
+      "A trial for an age-related illness is already drawing blood at fixed intervals from a group of older people, half of whom are on the drug and half of whom are not. Read the proteins in that blood, run the aging models over the result, and file the numbers as exploratory endpoints. The samples exist. The randomisation exists. What is added is an assay and a statistical plan.",
+      "In this case that meant reading roughly <strong>2,800 proteins</strong> in serum from 42 consenting participants of a lung-disease study, at four points across twelve weeks, then applying six published models of biological age to each profile.",
+      "## Why nobody can simply run a trial on aging",
+      "No medicines regulator treats aging as a condition a drug can be approved to treat. There is no diagnosis to enrol against and no endpoint to hit, so a study designed around it has nowhere to file its result. The authors therefore propose a route that stays inside the existing rules and has three steps.",
+      "First, gather biomarkers of aging as exploratory endpoints inside trials for recognised age-related illnesses, and vary the dosing regimen while you are there. Second, reproduce whatever you find in an older population that does not have the original disease, so the effect cannot be a by-product of treating it. Third, take the biomarker through formal qualification, or build a composite clinical endpoint, so that a claim can eventually be made rather than merely observed.",
+      "There are precedents for a biology-defined risk state becoming a licensable target. The proposed TAME trial framed metformin against the accumulation of age-related diseases rather than against aging itself. Semaglutide and tirzepatide reached approval for cardiovascular risk reduction, not for weight alone.",
+      "## The obstacles are administrative, not scientific",
+      "The paper is unusually direct about what made this hard, and none of it involves the biology. Adding exploratory proteomic and aging analyses to a protocol required its own consent language and its own conversation with the people overseeing the trial, because a regulator expects every use of patient data to teach something about that disease or that drug. The practical consequence is a selection rule: the aging biology you study has to overlap the illness you are treating, or the analysis does not get approved in the first place.",
+      "## What the first run produced",
+      "All six models read the treated groups as biologically younger than they started and the placebo group as unchanged or slightly older. The authors then spend most of the discussion on why that is not yet a conclusion: one disease, 42 people, twelve weeks, one measurement technology, and a signal that could belong to the illness improving rather than to aging slowing.",
+      "The useful output is not the effect size. It is that the pipeline ran end to end inside a real regulated trial, and that the next team to try it now knows what to write into the protocol before the first patient is enrolled.",
+    ],
+    expertise:
+      "For anyone commissioning research rather than doing it, the transferable part is the sequencing. The expensive mistake is to run the study first and think about aging endpoints when the results look interesting, at which point the samples are gone, the consent does not cover the analysis, and any finding is retrospective. Adding the assay costs a fraction of a trial's budget and changes nothing about its primary question. The honest caveat is that a positive reading from this kind of add-on buys a hypothesis and a reason to design the next study, not a claim you can put in front of a regulator or an investor — and the paper that proposes the method is also the clearest place to see how far that is from being enough.",
+  },
+
+  {
     slug: "claude-now-watermarks-the-text-it-writes",
     site: "fwf",
     image: "/covers/claude-now-watermarks-the-text-it-writes.jpg",

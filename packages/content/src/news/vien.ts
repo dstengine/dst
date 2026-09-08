@@ -2,6 +2,45 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "warum-die-biologische-uhr-nach-vier-wochen-stehen-blieb",
+    site: "vien",
+    image: "/covers/warum-die-biologische-uhr-nach-vier-wochen-stehen-blieb.jpg",
+    imageAlt: "Drei gleich hohe rote Papierkarten auf cremefarbenem Grund, deren Oberkanten eine waagrechte Linie bilden, rechts davon leere Fläche",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Die biologische Uhr blieb nach vier Wochen stehen, obwohl das Medikament weiterarbeitete",
+    cardTitle: "Der Knick in Woche vier",
+    titleSeo: "Warum die Uhr nach vier Wochen stehen blieb",
+    summary:
+      "Sechs Modelle lasen bei behandelten Patienten ein niedrigeres biologisches Alter. Nach vier Wochen bewegte sich der Wert nicht mehr, die Proteine dagegen schon.",
+    date: "2026-09-08",
+    category: "Welt",
+    source: {
+      name: "Nature Biotechnology",
+      url: "https://www.nature.com/articles/s41587-026-03286-y",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "Am <strong>7. September 2026</strong> erschien in <strong>Nature Biotechnology</strong> eine Auswertung, deren interessanteste Zahl nicht das Ergebnis ist, sondern ein Zeitpunkt. In Woche vier war der gemessene Effekt am größten. Danach passierte nichts mehr.",
+      "Gemessen wurde an 42 Teilnehmenden einer klinischen Studie, deren Blut zu Beginn und in den Wochen 2, 4 und 12 auf rund 2.800 Proteine untersucht wurde. Sechs verschiedene Modelle schätzten daraus ein biologisches Alter. Alle sechs lasen in den behandelten Gruppen einen niedrigeren Wert als zu Studienbeginn, die Placebogruppe blieb unverändert oder wurde geringfügig älter.",
+      "## Kein Rückfall, ein Plateau",
+      "Zwischen Woche vier und Woche zwölf gingen die Werte nicht wieder hinauf. Sie standen. Kein einziger Vergleich zwischen diesen beiden Zeitpunkten ergab eine nennenswerte Verschiebung, in keiner Gruppe und mit keinem der Modelle. Das ist ein Unterschied, der zählt: ein Rückfall würde bedeuten, dass die Wirkung nachlässt, ein Plateau bedeutet, dass sie sich nicht weiter vertieft.",
+      "Rätselhaft wird es durch die zweite Beobachtung. Die Proteinveränderungen selbst waren keineswegs vorübergehend. In den beiden wirksameren Dosierungsgruppen waren nur fünf bis neun Prozent der Verschiebungen kurzlebig, alle übrigen entwickelten sich bis Woche zwölf weiter. Und ausgerechnet jene Proteine, aus denen die Modelle ihr Alter berechnen, gehörten überdurchschnittlich häufig zu den dauerhaften.",
+      "Die Bestandteile der Rechnung bewegten sich also weiter, das Ergebnis der Rechnung nicht.",
+      "## Drei Erklärungen, keine bestätigt",
+      "Die Autorinnen und Autoren bieten drei Möglichkeiten an und entscheiden sich für keine. Erstens könnten Gegenregulationen einsetzen, ähnlich wie Tumorzellen auf eine dauerhafte Hemmung reagieren. Zweitens könnte der leicht erreichbare Teil der gealterten Zellen schlicht aufgebraucht sein. Drittens könnte es ein Artefakt der Messung sein: Ein statistisches Modell, das aus Proteinmengen Jahre macht, muss nicht linear weiterlaufen, nur weil sich seine Eingangswerte weiterbewegen.",
+      "Aus allen drei Möglichkeiten folgt derselbe praktische Vorschlag, und er ist ungewöhnlich: Pausen. Wenn der Effekt an eine Anpassung stößt, könnte eine unterbrochene Gabe mehr bringen als eine durchgehende.",
+      "## Was sich sonst verschob",
+      "Unabhängig von der Uhr fielen zwei Signalgruppen auf. In der Placebogruppe nahmen Marker alternder, nicht mehr teilungsfähiger Zellen deutlich zu; in allen behandelten Gruppen nahmen sie ab. Und fünf Signalwege rund um Wachstumsfaktoren, darunter PI3K-Akt und MAPK, gingen bei den Behandelten zurück und bei Placebo hinauf. Das sind genau jene Achsen, an denen auch Kalorienrestriktion und Rapamycin ansetzen.",
+      "## Die Einschränkung, die alles betrifft",
+      "Alle 42 Personen hatten dieselbe Lungenerkrankung, gegen die das Mittel entwickelt wurde. Mehrere der Proteine, die in den Modellen am schwersten wiegen, sind Marker eben dieser Erkrankung. Ob die Uhren eine Alterung lasen oder eine Krankheit, die zurückgeht, lässt sich innerhalb dieser Gruppe nicht klären. Die Studie sagt das selbst und verlangt eine Wiederholung an Menschen ohne diese Diagnose.",
+    ],
+    expertise:
+      "Der Knick in Woche vier ist der Grund, warum kurze Studien bei Alterungsfragen wenig taugen. Hätte man nur zu Beginn und am Ende gemessen, wäre der stärkste Effekt der Studie überhaupt nicht sichtbar geworden, und der Bericht hätte einen schwächeren Zwölf-Wochen-Wert als Gesamtergebnis ausgewiesen. Vier Messzeitpunkte statt zwei kosten wenig und zeigen die Form der Kurve statt nur ihrer Endpunkte. Wer künftige Meldungen zu diesem Feld liest, sollte deshalb zuerst nachsehen, wie oft gemessen wurde: Ein einzelner Vorher-Nachher-Vergleich kann ein Plateau, einen Rückfall und einen anhaltenden Effekt nicht voneinander unterscheiden.",
+  },
+
+  {
     slug: "warum-claude-seit-august-jeden-satz-markiert",
     site: "vien",
     image: "/covers/warum-claude-seit-august-jeden-satz-markiert.jpg",

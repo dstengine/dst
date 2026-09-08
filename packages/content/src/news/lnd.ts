@@ -2,6 +2,43 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "the-uk-biobank-yardstick-behind-an-ageing-drug-trial",
+    site: "lnd",
+    image: "/covers/the-uk-biobank-yardstick-behind-an-ageing-drug-trial.jpg",
+    imageAlt: "A torn pale blue paper band across a deep navy ground with small cream markers standing along it, one of them red",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "A British research archive decided whether a drug trial in China had touched ageing at all",
+    cardTitle: "The UK Biobank yardstick",
+    titleSeo: "A UK Biobank yardstick for biological age",
+    summary:
+      "To judge whether a drug reversed ageing or merely treated a disease, researchers needed a picture of normal ageing. They took it from 55,319 UK Biobank adults.",
+    date: "2026-09-08",
+    category: "Science",
+    source: {
+      name: "Nature Biotechnology",
+      url: "https://www.nature.com/articles/s41587-026-03286-y",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "A study published in <strong>Nature Biotechnology</strong> on <strong>7 September 2026</strong> ran into a problem that has nothing to do with medicine and everything to do with measurement. Blood from 42 patients on an experimental drug looked different at the end of twelve weeks than at the beginning. Different in what direction, though? Against what?",
+      "The answer came from <strong>UK Biobank</strong>, the long-running British health archive. The researchers pulled protein readings from <strong>55,319</strong> of its older participants, worked out which of those proteins reliably rise or fall as an adult gets older, and used that as the reference line.",
+      "## What the reference line showed",
+      "Of the 2,832 proteins measured in both datasets, <strong>758</strong> shifted consistently with age in the Biobank group. The proteins that the drug moved turned out to be enriched for those age-associated ones by a factor of <strong>1.74</strong> — the drug was disproportionately touching the proteins that change as people get older, rather than a random slice of the proteome.",
+      "The direction is the part worth pausing on. In the group taking 30 mg twice a day, the changes ran <em>opposite</em> to the normal ageing trajectory, a modest but statistically clear inverse correlation. In the placebo group they ran <em>with</em> it, which is what you would expect of people getting older while an illness progresses.",
+      "## The same archive is also the reason for caution",
+      "Here is the awkward part, and the paper does not hide it. All six of the ageing models used in the study were themselves built on UK Biobank data. ProtAge, the two OrganAge variants, PAC, ipfP3GPT and PAOPAC are different in architecture, in training target and in how many proteins they look at, and their agreement is presented as evidence that the signal is real rather than an artefact of any one method.",
+      "But they share an ancestor. Six models trained on the same cohort of largely healthy British volunteers, then applied to elderly patients in China with a serious lung disease, are less independent than six models drawn from six different populations would be. The convergence rules out a quirk of one algorithm. It does not rule out a quirk inherited from the data all of them learned on.",
+      "## Why an archive of ordinary people matters here",
+      "None of the 42 patients could have been assessed at all without a large, boring, long-running record of people who were not ill and were not being treated for anything. That is the whole function of a resource like UK Biobank, and it is why the numbers coming out of it turn up in work that has no obvious connection to Britain.",
+      "It is also a reminder of the shape of the gap. The reference group was drawn from a British archive of people going about their lives; the trial group was 42 people in China with idiopathic pulmonary fibrosis and a mean age of 67. The comparison is defensible and the authors make it carefully. A wider set of reference cohorts would make it better.",
+    ],
+    expertise:
+      "The useful habit when reading any result of this kind is to ask what the biological age was measured against, because the model is only ever as good as the population it learned from. A clock trained on healthy middle-aged Europeans and applied to an unwell 67-year-old in Beijing is being asked a question slightly outside its experience, and it will still return a confident-looking number of years. That is not a reason to dismiss the reading. It is a reason to treat agreement between several models as weaker evidence than it first appears when all of them were taught from the same book, and to want the next study run against a reference cohort that was assembled somewhere else entirely.",
+  },
+
+  {
     slug: "what-claudes-new-watermark-cannot-tell-you",
     site: "lnd",
     image: "/covers/what-claudes-new-watermark-cannot-tell-you.jpg",

@@ -2,6 +2,44 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "relojes-proteomicos-y-una-dosis-partida-en-dos",
+    site: "mxo",
+    image: "/covers/relojes-proteomicos-y-una-dosis-partida-en-dos.jpg",
+    imageAlt: "Un enjambre de pequeños discos naranjas de papel a la izquierda que se dispersa hacia un único disco grande a la derecha, sobre fondo verde oscuro",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "La misma cantidad de fármaco, partida en dos tomas, cambió lo que midieron seis relojes biológicos",
+    cardTitle: "Seis relojes y una dosis partida",
+    titleSeo: "Relojes proteómicos: qué miden y qué no",
+    summary:
+      "Seis modelos que estiman la edad biológica a partir de proteínas en sangre coincidieron en un ensayo clínico. La dosis partida en dos tomas dio la señal más clara.",
+    date: "2026-09-08",
+    category: "Ciencia",
+    source: {
+      name: "Nature Biotechnology",
+      url: "https://www.nature.com/articles/s41587-026-03286-y",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "Un reloj proteómico no mide nada parecido a lo que sugiere su nombre. Toma una muestra de sangre, cuenta la cantidad de cada una de unas miles de proteínas que circulan en ella y devuelve un número expresado en años. Ese número es una estimación estadística: la edad que suele tener alguien cuyo perfil de proteínas se parece a este. Nada dentro del cuerpo lleva la cuenta.",
+      "El <strong>7 de septiembre de 2026</strong>, <strong>Nature Biotechnology</strong> publicó un trabajo que aplicó seis de estos modelos a las mismas muestras y comparó sus respuestas. Es la primera vez que se comparan tantos a la vez dentro de un ensayo clínico con grupo placebo.",
+      "## Por qué seis y no uno",
+      "Los seis fueron construidos de maneras distintas. Cuatro aprendieron a adivinar la edad del calendario; dos aprendieron a estimar el riesgo de morir, que es una pregunta diferente y da respuestas diferentes. Unos usan aprendizaje automático clásico, otros redes profundas. El número de proteínas que consideran también varía.",
+      "Esa diversidad es deliberada. Si un solo modelo detecta un cambio, lo detectado puede ser una peculiaridad del modelo. Si seis modelos con supuestos distintos apuntan en la misma dirección, la explicación más económica es que algo cambió en la sangre. Los seis apuntaron en la misma dirección en todos los grupos tratados; el grupo con placebo no se movió o envejeció ligeramente.",
+      "## El detalle que nadie esperaba",
+      "El ensayo probó tres pautas: 30 mg una vez al día, 30 mg dos veces al día y 60 mg una vez al día. Las dos últimas suman lo mismo en veinticuatro horas.",
+      "No dieron el mismo resultado. La pauta de <strong>30 mg dos veces al día</strong> produjo la señal más amplia y más consistente entre los seis relojes, y también el mayor número de proteínas modificadas: 142 que no se movieron en ningún otro grupo. La de 60 mg de una sola vez quedó por detrás en ese aspecto, pese a ser la que más mejoró la capacidad pulmonar en el informe original del ensayo.",
+      "La explicación que proponen los autores es farmacológica y comprobable. El compuesto se elimina en siete a once horas, así que una toma única genera un pico de concentración dos o tres veces más alto y luego un valle largo. Dos tomas menores mantienen un nivel más parejo. La hipótesis es que lo que responde a la exposición sostenida no es lo mismo que responde al pico.",
+      "## Lo que el estudio no puede afirmar",
+      "Cuarenta y dos personas aceptaron el análisis de proteínas, todas con la misma enfermedad pulmonar y una edad media de 67 años. Doce semanas es poco tiempo. Y hay un problema de fondo que los propios autores señalan en cada apartado: varias de las proteínas que más pesan en estos relojes son marcadores de fibrosis, precisamente lo que el fármaco fue diseñado para frenar.",
+      "Es decir, el reloj puede estar leyendo una enfermedad que mejora en lugar de un envejecimiento que se frena. Distinguir las dos cosas exige repetir el experimento en personas que no tengan esa enfermedad, y eso todavía no se ha hecho.",
+    ],
+    expertise:
+      "Conviene separar dos afirmaciones que suelen viajar juntas y no valen lo mismo. La primera es que estos modelos detectan cambios reales en la sangre y coinciden entre sí: eso el trabajo lo muestra con bastante solidez, y es un avance metodológico aprovechable por cualquier ensayo que ya extraiga sangre. La segunda es que alguien rejuveneció tres años, y eso el trabajo no lo muestra ni lo pretende. Un número en años es una unidad prestada para hacer legible una distancia estadística, no una medida del tiempo vivido. Cuando una nota de prensa convierta lo segundo en titular, el lugar donde verificarlo es el apartado de limitaciones del propio artículo, que en este caso es largo y explícito.",
+  },
+
+  {
     slug: "el-texto-lleva-marca-la-imagen-lleva-firma",
     site: "mxo",
     image: "/covers/el-texto-lleva-marca-la-imagen-lleva-firma.jpg",
