@@ -14548,6 +14548,102 @@
         ]
       ]
     },
+    "/covers/austin-city-limits-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/austin-city-limits-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/austin-city-limits-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/austin-city-limits-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/austin-city-limits-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/austin-city-limits-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/austin-city-limits-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/austin-city-limits-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/austin-city-limits-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/austin-city-limits-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/austin-city-limits-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/bonnaroo-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/bonnaroo-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/bonnaroo-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/bonnaroo-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/bonnaroo-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/bonnaroo-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/bonnaroo-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/bonnaroo-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/bonnaroo-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/bonnaroo-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/bonnaroo-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/broadway-autumn-is-a-play-season.jpg": {
       "width": 1536,
       "height": 864,
@@ -15700,6 +15796,54 @@
         ]
       ]
     },
+    "/covers/iowa-state-fair-2027.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/iowa-state-fair-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/iowa-state-fair-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/iowa-state-fair-2027-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/iowa-state-fair-2027-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/iowa-state-fair-2027-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/iowa-state-fair-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/iowa-state-fair-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/iowa-state-fair-2027-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/iowa-state-fair-2027-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/iowa-state-fair-2027-1536.webp"
+        ]
+      ]
+    },
     "/covers/kentucky-derby-2027.jpg": {
       "width": 1536,
       "height": 864,
@@ -16180,6 +16324,54 @@
         ]
       ]
     },
+    "/covers/stagecoach-2027.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/stagecoach-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/stagecoach-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/stagecoach-2027-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/stagecoach-2027-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/stagecoach-2027-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/stagecoach-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/stagecoach-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/stagecoach-2027-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/stagecoach-2027-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/stagecoach-2027-1536.webp"
+        ]
+      ]
+    },
     "/covers/sxsw-2027.jpg": {
       "width": 1536,
       "height": 864,
@@ -16369,6 +16561,54 @@
         [
           1536,
           "/covers/transit-museum-bus-festival-turns-fifty-1536.webp"
+        ]
+      ]
+    },
+    "/covers/ultra-miami-2027.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/ultra-miami-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/ultra-miami-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/ultra-miami-2027-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/ultra-miami-2027-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/ultra-miami-2027-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/ultra-miami-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/ultra-miami-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/ultra-miami-2027-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/ultra-miami-2027-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/ultra-miami-2027-1536.webp"
         ]
       ]
     },

@@ -1142,4 +1142,218 @@ export const items: EventItem[] = [
     expertise:
       "Two things decide whether the day is a good one and neither is the horse: where you stand, and when you arrive. Louisville prices its hotel rooms for Derby week a year ahead, and the infield and the grandstand are different events at the same address \u2014 one is a nine-hour party where you may never see a horse, the other is a seat. Buying the cheaper ticket without knowing which one it is, is the classic first Derby.",
   },
+  {
+    slug: "austin-city-limits-2026",
+    site: "nyc42",
+    image: "/covers/austin-city-limits-2026.jpg",
+    imageAlt: "Six flat green paper trees on short orange trunks standing in a row across a dark brown ground, one of them much smaller than the rest",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Austin City Limits 2026",
+    summary:
+      "Two weekends in Zilker Park at the start of October \u2014 the same bill played twice, in a park inside Austin rather than a field outside it.",
+    start: "2026-10-02",
+    end: "2026-10-11",
+    venue: "Zilker Park",
+    city: "Austin",
+    country: "United States",
+    organizer: "Austin City Limits Music Festival",
+    category: "Festival",
+    source: {
+      name: "Austin City Limits Music Festival",
+      url: "https://www.aclfestival.com/",
+      verifiedOn: "2026-09-08",
+    },
+    ticket: { url: "https://www.aclfestival.com/", label: "Tickets" },
+    body: [
+      "The nearest of these to happening: three weeks from now, and in a city that is easy to fly into.",
+      "## The dates",
+      "<strong>October 2\u20134 and October 9\u201311, 2026</strong>, at <strong>Zilker Park</strong> in <strong>Austin, Texas</strong>. Two weekends, the same festival twice.",
+      "## Why the park matters",
+      "Zilker is inside Austin, which makes this one of the few American festivals of its size where the accommodation is a hotel room and the journey home is a short one.",
+    ],
+    faq: [
+      {
+        q: "When is Austin City Limits 2026?",
+        a: "<strong>October 2 to 4</strong> and <strong>October 9 to 11, 2026</strong>, at Zilker Park in Austin.",
+      },
+      {
+        q: "Are the two weekends the same?",
+        a: "They are sold as the same festival twice. The line-up, schedule and FAQs are published by the festival itself.",
+      },
+    ],
+    expertise:
+      "Early October in Austin is still summer by most standards, and Zilker has very little shade \u2014 which is what separates people who enjoy the second weekend from people who leave at four. The other thing worth knowing from New York: the flight is three and a half hours and the city is busy that fortnight, so the room is the booking that decides the price of the trip.",
+  },
+  {
+    slug: "ultra-miami-2027",
+    site: "nyc42",
+    image: "/covers/ultra-miami-2027.jpg",
+    imageAlt: "A long flat teal paper band running the width of a dark brown ground, with two narrow magenta paper spires standing on it near the left",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Ultra Miami 2027",
+    summary:
+      "Three days at Bayfront Park in downtown Miami at the end of March 2027 \u2014 an electronic festival held in the middle of a city, with the bay behind the stage.",
+    start: "2027-03-26",
+    end: "2027-03-28",
+    venue: "Bayfront Park",
+    city: "Miami",
+    country: "United States",
+    organizer: "Ultra Music Festival",
+    category: "Festival",
+    source: {
+      name: "Ultra Music Festival",
+      url: "https://ultramusicfestival.com/",
+      verifiedOn: "2026-09-08",
+    },
+    ticket: { url: "https://ultramusicfestival.com/", label: "Tickets" },
+    body: [
+      "Most festivals of this size are held somewhere with room to build them. This one is held on the waterfront of a downtown.",
+      "## The dates",
+      "<strong>March 26 to 28, 2027</strong>, at <strong>Bayfront Park</strong>, Miami, Florida.",
+      "## What is not published yet",
+      "No 2027 line-up at the time of writing. Tickets are sold before it is announced, which is the same arrangement Coachella runs.",
+    ],
+    faq: [
+      {
+        q: "When is Ultra Miami 2027?",
+        a: "<strong>March 26 to 28, 2027</strong>, at Bayfront Park in downtown Miami.",
+      },
+      {
+        q: "Is the line-up out?",
+        a: "Not yet. The festival has published the dates and the venue; anything else circulating for 2027 is not from Ultra.",
+      },
+    ],
+    expertise:
+      "Ultra falls inside Miami Music Week, and that is the part that changes the trip: the festival is three days, the week around it is a city full of parties in clubs and hotels, most of them ticketed separately. Booking only the festival is booking the smaller half.",
+  },
+  {
+    slug: "stagecoach-2027",
+    site: "nyc42",
+    image: "/covers/stagecoach-2027.jpg",
+    imageAlt: "A wheel of straight yellow and red paper spokes radiating from a small red disc, on a rust-orange ground",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Stagecoach 2027",
+    summary:
+      "The country festival that follows Coachella into the same desert, a week later: April 23 to 25, 2027.",
+    start: "2027-04-23",
+    end: "2027-04-25",
+    country: "United States",
+    organizer: "Stagecoach",
+    category: "Festival",
+    source: {
+      name: "Stagecoach",
+      url: "https://www.stagecoachfestival.com/",
+      verifiedOn: "2026-09-08",
+    },
+    ticket: { url: "https://www.stagecoachfestival.com/", label: "Tickets" },
+    body: [
+      "Country music's biggest party, in the festival's own words, and it happens in the same corner of California as Coachella a fortnight earlier.",
+      "## The dates",
+      "<strong>April 23 to 25, 2027</strong>. The festival's own page says only that it returns to the desert; it does not name the site or the town, so neither does this page.",
+      "## What is not published",
+      "No line-up and no 2027 prices yet.",
+    ],
+    faq: [
+      {
+        q: "When is Stagecoach 2027?",
+        a: "<strong>April 23 to 25, 2027</strong>.",
+      },
+      {
+        q: "Where is it held?",
+        a: "The festival's own announcement says the desert and no more than that. Rather than repeat an address from a previous year, this page waits for the organiser to publish one.",
+      },
+    ],
+    expertise:
+      "Two festivals a fortnight apart in the same desert means the same hotels and the same flights are wanted twice in April, and the second wave is the one people book late. Anyone considering both weekends should be aware they are priced as two separate trips, not one long one.",
+  },
+  {
+    slug: "iowa-state-fair-2027",
+    site: "nyc42",
+    image: "/covers/iowa-state-fair-2027.jpg",
+    imageAlt: "A row of six paper corn cobs in yellow with pale green husk leaves, lying overlapping across a rust-brown ground",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Iowa State Fair 2027",
+    summary:
+      "Eleven days in Des Moines in August \u2014 one of the oldest and largest agricultural expositions in the country, and the largest event in Iowa.",
+    start: "2027-08-12",
+    end: "2027-08-22",
+    city: "Des Moines",
+    country: "United States",
+    organizer: "Iowa State Fair",
+    category: "Festival",
+    source: {
+      name: "Iowa State Fair",
+      url: "https://www.iowastatefair.org/",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "It is the sort of event the coasts forget exists, and it is bigger than most of the festivals they do not.",
+      "## The dates",
+      "<strong>August 12 to 22, 2027</strong>, in <strong>Des Moines, Iowa</strong> \u2014 eleven days.",
+      "## What it is",
+      "The fair describes itself as the largest event in Iowa and one of the oldest and largest agricultural and industrial expositions in the country.",
+    ],
+    faq: [
+      {
+        q: "When is the Iowa State Fair 2027?",
+        a: "<strong>August 12 to 22, 2027</strong>, in Des Moines.",
+      },
+      {
+        q: "How long does it run?",
+        a: "Eleven days, which is longer than any music festival on this page \u2014 it is built to be visited for a day, not camped at for a weekend.",
+      },
+    ],
+    expertise:
+      "A state fair is the one American event on this list that is genuinely about the place it happens in rather than about who is playing, and that is the reason to go: livestock barns, competitions and food on sticks are the programme, not the sideshow. It is also the cheapest day out here by a distance.",
+  },
+  {
+    slug: "bonnaroo-2026",
+    site: "nyc42",
+    image: "/covers/bonnaroo-2026.jpg",
+    imageAlt: "A thick orange paper arch standing behind layered green paper hills against a near-black sky",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Bonnaroo 2026",
+    summary:
+      "Four days on a farm in Manchester, Tennessee in June 2026, now past \u2014 the American festival that still means camping rather than commuting.",
+    start: "2026-06-11",
+    end: "2026-06-14",
+    city: "Manchester",
+    country: "United States",
+    organizer: "Bonnaroo Music & Arts Festival",
+    category: "Festival",
+    source: {
+      name: "Bonnaroo Music & Arts Festival",
+      url: "https://www.bonnaroo.com/",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "Four days of adventure, as the festival puts it, on 700 acres of farmland an hour from Nashville.",
+      "## The dates",
+      "<strong>June 11 to 14, 2026</strong>, in <strong>Manchester, Tennessee</strong> \u2014 four days, now past.",
+      "## Next year",
+      "No 2027 dates are published yet. When Bonnaroo announces them, they go here.",
+    ],
+    faq: [
+      {
+        q: "When was Bonnaroo 2026?",
+        a: "<strong>June 11 to 14, 2026</strong>, in Manchester, Tennessee.",
+      },
+      {
+        q: "When is Bonnaroo 2027?",
+        a: "Not announced. The festival has kept to June for years, but no dates are published, so none are stated here.",
+      },
+    ],
+    expertise:
+      "Bonnaroo is the one on this page you cannot do from a hotel: the festival is a campsite with stages attached, an hour from the nearest city, and the experience people describe is as much about the field as the line-up. Flying in from New York means renting a car in Nashville, which is a plan to make before the ticket, not after.",
+  },
 ];
