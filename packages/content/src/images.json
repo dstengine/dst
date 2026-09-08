@@ -48,6 +48,54 @@
         ]
       ]
     },
+    "/covers/alumbrada-mixquic-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/alumbrada-mixquic-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/alumbrada-mixquic-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/alumbrada-mixquic-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/alumbrada-mixquic-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/alumbrada-mixquic-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/alumbrada-mixquic-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/alumbrada-mixquic-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/alumbrada-mixquic-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/alumbrada-mixquic-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/alumbrada-mixquic-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/apple-cambia-de-director-general.jpg": {
       "width": 1536,
       "height": 864,
@@ -237,6 +285,54 @@
         [
           1536,
           "/covers/del-color-de-la-sandia-cenart-1536.webp"
+        ]
+      ]
+    },
+    "/covers/desfile-alebrijes-monumentales-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/desfile-alebrijes-monumentales-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/desfile-alebrijes-monumentales-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/desfile-alebrijes-monumentales-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/desfile-alebrijes-monumentales-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/desfile-alebrijes-monumentales-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/desfile-alebrijes-monumentales-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/desfile-alebrijes-monumentales-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/desfile-alebrijes-monumentales-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/desfile-alebrijes-monumentales-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/desfile-alebrijes-monumentales-2026-1536.webp"
         ]
       ]
     },
@@ -813,6 +909,54 @@
         [
           1536,
           "/covers/la-marca-de-agua-de-claude-no-esta-en-las-palabras-1536.webp"
+        ]
+      ]
+    },
+    "/covers/mega-procesion-de-las-catrinas-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/mega-procesion-de-las-catrinas-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/mega-procesion-de-las-catrinas-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/mega-procesion-de-las-catrinas-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/mega-procesion-de-las-catrinas-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/mega-procesion-de-las-catrinas-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/mega-procesion-de-las-catrinas-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/mega-procesion-de-las-catrinas-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/mega-procesion-de-las-catrinas-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/mega-procesion-de-las-catrinas-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/mega-procesion-de-las-catrinas-2026-1536.webp"
         ]
       ]
     },
@@ -5232,6 +5376,150 @@
         ]
       ]
     },
+    "/covers/halloween-at-kew-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/halloween-at-kew-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/halloween-at-kew-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/halloween-at-kew-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/halloween-at-kew-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/halloween-at-kew-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/halloween-at-kew-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/halloween-at-kew-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/halloween-at-kew-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/halloween-at-kew-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/halloween-at-kew-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/halloween-tower-of-london-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/halloween-tower-of-london-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/halloween-tower-of-london-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/halloween-tower-of-london-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/halloween-tower-of-london-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/halloween-tower-of-london-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/halloween-tower-of-london-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/halloween-tower-of-london-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/halloween-tower-of-london-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/halloween-tower-of-london-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/halloween-tower-of-london-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/hyde-park-halloween-discovery-days-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/hyde-park-halloween-discovery-days-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/hyde-park-halloween-discovery-days-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/hyde-park-halloween-discovery-days-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/hyde-park-halloween-discovery-days-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/hyde-park-halloween-discovery-days-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/hyde-park-halloween-discovery-days-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/hyde-park-halloween-discovery-days-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/hyde-park-halloween-discovery-days-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/hyde-park-halloween-discovery-days-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/hyde-park-halloween-discovery-days-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/kew-costs-ten-pounds-on-a-tuesday.jpg": {
       "width": 1536,
       "height": 864,
@@ -7204,6 +7492,102 @@
         ]
       ]
     },
+    "/covers/dark-arts-warner-bros-studio-tour-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/dark-arts-warner-bros-studio-tour-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/dark-arts-warner-bros-studio-tour-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dark-arts-warner-bros-studio-tour-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/dark-arts-warner-bros-studio-tour-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/dark-arts-warner-bros-studio-tour-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dark-arts-warner-bros-studio-tour-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/dark-arts-warner-bros-studio-tour-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dark-arts-warner-bros-studio-tour-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/dark-arts-warner-bros-studio-tour-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/dark-arts-warner-bros-studio-tour-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/day-of-the-dead-horniman-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/day-of-the-dead-horniman-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/day-of-the-dead-horniman-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/day-of-the-dead-horniman-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/day-of-the-dead-horniman-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/day-of-the-dead-horniman-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/day-of-the-dead-horniman-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/day-of-the-dead-horniman-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/day-of-the-dead-horniman-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/day-of-the-dead-horniman-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/day-of-the-dead-horniman-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/eclipse-walk-tower-hamlets-cemetery-park.jpg": {
       "width": 1536,
       "height": 864,
@@ -7393,6 +7777,102 @@
         [
           1536,
           "/covers/giant-summer-flea-olympic-park-1536.webp"
+        ]
+      ]
+    },
+    "/covers/halloween-eltham-palace-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/halloween-eltham-palace-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/halloween-eltham-palace-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/halloween-eltham-palace-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/halloween-eltham-palace-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/halloween-eltham-palace-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/halloween-eltham-palace-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/halloween-eltham-palace-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/halloween-eltham-palace-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/halloween-eltham-palace-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/halloween-eltham-palace-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/halloween-hampton-court-palace-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/halloween-hampton-court-palace-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/halloween-hampton-court-palace-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/halloween-hampton-court-palace-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/halloween-hampton-court-palace-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/halloween-hampton-court-palace-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/halloween-hampton-court-palace-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/halloween-hampton-court-palace-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/halloween-hampton-court-palace-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/halloween-hampton-court-palace-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/halloween-hampton-court-palace-2026-1536.webp"
         ]
       ]
     },
@@ -14884,6 +15364,54 @@
         ]
       ]
     },
+    "/covers/boo-at-the-zoo-bronx-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/boo-at-the-zoo-bronx-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/boo-at-the-zoo-bronx-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/boo-at-the-zoo-bronx-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/boo-at-the-zoo-bronx-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/boo-at-the-zoo-bronx-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/boo-at-the-zoo-bronx-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/boo-at-the-zoo-bronx-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/boo-at-the-zoo-bronx-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/boo-at-the-zoo-bronx-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/boo-at-the-zoo-bronx-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/broadway-autumn-is-a-play-season.jpg": {
       "width": 1536,
       "height": 864,
@@ -15940,6 +16468,54 @@
         ]
       ]
     },
+    "/covers/great-jack-o-lantern-blaze-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/great-jack-o-lantern-blaze-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/great-jack-o-lantern-blaze-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/great-jack-o-lantern-blaze-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/great-jack-o-lantern-blaze-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/great-jack-o-lantern-blaze-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/great-jack-o-lantern-blaze-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/great-jack-o-lantern-blaze-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/great-jack-o-lantern-blaze-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/great-jack-o-lantern-blaze-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/great-jack-o-lantern-blaze-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/hubble-found-a-decagon-in-its-own-old-pictures.jpg": {
       "width": 1536,
       "height": 864,
@@ -16273,6 +16849,54 @@
         [
           1536,
           "/covers/moma-what-closes-and-what-opens-this-autumn-1536.webp"
+        ]
+      ]
+    },
+    "/covers/nearly-a-billion-dollars-of-pet-costumes.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/nearly-a-billion-dollars-of-pet-costumes-480.avif"
+        ],
+        [
+          768,
+          "/covers/nearly-a-billion-dollars-of-pet-costumes-768.avif"
+        ],
+        [
+          1024,
+          "/covers/nearly-a-billion-dollars-of-pet-costumes-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/nearly-a-billion-dollars-of-pet-costumes-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/nearly-a-billion-dollars-of-pet-costumes-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/nearly-a-billion-dollars-of-pet-costumes-480.webp"
+        ],
+        [
+          768,
+          "/covers/nearly-a-billion-dollars-of-pet-costumes-768.webp"
+        ],
+        [
+          1024,
+          "/covers/nearly-a-billion-dollars-of-pet-costumes-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/nearly-a-billion-dollars-of-pet-costumes-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/nearly-a-billion-dollars-of-pet-costumes-1536.webp"
         ]
       ]
     },
@@ -19876,6 +20500,54 @@
         ]
       ]
     },
+    "/covers/kuerbisfest-am-himmel-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/kuerbisfest-am-himmel-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/kuerbisfest-am-himmel-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/kuerbisfest-am-himmel-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/kuerbisfest-am-himmel-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/kuerbisfest-am-himmel-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/kuerbisfest-am-himmel-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/kuerbisfest-am-himmel-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/kuerbisfest-am-himmel-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/kuerbisfest-am-himmel-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/kuerbisfest-am-himmel-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/lange-nacht-der-museen-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -20116,6 +20788,54 @@
         ]
       ]
     },
+    "/covers/vienna-halloween-run-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/vienna-halloween-run-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/vienna-halloween-run-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/vienna-halloween-run-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/vienna-halloween-run-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/vienna-halloween-run-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/vienna-halloween-run-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/vienna-halloween-run-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/vienna-halloween-run-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/vienna-halloween-run-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/vienna-halloween-run-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/viennale-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -20257,6 +20977,54 @@
         [
           1536,
           "/covers/warum-die-biologische-uhr-nach-vier-wochen-stehen-blieb-1536.webp"
+        ]
+      ]
+    },
+    "/covers/was-halloween-in-oesterreich-kostet.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/was-halloween-in-oesterreich-kostet-480.avif"
+        ],
+        [
+          768,
+          "/covers/was-halloween-in-oesterreich-kostet-768.avif"
+        ],
+        [
+          1024,
+          "/covers/was-halloween-in-oesterreich-kostet-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/was-halloween-in-oesterreich-kostet-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/was-halloween-in-oesterreich-kostet-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/was-halloween-in-oesterreich-kostet-480.webp"
+        ],
+        [
+          768,
+          "/covers/was-halloween-in-oesterreich-kostet-768.webp"
+        ],
+        [
+          1024,
+          "/covers/was-halloween-in-oesterreich-kostet-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/was-halloween-in-oesterreich-kostet-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/was-halloween-in-oesterreich-kostet-1536.webp"
         ]
       ]
     },

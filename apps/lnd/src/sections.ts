@@ -26,6 +26,11 @@ const TAGS: Record<string, Vocabulary> = {
   Food: { slug: "food", plural: "food and drink", label: "Food" },
   Markets: { slug: "markets", plural: "markets" },
   Festivals: { slug: "festivals", plural: "festivals" },
+  // The one tag in this table that is a date rather than a kind. "Halloween"
+  // does not describe the format of an event — a parade, a zoo, a film studio
+  // in Hertfordshire have nothing in common as formats — it says which
+  // week of the year they belong to, and it is exactly what gets typed.
+  Halloween: { slug: "halloween", plural: "Halloween", label: "Halloween" },
 };
 
 export const NAV = {
@@ -39,8 +44,31 @@ export function sections(items: FeedItem[]): Section[] {
     items,
     reserved: RESERVED,
     tags: TAGS,
-    home: "London",
+    // Both names for the same place. `placeOf` defaults to country before
+    // city, so the entries that record "United Kingdom" — and only those —
+    // would be filed a second time under a /uk/ page holding an arbitrary
+    // slice of the site. One entry carried a country and stayed under the
+    // threshold; four of them cross it.
+    home: ["London", "United Kingdom"],
     copy: (g) => {
+      // A date rather than a subject, so the generic template is wrong
+      // twice over: it would file the week of the year as a genre, and it
+      // would bury the only word anybody types.
+      if (g.key === "Halloween") {
+        return {
+          title: "Halloween in Greater London 2026: what is on",
+          description:
+            "Hampton Court and Eltham Palace over half term, and a Hogwarts season that runs from mid-September — each date as the organiser published it.",
+          h1: "Halloween in Greater London",
+          lede: "Two palaces over half term and, out past the boroughs, a hundred pumpkins hanging over the Great Hall for seven weeks — each date as the organiser gave it, and where we read it.",
+          headings: {
+            events: "Where to go for Halloween",
+            upcoming: "2026 dates",
+            past: "Previous years",
+            news: "Halloween news",
+          },
+        };
+      }
       const what = g.voc.plural ?? g.key.toLowerCase();
       const Title = `${what[0].toUpperCase()}${what.slice(1)}`;
       return {

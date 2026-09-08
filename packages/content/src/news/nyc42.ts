@@ -595,4 +595,39 @@ export const items: NewsItem[] = [
     expertise:
       "Time Out’s headline says Caribbean; the itineraries are Bermuda. Worth knowing before planning around a sailing time or a climate — Bermuda is a two-day sail off the Carolinas, not the tropics, and in late September it is a warm autumn rather than a summer.",
   },
+
+  {
+    slug: "nearly-a-billion-dollars-of-pet-costumes",
+    site: "nyc42",
+    image: "/covers/nearly-a-billion-dollars-of-pet-costumes.jpg",
+    imageAlt: "Five paper pumpkins of slightly different sizes standing in a row on a ledge against a dark brown wall",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Americans spend nearly a billion dollars dressing up their pets for Halloween",
+    cardTitle: "A billion dollars of pet costumes",
+    titleSeo: "Halloween spending: $13.1 billion",
+    summary:
+      "The National Retail Federation's most recent survey puts total Halloween spending at a record $13.1 billion — and $1 billion of that on costumes for animals. The most popular one is a pumpkin.",
+    date: "2026-09-08",
+    country: "United States",
+    category: "Halloween",
+    source: {
+      name: "National Retail Federation",
+      url: "https://nrf.com/media-center/press-releases/nrf-consumer-survey-finds-halloween-spending-to-reach-record-13-1-billion",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "The number that stops you in the National Retail Federation's Halloween survey is not the headline one. It is the line item underneath: Americans expect to spend <strong>nearly a billion dollars on costumes for their pets</strong>.",
+      "## The headline first",
+      "Total Halloween spending came in at a record <strong>$13.1 billion</strong> in the most recent survey, up from $11.6 billion the year before and past the previous record of $12.2 billion. <strong>73 percent</strong> of those asked said they planned to celebrate, roughly the same share as the year before — so the increase is people spending more, not more people taking part.",
+      "## Where it goes",
+      "<strong>$4.3 billion</strong> on costumes: $2 billion of it on adults, $1.4 billion on children, and just under <strong>$1 billion on pets</strong>. Decorating accounts for another <strong>$4.2 billion</strong>, with 78 percent of respondents saying they decorate the house.",
+      "## The most popular pet costume is a pumpkin",
+      "The survey asks, and the answer has an order: a <strong>pumpkin</strong> (9.8 percent), a <strong>hot dog</strong> (5.4), a <strong>bumblebee</strong> (4), then a <strong>ghost</strong> and a <strong>superhero</strong> tied at 3.1. Which is to say the winning idea is to make the animal look like the vegetable already sitting on the stoop.",
+      "## What the figure is and is not",
+      "It is a survey of intentions carried out for the NRF by Prosper Insights &amp; Analytics, not a count of receipts: it measures what people say they are about to spend. And it is the most recently published one — the NRF releases the survey each September, so the figure for this year is not out yet.",
+      "For a city that treats 31 October as an outdoor event, the composition is the interesting part. Costumes and decorations together are two thirds of the money, and both are things bought to be seen by other people.",
+    ],
+  },
 ];

@@ -29,6 +29,15 @@ const TAGS: Record<string, Vocabulary> = {
   Tecnología: { slug: "tecnologia", plural: "tecnología", label: "Tecnología" },
   Ciencia: { slug: "ciencia", plural: "ciencia", label: "Ciencia" },
   "Fiestas patrias": { slug: "fiestas-patrias", plural: "fiestas patrias" },
+  // La única etiqueta de esta tabla que no es un formato sino una fecha:
+  // un desfile de alebrijes, una procesión de catrinas y una noche de
+  // velas en un panteón no se parecen en nada como formatos, y sí en la
+  // semana del año a la que pertenecen. Es lo que se teclea.
+  "Día de Muertos": {
+    slug: "dia-de-muertos",
+    plural: "Día de Muertos",
+    label: "Día de Muertos",
+  },
 };
 
 export const NAV = {
@@ -44,6 +53,24 @@ export function sections(items: FeedItem[]): Section[] {
     tags: TAGS,
     home: "Ciudad de México",
     copy: (g) => {
+      // "X en la Ciudad de México" funciona para un formato y no para una
+      // fecha: quien busca esto quiere saber dónde pararse y qué día, no
+      // bajo qué etiqueta lo archivamos.
+      if (g.key === "Día de Muertos") {
+        return {
+          title: "Día de Muertos 2026 en la CDMX: qué hay",
+          description:
+            "Alebrijes el 17 de octubre, catrinas el 25, el gran desfile el 31 y la alumbrada de Mixquic el 1 y 2 de noviembre — cada fecha como la publicó quien organiza",
+          h1: "Día de Muertos en la Ciudad de México",
+          lede: "Quince días, cuatro actos y ninguno se parece al otro: los alebrijes salen del Zócalo a mediodía, las catrinas caminan un domingo, el desfile llena Reforma un sábado y Mixquic alumbra su panteón de noche. Cada fecha como la publicó quien organiza",
+          headings: {
+            events: "Dónde ver el Día de Muertos",
+            upcoming: "Fechas de 2026",
+            past: "Ediciones pasadas",
+            news: "Noticias del Día de Muertos",
+          },
+        };
+      }
       const que = g.voc.plural ?? g.key.toLowerCase();
       const Que = `${que[0].toUpperCase()}${que.slice(1)}`;
       return {

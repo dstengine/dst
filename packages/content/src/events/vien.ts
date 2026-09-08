@@ -281,4 +281,116 @@ export const items: EventItem[] = [
     expertise:
       "Sechs Stunden klingen nach viel und sind es nicht: Realistisch sind vier Häuser, wenn sie nahe beieinander liegen, und drei, wenn nicht. Der Fehler, den fast alle beim ersten Mal machen, ist das größte Haus zuerst — im Kunsthistorischen oder im Naturhistorischen ist der Abend vorbei, bevor er begonnen hat, und beide sind ohnehin ganzjährig offen. Die Nacht lohnt sich für die kleinen Sammlungen, die man sonst nie betritt, weil sie um 17 Uhr zusperren. Und das Regionalticket um 7 Euro ist für einen Wiener Abend die richtige Karte — die 19 Euro zahlt nur, wer wirklich Bundesländer wechselt.",
   },
+
+  {
+    slug: "vienna-halloween-run-2026",
+    site: "vien",
+    image: "/covers/vienna-halloween-run-2026.jpg",
+    imageAlt: "Eine helle Laufbahn, die in die Bildmitte führt, gesäumt von Bäumen mit rotem Herbstlaub",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Vienna Halloween Run 2026",
+    summary:
+      "Ein Laufabend in der Prater Hauptallee am 30. Oktober, ab 15:30 Uhr, in drei Distanzen von 600 Metern bis 5 Kilometern. Startgebühr 8 bis 40 Euro, verkleidet laufen ist ausdrücklich erwünscht.",
+    start: "2026-10-30",
+    startTime: "15:30",
+    utcOffset: "+01:00",
+    venue: "Prater Hauptallee, Antifaschismusplatz 1",
+    city: "Wien",
+    organizer: "Fairsport Events e.U.",
+    category: "Halloween",
+    tickets: { priceFrom: 8, priceTo: 40, currency: "EUR" },
+    source: {
+      name: "Vienna Halloween Run",
+      url: "https://www.vienna-halloween-run.at/",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "Halloween in Wien findet zum größten Teil in Wohnungen und Lokalen statt. Der Vienna Halloween Run ist das seltene Gegenteil: eine Veranstaltung im Freien, mit Startnummer, Zeitnehmung und einem Zieleinlauf im Dunkeln. Die zweite Auflage läuft am <strong>30. Oktober 2026</strong> in der Prater Hauptallee.",
+      "## Die Distanzen",
+      "<strong>Mini Monster</strong> über 600 bis 800 Meter für die Kleinsten, <strong>Little Fear</strong> über 2,5 Kilometer und <strong>Big Scare</strong> über 5 Kilometer. Die beiden längeren Bewerbe starten in Blöcken um <strong>18:30</strong> und <strong>19:30 Uhr</strong>, das Gelände öffnet um <strong>15:30 Uhr</strong>.",
+      "## Was es kostet",
+      "Die Startgebühr liegt je nach Bewerb und Anmeldezeitpunkt zwischen <strong>8 und 40 Euro</strong>.",
+      "## Der Ort",
+      "Start und Ziel liegen am <strong>Antifaschismusplatz 1</strong> am Beginn der Hauptallee, wenige Minuten vom Praterstern.",
+    ],
+    faq: [
+      {
+        q: "Wann ist der Vienna Halloween Run 2026?",
+        a: "Am <strong>30. Oktober 2026</strong>. Das Gelände öffnet um 15:30 Uhr, die längeren Bewerbe starten um 18:30 und 19:30 Uhr.",
+      },
+      {
+        q: "Welche Distanzen gibt es?",
+        a: "Drei: Mini Monster über 600 bis 800 Meter, Little Fear über 2,5 Kilometer und Big Scare über 5 Kilometer.",
+      },
+      {
+        q: "Was kostet die Teilnahme?",
+        a: "Zwischen <strong>8 und 40 Euro</strong>, abhängig vom Bewerb und davon, wie früh man sich anmeldet.",
+      },
+      {
+        q: "Wo startet der Lauf?",
+        a: "In der Prater Hauptallee, am Antifaschismusplatz 1 im 2. Bezirk.",
+      },
+    ],
+    expertise:
+      "Zwei Dinge unterscheiden diesen Abend von einem gewöhnlichen Volkslauf. Erstens die Uhrzeit: Ende Oktober ist es um halb sieben bereits dunkel, und die Hauptallee ist keine hell beleuchtete Straße — wer die 5 Kilometer läuft, läuft den größten Teil davon im Halbdunkel. Zweitens das Kostüm, das hier nicht Zierde, sondern Ausrüstung ist: Was beim Fotografieren gut aussieht, wird nach zwei Kilometern schwer und warm. Die praktikable Lösung sind Maske und Umhang, die man im Ziel wieder anzieht, nicht das vollständige Ganzkörperkostüm.",
+  },
+
+  {
+    slug: "kuerbisfest-am-himmel-2026",
+    site: "vien",
+    image: "/covers/kuerbisfest-am-himmel-2026.jpg",
+    imageAlt: "Ein breiter Haufen runder Papierscheiben in Rot, Grün, Ocker und Creme, in vielen verschiedenen Größen",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Kürbisfest am Himmel 2026",
+    summary:
+      "Drei Tage Kürbis am Stadtrand von Wien, von 24. bis 26. Oktober jeweils 10 bis 18 Uhr, mit über 200 Sorten zum Anschauen. Der Eintritt ist frei.",
+    start: "2026-10-24",
+    end: "2026-10-26",
+    startTime: "10:00",
+    endTime: "18:00",
+    utcOffset: "+02:00",
+    venue: "Himmelstraße 125",
+    city: "Wien",
+    organizer: "Kuratorium Wald",
+    category: "Halloween",
+    tickets: { priceFrom: 0, priceTo: 0, currency: "EUR" },
+    source: {
+      name: "Himmel — Kuratorium Wald",
+      url: "https://www.himmel.at/kuerbisfest",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "Der ausgehöhlte Kürbis ist das eine Bild, das jeder mit dem Ende des Oktobers verbindet, und am Himmel in Sievering steht er drei Tage lang in über zweihundert Sorten nebeneinander — die meisten davon sehen nicht im Entferntesten aus wie das orange Ding aus dem Supermarkt.",
+      "## Die Daten",
+      "<strong>24. bis 26. Oktober 2026</strong>, jeweils von <strong>10 bis 18 Uhr</strong>, Himmelstraße 125 im 19. Bezirk.",
+      "## Was der Eintritt kostet",
+      "<strong>Nichts.</strong> Das Fest ist frei zugänglich.",
+      "## Was dort steht",
+      "Über <strong>200 Kürbissorten</strong>, dazu das Gelände des Kuratoriums Wald am Stadtrand mit Blick über die Stadt.",
+    ],
+    faq: [
+      {
+        q: "Wann ist das Kürbisfest am Himmel 2026?",
+        a: "Von <strong>24. bis 26. Oktober 2026</strong>, täglich von 10 bis 18 Uhr.",
+      },
+      {
+        q: "Kostet das Kürbisfest Eintritt?",
+        a: "Nein, der <strong>Eintritt ist frei</strong>.",
+      },
+      {
+        q: "Wo ist der Himmel?",
+        a: "In der Himmelstraße 125 im 19. Bezirk, am Stadtrand oberhalb von Sievering.",
+      },
+      {
+        q: "Wie viele Kürbissorten gibt es zu sehen?",
+        a: "Über <strong>200</strong>.",
+      },
+    ],
+    expertise:
+      "Der Himmel liegt nicht an der U-Bahn, und das ist der Punkt, an dem die Anreise geplant gehört: Hinauf fährt der 39A, und an einem freien Nachmittag Ende Oktober ist er voll. Wer mit dem Auto kommt, findet in der Himmelstraße kaum Platz. Dafür bekommt man den Gegenwert, den ein Halloween-Programm im Innenstadtlokal nicht hat — Tageslicht, Aussicht über die Stadt und einen Grund, das Wochenende vor dem 31. Oktober im Freien zu verbringen.",
+  },
 ];

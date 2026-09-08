@@ -42,6 +42,11 @@ const TAGS: Record<string, Vocabulary> = {
   Science: { slug: "science", plural: "science", label: "Science" },
   Outdoors: { slug: "outdoors", plural: "the outdoors", label: "Outdoors" },
   Convention: { slug: "conventions", plural: "conventions" },
+  // The one tag in this table that is a date rather than a kind. "Halloween"
+  // does not describe the format of an event — a parade, a zoo, a hillside
+  // of carved pumpkins have nothing in common as formats — it says which
+  // week of the year they belong to, and it is exactly what gets typed.
+  Halloween: { slug: "halloween", plural: "Halloween", label: "Halloween" },
 };
 
 export const NAV = {
@@ -75,6 +80,24 @@ export function sections(items: FeedItem[]): Section[] {
           description: `Festivals, conventions and races in the ${g.key} — the dates as the organisers published them, with the source behind every entry.`,
           h1: `Events in the ${g.key}`,
           lede: `Big American events with published dates, from the Rose Parade in January to the desert in August — each date as the organiser gave it, and a link to where we read it. New York's own listings are on the rest of the site.`,
+        };
+      }
+      // The "X in New York" template works for a format and not for a
+      // date: nobody searching this wants to know how we filed it, they
+      // want to know where to stand and on which evening.
+      if (g.key === "Halloween") {
+        return {
+          title: "Halloween in New York 2026: what is on",
+          description:
+            "The parade, the zoo and the pumpkin blaze up the Hudson, from late September to the 1st of November — each date as the organiser published it.",
+          h1: "Halloween in New York",
+          lede: "Sixth Avenue on the 31st, the Bronx Zoo for six weekends, and seven thousand carved pumpkins an hour up the river — each date as the organiser gave it, and a link to where we read it.",
+          headings: {
+            events: "Where to go for Halloween",
+            upcoming: "2026 dates",
+            past: "Previous years",
+            news: "Halloween news",
+          },
         };
       }
       const what = g.voc.plural ?? g.key.toLowerCase();

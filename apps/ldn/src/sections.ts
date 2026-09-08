@@ -37,6 +37,11 @@ const TAGS: Record<string, Vocabulary> = {
   Transport: { slug: "transport", plural: "transport", label: "Transport" },
   Science: { slug: "science", plural: "science", label: "Science" },
   Procession: { slug: "processions", plural: "processions" },
+  // The one tag in this table that is a date rather than a kind. "Halloween"
+  // does not describe the format of an event — a parade, a zoo, a botanic
+  // garden after dark have nothing in common as formats — it says which
+  // week of the year they belong to, and it is exactly what gets typed.
+  Halloween: { slug: "halloween", plural: "Halloween", label: "Halloween" },
 };
 
 export const NAV = {
@@ -50,8 +55,30 @@ export function sections(items: FeedItem[]): Section[] {
     items,
     reserved: RESERVED,
     tags: TAGS,
-    home: "London",
+    // Both names for the same place. `placeOf` defaults to country before
+    // city, so the entries that record "United Kingdom" — and only those —
+    // would be filed a second time under a /uk/ page holding an arbitrary
+    // slice of the site. One entry carried a country and stayed under the
+    // threshold; four of them cross it.
+    home: ["London", "United Kingdom"],
     copy: (g) => {
+      // A date, not a format: "Halloween in central London" is the query,
+      // and the generic template would file it as though it were a genre.
+      if (g.key === "Halloween") {
+        return {
+          title: "Halloween in central London 2026: what is on",
+          description:
+            "Kew after dark, the Tower over half term and a free afternoon in Hyde Park, from 16 October to 1 November — each date as the organiser published it.",
+          h1: "Halloween in central London",
+          lede: "An illuminated trail through Kew, nine days of it at the Tower and three free afternoons in Hyde Park — with the dates the organisers themselves published, not the ones the listings sites repeat.",
+          headings: {
+            events: "Where to go for Halloween",
+            upcoming: "2026 dates",
+            past: "Previous years",
+            news: "Halloween news",
+          },
+        };
+      }
       const what = g.voc.plural ?? g.key.toLowerCase();
       return {
         title: `${what[0].toUpperCase()}${what.slice(1)} in central London`,

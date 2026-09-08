@@ -140,7 +140,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Village Halloween Parade 2026",
     summary:
-      "The 53rd parade goes up Sixth Avenue at 7pm on Saturday 31 October. Watching is free, joining in is free if you are in costume, and it happens rain or shine.",
+      "The 53rd parade goes up Sixth Avenue at 7pm on Saturday 31 October under the theme Body & Soul. Watching is free, joining in is free if you are in costume, and it happens rain or shine.",
     start: "2026-10-31",
     startTime: "19:00",
     utcOffset: "-04:00",
@@ -151,7 +151,7 @@ export const items: EventItem[] = [
     source: {
       name: "NYC Village Halloween Parade",
       url: "https://www.halloween-nyc.com/",
-      verifiedOn: "2026-08-30",
+      verifiedOn: "2026-09-08",
     },
     body: [
       "New York’s <strong>53rd annual Village Halloween Parade</strong> steps off at <strong>7:00pm on Saturday 31 October 2026</strong>, up Sixth Avenue.",
@@ -165,8 +165,8 @@ export const items: EventItem[] = [
       "## What tickets are for",
       "Watching costs nothing and marching costs nothing. Tickets exist for <strong>special access</strong> — skipping the line to enter the parade, and grandstand-style viewing — and the parade is a <strong>501(c)(3) not-for-profit arts organisation</strong>, so buying one is closer to a donation than a fee.",
       "The parade is supported in part by public funds from the <strong>NYC Department of Cultural Affairs</strong> in partnership with the City Council.",
-      "## What is not announced",
-      "The <strong>2026 theme and Grand Marshal have not been published</strong>, so they do not appear here. For reference, 2025 ran under «It’s a Potluck!» with <strong>City Harvest</strong> as Grand Marshal — the organisation that rescues fresh produce and delivers it free across the five boroughs.",
+      "## The theme for 2026",
+      "The parade announces a theme each year, and 2026 runs under <strong>Body &amp; Soul</strong>. The <strong>Grand Marshal has not been published</strong>, so it does not appear here. For reference, 2025 ran under «It’s a Potluck!» with <strong>City Harvest</strong> as Grand Marshal — the organisation that rescues fresh produce and delivers it free across the five boroughs.",
       "There is also an official after party at <strong>House of Yes</strong> in Industry City, Brooklyn, from <strong>9:00pm</strong>, which is ticketed separately.",
     ],
     expertise:
@@ -1355,5 +1355,106 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Bonnaroo is the one on this page you cannot do from a hotel: the festival is a campsite with stages attached, an hour from the nearest city, and the experience people describe is as much about the field as the line-up. Flying in from New York means renting a car in Nashville, which is a plan to make before the ticket, not after.",
+  },
+  {
+    slug: "boo-at-the-zoo-bronx-2026",
+    site: "nyc42",
+    image: "/covers/boo-at-the-zoo-bronx-2026.jpg",
+    imageAlt: "An arch of overlapping paper leaves in amber, ochre and cream above a pale band carrying three animal paw prints",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Boo at the Zoo 2026",
+    summary:
+      "Six weekends of pumpkins, a candy trail and a costume parade at the Bronx Zoo, from 26 September to 1 November, free with zoo admission.",
+    start: "2026-09-26",
+    end: "2026-11-01",
+    utcOffset: "-04:00",
+    venue: "Bronx Zoo",
+    city: "New York",
+    country: "United States",
+    organizer: "Bronx Zoo",
+    category: "Halloween",
+    source: {
+      name: "Bronx Zoo",
+      url: "https://bronxzoo.com/boo-at-the-zoo",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "The zoo's Halloween runs for six weeks and costs nothing on top of getting in, which makes it the cheapest large Halloween in the city and the one least likely to frighten anybody.",
+      "## The details",
+      "<strong>Saturdays and Sundays from 26 September to 1 November 2026</strong>, plus <strong>Monday 12 October</strong>. Activities run from 11am, with the last performances finishing at <strong>4pm</strong>. It is <strong>free with a Bronx Zoo ticket or membership</strong>.",
+      "## What is on",
+      "The candy trail runs 11am to 2pm; most other activities run 11am to 4pm, some from 10am. They are spread across the zoo rather than gathered in one place — Astor Court, Giraffe Corner, Grizzly Corner, the Butterfly Patio, Rhino Trail, Rhino Garden and the Dancing Crane Pavilion each have something, from puppets and games to a hay maze and free face painting.",
+      "## Getting there",
+      "The zoo is in the Bronx at 2300 Southern Boulevard. It is a long day out from Manhattan and a short one from the north Bronx, and the Halloween weekends are among the busiest the zoo has.",
+    ],
+    faq: [
+      {
+        q: "When is Boo at the Zoo 2026 at the Bronx Zoo?",
+        a: "Every Saturday and Sunday from 26 September to 1 November 2026, plus Monday 12 October.",
+      },
+      {
+        q: "Does Boo at the Zoo cost extra?",
+        a: "No. The zoo says it is free with your Bronx Zoo ticket or membership.",
+      },
+      {
+        q: "What time does it finish?",
+        a: "Activities and the final performances end at 4pm. The candy trail is the shorter window, 11am to 2pm.",
+      },
+    ],
+    expertise:
+      "The candy trail closing at two while everything else runs to four is the detail that catches families out: arriving at one o'clock means queueing for the one thing with a deadline. Go for eleven, do the trail first and the rest of the zoo afterwards. October weekends here are also the zoo's own peak — the animals are more active in the cold than in August, which is the quiet argument for coming now rather than in summer.",
+  },
+
+  {
+    slug: "great-jack-o-lantern-blaze-2026",
+    site: "nyc42",
+    image: "/covers/great-jack-o-lantern-blaze-2026.jpg",
+    imageAlt: "Rows of small amber lantern discs, each with a carved face, hung close together against a dark ground",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "The Great Jack O'Lantern Blaze 2026",
+    summary:
+      "Seven thousand hand-carved pumpkins light up a Hudson Valley estate for seven weeks, from 18 September to 8 November — an hour north of Grand Central.",
+    start: "2026-09-18",
+    end: "2026-11-08",
+    utcOffset: "-04:00",
+    venue: "Van Cortlandt Manor",
+    city: "Croton-on-Hudson",
+    country: "United States",
+    organizer: "Historic Hudson Valley",
+    category: "Halloween",
+    source: {
+      name: "The Great Jack O'Lantern Blaze",
+      url: "https://www.pumpkinblaze.org/",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "Seven thousand pumpkins, every one of them cut by hand, and the whole thing is lit only by what is inside them.",
+      "## The details",
+      "<strong>18 September to 8 November 2026</strong> at <strong>Van Cortlandt Manor</strong>, Croton-on-Hudson, New York. It is a production of <strong>Historic Hudson Valley</strong>, a not-for-profit educational organisation. Entry is by timed ticket.",
+      "## What it is",
+      "An after-dark walk through the grounds of an 18th-century estate, past more than seven thousand illuminated jack-o'-lanterns arranged into sequences — a carousel, a bridge, a wall of faces. The carving is continuous through the run, because pumpkins do not last seven weeks.",
+      "## Getting there from the city",
+      "Croton-on-Hudson is on Metro-North's Hudson Line out of Grand Central. It is the one Halloween on this site that is not in New York City, and the reason it is here anyway is that half the people in the queue came up from it.",
+    ],
+    faq: [
+      {
+        q: "When is the Great Jack O'Lantern Blaze in 2026?",
+        a: "From 18 September to 8 November 2026, at Van Cortlandt Manor in Croton-on-Hudson, New York.",
+      },
+      {
+        q: "How many pumpkins are there?",
+        a: "The organisers advertise more than 7,000 hand-carved, illuminated jack-o'-lanterns.",
+      },
+      {
+        q: "Who runs it?",
+        a: "Historic Hudson Valley, a not-for-profit educational organisation, which says the Blaze is supported by individual, foundation, corporate and government contributions.",
+      },
+    ],
+    expertise:
+      "Two practical things. It is outdoors and it is after dark in the Hudson Valley in October, which by the end of the run means genuinely cold — the September and early-October slots are the comfortable ones, and the late-October slots are the ones that sell first anyway. And it is a walk on grass and gravel in the dark: the sequences are worth stopping in front of, so the hour it is billed at is closer to ninety minutes if you are not being moved along.",
   },
 ];

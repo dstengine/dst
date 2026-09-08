@@ -70,7 +70,9 @@
       "ultra-miami-2027": "a flat wide band of deep teal paper across the lower third with three tall thin magenta paper towers standing on it, plain shapes, warm dark ground above",
       "stagecoach-2027": "a single flat paper wagon wheel shape, an outer ring with straight spokes, in dusty tan and deep red, centred on a warm brown ground",
       "iowa-state-fair-2027": "a row of flat paper ears of corn, simple long ovals in butter yellow with green leaf shapes, lying side by side across a warm brown ground",
-      "bonnaroo-2026": "a broad flat paper arch in bright orange spanning the frame on a green field band, plain shapes, deep blue ground above"
+      "bonnaroo-2026": "a broad flat paper arch in bright orange spanning the frame on a green field band, plain shapes, deep blue ground above",
+      "boo-at-the-zoo-bronx-2026": "a wide arch of overlapping cut-paper leaves spanning the frame, with three simple animal-track shapes stamped across the band beneath it",
+      "great-jack-o-lantern-blaze-2026": "a dense field of small round carved lantern discs stacked in rising tiers from the lower edge, each disc with two triangles and a jagged slot cut out of it"
     },
     "ldn": {
       "london-design-festival-2026": {
@@ -110,6 +112,12 @@
       "london-fashion-week-september-2026": {
         "idiom": "vector",
         "subject": "one long horizontal rail running across the frame with six plain garment shapes hanging from it, each a simple flat triangle under a small hook, an empty flat ground behind them"
+      },
+      "halloween-at-kew-2026": "a tall glasshouse silhouette cut from paper at the left, with a lit path curving away from it into a deep band of massed tree shapes",
+      "halloween-tower-of-london-2026": "four square crenellated tower shapes of markedly different heights standing in a row, each cut from a different paper tone, above a wide flat moat band",
+      "hyde-park-halloween-discovery-days-2026": {
+        "subject": "three carved pumpkin shapes of different sizes standing in a row on open parkland, each a round form with two triangular eyes and a jagged mouth cut out of it, bare branching tree forms rising behind them",
+        "idiom": "vector"
       }
     },
     "lnd": {
@@ -120,7 +128,11 @@
       "the-big-brine-hackney-bridge": "rows of paper preserving jars with domed lids on a shelf, cut lemon and cucumber discs beside them",
       "lambeth-fringe-2026": "a cluster of small pale blue paper doorways of different heights standing side by side, one of them lit chalk white",
       "the-uk-biobank-yardstick-behind-an-ageing-drug-trial": "flat paper collage on deep navy blue, one long pale blue paper strip running the full width of the frame with regular notches cut into its upper edge, six small chalk white paper markers standing at uneven distances above the strip, one of the markers red, soft shadows, generous empty space, no lettering, no numerals, no text of any kind",
-      "blackheath-fireworks-2026": "one firework burst high in the frame, straight rays radiating evenly outward from a single point, a low flat horizon line beneath it"
+      "blackheath-fireworks-2026": "one firework burst high in the frame, straight rays radiating evenly outward from a single point, a low flat horizon line beneath it",
+      "halloween-hampton-court-palace-2026": "a row of tall ornamented chimney stacks of varying heights cut from paper, standing above a long crenellated roofline that runs the width of the frame",
+      "halloween-eltham-palace-2026": "one great circular window divided into wedge-shaped panes, half of it in deep shadow, sitting above a stepped geometric band",
+      "dark-arts-warner-bros-studio-tour-2026": "a dense cluster of small round ribbed pumpkin shapes hanging at many different heights from fine vertical threads, filling the upper two thirds of the frame, a long empty hall floor beneath them, no tassels",
+      "day-of-the-dead-horniman-2026": "a curved band of layered paper flower discs of graduated size crossing the frame, with rows of small cut-paper bunting rectangles strung above it, the composition filling the whole frame edge to edge with no border or paper edge visible"
     },
     "cmx": {
       "gran-premio-ciudad-de-mexico-2026": {
@@ -136,7 +148,10 @@
       "festival-xochiska-2026": "a cut-paper wrestling mask in two contrasting colours, a row of vertical paper stripes standing behind it",
       "grito-2026-alcaldia-miguel-hidalgo": "a large flat cut-paper bell shape hanging in the upper half of the frame, and below it a row of small triangular paper bunting flags strung across the full width on a thin line, no lettering anywhere",
       "festival-cafe-y-chocolate-2026": "one large flat cut-paper coffee cup seen from the side, centred slightly left, with a single round marigold flower head cut from gold paper resting against its rim, and one halved cacao pod shape cut from deep plum paper lying flat to the right of the cup, no lettering anywhere",
-      "nayarit-en-los-pinos-2026": "one large round clay cooking pot seen from the side standing alone in the centre of the frame, a wide flared rim and two small handles"
+      "nayarit-en-los-pinos-2026": "one large round clay cooking pot seen from the side standing alone in the centre of the frame, a wide flared rim and two small handles",
+      "desfile-alebrijes-monumentales-2026": "one large impossible creature assembled from mismatched cut-paper parts — a curling tail, wide spread wings, spiral horns, mismatched legs — each part in a different tone and pattern",
+      "mega-procesion-de-las-catrinas-2026": "a row of wide-brimmed hats cut from paper, each brim heaped with layered flower discs, receding in scale from left to right along a diagonal",
+      "alumbrada-mixquic-2026": "rows of small upright candles standing on a deep plum ground, each candle a narrow pale column with a small pointed flame above it, round layered gold marigold flower discs scattered between the rows, the composition filling the whole frame edge to edge with no border, no inner rectangle and no paper edge visible"
     },
     "mxo": {
       "fil-guadalajara-2026": {
@@ -278,7 +293,9 @@
       "lange-nacht-der-museen-2026": {
         "idiom": "vector",
         "subject": "a row of five tall lit windows in a plain dark facade, each window a flat block of light, everything around them one unbroken flat tone"
-      }
+      },
+      "vienna-halloween-run-2026": "a flat side-on band composition: a wide pale running lane crossing the whole width of the frame, a row of bare autumn tree shapes standing along its upper edge and a second row along its lower edge, all shapes flat and the same size, no vanishing point, no road markings receding",
+      "kuerbisfest-am-himmel-2026": "a heaped mass of round and gourd-shaped paper forms in many different sizes, tones and patterns, spread wide across a low table band"
     }
   },
   "news": {
@@ -350,7 +367,8 @@
       "seven-days-of-free-classes-in-bed-stuy": "seven horizontal bars of increasing width stacked on top of one another, the widest one running off the edge of the frame",
       "hubble-found-a-decagon-in-its-own-old-pictures": "three rectangular frames stacked with slight offset, a faint ten-sided outline showing through the topmost one",
       "moma-what-closes-and-what-opens-this-autumn": "a row of six empty flat paper picture frames hung on a wall, the two at the left tilted off level and sliding out of the frame edge, the four at the right hanging square and evenly spaced, nothing inside any of them",
-      "sxsw-badges-go-up-on-september-17": "two broad upright paper rectangles of the same width standing side by side at the centre of the frame with a narrow gap between them, the left one clearly shorter than the right, both resting on one straight level line, wide empty ground around them"
+      "sxsw-badges-go-up-on-september-17": "two broad upright paper rectangles of the same width standing side by side at the centre of the frame with a narrow gap between them, the left one clearly shorter than the right, both resting on one straight level line, wide empty ground around them",
+      "nearly-a-billion-dollars-of-pet-costumes": "a row of five small round pumpkin shapes of identical size standing side by side, the leftmost one much larger than the rest, generous empty space above them"
     },
     "ldn": {
       "marks-and-spencer-is-doing-a-london-fashion-week-show": "flat paper collage, a long narrow runway strip of pale paper running up the centre of a deep navy ground with rows of small seat shapes either side, one seat in the front row a bright red, soft shadows, no lettering, no numerals, no text of any kind",
@@ -539,7 +557,8 @@
       "albertina-zeigt-picasso-und-bacon-ab-18-september": "flat paper collage on warm cream, two large cut paper human figures facing one another at the centre of the frame, one in deep vermilion red with angular flat planes and one in moss green with a smeared torn edge, a thin gold strip in the gap between them, soft shadows, no lettering, no numerals, no text of any kind",
       "zwei-grosse-ausstellungen-im-wien-museum-enden-am-27-september": "two empty picture frames side by side on a flat wall, the right-hand one tilted and lifted slightly off it",
       "wien-ist-2026-zweitlebenswerteste-stadt-der-welt": "three stacked vertical bars of nearly equal height with the tallest at the left, a thin rule running across all three",
-      "openai-stuft-neues-modell-als-kritisch-fuer-cybersicherheit-ein": "a large flat paper padlock shape standing closed in the middle of the frame, two flat paper keys lying beside it, one of the keys outlined with a thin metallic edge, no lettering anywhere"
+      "openai-stuft-neues-modell-als-kritisch-fuer-cybersicherheit-ein": "a large flat paper padlock shape standing closed in the middle of the frame, two flat paper keys lying beside it, one of the keys outlined with a thin metallic edge, no lettering anywhere",
+      "was-halloween-in-oesterreich-kostet": "a single tall stack of round paper discs of identical size rising past the top of the frame, beside two much shorter stacks of the same discs, generous empty space around them"
     }
   },
   "pages": {

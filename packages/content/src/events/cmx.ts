@@ -210,7 +210,7 @@ export const items: EventItem[] = [
     utcOffset: "-06:00",
     city: "Ciudad de México",
     venue: "Paseo de la Reforma",
-    category: "Festival",
+    category: "Día de Muertos",
     organizer: "Gobierno de la Ciudad de México",
     geo: {
       name: "Paseo de la Reforma",
@@ -390,5 +390,184 @@ export const items: EventItem[] = [
     ],
     expertise:
       "El horario es la trampa de este festival: cierra a las 17:00, no de noche, y la programación fuerte —las agrupaciones musicales— se concentra en las horas centrales, justo cuando el complejo está más lleno. Llegar a las diez y salir a comer a la una es la manera de ver el recinto y el festival sin hacer cola por ninguno de los dos. Vale además recordar qué es este lugar: Los Pinos fue residencia oficial hasta 2018 y hoy funciona como centro cultural público, así que la visita al conjunto arquitectónico es tan parte del plan como el festival que lo ocupa este fin de semana.",
+  },
+
+  {
+    slug: "desfile-alebrijes-monumentales-2026",
+    site: "cmx",
+    image: "/covers/desfile-alebrijes-monumentales-2026.jpg",
+    imageAlt: "Una criatura de papel recortado en rojo y morado, con alas angulosas, cuernos y patas desiguales, sobre fondo crema",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Desfile de Alebrijes Monumentales 2026",
+    summary:
+      "Sábado 17 de octubre a mediodía: los alebrijes salen del Zócalo rumbo al Ángel de la Independencia, y se quedan sobre Paseo de la Reforma hasta el 8 de noviembre. Es la 18ª edición y entrar no cuesta nada.",
+    start: "2026-10-17",
+    startTime: "12:00",
+    utcOffset: "-06:00",
+    city: "Ciudad de México",
+    venue: "Zócalo — Paseo de la Reforma",
+    category: "Día de Muertos",
+    organizer: "Museo de Arte Popular",
+    tickets: { priceFrom: 0, priceTo: 0, currency: "MXN" },
+    geo: {
+      name: "Zócalo",
+      lat: 19.432608,
+      lng: -99.133209,
+    },
+    source: {
+      name: "Museo de Arte Popular",
+      url: "https://www.map.cdmx.gob.mx/convocatorias/concursos/86",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "El <strong>sábado 17 de octubre de 2026</strong>, a las <strong>12:00</strong>, decenas de alebrijes de varios metros de alto salen del Zócalo empujados por quienes los construyeron. Es la <strong>18ª edición</strong> del desfile que organiza el Museo de Arte Popular, y el primer acto grande de la temporada",
+      "## La ruta",
+      "Del <strong>Zócalo</strong> por 5 de Mayo y Avenida Juárez hasta <strong>Paseo de la Reforma</strong>, y por Reforma hasta el <strong>Ángel de la Independencia</strong>",
+      "## Lo que pasa después del desfile",
+      "Los alebrijes <strong>se quedan sobre Reforma hasta el 8 de noviembre</strong>. Ésa es la diferencia con cualquier otro desfile de la ciudad: no es un acto de una tarde sino una exposición al aire libre de tres semanas, y verla entre semana cuesta lo mismo que verla el sábado — nada",
+      "## Qué es un alebrije",
+      "Una criatura imposible armada con partes de animales que no coinciden. La forma nace en el siglo XX con Pedro Linares, en cartonería, y el concurso del museo la volvió monumental",
+      "## Cuánto cuesta",
+      "<strong>Nada.</strong> El desfile y la exposición sobre Reforma son de acceso libre",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo es el Desfile de Alebrijes Monumentales 2026?",
+        a: "El <strong>sábado 17 de octubre de 2026</strong> a las <strong>12:00</strong>, desde el Zócalo",
+      },
+      {
+        q: "¿Cuál es la ruta?",
+        a: "Del Zócalo por 5 de Mayo y Avenida Juárez a Paseo de la Reforma, y por Reforma hasta el <strong>Ángel de la Independencia</strong>",
+      },
+      {
+        q: "¿Hasta cuándo se pueden ver los alebrijes?",
+        a: "Se quedan sobre Paseo de la Reforma <strong>hasta el 8 de noviembre</strong>",
+      },
+      {
+        q: "¿Cuesta algo?",
+        a: "No. Tanto el desfile como la exposición sobre Reforma son <strong>de acceso libre</strong>",
+      },
+    ],
+    expertise:
+      "Quien sólo tiene un rato conviene que lo use en Reforma y no en el Zócalo. El arranque a mediodía concentra a toda la gente en la plaza y los alebrijes salen de uno en uno; sobre Reforma pasan ya separados y con espacio para verlos completos. Y si el sábado no se puede, la temporada no se pierde: las tres semanas siguientes son la parte larga del evento, con los alebrijes quietos, de cerca y sin multitud",
+  },
+
+  {
+    slug: "mega-procesion-de-las-catrinas-2026",
+    site: "cmx",
+    image: "/covers/mega-procesion-de-las-catrinas-2026.jpg",
+    imageAlt: "Tres sombreros de ala ancha de papel rosa en diagonal, cada uno con flores rojas sobre el ala",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Mega Procesión de las Catrinas 2026",
+    summary:
+      "Domingo 25 de octubre: miles de catrinas caminan del Ángel de la Independencia al Zócalo. Es la 13ª edición, no cuesta nada y quien va maquillado es parte de la procesión.",
+    start: "2026-10-25",
+    utcOffset: "-06:00",
+    city: "Ciudad de México",
+    venue: "Ángel de la Independencia — Zócalo",
+    category: "Día de Muertos",
+    organizer: "Jessy Esquivias",
+    tickets: { priceFrom: 0, priceTo: 0, currency: "MXN" },
+    geo: {
+      name: "Ángel de la Independencia",
+      lat: 19.427021,
+      lng: -99.167654,
+    },
+    source: {
+      name: "Mega Procesión de las Catrinas",
+      url: "https://megaprocesiondelascatrinas.com.mx/",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "La diferencia con el desfile del 31 es quién camina. Aquí no hay carros alegóricos ni un elenco contratado: caminan los asistentes, maquillados de catrina, y por eso la <strong>13ª edición</strong> es de las pocas cosas de la temporada en las que uno no es público",
+      "## La fecha y la ruta",
+      "<strong>Domingo 25 de octubre de 2026</strong>, del <strong>Ángel de la Independencia</strong> por Paseo de la Reforma y Avenida Juárez hasta el <strong>Zócalo</strong>. En la plaza hay escenario de <strong>14:00 a 20:00</strong>",
+      "## Cuánto cuesta",
+      "<strong>Nada.</strong> No hay registro ni boleto",
+      "## De dónde viene la catrina",
+      "De un grabado. José Guadalupe Posada dibujó una calavera con sombrero de ala ancha para burlarse de quien renegaba de su origen; Diego Rivera le puso el nombre y el vestido largo con los que hoy se la reconoce",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo es la Mega Procesión de las Catrinas 2026?",
+        a: "El <strong>domingo 25 de octubre de 2026</strong>, del Ángel de la Independencia al Zócalo",
+      },
+      {
+        q: "¿Hay que pagar o registrarse?",
+        a: "No. Es <strong>de acceso libre</strong> y sin registro",
+      },
+      {
+        q: "¿En qué se distingue del Gran Desfile?",
+        a: "En quién camina: el desfile del 31 tiene carros alegóricos y elenco, y aquí caminan los asistentes maquillados",
+      },
+      {
+        q: "¿Qué pasa al llegar al Zócalo?",
+        a: "Hay <strong>escenario de 14:00 a 20:00</strong>",
+      },
+    ],
+    expertise:
+      "El maquillaje es la logística real del día. Los puestos que lo hacen se instalan alrededor del Ángel y la fila crece conforme se acerca la hora de salida, así que quien piensa maquillarse ahí necesita llegar con bastante anticipación. La segunda cosa que conviene saber es que la ruta es larga y de subida y bajada suave sobre Reforma: es una caminata de verdad, no un paseo de veinte minutos, y el calzado importa más que el vestido",
+  },
+
+  {
+    slug: "alumbrada-mixquic-2026",
+    site: "cmx",
+    image: "/covers/alumbrada-mixquic-2026.jpg",
+    imageAlt: "Una fila de velas encendidas recortadas en papel sobre fondo magenta, con flores doradas esparcidas abajo",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "La Alumbrada de Mixquic 2026",
+    summary:
+      "El 1 y 2 de noviembre, en San Andrés Mixquic, el panteón se llena de velas y cempasúchil. Es lo más cerca que se puede estar de un Día de Muertos de pueblo sin salir de la Ciudad de México.",
+    start: "2026-11-01",
+    end: "2026-11-02",
+    utcOffset: "-06:00",
+    city: "Ciudad de México",
+    venue: "San Andrés Mixquic, Tláhuac",
+    category: "Día de Muertos",
+    organizer: "Alcaldía Tláhuac",
+    geo: {
+      name: "San Andrés Mixquic",
+      lat: 19.226389,
+      lng: -98.9625,
+    },
+    source: {
+      name: "Alcaldía Tláhuac",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "Mixquic es un pueblo dentro de la ciudad, en el extremo sureste de <strong>Tláhuac</strong>, y su Día de Muertos no se parece al de Reforma. La noche del <strong>2 de noviembre</strong> las familias van al panteón del antiguo convento agustino y lo llenan de veladoras y cempasúchil. A eso se le llama <strong>la Alumbrada</strong>",
+      "## Las fechas",
+      "<strong>1 y 2 de noviembre de 2026</strong>. El 1 es el día de los niños difuntos y el 2 el de los adultos, que es la noche de la Alumbrada",
+      "## Qué se ve",
+      "El panteón entero iluminado con velas, las tumbas cubiertas de flor de cempasúchil, y a las familias sentadas junto a ellas. No es un espectáculo montado para quien mira: es una visita, y quien llega es un invitado",
+      "## Lo que todavía no está publicado",
+      "El programa detallado de 2026 — horarios, cierres de calle, transporte especial — <strong>no se ha anunciado</strong>. Cuando la alcaldía lo publique aparece aquí",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo es la Alumbrada de Mixquic 2026?",
+        a: "El <strong>1 y 2 de noviembre de 2026</strong>. La noche de la Alumbrada es la del 2",
+      },
+      {
+        q: "¿Dónde está Mixquic?",
+        a: "En <strong>San Andrés Mixquic</strong>, al sureste de la alcaldía Tláhuac, dentro de la Ciudad de México",
+      },
+      {
+        q: "¿Ya hay programa oficial de 2026?",
+        a: "Todavía no. Cuando la alcaldía publique horarios y logística lo anotamos aquí",
+      },
+      {
+        q: "¿En qué se distingue del desfile de Reforma?",
+        a: "En que no es un acto público montado sino la celebración de un pueblo en su propio panteón",
+      },
+    ],
+    expertise:
+      "Dos cosas hacen difícil esta noche y las dos son de traslado. Mixquic está a más de treinta kilómetros del centro y la carretera de acceso se satura desde la tarde del 2; quien va en auto pasa más tiempo estacionándose que en el panteón. Y la segunda: es una celebración familiar en un cementerio, no una atracción — el modo de estar ahí es caminar despacio, no fotografiar tumbas de cerca",
   },
 ];

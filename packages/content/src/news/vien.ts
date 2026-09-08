@@ -219,4 +219,39 @@ export const items: NewsItem[] = [
     expertise:
       "Der Index misst nicht, wie schön eine Stadt ist, sondern wie unproblematisch sie sich für Entsandte verwalten lässt — er entstand, um Auslandszulagen zu bemessen. Das erklärt beides: warum Wien seit Jahren so weit oben steht (Gesundheitsversorgung, Infrastruktur und Stabilität sind drei von fünf Kategorien, und in allen dreien ist die Stadt konstant stark) und warum ein Wechsel zwischen Platz eins und zwei so wenig aussagt. Bei Werten nahe der Obergrenze entscheiden Bruchteile eines Punktes in einer einzelnen Kategorie, und dieselbe Stadt kann in zwei Jahren dieselbe sein und trotzdem den Platz tauschen. Interessanter als der Rang ist der Satz darunter: Der Weltschnitt steht still, weil Stabilität verliert, was die Gesundheitsversorgung gewinnt.",
   },
+
+  {
+    slug: "was-halloween-in-oesterreich-kostet",
+    site: "vien",
+    image: "/covers/was-halloween-in-oesterreich-kostet.jpg",
+    imageAlt: "Ein einzelner hoher Stapel roter Münzscheiben auf cremefarbenem Grund, rechts daneben leere Fläche",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Halloween ist in Österreich vor allem ein Einkauf — 90 Millionen Euro, und die Hälfte davon Süßigkeiten",
+    cardTitle: "90 Millionen für eine Nacht",
+    titleSeo: "Halloween in Österreich: 90 Millionen Euro",
+    summary:
+      "Der Handelsverband hat zuletzt 74 Euro pro Kopf gemessen, nach 59 im Jahr davor. Am häufigsten im Einkaufskorb: Süßigkeiten, Kürbisse, Snacks — Kostüme kommen erst an fünfter Stelle.",
+    date: "2026-09-08",
+    category: "Halloween",
+    source: {
+      name: "Handelsverband",
+      url: "https://www.handelsverband.at/presse/presseaussendungen/halloween-2025/",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "Wer in Wien nach Halloween-Veranstaltungen sucht, findet eine kurze Liste. Wer nach Halloween-Umsätzen sucht, findet eine Zahl, die dazu nicht zu passen scheint: rund <strong>90 Millionen Euro</strong> im österreichischen Handel, gemessen vom <strong>Handelsverband</strong> in seinem jüngsten Konsum-Check. Ein Jahr davor waren es 75 Millionen.",
+      "## Der Sprung liegt beim Einzelnen",
+      "Pro Kopf wurden <strong>74 Euro</strong> ausgegeben, nach <strong>59 Euro</strong> im Jahr davor — ein Plus von <strong>19 Prozent</strong>. <strong>Zwei Drittel</strong> der Befragten gaben an, gezielt Halloween-Produkte kaufen zu wollen.",
+      "## Was tatsächlich gekauft wird",
+      "<strong>Süßigkeiten</strong> nennen 51 Prozent, <strong>Kürbisse</strong> 32 Prozent, <strong>Snacks</strong> 31 Prozent. Erst danach kommen Dekoration mit 30 Prozent, <strong>Kostüme mit 19 Prozent</strong>, alkoholische Getränke ebenfalls mit 19, alkoholfreie mit 17 und Schminke mit 15 Prozent.",
+      "Das ist die eigentliche Auskunft dieser Erhebung. Das Bild, das man von Halloween im Kopf hat — verkleidete Menschen unterwegs — beschreibt nicht einmal jeden fünften Einkauf. Der häufigste Halloween-Kauf des Landes ist eine Packung Süßigkeiten, und der zweithäufigste ein Kürbis.",
+      "## Wie die Zahl zustande kommt",
+      "Befragt wurden für den Handelsverband von <strong>Reppublika Research &amp; Analytics</strong> 1.013 Personen ab 18 Jahren in Online-Interviews, erhoben in der Woche vor dem Fest. Es ist also eine Absichtserklärung, kein Kassenbon: gemessen wird, was Menschen vorhaben auszugeben, und nicht, was am 1. November tatsächlich in den Kassen liegt.",
+      "Und es ist die zuletzt veröffentlichte Zahl — die Erhebung erscheint jedes Jahr erst im Herbst, wenige Tage vor dem 31. Oktober. Für 2026 gibt es sie noch nicht.",
+      "## Warum der Veranstaltungskalender trotzdem kurz bleibt",
+      "Wenn der Großteil des Geldes in Süßigkeiten, Kürbisse und Snacks fließt, dann findet Halloween in Österreich überwiegend zu Hause statt. Das erklärt, warum ein Abend Ende Oktober in Wien nach viel Betrieb im Supermarkt und wenig Programm in der Stadt aussieht: Beides ist dasselbe Fest, es wird nur nicht am selben Ort gefeiert.",
+    ],
+  },
 ];

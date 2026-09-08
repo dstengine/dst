@@ -128,4 +128,223 @@ export const items: EventItem[] = [
     expertise:
       "One kindly word of warning and one of encouragement. The warning: forty thousand tickets sounds like a great many until you remember that the heath is enormous and quite dark, and the walk back down towards the station afterwards is where an evening is either pleasant or ruined — Blackheath and Greenwich stations both queue, and the buses along the A2 do rather better than either. The encouragement: a display of this size, seen from open common land rather than between buildings, is genuinely a different thing from a municipal fifteen minutes in a park, and it is the one November evening in this corner of London that is worth the cold.",
   },
+  {
+    slug: "halloween-hampton-court-palace-2026",
+    site: "lnd",
+    image: "/covers/halloween-hampton-court-palace-2026.jpg",
+    imageAlt: "A dark blue crenellated roofline with three towers of different heights rising from it, the tallest carrying a small red flag",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Halloween at Hampton Court Palace 2026",
+    summary:
+      "Henry VIII's haunted palace does half term from 24 October to 1 November, included with admission — Richmond upon Thames' largest Halloween by some distance.",
+    start: "2026-10-24",
+    end: "2026-11-01",
+    utcOffset: "+00:00",
+    venue: "Hampton Court Palace",
+    city: "London",
+    country: "United Kingdom",
+    organizer: "Historic Royal Palaces",
+    category: "Halloween",
+    source: {
+      name: "Historic Royal Palaces",
+      url: "https://www.hrp.org.uk/tower-of-london/whats-on/halloween-at-the-tower-of-london/",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "The palace bills it as a spell-binding adventure at Henry VIII's haunted palace, and for once the marketing has the easier job: this is a building with a resident ghost story older than most of the borough.",
+      "## The details",
+      "<strong>24 October to 1 November 2026</strong> at <strong>Hampton Court Palace</strong>, in the London Borough of Richmond upon Thames. <strong>Included in palace admission</strong>; members go free and no pre-booking is required.",
+      "## What it is",
+      "Historic Royal Palaces run the same half-term week at both of their London palaces, and the Tower's version — ghosts in theatrical costume, gathered at set times, designed to delight rather than to fright — is the shape of this one too. At Hampton Court the setting does much of the work: the Tudor kitchens and the Base Court after four o'clock in late October need very little help.",
+      "## Getting there",
+      "Hampton Court station is opposite the gates, twice an hour from Waterloo, and the palace car park fills early in half term.",
+    ],
+    faq: [
+      {
+        q: "When is Halloween at Hampton Court Palace in 2026?",
+        a: "24 October to 1 November 2026 — the same dates as the Tower of London's Halloween.",
+      },
+      {
+        q: "Does it cost extra?",
+        a: "No. Historic Royal Palaces say it is included in palace admission, members go free, and pre-booking is not required.",
+      },
+      {
+        q: "Which borough is Hampton Court Palace in?",
+        a: "The London Borough of Richmond upon Thames, on the north bank of the Thames at East Molesey.",
+      },
+    ],
+    expertise:
+      "One might, with respect, suggest going late rather than early. The palace is at its most obliging in the last two hours of the afternoon, when the coach parties have gone and the light in the courtyards has turned; the gardens are included and are half the reason to come, and they are emptiest then. The train from Waterloo takes a little over half an hour and puts you at the gate — which is a kinder arrangement than the car park, that being full by eleven throughout half term.",
+  },
+
+  {
+    slug: "halloween-eltham-palace-2026",
+    site: "lnd",
+    image: "/covers/halloween-eltham-palace-2026.jpg",
+    imageAlt: "A large circular window divided into panes, lit pale, above a stepped pale block on a deep blue ground",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Halloween half-term at Eltham Palace 2026",
+    summary:
+      "The Great Pumpkin Party runs 24 October to 1 November, 10am to 4pm, at Greenwich's art deco palace — storytelling, a themed trail and a fancy dress contest every day.",
+    start: "2026-10-24",
+    end: "2026-11-01",
+    startTime: "10:00",
+    endTime: "16:00",
+    utcOffset: "+00:00",
+    venue: "Eltham Palace and Gardens",
+    city: "London",
+    country: "United Kingdom",
+    organizer: "English Heritage",
+    category: "Halloween",
+    source: {
+      name: "English Heritage",
+      url: "https://www.english-heritage.org.uk/visit/places/eltham-palace-and-gardens/",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "A medieval great hall with a 1930s art deco house grafted onto it, in Greenwich, throwing a pumpkin party for nine days.",
+      "## The details",
+      "<strong>Saturday 24 October to Sunday 1 November 2026</strong>, <strong>10am to 4pm daily</strong>, at <strong>Eltham Palace and Gardens</strong>, Court Yard, Eltham SE9 5NP. Included in the standard entry price; English Heritage members go free, and booking in advance saves 15 per cent.",
+      "## What is on",
+      "The Great Pumpkin Party: interactive storytelling and spooky games, a themed trail around the site and a seasonal spot to be photographed in. There is a fancy dress competition every day with prizes, and English Heritage recommend coming dressed for it — the opposite of the rule at the Tower.",
+      "## The house itself",
+      "Eltham is worth the ticket without a pumpkin in sight. Stephen and Virginia Courtauld built the art deco wing onto Edward IV's great hall in the 1930s, and the entrance hall and the gardens are the reason people come back in months without half term in them.",
+    ],
+    faq: [
+      {
+        q: "When is Halloween at Eltham Palace in 2026?",
+        a: "Saturday 24 October to Sunday 1 November 2026, 10am to 4pm every day.",
+      },
+      {
+        q: "Is the Great Pumpkin Party included in admission?",
+        a: "Yes — it is included in the standard entry price, members go free, and advance booking gets 15 per cent off.",
+      },
+      {
+        q: "Can children wear costumes?",
+        a: "English Heritage encourage it: there is a fancy dress competition each day, with prizes for the winners.",
+      },
+    ],
+    expertise:
+      "Eltham is the quiet one of the London half-term palaces, which is its whole advantage — the same nine days that put a queue around Hampton Court leave this one comfortable, and it is twenty minutes from London Bridge to Mottingham. Ten in the morning is the hour to arrive if the trail is the point; the house and gardens then have the rest of the day, and they are the part children remember, art deco entrance hall and all.",
+  },
+
+  {
+    slug: "day-of-the-dead-horniman-2026",
+    site: "lnd",
+    image: "/covers/day-of-the-dead-horniman-2026.jpg",
+    imageAlt: "Two strings of pale bunting crossing a deep blue ground, with layered paper flowers gathered at the left end",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Day of the Dead at the Horniman 2026",
+    summary:
+      "Aztec dancers open Forest Hill's Day of the Dead on Saturday 31 October, 11am to 4pm, with mariachi, a community ofrenda and a MexiBrit market — and an adults' fiesta at 7pm.",
+    start: "2026-10-31",
+    startTime: "11:00",
+    endTime: "16:00",
+    utcOffset: "+00:00",
+    venue: "Horniman Museum and Gardens",
+    city: "London",
+    country: "United Kingdom",
+    organizer: "Horniman Museum and Gardens",
+    category: "Day of the Dead",
+    tickets: { priceFrom: 6, priceTo: 8, currency: "GBP" },
+    source: {
+      name: "Horniman Museum and Gardens",
+      url: "https://www.horniman.ac.uk/event/day-of-the-dead-family-festival/",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "It opens with a ceremonial procession led by Aztec dancers and musicians, in a garden in Forest Hill, on Halloween.",
+      "## The details",
+      "<strong>Saturday 31 October 2026</strong>, <strong>11am to 4pm</strong>, in the Conservatory and gardens of the <strong>Horniman Museum</strong>, Forest Hill, in the London Borough of Lewisham. <strong>£8</strong> adults, <strong>£6</strong> children under 16, free for under-2s and access companions.",
+      "## What is on",
+      "Live mariachi, folkloric and contemporary dance in the Sunken Gardens, stilt performers, mask-making, face painting, children's performances and games. There is a community ofrenda where visitors can honour their own dead, and the MexiBrit marketplace of Mexican and Latin American crafts, goods and food.",
+      "## The evening",
+      "A separate <strong>Day of the Dead Evening Fiesta</strong> runs the same night, <strong>7pm to 10.30pm</strong>, for adults — welcome cocktail included.",
+      "## One thing to know",
+      "It goes ahead whatever the weather, and the museum says refunds are not offered if the weather turns.",
+    ],
+    faq: [
+      {
+        q: "When is the Horniman's Day of the Dead festival in 2026?",
+        a: "Saturday 31 October 2026, 11am to 4pm for the family festival, and 7pm to 10.30pm for the adults' evening fiesta.",
+      },
+      {
+        q: "How much are tickets?",
+        a: "£8 for adults and £6 for children under 16 for the family festival. Under-2s and access companions go free.",
+      },
+      {
+        q: "Is Day of the Dead the same as Halloween?",
+        a: "No. Día de Muertos is the Mexican observance of 1 and 2 November, when families welcome their dead back; the Horniman holds its festival on 31 October because that is the Saturday, not because it is Halloween.",
+      },
+    ],
+    expertise:
+      "The opening ceremony is the thing to be on time for — it is at the start of the day and it is the part that is genuinely unlike anything else on offer in south London that weekend. The gardens are on a hill with one of the better views in the city, which is worth knowing when the Conservatory is full. And if you are bringing an ofrenda photograph, bring a copy rather than the original: the community altar stays up for the day and is handled by everyone.",
+  },
+
+  {
+    slug: "dark-arts-warner-bros-studio-tour-2026",
+    site: "lnd",
+    image: "/covers/dark-arts-warner-bros-studio-tour-2026.jpg",
+    imageAlt: "Dozens of pale pumpkins hanging on threads at different heights over an empty hall floor, on a deep blue ground",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Dark Arts at Warner Bros. Studio Tour London 2026",
+    summary:
+      "The studio tour's Halloween season runs 16 September to 8 November, with more than a hundred floating pumpkins over the Great Hall. It is included in the standard ticket, and the ticket must be booked in advance.",
+    start: "2026-09-16",
+    end: "2026-11-08",
+    utcOffset: "+01:00",
+    venue: "Warner Bros. Studio Tour London, Leavesden",
+    city: "Watford",
+    country: "United Kingdom",
+    organizer: "Warner Bros. Studio Tour London",
+    category: "Halloween",
+    source: {
+      name: "Warner Bros. Studio Tour London",
+      url: "https://www.wbstudiotour.co.uk/explore-the-tour/dark-arts/",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "The longest Halloween season anywhere near London is not in London at all, and it lasts fifty-four days. From <strong>16 September to 8 November 2026</strong> the studio tour at Leavesden runs its Dark Arts feature, and the single image that carries it is the Great Hall with <strong>more than a hundred floating pumpkins</strong> hanging over the tables.",
+      "## The details",
+      "<strong>Wednesday 16 September to Sunday 8 November 2026</strong>, at <strong>Warner Bros. Studio Tour London</strong> in Leavesden. Everything in the feature is <strong>included in the standard ticket</strong>, and tickets <strong>must be booked in advance</strong> — there is no gate to turn up at.",
+      "## What is added to the tour",
+      "Death Eater performances staged at several points along the route, Dementors in the Forbidden Forest, a Defence Against the Dark Arts classroom with spell-casting, the Nagini creature on display in the workshop, and, new for 2026, a Secrets of Sound Effects demonstration. Themed food and drink are on offer alongside.",
+      "## Where the performances happen",
+      "Hagrid's hut, the Hogwarts Express, Diagon Alley, the Hogwarts bridge and the Forbidden Forest. Pyrotechnics and smoke are used in some areas, and the tour publishes an accessibility guide for anyone who would rather go around a particular installation than through it.",
+      "## Getting there",
+      "Leavesden is in Hertfordshire, not London, though the tour carries London's name: the nearest station is Watford Junction, twenty minutes from Euston, with a shuttle bus from there.",
+    ],
+    faq: [
+      {
+        q: "When does Dark Arts run in 2026?",
+        a: "From <strong>16 September to 8 November 2026</strong>.",
+      },
+      {
+        q: "Does it cost extra?",
+        a: "No. All of the Dark Arts features are <strong>included with a standard tour ticket</strong>, which must be booked in advance.",
+      },
+      {
+        q: "How many pumpkins are there in the Great Hall?",
+        a: "<strong>Over a hundred</strong>, floating above the tables.",
+      },
+      {
+        q: "Is the studio tour in London?",
+        a: "It is in <strong>Leavesden</strong>, Hertfordshire. The nearest station is Watford Junction, about twenty minutes from Euston, with a shuttle bus to the studios.",
+      },
+      {
+        q: "Are there effects that might be too much for younger children?",
+        a: "Pyrotechnics and smoke are used in some areas and there are Dementor and Death Eater performances. The tour publishes an accessibility guide covering how to bypass particular installations.",
+      },
+    ],
+    expertise:
+      "Two things follow from the length of the season. The first is that the last week of October is the worst time to go and the whole of late September is the best: the feature is identical, and the difference is how many people are standing between you and the Great Hall. The second is the booking — a studio tour ticket is timed and sold in advance, so the usual Halloween habit of deciding on the Saturday morning does not work here at all. And it is worth being clear-eyed about what the day is: this is the standard three-hour tour with a season laid over it, so anyone who has already done the tour is paying for the overlay, not for a new visit.",
+  },
 ];

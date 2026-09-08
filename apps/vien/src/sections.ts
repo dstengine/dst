@@ -23,6 +23,11 @@ const TAGS: Record<string, Vocabulary> = {
   Musikfestival: { slug: "musikfestivals", plural: "Musikfestivals" },
   Verkehr: { slug: "verkehr", plural: "Verkehr", label: "Verkehr" },
   Architektur: { slug: "architektur", plural: "Architektur", label: "Architektur" },
+  // Die einzige Marke in dieser Tabelle, die kein Format ist, sondern ein
+  // Datum. Ein Lauf, ein Kürbisfest und eine Handelszahl haben als Formate
+  // nichts miteinander zu tun — gemeinsam ist ihnen die Woche im Jahr, und
+  // genau die wird gesucht.
+  Halloween: { slug: "halloween", plural: "Halloween", label: "Halloween" },
 };
 
 export const NAV = {
@@ -38,6 +43,24 @@ export function sections(items: FeedItem[]): Section[] {
     tags: TAGS,
     home: "Wien",
     copy: (g) => {
+      // „X in Wien“ trägt bei einem Format und nicht bei einem Datum: Wer
+      // das hier sucht, will wissen, wohin man geht, und nicht, unter
+      // welcher Marke wir es abgelegt haben.
+      if (g.key === "Halloween") {
+        return {
+          title: "Halloween in Wien 2026: was los ist",
+          description:
+            "Ein Laufabend in der Prater Hauptallee und drei Tage Kürbis am Stadtrand, dazu die Zahlen des Handels — mit dem Datum, wie es die Veranstalter angegeben haben.",
+          h1: "Halloween in Wien",
+          lede: "Die Wiener Liste ist kurz und das hat einen Grund, der sich beziffern lässt: Halloween wird hier überwiegend zu Hause gefeiert. Was es trotzdem im Freien gibt, steht hier — mit Datum und Quelle.",
+          headings: {
+            events: "Wohin man zu Halloween geht",
+            upcoming: "Termine 2026",
+            past: "Frühere Jahre",
+            news: "Meldungen zu Halloween",
+          },
+        };
+      }
       const was = g.voc.plural ?? g.key;
       // "Welt" ist die eine Rubrik, deren Überschrift allein nicht trägt:
       // eine Seite namens „Welt“ sagt nichts, und interessant ist gerade,
