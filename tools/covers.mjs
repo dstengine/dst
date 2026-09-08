@@ -103,9 +103,20 @@ const PROMPTS = JSON.parse(fs.readFileSync(path.join(REPO, "tools/covers.json"),
  *  that has to describe the picture anyway. A negation earns its place by
  *  catching what inspection would miss, and each one it does not spends
  *  attention the subject could have had — element-level negations have
- *  already been seen to summon the thing they forbid. */
+ *  already been seen to summon the thing they forbid.
+ *
+ *  `no logos` was too wide, and named the wrong thing. A currency sign or a
+ *  scatter of token discs on a piece about crypto is the subject, and a
+ *  cover cannot ask for its subject and forbid it in the same breath. What
+ *  the negation was actually written against is a mark nobody chose: the
+ *  plausible brand flux scrawls into a corner, and the sponsors' roundels
+ *  the figure tier once traced off a press wall in defiance of the old
+ *  wording. Those are barred because an unchosen mark is one no one
+ *  checked, and because a real company's mark on our cover implies a
+ *  relation we do not have. */
 const NEGATIVES =
-  "no words, no letters, no writing, no picture frame border, no logos";
+  "no words, no letters, no writing, no picture frame border, " +
+  "no company logos, no brand marks, no trademarks";
 
 /** How the picture is drawn. This, not the subject, is what keeps a cover
  *  honest: a generated image that read as reportage of a real event would
