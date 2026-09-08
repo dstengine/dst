@@ -128,6 +128,25 @@ const NEGATIVES =
   // three.
   "no artist signature, no edition number, no handwriting, no paper margin";
 
+// Two ways a subject line leaves the house style, both found the same way —
+// by re-rolling until the pattern showed:
+//
+// 1. A camera direction invites a photograph. "Seen from directly above",
+//    "seen flat from the front", "a close row of upright books" all came
+//    back as photographs under the paper idiom. Writing the subject as
+//    shapes fixes it.
+// 2. *Perspective* language is the sharper version of the same fault, and
+//    it survives being written as shapes. "Running from the lower edge into
+//    the distance" and "to a low horizon" produced a photographic desert
+//    road and then a one-point-perspective illustration, on a site whose
+//    every other cover is flat. "Seen from directly overhead" is not the
+//    same thing and is safe — it is an orthographic instruction, and the
+//    flat maps on riviera and sol2go are built on it.
+//
+// So: overhead is fine, into-the-distance is not, and the repair for a
+// cover that came back with a vanishing point is to say "flat map seen from
+// directly overhead" rather than to add another negation.
+
 /** How the picture is drawn. This, not the subject, is what keeps a cover
  *  honest: a generated image that read as reportage of a real event would
  *  be a lie no caption could undo, and every idiom here is plainly a
