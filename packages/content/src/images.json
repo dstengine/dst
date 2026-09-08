@@ -13442,6 +13442,54 @@
         ]
       ]
     },
+    "/covers/festival-de-calaveras-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/festival-de-calaveras-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/festival-de-calaveras-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/festival-de-calaveras-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/festival-de-calaveras-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/festival-de-calaveras-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/festival-de-calaveras-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/festival-de-calaveras-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/festival-de-calaveras-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/festival-de-calaveras-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/festival-de-calaveras-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/festival-de-vida-y-muerte-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -14543,6 +14591,54 @@
         [
           1536,
           "/covers/venecia-2026-una-sola-pelicula-latinoamericana-1536.webp"
+        ]
+      ]
+    },
+    "/covers/xantolo-huasteca-potosina-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/xantolo-huasteca-potosina-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/xantolo-huasteca-potosina-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/xantolo-huasteca-potosina-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/xantolo-huasteca-potosina-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/xantolo-huasteca-potosina-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/xantolo-huasteca-potosina-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/xantolo-huasteca-potosina-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/xantolo-huasteca-potosina-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/xantolo-huasteca-potosina-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/xantolo-huasteca-potosina-2026-1536.webp"
         ]
       ]
     }

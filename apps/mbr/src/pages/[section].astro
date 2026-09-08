@@ -27,6 +27,6 @@ const { section, all } = Astro.props;
 >
   <section class="container">
     <SectionNav sections={all} current={`/${section.slug}/`} {...NAV} />
-    <SectionFeed items={section.items} />
+    <SectionFeed items={section.items} headings={section.headings} />
   </section>
 </Layout>

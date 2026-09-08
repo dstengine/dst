@@ -9,7 +9,15 @@ export interface Source {
   // event page may send a reader here through its /go/ hop when there is no
   // seller to send them to instead — see the ticket button in
   // @dst/ui/EventArticle.astro.
-  url: string;
+  //
+  // Optional, because some things worth publishing have no address to point
+  // at: an organiser whose domain no longer resolves, a programme announced
+  // on paper, a fact that came from somewhere that cannot be linked. The
+  // rule the URL was standing in for is not "there is a link" but "the
+  // reader is told where this came from", and `name` carries that on its
+  // own — it is the part that renders. What a missing URL costs is the
+  // /go/ hop and nothing else: SourceLine prints the name either way.
+  url?: string;
   verifiedOn?: string; // ISO date the claim was last checked against the source; rendered
 }
 

@@ -5,7 +5,7 @@
 import Layout from "../layouts/Layout.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import SectionFeed from "@dst/ui/SectionFeed.astro";
-import { siteId, newsBase, eventsBase } from "../content";
+import { siteId, newsBase, eventsBase, labels } from "../content";
 import { sections, NAV } from "../sections";
 import { eventsBySite } from "@dst/content/events";
 import { newsBySite } from "@dst/content/news";
@@ -24,6 +24,13 @@ const { section, all } = Astro.props;
   </section>
   <section class="container">
     <SectionNav sections={all} current={`/${section.slug}/`} allHref="/" {...NAV} />
-    <SectionFeed items={section.items} eventsBase={eventsBase} newsBase={newsBase} />
+    <SectionFeed
+      items={section.items}
+      eventsBase={eventsBase}
+      newsBase={newsBase}
+      locale="es-MX"
+      labels={labels}
+      headings={section.headings}
+    />
   </section>
 </Layout>

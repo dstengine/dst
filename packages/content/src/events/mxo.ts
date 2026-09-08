@@ -205,7 +205,7 @@ export const items: EventItem[] = [
     city: "Riviera Maya",
     country: "M\u00e9xico",
     organizer: "Xcaret",
-    category: "Festival",
+    category: "Día de Muertos",
     source: {
       name: "Festival de Vida y Muerte",
       url: "https://festivaldevidaymuerte.com/",
@@ -255,7 +255,7 @@ export const items: EventItem[] = [
     city: "Janitzio",
     country: "México",
     organizer: "Secretaría de Turismo de Michoacán",
-    category: "Festival",
+    category: "Día de Muertos",
     source: {
       name: "Secretaría de Turismo de Michoacán",
       url: "https://visitmichoacan.com.mx/experiences/noche-de-muertos/",
@@ -290,5 +290,114 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Conviene decidir antes de viajar qué se va a ver, porque no es lo mismo la isla que los pueblos de la ribera: Janitzio es la imagen que todo el mundo conoce y es también la que concentra a los visitantes, mientras que en Tzintzuntzan y Jarácuaro la noche se parece más a lo que la fecha es en una casa. Y hay una cortesía que ninguna guía imprime en la portada: el panteón esa noche no es un escenario, es la sala de una familia. Se entra como se entra a una casa ajena.",
+  },
+  {
+    slug: "festival-de-calaveras-2026",
+    site: "mxo",
+    image: "/covers/festival-de-calaveras-2026.jpg",
+    imageAlt: "Una calavera de papel color crema con sombrero naranja de ala ancha, recortada en formas planas, a la derecha de un fondo verde oscuro",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Festival de Calaveras 2026",
+    summary:
+      "Diecisiete días en Aguascalientes, del 30 de octubre al 15 de noviembre: desfiles, altares monumentales y exposiciones en la tierra de José Guadalupe Posada, el grabador que inventó a la Catrina.",
+    start: "2026-10-30",
+    end: "2026-11-15",
+    utcOffset: "-06:00",
+    city: "Aguascalientes",
+    country: "México",
+    organizer: "Gobierno de Aguascalientes",
+    category: "Día de Muertos",
+    source: {
+      name: "Agenda difundida por medios de Aguascalientes; el sitio del festival no está en línea",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "La Catrina no es folclor anónimo: tiene autor, y el autor era de aquí. Aguascalientes celebra a sus muertos celebrando al hombre que los dibujó.",
+      "## Las fechas",
+      "<strong>Del 30 de octubre al 15 de noviembre de 2026</strong>. Es decir, más de dos semanas: el festival empieza antes de la fiesta y sigue mucho después del 2 de noviembre.",
+      "## Dónde",
+      "Las actividades se reparten por la ciudad, sobre todo en la <strong>Isla San Marcos</strong>, el <strong>Centro Histórico</strong> y varios recintos culturales.",
+      "## Qué hay dentro",
+      "Desfiles, altares monumentales, exposiciones, danza, teatro, conciertos, actividades infantiles, recorridos, muestras gastronómicas y eventos deportivos.",
+      "## Posada",
+      "El festival está inspirado en el legado de <strong>José Guadalupe Posada</strong>, grabador aguascalentense y creador de la Catrina.",
+      "## De dónde salen estas fechas",
+      "Del calendario que difunden los medios locales. El sitio propio del festival no responde en este momento, así que aquí no hay programa por día: cuando el organizador publique el suyo, se anota.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo es el Festival de Calaveras 2026?",
+        a: "<strong>Del 30 de octubre al 15 de noviembre de 2026</strong>, en la ciudad de Aguascalientes.",
+      },
+      {
+        q: "¿Dónde son las actividades?",
+        a: "Principalmente en la <strong>Isla San Marcos</strong> y el <strong>Centro Histórico</strong>, además de otros recintos culturales.",
+      },
+      {
+        q: "¿Qué tiene que ver Posada?",
+        a: "El festival honra a <strong>José Guadalupe Posada</strong>, grabador nacido en el estado y autor de la Catrina.",
+      },
+      {
+        q: "¿Hay programa día por día?",
+        a: "Todavía no publicado por el organizador. Estas fechas provienen del calendario que difunden los medios de Aguascalientes.",
+      },
+    ],
+    expertise:
+      "Diecisiete días cambian la manera de planear el viaje: quien va por el ambiente de la fecha quiere el tramo del 31 de octubre al 2 de noviembre, y quien va por el festival — exposiciones, teatro, conciertos — encuentra la segunda semana más barata y más tranquila, con la ciudad ya vacía de visitantes. Son dos viajes distintos con el mismo nombre.",
+  },
+  {
+    slug: "xantolo-huasteca-potosina-2026",
+    site: "mxo",
+    image: "/covers/xantolo-huasteca-potosina-2026.jpg",
+    imageAlt: "Tres máscaras ovaladas de papel — naranja, roja y crema — superpuestas en fila sobre un fondo verde oscuro",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Xantolo 2026 en la Huasteca Potosina",
+    summary:
+      "Del 30 de octubre al 2 de noviembre, en Ciudad Valles, Tamazunchale y Aquismón: comparsas enmascaradas, arcos de cempasúchil y danzas tének y nahuas.",
+    start: "2026-10-30",
+    end: "2026-11-02",
+    utcOffset: "-06:00",
+    city: "Ciudad Valles",
+    country: "México",
+    category: "Día de Muertos",
+    source: {
+      name: "Prensa y guías de viaje de San Luis Potosí; la fiesta no tiene sitio propio",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "La palabra viene del latín. <em>Xantolo</em> es <em>sanctorum</em>, «de todos los santos», dicho durante siglos en boca nahua y tének hasta quedar así.",
+      "## Las fechas",
+      "<strong>Del 30 de octubre al 2 de noviembre de 2026</strong>. En muchas comunidades los preparativos empiezan semanas antes.",
+      "## Dónde",
+      "<strong>Ciudad Valles</strong>, <strong>Tamazunchale</strong> y <strong>Aquismón</strong> concentran los principales festejos y desfiles.",
+      "## Qué se ve",
+      "Altares, arcos de cempasúchil, comparsas enmascaradas y danzas tradicionales tének y nahuas. La máscara es lo que distingue al Xantolo de casi cualquier otra celebración de la fecha en el país.",
+      "## De dónde salen estas fechas",
+      "De la prensa y las guías de San Luis Potosí. El Xantolo no es un evento con organizador ni sitio propio: es una fiesta comunitaria, y el calendario que se publica describe lo que hacen los pueblos, no un programa oficial.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo es el Xantolo 2026?",
+        a: "<strong>Del 30 de octubre al 2 de noviembre de 2026</strong> en la Huasteca Potosina.",
+      },
+      {
+        q: "¿Qué significa Xantolo?",
+        a: "Viene del latín <em>sanctorum</em>, «de todos los santos», y en la Huasteca quedó como sinónimo de Fiesta de Muertos.",
+      },
+      {
+        q: "¿A qué municipios ir?",
+        a: "<strong>Ciudad Valles</strong>, <strong>Tamazunchale</strong> y <strong>Aquismón</strong> son los que concentran desfiles y festejos.",
+      },
+      {
+        q: "¿Hay un programa oficial?",
+        a: "No. Es una celebración comunitaria sin organizador único, y los horarios los fija cada pueblo.",
+      },
+    ],
+    expertise:
+      "La diferencia práctica con las celebraciones que se anuncian con cartel es que aquí no hay hora de inicio ni recinto: las comparsas salen cuando salen y recorren las calles del pueblo, así que el plan razonable es quedarse en un municipio y no intentar tres en una noche. La Huasteca es grande y las carreteras entre esos tres puntos no son cortas.",
   },
 ];

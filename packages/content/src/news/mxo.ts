@@ -18,7 +18,7 @@ export const items: NewsItem[] = [
     date: "2026-09-08",
     city: "Riviera Maya",
     country: "M\u00e9xico",
-    category: "Festivales",
+    category: "Día de Muertos",
     source: {
       name: "Festival de Vida y Muerte",
       url: "https://festivaldevidaymuerte.com/",

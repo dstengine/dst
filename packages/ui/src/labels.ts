@@ -74,6 +74,9 @@ export interface ArticleLabels {
   readMore: string;
   allEvents: string;
   allNews: string;
+  /** The two subheadings of a section page that holds both halves of the feed. */
+  eventsHeading: string;
+  newsHeading: string;
   upcoming: string;
   /** Heading over the group of events that have happened. */
   pastGroup: string;
@@ -147,6 +150,8 @@ export const EN: ArticleLabels = {
   readMore: "Read more",
   allEvents: "All events",
   allNews: "All news",
+  eventsHeading: "Events",
+  newsHeading: "News",
   upcoming: "Upcoming",
   pastGroup: "Past",
   subscribeCalendar: "Subscribe to this calendar",
@@ -219,6 +224,8 @@ export const ES: Partial<ArticleLabels> = {
   readMore: "Leer más",
   allEvents: "Todos los eventos",
   allNews: "Todas las noticias",
+  eventsHeading: "Eventos",
+  newsHeading: "Noticias",
   upcoming: "Próximos",
   pastGroup: "Pasados",
   subscribeCalendar: "Suscribirse a este calendario",
@@ -282,6 +289,8 @@ export const DE: Partial<ArticleLabels> = {
   readMore: "Weiterlesen",
   allEvents: "Alle Termine",
   allNews: "Alle Nachrichten",
+  eventsHeading: "Termine",
+  newsHeading: "Nachrichten",
   upcoming: "Demnächst",
   pastGroup: "Vorbei",
   subscribeCalendar: "Diesen Kalender abonnieren",

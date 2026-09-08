@@ -49,6 +49,7 @@ export const EVENT_TYPES: Record<string, string> = {
   Carnival: "Festival",
   "City-wide": "Festival",
   Designfestival: "Festival",
+  "Día de Muertos": "Festival",
   Feria: "Festival",
   Ferias: "Festival",
   Festival: "Festival",

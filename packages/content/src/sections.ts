@@ -67,12 +67,33 @@ export interface Group<T extends FeedItem, V extends Vocabulary = Vocabulary> {
   items: T[];
 }
 
+/** The headings inside a section page, where the default words are wrong. */
+export interface Headings {
+  /** Over the events half. Default: the site's word for "Events". */
+  events?: string;
+  /** Over the news half. Default: the site's word for "News". */
+  news?: string;
+  /** Over the dates still to come. Default: "Upcoming", in the site's language. */
+  upcoming?: string;
+  /** Over the dates already gone. Default: "Past". */
+  past?: string;
+}
+
 /** The four strings a section page needs, in the site's own language. */
 export interface Copy {
   title: string;
   description: string;
   h1: string;
   lede: string;
+  /**
+   * A section whose subject is searched for by name wants its own words over
+   * the two halves of the feed: on a Día de Muertos page "Eventos" and
+   * "Próximos" are filing labels, while "Dónde ver el Día de Muertos en
+   * 2026" is the question the page is being asked. Optional, because on a
+   * section named after a kind — ferias, exhibitions — the generic word is
+   * already the right one, and a heading that repeats the h1 is furniture.
+   */
+  headings?: Headings;
 }
 
 export interface Section<T extends FeedItem = FeedItem> extends Group<T>, Copy {}

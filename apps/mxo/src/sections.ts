@@ -33,6 +33,16 @@ const TAGS: Record<string, Vocabulary> = {
   Movilidad: { slug: "movilidad", plural: "movilidad", label: "Movilidad" },
   Ferias: { slug: "ferias", plural: "ferias" },
   Festivales: { slug: "festivales", plural: "festivales" },
+  // La única etiqueta de esta tabla que no es una categoría sino una fecha:
+  // "Día de Muertos" no describe el formato del evento sino qué se celebra,
+  // y es exactamente lo que se teclea. Cuatro eventos y una nota ya piden
+  // una página propia, y ninguno de ellos perdía nada al salir de
+  // "Festival": esa etiqueta en singular nunca tuvo página.
+  "Día de Muertos": {
+    slug: "dia-de-muertos",
+    plural: "Día de Muertos",
+    label: "Día de Muertos",
+  },
 };
 
 export const NAV = {
@@ -63,6 +73,27 @@ export function sections(items: FeedItem[]): Section[] {
       // página titulada "Mundo" no dice nada, y lo que la hace útil es
       // justamente desde dónde se mira.
       const esMundo = g.key === "Mundo";
+      // Y la otra excepción: la plantilla "X en México" funciona para un
+      // formato ("Ferias en México") y no para una fecha — quien busca
+      // esto quiere saber dónde, no bajo qué etiqueta lo archivamos.
+      if (g.key === "Día de Muertos") {
+        return {
+          title: "Día de Muertos 2026: dónde verlo en México",
+          description:
+            "Festivales, desfiles y noches de muertos por todo el país, del 30 de octubre al 15 de noviembre, con la fecha como la publicó quien organiza.",
+          h1: "Día de Muertos en México",
+          lede: "Del Xantolo en la Huasteca a la noche de Janitzio y al Festival de Calaveras en Aguascalientes — cada fecha como la publicó quien organiza, y de dónde la sacamos. Es la misma fiesta y no se parece en dos estados seguidos.",
+          // Quien llega aquí no busca "Eventos" ni "Próximos": busca dónde
+          // ver el Día de Muertos y en qué fechas. Los encabezados dicen
+          // eso y no cómo lo archivamos nosotros.
+          headings: {
+            events: "Dónde ver el Día de Muertos",
+            upcoming: "Fechas de 2026",
+            past: "Ediciones pasadas",
+            news: "Noticias del Día de Muertos",
+          },
+        };
+      }
       return {
         title: esMundo ? "Noticias del mundo, desde México" : `${Que} en México`,
         description: esMundo
