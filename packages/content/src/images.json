@@ -3182,6 +3182,54 @@
         ]
       ]
     },
+    "/covers/claude-now-watermarks-the-text-it-writes.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/claude-now-watermarks-the-text-it-writes-480.avif"
+        ],
+        [
+          768,
+          "/covers/claude-now-watermarks-the-text-it-writes-768.avif"
+        ],
+        [
+          1024,
+          "/covers/claude-now-watermarks-the-text-it-writes-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/claude-now-watermarks-the-text-it-writes-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/claude-now-watermarks-the-text-it-writes-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/claude-now-watermarks-the-text-it-writes-480.webp"
+        ],
+        [
+          768,
+          "/covers/claude-now-watermarks-the-text-it-writes-768.webp"
+        ],
+        [
+          1024,
+          "/covers/claude-now-watermarks-the-text-it-writes-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/claude-now-watermarks-the-text-it-writes-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/claude-now-watermarks-the-text-it-writes-1536.webp"
+        ]
+      ]
+    },
     "/covers/drones-deliver-to-dubai-parks-and-beaches.jpg": {
       "width": 1536,
       "height": 864,

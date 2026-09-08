@@ -11,6 +11,43 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "claude-now-watermarks-the-text-it-writes",
+    site: "fwf",
+    image: "/covers/claude-now-watermarks-the-text-it-writes.jpg",
+    imageAlt: "A row of small paper squares of the same size on a deep blue ground, most of them pale blue and two of them cream",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Anthropic's watermark is not in Claude's words. It is in which word got picked",
+    cardTitle: "Claude's text carries a watermark now",
+    titleSeo: "Claude now watermarks its text",
+    summary:
+      "Since 2 August every new Claude model has been marking what it writes, using a keyed pattern in its own word choices. The detector is deliberately not public.",
+    date: "2026-09-08",
+    category: "AI",
+    source: {
+      name: "Anthropic",
+      url: "https://www.anthropic.com/news/claude-text-watermark",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "A watermark you could see would be a watermark you could delete. So Anthropic put one where there is nothing to delete: not in the text, but in the coin toss that produced it.",
+      "## How it works",
+      "At every step a language model has several words that would serve equally well, and it picks among them with a random number. Anthropic's change, described in an explainer published on <strong>14 August 2026</strong>, replaces the source of that randomness with one derived from a <strong>secret key</strong> and the handful of words already written. The words stay the words. What carries the signal is the pattern of which ones won — invisible to a reader, invisible to any test, and legible only to someone holding the key.",
+      "The method is a variant of <strong>SynthID-Text</strong>, published by <strong>Google DeepMind</strong> in <strong>Nature</strong> in 2024, and the underlying idea goes back to a proposal by <strong>Scott Aaronson</strong> in 2022. Anthropic's stated position is that it changes nothing about the content, the creativity or the readability of the output.",
+      "## Where it applies",
+      "Everywhere, and from <strong>2 August 2026</strong>. Every model launched on or after that date carries it — <strong>Fable 5.1</strong> and <strong>Mythos 5.1</strong> to begin with — and earlier models are being brought in over the following months. It covers the <strong>API</strong>, the Claude apps, <strong>Claude Code</strong>, <strong>Claude Cowork</strong> and <strong>Claude Tag</strong>, and the same models served through <strong>AWS</strong>, <strong>Google Cloud</strong> and <strong>Microsoft Foundry</strong>. There is no setting to turn it off, and it applies worldwide rather than in the jurisdiction that asked for it. Images and vector files — <strong>.png</strong>, <strong>.jpg</strong>, <strong>.svg</strong> — get something different: signed provenance metadata to the <strong>C2PA</strong> standard, which is a file header and travels only as long as the file does.",
+      "## The half that is not open",
+      "Detection is in <strong>private preview</strong>. The list of who may apply is regulators, law enforcement, media, fact-checkers, independent researchers, educational organisations, EU civil society groups, and companies with their own compliance obligations. Everyone else is holding marked text and no way to read the mark.",
+      "That asymmetry is the design, not an oversight. A public detector is a public oracle: anyone wanting to launder a text could edit, test, edit again, and stop the moment the light goes green. Keeping the key closed makes the mark durable and makes it useless to the general reader at the same time, and there is no version of the scheme that gives you both.",
+      "## What it does not do",
+      "It does not prove authorship. Anthropic's own wording is that a detected mark means the text <em>may</em> have been processed by Claude. The signal is sparse where the model had few equivalent choices to make — dense factual passages, code — and a very short passage carries too little of it to read at all. It survives copy-and-paste and some editing; a translation, a thorough paraphrase or a rewrite takes it away. For files, a screenshot or a format conversion strips the credentials entirely.",
+    ],
+    expertise:
+      "The practical consequence is not about catching students, it is about who gets to ask the question. Detection sitting behind an application form means the answer to \"was this written by a model\" becomes an institutional service rather than something a reader can check, and institutions ask on their own schedule and about their own subjects. Anyone building on top of generated text should assume, from now on, that the text carries a mark they cannot see, cannot verify and cannot remove with confidence — the honest planning assumption is that provenance is knowable to someone else. That argues for recording where your text came from while you still know, rather than reconstructing it later from a detector you do not control.",
+  },
+
+  {
     slug: "four-million-driverless-kilometres-and-a-satisfaction-score",
     site: "fwf",
     image: "/covers/four-million-driverless-kilometres-and-a-satisfaction-score.jpg",
