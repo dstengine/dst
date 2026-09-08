@@ -1239,4 +1239,42 @@ export const items: EventItem[] = [
       "So the reason to put this in a diary now is the date and the building, not a session list. The session list is worth checking again in October.",
     ],
   },
+
+  {
+    slug: "200ms-breakpoint-week-2026",
+    site: "sol2go",
+    image: "/covers/200ms-breakpoint-week-2026.jpg",
+    imageAlt: "A stack of flat violet and mint slabs, each offset from the one below it, on deep violet",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "200ms — Jito's MEV and DeFi day",
+    summary:
+      "Jito takes 13 November at Olympia for a day on Solana's market microstructure. Free, but selective: priority goes to builders, core developers and onchain traders.",
+    start: "2026-11-13",
+    utcOffset: "+00:00",
+    venue: "Olympia, Hammersmith Rd, London W14 8UX",
+    city: "London",
+    country: "United Kingdom",
+    organizer: "Jito Events",
+    category: "Conference",
+    tickets: { priceFrom: 0, currency: "GBP" },
+    source: {
+      name: "200ms on Luma",
+      url: "https://luma.com/6xip72je",
+      verifiedOn: "2026-09-08",
+    },
+    ticket: { url: "https://luma.com/6xip72je", label: "Register" },
+    body: [
+      "The name is the whole argument: 200 milliseconds is roughly how long a Solana slot lasts, and everything this day is about happens inside one.",
+      "## The date",
+      "<strong>13 November 2026</strong> at <strong>Olympia</strong>, Hammersmith Road, London W14 8UX — the same building Breakpoint opens in two days later. Hosted by <strong>Jito Events</strong>.",
+      "## What it covers",
+      "The organisers describe it as a day on <strong>Solana's microstructure and DeFi landscape</strong>: what is happening, how it affects DeFi projects, and what traders should know.",
+      "## Getting in",
+      "Attendance is <strong>free but selective</strong>. Priority is given to <strong>Solana builders</strong>, <strong>core developers</strong> and <strong>onchain traders</strong>.",
+    ],
+    expertise:
+      "This is the first of the three technical days that now open Breakpoint week — 200ms on the 13th, Scale or Die on the 14th, then the conference from the 15th — and it is the one aimed at the trading side rather than the protocol side. Free but selective means the registration is a filter, not a formality: apply early and say what you run onchain, because the room is picked from what people write there. Being in the same building as the main conference also makes it the cheapest way to test whether the Breakpoint week is worth the flight, since nothing about this day depends on holding a conference ticket.",
+  },
 ];

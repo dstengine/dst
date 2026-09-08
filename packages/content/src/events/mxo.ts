@@ -150,4 +150,41 @@ export const items: EventItem[] = [
     expertise:
       "Diez días de feria gratuita se sienten como una invitación a ir cuando se pueda, y así es como no se va. Vale más elegir una fecha entre semana por la tarde y anotarla: es cuando la feria está abierta, tiene programa y no tiene ni grupos escolares ni multitud de fin de semana",
   },
+
+  {
+    slug: "fiestas-de-octubre-2026",
+    site: "mxo",
+    image: "/covers/fiestas-de-octubre-2026.jpg",
+    imageAlt: "Una rueda de la fortuna naranja y crema, de líneas planas, sobre un fondo verde oscuro",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Fiestas de Octubre 2026",
+    summary:
+      "Un mes completo de feria en Zapopan, del 2 de octubre al 1 de noviembre: Foro Principal con conciertos incluidos en la entrada general y Palenque con boleto aparte.",
+    start: "2026-10-02",
+    end: "2026-11-01",
+    utcOffset: "-06:00",
+    venue: "Auditorio Benito Juárez, Zapopan",
+    city: "Guadalajara",
+    country: "México",
+    organizer: "Patronato de las Fiestas de Octubre",
+    category: "Feria",
+    source: {
+      name: "El Informador",
+      url: "https://www.informador.mx/jalisco/fiestas-de-octubre-2026-cuando-empiezan-cuando-terminan-y-que-artistas-se-presentaran-20260723-0108.html",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "Treinta y un días seguidos. Ninguna otra feria del país se sostiene tanto tiempo en un mismo recinto, y esa duración es la que explica su programación.",
+      "## Las fechas",
+      "Las actividades <strong>comienzan el 2 de octubre y concluyen el 1 de noviembre de 2026</strong>, en las instalaciones del <strong>Auditorio Benito Juárez</strong>, en el municipio de <strong>Zapopan</strong>, Jalisco.",
+      "## Los dos escenarios",
+      "El <strong>Foro Principal</strong> presenta conciertos <strong>incluidos en la entrada general</strong>. El <strong>Palenque</strong> se vende por separado; entre los nombres confirmados están <strong>Alejandro Fernández</strong>, <strong>Grupo Firme</strong>, <strong>Banda MS</strong>, <strong>María José</strong>, <strong>Kany García</strong>, <strong>Jorge Medina</strong> y <strong>Josi Cuen</strong>.",
+      "## Lo demás",
+      "Juegos mecánicos, áreas gastronómicas y entretenimiento familiar. La venta de boletos <strong>inició el 27 de julio</strong> a través de mipase.net y de puntos físicos autorizados en la ciudad.",
+    ],
+    expertise:
+      "La diferencia entre los dos escenarios es la que decide el presupuesto de la visita y casi nadie la explica al comprar: el Foro Principal entra con el boleto general, así que un cartel de nombres grandes puede salir por el precio de la entrada, mientras que el Palenque es un boleto aparte por función. Para quien viaja desde fuera de Jalisco, la lectura práctica es que un mes de feria significa que casi cualquier fin de semana de octubre sirve, y que los caros son los dos primeros y el último: entre semana, a mitad de mes, el mismo recinto se recorre sin fila.",
+  },
 ];

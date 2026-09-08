@@ -243,4 +243,41 @@ export const items: EventItem[] = [
     expertise:
       "The gap between what gets aired here and what turns into an actual rule is often short. Free zone licensing, residency categories and digital government services all appeared as policy direction from a summit stage before they existed as a resolution — which makes the programme worth reading as an early draft of the next year's regulation rather than as a conference agenda.",
   },
+
+  {
+    slug: "dubai-ai-festival-2026",
+    site: "dst",
+    image: "/covers/dubai-ai-festival-2026.jpg",
+    imageAlt: "Five blank cream cards standing in a row on a deep slate blue ground, their tops uneven",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Dubai AI Festival 2026",
+    summary:
+      "Two days at Dubai World Trade Centre on 26–27 October, run by the Dubai AI Campus with DIFC, across eight tracks that put governance and literacy next to infrastructure and investment.",
+    start: "2026-10-26",
+    end: "2026-10-27",
+    utcOffset: "+04:00",
+    venue: "Dubai World Trade Centre",
+    city: "Dubai",
+    country: "United Arab Emirates",
+    organizer: "Dubai AI Campus, in partnership with DIFC",
+    category: "AI",
+    source: {
+      name: "Dubai AI Festival",
+      url: "https://dubaiaifestival.com/",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "Most AI conferences are organised by the industry. This one is organised by a financial centre, and the difference shows in what it puts on the agenda.",
+      "## The dates",
+      "<strong>26–27 October 2026</strong> at the <strong>Dubai World Trade Centre</strong>. It is run by the <strong>Dubai AI Campus</strong> in partnership with <strong>DIFC</strong>, and managed by <strong>Terrapinn</strong>.",
+      "## The eight tracks",
+      "<strong>AI for all.</strong> <strong>Global AI governance.</strong> <strong>Immersive experiences.</strong> <strong>Innovation and ethics.</strong> <strong>Future of work.</strong> <strong>AI cornerstone.</strong> <strong>AI literacy.</strong> <strong>Infrastructure and investment.</strong>",
+      "## Who the organisers are bringing",
+      "The festival advertises <strong>20+ global unicorns</strong>, <strong>20+ government agencies and ministries</strong>, <strong>20+ global enterprises</strong> and <strong>20+ venture capital firms</strong>. Speaker numbers were still shown as placeholders on the festival site when this page was checked, so none are quoted here.",
+    ],
+    expertise:
+      "Three of the eight tracks — governance, ethics, literacy — are not the ones a vendor-run event would spend a third of its floor on, and that is the tell about who is convening this. DIFC is a regulator as much as a landlord, and the questions it needs answered are about what can be deployed inside a financial free zone rather than what can be demonstrated. The week also matters: this sits two weeks after GITEX, which means the people who came for the trade show have gone home, and the room is smaller and more specific for it.",
+  },
 ];

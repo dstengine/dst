@@ -329,4 +329,44 @@ export const items: EventItem[] = [
     expertise:
       "Es una instalación, no una muestra de piezas: se recorre en un orden y buena parte del efecto está en lo que se proyecta sobre los libros. Media hora larga, y mejor entre semana — la sala 3 es pequeña y con gente adentro las proyecciones dejan de leerse",
   },
+
+  {
+    slug: "nayarit-en-los-pinos-2026",
+    site: "cmx",
+    image: "/covers/nayarit-en-los-pinos-2026.jpg",
+    imageAlt: "Una olla de barro roja con su tapa puesta, sobre un fondo crema",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Nayarit en Los Pinos 2026",
+    summary:
+      "Dos días de cocina, artesanía y música de Nayarit en el Complejo Cultural Los Pinos, el 12 y 13 de septiembre, de 10:00 a 17:00 y con entrada libre.",
+    start: "2026-09-12",
+    end: "2026-09-13",
+    startTime: "10:00",
+    endTime: "17:00",
+    utcOffset: "-06:00",
+    venue: "Complejo Cultural Los Pinos, Bosque de Chapultepec I Sección",
+    city: "Ciudad de México",
+    country: "México",
+    organizer: "Secretaría de Cultura del Gobierno de México",
+    category: "Festival",
+    tickets: { priceFrom: 0, currency: "MXN" },
+    source: {
+      name: "Chilango",
+      url: "https://www.chilango.com/que-hacer/festival-nayarit-en-los-pinos-fecha-lugar-horarios-gastronomia-artesanias-cdmx/",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "Durante casi ochenta años, entrar aquí requería una invitación presidencial. Este fin de semana se entra gratis, y lo que hay adentro es Nayarit.",
+      "## Los datos",
+      "<strong>Sábado 12 y domingo 13 de septiembre de 2026</strong>, de <strong>10:00 a 17:00</strong>, en el <strong>Complejo Cultural Los Pinos</strong>, dentro de la Primera Sección del Bosque de Chapultepec. <strong>Entrada libre</strong>. Es una iniciativa de la <strong>Secretaría de Cultura</strong> del Gobierno de México.",
+      "## Qué se presenta",
+      "Una <strong>Gala de la Canción Mexicana de Concierto</strong> con la <strong>Orquesta de Cámara de Nayarit</strong> y <strong>Voces OCANAY</strong>; el <strong>Mariachi Tradicional Femenil Flor de la Sierra</strong>, agrupación wixárika integrada por mujeres de Nayarit y estados vecinos; y danza tradicional a cargo del <strong>Grupo de Danza Nayar</strong> y el <strong>Ballet Nuevo Nayarit</strong>. Alrededor: cocina y artesanía del estado.",
+      "## Cómo llegar",
+      "Por la estación <strong>Constituyentes</strong> de la Línea 7 del Metro, o por la estación <strong>Los Pinos / Constituyentes</strong> del Cablebús.",
+    ],
+    expertise:
+      "El horario es la trampa de este festival: cierra a las 17:00, no de noche, y la programación fuerte —las agrupaciones musicales— se concentra en las horas centrales, justo cuando el complejo está más lleno. Llegar a las diez y salir a comer a la una es la manera de ver el recinto y el festival sin hacer cola por ninguno de los dos. Vale además recordar qué es este lugar: Los Pinos fue residencia oficial hasta 2018 y hoy funciona como centro cultural público, así que la visita al conjunto arquitectónico es tan parte del plan como el festival que lo ocupa este fin de semana.",
+  },
 ];

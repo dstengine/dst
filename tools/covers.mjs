@@ -116,7 +116,14 @@ const PROMPTS = JSON.parse(fs.readFileSync(path.join(REPO, "tools/covers.json"),
  *  relation we do not have. */
 const NEGATIVES =
   "no words, no letters, no writing, no picture frame border, " +
-  "no company logos, no brand marks, no trademarks";
+  "no company logos, no brand marks, no trademarks, " +
+  // A print idiom signs and numbers itself: the first linocut came back
+  // with a pencilled edition mark in one corner and a signature in the
+  // other, which is words on a cover that forbids them. These four help
+  // and do not settle it — one linocut signed itself again with all of
+  // them in the prompt. When a subject keeps attracting a signature, take
+  // it off the print idiom rather than adding a fifth negation.
+  "no artist signature, no edition number, no handwriting, no paper margin";
 
 /** How the picture is drawn. This, not the subject, is what keeps a cover
  *  honest: a generated image that read as reportage of a real event would
@@ -151,15 +158,23 @@ const IDIOMS = {
     sites that carry no link to each other do not arrive in the same hand.
     Absent means paper, which is where all sixteen started; a name that is
     not an idiom is a typo, and falling back to paper would hide it until
-    the cover was on the page. */
-function idiomFor(site) {
-  const name = PROMPTS.idioms?.[site] ?? "paper";
+    the cover was on the page.
+
+    An entry may name its own `idiom`, because a subject can defeat one. Paper
+    holds against a pylon or a horse and loses against a cup seen from above,
+    a phone and a shelf of books: those three came back as photographs, and
+    what fixed them was a firmer idiom for that one picture — a linocut has
+    no photographic reading available to it. The override is for that, not
+    for variety; a site whose idiom is wrong should change the site's. */
+function idiomFor(site, entry) {
+  const name = (typeof entry === "object" ? entry.idiom : undefined) ?? PROMPTS.idioms?.[site] ?? "paper";
   if (!IDIOMS[name]) throw new Error(`${site}: no idiom "${name}" — one of ${Object.keys(IDIOMS).join(", ")}`);
   return IDIOMS[name];
 }
 
 /** The standard tier draws no one. */
-const STYLE = (site) => `${idiomFor(site)}, generous negative space, no people, no faces, ${NEGATIVES}`;
+const STYLE = (site, entry) =>
+  `${idiomFor(site, entry)}, generous negative space, no people, no faces, ${NEGATIVES}`;
 
 /** The figure tier is the one that draws people, and it stays on the right
     side of the reportage line by being plainly a cartoon. It keeps the paper
@@ -231,7 +246,7 @@ async function generate(site, slug, entry) {
   // match. A site without a palette is a mistake, not a default.
   const palette = PROMPTS.palettes[site];
   if (!palette) throw new Error(`no palette for ${site} — add one to covers.json`);
-  const prompt = [subject, background, detail, palette, kind === "figure" ? FIGURE_STYLE : STYLE(site)]
+  const prompt = [subject, background, detail, palette, kind === "figure" ? FIGURE_STYLE : STYLE(site, entry)]
     .filter(Boolean)
     .join(". ");
 

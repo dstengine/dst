@@ -96,4 +96,41 @@ export const items: EventItem[] = [
     expertise:
       "This is a city-wide programme rather than a Riviera one, but it lands here more usefully than most: the promenade is a continuous canal-front walking route, which is exactly what a 30-minutes-a-day commitment needs and what most Dubai communities have to drive to find. Expect the promenade to be noticeably busier in the evenings through November.",
   },
+
+  {
+    slug: "ripe-market-2026-27",
+    site: "riviera",
+    image: "/covers/ripe-market-2026-27.jpg",
+    imageAlt: "A row of blue and yellow market canopies with a low table under each, on pale blue",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Ripe Market, 15th season",
+    summary:
+      "The weekend market at Police Academy Park reopens on 10 October and runs to 2 May, Saturdays and Sundays from 9am to 9pm — the nearest thing Dubai has to a standing weekend habit.",
+    start: "2026-10-10",
+    end: "2027-05-02",
+    startTime: "09:00",
+    endTime: "21:00",
+    utcOffset: "+04:00",
+    venue: "Dubai Police Academy Park, Umm Suqeim",
+    city: "Dubai",
+    country: "United Arab Emirates",
+    organizer: "Ripe",
+    category: "Market",
+    source: {
+      name: "Khaleej Times",
+      url: "https://www.khaleejtimes.com/lifestyle/dubai-ripe-market-2026-opening-date-timings-location",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "Dubai does not have many things that happen every weekend for seven months. This is one of them, and it has been running long enough that the season opening is a date people diarise.",
+      "## The dates",
+      "The <strong>15th season</strong> opens on <strong>10 October 2026</strong> and runs until <strong>2 May 2027</strong>, every <strong>Saturday and Sunday from 9am to 9pm</strong>, at <strong>Dubai Police Academy Park</strong> in Umm Suqeim, off Sheikh Zayed Road.",
+      "## What is there",
+      "Independent stalls selling fashion, home decor, art and locally made goods, produce from UAE farmers, food vendors, creative workshops, activities for children and live entertainment.",
+    ],
+    expertise:
+      "From Riviera this is a drive rather than a walk — Umm Suqeim is on the other side of Sheikh Zayed Road from MBR City — and the twelve-hour opening is what makes that worth planning around. The market is at its emptiest in the first two hours and at its hottest, in both senses, in the middle of the afternoon; October and early November are the two months when the late-evening end of the window is the pleasant one. Note also what the season dates tell you about Dubai's outdoor calendar generally: 10 October to 2 May is roughly the whole of it, and most open-air weekend events in the city sit inside those two bookends.",
+  },
 ];

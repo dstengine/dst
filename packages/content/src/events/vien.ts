@@ -76,4 +76,41 @@ export const items: EventItem[] = [
     expertise:
       "Der 8. September ist bei diesem Festival der wichtigere Termin als der 30. Oktober. Programm und Vorverkauf starten am selben Tag, und das heißt: Wer am 8. September nachmittags schaut, hat die gesamte Auswahl vor sich; wer eine Woche wartet, hat die Uraufführungen in den kleinen Sälen nicht mehr. Bei einem Festival für neue Musik ist das keine Formalie — die kleinen Säle sind der Ort, an dem die Stücke stattfinden, die es danach nie wieder zu hören gibt.",
   },
+
+  {
+    slug: "vienna-coffee-festival-2026",
+    site: "vien",
+    image: "/covers/vienna-coffee-festival-2026.jpg",
+    imageAlt: "Ein goldener Ring mit einer roten Scheibe darin und drei kurzen roten Dampfstrichen darüber, auf cremefarbenem Grund",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Vienna Coffee Festival 2026",
+    summary:
+      "Über hundert Röstereien und Spezialitäten-Aussteller drei Tage lang in der Marx Halle, von 11. bis 13. September, mit Workshops, Cuppings und einem eigenen B2B-Tag.",
+    start: "2026-09-11",
+    end: "2026-09-13",
+    utcOffset: "+02:00",
+    venue: "Marx Halle, Karl-Farkas-Gasse 19",
+    city: "Wien",
+    country: "Österreich",
+    organizer: "Lefor Oberbauer",
+    category: "Festival",
+    source: {
+      name: "Vienna Coffee Festival",
+      url: "https://www.viennacoffeefestival.cc/",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "In einer Stadt, deren Kaffeehauskultur zum Weltkulturerbe zählt, ist ein Festival für Spezialitätenkaffee eine kleine Provokation. Es findet trotzdem statt, und zwar in einer Industriehalle.",
+      "## Die Daten",
+      "<strong>11. bis 13. September 2026</strong> in der <strong>Marx Halle</strong>, Karl-Farkas-Gasse 19, 1030 Wien. Veranstalter ist <strong>Lefor Oberbauer</strong>, Gründer und Betreiber des Festivals. Karten laufen über wien-ticket.at.",
+      "## Wer ausstellt",
+      "Über <strong>100 Kaffeeröster und Spezialitäten-Aussteller</strong>, dazu Maschinenhersteller wie <strong>La Cimbali</strong>, <strong>Faema</strong> und <strong>La Marzocco</strong>.",
+      "## Was im Programm steht",
+      "<strong>Workshops</strong>, <strong>Cuppings</strong>, eine <strong>Open Stage</strong> und Führungen. Ein eigener <strong>B2B-Day</strong> richtet sich an Geschäftspartner.",
+    ],
+    expertise:
+      "Das Cupping ist der Teil, für den man kommt, und der Teil, der zuerst ausgebucht ist — anders als bei den Ausstellerständen sitzt man dort in einer festen Runde, und die Plätze sind gezählt. Wer nur einen Tag hat, nimmt den Freitag: der B2B-Tag zieht das Fachpublikum, und an den Ständen wird an diesem Tag anders geredet als am Wochenende, wo dieselben Leute Schlangen abarbeiten. Und eine Anmerkung zur Halle: Die Marx Halle ist eine Gusseisenkonstruktion aus dem 19. Jahrhundert ohne Klimaanlage. Bei einem warmen Septemberwochenende ist der Vormittag die angenehmere Hälfte des Tages.",
+  },
 ];

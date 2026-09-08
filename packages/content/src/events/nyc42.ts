@@ -549,4 +549,42 @@ export const items: EventItem[] = [
     expertise:
       "Broadway Week runs twice a year, in January and September, and the September edition lands in the quiet stretch after the summer tourists and before the holiday run-up — which is why the discounted seats tend to be better ones than the winter edition offers.",
   },
+
+  {
+    slug: "brooklyn-book-festival-2026",
+    site: "nyc42",
+    image: "/covers/brooklyn-book-festival-2026.jpg",
+    imageAlt: "A close row of book blocks in orange, red, cream and grey on charcoal brown, their tops uneven",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Brooklyn Book Festival 2026",
+    summary:
+      "Nine days of Bookend events across Brooklyn from September 20, Children's Day on the 26th, and Festival Day on Sunday the 27th — eight stages around Borough Hall, free.",
+    start: "2026-09-20",
+    end: "2026-09-28",
+    utcOffset: "-04:00",
+    venue: "Brooklyn Borough Hall and surrounding venues",
+    city: "Brooklyn",
+    country: "United States",
+    organizer: "Brooklyn Book Festival, Inc. and the Brooklyn Book Festival Literary Council",
+    category: "Books",
+    tickets: { priceFrom: 0, currency: "USD" },
+    source: {
+      name: "Brooklyn Book Festival",
+      url: "https://www.brooklynbookfestival.org/",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "Most literary festivals put a few hundred people in a tent. This one takes over a civic centre, opens eight stages at once, and charges nothing.",
+      "## The three parts",
+      "<strong>Bookend events</strong> run across Brooklyn from <strong>September 20 to September 28, 2026</strong>. <strong>Children's Day</strong> is <strong>Saturday, September 26</strong> at Brooklyn Borough Hall, 209 Joralemon St. <strong>Festival Day and the Literary Marketplace</strong> is <strong>Sunday, September 27</strong>.",
+      "## Festival Day",
+      "Eight indoor and outdoor stages at <strong>Brooklyn Borough Hall</strong>, <strong>Brooklyn Law School</strong>, the <strong>Center for Brooklyn History</strong>, <strong>St. Ann &amp; the Holy Trinity Church</strong>, <strong>Columbus Park</strong> and <strong>Korean War Veterans Park</strong>, with the Literary Marketplace running alongside.",
+      "## Who is reading",
+      "Announced authors include <strong>Marlon James</strong>, <strong>Joyce Carol Oates</strong>, <strong>Namwali Serpell</strong> and <strong>Douglas Stuart</strong>. The festival is overwhelmingly free to the public.",
+    ],
+    expertise:
+      "Festival Day is the famous one and the Bookend events are the better ones. The week before is when individual bookshops, bars and libraries across the borough host single readings — smaller rooms, one author, and no need to choose between eight stages running at the same hour. Plan Sunday backwards from the two panels you actually want and accept that you will miss the rest; the Literary Marketplace is worth an hour on its own, and it is quietest before noon. Borough Hall is on the 2/3, 4/5 and R at Borough Hall and Court Street, which is as easy as arriving anywhere in Brooklyn gets.",
+  },
 ];

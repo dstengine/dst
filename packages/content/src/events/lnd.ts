@@ -93,4 +93,39 @@ export const items: EventItem[] = [
       "Hackney Bridge is a five-minute walk from Hackney Wick station and sits on the canal, which makes it one of the easier east London venues to get to without a car.",
     ],
   },
+
+  {
+    slug: "blackheath-fireworks-2026",
+    site: "lnd",
+    image: "/covers/blackheath-fireworks-2026.jpg",
+    imageAlt: "A single white and yellow firework bursting over a deep navy sky",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Blackheath Fireworks 2026",
+    summary:
+      "South-east London's biggest firework display returns to Blackheath Common on Saturday 7 November, ticketed, with adult entry at £17.60 and a capacity of forty thousand.",
+    start: "2026-11-07",
+    utcOffset: "+00:00",
+    venue: "Blackheath Common",
+    city: "London",
+    country: "United Kingdom",
+    organizer: "Slammin Events, in partnership with Lewisham Council",
+    category: "Fireworks",
+    tickets: { priceFrom: 5.5, priceTo: 17.6, currency: "GBP" },
+    source: {
+      name: "Time Out London",
+      url: "https://www.timeout.com/london/news/blackheath-fireworks-tickets-have-been-released-for-bonfire-night-2026-090826",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "For years this was the great free spectacle of south-east London: you wandered up onto the heath and the sky did the rest. It is ticketed now, which is a change worth knowing about before you wander anywhere.",
+      "## The details",
+      "<strong>Saturday 7 November 2026</strong> on <strong>Blackheath Common</strong>, run by <strong>Slammin Events</strong> in partnership with <strong>Lewisham Council</strong>. Capacity is <strong>40,000</strong>.",
+      "## Tickets",
+      "<strong>Adult (16+) £17.60. Youth (11–15) £11. Child (0–10) £5.50.</strong> Family packages run from <strong>£28.08 to £51.36</strong>. Tickets are sold through See Tickets and have been released; the organisers expect them to go quickly.",
+    ],
+    expertise:
+      "One kindly word of warning and one of encouragement. The warning: forty thousand tickets sounds like a great many until you remember that the heath is enormous and quite dark, and the walk back down towards the station afterwards is where an evening is either pleasant or ruined — Blackheath and Greenwich stations both queue, and the buses along the A2 do rather better than either. The encouragement: a display of this size, seen from open common land rather than between buildings, is genuinely a different thing from a municipal fifteen minutes in a park, and it is the one November evening in this corner of London that is worth the cold.",
+  },
 ];

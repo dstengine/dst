@@ -38,4 +38,41 @@ export const items: EventItem[] = [
       label: "Registration details",
     },
   },
+
+  {
+    slug: "seamless-middle-east-2027",
+    site: "llc",
+    image: "/covers/seamless-middle-east-2027.jpg",
+    imageAlt: "A blank pale mint payment card with a small gold chip, lying flat on deep teal",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Seamless Middle East 2027",
+    summary:
+      "The region's payments, fintech and e-commerce exhibition returns to Dubai World Trade Centre on 24–26 May 2027. Trade only — which is the point if you are choosing how a new company will get paid.",
+    start: "2027-05-24",
+    end: "2027-05-26",
+    utcOffset: "+04:00",
+    venue: "Al Multaqua Ballroom and Sheikh Maktoum Hall, Halls 1–8, Dubai World Trade Centre",
+    city: "Dubai",
+    country: "United Arab Emirates",
+    organizer: "Terrapinn Middle East",
+    category: "Exhibition",
+    source: {
+      name: "Dubai World Trade Centre",
+      url: "https://www.dwtc.com/en/events/seamless-2027/",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "Registering a company in Dubai takes days. Getting it a bank account and a way to take card payments takes months, and that is the part nobody sells you a package for.",
+      "## The dates",
+      "<strong>24–26 May 2027</strong> at the <strong>Dubai World Trade Centre</strong> — the Al Multaqua Ballroom, the Sheikh Maktoum Hall and Halls 1 to 8. Organised by <strong>Terrapinn Middle East</strong>, and listed by the venue as a <strong>trade-only</strong> exhibition in business and finance.",
+      "## Why it is on this site",
+      "The banking and payments question is the one this guide keeps returning to, because it is the one a licence does not answer. Seamless is where the acquirers, payment gateways and the banks' merchant-services teams stand in one hall for three days, and it is the only setting where they can be asked the same question side by side.",
+      "## Trade only",
+      "Registration is not open to the public. A new company can register on its trade licence, which is generally the first thing that licence is good for beyond the licence itself.",
+    ],
+    expertise:
+      "Go with the licence in hand, and go on the first day. The value here is not the keynotes; it is that a merchant-services conversation which normally takes three weeks of email happens in ten minutes at a stand, and you can have that conversation four times before lunch and compare. Ask each one the same two things: the settlement period, and what they require from a company with no trading history in the UAE. That second answer varies more between providers than any published rate card suggests, and it is the answer that decides whether a new licence can trade this quarter or next.",
+  },
 ];

@@ -72,4 +72,41 @@ export const items: EventItem[] = [
     expertise:
       "Most of what is exhibited here is industrial-scale infrastructure — desalination, grid solar, waste treatment — rather than the kind of small, verifiable planting this portfolio records, and the two are easy to conflate under the same word. It is listed anyway because it is the one week in the year when the people actually running environmental projects in this region are in one room, which is worth more than any exhibitor's stand.",
   },
+
+  {
+    slug: "middle-east-energy-2027",
+    site: "eco",
+    image: "/covers/middle-east-energy-2027.jpg",
+    imageAlt: "A linocut of one electricity pylon on a green ground, its cables running out to both edges of the frame",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Middle East Energy 2027",
+    summary:
+      "The region's largest electrical infrastructure exhibition runs 11–13 May 2027 at Dubai Exhibition Centre in Expo City, across five sectors from transmission and distribution to battery storage.",
+    start: "2027-05-11",
+    end: "2027-05-13",
+    utcOffset: "+04:00",
+    venue: "Dubai Exhibition Centre, Expo City",
+    city: "Dubai",
+    country: "United Arab Emirates",
+    organizer: "Informa Markets",
+    category: "Exhibition",
+    source: {
+      name: "Middle East Energy",
+      url: "https://www.middleeast-energy.com/en/home.html",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "A green economy summit argues about direction. This is the show where the cables, switchgear and batteries that would have to carry it are actually sold.",
+      "## The dates",
+      "<strong>11–13 May 2027</strong> at the <strong>Dubai Exhibition Centre</strong> in <strong>Expo City</strong>, organised by <strong>Informa Markets</strong> under the patronage of the <strong>UAE Ministry of Energy and Infrastructure</strong>.",
+      "## The five sectors",
+      "<strong>Transmission and distribution.</strong> <strong>Critical and backup power.</strong> <strong>Renewable and clean energy.</strong> <strong>Energy consumption and management.</strong> <strong>Battery and energy storage.</strong>",
+      "## The size of it",
+      "The organisers give <strong>35,000+</strong> attendees, <strong>1,900+</strong> exhibitors, <strong>150+</strong> countries and <strong>250+</strong> speakers, and describe it as the region's largest electrical infrastructure exhibition.",
+    ],
+    expertise:
+      "Renewable and clean energy is one sector of five here, and that proportion is the honest picture of what an electrical grid is made of. The other four are the reason a solar project either connects or does not: transmission capacity, backup power, demand management and storage. For a portfolio that records small, verifiable work rather than infrastructure, the useful part of a show like this is not the stands — it is that the specifications and the prices are public for three days, which is the only cheap way to find out what a given claim about capacity actually costs.",
+  },
 ];

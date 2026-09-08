@@ -220,4 +220,41 @@ export const items: EventItem[] = [
     expertise:
       "It is on this page as a reference point rather than as an opportunity. A government registry putting its name on a private conference is the clearest signal available of which technology track Dubai is actually funding — and PropTech is on the forum's November programme for the same reason.",
   },
+
+  {
+    slug: "one-billion-followers-summit-2027",
+    site: "fwf",
+    image: "/covers/one-billion-followers-summit-2027.jpg",
+    imageAlt: "Five pale concentric rings spreading outward from a single dot on deep indigo",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "1 Billion Followers Summit 2027",
+    summary:
+      "The fifth edition runs 8–10 January 2027 in Dubai, staged across Jumeirah Emirates Towers, DIFC and the Museum of the Future — a government-run event treating the creator economy as economic policy.",
+    start: "2027-01-08",
+    end: "2027-01-10",
+    utcOffset: "+04:00",
+    venue: "Jumeirah Emirates Towers, DIFC and Museum of the Future",
+    city: "Dubai",
+    country: "United Arab Emirates",
+    organizer: "UAE Government Media Office",
+    category: "Media",
+    source: {
+      name: "1 Billion Followers Summit",
+      url: "https://www.1billionsummit.com/",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "Most governments treat content creators as something to regulate. This one convenes them, at scale, in January, and calls it an economic sector.",
+      "## The dates",
+      "<strong>8–10 January 2027</strong>. The organisers list three venues: <strong>Jumeirah Emirates Towers</strong>, the <strong>Dubai International Financial Centre</strong> and the <strong>Museum of the Future</strong>.",
+      "## The scale it works at",
+      "The summit describes itself as the world's largest expo for content creators. For the <strong>2026 edition</strong>, the organisers gave a combined following of <strong>over 3.5 billion</strong> across their speakers, naming <strong>MrBeast</strong> and <strong>Vlad &amp; Niki</strong> among them.",
+      "## Why it belongs in a future-of-work calendar",
+      "The summit is run by a government media office rather than a platform or an agency, which makes it one of the few places where the working conditions of the creator economy — payment, rights, platform dependency — are discussed by the people who could legislate on them.",
+    ],
+    expertise:
+      "Watch the venue list rather than the line-up. The Museum of the Future closed its galleries on 1 September 2026 for a refurbishment its operator has said will be finished around the fifth anniversary on 22 February 2027 — after this summit. The organiser lists it as a venue anyway, which either means a partial reopening or a change of plan, and it is the detail to confirm before booking travel. The programming point is simpler: a January date puts this at the start of the UAE's event calendar rather than in the autumn crush, so it is one of the few large Dubai events where the hotels are the constraint and the diary is not.",
+  },
 ];

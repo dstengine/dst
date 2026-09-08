@@ -484,4 +484,43 @@ export const items: EventItem[] = [
     expertise:
       "Three bands and a 6pm door is a long evening, and the arena’s standing floor is where that gets felt: by the time the headline starts, anyone who came in at six has been on their feet for an hour and a half. Seated tickets are the better choice for a bill this length unless the floor is the point. Worth knowing too that this is the second Saturday arena show at Wembley inside eight days — Anastacia has the 26th — so if the Jubilee line has engineering work scheduled for one of those weekends, it is the sort of thing that gets announced once and catches people twice.",
   },
+
+  {
+    slug: "diwali-on-the-square-2026",
+    site: "ldn",
+    image: "/covers/diwali-on-the-square-2026.jpg",
+    imageAlt: "Four small red oil lamps burning in a row on a warm off-white ground",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Diwali on the Square 2026",
+    summary:
+      "Trafalgar Square gives over a Sunday afternoon to Diwali on 25 October, free, from 1pm to 7pm, opening with two hundred dancers.",
+    start: "2026-10-25",
+    startTime: "13:00",
+    endTime: "19:00",
+    utcOffset: "+00:00",
+    venue: "Trafalgar Square",
+    city: "London",
+    country: "United Kingdom",
+    organizer: "Mayor of London, with the Diwali in London committee",
+    category: "Festival",
+    tickets: { priceFrom: 0, currency: "GBP" },
+    source: {
+      name: "Mayor of London",
+      url: "https://www.london.gov.uk/events/diwali-square-2026",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "Two hundred dancers open it at once. That is the first thing that happens on Trafalgar Square on the afternoon of 25 October, and it is free to stand and watch.",
+      "## The details",
+      "<strong>Sunday 25 October 2026</strong>, <strong>1pm to 7pm</strong>, <strong>Trafalgar Square</strong>, Westminster, WC2N 5DN. Entry is <strong>free</strong>. It is a <strong>Mayor of London</strong> event, delivered with the <strong>Diwali in London committee</strong>.",
+      "## What is on",
+      "A colourful opening dance sequence with two hundred dancers, then a main stage of music, dance and performance from London's Hindu, Sikh and Jain communities. Around it: craft workshops, yoga sessions, puppet shows and food stalls.",
+      "## Access",
+      "Level access at the entrance and a wheelchair-accessible site. There is a hearing loop for the stage performances, a British Sign Language interpreter, an accessible viewing area with seating, and an accessible toilet with changing facilities.",
+    ],
+    expertise:
+      "The opening sequence is the thing to arrive for, and one o'clock on the square is a different proposition from one o'clock anywhere else in London — the space fills from the north steps down, so the National Gallery side gives you a view of the whole stage and the fountains do not. If you are bringing children, the craft workshops and puppet shows sit away from the main stage and run through the afternoon, which means the four-to-six window is the manageable one: the square is at its fullest, but the family programming is not where the crush is.",
+  },
 ];

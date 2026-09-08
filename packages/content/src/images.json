@@ -960,6 +960,54 @@
         ]
       ]
     },
+    "/covers/nayarit-en-los-pinos-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/nayarit-en-los-pinos-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/nayarit-en-los-pinos-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/nayarit-en-los-pinos-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/nayarit-en-los-pinos-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/nayarit-en-los-pinos-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/nayarit-en-los-pinos-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/nayarit-en-los-pinos-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/nayarit-en-los-pinos-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/nayarit-en-los-pinos-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/nayarit-en-los-pinos-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/plaza-de-la-conchita-jardin-polinizador.jpg": {
       "width": 1536,
       "height": 864,
@@ -1583,6 +1631,54 @@
         [
           1536,
           "/covers/dmcc-gives-lab-grown-diamonds-their-own-desk-1536.webp"
+        ]
+      ]
+    },
+    "/covers/dubai-ai-festival-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/dubai-ai-festival-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/dubai-ai-festival-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dubai-ai-festival-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/dubai-ai-festival-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/dubai-ai-festival-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dubai-ai-festival-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/dubai-ai-festival-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dubai-ai-festival-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/dubai-ai-festival-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/dubai-ai-festival-2026-1536.webp"
         ]
       ]
     },
@@ -2761,6 +2857,54 @@
         [
           1536,
           "/covers/group-1536.webp"
+        ]
+      ]
+    },
+    "/covers/middle-east-energy-2027.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/middle-east-energy-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/middle-east-energy-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/middle-east-energy-2027-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/middle-east-energy-2027-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/middle-east-energy-2027-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/middle-east-energy-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/middle-east-energy-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/middle-east-energy-2027-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/middle-east-energy-2027-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/middle-east-energy-2027-1536.webp"
         ]
       ]
     },
@@ -4046,6 +4190,54 @@
         ]
       ]
     },
+    "/covers/one-billion-followers-summit-2027.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/one-billion-followers-summit-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/one-billion-followers-summit-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/one-billion-followers-summit-2027-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/one-billion-followers-summit-2027-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/one-billion-followers-summit-2027-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/one-billion-followers-summit-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/one-billion-followers-summit-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/one-billion-followers-summit-2027-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/one-billion-followers-summit-2027-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/one-billion-followers-summit-2027-1536.webp"
+        ]
+      ]
+    },
     "/covers/programme.jpg": {
       "width": 1536,
       "height": 864,
@@ -4797,6 +4989,54 @@
         [
           1536,
           "/covers/bfi-london-film-festival-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/diwali-on-the-square-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/diwali-on-the-square-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/diwali-on-the-square-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/diwali-on-the-square-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/diwali-on-the-square-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/diwali-on-the-square-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/diwali-on-the-square-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/diwali-on-the-square-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/diwali-on-the-square-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/diwali-on-the-square-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/diwali-on-the-square-2026-1536.webp"
         ]
       ]
     },
@@ -6290,6 +6530,54 @@
         ]
       ]
     },
+    "/covers/seamless-middle-east-2027.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/seamless-middle-east-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/seamless-middle-east-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/seamless-middle-east-2027-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/seamless-middle-east-2027-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/seamless-middle-east-2027-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/seamless-middle-east-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/seamless-middle-east-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/seamless-middle-east-2027-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/seamless-middle-east-2027-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/seamless-middle-east-2027-1536.webp"
+        ]
+      ]
+    },
     "/covers/small-business-relief-still-files-a-return.jpg": {
       "width": 1536,
       "height": 864,
@@ -6625,6 +6913,54 @@
         [
           1536,
           "/covers/bank-holiday-tube-and-tfl-closures-1536.webp"
+        ]
+      ]
+    },
+    "/covers/blackheath-fireworks-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/blackheath-fireworks-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/blackheath-fireworks-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/blackheath-fireworks-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/blackheath-fireworks-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/blackheath-fireworks-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/blackheath-fireworks-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/blackheath-fireworks-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/blackheath-fireworks-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/blackheath-fireworks-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/blackheath-fireworks-2026-1536.webp"
         ]
       ]
     },
@@ -7683,6 +8019,54 @@
         [
           1536,
           "/covers/dubai-metro-gold-line-approved-1536.webp"
+        ]
+      ]
+    },
+    "/covers/dubai-racing-carnival-2026-27.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/dubai-racing-carnival-2026-27-480.avif"
+        ],
+        [
+          768,
+          "/covers/dubai-racing-carnival-2026-27-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dubai-racing-carnival-2026-27-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/dubai-racing-carnival-2026-27-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/dubai-racing-carnival-2026-27-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dubai-racing-carnival-2026-27-480.webp"
+        ],
+        [
+          768,
+          "/covers/dubai-racing-carnival-2026-27-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dubai-racing-carnival-2026-27-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/dubai-racing-carnival-2026-27-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/dubai-racing-carnival-2026-27-1536.webp"
         ]
       ]
     },
@@ -12914,6 +13298,54 @@
         ]
       ]
     },
+    "/covers/fiestas-de-octubre-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/fiestas-de-octubre-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/fiestas-de-octubre-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/fiestas-de-octubre-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/fiestas-de-octubre-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/fiestas-de-octubre-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/fiestas-de-octubre-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/fiestas-de-octubre-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/fiestas-de-octubre-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/fiestas-de-octubre-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/fiestas-de-octubre-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/fil-guadalajara-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -14404,6 +14836,54 @@
         ]
       ]
     },
+    "/covers/brooklyn-book-festival-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/brooklyn-book-festival-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/brooklyn-book-festival-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/brooklyn-book-festival-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/brooklyn-book-festival-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/brooklyn-book-festival-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/brooklyn-book-festival-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/brooklyn-book-festival-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/brooklyn-book-festival-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/brooklyn-book-festival-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/brooklyn-book-festival-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/brooklyn-museum-fall-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -15510,6 +15990,54 @@
         ]
       ]
     },
+    "/covers/rise-global-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/rise-global-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/rise-global-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/rise-global-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/rise-global-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/rise-global-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/rise-global-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/rise-global-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/rise-global-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/rise-global-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/rise-global-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/supply-is-the-thing-that-separates-world-cities.jpg": {
       "width": 1536,
       "height": 864,
@@ -16088,6 +16616,54 @@
         ]
       ]
     },
+    "/covers/ripe-market-2026-27.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/ripe-market-2026-27-480.avif"
+        ],
+        [
+          768,
+          "/covers/ripe-market-2026-27-768.avif"
+        ],
+        [
+          1024,
+          "/covers/ripe-market-2026-27-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/ripe-market-2026-27-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/ripe-market-2026-27-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/ripe-market-2026-27-480.webp"
+        ],
+        [
+          768,
+          "/covers/ripe-market-2026-27-768.webp"
+        ],
+        [
+          1024,
+          "/covers/ripe-market-2026-27-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/ripe-market-2026-27-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/ripe-market-2026-27-1536.webp"
+        ]
+      ]
+    },
     "/covers/the-junction-riviera-leaves-by-is-being-rebuilt.jpg": {
       "width": 1536,
       "height": 864,
@@ -16274,6 +16850,54 @@
     }
   },
   "sol2go.lol": {
+    "/covers/200ms-breakpoint-week-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/200ms-breakpoint-week-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/200ms-breakpoint-week-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/200ms-breakpoint-week-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/200ms-breakpoint-week-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/200ms-breakpoint-week-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/200ms-breakpoint-week-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/200ms-breakpoint-week-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/200ms-breakpoint-week-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/200ms-breakpoint-week-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/200ms-breakpoint-week-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/about.jpg": {
       "width": 1536,
       "height": 864,
@@ -18004,6 +18628,54 @@
         ]
       ]
     },
+    "/covers/vienna-coffee-festival-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/vienna-coffee-festival-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/vienna-coffee-festival-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/vienna-coffee-festival-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/vienna-coffee-festival-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/vienna-coffee-festival-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/vienna-coffee-festival-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/vienna-coffee-festival-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/vienna-coffee-festival-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/vienna-coffee-festival-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/vienna-coffee-festival-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/viennale-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -18294,6 +18966,54 @@
     }
   },
   "visas.dst.llc": {
+    "/covers/citizenship-expo-abu-dhabi-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/citizenship-expo-abu-dhabi-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/citizenship-expo-abu-dhabi-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/citizenship-expo-abu-dhabi-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/citizenship-expo-abu-dhabi-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/citizenship-expo-abu-dhabi-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/citizenship-expo-abu-dhabi-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/citizenship-expo-abu-dhabi-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/citizenship-expo-abu-dhabi-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/citizenship-expo-abu-dhabi-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/citizenship-expo-abu-dhabi-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/consultation.jpg": {
       "width": 1536,
       "height": 864,
