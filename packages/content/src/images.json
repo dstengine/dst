@@ -15316,6 +15316,54 @@
         ]
       ]
     },
+    "/covers/coachella-2027.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/coachella-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/coachella-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/coachella-2027-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/coachella-2027-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/coachella-2027-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/coachella-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/coachella-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/coachella-2027-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/coachella-2027-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/coachella-2027-1536.webp"
+        ]
+      ]
+    },
     "/covers/disney-cruises-return-to-nyc.jpg": {
       "width": 1536,
       "height": 864,
@@ -15361,6 +15409,54 @@
         [
           1536,
           "/covers/disney-cruises-return-to-nyc-1536.webp"
+        ]
+      ]
+    },
+    "/covers/edc-las-vegas-2027.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/edc-las-vegas-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/edc-las-vegas-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/edc-las-vegas-2027-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/edc-las-vegas-2027-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/edc-las-vegas-2027-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/edc-las-vegas-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/edc-las-vegas-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/edc-las-vegas-2027-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/edc-las-vegas-2027-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/edc-las-vegas-2027-1536.webp"
         ]
       ]
     },
@@ -15604,6 +15700,54 @@
         ]
       ]
     },
+    "/covers/kentucky-derby-2027.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/kentucky-derby-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/kentucky-derby-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/kentucky-derby-2027-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/kentucky-derby-2027-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/kentucky-derby-2027-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/kentucky-derby-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/kentucky-derby-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/kentucky-derby-2027-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/kentucky-derby-2027-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/kentucky-derby-2027-1536.webp"
+        ]
+      ]
+    },
     "/covers/lenape-legacies-at-the-museum-of-the-city.jpg": {
       "width": 1536,
       "height": 864,
@@ -15649,6 +15793,54 @@
         [
           1536,
           "/covers/lenape-legacies-at-the-museum-of-the-city-1536.webp"
+        ]
+      ]
+    },
+    "/covers/lollapalooza-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/lollapalooza-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/lollapalooza-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/lollapalooza-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/lollapalooza-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/lollapalooza-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/lollapalooza-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/lollapalooza-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/lollapalooza-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/lollapalooza-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/lollapalooza-2026-1536.webp"
         ]
       ]
     },
@@ -15841,6 +16033,54 @@
         [
           1536,
           "/covers/open-house-new-york-weekend-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/rose-parade-2027.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/rose-parade-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/rose-parade-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/rose-parade-2027-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/rose-parade-2027-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/rose-parade-2027-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/rose-parade-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/rose-parade-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/rose-parade-2027-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/rose-parade-2027-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/rose-parade-2027-1536.webp"
         ]
       ]
     },

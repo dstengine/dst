@@ -918,4 +918,228 @@ export const items: EventItem[] = [
     expertise:
       "The thing a first-time visitor gets wrong is booking the three days of the fair and nothing else. Art Basel is the anchor, but the week around it is when a dozen satellite fairs, gallery openings and institutional shows run across Miami Beach and the mainland \u2014 and a good deal of what is worth seeing costs nothing and is not inside the convention center at all. If the trip is being planned from New York, the flight is the cheap part and the room is not: December is high season on the beach before the fair is factored in.",
   },
+  {
+    slug: "rose-parade-2027",
+    site: "nyc42",
+    image: "/covers/rose-parade-2027.jpg",
+    imageAlt: "A long single band of small paper petals in red, orange, cream and pink laid edge to edge across a dark brown ground, empty above and below",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Rose Parade 2027",
+    summary:
+      "The 138th Rose Parade runs down Colorado Boulevard in Pasadena on New Year's Day 2027 \u2014 floats covered entirely in flowers and other natural material, and the one American parade that has run since 1890.",
+    start: "2027-01-01",
+    venue: "Colorado Boulevard",
+    city: "Pasadena",
+    country: "United States",
+    organizer: "Pasadena Tournament of Roses",
+    category: "Parade",
+    source: {
+      name: "Pasadena Tournament of Roses",
+      url: "https://tournamentofroses.com/rose-parade/",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "It is the oldest fixture on the American new year, and it is free to stand and watch.",
+      "## The date",
+      "<strong>January 1, 2027</strong>, in <strong>Pasadena, California</strong>. This is the <strong>138th</strong> Rose Parade, presented by Honda.",
+      "## What it is",
+      "The Tournament of Roses has produced what it calls America's New Year Celebration since <strong>1890</strong> \u2014 the parade and the Rose Bowl Game on the same day, in the same city.",
+    ],
+    faq: [
+      {
+        q: "When is the Rose Parade 2027?",
+        a: "<strong>January 1, 2027</strong>, in Pasadena, California \u2014 the 138th edition.",
+      },
+      {
+        q: "Does it cost anything to watch?",
+        a: "Standing on the route is free; grandstand seating is sold separately by the Tournament of Roses and its partners. Prices for 2027 are not published on the organiser's parade page.",
+      },
+    ],
+    expertise:
+      "A New Year's Day parade means a New Year's Eve on the route, which is the part nobody plans for: the kerbside is claimed the night before, and Pasadena's own rules govern when you may put a chair down. Anyone flying in for it is really booking two nights, not one.",
+  },
+  {
+    slug: "coachella-2027",
+    site: "nyc42",
+    image: "/covers/coachella-2027.jpg",
+    imageAlt: "Two matching pale yellow paper palm trees standing on small orange sand mounds, one on each side of a wide brown frame",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Coachella 2027",
+    summary:
+      "Coachella returns to the Empire Polo Club in Indio for two identical weekends in April 2027. The dates are published; the line-up is not.",
+    start: "2027-04-09",
+    end: "2027-04-18",
+    venue: "Empire Polo Club",
+    city: "Indio",
+    country: "United States",
+    organizer: "Coachella",
+    category: "Festival",
+    source: {
+      name: "Coachella",
+      url: "https://www.coachella.com/",
+      verifiedOn: "2026-09-08",
+    },
+    ticket: { url: "https://www.coachella.com/", label: "Tickets" },
+    body: [
+      "Two weekends, the same bill twice, and a line-up that will not be announced for months.",
+      "## The dates",
+      "<strong>April 9\u201311 and April 16\u201318, 2027</strong>, at the <strong>Empire Polo Club</strong> in <strong>Indio, California</strong>. The festival's own words for it: see you in the desert.",
+      "## What is not published",
+      "No line-up and no 2027 prices at the time of writing. Passes are sold in advance of both, which is the arrangement to understand before deciding.",
+    ],
+    faq: [
+      {
+        q: "When is Coachella 2027?",
+        a: "Two weekends: <strong>April 9 to 11</strong> and <strong>April 16 to 18, 2027</strong>.",
+      },
+      {
+        q: "Where is it held?",
+        a: "The <strong>Empire Polo Club</strong>, Indio, California \u2014 the same site every year.",
+      },
+      {
+        q: "Is the line-up announced?",
+        a: "No. Coachella has published the dates only; anything circulating as a 2027 line-up is not from the festival.",
+      },
+    ],
+    expertise:
+      "The two weekends are sold as identical and are not quite: the second tends to be the easier one to get into and the hotter one to stand in. From New York it is a five-hour flight to a desert with no city attached \u2014 the accommodation decision is made in the autumn, not in March.",
+  },
+  {
+    slug: "edc-las-vegas-2027",
+    site: "nyc42",
+    image: "/covers/edc-las-vegas-2027.jpg",
+    imageAlt: "A flat orange paper ring with a red disc inside it, centred on a near-black ground",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "EDC Las Vegas 2027",
+    summary:
+      "Three nights at the Las Vegas Motor Speedway in May 2027. Electric Daisy Carnival runs after dark and ends at sunrise, which is the whole design of it.",
+    start: "2027-05-14",
+    end: "2027-05-16",
+    venue: "Las Vegas Motor Speedway",
+    city: "Las Vegas",
+    country: "United States",
+    organizer: "Insomniac",
+    category: "Festival",
+    source: {
+      name: "EDC Las Vegas",
+      url: "https://lasvegas.electricdaisycarnival.com/faq/",
+      verifiedOn: "2026-09-08",
+    },
+    ticket: { url: "https://lasvegas.electricdaisycarnival.com/", label: "Tickets" },
+    body: [
+      "It is a festival that opens when the sun goes down and closes when it comes back up.",
+      "## The dates",
+      "<strong>May 14, 15 and 16, 2027</strong>, at the <strong>Las Vegas Motor Speedway</strong> \u2014 not on the Strip, some fifteen miles north-east of it.",
+      "## What that means in practice",
+      "Three consecutive nights rather than three days: the schedule runs overnight, and the trip home happens in daylight. Camping is sold as part of the festival.",
+    ],
+    faq: [
+      {
+        q: "When is EDC Las Vegas 2027?",
+        a: "<strong>May 14 to 16, 2027</strong> \u2014 three nights, each running from evening until sunrise.",
+      },
+      {
+        q: "Where is it?",
+        a: "The <strong>Las Vegas Motor Speedway</strong>, well outside the Strip. Shuttles and camping are both offered by the festival.",
+      },
+    ],
+    expertise:
+      "The sunrise finish is not a detail, it is the thing to plan the whole trip around: a hotel room booked for the nights of the festival is a room slept in during the day, and a flight out on the Sunday morning is a flight missed. Anyone treating it like a Vegas weekend with a festival attached has the schedule backwards.",
+  },
+  {
+    slug: "lollapalooza-2026",
+    site: "nyc42",
+    image: "/covers/lollapalooza-2026.jpg",
+    imageAlt: "A cut-paper panel: orange skyscraper silhouettes along a deep navy sky, with a broad green lawn curving across the lower half",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Lollapalooza 2026",
+    summary:
+      "Four days in Grant Park at the end of July 2026 \u2014 the festival that stopped touring and stayed in one city, in the middle of it rather than in a field outside.",
+    start: "2026-07-30",
+    end: "2026-08-02",
+    venue: "Grant Park",
+    city: "Chicago",
+    country: "United States",
+    organizer: "Lollapalooza",
+    category: "Festival",
+    source: {
+      name: "Lollapalooza",
+      url: "https://www.lollapalooza.com/",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "Most big American festivals happen somewhere you have to drive to. This one happens in a park with a skyline behind it.",
+      "## The dates",
+      "<strong>July 30 to August 2, 2026</strong>, in <strong>Grant Park, Chicago, Illinois</strong> \u2014 four days, now past.",
+      "## Next year",
+      "Dates for 2027 are not published yet. When the festival announces them, they go here.",
+    ],
+    faq: [
+      {
+        q: "When was Lollapalooza 2026?",
+        a: "<strong>July 30 to August 2, 2026</strong>, in Grant Park, Chicago.",
+      },
+      {
+        q: "When is Lollapalooza 2027?",
+        a: "Not announced. The festival has kept to late summer in Grant Park for years, but no 2027 dates are published, so none are stated here.",
+      },
+    ],
+    expertise:
+      "A city-centre festival is a different proposition from a desert or a farm: you sleep in a hotel, you eat in restaurants, and the day ends by a curfew the neighbours negotiated. That makes it the easiest of the big American festivals to attend badly \u2014 people underestimate how far Grant Park is end to end, and how much of the line-up runs at the same time.",
+  },
+  {
+    slug: "kentucky-derby-2027",
+    site: "nyc42",
+    image: "/covers/kentucky-derby-2027.jpg",
+    imageAlt: "Two tall paper crescents facing each other across a brown ground, one yellow and one orange",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Kentucky Derby 2027",
+    summary:
+      "The 153rd running at Churchill Downs on Saturday, May 1, 2027. Gates open at 9am for a race that goes off in the early evening \u2014 the day is the event, not the two minutes.",
+    start: "2027-05-01",
+    venue: "Churchill Downs",
+    city: "Louisville",
+    country: "United States",
+    organizer: "Churchill Downs",
+    category: "Racing",
+    source: {
+      name: "Kentucky Derby",
+      url: "https://www.kentuckyderby.com/",
+      verifiedOn: "2026-09-08",
+    },
+    ticket: { url: "https://www.kentuckyderby.com/", label: "Tickets" },
+    body: [
+      "The race lasts about two minutes. The gates open nine hours before it.",
+      "## The dates",
+      "<strong>Saturday, May 1, 2027</strong> at <strong>Churchill Downs</strong>, Louisville, Kentucky \u2014 the <strong>153rd</strong> Derby, and as always the first Saturday in May. The Kentucky Oaks runs the day before, on <strong>April 30</strong>.",
+      "## The day itself",
+      "<strong>Gates open at 9am.</strong> Post time for the Derby is scheduled for approximately <strong>6:57pm ET</strong>. Everything between those two numbers \u2014 a full card of racing, the infield, the hats \u2014 is what the ticket is actually for.",
+    ],
+    faq: [
+      {
+        q: "When is the Kentucky Derby 2027?",
+        a: "<strong>Saturday, May 1, 2027</strong> \u2014 the first Saturday in May, as always, and the 153rd running.",
+      },
+      {
+        q: "What time is the race?",
+        a: "Post time is scheduled for approximately <strong>6:57pm ET</strong>. Gates open at <strong>9am</strong>.",
+      },
+      {
+        q: "What is the Kentucky Oaks?",
+        a: "The Friday card at the same track, <strong>April 30, 2027</strong>. Many people who travel for the Derby go to both.",
+      },
+    ],
+    expertise:
+      "Two things decide whether the day is a good one and neither is the horse: where you stand, and when you arrive. Louisville prices its hotel rooms for Derby week a year ahead, and the infield and the grandstand are different events at the same address \u2014 one is a nine-hour party where you may never see a horse, the other is a seat. Buying the cheaper ticket without knowing which one it is, is the classic first Derby.",
+  },
 ];
