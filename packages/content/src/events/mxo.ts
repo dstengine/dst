@@ -187,4 +187,55 @@ export const items: EventItem[] = [
     expertise:
       "La diferencia entre los dos escenarios es la que decide el presupuesto de la visita y casi nadie la explica al comprar: el Foro Principal entra con el boleto general, así que un cartel de nombres grandes puede salir por el precio de la entrada, mientras que el Palenque es un boleto aparte por función. Para quien viaja desde fuera de Jalisco, la lectura práctica es que un mes de feria significa que casi cualquier fin de semana de octubre sirve, y que los caros son los dos primeros y el último: entre semana, a mitad de mes, el mismo recinto se recorre sin fila.",
   },
+  {
+    slug: "festival-de-vida-y-muerte-2026",
+    site: "mxo",
+    image: "/covers/festival-de-vida-y-muerte-2026.jpg",
+    imageAlt: "Una flor de cempas\u00fachil de papel, de p\u00e9talos naranjas y centro oscuro, sola sobre un fondo azul verdoso",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Festival de Vida y Muerte 2026",
+    summary:
+      "La edici\u00f3n n\u00famero 20 del festival de Xcaret, del 30 de octubre al 2 de noviembre, con Guanajuato como estado invitado: cuatro d\u00edas de altares, m\u00fasica y representaciones en la Riviera Maya.",
+    start: "2026-10-30",
+    end: "2026-11-02",
+    utcOffset: "-05:00",
+    venue: "Parque Xcaret",
+    city: "Riviera Maya",
+    country: "M\u00e9xico",
+    organizer: "Xcaret",
+    category: "Festival",
+    source: {
+      name: "Festival de Vida y Muerte",
+      url: "https://festivaldevidaymuerte.com/",
+      verifiedOn: "2026-09-08",
+    },
+    ticket: { url: "https://festivaldevidaymuerte.com/", label: "Boletos" },
+    body: [
+      "El D\u00eda de Muertos se celebra el 1 y el 2 de noviembre. Este festival dura el doble y empieza dos d\u00edas antes.",
+      "## Las fechas",
+      "<strong>Del 30 de octubre al 2 de noviembre de 2026</strong>, en el <strong>Parque Xcaret</strong>, en la Riviera Maya, Quintana Roo. Es la <strong>edici\u00f3n n\u00famero 20</strong>.",
+      "## El estado invitado",
+      "Cada a\u00f1o el festival invita a un estado a llevar su propia forma de celebrar. En 2026 es <strong>Guanajuato</strong>.",
+      "## Qu\u00e9 hay dentro",
+      "M\u00fasica del D\u00eda de Muertos \u2014 mariachi, estudiantina, sones, huapango arribe\u00f1o y m\u00fasica tradicional de la Pen\u00ednsula de Yucat\u00e1n \u2014 adem\u00e1s de representaciones y un <strong>Concierto de Gala</strong> el <strong>31 de octubre</strong>, que se compra aparte del acceso al parque.",
+    ],
+    faq: [
+      {
+        q: "\u00bfCu\u00e1ndo es el Festival de Vida y Muerte 2026?",
+        a: "<strong>Del 30 de octubre al 2 de noviembre de 2026</strong>, en el Parque Xcaret.",
+      },
+      {
+        q: "\u00bfCu\u00e1l es el estado invitado este a\u00f1o?",
+        a: "<strong>Guanajuato</strong>. El festival invita cada edici\u00f3n a un estado distinto.",
+      },
+      {
+        q: "\u00bfEl Concierto de Gala entra con el boleto del parque?",
+        a: "No. El organizador lo vende como acceso aparte, para la noche del <strong>31 de octubre</strong>.",
+      },
+    ],
+    expertise:
+      "La confusi\u00f3n m\u00e1s cara aqu\u00ed es tratarlo como una fiesta de una noche. Son cuatro d\u00edas dentro de un parque que ya de por s\u00ed toma una jornada completa, y el festival ocupa la tarde y la noche; quien llega el 1 de noviembre por la ma\u00f1ana ve el parque, no el festival. La otra decisi\u00f3n que conviene tomar antes de viajar es la del concierto: se vende por separado y cae en la v\u00edspera, as\u00ed que define en qu\u00e9 noche conviene estar ah\u00ed.",
+  },
 ];

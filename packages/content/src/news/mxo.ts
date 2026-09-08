@@ -1,6 +1,55 @@
 import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
+
+  {
+    slug: "veinte-anos-del-festival-de-vida-y-muerte",
+    site: "mxo",
+    image: "/covers/veinte-anos-del-festival-de-vida-y-muerte.jpg",
+    imageAlt: "Muchas flores de cempas\u00fachil de papel, naranjas, repartidas en cuatro hileras sobre un fondo azul verdoso, con una franja vac\u00eda a la mitad",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Veinte a\u00f1os del Festival de Vida y Muerte, y un estado invitado que cambia cada edici\u00f3n",
+    cardTitle: "Veinte a\u00f1os del Festival de Vida y Muerte",
+    titleSeo: "Festival de Vida y Muerte 2026",
+    summary:
+      "Xcaret cumple veinte ediciones del 30 de octubre al 2 de noviembre. El invitado de 2026 es Guanajuato, y el Concierto de Gala se vende aparte.",
+    date: "2026-09-08",
+    city: "Riviera Maya",
+    country: "M\u00e9xico",
+    category: "Festivales",
+    source: {
+      name: "Festival de Vida y Muerte",
+      url: "https://festivaldevidaymuerte.com/",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "Hay una decisi\u00f3n que este festival toma cada a\u00f1o y que ning\u00fan otro del pa\u00eds toma igual: invita a un estado a celebrar el D\u00eda de Muertos a su manera, dentro de un parque que est\u00e1 a mil kil\u00f3metros de ah\u00ed. En <strong>2026 el invitado es Guanajuato</strong>, y la edici\u00f3n es la <strong>n\u00famero 20</strong>.",
+      "## Las fechas",
+      "<strong>Del 30 de octubre al 2 de noviembre</strong>, en el Parque Xcaret, en la Riviera Maya. Son cuatro d\u00edas: dos antes de la fiesta y los dos d\u00edas de la fiesta misma, que se celebra el <strong>1 y el 2 de noviembre</strong>.",
+      "## Qu\u00e9 se escucha",
+      "El programa musical no es un cartel de festival al uso: mariachi, estudiantina, sones, huapango arribe\u00f1o y m\u00fasica tradicional de la Pen\u00ednsula de Yucat\u00e1n. Es decir, repertorio de la fecha, no de la temporada de conciertos.",
+      "## El boleto que se compra aparte",
+      "El <strong>Concierto de Gala</strong> del <strong>31 de octubre</strong> no entra con el acceso al parque; el organizador lo vende por separado. Los detalles y el resto del programa est\u00e1n en <a href=\"/eventos/festival-de-vida-y-muerte-2026/\" title=\"Festival de Vida y Muerte 2026\">la ficha del festival</a>.",
+    ],
+    faq: [
+      {
+        q: "\u00bfCu\u00e1ndo es el Festival de Vida y Muerte 2026?",
+        a: "<strong>Del 30 de octubre al 2 de noviembre de 2026</strong>, en el Parque Xcaret, Riviera Maya.",
+      },
+      {
+        q: "\u00bfQu\u00e9 estado es el invitado en 2026?",
+        a: "<strong>Guanajuato</strong>. El festival cambia de estado invitado cada edici\u00f3n.",
+      },
+      {
+        q: "\u00bfEl D\u00eda de Muertos y el festival son lo mismo?",
+        a: "No. La fiesta es el <strong>1 y 2 de noviembre</strong> en todo el pa\u00eds; el festival dura cuatro d\u00edas y empieza dos antes.",
+      },
+    ],
+    expertise:
+      "Veinte ediciones convierten a este festival en algo distinto de una fiesta local: es una puesta en escena del D\u00eda de Muertos para quien llega de fuera, y conviene leerlo as\u00ed antes de comprar. Quien busca la celebraci\u00f3n dom\u00e9stica \u2014 la ofrenda de una casa, el pante\u00f3n de un pueblo la noche del 1 de noviembre \u2014 no la va a encontrar dentro de un parque, y no es un defecto del festival: son dos experiencias distintas que caen los mismos d\u00edas y obligan a elegir.",
+  },
   {
     slug: "relojes-proteomicos-y-una-dosis-partida-en-dos",
     site: "mxo",
