@@ -30,6 +30,93 @@ function sources(app) {
   return out;
 }
 
+/** Every .ts, .astro and .md file we author, across the apps and the shared
+    packages. Wider than sources() on purpose: a stray character is a
+    property of the prose, and the prose is not only in apps/. */
+function authored() {
+  const out = [];
+  const walk = (dir) => {
+    for (const name of readdirSync(dir)) {
+      if (name === "node_modules" || name === "dist") continue;
+      const p = path.join(dir, name);
+      if (statSync(p).isDirectory()) walk(p);
+      else if (/\.(ts|astro|md)$/.test(name)) out.push(p);
+    }
+  };
+  for (const app of APPS) walk(path.join(REPO, "apps", app, "src"));
+  for (const pkg of ["content", "ui"]) {
+    const dir = path.join(REPO, "packages", pkg, "src");
+    if (existsSync(dir)) walk(dir);
+  }
+  return out;
+}
+
+// Characters that take up no space on the page and so cannot be seen in the
+// editor, the diff or the built site. They arrive by copy-paste from a web
+// page or from a model's output, they survive every review, and they are
+// what a reader who wants to argue that a page was not written by a person
+// goes looking for. None of them has a job in our prose: a word joiner or a
+// soft hyphen would be a typographic decision we have never taken, and the
+// bidirectional controls are for text we do not publish.
+//
+// The visible spaces are a separate matter and stay legal — U+00A0 keeps a
+// number with its unit and a dash with its clause, which is real Spanish and
+// German typography and is used deliberately. The narrow and thin ones are
+// listed here anyway: they look like an ordinary space at every size we set
+// type at, so nobody chooses one on purpose, and one of them is the single
+// most-cited tell of machine-written text.
+const INVISIBLE = {
+  "​": "zero width space",
+  "‌": "zero width non-joiner",
+  "‍": "zero width joiner",
+  "⁠": "word joiner",
+  "﻿": "zero width no-break space (BOM)",
+  "­": "soft hyphen",
+  "؜": "arabic letter mark",
+  "‎": "left-to-right mark",
+  "‏": "right-to-left mark",
+  " ": "line separator",
+  " ": "paragraph separator",
+  "᠎": "mongolian vowel separator",
+  "‪": "left-to-right embedding",
+  "‫": "right-to-left embedding",
+  "‬": "pop directional formatting",
+  "‭": "left-to-right override",
+  "‮": "right-to-left override",
+  "⁦": "left-to-right isolate",
+  "⁧": "right-to-left isolate",
+  "⁨": "first strong isolate",
+  "⁩": "pop directional isolate",
+  " ": "narrow no-break space",
+  " ": "thin space",
+  " ": "figure space",
+  " ": "en space",
+  " ": "em space",
+};
+
+describe("invisible characters", () => {
+  test("nothing we author carries a character that cannot be seen", () => {
+    const found = [];
+    for (const file of authored()) {
+      const text = readFileSync(file, "utf8");
+      let line = 1;
+      for (const ch of text) {
+        if (ch === "\n") { line += 1; continue; }
+        const name = INVISIBLE[ch];
+        if (!name) continue;
+        found.push(
+          `${path.relative(REPO, file)}:${line}: ${name} (U+${ch.codePointAt(0).toString(16).toUpperCase().padStart(4, "0")})`,
+        );
+      }
+    }
+    assert.deepEqual(
+      found,
+      [],
+      `invisible characters in authored text — delete them, or write the visible character that was meant:\n  ${found.join("\n  ")}`,
+    );
+  });
+});
+
 describe("app conventions", () => {
   // The id an app passes to eventsBySite/newsBySite used to be a string
   // literal in every file that needed it — sixty-two of them, and the count
