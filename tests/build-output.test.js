@@ -940,15 +940,20 @@ describe("sitemap", () => {
     // A sweep does not land evenly: a site whose pages are dated by their own
     // entry keeps the older dates its entries carry, so a few sites still
     // vary while the rest go flat on the day of the sweep. What tells the two
-    // apart is which day the flat sites landed on. A site dated by its file
-    // drifts to whenever that file was last touched, which is its own
-    // business; a site flattened by a sweep carries the same day the swept
-    // pages elsewhere carry.
-    const sweepDay = [...spread.values()].flatMap((d) => [...d]).sort().at(-1);
-    const swept = varied.some((app) => spread.get(app).has(sweepDay));
+    // apart is whether anyone else was working that day. A site flattened by
+    // a sweep shares its day with pages on sites that did not go flat —
+    // that is what makes the day a sweep rather than one site's business. A
+    // site dated by its file drifts to whenever that file was last touched,
+    // and lands on a day no varied neighbour carries.
+    //
+    // Asking it that way rather than naming the newest date matters once the
+    // sweep is a day old: the network keeps its dates, the newest date moves
+    // on to whatever was edited since, and a rule pinned to "today" starts
+    // reporting last week's honest sweep as a fault.
+    const variedDays = new Set(varied.flatMap((app) => [...spread.get(app)]));
     const flat = [...spread]
-      .filter(([, d]) => !(swept && d.has(sweepDay)))
       .filter(([, d]) => d.size === 1)
+      .filter(([, d]) => !variedDays.has([...d][0]))
       .map(([a, d]) => `${a}: every page carries ${[...d][0]}`);
     assert.deepEqual(
       flat,
