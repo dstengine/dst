@@ -18,6 +18,8 @@
 export interface ArticleLabels {
   // Header and the ended badge
   ended: string;
+  /** Heading over an event's own questions and answers. */
+  faq: string;
   organizedBy: string;
   minRead: (n: number) => string;
 
@@ -103,6 +105,7 @@ export interface ArticleLabels {
 
 export const EN: ArticleLabels = {
   ended: "Ended",
+  faq: "Questions",
   organizedBy: "Organized by",
   minRead: (n) => `${n} min read`,
 
@@ -175,6 +178,7 @@ export const EN: ArticleLabels = {
  */
 export const ES: Partial<ArticleLabels> = {
   ended: "Finalizado",
+  faq: "Preguntas",
   organizedBy: "Organiza",
   minRead: (n) => `${n} min de lectura`,
 
@@ -237,6 +241,7 @@ export const ES: Partial<ArticleLabels> = {
 
 export const DE: Partial<ArticleLabels> = {
   ended: "Vorbei",
+  faq: "Fragen",
   organizedBy: "Veranstaltet von",
   minRead: (n) => `${n} Min. Lesezeit`,
 

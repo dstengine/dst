@@ -12,6 +12,8 @@ import LeadForm from "./LeadForm.astro";
 import VentureGrid from "./VentureGrid.astro";
 import FeedCards from "./FeedCards.astro";
 import SourceLine from "./SourceLine.astro";
+import Faq from "./Faq.astro";
+import { eventType } from "@dst/content/event-types";
 import ImageNote from "./ImageNote.astro";
 import CountdownScript from "./CountdownScript.astro";
 import Glance from "./Glance.astro";
@@ -203,7 +205,9 @@ const jsonLd =
   item.jsonLd ??
   {
     "@context": "https://schema.org",
-    "@type": "Event",
+    // The kind, not just "an event" — see @dst/content/event-types for why
+    // the map is written out by hand and what an unlisted category costs.
+    "@type": eventType(item.category),
     name: item.title,
     description: item.summary,
     ...(canonicalUrl ? itemContext(canonicalUrl, publisher) : {}),
@@ -211,6 +215,11 @@ const jsonLd =
     startDate: startStamp,
     ...(endStamp ? { endDate: endStamp } : {}),
     eventStatus: "https://schema.org/EventScheduled",
+    // Free is a fact a reader searches for by name — "free things to do in
+    // London" — and it was already on the page, in the glance table, while
+    // the markup said nothing. Only asserted when the price says so: an
+    // event with no ticket data is not free, it is unpriced.
+    ...(isFree ? { isAccessibleForFree: true } : {}),
     eventAttendanceMode: item.online
       ? "https://schema.org/OnlineEventAttendanceMode"
       : "https://schema.org/OfflineEventAttendanceMode",
@@ -450,6 +459,13 @@ const relatedItems = (item.related ?? []).map((card) => ({
           <input type="hidden" name={`meta.${key}`} value={value} />
         ))}
       </LeadForm>
+    </section>
+  )}
+
+  {item.faq && item.faq.length > 0 && (
+    <section class="event-article-faq">
+      <h2>{L.faq}</h2>
+      <Faq items={item.faq} />
     </section>
   )}
 
