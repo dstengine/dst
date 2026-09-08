@@ -12,7 +12,7 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "Veinte a\u00f1os del Festival de Vida y Muerte, y un estado invitado que cambia cada edici\u00f3n",
     cardTitle: "Veinte a\u00f1os del Festival de Vida y Muerte",
-    titleSeo: "Festival de Vida y Muerte 2026",
+    titleSeo: "Festival de Vida y Muerte: 20 ediciones",
     summary:
       "Xcaret cumple veinte ediciones del 30 de octubre al 2 de noviembre. El invitado de 2026 es Guanajuato, y el Concierto de Gala se vende aparte.",
     date: "2026-09-08",
