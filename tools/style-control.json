@@ -1,0 +1,1784 @@
+{
+  "en": {
+    "measuredOn": "2026-09-08",
+    "articles": 25,
+    "words": 21731,
+    "metrics": {
+      "sentence length": {
+        "mean": 21.147414775692546,
+        "sd": 2.8073438937574733
+      },
+      "sentence length sd": {
+        "mean": 9.924033218947732,
+        "sd": 1.683592786965856
+      },
+      "burstiness": {
+        "mean": 0.4734313385425501,
+        "sd": 0.08283190994564764
+      },
+      "sentences per para": {
+        "mean": 1.8357587160829658,
+        "sd": 1.2040262678905274
+      },
+      "word length": {
+        "mean": 4.889646178190572,
+        "sd": 0.3066957185928193
+      },
+      "long words %": {
+        "mean": 16.891208506007718,
+        "sd": 4.273741956906134
+      },
+      "vocabulary (msttr)": {
+        "mean": 0.5200582722739525,
+        "sd": 0.04717707165676155
+      },
+      "hapax %": {
+        "mean": 67.34530015845485,
+        "sd": 4.709038944974376
+      },
+      "em dash /1k": {
+        "mean": 0,
+        "sd": 0
+      },
+      "en dash /1k": {
+        "mean": 2.408324679884609,
+        "sd": 3.368846739908949
+      },
+      "semicolon /1k": {
+        "mean": 0.7476561149382736,
+        "sd": 1.402909552165207
+      },
+      "colon /1k": {
+        "mean": 4.4941715210114035,
+        "sd": 3.4225040520098986
+      },
+      "comma /1k": {
+        "mean": 53.48687451821621,
+        "sd": 14.624701299832664
+      },
+      "tells /1k": {
+        "mean": 0.03276003276003276,
+        "sd": 0.16380016380016377
+      }
+    },
+    "profile": {
+      "the": {
+        "mean": 55.9434611006039,
+        "sd": 15.232984625902503
+      },
+      "of": {
+        "mean": 24.961706647628272,
+        "sd": 6.630240413595509
+      },
+      "and": {
+        "mean": 23.54199991069723,
+        "sd": 7.321392910025979
+      },
+      "to": {
+        "mean": 26.29495498412078,
+        "sd": 7.6797083249692975
+      },
+      "a": {
+        "mean": 23.96674350922063,
+        "sd": 6.571500761309886
+      },
+      "in": {
+        "mean": 27.980190265646947,
+        "sd": 9.436254989962952
+      },
+      "that": {
+        "mean": 9.115235189621108,
+        "sd": 3.585560460831277
+      },
+      "is": {
+        "mean": 8.126092156739514,
+        "sd": 4.709597257880635
+      },
+      "was": {
+        "mean": 7.108352283077083,
+        "sd": 3.893687020735976
+      },
+      "it": {
+        "mean": 8.428927246483049,
+        "sd": 4.617672564705619
+      },
+      "for": {
+        "mean": 10.60090928913601,
+        "sd": 5.018546669865156
+      },
+      "on": {
+        "mean": 9.489849118895554,
+        "sd": 3.782370459600522
+      },
+      "with": {
+        "mean": 7.604588803116915,
+        "sd": 4.92968244263077
+      },
+      "as": {
+        "mean": 6.054330289241708,
+        "sd": 4.752741069483765
+      },
+      "by": {
+        "mean": 5.681503396597687,
+        "sd": 4.500158787079343
+      },
+      "at": {
+        "mean": 4.943757753089944,
+        "sd": 3.7650854736305033
+      },
+      "from": {
+        "mean": 4.808175133167415,
+        "sd": 3.444430446430637
+      },
+      "but": {
+        "mean": 3.8905452881087768,
+        "sd": 2.826249743239463
+      },
+      "not": {
+        "mean": 4.220293737710871,
+        "sd": 2.8936770678285844
+      },
+      "are": {
+        "mean": 5.455936790780714,
+        "sd": 3.745013152443507
+      },
+      "this": {
+        "mean": 4.220686077320381,
+        "sd": 3.2082125701657467
+      },
+      "have": {
+        "mean": 4.834457925755372,
+        "sd": 2.9398926142481105
+      },
+      "be": {
+        "mean": 4.156148425236681,
+        "sd": 3.6216113238739647
+      },
+      "or": {
+        "mean": 1.6280946422739426,
+        "sd": 1.7420491037392778
+      },
+      "an": {
+        "mean": 3.430591352516999,
+        "sd": 2.3140684269383622
+      },
+      "they": {
+        "mean": 3.7492857210087744,
+        "sd": 3.4314904796049883
+      },
+      "which": {
+        "mean": 2.2563621287911557,
+        "sd": 2.081510247633118
+      },
+      "you": {
+        "mean": 2.3733147231100515,
+        "sd": 3.2361440588168695
+      },
+      "one": {
+        "mean": 1.8548629355750734,
+        "sd": 1.6101156351645978
+      },
+      "had": {
+        "mean": 2.6422147872580757,
+        "sd": 1.8921187256792817
+      },
+      "has": {
+        "mean": 5.515987461352709,
+        "sd": 3.084271662721553
+      },
+      "were": {
+        "mean": 3.3018547793691355,
+        "sd": 3.2606359738987187
+      },
+      "their": {
+        "mean": 2.538204158609368,
+        "sd": 2.4705938644745418
+      },
+      "we": {
+        "mean": 3.3783648729859515,
+        "sd": 3.8886672813894543
+      },
+      "all": {
+        "mean": 1.7044033849455855,
+        "sd": 1.452153345903517
+      },
+      "been": {
+        "mean": 3.524211088407304,
+        "sd": 2.9205724505115556
+      },
+      "when": {
+        "mean": 1.7068134199147407,
+        "sd": 1.9966040240329488
+      },
+      "there": {
+        "mean": 2.2445229353493987,
+        "sd": 1.7157659207114402
+      },
+      "would": {
+        "mean": 1.6964540467660438,
+        "sd": 1.500023238271732
+      },
+      "who": {
+        "mean": 3.60577146219979,
+        "sd": 3.7315174943098413
+      },
+      "so": {
+        "mean": 1.2793244382386195,
+        "sd": 1.999155779011826
+      },
+      "if": {
+        "mean": 0.7906859726424339,
+        "sd": 1.1483881552784494
+      },
+      "will": {
+        "mean": 3.365696898876105,
+        "sd": 3.2554353671344622
+      },
+      "more": {
+        "mean": 2.702794671647595,
+        "sd": 2.508875291192748
+      },
+      "no": {
+        "mean": 1.41240090208393,
+        "sd": 1.4789970841890554
+      },
+      "out": {
+        "mean": 2.061283538813628,
+        "sd": 2.2395152000321277
+      },
+      "up": {
+        "mean": 2.26680516273475,
+        "sd": 2.346886208699401
+      },
+      "about": {
+        "mean": 3.1158009559798945,
+        "sd": 2.0493722763849203
+      },
+      "into": {
+        "mean": 1.5633771153533365,
+        "sd": 1.6403702619908955
+      },
+      "than": {
+        "mean": 1.8866372333809796,
+        "sd": 2.040214452303743
+      },
+      "them": {
+        "mean": 1.4312150376091202,
+        "sd": 1.6573759324846584
+      },
+      "can": {
+        "mean": 1.5369896979509405,
+        "sd": 1.3855088045168662
+      },
+      "only": {
+        "mean": 0.8768290035149161,
+        "sd": 1.3229794603482885
+      },
+      "other": {
+        "mean": 1.1522310678667607,
+        "sd": 1.3771582715353854
+      },
+      "new": {
+        "mean": 0.954521904199363,
+        "sd": 1.3801525179600502
+      },
+      "some": {
+        "mean": 1.4385520359845152,
+        "sd": 1.4328242815421068
+      },
+      "could": {
+        "mean": 1.2463694706984263,
+        "sd": 1.5761110321445528
+      },
+      "time": {
+        "mean": 1.4752559226022899,
+        "sd": 1.558475188240061
+      },
+      "these": {
+        "mean": 0.6747674298801961,
+        "sd": 0.9053244055435555
+      },
+      "two": {
+        "mean": 0.8985150731485163,
+        "sd": 1.4320026989991874
+      },
+      "may": {
+        "mean": 0.31507581468175416,
+        "sd": 0.6253842287495968
+      },
+      "then": {
+        "mean": 0.3504501009246607,
+        "sd": 0.6459988799778368
+      },
+      "do": {
+        "mean": 0.6123658611585698,
+        "sd": 1.0000006298019526
+      },
+      "first": {
+        "mean": 1.9041579194103455,
+        "sd": 1.9205768425864598
+      },
+      "any": {
+        "mean": 0.9992865098495587,
+        "sd": 1.3599158531052533
+      },
+      "my": {
+        "mean": 1.2036208861700926,
+        "sd": 2.493694094016564
+      },
+      "now": {
+        "mean": 1.8342683509262105,
+        "sd": 2.4682835233603293
+      },
+      "such": {
+        "mean": 0.7660243437672111,
+        "sd": 1.102632530550577
+      },
+      "like": {
+        "mean": 1.0804040090502756,
+        "sd": 1.5983599885495186
+      },
+      "our": {
+        "mean": 1.0881845941271648,
+        "sd": 1.7707224277565594
+      },
+      "over": {
+        "mean": 2.094825549058979,
+        "sd": 2.3662977128731137
+      },
+      "man": {
+        "mean": 0.14768138668322314,
+        "sd": 0.36254729405988007
+      },
+      "me": {
+        "mean": 0.6727834864867749,
+        "sd": 1.1387605585902223
+      },
+      "even": {
+        "mean": 0.494077649871773,
+        "sd": 0.8542425615702609
+      },
+      "most": {
+        "mean": 1.0616190722614787,
+        "sd": 1.5708648850671871
+      },
+      "made": {
+        "mean": 1.1256757106420543,
+        "sd": 1.4203600479761465
+      },
+      "after": {
+        "mean": 1.8827222201009741,
+        "sd": 2.1662041136877868
+      },
+      "also": {
+        "mean": 1.8493530262402345,
+        "sd": 1.5067560876479742
+      },
+      "did": {
+        "mean": 0.9283223709349305,
+        "sd": 1.08230889409405
+      },
+      "many": {
+        "mean": 0.7963546130409525,
+        "sd": 1.0528692981463104
+      },
+      "before": {
+        "mean": 0.876891107903806,
+        "sd": 1.2161930487605743
+      },
+      "must": {
+        "mean": 0.06872852233676975,
+        "sd": 0.34364261168384874
+      },
+      "through": {
+        "mean": 0.6939769760120573,
+        "sd": 1.0413137620864685
+      },
+      "back": {
+        "mean": 1.3168486172262066,
+        "sd": 2.258392097349675
+      },
+      "years": {
+        "mean": 1.3369725391094098,
+        "sd": 1.7254088432648944
+      },
+      "where": {
+        "mean": 1.013665795907819,
+        "sd": 1.3044348629994569
+      },
+      "much": {
+        "mean": 0.8432552236875928,
+        "sd": 1.2903560724554843
+      },
+      "your": {
+        "mean": 1.1035276850181754,
+        "sd": 3.0569146024790794
+      },
+      "way": {
+        "mean": 0.6798422329526801,
+        "sd": 1.2670277671210333
+      },
+      "well": {
+        "mean": 0.816251107065208,
+        "sd": 1.0196306708298182
+      },
+      "down": {
+        "mean": 0.7826311211831716,
+        "sd": 1.119761290621718
+      },
+      "should": {
+        "mean": 0.6833338385830611,
+        "sd": 1.2533216414437232
+      },
+      "because": {
+        "mean": 0.6637649822630816,
+        "sd": 0.9553347380356398
+      },
+      "each": {
+        "mean": 0.31559635109452183,
+        "sd": 0.8688275694430856
+      },
+      "just": {
+        "mean": 1.264419855517367,
+        "sd": 1.9242504742792044
+      },
+      "those": {
+        "mean": 0.6687080054244501,
+        "sd": 0.7859169253226286
+      },
+      "people": {
+        "mean": 1.8826279640600025,
+        "sd": 2.341103973191845
+      },
+      "how": {
+        "mean": 0.9035976823231612,
+        "sd": 1.1564349677981052
+      },
+      "too": {
+        "mean": 0.555595956202805,
+        "sd": 0.9731059875706709
+      },
+      "little": {
+        "mean": 0.3066856583206778,
+        "sd": 0.5260774362862584
+      },
+      "state": {
+        "mean": 0.30255131021655,
+        "sd": 0.8306563059780698
+      },
+      "good": {
+        "mean": 0.3758245776059316,
+        "sd": 0.717073829438874
+      },
+      "very": {
+        "mean": 0.6579740097193791,
+        "sd": 1.3724466377222826
+      },
+      "make": {
+        "mean": 0.24176195874385237,
+        "sd": 0.5286694096792721
+      },
+      "world": {
+        "mean": 0.6125824479658059,
+        "sd": 0.9931235599250019
+      },
+      "still": {
+        "mean": 0.9062604578251213,
+        "sd": 1.4486343432271973
+      },
+      "own": {
+        "mean": 0.38714855707746126,
+        "sd": 0.6957501263635928
+      },
+      "see": {
+        "mean": 0.5415816576968758,
+        "sd": 0.6688761695818287
+      },
+      "men": {
+        "mean": 0.33245935994747244,
+        "sd": 1.377184924555189
+      },
+      "work": {
+        "mean": 0.6277218345373868,
+        "sd": 0.9350520983873601
+      },
+      "long": {
+        "mean": 0.24794178295132258,
+        "sd": 0.5545292774459814
+      },
+      "get": {
+        "mean": 1.0894914679251837,
+        "sd": 1.3153986650574783
+      },
+      "here": {
+        "mean": 0.785039761299225,
+        "sd": 1.1768270186959078
+      },
+      "between": {
+        "mean": 0.46428233519789996,
+        "sd": 0.8361325597819357
+      },
+      "both": {
+        "mean": 0.3412507669402498,
+        "sd": 1.0430332892678698
+      },
+      "life": {
+        "mean": 0.7214095832599103,
+        "sd": 1.26536452480271
+      },
+      "being": {
+        "mean": 1.4650640370711363,
+        "sd": 1.9524628398033035
+      },
+      "under": {
+        "mean": 0.6353223139377242,
+        "sd": 1.5682102338132058
+      },
+      "never": {
+        "mean": 0.6535714196713157,
+        "sd": 1.418571318930676
+      },
+      "same": {
+        "mean": 0.156168276261195,
+        "sd": 0.38157952126958367
+      },
+      "another": {
+        "mean": 0.5777789698443677,
+        "sd": 1.0890053740960093
+      },
+      "know": {
+        "mean": 0.46376494457781575,
+        "sd": 0.7315915165999798
+      },
+      "while": {
+        "mean": 1.0892833538477356,
+        "sd": 1.5908950870156315
+      },
+      "last": {
+        "mean": 1.3512870930927614,
+        "sd": 1.556089921709656
+      }
+    },
+    "tells": {
+      "that said": 1
+    },
+    "sources": [
+      {
+        "url": "https://www.theguardian.com/music/2026/sep/08/oasis-dont-look-back-in-anger-live-tour-documentary-what-we-learned",
+        "words": 1257
+      },
+      {
+        "url": "https://www.theguardian.com/stage/2026/sep/08/thelma-and-louise-writer-prey-musical-callie-khouri",
+        "words": 1555
+      },
+      {
+        "url": "https://www.theguardian.com/lifeandstyle/2026/sep/08/the-pest-ill-never-forget-cockroaches-everywhere-wine-glasses",
+        "words": 715
+      },
+      {
+        "url": "https://www.theguardian.com/society/2026/sep/08/councils-vulnerable-children-illegal-care-homes-england",
+        "words": 1607
+      },
+      {
+        "url": "https://www.theguardian.com/uk-news/2026/sep/08/argentina-criminal-charges-navitas-petroleum-falkland-islands-drilling",
+        "words": 678
+      },
+      {
+        "url": "https://www.theguardian.com/news/2026/sep/08/billionaire-chris-rokos-tax-quit-uk",
+        "words": 679
+      },
+      {
+        "url": "https://www.theguardian.com/world/2026/sep/08/germany-afd-far-right-election-victory-saxony-anhalt",
+        "words": 1121
+      },
+      {
+        "url": "https://www.theguardian.com/society/2026/sep/08/low-turnout-threatens-commons-vote-on-assisted-dying-say-mps",
+        "words": 736
+      },
+      {
+        "url": "https://www.theguardian.com/education/2026/sep/08/england-teenagers-outperform-peers-in-most-countries-in-maths-reading-and-science",
+        "words": 818
+      },
+      {
+        "url": "https://www.theguardian.com/world/live/2026/sep/08/ukraine-russia-war-zelesnkyy-putin-ruslan-kravchenko-prosecutor-general-germany-france-europe-latest-news-updates",
+        "words": 278
+      },
+      {
+        "url": "https://www.theguardian.com/society/2026/sep/08/princess-story-case-highlights-scourge-illegal-care-provision",
+        "words": 800
+      },
+      {
+        "url": "https://www.bbc.co.uk/news/videos/c62jdyld8myo?at_medium=RSS&amp;at_campaign=rss",
+        "words": 262
+      },
+      {
+        "url": "https://www.bbc.co.uk/news/articles/cp30kv53qvdo?at_medium=RSS&amp;at_campaign=rss",
+        "words": 701
+      },
+      {
+        "url": "https://www.bbc.co.uk/news/articles/cqlw0ke2v97o?at_medium=RSS&amp;at_campaign=rss",
+        "words": 1082
+      },
+      {
+        "url": "https://www.bbc.co.uk/weather/articles/cgl7zn37jw8o?at_medium=RSS&amp;at_campaign=rss",
+        "words": 563
+      },
+      {
+        "url": "https://www.bbc.co.uk/news/articles/c8jdev0422jo?at_medium=RSS&amp;at_campaign=rss",
+        "words": 808
+      },
+      {
+        "url": "https://www.bbc.co.uk/news/articles/cwyzel3qjvzo?at_medium=RSS&amp;at_campaign=rss",
+        "words": 489
+      },
+      {
+        "url": "https://www.bbc.co.uk/news/articles/cvgynjlzk8zo?at_medium=RSS&amp;at_campaign=rss",
+        "words": 532
+      },
+      {
+        "url": "https://www.bbc.co.uk/news/articles/clyenxp540vo?at_medium=RSS&amp;at_campaign=rss",
+        "words": 582
+      },
+      {
+        "url": "https://www.bbc.co.uk/news/articles/c0m39g7xzevo?at_medium=RSS&amp;at_campaign=rss",
+        "words": 964
+      },
+      {
+        "url": "https://www.bbc.co.uk/news/articles/cgk43mn42g7o?at_medium=RSS&amp;at_campaign=rss",
+        "words": 923
+      },
+      {
+        "url": "https://www.bbc.co.uk/news/articles/cd08vvnp9geo?at_medium=RSS&amp;at_campaign=rss",
+        "words": 1472
+      },
+      {
+        "url": "https://www.bbc.co.uk/news/articles/cddvzm9nyz7o?at_medium=RSS&amp;at_campaign=rss",
+        "words": 1221
+      },
+      {
+        "url": "https://www.bbc.co.uk/news/articles/c74ewj1kdyro?at_medium=RSS&amp;at_campaign=rss",
+        "words": 617
+      },
+      {
+        "url": "https://www.bbc.co.uk/news/articles/cx2zyj4lrn1o?at_medium=RSS&amp;at_campaign=rss",
+        "words": 1271
+      }
+    ]
+  },
+  "es": {
+    "measuredOn": "2026-09-08",
+    "articles": 38,
+    "words": 27552,
+    "metrics": {
+      "sentence length": {
+        "mean": 29.411359947038488,
+        "sd": 6.7391136927607285
+      },
+      "sentence length sd": {
+        "mean": 14.825007665828908,
+        "sd": 5.943566373234788
+      },
+      "burstiness": {
+        "mean": 0.5015801018500413,
+        "sd": 0.13679165785727465
+      },
+      "sentences per para": {
+        "mean": 2.4832740406682055,
+        "sd": 0.8963058626397253
+      },
+      "word length": {
+        "mean": 4.976690720088179,
+        "sd": 0.24897847865680425
+      },
+      "long words %": {
+        "mean": 22.02757465553258,
+        "sd": 4.113039785625796
+      },
+      "vocabulary (msttr)": {
+        "mean": 0.5077384431593406,
+        "sd": 0.046215740378879294
+      },
+      "hapax %": {
+        "mean": 73.37999677478683,
+        "sd": 4.735465963577023
+      },
+      "em dash /1k": {
+        "mean": 0.6516473637381991,
+        "sd": 1.4130100899139513
+      },
+      "en dash /1k": {
+        "mean": 0.4484941895517513,
+        "sd": 1.4810396018868526
+      },
+      "semicolon /1k": {
+        "mean": 0.9501918074214872,
+        "sd": 1.3232568807680503
+      },
+      "colon /1k": {
+        "mean": 3.328570719912582,
+        "sd": 7.362174004174666
+      },
+      "comma /1k": {
+        "mean": 62.515845738596084,
+        "sd": 13.669106253562626
+      },
+      "tells /1k": {
+        "mean": 1.6551254290378197,
+        "sd": 2.044272996708044
+      }
+    },
+    "profile": {
+      "de": {
+        "mean": 72.68224321790322,
+        "sd": 16.15269521878964
+      },
+      "la": {
+        "mean": 44.82309417541679,
+        "sd": 12.900752649834176
+      },
+      "que": {
+        "mean": 30.104427110989256,
+        "sd": 11.452186743935751
+      },
+      "el": {
+        "mean": 32.144806434884025,
+        "sd": 13.378319789610352
+      },
+      "en": {
+        "mean": 36.81156241096403,
+        "sd": 15.10134214634891
+      },
+      "y": {
+        "mean": 26.56360438739442,
+        "sd": 6.9205456375477326
+      },
+      "a": {
+        "mean": 21.56412322220042,
+        "sd": 8.017971187838953
+      },
+      "los": {
+        "mean": 19.901787894717632,
+        "sd": 8.482088686739177
+      },
+      "se": {
+        "mean": 11.349295421864559,
+        "sd": 5.152747624421132
+      },
+      "del": {
+        "mean": 12.78648597643144,
+        "sd": 6.809562512640758
+      },
+      "las": {
+        "mean": 12.4336313703483,
+        "sd": 7.4086936065756435
+      },
+      "un": {
+        "mean": 9.224235825041331,
+        "sd": 4.672338889985473
+      },
+      "por": {
+        "mean": 10.347786540943098,
+        "sd": 4.690612654222731
+      },
+      "con": {
+        "mean": 9.457167986047477,
+        "sd": 4.974861235663321
+      },
+      "no": {
+        "mean": 7.108149814040268,
+        "sd": 5.137892800839517
+      },
+      "una": {
+        "mean": 7.994736457052664,
+        "sd": 3.768619285770144
+      },
+      "su": {
+        "mean": 5.748670425566684,
+        "sd": 4.599083089471286
+      },
+      "para": {
+        "mean": 6.63102536329359,
+        "sd": 4.386546087357201
+      },
+      "es": {
+        "mean": 4.982486172855321,
+        "sd": 3.59564125873553
+      },
+      "al": {
+        "mean": 5.13076617999193,
+        "sd": 3.8010861185674987
+      },
+      "lo": {
+        "mean": 4.117040961837263,
+        "sd": 3.1919156341049315
+      },
+      "como": {
+        "mean": 4.1096468971868605,
+        "sd": 3.3348037018701056
+      },
+      "más": {
+        "mean": 4.340360448004686,
+        "sd": 3.70865349556881
+      },
+      "pero": {
+        "mean": 2.101724151701521,
+        "sd": 2.4368282365306877
+      },
+      "sus": {
+        "mean": 2.2439182588616307,
+        "sd": 2.4998586248934758
+      },
+      "le": {
+        "mean": 0.6809695774958633,
+        "sd": 1.1134172192615097
+      },
+      "ya": {
+        "mean": 1.4987873382283623,
+        "sd": 1.739306964355324
+      },
+      "o": {
+        "mean": 2.8459260365297028,
+        "sd": 2.6494475836060243
+      },
+      "este": {
+        "mean": 4.189677313432241,
+        "sd": 3.4694855426981035
+      },
+      "sí": {
+        "mean": 0.30575944072281325,
+        "sd": 0.6854961274845595
+      },
+      "porque": {
+        "mean": 1.0164601490528409,
+        "sd": 1.7887850154766696
+      },
+      "esta": {
+        "mean": 1.6962939738668286,
+        "sd": 2.012472188169667
+      },
+      "entre": {
+        "mean": 1.962969959227924,
+        "sd": 1.9252929670271814
+      },
+      "cuando": {
+        "mean": 1.201248451928004,
+        "sd": 1.658118565014432
+      },
+      "muy": {
+        "mean": 0.9087073846962795,
+        "sd": 1.1586613230303144
+      },
+      "sin": {
+        "mean": 1.4941670758287318,
+        "sd": 1.5248444326790143
+      },
+      "sobre": {
+        "mean": 2.1165332769624987,
+        "sd": 2.0999822064966835
+      },
+      "también": {
+        "mean": 1.844305674619143,
+        "sd": 2.0450603416905393
+      },
+      "me": {
+        "mean": 0.7307747561933607,
+        "sd": 2.292428072023246
+      },
+      "hasta": {
+        "mean": 1.1073012223391627,
+        "sd": 1.9038723871015741
+      },
+      "hay": {
+        "mean": 1.0598586000966816,
+        "sd": 1.5812395847429221
+      },
+      "donde": {
+        "mean": 1.6060146930131636,
+        "sd": 1.9716161181620102
+      },
+      "quien": {
+        "mean": 0.4975035131702371,
+        "sd": 1.2148794931532743
+      },
+      "desde": {
+        "mean": 2.107386401670986,
+        "sd": 2.5375515343504436
+      },
+      "todo": {
+        "mean": 0.6541952349088747,
+        "sd": 0.9808821126830798
+      },
+      "nos": {
+        "mean": 0.7661885487325907,
+        "sd": 1.7136371465310378
+      },
+      "durante": {
+        "mean": 1.3060321831611883,
+        "sd": 2.138065339170078
+      },
+      "todos": {
+        "mean": 0.622264184402149,
+        "sd": 1.2961959713769575
+      },
+      "uno": {
+        "mean": 0.6324770347655368,
+        "sd": 1.0788965427108177
+      },
+      "les": {
+        "mean": 0.43093598629058927,
+        "sd": 0.9463332296285251
+      },
+      "ni": {
+        "mean": 0.7239885091750226,
+        "sd": 1.5124758060118384
+      },
+      "contra": {
+        "mean": 0.831010019040472,
+        "sd": 1.3609922539310082
+      },
+      "otros": {
+        "mean": 0.4848354473479553,
+        "sd": 0.7867282116977633
+      },
+      "ese": {
+        "mean": 0.6150874732643943,
+        "sd": 1.2696734898439397
+      },
+      "eso": {
+        "mean": 0.48260847391397954,
+        "sd": 0.9351711713962932
+      },
+      "ante": {
+        "mean": 0.47553427595282566,
+        "sd": 1.0366342882100423
+      },
+      "ellos": {
+        "mean": 0.5079983251676489,
+        "sd": 0.903893917080989
+      },
+      "e": {
+        "mean": 0.5887424161363252,
+        "sd": 1.0597144591533325
+      },
+      "esto": {
+        "mean": 0.39997752069450904,
+        "sd": 0.9574784009985962
+      },
+      "mí": {
+        "mean": 0.020384035223612866,
+        "sd": 0.125655632169452
+      },
+      "antes": {
+        "mean": 0.5578454650789917,
+        "sd": 1.1681118970444386
+      },
+      "algunos": {
+        "mean": 0.4238084425595676,
+        "sd": 0.9933167014220529
+      },
+      "qué": {
+        "mean": 0.7438631861108737,
+        "sd": 1.4141423962965929
+      },
+      "unos": {
+        "mean": 0.6262562329083787,
+        "sd": 1.1321161847809955
+      },
+      "yo": {
+        "mean": 0.27902095180403685,
+        "sd": 0.7912566153940013
+      },
+      "otro": {
+        "mean": 0.38965529676471106,
+        "sd": 0.8366108517339979
+      },
+      "otras": {
+        "mean": 0.525377299371885,
+        "sd": 0.9882943087339141
+      },
+      "otra": {
+        "mean": 0.1927282192848426,
+        "sd": 0.5930262162410889
+      },
+      "él": {
+        "mean": 0.24798139493632632,
+        "sd": 0.6777037328001988
+      },
+      "tanto": {
+        "mean": 0.7804626113956934,
+        "sd": 1.2915812543197875
+      },
+      "esa": {
+        "mean": 0.5021193639522048,
+        "sd": 0.9760023685727429
+      },
+      "estos": {
+        "mean": 0.3605534095646552,
+        "sd": 1.351703918075022
+      },
+      "mucho": {
+        "mean": 0.4761149863892605,
+        "sd": 0.8814910839697395
+      },
+      "quienes": {
+        "mean": 0.3438070918779987,
+        "sd": 0.7767056025267622
+      },
+      "nada": {
+        "mean": 0.27118082241172503,
+        "sd": 0.6440698866219607
+      },
+      "muchos": {
+        "mean": 0.26599719003127503,
+        "sd": 0.689010523081358
+      },
+      "cual": {
+        "mean": 0.1293412980106031,
+        "sd": 0.44973045478062684
+      },
+      "poco": {
+        "mean": 0.20016161014215875,
+        "sd": 0.5458201242652513
+      },
+      "ella": {
+        "mean": 0.03652121250805462,
+        "sd": 0.16216247189041683
+      },
+      "estar": {
+        "mean": 0.22098443655005165,
+        "sd": 0.6247282741267001
+      },
+      "estas": {
+        "mean": 0.6482494231449617,
+        "sd": 1.1764444801153269
+      },
+      "algunas": {
+        "mean": 0.3696764429367456,
+        "sd": 0.8269448225163286
+      },
+      "algo": {
+        "mean": 0.4597444825468426,
+        "sd": 0.9722782955706837
+      },
+      "nosotros": {
+        "mean": 0.08891133348456168,
+        "sd": 0.3191918978166996
+      },
+      "tu": {
+        "mean": 0.05403652869339673,
+        "sd": 0.33310353414940985
+      },
+      "te": {
+        "mean": 0.20748348742627484,
+        "sd": 0.8194882280269455
+      },
+      "ti": {
+        "mean": 0,
+        "sd": 0
+      },
+      "tuyo": {
+        "mean": 0,
+        "sd": 0
+      },
+      "ellas": {
+        "mean": 0.5430788814930958,
+        "sd": 1.4651981682540534
+      },
+      "nosotras": {
+        "mean": 0,
+        "sd": 0
+      }
+    },
+    "tells": {
+      "además": 32,
+      "a la hora de": 2,
+      "por otro lado": 2,
+      "asimismo": 10,
+      "no solo": 2,
+      "en resumen": 1
+    },
+    "sources": [
+      {
+        "url": "https://elpais.com/educacion/2026-09-08/caidas-educativas-salvajes-de-la-comunidad-valenciana-y-el-pais-vasco-en-el-informe-pisa-en-una-debacle-general-de-las-autonomias.html",
+        "words": 1364
+      },
+      {
+        "url": "https://elpais.com/educacion/2026-09-08/las-causas-del-desmoronamiento-educativo-en-pisa-los-alumnos-no-leen-estan-menos-dispuestos-a-esforzarse-y-crecen-con-el-movil.html",
+        "words": 1924
+      },
+      {
+        "url": "https://elpais.com/opinion/2026-09-08/descalabro-educativo.html",
+        "words": 616
+      },
+      {
+        "url": "https://elpais.com/america/2026-09-08/los-paises-de-latinoamerica-retroceden-en-el-informe-pisa-2025-y-estados-unidos-se-hunde-en-lectura.html",
+        "words": 1881
+      },
+      {
+        "url": "https://elpais.com/espana/2026-09-08/el-gobierno-desclasificara-este-martes-los-informes-que-recibio-sobre-ceuta-entre-el-1-de-julio-y-el-1-de-agosto.html",
+        "words": 752
+      },
+      {
+        "url": "https://elpais.com/cultura/2026-09-08/robados-tres-cuadros-valorados-en-nueve-millones-de-euros-del-museo-renoir-en-francia.html",
+        "words": 477
+      },
+      {
+        "url": "https://elpais.com/gastronomia/el-comidista/2026-09-08/aciertos-y-horrores-de-la-comida-preparada-de-mercadona.html",
+        "words": 309
+      },
+      {
+        "url": "https://elpais.com/television/2026-09-08/el-hormiguero-vuelve-pidiendo-elecciones-y-la-revuelta-anunciando-su-ultima-temporada.html",
+        "words": 1291
+      },
+      {
+        "url": "https://elpais.com/gastronomia/2026-09-08/abre-un-nuevo-lhardy-en-madrid.html",
+        "words": 907
+      },
+      {
+        "url": "https://elpais.com/smoda/moda/2026-09-08/los-pantalones-barrel-de-zara-y-el-motin-de-las-mujeres-perimenopausicas-seria-mucho-pedir-existir.html",
+        "words": 1152
+      },
+      {
+        "url": "https://elpais.com/economia/2026-09-08/espana-afronta-el-dilema-de-que-hacer-con-el-oro-depositado-en-la-reserva-federal.html",
+        "words": 940
+      },
+      {
+        "url": "https://www.jornada.com.mx/2026/09/07/opinion/002a1edi?partner=rss",
+        "words": 570
+      },
+      {
+        "url": "https://www.jornada.com.mx/2026/09/07/deportes/a12n3dep?partner=rss",
+        "words": 322
+      },
+      {
+        "url": "https://www.jornada.com.mx/2026/09/07/espectaculos/a07n2esp?partner=rss",
+        "words": 372
+      },
+      {
+        "url": "https://www.jornada.com.mx/2026/09/07/deportes/a09n2dep?partner=rss",
+        "words": 406
+      },
+      {
+        "url": "https://www.jornada.com.mx/2026/09/07/opinion/019o1eco?partner=rss",
+        "words": 361
+      },
+      {
+        "url": "https://www.jornada.com.mx/2026/09/07/politica/005n2pol?partner=rss",
+        "words": 395
+      },
+      {
+        "url": "https://www.jornada.com.mx/2026/09/07/espectaculos/a08n2esp?partner=rss",
+        "words": 351
+      },
+      {
+        "url": "https://www.jornada.com.mx/2026/09/07/politica/008n1pol?partner=rss",
+        "words": 375
+      },
+      {
+        "url": "https://www.jornada.com.mx/2026/09/07/estados/025n1est?partner=rss",
+        "words": 544
+      },
+      {
+        "url": "https://www.jornada.com.mx/2026/09/07/mundo/022n1mun?partner=rss",
+        "words": 327
+      },
+      {
+        "url": "https://www.jornada.com.mx/2026/09/07/opinion/012o1pol?partner=rss",
+        "words": 558
+      },
+      {
+        "url": "https://www.jornada.com.mx/2026/09/07/economia/019n2eco?partner=rss",
+        "words": 409
+      },
+      {
+        "url": "https://www.jornada.com.mx/2026/09/07/mundo/022n2mun?partner=rss",
+        "words": 487
+      },
+      {
+        "url": "https://www.20minutos.es/nacional/inicio-curso-escolar-ceuta-procupacion-necesidad-recuperar-rutina-escolar_7033983_0.html",
+        "words": 838
+      },
+      {
+        "url": "https://www.20minutos.es/nacional/sanchez-arranca-curso-defensiva-sin-una-agenda-vista-que-pueda-contener-sus-frentes_7033825_0.html",
+        "words": 1371
+      },
+      {
+        "url": "https://www.20minutos.es/ceuta/prision-para-un-migrante-marroqui-por-una-agresion-sexual-una-menor-ceuta_7034026_0.html",
+        "words": 326
+      },
+      {
+        "url": "https://www.20minutos.es/nacional/feijoo-rechaza-reubicacion-menores-inmigrantes-ceuta-porque-han-formado-parte-una-invasion-exige-su-devolucion_7034033_0.html",
+        "words": 731
+      },
+      {
+        "url": "https://www.20minutos.es/nacional/crisis-migratoria-ceuta-directo-13-000-alumnos-ceuties-inician-colegio-escoltados-militares-policia_7033950_6.html",
+        "words": 513
+      },
+      {
+        "url": "https://www.20minutos.es/nacional/jueza-abre-puerta-investigar-respuesta-gobierno-ante-los-avisos-sobre-entrada-masiva-inmigrantes-ceuta_7033802_0.html",
+        "words": 976
+      },
+      {
+        "url": "https://www.20minutos.es/nacional/nueva-normalidad-supermercados-ceuties-hacer-compra-entre-militares_7033839_0.html",
+        "words": 666
+      },
+      {
+        "url": "https://www.20minutos.es/internacional/espana-consolida-su-declive-pisa-ciencia-lectura-matematicas-supera-media-uso-ia-para-los-deberes_7033823_0.html",
+        "words": 937
+      },
+      {
+        "url": "https://www.20minutos.es/madrid/los-alumnos-madrid-ocupan-los-primeros-puestos-pisa-espana-aunque-su-rendimiento-baja-los-ultimos-tres-anos_7033841_0.html",
+        "words": 945
+      },
+      {
+        "url": "https://www.20minutos.es/internacional/roban-tres-obras-arte-museo-renoir-cagnes-sur-mer-con-un-valor-nueve-millones-euros_7034021_0.html",
+        "words": 308
+      },
+      {
+        "url": "https://www.20minutos.es/nacional/ninguna-las-800-viviendas-publicas-ofertadas-nuevo-portal-gobierno-se-encuentra-grandes-ciudades_7033804_0.html",
+        "words": 700
+      },
+      {
+        "url": "https://www.20minutos.es/nacional/primer-episodio-otonal-llega-espana-partir-este-martes-tormentas-lluvias-muy-intensas-un-desplome-termico-hasta-10-oc_7033639_0.html",
+        "words": 849
+      },
+      {
+        "url": "https://www.20minutos.es/lainformacion/empresas/batalla-por-s-seat-bloquea-marca-un-fabricante-emergente-motor-valley-italiana_7033780_0.html",
+        "words": 676
+      },
+      {
+        "url": "https://www.20minutos.es/madrid/madrid-reitera-gobierno-su-peticion-para-repatriar-un-centenar-menores-migrantes-por-acumular-382-incidentes-268-denuncias_7034037_0.html",
+        "words": 626
+      }
+    ]
+  },
+  "de": {
+    "measuredOn": "2026-09-08",
+    "articles": 25,
+    "words": 13368,
+    "metrics": {
+      "sentence length": {
+        "mean": 17.773275209497573,
+        "sd": 4.091866383537136
+      },
+      "sentence length sd": {
+        "mean": 10.65240663416352,
+        "sd": 4.23709171802843
+      },
+      "burstiness": {
+        "mean": 0.5930021956781494,
+        "sd": 0.17547456121974636
+      },
+      "sentences per para": {
+        "mean": 2.7494816947758123,
+        "sd": 0.7918381049484696
+      },
+      "word length": {
+        "mean": 6.330217883015362,
+        "sd": 0.3910336998592028
+      },
+      "long words %": {
+        "mean": 29.791526228234385,
+        "sd": 3.7174883313503884
+      },
+      "vocabulary (msttr)": {
+        "mean": 0.5796979915355789,
+        "sd": 0.04734772341458453
+      },
+      "hapax %": {
+        "mean": 70.66237556849406,
+        "sd": 5.289484566456864
+      },
+      "em dash /1k": {
+        "mean": 0,
+        "sd": 0
+      },
+      "en dash /1k": {
+        "mean": 1.8363885570660028,
+        "sd": 3.781109260354144
+      },
+      "semicolon /1k": {
+        "mean": 4.875174216810615,
+        "sd": 8.988999618313
+      },
+      "colon /1k": {
+        "mean": 13.498816665499566,
+        "sd": 12.0347342967957
+      },
+      "comma /1k": {
+        "mean": 48.45540891499627,
+        "sd": 17.97845612061423
+      },
+      "tells /1k": {
+        "mean": 0.5403390186888803,
+        "sd": 1.0249976513786239
+      }
+    },
+    "profile": {
+      "der": {
+        "mean": 36.760734697186265,
+        "sd": 10.725956558026558
+      },
+      "die": {
+        "mean": 34.22882920113261,
+        "sd": 13.196917609848986
+      },
+      "und": {
+        "mean": 23.25485403510287,
+        "sd": 11.463164820502346
+      },
+      "in": {
+        "mean": 21.536545680761332,
+        "sd": 9.987310197461257
+      },
+      "den": {
+        "mean": 11.271745077391278,
+        "sd": 6.978879444273845
+      },
+      "von": {
+        "mean": 9.690998854991472,
+        "sd": 7.7280954244189175
+      },
+      "zu": {
+        "mean": 7.7920776481963205,
+        "sd": 5.528169494459987
+      },
+      "das": {
+        "mean": 8.657822299526364,
+        "sd": 4.209059596675244
+      },
+      "mit": {
+        "mean": 8.72370732754514,
+        "sd": 5.275929587338636
+      },
+      "sich": {
+        "mean": 6.736113751559583,
+        "sd": 3.8090102107099293
+      },
+      "des": {
+        "mean": 4.716397833671458,
+        "sd": 3.5708382963568455
+      },
+      "auf": {
+        "mean": 8.355370772219766,
+        "sd": 4.410797578916398
+      },
+      "für": {
+        "mean": 8.536545905210032,
+        "sd": 6.828158503213149
+      },
+      "ist": {
+        "mean": 4.721588310713911,
+        "sd": 3.686474884856114
+      },
+      "im": {
+        "mean": 12.402601641753506,
+        "sd": 7.2856354575976905
+      },
+      "dem": {
+        "mean": 6.920614250852274,
+        "sd": 4.576068556560707
+      },
+      "nicht": {
+        "mean": 5.746638387857866,
+        "sd": 4.373935593802879
+      },
+      "ein": {
+        "mean": 5.2781353532416055,
+        "sd": 3.359189152369137
+      },
+      "eine": {
+        "mean": 7.25285157468338,
+        "sd": 6.226146698831704
+      },
+      "als": {
+        "mean": 4.103716915342237,
+        "sd": 3.4552337100182475
+      },
+      "auch": {
+        "mean": 4.678794497824519,
+        "sd": 3.1612772103988642
+      },
+      "es": {
+        "mean": 4.312127079967361,
+        "sd": 5.145058220342777
+      },
+      "an": {
+        "mean": 2.9734573251929355,
+        "sd": 2.6484202743129126
+      },
+      "werden": {
+        "mean": 2.479153834815366,
+        "sd": 2.459749143654493
+      },
+      "aus": {
+        "mean": 6.1693565070652765,
+        "sd": 5.129431636628083
+      },
+      "er": {
+        "mean": 4.337099954567768,
+        "sd": 6.46763991482518
+      },
+      "hat": {
+        "mean": 3.238092842874545,
+        "sd": 2.2323284188565795
+      },
+      "dass": {
+        "mean": 3.4168175666480085,
+        "sd": 2.4477408940857606
+      },
+      "sie": {
+        "mean": 4.105276481766151,
+        "sd": 5.40428799651003
+      },
+      "nach": {
+        "mean": 5.438400984213397,
+        "sd": 3.7766957786517104
+      },
+      "wird": {
+        "mean": 2.5936292055512062,
+        "sd": 3.291914456926037
+      },
+      "bei": {
+        "mean": 4.579900233196402,
+        "sd": 3.6778823322623992
+      },
+      "einer": {
+        "mean": 2.867098683064451,
+        "sd": 3.661261614898098
+      },
+      "um": {
+        "mean": 3.436971226732362,
+        "sd": 5.093204271521753
+      },
+      "am": {
+        "mean": 3.5718611333781496,
+        "sd": 3.302510849216392
+      },
+      "sind": {
+        "mean": 2.8505069695851226,
+        "sd": 3.3314320289264683
+      },
+      "noch": {
+        "mean": 2.5915281874045295,
+        "sd": 3.1478258695309718
+      },
+      "wie": {
+        "mean": 2.6247573311915913,
+        "sd": 3.365586742676138
+      },
+      "einem": {
+        "mean": 3.559848841027561,
+        "sd": 3.4510750688443035
+      },
+      "über": {
+        "mean": 2.9935657727133718,
+        "sd": 3.4363512696177945
+      },
+      "einen": {
+        "mean": 2.8409116053004526,
+        "sd": 2.9312778994340176
+      },
+      "so": {
+        "mean": 1.8721100597255977,
+        "sd": 2.3218044867986167
+      },
+      "zum": {
+        "mean": 1.2044078080974656,
+        "sd": 1.8399745234050766
+      },
+      "war": {
+        "mean": 2.127481554036609,
+        "sd": 2.5636734610061214
+      },
+      "haben": {
+        "mean": 1.6538059596214731,
+        "sd": 2.2641804014377196
+      },
+      "nur": {
+        "mean": 1.928529023170064,
+        "sd": 2.3077662338746148
+      },
+      "oder": {
+        "mean": 1.2148169426909528,
+        "sd": 1.6888314182042943
+      },
+      "aber": {
+        "mean": 2.1610148348275326,
+        "sd": 2.813747759188767
+      },
+      "vor": {
+        "mean": 4.117030658439883,
+        "sd": 3.5219444625641003
+      },
+      "zur": {
+        "mean": 4.80227821326041,
+        "sd": 5.791862545131618
+      },
+      "bis": {
+        "mean": 1.712765118943422,
+        "sd": 2.467241756715288
+      },
+      "mehr": {
+        "mean": 5.231087822790873,
+        "sd": 4.15375827326972
+      },
+      "durch": {
+        "mean": 1.4672373779060257,
+        "sd": 1.8453537042832358
+      },
+      "man": {
+        "mean": 0.6088599288264532,
+        "sd": 1.2876926002200892
+      },
+      "sein": {
+        "mean": 1.2987932568899223,
+        "sd": 2.7647581302315443
+      },
+      "wurde": {
+        "mean": 2.1093214141457173,
+        "sd": 4.8092943659365455
+      },
+      "sei": {
+        "mean": 1.5947955098263153,
+        "sd": 1.9904541472683575
+      },
+      "doch": {
+        "mean": 0.5837883443145212,
+        "sd": 1.2683637962631609
+      },
+      "ihre": {
+        "mean": 0.7470859700155933,
+        "sd": 1.219224275783555
+      },
+      "dann": {
+        "mean": 0.5040687996072166,
+        "sd": 0.8796169890771323
+      },
+      "unter": {
+        "mean": 1.6203667635044974,
+        "sd": 2.6462431011622427
+      },
+      "wir": {
+        "mean": 1.6324503140447908,
+        "sd": 3.5057584623378046
+      },
+      "soll": {
+        "mean": 0.9893611050108737,
+        "sd": 1.7417446308537834
+      },
+      "ich": {
+        "mean": 0.903472713033476,
+        "sd": 1.9378337379827355
+      },
+      "ihr": {
+        "mean": 1.5727498126325328,
+        "sd": 2.5665286755075867
+      },
+      "kann": {
+        "mean": 0.7808439632797745,
+        "sd": 1.3512200815015014
+      },
+      "gegen": {
+        "mean": 1.6880281722261674,
+        "sd": 3.3688315058468534
+      },
+      "vom": {
+        "mean": 0.5452337985217832,
+        "sd": 1.1542125347346162
+      },
+      "können": {
+        "mean": 1.2997533328548294,
+        "sd": 1.7455447405977504
+      },
+      "schon": {
+        "mean": 0.9485791399828625,
+        "sd": 2.9914444745424102
+      },
+      "wenn": {
+        "mean": 0.697423228432816,
+        "sd": 1.1009084807113696
+      },
+      "habe": {
+        "mean": 2.0885246919751705,
+        "sd": 4.379556498930382
+      },
+      "seine": {
+        "mean": 0.5397933810798158,
+        "sd": 1.2461061772003599
+      },
+      "seiner": {
+        "mean": 1.0257943555138016,
+        "sd": 2.2816982818412614
+      },
+      "ihm": {
+        "mean": 0.2821427032423251,
+        "sd": 0.8171885437752138
+      },
+      "uns": {
+        "mean": 0.3836939216987956,
+        "sd": 0.8787694558838486
+      },
+      "ohne": {
+        "mean": 0.31047378435538453,
+        "sd": 0.781589524797214
+      },
+      "bereits": {
+        "mean": 1.1937309727724026,
+        "sd": 1.7555871376255285
+      },
+      "alle": {
+        "mean": 0.475626950444459,
+        "sd": 0.9214453078420919
+      },
+      "wieder": {
+        "mean": 1.0909442600411408,
+        "sd": 1.5450230455166767
+      },
+      "seit": {
+        "mean": 1.9526510088002547,
+        "sd": 2.641635233485783
+      },
+      "immer": {
+        "mean": 0.8363007145134784,
+        "sd": 1.293549620806398
+      },
+      "da": {
+        "mean": 0.12154759756935514,
+        "sd": 0.42120308609685836
+      },
+      "diese": {
+        "mean": 1.6015371795229492,
+        "sd": 2.039167621453593
+      },
+      "ja": {
+        "mean": 0.11019283746556473,
+        "sd": 0.5509641873278235
+      },
+      "jetzt": {
+        "mean": 1.0958237790358014,
+        "sd": 1.328145487982406
+      },
+      "zwei": {
+        "mean": 0.49853054598865704,
+        "sd": 1.3390879214028357
+      },
+      "etwa": {
+        "mean": 1.5365648443358932,
+        "sd": 2.1098881743421543
+      },
+      "dabei": {
+        "mean": 1.3268547095648686,
+        "sd": 1.6281555429175116
+      }
+    },
+    "tells": {
+      "nicht nur": 2,
+      "zudem": 5,
+      "darüber hinaus": 1,
+      "letztlich": 1
+    },
+    "sources": [
+      {
+        "url": "https://www.tagesschau.de/inland/gesellschaft/pisa-deutschland-schueler-100.html",
+        "words": 765
+      },
+      {
+        "url": "https://www.tagesschau.de/inland/sachsen-anhalt-bsw-regierungsbildung-100.html",
+        "words": 691
+      },
+      {
+        "url": "https://www.tagesschau.de/inland/innenpolitik/liveblog-nach-sachsen-anhalt-wahl-100.html",
+        "words": 1885
+      },
+      {
+        "url": "https://www.tagesschau.de/inland/landtagswahlen/sachsen-anhalt/afd-sozialverband-wirtschaftsweise-100.html",
+        "words": 406
+      },
+      {
+        "url": "https://www.tagesschau.de/inland/deutschlandtrend/sachsen-anhalt-wahlergebnis-100.html",
+        "words": 676
+      },
+      {
+        "url": "https://www.tagesschau.de/inland/landtagswahlen/sachsen-anhalt/2026/ergebnisse",
+        "words": 305
+      },
+      {
+        "url": "https://www.tagesschau.de/inland/innenpolitik/haushalt-bundestag-ausgaben-schulden-100.html",
+        "words": 907
+      },
+      {
+        "url": "https://www.tagesschau.de/wirtschaft/energie/stromerzeugung-erneuerbare-energien-106.html",
+        "words": 396
+      },
+      {
+        "url": "https://www.spiegel.de/ausland/israel-gaza-mohammed-bin-zayed-vae-soll-benjamin-netanyahu-vor-hamas-attacke-am-7-oktober-explizit-gewarnt-haben-a-601e7f3e-473b-47a1-b8ae-8efc2a69eea7#ref=rss",
+        "words": 408
+      },
+      {
+        "url": "https://www.spiegel.de/politik/deutschland/bundesversammlung-schwarz-rot-hat-bei-bundespraesidentenwahl-klare-mehrheit-a-280adb99-08f8-4ee2-8231-8d1b47e8491e#ref=rss",
+        "words": 471
+      },
+      {
+        "url": "https://www.spiegel.de/kultur/literatur/deutscher-buchpreis-dana-vowinckel-und-elias-hirschl-auf-der-shortlist-2026-a-1a253134-8ea7-458f-a9b7-b90746a86e4c#ref=rss",
+        "words": 279
+      },
+      {
+        "url": "https://www.spiegel.de/wirtschaft/bundeshaushalt-gruene-werfen-finanzminister-klingbeil-trickserei-vor-a-a1e01b8e-dc14-443e-a438-2b21e22cfd35#ref=rss",
+        "words": 363
+      },
+      {
+        "url": "https://www.spiegel.de/panorama/leute/angelina-jolie-ukraine-boxverband-meldet-ueberraschenden-besuch-a-23ecc282-6f17-4ada-b68f-be75cddd1c00#ref=rss",
+        "words": 482
+      },
+      {
+        "url": "https://www.spiegel.de/wirtschaft/unternehmen/handelsstreit-mit-usa-kanada-setzt-gegenzoelle-in-kraft-trump-droht-bombardier-a-efb205c8-ec95-443c-92bf-a1e4ef6911a9#ref=rss",
+        "words": 494
+      },
+      {
+        "url": "https://www.spiegel.de/sport/tennis/us-open-alexander-zverev-zieht-ins-viertelfinale-ein-und-mit-boris-becker-gleich-a-a157e68a-d2cd-4e40-91ca-af5cfc5e83b0#ref=rss",
+        "words": 400
+      },
+      {
+        "url": "https://www.zeit.de/politik/deutschland/2026-09/afd-verbot-hendrik-wuest-cdu-nrw-bund-laender-arbeitsgruppe",
+        "words": 307
+      },
+      {
+        "url": "https://www.zeit.de/politik/deutschland/2026-09/gasversorgung-winter-gasspeicher-fuellstand-katherina-reiche-cdu-ines",
+        "words": 451
+      },
+      {
+        "url": "https://www.zeit.de/wirtschaft/2026-09/erneuerbare-energien-stromproduktion-deutschland-anteil",
+        "words": 325
+      },
+      {
+        "url": "https://www.zeit.de/politik/deutschland/2026-09/halle-demonstration-schuesse-softairwaffe-august-bebel-platz",
+        "words": 320
+      },
+      {
+        "url": "https://www.zeit.de/politik/deutschland/2026-09/haushaltsberatungen-bundestag-lars-klingbeil-sozialstaat-reformen-ausgaben-schulden",
+        "words": 663
+      },
+      {
+        "url": "https://orf.at/stories/3441527/",
+        "words": 666
+      },
+      {
+        "url": "https://orf.at/stories/3441526/",
+        "words": 403
+      },
+      {
+        "url": "https://orf.at/stories/3441464/",
+        "words": 547
+      },
+      {
+        "url": "https://orf.at/stories/3441505/",
+        "words": 412
+      },
+      {
+        "url": "https://orf.at/stories/3441504/",
+        "words": 346
+      }
+    ]
+  }
+}
