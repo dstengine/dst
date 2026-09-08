@@ -1,6 +1,7 @@
 import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
+
   {
     slug: "la-marca-de-agua-de-claude-no-esta-en-las-palabras",
     site: "cmx",
@@ -491,8 +492,8 @@ export const items: NewsItem[] = [
       "> The Day of the Dead parade and Qualifying will both be on Oct 31. This will be my first time to Mexico, and both of these will be new experiences.\n— Publicado en r/MexicoCity, con trece respuestas y ninguna coincidencia entre ellas",
       "Tiene razón en el dato y tiene razón en el dilema. El <strong>sábado 31 de octubre de 2026</strong> la Ciudad de México monta sus dos espectáculos más grandes del año con horas que se encima, en puntos opuestos del mapa, y hasta ahora nadie ha publicado un horario que los ponga uno junto al otro. Esta nota hace eso.",
       "## Qué pasa exactamente ese sábado",
-      "El <strong>Gran Desfile de Día de Muertos</strong> recorre Paseo de la Reforma con carros alegóricos, catrinas monumentales y danza. Dura <strong>más de cuatro horas</strong> y avanza despacio, que es como debe verse: no es un desfile para cruzarlo, es uno para quedarse en un punto y dejar que pase entero.",
-      "La <strong>clasificación del Gran Premio de la Ciudad de México</strong> es a las <strong>3pm</strong> en el Autódromo Hermanos Rodríguez, en la Ciudad Deportiva, a unos catorce kilómetros del corredor del desfile. Antes hubo Práctica 3 a las 11:30am. Al día siguiente, domingo 1 de noviembre, la carrera es a las 2pm.",
+      "El <a href=\"/eventos/gran-desfile-dia-de-muertos-2026/\" title=\"Gran Desfile de Día de Muertos 2026\"><strong>Gran Desfile de Día de Muertos</strong></a> recorre Paseo de la Reforma con carros alegóricos, catrinas monumentales y danza. Dura <strong>más de cuatro horas</strong> y avanza despacio, que es como debe verse: no es un desfile para cruzarlo, es uno para quedarse en un punto y dejar que pase entero.",
+      "La clasificación del <a href=\"/eventos/gran-premio-ciudad-de-mexico-2026/\" title=\"Gran Premio de la Ciudad de México 2026\"><strong>Gran Premio de la Ciudad de México</strong></a> es a las <strong>3pm</strong> en el Autódromo Hermanos Rodríguez, en la Ciudad Deportiva, a unos catorce kilómetros del corredor del desfile. Antes hubo Práctica 3 a las 11:30am. Al día siguiente, domingo 1 de noviembre, la carrera es a las 2pm.",
       "Dicho de otra forma: el sábado no es un día con dos eventos. Es un día con dos eventos y un traslado imposible en medio.",
       "## Por qué el traslado es el problema, y no el horario",
       "Podría parecer que basta con salir temprano del desfile. No es así, y la razón es que el desfile <em>es</em> el cierre de calles. Reforma se cierra desde temprano y el operativo se extiende al corredor hacia el Centro. Un coche que quede del lado poniente de ese cierre a la hora de la clasificación no llega al autódromo: no por distancia, sino porque las salidas naturales hacia el oriente pasan justamente por donde está el desfile.",
@@ -504,6 +505,28 @@ export const items: NewsItem[] = [
       "## Lo que todavía no se anuncia",
       "La <strong>temática del desfile 2026</strong> no está publicada. Por la convocatoria de participación se anticipa un homenaje a figuras como José Alfredo Jiménez, Juan Rulfo, Lola Beltrán o Juan Gabriel, pero eso es previsión, no confirmación, y por eso aquí no aparece como un hecho. Lo que sí está confirmado es que habrá instalaciones y ofrendas en las <strong>16 alcaldías</strong>, no sólo sobre el corredor.",
       "Tampoco está publicada la ruta con horarios de paso. Cuando salga, el dato que importa no será por dónde va, sino a qué hora llega a cada punto: es lo que convierte una espera de tres horas en una de veinte minutos.",
+    ],
+    faq: [
+      {
+        q: "\u00bfEl desfile de D\u00eda de Muertos y la clasificaci\u00f3n de F1 son el mismo d\u00eda?",
+        a: "S\u00ed. Los dos caen el <strong>s\u00e1bado 31 de octubre de 2026</strong>: el desfile sobre Paseo de la Reforma y la clasificaci\u00f3n a las <strong>3pm</strong> en el Aut\u00f3dromo Hermanos Rodr\u00edguez, a unos catorce kil\u00f3metros de distancia.",
+      },
+      {
+        q: "\u00bfSe puede ir a los dos el mismo d\u00eda?",
+        a: "S\u00f3lo a medias, y en un orden: ver la clasificaci\u00f3n y entrar despu\u00e9s al tramo final del desfile, que dura <strong>m\u00e1s de cuatro horas</strong> y sigue vivo hacia el Z\u00f3calo. Se pierde el arranque, que es el mejor tramo.",
+      },
+      {
+        q: "\u00bfC\u00f3mo llegar al aut\u00f3dromo con Reforma cerrada?",
+        a: "En <strong>Metro Ciudad Deportiva</strong>, de la l\u00ednea 9, que es el acceso que publica el propio circuito y deja a pie del aut\u00f3dromo. No depende de ninguna vialidad de superficie, que es justo lo que el cierre del desfile bloquea.",
+      },
+      {
+        q: "\u00bfA qu\u00e9 hora es la carrera?",
+        a: "El <strong>domingo 1 de noviembre a las 2pm</strong>. Ese d\u00eda no choca con nada: el desfile fue el s\u00e1bado.",
+      },
+      {
+        q: "\u00bfYa se sabe la tem\u00e1tica del desfile 2026?",
+        a: "No. No est\u00e1 publicada, ni tampoco la ruta con horarios de paso. Lo que s\u00ed est\u00e1 confirmado es que habr\u00e1 instalaciones y ofrendas en las <strong>16 alcald\u00edas</strong>.",
+      },
     ],
     expertise:
       "El desfile nació de una escena de ficción: la secuencia inicial de <em>Spectre</em>, de 2015, inventó un desfile de Día de Muertos que la ciudad no tenía, y la ciudad lo montó de verdad al año siguiente. Once ediciones después convoca a más de un millón trescientas mil personas. La Fórmula 1, en cambio, lleva en el Hermanos Rodríguez desde 1963 con interrupciones largas. El evento joven es el que cierra Reforma.",

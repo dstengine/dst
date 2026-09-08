@@ -102,6 +102,16 @@ interface ItemBase {
   form?: ItemForm;
   expertise?: string;
   jsonLd?: Record<string, unknown>; // manual override of the auto-built block
+  // The questions a reader types instead of reading the page: on an event,
+  // what it costs, what time it starts, whether a ticket is needed in
+  // advance; on an article, whatever it is the piece actually settles.
+  // Each one is a search of its own, and an answer written as a whole
+  // sentence is the answer a search engine can lift — which is the only
+  // reason to keep them separate from `body` rather than folding them into
+  // it. `generic` marks an answer that is the same on every page; those show
+  // to a reader and stay out of the markup. Same rule as everywhere else:
+  // only what the source says, and no question invented to have four of them.
+  faq?: { q: string; a: string; generic?: boolean }[];
   // Where this sits among the site's items of this kind, for the front page.
   // 1 is the one to lead with, and only a handful on a site get a number at
   // all — a feed where everything is highlighted highlights nothing.
@@ -171,15 +181,7 @@ export interface EventItem extends ItemBase {
   // session. Separate from `body` because these are a list of parallel
   // things, and a list set as running paragraphs reads as neither.
   programme?: { heading: string; text: string }[];
-  // The questions a reader types instead of reading the page: what it costs,
-  // what time it starts, whether a ticket is needed in advance, how to get
-  // there. Each one is a search of its own, and an answer written as a whole
-  // sentence is the answer a search engine can lift — which is the only
-  // reason to keep them separate from `body` rather than folding them into
-  // it. `generic` marks an answer that is the same on every page; those show
-  // to a reader and stay out of the markup. Same rule as everywhere else:
-  // only what the source says, and no question invented to have four of them.
-  faq?: { q: string; a: string; generic?: boolean }[];
+
   // The people on the programme, as the organiser publishes them. A named
   // speaker is the one fact on a conference page that a reader recognises —
   // "140+ speakers" tells nobody whether to go, and one regulator's name

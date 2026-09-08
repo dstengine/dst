@@ -14,6 +14,7 @@ import VentureGrid from "./VentureGrid.astro";
 import FeedCards from "./FeedCards.astro";
 import CountdownScript from "./CountdownScript.astro";
 import SourceLine from "./SourceLine.astro";
+import Faq from "./Faq.astro";
 import ImageNote from "./ImageNote.astro";
 import { ICONS } from "../icons.ts";
 import { formatDate } from "../date.ts";
@@ -207,6 +208,13 @@ const relatedItems = (item.related ?? []).map((card) => ({
           <input type="hidden" name={`meta.${key}`} value={value} />
         ))}
       </LeadForm>
+    </section>
+  )}
+
+  {item.faq && item.faq.length > 0 && (
+    <section class="news-article-faq">
+      <h2>{L.faq}</h2>
+      <Faq items={item.faq} />
     </section>
   )}
 
