@@ -91,7 +91,7 @@ export const items: EventItem[] = [
     },
     body: [
       "Dubai Fitness Challenge returns for its tenth edition from October 31 to November 29, 2026, asking residents to commit to 30 minutes of activity a day for 30 days — the format the city knows as 30x30.",
-      "The month carries the usual flagship events: Dubai Run, Dubai Ride, Dubai Stand Up Paddle and Dubai Yoga, plus Fitness Villages, Fitness Hubs and free community classes across the city. Registration for the individual events runs through the challenge's own official channels.",
+      "The month carries the usual flagship events: <a href=\"/events/dubai-run-2026/\" title=\"Dubai Run 2026\">Dubai Run</a> on 22 November, <a href=\"/events/dubai-ride-2026/\" title=\"Dubai Ride 2026\">Dubai Ride</a> on 1 November, Dubai Stand Up Paddle on 7 and 8 November and Dubai Yoga on 29 November, plus Fitness Villages, Fitness Hubs and free community classes across the city. Registration for the individual events runs through the challenge's own official channels.",
     ],
     expertise:
       "This is a city-wide programme rather than a Riviera one, but it lands here more usefully than most: the promenade is a continuous canal-front walking route, which is exactly what a 30-minutes-a-day commitment needs and what most Dubai communities have to drive to find. Expect the promenade to be noticeably busier in the evenings through November.",
@@ -132,5 +132,126 @@ export const items: EventItem[] = [
     ],
     expertise:
       "From Riviera this is a drive rather than a walk — Umm Suqeim is on the other side of Sheikh Zayed Road from MBR City — and the twelve-hour opening is what makes that worth planning around. The market is at its emptiest in the first two hours and at its hottest, in both senses, in the middle of the afternoon; October and early November are the two months when the late-evening end of the window is the pleasant one. Note also what the season dates tell you about Dubai's outdoor calendar generally: 10 October to 2 May is roughly the whole of it, and most open-air weekend events in the city sit inside those two bookends.",
+  },
+
+  {
+    slug: "dubai-ride-2026",
+    site: "riviera",
+    image: "/covers/dubai-ride-2026.jpg",
+    imageAlt: "A pale road band crossing the frame between two textured edges, a dense field of small cream blocks below it, on pale blue",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Dubai Ride 2026",
+    summary:
+      "Sheikh Zayed Road closes to cars for the morning of Sunday November 1 and becomes a cycling route, free to join, with a 12km ride and a 4km family loop through Downtown Dubai.",
+    start: "2026-11-01",
+    startTime: "06:00",
+    utcOffset: "+04:00",
+    venue: "Sheikh Zayed Road and Downtown Dubai",
+    city: "Dubai",
+    country: "United Arab Emirates",
+    organizer: "Dubai Department of Economy and Tourism and Dubai Sports Council",
+    category: "Sport",
+    tickets: { priceFrom: 0, priceTo: 0, currency: "AED" },
+    source: {
+      name: "Dubai Fitness Challenge",
+      url: "https://dubaifitnesschallenge.com/en/dubai-ride",
+      verifiedOn: "2026-09-08",
+    },
+    ticket: { url: "https://dubaifitnesschallenge.com/en/dubai-ride", label: "Official page" },
+    body: [
+      "Once a year the twelve-lane road that defines Dubai is emptied of cars and handed to people on bicycles. That is the whole event, and it is free.",
+      "## The date",
+      "<strong>Sunday 1 November 2026</strong>, starting at <strong>6:00am</strong>. It is the <strong>sixth edition</strong>, the opening weekend of the month-long Dubai Fitness Challenge.",
+      "## The two routes",
+      "The <strong>12km Sheikh Zayed Road route</strong>, which the organisers recommend for more experienced riders, and the <strong>4km Downtown family route</strong>, a flat loop around Dubai Mall, Dubai Opera and Burj Khalifa. Both pass the Museum of the Future, and the longer one takes in the Dubai Water Canal.",
+      "## What it costs and what it needs",
+      "<strong>Nothing to enter, but registration is compulsory.</strong> At the time of writing the organisers say only that details of how to register will be announced; there is no open form yet. It is <strong>not a timed race</strong> — the official line is to ride at a comfortable pace and keep to the posted speed limits.",
+      "## Who can ride",
+      "Open to everyone. Adults over 21 can add <strong>children under 13</strong> to their own registration; <strong>13- to 21-year-olds</strong> register individually with parental or guardian consent. There are dedicated support entry points for <strong>adapted bikes, handcycles and tandem bikes</strong>.",
+    ],
+    faq: [
+      {
+        q: "Is Dubai Ride free?",
+        a: "Yes. There is <strong>no entry fee</strong>, but every rider has to register, and registration is required for safety reasons rather than payment.",
+      },
+      {
+        q: "When does Dubai Ride 2026 start?",
+        a: "<strong>6:00am on Sunday 1 November 2026.</strong> Sheikh Zayed Road is closed to traffic for it.",
+      },
+      {
+        q: "How long are the Dubai Ride routes?",
+        a: "<strong>12km</strong> along Sheikh Zayed Road for confident riders, and a flat <strong>4km loop</strong> through Downtown Dubai for families and anyone riding at an easy pace.",
+      },
+      {
+        q: "Is Dubai Ride a race?",
+        a: "No. It is not timed and there are no results \u2014 the organisers ask riders to keep a comfortable pace and observe the speed limits on the route.",
+      },
+      {
+        q: "Can children take part in Dubai Ride?",
+        a: "Yes. An adult over 21 adds children under 13 to their own registration, and riders aged 13 to 21 register themselves with a parent or guardian's consent.",
+      },
+    ],
+    expertise:
+      "The 4km Downtown loop is the one to pick if you have not ridden in traffic recently, and not because of the distance \u2014 it is flat and it is a loop, so you can stop whenever you like and still be at the start. The 12km route is an out-and-back on a road with long gentle inclines you never notice in a car. The real constraint is neither: it is that the road reopens, so the last riders are moved along. Getting there is the part to plan, because the metro runs above the closed road and the stations nearest the start fill first \u2014 arriving a station early and riding in is the standard move. The <a href=\"/events/dubai-fitness-challenge-2026/\" title=\"Dubai Fitness Challenge, 30x30\">Fitness Challenge</a> the ride opens runs for another four weeks, and <a href=\"/events/dubai-run-2026/\" title=\"Dubai Run 2026\">Dubai Run</a> closes the same road on foot three weeks later.",
+  },
+
+  {
+    slug: "dubai-run-2026",
+    site: "riviera",
+    image: "/covers/dubai-run-2026.jpg",
+    imageAlt: "A pale road band curving across the top of the frame and a separate ring of small cream blocks below it, on pale blue",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Dubai Run 2026",
+    summary:
+      "Sheikh Zayed Road closes again on Sunday November 22 for the seventh Dubai Run, free to enter with a 10km and a 5km route, starting at 6:30am and finishing by nine.",
+    start: "2026-11-22",
+    startTime: "06:30",
+    endTime: "09:00",
+    utcOffset: "+04:00",
+    venue: "Sheikh Zayed Road and Downtown Dubai",
+    city: "Dubai",
+    country: "United Arab Emirates",
+    organizer: "Dubai Department of Economy and Tourism and Dubai Sports Council",
+    category: "Sport",
+    tickets: { priceFrom: 0, priceTo: 0, currency: "AED" },
+    source: {
+      name: "Dubai Fitness Challenge",
+      url: "https://dubaifitnesschallenge.com/en/dubai-run",
+      verifiedOn: "2026-09-08",
+    },
+    ticket: { url: "https://dubaifitnesschallenge.com/en/dubai-run", label: "Official page" },
+    body: [
+      "Three weeks after the bicycles, the same road closes for people on foot. The organisers call it the world's largest fun run, and the format is the same one that makes it work: free, untimed, and on a road you cannot otherwise walk on.",
+      "## The date and the clock",
+      "<strong>Sunday 22 November 2026.</strong> The start is <strong>6:30am</strong>, the <strong>start line closes at 8:00am</strong>, and the finish is <strong>9:00am</strong>. It is the <strong>seventh edition</strong>.",
+      "## The two routes",
+      "<strong>10km</strong>, starting and finishing on Sheikh Zayed Road, and <strong>5km</strong> through Downtown Dubai along Sheikh Mohammed bin Zayed Boulevard. Both pass the Museum of the Future, Emirates Towers, Dubai Opera and Burj Khalifa.",
+      "## What it costs and what it needs",
+      "<strong>Free to enter, and registration is compulsory.</strong> The organisers say details of how to register will be announced. A <strong>bib is mandatory</strong>: anyone without one will not be allowed to run, which is the rule that makes the registration deadline matter more than the entry fee that does not exist.",
+    ],
+    faq: [
+      {
+        q: "Is Dubai Run free?",
+        a: "Yes. There is <strong>no entry fee</strong>. Registration is still required, and the organisers give safety and security as the reason.",
+      },
+      {
+        q: "What time does Dubai Run 2026 start and finish?",
+        a: "It starts at <strong>6:30am</strong> on 22 November 2026. The <strong>start line closes at 8:00am</strong> and the event finishes at <strong>9:00am</strong>.",
+      },
+      {
+        q: "How long are the Dubai Run routes?",
+        a: "<strong>10km</strong>, out and back on Sheikh Zayed Road, and <strong>5km</strong> through Downtown Dubai on Sheikh Mohammed bin Zayed Boulevard.",
+      },
+      {
+        q: "Can I run Dubai Run without a bib?",
+        a: "No. Bibs are required for safety, and anyone without one will not be allowed to take part \u2014 so registering is the thing that has to happen in advance, not paying.",
+      },
+    ],
+    expertise:
+      "The 8:00am cut-off is the number that actually shapes the morning. It is not a pace requirement, it is a start-line closure: a 10km walk at an easy pace still finishes inside the window if you are through the line early, and does not if you arrive at half past seven. The other thing worth knowing is that the two routes have different characters despite the shared branding \u2014 the 5km through Downtown is enclosed and shaded in patches by the towers, and the 10km on Sheikh Zayed Road is wide, open and completely exposed, which at that hour in November is pleasant and at any other hour would not be.",
   },
 ];

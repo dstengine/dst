@@ -28,6 +28,14 @@ export interface Redirect {
 }
 
 export const redirects: Record<string, Redirect[]> = {
+  nyc42: [
+    {
+      from: "/united-states/",
+      to: "/events/",
+      since: "2026-09-08",
+      why: "Never a real section: the place rule reads country before city, so the three entries that happened to record a country were filed under the site's own place a second time, under the heading \"United states in New York\". The events index is what the page was trying to be.",
+    },
+  ],
   ldn: [
     {
       from: "/art/",

@@ -40,7 +40,7 @@ export function sections(items: FeedItem[]): Section[] {
     items,
     reserved: RESERVED,
     tags: TAGS,
-    home: "New York City",
+    home: ["New York City", "United States"],
     copy: (g) => {
       const what = g.voc.plural ?? g.key.toLowerCase();
       const Title = `${what[0].toUpperCase()}${what.slice(1)}`;

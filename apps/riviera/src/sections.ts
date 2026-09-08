@@ -7,7 +7,10 @@
 // with the guide.
 //
 // No place sections: everything here is Azizi Riviera, so the place rule would
-// produce a page holding the whole site. `home` below is what stops it.
+// produce a page holding the whole site. `home` below is what stops it, and it
+// names both the city and the country because entries carry either field \u2014
+// listing only "Dubai" left the ones with a country asking for a page of
+// their own.
 import { buildSections, type Section, type Vocabulary } from "@dst/content/sections";
 import type { FeedItem } from "@dst/content/sections";
 
@@ -29,7 +32,7 @@ export function sections(items: FeedItem[]): Section[] {
     items,
     reserved: RESERVED,
     tags: TAGS,
-    home: "Dubai",
+    home: ["Dubai", "United Arab Emirates"],
     copy: (g) => {
       const what = g.voc.plural ?? g.key.toLowerCase();
       const Title = `${what[0].toUpperCase()}${what.slice(1)}`;

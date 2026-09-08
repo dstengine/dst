@@ -2716,6 +2716,54 @@
         ]
       ]
     },
+    "/covers/adipec-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/adipec-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/adipec-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/adipec-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/adipec-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/adipec-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/adipec-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/adipec-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/adipec-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/adipec-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/adipec-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/dp-world-names-its-first-methanol-dual-fuel-ship.jpg": {
       "width": 1536,
       "height": 864,
@@ -16709,6 +16757,102 @@
         [
           1536,
           "/covers/dubai-fitness-challenge-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/dubai-ride-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/dubai-ride-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/dubai-ride-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dubai-ride-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/dubai-ride-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/dubai-ride-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dubai-ride-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/dubai-ride-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dubai-ride-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/dubai-ride-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/dubai-ride-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/dubai-run-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/dubai-run-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/dubai-run-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dubai-run-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/dubai-run-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/dubai-run-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dubai-run-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/dubai-run-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dubai-run-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/dubai-run-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/dubai-run-2026-1536.webp"
         ]
       ]
     },

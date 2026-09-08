@@ -109,4 +109,62 @@ export const items: EventItem[] = [
     expertise:
       "Renewable and clean energy is one sector of five here, and that proportion is the honest picture of what an electrical grid is made of. The other four are the reason a solar project either connects or does not: transmission capacity, backup power, demand management and storage. For a portfolio that records small, verifiable work rather than infrastructure, the useful part of a show like this is not the stands — it is that the specifications and the prices are public for three days, which is the only cheap way to find out what a given claim about capacity actually costs.",
   },
+
+  {
+    slug: "adipec-2026",
+    site: "eco",
+    image: "/covers/adipec-2026.jpg",
+    imageAlt: "A row of narrow paper bars of differing heights and three green tones, standing along a cream band on a green ground",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "ADIPEC 2026",
+    summary:
+      "The largest energy event in the region runs 2\u20135 November at ADNEC in Abu Dhabi, with thirteen conference programmes and an exhibition floor the organisers put at more than 2,250 companies.",
+    start: "2026-11-02",
+    end: "2026-11-05",
+    utcOffset: "+04:00",
+    venue: "ADNEC Centre Abu Dhabi",
+    city: "Abu Dhabi",
+    country: "United Arab Emirates",
+    organizer: "dmg events",
+    category: "Exhibition",
+    source: {
+      name: "ADIPEC",
+      url: "https://www.adipec.com/",
+      verifiedOn: "2026-09-08",
+    },
+    ticket: { url: "https://www.adipec.com/attend/", label: "Registration and passes" },
+    body: [
+      "Every other event on this list is about what the energy system should become. ADIPEC is where the industry that currently supplies it turns up in one building for four days, which is a different and more awkward subject.",
+      "## The dates",
+      "<strong>2\u20135 November 2026</strong> at <strong>ADNEC Centre Abu Dhabi</strong>, organised by <strong>dmg events</strong>. Doors are <strong>10:00\u201318:30</strong> from Monday to Wednesday and <strong>10:00\u201317:30</strong> on Thursday.",
+      "## What is in it",
+      "An exhibition and <strong>thirteen conference programmes</strong> running alongside it, with dedicated areas for <strong>AI and digitalisation</strong>, <strong>maritime and logistics</strong> and <strong>low-carbon chemicals</strong> beside the upstream and downstream halls.",
+      "## What it costs",
+      "The exhibition and the conference are priced separately, and only the conference prices are published: a <strong>four-day all-access delegate pass at $7,250</strong>, covering eleven strategic and two technical programmes, delegate lunches and the exhibition halls, or a <strong>four-day technical pass at $2,030</strong> for the SPE and downstream technical programmes. Discounts for SPE members are offered but not listed. Visitor registration for the exhibition is open and carries no published fee.",
+      "## The size of it",
+      "The organisers give <strong>2,250+ exhibitors</strong>, <strong>239,000+ attendees</strong>, <strong>16,500+ conference delegates</strong> and <strong>1,800+ speakers</strong>, across <strong>380+ sessions</strong>.",
+    ],
+    faq: [
+      {
+        q: "When and where is ADIPEC 2026?",
+        a: "<strong>2\u20135 November 2026</strong> at <strong>ADNEC Centre Abu Dhabi</strong>. It opens at 10:00 every day and closes at 18:30 from Monday to Wednesday and 17:30 on Thursday.",
+      },
+      {
+        q: "How much is an ADIPEC delegate pass?",
+        a: "<strong>$7,250</strong> for the four-day all-access pass and <strong>$2,030</strong> for the four-day technical pass. SPE members are told to ask for member pricing rather than given a figure.",
+      },
+      {
+        q: "Do I need a delegate pass to walk the exhibition?",
+        a: "No \u2014 exhibition visitor registration is separate from the conference, and no fee is published for it. The delegate passes include the exhibition halls on top of the conference programmes.",
+      },
+      {
+        q: "Is ADIPEC in Abu Dhabi or Dubai?",
+        a: "<strong>Abu Dhabi</strong>, at ADNEC. It is roughly a ninety-minute drive from Dubai, which is why the week is usually planned as a stay rather than a day trip.",
+      },
+    ],
+    expertise:
+      "The thing worth reading closely is where the new halls are. AI and digitalisation, maritime and logistics, and low-carbon chemicals have their own areas this year, and none of them is an oil-and-gas category \u2014 they are the parts of the business where the spending decisions are still open. The pricing says something too: the technical pass is a quarter the price of the all-access one, so the papers and the engineering sessions are reachable at a cost that the strategic programme is not. For anyone comparing this with the Dubai shows in the same season, the difference is that WETEX and Middle East Energy sell equipment and ADIPEC sells positions \u2014 the exhibition is the smaller half of why people go.",
+  },
 ];

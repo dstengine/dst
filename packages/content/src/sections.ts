@@ -85,8 +85,17 @@ export interface SectionsInput<T extends FeedItem, V extends Vocabulary> {
   places?: Record<string, V>;
   /** Tag vocabulary. A tag absent from here gets none — see rule 3. */
   tags?: Record<string, V>;
-  /** The one place the site is about, which never becomes a section. */
-  home?: string;
+  /**
+   * The place the site is about, which never becomes a section \u2014 and every
+   * other name for that same place. It takes a list because `placeOf`
+   * defaults to `country ?? city`, so one field filled in on some entries
+   * and not others splits a single place under two names: riviera had
+   * three of its six Dubai events also carrying a country, which asked for
+   * a /united-arab-emirates/ page holding half the site under a heading
+   * nobody would search for. A city site that ever records a country needs
+   * both words here.
+   */
+  home?: string | readonly string[];
   /** Which field is the place. Defaults to country, then city. */
   placeOf?: (item: T) => string | undefined;
   minPlace?: number;
@@ -144,6 +153,7 @@ export function buildSections<T extends FeedItem, V extends Vocabulary = Vocabul
     copy,
   } = input;
 
+  const isHome = new Set(typeof home === "string" ? [home] : (home ?? []));
   const taken = new Set(reserved);
   const out: Section<T>[] = [];
 
@@ -157,7 +167,7 @@ export function buildSections<T extends FeedItem, V extends Vocabulary = Vocabul
   };
 
   for (const [key, list] of group(items, placeOf)) {
-    if (key === home || list.length < minPlace) continue;
+    if (isHome.has(key) || list.length < minPlace) continue;
     const voc = (places[key] ?? {}) as V;
     push({
       kind: "place",
