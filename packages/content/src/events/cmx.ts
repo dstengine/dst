@@ -396,7 +396,7 @@ export const items: EventItem[] = [
     slug: "desfile-alebrijes-monumentales-2026",
     site: "cmx",
     image: "/covers/desfile-alebrijes-monumentales-2026.jpg",
-    imageAlt: "Una criatura de papel recortado en rojo y morado, con alas angulosas, cuernos y patas desiguales, sobre fondo crema",
+    imageAlt: "Una criatura imaginaria de papel recortado, con el lomo de placas a rayas magenta y ocre, cuernos en espiral, cola larga y cuatro patas, sobre fondo crema",
     imageKind: "generated",
     imageWidth: 1536,
     imageHeight: 864,

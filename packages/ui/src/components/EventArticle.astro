@@ -147,6 +147,18 @@ const price = (() => {
 // Anything the organiser hasn't published is left out rather than filled
 // with a placeholder — an empty row is worse than a shorter list.
 const glance: { label: string; value: string; icon: string }[] = [
+  // Repeated from the line under the headline on purpose. The table is
+  // what a reader scans when they have already decided to consider the
+  // thing, and the one fact they scan it for — when — was the only one not
+  // in it: they had to look back up past the picture to find the date they
+  // were about to check against a calendar.
+  {
+    label: L.dates,
+    value: item.end
+      ? `${formatDate(item.start, locale)} – ${formatDate(item.end, locale)}`
+      : formatDate(item.start, locale),
+    icon: ICONS.events,
+  },
   item.startTime && {
     label: L.time,
     value: item.endTime ? `${item.startTime} – ${item.endTime}` : L.timeFrom(item.startTime),

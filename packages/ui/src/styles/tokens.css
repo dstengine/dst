@@ -30,6 +30,13 @@
      table headers and glance labels sit. Now 5.09:1 / 4.67:1. */
   --ink-faint: #666B73;
 
+  /* One step past --ink, for the words an article marks as the ones to
+     take away — dates, prices, the rule that decides the visit. Body text
+     stops short of the extreme on purpose (see --ink below in the dark
+     block), and a bold run is a small enough share of the page that it can
+     have the extreme without the page glowing. */
+  --ink-strong: #000000;
+
   /* Semantic (status), separate from any vertical's accent */
   --ok: #2A7A55;
   --ok-bg: #E4F1EA;
@@ -114,6 +121,10 @@
        --surface-sunk but ran 4.24:1 on --surface, where glance labels sit.
        Now 4.9 / 4.79 / 5.34. */
     --ink-faint: #83888F;
+    /* The one near-white on the page, and it is deliberate: --ink stays
+       off it to stop the OLED bloom, and <strong> is the exception because
+       it is a handful of words rather than a paragraph. */
+    --ink-strong: #FFFFFF;
 
     --ok: #7FCBA6;
     --ok-bg: #16261F;
@@ -124,12 +135,12 @@
 
 :root[data-theme="dark"] {
   --bg: #121417; --surface: #191C20; --surface-sunk: #0E1013; --border: #2B2F35;
-  --ink: #DCDFE3; --ink-muted: #9BA1AA; --ink-faint: #83888F;
+  --ink: #DCDFE3; --ink-muted: #9BA1AA; --ink-faint: #83888F; --ink-strong: #FFFFFF;
   --ok: #7FCBA6; --ok-bg: #16261F; --warn: #D9AE6C; --warn-bg: #2C2313;
 }
 :root[data-theme="light"] {
   --bg: #FAF9F6; --surface: #FFFFFF; --surface-sunk: #F1EFEA; --border: #E2DFD7;
-  --ink: #14181F; --ink-muted: #565F6B; --ink-faint: #666B73;
+  --ink: #14181F; --ink-muted: #565F6B; --ink-faint: #666B73; --ink-strong: #000000;
   --ok: #2A7A55; --ok-bg: #E4F1EA; --warn: #8A6222; --warn-bg: #F3E9D6;
 }
 
@@ -221,6 +232,18 @@ p, li { max-width: var(--measure); }
    something different about its own insides. */
 :where(.card, .link-card, .cta-banner, .event-card, .hero-aside,
        nav, footer, dl, table, figcaption, .eyebrow) { --measure: none; }
+
+/* A bold run inside running text carries the fact the paragraph was
+   written for — a date, a price, the one rule that decides the visit — and
+   an article body marks four or five of them. Weight alone was doing all
+   the work of separating them from the sentence around them, which on a
+   dark ground is the least of the two signals: --ink is held back from
+   white on purpose, so bold text sat at exactly the body's brightness.
+   This gives it the step the weight implies. Scoped to running text: a
+   <strong> inside a card, a label or a nav takes that component's colour,
+   because there it is emphasis inside something already set apart. */
+:where(p, li, dd, blockquote, figcaption) strong,
+:where(p, li, dd, blockquote, figcaption) b { color: var(--ink-strong); }
 
 /* Avoids a last line left holding a single word, and keeps the browser
    from making the final line drastically shorter than the rest. Ignored

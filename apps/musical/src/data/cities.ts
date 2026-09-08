@@ -58,6 +58,24 @@ export const cities: City[] = [
     imageSourceSlug: "photo-city-osaka",
   },
   {
+    slug: "london",
+    name: "London",
+    country: "United Kingdom",
+    intro: [
+      "Two of the three longest-running musicals in West End history are still playing here tonight, ten minutes' walk apart. Les Misérables opened in October 1985 and has not stopped; The Phantom of the Opera opened thirteen months later and has not stopped either. Between them they have been on sale in this city for longer than most of the people queueing have been alive.",
+      "Neither is a limited season, which changes how you book. A touring stop gives you five nights and then leaves; these two publish a booking horizon instead — currently March 2027 for both — and extend it. That is the whole reason a London page reads differently from a tour page: the question is not whether you can still get in, it is which evening.",
+    ],
+    featured: true,
+    summary:
+      "London's two open-ended musicals: Les Misérables at the Sondheim Theatre and The Phantom of the Opera at His Majesty's, with the dates, the running times and who actually sells the tickets.",
+    image: "/cities/london.jpg",
+    imageAlt: "The Thames at dusk from Waterloo Bridge, with the City skyline and St Paul's beyond",
+    imageCredit: "David Iliff",
+    imageLicense: "CC BY-SA 3.0",
+    imageLicenseSlug: "licence-cc-by-sa-3-0",
+    imageSourceSlug: "photo-city-london",
+  },
+  {
     slug: "wimbledon",
     name: "Wimbledon",
     country: "United Kingdom",

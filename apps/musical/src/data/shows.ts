@@ -180,4 +180,104 @@ export const shows: Show[] = [
       },
     ],
   },
+  {
+    slug: "les-miserables",
+    title: "Les Misérables",
+    officialSlug: "les-miserables-official",
+    officialDomain: "london.lesmis.com",
+    eyebrow: "The London run, and what a ticket actually buys",
+    hubCard:
+      "Forty-one years in the West End without a break, and it is still selling seats from £25.",
+    checkedOn: "8 September 2026",
+    tagline:
+      "Claude-Michel Schönberg and Alain Boublil set Victor Hugo's 1,400-page novel to music, and London has been playing it since 1985.",
+    summary:
+      "Les Misérables at the Sondheim Theatre in London: the dates, the performance times, the running time, the age guidance and who sells the tickets — with the source for each.",
+    hook: [
+      "The reviews were bad. When the Royal Shakespeare Company opened Les Misérables at the Barbican on 8 October 1985, the critics filed a verdict close to unanimous, and the box office spent the next morning taking the busiest bookings the company had ever seen. The public simply overruled them.",
+      "It moved to the Palace Theatre that December, moved to the Sondheim in 2004, and has not closed once in between — through the bombing anniversary of its own theatre, a rebuilt production in 2019 and a global pandemic. It passed its 14,000th London performance in September 2019, and it is the longest-running musical in the West End.",
+      "Below is the run as it stands: the theatre, the performance schedule, what a seat costs, how long the evening is, and where each of those came from.",
+    ],
+    sections: [
+      {
+        slug: "about",
+        image: "/covers/les-miserables-about.jpg",
+        imageAlt: "Cut-paper illustration: a torn tricolour flag rising from a stack of angular barricade shapes.",
+        label: "About the show",
+        title: "What Les Misérables actually is",
+        description:
+          "A stolen loaf, a policeman who cannot let it go, a barricade that fails, and three hours of it sung. What kind of evening this is.",
+        body: [
+          "A man serves nineteen years for stealing bread, breaks parole, builds a respectable life under a false name, and spends the rest of it being followed by a policeman who believes the law is a moral fact. That is Victor Hugo's 1862 novel, compressed to a single evening and sung almost end to end.",
+          "Music by Claude-Michel Schönberg, original French lyrics by Alain Boublil and Jean-Marc Natel, English lyrics by Herbert Kretzmer. There is barely any spoken dialogue: the score runs continuously, which is why the running time is 2 hours 50 minutes and why the interval falls where it does.",
+          "The barricade at the centre of the second half is not the French Revolution. It is the June Rebellion of 1832 — a two-day Paris insurrection that failed, and whose failure is the point. The show does not let its students win.",
+          "The staging you would see now is not the one that ran for the first thirty-four years. The revolving stage was retired in 2019; Matt Kinley's design puts backdrops based on Hugo's own paintings behind the cast instead, lit by Paule Constable. If you know one song it is \"I Dreamed a Dream\"; the others people leave humming are \"On My Own\", \"Bring Him Home\" and \"One Day More\".",
+        ],
+      },
+      {
+        slug: "tickets",
+        image: "/covers/les-miserables-tickets.jpg",
+        imageAlt: "Cut-paper illustration: a single torn paper stub on a red ground, with a round eyelet punched near one end.",
+        label: "Tickets",
+        title: "Les Misérables tickets in London",
+        description:
+          "One theatre, one official seller, and the performance schedule. Sales happen on the seller's own site.",
+        template: "tickets",
+        body: [
+          "There is one run and one official seller: Delfont Mackintosh Theatres, who own the Sondheim and sell its dates directly. Standard tickets start at £25, and individual performances price separately above that.",
+          "Nothing is sold here. The button lands on the seller's own page, and the price you see there is the price.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "phantom-of-the-opera",
+    title: "The Phantom of the Opera",
+    officialSlug: "phantom-official",
+    officialDomain: "phantomoftheopera.com",
+    eyebrow: "The London run, and what a ticket actually buys",
+    hubCard:
+      "In its fortieth year in the theatre it opened in, ten minutes from the other one.",
+    checkedOn: "8 September 2026",
+    tagline:
+      "Andrew Lloyd Webber's 1986 musical about a composer living under an opera house, still playing in the opera house it opened in.",
+    summary:
+      "The Phantom of the Opera at His Majesty's Theatre in London: the dates, the performance times, the running time, the age guidance and who sells the tickets — with the source for each.",
+    hook: [
+      "The building is the joke nobody planned. His Majesty's Theatre opened as an opera house in 1705, spent a century staging actual opera, and has spent the last forty years staging a musical about a man who lives underneath one. The chandelier that falls every night falls in a room built for exactly this and never expecting it.",
+      "Previews began on 27 September 1986, the production opened on 9 October, and it has not moved since. It is the second-longest-running show in West End history, it has played to 160 million people across 217 cities in 23 languages, and it is now in its fortieth year at the same address.",
+      "Below is the London run as it stands: the theatre, the performance schedule, what a seat costs, how long the evening is, and where each of those came from.",
+    ],
+    sections: [
+      {
+        slug: "about",
+        image: "/covers/phantom-of-the-opera-about.jpg",
+        imageAlt: "Cut-paper illustration: a half-mask shape beside a hanging cluster of faceted glass drops.",
+        label: "About the show",
+        title: "What The Phantom of the Opera actually is",
+        description:
+          "A masked composer, a soprano he decides to make famous, and the most famous falling object in theatre. What kind of evening this is.",
+        body: [
+          "A disfigured musician lives in the cellars of the Paris Opéra, teaches a young chorus singer in secret, and then starts removing everyone standing between her and the leading role. It is a love triangle in which one corner is a threat, and it is played straight — the show never winks.",
+          "Music by Andrew Lloyd Webber, lyrics by Charles Hart with additional lyrics by Richard Stilgoe, from Gaston Leroux's 1910 novel. The score is closer to sung-through than to a numbers musical, and it borrows the language of nineteenth-century opera on purpose: the show-within-the-show has to sound like the real thing for the sabotage to land.",
+          "What a ticket buys is scale and craft. Maria Björnson's design and Hal Prince's staging have been kept, restored and updated rather than replaced; Gillian Lynne's choreography is still the movement in it. The chandelier is the moment everybody knows, and it works because it belongs to the plot rather than to the budget.",
+          "If you know one song it is the title number. The others people leave humming are \"The Music of the Night\", \"All I Ask of You\" and \"Masquerade\", which puts almost the whole company on the stairs at once.",
+        ],
+      },
+      {
+        slug: "tickets",
+        image: "/covers/phantom-of-the-opera-tickets.jpg",
+        imageAlt: "Cut-paper illustration: a single torn paper stub on a warm ground, notched at one end and perforated at the other.",
+        label: "Tickets",
+        title: "Phantom of the Opera tickets in London",
+        description:
+          "One theatre, one official seller, day seats, and the performance schedule. Sales happen on the seller's own site.",
+        template: "tickets",
+        body: [
+          "There is one run and one official seller: LW Theatres, who own His Majesty's and sell its dates directly with no booking fee. Tickets start at £25, and a limited number of day seats from £37.50 go online at 10am for that day's performances.",
+          "Nothing is sold here. The button lands on the seller's own page, and the price you see there is the price.",
+        ],
+      },
+    ],
+  },
 ];

@@ -38,6 +38,8 @@ export interface ArticleLabels {
   addToCalendarTitle: (title: string) => string;
 
   // Glance rows
+  /** Over the run of dates, repeated in the table from the line above it. */
+  dates: string;
   time: string;
   /** "From 19:00" when only a start time is published. */
   timeFrom: (start: string) => string;
@@ -118,6 +120,7 @@ export const EN: ArticleLabels = {
   addToCalendar: "Add to calendar",
   addToCalendarTitle: (title) => `Add ${title} to your calendar`,
 
+  dates: "Dates",
   time: "Time",
   timeFrom: (start) => `From ${start}`,
   duration: "Duration",
@@ -193,6 +196,7 @@ export const ES: Partial<ArticleLabels> = {
   addToCalendar: "Agregar al calendario",
   addToCalendarTitle: (title) => `Agregar ${title} a tu calendario`,
 
+  dates: "Fechas",
   time: "Horario",
   timeFrom: (start) => `Desde las ${start}`,
   duration: "Duración",
@@ -258,6 +262,7 @@ export const DE: Partial<ArticleLabels> = {
   addToCalendar: "Zum Kalender hinzufügen",
   addToCalendarTitle: (title) => `${title} zum Kalender hinzufügen`,
 
+  dates: "Termine",
   time: "Uhrzeit",
   timeFrom: (start) => `Ab ${start}`,
   duration: "Dauer",

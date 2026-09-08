@@ -12,6 +12,95 @@ import type { Run } from "./types";
 
 export const runs: Run[] = [
   {
+    slug: "london",
+    show: "les-miserables",
+    city: "london",
+    venue: "sondheim-theatre",
+    start: "1985-10-08",
+    openRun: true,
+    sellers: [
+      {
+        slug: "tickets-les-miserables-london",
+        name: "Delfont Mackintosh Theatres",
+        official: true,
+        price: {
+          from: 25,
+          currency: "GBP",
+          checkedOn: "2026-09-08",
+          note: "the standard bottom of the range; individual performances price separately",
+        },
+      },
+    ],
+    summary:
+      "The run opened at the Barbican on 8 October 1985, moved to the Palace Theatre that December, moved again to this theatre in 2004, and has never closed. Tickets are on sale to 13 March 2027 and the date moves forward as it approaches — there is no announced ending to book ahead of.",
+    runningTime: "2 hours 50 minutes, including a 15-minute interval",
+    language: "English",
+    ageGuidance:
+      "Recommended 7+. Nobody under 3 is admitted, everyone needs their own ticket, and under-16s must sit next to a ticketholder aged 18 or over.",
+    faq: [
+      {
+        q: "What are the performance times?",
+        a: "Evenings at 7.30pm Monday to Saturday, with matinees at 2.30pm on Thursday and Saturday. There are no Sunday performances.",
+      },
+      {
+        q: "How far ahead can I book?",
+        a: "To 13 March 2027, as the production's own ticket page had it on 8 September 2026. The show is open-ended, so that horizon is extended rather than reached.",
+      },
+      {
+        q: "Is there anything in it I should know about first?",
+        a: "The production uses gunfire, smoke and flashing light effects, and latecomers may not be let in until a suitable break.",
+      },
+    ],
+    tags: ["west-end", "open-run"],
+  },
+  {
+    slug: "london",
+    show: "phantom-of-the-opera",
+    city: "london",
+    venue: "his-majestys-theatre",
+    start: "1986-10-09",
+    openRun: true,
+    sellers: [
+      {
+        slug: "tickets-phantom-london",
+        name: "LW Theatres",
+        official: true,
+        price: {
+          from: 25,
+          currency: "GBP",
+          checkedOn: "2026-09-08",
+          note: "no booking fee when booking direct with the theatre",
+          tiers: [
+            { name: "Day seats", from: 37.5, note: "released online at 10am for that day's performances" },
+            { name: "Luxury Experience", from: 72.5, note: "per person" },
+            { name: "Chandelier Experience", from: 135, note: "per person" },
+          ],
+        },
+      },
+    ],
+    summary:
+      "Previews began on 27 September 1986 and the production opened on 9 October, in the theatre it has never left. It is now in its fortieth year at His Majesty's and is the second-longest-running show in West End history. Tickets are on sale to March 2027, with the horizon pushed forward rather than closed.",
+    runningTime: "2 hours 30 minutes, including a 20-minute interval",
+    language: "English",
+    ageGuidance:
+      "No children under 4 are admitted, and every child needs their own seat and must be able to sit in it unaided. Under-16s must be accompanied by an adult.",
+    faq: [
+      {
+        q: "What are the performance times?",
+        a: "Evenings at 7.30pm Monday to Saturday, with matinees at 2.30pm on Wednesday and Saturday. There are no Sunday performances.",
+      },
+      {
+        q: "Are there cheaper seats on the day?",
+        a: "A limited number of day seats from £37.50 are released online at 10am for that day's performances, and are sold online only.",
+      },
+      {
+        q: "Is there anything in it I should know about first?",
+        a: "The production uses loud sounds, gunshots, flashing lights, haze, fire and pyrotechnics, and depicts violence and death at certain points.",
+      },
+    ],
+    tags: ["west-end", "open-run"],
+  },
+  {
     slug: "new-york",
     show: "chicago",
     city: "new-york",
@@ -19,10 +108,45 @@ export const runs: Run[] = [
     start: "1996-11-14",
     openRun: true,
     sellers: [
-      { slug: "tickets-chicago-new-york", name: "Telecharge", official: true },
+      {
+        slug: "tickets-chicago-new-york",
+        name: "Telecharge",
+        official: true,
+        price: {
+          from: 74.5,
+          to: 499,
+          currency: "USD",
+          checkedOn: "2026-09-08",
+          note: "the range Telecharge's own price filter spans across all performances",
+          tiers: [
+            {
+              name: "VIP",
+              note: "eighth-row seating with a cast meet-and-greet and photograph, 3 August to 22 November 2026",
+            },
+          ],
+        },
+      },
     ],
     summary:
-      "The revival opened on 14 November 1996 and has not closed since. It moved into the Ambassador in January 2003 and stayed, and no closing date has ever been announced — this is the one run on this site you cannot miss by booking late.",
+      "The revival's first preview was on 23 October 1996 and it opened on 14 November. It has not closed since. It moved into the Ambassador in January 2003 and stayed, and no closing date has ever been announced — this is the one run on this site you cannot miss by booking late. Seats are on sale through 28 March 2027, a horizon that keeps moving.",
+    runningTime: "2 hours 30 minutes, including a 15-minute intermission",
+    language: "English",
+    ageGuidance:
+      "Recommended for ages 13 and up. No children under 4 are admitted.",
+    faq: [
+      {
+        q: "What are the performance times?",
+        a: "Evenings at 7pm on Monday, Tuesday and Thursday and at 8pm on Friday and Saturday, with matinees at 2.30pm on Saturday and 2pm on Sunday, which also plays at 7pm. The theatre is dark on Wednesdays.",
+      },
+      {
+        q: "How far ahead can I book?",
+        a: "Through 28 March 2027, as Telecharge had it on 8 September 2026. The run is open-ended, so that date is extended rather than reached.",
+      },
+      {
+        q: "Is there anything in it I should know about first?",
+        a: "There is smoking on stage, and no children under 4 are admitted.",
+      },
+    ],
     tags: ["broadway", "open-run"],
   },
   {
@@ -34,10 +158,32 @@ export const runs: Run[] = [
     start: "2026-12-16",
     end: "2026-12-20",
     sellers: [
+      {
+        slug: "tickets-chicago-dubai-arena",
+        name: "Coca-Cola Arena",
+        official: true,
+        covers: "the venue's own box office, with payment by instalments through Tabby",
+      },
       { slug: "tickets-chicago-dubai-ticketmaster", name: "Ticketmaster AE" },
     ],
     summary:
-      "Eight performances over five days in December, in a room that holds seventeen thousand people. Chicago was built for a Broadway house a tenth that size, which is the whole reason to see what it does with an arena. The first two days are matinees only; the last three add an evening.",
+      "The first Broadway theatrical production ever staged at Coca-Cola Arena, brought in by Marquee Global Events: eight performances over five days in December, in a room that holds seventeen thousand people. Chicago was built for a Broadway house a tenth that size, which is the whole reason to see what it does with an arena. The first two days are matinees only; the last three add an evening.",
+    ageGuidance:
+      "12+ only. Everyone over 12 needs their own ticket, and anyone under 16 must be with a parent or an adult aged 18 or over. Government-issued photo ID may be asked for at the door.",
+    faq: [
+      {
+        q: "What are the performance times?",
+        a: "3pm on Wednesday 16 and Thursday 17 December, then 3pm and 8pm on the 18th, 19th and 20th — eight performances in all.",
+      },
+      {
+        q: "Who is actually selling this?",
+        a: "Two sellers at once: the arena's own box office, which also takes payment in instalments through Tabby, and Ticketmaster AE. Tickets went on sale on 19 June 2026.",
+      },
+      {
+        q: "When do the tickets arrive?",
+        a: "The arena sends e-tickets five days before the performance, not at the moment of booking.",
+      },
+    ],
     tags: ["arena", "gulf"],
   },
   {

@@ -51,6 +51,87 @@ export const venues: Venue[] = [
     ],
   },
   {
+    slug: "sondheim-theatre",
+    name: "Sondheim Theatre",
+    city: "london",
+    image: "/venues/sondheim-theatre.jpg",
+    imageAlt:
+      "The corner front of the Sondheim Theatre on Shaftesbury Avenue on a wet afternoon, its whole upper storey hung with Les Misérables artwork.",
+    imagePosition: "center 35%",
+    imageCredit: "Ji-Elle",
+    imageLicense: "CC BY-SA 4.0",
+    imageLicenseSlug: "licence-cc-by-sa-4-0",
+    imageSourceSlug: "photo-sondheim-theatre",
+    address: "51 Shaftesbury Avenue, London W1D 6BA",
+    lat: 51.5120287,
+    lon: -0.1328534,
+    opened: "8 October 1907",
+    owner: "Delfont Mackintosh Theatres",
+    officialSlug: "venue-sondheim-theatre",
+    summary:
+      "Half of a matched pair on Shaftesbury Avenue: W. G. R. Sprague drew this and the Gielgud next door as one composition in 1907, and for its first century this was the Queen's. It has been the Sondheim since 2019, and Les Misérables has been the tenant since 2004.",
+    transit:
+      "Piccadilly Circus is the nearest tube; Charing Cross is the nearest railway station, and the 14, 19 and 38 stop on Shaftesbury Avenue.",
+    details: [
+      { label: "Opened", value: "8 October 1907, as the Queen's Theatre" },
+      { label: "Architect", value: "W. G. R. Sprague" },
+      { label: "Renamed", value: "Sondheim Theatre, 2019" },
+      { label: "Owner", value: "Delfont Mackintosh Theatres" },
+      { label: "Neighbourhood", value: "Shaftesbury Avenue, Soho" },
+    ],
+    sections: [
+      {
+        heading: "The building",
+        paragraphs: [
+          "Sprague designed it as a pair with the theatre on the adjoining corner — now the Gielgud — and opened it on 8 October 1907 with a comedy called The Sugar Bowl. For its first fifty years it was a straight-play house: the Old Vic's Hamlet transferred here in 1930 and gave John Gielgud his first Shaftesbury Avenue Hamlet, and Robert Morley's first play brought Marie Tempest, Sybil Thorndike, Margaret Rutherford and Rex Harrison onto one bill in 1935.",
+          "On 24 September 1940 it became the first West End theatre put out of action by bombing, which ended a successful run of Rebecca overnight. It stayed shut for nineteen years. Westwood Sons & Partners rebuilt it for £250,000 with Sir Hugh Casson advising on the décor, and it reopened on 8 July 1959 with Gielgud's Shakespeare recital Ages of Man — the same actor, in the same room, three decades on.",
+          "Les Misérables moved in from the Palace Theatre in 2004 and has stayed. The theatre closed for a major refurbishment in 2019 and reopened as the Sondheim, named for Stephen Sondheim's ninetieth birthday, with the restaged production that plays there now.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "his-majestys-theatre",
+    name: "His Majesty's Theatre",
+    city: "london",
+    image: "/venues/his-majestys-theatre.jpg",
+    imageAlt:
+      "The stone front of His Majesty's Theatre on the Haymarket in sunlight, its domed roof above four storeys of columns and balconies.",
+    imageCredit: "AirshipJungleman29",
+    imageLicense: "CC BY-SA 4.0",
+    imageLicenseSlug: "licence-cc-by-sa-4-0",
+    imageSourceSlug: "photo-his-majestys-theatre",
+    address: "72–78 Haymarket, London SW1Y 4QL",
+    lat: 51.5081195,
+    lon: -0.132013,
+    capacity: 1216,
+    opened: "1897",
+    owner: "LW Theatres",
+    officialSlug: "venue-his-majestys-theatre",
+    summary:
+      "There has been a theatre on this corner of the Haymarket since 1705, and it began as an opera house. The present building went up in 1897, and The Phantom of the Opera has been in it since 1986 — an opera house that ended up housing a musical about one.",
+    transit:
+      "Piccadilly Circus on the Bakerloo and Piccadilly lines is closest; Leicester Square, Charing Cross and Embankment are all within a few minutes' walk.",
+    details: [
+      { label: "First theatre on the site", value: "1705, as the Queen's" },
+      { label: "Present building", value: "Opened 1897" },
+      { label: "Built for", value: "Herbert Beerbohm Tree" },
+      { label: "Capacity", value: "Approximately 1,216" },
+      { label: "Renamed", value: "His Majesty's, 2023" },
+      { label: "Owner", value: "LW Theatres" },
+    ],
+    sections: [
+      {
+        heading: "The building",
+        paragraphs: [
+          "The first house here opened in 1705 with Queen Anne's permission, under the management of the architect and playwright John Vanbrugh, and it was built for opera. It kept that job for most of a century: Handel's operas, London premieres sung in Italian, singers whose names filled the Haymarket.",
+          "The present building is the fourth, put up in 1897 by the actor-manager Herbert Beerbohm Tree to house his own Shakespeare and his adaptations of novels. It has been renamed with each change of monarch — most recently in 2023, for the coronation of King Charles III — which is why a forty-year-old production has played it under two names.",
+          "The auditorium seats about 1,216. The Phantom of the Opera opened here on 9 October 1986 and is the second-longest-running production the West End has ever had, which leaves the room doing roughly what it was built for: an opera house, with an opera house on stage.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "coca-cola-arena",
     name: "Coca-Cola Arena",
     rootSlug: "coca-cola-arena",

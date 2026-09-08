@@ -10,6 +10,15 @@
 // key because a run slug is only unique inside its show: Cats and Chicago
 // both play Plymouth, and they are not sold by the same page.
 export const outbound: Record<string, string> = {
+  "les-miserables-official": "https://london.lesmis.com/",
+  "phantom-official": "https://www.phantomoftheopera.com/london",
+  "tickets-les-miserables-london": "https://london.lesmis.com/ticket-information/",
+  "tickets-phantom-london": "https://lwtheatres.co.uk/whats-on/the-phantom-of-the-opera/",
+  "venue-sondheim-theatre": "https://www.delfontmackintosh.co.uk/theatres/sondheim-theatre/",
+  "venue-his-majestys-theatre": "https://lwtheatres.co.uk/theatres/his-majestys/",
+  "photo-city-london": "https://commons.wikimedia.org/wiki/File:London_Skyline_from_Waterloo_Bridge,_London,_UK_-_Diliff.jpg",
+  "photo-sondheim-theatre": "https://commons.wikimedia.org/wiki/File:London-Sondheim_Theatre_in_2023.jpg",
+  "photo-his-majestys-theatre": "https://commons.wikimedia.org/wiki/File:His_Majesty%E2%80%99s_Theatre_London_August_2023.jpg",
   "chicago-official": "https://chicagothemusical.com/",
   "chicago-uk-tour": "https://chicagothemusical.com/uk-tour/",
   "chicago-international": "https://chicagothemusical.com/international/",
@@ -17,6 +26,7 @@ export const outbound: Record<string, string> = {
     "https://www.telecharge.com/Chicago-tickets?AID=BWY0049300&utm_source=show_site&utm_campaign=chicagoSS&utm_medium=web&utm_id=BWY0049300",
   "tickets-chicago-tokyo": "https://www.kyodotokyo.com/chicago-en/",
   "tickets-chicago-osaka": "https://eplus.jp/sf/detail/0227890001?P6=001&P1=0402&P59=1",
+  "tickets-chicago-dubai-arena": "https://coca-cola-arena.com/theater/1894/chicago-the-musical",
   "tickets-chicago-dubai-ticketmaster":
     "https://www.ticketmaster.ae/artist/chicago-the-musical-tickets/1443524",
   "venue-coca-cola-arena": "https://coca-cola-arena.com/",

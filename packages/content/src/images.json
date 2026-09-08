@@ -10128,6 +10128,54 @@
         ]
       ]
     },
+    "/cities/london.jpg": {
+      "width": 1920,
+      "height": 944,
+      "avif": [
+        [
+          480,
+          "/cities/london-480.avif"
+        ],
+        [
+          768,
+          "/cities/london-768.avif"
+        ],
+        [
+          1024,
+          "/cities/london-1024.avif"
+        ],
+        [
+          1440,
+          "/cities/london-1440.avif"
+        ],
+        [
+          1920,
+          "/cities/london-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/cities/london-480.webp"
+        ],
+        [
+          768,
+          "/cities/london-768.webp"
+        ],
+        [
+          1024,
+          "/cities/london-1024.webp"
+        ],
+        [
+          1440,
+          "/cities/london-1440.webp"
+        ],
+        [
+          1920,
+          "/cities/london-1920.webp"
+        ]
+      ]
+    },
     "/cities/manchester.jpg": {
       "width": 1920,
       "height": 1080,
@@ -11656,6 +11704,102 @@
         ]
       ]
     },
+    "/covers/les-miserables-about.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/les-miserables-about-480.avif"
+        ],
+        [
+          768,
+          "/covers/les-miserables-about-768.avif"
+        ],
+        [
+          1024,
+          "/covers/les-miserables-about-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/les-miserables-about-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/les-miserables-about-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/les-miserables-about-480.webp"
+        ],
+        [
+          768,
+          "/covers/les-miserables-about-768.webp"
+        ],
+        [
+          1024,
+          "/covers/les-miserables-about-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/les-miserables-about-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/les-miserables-about-1536.webp"
+        ]
+      ]
+    },
+    "/covers/les-miserables-tickets.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/les-miserables-tickets-480.avif"
+        ],
+        [
+          768,
+          "/covers/les-miserables-tickets-768.avif"
+        ],
+        [
+          1024,
+          "/covers/les-miserables-tickets-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/les-miserables-tickets-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/les-miserables-tickets-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/les-miserables-tickets-480.webp"
+        ],
+        [
+          768,
+          "/covers/les-miserables-tickets-768.webp"
+        ],
+        [
+          1024,
+          "/covers/les-miserables-tickets-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/les-miserables-tickets-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/les-miserables-tickets-1536.webp"
+        ]
+      ]
+    },
     "/covers/online.jpg": {
       "width": 1536,
       "height": 864,
@@ -11701,6 +11845,102 @@
         [
           1536,
           "/covers/online-1536.webp"
+        ]
+      ]
+    },
+    "/covers/phantom-of-the-opera-about.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/phantom-of-the-opera-about-480.avif"
+        ],
+        [
+          768,
+          "/covers/phantom-of-the-opera-about-768.avif"
+        ],
+        [
+          1024,
+          "/covers/phantom-of-the-opera-about-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/phantom-of-the-opera-about-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/phantom-of-the-opera-about-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/phantom-of-the-opera-about-480.webp"
+        ],
+        [
+          768,
+          "/covers/phantom-of-the-opera-about-768.webp"
+        ],
+        [
+          1024,
+          "/covers/phantom-of-the-opera-about-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/phantom-of-the-opera-about-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/phantom-of-the-opera-about-1536.webp"
+        ]
+      ]
+    },
+    "/covers/phantom-of-the-opera-tickets.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/phantom-of-the-opera-tickets-480.avif"
+        ],
+        [
+          768,
+          "/covers/phantom-of-the-opera-tickets-768.avif"
+        ],
+        [
+          1024,
+          "/covers/phantom-of-the-opera-tickets-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/phantom-of-the-opera-tickets-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/phantom-of-the-opera-tickets-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/phantom-of-the-opera-tickets-480.webp"
+        ],
+        [
+          768,
+          "/covers/phantom-of-the-opera-tickets-768.webp"
+        ],
+        [
+          1024,
+          "/covers/phantom-of-the-opera-tickets-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/phantom-of-the-opera-tickets-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/phantom-of-the-opera-tickets-1536.webp"
         ]
       ]
     },
@@ -12536,6 +12776,54 @@
         ]
       ]
     },
+    "/venues/his-majestys-theatre.jpg": {
+      "width": 1920,
+      "height": 1982,
+      "avif": [
+        [
+          480,
+          "/venues/his-majestys-theatre-480.avif"
+        ],
+        [
+          768,
+          "/venues/his-majestys-theatre-768.avif"
+        ],
+        [
+          1024,
+          "/venues/his-majestys-theatre-1024.avif"
+        ],
+        [
+          1440,
+          "/venues/his-majestys-theatre-1440.avif"
+        ],
+        [
+          1920,
+          "/venues/his-majestys-theatre-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/his-majestys-theatre-480.webp"
+        ],
+        [
+          768,
+          "/venues/his-majestys-theatre-768.webp"
+        ],
+        [
+          1024,
+          "/venues/his-majestys-theatre-1024.webp"
+        ],
+        [
+          1440,
+          "/venues/his-majestys-theatre-1440.webp"
+        ],
+        [
+          1920,
+          "/venues/his-majestys-theatre-1920.webp"
+        ]
+      ]
+    },
     "/venues/hull-new-theatre.jpg": {
       "width": 1200,
       "height": 799,
@@ -13261,6 +13549,54 @@
         [
           1920,
           "/venues/sheffield-lyceum-1920.webp"
+        ]
+      ]
+    },
+    "/venues/sondheim-theatre.jpg": {
+      "width": 1920,
+      "height": 2845,
+      "avif": [
+        [
+          480,
+          "/venues/sondheim-theatre-480.avif"
+        ],
+        [
+          768,
+          "/venues/sondheim-theatre-768.avif"
+        ],
+        [
+          1024,
+          "/venues/sondheim-theatre-1024.avif"
+        ],
+        [
+          1440,
+          "/venues/sondheim-theatre-1440.avif"
+        ],
+        [
+          1920,
+          "/venues/sondheim-theatre-1920.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/venues/sondheim-theatre-480.webp"
+        ],
+        [
+          768,
+          "/venues/sondheim-theatre-768.webp"
+        ],
+        [
+          1024,
+          "/venues/sondheim-theatre-1024.webp"
+        ],
+        [
+          1440,
+          "/venues/sondheim-theatre-1440.webp"
+        ],
+        [
+          1920,
+          "/venues/sondheim-theatre-1920.webp"
         ]
       ]
     },
