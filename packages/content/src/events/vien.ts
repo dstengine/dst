@@ -87,7 +87,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Vienna Coffee Festival 2026",
     summary:
-      "Über hundert Röstereien und Spezialitäten-Aussteller drei Tage lang in der Marx Halle, von 11. bis 13. September, mit Workshops, Cuppings und einem eigenen B2B-Tag.",
+      "Über hundert Röstereien und Spezialitäten-Aussteller drei Tage lang in der Wiener Marx Halle, von 11. bis 13. September, mit Workshops, Cuppings und einem eigenen B2B-Tag.",
     start: "2026-09-11",
     end: "2026-09-13",
     utcOffset: "+02:00",

@@ -340,7 +340,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Nayarit en Los Pinos 2026",
     summary:
-      "Dos días de cocina, artesanía y música de Nayarit en el Complejo Cultural Los Pinos, el 12 y 13 de septiembre, de 10:00 a 17:00 y con entrada libre.",
+      "Dos días de cocina, artesanía y música de Nayarit en el Complejo Cultural Los Pinos, en la Ciudad de México, el 12 y 13 de septiembre, de 10:00 a 17:00 y con entrada libre.",
     start: "2026-09-12",
     end: "2026-09-13",
     startTime: "10:00",

@@ -560,7 +560,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Brooklyn Book Festival 2026",
     summary:
-      "Nine days of Bookend events across Brooklyn from September 20, Children's Day on the 26th, and Festival Day on Sunday the 27th — eight stages around Borough Hall, free.",
+      "Nine days of Bookend events across Brooklyn from September 20, Children's Day on the 26th, and Festival Day on Sunday the 27th — eight stages around Borough Hall in New York, free.",
     start: "2026-09-20",
     end: "2026-09-28",
     utcOffset: "-04:00",

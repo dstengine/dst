@@ -161,7 +161,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Fiestas de Octubre 2026",
     summary:
-      "Un mes completo de feria en Zapopan, del 2 de octubre al 1 de noviembre: Foro Principal con conciertos incluidos en la entrada general y Palenque con boleto aparte.",
+      "Un mes completo de feria en Zapopan, en el occidente de México, del 2 de octubre al 1 de noviembre: Foro Principal con conciertos incluidos en la entrada general y Palenque con boleto aparte.",
     start: "2026-10-02",
     end: "2026-11-01",
     utcOffset: "-06:00",

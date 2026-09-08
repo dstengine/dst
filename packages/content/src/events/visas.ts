@@ -49,7 +49,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Citizenship Expo Abu Dhabi 2026",
     summary:
-      "Fifty-plus programmes from more than twenty countries under one roof at ADNEC on 10–12 November 2026, with one-to-one meetings rather than a stage. A rare chance to compare routes side by side.",
+      "Fifty-plus programmes from more than twenty countries under one roof at ADNEC in Abu Dhabi, 10–12 November 2026: three days in the UAE to compare residency and citizenship routes side by side, in one-to-one meetings rather than from a stage.",
     start: "2026-11-10",
     end: "2026-11-12",
     utcOffset: "+04:00",

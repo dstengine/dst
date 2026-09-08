@@ -495,7 +495,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Diwali on the Square 2026",
     summary:
-      "Trafalgar Square gives over a Sunday afternoon to Diwali on 25 October, free, from 1pm to 7pm, opening with two hundred dancers.",
+      "London's Trafalgar Square gives over a Sunday afternoon to Diwali on 25 October, free, from 1pm to 7pm, opening with two hundred dancers.",
     start: "2026-10-25",
     startTime: "13:00",
     endTime: "19:00",

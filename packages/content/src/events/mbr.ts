@@ -48,7 +48,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Dubai Racing Carnival 2026/27",
     summary:
-      "Sixteen race meetings at Meydan from 6 November, general admission from AED 10, and stable tours from October. The district's own venue, open to the public for five months.",
+      "Sixteen race meetings at Meydan from 6 November, general admission from AED 10, and stable tours from October. Meydan is MBR City's own racecourse, open to the public for five months.",
     start: "2026-11-06",
     end: "2027-03-12",
     utcOffset: "+04:00",
