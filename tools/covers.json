@@ -1,21 +1,21 @@
 {
   "palettes": {
-    "nyc42": "deep charcoal brown ground with warm amber and ochre paper, small cream highlights",
-    "ldn": "warm off-white ground with pillar-box red and deep charcoal paper",
-    "lnd": "deep navy blue ground with pale blue and chalk white paper, one small red accent",
-    "cmx": "warm cream ground with magenta and deep plum paper, small gold highlights",
-    "mxo": "deep forest green ground with terracotta and warm cream paper",
-    "dst": "deep slate blue ground with pale grey-blue and warm cream paper, one small brass accent",
-    "fwf": "deep indigo ground with periwinkle and pale lilac paper, small cream highlights",
-    "eco": "deep forest green ground with sage and moss paper, warm cream highlights",
-    "llc": "deep teal-green ground with pale jade and warm cream paper, one small brass accent",
-    "mbr": "deep teal ground with pale aqua and chalk white paper, small sand highlights",
-    "palmcentral": "warm sand ground with terracotta and burnt orange paper, small cream highlights",
-    "riviera": "clear mid-blue ground with pale sky and chalk white paper, small sand highlights",
-    "visas": "warm sand ground with tobacco brown and ochre paper, small cream highlights",
-    "musical": "warm cream ground with crimson and deep burgundy paper, small brass highlights",
-    "sol2go": "deep violet ground with lilac and pale mint paper, small cream highlights",
-    "vien": "warm cream ground with deep vermilion red and moss green paper, small gold highlights"
+    "nyc42": "deep charcoal brown ground with warm amber and ochre, small cream highlights",
+    "ldn": "warm off-white ground with pillar-box red and deep charcoal",
+    "lnd": "deep navy blue ground with pale blue and chalk white, one small red accent",
+    "cmx": "warm cream ground with magenta and deep plum, small gold highlights",
+    "mxo": "deep forest green ground with terracotta and warm cream",
+    "dst": "deep slate blue ground with pale grey-blue and warm cream, one small brass accent",
+    "fwf": "deep indigo ground with periwinkle and pale lilac, small cream highlights",
+    "eco": "deep forest green ground with sage and moss, warm cream highlights",
+    "llc": "deep teal-green ground with pale jade and warm cream, one small brass accent",
+    "mbr": "deep teal ground with pale aqua and chalk white, small sand highlights",
+    "palmcentral": "warm sand ground with terracotta and burnt orange, small cream highlights",
+    "riviera": "clear mid-blue ground with pale sky and chalk white, small sand highlights",
+    "visas": "warm sand ground with tobacco brown and ochre, small cream highlights",
+    "musical": "warm cream ground with crimson and deep burgundy, small brass highlights",
+    "sol2go": "deep violet ground with lilac and pale mint, small cream highlights",
+    "vien": "warm cream ground with deep vermilion red and moss green, small gold highlights"
   },
   "covers": {
     "nyc42": {

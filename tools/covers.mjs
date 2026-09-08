@@ -48,12 +48,15 @@
 // day. The reservation happens before the request, not after: a total added
 // up at the end tells you what you already spent.
 //
-// The pictures are deliberately abstract. A generated image that looked
-// like reportage of a real event would be a lie no caption could undo, so
-// none of them depicts its event: each carries the subject as flat shapes.
-// The figure tier is the deliberate exception, and it stays on the right
-// side of that line by being plainly a cartoon — a caricature does not
-// claim to be a photograph of a night that has not happened yet.
+// None of the pictures depicts its event. What holds that line is the
+// idiom, not the abstraction: a generated image that read as reportage
+// would be a lie no caption could undo, and a linocut cannot be mistaken
+// for a photograph whatever it shows. So the subject may be named outright
+// — the cover names the thing the piece is about and leaves the conclusion
+// to the text. Covers were abstract for a year because the idiom's job had
+// been given to the subject as well, which cost thirteen wasted
+// generations on one batch of five: schnell cannot count objects and
+// cannot draw a relation between them, and it never had to.
 // That is also why items set imageKind "generated", which ImageNote prints
 // no label for — how a picture was made is our business, not a caption.
 //
@@ -85,27 +88,78 @@ const ONLY = new Set(process.argv.slice(2).filter((a) => !a.startsWith("--")));
 const REPO = new URL("..", import.meta.url).pathname.replace(/\/$/, "");
 const PROMPTS = JSON.parse(fs.readFileSync(path.join(REPO, "tools/covers.json"), "utf8"));
 
-/** One house style, so a grid of cards reads as a set. The negatives are
-    load-bearing: flux writes garbled lettering into anything that looks
-    like a poster or a book unless told not to, and a stray caption is the
-    one artefact a reader will notice. */
-const STYLE =
-  "flat cut-paper collage illustration, layered matte paper with visible fibre grain, " +
-  "bold simple geometric shapes, screen-printed editorial poster, soft directional shadow, " +
-  "generous negative space, no text, no letters, no numbers, no writing, no signage, " +
-  "no picture frame border, no people, no faces, no logos";
+/** The negatives that are load-bearing, and only those.
+ *
+ *  Words are out for two reasons that have nothing to do with rendering:
+ *  an invented word on a cover is an invented fact, and an invented mark
+ *  can be read as some real organisation's. Numerals are neither, so they
+ *  are allowed — the garbled figures that put `no numbers` in here for a
+ *  year turned out to be schnell at four steps, not numerals: on the lead
+ *  tier the same dial came back with a clean 1 to 12. Ask for them at the
+ *  standard tier and check the picture, or send the entry to lead.
+ *
+ *  Signage came out for a different reason: every cover is looked at before
+ *  its imageAlt can be written, so a stray shopfront is caught by the eye
+ *  that has to describe the picture anyway. A negation earns its place by
+ *  catching what inspection would miss, and each one it does not spends
+ *  attention the subject could have had — element-level negations have
+ *  already been seen to summon the thing they forbid. */
+const NEGATIVES =
+  "no words, no letters, no writing, no picture frame border, no logos";
 
-/** The house style with the two negatives that forbid people lifted, and
-    caricature asked for outright, for the figure tier only. Everything else
-    is held: the same paper, the same negatives against lettering, and one
-    more against the signature flux likes to scrawl in a corner. */
+/** How the picture is drawn. This, not the subject, is what keeps a cover
+ *  honest: a generated image that read as reportage of a real event would
+ *  be a lie no caption could undo, and every idiom here is plainly a
+ *  drawing. The subject can therefore be named outright — a stopwatch may
+ *  be a stopwatch.
+ *
+ *  What does not work is naming a MATERIAL over an object that has one of
+ *  its own. "A sample vial cut from paper" asks the model to settle paper
+ *  against glass, and glass wins: the probe came back a photograph of a
+ *  bottle. An idiom is a claim about the drawing, not about the thing, so
+ *  there is nothing for the object to contradict. */
+const IDIOMS = {
+  paper:
+    "flat cut-paper collage illustration, layered matte paper with visible fibre grain, " +
+    "bold simple geometric shapes, screen-printed editorial poster, soft directional shadow",
+  lino:
+    "bold hand-carved linocut print, visible gouge marks and uneven ink texture, " +
+    "two flat ink colours, hand-printed edges",
+  // Riso brings its own two inks and overrides the site palette — a slate
+  // blue brief came back teal and yellow. Give it to a site whose colours
+  // you are willing to lose, or not at all.
+  riso:
+    "two-colour risograph print, coarse halftone dot texture, slight misregistration " +
+    "between the ink layers, flat matte inks",
+  vector:
+    "flat vector editorial illustration, clean geometric shapes, uniform flat fills, " +
+    "no gradients, no shading",
+};
+
+/** One idiom per site, so a grid of cards reads as a set — and so that two
+    sites that carry no link to each other do not arrive in the same hand.
+    Absent means paper, which is where all sixteen started; a name that is
+    not an idiom is a typo, and falling back to paper would hide it until
+    the cover was on the page. */
+function idiomFor(site) {
+  const name = PROMPTS.idioms?.[site] ?? "paper";
+  if (!IDIOMS[name]) throw new Error(`${site}: no idiom "${name}" — one of ${Object.keys(IDIOMS).join(", ")}`);
+  return IDIOMS[name];
+}
+
+/** The standard tier draws no one. */
+const STYLE = (site) => `${idiomFor(site)}, generous negative space, no people, no faces, ${NEGATIVES}`;
+
+/** The figure tier is the one that draws people, and it stays on the right
+    side of the reportage line by being plainly a cartoon. It keeps the paper
+    whichever idiom the site otherwise uses: the caricature was tuned against
+    it, and one more negative against the signature flux likes to scrawl in
+    a corner. */
 const FIGURE_STYLE =
-  "flat cut-paper collage illustration, layered matte paper with visible fibre grain, " +
-  "bold simple geometric shapes, screen-printed editorial poster, " +
-  "affectionate cartoon caricature, exaggerated hair and stage clothes, " +
-  "faces reduced to a few simple paper shapes, soft directional shadow, " +
-  "no text, no letters, no numbers, no writing, no signage, no picture frame border, " +
-  "no logos, no roundels, no artist signature, no portrait detail, no realistic skin";
+  IDIOMS.paper +
+  ", affectionate cartoon caricature, exaggerated hair and stage clothes, " +
+  "faces reduced to a few simple paper shapes, " +
+  `${NEGATIVES}, no roundels, no artist signature, no portrait detail, no realistic skin`;
 
 /** A cover we decline to make: the entry is wrong, not the code. Printed as
     one line, because a stack trace tells the reader nothing they can act on. */
@@ -166,7 +220,7 @@ async function generate(site, slug, entry) {
   // match. A site without a palette is a mistake, not a default.
   const palette = PROMPTS.palettes[site];
   if (!palette) throw new Error(`no palette for ${site} — add one to covers.json`);
-  const prompt = [subject, background, detail, palette, kind === "figure" ? FIGURE_STYLE : STYLE]
+  const prompt = [subject, background, detail, palette, kind === "figure" ? FIGURE_STYLE : STYLE(site)]
     .filter(Boolean)
     .join(". ");
 
