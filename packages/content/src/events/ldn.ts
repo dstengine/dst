@@ -534,7 +534,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Frieze Sculpture 2026",
     summary:
-      "Eleven international artists in the English Gardens of The Regent's Park, free and outdoors, from 16 September to 1 November — seven weeks, three of which have nothing to do with the fair.",
+      "Eleven international artists in the English Gardens of London's Regent's Park, free and outdoors, from 16 September to 1 November — seven weeks, three of which have nothing to do with the fair.",
     start: "2026-09-16",
     end: "2026-11-01",
     utcOffset: "+01:00",
@@ -592,7 +592,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Frieze London and Frieze Masters 2026",
     summary:
-      "The two fairs run together in The Regent's Park from 14 to 18 October, contemporary work in one tent and six thousand years of art history in the other.",
+      "The two fairs run together in London's Regent's Park from 14 to 18 October, contemporary work in one tent and six thousand years of art history in the other.",
     start: "2026-10-14",
     end: "2026-10-18",
     utcOffset: "+01:00",
@@ -645,7 +645,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "London Fashion Week September 2026",
     summary:
-      "The British Fashion Council's September shows run from Thursday 17 to Monday 21 September, with the designer list published and the schedule open to read.",
+      "The British Fashion Council's September shows run across London from Thursday 17 to Monday 21 September, with the designer list published and the schedule open to read.",
     start: "2026-09-17",
     end: "2026-09-21",
     utcOffset: "+01:00",

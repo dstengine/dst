@@ -598,7 +598,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Feast of San Gennaro 2026",
     summary:
-      "Eleven days of Little Italy given over to the feast, September 17 to 27, free to walk into, with the Grand Procession on Saturday the 26th from 2pm.",
+      "Eleven days of New York's Little Italy given over to the feast, September 17 to 27, free to walk into, with the Grand Procession on Saturday the 26th from 2pm.",
     start: "2026-09-17",
     end: "2026-09-27",
     utcOffset: "-04:00",
@@ -657,7 +657,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Climate Week NYC 2026",
     summary:
-      "Eight days of climate business and policy events across the city, September 20 to 27, run by the Climate Group alongside the UN General Assembly, drawing over a hundred thousand people a year.",
+      "Eight days of climate business and policy events across New York, September 20 to 27, run by the Climate Group alongside the UN General Assembly, drawing over a hundred thousand people a year.",
     start: "2026-09-20",
     end: "2026-09-27",
     utcOffset: "-04:00",

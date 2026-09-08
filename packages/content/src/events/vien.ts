@@ -180,7 +180,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Wiener Kaiser Wiesn 2026",
     summary:
-      "Achtzehn Tage Volksfest auf der Kaiserwiese im Prater, von 24. September bis 11. Oktober. Der Eintritt aufs Gelände ist frei, Karten braucht man nur für die Abendveranstaltungen in den drei Zelten.",
+      "Achtzehn Tage Volksfest auf der Kaiserwiese im Wiener Prater, von 24. September bis 11. Oktober. Der Eintritt aufs Gelände ist frei, Karten braucht man nur für die Abendveranstaltungen in den drei Zelten.",
     start: "2026-09-24",
     end: "2026-10-11",
     utcOffset: "+02:00",
@@ -236,7 +236,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "ORF Lange Nacht der Museen 2026",
     summary:
-      "Eine Nacht, ein Ticket, rund 270 Museen in ganz Österreich: am 3. Oktober von 18 bis 24 Uhr. Das Ticket kostet 19 Euro, ermäßigt 16, Kinder unter zwölf gehen frei.",
+      "Eine Nacht, ein Ticket, rund 270 Museen in ganz Österreich, viele davon in Wien: am 3. Oktober von 18 bis 24 Uhr. Das Ticket kostet 19 Euro, ermäßigt 16, Kinder unter zwölf gehen frei.",
     start: "2026-10-03",
     startTime: "18:00",
     endTime: "24:00",
