@@ -2,6 +2,7 @@ import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import { readFileSync } from "node:fs";
 import { sitemapEntry, sitemapIndexLastmod } from "../../tools/sitemap.mjs";
+import { stripSvgComments } from "../../tools/svg-comments.mjs";
 
 // Same lastmod wiring as the rest of the repo: dates come from git history
 // via tools/lastmod.mjs, and a page whose date we don't know goes out
@@ -24,6 +25,10 @@ export default defineConfig({
     }),
     // After sitemap(), so it rewrites the index that one just wrote.
     sitemapIndexLastmod(),
+    // Last: the comments in a hand-drawn diagram explain it to whoever
+    // edits it next, and public/ is copied to dist verbatim — so without
+    // this they are served to every reader of the page as well.
+    stripSvgComments(),
   ],
   output: "static",
 });

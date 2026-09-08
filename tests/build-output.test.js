@@ -5,7 +5,7 @@
 //   npm run build && node --test tests/build-output.test.js
 import { test, describe, before } from "node:test";
 import assert from "node:assert/strict";
-import { readFileSync, existsSync } from "node:fs";
+import { readFileSync, existsSync, readdirSync, statSync } from "node:fs";
 import { readdir } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -761,6 +761,39 @@ describe("event calendars", () => {
       if (!html.includes(`webcal://`) || !html.includes(`/${base}.ics`)) missing.push(`/${page}/ on ${app}`);
     }
     assert.deepEqual(missing, [], `events pages with no link to their own calendar:\n  ${missing.join("\n  ")}`);
+  });
+});
+
+describe("shipped SVG", () => {
+  // A file under public/ is copied into dist untouched, so a comment in a
+  // hand-drawn diagram is published text — served at a URL anyone can open,
+  // and written by someone who assumed no reader. The comments are worth
+  // keeping in the source, where they explain the drawing to whoever edits
+  // it next, and worth removing from the copy that ships. tools/svg-comments
+  // does the removing, as an Astro integration so that it also runs on
+  // Vercel, where each app builds on its own; this is the check that it ran.
+  test("no comment is served inside an SVG", () => {
+    const found = [];
+    const walk = (dir) => {
+      for (const name of readdirSync(dir)) {
+        const p = path.join(dir, name);
+        if (statSync(p).isDirectory()) walk(p);
+        else if (name.endsWith(".svg")) {
+          const svg = readFileSync(p, "utf8");
+          const n = (svg.match(/<!--[\s\S]*?-->/g) || []).length;
+          if (n) found.push(`${path.relative(REPO, p)}: ${n} comment(s)`);
+        }
+      }
+    };
+    for (const { app } of SITES) {
+      const dist = path.join(REPO, "apps", app, "dist");
+      if (existsSync(dist)) walk(dist);
+    }
+    assert.deepEqual(
+      found,
+      [],
+      `comments served inside an SVG — the build strips these, so this means the integration did not run:\n  ${found.join("\n  ")}`,
+    );
   });
 });
 

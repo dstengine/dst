@@ -2,6 +2,7 @@ import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import { readFileSync } from "node:fs";
 import { sitemapEntry, sitemapIndexLastmod } from "../../tools/sitemap.mjs";
+import { stripSvgComments } from "../../tools/svg-comments.mjs";
 
 // When each page's content last changed, generated from git history by
 // tools/lastmod.mjs. Read as JSON rather than imported from @dst/content
@@ -25,6 +26,10 @@ export default defineConfig({
     }),
     // After sitemap(), so it rewrites the index that one just wrote.
     sitemapIndexLastmod(),
+    // Last: the comments in a hand-drawn diagram explain it to whoever
+    // edits it next, and public/ is copied to dist verbatim — so without
+    // this they are served to every reader of the page as well.
+    stripSvgComments(),
   ],
   output: "static",
 });
