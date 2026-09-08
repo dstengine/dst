@@ -238,4 +238,57 @@ export const items: EventItem[] = [
     expertise:
       "La confusi\u00f3n m\u00e1s cara aqu\u00ed es tratarlo como una fiesta de una noche. Son cuatro d\u00edas dentro de un parque que ya de por s\u00ed toma una jornada completa, y el festival ocupa la tarde y la noche; quien llega el 1 de noviembre por la ma\u00f1ana ve el parque, no el festival. La otra decisi\u00f3n que conviene tomar antes de viajar es la del concierto: se vende por separado y cae en la v\u00edspera, as\u00ed que define en qu\u00e9 noche conviene estar ah\u00ed.",
   },
+  {
+    slug: "noche-de-muertos-michoacan-2026",
+    site: "mxo",
+    image: "/covers/noche-de-muertos-michoacan-2026.jpg",
+    imageAlt: "Seis velas de papel color crema, con llamas naranjas, alineadas sobre un fondo azul verdoso y separadas de manera desigual",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Noche de Muertos en Michoacán 2026",
+    summary:
+      "La noche del 1 de noviembre, en Janitzio, Tzintzuntzan y Jarácuaro: velas, cempasúchil y una procesión al panteón. Patrimonio de la Humanidad por la UNESCO desde 2008.",
+    start: "2026-11-01",
+    end: "2026-11-02",
+    utcOffset: "-06:00",
+    city: "Janitzio",
+    country: "México",
+    organizer: "Secretaría de Turismo de Michoacán",
+    category: "Festival",
+    source: {
+      name: "Secretaría de Turismo de Michoacán",
+      url: "https://visitmichoacan.com.mx/experiences/noche-de-muertos/",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "No es un espectáculo con horario de inicio. Es una noche entera en la que un pueblo entero está despierto en el panteón.",
+      "## Las fechas",
+      "La noche principal es la del <strong>1 de noviembre</strong>, y los días de la fiesta son el <strong>1 y el 2</strong>. Los altares se colocaban tradicionalmente el <strong>30 o el 31 de octubre</strong> y se retiraban el <strong>3 de noviembre</strong>; hoy muchas familias los montan antes y los quitan después, porque el trabajo que llevan lo pide.",
+      "## Tres lugares, tres formas",
+      "En la <strong>Isla de Janitzio</strong>, mujeres y niños caminan en procesión hacia el panteón y colocan junto a las tumbas los platillos favoritos de sus difuntos, en silencio y a la luz de las velas. En <strong>Tzintzuntzan</strong>, la ofrenda se expresa en artesanía: loza negra, loza blanca, ángeles de paja y tallados en madera. En <strong>Jarácuaro</strong>, los arcos de flores adornan cada barrio y la plaza principal, y la danza guía a las almas.",
+      "## Por qué es Patrimonio de la Humanidad",
+      "La UNESCO la nombró <strong>Patrimonio de la Humanidad el 4 de noviembre de 2008</strong>. El altar tiene raíz prehispánica: la ofrenda dedicada a Mictlantecuhtli, señor de los muertos, coincidía con lo que hoy es noviembre, y durante la Colonia esa coincidencia se fundió con la celebración cristiana.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo es la Noche de Muertos en Michoacán 2026?",
+        a: "La noche del <strong>1 de noviembre</strong>. Los días de la fiesta son el <strong>1 y el 2 de noviembre</strong>.",
+      },
+      {
+        q: "¿Dónde se celebra?",
+        a: "En comunidades de la región: la <strong>Isla de Janitzio</strong>, <strong>Tzintzuntzan</strong> y <strong>Jarácuaro</strong>, cada una con su propia forma del rito.",
+      },
+      {
+        q: "¿Cuándo se ponen las ofrendas?",
+        a: "Tradicionalmente el <strong>30 o el 31 de octubre</strong>, y permanecían hasta el <strong>3 de noviembre</strong>. Hoy muchas familias las montan antes.",
+      },
+      {
+        q: "¿Es Patrimonio de la Humanidad?",
+        a: "Sí, declarada por la <strong>UNESCO el 4 de noviembre de 2008</strong>.",
+      },
+    ],
+    expertise:
+      "Conviene decidir antes de viajar qué se va a ver, porque no es lo mismo la isla que los pueblos de la ribera: Janitzio es la imagen que todo el mundo conoce y es también la que concentra a los visitantes, mientras que en Tzintzuntzan y Jarácuaro la noche se parece más a lo que la fecha es en una casa. Y hay una cortesía que ninguna guía imprime en la portada: el panteón esa noche no es un escenario, es la sala de una familia. Se entra como se entra a una casa ajena.",
+  },
 ];
