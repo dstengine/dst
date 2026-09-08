@@ -705,4 +705,217 @@ export const items: EventItem[] = [
     expertise:
       "The mistake is treating it as a conference you attend. There is no badge that opens the week: the main programme is a small share of it, and the hundreds of events around it are run by whoever registered them, each with its own door policy. What that means in practice is that the useful planning happens on the calendar page a fortnight out, when the open events are still taking registrations — by the week itself the ones worth going to are full. The second thing worth knowing is what it does to the city: it runs alongside the UN General Assembly, and midtown east of Fifth is slower all week.",
   },
+
+  {
+    slug: "burning-man-2026",
+    site: "nyc42",
+    image: "/covers/burning-man-2026.jpg",
+    imageAlt: "Two amber paper rings around a pale disc, with one small upright amber rectangle standing at the centre, on a dark brown ground",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Burning Man 2026",
+    summary:
+      "A city of tens of thousands went up in the Nevada desert from August 30 to September 7 under the theme Axis Mundi, and then came down. The 2027 dates are already set.",
+    start: "2026-08-30",
+    end: "2026-09-07",
+    utcOffset: "-07:00",
+    venue: "Black Rock City, Black Rock Desert",
+    city: "Black Rock City",
+    country: "United States",
+    organizer: "Burning Man Project",
+    category: "Festival",
+    source: {
+      name: "Burning Man Project",
+      url: "https://burningman.org/black-rock-city/black-rock-city-2026/",
+      verifiedOn: "2026-09-08",
+    },
+    ticket: { url: "https://burningman.org/event/", label: "Official site" },
+    body: [
+      "It ended the day before yesterday. Black Rock City exists for eight days a year and is dismantled to nothing afterwards \u2014 which is the part that makes it worth reading about after it is over rather than before, because what there is to plan for is the next one.",
+      "## The dates",
+      "<strong>August 30 to September 7, 2026</strong>, in the <strong>Black Rock Desert</strong> in Nevada. The next edition is <strong>August 29 to September 6, 2027</strong>.",
+      "## The theme",
+      "<strong>Axis Mundi</strong> \u2014 the world axis \u2014 which the organisers describe as being about interconnectedness, shared social realities and our ties to the natural world. The theme names the concentric streets of the city and shapes the two structures everything else is arranged around: the Man Pavilion, called <strong>Cryptomeria</strong>, and the <strong>Temple of the Moon</strong>, whose form came from the queen of the night, a desert cactus flower that opens for one night.",
+      "## What it is not",
+      "It is not a music festival with a ticket and a line-up. The event runs on the <strong>10 Principles</strong>, of which the two that surprise people are <strong>decommodification</strong> \u2014 no vending, no sponsorship, no logos, nothing bought or sold on the playa beyond ice and coffee \u2014 and <strong>participation</strong>, which is the reason there is no audience. Everything present was brought and built by someone who came.",
+      "## Getting in",
+      "Attendance is by ticket and the sales are staged through the year rather than opened once, so the useful thing to know in September is that the process for the following August has already started. Volunteer crews, theme camps and art projects all place months ahead.",
+    ],
+    faq: [
+      {
+        q: "When is Burning Man 2027?",
+        a: "<strong>August 29 to September 6, 2027</strong>, in the Black Rock Desert. The 2026 event ran August 30 to September 7.",
+      },
+      {
+        q: "What was the 2026 theme?",
+        a: "<strong>Axis Mundi</strong>, the world axis \u2014 about interconnectedness and our ties to the natural world. It named the city's streets, the Man Pavilion (<em>Cryptomeria</em>) and the Temple of the Moon.",
+      },
+      {
+        q: "Can you buy things at Burning Man?",
+        a: "No. <strong>Decommodification</strong> is one of the 10 Principles: there is no vending and no sponsorship on the playa, and ice and coffee are the stated exceptions. Everything else has to be carried in.",
+      },
+      {
+        q: "Is it a music festival?",
+        a: "No, and the difference is the principle of <strong>participation</strong>: there is no audience. What is there was built by the people who came, and it is taken away again when the city is dismantled.",
+      },
+    ],
+    expertise:
+      "The mistake a New Yorker makes with this one is treating it as a trip to book. It is not a destination with a season \u2014 it is a city that has to be provisioned, and the useful comparison is not to a festival weekend but to camping in a desert with no water and no shops for nine days, in a place that reaches the high thirties by day and drops sharply at night. That is also why the ticket is the small problem and the logistics are the large one: the tickets are staged through the year and there are several routes to one, but nothing sold in Reno on the Friday will make up for what was not packed. If the year is a maybe, the thing to do in September is not to look at tickets, it is to read the Survival Guide the organisers publish and decide honestly whether that is a holiday.",
+  },
+
+  {
+    slug: "sxsw-2027",
+    site: "nyc42",
+    image: "/covers/sxsw-2027.jpg",
+    imageAlt: "A long row of narrow paper bars in amber, ochre and cream, standing together on one level line, on a dark brown ground",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "SXSW 2027",
+    summary:
+      "Austin's conference, film, music and comedy festivals run together March 15 to 21, 2027. Badges start at $550 and the early-bird prices end on September 17.",
+    start: "2027-03-15",
+    end: "2027-03-21",
+    utcOffset: "-05:00",
+    venue: "Austin Convention Center and venues across the city",
+    city: "Austin",
+    country: "United States",
+    organizer: "SXSW",
+    category: "Convention",
+    tickets: { priceFrom: 550, priceTo: 1395, currency: "USD" },
+    source: {
+      name: "SXSW",
+      url: "https://www.sxsw.com/",
+      verifiedOn: "2026-09-08",
+    },
+    ticket: { url: "https://www.sxsw.com/", label: "Badges" },
+    body: [
+      "Four festivals share one week and one city, and the badge you buy decides which of them you are actually at. That is the whole decision, and it is cheaper if it is made this month.",
+      "## The dates",
+      "<strong>March 15 to 21, 2027</strong>, in <strong>Austin, Texas</strong>. The event has run since <strong>1987</strong>.",
+      "## The four halves of it",
+      "The <strong>Innovation Conference</strong>, the <strong>Film &amp; TV Festival</strong>, the <strong>Music Festival</strong> and the <strong>Comedy Festival</strong>, with <strong>13 content tracks</strong> across them \u2014 among them tech and AI, startups, the creator economy, design, health, gaming, sport and climate.",
+      "## The badges",
+      "<strong>Platinum, $1,395</strong> \u2014 all four. <strong>Innovation, $895.</strong> <strong>Film &amp; TV, $775.</strong> <strong>Music, $550.</strong> Group rates exist.",
+      "## The deadline that matters now",
+      "Early-bird pricing runs to <strong>September 17</strong>, and the organisers put the gap between it and the walk-up rate at <strong>up to $900</strong>. That is the largest single number on this page and it expires six months before the event.",
+    ],
+    faq: [
+      {
+        q: "When is SXSW 2027?",
+        a: "<strong>March 15 to 21, 2027</strong>, in Austin, Texas.",
+      },
+      {
+        q: "How much is an SXSW badge?",
+        a: "<strong>$550</strong> for Music, <strong>$775</strong> for Film &amp; TV, <strong>$895</strong> for Innovation and <strong>$1,395</strong> for Platinum, which covers all four festivals.",
+      },
+      {
+        q: "When does early-bird pricing end?",
+        a: "<strong>September 17.</strong> The organisers put the saving against the walk-up rate at up to <strong>$900</strong>.",
+      },
+      {
+        q: "Do I need the Platinum badge?",
+        a: "Only if you intend to move between the four festivals. A single-festival badge is a third of the price, and the four run at once rather than in sequence \u2014 so the question is how much of the week you would really spend outside your own track.",
+      },
+    ],
+    expertise:
+      "The badge tiers are not a quality ladder, they are a map of the week, and the $845 between Music and Platinum buys optionality rather than access to anything better. Most people who buy Platinum spend the week in one or two tracks anyway, because the four festivals run concurrently in venues spread across a city and the walking is real. The other thing worth knowing from New York is that March in Austin is the week the whole industry is there, which means flights and rooms are priced accordingly and are booked long before the badge deadline \u2014 the $900 saved on the early bird is easy to lose twice over on a hotel booked in January.",
+  },
+
+  {
+    slug: "ces-2027",
+    site: "nyc42",
+    image: "/covers/ces-2027.jpg",
+    imageAlt: "A dense grid of small textured paper squares filling the frame, with one larger bright amber square alone in a clear space at the centre",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "CES 2027",
+    summary:
+      "The Consumer Technology Association's show returns to Las Vegas from January 6 to 9, 2027, with registration already open and no public price published.",
+    start: "2027-01-06",
+    end: "2027-01-09",
+    utcOffset: "-08:00",
+    venue: "Las Vegas Convention Center and venues across the city",
+    city: "Las Vegas",
+    country: "United States",
+    organizer: "Consumer Technology Association",
+    category: "Convention",
+    source: {
+      name: "CES",
+      url: "https://www.ces.tech/",
+      verifiedOn: "2026-09-08",
+    },
+    ticket: { url: "https://www.ces.tech/", label: "Registration" },
+    body: [
+      "The first big week of the year, and the one that sets what the rest of it will be arguing about.",
+      "## The dates",
+      "<strong>January 6 to 9, 2027</strong>, in <strong>Las Vegas</strong>, organised by the <strong>Consumer Technology Association</strong>.",
+      "## Who it is for",
+      "The organisers describe the audience as global brands, industry professionals, decision makers, media and influencers. <strong>Registration is open.</strong> No admission price is published on the show's own front page, and no attendance or exhibitor figure is given there either \u2014 so neither appears here.",
+    ],
+    faq: [
+      {
+        q: "When is CES 2027?",
+        a: "<strong>January 6 to 9, 2027</strong>, in Las Vegas.",
+      },
+      {
+        q: "How much does CES cost to attend?",
+        a: "The show does not publish a price on its own front page. Registration is open and the fee is shown during registration.",
+      },
+      {
+        q: "Is CES open to the public?",
+        a: "The organisers describe it as an event for industry professionals, media and decision makers rather than a consumer show, but do not state a trade-only rule on the front page.",
+      },
+    ],
+    expertise:
+      "Two things about CES are worth knowing before deciding it is a trip. The first is that it is not one venue: the show occupies the convention center and a string of hotels along the strip, and the distance between two appointments is measured in half-hours, not minutes. The second is that January in Las Vegas is the single hardest week of the year for rooms, and the price of a bed moves more than the price of a badge \u2014 which is the reverse of how most shows work, and the reason the decision is really about accommodation.",
+  },
+
+  {
+    slug: "art-basel-miami-beach-2026",
+    site: "nyc42",
+    image: "/covers/art-basel-miami-beach-2026.jpg",
+    imageAlt: "Three square sheets of paper hung in a row on a dark brown ground, one amber, one russet, one yellow",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Art Basel Miami Beach 2026",
+    summary:
+      "The American edition of Art Basel runs December 4 to 6 in Miami Beach — three public days, and the week the rest of the city builds its own fairs around.",
+    start: "2026-12-04",
+    end: "2026-12-06",
+    utcOffset: "-05:00",
+    venue: "Miami Beach",
+    city: "Miami Beach",
+    country: "United States",
+    organizer: "Art Basel",
+    category: "Exhibitions",
+    source: {
+      name: "Art Basel",
+      url: "https://www.artbasel.com/miami-beach",
+      verifiedOn: "2026-09-08",
+    },
+    ticket: { url: "https://www.artbasel.com/miami-beach", label: "Tickets" },
+    body: [
+      "Three days in December do something to Miami Beach that no other three days do, and most of what happens that week is not the fair.",
+      "## The dates",
+      "<strong>December 4 to 6, 2026</strong>, in <strong>Miami Beach</strong>. UBS is the global lead partner.",
+      "## What is published and what is not",
+      "The dates are confirmed on Art Basel's own page. The gallery list, the ticket prices and the split between preview and public days are not on it yet, so they are not here \u2014 the ticket link goes to the source rather than to a number invented for a listing.",
+    ],
+    faq: [
+      {
+        q: "When is Art Basel Miami Beach 2026?",
+        a: "<strong>December 4 to 6, 2026</strong>, in Miami Beach.",
+      },
+      {
+        q: "How much are tickets?",
+        a: "Not yet published. Art Basel's own page carries a tickets link but no prices for this edition, so any figure quoted elsewhere is from a previous year.",
+      },
+    ],
+    expertise:
+      "The thing a first-time visitor gets wrong is booking the three days of the fair and nothing else. Art Basel is the anchor, but the week around it is when a dozen satellite fairs, gallery openings and institutional shows run across Miami Beach and the mainland \u2014 and a good deal of what is worth seeing costs nothing and is not inside the convention center at all. If the trip is being planned from New York, the flight is the cheap part and the room is not: December is high season on the beach before the fair is factored in.",
+  },
 ];

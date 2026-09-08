@@ -4,12 +4,12 @@
   "redirects": [
     {
       "source": "/united-states",
-      "destination": "/events/",
+      "destination": "/usa/",
       "statusCode": 301
     },
     {
       "source": "/united-states/",
-      "destination": "/events/",
+      "destination": "/usa/",
       "statusCode": 301
     }
   ]

@@ -31,9 +31,25 @@ export const redirects: Record<string, Redirect[]> = {
   nyc42: [
     {
       from: "/united-states/",
+      to: "/usa/",
+      since: "2026-09-08",
+      why: "Two changes in one day. The page had been an accident \u2014 the place rule reads country before city, so the three New York entries that happened to record a country were filed under the site's own place a second time, under the heading \"United states in New York\" \u2014 and then it became a real section, /usa/, holding the events outside the city. Same subject, shorter address: nobody types \"united-states\".",
+    },
+  ],
+  riviera: [
+    {
+      from: "/united-arab-emirates/",
       to: "/events/",
       since: "2026-09-08",
-      why: "Never a real section: the place rule reads country before city, so the three entries that happened to record a country were filed under the site's own place a second time, under the heading \"United states in New York\". The events index is what the page was trying to be.",
+      why: "A Dubai site does not have a country section: the page existed only because three of the six Dubai events also carried a country, which split one place under two names. There is no /uae/ here to send it to \u2014 the whole site is the UAE \u2014 so it goes to the full list of events, which is what the page held.",
+    },
+  ],
+  eco: [
+    {
+      from: "/united-arab-emirates/",
+      to: "/events/",
+      since: "2026-09-08",
+      why: "Same split as riviera, and it reached the two-entry threshold for one build. As there, the country is the site, so the events index is the honest destination.",
     },
   ],
   ldn: [

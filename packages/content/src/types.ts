@@ -102,6 +102,18 @@ interface ItemBase {
   form?: ItemForm;
   expertise?: string;
   jsonLd?: Record<string, unknown>; // manual override of the auto-built block
+  // Where it is. On an event that is the venue's city; on an article it is
+  // the place the piece is about, which is why both live here rather than
+  // on the event alone — a report on a festival in another state is as
+  // much a thing with a location as the festival is, and the section pages
+  // are built from this field.
+  city?: string;
+  // Named rather than derived from the city, because a lookup table of every
+  // city a listing might carry is a table that is wrong the first time an
+  // event happens somewhere new. It is what the country section pages are
+  // built from, so a missing one silently drops an event out of its own
+  // country — hence: fill it in whenever a city is filled in.
+  country?: string;
   // The questions a reader types instead of reading the page: on an event,
   // what it costs, what time it starts, whether a ticket is needed in
   // advance; on an article, whatever it is the piece actually settles.
@@ -150,13 +162,6 @@ export interface EventItem extends ItemBase {
   // Set explicitly for an event held outside the Gulf.
   utcOffset?: string;
   venue?: string;
-  city?: string;
-  // Named rather than derived from the city, because a lookup table of every
-  // city a listing might carry is a table that is wrong the first time an
-  // event happens somewhere new. It is what the country section pages are
-  // built from, so a missing one silently drops an event out of its own
-  // country — hence: fill it in whenever a city is filled in.
-  country?: string;
   // An event that happens on a call rather than in a room. The glance table
   // used to tell every reader an event was "In person", which for a Discord
   // community call is simply untrue, and the markup said the same thing to

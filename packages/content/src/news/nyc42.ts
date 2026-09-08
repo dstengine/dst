@@ -1,6 +1,55 @@
 import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
+
+  {
+    slug: "sxsw-badges-go-up-on-september-17",
+    site: "nyc42",
+    image: "/covers/sxsw-badges-go-up-on-september-17.jpg",
+    imageAlt: "Two orange paper squares standing side by side on a ledge against a dark brown wall, the right one slightly taller",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "SXSW badges go up on September 17, six months before the festival",
+    cardTitle: "SXSW early-bird ends September 17",
+    titleSeo: "SXSW 2027 early-bird deadline",
+    summary:
+      "The cheapest way into Austin next March closes in nine days. SXSW puts the gap between the early-bird badge and the walk-up rate at up to $900.",
+    date: "2026-09-08",
+    city: "Austin",
+    country: "United States",
+    category: "Convention",
+    source: {
+      name: "SXSW",
+      url: "https://www.sxsw.com/",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "The deadline is the news, because the number attached to it is larger than most people expect: SXSW puts the saving between its early-bird pricing and the walk-up rate at <strong>up to $900</strong>, and the early-bird window closes on <strong>September 17</strong> \u2014 six months and a week before the festival opens.",
+      "## What the badges cost now",
+      "<strong>Music, $550. Film &amp; TV, $775. Innovation, $895. Platinum, $1,395</strong>, which covers all four festivals. Group rates exist.",
+      "## What you are buying six months early",
+      "<a href=\"/events/sxsw-2027/\" title=\"SXSW 2027\">SXSW 2027</a> runs <strong>March 15 to 21</strong> in Austin and is four events at once \u2014 the Innovation Conference, the Film &amp; TV Festival, the Music Festival and the Comedy Festival \u2014 across thirteen content tracks. The line-up for none of them is published yet. That is the actual trade: the badge is cheapest at the point when the least is known about what it gets you.",
+      "## The part that is not on the badge page",
+      "March is the week Austin is full, and rooms are priced for it. A saving made on 17 September is a saving that can be given back twice over by booking a bed in January.",
+    ],
+    faq: [
+      {
+        q: "When does SXSW 2027 early-bird pricing end?",
+        a: "<strong>September 17.</strong> SXSW puts the gap between the early-bird price and the walk-up rate at up to <strong>$900</strong>.",
+      },
+      {
+        q: "How much is a SXSW 2027 badge right now?",
+        a: "<strong>$550</strong> Music, <strong>$775</strong> Film &amp; TV, <strong>$895</strong> Innovation, <strong>$1,395</strong> Platinum. Group rates are offered.",
+      },
+      {
+        q: "Is the SXSW 2027 line-up announced?",
+        a: "No. The festival dates are set for <strong>March 15 to 21, 2027</strong>, but no programme has been published \u2014 which is what makes the early-bird price early.",
+      },
+    ],
+    expertise:
+      "Buying a badge before a line-up exists is only a good deal if you would go regardless of who is announced, and for most people that is true of exactly one of the four festivals \u2014 whichever one is their own trade. That is the honest read of the tiers: the single-festival badges are priced for people who already know why they are going, and Platinum is priced for people who do not, which is the wrong reason to spend $845 more. If the decision is genuinely open on 17 September, the cheaper mistake is the Music or Film badge, not the one that keeps every door open.",
+  },
   {
     slug: "fifty-buffalo-are-walking-through-two-boroughs",
     site: "nyc42",

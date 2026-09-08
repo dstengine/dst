@@ -111,6 +111,24 @@ export const slugify = (s: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
 
+// Countries whose slug the default gets wrong, shared because the answer is
+// the same on every site: nobody types "united-arab-emirates", and a country
+// that has a short form in every other URL on the web should have it here
+// too. It lives with the mechanics rather than in each site's vocabulary
+// because a slug is an address — if two sites in one network disagree about
+// what the UAE's page is called, one of them is wrong, and the site that
+// happens to be written second is not the one that should decide.
+//
+// A site's own `places` entry still wins, key by key: this sets the slug and
+// the label, and a site that needs a third field on the same country keeps
+// it. Any country not listed takes its slugified name, which is right for
+// most of them and is why the table is short.
+export const COUNTRY_SLUGS: Record<string, Vocabulary> = {
+  "United Kingdom": { slug: "uk", label: "UK" },
+  "United Arab Emirates": { slug: "uae", label: "UAE" },
+  "United States": { slug: "usa", label: "USA" },
+};
+
 /** Per rule 1 at the top of this file. */
 export const ENOUGH_PLACE = 2;
 export const ENOUGH_TAG = 3;
@@ -168,7 +186,7 @@ export function buildSections<T extends FeedItem, V extends Vocabulary = Vocabul
 
   for (const [key, list] of group(items, placeOf)) {
     if (isHome.has(key) || list.length < minPlace) continue;
-    const voc = (places[key] ?? {}) as V;
+    const voc = { ...COUNTRY_SLUGS[key], ...places[key] } as V;
     push({
       kind: "place",
       key,

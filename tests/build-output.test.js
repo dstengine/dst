@@ -666,15 +666,21 @@ describe("redirects", () => {
   const entries = Object.entries(redirects).flatMap(([app, list]) =>
     list.map((r) => ({ app, ...r })),
   );
-  const urlsOf = (app) => new Set(pages.filter((p) => p.app === app).map((p) => p.url));
+  // Straight off disk rather than out of `pages`, because `pages` is built
+  // from SITES, and SITES deliberately leaves eco out (see "news and
+  // events" below) — which quietly made every eco redirect look like a
+  // redirect to nowhere. A built page is a directory with an index.html in
+  // it, and that is a question the filesystem answers for any app.
+  const built = (app, url) =>
+    existsSync(path.join(REPO, "apps", app, "dist", url.replace(/^\//, ""), "index.html"));
 
   test("every redirect lands on a page that exists", () => {
-    const broken = entries.filter((r) => !urlsOf(r.app).has(r.to)).map((r) => `${r.app}${r.from} -> ${r.to}`);
+    const broken = entries.filter((r) => !built(r.app, r.to)).map((r) => `${r.app}${r.from} -> ${r.to}`);
     assert.deepEqual(broken, [], `a redirect to nowhere:\n  ${broken.join("\n  ")}`);
   });
 
   test("no redirect is shadowed by a page at the same address", () => {
-    const shadowed = entries.filter((r) => urlsOf(r.app).has(r.from)).map((r) => `${r.app}${r.from}`);
+    const shadowed = entries.filter((r) => built(r.app, r.from)).map((r) => `${r.app}${r.from}`);
     assert.deepEqual(shadowed, [], `the site still builds a page here, so the redirect never fires:\n  ${shadowed.join("\n  ")}`);
   });
 

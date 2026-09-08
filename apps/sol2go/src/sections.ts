@@ -10,19 +10,20 @@ export type { Section };
 // Slugs the site already spends on pages of its own.
 const RESERVED = ["about", "events", "news", "go", "li"];
 
-// Countries whose slug or heading the default would get wrong. "uk" rather
-// than "united-kingdom" because it is what people type and what the country
-// is called in a URL everywhere else; `the` because a heading that reads
-// "events in United Kingdom" reads like a form field. Everything not listed
-// here takes the slugified name and no article, which is right for most
-// countries and is why this table is small.
+// Countries whose heading the default would get wrong. `the` because a
+// heading that reads "events in United Kingdom" reads like a form field —
+// which is an English wording question and so stays here, unlike the slugs
+// for the UK, the UAE and the USA, which are the same address on every site
+// in the network and live in @dst/content/sections with the rules.
+// Everything not listed here takes the slugified name and no article, which
+// is right for most countries and is why this table is small.
 interface Country extends Vocabulary {
   the?: boolean;
 }
 const COUNTRIES: Record<string, Country> = {
-  "United Kingdom": { slug: "uk", label: "UK", the: true },
-  "United Arab Emirates": { slug: "uae", label: "UAE", the: true },
-  "United States": { slug: "usa", label: "USA", the: true },
+  "United Kingdom": { the: true },
+  "United Arab Emirates": { the: true },
+  "United States": { the: true },
   Netherlands: { the: true },
   Philippines: { the: true },
   "Czech Republic": { the: true },

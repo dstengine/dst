@@ -14500,6 +14500,54 @@
         ]
       ]
     },
+    "/covers/art-basel-miami-beach-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/art-basel-miami-beach-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/art-basel-miami-beach-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/art-basel-miami-beach-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/art-basel-miami-beach-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/art-basel-miami-beach-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/art-basel-miami-beach-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/art-basel-miami-beach-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/art-basel-miami-beach-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/art-basel-miami-beach-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/art-basel-miami-beach-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/broadway-autumn-is-a-play-season.jpg": {
       "width": 1536,
       "height": 864,
@@ -15121,6 +15169,102 @@
         [
           1536,
           "/covers/brooklyn-museum-fall-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/burning-man-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/burning-man-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/burning-man-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/burning-man-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/burning-man-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/burning-man-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/burning-man-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/burning-man-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/burning-man-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/burning-man-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/burning-man-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/ces-2027.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/ces-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/ces-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/ces-2027-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/ces-2027-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/ces-2027-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/ces-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/ces-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/ces-2027-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/ces-2027-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/ces-2027-1536.webp"
         ]
       ]
     },
@@ -15793,6 +15937,102 @@
         [
           1536,
           "/covers/snoopy-in-style-nyc-1536.webp"
+        ]
+      ]
+    },
+    "/covers/sxsw-2027.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/sxsw-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/sxsw-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/sxsw-2027-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/sxsw-2027-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/sxsw-2027-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/sxsw-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/sxsw-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/sxsw-2027-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/sxsw-2027-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/sxsw-2027-1536.webp"
+        ]
+      ]
+    },
+    "/covers/sxsw-badges-go-up-on-september-17.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/sxsw-badges-go-up-on-september-17-480.avif"
+        ],
+        [
+          768,
+          "/covers/sxsw-badges-go-up-on-september-17-768.avif"
+        ],
+        [
+          1024,
+          "/covers/sxsw-badges-go-up-on-september-17-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/sxsw-badges-go-up-on-september-17-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/sxsw-badges-go-up-on-september-17-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/sxsw-badges-go-up-on-september-17-480.webp"
+        ],
+        [
+          768,
+          "/covers/sxsw-badges-go-up-on-september-17-768.webp"
+        ],
+        [
+          1024,
+          "/covers/sxsw-badges-go-up-on-september-17-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/sxsw-badges-go-up-on-september-17-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/sxsw-badges-go-up-on-september-17-1536.webp"
         ]
       ]
     },
