@@ -3,7 +3,7 @@
 // a musical and a conference session produce the same shape of file.
 import type { APIRoute } from "astro";
 import { toIcs } from "@dst/content/ics";
-import { icsItem, runs } from "../../content";
+import { asEvent, runs } from "../../content";
 
 const SITE = "https://musical.today";
 
@@ -18,7 +18,7 @@ export function getStaticPaths() {
 export const GET: APIRoute = ({ props }) => {
   const run = props.run as (typeof runs)[number];
   return new Response(
-    toIcs(icsItem(run) as Parameters<typeof toIcs>[0], `${SITE}/${run.show}/${run.slug}/`),
+    toIcs(asEvent(run), `${SITE}/${run.show}/${run.slug}/`),
     {
       headers: {
         "Content-Type": "text/calendar; charset=utf-8",

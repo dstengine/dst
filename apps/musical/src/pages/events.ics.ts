@@ -8,18 +8,18 @@
 // URL back into a file someone saves once and never hears from again.
 import type { APIRoute } from "astro";
 import { toIcsCalendar } from "@dst/content/ics";
-import { datedRuns, icsItem } from "../content";
+import { asEvent, datedRuns } from "../content";
 
 const SITE = "https://musical.today";
 
 export const GET: APIRoute = () => {
-  const entries = datedRuns().map((run) => ({ run, item: icsItem(run) }));
+  const entries = datedRuns().map((run) => ({ run, item: asEvent(run) }));
   // The page each entry belongs to, looked up rather than reconstructed: the
   // UID slug glues show and run together, and a show slug may hold a hyphen
   // of its own, so taking it apart again would eventually split the wrong one.
   const pages = new Map(entries.map(({ run, item }) => [item.slug, `${SITE}/${run.show}/${run.slug}/`]));
   const body = toIcsCalendar(
-    entries.map((e) => e.item) as Parameters<typeof toIcsCalendar>[0],
+    entries.map((e) => e.item),
     (item) => pages.get(item.slug)!,
     {
       name: "Musicals on sale — every dated run",

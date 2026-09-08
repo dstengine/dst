@@ -367,17 +367,41 @@ function score(item) {
 /** Every source URL and every headline the network has already published,
     so the report is what is new rather than what exists. Read out of the
     content files themselves: a second list would go stale the first time
-    somebody added an item without updating it. */
+    somebody added an item without updating it.
+ *
+ *  Two places, because the network keeps events in two shapes. Most sites
+ *  hold them as EventItem in packages/content. musical holds runs — a
+ *  richer shape, with sellers, prices and a tour behind each one — in its
+ *  own src/data, and projects them to EventItem for the calendars. Both are
+ *  published events, and a scanner that read only the first would report
+ *  a tour stop as a lead on the day the site already listed it.
+ *
+ *  From an app, every https literal counts as a URL the site already links
+ *  and only `title:` counts as a headline: `name:` there is a city or a
+ *  theatre, which is a place, not something we published about. */
 function published() {
   const urls = new Set();
   const titles = new Set();
+  const read = (file, urlPattern) => {
+    const src = readFileSync(file, "utf8");
+    for (const m of src.matchAll(urlPattern)) urls.add(canonical(m[1]));
+    for (const m of src.matchAll(/title:\s*"([^"]+)"/g)) titles.add(key(m[1]));
+  };
   for (const dir of ["packages/content/src/events", "packages/content/src/news"]) {
     const full = path.join(REPO, dir);
     if (!existsSync(full)) continue;
-    for (const file of readdirSync(full).filter((f) => f.endsWith(".ts"))) {
-      const src = readFileSync(path.join(full, file), "utf8");
-      for (const m of src.matchAll(/url:\s*"(https?:\/\/[^"]+)"/g)) urls.add(canonical(m[1]));
-      for (const m of src.matchAll(/title:\s*"([^"]+)"/g)) titles.add(key(m[1]));
+    for (const file of readdirSync(full).filter((f) => f.endsWith(".ts")))
+      read(path.join(full, file), /url:\s*"(https?:\/\/[^"]+)"/g);
+  }
+  const apps = path.join(REPO, "apps");
+  for (const app of existsSync(apps) ? readdirSync(apps) : []) {
+    for (const rel of ["src/outbound.ts", "src/data"]) {
+      const at = path.join(apps, app, rel);
+      if (!existsSync(at)) continue;
+      const files = at.endsWith(".ts")
+        ? [at]
+        : readdirSync(at).filter((f) => f.endsWith(".ts")).map((f) => path.join(at, f));
+      for (const file of files) read(file, /"(https?:\/\/[^"]+)"/g);
     }
   }
   return { urls, titles };

@@ -5,6 +5,7 @@
 // Components do not repeat any of this. A template that decides for itself
 // whether to show a ticket button is a template that will disagree with the
 // next one.
+import type { EventItem } from "@dst/content";
 import type { City, Price, Run, Seller, Venue } from "./data/types";
 import { cities } from "./data/cities";
 import { runs } from "./data/runs";
@@ -545,7 +546,22 @@ export function priceTiers(run: Run): { name: string; from?: number; currency: s
     put the thing, and "playing since 1996, closing unannounced" has no day
     to give it. Nor has a stop announced without dates. Both are on the site;
     neither is in a diary. */
-export function icsItem(run: Run) {
+/** A run as the rest of the network states an event.
+ *
+ *  This site keeps a richer shape than `EventItem`: a run carries sellers,
+ *  prices, a tour group and a status, none of which a conference listing
+ *  has. That is a reason for `Run` to exist, not a reason for the site to
+ *  sit outside the network's model — a night at a theatre is an event like
+ *  any other, and everything the network does with events (calendars, the
+ *  ICS builder, the scanner that reports what we have not published) needs
+ *  to be able to say so.
+ *
+ *  So the projection is declared, typed and one-way: `Run` is the source,
+ *  `EventItem` is what the network reads. It used to be an untyped object
+ *  cast at each call site, and the cast was hiding a real gap — `Geo`
+ *  requires a name, and these entries were handing a calendar a pair of
+ *  coordinates with no place attached to them. */
+export function asEvent(run: Run): EventItem {
   const show = shows.find((s) => s.slug === run.show);
   const city = cityBySlug(run.city);
   const venue = run.venue ? venueBySlug(run.venue) : undefined;
@@ -560,7 +576,9 @@ export function icsItem(run: Run) {
     ...(run.end ? { end: run.end } : {}),
     ...(venue ? { venue: venue.name } : {}),
     ...(city ? { city: city.name } : {}),
-    ...(venue?.lat && venue?.lon ? { geo: { lat: venue.lat, lng: venue.lon } } : {}),
+    ...(venue?.lat && venue?.lon
+      ? { geo: { name: venue.name, lat: venue.lat, lng: venue.lon } }
+      : {}),
   };
 }
 
