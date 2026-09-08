@@ -2,6 +2,41 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "el-texto-lleva-marca-la-imagen-lleva-firma",
+    site: "mxo",
+    image: "/covers/el-texto-lleva-marca-la-imagen-lleva-firma.jpg",
+    imageAlt: "Dos hojas de papel del mismo tamaño sobre fondo verde, la de la izquierda color terracota con un sello en la esquina y la de la derecha color crema y sin nada",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Anthropic marca el texto de una forma y las imágenes de otra, y una captura de pantalla borra una de las dos",
+    cardTitle: "Dos maneras de marcar, una frágil",
+    titleSeo: "Texto marcado, imagen firmada",
+    summary:
+      "Lo que Claude escribe lleva una marca dentro de las propias palabras. Lo que entrega como archivo lleva metadatos firmados, y esos se pierden al capturar la pantalla.",
+    date: "2026-09-08",
+    category: "Tecnología",
+    source: {
+      name: "Anthropic",
+      url: "https://www.anthropic.com/news/claude-text-watermark",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "Desde el <strong>2 de agosto de 2026</strong> Anthropic marca lo que produce Claude. Marca dos cosas distintas de dos maneras distintas, y la diferencia entre ambas decide cuál de las dos sobrevive a que alguien le tome una foto a la pantalla.",
+      "## El texto: la marca está adentro",
+      "En cada palabra el modelo elige entre varias equivalentes usando un número al azar, y ese azar ahora se calcula a partir de una <strong>clave secreta</strong> y de lo ya escrito. El texto no cambia; cambia el patrón de las elecciones. Como la señal está en las palabras mismas, <strong>viaja con ellas</strong>: se copia, se pega, se cambia de programa y sigue ahí. La técnica es una variante de <strong>SynthID-Text</strong>, de <strong>Google DeepMind</strong>.",
+      "## Los archivos: la firma está afuera",
+      "Los formatos admitidos —<strong>.png</strong>, <strong>.jpg</strong> y <strong>.svg</strong>— no llevan marca de agua sino <strong>metadatos de procedencia firmados</strong> según el estándar <strong>C2PA</strong>. Es una etiqueta pegada al archivo, no algo mezclado con la imagen.",
+      "## Por qué eso importa más de lo que parece",
+      "Una etiqueta pegada se despega. Una <strong>captura de pantalla</strong> elimina por completo esos metadatos; una conversión de formato, también. La imagen se ve idéntica y ya no declara nada. Con el texto pasa lo contrario: aguanta el copiar y pegar y cierta edición, y lo que sí lo borra es una traducción o una reescritura a fondo.",
+      "## Lo que ninguna de las dos prueba",
+      "Un acierto quiere decir que el contenido <em>pudo</em> haber pasado por Claude, no que lo escribió. En textos muy cortos, o de pura cifra, no hay señal suficiente. Y la herramienta que lee la marca está en <strong>vista previa privada</strong>: se otorga por solicitud a reguladores, medios, verificadores, investigadores y organizaciones educativas, no al público.",
+    ],
+    expertise:
+      "La asimetría entre los dos mecanismos ya se nota en el trabajo diario de cualquiera que publique en línea. Un archivo firmado es verificable por cualquiera, sin permiso ni clave, porque C2PA es un estándar abierto con herramientas libres: eso lo vuelve útil y frágil a la vez, porque basta una captura para dejarlo mudo. El texto es lo contrario, robusto pero ilegible sin la clave. La lectura práctica es que quien quiera conservar procedencia debe guardar el archivo original y no la versión que pasó por tres aplicaciones, y que para el texto no hay archivo original que guardar: solo el registro propio de cuándo y con qué se hizo.",
+  },
+
+  {
     slug: "la-feria-de-francisco-i-madero-abre-el-11-de-septiembre",
     site: "mxo",
     image: "/covers/la-feria-de-francisco-i-madero-abre-el-11-de-septiembre.jpg",

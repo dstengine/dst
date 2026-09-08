@@ -34,6 +34,7 @@ Lo que no se ha anunciado se dice que no se ha anunciado. Un cierre sin fecha, u
 
 ## Noticias
 
+- [Anthropic marca el texto de una forma y las imágenes de otra, y una captura de pantalla borra una de las dos](https://mxo.lol/noticias/el-texto-lleva-marca-la-imagen-lleva-firma/): Lo que Claude escribe lleva una marca dentro de las propias palabras. Lo que entrega como archivo lleva metadatos firmados, y esos se pierden al capturar la pantalla.
 - [La Feria de Francisco I. Madero abre el 11 de septiembre y cierra con el Grito adentro](https://mxo.lol/noticias/la-feria-de-francisco-i-madero-abre-el-11-de-septiembre/): Nueve días en Francisco I. Madero, Coahuila, con bailes, artesanía y gastronomía regional — y las fiestas patrias cayendo dentro del programa, no al lado de él.
 - [El modelo que saturó tres exámenes a la vez](https://mxo.lol/noticias/gpt-6-astra-saturo-tres-examenes/): OpenAI presentó GPT-6 Astra el 3 de septiembre. Saturó el nivel más difícil de FrontierMath con 97,6%, ARC-AGI-3 con 99,9% y sacó 96,0% en el examen de ciencias de posgrado.
 - [México queda cuarto del mundo en aportación del turismo al PIB](https://mxo.lol/noticias/mexico-cuarto-lugar-mundial-en-pib-turistico/): El WTTC presentó en Cancún sus cifras 2025: 149,400 millones de dólares de aportación al PIB y 237,900 millones en gasto de viajes de ocio. Solo Estados Unidos, China y Alemania están arriba.

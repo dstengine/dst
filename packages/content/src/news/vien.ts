@@ -2,6 +2,41 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "warum-claude-seit-august-jeden-satz-markiert",
+    site: "vien",
+    image: "/covers/warum-claude-seit-august-jeden-satz-markiert.jpg",
+    imageAlt: "Eine Reihe gleich großer Papierkarten auf cremefarbenem Grund, alle in derselben Farbe, mit unterschiedlich breiten Abständen",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Seit August markiert Claude jeden Satz — und das Lesegerät dazu gibt es nur auf Antrag",
+    cardTitle: "Claudes unsichtbare Markierung",
+    titleSeo: "Claude markiert seinen Text",
+    summary:
+      "Anthropic versieht seit 2. August alles, was Claude schreibt, mit einer unsichtbaren Markierung. Sie steckt nicht in den Wörtern, sondern in deren Auswahl.",
+    date: "2026-09-08",
+    category: "Welt",
+    source: {
+      name: "Anthropic",
+      url: "https://www.anthropic.com/news/claude-text-watermark",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "Eine sichtbare Markierung wäre eine löschbare Markierung. Also hat Anthropic sie dort untergebracht, wo es nichts zu löschen gibt: nicht im Text, sondern im Zufall, der ihn hervorgebracht hat.",
+      "## Die Technik",
+      "Bei jedem Wort stehen dem Modell mehrere gleichwertige Möglichkeiten offen, und es entscheidet mit einer Zufallszahl. Seit der Umstellung, erklärt in einem Beitrag vom <strong>14. August 2026</strong>, stammt diese Zahl aus einem <strong>geheimen Schlüssel</strong> und den bereits geschriebenen Wörtern. Der Text bleibt derselbe. Das Signal liegt im Muster der Entscheidungen — ohne Schlüssel von einem gewöhnlichen Durchlauf nicht zu unterscheiden. Das Verfahren ist eine Variante von <strong>SynthID-Text</strong>, das <strong>Google DeepMind</strong> 2024 in <strong>Nature</strong> veröffentlicht hat.",
+      "## Ab wann und wo",
+      "Ab <strong>2. August 2026</strong> für alle ab diesem Datum veröffentlichten Modelle, ältere folgen in den kommenden Monaten. Es gilt für die Schnittstelle ebenso wie für die Anwendungen, auch über <strong>AWS</strong>, <strong>Google Cloud</strong> und <strong>Microsoft Foundry</strong> — und zwar weltweit, nicht nur dort, wo eine Behörde danach gefragt hat. Abschalten lässt es sich nicht. Für Dateien in den Formaten <strong>.png</strong>, <strong>.jpg</strong> und <strong>.svg</strong> gibt es stattdessen signierte Herkunftsdaten nach dem <strong>C2PA</strong>-Standard.",
+      "## Wer nachsehen darf",
+      "Die Erkennung ist in einer <strong>geschlossenen Vorschau</strong>. Zugang gibt es auf Antrag für Behörden, Strafverfolgung, Medien, Faktenprüfer, unabhängige Forschung, Bildungseinrichtungen und zivilgesellschaftliche Organisationen in der EU sowie für Unternehmen mit eigenen Nachweispflichten. Für alle anderen gilt: die Markierung ist da, lesen kann man sie nicht.",
+      "## Was sie nicht leistet",
+      "Ein Treffer besagt, dass ein Text Claude <em>durchlaufen haben könnte</em> — mehr nicht. Wo dem Modell kaum Alternativen blieben, etwa bei dichten Fakten, Zahlen oder Programmcode, ist das Signal dünn; sehr kurze Texte tragen zu wenig davon. Kopieren und leichtes Überarbeiten übersteht die Markierung, eine Übersetzung oder eine gründliche Umschrift nicht.",
+    ],
+    expertise:
+      "Der Zeitplan verrät, worum es eigentlich geht: das Datum ist kein technischer Meilenstein, sondern eine Frist, und für Modelle von vor dem 2. August gibt es ausdrücklich eine Übergangszeit. Wer in Österreich mit solchen Texten arbeitet — in Redaktionen, an Universitäten, in Verlagen — sollte daraus zwei Dinge mitnehmen. Erstens ist die Markierung kein Ersatz für die eigene Dokumentation: sie kann bestätigen, aber nicht widerlegen, und wer nichts findet, hat nichts bewiesen. Zweitens ist sie etwas grundlegend anderes als die frei zugänglichen KI-Erkenner, die Stil messen und dabei regelmäßig sauber geschriebene Texte von Menschen falsch einordnen. Die eine Methode ist eine Signatur, die andere eine Vermutung, und sie werden im Alltag ständig verwechselt.",
+  },
+
+  {
     slug: "albertina-zeigt-picasso-und-bacon-ab-18-september",
     site: "vien",
     image: "/covers/albertina-zeigt-picasso-und-bacon-ab-18-september.jpg",

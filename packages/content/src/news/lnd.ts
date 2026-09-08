@@ -2,6 +2,40 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "what-claudes-new-watermark-cannot-tell-you",
+    site: "lnd",
+    image: "/covers/what-claudes-new-watermark-cannot-tell-you.jpg",
+    imageAlt: "A long paper strip on a deep navy ground, solid at one end and fading to a faint outline at the other",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Claude now watermarks its writing, and the interesting part is where the mark runs out",
+    cardTitle: "Where the watermark runs out",
+    titleSeo: "Claude's watermark, and its limits",
+    summary:
+      "Since 2 August, text from Anthropic's newer models carries an invisible mark. It thins on short passages, on figures and on code, and a paraphrase removes it.",
+    date: "2026-09-08",
+    category: "Tech",
+    source: {
+      name: "Anthropic",
+      url: "https://www.anthropic.com/news/claude-text-watermark",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "The announcement is easy to summarise and easy to over-read. Since <strong>2 August 2026</strong>, every newly launched Claude model marks what it writes. The mark sits not in the words but in which of several equally good words the model picked — the randomness behind that choice is now derived from a <strong>secret key</strong> and the preceding text, so the pattern is readable with the key and invisible without it.",
+      "That much has been widely reported. The limits have not, and they are where the practical questions live.",
+      "## It needs room to work",
+      "The signal only exists where the model had genuine alternatives. A passage of dense fact — dates, figures, names — or a block of code leaves it very little to choose between, so the mark comes out sparse. A <strong>very short</strong> passage carries too little of it to read at all. Neither case is a failure of the method; it is the method working exactly as described.",
+      "## It survives some things and not others",
+      "Copying and pasting keeps it, and it may persist through light editing. A translation, a thorough paraphrase or a rewrite takes it away. Files are a separate mechanism — <strong>.png</strong>, <strong>.jpg</strong> and <strong>.svg</strong> carry signed <strong>C2PA</strong> provenance metadata instead, which a screenshot or a format conversion strips entirely.",
+      "## And it does not name an author",
+      "Anthropic's own phrasing is that a detected mark means the text <em>may</em> have been processed by Claude. It cannot distinguish a piece drafted by a model from one a person wrote and asked a model to tidy. Nor is the reading widely available: the detector is in <strong>private preview</strong>, granted on application to regulators, law enforcement, media, fact-checkers, researchers and educational organisations.",
+    ],
+    expertise:
+      "The asymmetry that matters is between a positive result and a negative one. A hit is meaningful, because the pattern it reads is astronomically unlikely to occur by chance. A miss means almost nothing: the passage may be too short, too factual, translated, rewritten, or simply produced by a different model altogether, and each of those looks the same from the outside. Anyone planning to lean on this — a school, an editor, a commissioning desk — should design the process so that it only ever acts on a hit, and treat the absence of a mark as no evidence at all. A rule that reverses those two, and treats unmarked work as suspect, will land hardest on people writing in a second language and on anyone whose prose happens to be tidy.",
+  },
+
+  {
     slug: "eleven-design-districts-and-not-one-of-them-is-a-venue",
     site: "lnd",
     image: "/covers/eleven-design-districts-and-not-one-of-them-is-a-venue.jpg",

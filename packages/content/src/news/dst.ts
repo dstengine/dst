@@ -5,6 +5,42 @@ import type { NewsItem } from "../types.ts";
 // anyone outside the company, and advertising it reads badly to a client.
 export const items: NewsItem[] = [
   {
+    slug: "the-detector-for-claudes-watermark-is-not-for-you",
+    site: "dst",
+    image: "/covers/the-detector-for-claudes-watermark-is-not-for-you.jpg",
+    imageAlt: "A sealed paper envelope beside an open one of the same size, its flap folded back",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Claude marks everything it writes, and almost nobody can read the mark",
+    cardTitle: "Marked text, private detector",
+    titleSeo: "Claude's watermark and who can read it",
+    summary:
+      "Anthropic began watermarking Claude's output on 2 August. The mark is in the model's word choices, and the tool that reads it is in private preview.",
+    date: "2026-09-08",
+    category: "AI",
+    source: {
+      name: "Anthropic",
+      url: "https://www.anthropic.com/news/claude-text-watermark",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "Two things shipped this summer, and only one of them shipped to everyone. Every model Anthropic has launched since <strong>2 August 2026</strong> marks the text it writes. The tool that reads the mark went to a list.",
+      "## What the mark is",
+      "Not a phrase, not a character, not a header. At each step the model has several words that would do, and it picks with a random number; the change, set out in an explainer on <strong>14 August 2026</strong>, is that the randomness now comes from a <strong>secret key</strong> plus the words already on the page. The output reads the same. The pattern of choices is the signal, and without the key it is indistinguishable from an ordinary run of the model.",
+      "It applies to the <strong>API</strong> and the apps alike, including through <strong>AWS</strong>, <strong>Google Cloud</strong> and <strong>Microsoft Foundry</strong>, in every country rather than only where a regulator asked for it. There is no switch.",
+      "## Who gets the reader",
+      "The detection API is in <strong>private preview</strong>: regulators, law enforcement, media, fact-checkers, independent researchers, educational organisations, EU civil society groups, and firms with their own compliance obligations. That is a considered decision, not a staged rollout — a public detector would let anyone edit a text, test it, edit again, and stop the instant it came back clean.",
+      "## The asymmetry is the story",
+      "For everyone outside the list, the practical position is new and slightly strange: the text in front of you may carry a verdict about its own origin, and you have no way to ask for it. Provenance stops being something a reader can check and becomes a service an institution requests — on its own subjects, on its own timetable.",
+      "## What it will not settle",
+      "A hit means the text <em>may</em> have passed through Claude. The signal thins where the model had few real alternatives — dense fact, figures, code — and a short passage has too little of it to read. It survives copying and light editing; translation or a genuine rewrite takes it off. Images and vector files are handled by a different mechanism entirely, <strong>C2PA</strong> provenance metadata, which a screenshot removes.",
+    ],
+    expertise:
+      "For anyone whose business rests on published text, the useful move is not to hunt for the mark but to keep your own record. Detection you cannot run is detection you cannot plan around, and reconstructing after the fact — which draft came from where, what was edited by hand, which source was checked on which day — is far harder than writing it down at the time. That record is also the thing a regulator, a client or a court actually asks for, and unlike a watermark it survives translation, paraphrase and a change of file format. Treat the watermark as somebody else's evidence and your own log as yours.",
+  },
+
+  {
     slug: "dubai-property-passes-half-a-trillion-in-eight-months",
     site: "dst",
     image: "/covers/dubai-property-passes-half-a-trillion-in-eight-months.jpg",

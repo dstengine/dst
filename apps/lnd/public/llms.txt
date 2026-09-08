@@ -32,6 +32,7 @@ What has not been announced is said to be unannounced. A closing date nobody has
 
 ## News
 
+- [Claude now watermarks its writing, and the interesting part is where the mark runs out](https://lnd.lol/news/what-claudes-new-watermark-cannot-tell-you/): Since 2 August, text from Anthropic's newer models carries an invisible mark. It thins on short passages, on figures and on code, and a paraphrase removes it.
 - [The London Design Festival has eleven districts, and not one of them is a building](https://lnd.lol/news/eleven-design-districts-and-not-one-of-them-is-a-venue/): The 24th festival runs 12 to 20 September across eleven neighbourhood districts, from Walthamstow to Park Royal, with landmark installations including one inside St Paul's.
 - [After 349 years, the Monument may finally get somewhere to explain itself](https://lnd.lol/news/the-monument-may-finally-get-a-visitor-centre/): The brutalist block next door is coming down, and the ground floor of what replaces it is set aside for a cultural and visitor centre — with an exhibition about the Great Fire, and a café.
 - [Nineteen boroughs give a Sunday to the bicycle](https://lnd.lol/news/nineteen-boroughs-close-a-road-for-a-bicycle/): The London Cycling Festival runs on 20 September across 19 boroughs, with more than 30 led rides, four hubs and closed loops in Westminster and Tower Hamlets. Free, but ticketed.

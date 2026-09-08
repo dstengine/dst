@@ -38,6 +38,7 @@ Lo que no se ha anunciado se dice que no se ha anunciado. Un cierre sin fecha, u
 
 ## Noticias
 
+- [La marca de agua de Claude no está en las palabras: está en cuál se eligió](https://cmx.lol/noticias/la-marca-de-agua-de-claude-no-esta-en-las-palabras/): Desde el 2 de agosto los modelos nuevos de Anthropic marcan lo que escriben. La señal no cambia el texto y sobrevive al copiar y pegar.
 - [El primer Festival del Pan Dulce Mexicano convierte la explanada de la Revolución en panadería](https://cmx.lol/noticias/festival-del-pan-dulce-en-el-monumento-a-la-revolucion/): Del viernes 11 al domingo 13 de septiembre, entrada libre en la explanada del Monumento a la Revolución: conchas, orejas, cuernitos, cochinitos y campechanas.
 - [La explanada de Miguel Hidalgo pone tres actos gratis la noche del Grito](https://cmx.lol/noticias/el-grito-de-miguel-hidalgo-con-paty-cantu/): El 15 de septiembre, en Parque Lira 94: Embajadores de la Cumbia Dinamita a las 19:00, Los Yaguaru a las 21:00 y Paty Cantú a las 23:15. Entrada libre.
 - [Saturno tiene ahora un decágono, y lo dirigió un científico que publica en español](https://cmx.lol/noticias/saturno-tiene-ahora-un-decagono/): El Hubble confirmó una onda de diez lados en el polo sur de Saturno. El estudio, del 2 de septiembre, lo encabeza Agustín Sánchez-Lavega, de la Universidad del País Vasco.

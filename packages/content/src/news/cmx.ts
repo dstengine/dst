@@ -2,6 +2,43 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "la-marca-de-agua-de-claude-no-esta-en-las-palabras",
+    site: "cmx",
+    image: "/covers/la-marca-de-agua-de-claude-no-esta-en-las-palabras.jpg",
+    imageAlt: "Una hilera de fichas de papel del mismo tamaño y color sobre fondo crema, con separaciones desiguales entre ellas",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "La marca de agua de Claude no está en las palabras: está en cuál se eligió",
+    cardTitle: "La marca que viaja con el copiar y pegar",
+    titleSeo: "La marca de agua de Claude",
+    summary:
+      "Desde el 2 de agosto los modelos nuevos de Anthropic marcan lo que escriben. La señal no cambia el texto y sobrevive al copiar y pegar.",
+    date: "2026-09-08",
+    category: "Tecnología",
+    source: {
+      name: "Anthropic",
+      url: "https://www.anthropic.com/news/claude-text-watermark",
+      verifiedOn: "2026-09-08",
+    },
+    body: [
+      "Una marca de agua que se pudiera ver sería una marca de agua que se pudiera borrar. Por eso la de Anthropic está donde no hay nada que borrar: no en el texto, sino en el volado que lo produjo.",
+      "## Cómo funciona",
+      "En cada paso el modelo tiene varias palabras que servirían igual y elige entre ellas con un número al azar. Lo que cambió, según la explicación publicada el <strong>14 de agosto de 2026</strong>, es de dónde sale ese azar: ahora se deriva de una <strong>clave secreta</strong> y de las palabras que ya están escritas. Las palabras son las mismas. Lo que lleva la señal es el patrón de cuáles ganaron, y sin la clave ese patrón no se distingue de cualquier otro.",
+      "El método es una variante de <strong>SynthID-Text</strong>, publicado por <strong>Google DeepMind</strong> en <strong>Nature</strong> en 2024.",
+      "## Lo que le importa a quien escribe",
+      "La marca <strong>viaja con el texto</strong> al copiarlo y pegarlo en otro lado, y puede sobrevivir a cierta edición. No es un archivo con metadatos que se pierden al cambiar de formato: es una propiedad de las palabras en sí, y llega hasta donde lleguen ellas.",
+      "Rige desde el <strong>2 de agosto de 2026</strong> para los modelos lanzados a partir de esa fecha, en todo el mundo y sin opción de desactivarla.",
+      "## Dónde deja de funcionar",
+      "En textos muy cortos no hay señal suficiente para leer nada. En pasajes de puro dato —cifras, nombres, código— el modelo casi no tuvo alternativas equivalentes, así que la marca queda rala. Una traducción o una reescritura de verdad la quitan. Y un acierto no significa autoría: significa que el texto <em>pudo</em> haber pasado por Claude.",
+      "## La otra mitad",
+      "El detector está en <strong>vista previa privada</strong>, abierto por solicitud a reguladores, autoridades, medios, verificadores, investigadores y organizaciones educativas. Para todos los demás, el texto trae la marca y no hay manera de leerla.",
+    ],
+    expertise:
+      "Conviene separar dos cosas que se confunden todo el tiempo: esto no es un detector de inteligencia artificial de los que circulan en línea. Esos miden estilo —longitud pareja de oraciones, vocabulario predecible— y se equivocan en las dos direcciones, sobre todo con quien escribe de forma ordenada o en su segunda lengua. La marca de agua no adivina nada: es una firma criptográfica que está o no está, y solo la lee quien tiene la clave. La consecuencia práctica para un lector es incómoda pero clara: seguirá sin poder comprobar nada por su cuenta, y las herramientas que le prometan lo contrario siguen siendo las mismas de siempre.",
+  },
+
+  {
     slug: "festival-del-pan-dulce-en-el-monumento-a-la-revolucion",
     site: "cmx",
     image: "/covers/festival-del-pan-dulce-en-el-monumento-a-la-revolucion.jpg",
