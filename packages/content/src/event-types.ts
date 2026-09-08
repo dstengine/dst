@@ -48,6 +48,7 @@ export const EVENT_TYPES: Record<string, string> = {
   // Festivals, in five languages and both numbers.
   Carnival: "Festival",
   "City-wide": "Festival",
+  Designfestival: "Festival",
   Feria: "Festival",
   Ferias: "Festival",
   Festival: "Festival",
@@ -57,6 +58,7 @@ export const EVENT_TYPES: Record<string, string> = {
   Filmfestival: "Festival",
   Musikfestival: "Festival",
   Parade: "Festival",
+  Volksfest: "Festival",
 
   // Books is the Brooklyn Book Festival and nothing else; it is a festival
   // that happens to be about books, not an exhibition of them.
@@ -72,6 +74,7 @@ export const EVENT_TYPES: Record<string, string> = {
   Exhibition: "ExhibitionEvent",
   Exhibitions: "ExhibitionEvent",
   "Exposición": "ExhibitionEvent",
+  Museumsnacht: "ExhibitionEvent",
 
   Deporte: "SportsEvent",
   Racing: "SportsEvent",

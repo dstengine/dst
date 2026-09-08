@@ -225,6 +225,18 @@
       "vienna-coffee-festival-2026": {
         "subject": "two concentric circles centred in the frame, the inner one filled a darker flat tone than the ring around it, and three short curved strokes rising above them",
         "idiom": "lino"
+      },
+      "vienna-design-week-2026": {
+        "idiom": "lino",
+        "subject": "one tall narrow tower of stacked flat rectangles rising the full height of the frame, each floor a plain band, a wide empty ground either side of it"
+      },
+      "wiener-kaiser-wiesn-2026": {
+        "idiom": "vector",
+        "subject": "three tent shapes standing side by side across the frame, each a plain triangle over a plain rectangle, the middle one taller than the two beside it"
+      },
+      "lange-nacht-der-museen-2026": {
+        "idiom": "vector",
+        "subject": "a row of five tall lit windows in a plain dark facade, each window a flat block of light, everything around them one unbroken flat tone"
       }
     }
   },

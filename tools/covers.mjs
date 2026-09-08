@@ -120,9 +120,12 @@ const NEGATIVES =
   // A print idiom signs and numbers itself: the first linocut came back
   // with a pencilled edition mark in one corner and a signature in the
   // other, which is words on a cover that forbids them. These four help
-  // and do not settle it — one linocut signed itself again with all of
-  // them in the prompt. When a subject keeps attracting a signature, take
-  // it off the print idiom rather than adding a fifth negation.
+  // and do not settle it — three of the next five linocuts signed
+  // themselves anyway, with all four in the prompt: a name, a scrawled
+  // "2046", a printed border. So the negation is not the control. Check
+  // the corners of every print-idiom cover, and move the picture to vector
+  // rather than reaching for a fifth negation, which is what fixed all
+  // three.
   "no artist signature, no edition number, no handwriting, no paper margin";
 
 /** How the picture is drawn. This, not the subject, is what keeps a cover

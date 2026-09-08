@@ -113,4 +113,172 @@ export const items: EventItem[] = [
     expertise:
       "Das Cupping ist der Teil, für den man kommt, und der Teil, der zuerst ausgebucht ist — anders als bei den Ausstellerständen sitzt man dort in einer festen Runde, und die Plätze sind gezählt. Wer nur einen Tag hat, nimmt den Freitag: der B2B-Tag zieht das Fachpublikum, und an den Ständen wird an diesem Tag anders geredet als am Wochenende, wo dieselben Leute Schlangen abarbeiten. Und eine Anmerkung zur Halle: Die Marx Halle ist eine Gusseisenkonstruktion aus dem 19. Jahrhundert ohne Klimaanlage. Bei einem warmen Septemberwochenende ist der Vormittag die angenehmere Hälfte des Tages.",
   },
+
+  {
+    slug: "vienna-design-week-2026",
+    site: "vien",
+    image: "/covers/vienna-design-week-2026.jpg",
+    imageAlt: "Ein gestufter Turm aus roten und grünen Blöcken auf hellem Grund, als Linolschnitt",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Vienna Design Week 2026",
+    summary:
+      "Zehn Tage Design in ganz Wien, vom 25. September bis 4. Oktober, an rund 50 Orten und bei den meisten Programmpunkten bei freiem Eintritt. Die 20. Ausgabe hat ihre Festivalzentrale in einem Bürohochhaus von Harry Glück in Hietzing.",
+    start: "2026-09-25",
+    end: "2026-10-04",
+    utcOffset: "+02:00",
+    city: "Wien",
+    organizer: "Vienna Design Week",
+    category: "Designfestival",
+    source: {
+      name: "Vienna Design Week",
+      url: "https://www.viennadesignweek.at/en/",
+      verifiedOn: "2026-09-08",
+    },
+    ticket: { url: "https://www.viennadesignweek.at/en/", label: "Zum Festival" },
+    body: [
+      "Ein Designfestival, das keine Messehalle mietet, sondern die Stadt benutzt: Vienna Design Week findet in Werkstätten, Geschäften, Höfen und einem leerstehenden Bürohochhaus statt, und wer hingeht, geht dorthin, wo gearbeitet wird.",
+      "## Die Daten",
+      "<strong>25. September bis 4. Oktober 2026</strong>, an rund <strong>50 Orten</strong> in Wien. Es ist die <strong>20. Ausgabe</strong> — das Festival nennt sich selbst Österreichs wichtigstes kuratiertes Designfestival und zählt üblicherweise rund 200 Programmpunkte und 40.000 Besucherinnen und Besucher.",
+      "## Was der Eintritt kostet",
+      "Bei den <strong>meisten Programmpunkten nichts</strong>. Einzelne Formate sind kostenpflichtig oder brauchen eine Anmeldung; welche das 2026 sind, stand am 8. September noch nicht fest.",
+      "## Die Festivalzentrale",
+      "Ein Bürohochhaus am <strong>Hietzinger Kai 101</strong> im 13. Bezirk, in den Siebzigerjahren von <strong>Harry Glück</strong> gebaut. Dort ist auch das Gastland <strong>Luxemburg</strong> mit eigenen Ausstellungsprojekten untergebracht.",
+      "## Die Formate",
+      "Ausstellungen und Installationen, Führungen, Workshops, Studiobesuche und Produktionsstätten. Das bekannteste Format sind die <strong>Passionswege</strong>: internationale und österreichische Gestalterinnen und Gestalter arbeiten dafür mit Wiener Handwerksbetrieben zusammen. Neu 2026 sind <strong>Akustikdesign</strong> und <strong>Urban Food Design</strong>.",
+    ],
+    faq: [
+      {
+        q: "Kostet die Vienna Design Week Eintritt?",
+        a: "Bei den meisten Programmpunkten ist der Eintritt frei. Einzelne Workshops und Führungen sind kostenpflichtig oder brauchen eine Anmeldung.",
+      },
+      {
+        q: "Wann findet die Vienna Design Week 2026 statt?",
+        a: "Von <strong>25. September bis 4. Oktober 2026</strong>, zehn Tage lang an rund 50 Orten in Wien.",
+      },
+      {
+        q: "Wo ist die Festivalzentrale 2026?",
+        a: "In einem Bürohochhaus am Hietzinger Kai 101 im 13. Bezirk, gebaut in den Siebzigerjahren von Harry Glück.",
+      },
+      {
+        q: "Was sind die Passionswege?",
+        a: "Das älteste Format des Festivals: Gestalterinnen und Gestalter arbeiten für eine Saison mit einem Wiener Handwerksbetrieb zusammen, und das Ergebnis wird in der Werkstatt gezeigt, nicht auf einem Messestand.",
+      },
+    ],
+    expertise:
+      "Die Passionswege sind der Grund, warum dieses Festival anders ist als eine Designmesse, und sie sind auch der Teil, der am meisten Weg kostet: Die Werkstätten liegen über die Stadt verteilt, und wer sie an einem Nachmittag abhaken will, verbringt den Nachmittag in der U-Bahn. Sinnvoller ist es, sich einen Bezirk vorzunehmen. Zweitens die Festivalzentrale: Ein leerstehendes Bürohochhaus ist als Ort selbst schon die halbe Ausstellung, und es ist der einzige Punkt im Programm, an dem man ohne Planung hingehen und trotzdem viel sehen kann.",
+  },
+
+  {
+    slug: "wiener-kaiser-wiesn-2026",
+    site: "vien",
+    image: "/covers/wiener-kaiser-wiesn-2026.jpg",
+    imageAlt: "Drei Festzelte nebeneinander in Rot, Ocker und Grün auf cremefarbenem Grund, das mittlere höher und mit einer kleinen roten Fahne",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Wiener Kaiser Wiesn 2026",
+    summary:
+      "Achtzehn Tage Volksfest auf der Kaiserwiese im Prater, von 24. September bis 11. Oktober. Der Eintritt aufs Gelände ist frei, Karten braucht man nur für die Abendveranstaltungen in den drei Zelten.",
+    start: "2026-09-24",
+    end: "2026-10-11",
+    utcOffset: "+02:00",
+    venue: "Kaiserwiese, Prater",
+    city: "Wien",
+    organizer: "Wiener Kaiser Wiesn GmbH",
+    category: "Volksfest",
+    tickets: { priceFrom: 0, priceTo: 0, currency: "EUR" },
+    source: {
+      name: "Stadt Wien",
+      url: "https://www.wien.gv.at/veranstaltungen/wiener-kaiser-wiesn-2026",
+      verifiedOn: "2026-09-08",
+    },
+    ticket: { url: "https://kaiserwiesn.at/en/", label: "Zur Kaiser Wiesn" },
+    body: [
+      "Achtzehn Tage lang steht auf der Kaiserwiese im Prater das größte Volksfest Österreichs, und der Eintritt aufs Gelände kostet nichts. Das ist der Unterschied zu München, den man kennen sollte, bevor man ein Ticket sucht: Man braucht keines, um hinzugehen.",
+      "## Die Daten",
+      "<strong>24. September bis 11. Oktober 2026</strong>, <strong>Kaiserwiese</strong> im Prater, 2. Bezirk.",
+      "## Was der Eintritt kostet",
+      "<strong>Nichts.</strong> Karten braucht man nur für die <strong>Abendveranstaltungen in den drei Festzelten</strong> — Gösser Kaiserzelt, Wiesbauer Kaiserzelt und Nordic Spirit Kaiserzelt.",
+      "## Die Zelte",
+      "Drei an der Zahl, mit Live-Bands. Das Musikprogramm endet um Mitternacht.",
+    ],
+    faq: [
+      {
+        q: "Kostet die Wiener Kaiser Wiesn Eintritt?",
+        a: "Das Gelände auf der Kaiserwiese ist <strong>frei zugänglich</strong>. Karten braucht man nur für die Abendveranstaltungen in den drei Festzelten.",
+      },
+      {
+        q: "Wann ist die Wiener Kaiser Wiesn 2026?",
+        a: "Von <strong>24. September bis 11. Oktober 2026</strong>, achtzehn Tage lang.",
+      },
+      {
+        q: "Wo findet die Kaiser Wiesn statt?",
+        a: "Auf der Kaiserwiese im Prater im 2. Bezirk, gleich beim Riesenrad.",
+      },
+      {
+        q: "Wie viele Festzelte gibt es?",
+        a: "Drei: das Gösser Kaiserzelt, das Wiesbauer Kaiserzelt und das Nordic Spirit Kaiserzelt.",
+      },
+    ],
+    expertise:
+      "Der freie Eintritt ist der Punkt, an dem die meisten falsch planen. Aufs Gelände kommt man ohne Karte, und tagsüber ist das auch die ganze Wahrheit — abends aber sind die Zelte der Ort, an dem das Fest stattfindet, und dafür braucht es eine Reservierung. Wer spontan am Samstagabend hinfährt, steht auf der Wiese und hört die Band durch die Zeltwand. Und die Lage ist der zweite Vorteil gegenüber München: Die Kaiserwiese liegt direkt beim Riesenrad an der U1, man kommt ohne Sonderfahrplan hin und wieder weg.",
+  },
+
+  {
+    slug: "lange-nacht-der-museen-2026",
+    site: "vien",
+    image: "/covers/lange-nacht-der-museen-2026.jpg",
+    imageAlt: "Drei hell erleuchtete hohe Fenster in einer dunkelroten Fassade",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "ORF Lange Nacht der Museen 2026",
+    summary:
+      "Eine Nacht, ein Ticket, rund 270 Museen in ganz Österreich: am 3. Oktober von 18 bis 24 Uhr. Das Ticket kostet 19 Euro, ermäßigt 16, Kinder unter zwölf gehen frei.",
+    start: "2026-10-03",
+    startTime: "18:00",
+    endTime: "24:00",
+    utcOffset: "+02:00",
+    city: "Wien",
+    organizer: "ORF",
+    category: "Museumsnacht",
+    tickets: { priceFrom: 16, priceTo: 19, currency: "EUR" },
+    source: {
+      name: "ORF Lange Nacht der Museen",
+      url: "https://langenacht.orf.at/",
+      verifiedOn: "2026-09-08",
+    },
+    ticket: { url: "https://langenacht.orf.at/", label: "Zur Langen Nacht" },
+    body: [
+      "Ein Ticket, sechs Stunden, rund 270 Häuser: Die Lange Nacht der Museen ist der einzige Abend im Jahr, an dem man in Wien ein Museum verlässt, weil noch drei andere offen haben.",
+      "## Die Daten",
+      "<strong>Samstag, 3. Oktober 2026, 18 bis 24 Uhr</strong>, in ganz Österreich.",
+      "## Was das Ticket kostet",
+      "<strong>19 Euro</strong> regulär, <strong>16 Euro</strong> ermäßigt für Studierende, Seniorinnen und Senioren und Menschen mit Behinderung. Ein <strong>Regionalticket</strong> für ein einzelnes Bundesland kostet <strong>7 Euro</strong>. <strong>Kinder unter zwölf</strong> — geboren nach dem 2. Oktober 2014 — gehen <strong>gratis</strong>.",
+      "## Wie viele Häuser mitmachen",
+      "Rund <strong>270 Museen und Kultureinrichtungen</strong> in ganz Österreich, ein großer Teil davon in Wien.",
+    ],
+    faq: [
+      {
+        q: "Was kostet die Lange Nacht der Museen 2026?",
+        a: "<strong>19 Euro</strong> regulär und <strong>16 Euro</strong> ermäßigt für ganz Österreich; ein Regionalticket für ein Bundesland kostet 7 Euro. Kinder unter zwölf zahlen nichts.",
+      },
+      {
+        q: "Wann ist die Lange Nacht der Museen 2026?",
+        a: "Am <strong>Samstag, 3. Oktober 2026, von 18 bis 24 Uhr</strong>.",
+      },
+      {
+        q: "Wie viele Museen machen mit?",
+        a: "Rund 270 Museen und Kultureinrichtungen in ganz Österreich.",
+      },
+      {
+        q: "Gilt ein Ticket für alle Museen?",
+        a: "Ja. Ein Ticket gilt für alle teilnehmenden Häuser in ganz Österreich; das günstigere Regionalticket gilt nur in einem Bundesland.",
+      },
+    ],
+    expertise:
+      "Sechs Stunden klingen nach viel und sind es nicht: Realistisch sind vier Häuser, wenn sie nahe beieinander liegen, und drei, wenn nicht. Der Fehler, den fast alle beim ersten Mal machen, ist das größte Haus zuerst — im Kunsthistorischen oder im Naturhistorischen ist der Abend vorbei, bevor er begonnen hat, und beide sind ohnehin ganzjährig offen. Die Nacht lohnt sich für die kleinen Sammlungen, die man sonst nie betritt, weil sie um 17 Uhr zusperren. Und das Regionalticket um 7 Euro ist für einen Wiener Abend die richtige Karte — die 19 Euro zahlt nur, wer wirklich Bundesländer wechselt.",
+  },
 ];

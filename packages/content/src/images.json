@@ -18532,6 +18532,54 @@
         ]
       ]
     },
+    "/covers/lange-nacht-der-museen-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/lange-nacht-der-museen-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/lange-nacht-der-museen-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/lange-nacht-der-museen-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/lange-nacht-der-museen-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/lange-nacht-der-museen-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/lange-nacht-der-museen-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/lange-nacht-der-museen-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/lange-nacht-der-museen-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/lange-nacht-der-museen-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/lange-nacht-der-museen-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/openai-stuft-neues-modell-als-kritisch-fuer-cybersicherheit-ein.jpg": {
       "width": 1536,
       "height": 864,
@@ -18673,6 +18721,54 @@
         [
           1536,
           "/covers/vienna-coffee-festival-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/vienna-design-week-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/vienna-design-week-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/vienna-design-week-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/vienna-design-week-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/vienna-design-week-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/vienna-design-week-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/vienna-design-week-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/vienna-design-week-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/vienna-design-week-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/vienna-design-week-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/vienna-design-week-2026-1536.webp"
         ]
       ]
     },
@@ -18913,6 +19009,54 @@
         [
           1536,
           "/covers/wien-modern-39-1536.webp"
+        ]
+      ]
+    },
+    "/covers/wiener-kaiser-wiesn-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/wiener-kaiser-wiesn-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/wiener-kaiser-wiesn-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/wiener-kaiser-wiesn-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/wiener-kaiser-wiesn-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/wiener-kaiser-wiesn-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/wiener-kaiser-wiesn-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/wiener-kaiser-wiesn-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/wiener-kaiser-wiesn-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/wiener-kaiser-wiesn-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/wiener-kaiser-wiesn-2026-1536.webp"
         ]
       ]
     },
