@@ -42,7 +42,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the Ambassador Theatre",
         paragraphs: [
           "Herbert J. Krapp set the auditorium on a diagonal across a plot only a hundred feet wide, which is how 1,125 seats fit into a site that should not hold them. The Shuberts built it after the First World War along with the theatres now named for O'Neill and Walter Kerr, and it opened on 11 February 1921 with a musical, The Rose Girl.",
           "They sold it in 1935 and it spent twenty years being something else: a CBS radio studio, a cinema, a house for foreign films, then a studio for the DuMont television network. The Shuberts bought it back in 1956. Most of what played here afterwards was short. Chicago arrived in 2003 and has not left.",
@@ -81,7 +81,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the Sondheim Theatre",
         paragraphs: [
           "Sprague designed it as a pair with the theatre on the adjoining corner — now the Gielgud — and opened it on 8 October 1907 with a comedy called The Sugar Bowl. For its first fifty years it was a straight-play house: the Old Vic's Hamlet transferred here in 1930 and gave John Gielgud his first Shaftesbury Avenue Hamlet, and Robert Morley's first play brought Marie Tempest, Sybil Thorndike, Margaret Rutherford and Rex Harrison onto one bill in 1935.",
           "On 24 September 1940 it became the first West End theatre put out of action by bombing, which ended a successful run of Rebecca overnight. It stayed shut for nineteen years. Westwood Sons & Partners rebuilt it for £250,000 with Sir Hugh Casson advising on the décor, and it reopened on 8 July 1959 with Gielgud's Shakespeare recital Ages of Man — the same actor, in the same room, three decades on.",
@@ -122,7 +122,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside His Majesty's Theatre",
         paragraphs: [
           "The first house here opened in 1705 with Queen Anne's permission, under the management of the architect and playwright John Vanbrugh, and it was built for opera. It kept that job for most of a century: Handel's operas, London premieres sung in Italian, singers whose names filled the Haymarket.",
           "The present building is the fourth, put up in 1897 by the actor-manager Herbert Beerbohm Tree to house his own Shakespeare and his adaptations of novels. It has been renamed with each change of monarch — most recently in 2023, for the coronation of King Charles III — which is why a forty-year-old production has played it under two names.",
@@ -167,7 +167,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the Coca-Cola Arena",
         paragraphs: [
           "Populous designed it — the practice behind a long list of stadiums and arenas — and the roof is rigged to carry 190 tonnes, which is what lets a touring production hang a full show from it rather than build one on the floor. There are seventeen lifts, twenty-six escalators, eight artist dressing rooms and thirty-five concession stands inside.",
           "The front is a lighting system rather than a facade: 4,600 LEDs, reprogrammed for whoever is playing. At least twenty-eight wheelchair spaces are available, and the number changes with the staging, so it is worth asking when you book rather than after.",
@@ -202,7 +202,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the Tokyu Theatre Orb",
         paragraphs: [
           "It stands on the site of the old Tokyu Bunka Kaikan and occupies six floors of the tower that replaced it, opening in July 2012 as the centrepiece of Shibuya Hikarie. The brief was unusually specific: a house built to receive Broadway productions, with an orchestra pit, a large stage lift, sixty lighting battens and movable lighting bridges.",
           "The first show was West Side Story, the first Broadway staging invited to Japan in forty-eight years. Everything since has been the same kind of booking — imported musicals, playing a room designed around them.",
@@ -234,7 +234,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the Orix Theater",
         paragraphs: [
           "The complex opened in April 1968 with a main hall of 2,400 seats, a smaller hall, lodgings and two restaurants, and for years it was the biggest room in Osaka. Orix Real Estate bought it in October 2009 and it has carried the company's name since.",
           "Its history is mostly music rather than theatre: Queen, Pink Floyd, Deep Purple, The Jackson 5 and James Brown all played the main hall. A touring musical in it is the exception, not the pattern.",
@@ -270,7 +270,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the New Wimbledon Theatre",
         paragraphs: [
           "J. B. Mulholland built it on the grounds of a large house and opened it two days after Christmas 1910 with a pantomime, Jack and Jill. The Edwardian interior survived two refurbishments, in 1991 and 1998, and the baroque plasterwork is still the thing people notice on the way to their seats.",
           "Between the wars Gracie Fields, Sybil Thorndike, Ivor Novello and Noël Coward all played here. It has a habit of getting musicals first: Oliver! opened here in 1960 and Half a Sixpence in 1963, both on their way to the West End.",
@@ -305,7 +305,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the Theatre Royal Plymouth",
         paragraphs: [
           "Plymouth has had a Theatre Royal since 1813, when John Foulston's neo-classical block at the bottom of George Street seated 1,192. The present building, Peter Moro's, dates from 1982 and sits on Derry's Cross; a £7 million rebuild of the front of house finished in 2013 and added the Lab.",
           "The seven-metre bronze outside — a crouching actor, called Messenger — went up in 2019 and is now the easiest way to describe where to meet.",
@@ -339,7 +339,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the Wales Millennium Centre",
         paragraphs: [
           "The second phase opened in January 2009 and gave the BBC National Orchestra and Chorus of Wales a home inside the same building. Eight arts organisations are resident; since 2012 the centre has produced work of its own as well as receiving tours.",
           "For a touring musical this is the biggest room in Wales, which is why almost everything on a UK tour stops here rather than anywhere else in the country.",
@@ -373,7 +373,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the Sheffield Lyceum Theatre",
         paragraphs: [
           "There has been a theatre on this corner of Tudor Square since 1879, when a wooden building meant for a circus went up; Dan Leno's parents managed it, and it burned down in 1893. The Lyceum replaced its short-lived successor and opened in 1897 under a statue of Mercury, which is still on the roof.",
           "By the 1960s it was taking bingo to stay open. Two Sheffield businessmen bought it in 1985 with the council's help, and the restoration that followed cost £12 million and gave the city back a 1,068-seat receiving house on three levels.",
@@ -408,7 +408,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the Liverpool Empire",
         paragraphs: [
           "The site started as the New Prince of Wales Theatre and Opera House in 1866, became the Royal Alexandra, then simply the Empire when Moss and Thornton bought it in 1896 for £30,000. That building closed in February 1924 and the present one opened thirteen months later.",
           "Merseyside County Council took it on in 1979 and spent £680,000 deepening the stage and the orchestra pit; a larger refurbishment in 1999 widened the stage again. The size is the point: shows that will not fit elsewhere in the north-west fit here.",
@@ -443,7 +443,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the Newcastle Theatre Royal",
         paragraphs: [
           "The Greens designed it as part of Grainger's rebuilding of central Newcastle, and the portico halfway up Grey Street is the reason the street keeps turning up in lists of the finest in England.",
           "Fire took the interior in 1899. Matcham — the most prolific theatre architect of the period, and the name behind half the houses on this tour — rebuilt it behind the surviving front, and it reopened on 31 December 1901 with the auditorium of four levels and 1,249 seats that is there today.",
@@ -479,7 +479,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the Bournemouth Pavilion Theatre",
         paragraphs: [
           "It was designed as a concert hall for the municipal orchestra, then rebuilt within five years to take theatre as well; the reopening in July 1934 was The White Horse Inn. Two storeys were added either side of the entrance in the 1950s.",
           "The Oasis Bar, tacked onto the west end in 1975, was disliked enough to be demolished again in 2007. The gardens it sits in have been public pleasure grounds since 1859.",
@@ -513,7 +513,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the King's Theatre",
         paragraphs: [
           "Howard & Wyndham built it under Baillie Michael Simons and ran it until 1967, when Glasgow Corporation bought it. The council still owns the building and leases it to ATG.",
           "It is a receiving house — touring musicals, dance, comedy — and it also gives local amateur companies a professional stage, which is rarer than it sounds for a theatre of this size.",
@@ -548,7 +548,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside His Majesty’s Theatre",
         paragraphs: [
           "Arthur submitted plans for the Rosemount Viaduct site in 1901 and opened the finished theatre in December 1906. His company ran out of money in 1912; the theatre passed through the Tivoli's managing director and then, in 1932, to Councillor James F. Donald, who refurbished it and put neon on the front.",
           "The city council owns it now and Aberdeen Performing Arts programmes it. More than 1,400 seats makes it the only room in the region that takes a full touring musical.",
@@ -582,7 +582,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the Manchester Opera House",
         paragraphs: [
           "The fifteen-bay classical front with its fluted Ionic columns is stuccoed brick under a slate roof, and it is the reason the building is listed. Howard & Wyndham bought the theatre in 1931 and brought in C. B. Cochran as a visiting producer, which is how a run of West End musicals and revues came to open in Manchester first.",
           "Apollo Leisure took it on in 1990 and put big musicals back into it; ATG bought it in 2009 and it shares a parent company, and often a tour, with the Palace Theatre on Oxford Street.",
@@ -615,7 +615,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the Grand Opera House York",
         paragraphs: [
           "The Italianate red-brick front on Clifford Street was Dean's corn exchange, opened in October 1868 and made obsolete within thirty years by the collapse in British agriculture. The auditorium behind it — raked seating, proscenium arch, stage — is Briggs's, dropped into the old warehouse.",
           "It was renamed the Grand Opera House and Empire in 1903, showed silent films early, became the Empire Theatre in 1916, and has been back to its original name and its original job for decades: touring plays, musicals, opera and ballet.",
@@ -650,7 +650,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the Blackpool Opera House",
         paragraphs: [
           "Matcham's first Opera House cost £9,098, seated 2,500 and opened as Her Majesty's Opera House with the premiere run of Gilbert and Sullivan's The Yeomen of the Guard. It was full enough to be rebuilt bigger within twenty-one years, and rebuilt again a generation later.",
           "The 1939 house has a sweeping curved proscenium and the last new Wurlitzer organ installed anywhere in Britain, played on the opening night by Horace Finch and Reginald Dixon and still in use.",
@@ -687,7 +687,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the Royal Concert Hall",
         paragraphs: [
           "RHWL, the practice behind the Sheffield Crucible and Manchester's Bridgewater Hall, designed it; work started in 1980 and finished two years later. The modern block opposite the Theatre Royal's portico is a deliberate contrast, and the two share a foyer and a box office.",
           "It is a concert hall rather than a lyric theatre, which is why the musicals that play it are the ones that travel with a concert staging rather than a full set.",
@@ -722,7 +722,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the Alhambra Theatre",
         paragraphs: [
           "Bradford Council bought the theatre in 1964 for £78,900 and rebuilt it between 1984 and 1986. The white faience front, made by Gibbs and Canning of Tamworth, was painted white and grey during that work.",
           "Inside, two tiers of moulded plasterwork curve round to boxes set in round-arched openings between giant fluted columns. The main house seats 1,456 and takes large-scale tours of every kind.",
@@ -756,7 +756,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the Cliffs Pavilion",
         paragraphs: [
           "Work on a 500-seat Shorefield Pavilion began in 1939 and stopped when war broke out. Building restarted in 1963 on a larger plan, and Bernard Miles opened the 1,100-seat theatre in July 1964; the hexagonal sunken forecourt outside followed the line of the pre-war foundations until the recent refurbishment.",
           "Capacity is now 1,630. HQ Theatres took over the programming in 2006 and merged into Trafalgar Entertainment in 2021.",
@@ -791,7 +791,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the Congress Theatre",
         paragraphs: [
           "Designed in 1958 and built between 1961 and 1963 by the local firm Llewellyns, it opened with a fanfare from the Royal Military School of Music and a London Philharmonic concert conducted by Arthur Bliss. Princess Margaret unveiled a plaque here in 1965.",
           "A major refurbishment in 2019 brightened the front of house without touching the character of the original design. The 1,689 seats make it the room on the south coast that a full touring musical can use.",
@@ -826,7 +826,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the Birmingham Hippodrome",
         paragraphs: [
           "Assembly rooms went up on Hurst Street in 1895; F. W. Lloyd added a stage, a circus ring and a tower four years later. It failed, reopened as the Tivoli in 1900, and became the Hippodrome under Thomas Barrasford in 1903. The neo-classical auditorium in use today was built in 1924.",
           "The entrance and the tower were demolished in 1963 when Smallbrook Queensway went through. The city council bought the theatre in the 1970s and a registered charity has run it since 1979; the stagehouse was rebuilt in the 1980s so that the largest touring sets would fit.",
@@ -861,7 +861,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the Norwich Theatre Royal",
         paragraphs: [
           "The original house held about a thousand people. Parliament granted it Theatre Royal status in 1768, with the right to perform all drama, and the title drew the stars of the day: Sarah Siddons played Hamlet, Juliet and Lady Macbeth here, and Ira Aldridge appeared in January 1848.",
           "William Wilkins rebuilt it in 1800 and again in 1826; gas replaced candles in 1836; Frank Matcham redesigned the interior in 1894. It burned down in 1934 and the theatre standing today opened just over a year later, in 1935.",
@@ -895,7 +895,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the Theatre Royal Brighton",
         paragraphs: [
           "It struggled until the actor Henry John Nye Chart bought it in 1854 and brought in Charles J. Phipps to expand it. When Chart died in 1876 his wife Ellen took over and ran it for two decades — one of the first women to manage a British theatre. There is a statue of her in the Royal Circle bar.",
           "Ibsen, Rattigan, Coward and Orton all had plays tried out here before London, and the list of people who have worked on the stage runs from Olivier and Gielgud to Marlene Dietrich and Judi Dench.",
@@ -930,7 +930,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the Grand Opera House Belfast",
         paragraphs: [
           "It opened as the New Grand Opera House and Cirque, spent five years from 1904 as the Palace of Varieties, and took its present name in 1909. Charlie Chaplin played here in 1908. Nellie Melba, Sarah Bernhardt and Gracie Fields were regulars.",
           "It became a repertory theatre during the Second World War, and Eisenhower, Montgomery and Alanbrooke came to the gala performances marking its end. Laurel and Hardy, Orson Welles and Pavarotti — making his British debut — all appeared afterwards.",
@@ -964,7 +964,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the Bristol Hippodrome",
         paragraphs: [
           "It came through the war and then lost its stage to a fire in 1948; the auditorium survived and the theatre reopened about ten months later. Three levels seat 1,951.",
           "The stage is one of the largest outside London, which is why the big musicals come here rather than anywhere else in the west. Eddie Cochran played his last concert on it in 1960, hours before the crash near Chippenham that killed him.",
@@ -997,7 +997,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the Milton Keynes Theatre",
         paragraphs: [
           "Arup Acoustics built a 1:50 scale model of the room to work out what the moving ceiling would do to the sound before it was installed. The result takes a full-scale musical one week and a small drama the next without either sounding wrong.",
           "ATG was appointed to run the theatre in 1998, a year before it opened, and still does.",
@@ -1031,7 +1031,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the Hall for Cornwall",
         paragraphs: [
           "Truro's first municipal building here was a seventeenth-century market house, arcaded so that trading could go on underneath an assembly room. It was replaced in 1809, found wanting again, and rebuilt to Christopher Eales's design in granite ashlar, finished in 1846.",
           "The north end held a courtroom and a council chamber, the south end the market. The suffragist Helen Beedy argued for votes for women at a public meeting in the building in December 1874, three years before Truro became a city.",
@@ -1065,7 +1065,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the New Theatre Oxford",
         paragraphs: [
           "The second New Theatre was opened by the Oxford University Dramatic Society in February 1886 with Twelfth Night, after townspeople and university members raised the money for a house both could use. The Dorrill family managed it until 1972.",
           "The building in use now dates from 1933. Its original scheme was deep brown with gilt friezes; a multicoloured one arrived around 1980. It takes musicals, comedy and concerts, and the capacity puts it among the larger touring houses in the south.",
@@ -1099,7 +1099,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the Hull New Theatre",
         paragraphs: [
           "The refit was planned around the City of Culture year. An Arts Council grant of £5 million did not come, the council decided to go ahead anyway, and £13 million announced in the 2016 Budget covered the gap.",
           "The theatre came back with more seats than it had before — 1,351 — and a stage that takes full-scale touring musicals, opera and ballet, plus the pantomime that is still the busiest thing in its year.",
@@ -1132,7 +1132,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside Venue Cymru",
         paragraphs: [
           "The Victoria Palace opened in July 1894 as a temporary 1,150-seat concert hall for Jules Rivière, then seventy-five, and his orchestra of forty-two, after he fell out with the pier company. Charles and Wilma Hallé gave a recital with them that year.",
           "Will Catlin bought it in 1916 and ran it as the Arcadia, home of Catlin's Pierrots and a young Ken Dodd. The building that replaced it in 1982 does what the seaside seasons used to: a theatre big enough for a touring musical and an arena for everything else.",
@@ -1166,7 +1166,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the Sunderland Empire",
         paragraphs: [
           "Richard Thornton built it on his own after his partnership with Edward Moss broke up, and called it the Empire Palace. The statue of Terpsichore on the revolving sphere at the top of the ninety-foot tower came down during the war, after a nearby bomb shook the building; the original now stands at the head of the main staircase and a replica is back on the dome.",
           "Variety carried the theatre until the mid-1920s. A projection box went in during 1930 as touring declined. It is one of the largest venues in the north-east, which is what brings the big tours back to it.",
@@ -1199,7 +1199,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the Orchard Theatre",
         paragraphs: [
           "The council built it and ran it, HQ Theatres took over the programming in 2008, and Trafalgar Entertainment inherited that in 2021. The mix is what a town-centre receiving house always is: music, comedy, dance, drama and a pantomime.",
           "The 2023 closure was a structural one, not a commercial one. Dates listed against the Orchard for 2027 are the producer's, and where the audience actually sits is the council's decision to announce.",
@@ -1233,7 +1233,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the New Victoria Theatre",
         paragraphs: [
           "The Royal Shakespeare Company, the National and the Peter Hall Company have all brought work here, and Glyndebourne on Tour, Scottish Ballet and Northern Ballet are regulars. Carmen Jones, Cats and Miss Saigon have played the main house.",
           "The first three rows of the stalls — AA, BB and CC — come out when a show needs an orchestra pit, which is worth knowing if you are choosing seats for a musical.",
@@ -1268,7 +1268,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the Everyman Theatre",
         paragraphs: [
           "It took a cinema licence in 1929 on the condition that it kept staging live performance, and it spent the Second World War as a garrison theatre for civilians and the American soldiers stationed at Pittville, with London actors escaping the Blitz on its stage.",
           "It closed in 1959 and was nearly sold. An advertisement asking for £3,000 at once to reopen the opera house did the trick: the Everyman opened in May 1960 with the world premiere of N. C. Hunter's A Piece of Silver.",
@@ -1305,7 +1305,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the Regent Theatre",
         paragraphs: [
           "Provincial Cinematograph Theatres commissioned it and the Lord Mayor opened it in 1929. Gaumont British renamed it in 1950 and it picked up the live bookings the closing Theatre Royal let go. It was cut into three screens in 1974, taken over by Odeon in 1976 and closed when a multiplex opened in 1989.",
           "By the late 1990s the interior had deteriorated badly. The conversion finished in 1999 and gave the city a 1,600-seat lyric theatre, which is what large touring musicals need and a converted cinema does not usually offer.",
@@ -1339,7 +1339,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the Edinburgh Playhouse",
         paragraphs: [
           "Fairweather specialised in cinemas — Green's Playhouse in Glasgow was his — and built this one for an audience that filled it nightly for forty years. When it closed, the listing that followed the 1974 campaign is the only reason the building is still on Greenside.",
           "Lothian Region's architects converted it into a theatre between 1978 and 1980. It has passed through five owners since the council sold it in 1983, and it is now the room in Scotland that takes the shows too big for anywhere else.",
@@ -1376,7 +1376,7 @@ export const venues: Venue[] = [
     ],
     sections: [
       {
-        heading: "The building",
+        heading: "Inside the Palace Theatre",
         paragraphs: [
           "A German bomb hit it directly in September 1940, during the Manchester Blitz, and it kept working. The 1,955 seats it has now are the remainder of a house that once held far more — the 1913 rebuild alone took it down to 2,600.",
         ],

@@ -3,6 +3,7 @@
 // in ../sections.ts against the data, so this file never needs editing when
 // one earns or loses its page.
 import { siteId } from "../content";
+import { site } from "../site.config";
 import Layout from "../layouts/Layout.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import SectionFeed from "@dst/ui/SectionFeed.astro";
@@ -25,6 +26,8 @@ const { section, all } = Astro.props;
   </section>
   <section class="container">
     <SectionNav sections={all} current={`/${section.slug}/`} {...NAV} />
-    <SectionFeed items={section.items} headings={section.headings} />
+    <SectionFeed items={section.items} headings={section.headings}
+    where={site.keyword}
+  />
   </section>
 </Layout>

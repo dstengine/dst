@@ -18,8 +18,13 @@
 export interface ArticleLabels {
   // Header and the ended badge
   ended: string;
-  /** Heading over an event's own questions and answers. */
-  faq: string;
+  /** Heading over an event's own questions and answers, given the subject
+      the page is about. A bare "Questions" is a heading nobody searches and
+      nobody can place: the same word sits over fifty different pages in
+      this network. The subject is passed because the component knows the
+      item and the language does not — and it goes in with a colon in all
+      three languages, which is the one join that needs no article. */
+  faq: (subject?: string) => string;
   organizedBy: string;
   minRead: (n: number) => string;
 
@@ -65,13 +70,23 @@ export interface ArticleLabels {
   /** Heading over the people on the programme; an item may override it. */
   speakers: string;
   whoItsFor: string;
-  locate: string;
+  /** Heading over the map, given the place the marker is on. "Locate" is
+      an instruction to the reader about a widget; the place name is the
+      thing the page is about. */
+  locate: (place?: string) => string;
   /** The title on a detail page's link to its own subject page. The label
       is the subject's name, so a title repeating it would say nothing
       twice — this says what is on the other end. */
   categoryTitle: (what: string) => string;
   related: string;
-  moreEvents: string;
+  /** Heading over the tail of an event page. `where` is the site's head
+      keyword and `what` the plural of the kind every card in the block
+      shares — "More New York parades" rather than "More events", which
+      names our filing cabinet. `what` is omitted when the block is mixed,
+      or when the site has no plural on file for the kind: see
+      `headingWord`. Both arguments are optional so a site that passes
+      neither renders what it rendered before. */
+  moreEvents: (where?: string, what?: string) => string;
   /** The heading over the tail of an event page when the site's promoted tag
       leads it — built from the tag's own label, because "More events" over
       three Halloween cards in October names the filing rather than the
@@ -83,20 +98,20 @@ export interface ArticleLabels {
   // words they put in it. `where` is the site's head keyword, `year` comes
   // off the next date under the tag.
   moreTagged: (what: string, where: string, year: string) => string;
-  moreNews: string;
-  latestNews: string;
-  comingUp: string;
+  moreNews: (where?: string) => string;
+  latestNews: (where?: string) => string;
+  comingUp: (where?: string) => string;
 
   // Card and link furniture
   readMore: string;
   allEvents: string;
   allNews: string;
   /** The two subheadings of a section page that holds both halves of the feed. */
-  eventsHeading: string;
-  newsHeading: string;
-  upcoming: string;
+  eventsHeading: (where?: string) => string;
+  newsHeading: (where?: string) => string;
+  upcoming: (where?: string) => string;
   /** Heading over the group of events that have happened. */
-  pastGroup: string;
+  pastGroup: (where?: string) => string;
   /** Link to the site's whole-calendar .ics, which is subscribed to rather
       than downloaded — unlike the per-event file, which is imported once. */
   subscribeCalendar: string;
@@ -125,7 +140,7 @@ export interface ArticleLabels {
 
 export const EN: ArticleLabels = {
   ended: "Ended",
-  faq: "Questions",
+  faq: (subject) => (subject ? `${subject}: questions` : "Questions"),
   organizedBy: "Organized by",
   minRead: (n) => `${n} min read`,
 
@@ -158,22 +173,22 @@ export const EN: ArticleLabels = {
   programme: "Programme",
   speakers: "Speakers",
   whoItsFor: "Who it's for",
-  locate: "Locate",
+  locate: (place) => (place ? `${place} on the map` : "Locate"),
   categoryTitle: (what) => `Everything on this site filed under ${what.toLowerCase()}`,
   related: "Related",
-  moreEvents: "More events",
+  moreEvents: (where, what = "events") => (where ? `More ${where} ${what}` : `More ${what}`),
   moreTagged: (what, where, year) => `${what} in ${where} ${year}`,
-  moreNews: "More news",
-  latestNews: "Latest news",
-  comingUp: "Coming up",
+  moreNews: (where) => (where ? `More ${where} news` : "More news"),
+  latestNews: (where) => (where ? `Latest ${where} news` : "Latest news"),
+  comingUp: (where) => (where ? `Coming up in ${where}` : "Coming up"),
 
   readMore: "Read more",
   allEvents: "All events",
   allNews: "All news",
-  eventsHeading: "Events",
-  newsHeading: "News",
-  upcoming: "Upcoming",
-  pastGroup: "Past",
+  eventsHeading: (where) => (where ? `${where} events` : "Events"),
+  newsHeading: (where) => (where ? `${where} news` : "News"),
+  upcoming: (where) => (where ? `Upcoming in ${where}` : "Upcoming"),
+  pastGroup: (where) => (where ? `Past ${where} events` : "Past"),
   subscribeCalendar: "Subscribe to this calendar",
   subscribeCalendarNote: "Every date on this page, kept up to date in your own calendar.",
   subscribeCalendarTitle: "Opens your calendar app and subscribes to these dates",
@@ -203,7 +218,7 @@ export const EN: ArticleLabels = {
  */
 export const ES: Partial<ArticleLabels> = {
   ended: "Finalizado",
-  faq: "Preguntas",
+  faq: (subject) => (subject ? `${subject}: preguntas` : "Preguntas"),
   organizedBy: "Organiza",
   minRead: (n) => `${n} min de lectura`,
 
@@ -235,22 +250,22 @@ export const ES: Partial<ArticleLabels> = {
   programme: "Programa",
   speakers: "Ponentes",
   whoItsFor: "Para quién es",
-  locate: "Ubicación",
+  locate: (place) => (place ? `${place} en el mapa` : "Ubicación"),
   categoryTitle: (what) => `Todo lo que hay en este sitio bajo ${what.toLowerCase()}`,
   related: "Relacionado",
-  moreEvents: "Más eventos",
+  moreEvents: (where, what = "eventos") => (where ? `Más ${what} en ${where}` : `Más ${what}`),
   moreTagged: (what, where, year) => `${what} en ${where} ${year}`,
-  moreNews: "Más noticias",
-  latestNews: "Últimas noticias",
-  comingUp: "Próximamente",
+  moreNews: (where) => (where ? `Más noticias de ${where}` : "Más noticias"),
+  latestNews: (where) => (where ? `Últimas noticias de ${where}` : "Últimas noticias"),
+  comingUp: (where) => (where ? `Próximamente en ${where}` : "Próximamente"),
 
   readMore: "Leer más",
   allEvents: "Todos los eventos",
   allNews: "Todas las noticias",
-  eventsHeading: "Eventos",
-  newsHeading: "Noticias",
-  upcoming: "Próximos",
-  pastGroup: "Pasados",
+  eventsHeading: (where) => (where ? `Eventos en ${where}` : "Eventos"),
+  newsHeading: (where) => (where ? `Noticias de ${where}` : "Noticias"),
+  upcoming: (where) => (where ? `Próximos eventos en ${where}` : "Próximos"),
+  pastGroup: (where) => (where ? `Eventos pasados en ${where}` : "Pasados"),
   subscribeCalendar: "Suscribirse a este calendario",
   subscribeCalendarNote: "Todas las fechas de esta página, siempre al día en tu calendario.",
   subscribeCalendarTitle: "Abre tu app de calendario y se suscribe a estas fechas",
@@ -271,7 +286,7 @@ export const ES: Partial<ArticleLabels> = {
 
 export const DE: Partial<ArticleLabels> = {
   ended: "Vorbei",
-  faq: "Fragen",
+  faq: (subject) => (subject ? `${subject}: Fragen` : "Fragen"),
   organizedBy: "Veranstaltet von",
   minRead: (n) => `${n} Min. Lesezeit`,
 
@@ -303,22 +318,22 @@ export const DE: Partial<ArticleLabels> = {
   programme: "Programm",
   speakers: "Vortragende",
   whoItsFor: "Für wen",
-  locate: "Lage",
+  locate: (place) => (place ? `${place} auf der Karte` : "Lage"),
   categoryTitle: (what) => `Alles auf dieser Seite unter ${what}`,
   related: "Passend dazu",
-  moreEvents: "Weitere Termine",
+  moreEvents: (where, what = "Termine") => (where ? `Mehr ${what} in ${where}` : `Weitere ${what}`),
   moreTagged: (what, where, year) => `${what} in ${where} ${year}`,
-  moreNews: "Weitere Nachrichten",
-  latestNews: "Neueste Nachrichten",
-  comingUp: "Demnächst",
+  moreNews: (where) => (where ? `Mehr Nachrichten aus ${where}` : "Weitere Nachrichten"),
+  latestNews: (where) => (where ? `Neueste Nachrichten aus ${where}` : "Neueste Nachrichten"),
+  comingUp: (where) => (where ? `Demnächst in ${where}` : "Demnächst"),
 
   readMore: "Weiterlesen",
   allEvents: "Alle Termine",
   allNews: "Alle Nachrichten",
-  eventsHeading: "Termine",
-  newsHeading: "Nachrichten",
-  upcoming: "Demnächst",
-  pastGroup: "Vorbei",
+  eventsHeading: (where) => (where ? `Termine in ${where}` : "Termine"),
+  newsHeading: (where) => (where ? `Nachrichten aus ${where}` : "Nachrichten"),
+  upcoming: (where) => (where ? `Demnächst in ${where}` : "Demnächst"),
+  pastGroup: (where) => (where ? `Vergangene Termine in ${where}` : "Vorbei"),
   subscribeCalendar: "Diesen Kalender abonnieren",
   subscribeCalendarNote: "Alle Termine dieser Seite, laufend aktuell im eigenen Kalender.",
   subscribeCalendarTitle: "Öffnet die Kalender-App und abonniert diese Termine",
@@ -341,4 +356,26 @@ export const DE: Partial<ArticleLabels> = {
 export function withLabels(labels?: Partial<ArticleLabels>): ArticleLabels {
   if (!labels) return EN;
   return { ...EN, ...labels, imageKinds: { ...EN.imageKinds, ...labels.imageKinds } };
+}
+
+// The `plural` a site tabulates for a tag in its own sections.ts, made safe
+// for the one frame that did not exist when those words were written.
+//
+// They were written for two frames — `${Title} in Dubai` and "Everything on
+// this site filed under ${what}" — and both accept an article: "the Dubai
+// property market", "the outdoors". `More ${where} ${what}` does not, and
+// "More New York the outdoors" is the kind of sentence that makes a reader
+// distrust everything else on the page.
+//
+// So a plural that opens with an article is not a heading word, and the
+// block keeps the generic one. The three lists are closed — these are the
+// only languages the network publishes in — which makes this a check rather
+// than a guess. `tests/build-output.test.js` asserts no heading built this
+// way begins with one.
+const ARTICLES = ["the", "la", "el", "los", "las", "der", "die", "das"];
+
+export function headingWord(plural?: string): string | undefined {
+  if (!plural) return undefined;
+  const first = plural.split(" ")[0].toLowerCase();
+  return ARTICLES.includes(first) ? undefined : plural;
 }

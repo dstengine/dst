@@ -17,11 +17,7 @@ import EventCards from "./EventCards.astro";
 import StatusBadge from "./StatusBadge.astro";
 import TicketButtons from "./TicketButtons.astro";
 import { go } from "../outbound";
-import {
-  checkedOn, cityBySlug, cityHasPage, faqHeading, formatRun, formatRunDays, groupBySlug, otherRuns,
-  priceFrom, priceIsFresh, priceLabel, priceTiers, priceValidUntil, formatPrice,
-  relatedRuns, runFaq, runIntro, spell, statusOf, venueBySlug, venuePath, type Run, type Show,
-} from "../content";
+import { checkedOn, cityBySlug, cityHasPage, faqHeading, formatRun, formatRunDays, groupBySlug, otherRuns, priceFrom, priceIsFresh, priceLabel, priceTiers, priceValidUntil, formatPrice, relatedRuns, runFaq, runIntro, spell, statusOf, venueBySlug, venuePath, type Run, type Show, } from "../content";
 
 interface Props { show: Show; run: Run }
 const { show, run } = Astro.props;
@@ -37,6 +33,10 @@ const absolute = (path: string) => (Astro.site ? new URL(path, Astro.site).href 
 
 const elsewhere = otherRuns(run);
 const related = relatedRuns(run);
+// The heading names the city only when every card is in it — related runs
+// can also arrive by tag, and a heading over a Cardiff card that says
+// Manchester is the kind of small lie that costs a reader the click.
+const relatedHere = related.length > 0 && related.every((r) => r.city === run.city);
 
 // The cheapest seat anyone has actually seen advertised for this run, or
 // nothing. rules.ts drops it once it is six weeks old rather than let the
@@ -68,7 +68,7 @@ const glance = [
 const heading = faqHeading(run);
 const jump = [
   run.sellers.length > 1 && { id: "sellers", label: "Where to buy" },
-  venue && { id: "venue", label: "The theatre" },
+  venue && { id: "venue", label: venue.name },
   { id: "faq", label: heading },
   elsewhere.length > 0 && { id: "elsewhere", label: "Other cities" },
 ].filter(Boolean) as { id: string; label: string }[];
@@ -182,7 +182,7 @@ const eventLd: Record<string, unknown> = {
 
   {venue && (
     <section class="container" id="venue">
-      <h2>The theatre</h2>
+      <h2>{venue.name}</h2>
       <p>
         <a href={venuePath(venue)} title={`${venue.name}: address, capacity and what else plays there`}>{venue.name}</a>
         {venue.address && <> — {venue.address}</>}
@@ -200,7 +200,7 @@ const eventLd: Record<string, unknown> = {
 
   {elsewhere.length > 0 && (
     <section class="container" id="elsewhere">
-      <h2>The same show elsewhere</h2>
+      <h2>{show.title} in other cities</h2>
       <p>{group ? `The stops either side of this one on the ${group.name}.` : "Every other run currently listed."}</p>
       <EventCards runs={elsewhere} eyebrow="tour" compact />
       <p class="more"><a href={`/${show.slug}/tickets/`} title={`Every run of ${show.title} and every seller`}>All {show.title} dates and sellers</a></p>
@@ -209,8 +209,7 @@ const eventLd: Record<string, unknown> = {
 
   {related.length > 0 && (
     <section class="container" id="related">
-      <h2>Related events</h2>
-      <p>Also on in {city.name}.</p>
+      <h2>{relatedHere ? `Other musicals in ${city.name}` : "Related musicals"}</h2>
       <EventCards runs={related} lead="event" photo={false} />
     </section>
   )}

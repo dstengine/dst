@@ -20,7 +20,7 @@ import CountdownScript from "./CountdownScript.astro";
 import Glance from "./Glance.astro";
 import { ICONS } from "../icons.ts";
 import { formatDate } from "../date.ts";
-import { withLabels, type ArticleLabels } from "../labels.ts";
+import { headingWord, withLabels, type ArticleLabels } from "../labels.ts";
 import { isOn, hasEnded } from "@dst/content/when";
 
 interface Props {
@@ -67,8 +67,25 @@ interface Props {
       leads with it and takes its words — see `promotedSection` in
       \@dst/content/sections. */
   promoted?: { key: string; label: string; where: string; year: string };
+  /** The site's head keyword, so the headings this component writes name a
+      place instead of a filing word: "More New York parades", not "More
+      events". Optional — a site that passes nothing keeps the bare
+      headings it had. */
+  where?: string;
+  /** The site's plural for a tag key, from its own sections.ts. The
+      component knows which kind the block came out as; only the app knows
+      what that kind is called in its language, so it answers rather than
+      is asked to hand over its whole table. */
+  pluralOf?: (key: string) => string | undefined;
+  /** Wins over everything the component would derive. For a page where the
+      derived heading is weak or wrong — "Other shows in Broadway Week"
+      over a block the category would have called "New York theatre".
+      Written in the site's own language, because it replaces a translated
+      label; see `speakersHeading` on EventItem, which exists for the same
+      reason. It names the cards, it does not choose them. */
+  moreEventsText?: string;
 }
-const { item, backHref, ticketHref, sourceHref, more = [], moreNews = [], newsBase = "/news/", eventsBase = "/events/", publisher, categoryHref, promoted, locale = "en-US", labels: labelOverrides } = Astro.props;
+const { item, backHref, ticketHref, sourceHref, more = [], moreNews = [], newsBase = "/news/", eventsBase = "/events/", publisher, categoryHref, promoted, where, pluralOf, moreEventsText, locale = "en-US", labels: labelOverrides } = Astro.props;
 const L = withLabels(labelOverrides);
 
 const todayIso = new Date().toISOString().slice(0, 10);
@@ -119,10 +136,33 @@ const moreCards = more
 // under a heading that says Halloween is the heading telling a small lie
 // to fill a row. Two cards that belong is the better trade.
 const promotedLeads = Boolean(promoted) && moreCards[0]?.eyebrow === promoted?.key;
+// Below the promoted tag, the block is cut by this page's own kind rather
+// than by whatever the sort happened to leave at the top. The difference is
+// the difference between describing a block and choosing one: a heading
+// over cards we selected is true by construction, and "More Solana
+// hackathons" is a phrase somebody types. Two cards that share the kind is
+// enough — the same trade the pinned row above already makes — and when
+// fewer than two share it, or the site has no word for the kind, the block
+// stays mixed and keeps the generic heading.
+const kindCards = item.category
+  ? moreCards.filter((c) => c.eyebrow === item.category && !c.past)
+  : [];
+const kindWord = kindCards.length >= 2 && item.category
+  ? headingWord(pluralOf?.(item.category))
+  : undefined;
 const tailCards = (promotedLeads
   ? moreCards.filter((c) => c.eyebrow === promoted?.key && !c.past)
-  : moreCards
+  : kindWord
+    ? kindCards
+    : moreCards
 ).slice(0, 3);
+
+// An override that names a block which never renders is a silent typo —
+// the words are in the data, nothing is on the page, and nobody finds out.
+// Fail the build instead.
+if (moreEventsText && tailCards.length === 0) {
+  throw new Error(`moreEventsText is set on "${item.slug}" but there are no other events to put under it`);
+}
 
 const newsCards = moreNews
   .filter((n) => Array.isArray(n.body) && n.body.length > 0)
@@ -143,11 +183,14 @@ const newsCards = moreNews
 // reached.
 const tail = tailCards.length > 0
   ? {
-      heading: promotedLeads && promoted ? L.moreTagged(promoted.label, promoted.where, promoted.year) : L.moreEvents,
+      heading: moreEventsText
+        ?? (promotedLeads && promoted
+          ? L.moreTagged(promoted.label, promoted.where, promoted.year)
+          : L.moreEvents(where, kindWord)),
       cards: tailCards,
     }
   : newsCards.length > 0
-    ? { heading: L.latestNews, cards: newsCards }
+    ? { heading: L.latestNews(where), cards: newsCards }
     : null;
 
 // Schema.org takes a full timestamp when the clock time is known — a
@@ -504,7 +547,7 @@ const relatedItems = (item.related ?? []).map((card) => ({
 
   {item.geo && (
     <section class="locate">
-      <h2>{L.locate}</h2>
+      <h2>{L.locate(item.geo.name)}</h2>
       <div class="locate-map">
         <iframe
           src={`https://www.openstreetmap.org/export/embed.html?bbox=${item.geo.lng - 0.02}%2C${item.geo.lat - 0.01}%2C${item.geo.lng + 0.02}%2C${item.geo.lat + 0.01}&layer=mapnik&marker=${item.geo.lat}%2C${item.geo.lng}`}
@@ -529,7 +572,7 @@ const relatedItems = (item.related ?? []).map((card) => ({
 
   {item.faq && item.faq.length > 0 && (
     <section class="event-article-faq">
-      <h2>{L.faq}</h2>
+      <h2>{L.faq(item.title)}</h2>
       <Faq items={item.faq} />
     </section>
   )}

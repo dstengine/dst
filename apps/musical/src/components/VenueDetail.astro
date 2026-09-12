@@ -10,10 +10,7 @@ import Layout from "../layouts/Layout.astro";
 import RunTable from "./RunTable.astro";
 import EventCards from "./EventCards.astro";
 import { go } from "../outbound";
-import {
-  checkedOn, cityBySlug, cityHasPage, formatRun, runsInGroup, showBySlug, statusOf,
-  runsAtVenue, venueBySlug, venues, venuePath, type Venue,
-} from "../content";
+import { checkedOn, cityBySlug, cityHasPage, formatRun, runsInGroup, showBySlug, statusOf, runsAtVenue, theVenue, venueBySlug, venues, venuePath, type Venue, } from "../content";
 
 interface Props { venue: Venue }
 const { venue } = Astro.props;
@@ -141,7 +138,7 @@ const description = venue.summary
     externalHref={venue.officialSlug ? go(venue.officialSlug) : undefined}
     externalLabel="Official site"
     related={related}
-    relatedHeading="Other theatres on this site"
+    relatedHeading="Other theatres and arenas"
     backHref="/venues/"
     backLabel="All venues"
   >
@@ -160,7 +157,7 @@ const description = venue.summary
     {venue.lat && venue.lon && <MapEmbed lat={venue.lat} lon={venue.lon} name={venue.name} />}
 
     <section slot="after" class="container">
-      <h2>What is playing here</h2>
+      <h2>What is on at {theVenue(venue.name)}</h2>
       {upcoming.length > 0
         ? <EventCards runs={upcoming} lead="event" eyebrow="tour" venueInMeta={false} photo={false} />
         : <p>Nothing on this site's calendar is playing here at the moment.</p>}

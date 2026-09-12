@@ -1,5 +1,7 @@
 ---
 import { siteId } from "../../content";
+import { site } from "../../site.config";
+import { pluralOf } from "../../sections";
 import Layout from "../../layouts/Layout.astro";
 import EventArticle from "@dst/ui/EventArticle.astro";
 import { eventsBySite } from "@dst/content/events";
@@ -17,5 +19,9 @@ const { item, more } = Astro.props;
 const ticketHref = item.ticket ? `/go/${item.slug}-ticket/` : undefined;
 ---
 <Layout title={item.titleSeo ?? item.title} description={item.summary} image={item.image}>
-  <EventArticle item={item} more={more} moreNews={moreNews} backHref="/events/" ticketHref={ticketHref} />
+  <EventArticle item={item} more={more} moreNews={moreNews} backHref="/events/" ticketHref={ticketHref}
+  where={site.keyword}
+  pluralOf={pluralOf}
+  moreEventsText={item.moreEventsText}
+/>
 </Layout>

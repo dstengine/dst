@@ -229,6 +229,16 @@ export interface EventItem extends ItemBase {
   // line-up, the states taking part. Written in the site's own language,
   // because it replaces a translated label.
   speakersHeading?: string;
+  // What to call the block of other events at the foot of the page, when
+  // the heading the components would derive is weak or wrong. They derive
+  // it from the site's keyword and the kind every card in the block shares
+  // — "More New York parades" — which is right often enough to be the
+  // default and wrong often enough to need this: over a block of Broadway
+  // Week shows, "New York theatre" is the filing word and "Other shows in
+  // Broadway Week" is the sentence. Written in the site's own language,
+  // for the same reason `speakersHeading` is. It names the cards; it does
+  // not choose them.
+  moreEventsText?: string;
   // Who the event is addressed to, in the organiser's own terms. Short
   // phrases, not sentences — this renders as a row of tags.
   audience?: string[];

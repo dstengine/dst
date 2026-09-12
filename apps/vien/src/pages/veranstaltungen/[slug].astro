@@ -1,12 +1,13 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { site } from "../../site.config";
 import EventArticle from "@dst/ui/EventArticle.astro";
 import { siteId, newsBase, eventsBase, publisher, labels } from "../../content";
 import { eventsBySite } from "@dst/content/events";
 import { go } from "../../outbound";
 import { newsBySite } from "@dst/content/news";
 import { sectionHrefFor } from "@dst/content/sections";
-import { allSections, promoted } from "../../sections";
+import { allSections, promoted, pluralOf } from "../../sections";
 
 export function getStaticPaths() {
   const items = eventsBySite(siteId).filter((i) => Array.isArray(i.body) && i.body.length > 0);
@@ -39,5 +40,8 @@ const sourceHref = item.source?.url ? go(`${item.slug}-source`) : undefined;
     categoryHref={categoryHref}
     promoted={promoted}
     labels={labels}
+    where={site.keyword}
+    pluralOf={pluralOf}
+    moreEventsText={item.moreEventsText}
   />
 </Layout>

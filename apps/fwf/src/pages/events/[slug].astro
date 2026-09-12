@@ -1,5 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { site } from "../../site.config";
+import { pluralOf } from "../../sections";
 import EventArticle from "@dst/ui/EventArticle.astro";
 import { newsBySite } from "@dst/content/news";
 import { siteId, otherEvents } from "../../content";
@@ -15,5 +17,9 @@ const moreNews = newsBySite(siteId);
 const { item, more } = Astro.props;
 ---
 <Layout title={item.titleSeo ?? item.title} description={item.summary} image={item.image}>
-  <EventArticle item={item} more={more} moreNews={moreNews} backHref="/events/" />
+  <EventArticle item={item} more={more} moreNews={moreNews} backHref="/events/"
+  where={site.keyword}
+  pluralOf={pluralOf}
+  moreEventsText={item.moreEventsText}
+/>
 </Layout>

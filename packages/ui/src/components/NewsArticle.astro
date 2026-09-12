@@ -53,11 +53,15 @@ interface Props {
   /** Locale for dates on this page. Defaults to the network's English;
       a site writing in another language passes its own. */
   locale?: string;
+  /** The site's head keyword, so a heading names a place rather than a
+      filing word. Optional: a site that passes nothing renders what it
+      rendered before. */
+  where?: string;
   /** The words this component puts on the page that don't come from the
       item. See EventArticle and ../labels.ts — English by default. */
   labels?: Partial<ArticleLabels>;
 }
-const { item, backHref, more = [], moreEvents = [], newsBase = "/news/", eventsBase = "/events/", publisher, categoryHref, promoted, locale = "en-US", labels: labelOverrides } = Astro.props;
+const { item, backHref, more = [], moreEvents = [], newsBase = "/news/", eventsBase = "/events/", publisher, categoryHref, promoted, where, locale = "en-US", labels: labelOverrides } = Astro.props;
 const L = withLabels(labelOverrides);
 
 const moreCards = more
@@ -118,10 +122,10 @@ const tailEvents = (promotedLeads
 ).slice(0, 3);
 
 const tail = moreCards.length > 0
-  ? { heading: L.moreNews, cards: moreCards }
+  ? { heading: L.moreNews(where), cards: moreCards }
   : tailEvents.length > 0
     ? {
-        heading: promotedLeads && promoted ? L.moreTagged(promoted.label, promoted.where, promoted.year) : L.comingUp,
+        heading: promotedLeads && promoted ? L.moreTagged(promoted.label, promoted.where, promoted.year) : L.comingUp(where),
         cards: tailEvents,
       }
     : null;
@@ -227,7 +231,7 @@ const relatedItems = (item.related ?? []).map((card) => ({
 
   {item.geo && (
     <section class="locate">
-      <h2>{L.locate}</h2>
+      <h2>{L.locate(item.geo.name)}</h2>
       <div class="locate-map">
         <iframe
           src={`https://www.openstreetmap.org/export/embed.html?bbox=${item.geo.lng - 0.02}%2C${item.geo.lat - 0.01}%2C${item.geo.lng + 0.02}%2C${item.geo.lat + 0.01}&layer=mapnik&marker=${item.geo.lat}%2C${item.geo.lng}`}
@@ -252,7 +256,7 @@ const relatedItems = (item.related ?? []).map((card) => ({
 
   {item.faq && item.faq.length > 0 && (
     <section class="news-article-faq">
-      <h2>{L.faq}</h2>
+      <h2>{L.faq(item.title)}</h2>
       <Faq items={item.faq} />
     </section>
   )}

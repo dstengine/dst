@@ -1,12 +1,13 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { site } from "../../site.config";
 import EventArticle from "@dst/ui/EventArticle.astro";
 import { siteId, newsBase, eventsBase, publisher } from "../../content";
 import { eventsBySite } from "@dst/content/events";
 import { go } from "../../outbound";
 import { newsBySite } from "@dst/content/news";
 import SectionNav from "@dst/ui/SectionNav.astro";
-import { sections, NAV } from "../../sections";
+import { sections, NAV, pluralOf } from "../../sections";
 
 export function getStaticPaths() {
   const items = eventsBySite(siteId).filter((i) => Array.isArray(i.body) && i.body.length > 0);
@@ -33,10 +34,13 @@ const sourceHref = item.source?.url ? go(`${item.slug}-source`) : undefined;
     newsBase={newsBase}
     eventsBase={eventsBase}
     publisher={publisher}
+    where={site.keyword}
+    pluralOf={pluralOf}
+    moreEventsText={item.moreEventsText}
   />
   {mine.length > 0 && (
     <section class="container event-sections">
-      <h2>More on the calendar</h2>
+      <h2>Browse {site.keyword} events</h2>
       <SectionNav sections={mine} label={NAV.label} />
     </section>
   )}

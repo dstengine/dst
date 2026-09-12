@@ -1434,3 +1434,37 @@ describe("how much of each site is the template", () => {
     assert.deepEqual(over, [], `a template grew:\n  ${over.join("\n  ")}`);
   });
 });
+
+// The words in "More Solana hackathons" come from three places: a template in
+// packages/ui/src/labels.ts, the site's head keyword, and the app's own
+// vocabulary for the tag. The vocabulary was written for other frames — a
+// card eyebrow, a section title — so some of its plurals open with an
+// article ("the Dubai property market", "the outdoors"), and dropped into
+// this frame they read as "More New York the outdoors". headingWord() keeps
+// those out; this is the test that says so on the built page rather than on
+// the function.
+describe("composed headings", () => {
+  const OPENERS = /^(More|Más|Mehr|Weitere|Latest|Upcoming|Past|Coming up|Próximos?|Últimas|Neueste|Demnächst|Vergangene|Noticias|Eventos|Termine|Nachrichten)\b/i;
+  // An article after a preposition is ordinary English — "Coming up across
+  // the network" is hand-written and fine. The bug is an article sitting in
+  // a slot the template filled, where nothing governs it.
+  const GOVERNED = /\b(across|in|of|from|on|at|to|de|en|aus|von|zu|für|über)\s+(the|la|el|los|las|der|die|das)\b/gi;
+  const ARTICLE = /\b(the|la|el|los|las|der|die|das)\b/i;
+
+  test("no composed heading carries an article it did not mean", () => {
+    const bad = [];
+    for (const p of contentPages()) {
+      for (const m of p.html.matchAll(/<h[23][^>]*>([^<]+)<\/h[23]>/g)) {
+        const text = decode(m[1]).trim();
+        if (!OPENERS.test(text)) continue;
+        // A place can legitimately carry one — "la Ciudad de México" is the
+        // city's name. Only a bare article inside an otherwise composed
+        // heading is the bug.
+        if (!ARTICLE.test(text.replace(GOVERNED, ""))) continue;
+        if (/Ciudad de México|Las Vegas|The Hague/.test(text)) continue;
+        bad.push(`${p.app}${p.url}: ${text}`);
+      }
+    }
+    assert.deepEqual(bad, [], `headings with a stray article:\n  ${bad.join("\n  ")}`);
+  });
+});

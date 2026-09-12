@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { site } from "../site.config";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import EventsList from "@dst/ui/EventsList.astro";
 import { events, siteId, eventsBase } from "../content";
@@ -19,6 +20,8 @@ const thin = items.length < 3;
   <section class="container">
     <SectionNav sections={sectionLinks} allHref="/" {...NAV} />
     <EventsList items={items} eventsBase={eventsBase}
-      calendarHref={new URL("/events.ics", Astro.site).href} />
+      calendarHref={new URL("/events.ics", Astro.site).href}
+      where={site.keyword}
+    />
   </section>
 </Layout>

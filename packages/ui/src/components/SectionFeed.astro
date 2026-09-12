@@ -38,6 +38,10 @@ interface Props {
    * since a page that named its own heading meant it.
    */
   headings?: Headings;
+  /** The site's head keyword, so a heading names a place rather than a
+      filing word. Optional: a site that passes nothing renders what it
+      rendered before. */
+  where?: string;
 }
 const {
   items,
@@ -46,6 +50,7 @@ const {
   locale,
   labels,
   headings = {},
+  where,
 } = Astro.props;
 
 const L = withLabels(labels);
@@ -53,8 +58,10 @@ const L = withLabels(labels);
 // as labels — so EventsList needs to know nothing about sections.
 const eventLabels = {
   ...labels,
-  ...(headings.upcoming ? { upcoming: headings.upcoming } : {}),
-  ...(headings.past ? { pastGroup: headings.past } : {}),
+  // A section may name its own groups. The labels are functions now — the
+  // override is a fixed string, so it ignores the argument.
+  ...(headings.upcoming ? { upcoming: () => headings.upcoming! } : {}),
+  ...(headings.past ? { pastGroup: () => headings.past! } : {}),
 };
 
 // An event carries a start date and a news item does not; that is the whole
@@ -66,15 +73,15 @@ const both = events.length > 0 && news.length > 0;
 {events.length > 0 && (
   <>
     {(both || headings.events) && (
-      <h2 class="section-feed-heading">{headings.events ?? L.eventsHeading}</h2>
+      <h2 class="section-feed-heading">{headings.events ?? L.eventsHeading(where)}</h2>
     )}
-    <EventsList items={events} eventsBase={eventsBase} locale={locale} labels={eventLabels} />
+    <EventsList items={events} eventsBase={eventsBase} locale={locale} labels={eventLabels} where={where} />
   </>
 )}
 {news.length > 0 && (
   <>
     {(both || headings.news) && (
-      <h2 class="section-feed-heading">{headings.news ?? L.newsHeading}</h2>
+      <h2 class="section-feed-heading">{headings.news ?? L.newsHeading(where)}</h2>
     )}
     <NewsList items={news} newsBase={newsBase} locale={locale} />
   </>

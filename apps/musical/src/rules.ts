@@ -245,6 +245,15 @@ export function formatRunDays(run: Run): string | undefined {
 export const venuePath = (venue: Venue): string =>
   venue.rootSlug ? `/${venue.rootSlug}/` : `/venue/${venue.slug}/`;
 
+/** The venue's name as it goes inside a sentence: "at the Ambassador
+    Theatre", but "at His Majesty's Theatre" and "at Venue Cymru". English
+    puts an article in front of a house named after a thing and leaves it off
+    one named after a person or one whose name is already a phrase. The list
+    is closed because the list of venues is. */
+const NO_ARTICLE = /^(His |Her |Venue Cymru|The )/;
+export const theVenue = (name: string): string =>
+  NO_ARTICLE.test(name) ? name : `the ${name}`;
+
 /** FNV-1a. Only used to shuffle, never to pick directly. */
 function hash(seed: string): number {
   let h = 0x811c9dc5;

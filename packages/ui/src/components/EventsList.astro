@@ -22,11 +22,15 @@ interface Props {
   locale?: string;
   /** The two group headings, for a site not writing in English. */
   labels?: Partial<ArticleLabels>;
+  /** The site's head keyword, so a heading names a place rather than a
+      filing word. Optional: a site that passes nothing renders what it
+      rendered before. */
+  where?: string;
   /** Absolute https URL of this site's whole-calendar .ics. Absent on a
       site that doesn't publish one, and the block then isn't drawn. */
   calendarHref?: string;
 }
-const { items, eventsBase = "/events/", locale, labels: labelOverrides, calendarHref } = Astro.props;
+const { items, eventsBase = "/events/", locale, labels: labelOverrides, calendarHref, where } = Astro.props;
 const L = withLabels(labelOverrides);
 const todayIso = new Date().toISOString().slice(0, 10);
 
@@ -88,14 +92,14 @@ const past = items
   <div class="events-lists">
     {upcoming.length > 0 && (
       <div class="events-group">
-        <h3 class="events-group-heading">{L.upcoming}</h3>
+        <h3 class="events-group-heading">{L.upcoming(where)}</h3>
         <FeedCards items={upcoming} columns={upcoming.length <= 2 ? upcoming.length : undefined} locale={locale} labels={L} />
         <CountdownScript />
       </div>
     )}
     {past.length > 0 && (
       <div class="events-group events-group-past">
-        <h3 class="events-group-heading">{L.pastGroup}</h3>
+        <h3 class="events-group-heading">{L.pastGroup(where)}</h3>
         <FeedCards items={past} columns={past.length <= 2 ? past.length : undefined} locale={locale} labels={L} />
       </div>
     )}

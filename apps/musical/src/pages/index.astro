@@ -8,10 +8,7 @@ import EventCards from "../components/EventCards.astro";
 import VentureGrid from "@dst/ui/VentureGrid.astro";
 import { ICONS } from "@dst/ui/icons";
 import Icon from "@dst/ui/Icon.astro";
-import {
-  citiesWithPages, cityBySlug, datedRuns, formatRun, runsFor, runsInCity, shows, showBySlug,
-  statusOf, ticketButtons, upcomingRuns, venueBySlug, venues, type Venue,
-} from "../content";
+import { citiesWithPages, cityBySlug, datedRuns, formatRun, runsFor, runsInCity, shows, showBySlug, statusOf, ticketButtons, upcomingRuns, venueBySlug, venues, type Venue, } from "../content";
 
 const upcoming = upcomingRuns();
 const soon = upcoming.slice(0, 6);

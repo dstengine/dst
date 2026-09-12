@@ -17,9 +17,7 @@ import { ICONS } from "@dst/ui/icons";
 import Layout from "../layouts/Layout.astro";
 import { go } from "../outbound";
 import RunTable from "./RunTable.astro";
-import {
-  checkedOn, formatRun, runsInCity, spell, statusOf, venuePath, venuesInCity, type City,
-} from "../content";
+import { checkedOn, formatRun, runsInCity, spell, statusOf, venuePath, venuesInCity, type City, } from "../content";
 
 interface Props { city: City }
 const { city } = Astro.props;
@@ -83,7 +81,7 @@ const glance = [
 
   {venues.length > 0 && (
     <section class="container">
-      <h2>{venues.length === 1 ? "The theatre" : "The theatres"}</h2>
+      <h2>{venues.length === 1 ? `The theatre in ${city.name}` : `Theatres in ${city.name}`}</h2>
       <div class="venue-grid">
         {venues.map((venue) => (
           <VenueCard

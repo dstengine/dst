@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { site } from "../../site.config";
 import NewsArticle from "@dst/ui/NewsArticle.astro";
 import { siteId, newsBase, eventsBase, publisher } from "../../content";
 import { newsBySite } from "@dst/content/news";
@@ -32,5 +33,6 @@ const categoryHref = sectionHrefFor(item, allSections);
     publisher={publisher}
     categoryHref={categoryHref}
     promoted={promoted}
+    where={site.keyword}
   />
 </Layout>

@@ -3,6 +3,7 @@
 // the data, so this file never needs editing when one earns or loses its
 // page.
 import Layout from "../layouts/Layout.astro";
+import { site } from "../site.config";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import SectionFeed from "@dst/ui/SectionFeed.astro";
 import { siteId, newsBase, eventsBase, labels } from "../content";
@@ -31,6 +32,7 @@ const { section, all } = Astro.props;
       locale="de-AT"
       labels={labels}
       headings={section.headings}
+      where={site.keyword}
     />
   </section>
 </Layout>

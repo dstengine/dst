@@ -4,6 +4,7 @@
 // page. The hero comes from the district layout, as it does on every other
 // page of this site.
 import { siteId } from "../content";
+import { site } from "../site.config";
 import Layout from "../layouts/Layout.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import SectionFeed from "@dst/ui/SectionFeed.astro";
@@ -27,6 +28,8 @@ const { section, all } = Astro.props;
 >
   <section class="container">
     <SectionNav sections={all} current={`/${section.slug}/`} {...NAV} />
-    <SectionFeed items={section.items} headings={section.headings} />
+    <SectionFeed items={section.items} headings={section.headings}
+    where={site.keyword}
+  />
   </section>
 </Layout>

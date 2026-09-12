@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { site } from "../site.config";
 import EventsList from "@dst/ui/EventsList.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import { siteId, eventsBase } from "../content";
@@ -20,6 +21,8 @@ const { section, all } = Astro.props;
   </section>
   <section class="container">
     <SectionNav sections={all} current={`/${section.slug}/`} allHref={eventsBase} {...NAV} />
-    <EventsList items={section.items} eventsBase={eventsBase} />
+    <EventsList items={section.items} eventsBase={eventsBase}
+    where={site.keyword}
+  />
   </section>
 </Layout>

@@ -10,10 +10,7 @@ import { ICONS } from "@dst/ui/icons";
 import Layout from "../layouts/Layout.astro";
 import Clips from "./Clips.astro";
 import EventCards from "./EventCards.astro";
-import {
-  checkedOn, cityBySlug, formatRun, groups, runsFor, runsInGroup, statusOf,
-  upcomingRuns, venueBySlug, venuePath, type Show,
-} from "../content";
+import { checkedOn, cityBySlug, formatRun, groups, runsFor, runsInGroup, statusOf, upcomingRuns, venueBySlug, venuePath, type Show, } from "../content";
 
 interface Props { show: Show }
 const { show } = Astro.props;

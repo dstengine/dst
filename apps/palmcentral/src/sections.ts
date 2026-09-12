@@ -42,3 +42,11 @@ export function sections(items: FeedItem[]): Section[] {
     },
   });
 }
+
+// The word a heading uses for a kind, in this site's language. The article
+// components know which kind a block came out as; only this file knows what
+// that kind is called here, so it answers one question rather than handing
+// over the table. A kind with no entry has no word, and the block keeps the
+// generic heading — the same rule as rule 3 in @dst/content/sections, one
+// level down.
+export const pluralOf = (key: string): string | undefined => TAGS[key]?.plural;

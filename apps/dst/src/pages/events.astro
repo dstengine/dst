@@ -1,5 +1,6 @@
 ---
 import { siteId } from "../content";
+import { site } from "../site.config";
 import Layout from "../layouts/Layout.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import EventsList from "@dst/ui/EventsList.astro";
@@ -74,7 +75,9 @@ const networkCards = upcomingEvents(
     <SectionNav sections={sectionLinks} {...NAV} />
     {items.length > 0 ? (
       <EventsList items={items}
-        calendarHref={new URL("/events.ics", Astro.site).href} />
+        calendarHref={new URL("/events.ics", Astro.site).href}
+        where={site.keyword}
+      />
     ) : (
       <p class="feed-empty">
         Nothing scheduled at group level right now. What's coming up across
