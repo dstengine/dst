@@ -10,6 +10,8 @@
     ".": "./src/index.ts",
     "./types": "./src/types.ts",
     "./sections": "./src/sections.ts",
+    "./admission": "./src/admission.ts",
+    "./when": "./src/when.ts",
     "./news": "./src/news/index.ts",
     "./events": "./src/events/index.ts",
     "./event-types": "./src/event-types.ts",

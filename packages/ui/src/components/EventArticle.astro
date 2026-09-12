@@ -8,6 +8,7 @@ import type { Publisher } from '../schema';
 // doesn't: dates/venue/organizer in the header, and a ticket button right
 // under it while intent is still fresh.
 import type { EventItem, NewsItem } from "@dst/content/types";
+import { isFree } from "@dst/content/admission";
 import LeadForm from "./LeadForm.astro";
 import VentureGrid from "./VentureGrid.astro";
 import FeedCards from "./FeedCards.astro";
@@ -20,6 +21,7 @@ import Glance from "./Glance.astro";
 import { ICONS } from "../icons.ts";
 import { formatDate } from "../date.ts";
 import { withLabels, type ArticleLabels } from "../labels.ts";
+import { isOn, hasEnded } from "@dst/content/when";
 
 interface Props {
   item: EventItem;
@@ -76,8 +78,8 @@ const moreCards = more
     const aSame = a.category === item.category;
     const bSame = b.category === item.category;
     if (aSame !== bSame) return aSame ? -1 : 1;
-    const aUp = a.start >= todayIso;
-    const bUp = b.start >= todayIso;
+    const aUp = isOn(a, todayIso);
+    const bUp = isOn(b, todayIso);
     if (aUp !== bUp) return aUp ? -1 : 1;
     return aUp ? (a.start < b.start ? -1 : 1) : (a.start < b.start ? 1 : -1);
   })
@@ -93,7 +95,7 @@ const moreCards = more
     imageAlt: other.imageAlt,
     imageFit: "cover" as const,
     event: true,
-    past: other.start < todayIso,
+    past: hasEnded(other, todayIso),
   }));
 
 const newsCards = moreNews
@@ -146,11 +148,16 @@ const money = (amount: number) =>
 // A price of nothing is a word, not a number: "AED 0" is how a currency
 // formatter says free, and nobody reads it that way. The currency is
 // dropped with it — a free seat in Yerevan is not free in dirhams.
-const isFree = item.tickets?.priceFrom === 0 && (item.tickets.priceTo ?? 0) === 0;
+//
+// What counts as free is decided in @dst/content/admission and nowhere
+// else: this row and the site's /free/ page are built from the same
+// sentence, and a reader who arrived from that page reads this one to
+// check it.
+const free = isFree(item);
 const price = (() => {
   const t = item.tickets;
   if (!t || t.priceFrom === undefined) return undefined;
-  if (isFree) return L.free;
+  if (free) return L.free;
   if (t.priceTo === undefined || t.priceTo === t.priceFrom) return money(t.priceFrom);
   return `${money(t.priceFrom)} – ${money(t.priceTo)}`;
 })();
@@ -243,7 +250,7 @@ const jsonLd =
     // London" — and it was already on the page, in the glance table, while
     // the markup said nothing. Only asserted when the price says so: an
     // event with no ticket data is not free, it is unpriced.
-    ...(isFree ? { isAccessibleForFree: true } : {}),
+    ...(free ? { isAccessibleForFree: true } : {}),
     eventAttendanceMode: item.online
       ? "https://schema.org/OnlineEventAttendanceMode"
       : "https://schema.org/OfflineEventAttendanceMode",
@@ -303,7 +310,7 @@ const action = (() => {
   // from, and on the three free events that reached it — a coffee festival,
   // a neighbourhood Grito, a children's book fair — it opens a programme,
   // not a form. The button now says what the link does.
-  if (sourceHref) return { href: sourceHref, label: isFree ? L.moreDetails : L.tickets };
+  if (sourceHref) return { href: sourceHref, label: free ? L.moreDetails : L.tickets };
   return undefined;
 })();
 

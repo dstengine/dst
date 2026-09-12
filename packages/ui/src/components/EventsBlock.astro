@@ -9,6 +9,7 @@
 import type { EventItem } from "@dst/content/types";
 import FeedCards from "./FeedCards.astro";
 import CountdownScript from "./CountdownScript.astro";
+import { isOn } from "@dst/content/when";
 
 interface Props {
   items: EventItem[];
@@ -38,7 +39,7 @@ const todayIso = new Date().toISOString().slice(0, 10);
 // answer the only question a calendar is asked, which is what is next. See
 // EventsList for why the `featured` rank stopped moving events.
 const upcoming = items
-  .filter((e) => e.start >= todayIso)
+  .filter((e) => isOn(e, todayIso))
   .sort((a, b) => (a.start < b.start ? -1 : a.start > b.start ? 1 : 0))
   .slice(0, limit);
 

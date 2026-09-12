@@ -20,6 +20,7 @@ import { ICONS } from "../icons.ts";
 import { formatDate } from "../date.ts";
 import { withLabels, type ArticleLabels } from "../labels.ts";
 import { readingMinutes } from "@dst/content/reading";
+import { isOn } from "@dst/content/when";
 
 interface Props {
   item: NewsItem;
@@ -78,7 +79,7 @@ const moreCards = more
 
 const todayIso = new Date().toISOString().slice(0, 10);
 const eventCards = moreEvents
-  .filter((e) => e.start >= todayIso && Array.isArray(e.body) && e.body.length > 0)
+  .filter((e) => isOn(e, todayIso) && Array.isArray(e.body) && e.body.length > 0)
   .sort((a, b) => (a.start < b.start ? -1 : 1))
   .slice(0, 3)
   .map((e) => ({

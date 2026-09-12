@@ -8,6 +8,7 @@ import FeedCards from "./FeedCards.astro";
 import Icon from "./Icon.astro";
 import { withLabels, type ArticleLabels } from "../labels.ts";
 import CountdownScript from "./CountdownScript.astro";
+import { isOn, hasEnded } from "@dst/content/when";
 
 interface Props {
   items: EventItem[];
@@ -71,12 +72,15 @@ const toCard = (item: EventItem, past: boolean) => {
   };
 };
 
+// On the last day, not the first: a run that began before today and ends
+// after it is on, and belongs above the fold rather than under "Past".
+// See @dst/content/when.
 const upcoming = items
-  .filter((e) => e.start >= todayIso)
+  .filter((e) => isOn(e, todayIso))
   .sort(byDate)
   .map((e) => toCard(e, false));
 const past = items
-  .filter((e) => e.start < todayIso)
+  .filter((e) => hasEnded(e, todayIso))
   .sort((a, b) => (a.start < b.start ? 1 : a.start > b.start ? -1 : 0))
   .map((e) => toCard(e, true));
 ---
