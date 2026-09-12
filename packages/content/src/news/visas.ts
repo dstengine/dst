@@ -62,7 +62,7 @@ export const items: NewsItem[] = [
     },
     body: [
       "A residency category stops being exclusive at some point, and the only honest way to find that point is to count.",
-      "## The numbers",
+      "## Dubai golden visas, in numbers",
       "The <strong>General Directorate of Residency and Foreigners Affairs — Dubai</strong> reported <strong>66,078 golden visas</strong> issued between <strong>January and June 2026</strong>, alongside <strong>29,456</strong> five-year multiple-entry tourist visas. Across every category the directorate processed <strong>more than seven million</strong> visa and residency transactions in the same six months, with a reported <strong>95% customer satisfaction</strong> rate.",
       "## Who reported it",
       "<strong>Lieutenant General Mohammed Ahmed Al Marri</strong>, Director General of GDRFA Dubai: «The results reflect our commitment to delivering efficient, flexible and digitally driven services that enhance customer experience and support Dubai’s position as a leading global destination.» <strong>Major General Khalaf Ahmed Al Ghaith</strong>, Assistant Director General of the Entry Permits and Residency Sector, presented the sector detail.",

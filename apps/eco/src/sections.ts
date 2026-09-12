@@ -36,7 +36,7 @@ export function sections(items: FeedItem[]): Section[] {
       return {
         title: `${Title} in the DST eco portfolio`,
         description: `What the eco portfolio reads and publishes on ${what}, with the source and the date on every entry.`,
-        h1: Title,
+        h1: `${Title} in the eco portfolio`,
         lede: `Everything in the portfolio filed under ${what} — each entry with the figure it turns on, the source it came from, and the date we read it.`,
       };
     },

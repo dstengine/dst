@@ -34,7 +34,7 @@ export const items: EventItem[] = [
     },
     body: [
       "Dubai has spent several years running its futures events separately. From November it runs them as one week.",
-      "## The dates",
+      "## Dubai Future Week 2026 dates",
       "<strong>18–21 November 2026</strong>, across <strong>Emirates Towers</strong> and the <strong>Museum of the Future</strong>, organised by the <strong>Dubai Future Foundation</strong> under the directives of <strong>Sheikh Hamdan bin Mohammed bin Rashid Al Maktoum</strong>, Crown Prince of Dubai.",
       "## What it absorbs",
       "Dubai Future Week consolidates several events that previously stood alone: the <strong>Dubai Future Forum</strong>, <strong>Dubai AI Week</strong>, <strong>AI Grandmaster</strong>, the <strong>Dubai Foresight Awards</strong>, the <strong>Dubai Future Solutions — Prototypes for Humanity</strong> exhibition, and <strong>TED Talks</strong>.",
@@ -259,7 +259,7 @@ export const items: EventItem[] = [
     },
     body: [
       "Most governments treat content creators as something to regulate. This one convenes them, at scale, in January, and calls it an economic sector.",
-      "## The dates",
+      "## 1 Billion Followers Summit 2027 dates",
       "<strong>8–10 January 2027</strong>. The organisers list three venues: <strong>Jumeirah Emirates Towers</strong>, the <strong>Dubai International Financial Centre</strong> and the <strong>Museum of the Future</strong>.",
       "## The scale it works at",
       "The summit describes itself as the world's largest expo for content creators. For the <strong>2026 edition</strong>, the organisers gave a combined following of <strong>over 3.5 billion</strong> across their speakers, naming <strong>MrBeast</strong> and <strong>Vlad &amp; Niki</strong> among them.",

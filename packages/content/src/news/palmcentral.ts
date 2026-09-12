@@ -62,7 +62,7 @@ export const items: NewsItem[] = [
     },
     body: [
       "The nearest thing to a guarantee that a district will exist in ten years is a construction site next to it that cannot be cancelled without embarrassment.",
-      "## The number",
+      "## The size of the airport award",
       "<strong>Dubai Airports</strong> expects to award <strong>Dh55 billion</strong> (about <strong>$14.9 billion</strong>) of contracts for the <strong>Al Maktoum International Airport</strong> expansion <strong>by the end of 2026</strong>, on top of <strong>Dh13 billion</strong> already awarded this year.",
       "## What is already in the ground",
       "Chief executive <strong>Paul Griffiths</strong> put the work to date at <strong>10 million work hours over 15 months</strong>, with <strong>17,000 piles</strong> installed and <strong>45 million cubic metres</strong> of earth moved. There are <strong>9,000 workers</strong> on site now; peak labour demand is put at around <strong>120,000</strong>.",

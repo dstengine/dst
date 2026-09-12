@@ -76,7 +76,7 @@ export const items: EventItem[] = [
     },
     body: [
       "MBR City has one venue that anyone outside the district has heard of, and for five months of the year it costs ten dirhams to get in.",
-      "## The dates and the price",
+      "## Dubai Racing Carnival dates and prices",
       "The Carnival opens on <strong>Friday 6 November 2026</strong> and covers <strong>16 race meetings</strong> at <strong>Meydan Racecourse</strong> on Al Meydan Road in Nad Al Sheba. <strong>General admission starts at AED 10</strong>; <strong>Paddock Garden</strong> access is <strong>AED 75</strong>; hospitality packages begin at <strong>AED 345</strong>.",
       "## What else is open",
       "The club lists dining at <strong>Bisou</strong>, <strong>Alba</strong> and <strong>Himitsu</strong>, the <strong>Parade Ring Lounge</strong> and the <strong>Finish Line Brunch</strong>. <strong>Behind-the-scenes stable tours</strong> return from <strong>October</strong>, before the racing starts. Memberships cover all sixteen meetings.",

@@ -69,7 +69,7 @@ export const items: EventItem[] = [
     },
     body: [
       "Registering a company in Dubai takes days. Getting it a bank account and a way to take card payments takes months, and that is the part nobody sells you a package for.",
-      "## The dates",
+      "## Seamless Middle East 2027 dates",
       "<strong>24–26 May 2027</strong> at the <strong>Dubai World Trade Centre</strong> — the Al Multaqua Ballroom, the Sheikh Maktoum Hall and Halls 1 to 8. Organised by <strong>Terrapinn Middle East</strong>, and listed by the venue as a <strong>trade-only</strong> exhibition in business and finance.",
       "## Why it is on this site",
       "The banking and payments question is the one this guide keeps returning to, because it is the one a licence does not answer. Seamless is where the acquirers, payment gateways and the banks' merchant-services teams stand in one hall for three days, and it is the only setting where they can be asked the same question side by side.",

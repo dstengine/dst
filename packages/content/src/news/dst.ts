@@ -146,7 +146,7 @@ export const items: NewsItem[] = [
       "## What shipped, and where",
       "<strong>OpenAI</strong> released <strong>GPT-6 Astra</strong> on <strong>3 September 2026</strong>, first to a limited set of organisations and then to ChatGPT <strong>Plus, Pro, Business and Enterprise</strong> users. For developers it is <strong>gpt-6-astra</strong> in the OpenAI API, and it is also available through <strong>Microsoft Azure</strong> and <strong>Amazon Bedrock</strong>.",
       "One line matters for anyone running a workspace: <strong>enterprise access is off by default at launch</strong>, and an administrator has to turn it on.",
-      "## What it costs",
+      "## What the new model costs to run",
       "<strong>$10 per million input tokens and $50 per million output tokens</strong> at standard rates, with separate rates for cache reads and writes. A <strong>Fast mode</strong> in the API runs up to twice the speed at twice the price. Usage is included in existing subscription allowances, with credits available on top.",
       "## What it is actually for",
       "Long tasks in real software, rather than answers in a chat window. OpenAI reports <strong>59.3%</strong> on Agents’ Last Exam — professional work in real applications, from financial modelling to media production — against 55.5% for Claude Opus 5 and 53.6% for its own previous model, while using about <strong>65% fewer output tokens</strong>. On <strong>BenchCAD</strong>, which asks a model to rebuild a 3D object as CAD code, it reports <strong>95.9%</strong> at an estimated API cost roughly 43% below its predecessor.",
@@ -221,7 +221,7 @@ export const items: NewsItem[] = [
     },
     body: [
       "A daily oil price tells you almost nothing. The same number read against last year tells you what every budget in the region is being rewritten around.",
-      "## The number",
+      "## The Brent price",
       "<strong>Brent crude</strong> stood at <strong>$96.90 a barrel</strong> on <strong>4 September 2026</strong>: <strong>down 2.49%</strong> on the day, <strong>up 10.98%</strong> against a month earlier, and <strong>up 43.98%</strong> against <strong>$67.30</strong> a year before.",
       "## What that does locally",
       "It is the same curve that produced the <strong>1 September</strong> pump revision in the UAE, where diesel rose about <strong>13%</strong> and petrol about <strong>6%</strong> in one monthly step. Fuel here is repriced monthly against the market rather than smoothed, so a year like this arrives in twelve visible instalments rather than invisibly.",
@@ -296,7 +296,7 @@ export const items: NewsItem[] = [
     },
     body: [
       "A trade show changing venue is administrative news. A trade show changing <em>month</em> is a different thing entirely, because a city's hotel rates, flight loads and meeting calendars are built around it.",
-      "## The dates",
+      "## GITEX Global 2026 dates",
       "<strong>GITEX Global 2026</strong> runs <strong>7–11 December</strong> at the <strong>Dubai Exhibition Centre in Expo City Dubai</strong>. The <strong>GITEX Scale Summit</strong> opens the week on <strong>7 December</strong>; the exhibition floor is open <strong>8–11 December</strong>.",
       "This follows the move already announced in October 2025, when the show confirmed it was leaving the Dubai World Trade Centre after <strong>forty-five years</strong>. What was not obvious at the time is that the venue change came with a calendar change.",
       "## Why the month matters more than the address",
@@ -403,7 +403,7 @@ export const items: NewsItem[] = [
     },
     body: [
       "Property exhibitions are usually sales floors dressed as conferences. This one is worth reading differently, because of who stands behind it.",
-      "## The dates",
+      "## IPS 2026 dates",
       "<strong>IPS 2026</strong> runs <strong>7–9 September</strong> in <strong>Halls 4–8</strong> of the <strong>Dubai World Trade Centre</strong>. It is the <strong>22nd edition</strong>, and it is co-located with the <strong>AIM Congress</strong>, the investment-promotion event.",
       "## The detail that changes how you read it",
       "IPS is aligned with the <strong>Dubai Land Department</strong>. That alignment is the reason it is not simply a bigger version of a developer roadshow: the regulator's own calendar — registration reforms, escrow rules, brokerage licensing — tends to surface at it before it surfaces anywhere else.",

@@ -44,8 +44,8 @@ export function sections(items: FeedItem[]): Section[] {
       // page heading that says "Tech" says nothing at all.
       const HEADINGS: Record<string, { h1: string; title: string }> = {
         Market: { h1: "The Dubai property market", title: "Dubai property market news" },
-        Tech: { h1: "Technology", title: "Technology news, each entry with its source and date" },
-        AI: { h1: "AI", title: "AI news, each entry with its source and date" },
+        Tech: { h1: "Technology in Dubai", title: "Technology news, each entry with its source and date" },
+        AI: { h1: "AI in Dubai", title: "AI news, each entry with its source and date" },
         Crypto: { h1: "Crypto", title: "The crypto news DST follows" },
         "Real estate": { h1: "Real estate", title: "Dubai real estate, as DST reads it" },
       };

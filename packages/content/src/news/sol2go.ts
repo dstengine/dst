@@ -102,7 +102,7 @@ export const items: NewsItem[] = [
     },
     body: [
       "Alpenglow is the largest change to how Solana agrees with itself since the chain launched, and the headline number is the one everyone repeats. The number underneath it is the one that explains why this has taken a year.",
-      "## The numbers",
+      "## The 150ms target, in numbers",
       "The Foundation states the target plainly: “roughly 150ms finality, compared with Solana's current roughly 400ms pre-confirmation latency and 12.8-second TowerBFT finality.” The 400ms figure is the one applications already feel. The 12.8 seconds is the one that matters to anything settling value, and it is the one Alpenglow is aimed at.",
       "More broadly, Alpenglow “makes changes to how Solana thinks about blockspace, finality, voting, and rewards” — four things at once, which is why it does not ship as a single switch.",
       "## What already happened",

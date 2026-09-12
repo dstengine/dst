@@ -1449,7 +1449,11 @@ describe("composed headings", () => {
   // the network" is hand-written and fine. The bug is an article sitting in
   // a slot the template filled, where nothing governs it.
   const GOVERNED = /\b(across|in|of|from|on|at|to|de|en|aus|von|zu|für|über)\s+(the|la|el|los|las|der|die|das)\b/gi;
-  const ARTICLE = /\b(the|la|el|los|las|der|die|das)\b/i;
+  // The article is followed by a lower-case word only when it opens a common
+  // noun — which is the bug. Inside a proper name the next word is
+  // capitalised ("Lange Nacht der Museen", "la Ciudad de México"), and that
+  // is a name, not a slot the template filled badly.
+  const ARTICLE = /\b(the|la|el|los|las|der|die|das)\s+[a-zà-ÿ]/;
 
   test("no composed heading carries an article it did not mean", () => {
     const bad = [];
@@ -1457,11 +1461,7 @@ describe("composed headings", () => {
       for (const m of p.html.matchAll(/<h[23][^>]*>([^<]+)<\/h[23]>/g)) {
         const text = decode(m[1]).trim();
         if (!OPENERS.test(text)) continue;
-        // A place can legitimately carry one — "la Ciudad de México" is the
-        // city's name. Only a bare article inside an otherwise composed
-        // heading is the bug.
         if (!ARTICLE.test(text.replace(GOVERNED, ""))) continue;
-        if (/Ciudad de México|Las Vegas|The Hague/.test(text)) continue;
         bad.push(`${p.app}${p.url}: ${text}`);
       }
     }

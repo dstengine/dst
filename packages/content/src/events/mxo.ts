@@ -28,7 +28,7 @@ export const items: EventItem[] = [
     },
     body: [
       "Una ciudad de callejones y escalinatas, construida sobre un cauce de río, se convierte durante quince días de octubre en el escenario más incómodo y más bello del país.",
-      "## Las fechas",
+      "## Fechas del Festival Internacional Cervantino 2026",
       "La <strong>54ª edición</strong> del Festival Internacional Cervantino va del <strong>3 al 18 de octubre de 2026</strong>, organizada por la <strong>Secretaría de Cultura</strong>.",
       "## El país invitado",
       "<strong>Francia</strong> es el país invitado de honor de esta edición.",
@@ -36,7 +36,7 @@ export const items: EventItem[] = [
       "En la ciudad de Guanajuato, las sedes incluyen el <strong>Teatro Juárez</strong>, el <strong>Teatro Principal</strong>, el <strong>Teatro Cervantes</strong>, la <strong>Explanada de la Alhóndiga de Granaditas</strong>, la <strong>Plaza San Fernando</strong>, la <strong>Plaza Allende</strong>, <strong>Los Pastitos</strong> y la <strong>Universidad de Guanajuato</strong>. La programación se extiende además a <strong>León</strong>, <strong>San Miguel de Allende</strong>, <strong>Salamanca</strong>, <strong>Silao</strong> y <strong>Purísima del Rincón</strong>.",
       "## Algunos nombres del programa",
       "<strong>Mondo Cane</strong>, el proyecto de Mike Patton; <strong>«FuturesPast»</strong> del <strong>Bangarra Dance Theatre</strong>; <strong>«Carmen»</strong> de la <strong>Compañía Antonio Gades</strong>; y <strong>«Tosca»</strong> de Puccini a cargo de la <strong>Compañía Nacional de Ópera</strong>.",
-      "## Boletos",
+      "## Boletos del Cervantino 2026",
       "La venta es a través de <strong>Ticketmaster</strong>.",
     ],
     expertise:
@@ -105,7 +105,7 @@ export const items: EventItem[] = [
       "El programa italiano se articula alrededor de una frase de <strong>Umberto Eco</strong> — «el mundo nos habla como un gran libro» — a diez años de su muerte. Se presentó en julio en el Palacio de la Farnesina, en Roma, con el ministro de Asuntos Exteriores Antonio Tajani, el presidente de la FIL José Trinidad Padilla López y la directora general Marisol Schulz Manaut",
       "## Cuándo ir, si se puede elegir",
       "Los dos fines de semana son los días llenos. Entre semana el recinto respira, y es cuando conviene ir si el plan es mirar mesas y no sólo llegar a una presentación concreta. El <strong>viernes 4 de diciembre</strong> hay <strong>venta nocturna</strong>: la Feria abre hasta las <strong>23:00</strong> horas, con cierre del recinto a las 23:30",
-      "## Cómo llegar",
+      "## Cómo llegar a Expo Guadalajara",
       "Expo Guadalajara está en <strong>Avenida Mariano Otero 1499</strong>, colonia Verde Valle. Es el recinto ferial de la ciudad, al sur del centro, sobre una avenida por la que pasan varias rutas del transporte urbano; en los días de FIL el tránsito alrededor es el peor del año y conviene llegar sin coche",
     ],
     expertise:
@@ -150,7 +150,7 @@ export const items: EventItem[] = [
       "Alrededor de los libros hay programación cultural: cuentacuentos, talleres creativos, presentaciones, teatro, música y danza. Es gratuita como el resto de la feria, y es la parte por la que conviene consultar el programa antes de ir en lugar de improvisar",
       "## Escuelas",
       "El FCE abrió <strong>convocatoria para visitas escolares</strong>; los detalles se publican en sus canales oficiales. Es el mecanismo que lleva a la feria a los niños que no vendrían en fin de semana con su familia, y es la razón de que la sede se llene entre semana por la mañana",
-      "## Cómo llegar",
+      "## Cómo llegar al CENART",
       "El CENART está en <strong>Avenida Río Churubusco 79</strong>, colonia Country Club Churubusco, alcaldía Coyoacán. Las estaciones de Metro más cercanas son <strong>General Anaya</strong> (Línea 2) y <strong>Ermita</strong> (Línea 12), a <strong>8 o 10 minutos caminando</strong> desde cualquiera de las dos",
     ],
     expertise:
@@ -185,7 +185,7 @@ export const items: EventItem[] = [
     },
     body: [
       "Treinta y un días seguidos. Ninguna otra feria del país se sostiene tanto tiempo en un mismo recinto, y esa duración es la que explica su programación.",
-      "## Las fechas",
+      "## Fechas de las Fiestas de Octubre 2026",
       "Las actividades <strong>comienzan el 2 de octubre y concluyen el 1 de noviembre de 2026</strong>, en las instalaciones del <strong>Auditorio Benito Juárez</strong>, en el municipio de <strong>Zapopan</strong>, Jalisco.",
       "## Los dos escenarios",
       "El <strong>Foro Principal</strong> presenta conciertos <strong>incluidos en la entrada general</strong>. El <strong>Palenque</strong> se vende por separado; entre los nombres confirmados están <strong>Alejandro Fernández</strong>, <strong>Grupo Firme</strong>, <strong>Banda MS</strong>, <strong>María José</strong>, <strong>Kany García</strong>, <strong>Jorge Medina</strong> y <strong>Josi Cuen</strong>.",
@@ -224,7 +224,7 @@ export const items: EventItem[] = [
     ticket: { url: "https://festivaldevidaymuerte.com/", label: "Boletos" },
     body: [
       "El D\u00eda de Muertos se celebra el 1 y el 2 de noviembre. Este festival dura el doble y empieza dos d\u00edas antes.",
-      "## Las fechas",
+      "## Fechas del Festival de Vida y Muerte 2026",
       "<strong>Del 30 de octubre al 2 de noviembre de 2026</strong>, en el <strong>Parque Xcaret</strong>, en la Riviera Maya, Quintana Roo. Es la <strong>edici\u00f3n n\u00famero 20</strong>.",
       "## El estado invitado",
       "Cada a\u00f1o el festival invita a un estado a llevar su propia forma de celebrar. En 2026 es <strong>Guanajuato</strong>.",
@@ -275,7 +275,7 @@ export const items: EventItem[] = [
     },
     body: [
       "No es un espectáculo con horario de inicio. Es una noche entera en la que un pueblo entero está despierto en el panteón.",
-      "## Las fechas",
+      "## Fechas de la Noche de Muertos en Michoacán 2026",
       "La noche principal es la del <strong>1 de noviembre</strong>, y los días de la fiesta son el <strong>1 y el 2</strong>. Los altares se colocaban tradicionalmente el <strong>30 o el 31 de octubre</strong> y se retiraban el <strong>3 de noviembre</strong>; hoy muchas familias los montan antes y los quitan después, porque el trabajo que llevan lo pide.",
       "## Tres lugares, tres formas",
       "En la <strong>Isla de Janitzio</strong>, mujeres y niños caminan en procesión hacia el panteón y colocan junto a las tumbas los platillos favoritos de sus difuntos, en silencio y a la luz de las velas. En <strong>Tzintzuntzan</strong>, la ofrenda se expresa en artesanía: loza negra, loza blanca, ángeles de paja y tallados en madera. En <strong>Jarácuaro</strong>, los arcos de flores adornan cada barrio y la plaza principal, y la danza guía a las almas.",
@@ -329,9 +329,9 @@ export const items: EventItem[] = [
     },
     body: [
       "La Catrina no es folclor anónimo: tiene autor, y el autor era de aquí. Aguascalientes celebra a sus muertos celebrando al hombre que los dibujó.",
-      "## Las fechas",
+      "## Fechas del Festival de Calaveras 2026",
       "<strong>Del 30 de octubre al 15 de noviembre de 2026</strong>. Es decir, más de dos semanas: el festival empieza antes de la fiesta y sigue mucho después del 2 de noviembre.",
-      "## Dónde",
+      "## Dónde es el Festival de Calaveras",
       "Las actividades se reparten por la ciudad, sobre todo en la <strong>Isla San Marcos</strong>, el <strong>Centro Histórico</strong> y varios recintos culturales.",
       "## Qué hay dentro",
       "Desfiles, altares monumentales, exposiciones, danza, teatro, conciertos, actividades infantiles, recorridos, muestras gastronómicas y eventos deportivos.",
@@ -386,9 +386,9 @@ export const items: EventItem[] = [
     },
     body: [
       "La palabra viene del latín. <em>Xantolo</em> es <em>sanctorum</em>, «de todos los santos», dicho durante siglos en boca nahua y tének hasta quedar así.",
-      "## Las fechas",
+      "## Fechas del Xantolo 2026 en la Huasteca Potosina",
       "<strong>Del 30 de octubre al 2 de noviembre de 2026</strong>. En muchas comunidades los preparativos empiezan semanas antes.",
-      "## Dónde",
+      "## Dónde es el Xantolo",
       "<strong>Ciudad Valles</strong>, <strong>Tamazunchale</strong> y <strong>Aquismón</strong> concentran los principales festejos y desfiles.",
       "## Qué se ve",
       "Altares, arcos de cempasúchil, comparsas enmascaradas y danzas tradicionales tének y nahuas. La máscara es lo que distingue al Xantolo de casi cualquier otra celebración de la fecha en el país.",
@@ -441,7 +441,7 @@ export const items: EventItem[] = [
     },
     body: [
       "Un premio Nobel, un Pulitzer y dos Princesa de Asturias en la misma feria, y la entrada no cuesta nada. Esa es la aritmética rara de Monterrey en octubre.",
-      "## Las fechas",
+      "## Fechas de la FIL Monterrey 2026",
       "La <strong>Feria Internacional del Libro Monterrey</strong> se realiza del <strong>10 al 18 de octubre de 2026</strong> en <strong>Cintermex</strong>, con <strong>acceso gratuito</strong>. Son nueve días.",
       "## El invitado de honor",
       "<strong>El Colegio Nacional</strong> es el Invitado de Honor de esta edición y lleva a Monterrey un programa con escritores, científicos, artistas y humanistas: <strong>Cristina Rivera Garza</strong>, <strong>Juan Villoro</strong>, <strong>Enrique Krauze</strong>, <strong>Leonardo López Luján</strong>, <strong>Gabriela Ortiz</strong>, <strong>Eduardo Matos Moctezuma</strong> y <strong>José Ramón Cossío</strong>, en conferencias, diálogos y presentaciones.",
@@ -490,7 +490,7 @@ export const items: EventItem[] = [
       "<strong>Futur Festival México</strong> se realiza el <strong>viernes 13</strong> y el <strong>sábado 14 de noviembre de 2026</strong> en el <strong>Parque Fundidora</strong> de Monterrey. Es la primera edición del festival fuera de Europa.",
       "## Un escenario distinto cada día",
       "El <strong>primer día</strong> ocurre en la <strong>Nave Lewis</strong>; el <strong>segundo</strong>, en la <strong>Grúa y el Horno 3</strong>. Son tres piezas del patrimonio industrial de la antigua Fundidora de Fierro y Acero, y cada una impone su propia acústica y su propia escala.",
-      "## Boletos",
+      "## Boletos del Futur Festival México",
       "Hay <strong>abono de dos días</strong> y boletos por día. Para el viernes, el General va de <strong>$1,610</strong> en Fase 1 a <strong>$2,300</strong> en la última fase; el Early Bird está agotado. Para el sábado hay además un boleto <strong>Sunset</strong> de <strong>$1,725</strong> con una condición: el ingreso es antes de las 5 de la tarde, y entrar después genera una penalización de <strong>$1,000</strong>. Las categorías VIP Premium y Backstage existen para ambos días. La venta es a través de <strong>Ingresse</strong>.",
       "## De dónde viene",
       "El festival es un proyecto de <strong>Movement Entertainment</strong>, la misma casa detrás del <strong>Kappa FuturFestival</strong> de Turín, que ocupa el Parco Dora y que en 2025 quedó en el <strong>sexto lugar</strong> de la lista Top 100 Festivals de la revista DJ Mag.",
@@ -619,7 +619,7 @@ export const items: EventItem[] = [
     },
     body: [
       "El momento que define al FIG ocurre a las <strong>6:30 de la mañana</strong> y dura pocos minutos: el <strong>despegue simultáneo de más de 200 globos aerostáticos provenientes de más de 25 países</strong>. Es lo primero del programa del <strong>viernes 13 de noviembre</strong>, y es la razón por la que este festival se ve a una hora a la que casi ningún otro empieza.",
-      "## Las fechas",
+      "## Fechas del Festival Internacional del Globo 2026",
       "<strong>Del 13 al 16 de noviembre de 2026</strong> —viernes, sábado, domingo y lunes— en el <strong>Parque Metropolitano de León</strong>, Guanajuato. Es la <strong>edición 23</strong>, y el festival se presenta a sí mismo como el Festival de Festivales.",
       "## El primer día, hora por hora",
       "<strong>6:30</strong>, Aeródromo FIG: despegue inaugural con más de 200 globos de más de 25 países. A la misma hora, la <strong>SEDENA</strong> presenta un despliegue de bandera monumental y un sobrevuelo de aeronaves. <strong>19:00</strong>: <strong>Noche Mágica</strong>, un espectáculo de luz y música con los globos anclados a tierra. <strong>20:00</strong>, escenario principal: <strong>Los Ángeles Azules</strong>, que llegan tras haber participado en la inauguración de la Copa Mundial de Futbol 2026.",
@@ -627,7 +627,7 @@ export const items: EventItem[] = [
       "El festival anuncia además a <strong>Christian Nodal</strong> y <strong>Xavi</strong> en lo que llama la noche más grande del regional mexicano, y a <strong>Carin León</strong>, ganador del Grammy Latino al Mejor Álbum Regional. <strong>The Dream Nite</strong> vuelve tras una primera edición que, según el propio festival, alcanzó un récord de asistencia de <strong>58,000</strong> personas.",
       "## Lo que el clima decide",
       "El aviso del organizador es explícito y vale para el momento más importante del programa: <strong>toda la actividad aerostática está sujeta a las condiciones climatológicas</strong>. Los conciertos no dependen del viento; los despegues sí.",
-      "## Dónde es",
+      "## Dónde es el Festival del Globo",
       "El <strong>Parque Metropolitano de León</strong>, en León, Guanajuato. El despegue sale del <strong>Aeródromo FIG</strong>, dentro del mismo recinto.",
     ],
     faq: [

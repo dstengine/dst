@@ -62,13 +62,13 @@ export const items: NewsItem[] = [
     },
     body: [
       "A district on the canal is judged by the twenty minutes at the other end of the journey, not by the view from the balcony. Those twenty minutes are being rebuilt.",
-      "## What opened",
+      "## What opened at the Trade Centre",
       "A <strong>500-metre, two-lane bridge</strong> carrying traffic from <strong>Dubai World Trade Centre</strong> and <strong>One Central</strong> towards <strong>Al Mustaqbal Street</strong> and the Za’abeel Palace Street intersection. On event days the RTA puts the saving at <strong>ten minutes down to two</strong>.",
       "## The scheme it belongs to",
       "The <strong>Al Mustaqbal Street Development Project</strong>, at <strong>AED 633 million</strong>, includes <strong>2,000 metres</strong> of bridges and tunnels and widens Al Mustaqbal Street from <strong>three lanes to four</strong> in each direction. Capacity rises <strong>33%</strong>, from <strong>6,600 to 8,800 vehicles per hour</strong>, and the modelled journey falls from <strong>13 minutes to 6</strong>.",
       "## What is still to come",
       "Overall completion is past <strong>50%</strong>; work at the <strong>World Trade Centre Roundabout</strong> is past <strong>85%</strong>. A further bridge was due at the end of August, the <strong>fifth and final bridge</strong> of the roundabout scheme is set for <strong>October 2026</strong>, and <strong>three tunnels</strong> totalling 1,500 metres follow in <strong>February 2027</strong>.",
-      "## Who it is for",
+      "## Who the bridge is for",
       "<strong>Mattar Al Tayer</strong>, Director General of the RTA, framed the works as part of an integrated scheme to «accommodate urban development and population growth». The RTA counts around <strong>500,000 residents and visitors</strong> across the World Trade Centre, DIFC, Downtown Dubai and Business Bay as the beneficiaries.",
     ],
     expertise:
@@ -176,7 +176,7 @@ export const items: NewsItem[] = [
     },
     body: [
       "Riviera's weekly shop has always meant choosing a direction rather than a shop. There is now one more direction.",
-      "## What opened",
+      "## What opened at Nad Al Sheba Gardens",
       "<strong>Nad Al Sheba Gardens Mall</strong>, a <strong>two-storey</strong> community scheme, opened in <strong>August 2026</strong> inside the Nad Al Sheba Gardens residential district — east of Meydan, on the far side of the racecourse from Riviera.",
       "## The anchor",
       "<strong>Waitrose</strong>, operating in the UAE under Spinneys' licence. Early tenants alongside it include <strong>Kokoro Handroll Bar</strong> and <strong>Bake My Day</strong>.",
@@ -249,7 +249,7 @@ export const items: NewsItem[] = [
     },
     body: [
       "Launches are announcements; completions are handovers. Only one of the two puts keys in anyone’s hand, and the first half of 2026 was unusually good at the second kind.",
-      "## The numbers",
+      "## Dubai completions, in numbers",
       "<strong>104 real estate projects</strong> were completed in Dubai between January and June 2026, a <strong>52% increase</strong> on the same period a year earlier. Those projects added <strong>more than 24,000</strong> residential and commercial units, up <strong>36%</strong> year on year, with an investment value of around <strong>Dh111 billion</strong>.",
       "Sheikh Hamdan bin Mohammed bin Rashid Al Maktoum, Crown Prince of Dubai and Deputy Prime Minister, said the projects «added more than 24,000 new real estate units in Dubai, up 36% compared with last year».",
       "## Why the completion rate matters more than the launch rate",

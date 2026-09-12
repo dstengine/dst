@@ -54,7 +54,7 @@ export const coffee = {
   title: "Coffee in Azizi Riviera",
   description: "Cafés along Azizi Riviera's promenade, and how coverage shifts building to building.",
   eyebrow: "Coffee",
-  h1: "Coffee on the promenade",
+  h1: "Coffee on the Azizi Riviera promenade",
   lede: `A run of independent cafés and a couple of familiar chains along the
     canal-facing stretch — most of Riviera can reach a flat white without a car.`,
   sections: [
@@ -150,7 +150,7 @@ export const food = {
   title: "Food in Azizi Riviera",
   description: "Restaurants and groceries in Azizi Riviera — what's on the promenade, and where residents drive for more.",
   eyebrow: "Food",
-  h1: "Eating in Riviera",
+  h1: "Eating in Azizi Riviera",
   lede: `Enough on the ground floor for a weeknight dinner and a grocery
     run — beyond that, most people drive.`,
   sections: [
@@ -180,7 +180,7 @@ export const pools = {
   title: "Pools in Azizi Riviera",
   description: "Pool access in Azizi Riviera is a per-building amenity — what's standard, and how it varies by block.",
   eyebrow: "Pools",
-  h1: "The pool is in your building, not the development",
+  h1: "Azizi Riviera pools are in your building, not the development",
   lede: `There's no shared pool across Riviera as a whole — whether you have
     one comes down to which block you're in.`,
   sections: [
@@ -211,7 +211,7 @@ export const water = {
   title: "Where to Swim Near Azizi Riviera",
   description: "Looking for somewhere to swim near Azizi Riviera? Building pool first — the canal isn't a swimming spot.",
   eyebrow: "Water",
-  h1: "Where residents swim",
+  h1: "Where Azizi Riviera residents swim",
   lede: `If a search for "swimming near Riviera" brought you here: start
     with your building's pool. The canal that runs alongside the
     development carries boat and water-taxi traffic — worth a walk, not a swim.`,
@@ -280,7 +280,7 @@ export const news = {
   title: "What is changing in Azizi Riviera",
   description: "What's changing inside Azizi Riviera — not a citywide press release.",
   eyebrow: "News",
-  h1: "What's changing in Riviera",
+  h1: "What's changing in Azizi Riviera",
   lede: `Coverage of the development itself — new promenade tenants,
     completed phases, management changes — kept apart from
     <a href="/events/" title="What's on in Azizi Riviera">events</a>, since the two age differently.`,
@@ -301,7 +301,7 @@ export const events = {
   title: "What is on in and around Azizi Riviera",
   description: "What's on locally in Azizi Riviera — resident meetups and promenade launches, not a citywide calendar.",
   eyebrow: "Events",
-  h1: "What's on, locally",
+  h1: "What's on near Azizi Riviera",
   lede: `Meetups, promenade openings, seasonal activity along the canal —
     the kind of thing that doesn't show up on a citywide events calendar.`,
   sections: [
@@ -321,7 +321,7 @@ export const rent = {
   title: "Renting in Azizi Riviera",
   description: "Looking to rent in Azizi Riviera specifically? Get a shortlist matched to the building, view, and unit size you want.",
   eyebrow: "Rent",
-  h1: "Renting in Riviera, by block",
+  h1: "Renting in Azizi Riviera, by block",
   lede: `Riviera spans dozens of buildings, and they're not interchangeable
     — canal-facing costs more than courtyard-facing, the original phase
     reads differently from the newer ones. Tell us what matters and get a

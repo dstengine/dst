@@ -223,7 +223,7 @@ export const items: NewsItem[] = [
     },
     body: [
       "The Macy's Thanksgiving Day Parade began in 1924. It reaches its hundredth edition in 2026, and the two-year gap between those numbers is the whole trick: the parade did not run in 1942, 1943 or 1944.",
-      "## The date",
+      "## Macy's parade 2026: the date",
       "<strong>Thursday, November 26, 2026</strong>, over the usual <strong>2.5-mile route</strong> from the Upper West Side down to Macy's Herald Square.",
       "## The number they are chasing",
       "A <strong>record lineup of 100 inflatable elements</strong> — the round figure being, transparently, the point.",
@@ -337,7 +337,7 @@ export const items: NewsItem[] = [
     },
     body: [
       "The New York Transit Museum lives in a decommissioned subway station, which is already the correct decision. Once a year it brings the other half of the collection above ground.",
-      "## The details",
+      "## Bus Festival 2026 date and place",
       "The <strong>Bus Festival</strong> is on <strong>Saturday 19 September 2026</strong>, <strong>10am to 3:30pm</strong>, in <strong>Brooklyn Bridge Park</strong>. It is <strong>free</strong>.",
       "The museum was founded in <strong>1976</strong> and reaches <strong>fifty</strong> this year.",
       "## Why buses and not trains",
@@ -413,7 +413,7 @@ export const items: NewsItem[] = [
     },
     body: [
       "Wall Street measures a chief executive in one currency, and by that measure <strong>Tim Cook</strong>'s tenure at Apple closed on <strong>1 September 2026</strong> with a figure that will be quoted for a long time.",
-      "## The run",
+      "## Apple's value under Cook",
       "Apple's market value went from about <strong>$350 billion</strong> when Cook took over in 2011 to roughly <strong>$4 trillion</strong> when he handed off. Revenue climbed from <strong>$108 billion</strong> in FY2011 to <strong>$416 billion</strong> in FY2025. Services alone became a business worth more than <strong>$100 billion</strong> a year — larger, on its own, than most of the companies it is listed alongside.",
       "That is roughly <strong>$3.65 trillion</strong> of added market value over fifteen years. There is no second entry close to it.",
       "## Why it cannot happen again",

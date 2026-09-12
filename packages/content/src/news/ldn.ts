@@ -25,7 +25,7 @@ export const items: NewsItem[] = [
     },
     body: [
       "A high street chain that sells more knickers than anyone in Britain is showing on the same schedule as Erdem. Whatever else London Fashion Week is doing this season, it is not pretending to be exclusive.",
-      "## The dates",
+      "## London Fashion Week September 2026 dates",
       "<strong>Thursday 17</strong> to <strong>Monday 21 September</strong>, on the <strong>British Fashion Council</strong>'s provisional schedule.",
       "## The debuts",
       "<strong>Marks & Spencer</strong> shows for the first time — a see-now-buy-now collection of womenswear and menswear, in the retailer's centenary year in fashion. <strong>Mulberry</strong> presents <strong>Christopher Kane</strong>'s first collection for the house. <strong>McQueen</strong> returns with <strong>Seán McGirr</strong>'s London debut, showing men's and womenswear together.",
@@ -178,13 +178,13 @@ export const items: NewsItem[] = [
     },
     body: [
       "The last West End Wonka ran for three years at Drury Lane and then vanished for a decade. He is back, in the largest theatre in London.",
-      "## The run",
+      "## The London Coliseum run",
       "<strong>4 June to 18 September 2027</strong> at the <strong>London Coliseum</strong>, billed as a strictly limited season. <strong>Michael Ball OBE</strong> plays Willy Wonka.",
       "## Who is making it",
       "Directed by <strong>Nikolai Foster</strong>, artistic director of Curve in Leicester. Set design by <strong>Leslie Travers</strong>, costumes by the Olivier-winning <strong>Katrina Lindsay</strong>. The book is <strong>David Greig</strong>'s, the music <strong>Marc Shaiman</strong>'s, with lyrics by <strong>Scott Wittman</strong> and Shaiman.",
       "## The songs",
       "The score keeps the 1971 film's best-known numbers — <em>Pure Imagination</em>, <em>The Candy Man</em>, <em>I've Got a Golden Ticket</em> — alongside the original Shaiman and Wittman material written for the stage version.",
-      "## Booking",
+      "## Booking Charlie and the Chocolate Factory",
       "The production's own site has priority sign-up open now, with tickets from <strong>29 September</strong>.",
     ],
     expertise:
@@ -215,7 +215,7 @@ export const items: NewsItem[] = [
     },
     body: [
       "The object that tells England the story of its own conquest has spent almost its entire existence in Normandy. From 10 September it is in Bloomsbury.",
-      "## The dates and the price",
+      "## Bayeux Tapestry dates and ticket prices",
       "The <strong>Bayeux Tapestry</strong> is at the <strong>British Museum</strong> from <strong>10 September 2026</strong> to <strong>11 July 2027</strong>. Tickets are <strong>£33</strong>. The next general release is <strong>21 October</strong>, covering <strong>1 January to 31 March 2027</strong>; Members can book from <strong>6 October</strong>.",
       "It is roughly <strong>seventy metres</strong> long, and this is the first time it has been in England in something close to <strong>a thousand years</strong>.",
       "## What you are actually looking at",
@@ -328,7 +328,7 @@ export const items: NewsItem[] = [
     },
     body: [
       "The most expensive week in the London art calendar has one part that costs nothing.",
-      "## The dates",
+      "## Frieze Sculpture 2026 dates",
       "<strong>Frieze Sculpture</strong> runs from <strong>16 September</strong> to <strong>1 November 2026</strong> in the <strong>English Gardens</strong> of <strong>Regent's Park</strong>. <strong>Eleven artists</strong> are showing, on the theme of <strong>hybridity</strong>. It is <strong>free</strong>, and it opens more than two weeks before the fair itself.",
       "## Six weeks is a long time for outdoor sculpture",
       "It runs from mid-September to the beginning of November, which in this city means the work will be seen in three quite different conditions: late summer, the two good weeks of autumn colour, and the first genuinely dark afternoons.",

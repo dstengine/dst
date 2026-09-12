@@ -67,10 +67,10 @@ export const items: NewsItem[] = [
     },
     body: [
       "A musical built for a 1,100-seat Broadway house is about to be played in a room that holds seventeen thousand. That is the interesting part of this booking, and it is not a detail of scale — it changes what the audience sees.",
-      "## The dates",
+      "## Chicago in Dubai: the dates",
       "<strong>Chicago</strong> runs at the <strong>Coca-Cola Arena</strong>, Dubai, from <strong>Wednesday 16 to Sunday 20 December 2026</strong>: <strong>eight performances over five days</strong>. Matinees at <strong>3pm</strong> on each of the five days, with <strong>8pm</strong> evening performances added on the Friday, Saturday and Sunday.",
       "It is presented by <strong>Marquee Global Events</strong>, and billed as the first Broadway theatrical production to take the arena’s stage.",
-      "## Tickets",
+      "## Chicago in Dubai ticket prices",
       "Early-bird pricing starts at <strong>Dh49</strong> for bronze and <strong>Dh99</strong> for silver, with <strong>Dh199</strong> gold, <strong>Dh399</strong> for diamond and platinum floor seats, and <strong>Dh599</strong> for front-row VIP. Tickets are on sale through the arena. The show is <strong>15+</strong>.",
       "## Why an arena, and what it costs the show",
       "Chicago has been staged since 1996 in the shape it took at Encores!: the orchestra on stage, black costumes, almost no set. That is the rare Broadway design that survives an arena, because there is nothing to lose in the scale-up — no painted flats to look thin from row forty, no scene changes to slow the width.",
@@ -104,7 +104,7 @@ export const items: NewsItem[] = [
     },
     body: [
       "A musical about people who cannot make the rent is thirty years old, and is opening in a building that has just been renamed after a playwright. Both facts are about the same thing: what a theatre decides to keep.",
-      "## The run",
+      "## The Tom Stoppard Theatre run",
       "<strong>Rent</strong> begins previews on <strong>28 September 2026</strong> at the <strong>Tom Stoppard Theatre</strong> on St Martin’s Lane — the house that has been the <strong>Duke of York’s</strong> — and is booking to <strong>27 March 2027</strong>. Performances run <strong>Monday to Saturday at 7.30pm</strong>, with <strong>2.30pm</strong> matinees on Friday and Saturday. Tickets start at <strong>£31</strong>.",
       "## Who is in it",
       "<strong>Gaten Matarazzo</strong> plays <strong>Mark Cohen</strong> in his West End debut, with <strong>Travis Ross</strong> as Roger, <strong>Bella Brown</strong> as Mimi, <strong>Billy Nevers</strong> as Collins, <strong>Jeevan Braich</strong> as Angel, <strong>Lazy Violet</strong> as Maureen, <strong>Danielle Fiamanya</strong> as Joanne and <strong>Joaquin Pedro Valdes</strong> as Benny.",

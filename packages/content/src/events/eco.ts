@@ -27,13 +27,13 @@ export const items: EventItem[] = [
     },
     body: [
       "Climate conferences mostly argue about whether to act. This one has picked a different argument: what to do with the things that already work.",
-      "## The dates",
+      "## World Green Economy Summit 2026 dates",
       "<strong>21–22 October 2026</strong> at the <strong>Dubai World Trade Centre</strong>. It is the <strong>twelfth edition</strong>, organised by the <strong>Dubai Supreme Council of Energy</strong>, <strong>DEWA</strong> and the <strong>World Green Economy Organization</strong>.",
       "## The theme",
       "<strong>From Success to Scale: Showcasing the Green Economy.</strong> <strong>H.E. Saeed Mohammed Al Tayer</strong>, Vice Chairman of the DSCE and DEWA's MD and CEO, describes the summit as moving the conversation beyond climate action towards demonstrating how the transition is already happening and how to expand it.",
       "## The four pillars",
       "<strong>Energy technology and infrastructure.</strong> <strong>Business strategy and transition.</strong> <strong>Water and food security.</strong> <strong>Finance.</strong> Artificial intelligence, governance and system enablers run across all four rather than sitting in one.",
-      "## The size of it",
+      "## World Green Economy Summit 2026 in numbers",
       "The organisers expect <strong>more than 3,300 participants</strong> from <strong>over 30 countries</strong>, <strong>more than 80 international speakers</strong> — ministers, chief executives and innovators — and <strong>over 300 media representatives</strong>.",
     ],
     expertise:
@@ -105,11 +105,11 @@ export const items: EventItem[] = [
     },
     body: [
       "A green economy summit argues about direction. This is the show where the cables, switchgear and batteries that would have to carry it are actually sold.",
-      "## The dates",
+      "## Middle East Energy 2027 dates",
       "<strong>11–13 May 2027</strong> at the <strong>Dubai Exhibition Centre</strong> in <strong>Expo City</strong>, organised by <strong>Informa Markets</strong> under the patronage of the <strong>UAE Ministry of Energy and Infrastructure</strong>.",
       "## The five sectors",
       "<strong>Transmission and distribution.</strong> <strong>Critical and backup power.</strong> <strong>Renewable and clean energy.</strong> <strong>Energy consumption and management.</strong> <strong>Battery and energy storage.</strong>",
-      "## The size of it",
+      "## Middle East Energy 2027 in numbers",
       "The organisers give <strong>35,000+</strong> attendees, <strong>1,900+</strong> exhibitors, <strong>150+</strong> countries and <strong>250+</strong> speakers, and describe it as the region's largest electrical infrastructure exhibition.",
     ],
     expertise:
@@ -145,13 +145,13 @@ export const items: EventItem[] = [
     ticket: { url: "https://www.adipec.com/attend/", label: "Registration and passes" },
     body: [
       "Every other event on this list is about what the energy system should become. ADIPEC is where the industry that currently supplies it turns up in one building for four days, which is a different and more awkward subject.",
-      "## The dates",
+      "## ADIPEC 2026 dates",
       "<strong>2\u20135 November 2026</strong> at <strong>ADNEC Centre Abu Dhabi</strong>, organised by <strong>dmg events</strong>. Doors are <strong>10:00\u201318:30</strong> from Monday to Wednesday and <strong>10:00\u201317:30</strong> on Thursday.",
-      "## What is in it",
+      "## What ADIPEC 2026 includes",
       "An exhibition and <strong>thirteen conference programmes</strong> running alongside it, with dedicated areas for <strong>AI and digitalisation</strong>, <strong>maritime and logistics</strong> and <strong>low-carbon chemicals</strong> beside the upstream and downstream halls.",
-      "## What it costs",
+      "## What ADIPEC 2026 costs",
       "The exhibition and the conference are priced separately, and only the conference prices are published: a <strong>four-day all-access delegate pass at $7,250</strong>, covering eleven strategic and two technical programmes, delegate lunches and the exhibition halls, or a <strong>four-day technical pass at $2,030</strong> for the SPE and downstream technical programmes. Discounts for SPE members are offered but not listed. Visitor registration for the exhibition is open and carries no published fee.",
-      "## The size of it",
+      "## ADIPEC 2026 in numbers",
       "The organisers give <strong>2,250+ exhibitors</strong>, <strong>239,000+ attendees</strong>, <strong>16,500+ conference delegates</strong> and <strong>1,800+ speakers</strong>, across <strong>380+ sessions</strong>.",
     ],
     faq: [

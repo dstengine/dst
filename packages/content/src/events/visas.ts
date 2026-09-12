@@ -69,7 +69,7 @@ export const items: EventItem[] = [
     },
     body: [
       "Almost every comparison of residency programmes is written by someone selling one of them. For three days in November they are all in the same hall, and they can be asked the same questions in turn.",
-      "## The dates",
+      "## Citizenship Expo Abu Dhabi 2026 dates",
       "<strong>10–12 November 2026</strong> at <strong>ADNEC</strong> in Abu Dhabi, Hall 9. Organised by <strong>Dome Exhibitions</strong>.",
       "## What is on the floor",
       "The organisers list <strong>50+ exhibitors</strong> and <strong>700+ visitors</strong>, and name programmes from <strong>Canada</strong>, the <strong>USA</strong>, the <strong>UK</strong>, <strong>Spain</strong>, <strong>Greece</strong>, <strong>Germany</strong>, <strong>Bulgaria</strong>, <strong>France</strong>, <strong>Portugal</strong>, <strong>Georgia</strong>, <strong>Vanuatu</strong>, the <strong>Cayman Islands</strong>, <strong>Antigua and Barbuda</strong>, <strong>Dominica</strong>, <strong>Grenada</strong>, <strong>Malta</strong>, <strong>Turkey</strong>, <strong>Montenegro</strong>, <strong>Austria</strong>, <strong>Slovenia</strong>, <strong>St Kitts and Nevis</strong>, <strong>St Lucia</strong>, <strong>Panama</strong> and <strong>Latvia</strong>.",

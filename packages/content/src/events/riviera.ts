@@ -133,7 +133,7 @@ export const items: EventItem[] = [
     },
     body: [
       "Dubai does not have many things that happen every weekend for seven months. This is one of them, and it has been running long enough that the season opening is a date people diarise.",
-      "## The dates",
+      "## Ripe Market dates, 15th season",
       "The <strong>15th season</strong> opens on <strong>10 October 2026</strong> and runs until <strong>2 May 2027</strong>, every <strong>Saturday and Sunday from 9am to 9pm</strong>, at <strong>Dubai Police Academy Park</strong> in Umm Suqeim, off Sheikh Zayed Road.",
       "## What is there",
       "Independent stalls selling fashion, home decor, art and locally made goods, produce from UAE farmers, food vendors, creative workshops, activities for children and live entertainment.",
@@ -172,7 +172,7 @@ export const items: EventItem[] = [
     ticket: { url: "https://dubaifitnesschallenge.com/en/dubai-ride", label: "Official page" },
     body: [
       "Once a year the twelve-lane road that defines Dubai is emptied of cars and handed to people on bicycles. That is the whole event, and it is free.",
-      "## The date",
+      "## Dubai Ride 2026: the date",
       "<strong>Sunday 1 November 2026</strong>, starting at <strong>6:00am</strong>. It is the <strong>sixth edition</strong>, the opening weekend of the month-long Dubai Fitness Challenge.",
       "## The two routes",
       "The <strong>12km Sheikh Zayed Road route</strong>, which the organisers recommend for more experienced riders, and the <strong>4km Downtown family route</strong>, a flat loop around Dubai Mall, Dubai Opera and Burj Khalifa. Both pass the Museum of the Future, and the longer one takes in the Dubai Water Canal.",

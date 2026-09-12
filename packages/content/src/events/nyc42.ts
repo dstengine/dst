@@ -33,7 +33,7 @@ export const items: EventItem[] = [
       "A beagle who has never worn clothes has somehow become a fashion exhibition. He opened on September 2, which is not an accident: Fashion Week and the US Open are both in town.",
       "## The practical details",
       "<strong>25 Little West 12th Street</strong>, in the Meatpacking District. <strong>September 2 to 26</strong>, <strong>10am to 6pm daily</strong>, and <strong>admission is free</strong>. Hours can vary for special events.",
-      "## What is in it",
+      "## What is inside Snoopy in Style",
       "About <strong>16,000 square feet</strong> across <strong>ten immersive zones</strong>, looking at Charles M. Schulz's strip through fashion, creativity and culture. Installations are curated by the <strong>Charles M. Schulz Museum and Research Center</strong>, and the archives on show include material about Schulz's own connections to New York, to tennis, and to his friendship with <strong>Billie Jean King</strong>.",
       "## The clothes",
       "Custom Snoopy and Woodstock plush dolls dressed by named designers — among them <strong>Christopher John Rogers</strong>, <strong>Sandy Liang</strong>, <strong>LUAR</strong>, <strong>BODE</strong>, <strong>Coach</strong>, <strong>Levi's</strong>, <strong>Michael Kors Collection</strong>, <strong>Madhappy</strong> and <strong>New York or Nowhere</strong>.",
@@ -82,7 +82,7 @@ export const items: EventItem[] = [
       "## It is not only a Lincoln Center festival any more",
       "Screenings take place across <strong>all five boroughs</strong>: at <strong>Lincoln Center</strong>, <strong>BAM</strong> in Brooklyn, the <strong>Museum of the Moving Image</strong> in Queens, <strong>Alamo Drafthouse Cinema</strong>, and <strong>AMC Bay Plaza Cinema</strong> in the Bronx.",
       "That spread changes the practical shape of the festival. A Main Slate title screening at Bay Plaza is the same film with the same print as the one at Alice Tully Hall, usually with a fraction of the queue.",
-      "## Tickets",
+      "## New York Film Festival tickets",
       "Passes went on sale first. <strong>Single tickets go on sale 15 September at noon.</strong>",
     ],
     expertise:
@@ -259,9 +259,9 @@ export const items: EventItem[] = [
       "## Why the saving is biggest here",
       "A two-for-one discounts a <em>seat</em>, not a production. It is worth most where the seat was expensive to begin with and where it is rarely cheap by any other route. <strong>Harry Potter and the Cursed Child</strong> is the longest and most technically elaborate thing on Broadway, it plays a big house, and it does not turn up week after week in the discount channels the way the long-running musicals do.",
       "Two-for-one on a rarely discounted ticket is a different purchase from two-for-one on a ticket that was going to be discounted anyway. This is the clearest case of the first kind on the list.",
-      "## Where",
+      "## The Lyric Theatre",
       "The <strong>Lyric Theatre</strong>, on West 43rd Street between Seventh and Eighth — its street address is 213 West 42nd. It is one of the largest houses on Broadway, which is both why the ticket is expensive and why the gap between a good seat and a poor one is wide.",
-      "## The catch",
+      "## Blackout dates and limited seats",
       "The offer exists for the fortnight, not for every performance in it. Each production sets its own <strong>blackout dates</strong> and releases its own allocation of eligible seats. Check this listing for the night you actually want before you book anything around it — a dinner reservation on a blacked-out night is the usual way this goes wrong.",
     ],
     expertise:
@@ -298,9 +298,9 @@ export const items: EventItem[] = [
       "Anaïs Mitchell’s retelling of Orpheus and Eurydice, staged as a smoky, jazz-inflected underworld with the band on stage. It began life as a folk album and was built outward from the songs, which is audible: the score carries the storytelling rather than decorating it.",
       "## Why it is not first on the list",
       "Only because it is easier to reach cheaply by other means than the biggest, newest productions are. If you are optimising purely for money saved, there are better uses of the offer. If you are optimising for the evening, this is the one to spend it on — Broadway Week is the excuse to stop putting it off.",
-      "## Where",
+      "## The Walter Kerr Theatre",
       "The <strong>Walter Kerr Theatre</strong>, 219 West 48th Street. It is a mid-sized house, which suits a show that works on intimacy and a live band far better than a barn would.",
-      "## The catch",
+      "## Blackout dates and limited seats",
       "Each production sets its own <strong>blackout dates</strong> and releases its own allocation. The offer running from 8 to 20 September and the offer running on the night you can go are two different questions; only the second one decides anything.",
     ],
     expertise:
@@ -337,9 +337,9 @@ export const items: EventItem[] = [
       "It is recent, it is effects-heavy, and it plays a large house. All three push the full-price ticket up and keep it out of the routine discount channels, which is exactly the combination that makes a two-for-one worth more than the arithmetic suggests.",
       "## And why it is the riskiest on the list",
       "The difference between a good seat and a bad one is unusually wide in a show built on stagecraft, and it is the allocation, not you, that decides which one you get. This is the one production here where the saving can cost you the point of the evening: the effects are the argument, and from the back of the balcony the argument is quieter.",
-      "## Where",
+      "## The Marquis Theatre",
       "The <strong>Marquis Theatre</strong>, 210 West 46th Street, inside the Marriott Marquis. It is one of the few Broadway houses that is not at street level — the auditorium is several floors up, which is worth knowing if you are arriving close to curtain.",
-      "## The catch",
+      "## Blackout dates and limited seats",
       "<strong>Blackout dates</strong> are set per production, and the eligible seats are a limited allocation at each theatre’s discretion. Check this listing for your night before booking anything around it.",
     ],
     expertise:
@@ -377,9 +377,9 @@ export const items: EventItem[] = [
       "## Why the length matters",
       "Two reasons, both logistical. It is the easiest show on the list to pair with something else in the same day — a matinee here leaves the evening intact. And it is the easiest to take a teenager to, because eighty minutes is inside the attention span that a three-hour book musical is not.",
       "On a two-for-one it is also, simply, the cheapest way this fortnight to get two people inside a Broadway theatre at all.",
-      "## Where",
+      "## The Lena Horne Theatre",
       "The <strong>Lena Horne Theatre</strong>, 256 West 47th Street — a smaller house, renamed in 2022. In a room this size the concert staging works the way it is meant to.",
-      "## The catch",
+      "## Blackout dates and limited seats",
       "Each production sets its own <strong>blackout dates</strong> and its own allocation of eligible seats. Confirm the night before you build a day around it.",
     ],
     expertise:
@@ -415,9 +415,9 @@ export const items: EventItem[] = [
       "## Why that changes the maths",
       "Most of the list is big houses where you are paying for stagecraft and the seat determines how much of it reaches you. This is the opposite case. The <strong>Lyceum</strong> is one of the smallest Broadway houses, so the offer buys <em>proximity</em> rather than merely a seat — and in a small room built for a comic performance, proximity is most of what you were paying for in the first place.",
       "A two-for-one on a comedy in a 900-seat house is a materially different purchase from a two-for-one in a 1,600-seat musical barn. It is also the case on this list where the worst available seat is least likely to ruin the evening.",
-      "## Where",
+      "## The Lyceum Theatre",
       "The <strong>Lyceum Theatre</strong>, 149 West 45th Street — the oldest continuously operating Broadway theatre, opened in 1903, and a landmarked building inside and out.",
-      "## The catch",
+      "## Blackout dates and limited seats",
       "<strong>Blackout dates</strong> are set per production and the discounted seats are a limited allocation. A small house means a small allocation: this is one to check early rather than late in the fortnight.",
     ],
     expertise:
@@ -455,9 +455,9 @@ export const items: EventItem[] = [
       "That is a statement about the discount market, not about the show. Julie Taymor’s staging has been the reason people book it since 1997, and it is the reason it still fills a 1,600-seat house.",
       "## When it is the right call anyway",
       "If you are booking for children, the calculation changes completely. The offer is fully transferable to a family plan, the running time and the matinee schedule suit it, and the reliability that makes it a weak <em>deal</em> is exactly what you want when the evening has to work.",
-      "## Where",
+      "## The Minskoff Theatre",
       "The <strong>Minskoff Theatre</strong>, 1515 Broadway at West 45th Street. Like the Marquis, the auditorium is above street level.",
-      "## The catch",
+      "## Blackout dates and limited seats",
       "Each production sets its own <strong>blackout dates</strong> and allocation. Weekend matinees are the first to go on a family show.",
     ],
     expertise:
@@ -495,7 +495,7 @@ export const items: EventItem[] = [
       "## The house is the argument for going anyway",
       "The <strong>Gershwin Theatre</strong>, 222 West 51st Street, is the largest theatre on Broadway. That cuts both ways: there is more inventory to release into an offer like this one, so the odds of getting a decent pair of seats are better here than at the small houses — and the range between the best and worst seat is correspondingly enormous.",
       "For a show with this much scenery, a large allocation in a large house is genuinely useful. It is one of the few places on the list where being flexible about the night is likely to be rewarded.",
-      "## The catch",
+      "## Blackout dates and limited seats",
       "<strong>Blackout dates</strong> are set per production and the eligible seats are limited and at the theatre’s discretion. Check this listing for the specific night rather than assuming the fortnight.",
     ],
     expertise:
@@ -533,9 +533,9 @@ export const items: EventItem[] = [
       "## Why the evening is strong",
       "The staging is the concert version that came out of the 1996 Encores! revival and never left: the orchestra on stage, black costumes, almost no scenery. That look reads today as a deliberate minimalist choice, and it was originally the constraint of a concert staging that worked too well to undo.",
       "It also means the seat matters less than at any other big-house show on this list. There is no scenery to be blocked by and nothing happening upstage that you need a sightline for.",
-      "## Where",
+      "## The Ambassador Theatre",
       "The <strong>Ambassador Theatre</strong>, 219 West 49th Street, where the revival has played since January 2003.",
-      "## The catch",
+      "## Blackout dates and limited seats",
       "<strong>Blackout dates</strong> and the size of the eligible allocation are set by the production, not by the offer. Check the night you want.",
     ],
     expertise:
@@ -567,7 +567,7 @@ export const items: EventItem[] = [
     },
     body: [
       "NYC Broadway Week runs from <strong>8 to 20 September 2026</strong>. Twenty-five productions take part, and the offer is the one it has always been: buy two tickets, pay for one. Sales opened on 18 August.",
-      "## What is in it",
+      "## The 25 shows in Broadway Week",
       "&amp; Juliet, Aladdin, The Book of Mormon, Buena Vista Social Club, Chicago, The Great Gatsby, Hadestown, Harry Potter and the Cursed Child, Just in Time, The Lion King, The Lost Boys, Maybe Happy Ending, MJ, Oh Mary!, Operation Mincemeat, The Outsiders, Paranormal Activity, The Rocky Horror Show, Schmigadoon!, School Girls; Or, the African Mean Girls Play, Six, Stranger Things: The First Shadow, Titaníque, Two Strangers (Carry a Cake Across New York) and Wicked.",
       "It is a wide list on purpose: long-runners that will still be there next year sit beside productions in their first season, and at half price those are worth very different things.",
       "## The catch is the calendar, not the price",
@@ -650,13 +650,13 @@ export const items: EventItem[] = [
     ticket: { url: "https://sangennaronyc.org/", label: "More details" },
     body: [
       "For eleven days a working stretch of downtown stops being a street. The Feast of San Gennaro is the oldest and largest of New York's Italian-American street feasts, and the thing to understand before going is that it is a religious procession with a fair around it, not a fair with a saint's name on it.",
-      "## The dates",
+      "## Feast of San Gennaro 2026 dates",
       "<strong>September 17 to September 27, 2026</strong>, in Little Italy.",
       "## Where it runs",
       "<strong>Mulberry Street</strong> between Canal and Houston, <strong>Hester Street</strong> between Baxter and Centre, and <strong>Grand Street</strong> between Baxter and Centre Market Place.",
       "## The Grand Procession",
       "<strong>Saturday, September 26, 2pm to 4pm</strong>: the statue is carried through the streets, with live music. The <strong>Solemn High Mass</strong> is on <strong>September 19</strong>.",
-      "## What it costs",
+      "## What the San Gennaro feast costs",
       "Nothing to walk in. The daily opening and closing times are not published on the feast's own site, so no hours appear here.",
     ],
     faq: [
@@ -709,15 +709,15 @@ export const items: EventItem[] = [
     ticket: { url: "https://www.climateweeknyc.org/", label: "The calendar" },
     body: [
       "For one week in September the city carries a second conference on top of itself, and most of it is not in one building. Climate Week NYC is a calendar rather than a venue: hundreds of separately run events across Manhattan and Brooklyn, held under one name and one set of dates.",
-      "## The dates",
+      "## Climate Week NYC 2026 dates",
       "<strong>September 20 to September 27, 2026</strong>, across New York City.",
-      "## Who runs it",
+      "## Who runs Climate Week NYC",
       "The <strong>Climate Group</strong>, an international non-profit. It sets the dates and the main programme; the rest of the calendar is filled by organisations registering their own events under it.",
       "## The scale",
       "The organisers put attendance at <strong>over 100,000 people a year</strong>, which makes it the largest annual gathering of its kind in the city.",
       "## What is on the 2026 calendar",
       "Among the featured events: investor and family-office summits, clean energy trade and the grid, methane reduction, the circular economy and aluminium recycling, and the electricity demand of AI.",
-      "## Getting in",
+      "## Getting into Climate Week events",
       "There is no single ticket. Each event on the calendar sets its own terms — some open, some by registration, some invitation only — so the calendar entry is the thing to read, not the week.",
     ],
     faq: [
@@ -772,13 +772,13 @@ export const items: EventItem[] = [
     ticket: { url: "https://burningman.org/event/", label: "Official site" },
     body: [
       "It ended the day before yesterday. Black Rock City exists for eight days a year and is dismantled to nothing afterwards \u2014 which is the part that makes it worth reading about after it is over rather than before, because what there is to plan for is the next one.",
-      "## The dates",
+      "## Burning Man 2026 dates",
       "<strong>August 30 to September 7, 2026</strong>, in the <strong>Black Rock Desert</strong> in Nevada. The next edition is <strong>August 29 to September 6, 2027</strong>.",
       "## The theme",
       "<strong>Axis Mundi</strong> \u2014 the world axis \u2014 which the organisers describe as being about interconnectedness, shared social realities and our ties to the natural world. The theme names the concentric streets of the city and shapes the two structures everything else is arranged around: the Man Pavilion, called <strong>Cryptomeria</strong>, and the <strong>Temple of the Moon</strong>, whose form came from the queen of the night, a desert cactus flower that opens for one night.",
       "## What it is not",
       "It is not a music festival with a ticket and a line-up. The event runs on the <strong>10 Principles</strong>, of which the two that surprise people are <strong>decommodification</strong> \u2014 no vending, no sponsorship, no logos, nothing bought or sold on the playa beyond ice and coffee \u2014 and <strong>participation</strong>, which is the reason there is no audience. Everything present was brought and built by someone who came.",
-      "## Getting in",
+      "## Getting a Burning Man ticket",
       "Attendance is by ticket and the sales are staged through the year rather than opened once, so the useful thing to know in September is that the process for the following August has already started. Volunteer crews, theme camps and art projects all place months ahead.",
     ],
     faq: [
@@ -834,7 +834,7 @@ export const items: EventItem[] = [
     ticket: { url: "https://www.sxsw.com/", label: "Badges" },
     body: [
       "Four festivals share one week and one city, and the badge you buy decides which of them you are actually at. That is the whole decision, and it is cheaper if it is made this month.",
-      "## The dates",
+      "## SXSW 2027 dates",
       "<strong>March 15 to 21, 2027</strong>, in <strong>Austin, Texas</strong>. The event has run since <strong>1987</strong>.",
       "## The four halves of it",
       "The <strong>Innovation Conference</strong>, the <strong>Film &amp; TV Festival</strong>, the <strong>Music Festival</strong> and the <strong>Comedy Festival</strong>, with <strong>13 content tracks</strong> across them \u2014 among them tech and AI, startups, the creator economy, design, health, gaming, sport and climate.",
@@ -895,9 +895,9 @@ export const items: EventItem[] = [
     ticket: { url: "https://www.ces.tech/", label: "Registration" },
     body: [
       "The first big week of the year, and the one that sets what the rest of it will be arguing about.",
-      "## The dates",
+      "## CES 2027 dates",
       "<strong>January 6 to 9, 2027</strong>, in <strong>Las Vegas</strong>, organised by the <strong>Consumer Technology Association</strong>.",
-      "## Who it is for",
+      "## Who CES 2027 is for",
       "The organisers describe the audience as global brands, industry professionals, decision makers, media and influencers. <strong>Registration is open.</strong> No admission price is published on the show's own front page, and no attendance or exhibitor figure is given there either \u2014 so neither appears here.",
     ],
     faq: [
@@ -948,7 +948,7 @@ export const items: EventItem[] = [
     ticket: { url: "https://www.artbasel.com/miami-beach", label: "Tickets" },
     body: [
       "Three days in December do something to Miami Beach that no other three days do, and most of what happens that week is not the fair.",
-      "## The dates",
+      "## Art Basel Miami Beach 2026 dates",
       "<strong>December 4 to 6, 2026</strong>, in <strong>Miami Beach</strong>. UBS is the global lead partner.",
       "## What is published and what is not",
       "The dates are confirmed on Art Basel's own page. The gallery list, the ticket prices and the split between preview and public days are not on it yet, so they are not here \u2014 the ticket link goes to the source rather than to a number invented for a listing.",
@@ -993,9 +993,9 @@ export const items: EventItem[] = [
     },
     body: [
       "It is the oldest fixture on the American new year, and it is free to stand and watch.",
-      "## The date",
+      "## Rose Parade 2027: the date",
       "<strong>January 1, 2027</strong>, in <strong>Pasadena, California</strong>. This is the <strong>138th</strong> Rose Parade, presented by Honda.",
-      "## What it is",
+      "## What the Rose Parade is",
       "The Tournament of Roses has produced what it calls America's New Year Celebration since <strong>1890</strong> \u2014 the parade and the Rose Bowl Game on the same day, in the same city.",
     ],
     faq: [
@@ -1040,7 +1040,7 @@ export const items: EventItem[] = [
     ticket: { url: "https://www.coachella.com/", label: "Tickets" },
     body: [
       "Two weekends, the same bill twice, and a line-up that will not be announced for months.",
-      "## The dates",
+      "## Coachella 2027 dates",
       "<strong>April 9\u201311 and April 16\u201318, 2027</strong>, at the <strong>Empire Polo Club</strong> in <strong>Indio, California</strong>. The festival's own words for it: see you in the desert.",
       "## What is not published",
       "No line-up and no 2027 prices at the time of writing. Passes are sold in advance of both, which is the arrangement to understand before deciding.",
@@ -1091,7 +1091,7 @@ export const items: EventItem[] = [
     ticket: { url: "https://lasvegas.electricdaisycarnival.com/", label: "Tickets" },
     body: [
       "It is a festival that opens when the sun goes down and closes when it comes back up.",
-      "## The dates",
+      "## EDC Las Vegas 2027 dates",
       "<strong>May 14, 15 and 16, 2027</strong>, at the <strong>Las Vegas Motor Speedway</strong> \u2014 not on the Strip, some fifteen miles north-east of it.",
       "## What that means in practice",
       "Three consecutive nights rather than three days: the schedule runs overnight, and the trip home happens in daylight. Camping is sold as part of the festival.",
@@ -1137,7 +1137,7 @@ export const items: EventItem[] = [
     },
     body: [
       "Most big American festivals happen somewhere you have to drive to. This one happens in a park with a skyline behind it.",
-      "## The dates",
+      "## Lollapalooza 2026 dates",
       "<strong>July 30 to August 2, 2026</strong>, in <strong>Grant Park, Chicago, Illinois</strong> \u2014 four days, now past.",
       "## Next year",
       "Dates for 2027 are not published yet. When the festival announces them, they go here.",
@@ -1183,7 +1183,7 @@ export const items: EventItem[] = [
     ticket: { url: "https://www.kentuckyderby.com/", label: "Tickets" },
     body: [
       "The race lasts about two minutes. The gates open nine hours before it.",
-      "## The dates",
+      "## Kentucky Derby 2027 dates",
       "<strong>Saturday, May 1, 2027</strong> at <strong>Churchill Downs</strong>, Louisville, Kentucky \u2014 the <strong>153rd</strong> Derby, and as always the first Saturday in May. The Kentucky Oaks runs the day before, on <strong>April 30</strong>.",
       "## The day itself",
       "<strong>Gates open at 9am.</strong> Post time for the Derby is scheduled for approximately <strong>6:57pm ET</strong>. Everything between those two numbers \u2014 a full card of racing, the infield, the hats \u2014 is what the ticket is actually for.",
@@ -1234,7 +1234,7 @@ export const items: EventItem[] = [
     ticket: { url: "https://www.aclfestival.com/", label: "Tickets" },
     body: [
       "The nearest of these to happening: three weeks from now, and in a city that is easy to fly into.",
-      "## The dates",
+      "## Austin City Limits 2026 dates",
       "<strong>October 2\u20134 and October 9\u201311, 2026</strong>, at <strong>Zilker Park</strong> in <strong>Austin, Texas</strong>. Two weekends, the same festival twice.",
       "## Why the park matters",
       "Zilker is inside Austin, which makes this one of the few American festivals of its size where the accommodation is a hotel room and the journey home is a short one.",
@@ -1281,7 +1281,7 @@ export const items: EventItem[] = [
     ticket: { url: "https://ultramusicfestival.com/", label: "Tickets" },
     body: [
       "Most festivals of this size are held somewhere with room to build them. This one is held on the waterfront of a downtown.",
-      "## The dates",
+      "## Ultra Miami 2027 dates",
       "<strong>March 26 to 28, 2027</strong>, at <strong>Bayfront Park</strong>, Miami, Florida.",
       "## What is not published yet",
       "No 2027 line-up at the time of writing. Tickets are sold before it is announced, which is the same arrangement Coachella runs.",
@@ -1326,7 +1326,7 @@ export const items: EventItem[] = [
     ticket: { url: "https://www.stagecoachfestival.com/", label: "Tickets" },
     body: [
       "Country music's biggest party, in the festival's own words, and it happens in the same corner of California as Coachella a fortnight earlier.",
-      "## The dates",
+      "## Stagecoach 2027 dates",
       "<strong>April 23 to 25, 2027</strong>. The festival's own page says only that it returns to the desert; it does not name the site or the town, so neither does this page.",
       "## What is not published",
       "No line-up and no 2027 prices yet.",
@@ -1371,9 +1371,9 @@ export const items: EventItem[] = [
     },
     body: [
       "It is the sort of event the coasts forget exists, and it is bigger than most of the festivals they do not.",
-      "## The dates",
+      "## Iowa State Fair 2027 dates",
       "<strong>August 12 to 22, 2027</strong>, in <strong>Des Moines, Iowa</strong> \u2014 eleven days.",
-      "## What it is",
+      "## What the Iowa State Fair is",
       "The fair describes itself as the largest event in Iowa and one of the oldest and largest agricultural and industrial expositions in the country.",
     ],
     faq: [
@@ -1416,7 +1416,7 @@ export const items: EventItem[] = [
     },
     body: [
       "Four days of adventure, as the festival puts it, on 700 acres of farmland an hour from Nashville.",
-      "## The dates",
+      "## Bonnaroo 2026 dates",
       "<strong>June 11 to 14, 2026</strong>, in <strong>Manchester, Tennessee</strong> \u2014 four days, now past.",
       "## Next year",
       "No 2027 dates are published yet. When Bonnaroo announces them, they go here.",
@@ -1462,11 +1462,11 @@ export const items: EventItem[] = [
     },
     body: [
       "The zoo's Halloween runs for six weeks and costs nothing on top of getting in, which makes it the cheapest large Halloween in the city and the one least likely to frighten anybody.",
-      "## The details",
+      "## Boo at the Zoo 2026 dates and times",
       "<strong>Saturdays and Sundays from 26 September to 1 November 2026</strong>, plus <strong>Monday 12 October</strong>. Activities run from 11am, with the last performances finishing at <strong>4pm</strong>. It is <strong>free with a Bronx Zoo ticket or membership</strong>.",
-      "## What is on",
+      "## What is on at Boo at the Zoo",
       "The candy trail runs 11am to 2pm; most other activities run 11am to 4pm, some from 10am. They are spread across the zoo rather than gathered in one place — Astor Court, Giraffe Corner, Grizzly Corner, the Butterfly Patio, Rhino Trail, Rhino Garden and the Dancing Crane Pavilion each have something, from puppets and games to a hay maze and free face painting.",
-      "## Getting there",
+      "## Getting to the Bronx Zoo",
       "The zoo is in the Bronx at 2300 Southern Boulevard. It is a long day out from Manhattan and a short one from the north Bronx, and the Halloween weekends are among the busiest the zoo has.",
     ],
     faq: [
@@ -1516,9 +1516,9 @@ export const items: EventItem[] = [
     },
     body: [
       "Seven thousand pumpkins, every one of them cut by hand, and the whole thing is lit only by what is inside them.",
-      "## The details",
+      "## The Great Jack O'Lantern Blaze 2026 dates and times",
       "<strong>18 September to 8 November 2026</strong> at <strong>Van Cortlandt Manor</strong>, Croton-on-Hudson, New York. It is a production of <strong>Historic Hudson Valley</strong>, a not-for-profit educational organisation. Entry is by timed ticket.",
-      "## What it is",
+      "## What the Blaze is",
       "An after-dark walk through the grounds of an 18th-century estate, past more than seven thousand illuminated jack-o'-lanterns arranged into sequences — a carousel, a bridge, a wall of faces. The carving is continuous through the run, because pumpkins do not last seven weeks.",
       "## Getting there from the city",
       "Croton-on-Hudson is on Metro-North's Hudson Line out of Grand Central. It is the one Halloween on this site that is not in New York City, and the reason it is here anyway is that half the people in the queue came up from it.",
@@ -1580,7 +1580,7 @@ export const items: EventItem[] = [
     },
     body: [
       "The unit of this festival is not the day. It is the <strong>session</strong> — all of a morning's activities, or all of an evening's — and every ticket, every schedule and every weather cancellation is written in those terms. The <strong>2026 Balloon Fiesta runs nine days, Saturday October 3 through Sunday October 11</strong>, at Balloon Fiesta Park in Albuquerque, New Mexico.",
-      "## What a ticket costs",
+      "## What a Balloon Fiesta ticket costs",
       "<strong>General admission is $22.24 per person, per session</strong> — $20 plus a $2.24 fee — and <strong>children 12 and under are free</strong>. One ticket is good for one session on any day, which is worth reading twice: a morning mass ascension and that same evening's glow are two tickets, not one.",
       "## Weather is part of the deal",
       "Balloons do not fly in bad air, and the organizers say so in writing: this is a weather-dependent event, tickets are nonrefundable, and if a session is canceled it is <strong>rain-checked</strong>. A rain-checked ticket reactivates as a general admission ticket valid for <strong>any remaining session in the same year</strong>, and the park's other amenities stay open for the rest of that session regardless. Session status goes out on the official app and the Fiesta's own social channels.",
@@ -1588,7 +1588,7 @@ export const items: EventItem[] = [
       "The Fiesta states that it <strong>authorizes no third-party vendors</strong> to sell its tickets online, and that only tickets sold through balloonfiesta.com are valid. Fees are added at checkout per ticket.",
       "## Music Fiesta",
       "<strong>Music Fiesta, presented by New Mexico Honda Dealers, returns Saturday, October 10</strong> — the second Saturday of the run, and a separate ticket from general admission. The ticket menu also carries Park &amp; Ride, Gondola Club, Chasers' Club, glamping, Camp 505, a concierge program and the Fiesta Sky Box.",
-      "## Getting there",
+      "## Getting to Balloon Fiesta Park",
       "Balloon Fiesta Park sits off Alameda Boulevard on the north side of Albuquerque. The Fiesta's own <strong>Park &amp; Ride</strong> is the option it points at first, and for a morning session that starts before dawn it is the one that decides whether you see the ascension or the parking lot.",
     ],
     faq: [
@@ -1661,7 +1661,7 @@ export const items: EventItem[] = [
     },
     body: [
       "Two hundred and thirty performances in nine weeks. That is the number the 2026 season is built around — <strong>the most ever</strong>, by the producers' own count — and it works out to roughly four shows a day, every day, from <strong>November 4, 2026</strong> to <strong>January 4, 2027</strong> at Radio City Music Hall.",
-      "## The run",
+      "## The Christmas Spectacular run",
       "The show opens <strong>Wednesday, November 4</strong> and the final performances are on <strong>Monday, January 4, 2027</strong>, at <strong>2:00 p.m. and 8:00 p.m.</strong> New Year's Day, Friday January 1, plays <strong>1:00, 4:00 and 7:00 p.m.</strong> Run time is <strong>90 minutes with no intermission</strong>, which is short for a Broadway-scale production and the reason the building can turn over four houses in a day.",
       "## What's new this year",
       "The 2026 season adds <strong>ten Rockettes numbers</strong> — more than the show has carried before — under the billing of more scenes, more perspectives and more shows.",
@@ -1669,7 +1669,7 @@ export const items: EventItem[] = [
       "Tickets run <strong>$55 to $250 and above</strong>, a range that <strong>includes service fees of $5 to $27.50 and up</strong>. There is a <strong>14-ticket limit per transaction and per purchaser across the whole 2026 season</strong> — not per order, per season — which is the one rule that catches large family groups out. Service charges apply to internet orders.",
       "## Choosing a showtime",
       "The calendar filters by month, by weekend, weekday and holiday dates, by day of the week, and by start time: <strong>10 and 11 a.m., 1, 2, 3, 4, 5, 7, 8 and 10 p.m.</strong> Weekday matinees in early November exist at the bottom of that range; holiday-week evenings sit at the top of it.",
-      "## Getting there",
+      "## Getting to Radio City Music Hall",
       "Radio City Music Hall, <strong>1260 Avenue of the Americas</strong>, New York, NY 10020. The box office is open Monday to Saturday, noon to 6 p.m., and its hours are subject to change.",
     ],
     faq: [

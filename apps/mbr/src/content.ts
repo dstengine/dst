@@ -57,7 +57,7 @@ export const coffee = {
   title: "Coffee in MBR City",
   description: "Where to get coffee across MBR City's communities — the racecourse terrace, Riviera's promenade, and why the rest of the district drives.",
   eyebrow: "Coffee",
-  h1: "The best coffee in the district is at a racecourse",
+  h1: "The best coffee in MBR City is at a racecourse",
   image: "/covers/coffee.jpg",
   imageAlt: "Cut-paper illustration: a cup on a saucer with a curl of steam and a single bean shape.",
   lede: `Not a joke and not a recommendation dressed up as one: with Meydan
@@ -102,7 +102,7 @@ export const food = {
   title: "Food in MBR City",
   description: "Dining and groceries across MBR City's communities — what the racecourse carries, what Riviera walks to, and the mall that has not opened.",
   eyebrow: "Food",
-  h1: "The anchor everyone plans around is not built",
+  h1: "Eating in MBR City, around an anchor that is not built",
   image: "/covers/food.jpg",
   imageAlt: "Cut-paper illustration: a round platter divided into segments with two slender bars beside it.",
   lede: `Read almost anything about this district and you will be told its
@@ -166,7 +166,7 @@ export const pools = {
   title: "Pools in MBR City",
   description: "Pool access across MBR City's communities — building pools, and the Crystal Lagoon that is not one.",
   eyebrow: "Pools",
-  h1: "Building pools, and 18 hectares that are not a pool",
+  h1: "MBR City pools, and 18 hectares that are not a pool",
   image: "/covers/pools.jpg",
   imageAlt: "Cut-paper illustration: a rectangular pool of layered blue strips with a ladder and a diving board.",
   lede: `Almost everywhere in the district, swimming means the pool in your
@@ -222,7 +222,7 @@ export const water = {
   title: "Where to Swim in MBR City",
   description: "Looking for where to swim in MBR City? Building pools, District One's Crystal Lagoon and who has access, and the drive to the sea.",
   eyebrow: "Water",
-  h1: "Where residents swim",
+  h1: "Where MBR City residents swim",
   image: "/covers/water.jpg",
   imageAlt: "Cut-paper illustration: concentric ripple rings crossed by a straight canal band.",
   lede: `MBR City has two real water features — District One's Crystal
@@ -273,7 +273,7 @@ export const money = {
   title: "Money: Crypto Near MBR City",
   description: "Crypto exchange near MBR City, and how buying property with crypto works in practice.",
   eyebrow: "Money",
-  h1: "Crypto, close to the district",
+  h1: "Crypto, close to MBR City",
   image: "/covers/money.jpg",
   imageAlt: "Cut-paper illustration: a fan of overlapping rectangles beside a single large disc.",
   lede: `MBR City's location bordering Business Bay puts licensed exchange
@@ -310,7 +310,7 @@ export const news = {
   title: "MBR City News",
   description: "District-wide news across MBR City — what's changing across communities, not one community's own updates.",
   eyebrow: "News",
-  h1: "What's changing, district-wide",
+  h1: "What's changing in MBR City",
   lede: `Coverage of what's changing across MBR City's communities, not
     what's hyper-local to one of them — kept apart from
     <a href="/events/" title="What's on in MBR City">events</a>, since the two age differently.`,
@@ -334,7 +334,7 @@ export const events = {
   title: "MBR City Events",
   description: "District-wide events across MBR City — Meydan racing, District One's lagoon calendar, and what draws a crowd from across the district.",
   eyebrow: "Events",
-  h1: "What's on, district-wide",
+  h1: "What's on in MBR City",
   lede: `What draws people from across MBR City's communities, not what's
     hyper-local to one of them.`,
   sections: [

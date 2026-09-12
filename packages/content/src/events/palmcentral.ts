@@ -68,9 +68,9 @@ export const items: EventItem[] = [
     },
     body: [
       "A property show sells apartments to buyers. This one is aimed a level up — at the capital that funds the towers before there is anything to sell.",
-      "## The dates",
+      "## RISE Global 2026 dates",
       "<strong>13–14 October 2026</strong> at the <strong>Dubai World Trade Centre</strong>. The organisers describe RISE as the platform where government, developers, sovereign investors and national institutions present a single coordinated market position.",
-      "## Who is behind it",
+      "## Who is behind RISE Global",
       "<strong>Dubai Land Department</strong> and <strong>Dubai Economy &amp; Tourism</strong> are named as strategic government partners, with <strong>Modon</strong> as headline sponsor and <strong>Imkan</strong> as gold sponsor. The stated frame is translating the <strong>D33</strong> economic agenda into investable opportunity.",
       "## Why it is on this site",
       "Palm Jebel Ali is a master-development question before it is an apartment question: what gets built on the Spine, and when, follows the funding. An event where the Land Department and the master developers set out a position is where that timetable is stated in public.",

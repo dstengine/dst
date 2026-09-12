@@ -172,7 +172,7 @@ export const items: NewsItem[] = [
     },
     body: [
       "Corporate climate figures are usually discussed as though they belong to the company. They belong to a person, and on <strong>1 September 2026</strong> Apple's changed owner.",
-      "## The number",
+      "## The size of Apple's cut",
       "Apple states that its carbon footprint is <strong>60% below 2015 levels</strong>. That reduction was achieved over the fifteen years <strong>Tim Cook</strong> was chief executive, a period in which the company also went from <strong>$108 billion</strong> of revenue in FY2011 to <strong>$416 billion</strong> in FY2025 and added more than <strong>100,000</strong> employees.",
       "Cutting absolute emissions by 60% while quadrupling revenue is the difficult version of the exercise. The easy version — the one most published figures describe — is intensity: emissions per unit of something that is itself growing.",
       "## Who now owns it",

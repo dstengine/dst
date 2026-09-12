@@ -100,13 +100,13 @@ export const items: NewsItem[] = [
     },
     body: [
       "Most festivals ask where the venue is. This one has spent twenty-four years answering: everywhere, and you will need a bus.",
-      "## The dates",
+      "## London Design Festival 2026 dates",
       "<strong>12 to 20 September</strong>, the <strong>24th edition</strong>.",
       "## The eleven districts",
       "<strong>Bankside</strong>, <strong>Brompton</strong>, <strong>Blackhorse Creates</strong> in Walthamstow, <strong>Chelsea</strong>, <strong>Dalston to Stokey</strong>, <strong>EC1</strong> in Clerkenwell, <strong>Fleet Street Quarter</strong>, <strong>Mayfair</strong>, <strong>Park Royal</strong>, <strong>Shoreditch Design Week</strong> and <strong>Soho</strong>. Six boroughs and the City between them, and two of the eleven — Blackhorse Creates and Park Royal — sit in places most visitors have no other reason to go.",
       "## The landmark projects",
       "<strong>The Point of Unity and Soul</strong>, light and media art inside <strong>St Paul's Cathedral</strong>; <strong>The Art of Sound</strong> from <strong>Max Cooper</strong> and <strong>Chris Watson</strong> with L-Acoustics; and <strong>The Speaking Oasis</strong>, on palm weaving in architecture.",
-      "## What it costs",
+      "## What the London Design Festival costs",
       "Much of the district programme is open and free; the <strong>Global Design Forum</strong> has free tickets. Individual exhibitions set their own terms, and the festival does not sell one pass for the lot.",
     ],
     expertise:
@@ -180,7 +180,7 @@ export const items: NewsItem[] = [
       "There are more than <strong>30 led rides</strong>, <strong>four activity hubs</strong>, closed cycle loops in <strong>Westminster</strong> and <strong>Tower Hamlets</strong>, and a <strong>Cargo Bike Fair in Richmond</strong>. Rides are marshalled and family-paced; the hubs add free bike checks, tester bikes, food stalls and music.",
       "## The nineteen",
       "Barking &amp; Dagenham, Brent, Enfield, Greenwich, Hackney, Hammersmith &amp; Fulham, Harrow, Hounslow, Islington, Kingston, Lambeth, Lewisham, Newham, Redbridge, Richmond, Southwark, Tower Hamlets, Waltham Forest and Westminster — with the <strong>City of London</strong> also taking part, which is how a list of nineteen boroughs comes to have twenty names on it. The City is not a borough, a distinction it has spent nine centuries declining to give up.",
-      "## Booking",
+      "## Booking a place on a borough ride",
       "Every event is <strong>free</strong> and every event wants a <strong>ticket</strong> in advance, because places on a marshalled ride are finite. The partners named are <strong>Lime</strong>, <strong>Voi</strong> and the <strong>Zero Emissions Network</strong>.",
     ],
     expertise:
@@ -324,7 +324,7 @@ export const items: NewsItem[] = [
     },
     body: [
       "Thirty-five years ago somebody had the rather good idea of simply asking building owners whether the public might come in. A surprising number said yes, and have gone on saying yes.",
-      "## The dates",
+      "## Open House Festival 2026 dates",
       "<strong>Open House Festival 2026</strong> runs <strong>12–20 September</strong>. It is the <strong>35th</strong> edition, it covers all <strong>33 boroughs</strong>, and it is <strong>free</strong>. Booking opened at <strong>midday on 19 August</strong>.",
       "## What one should do about the ballot having already happened",
       "The famous buildings went within the hour, as they do every year, and there is no particular use in being cross about it. The festival's actual value was never the six places everybody wanted.",
@@ -644,7 +644,7 @@ export const items: NewsItem[] = [
       "This is where it stops sounding like a council holiday scheme. The programme is delivered with the institutions based in the park’s East Bank quarter: <strong>BBC Music Studios</strong>, <strong>Sadler’s Wells East</strong>, <strong>UAL’s London College of Fashion</strong>, <strong>UCL</strong>, <strong>V&amp;A East</strong> and <strong>ABBA Voyage</strong>.",
       "The sessions are specific rather than general-purpose: flood-resilient neighbourhood mapping at UCL, inclusive dance at Sadler’s Wells East, fashion history at UAL, content creation for the BBC’s Asian Network, exhibition curation at V&amp;A East, and backstage tours at ABBA Voyage.",
       "Backstage at ABBA Voyage is worth pausing on. It is one of the most technically advanced shows running anywhere, and the number of sixteen-year-olds who have been shown how it works is very small.",
-      "## The numbers",
+      "## East Summer School in numbers",
       "In <strong>2025</strong>, more than <strong>300 young people</strong> attended <strong>24 workshops</strong>. This year participants chose <strong>one activity per week</strong> rather than sampling everything — a change that trades breadth for actually finishing something.",
       "It ends with a <strong>showcase at the ArcelorMittal Orbit</strong>, where participants present their work to parents, carers and community supporters.",
       "## Why the four boroughs",

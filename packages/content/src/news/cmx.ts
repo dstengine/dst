@@ -65,11 +65,11 @@ export const items: NewsItem[] = [
     },
     body: [
       "Hay ferias que traen algo de fuera. Ésta pone en una explanada lo que la ciudad ya compra todas las mañanas, y ahí está lo interesante: obliga a mirar de cerca algo que nadie mira.",
-      "## Cuándo y dónde",
+      "## Cuándo y dónde es el Festival del Pan Dulce",
       "<strong>Viernes 11 al domingo 13 de septiembre</strong>, en la explanada del <strong>Monumento a la Revolución</strong> (Plaza de la República s/n, colonia Tabacalera, alcaldía Cuauhtémoc). La <strong>entrada es gratuita</strong>.",
       "## Qué se va a encontrar",
       "<strong>Conchas</strong>, <strong>orejas</strong>, <strong>cuernitos</strong>, donas, hot cakes, <strong>cubiletes</strong>, chilindrinas, ojos de buey, banderillas, <strong>cochinitos</strong>, <strong>campechanas</strong> y besos. Es la primera edición.",
-      "## Cómo llegar",
+      "## Cómo llegar al Monumento a la Revolución",
       "<strong>Metro Revolución</strong>, línea 2, y <strong>Metrobús Plaza de la República</strong>, línea 1. Las dos dejan a pie de explanada, que es exactamente el tipo de sede que no conviene alcanzar en coche un sábado.",
       "## La parte que no está en el cartel",
       "Un festival de pan es un festival de horarios: lo recién salido se acaba, y lo que queda a las seis de la tarde no es lo mismo que se sacó a las once de la mañana. La hora decide más que el puesto.",
@@ -178,7 +178,7 @@ export const items: NewsItem[] = [
     },
     body: [
       "El sistema de transporte que mueve a la ciudad cumple años y, en lugar de un informe, pone una pista de baile en la Glorieta de Insurgentes.",
-      "## Las fechas",
+      "## Fechas de los conciertos del Metro",
       "Los conciertos van del <strong>2 al 5 de septiembre de 2026</strong> en la <strong>Glorieta de Insurgentes</strong>, en la colonia Roma, por el <strong>57 aniversario</strong> del Metro. La entrada es <strong>gratuita</strong>.",
       "## Quién toca",
       "El <strong>jueves 3</strong> hay seis actos de <strong>11:00 a 16:00</strong>, encabezados por <strong>Aarón y Su Grupo Ilusión</strong>. El <strong>viernes 4</strong> se presentan <strong>Los Askis</strong> a las <strong>13:40</strong> junto con otros seis grupos. El <strong>sábado 5</strong> cierran siete actos, entre ellos <strong>Los Karmann Ghia</strong> y <strong>Dance OG</strong>. En el cartel completo aparecen también <strong>La Sonora Dinamita</strong> y <strong>Son Tepito</strong>.",
@@ -436,7 +436,7 @@ export const items: NewsItem[] = [
     },
     body: [
       "Hay una manera fácil de anunciar que un centro cultural se volvió sustentable: se planta una azotea verde, se toma la foto y se corta el listón. Casa del Lago hizo lo contrario. Los dos años de obra que acaba de terminar no se ven desde el jardín, y el resultado se mide en litros y en kilovatios.",
-      "## Los números",
+      "## Los números de la captación de lluvia",
       "El recinto instaló un sistema de <strong>captación de lluvia</strong> que aprovecha los escurrimientos de cerca de <strong>200 metros cuadrados de azoteas</strong>. Durante la temporada puede recolectar hasta <strong>60 mil litros</strong>, destinados a abastecer los módulos sanitarios administrativos.",
       "A eso se suman <strong>paneles solares</strong> e iluminación de alta eficiencia, con los que se prevé reducir alrededor del <strong>60% del consumo eléctrico</strong> del recinto. Los trabajos se hicieron con apoyo de la Tesorería de la UNAM, la Dirección General del Patrimonio Universitario y la Dirección General de Obras y Conservación, y abarcaron espacios artísticos, servicios y sistemas de operación.",
       "Con esto, Casa del Lago se convierte en el <strong>primer centro cultural de la UNAM</strong> en aplicar una estrategia integral de infraestructura con enfoque sustentable.",

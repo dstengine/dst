@@ -27,7 +27,7 @@ export const items: EventItem[] = [
     },
     body: [
       "GITEX fills the Trade Centre in October with companies that already have customers. Six weeks later the same organisers fill Expo City with the ones that do not yet.",
-      "## The dates",
+      "## Expand North Star 2026 dates",
       "<strong>Expand North Star</strong> runs <strong>8–10 December 2026</strong> at the <strong>Dubai Exhibition Centre</strong> in Expo City. It is the <strong>tenth edition</strong>, and it is organised by GITEX Global.",
       "## The size of it, as measured last year",
       "The 2025 edition drew <strong>2,050 exhibiting startups from 96 countries</strong>, <strong>more than 1,300 investors</strong>, <strong>6,500 founders</strong> and <strong>400 speakers</strong>, with <strong>5,340 pre-arranged meetings</strong> booked on site. The organisers describe the investor cohort as managing more than <strong>$1 trillion</strong> in assets between them.",
@@ -284,7 +284,7 @@ export const items: EventItem[] = [
     },
     body: [
       "Most AI conferences are organised by the industry. This one is organised by a financial centre, and the difference shows in what it puts on the agenda.",
-      "## The dates",
+      "## Dubai AI Festival 2026 dates",
       "<strong>26–27 October 2026</strong> at the <strong>Dubai World Trade Centre</strong>. It is run by the <strong>Dubai AI Campus</strong> in partnership with <strong>DIFC</strong>, and managed by <strong>Terrapinn</strong>.",
       "## The eight tracks",
       "<strong>AI for all.</strong> <strong>Global AI governance.</strong> <strong>Immersive experiences.</strong> <strong>Innovation and ethics.</strong> <strong>Future of work.</strong> <strong>AI cornerstone.</strong> <strong>AI literacy.</strong> <strong>Infrastructure and investment.</strong>",
