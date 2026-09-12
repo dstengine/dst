@@ -14,6 +14,7 @@ How this site works, in five rules:
 
 - [Events](https://nyc42.lol/events/): events on dates confirmed with the organiser, with times, prices and running order where the organiser published them.
 - [News](https://nyc42.lol/news/): what changed in the city. Long pieces carrying the whole calendar or the whole figure, not a wire paragraph.
+- [Free](https://nyc42.lol/free/): the things here that cost nothing to walk into — no ticket and no admission. Not a discount and not a program bundled into a paid ticket.
 - [About](https://nyc42.lol/about/): the rules above, written out at length.
 
 ## Where the facts come from

@@ -32,26 +32,20 @@ const SITES = {
   mxo: { host: "mxo.lol", news: "noticias", events: "eventos", newsLabel: "Noticias", eventsLabel: "Eventos" },
 };
 
-// The content files are TypeScript, and this runs outside the build. Rather
-// than pull in a compiler for two fields, read the literals: `slug`, `title`
-// and `summary` are written the same way in every entry, one per line, and a
-// mismatch here shows up immediately as a missing page in the test.
-const entries = (file) => {
-  const src = readFileSync(file, "utf8");
-  const out = [];
-  for (const block of src.split(/\n  \{\n/).slice(1)) {
-    const field = (name) => {
-      const m = block.match(new RegExp(`\\n?\\s*${name}:\\s*\\n?\\s*"((?:[^"\\\\]|\\\\.)*)"`));
-      return m ? m[1].replace(/\\"/g, '"') : undefined;
-    };
-    const slug = field("slug");
-    if (!slug) continue;
-    // No body, no detail page — same rule the routes use.
-    if (!/\n\s*body:\s*\[/.test(block)) continue;
-    out.push({ slug, title: field("title"), summary: field("summary"), date: field("date") ?? field("start") });
-  }
-  return out;
-};
+// The entries come from the content modules themselves, imported: Node
+// strips the types, so there is no compiler to pull in and no second
+// definition of what an entry is. It was a regex over the source text once,
+// which worked until a summary was written with a `\u00f3` escape in it —
+// the regex handed the escape to the file verbatim, and llms.txt went out
+// saying "edici\u00f3n". A reader of the source is not a reader of the data.
+const { eventsBySite } = await import("../packages/content/src/events/index.ts");
+const { newsBySite } = await import("../packages/content/src/news/index.ts");
+
+// No body, no detail page — the same rule the routes use.
+const entries = (list) =>
+  list
+    .filter((i) => Array.isArray(i.body) && i.body.length > 0)
+    .map((i) => ({ slug: i.slug, title: i.title, summary: i.summary, date: i.date ?? i.start }));
 
 // llms.txt is read as plain text, so the HTML entities and tags that the
 // pages need are noise here.
@@ -89,8 +83,8 @@ for (const app of wanted) {
     process.exitCode = 1;
     continue;
   }
-  const news = entries(path.join(REPO, "packages/content/src/news", `${app}.ts`));
-  const events = entries(path.join(REPO, "packages/content/src/events", `${app}.ts`));
+  const news = entries(newsBySite(app));
+  const events = entries(eventsBySite(app));
   const text =
     readFileSync(head, "utf8").trimEnd() +
     "\n" +
