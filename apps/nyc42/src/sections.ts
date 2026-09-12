@@ -16,6 +16,7 @@
 // carry it yet — when it does, this is where it goes.
 import { buildSections, type Section, type Vocabulary } from "@dst/content/sections";
 import type { FeedItem } from "@dst/content/sections";
+import { isFree } from "@dst/content/admission";
 
 const RESERVED = ["about", "events", "news", "go", "li"];
 
@@ -49,6 +50,16 @@ const TAGS: Record<string, Vocabulary> = {
   Halloween: { slug: "halloween", plural: "Halloween", label: "Halloween" },
 };
 
+// The one section cut by a fact rather than a field. "Free things to do in
+// New York" is the qualifier the head query arrives with, and it is the one
+// page here a reader can be let down by in a way they remember — so what
+// lands on it is `tickets.priceFrom: 0`, recorded where the organizer says
+// admission costs nothing, and nothing else. Four entries clear it; the zoo
+// at Halloween says "free with zoo admission", which is a paid ticket.
+const INTENTS = [
+  { slug: "free", label: "Free", match: isFree },
+];
+
 export const NAV = {
   allLabel: "All",
   allTitle: "Everything on in New York",
@@ -60,8 +71,24 @@ export function sections(items: FeedItem[]): Section[] {
     items,
     reserved: RESERVED,
     tags: TAGS,
+    intents: INTENTS,
     placeOf: (i) => (NEW_YORK.has(i.city ?? "") ? undefined : i.country ?? i.city),
     copy: (g) => {
+      if (g.kind === "intent") {
+        return {
+          title: "Free things to do in New York",
+          description:
+            "Free things to do in New York City: the Village Halloween Parade, the Feast of San Gennaro, the Brooklyn Book Festival and a free Peanuts exhibition — no ticket, no admission.",
+          h1: "Free things to do in New York",
+          lede: "Everything on this site that costs nothing to walk into — a parade you can watch or join, eleven days of Little Italy, eight stages of Brooklyn writers. Not a discount and not a program bundled into a paid ticket: no admission at all.",
+          headings: {
+            events: "No ticket, no admission",
+            upcoming: "Still to come",
+            past: "Already gone",
+            news: "Worth knowing first",
+          },
+        };
+      }
       // A place section here is somewhere the site is not, and the wording
       // follows the reader rather than the writer: whoever searches for
       // this page is planning a trip to the United States, not leaving

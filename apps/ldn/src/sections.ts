@@ -8,9 +8,22 @@
 // holds; `home` below is what stops it. That is not a limitation of the
 // data, it is what a single-city site is.
 import { buildSections, type Section, type Vocabulary } from "@dst/content/sections";
+import { isFree } from "@dst/content/admission";
 import type { FeedItem } from "@dst/content/sections";
 
 const RESERVED = ["about", "events", "news", "go", "li"];
+
+// The one section on this site cut by a fact rather than a field. "Free
+// things to do in London" is the qualifier the head query actually arrives
+// with, and it is the one page here a reader can be let down by in a way
+// they will remember — so what lands on it is `tickets.priceFrom: 0`,
+// written down where the organiser said admission costs nothing, and
+// nothing else. Seven entries clear it; four more say "free" somewhere in
+// their copy and mean a members' discount, an included programme or a
+// spectacle that used to be free and is ticketed now.
+const INTENTS = [
+  { slug: "free", label: "Free", match: isFree },
+];
 
 // A tag earns a page only if it is written down here, because the slug and
 // the heading are both guesses otherwise — "Exhibitions" would be fine and
@@ -55,6 +68,7 @@ export function sections(items: FeedItem[]): Section[] {
     items,
     reserved: RESERVED,
     tags: TAGS,
+    intents: INTENTS,
     // Both names for the same place. `placeOf` defaults to country before
     // city, so the entries that record "United Kingdom" — and only those —
     // would be filed a second time under a /uk/ page holding an arbitrary
@@ -62,6 +76,21 @@ export function sections(items: FeedItem[]): Section[] {
     // threshold; four of them cross it.
     home: ["London", "United Kingdom"],
     copy: (g) => {
+      if (g.kind === "intent") {
+        return {
+          title: "Free things to do in central London",
+          description:
+            "Free things to do in central London: carnival, the Lord Mayor's Show, Open House and a free sculpture park — no ticket, no admission charge, each one as the organiser publishes it.",
+          h1: "Free things to do in central London",
+          lede: "Everything on this site that costs nothing to walk into. Not a members' discount and not a programme included in a paid ticket — no admission charge at all, which is a narrower list than the word usually gets used for.",
+          headings: {
+            events: "No ticket, no charge",
+            upcoming: "Still to come",
+            past: "Already gone",
+            news: "Worth knowing first",
+          },
+        };
+      }
       // A date, not a format: "Halloween in central London" is the query,
       // and the generic template would file it as though it were a genre.
       if (g.key === "Halloween") {

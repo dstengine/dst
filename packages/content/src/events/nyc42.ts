@@ -4,7 +4,7 @@ export const items: EventItem[] = [
   {
     slug: "snoopy-in-style-nyc",
     createdAt: "2026-08-30T11:52:01+04:00",
-    updatedAt: "2026-09-07T09:58:34+04:00",
+    updatedAt: "2026-09-12T20:43:17+04:00",
     site: "nyc42",
     image: "/covers/snoopy-in-style-nyc.jpg",
     imageAlt: "A cream paper dog-house silhouette on a deep brown ground with amber fabric swatches pinned in a row beside it",
@@ -23,6 +23,7 @@ export const items: EventItem[] = [
     city: "New York City",
     organizer: "Peanuts",
     category: "Exhibitions",
+    tickets: { priceFrom: 0, currency: "USD" },
     source: {
       name: "Peanuts",
       url: "https://www.peanuts.com/snoopy-in-style-nyc",
@@ -138,7 +139,7 @@ export const items: EventItem[] = [
   {
     slug: "village-halloween-parade-2026",
     createdAt: "2026-08-30T23:32:06+04:00",
-    updatedAt: "2026-09-08T22:51:25+04:00",
+    updatedAt: "2026-09-12T20:43:17+04:00",
     featured: 3,
     site: "nyc42",
     image: "/covers/village-halloween-parade-2026.jpg",
@@ -155,6 +156,7 @@ export const items: EventItem[] = [
     city: "New York City",
     venue: "Sixth Avenue, Greenwich Village",
     category: "Parade",
+    tickets: { priceFrom: 0, currency: "USD" },
     organizer: "Village Halloween Parade, Inc.",
     source: {
       name: "NYC Village Halloween Parade",

@@ -56,8 +56,37 @@ export interface Vocabulary {
   plural?: string;
 }
 
+/** A section cut by a fact rather than by a field.
+ *
+ *  A place and a kind are both values already standing in the data, and the
+ *  section is whatever shares that value. An intent is the other question a
+ *  reader arrives with — "what of this is free", "what of it is outdoors" —
+ *  and the answer is a predicate over the entry rather than a column of it.
+ *
+ *  Two rules, and the first is the reason this type exists at all:
+ *
+ *  1. **`match` reads a recorded fact, never prose and never a guess.** The
+ *     page is a promise in a URL; the moment it is assembled from our own
+ *     opinion of an entry it is a promise about our filing. `isFree` in
+ *     ./admission.ts is the shape to copy: one field, written down where a
+ *     source said so, and one function that says what it means.
+ *  2. **The slug and the label are the site's, not ours.** /free/ on one
+ *     site is /gratis/ on another, and neither word can be derived from the
+ *     predicate that fills the page.
+ */
+export interface Intent<T extends FeedItem> {
+  /** The address, in the site's own language: "free", "gratis". */
+  slug: string;
+  /** The chip and the breadcrumb. */
+  label: string;
+  /** What puts an entry on the page. A fact of the data — see rule 1. */
+  match: (item: T) => boolean;
+  /** How many entries before the page is worth having. Defaults to a kind's. */
+  min?: number;
+}
+
 export interface Group<T extends FeedItem, V extends Vocabulary = Vocabulary> {
-  kind: "place" | "tag";
+  kind: "place" | "tag" | "intent";
   /** The value as it stands in the data: "United Kingdom", "Transport". */
   key: string;
   slug: string;
@@ -106,6 +135,8 @@ export interface SectionsInput<T extends FeedItem, V extends Vocabulary> {
   places?: Record<string, V>;
   /** Tag vocabulary. A tag absent from here gets none — see rule 3. */
   tags?: Record<string, V>;
+  /** Sections cut by a predicate. See `Intent`. */
+  intents?: readonly Intent<T>[];
   /**
    * The place the site is about, which never becomes a section \u2014 and every
    * other name for that same place. It takes a list because `placeOf`
@@ -204,6 +235,7 @@ export function buildSections<T extends FeedItem, V extends Vocabulary = Vocabul
     reserved,
     places = {},
     tags = {},
+    intents = [],
     home,
     placeOf = (i) => ("country" in i ? (i.country ?? i.city) : undefined),
     minPlace = ENOUGH_PLACE,
@@ -252,9 +284,27 @@ export function buildSections<T extends FeedItem, V extends Vocabulary = Vocabul
     });
   }
 
-  // Places first, then kinds; alphabetical within each, so the row of links
-  // does not reshuffle itself every time an entry is added.
+  for (const intent of intents) {
+    const list = items.filter(intent.match);
+    if (list.length < (intent.min ?? minTag)) continue;
+    // No vocabulary lookup: an intent brings its own two words, because
+    // there is no key in the data for a table to be keyed by.
+    push({
+      kind: "intent",
+      key: intent.slug,
+      slug: intent.slug,
+      label: intent.label,
+      voc: {} as V,
+      items: list,
+    });
+  }
+
+  // Places, then intents, then kinds; alphabetical within each, so the row
+  // of links does not reshuffle itself every time an entry is added. An
+  // intent outranks a kind because it answers a question the reader brought
+  // with them, where a kind answers one about our filing.
+  const rank = { place: 0, intent: 1, tag: 2 } as const;
   return out.sort((a, b) =>
-    a.kind === b.kind ? a.label.localeCompare(b.label) : a.kind === "place" ? -1 : 1,
+    a.kind === b.kind ? a.label.localeCompare(b.label) : rank[a.kind] - rank[b.kind],
   );
 }

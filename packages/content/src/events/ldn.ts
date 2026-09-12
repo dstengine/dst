@@ -4,7 +4,7 @@ export const items: EventItem[] = [
   {
     slug: "bermondsey-street-festival-2026",
     createdAt: "2026-08-30T11:52:01+04:00",
-    updatedAt: "2026-09-07T09:58:34+04:00",
+    updatedAt: "2026-09-12T20:43:17+04:00",
     site: "ldn",
     image: "/covers/bermondsey-street-festival-2026.jpg",
     imageAlt: "A red paper bunting line strung across a warm off-white ground above two charcoal market stall shapes",
@@ -22,6 +22,7 @@ export const items: EventItem[] = [
     city: "London",
     organizer: "Bermondsey Street Festival",
     category: "Festival",
+    tickets: { priceFrom: 0, currency: "GBP" },
     source: {
       name: "Bermondsey Street Festival",
       url: "https://bermondseystreetfestival.com/",
@@ -139,7 +140,7 @@ export const items: EventItem[] = [
   {
     slug: "open-house-festival-2026",
     createdAt: "2026-08-30T21:45:40+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-09-12T20:43:17+04:00",
     site: "ldn",
     image: "/covers/open-house-festival-2026.jpg",
     imageAlt: "Layered paper building facades with one small red door standing open",
@@ -154,6 +155,7 @@ export const items: EventItem[] = [
     city: "London",
     venue: "All 33 London boroughs",
     category: "Architecture",
+    tickets: { priceFrom: 0, currency: "GBP" },
     organizer: "Open City",
     source: {
       name: "Open City",
@@ -228,7 +230,7 @@ export const items: EventItem[] = [
   {
     slug: "lord-mayors-show-2026",
     createdAt: "2026-08-30T21:45:40+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-09-12T20:43:17+04:00",
     featured: 2,
     site: "ldn",
     image: "/covers/lord-mayors-show-2026.jpg",
@@ -245,6 +247,7 @@ export const items: EventItem[] = [
     city: "London",
     venue: "City of London, from Mansion House",
     category: "Procession",
+    tickets: { priceFrom: 0, currency: "GBP" },
     organizer: "The Lord Mayor's Show",
     source: {
       name: "The Lord Mayor's Show",
@@ -319,7 +322,7 @@ export const items: EventItem[] = [
   {
     slug: "notting-hill-carnival-2026",
     createdAt: "2026-08-30T11:52:01+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-09-12T20:43:17+04:00",
     featured: 3,
     site: "ldn",
     image: "/covers/notting-hill-carnival-2026.jpg",
@@ -335,6 +338,7 @@ export const items: EventItem[] = [
     city: "London",
     venue: "Notting Hill, W11",
     category: "Carnival",
+    tickets: { priceFrom: 0, currency: "GBP" },
     organizer: "Notting Hill Carnival Ltd",
     source: {
       name: "Notting Hill Carnival",
