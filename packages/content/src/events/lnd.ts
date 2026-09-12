@@ -594,8 +594,8 @@ export const items: EventItem[] = [
 
   {
     slug: "ski-sunday-surbiton-2026",
-    createdAt: "2026-09-12T23:41:00+04:00",
-    updatedAt: "2026-09-12T23:41:00+04:00",
+    createdAt: "2026-09-12T22:20:00+04:00",
+    updatedAt: "2026-09-12T22:20:00+04:00",
     site: "lnd",
     image: "/covers/ski-sunday-surbiton-2026.jpg",
     imageAlt:
@@ -669,8 +669,8 @@ export const items: EventItem[] = [
 
   {
     slug: "curse-of-the-mummy-london-dungeon-2026",
-    createdAt: "2026-09-12T23:41:00+04:00",
-    updatedAt: "2026-09-12T23:41:00+04:00",
+    createdAt: "2026-09-12T22:20:00+04:00",
+    updatedAt: "2026-09-12T22:20:00+04:00",
     site: "lnd",
     image: "/covers/curse-of-the-mummy-london-dungeon-2026.jpg",
     imageAlt:

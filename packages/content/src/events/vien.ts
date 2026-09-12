@@ -418,8 +418,8 @@ export const items: EventItem[] = [
 
   {
     slug: "wiener-christkindlmarkt-2026",
-    createdAt: "2026-09-12T23:41:00+04:00",
-    updatedAt: "2026-09-12T23:41:00+04:00",
+    createdAt: "2026-09-12T22:20:00+04:00",
+    updatedAt: "2026-09-12T22:20:00+04:00",
     site: "vien",
     image: "/covers/wiener-christkindlmarkt-2026.jpg",
     imageAlt:
@@ -493,8 +493,8 @@ export const items: EventItem[] = [
 
   {
     slug: "wiener-eistraum-2027",
-    createdAt: "2026-09-12T23:41:00+04:00",
-    updatedAt: "2026-09-12T23:41:00+04:00",
+    createdAt: "2026-09-12T22:20:00+04:00",
+    updatedAt: "2026-09-12T22:20:00+04:00",
     site: "vien",
     image: "/covers/wiener-eistraum-2027.jpg",
     imageAlt:

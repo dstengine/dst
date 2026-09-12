@@ -908,8 +908,8 @@ export const items: EventItem[] = [
 
   {
     slug: "hyde-park-winter-wonderland-2026",
-    createdAt: "2026-09-12T23:41:00+04:00",
-    updatedAt: "2026-09-12T23:41:00+04:00",
+    createdAt: "2026-09-12T22:20:00+04:00",
+    updatedAt: "2026-09-12T22:20:00+04:00",
     site: "ldn",
     image: "/covers/hyde-park-winter-wonderland-2026.jpg",
     imageAlt:
@@ -982,8 +982,8 @@ export const items: EventItem[] = [
 
   {
     slug: "skate-at-somerset-house-2026",
-    createdAt: "2026-09-12T23:41:00+04:00",
-    updatedAt: "2026-09-12T23:41:00+04:00",
+    createdAt: "2026-09-12T22:20:00+04:00",
+    updatedAt: "2026-09-12T22:20:00+04:00",
     site: "ldn",
     image: "/covers/skate-at-somerset-house-2026.jpg",
     imageAlt:

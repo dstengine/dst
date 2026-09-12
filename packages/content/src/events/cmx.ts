@@ -595,8 +595,8 @@ export const items: EventItem[] = [
 
   {
     slug: "corona-capital-2026",
-    createdAt: "2026-09-12T23:41:00+04:00",
-    updatedAt: "2026-09-12T23:41:00+04:00",
+    createdAt: "2026-09-12T22:20:00+04:00",
+    updatedAt: "2026-09-12T22:20:00+04:00",
     site: "cmx",
     image: "/covers/corona-capital-2026.jpg",
     imageAlt:
@@ -689,8 +689,8 @@ export const items: EventItem[] = [
 
   {
     slug: "festival-del-terror-six-flags-2026",
-    createdAt: "2026-09-12T23:41:00+04:00",
-    updatedAt: "2026-09-12T23:41:00+04:00",
+    createdAt: "2026-09-12T22:20:00+04:00",
+    updatedAt: "2026-09-12T22:20:00+04:00",
     site: "cmx",
     image: "/covers/festival-del-terror-six-flags-2026.jpg",
     imageAlt:

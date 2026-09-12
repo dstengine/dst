@@ -503,8 +503,8 @@ export const items: EventItem[] = [
 
   {
     slug: "ficm-morelia-2026",
-    createdAt: "2026-09-12T23:41:00+04:00",
-    updatedAt: "2026-09-12T23:41:00+04:00",
+    createdAt: "2026-09-12T22:20:00+04:00",
+    updatedAt: "2026-09-12T22:20:00+04:00",
     site: "mxo",
     image: "/covers/ficm-morelia-2026.jpg",
     imageAlt:
@@ -583,8 +583,8 @@ export const items: EventItem[] = [
 
   {
     slug: "festival-internacional-del-globo-2026",
-    createdAt: "2026-09-12T23:41:00+04:00",
-    updatedAt: "2026-09-12T23:41:00+04:00",
+    createdAt: "2026-09-12T22:20:00+04:00",
+    updatedAt: "2026-09-12T22:20:00+04:00",
     site: "mxo",
     image: "/covers/festival-internacional-del-globo-2026.jpg",
     imageAlt:
