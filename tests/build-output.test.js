@@ -296,6 +296,19 @@ describe("outbound hops", () => {
       assert.match(readFileSync(robots, "utf8"), /^Disallow: \/go\/$/m, `apps/${app}: robots.txt does not disallow /go/`);
     }
   });
+
+  // The counter's own address, where it was moved to so it stops firing on
+  // every page of the network. It carries noindex itself, but a page nobody
+  // is meant to reach should not be fetched either — and a new site that
+  // copies the counter across and not the rule would quietly hand a crawler
+  // a blank page with a tracking pixel on it.
+  test("a site that serves /li/ disallows it too", () => {
+    for (const { app } of SITES) {
+      if (!existsSync(path.join(REPO, "apps", app, "dist", "li", "index.html"))) continue;
+      const robots = readFileSync(path.join(REPO, "apps", app, "dist", "robots.txt"), "utf8");
+      assert.match(robots, /^Disallow: \/li\/$/m, `apps/${app}: serves /li/ but robots.txt does not disallow it`);
+    }
+  });
 });
 
 describe("images", () => {
@@ -948,6 +961,17 @@ describe("sitemap", () => {
     }
   });
 
+  // Same rule, same reason: /li/ is disallowed in robots.txt, so listing it
+  // would ask Google to crawl what we just told it to skip. Each app's
+  // astro.config.mjs filters it out; this is what notices when a new one
+  // does not.
+  test("no sitemap lists /li/", () => {
+    for (const { app } of SITES) {
+      const counters = sitemapUrls(app).filter((u) => new URL(u).pathname === "/li/");
+      assert.deepEqual(counters, [], `${app}: the counter page is in the sitemap`);
+    }
+  });
+
   // The rule the recorded dates exist to keep, from AGENTS.md: lastmod is
   // per page, not per file. A site's whole feed lives in one source file, so
   // dating pages by that file makes every page claim to have changed
@@ -1017,10 +1041,15 @@ describe("sitemap", () => {
       const listed = sitemapUrls(app).map((u) => new URL(u).pathname);
       for (const url of listed) if (!map[url]) undated.push(`${app}${url}`);
       // The other direction is checked against the pages on disk, not the
-      // sitemap: /li/ is a real page that the sitemap leaves out on purpose,
-      // and dating it is right. A /go/ hop is a redirect and is dated by
-      // nothing.
-      const built = new Set(pages.filter((q) => q.app === app && !q.url.startsWith("/go/")).map((q) => q.url));
+      // sitemap — but the two pages that are deliberately out of the index
+      // are out of the dates as well: a /go/ hop is a redirect outwards and
+      // /li/ is the counter on its own address. Neither is dated, so neither
+      // counts as built here.
+      const built = new Set(
+        pages
+          .filter((q) => q.app === app && !q.url.startsWith("/go/") && q.url !== "/li/")
+          .map((q) => q.url),
+      );
       for (const url of Object.keys(map)) {
         if (!built.has(url)) orphaned.push(`${app}${url}`);
       }

@@ -337,7 +337,11 @@ for (const [app, host] of Object.entries(HOSTS)) {
   for (const file of walk(dist)) {
     if (path.basename(file) !== "index.html") continue;
     const url = "/" + path.relative(dist, file).replace(/index\.html$/, "");
-    if (url.startsWith("/go/")) continue; // noindex, never in a sitemap
+    // Neither is a page anyone is meant to find: a /go/ hop is a redirect
+    // outwards, and /li/ is the counter on its own address. Both carry
+    // noindex, both are disallowed in robots.txt and in no sitemap, and a
+    // date is only ever read off a page a crawler may fetch.
+    if (url.startsWith("/go/") || url === "/li/") continue;
     pages++;
 
     // An entry page says its own date, and nothing else has a say in it.

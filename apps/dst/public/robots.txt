@@ -5,4 +5,9 @@ Allow: /
 # our link graph — there is nothing here worth crawling or indexing.
 Disallow: /go/
 
+# The LiveInternet counter on its own address. It carries noindex itself and
+# is in no sitemap; there is nothing on it but the counter, and we hit it
+# deliberately rather than expecting anyone to find it.
+Disallow: /li/
+
 Sitemap: https://dst.llc/sitemap-index.xml
