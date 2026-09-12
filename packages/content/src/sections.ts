@@ -43,6 +43,7 @@
 // matches nothing anyone types. The cost is a shared namespace with the
 // site's own pages, which is what `reserved` is for.
 import type { EventItem, NewsItem } from "./types.ts";
+import { isOn } from "./when.ts";
 
 export type FeedItem = NewsItem | EventItem;
 
@@ -225,6 +226,38 @@ export function sectionHrefFor<T extends FeedItem>(
   if (!item.category) return undefined;
   const found = all.find((s) => s.kind === "tag" && s.key === item.category);
   return found ? `/${found.slug}/` : undefined;
+}
+
+/** The one section a site is pushing this season, if it has earned it.
+ *
+ *  A promoted tag is the site saying "this is what people are asking for
+ *  right now" — Halloween in October, Día de Muertos through to the second
+ *  of November. Naming it buys three things: a link to it from the header
+ *  of every page, the lead position in the tail of every event page, and
+ *  that tail's heading in the tag's own words rather than "More events".
+ *
+ *  Three conditions, and all of them are the site's own data rather than a
+ *  date in a calendar we would have to maintain:
+ *
+ *  1. The tag is named in the site's config. Nothing is promoted by
+ *     accident.
+ *  2. It cleared the section threshold, so the link has somewhere to go.
+ *  3. **It still has an event that has not ended.** This is the one that
+ *     makes the whole thing safe to leave switched on: the header link and
+ *     the headings disappear on the second of November because the last
+ *     pumpkin has gone, not because someone remembered to edit a file. A
+ *     section with nothing but past dates under it is a page we would be
+ *     sending every reader of every page to, to read about last month.
+ */
+export function promotedSection<T extends FeedItem>(
+  all: Section<T>[],
+  key: string | undefined,
+  today: string,
+): Section<T> | undefined {
+  if (!key) return undefined;
+  const found = all.find((s) => s.kind === "tag" && s.key === key);
+  if (!found) return undefined;
+  return found.items.some((i) => "start" in i && isOn(i, today)) ? found : undefined;
 }
 
 export function buildSections<T extends FeedItem, V extends Vocabulary = Vocabulary>(

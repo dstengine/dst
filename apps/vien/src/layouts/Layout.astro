@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@dst/ui/BaseLayout.astro";
 import { site } from "../site.config";
+import { promoted } from "../sections";
 import "../styles/theme.css";
 
 interface Props {
@@ -16,6 +17,12 @@ const { title, description, jsonLd, image, noindex, prose } = Astro.props;
 
 const nav = [
   { href: "/", label: "Was ist los", title: "Was heute in Wien los ist", icon: "home" },
+  // Second, not last: it is the one link here about what is being asked
+  // for this month, and it removes itself when the last date under it has
+  // gone. `title` is the section's own, so the tooltip is not the label.
+  ...(promoted
+    ? [{ href: `/${promoted.slug}/`, label: promoted.label, title: promoted.title, icon: "star" }]
+    : []),
   { href: "/nachrichten/", label: "Nachrichten", title: "Nachrichten aus Wien, mit Quelle bei jedem Eintrag", icon: "news" },
   // "Veranstaltungen", nicht "Termine": das ist das Wort, mit dem hier
   // gesucht wird, und es steht schon im Titelzusatz. Ein Termin ist etwas,

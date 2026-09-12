@@ -3,6 +3,8 @@ import Layout from "../../layouts/Layout.astro";
 import NewsArticle from "@dst/ui/NewsArticle.astro";
 import { siteId, newsBase, eventsBase, publisher } from "../../content";
 import { newsBySite } from "@dst/content/news";
+import { sectionHrefFor } from "@dst/content/sections";
+import { allSections, promoted } from "../../sections";
 import { eventsBySite } from "@dst/content/events";
 
 export function getStaticPaths() {
@@ -13,6 +15,11 @@ export function getStaticPaths() {
 
 const moreEvents = eventsBySite(siteId);
 const { item, more } = Astro.props;
+// The subject page this entry's category has earned, when it has one.
+// The detail page cannot know whether its own word crossed the section
+// threshold, so the answer is read off the sections the site actually
+// built — the same list the nav is built from.
+const categoryHref = sectionHrefFor(item, allSections);
 ---
 <Layout title={item.titleSeo ?? item.title} description={item.summary} image={item.image}>
   <NewsArticle
@@ -23,5 +30,7 @@ const { item, more } = Astro.props;
     newsBase={newsBase}
     eventsBase={eventsBase}
     publisher={publisher}
+    categoryHref={categoryHref}
+    promoted={promoted}
   />
 </Layout>

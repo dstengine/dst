@@ -72,6 +72,12 @@ export interface ArticleLabels {
   categoryTitle: (what: string) => string;
   related: string;
   moreEvents: string;
+  /** The heading over the tail of an event page when the site's promoted tag
+      leads it — built from the tag's own label, because "More events" over
+      three Halloween cards in October names the filing rather than the
+      reason the reader is here. See `promotedSection` in
+      \@dst/content/sections. */
+  moreTagged: (what: string) => string;
   moreNews: string;
   latestNews: string;
   comingUp: string;
@@ -151,6 +157,7 @@ export const EN: ArticleLabels = {
   categoryTitle: (what) => `Everything on this site filed under ${what.toLowerCase()}`,
   related: "Related",
   moreEvents: "More events",
+  moreTagged: (what) => `More ${what} events`,
   moreNews: "More news",
   latestNews: "Latest news",
   comingUp: "Coming up",
@@ -227,6 +234,7 @@ export const ES: Partial<ArticleLabels> = {
   categoryTitle: (what) => `Todo lo que hay en este sitio bajo ${what.toLowerCase()}`,
   related: "Relacionado",
   moreEvents: "Más eventos",
+  moreTagged: (what) => `Más eventos de ${what}`,
   moreNews: "Más noticias",
   latestNews: "Últimas noticias",
   comingUp: "Próximamente",
@@ -294,6 +302,7 @@ export const DE: Partial<ArticleLabels> = {
   categoryTitle: (what) => `Alles auf dieser Seite unter ${what}`,
   related: "Passend dazu",
   moreEvents: "Weitere Termine",
+  moreTagged: (what) => `Mehr ${what}-Termine`,
   moreNews: "Weitere Nachrichten",
   latestNews: "Neueste Nachrichten",
   comingUp: "Demnächst",

@@ -7,8 +7,11 @@
 // excluir. Guanajuato, Guadalajara y la Ciudad de México llevan un evento
 // cada una hoy; la segunda entrada de cualquiera de ellas abre su página
 // sola, sin tocar este archivo.
-import { buildSections, type Section, type Vocabulary } from "@dst/content/sections";
+import { buildSections, promotedSection, type Section, type Vocabulary } from "@dst/content/sections";
 import type { FeedItem } from "@dst/content/sections";
+import { eventsBySite } from "@dst/content/events";
+import { newsBySite } from "@dst/content/news";
+import { siteId } from "./content";
 
 const RESERVED = ["acerca", "eventos", "noticias", "go", "li"];
 
@@ -117,3 +120,18 @@ export function sections(items: FeedItem[]): Section[] {
     },
   });
 }
+
+// Every section this site builds, from its whole feed, computed once. The
+// pages that need the list — the section route, and every detail page
+// asking whether its own category earned an address — used to rebuild it
+// per page from the same two feeds.
+export const allSections = sections([...eventsBySite(siteId), ...newsBySite(siteId)]);
+
+// The tag this site is pushing right now. It buys a link in the header of
+// every page, the lead position in the tail of every event page, and that
+// tail's heading in its own words — and it all switches itself off the day
+// the last date under it passes, which is the only reason a seasonal
+// promotion is safe to wire into a layout. See `promotedSection`.
+const PROMOTED = 'Día de Muertos';
+
+export const promoted = promotedSection(allSections, PROMOTED, new Date().toISOString().slice(0, 10));

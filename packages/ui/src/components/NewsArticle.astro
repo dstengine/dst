@@ -32,6 +32,10 @@ interface Props {
   /** Fallback for a site with only one news item: an article there would
       otherwise still end in a back link and nothing else. */
   moreEvents?: EventItem[];
+  /** The site's promoted tag, when it has a date still to come. Applies to
+      the events fallback below, which is the only tail here that lists
+      events — see `promotedSection` in \@dst/content/sections. */
+  promoted?: { key: string; label: string };
   /** Where this site keeps its feed. Defaults to the English paths every
       DST host uses; a site publishing in another language passes its own
       ("/noticias/", "/eventos/") so its URLs are in the language of the
@@ -53,7 +57,7 @@ interface Props {
       item. See EventArticle and ../labels.ts — English by default. */
   labels?: Partial<ArticleLabels>;
 }
-const { item, backHref, more = [], moreEvents = [], newsBase = "/news/", eventsBase = "/events/", publisher, categoryHref, locale = "en-US", labels: labelOverrides } = Astro.props;
+const { item, backHref, more = [], moreEvents = [], newsBase = "/news/", eventsBase = "/events/", publisher, categoryHref, promoted, locale = "en-US", labels: labelOverrides } = Astro.props;
 const L = withLabels(labelOverrides);
 
 const moreCards = more
@@ -80,8 +84,17 @@ const moreCards = more
 const todayIso = new Date().toISOString().slice(0, 10);
 const eventCards = moreEvents
   .filter((e) => isOn(e, todayIso) && Array.isArray(e.body) && e.body.length > 0)
-  .sort((a, b) => (a.start < b.start ? -1 : 1))
-  .slice(0, 3)
+  // The promoted tag first, then the calendar — the same order as the tail
+  // of an event page, so the two do not disagree about what the site is
+  // pushing this month.
+  .sort((a, b) => {
+    if (promoted) {
+      const aHot = a.category === promoted.key;
+      const bHot = b.category === promoted.key;
+      if (aHot !== bHot) return aHot ? -1 : 1;
+    }
+    return a.start < b.start ? -1 : 1;
+  })
   .map((e) => ({
     href: `${eventsBase}${e.slug}/`,
     eyebrow: e.category,
@@ -94,10 +107,23 @@ const eventCards = moreEvents
     imageFit: "cover" as const,
     event: true,
   }));
+
+// Same trade as the tail of an event page: when the promoted tag leads,
+// the block is the tag's and the heading names it, so nothing else is
+// allowed in to fill a row.
+const promotedLeads = Boolean(promoted) && eventCards[0]?.eyebrow === promoted?.key;
+const tailEvents = (promotedLeads
+  ? eventCards.filter((c) => c.eyebrow === promoted?.key)
+  : eventCards
+).slice(0, 3);
+
 const tail = moreCards.length > 0
   ? { heading: L.moreNews, cards: moreCards }
-  : eventCards.length > 0
-    ? { heading: L.comingUp, cards: eventCards }
+  : tailEvents.length > 0
+    ? {
+        heading: promotedLeads && promoted ? L.moreTagged(promoted.label) : L.comingUp,
+        cards: tailEvents,
+      }
     : null;
 const minutes = readingMinutes(item);
 

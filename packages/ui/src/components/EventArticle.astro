@@ -62,19 +62,36 @@ interface Props {
       the eleven English sites pass nothing; a Spanish site passes its own
       set and its chrome stops contradicting its copy. */
   labels?: Partial<ArticleLabels>;
+  /** The site's promoted tag, when it has a date still to come: its key as
+      it stands in the data and the label to head the tail with. The block
+      leads with it and takes its words — see `promotedSection` in
+      \@dst/content/sections. */
+  promoted?: { key: string; label: string };
 }
-const { item, backHref, ticketHref, sourceHref, more = [], moreNews = [], newsBase = "/news/", eventsBase = "/events/", publisher, categoryHref, locale = "en-US", labels: labelOverrides } = Astro.props;
+const { item, backHref, ticketHref, sourceHref, more = [], moreNews = [], newsBase = "/news/", eventsBase = "/events/", publisher, categoryHref, promoted, locale = "en-US", labels: labelOverrides } = Astro.props;
 const L = withLabels(labelOverrides);
 
 const todayIso = new Date().toISOString().slice(0, 10);
 const moreCards = more
   .filter((other) => other.slug !== item.slug && Array.isArray(other.body) && other.body.length > 0)
-  // Its own subject first, then what's still to come, then past events most
-  // recent first. Date alone put a flea market under a Halloween palace
+  // Three keys in order, and the first two are both about subject rather
+  // than date. Date alone put a flea market under a Halloween palace
   // because it happened to be sooner — three cards is too few to spend on
   // the coincidence of the calendar when the site knows what the page is
-  // about. Within a subject the date order is the same as without one.
+  // about.
+  //
+  // The promoted tag outranks even the page's own subject, on purpose: it
+  // is the site's answer to what is being asked for this month, and it is
+  // the same answer on every page. On a page that is itself under that tag
+  // the two keys agree and nothing moves. Within a subject the date order
+  // is the same as without one: what is still to come, then the past, most
+  // recent first.
   .sort((a, b) => {
+    if (promoted) {
+      const aHot = a.category === promoted.key && isOn(a, todayIso);
+      const bHot = b.category === promoted.key && isOn(b, todayIso);
+      if (aHot !== bHot) return aHot ? -1 : 1;
+    }
     const aSame = a.category === item.category;
     const bSame = b.category === item.category;
     if (aSame !== bSame) return aSame ? -1 : 1;
@@ -83,7 +100,6 @@ const moreCards = more
     if (aUp !== bUp) return aUp ? -1 : 1;
     return aUp ? (a.start < b.start ? -1 : 1) : (a.start < b.start ? 1 : -1);
   })
-  .slice(0, 3)
   .map((other) => ({
     href: `${eventsBase}${other.slug}/`,
     eyebrow: other.category,
@@ -97,6 +113,16 @@ const moreCards = more
     event: true,
     past: hasEnded(other, todayIso),
   }));
+
+// If the promoted tag got to the front, the block belongs to it: the
+// heading below will say so by name, and a third card about a flea market
+// under a heading that says Halloween is the heading telling a small lie
+// to fill a row. Two cards that belong is the better trade.
+const promotedLeads = Boolean(promoted) && moreCards[0]?.eyebrow === promoted?.key;
+const tailCards = (promotedLeads
+  ? moreCards.filter((c) => c.eyebrow === promoted?.key && !c.past)
+  : moreCards
+).slice(0, 3);
 
 const newsCards = moreNews
   .filter((n) => Array.isArray(n.body) && n.body.length > 0)
@@ -112,8 +138,14 @@ const newsCards = moreNews
     image: n.image,
     imageAlt: n.imageAlt,
   }));
-const tail = moreCards.length > 0
-  ? { heading: L.moreEvents, cards: moreCards }
+// The heading names what is actually under it: the tag by name when the
+// tag owns the block, and "More events" on every page the season has not
+// reached.
+const tail = tailCards.length > 0
+  ? {
+      heading: promotedLeads && promoted ? L.moreTagged(promoted.label) : L.moreEvents,
+      cards: tailCards,
+    }
   : newsCards.length > 0
     ? { heading: L.latestNews, cards: newsCards }
     : null;

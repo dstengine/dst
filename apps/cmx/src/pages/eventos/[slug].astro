@@ -5,6 +5,8 @@ import { siteId, newsBase, eventsBase, publisher, labels } from "../../content";
 import { eventsBySite } from "@dst/content/events";
 import { go } from "../../outbound";
 import { newsBySite } from "@dst/content/news";
+import { sectionHrefFor } from "@dst/content/sections";
+import { allSections, promoted } from "../../sections";
 
 export function getStaticPaths() {
   const items = eventsBySite(siteId).filter((i) => Array.isArray(i.body) && i.body.length > 0);
@@ -13,6 +15,11 @@ export function getStaticPaths() {
 
 const moreNews = newsBySite(siteId);
 const { item, more } = Astro.props;
+// The subject page this entry's category has earned, when it has one.
+// The detail page cannot know whether its own word crossed the section
+// threshold, so the answer is read off the sections the site actually
+// built — the same list the nav is built from.
+const categoryHref = sectionHrefFor(item, allSections);
 // A seller if we have one, the source if we don't — see src/outbound.ts.
 const ticketHref = item.ticket ? go(`${item.slug}-ticket`) : undefined;
 const sourceHref = item.source?.url ? go(`${item.slug}-source`) : undefined;
@@ -29,6 +36,8 @@ const sourceHref = item.source?.url ? go(`${item.slug}-source`) : undefined;
     newsBase={newsBase}
     eventsBase={eventsBase}
     publisher={publisher}
+    categoryHref={categoryHref}
+    promoted={promoted}
     labels={labels}
   />
 </Layout>
