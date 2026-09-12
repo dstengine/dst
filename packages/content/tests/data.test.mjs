@@ -67,7 +67,12 @@ describe("source, when present, is well-formed", () => {
       }
       for (const item of withSource) {
         assert.ok(item.source.name && item.source.name.trim() !== "", `${label}/${item.site}/${item.slug}: source.name is empty`);
-        assert.doesNotThrow(() => new URL(item.source.url), `${label}/${item.site}/${item.slug}: source.url "${item.source.url}" is not a valid URL`);
+        // `url` is optional by design: some things worth publishing have no
+        // address to point at, and `name` alone carries the rule the URL
+        // stood in for. Only a url that is there has to parse.
+        if (item.source.url !== undefined) {
+          assert.doesNotThrow(() => new URL(item.source.url), `${label}/${item.site}/${item.slug}: source.url "${item.source.url}" is not a valid URL`);
+        }
         console.log(`${label}/${item.site}/${item.slug}: source="${item.source.name}" url="${item.source.url}"`);
       }
     });

@@ -60,10 +60,20 @@ export function sections(items: FeedItem[]): Section[] {
     placeOf: (i) => ("city" in i ? i.city : undefined),
     copy: (g) => {
       if (g.kind === "place") {
+        // El nombre del sitio no lo busca nadie, así que ese lugar del
+        // título lo ocupa la palabra que sí se teclea. Y nadie escribe
+        // "Monterrey" a secas cuando busca desde fuera: escribe "Monterrey,
+        // México". La coma no es decoración — separa la ciudad del país
+        // igual que en la caja de búsqueda.
+        //
+        // La excepción se nombra sola: "Ciudad de México, México" sería una
+        // repetición, y lo mismo cualquier lugar que ya lleve el país en su
+        // nombre. Ahí la palabra ya está donde tiene que estar.
+        const donde = /m[ée]xico/i.test(g.key) ? g.key : `${g.key}, México`;
         return {
-          title: `Qué hay en ${g.key}`,
-          description: `Ferias, festivales y noticias de ${g.key}, con la fecha confirmada y la fuente a la vista.`,
-          h1: `Qué hay en ${g.key}`,
+          title: `Qué hay en ${donde}`,
+          description: `Ferias, festivales y noticias de ${donde}, con la fecha confirmada y la fuente a la vista.`,
+          h1: `Qué hay en ${donde}`,
           lede: `Todo lo que hay en este sitio que pasa en ${g.key} — la fecha como la publicó quien organiza, y el enlace a donde lo leímos.`,
         };
       }
