@@ -19,7 +19,7 @@ export const home = {
 };
 
 export const news = {
-  title: "What changed in New York",
+  title: "New York news: a few checked things a week",
   description: "Not a wire feed. A few things a week that are worth knowing about and that we could check.",
   h1: "What changed in New York",
   lede: `Not a wire feed. A few things a week that are worth knowing about and that we could check.`,

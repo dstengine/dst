@@ -69,7 +69,7 @@ const jump = [
   clips.length > 0 && { id: "watch", label: "Watch" },
 ].filter(Boolean) as { id: string; label: string }[];
 ---
-<Layout title={show.title} description={show.summary}>
+<Layout title={show.titleSeo ?? show.title} description={show.summary}>
   <section class="container hero">
     <p class="eyebrow">{show.eyebrow}</p>
     <h1>{show.title}</h1>

@@ -19,7 +19,7 @@ export const home = {
 };
 
 export const news = {
-  title: "Solana ecosystem news",
+  title: "Solana ecosystem news: releases, tooling, programmes",
   description: "What changed in the Solana ecosystem: releases, tooling, programmes and the calendar around them.",
   h1: "What changed in the Solana ecosystem",
   lede: `Releases, tooling and programmes — the things that change what a builder can do this month. Not a price feed.`,

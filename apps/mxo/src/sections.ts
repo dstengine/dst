@@ -109,7 +109,9 @@ export function sections(items: FeedItem[]): Section[] {
         };
       }
       return {
-        title: esMundo ? "Noticias del mundo, desde México" : `${Que} en México`,
+        title: esMundo
+          ? "Noticias del mundo, desde México, con fuente y fecha"
+          : `${Que} en México: fechas confirmadas y quién organiza`,
         description: esMundo
           ? "Lo que pasa fuera de México contado desde aquí, con la fuente y la fecha en cada nota."
           : `${Que} en México: cada fecha confirmada con quien organiza y con la fuente a la vista.`,

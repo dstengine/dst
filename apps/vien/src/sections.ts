@@ -71,7 +71,9 @@ export function sections(items: FeedItem[]): Section[] {
       // von wo aus geschaut wird.
       const welt = g.key === "Welt";
       return {
-        title: welt ? "Die Welt, von Wien aus" : `${was} in Wien`,
+        title: welt
+          ? "Die Welt, von Wien aus gesehen — mit Quelle und Datum"
+          : `${was} in Wien: Termine mit Quelle und Datum`,
         description: welt
           ? "Was außerhalb Österreichs passiert, von hier aus erzählt — mit Quelle und Datum bei jedem Eintrag."
           : `${was} in Wien — mit Datum, wie es die Veranstalter angegeben haben, und der Quelle bei jedem Eintrag.`,

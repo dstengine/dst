@@ -36,7 +36,7 @@ export const disclaimer =
 export const newsBase = "/news/";
 
 export const news = {
-  title: "News",
+  title: "Musical theatre news: what changed in the listings",
   description: "What changed in the listings on this site, each entry checked against the source that published it.",
   h1: "What changed in the listings",
   lede: `Runs announced, theatres renamed, productions that set the terms for the ones after them — each entry checked against the source that published it.`,

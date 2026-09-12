@@ -47,7 +47,7 @@ export function sections(items: FeedItem[]): Section[] {
       const what = g.voc.plural ?? g.key.toLowerCase();
       const Title = `${what[0].toUpperCase()}${what.slice(1)}`;
       return {
-        title: `${Title} in Dubai`,
+        title: `${Title} in Dubai: news, dates and the source for each`,
         description: `${Title} in Dubai — the news and the dates on this subject, each one sourced from the body that announced it.`,
         h1: `${Title} in Dubai`,
         lede: `Everything on this site filed under ${what} — what was announced, who announced it, and when we checked it against them.`,

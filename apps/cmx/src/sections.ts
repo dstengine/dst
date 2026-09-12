@@ -78,7 +78,7 @@ export function sections(items: FeedItem[]): Section[] {
       const que = g.voc.plural ?? g.key.toLowerCase();
       const Que = `${que[0].toUpperCase()}${que.slice(1)}`;
       return {
-        title: `${Que} en la Ciudad de México`,
+        title: `${Que} en la Ciudad de México: con fecha y fuente`,
         description: `${Que} en la Ciudad de México: cada fecha confirmada con quien organiza y con la fuente a la vista.`,
         h1: `${Que} en la Ciudad de México`,
         lede: `Todo lo que hay en este sitio bajo ${que} — la fecha como la publicó quien organiza, y el enlace a donde lo leímos.`,

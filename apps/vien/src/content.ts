@@ -15,7 +15,7 @@ export const newsBase = "/nachrichten/";
 export const eventsBase = "/veranstaltungen/";
 
 export const home = {
-  title: "Was in Wien los ist",
+  title: "Was in Wien los ist: Ausstellungen, Konzerte, Termine",
   description: "Was in Wien los ist: Ausstellungen, Konzerte und wie die Stadt funktioniert. Mit Quelle und Datum.",
   h1: "Was in Wien los ist",
   lede: `Museen und Konzerthäuser, Donau und Wienerwald, und das, was die Jahreszeiten öffnen und schließen. Was läuft, was sich geändert hat, und wann.`,

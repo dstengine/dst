@@ -204,6 +204,10 @@ export interface Section {
 export interface Show {
   slug: string;
   title: string;
+  /** Used for <title> instead of `title` where the show's own name spends
+      too little of the 60-character budget to win anything. The h1 stays
+      the name of the show. */
+  titleSeo?: string;
   tagline: string;
   summary: string;
   /** The show this site is built around. It gets the front page's own

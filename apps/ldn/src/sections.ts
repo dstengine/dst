@@ -114,7 +114,7 @@ export function sections(items: FeedItem[]): Section[] {
       }
       const what = g.voc.plural ?? g.key.toLowerCase();
       return {
-        title: `${what[0].toUpperCase()}${what.slice(1)} in central London`,
+        title: `${what[0].toUpperCase()}${what.slice(1)} in central London: dates from the organiser`,
         description: `${what[0].toUpperCase()}${what.slice(1)} in central London — dates confirmed with the organiser, and the source on every entry.`,
         h1: `${what[0].toUpperCase()}${what.slice(1)} in central London`,
         lede: `Everything on this site filed under ${what} — what is on, when it is on, and where we read it.`,

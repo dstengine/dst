@@ -15,7 +15,7 @@ export const newsBase = "/noticias/";
 export const eventsBase = "/eventos/";
 
 export const home = {
-  title: "La agenda de México",
+  title: "La agenda de México: ferias, festivales y exposiciones",
   description: "La agenda de México: ferias, festivales y exposiciones con fecha confirmada.",
   h1: "La agenda de México",
   lede: `Ferias, festivales y exposiciones de todo el país, con fecha confirmada y fuente citada. Lo que no pudimos confirmar no aparece.`,

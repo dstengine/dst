@@ -133,6 +133,7 @@ export const shows: Show[] = [
   {
     slug: "cats",
     title: "Cats",
+    titleSeo: "Cats the musical 2026–27 tour: 23 theatres, dates",
     officialSlug: "cats-official",
     officialDomain: "catsthemusical.com",
     eyebrow: "Every stop on the tour, and who sells it",

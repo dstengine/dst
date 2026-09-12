@@ -134,7 +134,7 @@ export function sections(items: FeedItem[]): Section[] {
       const what = g.voc.plural ?? g.key.toLowerCase();
       const Title = `${what[0].toUpperCase()}${what.slice(1)}`;
       return {
-        title: `${Title} in New York`,
+        title: `${Title} in New York: what is on and what changed`,
         description: `${Title} in New York — what is on, what changed, and the source behind every entry.`,
         h1: `${Title} in New York`,
         lede: `Everything on this site filed under ${what} — the date as the box office or the gallery published it, and a link to where we read it.`,

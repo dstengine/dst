@@ -76,7 +76,7 @@ export function sections(items: FeedItem[]): Section[] {
       const what = g.voc.plural ?? g.key.toLowerCase();
       const Title = `${what[0].toUpperCase()}${what.slice(1)}`;
       return {
-        title: `${Title} in London`,
+        title: `${Title} in London: what is on across the boroughs`,
         description: `${Title} across London and its boroughs — what is on, what has changed, and the source behind every entry.`,
         h1: `${Title} in London`,
         lede: `Everything on this site filed under ${what}, from the outer boroughs in — with a date and a source on each one.`,

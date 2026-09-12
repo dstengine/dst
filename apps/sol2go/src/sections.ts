@@ -80,7 +80,7 @@ export function sections(items: EventItem[]): Section<EventItem>[] {
       }
       const plural = g.voc.plural ?? g.key.toLowerCase();
       return {
-        title: `Solana ${plural}`,
+        title: `Solana ${plural}: dates from the organiser`,
         description: `Solana ${plural} from across the ecosystem, on dates confirmed with the organiser and with the source on every entry.`,
         h1: `Solana ${plural}`,
         lede: `The ${plural} on this calendar — the date as the organiser published it, and a link to where we read it.`,
