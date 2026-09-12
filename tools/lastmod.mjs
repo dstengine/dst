@@ -1,5 +1,30 @@
 // Regenerates packages/content/src/lastmod.json — when each built page's
-// content last actually changed, taken from git history.
+// content last actually changed.
+//
+// Two kinds of page, dated two ways.
+//
+// An **entry page** — one event, one news item — is dated by the entry's own
+// `updatedAt`. That field is written down in the data (see ItemBase), so
+// there is nothing here to infer: the page says what the entry says.
+//
+// A **group page** — the front page, /events/, a section — has no entry of
+// its own. It is dated by the newest of the entries it actually lists, taken
+// with the dates of the files that shape it: its route, its copy, its
+// vocabulary. Both halves are needed. Without the entries, a section is
+// dated by whichever file happens to name it and a page built today can
+// claim to be older than it is; without the files, rewriting a heading or a
+// lede changes the page and moves nothing.
+//
+// Which entries a group lists is read off the built page: the internal links
+// inside its <main> that resolve to entry pages. No per-site knowledge, and
+// the answer is the page's own, not a second guess at what the template
+// meant to render. Links to sibling groups are ignored, which is also what
+// keeps two sections that link to each other from chasing each other's date.
+//
+// Feed files are deliberately left out of the file half: a feed holds a whole
+// site's entries, so its commit date moves whenever any of them is touched,
+// and counting it would put every section of that site on the same date —
+// the noise this file exists to avoid. The entries cover it precisely.
 //
 // Why a generated file rather than a build-time lookup: Vercel checks the
 // repo out shallow, so `git log` there reports the deploy commit for every
@@ -9,7 +34,6 @@
 //
 //   npm run build && node tools/lastmod.mjs
 import { execFileSync } from "node:child_process";
-import { createHash } from "node:crypto";
 import { readdirSync, readFileSync, writeFileSync, existsSync, statSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -50,88 +74,6 @@ function lastCommit(file) {
   return date;
 }
 
-/** The lines one item occupies in a data file, 1-based and inclusive.
-
-    A site's whole feed lives in one file — every sol2go event in
-    packages/content/src/events/sol2go.ts — so the file's own last commit is
-    the same date for all thirty pages built from it. That is how a sitemap
-    ends up saying the entire site changed this afternoon, which is precisely
-    the noise lastmod exists to avoid, and it is the state every .lol site
-    was in.
-
-    So the item is located by its own slug and dated by its own lines. The
-    range is found in the current file; `git log -L` is what follows those
-    lines back through history, including through the edits that moved them. */
-function itemRange(file, slug) {
-  let text = "";
-  try { text = readFileSync(file, "utf8"); } catch { return null; }
-  const at = text.search(new RegExp(`slug:\\s*["']${slug.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}["']`));
-  if (at < 0) return null;
-
-  // Back to the brace that opens the object this slug sits in.
-  let depth = 0;
-  let start = -1;
-  for (let i = at; i >= 0; i--) {
-    const c = text[i];
-    if (c === "}") depth++;
-    else if (c === "{") { if (depth === 0) { start = i; break; } depth--; }
-  }
-  if (start < 0) return null;
-
-  // Forward to its match, stepping over strings so a brace inside a sentence
-  // does not close the object early.
-  let end = -1;
-  depth = 0;
-  let quote = null;
-  for (let i = start; i < text.length; i++) {
-    const c = text[i];
-    if (quote) {
-      if (c === "\\") i++;
-      else if (c === quote) quote = null;
-      continue;
-    }
-    if (c === '"' || c === "'" || c === "`") { quote = c; continue; }
-    if (c === "{") depth++;
-    else if (c === "}") { depth--; if (depth === 0) { end = i; break; } }
-  }
-  if (end < 0) return null;
-
-  const lineAt = (offset) => text.slice(0, offset).split("\n").length;
-  return [lineAt(start), lineAt(end)];
-}
-
-const rangeDates = new Map();
-/** Last commit that touched a range of lines in a file, as an ISO date. */
-function lastCommitLines(file, from, to) {
-  const key = `${file}:${from},${to}`;
-  if (rangeDates.has(key)) return rangeDates.get(key);
-  let date = null;
-  try {
-    const out = execFileSync(
-      "git",
-      ["log", "-1", "--format=%cI", `-L${from},${to}:${path.relative(REPO, file)}`],
-      { cwd: REPO, maxBuffer: 64 * 1024 * 1024 },
-    ).toString();
-    date = out.split("\n").find((l) => /^\d{4}-\d{2}-\d{2}T/.test(l.trim()))?.trim() ?? null;
-  } catch {
-    date = null;
-  }
-  rangeDates.set(key, date);
-  return date;
-}
-
-/** The date a page's content last changed, from one of its source files.
-
-    A data file that holds the item this page is built from is dated by that
-    item's lines; everything else — a route, a config, a file with no entry
-    for this slug — by the file. */
-function dateFor(file, url) {
-  const slug = url.split("/").filter(Boolean).at(-1);
-  if (!slug || !file.endsWith(".ts")) return lastCommit(file);
-  const range = itemRange(file, slug);
-  if (!range) return lastCommit(file);
-  return lastCommitLines(file, range[0], range[1]) ?? lastCommit(file);
-}
 
 // What the page says, not what it looks like. Layouts and components are
 // deliberately not counted: restyling the header changes every page in the
@@ -338,46 +280,53 @@ const walk = (dir) =>
     e.isDirectory() ? walk(path.join(dir, e.name)) : [path.join(dir, e.name)],
   );
 
-/** What a built page says, with the things that are not the page removed.
-
-    Astro's scoped-style ids change whenever a component file changes, and
-    `dateModified` is this file's own previous answer read back — neither is
-    the page's content, and both would make every page look edited. */
-function pageHash(file) {
-  try {
-    const html = readFileSync(file, "utf8")
-      .replace(/ ?data-astro-cid-[a-z0-9]+/g, "")
-      .replace(/astro-[a-z0-9]{8,}/g, "")
-      .replace(/"dateModified":"[^"]*"/g, "");
-    return createHash("sha1").update(html).digest("hex").slice(0, 16);
-  } catch {
-    return null;
-  }
+// Every entry in the network, by site and by the last segment of its
+// address. The feeds are TypeScript; Node strips the types, which is how
+// `node --test` already reads them.
+const { allEvents } = await import("../packages/content/src/events/index.ts");
+const { allNews } = await import("../packages/content/src/news/index.ts");
+const entries = new Map();
+for (const item of [...allEvents, ...allNews]) {
+  if (!entries.has(item.site)) entries.set(item.site, new Map());
+  const by = entries.get(item.site);
+  const seen = by.get(item.slug);
+  if (!seen || item.updatedAt > seen) by.set(item.slug, item.updatedAt);
 }
 
-// The dates as they stand, and what the pages looked like when they were
-// written. A rename that touches every route file is a change to the source
-// of all 866 pages and to the content of none of them — and the git history
-// cannot tell the two apart, because in the history they are the same edit.
-// The built page can: if it comes out byte for byte what it was, the page
-// did not change, whatever moved underneath it. So a hash only ever holds a
-// date still; it never advances one, and a chrome-only edit still moves
-// nothing because the date it would fall back to is unchanged anyway.
-const HASH_FILE = path.join(REPO, "packages/content/src/lastmod.hashes.json");
-const readJson = (file) => {
-  try { return JSON.parse(readFileSync(file, "utf8")); } catch { return null; }
-};
-const previous = readJson(path.join(REPO, "packages/content/src/lastmod.json")) ?? {};
-const previousHashes = readJson(HASH_FILE);
-// No hash file yet: there is no evidence that anything changed, so every
-// date already recorded stands and this run only writes the hashes down.
-const seeding = previousHashes === null;
+const slugOf = (url) => url.split("/").filter(Boolean).at(-1) ?? "";
+
+// A feed holds a whole site's entries, so its commit date moves whenever any
+// one of them is touched. The entries carry their own dates now; the file
+// would only add that noise back.
+const isFeed = (file) =>
+  /packages[\\/]content[\\/]src[\\/](events|news)[\\/]/.test(path.relative(REPO, file));
+
+const MAIN = /<main[^>]*>([\s\S]*?)<\/main>/i;
+
+/** The entries a group page actually lists: internal links inside its
+    <main> whose last segment is an entry of this app. Links to sibling
+    groups fall out by themselves, which is what stops two sections that
+    link to each other from chasing each other's date. */
+function listed(html, app) {
+  const known = entries.get(app);
+  if (!known) return [];
+  const main = MAIN.exec(html);
+  if (!main) return [];
+  const dates = [];
+  for (const [, href] of main[1].matchAll(/href="(\/[^"#?]*)"/g)) {
+    const date = known.get(slugOf(href));
+    if (date) dates.push(date);
+  }
+  return dates;
+}
+
+const newest = (dates) =>
+  dates.reduce((a, b) => (Date.parse(b) > Date.parse(a) ? b : a));
 
 const out = {};
-const hashes = {};
 let pages = 0;
 let dated = 0;
-let held = 0;
+let own = 0;
 for (const [app, host] of Object.entries(HOSTS)) {
   const dist = path.join(REPO, "apps", app, "dist");
   if (!existsSync(dist)) {
@@ -385,48 +334,39 @@ for (const [app, host] of Object.entries(HOSTS)) {
     process.exit(1);
   }
   out[host] = {};
-  hashes[host] = {};
   for (const file of walk(dist)) {
     if (path.basename(file) !== "index.html") continue;
     const url = "/" + path.relative(dist, file).replace(/index\.html$/, "");
     if (url.startsWith("/go/")) continue; // noindex, never in a sitemap
     pages++;
-    const candidates = pagesFor(app, url);
-    if (!candidates.length) continue;
-    // A page built from one item is dated by that item, and by nothing else
-    // that happens to sit in the same feed or the same barrel. Before this,
-    // an event page counted the site's news file and its content.ts among
-    // its sources — so publishing one news item moved the date of all
-    // thirty event pages, and a change to a section heading moved every
-    // page on the site. Route files still count: editing the template does
-    // change the page. Where no data file claims the slug — the front page,
-    // /about/, an index — everything counts, as before.
-    const files = candidates.flatMap(sources);
-    const slug = url.split("/").filter(Boolean).at(-1);
-    const routes = files.filter((f) => f.endsWith(".astro"));
-    const data = files.filter((f) => !f.endsWith(".astro"));
-    const owning = slug ? data.filter((f) => itemRange(f, slug)) : [];
-    const counted = [...routes, ...(owning.length ? owning : data)];
-    const dates = counted.map((f) => dateFor(f, url)).filter(Boolean).sort();
-    if (!dates.length) continue;
 
-    const hash = pageHash(file);
-    if (hash) hashes[host][url] = hash;
-    const was = previous[host]?.[url];
-    const wasHash = previousHashes?.[host]?.[url];
-    const unchanged = was && (seeding || (hash && wasHash === hash));
-    out[host][url] = unchanged ? was : dates.at(-1);
-    if (unchanged && was !== dates.at(-1)) held++;
+    // An entry page says its own date, and nothing else has a say in it.
+    const mine = entries.get(app)?.get(slugOf(url));
+    if (mine) {
+      out[host][url] = mine;
+      dated++;
+      own++;
+      continue;
+    }
+
+    // A group page: the newest entry it lists, against the files that shape
+    // it — its route, its copy, its vocabulary.
+    const dates = listed(readFileSync(file, "utf8"), app);
+    for (const source of pagesFor(app, url).flatMap(sources)) {
+      if (isFeed(source)) continue;
+      const date = lastCommit(source);
+      if (date) dates.push(date);
+    }
+    if (!dates.length) continue;
+    out[host][url] = newest(dates);
     dated++;
   }
 }
 
 const target = path.join(REPO, "packages/content/src/lastmod.json");
 writeFileSync(target, JSON.stringify(out, null, 2) + "\n");
-writeFileSync(HASH_FILE, JSON.stringify(hashes, null, 2) + "\n");
 console.log(`${dated} of ${pages} pages dated -> packages/content/src/lastmod.json`);
-if (seeding) console.log("  no hashes on record — every date already written stands");
-else if (held) console.log(`  ${held} pages kept their date: the built page is unchanged`);
+console.log(`  ${own} pages dated by their own entry, ${dated - own} by what they list and what shapes them`);
 for (const [host, urls] of Object.entries(out)) {
   const dates = Object.values(urls).sort();
   console.log(`  ${host.padEnd(20)} ${Object.keys(urls).length} pages, newest ${dates.at(-1)?.slice(0, 10)}`);
