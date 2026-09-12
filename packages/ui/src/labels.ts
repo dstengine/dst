@@ -66,6 +66,10 @@ export interface ArticleLabels {
   speakers: string;
   whoItsFor: string;
   locate: string;
+  /** The title on a detail page's link to its own subject page. The label
+      is the subject's name, so a title repeating it would say nothing
+      twice — this says what is on the other end. */
+  categoryTitle: (what: string) => string;
   related: string;
   moreEvents: string;
   moreNews: string;
@@ -144,6 +148,7 @@ export const EN: ArticleLabels = {
   speakers: "Speakers",
   whoItsFor: "Who it's for",
   locate: "Locate",
+  categoryTitle: (what) => `Everything on this site filed under ${what.toLowerCase()}`,
   related: "Related",
   moreEvents: "More events",
   moreNews: "More news",
@@ -219,6 +224,7 @@ export const ES: Partial<ArticleLabels> = {
   speakers: "Ponentes",
   whoItsFor: "Para quién es",
   locate: "Ubicación",
+  categoryTitle: (what) => `Todo lo que hay en este sitio bajo ${what.toLowerCase()}`,
   related: "Relacionado",
   moreEvents: "Más eventos",
   moreNews: "Más noticias",
@@ -285,6 +291,7 @@ export const DE: Partial<ArticleLabels> = {
   speakers: "Vortragende",
   whoItsFor: "Für wen",
   locate: "Lage",
+  categoryTitle: (what) => `Alles auf dieser Seite unter ${what}`,
   related: "Passend dazu",
   moreEvents: "Weitere Termine",
   moreNews: "Weitere Nachrichten",

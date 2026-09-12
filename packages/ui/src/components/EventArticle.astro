@@ -324,7 +324,7 @@ const relatedItems = (item.related ?? []).map((card) => ({
   <header class="event-article-header">
     <p class="event-article-meta">
       {item.category && (categoryHref
-        ? <a class="event-article-category" href={categoryHref}>{item.category}</a>
+        ? <a class="event-article-category" href={categoryHref} title={L.categoryTitle(item.category)}>{item.category}</a>
         : <span class="event-article-category">{item.category}</span>)}
       <time datetime={startStamp}>{formatDate(item.start, locale)}</time>
       {item.end && <span>&ndash; <time datetime={endStamp}>{formatDate(item.end, locale)}</time></span>}

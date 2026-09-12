@@ -383,6 +383,11 @@ export const items: EventItem[] = [
     createdAt: "2026-09-12T20:16:15+04:00",
     updatedAt: "2026-09-12T20:16:15+04:00",
     site: "lnd",
+    image: "/covers/super-natural-wwt-london-2026.jpg",
+    imageAlt: "A slender willow wand with a pale folded star at its tip, standing on a curved gold line beside two cream mushroom caps, on deep blue",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "SUPER Natural at WWT London 2026",
     summary:
       "The Wetland Centre at Barnes, in south-west London, answers Halloween with willow wands, a marshland potion and a fungi hunt from 24 October to 1 November — scare-free, and included with admission.",
@@ -445,6 +450,11 @@ export const items: EventItem[] = [
     createdAt: "2026-09-12T20:16:15+04:00",
     updatedAt: "2026-09-12T20:16:15+04:00",
     site: "lnd",
+    image: "/covers/howl-o-ween-chessington-2026.jpg",
+    imageAlt: "A white paper fairground wheel with a red hub, a crouching gargoyle on a plinth to its left and a row of small orange and cream pumpkins along the foot of the frame",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Howl'o'ween at Chessington 2026",
     summary:
       "A theme park Halloween inside the London boundary: selected dates from 3 October to 1 November in Kingston upon Thames, with new shows, a vampire's lair and rides at dusk, from £34 online.",

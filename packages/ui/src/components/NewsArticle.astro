@@ -147,7 +147,7 @@ const relatedItems = (item.related ?? []).map((card) => ({
   <header class="news-article-header">
     <p class="news-article-meta">
       {item.category && (categoryHref
-        ? <a class="news-article-category" href={categoryHref}>{item.category}</a>
+        ? <a class="news-article-category" href={categoryHref} title={L.categoryTitle(item.category)}>{item.category}</a>
         : <span class="news-article-category">{item.category}</span>)}
       <time datetime={item.date}>{formatDate(item.date, locale)}</time>
       {minutes > 0 && <span class="news-article-reading">{L.minRead(minutes)}</span>}

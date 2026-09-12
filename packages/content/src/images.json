@@ -7876,6 +7876,54 @@
         ]
       ]
     },
+    "/covers/howl-o-ween-chessington-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/howl-o-ween-chessington-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/howl-o-ween-chessington-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/howl-o-ween-chessington-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/howl-o-ween-chessington-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/howl-o-ween-chessington-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/howl-o-ween-chessington-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/howl-o-ween-chessington-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/howl-o-ween-chessington-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/howl-o-ween-chessington-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/howl-o-ween-chessington-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/lambeth-fringe-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -8161,6 +8209,54 @@
         [
           1536,
           "/covers/sl12-superloop-gants-hill-rainham-1536.webp"
+        ]
+      ]
+    },
+    "/covers/super-natural-wwt-london-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/super-natural-wwt-london-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/super-natural-wwt-london-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/super-natural-wwt-london-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/super-natural-wwt-london-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/super-natural-wwt-london-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/super-natural-wwt-london-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/super-natural-wwt-london-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/super-natural-wwt-london-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/super-natural-wwt-london-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/super-natural-wwt-london-2026-1536.webp"
         ]
       ]
     },
