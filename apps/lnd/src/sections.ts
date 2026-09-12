@@ -35,7 +35,7 @@ const TAGS: Record<string, Vocabulary> = {
 
 export const NAV = {
   allLabel: "All",
-  allTitle: "Everything on across Greater London",
+  allTitle: "Everything on across London and its boroughs",
   label: "By subject",
 };
 
@@ -56,11 +56,11 @@ export function sections(items: FeedItem[]): Section[] {
       // would bury the only word anybody types.
       if (g.key === "Halloween") {
         return {
-          title: "Halloween in Greater London 2026: what is on",
+          title: "Halloween in London 2026: what is on",
           description:
-            "Hampton Court and Eltham Palace over half term, and a Hogwarts season that runs from mid-September — each date as the organiser published it.",
-          h1: "Halloween in Greater London",
-          lede: "Two palaces over half term and, out past the boroughs, a hundred pumpkins hanging over the Great Hall for seven weeks — each date as the organiser gave it, and where we read it.",
+            "Halloween 2026 across the London boroughs — two palaces over half term, a scare-free week in Barnes, a month of theme-park dates in Kingston upon Thames. Each date as the organiser published it.",
+          h1: "Halloween in London",
+          lede: "Two palaces over half term, a scare-free week of wetland folklore in Barnes, a month of selected dates at the theme park inside the London boundary — and, out past the boroughs in Watford, a hundred pumpkins over the Great Hall for seven weeks. Each date as the organiser gave it, and where we read it.",
           headings: {
             events: "Where to go for Halloween",
             upcoming: "2026 dates",
@@ -72,9 +72,9 @@ export function sections(items: FeedItem[]): Section[] {
       const what = g.voc.plural ?? g.key.toLowerCase();
       const Title = `${what[0].toUpperCase()}${what.slice(1)}`;
       return {
-        title: `${Title} in Greater London`,
-        description: `${Title} across Greater London — what is on, what has changed, and the source behind every entry.`,
-        h1: `${Title} in Greater London`,
+        title: `${Title} in London`,
+        description: `${Title} across London and its boroughs — what is on, what has changed, and the source behind every entry.`,
+        h1: `${Title} in London`,
         lede: `Everything on this site filed under ${what}, from the outer boroughs in — with a date and a source on each one.`,
       };
     },

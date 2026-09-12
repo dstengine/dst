@@ -5,6 +5,8 @@ import { siteId, newsBase, eventsBase, publisher } from "../../content";
 import { eventsBySite } from "@dst/content/events";
 import { go } from "../../outbound";
 import { newsBySite } from "@dst/content/news";
+import { sectionHrefFor } from "@dst/content/sections";
+import { sections } from "../../sections";
 
 export function getStaticPaths() {
   const items = eventsBySite(siteId).filter((i) => Array.isArray(i.body) && i.body.length > 0);
@@ -13,6 +15,12 @@ export function getStaticPaths() {
 
 const moreNews = newsBySite(siteId);
 const { item, more } = Astro.props;
+// The subject page, when the subject has earned one. Built from the whole
+// feed, not from `more`: that one is filtered down to entries with a page,
+// and the threshold counts entries — a section the nav shows and this did
+// not would be a link missing from exactly the pages that belong under it.
+const all = sections([...eventsBySite(siteId), ...moreNews]);
+const categoryHref = sectionHrefFor(item, all);
 // A seller if we have one, the source if we don't — see src/outbound.ts.
 const ticketHref = item.ticket ? go(`${item.slug}-ticket`) : undefined;
 const sourceHref = item.source?.url ? go(`${item.slug}-source`) : undefined;
@@ -28,5 +36,6 @@ const sourceHref = item.source?.url ? go(`${item.slug}-source`) : undefined;
     newsBase={newsBase}
     eventsBase={eventsBase}
     publisher={publisher}
+    categoryHref={categoryHref}
   />
 </Layout>

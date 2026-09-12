@@ -177,6 +177,25 @@ function ordered<T extends FeedItem>(items: T[]): T[] {
   });
 }
 
+/** The subject page an item belongs on, or nothing when it has none.
+ *
+ *  A detail page knows its category and prints it; what it cannot know on
+ *  its own is whether that word has earned a page — three items is the
+ *  threshold, and below it a chip would point at a 404. So the answer is
+ *  read off the sections the site actually built, which is the same list the
+ *  nav is built from and cannot drift from it.
+ *
+ *  Only kinds, not places: a place section on a city site is the site, and
+ *  the sites where it is not have yet to ask for the link. */
+export function sectionHrefFor<T extends FeedItem>(
+  item: T,
+  all: Section<T>[],
+): string | undefined {
+  if (!item.category) return undefined;
+  const found = all.find((s) => s.kind === "tag" && s.key === item.category);
+  return found ? `/${found.slug}/` : undefined;
+}
+
 export function buildSections<T extends FeedItem, V extends Vocabulary = Vocabulary>(
   input: SectionsInput<T, V>,
 ): Section<T>[] {

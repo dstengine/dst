@@ -57,6 +57,32 @@ function entries(text) {
   return out;
 }
 
+/** Whether the committed file already holds this entry.
+ *
+ *  `git log -L` measures a range against the file on disk and answers with
+ *  the history of whatever used to occupy those lines. For an entry that was
+ *  only just written that answer is not empty, it is somebody else's: the
+ *  first of two events appended here was dated 30 August, which is when the
+ *  lines it now sits on last moved and nowhere near when it was written.
+ *  Wrong dates are worse than missing ones, so an entry the last commit has
+ *  never seen is left alone and reported. */
+const committed = new Map();
+function inHistory(rel, slug) {
+  if (!committed.has(rel)) {
+    let text = "";
+    try {
+      text = execFileSync("git", ["show", `HEAD:${rel}`], {
+        cwd: REPO,
+        maxBuffer: 64 * 1024 * 1024,
+      }).toString();
+    } catch {
+      text = ""; // a file not in HEAD at all: every entry in it is new
+    }
+    committed.set(rel, text);
+  }
+  return committed.get(rel).includes(`slug: "${slug}"`) || committed.get(rel).includes(`slug: '${slug}'`);
+}
+
 /** [first, last] commit dates for a range of lines, newest first in git's output. */
 function historyOf(rel, from, to) {
   let out = "";
@@ -101,6 +127,7 @@ for (const dir of FEEDS) {
     for (const e of found) {
       const body = lines.slice(e.from - 1, e.to).join("\n");
       if (/^ {4}createdAt:/m.test(body)) { already++; continue; }
+      if (!inHistory(rel, e.slug)) { unknown.push(`${rel}: ${e.slug}`); continue; }
       const dates = historyOf(rel, e.from, e.to);
       if (!dates) { unknown.push(`${rel}: ${e.slug}`); continue; }
       edits.push({

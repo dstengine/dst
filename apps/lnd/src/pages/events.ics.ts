@@ -22,7 +22,7 @@ export const GET: APIRoute = () => {
   const items = eventsBySite(siteId).filter((i) => Array.isArray(i.body) && i.body.length > 0);
   const body = toIcsCalendar(items, (item) => `${SITE}/events/${item.slug}/`, {
     name: "London Boroughs — what's on",
-    description: "Greater London beyond the centre, borough by borough, with a confirmed date on every entry.",
+    description: "London beyond the centre, borough by borough, with a confirmed date on every entry.",
     url: `${SITE}/events/`,
     source: `${SITE}/events.ics`,
   });

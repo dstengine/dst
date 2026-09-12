@@ -47,6 +47,11 @@ interface Props {
       to DST like the rest of the graph; a site that publishes itself passes
       its own, or the block contradicts the page around it. */
   publisher?: Publisher;
+  /** The subject page this event's category has earned, when it has one:
+      @dst/content/sections answers that, because the threshold is data. The
+      category was printed and dead on every detail page in the network —
+      the one word on the page a reader might want more of. */
+  categoryHref?: string;
   /** Locale for dates on this page. Defaults to the network's English;
       a site writing in another language passes its own. */
   locale?: string;
@@ -56,14 +61,21 @@ interface Props {
       set and its chrome stops contradicting its copy. */
   labels?: Partial<ArticleLabels>;
 }
-const { item, backHref, ticketHref, sourceHref, more = [], moreNews = [], newsBase = "/news/", eventsBase = "/events/", publisher, locale = "en-US", labels: labelOverrides } = Astro.props;
+const { item, backHref, ticketHref, sourceHref, more = [], moreNews = [], newsBase = "/news/", eventsBase = "/events/", publisher, categoryHref, locale = "en-US", labels: labelOverrides } = Astro.props;
 const L = withLabels(labelOverrides);
 
 const todayIso = new Date().toISOString().slice(0, 10);
 const moreCards = more
   .filter((other) => other.slug !== item.slug && Array.isArray(other.body) && other.body.length > 0)
-  // What's still to come first, then past events most recent first.
+  // Its own subject first, then what's still to come, then past events most
+  // recent first. Date alone put a flea market under a Halloween palace
+  // because it happened to be sooner — three cards is too few to spend on
+  // the coincidence of the calendar when the site knows what the page is
+  // about. Within a subject the date order is the same as without one.
   .sort((a, b) => {
+    const aSame = a.category === item.category;
+    const bSame = b.category === item.category;
+    if (aSame !== bSame) return aSame ? -1 : 1;
     const aUp = a.start >= todayIso;
     const bUp = b.start >= todayIso;
     if (aUp !== bUp) return aUp ? -1 : 1;
@@ -311,7 +323,9 @@ const relatedItems = (item.related ?? []).map((card) => ({
 <article class="container event-article">
   <header class="event-article-header">
     <p class="event-article-meta">
-      {item.category && <span class="event-article-category">{item.category}</span>}
+      {item.category && (categoryHref
+        ? <a class="event-article-category" href={categoryHref}>{item.category}</a>
+        : <span class="event-article-category">{item.category}</span>)}
       <time datetime={startStamp}>{formatDate(item.start, locale)}</time>
       {item.end && <span>&ndash; <time datetime={endStamp}>{formatDate(item.end, locale)}</time></span>}
       {item.startTime && (
@@ -529,6 +543,12 @@ const relatedItems = (item.related ?? []).map((card) => ({
   }
   .event-article-meta > * { white-space: nowrap; }
   .event-article-category { font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent, #1F5C4E); }
+  /* A link in running metadata, so it says so on hover and on focus. The
+     card rule does not apply here: this is a word in a line of text, not a
+     whole card that happens to be clickable. */
+  a.event-article-category { text-decoration: none; }
+  a.event-article-category:hover,
+  a.event-article-category:focus-visible { text-decoration: underline; }
   .event-article-header h1 { margin: 0; }
   /* Clock time is data, like the date beside it. */
   .event-article-time {

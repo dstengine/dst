@@ -11,7 +11,11 @@ export const site = {
   // that is free to say what the site is: the link's own text is the name,
   // so a title repeating it would say nothing twice.
   homeTitle: "London events and news, checked before they are listed",
-  titleSuffix: "Greater London",
+  // "London", not "Greater London": the suffix exists to supply the head
+  // keyword to a title that lacks it, and an event title gets eight
+  // characters of administrative geography it did not need. Nobody types
+  // the longer name.
+  titleSuffix: "London",
   // What this site is for, in one phrase, for tools/seo-check.mjs and for
   // BaseLayout: the words that have to appear in the title, the h1 and the
   // description of every page a reader could arrive on from a search — and

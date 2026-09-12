@@ -79,7 +79,7 @@ export const items: NewsItem[] = [
   {
     slug: "eleven-design-districts-and-not-one-of-them-is-a-venue",
     createdAt: "2026-09-08T00:12:45+04:00",
-    updatedAt: "2026-09-08T11:57:44+04:00",
+    updatedAt: "2026-09-12T20:15:40+04:00",
     site: "lnd",
     image: "/covers/eleven-design-districts-and-not-one-of-them-is-a-venue.jpg",
     imageAlt: "Eleven pale blue paper squares of varying sizes scattered across a deep navy ground, one of them chalk white",
@@ -90,7 +90,7 @@ export const items: NewsItem[] = [
     cardTitle: "Eleven design districts, no venue",
     titleSeo: "London Design Festival: 12-20 September",
     summary:
-      "The 24th festival runs 12 to 20 September across eleven neighbourhood districts, from Walthamstow to Park Royal, with landmark installations including one inside St Paul's.",
+      "The 24th London Design Festival runs 12 to 20 September across eleven neighbourhood districts, from Walthamstow to Park Royal, with landmark installations including one inside St Paul's.",
     date: "2026-09-07",
     category: "Architecture",
     source: {
@@ -116,7 +116,7 @@ export const items: NewsItem[] = [
   {
     slug: "the-monument-may-finally-get-a-visitor-centre",
     createdAt: "2026-09-06T22:44:30+04:00",
-    updatedAt: "2026-09-08T00:12:45+04:00",
+    updatedAt: "2026-09-12T20:15:40+04:00",
     site: "lnd",
     image: "/covers/the-monument-may-finally-get-a-visitor-centre.jpg",
     imageAlt: "A tall narrow cream paper column on a deep navy ground, a small orange-red flame shape floating above it and a low orange-red block standing at its foot",
@@ -127,7 +127,7 @@ export const items: NewsItem[] = [
     cardTitle: "A visitor centre for the Monument",
     titleSeo: "The Monument is to get a visitor centre",
     summary:
-      "The brutalist block next door is coming down, and the ground floor of what replaces it is set aside for a cultural and visitor centre — with an exhibition about the Great Fire, and a café.",
+      "The brutalist block beside the Monument in the City of London is coming down, and the ground floor of what replaces it is set aside for a cultural and visitor centre — with an exhibition about the Great Fire, and a café.",
     date: "2026-09-06",
     category: "Heritage",
     source: {
@@ -228,7 +228,7 @@ export const items: NewsItem[] = [
   {
     slug: "the-marathon-runs-twice-in-2027",
     createdAt: "2026-09-03T07:30:21+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-09-12T20:15:40+04:00",
     site: "lnd",
     image: "/covers/the-marathon-runs-twice-in-2027.jpg",
     imageAlt: "Two pale blue paper ribbons of identical shape laid side by side on a deep navy ground, one small red marker at the end of each",
@@ -239,7 +239,7 @@ export const items: NewsItem[] = [
     cardTitle: "The marathon runs twice in 2027",
     titleSeo: "The London Marathon runs twice in 2027",
     summary:
-      "Saturday 24 and Sunday 25 April 2027: 100,000 people over the same Greenwich-to-Westminster route, after 1.33 million entered the 2026 ballot.",
+      "Saturday 24 and Sunday 25 April 2027: the London Marathon runs twice, 100,000 people over the same Greenwich-to-Westminster route, after 1.33 million entered the 2026 ballot.",
     date: "2026-09-03",
     category: "Sport",
     source: {
@@ -266,7 +266,7 @@ export const items: NewsItem[] = [
   {
     slug: "oxford-street-goes-traffic-free",
     createdAt: "2026-09-02T13:01:24+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-09-12T20:15:40+04:00",
     site: "lnd",
     image: "/covers/oxford-street-goes-traffic-free.jpg",
     imageAlt: "A long empty cream band between two dark blue blocks, with small vehicles held at either end",
@@ -277,7 +277,7 @@ export const items: NewsItem[] = [
     cardTitle: "Oxford Street goes traffic-free",
     titleSeo: "Oxford Street goes traffic-free",
     summary:
-      "Nine hundred metres from Orchard Street to Great Portland Street, including Oxford Circus, close to buses, taxis, cycles and everything else on wheels.",
+      "Nine hundred metres of central London from Orchard Street to Great Portland Street, including Oxford Circus, close to buses, taxis, cycles and everything else on wheels.",
     date: "2026-09-02",
     category: "Transport",
     source: {
@@ -303,7 +303,7 @@ export const items: NewsItem[] = [
   {
     slug: "open-house-festival-turns-35",
     createdAt: "2026-09-02T13:01:24+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-09-12T20:15:40+04:00",
     site: "lnd",
     image: "/covers/open-house-festival-turns-35.jpg",
     imageAlt: "A dense field of small paper house shapes in blues and cream, one red house with an open doorway",
@@ -314,7 +314,7 @@ export const items: NewsItem[] = [
     cardTitle: "Open House: nine days, 33 boroughs",
     titleSeo: "Open House Festival 2026: 12–20 September",
     summary:
-      "The 35th Open House runs 12–20 September across all 33 boroughs, free. Booking opened at midday on 19 August, but a great deal needs no booking at all.",
+      "The 35th Open House runs 12–20 September across all 33 London boroughs, free. Booking opened at midday on 19 August, but a great deal needs no booking at all.",
     date: "2026-09-02",
     category: "Architecture",
     source: {
@@ -339,7 +339,7 @@ export const items: NewsItem[] = [
   {
     slug: "bus-routes-67-and-149-consultation",
     createdAt: "2026-09-02T13:01:24+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-09-12T20:15:40+04:00",
     site: "lnd",
     image: "/covers/bus-routes-67-and-149-consultation.jpg",
     imageAlt: "A long dark navy paper strip above a much shorter pale blue one on a white ground",
@@ -350,7 +350,7 @@ export const items: NewsItem[] = [
     cardTitle: "Route 67 withdrawn, 149 rerouted",
     titleSeo: "TfL consultation on routes 67 and 149",
     summary:
-      "TfL proposes withdrawing the 67 and rerouting the 149. Edmonton Green loses a direct link and peak waits go from seven minutes to eight. It closes 20 September.",
+      "TfL proposes withdrawing the 67 and rerouting the 149 in north-east London. Edmonton Green loses a direct link and peak waits go from seven minutes to eight. It closes 20 September.",
     date: "2026-09-02",
     category: "Transport",
     source: {
@@ -377,7 +377,7 @@ export const items: NewsItem[] = [
   {
     slug: "totally-thames-2026",
     createdAt: "2026-09-02T13:01:24+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-09-12T20:15:40+04:00",
     site: "lnd",
     image: "/covers/totally-thames-2026.jpg",
     imageAlt: "A row of stubby red paper columns standing in a band of blue water below a large cream sheet",
@@ -388,7 +388,7 @@ export const items: NewsItem[] = [
     cardTitle: "Totally Thames: a month on the river",
     titleSeo: "Totally Thames 2026 runs all September",
     summary:
-      "Through September the river hosts 100-plus events from Richmond to Barking and Dagenham, including Catherine Yass's work on Blackfriars' disused columns.",
+      "Through September the London stretch of the river hosts 100-plus events from Richmond to Barking and Dagenham, including Catherine Yass's work on Blackfriars' disused columns.",
     date: "2026-09-02",
     category: "Culture",
     source: {
@@ -491,7 +491,7 @@ export const items: NewsItem[] = [
   {
     slug: "eclipse-walk-tower-hamlets-cemetery-park",
     createdAt: "2026-09-01T15:07:36+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-09-12T20:15:40+04:00",
     site: "lnd",
     image: "/covers/eclipse-walk-tower-hamlets-cemetery-park.jpg",
     imageAlt: "Small crescents of light scattered across paper grass beneath a leaf canopy",
@@ -500,7 +500,7 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "An eclipse read through seven graves in Bow",
     summary:
-      "The Friends of Tower Hamlets Cemetery Park built a walk around the 12 August eclipse, using tree canopies as pinhole projectors and seven 19th-century graves as the route.",
+      "The Friends of Tower Hamlets Cemetery Park in east London built a walk around the 12 August eclipse, using tree canopies as pinhole projectors and seven 19th-century graves as the route.",
     date: "2026-08-12",
     category: "Community",
     source: {
@@ -528,7 +528,7 @@ export const items: NewsItem[] = [
   {
     slug: "sl12-superloop-gants-hill-rainham",
     createdAt: "2026-08-30T20:53:51+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-09-12T20:15:40+04:00",
     featured: 1,
     site: "lnd",
     image: "/covers/sl12-superloop-gants-hill-rainham.jpg",
@@ -539,7 +539,7 @@ export const items: NewsItem[] = [
     title: "The Superloop reaches Havering on 5 September",
     titleSeo: "The Superloop reaches Havering",
     summary:
-      "The SL12 runs Gants Hill to Rainham from 5 September, free for its first week, and cuts a journey of just over an hour down to about forty minutes.",
+      "The SL12 Superloop runs Gants Hill to Rainham across east London from 5 September, free for its first week, and cuts a journey of just over an hour down to about forty minutes.",
     date: "2026-08-28",
     category: "Transport",
     source: {
@@ -614,7 +614,7 @@ export const items: NewsItem[] = [
   {
     slug: "olympic-park-summer-school",
     createdAt: "2026-08-30T11:52:01+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-09-12T20:15:40+04:00",
     site: "lnd",
     image: "/covers/olympic-park-summer-school.jpg",
     imageAlt: "Workshop tables seen from above in a park, a stadium arc curving behind",
@@ -624,7 +624,7 @@ export const items: NewsItem[] = [
     title: "East Summer School returns to the Olympic Park",
     titleSeo: "East Summer School, Olympic Park",
     summary:
-      "Three hundred young people, twenty-four workshops, six institutions from BBC Music Studios to ABBA Voyage — and the only entry requirement is living or studying in one of four boroughs.",
+      "Three hundred young people, twenty-four workshops, six institutions from BBC Music Studios to ABBA Voyage — and the only entry requirement is living or studying in one of four east London boroughs.",
     date: "2026-08-26",
     category: "Community",
     source: {

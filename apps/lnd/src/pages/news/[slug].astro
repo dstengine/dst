@@ -4,6 +4,8 @@ import NewsArticle from "@dst/ui/NewsArticle.astro";
 import { siteId, newsBase, eventsBase, publisher } from "../../content";
 import { newsBySite } from "@dst/content/news";
 import { eventsBySite } from "@dst/content/events";
+import { sectionHrefFor } from "@dst/content/sections";
+import { sections } from "../../sections";
 
 export function getStaticPaths() {
   // No body, no page — the feed card says everything the entry has.
@@ -13,6 +15,8 @@ export function getStaticPaths() {
 
 const moreEvents = eventsBySite(siteId);
 const { item, more } = Astro.props;
+// Same as on the event side, and off the whole feed for the same reason.
+const categoryHref = sectionHrefFor(item, sections([...moreEvents, ...newsBySite(siteId)]));
 ---
 <Layout title={item.titleSeo ?? item.title} description={item.summary} image={item.image}>
   <NewsArticle
@@ -23,5 +27,6 @@ const { item, more } = Astro.props;
     newsBase={newsBase}
     eventsBase={eventsBase}
     publisher={publisher}
+    categoryHref={categoryHref}
   />
 </Layout>

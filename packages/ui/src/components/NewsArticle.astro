@@ -41,6 +41,10 @@ interface Props {
       to DST like the rest of the graph; a site that publishes itself passes
       its own, or the block contradicts the page around it. */
   publisher?: Publisher;
+  /** The subject page this article's category has earned, when it has one.
+      Same prop and same reason as on EventArticle: the word was printed and
+      dead. */
+  categoryHref?: string;
   /** Locale for dates on this page. Defaults to the network's English;
       a site writing in another language passes its own. */
   locale?: string;
@@ -48,12 +52,18 @@ interface Props {
       item. See EventArticle and ../labels.ts — English by default. */
   labels?: Partial<ArticleLabels>;
 }
-const { item, backHref, more = [], moreEvents = [], newsBase = "/news/", eventsBase = "/events/", publisher, locale = "en-US", labels: labelOverrides } = Astro.props;
+const { item, backHref, more = [], moreEvents = [], newsBase = "/news/", eventsBase = "/events/", publisher, categoryHref, locale = "en-US", labels: labelOverrides } = Astro.props;
 const L = withLabels(labelOverrides);
 
 const moreCards = more
   .filter((other) => other.slug !== item.slug && Array.isArray(other.body) && other.body.length > 0)
-  .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0))
+  // Its own subject first, newest first within it — see EventArticle.
+  .sort((a, b) => {
+    const aSame = a.category === item.category;
+    const bSame = b.category === item.category;
+    if (aSame !== bSame) return aSame ? -1 : 1;
+    return a.date < b.date ? 1 : a.date > b.date ? -1 : 0;
+  })
   .slice(0, 3)
   .map((other) => ({
     href: `${newsBase}${other.slug}/`,
@@ -136,7 +146,9 @@ const relatedItems = (item.related ?? []).map((card) => ({
 <article class="container news-article">
   <header class="news-article-header">
     <p class="news-article-meta">
-      {item.category && <span class="news-article-category">{item.category}</span>}
+      {item.category && (categoryHref
+        ? <a class="news-article-category" href={categoryHref}>{item.category}</a>
+        : <span class="news-article-category">{item.category}</span>)}
       <time datetime={item.date}>{formatDate(item.date, locale)}</time>
       {minutes > 0 && <span class="news-article-reading">{L.minRead(minutes)}</span>}
     </p>
@@ -256,6 +268,11 @@ const relatedItems = (item.related ?? []).map((card) => ({
   .news-article-header { max-width: none; }
   .news-article-meta { display: flex; align-items: center; gap: var(--space-2); margin: 0 0 var(--space-1); font-size: var(--step--1); color: var(--ink-faint); }
   .news-article-category { font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent, #1F5C4E); }
+  /* A word in a line of text rather than a card, so it underlines on hover
+     and on focus — see EventArticle. */
+  a.news-article-category { text-decoration: none; }
+  a.news-article-category:hover,
+  a.news-article-category:focus-visible { text-decoration: underline; }
   .news-article-header h1 { margin: 0; }
   .news-article-reading { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
 

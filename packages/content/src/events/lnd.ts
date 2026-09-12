@@ -4,7 +4,7 @@ export const items: EventItem[] = [
   {
     slug: "lambeth-fringe-2026",
     createdAt: "2026-08-30T11:52:01+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-09-12T20:15:40+04:00",
     site: "lnd",
     image: "/covers/lambeth-fringe-2026.jpg",
     imageAlt: "A cluster of small pale blue paper doorways of different heights on a deep navy ground, one lit chalk white",
@@ -13,7 +13,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Lambeth Fringe 2026",
     summary:
-      "Five weeks of theatre, comedy, cabaret and music in pubs, chapels and small theatres across the borough, from 24 September to 25 October.",
+      "Five weeks of theatre, comedy, cabaret and music in the pubs, chapels and small theatres of one south London borough, from 24 September to 25 October.",
     start: "2026-09-24",
     end: "2026-10-25",
     utcOffset: "+01:00",
@@ -44,7 +44,7 @@ export const items: EventItem[] = [
   {
     slug: "giant-summer-flea-olympic-park",
     createdAt: "2026-08-30T11:52:01+04:00",
-    updatedAt: "2026-09-03T07:30:21+04:00",
+    updatedAt: "2026-09-12T20:15:40+04:00",
     featured: 1,
     site: "lnd",
     image: "/covers/giant-summer-flea-olympic-park.jpg",
@@ -54,7 +54,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "The Giant Summer Flea",
     summary:
-      "A one-day flea market at Queen Elizabeth Olympic Park, Sunday 6 September 2026.",
+      "A one-day flea market at Queen Elizabeth Olympic Park in east London, Sunday 6 September 2026.",
     start: "2026-09-06",
     city: "London",
     venue: "Queen Elizabeth Olympic Park, E20",
@@ -73,7 +73,7 @@ export const items: EventItem[] = [
   {
     slug: "the-big-brine-hackney-bridge",
     createdAt: "2026-08-30T11:52:01+04:00",
-    updatedAt: "2026-09-02T07:22:25+04:00",
+    updatedAt: "2026-09-12T20:15:40+04:00",
     site: "lnd",
     image: "/covers/the-big-brine-hackney-bridge.jpg",
     imageAlt: "Rows of paper preserving jars on shelves with cut citrus discs",
@@ -82,7 +82,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "The Big Brine",
     summary:
-      "Two days at Hackney Bridge given over to everything fermented, pickled and brined, with chef demos and live music. 12–13 September 2026.",
+      "Two days at Hackney Bridge in east London given over to everything fermented, pickled and brined, with chef demos and live music. 12–13 September 2026.",
     start: "2026-09-12",
     end: "2026-09-13",
     city: "London",
@@ -147,7 +147,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-hampton-court-palace-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-09-08T22:51:25+04:00",
+    updatedAt: "2026-09-12T20:15:40+04:00",
     site: "lnd",
     image: "/covers/halloween-hampton-court-palace-2026.jpg",
     imageAlt: "A dark blue crenellated roofline with three towers of different heights rising from it, the tallest carrying a small red flag",
@@ -156,7 +156,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Halloween at Hampton Court Palace 2026",
     summary:
-      "Henry VIII's haunted palace does half term from 24 October to 1 November, included with admission — Richmond upon Thames' largest Halloween by some distance.",
+      "Henry VIII's haunted palace does half term from 24 October to 1 November, included with admission — the largest Halloween in the London borough of Richmond upon Thames by some distance.",
     start: "2026-10-24",
     end: "2026-11-01",
     utcOffset: "+00:00",
@@ -200,7 +200,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-eltham-palace-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-09-08T22:51:25+04:00",
+    updatedAt: "2026-09-12T20:15:40+04:00",
     site: "lnd",
     image: "/covers/halloween-eltham-palace-2026.jpg",
     imageAlt: "A large circular window divided into panes, lit pale, above a stepped pale block on a deep blue ground",
@@ -209,7 +209,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Halloween half-term at Eltham Palace 2026",
     summary:
-      "The Great Pumpkin Party runs 24 October to 1 November, 10am to 4pm, at Greenwich's art deco palace — storytelling, a themed trail and a fancy dress contest every day.",
+      "The Great Pumpkin Party runs 24 October to 1 November, 10am to 4pm, at the art deco palace in south-east London — storytelling, a themed trail and a fancy dress contest every day.",
     start: "2026-10-24",
     end: "2026-11-01",
     startTime: "10:00",
@@ -255,7 +255,7 @@ export const items: EventItem[] = [
   {
     slug: "day-of-the-dead-horniman-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-09-12T17:35:10+04:00",
+    updatedAt: "2026-09-12T20:15:40+04:00",
     site: "lnd",
     image: "/covers/day-of-the-dead-horniman-2026.jpg",
     imageAlt: "Two strings of pale bunting crossing a deep blue ground, with layered paper flowers gathered at the left end",
@@ -264,7 +264,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Day of the Dead at the Horniman 2026",
     summary:
-      "Aztec dancers open Forest Hill's Day of the Dead on Saturday 31 October, 11am to 4pm, with mariachi, a community ofrenda and a MexiBrit market — and an adults' fiesta at 7pm.",
+      "Aztec dancers open the Horniman's Day of the Dead in south-east London on Saturday 31 October, 11am to 4pm, with mariachi, a community ofrenda and a MexiBrit market — and an adults' fiesta at 7pm.",
     start: "2026-10-31",
     startTime: "11:00",
     endTime: "16:00",
@@ -319,7 +319,7 @@ export const items: EventItem[] = [
   {
     slug: "dark-arts-warner-bros-studio-tour-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-09-08T22:51:25+04:00",
+    updatedAt: "2026-09-12T20:15:40+04:00",
     site: "lnd",
     image: "/covers/dark-arts-warner-bros-studio-tour-2026.jpg",
     imageAlt: "Dozens of pale pumpkins hanging on threads at different heights over an empty hall floor, on a deep blue ground",
@@ -328,7 +328,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Dark Arts at Warner Bros. Studio Tour London 2026",
     summary:
-      "The studio tour's Halloween season runs 16 September to 8 November, with more than a hundred floating pumpkins over the Great Hall. It is included in the standard ticket, and the ticket must be booked in advance.",
+      "The studio tour's Halloween season runs 16 September to 8 November, with more than a hundred floating pumpkins over the Great Hall — an hour out of London, included in the standard ticket, and the ticket must be booked in advance.",
     start: "2026-09-16",
     end: "2026-11-08",
     utcOffset: "+01:00",
@@ -377,5 +377,130 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Two things follow from the length of the season. The first is that the last week of October is the worst time to go and the whole of late September is the best: the feature is identical, and the difference is how many people are standing between you and the Great Hall. The second is the booking — a studio tour ticket is timed and sold in advance, so the usual Halloween habit of deciding on the Saturday morning does not work here at all. And it is worth being clear-eyed about what the day is: this is the standard three-hour tour with a season laid over it, so anyone who has already done the tour is paying for the overlay, not for a new visit.",
+  },
+  {
+    slug: "super-natural-wwt-london-2026",
+    createdAt: "2026-09-12T20:16:15+04:00",
+    updatedAt: "2026-09-12T20:16:15+04:00",
+    site: "lnd",
+    title: "SUPER Natural at WWT London 2026",
+    summary:
+      "The Wetland Centre at Barnes, in south-west London, answers Halloween with willow wands, a marshland potion and a fungi hunt from 24 October to 1 November — scare-free, and included with admission.",
+    start: "2026-10-24",
+    end: "2026-11-01",
+    utcOffset: "+00:00",
+    venue: "WWT London Wetland Centre",
+    city: "London",
+    country: "United Kingdom",
+    geo: {
+      name: "WWT London Wetland Centre",
+      lat: 51.478899,
+      lng: -0.231822,
+    },
+    organizer: "WWT",
+    category: "Halloween",
+    ticket: {
+      url: "https://wwt.digitickets.co.uk/event-tickets/28293/?catID=27780&branches.branchID=332",
+      label: "Book online",
+    },
+    source: {
+      name: "WWT",
+      url: "https://www.wwt.org.uk/wetland-centres/london/whats-on/events/super-natural-october-half-term-2026",
+      verifiedOn: "2026-09-12",
+    },
+    body: [
+      "Forty acres of reedbed and lagoon between Barnes and the river, and the one week of the year when a wetland is asked to be frightening. WWT has declined: the centre calls its half term SUPER Natural and says, in as many words, that there are no jump scares in it.",
+      "## The details",
+      "<strong>24 October to 1 November 2026</strong> at the <strong>WWT London Wetland Centre</strong>, Queen Elizabeth's Walk, in the London Borough of Richmond upon Thames. Every SUPER Natural activity is <strong>included with standard entry</strong>, entry is free for WWT members, and booking online saves ten per cent.",
+      "## What it is",
+      "A week of wetland folklore rather than a haunting: a handmade willow wand, a marshland potion mixed and wished over, a self-led hunt for spotted tops and giant domes among the fungi, and a fairy mushroom ring the visitors build between them. Children collect a SUPER Natural log book at the start and work through it. WWT lists three things as extras on top — carving a pumpkin to give to the otters, modelling a wetland creature in clay, and a cryptid hunt that goes looking for mermaids and settles for the real powers of the wildlife.",
+      "## Who it suits",
+      "The centre says it is aimed at younger children and designed to be scare-free, which is a narrower promise than most half-term listings make and the reason to read it. Costumes are welcome. The paths are step-free, and there are indoor activities as well as outdoor ones, so the weather decides less here than it looks like it should.",
+      "## Getting there",
+      "Barnes station is ten to fifteen minutes on foot, and the 283 runs to the gate.",
+    ],
+    faq: [
+      {
+        q: "When is SUPER Natural at WWT London in 2026?",
+        a: "24 October to 1 November 2026 — one week, over the October half term.",
+      },
+      {
+        q: "Is it scary?",
+        a: "No. WWT says the week is about wonder and discovery in nature and that there are no jump scares.",
+      },
+      {
+        q: "Does it cost extra on top of admission?",
+        a: "No. WWT says all SUPER Natural activities are included with standard entry, and that members go free. Pumpkin carving, clay modelling and the cryptid hunt are listed as additional extras.",
+      },
+      {
+        q: "Which borough is the London Wetland Centre in?",
+        a: "The London Borough of Richmond upon Thames, at Barnes, on a bend of the Thames.",
+      },
+    ],
+    expertise:
+      "One would go in the morning, and one would go on a weekday. The wildlife is the point of the place and it is at its most obliging early; by two in the afternoon in half term the wand-weaving table has a queue and the hides have small children in them, which the birds notice before you do. Wellingtons rather than trainers — the paths are made up but the interesting parts are the edges. And it is worth saying plainly that the promise of no scares is the selling point here: a four-year-old who was upset by a scare zone somewhere else in this list will be perfectly happy in Barnes.",
+  },
+  {
+    slug: "howl-o-ween-chessington-2026",
+    createdAt: "2026-09-12T20:16:15+04:00",
+    updatedAt: "2026-09-12T20:16:15+04:00",
+    site: "lnd",
+    title: "Howl'o'ween at Chessington 2026",
+    summary:
+      "A theme park Halloween inside the London boundary: selected dates from 3 October to 1 November in Kingston upon Thames, with new shows, a vampire's lair and rides at dusk, from £34 online.",
+    start: "2026-10-03",
+    end: "2026-11-01",
+    utcOffset: "+00:00",
+    venue: "Chessington World of Adventures Resort",
+    city: "London",
+    country: "United Kingdom",
+    geo: {
+      name: "Chessington World of Adventures Resort",
+      lat: 51.349515,
+      lng: -0.317273,
+    },
+    organizer: "Chessington World of Adventures Resort",
+    category: "Halloween",
+    ticket: {
+      url: "https://www.chessington.com/tickets-passes/day-tickets/",
+      label: "Day tickets",
+    },
+    tickets: { priceFrom: 34, currency: "GBP" },
+    source: {
+      name: "Chessington World of Adventures Resort",
+      url: "https://www.chessington.com/explore/events/halloween/",
+      verifiedOn: "2026-09-12",
+    },
+    body: [
+      "Everything else on this list is a palace, a garden or a museum doing Halloween for a week. This is a theme park doing it for a month, and it is in a London borough — the KT postcode misleads, but Chessington sits inside Kingston upon Thames.",
+      "## The details",
+      "<strong>Selected dates from 3 October to 1 November 2026</strong>: the weekends of <strong>3–4</strong> and <strong>10–11 October</strong>, then <strong>every day from 17 October to 1 November</strong>. <strong>Day tickets from £34</strong> booked online against <strong>£66</strong> at the gate, which is the largest gap between advance and walk-up on this site. Under 90cm goes free. One ticket covers the theme park, the zoo, the SEA LIFE aquarium and the Howl'o'ween programme.",
+      "## What is in it",
+      "Four shows and a scare zone, as the resort lists them. Dr Frankenfun's Haunted House Party and Barnyard Boogie are the pitched-at-children end; Rising Flame: Shadows of the Tomb is the set-piece, with fire and a summoned mummy; Stone Watchers: Vampire's Lair is the scare zone, where the gargoyles wake if you are heard. Rides run at dusk, which is the part regular visitors come back for — Mandrill Mayhem, Vampire and Room on the Broom in the dark are a different ride from the same ride in July.",
+      "## One thing to watch",
+      "Enchanted Hollow: Trick or Treat, the underground trick-or-treat village, is an <strong>optional extra</strong> rather than part of the ticket, and at the time of writing the resort says its tickets are still to come. Anyone buying a day ticket on the strength of that particular attraction should check it is on sale for their date first.",
+      "## Getting there",
+      "Chessington South is a ten-minute walk from the gate and runs twice an hour from Waterloo; the resort is off the A243 at Malden Rushett, and parking is charged separately.",
+    ],
+    faq: [
+      {
+        q: "When is Howl'o'ween at Chessington in 2026?",
+        a: "Selected dates from 3 October to 1 November 2026: the weekends of 3–4 and 10–11 October, then every day from 17 October to 1 November.",
+      },
+      {
+        q: "How much is a ticket?",
+        a: "The resort lists day tickets from £34 online and £66 as the walk-up price. Under 90cm goes free, and the ticket includes the theme park, the zoo, SEA LIFE and the Howl'o'ween programme.",
+      },
+      {
+        q: "Is Chessington in London?",
+        a: "Yes — the resort is in the Royal Borough of Kingston upon Thames, at the far south-western edge of Greater London.",
+      },
+      {
+        q: "Is Enchanted Hollow included?",
+        a: "No. The resort lists Enchanted Hollow: Trick or Treat as an optional extra bought alongside a Howl'o'ween ticket or an annual pass, and says tickets will be available later.",
+      },
+    ],
+    expertise:
+      "The two October weekends are the ones to take if you can. From 17 October the park is open every day and every day is half term, and a theme park at capacity spends its afternoon in queues no seasonal show improves. Book the first entry slot, do the rides that matter before eleven, and keep the shows for the afternoon when standing still is welcome. And the £32 between the online price and the gate price is the plainest saving anywhere on this site: nobody should be paying £66 at a window in October.",
   },
 ];
