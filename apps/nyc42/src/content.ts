@@ -25,11 +25,18 @@ export const news = {
   lede: `Not a wire feed. A few things a week that are worth knowing about and that we could check.`,
 };
 
+// The intent phrase, not the filing word. "Events" is what this page is
+// called in the menu and in its address, and it is a navigation label:
+// on its own nobody types it. What gets typed is "things to do in
+// New York" — so the title carries that and the description keeps the
+// word "event", which is where it still earns its place. There is no
+// separate /things-to-do/ page for the same reason /london/ does not
+// exist: it would be this page at a second address.
 export const events = {
-  title: "New York events, by date",
-  description: "Dates we have confirmed against the organiser. An event with no confirmed date is not listed until it has one.",
-  h1: "New York, by date",
-  lede: `Dates we have confirmed against the organiser. An event with no confirmed date is not listed until it has one.`,
+  title: "Things to do in New York, by date",
+  description: "Things to do in New York, by date: every event here has its date confirmed with the organizer, and one with no confirmed date is not listed until it has one.",
+  h1: "Things to do in New York, by date",
+  lede: `Dates we have confirmed with the organizer. An event with no confirmed date is not listed until it has one.`,
 };
 
 export const about = {

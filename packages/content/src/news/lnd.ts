@@ -499,6 +499,11 @@ export const items: NewsItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "An eclipse read through seven graves in Bow",
+    // Two characters over the 60-character title budget once the site
+    // suffix is appended, and the suffix is the half that carries the
+    // keyword. "Read through" is the phrase that goes: the headline still
+    // says what the piece does.
+    titleSeo: "An eclipse through seven graves in Bow",
     summary:
       "The Friends of Tower Hamlets Cemetery Park in east London built a walk around the 12 August eclipse, using tree canopies as pinhole projectors and seven 19th-century graves as the route.",
     date: "2026-08-12",
