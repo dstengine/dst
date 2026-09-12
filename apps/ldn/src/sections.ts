@@ -13,6 +13,7 @@ import type { FeedItem } from "@dst/content/sections";
 import { eventsBySite } from "@dst/content/events";
 import { newsBySite } from "@dst/content/news";
 import { siteId } from "./content";
+import { site } from "./site.config";
 
 const RESERVED = ["about", "events", "news", "go", "li"];
 
@@ -135,4 +136,4 @@ export const allSections = sections([...eventsBySite(siteId), ...newsBySite(site
 // promotion is safe to wire into a layout. See `promotedSection`.
 const PROMOTED = 'Halloween';
 
-export const promoted = promotedSection(allSections, PROMOTED, new Date().toISOString().slice(0, 10));
+export const promoted = promotedSection(allSections, PROMOTED, new Date().toISOString().slice(0, 10), site.keyword);

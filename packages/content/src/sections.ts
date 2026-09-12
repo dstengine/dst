@@ -249,15 +249,30 @@ export function sectionHrefFor<T extends FeedItem>(
  *     section with nothing but past dates under it is a page we would be
  *     sending every reader of every page to, to read about last month.
  */
+/** A promoted section, plus the two words a heading needs beyond its label.
+ *
+ *  `where` is the site's head keyword and `year` is the year of the next
+ *  date still to come under the tag. Together they turn "Halloween" into
+ *  "Halloween in London 2026" — which is the phrase people actually type,
+ *  where "More events" is a phrase nobody types. The year is read off the
+ *  data rather than written down, so nothing here needs changing in
+ *  January; the section stops existing before the year would be wrong. */
+export type Promoted<T extends FeedItem> = Section<T> & { where: string; year: string };
+
 export function promotedSection<T extends FeedItem>(
   all: Section<T>[],
   key: string | undefined,
   today: string,
-): Section<T> | undefined {
+  where: string,
+): Promoted<T> | undefined {
   if (!key) return undefined;
   const found = all.find((s) => s.kind === "tag" && s.key === key);
   if (!found) return undefined;
-  return found.items.some((i) => "start" in i && isOn(i, today)) ? found : undefined;
+  const ahead = found.items
+    .filter((i): i is T & { start: string } => "start" in i && isOn(i, today))
+    .sort((a, b) => (a.start < b.start ? -1 : 1));
+  if (ahead.length === 0) return undefined;
+  return { ...found, where, year: ahead[0].start.slice(0, 4) };
 }
 
 export function buildSections<T extends FeedItem, V extends Vocabulary = Vocabulary>(

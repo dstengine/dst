@@ -77,7 +77,12 @@ export interface ArticleLabels {
       three Halloween cards in October names the filing rather than the
       reason the reader is here. See `promotedSection` in
       \@dst/content/sections. */
-  moreTagged: (what: string) => string;
+  // The heading over a block of events that all carry the promoted tag.
+  // Not "More Halloween events" but "Halloween in London 2026": a heading
+  // is read by someone who arrived from a search box, and those are the
+  // words they put in it. `where` is the site's head keyword, `year` comes
+  // off the next date under the tag.
+  moreTagged: (what: string, where: string, year: string) => string;
   moreNews: string;
   latestNews: string;
   comingUp: string;
@@ -157,7 +162,7 @@ export const EN: ArticleLabels = {
   categoryTitle: (what) => `Everything on this site filed under ${what.toLowerCase()}`,
   related: "Related",
   moreEvents: "More events",
-  moreTagged: (what) => `More ${what} events`,
+  moreTagged: (what, where, year) => `${what} in ${where} ${year}`,
   moreNews: "More news",
   latestNews: "Latest news",
   comingUp: "Coming up",
@@ -234,7 +239,7 @@ export const ES: Partial<ArticleLabels> = {
   categoryTitle: (what) => `Todo lo que hay en este sitio bajo ${what.toLowerCase()}`,
   related: "Relacionado",
   moreEvents: "Más eventos",
-  moreTagged: (what) => `Más eventos de ${what}`,
+  moreTagged: (what, where, year) => `${what} en ${where} ${year}`,
   moreNews: "Más noticias",
   latestNews: "Últimas noticias",
   comingUp: "Próximamente",
@@ -302,7 +307,7 @@ export const DE: Partial<ArticleLabels> = {
   categoryTitle: (what) => `Alles auf dieser Seite unter ${what}`,
   related: "Passend dazu",
   moreEvents: "Weitere Termine",
-  moreTagged: (what) => `Mehr ${what}-Termine`,
+  moreTagged: (what, where, year) => `${what} in ${where} ${year}`,
   moreNews: "Weitere Nachrichten",
   latestNews: "Neueste Nachrichten",
   comingUp: "Demnächst",

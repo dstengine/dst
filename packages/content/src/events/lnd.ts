@@ -513,4 +513,82 @@ export const items: EventItem[] = [
     expertise:
       "The two October weekends are the ones to take if you can. From 17 October the park is open every day and every day is half term, and a theme park at capacity spends its afternoon in queues no seasonal show improves. Book the first entry slot, do the rides that matter before eleven, and keep the shows for the afternoon when standing still is welcome. And the £32 between the online price and the gate price is the plainest saving anywhere on this site: nobody should be paying £66 at a window in October.",
   },
+  {
+    slug: "hobbledown-heath-pumpkin-patch-2026",
+    createdAt: "2026-09-12T21:08:49+04:00",
+    updatedAt: "2026-09-12T21:08:49+04:00",
+    image: "/covers/hobbledown-heath-pumpkin-patch-2026.jpg",
+    imageAlt: "Five cut-paper pumpkins in a row on a band of green meadow grass, a bare pale tree and a winding pale blue stream to the right, against a deep navy sky",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Hobbledown Heath Pumpkin Patch 2026",
+    summary:
+      "The longest Halloween run in any London borough this year: a pumpkin patch beside the River Crane in Hounslow, open from 25 September to 1 November, from £7.50 with the pumpkin charged separately.",
+    start: "2026-09-25",
+    end: "2026-11-01",
+    utcOffset: "+01:00",
+    site: "lnd",
+    venue: "Hobbledown Heath",
+    city: "London",
+    country: "United Kingdom",
+    geo: {
+      name: "Hobbledown Heath",
+      lat: 51.458742,
+      lng: -0.39667,
+    },
+    organizer: "Hobbledown Heath",
+    category: "Halloween",
+    ticket: {
+      url: "https://www.hobbledown.com/hounslow/whats-on/hobbledown-heath-pumpkin-patch/",
+      label: "Dates and tickets",
+    },
+    tickets: { priceFrom: 7.5, currency: "GBP" },
+    source: {
+      name: "Hobbledown Heath",
+      url: "https://www.hobbledown.com/hounslow/whats-on/hobbledown-heath-pumpkin-patch/",
+      verifiedOn: "2026-09-12",
+    },
+    body: [
+      "Thirty-eight days, which is longer than every palace and every theme park on this site. The patch at Hobbledown Heath opens on <strong>25 September</strong> and closes on <strong>1 November 2026</strong>, and the thing a family is buying is a meadow beside the River Crane in the London Borough of Hounslow — a five-minute woodland walk from the main entrance and car park.",
+      "## What the ticket is",
+      "A Pumpkin Days ticket covers entry to the patch, seasonal games, themed photo points, marshmallow toasting and live entertainment. It is <strong>priced by date</strong>: £7.50 on quieter dates, £8.50 on busier ones and <strong>£9.50 across peak half term</strong>, with ages one and two from £3.75 and under-ones free. Every booking carries a <strong>£2.75 booking fee</strong>.",
+      "## The two things it does not cover",
+      "The pumpkin. Hobbledown states it plainly in its own FAQ — <strong>pumpkins are charged separately to entry</strong> — and so are the fairground rides. So does the adventure park next door: a Pumpkin Days ticket does not get you into Hobbledown Heath itself, and the <strong>Patch + Park ticket from £20</strong> is the resort's own answer to that, covering the patch, The Great Barn indoor playbarn, the animals and the outdoor adventure villages. Annual passholders are in the same position: the patch is a separate chargeable event, booked through the passholder portal.",
+      "## Pumpkin Nights",
+      "The evening version runs <strong>6pm to 8pm</strong> on eleven October dates — the <strong>16th, 17th and 18th, then the 23rd to the 30th</strong> — with lanterns, live acts and the patch after dark, from £12 a head and from £4.75 for ages one and two. Note what that list leaves out: <strong>on 31 October the patch is open during the day only</strong>, so a family planning Halloween night here should plan Halloween afternoon instead.",
+      "## Three dates for dogs",
+      "<strong>Friday 2 October, Friday 9 October and Thursday 15 October</strong>, daytime sessions only, <strong>£2.50 per dog</strong>. Dogs are not admitted to the adventure park, which means those three dates are the patch on its own — and all three fall before half term, when the meadow is at its emptiest anyway.",
+      "## Getting there",
+      "Staines Road, Hounslow, TW4 5DS. There is a car park at the main Hobbledown Heath site, managed by a third party, and parking is charged on top of everything else. The site is open ground and the ticket is timed, so a pram or pushchair is no obstacle.",
+    ],
+    faq: [
+      {
+        q: "When is the Hobbledown Heath Pumpkin Patch open in 2026?",
+        a: "From 25 September to 1 November 2026. Pumpkin Days run in the daytime on selected dates; Pumpkin Nights run 6pm to 8pm on eleven October dates — the 16th, 17th and 18th, then the 23rd to the 30th. On 31 October the patch is open during the day only.",
+      },
+      {
+        q: "How much does it cost?",
+        a: "Pumpkin Days are priced by date: £7.50 on quieter dates, £8.50 on busier ones and £9.50 across peak half term. Ages one and two are from £3.75 and under-ones go free. Pumpkin Nights are from £12, and a Patch + Park ticket covering the adventure park as well is from £20. Every booking carries a £2.75 fee.",
+      },
+      {
+        q: "Is a pumpkin included in the ticket?",
+        a: "No. Hobbledown states that pumpkins are charged separately to entry, and so are the fairground rides.",
+      },
+      {
+        q: "Does the ticket include the adventure park?",
+        a: "Not the Pumpkin Days or Pumpkin Nights ticket. The Patch + Park ticket, from £20, adds The Great Barn indoor playbarn, the animals and the outdoor adventure villages.",
+      },
+      {
+        q: "Can I bring my dog?",
+        a: "On three dog-friendly dates only — Friday 2 October, Friday 9 October and Thursday 15 October — at £2.50 per dog, daytime sessions only. Dogs are not permitted in the adventure park.",
+      },
+      {
+        q: "Which borough is Hobbledown Heath in?",
+        a: "The London Borough of Hounslow, on Staines Road in west London, TW4 5DS.",
+      },
+    ],
+    expertise:
+      "The arithmetic is worth doing before booking. A family of four on a peak half-term date is £38 plus the booking fee plus the parking plus a pumpkin each, and none of that buys the adventure park — whereas the same four on a quiet Tuesday in late September, with the Patch + Park ticket, get the whole site for a day. September is also when the meadow looks like a meadow rather than a queue. One would take the last week of September or the first of October, take the bundle, and treat the pumpkin as the souvenir it is rather than the thing one came for.",
+  },
 ];

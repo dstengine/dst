@@ -35,7 +35,7 @@ interface Props {
   /** The site's promoted tag, when it has a date still to come. Applies to
       the events fallback below, which is the only tail here that lists
       events — see `promotedSection` in \@dst/content/sections. */
-  promoted?: { key: string; label: string };
+  promoted?: { key: string; label: string; where: string; year: string };
   /** Where this site keeps its feed. Defaults to the English paths every
       DST host uses; a site publishing in another language passes its own
       ("/noticias/", "/eventos/") so its URLs are in the language of the
@@ -121,7 +121,7 @@ const tail = moreCards.length > 0
   ? { heading: L.moreNews, cards: moreCards }
   : tailEvents.length > 0
     ? {
-        heading: promotedLeads && promoted ? L.moreTagged(promoted.label) : L.comingUp,
+        heading: promotedLeads && promoted ? L.moreTagged(promoted.label, promoted.where, promoted.year) : L.comingUp,
         cards: tailEvents,
       }
     : null;

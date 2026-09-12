@@ -66,7 +66,7 @@ interface Props {
       it stands in the data and the label to head the tail with. The block
       leads with it and takes its words — see `promotedSection` in
       \@dst/content/sections. */
-  promoted?: { key: string; label: string };
+  promoted?: { key: string; label: string; where: string; year: string };
 }
 const { item, backHref, ticketHref, sourceHref, more = [], moreNews = [], newsBase = "/news/", eventsBase = "/events/", publisher, categoryHref, promoted, locale = "en-US", labels: labelOverrides } = Astro.props;
 const L = withLabels(labelOverrides);
@@ -143,7 +143,7 @@ const newsCards = moreNews
 // reached.
 const tail = tailCards.length > 0
   ? {
-      heading: promotedLeads && promoted ? L.moreTagged(promoted.label) : L.moreEvents,
+      heading: promotedLeads && promoted ? L.moreTagged(promoted.label, promoted.where, promoted.year) : L.moreEvents,
       cards: tailCards,
     }
   : newsCards.length > 0
