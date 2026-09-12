@@ -451,7 +451,12 @@ const daysSince = (iso: string): number =>
 
 export const priceIsFresh = (price: Price): boolean => {
   const age = daysSince(price.checkedOn);
-  return age >= 0 && age <= PRICE_STALE_DAYS;
+  // A day ahead is allowed, and only a day. today() is the build machine's
+  // UTC date, and a price read in Dubai on the 13th is dated the 13th while
+  // UTC is still on the 12th — dropping it would hide the freshest number on
+  // the site for the few hours until midnight. Anything further ahead is not
+  // a timezone, it is a typo, and it stays dropped.
+  return age >= -1 && age <= PRICE_STALE_DAYS;
 };
 
 /** "2 September 2026". A price is a claim with a date on it, and an ISO

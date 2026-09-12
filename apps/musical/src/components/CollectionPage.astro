@@ -31,11 +31,18 @@ const { collection } = Astro.props;
 const runs = runsInCollection(collection);
 const venues = (collection.venues ?? []).map(venueBySlug).filter((v) => v !== undefined);
 
-// The cheapest advertised seat across the page, and only when the prices
-// behind it are still fresh — priceFrom drops a stale one, and a collection
-// whose quotes have all aged out prints no number rather than an old one.
+// The cheapest advertised seat across the page — when there is one to name.
+// priceFrom drops a quote that has gone stale, so a collection whose numbers
+// have all aged out prints none rather than an old one. And the fact only
+// appears while every quote is in the same money: this site does not convert
+// currencies, so it must not compare across them either, and a season that
+// runs from Broadway to the Haymarket would otherwise announce £25 as
+// cheaper than $55 on the strength of the digits.
 const quotes = runs.map(priceFrom).filter((q) => q !== undefined);
-const cheapest = quotes.sort((a, b) => a.price.from - b.price.from)[0];
+const oneCurrency = new Set(quotes.map((q) => q.price.currency)).size === 1;
+const cheapest = oneCurrency
+  ? [...quotes].sort((a, b) => a.price.from - b.price.from)[0]
+  : undefined;
 
 const glance = [
   { label: "Musicals", value: runs.length === 1 ? "One" : spell(runs.length), icon: ICONS.events },
@@ -52,6 +59,12 @@ const glance = [
 // spread over two countries means it does not.
 const cities = [...new Set(runs.map((r) => r.city))];
 const onePlace = cities.length === 1 ? cityBySlug(cities[0]!)?.name : undefined;
+
+// The card's picture is the city's, so it earns its place only where no two
+// cards would share one. Broadway is three theatres in one city: the same
+// skyline three times reads as three pictures of three different things and
+// is none of them. The stage mark takes the slot instead.
+const distinctPlaces = cities.length === runs.length;
 ---
 <Layout title={collection.title} description={collection.description}>
   <div class="container crumbs">
@@ -70,7 +83,7 @@ const onePlace = cities.length === 1 ? cityBySlug(cities[0]!)?.name : undefined;
   {runs.length > 0 && (
     <section class="container">
       <h2>{onePlace ? `${collection.name} musicals on sale in ${onePlace}` : `${collection.name} musicals on sale`}</h2>
-      <EventCards runs={runs} lead="event" />
+      <EventCards runs={runs} lead="event" photo={distinctPlaces} />
     </section>
   )}
 
