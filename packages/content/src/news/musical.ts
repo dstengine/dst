@@ -8,6 +8,8 @@ import type { NewsItem } from "../types.ts";
 export const items: NewsItem[] = [
   {
     slug: "broadway-has-four-new-musicals-this-autumn",
+    createdAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-09-08T00:12:45+04:00",
     site: "musical",
     image: "/covers/broadway-has-four-new-musicals-this-autumn.jpg",
     imageAlt: "Four crimson paper rectangles of different heights standing in a row on a cream ground, a thin burgundy band beneath them",
@@ -43,6 +45,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "chicago-takes-an-arena-stage-in-dubai",
+    createdAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-09-08T00:12:45+04:00",
     site: "musical",
     image: "/covers/chicago-takes-an-arena-stage-in-dubai.jpg",
     imageAlt: "A wide dark paper arena bowl with a narrow lit rectangle of pale paper at its centre, five small chevrons above it",
@@ -78,6 +82,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "rent-turns-thirty-in-a-renamed-theatre",
+    createdAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "musical",
     image: "/covers/rent-turns-thirty-in-a-renamed-theatre.jpg",
     imageAlt: "A pale paper theatre facade on a dark ground, the nameplate above its doors left blank and slightly askew",

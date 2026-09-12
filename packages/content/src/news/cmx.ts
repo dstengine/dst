@@ -4,6 +4,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "la-marca-de-agua-de-claude-no-esta-en-las-palabras",
+    createdAt: "2026-08-30T11:52:01+04:00",
+    updatedAt: "2026-09-08T11:57:44+04:00",
     site: "cmx",
     image: "/covers/la-marca-de-agua-de-claude-no-esta-en-las-palabras.jpg",
     imageAlt: "Una hilera de fichas de papel del mismo tamaño y color sobre fondo crema, con separaciones desiguales entre ellas",
@@ -41,6 +43,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "festival-del-pan-dulce-en-el-monumento-a-la-revolucion",
+    createdAt: "2026-09-08T00:12:45+04:00",
+    updatedAt: "2026-09-08T11:57:44+04:00",
     site: "cmx",
     image: "/covers/festival-del-pan-dulce-en-el-monumento-a-la-revolucion.jpg",
     imageAlt: "Círculos de papel magenta y ciruela de distintos tamaños sobre fondo crema, uno de ellos con surcos concéntricos recortados",
@@ -76,6 +80,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "el-grito-de-miguel-hidalgo-con-paty-cantu",
+    createdAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-09-08T00:12:45+04:00",
     site: "cmx",
     image: "/covers/el-grito-de-miguel-hidalgo-con-paty-cantu.jpg",
     imageAlt: "Tres franjas de papel verticales en verde, blanco y rojo apagados, con tres pequeños círculos de papel alineados a distinta altura",
@@ -113,6 +119,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "saturno-tiene-ahora-un-decagono",
+    createdAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "cmx",
     image: "/covers/saturno-tiene-ahora-un-decagono.jpg",
     imageAlt: "Un decágono de papel naranja sobre fondo oscuro, con un hexágono más pequeño de papel claro en la esquina opuesta",
@@ -148,6 +156,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "el-metro-cumple-57-y-lo-festeja-con-cumbia",
+    createdAt: "2026-09-03T07:30:21+04:00",
+    updatedAt: "2026-09-07T13:32:58+04:00",
     site: "cmx",
     image: "/covers/el-metro-cumple-57-y-lo-festeja-con-cumbia.jpg",
     imageAlt: "Un círculo de papel naranja con una franja diagonal, rodeado de pequeñas figuras de papel en semicírculo",
@@ -183,6 +193,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "apple-cambia-de-director-general",
+    createdAt: "2026-09-02T12:10:41+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "cmx",
     image: "/covers/apple-cambia-de-director-general.jpg",
     imageAlt: "Un campo de discos de papel idénticos en filas regulares, todos a la misma altura y con la misma sombra",
@@ -219,6 +231,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "venecia-2026-dos-leones-antes-del-jurado",
+    createdAt: "2026-09-01T16:34:47+04:00",
+    updatedAt: "2026-09-02T12:10:41+04:00",
     site: "cmx",
     image: "/covers/venecia-2026-dos-leones-antes-del-jurado.jpg",
     imageAlt: "Dos leones de papel dorado colocados frente a un telón, y detrás una fila de asientos vacíos",
@@ -253,6 +267,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "ecobici-15-mil-bicicletas-tres-alcaldias",
+    createdAt: "2026-09-01T15:07:36+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "cmx",
     image: "/covers/ecobici-15-mil-bicicletas-tres-alcaldias.jpg",
     imageAlt: "Tres bicicletas de papel recortado en fila, con un arco satelital sobre ellas",
@@ -292,6 +308,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "juegos-mundiales-robots-humanoides-2026",
+    createdAt: "2026-08-30T23:55:54+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     featured: 1,
     site: "cmx",
     image: "/covers/juegos-mundiales-robots-humanoides-2026.jpg",
@@ -326,6 +344,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "s301-la-estrella-mas-rapida",
+    createdAt: "2026-08-30T23:51:30+04:00",
+    updatedAt: "2026-08-31T01:24:01+04:00",
     site: "cmx",
     image: "/covers/s301-la-estrella-mas-rapida.jpg",
     imageAlt: "Una estrella diminuta que deja una estela curva de puntos al pasar junto a un círculo negro",
@@ -360,6 +380,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "museo-del-gato-reforma",
+    createdAt: "2026-08-30T23:51:30+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     featured: 2,
     site: "cmx",
     image: "/covers/museo-del-gato-reforma.jpg",
@@ -394,6 +416,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "casa-del-lago-unam-sustentable",
+    createdAt: "2026-08-30T20:37:08+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "cmx",
     image: "/covers/casa-del-lago-unam-sustentable.jpg",
     imageAlt: "Un techo de pabellón con lluvia de tiras de papel cayendo hacia una cisterna",
@@ -430,6 +454,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "metrobus-cierres-por-mantenimiento",
+    createdAt: "2026-08-30T20:37:08+04:00",
+    updatedAt: "2026-09-07T13:32:58+04:00",
     site: "cmx",
     image: "/covers/metrobus-cierres-por-mantenimiento.jpg",
     imageAlt: "Una línea de transporte con estaciones marcadas, cortada por tramos con conos y barreras",
@@ -470,6 +496,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "fin-de-semana-del-31-de-octubre",
+    createdAt: "2026-08-30T20:37:08+04:00",
+    updatedAt: "2026-09-08T19:55:16+04:00",
     site: "cmx",
     image: "/covers/fin-de-semana-del-31-de-octubre.jpg",
     imageAlt: "El cuadro partido a la mitad: flores de cempasúchil de un lado, una franja a cuadros del otro",
@@ -533,6 +561,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "plaza-de-la-conchita-jardin-polinizador",
+    createdAt: "2026-08-30T11:52:01+04:00",
+    updatedAt: "2026-09-07T13:32:58+04:00",
     site: "cmx",
     image: "/covers/plaza-de-la-conchita-jardin-polinizador.jpg",
     imageAlt: "Una plaza vista desde arriba con un área verde recortada, flores, abejas y mariposas",
@@ -571,6 +601,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "semovi-nuevo-contrato-ecobici",
+    createdAt: "2026-08-30T11:52:01+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "cmx",
     image: "/covers/semovi-nuevo-contrato-ecobici.jpg",
     imageAlt: "Una fila de bicicletas en su anclaje, en capas de papel, con un marcador de posición encima",
@@ -609,6 +641,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "betsabee-romero-homenaje-a-monsivais",
+    createdAt: "2026-08-30T11:52:01+04:00",
+    updatedAt: "2026-09-07T16:06:17+04:00",
     site: "cmx",
     image: "/covers/betsabee-romero-homenaje-a-monsivais.jpg",
     imageAlt: "Un muro de objetos enmarcados: lupas, una máscara de luchador y un televisor antiguo",

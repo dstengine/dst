@@ -3,6 +3,8 @@ import type { NewsItem } from "../types.ts";
 export const items: NewsItem[] = [
   {
     slug: "marks-and-spencer-is-doing-a-london-fashion-week-show",
+    createdAt: "2026-08-30T11:52:01+04:00",
+    updatedAt: "2026-09-08T00:12:45+04:00",
     site: "ldn",
     image: "/covers/marks-and-spencer-is-doing-a-london-fashion-week-show.jpg",
     imageAlt: "A long charcoal paper strip laid across a warm off-white ground with small red paper figures spaced along it",
@@ -38,6 +40,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "self-driving-taxis-on-uber-in-london",
+    createdAt: "2026-09-06T20:58:51+04:00",
+    updatedAt: "2026-09-08T00:12:45+04:00",
     site: "ldn",
     image: "/covers/self-driving-taxis-on-uber-in-london.jpg",
     imageAlt: "A small red car standing on a torn strip of charcoal paper laid across a warm off-white ground, three short cream dashes marking a lane down the middle of it",
@@ -76,6 +80,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "kew-costs-ten-pounds-on-a-tuesday",
+    createdAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-09-06T20:58:51+04:00",
     site: "ldn",
     image: "/covers/kew-costs-ten-pounds-on-a-tuesday.jpg",
     imageAlt: "A warm off-white ground with seven charcoal paper rectangles in a row, the second one cut down to a third of the height and printed in pillar-box red",
@@ -112,6 +118,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "saturn-grew-a-ten-sided-shape",
+    createdAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "ldn",
     image: "/covers/saturn-grew-a-ten-sided-shape.jpg",
     imageAlt: "A charcoal paper decagon on a warm off-white ground, with a smaller red hexagon of paper set apart from it",
@@ -148,6 +156,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "michael-ball-takes-the-coliseum-as-willy-wonka",
+    createdAt: "2026-09-03T07:30:21+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "ldn",
     image: "/covers/michael-ball-takes-the-coliseum-as-willy-wonka.jpg",
     imageAlt: "A tall red paper top hat on a warm off-white ground with a charcoal ticket shape tucked into its band",
@@ -183,6 +193,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "bayeux-tapestry-at-the-british-museum",
+    createdAt: "2026-09-02T13:01:24+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "ldn",
     image: "/covers/bayeux-tapestry-at-the-british-museum.jpg",
     imageAlt: "A single long narrow ribbon of undyed linen-coloured paper stretching across an empty cream ground",
@@ -220,6 +232,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "nature-and-us-opens-a-gallery-shut-since-1943",
+    createdAt: "2026-09-02T13:01:24+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "ldn",
     image: "/covers/nature-and-us-opens-a-gallery-shut-since-1943.jpg",
     imageAlt: "A tall paper archway in red, orange and deep red opening onto a pale cream interior",
@@ -256,6 +270,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "lady-in-blue-takes-the-fourth-plinth",
+    createdAt: "2026-09-02T13:01:24+04:00",
+    updatedAt: "2026-09-07T16:06:17+04:00",
     site: "ldn",
     image: "/covers/lady-in-blue-takes-the-fourth-plinth.jpg",
     imageAlt: "A small blue paper figure standing on a pale stone-coloured block above a red band",
@@ -290,6 +306,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "frieze-sculpture-in-regents-park",
+    createdAt: "2026-09-02T13:01:24+04:00",
+    updatedAt: "2026-09-07T16:06:17+04:00",
     site: "ldn",
     image: "/covers/frieze-sculpture-in-regents-park.jpg",
     imageAlt: "Upright abstract paper shapes in orange, green and charcoal standing on a band of green paper grass",
@@ -325,6 +343,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "apples-chairman-now-has-a-policy-job",
+    createdAt: "2026-09-02T12:10:41+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "ldn",
     image: "/covers/apples-chairman-now-has-a-policy-job.jpg",
     imageAlt: "Two paper columns flanking a red panel, a small folded white sheet floating between them, low steps beneath",
@@ -362,6 +382,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "venice-opens-the-autumn-with-a-british-film",
+    createdAt: "2026-09-01T16:18:19+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "ldn",
     image: "/covers/venice-opens-the-autumn-with-a-british-film.jpg",
     imageAlt: "A paper stage curtain drawn back from a blank screen, a band of lagoon water below and a small winged lion above",
@@ -399,6 +421,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "va-exhibitions-closing-dates",
+    createdAt: "2026-08-30T20:53:51+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "ldn",
     image: "/covers/va-exhibitions-closing-dates.jpg",
     imageAlt: "A row of gallery doorways receding, the nearest shutter half lowered under a clock",
@@ -439,6 +463,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "notting-hill-carnival-turns-60",
+    createdAt: "2026-08-30T11:52:01+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     featured: 2,
     site: "ldn",
     image: "/covers/notting-hill-carnival-turns-60.jpg",
@@ -478,6 +504,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "partial-lunar-eclipse-over-london",
+    createdAt: "2026-08-30T11:52:01+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "ldn",
     image: "/covers/partial-lunar-eclipse-over-london.jpg",
     imageAlt: "A dark disc hanging over a row of rooftops at night",
@@ -514,6 +542,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "ten-exhibitions-on-in-london",
+    createdAt: "2026-08-30T11:52:01+04:00",
+    updatedAt: "2026-09-07T16:06:17+04:00",
     featured: 1,
     site: "ldn",
     image: "/covers/ten-exhibitions-on-in-london.jpg",

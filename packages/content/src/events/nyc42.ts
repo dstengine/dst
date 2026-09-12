@@ -3,6 +3,8 @@ import type { EventItem } from "../types.ts";
 export const items: EventItem[] = [
   {
     slug: "snoopy-in-style-nyc",
+    createdAt: "2026-08-30T11:52:01+04:00",
+    updatedAt: "2026-09-07T09:58:34+04:00",
     site: "nyc42",
     image: "/covers/snoopy-in-style-nyc.jpg",
     imageAlt: "A cream paper dog-house silhouette on a deep brown ground with amber fabric swatches pinned in a row beside it",
@@ -43,6 +45,8 @@ export const items: EventItem[] = [
 
   {
     slug: "new-york-film-festival-2026",
+    createdAt: "2026-09-01T15:07:36+04:00",
+    updatedAt: "2026-09-07T09:58:34+04:00",
     site: "nyc42",
     image: "/covers/new-york-film-festival-2026.jpg",
     imageAlt: "A paper film strip crossing the frame, five frames in brighter tones, a projector beam at the edge",
@@ -85,6 +89,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "new-york-comic-con-2026",
+    createdAt: "2026-08-30T23:32:06+04:00",
+    updatedAt: "2026-09-07T09:58:34+04:00",
     featured: 1,
     site: "nyc42",
     image: "/covers/new-york-comic-con-2026.jpg",
@@ -131,6 +137,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "village-halloween-parade-2026",
+    createdAt: "2026-08-30T23:32:06+04:00",
+    updatedAt: "2026-09-08T22:51:25+04:00",
     featured: 3,
     site: "nyc42",
     image: "/covers/village-halloween-parade-2026.jpg",
@@ -174,6 +182,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "open-house-new-york-weekend-2026",
+    createdAt: "2026-08-30T23:32:06+04:00",
+    updatedAt: "2026-09-07T09:58:34+04:00",
     site: "nyc42",
     image: "/covers/open-house-new-york-weekend-2026.jpg",
     imageAlt: "A paper cutaway of stacked building floors with a rooftop water tower",
@@ -219,6 +229,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "broadway-week-harry-potter",
+    createdAt: "2026-08-30T23:32:06+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "nyc42",
     image: "/covers/broadway-week-harry-potter.jpg",
     imageAlt: "A paper proscenium arch with curtains and a single shaft of light",
@@ -255,6 +267,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "broadway-week-hadestown",
+    createdAt: "2026-08-31T00:01:06+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "nyc42",
     image: "/covers/broadway-week-hadestown.jpg",
     imageAlt: "A paper staircase descending into darkness",
@@ -292,6 +306,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "broadway-week-stranger-things",
+    createdAt: "2026-08-31T00:01:06+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "nyc42",
     image: "/covers/broadway-week-stranger-things.jpg",
     imageAlt: "Bare paper trees mirrored above and below a horizon",
@@ -329,6 +345,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "broadway-week-six",
+    createdAt: "2026-08-31T00:01:06+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "nyc42",
     image: "/covers/broadway-week-six.jpg",
     imageAlt: "Six paper microphones in a row with a small crown above the middle one",
@@ -367,6 +385,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "broadway-week-oh-mary",
+    createdAt: "2026-08-31T00:01:06+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "nyc42",
     image: "/covers/broadway-week-oh-mary.jpg",
     imageAlt: "A tied-back paper drape and a single lit spot on an empty stage",
@@ -403,6 +423,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "broadway-week-the-lion-king",
+    createdAt: "2026-08-31T00:01:06+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "nyc42",
     image: "/covers/broadway-week-the-lion-king.jpg",
     imageAlt: "A paper sun rising behind a lone tree over layered savannah bands",
@@ -441,6 +463,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "broadway-week-wicked",
+    createdAt: "2026-08-31T00:01:06+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "nyc42",
     image: "/covers/broadway-week-wicked.jpg",
     imageAlt: "A green paper hat curled on an amber disc",
@@ -477,6 +501,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "broadway-week-chicago",
+    createdAt: "2026-08-31T00:01:06+04:00",
+    updatedAt: "2026-08-31T01:24:01+04:00",
     site: "nyc42",
     image: "/covers/broadway-week-chicago.jpg",
     imageAlt: "A bentwood chair silhouette against a paper sunburst",
@@ -515,6 +541,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "broadway-week-fall-2026",
+    createdAt: "2026-08-30T11:52:01+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     featured: 2,
     site: "nyc42",
     image: "/covers/broadway-week-fall-2026.jpg",
@@ -552,6 +580,8 @@ export const items: EventItem[] = [
 
   {
     slug: "brooklyn-book-festival-2026",
+    createdAt: "2026-09-08T16:29:32+04:00",
+    updatedAt: "2026-09-08T16:34:13+04:00",
     site: "nyc42",
     image: "/covers/brooklyn-book-festival-2026.jpg",
     imageAlt: "A close row of book blocks in orange, red, cream and grey on charcoal brown, their tops uneven",
@@ -590,6 +620,8 @@ export const items: EventItem[] = [
 
   {
     slug: "feast-of-san-gennaro-2026",
+    createdAt: "2026-09-08T19:25:06+04:00",
+    updatedAt: "2026-09-08T19:33:00+04:00",
     site: "nyc42",
     image: "/covers/feast-of-san-gennaro-2026.jpg",
     imageAlt: "A string of small amber lamps hung in a line across a dark brown ground",
@@ -649,6 +681,8 @@ export const items: EventItem[] = [
 
   {
     slug: "climate-week-nyc-2026",
+    createdAt: "2026-09-08T19:25:06+04:00",
+    updatedAt: "2026-09-08T19:33:00+04:00",
     site: "nyc42",
     image: "/covers/climate-week-nyc-2026.jpg",
     imageAlt: "A row of tall dark towers of falling height across a pale amber ground, one orange circle low behind them",
@@ -708,6 +742,8 @@ export const items: EventItem[] = [
 
   {
     slug: "burning-man-2026",
+    createdAt: "2026-09-08T20:26:58+04:00",
+    updatedAt: "2026-09-08T20:26:58+04:00",
     site: "nyc42",
     image: "/covers/burning-man-2026.jpg",
     imageAlt: "Two amber paper rings around a pale disc, with one small upright amber rectangle standing at the centre, on a dark brown ground",
@@ -766,6 +802,8 @@ export const items: EventItem[] = [
 
   {
     slug: "sxsw-2027",
+    createdAt: "2026-09-08T20:26:58+04:00",
+    updatedAt: "2026-09-08T20:26:58+04:00",
     site: "nyc42",
     image: "/covers/sxsw-2027.jpg",
     imageAlt: "A long row of narrow paper bars in amber, ochre and cream, standing together on one level line, on a dark brown ground",
@@ -825,6 +863,8 @@ export const items: EventItem[] = [
 
   {
     slug: "ces-2027",
+    createdAt: "2026-09-08T20:26:58+04:00",
+    updatedAt: "2026-09-08T20:26:58+04:00",
     site: "nyc42",
     image: "/covers/ces-2027.jpg",
     imageAlt: "A dense grid of small textured paper squares filling the frame, with one larger bright amber square alone in a clear space at the centre",
@@ -875,6 +915,8 @@ export const items: EventItem[] = [
 
   {
     slug: "art-basel-miami-beach-2026",
+    createdAt: "2026-09-08T20:26:58+04:00",
+    updatedAt: "2026-09-08T20:26:58+04:00",
     site: "nyc42",
     image: "/covers/art-basel-miami-beach-2026.jpg",
     imageAlt: "Three square sheets of paper hung in a row on a dark brown ground, one amber, one russet, one yellow",
@@ -920,6 +962,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "rose-parade-2027",
+    createdAt: "2026-09-08T20:42:10+04:00",
+    updatedAt: "2026-09-08T20:42:10+04:00",
     site: "nyc42",
     image: "/covers/rose-parade-2027.jpg",
     imageAlt: "A long single band of small paper petals in red, orange, cream and pink laid edge to edge across a dark brown ground, empty above and below",
@@ -962,6 +1006,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "coachella-2027",
+    createdAt: "2026-09-08T20:42:10+04:00",
+    updatedAt: "2026-09-08T20:42:10+04:00",
     site: "nyc42",
     image: "/covers/coachella-2027.jpg",
     imageAlt: "Two matching pale yellow paper palm trees standing on small orange sand mounds, one on each side of a wide brown frame",
@@ -1010,6 +1056,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "edc-las-vegas-2027",
+    createdAt: "2026-09-08T20:42:10+04:00",
+    updatedAt: "2026-09-08T20:42:10+04:00",
     site: "nyc42",
     image: "/covers/edc-las-vegas-2027.jpg",
     imageAlt: "A flat orange paper ring with a red disc inside it, centred on a near-black ground",
@@ -1054,6 +1102,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "lollapalooza-2026",
+    createdAt: "2026-09-08T20:42:10+04:00",
+    updatedAt: "2026-09-08T20:42:10+04:00",
     site: "nyc42",
     image: "/covers/lollapalooza-2026.jpg",
     imageAlt: "A cut-paper panel: orange skyscraper silhouettes along a deep navy sky, with a broad green lawn curving across the lower half",
@@ -1097,6 +1147,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "kentucky-derby-2027",
+    createdAt: "2026-09-08T20:42:10+04:00",
+    updatedAt: "2026-09-08T20:42:10+04:00",
     site: "nyc42",
     image: "/covers/kentucky-derby-2027.jpg",
     imageAlt: "Two tall paper crescents facing each other across a brown ground, one yellow and one orange",
@@ -1144,6 +1196,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "austin-city-limits-2026",
+    createdAt: "2026-09-08T20:54:08+04:00",
+    updatedAt: "2026-09-08T20:54:08+04:00",
     site: "nyc42",
     image: "/covers/austin-city-limits-2026.jpg",
     imageAlt: "Six flat green paper trees on short orange trunks standing in a row across a dark brown ground, one of them much smaller than the rest",
@@ -1188,6 +1242,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "ultra-miami-2027",
+    createdAt: "2026-09-08T20:54:08+04:00",
+    updatedAt: "2026-09-08T20:54:08+04:00",
     site: "nyc42",
     image: "/covers/ultra-miami-2027.jpg",
     imageAlt: "A long flat teal paper band running the width of a dark brown ground, with two narrow magenta paper spires standing on it near the left",
@@ -1232,6 +1288,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "stagecoach-2027",
+    createdAt: "2026-09-08T20:54:08+04:00",
+    updatedAt: "2026-09-08T20:54:08+04:00",
     site: "nyc42",
     image: "/covers/stagecoach-2027.jpg",
     imageAlt: "A wheel of straight yellow and red paper spokes radiating from a small red disc, on a rust-orange ground",
@@ -1274,6 +1332,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "iowa-state-fair-2027",
+    createdAt: "2026-09-08T20:54:08+04:00",
+    updatedAt: "2026-09-08T20:54:08+04:00",
     site: "nyc42",
     image: "/covers/iowa-state-fair-2027.jpg",
     imageAlt: "A row of six paper corn cobs in yellow with pale green husk leaves, lying overlapping across a rust-brown ground",
@@ -1316,6 +1376,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "bonnaroo-2026",
+    createdAt: "2026-09-08T20:54:08+04:00",
+    updatedAt: "2026-09-08T20:54:08+04:00",
     site: "nyc42",
     image: "/covers/bonnaroo-2026.jpg",
     imageAlt: "A thick orange paper arch standing behind layered green paper hills against a near-black sky",
@@ -1358,6 +1420,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "boo-at-the-zoo-bronx-2026",
+    createdAt: "2026-09-08T22:51:25+04:00",
+    updatedAt: "2026-09-08T22:51:25+04:00",
     site: "nyc42",
     image: "/covers/boo-at-the-zoo-bronx-2026.jpg",
     imageAlt: "An arch of overlapping paper leaves in amber, ochre and cream above a pale band carrying three animal paw prints",
@@ -1409,6 +1473,8 @@ export const items: EventItem[] = [
 
   {
     slug: "great-jack-o-lantern-blaze-2026",
+    createdAt: "2026-09-08T22:51:25+04:00",
+    updatedAt: "2026-09-08T22:51:25+04:00",
     site: "nyc42",
     image: "/covers/great-jack-o-lantern-blaze-2026.jpg",
     imageAlt: "Rows of small amber lantern discs, each with a carved face, hung close together against a dark ground",

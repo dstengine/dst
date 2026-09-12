@@ -3,6 +3,8 @@ import type { EventItem } from "../types.ts";
 export const items: EventItem[] = [
   {
     slug: "international-property-show-2026",
+    createdAt: "2026-08-25T18:18:34+04:00",
+    updatedAt: "2026-08-31T08:15:19+04:00",
     site: "palmcentral",
     image: "/covers/international-property-show-2026.jpg",
     imageAlt: "A row of small paper building models with a large key lying beside them",
@@ -40,6 +42,8 @@ export const items: EventItem[] = [
 
   {
     slug: "rise-global-2026",
+    createdAt: "2026-09-08T16:29:32+04:00",
+    updatedAt: "2026-09-08T16:29:32+04:00",
     site: "palmcentral",
     image: "/covers/rise-global-2026.jpg",
     imageAlt: "A close row of orange residential towers of differing heights against pale sand",

@@ -3,6 +3,8 @@ import type { NewsItem } from "../types.ts";
 export const items: NewsItem[] = [
   {
     slug: "the-months-biggest-deal-was-a-palm-jumeirah-flat-at-79-million",
+    createdAt: "2026-08-25T18:18:34+04:00",
+    updatedAt: "2026-09-08T00:12:45+04:00",
     site: "palmcentral",
     image: "/covers/the-months-biggest-deal-was-a-palm-jumeirah-flat-at-79-million.jpg",
     imageAlt: "A single tall terracotta paper rectangle standing well clear of a row of shorter burnt orange ones on a sand ground",
@@ -38,6 +40,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "the-airport-next-door-awards-55-billion-dirhams",
+    createdAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-09-08T00:12:45+04:00",
     site: "palmcentral",
     image: "/covers/the-airport-next-door-awards-55-billion-dirhams.jpg",
     imageAlt: "A wide terracotta paper band on a warm sand ground with four burnt-orange fingers extending from it, a small cream marker at the widest point",
@@ -73,6 +77,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "supply-is-the-thing-that-separates-world-cities",
+    createdAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "palmcentral",
     image: "/covers/supply-is-the-thing-that-separates-world-cities.jpg",
     imageAlt: "Two terracotta paper columns on a warm sand ground, one narrow and tall and one broad and short, with a burnt-orange line running level across both",
@@ -108,6 +114,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "jebel-ali-village-hands-over-892-homes",
+    createdAt: "2026-09-03T07:30:21+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "palmcentral",
     image: "/covers/jebel-ali-village-hands-over-892-homes.jpg",
     imageAlt: "A row of small terracotta paper houses on a warm sand ground with a cream key shape resting across them",
@@ -143,6 +151,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "palm-jebel-ali-is-a-quarter-built",
+    createdAt: "2026-09-03T07:30:21+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "palmcentral",
     image: "/covers/palm-jebel-ali-is-a-quarter-built.jpg",
     imageAlt: "A fan of terracotta paper fronds on a warm sand ground, the nearest quarter of each filled in solid and the rest left as outline",
@@ -178,6 +188,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "palm-jebel-ali-frond-f-villas",
+    createdAt: "2026-09-01T15:07:36+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "palmcentral",
     image: "/covers/palm-jebel-ali-frond-f-villas.jpg",
     imageAlt: "A paper palm frond seen from above with a row of small houses along one edge",
@@ -214,6 +226,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "nakheel-palm-central-next-phase",
+    createdAt: "2026-08-25T18:18:34+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "palmcentral",
     // Kept short because Layout appends " — Palm Central, Palm Jebel Ali",
     // but still self-contained: this headline also runs in dst.llc's

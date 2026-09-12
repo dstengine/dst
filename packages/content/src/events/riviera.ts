@@ -3,6 +3,8 @@ import type { EventItem } from "../types.ts";
 export const items: EventItem[] = [
   {
     slug: "meydan-racing-season-2026-27",
+    createdAt: "2026-08-25T18:18:34+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "riviera",
     image: "/covers/meydan-racing-season-2026-27.jpg",
     imageAlt: "A pale oval racetrack with white rails set on a broad white band against a clear blue ground",
@@ -35,6 +37,8 @@ export const items: EventItem[] = [
 
   {
     slug: "dubai-design-week-2026",
+    createdAt: "2026-09-02T14:56:31+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "riviera",
     image: "/covers/dubai-design-week-2026.jpg",
     imageAlt: "Overlapping flat paper shapes — two circles, two rectangles and a sand triangle — on a clear blue ground",
@@ -70,6 +74,8 @@ export const items: EventItem[] = [
 
   {
     slug: "dubai-fitness-challenge-2026",
+    createdAt: "2026-08-25T18:18:34+04:00",
+    updatedAt: "2026-09-08T19:46:47+04:00",
     site: "riviera",
     image: "/covers/dubai-fitness-challenge-2026.jpg",
     imageAlt: "A running track looping through a field of low city blocks, seen from above",
@@ -99,6 +105,8 @@ export const items: EventItem[] = [
 
   {
     slug: "ripe-market-2026-27",
+    createdAt: "2026-09-08T16:29:32+04:00",
+    updatedAt: "2026-09-08T16:29:32+04:00",
     site: "riviera",
     image: "/covers/ripe-market-2026-27.jpg",
     imageAlt: "A row of blue and yellow market canopies with a low table under each, on pale blue",
@@ -136,6 +144,8 @@ export const items: EventItem[] = [
 
   {
     slug: "dubai-ride-2026",
+    createdAt: "2026-09-08T19:46:47+04:00",
+    updatedAt: "2026-09-12T17:35:10+04:00",
     site: "riviera",
     image: "/covers/dubai-ride-2026.jpg",
     imageAlt: "A pale road band crossing the frame between two textured edges, a dense field of small cream blocks below it, on pale blue",
@@ -199,6 +209,8 @@ export const items: EventItem[] = [
 
   {
     slug: "dubai-run-2026",
+    createdAt: "2026-09-08T19:46:47+04:00",
+    updatedAt: "2026-09-12T17:35:10+04:00",
     site: "riviera",
     image: "/covers/dubai-run-2026.jpg",
     imageAlt: "A pale road band curving across the top of the frame and a separate ring of small cream blocks below it, on pale blue",

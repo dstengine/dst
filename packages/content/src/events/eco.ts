@@ -3,6 +3,8 @@ import type { EventItem } from "../types.ts";
 export const items: EventItem[] = [
   {
     slug: "world-green-economy-summit-2026",
+    createdAt: "2026-08-25T18:18:34+04:00",
+    updatedAt: "2026-09-07T16:06:17+04:00",
     site: "eco",
     image: "/covers/world-green-economy-summit-2026.jpg",
     imageAlt: "Four sage paper columns of increasing height on a deep forest green ground, a cream band tying their tops together",
@@ -40,6 +42,8 @@ export const items: EventItem[] = [
 
   {
     slug: "wetex-2026",
+    createdAt: "2026-08-25T18:18:34+04:00",
+    updatedAt: "2026-09-07T16:11:31+04:00",
     site: "eco",
     image: "/covers/wetex-2026.jpg",
     imageAlt: "A water droplet overlapping a sun disc, with turbine blades and hills in layered paper below",
@@ -75,6 +79,8 @@ export const items: EventItem[] = [
 
   {
     slug: "middle-east-energy-2027",
+    createdAt: "2026-09-08T16:29:32+04:00",
+    updatedAt: "2026-09-08T16:29:32+04:00",
     site: "eco",
     image: "/covers/middle-east-energy-2027.jpg",
     imageAlt: "A linocut of one electricity pylon on a green ground, its cables running out to both edges of the frame",
@@ -112,6 +118,8 @@ export const items: EventItem[] = [
 
   {
     slug: "adipec-2026",
+    createdAt: "2026-09-08T19:46:47+04:00",
+    updatedAt: "2026-09-08T19:46:47+04:00",
     site: "eco",
     image: "/covers/adipec-2026.jpg",
     imageAlt: "A row of narrow paper bars of differing heights and three green tones, standing along a cream band on a green ground",

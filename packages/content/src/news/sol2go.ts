@@ -3,6 +3,8 @@ import type { NewsItem } from "../types.ts";
 export const items: NewsItem[] = [
   {
     slug: "alpenglow-now-has-dates-and-the-first-one-is-a-stake-percentage",
+    createdAt: "2026-09-06T09:36:42+04:00",
+    updatedAt: "2026-09-08T00:12:45+04:00",
     site: "sol2go",
     image: "/covers/alpenglow-now-has-dates-and-the-first-one-is-a-stake-percentage.jpg",
     imageAlt: "Four lilac paper bars of increasing height on a deep violet ground, the tallest one topped with a small pale mint square",
@@ -38,6 +40,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "rent-came-down-and-every-account-is-now-over-funded",
+    createdAt: "2026-09-06T09:36:42+04:00",
+    updatedAt: "2026-09-08T00:12:45+04:00",
     site: "sol2go",
     image: "/covers/rent-came-down-and-every-account-is-now-over-funded.jpg",
     imageAlt: "A tall stack of flat violet paper coins with the top third lifted clear of the rest",
@@ -75,6 +79,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "before-solana-gets-150ms-finality-two-gates-had-to-open",
+    createdAt: "2026-09-06T09:36:42+04:00",
+    updatedAt: "2026-09-06T14:57:39+04:00",
     site: "sol2go",
     image: "/covers/before-solana-gets-150ms-finality-two-gates-had-to-open.jpg",
     imageAlt: "Two narrow violet paper gates standing open in front of a long mint arrow crossing the frame",

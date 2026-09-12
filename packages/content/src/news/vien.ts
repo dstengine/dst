@@ -3,6 +3,8 @@ import type { NewsItem } from "../types.ts";
 export const items: NewsItem[] = [
   {
     slug: "warum-die-biologische-uhr-nach-vier-wochen-stehen-blieb",
+    createdAt: "2026-09-06T09:36:42+04:00",
+    updatedAt: "2026-09-08T14:19:42+04:00",
     site: "vien",
     image: "/covers/warum-die-biologische-uhr-nach-vier-wochen-stehen-blieb.jpg",
     imageAlt: "Drei gleich hohe rote Papierkarten auf cremefarbenem Grund, deren Oberkanten eine waagrechte Linie bilden, rechts davon leere Fläche",
@@ -42,6 +44,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "warum-claude-seit-august-jeden-satz-markiert",
+    createdAt: "2026-09-08T11:57:44+04:00",
+    updatedAt: "2026-09-08T14:19:42+04:00",
     site: "vien",
     image: "/covers/warum-claude-seit-august-jeden-satz-markiert.jpg",
     imageAlt: "Eine Reihe gleich großer Papierkarten auf cremefarbenem Grund, alle in derselben Farbe, mit unterschiedlich breiten Abständen",
@@ -77,6 +81,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "albertina-zeigt-picasso-und-bacon-ab-18-september",
+    createdAt: "2026-09-08T00:12:45+04:00",
+    updatedAt: "2026-09-08T11:57:44+04:00",
     site: "vien",
     image: "/covers/albertina-zeigt-picasso-und-bacon-ab-18-september.jpg",
     imageAlt: "Zwei ausgeschnittene Papierfiguren aus vermillionrotem und moosgrünem Papier, einander zugewandt, auf cremefarbenem Grund",
@@ -112,6 +118,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "openai-stuft-neues-modell-als-kritisch-fuer-cybersicherheit-ein",
+    createdAt: "2026-09-06T20:58:51+04:00",
+    updatedAt: "2026-09-08T00:12:45+04:00",
     site: "vien",
     image: "/covers/openai-stuft-neues-modell-als-kritisch-fuer-cybersicherheit-ein.jpg",
     imageAlt: "Ein cremefarbenes Vorhängeschloss aus Papier in der Bildmitte, daneben ein moosgrüner Papierschlüssel, darunter ein zinnoberroter Papierstreifen",
@@ -150,6 +158,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "zwei-grosse-ausstellungen-im-wien-museum-enden-am-27-september",
+    createdAt: "2026-09-06T09:36:42+04:00",
+    updatedAt: "2026-09-06T20:58:51+04:00",
     site: "vien",
     image: "/covers/zwei-grosse-ausstellungen-im-wien-museum-enden-am-27-september.jpg",
     imageAlt: "Zwei zinnoberrote Papierrahmen nebeneinander an einer cremefarbenen Wand, der rechte bereits leicht abgehoben",
@@ -186,6 +196,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "wien-ist-2026-zweitlebenswerteste-stadt-der-welt",
+    createdAt: "2026-09-06T09:36:42+04:00",
+    updatedAt: "2026-09-06T09:36:42+04:00",
     site: "vien",
     image: "/covers/wien-ist-2026-zweitlebenswerteste-stadt-der-welt.jpg",
     imageAlt: "Drei gestaffelte Papierbalken in Zinnoberrot, Moosgrün und Creme unterschiedlicher Höhe vor hellem Grund",
@@ -222,6 +234,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "was-halloween-in-oesterreich-kostet",
+    createdAt: "2026-09-08T22:51:25+04:00",
+    updatedAt: "2026-09-08T22:51:25+04:00",
     site: "vien",
     image: "/covers/was-halloween-in-oesterreich-kostet.jpg",
     imageAlt: "Ein einzelner hoher Stapel roter Münzscheiben auf cremefarbenem Grund, rechts daneben leere Fläche",

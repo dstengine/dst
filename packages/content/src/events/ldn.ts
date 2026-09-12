@@ -3,6 +3,8 @@ import type { EventItem } from "../types.ts";
 export const items: EventItem[] = [
   {
     slug: "bermondsey-street-festival-2026",
+    createdAt: "2026-08-30T11:52:01+04:00",
+    updatedAt: "2026-09-07T09:58:34+04:00",
     site: "ldn",
     image: "/covers/bermondsey-street-festival-2026.jpg",
     imageAlt: "A red paper bunting line strung across a warm off-white ground above two charcoal market stall shapes",
@@ -42,6 +44,8 @@ export const items: EventItem[] = [
 
   {
     slug: "bfi-london-film-festival-2026",
+    createdAt: "2026-09-01T15:07:36+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "ldn",
     image: "/covers/bfi-london-film-festival-2026.jpg",
     imageAlt: "A fanned stack of red paper rectangles with a dark aperture ring resting over them",
@@ -90,6 +94,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "london-design-festival-2026",
+    createdAt: "2026-08-30T21:45:40+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     featured: 1,
     site: "ldn",
     image: "/covers/london-design-festival-2026.jpg",
@@ -132,6 +138,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "open-house-festival-2026",
+    createdAt: "2026-08-30T21:45:40+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "ldn",
     image: "/covers/open-house-festival-2026.jpg",
     imageAlt: "Layered paper building facades with one small red door standing open",
@@ -170,6 +178,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "totally-thames-2026",
+    createdAt: "2026-08-30T21:45:40+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "ldn",
     image: "/covers/totally-thames-2026.jpg",
     imageAlt: "A paper river winding under a bridge span",
@@ -217,6 +227,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "lord-mayors-show-2026",
+    createdAt: "2026-08-30T21:45:40+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     featured: 2,
     site: "ldn",
     image: "/covers/lord-mayors-show-2026.jpg",
@@ -260,6 +272,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "tokio-hotel-ovo-arena-2026",
+    createdAt: "2026-08-30T21:45:40+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     image: "/covers/tokio-hotel-ovo-arena-2026.jpg",
     imageAlt: "Two cut-paper figures seen from behind on a stage, arms raised, one with a guitar, red and charcoal streamers arcing overhead",
     imageKind: "generated",
@@ -304,6 +318,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "notting-hill-carnival-2026",
+    createdAt: "2026-08-30T11:52:01+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     featured: 3,
     site: "ldn",
     image: "/covers/notting-hill-carnival-2026.jpg",
@@ -345,6 +361,8 @@ export const items: EventItem[] = [
 
   {
     slug: "andre-rieu-ovo-arena-2026",
+    createdAt: "2026-09-04T20:51:35+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     image: "/covers/andre-rieu-ovo-arena-2026.jpg",
     imageAlt: "André Rieu playing the violin at the right of the Johann Strauss Orchestra, the players in ball gowns and tails behind gilded music stands",
     imageKind: "photo",
@@ -391,6 +409,8 @@ export const items: EventItem[] = [
 
   {
     slug: "anastacia-ovo-arena-2026",
+    createdAt: "2026-09-04T20:51:35+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     image: "/covers/anastacia-ovo-arena-2026.jpg",
     imageAlt: "Anastacia on stage in a black jacket with gold chain detail, pointing off to her right",
     imageKind: "photo",
@@ -439,6 +459,8 @@ export const items: EventItem[] = [
 
   {
     slug: "simple-plan-ovo-arena-2026",
+    createdAt: "2026-09-04T20:51:35+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     image: "/covers/simple-plan-ovo-arena-2026.jpg",
     imageAlt: "Pierre Bouvier singing into a microphone with an acoustic guitar slung across him, a screen glowing behind",
     imageKind: "photo",
@@ -487,6 +509,8 @@ export const items: EventItem[] = [
 
   {
     slug: "diwali-on-the-square-2026",
+    createdAt: "2026-09-08T16:29:32+04:00",
+    updatedAt: "2026-09-08T16:34:13+04:00",
     site: "ldn",
     image: "/covers/diwali-on-the-square-2026.jpg",
     imageAlt: "Four small red oil lamps burning in a row on a warm off-white ground",
@@ -526,6 +550,8 @@ export const items: EventItem[] = [
 
   {
     slug: "frieze-sculpture-2026",
+    createdAt: "2026-09-08T19:25:06+04:00",
+    updatedAt: "2026-09-12T17:35:10+04:00",
     site: "ldn",
     image: "/covers/frieze-sculpture-2026.jpg",
     imageAlt: "Three large abstract solids — a red circle, a red block and a charcoal circle — standing together on an open cream ground",
@@ -584,6 +610,8 @@ export const items: EventItem[] = [
 
   {
     slug: "frieze-london-2026",
+    createdAt: "2026-09-08T19:25:06+04:00",
+    updatedAt: "2026-09-08T19:33:00+04:00",
     site: "ldn",
     image: "/covers/frieze-london-2026.jpg",
     imageAlt: "Two red fair tents standing side by side on an open cream ground",
@@ -637,6 +665,8 @@ export const items: EventItem[] = [
 
   {
     slug: "london-fashion-week-september-2026",
+    createdAt: "2026-09-08T19:25:06+04:00",
+    updatedAt: "2026-09-08T19:33:00+04:00",
     site: "ldn",
     image: "/covers/london-fashion-week-september-2026.jpg",
     imageAlt: "A long charcoal rail across a cream ground with five garments hanging from it, two of them red",
@@ -686,6 +716,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "halloween-at-kew-2026",
+    createdAt: "2026-09-08T22:51:25+04:00",
+    updatedAt: "2026-09-12T17:35:10+04:00",
     site: "ldn",
     image: "/covers/halloween-at-kew-2026.jpg",
     imageAlt: "A dark mass of trees filling the left of the frame, a pale path curving away into it and one small red rectangle beside the path",
@@ -754,6 +786,8 @@ export const items: EventItem[] = [
 
   {
     slug: "halloween-tower-of-london-2026",
+    createdAt: "2026-09-08T22:51:25+04:00",
+    updatedAt: "2026-09-08T22:51:25+04:00",
     site: "ldn",
     image: "/covers/halloween-tower-of-london-2026.jpg",
     imageAlt: "Four crenellated tower shapes standing in a row, three red and one charcoal, above a dark band",
@@ -814,6 +848,8 @@ export const items: EventItem[] = [
 
   {
     slug: "hyde-park-halloween-discovery-days-2026",
+    createdAt: "2026-09-08T22:51:25+04:00",
+    updatedAt: "2026-09-12T17:35:10+04:00",
     site: "ldn",
     image: "/covers/hyde-park-halloween-discovery-days-2026.jpg",
     imageAlt: "Three carved pumpkins of different sizes standing on open ground, with bare trees behind them",

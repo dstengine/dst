@@ -6,6 +6,8 @@ import type { NewsItem } from "../types.ts";
 export const items: NewsItem[] = [
   {
     slug: "rentosertib-what-six-aging-clocks-measured",
+    createdAt: "2026-08-25T18:18:34+04:00",
+    updatedAt: "2026-09-08T14:19:42+04:00",
     site: "dst",
     image: "/covers/rentosertib-what-six-aging-clocks-measured.jpg",
     imageAlt: "Five pale paper discs on a deep slate ground, three of them crossed by a cream paper strip and two left bare",
@@ -44,6 +46,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "the-detector-for-claudes-watermark-is-not-for-you",
+    createdAt: "2026-09-08T11:57:44+04:00",
+    updatedAt: "2026-09-08T14:19:42+04:00",
     site: "dst",
     image: "/covers/the-detector-for-claudes-watermark-is-not-for-you.jpg",
     imageAlt: "A sealed paper envelope beside an open one of the same size, its flap folded back",
@@ -80,6 +84,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "dubai-property-passes-half-a-trillion-in-eight-months",
+    createdAt: "2026-09-08T00:12:45+04:00",
+    updatedAt: "2026-09-08T11:57:44+04:00",
     site: "dst",
     image: "/covers/dubai-property-passes-half-a-trillion-in-eight-months.jpg",
     imageAlt: "A tall stack of thin paper bars on a slate ground, the topmost bar shorter than the one below it, a single brass rule drawn across the stack",
@@ -115,6 +121,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "openai-ships-gpt-6-astra",
+    createdAt: "2026-09-06T20:58:51+04:00",
+    updatedAt: "2026-09-08T00:12:45+04:00",
     site: "dst",
     image: "/covers/openai-ships-gpt-6-astra.jpg",
     imageAlt: "Six paper rectangles in a row on a slate blue ground, each one taller than the one before it, the last of them in warm amber",
@@ -154,6 +162,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "dld-puts-the-developer-journey-in-one-place",
+    createdAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-09-06T20:58:51+04:00",
     site: "dst",
     image: "/covers/dld-puts-the-developer-journey-in-one-place.jpg",
     imageAlt: "Three separate paper forms on a slate ground merging into a single wider sheet, a thin brass line running through all of them",
@@ -189,6 +199,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "brent-is-forty-four-per-cent-above-last-september",
+    createdAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-09-07T09:58:34+04:00",
     site: "dst",
     image: "/covers/brent-is-forty-four-per-cent-above-last-september.jpg",
     imageAlt: "A stepped column of cream paper bars rising steeply on a slate ground, the topmost bar cut back slightly at its right edge",
@@ -224,6 +236,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "dmcc-gives-lab-grown-diamonds-their-own-desk",
+    createdAt: "2026-09-03T07:30:21+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "dst",
     image: "/covers/dmcc-gives-lab-grown-diamonds-their-own-desk.jpg",
     imageAlt: "Two cut-paper gem shapes side by side on a slate ground, one pale grey-blue and one cream, a thin brass line between them",
@@ -260,6 +274,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "gitex-2026-lands-in-december",
+    createdAt: "2026-09-02T13:01:24+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "dst",
     image: "/covers/gitex-2026-lands-in-december.jpg",
     imageAlt: "Twelve pale paper rectangles in a row on deep blue, the last three lifted onto a higher line",
@@ -295,6 +311,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "296-homes-above-ten-million-dollars",
+    createdAt: "2026-09-02T13:01:24+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "dst",
     image: "/covers/296-homes-above-ten-million-dollars.jpg",
     imageAlt: "Two upright paper strips, one cream and one orange, standing on a torn cream sheet against deep blue",
@@ -328,6 +346,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "middle-east-energy-2026-opens",
+    createdAt: "2026-09-02T13:01:24+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "dst",
     image: "/covers/middle-east-energy-2026-opens.jpg",
     imageAlt: "A dense block of small amber paper squares set on a pale panel against a deep blue ground",
@@ -361,6 +381,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "international-property-show-2026",
+    createdAt: "2026-09-02T13:01:24+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "dst",
     image: "/covers/international-property-show-2026.jpg",
     imageAlt: "Three upright paper rectangles in teal, pale blue and gold standing apart on a slate ground",
@@ -394,6 +416,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "uae-fuel-prices-september-2026",
+    createdAt: "2026-09-02T12:10:41+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "dst",
     image: "/covers/uae-fuel-prices-september-2026.jpg",
     imageAlt: "Torn paper rectangles standing in a row, each one taller than the last",
@@ -432,6 +456,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "apple-hands-the-company-to-an-engineer",
+    createdAt: "2026-09-02T12:10:41+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "dst",
     image: "/covers/apple-hands-the-company-to-an-engineer.jpg",
     imageAlt: "A row of identical paper squares with one lifted out of the line and tilted above it",
@@ -469,6 +495,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "186-new-developers-entered-dubai-in-2026",
+    createdAt: "2026-09-01T15:07:36+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "dst",
     image: "/covers/186-new-developers-entered-dubai-in-2026.jpg",
     imageAlt: "A dense field of paper tower silhouettes with smaller new ones filling the gaps, a blank licence card in front",
@@ -503,6 +531,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "dubai-tokenised-property-secondary-market",
+    createdAt: "2026-08-26T04:47:11+04:00",
+    updatedAt: "2026-09-01T15:29:01+04:00",
     featured: 1,
     site: "dst",
     image: "/covers/dubai-tokenised-property-secondary-market.jpg",
@@ -531,6 +561,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "gitex-moves-to-expo-city-2026",
+    createdAt: "2026-08-26T04:47:11+04:00",
+    updatedAt: "2026-09-01T15:29:01+04:00",
     featured: 2,
     site: "dst",
     image: "/covers/gitex-moves-to-expo-city-2026.jpg",
@@ -559,6 +591,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "dubai-property-sales-h1-2026",
+    createdAt: "2026-08-25T18:18:34+04:00",
+    updatedAt: "2026-08-26T04:47:11+04:00",
     site: "dst",
     title: "Dubai property sales reach Dh286b in H1",
     summary:

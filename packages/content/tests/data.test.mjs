@@ -46,6 +46,39 @@ describe("dates parse as valid ISO", () => {
   }
 });
 
+// The sitemap is built from these two fields, so an entry without them is
+// an entry that cannot be dated — and `lastmod` is the field a crawler
+// reads to decide whether to come back. They used to be inferred from git
+// history, which meant nothing could be missing and nothing could be
+// checked; now they are written down, so both are possible and this is
+// where it is caught. `node tools/item-dates.mjs` fills in what history
+// knows for an entry that has already been committed.
+describe("every entry carries both of its own dates", () => {
+  for (const { label, all } of kinds) {
+    test(`${label}: createdAt and updatedAt are present, parse, and run the right way round`, () => {
+      const now = Date.now();
+      let edited = 0;
+      for (const item of all) {
+        const where = `${label}/${item.site}/${item.slug}`;
+        for (const key of ["createdAt", "updatedAt"]) {
+          const raw = item[key];
+          assert.ok(raw, `${where}: no ${key} — run "node tools/item-dates.mjs"`);
+          const parsed = new Date(raw);
+          assert.ok(!Number.isNaN(parsed.getTime()), `${where}: ${key}="${raw}" did not parse`);
+          // A date in the future is a claim a crawler has no way to act on,
+          // and the likeliest cause is a typo in the year.
+          assert.ok(parsed.getTime() <= now + 60_000, `${where}: ${key}="${raw}" is in the future`);
+        }
+        const created = new Date(item.createdAt).getTime();
+        const updated = new Date(item.updatedAt).getTime();
+        assert.ok(updated >= created, `${where}: updatedAt ${item.updatedAt} precedes createdAt ${item.createdAt}`);
+        if (updated > created) edited++;
+      }
+      console.log(`${label}: ${all.length} entries dated, ${edited} edited since first published`);
+    });
+  }
+});
+
 describe("body presence determines detail pages", () => {
   for (const { label, all } of kinds) {
     test(`${label}: items with/without body are correctly split`, () => {

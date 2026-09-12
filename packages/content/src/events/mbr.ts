@@ -3,6 +3,8 @@ import type { EventItem } from "../types.ts";
 export const items: EventItem[] = [
   {
     slug: "dubai-world-cup-2027",
+    createdAt: "2026-08-25T18:18:34+04:00",
+    updatedAt: "2026-08-31T08:15:19+04:00",
     site: "mbr",
     image: "/covers/dubai-world-cup-2027.jpg",
     imageAlt: "Horses in cut-paper silhouette galloping past a long grandstand",
@@ -40,6 +42,8 @@ export const items: EventItem[] = [
 
   {
     slug: "dubai-racing-carnival-2026-27",
+    createdAt: "2026-09-08T16:29:32+04:00",
+    updatedAt: "2026-09-12T17:35:10+04:00",
     site: "mbr",
     image: "/covers/dubai-racing-carnival-2026-27.jpg",
     imageAlt: "A dark horse in flat silhouette galloping past a long rail, on deep teal",

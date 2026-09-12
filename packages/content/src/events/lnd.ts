@@ -3,6 +3,8 @@ import type { EventItem } from "../types.ts";
 export const items: EventItem[] = [
   {
     slug: "lambeth-fringe-2026",
+    createdAt: "2026-08-30T11:52:01+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "lnd",
     image: "/covers/lambeth-fringe-2026.jpg",
     imageAlt: "A cluster of small pale blue paper doorways of different heights on a deep navy ground, one lit chalk white",
@@ -41,6 +43,8 @@ export const items: EventItem[] = [
 
   {
     slug: "giant-summer-flea-olympic-park",
+    createdAt: "2026-08-30T11:52:01+04:00",
+    updatedAt: "2026-09-03T07:30:21+04:00",
     featured: 1,
     site: "lnd",
     image: "/covers/giant-summer-flea-olympic-park.jpg",
@@ -68,6 +72,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "the-big-brine-hackney-bridge",
+    createdAt: "2026-08-30T11:52:01+04:00",
+    updatedAt: "2026-09-02T07:22:25+04:00",
     site: "lnd",
     image: "/covers/the-big-brine-hackney-bridge.jpg",
     imageAlt: "Rows of paper preserving jars on shelves with cut citrus discs",
@@ -96,6 +102,8 @@ export const items: EventItem[] = [
 
   {
     slug: "blackheath-fireworks-2026",
+    createdAt: "2026-09-08T16:29:32+04:00",
+    updatedAt: "2026-09-12T17:35:10+04:00",
     site: "lnd",
     image: "/covers/blackheath-fireworks-2026.jpg",
     imageAlt: "A single white and yellow firework bursting over a deep navy sky",
@@ -138,6 +146,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "halloween-hampton-court-palace-2026",
+    createdAt: "2026-09-08T22:51:25+04:00",
+    updatedAt: "2026-09-08T22:51:25+04:00",
     site: "lnd",
     image: "/covers/halloween-hampton-court-palace-2026.jpg",
     imageAlt: "A dark blue crenellated roofline with three towers of different heights rising from it, the tallest carrying a small red flag",
@@ -189,6 +199,8 @@ export const items: EventItem[] = [
 
   {
     slug: "halloween-eltham-palace-2026",
+    createdAt: "2026-09-08T22:51:25+04:00",
+    updatedAt: "2026-09-08T22:51:25+04:00",
     site: "lnd",
     image: "/covers/halloween-eltham-palace-2026.jpg",
     imageAlt: "A large circular window divided into panes, lit pale, above a stepped pale block on a deep blue ground",
@@ -242,6 +254,8 @@ export const items: EventItem[] = [
 
   {
     slug: "day-of-the-dead-horniman-2026",
+    createdAt: "2026-09-08T22:51:25+04:00",
+    updatedAt: "2026-09-12T17:35:10+04:00",
     site: "lnd",
     image: "/covers/day-of-the-dead-horniman-2026.jpg",
     imageAlt: "Two strings of pale bunting crossing a deep blue ground, with layered paper flowers gathered at the left end",
@@ -304,6 +318,8 @@ export const items: EventItem[] = [
 
   {
     slug: "dark-arts-warner-bros-studio-tour-2026",
+    createdAt: "2026-09-08T22:51:25+04:00",
+    updatedAt: "2026-09-08T22:51:25+04:00",
     site: "lnd",
     image: "/covers/dark-arts-warner-bros-studio-tour-2026.jpg",
     imageAlt: "Dozens of pale pumpkins hanging on threads at different heights over an empty hall floor, on a deep blue ground",

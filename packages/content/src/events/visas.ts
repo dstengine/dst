@@ -3,6 +3,8 @@ import type { EventItem } from "../types.ts";
 export const items: EventItem[] = [
   {
     slug: "irex-residency-citizenship-conclave-dubai-2027",
+    createdAt: "2026-08-25T18:18:34+04:00",
+    updatedAt: "2026-08-31T08:15:19+04:00",
     site: "visas",
     image: "/covers/irex-residency-citizenship-conclave-dubai-2027.jpg",
     imageAlt: "Two paper landmasses with a small house on one and a dotted arc curving to the other",
@@ -41,6 +43,8 @@ export const items: EventItem[] = [
 
   {
     slug: "citizenship-expo-abu-dhabi-2026",
+    createdAt: "2026-09-08T16:29:32+04:00",
+    updatedAt: "2026-09-08T16:34:13+04:00",
     site: "visas",
     image: "/covers/citizenship-expo-abu-dhabi-2026.jpg",
     imageAlt: "A passport booklet lying open on warm sand, both pages blank",

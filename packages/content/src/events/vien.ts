@@ -3,6 +3,8 @@ import type { EventItem } from "../types.ts";
 export const items: EventItem[] = [
   {
     slug: "viennale-2026",
+    createdAt: "2026-09-06T09:36:42+04:00",
+    updatedAt: "2026-09-06T09:36:42+04:00",
     site: "vien",
     image: "/covers/viennale-2026.jpg",
     imageAlt: "Ein Papierstreifen aus Filmkadern quer durchs Bild, drei Kader in Zinnoberrot, ein moosgrüner Lichtkegel am Rand",
@@ -42,6 +44,8 @@ export const items: EventItem[] = [
 
   {
     slug: "wien-modern-39",
+    createdAt: "2026-09-06T09:36:42+04:00",
+    updatedAt: "2026-09-06T09:36:42+04:00",
     site: "vien",
     image: "/covers/wien-modern-39.jpg",
     imageAlt: "Ein breites moosgrünes Flussband aus Papier unter gestaffelten zinnoberroten Klangbalken",
@@ -79,6 +83,8 @@ export const items: EventItem[] = [
 
   {
     slug: "vienna-coffee-festival-2026",
+    createdAt: "2026-09-08T16:29:32+04:00",
+    updatedAt: "2026-09-08T16:34:13+04:00",
     site: "vien",
     image: "/covers/vienna-coffee-festival-2026.jpg",
     imageAlt: "Ein goldener Ring mit einer roten Scheibe darin und drei kurzen roten Dampfstrichen darüber, auf cremefarbenem Grund",
@@ -116,6 +122,8 @@ export const items: EventItem[] = [
 
   {
     slug: "vienna-design-week-2026",
+    createdAt: "2026-09-08T19:16:59+04:00",
+    updatedAt: "2026-09-08T19:16:59+04:00",
     site: "vien",
     image: "/covers/vienna-design-week-2026.jpg",
     imageAlt: "Ein gestufter Turm aus roten und grünen Blöcken auf hellem Grund, als Linolschnitt",
@@ -172,6 +180,8 @@ export const items: EventItem[] = [
 
   {
     slug: "wiener-kaiser-wiesn-2026",
+    createdAt: "2026-09-08T19:16:59+04:00",
+    updatedAt: "2026-09-12T17:35:10+04:00",
     site: "vien",
     image: "/covers/wiener-kaiser-wiesn-2026.jpg",
     imageAlt: "Drei Festzelte nebeneinander in Rot, Ocker und Grün auf cremefarbenem Grund, das mittlere höher und mit einer kleinen roten Fahne",
@@ -228,6 +238,8 @@ export const items: EventItem[] = [
 
   {
     slug: "lange-nacht-der-museen-2026",
+    createdAt: "2026-09-08T19:16:59+04:00",
+    updatedAt: "2026-09-08T19:33:00+04:00",
     site: "vien",
     image: "/covers/lange-nacht-der-museen-2026.jpg",
     imageAlt: "Drei hell erleuchtete hohe Fenster in einer dunkelroten Fassade",
@@ -284,6 +296,8 @@ export const items: EventItem[] = [
 
   {
     slug: "vienna-halloween-run-2026",
+    createdAt: "2026-09-08T22:51:25+04:00",
+    updatedAt: "2026-09-12T17:35:10+04:00",
     site: "vien",
     image: "/covers/vienna-halloween-run-2026.jpg",
     imageAlt: "Eine helle Laufbahn, die in die Bildmitte führt, gesäumt von Bäumen mit rotem Herbstlaub",
@@ -345,6 +359,8 @@ export const items: EventItem[] = [
 
   {
     slug: "kuerbisfest-am-himmel-2026",
+    createdAt: "2026-09-08T22:51:25+04:00",
+    updatedAt: "2026-09-12T17:35:10+04:00",
     site: "vien",
     image: "/covers/kuerbisfest-am-himmel-2026.jpg",
     imageAlt: "Ein breiter Haufen runder Papierscheiben in Rot, Grün, Ocker und Creme, in vielen verschiedenen Größen",

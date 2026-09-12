@@ -3,6 +3,8 @@ import type { EventItem } from "../types.ts";
 export const items: EventItem[] = [
   {
     slug: "festival-cafe-y-chocolate-2026",
+    createdAt: "2026-08-30T11:52:01+04:00",
+    updatedAt: "2026-09-08T15:51:10+04:00",
     site: "cmx",
     image: "/covers/festival-cafe-y-chocolate-2026.jpg",
     imageAlt: "Una taza de papel rosa pálido recortada sobre un fondo crema, con una flor naranja de cinco pétalos apoyada en su costado izquierdo y una vaina de cacao abierta, en color vino, junto a ella",
@@ -47,6 +49,8 @@ export const items: EventItem[] = [
 
   {
     slug: "grito-2026-alcaldia-miguel-hidalgo",
+    createdAt: "2026-09-06T22:44:30+04:00",
+    updatedAt: "2026-09-08T15:51:10+04:00",
     site: "cmx",
     image: "/covers/grito-2026-alcaldia-miguel-hidalgo.jpg",
     imageAlt: "Una campana de papel magenta colgada de un hilo sobre un fondo crema, y debajo una hilera de banderines triangulares del mismo color",
@@ -89,6 +93,8 @@ export const items: EventItem[] = [
 
   {
     slug: "festival-xochiska-2026",
+    createdAt: "2026-09-03T07:30:21+04:00",
+    updatedAt: "2026-09-06T22:44:30+04:00",
     site: "cmx",
     image: "/covers/festival-xochiska-2026.jpg",
     imageAlt: "Una máscara de papel recortada en dos colores sobre un fondo crema, con franjas verticales detrás",
@@ -133,6 +139,8 @@ export const items: EventItem[] = [
 
   {
     slug: "gran-premio-ciudad-de-mexico-2026",
+    createdAt: "2026-08-30T20:37:08+04:00",
+    updatedAt: "2026-09-07T18:02:29+04:00",
     featured: 1,
     site: "cmx",
     image: "/covers/gran-premio-ciudad-de-mexico-2026.jpg",
@@ -196,6 +204,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "gran-desfile-dia-de-muertos-2026",
+    createdAt: "2026-08-30T20:37:08+04:00",
+    updatedAt: "2026-09-08T22:51:25+04:00",
     featured: 2,
     site: "cmx",
     image: "/covers/gran-desfile-dia-de-muertos-2026.jpg",
@@ -261,6 +271,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "del-color-de-la-sandia-cenart",
+    createdAt: "2026-08-30T20:37:08+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "cmx",
     image: "/covers/del-color-de-la-sandia-cenart.jpg",
     imageAlt: "Dos rebanadas de sandía recortadas en papel",
@@ -310,6 +322,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "monsivais-en-el-estanquillo",
+    createdAt: "2026-08-30T11:52:01+04:00",
+    updatedAt: "2026-09-07T13:32:58+04:00",
     site: "cmx",
     image: "/covers/monsivais-en-el-estanquillo.jpg",
     imageAlt: "Siluetas de papel flotando en filas: un sombrero, una bicicleta, una guitarra, unos anteojos y un perro",
@@ -354,6 +368,8 @@ export const items: EventItem[] = [
 
   {
     slug: "nayarit-en-los-pinos-2026",
+    createdAt: "2026-09-08T16:29:32+04:00",
+    updatedAt: "2026-09-08T16:34:13+04:00",
     site: "cmx",
     image: "/covers/nayarit-en-los-pinos-2026.jpg",
     imageAlt: "Una olla de barro roja con su tapa puesta, sobre un fondo crema",
@@ -394,6 +410,8 @@ export const items: EventItem[] = [
 
   {
     slug: "desfile-alebrijes-monumentales-2026",
+    createdAt: "2026-09-08T22:51:25+04:00",
+    updatedAt: "2026-09-12T17:35:10+04:00",
     site: "cmx",
     image: "/covers/desfile-alebrijes-monumentales-2026.jpg",
     imageAlt: "Una criatura imaginaria de papel recortado, con el lomo de placas a rayas magenta y ocre, cuernos en espiral, cola larga y cuatro patas, sobre fondo crema",
@@ -456,6 +474,8 @@ export const items: EventItem[] = [
 
   {
     slug: "mega-procesion-de-las-catrinas-2026",
+    createdAt: "2026-09-08T22:51:25+04:00",
+    updatedAt: "2026-09-12T17:35:10+04:00",
     site: "cmx",
     image: "/covers/mega-procesion-de-las-catrinas-2026.jpg",
     imageAlt: "Tres sombreros de ala ancha de papel rosa en diagonal, cada uno con flores rojas sobre el ala",
@@ -515,6 +535,8 @@ export const items: EventItem[] = [
 
   {
     slug: "alumbrada-mixquic-2026",
+    createdAt: "2026-09-08T22:51:25+04:00",
+    updatedAt: "2026-09-08T22:51:25+04:00",
     site: "cmx",
     image: "/covers/alumbrada-mixquic-2026.jpg",
     imageAlt: "Una fila de velas encendidas recortadas en papel sobre fondo magenta, con flores doradas esparcidas abajo",

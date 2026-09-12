@@ -4,6 +4,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "sxsw-badges-go-up-on-september-17",
+    createdAt: "2026-09-08T20:26:58+04:00",
+    updatedAt: "2026-09-08T20:26:58+04:00",
     site: "nyc42",
     image: "/covers/sxsw-badges-go-up-on-september-17.jpg",
     imageAlt: "Two orange paper squares standing side by side on a ledge against a dark brown wall, the right one slightly taller",
@@ -52,6 +54,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "fifty-buffalo-are-walking-through-two-boroughs",
+    createdAt: "2026-08-30T11:52:01+04:00",
+    updatedAt: "2026-09-08T00:12:45+04:00",
     site: "nyc42",
     image: "/covers/fifty-buffalo-are-walking-through-two-boroughs.jpg",
     imageAlt: "A row of amber paper animal silhouettes of the same shape and different sizes moving across a deep charcoal brown ground",
@@ -87,6 +91,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "moma-what-closes-and-what-opens-this-autumn",
+    createdAt: "2026-09-06T22:44:30+04:00",
+    updatedAt: "2026-09-08T00:12:45+04:00",
     site: "nyc42",
     image: "/covers/moma-what-closes-and-what-opens-this-autumn.jpg",
     imageAlt: "Five empty pale picture frames in pale wood hanging in a row on a dark brown wall, the one at the left tilted well off level and the other four hanging square",
@@ -123,6 +129,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "seven-days-of-free-classes-in-bed-stuy",
+    createdAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-09-06T22:44:30+04:00",
     site: "nyc42",
     image: "/covers/seven-days-of-free-classes-in-bed-stuy.jpg",
     imageAlt: "Seven amber paper bars of increasing width on a deep brown ground, the last one widening into a block-long shape",
@@ -157,6 +165,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "hubble-found-a-decagon-in-its-own-old-pictures",
+    createdAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "nyc42",
     image: "/covers/hubble-found-a-decagon-in-its-own-old-pictures.jpg",
     imageAlt: "Three stacked ochre paper frames on a deep brown ground, a faint ten-sided outline showing through the topmost one",
@@ -191,6 +201,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "the-parade-turns-100-a-century-and-two-years-late",
+    createdAt: "2026-09-03T07:30:21+04:00",
+    updatedAt: "2026-09-07T09:58:34+04:00",
     site: "nyc42",
     image: "/covers/the-parade-turns-100-a-century-and-two-years-late.jpg",
     imageAlt: "A row of amber and ochre paper balloon shapes on a deep brown ground, each tethered by thin cream lines",
@@ -226,6 +238,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "fire-museum-reopens-after-two-years",
+    createdAt: "2026-09-02T13:01:24+04:00",
+    updatedAt: "2026-09-03T07:30:21+04:00",
     site: "nyc42",
     image: "/covers/fire-museum-reopens-after-two-years.jpg",
     imageAlt: "A tall red paper facade with two arched openings in gold at its base, on a warm brown ground",
@@ -263,6 +277,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "lenape-legacies-at-the-museum-of-the-city",
+    createdAt: "2026-09-02T13:01:24+04:00",
+    updatedAt: "2026-09-02T13:01:24+04:00",
     site: "nyc42",
     image: "/covers/lenape-legacies-at-the-museum-of-the-city.jpg",
     imageAlt: "A narrow band of small interlocking paper squares in purple, orange and red across a near-black ground",
@@ -299,6 +315,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "transit-museum-bus-festival-turns-fifty",
+    createdAt: "2026-09-02T13:01:24+04:00",
+    updatedAt: "2026-09-02T13:01:24+04:00",
     site: "nyc42",
     image: "/covers/transit-museum-bus-festival-turns-fifty.jpg",
     imageAlt: "Three paper buses in cream, pale blue and green parked side by side on a brown ground",
@@ -335,6 +353,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "broadway-autumn-is-a-play-season",
+    createdAt: "2026-09-02T13:01:24+04:00",
+    updatedAt: "2026-09-07T09:58:34+04:00",
     site: "nyc42",
     image: "/covers/broadway-autumn-is-a-play-season.jpg",
     imageAlt: "A row of narrow upright paper strips in cream, orange and red on a dark navy ground",
@@ -371,6 +391,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "apple-from-350-billion-to-four-trillion",
+    createdAt: "2026-09-02T12:10:41+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "nyc42",
     image: "/covers/apple-from-350-billion-to-four-trillion.jpg",
     imageAlt: "A staircase of paper steps climbing from the lower left to a flat top at the right, a single marker lying at the top",
@@ -408,6 +430,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "venice-hands-out-a-lion-new-york-refuses-to-rank",
+    createdAt: "2026-09-01T16:18:19+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "nyc42",
     image: "/covers/venice-hands-out-a-lion-new-york-refuses-to-rank.jpg",
     imageAlt: "Two paper stacks of film frames: one topped by a small trophy, the other spread out in an even row with nothing above it",
@@ -445,6 +469,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "broadway-week-which-shows-are-worth-it",
+    createdAt: "2026-08-30T20:41:51+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     featured: 1,
     site: "nyc42",
     image: "/covers/broadway-week-which-shows-are-worth-it.jpg",
@@ -488,6 +514,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "brooklyn-museum-fall-2026",
+    createdAt: "2026-08-30T11:52:01+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "nyc42",
     image: "/covers/brooklyn-museum-fall-2026.jpg",
     imageAlt: "Six framed panels hung in two rows on a gallery wall above a bench",
@@ -526,6 +554,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "hudson-river-foliage-cruises",
+    createdAt: "2026-08-30T11:52:01+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     featured: 2,
     site: "nyc42",
     image: "/covers/hudson-river-foliage-cruises.jpg",
@@ -562,6 +592,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "disney-cruises-return-to-nyc",
+    createdAt: "2026-08-30T11:52:01+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "nyc42",
     image: "/covers/disney-cruises-return-to-nyc.jpg",
     imageAlt: "A white multi-deck cruise liner in cut paper against a low city skyline",
@@ -598,6 +630,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "nearly-a-billion-dollars-of-pet-costumes",
+    createdAt: "2026-09-08T22:51:25+04:00",
+    updatedAt: "2026-09-08T22:51:25+04:00",
     site: "nyc42",
     image: "/covers/nearly-a-billion-dollars-of-pet-costumes.jpg",
     imageAlt: "Five paper pumpkins of slightly different sizes standing in a row on a ledge against a dark brown wall",

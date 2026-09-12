@@ -3,6 +3,8 @@ import type { NewsItem } from "../types.ts";
 export const items: NewsItem[] = [
   {
     slug: "the-train-to-abu-dhabi-starts-running-on-30-september",
+    createdAt: "2026-08-25T18:18:34+04:00",
+    updatedAt: "2026-09-08T00:12:45+04:00",
     site: "riviera",
     image: "/covers/the-train-to-abu-dhabi-starts-running-on-30-september.jpg",
     imageAlt: "A chalk white paper line running the width of a mid-blue ground, two pale sky rectangles set on it at either end",
@@ -38,6 +40,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "a-500-metre-bridge-opens-on-the-way-into-town",
+    createdAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-09-08T00:12:45+04:00",
     site: "riviera",
     image: "/covers/a-500-metre-bridge-opens-on-the-way-into-town.jpg",
     imageAlt: "A long chalk-white paper band arcing over a pale sky-blue band on a clear mid-blue ground, with a small sand-coloured marker at one end",
@@ -73,6 +77,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "rents-are-beating-prices-across-thirty-cities",
+    createdAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "riviera",
     image: "/covers/rents-are-beating-prices-across-thirty-cities.jpg",
     imageAlt: "Two chalk-white paper bars on a clear mid-blue ground, the taller one narrow and the shorter one wide, a thin pale sky line between them",
@@ -110,6 +116,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "the-junction-riviera-leaves-by-is-being-rebuilt",
+    createdAt: "2026-09-03T07:30:21+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "riviera",
     image: "/covers/the-junction-riviera-leaves-by-is-being-rebuilt.jpg",
     imageAlt: "Two paper roads with dashed lane markings crossing at right angles on a clear mid-blue ground, the pale blue one carried over the chalk-white one on a ramp",
@@ -146,6 +154,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "a-waitrose-opens-on-the-other-side-of-meydan",
+    createdAt: "2026-09-03T07:30:21+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "riviera",
     image: "/covers/a-waitrose-opens-on-the-other-side-of-meydan.jpg",
     imageAlt: "A small chalk-white shopfront on a clear mid-blue ground with a pale sky awning and a sand-coloured basket beside it",
@@ -181,6 +191,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "ras-al-khor-switches-to-winter-hours",
+    createdAt: "2026-09-02T14:56:31+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "riviera",
     image: "/covers/ras-al-khor-switches-to-winter-hours.jpg",
     imageAlt: "Three thin sand-coloured stems rising between a pale sky and a band of blue water",
@@ -217,6 +229,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "dubai-completed-104-projects-in-six-months",
+    createdAt: "2026-09-01T15:07:36+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "riviera",
     image: "/covers/dubai-completed-104-projects-in-six-months.jpg",
     imageAlt: "Three finished paper buildings with their scaffolding peeled away and folded beside them",
@@ -249,6 +263,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "azizi-riviera-final-handover-phase",
+    createdAt: "2026-08-25T18:18:34+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "riviera",
     // Layout appends " — Azizi Riviera Guide".
     title: "Riviera's final handover phase",

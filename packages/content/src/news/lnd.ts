@@ -3,6 +3,8 @@ import type { NewsItem } from "../types.ts";
 export const items: NewsItem[] = [
   {
     slug: "the-uk-biobank-yardstick-behind-an-ageing-drug-trial",
+    createdAt: "2026-08-30T11:52:01+04:00",
+    updatedAt: "2026-09-08T14:19:42+04:00",
     site: "lnd",
     image: "/covers/the-uk-biobank-yardstick-behind-an-ageing-drug-trial.jpg",
     imageAlt: "A torn pale blue paper band across a deep navy ground with small cream markers standing along it, one of them red",
@@ -40,6 +42,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "what-claudes-new-watermark-cannot-tell-you",
+    createdAt: "2026-09-08T11:57:44+04:00",
+    updatedAt: "2026-09-08T14:19:42+04:00",
     site: "lnd",
     image: "/covers/what-claudes-new-watermark-cannot-tell-you.jpg",
     imageAlt: "A long paper strip on a deep navy ground, solid at one end and fading to a faint outline at the other",
@@ -74,6 +78,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "eleven-design-districts-and-not-one-of-them-is-a-venue",
+    createdAt: "2026-09-08T00:12:45+04:00",
+    updatedAt: "2026-09-08T11:57:44+04:00",
     site: "lnd",
     image: "/covers/eleven-design-districts-and-not-one-of-them-is-a-venue.jpg",
     imageAlt: "Eleven pale blue paper squares of varying sizes scattered across a deep navy ground, one of them chalk white",
@@ -109,6 +115,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "the-monument-may-finally-get-a-visitor-centre",
+    createdAt: "2026-09-06T22:44:30+04:00",
+    updatedAt: "2026-09-08T00:12:45+04:00",
     site: "lnd",
     image: "/covers/the-monument-may-finally-get-a-visitor-centre.jpg",
     imageAlt: "A tall narrow cream paper column on a deep navy ground, a small orange-red flame shape floating above it and a low orange-red block standing at its foot",
@@ -145,6 +153,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "nineteen-boroughs-close-a-road-for-a-bicycle",
+    createdAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-09-06T22:44:30+04:00",
     site: "lnd",
     image: "/covers/nineteen-boroughs-close-a-road-for-a-bicycle.jpg",
     imageAlt: "Nineteen small pale blue paper circles arranged loosely across a deep navy ground, two of them joined by a thin cream loop",
@@ -179,6 +189,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "a-ten-sided-wave-at-saturns-south-pole",
+    createdAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "lnd",
     image: "/covers/a-ten-sided-wave-at-saturns-south-pole.jpg",
     imageAlt: "A pale blue paper decagon on a deep navy ground, its outline broken into ten straight segments with narrow gaps between them",
@@ -215,6 +227,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "the-marathon-runs-twice-in-2027",
+    createdAt: "2026-09-03T07:30:21+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "lnd",
     image: "/covers/the-marathon-runs-twice-in-2027.jpg",
     imageAlt: "Two pale blue paper ribbons of identical shape laid side by side on a deep navy ground, one small red marker at the end of each",
@@ -251,6 +265,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "oxford-street-goes-traffic-free",
+    createdAt: "2026-09-02T13:01:24+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "lnd",
     image: "/covers/oxford-street-goes-traffic-free.jpg",
     imageAlt: "A long empty cream band between two dark blue blocks, with small vehicles held at either end",
@@ -286,6 +302,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "open-house-festival-turns-35",
+    createdAt: "2026-09-02T13:01:24+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "lnd",
     image: "/covers/open-house-festival-turns-35.jpg",
     imageAlt: "A dense field of small paper house shapes in blues and cream, one red house with an open doorway",
@@ -320,6 +338,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "bus-routes-67-and-149-consultation",
+    createdAt: "2026-09-02T13:01:24+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "lnd",
     image: "/covers/bus-routes-67-and-149-consultation.jpg",
     imageAlt: "A long dark navy paper strip above a much shorter pale blue one on a white ground",
@@ -356,6 +376,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "totally-thames-2026",
+    createdAt: "2026-09-02T13:01:24+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "lnd",
     image: "/covers/totally-thames-2026.jpg",
     imageAlt: "A row of stubby red paper columns standing in a band of blue water below a large cream sheet",
@@ -393,6 +415,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "fifteen-years-of-apple-in-numbers",
+    createdAt: "2026-09-02T12:10:41+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "lnd",
     image: "/covers/fifteen-years-of-apple-in-numbers.jpg",
     imageAlt: "Torn paper bars rising steadily from left to right, one of them red, a long wedge tapering away beneath them",
@@ -429,6 +453,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "venice-has-programmed-a-film-of-210-minutes",
+    createdAt: "2026-09-01T16:34:47+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "lnd",
     image: "/covers/venice-has-programmed-a-film-of-210-minutes.jpg",
     imageAlt: "A paper reel of film unspooling far past the edge of a small cinema seat",
@@ -464,6 +490,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "eclipse-walk-tower-hamlets-cemetery-park",
+    createdAt: "2026-09-01T15:07:36+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "lnd",
     image: "/covers/eclipse-walk-tower-hamlets-cemetery-park.jpg",
     imageAlt: "Small crescents of light scattered across paper grass beneath a leaf canopy",
@@ -499,6 +527,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "sl12-superloop-gants-hill-rainham",
+    createdAt: "2026-08-30T20:53:51+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     featured: 1,
     site: "lnd",
     image: "/covers/sl12-superloop-gants-hill-rainham.jpg",
@@ -540,6 +570,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "bank-holiday-tube-and-tfl-closures",
+    createdAt: "2026-08-30T11:52:01+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "lnd",
     image: "/covers/bank-holiday-tube-and-tfl-closures.jpg",
     imageAlt: "Three parallel route lines in cut paper, two broken by gaps with a barrier across one",
@@ -581,6 +613,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "olympic-park-summer-school",
+    createdAt: "2026-08-30T11:52:01+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "lnd",
     image: "/covers/olympic-park-summer-school.jpg",
     imageAlt: "Workshop tables seen from above in a park, a stadium arc curving behind",

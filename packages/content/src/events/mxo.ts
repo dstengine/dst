@@ -3,6 +3,8 @@ import type { EventItem } from "../types.ts";
 export const items: EventItem[] = [
   {
     slug: "festival-internacional-cervantino-2026",
+    createdAt: "2026-08-30T11:52:01+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "mxo",
     image: "/covers/festival-internacional-cervantino-2026.jpg",
     imageAlt: "Tres arcos de papel de distinto tamaño anidados uno dentro de otro, en terracota y crema sobre un fondo verde",
@@ -43,6 +45,8 @@ export const items: EventItem[] = [
 
   {
     slug: "fil-guadalajara-2026",
+    createdAt: "2026-08-30T23:36:45+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     featured: 1,
     site: "mxo",
     image: "/covers/fil-guadalajara-2026.jpg",
@@ -109,6 +113,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "filij-2026",
+    createdAt: "2026-08-30T11:52:01+04:00",
+    updatedAt: "2026-09-06T14:02:45+04:00",
     featured: 2,
     site: "mxo",
     image: "/covers/filij-2026.jpg",
@@ -153,6 +159,8 @@ export const items: EventItem[] = [
 
   {
     slug: "fiestas-de-octubre-2026",
+    createdAt: "2026-09-08T16:29:32+04:00",
+    updatedAt: "2026-09-08T16:34:13+04:00",
     site: "mxo",
     image: "/covers/fiestas-de-octubre-2026.jpg",
     imageAlt: "Una rueda de la fortuna naranja y crema, de líneas planas, sobre un fondo verde oscuro",
@@ -189,6 +197,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "festival-de-vida-y-muerte-2026",
+    createdAt: "2026-09-08T21:23:08+04:00",
+    updatedAt: "2026-09-08T21:59:53+04:00",
     site: "mxo",
     image: "/covers/festival-de-vida-y-muerte-2026.jpg",
     imageAlt: "Una flor de cempas\u00fachil de papel, de p\u00e9talos naranjas y centro oscuro, sola sobre un fondo azul verdoso",
@@ -240,6 +250,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "noche-de-muertos-michoacan-2026",
+    createdAt: "2026-09-08T21:39:47+04:00",
+    updatedAt: "2026-09-08T21:59:53+04:00",
     site: "mxo",
     image: "/covers/noche-de-muertos-michoacan-2026.jpg",
     imageAlt: "Seis velas de papel color crema, con llamas naranjas, alineadas sobre un fondo azul verdoso y separadas de manera desigual",
@@ -293,6 +305,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "festival-de-calaveras-2026",
+    createdAt: "2026-09-08T21:59:53+04:00",
+    updatedAt: "2026-09-08T21:59:53+04:00",
     site: "mxo",
     image: "/covers/festival-de-calaveras-2026.jpg",
     imageAlt: "Una calavera de papel color crema con sombrero naranja de ala ancha, recortada en formas planas, a la derecha de un fondo verde oscuro",
@@ -349,6 +363,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "xantolo-huasteca-potosina-2026",
+    createdAt: "2026-09-08T21:59:53+04:00",
+    updatedAt: "2026-09-08T21:59:53+04:00",
     site: "mxo",
     image: "/covers/xantolo-huasteca-potosina-2026.jpg",
     imageAlt: "Tres máscaras ovaladas de papel — naranja, roja y crema — superpuestas en fila sobre un fondo verde oscuro",
@@ -403,6 +419,8 @@ export const items: EventItem[] = [
 
   {
     slug: "fil-monterrey-2026",
+    createdAt: "2026-09-12T17:21:29+04:00",
+    updatedAt: "2026-09-12T17:21:29+04:00",
     site: "mxo",
     title: "FIL Monterrey 2026: El Colegio Nacional",
     summary:
@@ -442,6 +460,8 @@ export const items: EventItem[] = [
 
   {
     slug: "futur-festival-mexico-2026",
+    createdAt: "2026-09-12T17:21:29+04:00",
+    updatedAt: "2026-09-12T17:21:29+04:00",
     site: "mxo",
     title: "Futur Festival México 2026, el primero fuera de Europa",
     summary:

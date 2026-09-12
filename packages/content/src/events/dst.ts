@@ -3,6 +3,8 @@ import type { EventItem } from "../types.ts";
 export const items: EventItem[] = [
   {
     slug: "expand-north-star-2026",
+    createdAt: "2026-08-25T18:18:34+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "dst",
     image: "/covers/expand-north-star-2026.jpg",
     imageAlt: "A scatter of small cut-paper squares on a slate ground converging on one larger cream square, thin brass lines between them",
@@ -39,6 +41,8 @@ export const items: EventItem[] = [
 
   {
     slug: "future-world-forum-dubai-2026",
+    createdAt: "2026-08-27T08:25:50+04:00",
+    updatedAt: "2026-09-03T07:30:21+04:00",
     site: "dst",
     title: "Future World Forum Dubai",
     summary:
@@ -113,6 +117,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "blockchain-life-dubai-2026",
+    createdAt: "2026-08-26T04:47:11+04:00",
+    updatedAt: "2026-09-07T16:06:17+04:00",
     site: "dst",
     image: "/covers/blockchain-life-dubai-2026.jpg",
     imageAlt: "An arena bowl seen from above as concentric paper rings, a chain of linked hexagons across the middle",
@@ -154,6 +160,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "gitex-global-dubai-2026",
+    createdAt: "2026-08-26T04:47:11+04:00",
+    updatedAt: "2026-09-02T07:22:25+04:00",
     site: "dst",
     image: "/covers/gitex-global-dubai-2026.jpg",
     imageAlt: "A domed exhibition hall in cut paper with an avenue of small pavilions leading to it",
@@ -184,6 +192,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "step-conference-dubai-2026",
+    createdAt: "2026-08-25T21:44:32+04:00",
+    updatedAt: "2026-09-02T07:22:25+04:00",
     site: "dst",
     image: "/covers/step-conference-dubai-2026.jpg",
     imageAlt: "A flight of wide paper steps rising across the frame with low office blocks behind",
@@ -217,6 +227,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "world-governments-summit-2027",
+    createdAt: "2026-08-25T18:18:34+04:00",
+    updatedAt: "2026-09-07T16:06:17+04:00",
     site: "dst",
     image: "/covers/world-governments-summit-2027.jpg",
     imageAlt: "A round table seen from above with evenly spaced seats around its rim",
@@ -246,6 +258,8 @@ export const items: EventItem[] = [
 
   {
     slug: "dubai-ai-festival-2026",
+    createdAt: "2026-09-08T16:29:32+04:00",
+    updatedAt: "2026-09-08T16:29:32+04:00",
     site: "dst",
     image: "/covers/dubai-ai-festival-2026.jpg",
     imageAlt: "Five blank cream cards standing in a row on a deep slate blue ground, their tops uneven",

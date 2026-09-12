@@ -12,6 +12,8 @@ import type { NewsItem } from "../types.ts";
 export const items: NewsItem[] = [
   {
     slug: "aging-endpoints-inside-a-disease-trial",
+    createdAt: "2026-08-28T01:39:41+04:00",
+    updatedAt: "2026-09-08T14:19:42+04:00",
     site: "fwf",
     image: "/covers/aging-endpoints-inside-a-disease-trial.jpg",
     imageAlt: "A torn periwinkle paper band across a deep indigo ground with a small cream marker standing at each end",
@@ -52,6 +54,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "claude-now-watermarks-the-text-it-writes",
+    createdAt: "2026-09-08T11:33:45+04:00",
+    updatedAt: "2026-09-08T14:19:42+04:00",
     site: "fwf",
     image: "/covers/claude-now-watermarks-the-text-it-writes.jpg",
     imageAlt: "A row of small paper squares of the same size on a deep blue ground, most of them pale blue and two of them cream",
@@ -89,6 +93,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "four-million-driverless-kilometres-and-a-satisfaction-score",
+    createdAt: "2026-09-08T00:12:45+04:00",
+    updatedAt: "2026-09-08T11:33:45+04:00",
     site: "fwf",
     image: "/covers/four-million-driverless-kilometres-and-a-satisfaction-score.jpg",
     imageAlt: "A long periwinkle paper ribbon looping across a deep indigo ground, a small lilac square riding on it",
@@ -124,6 +130,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "the-train-reaches-dubai-on-30-september",
+    createdAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-09-08T00:12:45+04:00",
     site: "fwf",
     image: "/covers/the-train-reaches-dubai-on-30-september.jpg",
     imageAlt: "A long horizontal paper band crossing the frame, meeting a short vertical band at a right angle, with a small bridging shape laid over the join",
@@ -158,6 +166,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "an-agent-that-can-drive-a-microscope",
+    createdAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "fwf",
     image: "/covers/an-agent-that-can-drive-a-microscope.jpg",
     imageAlt: "Four small paper instrument shapes of different outlines, each joined by a single identical connector to one central band",
@@ -194,6 +204,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "dubai-chambers-teaches-agentic-ai-to-14000-firms",
+    createdAt: "2026-09-03T07:30:21+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "fwf",
     image: "/covers/dubai-chambers-teaches-agentic-ai-to-14000-firms.jpg",
     imageAlt: "A grid of small periwinkle paper squares on an indigo ground, a few of them lifted forward and joined by pale lilac threads",
@@ -229,6 +241,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "drones-deliver-to-dubai-parks-and-beaches",
+    createdAt: "2026-09-02T13:01:24+04:00",
+    updatedAt: "2026-09-03T07:30:21+04:00",
     site: "fwf",
     image: "/covers/drones-deliver-to-dubai-parks-and-beaches.jpg",
     imageAlt: "A small white drone above horizontal paper bands of green, sand and deep blue",
@@ -263,6 +277,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "fifteen-kilometres-of-autonomous-dubai",
+    createdAt: "2026-09-02T13:01:24+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "fwf",
     image: "/covers/fifteen-kilometres-of-autonomous-dubai.jpg",
     imageAlt: "Seven upright paper strips in pale violet, pink and cream standing side by side on dark blue",
@@ -297,6 +313,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "ifa-berlin-2026",
+    createdAt: "2026-09-02T13:01:24+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "fwf",
     image: "/covers/ifa-berlin-2026.jpg",
     imageAlt: "A wide arc of small paper rectangles in muted violets and greys sweeping across a bone-white ground",
@@ -331,6 +349,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "a-hardware-engineer-inherits-the-software-era",
+    createdAt: "2026-09-02T12:10:41+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "fwf",
     image: "/covers/a-hardware-engineer-inherits-the-software-era.jpg",
     imageAlt: "A layered paper chip square with a small white cloud shape resting on top of it",
@@ -367,6 +387,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "eu-classifies-chatgpt-as-a-search-engine",
+    createdAt: "2026-09-02T12:10:41+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "fwf",
     image: "/covers/eu-classifies-chatgpt-as-a-search-engine.jpg",
     imageAlt: "A paper magnifying glass overlapping a paper speech bubble of similar size",
@@ -405,6 +427,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "agentic-ai-half-of-uae-government-services",
+    createdAt: "2026-09-01T15:07:36+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "fwf",
     image: "/covers/agentic-ai-half-of-uae-government-services.jpg",
     imageAlt: "A grid of paper tiles with half of them replaced by linked hexagonal nodes",
@@ -442,6 +466,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "dubai-second-in-bcg-intelligent-cities-index",
+    createdAt: "2026-08-28T01:39:41+04:00",
+    updatedAt: "2026-09-02T15:26:38+04:00",
     site: "fwf",
     image: "/covers/dubai-second-in-bcg-intelligent-cities-index.jpg",
     imageAlt: "A three-step podium in cut paper ringed by small tower shapes",
@@ -469,6 +495,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "rta-starts-commercial-robotaxi-operations",
+    createdAt: "2026-08-28T01:39:41+04:00",
+    updatedAt: "2026-08-31T01:24:01+04:00",
     featured: 1,
     site: "fwf",
     image: "/covers/rta-starts-commercial-robotaxi-operations.jpg",
@@ -496,6 +524,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "vara-rules-for-virtual-asset-derivatives",
+    createdAt: "2026-08-28T01:39:41+04:00",
+    updatedAt: "2026-09-02T15:26:38+04:00",
     site: "fwf",
     image: "/covers/vara-rules-for-virtual-asset-derivatives.jpg",
     imageAlt: "Two overlapping paper sheets with a rising step chart and a padlock",
@@ -522,6 +552,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "dubai-land-department-tokenisation-pilot",
+    createdAt: "2026-08-28T01:39:41+04:00",
+    updatedAt: "2026-09-02T15:26:38+04:00",
     featured: 2,
     site: "fwf",
     image: "/covers/dubai-land-department-tokenisation-pilot.jpg",

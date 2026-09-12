@@ -63,6 +63,25 @@ export interface ItemForm {
 interface ItemBase {
   slug: string;
   site: string;
+  // When this entry was first published and when its text last changed,
+  // full ISO with offset. These are the two dates the sitemap is built
+  // from, and they are written down rather than inferred.
+  //
+  // They used to be read out of git: the entry was located by its slug and
+  // dated by `git log -L` over its own lines. That worked for an entry and
+  // for nothing else. An index page has no lines of its own, so it was
+  // dated by whichever file happened to name it — a routing vocabulary
+  // entry, in the case of a section — and a page created today could claim
+  // to be four days old. Worse, the inference needed a cache to keep its
+  // own noise down, and a run made before the change was committed froze a
+  // wrong date behind a matching hash, permanently and silently.
+  //
+  // A field cannot be wrong about which lines belong to it. What it can be
+  // is forgotten, so `npm run test:content` fails when an entry's text
+  // moved and `updatedAt` did not, and `node tools/item-dates.mjs` fills in
+  // what is missing from history.
+  createdAt: string;
+  updatedAt: string;
   title: string;
   // Shown on the feed card instead of `title`. The card column is about
   // 215px wide, and a headline past roughly 45 characters wraps to four

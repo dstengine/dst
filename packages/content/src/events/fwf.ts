@@ -10,6 +10,8 @@ import type { EventItem } from "../types.ts";
 export const items: EventItem[] = [
   {
     slug: "dubai-future-week-2026",
+    createdAt: "2026-08-28T01:39:41+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "fwf",
     image: "/covers/dubai-future-week-2026.jpg",
     imageAlt: "Five pale lilac paper bands of different widths fanning out from one periwinkle point on an indigo ground",
@@ -47,6 +49,8 @@ export const items: EventItem[] = [
 
   {
     slug: "future-world-forum-dubai-2026",
+    createdAt: "2026-08-28T01:39:41+04:00",
+    updatedAt: "2026-09-03T07:30:21+04:00",
     site: "fwf",
     image: "/covers/future-world-forum-dubai-2026.jpg",
     imageAlt: "A circular forum floor in layered paper with concentric rings of seating",
@@ -121,6 +125,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "dubai-future-forum-2026",
+    createdAt: "2026-08-28T01:56:27+04:00",
+    updatedAt: "2026-08-31T08:15:19+04:00",
     site: "fwf",
     image: "/covers/dubai-future-forum-2026.jpg",
     imageAlt: "A plain paper ring standing upright on a low mound between two pale panels",
@@ -156,6 +162,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "gitex-global-2026",
+    createdAt: "2026-08-28T01:56:27+04:00",
+    updatedAt: "2026-08-31T08:15:19+04:00",
     site: "fwf",
     image: "/covers/gitex-global-2026.jpg",
     imageAlt: "A grid of pavilion roofs seen from above with a domed hall at the centre",
@@ -190,6 +198,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "proptech-connect-middle-east-2026",
+    createdAt: "2026-08-28T01:56:27+04:00",
+    updatedAt: "2026-09-02T07:22:25+04:00",
     site: "fwf",
     image: "/covers/proptech-connect-middle-east-2026.jpg",
     imageAlt: "Paper tower blocks with thin lines and nodes strung between their rooftops",
@@ -223,6 +233,8 @@ export const items: EventItem[] = [
 
   {
     slug: "one-billion-followers-summit-2027",
+    createdAt: "2026-09-08T16:29:32+04:00",
+    updatedAt: "2026-09-08T16:29:32+04:00",
     site: "fwf",
     image: "/covers/one-billion-followers-summit-2027.jpg",
     imageAlt: "Five pale concentric rings spreading outward from a single dot on deep indigo",

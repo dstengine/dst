@@ -3,6 +3,8 @@ import type { NewsItem } from "../types.ts";
 export const items: NewsItem[] = [
   {
     slug: "the-sixth-phase-finishes-this-quarter-and-the-park-passes-4000mw",
+    createdAt: "2026-08-25T18:18:34+04:00",
+    updatedAt: "2026-09-08T00:12:45+04:00",
     site: "eco",
     image: "/covers/the-sixth-phase-finishes-this-quarter-and-the-park-passes-4000mw.jpg",
     imageAlt: "Rows of sage paper rectangles tilted at the same angle across a forest green ground, the last row a shade paler than the rest",
@@ -38,6 +40,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "dubai-holds-its-first-environment-conference-this-week",
+    createdAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-09-08T00:12:45+04:00",
     site: "eco",
     image: "/covers/dubai-holds-its-first-environment-conference-this-week.jpg",
     imageAlt: "Six sage paper leaves arranged in a ring on a deep forest green ground, with a warm cream circle at the centre",
@@ -73,6 +77,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "solar-is-now-the-largest-installed-technology-on-earth",
+    createdAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "eco",
     image: "/covers/solar-is-now-the-largest-installed-technology-on-earth.jpg",
     imageAlt: "A large sage paper square on a deep forest green ground beside three smaller moss squares of decreasing size, a warm cream line beneath them all",
@@ -108,6 +114,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "dp-world-names-its-first-methanol-dual-fuel-ship",
+    createdAt: "2026-09-03T07:30:21+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "eco",
     image: "/covers/dp-world-names-its-first-methanol-dual-fuel-ship.jpg",
     imageAlt: "A simple sage paper ship hull on a deep green ground with two cream fuel droplets above it, one larger than the other",
@@ -143,6 +151,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "a-60-percent-carbon-cut-changes-hands",
+    createdAt: "2026-09-02T12:10:41+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "eco",
     image: "/covers/a-60-percent-carbon-cut-changes-hands.jpg",
     imageAlt: "A tall paper column beside a much shorter one of the same width, a leaf leaning against the base of the shorter",
@@ -179,6 +189,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "uae-mangroves-halfway-to-100-million",
+    createdAt: "2026-09-01T15:07:36+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "eco",
     image: "/covers/uae-mangroves-halfway-to-100-million.jpg",
     imageAlt: "Paper mangrove roots and canopy filling the left half of the frame, open water on the right",
@@ -216,6 +228,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "eco-dst-llc-launched",
+    createdAt: "2026-08-25T18:18:34+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "eco",
     title: "DST opens a non-commercial environmental direction",
     summary:

@@ -4,6 +4,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "veinte-anos-del-festival-de-vida-y-muerte",
+    createdAt: "2026-09-08T21:23:08+04:00",
+    updatedAt: "2026-09-08T21:59:53+04:00",
     site: "mxo",
     image: "/covers/veinte-anos-del-festival-de-vida-y-muerte.jpg",
     imageAlt: "Muchas flores de cempas\u00fachil de papel, naranjas, repartidas en cuatro hileras sobre un fondo azul verdoso, con una franja vac\u00eda a la mitad",
@@ -52,6 +54,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "relojes-proteomicos-y-una-dosis-partida-en-dos",
+    createdAt: "2026-08-30T11:52:01+04:00",
+    updatedAt: "2026-09-08T14:19:42+04:00",
     site: "mxo",
     image: "/covers/relojes-proteomicos-y-una-dosis-partida-en-dos.jpg",
     imageAlt: "Un enjambre de pequeños discos naranjas de papel a la izquierda que se dispersa hacia un único disco grande a la derecha, sobre fondo verde oscuro",
@@ -90,6 +94,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "el-texto-lleva-marca-la-imagen-lleva-firma",
+    createdAt: "2026-09-08T11:57:44+04:00",
+    updatedAt: "2026-09-08T14:19:42+04:00",
     site: "mxo",
     image: "/covers/el-texto-lleva-marca-la-imagen-lleva-firma.jpg",
     imageAlt: "Dos hojas de papel del mismo tamaño sobre fondo verde, la de la izquierda color terracota con un sello en la esquina y la de la derecha color crema y sin nada",
@@ -125,6 +131,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "la-feria-de-francisco-i-madero-abre-el-11-de-septiembre",
+    createdAt: "2026-09-08T00:12:45+04:00",
+    updatedAt: "2026-09-08T11:57:44+04:00",
     site: "mxo",
     image: "/covers/la-feria-de-francisco-i-madero-abre-el-11-de-septiembre.jpg",
     imageAlt: "Banderines de papel terracota y crema colgados en dos hileras sobre fondo verde bosque, uno de ellos girado de canto",
@@ -160,6 +168,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "gpt-6-astra-saturo-tres-examenes",
+    createdAt: "2026-09-06T20:58:51+04:00",
+    updatedAt: "2026-09-08T00:12:45+04:00",
     site: "mxo",
     image: "/covers/gpt-6-astra-saturo-tres-examenes.jpg",
     imageAlt: "Sobre un fondo verde profundo, tres barras de papel crema de alturas crecientes y una cuarta en terracota, más baja que las dos que la preceden",
@@ -196,6 +206,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "mexico-cuarto-lugar-mundial-en-pib-turistico",
+    createdAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-09-06T20:58:51+04:00",
     site: "mxo",
     image: "/covers/mexico-cuarto-lugar-mundial-en-pib-turistico.jpg",
     imageAlt: "Cuatro barras de papel de alturas decrecientes, la cuarta en un tono distinto y ligeramente separada de las otras tres",
@@ -230,6 +242,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "el-decagono-de-saturno-estaba-en-el-archivo",
+    createdAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "mxo",
     image: "/covers/el-decagono-de-saturno-estaba-en-el-archivo.jpg",
     imageAlt: "Tres marcos de papel apilados, con un contorno de diez lados apenas visible a través del primero",
@@ -265,6 +279,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "morelia-anuncia-96-peliculas-mexicanas",
+    createdAt: "2026-09-03T07:30:21+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "mxo",
     image: "/covers/morelia-anuncia-96-peliculas-mexicanas.jpg",
     imageAlt: "Noventa y seis rectángulos de papel en cuadrícula, cuarenta de ellos en un tono distinto",
@@ -300,6 +316,8 @@ export const items: NewsItem[] = [
 
   {
     slug: "veinticinco-anos-para-llegar-a-la-cima",
+    createdAt: "2026-09-02T12:10:41+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "mxo",
     image: "/covers/veinticinco-anos-para-llegar-a-la-cima.jpg",
     imageAlt: "Una escalera de papel que asciende en escalones iguales hasta un borde alto",
@@ -337,6 +355,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "venecia-2026-una-sola-pelicula-latinoamericana",
+    createdAt: "2026-09-01T16:18:19+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "mxo",
     image: "/covers/venecia-2026-una-sola-pelicula-latinoamericana.jpg",
     imageAlt: "Un campo de cuadros de papel color crema y uno solo en terracota, apartado del resto",
@@ -374,6 +394,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "kia-ev3-pesqueria-nuevo-leon",
+    createdAt: "2026-09-01T15:07:36+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "mxo",
     image: "/covers/kia-ev3-pesqueria-nuevo-leon.jpg",
     imageAlt: "Un auto de papel recortado con una batería en el piso y un cable de carga en curva",
@@ -411,6 +433,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "moderna-vacuna-melanoma-fase-3",
+    createdAt: "2026-08-30T23:55:54+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     featured: 1,
     site: "mxo",
     image: "/covers/moderna-vacuna-melanoma-fase-3.jpg",
@@ -447,6 +471,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "record-temperatura-oceano-2026",
+    createdAt: "2026-08-30T23:55:54+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "mxo",
     image: "/covers/record-temperatura-oceano-2026.jpg",
     imageAlt: "Olas de papel en capas que pasan del azul frío al naranja cálido hacia el frente",
@@ -482,6 +508,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "capuchinos-cazan-cuando-falta-fruta",
+    createdAt: "2026-08-30T23:51:30+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "mxo",
     image: "/covers/capuchinos-cazan-cuando-falta-fruta.jpg",
     imageAlt: "Un mono en la rama de una selva de papel, con frutas de un lado y ninguna del otro",
@@ -517,6 +545,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "hirosaki-mil-ochocientas-personas-castillo",
+    createdAt: "2026-08-30T23:51:30+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "mxo",
     image: "/covers/hirosaki-mil-ochocientas-personas-castillo.jpg",
     imageAlt: "La torre de un castillo japonés sobre rodillos, con una cuerda gruesa tendida hacia el borde",
@@ -552,6 +582,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "cova-de-les-dones-inscripciones-romanas",
+    createdAt: "2026-08-30T23:51:30+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "mxo",
     image: "/covers/cova-de-les-dones-inscripciones-romanas.jpg",
     imageAlt: "La boca de una cueva recortada en capas de roca, con un pasaje que se pierde en la oscuridad",
@@ -587,6 +619,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "telescopio-roman-lanzamiento",
+    createdAt: "2026-08-30T23:51:30+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     featured: 2,
     site: "mxo",
     image: "/covers/telescopio-roman-lanzamiento.jpg",
@@ -622,6 +656,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "cuatro-cienegas-borrego-cimarron",
+    createdAt: "2026-08-30T20:53:51+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "mxo",
     image: "/covers/cuatro-cienegas-borrego-cimarron.jpg",
     imageAlt: "Un borrego cimarrón en una loma del desierto, un bisonte al fondo y pozas de agua abajo",
@@ -660,6 +696,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "tren-ligero-texcoco-la-paz",
+    createdAt: "2026-08-30T20:53:51+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "mxo",
     image: "/covers/tren-ligero-texcoco-la-paz.jpg",
     imageAlt: "Una línea de tren ligero con estaciones marcadas y un tranvía al final, un lago detrás",
@@ -697,6 +735,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "filij-2026-regresa-al-cenart",
+    createdAt: "2026-08-30T11:52:01+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "mxo",
     image: "/covers/filij-2026-regresa-al-cenart.jpg",
     imageAlt: "Un libro abierto que se convierte en una carpa de papel, rodeado de animales de papel doblado",
@@ -733,6 +773,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "kusama-320-mil-visitantes",
+    createdAt: "2026-08-30T11:52:01+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "mxo",
     image: "/covers/kusama-320-mil-visitantes.jpg",
     imageAlt: "Un campo denso de círculos de papel de todos los tamaños con una sala espejada al centro",
@@ -770,6 +812,8 @@ export const items: NewsItem[] = [
   },
   {
     slug: "john-giorno-en-kurimanzutto",
+    createdAt: "2026-08-30T11:52:01+04:00",
+    updatedAt: "2026-09-06T08:48:11+04:00",
     site: "mxo",
     image: "/covers/john-giorno-en-kurimanzutto.jpg",
     imageAlt: "Un teléfono de disco montado en una pared de galería, con discos de vinilo y una tira de papel",

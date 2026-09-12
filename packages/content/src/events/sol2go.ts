@@ -3,6 +3,8 @@ import type { EventItem } from "../types.ts";
 export const items: EventItem[] = [
   {
     slug: "crypto-expo-dubai-2026",
+    createdAt: "2026-09-06T09:36:42+04:00",
+    updatedAt: "2026-09-07T16:11:31+04:00",
     site: "sol2go",
     image: "/covers/crypto-expo-dubai-2026.jpg",
     imageAlt: "A wide flat hall in violet paper with two rows of small stand shapes and one tall mint tower rising behind it",
@@ -73,6 +75,8 @@ export const items: EventItem[] = [
 
   {
     slug: "breakpoint-2026-london",
+    createdAt: "2026-09-06T09:36:42+04:00",
+    updatedAt: "2026-09-06T18:13:26+04:00",
     site: "sol2go",
     image: "/covers/breakpoint-2026-london.jpg",
     imageAlt: "A tall paper hall with a barrel-vaulted glass roof cut as flat violet and lilac sheets, a wide crowd band of pale mint below it",
@@ -116,6 +120,8 @@ export const items: EventItem[] = [
 
   {
     slug: "crypto-worlds-fair-2026",
+    createdAt: "2026-09-06T09:36:42+04:00",
+    updatedAt: "2026-09-06T14:48:11+04:00",
     site: "sol2go",
     image: "/covers/crypto-worlds-fair-2026.jpg",
     imageAlt: "A ring of flat pavilion shapes in violet, lilac and mint paper arranged around a small cream disc",
@@ -157,6 +163,8 @@ export const items: EventItem[] = [
 
   {
     slug: "solana-hacker-house-london-2026",
+    createdAt: "2026-09-06T09:36:42+04:00",
+    updatedAt: "2026-09-06T18:13:26+04:00",
     site: "sol2go",
     image: "/covers/solana-hacker-house-london-2026.jpg",
     imageAlt: "Rows of flat desk shapes in lilac and mint paper receding under a long violet ceiling band",
@@ -201,6 +209,8 @@ export const items: EventItem[] = [
 
   {
     slug: "scale-or-die-2026",
+    createdAt: "2026-09-06T09:36:42+04:00",
+    updatedAt: "2026-09-06T18:13:26+04:00",
     site: "sol2go",
     image: "/covers/scale-or-die-2026.jpg",
     imageAlt: "A steep ascending stack of narrow paper bars in violet and mint against a pale ground",
@@ -238,6 +248,8 @@ export const items: EventItem[] = [
 
   {
     slug: "solana-summit-canada-2026",
+    createdAt: "2026-09-06T09:36:42+04:00",
+    updatedAt: "2026-09-06T18:13:26+04:00",
     site: "sol2go",
     image: "/covers/solana-summit-canada-2026.jpg",
     imageAlt: "A flat gabled market-hall silhouette in violet paper with a row of mint arches beneath it",
@@ -272,6 +284,8 @@ export const items: EventItem[] = [
 
   {
     slug: "ethglobal-tokyo-2026",
+    createdAt: "2026-09-06T09:36:42+04:00",
+    updatedAt: "2026-09-06T18:13:26+04:00",
     site: "sol2go",
     image: "/covers/ethglobal-tokyo-2026.jpg",
     imageAlt: "A tall paper gate form in violet over a dense grid of small mint and lilac squares",
@@ -306,6 +320,8 @@ export const items: EventItem[] = [
 
   {
     slug: "solana-summit-korea-2026",
+    createdAt: "2026-09-06T09:36:42+04:00",
+    updatedAt: "2026-09-06T18:13:26+04:00",
     site: "sol2go",
     image: "/covers/solana-summit-korea-2026.jpg",
     imageAlt: "A stepped skyline of flat violet towers with a wide mint river band across the lower frame",
@@ -338,6 +354,8 @@ export const items: EventItem[] = [
 
   {
     slug: "solana-summit-singapore-2026",
+    createdAt: "2026-09-06T09:36:42+04:00",
+    updatedAt: "2026-09-06T18:13:26+04:00",
     site: "sol2go",
     image: "/covers/solana-summit-singapore-2026.jpg",
     imageAlt: "Three tall paper columns joined by a long flat deck in violet, a mint bay band below",
@@ -372,6 +390,8 @@ export const items: EventItem[] = [
 
   {
     slug: "solana-summit-india-2026",
+    createdAt: "2026-09-06T09:36:42+04:00",
+    updatedAt: "2026-09-06T18:13:26+04:00",
     site: "sol2go",
     image: "/covers/solana-summit-india-2026.jpg",
     imageAlt: "A row of flat arched openings in violet paper with mint sea shapes behind them",
@@ -405,6 +425,8 @@ export const items: EventItem[] = [
 
   {
     slug: "solana-startup-connect-ghana-2026",
+    createdAt: "2026-09-06T09:36:42+04:00",
+    updatedAt: "2026-09-06T18:13:26+04:00",
     site: "sol2go",
     image: "/covers/solana-startup-connect-ghana-2026.jpg",
     imageAlt: "Interlocking flat chevrons in violet, mint and cream paper forming a broad woven band",
@@ -436,6 +458,8 @@ export const items: EventItem[] = [
 
   {
     slug: "co-working-fridays-london-september-2026",
+    createdAt: "2026-09-06T09:36:42+04:00",
+    updatedAt: "2026-09-06T18:13:26+04:00",
     site: "sol2go",
     image: "/covers/co-working-fridays-london-september-2026.jpg",
     imageAlt:
@@ -479,6 +503,8 @@ export const items: EventItem[] = [
 
   {
     slug: "the-future-of-finance-thessaloniki-2026",
+    createdAt: "2026-09-06T09:36:42+04:00",
+    updatedAt: "2026-09-06T18:13:26+04:00",
     site: "sol2go",
     image: "/covers/the-future-of-finance-thessaloniki-2026.jpg",
     imageAlt:
@@ -524,6 +550,8 @@ export const items: EventItem[] = [
 
   {
     slug: "solana-ecosystem-call-september-2026",
+    createdAt: "2026-09-06T09:36:42+04:00",
+    updatedAt: "2026-09-06T14:57:39+04:00",
     site: "sol2go",
     image: "/covers/solana-ecosystem-call-september-2026.jpg",
     imageAlt:
@@ -566,6 +594,8 @@ export const items: EventItem[] = [
 
   {
     slug: "superteam-canada-community-call-october-2026",
+    createdAt: "2026-09-06T09:36:42+04:00",
+    updatedAt: "2026-09-06T14:48:11+04:00",
     site: "sol2go",
     image: "/covers/superteam-canada-community-call-october-2026.jpg",
     imageAlt:
@@ -609,6 +639,8 @@ export const items: EventItem[] = [
 
   {
     slug: "solana-capital-forum-singapore-2026",
+    createdAt: "2026-09-06T09:36:42+04:00",
+    updatedAt: "2026-09-06T18:13:26+04:00",
     site: "sol2go",
     image: "/covers/solana-capital-forum-singapore-2026.jpg",
     imageAlt:
@@ -652,6 +684,8 @@ export const items: EventItem[] = [
 
   {
     slug: "islanddao-v5-2026",
+    createdAt: "2026-09-06T09:36:42+04:00",
+    updatedAt: "2026-09-06T18:13:26+04:00",
     site: "sol2go",
     image: "/covers/islanddao-v5-2026.jpg",
     imageAlt:
@@ -692,6 +726,8 @@ export const items: EventItem[] = [
 
   {
     slug: "money-layer-breakpoint-week-2026",
+    createdAt: "2026-09-06T09:36:42+04:00",
+    updatedAt: "2026-09-06T18:13:26+04:00",
     site: "sol2go",
     image: "/covers/money-layer-breakpoint-week-2026.jpg",
     imageAlt:
@@ -734,6 +770,8 @@ export const items: EventItem[] = [
 
   {
     slug: "pr1me-london-dinner-2026",
+    createdAt: "2026-09-06T09:36:42+04:00",
+    updatedAt: "2026-09-06T18:13:26+04:00",
     site: "sol2go",
     image: "/covers/pr1me-london-dinner-2026.jpg",
     imageAlt:
@@ -776,6 +814,8 @@ export const items: EventItem[] = [
 
   {
     slug: "superteam-canada-community-call-november-2026",
+    createdAt: "2026-09-06T09:36:42+04:00",
+    updatedAt: "2026-09-06T14:48:11+04:00",
     site: "sol2go",
     image: "/covers/superteam-canada-community-call-november-2026.jpg",
     imageAlt:
@@ -819,6 +859,8 @@ export const items: EventItem[] = [
 
   {
     slug: "superteam-canada-community-call-december-2026",
+    createdAt: "2026-09-06T09:36:42+04:00",
+    updatedAt: "2026-09-06T14:48:11+04:00",
     site: "sol2go",
     image: "/covers/superteam-canada-community-call-december-2026.jpg",
     imageAlt:
@@ -862,6 +904,8 @@ export const items: EventItem[] = [
 
   {
     slug: "solana-frontier-hackathon-2026",
+    createdAt: "2026-09-06T09:36:42+04:00",
+    updatedAt: "2026-09-06T14:57:39+04:00",
     site: "sol2go",
     image: "/covers/solana-frontier-hackathon-2026.jpg",
     imageAlt: "A wide horizon band of layered violet and mint paper with one small cream flag shape near the edge",
@@ -898,6 +942,8 @@ export const items: EventItem[] = [
 
   {
     slug: "solana-armenia-meetup-yerevan-july-2026",
+    createdAt: "2026-09-06T09:36:42+04:00",
+    updatedAt: "2026-09-08T15:51:10+04:00",
     site: "sol2go",
     image: "/covers/solana-armenia-meetup-yerevan-july-2026.jpg",
     imageAlt: "A low wide room in violet paper with the three-bar Solana mark hanging on the back wall in the red, blue and apricot of the Armenian flag, a small raised platform at one end and flat cream and mint rectangles scattered across the floor",
@@ -948,6 +994,8 @@ export const items: EventItem[] = [
 
   {
     slug: "ethglobal-lisbon-2026",
+    createdAt: "2026-09-06T09:36:42+04:00",
+    updatedAt: "2026-09-06T18:13:26+04:00",
     site: "sol2go",
     image: "/covers/ethglobal-lisbon-2026.jpg",
     imageAlt:
@@ -990,6 +1038,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "coworking-fridays-belgrade-september-2026",
+    createdAt: "2026-09-06T17:57:17+04:00",
+    updatedAt: "2026-09-06T18:13:26+04:00",
     site: "sol2go",
     image: "/covers/coworking-fridays-belgrade-september-2026.jpg",
     imageAlt:
@@ -1031,6 +1081,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "buildstation-belgrade-2026",
+    createdAt: "2026-09-06T17:57:17+04:00",
+    updatedAt: "2026-09-06T18:13:26+04:00",
     site: "sol2go",
     image: "/covers/buildstation-belgrade-2026.jpg",
     imageAlt:
@@ -1072,6 +1124,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "solana-summit-serbia-2026",
+    createdAt: "2026-09-06T17:57:17+04:00",
+    updatedAt: "2026-09-06T18:13:26+04:00",
     site: "sol2go",
     image: "/covers/solana-summit-serbia-2026.jpg",
     imageAlt:
@@ -1132,6 +1186,8 @@ export const items: EventItem[] = [
   },
   {
     slug: "blockchain-life-2026-dubai",
+    createdAt: "2026-09-06T17:57:17+04:00",
+    updatedAt: "2026-09-07T15:37:04+04:00",
     site: "sol2go",
     image: "/covers/blockchain-life-2026-dubai.jpg",
     imageAlt:
@@ -1201,6 +1257,8 @@ export const items: EventItem[] = [
 
   {
     slug: "digitec-2026-yerevan",
+    createdAt: "2026-09-06T18:42:33+04:00",
+    updatedAt: "2026-09-08T15:51:10+04:00",
     site: "sol2go",
     image: "/covers/digitec-2026-yerevan.jpg",
     imageAlt: "A violet exhibition hall with a row of pale lilac booth counters down each side wall, mint banners and track lights hanging between the columns, a large blank cream board on the far wall and an empty floor down the middle",
@@ -1242,6 +1300,8 @@ export const items: EventItem[] = [
 
   {
     slug: "200ms-breakpoint-week-2026",
+    createdAt: "2026-09-08T16:29:32+04:00",
+    updatedAt: "2026-09-08T16:29:32+04:00",
     site: "sol2go",
     image: "/covers/200ms-breakpoint-week-2026.jpg",
     imageAlt: "A stack of flat violet and mint slabs, each offset from the one below it, on deep violet",

@@ -3,6 +3,8 @@ import type { EventItem } from "../types.ts";
 export const items: EventItem[] = [
   {
     slug: "gitex-global-2026",
+    createdAt: "2026-08-25T18:18:34+04:00",
+    updatedAt: "2026-08-31T08:15:19+04:00",
     site: "llc",
     image: "/covers/gitex-global-2026.jpg",
     imageAlt: "A grid of small exhibition stands in cut paper seen from a high angle",
@@ -41,6 +43,8 @@ export const items: EventItem[] = [
 
   {
     slug: "seamless-middle-east-2027",
+    createdAt: "2026-09-08T16:29:32+04:00",
+    updatedAt: "2026-09-08T16:29:32+04:00",
     site: "llc",
     image: "/covers/seamless-middle-east-2027.jpg",
     imageAlt: "A blank pale mint payment card with a small gold chip, lying flat on deep teal",
