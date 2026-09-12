@@ -591,4 +591,153 @@ export const items: EventItem[] = [
     expertise:
       "The arithmetic is worth doing before booking. A family of four on a peak half-term date is £38 plus the booking fee plus the parking plus a pumpkin each, and none of that buys the adventure park — whereas the same four on a quiet Tuesday in late September, with the Patch + Park ticket, get the whole site for a day. September is also when the meadow looks like a meadow rather than a queue. One would take the last week of September or the first of October, take the bundle, and treat the pumpkin as the souvenir it is rather than the thing one came for.",
   },
+
+  {
+    slug: "ski-sunday-surbiton-2026",
+    createdAt: "2026-09-12T23:41:00+04:00",
+    updatedAt: "2026-09-12T23:41:00+04:00",
+    site: "lnd",
+    image: "/covers/ski-sunday-surbiton-2026.jpg",
+    imageAlt:
+      "A broad white cut-paper hill filling the frame with a small figure sitting in a white bathtub near its crest and two little houses at the foot, one with a red roof, on a deep navy ground",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Ski Sunday in Surbiton 2026",
+    summary:
+      "Two hours of suburban skiing down St Mark's Hill in south-west London on Sunday 11 October, free to watch and free to enter, bathtubs permitted and over-18s only.",
+    start: "2026-10-11",
+    startTime: "11:00",
+    endTime: "13:00",
+    utcOffset: "+01:00",
+    venue: "St Mark's Hill",
+    city: "London",
+    country: "United Kingdom",
+    geo: {
+      name: "St Mark's Hill, Surbiton",
+      lat: 51.393283,
+      lng: -0.303981,
+    },
+    organizer: "The Community Brain",
+    category: "Sport",
+    tickets: { priceFrom: 0, currency: "GBP" },
+    ticket: {
+      url: "https://www.kingston.gov.uk/events/ski-sunday-surbiton",
+      label: "Event details",
+    },
+    source: {
+      name: "Royal Borough of Kingston upon Thames",
+      url: "https://www.kingston.gov.uk/events/ski-sunday-surbiton",
+      verifiedOn: "2026-09-12",
+    },
+    body: [
+      "There is no snow in Surbiton and there never has been, which is the entire premise. On <strong>Sunday 11 October 2026</strong>, between <strong>11am and 1pm</strong>, part of <strong>St Mark's Hill</strong> is given over to people going down it in a bathtub, or with blocks of ice strapped to their feet, and the Royal Borough of Kingston upon Thames lists it among its events with a straight face.",
+      "## What it costs and who may enter",
+      "<strong>Free</strong>, to watch and to take part. There is no ballot and no booking: the council's listing says simply to turn up if you fancy a go. The one hard condition is age — the run is <strong>for over-18s only</strong>. Safety equipment is provided, or you may bring your own, along with a costume of your choice.",
+      "## The Ski Sunday challenge",
+      "The challenge itself is run by <strong>The Pickled Pantry</strong> and fills the full <strong>11am to 1pm</strong>. The event is organised by <strong>The Community Brain</strong>, the Surbiton arts and heritage organisation behind the borough's better-known inventions.",
+      "## Then everybody eats",
+      "At <strong>1.15pm</strong> the crowd moves to <strong>Claremont Gardens, KT6 4BN</strong>, for <strong>The King's Soup</strong> — a communal vegetarian eating experience that runs until <strong>4.30pm</strong>. It is the same afternoon and a five-minute walk, so the sensible plan is both rather than either.",
+      "## Getting there",
+      "St Mark's Hill, Surbiton, KT6 4PJ, in the Royal Borough of Kingston upon Thames. Surbiton station is a short walk away and on the fast line into Waterloo, which makes this one of the easiest borough events in London to reach without a car — and given that the road is the venue, the car is not much use anyway.",
+    ],
+    faq: [
+      {
+        q: "When is Ski Sunday in Surbiton 2026?",
+        a: "Sunday 11 October 2026, from 11am to 1pm, on St Mark's Hill in Surbiton. It is followed by The King's Soup at Claremont Gardens from 1.15pm to 4.30pm.",
+      },
+      {
+        q: "How much does it cost?",
+        a: "Nothing. It is a free event organised by The Community Brain, with no ticket and no booking — you turn up if you would like a go or would like to watch.",
+      },
+      {
+        q: "Is there an age limit?",
+        a: "Yes. The run is for over-18s only. Safety equipment is provided, or you can bring your own.",
+      },
+      {
+        q: "Do I need a bathtub?",
+        a: "No. The council's listing offers riding part of St Mark's Hill in a bathtub or strapping blocks of ice to your feet as the two illustrations of the idea, and adds that you may bring a costume of your choice.",
+      },
+      {
+        q: "Which London borough is Surbiton in?",
+        a: "The Royal Borough of Kingston upon Thames, in south-west London. St Mark's Hill has the postcode KT6 4PJ.",
+      },
+    ],
+    expertise:
+      "The thing worth knowing about this one is that it is short: two hours, one hill, and no repeat performance. That makes the eleven o'clock start rather than the half-time arrival the sensible plan, and it makes the free soup afterwards more than an afterthought — The King's Soup runs until half past four, which is what turns a two-hour spectacle into an afternoon. Both halves are free and both are a five-minute walk apart, so the only thing being spent here is a Sunday. One would come out by train, since the road itself is closed for the occasion, and stay for the second half.",
+  },
+
+  {
+    slug: "curse-of-the-mummy-london-dungeon-2026",
+    createdAt: "2026-09-12T23:41:00+04:00",
+    updatedAt: "2026-09-12T23:41:00+04:00",
+    site: "lnd",
+    image: "/covers/curse-of-the-mummy-london-dungeon-2026.jpg",
+    imageAlt:
+      "A tall white cut-paper upright with a rounded arched top standing between two pale vertical panels, a lit candle either side with a small red flame, on a deep navy ground",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Curse of the Mummy at The London Dungeon 2026",
+    summary:
+      "The London Dungeon's Halloween show runs from 17 October to 1 November in Lambeth, included in the standard ticket from £27 online, and built on a real Victorian legend from a London museum.",
+    start: "2026-10-17",
+    end: "2026-11-01",
+    utcOffset: "+01:00",
+    venue: "The London Dungeon",
+    city: "London",
+    country: "United Kingdom",
+    geo: {
+      name: "The London Dungeon, The Queen's Walk",
+      lat: 51.5026,
+      lng: -0.119219,
+    },
+    organizer: "The London Dungeon",
+    category: "Halloween",
+    tickets: { priceFrom: 27, currency: "GBP" },
+    ticket: {
+      url: "https://www.thedungeons.com/london/whats-inside/events/halloween/",
+      label: "Dates and tickets",
+    },
+    source: {
+      name: "The London Dungeon",
+      url: "https://www.thedungeons.com/london/whats-inside/events/halloween/",
+      verifiedOn: "2026-09-12",
+    },
+    body: [
+      "Sixteen days, and the unusual part is that the Halloween show costs nothing extra. From <strong>17 October to 1 November 2026</strong> the London Dungeon adds <strong>Curse of the Mummy</strong> to its run, and it is <strong>included with admission</strong> rather than sold as an add-on — which on a site full of separately ticketed Halloween events in other boroughs is worth saying first.",
+      "## The story it is telling",
+      "This one is not invented. At the height of Victorian Egyptomania the amateur archaeologist <strong>Thomas Douglas Murray</strong> drew lots with his friends for ownership of the mummy-board of a High Priestess of Amen-Ra, brought it back to London to display, and — as the Dungeon puts it — everyone who came into her possession was sure to meet a terrible fate. The show is built on the legend of the <strong>Unlucky Mummy</strong>, one of London's more persistent museum ghost stories.",
+      "## What a ticket costs",
+      "The <strong>standard ticket is from £27 per adult online</strong> and <strong>£35 on the day</strong> — the gap between booking ahead and turning up is the single largest number on the page. An <strong>Anytime Entry</strong> ticket, which drops the fixed slot, is <strong>from £35 online and £43 on the day</strong>. <strong>Screams and Spirits</strong> is <strong>from £33 online and £41 on the day</strong>, an upgrade the Dungeon prices at £6 over the standard. A combined <strong>London Dungeon and London Eye</strong> ticket is <strong>from £49</strong>.",
+      "## Which borough this is",
+      "The Dungeon is in the Riverside Building at County Hall on <strong>The Queen's Walk, SE1 7PB</strong> — the <strong>London Borough of Lambeth</strong>, south bank, between Westminster Bridge and the London Eye. Waterloo and Westminster are both a short walk, which is why this is the Halloween event in London that needs no planning around transport at all.",
+      "## The one warning worth reading",
+      "The Dungeon says plainly that it expects to sell out and advises pre-booking to guarantee entry. Since the show is included rather than extra, the constraint is not the money — it is the slot.",
+    ],
+    faq: [
+      {
+        q: "When is Curse of the Mummy at The London Dungeon?",
+        a: "From 17 October to 1 November 2026. The show is included in a standard London Dungeon ticket for those dates.",
+      },
+      {
+        q: "Is the Halloween show an extra charge?",
+        a: "No. The London Dungeon states that Curse of the Mummy is included with admission for the run from 17 October to 1 November 2026.",
+      },
+      {
+        q: "How much is a ticket?",
+        a: "A standard ticket is from £27 per adult booked online and £35 on the day. Anytime Entry is from £35 online and £43 on the day, Screams and Spirits from £33 online and £41 on the day, and a combined London Dungeon and London Eye ticket from £49.",
+      },
+      {
+        q: "Where is The London Dungeon?",
+        a: "In the Riverside Building at County Hall on The Queen's Walk, SE1 7PB, in the London Borough of Lambeth, between Westminster Bridge and the London Eye.",
+      },
+      {
+        q: "Is the story real?",
+        a: "The legend is. The show follows the Victorian amateur archaeologist Thomas Douglas Murray, who drew lots with friends for the mummy-board of a High Priestess of Amen-Ra and brought it to London to display, and the run of misfortunes attached to it afterwards — the tale of the Unlucky Mummy.",
+      },
+    ],
+    expertise:
+      "Two numbers decide this visit. The first is £8: the difference per adult between booking online and paying on the door, which over a family of four is the price of a fifth person. The second is the slot — a standard ticket is timed, and the Dungeon's own advice is that it sells out at Halloween, so the choice is really between booking a weekday slot early or paying from £35 for Anytime Entry and keeping the day loose. The half-term week from 24 October is the busiest of the sixteen days by some distance; the three or four days before it, when the show is already on but the schools are not yet off, are the same show in a quieter building.",
+  },
 ];

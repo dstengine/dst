@@ -905,4 +905,147 @@ export const items: EventItem[] = [
     expertise:
       "This is the half-term afternoon that costs nothing, which is exactly why it queues — the storytelling slots at twelve, one and two are the busiest half-hours of each day. Arriving at eleven, or after two, is the difference between doing everything and doing one thing. The Lookout is a walk in from every gate, so allow for it: this is central London geographically and a fifteen-minute walk in practice.",
   },
+
+  {
+    slug: "hyde-park-winter-wonderland-2026",
+    createdAt: "2026-09-12T23:41:00+04:00",
+    updatedAt: "2026-09-12T23:41:00+04:00",
+    site: "ldn",
+    image: "/covers/hyde-park-winter-wonderland-2026.jpg",
+    imageAlt:
+      "A dark cut-paper big wheel and a red-and-white striped tent standing on a white band of snow, a bare tree and two small firs between them, on a warm off-white ground",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Hyde Park Winter Wonderland 2026",
+    summary:
+      "London's largest Christmas event runs from 19 November 2026 to 3 January 2027 with 150+ attractions, half a million £1 off-peak entry slots and no booking fee at checkout.",
+    start: "2026-11-19",
+    end: "2027-01-03",
+    utcOffset: "+00:00",
+    venue: "Hyde Park",
+    city: "London",
+    country: "United Kingdom",
+    geo: {
+      name: "Hyde Park",
+      lat: 51.507489,
+      lng: -0.162207,
+    },
+    organizer: "Hyde Park Winter Wonderland",
+    category: "Festival",
+    tickets: { priceFrom: 1, currency: "GBP" },
+    ticket: {
+      url: "https://hydeparkwinterwonderland.com/",
+      label: "Dates and tickets",
+    },
+    source: {
+      name: "Hyde Park Winter Wonderland",
+      url: "https://hydeparkwinterwonderland.com/",
+      verifiedOn: "2026-09-12",
+    },
+    body: [
+      "Six weeks, one park, and a number that does more work than any of the marketing around it: <strong>£1</strong>. Winter Wonderland opens on <strong>19 November 2026</strong> and closes on <strong>3 January 2027</strong>, and this year the organisers have put <strong>half a million off-peak entry tickets</strong> at a pound apiece — every <strong>Monday to Thursday throughout November</strong>.",
+      "## The dates and the scale",
+      "<strong>19 November 2026 to 3 January 2027</strong>, in Hyde Park, with <strong>more than 150 attractions, rides and shows</strong> across the site, plus food, drink and live entertainment. Entry is by timed slot, and the organisers describe the entry sessions as selling out.",
+      "## What it costs to get in",
+      "Three things are worth separating. Entry is the ticket that gets you through the gate; rides and attractions are paid on top; and booking in advance is cheaper than arriving — the site advertises <strong>up to 25% off when you book in advance</strong> and <strong>no additional booking fees at checkout</strong>. The <strong>£1 off-peak</strong> slots apply Monday to Thursday in November. There is also an online-only offer: add <strong>£25</strong> of rides, attractions, packages or food to a booking and <strong>entry is free</strong>, which the organisers put at a saving of <strong>up to £9.50 per person</strong>.",
+      "## New for 2026",
+      "Two things are named. <strong>Gandeys K-Pop Dragon Circus</strong> is new this year, and the <strong>Magical Ice Kingdom</strong> takes the theme <strong>Escape to Neverland</strong>, in partnership with <strong>Great Ormond Street Hospital Charity</strong>. The packages and ride passes have been rebuilt as well — the site describes <strong>reimagined packages</strong> and <strong>brand new ride passes</strong> that bundle rides into a single ticket.",
+      "## How to think about the pricing",
+      "Because entry and rides are priced separately, the cheapest way in and the cheapest day out are not the same ticket. A £1 November weekday slot is the cheapest way to see the site; the £25-spend offer is the cheapest way to see it and use it. Neither is peak weekend in December, when the entry slots are the ones that go first.",
+    ],
+    faq: [
+      {
+        q: "When is Hyde Park Winter Wonderland 2026?",
+        a: "From 19 November 2026 to 3 January 2027, in Hyde Park in central London.",
+      },
+      {
+        q: "How much is entry?",
+        a: "Entry is priced by slot and paid separately from rides and attractions. Half a million off-peak entry tickets are £1, available every Monday to Thursday throughout November. Booking in advance saves up to 25%, and there are no additional booking fees at checkout.",
+      },
+      {
+        q: "Is there a way to get in free?",
+        a: "Yes, online and in advance: add £25 of rides, attractions, packages or food to a booking and entry is included, which the organisers put at a saving of up to £9.50 per person.",
+      },
+      {
+        q: "What is new for 2026?",
+        a: "Gandeys K-Pop Dragon Circus, and a Magical Ice Kingdom on the theme Escape to Neverland in partnership with Great Ormond Street Hospital Charity. The packages and ride passes have also been reworked, including new ride passes that bundle rides into one ticket.",
+      },
+      {
+        q: "How many attractions are there?",
+        a: "More than 150 attractions, rides and shows, alongside food, drink and live entertainment.",
+      },
+    ],
+    expertise:
+      "The mistake most people make here is treating the entry ticket as the price of the day. It is not: entry gets you the site, and everything inside it — rides, the ice rink, the circus — is bought separately, which is why a £1 ticket and a £100 evening are the same event. Two consequences. If you are going to spend anyway, the £25-spend-and-enter-free booking is strictly better than paying for entry and buying the same things inside. And if you are not, a November weekday at £1 is the version of Winter Wonderland that is genuinely cheap — the same lights, the same stalls, and a park you can walk across.",
+  },
+
+  {
+    slug: "skate-at-somerset-house-2026",
+    createdAt: "2026-09-12T23:41:00+04:00",
+    updatedAt: "2026-09-12T23:41:00+04:00",
+    site: "ldn",
+    image: "/covers/skate-at-somerset-house-2026.jpg",
+    imageAlt:
+      "A wide orange-red oval rink in front of a flat cream neoclassical facade, one small dark figure crossing it, on a warm off-white ground",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Skate at Somerset House 2026",
+    summary:
+      "The ice rink in the Edmond J. Safra Fountain Court returns to central London from 11 November 2026 to 10 January 2027, with pre-sale slots going to newsletter subscribers first.",
+    start: "2026-11-11",
+    end: "2027-01-10",
+    utcOffset: "+00:00",
+    venue: "Somerset House",
+    city: "London",
+    country: "United Kingdom",
+    geo: {
+      name: "Somerset House, Strand",
+      lat: 51.511695,
+      lng: -0.117442,
+    },
+    organizer: "Somerset House",
+    category: "Christmas",
+    ticket: {
+      url: "https://www.somersethouse.org.uk/whats-on/skate-somerset-house",
+      label: "Dates and tickets",
+    },
+    source: {
+      name: "Somerset House",
+      url: "https://www.somersethouse.org.uk/whats-on/skate-somerset-house",
+      verifiedOn: "2026-09-12",
+    },
+    body: [
+      "Most London rinks are put up in a park. This one is put up in a courtyard that was built in the eighteenth century and has a neoclassical facade on all four sides — which is the whole argument for skating here rather than anywhere else. <strong>Skate at Somerset House with Virgin Atlantic Holidays</strong> returns to the <strong>Edmond J. Safra Fountain Court</strong> from <strong>11 November 2026 to 10 January 2027</strong>.",
+      "## The dates",
+      "<strong>11 November 2026 to 10 January 2027</strong>, two months, in the central courtyard on the Strand. Somerset House describes the rink as one of London's favourite festive traditions and, in its own words, the city's most iconic.",
+      "## What is there besides the ice",
+      "Skating for all ages, <strong>warming winter treats</strong>, and what the house calls <strong>one-of-a-kind gift shopping</strong> in the courtyard. The rest of the site keeps its ordinary hours around it: the <strong>Strand entrance 8am to 11pm</strong>, the <strong>New Wing 8am to 11pm</strong> and <strong>The Courtauld Gallery 10am to 6pm</strong>, so a skating session can be the middle of a day here rather than the whole of it.",
+      "## Tickets and the pre-sale",
+      "Somerset House has not published session prices for this year yet. What it has published is the order of the queue: <strong>subscribers get priority access</strong> to the best slots, and the sign-up for <strong>pre-sale tickets</strong> is open now. For a two-month run where the mid-December evening sessions are the ones everybody wants, the pre-sale is the part that matters more than the price.",
+      "## Getting there",
+      "Somerset House sits on the <strong>Strand, WC2R 1LA</strong>, between Temple and Covent Garden — Temple is the nearest Underground station, with Embankment, Charing Cross and Covent Garden all within a walk. Somerset House Trust is a registered charity, number <strong>1063640</strong>.",
+    ],
+    faq: [
+      {
+        q: "When does Skate at Somerset House open in 2026?",
+        a: "On 11 November 2026, and it runs until 10 January 2027, in the Edmond J. Safra Fountain Court.",
+      },
+      {
+        q: "How much does a session cost?",
+        a: "Somerset House had not published 2026 session prices when this page was checked on 12 September 2026. The sign-up for pre-sale tickets is open, and subscribers are given priority access to slots.",
+      },
+      {
+        q: "Where exactly is the rink?",
+        a: "In the Edmond J. Safra Fountain Court, the central courtyard of Somerset House on the Strand, WC2R 1LA. Temple is the nearest Underground station.",
+      },
+      {
+        q: "Is there anything else on site?",
+        a: "Yes. Somerset House lists skating for all ages, warming winter treats and gift shopping in the courtyard, and The Courtauld Gallery is open on the same site from 10am to 6pm.",
+      },
+    ],
+    expertise:
+      "Two months sounds like plenty of time and is not, because the demand is concentrated in about three weeks. The evening sessions from the start of December to Christmas are the ones that go, and they go in the pre-sale rather than on the day — which makes the newsletter sign-up, not the price, the thing to act on now. If you would rather not compete for them: the second week of November and the first week of January are the same rink in the same courtyard with room to actually skate on it, and January has the added advantage that The Courtauld next door is quiet too.",
+  },
 ];

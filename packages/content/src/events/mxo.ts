@@ -500,4 +500,159 @@ export const items: EventItem[] = [
     expertise:
       "Los dos días no son intercambiables y el boleto tampoco: al cambiar de nave cambia el tipo de espacio, y quien compre un solo día está eligiendo un escenario, no solo una fecha. El boleto Sunset del sábado se ve barato hasta que se lee la letra chica — la penalización por entrar tarde cuesta más que la diferencia con el General, así que sale a cuenta únicamente para quien de verdad piensa llegar de día. Sobre noviembre en Monterrey: las noches ya enfrían y estas naves son de acero y concreto sin calefacción, de modo que la ropa que sobra a las siete de la tarde hace falta a la una de la mañana.",
   },
+
+  {
+    slug: "ficm-morelia-2026",
+    createdAt: "2026-09-12T23:41:00+04:00",
+    updatedAt: "2026-09-12T23:41:00+04:00",
+    site: "mxo",
+    image: "/covers/ficm-morelia-2026.jpg",
+    imageAlt:
+      "Una fila de arcos de papel en terracota que sostiene una larga tira oscura de fotogramas, sobre fondo verde bosque",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "24° Festival Internacional de Cine de Morelia 2026",
+    summary:
+      "El festival de cine más importante de México va del 16 al 25 de octubre en Morelia, con 96 películas en competencia y una acreditación de $600 o $1,000 pesos que canjea 6 u 11 boletos.",
+    start: "2026-10-16",
+    end: "2026-10-25",
+    utcOffset: "-06:00",
+    venue: "Morelia",
+    city: "Morelia",
+    country: "México",
+    geo: {
+      name: "Teatro Mariano Matamoros, Morelia",
+      lat: 19.70256,
+      lng: -101.194426,
+    },
+    organizer: "Festival Internacional de Cine en Morelia A.C.",
+    category: "Cine",
+    tickets: { priceFrom: 600, priceTo: 1000, currency: "MXN" },
+    ticket: {
+      url: "https://moreliafilmfest.com/guia-acreditacion-ficm2026",
+      label: "Guía de la acreditación",
+    },
+    source: {
+      name: "Festival Internacional de Cine de Morelia",
+      url: "https://moreliafilmfest.com/guia-acreditacion-ficm2026",
+      verifiedOn: "2026-09-12",
+    },
+    body: [
+      "Noventa y seis películas en competencia y diez días para verlas: el <strong>24° Festival Internacional de Cine de Morelia</strong> se realiza del <strong>16 al 25 de octubre de 2026</strong>, y la manera de entrar no es comprando boletos sueltos sino una credencial.",
+      "## Qué es la acreditación",
+      "La <strong>Acreditación #FICM2026</strong> es una credencial con fotografía que identifica a quien asiste y permite canjear boletos para funciones del festival. Está abierta tanto a la industria cinematográfica y sus acompañantes como al público cinéfilo: no hay que demostrar nada para adquirirla.",
+      "## Los dos precios y lo que dan",
+      "<strong>$600 pesos</strong>: <strong>6 boletos</strong> y <strong>3 descuentos</strong> del 40% en el combo de palomitas y refresco. <strong>$1,000 pesos</strong>: <strong>11 boletos</strong> y <strong>5 descuentos</strong> del mismo tipo. Las dos incluyen el <strong>programa de mano</strong> del 24° FICM y el acceso a la <strong>Fila de último minuto</strong>, que permite entrar <strong>gratis</strong> a funciones que todavía tengan cupo.",
+      "## Cómo se canjean los boletos",
+      "Los boletos se liberan <strong>48 horas antes de cada función</strong>, en línea o en taquilla, y el canje está sujeto a disponibilidad. Las taquillas son las de <strong>Cinépolis Morelia Centro</strong> y el <strong>Teatro Mariano Matamoros</strong>, de <strong>10:00 a 20:00</strong>; en línea, la página y la app de Cinépolis. Las sedes donde se pueden ver las funciones son <strong>Cinépolis Morelia Centro</strong>, <strong>Cinépolis VIP Las Américas</strong> y el <strong>Teatro Mariano Matamoros</strong>.",
+      "## Lo que la acreditación no incluye",
+      "El festival lo dice con todas sus letras: <strong>no</strong> da acceso a los espacios reservados para invitados oficiales, <strong>no</strong> da acceso al Hospitality Suite y <strong>no</strong> da acceso a las alfombras rojas ni a las ceremonias de inauguración y clausura.",
+      "## Lo demás del programa",
+      "A través de <strong>Morelia Pro</strong>, y con apoyo de <strong>Cinépolis</strong> y el <strong>Instituto Sundance</strong>, el festival presenta el <strong>Morelia:Sundance Laboratorio de Historias</strong>. La <strong>65ª Semana de la Crítica del Festival de Cannes</strong> tendrá presencia en esta edición, y corre además el <strong>IV Laboratorio de Desarrollo de Proyectos para Cineastas Indígenas y Afrodescendientes de México</strong>.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo es el FICM 2026?",
+        a: "Del 16 al 25 de octubre de 2026, en Morelia, Michoacán. Es la 24ª edición.",
+      },
+      {
+        q: "¿Cuánto cuesta la acreditación y qué incluye?",
+        a: "Hay dos: la de $600 pesos da 6 boletos y 3 descuentos del 40% en el combo de palomitas y refresco; la de $1,000 pesos da 11 boletos y 5 descuentos. Ambas incluyen el programa de mano y el acceso a la Fila de último minuto, que permite entrar gratis a funciones con cupo disponible.",
+      },
+      {
+        q: "¿Cómo se canjean los boletos?",
+        a: "Se liberan 48 horas antes de cada función, sujetos a disponibilidad, en las taquillas de Cinépolis Morelia Centro y del Teatro Mariano Matamoros de 10:00 a 20:00, o en la página y la app de Cinépolis.",
+      },
+      {
+        q: "¿En qué sedes son las funciones?",
+        a: "Cinépolis Morelia Centro, Cinépolis VIP Las Américas y el Teatro Mariano Matamoros.",
+      },
+      {
+        q: "¿La acreditación da acceso a las alfombras rojas?",
+        a: "No. Tampoco a los espacios destinados únicamente a invitados oficiales, al Hospitality Suite ni a las ceremonias de inauguración y clausura.",
+      },
+      {
+        q: "¿Cuántas películas hay en competencia?",
+        a: "96 películas conforman la Selección Oficial de la 24ª edición.",
+      },
+    ],
+    expertise:
+      "La cuenta por boleto es obvia y engañosa a la vez: $100 por función con la acreditación de $600, contra unos $91 con la de $1,000. La diferencia real no está ahí, sino en la <strong>Fila de último minuto</strong>, que ambas incluyen y que no cuesta boleto — quien se organiza para llegar temprano a funciones con cupo puede ver bastante más de lo que compró. De modo que la acreditación barata no limita cuántas películas ves, sino cuántas puedes <em>reservar</em> con 48 horas de anticipación. Para diez días, la de $1,000 tiene sentido si piensas ver más de una función diaria en fin de semana, que es cuando la fila de último minuto deja de funcionar.",
+  },
+
+  {
+    slug: "festival-internacional-del-globo-2026",
+    createdAt: "2026-09-12T23:41:00+04:00",
+    updatedAt: "2026-09-12T23:41:00+04:00",
+    site: "mxo",
+    image: "/covers/festival-internacional-del-globo-2026.jpg",
+    imageAlt:
+      "Globos aerostáticos de papel recortado en naranja y crema que descienden en diagonal por el cuadro, con una franja verde más clara al pie, sobre fondo verde bosque",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Festival Internacional del Globo 2026",
+    summary:
+      "Cuatro días en León, Guanajuato, del 13 al 16 de noviembre: más de 200 globos de más de 25 países despegan juntos al amanecer, y Los Ángeles Azules abren el escenario principal.",
+    start: "2026-11-13",
+    end: "2026-11-16",
+    utcOffset: "-06:00",
+    venue: "Parque Metropolitano de León",
+    city: "León",
+    country: "México",
+    geo: {
+      name: "Parque Metropolitano de León",
+      lat: 21.179888,
+      lng: -101.687421,
+    },
+    organizer: "Festival Internacional del Globo",
+    category: "Festivales",
+    ticket: {
+      url: "https://vivefig.mx/",
+      label: "Programa y boletos",
+    },
+    source: {
+      name: "Festival Internacional del Globo",
+      url: "https://vivefig.mx/",
+      verifiedOn: "2026-09-12",
+    },
+    body: [
+      "El momento que define al FIG ocurre a las <strong>6:30 de la mañana</strong> y dura pocos minutos: el <strong>despegue simultáneo de más de 200 globos aerostáticos provenientes de más de 25 países</strong>. Es lo primero del programa del <strong>viernes 13 de noviembre</strong>, y es la razón por la que este festival se ve a una hora a la que casi ningún otro empieza.",
+      "## Las fechas",
+      "<strong>Del 13 al 16 de noviembre de 2026</strong> —viernes, sábado, domingo y lunes— en el <strong>Parque Metropolitano de León</strong>, Guanajuato. Es la <strong>edición 23</strong>, y el festival se presenta a sí mismo como el Festival de Festivales.",
+      "## El primer día, hora por hora",
+      "<strong>6:30</strong>, Aeródromo FIG: despegue inaugural con más de 200 globos de más de 25 países. A la misma hora, la <strong>SEDENA</strong> presenta un despliegue de bandera monumental y un sobrevuelo de aeronaves. <strong>19:00</strong>: <strong>Noche Mágica</strong>, un espectáculo de luz y música con los globos anclados a tierra. <strong>20:00</strong>, escenario principal: <strong>Los Ángeles Azules</strong>, que llegan tras haber participado en la inauguración de la Copa Mundial de Futbol 2026.",
+      "## Lo demás del cartel",
+      "El festival anuncia además a <strong>Christian Nodal</strong> y <strong>Xavi</strong> en lo que llama la noche más grande del regional mexicano, y a <strong>Carin León</strong>, ganador del Grammy Latino al Mejor Álbum Regional. <strong>The Dream Nite</strong> vuelve tras una primera edición que, según el propio festival, alcanzó un récord de asistencia de <strong>58,000</strong> personas.",
+      "## Lo que el clima decide",
+      "El aviso del organizador es explícito y vale para el momento más importante del programa: <strong>toda la actividad aerostática está sujeta a las condiciones climatológicas</strong>. Los conciertos no dependen del viento; los despegues sí.",
+      "## Dónde es",
+      "El <strong>Parque Metropolitano de León</strong>, en León, Guanajuato. El despegue sale del <strong>Aeródromo FIG</strong>, dentro del mismo recinto.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo es el Festival Internacional del Globo 2026?",
+        a: "Del 13 al 16 de noviembre de 2026, en el Parque Metropolitano de León, Guanajuato. Es la edición 23.",
+      },
+      {
+        q: "¿A qué hora despegan los globos?",
+        a: "El despegue inaugural es a las 6:30 de la mañana del viernes 13 de noviembre, con más de 200 globos de más de 25 países saliendo al mismo tiempo desde el Aeródromo FIG.",
+      },
+      {
+        q: "¿Qué es la Noche Mágica?",
+        a: "Un espectáculo de luz y música con los globos anclados a tierra, a las 19:00 horas.",
+      },
+      {
+        q: "¿Quién toca en el escenario principal?",
+        a: "El viernes 13 abren Los Ángeles Azules a las 20:00. El festival anuncia además a Christian Nodal y Xavi, y a Carin León.",
+      },
+      {
+        q: "¿Qué pasa si hace mal tiempo?",
+        a: "El festival advierte que toda la actividad aerostática está sujeta a las condiciones climatológicas. El programa de escenario no depende de ello.",
+      },
+    ],
+    expertise:
+      "Quien va al FIG por los globos y no por los conciertos está yendo a un evento de madrugada, y esa es la decisión logística de todo el viaje: el despegue es a las 6:30 y hay que estar en el parque antes de esa hora, de modo que el alojamiento en León y la salida de madrugada se planean primero y el resto del programa después. La segunda advertencia es de calendario: el lunes 16 es día festivo en México, lo que convierte el fin de semana en uno largo y explica por qué el sábado y el domingo son los días llenos. El viernes tiene el despegue inaugural, la Noche Mágica y el primer concierto, y es el día con menos gente de los cuatro.",
+  },
 ];

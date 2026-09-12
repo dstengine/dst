@@ -72,7 +72,9 @@
       "iowa-state-fair-2027": "a row of flat paper ears of corn, simple long ovals in butter yellow with green leaf shapes, lying side by side across a warm brown ground",
       "bonnaroo-2026": "a broad flat paper arch in bright orange spanning the frame on a green field band, plain shapes, deep blue ground above",
       "boo-at-the-zoo-bronx-2026": "a wide arch of overlapping cut-paper leaves spanning the frame, with three simple animal-track shapes stamped across the band beneath it",
-      "great-jack-o-lantern-blaze-2026": "a dense field of small round carved lantern discs stacked in rising tiers from the lower edge, each disc with two triangles and a jagged slot cut out of it"
+      "great-jack-o-lantern-blaze-2026": "a dense field of small round carved lantern discs stacked in rising tiers from the lower edge, each disc with two triangles and a jagged slot cut out of it",
+      "albuquerque-balloon-fiesta-2026": "seven rounded hot-air balloon shapes of graduated size rising in a loose diagonal across the frame, each with a small square basket beneath, a flat desert band along the foot",
+      "christmas-spectacular-radio-city-2026": "a row of six identical flat paper figures with one leg raised in a kick line standing on a stage band, a stepped art deco arch of three nested bands above them"
     },
     "ldn": {
       "london-design-festival-2026": {
@@ -118,7 +120,9 @@
       "hyde-park-halloween-discovery-days-2026": {
         "subject": "three carved pumpkin shapes of different sizes standing in a row on open parkland, each a round form with two triangular eyes and a jagged mouth cut out of it, bare branching tree forms rising behind them",
         "idiom": "vector"
-      }
+      },
+      "hyde-park-winter-wonderland-2026": "a cut-paper big wheel with eight spokes standing beside a striped tent roof, both resting on a low flat band of snow, three bare paper trees behind them",
+      "skate-at-somerset-house-2026": "a wide flat oval of ice in the centre of the frame with a single small skating figure on it, a plain neoclassical facade of repeated rectangular windows drawn flat behind"
     },
     "lnd": {
       "giant-summer-flea-olympic-park": {
@@ -135,7 +139,9 @@
       "day-of-the-dead-horniman-2026": "a curved band of layered paper flower discs of graduated size crossing the frame, with rows of small cut-paper bunting rectangles strung above it, the composition filling the whole frame edge to edge with no border or paper edge visible",
       "super-natural-wwt-london-2026": "a tall willow wand standing upright in the centre of the frame with a single small paper star at its tip, three round fungi caps of graduated size low beside it, a band of flat reed blades running across the foot of the frame",
       "howl-o-ween-chessington-2026": "a stone gargoyle silhouette crouched on a square plinth at the left of the frame, a fairground wheel outline of thin paper spokes standing behind it to the right, a low row of small ribbed pumpkin shapes between them",
-      "hobbledown-heath-pumpkin-patch-2026": "a broad low meadow band of flat paper grass across the foot of the frame with four ribbed pumpkin shapes of graduated size resting on it, a single bare paper tree standing to the right, a thin ribbon of river running behind them"
+      "hobbledown-heath-pumpkin-patch-2026": "a broad low meadow band of flat paper grass across the foot of the frame with four ribbed pumpkin shapes of graduated size resting on it, a single bare paper tree standing to the right, a thin ribbon of river running behind them",
+      "ski-sunday-surbiton-2026": "a long pale hill slope running from the upper left down to the lower right with a flat paper bathtub part way down it and a small seated figure inside, three simple suburban roof shapes along the foot of the frame",
+      "curse-of-the-mummy-london-dungeon-2026": "a tall upright sarcophagus lid of banded cut paper standing in the centre of the frame, a narrow candle shape on each side with a small flame, nothing else"
     },
     "cmx": {
       "gran-premio-ciudad-de-mexico-2026": {
@@ -157,7 +163,9 @@
         "detail": "the creature built from twenty or more separate paper pieces that plainly do not belong to one animal: a long segmented tail curling up out of the left of the frame, wings cut as stacked angular leaves, two spiral horns of different lengths, four legs each ending in a different foot, and a body assembled from overlapping panels of magenta, deep plum and gold. Every piece a distinct tone with hard shadow beneath it so the layers separate, patterned dots and stripes cut into three of the panels, the creature filling most of the frame with cream ground showing at the lower left"
       },
       "mega-procesion-de-las-catrinas-2026": "a row of wide-brimmed hats cut from paper, each brim heaped with layered flower discs, receding in scale from left to right along a diagonal",
-      "alumbrada-mixquic-2026": "rows of small upright candles standing on a deep plum ground, each candle a narrow pale column with a small pointed flame above it, round layered gold marigold flower discs scattered between the rows, the composition filling the whole frame edge to edge with no border, no inner rectangle and no paper edge visible"
+      "alumbrada-mixquic-2026": "rows of small upright candles standing on a deep plum ground, each candle a narrow pale column with a small pointed flame above it, round layered gold marigold flower discs scattered between the rows, the composition filling the whole frame edge to edge with no border, no inner rectangle and no paper edge visible",
+      "corona-capital-2026": "three stacked horizontal bands of cut paper above a rectangular stage shape, with a row of small flat crowd silhouettes across the foot of the frame",
+      "festival-del-terror-six-flags-2026": "the flat silhouette of a roller-coaster track rising and dipping across the frame, a low band of fog beneath it and three small skull shapes along the bottom edge"
     },
     "mxo": {
       "fil-guadalajara-2026": {
@@ -177,7 +185,9 @@
       "festival-de-vida-y-muerte-2026": "a flat paper marigold flower head, a dense ring of short orange petals around a small dark centre, single and centred on a deep indigo ground, wide empty space around it",
       "noche-de-muertos-michoacan-2026": "a row of tall narrow paper candle shapes in cream standing side by side on one level line, each with a small orange flame shape above it, on a deep indigo ground",
       "festival-de-calaveras-2026": "a single flat paper skull shape in cream, plain and rounded with two dark eye holes, wearing a wide brimmed hat cut from orange paper, centred on a deep plum ground that fills the whole frame edge to edge with no border or paper edge visible",
-      "xantolo-huasteca-potosina-2026": "three flat paper masks in a row, plain oval shapes in ochre, red and cream with simple cut eyes and mouths, side by side on a dark green ground"
+      "xantolo-huasteca-potosina-2026": "three flat paper masks in a row, plain oval shapes in ochre, red and cream with simple cut eyes and mouths, side by side on a dark green ground",
+      "ficm-morelia-2026": "a vertical strip of film frames in cut paper running down the centre of the frame, a flat row of three arches behind it",
+      "festival-internacional-del-globo-2026": "nine rounded hot-air balloon shapes rising in a diagonal from the lower left to the upper right, each with a small basket, a flat band of water along the foot of the frame"
     },
     "dst": {
       "blockchain-life-dubai-2026": "a wide arena bowl seen from directly above as concentric paper rings, a chain of small linked hexagons running straight across the middle",
@@ -301,7 +311,9 @@
         "subject": "a row of five tall lit windows in a plain dark facade, each window a flat block of light, everything around them one unbroken flat tone"
       },
       "vienna-halloween-run-2026": "a flat side-on band composition: a wide pale running lane crossing the whole width of the frame, a row of bare autumn tree shapes standing along its upper edge and a second row along its lower edge, all shapes flat and the same size, no vanishing point, no road markings receding",
-      "kuerbisfest-am-himmel-2026": "a heaped mass of round and gourd-shaped paper forms in many different sizes, tones and patterns, spread wide across a low table band"
+      "kuerbisfest-am-himmel-2026": "a heaped mass of round and gourd-shaped paper forms in many different sizes, tones and patterns, spread wide across a low table band",
+      "wiener-christkindlmarkt-2026": "three small market huts with steep pitched roofs standing side by side on a flat band of snow, a tall narrow tower shape with a pointed top rising behind them",
+      "wiener-eistraum-2027": "a wide flat sheet of ice across the frame with a raised walkway on slim posts curving above it, two small skating figures below, a low flat building outline behind"
     }
   },
   "news": {

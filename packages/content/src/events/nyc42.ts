@@ -1525,4 +1525,165 @@ export const items: EventItem[] = [
     expertise:
       "Two practical things. It is outdoors and it is after dark in the Hudson Valley in October, which by the end of the run means genuinely cold — the September and early-October slots are the comfortable ones, and the late-October slots are the ones that sell first anyway. And it is a walk on grass and gravel in the dark: the sequences are worth stopping in front of, so the hour it is billed at is closer to ninety minutes if you are not being moved along.",
   },
+
+  {
+    slug: "albuquerque-balloon-fiesta-2026",
+    createdAt: "2026-09-12T23:41:00+04:00",
+    updatedAt: "2026-09-12T23:41:00+04:00",
+    site: "nyc42",
+    image: "/covers/albuquerque-balloon-fiesta-2026.jpg",
+    imageAlt:
+      "Amber cut-paper hot-air balloons at several heights above two pale sand dunes, on a deep charcoal brown ground",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Albuquerque International Balloon Fiesta 2026",
+    summary:
+      "Nine days of mass ascensions and evening glows at Balloon Fiesta Park in New Mexico, October 3 to 11, with general admission at $22.24 a session and kids 12 and under free.",
+    start: "2026-10-03",
+    end: "2026-10-11",
+    utcOffset: "-06:00",
+    venue: "Balloon Fiesta Park",
+    city: "Albuquerque",
+    country: "United States",
+    geo: {
+      name: "Balloon Fiesta Park",
+      lat: 35.189633,
+      lng: -106.596696,
+    },
+    organizer: "Albuquerque International Balloon Fiesta",
+    category: "Festival",
+    tickets: { priceFrom: 22.24, currency: "USD" },
+    ticket: {
+      url: "https://www.balloonfiesta.com/purchase-tickets/",
+      label: "Sessions and tickets",
+    },
+    source: {
+      name: "Albuquerque International Balloon Fiesta",
+      url: "https://www.balloonfiesta.com/purchase-tickets/",
+      verifiedOn: "2026-09-12",
+    },
+    body: [
+      "The unit of this festival is not the day. It is the <strong>session</strong> — all of a morning's activities, or all of an evening's — and every ticket, every schedule and every weather cancellation is written in those terms. The <strong>2026 Balloon Fiesta runs nine days, Saturday October 3 through Sunday October 11</strong>, at Balloon Fiesta Park in Albuquerque, New Mexico.",
+      "## What a ticket costs",
+      "<strong>General admission is $22.24 per person, per session</strong> — $20 plus a $2.24 fee — and <strong>children 12 and under are free</strong>. One ticket is good for one session on any day, which is worth reading twice: a morning mass ascension and that same evening's glow are two tickets, not one.",
+      "## Weather is part of the deal",
+      "Balloons do not fly in bad air, and the organizers say so in writing: this is a weather-dependent event, tickets are nonrefundable, and if a session is canceled it is <strong>rain-checked</strong>. A rain-checked ticket reactivates as a general admission ticket valid for <strong>any remaining session in the same year</strong>, and the park's other amenities stay open for the rest of that session regardless. Session status goes out on the official app and the Fiesta's own social channels.",
+      "## Buy from one place",
+      "The Fiesta states that it <strong>authorizes no third-party vendors</strong> to sell its tickets online, and that only tickets sold through balloonfiesta.com are valid. Fees are added at checkout per ticket.",
+      "## Music Fiesta",
+      "<strong>Music Fiesta, presented by New Mexico Honda Dealers, returns Saturday, October 10</strong> — the second Saturday of the run, and a separate ticket from general admission. The ticket menu also carries Park &amp; Ride, Gondola Club, Chasers' Club, glamping, Camp 505, a concierge program and the Fiesta Sky Box.",
+      "## Getting there",
+      "Balloon Fiesta Park sits off Alameda Boulevard on the north side of Albuquerque. The Fiesta's own <strong>Park &amp; Ride</strong> is the option it points at first, and for a morning session that starts before dawn it is the one that decides whether you see the ascension or the parking lot.",
+    ],
+    faq: [
+      {
+        q: "When is the Albuquerque International Balloon Fiesta 2026?",
+        a: "Saturday, October 3 through Sunday, October 11, 2026 — nine days at Balloon Fiesta Park in Albuquerque, New Mexico.",
+      },
+      {
+        q: "How much are tickets?",
+        a: "General admission is $22.24 per person, per session: $20 plus a $2.24 fee. Children 12 and under are free. Additional fees are added at checkout per ticket.",
+      },
+      {
+        q: "What counts as a session?",
+        a: "One session is all of a morning's activities or all of an evening's activities. A general admission ticket is good for one session on any day of the event.",
+      },
+      {
+        q: "What happens if the balloons can't fly?",
+        a: "Tickets are nonrefundable, but a canceled session is rain-checked: the ticket reactivates as a general admission ticket valid for any remaining session that year, and guests can still use the park's amenities for the rest of the session. Session status is posted on the official app and the Fiesta's social channels.",
+      },
+      {
+        q: "Where should I buy tickets?",
+        a: "Only through balloonfiesta.com. The organizers state that they authorize no third-party vendors to sell tickets online and cannot vouch for price, legitimacy or validity elsewhere.",
+      },
+      {
+        q: "When is Music Fiesta?",
+        a: "Saturday, October 10, 2026, presented by New Mexico Honda Dealers. It is sold separately from general admission.",
+      },
+    ],
+    expertise:
+      "Two things decide whether this trip works. The first is that a ticket buys a session, not a day, so the real question is which half of the day you are coming for — and the Fiesta's own first suggestion for getting there is Park & Ride rather than driving in, which for an early start is the difference between seeing the field and parking beside it. The second is the rain-check rule, which is quietly generous and quietly restrictive at once: a canceled session gives you another session <em>that year</em>, so a ticket bought for the final Sunday has nothing left to reactivate into. Buying early-run sessions leaves the back half of the nine days as insurance; buying the last morning leaves none.",
+  },
+
+  {
+    slug: "christmas-spectacular-radio-city-2026",
+    createdAt: "2026-09-12T23:41:00+04:00",
+    updatedAt: "2026-09-12T23:41:00+04:00",
+    site: "nyc42",
+    image: "/covers/christmas-spectacular-radio-city-2026.jpg",
+    imageAlt:
+      "A line of cream cut-paper figures with one leg raised beneath a scalloped orange arch, standing on an orange stage band, on a deep charcoal brown ground",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Christmas Spectacular Starring the Radio City Rockettes 2026",
+    titleSeo: "Christmas Spectacular 2026: New York Dates, Tickets",
+    summary:
+      "New York's Christmas Spectacular runs at Radio City Music Hall from November 4, 2026 to January 4, 2027 — 230 performances, the most ever, at 90 minutes with no intermission.",
+    start: "2026-11-04",
+    end: "2027-01-04",
+    utcOffset: "-05:00",
+    venue: "Radio City Music Hall",
+    city: "New York",
+    country: "United States",
+    geo: {
+      name: "Radio City Music Hall",
+      lat: 40.759812,
+      lng: -73.979279,
+    },
+    organizer: "MSG Entertainment",
+    category: "Theatre",
+    tickets: { priceFrom: 55, currency: "USD" },
+    ticket: {
+      url: "https://www.rockettes.com/christmas/calendar/",
+      label: "Showtimes and tickets",
+    },
+    source: {
+      name: "The Radio City Rockettes",
+      url: "https://www.rockettes.com/christmas/calendar/",
+      verifiedOn: "2026-09-12",
+    },
+    body: [
+      "Two hundred and thirty performances in nine weeks. That is the number the 2026 season is built around — <strong>the most ever</strong>, by the producers' own count — and it works out to roughly four shows a day, every day, from <strong>November 4, 2026</strong> to <strong>January 4, 2027</strong> at Radio City Music Hall.",
+      "## The run",
+      "The show opens <strong>Wednesday, November 4</strong> and the final performances are on <strong>Monday, January 4, 2027</strong>, at <strong>2:00 p.m. and 8:00 p.m.</strong> New Year's Day, Friday January 1, plays <strong>1:00, 4:00 and 7:00 p.m.</strong> Run time is <strong>90 minutes with no intermission</strong>, which is short for a Broadway-scale production and the reason the building can turn over four houses in a day.",
+      "## What's new this year",
+      "The 2026 season adds <strong>ten Rockettes numbers</strong> — more than the show has carried before — under the billing of more scenes, more perspectives and more shows.",
+      "## Prices and the fine print",
+      "Tickets run <strong>$55 to $250 and above</strong>, a range that <strong>includes service fees of $5 to $27.50 and up</strong>. There is a <strong>14-ticket limit per transaction and per purchaser across the whole 2026 season</strong> — not per order, per season — which is the one rule that catches large family groups out. Service charges apply to internet orders.",
+      "## Choosing a showtime",
+      "The calendar filters by month, by weekend, weekday and holiday dates, by day of the week, and by start time: <strong>10 and 11 a.m., 1, 2, 3, 4, 5, 7, 8 and 10 p.m.</strong> Weekday matinees in early November exist at the bottom of that range; holiday-week evenings sit at the top of it.",
+      "## Getting there",
+      "Radio City Music Hall, <strong>1260 Avenue of the Americas</strong>, New York, NY 10020. The box office is open Monday to Saturday, noon to 6 p.m., and its hours are subject to change.",
+    ],
+    faq: [
+      {
+        q: "When does the Christmas Spectacular run in 2026?",
+        a: "From November 4, 2026 through January 4, 2027 at Radio City Music Hall, with 230 performances — the most in the show's history.",
+      },
+      {
+        q: "How long is the show?",
+        a: "90 minutes, with no intermission.",
+      },
+      {
+        q: "How much are tickets?",
+        a: "From $55 to $250 and above, including service fees of $5 to $27.50 and up. Service charges apply to internet orders.",
+      },
+      {
+        q: "Is there a ticket limit?",
+        a: "Yes — 14 tickets per transaction and per purchaser over the entire 2026 Christmas Spectacular season, not per order.",
+      },
+      {
+        q: "What are the last performances?",
+        a: "Monday, January 4, 2027, at 2:00 p.m. and 8:00 p.m.",
+      },
+      {
+        q: "Where is Radio City Music Hall?",
+        a: "1260 Avenue of the Americas, New York, NY 10020, in Midtown Manhattan. The box office is open Monday to Saturday from noon to 6 p.m.",
+      },
+    ],
+    expertise:
+      "The season's shape is the useful thing to know. Four performances a day for nine weeks means supply is enormous and demand is not evenly spread: the cheap end of that $55-to-$250 range is a weekday morning or early afternoon in the first two weeks of November, and the expensive end is the week between Christmas and New Year, when the same 90 minutes costs several times as much. The 14-ticket season cap is worth planning around before you book anything — a family that buys four in November has ten left for the rest of the season, and there is no way to reset it by ordering again.",
+  },
 ];

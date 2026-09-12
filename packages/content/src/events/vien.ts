@@ -415,4 +415,154 @@ export const items: EventItem[] = [
     expertise:
       "Der Himmel liegt nicht an der U-Bahn, und das ist der Punkt, an dem die Anreise geplant gehört: Hinauf fährt der 39A, und an einem freien Nachmittag Ende Oktober ist er voll. Wer mit dem Auto kommt, findet in der Himmelstraße kaum Platz. Dafür bekommt man den Gegenwert, den ein Halloween-Programm im Innenstadtlokal nicht hat — Tageslicht, Aussicht über die Stadt und einen Grund, das Wochenende vor dem 31. Oktober im Freien zu verbringen.",
   },
+
+  {
+    slug: "wiener-christkindlmarkt-2026",
+    createdAt: "2026-09-12T23:41:00+04:00",
+    updatedAt: "2026-09-12T23:41:00+04:00",
+    site: "vien",
+    image: "/covers/wiener-christkindlmarkt-2026.jpg",
+    imageAlt:
+      "Drei kleine rote Papierhäuser mit grünen Dächern auf einer cremefarbenen Schneefläche, dahinter eine hohe grüne Tanne mit rotem Stern, auf warmem Cremegrund",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Wiener Christkindlmarkt am Rathausplatz 2026",
+    summary:
+      "Der größte Weihnachtsmarkt in Wien läuft vom 13. November bis 26. Dezember 2026, täglich 10 bis 22 Uhr, am 24. Dezember bis 18:30 Uhr. Die Eisfläche bleibt bis 6. Jänner 2027.",
+    start: "2026-11-13",
+    end: "2026-12-26",
+    startTime: "10:00",
+    endTime: "22:00",
+    utcOffset: "+01:00",
+    venue: "Rathausplatz",
+    city: "Wien",
+    country: "Österreich",
+    geo: {
+      name: "Rathausplatz, Wien",
+      lat: 48.212293,
+      lng: 16.359847,
+    },
+    organizer: "stadt wien marketing",
+    category: "Weihnachtsmarkt",
+    ticket: {
+      url: "https://www.christkindlmarkt.at/",
+      label: "Öffnungszeiten und Programm",
+    },
+    source: {
+      name: "Wiener Christkindlmarkt",
+      url: "https://www.christkindlmarkt.at/",
+      verifiedOn: "2026-09-12",
+    },
+    body: [
+      "Sechs Wochen, ein Platz, und zwei Termine, die nicht zusammenfallen: Der Markt endet am <strong>26. Dezember</strong>, die Eisfläche davor bleibt bis <strong>6. Jänner</strong>. Wer den Unterschied kennt, hat nach Weihnachten noch zwei Wochen Rathausplatz.",
+      "## Die Öffnungszeiten",
+      "<strong>13. November bis 26. Dezember 2026</strong>, <strong>täglich 10 bis 22 Uhr</strong>. Am <strong>24. Dezember</strong> sperrt der Markt früher zu: <strong>10 bis 18:30 Uhr</strong>.",
+      "## Der Eistraum am Christkindlmarkt",
+      "Die Eisfläche läuft länger als der Markt — <strong>13. November 2026 bis 6. Jänner 2027</strong>, ebenfalls <strong>täglich 10 bis 22 Uhr</strong>, am <strong>24. Dezember 10 bis 18:30 Uhr</strong>. Eine Ausnahme gibt es: <strong>am 31. Dezember geschlossen</strong>. Danach macht der Rathausplatz Pause und kommt am 22. Jänner als Wiener Eistraum zurück.",
+      "## Wo das ist",
+      "Am <strong>Rathausplatz</strong> zwischen Rathaus und Burgtheater, im ersten Bezirk. Der Markt gilt als einer der größten und meistbesuchten Weihnachtsmärkte Europas, und das Wiener Christkindl ist der Höhepunkt, den das Programm selbst voranstellt.",
+      "## Anreise",
+      "Öffentlich: die Linien <strong>1, 71 und D</strong> zur Station Rathausplatz/Burgtheater, die <strong>Linie 2</strong> zur Station Parlament, die <strong>U2</strong> zur Station Rathaus und die <strong>U3</strong> zum Volkstheater, Ausgang Ring. Mit dem Rad: Radwege verlaufen sowohl vor dem Rathaus am Universitätsring als auch dahinter am Friedrich-Schmidt-Platz, Abstellplätze gibt es vor Ort.",
+    ],
+    faq: [
+      {
+        q: "Wann ist der Wiener Christkindlmarkt 2026 geöffnet?",
+        a: "Vom 13. November bis 26. Dezember 2026, täglich von 10 bis 22 Uhr. Am 24. Dezember ist von 10 bis 18:30 Uhr geöffnet.",
+      },
+      {
+        q: "Wie lange bleibt die Eisfläche?",
+        a: "Der Eistraum am Christkindlmarkt läuft vom 13. November 2026 bis 6. Jänner 2027, täglich 10 bis 22 Uhr, am 24. Dezember 10 bis 18:30 Uhr. Am 31. Dezember ist er geschlossen.",
+      },
+      {
+        q: "Wo findet der Markt statt?",
+        a: "Am Rathausplatz im ersten Wiener Gemeindebezirk, zwischen Rathaus und Burgtheater.",
+      },
+      {
+        q: "Wie komme ich hin?",
+        a: "Mit den Straßenbahnlinien 1, 71 und D zur Station Rathausplatz/Burgtheater, mit der Linie 2 zur Station Parlament, mit der U2 zur Station Rathaus oder mit der U3 zum Volkstheater, Ausgang Ring. Radwege und Abstellplätze gibt es am Universitätsring und am Friedrich-Schmidt-Platz.",
+      },
+      {
+        q: "Was kommt nach dem 6. Jänner?",
+        a: "Der Wiener Eistraum, vom 22. Jänner bis 7. März 2027 am selben Platz.",
+      },
+    ],
+    expertise:
+      "Zwei Daten entscheiden über den Besuch, und beide stehen nicht dort, wo man sie sucht. Das erste ist der 24. Dezember: Wer den Markt als Teil des Heiligen Abends plant, hat bis <strong>18:30 Uhr</strong> Zeit und nicht bis 22 Uhr. Das zweite ist der 26. Dezember — danach ist der Markt weg, die Eisfläche aber nicht, und die Tage zwischen Weihnachten und dem 6. Jänner sind der einzige Zeitraum, in dem man am Rathausplatz Platz hat. Wer den Markt selbst leer erleben will, kommt in der zweiten Novemberhälfte an einem Vormittag: geöffnet ist ab 10 Uhr, voll wird es ab dem späten Nachmittag.",
+  },
+
+  {
+    slug: "wiener-eistraum-2027",
+    createdAt: "2026-09-12T23:41:00+04:00",
+    updatedAt: "2026-09-12T23:41:00+04:00",
+    site: "vien",
+    image: "/covers/wiener-eistraum-2027.jpg",
+    imageAlt:
+      "Ein langer flacher grüner Steg auf schmalen Stützen über einem breiten zinnoberroten Rücken, darunter zwei winzige Figuren, auf warmem Cremegrund",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Wiener Eistraum 2027",
+    summary:
+      "Über 10.000 Quadratmeter Eis am Rathausplatz in Wien, vom 22. Jänner bis 7. März 2027, mit Sky Rink, Eisstockbahnen ab 17 Uhr und Verleih vor Ort.",
+    start: "2027-01-22",
+    end: "2027-03-07",
+    utcOffset: "+01:00",
+    venue: "Rathausplatz",
+    city: "Wien",
+    country: "Österreich",
+    geo: {
+      name: "Rathausplatz, Wien",
+      lat: 48.212293,
+      lng: 16.359847,
+    },
+    organizer: "stadt wien marketing",
+    category: "Eislaufen",
+    ticket: {
+      url: "https://www.wienereistraum.com/",
+      label: "Öffnungszeiten und Tickets",
+    },
+    source: {
+      name: "Wiener Eistraum",
+      url: "https://www.wienereistraum.com/",
+      verifiedOn: "2026-09-12",
+    },
+    body: [
+      "Eine Eisfläche von <strong>über 10.000 Quadratmetern</strong> mitten in der Stadt, und sie liegt nicht nur am Boden: Der <strong>Sky Rink</strong> führt über Pfade im Rathauspark bis in den ersten Stock und hat heuer eine neue Aussichtsplattform. Der Wiener Eistraum läuft vom <strong>22. Jänner bis 7. März 2027</strong> am Rathausplatz.",
+      "## Was am Platz steht",
+      "Vier große Flächen, dazu die romantischen Pfade im Park und der erhöhte Sky Rink. <strong>Ab 17 Uhr</strong> wird die Anfänger:innenfläche zur <strong>Eisstockbahn</strong> — auf professionellen Bahnen, gedacht für Gruppen, die sich gegenseitig herausfordern wollen, statt Runden zu drehen.",
+      "## Ausrüstung vor Ort",
+      "Der Verleih hält mit <strong>Warmluft vorgewärmte Eislaufschuhe in den Größen 23 bis 52</strong> bereit. <strong>300 Schutzhelme</strong> und verstellbare <strong>Doppelkufen in den Größen 21 bis 25</strong> stehen <strong>kostenlos</strong> zur Verfügung, solange der Vorrat reicht. Eigene Schlittschuhe kann man vor Ort schleifen lassen, und <strong>900 Schließfächer</strong> gibt es dazu. Alle Services sind im Online-Shop um <strong>10 Prozent günstiger</strong>.",
+      "## Zwei Wege, weniger zu zahlen",
+      "Erstens die <strong>Schulaktion</strong>: Die Stadt Wien lädt Wiener Kindergärten, Schulen und Horte im Schulverband an Schultagen von <strong>Montag bis Freitag, 10 bis 16 Uhr</strong>, kostenlos aufs Eis; Eislaufschuhe gibt es dabei vergünstigt. Rund <strong>45.000 Kinder</strong> nützen das pro Jahr. Zweitens der <strong>Vorteilsclub der Stadt Wien</strong>: Mitglieder kommen an <strong>allen Montagen um 50 Prozent günstiger</strong> hinein, die Mitgliedschaft selbst ist kostenfrei.",
+      "## Nachhaltigkeit",
+      "Der Eistraum führt Maßnahmen zur Verringerung des Energieverbrauchs, ein Abfallsystem und <strong>75 Prozent Speisen und Getränke in biologischer Qualität</strong> an. Seit <strong>2023</strong> ist die Veranstaltung mit dem Zertifikat <strong>ÖkoEvent PLUS</strong> ausgezeichnet.",
+      "## Davor",
+      "Am selben Platz läuft von <strong>13. November 2026 bis 6. Jänner 2027</strong> der Eistraum am Christkindlmarkt. Zwischen 7. Jänner und 21. Jänner ist der Rathausplatz eisfrei.",
+    ],
+    faq: [
+      {
+        q: "Wann ist der Wiener Eistraum 2027 geöffnet?",
+        a: "Vom 22. Jänner bis 7. März 2027 am Rathausplatz in Wien.",
+      },
+      {
+        q: "Wie groß ist die Eisfläche?",
+        a: "Über 10.000 Quadratmeter, verteilt auf vier große Flächen, Pfade im Rathauspark und den erhöhten Sky Rink, der heuer eine neue Aussichtsplattform hat.",
+      },
+      {
+        q: "Kann man Schlittschuhe ausleihen?",
+        a: "Ja. Der Verleih hat mit Warmluft vorgewärmte Eislaufschuhe in den Größen 23 bis 52. 300 Schutzhelme und verstellbare Doppelkufen in den Größen 21 bis 25 sind kostenlos, solange der Vorrat reicht. Eigene Schlittschuhe kann man vor Ort schleifen lassen.",
+      },
+      {
+        q: "Gibt es Ermäßigungen?",
+        a: "Mitglieder des Vorteilsclubs der Stadt Wien zahlen an allen Montagen 50 Prozent weniger. Wiener Kindergärten, Schulen und Horte im Schulverband laufen im Rahmen der Schulaktion an Schultagen von Montag bis Freitag zwischen 10 und 16 Uhr kostenlos. Alle Services sind im Online-Shop um 10 Prozent günstiger.",
+      },
+      {
+        q: "Ab wann gibt es Eisstockschießen?",
+        a: "Ab 17 Uhr wird die Anfänger:innenfläche zur Eisstockbahn.",
+      },
+    ],
+    expertise:
+      "Der Eistraum ist zwei Veranstaltungen in einer, und die Fläche, auf der man steht, entscheidet darüber, wie der Abend wird. Wer Runden drehen will, kommt unter der Woche und früh: Ab 17 Uhr verschwindet die Anfänger:innenfläche in die Eisstockbahnen, und genau dann füllt sich der Rest. Wer in der Gruppe kommt, dreht das um — der Eisstock ist der Teil, bei dem auch die mitkönnen, die nicht eislaufen. Und die zwei Rabatte sind kein Kleingeld: Montag mit dem kostenlosen Vorteilsclub sind minus 50 Prozent, dazu zehn Prozent auf Verleih und Services im Online-Shop, wenn man vorher bucht statt an der Kassa zu überlegen.",
+  },
 ];

@@ -592,4 +592,177 @@ export const items: EventItem[] = [
     expertise:
       "Dos cosas hacen difícil esta noche y las dos son de traslado. Mixquic está a más de treinta kilómetros del centro y la carretera de acceso se satura desde la tarde del 2; quien va en auto pasa más tiempo estacionándose que en el panteón. Y la segunda: es una celebración familiar en un cementerio, no una atracción — el modo de estar ahí es caminar despacio, no fotografiar tumbas de cerca",
   },
+
+  {
+    slug: "corona-capital-2026",
+    createdAt: "2026-09-12T23:41:00+04:00",
+    updatedAt: "2026-09-12T23:41:00+04:00",
+    site: "cmx",
+    image: "/covers/corona-capital-2026.jpg",
+    imageAlt:
+      "Un escenario de papel recortado en rojo con cortina festoneada y una banda roja horizontal al centro, con una fila de siluetas oscuras de público al pie, sobre fondo crema cálido",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Corona Capital 2026",
+    summary:
+      "El festival de música internacional más grande de la Ciudad de México va del 20 al 22 de noviembre en el Autódromo Hermanos Rodríguez, con Gorillaz, The Strokes y Twenty One Pilots encabezando.",
+    start: "2026-11-20",
+    end: "2026-11-22",
+    utcOffset: "-06:00",
+    venue: "Autódromo Hermanos Rodríguez",
+    city: "Ciudad de México",
+    country: "México",
+    geo: {
+      name: "Autódromo Hermanos Rodríguez",
+      lat: 19.406245,
+      lng: -99.094593,
+    },
+    organizer: "OCESA",
+    category: "Música",
+    tickets: { priceFrom: 2600, currency: "MXN" },
+    ticket: {
+      url: "https://www.coronacapital.com.mx/boletos",
+      label: "Boletos y fases",
+    },
+    source: {
+      name: "Corona Capital CDMX",
+      url: "https://www.coronacapital.com.mx/boletos",
+      verifiedOn: "2026-09-12",
+    },
+    speakersHeading: "Cabezas de cartel",
+    speakers: [
+      { name: "Gorillaz" },
+      { name: "The Strokes" },
+      { name: "Twenty One Pilots" },
+      { name: "Mumford & Sons" },
+      { name: "The Offspring" },
+      { name: "The xx" },
+      { name: "Daniel Caesar" },
+      { name: "Lola Young" },
+      { name: "Pierce the Veil" },
+      { name: "James Blake" },
+      { name: "Lil Yachty" },
+      { name: "Underworld" },
+      { name: "BUNT.", note: "in the round" },
+      { name: "Mother Mother" },
+      { name: "The Kooks" },
+    ],
+    body: [
+      "El cartel ya está cerrado y la mitad de los boletos también: cuando revisamos la página el 12 de septiembre, la Fase 1 estaba agotada en los cuatro tipos de acceso general y el sábado ya iba en <strong>Fase 3</strong>. El Corona Capital 2026 se realiza el <strong>20, 21 y 22 de noviembre</strong> en el <strong>Autódromo Hermanos Rodríguez</strong>.",
+      "## Quiénes encabezan",
+      "<strong>Gorillaz</strong>, <strong>The Strokes</strong>, <strong>Twenty One Pilots</strong>, <strong>Mumford &amp; Sons</strong>, <strong>The Offspring</strong>, <strong>The xx</strong>, <strong>Daniel Caesar</strong>, <strong>Lola Young</strong>, <strong>Pierce the Veil</strong>, <strong>James Blake</strong>, <strong>Lil Yachty</strong>, <strong>Underworld</strong>, <strong>BUNT.</strong> en formato <em>in the round</em>, <strong>Mother Mother</strong> y <strong>The Kooks</strong>. Debajo de los encabezados el cartel sigue en orden alfabético con decenas de nombres más.",
+      "## Los precios, fase por fase",
+      "El <strong>abono</strong> de acceso general arrancó en <strong>$4,090</strong> en Fase 1 —agotada— y va en <strong>$4,760</strong> en Fase 2. Los boletos por día de acceso general empezaron en <strong>$2,200</strong>: el <strong>viernes</strong> y el <strong>domingo</strong> están en <strong>$2,600</strong> de Fase 2, y el <strong>sábado</strong> ya pasó dos fases y está en <strong>$3,500</strong>. Todos los precios son <strong>más cargo por servicios</strong>.",
+      "## Los otros accesos",
+      "Además del general, el festival vende <strong>Comfort Pass presentado por Banamex</strong>, <strong>Banamex Plus</strong>, <strong>Club Pass</strong> y <strong>Cavannas</strong>, y tiene una vía de compra separada para quien paga desde Estados Unidos.",
+      "## Qué es el Corona Capital",
+      "Se realizó por primera vez en <strong>2010</strong> y el propio festival se describe como el principal referente de música internacional en México, no solo para el público sino para la comunidad artística nacional y global. Lo organiza <strong>OCESA</strong>.",
+      "## Cómo llegar",
+      "El Autódromo Hermanos Rodríguez está en la <strong>Ciudad Deportiva</strong>, en Iztacalco. Es la misma sede del Gran Premio de México y la que mejor resuelve el transporte público de un festival de este tamaño en la ciudad.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo es el Corona Capital 2026?",
+        a: "El viernes 20, sábado 21 y domingo 22 de noviembre de 2026, en el Autódromo Hermanos Rodríguez de la Ciudad de México.",
+      },
+      {
+        q: "¿Cuánto cuestan los boletos?",
+        a: "El abono de acceso general va en $4,760 de Fase 2; la Fase 1, de $4,090, está agotada. Los días sueltos de acceso general están en $2,600 el viernes y el domingo, y en $3,500 el sábado, que ya va en Fase 3. Todos los precios son más cargo por servicios.",
+      },
+      {
+        q: "¿Quiénes tocan?",
+        a: "Encabezan Gorillaz, The Strokes, Twenty One Pilots, Mumford & Sons, The Offspring, The xx, Daniel Caesar, Lola Young, Pierce the Veil, James Blake, Lil Yachty, Underworld, BUNT. en formato in the round, Mother Mother y The Kooks.",
+      },
+      {
+        q: "¿Qué tipos de boleto hay además del general?",
+        a: "Comfort Pass presentado por Banamex, Banamex Plus, Club Pass y Cavannas, además de una vía de compra para quien paga desde Estados Unidos.",
+      },
+      {
+        q: "¿Dónde es?",
+        a: "En el Autódromo Hermanos Rodríguez, en la Ciudad Deportiva, alcaldía Iztacalco, Ciudad de México.",
+      },
+    ],
+    expertise:
+      "La cuenta que conviene hacer antes de comprar: con el sábado en $3,500 y el viernes y el domingo en $2,600, tres días sueltos salen en $8,700, y el abono completo cuesta $4,760. Es decir, dos días sueltos cualesquiera ya se acercan al abono y el tercero sale prácticamente regalado —de modo que quien duda entre dos días y los tres está eligiendo, en realidad, entre pagar más por menos. La otra lectura del tablero de fases es el calendario: el sábado subió dos fases mientras los otros dos siguen en la segunda, y esa diferencia, más que el cartel, dice qué día se va a llenar primero.",
+  },
+
+  {
+    slug: "festival-del-terror-six-flags-2026",
+    createdAt: "2026-09-12T23:41:00+04:00",
+    updatedAt: "2026-09-12T23:41:00+04:00",
+    site: "cmx",
+    image: "/covers/festival-del-terror-six-flags-2026.jpg",
+    imageAlt:
+      "La silueta plana en ciruela de una estructura de armadura curvada que cruza la parte alta del cuadro, con tres calaveras pequeñas de papel debajo, sobre fondo crema cálido",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Festival del Terror 2026 en Six Flags México",
+    titleSeo: "Festival del Terror 2026, Six Flags Ciudad de México",
+    summary:
+      "El Festival del Terror de Six Flags México, en Tlalpan, va del 3 de septiembre al 16 de noviembre: ocho atracciones de terror, Kids Boo Fest y reglas de acceso que conviene leer antes de disfrazarse.",
+    start: "2026-09-03",
+    end: "2026-11-16",
+    utcOffset: "-06:00",
+    venue: "Six Flags México",
+    city: "Ciudad de México",
+    country: "México",
+    geo: {
+      name: "Six Flags México",
+      lat: 19.2953,
+      lng: -99.209786,
+    },
+    organizer: "Six Flags México",
+    category: "Festival",
+    tickets: { priceFrom: 550, currency: "MXN" },
+    ticket: {
+      url: "https://www.sixflags.com/mexico/events/festival-del-terror",
+      label: "Fechas y boletos",
+    },
+    source: {
+      name: "Six Flags México",
+      url: "https://www.sixflags.com/mexico/events/festival-del-terror",
+      verifiedOn: "2026-09-12",
+    },
+    body: [
+      "Setenta y cinco días de temporada, que es lo que el parque llama su edición <strong>más grande de la historia</strong>: el Festival del Terror 2026 va del <strong>3 de septiembre al 16 de noviembre</strong> en Six Flags México, y su rasgo más mexicano es que se extiende más allá de Halloween, hasta el otro lado del Día de Muertos.",
+      "## Lo que hay adentro",
+      "<strong>Ocho Atracciones de Terror</strong>, Zonas de Espanto más extensas, espectáculos en vivo y una oferta de alimentos y bebidas ampliada. Para los más chicos está el <strong>Kids Boo Fest</strong>, dentro de la zona de juegos infantiles que el parque describe como la más grande de América Latina. Las criaturas empiezan a aparecer desde las primeras horas del día, no solo de noche: el parque opera de <strong>10:00 a 00:00</strong>.",
+      "## El costo adicional que sorprende a muchos",
+      "Aquí está la letra que conviene leer dos veces. El <strong>Pase Anual 2026 y 2027</strong>, las <strong>Membresías</strong> y la <strong>Admisión General</strong> incluyen el acceso al Festival del Terror, pero <strong>las Atracciones de Terror tienen costo adicional, sin excepciones</strong>. El <strong>Pase de Atracciones de Terror</strong> cuesta <strong>desde $550</strong> y requiere tener ya una admisión al parque; el <strong>Boleto de un Día + Atracciones de Terror</strong>, que junta las dos cosas, cuesta <strong>desde $1,549</strong>. Ambos son válidos únicamente para el día seleccionado en la compra, el acceso es por fila regular, y la mejora a <strong>Monster Pass</strong> se contrata aparte, directamente en el parque.",
+      "## Las reglas de entrada",
+      "Las personas <strong>mayores de 12 años no pueden entrar al parque</strong> con máscaras, disfraces, maquillaje de caracterización, sudaderas con cremallera frontal ni cualquier prenda o artículo que cubra el rostro. Y las <strong>Atracciones de Terror y Zonas de Espanto están recomendadas para mayores de 13 años</strong>, de modo que el Kids Boo Fest no es un detalle menor: es la parte del evento pensada para quien no cumple ese criterio.",
+      "## Dónde es",
+      "Six Flags México está en el <strong>kilómetro 1.5 del Boulevard Picacho-Ajusco</strong>, colonia Jardines del Ajusco, <strong>alcaldía Tlalpan</strong>, al sur de la Ciudad de México.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo es el Festival del Terror 2026?",
+        a: "Del 3 de septiembre al 16 de noviembre de 2026 en Six Flags México, con el parque operando de 10:00 a 00:00.",
+      },
+      {
+        q: "¿Las atracciones de terror están incluidas en el boleto?",
+        a: "No. El Pase Anual 2026 y 2027, las membresías y la admisión general incluyen el acceso al Festival del Terror, pero las Atracciones de Terror tienen costo adicional, sin excepciones.",
+      },
+      {
+        q: "¿Cuánto cuesta?",
+        a: "El Pase de Atracciones de Terror cuesta desde $550 y requiere tener ya admisión al parque. El Boleto de un Día + Atracciones de Terror cuesta desde $1,549 e incluye ambas cosas. El precio mostrado es el más bajo disponible y cambia según la fecha elegida.",
+      },
+      {
+        q: "¿Puedo entrar disfrazado?",
+        a: "No si tienes más de 12 años. El parque no permite el ingreso con máscaras, disfraces, maquillaje de caracterización, sudaderas con cremallera frontal ni nada que cubra el rostro.",
+      },
+      {
+        q: "¿Hay algo para niños pequeños?",
+        a: "Sí, el Kids Boo Fest, dentro de la zona de juegos infantiles del parque. Las Atracciones de Terror y las Zonas de Espanto están recomendadas para mayores de 13 años.",
+      },
+      {
+        q: "¿Dónde está Six Flags México?",
+        a: "En el kilómetro 1.5 del Boulevard Picacho-Ajusco, colonia Jardines del Ajusco, alcaldía Tlalpan, al sur de la Ciudad de México.",
+      },
+    ],
+    expertise:
+      "La diferencia entre los dos boletos es de casi mil pesos y no significa lo mismo para todos. Quien ya tiene Pase Anual paga $550 y entra a las ocho atracciones; quien no lo tiene paga desde $1,549 por el día completo, que es prácticamente el costo de un pase anual con descuento. Dicho de otro modo: si piensas ir dos veces en la temporada, el pase se paga solo. La segunda cuenta es de calendario — la temporada dura hasta el 16 de noviembre, así que las dos semanas posteriores al 2 de noviembre son las mismas ocho atracciones con la mitad de la fila, y son las que casi nadie considera porque ya pasó Halloween.",
+  },
 ];

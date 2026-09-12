@@ -240,6 +240,54 @@
         ]
       ]
     },
+    "/covers/corona-capital-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/corona-capital-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/corona-capital-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/corona-capital-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/corona-capital-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/corona-capital-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/corona-capital-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/corona-capital-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/corona-capital-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/corona-capital-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/corona-capital-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/del-color-de-la-sandia-cenart.jpg": {
       "width": 1536,
       "height": 864,
@@ -573,6 +621,54 @@
         [
           1536,
           "/covers/festival-del-pan-dulce-en-el-monumento-a-la-revolucion-1536.webp"
+        ]
+      ]
+    },
+    "/covers/festival-del-terror-six-flags-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/festival-del-terror-six-flags-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/festival-del-terror-six-flags-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/festival-del-terror-six-flags-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/festival-del-terror-six-flags-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/festival-del-terror-six-flags-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/festival-del-terror-six-flags-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/festival-del-terror-six-flags-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/festival-del-terror-six-flags-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/festival-del-terror-six-flags-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/festival-del-terror-six-flags-2026-1536.webp"
         ]
       ]
     },
@@ -5520,6 +5616,54 @@
         ]
       ]
     },
+    "/covers/hyde-park-winter-wonderland-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/hyde-park-winter-wonderland-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/hyde-park-winter-wonderland-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/hyde-park-winter-wonderland-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/hyde-park-winter-wonderland-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/hyde-park-winter-wonderland-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/hyde-park-winter-wonderland-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/hyde-park-winter-wonderland-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/hyde-park-winter-wonderland-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/hyde-park-winter-wonderland-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/hyde-park-winter-wonderland-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/kew-costs-ten-pounds-on-a-tuesday.jpg": {
       "width": 1536,
       "height": 864,
@@ -6237,6 +6381,54 @@
         [
           1536,
           "/covers/simple-plan-ovo-arena-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/skate-at-somerset-house-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/skate-at-somerset-house-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/skate-at-somerset-house-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/skate-at-somerset-house-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/skate-at-somerset-house-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/skate-at-somerset-house-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/skate-at-somerset-house-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/skate-at-somerset-house-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/skate-at-somerset-house-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/skate-at-somerset-house-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/skate-at-somerset-house-2026-1536.webp"
         ]
       ]
     },
@@ -7492,6 +7684,54 @@
         ]
       ]
     },
+    "/covers/curse-of-the-mummy-london-dungeon-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/curse-of-the-mummy-london-dungeon-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/curse-of-the-mummy-london-dungeon-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/curse-of-the-mummy-london-dungeon-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/curse-of-the-mummy-london-dungeon-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/curse-of-the-mummy-london-dungeon-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/curse-of-the-mummy-london-dungeon-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/curse-of-the-mummy-london-dungeon-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/curse-of-the-mummy-london-dungeon-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/curse-of-the-mummy-london-dungeon-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/curse-of-the-mummy-london-dungeon-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/dark-arts-warner-bros-studio-tour-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -8209,6 +8449,54 @@
         [
           1536,
           "/covers/oxford-street-goes-traffic-free-1536.webp"
+        ]
+      ]
+    },
+    "/covers/ski-sunday-surbiton-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/ski-sunday-surbiton-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/ski-sunday-surbiton-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/ski-sunday-surbiton-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/ski-sunday-surbiton-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/ski-sunday-surbiton-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/ski-sunday-surbiton-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/ski-sunday-surbiton-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/ski-sunday-surbiton-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/ski-sunday-surbiton-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/ski-sunday-surbiton-2026-1536.webp"
         ]
       ]
     },
@@ -14546,6 +14834,102 @@
         ]
       ]
     },
+    "/covers/festival-internacional-del-globo-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/festival-internacional-del-globo-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/festival-internacional-del-globo-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/festival-internacional-del-globo-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/festival-internacional-del-globo-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/festival-internacional-del-globo-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/festival-internacional-del-globo-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/festival-internacional-del-globo-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/festival-internacional-del-globo-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/festival-internacional-del-globo-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/festival-internacional-del-globo-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/ficm-morelia-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/ficm-morelia-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/ficm-morelia-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/ficm-morelia-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/ficm-morelia-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/ficm-morelia-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/ficm-morelia-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/ficm-morelia-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/ficm-morelia-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/ficm-morelia-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/ficm-morelia-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/fiestas-de-octubre-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -15652,6 +16036,54 @@
         ]
       ]
     },
+    "/covers/albuquerque-balloon-fiesta-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/albuquerque-balloon-fiesta-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/albuquerque-balloon-fiesta-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/albuquerque-balloon-fiesta-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/albuquerque-balloon-fiesta-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/albuquerque-balloon-fiesta-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/albuquerque-balloon-fiesta-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/albuquerque-balloon-fiesta-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/albuquerque-balloon-fiesta-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/albuquerque-balloon-fiesta-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/albuquerque-balloon-fiesta-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/apple-from-350-billion-to-four-trillion.jpg": {
       "width": 1536,
       "height": 864,
@@ -16609,6 +17041,54 @@
         [
           1536,
           "/covers/ces-2027-1536.webp"
+        ]
+      ]
+    },
+    "/covers/christmas-spectacular-radio-city-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/christmas-spectacular-radio-city-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/christmas-spectacular-radio-city-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/christmas-spectacular-radio-city-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/christmas-spectacular-radio-city-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/christmas-spectacular-radio-city-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/christmas-spectacular-radio-city-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/christmas-spectacular-radio-city-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/christmas-spectacular-radio-city-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/christmas-spectacular-radio-city-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/christmas-spectacular-radio-city-2026-1536.webp"
         ]
       ]
     },
@@ -21601,6 +22081,102 @@
         [
           1536,
           "/covers/wien-modern-39-1536.webp"
+        ]
+      ]
+    },
+    "/covers/wiener-christkindlmarkt-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/wiener-christkindlmarkt-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/wiener-christkindlmarkt-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/wiener-christkindlmarkt-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/wiener-christkindlmarkt-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/wiener-christkindlmarkt-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/wiener-christkindlmarkt-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/wiener-christkindlmarkt-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/wiener-christkindlmarkt-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/wiener-christkindlmarkt-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/wiener-christkindlmarkt-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/wiener-eistraum-2027.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/wiener-eistraum-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/wiener-eistraum-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/wiener-eistraum-2027-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/wiener-eistraum-2027-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/wiener-eistraum-2027-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/wiener-eistraum-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/wiener-eistraum-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/wiener-eistraum-2027-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/wiener-eistraum-2027-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/wiener-eistraum-2027-1536.webp"
         ]
       ]
     },
