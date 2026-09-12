@@ -8,7 +8,7 @@ import EventCards from "../components/EventCards.astro";
 import VentureGrid from "@dst/ui/VentureGrid.astro";
 import { ICONS } from "@dst/ui/icons";
 import Icon from "@dst/ui/Icon.astro";
-import { citiesWithPages, cityBySlug, datedRuns, formatRun, runsFor, runsInCity, shows, showBySlug, statusOf, ticketButtons, upcomingRuns, venueBySlug, venues, type Venue, } from "../content";
+import { citiesWithPages, cityBySlug, collections, datedRuns, formatRun, runsFor, runsInCity, shows, showBySlug, statusOf, ticketButtons, upcomingRuns, venueBySlug, venues, type Venue, } from "../content";
 
 const upcoming = upcomingRuns();
 const soon = upcoming.slice(0, 6);
@@ -164,6 +164,26 @@ const nextTickets = next ? ticketButtons(next) : [];
         <a href="/venues/" title="Every theatre and arena on this site">all {venues.length} theatres</a>
       </p>
     )}
+  </section>
+
+  {/* The two ways in that are neither a city nor a show: a district and a
+      season. Both are searched for by name far more often than any title on
+      this site, and neither can be answered by a page about one production. */}
+  <section class="container" id="collections">
+    <h2>By district and by season</h2>
+    <p>
+      Pages that cut across the listings: everything playing in one part of one
+      city, and everything playing at one time of year. Membership is written
+      out rather than worked out, so nothing lands on them by accident.
+    </p>
+    <div class="link-grid">
+      {collections.map((collection) => (
+        <a class="card link-card" href={`/${collection.slug}/`} title={collection.title}>
+          <h3>{collection.name}</h3>
+          <p>{collection.lede}</p>
+        </a>
+      ))}
+    </div>
   </section>
 
   {/* One section for the show this site is about, and a line for the rest.

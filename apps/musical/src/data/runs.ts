@@ -1238,4 +1238,97 @@ export const runs: Run[] = [
     summary:
       "Twelve nights in a Theatre Royal open since February 1837. Chicago had six nights on the same stage in the spring; Cats gets double.",
   },
+  {
+    slug: "new-york",
+    show: "lost-boys",
+    city: "new-york",
+    venue: "palace-theatre",
+    start: "2026-04-26",
+    openRun: true,
+    sellers: [
+      {
+        slug: "tickets-lost-boys-new-york",
+        name: "Broadway Direct",
+        official: true,
+        price: {
+          from: 55,
+          currency: "USD",
+          checkedOn: "2026-09-13",
+          note: "the lowest price on the seller's own calendar; most performances are listed above it, and fees are added at checkout",
+          tiers: [
+            { name: "Digital lottery", from: 45, note: "entered the day before, limited seats" },
+            { name: "In-person rush", from: 45, note: "at the box office when it opens, limited availability" },
+          ],
+        },
+      },
+    ],
+    summary:
+      "Previews began on 27 March 2026 and the production opened on 26 April, in a theatre that had reopened two years earlier a storey higher than it was built. It won four Tony Awards in its first season and is on sale through 7 March 2027, with no closing date announced.",
+    runningTime: "2 hours 30 minutes, including a 15-minute interval",
+    language: "English",
+    ageGuidance:
+      "Recommended for ages 11 and up. Everyone in the room needs a ticket, and there is a limit of twelve per person.",
+    faq: [
+      {
+        q: "What are the performance times?",
+        a: "Eight a week: Tuesday at 7pm, Wednesday at 2pm and 7.30pm, Thursday and Friday at 7pm, Saturday at 2pm and 8pm, and Sunday at 3pm. Monday is dark, and the odd week moves a performance — the seller's calendar is the schedule.",
+      },
+      {
+        q: "Is it playing on Halloween?",
+        a: "Yes, twice. Saturday 31 October 2026 has a 2pm and an 8pm, and both are listed at the run's $55 floor price rather than above it.",
+      },
+      {
+        q: "Are there cheaper seats?",
+        a: "Broadway Direct runs a digital lottery and an in-person rush for the show, both at $45. Neither can be bought in advance online at that price.",
+      },
+    ],
+    tags: ["broadway", "open-run"],
+  },
+  {
+    slug: "new-york",
+    show: "wicked",
+    city: "new-york",
+    venue: "gershwin-theatre",
+    start: "2003-10-30",
+    openRun: true,
+    sellers: [
+      {
+        slug: "tickets-wicked-new-york",
+        name: "Broadway Direct",
+        official: true,
+        price: {
+          from: 97.75,
+          currency: "USD",
+          checkedOn: "2026-09-13",
+          note: "the lowest price on the seller's own calendar; Saturday and Sunday performances are listed from $110.75",
+          tiers: [
+            { name: "Student", from: 59, note: "at the box office in person, with a valid student card" },
+            { name: "Military", from: 79, note: "at the box office in person" },
+            { name: "Digital lottery", from: 55, note: "including all fees" },
+          ],
+        },
+      },
+    ],
+    summary:
+      "Previews began at the Gershwin Theatre on 8 October 2003, the production opened on the 30th, and it has never played another New York address. It is on sale through 25 April 2027, with no closing date announced.",
+    runningTime: "2 hours 45 minutes, including a 15-minute interval",
+    language: "English",
+    ageGuidance:
+      "Recommended for ages 8 and up. Children under 5 are not admitted, and everyone in the room needs a ticket whatever their age.",
+    faq: [
+      {
+        q: "What are the performance times?",
+        a: "Eight a week: Tuesday to Friday at 7pm, Saturday at 2pm and 8pm, and Sunday at 2pm and 7pm. Monday is dark.",
+      },
+      {
+        q: "Are there cheaper seats?",
+        a: "Three routes, none of them the ordinary online one: student tickets at $59 and military tickets at $79, both bought at the box office in person with the relevant card, and a digital lottery at $55 including fees.",
+      },
+      {
+        q: "Is this the same production as the London one?",
+        a: "The same staging, in a different theatre and with a different company. London has played the Apollo Victoria since September 2006; this page covers New York only.",
+      },
+    ],
+    tags: ["broadway", "open-run"],
+  },
 ];

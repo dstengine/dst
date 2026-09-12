@@ -6,8 +6,9 @@
 // whether to show a ticket button is a template that will disagree with the
 // next one.
 import type { EventItem } from "@dst/content";
-import type { City, Price, Run, Seller, Venue } from "./data/types";
+import type { City, Collection, Price, Run, Seller, Venue } from "./data/types";
 import { cities } from "./data/cities";
+import { collections } from "./data/collections";
 import { runs } from "./data/runs";
 import { venues } from "./data/venues";
 import { groups } from "./data/groups";
@@ -61,11 +62,29 @@ export function nights(run: Run): number | undefined {
   return Math.round(ms / 86_400_000) + 1;
 }
 
+export const collectionBySlug = (slug: string) => collections.find((c) => c.slug === slug);
+
+/** The runs a collection names, in the order it names them. A pair that
+    matches nothing is dropped rather than rendered as a gap: a run can be
+    retired from the data, and a collection that outlived one of its entries
+    should lose the entry, not the page. */
+export const runsInCollection = (collection: Collection): Run[] =>
+  collection.runs
+    .map(({ show, run }) => runs.find((r) => r.show === show && r.slug === run))
+    .filter((r): r is Run => Boolean(r));
+
+/** True while a collection stands in for this city — /broadway/ for New
+    York. Both pages would list the same runs, and only one of them is what
+    anybody types. */
+const cityIsCovered = (city: City): boolean =>
+  collections.some((c) => c.city === city.slug);
+
 /** A city earns its own page once it has two events to list, or when it is
     marked featured. One event and one city page would be the same facts at a
-    second address — which is a duplicate, not a listing. */
+    second address — which is a duplicate, not a listing. A city a
+    collection already covers is the same problem with the same answer. */
 export const cityHasPage = (city: City): boolean =>
-  Boolean(city.featured) || runsInCity(city.slug).length >= 2;
+  !cityIsCovered(city) && (Boolean(city.featured) || runsInCity(city.slug).length >= 2);
 
 export const citiesWithPages = (): City[] => cities.filter(cityHasPage);
 

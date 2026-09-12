@@ -1,11 +1,12 @@
 // Every URL this site generates, resolved from the data in one place.
 //
-// The root is a shared namespace: cities, prioritised events and prioritised
-// venues all live there (/dubai/, /chicago/, /broadway/). That is what people
-// type, so it is what we serve — at the cost of having to prove the slugs
+// The root is a shared namespace: collections, cities, prioritised events and
+// prioritised venues all live there (/broadway/, /dubai/, /chicago/). That
+// is what people type, so it is what we serve — at the cost of having to prove the slugs
 // cannot collide, which assertUniqueRoots() does at build time. A duplicate
 // is a build failure, not a route that quietly wins.
 import { cities } from "./data/cities";
+import { collections } from "./data/collections";
 import { groups } from "./data/groups";
 import { runs } from "./data/runs";
 import { shows } from "./data/shows";
@@ -19,10 +20,12 @@ export const RESERVED = ["about", "online", "venue", "venues", "go", "404"];
 export type RootEntry =
   | { kind: "city"; slug: string }
   | { kind: "show"; slug: string }
-  | { kind: "venue"; slug: string; venue: string };
+  | { kind: "venue"; slug: string; venue: string }
+  | { kind: "collection"; slug: string };
 
 export function rootEntries(): RootEntry[] {
   return [
+    ...collections.map((c) => ({ kind: "collection" as const, slug: c.slug })),
     ...cities.filter(cityHasPage).map((c) => ({ kind: "city" as const, slug: c.slug })),
     ...shows.map((s) => ({ kind: "show" as const, slug: s.slug })),
     ...venues.filter((v) => v.rootSlug).map((v) => ({ kind: "venue" as const, slug: v.rootSlug!, venue: v.slug })),

@@ -1,12 +1,13 @@
 ---
-// The root namespace: cities, prioritised events and prioritised venues all
-// answer here, because that is what people type — /dubai/, /chicago/,
-// /broadway/. Which one a slug is comes from routes.ts, and the same file
+// The root namespace: collections, cities, prioritised events and prioritised
+// venues all answer here, because that is what people type — /broadway/,
+// /dubai/, /chicago/. Which one a slug is comes from routes.ts, and the same file
 // proves at build time that no two of them claim the same address.
 import CityPage from "../components/CityPage.astro";
+import CollectionPage from "../components/CollectionPage.astro";
 import ShowHub from "../components/ShowHub.astro";
 import VenueDetail from "../components/VenueDetail.astro";
-import { assertRoutesAreUnique, cityBySlug, rootEntries, showBySlug, venueBySlug, type RootEntry } from "../content";
+import { assertRoutesAreUnique, cityBySlug, collectionBySlug, rootEntries, showBySlug, venueBySlug, type RootEntry } from "../content";
 
 export function getStaticPaths() {
   assertRoutesAreUnique();
@@ -16,6 +17,7 @@ export function getStaticPaths() {
 interface Props { entry: RootEntry }
 const { entry } = Astro.props;
 ---
+{entry.kind === "collection" && <CollectionPage collection={collectionBySlug(entry.slug)!} />}
 {entry.kind === "city" && <CityPage city={cityBySlug(entry.slug)!} />}
 {entry.kind === "show" && <ShowHub show={showBySlug(entry.slug)!} />}
 {entry.kind === "venue" && <VenueDetail venue={venueBySlug(entry.venue)!} />}

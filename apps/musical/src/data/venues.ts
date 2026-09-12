@@ -7,14 +7,16 @@ import type { Venue } from "./types";
 // city, address, map and what is playing there is a real page; the rest of
 // the blocks appear as the facts do.
 //
-// Two of them carry rootSlug and live at the top level, because that is what
-// people search for: /broadway/ and /coca-cola-arena/.
+// One of them carries rootSlug and lives at the top level, because that is
+// what people search for: /coca-cola-arena/. The Ambassador used to hold
+// /broadway/ and gave it up when a second Broadway house arrived — the
+// address now answers with the district, and the theatre is at
+// /venue/ambassador-theatre/ with the other thirty-eight.
 
 export const venues: Venue[] = [
   {
     slug: "ambassador-theatre",
     name: "Ambassador Theatre",
-    rootSlug: "broadway",
     city: "new-york",
     image: "/venues/ambassador-theatre.jpg",
     imageAlt:
@@ -1526,6 +1528,69 @@ export const venues: Venue[] = [
         paragraphs: [
           "It played as the Empire until 1950 and as the Gaumont until 1986, then reopened under its present name on 24 February 1987 with Peter Pan.",
           "A three-month closure in the summer of 2018 replaced 1,659 seats in the stalls and circle and redecorated the auditorium.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "palace-theatre",
+    name: "Palace Theatre",
+    city: "new-york",
+    address: "160 West 47th Street, New York, NY 10036",
+    lat: 40.7589003,
+    lon: -73.9846166,
+    opened: "1913",
+    capacity: 1648,
+    officialSlug: "venue-palace-theatre",
+    summary:
+      "The house where “playing the Palace” meant you had arrived, and the only Broadway theatre that has been lifted thirty feet off its own foundations. The Lost Boys has played it since March 2026.",
+    transit:
+      "47–50 Streets–Rockefeller Center on the B, D, F and M; 49th Street on the N, R and W; 50th Street on the 1.",
+    details: [
+      { label: "Opened", value: "24 March 1913" },
+      { label: "Architects", value: "Kirchhoff & Rose" },
+      { label: "Owner", value: "The Nederlander Organization, with Stewart F. Lane" },
+      { label: "Street address", value: "1564 Broadway; the ticketed entrance is 160 West 47th Street" },
+      { label: "Neighbourhood", value: "Times Square, Midtown Manhattan" },
+    ],
+    sections: [
+      {
+        heading: "Inside the Palace Theatre",
+        paragraphs: [
+          "For the first fifteen years of its life the Palace was the top of the profession. It opened in 1913 as the flagship of the Keith–Albee vaudeville circuit, and an engagement here was the proof that a performer had made it: Ethel Barrymore, Harry Houdini, Will Rogers, Ethel Merman, Judy Garland, Harry Belafonte, Shirley MacLaine and Diana Ross all played it. “Playing the Palace” entered the language and stayed there long after vaudeville did not.",
+          "James M. Nederlander turned it into a legitimate Broadway house in 1965, reopening it the following year with Sweet Charity. It has 1,648 seats and is one of the Nederlander Organization’s nine Broadway theatres, co-owned with Stewart F. Lane.",
+          "Then the building moved. Between 2018 and 2024 the Palace was rebuilt into the base of the TSX Broadway tower, and in 2022 the entire auditorium — walls, ceiling, plasterwork — was cut free and raised thirty feet so that retail space could be built beneath it. The room that reopened in 2024 is the room of 1913, one storey higher than it used to be.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "gershwin-theatre",
+    name: "Gershwin Theatre",
+    city: "new-york",
+    address: "222 West 51st Street, New York, NY 10019",
+    lat: 40.7623619,
+    lon: -73.9852044,
+    opened: "1972",
+    capacity: 1900,
+    officialSlug: "venue-gershwin-theatre",
+    summary:
+      "Nineteen hundred seats, the largest house the Nederlander Organization runs on Broadway, and the only address Wicked has ever had. Its rotunda holds the Theater Hall of Fame.",
+    transit:
+      "50th Street on the C and E; 50th Street on the 1; 49th Street on the N, R and W.",
+    details: [
+      { label: "Opened", value: "1972" },
+      { label: "Named for", value: "George Gershwin and his brother, the lyricist Ira Gershwin" },
+      { label: "Owner", value: "The Nederlander Organization" },
+      { label: "Neighbourhood", value: "Theater District, Midtown Manhattan" },
+    ],
+    sections: [
+      {
+        heading: "Inside the Gershwin Theatre",
+        paragraphs: [
+          "The Gershwin is the biggest room on this list by some distance: 1,900 seats, against 1,648 at the Palace and 1,125 at the Ambassador. It opened in 1972 and is one of the Nederlander Organization’s nine Broadway theatres.",
+          "Its rotunda was built to house the Theater Hall of Fame — the names and photographs of the people the profession has elected to it are on the walls a ticketholder walks past on the way in, which is a use for a lobby almost no other theatre has found.",
+          "Wicked opened here on 30 October 2003 and has never played anywhere else in New York. A theatre of this size is part of why: the show needs the flying rig, the dragon over the proscenium and the depth to put a whole Emerald City on stage, and there are not many Broadway houses that can hold it.",
         ],
       },
     ],

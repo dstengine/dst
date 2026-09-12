@@ -281,4 +281,100 @@ export const shows: Show[] = [
       },
     ],
   },
+  {
+    slug: "lost-boys",
+    title: "The Lost Boys",
+    titleSeo: "The Lost Boys musical: Broadway dates and tickets",
+    officialSlug: "lost-boys-official",
+    officialDomain: "lostboysmusical.com",
+    eyebrow: "The Broadway run, and what a ticket actually buys",
+    hubCard:
+      "Vampires on a Santa Carla boardwalk, four Tony Awards, and its cheapest seats of the year on Halloween night.",
+    checkedOn: "13 September 2026",
+    tagline:
+      "The Rescues set the 1987 vampire film to a rock score, Michael Arden staged it, and it opened at the Palace Theatre in April 2026.",
+    summary:
+      "The Lost Boys at the Palace Theatre on Broadway: the dates, the performance times, the run time, the age guidance and who sells the tickets — with the source for each.",
+    hook: [
+      "The film it comes from was a joke about its own genre. The Lost Boys arrived in 1987 as a comedy horror about teenage vampires on a Californian boardwalk, made money, and became the sort of cult object that gets quoted rather than revived. Turning it into a Broadway musical was not an obvious idea, and the production that did it won four Tony Awards in its first season.",
+      "Two of them were for the cast: Ali Louis Bourzgui for the vampire who does the recruiting, and Shoshana Bean for the mother who has no idea any of this is happening. The other two were for how it looks — Dane Laffrey's set and the lighting by Jen Schriever and the production's director, Michael Arden.",
+      "Below is the run as it stands at the Palace Theatre: the performance schedule, what a seat costs, how long the evening is, who it is recommended for, and where each of those came from.",
+    ],
+    sections: [
+      {
+        slug: "about",
+        label: "About the show",
+        title: "What The Lost Boys actually is",
+        description:
+          "A new town, a boardwalk, a band that only plays at night, and a decision that cannot be taken back. What kind of evening this is, and who it is for.",
+        body: [
+          "Michael moves to Santa Carla with his younger brother Sam and their mother Lucy, wanting to leave his old life behind. A night on the boardwalk puts him in front of David, who fronts a local band and offers him exactly what he came looking for — freedom, company, somewhere to belong. The band has a condition attached, and by the time Michael understands it he has already accepted.",
+          "Music and lyrics are by The Rescues, the book is by David Hornsby and Chris Hoch, and the whole thing is directed by Michael Arden, who has three Tony Awards of his own for Parade and Maybe Happy Ending. The choreography is by Lauren Yalango-Grant and Christopher Cree Grant, and Ethan Popp supervises the music.",
+          "It is a rock score played loud, and the production is built around spectacle: the set and the lighting both won Tonys, which on a show of this kind is a fair description of what a ticket buys. Broadway Direct recommends it for ages eleven and up, and the evening runs two hours thirty with one fifteen-minute interval.",
+          "The cast is led by LJ Benet as Michael, Shoshana Bean as Lucy, Ali Louis Bourzgui as David, Benjamin Pajak as Sam, Maria Wirries as Star and Paul Alexander Nolan as Max. It is produced by James Carpinello, Marcus Chait and Patrick Wilson.",
+        ],
+      },
+      {
+        slug: "tickets",
+        label: "Tickets",
+        title: "The Lost Boys tickets on Broadway",
+        description:
+          "One theatre, one official seller, eight performances a week, and where the cheap nights are. Sales happen on the seller's own site.",
+        template: "tickets",
+        body: [
+          "There is one run and one official seller: Broadway Direct, which is the Nederlander Organization's own box office and sells the Palace Theatre directly. Tickets are listed from $55, the run is on sale through 7 March 2027, and there is a limit of twelve per person.",
+          "Prices move by performance rather than by seat alone. Most October dates are listed from $59.75 or $69.75; a handful, including both Halloween performances, sit at the $55 floor. Broadway Direct also runs a digital lottery and an in-person rush for the show, both at $45.",
+          "Nothing is sold here. The button lands on the seller's own page, and the price you see there is the price.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "wicked",
+    title: "Wicked",
+    titleSeo: "Wicked the musical on Broadway: dates and tickets",
+    officialSlug: "wicked-official",
+    officialDomain: "wickedthemusical.com",
+    eyebrow: "The Broadway run, and what a ticket actually buys",
+    hubCard:
+      "Twenty-three years at the Gershwin, and it still fills nineteen hundred seats eight times a week.",
+    checkedOn: "13 September 2026",
+    tagline:
+      "Stephen Schwartz and Winnie Holzman told The Wizard of Oz from the witch's side, and Broadway has been playing it since 2003.",
+    summary:
+      "Wicked at the Gershwin Theatre on Broadway: the dates, the performance times, the run time, the age guidance and who sells the tickets — with the source for each.",
+    hook: [
+      "The premise is a reversal, and the show commits to it entirely: the Wicked Witch of the West was a girl called Elphaba, she was clever and green and unpopular, and the story everybody knows is the version her enemies were allowed to tell. Gregory Maguire wrote it as a novel in 1995. Stephen Schwartz and Winnie Holzman turned it into a musical about a friendship.",
+      "It began previews at the Gershwin Theatre on 8 October 2003 and opened on the 30th — the night before Halloween — and it has not moved since. It is Broadway's second-highest-grossing musical and passed a billion dollars in 2016, and the London production has been at the Apollo Victoria since September 2006.",
+      "Below is the Broadway run as it stands: the theatre, the performance schedule, what a seat costs, how long the evening is, and where each of those came from.",
+    ],
+    sections: [
+      {
+        slug: "about",
+        label: "About the show",
+        title: "What Wicked actually is",
+        description:
+          "Two students at a magical university, one of whom becomes the villain of a story you already know. What kind of evening this is, and who it is for.",
+        body: [
+          "Elphaba and Galinda are put in the same room at Shiz University and cannot stand each other. Over the course of the evening they become friends, and then the politics of Oz forces them apart — one into the palace and one into the history books as the Wicked Witch of the West. Everything The Wizard of Oz tells you happens offstage, late, and from the wrong angle.",
+          "Music and lyrics are by Stephen Schwartz, the book is by Winnie Holzman, from Gregory Maguire's 1995 novel. Joe Mantello directed it and Wayne Cilento choreographed it, and the original company was led by Idina Menzel as Elphaba, Kristin Chenoweth as Glinda, Norbert Leo Butz as Fiyero and Joel Grey as the Wizard. It won three Tony Awards in 2004.",
+          "What a ticket buys is scale. The Gershwin holds 1,900 people, the dragon over the proscenium is part of the set rather than part of the marketing, and the first act ends with Elphaba flying. If you know one song it is “Defying Gravity”; the others people leave humming are “Popular” and “For Good”.",
+          "The evening runs two hours forty-five with one fifteen-minute interval. Broadway Direct gives it an age guidance of eight and up, and children under five are not admitted at all — every person in the room needs a ticket, whatever their age.",
+        ],
+      },
+      {
+        slug: "tickets",
+        label: "Tickets",
+        title: "Wicked tickets on Broadway",
+        description:
+          "One theatre, one official seller, and what the cheap routes in actually are. Sales happen on the seller's own site.",
+        template: "tickets",
+        body: [
+          "There is one run and one official seller: Broadway Direct, the Nederlander Organization's own box office, which sells the Gershwin Theatre directly. Tickets are listed from $97.75, the run is on sale through 25 April 2027, and there is a limit of sixteen per person.",
+          "Three cheaper routes exist and all three are bought in person or by lottery rather than online: student tickets at $59 and military tickets at $79, both at the box office with the relevant card, and a daily digital lottery at $55 including fees.",
+          "Nothing is sold here. The button lands on the seller's own page, and the price you see there is the price.",
+        ],
+      },
+    ],
+  },
 ];

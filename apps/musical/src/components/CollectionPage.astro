@@ -1,0 +1,118 @@
+---
+// A page that gathers runs the other pages cannot: a district (/broadway/)
+// or a season (/halloween/). It is the same furniture as a city page —
+// cards, theatres, a note about where the facts came from — over a list
+// that was written by hand rather than derived, because membership here is
+// a judgement and judgements are declared in the data. See Collection in
+// ../data/types.ts.
+import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
+import PageHero from "@dst/ui/PageHero.astro";
+import Glance from "@dst/ui/Glance.astro";
+import Callout from "@dst/ui/Callout.astro";
+import VenueCard from "@dst/ui/district/VenueCard.astro";
+import { ICONS } from "@dst/ui/icons";
+import Layout from "../layouts/Layout.astro";
+import EventCards from "./EventCards.astro";
+import {
+  checkedOn,
+  cityBySlug,
+  formatPrice,
+  priceFrom,
+  runsInCollection,
+  spell,
+  venueBySlug,
+  venuePath,
+  type Collection,
+} from "../content";
+
+interface Props { collection: Collection }
+const { collection } = Astro.props;
+
+const runs = runsInCollection(collection);
+const venues = (collection.venues ?? []).map(venueBySlug).filter((v) => v !== undefined);
+
+// The cheapest advertised seat across the page, and only when the prices
+// behind it are still fresh — priceFrom drops a stale one, and a collection
+// whose quotes have all aged out prints no number rather than an old one.
+const quotes = runs.map(priceFrom).filter((q) => q !== undefined);
+const cheapest = quotes.sort((a, b) => a.price.from - b.price.from)[0];
+
+const glance = [
+  { label: "Musicals", value: runs.length === 1 ? "One" : spell(runs.length), icon: ICONS.events },
+  venues.length > 0 && { label: "Theatres", value: venues.map((v) => v.name).join(", "), icon: ICONS.pin },
+  cheapest && {
+    label: "Cheapest seat",
+    value: `${formatPrice(cheapest.price.from, cheapest.price.currency)}, ${cheapest.seller.name}`,
+    icon: ICONS.ticket,
+  },
+  { label: "Last checked", value: collection.checkedOn ?? checkedOn, icon: ICONS.list },
+].filter(Boolean) as { label: string; value: string; icon: string }[];
+
+// Every run in one city means the city belongs in the heading; a season
+// spread over two countries means it does not.
+const cities = [...new Set(runs.map((r) => r.city))];
+const onePlace = cities.length === 1 ? cityBySlug(cities[0]!)?.name : undefined;
+---
+<Layout title={collection.title} description={collection.description}>
+  <div class="container crumbs">
+    <Breadcrumbs crumbs={[]} current={collection.name} homeLabel="What's on" />
+  </div>
+
+  <PageHero eyebrow={collection.eyebrow} title={collection.h1}>
+    <p class="lede">{collection.lede}</p>
+    <Glance facts={glance} />
+  </PageHero>
+
+  <section class="container prose">
+    {collection.body.map((paragraph) => <p>{paragraph}</p>)}
+  </section>
+
+  {runs.length > 0 && (
+    <section class="container">
+      <h2>{onePlace ? `${collection.name} musicals on sale in ${onePlace}` : `${collection.name} musicals on sale`}</h2>
+      <EventCards runs={runs} lead="event" />
+    </section>
+  )}
+
+  {venues.length > 0 && (
+    <section class="container">
+      <h2>{venues.length === 1 ? `The theatre` : `The theatres`}</h2>
+      <div class="venue-grid">
+        {venues.map((venue) => (
+          <VenueCard
+            href={venuePath(venue)}
+            name={venue.name}
+            blurb={venue.summary ?? venue.address ?? venue.name}
+            meta={venue.capacity ? `${venue.capacity.toLocaleString("en-GB")} seats` : venue.name}
+            image={venue.image}
+            icon="stage"
+          />
+        ))}
+      </div>
+    </section>
+  )}
+
+  {collection.outro && (
+    <section class="container prose">
+      {collection.outro.map((paragraph) => <p>{paragraph}</p>)}
+    </section>
+  )}
+
+  <Callout kind="note">
+    <strong>Check the date before you book anything.</strong> Every line here
+    was read from the seller's own calendar on {collection.checkedOn ?? checkedOn};
+    performances sell out and schedules are extended, and the seller's page is
+    the one that is current.
+  </Callout>
+</Layout>
+
+<style>
+  .crumbs { padding-top: var(--space-4); }
+  .prose p { max-width: 68ch; }
+  .venue-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-3);
+    margin-top: var(--space-3);
+  }
+</style>

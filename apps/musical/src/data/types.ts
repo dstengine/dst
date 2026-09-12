@@ -55,9 +55,10 @@ export interface Venue {
   name: string;
   /** City slug. */
   city: string;
-  /** Set on a venue important enough to live at the root: /broadway/.
-      Without it the venue is served from /venue/<slug>/. One address each,
-      never both. */
+  /** Set on a venue important enough to live at the root:
+      /coca-cola-arena/. Without it the venue is served from /venue/<slug>/.
+      One address each, never both. A venue loses this the moment a
+      collection is the better answer at that address — see Collection. */
   rootSlug?: string;
   address?: string;
   lat?: number;
@@ -240,4 +241,47 @@ export interface Show {
   hook: string[];
   sections: Section[];
   clips?: Clip[];
+}
+
+/** A slice of the listings that is not a city, a show or a theatre: a place
+    smaller than a city (Broadway is three streets of it), or a season
+    (Halloween is a fortnight). It exists because it is what people type —
+    nobody searches for musicals in the Theater District, they search for
+    Broadway — and because the runs it gathers have something in common that
+    none of the other pages is in a position to say.
+
+    The runs are named one by one rather than matched by a rule. A rule would
+    be shorter and would also be a machine deciding that Chicago belongs on a
+    Halloween page because somebody gets shot in it. Every entry here is a
+    judgement, and a judgement gets written down. */
+export interface Collection {
+  /** URL segment at the root: /broadway/. */
+  slug: string;
+  /** Breadcrumb and menu label. */
+  name: string;
+  eyebrow: string;
+  h1: string;
+  title: string;
+  description: string;
+  /** The paragraph under the heading, before the facts. */
+  lede: string;
+  /** The page in its own words, above the listings. */
+  body: string[];
+  /** The runs, in the order they should be read: show slug and run slug,
+      the same pair that makes a run's URL. */
+  runs: { show: string; run: string }[];
+  /** Theatres this page lists in their own right. A season has none; a
+      place is largely made of them. */
+  venues?: string[];
+  /** A city this collection stands in for. While it is named here the city
+      gets no page of its own, because the two would list the same runs and
+      the collection is the one people search for. Dropped the day the city
+      holds something the collection does not — an off-Broadway house, a
+      concert hall — and both pages have their own answer. */
+  city?: string;
+  /** When these listings were read at their sellers, where that is not the
+      site-wide date. A collection is assembled on the day it is written. */
+  checkedOn?: string;
+  /** The line after the listings: what there is to do now. */
+  outro?: string[];
 }
