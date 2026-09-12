@@ -153,7 +153,7 @@ export const items: EventItem[] = [
     country: "United Arab Emirates",
     organizer: "Dubai Department of Economy and Tourism and Dubai Sports Council",
     category: "Sport",
-    tickets: { priceFrom: 0, priceTo: 0, currency: "AED" },
+    tickets: { priceFrom: 0, currency: "AED" },
     source: {
       name: "Dubai Fitness Challenge",
       url: "https://dubaifitnesschallenge.com/en/dubai-ride",
@@ -217,7 +217,7 @@ export const items: EventItem[] = [
     country: "United Arab Emirates",
     organizer: "Dubai Department of Economy and Tourism and Dubai Sports Council",
     category: "Sport",
-    tickets: { priceFrom: 0, priceTo: 0, currency: "AED" },
+    tickets: { priceFrom: 0, currency: "AED" },
     source: {
       name: "Dubai Fitness Challenge",
       url: "https://dubaifitnesschallenge.com/en/dubai-run",

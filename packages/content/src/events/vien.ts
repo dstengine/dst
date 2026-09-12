@@ -188,7 +188,7 @@ export const items: EventItem[] = [
     city: "Wien",
     organizer: "Wiener Kaiser Wiesn GmbH",
     category: "Volksfest",
-    tickets: { priceFrom: 0, priceTo: 0, currency: "EUR" },
+    tickets: { priceFrom: 0, currency: "EUR" },
     source: {
       name: "Stadt Wien",
       url: "https://www.wien.gv.at/veranstaltungen/wiener-kaiser-wiesn-2026",
@@ -301,6 +301,12 @@ export const items: EventItem[] = [
     organizer: "Fairsport Events e.U.",
     category: "Halloween",
     tickets: { priceFrom: 8, priceTo: 40, currency: "EUR" },
+    // Die Anmeldung läuft über Time Now Sports; die Veranstalterseite
+    // verlinkt die Jahrgangsseite 2026 direkt.
+    ticket: {
+      url: "https://www.time-now-sports.at/vienna-halloween-run-2026",
+      label: "Anmeldung bei Time Now Sports",
+    },
     source: {
       name: "Vienna Halloween Run",
       url: "https://www.vienna-halloween-run.at/",
@@ -357,7 +363,7 @@ export const items: EventItem[] = [
     city: "Wien",
     organizer: "Kuratorium Wald",
     category: "Halloween",
-    tickets: { priceFrom: 0, priceTo: 0, currency: "EUR" },
+    tickets: { priceFrom: 0, currency: "EUR" },
     source: {
       name: "Himmel — Kuratorium Wald",
       url: "https://www.himmel.at/kuerbisfest",

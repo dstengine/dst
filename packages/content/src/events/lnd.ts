@@ -113,6 +113,14 @@ export const items: EventItem[] = [
     organizer: "Slammin Events, in partnership with Lewisham Council",
     category: "Fireworks",
     tickets: { priceFrom: 5.5, priceTo: 17.6, currency: "GBP" },
+    // The organiser's own site sells from this page; the basket on it is a
+    // See Tickets embed for the 2026 event, which is the seller the body
+    // names. Linking the organiser's page rather than the embed keeps the
+    // destination one we can see working — See Tickets refuses us outright.
+    ticket: {
+      url: "https://www.blackheathfireworks.com/book-tickets",
+      label: "Book tickets",
+    },
     source: {
       name: "Time Out London",
       url: "https://www.timeout.com/london/news/blackheath-fireworks-tickets-have-been-released-for-bonfire-night-2026-090826",
@@ -253,6 +261,13 @@ export const items: EventItem[] = [
     organizer: "Horniman Museum and Gardens",
     category: "Day of the Dead",
     tickets: { priceFrom: 6, priceTo: 8, currency: "GBP" },
+    // The museum books this itself. Its own "Book tickets" button points at
+    // the booking block further down the event page, not at my.horniman,
+    // which is a login wall and no use as a destination.
+    ticket: {
+      url: "https://www.horniman.ac.uk/event/day-of-the-dead-family-festival/#tickets",
+      label: "Book tickets",
+    },
     source: {
       name: "Horniman Museum and Gardens",
       url: "https://www.horniman.ac.uk/event/day-of-the-dead-family-festival/",

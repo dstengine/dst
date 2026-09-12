@@ -542,7 +542,7 @@ export const items: EventItem[] = [
     city: "London",
     organizer: "Frieze",
     category: "Exhibitions",
-    tickets: { priceFrom: 0, priceTo: 0, currency: "GBP" },
+    tickets: { priceFrom: 0, currency: "GBP" },
     source: {
       name: "Frieze",
       url: "https://www.frieze.com/fairs/frieze-sculpture",
@@ -704,6 +704,14 @@ export const items: EventItem[] = [
     organizer: "Royal Botanic Gardens, Kew",
     category: "Halloween",
     tickets: { priceFrom: 16.75, priceTo: 24, currency: "GBP" },
+    // Kew does not sell this one through its own shop: both "Book tickets"
+    // buttons on kew.org's event page go to Fever, which is also the party
+    // named alongside Kew in the no-refunds line. Recorded without kew.org's
+    // theming parameters, which only restyle Fever's page.
+    ticket: {
+      url: "https://feverup.com/m/631869",
+      label: "Tickets on Fever",
+    },
     source: {
       name: "Royal Botanic Gardens, Kew",
       url: "https://www.kew.org/about-us/press-media/halloween-at-kew-returns-in-2026",
@@ -825,7 +833,7 @@ export const items: EventItem[] = [
     country: "United Kingdom",
     organizer: "The Royal Parks",
     category: "Halloween",
-    tickets: { priceFrom: 0, priceTo: 0, currency: "GBP" },
+    tickets: { priceFrom: 0, currency: "GBP" },
     source: {
       name: "The Royal Parks",
       url: "https://www.royalparks.org.uk/whats-on/discovery-days-hair-raising-halloween-26",

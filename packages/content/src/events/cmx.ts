@@ -410,7 +410,7 @@ export const items: EventItem[] = [
     venue: "Zócalo — Paseo de la Reforma",
     category: "Día de Muertos",
     organizer: "Museo de Arte Popular",
-    tickets: { priceFrom: 0, priceTo: 0, currency: "MXN" },
+    tickets: { priceFrom: 0, currency: "MXN" },
     geo: {
       name: "Zócalo",
       lat: 19.432608,
@@ -471,7 +471,7 @@ export const items: EventItem[] = [
     venue: "Ángel de la Independencia — Zócalo",
     category: "Día de Muertos",
     organizer: "Jessy Esquivias",
-    tickets: { priceFrom: 0, priceTo: 0, currency: "MXN" },
+    tickets: { priceFrom: 0, currency: "MXN" },
     geo: {
       name: "Ángel de la Independencia",
       lat: 19.427021,

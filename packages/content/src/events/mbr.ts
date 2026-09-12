@@ -58,6 +58,13 @@ export const items: EventItem[] = [
     organizer: "Dubai Racing Club",
     category: "Sport",
     tickets: { priceFrom: 10, currency: "AED" },
+    // The club sells its own season through a TM Tickets storefront on its
+    // own subdomain; the "Book Tickets" button on dubairacingclub.com and
+    // the link at the foot of the on-sale press release both point here.
+    ticket: {
+      url: "https://dubairacingclub.tmtickets.ae/",
+      label: "Book tickets",
+    },
     source: {
       name: "Dubai Racing Club",
       url: "https://dubairacingclub.com/press-releases/carnival-tickets-on-sale",
