@@ -205,7 +205,7 @@ export const items: NewsItem[] = [
     cardTitle: "The Bayeux Tapestry comes to London",
     titleSeo: "Bayeux Tapestry at the British Museum",
     summary:
-      "Seventy metres of eleventh-century embroidery go on show from 10 September until 11 July 2027. Tickets are £33, and the next release is on 21 October.",
+      "Seventy metres of eleventh-century embroidery are on show in London from 10 September until 11 July 2027. Tickets are £33, and the next release is on 21 October.",
     date: "2026-09-02",
     category: "Exhibitions",
     source: {

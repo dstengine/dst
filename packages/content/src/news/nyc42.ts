@@ -664,4 +664,41 @@ export const items: NewsItem[] = [
       "For a city that treats 31 October as an outdoor event, the composition is the interesting part. Costumes and decorations together are two thirds of the money, and both are things bought to be seen by other people.",
     ],
   },
+
+  {
+    slug: "lucas-museum-opens-on-a-tuesday",
+    createdAt: "2026-09-13T22:26:00+04:00",
+    updatedAt: "2026-09-13T22:26:00+04:00",
+    site: "nyc42",
+    title: "The Lucas Museum opens on a Tuesday, the one day of the week it is otherwise closed",
+    cardTitle: "Lucas Museum opens 22 September",
+    titleSeo: "Lucas Museum opens in LA on 22 September",
+    summary:
+      "George Lucas and Mellody Hobson's 300,000-square-foot museum opens with 1,300 works across 30-plus galleries. For a New York museumgoer the draw is not Star Wars, it is the room of reproductions.",
+    date: "2026-09-13",
+    category: "Museums",
+    source: {
+      name: "Lucas Museum of Narrative Art",
+      url: "https://lucasmuseum.org/press/lucas-museum-of-narrative-art-opens-to-the-public-on-september-22-2026",
+      verifiedOn: "2026-09-13",
+    },
+    body: [
+      "The <strong>Lucas Museum of Narrative Art</strong> opens to the public on <strong>Tuesday, 22 September 2026</strong>. Tuesday is the day it closes every other week of the year.",
+      "It sits in <strong>Exposition Park</strong> in South Los Angeles: <strong>300,000 square feet</strong> designed by <strong>Ma Yansong</strong> of MAD with Stantec, of which more than <strong>100,000 square feet</strong> is gallery, spread across <strong>30-plus galleries</strong>, on a <strong>13-acre</strong> campus landscaped by <strong>Mia Lehrer</strong> of Studio-MLA.",
+      "## What it argues",
+      "The premise is a ranking dispute. Comics, illustration, murals and cinema have never been filed alongside painting and sculpture, and this museum files them together on purpose. The inaugural hang runs to <strong>more than 1,300 works</strong>, and the names in one sentence tell you the size of the claim: <strong>Artemisia Gentileschi</strong>, <strong>Norman Rockwell</strong>, <strong>Frida Kahlo</strong>, <strong>Frank Frazetta</strong>, <strong>Robert Crumb</strong>.",
+      "Individual galleries go to <strong>N.C. Wyeth</strong>, <strong>Jessie Willcox Smith</strong>, <strong>Maxfield Parrish</strong> and <strong>Thomas Hart Benton</strong>. The mural floor holds work by <strong>Diego Rivera</strong>, <strong>JR</strong>, <strong>Judith F. Baca</strong> — whose half-mile <em>Great Wall of Los Angeles</em> is represented from her own archive — and pieces straight from <strong>Banksy</strong>'s studio.",
+      "## The room worth the airfare",
+      "The first floor holds something no other museum can offer, because no other museum went and asked. Working with the <strong>Vatican Museums</strong>, the <strong>Louvre</strong>, Spain's <strong>Altamira</strong> centre and Mexico's <strong>Instituto Nacional de Antropología e Historia</strong>, the museum made faithful reproductions of things that cannot travel: the <strong>Sistine Chapel</strong> ceiling, the winged human-headed bulls from the Palace of <strong>Sargon II</strong>, cave paintings, the <strong>Aztec Sun Stone</strong>.",
+      "One gallery, then, holds objects you would otherwise circle the planet to see. The high-resolution images and 3-D scans made along the way were given to the partner institutions to keep.",
+      "## And yes, the vehicles",
+      "The cinema gallery opens with <strong>Star Wars in Motion</strong>, on the land vehicles of the first six films: concept art, props and costumes, from Luke's Landspeeder in <em>A New Hope</em> (1977) to the first physical build of General Grievous's wheel bike in <em>Revenge of the Sith</em> (2005). The <strong>Lucas Archives (1971–2012)</strong> sit behind it in full.",
+      "Two theatres — the <strong>Robert Flaherty</strong> and the <strong>Slavko Vorkapich</strong> — run as drop-in galleries rather than screenings, with films from a few minutes to ninety.",
+      "## Practical",
+      "Admission is <strong>$25</strong>, <strong>$21</strong> for over-65s, and <strong>free</strong> for anyone 17 and under, for members, and for active-duty military. Everyone needs a timed-entry ticket booked in advance, members and children included. The research library is free; the <strong>Skywalker Grill</strong>, the café, the store and the gardens need no ticket.",
+      "Open Wednesday to Monday, closed <strong>Tuesdays</strong> thereafter, late until 9pm on Friday and Saturday. Last entry is 45 minutes before closing.",
+    ],
+    expertise:
+      "The reproduction gallery is the part worth thinking about beyond the visit, because it inverts how loans normally work. A museum that wants the Sun Stone cannot have it; Mexico will not lend it, and no agreement will change that. So the Lucas Museum scanned it instead, built a copy, and handed the scan file back to the INAH — which now owns a record of its own object that it did not have to pay for. Compare that with the Bayeux Tapestry crossing to London this month under a state-level agreement after years of negotiation, for ten months, with tickets already gone. One route moves the object and rations the audience; the other moves the data and keeps the original at home. For a New Yorker deciding which trip to take, that difference is also the practical one: the Los Angeles room is not going anywhere, and the London one closes in July.",
+  },
 ];

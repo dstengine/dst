@@ -854,4 +854,39 @@ export const items: NewsItem[] = [
     expertise:
       "Hay que reservar tiempo para el teléfono y los vinilos, que es donde la exposición realmente pasa y donde nadie se detiene. Una sala de poesía se recorre por instinto como se recorre una de pintura — leyendo los muros y saliendo —, y así se pierde exactamente la mitad de la obra: la que suena.",
   },
+
+  {
+    slug: "el-bordado-de-bayeux-salio-de-francia",
+    createdAt: "2026-09-13T22:22:00+04:00",
+    updatedAt: "2026-09-13T22:22:00+04:00",
+    site: "mxo",
+    title: "Los perdedores de 1066 bordaron la versión de los ganadores, y el resultado acaba de salir de Francia",
+    cardTitle: "Bayeux sale de Francia",
+    titleSeo: "Bayeux en Londres: fechas y entradas",
+    summary:
+      "El British Museum exhibe los 70 metros del bordado hasta el 11 de julio de 2027. Desde México conviene anotar una fecha: el 21 de octubre se liberan las entradas de 2027.",
+    date: "2026-09-13",
+    category: "Mundo",
+    source: {
+      name: "British Museum",
+      url: "https://www.britishmuseum.org/exhibitions/bayeux-tapestry",
+      verifiedOn: "2026-09-13",
+    },
+    body: [
+      "Lo encargó, con toda probabilidad, un patrón normando. Lo bordaron manos inglesas, siguiendo dibujos de <strong>Canterbury</strong>. Es decir: quienes perdieron en 1066 ejecutaron puntada por puntada el relato de quienes ganaron.",
+      "Ese objeto salió de Francia por primera vez desde que se hizo, hace casi mil años. Está en el <strong>British Museum</strong> desde el <strong>10 de septiembre de 2026</strong> y sigue ahí hasta el <strong>11 de julio de 2027</strong>, en la <strong>sala 30</strong>, tras un acuerdo de préstamo entre los dos países.",
+      "## No es un tapiz",
+      "El nombre engaña en todos los idiomas. No hay nada tejido: es bordado, lana sobre lino, <strong>70 metros</strong> de largo. La distinción no es pedante, explica la supervivencia. La lana bordada se sostiene sobre una tela que no depende de ella; una imagen tejida se deshace cuando se deshace el tejido.",
+      "## Lo que se coló sin querer",
+      "La batalla es el argumento, pero no es lo más valioso. Alrededor aparecen castillos, barcos, ropa, comida, muebles: la vida material de la Inglaterra del siglo XI, registrada de pasada por quien no pretendía documentarla. No existe otra fuente visual comparable para ese siglo.",
+      "Hay además una cuenta que el propio museo considera incómoda. En la franja principal desfilan <strong>más de 600 figuras</strong>. <strong>Tres</strong> son mujeres. El museo le dedica una charla entera el <strong>20 de noviembre</strong> a preguntarse por qué.",
+      "## Cómo entrar",
+      "Las entradas del <strong>10 de septiembre al 31 de diciembre de 2026</strong> están agotadas. El siguiente lote sale a la venta el <strong>21 de octubre de 2026</strong> y cubre del <strong>1 de enero al 31 de marzo de 2027</strong>; los socios reservan desde el <strong>6 de octubre</strong>.",
+      "Horario: de domingo a miércoles de 10 a 18 horas, de jueves a sábado de 10 a 21.",
+      "## Si no hay lugar",
+      "En paralelo corre <strong>Bayeux Around Britain</strong>, con actividades en más de <strong>60 museos y sitios patrimoniales</strong> del Reino Unido. Es la respuesta razonable al hecho de que una sola pieza no puede estar en sesenta lugares a la vez.",
+    ],
+    expertise:
+      "Para quien viaja desde México el orden habitual se invierte: primero la entrada, después el vuelo. El acceso es por horario asignado, y el 21 de octubre es la única fecha anunciada para el primer trimestre de 2027; comprar el boleto de avión antes de tener la entrada es apostar a un lote que puede agotarse en horas. Vale la pena mirar también el calendario al revés: la exposición dura hasta julio de 2027, así que el margen es amplio si uno se mueve cuando abre la venta y no cuando decide el viaje. Y el detalle del bordado frente al tejido no es un tecnicismo de museo: es la razón por la que hay algo que ver, y explica por qué la pieza se transporta, se presta y se expone en lugar de quedarse enrollada en una vitrina.",
+  },
 ];

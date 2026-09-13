@@ -268,4 +268,40 @@ export const items: NewsItem[] = [
       "Wenn der Großteil des Geldes in Süßigkeiten, Kürbisse und Snacks fließt, dann findet Halloween in Österreich überwiegend zu Hause statt. Das erklärt, warum ein Abend Ende Oktober in Wien nach viel Betrieb im Supermarkt und wenig Programm in der Stadt aussieht: Beides ist dasselbe Fest, es wird nur nicht am selben Ort gefeiert.",
     ],
   },
+
+  {
+    slug: "der-teppich-von-bayeux-hat-frankreich-verlassen",
+    createdAt: "2026-09-13T22:18:00+04:00",
+    updatedAt: "2026-09-13T22:18:00+04:00",
+    site: "vien",
+    title: "Der Teppich von Bayeux hat Frankreich verlassen, und heuer kommt niemand mehr hinein",
+    cardTitle: "Bayeux: ausverkauft bis 2027",
+    titleSeo: "Teppich von Bayeux: Karten ab 21. Oktober",
+    summary:
+      "Das British Museum zeigt die 70 Meter lange Stickerei bis 11. Juli 2027. Alle Karten bis Jahresende sind vergeben; wer von Wien aus plant, merkt sich den 21. Oktober.",
+    date: "2026-09-13",
+    category: "Welt",
+    source: {
+      name: "British Museum",
+      url: "https://www.britishmuseum.org/exhibitions/bayeux-tapestry",
+      verifiedOn: "2026-09-13",
+    },
+    body: [
+      "Seit <strong>10. September 2026</strong> hängt in London ein Stück Leinen, das seit bald neunhundert Jahren nicht mehr auf dieser Seite des Ärmelkanals war. Wer es heuer noch sehen will, kommt zu spät: die Karten bis Jahresende sind vergeben.",
+      "Das <strong>British Museum</strong> zeigt den Teppich von Bayeux nach einem Abkommen mit Frankreich bis <strong>11. Juli 2027</strong>, in <strong>Raum 30</strong>, der Sainsbury Exhibitions Gallery. Es ist die erste Ausleihe, seit das Werk entstanden ist.",
+      "## Ein Teppich, der keiner ist",
+      "Gewebt ist daran nichts. Es ist eine Stickerei, Wolle auf Leinen, <strong>70 Meter</strong> lang — und gerade das erklärt, warum sie überhaupt noch da ist: gestickte Wolle sitzt im Gewebe, gewebtes Bild zerfällt mit ihm.",
+      "Bestellt hat sie wahrscheinlich ein normannischer Auftraggeber. Gestickt haben sie englische Hände, nach Zeichnungen aus <strong>Canterbury</strong>. Die Unterlegenen von 1066 haben also die Fassung der Sieger ausgeführt, Stich für Stich.",
+      "## Sechshundert Figuren, drei Frauen",
+      "Im Hauptband stehen <strong>über 600 Figuren</strong>. <strong>Drei</strong> davon sind Frauen. Das Museum hält das selbst für erklärungsbedürftig und widmet der Frage am <strong>20. November</strong> einen eigenen Vortrag.",
+      "Sehenswert ist das Werk ohnehin weniger wegen der Schlacht als wegen allem, was nebenbei hineingeriet: Burgen, Schiffe, Kleidung, Essen, Möbel. Für das England des 11. Jahrhunderts gibt es kein zweites Bild dieser Dichte.",
+      "## Wann man hineinkommt",
+      "Karten für <strong>10. September bis 31. Dezember 2026</strong> sind ausverkauft. Am <strong>21. Oktober 2026</strong> kommt der nächste Schwung in den Verkauf, er deckt <strong>1. Jänner bis 31. März 2027</strong> ab. Mitglieder buchen ab <strong>6. Oktober</strong> vorab.",
+      "Geöffnet ist Sonntag bis Mittwoch von 10 bis 18 Uhr, Donnerstag bis Samstag von 10 bis 21 Uhr.",
+      "## Falls es nicht klappt",
+      "Parallel läuft <strong>Bayeux Around Britain</strong> an mehr als <strong>60 Museen und historischen Orten</strong> im ganzen Land — die vernünftige Antwort darauf, dass ein einzelnes Objekt nicht an sechzig Stellen gleichzeitig liegen kann.",
+    ],
+    expertise:
+      "Für eine Reise von Wien aus dreht das die übliche Reihenfolge um: zuerst die Karte, dann der Flug. Der Einlass läuft über Zeitfenster, und der Verkauf am 21. Oktober ist der einzige angekündigte Termin für das erste Quartal 2027 — wer erst den Flug bucht und dann die Ausstellung, hat im schlechtesten Fall beides umsonst geplant. Praktisch hilft dabei der lange Donnerstag bis Samstag: bis 21 Uhr geöffnet heißt, dass ein Ausstellungsbesuch auch noch in einen Anreisetag passt, während Sonntag bis Mittwoch um 18 Uhr Schluss ist. Und der Ärger, dass nichts frei ist, ist kein Grund, London abzuschreiben: die Begleitschau an über 60 Orten existiert genau für diesen Fall.",
+  },
 ];

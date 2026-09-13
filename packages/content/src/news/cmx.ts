@@ -680,4 +680,38 @@ export const items: NewsItem[] = [
     expertise:
       "Vale la pena entrar con un libro de Monsiváis leído, cualquiera. Buena parte de la instalación funciona por reconocimiento: las lupas proyectan sobre páginas concretas y los rostros de los televisores son los de sus crónicas. Sin esa lectura previa la sala se ve bien; con ella, se lee.",
   },
+
+  {
+    slug: "el-inah-escaneo-la-piedra-del-sol-para-los-angeles",
+    createdAt: "2026-09-13T22:32:00+04:00",
+    updatedAt: "2026-09-13T22:32:00+04:00",
+    site: "cmx",
+    title: "Habrá una Piedra del Sol en Los Ángeles, y el INAH se quedó con el escaneo",
+    cardTitle: "La Piedra del Sol, escaneada",
+    titleSeo: "El INAH escaneó la Piedra del Sol",
+    summary:
+      "El museo de George Lucas abre el 22 de septiembre con una reproducción del monolito que no sale de la Ciudad de México. A cambio, el INAH recibió los escaneos en 3D del original.",
+    date: "2026-09-13",
+    category: "Mundo",
+    source: {
+      name: "Lucas Museum of Narrative Art",
+      url: "https://lucasmuseum.org/press/lucas-museum-of-narrative-art-opens-to-the-public-on-september-22-2026",
+      verifiedOn: "2026-09-13",
+    },
+    body: [
+      "El museo que quería la Piedra del Sol en sus salas hizo lo único que quedaba por hacer: vino, la escaneó y se llevó una copia. En su propio catálogo la clasifica junto a otras obras <em>inamovibles</em>, y la palabra está bien elegida.",
+      "El <strong>Lucas Museum of Narrative Art</strong> abre al público el <strong>22 de septiembre de 2026</strong> en Exposition Park, Los Ángeles. En su primer piso hay una sala de reproducciones fieles de obras que no pueden viajar, hecha en colaboración con las instituciones que las custodian: los <strong>Museos Vaticanos</strong> para la bóveda de la <strong>Capilla Sixtina</strong>, el <strong>Louvre</strong> para los toros androcéfalos alados del palacio de <strong>Sargón II</strong>, el centro de <strong>Altamira</strong> en España para la pintura rupestre, y el <strong>Instituto Nacional de Antropología e Historia</strong> para la Piedra del Sol.",
+      "## La parte que se queda aquí",
+      "Lo interesante del acuerdo no es la copia, es la devolución. Las imágenes de alta resolución y los <strong>escaneos en 3D</strong> que el museo levantó para fabricar las reproducciones fueron donados a las instituciones que prestaron el acceso. El INAH tiene ahora un registro tridimensional de su monolito que no tuvo que pagar.",
+      "Es un intercambio poco habitual y conviene verlo de frente: una institución extranjera obtiene una réplica exhibible, y la institución dueña del original obtiene datos de conservación. Ninguna de las dos pierde la pieza, porque la pieza no se movió.",
+      "## México en las salas",
+      "La reproducción no es la única presencia. <strong>Frida Kahlo</strong> figura entre los nombres del acervo permanente. En el piso dedicado al muralismo hay obra y estudios de <strong>Diego Rivera</strong>, junto a la muralista chicana <strong>Judith F. Baca</strong> —de cuyo archivo salen piezas de <em>The History of California</em>, el mural de <strong>media milla</strong> conocido como la Gran Muralla de Los Ángeles— y al francés <strong>JR</strong>.",
+      "## Qué clase de museo es",
+      "La tesis del lugar es una discusión de jerarquías: la historieta, la ilustración, el mural y el cine nunca se han catalogado a la altura de la pintura y la escultura, y aquí se catalogan juntos a propósito. El montaje inaugural son <strong>más de 1 300 obras</strong> repartidas en <strong>más de 30 salas</strong>, dentro de un edificio de <strong>300 mil pies cuadrados</strong> diseñado por <strong>Ma Yansong</strong>.",
+      "## Datos prácticos",
+      "Entrada general <strong>25 dólares</strong>, <strong>21</strong> para mayores de 65 años, <strong>gratis</strong> para menores de 18. Todo el mundo necesita boleto con horario asignado, comprado por adelantado. Cierra los <strong>martes</strong> —salvo el martes de la apertura— y la biblioteca de consulta es gratuita.",
+    ],
+    expertise:
+      "El modelo del escaneo merece atención desde la Ciudad de México por lo que implica para el patrimonio que no viaja. Buena parte de lo que se guarda aquí está en la misma situación que la Piedra del Sol: es intransportable por tamaño, por fragilidad o por decisión, y eso ha significado durante décadas quedar fuera de la circulación internacional. La ruta que abre este acuerdo es distinta a la del préstamo clásico: no se mueve el objeto, se mueve el archivo, y el archivo regresa al dueño. Para conservación eso vale más que una exhibición: un modelo tridimensional de alta resolución es la línea base contra la que se mide cualquier daño futuro, y levantarlo por cuenta propia cuesta lo que casi ningún museo tiene. Conviene preguntar, cuando se anuncie la siguiente colaboración de este tipo, quién se queda con los datos —porque ahí está el valor duradero, no en la réplica.",
+  },
 ];
