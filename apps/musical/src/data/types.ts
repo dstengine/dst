@@ -98,6 +98,20 @@ export interface Venue {
   sections?: { heading?: string; paragraphs: string[] }[];
 }
 
+/** A country, as a page. The name is what the data says a city is in; the
+    slug is what a reader types, which is not the same string. */
+export interface Country {
+  slug: string;
+  /** Exactly as cities spell it in `country`. The two are matched on this. */
+  name: string;
+  /** The name inside a sentence: "playing in the United Kingdom", not
+      "playing in United Kingdom". The chips use `name`, which takes no
+      article; everything written as prose uses this. */
+  in: string;
+  summary: string;
+  intro?: string[];
+}
+
 export interface City {
   slug: string;
   name: string;

@@ -9,7 +9,11 @@ import VentureGrid from "@dst/ui/VentureGrid.astro";
 import { ICONS } from "@dst/ui/icons";
 import Icon from "@dst/ui/Icon.astro";
 import ChipNav from "@dst/ui/ChipNav.astro";
-import { citiesWithPages, cityBySlug, collections, datedRuns, formatRun, runsInCity, shows, showBySlug, statusOf, ticketButtons, upcomingRuns, venueBySlug, venues, type Venue, } from "../content";
+import { cities, citiesWithPages, cityBySlug, collections, countriesWithPages, datedRuns, formatRun, runsInCity, runsInCountry, shows, showBySlug, statusOf, ticketButtons, upcomingRuns, venueBySlug, venues, type City, type Venue, } from "../content";
+
+// A city that a collection covers instead of having its own page — New York,
+// which /broadway/ answers for.
+const collectionFor = (city: City) => collections.find((c) => c.city === city.slug);
 
 const upcoming = upcomingRuns();
 const soon = upcoming.slice(0, 6);
@@ -70,10 +74,42 @@ const showChips = shows.map((show) => ({
   label: show.short ?? show.title,
   title: `${show.title}: every run this site tracks, with every seller`,
 }));
-const cityChips = citiesByDate.map((city) => ({
-  href: `/${city.slug}/`,
-  label: city.name,
-  title: `Musicals playing ${city.name}`,
+// Two rows under the heading, and they are two different questions. The
+// first is the handful of cities this site treats as markets of its own —
+// they are what gets typed into a search box, so they keep their names. The
+// second is every country, which is how the other twenty-two cities are
+// reached without printing twenty-two chips that all said "(2)": on the UK
+// tour that number is Chicago and Cats in every city on the route, so it
+// distinguished nothing.
+//
+// Promoted cities are not taken out of their country's count. A reader
+// looking at "United Kingdom (22)" is asking how much is on in the country,
+// and an answer that quietly omits London is the wrong answer.
+// Soonest first, like everything else on this page. File order is an
+// accident of when a city was added.
+const promotedCities = cities
+  .filter((city) => city.featured || collectionFor(city))
+  .sort((a, b) => (cityDate.get(a.slug) ?? "9999").localeCompare(cityDate.get(b.slug) ?? "9999"));
+const cityChips = promotedCities.map((city) => {
+  const on = runsInCity(city.slug).filter((run) => statusOf(run) !== "ended");
+  const covering = collectionFor(city);
+  return {
+    // A city a collection covers has no page of its own by design — /broadway/
+    // is New York's page. The chip goes where the city actually lives.
+    href: covering ? `/${covering.slug}/` : `/${city.slug}/`,
+    label: city.name,
+    count: on.length,
+    title: covering
+      ? `${covering.name}: every musical playing ${city.name}`
+      : `Musicals playing ${city.name}`,
+  };
+});
+
+const countryChips = countriesWithPages().map((country) => ({
+  href: `/${country.slug}/`,
+  label: country.name,
+  count: runsInCountry(country).filter((run) => statusOf(run) !== "ended").length,
+  title: `Musicals playing ${country.in}, city by city`,
 }));
 
 const lead = shows.find((show) => show.featured) ?? shows[0]!;
@@ -135,7 +171,8 @@ const nextTickets = next ? ticketButtons(next) : [];
         six cards to the one they came for, and a way of narrowing that only
         appears after you have already read everything is furniture. */}
     <ChipNav items={showChips} label="Musicals on this site" />
-    <ChipNav items={cityChips} label="Cities with a page of their own" />
+    <ChipNav items={cityChips} label="Cities with a season of their own" />
+    <ChipNav items={countryChips} label="Countries this site lists musicals in" />
     {/* The show on the picture, the city above it. The picture is the show's
         own art now, and a half-mask captioned "London" is a caption for the
         wrong thing. */}

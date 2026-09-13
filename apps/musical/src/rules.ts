@@ -6,8 +6,9 @@
 // whether to show a ticket button is a template that will disagree with the
 // next one.
 import type { EventItem } from "@dst/content";
-import type { City, Collection, Price, Run, Seller, Venue } from "./data/types";
+import type { City, Collection, Country, Price, Run, Seller, Venue } from "./data/types";
 import { cities } from "./data/cities";
+import { countries } from "./data/countries";
 import { collections } from "./data/collections";
 import { runs } from "./data/runs";
 import { venues } from "./data/venues";
@@ -25,6 +26,26 @@ export const runBySlug = (show: string, slug: string) =>
   runs.find((r) => r.show === show && r.slug === slug);
 export const venueBySlug = (slug: string) => venues.find((v) => v.slug === slug);
 export const cityBySlug = (slug: string) => cities.find((c) => c.slug === slug);
+export const countryBySlug = (slug: string) => countries.find((c) => c.slug === slug);
+/** The country a city is in, matched on the name the city carries. */
+export const countryOfCity = (city: City) => countries.find((c) => c.name === city.country);
+
+/** Cities in a country, whether or not they have a page of their own: a
+    country page is the place that lists the ones that do not. */
+export const citiesInCountry = (country: Country): City[] =>
+  cities.filter((c) => c.country === country.name);
+
+export const runsInCountry = (country: Country): Run[] => {
+  const names = new Set(citiesInCountry(country).map((c) => c.slug));
+  return runs.filter((r) => names.has(r.city));
+};
+
+/** A country earns a page once it has anything still to come. One that has
+    only played out keeps its cities and loses its chip, the same rule the
+    listings use everywhere else. */
+export const countriesWithPages = (): Country[] =>
+  countries.filter((c) => runsInCountry(c).some((r) => statusOf(r) !== "ended"));
+
 export const groupBySlug = (show: string, slug: string) =>
   groups.find((g) => g.show === show && g.slug === slug);
 /** The picture that stands for a show.

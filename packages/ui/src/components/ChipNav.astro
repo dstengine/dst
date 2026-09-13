@@ -14,6 +14,11 @@ export interface ChipNavItem {
   label: string;
   /** Tooltip and, for a screen reader, the fuller name of the destination. */
   title?: string;
+  /** How many things are behind the chip, printed after the label. Only
+      worth passing where the number changes the reader's choice — twelve
+      musicals against one is the difference between a trip and a detour.
+      Left out, the chip is the label alone, as it was. */
+  count?: number;
 }
 
 interface Props {
@@ -32,9 +37,15 @@ const { items, current, label } = Astro.props;
       {items.map((item) => (
         <li>
           {item.href === current ? (
-            <span aria-current="page">{item.label}</span>
+            <span aria-current="page">
+              {item.label}
+              {item.count !== undefined && <span class="chip-count">({item.count})</span>}
+            </span>
           ) : (
-            <a href={item.href} title={item.title ?? item.label}>{item.label}</a>
+            <a href={item.href} title={item.title ?? item.label}>
+              {item.label}
+              {item.count !== undefined && <span class="chip-count">({item.count})</span>}
+            </a>
           )}
         </li>
       ))}
@@ -55,7 +66,7 @@ const { items, current, label } = Astro.props;
     list-style: none;
   }
   .chip-nav a,
-  .chip-nav span {
+  .chip-nav li > span {
     /* 44px tall on a phone: these are the one row of links on the page a
        thumb is meant to hit, and 35px was under the target size. */
     min-height: 44px;
@@ -75,7 +86,14 @@ const { items, current, label } = Astro.props;
     background: var(--surface-sunk);
     color: var(--ink);
   }
-  .chip-nav span {
+  /* Quieter than the name it follows: the label is what is being chosen,
+     the number only says how much is behind it. */
+  .chip-count {
+    margin-left: 0.35em;
+    color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
+  .chip-nav li > span {
     background: var(--surface-sunk);
     color: var(--ink);
     font-weight: 600;

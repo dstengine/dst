@@ -5,9 +5,10 @@
 // proves at build time that no two of them claim the same address.
 import CityPage from "../components/CityPage.astro";
 import CollectionPage from "../components/CollectionPage.astro";
+import CountryPage from "../components/CountryPage.astro";
 import ShowHub from "../components/ShowHub.astro";
 import VenueDetail from "../components/VenueDetail.astro";
-import { assertRoutesAreUnique, cityBySlug, collectionBySlug, rootEntries, showBySlug, venueBySlug, type RootEntry } from "../content";
+import { assertRoutesAreUnique, cityBySlug, collectionBySlug, countryBySlug, rootEntries, showBySlug, venueBySlug, type RootEntry } from "../content";
 
 export function getStaticPaths() {
   assertRoutesAreUnique();
@@ -19,5 +20,6 @@ const { entry } = Astro.props;
 ---
 {entry.kind === "collection" && <CollectionPage collection={collectionBySlug(entry.slug)!} />}
 {entry.kind === "city" && <CityPage city={cityBySlug(entry.slug)!} />}
+{entry.kind === "country" && <CountryPage country={countryBySlug(entry.slug)!} />}
 {entry.kind === "show" && <ShowHub show={showBySlug(entry.slug)!} />}
 {entry.kind === "venue" && <VenueDetail venue={venueBySlug(entry.venue)!} />}

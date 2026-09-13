@@ -6,12 +6,13 @@
 // cannot collide, which assertUniqueRoots() does at build time. A duplicate
 // is a build failure, not a route that quietly wins.
 import { cities } from "./data/cities";
+import { countries } from "./data/countries";
 import { collections } from "./data/collections";
 import { groups } from "./data/groups";
 import { runs } from "./data/runs";
 import { shows } from "./data/shows";
 import { venues } from "./data/venues";
-import { cityHasPage } from "./rules";
+import { cityHasPage, countriesWithPages } from "./rules";
 
 /** Segments owned by static pages under src/pages/. Nothing generated may
     take one of these. */
@@ -21,7 +22,8 @@ export type RootEntry =
   | { kind: "city"; slug: string }
   | { kind: "show"; slug: string }
   | { kind: "venue"; slug: string; venue: string }
-  | { kind: "collection"; slug: string };
+  | { kind: "collection"; slug: string }
+  | { kind: "country"; slug: string };
 
 export function rootEntries(): RootEntry[] {
   return [
@@ -29,6 +31,7 @@ export function rootEntries(): RootEntry[] {
     ...cities.filter(cityHasPage).map((c) => ({ kind: "city" as const, slug: c.slug })),
     ...shows.map((s) => ({ kind: "show" as const, slug: s.slug })),
     ...venues.filter((v) => v.rootSlug).map((v) => ({ kind: "venue" as const, slug: v.rootSlug!, venue: v.slug })),
+    ...countriesWithPages().map((c) => ({ kind: "country" as const, slug: c.slug })),
   ];
 }
 
@@ -68,5 +71,11 @@ export function assertRoutesAreUnique(): void {
     if (RESERVED.includes(slug)) throw new Error(`/${slug}/ is a static page; it cannot also be generated`);
   }
   assertUnique("root", roots);
+  // A city in a country nobody wrote down would lose its country chip
+  // silently, and the chip is the only way into the page that lists it.
+  const named = new Set(countries.map((c) => c.name));
+  for (const city of cities)
+    if (!named.has(city.country))
+      throw new Error(`${city.slug} is in "${city.country}", which is not in data/countries.ts`);
   for (const show of shows) assertUnique(`/${show.slug}/`, showEntries(show.slug).map((e) => e.slug));
 }

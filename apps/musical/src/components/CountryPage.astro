@@ -1,0 +1,116 @@
+---
+// A country page is the level above a city: it exists so the front page can
+// offer four chips instead of twenty-four, and so a city without a page of
+// its own is still reachable by name. What it answers that no city page can
+// is "where else" — the same tour, two hundred miles away, three weeks later.
+//
+// It lists every city in the country, not only the ones with pages: a single
+// stop in Hull has no page because a page would repeat its run page word for
+// word, but the reader looking for Hull is looking for exactly that run.
+import Glance from "@dst/ui/Glance.astro";
+import Callout from "@dst/ui/Callout.astro";
+import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
+import ChipNav from "@dst/ui/ChipNav.astro";
+import { ICONS } from "@dst/ui/icons";
+import Layout from "../layouts/Layout.astro";
+import RunTable from "./RunTable.astro";
+import { checkedOn, cityHasPage, citiesInCountry, formatRun, runsInCountry, showBySlug, spell, statusOf, venuesInCity, type Country, } from "../content";
+
+interface Props { country: Country }
+const { country } = Astro.props;
+
+const all = runsInCountry(country).sort((a, b) => (a.start ?? "").localeCompare(b.start ?? ""));
+const upcoming = all.filter((r) => statusOf(r) !== "ended");
+const past = all.filter((r) => statusOf(r) === "ended");
+const next = upcoming.find((r) => r.start);
+const titles = [...new Set(upcoming.map((r) => showBySlug(r.show)?.title ?? r.show))];
+
+// Cities with something still to come, soonest first. A city whose only runs
+// have played is listed under "already played" with them and nowhere else.
+const live = new Map<string, string>();
+for (const run of upcoming) if (run.start && !live.has(run.city)) live.set(run.city, run.start);
+const cityList = citiesInCountry(country)
+  .filter((c) => upcoming.some((r) => r.city === c.slug))
+  .sort((a, b) => (live.get(a.slug) ?? "9999").localeCompare(live.get(b.slug) ?? "9999"));
+
+// A city with a page goes to it; a city without one goes to the run that is
+// the whole of what it has. Either way the chip lands on a page that exists.
+const cityChips = cityList.map((city) => {
+  const here = upcoming.filter((r) => r.city === city.slug);
+  const only = here[0]!;
+  return {
+    href: cityHasPage(city) ? `/${city.slug}/` : `/${only.show}/${only.slug}/`,
+    label: city.name,
+    count: here.length > 1 ? here.length : undefined,
+    title: cityHasPage(city)
+      ? `Musicals playing ${city.name}`
+      : `${showBySlug(only.show)?.title ?? only.show} in ${city.name}: dates, theatre and sellers`,
+  };
+});
+
+const houses = new Set(cityList.flatMap((c) => venuesInCity(c.slug).map((v) => v.slug)));
+
+const glance = [
+  { label: "Musicals", value: titles.length === 1 ? "One" : spell(titles.length), icon: ICONS.events },
+  { label: "Cities", value: cityList.length === 1 ? "One" : spell(cityList.length), icon: ICONS.map },
+  houses.size > 0 && { label: "Theatres", value: houses.size === 1 ? "One" : spell(houses.size), icon: ICONS.pin },
+  next && { label: "Next", value: formatRun(next), icon: ICONS.clock, href: `/${next.show}/${next.slug}/` },
+  { label: "Last checked", value: checkedOn, icon: ICONS.list },
+].filter(Boolean) as { label: string; value: string; icon: string; href?: string }[];
+---
+<Layout
+  title={`Musicals in ${country.in}`}
+  description={country.summary}
+>
+  <section class="container hero">
+    <Breadcrumbs crumbs={[]} current={country.name} homeLabel="What's on" />
+    <p class="eyebrow">Every city, every date</p>
+    <h1>Musicals in {country.in}</h1>
+    <p class="lede">
+      {titles.length === 1 ? titles[0] : `${spell(titles.length)} musicals`} playing {cityList.length === 1 ? "one city" : `${spell(cityList.length)} cities`} in {country.in}, with the theatre, the dates and the seller for each.
+    </p>
+    <Glance facts={glance} />
+  </section>
+
+  {country.intro && (
+    <section class="container prose">
+      {country.intro.map((paragraph) => <p>{paragraph}</p>)}
+    </section>
+  )}
+
+  {cityChips.length > 1 && (
+    <section class="container">
+      <h2>Cities</h2>
+      <p>
+        Every city with a date still to come. A city with more than one musical
+        booked has a page of its own; a city with one goes straight to it.
+      </p>
+      <ChipNav items={cityChips} label={`Cities in ${country.name}`} />
+    </section>
+  )}
+
+  <section class="container">
+    <h2>{upcoming.length === 1 ? "What is on" : "What is on, soonest first"}</h2>
+    {upcoming.length > 0
+      ? <><p>Every date this site tracks in {country.in}. The seller's own page is where the price is.</p><RunTable runs={upcoming} lead="event" /></>
+      : <p>Nothing is currently on sale in {country.in}.</p>}
+  </section>
+
+  {past.length > 0 && (
+    <section class="container">
+      <h2>Already played</h2>
+      <RunTable runs={past} lead="event" caption="Kept rather than deleted: a country that has had a tour once tends to get the next one." />
+    </section>
+  )}
+
+  <Callout kind="note">
+    <strong>Check the date before you book anything else.</strong> Everything
+    here was read from the production's own listing on {checkedOn}; runs move
+    and performances sell out, and the seller's page is the one that is
+    current.
+  </Callout>
+</Layout>
+
+<style>
+  .prose p { max-width: 68ch; }
+</style>

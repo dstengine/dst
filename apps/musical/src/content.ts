@@ -7,8 +7,9 @@
 // site id typed into a page is a site id that can be typed wrong there.
 export const siteId = "musical";
 
-export type { City, Clip, Collection, Price, Run, RunGroup, Section, Seller, Show, Venue } from "./data/types";
+export type { City, Clip, Collection, Country, Price, Run, RunGroup, Section, Seller, Show, Venue } from "./data/types";
 export { cities } from "./data/cities";
+export { countries } from "./data/countries";
 export { collections } from "./data/collections";
 export { venues } from "./data/venues";
 export { runs } from "./data/runs";
