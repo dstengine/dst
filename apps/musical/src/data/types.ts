@@ -104,10 +104,18 @@ export interface Country {
   slug: string;
   /** Exactly as cities spell it in `country`. The two are matched on this. */
   name: string;
+  /** What the chip says. A row of places has no room for "United Arab
+      Emirates" and no reader needs it there — the full name is in the link's
+      title and in the heading of the page it opens. */
+  short: string;
   /** The name inside a sentence: "playing in the United Kingdom", not
       "playing in United Kingdom". The chips use `name`, which takes no
       article; everything written as prose uses this. */
   in: string;
+  /** The <title>, written rather than composed: the abbreviation is what
+      gets searched for, the full name is what the h1 says, and no formula
+      gets both right in sixty characters. */
+  titleSeo: string;
   summary: string;
   intro?: string[];
 }

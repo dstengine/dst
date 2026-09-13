@@ -22,7 +22,10 @@ const { country } = Astro.props;
 const all = runsInCountry(country).sort((a, b) => (a.start ?? "").localeCompare(b.start ?? ""));
 const upcoming = all.filter((r) => statusOf(r) !== "ended");
 const past = all.filter((r) => statusOf(r) === "ended");
-const next = upcoming.find((r) => r.start);
+// The soonest *dated* run that is not an open one. An open run sorts first
+// and has no next date, so "Next — playing since 8 October 1985" is both
+// true and useless to somebody deciding what to book.
+const next = upcoming.find((r) => r.start && !r.openRun) ?? upcoming.find((r) => r.start);
 const titles = [...new Set(upcoming.map((r) => showBySlug(r.show)?.title ?? r.show))];
 
 // Cities with something still to come, soonest first. A city whose only runs
@@ -38,28 +41,41 @@ const cityList = citiesInCountry(country)
 const cityChips = cityList.map((city) => {
   const here = upcoming.filter((r) => r.city === city.slug);
   const only = here[0]!;
+  const many = here.length > 1;
   return {
     href: cityHasPage(city) ? `/${city.slug}/` : `/${only.show}/${only.slug}/`,
     label: city.name,
-    count: here.length > 1 ? here.length : undefined,
-    title: cityHasPage(city)
-      ? `Musicals playing ${city.name}`
-      : `${showBySlug(only.show)?.title ?? only.show} in ${city.name}: dates, theatre and sellers`,
+    // The chip is the city's name; the title says what opens — the city's own
+    // listing where there is one, and otherwise the single run that is the
+    // whole of what that city has.
+    title: many || cityHasPage(city)
+      ? `Musicals in ${city.name}: dates, theatres and tickets`
+      : `${showBySlug(only.show)?.title ?? only.show} in ${city.name}: dates, theatre and tickets`,
   };
 });
+
+// A country with one city is named by that city, not counted: "playing one
+// city" is a sentence that withholds the one word the reader wants, and the
+// city's name is also what they would have typed.
+const subject = titles.length === 1 ? titles[0]! : `${spell(titles.length)} musicals`;
+const where = cityList.length === 1
+  ? `in ${cityList[0]!.name}`
+  : `across ${spell(cityList.length)} cities in ${country.in}`;
 
 const houses = new Set(cityList.flatMap((c) => venuesInCity(c.slug).map((v) => v.slug)));
 
 const glance = [
   { label: "Musicals", value: titles.length === 1 ? "One" : spell(titles.length), icon: ICONS.events },
-  { label: "Cities", value: cityList.length === 1 ? "One" : spell(cityList.length), icon: ICONS.map },
+  cityList.length === 1
+    ? { label: "City", value: cityList[0]!.name, icon: ICONS.map }
+    : { label: "Cities", value: spell(cityList.length), icon: ICONS.map },
   houses.size > 0 && { label: "Theatres", value: houses.size === 1 ? "One" : spell(houses.size), icon: ICONS.pin },
   next && { label: "Next", value: formatRun(next), icon: ICONS.clock, href: `/${next.show}/${next.slug}/` },
   { label: "Last checked", value: checkedOn, icon: ICONS.list },
 ].filter(Boolean) as { label: string; value: string; icon: string; href?: string }[];
 ---
 <Layout
-  title={`Musicals in ${country.in}`}
+  title={country.titleSeo}
   description={country.summary}
 >
   <section class="container hero">
@@ -67,7 +83,7 @@ const glance = [
     <p class="eyebrow">Every city, every date</p>
     <h1>Musicals in {country.in}</h1>
     <p class="lede">
-      {titles.length === 1 ? titles[0] : `${spell(titles.length)} musicals`} playing {cityList.length === 1 ? "one city" : `${spell(cityList.length)} cities`} in {country.in}, with the theatre, the dates and the seller for each.
+      {subject} playing {where}, with the theatre, the dates and the seller for each.
     </p>
     <Glance facts={glance} />
   </section>
@@ -80,11 +96,8 @@ const glance = [
 
   {cityChips.length > 1 && (
     <section class="container">
-      <h2>Cities</h2>
-      <p>
-        Every city with a date still to come. A city with more than one musical
-        booked has a page of its own; a city with one goes straight to it.
-      </p>
+      <h2>Musicals by city</h2>
+      <p>Every city in {country.in} with a date still to come.</p>
       <ChipNav items={cityChips} label={`Cities in ${country.name}`} />
     </section>
   )}

@@ -14,11 +14,6 @@ export interface ChipNavItem {
   label: string;
   /** Tooltip and, for a screen reader, the fuller name of the destination. */
   title?: string;
-  /** How many things are behind the chip, printed after the label. Only
-      worth passing where the number changes the reader's choice — twelve
-      musicals against one is the difference between a trip and a detour.
-      Left out, the chip is the label alone, as it was. */
-  count?: number;
 }
 
 interface Props {
@@ -37,15 +32,9 @@ const { items, current, label } = Astro.props;
       {items.map((item) => (
         <li>
           {item.href === current ? (
-            <span aria-current="page">
-              {item.label}
-              {item.count !== undefined && <span class="chip-count">({item.count})</span>}
-            </span>
+            <span aria-current="page">{item.label}</span>
           ) : (
-            <a href={item.href} title={item.title ?? item.label}>
-              {item.label}
-              {item.count !== undefined && <span class="chip-count">({item.count})</span>}
-            </a>
+            <a href={item.href} title={item.title ?? item.label}>{item.label}</a>
           )}
         </li>
       ))}
@@ -85,13 +74,6 @@ const { items, current, label } = Astro.props;
   .chip-nav a:where(:hover, :focus-visible) {
     background: var(--surface-sunk);
     color: var(--ink);
-  }
-  /* Quieter than the name it follows: the label is what is being chosen,
-     the number only says how much is behind it. */
-  .chip-count {
-    margin-left: 0.35em;
-    color: var(--ink-faint);
-    font-variant-numeric: tabular-nums;
   }
   .chip-nav li > span {
     background: var(--surface-sunk);

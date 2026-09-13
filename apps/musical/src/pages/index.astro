@@ -72,7 +72,7 @@ const citiesRest = citiesByDate.slice(6);
 const showChips = shows.map((show) => ({
   href: `/${show.slug}/`,
   label: show.short ?? show.title,
-  title: `${show.title}: every run this site tracks, with every seller`,
+  title: `${show.title}: dates, theatres and tickets`,
 }));
 // One row under the shows, and it is a row of two kinds of thing on
 // purpose: the handful of cities this site treats as markets of their own —
@@ -97,14 +97,16 @@ const placeChips = [
       href: covering ? `/${covering.slug}/` : `/${city.slug}/`,
       label: city.name,
       title: covering
-        ? `${covering.name}: every musical playing ${city.name}`
-        : `Musicals playing ${city.name}`,
+        ? `${covering.name}: musicals playing ${city.name}, with dates and tickets`
+        : `Musicals in ${city.name}: dates, theatres and tickets`,
     };
   }),
   ...countriesWithPages().map((country) => ({
     href: `/${country.slug}/`,
-    label: country.name,
-    title: `Musicals playing ${country.in}, city by city`,
+    // The chip says "UAE"; its title says what that opens, which is the one
+    // job a title attribute has that the label cannot do.
+    label: country.short,
+    title: `Musicals in ${country.in}: dates, theatres and tickets`,
   })),
 ];
 
@@ -127,10 +129,10 @@ const nextTickets = next ? ticketButtons(next) : [];
 ---
 <Layout
   title="Musicals on sale now"
-  description="Musicals, city by city: what is on sale, which theatre, which dates, and who is actually selling. Every listing read from the production's own source and dated."
+  description="Musicals on sale now: which theatre, which dates, and who is actually selling. Every listing read from the production's own source and dated."
 >
   <Hero
-    eyebrow="Musicals, city by city"
+    eyebrow="Dates, theatres and sellers"
     title="What is on, where, and who is selling it"
     lede="The same show fills a 17,000-seat arena in Dubai and a seaside theatre in north Wales — different room, different seller, different idea of what a ticket costs. This site lists all of it."
     asideLabel="The next run"

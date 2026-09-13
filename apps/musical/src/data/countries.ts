@@ -10,8 +10,10 @@ import type { Country } from "./types";
 export const countries: Country[] = [
   {
     slug: "uk",
+    short: "UK",
     name: "United Kingdom",
     in: "the United Kingdom",
+    titleSeo: "Musicals in the UK: dates and tickets",
     summary:
       "Musicals in the United Kingdom: the West End run, the touring dates, which theatre in which city and who is selling. Every listing read from the production's own source.",
     intro: [
@@ -21,8 +23,10 @@ export const countries: Country[] = [
   },
   {
     slug: "ireland",
+    short: "Ireland",
     name: "Ireland",
     in: "Ireland",
+    titleSeo: "Musicals in Ireland: dates and tickets",
     summary:
       "Musicals in Ireland: what is touring, which theatre, which dates and who is selling. Every listing read from the production's own source.",
     intro: [
@@ -31,8 +35,10 @@ export const countries: Country[] = [
   },
   {
     slug: "uae",
+    short: "UAE",
     name: "United Arab Emirates",
     in: "the United Arab Emirates",
+    titleSeo: "Musicals in the UAE: dates and tickets",
     summary:
       "Musicals in the UAE: what is booked into Dubai, which venue, which dates and who is selling. Every listing read from the production's own source.",
     intro: [
@@ -41,8 +47,10 @@ export const countries: Country[] = [
   },
   {
     slug: "usa",
+    short: "USA",
     name: "United States",
     in: "the United States",
+    titleSeo: "Musicals in the USA: dates and tickets",
     summary:
       "Musicals in the United States: the Broadway runs, which theatre, which dates and who is selling. Every listing read from the production's own source.",
     intro: [
@@ -51,8 +59,10 @@ export const countries: Country[] = [
   },
   {
     slug: "japan",
+    short: "Japan",
     name: "Japan",
     in: "Japan",
+    titleSeo: "Musicals in Japan: dates and tickets",
     summary:
       "Musicals in Japan: what is touring, which theatre, which dates and who is selling. Every listing read from the production's own source.",
     intro: [

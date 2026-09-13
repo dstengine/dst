@@ -275,7 +275,7 @@ export function docs(): Doc[] {
 
 /** The site's own description, said once. Both llms files open with it. */
 export const preamble = [
-  "# musical.today — musicals, city by city",
+  "# musical.today — musicals on sale: dates, theatres and tickets",
   "",
   `> Every run of every musical this site tracks: the theatre, the dates, and who is actually selling the tickets. ${runsFor("chicago").length} runs across ${venues.length} venues, each read from the production's own source and stamped with the day it was read. ${disclaimer}`,
   "",
