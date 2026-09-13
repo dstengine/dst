@@ -279,4 +279,40 @@ export const items: NewsItem[] = [
       meta: { source: "eco-news-launch" },
     },
   },
+
+  {
+    slug: "wadi-wurayah-joins-the-world-heritage-list",
+    image: "/covers/wadi-wurayah-joins-the-world-heritage-list.jpg",
+    imageAlt: "A pale cream stream winding between layered green and amber paper hills on a deep green ground",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    createdAt: "2026-09-13T22:15:00+04:00",
+    updatedAt: "2026-09-13T22:15:00+04:00",
+    site: "eco",
+    title: "Half of every land mammal species in the UAE lives in one Fujairah wadi, and UNESCO has just said so in writing",
+    cardTitle: "Wadi Wurayah inscribed",
+    titleSeo: "Wadi Wurayah on the World Heritage List",
+    summary:
+      "UNESCO inscribed Wadi Wurayah in July. The citation counts 1,099 species in the Hajar mountains of Fujairah — roughly half the terrestrial mammals recorded in the whole country.",
+    date: "2026-09-13",
+    category: "Environment",
+    source: {
+      name: "UNESCO World Heritage Committee",
+      url: "https://www.unesco.org/en/world-heritage/committee-2026",
+      verifiedOn: "2026-09-13",
+    },
+    body: [
+      "The number that should stop anyone reading the citation is not the age of the rock. It is this: the species recorded in <strong>Wadi Wurayah</strong> include about <strong>half</strong> of all terrestrial mammal species and nearly half of all terrestrial reptile species recorded in the <strong>United Arab Emirates</strong>. One wadi, in one emirate.",
+      "UNESCO's <strong>World Heritage Committee</strong> inscribed it at its <strong>48th session</strong>, held in <strong>Busan</strong> from <strong>19 to 29 July 2026</strong>. Twenty-five sites went on the list; every inscription was adopted by consensus.",
+      "## What is actually in it",
+      "The property sits entirely inside the <strong>Hajar</strong> mountain range, in the Emirate of <strong>Fujairah</strong>. The citation counts <strong>1,099 recorded species</strong> — <strong>883 animal</strong> and <strong>216 plant</strong> — of which at least <strong>ten</strong> are globally threatened. Ecologically it falls within the Al Hajar Foothill Xeric Woodlands and Shrublands, singled out for species richness and for endemism: things that live there and nowhere else.",
+      "## The rock is the other half of the case",
+      "Heritage listings for natural sites usually rest on either geology or living things. This one carries both. The Hajar range exposes <strong>ophiolite</strong> sequences — slabs of oceanic crust and upper mantle pushed onto land — formed in <strong>Late Cretaceous</strong> tectonic movement, and the exposures are described as extensive and well preserved. Rock that normally sits kilometres beneath the sea is, here, something you walk on.",
+      "## What inscription does and does not do",
+      "It confers the highest level of heritage protection in the world, and it confers it on paper. What follows depends on management: the same committee added <strong>six</strong> sites to the <strong>List of World Heritage in Danger</strong> in the same session, which is the mechanism for saying that a listed site is not being looked after.",
+    ],
+    expertise:
+      "For anyone tracking conservation in the Gulf, the useful part of this citation is the baseline it fixes. A figure like 1,099 species, published by name and date, turns future monitoring into arithmetic: any survey from here can be compared against it, and a decline becomes a number rather than an impression. That is worth more than the plaque. The second thing worth noting is the framing of the endemism claim — species richness in an arid mountain system is concentrated at water, and a wadi is where the water is, which means the pressure points are predictable: groundwater abstraction, road access and visitor numbers at exactly the pools that make the count possible. The danger list exists because inscription alone changes none of that.",
+  },
 ];

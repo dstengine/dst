@@ -657,4 +657,42 @@ export const items: NewsItem[] = [
     expertise:
       "The eligibility line is <em>live or study</em> in one of the four boroughs, not live in them. A family in Redbridge or Barking with a child at school in Newham qualifies, and routinely assumes it does not — which is the most common reason a place on a scheme like this goes unfilled.",
   },
+
+  {
+    slug: "unesco-lists-thirteen-buildings-by-alvar-aalto",
+    image: "/covers/unesco-lists-thirteen-buildings-by-alvar-aalto.jpg",
+    imageAlt: "A row of small pale blue paper rectangles of varying height, all flat-topped, across a deep navy ground",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    createdAt: "2026-09-13T22:15:00+04:00",
+    updatedAt: "2026-09-13T22:15:00+04:00",
+    site: "lnd",
+    title: "Thirteen ordinary Finnish buildings just got the same protection as a cathedral",
+    cardTitle: "Aalto Works listed",
+    titleSeo: "Aalto Works joins the World Heritage List",
+    summary:
+      "UNESCO's July session put libraries, workplaces and housing on the World Heritage List — an argument about what deserves keeping that outer London hears every time an estate comes up for demolition.",
+    date: "2026-09-13",
+    category: "Architecture",
+    source: {
+      name: "UNESCO World Heritage Committee",
+      url: "https://www.unesco.org/en/world-heritage/committee-2026",
+      verifiedOn: "2026-09-13",
+    },
+    body: [
+      "World Heritage listing is the sort of thing that happens to pyramids. In <strong>July 2026</strong> it happened to a set of Finnish libraries, workplaces and blocks of flats, most of them built within living memory.",
+      "<strong>Aalto Works</strong> is <strong>thirteen</strong> buildings and ensembles across <strong>Finland</strong>, dated <strong>1928 to 1988</strong>. UNESCO's <strong>World Heritage Committee</strong> inscribed it at its <strong>48th session</strong> in <strong>Busan</strong>, <strong>19–29 July 2026</strong>, one of <strong>25</strong> sites added.",
+      "## Not one architect",
+      "The name on the buildings is <strong>Alvar Aalto</strong>, and the citation declines to leave it there. It credits the collaborative work of Aalto, <strong>Aino Marsio-Aalto</strong>, <strong>Elissa Aalto</strong>, the Aalto studio and their design partners — which is a quiet correction to a century of filing modern buildings under one surname.",
+      "What the citation praises is not grandeur. It calls the vision human-centred, site-specific and empathetic, rooted in Finnish building traditions while drawing on ideas from elsewhere, and it dwells on the fact that these are civic, community and residential structures, in rural settings as much as urban ones.",
+      "## A pattern, not a one-off",
+      "It was not the only twentieth-century entry. Germany's <strong>Berlin Modernism Housing Estates</strong> were extended to take in the <strong>Waldsiedlung Zehlendorf</strong>, a wooded estate of flats, row houses, shops and its own railway station built <strong>1926–1932</strong>. <strong>Poland</strong> had the modernist centre of <strong>Gdynia</strong> inscribed. <strong>Uzbekistan</strong> had the modernist architecture of <strong>Tashkent</strong>.",
+      "Four entries in one session for buildings whose whole point was housing and serving ordinary people. That is a position, and the committee adopted every inscription by consensus.",
+      "## Why it reads differently here",
+      "Outer London has a great deal of exactly this kind of building, and the argument about it is usually conducted in the language of viability and regeneration rather than heritage. The Berlin citation is worth reading for the vocabulary alone: flat roofs, colour principles, sculptural façade design, integration into woodland, transport built in from the start. Those are the terms in which a post-war estate can be described as designed rather than merely built.",
+    ],
+    expertise:
+      "The practical lesson for anyone arguing about a local building is in how the Aalto case was assembled. It is a serial nomination — thirteen separate places presented as one property because they demonstrate a single idea — rather than thirteen bids competing on individual merit. That is the structure that lets modest buildings clear a bar none of them would clear alone, and it is available at every level of listing, not just UNESCO's. The second lesson is the authorship correction. Naming the studio and the partners alongside Aalto widens the significance of the work from one person's biography to a way of working, and significance that rests on a way of working is much harder to dismiss when the building in question is not the famous one.",
+  },
 ];

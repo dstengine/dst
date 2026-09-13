@@ -894,4 +894,41 @@ export const items: NewsItem[] = [
     expertise:
       "Para quien viaja desde México el orden habitual se invierte: primero la entrada, después el vuelo. El acceso es por horario asignado, y el 21 de octubre es la única fecha anunciada para el primer trimestre de 2027; comprar el boleto de avión antes de tener la entrada es apostar a un lote que puede agotarse en horas. Vale la pena mirar también el calendario al revés: la exposición dura hasta julio de 2027, así que el margen es amplio si uno se mueve cuando abre la venta y no cuando decide el viaje. Y el detalle del bordado frente al tejido no es un tecnicismo de museo: es la razón por la que hay algo que ver, y explica por qué la pieza se transporta, se presta y se expone en lugar de quedarse enrollada en una vitrina.",
   },
+
+  {
+    slug: "seis-millones-de-antilopes-entran-a-la-lista-de-la-unesco",
+    image: "/covers/seis-millones-de-antilopes-entran-a-la-lista-de-la-unesco.jpg",
+    imageAlt: "Cientos de pequeños triángulos de papel terracota que fluyen en diagonal sobre un fondo verde hacia una esquina crema",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    createdAt: "2026-09-13T22:15:00+04:00",
+    updatedAt: "2026-09-13T22:15:00+04:00",
+    site: "mxo",
+    title: "Seis millones de animales se mueven por ese paisaje, y hasta julio no estaba en ninguna lista",
+    cardTitle: "Boma–Badingilo, en la lista",
+    titleSeo: "La mayor migración terrestre ya es Patrimonio",
+    summary:
+      "La UNESCO inscribió en julio el paisaje migratorio de Boma–Badingilo, en Sudán del Sur: la mayor migración de mamíferos terrestres que queda en el mundo. Es el primer sitio del país, y en México plantea una pregunta de manejo conocida.",
+    date: "2026-09-13",
+    category: "Naturaleza",
+    source: {
+      name: "UNESCO World Heritage Committee",
+      url: "https://www.unesco.org/en/world-heritage/committee-2026",
+      verifiedOn: "2026-09-13",
+    },
+    body: [
+      "La cifra es la noticia: unos <strong>seis millones</strong> de animales —cob de orejas blancas, tiang y gacela de Mongalla— cruzan estacionalmente un mismo territorio, siguiendo la lluvia y la inundación. Es la mayor migración de mamíferos terrestres que sobrevive en el planeta, y hasta hace dos meses no figuraba en la lista de la UNESCO.",
+      "El <strong>Paisaje Migratorio de Boma–Badingilo</strong> quedó inscrito en la <strong>48ª sesión</strong> del Comité del Patrimonio Mundial, celebrada en <strong>Busan</strong>, República de Corea, del <strong>19 al 29 de julio de 2026</strong>. Fueron <strong>25</strong> sitios nuevos, todos adoptados por consenso.",
+      "## Qué comprende",
+      "El sitio reúne los parques nacionales de <strong>Boma</strong> y <strong>Badingilo</strong> y las llanuras de inundación y sabanas que los rodean, en <strong>Sudán del Sur</strong>. Está en la bisagra entre el humedal del <strong>Sudd</strong> y la sabana sudanesa oriental: pastizales que se inundan por temporada, humedales, bosques y sabana, todo gobernado por el ritmo de la lluvia.",
+      "La palabra que hace el trabajo en la cita es <em>ininterrumpido</em>. Una migración de ese tamaño no depende de que el ganado tenga comida, sino de que nada la corte: ni una carretera, ni una cerca, ni un campo. Lo que se protege no es un lugar, es un movimiento.",
+      "## La gente también está en la cita",
+      "El expediente no separa la fauna de quienes viven ahí. Menciona expresamente la diversidad cultural y lingüística de la región y a los pueblos <strong>murle</strong>, <strong>dinka</strong>, <strong>nuer</strong>, <strong>anyuak</strong> y <strong>toposa</strong>, entre otros, como custodios del paisaje mediante el pastoreo, la agricultura y la pesca.",
+      "## Tres países estrenan lista",
+      "En la misma sesión entraron por primera vez en la historia <strong>Comoras</strong>, <strong>Santo Tomé y Príncipe</strong> y <strong>Sudán del Sur</strong>. Tres Estados que no tenían un solo sitio inscrito, y ahora tienen uno.",
+    ],
+    expertise:
+      "Vale la pena mirar este caso desde México por el tipo de bien que protege. Casi todo lo que tenemos inscrito es un objeto con perímetro: un centro histórico, una zona arqueológica, una reserva con polígono. Boma–Badingilo protege un proceso que atraviesa el polígono, y eso obliga a un manejo distinto, más parecido al que exige la mariposa monarca que al de una ciudad colonial: lo que hay que conservar es la continuidad del corredor, no el estado de un sitio. La consecuencia práctica es incómoda y conviene nombrarla: un corredor se pierde por acumulación de decisiones pequeñas —un tramo de carretera, una cerca, una parcela— ninguna de las cuales parece, por separado, un daño al patrimonio. La lista sirve para volver visible esa suma antes de que se complete.",
+  },
 ];

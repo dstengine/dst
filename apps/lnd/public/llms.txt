@@ -42,6 +42,7 @@ What has not been announced is said to be unannounced. A closing date nobody has
 
 ## News
 
+- [Thirteen ordinary Finnish buildings just got the same protection as a cathedral](https://lnd.lol/news/unesco-lists-thirteen-buildings-by-alvar-aalto/): UNESCO's July session put libraries, workplaces and housing on the World Heritage List — an argument about what deserves keeping that outer London hears every time an estate comes up for demolition.
 - [A British research archive decided whether a drug trial in China had touched ageing at all](https://lnd.lol/news/the-uk-biobank-yardstick-behind-an-ageing-drug-trial/): To judge whether a drug reversed ageing or merely treated a disease, researchers needed a picture of normal ageing. They took it from 55,319 UK Biobank adults.
 - [Claude now watermarks its writing, and the interesting part is where the mark runs out](https://lnd.lol/news/what-claudes-new-watermark-cannot-tell-you/): Since 2 August, text from Anthropic's newer models carries an invisible mark. It thins on short passages, on figures and on code, and a paraphrase removes it.
 - [The London Design Festival has eleven districts, and not one of them is a building](https://lnd.lol/news/eleven-design-districts-and-not-one-of-them-is-a-venue/): The 24th London Design Festival runs 12 to 20 September across eleven neighbourhood districts, from Walthamstow to Park Royal, with landmark installations including one inside St Paul's.

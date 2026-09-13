@@ -706,4 +706,41 @@ export const items: NewsItem[] = [
     expertise:
       "The reproduction gallery is the part worth thinking about beyond the visit, because it inverts how loans normally work. A museum that wants the Sun Stone cannot have it; Mexico will not lend it, and no agreement will change that. So the Lucas Museum scanned it instead, built a copy, and handed the scan file back to the INAH — which now owns a record of its own object that it did not have to pay for. Compare that with the Bayeux Tapestry crossing to London this month under a state-level agreement after years of negotiation, for ten months, with tickets already gone. One route moves the object and rations the audience; the other moves the data and keeps the original at home. For a New Yorker deciding which trip to take, that difference is also the practical one: the Los Angeles room is not going anywhere, and the London one closes in July.",
   },
+
+  {
+    slug: "okefenokee-becomes-a-world-heritage-site",
+    image: "/covers/okefenokee-becomes-a-world-heritage-site.jpg",
+    imageAlt: "Horizontal strips of amber and orange paper stacked like sediment layers on a dark brown ground",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    createdAt: "2026-09-13T22:15:00+04:00",
+    updatedAt: "2026-09-13T22:15:00+04:00",
+    site: "nyc42",
+    title: "A Georgia swamp is now World Heritage, and the reason is what is under it",
+    cardTitle: "Okefenokee inscribed",
+    titleSeo: "Okefenokee joins the World Heritage List",
+    summary:
+      "UNESCO inscribed the Okefenokee in July: the largest subtropical lowland freshwater peatland on earth. For a New York reader it is the rare World Heritage site reachable without a passport.",
+    date: "2026-09-13",
+    category: "Outdoors",
+    source: {
+      name: "UNESCO World Heritage Committee",
+      url: "https://www.unesco.org/en/world-heritage/committee-2026",
+      verifiedOn: "2026-09-13",
+    },
+    body: [
+      "The <strong>Okefenokee National Wildlife Refuge</strong>, in southeastern <strong>Georgia</strong> and northeastern <strong>Florida</strong>, went onto the <strong>World Heritage List</strong> in July. The citation's claim is specific: the <strong>largest lowland freshwater peatland in the subtropical zone anywhere in the world</strong>.",
+      "Peat is the argument. It is waterlogged, half-rotted plant matter that has been piling up faster than it decays, and the pile is simultaneously two things — a carbon store, and a layered archive of past environments that can be read downward like tree rings.",
+      "## Fire is part of the machinery",
+      "A swamp that burns sounds like a swamp going wrong. Here it is the mechanism. The citation describes a mosaic of wetlands, savannas and forests shaped by the interaction of water, fire, vegetation and wildlife, with alternating fire and rainfall driving peat formation, vegetation structure and the biodiversity that follows.",
+      "Inside it sit significant stands of <strong>longleaf pine</strong> savanna — a habitat of which <strong>less than 3 per cent</strong> now remains — carrying high concentrations of plants found only in that region.",
+      "## Where it sits on the list",
+      "It was one of <strong>25</strong> sites inscribed at the committee's <strong>48th session</strong> in <strong>Busan, Republic of Korea</strong>, from <strong>19 to 29 July 2026</strong>, all adopted by consensus. <strong>Comoros</strong>, <strong>São Tomé and Príncipe</strong> and <strong>South Sudan</strong> received their first inscriptions ever in the same session.",
+      "## If you go",
+      "This is a refuge, not a park: the visiting infrastructure is boardwalks, boat runs and canoe trails rather than a rim road, and the water level decides what is passable. Check conditions with the refuge before committing to a route.",
+    ],
+    expertise:
+      "The listing is worth watching rather than filing away, because peatland status cuts both ways. The same carbon store that made the case is also what makes the site sensitive to anything that lowers the water table nearby — drainage, extraction, changed rainfall — and dried peat does not merely stop accumulating, it becomes fuel. A fire in dried peat burns downward through the archive and releases the carbon the citation praises. That is why the water-level detail matters to a visitor as more than a trip-planning note: it is the single variable the whole property rests on. For a New York reader used to parks defined by their boundaries, this is a different kind of protected place, one defined by a process that has to keep running.",
+  },
 ];
