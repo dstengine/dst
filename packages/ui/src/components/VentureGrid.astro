@@ -149,7 +149,16 @@ const metaIcon = ICONS.events;
      in the network shares it, so a site without licensed photography looks
      the same wherever its cards appear. */
 
-  .venture-body { padding: var(--space-3); }
+  /* The body fills what the media leaves, and is itself a column, so the
+     fact line at the foot can be pushed to the bottom edge. Without this a
+     row of cards of unequal text length draws its rules at three different
+     heights, and the eye reads three different kinds of card. */
+  .venture-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: var(--space-3);
+  }
   .venture-meta { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); }
   .venture-meta .eyebrow { margin: 0; }
   .venture-status {
@@ -168,11 +177,14 @@ const metaIcon = ICONS.events;
     display: flex;
     align-items: center;
     gap: 0.45em;
-    margin-top: var(--space-2);
+    /* Pinned to the foot of the card. The gap above the rule then belongs to
+       the paragraph in front of it, because auto cannot also be a minimum. */
+    margin-top: auto;
     padding-top: var(--space-2);
     border-top: 1px solid var(--border);
     color: var(--ink-faint);
   }
+  .venture-body p:has(+ .venture-fact) { margin-bottom: var(--space-2); }
   .venture-fact svg { width: 15px; height: 15px; flex-shrink: 0; color: var(--accent); }
 
   /* The name on the photograph. The scrim is sized for the worst case these

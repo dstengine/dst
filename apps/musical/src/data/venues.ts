@@ -1595,4 +1595,130 @@ export const venues: Venue[] = [
       },
     ],
   },
+  {
+    slug: "james-earl-jones-theatre",
+    name: "James Earl Jones Theatre",
+    city: "new-york",
+    address: "138 West 48th Street, New York, NY 10036",
+    lat: 40.7591035,
+    lon: -73.9830898,
+    opened: "1912",
+    capacity: 1092,
+    officialSlug: "venue-james-earl-jones-theatre",
+    summary:
+      "Built as the Cort in 1912 and renamed in 2022 for the actor who had played it, this is the Shubert house furthest north of the 44th Street cluster. Wanted opens here on 15 October 2026.",
+    transit:
+      "49th Street on the N, R and W; 47\u201350 Streets\u2013Rockefeller Center on the B, D, F and M; 50th Street on the 1.",
+    details: [
+      { label: "Opened", value: "1912, as the Cort Theatre" },
+      { label: "Renamed", value: "2022, for James Earl Jones" },
+      { label: "Architect", value: "Thomas W. Lamb" },
+      { label: "Operator", value: "The Shubert Organization" },
+      { label: "Seats", value: "1,092 across three levels \u2014 502 orchestra, 264 mezzanine, 283 balcony" },
+    ],
+    sections: [
+      {
+        heading: "Inside the James Earl Jones Theatre",
+        paragraphs: [
+          "A Broadway theatre is rarely renamed for someone who acted in it. The Cort had stood on West 48th Street since 1912, designed by Thomas W. Lamb for the impresario John Cort, when the Shubert Organization renamed it in 2022 for James Earl Jones \u2014 who had played the house himself, and whose Broadway career had begun sixty-four years earlier.",
+          "The renaming came with a building works. An annex to the west of the original theatre was put up between 2021 and 2022 to designs by Kostow Greenwood Architects, adding the lobby and lift space a 1912 playhouse was never built with. Both the facade and the interior are New York City landmarks, so the room itself could not be touched.",
+          "It seats 1,092 across three levels, which the Shubert Organization breaks down as 502 in the orchestra, 264 in the mezzanine and 283 in the balcony. That puts it among the smaller Broadway musical houses \u2014 four hundred seats below the Gershwin, and some eight hundred below the St. James four blocks south.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "shubert-theatre",
+    name: "Shubert Theatre",
+    city: "new-york",
+    address: "225 West 44th Street, New York, NY 10036",
+    lat: 40.7581448,
+    lon: -73.9872564,
+    opened: "1913",
+    capacity: 1502,
+    officialSlug: "venue-shubert-theatre",
+    summary:
+      "The house the Shubert brothers built in memory of a third brother, and the one the organisation named after itself. Galileo begins previews here on 10 November 2026.",
+    transit:
+      "Times Square\u201342nd Street on the 1, 2, 3, 7, N, Q, R, W and S; 42nd Street\u2013Port Authority on the A, C and E.",
+    details: [
+      { label: "Opened", value: "1913" },
+      { label: "Architect", value: "Henry Beaumont Herts" },
+      { label: "Operator", value: "The Shubert Organization" },
+      { label: "Seats", value: "1,502 across three levels \u2014 700 orchestra, 410 mezzanine, 350 balcony" },
+      { label: "Neighbourhood", value: "Shubert Alley, Theater District" },
+    ],
+    sections: [
+      {
+        heading: "Inside the Shubert Theatre",
+        paragraphs: [
+          "The theatre is a memorial. Lee and J. J. Shubert opened it in 1913 and named it for Sam S. Shubert, the brother who had died in a railway accident several years earlier; the Italian Renaissance building is by Henry Beaumont Herts, and both its facade and its auditorium are New York City landmarks.",
+          "It holds 1,502 seats \u2014 700 in the orchestra, 410 in the mezzanine, 350 in the balcony \u2014 which makes it a full-sized musical house without being one of the barns. A Chorus Line ran here for fifteen years and Chicago's revival played it for six years before moving to the Ambassador, where it still is.",
+          "Shubert Alley runs down its eastern side: the private lane between this theatre and the Booth that the profession has used as a noticeboard since the 1910s, and the reason the block is the centre of the Theater District rather than merely in it.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "hayes-theater",
+    name: "Hayes Theater",
+    city: "new-york",
+    address: "240 West 44th Street, New York, NY 10036",
+    lat: 40.7578513,
+    lon: -73.9878417,
+    opened: "1912",
+    capacity: 597,
+    officialSlug: "venue-hayes-theater",
+    summary:
+      "The smallest theatre on Broadway \u2014 597 seats, a third of what the houses around it hold \u2014 and the only one run by a non-profit on 44th Street. The Fantasticks begins previews here on 22 October 2026.",
+    transit:
+      "Times Square\u201342nd Street on the 1, 2, 3, 7, N, Q, R, W and S; 42nd Street\u2013Port Authority on the A, C and E.",
+    details: [
+      { label: "Opened", value: "1912, as the Little Theatre" },
+      { label: "Architects", value: "Ingalls & Hoffman; balcony added by Herbert J. Krapp in 1920" },
+      { label: "Operator", value: "Second Stage Theater" },
+      { label: "Seats", value: "597 across two levels \u2014 the smallest Broadway house" },
+    ],
+    sections: [
+      {
+        heading: "Inside the Hayes Theater",
+        paragraphs: [
+          "It was built to be small on purpose. Winthrop Ames put the Little Theatre up in 1912 with 299 seats on a single level, in flat contradiction of everything else being built on the block, because he wanted a room for plays that could not fill a thousand seats and should not have to.",
+          "That did not last. Herbert J. Krapp added a balcony in 1920 and the capacity roughly doubled, to the 597 it holds today across two levels \u2014 still, by some four hundred seats, the smallest theatre on Broadway. It carries the name of Helen Hayes, and since 2018 it has been the Broadway house of Second Stage Theater, the non-profit that also runs the Irene Diamond Stage on West 42nd Street.",
+          "The size is the point for a musical booked in here. Six hundred seats is off-Broadway scale inside a Broadway contract, which is a deliberate choice about how close the audience sits rather than a compromise on how many of them there are.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "st-james-theatre",
+    name: "St. James Theatre",
+    city: "new-york",
+    address: "246 West 44th Street, New York, NY 10036",
+    lat: 40.7579845,
+    lon: -73.9881584,
+    opened: "1927",
+    capacity: 1709,
+    officialSlug: "venue-st-james-theatre",
+    summary:
+      "Seventeen hundred seats, and the stage where Oklahoma! and Hello, Dolly! opened. DOLLY: A True Original Musical begins previews here on 7 December 2026.",
+    transit:
+      "Times Square\u201342nd Street on the 1, 2, 3, 7, N, Q, R, W and S; 42nd Street\u2013Port Authority on the A, C and E.",
+    details: [
+      { label: "Opened", value: "1927, as Erlanger's Theatre" },
+      { label: "Architects", value: "Warren and Wetmore" },
+      { label: "Operator", value: "ATG Entertainment" },
+      { label: "Seats", value: "up to 1,709 across three levels" },
+    ],
+    sections: [
+      {
+        heading: "Inside the St. James Theatre",
+        paragraphs: [
+          "Two musicals that changed what a musical was opened on this stage. Oklahoma! opened here in 1943 and The King and I in 1951, and in 1964 so did Hello, Dolly! \u2014 which is worth knowing before a different Dolly opens here in December 2026.",
+          "The building went up in 1927 for A. L. Erlanger, who named it after himself; Warren and Wetmore, the firm behind Grand Central Terminal, designed it in a neo-Georgian style, and both the facade and the auditorium are New York City landmarks. It took the St. James name in 1932.",
+          "With up to 1,709 seats across three levels it is one of the largest houses on Broadway \u2014 nearly three times the Hayes, six doors down the same block. It is operated by ATG Entertainment, which is also where its tickets are sold.",
+        ],
+      },
+    ],
+  },
 ];

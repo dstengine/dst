@@ -4,6 +4,12 @@
 // guessed zoom level, and a link out for anyone who wants directions.
 //
 // Lazy on purpose: a map below the fold should not cost the first paint.
+//
+// The way out is a button, not a line of caption text. Someone reading a
+// venue page on a phone outside the theatre wants the one thing the embed
+// cannot give them — the route — and a 13px grey link under a map is not
+// where a thumb goes looking for it.
+import Icon from "./Icon.astro";
 interface Props {
   lat: number;
   lon: number;
@@ -21,7 +27,10 @@ const full = `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lon}#map=${zoom}
 <figure class="locate-map">
   <iframe src={src} title={`Map showing ${name}`} loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   <figcaption>
-    <a href={full} target="_blank" rel="noopener" title={`Open ${name} on OpenStreetMap`}>Open the map for directions</a>
+    <a class="button button-secondary" href={full} target="_blank" rel="noopener" title={`Open ${name} on OpenStreetMap for directions`}>
+      <Icon name="navigate" />
+      Directions
+    </a>
   </figcaption>
 </figure>
 
@@ -38,7 +47,5 @@ const full = `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lon}#map=${zoom}
   }
   .locate-map figcaption {
     margin-top: var(--space-2);
-    font-size: var(--step--1);
-    color: var(--ink-faint);
   }
 </style>

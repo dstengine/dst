@@ -8,7 +8,8 @@ import EventCards from "../components/EventCards.astro";
 import VentureGrid from "@dst/ui/VentureGrid.astro";
 import { ICONS } from "@dst/ui/icons";
 import Icon from "@dst/ui/Icon.astro";
-import { citiesWithPages, cityBySlug, collections, datedRuns, formatRun, runsFor, runsInCity, shows, showBySlug, statusOf, ticketButtons, upcomingRuns, venueBySlug, venues, type Venue, } from "../content";
+import ChipNav from "@dst/ui/ChipNav.astro";
+import { citiesWithPages, cityBySlug, collections, datedRuns, formatRun, runsInCity, shows, showBySlug, statusOf, ticketButtons, upcomingRuns, venueBySlug, venues, type Venue, } from "../content";
 
 const upcoming = upcomingRuns();
 const soon = upcoming.slice(0, 6);
@@ -61,6 +62,20 @@ const cityCards = citiesByDate.slice(0, 6).map((city) => {
 });
 const citiesRest = citiesByDate.slice(6);
 
+// The chips under the listings. Both rows are links to pages that exist and
+// nothing else: a show's own page already carries every date of it, and a
+// city page already carries everything booked into that city.
+const showChips = shows.map((show) => ({
+  href: `/${show.slug}/`,
+  label: show.short ?? show.title,
+  title: `${show.title}: every run this site tracks, with every seller`,
+}));
+const cityChips = citiesByDate.map((city) => ({
+  href: `/${city.slug}/`,
+  label: city.name,
+  title: `Musicals playing ${city.name}`,
+}));
+
 const lead = shows.find((show) => show.featured) ?? shows[0]!;
 const alsoListed = shows.filter((show) => show !== lead);
 
@@ -111,17 +126,17 @@ const nextTickets = next ? ticketButtons(next) : [];
   <section class="container">
     <h2>On sale now</h2>
     <EventCards runs={soon} labelOnMedia />
-    <p class="more">
-      {shows.map((show) => (
-        <a href={`/${show.slug}/tickets/`} title={`Every run of ${show.title} this site tracks, with every seller`}>
-          All {runsFor(show.slug).length} dates of {show.title}
-        </a>
-      ))}
-      {/* Two shows, read on two different days: one date here would be wrong
-          for one of them. The date lives on each show's own page, where it
-          belongs to the listings it describes. */}
-      <span class="checked">Read from each production's own listing, on the date its page carries.</span>
-    </p>
+    {/* Two rows of chips, not a sentence per show. A reader who came for one
+        title is scanning for that title, and "All 37 dates of Chicago The
+        Musical" spends a whole line saying what the link already says. Shows
+        first, because the title is what gets typed into a search box; then
+        the cities that have a page of their own, soonest first. */}
+    <ChipNav items={showChips} label="Musicals on this site" />
+    <ChipNav items={cityChips} label="Cities with a page of their own" />
+    {/* Two shows, read on two different days: one date here would be wrong
+        for one of them. The date lives on each show's own page, where it
+        belongs to the listings it describes. */}
+    <p class="checked">Read from each production's own listing, on the date its page carries.</p>
 
     {/* A tour asks a different question from a weekend listing: not what is
         on now, but when it reaches you. Subscribing answers that once and

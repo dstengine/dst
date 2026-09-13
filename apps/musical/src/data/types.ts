@@ -167,6 +167,16 @@ export interface Run {
   runningTime?: string;
   language?: string;
   ageGuidance?: string;
+  /** The run written out rather than tabulated: what this staging is, why
+      it is in this house, what a reader standing outside it should know.
+      The glance above it answers when and how much; this answers the
+      questions a table cannot hold a sentence long enough to answer.
+      Optional, and the section is drawn only where it is filled in — a
+      touring stop that has nothing of its own to say should not have a
+      paragraph invented for it. */
+  body?: string[];
+  /** What that section is called. Defaults to "About this run". */
+  bodyHeading?: string;
   faq?: { q: string; a: string }[];
   tags?: string[];
 }

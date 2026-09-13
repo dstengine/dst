@@ -674,7 +674,37 @@
         "subject": "a single torn paper stub with a perforated edge and one paw-shaped punch hole",
         "detail": "the stub is completely blank and unprinted, plain paper with no writing, no numbers and no barcode anywhere"
       },
-      "cats-uk": "a trail of paw-print discs crossing a folded island shape"
+      "cats-uk": "a trail of paw-print discs crossing a folded island shape",
+      "lost-boys-about": "a boardwalk ferris wheel silhouette under a crescent moon, a torn bat shape crossing it",
+      "lost-boys-tickets": {
+        "subject": "a single torn paper stub with a perforated edge",
+        "detail": "with a crescent-moon shape punched near one end, and the stub is completely blank and unprinted, plain paper with no writing, no numbers and no barcode anywhere"
+      },
+      "wicked-about": "a small tall pointed hat with a wide brim, centred with generous empty space around it, standing on a flat horizon line, its whole silhouette well inside the frame and not touching any edge",
+      "wicked-tickets": {
+        "subject": "a single torn paper stub with a perforated edge",
+        "detail": "with a five-pointed star punched near one end, and the stub is completely blank and unprinted, plain paper with no writing, no numbers and no barcode anywhere"
+      },
+      "wanted-about": "a blank sheet of paper pinned to a plank wall by a single tack, its corners curling, the sheet entirely empty with no writing, no printed lines and no text of any kind",
+      "wanted-tickets": {
+        "subject": "a single torn paper stub with a perforated edge",
+        "detail": "with a small square punched near one end, and the stub is completely blank and unprinted, plain paper with no writing, no numbers and no barcode anywhere"
+      },
+      "galileo-about": "concentric brass rings of an orrery around a single small sphere",
+      "galileo-tickets": {
+        "subject": "a single torn paper stub with a perforated edge",
+        "detail": "with a round hole punched near one end, and the stub is completely blank and unprinted, plain paper with no writing, no numbers and no barcode anywhere"
+      },
+      "fantasticks-about": "a flat paper moon hanging on a string above a low garden wall",
+      "fantasticks-tickets": {
+        "subject": "a single torn paper stub with a perforated edge",
+        "detail": "with a narrow crescent notched out of one long edge, and the stub is completely blank and unprinted, plain paper with no writing, no numbers and no barcode anywhere"
+      },
+      "dolly-about": "a wide-brimmed hat with a single tall feather, floating above a flight of stairs drawn as a descending staircase of stacked rectangles",
+      "dolly-tickets": {
+        "subject": "a single torn paper stub with a perforated edge",
+        "detail": "with a feather shape punched near one end, and the stub is completely blank and unprinted, plain paper with no writing, no numbers and no barcode anywhere"
+      }
     },
     "palmcentral": {
       "prices": "a stepped row of flat bars rising left to right beside a single tall tower",

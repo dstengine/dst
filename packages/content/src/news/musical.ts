@@ -9,7 +9,7 @@ export const items: NewsItem[] = [
   {
     slug: "broadway-has-four-new-musicals-this-autumn",
     createdAt: "2026-09-06T08:48:11+04:00",
-    updatedAt: "2026-09-08T00:12:45+04:00",
+    updatedAt: "2026-09-13T07:00:00+04:00",
     site: "musical",
     image: "/covers/broadway-has-four-new-musicals-this-autumn.jpg",
     imageAlt: "Four crimson paper rectangles of different heights standing in a row on a cream ground, a thin burgundy band beneath them",
@@ -31,13 +31,42 @@ export const items: NewsItem[] = [
     body: [
       "The longest-running musical in the world has never played Broadway. That changes in October, which tells you something about how the autumn slate was assembled.",
       "## The four",
-      "<strong>Wanted</strong> opens at the <strong>James Earl Jones Theatre</strong> on <strong>15 October</strong>, with Solea Pfeiffer, Liisi LaFontaine, Luke James and Ledisi. <strong>Galileo</strong> casts Tony nominee <strong>Raúl Esparza</strong> as the astronomer. <strong>The Fantasticks</strong> begins previews at the <strong>Hayes Theatre</strong> on <strong>22 October</strong> and opens <strong>16 November</strong>. <strong>Dolly: A True Original Musical</strong> starts previews at the <strong>St. James</strong> on <strong>7 December</strong> and opens <strong>19 January 2027</strong>.",
+      "<strong>Wanted</strong> opens at the <strong>James Earl Jones Theatre</strong> on <strong>15 October</strong>, with Solea Pfeiffer, Liisi LaFontaine, Luke James and Ledisi. <strong>Galileo</strong> casts Tony nominee <strong>Raúl Esparza</strong> as the astronomer and begins previews at the <strong>Shubert Theatre</strong> on <strong>10 November</strong>. <strong>The Fantasticks</strong> begins previews at the <strong>Hayes Theatre</strong> on <strong>22 October</strong> and opens <strong>16 November</strong>. <strong>Dolly: A True Original Musical</strong> starts previews at the <strong>St. James</strong> on <strong>7 December</strong> and opens <strong>19 January 2027</strong>.",
       "## The one that has been running since 1960",
       "<strong>The Fantasticks</strong> ran off-Broadway for forty-two years and has never had a Broadway production. This one reimagines it as a gay love story, with Ruthie Ann Miles, Leslie Rodriguez Kritzer and David Patrick Kelly.",
       "## The opening night that is a birthday",
       "<strong>19 January 2027</strong> is <strong>Dolly Parton's 81st</strong>. Opening nights are scheduled around critics and holidays; scheduling one around the subject's birthday is a decision about what the evening is for.",
       "## Four is the number to notice",
       "Two originals and two revivals-by-another-name, against an autumn of new plays. A season that leans on plays is a season where producers are pricing risk carefully — musicals cost several times as much to put on and take longer to recoup.",
+    ],
+    // The four are on this site now, one page each. A news item that names
+    // productions the site also lists should say where they are, or the
+    // reader has to search for what we already hold.
+    related: [
+      {
+        href: "/wanted/",
+        eyebrow: "James Earl Jones Theatre",
+        title: "Wanted",
+        text: "From 15 October 2026. Telecharge, 2 hours 15 minutes, recommended for ages 10 and up.",
+      },
+      {
+        href: "/fantasticks/",
+        eyebrow: "Hayes Theater",
+        title: "The Fantasticks",
+        text: "Previews from 22 October 2026, opening 16 November. Sold by Second Stage Theater's own box office.",
+      },
+      {
+        href: "/galileo/",
+        eyebrow: "Shubert Theatre",
+        title: "Galileo",
+        text: "Previews from 10 November 2026, opening 6 December. Telecharge; rush and lottery not yet announced.",
+      },
+      {
+        href: "/dolly/",
+        eyebrow: "St. James Theatre",
+        title: "DOLLY: A True Original Musical",
+        text: "Previews from 7 December 2026, opening on 19 January 2027 \u2014 Dolly Parton's eighty-first birthday.",
+      },
     ],
     expertise:
       "Watch the gap between first preview and opening night, because it is the most honest signal a production gives about its own confidence. Three or four weeks is a show doing normal technical work; six or more is a show still being rewritten in front of paying audiences. On this slate The Fantasticks has about three and a half weeks, which reads as a settled production, while Dolly's six-week runway across the holidays is the standard shape for a bio-musical that wants to sell tickets through Christmas before the reviews land. If you are buying, previews are cheaper and the show is not finished; that is the trade, and on a musical with an out-of-town history it is a smaller gamble than it looks.",

@@ -198,21 +198,37 @@ const graph = Astro.site
 const navIcon = (item: { href: string; icon?: string }) =>
   item.icon ? ICONS[item.icon] : navIconFor(item.href);
 
-// Roughly how much room the inline nav wants, in px: label text, the gaps
-// between items, and the site name beside it. Over ~900 the row needs the
-// tightened treatment — smaller type, no marks, narrower gaps — to hold one
-// line. llc's ten items beside "Dubai Company Formation" measure 1093;
-// riviera's nine short ones measure 759 and need nothing.
+// Roughly how much room the inline nav wants, in px, at the widest case —
+// the one where the marks are shown: label text, the mark and its gap in
+// front of each label, the gaps between items, and the wordmark beside the
+// row, logo included. Over the budget below, the row needs the tightened
+// treatment — smaller type, no marks, narrower gaps — to hold one line.
+//
+// The mark counts, and the logo counts. Every item in the network renders a
+// mark — an explicit `icon` or the one its href implies — so a sum that left
+// it out was short by 28px an item, which on a nine-item row is a quarter of
+// the budget; and the wordmark is its text plus a 28px logo and a gap.
+// Without those two terms musical's nine items measured 791 against a
+// threshold of 900, and wrapped "About" onto a second line under the
+// wordmark. The constants are calibrated against that row measured in the
+// browser: labels 458px, gaps 192, marks 252, wordmark 193.
 const navFootprint =
-  nav.reduce((sum, item) => sum + item.label.length, 0) * 8 +
-  nav.length * 24 +
-  siteName.length * 11;
-const denseNav = navFootprint > 900;
+  nav.reduce((sum, item) => sum + item.label.length, 0) * 8.5 +
+  nav.length * (24 + 28) +
+  siteName.length * 11 + 40;
+// What the row actually has: the 1180px column, less the theme toggle and
+// the gap in front of it. Measured on musical at 1440, where nine items with
+// their marks wanted 1095px against 1064 available and put "About" on a
+// second line under the wordmark.
+const denseNav = navFootprint > 1040;
 // A short row has width to spare: it keeps its marks all the way down to the
 // point where the dropdown takes over. A fuller one drops them earlier, or it
 // wraps. One threshold, applied to each site's own row, rather than a single
 // width guessed for nine different navs.
-const lateIcons = navFootprint > 700;
+// Measured without the marks, because this is the decision about whether
+// the row can afford to keep them: a sum that already counted them would
+// answer its own question.
+const lateIcons = navFootprint - nav.length * 28 > 700;
 ---
 <!doctype html>
 <html

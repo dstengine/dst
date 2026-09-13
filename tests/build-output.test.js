@@ -392,7 +392,10 @@ describe("images", () => {
     const src = readFileSync("apps/musical/src/data/shows.ts", "utf8");
     const shows = [
       ...src.matchAll(
-        /slug: "([a-z-]+)",\s*\n\s*title: "[^"]*",\s*\n\s*officialSlug: "([^"]+)",\s*\n\s*officialDomain: "([^"]+)",/g,
+        // Fields may sit between these three — titleSeo arrived after this test
+      // was written and matched none of the shows, which made the test pass by
+      // finding nothing. Anything but another slug is allowed in between.
+      /slug: "([a-z-]+)",(?:(?!\bslug:)[\s\S])*?officialSlug: "([^"]+)",\s*\n\s*officialDomain: "([^"]+)",/g,
       ),
     ].map(([, slug, officialSlug, officialDomain]) => ({ slug, officialSlug, officialDomain }));
     assert.ok(shows.length >= 2, "could not read the shows' official sites out of shows.ts");

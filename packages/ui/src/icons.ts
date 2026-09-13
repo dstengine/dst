@@ -35,6 +35,9 @@ export const ICONS: Record<string, string> = {
   mail: "M3 6h18v12H3zM3 6l9 7 9-7",
   leaf: "M4 20C4 11 10 6 20 5c0 9-5 14-13 14H4ZM8 16c2-4 5-6 9-7",
   map: "M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2ZM9 4v14M15 6v14",
+  // The navigator's arrow — the mark every phone uses for "take me there",
+  // which is what the link under a map is for.
+  navigate: "M3 11 21 3l-8 18-2-7-8-3Z",
   building: "M4 21V6l7-3v18M11 21h9V10l-9-3M7 9h1M7 13h1M7 17h1M14 12h2M14 16h2",
   document: "M6 3h8l4 4v14H6zM14 3v4h4M9 12h6M9 16h6",
   percent: "M6 18 18 6M8 9a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM16 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z",

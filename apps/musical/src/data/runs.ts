@@ -37,6 +37,12 @@ export const runs: Run[] = [
     language: "English",
     ageGuidance:
       "Recommended 7+. Nobody under 3 is admitted, everyone needs their own ticket, and under-16s must sit next to a ticketholder aged 18 or over.",
+    bodyHeading: "The production, the theatre and the run",
+    body: [
+      "This is the third theatre and the second production. Les Mis\u00e9rables opened at the Barbican in October 1985 to reviews that would have closed most shows, moved to the Palace Theatre that December, and moved again in 2004 to the house on Shaftesbury Avenue that has since been renamed for Stephen Sondheim. It has not had a break in any of those moves.",
+      "The staging changed in 2019. The original Trevor Nunn and John Caird production, with the revolve that made the barricade turn, was replaced by the staging built for the show\u2019s twenty-fifth anniversary tour \u2014 no revolve, projections drawn from Victor Hugo\u2019s own paintings, a different set of stage pictures for the same score. A reader who last saw it in the nineties has not seen this one.",
+      "The Sondheim seats 1,074, which is small for a show of this scale and part of why the sound in it works the way it does. It is a Delfont Mackintosh house, and Cameron Mackintosh produces the show, so the theatre and the production are the same company \u2014 which is why the tickets are sold direct with no booking fee.",
+    ],
     faq: [
       {
         q: "What are the performance times?",
@@ -84,6 +90,13 @@ export const runs: Run[] = [
     language: "English",
     ageGuidance:
       "No children under 4 are admitted, and every child needs their own seat and must be able to sit in it unaided. Under-16s must be accompanied by an adult.",
+    bodyHeading: "The production, the theatre and the run",
+    body: [
+      "His Majesty\u2019s Theatre was built for opera in 1705 and rebuilt three times since; the building on the Haymarket today went up in 1897. For the last forty years it has housed a musical about a man who lives underneath an opera house, which is a coincidence the production has never had to explain.",
+      "The staging is the original one. Hal Prince directed it in 1986, Maria Bj\u00f6rnson designed the sets and the costumes, and what plays now is that production rather than a revival of it \u2014 the same chandelier, on the same rig, in the same room. A West End auditorium of this age is small by modern standards, 1,216 seats across four levels, and the sightlines were drawn for a house where the boxes mattered; where you sit changes the evening here more than it does in a purpose-built theatre.",
+      "It opened on 9 October 1986 after previews from 27 September, and has never moved. That makes it the second-longest-running show in West End history behind Les Mis\u00e9rables, and it is now in its fortieth year. Nothing about the run is provisional: the booking horizon is pushed forward as it is reached rather than closed.",
+      "What that means for a reader deciding between a Saturday matinee and a Tuesday evening is mostly about the room rather than the cast. There are no Sunday performances at all; the day seats are online only and go at 10am for that same day; and the interval is twenty minutes rather than the fifteen most of the street runs, which is worth knowing if you have booked anything afterwards.",
+    ],
     faq: [
       {
         q: "What are the performance times?",
@@ -133,6 +146,12 @@ export const runs: Run[] = [
     language: "English",
     ageGuidance:
       "Recommended for ages 13 and up. No children under 4 are admitted.",
+    bodyHeading: "The production, the theatre and the run",
+    body: [
+      "The version playing is the cheap one, and that is the point. The 1996 revival began as an Encores! concert staging at City Center with no set, no costumes to speak of and the band on stage because there was nowhere else to put them. Everything that reads as a design decision now \u2014 the black, the chairs, the orchestra in full view \u2014 started as a constraint of a four-performance concert.",
+      "It has been at the Ambassador Theatre since 29 January 2003, having opened at the Richard Rodgers in November 1996 and spent six years at the Shubert in between. The Ambassador holds 1,125 seats, which is at the smaller end for a Broadway musical house and closer to the scale the concert version was built for than either of the theatres it came from.",
+      "On 23 November 2014 it passed Cats at its 7,486th performance and became the longest-running American musical in Broadway history. Only The Phantom of the Opera has run longer on Broadway at all.",
+    ],
     faq: [
       {
         q: "What are the performance times?",
@@ -1268,6 +1287,12 @@ export const runs: Run[] = [
     language: "English",
     ageGuidance:
       "Recommended for ages 11 and up. Everyone in the room needs a ticket, and there is a limit of twelve per person.",
+    bodyHeading: "The production, the theatre and the run",
+    body: [
+      "The Palace Theatre is the reason to arrive early. Between 2018 and 2024 the whole building was rebuilt into the base of the TSX Broadway tower, and in 2022 the auditorium itself \u2014 walls, ceiling, plasterwork \u2014 was cut free of its foundations and raised thirty feet so that retail space could be built underneath. The room that reopened in 2024 is the room of 1913, one storey higher than it was built.",
+      "The show inside it is a 1987 comedy horror film about teenage vampires on a Californian boardwalk, set to a rock score by The Rescues, with a book by David Hornsby and Chris Hoch and direction by Michael Arden. It opened on 26 April 2026 after previews from 27 March and won four Tony Awards in its first season \u2014 two for performances, two for how it looks.",
+      "It runs two and a half hours with a fifteen-minute interval, is recommended for ages 11 and up, and everyone in the room needs a ticket of their own. The cheapest way in is the digital lottery or the in-person rush, both at $45, neither of which can be bought in advance.",
+    ],
     faq: [
       {
         q: "What are the performance times?",
@@ -1315,6 +1340,12 @@ export const runs: Run[] = [
     language: "English",
     ageGuidance:
       "Recommended for ages 8 and up. Children under 5 are not admitted, and everyone in the room needs a ticket whatever their age.",
+    bodyHeading: "The production, the theatre and the run",
+    body: [
+      "Wicked has never played anywhere else in New York. It opened at the Gershwin Theatre on 30 October 2003 and has stayed in the same house for its whole run, which is unusual for a show of this length \u2014 both of the other Broadway open runs on this site moved at least once.",
+      "The Gershwin is the largest theatre the Nederlander Organization runs on Broadway, at 1,900 seats. That is roughly four hundred more than the Shubert and nearly eight hundred more than the Ambassador, and it is the practical reason a show that sells this consistently can keep its cheapest seats where they are: there are simply more of them to sell.",
+      "There are student, military and lottery prices below the standing floor, and none of them can be bought as an ordinary advance booking. The lottery is entered online for a specific performance; the student and military rates are verified at purchase.",
+    ],
     faq: [
       {
         q: "What are the performance times?",
@@ -1327,6 +1358,151 @@ export const runs: Run[] = [
       {
         q: "Is this the same production as the London one?",
         a: "The same staging, in a different theatre and with a different company. London has played the Apollo Victoria since September 2006; this page covers New York only.",
+      },
+    ],
+    tags: ["broadway", "open-run"],
+  },
+  {
+    slug: "new-york",
+    show: "wanted",
+    city: "new-york",
+    venue: "james-earl-jones-theatre",
+    start: "2026-10-15",
+    openRun: true,
+    sellers: [
+      {
+        slug: "tickets-wanted-new-york",
+        name: "Telecharge",
+        official: true,
+      },
+    ],
+    summary:
+      "The first performance is on Thursday 15 October 2026 at 8pm. No closing date has been announced, and the production has group bookings on sale through 31 March 2027.",
+    runningTime: "2 hours 15 minutes, including a 15-minute interval",
+    language: "English",
+    ageGuidance:
+      "Recommended for ages 10 and up. The production notes themes of violence and of frontier life, and says there is no swearing in the show.",
+    faq: [
+      {
+        q: "When does Wanted start?",
+        a: "The first performance is Thursday 15 October 2026 at 8pm, at the James Earl Jones Theatre, 138 West 48th Street.",
+      },
+      {
+        q: "Who sells the tickets?",
+        a: "Telecharge, which is the box office for every Shubert Organization house. The show's own site links directly to it. Groups of ten or more are booked separately, and are on sale through 31 March 2027.",
+      },
+      {
+        q: "How long is it?",
+        a: "2 hours 15 minutes including a 15-minute interval \u2014 a figure the production flags as provisional while the show is still developing.",
+      },
+    ],
+    tags: ["broadway", "open-run"],
+  },
+  {
+    slug: "new-york",
+    show: "galileo",
+    city: "new-york",
+    venue: "shubert-theatre",
+    start: "2026-11-10",
+    openRun: true,
+    sellers: [
+      {
+        slug: "tickets-galileo-new-york",
+        name: "Telecharge",
+        official: true,
+      },
+    ],
+    summary:
+      "Previews begin on Tuesday 10 November 2026 at 8pm and opening night is 6 December. No closing date has been announced.",
+    language: "English",
+    faq: [
+      {
+        q: "When does Galileo start?",
+        a: "The first preview is Tuesday 10 November 2026 at 8pm at the Shubert Theatre, 225 West 44th Street. Opening night is Sunday 6 December 2026.",
+      },
+      {
+        q: "What are the performance times?",
+        a: "Evenings at 8pm Tuesday to Saturday, with 2pm matinees on Wednesday and Saturday once the run settles and a 3pm on Sunday 29 November. Monday is dark, and the production's own calendar is the schedule.",
+      },
+      {
+        q: "Are there rush or lottery tickets?",
+        a: "Not yet. The production says a rush and lottery policy is soon to be announced; until it is, there is no cheap route to a seat published anywhere.",
+      },
+      {
+        q: "Is Ra\u00fal Esparza in every performance?",
+        a: "No. The production says the role of Galileo Galilei is played by Michael Park at selected performances, and marks which ones on its own calendar.",
+      },
+    ],
+    tags: ["broadway", "open-run"],
+  },
+  {
+    slug: "new-york",
+    show: "fantasticks",
+    city: "new-york",
+    venue: "hayes-theater",
+    start: "2026-10-22",
+    openRun: true,
+    sellers: [
+      {
+        slug: "tickets-fantasticks-new-york",
+        name: "Second Stage Theater",
+        official: true,
+      },
+    ],
+    summary:
+      "Previews begin on Thursday 22 October 2026 at 8pm and opening night is 16 November. Sixty-six years after the show first opened, this is its Broadway debut.",
+    language: "English",
+    faq: [
+      {
+        q: "When does The Fantasticks start?",
+        a: "The first preview is Thursday 22 October 2026 at 8pm at the Hayes Theater, 240 West 44th Street. Opening night is 16 November 2026.",
+      },
+      {
+        q: "What are the performance times?",
+        a: "Evenings at 8pm Tuesday to Saturday, with 2pm matinees on Saturday and Sunday. Monday is dark.",
+      },
+      {
+        q: "Who sells the tickets?",
+        a: "Second Stage Theater, the non-profit that runs the Hayes, through its own box office rather than a ticketing agency. In-person sales begin on 6 October 2026; the single ticket line is 212-541-4516, midday to 6pm daily.",
+      },
+      {
+        q: "Is it playing on Halloween?",
+        a: "Yes, twice \u2014 2pm and 8pm on Saturday 31 October 2026, both during previews.",
+      },
+    ],
+    tags: ["broadway", "open-run"],
+  },
+  {
+    slug: "new-york",
+    show: "dolly",
+    city: "new-york",
+    venue: "st-james-theatre",
+    start: "2026-12-07",
+    openRun: true,
+    sellers: [
+      {
+        slug: "tickets-dolly-new-york",
+        name: "ATG Tickets",
+        official: true,
+      },
+    ],
+    summary:
+      "Previews begin on Monday 7 December 2026 and opening night is 19 January 2027 \u2014 Dolly Parton's eighty-first birthday. Six weeks of previews across the holidays, and no closing date announced.",
+    language: "English",
+    ageGuidance:
+      "The production says the show may be inappropriate for ages 8 and under. That is a recommendation, not a rule at the door.",
+    faq: [
+      {
+        q: "When does DOLLY start?",
+        a: "Previews begin on Monday 7 December 2026 at the St. James Theatre, 246 West 44th Street. Opening night is Tuesday 19 January 2027.",
+      },
+      {
+        q: "Who sells the tickets?",
+        a: "ATG Tickets \u2014 ATG Entertainment operates the St. James, and the production's own site links to nothing else. Telephone bookings are on +1 888 811 5040, and groups of ten or more on 1-800-BROADWAY extension 2.",
+      },
+      {
+        q: "When does the box office open?",
+        a: "In-person sales at the St. James begin on Monday 9 November 2026, four weeks before the first preview.",
       },
     ],
     tags: ["broadway", "open-run"],

@@ -12,6 +12,7 @@ export const shows: Show[] = [
   {
     slug: "chicago",
     title: "Chicago The Musical",
+    short: "Chicago",
     officialSlug: "chicago-official",
     officialDomain: "chicagothemusical.com",
     featured: true,
@@ -234,6 +235,7 @@ export const shows: Show[] = [
   {
     slug: "phantom-of-the-opera",
     title: "The Phantom of the Opera",
+    short: "Phantom of the Opera",
     officialSlug: "phantom-official",
     officialDomain: "phantomoftheopera.com",
     eyebrow: "The London run, and what a ticket actually buys",
@@ -303,6 +305,8 @@ export const shows: Show[] = [
     sections: [
       {
         slug: "about",
+        image: "/covers/lost-boys-about.jpg",
+        imageAlt: "Cut-paper illustration: a boardwalk ferris wheel silhouette under a crescent moon, a bat shape crossing it.",
         label: "About the show",
         title: "What The Lost Boys actually is",
         description:
@@ -316,6 +320,8 @@ export const shows: Show[] = [
       },
       {
         slug: "tickets",
+        image: "/covers/lost-boys-tickets.jpg",
+        imageAlt: "Cut-paper illustration: a single torn paper stub with a crescent moon punched near one end.",
         label: "Tickets",
         title: "The Lost Boys tickets on Broadway",
         description:
@@ -351,6 +357,8 @@ export const shows: Show[] = [
     sections: [
       {
         slug: "about",
+        image: "/covers/wicked-about.jpg",
+        imageAlt: "Cut-paper illustration: a tall pointed hat with a wide brim, alone on a flat horizon.",
         label: "About the show",
         title: "What Wicked actually is",
         description:
@@ -364,6 +372,8 @@ export const shows: Show[] = [
       },
       {
         slug: "tickets",
+        image: "/covers/wicked-tickets.jpg",
+        imageAlt: "Cut-paper illustration: a single torn paper stub with a five-pointed star punched near one end.",
         label: "Tickets",
         title: "Wicked tickets on Broadway",
         description:
@@ -373,6 +383,211 @@ export const shows: Show[] = [
           "There is one run and one official seller: Broadway Direct, the Nederlander Organization's own box office, which sells the Gershwin Theatre directly. Tickets are listed from $97.75, the run is on sale through 25 April 2027, and there is a limit of sixteen per person.",
           "Three cheaper routes exist and all three are bought in person or by lottery rather than online: student tickets at $59 and military tickets at $79, both at the box office with the relevant card, and a daily digital lottery at $55 including fees.",
           "Nothing is sold here. The button lands on the seller's own page, and the price you see there is the price.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "wanted",
+    title: "Wanted",
+    titleSeo: "Wanted the musical on Broadway: dates and tickets",
+    officialSlug: "wanted-official",
+    officialDomain: "wantedmusical.com",
+    eyebrow: "The Broadway run, and what a ticket actually buys",
+    hubCard:
+      "Two sisters on the run in 1893 Texas, a chorus of ancestors, and a first performance on 15 October 2026.",
+    checkedOn: "13 September 2026",
+    tagline:
+      "A new musical about the Clarke sisters, previously staged under the title Gun & Powder, opening at the James Earl Jones Theatre in October 2026.",
+    summary:
+      "Wanted at the James Earl Jones Theatre on Broadway: the dates, the run time, the age guidance and who sells the tickets \u2014 with the source for each.",
+    hook: [
+      "The show has already had a different name. Wanted was produced as Gun & Powder before it reached Broadway, and what arrives at the James Earl Jones Theatre on 15 October 2026 is that work under a new title.",
+      "The story is a family one, carried down the Clarke line: Texas in 1893, twin sisters who are Black and pass for white, and a mother's sharecropping debt they set out to clear by means the law takes a firm view of. Solea Pfeiffer and Liisi LaFontaine play Mary and Martha; Ledisi plays their mother Tallulah and Luke James plays Elijah.",
+      "Below is the run as the production and its theatre list it: the first performance, how long the evening is, who it is recommended for, and who sells the seats.",
+    ],
+    sections: [
+      {
+        slug: "about",
+        image: "/covers/wanted-about.jpg",
+        imageAlt: "Cut-paper illustration: a blank sheet of paper pinned to a plank wall by one tack, its corner curling.",
+        label: "About the show",
+        title: "What Wanted actually is",
+        description:
+          "Twin sisters, an inherited debt, and a chorus of ancestors. What kind of evening this is, who is in it, and where it came from before Broadway.",
+        body: [
+          "Mary and Martha Clarke are twins in 1893 Texas who can pass for white and do, which buys them movement through a country that would otherwise not allow them any. Their mother Tallulah is a sharecropper carrying a debt none of them can pay. What the sisters decide to do about it is the plot, and the production's own description does not soften it: they are driven to desperate measures, and they become outlaws.",
+          "Around them is what the show calls the Kinfolk \u2014 a chorus of ancestors who guide the sisters through the story. That device is the reason the piece reads as an odyssey rather than a heist, and it is the part of the staging the production leads with.",
+          "The cast is led by Solea Pfeiffer and Liisi LaFontaine as Mary and Martha, Grammy winner Ledisi as Tallulah and Grammy nominee Luke James as Elijah. The show ran previously under the title Gun & Powder; the Broadway production is the first to carry the name Wanted.",
+        ],
+      },
+      {
+        slug: "tickets",
+        image: "/covers/wanted-tickets.jpg",
+        imageAlt: "Cut-paper illustration: a single torn paper stub with a small square punched near one end.",
+        label: "Tickets",
+        title: "Buying a ticket for Wanted",
+        description:
+          "Who sells seats for Wanted at the James Earl Jones Theatre, what the evening is like to plan around, and what the production says about age.",
+        template: "tickets",
+        body: [
+          "Tickets are sold by Telecharge, which is the box office for every Shubert Organization house \u2014 and the James Earl Jones Theatre is one. The show's own site links straight through to it, which is the arrangement worth having: one seller, and it is the theatre's.",
+          "The evening runs 2 hours 15 minutes including a 15-minute interval, a figure the production flags as provisional while the show is still developing. The age recommendation is 10 and up: the production notes themes of violence and of frontier life, and says there is no swearing in it.",
+          "Groups of ten or more are handled separately, and the production has them on sale through 31 March 2027.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "galileo",
+    title: "Galileo",
+    titleSeo: "Galileo the musical: Broadway dates and tickets",
+    officialSlug: "galileo-official",
+    officialDomain: "galileomusical.com",
+    eyebrow: "The Broadway run, and what a ticket actually buys",
+    hubCard:
+      "Ra\u00fal Esparza back on a Broadway stage after thirteen years, as the man who argued with the Church about the sky.",
+    checkedOn: "13 September 2026",
+    tagline:
+      "A new musical by Danny Strong, Zoe Sarnak and Michael Weiner, directed by Michael Mayer, beginning previews at the Shubert Theatre on 10 November 2026.",
+    summary:
+      "Galileo at the Shubert Theatre on Broadway: the first preview, the performance pattern, who sells the tickets and where each fact comes from.",
+    hook: [
+      "Ra\u00fal Esparza has not been on a Broadway stage since 2012. He returns to one on 10 November 2026 as Galileo Galilei, in a new musical about a man who looked through a lens and then refused to say he had not.",
+      "The book is by Danny Strong, the score by Zoe Sarnak and Michael Weiner, and the director is Michael Mayer. Jeremy Kushnier and Joy Woods are in the cast, and at selected performances the title role is played by Michael Park \u2014 which the production says on its own calendar rather than at the door.",
+      "Below is the run as the production lists it: the first preview, the shape of the week, and who sells the seats.",
+    ],
+    sections: [
+      {
+        slug: "about",
+        image: "/covers/galileo-about.jpg",
+        imageAlt: "Cut-paper illustration: the concentric rings of an orrery around one small brass sphere.",
+        label: "About the show",
+        title: "What Galileo actually is",
+        description:
+          "A new musical about an astronomer and the institution that told him to stop. Who made it, who is in it, and what the production says it is about.",
+        body: [
+          "The production's own line is that Galileo is about a man who confronted those in power for corruptly suppressing the truth. That is a description of a seventeenth-century trial and, plainly, of something else as well; a musical that picks this subject in this decade has made a choice about what it is for.",
+          "Danny Strong wrote the book; Zoe Sarnak and Michael Weiner wrote the score. Michael Mayer directs and David Neumann choreographs. Ra\u00fal Esparza, a four-time Tony nominee, plays Galileo, with Jeremy Kushnier and Joy Woods among the cast; Barberini, the confidant who becomes the Pope who tries him, is the second role the story turns on.",
+          "It is a first Broadway production, not a revival or a transfer, which is the rarer of the two kinds of new musical: nothing about it has been tested on a paying Broadway audience before 10 November.",
+        ],
+      },
+      {
+        slug: "tickets",
+        image: "/covers/galileo-tickets.jpg",
+        imageAlt: "Cut-paper illustration: a single torn paper stub with a round hole punched near one end.",
+        label: "Tickets",
+        title: "Buying a ticket for Galileo",
+        description:
+          "Who sells seats for Galileo at the Shubert Theatre, what the week looks like, and what the production has and has not announced about cheap seats.",
+        template: "tickets",
+        body: [
+          "Telecharge sells the tickets, as it does for every Shubert Organization house, and the Shubert Theatre is the organisation's own. The production also takes bookings by telephone on 212-239-6200, and handles groups of ten or more through Broadway Inbound.",
+          "The week starts at eight. Previews run Tuesday to Saturday evenings at 8pm from 10 November, with a 2pm matinee added on Wednesdays and Saturdays as the run settles, and a 3pm Sunday at the end of November. Monday is dark. The production's own calendar is the schedule, and it is the thing to check before booking a specific evening.",
+          "A rush and lottery policy is, in the production's own words, soon to be announced \u2014 so there is no cheap route to a seat published yet. When there is one it will be on the show's ticket page.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "fantasticks",
+    title: "The Fantasticks",
+    titleSeo: "The Fantasticks musical on Broadway: tickets",
+    officialSlug: "fantasticks-official",
+    officialDomain: "fantasticksbroadway.com",
+    eyebrow: "The Broadway run, and what a ticket actually buys",
+    hubCard:
+      "The longest-running musical in the world, sixty-six years old, and making its Broadway debut in the smallest house on the street.",
+    checkedOn: "13 September 2026",
+    tagline:
+      "The 1960 musical by Tom Jones and Harvey Schmidt, reimagined as a gay love story, beginning previews at the Hayes Theater on 22 October 2026.",
+    summary:
+      "The Fantasticks at the Hayes Theater on Broadway: the first preview, opening night, who sells the tickets and where each fact comes from.",
+    hook: [
+      "It has been running, somewhere, since 1960, and it has never played Broadway. The Fantasticks spent forty-two years off-Broadway at the Sullivan Street Playhouse \u2014 the longest run of any musical anywhere \u2014 and its Broadway debut is on 22 October 2026, sixty-six years after it opened.",
+      "The house it debuts in is the smallest on the street: the Hayes, 597 seats, roughly the scale the show has always been played at. That is not a demotion but a fit.",
+      "This production reimagines the central couple, traditionally Matt and Luisa, as Matt and Lewis, and turns the two scheming fathers into mothers. Christopher Gattelli directs and choreographs; the book and lyrics by Tom Jones and the music by Harvey Schmidt are revised rather than replaced.",
+    ],
+    sections: [
+      {
+        slug: "about",
+        image: "/covers/fantasticks-about.jpg",
+        imageAlt: "Cut-paper illustration: a flat paper moon hanging above a low garden wall.",
+        label: "About the show",
+        title: "What The Fantasticks actually is",
+        description:
+          "A sixty-six-year-old musical arriving on Broadway for the first time, rewritten as a gay love story. What changes, what does not, and who made it.",
+        body: [
+          "The original is an allegory, deliberately thin on scenery and thick on device: two fathers pretend to forbid a romance between their children in order to cause it, and the second half is about what happens once the pretence collapses. It has run continuously somewhere in the world since 1960, and the song it is known for is \u201cTry To Remember\u201d.",
+          "This production changes who is in the romance. Matt and Luisa become Matt and Lewis, the pair of fathers become mothers, and the production describes the result as redefining the show's timeless romance rather than replacing it. The book and lyrics are still Tom Jones's and the music still Harvey Schmidt's, revised for this staging.",
+          "Christopher Gattelli, who has Death Becomes Her and Newsies behind him, directs and choreographs. Ruthie Ann Miles, Leslie Rodriguez Kritzer and David Patrick Kelly are among the cast. \u201cThey Were You\u201d and \u201cI Can See It\u201d are in place alongside the song everyone knows.",
+        ],
+      },
+      {
+        slug: "tickets",
+        image: "/covers/fantasticks-tickets.jpg",
+        imageAlt: "Cut-paper illustration: a single torn paper stub notched along one long edge.",
+        label: "Tickets",
+        title: "Buying a ticket for The Fantasticks",
+        description:
+          "Who sells seats for The Fantasticks at the Hayes Theater, when the box office opens, and what the week looks like.",
+        template: "tickets",
+        body: [
+          "Tickets come from Second Stage Theater, the non-profit that runs the Hayes, through its own box office rather than through a Broadway ticketing agency. That is unusual on this street and worth knowing: the calendar, the prices and the transaction are all the theatre's.",
+          "In-person sales at the Hayes box office begin on 6 October 2026. Second Stage's single ticket line is 212-541-4516, open midday to 6pm every day.",
+          "The pattern from the first preview is eight performances a week: evenings at 8pm Tuesday to Saturday, with 2pm matinees on Saturday and Sunday. Previews begin 22 October and opening night is 16 November 2026.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "dolly",
+    title: "DOLLY: A True Original Musical",
+    short: "Dolly",
+    titleSeo: "Dolly the musical on Broadway: dates and tickets",
+    officialSlug: "dolly-official",
+    officialDomain: "dollymusical.com",
+    eyebrow: "The Broadway run, and what a ticket actually buys",
+    hubCard:
+      "Dolly Parton's own life, in her own songs, opening on her eighty-first birthday.",
+    checkedOn: "13 September 2026",
+    tagline:
+      "A bio-musical written by Dolly Parton and Maria S. Schlatter, directed by Bartlett Sher, beginning previews at the St. James Theatre on 7 December 2026.",
+    summary:
+      "DOLLY: A True Original Musical at the St. James Theatre on Broadway: previews, opening night, who sells the tickets and where each fact comes from.",
+    hook: [
+      "Opening nights are scheduled around critics and around holidays. This one is scheduled around a birthday: DOLLY opens on 19 January 2027, which is Dolly Parton's eighty-first.",
+      "She wrote the book with Maria S. Schlatter and she wrote the songs \u2014 \u201cI Will Always Love You\u201d, \u201cJolene\u201d, \u201cCoat of Many Colors\u201d and \u201c9 to 5\u201d are in it, alongside new music written for the show. Bartlett Sher directs.",
+      "Previews begin at the St. James Theatre on 7 December 2026, which gives the production six weeks in front of paying audiences before the reviews land. Below is the run as the production lists it.",
+    ],
+    sections: [
+      {
+        slug: "about",
+        image: "/covers/dolly-about.jpg",
+        imageAlt: "Cut-paper illustration: a wide-brimmed hat with a tall feather above a descending flight of steps.",
+        label: "About the show",
+        title: "What DOLLY actually is",
+        description:
+          "A bio-musical its subject wrote herself, in the songs she wrote first. What is in it, who made it, and what the opening date says about it.",
+        body: [
+          "It is an autobiography staged as a musical, and the unusual part is the authorship: the subject is also the book writer and the songwriter. Parton's own line for it is that her whole life has been a musical, a grand ole opera; the production follows her from the Smoky Mountains outward.",
+          "The songs are the ones people already know \u2014 \u201cI Will Always Love You\u201d, \u201cJolene\u201d, \u201cCoat of Many Colors\u201d, \u201c9 to 5\u201d \u2014 with new music written by Parton for the show. Bartlett Sher, a Tony winner, directs; the book is by Parton and Maria S. Schlatter.",
+          "The opening date is 19 January 2027 and it is her birthday. A production that schedules its press night around the subject's birthday rather than around the critics' diaries has said something about what the evening is for.",
+        ],
+      },
+      {
+        slug: "tickets",
+        image: "/covers/dolly-tickets.jpg",
+        imageAlt: "Cut-paper illustration: a single torn paper stub with a feather shape punched near one end.",
+        label: "Tickets",
+        title: "Buying a ticket for DOLLY",
+        description:
+          "Who sells seats for DOLLY at the St. James Theatre, when the box office opens, and what the production says about age.",
+        template: "tickets",
+        body: [
+          "ATG Entertainment operates the St. James Theatre and ATG Tickets is where the seats are sold; the production's own site links to nothing else. Telephone bookings go through +1 888 811 5040, and groups of ten or more through 1-800-BROADWAY, extension 2.",
+          "In-person sales at the St. James box office begin on 9 November 2026, four weeks before the first preview.",
+          "The production says the show may be inappropriate for ages 8 and under. That is the whole of the age guidance it publishes, and it is a recommendation rather than a rule at the door.",
         ],
       },
     ],

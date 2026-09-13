@@ -66,7 +66,9 @@ const glance = [
 // facts a reader came for is furniture, so it waits for a fourth and sits
 // under them.
 const heading = faqHeading(run);
+const bodyHeading = run.bodyHeading ?? "About this run";
 const jump = [
+  run.body && run.body.length > 0 && { id: "about", label: bodyHeading },
   run.sellers.length > 1 && { id: "sellers", label: "Where to buy" },
   venue && { id: "venue", label: venue.name },
   { id: "faq", label: heading },
@@ -164,6 +166,16 @@ const eventLd: Record<string, unknown> = {
     <Glance facts={glance} />
     {jump.length > 3 && <OnThisPage items={jump} />}
   </section>
+
+  {/* The prose, where the run has any. It sits above the seller list and
+      the theatre because it is the thing a reader who has not decided yet
+      is reading for; the buying blocks are for the reader who has. */}
+  {run.body && run.body.length > 0 && (
+    <section class="container prose" id="about">
+      <h2>{bodyHeading}</h2>
+      {run.body.map((p) => <p set:html={p} />)}
+    </section>
+  )}
 
   {run.sellers.length > 1 && (
     <section class="container" id="sellers">

@@ -12136,6 +12136,294 @@
         ]
       ]
     },
+    "/covers/dolly-about.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/dolly-about-480.avif"
+        ],
+        [
+          768,
+          "/covers/dolly-about-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dolly-about-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/dolly-about-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/dolly-about-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dolly-about-480.webp"
+        ],
+        [
+          768,
+          "/covers/dolly-about-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dolly-about-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/dolly-about-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/dolly-about-1536.webp"
+        ]
+      ]
+    },
+    "/covers/dolly-tickets.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/dolly-tickets-480.avif"
+        ],
+        [
+          768,
+          "/covers/dolly-tickets-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dolly-tickets-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/dolly-tickets-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/dolly-tickets-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dolly-tickets-480.webp"
+        ],
+        [
+          768,
+          "/covers/dolly-tickets-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dolly-tickets-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/dolly-tickets-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/dolly-tickets-1536.webp"
+        ]
+      ]
+    },
+    "/covers/fantasticks-about.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/fantasticks-about-480.avif"
+        ],
+        [
+          768,
+          "/covers/fantasticks-about-768.avif"
+        ],
+        [
+          1024,
+          "/covers/fantasticks-about-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/fantasticks-about-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/fantasticks-about-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/fantasticks-about-480.webp"
+        ],
+        [
+          768,
+          "/covers/fantasticks-about-768.webp"
+        ],
+        [
+          1024,
+          "/covers/fantasticks-about-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/fantasticks-about-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/fantasticks-about-1536.webp"
+        ]
+      ]
+    },
+    "/covers/fantasticks-tickets.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/fantasticks-tickets-480.avif"
+        ],
+        [
+          768,
+          "/covers/fantasticks-tickets-768.avif"
+        ],
+        [
+          1024,
+          "/covers/fantasticks-tickets-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/fantasticks-tickets-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/fantasticks-tickets-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/fantasticks-tickets-480.webp"
+        ],
+        [
+          768,
+          "/covers/fantasticks-tickets-768.webp"
+        ],
+        [
+          1024,
+          "/covers/fantasticks-tickets-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/fantasticks-tickets-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/fantasticks-tickets-1536.webp"
+        ]
+      ]
+    },
+    "/covers/galileo-about.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/galileo-about-480.avif"
+        ],
+        [
+          768,
+          "/covers/galileo-about-768.avif"
+        ],
+        [
+          1024,
+          "/covers/galileo-about-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/galileo-about-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/galileo-about-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/galileo-about-480.webp"
+        ],
+        [
+          768,
+          "/covers/galileo-about-768.webp"
+        ],
+        [
+          1024,
+          "/covers/galileo-about-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/galileo-about-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/galileo-about-1536.webp"
+        ]
+      ]
+    },
+    "/covers/galileo-tickets.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/galileo-tickets-480.avif"
+        ],
+        [
+          768,
+          "/covers/galileo-tickets-768.avif"
+        ],
+        [
+          1024,
+          "/covers/galileo-tickets-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/galileo-tickets-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/galileo-tickets-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/galileo-tickets-480.webp"
+        ],
+        [
+          768,
+          "/covers/galileo-tickets-768.webp"
+        ],
+        [
+          1024,
+          "/covers/galileo-tickets-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/galileo-tickets-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/galileo-tickets-1536.webp"
+        ]
+      ]
+    },
     "/covers/les-miserables-about.jpg": {
       "width": 1536,
       "height": 864,
@@ -12229,6 +12517,102 @@
         [
           1536,
           "/covers/les-miserables-tickets-1536.webp"
+        ]
+      ]
+    },
+    "/covers/lost-boys-about.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/lost-boys-about-480.avif"
+        ],
+        [
+          768,
+          "/covers/lost-boys-about-768.avif"
+        ],
+        [
+          1024,
+          "/covers/lost-boys-about-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/lost-boys-about-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/lost-boys-about-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/lost-boys-about-480.webp"
+        ],
+        [
+          768,
+          "/covers/lost-boys-about-768.webp"
+        ],
+        [
+          1024,
+          "/covers/lost-boys-about-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/lost-boys-about-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/lost-boys-about-1536.webp"
+        ]
+      ]
+    },
+    "/covers/lost-boys-tickets.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/lost-boys-tickets-480.avif"
+        ],
+        [
+          768,
+          "/covers/lost-boys-tickets-768.avif"
+        ],
+        [
+          1024,
+          "/covers/lost-boys-tickets-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/lost-boys-tickets-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/lost-boys-tickets-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/lost-boys-tickets-480.webp"
+        ],
+        [
+          768,
+          "/covers/lost-boys-tickets-768.webp"
+        ],
+        [
+          1024,
+          "/covers/lost-boys-tickets-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/lost-boys-tickets-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/lost-boys-tickets-1536.webp"
         ]
       ]
     },
@@ -12469,6 +12853,198 @@
         [
           1536,
           "/covers/venues-1536.webp"
+        ]
+      ]
+    },
+    "/covers/wanted-about.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/wanted-about-480.avif"
+        ],
+        [
+          768,
+          "/covers/wanted-about-768.avif"
+        ],
+        [
+          1024,
+          "/covers/wanted-about-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/wanted-about-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/wanted-about-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/wanted-about-480.webp"
+        ],
+        [
+          768,
+          "/covers/wanted-about-768.webp"
+        ],
+        [
+          1024,
+          "/covers/wanted-about-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/wanted-about-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/wanted-about-1536.webp"
+        ]
+      ]
+    },
+    "/covers/wanted-tickets.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/wanted-tickets-480.avif"
+        ],
+        [
+          768,
+          "/covers/wanted-tickets-768.avif"
+        ],
+        [
+          1024,
+          "/covers/wanted-tickets-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/wanted-tickets-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/wanted-tickets-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/wanted-tickets-480.webp"
+        ],
+        [
+          768,
+          "/covers/wanted-tickets-768.webp"
+        ],
+        [
+          1024,
+          "/covers/wanted-tickets-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/wanted-tickets-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/wanted-tickets-1536.webp"
+        ]
+      ]
+    },
+    "/covers/wicked-about.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/wicked-about-480.avif"
+        ],
+        [
+          768,
+          "/covers/wicked-about-768.avif"
+        ],
+        [
+          1024,
+          "/covers/wicked-about-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/wicked-about-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/wicked-about-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/wicked-about-480.webp"
+        ],
+        [
+          768,
+          "/covers/wicked-about-768.webp"
+        ],
+        [
+          1024,
+          "/covers/wicked-about-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/wicked-about-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/wicked-about-1536.webp"
+        ]
+      ]
+    },
+    "/covers/wicked-tickets.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/wicked-tickets-480.avif"
+        ],
+        [
+          768,
+          "/covers/wicked-tickets-768.avif"
+        ],
+        [
+          1024,
+          "/covers/wicked-tickets-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/wicked-tickets-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/wicked-tickets-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/wicked-tickets-480.webp"
+        ],
+        [
+          768,
+          "/covers/wicked-tickets-768.webp"
+        ],
+        [
+          1024,
+          "/covers/wicked-tickets-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/wicked-tickets-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/wicked-tickets-1536.webp"
         ]
       ]
     },
