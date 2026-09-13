@@ -271,8 +271,13 @@ export const items: NewsItem[] = [
 
   {
     slug: "der-teppich-von-bayeux-hat-frankreich-verlassen",
-    createdAt: "2026-09-13T22:18:00+04:00",
-    updatedAt: "2026-09-13T22:18:00+04:00",
+    image: "/covers/der-teppich-von-bayeux-hat-frankreich-verlassen.jpg",
+    imageAlt: "Ein rotes Papierband mit gezacktem Rand, in der Mitte geknickt, über einer dünnen grünen Linie auf cremefarbenem Grund",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    createdAt: "2026-09-13T22:04:00+04:00",
+    updatedAt: "2026-09-13T22:04:00+04:00",
     site: "vien",
     title: "Der Teppich von Bayeux hat Frankreich verlassen, und heuer kommt niemand mehr hinein",
     cardTitle: "Bayeux: ausverkauft bis 2027",

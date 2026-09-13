@@ -683,8 +683,13 @@ export const items: NewsItem[] = [
 
   {
     slug: "el-inah-escaneo-la-piedra-del-sol-para-los-angeles",
-    createdAt: "2026-09-13T22:32:00+04:00",
-    updatedAt: "2026-09-13T22:32:00+04:00",
+    image: "/covers/el-inah-escaneo-la-piedra-del-sol-para-los-angeles.jpg",
+    imageAlt: "Un disco de anillos concéntricos en rojo y ciruela sobre fondo crema, con un arco del mismo círculo desplazado a la derecha",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    createdAt: "2026-09-13T22:10:00+04:00",
+    updatedAt: "2026-09-13T22:10:00+04:00",
     site: "cmx",
     title: "Habrá una Piedra del Sol en Los Ángeles, y el INAH se quedó con el escaneo",
     cardTitle: "La Piedra del Sol, escaneada",

@@ -857,8 +857,13 @@ export const items: NewsItem[] = [
 
   {
     slug: "el-bordado-de-bayeux-salio-de-francia",
-    createdAt: "2026-09-13T22:22:00+04:00",
-    updatedAt: "2026-09-13T22:22:00+04:00",
+    image: "/covers/el-bordado-de-bayeux-salio-de-francia.jpg",
+    imageAlt: "Un hilo dorado que cruza en curva un fondo verde oscuro, con una aguja de papel en el extremo izquierdo",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    createdAt: "2026-09-13T22:06:00+04:00",
+    updatedAt: "2026-09-13T22:06:00+04:00",
     site: "mxo",
     title: "Los perdedores de 1066 bordaron la versión de los ganadores, y el resultado acaba de salir de Francia",
     cardTitle: "Bayeux sale de Francia",

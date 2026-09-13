@@ -667,8 +667,13 @@ export const items: NewsItem[] = [
 
   {
     slug: "lucas-museum-opens-on-a-tuesday",
-    createdAt: "2026-09-13T22:26:00+04:00",
-    updatedAt: "2026-09-13T22:26:00+04:00",
+    image: "/covers/lucas-museum-opens-on-a-tuesday.jpg",
+    imageAlt: "Two identical amber paper circles of the same size overlapping at the centre of a dark brown ground",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    createdAt: "2026-09-13T22:08:00+04:00",
+    updatedAt: "2026-09-13T22:08:00+04:00",
     site: "nyc42",
     title: "The Lucas Museum opens on a Tuesday, the one day of the week it is otherwise closed",
     cardTitle: "Lucas Museum opens 22 September",
