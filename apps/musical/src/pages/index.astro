@@ -125,14 +125,21 @@ const nextTickets = next ? ticketButtons(next) : [];
 
   <section class="container">
     <h2>On sale now</h2>
-    <EventCards runs={soon} labelOnMedia />
     {/* Two rows of chips, not a sentence per show. A reader who came for one
         title is scanning for that title, and "All 37 dates of Chicago The
         Musical" spends a whole line saying what the link already says. Shows
         first, because the title is what gets typed into a search box; then
-        the cities that have a page of their own, soonest first. */}
+        the cities that have a page of their own, soonest first.
+
+        Above the cards rather than below them: this is how a reader narrows
+        six cards to the one they came for, and a way of narrowing that only
+        appears after you have already read everything is furniture. */}
     <ChipNav items={showChips} label="Musicals on this site" />
     <ChipNav items={cityChips} label="Cities with a page of their own" />
+    {/* The show on the picture, the city above it. The picture is the show's
+        own art now, and a half-mask captioned "London" is a caption for the
+        wrong thing. */}
+    <EventCards runs={soon} lead="event" labelOnMedia />
     {/* Two shows, read on two different days: one date here would be wrong
         for one of them. The date lives on each show's own page, where it
         belongs to the listings it describes. */}

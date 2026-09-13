@@ -9,7 +9,7 @@
 // that have already played.
 import VentureGrid from "@dst/ui/VentureGrid.astro";
 import { ICONS } from "@dst/ui/icons";
-import { cityBySlug, formatRun, groupBySlug, runCardLine, runSellerLine, showBySlug, statusLabel, statusOf, venueBySlug, type Run, } from "../content";
+import { cityBySlug, formatRun, groupBySlug, runCardLine, runSellerLine, showBySlug, showImage, statusLabel, statusOf, venueBySlug, type Run, } from "../content";
 
 interface Props {
   runs: Run[];
@@ -28,12 +28,12 @@ interface Props {
       show's name six times over is wallpaper, so the tour or the country
       takes the line instead. */
   eyebrow?: "show" | "tour";
-  /** Whether the city photograph belongs on the card. It does wherever the
-      cards are different places — a tour, the front page, the same show
-      elsewhere. It does not where every card is the *same* place: on a
-      theatre's own page and under "Also on in this city", one photograph
-      would run identically down every card, which reads as two pictures of
-      two different things and is neither. The mark takes over there. */
+  /** Whether a picture belongs on the card at all. It does wherever the
+      cards differ in the thing the picture shows. It does not where every
+      card would carry the same one: on a theatre's own page and under "Also
+      on in this city", one photograph would run identically down every card,
+      which reads as two pictures of two different things and is neither. The
+      mark takes over there. */
   photo?: boolean;
   columns?: number;
   /** Passed straight through: the front page puts the city on the picture
@@ -49,11 +49,21 @@ const { runs, lead = "city", eyebrow = "show", venueInMeta = true, compact = fal
 // wrapping inside it.
 const across = columns ?? 3;
 
+// Which picture the cards carry is decided by what the cards differ in, not
+// by the page that drew them. A grid of one show in many cities — a tour, a
+// show's own page — differs by place, so the city photograph is the useful
+// picture. A grid of many shows in one city, or the front page, differs by
+// show, so the show's own art is: three identical London skylines under
+// three different titles say nothing about any of them, which is what the
+// front page looked like before this.
+const oneShow = new Set(runs.map((run) => run.show)).size <= 1;
+
 const items = runs.map((run) => {
   const place = cityBySlug(run.city);
   const city = place?.name ?? run.city;
   const show = showBySlug(run.show)?.title ?? run.show;
   const venue = run.venue ? venueBySlug(run.venue)?.name : undefined;
+  const art = showImage(run.show);
   const tour = eyebrow === "tour"
     ? (run.group ? groupBySlug(run.show, run.group)?.name : undefined) ?? place?.country
     : undefined;
@@ -68,14 +78,15 @@ const items = runs.map((run) => {
     inProgress: statusOf(run) === "announced",
     text: compact ? runSellerLine(run) : runCardLine(run),
     meta: venue && venueInMeta ? `${formatRun(run)} · ${venue}` : formatRun(run),
-    // The city, not the show: there is no production photography licensed
-    // yet, and a reader scanning thirty-three stops recognises Newcastle
-    // faster than they read it. The mark stays as the fallback for a city
-    // with no picture. A card is a link, so it can hold neither a caption nor
-    // the two links a caption needs: the photographer and the licence are
-    // named on the city's own page, where the same picture runs full size.
-    image: photo ? place?.image : undefined,
-    imageAlt: photo ? place?.imageAlt : undefined,
+    // A reader scanning thirty-three stops recognises Newcastle faster than
+    // they read it; a reader scanning six shows recognises the half-mask.
+    // The show's art is the fallback for a city with no picture and the other
+    // way round, and the mark is the fallback for neither. A card is a link,
+    // so it can hold neither a caption nor the two links a caption needs: the
+    // photographer and the licence are named on the city's own page, where
+    // the same picture runs full size.
+    image: photo ? (oneShow ? place?.image ?? art?.image : art?.image ?? place?.image) : undefined,
+    imageAlt: photo ? (oneShow ? place?.imageAlt ?? art?.imageAlt : art?.imageAlt ?? place?.imageAlt) : undefined,
     icon: ICONS.stage,
   };
 });

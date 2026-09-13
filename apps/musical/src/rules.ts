@@ -27,6 +27,19 @@ export const venueBySlug = (slug: string) => venues.find((v) => v.slug === slug)
 export const cityBySlug = (slug: string) => cities.find((c) => c.slug === slug);
 export const groupBySlug = (show: string, slug: string) =>
   groups.find((g) => g.show === show && g.slug === slug);
+/** The picture that stands for a show.
+ *
+ *  There is no production photography licensed, so what a show has is the
+ *  cut-paper cover of its own first illustrated section — the fedora on a
+ *  bentwood chair, the half-mask beside the chandelier drops. That art was
+ *  drawn to stand for the show, which is exactly what a card needs, so a
+ *  show carries no second image field that could fall out of step with it. */
+export function showImage(slug: string): { image: string; imageAlt: string } | undefined {
+  const show = shows.find((s) => s.slug === slug);
+  const section = show?.sections.find((sec) => sec.image && sec.imageAlt);
+  return section ? { image: section.image!, imageAlt: section.imageAlt! } : undefined;
+}
+
 export const runsFor = (show: string) => runs.filter((r) => r.show === show);
 export const runsInGroup = (show: string, group: string) =>
   runs.filter((r) => r.show === show && r.group === group);
