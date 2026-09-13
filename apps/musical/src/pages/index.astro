@@ -128,12 +128,16 @@ const nextVenue = next?.venue ? venueBySlug(next.venue) : undefined;
 const nextTickets = next ? ticketButtons(next) : [];
 ---
 <Layout
-  title="Musicals on sale now"
+  title="Musicals on sale now: dates and tickets"
   description="Musicals on sale now: which theatre, which dates, and who is actually selling. Every listing read from the production's own source and dated."
 >
   <Hero
-    eyebrow="Dates, theatres and sellers"
-    title="What is on, where, and who is selling it"
+    eyebrow="West End, Broadway and on tour"
+    {/* The head keyword first, because this is the one h1 on the site we
+        name ourselves and it was spending the line on a question nobody
+        types. The edge stays at the end: naming the actual seller is what
+        this site does that a listing aggregator does not. */}
+    title="Musicals on sale now, and who is actually selling them"
     lede="The same show fills a 17,000-seat arena in Dubai and a seaside theatre in north Wales — different room, different seller, different idea of what a ticket costs. This site lists all of it."
     asideLabel="The next run"
   >
@@ -158,7 +162,9 @@ const nextTickets = next ? ticketButtons(next) : [];
   </Hero>
 
   <section class="container">
-    <h2>On sale now</h2>
+    {/* Not "On sale now" a second time: the h1 has just said it. This is the
+        same wording the city and country pages use over the same table. */}
+    <h2>What is on, soonest first</h2>
     {/* Two rows of chips, not a sentence per show. A reader who came for one
         title is scanning for that title, and "All 37 dates of Chicago The
         Musical" spends a whole line saying what the link already says. Shows
