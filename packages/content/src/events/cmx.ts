@@ -769,7 +769,7 @@ export const items: EventItem[] = [
   {
     slug: "ultra-mexico-2026",
     createdAt: "2026-09-14T12:00:00+04:00",
-    updatedAt: "2026-09-14T12:00:00+04:00",
+    updatedAt: "2026-09-15T00:15:00+04:00",
     site: "cmx",
     image: "/covers/ultra-mexico-2026.jpg",
     imageAlt: "Cinco rectángulos de papel en magenta y granate, de alturas distintas, sobre un fondo crema, con un pequeño sol dorado con rayos suspendido sobre ellos",
@@ -798,13 +798,13 @@ export const items: EventItem[] = [
       verifiedOn: "2026-09-14",
     },
     body: [
-      "La marca no volvía a México desde hace años, y cuando vuelve no lo hace en un autódromo ni en un parque: lo hace en el estadio que se está preparando para el Mundial.",
+      "Ultra no vuelve a México en un autódromo ni en un parque: vuelve al estadio donde arrancó el Mundial cuatro meses antes.",
       "## Cuándo y dónde es Ultra México 2026",
       "<strong>Sábado 7 y domingo 8 de noviembre de 2026</strong>, en el <strong>Estadio Banorte</strong>, Calzada de Tlalpan 3465, Santa Úrsula Coapa, Coyoacán. Es la <strong>tercera edición</strong> del festival en México.",
       "## El cartel, fase 1",
-      "Diecisiete nombres anunciados hasta ahora, entre ellos <strong>Afrojack</strong>, <strong>Alesso</strong>, <strong>Armin van Buuren</strong>, <strong>Artbat</strong>, <strong>Boris Brejcha</strong>, <strong>Boys Noize</strong>, <strong>CamelPhat</strong>, <strong>Eric Prydz</strong>, <strong>Hardwell</strong>, <strong>Klangkuenstler</strong>, <strong>Levity</strong>, <strong>Marlon Hoffstadt</strong>, <strong>Miss Monique</strong>, <strong>Sara Landry</strong>, <strong>Subtronics</strong> y <strong>Steve Angello</strong>. El propio cartel dice «más artistas por anunciarse». Dos escenarios confirmados: el <strong>Ultra Main Stage</strong> y <strong>RESISTANCE</strong>, la rama de techno del festival.",
+      "Dieciséis nombres anunciados hasta ahora, entre ellos <strong>Afrojack</strong>, <strong>Alesso</strong>, <strong>Armin van Buuren</strong>, <strong>Artbat</strong>, <strong>Boris Brejcha</strong>, <strong>Boys Noize</strong>, <strong>CamelPhat</strong>, <strong>Eric Prydz</strong>, <strong>Hardwell</strong>, <strong>Klangkuenstler</strong>, <strong>Levity</strong>, <strong>Marlon Hoffstadt</strong>, <strong>Miss Monique</strong>, <strong>Sara Landry</strong>, <strong>Subtronics</strong> y <strong>Steve Angello</strong>. El propio cartel dice «más artistas por anunciarse». Dos escenarios confirmados: el <strong>Ultra Main Stage</strong> y <strong>RESISTANCE</strong>, la rama de techno del festival.",
       "## Boletos",
-      "Boleto general de 2 días: los primeros tres precios (<strong>$2,550</strong>, <strong>$2,700</strong> y <strong>$3,000</strong> pesos) ya se agotaron; la fase que sigue en venta es la cuarta, a <strong>$3,500</strong>. En VIP de 2 días, la primera fase (<strong>$4,400</strong>) y la tercera (<strong>$5,000</strong>) están agotadas; la fase en venta es la cuarta, a <strong>$6,000</strong>. El sitio oficial aclara que los precios no incluyen cargo por servicio ni impuestos.",
+      "Boleto general de 2 días: los primeros tres precios (<strong>$2,550</strong>, <strong>$2,700</strong> y <strong>$3,000</strong> pesos) ya se agotaron; la fase que sigue en venta es la cuarta, a <strong>$3,500</strong>. En VIP de 2 días, la primera fase (<strong>$4,400</strong>) y la tercera (<strong>$5,000</strong>) están agotadas; la fase en venta es la cuarta, a <strong>$6,000</strong>. El sitio oficial aclara que los precios no incluyen cargo por servicio ni impuestos. El cartel marca el evento como <strong>18+</strong>.",
       "## Cómo llegar al Estadio Banorte",
       "No hay estación de Metro a la puerta. La ruta es <strong>Metro Línea 2</strong> hasta <strong>Tasqueña</strong>, transbordo al <strong>Tren Ligero</strong>, y bajar en <strong>Estadio Azteca</strong> o <strong>El Vergel</strong> — de diez a quince minutos caminando desde cualquiera de las dos.",
     ],
@@ -815,10 +815,10 @@ export const items: EventItem[] = [
       },
       {
         q: "¿Ya está completo el cartel?",
-        a: "No. La fase 1 nombra diecisiete actos, entre ellos Afrojack, Armin van Buuren y Eric Prydz; el resto se anuncia después.",
+        a: "No. La fase 1 nombra dieciséis actos, entre ellos Afrojack, Armin van Buuren y Eric Prydz; el resto se anuncia después.",
       },
     ],
     expertise:
-      "El Estadio Banorte es el nombre comercial actual del recinto que casi todos siguen llamando Estadio Azteca, y es una de las sedes del Mundial 2026 — lo que quiere decir que noviembre es de las últimas fechas antes de que el calendario del estadio se llene de obras y logística mundialista. La otra cosa que conviene saber antes de comprar: los boletos de acceso general y VIP suben de precio por fases, y para el 14 de septiembre ya iban en la cuarta banda publicada de cada tipo, con las tres anteriores agotadas — quien esperaba una fase más barata ya la perdió.",
+      "El Estadio Banorte es el nombre comercial actual del recinto que casi todos siguen llamando Estadio Azteca, y es donde se jugó el partido inaugural del Mundial, el 11 de junio de 2026. Noviembre lo encuentra cuatro meses después del torneo, con el estadio ya libre del calendario de la FIFA y disponible para lo que no es futbol. La otra cosa que conviene saber antes de comprar: los boletos de acceso general y VIP suben de precio por fases, y para el 14 de septiembre ya iban en la cuarta banda publicada de cada tipo, con las tres anteriores agotadas — quien esperaba una fase más barata ya la perdió.",
   },
 ];
