@@ -765,4 +765,60 @@ export const items: EventItem[] = [
     expertise:
       "La diferencia entre los dos boletos es de casi mil pesos y no significa lo mismo para todos. Quien ya tiene Pase Anual paga $550 y entra a las ocho atracciones; quien no lo tiene paga desde $1,549 por el día completo, que es prácticamente el costo de un pase anual con descuento. Dicho de otro modo: si piensas ir dos veces en la temporada, el pase se paga solo. La segunda cuenta es de calendario — la temporada dura hasta el 16 de noviembre, así que las dos semanas posteriores al 2 de noviembre son las mismas ocho atracciones con la mitad de la fila, y son las que casi nadie considera porque ya pasó Halloween.",
   },
+
+  {
+    slug: "ultra-mexico-2026",
+    createdAt: "2026-09-14T12:00:00+04:00",
+    updatedAt: "2026-09-14T12:00:00+04:00",
+    site: "cmx",
+    image: "/covers/ultra-mexico-2026.jpg",
+    imageAlt: "Cinco rectángulos de papel en magenta y granate, de alturas distintas, sobre un fondo crema, con un pequeño sol dorado con rayos suspendido sobre ellos",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Ultra México 2026",
+    summary:
+      "Ultra Music Festival vuelve a la Ciudad de México el 7 y 8 de noviembre, en el Estadio Banorte, con Afrojack, Armin van Buuren y Eric Prydz en el primer cartel, ya con boletos en su cuarta fase de precio.",
+    start: "2026-11-07",
+    end: "2026-11-08",
+    utcOffset: "-06:00",
+    venue: "Estadio Banorte, Calzada de Tlalpan 3465, Santa Úrsula Coapa, Coyoacán",
+    city: "Ciudad de México",
+    category: "Festival",
+    organizer: "Ultra Music Festival",
+    tickets: {
+      priceFrom: 3500,
+      priceTo: 6000,
+      currency: "MXN",
+    },
+    ticket: { url: "https://ultramexico.com/tickets", label: "Boletos en el sitio oficial" },
+    source: {
+      name: "Ultra México",
+      url: "https://ultramexico.com/",
+      verifiedOn: "2026-09-14",
+    },
+    body: [
+      "La marca no volvía a México desde hace años, y cuando vuelve no lo hace en un autódromo ni en un parque: lo hace en el estadio que se está preparando para el Mundial.",
+      "## Cuándo y dónde es Ultra México 2026",
+      "<strong>Sábado 7 y domingo 8 de noviembre de 2026</strong>, en el <strong>Estadio Banorte</strong>, Calzada de Tlalpan 3465, Santa Úrsula Coapa, Coyoacán. Es la <strong>tercera edición</strong> del festival en México.",
+      "## El cartel, fase 1",
+      "Diecisiete nombres anunciados hasta ahora, entre ellos <strong>Afrojack</strong>, <strong>Alesso</strong>, <strong>Armin van Buuren</strong>, <strong>Artbat</strong>, <strong>Boris Brejcha</strong>, <strong>Boys Noize</strong>, <strong>CamelPhat</strong>, <strong>Eric Prydz</strong>, <strong>Hardwell</strong>, <strong>Klangkuenstler</strong>, <strong>Levity</strong>, <strong>Marlon Hoffstadt</strong>, <strong>Miss Monique</strong>, <strong>Sara Landry</strong>, <strong>Subtronics</strong> y <strong>Steve Angello</strong>. El propio cartel dice «más artistas por anunciarse». Dos escenarios confirmados: el <strong>Ultra Main Stage</strong> y <strong>RESISTANCE</strong>, la rama de techno del festival.",
+      "## Boletos",
+      "Boleto general de 2 días: los primeros tres precios (<strong>$2,550</strong>, <strong>$2,700</strong> y <strong>$3,000</strong> pesos) ya se agotaron; la fase que sigue en venta es la cuarta, a <strong>$3,500</strong>. En VIP de 2 días, la primera fase (<strong>$4,400</strong>) y la tercera (<strong>$5,000</strong>) están agotadas; la fase en venta es la cuarta, a <strong>$6,000</strong>. El sitio oficial aclara que los precios no incluyen cargo por servicio ni impuestos.",
+      "## Cómo llegar al Estadio Banorte",
+      "No hay estación de Metro a la puerta. La ruta es <strong>Metro Línea 2</strong> hasta <strong>Tasqueña</strong>, transbordo al <strong>Tren Ligero</strong>, y bajar en <strong>Estadio Azteca</strong> o <strong>El Vergel</strong> — de diez a quince minutos caminando desde cualquiera de las dos.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo es Ultra México 2026?",
+        a: "<strong>7 y 8 de noviembre de 2026</strong>, en el Estadio Banorte, Ciudad de México.",
+      },
+      {
+        q: "¿Ya está completo el cartel?",
+        a: "No. La fase 1 nombra diecisiete actos, entre ellos Afrojack, Armin van Buuren y Eric Prydz; el resto se anuncia después.",
+      },
+    ],
+    expertise:
+      "El Estadio Banorte es el nombre comercial actual del recinto que casi todos siguen llamando Estadio Azteca, y es una de las sedes del Mundial 2026 — lo que quiere decir que noviembre es de las últimas fechas antes de que el calendario del estadio se llene de obras y logística mundialista. La otra cosa que conviene saber antes de comprar: los boletos de acceso general y VIP suben de precio por fases, y para el 14 de septiembre ya iban en la cuarta banda publicada de cada tipo, con las tres anteriores agotadas — quien esperaba una fase más barata ya la perdió.",
+  },
 ];

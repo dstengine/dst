@@ -1255,7 +1255,7 @@ export const items: EventItem[] = [
   {
     slug: "ultra-miami-2027",
     createdAt: "2026-09-08T20:54:08+04:00",
-    updatedAt: "2026-09-13T01:40:00+04:00",
+    updatedAt: "2026-09-14T12:00:00+04:00",
     site: "nyc42",
     image: "/covers/ultra-miami-2027.jpg",
     imageAlt: "A long flat teal paper band running the width of a dark brown ground, with two narrow magenta paper spires standing on it near the left",
@@ -1276,7 +1276,7 @@ export const items: EventItem[] = [
     source: {
       name: "Ultra Music Festival",
       url: "https://ultramusicfestival.com/",
-      verifiedOn: "2026-09-08",
+      verifiedOn: "2026-09-14",
     },
     ticket: { url: "https://ultramusicfestival.com/", label: "Tickets" },
     body: [
@@ -1284,7 +1284,7 @@ export const items: EventItem[] = [
       "## Ultra Miami 2027 dates",
       "<strong>March 26 to 28, 2027</strong>, at <strong>Bayfront Park</strong>, Miami, Florida.",
       "## What is not published yet",
-      "No 2027 line-up at the time of writing. Tickets are sold before it is announced, which is the same arrangement Coachella runs.",
+      "No 2027 line-up at the time of writing. Tickets are not on general sale either: the festival has opened a waitlist for both the GA and VIP 3-day tickets, described as the way to \"secure tickets at the best possible price\" once a phase opens. Tickets being sold before the line-up is announced is the same arrangement Coachella runs.",
     ],
     faq: [
       {
@@ -1294,6 +1294,10 @@ export const items: EventItem[] = [
       {
         q: "Is the line-up out?",
         a: "Not yet. The festival has published the dates and the venue; anything else circulating for 2027 is not from Ultra.",
+      },
+      {
+        q: "Can I buy tickets now?",
+        a: "Not directly. Ultra has opened a waitlist for the GA and VIP 3-day tickets rather than a general sale; VIP is marked \"coming soon\" on the festival's own site.",
       },
     ],
     expertise:
