@@ -51,12 +51,15 @@ const hubs = [
     imageAlt: "A young conifer sapling planted in a forest clearing in the Urals, mountains in the background.",
   },
   {
-    href: "https://llc.dst.llc",
-    title: "Company formation in Dubai — llc.dst.llc",
+    // Points inward, not at the subdomain: this card is on an indexable
+    // page, and so now is what it links to. The section carries one link
+    // on to llc.dst.llc for anyone who wants the feed.
+    href: "/llc/",
+    title: "Company formation in Dubai — free zones, mainland, tax",
     eyebrow: "Company formation",
     status: "Live",
     name: "Company formation",
-    text: "Free zones, mainland, banking, payment processing — company formation in Dubai.",
+    text: "Free zones, mainland, tax, banking, payments — what a Dubai company costs and what it owes.",
     image: "/covers/hub-llc.jpg",
     imageAlt: "Cut-paper illustration: a sealed document standing in front of a cluster of towers.",
     icon: ICONS.briefcase,

@@ -1,0 +1,142 @@
+---
+// Free zones, from the angle the subdomain does not take.
+//
+// llc.dst.llc explains how to pick a zone. This page answers the question a
+// founder asks after picking one and signing: what did the licence actually
+// buy, and what did it not. The customs line and the mainland restriction
+// are the two halves people get wrong in opposite directions.
+import VerticalLayout from "../../layouts/VerticalLayout.astro";
+import PageHero from "@dst/ui/PageHero.astro";
+import Callout from "@dst/ui/Callout.astro";
+import Faq from "@dst/ui/Faq.astro";
+
+const faqItems = [
+  {
+    q: "How many free zones does Dubai have?",
+    a: "The UAE government lists twenty-two of them in Dubai alone, from Jebel Ali Free Zone and Dubai Airport Free Zone to DMCC, DIFC, Dubai Internet City, Dubai Design District, Dubai South and Meydan. Each is its own authority with its own register, its own activity list and its own price.",
+  },
+  {
+    q: "Can a free zone company sell to customers on the Dubai mainland?",
+    a: "Not directly, as a rule. A free zone company is treated as outside mainland jurisdiction. To sell locally it works through a licensed mainland distributor, or opens a mainland branch or company of its own.",
+  },
+  {
+    q: "What does the customs exemption cover?",
+    a: "Goods imported into the zone carry 0% customs duty, and goods stored there for re-export carry none either. Duty becomes payable at the moment the goods move into the mainland market.",
+  },
+  {
+    q: "How long does the licence take?",
+    a: "After review and approval, within fourteen working days. Zones ask for less paperwork than the mainland route, which is most of why the timeline is shorter.",
+  },
+  {
+    q: "Which legal forms can a free zone register?",
+    a: "A Free Zone Establishment, a Free Zone Company, a private limited liability company, a public joint stock company, or a branch of a local or international company. Not every zone registers every form, so the form is a question for the zone, not for the country.",
+  },
+];
+---
+<VerticalLayout
+  vertical="llc"
+  current="/llc/zones/"
+  prose
+  title="Dubai free zones: what the licence actually buys"
+  description="Twenty-two free zones in Dubai, 0% customs duty inside them, fourteen working days to a licence — and no direct selling on the mainland. What the zone licence covers, and where it stops."
+>
+  <PageHero eyebrow="Free zones" title="Dubai free zones: what the licence actually buys">
+    <p class="lede">
+      A Dubai free zone licence buys three things that are easy to state:
+      full foreign ownership, nothing to pay in customs duty on goods coming
+      into the zone, and a decision in about fourteen working days. It does
+      not buy the right to sell to the person standing in Deira. That
+      sentence is the whole of the free-zone-versus-mainland question, and
+      nearly every regret in this subject is a founder discovering it late.
+    </p>
+  </PageHero>
+
+  <section class="container">
+    <h2>Twenty-two zones, and they are not interchangeable</h2>
+    <p>
+      The UAE government's own directory of free zone authorities lists
+      twenty-two in Dubai: <strong>Jebel Ali Free Zone</strong>,
+      <strong>Dubai Airport Free Zone</strong>,
+      <strong>DMCC</strong>, <strong>DIFC</strong>,
+      <strong>Dubai Internet City</strong>, Dubai Media City, Dubai
+      Production City, Dubai Studio City, Dubai Outsource City, Dubai
+      Knowledge Park, Dubai International Academic City, Dubai Science Park,
+      Dubai Design District, Dubai Silicon Oasis, Dubai HealthCare City,
+      Dubai Humanitarian City, Dubai Maritime City, Dubai CommerCity, Gold
+      and Diamond Park, National Industries Park, Dubai South and Meydan.
+    </p>
+    <p>
+      Each one is a separate authority with a separate register. A zone
+      decides which activities it will licence, which company forms it will
+      register, and what it charges. DMCC, which covers Jumeirah Lakes
+      Towers and Uptown Dubai, runs activities from tea and coffee through
+      gold, diamonds and coloured gemstones to energy, gaming, crypto and
+      AI. A zone built for media will not licence a commodities trade, and
+      no amount of arguing changes that — it is a different register.
+    </p>
+
+    <h2>The customs line is a place, not a status</h2>
+    <p>
+      Goods imported into a free zone carry <strong>0% customs duty</strong>.
+      Goods held in the zone for re-export carry none either. Duty becomes
+      payable when the goods cross into the mainland market — the exemption
+      attaches to where the goods physically are, not to who owns them. This
+      is why zones sit next to ports and airports, and why the freedom to
+      import, export and re-export through the UAE is the part of the
+      arrangement that works exactly as advertised.
+    </p>
+
+    <h2>Where the zone licence stops</h2>
+    <p>
+      A free zone company is treated as outside mainland jurisdiction. It
+      trades inside its zone and internationally without restriction, and its
+      access to the mainland market is regulated. Selling locally means one
+      of two things: a licensed mainland distributor, or a mainland branch or
+      company of its own. Direct mainland sales without the mainland licence
+      or approval are generally not permitted.
+    </p>
+    <p>
+      Dubai wrote its own rules over the top of the federal position in
+      <strong>Executive Council Resolution No. 11 of 2025</strong>, on how
+      free zone establishments may conduct activities within the emirate.
+      Anyone whose plan depends on reaching mainland customers should read
+      that before choosing the zone, not after.
+    </p>
+  </section>
+
+  <Callout kind="warn">
+    <p>
+      The free zone corporate tax incentive is conditional, not automatic.
+      It holds while the company complies with its zone's regulatory
+      requirements and does not conduct business in the UAE mainland. A zone
+      company that starts selling into the mainland has changed its own tax
+      position, not preserved it — see <a href="/llc/taxation/" title="Corporate tax and VAT for a Dubai company">what the company owes</a>.
+    </p>
+  </Callout>
+
+  <section class="container">
+    <h2>What to settle before signing</h2>
+    <ul>
+      <li>Where the customers are. Mainland customers mean a mainland route, a distributor, or a second entity — see <a href="/llc/mainland/" title="Mainland company setup in Dubai">the mainland page</a>.</li>
+      <li>Which legal form the zone will register: FZE, FZ Co., LLC, PJSC or a branch. Not every zone offers every one.</li>
+      <li>Whether the activity needs a second regulator. Media answers to the National Media Authority; food and beverage to Dubai Municipality; financial services inside DIFC to the DFSA.</li>
+      <li>The trade name, which must carry the legal form, must not be registered already, and must not borrow a religion, an authority or somebody else's logo.</li>
+    </ul>
+    <p>
+      The steps themselves are on <a href="/llc/registration/" title="Registering a company in Dubai, step by step">the registration page</a>, and what Dubai is doing this
+      quarter is on <a href="/news/" title="What's changing in Dubai">the news page</a>.
+    </p>
+  </section>
+
+  <Faq items={faqItems} />
+
+  <section class="container">
+    <p class="source-note">
+      Free zone directory, customs treatment, mainland restrictions, company
+      forms and the fourteen-working-day figure: the Official Platform of the
+      UAE Government, doing business in free zones, read 15 September 2026.
+      Nothing here is legal advice, and a zone's own rulebook outranks any
+      summary of it.
+    </p>
+  </section>
+</VerticalLayout>

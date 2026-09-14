@@ -1,0 +1,146 @@
+---
+// Both taxes on one page, because the same number means two things.
+//
+// AED 375,000 is the corporate tax threshold and the VAT registration
+// threshold, and they are not the same threshold: one is taxable income,
+// the other is turnover. Founders conflate them constantly, which is the
+// reason this page exists rather than two thinner ones.
+import VerticalLayout from "../../layouts/VerticalLayout.astro";
+import PageHero from "@dst/ui/PageHero.astro";
+import Callout from "@dst/ui/Callout.astro";
+import Faq from "@dst/ui/Faq.astro";
+
+const faqItems = [
+  {
+    q: "What is the corporate tax rate in Dubai?",
+    a: "0% on taxable income up to AED 375,000 and 9% above it, under Federal Decree-Law No. 47 of 2022. Businesses entered the regime from their first financial year starting on or after 1 June 2023.",
+  },
+  {
+    q: "What is the VAT rate, and when must a company register?",
+    a: "VAT is 5%, levied at the point of sale, and has applied since 1 January 2018. Registration is mandatory once a UAE-based business exceeds AED 375,000 of taxable supplies and imports per annum, and optional above AED 187,500.",
+  },
+  {
+    q: "Is the AED 375,000 the same figure twice?",
+    a: "The number is the same and the thing measured is not. For corporate tax it is taxable income — what is left after costs. For VAT it is taxable supplies and imports — turnover. A company can cross the VAT line and owe no corporate tax at all.",
+  },
+  {
+    q: "Who administers both?",
+    a: "The Federal Tax Authority. It administers, collects and enforces corporate tax, and handles VAT registration and returns through its eServices.",
+  },
+  {
+    q: "Does a free zone company escape corporate tax?",
+    a: "Only on terms. The regime honours the incentives free zones offer where the company meets its zone's regulatory requirements and does not conduct business in the UAE mainland. The zone licence alone is not an exemption.",
+  },
+];
+---
+<VerticalLayout
+  vertical="llc"
+  current="/llc/taxation/"
+  prose
+  title="Dubai company tax: 9% corporate, 5% VAT"
+  description="What a Dubai company actually owes: 0% corporate tax to AED 375,000 and 9% above, 5% VAT from AED 375,000 of turnover, both administered by the Federal Tax Authority."
+>
+  <PageHero eyebrow="Tax" title="Dubai company tax: 9% corporate, 5% VAT">
+    <p class="lede">
+      Two taxes, one authority, and one number that appears in both and means
+      something different each time. Corporate tax is 0% on taxable income up
+      to <strong>AED 375,000</strong> and 9% above it. VAT is 5%, and
+      registration becomes mandatory once taxable supplies and imports pass
+      <strong>AED 375,000</strong> a year. The first is profit. The second is
+      turnover. Reading them as the same line is the most expensive
+      arithmetic error in this subject.
+    </p>
+  </PageHero>
+
+  <section class="container">
+    <h2>Corporate tax: 9%, above a floor</h2>
+    <p>
+      <strong>Federal Decree-Law No. 47 of 2022</strong> brought corporate
+      tax in. Businesses entered the regime from the beginning of their first
+      financial year starting on or after <strong>1 June 2023</strong>, so
+      every company trading in Dubai today is inside it. The rate is
+      <strong>0%</strong> on taxable income up to AED 375,000 and
+      <strong>9%</strong> above that, and the
+      <strong>Federal Tax Authority</strong> administers, collects and
+      enforces it.
+    </p>
+    <p>
+      It reaches businesses under a commercial licence, free zone businesses
+      on the conditions below, and foreign entities and individuals carrying
+      on a trade in the UAE in an ongoing or regular manner. There is no
+      version of "registered in Dubai" that sits outside it by default.
+    </p>
+
+    <h2>VAT: 5%, above a different floor</h2>
+    <p>
+      Value Added Tax was introduced in the UAE on <strong>1 January
+      2018</strong> and is levied at <strong>5 per cent</strong> at the point
+      of sale. A UAE-based business must register once its taxable supplies
+      and imports exceed <strong>AED 375,000</strong> per annum. Below that,
+      registration is optional from <strong>AED 187,500</strong> — worth
+      taking when the business buys more VAT than it charges, and worth
+      declining when it does not. Registered businesses report what they have
+      charged and what they have paid, online, through the Federal Tax
+      Authority.
+    </p>
+    <p>
+      The voluntary threshold is the one founders skip past. A company
+      spending heavily on UAE suppliers in its first year and invoicing
+      abroad can be structurally in credit, and cannot claim any of it
+      without being registered.
+    </p>
+
+    <h2>The free zone condition, stated exactly</h2>
+    <p>
+      The corporate tax regime continues to honour the incentives free zones
+      already offer, on two conditions held together: the company complies
+      with its zone's regulatory requirements, <em>and</em> it does not
+      conduct business in the UAE mainland. Either one failing ends the
+      incentive. A zone company that starts selling into the mainland has not
+      kept its position — it has changed it, and the change is retrospective
+      to the facts, not to the day anyone notices.
+    </p>
+  </section>
+
+  <Callout kind="warn">
+    <p>
+      Being below the corporate tax threshold does not put a company outside
+      the regime — it puts it at a rate of nothing. Registration and filing
+      obligations belong to being in scope, not to owing money. A first-year
+      company with a loss still has a return to file.
+    </p>
+  </Callout>
+
+  <section class="container">
+    <h2>What this changes about the setup decision</h2>
+    <p>
+      Licence fees are a variable that moves with the zone, the activity and
+      the visa count. The rates above are fixed in federal law and identical
+      wherever in Dubai the company sits. Comparing setup quotes before
+      working out which side of each threshold the business will land on is
+      comparing the small number and guessing the large one.
+    </p>
+    <p>
+      Where the company is registered is on
+      <a href="/llc/zones/" title="Dubai free zones compared">free zones</a> and
+      <a href="/llc/mainland/" title="Mainland company setup in Dubai">the mainland</a>;
+      what it takes to get there is on
+      <a href="/llc/registration/" title="Registering a company in Dubai, step by step">registration</a>;
+      and the banking relationship that has to exist before any of it can be
+      paid for is on <a href="/llc/banking/" title="Opening a business account in Dubai">banking</a>.
+    </p>
+  </section>
+
+  <Faq items={faqItems} />
+
+  <section class="container">
+    <p class="source-note">
+      Corporate tax rates, threshold, commencement, scope and the free zone
+      condition: the Official Platform of the UAE Government, corporate tax.
+      VAT rate, introduction date and both registration thresholds: the same
+      platform, value added tax. Both read 15 September 2026. Nothing on this
+      page is tax advice, and a company's own position is a question for its
+      accountant.
+    </p>
+  </section>
+</VerticalLayout>

@@ -1,0 +1,132 @@
+---
+// The mainland, from the ownership end.
+//
+// The subdomain walks the mainland setup process. This page takes the one
+// thing that changed the arithmetic — the 51 per cent rule going away — and
+// says precisely how far it went, because the list of activities it did not
+// reach is where the surprises live.
+import VerticalLayout from "../../layouts/VerticalLayout.astro";
+import PageHero from "@dst/ui/PageHero.astro";
+import Callout from "@dst/ui/Callout.astro";
+import Faq from "@dst/ui/Faq.astro";
+
+const faqItems = [
+  {
+    q: "Does a mainland company in Dubai still need an Emirati partner?",
+    a: "For most activities, no. Federal Decree-Law No. 26 of 2020, in force from early 2021, abolished the requirement for a majority Emirati shareholder or a local partner, and removed the obligation on branches of foreign companies to appoint a UAE national service agent.",
+  },
+  {
+    q: "Which activities are still closed to full foreign ownership?",
+    a: "Security and defence and activities of a military nature; telecommunications; banks, exchange houses, financing, insurance and the production of bank notes or coins; commercial agencies; organising Hajj and Umrah; Holy Quran recitation institutes; fish catching, natural pearl catching and the catching of marine animals.",
+  },
+  {
+    q: "Who decides what counts as strategic?",
+    a: "The UAE Cabinet. The law authorises it to set up a committee of the relevant authorities to identify activities of strategic impact; on that committee's recommendations the Cabinet determines the activities and sets licensing requirements, which may include limits on foreign ownership.",
+  },
+  {
+    q: "What changed for going public?",
+    a: "A company converting to a joint stock company may, with approval from the relevant authorities, offer up to 70 per cent of its shares in an initial public offering. The previous ceiling was 30 per cent.",
+  },
+  {
+    q: "Is the 2020 decree still the operative law?",
+    a: "Its changes were refined and consolidated by Federal Decree-Law No. 32 of 2021 on Commercial Companies, which is the law a mainland company is read under today.",
+  },
+];
+---
+<VerticalLayout
+  vertical="llc"
+  current="/llc/mainland/"
+  prose
+  title="Mainland company in Dubai: who may own 100% of it"
+  description="Since 2021 a foreign investor can own a Dubai mainland company outright — except in eleven named activity groups. What Federal Decree-Law No. 26 of 2020 changed, and what it left alone."
+>
+  <PageHero eyebrow="Mainland" title="Mainland company in Dubai: who may own 100% of it">
+    <p class="lede">
+      The rule that a mainland company needed a 51 per cent Emirati
+      shareholder is gone, and has been since early 2021. So is the
+      requirement that a branch of a foreign company appoint a UAE national
+      service agent. What remains is a short list of activities the opening
+      did not reach — and, separately, a Cabinet power to add more.
+    </p>
+  </PageHero>
+
+  <section class="container">
+    <h2>What the decree did</h2>
+    <p>
+      <strong>Federal Decree-Law No. 26 of 2020</strong>, in force from early
+      2021, overhauled the Commercial Companies Law of 2015 to permit
+      <strong>100 per cent foreign ownership</strong> of mainland companies.
+      Three things moved at once: the majority-Emirati-shareholder
+      requirement went, the local service agent for foreign branches went,
+      and the ceiling on an IPO rose from 30 per cent of shares to
+      <strong>70</strong>, subject to approval. Those changes were then
+      refined and consolidated into <strong>Federal Decree-Law No. 32 of
+      2021</strong> on Commercial Companies, which is the text a mainland
+      company is actually read under now.
+    </p>
+    <p>
+      The practical effect is that the mainland stopped being the expensive
+      option by default. Before 2021 the choice between a zone and the
+      mainland was partly a choice about giving away control. It is now a
+      choice about where the customers are — which is a much easier question,
+      and the one <a href="/llc/zones/" title="Dubai free zones compared">the free zone page</a> is about.
+    </p>
+
+    <h2>The eleven groups it did not reach</h2>
+    <p>
+      Full foreign ownership is not available for activities related to
+      security and defence, and activities of a military nature;
+      telecommunications; banks, exchange, financing, insurance and the
+      production of bank notes or coins; commercial agencies; the organising
+      of Hajj and Umrah; Holy Quran recitation institutes; fish catching;
+      natural pearl catching; and the catching of marine animals. The
+      published list also keeps an "other categories" line, which is not an
+      oversight — it is the seam the Cabinet power below runs through.
+    </p>
+
+    <h2>Strategic impact is a live power, not a closed list</h2>
+    <p>
+      The law authorises the UAE Cabinet to form a committee of the relevant
+      authorities to identify activities of <strong>strategic impact</strong>.
+      On that committee's recommendations the Cabinet determines which
+      activities qualify and sets their licensing requirements, and those
+      requirements may include restrictions on foreign ownership. So the
+      correct question before incorporating is not "was full ownership
+      allowed in 2021" but "what is my activity classified as today".
+    </p>
+  </section>
+
+  <Callout kind="warn">
+    <p>
+      Ownership and licensing are separate gates. An activity can be open to
+      100 per cent foreign ownership and still need a sector regulator's
+      approval before the economic department will issue anything — the
+      Central Bank for financial business, the Securities and Commodities
+      Authority for broking and investment advice, the TDRA for
+      telecommunications, MoHRE for recruitment. Clearing the first gate says
+      nothing about the second.
+    </p>
+  </Callout>
+
+  <section class="container">
+    <h2>What follows from choosing the mainland</h2>
+    <ul>
+      <li>A physical address that satisfies the economic department and the municipality, with the lease registered through <strong>Ejari</strong> in Dubai.</li>
+      <li>The nine-step licensing route, set out on <a href="/llc/registration/" title="Registering a company in Dubai, step by step">the registration page</a>.</li>
+      <li>Corporate tax from the first financial year, with no zone incentive to fall back on — see <a href="/llc/taxation/" title="Corporate tax and VAT for a Dubai company">tax and filing</a>.</li>
+      <li>Direct access to mainland customers, which is the entire reason to be here rather than in a zone.</li>
+    </ul>
+  </section>
+
+  <Faq items={faqItems} />
+
+  <section class="container">
+    <p class="source-note">
+      Decree references, the list of restricted activities, the IPO ceiling
+      and the strategic-impact committee: the Official Platform of the UAE
+      Government, full foreign ownership of commercial companies, read 15
+      September 2026. Nothing here is legal advice, and an activity's own
+      classification is a question for the licensing authority.
+    </p>
+  </section>
+</VerticalLayout>

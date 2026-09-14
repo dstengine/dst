@@ -1,0 +1,142 @@
+---
+// Financing, starting where a lender starts: the credit file.
+//
+// Product comparisons date within a quarter and we would be inventing the
+// numbers. The credit bureau's own mechanics do not date, are federal, and
+// explain the thing founders are actually surprised by — that a company's
+// thirty-six months of payment history is already on file before it ever
+// applies for anything.
+import VerticalLayout from "../../layouts/VerticalLayout.astro";
+import PageHero from "@dst/ui/PageHero.astro";
+import Callout from "@dst/ui/Callout.astro";
+import Faq from "@dst/ui/Faq.astro";
+
+const faqItems = [
+  {
+    q: "Does a Dubai company have a credit file?",
+    a: "Yes. Al Etihad Credit Bureau, a public joint stock company wholly owned by the UAE federal government, issues credit reports for companies as well as individuals, nationals and residents alike.",
+  },
+  {
+    q: "What is in it?",
+    a: "A credit score, an income utilisation ratio, thirty-six months of payment history on loans and bills, a summary of credit contracts and cards, and court-ordered financial obligations. The data comes from banks, financial companies, telecom and utility providers, courts and government entities.",
+  },
+  {
+    q: "How does a company get its own report?",
+    a: "Apply on the AECB website, then attend any of the 250-plus Al Ansari Exchange branches in the UAE with the Emirates ID of a partner, shareholder or manager named on the trade licence, the application number, and a copy of the trade licence.",
+  },
+  {
+    q: "Is that different from how an individual gets one?",
+    a: "Yes, and it is the part that catches people out. An individual logs in with UAE Pass, pays online and receives the PDF instantly. A company's report has an in-person step, which means it has to be planned rather than produced in a meeting.",
+  },
+  {
+    q: "Is Islamic finance available to a company?",
+    a: "Yes. Financial products compliant with Islamic Shari'a banking guidelines are available alongside conventional ones, and the documents and procedures vary by bank because the products are backed by different assets.",
+  },
+];
+---
+<VerticalLayout
+  vertical="llc"
+  current="/llc/financing/"
+  prose
+  title="Financing a Dubai company: your credit file first"
+  description="Before a Dubai bank prices anything it reads a federal credit file holding thirty-six months of payment history. How to get the company's own report, and why it takes a branch visit."
+>
+  <PageHero eyebrow="Financing" title="Financing a Dubai company: your credit file first">
+    <p class="lede">
+      Before any lender in the UAE quotes a company a number, it reads a file
+      the company did not compile: a federal credit report holding
+      <strong>thirty-six months</strong> of payment history, drawn from
+      banks, finance companies, telecom and utility providers, courts and
+      government entities. That file exists whether or not the company has
+      ever borrowed. Reading it before the bank does is the cheapest
+      preparation available.
+    </p>
+  </PageHero>
+
+  <section class="container">
+    <h2>Who holds it</h2>
+    <p>
+      <strong>Al Etihad Credit Bureau</strong> — a public joint stock company
+      wholly owned by the UAE federal government — issues credit reports for
+      both companies and individuals. A report summarises personal
+      information, financial obligations and bills for the past three years,
+      and the last reported salary where there is one. Financial institutions
+      pull it when assessing an application for a loan, a credit card or any
+      other credit facility, which in practice means every conversation about
+      money starts there.
+    </p>
+    <p>
+      The report carries a <strong>credit score</strong>, an income
+      utilisation ratio showing how payments weigh against reported income, a
+      <strong>payment history</strong> covering the last thirty-six months, a
+      summary of all credit contracts and cards, and a summary of
+      court-ordered financial obligations.
+    </p>
+
+    <h2>Getting the company's own copy takes a branch visit</h2>
+    <p>
+      An individual logs in with UAE Pass, selects the report or the score,
+      pays online and has the PDF instantly. A company does not. The
+      application goes in on the AECB website, and then somebody attends one
+      of the <strong>250-plus Al Ansari Exchange branches</strong> in the UAE
+      carrying three things: the <strong>Emirates ID</strong> of a partner,
+      shareholder or manager named on the trade licence, the
+      <strong>application number</strong>, and a copy of the
+      <strong>trade licence</strong>.
+    </p>
+    <p>
+      That asymmetry is worth planning around. The company report cannot be
+      produced in the meeting where it is first asked for, so it belongs on
+      the list of things obtained before the funding conversation opens — next
+      to the licence and the attested Memorandum of Association.
+    </p>
+
+    <h2>What the banks offer once they have read it</h2>
+    <p>
+      Financing options in the UAE vary by the company's activity, and the
+      documents and procedures vary with them, because the products are
+      backed by different assets. Products compliant with
+      <strong>Islamic Shari'a banking guidelines</strong> are available
+      alongside conventional ones. The published guidance for businesses
+      running here reduces, in the end, to one instruction: settle payments
+      on time to avoid penalties — which is also how the next thirty-six
+      months of the file gets written.
+    </p>
+  </section>
+
+  <Callout kind="warn">
+    <p>
+      A dispute that reaches court reaches the credit report. Court-ordered
+      financial obligations are one of the report's five sections, which
+      means an unpaid supplier invoice that turns litigious has a financing
+      cost long after it has a legal one.
+    </p>
+  </Callout>
+
+  <section class="container">
+    <h2>Where this sits in the sequence</h2>
+    <p>
+      The licence comes first — see
+      <a href="/llc/registration/" title="Registering a company in Dubai, step by step">registration</a> —
+      then the account, whose terms are a matter of contract rather than
+      consumer protection once the company is an LLC, on
+      <a href="/llc/banking/" title="Opening a business account in Dubai">the banking page</a>.
+      Financing comes third, and the tax position that shapes what the
+      company can actually service is on
+      <a href="/llc/taxation/" title="Corporate tax and VAT for a Dubai company">the tax page</a>.
+    </p>
+  </section>
+
+  <Faq items={faqItems} />
+
+  <section class="container">
+    <p class="source-note">
+      Credit report contents, the thirty-six-month history, AECB's ownership
+      and the application routes for individuals and companies: the Official
+      Platform of the UAE Government, credit report of individuals and
+      companies. Financing options and Shari'a-compliant products: the same
+      platform, running a business on the mainland. Both read 15 September
+      2026. Nothing here is financial advice.
+    </p>
+  </section>
+</VerticalLayout>

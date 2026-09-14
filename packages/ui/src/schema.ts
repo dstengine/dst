@@ -71,6 +71,13 @@ export interface PageGraphInput {
   /** Nav entries, used to label breadcrumb segments with the same words
       the site itself uses ("/zones/" -> "Free zones", not "Zones"). */
   nav?: { href: string; label: string }[];
+  /** Names for path segments the nav does not carry — a site whose
+      sections are deeper than its menu. Without it a two-level address
+      prints its own slug at the join ("Llc \u203a Zones"), which is the
+      one place a breadcrumb is read and the one word it must not
+      invent. Merged over the nav's labels, so the menu still wins where
+      both know a segment. */
+  crumbLabels?: Record<string, string>;
   /** Defaults to DST. A host that publishes itself passes its own. */
   publisher?: Publisher;
   /** BCP 47 tag for the language the site is written in. Defaults to
@@ -96,9 +103,10 @@ function breadcrumbs(input: PageGraphInput) {
   const segments = input.pathname.split("/").filter(Boolean);
   if (segments.length === 0) return undefined;
 
-  const navLabel = new Map(
-    (input.nav ?? []).map((item) => [item.href.replace(/^\/+|\/+$/g, ""), item.label]),
-  );
+  const navLabel = new Map<string, string>([
+    ...Object.entries(input.crumbLabels ?? {}),
+    ...(input.nav ?? []).map((item) => [item.href.replace(/^\/+|\/+$/g, ""), item.label] as [string, string]),
+  ]);
 
   const items = [{ name: input.siteName, item: `${input.origin}/` }];
   let path = "";

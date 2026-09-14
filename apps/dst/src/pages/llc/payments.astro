@@ -1,0 +1,149 @@
+---
+// Card payments, written for the merchant rather than the provider.
+//
+// A shop does not get licensed; its provider does. So the useful page is
+// not "how to become a PSP" but "how to tell whether the thing selling you
+// a terminal is licensed to", and the Central Bank's own regulation
+// supplies the vocabulary to ask with.
+import VerticalLayout from "../../layouts/VerticalLayout.astro";
+import PageHero from "@dst/ui/PageHero.astro";
+import Callout from "@dst/ui/Callout.astro";
+import Faq from "@dst/ui/Faq.astro";
+
+const faqItems = [
+  {
+    q: "Does my Dubai company need a licence to take card payments?",
+    a: "No. The licence belongs to the provider. The Retail Payment Services and Card Schemes Regulation C 15/2021 licenses those who provide the service — merchant acquiring, payment aggregation, payment account issuance and the rest — not the merchants who buy it.",
+  },
+  {
+    q: "What service am I actually buying?",
+    a: "Merchant acquiring, and often payment aggregation with it. Both are named retail payment services under the regulation, which means the provider offering them holds a Category I, II or III licence from the Central Bank.",
+  },
+  {
+    q: "How much capital does a licensed provider have to hold?",
+    a: "It depends on category and volume. A Category I licence requires initial capital of at least AED 3 million where the monthly average value of payment transactions is AED 10 million or above, and AED 1.5 million below that. Category II is AED 2 million and AED 1 million; Category III is AED 1 million and AED 500,000; Category IV is AED 100,000 regardless of volume.",
+  },
+  {
+    q: "Are card schemes regulated too?",
+    a: "Yes. Card schemes must obtain a licence from the Central Bank, and the Central Bank has the right to receive information on their fees and charges, and to regulate those fees and charges where it considers it appropriate.",
+  },
+  {
+    q: "Does the regulation cover crypto payments?",
+    a: "No. Transactions involving virtual asset tokens are excluded, as are transactions involving commodity or security tokens, remittances, stored value facilities, and currency exchange where funds are not held on a payment account.",
+  },
+];
+---
+<VerticalLayout
+  vertical="llc"
+  current="/llc/payments/"
+  prose
+  title="Taking card payments in Dubai: check the licence"
+  description="A Dubai merchant needs no payment licence — its provider does. What the Central Bank's C 15/2021 regulation requires of them, down to the capital, and what it deliberately leaves out."
+>
+  <PageHero eyebrow="Payments" title="Taking card payments in Dubai: check the licence">
+    <p class="lede">
+      A shop taking cards in Dubai needs no payment licence of its own. The
+      company selling it the terminal does. Since <strong>6 June
+      2021</strong> the Central Bank has licensed retail payment services
+      under one regulation, in nine named categories, with initial capital
+      running from <strong>AED 100,000</strong> to <strong>AED 3
+      million</strong> depending on what the provider does and how much it
+      moves. Knowing those categories is how a merchant asks one useful
+      question instead of comparing four brochures.
+    </p>
+  </PageHero>
+
+  <section class="container">
+    <h2>The nine services, and the two you are buying</h2>
+    <p>
+      The <strong>Retail Payment Services and Card Schemes Regulation C
+      15/2021</strong> covers nine digital payment services: payment account
+      issuance, payment instrument issuance,
+      <strong>merchant acquiring</strong>,
+      <strong>payment aggregation</strong>, domestic fund transfer,
+      cross-border fund transfer, payment token services, payment initiation
+      and payment account information. A merchant taking cards is buying the
+      third and usually the fourth. Both sit in the licensable set, which
+      means the provider is either licensed for them or is reselling somebody
+      who is — and that is a fair question to put in writing.
+    </p>
+
+    <h2>What the licence costs the provider</h2>
+    <p>
+      Initial capital is set by licence category and by the monthly average
+      value of payment transactions, with the dividing line at
+      <strong>AED 10 million</strong> a month:
+    </p>
+    <ul>
+      <li><strong>Category I</strong> — account issuance, instrument issuance, acquiring, aggregation, domestic and cross-border transfer, and payment tokens: AED 3 million at or above the line, AED 1.5 million below it.</li>
+      <li><strong>Category II</strong> — the same without payment tokens: AED 2 million, or AED 1 million.</li>
+      <li><strong>Category III</strong> — account issuance, instrument issuance, acquiring, aggregation and domestic transfer: AED 1 million, or AED 500,000.</li>
+      <li><strong>Category IV</strong> — payment initiation and payment account information only: AED 100,000, whatever the volume, plus professional indemnity insurance.</li>
+    </ul>
+    <p>
+      A provider must hold aggregate capital funds at or above its category's
+      initial requirement at all times, not only on the day it applied. Card
+      schemes are licensed separately, and the Central Bank may both collect
+      information on their fees and regulate those fees where it considers it
+      appropriate.
+    </p>
+
+    <h2>What the regulation deliberately leaves out</h2>
+    <p>
+      It does not apply to transactions involving stored value facilities,
+      commodity or security tokens, <strong>virtual asset tokens</strong>, or
+      remittances; nor to currency exchange where the funds are not held on a
+      payment account; nor to technical providers that support a payment
+      service without ever coming into possession of the money — data
+      processing, security, authentication, networks, and the supply and
+      maintenance of terminals.
+    </p>
+    <p>
+      That last exclusion is the one to hold onto. A company can sell a Dubai
+      merchant a card terminal and an integration and be entirely outside
+      this regulation, because it never touches the funds. Nothing is wrong
+      with that. It simply means the reassurance a merchant wants has to come
+      from whoever settles the money, not from whoever installed the box.
+    </p>
+  </section>
+
+  <Callout kind="warn">
+    <p>
+      Payment tokens are the one service with a further gate: they may not be
+      offered to the public unless the provider holds a Category I licence,
+      has drafted a white paper for those tokens, and has the Central Bank's
+      approval before offering them. An offer that skips any of the three is
+      not a product with paperwork pending.
+    </p>
+  </Callout>
+
+  <section class="container">
+    <h2>What to ask a provider</h2>
+    <ul>
+      <li>Which licence category it holds, and whether merchant acquiring and payment aggregation are both on it.</li>
+      <li>Whether it settles the funds itself or routes them to a licensed party — and if the latter, who.</li>
+      <li>Which card schemes it works with, all of which are separately licensed.</li>
+      <li>How the fees are disclosed, given that the Central Bank may regulate scheme fees but the provider's own margin is a commercial matter.</li>
+    </ul>
+    <p>
+      The account the money lands in is on
+      <a href="/llc/banking/" title="Opening a business account in Dubai">the banking page</a>,
+      the VAT that attaches to what you sold is on
+      <a href="/llc/taxation/" title="Corporate tax and VAT for a Dubai company">the tax page</a>,
+      and if you want to talk to someone rather than read,
+      <a href="/contact/" title="Get in touch with DST in Dubai">contact is here</a>.
+    </p>
+  </section>
+
+  <Faq items={faqItems} />
+
+  <section class="container">
+    <p class="source-note">
+      Service categories, licence categories, initial capital requirements,
+      card scheme licensing, the payment token condition and the exclusions:
+      the Central Bank of the UAE Rulebook, Retail Payment Services and Card
+      Schemes Regulation C 15/2021, effective 6 June 2021, read 15 September
+      2026. Nothing here is legal advice.
+    </p>
+  </section>
+</VerticalLayout>

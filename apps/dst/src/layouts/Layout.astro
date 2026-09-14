@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@dst/ui/BaseLayout.astro";
+import { VERTICALS } from "../verticals";
 import LeadTracking from "@dst/ui/LeadTracking.astro";
 import { site } from "../site.config";
 import "../styles/theme.css";
@@ -17,9 +18,14 @@ interface Props {
 }
 const { title, description, jsonLd, image, prose, noindex } = Astro.props;
 
+// A breadcrumb that reached a section would otherwise print the slug:
+// "Llc", "Mbr". The registry already knows the words.
+const crumbLabels = Object.fromEntries(VERTICALS.map((v) => [v.slug, v.name]));
+
 const nav = [
   { href: "/#hubs", label: "Hubs", title: "What DST is building" },
   { href: "/#approach", label: "Approach", title: "How DST works" },
+  { href: "/sections/", label: "Sections", title: "The six subjects DST covers in depth" },
   { href: "/news/", label: "News", title: "What's changing at DST" },
   { href: "/events/", label: "Events", title: "DST events" },
   { href: "/contact/", label: "Contact", title: "Get in touch with DST" },
@@ -31,6 +37,7 @@ const nav = [
   title={title}
   description={description}
   nav={nav}
+  crumbLabels={crumbLabels}
   jsonLd={jsonLd}
   image={image}
   noindex={noindex}

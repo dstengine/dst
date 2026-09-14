@@ -70,6 +70,14 @@ function lastCommit(file) {
   } catch {
     date = null;
   }
+  // No commit behind the file means it was written in this working tree and
+  // has not been committed yet. Git has nothing to say about it, but it is
+  // by definition the newest thing on the page, so its own mtime is the
+  // honest answer. Without this, a page added today carries no lastmod at
+  // all until its commit lands, and the sitemap fails on correct work.
+  if (!date) {
+    try { date = statSync(file).mtime.toISOString(); } catch { /* gone */ }
+  }
   gitDates.set(file, date);
   return date;
 }

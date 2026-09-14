@@ -1,0 +1,128 @@
+---
+// Section root for company formation.
+//
+// Deliberately not the overview that llc.dst.llc opens with. That page
+// answers "which structure fits what I am building" and keeps costs vague
+// on purpose, because they move. This one answers the question that comes
+// after the licence and has a number attached to it that does not move:
+// what the company owes. The two pages share a subject and no sentences.
+import VerticalLayout from "../../layouts/VerticalLayout.astro";
+import PageHero from "@dst/ui/PageHero.astro";
+import Callout from "@dst/ui/Callout.astro";
+import Faq from "@dst/ui/Faq.astro";
+import { verticalBySlug } from "../../verticals";
+
+const v = verticalBySlug("llc")!;
+
+const faqItems = [
+  {
+    q: "Does a Dubai company pay corporate tax?",
+    a: "Yes, above a threshold. The rate is 0% on taxable income up to AED 375,000 and 9% above it, under Federal Decree-Law No. 47 of 2022. Businesses came into the regime from the first financial year starting on or after 1 June 2023.",
+  },
+  {
+    q: "Do free zone companies pay it too?",
+    a: "The regime continues to honour the incentives free zones already offer, but on two conditions: the company meets the regulatory requirements, and it is not set up to do business in the UAE mainland. A free zone licence on its own is not an exemption.",
+  },
+  {
+    q: "Who collects it?",
+    a: "The Federal Tax Authority administers, collects and enforces corporate tax, and is where registration and returns are filed.",
+  },
+  {
+    q: "Is the licence the main cost of starting up?",
+    a: "It is the visible one. Licence fees vary by free zone, activity and visa count, and change often enough that any figure published in advance is an estimate. The obligations that follow the licence — registration, filing, banking — are the part that is the same for everyone.",
+  },
+];
+---
+<VerticalLayout
+  vertical="llc"
+  prose
+  title="Starting a company in Dubai, and what it owes after"
+  description="Dubai taxes a company at 0% on the first AED 375,000 of taxable income and 9% above it. What registering here involves, and what the licence commits the company to once it exists."
+>
+  <PageHero eyebrow="Company formation" title="Starting a company in Dubai, and what it owes after">
+    <p class="lede">
+      The first AED 375,000 of a company's taxable income is charged at
+      nothing. Everything above it is charged at nine per cent. Those two
+      numbers are fixed in federal law, which makes them the most reliable
+      thing anyone can tell you about running a company here — more reliable
+      than the licence fee, which depends on which of several dozen
+      authorities issues it.
+    </p>
+  </PageHero>
+
+  <section class="container">
+    <h2>The number that does not move</h2>
+    <p>
+      Corporate tax arrived with <strong>Federal Decree-Law No. 47 of
+      2022</strong>. Businesses entered the regime from the beginning of
+      their first financial year starting on or after <strong>1 June
+      2023</strong>, so by now every company trading in Dubai is inside it.
+      The rate is <strong>0%</strong> on taxable income up to
+      <strong>AED 375,000</strong> and <strong>9%</strong> above that. The
+      Federal Tax Authority administers it, collects it, and is where the
+      return is filed.
+    </p>
+    <p>
+      What this changes in practice is the order of the questions. Founders
+      tend to compare licence prices first and think about tax later. The
+      licence is a one-off and a variable; the rate is permanent and the
+      same wherever the company is registered.
+    </p>
+
+    <h2>The free zone exemption is conditional, not automatic</h2>
+    <p>
+      The regime continues to honour the incentives free zones offer. It
+      honours them on terms: the company has to comply with the regulatory
+      requirements of its zone, and it must not be set up to do business in
+      the UAE mainland. A zone licence by itself does not place a company
+      outside corporate tax, and a zone company that starts selling into the
+      mainland has changed its own position rather than kept it.
+    </p>
+    <p>
+      That is the real cost of the free zone versus mainland decision, and
+      it is why <a href="/llc/zones/" title="Dubai free zones compared">the
+      zone comparison</a> and <a href="/llc/mainland/" title="Mainland
+      company setup in Dubai">the mainland route</a> deserve separate pages
+      rather than a single table.
+    </p>
+  </section>
+
+  <Callout kind="warn">
+    <p>
+      Corporate tax applies to businesses under a commercial licence, to
+      free zone businesses on the terms above, and to foreign entities and
+      individuals carrying on a trade in the UAE in an ongoing or regular
+      manner. Assuming a Dubai company is untaxed because Dubai has a
+      reputation for being untaxed is the single most expensive assumption
+      in this subject.
+    </p>
+  </Callout>
+
+  <section class="container">
+    <h2>What each page in this section answers</h2>
+    <ul>
+      {v.pages.map((p) => (
+        <li>
+          <a href={`/llc/${p.path}/`} title={p.title}>{p.label}</a> — {p.title}
+        </li>
+      ))}
+    </ul>
+    <p>
+      A company-formation guide with its own news feed sits at
+      <a href={`https://${v.host}`} title="The company formation site">{v.host}</a>,
+      and what is moving in the Dubai market generally is on
+      <a href="/news/" title="What's changing in Dubai">the news page</a>.
+    </p>
+  </section>
+
+  <Faq items={faqItems} />
+
+  <section class="container">
+    <p class="source-note">
+      Rates, thresholds and scope: the Official Platform of the UAE
+      Government, corporate tax, read 15 September 2026. Nothing on this
+      page is tax advice, and a company's own position is a question for
+      its accountant.
+    </p>
+  </section>
+</VerticalLayout>

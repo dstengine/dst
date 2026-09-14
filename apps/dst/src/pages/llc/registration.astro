@@ -1,0 +1,140 @@
+---
+// The licensing route itself, as a sequence with the traps marked.
+//
+// Different from the subdomain by construction: that page is written for
+// someone choosing a route, this one for someone already walking it, so it
+// is ordered by the order the counters come at you and says what each step
+// does not give you.
+import VerticalLayout from "../../layouts/VerticalLayout.astro";
+import PageHero from "@dst/ui/PageHero.astro";
+import Callout from "@dst/ui/Callout.astro";
+import Faq from "@dst/ui/Faq.astro";
+
+const faqItems = [
+  {
+    q: "How long does registering a company in Dubai take?",
+    a: "The federal Basher platform is built to establish a business in the UAE in fifteen minutes, connected to the federal and local entities that issue commercial licences. The conventional route is nine steps and runs to weeks, because each additional approval is somebody else's queue.",
+  },
+  {
+    q: "What does initial approval actually give me?",
+    a: "A statement that the government has no objection to the business being established, and permission to proceed to the next steps. It does not grant authority to run or practise the business activity. Trading on it is the most common early mistake.",
+  },
+  {
+    q: "How many business activities are there to choose from?",
+    a: "More than 2,000, and one business may hold more than one. The activity is the basis for the legal form and the licence type, so it is chosen first and everything downstream follows it.",
+  },
+  {
+    q: "How many licence types are there?",
+    a: "The Ministry of Economy and Tourism lists six — industrial, commercial, professional, tourism, agricultural and crafts. Invest in Dubai lists eight for Dubai specifically, including the eTrader, instant, SME and Intelaq licences. The counter you are standing at decides which list applies.",
+  },
+  {
+    q: "What happens if I do not pay the licence fee?",
+    a: "The trade licence must be paid within thirty days of receiving the payment voucher. Where payment is not made within that period, the application is cancelled and the sequence starts again.",
+  },
+];
+---
+<VerticalLayout
+  vertical="llc"
+  current="/llc/registration/"
+  prose
+  title="Registering a company in Dubai: the nine steps"
+  description="Nine steps from activity to licence in Dubai, with what each one gives you and what it does not: initial approval, the MoA, Ejari, and the thirty-day payment window that cancels the file."
+>
+  <PageHero eyebrow="Registration" title="Registering a company in Dubai: the nine steps">
+    <p class="lede">
+      There is a fifteen-minute route and a nine-step route, and most
+      companies end up on the second one. The federal Basher platform is
+      built to establish a business in the UAE in fifteen minutes; it works
+      when nothing about the activity needs a second regulator's signature.
+      The moment something does, you are on the conventional path, where the
+      long pole is never the paperwork — it is the approvals.
+    </p>
+  </PageHero>
+
+  <section class="container">
+    <h2>The nine steps, in the order the counters ask</h2>
+    <ol>
+      <li><strong>Identify the business activity.</strong> More than 2,000 to choose from, and a business may hold several. Everything after this is determined by it.</li>
+      <li><strong>Select the legal form</strong> — general partnership, limited partnership, LLC, public joint stock company or private joint stock company. The form must match the activity.</li>
+      <li><strong>Apply for the trade licence</strong> of the matching type.</li>
+      <li><strong>Register the trade name</strong> with the emirate's economic department.</li>
+      <li><strong>Get the initial approval.</strong></li>
+      <li><strong>Sign the Memorandum of Association</strong>, or a local service agent agreement where the form requires one.</li>
+      <li><strong>Select a location</strong> and secure the premises.</li>
+      <li><strong>Collect any additional government approvals</strong> the activity attracts.</li>
+      <li><strong>Submit the documents and pay.</strong></li>
+    </ol>
+
+    <h2>Two steps that do less than their name suggests</h2>
+    <p>
+      <strong>Initial approval</strong> means the government has no objection
+      to the business being established and that you may proceed. It does not
+      grant the authority to run or practise the activity. A foreign investor
+      needs the approval of the General Directorate of Residency and
+      Foreigners' Affairs <em>before</em> the initial approval, and some
+      activities — legal affairs, security affairs, financial securities and
+      commodities — need their regulator's sign-off before that again.
+    </p>
+    <p>
+      The <strong>trade name</strong> is not a branding exercise at this
+      counter. It must be followed by the legal form's acronym — LLC, EST,
+      PJSC, PrJSC — must not already be registered, must be compatible with
+      the activity and legal status, must not offend public morals or public
+      order, and must not contain the name of a religion or a governing
+      authority or another body's logo. The economic department registers the
+      trade name; the Ministry of Economy and Tourism registers the
+      trademark. They are different things and neither implies the other.
+    </p>
+
+    <h2>The documents the licence counter wants</h2>
+    <ul>
+      <li>The initial approval receipt, with everything previously submitted.</li>
+      <li>A copy of the lease contract, attested by RERA in Dubai — in practice, registered through <strong>Ejari</strong>. Every business in the UAE must have a physical address.</li>
+      <li>The attested Memorandum of Association, for every company form.</li>
+      <li>Approvals from any other government entity concerned.</li>
+      <li>An attested service agent contract, for civil establishments and companies wholly owned by non-GCC nationals.</li>
+    </ul>
+  </section>
+
+  <Callout kind="warn">
+    <p>
+      The trade licence must be paid within <strong>thirty days</strong> of
+      receiving the payment voucher. Miss the window and the application is
+      cancelled — not suspended, not held. Everything above it goes back in
+      the queue.
+    </p>
+  </Callout>
+
+  <section class="container">
+    <h2>Which approvals your activity attracts</h2>
+    <p>
+      The named ones are worth checking against your activity before you
+      budget the timeline: the TDRA for telecommunications, the Central Bank
+      for financial institutions, exchange houses and insurance, the
+      Securities and Commodities Authority for broking and investment
+      advisory, the General Civil Aviation Authority for air cargo and
+      ticketing, MoHRE for recruitment and manpower supply, the Ministry of
+      Climate Change and Environment for agriculture and veterinary work, and
+      the National Media Council for publishing, advertising and photography.
+    </p>
+    <p>
+      Which register you are doing all this in was decided earlier — see
+      <a href="/llc/zones/" title="Dubai free zones compared">free zones</a> and
+      <a href="/llc/mainland/" title="Mainland company setup in Dubai">the mainland</a> —
+      and what the company owes once it exists is on
+      <a href="/llc/taxation/" title="Corporate tax and VAT for a Dubai company">the tax page</a>.
+    </p>
+  </section>
+
+  <Faq items={faqItems} />
+
+  <section class="container">
+    <p class="source-note">
+      Steps, licence types, trade name rules, initial approval, required
+      documents and the thirty-day payment window: the Official Platform of
+      the UAE Government, steps to start a business on the mainland, read 15
+      September 2026, citing the Ministry of Economy and Tourism and Invest
+      in Dubai. Nothing here is legal advice.
+    </p>
+  </section>
+</VerticalLayout>

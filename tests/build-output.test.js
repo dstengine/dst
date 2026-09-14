@@ -12,6 +12,7 @@ import { fileURLToPath } from "node:url";
 import { allNews } from "../packages/content/src/news/index.ts";
 import { allEvents } from "../packages/content/src/events/index.ts";
 import { redirects } from "../packages/content/src/redirects.ts";
+import { verticalPaths } from "../apps/dst/src/verticals.ts";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -219,6 +220,21 @@ describe("navigation", () => {
     }
     assert.deepEqual(echoes, [], `titles that say the label again: ${JSON.stringify([...new Set(echoes)], null, 1)}`);
     assert.deepEqual(untitled, [], `header links with no title: ${JSON.stringify([...new Set(untitled)], null, 1)}`);
+  });
+});
+
+describe("hub sections", () => {
+  // The registry in apps/dst/src/verticals.ts is what draws the sub-nav, the
+  // breadcrumb labels and the cards. A page it names that was never written
+  // becomes a chip pointing at a 404 on every other page of its section —
+  // one missing file, forty broken links. So the registry and dist are
+  // checked against each other rather than trusted to agree.
+  test("every page the vertical registry claims was built", () => {
+    const built = new Set(
+      pages.filter((p) => p.app === "dst").map((p) => p.url),
+    );
+    const missing = verticalPaths().filter((url) => !built.has(url));
+    assert.deepEqual(missing, [], `section pages in the registry but not in dist: ${JSON.stringify(missing)}`);
   });
 });
 

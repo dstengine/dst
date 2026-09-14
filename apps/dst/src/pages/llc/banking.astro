@@ -1,0 +1,130 @@
+---
+// Banking, from the one angle that is verifiable and nobody writes about.
+//
+// Account-opening timelines are folklore and change by bank and by month,
+// so this page does not trade in them. What is written down and stable is
+// the scope line of the Consumer Protection Regulation: it covers natural
+// persons and sole proprietorships, and says in terms that a sole
+// proprietorship is not an LLC. Incorporating moves you out of it.
+import VerticalLayout from "../../layouts/VerticalLayout.astro";
+import PageHero from "@dst/ui/PageHero.astro";
+import Callout from "@dst/ui/Callout.astro";
+import Faq from "@dst/ui/Faq.astro";
+
+const faqItems = [
+  {
+    q: "Does the UAE consumer protection regime cover my company's bank account?",
+    a: "Not if the company is an LLC. The Consumer Protection Regulation C 8/2020 applies to financial products and services provided to consumers that are natural persons and sole proprietorships. The regulation states expressly that a sole proprietorship is not a limited liability company.",
+  },
+  {
+    q: "What is a sole proprietorship, for this purpose?",
+    a: "A legal entity for commercial or professional activities owned and operated by a natural person, who is in complete control of operations and profits and bears personal unlimited liability. The unlimited liability is the price of staying inside the protective regime.",
+  },
+  {
+    q: "Who supervises banks in the UAE?",
+    a: "The Central Bank of the UAE, under Decretal Federal Law No. 14 of 2018 regarding the Central Bank and organisation of licensed financial institutions and activities. The Consumer Protection Regulation was issued under Article 121 of that law and has been in force since 25 December 2020.",
+  },
+  {
+    q: "Does the company's activity need Central Bank approval?",
+    a: "If the activity is financial. Financial institutions, banks, money exchanges, insurance companies and insurance agents need the Central Bank's approval as part of licensing, on top of the economic department's own process.",
+  },
+];
+---
+<VerticalLayout
+  vertical="llc"
+  current="/llc/banking/"
+  prose
+  title="Business banking in Dubai: what an LLC is not owed"
+  description="The UAE's Consumer Protection Regulation covers natural persons and sole proprietorships — and says an LLC is neither. What that means for a Dubai company's banking relationship."
+>
+  <PageHero eyebrow="Banking" title="Business banking in Dubai: what an LLC is not owed">
+    <p class="lede">
+      The UAE has a detailed consumer protection regime for financial
+      services, in force since <strong>25 December 2020</strong>. It covers
+      natural persons and sole proprietorships, and it states in terms that a
+      sole proprietorship is not a limited liability company. Incorporating
+      an LLC therefore moves the banking relationship out of that regime and
+      into contract — which is the single most useful thing to know before
+      the first meeting, and the thing no setup brochure mentions.
+    </p>
+  </PageHero>
+
+  <section class="container">
+    <h2>Where the protective line actually falls</h2>
+    <p>
+      The <strong>Consumer Protection Regulation C 8/2020</strong> was issued
+      by the Central Bank under Article 121 of
+      <strong>Decretal Federal Law No. 14 of 2018</strong>. It applies to all
+      licensed financial institutions in their provision of financial
+      products and services to consumers that are
+      <strong>natural persons and sole proprietorships</strong>. A
+      "consumer", in its own definition, is any natural person or sole
+      proprietor obtaining financial services to satisfy their own or
+      others' needs.
+    </p>
+    <p>
+      And the regulation defines a sole proprietorship as an entity owned and
+      operated by a natural person who controls operations and profits and
+      bears <strong>personal unlimited liability</strong> — adding, for
+      clarity, that it is not a limited liability company. The protection and
+      the unlimited liability travel together. Limited liability is bought
+      with the protection, which is a trade most founders make without ever
+      being told it is one.
+    </p>
+
+    <h2>What that means in the room</h2>
+    <p>
+      For an incorporated company, the terms of the account are the terms of
+      the contract the bank offers. Fee changes, notice periods, complaint
+      handling and disclosure standards that a regulated consumer could point
+      to are, for an LLC, whatever the agreement says. This is not a warning
+      that banks behave badly; it is a statement about where to look when
+      something goes wrong. The answer is the mandate and the schedule of
+      charges, and they are worth reading at signing rather than at dispute.
+    </p>
+
+    <h2>When the Central Bank is in the setup path itself</h2>
+    <p>
+      Most companies meet the Central Bank only as their bank's regulator.
+      Companies whose own activity is financial meet it earlier: financial
+      institutions, banks, money exchanges, insurance companies and insurance
+      agents need Central Bank approval as one of the additional government
+      approvals in the licensing sequence, before the economic department
+      issues anything. That approval sits on top of the
+      <a href="/llc/registration/" title="Registering a company in Dubai, step by step">nine-step route</a>,
+      not inside it, and it is the step that sets the timeline.
+    </p>
+  </section>
+
+  <Callout kind="warn">
+    <p>
+      Nothing here is a comment on how long an account takes to open. That
+      figure moves by bank, by activity and by quarter, and any number
+      published in advance is somebody's average rather than your answer. Ask
+      the bank, in writing, and hold the written answer.
+    </p>
+  </Callout>
+
+  <section class="container">
+    <h2>Before the first appointment</h2>
+    <ul>
+      <li>The trade licence and the attested Memorandum of Association, which the licensing route has already produced.</li>
+      <li>A registered physical address — <strong>Ejari</strong> in Dubai — because the bank will ask for the same lease the economic department did.</li>
+      <li>Clarity on which activities on the licence the account will actually be used for.</li>
+      <li>The company's credit file, which is a separate question and is on <a href="/llc/financing/" title="Financing a Dubai company once it trades">the financing page</a>.</li>
+    </ul>
+  </section>
+
+  <Faq items={faqItems} />
+
+  <section class="container">
+    <p class="source-note">
+      Scope, the definitions of consumer and sole proprietorship, the
+      enabling law and the commencement date: the Central Bank of the UAE
+      Rulebook, Consumer Protection Regulation C 8/2020, read 15 September
+      2026. Central Bank approval among licensing approvals: the Official
+      Platform of the UAE Government, steps to start a business on the
+      mainland, read the same day. Nothing here is legal or financial advice.
+    </p>
+  </section>
+</VerticalLayout>

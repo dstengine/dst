@@ -31,6 +31,9 @@ interface Props {
   // href map can't know about — a city, a show, a venue. Without it the
   // icon is still resolved from the href, so every other site is unchanged.
   nav: { href: string; label: string; title?: string; icon?: string }[];
+  /** Breadcrumb names for path segments the nav has no entry for.
+      See `crumbLabels` in schema.ts. */
+  crumbLabels?: Record<string, string>;
   /** Title attribute on the wordmark, which links home from every page.
       Defaults to the site's name, which is the right answer only when
       the name is one a reader recognises; where it is not, this is a
@@ -116,7 +119,7 @@ interface Props {
   donate?: { heading: string; addresses: { chain: string; address: string }[] };
 }
 
-const { title, titleSuffix, keyword, description, siteName, nav, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [], footerSiteName = siteName, homeTitle, instagram, image, footerSites = [], networkFooter = true, publisher, defaultTheme, lang = "en", feedTitle, noindex = false, prose = false, donate } = Astro.props;
+const { title, titleSuffix, keyword, description, siteName, nav, crumbLabels, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [], footerSiteName = siteName, homeTitle, instagram, image, footerSites = [], networkFooter = true, publisher, defaultTheme, lang = "en", feedTitle, noindex = false, prose = false, donate } = Astro.props;
 // The suffix is the most expensive characters on the page, and it is only
 // worth them when it adds something the title has not already said.
 //
@@ -188,6 +191,7 @@ const graph = Astro.site
       image: shareImage,
       dateModified: lastModified(Astro.site.hostname, Astro.url.pathname),
       nav,
+      crumbLabels,
       publisher,
     })
   : undefined;

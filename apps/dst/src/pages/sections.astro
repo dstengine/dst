@@ -1,0 +1,42 @@
+---
+// The index of the six subjects the hub covers in depth.
+//
+// It exists because the menu cannot carry six more entries and the front
+// page's card grid is below the fold. Every section reaches every other
+// one from here in one click, which is also what stops a section being a
+// dead end at the bottom of its own last page.
+import Layout from "../layouts/Layout.astro";
+import PageHero from "@dst/ui/PageHero.astro";
+import VentureGrid from "@dst/ui/VentureGrid.astro";
+import { readyVerticals } from "../verticals";
+
+const cards = readyVerticals().map((v) => ({
+  href: `/${v.slug}/`,
+  title: `${v.name} — ${v.blurb}`,
+  eyebrow: v.subject,
+  name: v.name,
+  text: v.blurb,
+  image: v.image,
+  imageAlt: v.imageAlt,
+  icon: v.image ? undefined : "map",
+  meta: `${v.pages.length + 1} pages`,
+}));
+---
+<Layout
+  title="What DST covers in Dubai, subject by subject"
+  description="The Dubai subjects DST works in and writes out in full: company formation, what it costs, and what the company owes once the licence exists."
+>
+  <PageHero eyebrow="Sections" title="What DST covers in Dubai, subject by subject">
+    <p class="lede">
+      Some subjects do not fit in a news item. These are the parts of Dubai
+      the group works in daily, each written out in full rather than
+      summarised — what a company owes once it is registered, what a licence
+      buys and where it stops, what a lender reads before it quotes. Sections
+      are added here as they are written.
+    </p>
+  </PageHero>
+
+  <section class="container">
+    <VentureGrid items={cards} columns={3} />
+  </section>
+</Layout>

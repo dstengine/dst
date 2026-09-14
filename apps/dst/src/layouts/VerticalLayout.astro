@@ -1,0 +1,43 @@
+---
+// Every page of a vertical section, wrapped once.
+//
+// The only thing it adds to Layout is the row of chips that says what else
+// is in this section — which is the whole navigational difference between
+// a section and a loose page. It takes the section's slug and reads the
+// rest from the registry, so a page never restates its own siblings and
+// two pages of one section cannot disagree about what the section holds.
+import Layout from "./Layout.astro";
+import ChipNav from "@dst/ui/ChipNav.astro";
+import { verticalBySlug, verticalNav } from "../verticals";
+
+interface Props {
+  /** Which section this page belongs to. */
+  vertical: string;
+  /** The page's own href, so its chip prints as text rather than a link
+      back to itself. Omitted on the section root, which is "Overview". */
+  current?: string;
+  prose?: boolean;
+  title: string;
+  description: string;
+  jsonLd?: Record<string, unknown>[];
+  image?: string;
+}
+
+const { vertical, current, prose, title, description, jsonLd, image } = Astro.props;
+const v = verticalBySlug(vertical);
+// A typo in a slug should stop the build, not quietly render a page with no
+// way back into its own section.
+if (!v) throw new Error(`VerticalLayout: no vertical "${vertical}" in verticals.ts`);
+---
+<Layout prose={prose} title={title} description={description} jsonLd={jsonLd} image={image}>
+  <div class="container vertical-nav">
+    <ChipNav items={verticalNav(v)} current={current ?? `/${v.slug}/`} label={`${v.name} — pages in this section`} />
+  </div>
+  <slot />
+</Layout>
+
+<style>
+  /* The row sits above the hero, where a reader looks for "where am I",
+     and keeps the hero's own top padding from doubling up with it. */
+  .vertical-nav { padding-top: var(--space-4); }
+</style>

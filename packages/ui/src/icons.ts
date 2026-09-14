@@ -66,6 +66,7 @@ const NAV_ICONS: Record<string, string> = {
   "#portfolio": "leaf",
   "#interest": "star",
   contact: "mail",
+  sections: "map",
   news: "news",
   events: "events",
   zones: "map",

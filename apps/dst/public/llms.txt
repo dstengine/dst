@@ -6,13 +6,20 @@
 
 - [Riviera](https://riviera.dst.llc/): Community guide to Azizi Riviera in MBR City — coffee, food, pools, water, block by block.
 - [Palm Central](https://palmcentral.dst.llc/): Tracker for Nakheel's Palm Central development on Palm Jebel Ali — current pricing, payment plan, what's actually for sale.
-- [Company formation](https://llc.dst.llc/): Practical guide to starting a business in Dubai — mainland vs. free zone vs. offshore, real costs, banking.
+- [Company formation](https://dst.llc/llc/): What a Dubai company costs and what it owes — free zones, mainland, tax, banking, financing, payments. The vertical's own site, with its news feed, is at https://llc.dst.llc/.
 - Crypto in the UAE: in development, not yet live.
 - [Eco](https://eco.dst.llc/): DST's eco portfolio — a running record of individual, funded environmental initiatives, each on its own page. Not a commercial vertical and not a carbon-offset programme; nothing there is sold.
 
 ## Also part of the network
 
 - [Visas](https://visas.dst.llc/): UAE residency routes, including the Golden Visa, and how to think about which one fits. Linked from the Golden Visa page on Palm Central and elsewhere, not featured in the Hubs grid above.
+
+## Sections
+
+Subjects written out in full on dst.llc itself, rather than summarised. Each section mirrors the structure of a vertical's own site and repeats none of its text.
+
+- [Sections](https://dst.llc/sections/): index of the subjects covered in depth.
+- [Company formation](https://dst.llc/llc/): eight pages — free zones, mainland, registration, tax, banking, financing, payments.
 
 ## News & events
 
