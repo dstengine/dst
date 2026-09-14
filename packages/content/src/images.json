@@ -2018,6 +2018,54 @@
         ]
       ]
     },
+    "/covers/dubai-property-opened-2100-jobs-to-emiratis.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/dubai-property-opened-2100-jobs-to-emiratis-480.avif"
+        ],
+        [
+          768,
+          "/covers/dubai-property-opened-2100-jobs-to-emiratis-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dubai-property-opened-2100-jobs-to-emiratis-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/dubai-property-opened-2100-jobs-to-emiratis-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/dubai-property-opened-2100-jobs-to-emiratis-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dubai-property-opened-2100-jobs-to-emiratis-480.webp"
+        ],
+        [
+          768,
+          "/covers/dubai-property-opened-2100-jobs-to-emiratis-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dubai-property-opened-2100-jobs-to-emiratis-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/dubai-property-opened-2100-jobs-to-emiratis-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/dubai-property-opened-2100-jobs-to-emiratis-1536.webp"
+        ]
+      ]
+    },
     "/covers/dubai-property-passes-half-a-trillion-in-eight-months.jpg": {
       "width": 1536,
       "height": 864,

@@ -5,6 +5,43 @@ import type { NewsItem } from "../types.ts";
 // anyone outside the company, and advertising it reads badly to a client.
 export const items: NewsItem[] = [
   {
+    slug: "dubai-property-opened-2100-jobs-to-emiratis",
+    createdAt: "2026-09-15T00:40:00+04:00",
+    updatedAt: "2026-09-15T00:40:00+04:00",
+    site: "dst",
+    image: "/covers/dubai-property-opened-2100-jobs-to-emiratis.jpg",
+    imageAlt: "A dense crowd of small upright cream paper figures in the lower left, thinning to single figures, with the rest of the slate-blue ground left empty behind a torn paper edge",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Dubai property opened 2,100 jobs to Emiratis since 2023",
+    cardTitle: "2,100 jobs, and no denominator",
+    summary:
+      "The Real Estate Empowerment Programme created more than 2,100 jobs for Emiratis in Dubai property between 2023 and 2026 — about fifty a month. The release gives no baseline to measure them against.",
+    date: "2026-09-14",
+    category: "Market",
+    source: {
+      name: "Dubai Land Department",
+      url: "https://dubailand.gov.ae/en/news-media/real-estate-empowerment-programme-reshapes-the-emiratisation-landscape-in-dubai-s-real-estate-sector-through-an-integrated-national-partnership",
+      verifiedOn: "2026-09-15",
+    },
+    body: [
+      "The Dubai Land Department published a set of Emiratisation results on 14 September with exactly one hard number in them. Everything else is direction — broader partnerships, clearer pathways, a next phase. The number is <strong>2,100</strong>.",
+      "## What the programme is",
+      "The <strong>Real Estate Empowerment Programme</strong> started in 2023 to bring Emiratis into real estate companies through four stages: career awareness, job matching, practical training, and support that continues after the hire rather than stopping at it. Between 2023 and 2026 it created, in the department’s own words, <strong>more than 2,100 employment opportunities</strong> for Emiratis.",
+      "It is not a single body’s programme. It runs across the <strong>Emirati Human Resources Development Council in Dubai</strong>, the <strong>Dubai Land Department</strong>, the <strong>Ministry of Human Resources and Emiratisation</strong> and <strong>Nafis</strong> — a local regulator, a federal ministry and a federal incentive scheme pulling in the same direction, which is the part the release is actually proud of.",
+      "## Fifty a month",
+      "Three and a half years of programme against more than 2,100 places works out at roughly <strong>fifty a month</strong>, sustained, in one sector of one emirate. That is a real rate. It is also the whole of what the release quantifies.",
+      "## The number the release does not give",
+      "The text says the count of Emiratis employed by real estate companies rose against “the baseline recorded at its launch”, and never says what that baseline was. Nor does it say how many Emiratis work in Dubai real estate today.",
+      "Without either figure, 2,100 cannot be read as a share. It is an absolute in a sector whose own size has moved underneath it: the same department registered <strong>186</strong> new development companies between January and mid-August 2026 alone. A programme placing fifty people a month into an industry adding twenty-five companies a month may be gaining ground or holding position, and the release is written so that both readings survive it.",
+      "## What the next phase says it will do",
+      "Three things, in the department’s framing: raise the quality of the roles rather than the count, open more specialised positions across real estate disciplines, and make the careers last. The shift from volume to quality is usually what an employment programme says when the volume target is met.",
+    ],
+    expertise:
+      "For a company hiring in Dubai real estate, this is the named route rather than a target to meet privately: the Council and Nafis are where the matching and the federal incentives sit, and the department has now put a public number against the pipeline. For anyone reading the figure as a market signal, treat it as a rate and not a ratio — until a baseline is published, 2,100 says how fast the programme runs, not how far it has got.",
+  },
+  {
     slug: "rentosertib-what-six-aging-clocks-measured",
     createdAt: "2026-08-25T18:18:34+04:00",
     updatedAt: "2026-09-08T14:19:42+04:00",
