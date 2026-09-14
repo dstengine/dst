@@ -12,6 +12,7 @@ export const items: EventItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "Expand North Star 2026",
+    titleSeo: "Expand North Star 2026 in Dubai",
     summary:
       "The tenth edition of the startup and investor show runs 8–10 December at Dubai Exhibition Centre. Last year it drew 2,050 startups from 96 countries and 1,300 investors.",
     start: "2026-12-08",
@@ -126,6 +127,7 @@ export const items: EventItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "Blockchain Life 2026",
+    titleSeo: "Blockchain Life 2026 in Dubai",
     summary:
       "The 17th edition of the web3, mining and crypto forum returns to Dubai on December 1–2, 2026, at Festival Arena, with an AI Future stage added to the programme.",
     start: "2026-12-01",
@@ -169,6 +171,7 @@ export const items: EventItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "GITEX GLOBAL 2026",
+    titleSeo: "GITEX Global 2026 in Dubai",
     summary:
       "GITEX runs December 7–11, 2026 — its first edition at the Dubai Exhibition Centre in Expo City, after 45 years at Dubai World Trade Centre.",
     start: "2026-12-07",
@@ -201,6 +204,7 @@ export const items: EventItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "Step Conference 2026",
+    titleSeo: "Step Conference 2026 in Dubai",
     summary:
       "Dubai's largest technology festival held its 14th edition on February 11–12, 2026 at Dubai Internet City, themed \"Intelligence Everywhere: The AI Economy\".",
     start: "2026-02-11",
@@ -236,6 +240,7 @@ export const items: EventItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "World Governments Summit 2027",
+    titleSeo: "World Governments Summit 2027, Dubai",
     summary:
       "Dubai hosts the World Governments Summit on February 1–3, 2027, following the largest participation in the summit's history.",
     start: "2027-02-01",

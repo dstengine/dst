@@ -96,7 +96,7 @@ export const items: NewsItem[] = [
     cardTitle: "Half a trillion in eight months",
     titleSeo: "Dubai property: Dh523bn in eight months",
     summary:
-      "January to August closed at Dh523.44 billion across 148,564 transactions. August alone was Dh46.22 billion — and sales were barely more than half of it.",
+      "Dubai's January to August closed at Dh523.44 billion across 148,564 transactions. August alone was Dh46.22 billion — and sales were barely more than half of it.",
     date: "2026-09-07",
     category: "Real estate",
     source: {
@@ -172,9 +172,9 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "Dubai Land Department folds project registration, sales and escrow into one platform",
     cardTitle: "One platform for the developer journey",
-    titleSeo: "DLD launches Initial Registration for developers",
+    titleSeo: "Dubai Land Department launches Initial Registration",
     summary:
-      "‘Initial Registration’ went live on 3 September. Project registration, transaction registration and escrow oversight stop being three separate errands.",
+      "‘Initial Registration’ went live on 3 September. Project registration, transaction registration and escrow oversight stop being three separate errands for a Dubai developer.",
     date: "2026-09-06",
     category: "Real estate",
     source: {
@@ -209,9 +209,9 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "Brent is 44% above where it was a year ago",
     cardTitle: "Brent is 44% above last September",
-    titleSeo: "Brent crude at $96.90: a year’s move in context",
+    titleSeo: "Brent at $96.90, and what Dubai pays at the pump",
     summary:
-      "Brent traded at $96.90 on 4 September, down 2.5% on the day but up 11% on the month and 44% on the year. The pump price rise of 1 September was the local edge of this.",
+      "Brent traded at $96.90 on 4 September, down 2.5% on the day but up 11% on the month and 44% on the year. The pump price rise of 1 September was the Dubai end of it.",
     date: "2026-09-05",
     category: "Market",
     source: {
@@ -246,9 +246,9 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "DMCC splits lab-grown diamonds off into a trading desk of their own",
     cardTitle: "Lab-grown diamonds get their own desk",
-    titleSeo: "DMCC gives lab-grown diamonds their own desk",
+    titleSeo: "Dubai's DMCC gives lab-grown diamonds a desk",
     summary:
-      "UAE lab-grown diamond volumes rose 91.5% in a year to 76.9 million carats. DMCC has stopped treating them as a footnote to the natural stone trade.",
+      "UAE lab-grown diamond volumes rose 91.5% in a year to 76.9 million carats. Dubai's DMCC has stopped treating them as a footnote to the natural stone trade.",
     date: "2026-09-03",
     category: "Trade",
     source: {
@@ -284,7 +284,7 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "GITEX has moved to December, and that changes the season",
     cardTitle: "GITEX is a December show now",
-    titleSeo: "GITEX Global 2026: 7–11 December, Expo City",
+    titleSeo: "GITEX Global 2026: 7–11 December, Expo City Dubai",
     summary:
       "The show that owned Dubai's October for forty-five years now runs 7–11 December at Expo City. October's hotel week has lost its anchor tenant.",
     date: "2026-09-02",
@@ -322,7 +322,7 @@ export const items: NewsItem[] = [
     title: "Dubai sold 296 homes above $10m in six months",
     cardTitle: "296 sales above $10m in half a year",
     summary:
-      "Knight Frank's half-year count puts $5.1bn of $10m-plus deals on the record for H1 2026 — up 16% in number and 14% in value on last year.",
+      "Knight Frank's half-year count puts $5.1bn of $10m-plus Dubai deals on the record for H1 2026 — up 16% in number and 14% in value on last year.",
     date: "2026-09-02",
     category: "Market",
     source: {
@@ -358,7 +358,7 @@ export const items: NewsItem[] = [
     cardTitle: "1,900 exhibitors, three days, one hall",
     titleSeo: "Middle East Energy 2026 opens in Dubai",
     summary:
-      "The power-sector show marks fifty years at the World Trade Centre from 1 to 3 September, with 35,000 expected from more than 150 countries.",
+      "The power-sector show marks fifty years at the Dubai World Trade Centre from 1 to 3 September, with 35,000 expected from more than 150 countries.",
     date: "2026-09-01",
     category: "Energy",
     source: {
@@ -426,9 +426,9 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "Diesel jumped 13% on 1 September. Petrol went up about 6%",
     cardTitle: "September fuel prices: diesel +13%",
-    titleSeo: "UAE petrol and diesel prices, September 2026",
+    titleSeo: "Dubai petrol and diesel prices, September 2026",
     summary:
-      "Super 98 is Dh3.80, Special 95 is Dh3.69, E-Plus is Dh3.61 and diesel is Dh4.30 a litre. Diesel is the number that matters, and not because of cars.",
+      "Super 98 is Dh3.80, Special 95 is Dh3.69, E-Plus is Dh3.61 and diesel is Dh4.30 a litre at Dubai pumps. Diesel is the number that matters, and not because of cars.",
     date: "2026-09-01",
     category: "Energy",
     source: {
@@ -571,6 +571,7 @@ export const items: NewsItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "GITEX leaves the World Trade Centre after 45 years",
+    titleSeo: "GITEX moves to Expo City Dubai for 2026",
     cardTitle: "GITEX leaves the World Trade Centre",
     summary:
       "Dubai's largest technology show moves to the Dubai Exhibition Centre at Expo City for its 2026 edition, and shifts from its long-standing October slot to December 7–11.",

@@ -17,7 +17,7 @@ const RESERVED = ["contact", "events", "news", "go", "li"];
 // "Energy" are real labels on a card and would be pages about someone
 // else's beat.
 const TAGS: Record<string, Vocabulary> = {
-  Market: { slug: "market", plural: "the Dubai property market", label: "Market" },
+  Market: { slug: "market", plural: "the property market", label: "Market" },
   Tech: { slug: "tech", plural: "technology", label: "Tech" },
   AI: { slug: "ai", plural: "AI", label: "AI" },
   Crypto: { slug: "crypto", plural: "crypto", label: "Crypto" },
@@ -44,15 +44,15 @@ export function sections(items: FeedItem[]): Section[] {
       // page heading that says "Tech" says nothing at all.
       const HEADINGS: Record<string, { h1: string; title: string }> = {
         Market: { h1: "The Dubai property market", title: "Dubai property market news" },
-        Tech: { h1: "Technology in Dubai", title: "Technology news, each entry with its source and date" },
-        AI: { h1: "AI in Dubai", title: "AI news, each entry with its source and date" },
-        Crypto: { h1: "Crypto", title: "The crypto news DST follows" },
+        Tech: { h1: "Technology in Dubai", title: "Dubai technology news, with a source and a date" },
+        AI: { h1: "AI in Dubai", title: "Dubai AI news, with a source and a date on each" },
+        Crypto: { h1: "Crypto", title: "The crypto news DST follows from Dubai" },
         "Real estate": { h1: "Real estate", title: "Dubai real estate, as DST reads it" },
       };
       const named = HEADINGS[g.key] ?? { h1: g.label, title: g.label };
       return {
         title: named.title,
-        description: `What DST reads and publishes on ${what}, with the source and the date on every entry.`,
+        description: `What DST reads and publishes on ${what} from Dubai, with the source and the date on every entry.`,
         h1: named.h1,
         lede: `What the group publishes on ${what} — each entry with the figure it turns on, the source it came from, and the date we read it.`,
       };
