@@ -1970,6 +1970,54 @@
         ]
       ]
     },
+    "/covers/dst-sections.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/dst-sections-480.avif"
+        ],
+        [
+          768,
+          "/covers/dst-sections-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dst-sections-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/dst-sections-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/dst-sections-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dst-sections-480.webp"
+        ],
+        [
+          768,
+          "/covers/dst-sections-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dst-sections-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/dst-sections-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/dst-sections-1536.webp"
+        ]
+      ]
+    },
     "/covers/dubai-ai-festival-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -2543,6 +2591,390 @@
         [
           1536,
           "/covers/international-property-show-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/llc-banking.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/llc-banking-480.avif"
+        ],
+        [
+          768,
+          "/covers/llc-banking-768.avif"
+        ],
+        [
+          1024,
+          "/covers/llc-banking-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/llc-banking-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/llc-banking-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/llc-banking-480.webp"
+        ],
+        [
+          768,
+          "/covers/llc-banking-768.webp"
+        ],
+        [
+          1024,
+          "/covers/llc-banking-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/llc-banking-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/llc-banking-1536.webp"
+        ]
+      ]
+    },
+    "/covers/llc-financing.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/llc-financing-480.avif"
+        ],
+        [
+          768,
+          "/covers/llc-financing-768.avif"
+        ],
+        [
+          1024,
+          "/covers/llc-financing-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/llc-financing-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/llc-financing-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/llc-financing-480.webp"
+        ],
+        [
+          768,
+          "/covers/llc-financing-768.webp"
+        ],
+        [
+          1024,
+          "/covers/llc-financing-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/llc-financing-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/llc-financing-1536.webp"
+        ]
+      ]
+    },
+    "/covers/llc-mainland.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/llc-mainland-480.avif"
+        ],
+        [
+          768,
+          "/covers/llc-mainland-768.avif"
+        ],
+        [
+          1024,
+          "/covers/llc-mainland-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/llc-mainland-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/llc-mainland-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/llc-mainland-480.webp"
+        ],
+        [
+          768,
+          "/covers/llc-mainland-768.webp"
+        ],
+        [
+          1024,
+          "/covers/llc-mainland-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/llc-mainland-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/llc-mainland-1536.webp"
+        ]
+      ]
+    },
+    "/covers/llc-payments.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/llc-payments-480.avif"
+        ],
+        [
+          768,
+          "/covers/llc-payments-768.avif"
+        ],
+        [
+          1024,
+          "/covers/llc-payments-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/llc-payments-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/llc-payments-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/llc-payments-480.webp"
+        ],
+        [
+          768,
+          "/covers/llc-payments-768.webp"
+        ],
+        [
+          1024,
+          "/covers/llc-payments-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/llc-payments-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/llc-payments-1536.webp"
+        ]
+      ]
+    },
+    "/covers/llc-registration.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/llc-registration-480.avif"
+        ],
+        [
+          768,
+          "/covers/llc-registration-768.avif"
+        ],
+        [
+          1024,
+          "/covers/llc-registration-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/llc-registration-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/llc-registration-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/llc-registration-480.webp"
+        ],
+        [
+          768,
+          "/covers/llc-registration-768.webp"
+        ],
+        [
+          1024,
+          "/covers/llc-registration-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/llc-registration-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/llc-registration-1536.webp"
+        ]
+      ]
+    },
+    "/covers/llc-section.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/llc-section-480.avif"
+        ],
+        [
+          768,
+          "/covers/llc-section-768.avif"
+        ],
+        [
+          1024,
+          "/covers/llc-section-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/llc-section-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/llc-section-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/llc-section-480.webp"
+        ],
+        [
+          768,
+          "/covers/llc-section-768.webp"
+        ],
+        [
+          1024,
+          "/covers/llc-section-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/llc-section-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/llc-section-1536.webp"
+        ]
+      ]
+    },
+    "/covers/llc-taxation.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/llc-taxation-480.avif"
+        ],
+        [
+          768,
+          "/covers/llc-taxation-768.avif"
+        ],
+        [
+          1024,
+          "/covers/llc-taxation-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/llc-taxation-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/llc-taxation-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/llc-taxation-480.webp"
+        ],
+        [
+          768,
+          "/covers/llc-taxation-768.webp"
+        ],
+        [
+          1024,
+          "/covers/llc-taxation-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/llc-taxation-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/llc-taxation-1536.webp"
+        ]
+      ]
+    },
+    "/covers/llc-zones.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/llc-zones-480.avif"
+        ],
+        [
+          768,
+          "/covers/llc-zones-768.avif"
+        ],
+        [
+          1024,
+          "/covers/llc-zones-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/llc-zones-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/llc-zones-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/llc-zones-480.webp"
+        ],
+        [
+          768,
+          "/covers/llc-zones-768.webp"
+        ],
+        [
+          1024,
+          "/covers/llc-zones-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/llc-zones-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/llc-zones-1536.webp"
         ]
       ]
     },

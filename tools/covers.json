@@ -645,6 +645,27 @@
       "hub-crypto": {
         "subject": "a large hexagonal disc of layered paper overlapping two flat tower silhouettes",
         "detail": "the disc is a plain flat hexagon of coloured paper with nothing printed on it, and every shape is cut paper rather than a photographed object"
+      },
+      "llc-section": "a tall narrow arched doorway cut from paper with a short flight of flat steps leading up to it, standing alone on an empty ground",
+      "llc-zones": {
+        "subject": "around twenty small flat paper squares laid out in an even grid, one of them lifted clear of the plane and casting a soft shadow",
+        "detail": "the ground behind the grid is a single plain flat colour, the squares are pale and unprinted, and no shape is brightly coloured"
+      },
+      "llc-mainland": "a broad layered paper shoreline meeting a flat plain, with one slim upright marker standing well inland from the edge",
+      "llc-registration": "nine small flat paper squares stepping upward in a diagonal line, each one a little larger than the one before it",
+      "llc-taxation": {
+        "subject": "two paper discs of unequal height standing on edge side by side on a flat baseline",
+        "detail": "the discs are plain cut paper with nothing printed on them, no marks and no figures of any kind"
+      },
+      "llc-banking": {
+        "subject": "a low flat paper wall running right across the frame with one narrow doorway cut through it, and a single small upright paper figure standing on the far side of the opening",
+        "detail": "the wall is clearly a wall with a visible opening in it, and the figure stands upright beyond it"
+      },
+      "llc-financing": "a long strip of paper folded concertina-fashion into many narrow pleats and laid flat, with a single pleat standing raised above the rest",
+      "llc-payments": "a flat rectangular paper card angled into a narrow slot cut in an upright paper panel",
+      "dst-sections": {
+        "subject": "a row of flat pale paper tiles standing upright in a line on a plain ground, one of them turned to face the viewer",
+        "detail": "the ground is one flat colour from edge to edge with no coloured band across it, and the tiles are plain unprinted paper"
       }
     },
     "musical": {

@@ -93,6 +93,7 @@ export const VERTICALS: Vertical[] = [
       { path: "location", label: "Location", title: "Where Palm Central sits, and the real drive times" },
       { path: "golden-visa", label: "Golden Visa", title: "Palm Central and the Dubai Golden Visa threshold" },
       { path: "faq", label: "FAQ", title: "Palm Central: the questions buyers actually ask" },
+      { path: "privacy", label: "Privacy", title: "How the Palm Central pages handle an enquiry" },
     ],
   },
   {
