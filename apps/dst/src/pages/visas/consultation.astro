@@ -1,0 +1,152 @@
+---
+// The consultation page, written as a checklist rather than as a pitch.
+// The only honest reason to have this page on the hub is that the two
+// things which decide a residency case — which route, and which documents
+// already exist — can be settled before anyone speaks to anyone.
+import VerticalLayout from "../../layouts/VerticalLayout.astro";
+import PageHero from "@dst/ui/PageHero.astro";
+import LeadForm from "@dst/ui/LeadForm.astro";
+import Callout from "@dst/ui/Callout.astro";
+import Faq from "@dst/ui/Faq.astro";
+
+const faqItems = [
+  {
+    q: "Do I have to be in the UAE to apply?",
+    a: "For the Golden Visa through property, yes. The Dubai Land Department's service requires the applicant to be inside the UAE and to attend in person; escorts and representatives are not permitted, and the service takes 7 to 10 business days.",
+  },
+  {
+    q: "Which route is cheapest?",
+    a: "A sponsored employment residence, because the employer carries the cost and the application. It is also the one that ends when the job does. The unsponsored routes cost more and are not tied to an employer — that is the whole of the trade.",
+  },
+  {
+    q: "What should I have ready before the first conversation?",
+    a: "Passport, current residence permit if you hold one, the title deed or e-Certificate of Title if the route is property, a bank no-objection letter if the property is mortgaged, and — if family is involved — attested marriage and birth certificates.",
+  },
+  {
+    q: "Can you guarantee an outcome?",
+    a: "No one can. Applications are decided by ICP and GDRFA, and the published conditions are stated by the authorities themselves to be subject to change. Anyone promising an approval is selling something other than the visa.",
+  },
+];
+---
+<VerticalLayout
+  vertical="visas"
+  current="/visas/consultation/"
+  prose
+  title="Talk to someone about a Dubai residency"
+  description="What to settle before a residency consultation in Dubai: which route applies, which documents already exist, and which questions only ICP or GDRFA can answer."
+  image="/covers/visas-consultation.jpg"
+>
+  <PageHero
+    eyebrow="Consultation"
+    title="Talk to someone about a Dubai residency"
+    image="/covers/visas-consultation.jpg"
+    imageAlt="Cut-paper illustration: two pale paper shapes facing each other across a small brass disc on a slate-blue ground."
+    imageKind="generated"
+  >
+    <p class="lede">
+      Most residency conversations spend their first twenty minutes
+      establishing facts that were already knowable. Settle the two below
+      before you speak to anyone — us included — and what is left is the
+      part a conversation is actually good for.
+    </p>
+  </PageHero>
+
+  <section class="container">
+    <h2>One: which route, and what it is tied to</h2>
+    <p>
+      A <strong>sponsored</strong> residence runs 1, 2 or 3 years and belongs
+      to the sponsor; an <strong>unsponsored</strong> one runs 5 or 10 years
+      and does not. That single distinction decides more than any fee
+      comparison, because the cheap route is the one that ends when the job
+      does. The routes themselves are set out on
+      <a href="/visas/" title="Dubai residency: the routes and what each one costs">the section overview</a>,
+      the property route on
+      <a href="/visas/golden/" title="The Golden Visa through Dubai property">the Golden Visa page</a>,
+      and what a family costs on top on
+      <a href="/visas/family/" title="Sponsoring a family on a Dubai residency">the family page</a>.
+    </p>
+
+    <h2>Two: which documents already exist</h2>
+    <p>
+      A residency application is largely an exercise in producing documents
+      that take weeks to obtain and minutes to submit. Before a first
+      conversation, establish which of these you hold today:
+    </p>
+    <ul>
+      <li>Passport, with at least the validity your route requires.</li>
+      <li>A current residence permit, if you have one.</li>
+      <li>
+        For a property route: the <strong>title deed or e-Certificate of
+        Title</strong>, and a bank <strong>no-objection letter</strong> if
+        the property is mortgaged. What qualifies is on
+        <a href="/visas/properties/" title="Which Dubai properties qualify for the Golden Visa">the eligible property page</a>.
+      </li>
+      <li>
+        For family: attested marriage and birth certificates, a certified
+        housing lease or proof of ownership, and the sponsor's job contract.
+      </li>
+      <li>Medical fitness certificates for everyone over 18.</li>
+    </ul>
+    <p>
+      An attestation that has not been started is the usual reason a
+      straightforward application takes a season instead of a fortnight.
+    </p>
+  </section>
+
+  <Callout kind="warn">
+    <p>
+      Nothing on these pages is immigration advice, and no one outside ICP
+      and GDRFA decides an application. Where the published conditions
+      conflict — and on the Golden Visa's duration through property, two
+      official sources currently do — get the answer in writing from the
+      authority that will process your file, before money moves.
+    </p>
+  </Callout>
+
+  <section class="container">
+    <h2>Ask a question</h2>
+    <p>
+      Say which route you are looking at and what you already hold. A reply
+      that names the next document is more use than one that offers a
+      meeting, and that is easier to write when the question is specific.
+    </p>
+    <LeadForm
+      submitLabel="Send the question"
+      formName="DST residency enquiry"
+      formDescription="Residency and visas section on dst.llc — route and document questions"
+    >
+      <input type="hidden" name="type" value="visa" />
+      <div class="field">
+        <label for="route">Which route?</label>
+        <select id="route" name="meta.route">
+          <option value="">Not sure yet</option>
+          <option value="employment">Sponsored employment</option>
+          <option value="golden-property">Golden Visa through property</option>
+          <option value="golden-other">Golden Visa, another category</option>
+          <option value="green">Green visa</option>
+          <option value="family">Sponsoring family</option>
+        </select>
+      </div>
+    </LeadForm>
+    <p>
+      For anything that is not a residency question — a partnership, the
+      press, one of the group's other subjects — there is
+      <a href="/contact/" title="Contact DST in Dubai">the general contact page</a>.
+      A residency site with its own feed sits at
+      <a href="https://visas.dst.llc" title="UAE residency and the Golden Visa">visas.dst.llc</a>.
+    </p>
+  </section>
+
+  <Faq items={faqItems} />
+
+  <section class="container">
+    <p class="source-note">
+      Residence validity by sponsorship and the medical and security checks:
+      Federal Authority for Identity, Citizenship, Customs and Port Security,
+      via the Official Platform of the UAE Government. In-person attendance,
+      the 7 to 10 business day service time and the required documents for
+      the property route: Dubai Land Department, Golden Visa application —
+      Investor. Both read 15 September 2026.
+    </p>
+  </section>
+</VerticalLayout>

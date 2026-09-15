@@ -1,0 +1,155 @@
+---
+// Which property counts. Written from the document the counter asks for
+// rather than from the marketing, because "AED 2 million" is the easy half
+// and "wholly owned, in your name, with a title deed" is the half that
+// actually disqualifies people.
+import VerticalLayout from "../../layouts/VerticalLayout.astro";
+import PageHero from "@dst/ui/PageHero.astro";
+import Callout from "@dst/ui/Callout.astro";
+import Faq from "@dst/ui/Faq.astro";
+
+const faqItems = [
+  {
+    q: "Can I add two Dubai properties together to reach AED 2 million?",
+    a: "Yes. The Land Department's condition is a property value of AED 2 million wholly owned by the investor — one or more properties — under the name of the applicant. The arithmetic is allowed; the sole ownership and the name are not negotiable.",
+  },
+  {
+    q: "Does a mortgage disqualify the property?",
+    a: "No. A mortgaged property may be used, with a no-objection letter from the bank stating that it does not object to a residence permit being issued on the property, and showing the amount paid and the balance. Where the property is mortgaged, the bank letter must indicate AED 2 million paid.",
+  },
+  {
+    q: "Is the AED 2 million the purchase price or today's value?",
+    a: "The purchase value at the time of purchase. A property bought below the threshold that has since appreciated past it is not the case the published condition describes.",
+  },
+  {
+    q: "What proves ownership?",
+    a: "An e-Certificate of Title or a title deed, alongside a passport, a personal photo, an Emirates ID if you have one and a copy of any current residence permit. The title document is the one that cannot be substituted.",
+  },
+  {
+    q: "Where is the application actually made?",
+    a: "At a service centre. The Land Department lists Golden Visa services at Al Manara Centre and at the Dubai World Trade Centre, alongside registration trustees and agents. Documents such as birth or marriage certificates and bank letters can be uploaded to the Land Department's own document vault beforehand.",
+  },
+];
+---
+<VerticalLayout
+  vertical="visas"
+  current="/visas/properties/"
+  prose
+  title="Which Dubai property qualifies for the Golden Visa"
+  description="AED 2 million of Dubai property, wholly owned, in your own name, evidenced by a title deed. Several units may be added together; a mortgage is allowed with a bank letter."
+  image="/covers/visas-properties.jpg"
+>
+  <PageHero
+    eyebrow="Eligible property"
+    title="Which Dubai property qualifies for the Golden Visa"
+    image="/covers/visas-properties.jpg"
+    imageAlt="Cut-paper illustration: a loose stack of plain paper sheets seen from above, the pale edges of the lower sheets showing around a cream top sheet."
+    imageKind="generated"
+  >
+    <p class="lede">
+      The threshold is the easy half. The Dubai Land Department's condition
+      is a property value of <strong>AED 2 million</strong>,
+      <strong>wholly owned</strong> by the investor, in <strong>one or more
+      properties</strong>, <strong>under the name of the applicant</strong>.
+      Every clause after the number is doing work, and the ones that
+      disqualify people are the ownership and the name rather than the price.
+    </p>
+  </PageHero>
+
+  <section class="container">
+    <h2>One property or several</h2>
+    <p>
+      Units may be added together. The condition says one or more properties,
+      so a buyer reaching the threshold across two apartments is in the same
+      position as a buyer reaching it with one. What is not allowed is
+      reaching it with someone else: the holding must be wholly owned by the
+      investor, and it must be in the applicant's name. A share of a jointly
+      owned property is not the thing described, and neither is a holding
+      through a company.
+    </p>
+    <p>
+      The figure is the <strong>purchase value at the time of purchase</strong>,
+      not a current valuation. That cuts both ways and mostly one way: a
+      property bought at AED 1.6 million and now worth two and a half is not
+      the case the rule sets out, however persuasive the valuation.
+    </p>
+
+    <h2>A mortgage does not disqualify you</h2>
+    <p>
+      It adds a document. A mortgaged property may be used where a
+      <strong>no-objection letter</strong> from the bank is submitted, saying
+      that the bank does not object to a residence permit being issued on the
+      property, and stating the paid amount and the balance. Where the
+      property is mortgaged, that letter must indicate
+      <strong>AED 2 million paid</strong>. So the mortgage itself is not the
+      obstacle; the amount actually paid down is.
+    </p>
+
+    <h2>The documents, and the one that cannot be substituted</h2>
+    <ul>
+      <li>A passport.</li>
+      <li>An <strong>e-Certificate of Title or title deed</strong>.</li>
+      <li>A personal photograph.</li>
+      <li>An Emirates ID, if you have one.</li>
+      <li>A copy of the current residence permit, if you have one.</li>
+    </ul>
+    <p>
+      The title document is the whole of the property test, and everything
+      else on the list is identity. Anything that has not yet produced a
+      title deed has not yet produced the document this application is built
+      around, which is a question to put to the Land Department before
+      committing rather than a gap to hope through.
+    </p>
+
+    <h2>Where it is filed</h2>
+    <p>
+      The Land Department lists Golden Visa services at
+      <strong>Al Manara Centre</strong> and at the
+      <strong>Dubai World Trade Centre</strong>, and through registration
+      trustees and registration agents. Supporting documents — birth and
+      marriage certificates, bank letters — can be uploaded to the Land
+      Department's own document vault in advance, which is worth doing,
+      because the appointment is in person and the applicant must be inside
+      the UAE.
+    </p>
+  </section>
+
+  <Callout kind="warn">
+    <p>
+      The duration this property buys is itself disputed between two official
+      sources — ten years according to the Land Department, five according to
+      the federal category table. Before a purchase made for the visa rather
+      than for the flat, get the number confirmed in writing by the authority
+      that will process it. <a href="/visas/golden/" title="The Golden Visa through Dubai property">The Golden Visa page</a> sets out both.
+    </p>
+  </Callout>
+
+  <section class="container">
+    <h2>If the property is in a development still being built</h2>
+    <p>
+      Off-plan is where this rule bites hardest, because the test is not the
+      contract and not the payment schedule — it is the registered title. A
+      unit in a development that has not yet produced a title deed has not
+      produced the one document the whole application is built around,
+      however much of the purchase price has been paid.
+    </p>
+    <p>
+      What a specific unit has produced by way of registered title is a
+      question for the Land Department about that unit, and not one any
+      guide can answer in general. Ask it before the purchase rather than
+      after, and ask it about the unit rather than about the development.
+    </p>
+  </section>
+
+  <Faq items={faqItems} />
+
+  <section class="container">
+    <p class="source-note">
+      Ownership condition, the one-or-more-properties rule, the purchase-value
+      basis, the mortgage letter, required documents, the document vault and
+      the service centres: Dubai Land Department, Golden Visa application —
+      Investor, read 15 September 2026. Nothing here is immigration or
+      investment advice.
+    </p>
+  </section>
+</VerticalLayout>

@@ -32,13 +32,17 @@ const PAIRS = [
 
 const only = process.argv[2];
 
-/** Visible prose of a built page: <main> with script, style and nav gone. */
+/** Visible prose of a built page: <main> with script, style, nav and forms
+    gone. A form's labels and hints come out of one shared component, so two
+    sites carrying the same enquiry form necessarily carry the same words in
+    it — which is a fact about the component, not about the writing. Counting
+    it would make the check fail on correct work and teach us to ignore it. */
 function textOf(file) {
   if (!fs.existsSync(file)) return null;
   const html = fs.readFileSync(file, "utf8");
   const main = html.match(/<main[\s\S]*?<\/main>/i)?.[0] ?? html;
   return main
-    .replace(/<(script|style|nav)[\s\S]*?<\/\1>/gi, " ")
+    .replace(/<(script|style|nav|form)[\s\S]*?<\/\1>/gi, " ")
     .replace(/<[^>]+>/g, " ")
     .replace(/&[a-z]+;|&#\d+;/gi, " ")
     .replace(/\s+/g, " ")

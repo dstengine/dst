@@ -1,0 +1,171 @@
+---
+// The Golden Visa, and the disagreement at the centre of it.
+//
+// The federal portal's category table gives five years for a real estate
+// investment; the Dubai Land Department's own service gives ten for a
+// property of the same AED 2 million. Both are official and current. That
+// conflict is the page — anyone quoting one number without the other is
+// either guessing or selling.
+import VerticalLayout from "../../layouts/VerticalLayout.astro";
+import PageHero from "@dst/ui/PageHero.astro";
+import Callout from "@dst/ui/Callout.astro";
+import Faq from "@dst/ui/Faq.astro";
+
+const faqItems = [
+  {
+    q: "Is the Golden Visa through Dubai property five years or ten?",
+    a: "It depends which official source you read, and both are current. The UAE government platform's category table gives ten years for public investments and five for real estate investments. The Dubai Land Department's own Golden Visa service for investors gives a ten-year renewable permit for a property worth AED 2 million or more. Ask the authority processing your file before you budget around either.",
+  },
+  {
+    q: "What does the Golden Visa actually give you?",
+    a: "A long-term renewable residence visa, no sponsor, the ability to stay outside the UAE beyond the usual six months without losing residency, and the ability to sponsor family members including a spouse and children.",
+  },
+  {
+    q: "What does it cost through the Dubai property route?",
+    a: "The Land Department lists AED 9,884.75 for the applicant: AED 700 medical examination, AED 1,153 Emirates ID for ten years, AED 2,856.75 residency confirmation, AED 4,020 Land Department fees and AED 1,155 administrative fees. A ten-year family residence permit is AED 5,774.50, the same for parents, plus AED 318.75 to open the family sponsorship file and AED 100 for each person sponsored.",
+  },
+  {
+    q: "How long does it take?",
+    a: "Seven to ten business days, and the applicant must be inside the UAE. Only the applicant may attend: escorts are not allowed to apply and neither is a representative.",
+  },
+  {
+    q: "Are there routes that have nothing to do with money?",
+    a: "Most of them. Exceptional talent and rare specialisations get ten years — doctors, scientists, inventors, creatives, executives, athletes, PhD holders and specialists in priority scientific and engineering fields. So do humanitarian pioneers and frontline heroes. Outstanding students get five years from high school and ten from the top of a university cohort. Entrepreneurs get five.",
+  },
+];
+---
+<VerticalLayout
+  vertical="visas"
+  current="/visas/golden/"
+  prose
+  title="The Dubai Golden Visa: two sources, two durations"
+  description="AED 2 million of Dubai property buys a Golden Visa — for ten years according to the Land Department, five according to the federal portal. Both are official. The fees, in full."
+  image="/covers/visas-golden.jpg"
+>
+  <PageHero
+    eyebrow="Golden Visa"
+    title="The Dubai Golden Visa: two sources, two durations"
+    image="/covers/visas-golden.jpg"
+    imageAlt="Cut-paper illustration: two pale paper bars of unequal length overlapping in a horizontal line, each fixed with a small brass disc."
+    imageKind="generated"
+  >
+    <p class="lede">
+      Buy <strong>AED 2 million</strong> of Dubai property and you qualify.
+      For how long is where it gets interesting. The Dubai Land Department's
+      own service says a <strong>ten-year renewable</strong> permit. The UAE
+      government platform's category table says <strong>five years</strong>
+      for real estate investments, reserving ten for public investments. Both
+      were current when this page was written, and nobody selling you a
+      property will mention the second one.
+    </p>
+  </PageHero>
+
+  <section class="container">
+    <h2>What the two sources say</h2>
+    <p>
+      The federal table sets out categories and durations together. Investors
+      in public investments get <strong>ten years</strong>; investors in real
+      estate get <strong>five</strong>. The stated requirement for the
+      category is a minimum capital of AED 2 million — property ownership, or
+      a contribution to an establishment paying at least AED 250,000 annually
+      in taxes.
+    </p>
+    <p>
+      The Dubai Land Department runs the property route itself, and describes
+      it differently: a real estate investor owning property with a purchase
+      value equal to or above AED 2 million at the time of purchase may apply
+      for a <strong>ten-year renewable residence permit</strong>, and may
+      sponsor a spouse, children and parents.
+    </p>
+    <p>
+      The two are not obviously reconcilable, and this page is not going to
+      pretend otherwise. What follows from it is practical: get the duration
+      confirmed in writing by whoever is processing the file, before the
+      purchase rather than after, and treat any brochure figure as a
+      starting point for that question.
+    </p>
+
+    <h2>What the visa is, in either version</h2>
+    <p>
+      It is a long-term renewable residence visa for five or ten years,
+      carrying the privilege of <strong>not needing a sponsor</strong>, the
+      ability to stay outside the UAE for longer than the usual six months
+      without losing residency, and the ability to sponsor family members
+      including spouses and children. That second benefit is the one that
+      matters most in practice and is the least discussed — it takes a holder
+      out of the 180-day rule that governs every ordinary residence visa.
+    </p>
+
+    <h2>The fees, as the Land Department lists them</h2>
+    <ul>
+      <li>Medical examination — <strong>AED 700</strong></li>
+      <li>Emirates ID, ten years — <strong>AED 1,153</strong></li>
+      <li>Confirmation of residency permit, ten years — <strong>AED 2,856.75</strong></li>
+      <li>Dubai Land Department fees — <strong>AED 4,020</strong></li>
+      <li>Administrative fees — <strong>AED 1,155</strong></li>
+      <li><strong>Total: AED 9,884.75</strong></li>
+    </ul>
+    <p>
+      A ten-year family residence permit is <strong>AED 5,774.50</strong>,
+      and the same again for parents. Opening the family sponsorship file is
+      <strong>AED 318.75</strong>, with <strong>AED 100</strong> added for
+      each person sponsored. Against a two-million-dirham purchase these are
+      rounding, which is exactly why they are worth listing: they are the
+      part a buyer can actually check against a quote.
+    </p>
+
+    <h2>Money is not the main road</h2>
+    <p>
+      Of the five published categories, one is about capital. The others are
+      about what someone has done. <strong>Exceptional talent and rare
+      specialisations</strong> carry ten years, covering doctors, scientists,
+      inventors, creatives in culture and the arts, executives, athletes, PhD
+      holders and specialists in priority scientific and engineering fields —
+      each subcategory with its own requirements for recommendation letters,
+      practical experience or accredited degrees. <strong>Humanitarian
+      pioneers and frontline heroes</strong> carry ten, on certificates of
+      appreciation, documented contribution, or at least five years of
+      service. <strong>Outstanding students</strong> get five years from high
+      school and ten from the top of a university cohort.
+      <strong>Entrepreneurs</strong> get five, on proof of an innovative or
+      technical project and a letter from an incubator or the relevant
+      authority.
+    </p>
+  </section>
+
+  <Callout kind="warn">
+    <p>
+      The applicant must be inside the UAE to apply, and must attend in
+      person: escorts are not allowed to apply, and applying through a
+      representative is not permitted either. Anyone offering to file it for
+      you without you being there is describing a service the Land Department
+      says does not exist.
+    </p>
+  </Callout>
+
+  <section class="container">
+    <h2>Next</h2>
+    <p>
+      Which property counts, how a mortgage is treated and whether several
+      units can be added together is on
+      <a href="/visas/properties/" title="Which Dubai properties qualify for the Golden Visa">the eligible property page</a>.
+      What sponsoring the family involves once the visa exists is on
+      <a href="/visas/family/" title="Sponsoring a family on a Dubai residency">the family page</a>.
+      And what to have ready before speaking to anyone is on
+      <a href="/visas/consultation/" title="Talk to someone about a Dubai residency">the consultation page</a>.
+    </p>
+  </section>
+
+  <Faq items={faqItems} />
+
+  <section class="container">
+    <p class="source-note">
+      Categories, durations and benefits: the Official Platform of the UAE
+      Government, Golden visa, citing the ICP. The property route, the
+      ten-year permit, the fee schedule, the service time and the attendance
+      rule: Dubai Land Department, Golden Visa application — Investor. Both
+      read 15 September 2026. Nothing here is immigration advice, and the
+      authority processing the file is the only source that binds anyone.
+    </p>
+  </section>
+</VerticalLayout>

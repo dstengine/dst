@@ -1,0 +1,152 @@
+---
+// Section root for residency.
+//
+// The subdomain opens with the Golden Visa, because that is what people
+// search for. This page opens with the rule that decides whether any
+// residence visa survives at all — the 180 days — because that is the one
+// every route shares and the one nobody reads until it has bitten them.
+import VerticalLayout from "../../layouts/VerticalLayout.astro";
+import PageHero from "@dst/ui/PageHero.astro";
+import Callout from "@dst/ui/Callout.astro";
+import Faq from "@dst/ui/Faq.astro";
+import { verticalBySlug } from "../../verticals";
+
+const v = verticalBySlug("visas")!;
+
+const faqItems = [
+  {
+    q: "How long is a UAE residence visa valid?",
+    a: "It depends on the type and the sponsor: one, two or three years on a sponsored visa, and up to five or ten years on an unsponsored one. A dependent's visa never outlasts the sponsor's.",
+  },
+  {
+    q: "What happens if I leave the UAE for a long stretch?",
+    a: "The general rule is that living outside the country for more than 180 continuous days nullifies the residence visa automatically, and a new entry permit is then needed. There is a list of exemptions, and Golden and Green residency holders are outside the rule entirely.",
+  },
+  {
+    q: "Is there a fine for overstaying?",
+    a: "AED 50 a day, standardised by the ICP across visit, tourist and residence visas. It was AED 25 for residence overstays before the change.",
+  },
+  {
+    q: "Who renews a residence visa?",
+    a: "The sponsor, before it expires. Residents are given flexible grace periods of up to six months, by category, to stay in the country after a permit is cancelled or expires — and when the visa expires so does the Emirates ID.",
+  },
+  {
+    q: "Can I cancel my own visa?",
+    a: "Normally not. Only the sponsor can, either through an ICP-registered typing centre or online through the ICP website or app. Anyone sponsoring dependents must cancel theirs before cancelling their own.",
+  },
+];
+---
+<VerticalLayout
+  vertical="visas"
+  prose
+  title="Dubai residency: the routes and what each one costs"
+  description="Residence visas in Dubai run one to ten years depending on who sponsors you. The 180-day rule, the AED 50 daily overstay fine, and which routes sit outside both."
+  image="/covers/visas-section.jpg"
+>
+  <PageHero
+    eyebrow="Residency and visas"
+    title="Dubai residency: the routes and what each one costs"
+    image="/covers/visas-section.jpg"
+    imageAlt="Cut-paper illustration: a row of pale paper arches of differing heights standing on a slate-blue ground."
+    imageKind="generated"
+  >
+    <p class="lede">
+      Every residence visa in the UAE dies the same way. Live outside the
+      country for more than <strong>180 continuous days</strong> and it is
+      nullified automatically — no notice, no letter, and a new entry permit
+      needed to come back. What differs between the routes is how long the
+      visa runs, who has to sponsor it, and whether that 180-day rule applies
+      to you at all.
+    </p>
+  </PageHero>
+
+  <section class="container">
+    <h2>One, two, three — or five and ten</h2>
+    <p>
+      Validity follows the type and the sponsor. A sponsored visa runs
+      <strong>one, two or three years</strong>. An unsponsored one runs up to
+      <strong>five or ten</strong>. A dependent's visa never expires later
+      than the sponsor's, which is the quiet constraint behind every family
+      calculation: the family's dates are the sponsor's dates.
+    </p>
+    <p>
+      Above 18, a residence visa means a medical fitness test, a security
+      check and an Emirates ID from the ICP. That is the floor, and it is the
+      same floor whichever route brought you.
+    </p>
+
+    <h2>The 180 days, and who is outside them</h2>
+    <p>
+      The general rule nullifies a residence visa after more than 180
+      continuous days abroad. The published exemptions are specific rather
+      than general: the foreign wife of an Emirati citizen; residents sent
+      abroad for treatment with an approved medical report; public sector
+      employees sent for training or posted to an employer's office abroad,
+      with their families; students enrolled in institutions abroad;
+      investors holding valid residence visas; residents sponsored by UAE
+      diplomatic representatives; and domestic helpers in several named
+      situations.
+    </p>
+    <p>
+      Anyone who has already fallen foul of it applies for an entry permit
+      from outside the country, after the 180 days, with a reason — and pays
+      <strong>AED 100 for every 30 days or less</strong> spent away. The
+      approval then has to be used within 30 days. The service is not for
+      residents of Dubai, and holders of Golden and Green residency do not
+      need it: their residency lets them enter directly for as long as it is
+      valid.
+    </p>
+
+    <h2>What each page here answers</h2>
+    <ul>
+      {v.pages.map((p) => (
+        <li>
+          <a href={`/visas/${p.path}/`} title={p.title}>{p.label}</a> — {p.title}
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <Callout kind="warn">
+    <p>
+      Overstay fines were standardised by the ICP at <strong>AED 50 a
+      day</strong> across visit, tourist and residence visas — double the
+      previous AED 25 for a residence overstay. The visa's expiry is also the
+      Emirates ID's expiry, so the document you would reach for to prove
+      anything expires at the same moment.
+    </p>
+  </Callout>
+
+  <section class="container">
+    <h2>Beyond the usual routes</h2>
+    <p>
+      Two long-term visas exist for reasons that have nothing to do with
+      salary or property. The <strong>Blue visa</strong> is a ten-year
+      residence visa for people who have made an exceptional contribution to
+      environmental protection and sustainability, inside or outside the UAE
+      — granted to Emiratis and residents alike, by application to the ICP or
+      by nomination from a competent authority. The <strong>Green
+      visa</strong> covers skilled workers, freelancers and the
+      self-employed, and its holders may sponsor first-degree relatives.
+    </p>
+    <p>
+      A residency guide with its own news feed sits at
+      <a href={`https://${v.host}`} title="The residency and visas site">{v.host}</a>,
+      and what is changing in Dubai generally is on
+      <a href="/news/" title="What's changing in Dubai">the news page</a>.
+    </p>
+  </section>
+
+  <Faq items={faqItems} />
+
+  <section class="container">
+    <p class="source-note">
+      Validity, the 180-day rule and its exemptions, the entry permit and its
+      AED 100 charge, the AED 50 overstay fine, renewal and cancellation: the
+      Official Platform of the UAE Government, general provisions for the
+      residence visa, citing the ICP. Blue visa and Green visa: the same
+      platform, types of visas. Both read 15 September 2026. Conditions
+      change; the ICP and the GDRFA are where a case is decided, not here.
+    </p>
+  </section>
+</VerticalLayout>

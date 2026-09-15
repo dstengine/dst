@@ -68,9 +68,13 @@ export const VERTICALS: Vertical[] = [
   {
     slug: "visas",
     name: "Residency and visas",
-    blurb: "UAE residency routes, from a standard employment visa to the ten-year Golden Visa.",
+    // Not "the ten-year Golden Visa": the federal portal and the Dubai Land
+    // Department currently give different durations for the same property
+    // route, and the blurb is not the place to pick a winner.
+    blurb: "UAE residency routes, from a sponsored employment visa to the Golden Visa and what each one costs.",
     subject: "Dubai",
     host: "visas.dst.llc",
+    ready: true,
     pages: [
       { path: "golden", label: "Golden Visa", title: "The Golden Visa through Dubai property" },
       { path: "properties", label: "Eligible property", title: "Which Dubai properties qualify for the Golden Visa" },

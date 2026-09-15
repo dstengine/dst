@@ -666,6 +666,26 @@
       "dst-sections": {
         "subject": "a row of flat pale paper tiles standing upright in a line on a plain ground, one of them turned to face the viewer",
         "detail": "the ground is one flat colour from edge to edge with no coloured band across it, and the tiles are plain unprinted paper"
+      },
+      "visas-section": {
+        "subject": "a row of five plain paper arches of clearly different heights standing side by side in a line on a flat ground",
+        "detail": "each arch is a simple cut shape with an opening beneath it, the ground is one flat colour from edge to edge, and no shape is brightly coloured"
+      },
+      "visas-golden": {
+        "subject": "two flat paper bars of obviously unequal length lying end to end in a single horizontal line, with a small round brass disc set in the gap between them",
+        "detail": "the two bars are plainly different lengths, both are pale unprinted paper, and the brass disc is small"
+      },
+      "visas-properties": {
+        "subject": "several plain flat sheets of paper laid one over another in a loose stack seen from directly above, the edges of the lower sheets showing around the top one",
+        "detail": "the sheets are unprinted and cut from the same plain paper, and the surface beneath them is a single flat colour"
+      },
+      "visas-family": {
+        "subject": "four flat paper rings of decreasing size resting one inside another on a plain flat ground",
+        "detail": "the rings are cut from the same plain unprinted paper and lie flat, and the ground beneath them is a single flat colour"
+      },
+      "visas-consultation": {
+        "subject": "two plain paper shapes standing upright and facing each other across a small round brass disc lying flat on the ground between them",
+        "detail": "the two shapes are pale unprinted paper of similar height, and the brass disc is small and low"
       }
     },
     "musical": {

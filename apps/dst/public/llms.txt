@@ -12,7 +12,7 @@
 
 ## Also part of the network
 
-- [Visas](https://visas.dst.llc/): UAE residency routes, including the Golden Visa, and how to think about which one fits. Linked from the Golden Visa page on Palm Central and elsewhere, not featured in the Hubs grid above.
+- [Visas](https://visas.dst.llc/): UAE residency routes, including the Golden Visa, and how to think about which one fits. Written out in full on the hub at https://dst.llc/visas/; this host carries the feed.
 
 ## Sections
 
@@ -20,6 +20,7 @@ Subjects written out in full on dst.llc itself, rather than summarised. Each sec
 
 - [Sections](https://dst.llc/sections/): index of the subjects covered in depth.
 - [Company formation](https://dst.llc/llc/): eight pages — free zones, mainland, registration, tax, banking, financing, payments.
+- [Residency and visas](https://dst.llc/visas/): five pages — the Golden Visa and the two durations two official sources give it, which property qualifies, sponsoring a family, and what to settle before a consultation.
 
 ## News & events
 

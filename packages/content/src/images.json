@@ -3266,6 +3266,246 @@
         ]
       ]
     },
+    "/covers/visas-consultation.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/visas-consultation-480.avif"
+        ],
+        [
+          768,
+          "/covers/visas-consultation-768.avif"
+        ],
+        [
+          1024,
+          "/covers/visas-consultation-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/visas-consultation-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/visas-consultation-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/visas-consultation-480.webp"
+        ],
+        [
+          768,
+          "/covers/visas-consultation-768.webp"
+        ],
+        [
+          1024,
+          "/covers/visas-consultation-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/visas-consultation-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/visas-consultation-1536.webp"
+        ]
+      ]
+    },
+    "/covers/visas-family.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/visas-family-480.avif"
+        ],
+        [
+          768,
+          "/covers/visas-family-768.avif"
+        ],
+        [
+          1024,
+          "/covers/visas-family-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/visas-family-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/visas-family-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/visas-family-480.webp"
+        ],
+        [
+          768,
+          "/covers/visas-family-768.webp"
+        ],
+        [
+          1024,
+          "/covers/visas-family-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/visas-family-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/visas-family-1536.webp"
+        ]
+      ]
+    },
+    "/covers/visas-golden.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/visas-golden-480.avif"
+        ],
+        [
+          768,
+          "/covers/visas-golden-768.avif"
+        ],
+        [
+          1024,
+          "/covers/visas-golden-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/visas-golden-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/visas-golden-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/visas-golden-480.webp"
+        ],
+        [
+          768,
+          "/covers/visas-golden-768.webp"
+        ],
+        [
+          1024,
+          "/covers/visas-golden-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/visas-golden-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/visas-golden-1536.webp"
+        ]
+      ]
+    },
+    "/covers/visas-properties.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/visas-properties-480.avif"
+        ],
+        [
+          768,
+          "/covers/visas-properties-768.avif"
+        ],
+        [
+          1024,
+          "/covers/visas-properties-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/visas-properties-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/visas-properties-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/visas-properties-480.webp"
+        ],
+        [
+          768,
+          "/covers/visas-properties-768.webp"
+        ],
+        [
+          1024,
+          "/covers/visas-properties-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/visas-properties-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/visas-properties-1536.webp"
+        ]
+      ]
+    },
+    "/covers/visas-section.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/visas-section-480.avif"
+        ],
+        [
+          768,
+          "/covers/visas-section-768.avif"
+        ],
+        [
+          1024,
+          "/covers/visas-section-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/visas-section-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/visas-section-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/visas-section-480.webp"
+        ],
+        [
+          768,
+          "/covers/visas-section-768.webp"
+        ],
+        [
+          1024,
+          "/covers/visas-section-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/visas-section-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/visas-section-1536.webp"
+        ]
+      ]
+    },
     "/covers/world-governments-summit-2027.jpg": {
       "width": 1536,
       "height": 864,

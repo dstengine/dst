@@ -1,0 +1,151 @@
+---
+// Sponsoring a family, written from the sponsor's obligations rather than
+// from the dependants' paperwork. The salary floor and the six-month grace
+// period are the two facts that decide most cases, and both are federal.
+import VerticalLayout from "../../layouts/VerticalLayout.astro";
+import PageHero from "@dst/ui/PageHero.astro";
+import Callout from "@dst/ui/Callout.astro";
+import Faq from "@dst/ui/Faq.astro";
+
+const faqItems = [
+  {
+    q: "What salary do I need to sponsor my family in Dubai?",
+    a: "A minimum of AED 4,000, or AED 3,000 plus accommodation. That is the sponsorship requirement published by the federal authority, and it is a floor rather than a guide.",
+  },
+  {
+    q: "Which relatives can a resident sponsor?",
+    a: "A spouse, unmarried daughters, sons under 25, and children with special needs. Holders of the Green visa are additionally entitled to sponsor first-degree relatives.",
+  },
+  {
+    q: "Can a dependent's visa outlast mine?",
+    a: "No. The expiry date of a dependent's residence visa will not exceed that of the sponsor, and if the sponsor's visa is cancelled the dependants' visas require cancellation too.",
+  },
+  {
+    q: "What happens to the family if the sponsor's visa ends?",
+    a: "Dependants are granted a six-month grace period from the date of expiry or cancellation to obtain a new residence permit. A sponsor who neither renews nor cancels a dependant's visa can be fined.",
+  },
+  {
+    q: "What if a woman on her husband's visa is widowed or divorced?",
+    a: "The government grants a one-year extension of her residence visa, running from the date of the death or the divorce, renewable once only and with no substitute sponsor required. It extends to her children if they were on their father's visa at the time, both visas were valid then, and the children's duration does not exceed the mother's.",
+  },
+];
+---
+<VerticalLayout
+  vertical="visas"
+  current="/visas/family/"
+  prose
+  title="Sponsoring a family on a Dubai residency"
+  description="AED 4,000, or AED 3,000 plus accommodation: the salary floor for sponsoring a family in Dubai, who may be sponsored, and the six-month grace period when a sponsor's own visa ends."
+  image="/covers/visas-family.jpg"
+>
+  <PageHero
+    eyebrow="Family"
+    title="Sponsoring a family on a Dubai residency"
+    image="/covers/visas-family.jpg"
+    imageAlt="Cut-paper illustration: four paper rings of decreasing size resting one inside another, in pale blue, cream and ochre on a slate-blue ground."
+    imageKind="generated"
+  >
+    <p class="lede">
+      The number that decides most cases is a salary of
+      <strong>AED 4,000</strong>, or <strong>AED 3,000 plus
+      accommodation</strong>. Below it, nothing else on this page applies;
+      above it, the rest is documents and timing. Everything here is federal
+      and applies in Dubai as it does anywhere else in the country.
+    </p>
+  </PageHero>
+
+  <section class="container">
+    <h2>Who may be sponsored</h2>
+    <p>
+      An expatriate resident may bring in a <strong>spouse</strong>,
+      <strong>unmarried daughters</strong>, <strong>sons under 25</strong>,
+      and <strong>children with special needs</strong>. Holders of the
+      <strong>Green visa</strong> are entitled to sponsor
+      <strong>first-degree relatives</strong> — which is the practical
+      difference between the Green visa and an ordinary employment residence,
+      and worth weighing before choosing a route.
+    </p>
+    <p>
+      A UAE citizen's spouse, parent or child holding a foreign passport can
+      get a residence visa for <strong>five years</strong> without having to
+      work in the country, with the citizen as sponsor. A foreign widow or
+      divorced woman who is the mother of a UAE citizen can get a residence
+      visa without working, sponsored by her oldest child.
+    </p>
+
+    <h2>The dependant's visa is tied to yours</h2>
+    <p>
+      Not loosely. The expiry date of a dependant's residence visa
+      <strong>will not exceed</strong> that of the sponsor, so a renewal
+      cycle is a family event rather than a personal one. If the sponsoring
+      family member's visa is cancelled, the dependants' visas require
+      cancellation as well.
+    </p>
+    <p>
+      What follows is the part people plan badly: dependants are granted a
+      <strong>six-month grace period</strong> from the date their visa
+      expires or is cancelled, to obtain a new residence permit. Six months
+      is generous and it is also finite, and a sponsor who neither renews nor
+      cancels a dependant's visa can be liable for a fine.
+    </p>
+
+    <h2>Medical tests and papers</h2>
+    <p>
+      Family members being sponsored who have <strong>completed the age of
+      18</strong> must undergo and pass medical fitness tests at approved
+      health centres in the UAE. Below that age the test is not required.
+      Alongside it the file wants a photograph on a white background, the
+      dependant's passport copy, the Emirates ID application receipt, a
+      certified housing lease or proof of owning a residence, the sponsor's
+      passport with a valid residence permit, the sponsor's job contract, the
+      entry permit, medical insurance or a health card, and — for children —
+      an attested birth certificate.
+    </p>
+  </section>
+
+  <Callout kind="warn">
+    <p>
+      The sponsorship conditions are stated by the authority to be subject to
+      change from time to time, and the authority says so itself. Confirm the
+      salary threshold and the document list with ICP or GDRFA before acting
+      on any of it, including this page.
+    </p>
+  </Callout>
+
+  <section class="container">
+    <h2>After a death or a divorce</h2>
+    <p>
+      A woman living in the UAE on her husband's visa who is divorced or
+      widowed is granted an extension of <strong>one year</strong> on her
+      residence visa, counted from the date of the death or the divorce. It
+      is renewable <strong>one time only</strong> and needs no substitute
+      sponsor. It extends to her children where they were on their father's
+      visa at the relevant time, where both visas were valid then, and where
+      the children's residence does not run longer than the mother's. The
+      file additionally asks for a divorce or death certificate, proof of
+      housing, and proof of the woman's ability to earn a living.
+    </p>
+    <p>
+      A sponsor whose own residence comes from property rather than
+      employment is on the route set out on
+      <a href="/visas/golden/" title="The Golden Visa through Dubai property">the Golden Visa page</a>,
+      where the family permit is priced separately and the durations are
+      disputed between two official sources.
+    </p>
+  </section>
+
+  <Faq items={faqItems} />
+
+  <section class="container">
+    <p class="source-note">
+      Sponsorship requirements, the list of sponsorable relatives, the
+      medical fitness age, cancellation and the six-month grace period:
+      Federal Authority for Identity, Citizenship, Customs and Port Security,
+      via the Official Platform of the UAE Government, read 15 September
+      2026. The five-year residence for a citizen's foreign spouse, parent or
+      child and the widow and divorcee extension: the Executive Regulation of
+      Law No. 29 of 2021 on Entry and Residence of Foreigners. Not
+      immigration advice.
+    </p>
+  </section>
+</VerticalLayout>
