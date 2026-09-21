@@ -6,10 +6,10 @@ export const items: EventItem[] = [
   {
     slug: "nyc-wine-and-food-festival-2026",
     createdAt: "2026-09-21T15:40:00+04:00",
-    updatedAt: "2026-09-21T15:40:00+04:00",
+    updatedAt: "2026-09-21T18:55:00+04:00",
     site: "nyc42",
     image: "/covers/nyc-wine-and-food-festival-2026.jpg",
-    imageAlt: "A row of tall stemmed glass shapes standing on a long table band, one of them taller than the rest",
+    imageAlt: "A row of flat cut-paper wine glasses in many tones standing side by side against a plain ground",
     imageKind: "generated",
     imageWidth: 1536,
     imageHeight: 864,
@@ -215,7 +215,7 @@ export const items: EventItem[] = [
   {
     slug: "village-halloween-parade-2026",
     createdAt: "2026-08-30T23:32:06+04:00",
-    updatedAt: "2026-09-21T15:30:00+04:00",
+    updatedAt: "2026-09-21T18:55:00+04:00",
     updates: [
       {
         on: "2026-09-21",
@@ -243,7 +243,7 @@ export const items: EventItem[] = [
     source: {
       name: "NYC Village Halloween Parade",
       url: "https://www.halloween-nyc.com/",
-      verifiedOn: "2026-09-08",
+      verifiedOn: "2026-09-21",
     },
     body: [
       "New York’s <strong>53rd annual Village Halloween Parade</strong> steps off at <strong>7:00pm on Saturday 31 October 2026</strong>, up Sixth Avenue.",
