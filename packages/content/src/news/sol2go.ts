@@ -1,6 +1,58 @@
 import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
+
+
+  {
+    slug: "project-harmonia-opens-an-rfp-with-allfunds",
+    createdAt: "2026-09-21T15:25:00+04:00",
+    updatedAt: "2026-09-21T15:25:00+04:00",
+    site: "sol2go",
+    image: "/covers/project-harmonia-opens-an-rfp-with-allfunds.jpg",
+    imageAlt: "Horizontal paper bands across the frame, with a wide lens-shaped overlap where two of them meet at the centre",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Project Harmonia opens an RFP connecting Allfunds to tokenized funds on Solana",
+    cardTitle: "Project Harmonia opens its RFP",
+    titleSeo: "Project Harmonia: Allfunds and Solana funds",
+    summary:
+      "Submissions close on 24 October. Two tracks, no admission fees, and a first cohort targeted to go live across Allfunds and Solana in Q4 2026 and Q1 2027.",
+    date: "2026-09-21",
+    category: "Institutional",
+    source: {
+      name: "Solana",
+      url: "https://solana.com/news",
+      verifiedOn: "2026-09-21",
+    },
+    body: [
+      "Distribution is the part of fund management that nobody tokenizes, because it is not a ledger problem. <strong>Project Harmonia</strong> is an attempt at it anyway: an <strong>RFP</strong>, announced on <strong>16 September 2026</strong>, connecting <strong>Allfunds</strong> with tokenized funds on <strong>Solana</strong>.",
+      "## What Allfunds is",
+      "The world's largest fund distribution network: <strong>more than 3,300 asset managers and financial institutions</strong>, and <strong>roughly EUR 1.9 trillion in assets under administration</strong> as of <strong>30 June 2026</strong>.",
+      "## The two tracks",
+      "<strong>Track A</strong> is for funds already live on Solana. <strong>Track B</strong> is for funds still in development, admitted on a <strong>rolling basis over six to twelve months</strong>. There are <strong>no admission fees</strong> for either.",
+      "## The dates",
+      "<strong>Submissions close 24 October 2026.</strong> The first cohort is targeted to go live across Allfunds and Solana in <strong>Q4 2026 and Q1 2027</strong>.",
+      "## Where this sits",
+      "Solana already carries <strong>more than USD 4 billion in institutional real-world assets onchain</strong>. What this adds is not another issuance venue but a route into an existing distribution network — which is the step that decides whether a tokenized fund has buyers or only a token.",
+    ],
+    faq: [
+      {
+        q: "When does the Project Harmonia RFP close?",
+        a: "<strong>24 October 2026</strong>. The first cohort is targeted to go live in <strong>Q4 2026 and Q1 2027</strong>.",
+      },
+      {
+        q: "Is there a fee to apply?",
+        a: "No — the RFP states <strong>no admission fees</strong> for either track.",
+      },
+      {
+        q: "What is the difference between Track A and Track B?",
+        a: "<strong>Track A</strong> is for funds already live on Solana; <strong>Track B</strong> is for funds in development, admitted on a rolling basis over six to twelve months.",
+      },
+    ],
+    expertise:
+      "The number worth holding on to here is not the EUR 1.9 trillion but the six-to-twelve-month rolling window on Track B, because it says what the bottleneck is expected to be. Issuing a tokenized share class is fast; getting it accepted by the systems a distributor's clients already use is not, and a rolling admission over a year is an organiser saying so in advance. Read this as infrastructure work with a deadline attached, not as a launch.",
+  },
   {
     slug: "alpenglow-now-has-dates-and-the-first-one-is-a-stake-percentage",
     createdAt: "2026-09-06T09:36:42+04:00",

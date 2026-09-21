@@ -26,6 +26,7 @@ Was nicht angekündigt ist, wird als nicht angekündigt bezeichnet. Ein Enddatum
 
 - [Wiener Eistraum 2027](https://vien.lol/veranstaltungen/wiener-eistraum-2027/): Über 10.000 Quadratmeter Eis am Rathausplatz in Wien, vom 22. Jänner bis 7. März 2027, mit Sky Rink, Eisstockbahnen ab 17 Uhr und Verleih vor Ort.
 - [Wiener Christkindlmarkt am Rathausplatz 2026](https://vien.lol/veranstaltungen/wiener-christkindlmarkt-2026/): Der größte Weihnachtsmarkt in Wien läuft vom 13. November bis 26. Dezember 2026, täglich 10 bis 22 Uhr, am 24. Dezember bis 18:30 Uhr. Die Eisfläche bleibt bis 6. Jänner 2027.
+- [HER STORY. Künstlerinnen der ALBERTINA](https://vien.lol/veranstaltungen/her-story-albertina-2026/): Die ALBERTINA in Wien zeigt ab 30. Oktober erstmals ihren eigenen Bestand an Künstlerinnen — fünf Jahrhunderte, von Diana Scultori bis VALIE EXPORT.
 - [Wien Modern 39](https://vien.lol/veranstaltungen/wien-modern-39/): Das Festival für neue Musik eröffnet am 30. Oktober im Wiener Konzerthaus mit der Uraufführung von Pia Palmes „Mit der Donau“. Das ganze Programm kommt am 8. September, dann startet auch der Vorverkauf.
 - [Vienna Halloween Run 2026](https://vien.lol/veranstaltungen/vienna-halloween-run-2026/): Ein Laufabend in der Prater Hauptallee am 30. Oktober, ab 15:30 Uhr, in drei Distanzen von 600 Metern bis 5 Kilometern. Startgebühr 8 bis 40 Euro, verkleidet laufen ist ausdrücklich erwünscht.
 - [Kürbisfest am Himmel 2026](https://vien.lol/veranstaltungen/kuerbisfest-am-himmel-2026/): Drei Tage Kürbis am Stadtrand von Wien, von 24. bis 26. Oktober jeweils 10 bis 18 Uhr, mit über 200 Sorten zum Anschauen. Der Eintritt ist frei.
@@ -37,6 +38,7 @@ Was nicht angekündigt ist, wird als nicht angekündigt bezeichnet. Ein Enddatum
 
 ## Nachrichten
 
+- [250 Jahre ALBERTINA: was im Jubiläumsjahr in Wien zu sehen ist](https://vien.lol/nachrichten/zweihundertfuenfzig-jahre-albertina/): Das Haus am Albertinaplatz in Wien feiert 2026 sein 250-jähriges Bestehen — mit drei Hauptausstellungen, einem Entdeckungspfad und mehreren Schauen, die noch im Oktober enden.
 - [Der Teppich von Bayeux hat Frankreich verlassen, und heuer kommt niemand mehr hinein](https://vien.lol/nachrichten/der-teppich-von-bayeux-hat-frankreich-verlassen/): Das British Museum zeigt die 70 Meter lange Stickerei bis 11. Juli 2027. Alle Karten bis Jahresende sind vergeben; wer von Wien aus plant, merkt sich den 21. Oktober.
 - [Die biologische Uhr blieb nach vier Wochen stehen, obwohl das Medikament weiterarbeitete](https://vien.lol/nachrichten/warum-die-biologische-uhr-nach-vier-wochen-stehen-blieb/): Sechs Modelle lasen bei behandelten Patienten ein niedrigeres biologisches Alter. Nach vier Wochen bewegte sich der Wert nicht mehr, die Proteine dagegen schon.
 - [Seit August markiert Claude jeden Satz — und das Lesegerät dazu gibt es nur auf Antrag](https://vien.lol/nachrichten/warum-claude-seit-august-jeden-satz-markiert/): Anthropic versieht seit 2. August alles, was Claude schreibt, mit einer unsichtbaren Markierung. Sie steckt nicht in den Wörtern, sondern in deren Auswahl.

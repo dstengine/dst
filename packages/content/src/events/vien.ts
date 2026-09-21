@@ -1,6 +1,58 @@
 import type { EventItem } from "../types.ts";
 
 export const items: EventItem[] = [
+
+
+  {
+    slug: "her-story-albertina-2026",
+    createdAt: "2026-09-21T17:00:00+04:00",
+    updatedAt: "2026-09-21T17:00:00+04:00",
+    site: "vien",
+    image: "/covers/her-story-albertina-2026.jpg",
+    imageAlt: "Fünf hohe Rundbogennischen unterschiedlicher Höhe nebeneinander in einer cremefarbenen Wand, jede in einem anderen Farbton",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "HER STORY. Künstlerinnen der ALBERTINA",
+    cardTitle: "HER STORY in der ALBERTINA",
+    summary:
+      "Die ALBERTINA in Wien zeigt ab 30. Oktober erstmals ihren eigenen Bestand an Künstlerinnen — fünf Jahrhunderte, von Diana Scultori bis VALIE EXPORT.",
+    start: "2026-10-30",
+    end: "2027-02-14",
+    utcOffset: "+01:00",
+    city: "Wien",
+    country: "Österreich",
+    venue: "ALBERTINA, Albertinaplatz 1",
+    organizer: "ALBERTINA",
+    category: "Ausstellungen",
+    source: {
+      name: "ALBERTINA",
+      url: "https://www.albertina.at/",
+      verifiedOn: "2026-09-21",
+    },
+    ticket: { url: "https://www.albertina.at/", label: "Tickets" },
+    body: [
+      "Ein Museum, das seit 250 Jahren sammelt, weiß in der Regel sehr genau, was es besitzt. Diese Ausstellung stellt eine Frage, die trotzdem offen war: <strong>welche Künstlerinnen</strong> liegen eigentlich in den eigenen Beständen — und sie ist die <strong>erste umfassende Bestandsaufnahme</strong> dieser Art im Haus.",
+      "## Termine",
+      "<strong>30. Oktober 2026 bis 14. Februar 2027</strong>, ALBERTINA, Albertinaplatz 1.",
+      "## Fünf Jahrhunderte",
+      "Der Bogen reicht von der Druckgrafik der Renaissance bis in die Gegenwart: <strong>Diana Scultori</strong>, <strong>Magdalena de Passe</strong>, <strong>Maria Sibylla Merian</strong>, <strong>Angelika Kauffmann</strong>, <strong>Berthe Morisot</strong>, <strong>Käthe Kollwitz</strong>, <strong>Sonia Delaunay</strong>, <strong>Louise Bourgeois</strong>, <strong>Maria Lassnig</strong> und <strong>VALIE EXPORT</strong>.",
+      "## Warum eine Sammlungsschau hier etwas anderes ist",
+      "Eine Leihausstellung erzählt, was anderswo hängt. Eine Schau aus dem eigenen Depot erzählt, was ein Haus über zweieinhalb Jahrhunderte gekauft, geschenkt bekommen und wieder eingelagert hat — und damit auch, was es lange nicht gezeigt hat. Das ist die zweite Geschichte, die in diesem Titel steckt.",
+    ],
+    faq: [
+      {
+        q: "Wann läuft HER STORY in der ALBERTINA?",
+        a: "Von <strong>30. Oktober 2026 bis 14. Februar 2027</strong>.",
+      },
+      {
+        q: "Handelt es sich um Leihgaben?",
+        a: "Nein. Die Ausstellung ist eine <strong>Bestandsaufnahme der eigenen Sammlung</strong> und zeigt Werke aus fünf Jahrhunderten aus dem Haus selbst.",
+      },
+    ],
+    expertise:
+      "Sammlungsausstellungen auf Papier haben einen praktischen Vorteil und einen Nachteil, die beide selten dazugesagt werden: Papier verträgt nur wenig Licht, die Räume sind also dunkel und die Blätter werden danach für Jahre wieder eingelagert. Wer eines dieser Werke sehen will, sieht es in diesen dreieinhalb Monaten — oder auf absehbare Zeit gar nicht. Das ist das eigentliche Argument für den Besuch, und es gilt unabhängig davon, wie gut die Schau am Ende ausfällt.",
+  },
   {
     slug: "viennale-2026",
     createdAt: "2026-09-06T09:36:42+04:00",

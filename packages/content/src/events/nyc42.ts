@@ -1,6 +1,82 @@
 import type { EventItem } from "../types.ts";
 
 export const items: EventItem[] = [
+
+
+  {
+    slug: "nyc-wine-and-food-festival-2026",
+    createdAt: "2026-09-21T15:40:00+04:00",
+    updatedAt: "2026-09-21T15:40:00+04:00",
+    site: "nyc42",
+    image: "/covers/nyc-wine-and-food-festival-2026.jpg",
+    imageAlt: "A row of tall stemmed glass shapes standing on a long table band, one of them taller than the rest",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Food Network New York City Wine & Food Festival 2026",
+    cardTitle: "NYC Wine & Food Festival 2026",
+    titleSeo: "New York City Wine & Food Festival 2026",
+    summary:
+      "Four days in the Seaport, 15 to 18 October, with more than three hundred chefs, winemakers and bartenders. Every event in New York is ticketed on its own, and anything with alcohol is 21 and over.",
+    start: "2026-10-15",
+    end: "2026-10-18",
+    utcOffset: "-04:00",
+    city: "New York City",
+    country: "United States",
+    venue: "Invesco QQQ Festival Campus, Pier 17, the Seaport",
+    organizer: "Food Network",
+    category: "Festival",
+    source: {
+      name: "New York City Wine & Food Festival",
+      url: "https://nycwff.org/",
+      verifiedOn: "2026-09-21",
+    },
+    ticket: { url: "https://nycwff.org/", label: "Tickets" },
+    body: [
+      "For four days in October the Seaport becomes a campus with a rooftop, and the thing being taught is what more than <strong>three hundred chefs, winemakers and mixologists</strong> do for a living.",
+      "## Dates and where it happens",
+      "<strong>15 to 18 October 2026</strong>. The festival's own ground is the <strong>Invesco QQQ Festival Campus</strong> in the <strong>Seaport</strong>, with the <strong>Pier 17 rooftop</strong> above it, and individual events run at restaurants and venues elsewhere in the city.",
+      "## There is no festival pass",
+      "This is the part that catches people who have been to a music festival and expect a wristband. Each event is sold separately, at its own price, for its own room. What you are buying is a night, not the weekend, and two events on the same afternoon are two tickets.",
+      "## Twenty-one and over",
+      "Anything pouring alcohol is <strong>21+</strong>, and identification is checked at the door. That is most of the programme.",
+    ],
+    programme: [
+      {
+        heading: "Blue Moon Burger Bash",
+        text: "Thursday 15 October, 7:15pm. Hosted by Rachael Ray with Bert Kreischer.",
+      },
+      {
+        heading: "Oyster Bash",
+        text: "Saturday 17 October, 11:00am, hosted by Andrew Zimmern.",
+      },
+      {
+        heading: "New York After Dark",
+        text: "Saturday 17 October, with Kwame Onwuachi and D-Nice.",
+      },
+      {
+        heading: "Grand Tasting",
+        text: "Sunday 18 October from noon — the walk-around tasting the festival is built around.",
+      },
+      { heading: "FoodieCon", text: "Sunday 18 October, 11:00am." },
+    ],
+    faq: [
+      {
+        q: "When is the New York City Wine & Food Festival 2026?",
+        a: "<strong>15 to 18 October 2026</strong>, based at the Invesco QQQ Festival Campus in the Seaport.",
+      },
+      {
+        q: "Is there one ticket for the whole festival?",
+        a: "No. <strong>Every event is ticketed separately</strong>, at its own price — there is no single pass covering the four days.",
+      },
+      {
+        q: "Can under-21s attend?",
+        a: "Events serving alcohol are <strong>21 and over</strong> and identification is checked at the door.",
+      },
+    ],
+    expertise:
+      "The Grand Tasting is the one to buy if you are buying one: it is the widest room, it runs for hours, and it is the only part of the weekend where the number three hundred means anything to a person standing in it. The themed nights are the opposite proposition — a smaller room, a named host, and a queue for the two stalls everyone came for. Which of those you want decides the ticket, and the festival will not decide it for you.",
+  },
   {
     slug: "snoopy-in-style-nyc",
     createdAt: "2026-08-30T11:52:01+04:00",
@@ -139,7 +215,13 @@ export const items: EventItem[] = [
   {
     slug: "village-halloween-parade-2026",
     createdAt: "2026-08-30T23:32:06+04:00",
-    updatedAt: "2026-09-12T20:43:17+04:00",
+    updatedAt: "2026-09-21T15:30:00+04:00",
+    updates: [
+      {
+        on: "2026-09-21",
+        text: "The parade has named what leads it: <strong>Firehorse</strong>, a puppet commissioned from <strong>Basil Twist</strong> for the Year of the Horse, choreographed by <strong>Julie Atlas Muz</strong> and produced by <strong>Barbara Busackino</strong> of Tandem Otter Productions. <strong>Spectrum News NY1</strong> carries the parade live from <strong>8:00pm</strong>.",
+      },
+    ],
     featured: 3,
     site: "nyc42",
     image: "/covers/village-halloween-parade-2026.jpg",

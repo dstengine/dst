@@ -1,6 +1,66 @@
 import type { EventItem } from "../types.ts";
 
 export const items: EventItem[] = [
+
+
+  {
+    slug: "feria-del-libro-del-zocalo-2026",
+    createdAt: "2026-09-21T17:25:00+04:00",
+    updatedAt: "2026-09-21T17:25:00+04:00",
+    site: "cmx",
+    image: "/covers/feria-del-libro-del-zocalo-2026.jpg",
+    imageAlt: "Una plaza porticada con dos hileras de pequeñas carpas que se alejan en perspectiva hacia el fondo",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "XXVI Feria Internacional del Libro del Zócalo",
+    cardTitle: "Feria del Libro del Zócalo 2026",
+    titleSeo: "Feria del Libro del Zócalo 2026",
+    summary:
+      "Del 9 al 18 de octubre la Plaza de la Constitución de la Ciudad de México se llena de stands de 11:00 a 21:00, con entrada gratuita y el Metro Zócalo a dos minutos.",
+    start: "2026-10-09",
+    end: "2026-10-18",
+    startTime: "11:00",
+    endTime: "21:00",
+    utcOffset: "-06:00",
+    city: "Ciudad de México",
+    country: "México",
+    venue: "Plaza de la Constitución (Zócalo)",
+    organizer: "Secretaría de Cultura de la Ciudad de México",
+    category: "Cultura",
+    tickets: { priceFrom: 0, currency: "MXN" },
+    source: {
+      name: "Gaceta Oficial de la Ciudad de México",
+      verifiedOn: "2026-09-21",
+    },
+    body: [
+      "Durante diez días la plaza más grande del país deja de ser un lugar de paso y se convierte en librería. La <strong>XXVI Feria Internacional del Libro del Zócalo</strong> ocupa la <strong>Plaza de la Constitución</strong> con entrada libre.",
+      "## Fechas y horario",
+      "<strong>Del 9 al 18 de octubre de 2026</strong>, de <strong>11:00 a 21:00</strong>. La <strong>entrada es gratuita</strong>.",
+      "## Quién la organiza",
+      "La <strong>Secretaría de Cultura de la Ciudad de México</strong> junto con la <strong>Cámara Nacional de la Industria Editorial Mexicana</strong>. La convocatoria a los expositores se publicó en la <strong>Gaceta Oficial de la Ciudad de México</strong>, que es donde quedan asentadas las reglas.",
+      "## La regla que cambia lo que se vende",
+      "Los expositores <strong>sólo pueden vender objetos vinculados al libro</strong>. Es una línea corta en una convocatoria y explica por qué esta feria no se parece a un tianguis cultural: lo que hay en los stands son libros y lo que los rodea, no artesanía ni comida.",
+      "## Cómo llegar",
+      "<strong>Metro Zócalo (Línea 2)</strong> queda a menos de dos minutos caminando. <strong>Pino Suárez (Línea 1)</strong> está a unos diez minutos, y suele ser la salida menos saturada al cierre.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo es la Feria del Libro del Zócalo 2026?",
+        a: "<strong>Del 9 al 18 de octubre de 2026</strong>, de 11:00 a 21:00 en la Plaza de la Constitución.",
+      },
+      {
+        q: "¿Cuánto cuesta entrar?",
+        a: "Nada. La <strong>entrada es gratuita</strong> todos los días.",
+      },
+      {
+        q: "¿Qué se puede comprar?",
+        a: "Sólo <strong>objetos vinculados al libro</strong>: así lo establece la convocatoria publicada en la Gaceta Oficial.",
+      },
+    ],
+    expertise:
+      "Diez días en una plaza al aire libre a 2.240 metros de altura significan dos climas distintos en la misma feria: sol directo al mediodía y frío en cuanto cae la tarde. La hora cómoda para caminar los stands es entre las 16:00 y las 18:00, y los fines de semana la plaza se llena por razones que no tienen que ver con los libros. Un martes a media tarde es la misma feria con espacio para hojear.",
+  },
   {
     slug: "festival-cafe-y-chocolate-2026",
     createdAt: "2026-08-30T11:52:01+04:00",

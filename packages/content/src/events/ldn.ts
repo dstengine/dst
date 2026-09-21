@@ -1,6 +1,92 @@
 import type { EventItem } from "../types.ts";
 
 export const items: EventItem[] = [
+
+
+  {
+    slug: "bloomsbury-festival-2026",
+    createdAt: "2026-09-21T16:10:00+04:00",
+    updatedAt: "2026-09-21T16:10:00+04:00",
+    site: "ldn",
+    image: "/covers/bloomsbury-festival-2026.jpg",
+    imageAlt: "A garden square seen from above as an open rectangle of ground ringed by flat terraced house fronts",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Bloomsbury Festival 2026",
+    summary:
+      "The festival turns twenty and takes the whole of October, with more than 150 events across a few London streets — free talks, a silent film with live organ, and a Diwali takeover on Halloween.",
+    start: "2026-10-01",
+    end: "2026-10-31",
+    utcOffset: "+01:00",
+    city: "London",
+    country: "United Kingdom",
+    venue: "Bloomsbury",
+    organizer: "Bloomsbury Festival",
+    category: "Festival",
+    tickets: { priceFrom: 0, currency: "GBP" },
+    source: {
+      name: "Bloomsbury Festival",
+      url: "https://bloomsburyfestival.org.uk/",
+      verifiedOn: "2026-09-21",
+    },
+    ticket: { url: "https://bloomsburyfestival.org.uk/", label: "Programme" },
+    body: [
+      "Most London festivals take a weekend and a park. This one takes a month and a postcode: <strong>more than 150 events</strong> in the squares, churches, lecture halls and museums of Bloomsbury, and in 2026 it is the <strong>twentieth</strong> time it has done it.",
+      "## Dates",
+      "<strong>1 to 31 October 2026</strong>, across Bloomsbury.",
+      "## Arts, culture and science in the same programme",
+      "The mix is the point and it is not an accident of geography: the neighbourhood holds a university, a national museum and several hospitals within a few streets of each other, and the festival programmes all three as though they were one venue. A talk by a researcher and a concert in a church sit on the same page at the same price bracket.",
+      "## A great deal of it is free",
+      "Ticketed events in the programme sit in the ten-to-twenty-pound range; a substantial part of the month, including the university's own talks series, costs nothing.",
+    ],
+    programme: [
+      {
+        heading: "UCL Firsts",
+        text: "Free talks through the month, 6 to 30 October.",
+      },
+      {
+        heading: "Bloomsbury's Back Yard",
+        text: "10 and 11 October, GBP 10 to GBP 12, at The Music Room, 49 Great Ormond Street.",
+      },
+      {
+        heading: "PATIENT: SOLDIER",
+        text: "Sunday 11 October, 6pm, GBP 20, at City Lit.",
+      },
+      {
+        heading: "Moments of Grace",
+        text: "Free, Fridays to Sundays from 2 to 31 October, at Holy Cross Church.",
+      },
+      {
+        heading: "Nosferatu (1922), with live organ",
+        text: "Friday 30 October, 9pm, GBP 15, at Bloomsbury Central Baptist Church.",
+      },
+      {
+        heading: "AKDC Diwali takeover",
+        text: "Saturday 31 October, 2pm, free.",
+      },
+      {
+        heading: "British Museum treasure hunts",
+        text: "3, 9, 23 and 31 October.",
+      },
+    ],
+    faq: [
+      {
+        q: "When is the Bloomsbury Festival 2026?",
+        a: "It runs for the whole of October — <strong>1 to 31 October 2026</strong> — rather than over a single weekend.",
+      },
+      {
+        q: "Is the Bloomsbury Festival free?",
+        a: "Partly. A large share of the programme, including the UCL Firsts talks, is <strong>free</strong>; ticketed events are mostly <strong>GBP 10 to GBP 20</strong>.",
+      },
+      {
+        q: "Where does it take place?",
+        a: "Across <strong>Bloomsbury</strong> itself — churches, squares, the British Museum, City Lit and university buildings, all within walking distance of each other.",
+      },
+    ],
+    expertise:
+      "A month-long festival in one neighbourhood rewards a different tactic from a weekend one: nothing needs to be crammed, and the thinly attended Tuesday version of an event is usually the better room. The two dates worth booking rather than wandering into are the silent film with live organ and the Diwali takeover, both because the buildings hold a fixed number of people and because both fall at the end of the month, when the rest of the programme has already sold whatever it is going to sell.",
+  },
   {
     slug: "bermondsey-street-festival-2026",
     createdAt: "2026-08-30T11:52:01+04:00",

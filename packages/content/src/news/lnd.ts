@@ -1,6 +1,50 @@
 import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
+
+
+  {
+    slug: "claridges-flowers-is-on-brooks-mews",
+    createdAt: "2026-09-21T16:45:00+04:00",
+    updatedAt: "2026-09-21T16:45:00+04:00",
+    site: "lnd",
+    image: "/covers/claridges-flowers-is-on-brooks-mews.jpg",
+    imageAlt: "A tall bunch of cut paper stems and leaf shapes standing in a plain cylinder vase on an empty ground",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "The florist that dresses Claridge's has a shop on Brook's Mews",
+    cardTitle: "A florist on Brook's Mews",
+    titleSeo: "A Claridge's florist on Brook's Mews",
+    summary:
+      "One of the quieter addresses in Mayfair: the working flower room that supplies a London hotel opens to the street, and sells stems singly as well as by the armful.",
+    date: "2026-09-21",
+    city: "London",
+    country: "United Kingdom",
+    category: "Shops",
+    source: { name: "Claridge's", verifiedOn: "2026-09-21" },
+    body: [
+      "There is a particular pleasure in the back of a grand building, and Mayfair keeps most of its mews for cars. <strong>Brook's Mews</strong> has a flower shop on it — the working florist that fills a hotel, refilled itself each morning, and open to anyone who walks up to the door.",
+      "## What is actually in it",
+      "Seasonal blooms, <strong>British-grown garden flowers</strong>, sculptural branches, and hand-tied bouquets made on the spot. Stems are sold <strong>singly</strong> as well as in arrangements, which is the detail that makes it a shop rather than a display.",
+      "## And the things that are not flowers",
+      "Handcrafted vases, floristry scissors and clippers. The tools are the giveaway: a shop that sells you the scissors is expecting you to do this again without it.",
+      "## Why it is worth the detour",
+      "A hotel of that kind runs on rooms the guest never sees, and this is one of them with the door left open. Going in tells you more about how the building works than the lobby does, and it costs the price of one stem to find out.",
+    ],
+    faq: [
+      {
+        q: "Can anyone buy from Claridge's Flowers?",
+        a: "Yes — it is a shop on <strong>Brook's Mews</strong>, open to the street, and stems can be bought <strong>singly</strong> as well as in hand-tied bouquets.",
+      },
+      {
+        q: "What else does it sell?",
+        a: "Handcrafted <strong>vases</strong>, and floristry <strong>scissors and clippers</strong>, alongside the flowers.",
+      },
+    ],
+    expertise:
+      "Flower shops attached to hotels are usually a concession with a logo on the ribbon; a working flower room that also sells to the street is a rarer arrangement, and the difference shows in the stock. What arrives each morning is what the building needs that day, which means the selection is seasonal in the literal sense rather than the marketing one — and it also means the best time to go is early, before the day's arrangements have taken the best of it upstairs.",
+  },
   {
     slug: "the-uk-biobank-yardstick-behind-an-ageing-drug-trial",
     createdAt: "2026-08-30T11:52:01+04:00",

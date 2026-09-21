@@ -74,7 +74,11 @@
       "boo-at-the-zoo-bronx-2026": "a wide arch of overlapping cut-paper leaves spanning the frame, with three simple animal-track shapes stamped across the band beneath it",
       "great-jack-o-lantern-blaze-2026": "a dense field of small round carved lantern discs stacked in rising tiers from the lower edge, each disc with two triangles and a jagged slot cut out of it",
       "albuquerque-balloon-fiesta-2026": "seven rounded hot-air balloon shapes of graduated size rising in a loose diagonal across the frame, each with a small square basket beneath, a flat desert band along the foot",
-      "christmas-spectacular-radio-city-2026": "a row of six identical flat paper figures with one leg raised in a kick line standing on a stage band, a stepped art deco arch of three nested bands above them"
+      "christmas-spectacular-radio-city-2026": "a row of six identical flat paper figures with one leg raised in a kick line standing on a stage band, a stepped art deco arch of three nested bands above them",
+      "nyc-wine-and-food-festival-2026": {
+        "subject": "a long horizontal table band crossing the frame with a row of tall stemmed glass silhouettes standing on it",
+        "detail": "the table cut as one continuous band with a hard shadow beneath it, eleven stemmed glass shapes standing evenly along it in three different paper tones, one of them noticeably taller than the rest, generous empty ground above"
+      }
     },
     "ldn": {
       "london-design-festival-2026": {
@@ -122,7 +126,11 @@
         "idiom": "vector"
       },
       "hyde-park-winter-wonderland-2026": "a cut-paper big wheel with eight spokes standing beside a striped tent roof, both resting on a low flat band of snow, three bare paper trees behind them",
-      "skate-at-somerset-house-2026": "a wide flat oval of ice in the centre of the frame with a single small skating figure on it, a plain neoclassical facade of repeated rectangular windows drawn flat behind"
+      "skate-at-somerset-house-2026": "a wide flat oval of ice in the centre of the frame with a single small skating figure on it, a plain neoclassical facade of repeated rectangular windows drawn flat behind",
+      "bloomsbury-festival-2026": {
+        "subject": "a garden square seen from directly above as an open rectangle of plain ground ringed on all four sides by flat terraced house fronts",
+        "detail": "the square left as a single flat colour at the centre, the surrounding terraces cut as a continuous ribbon of narrow house fronts of even width and slightly varying heights, hard shadows falling inward from the terraces"
+      }
     },
     "lnd": {
       "giant-summer-flea-olympic-park": {
@@ -141,7 +149,11 @@
       "howl-o-ween-chessington-2026": "a stone gargoyle silhouette crouched on a square plinth at the left of the frame, a fairground wheel outline of thin paper spokes standing behind it to the right, a low row of small ribbed pumpkin shapes between them",
       "hobbledown-heath-pumpkin-patch-2026": "a broad low meadow band of flat paper grass across the foot of the frame with four ribbed pumpkin shapes of graduated size resting on it, a single bare paper tree standing to the right, a thin ribbon of river running behind them",
       "ski-sunday-surbiton-2026": "a long pale hill slope running from the upper left down to the lower right with a flat paper bathtub part way down it and a small seated figure inside, three simple suburban roof shapes along the foot of the frame",
-      "curse-of-the-mummy-london-dungeon-2026": "a tall upright sarcophagus lid of banded cut paper standing in the centre of the frame, a narrow candle shape on each side with a small flame, nothing else"
+      "curse-of-the-mummy-london-dungeon-2026": "a tall upright sarcophagus lid of banded cut paper standing in the centre of the frame, a narrow candle shape on each side with a small flame, nothing else",
+      "one-54-somerset-house-2026": {
+        "subject": "a large square courtyard of flat paving seen from directly above, ringed on three sides by tall narrow window bands",
+        "detail": "the courtyard a single plain block at the centre, the three surrounding wings cut as rows of tall narrow vertical strips of equal width, one small disc resting off-centre on the courtyard floor"
+      }
     },
     "cmx": {
       "gran-premio-ciudad-de-mexico-2026": {
@@ -166,7 +178,11 @@
       "alumbrada-mixquic-2026": "rows of small upright candles standing on a deep plum ground, each candle a narrow pale column with a small pointed flame above it, round layered gold marigold flower discs scattered between the rows, the composition filling the whole frame edge to edge with no border, no inner rectangle and no paper edge visible",
       "corona-capital-2026": "three stacked horizontal bands of cut paper above a rectangular stage shape, with a row of small flat crowd silhouettes across the foot of the frame",
       "festival-del-terror-six-flags-2026": "the flat silhouette of a roller-coaster track rising and dipping across the frame, a low band of fog beneath it and three small skull shapes along the bottom edge",
-      "ultra-mexico-2026": "a row of five flat paper sound-bar rectangles of increasing then decreasing height, plain and unmarked, in magenta and deep plum, a small round gold disc centred above them like a rising sun, on a warm cream ground, no lettering, no numerals, no text of any kind"
+      "ultra-mexico-2026": "a row of five flat paper sound-bar rectangles of increasing then decreasing height, plain and unmarked, in magenta and deep plum, a small round gold disc centred above them like a rising sun, on a warm cream ground, no lettering, no numerals, no text of any kind",
+      "feria-del-libro-del-zocalo-2026": {
+        "subject": "an open plaza of flat paving with rows of small flat tent shapes arranged across it in a regular grid",
+        "detail": "the tents cut as simple flat gable shapes of equal size in four even rows, one row set apart from the rest by a wider gap, the plaza beneath them a single flat colour"
+      }
     },
     "mxo": {
       "fil-guadalajara-2026": {
@@ -188,7 +204,11 @@
       "festival-de-calaveras-2026": "a single flat paper skull shape in cream, plain and rounded with two dark eye holes, wearing a wide brimmed hat cut from orange paper, centred on a deep plum ground that fills the whole frame edge to edge with no border or paper edge visible",
       "xantolo-huasteca-potosina-2026": "three flat paper masks in a row, plain oval shapes in ochre, red and cream with simple cut eyes and mouths, side by side on a dark green ground",
       "ficm-morelia-2026": "a vertical strip of film frames in cut paper running down the centre of the frame, a flat row of three arches behind it",
-      "festival-internacional-del-globo-2026": "nine rounded hot-air balloon shapes rising in a diagonal from the lower left to the upper right, each with a small basket, a flat band of water along the foot of the frame"
+      "festival-internacional-del-globo-2026": "nine rounded hot-air balloon shapes rising in a diagonal from the lower left to the upper right, each with a small basket, a flat band of water along the foot of the frame",
+      "feria-del-chile-mole-y-pozole-atlacomulco-2026": {
+        "subject": "a large round bowl seen from directly above with a ring of small curved pod shapes arranged around it",
+        "detail": "the bowl a plain disc at the centre with a narrower disc inside it, twelve small curved pod shapes evenly spaced in a ring around it, each cut from one of two paper tones, soft shadows"
+      }
     },
     "dst": {
       "blockchain-life-dubai-2026": "a wide arena bowl seen from directly above as concentric paper rings, a chain of small linked hexagons running straight across the middle",
@@ -286,6 +306,10 @@
       "200ms-breakpoint-week-2026": {
         "subject": "one tall stack of flat horizontal slabs of equal width rising in the centre of the frame, each slab offset slightly to one side of the one below it",
         "idiom": "vector"
+      },
+      "el-encuentro-madrid-2026": {
+        "subject": "a ring of small flat seat shapes arranged around one open centre, seen from directly above",
+        "detail": "sixteen identical small rounded seat shapes evenly spaced in a single ring, the centre of the ring left as empty ground, each seat with a soft shadow"
       }
     },
     "vien": {
@@ -314,7 +338,11 @@
       "vienna-halloween-run-2026": "a flat side-on band composition: a wide pale running lane crossing the whole width of the frame, a row of bare autumn tree shapes standing along its upper edge and a second row along its lower edge, all shapes flat and the same size, no vanishing point, no road markings receding",
       "kuerbisfest-am-himmel-2026": "a heaped mass of round and gourd-shaped paper forms in many different sizes, tones and patterns, spread wide across a low table band",
       "wiener-christkindlmarkt-2026": "three small market huts with steep pitched roofs standing side by side on a flat band of snow, a tall narrow tower shape with a pointed top rising behind them",
-      "wiener-eistraum-2027": "a wide flat sheet of ice across the frame with a raised walkway on slim posts curving above it, two small skating figures below, a low flat building outline behind"
+      "wiener-eistraum-2027": "a wide flat sheet of ice across the frame with a raised walkway on slim posts curving above it, two small skating figures below, a low flat building outline behind",
+      "her-story-albertina-2026": {
+        "subject": "five tall empty arched panels standing side by side in a row on a plain ground",
+        "detail": "each arch cut from a different paper tone with a rounded top and a flat base, the middle arch a little taller than the rest and set slightly forward with a hard shadow beneath it, the panels left empty, generous empty ground above the row"
+      }
     }
   },
   "news": {
@@ -390,7 +418,11 @@
       "sxsw-badges-go-up-on-september-17": "two broad upright paper rectangles of the same width standing side by side at the centre of the frame with a narrow gap between them, the left one clearly shorter than the right, both resting on one straight level line, wide empty ground around them",
       "nearly-a-billion-dollars-of-pet-costumes": "a row of five small round pumpkin shapes of identical size standing side by side, the leftmost one much larger than the rest, generous empty space above them",
       "lucas-museum-opens-on-a-tuesday": "flat paper collage on deep charcoal brown, two identical large rounded shapes standing side by side at the centre, the left one cut from solid warm amber paper and the right one drawn as an empty ochre outline of exactly the same shape, soft shadows, generous empty space around both, no lettering, no numerals, no text of any kind",
-      "okefenokee-becomes-a-world-heritage-site": "flat paper collage on deep charcoal brown, horizontal layered bands of warm amber and ochre paper stacked like sediment across the lower half of the frame, one slim cream band running through the middle of the stack, generous empty space above, soft shadows, no lettering, no numerals, no text of any kind"
+      "okefenokee-becomes-a-world-heritage-site": "flat paper collage on deep charcoal brown, horizontal layered bands of warm amber and ochre paper stacked like sediment across the lower half of the frame, one slim cream band running through the middle of the stack, generous empty space above, soft shadows, no lettering, no numerals, no text of any kind",
+      "a-firehorse-leads-the-halloween-parade": {
+        "subject": "a large horse silhouette striding across the frame with a row of small lantern shapes trailing behind it",
+        "detail": "the horse cut as one flat silhouette in mid-stride occupying the left two thirds of the frame, seven small round lantern shapes of decreasing size receding behind it in a gentle curve, hard shadow beneath the horse"
+      }
     },
     "ldn": {
       "marks-and-spencer-is-doing-a-london-fashion-week-show": "flat paper collage, a long narrow runway strip of pale paper running up the centre of a deep navy ground with rows of small seat shapes either side, one seat in the front row a bright red, soft shadows, no lettering, no numerals, no text of any kind",
@@ -410,7 +442,11 @@
       "michael-ball-takes-the-coliseum-as-willy-wonka": "a tall red paper top hat standing upright with a charcoal ticket shape tucked into its hatband",
       "kew-costs-ten-pounds-on-a-tuesday": "seven upright rectangles in a row, the second one cut down to a third of the height of the others and set in a different tone",
       "saturn-grew-a-ten-sided-shape": "a large ten-sided outline beside a much smaller six-sided one, both drawn as flat cut paper rings, nothing inside them",
-      "self-driving-taxis-on-uber-in-london": "a plain flat cut-paper car silhouette seen from directly above with no windows and no detail, small in the centre of a wide dark paper road strip that crosses the whole frame, three thin curved paper arcs fanning outward from the middle of the car, torn paper edges, no photographic detail anywhere"
+      "self-driving-taxis-on-uber-in-london": "a plain flat cut-paper car silhouette seen from directly above with no windows and no detail, small in the centre of a wide dark paper road strip that crosses the whole frame, three thin curved paper arcs fanning outward from the middle of the car, torn paper edges, no photographic detail anywhere",
+      "tate-britain-opens-the-90s-on-8-october": {
+        "subject": "four empty picture frames of different sizes hung in a row on a plain wall, the second one tilted slightly off level",
+        "detail": "each frame cut from a different paper tone with a visible mount depth, hung with uneven gaps between them, the second frame from the left rotated a few degrees, the frames left empty"
+      }
     },
     "lnd": {
       "what-claudes-new-watermark-cannot-tell-you": "flat paper collage on deep navy, one long horizontal strip running the width of the frame, solid pale blue and thick at the left end and thinning to a faint chalk white outline by the right end, soft shadows, wide empty space, no lettering, no numerals, no text of any kind",
@@ -441,7 +477,11 @@
       "nineteen-boroughs-close-a-road-for-a-bicycle": "nineteen small circles scattered loosely across the frame, two of them joined by one thin continuous loop of paper",
       "a-ten-sided-wave-at-saturns-south-pole": "a ring built from ten straight paper segments with narrow gaps between them, slightly off centre",
       "the-monument-may-finally-get-a-visitor-centre": "a tall narrow paper column standing from the bottom edge to near the top of the frame with a small flame shape cut from paper at its very top, a low wide flat paper block standing beside it at its foot, no lettering anywhere",
-      "unesco-lists-thirteen-buildings-by-alvar-aalto": "flat paper collage on deep navy blue, thirteen small pale blue paper rectangles of varying height arranged in an even row across the centre, each one flat topped, one of them chalk white, soft shadows, generous empty space above and below, no lettering, no numerals, no text of any kind"
+      "unesco-lists-thirteen-buildings-by-alvar-aalto": "flat paper collage on deep navy blue, thirteen small pale blue paper rectangles of varying height arranged in an even row across the centre, each one flat topped, one of them chalk white, soft shadows, generous empty space above and below, no lettering, no numerals, no text of any kind",
+      "claridges-flowers-is-on-brooks-mews": {
+        "subject": "a tall bunch of cut paper stems and leaf shapes standing in a plain cylinder vase",
+        "detail": "the vase a simple flat cylinder at the lower centre, nine or ten long stems rising from it fanning outward, each ending in a simple leaf or round bloom shape, cut from three paper tones, generous empty ground around them"
+      }
     },
     "cmx": {
       "la-marca-de-agua-de-claude-no-esta-en-las-palabras": "flat paper collage on warm cream, a long row of small identical magenta paper cards of exactly the same size and colour standing across the frame, the gaps between them clearly uneven while the cards themselves are indistinguishable, soft shadows, no lettering, no numerals, no text of any kind",
@@ -473,7 +513,11 @@
       "el-metro-cumple-57-y-lo-festeja-con-cumbia": "a large orange paper circle with a single diagonal band across it, ringed by small paper figure silhouettes arranged in a semicircle below",
       "el-grito-de-miguel-hidalgo-con-paty-cantu": "three tall vertical bands side by side, with three small circles aligned at different heights across them",
       "saturno-tiene-ahora-un-decagono": "a ten-sided paper ring in one corner and a smaller six-sided ring in the opposite corner, unequal in size",
-      "el-inah-escaneo-la-piedra-del-sol-para-los-angeles": "flat paper collage on warm cream, one large circle at the centre built from concentric cut paper rings in magenta and deep plum with the innermost ring in gold, and a second fainter outline of the very same circle offset slightly to the right, soft shadows, generous empty space around, no lettering, no numerals, no text of any kind"
+      "el-inah-escaneo-la-piedra-del-sol-para-los-angeles": "flat paper collage on warm cream, one large circle at the centre built from concentric cut paper rings in magenta and deep plum with the innermost ring in gold, and a second fainter outline of the very same circle offset slightly to the right, soft shadows, generous empty space around, no lettering, no numerals, no text of any kind",
+      "el-codice-azcatitlan-en-el-museo-de-antropologia": {
+        "subject": "an open book of plain unprinted paper lying flat and seen from directly above, its pages wider than tall",
+        "detail": "two facing pages of the same plain paper with a visible centre fold, the outer edges of the lower pages showing as a thin stepped band around them, the surface beneath a single flat colour"
+      }
     },
     "mxo": {
       "el-texto-lleva-marca-la-imagen-lleva-firma": "flat paper collage on deep forest green, exactly two rectangular sheets of terracotta paper of identical size standing upright side by side and filling most of the frame, a small round cream wax seal attached to the lower corner of the left sheet, the right sheet completely plain with nothing on it, soft shadows, no lettering, no numerals, no text of any kind",
@@ -504,7 +548,11 @@
       "gpt-6-astra-saturo-tres-examenes": "four flat paper bars standing side by side on a baseline, three of them reaching almost to the top edge of the frame and cut off level with one another, the fourth clearly shorter, no lettering and no numbers anywhere",
       "veinte-anos-del-festival-de-vida-y-muerte": "twenty small flat paper marigold heads, plain orange rings with dark centres, arranged in an even grid of four rows across a deep indigo ground",
       "el-bordado-de-bayeux-salio-de-francia": "flat paper collage on deep forest green, a single continuous terracotta thread crossing the frame horizontally in a gentle curve, punctuated along its length by small even stitch marks in warm cream, one slim cut paper needle at the left end, soft shadows, generous empty space above and below, no lettering, no numerals, no text of any kind",
-      "seis-millones-de-antilopes-entran-a-la-lista-de-la-unesco": "flat paper collage on deep forest green, a dense field of many small identical terracotta paper shapes flowing diagonally across the frame in one direction like a current, thinning towards the upper corner, warm cream ground showing through, soft shadows, no lettering, no numerals, no text of any kind"
+      "seis-millones-de-antilopes-entran-a-la-lista-de-la-unesco": "flat paper collage on deep forest green, a dense field of many small identical terracotta paper shapes flowing diagonally across the frame in one direction like a current, thinning towards the upper corner, warm cream ground showing through, soft shadows, no lettering, no numerals, no text of any kind",
+      "una-vasija-de-colima-vuelve-desde-boston": {
+        "subject": "a single round-bellied vessel with a straight flaring neck standing alone at the centre of an empty ground",
+        "detail": "the vessel cut as one flat shape with a narrower band for the neck, four small round shapes applied on its belly in a row, a hard shadow to one side, generous empty ground on all sides"
+      }
     },
     "llc": {
       "exempt-from-the-tax-still-means-a-filing-on-30-september": "flat paper collage, a single plain sheet of paper lying alone at the centre of a wide empty ground with one corner folded back, a thin band running across the frame behind it marking a boundary the sheet has not yet crossed, soft shadows, no lettering, no numerals, no text of any kind",
@@ -577,7 +625,11 @@
     "sol2go": {
       "alpenglow-now-has-dates-and-the-first-one-is-a-stake-percentage": "flat paper collage on a deep plain ground, a single row of about ten upright paper markers of equal size standing evenly spaced across the frame, the first four cut from solid bright saturated paper and the remaining six pale and faint, clean cut edges with soft shadows, generous empty space above, no lettering, no numerals, no text of any kind",
       "rent-came-down-and-every-account-is-now-over-funded": "a tall stack of flat discs with the top third of the stack lifted clear and floating just above the rest",
-      "before-solana-gets-150ms-finality-two-gates-had-to-open": "two narrow upright gate forms standing open, a long arrow shape passing between them across the frame"
+      "before-solana-gets-150ms-finality-two-gates-had-to-open": "two narrow upright gate forms standing open, a long arrow shape passing between them across the frame",
+      "project-harmonia-opens-an-rfp-with-allfunds": {
+        "subject": "two wide horizontal bands running in from opposite edges of the frame and meeting at the centre, overlapping slightly where they meet",
+        "detail": "the upper band entering from the left and the lower from the right, each with a clean cut edge and a hard shadow, the overlap at the centre cut from a third paper tone, generous empty ground above and below"
+      }
     },
     "vien": {
       "warum-claude-seit-august-jeden-satz-markiert": "flat paper collage on warm cream, a single row of upright vermilion red paper cards of identical size and colour spanning the frame, the spacing between them varying from wide to narrow along the row, soft shadows, generous empty space above, no lettering, no numerals, no text of any kind",
@@ -586,7 +638,11 @@
       "wien-ist-2026-zweitlebenswerteste-stadt-der-welt": "three stacked vertical bars of nearly equal height with the tallest at the left, a thin rule running across all three",
       "openai-stuft-neues-modell-als-kritisch-fuer-cybersicherheit-ein": "a large flat paper padlock shape standing closed in the middle of the frame, two flat paper keys lying beside it, one of the keys outlined with a thin metallic edge, no lettering anywhere",
       "was-halloween-in-oesterreich-kostet": "a single tall stack of round paper discs of identical size rising past the top of the frame, beside two much shorter stacks of the same discs, generous empty space around them",
-      "der-teppich-von-bayeux-hat-frankreich-verlassen": "flat paper collage on warm cream, one long narrow horizontal band of deep vermilion red paper unrolled across the full width of the frame, its lower edge finished with a row of small even notches suggesting stitching, a thin moss green line running below it, soft shadows, generous empty cream above and below, no lettering, no numerals, no text of any kind"
+      "der-teppich-von-bayeux-hat-frankreich-verlassen": "flat paper collage on warm cream, one long narrow horizontal band of deep vermilion red paper unrolled across the full width of the frame, its lower edge finished with a row of small even notches suggesting stitching, a thin moss green line running below it, soft shadows, generous empty cream above and below, no lettering, no numerals, no text of any kind",
+      "zweihundertfuenfzig-jahre-albertina": {
+        "subject": "a tall slightly fanned stack of flat paper sheets seen from the side, one sheet drawn out from the middle of the stack",
+        "detail": "about thirty sheets stacked and offset a little from one another so the stack leans, one sheet pulled halfway out at mid-height and lying proud of the rest, hard shadows between the layers"
+      }
     }
   },
   "pages": {

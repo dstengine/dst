@@ -2,6 +2,60 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
 
+
+  {
+    slug: "el-codice-azcatitlan-en-el-museo-de-antropologia",
+    createdAt: "2026-09-21T17:35:00+04:00",
+    updatedAt: "2026-09-21T17:35:00+04:00",
+    site: "cmx",
+    image: "/covers/el-codice-azcatitlan-en-el-museo-de-antropologia.jpg",
+    imageAlt: "Un libro abierto visto desde arriba, con formas de color repartidas en las dos páginas",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "El Códice Azcatitlan se puede ver en la Ciudad de México hasta diciembre",
+    cardTitle: "El Códice Azcatitlan, en Antropología",
+    titleSeo: "El Códice Azcatitlan en Antropología",
+    summary:
+      "Salió de México en 1840 y se conserva en París. Ahora está en la Ciudad de México, en la Sala de Exposiciones Temporales del Museo Nacional de Antropología, con entrada libre y hasta el 6 de diciembre.",
+    date: "2026-09-21",
+    city: "Ciudad de México",
+    country: "México",
+    category: "Exposición",
+    source: {
+      name: "INAH",
+      url: "https://www.inah.gob.mx/",
+      verifiedOn: "2026-09-21",
+    },
+    body: [
+      "Hay documentos que se estudian en facsímil porque el original está a nueve mil kilómetros. El <strong>Códice Azcatitlan</strong> es uno de ellos, y durante unos meses no lo es: está en la <strong>Sala de Exposiciones Temporales</strong> del <strong>Museo Nacional de Antropología</strong>, con <strong>entrada libre</strong>, <strong>hasta el 6 de diciembre de 2026</strong>.",
+      "## Qué cuenta",
+      "También llamado <em>Histoire mexicaine</em>, narra el viaje mexica desde <strong>Aztlan</strong> —hacia <strong>1168 d.C.</strong>— hasta la Conquista y los primeros años coloniales. El nombre con el que se le conoce se lo dio <strong>Robert H. Barlow</strong> a partir del topónimo «Ascatitla».",
+      "## Cómo está hecho",
+      "Es de finales del siglo XVI o principios del XVII y combina el <strong>sistema pictórico prehispánico</strong> con el europeo. El formato también es europeo: <strong>libro apaisado</strong> de <strong>25 fojas</strong>. Se conserva muy bien gracias a la calidad del papel y a una <strong>restauración de 1959</strong>.",
+      "## Cómo llegó a París",
+      "Estuvo en la colección de <strong>Lorenzo Boturini Benaducci</strong> (1702–1755) y después en la de <strong>Joseph Marius Alexis Aubin</strong> (1802–1891), quien lo llevó a <strong>París en 1840</strong>. En <strong>1889</strong> se vendió a <strong>Eugène Goupil</strong> por intercesión de <strong>Eugène Boban</strong>, y quedó registrado en el catálogo de <strong>1891</strong>. En <strong>1898</strong> la viuda de Goupil donó parte de esa colección a la <strong>Biblioteca Nacional de Francia</strong>, donde el códice forma parte del Fondo de Manuscritos Mexicanos.",
+      "## Por qué está aquí ahora",
+      "El traslado es temporal y se hizo en el marco del <strong>bicentenario de las relaciones diplomáticas entre México y Francia</strong>, por acuerdo entre los dos gobiernos.",
+    ],
+    faq: [
+      {
+        q: "¿Hasta cuándo se puede ver el Códice Azcatitlan?",
+        a: "Hasta el <strong>6 de diciembre de 2026</strong>, en la Sala de Exposiciones Temporales del Museo Nacional de Antropología.",
+      },
+      {
+        q: "¿Cuesta algo verlo?",
+        a: "No: la exhibición del códice es de <strong>entrada libre</strong>.",
+      },
+      {
+        q: "¿Dónde se conserva normalmente?",
+        a: "En la <strong>Biblioteca Nacional de Francia</strong>, dentro del Fondo de Manuscritos Mexicanos. Salió de México en <strong>1840</strong>.",
+      },
+    ],
+    expertise:
+      "Un códice de veinticinco fojas se exhibe siempre abierto en dos, y ésas son las que se ven: el resto queda cerrado por la misma razón por la que llegó en buen estado. Conviene ir sabiendo qué parte del relato está expuesta y leer el facsímil completo antes o después, porque la sala no lo sustituye. Y la hora importa más de lo habitual: la vitrina es una y la fila se forma temprano los domingos.",
+  },
+
   {
     slug: "la-marca-de-agua-de-claude-no-esta-en-las-palabras",
     createdAt: "2026-08-30T11:52:01+04:00",

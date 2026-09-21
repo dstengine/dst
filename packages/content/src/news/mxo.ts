@@ -2,6 +2,56 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
 
+
+  {
+    slug: "una-vasija-de-colima-vuelve-desde-boston",
+    createdAt: "2026-09-21T15:15:00+04:00",
+    updatedAt: "2026-09-21T15:15:00+04:00",
+    site: "mxo",
+    image: "/covers/una-vasija-de-colima-vuelve-desde-boston.jpg",
+    imageAlt: "Una vasija de cuerpo redondeado y cuello recto que se abre, sola al centro de un fondo vacío",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Una vasija de Colima con cuatro granos de cacao vuelve a México desde Boston",
+    cardTitle: "Una vasija de Colima vuelve a México",
+    titleSeo: "Una vasija de Colima vuelve desde Boston",
+    summary:
+      "La entregó un instituto estadounidense por voluntad propia ante el consulado de México en Boston. Es de tradición Comala y tiene entre 1.400 y 2.300 años.",
+    date: "2026-09-21",
+    city: "Colima",
+    country: "México",
+    category: "Patrimonio",
+    source: {
+      name: "INAH, Boletín 427",
+      url: "https://www.inah.gob.mx/",
+      verifiedOn: "2026-09-21",
+    },
+    body: [
+      "La mayoría de las piezas arqueológicas que regresan a México lo hacen después de un litigio. Ésta no: el <strong>Institute for Cacao and Chocolate Research</strong> la entregó por <strong>voluntad propia</strong> ante el <strong>Consulado General de México en Boston</strong>, según el boletín del <strong>INAH</strong> del <strong>11 de septiembre de 2026</strong>.",
+      "## Qué es la pieza",
+      "Una <strong>olla de barro modelado</strong>, de superficie pulida y <strong>engobe rojizo</strong>, con aplicaciones modeladas: una <strong>vasija fitomorfa</strong> con <strong>cuatro granos de cacao</strong>, cuello de paredes rectas divergentes y borde redondeado.",
+      "## De cuándo es",
+      "De <strong>tradición Comala</strong>, del <strong>Preclásico Terminal al Clásico</strong>, es decir entre el <strong>300 a.C. y el 600 d.C.</strong>",
+      "## Quién la devolvió",
+      "El instituto lo dirige el investigador mexicano <strong>José López Ganem</strong>, profesor de la <strong>Universidad de Boston</strong>, quien señaló que se trata de «la vasija número 83 que hemos repatriado». La entrega se hizo ante el cónsul general <strong>Carlos Iriarte Mercado</strong>.",
+      "## Por qué importa el número 83",
+      "Una devolución aislada es un gesto. Ochenta y tres es un procedimiento: alguien montó la vía por la que una pieza en manos privadas puede volver sin pasar por un juzgado, y esa vía es la parte reutilizable de esta noticia.",
+    ],
+    faq: [
+      {
+        q: "¿De dónde es la vasija?",
+        a: "Es de <strong>tradición Comala</strong>, de <strong>Colima</strong>, y data de entre el <strong>300 a.C. y el 600 d.C.</strong>",
+      },
+      {
+        q: "¿Hubo un juicio de por medio?",
+        a: "No. Fue una <strong>restitución voluntaria</strong> hecha ante el Consulado General de México en Boston.",
+      },
+    ],
+    expertise:
+      "Los cuatro granos de cacao aplicados sobre el cuerpo son lo que hace identificable la pieza y también lo que explica quién la tenía: un instituto dedicado a la investigación del cacao. Lo que no vuelve con la pieza es el dato de mayor valor arqueológico: el contexto exacto en el que fue hallada, que se pierde en el momento en que un objeto sale de su sitio sin registro. Una restitución devuelve el objeto, no su procedencia.",
+  },
+
   {
     slug: "veinte-anos-del-festival-de-vida-y-muerte",
     createdAt: "2026-09-08T21:23:08+04:00",

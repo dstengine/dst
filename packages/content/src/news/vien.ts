@@ -1,6 +1,54 @@
 import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
+
+
+  {
+    slug: "zweihundertfuenfzig-jahre-albertina",
+    createdAt: "2026-09-21T17:10:00+04:00",
+    updatedAt: "2026-09-21T17:10:00+04:00",
+    site: "vien",
+    image: "/covers/zweihundertfuenfzig-jahre-albertina.jpg",
+    imageAlt: "Ein hoher Stapel flacher Papierbögen von der Seite, ein Bogen rutscht unten seitlich heraus",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "250 Jahre ALBERTINA: was im Jubiläumsjahr in Wien zu sehen ist",
+    cardTitle: "250 Jahre ALBERTINA",
+    titleSeo: "250 Jahre ALBERTINA: das Jubiläumsjahr in Wien",
+    summary:
+      "Das Haus am Albertinaplatz in Wien feiert 2026 sein 250-jähriges Bestehen — mit drei Hauptausstellungen, einem Entdeckungspfad und mehreren Schauen, die noch im Oktober enden.",
+    date: "2026-09-21",
+    city: "Wien",
+    country: "Österreich",
+    category: "Museen",
+    source: {
+      name: "ALBERTINA",
+      url: "https://www.albertina.at/",
+      verifiedOn: "2026-09-21",
+    },
+    body: [
+      "Ein Jubiläum ist für ein Museum vor allem eine Terminfrage: Wer in Wien im Jubiläumsjahr etwas Bestimmtes sehen will, muss wissen, was zuerst schließt. Die <strong>ALBERTINA</strong> wird 2026 <strong>250 Jahre</strong> alt und bespielt das Jahr mit <strong>drei Hauptausstellungen</strong>, einem <strong>Entdeckungspfad</strong> durch das Haus und der Schau <strong>Faszination Papier</strong>.",
+      "## Was noch im Oktober endet",
+      "<strong>COLLECTING FOR THE FUTURE</strong> bis <strong>11. Oktober 2026</strong>, <strong>THE WORLD IN FOCUS</strong> bis <strong>26. Oktober 2026</strong>. Beides sind die kurzen Fristen im Programm.",
+      "## Was bis in den Winter läuft",
+      "<strong>PICASSO–BACON</strong> bis <strong>31. Jänner 2027</strong> und <strong>OTTO MEETS ALBERTINA</strong> bis <strong>10. Jänner 2027</strong>.",
+      "## Was noch kommt",
+      "<strong>SHARA HUGHES</strong> ab <strong>9. Oktober</strong>, <strong>FRANZ WEST</strong> in der <strong>ALBERTINA MODERN</strong> ab <strong>6. November</strong> und <strong>ARNULF RAINER</strong> ab <strong>13. November</strong>. Wer nur einen Wienbesuch hat, plant ihn sinnvollerweise um diese vier Daten herum und nicht um das Jubiläum.",
+    ],
+    faq: [
+      {
+        q: "Was feiert die ALBERTINA 2026?",
+        a: "Ihr <strong>250-jähriges Bestehen</strong>, mit drei Hauptausstellungen, einem Entdeckungspfad und der Schau <strong>Faszination Papier</strong>.",
+      },
+      {
+        q: "Welche Ausstellungen enden zuerst?",
+        a: "<strong>COLLECTING FOR THE FUTURE</strong> am <strong>11. Oktober 2026</strong> und <strong>THE WORLD IN FOCUS</strong> am <strong>26. Oktober 2026</strong>.",
+      },
+    ],
+    expertise:
+      "Zwei Häuser, ein Ticketgedanke: Die Prunkräume und die Wechselausstellungen am Albertinaplatz lassen sich an einem Vormittag verbinden, die ALBERTINA MODERN am Karlsplatz nicht — das ist ein eigener Weg und ein eigener halber Tag. Wer beide Adressen im selben Besuch unterbringen will, legt sie auf zwei Tage; wer nur einen Tag hat, entscheidet sich für eines von beiden und nicht für einen Kompromiss aus Hetze.",
+  },
   {
     slug: "warum-die-biologische-uhr-nach-vier-wochen-stehen-blieb",
     createdAt: "2026-09-06T09:36:42+04:00",

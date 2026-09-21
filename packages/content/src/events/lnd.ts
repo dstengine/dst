@@ -1,6 +1,65 @@
 import type { EventItem } from "../types.ts";
 
 export const items: EventItem[] = [
+
+
+  {
+    slug: "one-54-somerset-house-2026",
+    createdAt: "2026-09-21T16:35:00+04:00",
+    updatedAt: "2026-09-21T16:35:00+04:00",
+    site: "lnd",
+    image: "/covers/one-54-somerset-house-2026.jpg",
+    imageAlt: "A large square courtyard of pale paving ringed by tall narrow window bands, with one small block standing at its centre",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "1-54 Contemporary African Art Fair 2026",
+    cardTitle: "1-54 at Somerset House",
+    summary:
+      "The fair takes three wings of Somerset House from 15 to 18 October, its fourteenth consecutive London edition, with a monumental installation standing in the Fountain Court.",
+    start: "2026-10-15",
+    end: "2026-10-18",
+    startTime: "11:00",
+    endTime: "19:00",
+    utcOffset: "+01:00",
+    city: "London",
+    country: "United Kingdom",
+    venue: "Somerset House, Strand",
+    organizer: "1-54",
+    category: "Culture",
+    tickets: { priceFrom: 18, priceTo: 100, currency: "GBP" },
+    source: {
+      name: "1-54 Contemporary African Art Fair",
+      url: "https://www.1-54.com/london/",
+      verifiedOn: "2026-09-21",
+    },
+    ticket: { url: "https://www.1-54.com/london/", label: "Tickets" },
+    body: [
+      "A fair that has come back to the same building for <strong>fourteen consecutive years</strong> is no longer visiting it. 1-54 takes the <strong>East, West and South Wings</strong> of Somerset House and the <strong>Terrace Rooms</strong>, and puts a monumental installation in the <strong>Edmond J. Safra Fountain Court</strong> where the fountains are.",
+      "## Dates and hours",
+      "<strong>15 to 18 October 2026</strong>. Thursday to Saturday <strong>11am to 7pm</strong>, Sunday <strong>11am to 6pm</strong>. The <strong>15th</strong> also carries the press and VIP preview.",
+      "## What a ticket costs",
+      "<strong>GBP 32</strong> standard, <strong>GBP 18</strong> concessions, and <strong>GBP 100</strong> for the VIP Thursday, which includes a cocktail. A disabled visitor's companion goes free, as do children of twelve and under.",
+      "## The two things to look for",
+      "This edition carries a <strong>Modernist spotlight</strong> alongside the contemporary galleries, and a curated section — <strong>1-54 Presents: West Wind</strong>, put together by <strong>Dr Nancy Dantas</strong>. A curated section at a commercial fair is the part that is arguing rather than selling, and it is usually the part worth the second hour.",
+    ],
+    faq: [
+      {
+        q: "When is 1-54 London 2026?",
+        a: "<strong>15 to 18 October 2026</strong> at Somerset House: Thursday to Saturday 11am to 7pm, Sunday 11am to 6pm.",
+      },
+      {
+        q: "How much are tickets?",
+        a: "<strong>GBP 32</strong> standard and <strong>GBP 18</strong> concessions; the VIP Thursday is <strong>GBP 100</strong> and includes a cocktail. Children of twelve and under, and a disabled visitor's companion, go free.",
+      },
+      {
+        q: "Is the Fountain Court installation ticketed?",
+        a: "The monumental installation stands in the <strong>Edmond J. Safra Fountain Court</strong>, the open courtyard of Somerset House.",
+      },
+    ],
+    expertise:
+      "October in London belongs to the big fair in Regent's Park, and 1-54 has spent fourteen years turning that into an advantage: it is the same week, a twenty-minute walk from the Strand, and a fraction of the floor space, which means the galleries in it are within speaking distance rather than shouting distance. Thursday is the day the trade is in the building and Sunday afternoon is the day you can stand in front of something for as long as you like. Neither is the wrong answer; they are simply different fairs.",
+  },
   {
     slug: "lambeth-fringe-2026",
     createdAt: "2026-08-30T11:52:01+04:00",

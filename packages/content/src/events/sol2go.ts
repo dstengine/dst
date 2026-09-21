@@ -1,6 +1,56 @@
 import type { EventItem } from "../types.ts";
 
 export const items: EventItem[] = [
+
+
+  {
+    slug: "el-encuentro-madrid-2026",
+    createdAt: "2026-09-21T15:20:00+04:00",
+    updatedAt: "2026-09-21T15:20:00+04:00",
+    site: "sol2go",
+    image: "/covers/el-encuentro-madrid-2026.jpg",
+    imageAlt: "A ring of small flat seat shapes arranged around one open centre, seen from directly above",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "El Encuentro: the Solana gathering in Madrid",
+    cardTitle: "El Encuentro, Madrid",
+    summary:
+      "La Familia hosts its flagship Solana day in Madrid on 26 October — talks, panels, workshops and activations, with registration subject to approval and the address given on the ticket.",
+    start: "2026-10-26",
+    utcOffset: "+01:00",
+    city: "Madrid",
+    country: "Spain",
+    organizer: "La Familia",
+    category: "Meetup",
+    source: {
+      name: "La Familia",
+      url: "https://lafamilia.so/el-encuentro/",
+      verifiedOn: "2026-09-21",
+    },
+    ticket: { url: "https://lafamilia.so/el-encuentro/", label: "Register" },
+    body: [
+      "Spain's Solana community runs under one name, <strong>La Familia</strong>, and once a year it puts everyone in the same room. <strong>El Encuentro</strong> is that room, and in 2026 it is in <strong>Madrid</strong> on <strong>26 October</strong>.",
+      "## What the day is made of",
+      "Talks, panels, workshops, activations and unstructured networking time — the flagship gathering rather than a satellite of a larger conference.",
+      "## Registration is approved, not bought",
+      "You register and the host approves; the <strong>address is shown on registration</strong> rather than published in advance. That is a deliberate choice about who is in the room, and it means turning up on the day without having registered is not an option.",
+      "## Why a national community event is worth the flight",
+      "A regional gathering is where the people building in one language and one timezone are all reachable in an afternoon. That is a different proposition from a global conference, where the same people are present but spread across four tracks and a fortnight of side events.",
+    ],
+    faq: [
+      {
+        q: "When and where is El Encuentro 2026?",
+        a: "<strong>26 October 2026</strong>, in <strong>Madrid</strong>, hosted by La Familia.",
+      },
+      {
+        q: "How do I get in?",
+        a: "By <strong>registering in advance</strong>. Registration is <strong>subject to host approval</strong>, and the venue address is shown to you once you are registered.",
+      },
+    ],
+    expertise:
+      "Approval-gated registration is the organiser telling you what kind of day this is: the room is picked rather than filled, which usually means fewer people and a much higher chance that the person next to you is building something. It also means the deadline that matters is not the event date but the day the host stops approving — register early enough that a decision can be made, not the night before.",
+  },
   {
     slug: "crypto-expo-dubai-2026",
     createdAt: "2026-09-06T09:36:42+04:00",

@@ -1,6 +1,54 @@
 import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
+
+
+  {
+    slug: "tate-britain-opens-the-90s-on-8-october",
+    createdAt: "2026-09-21T16:20:00+04:00",
+    updatedAt: "2026-09-21T16:20:00+04:00",
+    site: "ldn",
+    image: "/covers/tate-britain-opens-the-90s-on-8-october.jpg",
+    imageAlt: "Four empty picture frames hung in an even row on a plain wall",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Tate Britain opens The 90s: Art and Fashion on 8 October",
+    cardTitle: "The 90s at Tate Britain",
+    titleSeo: "Tate Britain opens The 90s: Art and Fashion",
+    summary:
+      "A London decade told through both of its industries at once: Edward Enninful curates the photographers and the artists into one show, 8 October to 14 February.",
+    date: "2026-09-21",
+    city: "London",
+    country: "United Kingdom",
+    category: "Exhibitions",
+    source: {
+      name: "Tate",
+      url: "https://www.tate.org.uk/whats-on/tate-britain/the-90s",
+      verifiedOn: "2026-09-21",
+    },
+    body: [
+      "The usual way to tell the story of British art in the nineties is to hang the artists and mention the clothes. <strong>Tate Britain</strong> is doing the opposite of that: the photographers who made the decade's fashion images are in the same rooms as the artists, curated by <strong>Edward Enninful OBE</strong>.",
+      "## Dates",
+      "<strong>8 October 2026 to 14 February 2027</strong>, at Tate Britain. Free for Members.",
+      "## Who is in it",
+      "On the photography side, <strong>Juergen Teller</strong>, <strong>David Sims</strong> and <strong>Corinne Day</strong>. On the art side, <strong>Steve McQueen</strong>, <strong>Damien Hirst</strong>, <strong>Sarah Lucas</strong> and <strong>Yinka Shonibare</strong>.",
+      "## Why the pairing is the argument",
+      "Those two lists were made in the same city in the same years by people who knew each other, and they have been shown apart ever since — one set in galleries, the other in magazines and then in books about magazines. Putting them on one wall is a claim about where the decade's images actually came from, and it is a claim a visitor can check by walking the rooms.",
+    ],
+    faq: [
+      {
+        q: "When does The 90s: Art and Fashion open?",
+        a: "<strong>8 October 2026</strong>, and it runs until <strong>14 February 2027</strong> at Tate Britain.",
+      },
+      {
+        q: "Who curated it?",
+        a: "<strong>Edward Enninful OBE</strong>.",
+      },
+    ],
+    expertise:
+      "Winter exhibitions at Tate Britain are quietest in the fortnight after opening and again in January, and this one will not follow that pattern: a show with fashion photography in it draws a second audience that does not otherwise visit, and the half-terms either side of Christmas are the weeks to avoid. If the point of going is the photographs rather than the paintings, go early — prints of this vintage are usually hung in the lower-lit rooms, which are the ones that fill first.",
+  },
   {
     slug: "marks-and-spencer-is-doing-a-london-fashion-week-show",
     createdAt: "2026-08-30T11:52:01+04:00",

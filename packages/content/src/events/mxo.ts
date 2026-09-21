@@ -1,6 +1,64 @@
 import type { EventItem } from "../types.ts";
 
 export const items: EventItem[] = [
+
+
+  {
+    slug: "feria-del-chile-mole-y-pozole-atlacomulco-2026",
+    createdAt: "2026-09-21T15:10:00+04:00",
+    updatedAt: "2026-09-21T15:10:00+04:00",
+    site: "mxo",
+    image: "/covers/feria-del-chile-mole-y-pozole-atlacomulco-2026.jpg",
+    imageAlt: "Un plato redondo visto desde arriba, con un anillo de pequeñas formas de chile alrededor de un disco liso al centro",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Feria del Chile, Mole y Pozole de Atlacomulco 2026",
+    cardTitle: "Feria del Chile, Mole y Pozole",
+    titleSeo: "Feria del Chile, Mole y Pozole 2026",
+    summary:
+      "Tres días de cocina tradicional del Estado de México en la Plaza Cívica de Atlacomulco, del 25 al 27 de septiembre, de 8:00 a 19:00 y con acceso gratuito.",
+    start: "2026-09-25",
+    end: "2026-09-27",
+    startTime: "08:00",
+    endTime: "19:00",
+    utcOffset: "-06:00",
+    city: "Atlacomulco",
+    country: "México",
+    venue: "Plaza Cívica de Atlacomulco, Julián González Manzana 024",
+    organizer: "Ayuntamiento de Atlacomulco",
+    category: "Ferias",
+    tickets: { priceFrom: 0, currency: "MXN" },
+    source: {
+      name: "Ayuntamiento de Atlacomulco",
+      verifiedOn: "2026-09-21",
+    },
+    body: [
+      "Una feria que se llama por tres platos y no por un santo ni por una fecha está diciendo con claridad a qué se va. En <strong>Atlacomulco de Fabela</strong>, en el <strong>Estado de México</strong>, la plaza principal se ocupa tres días con cocineras tradicionales, chefs, productores y artesanos.",
+      "## Fechas y horario",
+      "<strong>Viernes 25 a domingo 27 de septiembre de 2026</strong>, de <strong>8:00 a 19:00</strong>, en la <strong>Plaza Cívica</strong>. El <strong>acceso es gratuito</strong>.",
+      "## Qué se come",
+      "<strong>Pozole</strong>, <strong>mole</strong>, <strong>conejo en adobo</strong>, antojitos de maíz, salsas artesanales y caldo de gallina. El horario de apertura —ocho de la mañana— es la pista: aquí se desayuna, no sólo se cena.",
+      "## El invitado de este año",
+      "El <strong>Pueblo Mágico de Chignahuapan</strong>, en <strong>Puebla</strong>, participa como invitado especial.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo es la Feria del Chile, Mole y Pozole 2026?",
+        a: "Del <strong>25 al 27 de septiembre de 2026</strong>, de 8:00 a 19:00, en la Plaza Cívica de Atlacomulco.",
+      },
+      {
+        q: "¿Se paga entrada?",
+        a: "No. El <strong>acceso es gratuito</strong>; se paga únicamente lo que se consume.",
+      },
+      {
+        q: "¿Dónde queda Atlacomulco?",
+        a: "En el <strong>norte del Estado de México</strong>. La feria ocupa la Plaza Cívica, en el centro del municipio.",
+      },
+    ],
+    expertise:
+      "Tres platos en una misma feria no compiten: se comen a horas distintas. El pozole es de mediodía en adelante, el mole aguanta todo el día y los antojitos de maíz son de la primera hora, que es cuando las cocineras tradicionales tienen las ollas recién puestas y la plaza todavía vacía. Quien llegue a las dos de la tarde de un sábado encontrará la feria en su punto más lleno y su cocina en el segundo turno.",
+  },
   {
     slug: "festival-internacional-cervantino-2026",
     createdAt: "2026-08-30T11:52:01+04:00",

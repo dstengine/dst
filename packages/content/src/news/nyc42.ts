@@ -2,6 +2,54 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
 
+
+  {
+    slug: "a-firehorse-leads-the-halloween-parade",
+    createdAt: "2026-09-21T15:55:00+04:00",
+    updatedAt: "2026-09-21T15:55:00+04:00",
+    site: "nyc42",
+    image: "/covers/a-firehorse-leads-the-halloween-parade.jpg",
+    imageAlt: "A cut-paper horse striding across the frame with a row of small lantern shapes trailing behind it",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "A Basil Twist puppet will lead the Halloween parade up Sixth Avenue",
+    cardTitle: "A Firehorse leads the parade",
+    titleSeo: "A Firehorse leads the Village Halloween Parade",
+    summary:
+      "New York's 53rd Village Halloween Parade steps off at 7pm on 31 October under the theme Body & Soul, led by a Firehorse built for the Year of the Horse. NY1 carries it live from 8pm.",
+    date: "2026-09-21",
+    city: "New York City",
+    country: "United States",
+    category: "Parade",
+    source: {
+      name: "NYC Village Halloween Parade",
+      url: "https://www.halloween-nyc.com/",
+      verifiedOn: "2026-09-21",
+    },
+    body: [
+      "A parade that anyone in costume can join has to decide one thing in advance: what goes at the front. For the <strong>53rd Village Halloween Parade</strong> it is a <strong>Firehorse</strong> — a puppet commissioned for the Year of the Horse from <strong>Basil Twist</strong>, the puppeteer whose work carried a MacArthur Fellowship.",
+      "## The details that are fixed",
+      "<strong>Saturday 31 October 2026</strong>, stepping off at <strong>7:00pm</strong> up <strong>Sixth Avenue</strong>, under the theme <strong>Body &amp; Soul</strong>. <strong>Spectrum News NY1</strong> carries it live from <strong>8:00pm</strong>, which is the hour the middle of the parade is passing rather than the hour it begins.",
+      "## Who is behind the front of it",
+      "The Firehorse is choreographed by <strong>Julie Atlas Muz</strong> and the parade is produced by <strong>Barbara Busackino</strong> of <strong>Tandem Otter Productions</strong>. A lead puppet is not decoration: it sets the pace the first half-mile walks at, and in a procession with no auditions it is the only part of the line-up anyone can plan.",
+      "## The rest is still open",
+      "No Grand Marshal has been announced. Watching is free, and joining in is free to anyone in costume — the full timing and the route are on <a href=\"/events/village-halloween-parade-2026/\" title=\"Village Halloween Parade 2026\">the parade's own entry</a>.",
+    ],
+    faq: [
+      {
+        q: "What is the theme of the 2026 Village Halloween Parade?",
+        a: "<strong>Body &amp; Soul</strong>, with a Firehorse puppet by Basil Twist leading the parade for the Year of the Horse.",
+      },
+      {
+        q: "Can I watch the Halloween parade on television?",
+        a: "Yes — <strong>Spectrum News NY1</strong> broadcasts it live from <strong>8:00pm</strong> on 31 October.",
+      },
+    ],
+    expertise:
+      "Broadcast coverage starting an hour after the step-off tells you something useful about where to stand. The front of the parade is the part with the commissioned work in it, and it passes the lower blocks first; by the time a camera is live the head of the procession is well uptown. Anyone who wants to see the Firehorse rather than the crowd behind it should be south and early.",
+  },
+
   {
     slug: "sxsw-badges-go-up-on-september-17",
     createdAt: "2026-09-08T20:26:58+04:00",
