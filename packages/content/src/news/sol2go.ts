@@ -2,6 +2,64 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
 
+  {
+    slug: "solana-slots-are-250ms-and-every-block-limit-came-down-with-them",
+    createdAt: "2026-09-22T02:48:00+04:00",
+    updatedAt: "2026-09-22T02:48:00+04:00",
+    site: "sol2go",
+    image: "/covers/solana-slots-are-250ms-and-every-block-limit-came-down-with-them.jpg",
+    imageAlt: "A pale square cut into upright strips of differing widths in mint, cream and grey-blue, standing together on a lilac ground",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Solana slots are 250ms now, and every per-block limit came down with them",
+    cardTitle: "250ms slots, and smaller blocks",
+    titleSeo: "Solana slot time is 250ms: what scaled with it",
+    summary:
+      "Solana cut its slot time to 250ms at epoch 1037 on 18 September, the fourth of five steps towards 200ms. Per-block compute fell from 60 million units to 37.5 million with it, so what this buys is latency, not capacity.",
+    date: "2026-09-18",
+    category: "Upgrades",
+    featured: 1,
+    source: {
+      name: "Solana Compass",
+      url: "https://solanacompass.com/news/solana-activates-250ms-slot-time-at-epoch-1037-fourth-step-of-simd-0525",
+      verifiedOn: "2026-09-22",
+    },
+    body: [
+      "A faster block is not a bigger one. Solana has just made its blocks arrive more often, and made each of them smaller by exactly as much — which is the part of the change that reaches anyone who has written a compute budget.",
+      "## What went live, and when",
+      "Slot time on mainnet dropped to <strong>250 milliseconds</strong> at the <strong>epoch 1037</strong> boundary, <strong>05:06 UTC on 18 September 2026</strong>. It is the <strong>fourth of five steps</strong> in <strong>SIMD-0525</strong>, which walks the network down from <strong>400ms</strong> to a <strong>200ms</strong> target. The 350ms step landed on 19 August at epoch 1019 and the 300ms step on 25 August at epoch 1023.",
+      "## A gate that activates before it does anything",
+      "The feature gate was <strong>pending at epoch 1035</strong>, went <strong>active at the epoch 1036 boundary</strong>, and <strong>first applied to block production at epoch 1037</strong>. That is not a delay and not a bug: gates under SIMD-0525 take effect one epoch after they activate. Anyone reading the explorer on the day the gate went active would have seen an upgrade that was switched on and changing nothing, and been right both times.",
+      "## What came down with the slot",
+      "Each step scales the per-slot resource limits in proportion, so the per-second execution budget stays roughly where it was. Against the 400ms baseline that means <strong>maximum block compute units fall from 60 million to 37.5 million</strong> and <strong>maximum data and coding shreds per slot from 32,768 to 20,480</strong>. A leader still gets four consecutive slots, but the window is now <strong>1.0 second</strong> rather than the 1.2 it was at 300ms and the 1.6 it was at the start. An epoch now runs <strong>roughly 30 hours</strong> instead of about 48, and the <strong>Validator Admission Ticket costs 1.0 SOL per epoch</strong>, down from 1.6.",
+      "## The Foundation's own page has not caught up",
+      "Solana's upgrade page for reduced slot times still lists the 250ms gate as live on devnet and testnet with a mainnet date “to be determined”, while the changelog of 18 September lists it among the notable mainnet gates. The changelog is the one that matches the chain.",
+      "## What is left",
+      "One step: <strong>200ms</strong>, with <strong>no announced activation date</strong>. Each stage is watched under production load before the next is queued, so the gap between steps is the observation, not the paperwork.",
+    ],
+    faq: [
+      {
+        q: "When did Solana's 250ms slot time go live?",
+        a: "At the <strong>epoch 1037</strong> boundary, <strong>05:06 UTC on 18 September 2026</strong>, on mainnet.",
+      },
+      {
+        q: "Does a shorter slot mean Solana can process more?",
+        a: "No. Per-slot limits scale down in proportion, so the per-second budget is roughly unchanged. What improves is how soon a block arrives, not how much fits in an hour.",
+      },
+      {
+        q: "How much compute does a block have now?",
+        a: "<strong>37.5 million compute units</strong> at 250ms, against 60 million at the original 400ms slot.",
+      },
+      {
+        q: "Is 250ms the end of it?",
+        a: "No — <strong>200ms</strong> is the final step of SIMD-0525, and no activation date has been announced for it.",
+      },
+    ],
+    expertise:
+      "The number to design against is 37.5 million, not 250 milliseconds. A transaction that fit comfortably in a 60-million-unit block has had its share of the block quietly grow by sixty per cent, and at 200ms it will grow again — so anything already landing near the top of a block's budget is on a path to not landing at all, and it will fail on a day when nothing about the transaction changed. The staged rollout is the place to catch that: each step is observed under real load before the next is queued, which means there is a window between gates long enough to measure your own worst block against the new ceiling rather than discover it.",
+  },
+
 
   {
     slug: "project-harmonia-opens-an-rfp-with-allfunds",

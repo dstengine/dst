@@ -23234,6 +23234,54 @@
         ]
       ]
     },
+    "/covers/solana-slots-are-250ms-and-every-block-limit-came-down-with-them.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/solana-slots-are-250ms-and-every-block-limit-came-down-with-them-480.avif"
+        ],
+        [
+          768,
+          "/covers/solana-slots-are-250ms-and-every-block-limit-came-down-with-them-768.avif"
+        ],
+        [
+          1024,
+          "/covers/solana-slots-are-250ms-and-every-block-limit-came-down-with-them-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/solana-slots-are-250ms-and-every-block-limit-came-down-with-them-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/solana-slots-are-250ms-and-every-block-limit-came-down-with-them-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/solana-slots-are-250ms-and-every-block-limit-came-down-with-them-480.webp"
+        ],
+        [
+          768,
+          "/covers/solana-slots-are-250ms-and-every-block-limit-came-down-with-them-768.webp"
+        ],
+        [
+          1024,
+          "/covers/solana-slots-are-250ms-and-every-block-limit-came-down-with-them-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/solana-slots-are-250ms-and-every-block-limit-came-down-with-them-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/solana-slots-are-250ms-and-every-block-limit-came-down-with-them-1536.webp"
+        ]
+      ]
+    },
     "/covers/solana-startup-connect-ghana-2026.jpg": {
       "width": 1536,
       "height": 864,
