@@ -114,7 +114,7 @@ export const items: NewsItem[] = [
   {
     slug: "alpenglow-now-has-dates-and-the-first-one-is-a-stake-percentage",
     createdAt: "2026-09-06T09:36:42+04:00",
-    updatedAt: "2026-09-22T02:55:00+04:00",
+    updatedAt: "2026-09-22T02:51:00+04:00",
     site: "sol2go",
     image: "/covers/alpenglow-now-has-dates-and-the-first-one-is-a-stake-percentage.jpg",
     imageAlt: "Four lilac paper bars of increasing height on a deep violet ground, the tallest one topped with a small pale mint square",
