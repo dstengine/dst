@@ -114,7 +114,7 @@ export const items: NewsItem[] = [
   {
     slug: "alpenglow-now-has-dates-and-the-first-one-is-a-stake-percentage",
     createdAt: "2026-09-06T09:36:42+04:00",
-    updatedAt: "2026-09-08T00:12:45+04:00",
+    updatedAt: "2026-09-22T02:55:00+04:00",
     site: "sol2go",
     image: "/covers/alpenglow-now-has-dates-and-the-first-one-is-a-stake-percentage.jpg",
     imageAlt: "Four lilac paper bars of increasing height on a deep violet ground, the tallest one topped with a small pale mint square",
@@ -125,7 +125,7 @@ export const items: NewsItem[] = [
     cardTitle: "Alpenglow: the rollout calendar",
     titleSeo: "Alpenglow rollout: the Agave 4.3 dates",
     summary:
-      "Anza's release schedule puts 10 per cent of stake on Agave 4.3 by 8 September, 25 per cent by 14 September, general adoption by 21 September and feature activation from 28 September.",
+      "Anza's release schedule for Solana puts 10 per cent of stake on Agave 4.3 by 8 September, 25 per cent by 14 September, general adoption by 21 September and feature activation from 28 September.",
     date: "2026-09-07",
     category: "Upgrades",
     source: {
