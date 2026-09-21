@@ -17,7 +17,7 @@ import { ICONS } from "@dst/ui/icons";
 import Layout from "../layouts/Layout.astro";
 import { go } from "../outbound";
 import RunTable from "./RunTable.astro";
-import { checkedOn, formatRun, runsInCity, spell, statusOf, venuePath, venuesInCity, type City, } from "../content";
+import { checkedOn, checkedOnFor, formatRun, runsInCity, spell, statusOf, venuePath, venuesInCity, type City, } from "../content";
 
 interface Props { city: City }
 const { city } = Astro.props;
@@ -29,17 +29,21 @@ const venues = venuesInCity(city.slug);
 const next = upcoming.find((r) => r.start);
 const mapped = venues.filter((v) => v.lat && v.lon);
 
+// The date this page can stand behind is the date its own shows were read,
+// not the floor across a site that also holds shows nobody listed here.
+const read = checkedOnFor(upcoming) ?? checkedOn;
+
 const glance = [
   { label: "Musicals", value: upcoming.length === 1 ? "One" : spell(upcoming.length), icon: ICONS.events },
   next && { label: "Next", value: formatRun(next), icon: ICONS.clock, href: `/${next.show}/${next.slug}/` },
   venues.length > 0 && { label: "Theatres", value: venues.map((v) => v.name).join(", "), icon: ICONS.pin },
   { label: "Country", value: city.country, icon: ICONS.map },
-  { label: "Last checked", value: checkedOn, icon: ICONS.list },
+  { label: "Last checked", value: read, icon: ICONS.list },
 ].filter(Boolean) as { label: string; value: string; icon: string; href?: string }[];
 ---
 <Layout
   title={`Musicals in ${city.name}`}
-  description={`Musicals playing ${city.name}: what is on sale, which theatre, and who is selling. Listings read ${checkedOn}.`}
+  description={`Musicals playing ${city.name}: what is on sale, which theatre, and who is selling. Listings read ${read}.`}
 >
   <section class="container hero">
     <Breadcrumbs crumbs={[]} current={city.name} homeLabel="What's on" />
@@ -107,7 +111,7 @@ const glance = [
 
   <Callout kind="note">
     <strong>Check the date before you book a flight.</strong> Everything here was
-    read from the production's own listing on {checkedOn}; runs move and
+    read from the production's own listing on {read}; runs move and
     performances sell out, and the seller's page is the one that is current.
   </Callout>
 </Layout>

@@ -13672,6 +13672,54 @@
         ]
       ]
     },
+    "/covers/les-miserables-books-to-october-2027.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/les-miserables-books-to-october-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/les-miserables-books-to-october-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/les-miserables-books-to-october-2027-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/les-miserables-books-to-october-2027-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/les-miserables-books-to-october-2027-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/les-miserables-books-to-october-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/les-miserables-books-to-october-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/les-miserables-books-to-october-2027-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/les-miserables-books-to-october-2027-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/les-miserables-books-to-october-2027-1536.webp"
+        ]
+      ]
+    },
     "/covers/les-miserables-tickets.jpg": {
       "width": 1536,
       "height": 864,

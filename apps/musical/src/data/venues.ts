@@ -227,7 +227,7 @@ export const venues: Venue[] = [
     imageLicenseSlug: "licence-cc-by-sa-4-0",
     imageSourceSlug: "photo-orix-theater",
     summary:
-      "Osaka's long-running Shinmachi theatre, and the second and last Japanese stop of the 2026 dates — four days after Tokyo closes. It opened in 1968 as the Osaka Kosei Nenkin Kaikan and was the largest concert hall in the city.",
+      "Osaka's long-running Shinmachi theatre, and the second and last Japanese stop of the 2026 dates — four days, beginning four days after Tokyo closed. It opened in 1968 as the Osaka Kosei Nenkin Kaikan and was the largest concert hall in the city.",
     details: [
       { label: "Opened", value: "14 April 1968" },
       { label: "Seats", value: "2,400" },

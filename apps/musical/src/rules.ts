@@ -76,6 +76,21 @@ export function statusOf(run: Run): RunStatus {
 
 /** Wording for the status badge. "Announced" alone reads like a non-answer;
     say what the reader can do about it. */
+/** The reading date a page can stand behind, given the runs it lists: the
+    oldest of the dates those shows were last read at their source. A page
+    about one show gets that show's own date, which is the whole point of
+    going back to the source — the site-wide constant is the floor for a page
+    that covers everything, not an answer for a page that covers two shows.
+    Returns undefined when the runs name no show this site holds, and the
+    caller falls back to the constant. */
+export function checkedOnFor(items: { show: string }[]): string | undefined {
+  const dates = [...new Set(items.map((i) => i.show))]
+    .map((slug) => shows.find((s) => s.slug === slug)?.checkedOn)
+    .filter((d): d is string => Boolean(d));
+  if (dates.length === 0) return undefined;
+  return dates.sort((a, b) => Date.parse(a) - Date.parse(b))[0];
+}
+
 export const statusLabel = (run: Run): string =>
   ({ "open-run": "Open run", "on-sale": "On sale", announced: "On sale soon", ended: "Ended" })[statusOf(run)];
 
@@ -84,6 +99,11 @@ export const statusLabel = (run: Run): string =>
     the reader is choosing, so the button has to say who it is sending them
     to. */
 export function ticketButtons(run: Run): { href: string; label: string; seller: Seller }[] {
+  // A run that has finished sells nothing. The seller's page for it is taken
+  // down within days — Osaka's was a 404 a fortnight after the last night —
+  // so a button here sends a reader to an error to learn what the badge
+  // above it already said.
+  if (statusOf(run) === "ended") return [];
   const sellers = [...run.sellers].sort((a, b) => Number(!!b.official) - Number(!!a.official));
   if (sellers.length === 1) return [{ href: go(sellers[0]!.slug), label: "Tickets", seller: sellers[0]! }];
   return sellers.map((seller) => ({ href: go(seller.slug), label: `Tickets on ${seller.name}`, seller }));
@@ -457,7 +477,13 @@ export function runFaq(
       // fifty-six pages is better than one, but it is not a fact about a stop.
       q: buyQ,
       generic: true,
-      a:
+      a: statusOf(run) === "ended"
+        ? run.sellers.length === 1
+          ? `The run has finished and nothing is on sale. ${run.sellers[0]!.name} sold it while it was on.`
+          : run.sellers.length > 1
+            ? `The run has finished and nothing is on sale. It was sold by ${run.sellers.map((s) => s.name).join(" and ")}.`
+            : "The run has finished, and no seller was ever listed against these dates."
+        :
         run.sellers.length === 0
           ? "Nowhere yet. These dates are announced without a seller; when one is listed it will appear here."
           : run.sellers.length === 1

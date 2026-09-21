@@ -27,7 +27,7 @@ export const groups: RunGroup[] = [
     title: "Chicago in Tokyo, Osaka and Dubai, 2026",
     blurb: "Tokyo and Osaka in the summer, Dubai in December.",
     body: [
-      "Three cities, three weeks of playing between them, and nothing else on the international calendar for 2026. Japan takes the show in August and September; Dubai takes it in December, in an arena more than ten times the size of the Broadway house it lives in.",
+      "Three cities, three weeks of playing between them, and nothing else on the international calendar for 2026. Japan took the show in August and September; Dubai takes it in December, in an arena more than ten times the size of the Broadway house it lives in.",
     ],
   },
   {

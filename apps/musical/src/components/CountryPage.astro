@@ -14,7 +14,7 @@ import ChipNav from "@dst/ui/ChipNav.astro";
 import { ICONS } from "@dst/ui/icons";
 import Layout from "../layouts/Layout.astro";
 import RunTable from "./RunTable.astro";
-import { checkedOn, cityHasPage, citiesInCountry, formatRun, runsInCountry, showBySlug, spell, statusOf, venuesInCity, type Country, } from "../content";
+import { checkedOn, checkedOnFor, cityHasPage, citiesInCountry, formatRun, runsInCountry, showBySlug, spell, statusOf, venuesInCity, type Country, } from "../content";
 
 interface Props { country: Country }
 const { country } = Astro.props;
@@ -64,6 +64,10 @@ const where = cityList.length === 1
 
 const houses = new Set(cityList.flatMap((c) => venuesInCity(c.slug).map((v) => v.slug)));
 
+// As on a city page: the date this page can stand behind is the date its own
+// shows were read at their source.
+const read = checkedOnFor(runsInCountry(country)) ?? checkedOn;
+
 const glance = [
   { label: "Musicals", value: titles.length === 1 ? "One" : spell(titles.length), icon: ICONS.events },
   cityList.length === 1
@@ -71,7 +75,7 @@ const glance = [
     : { label: "Cities", value: spell(cityList.length), icon: ICONS.map },
   houses.size > 0 && { label: "Theatres", value: houses.size === 1 ? "One" : spell(houses.size), icon: ICONS.pin },
   next && { label: "Next", value: formatRun(next), icon: ICONS.clock, href: `/${next.show}/${next.slug}/` },
-  { label: "Last checked", value: checkedOn, icon: ICONS.list },
+  { label: "Last checked", value: read, icon: ICONS.list },
 ].filter(Boolean) as { label: string; value: string; icon: string; href?: string }[];
 ---
 <Layout
@@ -118,7 +122,7 @@ const glance = [
 
   <Callout kind="note">
     <strong>Check the date before you book anything else.</strong> Everything
-    here was read from the production's own listing on {checkedOn}; runs move
+    here was read from the production's own listing on {read}; runs move
     and performances sell out, and the seller's page is the one that is
     current.
   </Callout>

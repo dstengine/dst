@@ -15,6 +15,7 @@ import Layout from "../layouts/Layout.astro";
 import EventCards from "./EventCards.astro";
 import {
   checkedOn,
+  checkedOnFor,
   cityBySlug,
   formatPrice,
   priceFrom,
@@ -44,6 +45,11 @@ const cheapest = oneCurrency
   ? [...quotes].sort((a, b) => a.price.from - b.price.from)[0]
   : undefined;
 
+// A collection may name its own reading date, because it is assembled on the
+// day it is written. Where it does not, the date is the oldest of the dates
+// the shows it lists were read on.
+const read = collection.checkedOn ?? checkedOnFor(runs) ?? checkedOn;
+
 const glance = [
   { label: "Musicals", value: runs.length === 1 ? "One" : spell(runs.length), icon: ICONS.events },
   venues.length > 0 && { label: "Theatres", value: venues.map((v) => v.name).join(", "), icon: ICONS.pin },
@@ -52,7 +58,7 @@ const glance = [
     value: `${formatPrice(cheapest.price.from, cheapest.price.currency)}, ${cheapest.seller.name}`,
     icon: ICONS.ticket,
   },
-  { label: "Last checked", value: collection.checkedOn ?? checkedOn, icon: ICONS.list },
+  { label: "Last checked", value: read, icon: ICONS.list },
 ].filter(Boolean) as { label: string; value: string; icon: string }[];
 
 // Every run in one city means the city belongs in the heading; a season
@@ -113,7 +119,7 @@ const distinctPlaces = cities.length === runs.length;
 
   <Callout kind="note">
     <strong>Check the date before you book anything.</strong> Every line here
-    was read from the seller's own calendar on {collection.checkedOn ?? checkedOn};
+    was read from the seller's own calendar on {read};
     performances sell out and schedules are extended, and the seller's page is
     the one that is current.
   </Callout>

@@ -28,7 +28,7 @@ import { shows } from "./data/shows";
 
 /** When the listings behind this site were last read. One constant rather
     than a date typed into thirty-seven pages. */
-export const checkedOn = "29 August 2026";
+export const checkedOn = "13 September 2026";
 
 /** What this site is, wherever it has to be said again. */
 export const disclaimer =

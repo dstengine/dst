@@ -105,7 +105,10 @@ const eventLd: Record<string, unknown> = {
         },
       }
     : { location: { "@type": "Place", name: city.name, address: { "@type": "PostalAddress", addressLocality: city.name, addressCountry: city.country } } }),
-  ...(run.sellers.length > 0
+  // A finished run offers nothing. Its seller takes the page down within
+  // days of the last night, so an InStock offer here is a claim about a sale
+  // that has ended, pointing at a URL that has gone.
+  ...(run.sellers.length > 0 && status !== "ended"
     ? {
         // A price in the markup is what turns an event result from a blue
         // link into one with a "from" figure beside it. Only fresh prices
@@ -161,7 +164,7 @@ const eventLd: Record<string, unknown> = {
       run={run}
       showName={show.title}
       cityName={city.name}
-      calendarHref={run.start && !run.openRun ? `/${show.slug}/${run.slug}.ics` : undefined}
+      calendarHref={run.start && !run.openRun && status !== "ended" ? `/${show.slug}/${run.slug}.ics` : undefined}
     />
     <Glance facts={glance} />
     {jump.length > 3 && <OnThisPage items={jump} />}

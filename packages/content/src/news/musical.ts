@@ -7,6 +7,57 @@ import type { NewsItem } from "../types.ts";
 // of the site: a claim appears here when a named source has published it.
 export const items: NewsItem[] = [
   {
+    slug: "les-miserables-books-to-october-2027",
+    createdAt: "2026-09-22T00:43:00+04:00",
+    updatedAt: "2026-09-22T00:43:00+04:00",
+    site: "musical",
+    image: "/covers/les-miserables-books-to-october-2027.jpg",
+    imageAlt: "A roll of red paper unrolling from a tight coil at the left and running out across a cream ground to a square-cut end",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Les Mis\u00e9rables has opened its booking to October 2027, seven months past Phantom",
+    cardTitle: "Les Mis books to October 2027",
+    titleSeo: "Les Mis\u00e9rables London: booking to Oct 2027",
+    summary:
+      "The West End's longest-running musical is now selling seats to 2 October 2027 \u2014 nearly seven months further out than The Phantom of the Opera, ten minutes' walk away.",
+    date: "2026-09-22",
+    category: "Productions",
+    source: {
+      name: "Les Mis\u00e9rables London",
+      url: "https://london.lesmis.com/ticket-information/",
+      verifiedOn: "2026-09-22",
+    },
+    body: [
+      "Neither of these shows has a closing date, so the only thing either of them publishes about its future is how far ahead you can buy. That number moved this month, and only for one of them.",
+      "## What changed",
+      "<strong>Les Mis\u00e9rables</strong> at the <strong>Sondheim Theatre</strong> is now booking to <strong>2 October 2027</strong>. A fortnight ago the same page said <strong>13 March 2027</strong>; the horizon has been pushed out by close to seven months in one move. Standard tickets are still from <strong>\u00a325</strong>, sold direct by <strong>Delfont Mackintosh Theatres</strong>, who also own the theatre \u2014 which is why there is no booking fee on top.",
+      "<strong>The Phantom of the Opera</strong> at <strong>His Majesty's</strong> is booking to <strong>Saturday 13 March 2027</strong> and has not moved. It is also from <strong>\u00a325</strong>, with <strong>no fees</strong>, and every price carries a <strong>\u00a31.70</strong> restoration levy inside it rather than on top.",
+      "## Why a horizon is not a closing date",
+      "An open-ended run sells in windows. The production loads a block of performances, sells into it, and extends before it runs out; the date at the end of the block is an operational decision about how far ahead the company wants to be committed, not a signal about the health of the run. Both of these shows have been extending such windows for four decades.",
+      "What it does tell you is planning room. Anyone booking a trip around a specific evening has until <strong>October 2027</strong> at one of these theatres and until <strong>March 2027</strong> at the other, and the March window will be extended long before it is reached.",
+      "## The two of them, ten minutes apart",
+      "Phantom is in its <strong>fortieth year</strong> at His Majesty's, the only theatre it has played in London. Les Mis\u00e9rables opened at the <strong>Barbican</strong> in October 1985, moved to the Palace that December and to the Sondheim in 2004, and has never had a break.",
+    ],
+    related: [
+      {
+        href: "/les-miserables/london/",
+        eyebrow: "Sondheim Theatre",
+        title: "Les Mis\u00e9rables in London",
+        text: "Open run, booking to 2 October 2027. From \u00a325 direct with Delfont Mackintosh, no booking fee.",
+      },
+      {
+        href: "/phantom-of-the-opera/london/",
+        eyebrow: "His Majesty's Theatre",
+        title: "The Phantom of the Opera in London",
+        text: "Open run, booking to 13 March 2027. From \u00a325 with LW Theatres, fees included.",
+      },
+    ],
+    expertise:
+      "Read a booking horizon as a scheduling decision, not a forecast. A production extends when it has cast contracts, orchestra contracts and a pantomime-free calendar far enough out to sell against \u2014 which is why a jump of seven months in one step usually follows a company renewal rather than a change in how the show is selling. The practical consequence for a reader is narrow and worth knowing: the further horizon is where the cheap seats still exist, because a block that has just opened has not been picked over yet.",
+  },
+
+  {
     slug: "broadway-has-four-new-musicals-this-autumn",
     createdAt: "2026-09-06T08:48:11+04:00",
     updatedAt: "2026-09-13T07:00:00+04:00",

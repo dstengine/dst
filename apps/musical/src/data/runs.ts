@@ -26,13 +26,13 @@ export const runs: Run[] = [
         price: {
           from: 25,
           currency: "GBP",
-          checkedOn: "2026-09-08",
+          checkedOn: "2026-09-22",
           note: "the standard bottom of the range; individual performances price separately",
         },
       },
     ],
     summary:
-      "The run opened at the Barbican on 8 October 1985, moved to the Palace Theatre that December, moved again to this theatre in 2004, and has never closed. Tickets are on sale to 13 March 2027 and the date moves forward as it approaches — there is no announced ending to book ahead of.",
+      "The run opened at the Barbican on 8 October 1985, moved to the Palace Theatre that December, moved again to this theatre in 2004, and has never closed. Tickets are on sale to 2 October 2027 and the date moves forward as it approaches — there is no announced ending to book ahead of.",
     runningTime: "2 hours 50 minutes, including a 15-minute interval",
     language: "English",
     ageGuidance:
@@ -50,7 +50,7 @@ export const runs: Run[] = [
       },
       {
         q: "How far ahead can I book?",
-        a: "To 13 March 2027, as the production's own ticket page had it on 8 September 2026. The show is open-ended, so that horizon is extended rather than reached.",
+        a: "To 2 October 2027, as the production's own ticket page had it on 22 September 2026, having said March a fortnight earlier. The show is open-ended, so that horizon is extended rather than reached.",
       },
       {
         q: "Is there anything in it I should know about first?",
@@ -74,8 +74,8 @@ export const runs: Run[] = [
         price: {
           from: 25,
           currency: "GBP",
-          checkedOn: "2026-09-08",
-          note: "no booking fee when booking direct with the theatre",
+          checkedOn: "2026-09-22",
+          note: "no booking fee booking direct, and every price already includes a \u00a31.70 restoration levy",
           tiers: [
             { name: "Day seats", from: 37.5, note: "released online at 10am for that day's performances" },
             { name: "Luxury Experience", from: 72.5, note: "per person" },
@@ -217,7 +217,7 @@ export const runs: Run[] = [
       { slug: "tickets-chicago-tokyo", name: "Kyodo Tokyo", official: true },
     ],
     summary:
-      "Twelve days eleven floors above Shibuya Station, and then the production moves to Osaka for four. Tokyo is the long half of the Japanese visit by a factor of three.",
+      "Twelve days eleven floors above Shibuya Station, before the production moved to Osaka for four. Tokyo was the long half of the 2026 Japanese visit by a factor of three, and the visit is over.",
     tags: ["japan"],
   },
   {
@@ -230,7 +230,7 @@ export const runs: Run[] = [
     end: "2026-09-06",
     sellers: [{ slug: "tickets-chicago-osaka", name: "e+", official: true }],
     summary:
-      "Four days, and the 2026 Japanese dates are done. Osaka gets the short end of a two-city visit — Tokyo plays twelve.",
+      "Four days, and the 2026 Japanese dates were done. Osaka got the short end of a two-city visit — Tokyo played twelve.",
     tags: ["japan"],
   },
   {
@@ -383,7 +383,7 @@ export const runs: Run[] = [
       { slug: "tickets-chicago-aberdeen", name: "Aberdeen Performing Arts" },
     ],
     summary:
-      "Six nights at His Majesty's Theatre, open since December 1906 and the northernmost point of the tour. Cats played the same stage in February, three months before.",
+      "Five nights at His Majesty's Theatre, open since December 1906 and the northernmost point of the tour. Cats played the same stage in February, three months before.",
   },
   {
     slug: "manchester",
@@ -445,11 +445,16 @@ export const runs: Run[] = [
       {
         slug: "tickets-chicago-blackpool",
         name: "Winter Gardens Blackpool",
-        price: { from: 25.95, currency: "GBP", checkedOn: "2026-09-02" },
+        price: {
+          from: 25.95,
+          currency: "GBP",
+          checkedOn: "2026-09-22",
+          note: "the online price, which already carries a booking fee, a restoration levy and a \u00a31.50 processing fee",
+        },
       },
     ],
     summary:
-      "Six nights in the Opera House, which seats 2,812: after Edinburgh, the largest room the British tour plays, and nearly four times the Cheltenham house at the other end of it.",
+      "Five nights in the Opera House, which seats 2,812: after Edinburgh, the largest room the British tour plays, and nearly four times the Cheltenham house at the other end of it.",
   },
   {
     slug: "nottingham",
@@ -465,9 +470,10 @@ export const runs: Run[] = [
         name: "Royal Concert Hall Nottingham",
         price: {
           from: 24,
+          to: 54.5,
           currency: "GBP",
-          checkedOn: "2026-09-02",
-          note: "across every performance of this run",
+          checkedOn: "2026-09-22",
+          note: "the range the hall's own listing gives across every performance of this run",
         },
       },
     ],
@@ -513,7 +519,7 @@ export const runs: Run[] = [
         price: {
           from: 33,
           currency: "GBP",
-          checkedOn: "2026-09-02",
+          checkedOn: "2026-09-22",
           note: "across every performance of this run",
         },
       },
@@ -536,7 +542,7 @@ export const runs: Run[] = [
         price: {
           from: 26,
           currency: "GBP",
-          checkedOn: "2026-09-02",
+          checkedOn: "2026-09-22",
           note: "across every performance of this run",
         },
       },
@@ -701,7 +707,7 @@ export const runs: Run[] = [
       {
         slug: "tickets-chicago-hull",
         name: "Hull Theatres",
-        price: { from: 24, currency: "GBP", checkedOn: "2026-09-02" },
+        price: { from: 24, currency: "GBP", checkedOn: "2026-09-22" },
       },
     ],
     summary:
@@ -716,9 +722,8 @@ export const runs: Run[] = [
     start: "2027-10-04",
     end: "2027-10-09",
     sellers: [],
-    infoSlug: "info-llandudno",
     summary:
-      "Six nights at Venue Cymru, listed with an information page rather than a sale. The theatre is taking enquiries; tickets are not on general sale.",
+      "Six nights at Venue Cymru, on the tour's own list and nowhere else. The theatre had an enquiries page for these dates in September 2026 and has since taken it down; nothing is on sale and there is no box office page to ask at.",
   },
   {
     slug: "sunderland",
@@ -877,7 +882,7 @@ export const runs: Run[] = [
         slug: "tickets-cats-hull",
         name: "Hull Theatres",
         official: true,
-        price: { from: 29, currency: "GBP", checkedOn: "2026-09-02" },
+        price: { from: 29, currency: "GBP", checkedOn: "2026-09-22" },
       },
     ],
     summary:
@@ -958,7 +963,17 @@ export const runs: Run[] = [
     start: "2026-12-01",
     end: "2026-12-05",
     sellers: [
-      { slug: "tickets-cats-llandudno", name: "Venue Cymru", official: true },
+      {
+        slug: "tickets-cats-llandudno",
+        name: "Venue Cymru",
+        official: true,
+        price: {
+          from: 15,
+          currency: "GBP",
+          checkedOn: "2026-09-22",
+          note: "the figure the theatre advertises, which already includes a \u00a33 administration fee and a \u00a31.50 theatre levy",
+        },
+      },
     ],
     summary:
       "Five nights at Venue Cymru, the tour's only Welsh coastal stop, and the last dates before Cats settles into Glasgow for the whole of December.",
@@ -1002,9 +1017,10 @@ export const runs: Run[] = [
         official: true,
         price: {
           from: 31.5,
+          to: 64,
           currency: "GBP",
-          checkedOn: "2026-09-02",
-          note: "across every performance of this run",
+          checkedOn: "2026-09-22",
+          note: "the range the hall's own listing gives across every performance of this run",
         },
       },
     ],

@@ -19,7 +19,7 @@ export const shows: Show[] = [
     eyebrow: "The event we cover in full",
     hubCard:
       "Every run, the tour, a hundred years of it, and what you can watch tonight for nothing.",
-    checkedOn: "29 August 2026",
+    checkedOn: "22 September 2026",
     tagline:
       "Kander and Ebb's 1975 vaudeville about murder as a career move, and the longest-running American musical on Broadway.",
     summary:
@@ -140,7 +140,7 @@ export const shows: Show[] = [
     eyebrow: "Every stop on the tour, and who sells it",
     hubCard:
       "Twenty-three theatres between Plymouth in October and Newcastle the following June, and the seller for every one of them.",
-    checkedOn: "1 September 2026",
+    checkedOn: "22 September 2026",
     tagline:
       "Andrew Lloyd Webber set T. S. Eliot's book of light verse about cats to music, and it ran for twenty-one years in the West End.",
     summary:
@@ -190,7 +190,7 @@ export const shows: Show[] = [
     eyebrow: "The London run, and what a ticket actually buys",
     hubCard:
       "Forty-one years in the West End without a break, and it is still selling seats from £25.",
-    checkedOn: "8 September 2026",
+    checkedOn: "22 September 2026",
     tagline:
       "Claude-Michel Schönberg and Alain Boublil set Victor Hugo's 1,400-page novel to music, and London has been playing it since 1985.",
     summary:
@@ -241,7 +241,7 @@ export const shows: Show[] = [
     eyebrow: "The London run, and what a ticket actually buys",
     hubCard:
       "In its fortieth year in the theatre it opened in, ten minutes from the other one.",
-    checkedOn: "8 September 2026",
+    checkedOn: "22 September 2026",
     tagline:
       "Andrew Lloyd Webber's 1986 musical about a composer living under an opera house, still playing in the opera house it opened in.",
     summary:
