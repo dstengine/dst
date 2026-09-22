@@ -3554,6 +3554,102 @@
         ]
       ]
     },
+    "/covers/rv-money.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/rv-money-480.avif"
+        ],
+        [
+          768,
+          "/covers/rv-money-768.avif"
+        ],
+        [
+          1024,
+          "/covers/rv-money-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/rv-money-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/rv-money-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/rv-money-480.webp"
+        ],
+        [
+          768,
+          "/covers/rv-money-768.webp"
+        ],
+        [
+          1024,
+          "/covers/rv-money-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/rv-money-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/rv-money-1536.webp"
+        ]
+      ]
+    },
+    "/covers/rv-rent.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/rv-rent-480.avif"
+        ],
+        [
+          768,
+          "/covers/rv-rent-768.avif"
+        ],
+        [
+          1024,
+          "/covers/rv-rent-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/rv-rent-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/rv-rent-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/rv-rent-480.webp"
+        ],
+        [
+          768,
+          "/covers/rv-rent-768.webp"
+        ],
+        [
+          1024,
+          "/covers/rv-rent-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/rv-rent-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/rv-rent-1536.webp"
+        ]
+      ]
+    },
     "/covers/step-conference-dubai-2026.jpg": {
       "width": 1536,
       "height": 864,

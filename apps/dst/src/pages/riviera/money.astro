@@ -1,0 +1,145 @@
+---
+// Changing crypto, written as "who is allowed to" rather than "where".
+//
+// A list of shops near a community goes stale in a season and cannot be
+// verified at the counter. What can be verified is the licence: Dubai has a
+// single regulator for virtual assets outside the DIFC, eight named
+// activities, and a public register. That is the check a reader can perform
+// before handing anyone money, which is more use than an address.
+import VerticalLayout from "../../layouts/VerticalLayout.astro";
+import PageHero from "@dst/ui/PageHero.astro";
+import Callout from "@dst/ui/Callout.astro";
+import Faq from "@dst/ui/Faq.astro";
+
+const faqItems = [
+  {
+    q: "Who regulates crypto in Dubai?",
+    a: "The Virtual Assets Regulatory Authority, VARA — the sole authority for virtual assets across Dubai's free zones and mainland, with one carve-out: the <strong>Dubai International Financial Centre</strong>, which has its own regulator.",
+  },
+  {
+    q: "Does a shop that swaps crypto for cash need a licence?",
+    a: "Yes. Exchange Services and Broker-Dealer Services are two of the <strong>eight</strong> named activities, and a provider must hold a VARA licence before offering them in or from Dubai — whether the customer is a resident or abroad.",
+  },
+  {
+    q: "How do I check a provider?",
+    a: "VARA publishes a public register of licensed providers. Checking it takes a minute and is the only step in this whole page that is entirely within your control.",
+  },
+  {
+    q: "What are the eight activities?",
+    a: "Advisory Services, Broker-Dealer Services, Custody Services, Exchange Services, Lending and Borrowing Services, Management and Investment Services, Transfer &amp; Settlement Services, and VA Issuance Category-1.",
+  },
+  {
+    q: "Can one company hold several of them?",
+    a: "Most of them, yes, aggregated under a single licence. <strong>Custody is the exception</strong>: a custodian must be a distinct legal entity with a standalone licence. Licensed providers are also barred from proprietary trading under the regulated licence — that needs a separate company.",
+  },
+];
+---
+<VerticalLayout
+  vertical="riviera"
+  current="/riviera/money/"
+  prose
+  title="Changing crypto in Dubai: who is actually licensed"
+  description="Dubai has one regulator for virtual assets outside the DIFC, eight named activities that need a licence, and a public register. What to check before handing anyone money."
+  image="/covers/rv-money.jpg"
+>
+  <PageHero
+    eyebrow="Crypto nearby"
+    title="Changing crypto in Dubai: who is actually licensed"
+    image="/covers/rv-money.jpg"
+    imageAlt="Cut-paper illustration: a square frame with a plain cream panel inside it, and a plain cream disc lying on the ground outside the frame."
+    imageKind="generated"
+  >
+    <p class="lede">
+      The useful question about changing crypto near home is not where the
+      nearest counter is. It is whether that counter is allowed to be there —
+      and in Dubai that has a checkable answer, because one authority licenses
+      <strong>eight</strong> named activities and publishes who holds them.
+    </p>
+  </PageHero>
+
+  <section class="container">
+    <h2>One regulator, one exception</h2>
+    <p>
+      The Virtual Assets Regulatory Authority was created by
+      <strong>Law No. 4 of 2022</strong> and describes itself as the sole
+      authority regulating virtual assets across Dubai's free zones and
+      mainland, except within the jurisdiction of the Dubai International
+      Financial Centre. Its Virtual Assets and Related Activities Regulations
+      date from <strong>2023</strong>. So for anywhere in Dubai that is not
+      the DIFC — MBR City included — there is exactly one licence to ask
+      about, and exactly one register to look in.
+    </p>
+
+    <h2>The eight activities</h2>
+    <ul>
+      <li><strong>Advisory Services</strong></li>
+      <li><strong>Broker-Dealer Services</strong></li>
+      <li><strong>Custody Services</strong></li>
+      <li><strong>Exchange Services</strong></li>
+      <li><strong>Lending and Borrowing Services</strong></li>
+      <li><strong>Management and Investment Services</strong></li>
+      <li><strong>Transfer &amp; Settlement Services</strong></li>
+      <li><strong>VA Issuance Category-1</strong></li>
+    </ul>
+    <p>
+      A provider seeking to offer any of these must apply for and receive a
+      licence before it begins operating in or from the Emirate of Dubai —
+      including where the customers are outside it. Swapping tokens for
+      dirhams over a counter is not an unregulated corner of this list; it
+      sits squarely inside Exchange Services and Broker-Dealer Services.
+    </p>
+
+    <h2>What the licence structure tells you</h2>
+    <p>
+      Two details in the rules are worth carrying into a conversation with a
+      provider. First, activities can be aggregated under one licence, with
+      <strong>one exception</strong>: custody must be segregated into a
+      distinct legal entity with its own licence, and must demonstrate
+      independent governance from any affiliate. Second, a licensed provider
+      may not trade its own or its group's book under the regulated licence —
+      proprietary trading requires a separate company.
+    </p>
+    <p>
+      Both exist for the same reason, and it is the reason you care: they
+      separate the money you hand over from the money the firm is playing
+      with. A provider that cannot say which licence categories it holds has
+      answered the question anyway.
+    </p>
+  </section>
+
+  <Callout kind="warn">
+    <p>
+      This page describes who may lawfully provide these services, not how to
+      obtain or move virtual assets, and it is not a recommendation of any
+      provider. Licence status changes; the register is the current record and
+      a page like this one is not. Check it yourself before any transaction,
+      and treat an unlicensed counter as a counter with no recourse behind it.
+    </p>
+  </Callout>
+
+  <section class="container">
+    <h2>Next</h2>
+    <p>
+      How much of the community around you is finished is on
+      <a href="/riviera/" title="How much of Azizi Riviera is built">the section front</a>,
+      and what a landlord may add at renewal is on
+      <a href="/riviera/rent/" title="What a landlord in Dubai may raise your rent by">the renting page</a>.
+      If the interest is setting up rather than spending, company formation is
+      at <a href="/llc/" title="Company formation in Dubai">the company section</a>.
+    </p>
+  </section>
+
+  <Faq items={faqItems} />
+
+  <section class="container">
+    <p class="source-note">
+      The regulator's remit and the DIFC carve-out, Law No. 4 of 2022, the
+      2023 regulations, the eight licensed activities, the custody
+      segregation requirement, the prohibition on proprietary trading under a
+      regulated licence, and the existence of a public register: Virtual
+      Assets Regulatory Authority, licensed-activities and rulebook pages,
+      read 22 September 2026. DST holds no virtual-asset licence and provides
+      no virtual-asset service. Nothing here is legal or financial advice.
+    </p>
+  </section>
+</VerticalLayout>

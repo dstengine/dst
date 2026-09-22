@@ -110,15 +110,16 @@ export const VERTICALS: Vertical[] = [
     image: "/riviera.jpg",
     imageAlt:
       "Illustration of the Azizi Riviera promenade at night: lit low-rise blocks along a canal, palms and walkways at the water's edge.",
+    // Fewer pages than the subdomain, deliberately. The subdomain's food,
+    // coffee, pools, water and sport pages are a resident's list of places;
+    // the hub can only add a page where something is published that a reader
+    // can check, and for those five nothing usable is. They get added here
+    // when a source turns up, which is why this is a list and not a copy of
+    // the subdomain's menu.
+    ready: true,
     pages: [
-      { path: "rent", label: "Renting", title: "What renting in Azizi Riviera actually costs" },
-      { path: "food", label: "Food", title: "Where to eat in and around Azizi Riviera" },
-      { path: "coffee", label: "Coffee", title: "Coffee in Azizi Riviera" },
-      { path: "coffee/homebrew", label: "Homebrew", title: "Making coffee at home in Azizi Riviera" },
-      { path: "pools", label: "Pools", title: "Swimming in Azizi Riviera" },
-      { path: "water", label: "Water", title: "Drinking water in Azizi Riviera" },
-      { path: "sport", label: "Sport", title: "Training and sport around Azizi Riviera" },
-      { path: "money", label: "Crypto nearby", title: "Where to change crypto near Azizi Riviera" },
+      { path: "rent", label: "Renting", title: "What a landlord in Dubai may add at renewal" },
+      { path: "money", label: "Crypto nearby", title: "Who is licensed to change crypto in Dubai" },
     ],
   },
   {

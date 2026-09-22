@@ -1,0 +1,147 @@
+---
+// The Riviera section front.
+//
+// The subdomain is a resident's guide and a shortlist form. It does not
+// carry the delivery record, because a resident already lives there. The
+// hub reader has not moved in yet, so the useful thing is the count: how
+// many of the seventy-five buildings are handed over, which phases are
+// finished, and what the developer is still selling.
+import VerticalLayout from "../../layouts/VerticalLayout.astro";
+import PageHero from "@dst/ui/PageHero.astro";
+import Callout from "@dst/ui/Callout.astro";
+import Faq from "@dst/ui/Faq.astro";
+
+const faqItems = [
+  {
+    q: "How big is Azizi Riviera?",
+    a: "<strong>75</strong> mid- and high-rise buildings with approximately <strong>16,000</strong> residences, in MBR City. That makes it one of the largest single residential communities in Dubai by unit count.",
+  },
+  {
+    q: "Is it finished?",
+    a: "Not as of the last thing Azizi published. On <strong>7 August 2025</strong> the developer put <strong>53 of the 75</strong> buildings as handed over — all of phases 1, 2 and 3, plus five buildings in phase 4 — with the remaining 22 scheduled up until <strong>Q2 2026</strong>. No completion announcement for those 22 has followed.",
+  },
+  {
+    q: "What is still for sale from the developer?",
+    a: "Three Riviera products appear on Azizi's own construction-updates listing: Riviera from <strong>AED 1.22 million</strong>, Riviera Beachfront from <strong>AED 1.26 million</strong>, and Riviera Rêve from <strong>AED 2.35 million</strong>.",
+  },
+  {
+    q: "What is the lagoon?",
+    a: "A <strong>2.7 km</strong> swimmable crystal lagoon. Azizi describes the community as three districts: a retail boulevard, the lagoon walk with eateries and boutiques, and Les Jardins, a green social space.",
+  },
+];
+---
+<VerticalLayout
+  vertical="riviera"
+  current="/riviera/"
+  prose
+  title="Azizi Riviera in Dubai: how much of it is actually built"
+  description="Seventy-five buildings, about 16,000 homes in Dubai's MBR City. Azizi put 53 of them as handed over in August 2025 and scheduled the rest to Q2 2026 — and has published nothing since."
+  image="/riviera.jpg"
+>
+  <PageHero
+    eyebrow="Azizi Riviera"
+    title="Azizi Riviera in Dubai: how much of it is actually built"
+    image="/riviera.jpg"
+    imageAlt="Illustration of the Azizi Riviera promenade at night: lit low-rise blocks along a canal, palms and walkways at the water's edge."
+  >
+    <p class="lede">
+      Riviera is not one building, it is <strong>75</strong> of them, holding
+      roughly <strong>16,000</strong> homes. Which one you are being shown
+      matters more than the brochure does: as of Azizi's last published
+      count, <strong>53</strong> had been handed over and <strong>22</strong>
+      had not.
+    </p>
+  </PageHero>
+
+  <section class="container">
+    <h2>The count, as the developer last gave it</h2>
+    <p>
+      On <strong>7 August 2025</strong> Azizi Developments announced that
+      Riviera had entered its final stage of delivery: 53 of the 75 buildings
+      handed over, comprising all of phases 1, 2 and 3 and five buildings in
+      phase 4, with the remaining 22 scheduled for completion
+      <strong>up until Q2 2026</strong>. The same statement dated the recent
+      handovers building by building — Riviera 63 on 24 March, Riviera 61 on
+      9 June, Riviera 67 on 1 July, Riviera 65 on 21 July.
+    </p>
+    <p>
+      That is a developer being unusually specific, and it is worth taking at
+      face value. It is also the most recent figure there is. Q2 2026 has
+      passed; no announcement of the last 22 has followed it. The absence of a
+      press release is not evidence that a building is late — but it does mean
+      the only honest answer to "is Riviera finished" is a question back:
+      <em>which building, and which phase</em>.
+    </p>
+
+    <h2>What the developer is still selling</h2>
+    <table>
+      <thead>
+        <tr><th>Product</th><th>Sizes</th><th>From</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Riviera</td><td>Studio, 1 &amp; 3 bedrooms</td><td>AED 1.22M</td></tr>
+        <tr><td>Riviera Beachfront</td><td>1 &amp; 2 bedrooms</td><td>AED 1.26M</td></tr>
+        <tr><td>Riviera Rêve</td><td>1 &amp; 3 bedrooms</td><td>AED 2.35M</td></tr>
+      </tbody>
+    </table>
+    <p>
+      Three things are readable off that table. Riviera and Riviera Beachfront
+      start within AED 40,000 of each other, so the waterfront address is not
+      the premium the name implies at the entry rung. Rêve starts at nearly
+      twice either, which places it as a different product rather than a
+      better floor of the same one. And the gap between a resale flat in a
+      handed-over phase 1 building and a developer unit in phase 4 is not a
+      discount or a markup — it is two different transactions, one of which
+      comes with a completed building.
+    </p>
+
+    <h2>Three districts, one of them the reason people move</h2>
+    <p>
+      Azizi describes Riviera as a retail boulevard, a lagoon walk on the
+      shores of a <strong>2.7 km</strong> swimmable crystal lagoon, and
+      Les Jardins, a green social space. The lagoon is the part that changes
+      daily life rather than the marketing: it is the reason the promenade
+      carries foot traffic in the evening, and the reason distance from it
+      shows up in what a unit lets for.
+    </p>
+  </section>
+
+  <Callout>
+    <p>
+      Riviera buildings are numbered, and the number tells you the phase. When
+      a listing says "Azizi Riviera" and nothing else, that is the missing
+      fact, not a detail: phase 1 has been lived in for years, and part of
+      phase 4 was a site when the last official count was published.
+    </p>
+  </Callout>
+
+  <section class="container">
+    <h2>In this section</h2>
+    <p>
+      What a landlord may legally raise your rent by, and where that number
+      comes from, is on
+      <a href="/riviera/rent/" title="What a landlord in Dubai may raise your rent by">the renting page</a>.
+      Who may legally change virtual assets for you in Dubai is on
+      <a href="/riviera/money/" title="Who is licensed to handle crypto in Dubai">the money page</a>.
+      The day-to-day guide — where to eat, where to swim, which block is which —
+      is a separate site at
+      <a href="https://riviera.dst.llc" title="Azizi Riviera community guide">riviera.dst.llc</a>.
+      Dubai's other communities are across
+      <a href="/sections/" title="What DST covers in Dubai">the sections</a>.
+    </p>
+  </section>
+
+  <Faq items={faqItems} />
+
+  <section class="container">
+    <p class="source-note">
+      Building count, residence count, handover totals, phase breakdown,
+      per-building handover dates, the three districts and the 2.7 km lagoon:
+      Azizi Developments, press release of 7 August 2025, read 22 September
+      2026. Starting prices and unit mixes for Riviera, Riviera Beachfront and
+      Riviera Rêve: Azizi Developments' construction-updates listing, read
+      22 September 2026. DST is not affiliated with Azizi Developments.
+      Nothing here is investment advice.
+    </p>
+  </section>
+</VerticalLayout>

@@ -778,6 +778,14 @@
       "pc-privacy": {
         "subject": "a single plain sealed envelope lying flat and closed, seen from directly above, alone in the frame",
         "detail": "the flap a simple triangle with no seal and no writing anywhere, a hard shadow along one edge, a great deal of empty ground around it"
+      },
+      "rv-rent": {
+        "subject": "two upright rectangles of different heights standing side by side on a flat ground, with a short horizontal strip laid across the gap between their tops",
+        "detail": "both rectangles plain with no markings, the shorter one about two thirds the height of the taller, the strip narrow and level, hard shadows, empty ground above"
+      },
+      "rv-money": {
+        "subject": "a wide flat square frame lying flat on the ground seen from directly above, with one plain disc resting inside the frame and a second disc of the same size lying on the ground well outside it",
+        "detail": "the frame made of four plain narrow strips, both discs plain and flat with no markings, seen straight from above with no perspective, hard shadows, empty ground around"
       }
     },
     "musical": {

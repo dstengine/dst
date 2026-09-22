@@ -1,0 +1,160 @@
+---
+// Renting, written as the rule rather than as an average.
+//
+// Average rents for a community come from listing portals, and a listing is
+// an asking price, not a transaction. What is actually published, and
+// actually binding, is Decree No. 43 of 2013: the percentage a landlord may
+// add at renewal, banded by how far below the index the current rent sits.
+// That is the number a tenant can act on, and the subdomain's rent page —
+// a shortlist form — does not carry it.
+import VerticalLayout from "../../layouts/VerticalLayout.astro";
+import PageHero from "@dst/ui/PageHero.astro";
+import Callout from "@dst/ui/Callout.astro";
+import Faq from "@dst/ui/Faq.astro";
+
+const faqItems = [
+  {
+    q: "How much can my landlord raise the rent in Dubai?",
+    a: "It depends on how far below the index your current rent sits. Decree No. 43 of 2013 allows <strong>no increase</strong> where the rent is less than 10% below the average market rate, then <strong>5%</strong>, <strong>10%</strong>, <strong>15%</strong> and <strong>20%</strong> as the gap widens past 10%, 20%, 30% and 40%.",
+  },
+  {
+    q: "Where does the average market rate come from?",
+    a: "Article 3 of the decree points to the Rent Index of the Emirate of Dubai, approved by RERA. Since <strong>2 January 2025</strong> that is the Smart Rental Index, which values each building rather than each area.",
+  },
+  {
+    q: "Can I look up the figure for Azizi Riviera?",
+    a: "Not by community. The Land Department's rental-index service answers per property — you identify the unit, typically by its <strong>DEWA premise number</strong>, and it returns the index for that unit. Two flats in different Riviera buildings can return different numbers.",
+  },
+  {
+    q: "Does the cap apply in free zones?",
+    a: "Yes. Article 2 applies the decree to all landlords, public and private, including special development areas and free zones, and including the Dubai International Financial Centre.",
+  },
+  {
+    q: "What if the landlord asks for more than the band allows?",
+    a: "The band is the legal maximum at renewal, not a suggestion. A disagreement about it is what the Rent Disputes Settlement Centre exists for; the decree that created it, No. 26 of 2013, is cited in the preamble of the one that sets the percentages.",
+  },
+];
+---
+<VerticalLayout
+  vertical="riviera"
+  current="/riviera/rent/"
+  prose
+  title="Renting in Dubai: what your landlord may actually add"
+  description="A landlord in Dubai may add 0, 5, 10, 15 or 20 per cent at renewal, and which one is not their choice. The decree that sets the bands, and how the index behind it is queried."
+  image="/covers/rv-rent.jpg"
+>
+  <PageHero
+    eyebrow="Renting"
+    title="Renting in Dubai: what your landlord may actually add"
+    image="/covers/rv-rent.jpg"
+    imageAlt="Cut-paper illustration: two upright blocks of different heights standing side by side on a pale floor against a slate wall."
+    imageKind="generated"
+  >
+    <p class="lede">
+      The number that decides your renewal is not the asking price on a
+      portal. It is the gap between what you pay now and what the Land
+      Department's index says your building is worth — and
+      <strong>Decree No. 43 of 2013</strong> turns that gap into one of five
+      fixed percentages.
+    </p>
+  </PageHero>
+
+  <section class="container">
+    <h2>The five bands</h2>
+    <table>
+      <thead>
+        <tr><th>Your rent sits below the index by</th><th>Maximum increase at renewal</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>less than 10%</td><td>none</td></tr>
+        <tr><td>11–20%</td><td>5%</td></tr>
+        <tr><td>21–30%</td><td>10%</td></tr>
+        <tr><td>31–40%</td><td>15%</td></tr>
+        <tr><td>more than 40%</td><td>20%</td></tr>
+      </tbody>
+    </table>
+    <p>
+      Read the first row twice, because it is the one that does the work. If
+      your rent is already close to what the index says the unit is worth, the
+      lawful increase is <strong>zero</strong> — not a small rise, not a
+      negotiation. The percentages only start once the landlord can show the
+      unit is let materially under the index.
+    </p>
+
+    <h2>The index values the building, not the postcode</h2>
+    <p>
+      Article 3 of the decree defers to the Rent Index of the Emirate of
+      Dubai, approved by RERA. On <strong>2 January 2025</strong> the Land
+      Department replaced it with the Smart Rental Index, which classifies
+      each building on its technical and structural characteristics, the
+      quality of its finishes and maintenance, its strategic location and
+      spatial value, and the level of services and facilities available. It
+      covers all residential areas in Dubai, including special development
+      zones and free zones.
+    </p>
+    <p>
+      For a community of <strong>75 buildings</strong> that matters more than
+      it would elsewhere. A community-wide average is not what the index
+      returns and not what a tribunal would look at; the service answers per
+      unit, and the usual way to identify the unit is its
+      <strong>DEWA premise number</strong>.
+    </p>
+
+    <h2>Who it binds</h2>
+    <p>
+      Article 2 is short and wide: the decree applies to all landlords of the
+      public and private authorities in the Emirate of Dubai, including the
+      special development areas and the free zones, including the Dubai
+      International Financial Centre. There is no category of landlord in
+      Dubai that the bands do not reach.
+    </p>
+    <p>
+      The scale is worth knowing too. The Land Department recorded more than
+      <strong>900,000</strong> registered rental contracts in 2024, up
+      <strong>8%</strong> on the year before. A registered contract is what
+      the index is built from, and it is also what you would rely on in a
+      dispute — which is the practical argument for Ejari registration
+      separate from the legal one.
+    </p>
+  </section>
+
+  <Callout kind="warn">
+    <p>
+      The bands cap an increase at renewal. They are not a rent freeze, not a
+      cap on what a new tenancy may be agreed at, and not a substitute for
+      the notice a landlord must give. Check the index for your own unit
+      before accepting a figure, and treat any percentage quoted without a
+      unit reference as a starting position rather than a calculation.
+    </p>
+  </Callout>
+
+  <section class="container">
+    <h2>Next</h2>
+    <p>
+      How much of the community your landlord's building belongs to is
+      actually finished is on
+      <a href="/riviera/" title="How much of Azizi Riviera is built">the section front</a>.
+      For the day-to-day view of a block — which way it faces, how far the
+      promenade is — the resident's guide is at
+      <a href="https://riviera.dst.llc" title="Azizi Riviera community guide">riviera.dst.llc</a>.
+      If the question is ownership rather than tenancy, that runs through
+      <a href="/visas/properties/" title="Which Dubai property qualifies for a Golden Visa">the qualifying-property page</a>.
+    </p>
+  </section>
+
+  <Faq items={faqItems} />
+
+  <section class="container">
+    <p class="source-note">
+      The five bands, the scope clause and the reference to the RERA index:
+      Government of Dubai, Decree No. 43 of 2013 on Determining the Increase
+      in the Real-Estate Rentals in the Emirate of Dubai, issued 18 December
+      2013, Articles 1 to 3, read from the Land Department's own copy on
+      22 September 2026. The Smart Rental Index, its valuation criteria, its
+      coverage and the 2024 contract figures: Dubai Land Department
+      announcement of 2 January 2025. That the rental-index service is queried
+      per property by DEWA premise number: the Land Department's rental-index
+      service, read 22 September 2026. Nothing here is legal advice.
+    </p>
+  </section>
+</VerticalLayout>

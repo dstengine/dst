@@ -18,12 +18,15 @@ const eventItems = eventsBySite(siteId);
 // as the last fallback if a file ever goes missing.
 const hubs = [
   {
-    href: "https://riviera.dst.llc",
-    title: "Riviera community guide — riviera.dst.llc",
+    // Inward: the section carries the delivery record and the rent rule,
+    // neither of which is on the subdomain. The subdomain keeps the
+    // block-by-block guide, and each section page links to it once.
+    href: "/riviera/",
+    title: "Azizi Riviera in Dubai — how much of it is built",
     eyebrow: "Community",
     status: "Live",
     name: "Riviera",
-    text: "Coffee, food, pools, water — the Riviera community, block by block.",
+    text: "Seventy-five buildings in Dubai's MBR City, and the developer's own count of how many are finished.",
     image: "/riviera.jpg",
     imageAlt: "Illustration of the Azizi Riviera promenade at night: lit low-rise blocks along a canal, palms and walkways at the water's edge.",
   },
