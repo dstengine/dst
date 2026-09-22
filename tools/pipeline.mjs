@@ -3,6 +3,13 @@
 //
 //   node tools/pipeline.mjs        # or: npm run pipeline
 //   DST_BUILD_LANES=1 npm run pipeline   # when the machine is busy
+//   DST_BUILD_ALL=1 npm run pipeline     # ignore what is already built
+//
+// Neither build is the whole network if it does not have to be. The first
+// skips the sites nothing touched, against the input hashes in
+// node_modules/.cache; the second skips the sites whose dates did not move.
+// A run where nothing changed builds nothing at all and costs the six
+// seconds lastmod.mjs spends reading git.
 //
 // Two generated things go into a build, and the order they are generated in
 // decides how many builds it costs.
@@ -28,7 +35,8 @@
 // this same run supplied that, minutes ago — skipping the second one cannot
 // make it stale.)
 import { spawn, execFileSync } from "node:child_process";
-import { readFileSync, existsSync } from "node:fs";
+import { createHash } from "node:crypto";
+import { readFileSync, readdirSync, writeFileSync, mkdirSync, existsSync, statSync } from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -37,6 +45,7 @@ import { HOSTS, appOfHost } from "./hosts.mjs";
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const LASTMOD = path.join(REPO, "packages/content/src/lastmod.json");
 const ASTRO = path.join(REPO, "node_modules/astro/astro.js");
+const CACHE = path.join(REPO, "node_modules/.cache/dst-pipeline.json");
 
 // Astro is run straight, rather than through `npm run build --workspace`:
 // npm's own startup is about half a second an app, which is a fifth of what
@@ -111,6 +120,98 @@ function buildApps(apps) {
   });
 }
 
+// What a site is actually built from, so a run can skip the sites nothing
+// touched. Getting this wrong ships a stale page, so it is drawn from what
+// the sources really read rather than from what looks likely:
+//
+//   - `apps/<app>/**`, `packages/ui/**` and the shared modules of
+//     `packages/content/src` — the last of these is why a change to the
+//     chrome or to `types.ts` rebuilds all seventeen.
+//   - the site's own feed, `packages/content/src/{events,news}/<app>.ts`.
+//     Every app reads its slice through `eventsBySite(siteId)` with its own
+//     id and renders nothing of anyone else's.
+//   - except `dst`, the hub, which is the one page in the network that
+//     aggregates: `allNews`/`allEvents` filtered to `site !== "dst"`. So
+//     any site's feed is also an input to `dst`.
+//
+// `lastmod.json` is deliberately not an input. It is rewritten every run,
+// so counting it would mark all seventeen stale every time — and it is the
+// second pass below, comparing host slices, that already decides who needs
+// rebuilding for it.
+const SKIP = new Set(["dist", "node_modules", ".astro", ".vercel", ".DS_Store"]);
+
+const walk = (dir) =>
+  existsSync(dir)
+    ? readdirSync(dir, { withFileTypes: true }).flatMap((e) =>
+        SKIP.has(e.name) ? [] : e.isDirectory() ? walk(path.join(dir, e.name)) : [path.join(dir, e.name)],
+      )
+    : [];
+
+const feedsFor = (app) =>
+  ["events", "news"].flatMap((kind) => {
+    const dir = path.join(REPO, "packages/content/src", kind);
+    const names = app === "dst" ? readdirSync(dir) : ["index.ts", `${app}.ts`];
+    return names.map((n) => path.join(dir, n)).filter((p) => existsSync(p));
+  });
+
+const sharedContent = () => {
+  const dir = path.join(REPO, "packages/content/src");
+  return readdirSync(dir)
+    .map((n) => path.join(dir, n))
+    .filter((p) => statSync(p).isFile() && path.basename(p) !== "lastmod.json");
+};
+
+/** The build inputs of one app, split by how they are cheapest to compare.
+
+    Source is hashed by content — 5 MB across the network, edited by hand,
+    and content is the honest question. `public/` is hashed by size and
+    mtime instead: it is 233 MB of generated pictures, reading all of it
+    every run would cost more than the builds this saves, and it changes
+    only when tools/images.mjs or tools/covers.mjs writes to it. */
+function inputsOf(app) {
+  const here = path.join(REPO, "apps", app);
+  return {
+    byContent: [
+      ...walk(path.join(here, "src")),
+      ...[`${here}/astro.config.mjs`, `${here}/package.json`, `${here}/llms.head.md`].filter(existsSync),
+      ...walk(path.join(REPO, "packages/ui")),
+      ...sharedContent(),
+      ...feedsFor(app),
+      path.join(REPO, "tools/sitemap.mjs"),
+      path.join(REPO, "tools/svg-comments.mjs"),
+      path.join(REPO, "package.json"),
+    ],
+    byStat: walk(path.join(here, "public")),
+  };
+}
+
+function hashOf(app) {
+  const { byContent, byStat } = inputsOf(app);
+  const h = createHash("sha1");
+  for (const f of byContent.sort()) h.update(`${path.relative(REPO, f)}\0`).update(readFileSync(f));
+  for (const f of byStat.sort()) {
+    const s = statSync(f);
+    h.update(`${path.relative(REPO, f)}\0${s.size}\0${s.mtimeMs}`);
+  }
+  return h.digest("hex");
+}
+
+// An app whose dist is missing or empty is stale whatever its inputs say:
+// that is the state a killed build leaves behind, and it is how
+// apps/musical/dist once went out empty.
+const distMissing = (app) => {
+  const dist = path.join(REPO, "apps", app, "dist");
+  return !existsSync(dist) || readdirSync(dist).length === 0;
+};
+
+const readCache = () => {
+  try {
+    return JSON.parse(readFileSync(CACHE, "utf8"));
+  } catch {
+    return {};
+  }
+};
+
 const run = (cmd, args) => execFileSync(cmd, args, { cwd: REPO, stdio: "inherit" });
 
 const readLastmod = () =>
@@ -130,8 +231,20 @@ const apps = Object.keys(HOSTS);
 console.log("→ llms.txt, before the build that copies it");
 run("node", ["tools/llms.mjs"]);
 
-console.log(`\n→ building ${apps.length} apps, ${LANES} at a time`);
-await buildApps(apps);
+// Hashed after llms.mjs, which writes into public/, and before anything
+// else runs: nothing below this line touches an input.
+const hashes = Object.fromEntries(apps.map((app) => [app, hashOf(app)]));
+const cached = readCache();
+const stale = apps.filter(
+  (app) => process.env.DST_BUILD_ALL || cached[app] !== hashes[app] || distMissing(app),
+);
+
+if (!stale.length) {
+  console.log(`\n→ nothing changed — no first build needed (${since()})`);
+} else {
+  console.log(`\n→ building ${stale.length} of ${apps.length}, ${LANES} at a time: ${stale.join(", ")}`);
+  await buildApps(stale);
+}
 
 console.log(`\n→ sitemap dates from git history (${since()})`);
 const before = readLastmod();
@@ -147,5 +260,12 @@ if (!changed.length) {
 } else {
   console.log(`\n→ rebuilding ${changed.length} of ${apps.length}: ${changed.join(", ")} (${since()})`);
   await buildApps(changed);
-  console.log(`\n✓ done (${since()})`);
 }
+
+// Last, and only on success: the record of what is built says so only for
+// a run that finished. A run killed between the two builds leaves some
+// dist built against dates that moved afterwards, and the next run has to
+// be able to see that — which it does by finding no record and building.
+mkdirSync(path.dirname(CACHE), { recursive: true });
+writeFileSync(CACHE, JSON.stringify(hashes, null, 2) + "\n");
+console.log(`\n✓ done (${since()})`);

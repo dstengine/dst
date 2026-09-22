@@ -90,7 +90,12 @@ for (const app of wanted) {
     "\n" +
     section(site.eventsLabel, site.events, site.host, events) +
     section(site.newsLabel, site.news, site.host, news);
+  // Written only when it differs. The file lives in public/, which the
+  // build copies verbatim, and tools/pipeline.mjs decides what to rebuild
+  // from what has changed there — rewriting an identical file every run
+  // would make all seven of these sites look edited every time.
   const out = path.join(REPO, "apps", app, "public", "llms.txt");
-  writeFileSync(out, text);
-  console.log(`${app}: ${events.length} events, ${news.length} articles -> apps/${app}/public/llms.txt`);
+  const same = existsSync(out) && readFileSync(out, "utf8") === text;
+  if (!same) writeFileSync(out, text);
+  console.log(`${app}: ${events.length} events, ${news.length} articles${same ? " (unchanged)" : ` -> apps/${app}/public/llms.txt`}`);
 }

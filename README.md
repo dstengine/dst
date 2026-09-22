@@ -133,9 +133,23 @@ before the build that copies it, while `lastmod.json` is computed by walking
 `dist/` and so needs a build before it and another after. Done in that order
 a ship costs two builds; done with `llms.mjs` last it costs three, which is
 the easy mistake to make from a cold tree, because `lastmod.mjs` refuses to
-run without `dist/` and invites you to build first. The second build is
-narrowed to the sites whose dates actually moved — usually one or two, not
-all seventeen.
+run without `dist/` and invites you to build first.
+
+Neither build is the whole network if it does not have to be. The first
+skips the sites nothing touched, comparing input hashes against
+`node_modules/.cache/dst-pipeline.json`; the second skips the sites whose
+dates did not move. What counts as an input is drawn from what the sources
+actually read: a site's own `packages/content/src/{events,news}/<app>.ts`,
+plus — for `dst` alone, the one page in the network that aggregates — every
+site's. A change to `packages/ui` or to the shared content modules rebuilds
+all seventeen. `lastmod.json` is deliberately not an input, because the
+second pass already decides who needs rebuilding for it. `DST_BUILD_ALL=1`
+ignores the cache.
+
+Measured: nothing changed, 7s; one site's page, 10s; a content entry (that
+site and the hub), 10s; everything, 28s. The ceiling — all seventeen
+rebuilt in both passes — is about 50s on an idle machine, and two to three
+times that when it is paging.
 
 Builds run four at a time, straight through node rather than through `npm
 run build --workspace`, which costs about half a second an app in npm's own
