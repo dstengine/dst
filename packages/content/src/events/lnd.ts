@@ -2,6 +2,49 @@ import type { EventItem } from "../types.ts";
 
 export const items: EventItem[] = [
 
+  {
+    slug: "japan-matsuri-trafalgar-square-2026",
+    createdAt: "2026-09-22T13:24:00+04:00",
+    updatedAt: "2026-09-22T13:24:00+04:00",
+    site: "lnd",
+    image: "/covers/japan-matsuri-trafalgar-square-2026.jpg",
+    imageAlt: "A large pale disc rising behind four horizontal bands on a deep navy ground",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Japan Matsuri at Trafalgar Square",
+    summary:
+      "Seventeen years, three addresses and one afternoon a year: the capital's Japanese festival has occupied Trafalgar Square since 2012, and returns on the first Sunday of October.",
+    start: "2026-10-04",
+    end: "2026-10-04",
+    utcOffset: "+01:00",
+    city: "London",
+    country: "United Kingdom",
+    venue: "Trafalgar Square",
+    organizer: "Japan Matsuri",
+    category: "Festival",
+    tickets: { priceFrom: 0, currency: "GBP" },
+    source: {
+      name: "Japan Matsuri",
+      url: "https://www.japanmatsuri.com/",
+      verifiedOn: "2026-09-22",
+    },
+    ticket: { url: "https://www.japanmatsuri.com/", label: "Programme" },
+    body: [
+      "One rather likes a festival that has had to move house and has come out the better for it. This one began at Spitalfields in <strong>2009</strong>, spent <strong>2011</strong> at County Hall, and has held Trafalgar Square every year since <strong>2012</strong> — which is to say it graduated from a market to a riverside hall to the most public room the city has.",
+      "## Dates",
+      "<strong>Sunday 4 October 2026</strong> at Trafalgar Square, from ten in the morning until eight at night. There is no charge.",
+      "## What a matsuri is, since the word is doing some work",
+      "A matsuri is a festival in the older civic sense: a thing a community puts on for itself, in the open, on a fixed day, with food and performance and a great deal of standing about. The organisers describe the whole undertaking as a standing symbol of <em>kizuna</em> — the bond between Japan and the United Kingdom — which is a grander description than a day of stalls usually earns, and in this case is roughly accurate.",
+      "## The square as a venue",
+      "Trafalgar Square is an awkward space to programme and a magnificent one to fill. The fountains divide it, the steps tier it, and the traffic on three sides means the sound has to work harder than it would in a park. The festival arranges its food around the fountains and puts the stage where the steps can be used as seating, which is the sensible answer and also the one that makes the crowd visible to itself.",
+      "## A song, if you are inclined",
+      "There is an official festival song, <em>Ibuki</em>, published in English and Japanese, with the clear expectation that visitors will sing and dance to it rather than listen politely. Londoners being Londoners, a good number do.",
+      "## Practicalities",
+      "Capacity is finite and the organisers operate one in, one out once the square is full; the conditions of entry are stricter than one might expect for an open square, so it is worth reading them rather than discovering them at the barrier. The full running order is published in advance.",
+    ],
+  },
+
 
   {
     slug: "one-54-somerset-house-2026",

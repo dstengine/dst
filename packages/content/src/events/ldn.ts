@@ -2,6 +2,48 @@ import type { EventItem } from "../types.ts";
 
 export const items: EventItem[] = [
 
+  {
+    slug: "japan-matsuri-2026",
+    createdAt: "2026-09-22T13:22:00+04:00",
+    updatedAt: "2026-09-22T13:22:00+04:00",
+    site: "ldn",
+    image: "/covers/japan-matsuri-2026.jpg",
+    imageAlt: "Seven narrow paper banners in red and charcoal hanging from a rod against a pale ground",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Japan Matsuri 2026",
+    summary:
+      "The UK's biggest festival of Japanese culture and food takes Trafalgar Square for a day, free and ten hours long — with a door policy strict enough to be worth reading before you set off.",
+    start: "2026-10-04",
+    end: "2026-10-04",
+    utcOffset: "+01:00",
+    city: "London",
+    country: "United Kingdom",
+    venue: "Trafalgar Square",
+    organizer: "Japan Matsuri",
+    category: "Festival",
+    tickets: { priceFrom: 0, currency: "GBP" },
+    source: {
+      name: "Japan Matsuri",
+      url: "https://www.japanmatsuri.com/",
+      verifiedOn: "2026-09-22",
+    },
+    ticket: { url: "https://www.japanmatsuri.com/", label: "Programme" },
+    body: [
+      "A free festival in the middle of London on a Sunday is a crowd before it is anything else, and this one plans for that out loud. Japan Matsuri runs <strong>10am to 8pm</strong> and the organisers say plainly that once Trafalgar Square is full they switch to one in, one out.",
+      "## Dates",
+      "<strong>Sunday 4 October 2026</strong>, 10am to 8pm, Trafalgar Square, London WC2N 5DS. Admission free.",
+      "## Read the entry rules before you leave the house",
+      "The list is short and it is enforced at the edge of the square. No bag larger than a sheet of A4. No bikes, scooters, e-scooters or hoverboards. No opened bottles or cans of alcohol. No animals other than assistance dogs. Nothing bladed, of any description.",
+      "The A4 rule is the one that catches people, because it is smaller than the bag most of us carry without thinking about it. A tote you would take to a supermarket will not pass. There is no cloakroom in the square.",
+      "## What is actually on",
+      "Food stalls sit in the centre of the square on either side of the fountains, which is where the queues form and where the day's real business happens. Around them runs a stage programme of matsuri performers and a separate strand of martial arts demonstrations. The organisers publish the full running order as a programme before the day.",
+      "## Getting there and timing it",
+      "Charing Cross is the nearest station and it is the one everyone uses; Leicester Square and Embankment are both a short walk and both less crowded on the way out. Ten hours is long enough that arriving at opening and arriving mid-afternoon are two different festivals — the first has the stalls at full stock, the second has the square at its fullest.",
+    ],
+  },
+
 
   {
     slug: "bloomsbury-festival-2026",
