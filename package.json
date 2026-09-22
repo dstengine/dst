@@ -55,6 +55,8 @@
     "dev:mxo": "npm run dev --workspace=apps/mxo",
     "events": "node tools/events-scan.mjs",
     "seo": "node tools/seo-check.mjs",
+    "graph": "node tools/links-graph.mjs",
+    "outbound": "node tools/outbound-check.mjs",
     "test:prices": "node --experimental-strip-types --test tests/prices.test.js",
     "test:facts": "node --test tests/when-and-admission.test.js",
     "build:tokiohotel": "npm run build --workspace=apps/tokiohotel",
