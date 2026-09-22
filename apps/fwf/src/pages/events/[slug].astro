@@ -5,6 +5,7 @@ import { pluralOf } from "../../sections";
 import EventArticle from "@dst/ui/EventArticle.astro";
 import { newsBySite } from "@dst/content/news";
 import { siteId, otherEvents } from "../../content";
+import { go } from "../../outbound";
 
 // The forum itself is deliberately not in here: its page is the home page,
 // and a second copy under /events/ would be the same event twice.
@@ -15,9 +16,14 @@ export function getStaticPaths() {
 
 const moreNews = newsBySite(siteId);
 const { item, more } = Astro.props;
+// A seller or form if we have one, the source if we don't — see src/outbound.ts.
+const ticketHref = item.ticket ? go(`${item.slug}-ticket`) : undefined;
+const sourceHref = item.source?.url ? go(`${item.slug}-source`) : undefined;
 ---
 <Layout title={item.titleSeo ?? item.title} description={item.summary} image={item.image}>
   <EventArticle item={item} more={more} moreNews={moreNews} backHref="/events/"
+  ticketHref={ticketHref}
+  sourceHref={sourceHref}
   where={site.keyword}
   pluralOf={pluralOf}
   moreEventsText={item.moreEventsText}
