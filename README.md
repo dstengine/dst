@@ -135,7 +135,16 @@ a ship costs two builds; done with `llms.mjs` last it costs three, which is
 the easy mistake to make from a cold tree, because `lastmod.mjs` refuses to
 run without `dist/` and invites you to build first. The second build is
 narrowed to the sites whose dates actually moved — usually one or two, not
-all seventeen. See `tools/pipeline.mjs`.
+all seventeen.
+
+Builds run four at a time, straight through node rather than through `npm
+run build --workspace`, which costs about half a second an app in npm's own
+startup, with Astro's telemetry off. Four is the measured knee on this
+machine: seventeen apps take 35.7s one at a time, 20.6s at four, and 25.2s
+at eight, where the swap file grows half a gigabyte in a run and it pages
+instead of building. Concurrency here is a memory budget, not a core count —
+set `DST_BUILD_LANES=1` when something else big is resident. See
+`tools/pipeline.mjs`.
 
 `deploy.sh` exists because a push rebuilds every app the commit touched, and
 a `packages/` change touches all fifteen — against a Hobby limit of 100
