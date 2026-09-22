@@ -18,13 +18,47 @@ export const musicGroup = {
 };
 
 /** One night, as a MusicEvent. `canonical` is the page it appears on. */
+// Every country on either routing, by the zone its clocks keep. The offset
+// is read for the night itself, so a date either side of a clock change gets
+// the right one without a rule written here — the London opener falls three
+// days after BST ends and is GMT; the summer run is all CEST.
+const ZONES: Record<string, string> = {
+  "United Kingdom": "Europe/London",
+  France: "Europe/Paris",
+  Germany: "Europe/Berlin",
+  Belgium: "Europe/Brussels",
+  Netherlands: "Europe/Amsterdam",
+  Switzerland: "Europe/Zurich",
+  Italy: "Europe/Rome",
+  Austria: "Europe/Vienna",
+  Luxembourg: "Europe/Luxembourg",
+  Spain: "Europe/Madrid",
+  Poland: "Europe/Warsaw",
+};
+
+function utcOffset(date: string, time: string, zone: string): string {
+  const name = new Intl.DateTimeFormat("en-GB", { timeZone: zone, timeZoneName: "longOffset" })
+    .formatToParts(new Date(`${date}T${time}:00Z`))
+    .find((part) => part.type === "timeZoneName")!.value;
+  return name === "GMT" ? "+00:00" : name.slice(3);
+}
+
+/** A seller's price is printed for six weeks after it was read, then left
+    out: after that it is more likely wrong than right. */
+export const PRICE_STALE_DAYS = 42;
+export const freshPrice = (show: Show, today = new Date()) =>
+  show.price && (today.getTime() - Date.parse(show.price.checkedOn)) / 86_400_000 <= PRICE_STALE_DAYS
+    ? show.price
+    : undefined;
+
 export function musicEvent(show: Show, tourName: string, canonical: string) {
-  const startDate = show.startTime
-    ? // The 2026 London date falls three days after BST ends, so its local
-      // time is GMT. Any future show that needs a different offset gets it
-      // here, next to the reason — not as a bare string in the dataset.
-      `${show.date}T${show.startTime}:00+00:00`
+  const zone = ZONES[show.country];
+  // A time with no zone we can vouch for is left off: a date alone is true,
+  // a date with the wrong hour is not.
+  const startDate = show.startTime && zone
+    ? `${show.date}T${show.startTime}:00${utcOffset(show.date, show.startTime, zone)}`
     : show.date;
+  const price = freshPrice(show);
   return {
     "@type": "MusicEvent",
     "@id": `${canonical}#${show.date}-${show.city.toLowerCase().replace(/[^a-z]+/g, "-")}`,
@@ -42,6 +76,22 @@ export function musicEvent(show: Show, tourName: string, canonical: string) {
         addressCountry: show.country,
       },
     },
+    ...(show.ticket
+      ? {
+          offers: {
+            "@type": "Offer",
+            url: `${origin}/go/${show.ticket}/`,
+            ...(price
+              ? {
+                  price: price.from,
+                  ...(price.to ? { lowPrice: price.from, highPrice: price.to } : {}),
+                  priceCurrency: price.currency,
+                  seller: { "@type": "Organization", name: price.seller },
+                }
+              : {}),
+          },
+        }
+      : {}),
     ...itemContext(canonical, publisher),
   };
 }

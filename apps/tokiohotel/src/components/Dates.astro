@@ -20,7 +20,7 @@ const day = (iso: string) =>
 <ol class="dates">
   {shows.map((show) => (
     <li>
-      <time datetime={show.date}>{day(show.date)}</time>
+      <time datetime={show.startTime ? `${show.date}T${show.startTime}` : show.date}>{day(show.date)}{show.startTime && <span class="start"> · {show.startTime}</span>}</time>
       <span class="where">
         <strong>
           {linkCities && show.cityPage ? <a href={show.cityPage}>{show.city}</a> : show.city}

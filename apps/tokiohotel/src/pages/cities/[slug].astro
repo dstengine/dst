@@ -9,7 +9,7 @@ import { formatDate } from "@dst/ui/date";
 import { origin } from "../../content";
 import { cities, type City } from "../../data/cities";
 import { tourBySlug } from "../../data/tours";
-import { musicGroup, musicEvent } from "../../schema";
+import { musicGroup, musicEvent, freshPrice } from "../../schema";
 
 export function getStaticPaths() {
   return cities.map((city) => ({ params: { slug: city.slug }, props: { city } }));
@@ -22,11 +22,26 @@ const first = city.shows[0];
 const both = city.stops.length > 1;
 
 const title = `Tokio Hotel in ${city.name}`;
+// The <title> carries the date and, where it fits, the room: the searches
+// that found these pages were "tokio hotel roma 2027" and "tokio hotel
+// dusseldorf 2026", and the h1 above a breadcrumb has nothing left to prove.
+const years = [...new Set(city.shows.map((s) => s.date.slice(0, 4)))];
+const dated = playing ? `${title}, ${formatDate(first.date, "en-GB")}` : title;
+const headTitle = !playing
+  ? title
+  : city.shows.length > 1
+    ? `${title}, ${years.join(" and ")}`
+    : first.venue && `${dated} — ${first.venue}`.length <= 60 ? `${dated} — ${first.venue}` : dated;
+const at = (show: typeof first) =>
+  [show.venue && `at ${show.venue}`, show.startTime && `${show.startTime} local time`].filter(Boolean).join(", ");
 const description = playing
   ? both
-    ? `Tokio Hotel play ${city.name} twice: ${city.stops.map((s) => `${formatDate(s.shows[0].date, "en-GB")} on the ${s.tour.name} ${s.tour.years}`).join(", and ")}.`
-    : `Tokio Hotel play ${city.name} on ${formatDate(first.date, "en-GB")}${first.venue ? `, ${first.venue}` : ""} — night ${city.stops[0].night} of ${city.stops[0].total} on the ${city.stops[0].tour.name} ${city.stops[0].tour.years}.`
+    ? `Tokio Hotel play ${city.name} twice: ${city.stops.map((s) => `${formatDate(s.shows[0].date, "en-GB")}${s.shows[0].venue ? ` at ${s.shows[0].venue}` : ""} on the ${s.tour.name} ${s.tour.years}`).join(", and ")}.`
+    : `Tokio Hotel play ${city.name} on ${formatDate(first.date, "en-GB")}${at(first) ? ` ${at(first)}` : ""} — night ${city.stops[0].night} of ${city.stops[0].total} on the ${city.stops[0].tour.name} ${city.stops[0].tour.years}.`
   : `No Tokio Hotel date is announced in ${city.name}. When they last played there, and what the announced tours do instead.`;
+const price = playing ? freshPrice(first) : undefined;
+const money = (n: number, currency: string) =>
+  new Intl.NumberFormat("en-GB", { style: "currency", currency }).format(n);
 
 // The gap either side of a stop, in nights. Derived, not written: it is the
 // one thing a routing tells you that no listing bothers to print.
@@ -71,6 +86,13 @@ const facts = playing
       ...(first.startTime
         ? [{ label: "Starts", value: `${first.startTime} local time`, icon: ICONS.clock }]
         : []),
+      ...(price
+        ? [{
+            label: "Tickets",
+            value: `${money(price.from, price.currency)}${price.to ? `–${money(price.to, price.currency)}` : ""} at ${price.seller}, fees included, checked ${formatDate(price.checkedOn, "en-GB")}${price.note ? ` — ${price.note}` : ""}`,
+            icon: ICONS.ticket,
+          }]
+        : []),
       ...city.stops.map((s) => ({
         label: s.tour.years,
         value: `Night ${s.night} of ${s.total}, ${s.tour.name}`,
@@ -90,7 +112,7 @@ const jsonLd = playing
   ? [musicGroup, ...city.stops.flatMap((s) => s.shows.map((show) => musicEvent(show, s.tour.name, canonical)))]
   : [];
 ---
-<Layout prose title={title} description={description} jsonLd={jsonLd}>
+<Layout prose title={headTitle} description={description} jsonLd={jsonLd}>
   <section class="container hero">
     <Breadcrumbs crumbs={[{ href: "/cities/", label: "Cities" }]} current={city.name} homeLabel="Dates" />
     <h1>{title}</h1>

@@ -84,7 +84,7 @@ const NOTES: Record<string, string[]> = {
     "It falls between two nights off and a night that has none: Frankfurt is the following evening.",
   ],
   nuremberg: [
-    "One of the three 2026 dates still on sale without a room. Nuremberg follows Berlin with a single day between them — the tightest turnaround the routing has in Germany.",
+    "Nuremberg follows Berlin with a single day between them — the tightest turnaround the routing has in Germany. The room is the PSD Bank Nürnberg Arena, and the show starts at 8pm.",
     "It is also a Sunday, which on this run means the second half of a weekend the band open in Berlin.",
   ],
   zurich: [
@@ -92,33 +92,34 @@ const NOTES: Record<string, string[]> = {
   ],
   leipzig: [
     "Leipzig sits in the exact middle of the run — night eleven of seventeen — with two nights off on either side of it, the only date on the tour that gets that much room.",
-    "The venue has not been announced.",
+    "The room is the Quarterback Immobilien Arena, on Am Sportforum, and the show starts at 8pm.",
   ],
   vienna: [
     "Austria was a number-one market before Germany finished becoming one. “Durch den Monsun” topped the Austrian singles chart in 2005, “Rette mich” and “Der letzte Tag” both went to number one there in 2006, and Schrei was certified platinum by the Austrian affiliate of the IFPI as well as the German one.",
     "This is the only Austrian date of the 2026 run. The country comes back in 2027, at a festival rather than an arena.",
   ],
   frankfurt: [
-    "Frankfurt gets the band twice inside ten months, and the two dates are on sale in opposite states: the Festhalle night in November 2026 has a room, a date and a ticket link, while the August 2027 one has a date and nothing else yet.",
-    "That is the difference between an arena booked eighteen months out and an open-air announced with the venue still to follow.",
+    "Frankfurt gets the band twice inside ten months, on the same exhibition grounds and in opposite kinds of room: inside the Festhalle in November 2026, and in August 2027 outside it, on the open-air Agora ground of the Messe, entered from the Festhalle's south side.",
+    "That is the difference between an arena night at the end of the year and a summer open-air: the same address, the roof taken off.",
   ],
   munich: [
     "A Monday, the night after Vienna, with no day between them. Munich is the last of the eight German nights on the 2026 run and the last time the tour is in Germany before it turns west for Luxembourg and France.",
   ],
   "esch-sur-alzette": [
     "Luxembourg is named in Wikipedia's account of the 1000 Hotels World Tour, which crossed it in the spring of 2008 between the Netherlands and France. Eighteen years later the country gets one night again.",
-    "Rockhal is a fixed room on this routing where three of the German dates around it still have none.",
+    "The room is Rockhal, in Esch-sur-Alzette, and Düsseldorf is the following night.",
   ],
   dusseldorf: [
     "The night after Luxembourg, with no day off in between — the last of the tour's back-to-back pairs, and a border crossing on top of it.",
-    "No venue has been announced. Two nights later the tour is in Paris for the second time.",
+    "The room is the PSD Bank Dome, the arena the city's ice-hockey club plays in, on DEG-Platz; the show starts at 8pm. Two nights later the tour is in Paris for the second time.",
   ],
   rome: [
     "Rome opens the second run, and it puts the band in Italy twice inside ten months: Milan on 11 November 2026, Rome on 14 July 2027, in two very different kinds of room.",
+    "The Rome one is the Cavea, the open-air amphitheatre of Renzo Piano's Auditorium Parco della Musica, booked as part of Roma Summer Fest, with a standing parterre in front of the stage. It starts at 9pm. Two lines on the seller's page are worth reading before buying: the show goes ahead in the rain with no refund, and there are metal detectors at the gate.",
     "Five nights then pass before Warsaw, and after Warsaw the routing stops for seventeen — the longest break either tour takes.",
   ],
   warsaw: [
-    "Poland is the one country on either announced run that the arena tour does not reach at all. This is the only Polish date, and one of two dates on the 2027 run with a venue attached to it.",
+    "Poland is the one country on either announced run that the arena tour does not reach at all. This is the only Polish date, at Progresja Summer Stage.",
     "It is also the last night before the long pause: the band do not play again until 5 August.",
   ],
   aurich: [
@@ -130,10 +131,11 @@ const NOTES: Record<string, string[]> = {
   ],
   wurzburg: [
     "A Sunday in the middle of the German block, two nights after Dortmund and two before Mönchengladbach — the rhythm the rest of August keeps to almost without exception.",
+    "It is played on the Residenzplatz, the square in front of the Würzburg Residence, starting at 7pm, and it is standing only: Eventim sells two standing categories and no seats.",
   ],
   monchengladbach: [
     "The second half of the block's only tight turn: Mönchengladbach on the Tuesday, Frankfurt on the Wednesday.",
-    "Like nine of the eleven German dates in 2027, it is on sale as a city and a date, with the room still to be named.",
+    "It is at the SparkassenPark, and it starts at 8pm.",
   ],
   dresden: [
     "A Friday, and the door into the eastern end of the run: Dresden, then Magdeburg, then Halle, three cities inside five nights and the closest the routing comes to going home.",
@@ -152,6 +154,7 @@ const NOTES: Record<string, string[]> = {
   magdeburg: [
     "This is where it started. Bill Kaulitz, Tom Kaulitz, Georg Listing and Gustav Schäfer formed the band in Magdeburg in 2001, under the name Devilish, and the line-up has not changed since.",
     "It is the twenty-fifth anniversary year of that, and the date falls in the middle of the German block rather than at the end of it — a Sunday in August between Dresden and Halle, on a run that also takes in Rome and a festival main stage.",
+    "The show is on the Domplatz, the cathedral square, at 7pm. The Italian promoter's announcement calls it the band's first Magdeburg date since 2005.",
   ],
   "sankt-polten": [
     "The Frequency Festival is the only festival booking on either announced tour: everything else on both runs is the band's own show, in their own room, on their own bill.",

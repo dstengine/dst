@@ -5,12 +5,13 @@
 // second show gets this same page from the same data, with nothing here
 // naming Chicago.
 import Glance from "@dst/ui/Glance.astro";
+import Faq from "@dst/ui/Faq.astro";
 import OnThisPage from "@dst/ui/OnThisPage.astro";
 import { ICONS } from "@dst/ui/icons";
 import Layout from "../layouts/Layout.astro";
 import Clips from "./Clips.astro";
 import EventCards from "./EventCards.astro";
-import { checkedOn, cityBySlug, formatRun, groups, runsFor, runsInGroup, statusOf, upcomingRuns, venueBySlug, venuePath, type Show, } from "../content";
+import { theVenue, checkedOn, cityBySlug, formatRun, groups, runsFor, runsInGroup, statusOf, upcomingRuns, venueBySlug, venuePath, type Show, } from "../content";
 
 interface Props { show: Show }
 const { show } = Astro.props;
@@ -40,6 +41,34 @@ function groupSpan(slug: string): string {
   return `${day(first.start!, first.start!.slice(0, 4) !== end.slice(0, 4))} – ${day(end, true)}`;
 }
 
+// The questions a search asks about the show rather than about one night of
+// it. "how long is chicago the musical" reached this page, which had the
+// answer only on the Broadway run's page, a click away. Every answer is read
+// off a run that publishes it, and names that run: a touring stop's length
+// is its own seller's to state.
+const timed = openRun?.runningTime ? openRun : all.find((r) => r.runningTime);
+const timedVenue = timed?.venue ? venueBySlug(timed.venue) : undefined;
+const timedCity = timed ? cityBySlug(timed.city)?.name : undefined;
+const nextVenue = next?.venue ? venueBySlug(next.venue) : undefined;
+const dated = upcoming.filter((r) => !r.openRun).length;
+const faq = [
+  timed && {
+    q: `How long is ${show.title}?`,
+    a: `${timed.runningTime}, as ${timedVenue ? theVenue(timedVenue.name) : "the theatre"} in ${timedCity} publishes it.${all.some((r) => !r.openRun) ? " A touring stop gives its own figure on its page where its seller states one." : ""}`,
+  },
+  next && nextCity && {
+    q: `Where is ${show.title} playing next?`,
+    a: `${nextCity}${nextVenue ? `, at ${theVenue(nextVenue.name)}` : ""}: ${formatRun(next)}. ${dated > 1 ? `It is the first of ${dated} dated runs still to come.` : ""}`.trim(),
+  },
+  openRun && openVenue && {
+    q: all.every((r) => r.openRun) ? `Which theatre is ${show.title} in?` : `Where is ${show.title} playing with no closing date?`,
+    // The run's first night, not the theatre's: a long run moves house —
+    // Chicago opened at the Richard Rodgers — and "at the Ambassador since
+    // 1996" would be a false sentence built out of two true fields.
+    a: `At ${theVenue(openVenue.name)} in ${cityBySlug(openRun.city)?.name ?? openRun.city}. The run has been going since ${formatRun(openRun).replace(/^Playing since /, "")}, with no closing date announced.`,
+  },
+].filter(Boolean) as { q: string; a: string }[];
+
 const glance = [
   { label: "Cities", value: String(cityCount), icon: ICONS.map },
   openRun && openVenue && {
@@ -55,6 +84,7 @@ const glance = [
     href: `/${show.slug}/${openRun.slug}/`,
   },
   next && nextCity && { label: "Next", value: `${nextCity}, ${formatRun(next)}`, icon: ICONS.events, href: `/${show.slug}/${next.slug}/` },
+  timed && { label: "Running time", value: timed.runningTime!, icon: ICONS.clock },
   { label: "On sale", value: `${all.filter((r) => statusOf(r) === "on-sale").length} of ${all.length} runs`, icon: ICONS.ticket },
   { label: "Last checked", value: show.checkedOn, icon: ICONS.list },
 ].filter(Boolean) as { label: string; value: string; icon: string; href?: string }[];
@@ -64,6 +94,7 @@ const jump = [
   showGroups.length > 0 && { id: "tours", label: "Tours" },
   { id: "read", label: "Read on" },
   clips.length > 0 && { id: "watch", label: "Watch" },
+  faq.length > 0 && { id: "faq", label: "Questions" },
 ].filter(Boolean) as { id: string; label: string }[];
 ---
 <Layout title={show.titleSeo ?? show.title} description={show.summary}>
@@ -125,6 +156,13 @@ const jump = [
       <p class="more">
         <a href={`/${show.slug}/online/`} title={`Everything from ${show.title} you can legally watch`}>Everything you can legally watch</a>
       </p>
+    </section>
+  )}
+
+  {faq.length > 0 && (
+    <section class="container" id="faq">
+      <h2>Things people ask about {show.title}</h2>
+      <Faq items={faq} />
     </section>
   )}
 </Layout>

@@ -52,19 +52,45 @@ export const index = {
 
 export const coffee = {
   title: "Coffee in Azizi Riviera",
-  description: "Cafés along Azizi Riviera's promenade, and how coverage shifts building to building.",
+  description: "Coffee in Azizi Riviera: 15 coffee shops and 22 cafés on the last count, bunched at Buildings 24 and 34. Homebrew opens at 6am; Bebax runs to midnight.",
   eyebrow: "Coffee",
   h1: "Coffee on the Azizi Riviera promenade",
-  lede: `A run of independent cafés and a couple of familiar chains along the
-    canal-facing stretch — most of Riviera can reach a flat white without a car.`,
+  lede: `Fifteen coffee shops and twenty-two cafés on the ground floors of
+    Azizi Riviera, by the count of April 2026 — most of Riviera can reach a
+    flat white without a car, and a few buildings can reach three.`,
   sections: [
     {
-      heading: "What's open",
+      heading: "Where they bunch up",
       paragraphs: [
-        `Density follows the construction timeline: the earliest-opened
-          blocks carry the fullest café run, while newer phases are still
-          being let. A five-minute walk from most buildings covers what's
-          currently trading.`,
+        `<strong>Building 24</strong> is the one with a choice:
+          <a href="/coffee/homebrew/" title="Homebrew, Azizi Riviera Building 24: hours, menu and when to go">Homebrew</a>
+          in Shop 3, Bebax Coffee in Retail 11, and Euro Cafe.
+          <strong>Building 34</strong> matches it with Piattino Cafe,
+          Munch &amp; Go Cafe and Hymmn Coffee Bar.`,
+        `Two more pairs: Delphi Cafe and Cav Ichi Cafe at Building 36,
+          Little Hanoi Coffee and Sips N Drips Cafeteria at Building 20.
+          Everywhere else it is one place a building — Mina Coffee at 3,
+          Patogh Cafeteria at 9, Casa Zu Cafe at 15, Fresh Bowl Cafe at 22,
+          Drft Speciality Coffee at 23, St Lucas Grand Cafe at 44, Arosto
+          Coffee at 47.`,
+        `The names and buildings are from the
+          <a href="/go/propsearch-riviera-amenities/" rel="nofollow">Propsearch amenities list</a>,
+          updated on 20 April 2026. Density follows the construction
+          timeline: the earliest-opened blocks carry the fullest run,
+          while newer phases are still being let.`,
+      ],
+    },
+    {
+      heading: "Early, late",
+      paragraphs: [
+        `Homebrew opens at <strong>6am</strong> every day, the earliest
+          opening we have found on the promenade and the one to know before a
+          commute; it closes at 11pm. <a href="/go/bebax-riviera/" rel="nofollow">Bebax Coffee</a>,
+          in the same building, opens at 8am and serves until
+          <strong>midnight</strong>, by its own branch page — single-origin
+          beans and blends, with bags to take home.`,
+        `For a proper meal rather than a pastry with the coffee, see
+          <a href="/food/" title="Restaurants and groceries in Azizi Riviera">where to eat in Riviera</a>.`,
       ],
     },
   ],

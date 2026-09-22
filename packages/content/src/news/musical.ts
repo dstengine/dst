@@ -126,7 +126,7 @@ export const items: NewsItem[] = [
   {
     slug: "chicago-takes-an-arena-stage-in-dubai",
     createdAt: "2026-09-06T08:48:11+04:00",
-    updatedAt: "2026-09-08T00:12:45+04:00",
+    updatedAt: "2026-09-23T00:59:38+04:00",
     site: "musical",
     image: "/covers/chicago-takes-an-arena-stage-in-dubai.jpg",
     imageAlt: "A wide dark paper arena bowl with a narrow lit rectangle of pale paper at its centre, five small chevrons above it",
@@ -148,16 +148,38 @@ export const items: NewsItem[] = [
     body: [
       "A musical built for a 1,100-seat Broadway house is about to be played in a room that holds seventeen thousand. That is the interesting part of this booking, and it is not a detail of scale — it changes what the audience sees.",
       "## Chicago in Dubai: the dates",
-      "<strong>Chicago</strong> runs at the <strong>Coca-Cola Arena</strong>, Dubai, from <strong>Wednesday 16 to Sunday 20 December 2026</strong>: <strong>eight performances over five days</strong>. Matinees at <strong>3pm</strong> on each of the five days, with <strong>8pm</strong> evening performances added on the Friday, Saturday and Sunday.",
+      "<a href=\"/chicago/dubai/\" title=\"Chicago The Musical in Dubai: dates, performance times and sellers\"><strong>Chicago</strong></a> runs at the <a href=\"/coca-cola-arena/\" title=\"Coca-Cola Arena: capacity, address and getting there\"><strong>Coca-Cola Arena</strong></a>, Dubai, from <strong>Wednesday 16 to Sunday 20 December 2026</strong>: <strong>eight performances over five days</strong>. Matinees at <strong>3pm</strong> on each of the five days, with <strong>8pm</strong> evening performances added on the Friday, Saturday and Sunday.",
       "It is presented by <strong>Marquee Global Events</strong>, and billed as the first Broadway theatrical production to take the arena’s stage.",
       "## Chicago in Dubai ticket prices",
-      "Early-bird pricing starts at <strong>Dh49</strong> for bronze and <strong>Dh99</strong> for silver, with <strong>Dh199</strong> gold, <strong>Dh399</strong> for diamond and platinum floor seats, and <strong>Dh599</strong> for front-row VIP. Tickets are on sale through the arena. The show is <strong>15+</strong>.",
+      "The early-bird prices announced in May started at <strong>Dh49</strong> for bronze and <strong>Dh99</strong> for silver, with <strong>Dh199</strong> gold, <strong>Dh399</strong> for diamond and platinum floor seats, and <strong>Dh599</strong> for front-row VIP. Tickets are sold by the arena's own box office, which takes payment in instalments through Tabby, and by Ticketmaster AE.",
+      "## Age limit",
+      "The arena admits <strong>12 and over only</strong>. Everyone over 12 needs a ticket of their own, anyone under 16 must come with a parent or an adult aged 18 or over, and government-issued photo ID may be asked for at the door. E-tickets arrive five days before the performance, not when you book.",
       "## Why an arena, and what it costs the show",
       "Chicago has been staged since 1996 in the shape it took at Encores!: the orchestra on stage, black costumes, almost no set. That is the rare Broadway design that survives an arena, because there is nothing to lose in the scale-up — no painted flats to look thin from row forty, no scene changes to slow the width.",
       "What an arena does take is intimacy. Chicago is a show of held looks and quiet asides, and at that distance the choreography carries what a face would carry in a theatre.",
     ],
     expertise:
-      "Two things are worth knowing before choosing a price band. The first is that in a five-day arena run the cheapest seats are usually the furthest from the floor rather than the worst-sighted; for a show with a stage-level band and no flown scenery, height is more forgiving than side angle, so a bronze seat straight on will read better than a diamond seat at forty-five degrees. The second is the schedule itself: 3pm matinees on all five days, with evenings added only from Friday, means the two Wednesday and Thursday performances are the least contested tickets of the run and the most likely to have real availability at the entry price. On the fifteen-plus rating — that is a house policy on this production, not a claim about a particular scene; Chicago has been playing to mixed audiences for thirty years, and the age line is the promoter’s decision to make in this market.",
+      "Two things are worth knowing before choosing a price band. The first is that in a five-day arena run the cheapest seats are usually the furthest from the floor rather than the worst-sighted; for a show with a stage-level band and no flown scenery, height is more forgiving than side angle, so a bronze seat straight on will read better than a diamond seat at forty-five degrees. The second is the schedule itself: 3pm matinees on all five days, with evenings added only from Friday, means the two Wednesday and Thursday performances are the least contested tickets of the run and the most likely to have real availability at the entry price. On the twelve-plus rule — that is the arena's policy for this production, not a claim about a particular scene; Chicago has been playing to mixed audiences for thirty years, and the age line is the promoter’s decision to make in this market.",
+    updates: [
+      {
+        on: "2026-09-23",
+        text: "Corrected: the age limit is 12+, as the arena states it, not 15+. Details of who may come with whom are under Age limit.",
+      },
+    ],
+    related: [
+      {
+        href: "/chicago/dubai/",
+        eyebrow: "Coca-Cola Arena",
+        title: "Chicago The Musical in Dubai",
+        text: "16 – 20 December 2026, eight performances. Performance times, both sellers and the arena's rules.",
+      },
+      {
+        href: "/coca-cola-arena/",
+        eyebrow: "City Walk, Dubai",
+        title: "Coca-Cola Arena",
+        text: "17,000 seats, opened 2019. The address, how to get there and what else is booked in.",
+      },
+    ],
   },
 
   {

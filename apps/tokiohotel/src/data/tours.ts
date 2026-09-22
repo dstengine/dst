@@ -16,6 +16,12 @@ export interface Show {
   ticket?: string;
   /** Doors or curtain, when the venue prints it. Local time. */
   startTime?: string;
+  /** What the seller was asking, read off its own page on a named day —
+      never estimated and never carried from another night. Fees as the
+      seller includes them; `note` says what the number leaves out or what
+      the page said about availability. The city page stops printing it
+      six weeks after `checkedOn`, when it is more likely wrong than right. */
+  price?: { from: number; to?: number; currency: string; seller: string; checkedOn: string; note?: string };
   /** A city page on this site. Filled in by cities.ts, not by hand. */
   cityPage?: string;
 }
@@ -52,15 +58,21 @@ export const arenaTour2026: Show[] = [
   { date: "2026-11-04", city: "Amsterdam", country: "Netherlands", venue: "AFAS Live", ticket: "bit-amsterdam" },
   { date: "2026-11-05", city: "Frankfurt", country: "Germany", venue: "Festhalle", ticket: "bit-frankfurt" },
   { date: "2026-11-07", city: "Berlin", country: "Germany", venue: "Uber Arena", ticket: "bit-berlin" },
-  { date: "2026-11-08", city: "Nuremberg", country: "Germany", ticket: "bit-nuremberg" },
+  // The four rooms the band's routing left blank, read off the pages their
+  // Bandsintown links lead to — Eventim for the German three, Fnac Spectacles
+  // for Paris — on 23 September 2026.
+  { date: "2026-11-08", city: "Nuremberg", country: "Germany", venue: "PSD Bank Nürnberg Arena", startTime: "20:00", ticket: "bit-nuremberg",
+    price: { from: 75.35, to: 91.85, currency: "EUR", seller: "Eventim", checkedOn: "2026-09-23", note: "every category showed as currently unavailable" } },
   { date: "2026-11-10", city: "Zürich", country: "Switzerland", venue: "Hallenstadion", ticket: "bit-zurich" },
   { date: "2026-11-11", city: "Milan", country: "Italy", venue: "Unipol Forum, Assago", ticket: "bit-milan" },
-  { date: "2026-11-13", city: "Leipzig", country: "Germany", ticket: "bit-leipzig" },
+  { date: "2026-11-13", city: "Leipzig", country: "Germany", venue: "Quarterback Immobilien Arena", startTime: "20:00", ticket: "bit-leipzig",
+    price: { from: 78.29, to: 94.79, currency: "EUR", seller: "Eventim", checkedOn: "2026-09-23", note: "every category showed as currently unavailable" } },
   { date: "2026-11-15", city: "Vienna", country: "Austria", venue: "Wiener Stadthalle", ticket: "bit-vienna" },
   { date: "2026-11-16", city: "Munich", country: "Germany", venue: "Olympiahalle", ticket: "bit-munich" },
   { date: "2026-11-18", city: "Esch-sur-Alzette", country: "Luxembourg", venue: "Rockhal", ticket: "bit-esch" },
-  { date: "2026-11-19", city: "Düsseldorf", country: "Germany", ticket: "bit-dusseldorf" },
-  { date: "2026-11-21", city: "Paris", country: "France", ticket: "bit-paris-nov" },
+  { date: "2026-11-19", city: "Düsseldorf", country: "Germany", venue: "PSD Bank Dome", startTime: "20:00", ticket: "bit-dusseldorf",
+    price: { from: 78.95, to: 95.45, currency: "EUR", seller: "Eventim", checkedOn: "2026-09-23", note: "every category showed as currently unavailable" } },
+  { date: "2026-11-21", city: "Paris", country: "France", venue: "Adidas Arena", startTime: "19:30", ticket: "bit-paris-nov" },
   { date: "2026-11-23", city: "Madrid", country: "Spain", venue: "Palacio Vistalegre", ticket: "bit-madrid" },
 ];
 
@@ -90,21 +102,24 @@ export const feelItAllEast2015: Show[] = [
 // The second tour on the band's own site, and the one no listing carried
 // when this page was first written. Fourteen entries: two European cities,
 // a festival, and eleven German open-air nights in August.
+// The rooms and start times are the sellers' — Vivaticket for Rome, Eventim
+// for Germany — read on 23 September 2026, when the band's own list still
+// gave most of them as a city and a date.
 export const summerEncore2027: Show[] = [
-  { date: "2027-07-14", city: "Rome", country: "Italy", ticket: "vivaticket-rome" },
+  { date: "2027-07-14", city: "Rome", country: "Italy", venue: "Cavea, Auditorium Parco della Musica", startTime: "21:00", ticket: "vivaticket-rome" },
   { date: "2027-07-19", city: "Warsaw", country: "Poland", venue: "Progresja Summer Stage", ticket: "ebilet-warsaw" },
-  { date: "2027-08-05", city: "Aurich", country: "Germany", ticket: "eventim-aurich" },
-  { date: "2027-08-06", city: "Dortmund", country: "Germany", ticket: "eventim-dortmund" },
-  { date: "2027-08-08", city: "Würzburg", country: "Germany", ticket: "eventim-wurzburg" },
-  { date: "2027-08-10", city: "Mönchengladbach", country: "Germany", ticket: "eventim-monchengladbach" },
-  { date: "2027-08-11", city: "Frankfurt am Main", country: "Germany", ticket: "eventim-frankfurt" },
-  { date: "2027-08-13", city: "Dresden", country: "Germany", ticket: "eventim-dresden" },
-  { date: "2027-08-15", city: "Magdeburg", country: "Germany", ticket: "eventim-magdeburg" },
-  { date: "2027-08-17", city: "Halle (Saale)", country: "Germany", ticket: "eventim-halle" },
+  { date: "2027-08-05", city: "Aurich", country: "Germany", venue: "Mehrzweckgelände Tannenhausen", startTime: "20:00", ticket: "eventim-aurich" },
+  { date: "2027-08-06", city: "Dortmund", country: "Germany", venue: "Westfalenpark", startTime: "20:00", ticket: "eventim-dortmund" },
+  { date: "2027-08-08", city: "Würzburg", country: "Germany", venue: "Residenzplatz", startTime: "19:00", ticket: "eventim-wurzburg", price: { from: 93.35, to: 104.35, currency: "EUR", seller: "Eventim", checkedOn: "2026-09-23", note: "standing only; front-of-stage showed as currently unavailable" } },
+  { date: "2027-08-10", city: "Mönchengladbach", country: "Germany", venue: "SparkassenPark", startTime: "20:00", ticket: "eventim-monchengladbach" },
+  { date: "2027-08-11", city: "Frankfurt am Main", country: "Germany", venue: "Agora open-air ground, Messe Frankfurt", startTime: "20:00", ticket: "eventim-frankfurt" },
+  { date: "2027-08-13", city: "Dresden", country: "Germany", venue: "Open Air P5, Messe Dresden", startTime: "19:00", ticket: "eventim-dresden" },
+  { date: "2027-08-15", city: "Magdeburg", country: "Germany", venue: "Domplatz", startTime: "19:00", ticket: "eventim-magdeburg", price: { from: 95.95, currency: "EUR", seller: "Eventim", checkedOn: "2026-09-23", note: "one category, unreserved" } },
+  { date: "2027-08-17", city: "Halle (Saale)", country: "Germany", venue: "Freilichtbühne Peißnitz", startTime: "19:00", ticket: "eventim-halle" },
   { date: "2027-08-19", city: "Sankt Pölten", country: "Austria", venue: "Frequency Festival", ticket: "frequency-tickets" },
-  { date: "2027-08-23", city: "Hamburg", country: "Germany", ticket: "eventim-hamburg" },
-  { date: "2027-08-25", city: "Berlin", country: "Germany", ticket: "eventim-berlin" },
-  { date: "2027-08-27", city: "Hanover", country: "Germany", ticket: "eventim-hanover" },
+  { date: "2027-08-23", city: "Hamburg", country: "Germany", venue: "MS Dockville festival site", startTime: "19:15", ticket: "eventim-hamburg" },
+  { date: "2027-08-25", city: "Berlin", country: "Germany", venue: "Waldbühne", startTime: "19:00", ticket: "eventim-berlin" },
+  { date: "2027-08-27", city: "Hanover", country: "Germany", venue: "Expo Plaza", startTime: "20:00", ticket: "eventim-hanover" },
 ];
 
 export const tours: Tour[] = [
@@ -287,16 +302,16 @@ export const tours: Tour[] = [
         ],
       },
       {
-        heading: "Where the rooms are not yet named",
+        heading: "The rooms",
         paragraphs: [
-          "Two of the fourteen have a venue: Progresja Summer Stage in Warsaw, and the Frequency Festival at Sankt Pölten, which runs across three days from 19 August. The other twelve are on sale with a city and a date and nothing else, which is normal this far out for open-airs and is exactly how they are printed below.",
+          "Every one of the fourteen has a room now, and almost none of them is a hall. Berlin is the Waldbühne, Würzburg the Residenzplatz in front of the Residence, Magdeburg the Domplatz, Dortmund the Westfalenpark, Rome the open-air Cavea of the Auditorium Parco della Musica; Sankt Pölten is the Frequency Festival, which runs across three days from 19 August. The band's own list gave most of them as a city and a date; the rooms below are the sellers'.",
           "Poland is the one country here that the arena tour does not reach; Italy, Austria and Germany are on both runs, in different cities. Only three cities repeat: Hamburg, Frankfurt and Berlin get a second look at a band they will already have seen nine or ten months earlier, in a very different room. The other eleven stops here are places the arena tour never reaches.",
         ],
       },
     ],
     shows: summerEncore2027,
     showsHeading: "All fourteen dates",
-    showsNote: "Venue is printed where one has been announced. Twelve of the fourteen are on sale as a city and a date.",
+    showsNote: "Dates from the band's own site; rooms and start times from each seller's page, read on 23 September 2026.",
     source: OFFICIAL,
   },
 ];

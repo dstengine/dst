@@ -17,7 +17,8 @@ import EventCards from "./EventCards.astro";
 import StatusBadge from "./StatusBadge.astro";
 import TicketButtons from "./TicketButtons.astro";
 import { go } from "../outbound";
-import { checkedOn, cityBySlug, cityHasPage, faqHeading, formatRun, formatRunDays, groupBySlug, otherRuns, priceFrom, priceIsFresh, priceLabel, priceTiers, priceValidUntil, formatPrice, relatedRuns, runFaq, runIntro, spell, statusOf, venueBySlug, venuePath, type Run, type Show, } from "../content";
+import { newsBySite } from "@dst/content/news";
+import { siteId, newsBase, formatDay, checkedOn, cityBySlug, cityHasPage, faqHeading, formatRun, formatRunDays, groupBySlug, otherRuns, priceFrom, priceIsFresh, priceLabel, priceTiers, priceValidUntil, formatPrice, relatedRuns, runFaq, runIntro, spell, statusOf, venueBySlug, venuePath, type Run, type Show, } from "../content";
 
 interface Props { show: Show; run: Run }
 const { show, run } = Astro.props;
@@ -28,6 +29,28 @@ const group = run.group ? groupBySlug(run.show, run.group) : undefined;
 const status = statusOf(run);
 const sellerCount = spell(run.sellers.length);
 const title = `${show.title} in ${city.name}`;
+// The <title> says more than the h1 when there is room for it. The searches
+// that reached this page named the building and the month — "chicago coca
+// cola arena" — and a heading under a breadcrumb has already said which
+// theatre it is in, while a line in a results page has said nothing yet. The
+// longest version that fits sixty characters, suffix included, wins; a
+// Broadway run with no closing date has no month to give.
+const month = (iso: string, style: "long" | "short") =>
+  new Date(`${iso}T00:00:00Z`).toLocaleDateString("en-GB", { timeZone: "UTC", month: style, year: "numeric" });
+const oneMonth = run.start && !run.openRun && (run.end ?? run.start).slice(0, 7) === run.start.slice(0, 7);
+const when = run.start && !run.openRun
+  ? oneMonth ? [month(run.start, "long"), month(run.start, "short")] : [run.start.slice(0, 4)]
+  : [];
+// "York at Grand Opera House York" says the city twice; a theatre named for
+// its town already answers "where".
+const at = venue && (venue.name.includes(city.name) ? `${show.title} at ${venue.name}` : `${title} at ${venue.name}`);
+const suffixLength = /musical/i.test(title) ? 0 : " — Musical Today".length;
+const headTitle = [
+  ...(at ? when.map((w) => `${at}, ${w}`) : []),
+  at,
+  ...when.map((w) => `${title}, ${w}`),
+  title,
+].find((t): t is string => Boolean(t) && (t as string).length + suffixLength <= 60)!;
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
 const absolute = (path: string) => (Astro.site ? new URL(path, Astro.site).href : path);
 
@@ -62,6 +85,15 @@ const glance = [
   { label: "Last checked", value: show.checkedOn, icon: ICONS.list },
 ].filter(Boolean) as { label: string; value: string; icon: string; href?: string }[];
 
+// The news this run has been in. A story about a booking and the page that
+// sells it answer the same search from two sides, and each is the other's
+// best link: the story is linked to from here by the related card it
+// already carries, so a new story needs no edit on this page.
+const path = `/${show.slug}/${run.slug}/`;
+const coverage = newsBySite(siteId)
+  .filter((item) => item.body?.length && item.related?.some((card) => card.href === path))
+  .sort((a, b) => b.date.localeCompare(a.date));
+
 // A contents box earns its place on a long page. Three anchors above the
 // facts a reader came for is furniture, so it waits for a fourth and sits
 // under them.
@@ -72,6 +104,7 @@ const jump = [
   run.sellers.length > 1 && { id: "sellers", label: "Where to buy" },
   venue && { id: "venue", label: venue.name },
   { id: "faq", label: heading },
+  coverage.length > 0 && { id: "news", label: "In the news" },
   elsewhere.length > 0 && { id: "elsewhere", label: "Other cities" },
 ].filter(Boolean) as { id: string; label: string }[];
 
@@ -137,7 +170,7 @@ const eventLd: Record<string, unknown> = {
 };
 ---
 <Layout
-  title={title}
+  title={headTitle}
   description={`${show.title} in ${city.name}: ${formatRun(run)}${venue ? ` at ${venue.name}` : ""}. Dates, theatre and who is selling.`}
   jsonLd={[eventLd]}
 >
@@ -213,6 +246,20 @@ const eventLd: Record<string, unknown> = {
     <Faq items={faq} />
   </section>
 
+  {coverage.length > 0 && (
+    <section class="container" id="news">
+      <h2>In the news</h2>
+      <ul class="coverage">
+        {coverage.map((item) => (
+          <li>
+            <a href={`${newsBase}${item.slug}/`} title={item.summary}>{item.title}</a>
+            <time datetime={item.date}>{formatDay(item.date)}</time>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
   {elsewhere.length > 0 && (
     <section class="container" id="elsewhere">
       <h2>{show.title} in other cities</h2>
@@ -250,4 +297,6 @@ const eventLd: Record<string, unknown> = {
   .sellers span { color: var(--ink-muted); }
   .venue-summary, .venue-transit { max-width: 68ch; color: var(--ink-muted); }
   .more { margin: var(--space-3) 0 0; }
+  .coverage { margin: var(--space-3) 0 0; padding: 0; list-style: none; display: grid; gap: var(--space-2); }
+  .coverage time { margin-left: var(--space-2); color: var(--ink-faint); font-family: var(--font-mono); font-size: var(--step--1); }
 </style>

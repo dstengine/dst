@@ -15,8 +15,15 @@ export function getStaticPaths() {
 const { album } = Astro.props as { album: Album };
 const tour = album.tour ? tourBySlug(album.tour) : undefined;
 
+const ORDINALS = ["", "first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth"];
+const nth = ORDINALS[album.number] ?? `number ${album.number}`;
+// The h1 is the record's name; the <title> says whose it is and which, since
+// "encore" on its own is a word, not a search. A label is named only when
+// there is one — "on Announced without a label" was this line's old output.
 const title = album.title;
-const description = `${album.title}: studio album number ${album.number}, ${album.upcoming ? "due" : "released"} ${album.released} on ${album.label}. ${album.blurb}`;
+const headTitle = `${album.title}: Tokio Hotel's ${nth} studio album, ${album.released.slice(0, 4)}`;
+const labelled = !/^announced without/i.test(album.label);
+const description = `${album.title} is Tokio Hotel's ${nth} studio album, ${album.upcoming ? "due" : "released"} on ${formatDate(album.released, "en-GB")}${labelled ? ` on ${album.label}` : ""}. ${album.blurb}`;
 
 const facts = [
   { label: album.upcoming ? "Due" : "Released", value: formatDate(album.released, "en-GB"), icon: ICONS.events },
@@ -33,7 +40,7 @@ const index = albums.indexOf(album);
 const previous = index > 0 ? albums[index - 1] : undefined;
 const next = index < albums.length - 1 ? albums[index + 1] : undefined;
 ---
-<Layout prose title={title} description={description}>
+<Layout prose title={headTitle} description={description}>
   <section class="container hero">
     <Breadcrumbs crumbs={[{ href: "/albums/", label: "Albums" }]} current={album.title} homeLabel="Dates" />
     <h1>{album.title}</h1>

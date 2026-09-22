@@ -249,7 +249,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-hampton-court-palace-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-09-12T20:15:40+04:00",
+    updatedAt: "2026-09-23T01:09:31+04:00",
     site: "lnd",
     image: "/covers/halloween-hampton-court-palace-2026.jpg",
     imageAlt: "A dark blue crenellated roofline with three towers of different heights rising from it, the tallest carrying a small red flag",
@@ -295,6 +295,22 @@ export const items: EventItem[] = [
         a: "The London Borough of Richmond upon Thames, on the north bank of the Thames at East Molesey.",
       },
     ],
+    // Same half-term week: the three pages a reader choosing a day out
+    // that week is deciding between.
+    related: [
+      {
+        href: "/events/halloween-eltham-palace-2026/",
+        eyebrow: "Greenwich",
+        title: "Halloween half-term at Eltham Palace",
+        text: "The Great Pumpkin Party, 24 October to 1 November, 10am to 4pm, included with entry.",
+      },
+      {
+        href: "/events/day-of-the-dead-horniman-2026/",
+        eyebrow: "Forest Hill",
+        title: "Day of the Dead at the Horniman",
+        text: "Saturday 31 October, 11am to 4pm: Aztec dancers, mariachi and a community ofrenda. £8, children £6.",
+      },
+    ],
     expertise:
       "One might, with respect, suggest going late rather than early. The palace is at its most obliging in the last two hours of the afternoon, when the coach parties have gone and the light in the courtyards has turned; the gardens are included and are half the reason to come, and they are emptiest then. The train from Waterloo takes a little over half an hour and puts you at the gate — which is a kinder arrangement than the car park, that being full by eleven throughout half term.",
   },
@@ -302,7 +318,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-eltham-palace-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-09-12T20:15:40+04:00",
+    updatedAt: "2026-09-23T01:09:31+04:00",
     site: "lnd",
     image: "/covers/halloween-eltham-palace-2026.jpg",
     imageAlt: "A large circular window divided into panes, lit pale, above a stepped pale block on a deep blue ground",
@@ -350,6 +366,22 @@ export const items: EventItem[] = [
         a: "English Heritage encourage it: there is a fancy dress competition each day, with prizes for the winners.",
       },
     ],
+    // Same half-term week: the three pages a reader choosing a day out
+    // that week is deciding between.
+    related: [
+      {
+        href: "/events/halloween-hampton-court-palace-2026/",
+        eyebrow: "Richmond upon Thames",
+        title: "Halloween at Hampton Court Palace",
+        text: "The same nine days, 24 October to 1 November, included with palace admission and no booking needed.",
+      },
+      {
+        href: "/events/day-of-the-dead-horniman-2026/",
+        eyebrow: "Forest Hill",
+        title: "Day of the Dead at the Horniman",
+        text: "Saturday 31 October, 11am to 4pm: Aztec dancers, mariachi and a community ofrenda. £8, children £6.",
+      },
+    ],
     expertise:
       "Eltham is the quiet one of the London half-term palaces, which is its whole advantage — the same nine days that put a queue around Hampton Court leave this one comfortable, and it is twenty minutes from London Bridge to Mottingham. Ten in the morning is the hour to arrive if the trail is the point; the house and gardens then have the rest of the day, and they are the part children remember, art deco entrance hall and all.",
   },
@@ -357,7 +389,7 @@ export const items: EventItem[] = [
   {
     slug: "day-of-the-dead-horniman-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-09-12T20:15:40+04:00",
+    updatedAt: "2026-09-23T01:09:31+04:00",
     site: "lnd",
     image: "/covers/day-of-the-dead-horniman-2026.jpg",
     imageAlt: "Two strings of pale bunting crossing a deep blue ground, with layered paper flowers gathered at the left end",
@@ -412,6 +444,22 @@ export const items: EventItem[] = [
       {
         q: "Is Day of the Dead the same as Halloween?",
         a: "No. Día de Muertos is the Mexican observance of 1 and 2 November, when families welcome their dead back; the Horniman holds its festival on 31 October because that is the Saturday, not because it is Halloween.",
+      },
+    ],
+    // Same half-term week: the three pages a reader choosing a day out
+    // that week is deciding between.
+    related: [
+      {
+        href: "/events/halloween-eltham-palace-2026/",
+        eyebrow: "Greenwich",
+        title: "Halloween half-term at Eltham Palace",
+        text: "The Great Pumpkin Party, 24 October to 1 November, 10am to 4pm, included with entry.",
+      },
+      {
+        href: "/events/halloween-hampton-court-palace-2026/",
+        eyebrow: "Richmond upon Thames",
+        title: "Halloween at Hampton Court Palace",
+        text: "The same nine days, 24 October to 1 November, included with palace admission and no booking needed.",
       },
     ],
     expertise:

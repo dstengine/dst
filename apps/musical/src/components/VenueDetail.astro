@@ -100,12 +100,40 @@ const lede = venue.summary
       ? `${nextShow} has been playing here since ${formatRun(next).replace(/^Playing since /, "")}.`
       : `${nextShow} plays here, ${formatRun(next)}.`
     : "Nothing on this site's calendar is booked here at the moment. The address and the directions are below.");
-const description = venue.summary
-  ?? `${venue.name} in ${city.name}: address, how to get there, and what is playing.`;
+// The head leads with the facts a search for the building asks for — the
+// seats and the street — then what is booked, and only then tells its
+// story. "grand opera house york capacity" found this page with an answer on
+// it and a description that opened on a corn exchange. It is cut at a
+// sentence, never mid-word: a description ending "and opened the re" is
+// what a reader sees in the result.
+const facts = [
+  // Unless the story already opens on the seat count, in words.
+  venue.capacity && !/seats|capacity/i.test(venue.summary ?? "") && `${venue.capacity.toLocaleString("en-GB")} seats`,
+  venue.address,
+].filter(Boolean).join(", ");
+const place = venue.name.includes(city.name) ? venue.name : `${venue.name}, ${city.name}`;
+const bookedShows = [...new Set(upcoming.map((r) => showBySlug(r.show)?.title ?? r.show))];
+const booked = next && nextShow
+  ? bookedShows.length === 1
+    ? `The musical booked here: ${nextShow}, ${formatRun(next).replace(/^Playing since/, "playing since")}.`
+    : `Musicals booked here: ${bookedShows.join(", ")}.`
+  : undefined;
+const sentences = [
+  // The address names the city already, where it has one.
+  `${venue.address?.includes(city.name) ? venue.name : place}${facts ? `: ${facts}.` : "."}`,
+  booked,
+  ...(venue.summary ?? "How to get there, and which musicals have played it.").split(/(?<=[.!?])\s+/),
+].filter((x): x is string => Boolean(x));
+let description = "";
+for (const sentence of sentences) {
+  const longer = description ? `${description} ${sentence}` : sentence;
+  if (description && longer.length > 300) break;
+  description = longer;
+}
 ---
 <Layout
-  title={`${venue.name}, ${city.name}`}
-  description={description.slice(0, 300)}
+  title={place}
+  description={description}
   jsonLd={[placeLd]}
 >
   <div class="container venue-crumbs">

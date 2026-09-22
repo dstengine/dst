@@ -21,6 +21,10 @@ for (const event of eventsBySite(siteId)) {
   if (event.ticket) outbound[`${event.slug}-ticket`] = event.ticket.url;
 }
 
+// Sources cited in the written guide pages.
+outbound["propsearch-riviera-amenities"] = "https://propsearch.ae/dubai/azizi-riviera/amenities";
+outbound["bebax-riviera"] = "https://bebaxcoffee.com/azizi-riviera/";
+
 /** Path for an outbound link, e.g. go("homebrew-social") -> "/go/homebrew-social/" */
 export function go(slug: string): string {
   return `/go/${slug}/`;

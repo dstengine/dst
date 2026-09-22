@@ -9,6 +9,7 @@ import "../../data/cities";
 import { checkedOn } from "../../data/band";
 import { albumForTour } from "../../data/albums";
 import { musicGroup, musicEvent } from "../../schema";
+import { formatDate } from "@dst/ui/date";
 
 export function getStaticPaths() {
   return tours.map((tour) => ({ params: { slug: tour.slug }, props: { tour } }));
@@ -22,9 +23,18 @@ const cities = [...new Set(shows.map((s) => s.city))].length;
 const countries = [...new Set(shows.map((s) => s.country))].length;
 
 const title = `${tour.name} ${tour.years}`;
+// "tokio hotel arena tour 2026" and "tokio hotel tour dates" are what found
+// this page. The band's name goes first in the <title>, and a routing still
+// ahead says what it is: the dates, first night to last.
+const ahead = shows.some((s) => s.date >= checkedOn);
+const firstShow = shows[0];
+const lastShow = shows[shows.length - 1];
+const headTitle = ahead ? `Tokio Hotel ${title}: all ${shows.length} dates` : `Tokio Hotel ${title}`;
 const description = shows.length
-  ? `${tour.name}, ${tour.years}: ${shows.length} dates in ${cities} cities, each with the source that confirmed it.`
-  : `${tour.name}, ${tour.years} — ${tour.blurb}`;
+  ? ahead
+    ? `Tokio Hotel's ${tour.name} ${tour.years}: ${shows.length} dates in ${cities} cities, from ${firstShow.city} on ${formatDate(firstShow.date, "en-GB")} to ${lastShow.city} on ${formatDate(lastShow.date, "en-GB")} — the room and the seller for each.`
+    : `Tokio Hotel's ${tour.name}, ${tour.years}: ${shows.length} dates in ${cities} cities, each with the source that confirmed it.`
+  : `Tokio Hotel's ${tour.name}, ${tour.years}. ${tour.blurb}`;
 
 // Only a routing that is still ahead is markup a crawler should read as an
 // event. History goes out as prose.
@@ -35,7 +45,7 @@ const index = tours.indexOf(tour);
 const previous = index > 0 ? tours[index - 1] : undefined;
 const next = index < tours.length - 1 ? tours[index + 1] : undefined;
 ---
-<Layout prose title={title} description={description} jsonLd={jsonLd}>
+<Layout prose title={headTitle} description={description} jsonLd={jsonLd}>
   <section class="container hero">
     <Breadcrumbs crumbs={[{ href: "/tours/", label: "Tours" }]} current={title} homeLabel="Dates" />
     <h1>{title}</h1>

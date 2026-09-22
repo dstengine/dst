@@ -599,6 +599,10 @@ export const venues: Venue[] = [
     address: "Cumberland Street, York, YO1 9SW",
     lat: 53.957135,
     lon: -1.082282,
+    // ATG's own venue page, read 23 September 2026. Seat-plan sites give 984
+    // and 999, which are counts of one layout; the operator's figure is the
+    // licensed house.
+    capacity: 1028,
     opened: "20 January 1902",
     image: "/venues/grand-opera-house-york.jpg",
     imageAlt:
@@ -610,6 +614,7 @@ export const venues: Venue[] = [
     summary:
       "It was a corn exchange first. William Peacock bought the 1868 building and the warehouse behind it, spent £24,000 joining them together, and opened the result as a theatre in January 1902 with a pantomime starring Florrie Forde.",
     details: [
+      { label: "Capacity", value: "1,028 seats, on three levels: stalls, dress circle and grand circle" },
       { label: "Opened as a theatre", value: "20 January 1902" },
       { label: "Architect", value: "J. P. Briggs; corn exchange by George Alfred Dean, 1868" },
       { label: "Owner", value: "Ambassador Theatre Group" },
