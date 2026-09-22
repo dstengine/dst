@@ -37,27 +37,9 @@ import { execFileSync } from "node:child_process";
 import { readdirSync, readFileSync, writeFileSync, existsSync, statSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { HOSTS } from "./hosts.mjs";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const HOSTS = {
-  dst: "dst.llc",
-  llc: "llc.dst.llc",
-  visas: "visas.dst.llc",
-  riviera: "riviera.dst.llc",
-  mbr: "mbr.dst.llc",
-  palmcentral: "palmcentral.dst.llc",
-  fwf: "fwf.lol",
-  musical: "musical.today",
-  eco: "eco.dst.llc",
-  nyc42: "nyc42.lol",
-  sol2go: "sol2go.lol",
-  vien: "vien.lol",
-  ldn: "ldn.lol",
-  lnd: "lnd.lol",
-  cmx: "cmx.lol",
-  mxo: "mxo.lol",
-  tokiohotel: "tokiohotel.vvm.space",
-};
 
 const gitDates = new Map();
 /** Last commit that touched a file, as an ISO date. */

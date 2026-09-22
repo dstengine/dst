@@ -123,10 +123,19 @@ no environment variable for it.
 ## Shipping
 
 ```bash
-node tools/llms.mjs && npm run build     # regenerate llms.txt, build
-node tools/lastmod.mjs && npm run build  # sitemap dates from git, rebuild
+npm run pipeline                         # llms.txt, build, dates, rebuild what moved
 ./tools/deploy.sh nyc42                  # one site, or --all
 ```
+
+`pipeline` is the two generated files and the builds they need, in the one
+order that works: `llms.txt` is written into `public/` and has to exist
+before the build that copies it, while `lastmod.json` is computed by walking
+`dist/` and so needs a build before it and another after. Done in that order
+a ship costs two builds; done with `llms.mjs` last it costs three, which is
+the easy mistake to make from a cold tree, because `lastmod.mjs` refuses to
+run without `dist/` and invites you to build first. The second build is
+narrowed to the sites whose dates actually moved — usually one or two, not
+all seventeen. See `tools/pipeline.mjs`.
 
 `deploy.sh` exists because a push rebuilds every app the commit touched, and
 a `packages/` change touches all fifteen — against a Hobby limit of 100
