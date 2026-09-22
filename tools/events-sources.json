@@ -266,5 +266,29 @@
     "kind": "watch",
     "city": "Wien",
     "notes": "Same reason as the Albertina. Already the source of the site's first news item, so the run dates are worth having in one place."
+  },
+  {
+    "site": "dubai",
+    "for": [
+      "dst",
+      "fwf"
+    ],
+    "name": "Khaleej Times, business",
+    "url": "https://www.khaleejtimes.com/api/v1/collections/business.rss",
+    "kind": "rss",
+    "city": "Dubai",
+    "notes": "The hub's subject is Dubai property, tech and AI, and the three Khaleej collections already watched are entertainment, lifestyle and racing. This is the one that carries the property and company news the hub is actually about."
+  },
+  {
+    "site": "dubai",
+    "for": [
+      "dst"
+    ],
+    "name": "Dubai World Trade Centre",
+    "url": "https://www.dwtc.com/en/events/",
+    "kind": "watch",
+    "city": "Dubai",
+    "match": "20[0-9]{2}|January|February|March|April|May|June|July|August|September|October|November|December",
+    "notes": "Where GITEX, Cityscape and most of the trade calendar actually happen. Publishes no feed, no event markup and no sitemap — probed 22 September 2026 — so the page is watched for lines that were not on it last time."
   }
 ]
