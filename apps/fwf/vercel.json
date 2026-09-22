@@ -1,4 +1,16 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "ignoreCommand": "git rev-parse HEAD^ >/dev/null 2>&1 || exit 1; git diff --quiet HEAD^ HEAD -- . ../../packages"
+  "ignoreCommand": "git rev-parse HEAD^ >/dev/null 2>&1 || exit 1; git diff --quiet HEAD^ HEAD -- . ../../packages",
+  "redirects": [
+    {
+      "source": "/events/dubai-future-forum-2026",
+      "destination": "/events/dubai-future-week-2026/",
+      "statusCode": 301
+    },
+    {
+      "source": "/events/dubai-future-forum-2026/",
+      "destination": "/events/dubai-future-week-2026/",
+      "statusCode": 301
+    }
+  ]
 }

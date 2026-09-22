@@ -28,6 +28,14 @@ export interface Redirect {
 }
 
 export const redirects: Record<string, Redirect[]> = {
+  fwf: [
+    {
+      from: "/events/dubai-future-forum-2026/",
+      to: "/events/dubai-future-week-2026/",
+      since: "2026-09-23",
+      why: "The Dubai Future Forum stopped being a separate event: its own 2026 page began redirecting to Dubai Future Week, 18\u201321 November, which absorbed it. Two cards for one event on the same day, so the forum's page merged into the week's, which now carries its history and its 2025 figures.",
+    },
+  ],
   nyc42: [
     {
       from: "/united-states/",

@@ -11,7 +11,7 @@ export const items: EventItem[] = [
   {
     slug: "dubai-future-week-2026",
     createdAt: "2026-08-28T01:39:41+04:00",
-    updatedAt: "2026-09-23T01:56:10+04:00",
+    updatedAt: "2026-09-23T02:13:04+04:00",
     site: "fwf",
     image: "/covers/dubai-future-week-2026.jpg",
     imageAlt: "Five pale lilac paper bands of different widths fanning out from one periwinkle point on an indigo ground",
@@ -51,7 +51,7 @@ export const items: EventItem[] = [
       "## How to register",
       "Registration to attend is open through a form on the official site, dubaifutureweek.com. It asks for your name, nationality, country of residence, email, mobile number, organisation, job title and date of birth. No price appears on the form or anywhere else on the site as of 23 September 2026. Separate applications take would-be speakers and partners.",
       "## What it absorbs",
-      "The week folds in events that used to stand alone. The <strong>Dubai Future Forum</strong> had announced its fifth edition for 17–18 November at the museum; its 2026 page now redirects to the week's site (<a href=\"/events/dubai-future-forum-2026/\" title=\"Dubai Future Forum 2026\">more on the forum</a>). <strong>Dubai AI Week</strong> held its second edition on its own, 6–9 April 2026. <strong>AI Grandmaster</strong> is now part of the week's competitions, the <strong>Prototypes for Humanity</strong> exhibition fills its prototype floor, and the annual <strong>AI Retreat</strong> sits in its policy room. The <strong>Dubai Foresight Awards</strong> and <strong>TED Talks</strong> are on the list too.",
+      "The week folds in events that used to stand alone. The <strong>Dubai Future Forum</strong>, the foundation's gathering of futurists, policymakers, scientists and researchers, had announced its fifth edition for 17–18 November at the museum; its 2026 page now redirects to the week's site, and which of the four days are the forum's has not been published. Its 2025 edition drew 2,500 participants from 100 organisations, with around 150 speakers across some 70 sessions. <strong>Dubai AI Week</strong> held its second edition on its own, 6–9 April 2026. <strong>AI Grandmaster</strong> is now part of the week's competitions, the <strong>Prototypes for Humanity</strong> exhibition fills its prototype floor, and the annual <strong>AI Retreat</strong> sits in its policy room. The <strong>Dubai Foresight Awards</strong> and <strong>TED Talks</strong> are on the list too.",
       "## The five tracks",
       "The programme is organised around people rather than technologies, under the line <strong>For the Human of the Future</strong>. Each track, with the subjects the organiser lists for it:",
       "<strong>How We'll Live</strong>: future cities and urban design, smart and sustainable homes, mobility, climate resilience, public space. <strong>How We'll Think</strong>: AI, education, human–machine collaboration, ethics and trust in AI. <strong>How We'll Innovate</strong>: robotics, space, synthetic biology, quantum, deep-tech start-ups. <strong>How We'll Feel</strong>: longevity, mental health, food, health technology, sport. <strong>How We'll Do Business</strong>: money and finance, trade, the future of work, digital assets and fintech.",
@@ -123,12 +123,6 @@ export const items: EventItem[] = [
         title: "Future World Forum Dubai 2026",
         text: "The one-day urban-technology conference on 16 November, two days before the week opens.",
         eyebrow: "16 November",
-      },
-      {
-        href: "/events/dubai-future-forum-2026/",
-        title: "Dubai Future Forum 2026",
-        text: "The foresight forum the week absorbed, and what changed about its dates.",
-        eyebrow: "Part of the week",
       },
     ],
     updates: [
@@ -216,61 +210,6 @@ export const items: EventItem[] = [
     ],
     expertise:
       "The venue is the gap worth watching. Everything else about the listing is specific — date, hours, price band, sales cutoff — while the location says only \"Dubai\". For an event eight weeks from its ticket deadline that is unusual, and it is the single question to put to the organiser before spending anything that isn't refundable. This site tracks the listing and will say plainly if that changes, in either direction.",
-  },
-  {
-    slug: "dubai-future-forum-2026",
-    createdAt: "2026-08-28T01:56:27+04:00",
-    updatedAt: "2026-09-23T01:56:10+04:00",
-    site: "fwf",
-    image: "/covers/dubai-future-forum-2026.jpg",
-    imageAlt: "A plain paper ring standing upright on a low mound between two pale panels",
-    imageKind: "generated",
-    imageWidth: 1536,
-    imageHeight: 864,
-    title: "Dubai Future Forum 2026",
-    summary:
-      "The Dubai Future Foundation's gathering of futurists, now folded into Dubai Future Week, 18–21 November 2026 at Emirates Towers and the Museum of the Future. It starts two days after Future World Forum, the event it is most often confused with.",
-    // The week's dates, not the forum's: the forum's own 17–18 November was
-    // withdrawn when its page began redirecting to the week, and which of the
-    // four days are the forum's has not been published. The body says so.
-    start: "2026-11-18",
-    end: "2026-11-21",
-    venue: "Emirates Towers and the Museum of the Future",
-    city: "Dubai",
-    geo: {
-      name: "Museum of the Future, Sheikh Zayed Road, Dubai",
-      lat: 25.2194,
-      lng: 55.2812,
-    },
-    organizer: "Dubai Future Foundation",
-    category: "Conference",
-    source: {
-      name: "Dubai Government Media Office",
-      url: "https://www.mediaoffice.ae/en/news/2026/september/01-09/under-hamdan-bin-mohammeds-directives-dubai-future-week-to-be-held-from-18-to-21-november-2026",
-      verifiedOn: "2026-09-23",
-    },
-    body: [
-      "The Dubai Future Forum's fifth edition was first announced for 17 and 18 November 2026 at the Museum of the Future. On 1 September the Dubai Government Media Office listed it among the events folded into <a href=\"/events/dubai-future-week-2026/\" title=\"Dubai Future Week 2026\">Dubai Future Week</a>, which runs 18–21 November across Emirates Towers and the Museum of the Future. The forum's own 2026 page now redirects to the week's site. Which of the four days belong to the forum has not been published.",
-      "It is run by the Dubai Future Foundation, a government body, and gathers futurists, policymakers, scientists and researchers rather than exhibitors. The 2025 edition drew 2,500 participants from 100 organisations, with around 150 speakers across some 70 sessions, which is the scale to expect.",
-      "The forum no longer has a registration of its own. Its page leads to the week's site, which has one form for the whole programme.",
-      "The week opens two days after Future World Forum Dubai. Anyone flying in for one is in the city for the other.",
-    ],
-    updates: [
-      {
-        on: "2026-09-23",
-        text: "Corrected: the forum is no longer a standalone event on 17–18 November. It is part of Dubai Future Week, 18–21 November, and its own page now redirects to the week's site.",
-      },
-    ],
-    related: [
-      {
-        href: "/events/dubai-future-week-2026/",
-        title: "Dubai Future Week 2026",
-        text: "The four-day programme the forum is now part of: dates, registration, the eight formats and getting there.",
-        eyebrow: "18–21 November",
-      },
-    ],
-    expertise:
-      "This is the event people often mean when they type \"future world forum dubai\" into a search box. The names are nearly identical, the dates are two days apart, and only one of the two is run by a government foundation with a named venue and a five-year record. They are not competitors so much as different products. This one is a policy and foresight gathering with no expo floor, and nothing is sold in the room. From 2026 it is also no longer a separate trip: it sits inside a four-day week alongside AI competitions, start-up pitches and a public district.",
   },
   {
     slug: "gitex-global-2026",
