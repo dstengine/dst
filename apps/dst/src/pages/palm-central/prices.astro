@@ -1,0 +1,139 @@
+---
+// Prices, read as a shape rather than as a shopping list.
+//
+// The subdomain publishes the two tables so a buyer can see which phase a
+// listing is quoting. This page does the thing a hub can do and a product
+// site cannot: put AED 2.7 million next to the market it was priced into,
+// and read the gaps between the rungs.
+import VerticalLayout from "../../layouts/VerticalLayout.astro";
+import PageHero from "@dst/ui/PageHero.astro";
+import Callout from "@dst/ui/Callout.astro";
+import Faq from "@dst/ui/Faq.astro";
+
+const faqItems = [
+  {
+    q: "What does a Palm Central apartment cost in Dubai?",
+    a: "Phase 2 opens at <strong>AED 2.7 million</strong> for one bedroom, and runs AED 4.3 million for two, AED 7.5 million for three and AED 12.4 million for four. Townhouses of four and five bedrooms start at AED 14.9 million.",
+  },
+  {
+    q: "Why do listings say AED 2.5 million?",
+    a: "Because they are quoting Phase 1, which released in October 2025 and sold out. The developer's current entry price is AED 2.7 million — a difference of AED 200,000 on the same size of flat, roughly eight per cent.",
+  },
+  {
+    q: "Is the second bedroom worth AED 1.6 million?",
+    a: "That is what the ladder charges for it, and it is the largest proportional step on the list: the jump from one bedroom to two costs about 59 per cent more, while two to three costs 74 per cent and three to four 65 per cent. Whether that is value depends on whether the second bedroom is for a person or for a resale.",
+  },
+  {
+    q: "Are there five-bedroom apartments or penthouses in this phase?",
+    a: "None has been confirmed for Phase 2. Phase 1 had both. If an agent offers one at Phase 2 pricing, the useful question is which release it is actually from.",
+  },
+];
+---
+<VerticalLayout
+  vertical="palm-central"
+  current="/palm-central/prices/"
+  prose
+  title="Palm Central prices in Dubai, and what the ladder says"
+  description="Palm Central in Dubai opens at AED 2.7 million and climbs to AED 14.9 million. The steps between the rungs say more about the product than the entry price does — and two entry prices are in circulation."
+  image="/covers/pc-prices.jpg"
+>
+  <PageHero
+    eyebrow="Prices"
+    title="Palm Central prices in Dubai, and what the ladder says"
+    image="/covers/pc-prices.jpg"
+    imageAlt="Cut-paper illustration: five flat bars of differing heights standing in a row on an even ground, the tallest of them amber."
+    imageKind="generated"
+  >
+    <p class="lede">
+      Palm Central's current phase runs from <strong>AED 2.7 million</strong>
+      to <strong>AED 14.9 million</strong>. The entry price is the number
+      every listing repeats; the interesting part is the distance between the
+      rungs, because that is where a developer states what it thinks it is
+      selling.
+    </p>
+  </PageHero>
+
+  <section class="container">
+    <h2>The current phase, in full</h2>
+    <table>
+      <thead>
+        <tr><th>Unit</th><th>From</th><th>Step from the rung below</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1-bedroom apartment</td><td>AED 2.7M</td><td>—</td></tr>
+        <tr><td>2-bedroom apartment</td><td>AED 4.3M</td><td>+AED 1.6M (+59%)</td></tr>
+        <tr><td>3-bedroom apartment</td><td>AED 7.5M</td><td>+AED 3.2M (+74%)</td></tr>
+        <tr><td>4-bedroom apartment</td><td>AED 12.4M</td><td>+AED 4.9M (+65%)</td></tr>
+        <tr><td>4–5-bedroom townhouse</td><td>AED 14.9M</td><td>+AED 2.5M (+20%)</td></tr>
+      </tbody>
+    </table>
+    <p>
+      Handover is <strong>September 2030</strong>. Every step up the
+      apartment ladder costs more than half again, and the last step — out of
+      the building and into a townhouse — costs a fifth. That is a price
+      list arguing that the scarce thing here is floor area rather than a
+      front door, which is a defensible thing to argue on an island whose
+      fronds are villa land and whose Spine is not.
+    </p>
+
+    <h2>Two entry prices, one of them retired</h2>
+    <p>
+      Phase 1 released in <strong>October 2025</strong> from
+      <strong>AED 2.5 million</strong> with handover in
+      <strong>August 2029</strong>, and sold out; only resale remains. Phase
+      2 released in <strong>June 2026</strong> from
+      <strong>AED 2.7 million</strong> with handover thirteen months later
+      than the first. So the developer raised the entry price by about eight
+      per cent and moved the date out by over a year in the same step — the
+      two halves of that trade are worth weighing together rather than
+      separately.
+    </p>
+
+    <h2>Where AED 2.7 million sits in Dubai</h2>
+    <p>
+      It is not a trophy number. Dubai property turnover passed half a
+      trillion dirhams inside eight months of 2026, and the city recorded
+      <strong>296 home sales above ten million dollars</strong> in a single
+      quarter — a bracket this project only enters at its townhouses. Palm
+      Central's one-bedroom is priced as an entry ticket to an address, not
+      as a luxury purchase, which is the usual shape of a first apartment
+      release on an island still being built.
+    </p>
+  </section>
+
+  <Callout>
+    <p>
+      Prices quoted here are the developer's "from" figures for the current
+      release, which is the lowest unit of each type and not an average. Ask
+      what the specific floor, aspect and layout cost before treating a
+      ladder as a quotation.
+    </p>
+  </Callout>
+
+  <section class="container">
+    <h2>Next</h2>
+    <p>
+      What those prices are paid in is on
+      <a href="/palm-central/payment-plan/" title="The Palm Central payment plan in Dubai">the payment-plan page</a>;
+      every rung on this ladder clears the residency threshold, which is on
+      <a href="/palm-central/golden-visa/" title="Palm Central and the Dubai Golden Visa threshold">the Golden Visa page</a>;
+      and what the market around these numbers has been doing is in
+      <a href="/news/" title="Dubai property, tech and AI news">the news feed</a>.
+    </p>
+  </section>
+
+  <Faq items={faqItems} />
+
+  <section class="container">
+    <p class="source-note">
+      Phase 2 prices, unit count and handover: The National, 24 June 2026.
+      Phase 1 prices and August 2029 handover: Nakheel's October 2025
+      release, as carried on
+      <a href="https://palmcentral.dst.llc/prices/" title="Palm Central prices, both phases">palmcentral.dst.llc</a>.
+      Dubai turnover and the ten-million-dollar bracket: Dubai Land
+      Department figures, reported on this site's news feed. Percentages are
+      arithmetic on the published figures. Read 22 September 2026. Nothing
+      here is investment advice.
+    </p>
+  </section>
+</VerticalLayout>

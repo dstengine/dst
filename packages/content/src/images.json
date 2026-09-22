@@ -3170,6 +3170,342 @@
         ]
       ]
     },
+    "/covers/pc-faq.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/pc-faq-480.avif"
+        ],
+        [
+          768,
+          "/covers/pc-faq-768.avif"
+        ],
+        [
+          1024,
+          "/covers/pc-faq-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/pc-faq-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/pc-faq-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/pc-faq-480.webp"
+        ],
+        [
+          768,
+          "/covers/pc-faq-768.webp"
+        ],
+        [
+          1024,
+          "/covers/pc-faq-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/pc-faq-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/pc-faq-1536.webp"
+        ]
+      ]
+    },
+    "/covers/pc-location.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/pc-location-480.avif"
+        ],
+        [
+          768,
+          "/covers/pc-location-768.avif"
+        ],
+        [
+          1024,
+          "/covers/pc-location-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/pc-location-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/pc-location-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/pc-location-480.webp"
+        ],
+        [
+          768,
+          "/covers/pc-location-768.webp"
+        ],
+        [
+          1024,
+          "/covers/pc-location-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/pc-location-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/pc-location-1536.webp"
+        ]
+      ]
+    },
+    "/covers/pc-payment.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/pc-payment-480.avif"
+        ],
+        [
+          768,
+          "/covers/pc-payment-768.avif"
+        ],
+        [
+          1024,
+          "/covers/pc-payment-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/pc-payment-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/pc-payment-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/pc-payment-480.webp"
+        ],
+        [
+          768,
+          "/covers/pc-payment-768.webp"
+        ],
+        [
+          1024,
+          "/covers/pc-payment-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/pc-payment-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/pc-payment-1536.webp"
+        ]
+      ]
+    },
+    "/covers/pc-prices.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/pc-prices-480.avif"
+        ],
+        [
+          768,
+          "/covers/pc-prices-768.avif"
+        ],
+        [
+          1024,
+          "/covers/pc-prices-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/pc-prices-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/pc-prices-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/pc-prices-480.webp"
+        ],
+        [
+          768,
+          "/covers/pc-prices-768.webp"
+        ],
+        [
+          1024,
+          "/covers/pc-prices-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/pc-prices-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/pc-prices-1536.webp"
+        ]
+      ]
+    },
+    "/covers/pc-privacy.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/pc-privacy-480.avif"
+        ],
+        [
+          768,
+          "/covers/pc-privacy-768.avif"
+        ],
+        [
+          1024,
+          "/covers/pc-privacy-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/pc-privacy-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/pc-privacy-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/pc-privacy-480.webp"
+        ],
+        [
+          768,
+          "/covers/pc-privacy-768.webp"
+        ],
+        [
+          1024,
+          "/covers/pc-privacy-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/pc-privacy-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/pc-privacy-1536.webp"
+        ]
+      ]
+    },
+    "/covers/pc-section.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/pc-section-480.avif"
+        ],
+        [
+          768,
+          "/covers/pc-section-768.avif"
+        ],
+        [
+          1024,
+          "/covers/pc-section-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/pc-section-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/pc-section-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/pc-section-480.webp"
+        ],
+        [
+          768,
+          "/covers/pc-section-768.webp"
+        ],
+        [
+          1024,
+          "/covers/pc-section-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/pc-section-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/pc-section-1536.webp"
+        ]
+      ]
+    },
+    "/covers/pc-visa.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/pc-visa-480.avif"
+        ],
+        [
+          768,
+          "/covers/pc-visa-768.avif"
+        ],
+        [
+          1024,
+          "/covers/pc-visa-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/pc-visa-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/pc-visa-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/pc-visa-480.webp"
+        ],
+        [
+          768,
+          "/covers/pc-visa-768.webp"
+        ],
+        [
+          1024,
+          "/covers/pc-visa-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/pc-visa-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/pc-visa-1536.webp"
+        ]
+      ]
+    },
     "/covers/rentosertib-what-six-aging-clocks-measured.jpg": {
       "width": 1536,
       "height": 864,

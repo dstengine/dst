@@ -1,0 +1,146 @@
+---
+// Section root for Palm Central.
+//
+// Deliberately not the page palmcentral.dst.llc opens with. That one is a
+// buyer's guide: it asks which phase is on sale and what to put to a sales
+// contact. This one answers the question a reader of a property hub asks
+// first — how far along is the island this flat is being sold on — and it
+// can answer it because Nakheel publishes the percentages itself. The two
+// pages share a subject and no sentences.
+import VerticalLayout from "../../layouts/VerticalLayout.astro";
+import PageHero from "@dst/ui/PageHero.astro";
+import Callout from "@dst/ui/Callout.astro";
+import Faq from "@dst/ui/Faq.astro";
+
+const faqItems = [
+  {
+    q: "How far along is Palm Jebel Ali?",
+    a: "Nakheel's own construction-progress page puts the island at <strong>26.75%</strong> overall. The number is not one thing: substructure is at 93.27% and building work at 21.64%, which is the difference between an island that exists and homes that can be lived in.",
+  },
+  {
+    q: "What is Palm Central?",
+    a: "The first apartment product on Palm Jebel Ali, on the Spine rather than a frond. The second phase, reported by The National on 24 June 2026, put <strong>222 homes</strong> on sale from <strong>AED 2.7 million</strong>, in three low-rise buildings, for handover in <strong>September 2030</strong>.",
+  },
+  {
+    q: "Is the first phase still available?",
+    a: "No. Phase 1 released in October 2025 and sold out; what trades now is resale. Most third-party listings still quote its AED 2.5 million entry price, which is why a headline figure and a purchase price can differ by AED 200,000 for the same size of flat.",
+  },
+  {
+    q: "How big is Palm Jebel Ali compared with Palm Jumeirah?",
+    a: "About twice the size — <strong>13.4 square kilometres</strong>, seven islands and sixteen fronds, adding more than 90km of beachfront. Sheikh Mohammed bin Rashid Al Maktoum announced the relaunch on 31 May 2023.",
+  },
+];
+---
+<VerticalLayout
+  vertical="palm-central"
+  prose
+  title="Palm Central, Dubai: what the island's own numbers say"
+  description="Nakheel puts Palm Jebel Ali at 26.75% built, and publishes the split. What that means for Palm Central — the Dubai island's first apartments, from AED 2.7 million, handover September 2030."
+  image="/covers/pc-section.jpg"
+>
+  <PageHero
+    eyebrow="Palm Central"
+    title="Palm Central, Dubai: what the island's own numbers say"
+    image="/covers/pc-section.jpg"
+    imageAlt="Cut-paper illustration: a broad flat causeway running out from the edge of the frame into open water, a low ridge and a pale sun behind it."
+    imageKind="generated"
+  >
+    <p class="lede">
+      Most off-plan property in Dubai asks a buyer to take a completion date
+      on trust. Palm Jebel Ali is unusual: Nakheel publishes the progress
+      percentages itself, and they currently read <strong>26.75%</strong>
+      overall — <strong>93.27%</strong> of substructure against
+      <strong>21.64%</strong> of building work. Palm Central, the island's
+      first apartments, is being sold into that gap, for handover in
+      <strong>September 2030</strong>.
+    </p>
+  </PageHero>
+
+  <section class="container">
+    <h2>What the single percentage hides</h2>
+    <p>
+      An island is built in an order, and a blended figure averages across
+      stages that are nowhere near each other. Nakheel's breakdown:
+    </p>
+    <ul>
+      <li><strong>Substructure 93.27%</strong> — the land itself, effectively done.</li>
+      <li><strong>Superstructure 68.40%</strong> — frames going up.</li>
+      <li><strong>Infrastructure 65.05%</strong> — roads, services, the things that make an address reachable.</li>
+      <li><strong>Building work 21.64%</strong> — the part a resident would recognise.</li>
+      <li><strong>MEP 18.76%</strong> — mechanical, electrical and plumbing, the last long job before a handover date means anything.</li>
+    </ul>
+    <p>
+      Read in that order the figure stops being a progress bar and becomes a
+      sequence: the hard civil engineering is behind, and four years of
+      finishing is what the September 2030 date is actually made of.
+    </p>
+
+    <h2>Palm Central is on the Spine, not a frond</h2>
+    <p>
+      The fronds of Palm Jebel Ali are villa land. The Spine is the
+      through-road, and it is where Nakheel has put the community-scale
+      buildings — which is why the island's only apartments are there. By
+      frond, Nakheel's inspection of <strong>10 March 2026</strong> recorded
+      Frond M at <strong>22.10%</strong> and Frond N at
+      <strong>29.20%</strong>; those are Palm Central's neighbours, and their
+      numbers are the best available answer to what the view will be doing
+      while you wait.
+    </p>
+
+    <h2>The scale it sits inside</h2>
+    <p>
+      Palm Jebel Ali covers <strong>13.4 square kilometres</strong>, roughly
+      twice Palm Jumeirah, across <strong>seven islands</strong> and
+      <strong>sixteen fronds</strong>, adding more than
+      <strong>90km of beachfront</strong> and around 110km of coastline to
+      Dubai. In April 2026 The National reported Nakheel awarding contracts
+      worth <strong>AED 3.5 billion</strong> for <strong>544 villas</strong>,
+      split between two contractors across Fronds A to F. Three low-rise
+      buildings on the Spine are an early and small piece of that.
+    </p>
+  </section>
+
+  <Callout kind="warn">
+    <p>
+      Two entry prices circulate for this project and only one is current.
+      <strong>AED 2.5 million</strong> is Phase 1, released October 2025 and
+      sold out; <strong>AED 2.7 million</strong> is Phase 2, the inventory
+      actually on sale. A listing quoting the lower number without saying
+      which release it belongs to is quoting a flat that is no longer for
+      sale by the developer.
+    </p>
+  </Callout>
+
+  <section class="container">
+    <h2>Where to go from here</h2>
+    <ul>
+      <li><a href="/palm-central/prices/" title="Palm Central prices in Dubai, by unit type and phase">What the price ladder says about the product</a> — and where AED 2.7 million sits in Dubai's 2026 market.</li>
+      <li><a href="/palm-central/payment-plan/" title="The Palm Central payment plan in Dubai">Four years of instalments</a>, and what "construction-linked" means when the developer publishes its own progress.</li>
+      <li><a href="/palm-central/location/" title="Where Palm Central sits on Palm Jebel Ali, Dubai">The Spine, the fronds either side, and the airport question</a>.</li>
+      <li><a href="/palm-central/golden-visa/" title="Palm Central and the Dubai Golden Visa threshold">Every unit clears the AED 2 million threshold</a> — which is the start of the question, not the end.</li>
+      <li><a href="/palm-central/faq/" title="Palm Central questions, answered">The questions buyers actually ask</a>.</li>
+    </ul>
+    <p>
+      Dubai's wider market is on <a href="/news/" title="Dubai property, tech and AI news">the news feed</a>, the residency route is on
+      <a href="/visas/golden/" title="Golden Visa in Dubai through property">the Golden Visa page</a>,
+      and the project's own enquiry pages sit on
+      <a href="https://palmcentral.dst.llc" title="Palm Central buyer's guide">palmcentral.dst.llc</a>.
+      If you would rather talk to someone,
+      <a href="/contact/" title="Get in touch with DST in Dubai">contact is here</a>.
+    </p>
+  </section>
+
+  <Faq items={faqItems} />
+
+  <section class="container">
+    <p class="source-note">
+      Progress percentages, the component split and the per-frond figures of
+      10 March 2026: Nakheel, construction progress for Palm Jebel Ali, read
+      22 September 2026. Phase 2 unit count, entry price and handover: The
+      National, 24 June 2026. Island area, island and frond counts,
+      beachfront and the 31 May 2023 relaunch, and the AED 3.5 billion villa
+      contracts of April 2026: The National and Nakheel. Nothing here is
+      investment advice.
+    </p>
+  </section>
+</VerticalLayout>

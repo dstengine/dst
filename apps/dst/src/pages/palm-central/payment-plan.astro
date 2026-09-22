@@ -1,0 +1,138 @@
+---
+// The payment plan, read as a four-year commitment rather than as a
+// percentage split.
+//
+// The subdomain's version is a checklist of what to ask a sales contact.
+// This one asks the question a hub is placed to ask: a construction-linked
+// plan ties money to progress, and this is one of the few Dubai projects
+// where the buyer can read the progress themselves.
+import VerticalLayout from "../../layouts/VerticalLayout.astro";
+import PageHero from "@dst/ui/PageHero.astro";
+import Callout from "@dst/ui/Callout.astro";
+import Faq from "@dst/ui/Faq.astro";
+
+const faqItems = [
+  {
+    q: "What is the Palm Central payment plan?",
+    a: "Nakheel has not published exact terms for the current phase. The sold-out first phase used a documented <strong>20 / 50 / 30</strong> structure: 20% at booking, 50% across construction milestones, 30% on handover. Secondary listings describe something similar for Phase 2; that is not the developer's own statement.",
+  },
+  {
+    q: "What does the booking payment come to?",
+    a: "On the Phase 1 structure and the current AED 2.7 million entry price, a 20% booking would be <strong>AED 540,000</strong>. On the retired AED 2.5 million it was AED 500,000. Confirm the percentage before budgeting from either.",
+  },
+  {
+    q: "What does construction-linked actually mean here?",
+    a: "That instalments fall due as stages complete rather than on calendar dates. Palm Jebel Ali is unusual in that Nakheel publishes its own progress figures, so a buyer can compare what is being invoiced against what the developer says is built.",
+  },
+  {
+    q: "What happens if handover slips past September 2030?",
+    a: "That is set by the sale and purchase agreement, not by a brochure, and it is the clause worth reading before the ones about finishes. Ask for it in writing before booking.",
+  },
+];
+---
+<VerticalLayout
+  vertical="palm-central"
+  current="/palm-central/payment-plan/"
+  prose
+  title="Paying for Palm Central over four years, in Dubai"
+  description="Nakheel has not published Phase 2 terms for Palm Central in Dubai. What the sold-out phase committed a buyer to, what a 20% booking comes to at today's entry price, and the one clause to read first."
+  image="/covers/pc-payment.jpg"
+>
+  <PageHero
+    eyebrow="Payment plan"
+    title="Paying for Palm Central over four years, in Dubai"
+    image="/covers/pc-payment.jpg"
+    imageAlt="Cut-paper illustration: a row of small flat squares spaced evenly along a long straight line, the first one larger than the rest."
+    imageKind="generated"
+  >
+    <p class="lede">
+      The gap between booking a Palm Central apartment and holding the keys
+      is <strong>about four years</strong>. What fills it is a schedule
+      Nakheel has not published for the current phase — so the honest
+      starting point is the phase that is documented, and the arithmetic it
+      implies at today's prices.
+    </p>
+  </PageHero>
+
+  <section class="container">
+    <h2>The structure that is on the record</h2>
+    <p>
+      Phase 1, released October 2025 and now sold out, used a
+      <strong>20 / 50 / 30</strong> plan: a fifth at booking, half spread
+      across roughly seven to eight construction milestones, and the
+      remaining <strong>30% on handover</strong>, then dated August 2029. At
+      that phase's AED 2.5 million entry price the booking payment was
+      <strong>AED 500,000</strong>.
+    </p>
+    <p>
+      Apply the same shape to the current AED 2.7 million entry price and
+      booking becomes <strong>AED 540,000</strong>, with roughly
+      <strong>AED 1.35 million</strong> falling across construction and
+      <strong>AED 810,000</strong> at handover. Treat that as arithmetic on
+      an assumption, not as a quotation: the assumption is the part Nakheel
+      has not confirmed.
+    </p>
+
+    <h2>Why "construction-linked" is worth more here than usual</h2>
+    <p>
+      A construction-linked instalment is normally something a buyer takes on
+      trust: the invoice says a stage is complete and there is no independent
+      way to check. Palm Jebel Ali is an exception, because Nakheel publishes
+      progress for the island — <strong>26.75%</strong> overall, with
+      building work at <strong>21.64%</strong> and MEP at
+      <strong>18.76%</strong> — and a regulator's inspection sits alongside
+      it: RERA's report of <strong>27 January 2026</strong> put the six
+      fronds between <strong>15.60%</strong> and <strong>31.45%</strong>.
+    </p>
+    <p>
+      Two published figures for the same thing, from the developer and from
+      the regulator, is the most useful thing a buyer on a construction-linked
+      plan can have. It will not settle a dispute, but it means the question
+      "is this stage really done" has somewhere to start other than the
+      invoice.
+    </p>
+
+    <h2>The four years, laid flat</h2>
+    <ul>
+      <li><strong>At booking</strong> — the largest single payment, and the one made before any of the flat exists.</li>
+      <li><strong>Through construction</strong> — the longest stretch, and the one where a delay moves money rather than cancelling it.</li>
+      <li><strong>At handover, September 2030</strong> — the balance, due on a date four years away, which is long enough for a mortgage market and a personal situation to be unrecognisable.</li>
+    </ul>
+  </section>
+
+  <Callout kind="warn">
+    <p>
+      Several broker sites publish exact Phase 2 percentages. They may well be
+      right, but they are not Nakheel saying so, and an instalment schedule is
+      not a detail to take from a listing. Ask for the schedule with dates
+      attached, in writing, before the booking payment moves.
+    </p>
+  </Callout>
+
+  <section class="container">
+    <h2>Next</h2>
+    <p>
+      The prices these percentages apply to are on
+      <a href="/palm-central/prices/" title="Palm Central prices in Dubai, by unit type">the prices page</a>;
+      the progress figures behind the milestones are on
+      <a href="/palm-central/" title="Palm Central on Palm Jebel Ali, Dubai">the section front</a>;
+      and if the purchase is also a residency plan, that is
+      <a href="/palm-central/golden-visa/" title="Palm Central and the Dubai Golden Visa threshold">the Golden Visa page</a>.
+    </p>
+  </section>
+
+  <Faq items={faqItems} />
+
+  <section class="container">
+    <p class="source-note">
+      Phase 1's 20 / 50 / 30 structure, entry prices and handover dates:
+      Nakheel's releases as carried on
+      <a href="https://palmcentral.dst.llc/payment-plan/" title="The Palm Central payment plan">palmcentral.dst.llc</a>.
+      Island progress percentages and the RERA inspection of 27 January 2026:
+      Nakheel, construction progress for Palm Jebel Ali, read 22 September
+      2026. Dirham figures at the current entry price are arithmetic on the
+      Phase 1 structure and are not a developer quotation. Nothing here is
+      financial advice.
+    </p>
+  </section>
+</VerticalLayout>

@@ -1,0 +1,121 @@
+---
+// The questions, gathered.
+//
+// Not the subdomain's FAQ reordered: that one answers a buyer mid-purchase
+// ("what should I ask my sales contact"). These are the questions someone
+// asks before deciding whether to care about the project at all, which is
+// the reader a hub gets.
+import VerticalLayout from "../../layouts/VerticalLayout.astro";
+import PageHero from "@dst/ui/PageHero.astro";
+import Callout from "@dst/ui/Callout.astro";
+import Faq from "@dst/ui/Faq.astro";
+
+const faqItems = [
+  {
+    q: "What is Palm Central, in one line?",
+    a: "The first apartments on Palm Jebel Ali — three low-rise buildings on the island's Spine, one to four bedrooms plus townhouses, from <strong>AED 2.7 million</strong>, handover <strong>September 2030</strong>.",
+  },
+  {
+    q: "Is Palm Jebel Ali actually being built?",
+    a: "Yes, and the percentages are published. Nakheel's progress page reads <strong>26.75%</strong> overall: substructure 93.27%, infrastructure 65.05%, superstructure 68.40%, building work 21.64%, MEP 18.76%.",
+  },
+  {
+    q: "How is it different from Palm Jumeirah?",
+    a: "Bigger and much earlier. Palm Jebel Ali is about <strong>13.4 square kilometres</strong>, roughly twice the size, with seven islands and sixteen fronds; Palm Jumeirah is a finished, inhabited address and this is a construction site with a sales office.",
+  },
+  {
+    q: "Why do two different entry prices keep appearing?",
+    a: "Because Phase 1 sold out. <strong>AED 2.5 million</strong> was the October 2025 release, handover August 2029; <strong>AED 2.7 million</strong> is the June 2026 release, handover September 2030. Listings quote the older number because it is lower.",
+  },
+  {
+    q: "Can an apartment here be bought for the Golden Visa?",
+    a: "Every unit is above the <strong>AED 2 million</strong> threshold, but this is an off-plan purchase completing in 2030, and off-plan status is treated differently from a completed property. It is a question for the Land Department, not a sales office.",
+  },
+  {
+    q: "What is around it right now?",
+    a: "Villa fronds under construction. At Nakheel's inspection of 10 March 2026 the six measured fronds ran from <strong>20.50%</strong> to <strong>37.44%</strong>, with Palm Central's immediate neighbours, Fronds M and N, at 22.10% and 29.20%.",
+  },
+  {
+    q: "Which airport is it near?",
+    a: "Al Maktoum International, at the Jebel Ali end of the city. Dubai International is the further one. An address here is a position on Dubai growing westwards.",
+  },
+  {
+    q: "Are there penthouses?",
+    a: "Phase 1 had a five-bedroom penthouse and five-bedroom apartments. Neither has been confirmed for the current phase — so an offer of one at Phase 2 pricing is worth a question about which release it belongs to.",
+  },
+  {
+    q: "What is the payment structure?",
+    a: "Not published by Nakheel for the current phase. The sold-out phase used <strong>20 / 50 / 30</strong> — booking, construction milestones, handover. Broker sites describe something similar now; that is not the developer saying so.",
+  },
+  {
+    q: "Where does an enquiry actually go?",
+    a: "Not through these pages — nothing here collects anything. The project's enquiry form is on the separate Palm Central site, and how that is handled is set out on the privacy page below.",
+  },
+];
+---
+<VerticalLayout
+  vertical="palm-central"
+  current="/palm-central/faq/"
+  prose
+  title="Palm Central, Dubai: the questions people actually ask"
+  description="Ten questions about Palm Central on Palm Jebel Ali in Dubai, answered with the published figures — prices, progress percentages, the two entry prices in circulation, and what is not confirmed."
+  image="/covers/pc-faq.jpg"
+>
+  <PageHero
+    eyebrow="FAQ"
+    title="Palm Central, Dubai: the questions people actually ask"
+    image="/covers/pc-faq.jpg"
+    imageAlt="Cut-paper illustration: a loose stack of flat rectangular cards, the top one lifted slightly clear of the others."
+    imageKind="generated"
+  >
+    <p class="lede">
+      Ten questions, answered from what Nakheel, the Land Department and the
+      press have actually published — including the three places where the
+      honest answer is that nobody has published it yet.
+    </p>
+  </PageHero>
+
+  <Faq items={faqItems} />
+
+  <Callout>
+    <p>
+      Three things on this page are deliberately not answered with a number:
+      the current phase's payment percentages, whether a five-bedroom unit
+      exists in it, and whether the Golden Visa route opens before handover.
+      In each case a figure is available from a broker and not from the
+      developer or the authority, which is the difference between a fact and
+      a repetition.
+    </p>
+  </Callout>
+
+  <section class="container">
+    <h2>Where the detail lives</h2>
+    <p>
+      The full price ladder and what the steps between rungs imply is on
+      <a href="/palm-central/prices/" title="Palm Central prices in Dubai">the prices page</a>;
+      the four-year schedule on
+      <a href="/palm-central/payment-plan/" title="The Palm Central payment plan in Dubai">the payment plan</a>;
+      the fronds either side on
+      <a href="/palm-central/location/" title="Where Palm Central sits on Palm Jebel Ali, Dubai">the location page</a>;
+      and the residency question on
+      <a href="/palm-central/golden-visa/" title="Palm Central and the Dubai Golden Visa threshold">the Golden Visa page</a>.
+      What happens to an enquiry, and what these pages do not collect, is on
+      <a href="/palm-central/privacy/" title="What these Palm Central pages collect">the privacy page</a>.
+      To talk to a person rather than read,
+      <a href="/contact/" title="Get in touch with DST in Dubai">contact is here</a>.
+    </p>
+  </section>
+
+  <section class="container">
+    <p class="source-note">
+      Progress percentages and per-frond figures: Nakheel, construction
+      progress for Palm Jebel Ali, read 22 September 2026. Phase 2 prices,
+      unit count and handover: The National, 24 June 2026. Phase 1 prices,
+      structure and August 2029 handover, and the master-plan zones: Nakheel
+      releases as carried on
+      <a href="https://palmcentral.dst.llc" title="Palm Central buyer's guide">palmcentral.dst.llc</a>.
+      Island area and frond counts, and the AED 2 million threshold: as cited
+      on the pages above. Nothing here is investment advice.
+    </p>
+  </section>
+</VerticalLayout>

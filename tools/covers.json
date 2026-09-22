@@ -750,6 +750,34 @@
       "visas-consultation": {
         "subject": "two plain paper shapes standing upright and facing each other across a small round brass disc lying flat on the ground between them",
         "detail": "the two shapes are pale unprinted paper of similar height, and the brass disc is small and low"
+      },
+      "pc-section": {
+        "subject": "a broad flat band running out from the left edge of the frame into open water and stopping, with a few smaller curved shapes branching from its sides",
+        "detail": "the band plain and unbroken with a hard shadow under it, the branching shapes small and simple, a great deal of empty water around and beyond the end of the band"
+      },
+      "pc-prices": {
+        "subject": "five flat upright bars standing in a row on a single ground line, each one taller than the last",
+        "detail": "the bars plain and evenly spaced with clean square tops, the gap between the fourth and fifth noticeably smaller than the gaps before it, generous empty ground above"
+      },
+      "pc-payment": {
+        "subject": "one large flat square at the left followed by a row of eight much smaller squares spaced evenly along a single straight line to the right edge",
+        "detail": "all the shapes plain and flat with hard shadows, the line thin and unbroken beneath them, wide empty ground above and below"
+      },
+      "pc-location": {
+        "subject": "a long straight bar crossing the whole frame from left to right, with six narrow pointed wedges set at a slant along it, three above the bar and three below",
+        "detail": "every wedge the same plain flat shape with no markings and no stems, none of them touching another, the bar plain and unbroken, hard shadows beneath, empty ground in the corners"
+      },
+      "pc-visa": {
+        "subject": "a long low horizontal bar running the width of the frame with five flat blocks standing on top of it, the leftmost only slightly taller than the bar and each one after it much taller",
+        "detail": "the bar plain and thin, the blocks plain rectangles with square tops, hard shadows below, empty ground above the tallest block"
+      },
+      "pc-faq": {
+        "subject": "a loose stack of about six flat rectangular cards lying almost squared up, the top card lifted clear and set down slightly askew",
+        "detail": "the cards plain with no markings, the offset small, one soft hard-edged shadow under the lifted card, generous empty ground on all sides"
+      },
+      "pc-privacy": {
+        "subject": "a single plain sealed envelope lying flat and closed, seen from directly above, alone in the frame",
+        "detail": "the flap a simple triangle with no seal and no writing anywhere, a hard shadow along one edge, a great deal of empty ground around it"
       }
     },
     "musical": {

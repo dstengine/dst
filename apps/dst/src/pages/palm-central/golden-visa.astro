@@ -1,0 +1,139 @@
+---
+// The residency angle, written as the awkward part rather than the easy
+// part.
+//
+// That every unit clears AED 2 million is true and takes one sentence. The
+// page worth writing is about the sentence after it: this is an off-plan
+// purchase with a 2030 handover, and the threshold is where that question
+// starts rather than ends. The hub can say so because it also carries the
+// visas section; the product site has to sell the flat.
+import VerticalLayout from "../../layouts/VerticalLayout.astro";
+import PageHero from "@dst/ui/PageHero.astro";
+import Callout from "@dst/ui/Callout.astro";
+import Faq from "@dst/ui/Faq.astro";
+
+const faqItems = [
+  {
+    q: "Does a Palm Central apartment qualify for the Dubai Golden Visa?",
+    a: "Every unit type is priced above the <strong>AED 2 million</strong> property threshold, the cheapest by AED 700,000. Clearing the threshold is the entry condition, not the whole test — an off-plan purchase raises questions a completed, unmortgaged property does not.",
+  },
+  {
+    q: "How long is the visa?",
+    a: "It depends which official source you read, and both are current: the UAE government platform's category table gives ten years for public investments and five for real estate, while the Dubai Land Department's own investor service gives a ten-year renewable permit for property worth AED 2 million or more. Ask the authority processing the file.",
+  },
+  {
+    q: "Can I apply before handover?",
+    a: "That is the question to put to the Land Department rather than to a sales office. Off-plan status and mortgaged value are treated differently from a completed property, and handover here is <strong>September 2030</strong>.",
+  },
+  {
+    q: "Could the threshold change before then?",
+    a: "It could. Thresholds and criteria are set federally and have moved before; four years is long enough for them to move again, in either direction. A purchase made only for the visa is a purchase exposed to that.",
+  },
+];
+---
+<VerticalLayout
+  vertical="palm-central"
+  current="/palm-central/golden-visa/"
+  prose
+  title="Palm Central and the Dubai Golden Visa threshold"
+  description="Every Palm Central unit in Dubai clears the AED 2 million property threshold, the cheapest by AED 700,000. The harder question is what an off-plan purchase with a 2030 handover does about it."
+  image="/covers/pc-visa.jpg"
+>
+  <PageHero
+    eyebrow="Golden Visa"
+    title="Palm Central and the Dubai Golden Visa threshold"
+    image="/covers/pc-visa.jpg"
+    imageAlt="Cut-paper illustration: a low horizontal ledge with three flat cream blocks of differing heights standing on it."
+    imageKind="generated"
+  >
+    <p class="lede">
+      The easy half is settled: at <strong>AED 2.7 million</strong> the
+      cheapest Palm Central apartment clears the
+      <strong>AED 2 million</strong> property threshold by
+      <strong>AED 700,000</strong>, and every larger unit clears it further.
+      The half that matters is what happens between now and
+      <strong>September 2030</strong>.
+    </p>
+  </PageHero>
+
+  <section class="container">
+    <h2>Where each unit sits</h2>
+    <table>
+      <thead>
+        <tr><th>Unit</th><th>From</th><th>Above AED 2M by</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1-bedroom apartment</td><td>AED 2.7M</td><td>AED 0.7M</td></tr>
+        <tr><td>2-bedroom apartment</td><td>AED 4.3M</td><td>AED 2.3M</td></tr>
+        <tr><td>3-bedroom apartment</td><td>AED 7.5M</td><td>AED 5.5M</td></tr>
+        <tr><td>4-bedroom apartment</td><td>AED 12.4M</td><td>AED 10.4M</td></tr>
+        <tr><td>4–5-bedroom townhouse</td><td>AED 14.9M</td><td>AED 12.9M</td></tr>
+      </tbody>
+    </table>
+    <p>
+      Note what the first row means in practice. A margin of AED 700,000 is
+      comfortable against the threshold as it stands, and it is also the
+      row with the least room if the threshold ever moves up. The larger
+      units are not only bigger purchases; they are less exposed ones.
+    </p>
+
+    <h2>Off-plan is the complication</h2>
+    <p>
+      A Golden Visa granted on property is granted on a property that exists
+      and is owned. An off-plan purchase is a contract to buy one. Whether,
+      and at what point, the route opens on a purchase like this is decided
+      by the processing authority and turns on things a brochure will not
+      settle: the registered value, whether the purchase is mortgaged, and
+      what stage the build has reached. None of those is a reason not to
+      buy. All of them are reasons not to treat the visa as included.
+    </p>
+
+    <h2>Four years is a long exposure</h2>
+    <p>
+      Between booking and handover sits about four years of federal policy.
+      The threshold has been at AED 2 million for some time, and the two
+      official sources currently disagree about whether the permit runs five
+      years or ten — which is itself a reminder that this is an
+      administered scheme rather than a fixed right. Buy the flat because
+      the flat is worth it; count the residency as a benefit to confirm
+      rather than a term of the deal.
+    </p>
+  </section>
+
+  <Callout kind="warn">
+    <p>
+      Thresholds, eligibility and permit lengths are set by UAE federal
+      authorities and can change. Nothing on this page is an assurance that
+      a purchase at Palm Central will result in a visa. Confirm the current
+      requirements with the authority that will process the application
+      before treating any purchase as a residency route.
+    </p>
+  </Callout>
+
+  <section class="container">
+    <h2>Next</h2>
+    <p>
+      The mechanics of the property route, the fees in full and the
+      disagreement between the two official sources are on
+      <a href="/visas/golden/" title="Golden Visa in Dubai through property investment">the Golden Visa page</a>,
+      with the property-specific conditions on
+      <a href="/visas/properties/" title="Which Dubai property qualifies for a Golden Visa">the qualifying-property page</a>.
+      What is actually being bought is on
+      <a href="/palm-central/prices/" title="Palm Central prices in Dubai">the prices page</a>.
+    </p>
+  </section>
+
+  <Faq items={faqItems} />
+
+  <section class="container">
+    <p class="source-note">
+      Unit prices: The National, 24 June 2026; handover September 2030. The
+      AED 2 million threshold, the ten-year renewable investor permit and
+      the federal category table: Dubai Land Department and the UAE
+      government platform, as set out on this site's
+      <a href="/visas/golden/" title="Golden Visa in Dubai">Golden Visa page</a>,
+      read 22 September 2026. Margins above the threshold are arithmetic.
+      Nothing here is immigration or investment advice.
+    </p>
+  </section>
+</VerticalLayout>

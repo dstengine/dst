@@ -84,6 +84,7 @@ export const VERTICALS: Vertical[] = [
   },
   {
     slug: "palm-central",
+    ready: true,
     name: "Palm Central",
     blurb: "Nakheel's Palm Central on Palm Jebel Ali — prices, payment plan and what is actually released.",
     subject: "Palm Jebel Ali",

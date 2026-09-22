@@ -1,0 +1,135 @@
+---
+// Location, written as "what is being built around you" rather than as a
+// drive-time table.
+//
+// The subdomain has the drive times and explains the master plan. This page
+// takes the one thing a hub can add: the fronds either side of Palm Central
+// have their own published completion percentages, so the neighbourhood has
+// a number rather than a render.
+import VerticalLayout from "../../layouts/VerticalLayout.astro";
+import PageHero from "@dst/ui/PageHero.astro";
+import Callout from "@dst/ui/Callout.astro";
+import Faq from "@dst/ui/Faq.astro";
+
+const faqItems = [
+  {
+    q: "Where exactly is Palm Central?",
+    a: "On the Spine of Palm Jebel Ali, the through-road that connects the island back to the Dubai mainland, between Fronds M and N. The fronds themselves are villa land, which is why the island's apartments are on the Spine and nowhere else.",
+  },
+  {
+    q: "What is being built next door?",
+    a: "Villas. Nakheel's inspection of 10 March 2026 recorded <strong>Frond M at 22.10%</strong> and <strong>Frond N at 29.20%</strong>; the six fronds measured ran from Frond P at 20.50% to Frond O at 37.44%.",
+  },
+  {
+    q: "Which airport does it use?",
+    a: "Al Maktoum International is the near one — the same airport Dubai is spending the next decade expanding — and Dubai International is the established one further east. An address on Palm Jebel Ali is a bet on the western side of the city, and the airport is the largest single reason it might pay.",
+  },
+  {
+    q: "Is the area finished?",
+    a: "No, and the island's own numbers say so: 26.75% overall, with infrastructure at 65.05% and building work at 21.64%. The community a render shows is several years ahead of the community a visit would show.",
+  },
+];
+---
+<VerticalLayout
+  vertical="palm-central"
+  current="/palm-central/location/"
+  prose
+  title="Where Palm Central sits in Dubai, and what is going up"
+  description="Palm Central sits on the Spine of Palm Jebel Ali in Dubai, between two fronds that are 22.10% and 29.20% built. The neighbourhood has published numbers, which is rarer than it sounds."
+  image="/covers/pc-location.jpg"
+>
+  <PageHero
+    eyebrow="Location"
+    title="Where Palm Central sits in Dubai, and what is going up"
+    image="/covers/pc-location.jpg"
+    imageAlt="Cut-paper illustration: a long horizontal bar crossing a slate-blue ground, with tall pointed triangles in cream, grey-blue and warm apricot standing above it and hanging below it."
+    imageKind="generated"
+  >
+    <p class="lede">
+      Buying off-plan usually means taking the neighbourhood on trust. Here
+      it does not: Palm Central sits between <strong>Frond M</strong> and
+      <strong>Frond N</strong>, and Nakheel has published what each of them
+      was — <strong>22.10%</strong> and <strong>29.20%</strong> — on
+      <strong>10 March 2026</strong>.
+    </p>
+  </PageHero>
+
+  <section class="container">
+    <h2>The Spine is the only place an apartment could go</h2>
+    <p>
+      Palm Jebel Ali's master plan divides into the Trunk, the Spine, the
+      Fronds, the Crown and the Crescents. The fronds are private villa
+      plots. The Spine is the road everything else hangs off, and the place
+      Nakheel put the retail, the schools and the island's first apartment
+      buildings. So Palm Central's address is not a preference among several
+      — it is the consequence of wanting a flat on an island otherwise zoned
+      for houses.
+    </p>
+
+    <h2>The neighbours, with numbers</h2>
+    <table>
+      <thead>
+        <tr><th>Frond</th><th>Built, 10 March 2026</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Frond K</td><td>27.71%</td></tr>
+        <tr><td>Frond L</td><td>24.71%</td></tr>
+        <tr><td>Frond M</td><td>22.10%</td></tr>
+        <tr><td>Frond N</td><td>29.20%</td></tr>
+        <tr><td>Frond O</td><td>37.44%</td></tr>
+        <tr><td>Frond P</td><td>20.50%</td></tr>
+      </tbody>
+    </table>
+    <p>
+      A spread of nearly seventeen points across six fronds is the useful detail. It
+      says the island is not being finished in a wave from one end but in
+      parallel at different rates, which is how a buyer should read any
+      promise about what the view will look like on handover day.
+    </p>
+
+    <h2>The western bet</h2>
+    <p>
+      Palm Jebel Ali sits at the Jebel Ali end of Dubai: closer to the port,
+      closer to <strong>Al Maktoum International</strong>, further from
+      Downtown and Dubai International than the addresses most buyers compare
+      it with. That is the trade. The city's long-term plan pushes growth
+      west, and an address here is a position on that plan — which is a
+      different kind of purchase from one made on a drive time to the Burj
+      Khalifa.
+    </p>
+  </section>
+
+  <Callout>
+    <p>
+      Per-frond percentages are a snapshot dated 10 March 2026 and Nakheel
+      updates them. Treat any figure on this page as the last published
+      reading rather than as today's state of the site, and check the
+      developer's own progress page before acting on one.
+    </p>
+  </Callout>
+
+  <section class="container">
+    <h2>Next</h2>
+    <p>
+      What the island totals come to is on
+      <a href="/palm-central/" title="Palm Central on Palm Jebel Ali, Dubai">the section front</a>;
+      what the flats cost is on
+      <a href="/palm-central/prices/" title="Palm Central prices in Dubai">the prices page</a>;
+      and Dubai's other master-planned communities are covered across
+      <a href="/sections/" title="What DST covers in Dubai">the sections</a>.
+    </p>
+  </section>
+
+  <Faq items={faqItems} />
+
+  <section class="container">
+    <p class="source-note">
+      Per-frond completion of 10 March 2026 and island totals: Nakheel,
+      construction progress for Palm Jebel Ali, read 22 September 2026.
+      Master-plan zones and Palm Central's position on the Spine: Nakheel's
+      Palm Jebel Ali plan, as carried on
+      <a href="https://palmcentral.dst.llc/location/" title="Palm Central location on Palm Jebel Ali">palmcentral.dst.llc</a>.
+      Nothing here is investment advice.
+    </p>
+  </section>
+</VerticalLayout>

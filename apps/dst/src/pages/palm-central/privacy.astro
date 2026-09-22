@@ -1,0 +1,125 @@
+---
+// Privacy, for a section that collects nothing.
+//
+// The obvious version of this page would restate the subdomain's form
+// policy, which would be both a duplicate and a lie: these pages have no
+// form. So it says the true and more useful thing — what happens on this
+// section, what happens when you leave it, and where the enquiry you are
+// looking for actually goes.
+import VerticalLayout from "../../layouts/VerticalLayout.astro";
+import PageHero from "@dst/ui/PageHero.astro";
+import Callout from "@dst/ui/Callout.astro";
+import Faq from "@dst/ui/Faq.astro";
+
+const faqItems = [
+  {
+    q: "Do these Palm Central pages collect my details?",
+    a: "No. There is no form in this section and no field to type into. The only thing that leaves your browser is the analytics request described below.",
+  },
+  {
+    q: "What happens if I click through to the project site?",
+    a: "You leave dst.llc for palmcentral.dst.llc, which is a separate site with its own enquiry form and its own policy. Anything you submit there is handled there, not here.",
+  },
+  {
+    q: "Who would receive an enquiry?",
+    a: "Real-estate enquiries in Dubai are handled by licensed local partners rather than by DST, which builds and operates the systems. That division is the whole reason an enquiry form does not live on this section.",
+  },
+  {
+    q: "What analytics run here?",
+    a: "Google Analytics, on every page of this site, loaded asynchronously. It records the usual page-level measurements. It is not tied to an enquiry, because there is no enquiry to tie it to.",
+  },
+];
+---
+<VerticalLayout
+  vertical="palm-central"
+  current="/palm-central/privacy/"
+  prose
+  title="What these Dubai Palm Central pages collect: nothing"
+  description="This section has no enquiry form and no field to type into. What that means, what crosses the boundary when you click through to the project site, and who handles an enquiry in Dubai."
+  image="/covers/pc-privacy.jpg"
+>
+  <PageHero
+    eyebrow="Privacy"
+    title="What these Dubai Palm Central pages collect: nothing"
+    image="/covers/pc-privacy.jpg"
+    imageAlt="Cut-paper illustration: a plain sealed envelope lying flat and unopened on an empty ground."
+    imageKind="generated"
+  >
+    <p class="lede">
+      A privacy page usually explains what is done with what you hand over.
+      This section takes nothing: there is no form on any of its pages, no
+      newsletter, and no field to type into. What follows is the short list
+      of what that does and does not cover.
+    </p>
+  </PageHero>
+
+  <section class="container">
+    <h2>What happens while you read</h2>
+    <p>
+      The pages are static. They are served, they render, and the only
+      request that says anything about you is Google Analytics, which runs
+      across the whole of dst.llc and loads asynchronously. It measures
+      pages, not people, and nothing on this section attaches a name to it
+      because nothing on this section asks for one.
+    </p>
+
+    <h2>What happens when you leave</h2>
+    <p>
+      Links out of this section to ticket pages, developer pages and other
+      third parties go through a redirect hop on our own domain, which
+      carries <code>noindex</code> and <code>nofollow</code> and is
+      disallowed in <code>robots.txt</code>. That exists so no outside site
+      collects standing from our pages; it is a link-graph measure, and it
+      does not hide you from the site you arrive at. Once you are there,
+      their policy applies and ours does not.
+    </p>
+
+    <h2>Where an enquiry actually goes</h2>
+    <p>
+      If you want to register interest in a unit, the form for that is on
+      <a href="https://palmcentral.dst.llc" title="Palm Central buyer's guide">palmcentral.dst.llc</a>,
+      a separate site with a separate policy. Beyond it, regulated work —
+      real estate among it — is carried out by licensed local partners
+      rather than by DST, which builds and operates the systems. So an
+      enquiry does not stop with whoever published the page you read, and
+      you should expect the partner's own terms to govern what happens next.
+      If you would rather start with a conversation,
+      <a href="/contact/" title="Get in touch with DST in Dubai">contact is here</a>.
+    </p>
+  </section>
+
+  <Callout>
+    <p>
+      Two things this page is not. It is not the privacy policy of the Palm
+      Central project site, which publishes its own. And it is not advice on
+      what a developer or broker may do with details you give them directly
+      — that is between you and them, and the place to ask is before you
+      fill anything in.
+    </p>
+  </Callout>
+
+  <section class="container">
+    <h2>The rest of the section</h2>
+    <p>
+      Nothing on
+      <a href="/palm-central/" title="Palm Central on Palm Jebel Ali, Dubai">the section front</a>,
+      <a href="/palm-central/prices/" title="Palm Central prices in Dubai">prices</a>,
+      <a href="/palm-central/payment-plan/" title="The Palm Central payment plan in Dubai">the payment plan</a>,
+      <a href="/palm-central/location/" title="Where Palm Central sits on Palm Jebel Ali, Dubai">location</a>,
+      <a href="/palm-central/golden-visa/" title="Palm Central and the Dubai Golden Visa threshold">the Golden Visa page</a>
+      or <a href="/palm-central/faq/" title="Palm Central questions, answered">the FAQ</a>
+      asks for anything either.
+    </p>
+  </section>
+
+  <Faq items={faqItems} />
+
+  <section class="container">
+    <p class="source-note">
+      Describes this section of dst.llc as published on 22 September 2026.
+      The division of regulated work between DST and licensed local partners
+      is the group's standing position, stated in the footer of every page
+      on this site.
+    </p>
+  </section>
+</VerticalLayout>
