@@ -9,7 +9,7 @@ export const siteId = "mbr";
 export const index = {
   title: "Living in MBR City",
   description:
-    "What Mohammed Bin Rashid City is — the district behind the developer names, its communities, and how they fit together.",
+    "What MBR City is — Mohammed Bin Rashid City, the district behind the developer names, its communities, and how they fit together.",
   eyebrow: "Living here",
   h1: "MBR City, the district behind the names",
   lede: `Mohammed Bin Rashid City is one of Dubai's larger master-planned

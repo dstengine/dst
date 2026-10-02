@@ -15,7 +15,7 @@ export const items: NewsItem[] = [
     cardTitle: "Blue Line reaches 26 per cent",
     titleSeo: "Dubai Metro Blue Line hits 26 per cent",
     summary:
-      "Construction on the Dubai Metro's Blue Line stands at 26 per cent in early September, against a target of 30 per cent by the end of the year and an opening set for 9 September 2029.",
+      "Construction on the Dubai Metro's Blue Line stands at 26 per cent in early September, against a target of 30 per cent by the end of the year and an opening set for 9 September 2029 — three years before the Gold Line reaches Meydan, in MBR City.",
     date: "2026-09-07",
     category: "Transport",
     source: {
@@ -52,7 +52,7 @@ export const items: NewsItem[] = [
     cardTitle: "First Blue Line tunnel, in two months",
     titleSeo: "Blue Line finishes its first tunnel",
     summary:
-      "Al Wugeisha, a 2,000-tonne boring machine, broke into its first station two months after tunnelling began — more than twice the daily rate achieved on the original Metro. The line opens on 9 September 2029.",
+      "Al Wugeisha, a 2,000-tonne boring machine, broke into its first station two months after tunnelling began — more than twice the daily rate achieved on the original Metro, and the rate MBR City's own Gold Line will be measured against. The line opens on 9 September 2029.",
     date: "2026-09-06",
     category: "Transport",
     source: {
@@ -89,7 +89,7 @@ export const items: NewsItem[] = [
     cardTitle: "Dubai, the outlier in the forecast",
     titleSeo: "Savills sees Dubai prime down 10%",
     summary:
-      "Across 30 cities Savills expects prime capital values to rise 0.5% in the second half of 2026. Dubai is the one large exception in the forecast, at around minus 10%, on oversupply and geopolitical uncertainty.",
+      "Across 30 cities Savills expects prime capital values to rise 0.5% in the second half of 2026. Dubai is the one large exception in the forecast, at around minus 10%, on oversupply and geopolitical uncertainty — the market MBR City's towers are let and sold into.",
     date: "2026-09-06",
     category: "Market",
     source: {
@@ -126,7 +126,7 @@ export const items: NewsItem[] = [
     cardTitle: "Al Meydan Street: a Dh1.16bn rebuild",
     titleSeo: "Al Meydan Street gets a Dh1.16bn rebuild",
     summary:
-      "RTA has awarded two contracts worth Dh1.161 billion covering 17km of road and 3,700m of bridges, with two grade-separated interchanges. Completion is end-2028.",
+      "RTA has awarded two contracts worth Dh1.161 billion covering 17km of the road through MBR City and 3,700m of bridges, with two grade-separated interchanges. Completion is end-2028.",
     date: "2026-09-03",
     category: "Infrastructure",
     source: {
@@ -163,7 +163,7 @@ export const items: NewsItem[] = [
     cardTitle: "Nad Al Sheba Gardens Mall opens",
     titleSeo: "Nad Al Sheba Gardens Mall opens",
     summary:
-      "A two-storey scheme inside Meraas' Nad Al Sheba Gardens, anchored by Waitrose, with cafés, restaurants, fitness space and a nursery.",
+      "A two-storey scheme inside Meraas' Nad Al Sheba Gardens, anchored by Waitrose, with cafés, restaurants, fitness space and a nursery, a short drive from MBR City.",
     date: "2026-09-03",
     category: "Retail",
     source: {
@@ -199,7 +199,7 @@ export const items: NewsItem[] = [
     title: "The Gold Line is approved: 42 km, entirely underground",
     titleSeo: "The Gold Line: 42 km, all underground",
     summary:
-      "Dubai has approved a third metro line — 18 stations from Al Ghubaiba to Jumeirah Golf Estates, AED 34 billion, opening 9 September 2032. It interchanges with Etihad Rail at Meydan.",
+      "Dubai has approved a third metro line — 18 stations from Al Ghubaiba to Jumeirah Golf Estates, AED 34 billion, opening 9 September 2032. It interchanges with Etihad Rail at Meydan, in MBR City.",
     date: "2026-04-22",
     category: "Transport",
     source: {

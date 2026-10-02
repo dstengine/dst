@@ -47,7 +47,7 @@ export const history = {
 
 export const about = {
   title: "About this Tokio Hotel tour archive",
-  description: "What this site is, where the dates come from, and what it will not print.",
+  description: "What this Tokio Hotel archive is, where the dates come from, and what it will not print.",
   h1: "About this Tokio Hotel tour archive",
   lede: `A tour archive for one band, with a source and a date on every entry.`,
 };
