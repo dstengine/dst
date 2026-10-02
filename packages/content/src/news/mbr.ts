@@ -41,7 +41,7 @@ export const items: NewsItem[] = [
   {
     slug: "the-blue-line-finished-its-first-tunnel-in-two-months",
     createdAt: "2026-09-06T08:48:11+04:00",
-    updatedAt: "2026-10-02T23:50:36+04:00",
+    updatedAt: "2026-10-02T23:54:22+04:00",
     site: "mbr",
     image: "/covers/the-blue-line-finished-its-first-tunnel-in-two-months.jpg",
     imageAlt: "A long chalk-white paper tube crossing a deep teal ground, a pale aqua circle at its leading end and a small sand-coloured marker behind it",
@@ -52,7 +52,7 @@ export const items: NewsItem[] = [
     cardTitle: "First Blue Line tunnel, in two months",
     titleSeo: "Blue Line finishes its first tunnel",
     summary:
-      "Al Wugeisha, a 2,000-tonne boring machine, broke into its first station two months after tunnelling began — more than twice the daily rate achieved on the original Metro, and the rate MBR City's own Gold Line will be measured against. The line opens on 9 September 2029.",
+      "Al Wugeisha, a 2,000-tonne boring machine, broke into its first station two months after tunnelling began — more than twice the daily rate achieved on the original Metro. The line opens on 9 September 2029, and MBR City's Gold Line three years after that.",
     date: "2026-09-06",
     category: "Transport",
     source: {
