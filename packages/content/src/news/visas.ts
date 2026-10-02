@@ -4,7 +4,7 @@ export const items: NewsItem[] = [
   {
     slug: "what-a-dubai-visit-visa-asks-of-the-person-sponsoring-it",
     createdAt: "2026-08-25T18:18:34+04:00",
-    updatedAt: "2026-09-08T00:12:45+04:00",
+    updatedAt: "2026-10-02T23:50:36+04:00",
     site: "visas",
     image: "/covers/what-a-dubai-visit-visa-asks-of-the-person-sponsoring-it.jpg",
     imageAlt: "Three tobacco-brown paper cards of increasing height standing on a sand ground, each with a small cream band across it",
@@ -41,7 +41,7 @@ export const items: NewsItem[] = [
   {
     slug: "dubai-issued-66078-golden-visas-in-six-months",
     createdAt: "2026-09-06T08:48:11+04:00",
-    updatedAt: "2026-09-08T00:12:45+04:00",
+    updatedAt: "2026-10-02T23:50:36+04:00",
     site: "visas",
     image: "/covers/dubai-issued-66078-golden-visas-in-six-months.jpg",
     imageAlt: "A dense grid of small tobacco-brown paper rectangles on a warm sand ground, one of them lifted clear of the grid in ochre",
@@ -78,7 +78,7 @@ export const items: NewsItem[] = [
   {
     slug: "europes-new-travel-permit-slips-to-2027",
     createdAt: "2026-09-06T08:48:11+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-02T23:50:36+04:00",
     site: "visas",
     image: "/covers/europes-new-travel-permit-slips-to-2027.jpg",
     imageAlt: "A tobacco-brown paper arrow on a warm sand ground, its tip cut off and set further along, leaving a clear gap in the middle",
@@ -87,9 +87,9 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "Europe’s €20 travel permit slips to 2027 while the border queues stay",
     cardTitle: "ETIAS slips to 2027",
-    titleSeo: "ETIAS slips to 2027: what UAE residents face",
+    titleSeo: "ETIAS slips to 2027: what UAE nationals face",
     summary:
-      "eu-LISA has accepted that ETIAS cannot launch by the end of 2026, which pushes back the permit UAE residents will need for Europe. The biometric Entry/Exit System it depends on went fully live in April and is producing waits IATA has put at three to six hours.",
+      "eu-LISA has accepted that ETIAS cannot launch by the end of 2026, which pushes back the permit UAE nationals will need for Europe. The biometric Entry/Exit System it depends on went fully live in April and is producing waits IATA has put at three to six hours.",
     date: "2026-09-06",
     category: "Travel",
     source: {
@@ -115,7 +115,7 @@ export const items: NewsItem[] = [
   {
     slug: "dubai-tourist-visas-inside-48-hours",
     createdAt: "2026-09-03T07:30:21+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-02T23:50:36+04:00",
     site: "visas",
     image: "/covers/dubai-tourist-visas-inside-48-hours.jpg",
     imageAlt: "Two cut-paper clock faces on a sand ground, the second much smaller than the first, an ochre arrow between them",
@@ -151,7 +151,7 @@ export const items: NewsItem[] = [
   {
     slug: "medical-visas-get-a-single-front-door",
     createdAt: "2026-09-03T07:30:21+04:00",
-    updatedAt: "2026-09-03T07:30:21+04:00",
+    updatedAt: "2026-10-02T23:50:36+04:00",
     site: "visas",
     image: "/covers/medical-visas-get-a-single-front-door.jpg",
     imageAlt: "Three separate cut-paper doorways on a sand ground merging into one taller ochre doorway",
@@ -186,7 +186,7 @@ export const items: NewsItem[] = [
   {
     slug: "entry-visa-opens-to-six-more-nationalities",
     createdAt: "2026-09-01T15:07:36+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-02T23:50:36+04:00",
     site: "visas",
     image: "/covers/entry-visa-opens-to-six-more-nationalities.jpg",
     imageAlt: "Six blank passport-shaped cards in two rows, one carrying a single red stamp",
@@ -224,7 +224,7 @@ export const items: NewsItem[] = [
   {
     slug: "two-year-investor-visa-minimum-dropped",
     createdAt: "2026-08-25T18:18:34+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-02T23:50:36+04:00",
     site: "visas",
     // Layout appends " — Dubai Residency & Golden Visa", leaving 28
     // characters. "2-year" rather than "two-year" purely to fit.

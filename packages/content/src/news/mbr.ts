@@ -4,7 +4,7 @@ export const items: NewsItem[] = [
   {
     slug: "the-blue-line-is-a-quarter-built",
     createdAt: "2026-08-25T18:18:34+04:00",
-    updatedAt: "2026-09-08T00:12:45+04:00",
+    updatedAt: "2026-10-02T23:50:36+04:00",
     site: "mbr",
     image: "/covers/the-blue-line-is-a-quarter-built.jpg",
     imageAlt: "A pale aqua paper bar on a deep teal ground, filled a quarter of the way along with chalk white, a small sand marker above the fill",
@@ -41,7 +41,7 @@ export const items: NewsItem[] = [
   {
     slug: "the-blue-line-finished-its-first-tunnel-in-two-months",
     createdAt: "2026-09-06T08:48:11+04:00",
-    updatedAt: "2026-09-08T00:12:45+04:00",
+    updatedAt: "2026-10-02T23:50:36+04:00",
     site: "mbr",
     image: "/covers/the-blue-line-finished-its-first-tunnel-in-two-months.jpg",
     imageAlt: "A long chalk-white paper tube crossing a deep teal ground, a pale aqua circle at its leading end and a small sand-coloured marker behind it",
@@ -78,7 +78,7 @@ export const items: NewsItem[] = [
   {
     slug: "dubai-is-the-outlier-in-the-world-cities-forecast",
     createdAt: "2026-09-06T08:48:11+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-02T23:50:36+04:00",
     site: "mbr",
     image: "/covers/dubai-is-the-outlier-in-the-world-cities-forecast.jpg",
     imageAlt: "A row of small chalk-white paper squares along a level line on a deep teal ground, with one square dropped well below the line in pale aqua",
@@ -115,7 +115,7 @@ export const items: NewsItem[] = [
   {
     slug: "al-meydan-street-gets-a-billion-dirham-rebuild",
     createdAt: "2026-09-03T07:30:21+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-02T23:50:36+04:00",
     site: "mbr",
     image: "/covers/al-meydan-street-gets-a-billion-dirham-rebuild.jpg",
     imageAlt: "Two chalk-white paper roads with dashed lane markings crossing diagonally on a teal ground, one carried over the other on small sand-coloured piers",
@@ -126,7 +126,7 @@ export const items: NewsItem[] = [
     cardTitle: "Al Meydan Street: a Dh1.16bn rebuild",
     titleSeo: "Al Meydan Street gets a Dh1.16bn rebuild",
     summary:
-      "RTA has awarded two contracts worth Dh1.161 billion covering 17km of the road through MBR City and 3,700m of bridges, with two grade-separated interchanges. Completion is end-2028.",
+      "RTA has awarded two contracts worth Dh1.161 billion covering 17km of Al Meydan Street — the road MBR City leaves by — and 3,700m of bridges, with two grade-separated interchanges. Completion is end-2028.",
     date: "2026-09-03",
     category: "Infrastructure",
     source: {
@@ -152,7 +152,7 @@ export const items: NewsItem[] = [
   {
     slug: "nad-al-sheba-gardens-mall-opens",
     createdAt: "2026-09-03T07:30:21+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-02T23:50:36+04:00",
     site: "mbr",
     image: "/covers/nad-al-sheba-gardens-mall-opens.jpg",
     imageAlt: "A low two-storey cut-paper building on a teal ground, a chalk-white awning along its front and sand-coloured trees beside it",
@@ -189,7 +189,7 @@ export const items: NewsItem[] = [
   {
     slug: "dubai-metro-gold-line-approved",
     createdAt: "2026-09-01T15:07:36+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-02T23:50:36+04:00",
     site: "mbr",
     image: "/covers/dubai-metro-gold-line-approved.jpg",
     imageAlt: "A cut-paper cross-section of ground with a long tunnel bore and small station boxes hanging into it",

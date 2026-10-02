@@ -5,7 +5,7 @@ export const items: EventItem[] = [
   {
     slug: "japan-matsuri-trafalgar-square-2026",
     createdAt: "2026-09-22T13:24:00+04:00",
-    updatedAt: "2026-09-22T13:24:00+04:00",
+    updatedAt: "2026-10-02T23:50:36+04:00",
     site: "lnd",
     image: "/covers/japan-matsuri-trafalgar-square-2026.jpg",
     imageAlt: "A large pale disc rising behind four horizontal bands on a deep navy ground",

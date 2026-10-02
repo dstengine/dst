@@ -4,7 +4,7 @@ export const items: NewsItem[] = [
   {
     slug: "exempt-from-the-tax-still-means-a-filing-on-30-september",
     createdAt: "2026-08-25T18:18:34+04:00",
-    updatedAt: "2026-09-08T00:12:45+04:00",
+    updatedAt: "2026-10-02T23:50:36+04:00",
     site: "llc",
     image: "/covers/exempt-from-the-tax-still-means-a-filing-on-30-september.jpg",
     imageAlt: "A jade paper form with an empty tick box, a second identical form behind it turned slightly, on a deep teal ground",
@@ -41,7 +41,7 @@ export const items: NewsItem[] = [
   {
     slug: "free-zone-distributors-need-a-second-auditors-report",
     createdAt: "2026-09-06T08:48:11+04:00",
-    updatedAt: "2026-09-08T00:12:45+04:00",
+    updatedAt: "2026-10-02T23:50:36+04:00",
     site: "llc",
     image: "/covers/free-zone-distributors-need-a-second-auditors-report.jpg",
     imageAlt: "Two pale jade paper documents on a deep teal-green ground, the second one smaller and set slightly behind the first, with a small brass clip joining them",
@@ -82,7 +82,7 @@ export const items: NewsItem[] = [
   {
     slug: "the-global-minimum-tax-grows-a-side-door",
     createdAt: "2026-09-06T08:48:11+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-02T23:50:36+04:00",
     site: "llc",
     image: "/covers/the-global-minimum-tax-grows-a-side-door.jpg",
     imageAlt: "A tall pale jade paper wall on a deep teal-green ground with a narrow gap cut through it near one edge, a small brass marker beside the gap",
@@ -93,7 +93,7 @@ export const items: NewsItem[] = [
     cardTitle: "A side door in the global minimum tax",
     titleSeo: "Pillar Two safe harbours from 2026",
     summary:
-      "The OECD’s Side-by-Side package adds four safe harbours and extends a fifth, and the largest of them decides how a Dubai group is treated abroad: it exempts groups headquartered in qualified jurisdictions from the income inclusion and undertaxed profits rules for financial years beginning 1 January 2026.",
+      "The OECD’s Side-by-Side package adds four safe harbours and extends a fifth, and the largest of them turns on where a group's ultimate parent sits rather than on where its Dubai entities do: it exempts groups headquartered in qualified jurisdictions from the income inclusion and undertaxed profits rules for financial years beginning 1 January 2026.",
     date: "2026-09-06",
     category: "Tax",
     source: {
@@ -119,7 +119,7 @@ export const items: NewsItem[] = [
   {
     slug: "small-business-relief-still-files-a-return",
     createdAt: "2026-09-03T07:30:21+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-02T23:50:36+04:00",
     site: "llc",
     image: "/covers/small-business-relief-still-files-a-return.jpg",
     imageAlt: "A small cut-paper form sheet on a teal ground beside a much larger one, both with the same ruled lines",
@@ -157,7 +157,7 @@ export const items: NewsItem[] = [
   {
     slug: "e-invoicing-provider-deadline-moves-to-october",
     createdAt: "2026-09-03T07:30:21+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-02T23:50:36+04:00",
     site: "llc",
     image: "/covers/e-invoicing-provider-deadline-moves-to-october.jpg",
     imageAlt: "A cut-paper invoice sheet on a teal ground with a jade arrow bending around it to a second sheet",
@@ -195,7 +195,7 @@ export const items: NewsItem[] = [
   {
     slug: "apple-published-its-succession-134-days-early",
     createdAt: "2026-09-02T12:10:41+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-02T23:50:36+04:00",
     site: "llc",
     image: "/covers/apple-published-its-succession-134-days-early.jpg",
     imageAlt: "Two paper discs set far apart on a long pale band running across the frame",
@@ -234,7 +234,7 @@ export const items: NewsItem[] = [
   {
     slug: "difc-passes-10000-active-companies",
     createdAt: "2026-09-01T15:07:36+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-02T23:50:36+04:00",
     site: "llc",
     image: "/covers/difc-passes-10000-active-companies.jpg",
     imageAlt: "Six paper columns rising in a staircase, a thin ruled line crossing above them",
