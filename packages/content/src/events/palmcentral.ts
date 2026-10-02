@@ -14,7 +14,7 @@ export const items: EventItem[] = [
     // Layout appends " — Palm Central, Palm Jebel Ali", leaving 29 characters.
     title: "International Property Show",
     summary:
-      "The 22nd International Property Show runs September 7–9, 2026 at Dubai World Trade Centre, bringing developers, investors and institutions together. Entry is free for professional visitors.",
+      "The 22nd International Property Show runs September 7–9, 2026 at Dubai World Trade Centre, three days of the market Palm Central is sold into. Entry is free for professional visitors.",
     start: "2026-09-07",
     end: "2026-09-09",
     startTime: "10:00",
@@ -52,7 +52,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "RISE Global 2026",
     summary:
-      "Dubai's new real-estate investment summit runs 13–14 October at Dubai World Trade Centre, with the Land Department and Dubai Economy & Tourism as government partners.",
+      "Dubai's new real-estate investment summit runs 13–14 October at Dubai World Trade Centre, with the Land Department and Dubai Economy & Tourism as government partners — the investor end of the market Palm Central sits in.",
     start: "2026-10-13",
     end: "2026-10-14",
     utcOffset: "+04:00",

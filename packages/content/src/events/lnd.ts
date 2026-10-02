@@ -14,7 +14,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Japan Matsuri at Trafalgar Square",
     summary:
-      "Seventeen years, three addresses and one afternoon a year: the capital's Japanese festival has occupied Trafalgar Square since 2012, and returns on the first Sunday of October.",
+      "Seventeen years, three addresses and one afternoon a year: London's Japanese festival has occupied Trafalgar Square since 2012, and returns on the first Sunday of October.",
     start: "2026-10-04",
     end: "2026-10-04",
     utcOffset: "+01:00",

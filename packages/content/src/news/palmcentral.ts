@@ -15,7 +15,7 @@ export const items: NewsItem[] = [
     cardTitle: "Dh79m on the Palm in August",
     titleSeo: "Palm Jumeirah tops August: Dh79m sale",
     summary:
-      "A unit at Orla Infinity by Omniyat led the emirate's August sales at Dh79 million, ahead of a Dh65 million home at Jumeirah Residences Asora Bay.",
+      "A unit at Orla Infinity by Omniyat led the emirate's August sales at Dh79 million, ahead of a Dh65 million home at Jumeirah Residences Asora Bay — the ceiling the Palm Central ladder sits a long way below.",
     date: "2026-09-07",
     category: "Market",
     source: {
@@ -52,7 +52,7 @@ export const items: NewsItem[] = [
     cardTitle: "Dh55bn of contracts at DWC",
     titleSeo: "Dh55bn of Al Maktoum airport contracts",
     summary:
-      "Dubai Airports has awarded Dh13 billion this year for the Al Maktoum International expansion and expects to award Dh55 billion more by December. First phase opens in 2032 at 150 million passengers a year.",
+      "Dubai Airports has awarded Dh13 billion this year for the Al Maktoum International expansion and expects to award Dh55 billion more by December. First phase opens in 2032 at 150 million passengers a year — the infrastructure a Palm Central address is a bet on.",
     date: "2026-09-06",
     category: "Infrastructure",
     source: {
@@ -89,7 +89,7 @@ export const items: NewsItem[] = [
     cardTitle: "Constrained supply won the half",
     titleSeo: "Savills: constrained supply led H1",
     summary:
-      "Tokyo led the Savills index at 7.0% in six months, Cape Town at 4.7%, Seoul at 4.1% — each on limited prime stock. Where supply was plentiful, values fell. Dubai is forecast down around 10%.",
+      "Tokyo led the Savills index at 7.0% in six months, Cape Town at 4.7%, Seoul at 4.1% — each on limited prime stock. Where supply was plentiful, values fell. Dubai is forecast down around 10% — the one variable an off-plan buyer at Palm Central cannot control.",
     date: "2026-09-06",
     category: "Market",
     source: {
@@ -126,7 +126,7 @@ export const items: NewsItem[] = [
     cardTitle: "892 homes handed over at Jebel Ali Village",
     titleSeo: "Jebel Ali Village hands over 892 homes",
     summary:
-      "Handovers began on 17 August across an 80-hectare community built for about 5,500 residents, next to Sheikh Zayed Road and Discovery Gardens metro.",
+      "Handovers began on 17 August across an 80-hectare community built for about 5,500 residents, next to Sheikh Zayed Road and Discovery Gardens metro, on the Jebel Ali side of the city Palm Central is being built into.",
     date: "2026-09-03",
     category: "Handovers",
     source: {
@@ -163,7 +163,7 @@ export const items: NewsItem[] = [
     cardTitle: "Palm Jebel Ali: a quarter built",
     titleSeo: "Palm Jebel Ali is about a quarter built",
     summary:
-      "Nakheel's own progress figures put the island at 26.75% overall — substructure 93%, superstructure 68%, building work 22%, MEP 19%.",
+      "Nakheel's own progress figures put the island Palm Central stands on at 26.75% overall — substructure 93%, superstructure 68%, building work 22%, MEP 19%.",
     date: "2026-09-03",
     category: "Construction",
     source: {
@@ -198,7 +198,7 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "Nakheel releases 44 villas on Frond F",
     summary:
-      "Ten architectural designs across the Beach and Coral Collections, five to seven bedrooms, directly on the shoreline of Palm Jebel Ali. Handovers begin late 2026.",
+      "Ten architectural designs across the Beach and Coral Collections, five to seven bedrooms, directly on the shoreline of Palm Jebel Ali, the same island as Palm Central. Handovers begin late 2026.",
     date: "2026-08-20",
     category: "Development",
     source: {

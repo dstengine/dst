@@ -15,7 +15,7 @@ export const items: NewsItem[] = [
     cardTitle: "Exempt, and still filing",
     titleSeo: "Corporate tax: exempt still file",
     summary:
-      "The FTA's September reminder covers a group that assumes it is out of scope: registered exempt persons owe an annual declaration on the same nine-month clock.",
+      "The FTA's September reminder covers a group of Dubai companies that assumes it is out of scope: registered exempt persons owe an annual declaration on the same nine-month clock.",
     date: "2026-09-07",
     category: "Tax",
     source: {
@@ -52,7 +52,7 @@ export const items: NewsItem[] = [
     cardTitle: "A second report for the 0% rate",
     titleSeo: "Free zone distributors: AUP report",
     summary:
-      "FTA Decision No. 6 of 2026 adds an ISRS 4400 agreed-upon procedures report on top of audited accounts for free zone companies distributing goods from a Designated Zone. Nothing is filed until 2027, but the transactions being tested are happening now.",
+      "FTA Decision No. 6 of 2026 adds an ISRS 4400 agreed-upon procedures report on top of audited accounts for free zone companies distributing goods from a Designated Zone, Dubai's among them. Nothing is filed until 2027, but the transactions being tested are happening now.",
     date: "2026-09-06",
     category: "Tax",
     source: {
@@ -93,7 +93,7 @@ export const items: NewsItem[] = [
     cardTitle: "A side door in the global minimum tax",
     titleSeo: "Pillar Two safe harbours from 2026",
     summary:
-      "The OECD’s Side-by-Side package adds four safe harbours and extends a fifth. The largest exempts groups headquartered in qualified jurisdictions from the income inclusion and undertaxed profits rules for financial years beginning 1 January 2026.",
+      "The OECD’s Side-by-Side package adds four safe harbours and extends a fifth, and the largest of them decides how a Dubai group is treated abroad: it exempts groups headquartered in qualified jurisdictions from the income inclusion and undertaxed profits rules for financial years beginning 1 January 2026.",
     date: "2026-09-06",
     category: "Tax",
     source: {
@@ -130,7 +130,7 @@ export const items: NewsItem[] = [
     cardTitle: "Small Business Relief still files",
     titleSeo: "Relief still means filing a return",
     summary:
-      "The FTA has reminded companies under the Dh3 million threshold that electing Small Business Relief means a simplified return, not no return. The deadline is 30 September.",
+      "The FTA has reminded Dubai companies under the Dh3 million threshold that electing Small Business Relief means a simplified return, not no return. The deadline is 30 September.",
     date: "2026-09-03",
     category: "Tax",
     source: {
@@ -168,7 +168,7 @@ export const items: NewsItem[] = [
     cardTitle: "E-invoicing deadline moves to October",
     titleSeo: "ASP deadline moves to 30 October",
     summary:
-      "Companies above Dh50 million now have until 30 October to appoint an accredited service provider. Phase 1 still goes live on 1 January 2027.",
+      "Dubai companies above Dh50 million now have until 30 October to appoint an accredited service provider. Phase 1 still goes live on 1 January 2027.",
     date: "2026-09-03",
     category: "Tax",
     source: {
@@ -206,7 +206,7 @@ export const items: NewsItem[] = [
     cardTitle: "134 days of notice",
     titleSeo: "The 134-day succession notice",
     summary:
-      "Announced 20 April, effective 1 September. The gap is the part a company of any size can copy, and almost none do.",
+      "Announced 20 April, effective 1 September. The gap is the part a Dubai company of any size can copy, and almost none do.",
     date: "2026-09-01",
     category: "Business",
     source: {
@@ -244,7 +244,7 @@ export const items: NewsItem[] = [
     title: "DIFC passes 10,000 companies for the first time",
     titleSeo: "DIFC passes 10,000 companies",
     summary:
-      "2,318 new firms joined in the first half of 2026, taking the active register to 10,018 — 30% growth in twelve months. Regulated financial firms reached 1,134.",
+      "2,318 new firms joined in the first half of 2026, taking Dubai's financial centre to an active register of 10,018 — 30% growth in twelve months. Regulated financial firms reached 1,134.",
     date: "2026-07-28",
     category: "Free zones",
     source: {
