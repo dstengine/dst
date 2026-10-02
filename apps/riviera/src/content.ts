@@ -116,7 +116,7 @@ export const coffeeVenues = {
     name: "Homebrew",
     tagline: "Nostalgic tastes, locally sourced.",
     description:
-      "A café built around the Dubai its founder grew up in — old-school local flavours reworked for a modern menu, rather than the specialty-coffee template most new openings reach for. It sits on the Building 24 stretch of the promenade and keeps longer hours than anything else nearby.",
+      "A café built around the Dubai its founder grew up in — old-school local flavours reworked for a modern menu, rather than the specialty-coffee template most new openings reach for. It sits on the Building 24 stretch of the Azizi Riviera promenade and keeps longer hours than anything else nearby.",
     image: "/venues/homebrew.jpg",
     building: "Azizi Riviera, Building 24 – Shop 3, Nad Al Sheba 1",
     hours: "6:00am – 11:00pm daily",
@@ -274,7 +274,7 @@ export const money = {
   title: "Money: Crypto Near Azizi Riviera",
   description: "Crypto exchange near Azizi Riviera, and how buying property with crypto works in practice.",
   eyebrow: "Money",
-  h1: "Crypto, a short drive from Riviera",
+  h1: "Crypto, a short drive from Azizi Riviera",
   lede: `Riviera's location puts licensed exchange desks within easy reach,
     even though there's nothing on the promenade itself.`,
   sections: [

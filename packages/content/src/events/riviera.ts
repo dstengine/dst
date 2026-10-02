@@ -13,7 +13,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Meydan racing season 2026–27",
     summary:
-      "Seventeen race nights at Meydan from 6 November to 27 March, ending with the $12 million Dubai World Cup — all of it about a kilometre and a half from Riviera.",
+      "Seventeen race nights at Meydan from 6 November to 27 March, ending with the $12 million Dubai World Cup — all of it about a kilometre and a half from Azizi Riviera.",
     start: "2026-11-06",
     end: "2027-03-27",
     venue: "Meydan Racecourse",
@@ -47,7 +47,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Dubai Design Week 2026",
     summary:
-      "Six days at d3, roughly two kilometres from Riviera: installations, commissions, workshops, an outdoor marketplace and the Downtown Design fair.",
+      "Six days at d3, roughly two kilometres from Azizi Riviera: installations, commissions, workshops, an outdoor marketplace and the Downtown Design fair.",
     start: "2026-11-03",
     end: "2026-11-08",
     venue: "Dubai Design District (d3)",
@@ -84,7 +84,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Dubai Fitness Challenge 2026",
     summary:
-      "The city-wide 30x30 challenge runs October 31 to November 29 — 30 minutes of activity a day for 30 days, with Dubai Run, Dubai Ride and free classes across the city.",
+      "Thirty minutes of activity a day for thirty days, October 31 to November 29 — the one month a year the whole city, Azizi Riviera included, is doing the same thing, with Dubai Run, Dubai Ride and free classes across the city.",
     start: "2026-10-31",
     end: "2026-11-29",
     city: "Dubai",
@@ -115,7 +115,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Ripe Market, 15th season",
     summary:
-      "The weekend market at Police Academy Park reopens on 10 October and runs to 2 May, Saturdays and Sundays from 9am to 9pm — the nearest thing Dubai has to a standing weekend habit.",
+      "The weekend market at Police Academy Park reopens on 10 October and runs to 2 May, Saturdays and Sundays from 9am to 9pm — a standing weekend habit within reach of Azizi Riviera.",
     start: "2026-10-10",
     end: "2027-05-02",
     startTime: "09:00",
@@ -154,7 +154,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Dubai Ride 2026",
     summary:
-      "Sheikh Zayed Road closes to cars for the morning of Sunday November 1 and becomes a cycling route, free to join, with a 12km ride and a 4km family loop through Downtown Dubai.",
+      "Sheikh Zayed Road closes to cars for the morning of Sunday November 1 and becomes a cycling route, free to join, with a 12km ride and a 4km family loop through Downtown Dubai — one of two mornings a year worth leaving Azizi Riviera early for.",
     start: "2026-11-01",
     startTime: "06:00",
     utcOffset: "+04:00",
@@ -219,7 +219,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Dubai Run 2026",
     summary:
-      "Sheikh Zayed Road closes again on Sunday November 22 for the seventh Dubai Run, free to enter with a 10km and a 5km route, starting at 6:30am and finishing by nine.",
+      "Sheikh Zayed Road closes again on Sunday November 22 for the seventh Dubai Run, free to enter with a 10km and a 5km route, starting at 6:30am and finishing by nine; the other early start of the year for Azizi Riviera.",
     start: "2026-11-22",
     startTime: "06:30",
     endTime: "09:00",

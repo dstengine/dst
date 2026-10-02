@@ -15,7 +15,7 @@ export const items: NewsItem[] = [
     cardTitle: "The Abu Dhabi train opens",
     titleSeo: "Etihad Rail reaches Dubai 30 September",
     summary:
-      "Etihad Rail's passenger service reaches Dubai on 30 September at Al Yalayis, roughly 57 minutes from Abu Dhabi — and about 40 kilometres from Meydan.",
+      "Etihad Rail's passenger service reaches Dubai on 30 September at Al Yalayis, roughly 57 minutes from Abu Dhabi — and about 40 kilometres from Meydan, where Azizi Riviera sits.",
     date: "2026-09-07",
     category: "Nearby",
     source: {
@@ -52,7 +52,7 @@ export const items: NewsItem[] = [
     cardTitle: "A 500-metre bridge at the Trade Centre",
     titleSeo: "A 500-metre bridge at the Trade Centre",
     summary:
-      "The RTA opened a two-lane, 500-metre bridge serving traffic from the World Trade Centre and One Central towards Al Mustaqbal Street. The fifth and last bridge of the roundabout scheme is due in October 2026.",
+      "The RTA opened a two-lane, 500-metre bridge serving traffic from the World Trade Centre and One Central towards Al Mustaqbal Street. The fifth and last bridge of the roundabout scheme is due in October 2026, on the route into town from Azizi Riviera.",
     date: "2026-09-06",
     category: "Infrastructure",
     source: {
@@ -89,7 +89,7 @@ export const items: NewsItem[] = [
     cardTitle: "Rents beating prices, four years on",
     titleSeo: "Savills: prime rents beat values again",
     summary:
-      "Savills’ half-year index puts prime capital values up 0.6% and prime rents up 1.1% across 30 cities. Rents have outpaced values since mid-2022, and the gap is a statement about borrowing costs rather than about buildings.",
+      "Savills’ half-year index puts prime capital values up 0.6% and prime rents up 1.1% across 30 cities. Rents have outpaced values since mid-2022, and the gap is a statement about borrowing costs rather than about buildings. It is the backdrop to every rent negotiation in Azizi Riviera.",
     date: "2026-09-06",
     category: "Market",
     source: {
@@ -128,7 +128,7 @@ export const items: NewsItem[] = [
     cardTitle: "Riviera's exit junction gets rebuilt",
     titleSeo: "Riviera's exit junction rebuild",
     summary:
-      "RTA's second Al Meydan Street contract covers First Al Khail Street through Al Khail Road to Muscat Street, with a flyover interchange and cycle underpasses. Done by end-2028.",
+      "The junction Azizi Riviera leaves by is being rebuilt. RTA's second Al Meydan Street contract covers First Al Khail Street through Al Khail Road to Muscat Street, with a flyover interchange and cycle underpasses. Done by end-2028.",
     date: "2026-09-03",
     category: "Infrastructure",
     source: {
@@ -166,7 +166,7 @@ export const items: NewsItem[] = [
     cardTitle: "A Waitrose opens past Meydan",
     titleSeo: "A Waitrose opens across Meydan",
     summary:
-      "Nad Al Sheba Gardens Mall opened in August: two storeys, a Waitrose anchor, cafés, fitness space and a nursery, inside a gated community east of the racecourse.",
+      "Nad Al Sheba Gardens Mall opened in August: two storeys, a Waitrose anchor, cafés, fitness space and a nursery, inside a gated community east of the racecourse, a short drive from Azizi Riviera.",
     date: "2026-09-03",
     category: "Nearby",
     source: {
@@ -203,7 +203,7 @@ export const items: NewsItem[] = [
     cardTitle: "Ras Al Khor goes back to winter hours",
     titleSeo: "Ras Al Khor goes to winter hours",
     summary:
-      "From October the sanctuary opens 7:30am to 5:30pm, and the birds that make it worth the trip start arriving in numbers. Entry and all three hides are free.",
+      "From October the sanctuary opens 7:30am to 5:30pm, and the birds that make it worth the trip start arriving in numbers. Entry and all three hides are free, and it is the nearest wildlife reserve to Azizi Riviera.",
     date: "2026-09-02",
     category: "Nearby",
     source: {
@@ -239,7 +239,7 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "104 projects finished in six months",
     summary:
-      "Dubai completed 104 real estate projects in the first half of 2026 — up 52% — delivering more than 24,000 units worth around Dh111 billion.",
+      "Dubai completed 104 real estate projects in the first half of 2026 — up 52% — delivering more than 24,000 units worth around Dh111 billion — the wave Azizi Riviera's own last buildings are part of.",
     date: "2026-08-20",
     category: "Development",
     source: {
@@ -269,7 +269,7 @@ export const items: NewsItem[] = [
     // Layout appends " — Azizi Riviera Guide".
     title: "Riviera's final handover phase",
     summary:
-      "Azizi has entered the last stage of delivery at Riviera: 53 of the 75 buildings handed over, all of phases 1 to 3 complete, and the remaining 22 buildings scheduled through Q2 2026.",
+      "Azizi Riviera has entered its last stage of delivery: 53 of the 75 buildings handed over, all of phases 1 to 3 complete, and the remaining 22 buildings scheduled through Q2 2026.",
     date: "2025-08-13",
     category: "Development",
     image: "/news/azizi-riviera-handover.svg",
