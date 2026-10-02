@@ -21028,6 +21028,54 @@
         ]
       ]
     },
+    "/covers/tcs-new-york-city-marathon-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/tcs-new-york-city-marathon-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/tcs-new-york-city-marathon-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/tcs-new-york-city-marathon-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/tcs-new-york-city-marathon-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/tcs-new-york-city-marathon-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/tcs-new-york-city-marathon-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/tcs-new-york-city-marathon-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/tcs-new-york-city-marathon-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/tcs-new-york-city-marathon-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/tcs-new-york-city-marathon-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/the-parade-turns-100-a-century-and-two-years-late.jpg": {
       "width": 1536,
       "height": 864,
