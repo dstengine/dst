@@ -74,7 +74,7 @@ export const coffee = {
           Drft Speciality Coffee at 23, St Lucas Grand Cafe at 44, Arosto
           Coffee at 47.`,
         `The names and buildings are from the
-          <a href="/go/propsearch-riviera-amenities/" rel="nofollow">Propsearch amenities list</a>,
+          <a href="/go/propsearch-riviera-amenities/" rel="nofollow" title="Azizi Riviera amenities, building by building">Propsearch amenities list</a>,
           updated on 20 April 2026. Density follows the construction
           timeline: the earliest-opened blocks carry the fullest run,
           while newer phases are still being let.`,
@@ -85,7 +85,7 @@ export const coffee = {
       paragraphs: [
         `Homebrew opens at <strong>6am</strong> every day, the earliest
           opening we have found on the promenade and the one to know before a
-          commute; it closes at 11pm. <a href="/go/bebax-riviera/" rel="nofollow">Bebax Coffee</a>,
+          commute; it closes at 11pm. <a href="/go/bebax-riviera/" rel="nofollow" title="Bebax Coffee hours and menu in Azizi Riviera">Bebax Coffee</a>,
           in the same building, opens at 8am and serves until
           <strong>midnight</strong>, by its own branch page — single-origin
           beans and blends, with bags to take home.`,
