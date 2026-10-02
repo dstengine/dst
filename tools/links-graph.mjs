@@ -28,8 +28,16 @@ const only = args.filter((a, i) => !a.startsWith("--") && !(depthFlag !== -1 && 
 
 /** Redirect stubs are not pages. /go/ and /li/ exist to send a reader off the
     site, so counting them as orphans would bury the real ones — there are more
-    of them on musical than there are shows. */
-const isPage = (u) => !u.startsWith("/go/") && !u.startsWith("/li/");
+    of them on musical than there are shows.
+
+    A Search Console verification file is not a page either. It is a token at
+    a fixed address that Google fetches directly and nobody links to, so it
+    reports as an orphan, as unreachable and as thin — three findings on every
+    site, for a file that is working exactly as intended. Three permanent
+    false positives are enough to teach a reader to skim the report, which
+    costs more than the file does. */
+const isPage = (u) =>
+  !u.startsWith("/go/") && !u.startsWith("/li/") && !/^\/google[0-9a-f]+\.html$/.test(u);
 
 /** Every .html under dir, as a list of absolute paths. */
 async function htmlFiles(dir) {
