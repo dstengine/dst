@@ -2,6 +2,49 @@ import type { EventItem } from "../types.ts";
 
 export const items: EventItem[] = [
 
+  {
+    slug: "tcs-new-york-city-marathon-2026",
+    createdAt: "2026-10-02T22:54:00+04:00",
+    updatedAt: "2026-10-02T22:54:00+04:00",
+    featured: 2,
+    site: "nyc42",
+    image: "/covers/tcs-new-york-city-marathon-2026.jpg",
+    imageAlt: "A ledge running across the frame between an amber field above and a dark one below, stepping down once near the middle",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "TCS New York City Marathon 2026",
+    summary:
+      "New York's five-borough race runs on Sunday 1 November, and for the first time in fifteen years the course is not the same one. The change is four blocks in the Bronx, and watching the whole thing is free.",
+    start: "2026-11-01",
+    utcOffset: "-05:00",
+    city: "New York City",
+    venue: "Staten Island to Manhattan, through all five boroughs",
+    category: "Race",
+    tickets: { priceFrom: 0, currency: "USD" },
+    organizer: "New York Road Runners",
+    source: {
+      name: "New York Road Runners",
+      url: "https://www.nyrr.org/tcsnycmarathon/the-course",
+      verifiedOn: "2026-10-02",
+    },
+    body: [
+      "The <strong>TCS New York City Marathon</strong> runs on <strong>Sunday 1 November 2026</strong>, and this year the line on the map is different. New York Road Runners has changed the course for the <strong>first time in fifteen years</strong>.",
+      "## What actually changed",
+      "Four blocks, in the Bronx. After crossing the <strong>Willis Avenue Bridge</strong>, runners now turn left onto <strong>East 135th Street</strong>, right onto <strong>Alexander Avenue</strong>, and stay on Alexander. Where the course used to turn left on East 138th Street, it now goes to <strong>East 141st Street</strong>, turns left onto <strong>Third Avenue</strong>, then right onto East 138th Street to cross the <strong>Madison Avenue Bridge</strong> back into Manhattan.",
+      "NYRR gives the reason plainly: to reduce what the race does to the Bronx, in a neighborhood that has changed across fifty years of the five-borough course. That is a short detour on a 26.2-mile route and it will not decide anybody&rsquo;s time. It matters because of what it is &mdash; a race altering itself for the streets it runs through, rather than the other way round.",
+      "## Fifty years of the five-borough course",
+      "The change lands on an anniversary. The five-borough course was first run on <strong>24 October 1976</strong>; 2026 is its fiftieth year. Before that the marathon went in loops around Central Park, and the decision to send it through every borough is the single thing that made it the race it is.",
+      "## What last year looked like",
+      "The 2025 edition finished <strong>59,226</strong> runners, which puts it among the largest marathons anywhere. The average finishing time was <strong>4:32:25</strong>, and the field came from <strong>130 countries</strong>. Since 2006 the race has raised <strong>$700 million</strong> for charity.",
+      "Those numbers are the argument for spectating rather than running: a field that size takes hours to pass any given point, and the people you came to see are somewhere in the middle of it.",
+      "## Watching",
+      "Standing on the sidewalk costs nothing and needs no ticket, which is true of almost no other event of this scale in the city. Running it is a different matter &mdash; entry runs through NYRR and is settled long before November.",
+    ],
+    expertise:
+      "If you are watching rather than running, the new Bronx blocks are the quietest good spot on the course. Alexander Avenue and East 141st Street have never had a crowd on them, because until this year the race did not go down them &mdash; and they sit at mile 20, which is where the day stops being a parade and starts being a marathon.",
+  },
+
 
   {
     slug: "nyc-wine-and-food-festival-2026",
