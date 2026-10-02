@@ -13,8 +13,9 @@ export const items: EventItem[] = [
     imageHeight: 864,
     // Layout appends " — Dubai Residency & Golden Visa", leaving 28 characters.
     title: "IREX Residency Conclave",
+    titleSeo: "IREX Residency Conclave: UAE residency programmes",
     summary:
-      "The 28th IREX Residency & Citizenship Conclave runs January 30–31, 2027 at Anantara Downtown — residency and citizenship-by-investment programmes from 12+ countries, aimed at investors already based here.",
+      "The 28th IREX Residency & Citizenship Conclave runs January 30–31, 2027 at Anantara Downtown Dubai — residency and citizenship-by-investment programmes from 12+ countries, aimed at investors already based in the UAE.",
     start: "2027-01-30",
     end: "2027-01-31",
     startTime: "11:00",
@@ -52,6 +53,7 @@ export const items: EventItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "Citizenship Expo Abu Dhabi 2026",
+    titleSeo: "Citizenship Expo Abu Dhabi: UAE residency routes",
     summary:
       "Fifty-plus programmes from more than twenty countries under one roof at ADNEC in Abu Dhabi, 10–12 November 2026: three days in the UAE to compare residency and citizenship routes side by side, in one-to-one meetings rather than from a stage.",
     start: "2026-11-10",

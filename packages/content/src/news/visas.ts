@@ -13,9 +13,9 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "What a Dubai visit visa asks of the person sponsoring it",
     cardTitle: "Sponsoring a visitor: the salary floors",
-    titleSeo: "Dubai visit visa: sponsor salary rules",
+    titleSeo: "UAE visit visa: what a sponsor must earn",
     summary:
-      "GDRFA Dubai has set out what a resident must earn to bring someone over: Dh4,000 for a parent or child, Dh8,000 for a sibling, Dh15,000 for a friend.",
+      "GDRFA Dubai has set out what a UAE resident must earn to bring someone over: Dh4,000 for a parent or child, Dh8,000 for a sibling, Dh15,000 for a friend.",
     date: "2026-09-07",
     category: "Visit visas",
     source: {
@@ -50,9 +50,9 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "Dubai issued 66,078 golden visas in the first half of 2026",
     cardTitle: "66,078 golden visas in six months",
-    titleSeo: "Dubai issued 66,078 golden visas in H1",
+    titleSeo: "66,078 UAE golden visas issued in Dubai in H1",
     summary:
-      "GDRFA Dubai’s half-year figures: 66,078 golden visas, 29,456 five-year multiple-entry tourist visas and more than seven million visa and residency transactions between January and June.",
+      "GDRFA Dubai’s half-year figures: 66,078 UAE golden visas, 29,456 five-year multiple-entry tourist visas and more than seven million visa and residency transactions between January and June.",
     date: "2026-09-06",
     category: "Golden visa",
     source: {
@@ -87,9 +87,9 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "Europe’s €20 travel permit slips to 2027 while the border queues stay",
     cardTitle: "ETIAS slips to 2027",
-    titleSeo: "ETIAS delayed to 2027 as EES queues bite",
+    titleSeo: "ETIAS slips to 2027: what UAE residents face",
     summary:
-      "eu-LISA has accepted that ETIAS cannot launch by the end of 2026. The biometric Entry/Exit System it depends on went fully live in April and is producing waits IATA has put at three to six hours.",
+      "eu-LISA has accepted that ETIAS cannot launch by the end of 2026, which pushes back the permit UAE residents will need for Europe. The biometric Entry/Exit System it depends on went fully live in April and is producing waits IATA has put at three to six hours.",
     date: "2026-09-06",
     category: "Travel",
     source: {
@@ -124,9 +124,9 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "Dubai's single-entry tourist visa now clears in 48 hours",
     cardTitle: "Tourist visas inside 48 hours",
-    titleSeo: "Dubai tourist visas inside 48 hours",
+    titleSeo: "UAE tourist visa for Dubai clears in 48 hours",
     summary:
-      "GDRFA confirmed a two-working-day turnaround on 30- and 60-day single-entry visas. It is a processing change, not a new visa type.",
+      "GDRFA confirmed a two-working-day turnaround on the 30- and 60-day single-entry UAE tourist visas it issues in Dubai. It is a processing change, not a new visa type.",
     date: "2026-09-03",
     category: "Visit visas",
     source: {
@@ -160,9 +160,9 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "Dubai's immigration and health authorities are wiring their systems together",
     cardTitle: "Medical visas get one front door",
-    titleSeo: "Medical visas get a single front door",
+    titleSeo: "UAE medical visas get a single front door",
     summary:
-      "GDRFA and the Dubai Health Authority signed an MoU on 3 June to link visa, insurance and provider systems. The smart medical visa itself is still in development.",
+      "GDRFA and the Dubai Health Authority signed an MoU on 3 June to link visa, insurance and provider systems for patients travelling to the UAE for treatment. The smart medical visa itself is still in development.",
     date: "2026-09-03",
     category: "Medical visas",
     source: {
@@ -194,9 +194,9 @@ export const items: NewsItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "Six more nationalities can now get a visa on arrival",
-    titleSeo: "Visa on arrival: six more nationalities",
+    titleSeo: "UAE visa on arrival: six more nationalities",
     summary:
-      "The ICP has added Indonesia, Vietnam, Thailand, the Philippines, Kenya and South Africa — and six new countries of residence. Dh100 for 14 days, Dh250 for 60.",
+      "The ICP has added Indonesia, Vietnam, Thailand, the Philippines, Kenya and South Africa to the UAE's visa-on-arrival list — and six new countries of residence. Dh100 for 14 days, Dh250 for 60.",
     date: "2026-06-25",
     category: "Residency",
     source: {
@@ -229,8 +229,9 @@ export const items: NewsItem[] = [
     // Layout appends " — Dubai Residency & Golden Visa", leaving 28
     // characters. "2-year" rather than "two-year" purely to fit.
     title: "2-year visa minimum dropped",
+    titleSeo: "UAE investor visa: Dh750,000 minimum dropped",
     summary:
-      "The Dh750,000 property minimum on Dubai's two-year investor visa has been dropped for sole owners — a change that appeared in the Dubai Land Department's Cube Center without a formal announcement.",
+      "Dubai's two-year investor visa, a UAE residence permit, has lost its Dh750,000 property minimum for sole owners — a change that appeared in the Dubai Land Department's Cube Center without a formal announcement.",
     // Dated to the source's own publication, not to the change itself: the
     // change was never formally announced, so no reliable date for it
     // exists. The body says so rather than implying this is the date it
