@@ -302,8 +302,18 @@ const lateIcons = navFootprint - nav.length * 28 > 700;
       <link rel="icon" href="data:," />
     )}
     {graph && <script type="application/ld+json" set:html={JSON.stringify(graph)} />}
+    {/* Each block is its own document, so each needs its own @context — the
+        one on the graph above does not reach them. A block that states its
+        own context keeps it; one that does not is given schema.org, which is
+        the only vocabulary anything here uses. Without this a MusicGroup or
+        a MusicEvent ships as an untyped object and is read by nothing. */}
     {jsonLd.map((block) => (
-      <script type="application/ld+json" set:html={JSON.stringify(block)} />
+      <script
+        type="application/ld+json"
+        set:html={JSON.stringify(
+          "@context" in block ? block : { "@context": "https://schema.org", ...block },
+        )}
+      />
     ))}
     <Analytics />
     {/* The lead pipeline is DST's, not every site's: it writes dst_ cookies

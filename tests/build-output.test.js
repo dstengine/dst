@@ -34,6 +34,15 @@ const SITES = [
   { app: "lnd", host: "lnd.lol" },
   { app: "cmx", host: "cmx.lol" },
   { app: "mxo", host: "mxo.lol" },
+  // Both of these were missing from this list, and so from every test in
+  // this file, until 3 October 2026. A green suite said nothing about them:
+  // 399 anchors on tokiohotel and two on eco shipped with no title
+  // attribute, which the one test that would have caught it never ran
+  // against them. A site that is built and served is a site that is checked
+  // — including eco, whose subject is not Dubai, and tokiohotel, which is
+  // legacy and still deployed.
+  { app: "eco", host: "eco.dst.llc" },
+  { app: "tokiohotel", host: "tokiohotel.vvm.space" },
 ];
 const TITLE_LIMIT = 60;
 
@@ -346,9 +355,17 @@ describe("images", () => {
   // name, so describing them made the link announce itself twice. An empty
   // alt there is a decision, not an omission — and it has to be declared to
   // count as one.
+  //
+  // An <img> with no src is not a picture yet. The lightbox ships one inside
+  // a closed <dialog> and fills its src and alt from whichever thumbnail is
+  // pressed; there is nothing there to describe until then, and describing
+  // it would mean writing alt text for an image that does not exist. Both
+  // rules below skip it on that ground rather than on a class name.
+  const hasSrc = (tag) => /\ssrc="[^"]/.test(tag);
   test("no content image has an empty alt", () => {
     for (const p of contentPages()) {
       for (const tag of imgsOf(p.html)) {
+        if (!hasSrc(tag)) continue;
         if (/aria-hidden="true"/.test(tag)) continue;
         assert.doesNotMatch(tag, /\salt=""/, `${p.app}${p.url}: <img> has an empty alt — ${tag}`);
       }
@@ -364,6 +381,7 @@ describe("images", () => {
   test("only site chrome is hidden from assistive technology", () => {
     for (const p of contentPages()) {
       for (const tag of imgsOf(p.html)) {
+        if (!hasSrc(tag)) continue;
         if (!/aria-hidden="true"/.test(tag)) continue;
         if (/class="[^"]*\bcounter\b/.test(tag)) continue;
         const src = (tag.match(/src="([^"]+)"/) || [])[1] ?? "";

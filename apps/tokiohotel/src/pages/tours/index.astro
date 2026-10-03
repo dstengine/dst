@@ -21,11 +21,11 @@ import { albumForTour } from "../../data/albums";
           <li>
             <span class="years">{tour.years}</span>
             <span class="body">
-              <strong><a href={`/tours/${tour.slug}/`}>{tour.name}</a></strong>
+              <strong><a href={`/tours/${tour.slug}/`} title={`${tour.name}: the Tokio Hotel dates in full`}>{tour.name}</a></strong>
               <span class="blurb">{tour.blurb}</span>
               {album && (
                 <span class="album">
-                  Behind <a href={`/albums/${album.slug}/`}>{album.title}</a>
+                  Behind <a href={`/albums/${album.slug}/`} title={`${album.title}: dates, label and singles`}>{album.title}</a>
                   {tour.shows && <> &middot; {tour.shows.length} dates on this site</>}
                 </span>
               )}

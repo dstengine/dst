@@ -29,14 +29,14 @@ const past = pastOnlyCities();
 
   {runs.map(({ tour, stops }) => (
     <section class="container">
-      <h2><a href={`/tours/${tour.slug}/`}>{tour.name} {tour.years}</a></h2>
+      <h2><a href={`/tours/${tour.slug}/`} title={`${tour.name}: the Tokio Hotel dates in full`}>{tour.name} {tour.years}</a></h2>
       <p class="meta">{tour.blurb}</p>
       <ol class="cities">
         {stops.map(({ city, stop }) => (
           <li>
             <span class="night">Night {stop.night}</span>
             <span class="body">
-              <strong><a href={`/cities/${city.slug}/`}>{city.name}</a></strong>
+              <strong><a href={`/cities/${city.slug}/`} title={`Every Tokio Hotel date in ${city.name}`}>{city.name}</a></strong>
               <span class="meta">
                 {city.country} &middot; {stop.shows.map((s) => formatDate(s.date, "en-GB")).join(" and ")}
                 {stop.shows[0].venue && <> &middot; {stop.shows[0].venue}</>}
@@ -58,7 +58,7 @@ const past = pastOnlyCities();
     <ul class="past">
       {past.map((city) => (
         <li>
-          <strong><a href={`/cities/${city.slug}/`}>{city.name}</a></strong>
+          <strong><a href={`/cities/${city.slug}/`} title={`Every Tokio Hotel date in ${city.name}`}>{city.name}</a></strong>
           <span class="meta">
             Nothing upcoming &middot; last played {formatDate(city.lastVisit!.date, "en-GB")},
             {" "}{city.lastVisit!.venue}

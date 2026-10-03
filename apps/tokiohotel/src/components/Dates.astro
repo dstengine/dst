@@ -23,13 +23,13 @@ const day = (iso: string) =>
       <time datetime={show.startTime ? `${show.date}T${show.startTime}` : show.date}>{day(show.date)}{show.startTime && <span class="start"> · {show.startTime}</span>}</time>
       <span class="where">
         <strong>
-          {linkCities && show.cityPage ? <a href={show.cityPage}>{show.city}</a> : show.city}
+          {linkCities && show.cityPage ? <a href={show.cityPage} title={`Every Tokio Hotel date in ${show.city}`}>{show.city}</a> : show.city}
         </strong>
         <span class="country">{show.country}</span>
       </span>
       <span class="venue">{show.venue ?? "Venue not announced"}</span>
       {show.ticket ? (
-        <a class="button" href={go(show.ticket)} rel="nofollow">Tickets</a>
+        <a class="button" href={go(show.ticket)} rel="nofollow" title={`Tickets for ${show.city}, ${show.date}`}>Tickets</a>
       ) : (
         <span class="no-ticket">&mdash;</span>
       )}

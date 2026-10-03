@@ -72,8 +72,8 @@ const next = index < albums.length - 1 ? albums[index + 1] : undefined;
   <section class="container">
     <SourceNote source={album.source} />
     <nav class="pager" aria-label="Albums">
-      {previous ? <a href={`/albums/${previous.slug}/`}>&larr; {previous.title}</a> : <span />}
-      {next ? <a href={`/albums/${next.slug}/`}>{next.title} &rarr;</a> : <span />}
+      {previous ? <a href={`/albums/${previous.slug}/`} title={`${previous.title}: dates, label and singles`}>&larr; {previous.title}</a> : <span />}
+      {next ? <a href={`/albums/${next.slug}/`} title={`${next.title}: dates, label and singles`}>{next.title} &rarr;</a> : <span />}
     </nav>
   </section>
 </Layout>

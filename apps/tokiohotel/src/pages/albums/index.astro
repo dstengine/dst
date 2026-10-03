@@ -25,13 +25,13 @@ const year = (iso: string) => iso.slice(0, 4);
             <span class="year">{year(album.released)}</span>
             <span class="body">
               <strong>
-                <a href={`/albums/${album.slug}/`}>{album.title}</a>
+                <a href={`/albums/${album.slug}/`} title={`${album.title}: dates, label and singles`}>{album.title}</a>
                 {album.upcoming && <span class="pill">Announced</span>}
               </strong>
               <span class="blurb">{album.blurb}</span>
               <span class="meta">
                 {album.language} &middot; {album.label}
-                {tour && <> &middot; toured as <a href={`/tours/${tour.slug}/`}>{tour.name}</a></>}
+                {tour && <> &middot; toured as <a href={`/tours/${tour.slug}/`} title={`${tour.name}: the Tokio Hotel dates in full`}>{tour.name}</a></>}
               </span>
             </span>
           </li>

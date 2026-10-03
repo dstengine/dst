@@ -7,6 +7,9 @@ import { test, expect } from "@playwright/test";
 import { baseUrl } from "./servers.js";
 
 const NAV_BREAKPOINT = 1024;
+// Above this, a dense nav — one whose own labels want more than the row has —
+// finally shows its inline row. See `site-nav-dense` in BaseLayout.astro.
+const DENSE_NAV_BREAKPOINT = 1200;
 const WIDTHS = [390, 768, 900, 1280, 1920];
 
 /** Pages worth measuring on every width: one of each template. */
@@ -91,8 +94,16 @@ test.describe("header", () => {
     }
   });
 
-  test(`nav is a single inline row above ${NAV_BREAKPOINT}px`, async ({ page }) => {
-    await page.setViewportSize({ width: NAV_BREAKPOINT + 56, height: 800 });
+  // 1240 rather than 1080, because 1024 is not the only breakpoint the row
+  // has. A site whose labels add up to more than 1040px of footprint is
+  // marked `site-nav-dense` and keeps the dropdown all the way to 1200px —
+  // riviera is one, which is why asking for its inline row at 1080 asked for
+  // something the stylesheet deliberately refuses. The suite did not say so
+  // for as long as it did because its browsers were never installed on this
+  // machine: every run ended in "Executable doesn't exist" rather than in a
+  // result.
+  test(`nav is a single inline row above ${DENSE_NAV_BREAKPOINT}px`, async ({ page }) => {
+    await page.setViewportSize({ width: DENSE_NAV_BREAKPOINT + 40, height: 800 });
     await page.goto(url("riviera", "/"));
     await expect(page.locator(".nav-desktop")).toBeVisible();
     await expect(page.locator(".nav-toggle")).toBeHidden();

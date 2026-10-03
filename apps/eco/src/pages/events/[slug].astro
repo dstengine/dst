@@ -7,9 +7,10 @@ import EventArticle from "@dst/ui/EventArticle.astro";
 import { eventsBySite } from "@dst/content/events";
 import { newsBySite } from "@dst/content/news";
 
-// eco has no ticketed events yet, so no outbound.ts / go/[slug].astro on
-// this app — the /go/<slug>-ticket/ path below only resolves once a siteId
-// registers that slug in its own outbound.ts (see riviera's, which does).
+// The /go/<slug>-ticket/ hop is registered in this app's outbound.ts, which
+// loops over the feed. The comment that used to sit here said eco had no
+// ticketed events and therefore no outbound.ts; both halves went stale, and
+// the first ticketed event shipped a link to a page that was never built.
 export function getStaticPaths() {
   const items = eventsBySite(siteId).filter((item) => Array.isArray(item.body) && item.body.length > 0);
   // The rest of the feed travels with each page so the article can end

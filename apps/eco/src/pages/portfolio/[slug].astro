@@ -83,7 +83,7 @@ const { lat, lng } = story.location ?? {};
         )}
       </dl>
       {story.location?.mapUrl && (
-        <a class="button button-secondary record-panel-action" href={go(`${story.slug}-map`)} target="_blank" rel="noopener">
+        <a class="button button-secondary record-panel-action" href={go(`${story.slug}-map`)} target="_blank" rel="noopener" title={`Where ${story.title} is, on the map`}>
           Open in Google Maps
         </a>
       )}
@@ -121,7 +121,7 @@ const { lat, lng } = story.location ?? {};
   )}
 
   <nav class="container record-back">
-    <a href="/#portfolio">← All records</a>
+    <a href="/#portfolio" title="Every planting record in the DST Eco portfolio">← All records</a>
   </nav>
 
   <Lightbox />

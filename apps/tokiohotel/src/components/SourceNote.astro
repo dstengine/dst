@@ -20,7 +20,7 @@ const { source, label = "Source" } = Astro.props;
   <span>
     {label}:{" "}
     {source.url
-      ? <a href={go(source.url)} rel="nofollow">{source.name}</a>
+      ? <a href={go(source.url)} rel="nofollow" title={`${source.name}, where this was checked`}>{source.name}</a>
       : source.name}
   </span>
   <span aria-hidden="true">·</span>

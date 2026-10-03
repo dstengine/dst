@@ -126,9 +126,9 @@ const jsonLd = playing
       <Dates shows={stop.shows} linkCities={false} />
       <p>
         Night {stop.night} of {stop.total} on the
-        {" "}<a href={`/tours/${stop.tour.slug}/`}>{stop.tour.name} {stop.tour.years}</a>.
+        {" "}<a href={`/tours/${stop.tour.slug}/`} title={`${stop.tour.name}: the Tokio Hotel dates in full`}>{stop.tour.name} {stop.tour.years}</a>.
         {stop.tour.slug === "arena-tour-2026" && (
-          <> The run is behind the album <a href="/albums/encore/">Encore</a>, which lands on 16 October 2026.</>
+          <> The run is behind the album <a href="/albums/encore/" title="Encore: the Tokio Hotel album behind the run">Encore</a>, which lands on 16 October 2026.</>
         )}
       </p>
       <p>
@@ -152,7 +152,7 @@ const jsonLd = playing
 
   {playing && (
     <p class="container meta">
-      Every stop on both tours is on <a href="/cities/">the cities page</a>.
+      Every stop on both tours is on <a href="/cities/" title="Every city Tokio Hotel has played">the cities page</a>.
     </p>
   )}
 
@@ -168,7 +168,7 @@ const jsonLd = playing
       <h2>Elsewhere</h2>
       <p>
         We run a listings site for this city as well.
-        {" "}<a href={city.cityGuide.url}>{city.cityGuide.label}</a> &mdash; {city.cityGuide.note}.
+        {" "}<a href={city.cityGuide.url} title={city.cityGuide.note}>{city.cityGuide.label}</a> &mdash; {city.cityGuide.note}.
       </p>
     </section>
   )}
