@@ -25,11 +25,14 @@ Every page has an Armenian twin at the same address under /am/, and each says so
 ## Events
 
 - [Lyubov Uspenskaya in concert in Yerevan](https://tick.lnd.lol/events/lyubov-uspenskaya-yerevan-2027/): Lyubov Uspenskaya, the queen of Russian chanson, brings a full concert programme to the Karen Demirchyan Complex in Yerevan on 30 January 2027.
+- [Rachmaninov: Piano Concertos Nos. 1 and 3](https://tick.lnd.lol/events/rachmaninov-piano-concertos-1-3-yerevan-2026/): Eva Gevorgyan plays Rachmaninov's First and Third Piano Concertos in Yerevan on 26 November at the Aram Khachaturian Concert Hall, opening the 14th Khachaturian International Festival.
 - [Andru Donalds: the voice of Enigma in Yerevan](https://tick.lnd.lol/events/andru-donalds-enigma-yerevan-2026/): Andru Donalds, the voice on Enigma's records from 1998 to 2008, sings at the Aram Khachaturian Concert Hall in Yerevan on 21 November, with strings and a children's choir.
+- [Grigory Sokolov: piano recital in Yerevan](https://tick.lnd.lol/events/grigory-sokolov-yerevan-2026/): Grigory Sokolov gives a solo piano recital in Yerevan on 14 November at the Aram Khachaturian Concert Hall, closing the 18th Yerevan International Music Festival.
 - [Tata Simonyan in concert in Yerevan](https://tick.lnd.lol/events/tata-simonyan-yerevan-2026/): Tata Simonyan plays the main hall of the Karen Demirchyan Complex in Yerevan on 7 November, with the Karen Sevak band and nothing pre-recorded.
 - [Romeo Juliet. Déjà Vu](https://tick.lnd.lol/events/romeo-juliet-deja-vu-2026/): A new love drama in Yerevan on 19 October at the Hrachya Ghaplanyan Drama Theatre, with Inna Khojamiryan, Ruben Muradyan and Aram Karakhanyan.
 - [EQUINOX Fest: Autumn Chapter at Altezza](https://tick.lnd.lol/events/equinox-fest-autumn-chapter-2026/): An electronic and live-music festival on a helipad just outside Yerevan on 17 October, with Armen Miran, Viken Arman and Arto Tunçboyacıyan.
 - [Harry Potter film music by the Mystery Ensemble](https://tick.lnd.lol/events/harry-potter-film-music-yerevan-2026/): The Harry Potter scores in Yerevan, played by the Mystery Ensemble at the Komitas Chamber Music House on 9 October and again on 4 December.
+- [Macbeth at the Yerevan State Chamber Theatre](https://tick.lnd.lol/events/macbeth-chamber-theatre-yerevan-2026/): Shakespeare's Macbeth in Yerevan on 7 October, staged at the Chamber Theatre by the English director Elliot Huxtable, with Vahe Ziroyan and Sona Matevosyan as the Macbeths.
 - [Elgar: Cello Concerto and Enigma Variations](https://tick.lnd.lol/events/elgar-enigma-variations-yerevan-2026/): Elgar in Yerevan on 5 October: the Armenian State Symphony Orchestra at the Aram Khachaturian Concert Hall, with Guy Johnston as soloist in the Cello Concerto.
 
 ## News
@@ -39,11 +42,14 @@ Every page has an Armenian twin at the same address under /am/, and each says so
 ## Միջոցառումներ (in Armenian)
 
 - [Լյուբով Ուսպենսկայա. մեծ համերգ Երևանում](https://tick.lnd.lol/am/events/lyubov-uspenskaya-yerevan-2027/): Ռուսական շանսոնի աստղ Լյուբով Ուսպենսկայան 2027 թվականի հունվարի 30-ին Երևանում է՝ Կարեն Դեմիրճյանի անվան մարզահամերգային համալիրում։
+- [Ռախմանինով. Դաշնամուրի կոնցերտներ թիվ 1 և 3](https://tick.lnd.lol/am/events/rachmaninov-piano-concertos-1-3-yerevan-2026/): Նոյեմբերի 26-ին Երևանում՝ Արամ Խաչատրյան համերգասրահում, Եվա Գևորգյանը նվագում է Ռախմանինովի առաջին և երրորդ կոնցերտները. բացվում է Խաչատրյանի 14-րդ միջազգային փառատոնը։
 - [Էնդրյու Դոնալդս. ENIGMA-ի ոսկե ձայնը Երևանում](https://tick.lnd.lol/am/events/andru-donalds-enigma-yerevan-2026/): Էնդրյու Դոնալդսը՝ ENIGMA-ի ձայնը, նոյեմբերի 21-ին Երևանում է՝ Արամ Խաչատրյան համերգասրահում, լարային նվագախմբի և մանկական երգչախմբի հետ։
+- [Գրիգորի Սոկոլով. դաշնամուրային մենահամերգ Երևանում](https://tick.lnd.lol/am/events/grigory-sokolov-yerevan-2026/): Դաշնակահար Գրիգորի Սոկոլովը նոյեմբերի 14-ին Երևանում է՝ Արամ Խաչատրյան համերգասրահում, Երևանյան 18-րդ միջազգային երաժշտական փառատոնի փակման համերգով։
 - [Թաթա Սիմոնյան. մենահամերգ Երևանում](https://tick.lnd.lol/am/events/tata-simonyan-yerevan-2026/): Թաթա Սիմոնյանի մեծ մենահամերգը Երևանում՝ նոյեմբերի 7-ին Կարեն Դեմիրճյանի անվան մարզահամերգային համալիրում, Կարեն Սևակ բենդի կենդանի նվագակցությամբ։
 - [«Ռոմեո Ջուլիետ. Դեժավյու»](https://tick.lnd.lol/am/events/romeo-juliet-deja-vu-2026/): Նոր սիրո դրամա Երևանում՝ հոկտեմբերի 19-ին Հրաչյա Ղափլանյանի անվան դրամատիկական թատրոնում. դերերում՝ Իննա Խոջամիրյան, Ռուբեն Մուրադյան, Արամ Կարախանյան։
 - [EQUINOX Fest. աշնանային էպիզոդ Altezza-ում](https://tick.lnd.lol/am/events/equinox-fest-autumn-chapter-2026/): Հոկտեմբերի 17-ին Երևանի մոտ՝ Altezza ուղղաթիռային հրապարակում, էլեկտրոնային և կենդանի երաժշտության փառատոն է՝ Արմեն Միրան, Վիկեն Արման, Արտո Թունչբոյաջյան։
 - [Հարի Փոթեր ֆիլմի երաժշտությունը՝ Mystery Ensemble](https://tick.lnd.lol/am/events/harry-potter-film-music-yerevan-2026/): Հարի Փոթերի ֆիլմերի երաժշտությունը Երևանում՝ Կոմիտասի անվան կամերային երաժշտության տանը, հոկտեմբերի 9-ին և դեկտեմբերի 4-ին. նվագում է Mystery Ensemble-ը։
+- [«Մակբեթ»՝ Երևանի պետական կամերային թատրոնում](https://tick.lnd.lol/am/events/macbeth-chamber-theatre-yerevan-2026/): Շեքսպիրի «Մակբեթը» Երևանում՝ հոկտեմբերի 7-ին Կամերային թատրոնում, անգլիացի ռեժիսոր Էլիոթ Հաքսթբլի բեմադրությամբ. Մակբեթ՝ Վահե Զիրոյան, Լեդի Մակբեթ՝ Սոնա Մաթևոսյան։
 - [Էլգար. Թավջութակի կոնցերտ և «Էնիգմա» վարիացիաներ](https://tick.lnd.lol/am/events/elgar-enigma-variations-yerevan-2026/): Հոկտեմբերի 5-ին Երևանում՝ Արամ Խաչատրյան համերգասրահում, Հայաստանի պետական սիմֆոնիկ նվագախումբը նվագում է Էլգար. մենակատարը թավջութակահար Գայ Ջոնսթոնն է։
 
 ## Նորություններ (in Armenian)
