@@ -283,7 +283,7 @@ export const items: NewsItem[] = [
   {
     slug: "was-halloween-in-oesterreich-kostet",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-09-08T22:51:25+04:00",
+    updatedAt: "2026-10-04T06:43:34+04:00",
     site: "vien",
     image: "/covers/was-halloween-in-oesterreich-kostet.jpg",
     imageAlt: "Ein einzelner hoher Stapel roter Münzscheiben auf cremefarbenem Grund, rechts daneben leere Fläche",
@@ -294,7 +294,7 @@ export const items: NewsItem[] = [
     cardTitle: "90 Millionen für eine Nacht",
     titleSeo: "Halloween in Österreich: 90 Millionen Euro",
     summary:
-      "Der Handelsverband hat zuletzt 74 Euro pro Kopf gemessen, nach 59 im Jahr davor. Am häufigsten im Einkaufskorb: Süßigkeiten, Kürbisse, Snacks — Kostüme kommen erst an fünfter Stelle.",
+      "Wer in Wien nach Halloween-Veranstaltungen sucht, findet eine kurze Liste, und der Handel liefert die Erklärung: zuletzt 74 Euro pro Kopf, nach 59 im Jahr davor, vor allem für Süßigkeiten, Kürbisse und Snacks. Kostüme kommen erst an fünfter Stelle.",
     date: "2026-09-08",
     category: "Halloween",
     source: {

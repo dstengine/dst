@@ -349,7 +349,7 @@ export const items: EventItem[] = [
   {
     slug: "vienna-halloween-run-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-09-12T17:35:10+04:00",
+    updatedAt: "2026-10-04T06:43:34+04:00",
     site: "vien",
     image: "/covers/vienna-halloween-run-2026.jpg",
     imageAlt: "Eine helle Laufbahn, die in die Bildmitte führt, gesäumt von Bäumen mit rotem Herbstlaub",
@@ -358,7 +358,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Vienna Halloween Run 2026",
     summary:
-      "Ein Laufabend in der Prater Hauptallee am 30. Oktober, ab 15:30 Uhr, in drei Distanzen von 600 Metern bis 5 Kilometern. Startgebühr 8 bis 40 Euro, verkleidet laufen ist ausdrücklich erwünscht.",
+      "Ein Laufabend in der Prater Hauptallee in Wien am 30. Oktober: Kinderläufe ab 16:40 Uhr, 2,5 Kilometer um 17:15 Uhr, 5 Kilometer um 18:30 und 19:30 Uhr. Bis 26. Oktober kostet der Start 17 bis 35 Euro, verkleidet laufen ist ausdrücklich erwünscht.",
     start: "2026-10-30",
     startTime: "15:30",
     utcOffset: "+01:00",
@@ -366,7 +366,7 @@ export const items: EventItem[] = [
     city: "Wien",
     organizer: "Fairsport Events e.U.",
     category: "Halloween",
-    tickets: { priceFrom: 8, priceTo: 40, currency: "EUR" },
+    tickets: { priceFrom: 17, priceTo: 40, currency: "EUR" },
     // Die Anmeldung läuft über Time Now Sports; die Veranstalterseite
     // verlinkt die Jahrgangsseite 2026 direkt.
     ticket: {
@@ -376,21 +376,30 @@ export const items: EventItem[] = [
     source: {
       name: "Vienna Halloween Run",
       url: "https://www.vienna-halloween-run.at/",
-      verifiedOn: "2026-09-08",
+      verifiedOn: "2026-10-04",
     },
     body: [
-      "Halloween in Wien findet zum größten Teil in Wohnungen und Lokalen statt. Der Vienna Halloween Run ist das seltene Gegenteil: eine Veranstaltung im Freien, mit Startnummer, Zeitnehmung und einem Zieleinlauf im Dunkeln. Die zweite Auflage läuft am <strong>30. Oktober 2026</strong> in der Prater Hauptallee.",
+      "Halloween in Wien findet zum größten Teil in Wohnungen und Lokalen statt. Der Vienna Halloween Run ist das seltene Gegenteil: eine Veranstaltung im Freien, mit Startnummer, Zeitnehmung und einem Zieleinlauf im Dunkeln. Die erste Auflage hatte laut Veranstalter mehr als 1.300 Teilnehmerinnen und Teilnehmer; die zweite läuft am <strong>30. Oktober 2026</strong> in der Prater Hauptallee.",
       "## Die Distanzen",
-      "<strong>Mini Monster</strong> über 600 bis 800 Meter für die Kleinsten, <strong>Little Fear</strong> über 2,5 Kilometer und <strong>Big Scare</strong> über 5 Kilometer. Die beiden längeren Bewerbe starten in Blöcken um <strong>18:30</strong> und <strong>19:30 Uhr</strong>, das Gelände öffnet um <strong>15:30 Uhr</strong>.",
+      "Das Gelände öffnet um <strong>15:30 Uhr</strong> mit Musik. Ab <strong>16:40 Uhr</strong> laufen die Kinder, nach Jahrgängen in drei Läufen, um <strong>17:15 Uhr</strong> startet der Little Fear Run über 2,5 Kilometer, und der Big Scare Run über 5 Kilometer geht in zwei Blöcken um <strong>18:30</strong> und <strong>19:30 Uhr</strong> ins Dunkle. Die genaue Reihenfolge steht im Programm unten.",
       "## Was es kostet",
-      "Die Startgebühr liegt je nach Bewerb und Anmeldezeitpunkt zwischen <strong>8 und 40 Euro</strong>.",
+      "Die Startgebühr steigt in Stufen, je näher der Lauf rückt. Bei Anmeldung bis <strong>26. Oktober</strong> kostet der Mini Monster Run <strong>18 Euro</strong>, der Little Fear Run <strong>30 Euro</strong> (für Jahrgang 2017 und jünger 17 Euro) und der Big Scare Run <strong>35 Euro</strong>. Wer sich erst am 29. oder 30. Oktober nachmeldet, zahlt 20, 35 (Kinder 22) beziehungsweise 40 Euro.",
+      "## Startnummern",
+      "Am liebsten holt man sie am <strong>Donnerstag, 29. Oktober</strong>, zwischen 15 und 19 Uhr bei Humanic in der Kärntner Straße 5 ab. Am Lauftag selbst gibt es sie im Zelt im Prater ab 15:30 Uhr bis eine halbe Stunde vor dem jeweiligen Start.",
       "## Der Ort",
       "Start und Ziel liegen am <strong>Antifaschismusplatz 1</strong> am Beginn der Hauptallee, wenige Minuten vom Praterstern.",
+    ],
+    programme: [
+      { heading: "16:40 Uhr — Mini Monster Run 1", text: "800 Meter, Jahrgänge 2017 und 2018." },
+      { heading: "16:50 Uhr — Mini Monster Run 2", text: "800 Meter, Jahrgänge 2019 und 2020." },
+      { heading: "17:00 Uhr — Mini Monster Run 3", text: "600 Meter, Jahrgänge 2021 bis 2023." },
+      { heading: "17:15 Uhr — Little Fear Run", text: "2,5 Kilometer, mit ermäßigtem Startgeld für Jahrgang 2017 und jünger." },
+      { heading: "18:30 und 19:30 Uhr — Big Scare Run", text: "5 Kilometer in zwei Startblöcken, beide bereits bei Dunkelheit." },
     ],
     faq: [
       {
         q: "Wann ist der Vienna Halloween Run 2026?",
-        a: "Am <strong>30. Oktober 2026</strong>. Das Gelände öffnet um 15:30 Uhr, die längeren Bewerbe starten um 18:30 und 19:30 Uhr.",
+        a: "Am <strong>30. Oktober 2026</strong>. Das Gelände öffnet um 15:30 Uhr, die Kinderläufe starten ab 16:40 Uhr, die 2,5 Kilometer um 17:15 Uhr und die 5 Kilometer um 18:30 und 19:30 Uhr.",
       },
       {
         q: "Welche Distanzen gibt es?",
@@ -398,7 +407,7 @@ export const items: EventItem[] = [
       },
       {
         q: "Was kostet die Teilnahme?",
-        a: "Zwischen <strong>8 und 40 Euro</strong>, abhängig vom Bewerb und davon, wie früh man sich anmeldet.",
+        a: "Bis 26. Oktober 18 Euro für den Mini Monster Run, 30 Euro für die 2,5 Kilometer (Kinder 17 Euro) und 35 Euro für die 5 Kilometer. Nachmeldungen am 29. und 30. Oktober kosten 20, 35 und 40 Euro.",
       },
       {
         q: "Wo startet der Lauf?",
