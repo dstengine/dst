@@ -249,7 +249,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-hampton-court-palace-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-09-23T01:09:31+04:00",
+    updatedAt: "2026-10-04T06:43:34+04:00",
     site: "lnd",
     image: "/covers/halloween-hampton-court-palace-2026.jpg",
     imageAlt: "A dark blue crenellated roofline with three towers of different heights rising from it, the tallest carrying a small red flag",
@@ -258,41 +258,83 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Halloween at Hampton Court Palace 2026",
     summary:
-      "Henry VIII's haunted palace does half term from 24 October to 1 November, included with admission — the largest Halloween in the London borough of Richmond upon Thames by some distance.",
+      "Henry VIII's haunted palace, 24 October to 1 November: ghosts and projections indoors, a pumpkin trail in the Wilderness and storytelling six times a day, all included with admission — in the London borough of Richmond upon Thames.",
     start: "2026-10-24",
     end: "2026-11-01",
+    startTime: "10:00",
+    endTime: "16:00",
     utcOffset: "+00:00",
     venue: "Hampton Court Palace",
+    geo: { name: "Hampton Court Palace", lat: 51.403614, lng: -0.339951 },
     city: "London",
     country: "United Kingdom",
     organizer: "Historic Royal Palaces",
     category: "Halloween",
+    tickets: { priceFrom: 30, priceTo: 33, currency: "GBP" },
+    ticket: {
+      url: "https://www.hrp.org.uk/hampton-court-palace/visit/tickets-and-prices/",
+      label: "Palace tickets",
+    },
     source: {
       name: "Historic Royal Palaces",
-      url: "https://www.hrp.org.uk/tower-of-london/whats-on/halloween-at-the-tower-of-london/",
-      verifiedOn: "2026-09-08",
+      url: "https://www.hrp.org.uk/hampton-court-palace/whats-on/halloween-at-hampton-court-palace/",
+      verifiedOn: "2026-10-04",
     },
     body: [
-      "The palace bills it as a spell-binding adventure at Henry VIII's haunted palace, and for once the marketing has the easier job: this is a building with a resident ghost story older than most of the borough.",
-      "## Halloween at Hampton Court 2026 dates and times",
-      "<strong>24 October to 1 November 2026</strong> at <strong>Hampton Court Palace</strong>, in the London Borough of Richmond upon Thames. <strong>Included in palace admission</strong>; members go free and no pre-booking is required.",
-      "## What Halloween at Hampton Court is",
-      "Historic Royal Palaces run the same half-term week at both of their London palaces, and the Tower's version — ghosts in theatrical costume, gathered at set times, designed to delight rather than to fright — is the shape of this one too. At Hampton Court the setting does much of the work: the Tudor kitchens and the Base Court after four o'clock in late October need very little help.",
+      "Historic Royal Palaces count Hampton Court among the most haunted palaces in the country, and for the nine days of October half term they stop being modest about it: projections, sound and costumed ghosts inside, pumpkins and scarecrows out in the Wilderness.",
+      "## Halloween at Hampton Court 2026: dates and times",
+      "<strong>Saturday 24 October to Sunday 1 November 2026</strong> at <strong>Hampton Court Palace</strong>, in the London Borough of Richmond upon Thames. The palace opens at <strong>10am</strong>. On the first Saturday it closes at 5.30pm, with last admission at 4.30pm; from <strong>Sunday 25 October</strong>, when the clocks go back, it closes at <strong>4pm</strong> and the last visitors are let in at <strong>3pm</strong>.",
+      "## What a ticket costs",
+      "There is no separate Halloween ticket: it is <strong>included in palace admission</strong>. Until 27 November an adult pays <strong>£30 on a weekday and £33 at the weekend</strong>; children aged 5 to 15 pay £15 and £16.50, under-fives go free, and seniors and full-time students pay £24.30 and £26.30. Historic Royal Palaces members go free and do not need to book. Households receiving Universal Credit, Pension Credit and several other benefits can buy £1 tickets for up to four people, online and in advance.",
+      "## Costumes are welcome — with rules",
+      "Hampton Court wants visitors in costume, which is the opposite of the Tower of London's rule for the same week. The conditions are short: family-friendly and inoffensive, <strong>no masks of any kind</strong>, no realistic weapons or sharp props, no fake blood or glitter, and nothing long enough to drag on the floor.",
+      "## How frightening it is",
+      "The palace says the experience is designed to be family-friendly and not overly frightening. It also says plainly what is in it: ghosts in full make-up and costume, darkness, loud noises, flashing lights and the occasional jump scare. The trail in the Wilderness is the part pitched at younger children.",
       "## Getting to Hampton Court Palace",
-      "Hampton Court station is opposite the gates, twice an hour from Waterloo, and the palace car park fills early in half term.",
+      "Trains leave London Waterloo every 30 minutes for Hampton Court, the end of the line; the station is a five-minute walk from the palace, across the bridge, in zone 6, and Oyster cards are accepted. Trains back to Waterloo leave at 23 and 53 minutes past the hour from Monday to Saturday, and at 05 and 35 past on Sundays. The entrance for walkers and cars is Trophy Gate, on the A308. The car park is small, cannot be booked and takes cards only, and dogs other than assistance dogs are not allowed in the palace or the gardens.",
+    ],
+    programme: [
+      {
+        heading: "The haunted palace",
+        text: "Projections, sound effects and spells through the historic rooms, and ghostly figures from the palace's past wandering the corridors — the palace's own hint is that William Shakespeare is among them. A trail map for 2026 is published as a PDF on the palace's Halloween page.",
+      },
+      {
+        heading: "Storytelling: The Return of Boo in Wren's Revenge!",
+        text: "Every day of half term in the King's Guard Chamber, in William III's apartments, at 11.30am, 12.15pm, 1pm, 1.45pm, 2.30pm and 3.15pm. Each session lasts about 15 minutes; the story is built around a mysterious happening at the palace.",
+      },
+      {
+        heading: "The Wilderness trail",
+        text: "Outdoors, an autumn trail of pumpkins, scarecrows and seasonal surprises, aimed at younger visitors. The café sells Halloween-themed treats.",
+      },
+      {
+        heading: "Halloween talks, 1 to 23 October",
+        text: "Before half term begins, the Palace Hosts give 15-minute talks on the origins of Halloween — witches, ghosts, supernatural creatures and the palace's own kings and queens — daily at 11.30am and 2.30pm, included in admission, with a different subject at each time. The palace is closed on 19 and 20 October.",
+      },
     ],
     faq: [
       {
         q: "When is Halloween at Hampton Court Palace in 2026?",
-        a: "24 October to 1 November 2026 — the same dates as the Tower of London's Halloween.",
+        a: "Saturday 24 October to Sunday 1 November 2026. The palace opens at 10am; it closes at 5.30pm on the 24th and at 4pm, with last admission at 3pm, from the 25th onwards.",
       },
       {
         q: "Does it cost extra?",
-        a: "No. Historic Royal Palaces say it is included in palace admission, members go free, and pre-booking is not required.",
+        a: "No. It is included in palace admission: £30 for an adult on a weekday and £33 at the weekend, £15 and £16.50 for children aged 5 to 15, and free for under-fives and members, who do not need to book.",
+      },
+      {
+        q: "Can you wear a costume to Hampton Court at Halloween?",
+        a: "Yes, and the palace encourages it — but no masks of any kind, no realistic weapons or sharp props, no fake blood or glitter, and nothing that drags on the ground.",
+      },
+      {
+        q: "Is it too scary for young children?",
+        a: "The palace describes it as family-friendly and not overly frightening, while warning of ghosts in full make-up, darkness, loud noises, flashing lights and occasional jump scares. The Wilderness trail outdoors is the part aimed at younger children.",
+      },
+      {
+        q: "What time is the storytelling?",
+        a: "Daily during half term in the King's Guard Chamber at 11.30am, 12.15pm, 1pm, 1.45pm, 2.30pm and 3.15pm, about 15 minutes each.",
       },
       {
         q: "Which borough is Hampton Court Palace in?",
-        a: "The London Borough of Richmond upon Thames, on the north bank of the Thames at East Molesey.",
+        a: "The London Borough of Richmond upon Thames, on the north bank of the Thames. Its postal address says East Molesey, Surrey, which is the town across the bridge where the station is.",
       },
     ],
     // Same half-term week: the three pages a reader choosing a day out
@@ -312,13 +354,13 @@ export const items: EventItem[] = [
       },
     ],
     expertise:
-      "One might, with respect, suggest going late rather than early. The palace is at its most obliging in the last two hours of the afternoon, when the coach parties have gone and the light in the courtyards has turned; the gardens are included and are half the reason to come, and they are emptiest then. The train from Waterloo takes a little over half an hour and puts you at the gate — which is a kinder arrangement than the car park, that being full by eleven throughout half term.",
+      "One might suggest the morning this year rather than the afternoon. From the Sunday the palace closes at four and admits no one after three, so the late-light visit that flatters Hampton Court in other months is simply not on offer during half term. Arrive at ten, see the haunted rooms first, and keep the Wilderness for after lunch, when the smaller members of the party will want to be out of doors in any case; the storyteller sits every forty-five minutes, so nobody need be hurried towards it. The train from Waterloo remains the civilised arrangement — the car park is modest, cannot be booked, and accepts nothing but a card.",
   },
 
   {
     slug: "halloween-eltham-palace-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-09-23T01:09:31+04:00",
+    updatedAt: "2026-10-04T06:43:34+04:00",
     site: "lnd",
     image: "/covers/halloween-eltham-palace-2026.jpg",
     imageAlt: "A large circular window divided into panes, lit pale, above a stepped pale block on a deep blue ground",
@@ -340,8 +382,8 @@ export const items: EventItem[] = [
     category: "Halloween",
     source: {
       name: "English Heritage",
-      url: "https://www.english-heritage.org.uk/visit/places/eltham-palace-and-gardens/",
-      verifiedOn: "2026-09-08",
+      url: "https://www.english-heritage.org.uk/visit/whats-on/eltham-palace-halloween-2026",
+      verifiedOn: "2026-10-04",
     },
     body: [
       "A medieval great hall with a 1930s art deco house grafted onto it, in Greenwich, throwing a pumpkin party for nine days.",
@@ -373,7 +415,7 @@ export const items: EventItem[] = [
         href: "/events/halloween-hampton-court-palace-2026/",
         eyebrow: "Richmond upon Thames",
         title: "Halloween at Hampton Court Palace",
-        text: "The same nine days, 24 October to 1 November, included with palace admission and no booking needed.",
+        text: "The same nine days, 24 October to 1 November: ghosts in the corridors, a pumpkin trail outside and costumes welcome, all included with palace admission.",
       },
       {
         href: "/events/day-of-the-dead-horniman-2026/",
@@ -459,7 +501,7 @@ export const items: EventItem[] = [
         href: "/events/halloween-hampton-court-palace-2026/",
         eyebrow: "Richmond upon Thames",
         title: "Halloween at Hampton Court Palace",
-        text: "The same nine days, 24 October to 1 November, included with palace admission and no booking needed.",
+        text: "The same nine days, 24 October to 1 November: ghosts in the corridors, a pumpkin trail outside and costumes welcome, all included with palace admission.",
       },
     ],
     expertise:
