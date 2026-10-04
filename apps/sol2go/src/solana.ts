@@ -160,6 +160,12 @@ async function fromSignature(signature: string): Promise<Lookup> {
   const withdraw = all.find((ix) => ix.parsed?.type === "withdraw");
   if (withdraw?.parsed?.info?.stakeAccount)
     return { kind: "withdrawn", signature, stakeAccount: withdraw.parsed.info.stakeAccount };
+  // Any other stake instruction — the delegation that opened the account,
+  // a split, a merge — still names the account, and its current state is
+  // the answer the reader came for. People paste the transaction they can
+  // find, which is not always the deactivation.
+  const other = all.find((ix) => ix.parsed?.info?.stakeAccount);
+  if (other?.parsed?.info?.stakeAccount) return fromAccount(other.parsed.info.stakeAccount);
   return { kind: "notStake", signature };
 }
 
