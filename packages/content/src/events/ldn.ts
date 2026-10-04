@@ -849,7 +849,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-at-kew-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-09-12T17:35:10+04:00",
+    updatedAt: "2026-10-04T09:38:27+04:00",
     site: "ldn",
     image: "/covers/halloween-at-kew-2026.jpg",
     imageAlt: "A dark mass of trees filling the left of the frame, a pale path curving away into it and one small red rectangle beside the path",
@@ -858,7 +858,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Halloween at Kew 2026",
     summary:
-      "A 1.5km illuminated trail through Kew Gardens after dark, 16 October to 1 November, with a new Dracula's Lair, a Cursed Tomb and a Monster Disco at the end of it.",
+      "A 1.5km illuminated trail through Kew Gardens in south-west London after dark, 16 October to 1 November, with a new Dracula's Lair, a Cursed Tomb and a Monster Disco at the end of it.",
     start: "2026-10-16",
     end: "2026-11-01",
     utcOffset: "+00:00",
@@ -981,7 +981,7 @@ export const items: EventItem[] = [
   {
     slug: "hyde-park-halloween-discovery-days-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-09-12T17:35:10+04:00",
+    updatedAt: "2026-10-04T09:38:27+04:00",
     site: "ldn",
     image: "/covers/hyde-park-halloween-discovery-days-2026.jpg",
     imageAlt: "Three carved pumpkins of different sizes standing on open ground, with bare trees behind them",
@@ -990,7 +990,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Discovery Days: Hair Raising Halloween 2026",
     summary:
-      "Three free days of bats, feely boxes and a spooky nature trail at the Hyde Park Learning Centre, 27 to 29 October, 11am to 3.30pm.",
+      "Three free half-term days of bats, feely boxes and a spooky nature trail in the middle of London, at the Hyde Park Learning Centre, 27 to 29 October, 11am to 3.30pm.",
     start: "2026-10-27",
     end: "2026-10-29",
     startTime: "11:00",
@@ -1032,6 +1032,77 @@ export const items: EventItem[] = [
     ],
     expertise:
       "This is the half-term afternoon that costs nothing, which is exactly why it queues — the storytelling slots at twelve, one and two are the busiest half-hours of each day. Arriving at eleven, or after two, is the difference between doing everything and doing one thing. The Lookout is a walk in from every gate, so allow for it: this is central London geographically and a fifteen-minute walk in practice.",
+  },
+
+  {
+    slug: "winnie-the-pooh-at-london-zoo-2026",
+    createdAt: "2026-10-04T09:37:30+04:00",
+    updatedAt: "2026-10-04T09:37:30+04:00",
+    site: "ldn",
+    image: "/covers/winnie-the-pooh-at-london-zoo-2026.jpg",
+    imageAlt: "A lidded honey pot sitting on an open book on a small grassy mound, a round tree beside it and a second book trailing a long page away into the distance",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Winnie-the-Pooh at London Zoo 2026",
+    summary:
+      "A new Pooh and Eeyore story laid out as a trail across London Zoo, 2 October to 1 November, included in zoo entry from £27.70 — the zoo's gentle alternative to Halloween this half term.",
+    start: "2026-10-02",
+    end: "2026-11-01",
+    startTime: "10:00",
+    utcOffset: "+01:00",
+    venue: "London Zoo",
+    city: "London",
+    country: "United Kingdom",
+    geo: {
+      name: "London Zoo",
+      lat: 51.535652,
+      lng: -0.155915,
+    },
+    organizer: "London Zoo",
+    category: "Family",
+    tickets: { priceFrom: 27.7, priceTo: 40, currency: "GBP" },
+    source: {
+      name: "London Zoo",
+      url: "https://www.londonzoo.org/plan-your-visit/events/winnie-the-pooh-london-zoo",
+      verifiedOn: "2026-10-04",
+    },
+    ticket: { url: "https://www.londonzoo.org/plan-your-visit/london-zoo-tickets", label: "Zoo tickets" },
+    body: [
+      "For October 2026 London Zoo has set a new Winnie-the-Pooh story out along its paths: illustrated pages, placed among the animals and landmarks, that follow Pooh and Eeyore through one night at the zoo after Christopher Robin leaves them behind. It is the zoo's offer for half term — in its own words, a chance to swap spooky scares for a heart-warming autumn adventure — and it comes with an ordinary zoo ticket.",
+      "## Dates and opening times",
+      "<strong>Friday 2 October to Sunday 1 November 2026</strong>, included in zoo entry. The zoo opens at <strong>10am</strong>. Until 23 October it closes at <strong>5pm</strong>, with last entry at 4pm; from <strong>Saturday 24 October</strong> it closes an hour earlier, at <strong>4pm</strong>, with last entry at 3pm.",
+      "## The story on the trail",
+      "The tale comes from <em>A Little Boy and His Bear</em>, a new story inspired by A.A. Milne and E.H. Shepard, with illustrations by Andrew Grey. Pooh and Eeyore are left behind by accident and spend a night finding their way round London Zoo, and the pages are set out so that walking the trail is reading the book.",
+      "## Why Pooh, and why here",
+      "Two anniversaries share the trail: a hundred years of Winnie-the-Pooh, and two hundred of ZSL, the conservation charity that runs the zoo. The link is older than either. London Zoo was home to <strong>Winnipeg</strong>, the real bear who inspired Milne's stories more than a century ago.",
+      "## Tickets",
+      "There is no separate Pooh ticket. Adult entry booked online before 10am on the day costs <strong>£27.70</strong> on an off-peak day and up to £34.50 at peak, or £30.50 to £38 with the zoo's 10% voluntary donation added. Children aged 3 to 15 pay £19.40 to £24.10, or £21.35 to £26.60 with the donation, and under-3s go free. Bought at the gate, or online from 10am on the day, an adult ticket is £29.50 to £36.30, or £32.50 to £40 with the donation. Seniors, students and disabled adults pay the concession rate, and one carer per disabled visitor gets in free on request. There is no VAT on zoo admission.",
+      "## Getting there",
+      "London Zoo is on the Outer Circle of Regent's Park, London NW1 4RY. <strong>Camden Town</strong> on the Northern line is the nearest Tube, a 16-minute walk; the zoo itself suggests <strong>Chalk Farm</strong>, two minutes further, because Camden Town gets very busy at weekends. From Baker Street, the 274 bus runs every 12 minutes. Bags are checked on the way in, and under-16s must come with an adult.",
+      "## If it is Halloween you are after",
+      "ZSL's Halloween this year is at its other zoo: <strong>Boo at the Zoo</strong> is at Whipsnade, in Bedfordshire, for October half term. In London, <a href=\"/events/halloween-at-kew-2026/\" title=\"Halloween at Kew 2026\">Halloween at Kew</a> lights a trail through the gardens after dark from 16 October, <a href=\"/events/halloween-tower-of-london-2026/\" title=\"Halloween at the Tower of London 2026\">the Tower of London</a> brings out its ghosts by day from 24 October, and the Royal Parks' free <a href=\"/events/hyde-park-halloween-discovery-days-2026/\" title=\"Discovery Days: Hair Raising Halloween 2026\">Hair Raising Halloween</a> runs in Hyde Park from 27 to 29 October.",
+    ],
+    faq: [
+      {
+        q: "Is London Zoo doing Halloween in 2026?",
+        a: "Not as such. London Zoo's October event is the Winnie-the-Pooh storybook trail, 2 October to 1 November, which it offers as a gentler alternative for half term. ZSL's Boo at the Zoo is at Whipsnade Zoo.",
+      },
+      {
+        q: "Does the Winnie-the-Pooh trail cost extra?",
+        a: "No. It is included in London Zoo entry; adults pay from £27.70 when they book online before 10am on the day.",
+      },
+      {
+        q: "What time does London Zoo close in October 2026?",
+        a: "At 5pm until 23 October, with last entry at 4pm. From 24 October it closes at 4pm, with last entry at 3pm. It opens at 10am throughout.",
+      },
+      {
+        q: "Why is Winnie-the-Pooh at London Zoo?",
+        a: "London Zoo was home to Winnipeg, the real bear who inspired A.A. Milne's stories, and the trail marks a hundred years of Winnie-the-Pooh alongside ZSL's two-hundredth anniversary.",
+      },
+    ],
+    expertise:
+      "The hour London Zoo loses on 24 October is the detail to plan round. From then on last entry is at three, which is when a half-term family that had a slow morning tends to arrive — and the online price goes up at ten on the day itself. So the cheapest way in is also the one with the most daylight: book the evening before and be at the gate for ten. A trail laid out as a book reads best in order, which is another argument for having the whole afternoon rather than its last hour.",
   },
 
   {

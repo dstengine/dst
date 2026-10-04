@@ -101,7 +101,7 @@ export function sections(items: FeedItem[]): Section[] {
         return {
           title: "Halloween in central London 2026: what is on",
           description:
-            "Kew after dark, the Tower over half term and a free afternoon in Hyde Park, from 16 October to 1 November — each date as the organiser published it.",
+            "Halloween in London: Kew after dark, the Tower over half term and a free afternoon in Hyde Park, from 16 October to 1 November — each date as the organiser published it.",
           h1: "Halloween in central London",
           lede: "An illuminated trail through Kew, nine days of it at the Tower and three free afternoons in Hyde Park — with the dates the organisers themselves published, not the ones the listings sites repeat.",
           headings: {
