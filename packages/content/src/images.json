@@ -8207,6 +8207,54 @@
           "/covers/venice-opens-the-autumn-with-a-british-film-1536.webp"
         ]
       ]
+    },
+    "/covers/winnie-the-pooh-at-london-zoo-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/winnie-the-pooh-at-london-zoo-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/winnie-the-pooh-at-london-zoo-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/winnie-the-pooh-at-london-zoo-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/winnie-the-pooh-at-london-zoo-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/winnie-the-pooh-at-london-zoo-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/winnie-the-pooh-at-london-zoo-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/winnie-the-pooh-at-london-zoo-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/winnie-the-pooh-at-london-zoo-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/winnie-the-pooh-at-london-zoo-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/winnie-the-pooh-at-london-zoo-2026-1536.webp"
+        ]
+      ]
     }
   },
   "llc.dst.llc": {
@@ -20068,6 +20116,54 @@
         ]
       ]
     },
+    "/covers/halloween-in-sleepy-hollow-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/halloween-in-sleepy-hollow-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/halloween-in-sleepy-hollow-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/halloween-in-sleepy-hollow-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/halloween-in-sleepy-hollow-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/halloween-in-sleepy-hollow-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/halloween-in-sleepy-hollow-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/halloween-in-sleepy-hollow-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/halloween-in-sleepy-hollow-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/halloween-in-sleepy-hollow-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/halloween-in-sleepy-hollow-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/hubble-found-a-decagon-in-its-own-old-pictures.jpg": {
       "width": 1536,
       "height": 864,
@@ -20593,6 +20689,54 @@
         [
           1536,
           "/covers/new-york-film-festival-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/no-pumpkin-flotilla-on-the-harlem-meer-this-year.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/no-pumpkin-flotilla-on-the-harlem-meer-this-year-480.avif"
+        ],
+        [
+          768,
+          "/covers/no-pumpkin-flotilla-on-the-harlem-meer-this-year-768.avif"
+        ],
+        [
+          1024,
+          "/covers/no-pumpkin-flotilla-on-the-harlem-meer-this-year-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/no-pumpkin-flotilla-on-the-harlem-meer-this-year-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/no-pumpkin-flotilla-on-the-harlem-meer-this-year-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/no-pumpkin-flotilla-on-the-harlem-meer-this-year-480.webp"
+        ],
+        [
+          768,
+          "/covers/no-pumpkin-flotilla-on-the-harlem-meer-this-year-768.webp"
+        ],
+        [
+          1024,
+          "/covers/no-pumpkin-flotilla-on-the-harlem-meer-this-year-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/no-pumpkin-flotilla-on-the-harlem-meer-this-year-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/no-pumpkin-flotilla-on-the-harlem-meer-this-year-1536.webp"
         ]
       ]
     },
