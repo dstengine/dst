@@ -30,6 +30,16 @@ const SITES = {
   lnd: { host: "lnd.lol", news: "news", events: "events", newsLabel: "News", eventsLabel: "Events" },
   cmx: { host: "cmx.lol", news: "noticias", events: "eventos", newsLabel: "Noticias", eventsLabel: "Eventos" },
   mxo: { host: "mxo.lol", news: "noticias", events: "eventos", newsLabel: "Noticias", eventsLabel: "Eventos" },
+  // Two languages: every entry is listed once per language, at its own
+  // address and in its own words. English first because the head is in
+  // English — it is the language most readers of this file read.
+  tick: {
+    host: "tick.lnd.lol", news: "news", events: "events",
+    langs: [
+      { lang: "en", prefix: "en/", newsLabel: "News", eventsLabel: "Events" },
+      { lang: "hy", prefix: "", newsLabel: "Նորություններ (in Armenian)", eventsLabel: "Միջոցառումներ (in Armenian)" },
+    ],
+  },
 };
 
 // The entries come from the content modules themselves, imported: Node
@@ -40,6 +50,7 @@ const SITES = {
 // saying "edici\u00f3n". A reader of the source is not a reader of the data.
 const { eventsBySite } = await import("../packages/content/src/events/index.ts");
 const { newsBySite } = await import("../packages/content/src/news/index.ts");
+const { localize } = await import("../packages/content/src/i18n.ts");
 
 // No body, no detail page — the same rule the routes use.
 const entries = (list) =>
@@ -83,13 +94,18 @@ for (const app of wanted) {
     process.exitCode = 1;
     continue;
   }
-  const news = entries(newsBySite(app));
-  const events = entries(eventsBySite(app));
-  const text =
-    readFileSync(head, "utf8").trimEnd() +
-    "\n" +
-    section(site.eventsLabel, site.events, site.host, events) +
-    section(site.newsLabel, site.news, site.host, news);
+  const langs = site.langs ?? [{ lang: undefined, prefix: "", newsLabel: site.newsLabel, eventsLabel: site.eventsLabel }];
+  const inLang = (list, lang) => (lang ? list.map((i) => localize(i, lang)) : list);
+  let news = [];
+  let events = [];
+  let text = readFileSync(head, "utf8").trimEnd() + "\n";
+  for (const { lang, prefix, newsLabel, eventsLabel } of langs) {
+    news = entries(inLang(newsBySite(app), lang));
+    events = entries(inLang(eventsBySite(app), lang));
+    text +=
+      section(eventsLabel, `${prefix}${site.events}`, site.host, events) +
+      section(newsLabel, `${prefix}${site.news}`, site.host, news);
+  }
   // Written only when it differs. The file lives in public/, which the
   // build copies verbatim, and tools/pipeline.mjs decides what to rebuild
   // from what has changed there — rewriting an identical file every run

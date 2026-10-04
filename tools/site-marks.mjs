@@ -23,6 +23,7 @@ const SITES = {
   nyc42: { label: "42" },
   sol2go: { label: "sol" },
   vien: { label: "vien" },
+  tick: { label: "tick" },
   ldn: { label: "ldn" },
   lnd: { label: "lnd" },
   cmx: { label: "cmx" },

@@ -30,12 +30,15 @@ interface Props {
   allTitle?: string;
   /** Names the row for a screen reader — "Events by country and kind". */
   label: string;
+  /** Where the sections hang, for a site whose second language lives under
+      a prefix ("/en/"). The root everywhere else. */
+  base?: string;
 }
-const { sections, current, allHref, allLabel = "All", allTitle, label } = Astro.props;
+const { sections, current, allHref, allLabel = "All", allTitle, label, base = "/" } = Astro.props;
 
 const items = [
   ...(allHref ? [{ href: allHref, label: allLabel, title: allTitle ?? allLabel }] : []),
-  ...sections.map((s) => ({ href: `/${s.slug}/`, label: s.label, title: s.h1 })),
+  ...sections.map((s) => ({ href: `${base}${s.slug}/`, label: s.label, title: s.h1 })),
 ];
 ---
 {sections.length > 0 && <ChipNav items={items} current={current} label={label} />}

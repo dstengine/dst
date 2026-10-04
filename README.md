@@ -53,6 +53,7 @@ takes the whole group or none of it.
 | `mxo` | mxo.lol | La agenda de México | Feed |
 | `sol2go` | sol2go.lol | Solana meetups, hackathons and the crypto calendar | Feed |
 | `vien` | vien.lol | Was in Wien los ist — Wien und Österreich, auf Deutsch | Feed |
+| `tick` | tick.lnd.lol | Ինչ կա Երևանում — Yerevan events, Armenian at `/`, English at `/en/` | Feed |
 
 Two things the table does not show and that the code enforces:
 

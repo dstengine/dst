@@ -246,3 +246,31 @@ describe("programme and audience", () => {
     }
   });
 });
+
+describe("translations", () => {
+  // A translation carries words and nothing else — see TRANSLATABLE in
+  // ../src/types.ts. A price or a date written into it is a second copy of
+  // a fact, and the day the entry's own copy is corrected the English page
+  // goes on saying the old one.
+  test("a translation carries only translatable fields, and a body where the entry has one", async () => {
+    const { TRANSLATABLE } = await import("../src/types.ts");
+    const allowed = new Set(TRANSLATABLE);
+    for (const { label, all } of kinds) {
+      for (const item of all) {
+        for (const [lang, words] of Object.entries(item.i18n ?? {})) {
+          const where = `${label}/${item.site}/${item.slug} [${lang}]`;
+          for (const key of Object.keys(words)) {
+            assert.ok(allowed.has(key), `${where}: "${key}" is a fact, not a word — keep it on the entry`);
+          }
+          // Every word the entry has, the translation has too. A field left
+          // out is not left blank: localize() falls back to the entry's own,
+          // and the English page prints an Armenian headline in its <title>.
+          // A name that reads the same in both languages is written twice.
+          const untranslated = TRANSLATABLE.filter((key) => item[key] !== undefined && words[key] === undefined);
+          assert.deepEqual(untranslated, [], `${where}: no translation for ${untranslated.join(", ")}`);
+          assert.ok(words.title?.trim() && words.summary?.trim(), `${where}: a translation needs its own title and summary`);
+        }
+      }
+    }
+  });
+});

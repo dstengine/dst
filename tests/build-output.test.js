@@ -30,6 +30,7 @@ const SITES = [
   { app: "nyc42", host: "nyc42.lol" },
   { app: "sol2go", host: "sol2go.lol" },
   { app: "vien", host: "vien.lol" },
+  { app: "tick", host: "tick.lnd.lol" },
   { app: "ldn", host: "ldn.lol" },
   { app: "lnd", host: "lnd.lol" },
   { app: "cmx", host: "cmx.lol" },
@@ -688,15 +689,18 @@ describe("llms.txt", () => {
   // in practice means running `node tools/llms.mjs` after editing content.
   test("every article and event page appears in its site's llms.txt", () => {
     const absent = [];
-    for (const { app } of SITES) {
+    for (const { app, host } of SITES) {
       const file = path.join(REPO, "apps", app, "dist", "llms.txt");
       if (!existsSync(file)) continue;
       if (!existsSync(path.join(REPO, "apps", app, "llms.head.md"))) continue;
       const text = readFileSync(file, "utf8");
+      // A language prefix in front is the same page in another language,
+      // and it owes its own line — matched on the whole address, since
+      // "/events/x/" is also the tail of "/en/events/x/".
       const feeds = pages.filter(
-        (p) => p.app === app && /^\/(news|events|noticias|eventos)\/[^/]+\/$/.test(p.url),
+        (p) => p.app === app && /^\/(?:[a-z]{2}\/)?(news|events|noticias|eventos)\/[^/]+\/$/.test(p.url),
       );
-      for (const page of feeds) if (!text.includes(page.url)) absent.push(`${app}: ${page.url}`);
+      for (const page of feeds) if (!text.includes(`${host}${page.url})`)) absent.push(`${app}: ${page.url}`);
     }
     assert.deepEqual(
       absent,
@@ -763,7 +767,7 @@ describe("event calendars", () => {
     dst: "events", llc: "events", visas: "events", riviera: "events", mbr: "events",
     palmcentral: "events", eco: "events", fwf: "events", nyc42: "events", ldn: "events",
     lnd: "events", sol2go: "events", cmx: "eventos", mxo: "eventos", vien: "veranstaltungen",
-    musical: "events",
+    musical: "events", tick: "events",
   };
   // Where the calendar is offered. Everywhere that is the events index, whose
   // address is the calendar's name; on musical the runs are the front page and
@@ -856,7 +860,7 @@ describe("shipped SVG", () => {
 describe("news feeds", () => {
   const FEEDS = [
     "cmx", "dst", "eco", "fwf", "ldn", "llc", "lnd", "mbr", "musical", "mxo",
-    "nyc42", "palmcentral", "riviera", "sol2go", "vien", "visas",
+    "nyc42", "palmcentral", "riviera", "sol2go", "tick", "vien", "visas",
   ];
   const read = (app) => {
     const file = path.join(REPO, "apps", app, "dist", "rss.xml");
@@ -1445,6 +1449,8 @@ describe("how much of each site is the template", () => {
   // where a site with a handful of entries sits: with few pages, the shared
   // chrome is a large share of every one of them, and the number falls on its
   // own as content arrives. It is a starting line, not a licence.
+  // tick launched on 4 October 2026 from the same line, and in two languages
+  // the chrome is a larger share still: every page has an English twin.
   // mbr went from 16 to 17 on 7 September 2026, when /transport/ earned its
   // page: a district site with seven feed items gains a page whose body is
   // three cards it already carries, and the shared chrome is a larger share
@@ -1457,7 +1463,7 @@ describe("how much of each site is the template", () => {
   const CEILING = {
     dst: 25, llc: 16, visas: 19, riviera: 15, mbr: 17, palmcentral: 24,
     eco: 30, fwf: 20, musical: 35, nyc42: 27, ldn: 25, lnd: 25, cmx: 32, mxo: 25,
-    sol2go: 30, vien: 30,
+    sol2go: 30, vien: 30, tick: 30,
   };
 
   test("no site is more template than the ceiling it recorded", async () => {

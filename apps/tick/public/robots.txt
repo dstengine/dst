@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Outbound redirect hops. These exist to keep third-party destinations off
+# our link graph — there is nothing here worth crawling or indexing.
+Disallow: /go/
+
+# The LiveInternet counter on its own address. It carries noindex itself and
+# is in no sitemap; there is nothing on it but the counter, and we hit it
+# deliberately rather than expecting anyone to find it.
+Disallow: /li/
+
+Sitemap: https://tick.lnd.lol/sitemap-index.xml

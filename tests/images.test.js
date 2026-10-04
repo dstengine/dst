@@ -27,6 +27,7 @@ const SITES = [
   { app: "nyc42", host: "nyc42.lol" },
   { app: "sol2go", host: "sol2go.lol" },
   { app: "vien", host: "vien.lol" },
+  { app: "tick", host: "tick.lnd.lol" },
   { app: "ldn", host: "ldn.lol" },
   { app: "lnd", host: "lnd.lol" },
   { app: "cmx", host: "cmx.lol" },

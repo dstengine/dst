@@ -26,6 +26,12 @@
 // hackathon listed because people who build across chains keep both dates
 // in one diary — and the answer there is never to write the word in anyway.
 //
+// A site in more than one language declares one keyword per language —
+// `keywords: { hy: "Երևան", en: "Yerevan" }` — and each page is held to the
+// one its own <html lang> names. Its second language lives under a prefix,
+// /en/, which is not a level of depth: /en/concerts/ is a section page in
+// the same sense /concerts/ is.
+//
 // Reads dist/, so it needs a build first. noindex pages and the /go/ hops
 // are skipped — nothing that is not in the index can rank.
 import fs from "node:fs";
@@ -65,7 +71,11 @@ for (const app of fs.readdirSync(APPS).sort()) {
   if (only.size && !only.has(app)) continue;
   const configPath = path.join(APPS, app, "src/site.config.ts");
   if (!fs.existsSync(configPath)) continue;
-  const keyword = fs.readFileSync(configPath, "utf8").match(/keyword:\s*["'`]([^"'`]+)["'`]/)?.[1];
+  const config = fs.readFileSync(configPath, "utf8");
+  const perLang = Object.fromEntries(
+    [...(config.match(/keywords\s*[:=]\s*\{([^}]*)\}/)?.[1] ?? "").matchAll(/(\w+):\s*["'`]([^"'`]+)["'`]/g)].map((m) => [m[1], m[2]]),
+  );
+  const keyword = Object.values(perLang)[0] ?? config.match(/keyword:\s*["'`]([^"'`]+)["'`]/)?.[1];
   if (!keyword) {
     undeclared.push(app);
     continue;
@@ -75,7 +85,7 @@ for (const app of fs.readdirSync(APPS).sort()) {
     console.log(`${app}: no dist — build first`);
     continue;
   }
-  const has = (s) => s.toLowerCase().includes(keyword.toLowerCase());
+  const langs = Object.keys(perLang);
   const ignore = IGNORE[app] ?? {};
   const rows = [];
   for (const file of walk(dist)) {
@@ -84,9 +94,14 @@ for (const app of fs.readdirSync(APPS).sort()) {
     const html = fs.readFileSync(file, "utf8");
     if (/<meta[^>]+name=["']robots["'][^>]+noindex/i.test(html)) continue;
     if (ignore[url]) continue;
+    const pageLang = html.match(/<html[^>]*\slang="([a-z]{2})/i)?.[1];
+    const word = perLang[pageLang] ?? keyword;
+    const has = (s) => s.toLowerCase().includes(word.toLowerCase());
     // A page we named ourselves, as against an article named after the thing
     // it is about: sections are the short paths, one level deep.
-    const isSection = url.split("/").filter(Boolean).length < 2;
+    const segments = url.split("/").filter(Boolean);
+    if (langs.includes(segments[0])) segments.shift();
+    const isSection = segments.length < 2;
     const miss = [];
     if (!has(field(html, /<title>([\s\S]*?)<\/title>/i))) miss.push("title");
     if (isSection && !has(field(html, /<h1[^>]*>([\s\S]*?)<\/h1>/i))) miss.push("h1");
@@ -94,7 +109,8 @@ for (const app of fs.readdirSync(APPS).sort()) {
     if (miss.length) rows.push({ url, miss });
   }
   findings += rows.length;
-  console.log(`\n${app} — "${keyword}" — ${rows.length} of ${walk(dist).length} pages missing it somewhere`);
+  const said = langs.length ? langs.map((l) => `${l}: "${perLang[l]}"`).join(", ") : `"${keyword}"`;
+  console.log(`\n${app} — ${said} — ${rows.length} of ${walk(dist).length} pages missing it somewhere`);
   for (const r of rows) console.log(`   ${r.miss.join(", ").padEnd(28)} ${r.url}`);
 }
 

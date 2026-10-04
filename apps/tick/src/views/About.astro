@@ -1,0 +1,84 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHero from "@dst/ui/PageHero.astro";
+import { about, type Lang } from "../content";
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const page = about[lang];
+
+const TEXT = {
+  hy: {
+    whatHeading: "Ինչ է սա",
+    what: "<strong>Tick</strong>-ը գրում է Երևանի և Հայաստանի մասին՝ համերգասրահներ և թատրոններ, փառատոներ և ցուցահանդեսներ, և այն, ինչ բացվում կամ փոխվում է քաղաքում։ Ինչ կա, ինչ է փոխվել և երբ։ Կայքը գրվում է հայերեն, և ամեն էջ ունի նաև անգլերեն տարբերակ։",
+    rulesHeading: "Կանոնները",
+    rules: [
+      ["Ամեն տվյալ նշում է իր աղբյուրը և այն օրը, երբ վերջին անգամ ստուգել ենք", "Ոչ թե «անընդհատ թարմացվող»։ Աղբյուր և ամսաթիվ՝ հենց գրառման մեջ, որպեսզի երևա, թե որքան թարմ է այն, ինչ կարդում եք։"],
+      ["Ոչ մի միջոցառում առանց հաստատված ամսաթվի", "Ամսաթվերը գալիս են կազմակերպիչներից և տոմսարկղերից, ոչ թե մեկ այլ օրացույցից։ Այն, ինչ չենք կարողացել հաստատել, սպասում է, մինչև կարողանանք։"],
+      ["Ինչ կա, ոչ թե ինչ սխալ գնաց", "Այս կայքը գրում է այն մասին, ինչ տեղի է ունենում, ինչ է բացվում և ինչ է փոխվել դեպի լավը։ Ոչ քաղաքականություն, ոչ քրեական դեպքեր, ոչ ողբերգություններ, ոչ վեճեր։"],
+      ["Ընտրում ենք և ասում՝ ինչու", "Օրացույցն իր տեղը վաստակում է ընտրությամբ։ Լավագույնն ընդգծելն աշխատանք է, ոչ թե զիջում, իսկ անվանի վայրը վարկաբեկելն այս կայքի նպատակը չէ։"],
+      ["Էջը հայտնվում է, երբ դրա վրա դնելու բան կա", "Ոչ մի դատարկ բաժին, որ սպասում է բովանդակության, և ոչ մի ցանկ, որ միայն լի է երևում։ Բաժինը հայտնվում է, հենց որ դրանում ինչ-որ բան կա։"],
+    ],
+  },
+  en: {
+    whatHeading: "What this is",
+    what: "<strong>Tick</strong> covers Yerevan and Armenia — concert halls and theatres, festivals and exhibitions, and whatever opens or changes in the city. What is on, what has changed, and when. It is written in Armenian first, and every page has an English twin.",
+    rulesHeading: "The rules",
+    rules: [
+      ["Every fact names its source and the day we last looked", "Not “constantly updated”. A source and a date, right there in the entry, so one can see how fresh the thing one is reading actually is."],
+      ["No event without a confirmed date", "Dates come from the organisers and the box offices, not from somebody else's calendar. What we could not confirm waits until we can."],
+      ["What is on, not what went wrong", "This site covers what is happening, what is opening and what has changed for the better. No politics, no crime, no tragedy and no quarrels — those belong to a paper that can follow the story."],
+      ["We choose, and say why", "A calendar earns its place by what it leaves out. Picking out the best of something is the job, not a compromise; running down a named venue is not what this site is for."],
+      ["A page appears when there is something to put on it", "No empty sections waiting for content, and no directory padded to look full. A section appears the moment there is something in it."],
+    ],
+  },
+}[lang];
+---
+<Layout lang={lang} prose title={page.title} description={page.description}>
+  <PageHero title={page.h1}>
+    <p class="lede">{page.lede}</p>
+  </PageHero>
+
+  <section class="container">
+    <h2>{TEXT.whatHeading}</h2>
+    <p set:html={TEXT.what} />
+  </section>
+
+  <section class="container">
+    <h2>{TEXT.rulesHeading}</h2>
+    <ol class="rules">
+      {TEXT.rules.map(([h, p]) => (
+        <li>
+          <h3>{h}</h3>
+          <p>{p}</p>
+        </li>
+      ))}
+    </ol>
+  </section>
+</Layout>
+
+<style>
+  .rules {
+    margin: var(--space-3) 0 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: rule;
+    display: grid;
+    gap: var(--space-3);
+  }
+  .rules li {
+    counter-increment: rule;
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 0 var(--space-2);
+    align-items: baseline;
+  }
+  .rules li::before {
+    content: counter(rule);
+    color: var(--accent);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+  .rules h3 { margin: 0; font-size: var(--step-0); }
+  .rules p { margin: 0.25em 0 0; grid-column: 2; max-width: 62ch; color: var(--ink-muted); }
+</style>

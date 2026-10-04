@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SectionNav from "@dst/ui/SectionNav.astro";
+import NewsList from "@dst/ui/NewsList.astro";
+import { news, type Lang } from "../content";
+import { LOCALE, newsFor, newsBase, prefix } from "../i18n";
+import { allSections, NAV } from "../sections";
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const page = news[lang];
+const p = prefix(lang);
+const items = newsFor(lang);
+// Thin until it holds three: it keeps `follow` either way, so the articles
+// stay reachable.
+const thin = items.length < 3;
+---
+<Layout lang={lang} title={page.title} description={page.description} noindex={thin}>
+  <section class="container hero">
+    <h1>{page.h1}</h1>
+    <p class="lede">{page.lede}</p>
+  </section>
+  <section class="container">
+    <SectionNav sections={allSections[lang]} allHref={p} base={p} {...NAV[lang]} />
+    <NewsList locale={LOCALE[lang]} items={items} newsBase={newsBase(lang)} />
+  </section>
+</Layout>

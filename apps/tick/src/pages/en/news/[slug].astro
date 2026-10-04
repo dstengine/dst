@@ -1,0 +1,9 @@
+---
+import NewsEntry from "../../../views/NewsEntry.astro";
+import { newsPaths } from "../../../i18n";
+
+export function getStaticPaths() {
+  return newsPaths("en");
+}
+---
+<NewsEntry lang="en" item={Astro.props.item} more={Astro.props.more} />

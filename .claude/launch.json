@@ -169,6 +169,19 @@
         "4347"
       ],
       "port": 4347
+    },
+    {
+      "name": "tick",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "astro",
+        "dev",
+        "--root",
+        "apps/tick",
+        "--port",
+        "4348"
+      ],
+      "port": 4348
     }
   ]
 }

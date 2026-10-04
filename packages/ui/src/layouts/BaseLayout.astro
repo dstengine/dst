@@ -113,13 +113,27 @@ interface Props {
       feed by reading the site URL, and a feed no tool can find from the page
       is a feed nobody subscribes to. Absent on a site that publishes none. */
   feedTitle?: string;
+  /** Where that feed is. A site in two languages publishes one per
+      language, and the page has to point at the one written in its own. */
+  feedHref?: string;
+  /** This page in every language the site publishes it in, its own
+      included, in the site's order — the first is the one a reader whose
+      language is none of them is sent to (`x-default`). Each becomes an
+      hreflang link in the head, which is how a search engine knows the
+      Armenian page and the English one are the same page rather than two
+      pages competing for one query; and every one but the current page's
+      becomes a link in the header, which is how a reader knows. */
+  alternates?: { lang: string; href: string; label: string; title: string }[];
+  /** This language's front page — where the wordmark goes and where the
+      breadcrumb starts. "/" on every one-language site. */
+  homeHref?: string;
   /** A tip jar in the footer, with its own heading and one row per chain.
       Opt-in: a site that declares nothing here renders nothing, which is
       every site but the one that asked for it. */
   donate?: { heading: string; addresses: { chain: string; address: string }[] };
 }
 
-const { title, titleSuffix, keyword, description, siteName, nav, crumbLabels, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [], footerSiteName = siteName, homeTitle, instagram, image, footerSites = [], networkFooter = true, publisher, defaultTheme, lang = "en", feedTitle, noindex = false, prose = false, donate } = Astro.props;
+const { title, titleSuffix, keyword, description, siteName, nav, crumbLabels, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [], footerSiteName = siteName, homeTitle, instagram, image, footerSites = [], networkFooter = true, publisher, defaultTheme, lang = "en", feedTitle, feedHref = "/rss.xml", alternates = [], homeHref = "/", noindex = false, prose = false, donate } = Astro.props;
 // The suffix is the most expensive characters on the page, and it is only
 // worth them when it adds something the title has not already said.
 //
@@ -137,9 +151,22 @@ const { title, titleSuffix, keyword, description, siteName, nav, crumbLabels, co
 // rather than a keyword. Matched on word boundaries so "London" is found in
 // "Art in central London" and not inside a longer word, and
 // case-insensitively, because "DST events — DST" is the same duplication.
-const saidAlready = (needle?: string) =>
-  !!needle &&
-  new RegExp(`\\b${needle.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i").test(title);
+//
+// "Word boundary" means letters, not `\b`: `\b` only knows the 63 ASCII
+// word characters, so to it every Armenian letter is punctuation and an
+// Armenian keyword was never found in an Armenian title — the suffix went
+// on every page of tick, saying Yerevan twice. And Armenian declines its
+// nouns where English puts a preposition: "in Yerevan" is Երևանում, one
+// word, so in a language listed here the keyword counts as said when a
+// case ending follows it. Not German, where "Wiener" is an adjective and
+// the suffix "Wien" says something it does not.
+const INFLECTED = new Set(["hy"]);
+const saidAlready = (needle?: string) => {
+  if (!needle) return false;
+  const word = needle.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const after = INFLECTED.has(lang.slice(0, 2)) ? "" : "(?![\\p{L}\\p{N}])";
+  return new RegExp(`(?<![\\p{L}\\p{N}])${word}${after}`, "iu").test(title);
+};
 const suffixAlreadySaid = saidAlready(titleSuffix) || saidAlready(keyword);
 const pageTitle = titleSuffix && !suffixAlreadySaid ? `${title} \u2014 ${titleSuffix}` : title;
 const isDstHome = Astro.site?.hostname === "dst.llc";
@@ -152,12 +179,21 @@ const CHROME: Record<string, { skip: string; menu: string }> = {
   en: { skip: "Skip to content", menu: "Toggle menu" },
   es: { skip: "Saltar al contenido", menu: "Abrir menú" },
   de: { skip: "Zum Inhalt springen", menu: "Menü öffnen" },
+  hy: { skip: "Անցնել բովանդակությանը", menu: "Բացել ընտրացանկը" },
 };
 const chrome = CHROME[lang.slice(0, 2)] ?? CHROME.en;
 
 // Absolute URLs: canonical and og:image are both meaningless as relative
 // paths — a crawler or a chat client resolves them against its own host.
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
+const absolute = (href: string) => (Astro.site ? new URL(href, Astro.site).href : href);
+// The header links to the page's other languages only; the head lists all
+// of them, this one included, because hreflang that does not name the page
+// it sits on is ignored.
+// Compared on the language alone: the page says hy-AM, for the dates and
+// the drams, while its hreflang says hy, because Armenian is read in Los
+// Angeles as well as in Yerevan.
+const otherLanguages = alternates.filter((a) => a.lang.slice(0, 2) !== lang.slice(0, 2));
 // SVG is excluded on purpose: Telegram, WhatsApp and Facebook don't render
 // it in a link preview, so passing one produces an empty card rather than
 // no card. A page with no usable picture of its own falls back to the
@@ -193,6 +229,8 @@ const graph = Astro.site
       nav,
       crumbLabels,
       publisher,
+      lang,
+      home: homeHref,
     })
   : undefined;
 
@@ -276,8 +314,10 @@ const lateIcons = navFootprint - nav.length * 28 > 700;
     {/* The feed's title is what a reader's tool shows when it offers the
         subscription, so it says which site this is rather than "RSS". */}
     {feedTitle && (
-      <link rel="alternate" type="application/rss+xml" title={feedTitle} href="/rss.xml" />
+      <link rel="alternate" type="application/rss+xml" title={feedTitle} href={feedHref} />
     )}
+    {alternates.map((a) => <link rel="alternate" hreflang={a.lang} href={absolute(a.href)} />)}
+    {alternates[0] && <link rel="alternate" hreflang="x-default" href={absolute(alternates[0].href)} />}
     {noindex && <meta name="robots" content="noindex, follow" />}
     {/* The lead endpoint is only called once someone touches a form, so
         resolving DNS ahead of time is worth it and holding a socket open on
@@ -285,6 +325,9 @@ const lateIcons = navFootprint - nav.length * 28 > 700;
     {Astro.slots.has("tracking") && <link rel="dns-prefetch" href="https://api.dst.llc" />}
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={siteName} />
+    {/* og:locale wants an underscore and a region — hy_AM, en_GB — so a
+        site that declares only a language says nothing rather than guess. */}
+    {lang.includes("-") && <meta property="og:locale" content={lang.replace("-", "_")} />}
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     {canonical && <meta property="og:url" content={canonical} />}
@@ -335,7 +378,7 @@ const lateIcons = navFootprint - nav.length * 28 > 700;
             that reads back the word under the cursor. An empty attribute is
             worth more than that: the browser then shows nothing, and the
             slot stays free for the day the site has something to say. */}
-        <a class="site-name" href="/" title={homeTitle}>
+        <a class="site-name" href={homeHref} title={homeTitle}>
           {/* Decorative: the site name sits right beside it, and an alt of
               "DST" made the link announce itself twice — "DST DST" on the
               hub, where the name is the same word. */}
@@ -390,6 +433,9 @@ const lateIcons = navFootprint - nav.length * 28 > 700;
               </svg>
             </a>
           )}
+          {otherLanguages.map((a) => (
+            <a class="lang-switch" href={a.href} hreflang={a.lang} lang={a.lang} title={a.title}>{a.label}</a>
+          ))}
           <ThemeToggle />
         </div>
       </div>
@@ -550,6 +596,24 @@ const lateIcons = navFootprint - nav.length * 28 > 700;
     margin-inline: -0.5rem;
   }
   .social-icon svg { width: 20px; height: 20px; }
+
+  /* The other language, as a word rather than a flag: a flag is a country,
+     and Armenian is read well beyond Armenia — Los Angeles included. */
+  .lang-switch {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    min-width: 44px;
+    min-height: 44px;
+    margin-inline: -0.25rem;
+    color: var(--ink-muted);
+    font-size: var(--step--1);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+  }
+  .lang-switch:hover { color: var(--accent, #1F5C4E); }
   .social-icon:hover { color: var(--accent, #1F5C4E); }
 
   /* Desktop: a plain inline row. The mobile <details> dropdown is a

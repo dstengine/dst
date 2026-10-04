@@ -352,6 +352,85 @@ export const DE: Partial<ArticleLabels> = {
   },
 };
 
+// Armenian declines its nouns where English uses a preposition: "in
+// Yerevan" is one word, Երևանում, and "Yerevan news" is Երևանի
+// նորություններ. The `where` these functions are handed is the site's
+// keyword in the nominative, so the two cases a heading needs are made
+// here. Regular for the city this was written for and for most Armenian
+// place names; a name ending in -ի takes -ու in the genitive (Գյումրի,
+// Գյումրու), and anything stranger should be passed already declined.
+const hyGenitive = (where: string) => (where.endsWith("ի") ? `${where.slice(0, -1)}ու` : `${where}ի`);
+const hyLocative = (where: string) => `${where}ում`;
+
+export const HY: Partial<ArticleLabels> = {
+  ended: "Ավարտված է",
+  // The Armenian colon is the mijaket, a raised dot, not ":".
+  faq: (subject) => (subject ? `${subject}\u2024 հարցեր և պատասխաններ` : "Հարցեր և պատասխաններ"),
+  organizedBy: "Կազմակերպիչ՝",
+  minRead: (n) => `${n} րոպե ընթերցանություն`,
+
+  tickets: "Տոմսեր",
+  register: "Գրանցվել",
+  moreDetails: "Մանրամասներ",
+  addToCalendar: "Ավելացնել օրացույցում",
+  addToCalendarTitle: (title) => `«${title}» — ավելացնել ձեր օրացույցում`,
+
+  dates: "Ամսաթվեր",
+  time: "Ժամ",
+  timeFrom: (start) => `Սկիզբը՝ ${start}`,
+  duration: "Տևողություն",
+  // A noun after a numeral stays singular in Armenian: 2 ժամ, not 2 ժամեր.
+  durationValue: (hours, minutes) =>
+    [hours && `${hours} ժամ`, minutes && `${minutes} րոպե`].filter(Boolean).join(" "),
+  format: "Ձևաչափ",
+  inPerson: "Տեղում",
+  online: "Առցանց",
+  where: "Որտեղ",
+  ticketsRow: "Տոմսեր",
+  free: "Անվճար",
+  salesClose: "Վաճառքն ավարտվում է",
+  refunds: "Վերադարձ",
+  organizer: "Կազմակերպիչ",
+
+  whatHappened: "Ինչի մասին է",
+  updates: "Հրապարակումից հետո",
+  programme: "Ծրագիր",
+  speakers: "Մասնակիցներ",
+  whoItsFor: "Ում համար է",
+  locate: (place) => (place ? `Քարտեզ՝ ${place}` : "Քարտեզ"),
+  categoryTitle: (what) => `Այս կայքի բոլոր նյութերը՝ «${what}»`,
+  related: "Նմանատիպ",
+  moreEvents: (where, what = "միջոցառումներ") => (where ? `Այլ ${what} ${hyLocative(where)}` : `Այլ ${what}`),
+  moreTagged: (what, where, year) => `${what} ${hyLocative(where)}, ${year}`,
+  moreNews: (where) => (where ? `${hyGenitive(where)} այլ նորություններ` : "Այլ նորություններ"),
+  latestNews: (where) => (where ? `${hyGenitive(where)} վերջին նորությունները` : "Վերջին նորությունները"),
+  comingUp: (where) => (where ? `Շուտով ${hyLocative(where)}` : "Շուտով"),
+
+  readMore: "Կարդալ ավելին",
+  allEvents: "Բոլոր միջոցառումները",
+  allNews: "Բոլոր նորությունները",
+  eventsHeading: (where) => (where ? `Միջոցառումներ ${hyLocative(where)}` : "Միջոցառումներ"),
+  newsHeading: (where) => (where ? `${hyGenitive(where)} նորություններ` : "Նորություններ"),
+  upcoming: (where) => (where ? `Առաջիկայում ${hyLocative(where)}` : "Առաջիկայում"),
+  pastGroup: (where) => (where ? `Անցած միջոցառումներ ${hyLocative(where)}` : "Անցած"),
+  subscribeCalendar: "Բաժանորդագրվել այս օրացույցին",
+  subscribeCalendarNote: "Այս էջի բոլոր ամսաթվերը՝ միշտ թարմ, ձեր սեփական օրացույցում։",
+  subscribeCalendarTitle: "Բացում է օրացույցի հավելվածը և բաժանորդագրում այս ամսաթվերին",
+  past: "Անցած",
+  mapTitle: (place) => `Քարտեզ — ${place}`,
+
+  source: "Աղբյուր",
+  checkedAgainstSource: "ստուգվել է",
+  checkedTitle: (name) => `Վերջին անգամ ստուգվել է ${name} աղբյուրի հետ այս ամսաթվին`,
+
+  imageKinds: {
+    photo: "Լուսանկար",
+    diagram: "Գծապատկեր",
+    illustration: "Նկարազարդում",
+    render: "Վիզուալիզացիա",
+  },
+};
+
 /** The caller's overrides on top of English, so a partial set is legal. */
 export function withLabels(labels?: Partial<ArticleLabels>): ArticleLabels {
   if (!labels) return EN;
@@ -372,6 +451,8 @@ export function withLabels(labels?: Partial<ArticleLabels>): ArticleLabels {
 // only languages the network publishes in — which makes this a check rather
 // than a guess. `tests/build-output.test.js` asserts no heading built this
 // way begins with one.
+// Armenian has nothing to add: its article is a suffix on the noun, so no
+// Armenian heading word can open with one.
 const ARTICLES = ["the", "la", "el", "los", "las", "der", "die", "das"];
 
 export function headingWord(plural?: string): string | undefined {

@@ -130,7 +130,7 @@ describe("ics: the subscribable calendar", () => {
   });
 
   test("every site's real calendar folds, escapes and ends cleanly", () => {
-    for (const site of ["dst", "llc", "visas", "riviera", "mbr", "palmcentral", "eco", "fwf", "nyc42", "ldn", "lnd", "cmx", "mxo", "sol2go", "vien"]) {
+    for (const site of ["dst", "llc", "visas", "riviera", "mbr", "palmcentral", "eco", "fwf", "nyc42", "ldn", "lnd", "cmx", "mxo", "sol2go", "vien", "tick"]) {
       const items = eventsBySite(site).filter((i) => Array.isArray(i.body) && i.body.length > 0);
       const ics = toIcsCalendar(items, (i) => `https://example.test/events/${i.slug}/`, { ...meta, name: site }, NOW);
       const over = lines(ics).filter((l) => Buffer.byteLength(l, "utf8") > 75);

@@ -1,0 +1,23 @@
+---
+import Layout from "../layouts/Layout.astro";
+import NewsBlock from "@dst/ui/NewsBlock.astro";
+import EventsBlock from "@dst/ui/EventsBlock.astro";
+import SectionNav from "@dst/ui/SectionNav.astro";
+import { home, words, type Lang } from "../content";
+import { LOCALE, eventsFor, newsFor, eventsBase, newsBase, prefix } from "../i18n";
+import { allSections, NAV } from "../sections";
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const page = home[lang];
+const w = words[lang];
+---
+<Layout lang={lang} title={page.title} description={page.description}>
+  <section class="container hero">
+    <h1>{page.h1}</h1>
+    <p class="lede">{page.lede}</p>
+    <SectionNav sections={allSections[lang]} label={NAV[lang].label} base={prefix(lang)} />
+  </section>
+  <EventsBlock locale={LOCALE[lang]} items={eventsFor(lang)} heading={w.upcoming} eventsBase={eventsBase(lang)} allLabel={w.allEvents} />
+  <NewsBlock locale={LOCALE[lang]} items={newsFor(lang)} heading={w.news} newsBase={newsBase(lang)} allLabel={w.allNews} />
+</Layout>

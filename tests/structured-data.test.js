@@ -17,7 +17,7 @@ import { fileURLToPath } from "node:url";
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const APPS = ["dst", "llc", "visas", "riviera", "mbr", "palmcentral", "eco", "fwf", "musical",
   // The five .lol city experiments, each of which publishes itself.
-  "nyc42", "ldn", "lnd", "cmx", "mxo", "sol2go", "vien",
+  "nyc42", "ldn", "lnd", "cmx", "mxo", "sol2go", "vien", "tick",
   // A tour archive on its own vvm.space host, tied to neither the group nor
   // the .lol five.
   "tokiohotel"];
@@ -33,6 +33,7 @@ const PUBLISHER = {
   nyc42: "https://nyc42.lol/#organization",
   sol2go: "https://sol2go.lol/#organization",
   vien: "https://vien.lol/#organization",
+  tick: "https://tick.lnd.lol/#organization",
   ldn: "https://ldn.lol/#organization",
   lnd: "https://lnd.lol/#organization",
   cmx: "https://cmx.lol/#organization",
@@ -114,8 +115,14 @@ describe("the network graph", () => {
   // Crawlers build the breadcrumb trail in the results page from this, and
   // from the raw URL when it is missing — which on a vertical means the
   // bare hostname.
+  // A site in two languages has a home per language — tick's English one is
+  // /en/ — and a home is wherever the wordmark leads: that link is the one
+  // place every page says which front page it belongs to.
+  const homeOf = (p) => attr(p.html, /<a class="site-name" href="([^"]*)"/) ?? "/";
+  const isHome = (p) => p.url === "/" || homeOf(p) === p.url;
+
   test("every page below the home page carries breadcrumbs that lead to it", () => {
-    const deep = pages.filter((p) => p.url !== "/");
+    const deep = pages.filter((p) => !isHome(p));
     assert.ok(deep.length > 50, `expected the network's inner pages, found ${deep.length}`);
     for (const p of deep) {
       const where = `${p.app}${p.url}`;
@@ -128,7 +135,7 @@ describe("the network graph", () => {
         `${where}: breadcrumb positions are not 1..n`,
       );
       assert.equal(items.at(-1).item, p.canonical, `${where}: the last crumb is not this page`);
-      assert.match(items[0].item, /^https:\/\/[^/]+\/$/, `${where}: the first crumb is not a site home`);
+      assert.equal(new URL(items[0].item).pathname, homeOf(p), `${where}: the first crumb is not this page's home`);
       for (const item of items) {
         assert.ok(item.name?.trim(), `${where}: a crumb has no name`);
       }
@@ -137,7 +144,7 @@ describe("the network graph", () => {
   });
 
   test("home pages carry no breadcrumbs", () => {
-    for (const p of pages.filter((p) => p.url === "/")) {
+    for (const p of pages.filter(isHome)) {
       assert.equal(node(p, "BreadcrumbList"), undefined, `${p.app}: home page has a one-item breadcrumb`);
     }
   });

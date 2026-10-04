@@ -1,0 +1,35 @@
+---
+// A subject page. Which subjects exist is decided in ../sections.ts
+// against the data, so this file never needs editing when one earns or
+// loses its page.
+import Layout from "../layouts/Layout.astro";
+import SectionNav from "@dst/ui/SectionNav.astro";
+import SectionFeed from "@dst/ui/SectionFeed.astro";
+import type { Section as SectionT } from "@dst/content/sections";
+import { labels, type Lang } from "../content";
+import { site } from "../site.config";
+import { LOCALE, eventsBase, newsBase, prefix } from "../i18n";
+import { allSections, NAV } from "../sections";
+
+interface Props { lang: Lang; section: SectionT }
+const { lang, section } = Astro.props;
+const p = prefix(lang);
+---
+<Layout lang={lang} title={section.title} description={section.description}>
+  <section class="container hero">
+    <h1>{section.h1}</h1>
+    <p class="lede">{section.lede}</p>
+  </section>
+  <section class="container">
+    <SectionNav sections={allSections[lang]} current={`${p}${section.slug}/`} allHref={p} base={p} {...NAV[lang]} />
+    <SectionFeed
+      items={section.items}
+      eventsBase={eventsBase(lang)}
+      newsBase={newsBase(lang)}
+      locale={LOCALE[lang]}
+      labels={labels[lang]}
+      headings={section.headings}
+      where={site[lang].keyword}
+    />
+  </section>
+</Layout>

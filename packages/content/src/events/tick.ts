@@ -1,0 +1,414 @@
+import type { EventItem } from "../types.ts";
+
+// tick publishes in Armenian first and English second: each entry is
+// written in Armenian and carries its English in `i18n.en` — see
+// `localize` in ../i18n.ts. One entry, one slug, one set of facts; the
+// English page is the same page in another language, and both are dated by
+// the same `updatedAt`.
+//
+// Prices are in drams as the box office publishes them. Every date here was
+// read off Tomsarkgh, Yerevan's main box office, on the day in `verifiedOn`.
+
+export const items: EventItem[] = [
+
+  {
+    slug: "elgar-enigma-variations-yerevan-2026",
+    createdAt: "2026-10-04T15:00:00+04:00",
+    updatedAt: "2026-10-04T15:00:00+04:00",
+    site: "tick",
+    title: "Էլգար. Թավջութակի կոնցերտ և «Էնիգմա» վարիացիաներ",
+    cardTitle: "Էլգար՝ «Էնիգմա» վարիացիաներ",
+    summary:
+      "Հոկտեմբերի 5-ին Երևանում՝ Արամ Խաչատրյան համերգասրահում, Հայաստանի պետական սիմֆոնիկ նվագախումբը նվագում է Էլգար. մենակատարը թավջութակահար Գայ Ջոնսթոնն է։",
+    start: "2026-10-05",
+    startTime: "19:30",
+    utcOffset: "+04:00",
+    city: "Երևան",
+    country: "Հայաստան",
+    venue: "Արամ Խաչատրյան համերգասրահ, Մաշտոցի պող. 46",
+    geo: { lat: 40.1862685, lng: 44.5151091 },
+    organizer: "Հայաստանի պետական սիմֆոնիկ նվագախումբ",
+    category: "Դասական երաժշտություն",
+    tickets: { priceFrom: 3000, priceTo: 15000, currency: "AMD" },
+    ticket: { url: "https://www.tomsarkgh.am/en/event/51330/", label: "Տոմսեր" },
+    source: { name: "Tomsarkgh", url: "https://www.tomsarkgh.am/en/event/51330/", verifiedOn: "2026-10-04" },
+    body: [
+      "Հոկտեմբերի 5-ի երեկոն ամբողջությամբ Էդվարդ Էլգարինն է։ Հայաստանի պետական սիմֆոնիկ նվագախումբը նվագում է նրա երկու ամենասիրված ստեղծագործությունները՝ Թավջութակի կոնցերտը մի մինոր և «Էնիգմա» վարիացիաները։",
+      "Մենակատարը բրիտանացի թավջութակահար Գայ Ջոնսթոնն է, դիրիժորը՝ Մարիոս Պապադոպուլոսը։ Համերգը «Հայաստան–Միացյալ Թագավորություն բիզնես համաժողով 2026»-ի մշակութային մասն է, բայց տոմսերը բաց վաճառքում են։",
+      "## Ծրագիրը",
+      "Առաջին բաժնում՝ Թավջութակի կոնցերտը, երկ 85 (մոտ 35 րոպե)։ Ընդմիջումից հետո՝ «Էնիգմա» վարիացիաները, երկ 36 (մոտ 38 րոպե)։",
+      "Երեխաների մուտքը՝ 6 տարեկանից։",
+    ],
+    faq: [
+      { q: "Որքա՞ն արժե տոմսը", a: "Տոմսերը 3000-ից 15000 դրամ են՝ կախված նստատեղից, և վաճառվում են Tomsarkgh-ում։" },
+      { q: "Կարելի՞ է գալ երեխաների հետ", a: "Այո, 6 տարեկանից։" },
+      { q: "Որքա՞ն է տևում համերգը", a: "Երաժշտությունը մոտ 73 րոպե է՝ երկու մասով, որոնց միջև ընդմիջում կա։" },
+    ],
+    i18n: {
+      en: {
+        ticket: { url: "https://www.tomsarkgh.am/en/event/51330/", label: "Tickets" },
+        title: "Elgar: Cello Concerto and Enigma Variations",
+        cardTitle: "Elgar: the Enigma Variations",
+        summary:
+          "Elgar in Yerevan on 5 October: the Armenian State Symphony Orchestra at the Aram Khachaturian Concert Hall, with Guy Johnston as soloist in the Cello Concerto.",
+        city: "Yerevan",
+        country: "Armenia",
+        venue: "Aram Khachaturian Concert Hall, 46 Mashtots Avenue",
+        organizer: "Armenian State Symphony Orchestra",
+        category: "Classical",
+        body: [
+          "An evening given over entirely to Edward Elgar. The Armenian State Symphony Orchestra plays the composer's two best-loved works: the Cello Concerto in E minor and the Enigma Variations.",
+          "The British cellist Guy Johnston is the soloist and Marios Papadopoulos conducts. The concert is the cultural half of the Armenia–UK Business Forum 2026, but the tickets are on general sale, and one needn't have a lanyard to attend.",
+          "## The programme",
+          "First half: the Cello Concerto, Op. 85 (about 35 minutes). After the interval: the Enigma Variations, Op. 36 (about 38 minutes).",
+          "Children are admitted from the age of six.",
+        ],
+        faq: [
+          { q: "How much are tickets?", a: "From 3,000 to 15,000 drams depending on the seat, on sale at Tomsarkgh." },
+          { q: "Can children come?", a: "Yes, from the age of six." },
+          { q: "How long is the concert?", a: "About 73 minutes of music, in two halves with an interval between them." },
+        ],
+      },
+    },
+  },
+
+  {
+    slug: "harry-potter-film-music-yerevan-2026",
+    createdAt: "2026-10-04T15:00:00+04:00",
+    updatedAt: "2026-10-04T15:00:00+04:00",
+    site: "tick",
+    title: "Հարի Փոթեր ֆիլմի երաժշտությունը՝ Mystery Ensemble",
+    cardTitle: "Հարի Փոթերի երաժշտությունը",
+    summary:
+      "Հարի Փոթերի ֆիլմերի երաժշտությունը Երևանում՝ Կոմիտասի անվան կամերային երաժշտության տանը, հոկտեմբերի 9-ին և դեկտեմբերի 4-ին. նվագում է Mystery Ensemble-ը։",
+    start: "2026-10-09",
+    startTime: "19:00",
+    utcOffset: "+04:00",
+    city: "Երևան",
+    country: "Հայաստան",
+    venue: "Կոմիտասի անվան կամերային երաժշտության տուն, Իսահակյան 1",
+    geo: { lat: 40.1854319, lng: 44.5232134 },
+    organizer: "Red Events",
+    category: "Համերգներ",
+    tickets: { priceFrom: 8300, priceTo: 13700, currency: "AMD" },
+    ticket: { url: "https://www.tomsarkgh.am/en/event/47386/", label: "Տոմսեր" },
+    source: { name: "Tomsarkgh", url: "https://www.tomsarkgh.am/en/event/47386/", verifiedOn: "2026-10-04" },
+    body: [
+      "Ջոն Ուիլյամսի «Հեդվիգի թեման» և Հարի Փոթերի ֆիլմաշարի մյուս թեմաները կհնչեն ոչ թե կինոդահլիճում, այլ Կոմիտասի անվան կամերային երաժշտության տանը։ Նվագում է Mystery Ensemble-ը՝ ակուստիկ լարայիններ, ստեղնաշարային գործիքներ և հարվածայիններ։",
+      "Երկու երեկո կա՝ հոկտեմբերի 9-ին և դեկտեմբերի 4-ին, երկուսն էլ ժամը 19:00-ին։ Կազմակերպիչը Red Events-ն է, որը նման համերգներ անցկացնում է առանձնատներում, տանիքներում և ջերմոցներում։",
+      "## Ի՞նչ կհնչի",
+      "Ծրագրում՝ Hedwig’s Theme, Hogwarts March, Lily’s Theme, Harry in Winter, Dumbledore’s Army, Double Trouble և Flight of the Order of the Phoenix՝ ընդհանուր քսան թեմա։ Կազմակերպիչը նախազգուշացնում է, որ ծրագրում հնարավոր են փոփոխություններ։",
+    ],
+    faq: [
+      { q: "Որքա՞ն արժե տոմսը", a: "Տոմսերը երեք գնով են՝ 8300, 9700 և 13700 դրամ։" },
+      { q: "Ե՞րբ է համերգը", a: "Հոկտեմբերի 9-ին և դեկտեմբերի 4-ին, ժամը 19:00-ին։" },
+    ],
+    i18n: {
+      en: {
+        ticket: { url: "https://www.tomsarkgh.am/en/event/47386/", label: "Tickets" },
+        title: "Harry Potter film music by the Mystery Ensemble",
+        cardTitle: "Harry Potter film music",
+        summary:
+          "The Harry Potter scores in Yerevan, played by the Mystery Ensemble at the Komitas Chamber Music House on 9 October and again on 4 December.",
+        city: "Yerevan",
+        country: "Armenia",
+        venue: "Komitas Chamber Music House, 1 Isahakyan Street",
+        organizer: "Red Events",
+        category: "Concerts",
+        body: [
+          "John Williams's Hedwig's Theme and the rest of the Harry Potter scores, in a chamber music hall rather than a cinema — a rather more civilised way to hear them. The Mystery Ensemble plays them on acoustic strings, keyboards and percussion.",
+          "There are two evenings, 9 October and 4 December, both at 19:00. The organiser is Red Events, who stage concerts of this sort in old mansions, on rooftops and in glasshouses.",
+          "## What is played",
+          "Hedwig's Theme, Hogwarts March, Lily's Theme, Harry in Winter, Dumbledore's Army, Double Trouble and Flight of the Order of the Phoenix, among twenty themes in all. The organiser notes that the programme may change.",
+        ],
+        faq: [
+          { q: "How much are tickets?", a: "There are three prices: 8,300, 9,700 and 13,700 drams." },
+          { q: "When is it?", a: "On 9 October and on 4 December, at 19:00 both evenings." },
+        ],
+      },
+    },
+  },
+
+  {
+    slug: "equinox-fest-autumn-chapter-2026",
+    createdAt: "2026-10-04T15:00:00+04:00",
+    updatedAt: "2026-10-04T15:00:00+04:00",
+    site: "tick",
+    title: "EQUINOX Fest. աշնանային էպիզոդ Altezza-ում",
+    cardTitle: "EQUINOX Fest. աշնանային էպիզոդ",
+    summary:
+      "Հոկտեմբերի 17-ին Երևանի մոտ՝ Altezza ուղղաթիռային հրապարակում, էլեկտրոնային և կենդանի երաժշտության փառատոն է՝ Արմեն Միրան, Վիկեն Արման, Արտո Թունչբոյաջյան։",
+    start: "2026-10-17",
+    startTime: "18:00",
+    endTime: "23:00",
+    utcOffset: "+04:00",
+    city: "Ջրվեժ",
+    country: "Հայաստան",
+    venue: "Altezza by Armenian Helicopters, Երևան–Գառնի մայրուղի 6/14",
+    geo: { lat: 40.1841367, lng: 44.6168316 },
+    category: "Փառատոներ",
+    tickets: { priceFrom: 15000, priceTo: 18000, currency: "AMD", salesEnd: "2026-10-17" },
+    ticket: { url: "https://www.tomsarkgh.am/en/event/51317/", label: "Տոմսեր" },
+    source: { name: "Tomsarkgh", url: "https://www.tomsarkgh.am/en/event/51317/", verifiedOn: "2026-10-04" },
+    speakersHeading: "Կատարողներ",
+    speakers: [
+      { name: "Արմեն Միրան" },
+      { name: "Hraach" },
+      { name: "Վիկեն Արման" },
+      { name: "Արտո Թունչբոյաջյան" },
+      { name: "Արտյոմ Մանուկյան" },
+      { name: "Շահեն Խանդկարյան" },
+      { name: "Արամ Չախոյան", note: "Հատուկ հյուր" },
+    ],
+    body: [
+      "EQUINOX-ը էլեկտրոնային բեմի և կենդանի կատարման համադրության փառատոն է, և աշնանային էպիզոդն այս անգամ տեղափոխվում է ուղղաթիռային հրապարակ՝ Altezza, Ջրվեժում, Երևան–Գառնի մայրուղու վրա։",
+      "Մուտքը բացվում է ժամը 16:00-ին, երաժշտությունը՝ 18:00-ից 23:00։",
+      "## Տոմսերը",
+      "Մինչև հոկտեմբերի 10-ը տոմսն արժե 15000 դրամ, հոկտեմբերի 11-ից 17-ը՝ 18000 դրամ։ Վաղ վաճառքի 10000 դրամանոց տոմսերն ավարտվել են սեպտեմբերի 5-ին։",
+    ],
+    faq: [
+      { q: "Որքա՞ն արժե տոմսը", a: "15000 դրամ մինչև հոկտեմբերի 10-ը, 18000 դրամ՝ հոկտեմբերի 11-ից 17-ը։" },
+      { q: "Ե՞րբ է բացվում մուտքը", a: "Ժամը 16:00-ին. երաժշտությունը սկսվում է 18:00-ին և ավարտվում 23:00-ին։" },
+      { q: "Որտե՞ղ է Altezza-ն", a: "Ջրվեժում՝ Armenian Helicopters ուղղաթիռային հրապարակում, Երևան–Գառնի մայրուղի 6/14։" },
+    ],
+    i18n: {
+      en: {
+        ticket: { url: "https://www.tomsarkgh.am/en/event/51317/", label: "Tickets" },
+        title: "EQUINOX Fest: Autumn Chapter at Altezza",
+        cardTitle: "EQUINOX Fest: Autumn Chapter",
+        summary:
+          "An electronic and live-music festival on a helipad just outside Yerevan on 17 October, with Armen Miran, Viken Arman and Arto Tunçboyacıyan.",
+        city: "Jrvezh",
+        country: "Armenia",
+        venue: "Altezza by Armenian Helicopters, 6/14 Yerevan–Garni Highway",
+        category: "Festivals",
+        speakersHeading: "Line-up",
+        speakers: [
+          { name: "Armen Miran" },
+          { name: "Hraach" },
+          { name: "Viken Arman" },
+          { name: "Arto Tunçboyacıyan" },
+          { name: "Artyom Manukyan" },
+          { name: "Shahen Khandkaryan" },
+          { name: "Aram Chakhoyan", note: "Special guest" },
+        ],
+        body: [
+          "EQUINOX pairs the electronic stage with live musicians, and for its autumn chapter it has moved somewhere altogether different: Altezza, the helipad of Armenian Helicopters at Jrvezh, on the Yerevan–Garni highway.",
+          "Gates open at 16:00; the music runs from 18:00 to 23:00.",
+          "## Tickets",
+          "A ticket is 15,000 drams until 10 October and 18,000 drams from 11 to 17 October. The 10,000-dram early-bird tickets went on 5 September.",
+        ],
+        faq: [
+          { q: "How much are tickets?", a: "15,000 drams until 10 October, then 18,000 drams from 11 to 17 October." },
+          { q: "What time do the gates open?", a: "At 16:00; the music starts at 18:00 and ends at 23:00." },
+          { q: "Where is Altezza?", a: "At Jrvezh, on the Armenian Helicopters helipad at 6/14 Yerevan–Garni Highway." },
+        ],
+      },
+    },
+  },
+
+  {
+    slug: "romeo-juliet-deja-vu-2026",
+    createdAt: "2026-10-04T15:00:00+04:00",
+    updatedAt: "2026-10-04T15:00:00+04:00",
+    site: "tick",
+    title: "«Ռոմեո Ջուլիետ. Դեժավյու»",
+    titleSeo: "«Ռոմեո Ջուլիետ. Դեժավյու»՝ Ղափլանյանի թատրոնում",
+    summary:
+      "Նոր սիրո դրամա Երևանում՝ հոկտեմբերի 19-ին Հրաչյա Ղափլանյանի անվան դրամատիկական թատրոնում. դերերում՝ Իննա Խոջամիրյան, Ռուբեն Մուրադյան, Արամ Կարախանյան։",
+    start: "2026-10-19",
+    startTime: "19:00",
+    utcOffset: "+04:00",
+    city: "Երևան",
+    country: "Հայաստան",
+    venue: "Հրաչյա Ղափլանյանի անվան դրամատիկական թատրոն",
+    category: "Թատրոն",
+    tickets: { priceFrom: 3000, priceTo: 12000, currency: "AMD" },
+    ticket: { url: "https://www.tomsarkgh.am/en/event/51478/", label: "Տոմսեր" },
+    source: { name: "Tomsarkgh", url: "https://www.tomsarkgh.am/en/event/51478/", verifiedOn: "2026-10-04" },
+    body: [
+      "«Ռոմեո Ջուլիետ. Դեժավյու»-ն Լյուդվիգ Հարությունյանի նոր սիրո դրաման է՝ Անահիտ Աղասարյանի պիեսով։ Դերերում՝ Իննա Խոջամիրյանը, Ռուբեն Մուրադյանը և Արամ Կարախանյանը։",
+      "Նկարչական ձևավորումը Հրաչ Քեշիշյանինն է, պրոդյուսերը՝ Արման Միտոյանը։ Ներկայացումն իրականացվում է Երևանի քաղաքապետարանի աջակցությամբ։",
+      "Հոկտեմբերի 19-ին, ժամը 19:00-ին։ Տոմսերը 3000-ից 12000 դրամ են։",
+    ],
+    faq: [
+      { q: "Որքա՞ն արժե տոմսը", a: "3000-ից 12000 դրամ՝ կախված նստատեղից։" },
+      { q: "Ո՞վ է խաղում", a: "Իննա Խոջամիրյանը, Ռուբեն Մուրադյանը և Արամ Կարախանյանը։" },
+    ],
+    i18n: {
+      en: {
+        ticket: { url: "https://www.tomsarkgh.am/en/event/51478/", label: "Tickets" },
+        title: "Romeo Juliet. Déjà Vu",
+        titleSeo: "Romeo Juliet. Déjà Vu at the Ghaplanyan Theatre",
+        summary:
+          "A new love drama in Yerevan on 19 October at the Hrachya Ghaplanyan Drama Theatre, with Inna Khojamiryan, Ruben Muradyan and Aram Karakhanyan.",
+        city: "Yerevan",
+        country: "Armenia",
+        venue: "Hrachya Ghaplanyan Drama Theatre",
+        category: "Theatre",
+        body: [
+          "Romeo Juliet. Déjà Vu is Ludwig Harutyunyan's new love drama, written by Anahit Aghasaryan. Inna Khojamiryan, Ruben Muradyan and Aram Karakhanyan take the leads.",
+          "The design is by Hrach Keshishyan and the producer is Arman Mitoyan; the production has the support of Yerevan's city hall.",
+          "One night only as listed: 19 October at 19:00, with tickets from 3,000 to 12,000 drams. The listing is in Armenian alone, which is a fair guide to the language on stage.",
+        ],
+        faq: [
+          { q: "How much are tickets?", a: "From 3,000 to 12,000 drams depending on the seat." },
+          { q: "Who is in it?", a: "Inna Khojamiryan, Ruben Muradyan and Aram Karakhanyan." },
+        ],
+      },
+    },
+  },
+
+  {
+    slug: "tata-simonyan-yerevan-2026",
+    createdAt: "2026-10-04T15:00:00+04:00",
+    updatedAt: "2026-10-04T15:00:00+04:00",
+    site: "tick",
+    title: "Թաթա Սիմոնյան. մենահամերգ Երևանում",
+    summary:
+      "Թաթա Սիմոնյանի մեծ մենահամերգը Երևանում՝ նոյեմբերի 7-ին Կարեն Դեմիրճյանի անվան մարզահամերգային համալիրում, Կարեն Սևակ բենդի կենդանի նվագակցությամբ։",
+    start: "2026-11-07",
+    startTime: "19:00",
+    utcOffset: "+04:00",
+    city: "Երևան",
+    country: "Հայաստան",
+    venue: "Կարեն Դեմիրճյանի անվան մարզահամերգային համալիր, մեծ դահլիճ",
+    geo: { lat: 40.1881503, lng: 44.4833297 },
+    category: "Համերգներ",
+    tickets: { priceFrom: 6000, priceTo: 45000, currency: "AMD" },
+    ticket: { url: "https://www.tomsarkgh.am/en/event/50900/", label: "Տոմսեր" },
+    source: { name: "Tomsarkgh", url: "https://www.tomsarkgh.am/en/event/50900/", verifiedOn: "2026-10-04" },
+    body: [
+      "Թաթա Սիմոնյանը նոյեմբերի 7-ին հանդես է գալիս Կարեն Դեմիրճյանի անվան մարզահամերգային համալիրի մեծ դահլիճում։ Միայն կենդանի հնչողություն՝ Կարեն Սևակ բենդի նվագակցությամբ։",
+      "Ծրագրում՝ հին ու նոր երգեր և համերգային պրեմիերաներ, ժամանակակից լուսային, տեսա- և ձայնային էֆեկտներով։",
+      "Համերգը սկսվում է ժամը 19:00-ին։ Տոմսերը 6000-ից 45000 դրամ են։",
+    ],
+    faq: [
+      { q: "Որքա՞ն արժե տոմսը", a: "6000-ից 45000 դրամ՝ կախված նստատեղից։" },
+      { q: "Ե՞րբ է սկսվում համերգը", a: "Նոյեմբերի 7-ին, ժամը 19:00-ին։" },
+    ],
+    i18n: {
+      en: {
+        ticket: { url: "https://www.tomsarkgh.am/en/event/50900/", label: "Tickets" },
+        title: "Tata Simonyan in concert in Yerevan",
+        summary:
+          "Tata Simonyan plays the main hall of the Karen Demirchyan Complex in Yerevan on 7 November, with the Karen Sevak band and nothing pre-recorded.",
+        city: "Yerevan",
+        country: "Armenia",
+        venue: "Karen Demirchyan Sports and Concert Complex, main hall",
+        category: "Concerts",
+        body: [
+          "Tata Simonyan takes the main hall of the Karen Demirchyan Sports and Concert Complex on 7 November. Everything is played live, backed by the Karen Sevak band.",
+          "The programme mixes old songs and new, with a few concert premieres, under a full production of lights, video and sound.",
+          "The concert starts at 19:00, with tickets from 6,000 to 45,000 drams.",
+        ],
+        faq: [
+          { q: "How much are tickets?", a: "From 6,000 to 45,000 drams depending on the seat." },
+          { q: "What time does it start?", a: "At 19:00 on 7 November." },
+        ],
+      },
+    },
+  },
+
+  {
+    slug: "andru-donalds-enigma-yerevan-2026",
+    createdAt: "2026-10-04T15:00:00+04:00",
+    updatedAt: "2026-10-04T15:00:00+04:00",
+    site: "tick",
+    title: "Էնդրյու Դոնալդս. ENIGMA-ի ոսկե ձայնը Երևանում",
+    cardTitle: "Էնդրյու Դոնալդս. ENIGMA-ի ձայնը",
+    summary:
+      "Էնդրյու Դոնալդսը՝ ENIGMA-ի ձայնը, նոյեմբերի 21-ին Երևանում է՝ Արամ Խաչատրյան համերգասրահում, լարային նվագախմբի և մանկական երգչախմբի հետ։",
+    start: "2026-11-21",
+    startTime: "19:00",
+    utcOffset: "+04:00",
+    city: "Երևան",
+    country: "Հայաստան",
+    venue: "Արամ Խաչատրյան համերգասրահ, Մաշտոցի պող. 46",
+    geo: { lat: 40.1862685, lng: 44.5151091 },
+    category: "Համերգներ",
+    tickets: { priceFrom: 10000, priceTo: 50000, currency: "AMD" },
+    ticket: { url: "https://www.tomsarkgh.am/en/event/51067/", label: "Տոմսեր" },
+    source: { name: "Tomsarkgh", url: "https://www.tomsarkgh.am/en/event/51067/", verifiedOn: "2026-10-04" },
+    body: [
+      "Ճամայկացի երգիչ և երգահան Էնդրյու Դոնալդսը հայտնի դարձավ 1995 թվականին «Mishale» երգով, իսկ 1998-ին Միշել Կրետուն նրան հրավիրեց ENIGMA նախագիծ։ Մինչև 2008 թվականը նա աշխատել է ENIGMA-ի չորրորդից յոթերորդ ալբոմների վրա՝ «Seven Lives», «Boum-Boum», «Modern Crusaders» և այլ երգեր։",
+      "Երևանում կհնչեն ENIGMA-ի հայտնի երգերը և Դոնալդսի մենահիթերը՝ լարային նվագախմբի և մանկական երգչախմբի ուղեկցությամբ։ Կազմակերպիչների խոսքով՝ այցն արտիստի համար անձնական է. նրա որդին հայկական արմատներ ունի։",
+      "Նոյեմբերի 21-ին, ժամը 19:00-ին, Արամ Խաչատրյան համերգասրահում։ Տոմսերը 10000-ից 50000 դրամ են։",
+    ],
+    faq: [
+      { q: "Որքա՞ն արժե տոմսը", a: "10000-ից 50000 դրամ՝ կախված նստատեղից։" },
+      { q: "Ի՞նչ կհնչի", a: "ENIGMA-ի երգերը և Էնդրյու Դոնալդսի մենահիթերը՝ լարային նվագախմբի և մանկական երգչախմբի հետ։" },
+    ],
+    i18n: {
+      en: {
+        ticket: { url: "https://www.tomsarkgh.am/en/event/51067/", label: "Tickets" },
+        title: "Andru Donalds: the voice of Enigma in Yerevan",
+        cardTitle: "Andru Donalds: the voice of Enigma",
+        summary:
+          "Andru Donalds, the voice on Enigma's records from 1998 to 2008, sings at the Aram Khachaturian Concert Hall in Yerevan on 21 November, with strings and a children's choir.",
+        city: "Yerevan",
+        country: "Armenia",
+        venue: "Aram Khachaturian Concert Hall, 46 Mashtots Avenue",
+        category: "Concerts",
+        body: [
+          "The Jamaican singer-songwriter Andru Donalds broke through with Mishale in 1995, and in 1998 Michael Cretu brought Donalds into Enigma. Donalds sang on the project's fourth to seventh albums, until 2008 — Seven Lives, Boum-Boum and Modern Crusaders among them.",
+          "In Yerevan the programme is Enigma's best-known songs and Donalds's own hits, with a string orchestra and a children's choir. The organisers say the visit is a personal one: the singer's son has Armenian roots.",
+          "21 November at 19:00, at the Aram Khachaturian Concert Hall, with tickets from 10,000 to 50,000 drams.",
+        ],
+        faq: [
+          { q: "How much are tickets?", a: "From 10,000 to 50,000 drams depending on the seat." },
+          { q: "What is on the programme?", a: "Enigma's songs and Andru Donalds's own hits, with a string orchestra and a children's choir." },
+        ],
+      },
+    },
+  },
+
+  {
+    slug: "lyubov-uspenskaya-yerevan-2027",
+    createdAt: "2026-10-04T15:00:00+04:00",
+    updatedAt: "2026-10-04T15:00:00+04:00",
+    site: "tick",
+    title: "Լյուբով Ուսպենսկայա. մեծ համերգ Երևանում",
+    summary:
+      "Ռուսական շանսոնի աստղ Լյուբով Ուսպենսկայան 2027 թվականի հունվարի 30-ին Երևանում է՝ Կարեն Դեմիրճյանի անվան մարզահամերգային համալիրում։",
+    start: "2027-01-30",
+    startTime: "19:00",
+    utcOffset: "+04:00",
+    city: "Երևան",
+    country: "Հայաստան",
+    venue: "Կարեն Դեմիրճյանի անվան մարզահամերգային համալիր",
+    geo: { lat: 40.1881503, lng: 44.4833297 },
+    category: "Համերգներ",
+    tickets: { priceFrom: 7000, priceTo: 50000, currency: "AMD" },
+    ticket: { url: "https://www.tomsarkgh.am/en/event/46842/", label: "Տոմսեր" },
+    source: { name: "Tomsarkgh", url: "https://www.tomsarkgh.am/en/event/46842/", verifiedOn: "2026-10-04" },
+    body: [
+      "Լյուբով Ուսպենսկայան՝ ռուսական շանսոնի թագուհին, Երևանում ներկայացնում է մեծ համերգային ծրագիր՝ միլիոնավոր ունկնդիրներին ծանոթ երգերով։",
+      "2027 թվականի հունվարի 30-ին, ժամը 19:00-ին, Կարեն Դեմիրճյանի անվան մարզահամերգային համալիրում։ Տոմսերը 7000-ից 50000 դրամ են։",
+    ],
+    faq: [
+      { q: "Որքա՞ն արժե տոմսը", a: "7000-ից 50000 դրամ՝ կախված նստատեղից։" },
+      { q: "Ե՞րբ է համերգը", a: "2027 թվականի հունվարի 30-ին, ժամը 19:00-ին։" },
+    ],
+    i18n: {
+      en: {
+        ticket: { url: "https://www.tomsarkgh.am/en/event/46842/", label: "Tickets" },
+        title: "Lyubov Uspenskaya in concert in Yerevan",
+        summary:
+          "Lyubov Uspenskaya, the queen of Russian chanson, brings a full concert programme to the Karen Demirchyan Complex in Yerevan on 30 January 2027.",
+        city: "Yerevan",
+        country: "Armenia",
+        venue: "Karen Demirchyan Sports and Concert Complex",
+        category: "Concerts",
+        body: [
+          "Lyubov Uspenskaya, long billed as the queen of Russian chanson, brings a full concert programme to Yerevan: the songs millions know, sung live.",
+          "30 January 2027 at 19:00, at the Karen Demirchyan Sports and Concert Complex, with tickets from 7,000 to 50,000 drams.",
+        ],
+        faq: [
+          { q: "How much are tickets?", a: "From 7,000 to 50,000 drams depending on the seat." },
+          { q: "When is it?", a: "On 30 January 2027 at 19:00." },
+        ],
+      },
+    },
+  },
+];

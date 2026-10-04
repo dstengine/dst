@@ -17,8 +17,9 @@ import { items as cmx } from "./cmx.ts";
 import { items as mxo } from "./mxo.ts";
 import { items as sol2go } from "./sol2go.ts";
 import { items as vien } from "./vien.ts";
+import { items as tick } from "./tick.ts";
 
-const BY_SITE: Record<string, EventItem[]> = { dst, llc, visas, riviera, mbr, palmcentral, eco, fwf, nyc42, ldn, lnd, cmx, mxo, sol2go, vien };
+const BY_SITE: Record<string, EventItem[]> = { dst, llc, visas, riviera, mbr, palmcentral, eco, fwf, nyc42, ldn, lnd, cmx, mxo, sol2go, vien, tick };
 
 export const allEvents: EventItem[] = Object.values(BY_SITE).flat();
 

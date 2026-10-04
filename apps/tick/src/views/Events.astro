@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SectionNav from "@dst/ui/SectionNav.astro";
+import EventsList from "@dst/ui/EventsList.astro";
+import { events, labels, type Lang } from "../content";
+import { site } from "../site.config";
+import { LOCALE, eventsFor, eventsBase, prefix } from "../i18n";
+import { allSections, NAV } from "../sections";
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const page = events[lang];
+const p = prefix(lang);
+const items = eventsFor(lang);
+// An index holding fewer than three entries is thinner than the pages it
+// links to, so it stays out of the index until it has something to be an
+// index of.
+const thin = items.length < 3;
+---
+<Layout lang={lang} title={page.title} description={page.description} noindex={thin}>
+  <section class="container hero">
+    <h1>{page.h1}</h1>
+    <p class="lede">{page.lede}</p>
+  </section>
+  <section class="container">
+    <SectionNav sections={allSections[lang]} allHref={p} base={p} {...NAV[lang]} />
+    <EventsList locale={LOCALE[lang]} items={items} eventsBase={eventsBase(lang)} labels={labels[lang]}
+      calendarHref={new URL(`${p}events.ics`, Astro.site).href}
+      where={site[lang].keyword}
+    />
+  </section>
+</Layout>

@@ -1,0 +1,9 @@
+---
+import Event from "../../views/Event.astro";
+import { eventPaths } from "../../i18n";
+
+export function getStaticPaths() {
+  return eventPaths("hy");
+}
+---
+<Event lang="hy" item={Astro.props.item} more={Astro.props.more} />

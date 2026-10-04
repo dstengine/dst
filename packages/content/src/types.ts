@@ -158,7 +158,37 @@ interface ItemBase {
   // hasn't happened yet" is a different question from "is this important",
   // and the front page has to answer the first one.
   featured?: number;
+  // The same entry in another language the site also publishes in, keyed
+  // by language: `i18n.en` on a site whose own language is Armenian. Words
+  // only — see `Translation`. The entry keeps one slug, one pair of dates
+  // and one set of facts, so the two pages it becomes are one thing said
+  // twice rather than two things that can drift: a price corrected in the
+  // entry is corrected in both languages at once, and the sitemap dates
+  // both pages by the same `updatedAt`. A field the translation leaves out
+  // reads through to the entry's own. See `localize` in ./i18n.ts.
+  i18n?: Record<string, Translation>;
 }
+
+/** The fields a translation may carry: what is said, never what is so.
+    Dates, prices, coordinates, links and the source are facts, and a second
+    copy of a fact is a copy that goes stale — so they are not in this list,
+    and the data tests fail on a translation that carries one.
+
+    The category and the place are here because both are printed: the
+    category is the label on the page and the key into that language's
+    section vocabulary, and the city is a word — Երևան, Yerevan. What the
+    two languages share is the section's address, which each vocabulary
+    gives the same slug. */
+export const TRANSLATABLE = [
+  "title", "cardTitle", "titleSeo", "summary", "updates", "body",
+  "imageAlt", "imageCaption", "faq", "expertise", "category", "city", "country",
+  "venue", "organizer", "programme", "speakers", "speakersHeading",
+  "moreEventsText", "audience", "outcome", "ticket",
+] as const;
+
+export type Translation = {
+  [K in (typeof TRANSLATABLE)[number]]?: K extends keyof EventItem ? EventItem[K] : never;
+};
 
 /** One person on an event's programme, as their organiser publishes them. */
 export interface Speaker {

@@ -5,7 +5,7 @@ import { newsBySite } from "../src/news/index.ts";
 
 const NOW = new Date("2026-09-07T12:00:00Z");
 const SITES = ["dst", "llc", "visas", "riviera", "mbr", "palmcentral", "eco", "fwf",
-  "nyc42", "ldn", "lnd", "cmx", "mxo", "sol2go", "vien", "musical"];
+  "nyc42", "ldn", "lnd", "cmx", "mxo", "sol2go", "vien", "musical", "tick"];
 const meta = {
   title: "Sample — news",
   description: "A description.",

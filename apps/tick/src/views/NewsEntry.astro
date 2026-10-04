@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro";
+import NewsArticle from "@dst/ui/NewsArticle.astro";
+import type { NewsItem } from "@dst/content/types";
+import { publisher, labels, type Lang } from "../content";
+import { site } from "../site.config";
+import { LOCALE, eventsFor, eventsBase, newsBase } from "../i18n";
+import { sectionHref, promoted } from "../sections";
+
+interface Props { lang: Lang; item: NewsItem; more: NewsItem[] }
+const { lang, item, more } = Astro.props;
+---
+<Layout lang={lang} title={item.titleSeo ?? item.title} description={item.summary} image={item.image}>
+  <NewsArticle
+    locale={LOCALE[lang]}
+    item={item}
+    more={more}
+    moreEvents={eventsFor(lang)}
+    backHref={newsBase(lang)}
+    newsBase={newsBase(lang)}
+    eventsBase={eventsBase(lang)}
+    publisher={publisher}
+    categoryHref={sectionHref(item, lang)}
+    promoted={promoted[lang]}
+    labels={labels[lang]}
+    where={site[lang].keyword}
+  />
+</Layout>

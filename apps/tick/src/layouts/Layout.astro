@@ -1,0 +1,60 @@
+---
+import BaseLayout from "@dst/ui/BaseLayout.astro";
+import { site as SITES } from "../site.config";
+import { promoted } from "../sections";
+import { alternates, prefix } from "../i18n";
+import type { Lang } from "../content";
+import "../styles/theme.css";
+
+interface Props {
+  lang: Lang;
+  /** Forwarded to BaseLayout: see its `prose` prop. */
+  prose?: boolean;
+  title: string;
+  description: string;
+  jsonLd?: Record<string, unknown>[];
+  image?: string;
+  noindex?: boolean;
+}
+const { lang, title, description, jsonLd, image, noindex, prose } = Astro.props;
+const site = SITES[lang];
+const p = prefix(lang);
+const hot = promoted[lang];
+
+const NAV = {
+  hy: [
+    { href: "/", label: "Ինչ կա", title: "Ինչ կա այսօր Երևանում", icon: "home" },
+    { href: "/news/", label: "Նորություններ", title: "Երևանի նորությունները՝ աղբյուրով ամեն գրառման մոտ", icon: "news" },
+    { href: "/events/", label: "Միջոցառումներ", title: "Օրացույցը՝ ամեն ամսաթիվ ստուգված կազմակերպչի մոտ", icon: "events" },
+    { href: "/about/", label: "Մեր մասին", title: "Ով է պատրաստում կայքը և ինչպես ենք ստուգում ամսաթվերը", icon: "id" },
+  ],
+  en: [
+    { href: "/en/", label: "What's on", title: "What's on in Yerevan today", icon: "home" },
+    { href: "/en/news/", label: "News", title: "Yerevan news, with a source on every item", icon: "news" },
+    { href: "/en/events/", label: "Events", title: "The calendar: every date confirmed with the organiser", icon: "events" },
+    { href: "/en/about/", label: "About", title: "Who makes this site and how each date is checked", icon: "id" },
+  ],
+}[lang];
+
+// Second, not last, when there is one: the one link here about what is
+// being asked for this month, and it removes itself when its last date has
+// gone.
+const nav = hot
+  ? [NAV[0], { href: `${p}${hot.slug}/`, label: hot.label, title: hot.title, icon: "star" }, ...NAV.slice(1)]
+  : NAV;
+---
+<BaseLayout
+  {...site}
+  prose={prose}
+  title={title}
+  description={description}
+  nav={nav}
+  jsonLd={jsonLd}
+  image={image}
+  noindex={noindex}
+  homeHref={p}
+  feedHref={`${p}rss.xml`}
+  alternates={alternates(Astro.url.pathname)}
+>
+  <slot />
+</BaseLayout>

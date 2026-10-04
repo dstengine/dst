@@ -47,6 +47,10 @@ const UID_HOSTS: Record<string, string> = {
   lnd: "lnd.lol",
   cmx: "cmx.lol",
   mxo: "mxo.lol",
+  // On a subdomain of lnd.lol until it has a domain of its own: tick.am is
+  // not ours, and a UID may only name a host we own. Both languages share
+  // one UID per event, so subscribing to both calendars merges, not doubles.
+  tick: "tick.lnd.lol",
 };
 
 const stampUtc = (d: Date) => d.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");

@@ -1,0 +1,11 @@
+/* tick — apricot, the colour Yerevan is built in: the tuff stone of the
+   centre, which is why it is called the pink city, sits between this and
+   rose. Light-mode accent darkened until white type on it passes AA. */
+:root {
+  --accent-light: #B4471F;
+  --accent-ink-light: #7A2C10;
+  --accent-tint-light: #FCEAE0;
+  --accent-dark: #F4A06E;
+  --accent-ink-dark: #FBD2B8;
+  --accent-tint-dark: #3B1A0B;
+}

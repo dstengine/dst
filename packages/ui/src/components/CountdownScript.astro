@@ -15,7 +15,14 @@
     // site in another language gets "en 6 días" and "mañana" without this
     // file knowing anything about that language. numeric:"auto" is what
     // turns 0 and 1 days into "today" and "tomorrow" in every locale.
-    const rtf = new Intl.RelativeTimeFormat(document.documentElement.lang || "en", { numeric: "auto" });
+    const lang = document.documentElement.lang || "en";
+    // A browser without this language's data does not fail: it quietly
+    // answers in its own, and an Armenian card says "tomorrow". Chromium
+    // builds ship without Armenian, so on those the label is left out and
+    // the absolute date — rendered at build time, in the right language —
+    // stands alone, as it does with no JS at all.
+    const known = Intl.RelativeTimeFormat.supportedLocalesOf([lang]).length > 0;
+    const rtf = new Intl.RelativeTimeFormat(known ? lang : "en", { numeric: "auto" });
     const ahead = (days) => {
       if (days < 14) return rtf.format(days, "day");
       if (days < 60) return rtf.format(Math.round(days / 7), "week");
@@ -32,7 +39,7 @@
 
     for (const el of document.querySelectorAll("[data-countdown]")) {
       const days = daysFrom(el);
-      if (days === null || days < 0) continue;
+      if (days === null || days < 0 || !known) continue;
       el.textContent = ahead(days);
     }
 

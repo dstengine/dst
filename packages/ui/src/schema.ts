@@ -85,6 +85,12 @@ export interface PageGraphInput {
       has to say so here as well as in `<html lang>`, or the markup tells a
       crawler the opposite of what the page does. */
   lang?: string;
+  /** Where this page's language keeps its front page, e.g. "/en/". A site
+      in two languages has two homes, and a breadcrumb that started every
+      English page from the Armenian one — through a crumb named after the
+      "en" in the address — would be a trail back to a page the reader
+      cannot read. Defaults to the root, which is every one-language site. */
+  home?: string;
 }
 
 const websiteId = (origin: string) => `${origin}/#website`;
@@ -100,7 +106,9 @@ function titleFromSlug(slug: string): string {
 const withoutSuffix = (title: string) => title.split(" — ")[0].trim();
 
 function breadcrumbs(input: PageGraphInput) {
-  const segments = input.pathname.split("/").filter(Boolean);
+  const home = input.home ?? "/";
+  const inside = input.pathname.startsWith(home) ? input.pathname.slice(home.length) : input.pathname;
+  const segments = inside.split("/").filter(Boolean);
   if (segments.length === 0) return undefined;
 
   const navLabel = new Map<string, string>([
@@ -108,13 +116,16 @@ function breadcrumbs(input: PageGraphInput) {
     ...(input.nav ?? []).map((item) => [item.href.replace(/^\/+|\/+$/g, ""), item.label] as [string, string]),
   ]);
 
-  const items = [{ name: input.siteName, item: `${input.origin}/` }];
-  let path = "";
+  const items = [{ name: input.siteName, item: `${input.origin}${home}` }];
+  let path = home.replace(/\/+$/, "");
   segments.forEach((segment, i) => {
     path += `/${segment}`;
     const last = i === segments.length - 1;
+    // The nav is keyed by its whole href, so under a language prefix the
+    // menu's "/en/events/" names the crumb for "events" as well.
+    const fromNav = navLabel.get(path.replace(/^\/+/, "")) ?? navLabel.get(segment);
     items.push({
-      name: last ? withoutSuffix(input.title) : (navLabel.get(segment) ?? titleFromSlug(segment)),
+      name: last ? withoutSuffix(input.title) : (fromNav ?? titleFromSlug(segment)),
       item: `${input.origin}${path}/`,
     });
   });
@@ -155,6 +166,9 @@ export function pageGraph(input: PageGraphInput): Record<string, unknown> {
         "@id": `${input.canonical}#webpage`,
         url: input.canonical,
         name: input.title,
+        // Per page as well as per site: on a site in two languages the
+        // WebSite node can only name one of them.
+        inLanguage: input.lang ?? "en",
         description: input.description,
         // A WebPage *is* a CreativeWork, so every page of the network can
         // name its author even where the thing described on it cannot.
