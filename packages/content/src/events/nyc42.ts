@@ -257,8 +257,12 @@ export const items: EventItem[] = [
   {
     slug: "village-halloween-parade-2026",
     createdAt: "2026-08-30T23:32:06+04:00",
-    updatedAt: "2026-09-21T18:55:00+04:00",
+    updatedAt: "2026-10-04T06:43:34+04:00",
     updates: [
+      {
+        on: "2026-10-04",
+        text: "The 2026 Grand Marshal is <strong>Joey Arias</strong> — cabaret singer, jazz vocalist, drag performer and a star of Cirque du Soleil's <em>Zumanity</em>, whom the parade calls a downtown icon. He is currently appearing at HERE in <em>Arias with a Twist</em>.",
+      },
       {
         on: "2026-09-21",
         text: "The parade has named what leads it: <strong>Firehorse</strong>, a puppet commissioned from <strong>Basil Twist</strong> for the Year of the Horse, choreographed by <strong>Julie Atlas Muz</strong> and produced by <strong>Barbara Busackino</strong> of Tandem Otter Productions. <strong>Spectrum News NY1</strong> carries the parade live from <strong>8:00pm</strong>.",
@@ -273,7 +277,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Village Halloween Parade 2026",
     summary:
-      "The 53rd parade goes up Sixth Avenue at 7pm on Saturday 31 October under the theme Body & Soul. Watching is free, joining in is free if you are in costume, and it happens rain or shine.",
+      "New York's 53rd Village Halloween Parade goes up Sixth Avenue at 7pm on Saturday 31 October, theme Body & Soul, with Joey Arias as Grand Marshal. Watching is free, marching is free in costume, rain or shine.",
     start: "2026-10-31",
     startTime: "19:00",
     utcOffset: "-04:00",
@@ -285,7 +289,7 @@ export const items: EventItem[] = [
     source: {
       name: "NYC Village Halloween Parade",
       url: "https://www.halloween-nyc.com/",
-      verifiedOn: "2026-09-21",
+      verifiedOn: "2026-10-04",
     },
     body: [
       "New York’s <strong>53rd annual Village Halloween Parade</strong> steps off at <strong>7:00pm on Saturday 31 October 2026</strong>, up Sixth Avenue.",
@@ -300,7 +304,7 @@ export const items: EventItem[] = [
       "Watching costs nothing and marching costs nothing. Tickets exist for <strong>special access</strong> — skipping the line to enter the parade, and grandstand-style viewing — and the parade is a <strong>501(c)(3) not-for-profit arts organisation</strong>, so buying one is closer to a donation than a fee.",
       "The parade is supported in part by public funds from the <strong>NYC Department of Cultural Affairs</strong> in partnership with the City Council.",
       "## The theme for 2026",
-      "The parade announces a theme each year, and 2026 runs under <strong>Body &amp; Soul</strong>. The <strong>Grand Marshal has not been published</strong>, so it does not appear here. For reference, 2025 ran under «It’s a Potluck!» with <strong>City Harvest</strong> as Grand Marshal — the organisation that rescues fresh produce and delivers it free across the five boroughs.",
+      "The parade announces a theme each year, and 2026 runs under <strong>Body &amp; Soul</strong>. The Grand Marshal is <strong>Joey Arias</strong>, the cabaret singer and performance artist the parade calls a downtown icon. For reference, 2025 ran under «It’s a Potluck!» with <strong>City Harvest</strong> as Grand Marshal — the organisation that rescues fresh produce and delivers it free across the five boroughs.",
       "There is also an official after party at <strong>House of Yes</strong> in Industry City, Brooklyn, from <strong>9:00pm</strong>, which is ticketed separately.",
     ],
     expertise:

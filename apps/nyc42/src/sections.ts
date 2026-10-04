@@ -120,7 +120,7 @@ export function sections(items: FeedItem[]): Section[] {
         return {
           title: "Halloween in New York 2026: what is on",
           description:
-            "The parade, the zoo and the pumpkin blaze up the Hudson, from late September to the 1st of November — each date as the organiser published it.",
+            "Halloween in New York: the Village parade up Sixth Avenue, six weekends at the Bronx Zoo and the pumpkin blaze up the Hudson, from late September to 8 November — each date as the organiser published it.",
           h1: "Halloween in New York",
           lede: "Sixth Avenue on the 31st, the Bronx Zoo for six weekends, and seven thousand carved pumpkins an hour up the river — each date as the organiser gave it, and a link to where we read it.",
           headings: {
