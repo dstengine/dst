@@ -13,8 +13,14 @@ import { siteId, LANGS, type Lang } from "./content";
 /** <html lang> and Intl: the language and where it is spoken. */
 export const LOCALE: Record<Lang, string> = { hy: "hy-AM", en: "en-GB" };
 
-/** Where a language keeps its pages. English has the root. */
-export const prefix = (lang: Lang): string => (lang === "en" ? "/" : "/hy/");
+/** Where a language keeps its pages. English has the root; Armenian is
+    under /am/ — the country's code, the one the site's own domain is meant
+    to be under, and the one a reader in Yerevan would guess. The language
+    code stays hy everywhere a machine reads it (<html lang>, hreflang,
+    the feeds): "am" is Amharic, and hreflang="am" would tell a crawler
+    these pages are in Ethiopian. */
+export const PATH: Record<Lang, string> = { en: "", hy: "am" };
+export const prefix = (lang: Lang): string => (PATH[lang] ? `/${PATH[lang]}/` : "/");
 
 export const eventsBase = (lang: Lang) => `${prefix(lang)}events/`;
 export const newsBase = (lang: Lang) => `${prefix(lang)}news/`;
@@ -33,7 +39,7 @@ const SWITCH: Record<Lang, { label: string; title: string }> = {
 
 /** The page at `pathname` in every language, its own included. */
 export function alternates(pathname: string) {
-  const rest = pathname.replace(/^\/hy(\/|$)/, "/").replace(/^\//, "");
+  const rest = pathname.replace(/^\/am(\/|$)/, "/").replace(/^\//, "");
   return LANGS.map((lang) => ({ lang, href: `${prefix(lang)}${rest}`, ...SWITCH[lang] }));
 }
 

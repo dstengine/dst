@@ -2,7 +2,7 @@ import { HY, EN } from "@dst/ui/labels";
 import type { ArticleLabels } from "@dst/ui/labels";
 
 // tick publishes in two languages: English at the root, Armenian under
-// /hy/. Every string below exists once per language and is picked by the
+// /am/. Every string below exists once per language and is picked by the
 // page's own `lang` — see ./i18n.ts for how a page knows which it is.
 //
 // The English is written for a British reader with a light touch of the

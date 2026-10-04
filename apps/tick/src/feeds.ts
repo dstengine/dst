@@ -1,7 +1,7 @@
 // The site's machine-readable feeds, once per language: news as RSS at
 // rss.xml, the calendar as .ics — one file per event to import, and the
 // whole of it at events.ics to subscribe to. The route files under pages/
-// and pages/hy/ are one line each and call into here.
+// and pages/am/ are one line each and call into here.
 //
 // Summaries, not full text — see the note in @dst/content/rss. Events are
 // not in the RSS: they have no publication date to sort by, which is what

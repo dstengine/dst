@@ -37,7 +37,7 @@ const SITES = {
     host: "tick.lnd.lol", news: "news", events: "events",
     langs: [
       { lang: "en", prefix: "", newsLabel: "News", eventsLabel: "Events" },
-      { lang: "hy", prefix: "hy/", newsLabel: "Նորություններ (in Armenian)", eventsLabel: "Միջոցառումներ (in Armenian)" },
+      { lang: "hy", prefix: "am/", newsLabel: "Նորություններ (in Armenian)", eventsLabel: "Միջոցառումներ (in Armenian)" },
     ],
   },
 };

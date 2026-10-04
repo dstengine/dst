@@ -44,10 +44,10 @@ const PAGES = [
   // tick is in two languages, and Armenian runs longer than English in
   // every label: both halves of the same templates are measured.
   { site: "tick", path: "/" },
-  { site: "tick", path: "/hy/" },
+  { site: "tick", path: "/am/" },
   { site: "tick", path: "/events/equinox-fest-autumn-chapter-2026/" },
-  { site: "tick", path: "/hy/events/equinox-fest-autumn-chapter-2026/" },
-  { site: "tick", path: "/hy/about/" },
+  { site: "tick", path: "/am/events/equinox-fest-autumn-chapter-2026/" },
+  { site: "tick", path: "/am/about/" },
 ];
 
 const url = (site, path) => `${baseUrl(site)}${path}`;
@@ -81,9 +81,9 @@ test.describe("no horizontal overflow", () => {
 // and the page it lands on has to say which language it is in.
 test.describe("language switch", () => {
   const CASES = [
-    ["/events/equinox-fest-autumn-chapter-2026/", "/hy/events/equinox-fest-autumn-chapter-2026/", "hy-AM"],
-    ["/hy/about/", "/about/", "en-GB"],
-    ["/concerts/", "/hy/concerts/", "hy-AM"],
+    ["/events/equinox-fest-autumn-chapter-2026/", "/am/events/equinox-fest-autumn-chapter-2026/", "hy-AM"],
+    ["/am/about/", "/about/", "en-GB"],
+    ["/concerts/", "/am/concerts/", "hy-AM"],
   ];
   for (const [from, to, lang] of CASES) {
     test(`tick${from} switches to ${to}`, async ({ page }) => {
