@@ -39,6 +39,20 @@ export const about = {
   lede: `A calendar and a newsfeed for the Solana ecosystem, with a source and a date on every entry. Not financial advice, and nothing here is a recommendation to buy anything.`,
 };
 
+export const epoch = {
+  title: "Solana epoch countdown: live progress and end time",
+  description: "The current Solana epoch, how far through it the chain is and when it ends — read live from mainnet, with the slot time measured rather than assumed.",
+  h1: "Solana epoch countdown",
+  lede: `The epoch mainnet is in right now, how much of it is left, and the time it ends on your clock. Read from the chain when you open the page, and timed by the slots it actually produced in the last half hour.`,
+};
+
+export const unstake = {
+  title: "Solana unstake countdown: when your SOL is free",
+  description: "Paste a Solana deactivation transaction or a stake account address and see when the stake finishes cooling down and can be withdrawn.",
+  h1: "Solana unstake countdown",
+  lede: `Paste the signature of the transaction that deactivated your stake, or the stake account's address. The page asks the chain which epoch the stake was deactivated in and counts down to the one where it can be withdrawn.`,
+};
+
 /**
  * The site's RSS channel. It lives here rather than in the route because
  * site.config.ts needs the title too — the head's autodiscovery link is

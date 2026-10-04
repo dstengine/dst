@@ -27,7 +27,10 @@ export const site = {
   // site's to make.
   networkFooter: false,
   partnerDisclosure: false,
-  footerLinks: [{ href: "/about/", label: "About" }],
+  footerLinks: [
+    { href: "/unstake/", label: "Unstake countdown" },
+    { href: "/about/", label: "About" },
+  ],
   // A tip jar, and the only place on the site that asks for anything. The
   // heading is a pun and stays as written: the tokens going one way are the
   // chain's, the ones coming back are the model's.

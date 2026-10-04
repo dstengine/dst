@@ -1,0 +1,243 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { unstake } from "../content";
+---
+<Layout prose title={unstake.title} description={unstake.description}>
+  <section class="container hero">
+    <h1>{unstake.h1}</h1>
+    <p class="lede">{unstake.lede}</p>
+  </section>
+
+  <section class="container">
+    <form class="unstake-form" data-unstake-form novalidate>
+      <label for="unstake-q">Transaction signature or stake account</label>
+      <div class="unstake-row">
+        <textarea
+          id="unstake-q"
+          name="q"
+          rows="2"
+          autocomplete="off"
+          autocapitalize="off"
+          spellcheck="false"
+          placeholder="5Kq…  or  7xYz…"
+          required
+        ></textarea>
+        <button class="button" type="submit">Check</button>
+      </div>
+      <p class="unstake-hint">
+        Public chain data only. The lookup goes to Solana mainnet through
+        this site's relay, which forwards it and keeps nothing.
+      </p>
+    </form>
+
+    <div class="unstake-result" data-result aria-live="polite" hidden></div>
+    <noscript>
+      <p>This lookup reads the chain from your browser, so it needs JavaScript.</p>
+    </noscript>
+  </section>
+
+  <section class="container prose-block">
+    <h2>How unstaking on Solana works</h2>
+    <p>
+      Unstaking is two transactions, not one. The first <strong>deactivates</strong>
+      the stake: from then on it earns nothing new, and it starts cooling
+      down. The second <strong>withdraws</strong> the SOL, and the stake
+      program refuses it until the cooldown is over.
+    </p>
+    <p>
+      The cooldown ends on an epoch boundary — normally the first one after
+      the deactivation. Deactivate early in an epoch and the wait is most of
+      an epoch; deactivate an hour before the boundary and it is an hour. The
+      <a href="/epoch/" title="Solana epoch countdown: live progress and end time">epoch countdown</a>
+      shows where the current one stands.
+    </p>
+
+    <h2>Questions</h2>
+    <h3>Can it take longer than one epoch?</h3>
+    <p>
+      Rarely. The network lets only a share of all stake cool down per
+      epoch, so if an unusual amount is leaving at once the remainder spills
+      into the next epoch. A stake with a <strong>lockup</strong> also cannot
+      be withdrawn before the lockup ends, whatever the cooldown says — the
+      result above shows one if the account has it.
+    </p>
+    <h3>Does this work for liquid staking tokens?</h3>
+    <p>
+      No. mSOL, jitoSOL and the rest are unstaked through their own pools,
+      on their own schedule. This page reads native stake accounts.
+    </p>
+    <h3>Where do I find the signature?</h3>
+    <p>
+      In your wallet's activity, on the deactivation entry, or on any Solana
+      explorer: it is the long string the transaction page is named by. The
+      stake account address works just as well and is on the same page.
+    </p>
+  </section>
+</Layout>
+
+<script>
+  import { lookup, epochClock, epochStartsAt, type Lookup, type EpochClock } from "../solana";
+  import { duration, wallClock, sol, short } from "../clock";
+
+  const form = document.querySelector<HTMLFormElement>("[data-unstake-form]")!;
+  const input = form.querySelector<HTMLTextAreaElement>("textarea")!;
+  const out = document.querySelector<HTMLElement>("[data-result]")!;
+  let timer: number | undefined;
+
+  const esc = (s: string) => s.replace(/[&<>"]/g, (c) => `&#${c.charCodeAt(0)};`);
+  const show = (html: string, tone: "ok" | "warn" | "plain" = "plain") => {
+    out.className = `unstake-result unstake-${tone}`;
+    out.innerHTML = html;
+    out.hidden = false;
+  };
+  const explorer = (address: string) =>
+    `<a href="https://solscan.io/account/${esc(address)}" rel="nofollow noopener noreferrer" target="_blank" title="The stake account on Solscan">${esc(short(address))}</a>`;
+
+  const lockupLine = (r: Extract<Lookup, { lockupUntil?: number }>) => {
+    const parts = [];
+    if (r.lockupUntil) parts.push(`until ${esc(wallClock(r.lockupUntil))}`);
+    if (r.lockupEpoch) parts.push(`until epoch ${r.lockupEpoch}`);
+    return parts.length
+      ? `<p class="unstake-warn-line">This account has a lockup ${parts.join(" and ")}. Withdrawing before then needs the custodian's signature.</p>`
+      : "";
+  };
+
+  function render(r: Lookup, clock: EpochClock) {
+    clearInterval(timer);
+    switch (r.kind) {
+      case "invalid":
+        return show("That is neither a transaction signature nor an account address. A signature is 87 or 88 characters, an address 32 to 44.", "warn");
+      case "notFound":
+        return show("The RPC node has no transaction with that signature. It may be too old for it to keep, or not confirmed yet — try the stake account's address instead.", "warn");
+      case "notStake":
+        return show("That transaction did not deactivate a stake account, and the address is not one. If this is liquid staking, the pool sets the schedule, not the chain.", "warn");
+      case "withdrawn":
+        return show(`<p class="unstake-big">Already withdrawn</p><p>That transaction is the withdrawal itself from stake account ${explorer(r.stakeAccount)}: the SOL has left it.</p>`, "ok");
+      case "closed":
+        return show(`<p class="unstake-big">Nothing left to wait for</p><p>Stake account ${explorer(r.stakeAccount)} no longer exists, which means it was withdrawn in full and closed.</p>`, "ok");
+      case "active":
+        return show(`<p class="unstake-big">Still staked</p><p>${esc(sol(r.sol))} in ${explorer(r.stakeAccount)} has not been deactivated, so no cooldown has started. Deactivate it in your wallet first.</p>`, "warn");
+      case "inactive":
+        return show(`<p class="unstake-big">Free to withdraw now</p><p>${esc(sol(r.sol))} in ${explorer(r.stakeAccount)} finished cooling down at the start of epoch ${r.freeEpoch}. Withdraw it from your wallet.</p>${lockupLine(r)}`, "ok");
+      case "deactivating": {
+        const at = epochStartsAt(clock, r.freeEpoch);
+        const tick = () => {
+          const el = out.querySelector("[data-left]");
+          if (el) el.textContent = at - Date.now() > 0 ? duration(at - Date.now()) : "any moment now";
+        };
+        show(
+          `<p class="unstake-label">Withdrawable in</p>
+           <p class="unstake-big unstake-left" data-left></p>
+           <p>Around <strong>${esc(wallClock(at))}</strong>, when epoch ${r.freeEpoch} begins.</p>
+           <dl class="unstake-facts">
+             <div><dt>Stake account</dt><dd>${explorer(r.stakeAccount)}</dd></div>
+             <div><dt>Amount</dt><dd>${esc(sol(r.sol))}</dd></div>
+             <div><dt>Deactivated in epoch</dt><dd>${r.deactivationEpoch}</dd></div>
+             <div><dt>Current epoch</dt><dd>${clock.epoch}</dd></div>
+           </dl>
+           ${lockupLine(r)}
+           <p class="unstake-small">An estimate from the measured slot time; it can move by minutes. In the rare epoch when too much stake leaves at once, part of it cools down an epoch later.</p>`,
+          "plain",
+        );
+        tick();
+        timer = window.setInterval(tick, 1000);
+        return;
+      }
+    }
+  }
+
+  async function run(q: string) {
+    show("Asking the chain…");
+    out.setAttribute("aria-busy", "true");
+    try {
+      const [r, clock] = await Promise.all([lookup(q), epochClock()]);
+      render(r, clock);
+    } catch {
+      show("The RPC node did not answer. Try again in a minute.", "warn");
+    } finally {
+      out.removeAttribute("aria-busy");
+    }
+  }
+
+  // One line of input, however it wraps: Enter checks rather than adding
+  // a newline nobody wants in a signature.
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      form.requestSubmit();
+    }
+  });
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const q = input.value.replace(/\s+/g, "");
+    if (!q) return input.focus();
+    // In the fragment, not the query string: the address bar becomes a link
+    // that can be shared or reloaded, and the fragment never reaches the
+    // server that served the page.
+    history.replaceState(null, "", `#${q}`);
+    run(q);
+  });
+
+  const fromHash = decodeURIComponent(location.hash.slice(1));
+  if (fromHash) {
+    input.value = fromHash;
+    run(fromHash);
+  }
+</script>
+
+<style>
+  .unstake-form {
+    margin-top: var(--space-3);
+    display: grid;
+    gap: var(--space-1);
+    max-width: 48rem;
+  }
+  .unstake-form label { font-weight: 600; }
+  .unstake-row { display: flex; gap: var(--space-1); flex-wrap: wrap; }
+  .unstake-row textarea {
+    flex: 1 1 16rem;
+    min-width: 0;
+    min-height: 2.75rem;
+    font: inherit;
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    padding: 0.6em 0.75em;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--bg);
+    color: var(--ink);
+    resize: none;
+    overflow-wrap: anywhere;
+    word-break: break-all;
+  }
+  .unstake-row .button { min-height: 2.75rem; }
+  .unstake-hint, .unstake-small { margin: 0; color: var(--ink-muted); font-size: var(--step--1); max-width: 62ch; }
+  .unstake-result {
+    margin-top: var(--space-3);
+    padding: var(--space-3);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    max-width: 48rem;
+    overflow-wrap: anywhere;
+  }
+  .unstake-result p { margin: 0 0 var(--space-1); }
+  .unstake-warn { border-color: var(--warn); background: var(--warn-bg); }
+  .unstake-ok { border-color: var(--ok); background: var(--ok-bg); }
+  .unstake-label { color: var(--ink-muted); font-size: var(--step--1); }
+  .unstake-big { font-size: var(--step-2); font-weight: 700; color: var(--ink-strong); }
+  .unstake-left { font-variant-numeric: tabular-nums; color: var(--accent-ink); }
+  .unstake-facts {
+    margin: var(--space-2) 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+    gap: var(--space-1) var(--space-3);
+  }
+  .unstake-facts dt { font-size: var(--step--1); color: var(--ink-muted); }
+  .unstake-facts dd { margin: 0.1em 0 0; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .unstake-warn-line { color: var(--warn); font-weight: 600; }
+  .prose-block { margin-block: var(--space-4); }
+  .prose-block p { max-width: 62ch; }
+  .prose-block h3 { margin-top: var(--space-3); font-size: var(--step-0); }
+</style>

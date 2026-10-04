@@ -18,6 +18,9 @@
 export interface ArticleLabels {
   // Header and the ended badge
   ended: string;
+  /** Beside the date while the event is running, where a site turns the
+      live countdown on. */
+  underway: string;
   /** Heading over an event's own questions and answers, given the subject
       the page is about. A bare "Questions" is a heading nobody searches and
       nobody can place: the same word sits over fifty different pages in
@@ -145,6 +148,7 @@ export interface ArticleLabels {
 
 export const EN: ArticleLabels = {
   ended: "Ended",
+  underway: "Under way",
   faq: (subject) => (subject ? `${subject}: questions` : "Questions"),
   organizedBy: "Organized by",
   minRead: (n) => `${n} min read`,
@@ -225,6 +229,7 @@ export const EN: ArticleLabels = {
  */
 export const ES: Partial<ArticleLabels> = {
   ended: "Finalizado",
+  underway: "En curso",
   faq: (subject) => (subject ? `${subject}: preguntas` : "Preguntas"),
   organizedBy: "Organiza",
   minRead: (n) => `${n} min de lectura`,
@@ -295,6 +300,7 @@ export const ES: Partial<ArticleLabels> = {
 
 export const DE: Partial<ArticleLabels> = {
   ended: "Vorbei",
+  underway: "Läuft gerade",
   faq: (subject) => (subject ? `${subject}: Fragen` : "Fragen"),
   organizedBy: "Veranstaltet von",
   minRead: (n) => `${n} Min. Lesezeit`,
@@ -375,6 +381,7 @@ const hyLocative = (where: string) => `${where}ում`;
 
 export const HY: Partial<ArticleLabels> = {
   ended: "Ավարտված է",
+  underway: "Ընթացքում է",
   // The Armenian colon is the mijaket, a raised dot, not ":".
   faq: (subject) => (subject ? `${subject}\u2024 հարցեր և պատասխաններ` : "Հարցեր և պատասխաններ"),
   organizedBy: "Կազմակերպիչ՝",

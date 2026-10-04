@@ -43,6 +43,38 @@
       el.textContent = ahead(days);
     }
 
+    // The live variant, on an event page that asks for it: the day count
+    // above until the start is under two days away, then hours and minutes
+    // — but only when the stamp carries a clock time and an offset. A bare
+    // date is a day in some time zone the page does not know, and counting
+    // down to its UTC midnight would be precise and wrong. "Under way" while
+    // it runs, and nothing after: the ended badge takes over from there.
+    const timed = (iso) => /T\d\d:\d\d/.test(iso || "");
+    const at = (iso) => Date.parse(timed(iso) ? iso : `${iso}T00:00:00Z`);
+    const live = [...document.querySelectorAll("[data-countdown-live]")];
+    const tick = () => {
+      const now = Date.now();
+      for (const el of live) {
+        const { start, end, now: runningLabel } = el.dataset;
+        // An end with no clock time runs to the end of that day.
+        const endAt = timed(end) ? at(end) : at(end) + DAY;
+        const left = at(start) - now;
+        let text = "";
+        if (left <= 0) text = now < endAt ? runningLabel || "" : "";
+        else if (left >= 2 * DAY || !timed(start)) {
+          const days = Math.round((Date.parse(`${start.slice(0, 10)}T00:00:00Z`) - midnightUtc(new Date())) / DAY);
+          text = ahead(Math.max(days, 0));
+        } else if (left >= 3600000) text = rtf.format(Math.floor(left / 3600000), "hour");
+        else text = rtf.format(Math.max(1, Math.ceil(left / 60000)), "minute");
+        el.textContent = known ? text : "";
+        el.hidden = !el.textContent;
+      }
+    };
+    if (live.length) {
+      tick();
+      setInterval(tick, 30000);
+    }
+
     // An end date means the event runs until then; without one, the start
     // date is also the last day.
     for (const el of document.querySelectorAll("[data-event-ended]")) {

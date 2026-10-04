@@ -37,6 +37,7 @@ const sourceHref = item.source?.url ? go(`${item.slug}-source`) : undefined;
     where={site.keyword}
     pluralOf={pluralOf}
     moreEventsText={item.moreEventsText}
+    countdown
   />
   {mine.length > 0 && (
     <section class="container event-sections">

@@ -14,7 +14,10 @@ How this site works, in five rules:
 
 - [Events](https://sol2go.lol/events/): hackathons, conferences and meetups on dates confirmed with the organiser, with the venue, the format and the registration route where the organiser published them.
 - [News](https://sol2go.lol/news/): releases, tooling and programmes — the things that change what a builder can do this month.
+- [Epoch countdown](https://sol2go.lol/epoch/): the current mainnet epoch, how much of it is left and when it ends, read live in the browser with the slot time measured.
+- [Unstake countdown](https://sol2go.lol/unstake/): paste a deactivation transaction or a stake account and see when the stake can be withdrawn.
 - [About](https://sol2go.lol/about/): the rules above, written out at length.
+- [Everything in one file](https://sol2go.lol/llms-full.txt): every page as Markdown. Each page is also at its own address with `.md` appended.
 
 ## Where the facts come from
 

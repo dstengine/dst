@@ -1,0 +1,198 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { epoch } from "../content";
+
+// Everything live on this page is filled in by the script at the bottom.
+// What the HTML carries on its own is the explanation, so a reader with no
+// JS — or a crawler — still gets a page that says what an epoch is and
+// where to read the number, rather than a row of empty boxes.
+const slotNews = "/news/solana-slots-are-250ms-and-every-block-limit-came-down-with-them/";
+---
+<Layout prose title={epoch.title} description={epoch.description}>
+  <section class="container hero">
+    <h1>{epoch.h1}</h1>
+    <p class="lede">{epoch.lede}</p>
+  </section>
+
+  <section class="container">
+    <div class="epoch-card" data-epoch aria-busy="true">
+      <p class="epoch-status" data-status role="status">Reading mainnet…</p>
+      <div class="epoch-figures" data-figures hidden>
+        <p class="epoch-number">Epoch <strong data-epoch-n>—</strong></p>
+        <div
+          class="epoch-bar"
+          role="progressbar"
+          aria-label="Share of the current epoch already produced"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0"
+          data-bar
+        >
+          <span data-fill></span>
+        </div>
+        <p class="epoch-percent"><strong data-percent>—</strong> done</p>
+        <dl class="epoch-facts">
+          <div>
+            <dt>Ends in</dt>
+            <dd><time class="epoch-left" data-left>—</time></dd>
+          </div>
+          <div>
+            <dt>Ends at, your time</dt>
+            <dd data-ends>—</dd>
+          </div>
+          <div>
+            <dt>Slot</dt>
+            <dd><span data-slot>—</span> of <span data-slots>—</span></dd>
+          </div>
+          <div>
+            <dt>Slot time, measured</dt>
+            <dd><span data-ms>—</span> <span class="epoch-note" data-sample></span></dd>
+          </div>
+        </dl>
+      </div>
+      <noscript>
+        <p class="epoch-status">This counter reads the chain from your browser, so it needs JavaScript. The explanation below does not.</p>
+      </noscript>
+    </div>
+    <p class="epoch-small">
+      An estimate, not a promise: the end time is the slots left multiplied by
+      the average slot over the last half hour, and it moves a little whenever
+      the network skips one. Refreshed every minute.
+    </p>
+    <p class="epoch-small">
+      Waiting on a stake to unlock? <a href="/unstake/" title="Solana unstake countdown: when deactivated stake can be withdrawn">Count down to your unstake</a>.
+    </p>
+  </section>
+
+  <section class="container prose-block">
+    <h2>What a Solana epoch is</h2>
+    <p>
+      An epoch is a fixed run of slots — <strong>432,000</strong> on mainnet —
+      and the unit Solana does its slow bookkeeping in. The leader schedule is
+      set per epoch, staking rewards are paid at the boundary between two of
+      them, and stake only ever activates or deactivates on a boundary.
+    </p>
+    <p>
+      How long one lasts depends on the slot time, and that has been changing.
+      At 400ms an epoch ran about two days; since the
+      <a href={slotNews} title="Solana slot time is 250ms: what scaled with it">250ms step on 18 September 2026</a>
+      it runs closer to thirty hours. That is why the page measures the slot
+      instead of assuming it.
+    </p>
+
+    <h2>Questions</h2>
+    <h3>When do Solana staking rewards arrive?</h3>
+    <p>
+      At the start of the next epoch, for the epoch that just ended. The
+      countdown above is also the countdown to the next reward payout.
+    </p>
+    <h3>When does deactivated stake become withdrawable?</h3>
+    <p>
+      At the first epoch boundary after the deactivation, as a rule. The
+      <a href="/unstake/" title="Solana unstake countdown">unstake countdown</a>
+      works it out for a particular transaction or stake account.
+    </p>
+    <h3>Where does this number come from?</h3>
+    <p>
+      From Solana mainnet, asked by your browser when the page opens,
+      through a relay on this site that keeps nothing: <code>getEpochInfo</code> for the epoch and slot, and
+      <code>getRecentPerformanceSamples</code> for how fast slots are being
+      produced. Nothing is cached on this site.
+    </p>
+  </section>
+</Layout>
+
+<script>
+  import { epochClock, type EpochClock } from "../solana";
+  import { duration, wallClock, isoMinute } from "../clock";
+
+  const root = document.querySelector<HTMLElement>("[data-epoch]")!;
+  const $ = <T extends HTMLElement = HTMLElement>(sel: string) => root.querySelector<T>(sel)!;
+  let clock: EpochClock | undefined;
+
+  const paint = () => {
+    if (!clock) return;
+    const now = Date.now();
+    // Interpolated between refreshes, so the bar and the seconds move on
+    // their own rather than jumping once a minute.
+    const slotsSince = (now - clock.at) / clock.msPerSlot;
+    const index = Math.min(clock.slotsInEpoch, clock.slotIndex + slotsSince);
+    const pct = (index / clock.slotsInEpoch) * 100;
+    $("[data-fill]").style.width = `${pct.toFixed(2)}%`;
+    $("[data-bar]").setAttribute("aria-valuenow", pct.toFixed(0));
+    $("[data-percent]").textContent = `${pct.toFixed(2)}%`;
+    $("[data-slot]").textContent = Math.floor(index).toLocaleString("en-GB");
+    const left = clock.endsAt - now;
+    const leftEl = $("[data-left]");
+    leftEl.textContent = left > 0 ? duration(left) : "any moment now";
+    leftEl.setAttribute("datetime", isoMinute(clock.endsAt));
+  };
+
+  const refresh = async () => {
+    try {
+      clock = await epochClock();
+      $("[data-epoch-n]").textContent = clock.epoch.toLocaleString("en-GB");
+      $("[data-slots]").textContent = clock.slotsInEpoch.toLocaleString("en-GB");
+      $("[data-ends]").textContent = wallClock(clock.endsAt);
+      $("[data-ms]").textContent = `${Math.round(clock.msPerSlot)} ms`;
+      $("[data-sample]").textContent = `over the last ${clock.sampleMinutes} min`;
+      $("[data-figures]").hidden = false;
+      $("[data-status]").hidden = true;
+      root.removeAttribute("aria-busy");
+      paint();
+    } catch {
+      // A failed refresh keeps the last good reading on screen; only a page
+      // that never got one says so.
+      if (!clock) $("[data-status]").textContent = "Mainnet did not answer. Try again in a minute.";
+    }
+  };
+
+  refresh();
+  setInterval(paint, 1000);
+  setInterval(refresh, 60_000);
+</script>
+
+<style>
+  .epoch-card {
+    margin-top: var(--space-3);
+    padding: var(--space-3);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+  .epoch-status { margin: 0; color: var(--ink-muted); }
+  .epoch-number { margin: 0; font-size: var(--step-1); }
+  .epoch-number strong { font-size: var(--step-3); font-variant-numeric: tabular-nums; color: var(--accent-ink); }
+  .epoch-bar {
+    margin-top: var(--space-2);
+    height: 0.75rem;
+    border-radius: 999px;
+    background: var(--surface-sunk);
+    overflow: hidden;
+  }
+  .epoch-bar span {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: var(--accent);
+    transition: width 0.9s linear;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .epoch-bar span { transition: none; }
+  }
+  .epoch-percent { margin: var(--space-1) 0 0; font-variant-numeric: tabular-nums; color: var(--ink-muted); }
+  .epoch-facts {
+    margin: var(--space-3) 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    gap: var(--space-2) var(--space-3);
+  }
+  .epoch-facts dt { font-size: var(--step--1); color: var(--ink-muted); }
+  .epoch-facts dd { margin: 0.15em 0 0; font-variant-numeric: tabular-nums; font-weight: 600; }
+  .epoch-left { font-size: var(--step-1); color: var(--accent-ink); }
+  .epoch-note { font-weight: 400; color: var(--ink-muted); font-size: var(--step--1); }
+  .epoch-small { margin-top: var(--space-2); max-width: 62ch; color: var(--ink-muted); font-size: var(--step--1); }
+  .prose-block { margin-block: var(--space-4); }
+  .prose-block p { max-width: 62ch; }
+  .prose-block h3 { margin-top: var(--space-3); font-size: var(--step-0); }
+</style>

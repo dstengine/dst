@@ -8,7 +8,7 @@ import type { EventItem } from "@dst/content/types";
 export type { Section };
 
 // Slugs the site already spends on pages of its own.
-const RESERVED = ["about", "events", "news", "go", "li"];
+const RESERVED = ["about", "events", "news", "go", "li", "epoch", "unstake"];
 
 // Countries whose heading the default would get wrong. `the` because a
 // heading that reads "events in United Kingdom" reads like a form field —

@@ -78,6 +78,11 @@ interface Props {
       what that kind is called in its language, so it answers rather than
       is asked to hand over its whole table. */
   pluralOf?: (key: string) => string | undefined;
+  /** Print how long until the event starts beside its date — "in 3 weeks",
+      and to the minute once it is under two days away and the organiser
+      gave a clock time. Off by default: it is a claim about now on a page
+      built days ago, and a site turns it on when its readers act on it. */
+  countdown?: boolean;
   /** Wins over everything the component would derive. For a page where the
       derived heading is weak or wrong — "Other shows in Broadway Week"
       over a block the category would have called "New York theatre".
@@ -86,7 +91,7 @@ interface Props {
       reason. It names the cards, it does not choose them. */
   moreEventsText?: string;
 }
-const { item, backHref, ticketHref, sourceHref, more = [], moreNews = [], newsBase = "/news/", eventsBase = "/events/", publisher, categoryHref, promoted, where, pluralOf, moreEventsText, locale = "en-US", labels: labelOverrides } = Astro.props;
+const { item, backHref, ticketHref, sourceHref, more = [], moreNews = [], newsBase = "/news/", eventsBase = "/events/", publisher, categoryHref, promoted, where, pluralOf, moreEventsText, countdown = false, locale = "en-US", labels: labelOverrides } = Astro.props;
 const L = withLabels(labelOverrides);
 
 const todayIso = new Date().toISOString().slice(0, 10);
@@ -435,6 +440,16 @@ const relatedItems = (item.related ?? []).map((card) => ({
       {/* Revealed client-side once the last day has passed — a static build
           can't know, and a page still presenting a finished event as
           upcoming is the usual way these listings rot. */}
+      {countdown && (
+        <span
+          class="event-article-countdown"
+          data-countdown-live
+          data-start={startStamp}
+          data-end={endStamp ?? stamp(item.start, item.endTime)}
+          data-now={L.underway}
+          hidden
+        ></span>
+      )}
       <span class="event-article-ended" data-event-ended datetime={item.end ?? item.start} hidden>
         {L.ended}
       </span>
@@ -682,6 +697,11 @@ const relatedItems = (item.related ?? []).map((card) => ({
     background: var(--warn-bg);
     padding: 0.1em 0.5em;
     border-radius: 999px;
+  }
+  .event-article-countdown {
+    font-variant-numeric: tabular-nums;
+    color: var(--accent);
+    font-weight: 600;
   }
   .event-article-outcome { margin-top: var(--space-4); }
   .event-article-outcome h2 { margin-bottom: 0; }
