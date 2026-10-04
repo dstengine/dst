@@ -1622,7 +1622,7 @@ export const items: EventItem[] = [
   {
     slug: "great-jack-o-lantern-blaze-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-09-13T01:40:00+04:00",
+    updatedAt: "2026-10-04T09:38:27+04:00",
     site: "nyc42",
     image: "/covers/great-jack-o-lantern-blaze-2026.jpg",
     imageAlt: "Rows of small amber lantern discs, each with a carved face, hung close together against a dark ground",
@@ -1632,7 +1632,7 @@ export const items: EventItem[] = [
     title: "The Great Jack O'Lantern Blaze 2026",
     titleSeo: "Great Jack O'Lantern Blaze 2026: Hudson Valley",
     summary:
-      "Seven thousand hand-carved pumpkins light up a Hudson Valley estate for seven weeks, from 18 September to 8 November — an hour north of Grand Central.",
+      "Seven thousand hand-carved pumpkins light up a Hudson Valley estate for seven weeks, from 18 September to 8 November — an hour north of New York City by train from Grand Central.",
     start: "2026-09-18",
     end: "2026-11-08",
     utcOffset: "-04:00",
@@ -1644,7 +1644,7 @@ export const items: EventItem[] = [
     source: {
       name: "The Great Jack O'Lantern Blaze",
       url: "https://www.pumpkinblaze.org/",
-      verifiedOn: "2026-09-08",
+      verifiedOn: "2026-10-04",
     },
     body: [
       "Seven thousand pumpkins, every one of them cut by hand, and the whole thing is lit only by what is inside them.",
@@ -1652,8 +1652,9 @@ export const items: EventItem[] = [
       "<strong>18 September to 8 November 2026</strong> at <strong>Van Cortlandt Manor</strong>, Croton-on-Hudson, New York. It is a production of <strong>Historic Hudson Valley</strong>, a not-for-profit educational organisation. Entry is by timed ticket.",
       "## What the Blaze is",
       "An after-dark walk through the grounds of an 18th-century estate, past more than seven thousand illuminated jack-o'-lanterns arranged into sequences — a carousel, a bridge, a wall of faces. The carving is continuous through the run, because pumpkins do not last seven weeks.",
+      "New this year is <strong>Little Literary Lane</strong>, a section of hand-carved characters from fables, with a larger-than-life Big Bad Wolf among them. The Wizard of Oz and the Legend of Sleepy Hollow, Headless Horseman included, are on the trail too.",
       "## Getting there from the city",
-      "Croton-on-Hudson is on Metro-North's Hudson Line out of Grand Central. It is the one Halloween on this site that is not in New York City, and the reason it is here anyway is that half the people in the queue came up from it.",
+      "Croton-on-Hudson is on Metro-North's Hudson Line out of Grand Central. It is one of two Halloweens on this site outside New York City — the other is <a href=\"/events/halloween-in-sleepy-hollow-2026/\" title=\"Halloween in Sleepy Hollow 2026\">Sleepy Hollow</a>, a few stops back down the same line — and the reason both are here anyway is that half the people in the queue came up from the city.",
     ],
     faq: [
       {
@@ -1671,6 +1672,97 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Two practical things. It is outdoors and it is after dark in the Hudson Valley in October, which by the end of the run means genuinely cold — the September and early-October slots are the comfortable ones, and the late-October slots are the ones that sell first anyway. And it is a walk on grass and gravel in the dark: the sequences are worth stopping in front of, so the hour it is billed at is closer to ninety minutes if you are not being moved along.",
+  },
+
+  {
+    slug: "halloween-in-sleepy-hollow-2026",
+    createdAt: "2026-10-04T09:37:30+04:00",
+    updatedAt: "2026-10-04T09:37:30+04:00",
+    site: "nyc42",
+    image: "/covers/halloween-in-sleepy-hollow-2026.jpg",
+    imageAlt: "A stone arched bridge over dark water in front of a large amber disc, with a bare twisted tree at the left and a small red lantern hanging from its trunk",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Halloween in Sleepy Hollow 2026",
+    summary:
+      "Sleepy Hollow, New York, stages its own Legend every Friday to Sunday from 2 to 31 October: a Headless Horseman whodunit, an evening village, magic, Irving and Poe. Advance tickets, from $25.",
+    start: "2026-10-02",
+    end: "2026-10-31",
+    utcOffset: "-04:00",
+    venue: "Philipsburg Manor",
+    city: "Sleepy Hollow",
+    country: "United States",
+    geo: {
+      name: "Philipsburg Manor",
+      lat: 41.088601,
+      lng: -73.863984,
+    },
+    organizer: "Historic Hudson Valley",
+    category: "Halloween",
+    tickets: { priceFrom: 25, priceTo: 89, currency: "USD" },
+    source: {
+      name: "Historic Hudson Valley",
+      url: "https://hudsonvalley.org/events/",
+      verifiedOn: "2026-10-04",
+    },
+    ticket: { url: "https://hudsonvalley.org/events/", label: "Dates and tickets" },
+    body: [
+      "Sleepy Hollow is a real village on the Hudson, and every October it does the obvious thing with its name. <strong>Historic Hudson Valley</strong>, the not-for-profit that looks after the historic houses along this stretch of the river, gives five weekends of three of its sites over to Washington Irving's story — and, for the grown-ups, to Poe.",
+      "## Halloween in Sleepy Hollow 2026: dates",
+      "<strong>Fridays to Sundays, 2 to 31 October 2026.</strong> Three of the five events are at <strong>Philipsburg Manor</strong>, 381 North Broadway, Sleepy Hollow; the Poe evening is at the organiser's Library, 639 Bedford Road, Sleepy Hollow; Irving's 'Legend' is told at <strong>Sunnyside</strong>, Irving's own house, in Irvington. Every one is booked in advance with a time on the ticket, and four of the five say outright that nothing is sold at the gate. Members of Historic Hudson Valley get 15% off.",
+      "## Which one to book",
+      "They are pitched at different ages, and the organiser says so plainly. <strong>Twilight Village</strong> is the only one recommended for all ages. <strong>The Headless Horseman Files</strong> is for 8 and over, because part of the walk is in near darkness. The magic show and Irving's 'Legend' are for 10 and over — the reasons given are as much the length, the dim light and Irving's nineteenth-century prose as anything frightening. <strong>An Audience with Poe</strong> is for 16 and over, and means it: the page warns of violence, death and animal cruelty.",
+      "The magic show and Irving's 'Legend' both say they sell out every year. Twilight Village has a way round a sold-out night: a <strong>FLEX ticket</strong> gets in on any night and any time slot the Village is open, sold out or not, and comes with a s'mores kit and a hot chocolate or cider. It cannot be refunded or exchanged.",
+      "## Getting there from New York City",
+      "Sleepy Hollow is on Metro-North's Hudson Line out of Grand Central, a few stops short of Croton-on-Hudson and <a href=\"/events/great-jack-o-lantern-blaze-2026/\" title=\"The Great Jack O'Lantern Blaze 2026\">the Great Jack O'Lantern Blaze</a>. By car, the organiser's GPS address for Philipsburg Manor is 381 N Broadway, with an overflow lot at 100 Continental Street.",
+    ],
+    programme: [
+      {
+        heading: "The Headless Horseman Files — Philipsburg Manor, by day",
+        text: "A 45-minute guided walk through the manor grounds as a live-action whodunit: Hans Van Ripper, Katrina Van Tassel, Hulda the Witch and Brom Bones each have a motive for doing away with Ichabod Crane, and the Horseman is somewhere in the shadows. Timed entry, Fridays to Sundays, 10am to 4:15pm. Adults $35, seniors and young adults $34, children $25. Recommended for 8 and over.",
+      },
+      {
+        heading: "Twilight Village — Philipsburg Manor, evenings",
+        text: "Storytellers, fire performers, Ichabod Crane and Katrina Van Tassel in person, a roving brass band, fortune tellers, a pop-up market and food trucks, and the Horseman's midnight ride as a sound-and-light show. 6:30 to 8pm on 2 and 4 October; 6:30 to 9pm on 3, 9–11 and 16–18 October; 6 to 9pm on 23–25 and 30–31 October. Adults $35, seniors and young adults $34, children $25; food, drink and tarot readings cost extra.",
+      },
+      {
+        heading: "The Spirits of Sleepy Hollow Country — Philipsburg Manor",
+        text: "A 50-minute magic show by the illusionists Mark Clearview and Nick Wallace, who 'communicate' with Hulda, Major André and the Horseman. Reserved seats, no interval, and latecomers are not let in. 6 and 7:30pm on 2–3, 9, 16, 23 and 30 October; 3:30 and 5pm on 4 October; 3:30, 5 and 6:30pm on 18 and 25 October; 2, 3:30, 6 and 7:30pm on 10–11, 17, 24 and 31 October. Value $65, standard $79, premium $89 with a beer or wine and a snack. Recommended for 10 and over; uses strobe effects.",
+      },
+      {
+        heading: "Irving's 'Legend' — Sunnyside, Irvington",
+        text: "The storyteller Jonathan Kruk performs The Legend of Sleepy Hollow outdoors at Washington Irving's home, with live music and sound by Jim Keyes, a cast of shadowy characters and the Horseman himself. 55 minutes, seated, with some walking over uneven ground. 6 and 7:30pm on 2–3, 9, 16 and 23 October; 5 and 6:30pm on 4, 18 and 25 October; 6, 7:30 and 9pm on 10–11, 17, 24 and 30–31 October. From $40. Recommended for 10 and over.",
+      },
+      {
+        heading: "An Audience with Poe — the Library, Sleepy Hollow",
+        text: "Storytellers perform four of Poe's tales — The Raven, The Tell-Tale Heart, The Black Cat and The Masque of the Red Death — the first in the Library with a drink, the other three in a small theatre with cocktails or mocktails and treats. 3, 5 and 7pm on 3, 9, 11, 16, 18, 23, 25 and 30 October; 1:30, 3:30, 6 and 8pm on 10, 17, 24 and 31 October. $65. Recommended for 16 and over.",
+      },
+    ],
+    faq: [
+      {
+        q: "What is on for Halloween in Sleepy Hollow in 2026?",
+        a: "Five ticketed events from Historic Hudson Valley, Fridays to Sundays from 2 to 31 October: The Headless Horseman Files, Twilight Village, The Spirits of Sleepy Hollow Country, Irving's 'Legend' at Sunnyside and An Audience with Poe.",
+      },
+      {
+        q: "Which Sleepy Hollow Halloween event is best for young children?",
+        a: "Twilight Village, the only one the organiser recommends for all ages. The Headless Horseman Files is for 8 and over, the magic show and Irving's 'Legend' for 10 and over, and the Poe evening for 16 and over.",
+      },
+      {
+        q: "Can I buy tickets at the gate?",
+        a: "Plan not to. Twilight Village, the magic show, Irving's 'Legend' and the Poe evening are advance tickets only and not sold on site, and the Headless Horseman Files is booked by timed entry. A Twilight Village FLEX ticket gets in on any open night, even a sold-out one.",
+      },
+      {
+        q: "Is Horseman's Hollow on in 2026?",
+        a: "It is not on Historic Hudson Valley's 2026 calendar, which lists the five events on this page for October.",
+      },
+      {
+        q: "How do I get to Sleepy Hollow from New York City?",
+        a: "By Metro-North's Hudson Line from Grand Central. By car, the GPS address for Philipsburg Manor is 381 N Broadway, Sleepy Hollow, with an overflow lot at 100 Continental Street.",
+      },
+    ],
+    expertise:
+      "The five do not compete for the same hours, which is the useful thing to know before booking any of them. The whodunit runs by day, with entry times from ten until quarter past four; the magic show and Poe both play afternoons as well as evenings; Irving and the Village belong to the dark. A family can do the Files after lunch and the Village at dusk at the same manor without a gap long enough to go home. And the Saturdays from 10 October carry the most performances of all three seated shows, so a Saturday is where a late booker has the best chance of a seat.",
   },
 
   {

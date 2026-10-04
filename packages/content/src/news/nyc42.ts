@@ -4,9 +4,63 @@ export const items: NewsItem[] = [
 
 
   {
+    slug: "no-pumpkin-flotilla-on-the-harlem-meer-this-year",
+    createdAt: "2026-10-04T09:37:30+04:00",
+    updatedAt: "2026-10-04T09:37:30+04:00",
+    site: "nyc42",
+    image: "/covers/no-pumpkin-flotilla-on-the-harlem-meer-this-year.jpg",
+    imageAlt: "Six carved jack-o'-lanterns lined up on a spit of shore beside a dark, empty lake, with a thin crescent moon high above",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "The Central Park Pumpkin Flotilla is cancelled for 2026",
+    cardTitle: "No Pumpkin Flotilla this year",
+    titleSeo: "Central Park Pumpkin Flotilla 2026: cancelled",
+    summary:
+      "New York's Pumpkin Flotilla will not cross the Harlem Meer this Halloween: the Central Park Conservancy says the free event drew more people than its setup could safely handle. No replacement in 2026.",
+    date: "2026-10-04",
+    city: "New York City",
+    country: "United States",
+    category: "Halloween",
+    source: {
+      name: "Time Out New York",
+      url: "https://www.timeout.com/newyork/news/central-park-is-canceling-this-crazy-popular-annual-halloween-tradition-this-fallheres-why-091726",
+      verifiedOn: "2026-10-04",
+    },
+    body: [
+      "For more than thirty years the north end of Central Park has seen October out with a line of lit jack-o'-lanterns crossing the Harlem Meer at dusk behind a kayak. This year it will not.",
+      "## What was announced",
+      "The <strong>Central Park Conservancy</strong>, which has presented the Flotilla since the early 1990s, has called off the 2026 edition. Its reason, as Time Out New York reported on 17 September, is that the event became <strong>too popular for its existing setup to safely handle the thousands of people</strong> who wanted to attend. There is <strong>no replacement celebration in 2026</strong>.",
+      "The Conservancy's own Flotilla page now leads to its general calendar, and the form New Yorkers used to put a pumpkin forward is gone.",
+      "## What the Flotilla was",
+      "It began at the Pool and moved to the Harlem Meer in 1993, to mark the opening of the Charles A. Dana Discovery Center. It used to be called the Pumpkin Sail; the Conservancy dropped the name because, as it puts it, there have never been pumpkins for sale at the event. People brought their own carved pumpkins — first come, first served in recent years — and the Conservancy fitted them with waterproof LED lights and sent them across the water in two long connected lines behind a kayak paddled by a pirate or a witch. Around it were storytelling, magic, music, crafts, carving demonstrations and a costume parade by the Dana Center, all of it free.",
+      "## What comes next",
+      "According to Time Out New York, the Conservancy is spending the year exploring a new Halloween event for the north end of the park — one that can welcome larger crowds and give the community more ways to take part. Nothing has been named or dated.",
+      "## Where the pumpkins are this year",
+      "The carved-pumpkin Halloween that is on is <a href=\"/events/great-jack-o-lantern-blaze-2026/\" title=\"The Great Jack O'Lantern Blaze 2026\">the Great Jack O'Lantern Blaze</a> up the Hudson, seven thousand of them, carved by somebody else, until 8 November. For a costume, <a href=\"/events/village-halloween-parade-2026/\" title=\"Village Halloween Parade 2026\">the Village Halloween Parade</a> takes anyone who turns up in one on Sixth Avenue on the 31st. For small children, <a href=\"/events/boo-at-the-zoo-bronx-2026/\" title=\"Boo at the Zoo 2026\">Boo at the Zoo</a> fills the Bronx Zoo every weekend to 1 November, and <a href=\"/events/halloween-in-sleepy-hollow-2026/\" title=\"Halloween in Sleepy Hollow 2026\">Sleepy Hollow</a> puts on Twilight Village every Friday to Sunday in October.",
+    ],
+    faq: [
+      {
+        q: "Is the Central Park Pumpkin Flotilla happening in 2026?",
+        a: "No. The Central Park Conservancy has cancelled the 2026 Flotilla on the Harlem Meer, and there is no replacement event this year.",
+      },
+      {
+        q: "Why was the Pumpkin Flotilla cancelled?",
+        a: "The Conservancy says it became too popular for its existing setup to safely handle the thousands of people who wanted to attend, as Time Out New York reported on 17 September 2026.",
+      },
+      {
+        q: "Will the Pumpkin Flotilla come back?",
+        a: "Nothing is confirmed. The Conservancy is exploring a new Halloween event for the north end of Central Park, built for larger crowds; no name or date has been given.",
+      },
+    ],
+    expertise:
+      "Cancelling a free event for being too popular sounds odd until you picture what this one asked of the ground: everyone wants the same stretch of shoreline in the same quarter of an hour of dusk, and a crowd that size cannot be spread across an afternoon. What is worth noticing is the wording of what comes next — larger crowds, more ways to take part — which describes a bigger Halloween at the north end, not a smaller one. Any listing still showing a Flotilla date for this October is out of date.",
+  },
+
+  {
     slug: "a-firehorse-leads-the-halloween-parade",
     createdAt: "2026-09-21T15:55:00+04:00",
-    updatedAt: "2026-09-21T15:55:00+04:00",
+    updatedAt: "2026-10-04T09:37:30+04:00",
     site: "nyc42",
     image: "/covers/a-firehorse-leads-the-halloween-parade.jpg",
     imageAlt: "A cut-paper horse striding across the frame with a row of small lantern shapes trailing behind it",
@@ -18,6 +72,12 @@ export const items: NewsItem[] = [
     titleSeo: "A Firehorse leads the Village Halloween Parade",
     summary:
       "New York's 53rd Village Halloween Parade steps off at 7pm on 31 October under the theme Body & Soul, led by a Firehorse built for the Year of the Horse. NY1 carries it live from 8pm.",
+    updates: [
+      {
+        on: "2026-10-04",
+        text: "The Grand Marshal has been named: <strong>Joey Arias</strong>, the cabaret singer, jazz vocalist and drag performer. The details are on <a href=\"/events/village-halloween-parade-2026/\" title=\"Village Halloween Parade 2026\">the parade's own entry</a>.",
+      },
+    ],
     date: "2026-09-21",
     city: "New York City",
     country: "United States",
