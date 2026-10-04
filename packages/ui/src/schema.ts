@@ -85,10 +85,10 @@ export interface PageGraphInput {
       has to say so here as well as in `<html lang>`, or the markup tells a
       crawler the opposite of what the page does. */
   lang?: string;
-  /** Where this page's language keeps its front page, e.g. "/en/". A site
+  /** Where this page's language keeps its front page, e.g. "/hy/". A site
       in two languages has two homes, and a breadcrumb that started every
-      English page from the Armenian one — through a crumb named after the
-      "en" in the address — would be a trail back to a page the reader
+      Armenian page from the English one — through a crumb named after the
+      "hy" in the address — would be a trail back to a page the reader
       cannot read. Defaults to the root, which is every one-language site. */
   home?: string;
 }
@@ -122,7 +122,7 @@ function breadcrumbs(input: PageGraphInput) {
     path += `/${segment}`;
     const last = i === segments.length - 1;
     // The nav is keyed by its whole href, so under a language prefix the
-    // menu's "/en/events/" names the crumb for "events" as well.
+    // menu's "/hy/events/" names the crumb for "events" as well.
     const fromNav = navLabel.get(path.replace(/^\/+/, "")) ?? navLabel.get(segment);
     items.push({
       name: last ? withoutSuffix(input.title) : (fromNav ?? titleFromSlug(segment)),

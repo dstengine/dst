@@ -2,4 +2,4 @@
 import type { APIRoute } from "astro";
 import { rss } from "../../feeds";
 
-export const GET: APIRoute = () => rss("en");
+export const GET: APIRoute = () => rss("hy");

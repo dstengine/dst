@@ -1,9 +1,0 @@
----
-import Section from "../../views/Section.astro";
-import { allSections } from "../../sections";
-
-export function getStaticPaths() {
-  return allSections.en.map((section) => ({ params: { section: section.slug }, props: { section } }));
-}
----
-<Section lang="en" section={Astro.props.section} />

@@ -5,7 +5,7 @@ import type { EventItem } from "@dst/content/types";
 import { icsPaths, oneEvent } from "../../feeds";
 
 export function getStaticPaths() {
-  return icsPaths("hy");
+  return icsPaths("en");
 }
 
-export const GET: APIRoute = ({ props }) => oneEvent("hy", (props as { item: EventItem }).item);
+export const GET: APIRoute = ({ props }) => oneEvent("en", (props as { item: EventItem }).item);

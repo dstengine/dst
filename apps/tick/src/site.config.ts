@@ -27,7 +27,7 @@ export const site: Record<Lang, {
     // inflects it — Երևանում, Երևանի — and both count as saying it.
     keyword: "Երևան",
     lang: "hy-AM",
-    footerLinks: [{ href: "/about/", label: "Մեր մասին" }],
+    footerLinks: [{ href: "/hy/about/", label: "Մեր մասին" }],
     feedTitle: feed.hy.title,
   },
   en: {
@@ -37,7 +37,7 @@ export const site: Record<Lang, {
     titleSuffix: "Yerevan",
     keyword: "Yerevan",
     lang: "en-GB",
-    footerLinks: [{ href: "/en/about/", label: "About" }],
+    footerLinks: [{ href: "/about/", label: "About" }],
     feedTitle: feed.en.title,
   },
 };

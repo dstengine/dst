@@ -29,7 +29,7 @@
 // A site in more than one language declares one keyword per language —
 // `keywords: { hy: "Երևան", en: "Yerevan" }` — and each page is held to the
 // one its own <html lang> names. Its second language lives under a prefix,
-// /en/, which is not a level of depth: /en/concerts/ is a section page in
+// /hy/, which is not a level of depth: /hy/concerts/ is a section page in
 // the same sense /concerts/ is.
 //
 // Reads dist/, so it needs a build first. noindex pages and the /go/ hops

@@ -1,8 +1,8 @@
 import { HY, EN } from "@dst/ui/labels";
 import type { ArticleLabels } from "@dst/ui/labels";
 
-// tick publishes in two languages: Armenian at the root, English under
-// /en/. Every string below exists once per language and is picked by the
+// tick publishes in two languages: English at the root, Armenian under
+// /hy/. Every string below exists once per language and is picked by the
 // page's own `lang` — see ./i18n.ts for how a page knows which it is.
 //
 // The English is written for a British reader with a light touch of the
@@ -11,7 +11,9 @@ import type { ArticleLabels } from "@dst/ui/labels";
 
 export const siteId = "tick";
 
-export const LANGS = ["hy", "en"] as const;
+// In this order on purpose: the first is the default, the one hreflang
+// sends a reader to when their language is neither (`x-default`).
+export const LANGS = ["en", "hy"] as const;
 export type Lang = (typeof LANGS)[number];
 
 // The site publishes itself: it is independent of the DST group, so every

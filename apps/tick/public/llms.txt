@@ -1,6 +1,6 @@
 # Tick · Yerevan — what's on in Yerevan
 
-> Events and culture news for Yerevan and Armenia, in Armenian at the root and in English under /en/. Every entry names the source it came from and the day it was last checked against it. An independent publication: no ministry, no ticket sales, tied to no venue.
+> Events and culture news for Yerevan and Armenia, in English at the root and in Armenian under /hy/. Every entry names the source it came from and the day it was last checked against it. An independent publication: no ministry, no ticket sales, tied to no venue.
 
 How the site works, in five rules:
 
@@ -12,40 +12,40 @@ How the site works, in five rules:
 
 ## What readers find here
 
-- [Events](https://tick.lnd.lol/en/events/) ([in Armenian](https://tick.lnd.lol/events/)): concerts, theatre and festivals with dates confirmed at the box office, with the time, the price in drams and the programme where the organiser has published one.
-- [News](https://tick.lnd.lol/en/news/) ([in Armenian](https://tick.lnd.lol/news/)): what has changed in the city's cultural life, each story with its source.
-- [About](https://tick.lnd.lol/en/about/): the rules above, at length.
+- [Events](https://tick.lnd.lol/events/) ([in Armenian](https://tick.lnd.lol/hy/events/)): concerts, theatre and festivals with dates confirmed at the box office, with the time, the price in drams and the programme where the organiser has published one.
+- [News](https://tick.lnd.lol/news/) ([in Armenian](https://tick.lnd.lol/hy/news/)): what has changed in the city's cultural life, each story with its source.
+- [About](https://tick.lnd.lol/about/): the rules above, at length.
 
 ## Where the facts come from
 
 From the organisers themselves, from Tomsarkgh, the box office most Yerevan venues sell through, and from the papers that reported them. Every entry prints that name and the date it was checked. Coordinates are geocoded once and stored with the entry; where the geocoder cannot find the right place, the entry goes without a map rather than with a wrong one.
 
-Every Armenian page has an English twin at the same address under /en/, and each says so in its hreflang links.
+Every page has an Armenian twin at the same address under /hy/, and each says so in its hreflang links.
 
 ## Events
 
-- [Lyubov Uspenskaya in concert in Yerevan](https://tick.lnd.lol/en/events/lyubov-uspenskaya-yerevan-2027/): Lyubov Uspenskaya, the queen of Russian chanson, brings a full concert programme to the Karen Demirchyan Complex in Yerevan on 30 January 2027.
-- [Andru Donalds: the voice of Enigma in Yerevan](https://tick.lnd.lol/en/events/andru-donalds-enigma-yerevan-2026/): Andru Donalds, the voice on Enigma's records from 1998 to 2008, sings at the Aram Khachaturian Concert Hall in Yerevan on 21 November, with strings and a children's choir.
-- [Tata Simonyan in concert in Yerevan](https://tick.lnd.lol/en/events/tata-simonyan-yerevan-2026/): Tata Simonyan plays the main hall of the Karen Demirchyan Complex in Yerevan on 7 November, with the Karen Sevak band and nothing pre-recorded.
-- [Romeo Juliet. Déjà Vu](https://tick.lnd.lol/en/events/romeo-juliet-deja-vu-2026/): A new love drama in Yerevan on 19 October at the Hrachya Ghaplanyan Drama Theatre, with Inna Khojamiryan, Ruben Muradyan and Aram Karakhanyan.
-- [EQUINOX Fest: Autumn Chapter at Altezza](https://tick.lnd.lol/en/events/equinox-fest-autumn-chapter-2026/): An electronic and live-music festival on a helipad just outside Yerevan on 17 October, with Armen Miran, Viken Arman and Arto Tunçboyacıyan.
-- [Harry Potter film music by the Mystery Ensemble](https://tick.lnd.lol/en/events/harry-potter-film-music-yerevan-2026/): The Harry Potter scores in Yerevan, played by the Mystery Ensemble at the Komitas Chamber Music House on 9 October and again on 4 December.
-- [Elgar: Cello Concerto and Enigma Variations](https://tick.lnd.lol/en/events/elgar-enigma-variations-yerevan-2026/): Elgar in Yerevan on 5 October: the Armenian State Symphony Orchestra at the Aram Khachaturian Concert Hall, with Guy Johnston as soloist in the Cello Concerto.
+- [Lyubov Uspenskaya in concert in Yerevan](https://tick.lnd.lol/events/lyubov-uspenskaya-yerevan-2027/): Lyubov Uspenskaya, the queen of Russian chanson, brings a full concert programme to the Karen Demirchyan Complex in Yerevan on 30 January 2027.
+- [Andru Donalds: the voice of Enigma in Yerevan](https://tick.lnd.lol/events/andru-donalds-enigma-yerevan-2026/): Andru Donalds, the voice on Enigma's records from 1998 to 2008, sings at the Aram Khachaturian Concert Hall in Yerevan on 21 November, with strings and a children's choir.
+- [Tata Simonyan in concert in Yerevan](https://tick.lnd.lol/events/tata-simonyan-yerevan-2026/): Tata Simonyan plays the main hall of the Karen Demirchyan Complex in Yerevan on 7 November, with the Karen Sevak band and nothing pre-recorded.
+- [Romeo Juliet. Déjà Vu](https://tick.lnd.lol/events/romeo-juliet-deja-vu-2026/): A new love drama in Yerevan on 19 October at the Hrachya Ghaplanyan Drama Theatre, with Inna Khojamiryan, Ruben Muradyan and Aram Karakhanyan.
+- [EQUINOX Fest: Autumn Chapter at Altezza](https://tick.lnd.lol/events/equinox-fest-autumn-chapter-2026/): An electronic and live-music festival on a helipad just outside Yerevan on 17 October, with Armen Miran, Viken Arman and Arto Tunçboyacıyan.
+- [Harry Potter film music by the Mystery Ensemble](https://tick.lnd.lol/events/harry-potter-film-music-yerevan-2026/): The Harry Potter scores in Yerevan, played by the Mystery Ensemble at the Komitas Chamber Music House on 9 October and again on 4 December.
+- [Elgar: Cello Concerto and Enigma Variations](https://tick.lnd.lol/events/elgar-enigma-variations-yerevan-2026/): Elgar in Yerevan on 5 October: the Armenian State Symphony Orchestra at the Aram Khachaturian Concert Hall, with Guy Johnston as soloist in the Cello Concerto.
 
 ## News
 
-- [Yerevan Fashion Week opens at the Erebuni Museum](https://tick.lnd.lol/en/news/yerevan-fashion-week-2026/): Yerevan Fashion Week runs from 8 to 11 October and opens at the Erebuni Museum — and the winner of its Fashion Scout contest goes on to London Fashion Week.
+- [Yerevan Fashion Week opens at the Erebuni Museum](https://tick.lnd.lol/news/yerevan-fashion-week-2026/): Yerevan Fashion Week runs from 8 to 11 October and opens at the Erebuni Museum — and the winner of its Fashion Scout contest goes on to London Fashion Week.
 
 ## Միջոցառումներ (in Armenian)
 
-- [Լյուբով Ուսպենսկայա. մեծ համերգ Երևանում](https://tick.lnd.lol/events/lyubov-uspenskaya-yerevan-2027/): Ռուսական շանսոնի աստղ Լյուբով Ուսպենսկայան 2027 թվականի հունվարի 30-ին Երևանում է՝ Կարեն Դեմիրճյանի անվան մարզահամերգային համալիրում։
-- [Էնդրյու Դոնալդս. ENIGMA-ի ոսկե ձայնը Երևանում](https://tick.lnd.lol/events/andru-donalds-enigma-yerevan-2026/): Էնդրյու Դոնալդսը՝ ENIGMA-ի ձայնը, նոյեմբերի 21-ին Երևանում է՝ Արամ Խաչատրյան համերգասրահում, լարային նվագախմբի և մանկական երգչախմբի հետ։
-- [Թաթա Սիմոնյան. մենահամերգ Երևանում](https://tick.lnd.lol/events/tata-simonyan-yerevan-2026/): Թաթա Սիմոնյանի մեծ մենահամերգը Երևանում՝ նոյեմբերի 7-ին Կարեն Դեմիրճյանի անվան մարզահամերգային համալիրում, Կարեն Սևակ բենդի կենդանի նվագակցությամբ։
-- [«Ռոմեո Ջուլիետ. Դեժավյու»](https://tick.lnd.lol/events/romeo-juliet-deja-vu-2026/): Նոր սիրո դրամա Երևանում՝ հոկտեմբերի 19-ին Հրաչյա Ղափլանյանի անվան դրամատիկական թատրոնում. դերերում՝ Իննա Խոջամիրյան, Ռուբեն Մուրադյան, Արամ Կարախանյան։
-- [EQUINOX Fest. աշնանային էպիզոդ Altezza-ում](https://tick.lnd.lol/events/equinox-fest-autumn-chapter-2026/): Հոկտեմբերի 17-ին Երևանի մոտ՝ Altezza ուղղաթիռային հրապարակում, էլեկտրոնային և կենդանի երաժշտության փառատոն է՝ Արմեն Միրան, Վիկեն Արման, Արտո Թունչբոյաջյան։
-- [Հարի Փոթեր ֆիլմի երաժշտությունը՝ Mystery Ensemble](https://tick.lnd.lol/events/harry-potter-film-music-yerevan-2026/): Հարի Փոթերի ֆիլմերի երաժշտությունը Երևանում՝ Կոմիտասի անվան կամերային երաժշտության տանը, հոկտեմբերի 9-ին և դեկտեմբերի 4-ին. նվագում է Mystery Ensemble-ը։
-- [Էլգար. Թավջութակի կոնցերտ և «Էնիգմա» վարիացիաներ](https://tick.lnd.lol/events/elgar-enigma-variations-yerevan-2026/): Հոկտեմբերի 5-ին Երևանում՝ Արամ Խաչատրյան համերգասրահում, Հայաստանի պետական սիմֆոնիկ նվագախումբը նվագում է Էլգար. մենակատարը թավջութակահար Գայ Ջոնսթոնն է։
+- [Լյուբով Ուսպենսկայա. մեծ համերգ Երևանում](https://tick.lnd.lol/hy/events/lyubov-uspenskaya-yerevan-2027/): Ռուսական շանսոնի աստղ Լյուբով Ուսպենսկայան 2027 թվականի հունվարի 30-ին Երևանում է՝ Կարեն Դեմիրճյանի անվան մարզահամերգային համալիրում։
+- [Էնդրյու Դոնալդս. ENIGMA-ի ոսկե ձայնը Երևանում](https://tick.lnd.lol/hy/events/andru-donalds-enigma-yerevan-2026/): Էնդրյու Դոնալդսը՝ ENIGMA-ի ձայնը, նոյեմբերի 21-ին Երևանում է՝ Արամ Խաչատրյան համերգասրահում, լարային նվագախմբի և մանկական երգչախմբի հետ։
+- [Թաթա Սիմոնյան. մենահամերգ Երևանում](https://tick.lnd.lol/hy/events/tata-simonyan-yerevan-2026/): Թաթա Սիմոնյանի մեծ մենահամերգը Երևանում՝ նոյեմբերի 7-ին Կարեն Դեմիրճյանի անվան մարզահամերգային համալիրում, Կարեն Սևակ բենդի կենդանի նվագակցությամբ։
+- [«Ռոմեո Ջուլիետ. Դեժավյու»](https://tick.lnd.lol/hy/events/romeo-juliet-deja-vu-2026/): Նոր սիրո դրամա Երևանում՝ հոկտեմբերի 19-ին Հրաչյա Ղափլանյանի անվան դրամատիկական թատրոնում. դերերում՝ Իննա Խոջամիրյան, Ռուբեն Մուրադյան, Արամ Կարախանյան։
+- [EQUINOX Fest. աշնանային էպիզոդ Altezza-ում](https://tick.lnd.lol/hy/events/equinox-fest-autumn-chapter-2026/): Հոկտեմբերի 17-ին Երևանի մոտ՝ Altezza ուղղաթիռային հրապարակում, էլեկտրոնային և կենդանի երաժշտության փառատոն է՝ Արմեն Միրան, Վիկեն Արման, Արտո Թունչբոյաջյան։
+- [Հարի Փոթեր ֆիլմի երաժշտությունը՝ Mystery Ensemble](https://tick.lnd.lol/hy/events/harry-potter-film-music-yerevan-2026/): Հարի Փոթերի ֆիլմերի երաժշտությունը Երևանում՝ Կոմիտասի անվան կամերային երաժշտության տանը, հոկտեմբերի 9-ին և դեկտեմբերի 4-ին. նվագում է Mystery Ensemble-ը։
+- [Էլգար. Թավջութակի կոնցերտ և «Էնիգմա» վարիացիաներ](https://tick.lnd.lol/hy/events/elgar-enigma-variations-yerevan-2026/): Հոկտեմբերի 5-ին Երևանում՝ Արամ Խաչատրյան համերգասրահում, Հայաստանի պետական սիմֆոնիկ նվագախումբը նվագում է Էլգար. մենակատարը թավջութակահար Գայ Ջոնսթոնն է։
 
 ## Նորություններ (in Armenian)
 
-- [Yerevan Fashion Week 2026-ը կբացվի Էրեբունի թանգարանում](https://tick.lnd.lol/news/yerevan-fashion-week-2026/): Երևանի նորաձևության շաբաթը հոկտեմբերի 8–11-ին է. բացումը Էրեբունի թանգարանում է, իսկ Fashion Scout մրցույթի հաղթողը կմասնակցի Լոնդոնի նորաձևության շաբաթին։
+- [Yerevan Fashion Week 2026-ը կբացվի Էրեբունի թանգարանում](https://tick.lnd.lol/hy/news/yerevan-fashion-week-2026/): Երևանի նորաձևության շաբաթը հոկտեմբերի 8–11-ին է. բացումը Էրեբունի թանգարանում է, իսկ Fashion Scout մրցույթի հաղթողը կմասնակցի Լոնդոնի նորաձևության շաբաթին։

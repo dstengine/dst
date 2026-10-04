@@ -17,8 +17,8 @@ import { type Lang } from "./content";
 import { eventsFor, newsFor, prefix } from "./i18n";
 import { site } from "./site.config";
 
-// "en" is a slug too: it is where the English pages live.
-const RESERVED = ["about", "events", "news", "go", "li", "en"];
+// "hy" is a slug too: it is where the Armenian pages live.
+const RESERVED = ["about", "events", "news", "go", "li", "hy"];
 
 const KINDS: { slug: string; hy: string; en: string }[] = [
   { slug: "concerts", hy: "Համերգներ", en: "Concerts" },

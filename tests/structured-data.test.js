@@ -115,8 +115,8 @@ describe("the network graph", () => {
   // Crawlers build the breadcrumb trail in the results page from this, and
   // from the raw URL when it is missing — which on a vertical means the
   // bare hostname.
-  // A site in two languages has a home per language — tick's English one is
-  // /en/ — and a home is wherever the wordmark leads: that link is the one
+  // A site in two languages has a home per language — tick's Armenian one
+  // is /hy/ — and a home is wherever the wordmark leads: that link is the one
   // place every page says which front page it belongs to.
   const homeOf = (p) => attr(p.html, /<a class="site-name" href="([^"]*)"/) ?? "/";
   const isHome = (p) => p.url === "/" || homeOf(p) === p.url;

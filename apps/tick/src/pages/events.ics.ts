@@ -2,4 +2,4 @@
 import type { APIRoute } from "astro";
 import { wholeCalendar } from "../feeds";
 
-export const GET: APIRoute = () => wholeCalendar("hy");
+export const GET: APIRoute = () => wholeCalendar("en");

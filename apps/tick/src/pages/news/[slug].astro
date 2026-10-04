@@ -3,7 +3,7 @@ import NewsEntry from "../../views/NewsEntry.astro";
 import { newsPaths } from "../../i18n";
 
 export function getStaticPaths() {
-  return newsPaths("hy");
+  return newsPaths("en");
 }
 ---
-<NewsEntry lang="hy" item={Astro.props.item} more={Astro.props.more} />
+<NewsEntry lang="en" item={Astro.props.item} more={Astro.props.more} />

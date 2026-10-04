@@ -1,7 +1,7 @@
 // How a page knows its language, and how it finds itself in the other one.
 //
 // One entry carries both languages: Armenian in its own fields, English
-// in `i18n.en` (see @dst/content/i18n). So every page exists in both or in
+// in `i18n.en` — whichever of them has the root (see @dst/content/i18n). So every page exists in both or in
 // neither, and the address of its twin is its own with the prefix swapped —
 // which is what makes the hreflang pair and the switch in the header safe
 // to derive rather than declare.
@@ -13,8 +13,8 @@ import { siteId, LANGS, type Lang } from "./content";
 /** <html lang> and Intl: the language and where it is spoken. */
 export const LOCALE: Record<Lang, string> = { hy: "hy-AM", en: "en-GB" };
 
-/** Where a language keeps its pages. Armenian has the root. */
-export const prefix = (lang: Lang): string => (lang === "hy" ? "/" : "/en/");
+/** Where a language keeps its pages. English has the root. */
+export const prefix = (lang: Lang): string => (lang === "en" ? "/" : "/hy/");
 
 export const eventsBase = (lang: Lang) => `${prefix(lang)}events/`;
 export const newsBase = (lang: Lang) => `${prefix(lang)}news/`;
@@ -33,7 +33,7 @@ const SWITCH: Record<Lang, { label: string; title: string }> = {
 
 /** The page at `pathname` in every language, its own included. */
 export function alternates(pathname: string) {
-  const rest = pathname.replace(/^\/en(\/|$)/, "/").replace(/^\//, "");
+  const rest = pathname.replace(/^\/hy(\/|$)/, "/").replace(/^\//, "");
   return LANGS.map((lang) => ({ lang, href: `${prefix(lang)}${rest}`, ...SWITCH[lang] }));
 }
 
