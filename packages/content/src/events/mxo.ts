@@ -256,7 +256,7 @@ export const items: EventItem[] = [
   {
     slug: "festival-de-vida-y-muerte-2026",
     createdAt: "2026-09-08T21:23:08+04:00",
-    updatedAt: "2026-09-08T21:59:53+04:00",
+    updatedAt: "2026-10-04T06:43:34+04:00",
     site: "mxo",
     image: "/covers/festival-de-vida-y-muerte-2026.jpg",
     imageAlt: "Una flor de cempas\u00fachil de papel, de p\u00e9talos naranjas y centro oscuro, sola sobre un fondo azul verdoso",
@@ -265,7 +265,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Festival de Vida y Muerte 2026",
     summary:
-      "La edici\u00f3n n\u00famero 20 del festival de Xcaret, del 30 de octubre al 2 de noviembre, con Guanajuato como estado invitado: cuatro d\u00edas de altares, m\u00fasica y representaciones en la Riviera Maya.",
+      "La edici\u00f3n n\u00famero 20 del festival de Xcaret, del 30 de octubre al 2 de noviembre, con Guanajuato como estado invitado: cuatro d\u00edas de altares, m\u00fasica y representaciones en la Riviera Maya, en el Caribe de M\u00e9xico.",
     start: "2026-10-30",
     end: "2026-11-02",
     utcOffset: "-05:00",
@@ -277,7 +277,7 @@ export const items: EventItem[] = [
     source: {
       name: "Festival de Vida y Muerte",
       url: "https://festivaldevidaymuerte.com/",
-      verifiedOn: "2026-09-08",
+      verifiedOn: "2026-10-04",
     },
     ticket: { url: "https://festivaldevidaymuerte.com/", label: "Boletos" },
     body: [
@@ -288,6 +288,8 @@ export const items: EventItem[] = [
       "Cada a\u00f1o el festival invita a un estado a llevar su propia forma de celebrar. En 2026 es <strong>Guanajuato</strong>.",
       "## Qu\u00e9 hay dentro",
       "M\u00fasica del D\u00eda de Muertos \u2014 mariachi, estudiantina, sones, huapango arribe\u00f1o y m\u00fasica tradicional de la Pen\u00ednsula de Yucat\u00e1n \u2014 adem\u00e1s de representaciones y un <strong>Concierto de Gala</strong> el <strong>31 de octubre</strong>, que se compra aparte del acceso al parque.",
+      "## El Concierto de Gala: Pandora y Flans",
+      "La gala de este a\u00f1o junta a <strong>Pandora y Flans</strong>, dentro de su gira <strong>+Inesperado Tour</strong>: el <strong>s\u00e1bado 31 de octubre a las 10:00 p.m.</strong> en el <strong>Teatro Gran Tlachco</strong> del parque. El organizador lo dice sin rodeos: <strong>no est\u00e1 incluido</strong> en la entrada al festival ni al Parque Xcaret.",
     ],
     faq: [
       {
@@ -300,7 +302,7 @@ export const items: EventItem[] = [
       },
       {
         q: "\u00bfEl Concierto de Gala entra con el boleto del parque?",
-        a: "No. El organizador lo vende como acceso aparte, para la noche del <strong>31 de octubre</strong>.",
+        a: "No. Es <strong>Pandora y Flans</strong>, el <strong>31 de octubre a las 10:00 p.m.</strong> en el Teatro Gran Tlachco, y el organizador lo vende aparte de la entrada al festival y al parque.",
       },
     ],
     expertise:
@@ -309,7 +311,7 @@ export const items: EventItem[] = [
   {
     slug: "noche-de-muertos-michoacan-2026",
     createdAt: "2026-09-08T21:39:47+04:00",
-    updatedAt: "2026-09-08T21:59:53+04:00",
+    updatedAt: "2026-10-04T06:43:34+04:00",
     site: "mxo",
     image: "/covers/noche-de-muertos-michoacan-2026.jpg",
     imageAlt: "Seis velas de papel color crema, con llamas naranjas, alineadas sobre un fondo azul verdoso y separadas de manera desigual",
@@ -318,7 +320,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Noche de Muertos en Michoacán 2026",
     summary:
-      "La noche del 1 de noviembre, en Janitzio, Tzintzuntzan y Jarácuaro: velas, cempasúchil y una procesión al panteón. Patrimonio de la Humanidad por la UNESCO desde 2008.",
+      "La noche del 1 de noviembre, en Janitzio, Tzintzuntzan y Jarácuaro, en Michoacán: velas, cempasúchil y una procesión al panteón. La fiesta indígena de muertos de México es Patrimonio de la Humanidad por la UNESCO desde 2008.",
     start: "2026-11-01",
     end: "2026-11-02",
     utcOffset: "-06:00",
@@ -364,7 +366,7 @@ export const items: EventItem[] = [
   {
     slug: "festival-de-calaveras-2026",
     createdAt: "2026-09-08T21:59:53+04:00",
-    updatedAt: "2026-09-08T21:59:53+04:00",
+    updatedAt: "2026-10-04T06:43:34+04:00",
     site: "mxo",
     image: "/covers/festival-de-calaveras-2026.jpg",
     imageAlt: "Una calavera de papel color crema con sombrero naranja de ala ancha, recortada en formas planas, a la derecha de un fondo verde oscuro",
@@ -373,7 +375,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Festival de Calaveras 2026",
     summary:
-      "Diecisiete días en Aguascalientes, del 30 de octubre al 15 de noviembre: desfiles, altares monumentales y exposiciones en la tierra de José Guadalupe Posada, el grabador que inventó a la Catrina.",
+      "Diecisiete días en Aguascalientes, en el centro de México, del 30 de octubre al 15 de noviembre: desfiles, altares monumentales y exposiciones en la tierra de José Guadalupe Posada, el grabador que inventó a la Catrina.",
     start: "2026-10-30",
     end: "2026-11-15",
     utcOffset: "-06:00",

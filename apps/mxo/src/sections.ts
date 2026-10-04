@@ -94,7 +94,7 @@ export function sections(items: FeedItem[]): Section[] {
         return {
           title: "Día de Muertos 2026: dónde verlo en México",
           description:
-            "Festivales, desfiles y noches de muertos por todo el país, del 30 de octubre al 15 de noviembre, con la fecha como la publicó quien organiza.",
+            "Festivales, desfiles y noches de muertos por todo México, del 30 de octubre al 15 de noviembre, con la fecha como la publicó quien organiza.",
           h1: "Día de Muertos en México",
           lede: "Del Xantolo en la Huasteca a la noche de Janitzio y al Festival de Calaveras en Aguascalientes — cada fecha como la publicó quien organiza, y de dónde la sacamos. Es la misma fiesta y no se parece en dos estados seguidos.",
           // Quien llega aquí no busca "Eventos" ni "Próximos": busca dónde

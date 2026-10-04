@@ -55,7 +55,7 @@ export const items: NewsItem[] = [
   {
     slug: "veinte-anos-del-festival-de-vida-y-muerte",
     createdAt: "2026-09-08T21:23:08+04:00",
-    updatedAt: "2026-09-08T21:59:53+04:00",
+    updatedAt: "2026-10-04T06:43:34+04:00",
     site: "mxo",
     image: "/covers/veinte-anos-del-festival-de-vida-y-muerte.jpg",
     imageAlt: "Muchas flores de cempas\u00fachil de papel, naranjas, repartidas en cuatro hileras sobre un fondo azul verdoso, con una franja vac\u00eda a la mitad",
@@ -66,7 +66,7 @@ export const items: NewsItem[] = [
     cardTitle: "Veinte a\u00f1os del Festival de Vida y Muerte",
     titleSeo: "Festival de Vida y Muerte: 20 ediciones",
     summary:
-      "Xcaret cumple veinte ediciones del 30 de octubre al 2 de noviembre. El invitado de 2026 es Guanajuato, y el Concierto de Gala se vende aparte.",
+      "El festival de Xcaret, en el Caribe de México, cumple veinte ediciones del 30 de octubre al 2 de noviembre. El invitado de 2026 es Guanajuato, y el Concierto de Gala — Pandora y Flans — se vende aparte.",
     date: "2026-09-08",
     city: "Riviera Maya",
     country: "M\u00e9xico",
