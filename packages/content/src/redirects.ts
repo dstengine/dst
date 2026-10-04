@@ -68,6 +68,31 @@ export const redirects: Record<string, Redirect[]> = {
       why: "Art and Exhibitions were two labels on the same five entries; the section kept the name people search for.",
     },
   ],
+  // One move, thirteen pages: English came to the root and took every
+  // address the Armenian had held there, so what was /en/<page>/ is now
+  // /<page>/. The Armenian went to /am/ and has no redirect of its own —
+  // its old addresses are the English pages now, and each one names its
+  // Armenian twin in hreflang.
+  tick: [
+    "/",
+    "/about/",
+    "/concerts/",
+    "/events/",
+    "/events/andru-donalds-enigma-yerevan-2026/",
+    "/events/elgar-enigma-variations-yerevan-2026/",
+    "/events/equinox-fest-autumn-chapter-2026/",
+    "/events/harry-potter-film-music-yerevan-2026/",
+    "/events/lyubov-uspenskaya-yerevan-2027/",
+    "/events/romeo-juliet-deja-vu-2026/",
+    "/events/tata-simonyan-yerevan-2026/",
+    "/news/",
+    "/news/yerevan-fashion-week-2026/",
+  ].map((to) => ({
+    from: `/en${to}`,
+    to,
+    since: "2026-10-04",
+    why: "tick launched in Armenian at the root and English under /en/; within hours English, the default, took the root and Armenian moved to /am/.",
+  })),
 };
 
 export const redirectsFor = (site: string): Redirect[] => redirects[site] ?? [];

@@ -1,4 +1,136 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "ignoreCommand": "git rev-parse HEAD^ >/dev/null 2>&1 || exit 1; git diff --quiet HEAD^ HEAD -- . ../../packages"
+  "ignoreCommand": "git rev-parse HEAD^ >/dev/null 2>&1 || exit 1; git diff --quiet HEAD^ HEAD -- . ../../packages",
+  "redirects": [
+    {
+      "source": "/en",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/about",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/about/",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/concerts",
+      "destination": "/concerts/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/concerts/",
+      "destination": "/concerts/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/events",
+      "destination": "/events/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/events/",
+      "destination": "/events/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/events/andru-donalds-enigma-yerevan-2026",
+      "destination": "/events/andru-donalds-enigma-yerevan-2026/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/events/andru-donalds-enigma-yerevan-2026/",
+      "destination": "/events/andru-donalds-enigma-yerevan-2026/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/events/elgar-enigma-variations-yerevan-2026",
+      "destination": "/events/elgar-enigma-variations-yerevan-2026/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/events/elgar-enigma-variations-yerevan-2026/",
+      "destination": "/events/elgar-enigma-variations-yerevan-2026/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/events/equinox-fest-autumn-chapter-2026",
+      "destination": "/events/equinox-fest-autumn-chapter-2026/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/events/equinox-fest-autumn-chapter-2026/",
+      "destination": "/events/equinox-fest-autumn-chapter-2026/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/events/harry-potter-film-music-yerevan-2026",
+      "destination": "/events/harry-potter-film-music-yerevan-2026/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/events/harry-potter-film-music-yerevan-2026/",
+      "destination": "/events/harry-potter-film-music-yerevan-2026/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/events/lyubov-uspenskaya-yerevan-2027",
+      "destination": "/events/lyubov-uspenskaya-yerevan-2027/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/events/lyubov-uspenskaya-yerevan-2027/",
+      "destination": "/events/lyubov-uspenskaya-yerevan-2027/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/events/romeo-juliet-deja-vu-2026",
+      "destination": "/events/romeo-juliet-deja-vu-2026/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/events/romeo-juliet-deja-vu-2026/",
+      "destination": "/events/romeo-juliet-deja-vu-2026/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/events/tata-simonyan-yerevan-2026",
+      "destination": "/events/tata-simonyan-yerevan-2026/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/events/tata-simonyan-yerevan-2026/",
+      "destination": "/events/tata-simonyan-yerevan-2026/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/news",
+      "destination": "/news/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/news/",
+      "destination": "/news/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/news/yerevan-fashion-week-2026",
+      "destination": "/news/yerevan-fashion-week-2026/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/news/yerevan-fashion-week-2026/",
+      "destination": "/news/yerevan-fashion-week-2026/",
+      "statusCode": 301
+    }
+  ]
 }
