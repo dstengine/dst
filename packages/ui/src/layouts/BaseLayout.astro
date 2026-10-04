@@ -9,6 +9,7 @@ import NetworkLinks from '../components/NetworkLinks.astro';
 import { NETWORK, relatedLinks } from '@dst/content/network';
 import type { NetworkSite } from '@dst/content/network';
 import { lastModified } from '@dst/content/lastmod';
+import { pageExperiments, visitorScript, visitorCss } from '../experiments';
 import Donate from "../components/Donate.astro";
 
 interface Props {
@@ -210,6 +211,20 @@ const shareImage = Astro.site
 // having to remember to pass it. The hub sets its own, fuller listing on
 // the home page instead.
 const networkKey = NETWORK.find((s) => s.host === Astro.site?.hostname)?.key;
+
+// The A/B/n tests this page is in (@dst/content/experiments). A page test
+// splits on the page's address in its first language, so its twins in the
+// others land in the same group. What each test's markup should render is
+// left in Astro.locals for <Variants>, which renders inside this layout's
+// slot and so after this frontmatter has run.
+const experiments = pageExperiments(
+  Astro.site?.hostname ?? "",
+  Astro.url.pathname,
+  alternates[0]?.href ?? Astro.url.pathname,
+  new Date().toISOString().slice(0, 10),
+);
+(Astro.locals as { experiments?: Record<string, string> }).experiments = experiments.assigned;
+const pageTests = experiments.page.map(({ exp, variant }) => `${exp.id}:${variant}`).join(" ");
 const related = networkKey ? relatedLinks(networkKey) : [];
 
 // Who published this page, which site it belongs to, and where it sits.
@@ -281,6 +296,7 @@ const lateIcons = navFootprint - nav.length * 28 > 700;
       page falls back to once a stored choice is cleared, and by then
       `data-theme` is whatever the reader last pressed. */}
   data-default-theme={defaultTheme}
+  data-experiments={pageTests || undefined}
 >
   <head>
     <meta charset="utf-8" />
@@ -299,6 +315,16 @@ const lateIcons = navFootprint - nav.length * 28 > 700;
         } catch { /* private mode: fall through to the reader's own setting */ }
       })();
     </script>
+    {/* Before the first paint too, and for the same reason: a test that
+        changes a label after the page has drawn it is a flicker, and the
+        flicker is the thing being measured. */}
+    {experiments.visitor.length > 0 && (
+      <>
+        <script is:inline set:html={visitorScript(experiments.visitor)} />
+        <style is:inline set:html={visitorCss(experiments.visitor)} />
+      </>
+    )}
+    {pageTests && <meta name="experiments" content={pageTests} />}
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     {/* iOS Safari auto-links any digit run that looks like a phone number

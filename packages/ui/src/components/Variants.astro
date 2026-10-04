@@ -1,0 +1,48 @@
+---
+// One piece of a page under an A/B/n test: one named slot per variant,
+// named as in the test's `variants`.
+//
+//   <Variants exp="ticket-price">
+//     <Fragment slot="label">Tickets</Fragment>
+//     <Fragment slot="buy">Buy tickets</Fragment>
+//   </Variants>
+//
+// While a visitor test runs here, every variant is rendered, each in a
+// span the layout's CSS hides or shows. While a page test runs, only this
+// page's variant is. Anywhere else — another host, another page, before
+// `start`, after `end` — the control, or the winner once there is one: the
+// markup can stay in place across the whole life of a test and after it.
+//
+// A variant with no slot of its own renders the control, so a test can
+// leave a page alone where one of its variants has nothing to say. Better
+// still, leave <Variants> out on such a page: an impression is counted
+// wherever the markup is, and a group that sometimes shows the control
+// blurs the very difference being measured.
+import { EXPERIMENTS } from "@dst/content/experiments";
+
+interface Props {
+  exp: string;
+}
+
+const { exp: id } = Astro.props;
+const exp = EXPERIMENTS.find((e) => e.id === id);
+if (!exp) throw new Error(`<Variants exp="${id}">: no such test in @dst/content/experiments`);
+
+const control = exp.variants[0];
+// The control may also be the default slot, which keeps the markup of a
+// page that was there before the test unchanged inside it.
+const slotOf = (variant: string) =>
+  Astro.slots.has(variant) ? variant : Astro.slots.has(control) ? control : "default";
+// Set by BaseLayout, which knows which tests run on this page.
+const assigned = (Astro.locals as { experiments?: Record<string, string> }).experiments?.[id];
+const shown = assigned && assigned !== "visitor" ? assigned : (exp.winner ?? control);
+
+const rendered =
+  assigned === "visitor"
+    ? await Promise.all(exp.variants.map(async (v) => ({ v, html: await Astro.slots.render(slotOf(v)) })))
+    : [];
+const single = assigned === "visitor" ? "" : await Astro.slots.render(slotOf(shown));
+---
+{assigned === "visitor"
+  ? rendered.map(({ v, html }) => <span data-variant={`${id}:${v}`} set:html={html} />)
+  : <Fragment set:html={single} />}

@@ -65,8 +65,24 @@ gtag('config', '${id}', { cookie_domain: ${cookieDomain} });`;
   const CTA = ".button, .button-secondary, .link-card, .cta-banner";
 
   /** A card's label can be a whole paragraph. Reports want the thing that
-      was clicked, not the copy around it. */
-  const label = (el: Element) => el.textContent?.trim().replace(/\s+/g, " ").slice(0, 60);
+      was clicked, not the copy around it — and only the words on screen:
+      a button under test carries every variant's label, hidden but for
+      one, and textContent would report all three run together. */
+  const label = (el: Element) =>
+    ((el as HTMLElement).innerText ?? el.textContent)?.trim().replace(/\s+/g, " ").slice(0, 60);
+
+  // One impression per test this page view shows, once, at load: the
+  // denominator of every A/B/n result. A page test is in the page itself;
+  // a visitor test counts only where its markup is on the page, since the
+  // script that picks the variant runs on every page in the test's scope.
+  // A forced variant (?exp=) never reaches data-experiments, so it is
+  // never counted.
+  const root = document.documentElement;
+  for (const tag of (root.getAttribute("data-experiments") ?? "").split(" ").filter(Boolean)) {
+    const id = tag.slice(0, tag.indexOf(":"));
+    if (root.hasAttribute(`data-exp-${id}`) && !document.querySelector(`[data-variant^="${id}:"]`)) continue;
+    track("experience_impression", { exp_variant_string: tag });
+  }
 
   addEventListener("click", (event) => {
     const link = (event.target as Element | null)?.closest?.("a");
@@ -92,7 +108,7 @@ gtag('config', '${id}', { cookie_domain: ${cookieDomain} });`;
     } else if (href.startsWith("/go/")) {
       // The hop's own slug, which names the destination without putting a
       // third-party URL into the report.
-      track("outbound_click", { hop: href.replace(/^\/go\/|\/$/g, ""), text: link.textContent?.trim() });
+      track("outbound_click", { hop: href.replace(/^\/go\/|\/$/g, ""), text: label(link) });
     } else if (href.endsWith(".ics")) {
       track("add_to_calendar", { event_slug: href.split("/").pop()?.replace(/\.ics$/, "") });
     } else if (href.startsWith("tel:")) {

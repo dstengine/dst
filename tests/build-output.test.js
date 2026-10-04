@@ -12,6 +12,7 @@ import { fileURLToPath } from "node:url";
 import { allNews } from "../packages/content/src/news/index.ts";
 import { allEvents } from "../packages/content/src/events/index.ts";
 import { redirects } from "../packages/content/src/redirects.ts";
+import { liveExperiments } from "../packages/content/src/experiments.ts";
 import { verticalPaths } from "../apps/dst/src/verticals.ts";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -1147,6 +1148,76 @@ describe("analytics", () => {
     for (const hop of pages.filter((p) => p.url.startsWith("/go/"))) {
       assert.doesNotMatch(hop.html, /googletagmanager/, `${hop.app}${hop.url}: analytics on a redirect hop`);
     }
+  });
+});
+
+describe("experiments", () => {
+  // Each page works out its own A/B/n tests in BaseLayout from the registry
+  // in @dst/content/experiments. These hold the build to the registry: a
+  // test whose markup ships where its script does not shows every variant
+  // at once, and one whose script ships where its markup does not counts
+  // nothing — both silently.
+  const today = new Date().toISOString().slice(0, 10);
+  const hostOf = Object.fromEntries(SITES.map((s) => [s.app, s.host]));
+  const visitorTests = (p) => liveExperiments(hostOf[p.app], p.url, today).filter((e) => e.unit === "visitor");
+  // Elements only: the test's own CSS names every variant in its selectors.
+  const variantsOn = (html) =>
+    [...html.matchAll(/<[a-z][a-z0-9]*\s[^>]*\bdata-variant="([a-z0-9-]+):([a-z0-9-]+)"/g)].map((m) => [m[1], m[2]]);
+
+  test("the pre-paint script is on exactly the pages a visitor test covers", () => {
+    for (const p of pages.filter((p) => !p.url.startsWith("/go/"))) {
+      const expected = visitorTests(p).map((e) => e.id);
+      const shipped = p.html.includes('localStorage.getItem("exp:visitor")');
+      assert.equal(shipped, expected.length > 0, `${p.app}${p.url}: script ${shipped ? "present" : "missing"}, tests here: ${expected.join(", ") || "none"}`);
+      for (const id of expected) {
+        assert.ok(p.html.includes(`html:not([data-exp-${id}])`), `${p.app}${p.url}: no CSS for ${id}, so every variant shows`);
+      }
+    }
+  });
+
+  test("variant markup carries all of its test's variants, and only where the test runs", () => {
+    for (const p of pages) {
+      const spans = variantsOn(p.html);
+      if (spans.length === 0) continue;
+      const live = new Map(visitorTests(p).map((e) => [e.id, e]));
+      for (const [id] of spans) assert.ok(live.has(id), `${p.app}${p.url}: markup for ${id}, which does not run here`);
+      for (const [id, e] of live) {
+        const counts = e.variants.map((v) => spans.filter(([i, x]) => i === id && x === v).length);
+        assert.ok(counts.every((c) => c === counts[0]), `${p.app}${p.url}: ${id} renders its variants unevenly (${counts})`);
+      }
+    }
+  });
+
+  test("ticket-price is on every tick event page that sells tickets at a price", () => {
+    if (!liveExperiments("tick.lnd.lol", "/events/x/", today).some((e) => e.id === "ticket-price")) return;
+    const priced = allEvents.filter((i) => i.site === "tick" && i.ticket && i.tickets?.priceFrom > 0 && i.body?.length);
+    assert.ok(priced.length > 0, "no priced tick event to test on");
+    for (const item of priced) {
+      for (const url of [`/events/${item.slug}/`, `/am/events/${item.slug}/`]) {
+        const p = pages.find((x) => x.app === "tick" && x.url === url);
+        assert.ok(p, `tick${url} was not built`);
+        assert.deepEqual(
+          variantsOn(p.html).filter(([id]) => id === "ticket-price").map(([, v]) => v),
+          ["label", "buy", "price"],
+          `tick${url}: the ticket button is not under test`,
+        );
+      }
+    }
+  });
+
+  // The analytics listener tells a ticket click from any other outbound
+  // click by this attribute. Without it every Tickets button on the network
+  // was counted as an outbound_click — and the ticket-price test, whose
+  // metric is ticket_click, would have measured nothing at all.
+  test("a ticket button says it is one", () => {
+    let seen = 0;
+    for (const p of pages) {
+      for (const a of anchorsOf(p.html).filter((a) => /class="button"/.test(a) && /href="\/go\/[^"]*-ticket\/"/.test(a))) {
+        seen++;
+        assert.match(a, /\sdata-ticket(?:=""|[\s>])/, `${p.app}${p.url}: a ticket button without data-ticket`);
+      }
+    }
+    assert.ok(seen > 20, `expected the network's ticket buttons, found ${seen}`);
   });
 });
 

@@ -23,6 +23,7 @@
     "./images": "./src/images.ts",
     "./images.json": "./src/images.json",
     "./rss": "./src/rss.ts",
-    "./i18n": "./src/i18n.ts"
+    "./i18n": "./src/i18n.ts",
+    "./experiments": "./src/experiments.ts"
   }
 }

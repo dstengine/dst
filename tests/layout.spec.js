@@ -326,11 +326,14 @@ test.describe("analytics", () => {
     });
 
     const names = events.map((e) => e[1]);
-    expect(names).toContain("outbound_click");
+    // The page's first hop is its Tickets button, which reports as a
+    // ticket_click — not as one more outbound_click among the source links.
+    expect(names).toContain("ticket_click");
+    expect(names).not.toContain("outbound_click");
     expect(names).toContain("add_to_calendar");
     // The hop's slug, not the third party's URL — the destination stays out
     // of the reports the same way it stays out of the markup.
-    const hop = events.find((e) => e[1] === "outbound_click")[2].hop;
+    const hop = events.find((e) => e[1] === "ticket_click")[2].hop;
     expect(hop).toBe("future-world-forum-dubai-2026-ticket");
   });
 });
@@ -534,4 +537,68 @@ test.describe("links in running text carry no underline", () => {
       expect([...new Set(underlined)], "links underlined in body text").toEqual([]);
     });
   }
+});
+
+test.describe("A/B/n", () => {
+  // tick's ticket-price test (@dst/content/experiments): three labels in one
+  // button, one shown, picked before the first paint.
+  const EVENT = "/events/elgar-enigma-variations-yerevan-2026/";
+  const LABELS = { label: "Tickets", buy: "Buy tickets", price: "Tickets from AMD 3,000" };
+  const button = (page) => page.locator("a.button[data-ticket]");
+  const state = (page) =>
+    page.evaluate(() => ({
+      chosen: document.documentElement.getAttribute("data-exp-ticket-price"),
+      tags: document.documentElement.getAttribute("data-experiments"),
+      impressions: (window.dataLayer ?? [])
+        .filter((a) => a && a[0] === "event" && a[1] === "experience_impression")
+        .map((a) => a[2].exp_variant_string),
+    }));
+
+  test("a visitor sees one label, keeps it, and is counted once", async ({ page }) => {
+    await page.goto(url("tick", EVENT));
+    const first = await state(page);
+    expect(Object.keys(LABELS)).toContain(first.chosen);
+    expect(first.tags).toBe(`ticket-price:${first.chosen}`);
+    expect(first.impressions).toEqual([`ticket-price:${first.chosen}`]);
+    await expect(button(page)).toHaveText(LABELS[first.chosen], { useInnerText: true });
+
+    // The same visitor in the other language is the same visitor.
+    await page.goto(url("tick", `/am${EVENT}`));
+    expect((await state(page)).chosen).toBe(first.chosen);
+  });
+
+  test("a ticket click carries the variant", async ({ page }) => {
+    await page.goto(url("tick", EVENT));
+    const events = await page.evaluate(() => {
+      const sent = [];
+      window.gtag = (...args) => sent.push(args);
+      document.addEventListener("click", (e) => e.preventDefault(), true);
+      document.querySelector("a.button[data-ticket]").click();
+      return sent;
+    });
+    const click = events.find((e) => e[1] === "ticket_click");
+    expect(click, `no ticket_click among ${JSON.stringify(events)}`).toBeTruthy();
+    const { chosen } = await state(page);
+    expect(click[2].exp).toBe(`ticket-price:${chosen}`);
+    // The words on screen, not all three labels run together.
+    expect(click[2].text).toBe(LABELS[chosen]);
+  });
+
+  test("?exp= shows the variant asked for and counts nothing", async ({ page }) => {
+    for (const [variant, text] of Object.entries(LABELS)) {
+      await page.goto(url("tick", `${EVENT}?exp=ticket-price:${variant}`));
+      await expect(button(page)).toHaveText(text, { useInnerText: true });
+      const s = await state(page);
+      expect(s.tags, "a forced variant is tagged as a visit").toBeNull();
+      expect(s.impressions).toEqual([]);
+    }
+  });
+
+  test("without JavaScript the control shows", async ({ browser }) => {
+    const context = await browser.newContext({ javaScriptEnabled: false });
+    const page = await context.newPage();
+    await page.goto(url("tick", EVENT));
+    await expect(button(page)).toHaveText(LABELS.label, { useInnerText: true });
+    await context.close();
+  });
 });

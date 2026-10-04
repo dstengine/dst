@@ -17,6 +17,7 @@ import Faq from "./Faq.astro";
 import { eventType } from "@dst/content/event-types";
 import ImageNote from "./ImageNote.astro";
 import CountdownScript from "./CountdownScript.astro";
+import Variants from "./Variants.astro";
 import Glance from "./Glance.astro";
 import { ICONS } from "../icons.ts";
 import { formatDate } from "../date.ts";
@@ -386,7 +387,7 @@ const jsonLd =
 // event was written from, which for most of these is the organiser's own
 // site and is where a ticket would be sold if there is one to sell.
 const action = (() => {
-  if (item.ticket && ticketHref) return { href: ticketHref, label: item.ticket.label ?? L.register };
+  if (item.ticket && ticketHref) return { href: ticketHref, label: item.ticket.label ?? L.register, sells: true };
   // Nothing is being sold, so nothing is called tickets. A free community
   // meetup with a Tickets button reads as a page that has not been looked
   // at, and on a past one it reads as a page nobody maintains.
@@ -395,9 +396,15 @@ const action = (() => {
   // from, and on the three free events that reached it — a coffee festival,
   // a neighbourhood Grito, a children's book fair — it opens a programme,
   // not a form. The button now says what the link does.
-  if (sourceHref) return { href: sourceHref, label: free ? L.moreDetails : L.tickets };
+  if (sourceHref) return { href: sourceHref, label: free ? L.moreDetails : L.tickets, sells: false };
   return undefined;
 })();
+// The lowest price, for the `ticket-price` test's variant that puts it on
+// the button. Only where there is a seller and a price to quote: a page
+// without one stays out of the test entirely, rather than showing its
+// "price" group the control and blurring the comparison.
+const priceOnButton =
+  action?.sells && !free && item.tickets?.priceFrom !== undefined ? money(item.tickets.priceFrom) : undefined;
 
 const relatedItems = (item.related ?? []).map((card) => ({
   href: card.href,
@@ -443,9 +450,15 @@ const relatedItems = (item.related ?? []).map((card) => ({
 
   <p class="event-article-actions">
     {action && (
-      <a class="button" href={action.href} title={`${action.label} — ${item.title}`}>
+      <a class="button" href={action.href} title={`${action.label} — ${item.title}`} data-ticket={action.sells ? "" : undefined}>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={ICONS.ticket} /></svg>
-        {action.label}
+        {priceOnButton ? (
+          <Variants exp="ticket-price">
+            <Fragment slot="label">{action.label}</Fragment>
+            <Fragment slot="buy">{L.buyTickets}</Fragment>
+            <Fragment slot="price">{L.ticketsFrom(priceOnButton)}</Fragment>
+          </Variants>
+        ) : action.label}
       </a>
     )}
     {/* Secondary to the ticket link, but present on every event: a plain

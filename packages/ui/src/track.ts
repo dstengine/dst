@@ -30,7 +30,10 @@ export type TrackEvent =
   | "ticket_click"
   | "add_to_calendar"
   | "phone_click"
-  | "cta_click";
+  | "cta_click"
+  // GA4's own name for "this visitor saw this variant of a test", with the
+  // test and variant in `exp_variant_string` — see Analytics.astro.
+  | "experience_impression";
 
 /** Sends an event if analytics is on the page, and does nothing otherwise —
     a local build, a preview, or a visitor who blocked the tag. Never throws:
@@ -39,11 +42,16 @@ export function track(name: TrackEvent, params: Record<string, unknown> = {}): v
   try {
     const gtag = (globalThis as any).gtag;
     if (typeof gtag !== "function") return;
+    // The A/B/n tests this page view is in, as "id:variant id:variant".
+    // On every event rather than only the impression, so a ticket_click can
+    // be split by variant without joining it to anything.
+    const exp = document.documentElement.getAttribute("data-experiments");
     gtag("event", name, {
       // Which site in the network the event came from. Every host reports
       // into one GA property, so without this the numbers are a single
       // undifferentiated total.
       site: location.hostname,
+      ...(exp ? { exp } : {}),
       ...params,
     });
   } catch {

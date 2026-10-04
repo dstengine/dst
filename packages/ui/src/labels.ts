@@ -38,6 +38,11 @@ export interface ArticleLabels {
    * the page cannot perform is a button that has not been looked at.
    */
   moreDetails: string;
+  /** The ticket button, saying what it does rather than where it goes —
+      a variant of the `ticket-price` test (@dst/content/experiments). */
+  buyTickets: string;
+  /** The ticket button with the lowest price on it, given formatted. */
+  ticketsFrom: (price: string) => string;
   addToCalendar: string;
   /** Title attribute on the calendar button, given the event's own name. */
   addToCalendarTitle: (title: string) => string;
@@ -147,6 +152,8 @@ export const EN: ArticleLabels = {
   tickets: "Tickets",
   register: "Register",
   moreDetails: "More details",
+  buyTickets: "Buy tickets",
+  ticketsFrom: (price) => `Tickets from ${price}`,
   addToCalendar: "Add to calendar",
   addToCalendarTitle: (title) => `Add ${title} to your calendar`,
 
@@ -225,6 +232,8 @@ export const ES: Partial<ArticleLabels> = {
   tickets: "Boletos",
   register: "Registrarse",
   moreDetails: "Más información",
+  buyTickets: "Comprar boletos",
+  ticketsFrom: (price) => `Boletos desde ${price}`,
   addToCalendar: "Agregar al calendario",
   addToCalendarTitle: (title) => `Agregar ${title} a tu calendario`,
 
@@ -293,6 +302,8 @@ export const DE: Partial<ArticleLabels> = {
   tickets: "Tickets",
   register: "Anmelden",
   moreDetails: "Mehr Infos",
+  buyTickets: "Tickets kaufen",
+  ticketsFrom: (price) => `Tickets ab ${price}`,
   addToCalendar: "Zum Kalender hinzufügen",
   addToCalendarTitle: (title) => `${title} zum Kalender hinzufügen`,
 
@@ -372,6 +383,8 @@ export const HY: Partial<ArticleLabels> = {
   tickets: "Տոմսեր",
   register: "Գրանցվել",
   moreDetails: "Մանրամասներ",
+  buyTickets: "Գնել տոմսեր",
+  ticketsFrom: (price) => `Տոմսեր՝ ${price}-ից`,
   addToCalendar: "Ավելացնել օրացույցում",
   addToCalendarTitle: (title) => `«${title}» — ավելացնել ձեր օրացույցում`,
 
