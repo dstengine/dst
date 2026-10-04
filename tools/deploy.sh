@@ -115,7 +115,11 @@ ORG_ID="$(node -e 'process.stdout.write(require("'"$REPO"'/.vercel/project.json"
 for site in "${targets[@]}"; do
   project="$(project_for "$site")"
   id="$(id_for "$project")"
-  set -- vercel deploy --yes --cwd "$REPO"
+  # One archive rather than one request per file: the repo passed Vercel's
+  # 15,000-file cap on 4 October 2026, every cover being eleven files once
+  # tools/images.mjs has made its widths, and an upload past the cap is
+  # refused outright.
+  set -- vercel deploy --yes --cwd "$REPO" --archive=tgz
   [ "$prod" = 1 ] && set -- "$@" --prod
   [ "$force" = 1 ] && set -- "$@" --force
 
