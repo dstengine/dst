@@ -15,7 +15,8 @@
     "visas": "warm sand ground with tobacco brown and ochre, small cream highlights",
     "musical": "warm cream ground with crimson and deep burgundy, small brass highlights",
     "sol2go": "deep violet ground with lilac and pale mint, small cream highlights",
-    "vien": "warm cream ground with deep vermilion red and moss green, small gold highlights"
+    "vien": "warm cream ground with deep vermilion red and moss green, small gold highlights",
+    "tick": "warm apricot tuff-stone ground with deep pomegranate red and dusty rose, small cream highlights"
   },
   "covers": {
     "nyc42": {
@@ -357,6 +358,15 @@
         "subject": "five tall empty arched panels standing side by side in a row on a plain ground",
         "detail": "each arch cut from a different paper tone with a rounded top and a flat base, the middle arch a little taller than the rest and set slightly forward with a hard shadow beneath it, the panels left empty, generous empty ground above the row"
       }
+    },
+    "tick": {
+      "elgar-enigma-variations-yerevan-2026": "a single cello standing upright at the centre of the frame beside a tall slender music stand, wide empty ground on both sides",
+      "harry-potter-film-music-yerevan-2026": "a long conductor's baton crossing the frame on a slight diagonal above a scattered row of small candle flames floating at different heights",
+      "equinox-fest-autumn-chapter-2026": "a wide flat circular landing pad on a hilltop beneath a sky divided down the middle into a pale day half and a deep night half, a low ridge of mountains behind, the scene filling the whole frame edge to edge with no border",
+      "romeo-juliet-deja-vu-2026": "two tall arched windows facing each other across the frame, a small balcony beneath the left one, a thin crescent moon in the gap between them",
+      "tata-simonyan-yerevan-2026": "a single standing microphone at the centre of an empty stage under a wide fan of spotlight beams opening from the top edge",
+      "andru-donalds-enigma-yerevan-2026": "a vinyl record half slid out of its square sleeve, concentric grooves on the disc, three curling ribbons of sound rising from it",
+      "lyubov-uspenskaya-yerevan-2027": "a grand piano seen side-on with its lid raised, one long-stemmed rose lying across the closed keyboard cover"
     }
   },
   "news": {
@@ -666,6 +676,9 @@
         "subject": "a tall slightly fanned stack of flat paper sheets seen from the side, one sheet drawn out from the middle of the stack",
         "detail": "about thirty sheets stacked and offset a little from one another so the stack leans, one sheet pulled halfway out at mid-height and lying proud of the rest, hard shadows between the layers"
       }
+    },
+    "tick": {
+      "yerevan-fashion-week-2026": "three headless dress forms standing in a row on a low plinth in front of the stepped silhouette of an ancient fortress wall on a hill"
     }
   },
   "pages": {
@@ -884,6 +897,9 @@
     },
     "vien": {
       "ueber-uns": "a steep gabled roof with a banded diamond tile pattern rising above a row of low flat façades"
+    },
+    "tick": {
+      "about": "the two snow-capped peaks of a great mountain rising above a row of flat-roofed stone buildings with tall arched windows"
     }
   }
 }

@@ -28,6 +28,11 @@ export const items: EventItem[] = [
     venue: "Արամ Խաչատրյան համերգասրահ, Մաշտոցի պող. 46",
     geo: { lat: 40.1862685, lng: 44.5151091 },
     organizer: "Հայաստանի պետական սիմֆոնիկ նվագախումբ",
+    image: "/covers/elgar-enigma-variations-yerevan-2026.jpg",
+    imageAlt: "Կարմիր թավջութակ՝ կանգնած նոտակալի կողքին, ծիրանագույն ֆոնի վրա",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     category: "Դասական երաժշտություն",
     tickets: { priceFrom: 3000, priceTo: 15000, currency: "AMD" },
     ticket: { url: "https://www.tomsarkgh.am/en/event/51330/", label: "Տոմսեր" },
@@ -46,6 +51,7 @@ export const items: EventItem[] = [
     ],
     i18n: {
       en: {
+        imageAlt: "A red cello standing beside a music stand on an apricot ground",
         ticket: { url: "https://www.tomsarkgh.am/en/event/51330/", label: "Tickets" },
         title: "Elgar: Cello Concerto and Enigma Variations",
         cardTitle: "Elgar: the Enigma Variations",
@@ -89,6 +95,11 @@ export const items: EventItem[] = [
     venue: "Կոմիտասի անվան կամերային երաժշտության տուն, Իսահակյան 1",
     geo: { lat: 40.1854319, lng: 44.5232134 },
     organizer: "Red Events",
+    image: "/covers/harry-potter-film-music-yerevan-2026.jpg",
+    imageAlt: "Դիրիժորական փայտիկ՝ անկյունագծով, փոքրիկ մոմերի շարքի վերևում",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     category: "Համերգներ",
     tickets: { priceFrom: 8300, priceTo: 13700, currency: "AMD" },
     ticket: { url: "https://www.tomsarkgh.am/en/event/47386/", label: "Տոմսեր" },
@@ -105,6 +116,7 @@ export const items: EventItem[] = [
     ],
     i18n: {
       en: {
+        imageAlt: "A conductor's baton laid on a diagonal above a long row of small candles",
         ticket: { url: "https://www.tomsarkgh.am/en/event/47386/", label: "Tickets" },
         title: "Harry Potter film music by the Mystery Ensemble",
         cardTitle: "Harry Potter film music",
@@ -146,6 +158,11 @@ export const items: EventItem[] = [
     country: "Հայաստան",
     venue: "Altezza by Armenian Helicopters, Երևան–Գառնի մայրուղի 6/14",
     geo: { lat: 40.1841367, lng: 44.6168316 },
+    image: "/covers/equinox-fest-autumn-chapter-2026.jpg",
+    imageAlt: "Կլոր հարթակ բլուրների մեջ, երկինքը կիսված է ցերեկվա և գիշերվա կեսերի՝ լուսնով",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     category: "Փառատոներ",
     tickets: { priceFrom: 15000, priceTo: 18000, currency: "AMD", salesEnd: "2026-10-17" },
     ticket: { url: "https://www.tomsarkgh.am/en/event/51317/", label: "Տոմսեր" },
@@ -173,6 +190,7 @@ export const items: EventItem[] = [
     ],
     i18n: {
       en: {
+        imageAlt: "A round platform among the hills under a sky split into a day half and a night half with a moon",
         ticket: { url: "https://www.tomsarkgh.am/en/event/51317/", label: "Tickets" },
         title: "EQUINOX Fest: Autumn Chapter at Altezza",
         cardTitle: "EQUINOX Fest: Autumn Chapter",
@@ -222,6 +240,11 @@ export const items: EventItem[] = [
     city: "Երևան",
     country: "Հայաստան",
     venue: "Հրաչյա Ղափլանյանի անվան դրամատիկական թատրոն",
+    image: "/covers/romeo-juliet-deja-vu-2026.jpg",
+    imageAlt: "Երկու բարձր կամարավոր պատուհան՝ իրար դեմ, մեկում փոքրիկ մահիկ",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     category: "Թատրոն",
     tickets: { priceFrom: 3000, priceTo: 12000, currency: "AMD" },
     ticket: { url: "https://www.tomsarkgh.am/en/event/51478/", label: "Տոմսեր" },
@@ -237,6 +260,7 @@ export const items: EventItem[] = [
     ],
     i18n: {
       en: {
+        imageAlt: "Two tall arched windows facing each other, a small crescent moon in one of them",
         ticket: { url: "https://www.tomsarkgh.am/en/event/51478/", label: "Tickets" },
         title: "Romeo Juliet. Déjà Vu",
         titleSeo: "Romeo Juliet. Déjà Vu at the Ghaplanyan Theatre",
@@ -274,6 +298,11 @@ export const items: EventItem[] = [
     country: "Հայաստան",
     venue: "Կարեն Դեմիրճյանի անվան մարզահամերգային համալիր, մեծ դահլիճ",
     geo: { lat: 40.1881503, lng: 44.4833297 },
+    image: "/covers/tata-simonyan-yerevan-2026.jpg",
+    imageAlt: "Միկրոֆոն դատարկ բեմի կենտրոնում՝ կարմիր ֆոնի և լուսարձակների շողերի տակ",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     category: "Համերգներ",
     tickets: { priceFrom: 6000, priceTo: 45000, currency: "AMD" },
     ticket: { url: "https://www.tomsarkgh.am/en/event/50900/", label: "Տոմսեր" },
@@ -289,6 +318,7 @@ export const items: EventItem[] = [
     ],
     i18n: {
       en: {
+        imageAlt: "A microphone at the centre of an empty stage under a red backdrop and spotlight beams",
         ticket: { url: "https://www.tomsarkgh.am/en/event/50900/", label: "Tickets" },
         title: "Tata Simonyan in concert in Yerevan",
         summary:
@@ -326,6 +356,11 @@ export const items: EventItem[] = [
     country: "Հայաստան",
     venue: "Արամ Խաչատրյան համերգասրահ, Մաշտոցի պող. 46",
     geo: { lat: 40.1862685, lng: 44.5151091 },
+    image: "/covers/andru-donalds-enigma-yerevan-2026.jpg",
+    imageAlt: "Սև վինիլե ձայնասկավառակ, որի կենտրոնից ոլորվում է թղթե ժապավեն",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     category: "Համերգներ",
     tickets: { priceFrom: 10000, priceTo: 50000, currency: "AMD" },
     ticket: { url: "https://www.tomsarkgh.am/en/event/51067/", label: "Տոմսեր" },
@@ -341,6 +376,7 @@ export const items: EventItem[] = [
     ],
     i18n: {
       en: {
+        imageAlt: "A black vinyl record with a paper ribbon curling up from its red centre",
         ticket: { url: "https://www.tomsarkgh.am/en/event/51067/", label: "Tickets" },
         title: "Andru Donalds: the voice of Enigma in Yerevan",
         cardTitle: "Andru Donalds: the voice of Enigma",
@@ -378,6 +414,11 @@ export const items: EventItem[] = [
     country: "Հայաստան",
     venue: "Կարեն Դեմիրճյանի անվան մարզահամերգային համալիր",
     geo: { lat: 40.1881503, lng: 44.4833297 },
+    image: "/covers/lyubov-uspenskaya-yerevan-2027.jpg",
+    imageAlt: "Ռոյալի ուրվագիծ՝ բաց կափարիչով, ոտքերի մոտ ընկած վարդով",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     category: "Համերգներ",
     tickets: { priceFrom: 7000, priceTo: 50000, currency: "AMD" },
     ticket: { url: "https://www.tomsarkgh.am/en/event/46842/", label: "Տոմսեր" },
@@ -392,6 +433,7 @@ export const items: EventItem[] = [
     ],
     i18n: {
       en: {
+        imageAlt: "The silhouette of a grand piano with its lid raised and a single rose lying at its feet",
         ticket: { url: "https://www.tomsarkgh.am/en/event/46842/", label: "Tickets" },
         title: "Lyubov Uspenskaya in concert in Yerevan",
         summary:

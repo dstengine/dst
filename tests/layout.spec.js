@@ -41,6 +41,13 @@ const PAGES = [
   { site: "musical", path: "/broadway/" },
   { site: "musical", path: "/venue/opera-house-manchester/" },
   { site: "musical", path: "/venues/" },
+  // tick is in two languages, and Armenian runs longer than English in
+  // every label: both halves of the same templates are measured.
+  { site: "tick", path: "/" },
+  { site: "tick", path: "/en/" },
+  { site: "tick", path: "/events/equinox-fest-autumn-chapter-2026/" },
+  { site: "tick", path: "/en/events/equinox-fest-autumn-chapter-2026/" },
+  { site: "tick", path: "/about/" },
 ];
 
 const url = (site, path) => `${baseUrl(site)}${path}`;
@@ -66,6 +73,26 @@ test.describe("no horizontal overflow", () => {
         expect(overflow, "document scrolls sideways").toBe(0);
       });
     }
+  }
+});
+
+// The one site in two languages. The switch in the header has to land on
+// the same page in the other language — not that language's front page —
+// and the page it lands on has to say which language it is in.
+test.describe("language switch", () => {
+  const CASES = [
+    ["/events/equinox-fest-autumn-chapter-2026/", "/en/events/equinox-fest-autumn-chapter-2026/", "en-GB"],
+    ["/en/about/", "/about/", "hy-AM"],
+    ["/concerts/", "/en/concerts/", "en-GB"],
+  ];
+  for (const [from, to, lang] of CASES) {
+    test(`tick${from} switches to ${to}`, async ({ page }) => {
+      await page.setViewportSize({ width: 390, height: 800 });
+      await page.goto(url("tick", from));
+      await page.locator(".lang-switch").click();
+      await expect(page).toHaveURL(url("tick", to));
+      await expect(page.locator("html")).toHaveAttribute("lang", lang);
+    });
   }
 });
 

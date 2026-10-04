@@ -24483,6 +24483,440 @@
       ]
     }
   },
+  "tick.lnd.lol": {
+    "/covers/about.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/about-480.avif"
+        ],
+        [
+          768,
+          "/covers/about-768.avif"
+        ],
+        [
+          1024,
+          "/covers/about-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/about-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/about-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/about-480.webp"
+        ],
+        [
+          768,
+          "/covers/about-768.webp"
+        ],
+        [
+          1024,
+          "/covers/about-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/about-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/about-1536.webp"
+        ]
+      ]
+    },
+    "/covers/andru-donalds-enigma-yerevan-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/andru-donalds-enigma-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/andru-donalds-enigma-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/andru-donalds-enigma-yerevan-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/andru-donalds-enigma-yerevan-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/andru-donalds-enigma-yerevan-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/andru-donalds-enigma-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/andru-donalds-enigma-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/andru-donalds-enigma-yerevan-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/andru-donalds-enigma-yerevan-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/andru-donalds-enigma-yerevan-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/elgar-enigma-variations-yerevan-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/elgar-enigma-variations-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/elgar-enigma-variations-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/elgar-enigma-variations-yerevan-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/elgar-enigma-variations-yerevan-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/elgar-enigma-variations-yerevan-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/elgar-enigma-variations-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/elgar-enigma-variations-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/elgar-enigma-variations-yerevan-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/elgar-enigma-variations-yerevan-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/elgar-enigma-variations-yerevan-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/equinox-fest-autumn-chapter-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/equinox-fest-autumn-chapter-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/equinox-fest-autumn-chapter-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/equinox-fest-autumn-chapter-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/equinox-fest-autumn-chapter-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/equinox-fest-autumn-chapter-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/equinox-fest-autumn-chapter-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/equinox-fest-autumn-chapter-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/equinox-fest-autumn-chapter-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/equinox-fest-autumn-chapter-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/equinox-fest-autumn-chapter-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/harry-potter-film-music-yerevan-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/harry-potter-film-music-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/harry-potter-film-music-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/harry-potter-film-music-yerevan-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/harry-potter-film-music-yerevan-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/harry-potter-film-music-yerevan-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/harry-potter-film-music-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/harry-potter-film-music-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/harry-potter-film-music-yerevan-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/harry-potter-film-music-yerevan-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/harry-potter-film-music-yerevan-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/lyubov-uspenskaya-yerevan-2027.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/lyubov-uspenskaya-yerevan-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/lyubov-uspenskaya-yerevan-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/lyubov-uspenskaya-yerevan-2027-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/lyubov-uspenskaya-yerevan-2027-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/lyubov-uspenskaya-yerevan-2027-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/lyubov-uspenskaya-yerevan-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/lyubov-uspenskaya-yerevan-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/lyubov-uspenskaya-yerevan-2027-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/lyubov-uspenskaya-yerevan-2027-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/lyubov-uspenskaya-yerevan-2027-1536.webp"
+        ]
+      ]
+    },
+    "/covers/romeo-juliet-deja-vu-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/romeo-juliet-deja-vu-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/romeo-juliet-deja-vu-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/romeo-juliet-deja-vu-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/romeo-juliet-deja-vu-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/romeo-juliet-deja-vu-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/romeo-juliet-deja-vu-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/romeo-juliet-deja-vu-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/romeo-juliet-deja-vu-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/romeo-juliet-deja-vu-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/romeo-juliet-deja-vu-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/tata-simonyan-yerevan-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/tata-simonyan-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/tata-simonyan-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/tata-simonyan-yerevan-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/tata-simonyan-yerevan-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/tata-simonyan-yerevan-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/tata-simonyan-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/tata-simonyan-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/tata-simonyan-yerevan-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/tata-simonyan-yerevan-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/tata-simonyan-yerevan-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/yerevan-fashion-week-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/yerevan-fashion-week-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/yerevan-fashion-week-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/yerevan-fashion-week-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/yerevan-fashion-week-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/yerevan-fashion-week-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/yerevan-fashion-week-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/yerevan-fashion-week-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/yerevan-fashion-week-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/yerevan-fashion-week-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/yerevan-fashion-week-2026-1536.webp"
+        ]
+      ]
+    }
+  },
   "vien.lol": {
     "/covers/albertina-zeigt-picasso-und-bacon-ab-18-september.jpg": {
       "width": 1536,

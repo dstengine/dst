@@ -15,6 +15,11 @@ export const items: NewsItem[] = [
     titleSeo: "Երևանի նորաձևության շաբաթը կբացվի Էրեբունիում",
     summary:
       "Երևանի նորաձևության շաբաթը հոկտեմբերի 8–11-ին է. բացումը Էրեբունի թանգարանում է, իսկ Fashion Scout մրցույթի հաղթողը կմասնակցի Լոնդոնի նորաձևության շաբաթին։",
+    image: "/covers/yerevan-fashion-week-2026.jpg",
+    imageAlt: "Երկու զգեստ մանեկենների վրա՝ կարմիր և սպիտակ, բլրի վրայի հին ամրոցի պարսպի առջև",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     category: "Նորաձևություն",
     city: "Երևան",
     country: "Հայաստան",
@@ -34,6 +39,7 @@ export const items: NewsItem[] = [
     ],
     i18n: {
       en: {
+        imageAlt: "Two dresses on dress forms, one red and one cream, before an ancient fortress wall on a hill",
         title: "Yerevan Fashion Week opens at the Erebuni Museum",
         cardTitle: "Yerevan Fashion Week at Erebuni",
         titleSeo: "Yerevan Fashion Week opens at the Erebuni Museum",
