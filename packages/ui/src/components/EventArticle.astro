@@ -218,8 +218,18 @@ const duration = (() => {
 })();
 
 const currency = item.tickets?.currency ?? "AED";
-const money = (amount: number) =>
-  new Intl.NumberFormat(locale, { style: "currency", currency, maximumFractionDigits: 0 }).format(amount);
+// Whole amounts stay whole and an amount with pence keeps them. Rounding
+// every price put £28 in the table above a paragraph that said £27.70, and
+// $22 above a summary that said $22.24.
+const money = (amount: number) => {
+  const digits = Number.isInteger(amount) ? 0 : 2;
+  return new Intl.NumberFormat(locale, {
+    style: "currency",
+    currency,
+    minimumFractionDigits: digits,
+    maximumFractionDigits: digits,
+  }).format(amount);
+};
 // A price of nothing is a word, not a number: "AED 0" is how a currency
 // formatter says free, and nobody reads it that way. The currency is
 // dropped with it — a free seat in Yerevan is not free in dirhams.
