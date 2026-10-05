@@ -171,7 +171,7 @@ export const items: EventItem[] = [
   {
     slug: "crypto-worlds-fair-2026",
     createdAt: "2026-09-06T09:36:42+04:00",
-    updatedAt: "2026-09-06T14:48:11+04:00",
+    updatedAt: "2026-10-05T22:05:00+04:00",
     site: "sol2go",
     image: "/covers/crypto-worlds-fair-2026.jpg",
     imageAlt: "A ring of flat pavilion shapes in violet, lilac and mint paper arranged around a small cream disc",
@@ -193,8 +193,24 @@ export const items: EventItem[] = [
     source: {
       name: "Colosseum",
       url: "https://www.colosseum.com/worldsfair",
-      verifiedOn: "2026-09-06",
+      verifiedOn: "2026-10-05",
     },
+    updates: [
+      {
+        on: "2026-10-05",
+        text: "The prize table is out: <strong>$840,000</strong> in prizes in all. A <strong>$30,000</strong> grand prize, <strong>$15,000</strong> each to the next twenty projects, <strong>$5,000</strong> for public good and <strong>$5,000</strong> for a university team — and on top of those, a <strong>$100,000 Solana track</strong> paying <strong>$10,000</strong> to each of ten projects. Submissions close at <strong>11:59pm PT on 12 October</strong>; winners are announced by 5 December.",
+      },
+    ],
+    related: [
+      {
+        href: "/news/rushframe-ai-video-editor-crypto-worlds-fair-pitch-video/",
+        eyebrow: "Tools",
+        title: "RushFrame launches a week before Colosseum wants your pitch video",
+        text: "What the presentation and demo videos have to be, and where an AI video editor fits.",
+        image: "/covers/rushframe-ai-video-editor-crypto-worlds-fair-pitch-video.jpg",
+        imageAlt: "A raccoon in goggles and headphones works at a video editing workstation in a neon city at night, under the RushFrame wordmark",
+      },
+    ],
     ticket: { url: "https://www.colosseum.com/worldsfair", label: "Register" },
     body: [
       "Colosseum runs the hackathons that Solana used to run itself, and it has spent three years being a Solana competition. This one is not. The Crypto World's Fair puts eight ecosystems on the same page and asks builders to pick one.",

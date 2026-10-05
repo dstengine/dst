@@ -23666,6 +23666,54 @@
         ]
       ]
     },
+    "/covers/rushframe-ai-video-editor-crypto-worlds-fair-pitch-video.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/rushframe-ai-video-editor-crypto-worlds-fair-pitch-video-480.avif"
+        ],
+        [
+          768,
+          "/covers/rushframe-ai-video-editor-crypto-worlds-fair-pitch-video-768.avif"
+        ],
+        [
+          1024,
+          "/covers/rushframe-ai-video-editor-crypto-worlds-fair-pitch-video-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/rushframe-ai-video-editor-crypto-worlds-fair-pitch-video-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/rushframe-ai-video-editor-crypto-worlds-fair-pitch-video-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/rushframe-ai-video-editor-crypto-worlds-fair-pitch-video-480.webp"
+        ],
+        [
+          768,
+          "/covers/rushframe-ai-video-editor-crypto-worlds-fair-pitch-video-768.webp"
+        ],
+        [
+          1024,
+          "/covers/rushframe-ai-video-editor-crypto-worlds-fair-pitch-video-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/rushframe-ai-video-editor-crypto-worlds-fair-pitch-video-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/rushframe-ai-video-editor-crypto-worlds-fair-pitch-video-1536.webp"
+        ]
+      ]
+    },
     "/covers/scale-or-die-2026.jpg": {
       "width": 1536,
       "height": 864,

@@ -3,6 +3,77 @@ import type { NewsItem } from "../types.ts";
 export const items: NewsItem[] = [
 
   {
+    slug: "rushframe-ai-video-editor-crypto-worlds-fair-pitch-video",
+    createdAt: "2026-10-05T22:05:00+04:00",
+    updatedAt: "2026-10-05T22:05:00+04:00",
+    site: "sol2go",
+    image: "/covers/rushframe-ai-video-editor-crypto-worlds-fair-pitch-video.jpg",
+    imageAlt: "A raccoon in goggles and headphones works at a video editing workstation in a neon city at night, under the RushFrame wordmark",
+    imageKind: "illustration",
+    imageCredit: "RushFrame",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "RushFrame launches a week before Colosseum wants your pitch video",
+    cardTitle: "An AI video editor for the pitch video",
+    titleSeo: "RushFrame, AI video for your hackathon pitch",
+    summary:
+      "Every Crypto World's Fair team, the Solana track's included, owes Colosseum a two-to-three-minute presentation video by 12 October. RushFrame, an AI video editor released on 5 October, is a new way to make one.",
+    date: "2026-10-05",
+    promotedUntil: "2026-10-18",
+    category: "Tools",
+    source: {
+      name: "RushFrame",
+      url: "https://rushframe.online",
+      verifiedOn: "2026-10-05",
+    },
+    body: [
+      "A week before the Crypto World's Fair closes, every team in it still owes Colosseum the same two videos. On <strong>5 October</strong> an AI video editor called <strong>RushFrame</strong> came out. Nothing in it touches a chain — it is on a Solana calendar because of those videos.",
+      "## What Colosseum asks for",
+      "Submissions close at <strong>11:59pm PT on 12 October 2026</strong>, which is 06:59 UTC on the 13th. Colosseum's hackathon FAQ asks each team for a <strong>two-to-three-minute presentation video</strong> — which it calls one of the first resources judges review — and a <strong>product demo of no more than three minutes</strong> explaining how the product works. The weekly progress updates it asks for during the build are one-minute videos too, and the official rules require everything submitted to be in English.",
+      "## What RushFrame does",
+      "It generates video from text or from an image, extends a shot (<strong>Continue</strong>), joins two scenes (<strong>Bridge</strong>), and puts the result on a timeline with sound; soundtrack mixing and text-to-speech are in the Pro edition. Generation runs on your own machine, or spread across several, rather than in somebody's cloud. A <strong>Free</strong> edition gives one video track and one audio track, with <strong>Noir</strong>, <strong>Pro</strong> and <strong>Dev</strong> above it.",
+      "## Which of the two videos it is for",
+      "The presentation, not the demo. A demo is there to show how the product works, so it should be a recording of the product working — generated footage would be a picture of something else. Where a generator earns its place is the part of a pitch that has no screen to record: the problem in the opening seconds, the person the product is for, the situation it is meant to change. RushFrame's case for itself is continuity, keeping a character and a setting the same from one shot to the next, which is exactly what a pitch stitched together from loose AI clips tends to lose.",
+      "## Two things to check first",
+      "Colosseum's rules ask for permission from every individual who appears in submitted content and rule out anything that infringes someone else's rights — so a generated face that looks like a real person, or a track you do not hold the rights to, is a problem worth avoiding before a judge ever sees it. And RushFrame is laid out for vertical 9:16 video first: check what it exports before building three minutes in a shape you did not intend.",
+    ],
+    faq: [
+      {
+        q: "When is the Crypto World's Fair submission deadline?",
+        a: "<strong>11:59pm PT on 12 October 2026</strong> — 06:59 UTC on 13 October.",
+      },
+      {
+        q: "What videos does Colosseum ask for?",
+        a: "A <strong>two-to-three-minute presentation video</strong> and a <strong>product demo of no more than three minutes</strong>, plus one-minute weekly update videos during the build.",
+      },
+      {
+        q: "Is RushFrame a Solana or crypto project?",
+        a: "No. It is an AI video editor with no blockchain component. It is here because every hackathon team has to make videos.",
+      },
+      {
+        q: "Is RushFrame free?",
+        a: "There is a <strong>Free</strong> edition with one video track and one audio track. Noir, Pro and Dev add more; RushFrame's site does not list their prices.",
+      },
+      {
+        q: "Does RushFrame run on a Mac?",
+        a: "RushFrame is cross-platform. Whether a Mac build is out yet is on the official site, rushframe.online — check there before you plan a week around it.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/crypto-worlds-fair-2026/",
+        eyebrow: "Hackathon",
+        title: "Crypto World's Fair",
+        text: "Colosseum's four-week online hackathon, 14 September to 12 October. $840,000 in prizes, $100,000 of it for the Solana track.",
+        image: "/covers/crypto-worlds-fair-2026.jpg",
+        imageAlt: "A ring of flat pavilion shapes in violet, lilac and mint paper arranged around a small cream disc",
+      },
+    ],
+    expertise:
+      "Spend the generator on the first twenty seconds and not much more. Colosseum frames a submission as a pitch to its venture fund, and its judges score impact, novelty and the team alongside whether the thing works — so a minute of cinematic scenes buys attention, but the rest of a three-minute presentation has to be the founders and what they have built, because that is what is being funded. One consistent character carrying the problem is worth more than a montage of impressive shots. And with a week left, every hour spent learning a new tool comes out of the build: try it on the opening scene before committing the whole video to it.",
+  },
+
+  {
     slug: "solana-slots-are-250ms-and-every-block-limit-came-down-with-them",
     createdAt: "2026-09-22T02:48:00+04:00",
     updatedAt: "2026-09-22T02:48:00+04:00",
