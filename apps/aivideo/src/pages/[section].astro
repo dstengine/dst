@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro";
+import NewsList from "@dst/ui/NewsList.astro";
+import SectionNav from "@dst/ui/SectionNav.astro";
+import { siteId, newsBase } from "../content";
+import { sections, NAV } from "../sections";
+import { newsBySite } from "@dst/content/news";
+
+export function getStaticPaths() {
+  const all = sections(newsBySite(siteId));
+  return all.map((section) => ({ params: { section: section.slug }, props: { section, all } }));
+}
+
+const { section, all } = Astro.props;
+---
+<Layout title={section.title} description={section.description}>
+  <section class="container hero">
+    <h1>{section.h1}</h1>
+    <p class="lede">{section.lede}</p>
+  </section>
+  <section class="container">
+    <SectionNav sections={all} current={`/${section.slug}/`} allHref={newsBase} {...NAV} />
+    <NewsList items={section.items} newsBase={newsBase} />
+  </section>
+</Layout>

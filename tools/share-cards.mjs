@@ -9,6 +9,7 @@
 //
 // Run once after the copy changes; the PNGs are committed.
 //   npm run build && node tools/share-cards.mjs
+// One site: node tools/share-cards.mjs aivideo
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -16,7 +17,7 @@ import sharp from "sharp";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const APPS = ["dst", "llc", "visas", "riviera", "mbr", "palmcentral", "eco", "fwf", "musical",
-  "nyc42", "ldn", "lnd", "cmx", "mxo", "sol2go", "vien", "tokiohotel", "tick"];
+  "nyc42", "ldn", "lnd", "cmx", "mxo", "sol2go", "vien", "tokiohotel", "tick", "aivideo"];
 
 const W = 1200;
 const H = 630;
@@ -50,7 +51,9 @@ function wrap(text, perLine, maxLines) {
   return out;
 }
 
-for (const app of APPS) {
+// Named apps only, when given: the others' dist/ may be stale.
+const only = process.argv.slice(2);
+for (const app of only.length ? only : APPS) {
   const html = readFileSync(path.join(REPO, "apps", app, "dist", "index.html"), "utf8");
   const siteName = attr(html, /<meta property="og:site_name" content="([^"]*)"/) ?? app;
   const description = attr(html, /<meta name="description" content="([^"]*)"/) ?? "";

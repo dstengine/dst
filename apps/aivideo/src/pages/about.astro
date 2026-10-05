@@ -1,0 +1,73 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { about } from "../content";
+import PageHero from "@dst/ui/PageHero.astro";
+---
+<Layout
+  prose title={about.title} description={about.description}>
+  <PageHero
+    title={about.h1}
+    image="/covers/about.jpg"
+    imageAlt="A glowing magenta film strip curving diagonally across a near-black ground"
+    imageKind="generated"
+  >
+    <p class="lede">{about.lede}</p>
+  </PageHero>
+
+  <section class="container">
+    <h2>What this is</h2>
+    <p set:html={`<strong>aivideo.zone</strong> follows AI video from both ends: the generative models that make the footage — Kling, Grok Imagine, LTX, MiniMax and the rest — and the tools it is then cut, extended and repaired in, ComfyUI first among them. News when something ships or shuts down, guides when a change needs more than a paragraph, and for screenwriters, how each model wants a scene written.`} />
+  </section>
+
+  <section class="container">
+    <h2>The rules</h2>
+    <ol class="rules">
+      <li>
+        <h3>Every fact names where it came from, and when we last looked</h3>
+        <p>The maker's release notes, model card or documentation first, and a report only where the maker has said nothing. The source and the date it was checked are printed on the entry.</p>
+      </li>
+      <li>
+        <h3>Specifications are the maker's, and are called that</h3>
+        <p>A resolution, a clip length or a parameter count is what the maker published. Where we have not run a model ourselves, the page says what was announced, not what it does on your machine.</p>
+      </li>
+      <li>
+        <h3>Prices are dated</h3>
+        <p>AI video is billed by the second and the price moves. A price on this site is the one on the maker's own page on the day the entry says we checked it.</p>
+      </li>
+      <li>
+        <h3>Nothing here is paid for</h3>
+        <p>No tool or model pays to be covered, ranked or linked. Links to makers' sites go out through a redirect that passes them nothing.</p>
+      </li>
+      <li>
+        <h3>A page exists when there is something to put on it</h3>
+        <p>A tool gets a page of its own once there are two stories about it, and not before.</p>
+      </li>
+    </ol>
+  </section>
+</Layout>
+
+<style>
+  .rules {
+    margin: var(--space-3) 0 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: rule;
+    display: grid;
+    gap: var(--space-3);
+  }
+  .rules li {
+    counter-increment: rule;
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 0 var(--space-2);
+    align-items: baseline;
+  }
+  .rules li::before {
+    content: counter(rule);
+    color: var(--accent);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+  .rules h3 { margin: 0; font-size: var(--step-0); }
+  .rules p { margin: 0.25em 0 0; grid-column: 2; max-width: 62ch; color: var(--ink-muted); }
+</style>

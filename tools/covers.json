@@ -16,7 +16,11 @@
     "musical": "warm cream ground with crimson and deep burgundy, small brass highlights",
     "sol2go": "deep violet ground with lilac and pale mint, small cream highlights",
     "vien": "warm cream ground with deep vermilion red and moss green, small gold highlights",
-    "tick": "warm apricot tuff-stone ground with deep pomegranate red and dusty rose, small cream highlights"
+    "tick": "warm apricot tuff-stone ground with deep pomegranate red and dusty rose, small cream highlights",
+    "aivideo": "near-black violet ground with hot magenta and electric cyan neon, small acid-yellow highlights"
+  },
+  "idioms": {
+    "aivideo": "cyberpunk"
   },
   "covers": {
     "nyc42": {
@@ -694,6 +698,25 @@
     },
     "tick": {
       "yerevan-fashion-week-2026": "three headless dress forms standing in a row on a low plinth in front of the stepped silhouette of an ancient fortress wall on a hill"
+    },
+    "aivideo": {
+      "minimax-h3-open-weights": "a heavy round vault door standing wide open, a stream of glowing film frames and sound waves pouring out through the opening",
+      "grok-imagine-video-1-5-references-text-to-video": "seven small glowing cards arranged in an arc, six blank picture cards and one card showing a sound wave, each sending a thin beam of light into one large central screen",
+      "ltx-2-5-open-weights-comfyui": "an open crate in the centre of the frame with three glowing screens rising out of it side by side, each showing the same simple diamond shape at a different size",
+      "comfyui-0-32-ltx-2-5-grok-imagine-image-2": {
+        "subject": "a flat diagram of plain rectangular boxes linked by glowing cables, one new box at the centre glowing brighter than the rest",
+        "detail": "the boxes drawn as simple neon outlines on the dark ground, the cables as smooth neon lines, no floor, no reflections, no depth"
+      },
+      "grok-imagine-image-quality-retires-november-2": "flat vector drawing of a small dim picture frame on the left and a larger, wider picture frame glowing on the right, one curved arrow running from the first to the second, both floating on a flat ground",
+      "sora-api-shut-down-september-24": "a dark switched-off screen with its power cable pulled out of a wall socket, the plug lying on the ground, a few fading sparks",
+      "kling-4-0-announced-flash-early-access": "one long horizontal film strip stretched across the whole frame, held in place by ten glowing pins spaced along it",
+      "comfyui-0-38-seedance-2-5-draft-minimax-h3-controlnet": "a control panel of glowing sliders and round dials wired by cables into a tall stack of video frames",
+      "ltx-2-5-september-loras-long-clips-hdr": "an open flat case holding fourteen small glowing cartridges in two neat rows, one cartridge lifted out above the rest",
+      "sora-api-alternatives-video-apis-still-open": "a dark empty socket on the left, and from beside it four glowing cables branching out to the right towards four different glowing ports",
+      "editing-ai-video-in-comfyui-nodes": "a large pair of scissors cutting through a glowing film strip, small plain boxes joined by cables around it",
+      "ltx-2-5-vs-minimax-h3-open-video-models": "two tall glowing monoliths facing each other across the frame, one magenta and one cyan, small film frames and sound waves circling each",
+      "kling-4-keyframes-shot-list-for-screenwriters": "a row of five blank glowing panels pinned to a dark wall, a single thread of light running from pin to pin in order",
+      "ai-video-prompt-formats-ltx-minimax-h3-kling": "three different glowing consoles side by side, each sending its own beam of light into one shared screen above them"
     }
   },
   "pages": {
@@ -915,6 +938,9 @@
     },
     "tick": {
       "about": "the two snow-capped peaks of a great mountain rising above a row of flat-roofed stone buildings with tall arched windows"
+    },
+    "aivideo": {
+      "about": "a strip of film frames bending across a dark grid in a wide curve"
     }
   }
 }

@@ -14,6 +14,8 @@ import VentureGrid from "./VentureGrid.astro";
 import FeedCards from "./FeedCards.astro";
 import CountdownScript from "./CountdownScript.astro";
 import SourceLine from "./SourceLine.astro";
+import ChipNav from "./ChipNav.astro";
+import Variants from "./Variants.astro";
 import Faq from "./Faq.astro";
 import ImageNote from "./ImageNote.astro";
 import { ICONS } from "../icons.ts";
@@ -64,8 +66,15 @@ interface Props {
       Without it the button is not drawn — an action with no hop would be
       a third-party URL in the page. */
   actionHref?: string;
+  /** The pages for what the article is about — `item.tags` that have
+      earned a page on this site, resolved by the route, which is the only
+      place that knows the site's sections. A tag with no page is left out
+      rather than printed dead, the same rule as `categoryHref`. */
+  tagLinks?: { href: string; label: string; title?: string }[];
+  /** What that row is a row of, for a reader who reaches it by keyboard. */
+  tagsLabel?: string;
 }
-const { item, backHref, more = [], moreEvents = [], newsBase = "/news/", eventsBase = "/events/", publisher, categoryHref, promoted, where, locale = "en-US", labels: labelOverrides, actionHref } = Astro.props;
+const { item, backHref, more = [], moreEvents = [], newsBase = "/news/", eventsBase = "/events/", publisher, categoryHref, promoted, where, locale = "en-US", labels: labelOverrides, actionHref, tagLinks = [], tagsLabel = "In this story" } = Astro.props;
 const L = withLabels(labelOverrides);
 
 const todayIso = new Date().toISOString().slice(0, 10);
@@ -73,7 +82,13 @@ const moreCards = withPromoted(
   more
     .filter((other) => other.slug !== item.slug && Array.isArray(other.body) && other.body.length > 0)
     // Its own subject first, newest first within it — see EventArticle.
+    // Where entries carry tags, the subject is the tags: an entry about
+    // Kling leads with Kling, before anything that merely shares its kind.
+    // Without that, every article on a small site closed on the same three
+    // cards, and the strip became the site's largest repeated text.
     .sort((a, b) => {
+      const shared = (o: NewsItem) => (o.tags ?? []).filter((t) => item.tags?.includes(t)).length;
+      if (shared(a) !== shared(b)) return shared(b) - shared(a);
       const aSame = a.category === item.category;
       const bSame = b.category === item.category;
       if (aSame !== bSame) return aSame ? -1 : 1;
@@ -198,7 +213,16 @@ const relatedItems = (item.related ?? []).map((card) => ({
     <p class="news-article-actions">
       <a class="button" href={actionHref} title={item.action.title ?? `${item.action.label} — ${item.title}`}>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={ICONS[item.action.icon ?? "link"] ?? ICONS.link} /></svg>
-        {item.action.label}
+        {/* The `action-label` test (@dst/content/experiments): the short
+            label against the sentence that says where the button goes.
+            Only where there is such a sentence — a variant with nothing to
+            show would count the control twice. */}
+        {item.action.title ? (
+          <Variants exp="action-label">
+            <Fragment slot="label">{item.action.label}</Fragment>
+            <Fragment slot="title">{item.action.title}</Fragment>
+          </Variants>
+        ) : item.action.label}
       </a>
     </p>
   )}
@@ -283,6 +307,12 @@ const relatedItems = (item.related ?? []).map((card) => ({
       <h2>{L.related}</h2>
       <VentureGrid items={relatedItems} />
     </section>
+  )}
+
+  {tagLinks.length > 0 && (
+    <div class="news-article-tags">
+      <ChipNav items={tagLinks} label={tagsLabel} />
+    </div>
   )}
 
   {item.source && <SourceLine source={item.source} locale={locale} labels={L} />}
@@ -374,6 +404,7 @@ const relatedItems = (item.related ?? []).map((card) => ({
   .news-article-form { margin-top: var(--space-4); }
 
   .news-article-related { margin-top: var(--space-4); }
+  .news-article-tags { margin-top: var(--space-4); }
   .news-article-more { margin-top: var(--space-5); }
 
 

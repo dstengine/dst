@@ -174,6 +174,15 @@ const IDIOMS = {
   vector:
     "flat vector editorial illustration, clean geometric shapes, uniform flat fills, " +
     "no gradients, no shading",
+  // aivideo's. Volume is allowed here — lit cubes, a reflective floor, a
+  // render that is plainly a render — because the subject is software and a
+  // CG object is no one's idea of a news photograph. What is still out is
+  // the photograph: wet streets, real hardware, anything that could pass for
+  // a picture taken somewhere.
+  cyberpunk:
+    "cyberpunk neon illustration, glowing neon outlines and lit geometric forms on a dark ground, " +
+    "bold simple shapes, luminous line work, stylised CG look, " +
+    "plainly an illustration, never a photograph",
 };
 
 /** One idiom per site, so a grid of cards reads as a set — and so that two

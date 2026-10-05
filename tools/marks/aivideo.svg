@@ -1,0 +1,30 @@
+<!-- aivideo.zone's mark: a play triangle in a film frame, drawn in neon —
+     magenta for the frame, cyan for the triangle — on the near-black the
+     site opens in. The sprocket holes are detail (data-detail) and drop out
+     below 48px. Full-bleed and centred with room to spare, so a crop to a
+     circle keeps the whole frame. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="14" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1024" height="1024" fill="#0D0717"/>
+  <g filter="url(#glow)">
+    <rect x="232" y="292" width="560" height="440" rx="56" fill="none" stroke="#FF4FD8" stroke-width="44"/>
+    <path d="M452 404 L640 512 L452 620 Z" fill="#8FF7FF" stroke="#8FF7FF" stroke-width="28" stroke-linejoin="round"/>
+  </g>
+  <g data-detail="" fill="#FF4FD8">
+    <rect x="290" y="228" width="44" height="30" rx="8"/>
+    <rect x="390" y="228" width="44" height="30" rx="8"/>
+    <rect x="490" y="228" width="44" height="30" rx="8"/>
+    <rect x="590" y="228" width="44" height="30" rx="8"/>
+    <rect x="690" y="228" width="44" height="30" rx="8"/>
+    <rect x="290" y="766" width="44" height="30" rx="8"/>
+    <rect x="390" y="766" width="44" height="30" rx="8"/>
+    <rect x="490" y="766" width="44" height="30" rx="8"/>
+    <rect x="590" y="766" width="44" height="30" rx="8"/>
+    <rect x="690" y="766" width="44" height="30" rx="8"/>
+  </g>
+</svg>

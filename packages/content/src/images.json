@@ -1,4 +1,870 @@
 {
+  "aivideo.zone": {
+    "/covers/about.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/about-480.avif"
+        ],
+        [
+          768,
+          "/covers/about-768.avif"
+        ],
+        [
+          1024,
+          "/covers/about-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/about-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/about-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/about-480.webp"
+        ],
+        [
+          768,
+          "/covers/about-768.webp"
+        ],
+        [
+          1024,
+          "/covers/about-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/about-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/about-1536.webp"
+        ]
+      ]
+    },
+    "/covers/ai-video-prompt-formats-ltx-minimax-h3-kling.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/ai-video-prompt-formats-ltx-minimax-h3-kling-480.avif"
+        ],
+        [
+          768,
+          "/covers/ai-video-prompt-formats-ltx-minimax-h3-kling-768.avif"
+        ],
+        [
+          1024,
+          "/covers/ai-video-prompt-formats-ltx-minimax-h3-kling-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/ai-video-prompt-formats-ltx-minimax-h3-kling-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/ai-video-prompt-formats-ltx-minimax-h3-kling-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/ai-video-prompt-formats-ltx-minimax-h3-kling-480.webp"
+        ],
+        [
+          768,
+          "/covers/ai-video-prompt-formats-ltx-minimax-h3-kling-768.webp"
+        ],
+        [
+          1024,
+          "/covers/ai-video-prompt-formats-ltx-minimax-h3-kling-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/ai-video-prompt-formats-ltx-minimax-h3-kling-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/ai-video-prompt-formats-ltx-minimax-h3-kling-1536.webp"
+        ]
+      ]
+    },
+    "/covers/comfyui-0-32-ltx-2-5-grok-imagine-image-2.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/comfyui-0-32-ltx-2-5-grok-imagine-image-2-480.avif"
+        ],
+        [
+          768,
+          "/covers/comfyui-0-32-ltx-2-5-grok-imagine-image-2-768.avif"
+        ],
+        [
+          1024,
+          "/covers/comfyui-0-32-ltx-2-5-grok-imagine-image-2-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/comfyui-0-32-ltx-2-5-grok-imagine-image-2-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/comfyui-0-32-ltx-2-5-grok-imagine-image-2-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/comfyui-0-32-ltx-2-5-grok-imagine-image-2-480.webp"
+        ],
+        [
+          768,
+          "/covers/comfyui-0-32-ltx-2-5-grok-imagine-image-2-768.webp"
+        ],
+        [
+          1024,
+          "/covers/comfyui-0-32-ltx-2-5-grok-imagine-image-2-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/comfyui-0-32-ltx-2-5-grok-imagine-image-2-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/comfyui-0-32-ltx-2-5-grok-imagine-image-2-1536.webp"
+        ]
+      ]
+    },
+    "/covers/comfyui-0-36-video-concatenate-flux-video-edit.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/comfyui-0-36-video-concatenate-flux-video-edit-480.avif"
+        ],
+        [
+          768,
+          "/covers/comfyui-0-36-video-concatenate-flux-video-edit-768.avif"
+        ],
+        [
+          1024,
+          "/covers/comfyui-0-36-video-concatenate-flux-video-edit-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/comfyui-0-36-video-concatenate-flux-video-edit-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/comfyui-0-36-video-concatenate-flux-video-edit-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/comfyui-0-36-video-concatenate-flux-video-edit-480.webp"
+        ],
+        [
+          768,
+          "/covers/comfyui-0-36-video-concatenate-flux-video-edit-768.webp"
+        ],
+        [
+          1024,
+          "/covers/comfyui-0-36-video-concatenate-flux-video-edit-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/comfyui-0-36-video-concatenate-flux-video-edit-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/comfyui-0-36-video-concatenate-flux-video-edit-1536.webp"
+        ]
+      ]
+    },
+    "/covers/comfyui-0-38-seedance-2-5-draft-minimax-h3-controlnet.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/comfyui-0-38-seedance-2-5-draft-minimax-h3-controlnet-480.avif"
+        ],
+        [
+          768,
+          "/covers/comfyui-0-38-seedance-2-5-draft-minimax-h3-controlnet-768.avif"
+        ],
+        [
+          1024,
+          "/covers/comfyui-0-38-seedance-2-5-draft-minimax-h3-controlnet-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/comfyui-0-38-seedance-2-5-draft-minimax-h3-controlnet-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/comfyui-0-38-seedance-2-5-draft-minimax-h3-controlnet-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/comfyui-0-38-seedance-2-5-draft-minimax-h3-controlnet-480.webp"
+        ],
+        [
+          768,
+          "/covers/comfyui-0-38-seedance-2-5-draft-minimax-h3-controlnet-768.webp"
+        ],
+        [
+          1024,
+          "/covers/comfyui-0-38-seedance-2-5-draft-minimax-h3-controlnet-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/comfyui-0-38-seedance-2-5-draft-minimax-h3-controlnet-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/comfyui-0-38-seedance-2-5-draft-minimax-h3-controlnet-1536.webp"
+        ]
+      ]
+    },
+    "/covers/editing-ai-video-in-comfyui-nodes.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/editing-ai-video-in-comfyui-nodes-480.avif"
+        ],
+        [
+          768,
+          "/covers/editing-ai-video-in-comfyui-nodes-768.avif"
+        ],
+        [
+          1024,
+          "/covers/editing-ai-video-in-comfyui-nodes-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/editing-ai-video-in-comfyui-nodes-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/editing-ai-video-in-comfyui-nodes-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/editing-ai-video-in-comfyui-nodes-480.webp"
+        ],
+        [
+          768,
+          "/covers/editing-ai-video-in-comfyui-nodes-768.webp"
+        ],
+        [
+          1024,
+          "/covers/editing-ai-video-in-comfyui-nodes-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/editing-ai-video-in-comfyui-nodes-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/editing-ai-video-in-comfyui-nodes-1536.webp"
+        ]
+      ]
+    },
+    "/covers/gemini-omni-flash-ga-gemini-api.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/gemini-omni-flash-ga-gemini-api-480.avif"
+        ],
+        [
+          768,
+          "/covers/gemini-omni-flash-ga-gemini-api-768.avif"
+        ],
+        [
+          1024,
+          "/covers/gemini-omni-flash-ga-gemini-api-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/gemini-omni-flash-ga-gemini-api-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/gemini-omni-flash-ga-gemini-api-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/gemini-omni-flash-ga-gemini-api-480.webp"
+        ],
+        [
+          768,
+          "/covers/gemini-omni-flash-ga-gemini-api-768.webp"
+        ],
+        [
+          1024,
+          "/covers/gemini-omni-flash-ga-gemini-api-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/gemini-omni-flash-ga-gemini-api-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/gemini-omni-flash-ga-gemini-api-1536.webp"
+        ]
+      ]
+    },
+    "/covers/grok-imagine-image-quality-retires-november-2.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/grok-imagine-image-quality-retires-november-2-480.avif"
+        ],
+        [
+          768,
+          "/covers/grok-imagine-image-quality-retires-november-2-768.avif"
+        ],
+        [
+          1024,
+          "/covers/grok-imagine-image-quality-retires-november-2-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/grok-imagine-image-quality-retires-november-2-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/grok-imagine-image-quality-retires-november-2-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/grok-imagine-image-quality-retires-november-2-480.webp"
+        ],
+        [
+          768,
+          "/covers/grok-imagine-image-quality-retires-november-2-768.webp"
+        ],
+        [
+          1024,
+          "/covers/grok-imagine-image-quality-retires-november-2-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/grok-imagine-image-quality-retires-november-2-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/grok-imagine-image-quality-retires-november-2-1536.webp"
+        ]
+      ]
+    },
+    "/covers/grok-imagine-video-1-5-references-text-to-video.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/grok-imagine-video-1-5-references-text-to-video-480.avif"
+        ],
+        [
+          768,
+          "/covers/grok-imagine-video-1-5-references-text-to-video-768.avif"
+        ],
+        [
+          1024,
+          "/covers/grok-imagine-video-1-5-references-text-to-video-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/grok-imagine-video-1-5-references-text-to-video-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/grok-imagine-video-1-5-references-text-to-video-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/grok-imagine-video-1-5-references-text-to-video-480.webp"
+        ],
+        [
+          768,
+          "/covers/grok-imagine-video-1-5-references-text-to-video-768.webp"
+        ],
+        [
+          1024,
+          "/covers/grok-imagine-video-1-5-references-text-to-video-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/grok-imagine-video-1-5-references-text-to-video-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/grok-imagine-video-1-5-references-text-to-video-1536.webp"
+        ]
+      ]
+    },
+    "/covers/kling-4-0-announced-flash-early-access.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/kling-4-0-announced-flash-early-access-480.avif"
+        ],
+        [
+          768,
+          "/covers/kling-4-0-announced-flash-early-access-768.avif"
+        ],
+        [
+          1024,
+          "/covers/kling-4-0-announced-flash-early-access-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/kling-4-0-announced-flash-early-access-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/kling-4-0-announced-flash-early-access-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/kling-4-0-announced-flash-early-access-480.webp"
+        ],
+        [
+          768,
+          "/covers/kling-4-0-announced-flash-early-access-768.webp"
+        ],
+        [
+          1024,
+          "/covers/kling-4-0-announced-flash-early-access-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/kling-4-0-announced-flash-early-access-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/kling-4-0-announced-flash-early-access-1536.webp"
+        ]
+      ]
+    },
+    "/covers/kling-4-keyframes-shot-list-for-screenwriters.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/kling-4-keyframes-shot-list-for-screenwriters-480.avif"
+        ],
+        [
+          768,
+          "/covers/kling-4-keyframes-shot-list-for-screenwriters-768.avif"
+        ],
+        [
+          1024,
+          "/covers/kling-4-keyframes-shot-list-for-screenwriters-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/kling-4-keyframes-shot-list-for-screenwriters-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/kling-4-keyframes-shot-list-for-screenwriters-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/kling-4-keyframes-shot-list-for-screenwriters-480.webp"
+        ],
+        [
+          768,
+          "/covers/kling-4-keyframes-shot-list-for-screenwriters-768.webp"
+        ],
+        [
+          1024,
+          "/covers/kling-4-keyframes-shot-list-for-screenwriters-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/kling-4-keyframes-shot-list-for-screenwriters-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/kling-4-keyframes-shot-list-for-screenwriters-1536.webp"
+        ]
+      ]
+    },
+    "/covers/kling-4-vs-kling-3-what-changes.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/kling-4-vs-kling-3-what-changes-480.avif"
+        ],
+        [
+          768,
+          "/covers/kling-4-vs-kling-3-what-changes-768.avif"
+        ],
+        [
+          1024,
+          "/covers/kling-4-vs-kling-3-what-changes-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/kling-4-vs-kling-3-what-changes-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/kling-4-vs-kling-3-what-changes-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/kling-4-vs-kling-3-what-changes-480.webp"
+        ],
+        [
+          768,
+          "/covers/kling-4-vs-kling-3-what-changes-768.webp"
+        ],
+        [
+          1024,
+          "/covers/kling-4-vs-kling-3-what-changes-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/kling-4-vs-kling-3-what-changes-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/kling-4-vs-kling-3-what-changes-1536.webp"
+        ]
+      ]
+    },
+    "/covers/ltx-2-5-open-weights-comfyui.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/ltx-2-5-open-weights-comfyui-480.avif"
+        ],
+        [
+          768,
+          "/covers/ltx-2-5-open-weights-comfyui-768.avif"
+        ],
+        [
+          1024,
+          "/covers/ltx-2-5-open-weights-comfyui-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/ltx-2-5-open-weights-comfyui-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/ltx-2-5-open-weights-comfyui-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/ltx-2-5-open-weights-comfyui-480.webp"
+        ],
+        [
+          768,
+          "/covers/ltx-2-5-open-weights-comfyui-768.webp"
+        ],
+        [
+          1024,
+          "/covers/ltx-2-5-open-weights-comfyui-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/ltx-2-5-open-weights-comfyui-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/ltx-2-5-open-weights-comfyui-1536.webp"
+        ]
+      ]
+    },
+    "/covers/ltx-2-5-september-loras-long-clips-hdr.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/ltx-2-5-september-loras-long-clips-hdr-480.avif"
+        ],
+        [
+          768,
+          "/covers/ltx-2-5-september-loras-long-clips-hdr-768.avif"
+        ],
+        [
+          1024,
+          "/covers/ltx-2-5-september-loras-long-clips-hdr-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/ltx-2-5-september-loras-long-clips-hdr-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/ltx-2-5-september-loras-long-clips-hdr-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/ltx-2-5-september-loras-long-clips-hdr-480.webp"
+        ],
+        [
+          768,
+          "/covers/ltx-2-5-september-loras-long-clips-hdr-768.webp"
+        ],
+        [
+          1024,
+          "/covers/ltx-2-5-september-loras-long-clips-hdr-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/ltx-2-5-september-loras-long-clips-hdr-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/ltx-2-5-september-loras-long-clips-hdr-1536.webp"
+        ]
+      ]
+    },
+    "/covers/ltx-2-5-vs-minimax-h3-open-video-models.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/ltx-2-5-vs-minimax-h3-open-video-models-480.avif"
+        ],
+        [
+          768,
+          "/covers/ltx-2-5-vs-minimax-h3-open-video-models-768.avif"
+        ],
+        [
+          1024,
+          "/covers/ltx-2-5-vs-minimax-h3-open-video-models-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/ltx-2-5-vs-minimax-h3-open-video-models-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/ltx-2-5-vs-minimax-h3-open-video-models-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/ltx-2-5-vs-minimax-h3-open-video-models-480.webp"
+        ],
+        [
+          768,
+          "/covers/ltx-2-5-vs-minimax-h3-open-video-models-768.webp"
+        ],
+        [
+          1024,
+          "/covers/ltx-2-5-vs-minimax-h3-open-video-models-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/ltx-2-5-vs-minimax-h3-open-video-models-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/ltx-2-5-vs-minimax-h3-open-video-models-1536.webp"
+        ]
+      ]
+    },
+    "/covers/minimax-h3-open-weights.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/minimax-h3-open-weights-480.avif"
+        ],
+        [
+          768,
+          "/covers/minimax-h3-open-weights-768.avif"
+        ],
+        [
+          1024,
+          "/covers/minimax-h3-open-weights-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/minimax-h3-open-weights-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/minimax-h3-open-weights-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/minimax-h3-open-weights-480.webp"
+        ],
+        [
+          768,
+          "/covers/minimax-h3-open-weights-768.webp"
+        ],
+        [
+          1024,
+          "/covers/minimax-h3-open-weights-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/minimax-h3-open-weights-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/minimax-h3-open-weights-1536.webp"
+        ]
+      ]
+    },
+    "/covers/sora-api-alternatives-video-apis-still-open.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/sora-api-alternatives-video-apis-still-open-480.avif"
+        ],
+        [
+          768,
+          "/covers/sora-api-alternatives-video-apis-still-open-768.avif"
+        ],
+        [
+          1024,
+          "/covers/sora-api-alternatives-video-apis-still-open-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/sora-api-alternatives-video-apis-still-open-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/sora-api-alternatives-video-apis-still-open-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/sora-api-alternatives-video-apis-still-open-480.webp"
+        ],
+        [
+          768,
+          "/covers/sora-api-alternatives-video-apis-still-open-768.webp"
+        ],
+        [
+          1024,
+          "/covers/sora-api-alternatives-video-apis-still-open-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/sora-api-alternatives-video-apis-still-open-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/sora-api-alternatives-video-apis-still-open-1536.webp"
+        ]
+      ]
+    },
+    "/covers/sora-api-shut-down-september-24.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/sora-api-shut-down-september-24-480.avif"
+        ],
+        [
+          768,
+          "/covers/sora-api-shut-down-september-24-768.avif"
+        ],
+        [
+          1024,
+          "/covers/sora-api-shut-down-september-24-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/sora-api-shut-down-september-24-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/sora-api-shut-down-september-24-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/sora-api-shut-down-september-24-480.webp"
+        ],
+        [
+          768,
+          "/covers/sora-api-shut-down-september-24-768.webp"
+        ],
+        [
+          1024,
+          "/covers/sora-api-shut-down-september-24-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/sora-api-shut-down-september-24-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/sora-api-shut-down-september-24-1536.webp"
+        ]
+      ]
+    }
+  },
   "cmx.lol": {
     "/covers/acerca.jpg": {
       "width": 1536,

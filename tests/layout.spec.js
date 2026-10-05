@@ -48,6 +48,13 @@ const PAGES = [
   { site: "tick", path: "/events/equinox-fest-autumn-chapter-2026/" },
   { site: "tick", path: "/am/events/equinox-fest-autumn-chapter-2026/" },
   { site: "tick", path: "/am/about/" },
+  // aivideo prints model prompts in <code> inside running text — long
+  // unbroken strings, the classic way to push a phone page sideways.
+  { site: "aivideo", path: "/" },
+  { site: "aivideo", path: "/news/ai-video-prompt-formats-ltx-minimax-h3-kling/" },
+  { site: "aivideo", path: "/comfyui/" },
+  { site: "aivideo", path: "/screenwriters/" },
+  { site: "aivideo", path: "/guides/" },
 ];
 
 const url = (site, path) => `${baseUrl(site)}${path}`;
@@ -600,5 +607,40 @@ test.describe("A/B/n", () => {
     await page.goto(url("tick", EVENT));
     await expect(button(page)).toHaveText(LABELS.label, { useInnerText: true });
     await context.close();
+  });
+});
+
+test.describe("A/B/n: aivideo's action-label", () => {
+  // The button under an aivideo.zone headline: its short label against the
+  // sentence that says where it goes.
+  const ENTRY = "/news/kling-4-0-announced-flash-early-access/";
+  const LABELS = { label: "Kling's announcement", title: "Kling AI's announcement of Kling 4.0" };
+  const button = (page) => page.locator(".news-article-actions a.button");
+  const chosen = (page) =>
+    page.evaluate(() => document.documentElement.getAttribute("data-exp-action-label"));
+
+  test("a visitor sees one label, and a click carries it", async ({ page }) => {
+    await page.goto(url("aivideo", ENTRY));
+    const variant = await chosen(page);
+    expect(Object.keys(LABELS)).toContain(variant);
+    await expect(button(page)).toHaveText(LABELS[variant], { useInnerText: true });
+    const events = await page.evaluate(() => {
+      const sent = [];
+      window.gtag = (...args) => sent.push(args);
+      document.addEventListener("click", (e) => e.preventDefault(), true);
+      document.querySelector(".news-article-actions a.button").click();
+      return sent;
+    });
+    const click = events.find((e) => e[1] === "outbound_click");
+    expect(click, `no outbound_click among ${JSON.stringify(events)}`).toBeTruthy();
+    expect(click[2].exp).toBe(`action-label:${variant}`);
+    expect(click[2].text).toBe(LABELS[variant]);
+  });
+
+  test("?exp= shows the variant asked for", async ({ page }) => {
+    for (const [variant, text] of Object.entries(LABELS)) {
+      await page.goto(url("aivideo", `${ENTRY}?exp=action-label:${variant}`));
+      await expect(button(page)).toHaveText(text, { useInnerText: true });
+    }
   });
 });

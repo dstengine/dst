@@ -18,6 +18,8 @@ const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const APPS = ["dst", "llc", "visas", "riviera", "mbr", "palmcentral", "eco", "fwf", "musical",
   // The five .lol city experiments, each of which publishes itself.
   "nyc42", "ldn", "lnd", "cmx", "mxo", "sol2go", "vien", "tick",
+  // AI video news, which publishes itself.
+  "aivideo",
   // A tour archive on its own vvm.space host, tied to neither the group nor
   // the .lol five.
   "tokiohotel"];
@@ -38,6 +40,7 @@ const PUBLISHER = {
   lnd: "https://lnd.lol/#organization",
   cmx: "https://cmx.lol/#organization",
   mxo: "https://mxo.lol/#organization",
+  aivideo: "https://aivideo.zone/#organization",
   tokiohotel: "https://tokiohotel.vvm.space/#organization",
 };
 const publisherFor = (app) => PUBLISHER[app] ?? ORGANIZATION_ID;

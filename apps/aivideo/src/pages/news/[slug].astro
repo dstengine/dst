@@ -1,0 +1,33 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { site } from "../../site.config";
+import NewsArticle from "@dst/ui/NewsArticle.astro";
+import { sectionHrefFor } from "@dst/content/sections";
+import { siteId, newsBase, publisher } from "../../content";
+import { sections, tagLinks } from "../../sections";
+import { newsBySite } from "@dst/content/news";
+import { go } from "../../outbound";
+
+export function getStaticPaths() {
+  // No body, no page — the feed card says everything the entry has.
+  const items = newsBySite(siteId).filter((i) => Array.isArray(i.body) && i.body.length > 0);
+  return items.map((item) => ({ params: { slug: item.slug }, props: { item, more: items } }));
+}
+
+const { item, more } = Astro.props;
+const all = sections(newsBySite(siteId));
+---
+<Layout title={item.titleSeo ?? item.title} description={item.summary} image={item.image}>
+  <NewsArticle
+    item={item}
+    more={more}
+    backHref={newsBase}
+    newsBase={newsBase}
+    publisher={publisher}
+    where={site.keyword}
+    categoryHref={sectionHrefFor(item, all)}
+    tagLinks={tagLinks(item, all)}
+    tagsLabel="Filed under"
+    actionHref={item.action ? go(`${item.slug}-action`) : undefined}
+  />
+</Layout>

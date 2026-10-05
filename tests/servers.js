@@ -18,6 +18,7 @@ export const PORTS = {
   sol2go: 4346,
   vien: 4347,
   tick: 4348,
+  aivideo: 4349,
 };
 
 export const baseUrl = (site) => `http://localhost:${PORTS[site]}`;

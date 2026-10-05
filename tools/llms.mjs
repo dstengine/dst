@@ -25,6 +25,8 @@ const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SITES = {
   nyc42: { host: "nyc42.lol", news: "news", events: "events", newsLabel: "News", eventsLabel: "Events" },
   sol2go: { host: "sol2go.lol", news: "news", events: "events", newsLabel: "News", eventsLabel: "Events" },
+  // No events: a section with no entries prints nothing.
+  aivideo: { host: "aivideo.zone", news: "news", events: "events", newsLabel: "News", eventsLabel: "Events" },
   vien: { host: "vien.lol", news: "nachrichten", events: "veranstaltungen", newsLabel: "Nachrichten", eventsLabel: "Termine" },
   ldn: { host: "ldn.lol", news: "news", events: "events", newsLabel: "News", eventsLabel: "Events" },
   lnd: { host: "lnd.lol", news: "news", events: "events", newsLabel: "News", eventsLabel: "Events" },

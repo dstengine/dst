@@ -107,6 +107,13 @@ interface ItemBase {
   body?: string[]; // absent -> no detail page (rule 7)
   source?: Source;
   category?: string;
+  // The named things an entry is about — a tool, a model — in the form
+  // their makers write them: "ComfyUI", "Kling". Several to an entry where
+  // a story genuinely concerns several, which `category` cannot say: it is
+  // one word for what kind of piece this is, and this is the list of what it
+  // is about. A site builds its subject pages from these as intents (see
+  // `Intent` in ./sections.ts); a tag with no page stays a word in the feed.
+  tags?: string[];
   image?: string;
   imageAlt?: string;
   imageKind?: ImageKind; // absent -> no claim is made either way

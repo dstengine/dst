@@ -1,0 +1,19 @@
+---
+import Layout from "../layouts/Layout.astro";
+import NewsBlock from "@dst/ui/NewsBlock.astro";
+import SectionNav from "@dst/ui/SectionNav.astro";
+import { home, siteId, newsBase } from "../content";
+import { sections, NAV } from "../sections";
+import { newsBySite } from "@dst/content/news";
+
+const items = newsBySite(siteId);
+const sectionLinks = sections(items);
+---
+<Layout title={home.title} description={home.description}>
+  <section class="container hero">
+    <h1>{home.h1}</h1>
+    <p class="lede">{home.lede}</p>
+    <SectionNav sections={sectionLinks} {...NAV} />
+  </section>
+  <NewsBlock items={items} heading="Latest in AI video" newsBase={newsBase} />
+</Layout>

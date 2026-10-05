@@ -182,6 +182,19 @@
         "4348"
       ],
       "port": 4348
+    },
+    {
+      "name": "aivideo",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "astro",
+        "dev",
+        "--root",
+        "apps/aivideo",
+        "--port",
+        "4349"
+      ],
+      "port": 4349
     }
   ]
 }

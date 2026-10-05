@@ -78,6 +78,21 @@ export const EXPERIMENTS: Experiment[] = [
       "gives the price, which is what most readers leave the page to find out. Expect price ≥ buy > label.",
     metric: "ticket_click ÷ experience_impression, per variant, on event pages with a price",
   },
+  {
+    id: "action-label",
+    unit: "visitor",
+    hosts: ["aivideo.zone"],
+    paths: "^/news/[^/]+/$",
+    variants: ["label", "title"],
+    // The launch build, which runs on UTC's date: still the 5th.
+    start: "2026-10-05",
+    hypothesis:
+      "The button under an aivideo.zone headline is pressed more often when it says where it goes. " +
+      "\"Release notes\" (control) is the short label; the title variant reads \"ComfyUI 0.38.0 release notes on GitHub\" — " +
+      "longer, but it names the destination and what is found there, which is what a reader weighing a click away wants to know. " +
+      "Expect title > label, by enough to pay for a button that wraps on a phone.",
+    metric: "outbound_click on the entry's /go/<slug>-action/ hop ÷ experience_impression, per variant",
+  },
 ];
 
 /** Every test running on this page today that has not been decided.

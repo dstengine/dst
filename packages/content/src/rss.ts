@@ -82,6 +82,9 @@ export function toRss(
       `      <guid isPermaLink="true">${escapeXml(url)}</guid>`,
       `      <pubDate>${rfc822(item.date)}</pubDate>`,
       ...(item.category ? [`      <category>${escapeXml(item.category)}</category>`] : []),
+      // RSS allows any number of categories, and a reader's tool filters on
+      // them: one for the kind of piece, one for each thing it is about.
+      ...(item.tags ?? []).map((tag) => `      <category>${escapeXml(tag)}</category>`),
       `      <description>${escapeXml(item.summary)}</description>`,
       "    </item>",
     ].join("\n");

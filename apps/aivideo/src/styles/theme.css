@@ -1,0 +1,10 @@
+/* aivideo.zone — cyberpunk: a magenta that holds on white and glows on the
+   near-black the site opens in, with the cyan of the covers as its tint. */
+:root {
+  --accent-light: #B0127A;
+  --accent-ink-light: #7A0A54;
+  --accent-tint-light: #FCE7F5;
+  --accent-dark: #FF4FD8;
+  --accent-ink-dark: #8FF7FF;
+  --accent-tint-dark: #1E0B2E;
+}

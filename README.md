@@ -54,6 +54,7 @@ takes the whole group or none of it.
 | `sol2go` | sol2go.lol | Solana meetups, hackathons and the crypto calendar | Feed |
 | `vien` | vien.lol | Was in Wien los ist — Wien und Österreich, auf Deutsch | Feed |
 | `tick` | tick.lnd.lol | Ինչ կա Երևանում — Yerevan events, English at `/`, Armenian at `/hy/` | Feed |
+| `aivideo` | aivideo.zone | AI video: generative models, tools and AI editing | Feed |
 
 Two things the table does not show and that the code enforces:
 

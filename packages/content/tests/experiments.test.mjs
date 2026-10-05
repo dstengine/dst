@@ -19,7 +19,7 @@ describe("the registry", () => {
   // An id and a variant are an HTML attribute name, a CSS selector and a
   // GA4 parameter value; anything outside this set breaks one of the three.
   const NAME = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
-  const HOSTS = new Set([...NETWORK.map((s) => s.host), "tick.lnd.lol"]);
+  const HOSTS = new Set([...NETWORK.map((s) => s.host), "tick.lnd.lol", "aivideo.zone"]);
 
   for (const e of EXPERIMENTS) {
     test(`${e.id} is well-formed`, () => {

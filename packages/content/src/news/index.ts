@@ -21,8 +21,10 @@ import { items as tick } from "./tick.ts";
 // musical.today publishes itself too: the feed exists so a listings site has
 // somewhere to put what changes the listings.
 import { items as musical } from "./musical.ts";
+// aivideo.zone is independent too: AI video generation and editing.
+import { items as aivideo } from "./aivideo.ts";
 
-const BY_SITE: Record<string, NewsItem[]> = { dst, llc, visas, riviera, mbr, palmcentral, eco, fwf, nyc42, ldn, lnd, cmx, mxo, sol2go, vien, tick, musical };
+const BY_SITE: Record<string, NewsItem[]> = { dst, llc, visas, riviera, mbr, palmcentral, eco, fwf, nyc42, ldn, lnd, cmx, mxo, sol2go, vien, tick, musical, aivideo };
 
 export const allNews: NewsItem[] = Object.values(BY_SITE).flat();
 

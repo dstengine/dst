@@ -36,6 +36,8 @@ const SITES = [
   { app: "lnd", host: "lnd.lol" },
   { app: "cmx", host: "cmx.lol" },
   { app: "mxo", host: "mxo.lol" },
+  // AI video news, on its own domain and tied to nothing else in the network.
+  { app: "aivideo", host: "aivideo.zone" },
   // Both of these were missing from this list, and so from every test in
   // this file, until 3 October 2026. A green suite said nothing about them:
   // 399 anchors on tokiohotel and two on eco shipped with no title
@@ -861,7 +863,7 @@ describe("shipped SVG", () => {
 describe("news feeds", () => {
   const FEEDS = [
     "cmx", "dst", "eco", "fwf", "ldn", "llc", "lnd", "mbr", "musical", "mxo",
-    "nyc42", "palmcentral", "riviera", "sol2go", "tick", "vien", "visas",
+    "nyc42", "palmcentral", "riviera", "sol2go", "tick", "vien", "visas", "aivideo",
   ];
   const read = (app) => {
     const file = path.join(REPO, "apps", app, "dist", "rss.xml");
@@ -1522,6 +1524,12 @@ describe("how much of each site is the template", () => {
   // own as content arrives. It is a starting line, not a licence.
   // tick launched on 4 October 2026 from the same line, and in two languages
   // the chrome is a larger share still: every page has an English twin.
+  // aivideo launched on 6 October 2026 at 37, above that line, and the
+  // excess is cards: five tool pages and a guides page are lists of the
+  // same seventeen summaries the news index already prints, and the strip
+  // under each article now leads with entries on the same tool — better
+  // reading, but an entry filed under three tools lands in more strips.
+  // No sentence of prose repeats. It falls as the feed grows.
   // mbr went from 16 to 17 on 7 September 2026, when /transport/ earned its
   // page: a district site with seven feed items gains a page whose body is
   // three cards it already carries, and the shared chrome is a larger share
@@ -1534,7 +1542,7 @@ describe("how much of each site is the template", () => {
   const CEILING = {
     dst: 25, llc: 16, visas: 19, riviera: 15, mbr: 17, palmcentral: 24,
     eco: 30, fwf: 20, musical: 35, nyc42: 27, ldn: 25, lnd: 25, cmx: 32, mxo: 25,
-    sol2go: 30, vien: 30, tick: 30,
+    sol2go: 30, vien: 30, tick: 30, aivideo: 37,
   };
 
   test("no site is more template than the ceiling it recorded", async () => {

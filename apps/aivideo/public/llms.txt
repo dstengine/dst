@@ -1,0 +1,46 @@
+# aivideo.zone — AI video news: models, tools and AI editing
+
+> A newsfeed and a set of guides on AI video: the generative models that make the footage, the tools that run them, and the editing that comes after. Every entry names the source it came from and the day it was checked against it. Independent publication: no tool or model pays to be covered.
+
+How this site works, in five rules:
+
+- **Every fact names where it came from, and when we last looked.** The maker's release notes, model card or documentation first. The source prints as text, never as a live link.
+- **Specifications are the maker's, and are called that.** A resolution, a clip length or a parameter count is what the maker published, not a benchmark of ours.
+- **Prices are dated.** A price is the one on the maker's own page on the day the entry says it was checked.
+- **Nothing here is paid for.** No tool or model pays to be covered, ranked or linked.
+- **A page exists when there is something to put on it.** A tool gets a page of its own once there are two stories about it.
+
+## What a reader finds here
+
+- [News](https://aivideo.zone/news/): model releases, open weights, ComfyUI updates and API changes, newest first.
+- [Guides](https://aivideo.zone/guides/): what a release changes in practice, how two models compare on their published specifications, and how to write a prompt for each.
+- [For screenwriters](https://aivideo.zone/screenwriters/): how Kling, LTX and MiniMax H3 each want a scene written — shot lists, keyframes, dialogue and cuts.
+- One page per tool and model: [ComfyUI](https://aivideo.zone/comfyui/), [Kling](https://aivideo.zone/kling/), [Grok Imagine](https://aivideo.zone/grok-imagine/), [LTX](https://aivideo.zone/ltx/) and [MiniMax Hailuo](https://aivideo.zone/minimax/).
+- [About](https://aivideo.zone/about/): the rules above, written out at length.
+- [Everything in one file](https://aivideo.zone/llms-full.txt): every page as Markdown. Each page is also at its own address with `.md` appended.
+
+## Where the facts come from
+
+The makers themselves: Lightricks, MiniMax, Kling AI, xAI, Google, OpenAI and Comfy Org — their release notes, model cards on Hugging Face, GitHub releases and developer documentation. Each entry prints that name and the date it was verified.
+
+What has not been announced is said to be unannounced. A feature a maker calls "coming soon" is printed as coming soon.
+
+## News
+
+- [After Sora: the AI video APIs still taking requests](https://aivideo.zone/news/sora-api-alternatives-video-apis-still-open/): OpenAI switched off the Sora 2 API on 24 September with no replacement named. Four AI video APIs a Sora integration can move to — xAI, Google, MiniMax and Kling — and what each one asks of you.
+- [One scene, three AI video prompts: LTX, MiniMax H3 and Kling](https://aivideo.zone/news/ai-video-prompt-formats-ltx-minimax-h3-kling/): A screenwriter's guide to the three ways AI video models want a scene written: LTX reads a flowing paragraph, MiniMax H3 a tagged shot list with timed cuts, Kling a timeline pinned to keyframes. The same scene in each.
+- [Editing AI video in ComfyUI: the nodes that arrived in September](https://aivideo.zone/news/editing-ai-video-in-comfyui-nodes/): ComfyUI is no longer only where AI video gets generated. September's releases added nodes to join clips, loop over them, erase objects, edit footage with a prompt and grade in film colour spaces. What each one does.
+- [Kling 4.0 vs Kling 3.0: what actually changes](https://aivideo.zone/news/kling-4-vs-kling-3-what-changes/): Kling 4.0 doubles the clip length to 30 seconds, adds up to ten keyframes, stereo sound and 10-bit HDR, and more than doubles the references one AI video can take. Kling's own comparison, line by line.
+- [LTX-2.5's September: fourteen LoRAs, long clips and an HDR master](https://aivideo.zone/news/ltx-2-5-september-loras-long-clips-hdr/): Lightricks spent September turning LTX-2.5 into a post-production kit: fourteen LoRAs for jobs like mattes, deblurring and day-for-night, long AI video in overlapping windows, and an SDR-to-HDR pass that writes EXR.
+- [Writing a shot list for Kling 4.0's ten keyframes](https://aivideo.zone/news/kling-4-keyframes-shot-list-for-screenwriters/): Kling 4.0 lets one 30-second AI video pass through up to ten pinned keyframes, with a prompt of up to 8,000 tokens to carry it between them. How Kling's guide says to plan that, written up for screenwriters.
+- [Kling 4.0: 30-second clips, ten keyframes, full launch in October](https://aivideo.zone/news/kling-4-0-announced-flash-early-access/): Kling AI announced Kling 4.0 on 30 September: native AI video of up to 30 seconds, up to ten keyframes, stereo sound and up to fifteen references. A Flash version is in limited early access; the full model comes in October.
+- [ComfyUI 0.38 adds Seedance 2.5 drafts and ControlNet for MiniMax H3](https://aivideo.zone/news/comfyui-0-38-seedance-2-5-draft-minimax-h3-controlnet/): ComfyUI 0.38 brings Fun-ControlNet-Union 2.0 to MiniMax H3, a Draft mode for ByteDance's Seedance 2.5, film colour spaces for grading and a lighter install — and drops its Sora nodes now that OpenAI's AI video API is gone.
+- [OpenAI shuts down the Sora 2 API, with no replacement named](https://aivideo.zone/news/sora-api-shut-down-september-24/): OpenAI removed its Videos API and every sora-2 and sora-2-pro model on 24 September, six months after giving notice, and named no successor. It ends OpenAI's AI video offer for developers; the Sora app closed in April.
+- [ComfyUI 0.36 learns to join clips, loop, and edit video with Flux](https://aivideo.zone/news/comfyui-0-36-video-concatenate-flux-video-edit/): ComfyUI 0.36 adds a core node to join clips and a way to loop part of a graph, plus partner nodes for BFL's Flux Video Edit, Bria's Video Eraser and Pruna's P-Video-2 — AI video editing without leaving the workflow.
+- [xAI will retire grok-imagine-image-quality on 2 November](https://aivideo.zone/news/grok-imagine-image-quality-retires-november-2/): The still that starts an image-to-video AI video clip often comes from an image model. xAI is retiring one of Grok Imagine's on 2 November and moving its requests to Image 2.0, which gained an automatic quality setting last week.
+- [Gemini Omni 1.1 Flash is generally available, now up to 4K](https://aivideo.zone/news/gemini-omni-flash-ga-gemini-api/): Google made gemini-omni-1.1-flash generally available in the Gemini API on 27 August, adding AI video extension, interpolation between two images and output up to 4K. The preview it replaces shuts down on 30 September.
+- [LTX-2.5 or MiniMax H3: two open AI video models with sound](https://aivideo.zone/news/ltx-2-5-vs-minimax-h3-open-video-models/): Two open-weights AI video models that generate sound with the picture came out within a fortnight of each other. LTX-2.5 and MiniMax H3 compared on size, output, references and the licence terms that decide who may run them.
+- [ComfyUI 0.32 runs LTX-2.5 and adds Grok Imagine Image 2.0](https://aivideo.zone/news/comfyui-0-32-ltx-2-5-grok-imagine-image-2/): ComfyUI 0.32 shipped on 11 August with support for LTX-2.5, Lightricks' new open AI video model, partner nodes for Grok Imagine Image 2.0 and Qwen-Image 3.0 Pro, and a higher minimum PyTorch.
+- [Lightricks releases LTX-2.5 with open weights and multi-shot video](https://aivideo.zone/news/ltx-2-5-open-weights-comfyui/): Lightricks released LTX-2.5 on 11 August: a 22-billion-parameter open-weights AI video model that generates sound with the picture, cuts between shots in one clip and upscales to 3840×2176. It ran in ComfyUI on day one.
+- [MiniMax opens the weights of H3, its video-and-sound model](https://aivideo.zone/news/minimax-h3-open-weights/): MiniMax has published the weights of H3, the AI video model it launched on 31 July: a 33-billion-parameter transformer that generates picture and stereo sound together. The licence leaves out the EU, UK, South Korea and US.
+- [Grok Imagine Video 1.5 takes up to seven references, in 1080p](https://aivideo.zone/news/grok-imagine-video-1-5-references-text-to-video/): xAI's Grok Imagine Video 1.5 now does text-to-video and reference-to-video, with up to seven image and voice references per AI video and native 1080p. In the Grok apps and, partly, in the xAI API.
