@@ -22,6 +22,9 @@ export const publisher = {
   id: "https://tick.lnd.lol/#organization",
   name: "Tick",
   url: "https://tick.lnd.lol/",
+  // The mark in tools/marks/tick.svg, which is also the Google Business
+  // Profile logo: one picture of the organisation wherever Google meets it.
+  logo: { url: "https://tick.lnd.lol/logo-mini.png", width: 512, height: 512 },
 };
 
 type Page = { title: string; description: string; h1: string; lede: string };

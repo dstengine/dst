@@ -1,0 +1,16 @@
+<!-- tick's mark: a ticket stub with a tick on it — the site's name is the
+     verb, and every date on it is checked, so the tick is meant. Pomegranate
+     and tuff-stone cream, the accent and tint of apps/tick's theme.css.
+
+     Full-bleed and centred with room to spare: Google Business Profile
+     crops a logo to a circle, and this file, rendered at 1024, is that
+     logo. tools/site-marks.mjs draws the site's icons from it, cropped
+     closer, and without the perforation (data-detail) below 48px. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <rect width="1024" height="1024" fill="#B4471F"/>
+  <g transform="rotate(-8 512 512)">
+    <path fill="#FCEAE0" d="M252 322 H772 A40 40 0 0 1 812 362 V466 A46 46 0 0 0 812 558 V662 A40 40 0 0 1 772 702 H252 A40 40 0 0 1 212 662 V558 A46 46 0 0 0 212 466 V362 A40 40 0 0 1 252 322 Z"/>
+    <line data-detail="" x1="662" y1="352" x2="662" y2="672" stroke="#B4471F" stroke-width="10" stroke-linecap="round" stroke-dasharray="1 26"/>
+    <polyline points="306,520 388,600 566,412" fill="none" stroke="#B4471F" stroke-width="66" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

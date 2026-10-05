@@ -8,6 +8,10 @@
 // from what the site already declares: the accent in its theme.css and the
 // name it calls itself.
 //
+// A site that has since been given a mark of its own keeps it as an SVG in
+// tools/marks, and is drawn from that instead: the PNGs stay reproducible
+// from a committed source, whoever drew it.
+//
 //   node tools/site-marks.mjs            every site listed below
 //   node tools/site-marks.mjs cmx mxo    just those
 import { readFileSync, mkdirSync } from "node:fs";
@@ -17,13 +21,17 @@ import sharp from "sharp";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
-// Only the sites without a hand-made mark. Adding an established site here
-// would overwrite a designed logo with a generated one.
+// Only the sites without a hand-made mark, or with one committed as SVG in
+// tools/marks. Adding an established site here would overwrite a designed
+// logo with a generated one.
 const SITES = {
   nyc42: { label: "42" },
   sol2go: { label: "sol" },
   vien: { label: "vien" },
-  tick: { label: "tick" },
+  // `close` is the crop for the rounded icons: they are shown at 16 to 28px
+  // and never cut to a circle, so the margin the full mark keeps for one
+  // only makes the ticket smaller.
+  tick: { mark: "tools/marks/tick.svg", close: "172 172 680 680" },
   ldn: { label: "ldn" },
   lnd: { label: "lnd" },
   cmx: { label: "cmx" },
@@ -61,15 +69,37 @@ function svg(label, accent, size) {
 </svg>`);
 }
 
+/** A drawn mark at `size`. Rendered large and scaled down, which keeps
+    thin strokes crisper than rasterising at 16px does. Detail marked
+    `data-detail` is left out below 48px, where it is only a smudge. The
+    apple touch icon is the whole mark, square: iOS rounds its corners
+    itself, and transparent corners come out black under its mask. */
+async function fromMark(site, file, size) {
+  let src = readFileSync(path.join(REPO, site.mark), "utf8").replace(/<!--[\s\S]*?-->/g, "");
+  if (size < 48) src = src.replace(/<[^>]*\sdata-detail[^>]*\/>\s*/g, "");
+  if (file === "apple-touch-icon.png") return sharp(Buffer.from(src)).resize(size, size).png();
+  if (site.close) src = src.replace(/viewBox="[^"]*"/, `viewBox="${site.close}"`);
+  const image = sharp(Buffer.from(src)).resize(size, size);
+  const corners = Buffer.from(
+    `<svg width="${size}" height="${size}"><rect width="${size}" height="${size}" rx="${size * 0.22}" fill="#fff"/></svg>`,
+  );
+  return sharp(await image.png().toBuffer()).composite([{ input: corners, blend: "dest-in" }]).png();
+}
+
 const wanted = process.argv.slice(2);
 const apps = wanted.length ? wanted : Object.keys(SITES);
 
 for (const app of apps) {
   const site = SITES[app];
   if (!site) throw new Error(`${app}: not a site this tool draws for`);
-  const accent = accentOf(app);
   const dir = path.join(REPO, "apps", app, "public");
   mkdirSync(dir, { recursive: true });
+  if (site.mark) {
+    for (const [file, size] of SIZES) await (await fromMark(site, file, size)).toFile(path.join(dir, file));
+    console.log(`${app}: ${site.mark} -> ${SIZES.map(([f]) => f).join(", ")}`);
+    continue;
+  }
+  const accent = accentOf(app);
   for (const [file, size] of SIZES) {
     await sharp(svg(site.label, accent, size)).png().toFile(path.join(dir, file));
   }
