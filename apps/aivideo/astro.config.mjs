@@ -32,4 +32,8 @@ export default defineConfig({
     stripSvgComments(),
   ],
   output: "static",
+  // Seven kilobytes of CSS in two files held the first paint back on a
+  // phone — PageSpeed's mobile run put the front page at 87, all of the
+  // shortfall render delay. In the page, the text paints with the HTML.
+  build: { inlineStylesheets: "always" },
 });

@@ -84,7 +84,12 @@ async function fromMark(site, file, size) {
   const corners = Buffer.from(
     `<svg width="${size}" height="${size}"><rect width="${size}" height="${size}" rx="${size * 0.22}" fill="#fff"/></svg>`,
   );
-  return sharp(await image.png().toBuffer()).composite([{ input: corners, blend: "dest-in" }]).png();
+  // The header logo is 512px for the publisher's structured data and shown at
+  // 28: a full-colour PNG of a glowing mark came to 44 KB, a palette one to
+  // a fraction of that with no difference a reader could see at either size.
+  return sharp(await image.png().toBuffer())
+    .composite([{ input: corners, blend: "dest-in" }])
+    .png(file === "logo-mini.png" ? { palette: true, effort: 10 } : {});
 }
 
 const wanted = process.argv.slice(2);
