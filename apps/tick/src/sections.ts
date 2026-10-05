@@ -26,6 +26,8 @@ const KINDS: { slug: string; hy: string; en: string }[] = [
   { slug: "theatre", hy: "Թատրոն", en: "Theatre" },
   { slug: "festivals", hy: "Փառատոներ", en: "Festivals" },
   { slug: "fashion", hy: "Նորաձևություն", en: "Fashion" },
+  { slug: "opera-ballet", hy: "Օպերա և բալետ", en: "Opera and ballet" },
+  { slug: "parties", hy: "Երեկույթներ", en: "Parties" },
 ];
 
 const tags = (lang: Lang): Record<string, Vocabulary> =>

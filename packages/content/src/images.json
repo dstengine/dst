@@ -24580,6 +24580,54 @@
         ]
       ]
     },
+    "/covers/alice-sara-ott-symphonic-europe-yerevan-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/alice-sara-ott-symphonic-europe-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/alice-sara-ott-symphonic-europe-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/alice-sara-ott-symphonic-europe-yerevan-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/alice-sara-ott-symphonic-europe-yerevan-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/alice-sara-ott-symphonic-europe-yerevan-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/alice-sara-ott-symphonic-europe-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/alice-sara-ott-symphonic-europe-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/alice-sara-ott-symphonic-europe-yerevan-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/alice-sara-ott-symphonic-europe-yerevan-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/alice-sara-ott-symphonic-europe-yerevan-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/andru-donalds-enigma-yerevan-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -24625,6 +24673,54 @@
         [
           1536,
           "/covers/andru-donalds-enigma-yerevan-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/carmen-yerevan-opera-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/carmen-yerevan-opera-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/carmen-yerevan-opera-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/carmen-yerevan-opera-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/carmen-yerevan-opera-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/carmen-yerevan-opera-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/carmen-yerevan-opera-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/carmen-yerevan-opera-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/carmen-yerevan-opera-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/carmen-yerevan-opera-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/carmen-yerevan-opera-2026-1536.webp"
         ]
       ]
     },
@@ -24724,6 +24820,54 @@
         ]
       ]
     },
+    "/covers/gayane-ballet-yerevan-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/gayane-ballet-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/gayane-ballet-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/gayane-ballet-yerevan-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/gayane-ballet-yerevan-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/gayane-ballet-yerevan-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/gayane-ballet-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/gayane-ballet-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/gayane-ballet-yerevan-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/gayane-ballet-yerevan-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/gayane-ballet-yerevan-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/grigory-sokolov-yerevan-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -24772,6 +24916,102 @@
         ]
       ]
     },
+    "/covers/halloween-oxygen-yerevan-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/halloween-oxygen-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/halloween-oxygen-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/halloween-oxygen-yerevan-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/halloween-oxygen-yerevan-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/halloween-oxygen-yerevan-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/halloween-oxygen-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/halloween-oxygen-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/halloween-oxygen-yerevan-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/halloween-oxygen-yerevan-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/halloween-oxygen-yerevan-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/hamlet-ghaplanyan-theatre-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/hamlet-ghaplanyan-theatre-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/hamlet-ghaplanyan-theatre-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/hamlet-ghaplanyan-theatre-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/hamlet-ghaplanyan-theatre-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/hamlet-ghaplanyan-theatre-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/hamlet-ghaplanyan-theatre-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/hamlet-ghaplanyan-theatre-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/hamlet-ghaplanyan-theatre-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/hamlet-ghaplanyan-theatre-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/hamlet-ghaplanyan-theatre-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/harry-potter-film-music-yerevan-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -24817,6 +25057,54 @@
         [
           1536,
           "/covers/harry-potter-film-music-yerevan-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/harvest-fest-van-ardi-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/harvest-fest-van-ardi-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/harvest-fest-van-ardi-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/harvest-fest-van-ardi-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/harvest-fest-van-ardi-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/harvest-fest-van-ardi-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/harvest-fest-van-ardi-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/harvest-fest-van-ardi-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/harvest-fest-van-ardi-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/harvest-fest-van-ardi-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/harvest-fest-van-ardi-2026-1536.webp"
         ]
       ]
     },
@@ -24916,6 +25204,54 @@
         ]
       ]
     },
+    "/covers/nervy-yerevan-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/nervy-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/nervy-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/nervy-yerevan-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/nervy-yerevan-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/nervy-yerevan-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/nervy-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/nervy-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/nervy-yerevan-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/nervy-yerevan-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/nervy-yerevan-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/rachmaninov-piano-concertos-1-3-yerevan-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -25012,6 +25348,150 @@
         ]
       ]
     },
+    "/covers/shooting-la-la-land-paronyan-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/shooting-la-la-land-paronyan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/shooting-la-la-land-paronyan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/shooting-la-la-land-paronyan-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/shooting-la-la-land-paronyan-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/shooting-la-la-land-paronyan-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/shooting-la-la-land-paronyan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/shooting-la-la-land-paronyan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/shooting-la-la-land-paronyan-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/shooting-la-la-land-paronyan-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/shooting-la-la-land-paronyan-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/star-wars-the-planets-yerevan-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/star-wars-the-planets-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/star-wars-the-planets-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/star-wars-the-planets-yerevan-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/star-wars-the-planets-yerevan-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/star-wars-the-planets-yerevan-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/star-wars-the-planets-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/star-wars-the-planets-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/star-wars-the-planets-yerevan-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/star-wars-the-planets-yerevan-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/star-wars-the-planets-yerevan-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/swan-lake-yerevan-opera-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/swan-lake-yerevan-opera-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/swan-lake-yerevan-opera-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/swan-lake-yerevan-opera-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/swan-lake-yerevan-opera-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/swan-lake-yerevan-opera-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/swan-lake-yerevan-opera-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/swan-lake-yerevan-opera-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/swan-lake-yerevan-opera-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/swan-lake-yerevan-opera-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/swan-lake-yerevan-opera-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/tata-simonyan-yerevan-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -25060,6 +25540,54 @@
         ]
       ]
     },
+    "/covers/turandot-yerevan-opera-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/turandot-yerevan-opera-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/turandot-yerevan-opera-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/turandot-yerevan-opera-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/turandot-yerevan-opera-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/turandot-yerevan-opera-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/turandot-yerevan-opera-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/turandot-yerevan-opera-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/turandot-yerevan-opera-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/turandot-yerevan-opera-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/turandot-yerevan-opera-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/yerevan-fashion-week-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -25105,6 +25633,54 @@
         [
           1536,
           "/covers/yerevan-fashion-week-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/yerevan-international-music-festival-iddo-bar-shai-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/yerevan-international-music-festival-iddo-bar-shai-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/yerevan-international-music-festival-iddo-bar-shai-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/yerevan-international-music-festival-iddo-bar-shai-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/yerevan-international-music-festival-iddo-bar-shai-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/yerevan-international-music-festival-iddo-bar-shai-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/yerevan-international-music-festival-iddo-bar-shai-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/yerevan-international-music-festival-iddo-bar-shai-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/yerevan-international-music-festival-iddo-bar-shai-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/yerevan-international-music-festival-iddo-bar-shai-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/yerevan-international-music-festival-iddo-bar-shai-2026-1536.webp"
         ]
       ]
     }
