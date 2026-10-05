@@ -4,6 +4,7 @@
 // robots.txt so the hops never get crawled or indexed themselves.
 import { siteId } from "./content";
 import { eventsBySite } from "@dst/content/events";
+import { newsBySite } from "@dst/content/news";
 
 export const outbound: Record<string, string> = {};
 
@@ -21,6 +22,12 @@ export const outbound: Record<string, string> = {};
 for (const event of eventsBySite(siteId)) {
   if (event.ticket) outbound[`${event.slug}-ticket`] = event.ticket.url;
   if (event.source?.url) outbound[`${event.slug}-source`] = event.source.url;
+}
+
+// `<slug>-action` is a news item's one button — see `action` in
+// @dst/content/types.
+for (const item of newsBySite(siteId)) {
+  if (item.action) outbound[`${item.slug}-action`] = item.action.url;
 }
 
 /** Path for an outbound link, e.g. go("filij-2026-source") -> "/go/filij-2026-source/" */

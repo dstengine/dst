@@ -5,7 +5,7 @@ export const items: NewsItem[] = [
   {
     slug: "rushframe-ai-video-editor-crypto-worlds-fair-pitch-video",
     createdAt: "2026-10-05T22:05:00+04:00",
-    updatedAt: "2026-10-05T22:05:00+04:00",
+    updatedAt: "2026-10-05T22:50:00+04:00",
     site: "sol2go",
     image: "/covers/rushframe-ai-video-editor-crypto-worlds-fair-pitch-video.jpg",
     imageAlt: "A raccoon in goggles and headphones works at a video editing workstation in a neon city at night, under the RushFrame wordmark",
@@ -20,6 +20,15 @@ export const items: NewsItem[] = [
       "Every Crypto World's Fair team, the Solana track's included, owes Colosseum a two-to-three-minute presentation video by 12 October. RushFrame, an AI video editor released on 5 October, is a new way to make one.",
     date: "2026-10-05",
     promotedUntil: "2026-10-18",
+    // The site's download section rather than the file it links to: that
+    // file is the Windows build, and the section is where a Mac build will
+    // appear.
+    action: {
+      url: "https://rushframe.online/#download",
+      label: "Download",
+      title: "Download RushFrame from its official site",
+      icon: "download",
+    },
     category: "Tools",
     source: {
       name: "RushFrame",

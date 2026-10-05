@@ -211,6 +211,13 @@ export interface NewsItem extends ItemBase {
   // leads with still leads. The pages are static: the card goes when the
   // site is next built after this date, not at midnight on it.
   promotedUntil?: string;
+  // One button under the headline, for an item whose subject is a thing the
+  // reader can go and get — a release, a tool. The event page's ticket
+  // button, for news: it goes through the /go/<slug>-action/ hop like every
+  // other outbound link. `title` is the link's title attribute, which should
+  // say more than the label does; `icon` is a key into @dst/ui's ICONS, the
+  // link mark when absent.
+  action?: { url: string; label: string; title?: string; icon?: string };
 }
 
 export interface EventItem extends ItemBase {

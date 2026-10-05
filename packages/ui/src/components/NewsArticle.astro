@@ -60,8 +60,12 @@ interface Props {
   /** The words this component puts on the page that don't come from the
       item. See EventArticle and ../labels.ts — English by default. */
   labels?: Partial<ArticleLabels>;
+  /** Where `item.action` goes, resolved by the route to /go/<slug>-action/.
+      Without it the button is not drawn — an action with no hop would be
+      a third-party URL in the page. */
+  actionHref?: string;
 }
-const { item, backHref, more = [], moreEvents = [], newsBase = "/news/", eventsBase = "/events/", publisher, categoryHref, promoted, where, locale = "en-US", labels: labelOverrides } = Astro.props;
+const { item, backHref, more = [], moreEvents = [], newsBase = "/news/", eventsBase = "/events/", publisher, categoryHref, promoted, where, locale = "en-US", labels: labelOverrides, actionHref } = Astro.props;
 const L = withLabels(labelOverrides);
 
 const todayIso = new Date().toISOString().slice(0, 10);
@@ -190,6 +194,15 @@ const relatedItems = (item.related ?? []).map((card) => ({
     <h1>{item.title}</h1>
   </header>
 
+  {item.action && actionHref && (
+    <p class="news-article-actions">
+      <a class="button" href={actionHref} title={item.action.title ?? `${item.action.label} — ${item.title}`}>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={ICONS[item.action.icon ?? "link"] ?? ICONS.link} /></svg>
+        {item.action.label}
+      </a>
+    </p>
+  )}
+
   {item.image && (
     <figure class:list={["news-article-figure", { "figure-diagram": item.imageKind && item.imageKind !== "photo" }]}>
       <Photo
@@ -310,6 +323,9 @@ const relatedItems = (item.related ?? []).map((card) => ({
   a.news-article-category:focus-visible { text-decoration: underline; }
   .news-article-header h1 { margin: 0; }
   .news-article-reading { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+  /* Same as the event page's ticket row. */
+  .news-article-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-3) 0 0; }
+  .news-article-actions .button { display: inline-flex; align-items: center; gap: 0.55em; }
 
   .news-article-figure { margin: var(--space-4) 0 0; }
   .news-article-figure img { display: block; width: 100%; max-height: 60vh; object-fit: cover; background: var(--surface-sunk); border-radius: var(--radius); }

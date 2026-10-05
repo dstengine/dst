@@ -5,6 +5,7 @@ import NewsArticle from "@dst/ui/NewsArticle.astro";
 import { siteId, newsBase, eventsBase, publisher } from "../../content";
 import { newsBySite } from "@dst/content/news";
 import { eventsBySite } from "@dst/content/events";
+import { go } from "../../outbound";
 
 export function getStaticPaths() {
   // No body, no page — the feed card says everything the entry has.
@@ -25,5 +26,6 @@ const { item, more } = Astro.props;
     eventsBase={eventsBase}
     publisher={publisher}
     where={site.keyword}
+    actionHref={item.action ? go(`${item.slug}-action`) : undefined}
   />
 </Layout>
