@@ -41,6 +41,12 @@ describe("dates parse as valid ISO", () => {
           const parsedEnd = new Date(item.end);
           assert.ok(!Number.isNaN(parsedEnd.getTime()), `${label}/${item.site}/${item.slug}: "end"="${item.end}" did not parse`);
         }
+        // Compared as a string against today's ISO date, so a timestamp or a
+        // loose format would quietly promote for the wrong span.
+        if (item.promotedUntil !== undefined) {
+          assert.match(item.promotedUntil, /^\d{4}-\d{2}-\d{2}$/, `${label}/${item.site}/${item.slug}: "promotedUntil"="${item.promotedUntil}" is not YYYY-MM-DD`);
+          assert.ok(!Number.isNaN(new Date(item.promotedUntil).getTime()), `${label}/${item.site}/${item.slug}: "promotedUntil"="${item.promotedUntil}" did not parse`);
+        }
       }
     });
   }

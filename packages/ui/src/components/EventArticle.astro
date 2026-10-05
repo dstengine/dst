@@ -22,7 +22,7 @@ import Glance from "./Glance.astro";
 import { ICONS } from "../icons.ts";
 import { formatDate } from "../date.ts";
 import { headingWord, withLabels, type ArticleLabels } from "../labels.ts";
-import { isOn, hasEnded } from "@dst/content/when";
+import { isOn, hasEnded, withPromoted } from "@dst/content/when";
 
 interface Props {
   item: EventItem;
@@ -170,10 +170,14 @@ if (moreEventsText && tailCards.length === 0) {
   throw new Error(`moreEventsText is set on "${item.slug}" but there are no other events to put under it`);
 }
 
-const newsCards = moreNews
-  .filter((n) => Array.isArray(n.body) && n.body.length > 0)
-  .sort((a, b) => (a.date < b.date ? 1 : -1))
-  .slice(0, 3)
+const newsCards = withPromoted(
+  moreNews
+    .filter((n) => Array.isArray(n.body) && n.body.length > 0)
+    .sort((a, b) => (a.date < b.date ? 1 : -1)),
+  // A promoted item is always one of the three — see `promotedUntil`.
+  3,
+  todayIso,
+)
   .map((n) => ({
     href: `${newsBase}${n.slug}/`,
     eyebrow: n.category,

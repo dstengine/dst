@@ -203,6 +203,14 @@ export interface Speaker {
 
 export interface NewsItem extends ItemBase {
   date: string; // ISO "YYYY-MM-DD"
+  // Last day, inclusive, on which this item holds a card in every news block
+  // on its site — the front page, the tail of every other article, an event
+  // page's news. Ranking alone cannot promise that: a block shows three
+  // cards, and a timely item with no `featured` rank falls below the line.
+  // It takes the last slot rather than the first, so the story the site
+  // leads with still leads. The pages are static: the card goes when the
+  // site is next built after this date, not at midnight on it.
+  promotedUntil?: string;
 }
 
 export interface EventItem extends ItemBase {

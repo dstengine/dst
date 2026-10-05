@@ -20,7 +20,7 @@ import { ICONS } from "../icons.ts";
 import { formatDate } from "../date.ts";
 import { withLabels, type ArticleLabels } from "../labels.ts";
 import { readingMinutes } from "@dst/content/reading";
-import { isOn } from "@dst/content/when";
+import { isOn, withPromoted } from "@dst/content/when";
 
 interface Props {
   item: NewsItem;
@@ -64,16 +64,21 @@ interface Props {
 const { item, backHref, more = [], moreEvents = [], newsBase = "/news/", eventsBase = "/events/", publisher, categoryHref, promoted, where, locale = "en-US", labels: labelOverrides } = Astro.props;
 const L = withLabels(labelOverrides);
 
-const moreCards = more
-  .filter((other) => other.slug !== item.slug && Array.isArray(other.body) && other.body.length > 0)
-  // Its own subject first, newest first within it — see EventArticle.
-  .sort((a, b) => {
-    const aSame = a.category === item.category;
-    const bSame = b.category === item.category;
-    if (aSame !== bSame) return aSame ? -1 : 1;
-    return a.date < b.date ? 1 : a.date > b.date ? -1 : 0;
-  })
-  .slice(0, 3)
+const todayIso = new Date().toISOString().slice(0, 10);
+const moreCards = withPromoted(
+  more
+    .filter((other) => other.slug !== item.slug && Array.isArray(other.body) && other.body.length > 0)
+    // Its own subject first, newest first within it — see EventArticle.
+    .sort((a, b) => {
+      const aSame = a.category === item.category;
+      const bSame = b.category === item.category;
+      if (aSame !== bSame) return aSame ? -1 : 1;
+      return a.date < b.date ? 1 : a.date > b.date ? -1 : 0;
+    }),
+  // A promoted item is always one of the three — see `promotedUntil`.
+  3,
+  todayIso,
+)
   .map((other) => ({
     href: `${newsBase}${other.slug}/`,
     eyebrow: other.category,
@@ -85,7 +90,6 @@ const moreCards = more
     imageAlt: other.imageAlt,
   }));
 
-const todayIso = new Date().toISOString().slice(0, 10);
 const eventCards = moreEvents
   .filter((e) => isOn(e, todayIso) && Array.isArray(e.body) && e.body.length > 0)
   // The promoted tag first, then the calendar — the same order as the tail

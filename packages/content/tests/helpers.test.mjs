@@ -2,6 +2,7 @@ import { test, describe } from "node:test";
 import assert from "node:assert/strict";
 import { newsBySite, latestNews } from "../src/news/index.ts";
 import { eventsBySite, upcomingEvents, pastEvents } from "../src/events/index.ts";
+import { isPromoted, withPromoted } from "../src/when.ts";
 
 const news = (over) => ({ slug: "s", site: "x", title: "t", summary: "s", date: "2026-01-01", ...over });
 const event = (over) => ({ slug: "s", site: "x", title: "t", summary: "s", start: "2026-01-01", ...over });
@@ -76,5 +77,32 @@ describe("upcomingEvents / pastEvents", () => {
     const out = pastEvents(input, now);
     console.log("now:", now.toISOString(), "-> past:", out.map((i) => i.slug));
     assert.deepEqual(out.map((i) => i.slug), ["soon", "past"]);
+  });
+});
+
+describe("withPromoted", () => {
+  const ranked = ["a", "b", "c", "d", "e"].map((slug) => news({ slug }));
+  const slugs = (items) => items.map((i) => i.slug);
+
+  test("with nothing promoted it is a plain cut", () => {
+    assert.deepEqual(slugs(withPromoted(ranked, 3, "2026-10-05")), ["a", "b", "c"]);
+  });
+
+  test("a promoted item below the line takes the last slot", () => {
+    const input = ranked.map((i) => (i.slug === "e" ? { ...i, promotedUntil: "2026-10-18" } : i));
+    assert.deepEqual(slugs(withPromoted(input, 3, "2026-10-05")), ["a", "b", "e"]);
+  });
+
+  test("a promoted item already above the line does not move", () => {
+    const input = ranked.map((i) => (i.slug === "b" ? { ...i, promotedUntil: "2026-10-18" } : i));
+    assert.deepEqual(slugs(withPromoted(input, 3, "2026-10-05")), ["a", "b", "c"]);
+  });
+
+  test("the last day is inclusive, the day after is not", () => {
+    const item = news({ promotedUntil: "2026-10-18" });
+    assert.equal(isPromoted(item, "2026-10-18"), true);
+    assert.equal(isPromoted(item, "2026-10-19"), false);
+    const input = ranked.map((i) => (i.slug === "e" ? { ...i, promotedUntil: "2026-10-18" } : i));
+    assert.deepEqual(slugs(withPromoted(input, 3, "2026-10-19")), ["a", "b", "c"]);
   });
 });

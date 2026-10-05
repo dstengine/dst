@@ -10,6 +10,7 @@
 // heading looked like a label rather than a peer of "Hubs".
 import type { NewsItem } from "@dst/content/types";
 import FeedCards from "./FeedCards.astro";
+import { withPromoted } from "@dst/content/when";
 
 interface Props {
   items: NewsItem[];
@@ -43,7 +44,9 @@ const byRankThenDate = (a: NewsItem, b: NewsItem) => {
   }
   return a.date < b.date ? 1 : a.date > b.date ? -1 : 0;
 };
-const latest = [...items].sort(byRankThenDate).slice(0, limit);
+// A promoted item is always one of the cards — see `promotedUntil`.
+const todayIso = new Date().toISOString().slice(0, 10);
+const latest = withPromoted([...items].sort(byRankThenDate), limit, todayIso);
 
 const cards = latest.map((item) => {
   const hasPage = Array.isArray(item.body) && item.body.length > 0;

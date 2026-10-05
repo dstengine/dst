@@ -28,3 +28,21 @@ export const hasEnded = (event: Dated, today: string): boolean => lastDay(event)
 
 /** Still to come or on right now. The complement of `hasEnded`. */
 export const isOn = (event: Dated, today: string): boolean => !hasEnded(event, today);
+
+/** A news item still inside its promotion, as of `today`. See `promotedUntil`. */
+export const isPromoted = (item: { promotedUntil?: string }, today: string): boolean =>
+  item.promotedUntil !== undefined && today <= item.promotedUntil;
+
+/**
+ * The first `limit` of `ranked`, except that every promoted item is in it.
+ * A promoted item already above the line stays where it was; one below it
+ * takes the place of the lowest-ranked item that is not promoted. The order
+ * is `ranked`'s throughout, so a block that had no promotion to make comes
+ * out exactly as it went in.
+ */
+export function withPromoted<T extends { promotedUntil?: string }>(ranked: T[], limit: number, today: string): T[] {
+  const promoted = ranked.filter((i) => isPromoted(i, today)).slice(0, limit);
+  const rest = ranked.filter((i) => !promoted.includes(i)).slice(0, limit - promoted.length);
+  const keep = new Set([...promoted, ...rest]);
+  return ranked.filter((i) => keep.has(i));
+}
