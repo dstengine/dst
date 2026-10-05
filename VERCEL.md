@@ -67,15 +67,16 @@ one of them now does; `sol2go` and `vien` were created with it.
 
 ## Projects with no git link
 
-`vien`, `sol2go`, `tokiohotel`, `tick` and `aivideo` are Vercel projects
-with no repository connected, so a push rebuilds none of them. Each goes
-out by CLI from a one-app archive of a commit — the repo minus every
-other app:
+`tokiohotel` and `tick` are Vercel projects with no repository connected,
+so a push rebuilds neither. Each goes out by CLI from a one-app archive of
+a commit — the repo minus every other app:
 
     git archive HEAD $(git ls-tree HEAD --name-only | grep -vx apps) apps/<name> \
       | tar -x -C <dir>
     cd <dir> && VERCEL_ORG_ID=… VERCEL_PROJECT_ID=… vercel deploy --prod --yes
 
 Their `ignoreCommand` is kept anyway, so linking one later changes nothing.
-`aivideo` (aivideo.zone, AI video news) joined on 6 October 2026 as an
-independent site: no links to the network, none from it.
+`vien` and `sol2go` began this way and were linked on 22 September 2026.
+`aivideo` (aivideo.zone, AI video news, 6 October 2026) was created linked:
+an independent site like the .lol ones, no links to the network and none
+from it.
