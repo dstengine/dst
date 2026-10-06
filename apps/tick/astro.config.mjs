@@ -12,7 +12,7 @@ const lastmod = JSON.parse(
 );
 
 export default defineConfig({
-  site: "https://tick.lnd.lol",
+  site: "https://tick.am",
   integrations: [
     sitemap({
       // /go/ hops are noindex and disallowed in robots.txt; a sitemap entry

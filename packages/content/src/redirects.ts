@@ -96,3 +96,27 @@ export const redirects: Record<string, Redirect[]> = {
 };
 
 export const redirectsFor = (site: string): Redirect[] => redirects[site] ?? [];
+
+/** A host a site has left. Every path on it goes to the same path on the
+    site's host now, so one rule moves the whole index. */
+export interface HostMove {
+  /** The old host: "tick.lnd.lol". */
+  from: string;
+  /** The host the site answers on now. */
+  to: string;
+  since: string;
+  why: string;
+}
+
+export const hostMoves: Record<string, HostMove[]> = {
+  tick: [
+    {
+      from: "tick.lnd.lol",
+      to: "tick.am",
+      since: "2026-10-06",
+      why: "tick launched on a subdomain of lnd.lol while tick.am waited for the .am registry, which approves every registration by hand. It was approved on 6 October, and the site moved to its own name.",
+    },
+  ],
+};
+
+export const hostMovesFor = (site: string): HostMove[] => hostMoves[site] ?? [];

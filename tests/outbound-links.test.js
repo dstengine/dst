@@ -33,7 +33,9 @@ const APPS = ["dst", "llc", "visas", "riviera", "mbr", "palmcentral", "eco", "fw
     about a third party's event, so it carries its own name. */
 const OWN_DOMAINS = ["fwf.lol", "musical.today",
   // The five city experiments, each its own site on its own domain.
-  "nyc42.lol", "ldn.lol", "lnd.lol", "cmx.lol", "mxo.lol", "sol2go.lol", "vien.lol", "tick.lnd.lol",
+  "nyc42.lol", "ldn.lol", "lnd.lol", "cmx.lol", "mxo.lol", "sol2go.lol", "vien.lol",
+  // tick answers on tick.am; tick.lnd.lol, where it launched, 301s there.
+  "tick.am", "tick.lnd.lol",
   // AI video news.
   "aivideo.zone",
   // The tour archive. Named exactly, not as a vvm.space wildcard: most of

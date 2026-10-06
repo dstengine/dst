@@ -16,7 +16,7 @@ export const HOSTS = {
   nyc42: "nyc42.lol",
   sol2go: "sol2go.lol",
   vien: "vien.lol",
-  tick: "tick.lnd.lol",
+  tick: "tick.am",
   ldn: "ldn.lol",
   lnd: "lnd.lol",
   cmx: "cmx.lol",

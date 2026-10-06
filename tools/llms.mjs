@@ -36,7 +36,7 @@ const SITES = {
   // address and in its own words. English first because the head is in
   // English — it is the language most readers of this file read.
   tick: {
-    host: "tick.lnd.lol", news: "news", events: "events",
+    host: "tick.am", news: "news", events: "events",
     langs: [
       { lang: "en", prefix: "", newsLabel: "News", eventsLabel: "Events" },
       { lang: "hy", prefix: "am/", newsLabel: "Նորություններ (in Armenian)", eventsLabel: "Միջոցառումներ (in Armenian)" },

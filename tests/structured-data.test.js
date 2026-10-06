@@ -35,7 +35,7 @@ const PUBLISHER = {
   nyc42: "https://nyc42.lol/#organization",
   sol2go: "https://sol2go.lol/#organization",
   vien: "https://vien.lol/#organization",
-  tick: "https://tick.lnd.lol/#organization",
+  tick: "https://tick.am/#organization",
   ldn: "https://ldn.lol/#organization",
   lnd: "https://lnd.lol/#organization",
   cmx: "https://cmx.lol/#organization",

@@ -68,7 +68,7 @@ export const EXPERIMENTS: Experiment[] = [
   {
     id: "ticket-price",
     unit: "visitor",
-    hosts: ["tick.lnd.lol"],
+    hosts: ["tick.am"],
     paths: "^/(?:am/)?events/[^/]+/$",
     variants: ["label", "buy", "price"],
     start: "2026-10-04",

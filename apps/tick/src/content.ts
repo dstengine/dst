@@ -19,12 +19,12 @@ export type Lang = (typeof LANGS)[number];
 // The site publishes itself: it is independent of the DST group, so every
 // block of structured data on it names this host rather than the group.
 export const publisher = {
-  id: "https://tick.lnd.lol/#organization",
+  id: "https://tick.am/#organization",
   name: "Tick",
-  url: "https://tick.lnd.lol/",
+  url: "https://tick.am/",
   // The mark in tools/marks/tick.svg, which is also the Google Business
   // Profile logo: one picture of the organisation wherever Google meets it.
-  logo: { url: "https://tick.lnd.lol/logo-mini.png", width: 512, height: 512 },
+  logo: { url: "https://tick.am/logo-mini.png", width: 512, height: 512 },
 };
 
 type Page = { title: string; description: string; h1: string; lede: string };

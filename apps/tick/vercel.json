@@ -3,6 +3,17 @@
   "ignoreCommand": "git rev-parse HEAD^ >/dev/null 2>&1 || exit 1; git diff --quiet HEAD^ HEAD -- . ../../packages",
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "tick.lnd.lol"
+        }
+      ],
+      "destination": "https://tick.am/:path*",
+      "statusCode": 301
+    },
+    {
       "source": "/en",
       "destination": "/",
       "statusCode": 301

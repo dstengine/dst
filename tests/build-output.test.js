@@ -31,7 +31,7 @@ const SITES = [
   { app: "nyc42", host: "nyc42.lol" },
   { app: "sol2go", host: "sol2go.lol" },
   { app: "vien", host: "vien.lol" },
-  { app: "tick", host: "tick.lnd.lol" },
+  { app: "tick", host: "tick.am" },
   { app: "ldn", host: "ldn.lol" },
   { app: "lnd", host: "lnd.lol" },
   { app: "cmx", host: "cmx.lol" },
@@ -1191,7 +1191,7 @@ describe("experiments", () => {
   });
 
   test("ticket-price is on every tick event page that sells tickets at a price", () => {
-    if (!liveExperiments("tick.lnd.lol", "/events/x/", today).some((e) => e.id === "ticket-price")) return;
+    if (!liveExperiments("tick.am", "/events/x/", today).some((e) => e.id === "ticket-price")) return;
     const priced = allEvents.filter((i) => i.site === "tick" && i.ticket && i.tickets?.priceFrom > 0 && i.body?.length);
     assert.ok(priced.length > 0, "no priced tick event to test on");
     for (const item of priced) {

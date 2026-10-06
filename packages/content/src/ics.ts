@@ -47,9 +47,11 @@ const UID_HOSTS: Record<string, string> = {
   lnd: "lnd.lol",
   cmx: "cmx.lol",
   mxo: "mxo.lol",
-  // On a subdomain of lnd.lol until it has a domain of its own: tick.am is
-  // not ours, and a UID may only name a host we own. Both languages share
-  // one UID per event, so subscribing to both calendars merges, not doubles.
+  // Where tick launched, and still ours. The site moved to tick.am on
+  // 6 Oct 2026, but its UIDs had gone out by then, and a changed UID reads
+  // as a second event in a calendar that has the first — as with dst above.
+  // Both languages share one UID per event, so subscribing to both
+  // calendars merges, not doubles.
   tick: "tick.lnd.lol",
 };
 

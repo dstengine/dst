@@ -12,9 +12,9 @@ How the site works, in five rules:
 
 ## What readers find here
 
-- [Events](https://tick.lnd.lol/events/) ([in Armenian](https://tick.lnd.lol/am/events/)): concerts, theatre and festivals with dates confirmed at the box office, with the time, the price in drams and the programme where the organiser has published one.
-- [News](https://tick.lnd.lol/news/) ([in Armenian](https://tick.lnd.lol/am/news/)): what has changed in the city's cultural life, each story with its source.
-- [About](https://tick.lnd.lol/about/): the rules above, at length.
+- [Events](https://tick.am/events/) ([in Armenian](https://tick.am/am/events/)): concerts, theatre and festivals with dates confirmed at the box office, with the time, the price in drams and the programme where the organiser has published one.
+- [News](https://tick.am/news/) ([in Armenian](https://tick.am/am/news/)): what has changed in the city's cultural life, each story with its source.
+- [About](https://tick.am/about/): the rules above, at length.
 
 ## Where the facts come from
 

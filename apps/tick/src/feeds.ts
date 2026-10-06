@@ -12,7 +12,7 @@ import type { EventItem } from "@dst/content/types";
 import { feed, calendar, type Lang } from "./content";
 import { eventsFor, newsFor, eventsBase, newsBase, prefix } from "./i18n";
 
-const SITE = "https://tick.lnd.lol";
+const SITE = "https://tick.am";
 
 export function rss(lang: Lang): Response {
   // An entry with no page of its own has no URL to send a reader to.

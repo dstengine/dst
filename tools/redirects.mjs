@@ -10,7 +10,7 @@
 import { readdirSync, readFileSync, writeFileSync, existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { redirectsFor } from "../packages/content/src/redirects.ts";
+import { redirectsFor, hostMovesFor } from "../packages/content/src/redirects.ts";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const IGNORE =
@@ -21,24 +21,37 @@ for (const app of readdirSync(path.join(REPO, "apps"))) {
   const file = path.join(REPO, "apps", app, "vercel.json");
   if (!existsSync(file)) continue;
   const moves = redirectsFor(app);
+  const hosts = hostMovesFor(app);
   const config = {
     $schema: "https://openapi.vercel.sh/vercel.json",
     ignoreCommand: IGNORE,
-    ...(moves.length
+    ...(moves.length || hosts.length
       ? {
-          // Both spellings of the old address. Every URL on these sites ends
-          // in a slash, and a link written by hand — or by whoever copied it
-          // into a post two years ago — may not.
-          redirects: moves.flatMap(({ from, to }) =>
-            [from.replace(/\/$/, ""), from].map((source) => ({
-              source,
-              destination: to,
-              // 301 by number, not `permanent: true` — Vercel reads that as
-              // 308, which Google treats the same and older tooling does
-              // not. The two cannot both be set.
+          redirects: [
+            // A host the site has left comes first: the reader goes to the
+            // new host in one hop, and any path move below runs there.
+            // The old host stays on the Vercel project so that it can
+            // answer with this.
+            ...hosts.map(({ from, to }) => ({
+              source: "/:path*",
+              has: [{ type: "host", value: from }],
+              destination: `https://${to}/:path*`,
               statusCode: 301,
             })),
-          ),
+            // Both spellings of the old address. Every URL on these sites
+            // ends in a slash, and a link written by hand — or by whoever
+            // copied it into a post two years ago — may not.
+            ...moves.flatMap(({ from, to }) =>
+              [from.replace(/\/$/, ""), from].map((source) => ({
+                source,
+                destination: to,
+                // 301 by number, not `permanent: true` — Vercel reads that
+                // as 308, which Google treats the same and older tooling
+                // does not. The two cannot both be set.
+                statusCode: 301,
+              })),
+            ),
+          ],
         }
       : {}),
   };

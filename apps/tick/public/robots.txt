@@ -10,4 +10,4 @@ Disallow: /go/
 # deliberately rather than expecting anyone to find it.
 Disallow: /li/
 
-Sitemap: https://tick.lnd.lol/sitemap-index.xml
+Sitemap: https://tick.am/sitemap-index.xml
