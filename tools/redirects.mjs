@@ -31,11 +31,13 @@ for (const app of readdirSync(path.join(REPO, "apps"))) {
             // A host the site has left comes first: the reader goes to the
             // new host in one hop, and any path move below runs there.
             // The old host stays on the Vercel project so that it can
-            // answer with this.
+            // answer with this. A regex group, not `/:path*`: Vercel
+            // matches that strictly, so it missed "/" and every address
+            // ending in a slash — every page — and moved only the files.
             ...hosts.map(({ from, to }) => ({
-              source: "/:path*",
+              source: "/(.*)",
               has: [{ type: "host", value: from }],
-              destination: `https://${to}/:path*`,
+              destination: `https://${to}/$1`,
               statusCode: 301,
             })),
             // Both spellings of the old address. Every URL on these sites
