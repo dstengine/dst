@@ -49,13 +49,13 @@ export const items: NewsItem[] = [
   {
     slug: "coqfighter-opens-at-market-halls-canary-wharf",
     createdAt: "2026-10-07T20:50:00+04:00",
-    updatedAt: "2026-10-07T20:50:00+04:00",
+    updatedAt: "2026-10-07T21:04:02+04:00",
     site: "lnd",
     title: "Coqfighter opens at Market Halls Canary Wharf on 21 October",
     cardTitle: "Coqfighter in Canary Wharf",
     titleSeo: "Coqfighter comes to Canary Wharf",
     summary:
-      "The Korean-glazed fried chicken that began in Australia takes its fifth London counter, at Market Halls, 25 North Colonnade, from Wednesday 21 October.",
+      "The Australian-born Korean fried chicken takes its fifth London counter, at Market Halls, 25 North Colonnade, from Wednesday 21 October.",
     date: "2026-10-07",
     city: "London",
     country: "United Kingdom",
@@ -72,7 +72,7 @@ export const items: NewsItem[] = [
       "## What one orders",
       "The <strong>K-wings</strong> (£10) are twice fried and finished in a spicy Korean glaze, and they are the house's calling card. The <strong>Nashville Hot</strong> sandwich (£11.50) is a fried breast with pickles, chipotle mayonnaise and a green slaw. There is a vegan sandwich for those so inclined, roast and grilled chicken for those who prefer their bird unfried, and sides that include mashed potato with miso gravy and coconut rice.",
       "## A little history",
-      "Coqfighter was founded in Australia in <strong>2014</strong> by <strong>Tristan Clough</strong>, <strong>Deacon Rose</strong> and <strong>Troy Sawyer</strong>. Mr Sawyer calls the new site a massive milestone for the team, and very graciously gives the credit for it to the customers.",
+      "Coqfighter is an Australian-born concept, established in <strong>2014</strong> by <strong>Tristan Clough</strong>, <strong>Deacon Rose</strong> and <strong>Troy Sawyer</strong>. Mr Sawyer calls the new site a massive milestone for the team, and very graciously gives the credit for it to the customers.",
     ],
     faq: [
       {

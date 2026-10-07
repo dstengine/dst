@@ -4,7 +4,7 @@ export const items: NewsItem[] = [
   {
     slug: "trick-or-streets-2026-160-car-free-streets",
     createdAt: "2026-10-07T20:50:00+04:00",
-    updatedAt: "2026-10-07T20:50:00+04:00",
+    updatedAt: "2026-10-07T21:04:02+04:00",
     site: "nyc42",
     title: "Trick-or-Streets: 160 car-free streets and plazas for Halloween 2026",
     cardTitle: "160 car-free Halloween streets",
@@ -51,12 +51,12 @@ export const items: NewsItem[] = [
       },
     ],
     expertise:
-      "The Bronx party on James Baldwin Plaza is the only signature event on Halloween itself, and it finishes at 3 p.m. — early enough to get a costumed child home, fed and back out, or for adults to make it downtown for the Village Halloween Parade on Sixth Avenue that evening. The weekday events are timed for the end of the school day, so expect the first hour to be the busiest. And an Open Street is closed to through traffic, not to deliveries and emergency vehicles: the space is shared, so keep the smallest trick-or-treaters on the inside of it.",
+      "The Bronx party on James Baldwin Plaza is the only signature event on Halloween itself, and it finishes at 3 p.m. — early enough to get a costumed child home, fed and back out, or for adults to make it downtown for the Village Halloween Parade on Sixth Avenue that evening. And an Open Street is closed to through traffic, not to deliveries and emergency vehicles: the space is shared, so keep the smallest trick-or-treaters on the inside of it.",
   },
   {
     slug: "humm-opens-in-the-west-village-on-october-10",
     createdAt: "2026-10-07T20:50:00+04:00",
-    updatedAt: "2026-10-07T20:50:00+04:00",
+    updatedAt: "2026-10-07T21:04:02+04:00",
     site: "nyc42",
     title: "Daniel Humm opens HUMM in the West Village on October 10",
     cardTitle: "HUMM opens in the West Village",
@@ -73,7 +73,7 @@ export const items: NewsItem[] = [
       verifiedOn: "2026-10-07",
     },
     body: [
-      "The chef behind one of the most decorated tasting menus in the world has opened a restaurant where you order what you want. <strong>HUMM</strong> is à la carte, cooked over wood, and has a martini cart.",
+      "The chef behind one of the most decorated tasting menus in the world is opening a restaurant where you order what you want. <strong>HUMM</strong> is à la carte, cooked over wood, and has a martini cart.",
       "## Where and when",
       "<strong>435 Hudson Street</strong>, between Leroy and Morton Streets in the West Village. It opens on <strong>Saturday, October 10, 2026</strong>, with reservations on <strong>Resy</strong>.",
       "## The menu",

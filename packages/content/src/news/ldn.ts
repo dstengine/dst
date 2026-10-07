@@ -4,7 +4,7 @@ export const items: NewsItem[] = [
   {
     slug: "spiritland-opens-at-the-barbican-on-20-october",
     createdAt: "2026-10-07T20:50:00+04:00",
-    updatedAt: "2026-10-07T20:50:00+04:00",
+    updatedAt: "2026-10-07T21:04:02+04:00",
     site: "ldn",
     title: "Spiritland opens a listening bar at the Barbican on 20 October",
     cardTitle: "Spiritland comes to the Barbican",
@@ -29,7 +29,7 @@ export const items: NewsItem[] = [
       "## The kitchen",
       "The executive chef is <strong>Matt Cranston</strong>, formerly executive chef at Lardo in Hackney and head chef at The Cow in Notting Hill. The menu is European with Japanese touches — Spanish nachos, oyster mushroom fritti, meatballs with smoked mozzarella — alongside seasonal cocktails, beer, wine and a weekend brunch. Regular supper clubs are planned.",
       "## Where Spiritland has been",
-      "The first Spiritland opened at King's Cross just over a decade ago and is still there, at 9-10 Stable Street, N1C. A second room at the Royal Festival Hall on the South Bank closed in 2023, so this is the name's return to an arts centre — on the other side of the river, and in the other brutalist one.",
+      "The first Spiritland opened at King's Cross just over a decade ago and is still there, at 9-10 Stable Street, N1C. A second room at the Royal Festival Hall on the South Bank closed in 2023, so this is the name's return to an arts centre, on the other side of the river.",
     ],
     faq: [
       {
@@ -46,7 +46,7 @@ export const items: NewsItem[] = [
       },
     ],
     expertise:
-      "A listening bar asks one thing of the room that an ordinary bar does not: that the record is the loudest thing in it. The 5pm album is the moment that rule matters most, and it falls before the evening's concert and theatre audiences arrive, which makes it the quiet hour rather than the busy one. Barbican and Moorgate are the nearest stations, and the Elizabeth line's Moorgate entrance at Liverpool Street is a few minutes further; from any of them, Silk Street is the entrance to aim for, because the highwalks are easier to get lost on than to cross.",
+      "A listening bar asks one thing of the room that an ordinary bar does not: that the record is the loudest thing in it. The 5pm album is the moment that rule matters most, and it falls before the evening's concert and theatre audiences arrive, which makes it the quiet hour rather than the busy one. Barbican and Moorgate are the nearest stations, and Moorgate is also the western entrance to the Elizabeth line at Liverpool Street; from either, Silk Street is the entrance to aim for, because the highwalks are easier to get lost on than to cross.",
   },
 
 
