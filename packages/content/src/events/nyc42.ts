@@ -1,6 +1,61 @@
 import type { EventItem } from "../types.ts";
 
 export const items: EventItem[] = [
+  {
+    slug: "off-broadway-week-fall-2026",
+    createdAt: "2026-10-07T20:50:00+04:00",
+    updatedAt: "2026-10-07T20:50:00+04:00",
+    site: "nyc42",
+    title: "NYC Off-Broadway Week, fall 2026",
+    cardTitle: "Off-Broadway Week: 2-for-1",
+    titleSeo: "Off-Broadway Week Oct 2026: 2-for-1 tickets",
+    summary:
+      "Two tickets for the price of one at 24 Off-Broadway shows in New York, October 5–18, with the code OBW26 — Perfect Crime, The Play That Goes Wrong and Spelling Bee among them.",
+    start: "2026-10-05",
+    end: "2026-10-18",
+    utcOffset: "-04:00",
+    city: "New York",
+    country: "United States",
+    category: "Theatre",
+    organizer: "New York City Tourism + Conventions",
+    ticket: { url: "https://www.nyctourism.com/off-broadway-week/", label: "2-for-1 tickets" },
+    source: {
+      name: "New York City Tourism + Conventions",
+      url: "https://www.nyctourism.com/off-broadway-week/",
+      verifiedOn: "2026-10-07",
+    },
+    body: [
+      "<strong>Perfect Crime</strong> has been running Off-Broadway since 1987. For this fortnight it, and twenty-three other shows, cost half.",
+      "## How the deal works",
+      "Book on NYC Tourism's Off-Broadway Week page with the code <strong>OBW26</strong>. Tickets are issued at <strong>50% off</strong> their original price, with taxes and fees added on top, and the minimum order is <strong>two tickets</strong>. Each production chooses which seats are in the offer and how many, so not every seat for a performance is eligible. Sales are final, blackout dates may apply, and the code does not combine with other discounts.",
+      "## Dates",
+      "<strong>Monday, October 5</strong> to <strong>Sunday, October 18, 2026</strong>.",
+      "## The shows",
+      "Time Out New York counts <strong>24</strong> productions in this round: Alice in Wonderland, Amaze, creation stories and all the important importants, Drunk Dracula, Friends! The Musical Parody, Gazillion Bubble Show, A Ghost in Your Ear, Going Bacharach, The Hairy Ape, The Heart, Heated Rivalry: The Unauthorized Musical Parody, The Hope Theory, I Became We, Lost in Del Valle, Motherf*cker, Our Sinatra, Perfect Crime, The Play That Goes Wrong, Pre-Existing Condition, Singfeld! An Unauthorized Musical Parody About Nothing, Toc Toc, <strong>The 25th Annual Putnam County Spelling Bee</strong>, The Unbelievers and The Very Hungry Caterpillar.",
+      "## For families",
+      "Gazillion Bubble Show and The Very Hungry Caterpillar are the two on the list made for young children, and the two-ticket minimum suits a parent and a child exactly.",
+    ],
+    faq: [
+      {
+        q: "What is the Off-Broadway Week code?",
+        a: "<strong>OBW26</strong>, entered on NYC Tourism's Off-Broadway Week booking page.",
+      },
+      {
+        q: "When does Off-Broadway Week end?",
+        a: "On <strong>Sunday, October 18, 2026</strong>. It began on October 5.",
+      },
+      {
+        q: "Is it really two tickets for one?",
+        a: "Yes: tickets are <strong>50% off</strong> with a minimum purchase of two, which comes to the same thing. Taxes and fees are added to the discounted price.",
+      },
+      {
+        q: "Can I get a refund?",
+        a: "No. All sales under the offer are final.",
+      },
+    ],
+    expertise:
+      "Because each show sets aside its own allocation, the offer can sell out for one show and stay open for another — if a date shows no discounted seats, try another performance of the same show before giving up on it. Fees are added after the 50% comes off, so the saving is a little under half. With no refunds, book the one date you are certain of rather than the one that might suit. Broadway Week is a separate promotion with its own code and its own dates; this one is for the smaller houses only.",
+  },
 
   {
     slug: "tcs-new-york-city-marathon-2026",

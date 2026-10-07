@@ -1,6 +1,105 @@
 import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
+  {
+    slug: "trick-or-streets-2026-160-car-free-streets",
+    createdAt: "2026-10-07T20:50:00+04:00",
+    updatedAt: "2026-10-07T20:50:00+04:00",
+    site: "nyc42",
+    title: "Trick-or-Streets: 160 car-free streets and plazas for Halloween 2026",
+    cardTitle: "160 car-free Halloween streets",
+    titleSeo: "Trick-or-Streets 2026: 160 car-free streets",
+    summary:
+      "New York's Department of Transportation hands a record 160 Open Streets and plazas to Halloween this October, with free trick-or-treating, costume contests and one signature party in each borough.",
+    date: "2026-10-07",
+    city: "New York",
+    country: "United States",
+    category: "Halloween",
+    source: {
+      name: "NYC Mayor's Office",
+      url: "https://www.nyc.gov/mayors-office/news/2026/09/mayor-mamdani-announces-largest-ever-trick-or-streets-with-160-c",
+      verifiedOn: "2026-10-07",
+    },
+    body: [
+      "NYC DOT is giving away <strong>75,000 pieces of candy</strong> this October. That is the most concrete number in a program whose headline one is a record: <strong>160</strong> car-free Open Streets and plazas across all five boroughs, turned over to Halloween.",
+      "## What Trick-or-Streets is",
+      "Through October, cultural organizations, community groups and schools take over neighborhood streets and plazas that are already closed to cars, and fill them with free trick-or-treating, face painting, live entertainment, games, costume contests and dancing.",
+      "## The five signature events",
+      "One in each borough, each a bigger afternoon than the block-by-block program around it:",
+      "<strong>Brooklyn</strong>: Hillel Plaza, Flatbush Junction — <strong>Thursday, October 22</strong>, 2–6 p.m.",
+      "<strong>Staten Island</strong>: Water Street Open Street — <strong>Saturday, October 24</strong>, noon–5 p.m.",
+      "<strong>Queens</strong>: Austin Street Open Street, Forest Hills — <strong>Sunday, October 25</strong>, 2–5 p.m.",
+      "<strong>Manhattan</strong>: Canal Open Street and Division Plaza — <strong>Wednesday, October 28</strong>, 3–7 p.m.",
+      "<strong>The Bronx</strong>: James Baldwin Plaza — <strong>Saturday, October 31</strong>, 10 a.m.–3 p.m.",
+      "## New this year",
+      "The <strong>Municipal Art Society of New York</strong> is leading free guided walking tours of the history, architecture and public space of participating neighborhoods, and <strong>Street Lab</strong> is producing Halloween events at select public schools.",
+      "## Finding your block",
+      "The full list of participating streets and plazas, borough by borough, is at nyc.gov/trickorstreets.",
+    ],
+    faq: [
+      {
+        q: "How many streets are in Trick-or-Streets 2026?",
+        a: "<strong>160</strong> car-free Open Streets and plazas across all five boroughs — a record for the program.",
+      },
+      {
+        q: "Is Trick-or-Streets free?",
+        a: "Yes. Trick-or-treating, face painting, games and the rest are free to join.",
+      },
+      {
+        q: "When is the Manhattan Trick-or-Streets event?",
+        a: "<strong>Wednesday, October 28</strong>, 3–7 p.m., on the Canal Open Street and Division Plaza.",
+      },
+    ],
+    expertise:
+      "The Bronx party on James Baldwin Plaza is the only signature event on Halloween itself, and it finishes at 3 p.m. — early enough to get a costumed child home, fed and back out, or for adults to make it downtown for the Village Halloween Parade on Sixth Avenue that evening. The weekday events are timed for the end of the school day, so expect the first hour to be the busiest. And an Open Street is closed to through traffic, not to deliveries and emergency vehicles: the space is shared, so keep the smallest trick-or-treaters on the inside of it.",
+  },
+  {
+    slug: "humm-opens-in-the-west-village-on-october-10",
+    createdAt: "2026-10-07T20:50:00+04:00",
+    updatedAt: "2026-10-07T20:50:00+04:00",
+    site: "nyc42",
+    title: "Daniel Humm opens HUMM in the West Village on October 10",
+    cardTitle: "HUMM opens in the West Village",
+    titleSeo: "HUMM opens in the West Village on October 10",
+    summary:
+      "The Eleven Madison Park chef's à la carte sister restaurant opens at 435 Hudson Street, New York, on Saturday, October 10, with a roast chicken for two and a martini cart.",
+    date: "2026-10-07",
+    city: "New York",
+    country: "United States",
+    category: "Food",
+    source: {
+      name: "Time Out New York",
+      url: "https://www.timeout.com/newyork/news/the-eleven-madison-park-crew-is-opening-a-casual-west-village-sister-restaurant-this-week-with-a-rolling-martini-cart-and-a-showpiece-chicken-100626",
+      verifiedOn: "2026-10-07",
+    },
+    body: [
+      "The chef behind one of the most decorated tasting menus in the world has opened a restaurant where you order what you want. <strong>HUMM</strong> is à la carte, cooked over wood, and has a martini cart.",
+      "## Where and when",
+      "<strong>435 Hudson Street</strong>, between Leroy and Morton Streets in the West Village. It opens on <strong>Saturday, October 10, 2026</strong>, with reservations on <strong>Resy</strong>.",
+      "## The menu",
+      "<strong>Daniel Humm</strong>'s executive chef here is <strong>Dmitri Magi</strong>. The dish built to be talked about is a <strong>roast chicken for two</strong>, from Amish farms in Lancaster, Pennsylvania, with breadcrumbs, butter, lemon, thyme and garlic. Around it: a whole branzino, crispy feta with sesame and shallot agrodolce, tuna crudo, a chicory and tangerine salad, and fried eggplant with pickled green tomatoes.",
+      "## The martini cart",
+      "It rolls to the table during service — the one piece of ceremony in a room that has otherwise set ceremony aside.",
+      "## The room",
+      "Works by <strong>Louise Bourgeois</strong>, <strong>Rashid Johnson</strong> and <strong>Roni Horn</strong>, and a ceiling mural and private dining room by <strong>Francesco Clemente</strong>.",
+    ],
+    faq: [
+      {
+        q: "When does HUMM open?",
+        a: "On <strong>Saturday, October 10, 2026</strong>.",
+      },
+      {
+        q: "Where is HUMM?",
+        a: "<strong>435 Hudson Street</strong>, between Leroy and Morton Streets in the West Village.",
+      },
+      {
+        q: "How do you book HUMM?",
+        a: "Through <strong>Resy</strong>.",
+      },
+    ],
+    expertise:
+      "A chicken for two is a dish that decides the size of the table before anything else does, so book for an even number if it is the reason you are going. The nearest subway is the 1 train, at Houston Street or Christopher Street–Stonewall, both a few minutes' walk from Hudson and Leroy.",
+  },
 
 
   {

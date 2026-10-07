@@ -1,6 +1,96 @@
 import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
+  {
+    slug: "zula-opens-in-spitalfields-on-1-november",
+    createdAt: "2026-10-07T20:50:00+04:00",
+    updatedAt: "2026-10-07T20:50:00+04:00",
+    site: "lnd",
+    title: "Zula opens a second burger restaurant in Spitalfields on 1 November",
+    cardTitle: "Zula comes to Spitalfields",
+    titleSeo: "Zula opens in Spitalfields on 1 November",
+    summary:
+      "The Marble Arch burger restaurant opens a fast-service sibling at 2e Lamb Street, east London, on Sunday 1 November, with a Spitalfields Wagyu burger the original does not serve.",
+    date: "2026-10-07",
+    city: "London",
+    country: "United Kingdom",
+    category: "Food",
+    source: {
+      name: "Time Out London",
+      url: "https://www.timeout.com/london/news/zula-second-location-spitalfields-100626",
+      verifiedOn: "2026-10-07",
+    },
+    body: [
+      "Zula's second restaurant is not a copy of the first. Marble Arch is a sit-down room; Spitalfields is a fast-service counter built for the office lunch and the market crowd, with a lean bar for anyone who wants to eat in.",
+      "## Where and when",
+      "<strong>2e Lamb Street, Spitalfields, E1 6EA</strong> — the unit that was the Italian street-food restaurant Indegno. It opens on <strong>Sunday 1 November 2026</strong>.",
+      "## What is on the menu",
+      "One burger is made for this site alone: the <strong>Spitalfields Wagyu Burger</strong>, a wagyu patty with double cheddar, French mayo, sambal, black pepper, gherkin and onion in a brioche bun. The Marble Arch regulars come east with it — <strong>The Basic</strong>, <strong>The B.I.G.</strong> and <strong>The Fake Mac</strong>.",
+      "## Who is behind it",
+      "Founder <strong>Cihan Kıpçak</strong> cooked in Michelin-starred kitchens before opening Zula at Marble Arch in <strong>October 2024</strong>. Spitalfields is the first time the name has left the West End.",
+    ],
+    faq: [
+      {
+        q: "When does Zula open in Spitalfields?",
+        a: "On <strong>Sunday 1 November 2026</strong>.",
+      },
+      {
+        q: "Where is the new Zula?",
+        a: "<strong>2e Lamb Street, Spitalfields, E1 6EA</strong>, in the unit that used to be Indegno.",
+      },
+      {
+        q: "Is the menu the same as at Marble Arch?",
+        a: "Mostly, with one addition: the <strong>Spitalfields Wagyu Burger</strong> is served only at the new site.",
+      },
+    ],
+    expertise:
+      "Lamb Street runs along the side of Old Spitalfields Market, so the new Zula sits in the market's foot traffic rather than near it — which is the whole point of a fast-service counter. Liverpool Street is the nearest station, five minutes' walk down Bishopsgate, with Shoreditch High Street on the Overground the other way. A burger built for one site tends to be the thing the first weeks are judged on, so if the Wagyu is the reason to go, go for that and not for the one you can already get at Marble Arch.",
+  },
+  {
+    slug: "coqfighter-opens-at-market-halls-canary-wharf",
+    createdAt: "2026-10-07T20:50:00+04:00",
+    updatedAt: "2026-10-07T20:50:00+04:00",
+    site: "lnd",
+    title: "Coqfighter opens at Market Halls Canary Wharf on 21 October",
+    cardTitle: "Coqfighter in Canary Wharf",
+    titleSeo: "Coqfighter comes to Canary Wharf",
+    summary:
+      "The Korean-glazed fried chicken that began in Australia takes its fifth London counter, at Market Halls, 25 North Colonnade, from Wednesday 21 October.",
+    date: "2026-10-07",
+    city: "London",
+    country: "United Kingdom",
+    category: "Food",
+    source: {
+      name: "Time Out London",
+      url: "https://www.timeout.com/london/news/coqfighter-canary-wharf-announcement-100526",
+      verifiedOn: "2026-10-07",
+    },
+    body: [
+      "There is a particular sort of Londoner who will cross town for a properly made chicken wing, and it gives one real pleasure to report that, from <strong>21 October</strong>, those who work at Canary Wharf need cross nothing more taxing than the lobby.",
+      "## Where and when",
+      "<strong>Market Halls, 25 North Colonnade, Canary Wharf, E14 5HD</strong>, opening on <strong>Wednesday 21 October 2026</strong>. It is the fifth London Coqfighter, after <strong>Liverpool Street</strong>, <strong>Soho</strong>, <strong>King's Cross</strong> and <strong>Finsbury Park</strong>.",
+      "## What one orders",
+      "The <strong>K-wings</strong> (£10) are twice fried and finished in a spicy Korean glaze, and they are the house's calling card. The <strong>Nashville Hot</strong> sandwich (£11.50) is a fried breast with pickles, chipotle mayonnaise and a green slaw. There is a vegan sandwich for those so inclined, roast and grilled chicken for those who prefer their bird unfried, and sides that include mashed potato with miso gravy and coconut rice.",
+      "## A little history",
+      "Coqfighter was founded in Australia in <strong>2014</strong> by <strong>Tristan Clough</strong>, <strong>Deacon Rose</strong> and <strong>Troy Sawyer</strong>. Mr Sawyer calls the new site a massive milestone for the team, and very graciously gives the credit for it to the customers.",
+    ],
+    faq: [
+      {
+        q: "When does Coqfighter open in Canary Wharf?",
+        a: "On <strong>Wednesday 21 October 2026</strong>, at Market Halls, 25 North Colonnade, E14 5HD.",
+      },
+      {
+        q: "How much are Coqfighter's K-wings?",
+        a: "<strong>£10</strong>. The Nashville Hot sandwich is <strong>£11.50</strong>.",
+      },
+      {
+        q: "Where else is Coqfighter in London?",
+        a: "Liverpool Street, Soho, King's Cross and Finsbury Park; Canary Wharf is the fifth.",
+      },
+    ],
+    expertise:
+      "A food hall inside an office estate keeps office hours whether it means to or not: the half hour after noon is a queue, and the hour after two is a table by the window. Canary Wharf is served by the Jubilee line, the Elizabeth line and the DLR, which makes it rather easier to reach of an evening than its reputation suggests. And a word on the wings: a glaze that is meant to be eaten hot loses a good deal in a desk drawer, so they are best had there and then.",
+  },
 
 
   {

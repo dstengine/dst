@@ -1,6 +1,53 @@
 import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
+  {
+    slug: "spiritland-opens-at-the-barbican-on-20-october",
+    createdAt: "2026-10-07T20:50:00+04:00",
+    updatedAt: "2026-10-07T20:50:00+04:00",
+    site: "ldn",
+    title: "Spiritland opens a listening bar at the Barbican on 20 October",
+    cardTitle: "Spiritland comes to the Barbican",
+    titleSeo: "Spiritland listening bar opens at the Barbican",
+    summary:
+      "One of London's original listening bars takes Level 2 of the Barbican from 20 October: a hundred seats, Living Voice speakers and a whole album played through them at 5pm every day.",
+    date: "2026-10-07",
+    city: "London",
+    country: "United Kingdom",
+    category: "Music",
+    source: {
+      name: "Time Out London",
+      url: "https://www.timeout.com/london/news/spiritland-barbican-announcement-100726",
+      verifiedOn: "2026-10-07",
+    },
+    body: [
+      "The Barbican has a concert hall, a theatre and three cinemas, and until now nowhere in it was built for the plainest way of listening to music: sitting down and letting a record play from the first track to the last. From <strong>20 October</strong> it has one.",
+      "## When and where",
+      "<strong>Spiritland at the Barbican</strong> opens on <strong>Tuesday 20 October 2026</strong> on <strong>Level 2</strong> of the Barbican Centre, Silk Street, EC2Y 8DS. It seats <strong>100</strong>.",
+      "## The sound",
+      "A pair of <strong>Living Voice R252</strong> loudspeakers with high-end amplification and sources around them. Every day at <strong>5pm</strong> a full album is played through the system, start to finish.",
+      "## The kitchen",
+      "The executive chef is <strong>Matt Cranston</strong>, formerly executive chef at Lardo in Hackney and head chef at The Cow in Notting Hill. The menu is European with Japanese touches — Spanish nachos, oyster mushroom fritti, meatballs with smoked mozzarella — alongside seasonal cocktails, beer, wine and a weekend brunch. Regular supper clubs are planned.",
+      "## Where Spiritland has been",
+      "The first Spiritland opened at King's Cross just over a decade ago and is still there, at 9-10 Stable Street, N1C. A second room at the Royal Festival Hall on the South Bank closed in 2023, so this is the name's return to an arts centre — on the other side of the river, and in the other brutalist one.",
+    ],
+    faq: [
+      {
+        q: "When does Spiritland open at the Barbican?",
+        a: "On <strong>Tuesday 20 October 2026</strong>, on Level 2 of the Barbican Centre, Silk Street, EC2Y 8DS.",
+      },
+      {
+        q: "What happens at 5pm?",
+        a: "A full album is played through the sound system from start to finish, <strong>every day</strong>.",
+      },
+      {
+        q: "Who is cooking?",
+        a: "<strong>Matt Cranston</strong>, previously of Lardo in Hackney and The Cow in Notting Hill.",
+      },
+    ],
+    expertise:
+      "A listening bar asks one thing of the room that an ordinary bar does not: that the record is the loudest thing in it. The 5pm album is the moment that rule matters most, and it falls before the evening's concert and theatre audiences arrive, which makes it the quiet hour rather than the busy one. Barbican and Moorgate are the nearest stations, and the Elizabeth line's Moorgate entrance at Liverpool Street is a few minutes further; from any of them, Silk Street is the entrance to aim for, because the highwalks are easier to get lost on than to cross.",
+  },
 
 
   {

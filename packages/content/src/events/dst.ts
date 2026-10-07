@@ -2,6 +2,58 @@ import type { EventItem } from "../types.ts";
 
 export const items: EventItem[] = [
   {
+    slug: "moc27-motor-outdoor-camping-festival-dubai",
+    createdAt: "2026-10-07T20:50:00+04:00",
+    updatedAt: "2026-10-07T20:50:00+04:00",
+    site: "dst",
+    title: "MOC27: Motor, Outdoor & Camping Festival",
+    titleSeo: "MOC27 Motor, Outdoor & Camping Festival in Dubai",
+    summary:
+      "A four-day outdoor festival on The Sevens Stadium grounds in Dubai, 14–17 January 2027: 4x4 test drives, dirt bikes, camping, 200+ brands and 50 clubs across 350,000 square metres.",
+    start: "2027-01-14",
+    end: "2027-01-17",
+    venue: "The Sevens Stadium grounds, Dubai–Al Ain Road",
+    geo: { name: "The Sevens Stadium", lat: 24.994479, lng: 55.468241 },
+    city: "Dubai",
+    country: "United Arab Emirates",
+    organizer: "JBCM Event Architects",
+    category: "Festival",
+    source: {
+      name: "Khaleej Times",
+      url: "https://www.khaleejtimes.com/business/dubai-adds-outdoor-lifestyle-festival-to-expanding-winter-events-calendar",
+      verifiedOn: "2026-10-07",
+    },
+    body: [
+      "Dubai has a motor show and it has desert parties. The people behind MOC27 say they are building neither: a four-day festival for families, organised around the clubs that actually spend their weekends off-road, under canvas and on two wheels.",
+      "## MOC27 dates and venue",
+      "The <strong>Motor, Outdoor & Camping Festival</strong> runs <strong>14–17 January 2027</strong> on the grounds of <strong>The Sevens Stadium</strong>, off the Dubai–Al Ain Road. The site covers <strong>350,000 square metres</strong>.",
+      "## What is on",
+      "<strong>4x4 test drives</strong> and <strong>dirt-bike sessions</strong>, camping demonstrations, and areas for cycling, hiking, overlanding, motorcycling and marine activities. Around them: family entertainment and activities for children, food zones, wellness and nature programmes, and entertainment in the evenings.",
+      "## Who is taking part",
+      "More than <strong>200 brands</strong> and <strong>50 clubs and community groups</strong>.",
+      "## Who is behind it",
+      "The concept is by <strong>JBCM Event Architects</strong>, with <strong>Oryx Signature</strong> handling marketing and production, and the festival has the support of Dubai's <strong>Department of Economy and Tourism</strong>. JBCM's chief executive, Justyn Cánovas, describes it as a festival for the whole family built around the clubs and communities that live the outdoors every day.",
+      "## What is not announced yet",
+      "Ticket prices and opening hours.",
+    ],
+    faq: [
+      {
+        q: "When is MOC27 in Dubai?",
+        a: "<strong>14–17 January 2027</strong>.",
+      },
+      {
+        q: "Where is the Motor, Outdoor & Camping Festival?",
+        a: "On the grounds of <strong>The Sevens Stadium</strong>, off the Dubai–Al Ain Road.",
+      },
+      {
+        q: "Can you test-drive cars at MOC27?",
+        a: "Yes — <strong>4x4 test drives</strong> and <strong>dirt-bike sessions</strong> are part of the programme.",
+      },
+    ],
+    expertise:
+      "The Sevens is the ground that hosts the Emirates Dubai 7s every December, so the site is built for big crowds arriving by car — and by car is how nearly everyone will come, because it sits well out of the city on the Al Ain road. Mid-January is the coolest stretch of the Dubai year, which is what makes a camping festival plausible at all: the days are warm rather than hot, and the desert nights are cold enough that anyone staying for the evening programme will want a layer. The festival runs Thursday to Sunday, so the two days of the UAE weekend, 16 and 17 January, are the ones a family will reach for first — and the ones to arrive early on.",
+  },
+  {
     slug: "expand-north-star-2026",
     createdAt: "2026-08-25T18:18:34+04:00",
     updatedAt: "2026-09-06T08:48:11+04:00",

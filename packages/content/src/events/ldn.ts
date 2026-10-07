@@ -1,6 +1,68 @@
 import type { EventItem } from "../types.ts";
 
 export const items: EventItem[] = [
+  {
+    slug: "rowan-live-gillian-lynne-theatre-2027",
+    createdAt: "2026-10-07T20:50:00+04:00",
+    updatedAt: "2026-10-07T20:50:00+04:00",
+    site: "ldn",
+    title: "Rowan Live at the Gillian Lynne Theatre",
+    titleSeo: "Rowan Live, Gillian Lynne Theatre, Feb–Mar 2027",
+    summary:
+      "Rowan Atkinson's first West End sketch show in forty years: 30 performances at the Gillian Lynne Theatre, London, 8 February to 13 March 2027, from £35 with no booking fee.",
+    start: "2027-02-08",
+    end: "2027-03-13",
+    utcOffset: "+00:00",
+    city: "London",
+    country: "United Kingdom",
+    venue: "Gillian Lynne Theatre, 166 Drury Lane, London WC2B 5PW",
+    geo: { name: "Gillian Lynne Theatre", lat: 51.515419, lng: -0.122687 },
+    category: "Theatre",
+    organizer: "Playful Productions and PBJ Management",
+    ticket: { url: "https://www.rowanlive.co.uk/", label: "Tickets" },
+    tickets: {
+      priceFrom: 35,
+      currency: "GBP",
+    },
+    source: {
+      name: "LW Theatres",
+      url: "https://lwtheatres.co.uk/whats-on/rowan-live/",
+      verifiedOn: "2026-10-07",
+    },
+    body: [
+      "Mr Bean has barely been on a stage at all — a couple of short charity appearances aside, the character has lived on screen since 1990. This winter he gets thirty nights in the West End, and Blackadder comes with him.",
+      "## Dates",
+      "<strong>30 performances</strong> from <strong>Monday 8 February</strong> to <strong>Saturday 13 March 2027</strong>, at the <strong>Gillian Lynne Theatre</strong> on Drury Lane. Press night is <strong>16 February</strong>. Booking opened on 7 October 2026.",
+      "## Tickets",
+      "From <strong>£35</strong>, with no booking fee when bought from LW Theatres, the theatre's own box office; every ticket includes a £2 restoration levy. Recommended for ages <strong>12+</strong>. Running time is still to be confirmed.",
+      "## What is in it",
+      "Sketches and characters from across Atkinson's career — <strong>Mr Bean</strong>, <strong>Blackadder</strong> and material from <strong>Not the Nine O'Clock News</strong> — alongside new material written with his long-time collaborators <strong>Richard Curtis</strong>, <strong>Ben Elton</strong> and <strong>Howard Goodall</strong>. Goodall writes the music; <strong>Raz Shaw</strong> directs.",
+      "## Why now",
+      "Atkinson's last comedy sketch show in the West End was forty years ago. Announcing this one, he said he thought it would be fun to perform again \"the sketches that began it all\".",
+      "## Access",
+      "A captioned performance on <strong>Monday 1 March</strong> and an audio-described one on <strong>Monday 8 March</strong>.",
+    ],
+    faq: [
+      {
+        q: "When is Rowan Live on?",
+        a: "From <strong>8 February to 13 March 2027</strong> at the Gillian Lynne Theatre, 166 Drury Lane — 30 performances in all.",
+      },
+      {
+        q: "How much are tickets for Rowan Live?",
+        a: "From <strong>£35</strong>, with no booking fee at LW Theatres, the official box office. Each ticket includes a £2 restoration levy.",
+      },
+      {
+        q: "Is Rowan Live suitable for children?",
+        a: "The theatre recommends it for ages <strong>12 and over</strong>.",
+      },
+      {
+        q: "Who wrote Rowan Live?",
+        a: "Rowan Atkinson with <strong>Richard Curtis</strong>, <strong>Ben Elton</strong> and <strong>Howard Goodall</strong>, who also writes the music. It is directed by <strong>Raz Shaw</strong>.",
+      },
+    ],
+    expertise:
+      "The Gillian Lynne was the New London Theatre until 2018, when it was renamed after the choreographer of Cats — which ran in this building for twenty-one years. Holborn and Covent Garden are the nearest Tube stations, both a short walk from Drury Lane. With thirty performances and a name this size, the realistic plan is to pick a date early and hold it rather than wait for the press night reviews: a sketch show has no plot to spoil, and the performances before 16 February are the same evening. Buy from LW Theatres or through the official site, which leads there; resale listings for a run this short are where the £35 seat stops being £35.",
+  },
 
   {
     slug: "japan-matsuri-2026",

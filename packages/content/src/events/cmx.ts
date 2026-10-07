@@ -1,6 +1,65 @@
 import type { EventItem } from "../types.ts";
 
 export const items: EventItem[] = [
+  {
+    slug: "campo-de-xolos-festival-del-xoloitzcuintle-2026",
+    createdAt: "2026-10-07T20:50:00+04:00",
+    updatedAt: "2026-10-07T20:50:00+04:00",
+    site: "cmx",
+    title: "Campo de Xolos: el primer festival del xoloitzcuintle en la Ciudad de México",
+    cardTitle: "Campo de Xolos, festival del xolo",
+    titleSeo: "Festival del xoloitzcuintle 2026",
+    summary:
+      "El primer festival dedicado al xoloitzcuintle llega al Centro Histórico de la Ciudad de México del 25 de octubre al 1 de noviembre: gratis, con altar, exposiciones, un concierto y tu propio xolo como acompañante.",
+    start: "2026-10-25",
+    startTime: "17:00",
+    end: "2026-11-01",
+    utcOffset: "-06:00",
+    city: "Ciudad de México",
+    country: "México",
+    venue: "Atrio de San Francisco, Centro Cultural El Rule y Plaza Seminario, Centro Histórico",
+    category: "Festival",
+    organizer: "Secretaría de Pueblos y Barrios Originarios y Comunidades Indígenas Residentes",
+    tickets: { priceFrom: 0, currency: "MXN" },
+    source: {
+      name: "Infobae",
+      url: "https://www.infobae.com/mexico/2026/10/01/festival-del-perro-xoloitzcuintle-cuando-y-donde-sera-el-primer-evento-alusivo-a-esta-raza-prehispanica-mexicana/",
+      verifiedOn: "2026-10-07",
+    },
+    body: [
+      "El xoloitzcuintle lleva milenios en México y nunca había tenido un festival propio. Este año lo tiene, en pleno Centro Histórico y en la semana de Día de Muertos — y los perros pueden entrar.",
+      "## Cuándo y dónde es Campo de Xolos",
+      "La inauguración es el <strong>domingo 25 de octubre de 2026 a las 17:00</strong>, y las actividades siguen <strong>hasta el domingo 1 de noviembre</strong>. Las sedes son el <strong>Atrio de San Francisco</strong> (Madero, junto al Eje Central), el <strong>Centro Cultural El Rule</strong> (Eje Central Lázaro Cárdenas 6, primer piso) y la <strong>Plaza Seminario</strong>, a un costado de la Catedral Metropolitana. El <strong>Museo Soumaya de Plaza Carso</strong>, en la colonia Granada, también aparece entre las sedes anunciadas.",
+      "## Qué hay",
+      "Exposiciones artísticas y educativas, un <strong>altar vivo</strong>, charlas sobre la preservación de la raza, el <strong>Tianguis Xolero</strong> con recuerdos a la venta y, el <strong>sábado 31 de octubre</strong>, el concierto <strong>XOLO MIXTAPE</strong> en El Rule.",
+      "## ¿Se puede ir con perro?",
+      "Sí. El festival invita a llegar acompañado de tu propio xoloitzcuintle.",
+      "## Cuánto cuesta",
+      "Nada: la entrada es <strong>gratuita</strong> en todas las sedes.",
+      "## Lo que todavía no se sabe",
+      "El programa por día y por sede no se ha publicado. Las notas sobre el festival tampoco coinciden en el primer día de actividades: Infobae fecha la inauguración el 25 y el arranque el 26; otras publicaciones lo ubican el 27.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo es el festival del xoloitzcuintle en la Ciudad de México?",
+        a: "Del <strong>25 de octubre</strong> (inauguración a las 17:00) al <strong>1 de noviembre de 2026</strong>, en el Centro Histórico.",
+      },
+      {
+        q: "¿Cuánto cuesta entrar a Campo de Xolos?",
+        a: "Es <strong>gratis</strong>.",
+      },
+      {
+        q: "¿Puedo llevar a mi perro?",
+        a: "Sí, el festival invita a asistir con tu propio <strong>xoloitzcuintle</strong>.",
+      },
+      {
+        q: "¿Cuándo es el concierto XOLO MIXTAPE?",
+        a: "El <strong>sábado 31 de octubre</strong>, en el Centro Cultural El Rule.",
+      },
+    ],
+    expertise:
+      "El 31 de octubre es también el día del Gran Desfile de Día de Muertos, y esa tarde el Centro Histórico se llena como pocas veces al año: si el plan es el concierto en El Rule, conviene llegar temprano y no por las calles del recorrido. Las tres sedes del centro quedan a pocos minutos a pie entre sí — El Rule y el Atrio de San Francisco están casi frente a frente sobre Madero y el Eje Central, y la Plaza Seminario queda junto al Zócalo, a unos diez minutos a pie por Madero —, así que se recorren juntas en una tarde. Bellas Artes, en las líneas 2 y 8 del Metro, es la estación más cercana a las dos primeras. Si vas con tu xolo, recuerda que es un perro sin pelo: el sol del mediodía le pesa más que a otros perros.",
+  },
 
 
   {

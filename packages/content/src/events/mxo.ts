@@ -1,6 +1,58 @@
 import type { EventItem } from "../types.ts";
 
 export const items: EventItem[] = [
+  {
+    slug: "festival-de-culturas-urbanas-2026-texcoco",
+    createdAt: "2026-10-07T20:50:00+04:00",
+    updatedAt: "2026-10-07T20:50:00+04:00",
+    site: "mxo",
+    title: "Festival de Culturas Urbanas 2026 en el Centro Cultural Mexiquense Bicentenario",
+    cardTitle: "Festival de Culturas Urbanas",
+    titleSeo: "Festival de Culturas Urbanas 2026, Texcoco",
+    summary:
+      "Tres días gratis de conciertos, batallas de freestyle, grafiti, teatro y talleres en Texcoco, Estado de México, del 16 al 18 de octubre en el Centro Cultural Mexiquense Bicentenario.",
+    start: "2026-10-16",
+    end: "2026-10-18",
+    utcOffset: "-06:00",
+    city: "Texcoco",
+    country: "México",
+    venue: "Centro Cultural Mexiquense Bicentenario, km 14.3 de la carretera federal Los Reyes-Texcoco, San Miguel Coatlinchán, Texcoco",
+    geo: { name: "Centro Cultural Mexiquense Bicentenario", lat: 19.451948, lng: -98.896699 },
+    category: "Festivales",
+    tickets: { priceFrom: 0, currency: "MXN" },
+    source: {
+      name: "Chilango",
+      url: "http://www.chilango.com/que-hacer/edomex-tendra-festival-de-culturas-urbanas-2026-conciertos-freestyle-grafiti-y-mas",
+      verifiedOn: "2026-10-07",
+    },
+    body: [
+      "El concierto estelar de este festival lo abre una banda que todavía no sabe que lo va a abrir: el lugar es para quien gane la batalla de bandas <strong>Rastros Sonoros</strong>.",
+      "## Cuándo y dónde",
+      "Del <strong>viernes 16 al domingo 18 de octubre de 2026</strong>, en el <strong>Centro Cultural Mexiquense Bicentenario</strong>, en el kilómetro 14.3 de la carretera federal Los Reyes-Texcoco, San Miguel Coatlinchán, Texcoco.",
+      "## Qué hay",
+      "Conciertos, <strong>batallas de freestyle</strong>, <strong>grafiti</strong>, teatro, talleres, artesanías, gastronomía y exposiciones: la cultura urbana completa, no sólo su escenario principal.",
+      "## Cuánto cuesta",
+      "Nada. La entrada es <strong>gratuita</strong> y el <strong>estacionamiento también</strong>.",
+      "## Lo que todavía no se sabe",
+      "Los horarios y el cartel completo no se han publicado.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo es el Festival de Culturas Urbanas 2026?",
+        a: "Del <strong>16 al 18 de octubre de 2026</strong>, de viernes a domingo.",
+      },
+      {
+        q: "¿Dónde es el Festival de Culturas Urbanas?",
+        a: "En el <strong>Centro Cultural Mexiquense Bicentenario</strong>, km 14.3 de la carretera federal Los Reyes-Texcoco, en San Miguel Coatlinchán, Texcoco.",
+      },
+      {
+        q: "¿Cuánto cuesta?",
+        a: "Es <strong>gratis</strong>, y el estacionamiento no tiene costo.",
+      },
+    ],
+    expertise:
+      "El Centro Cultural Mexiquense Bicentenario está sobre la carretera, no en el centro de Texcoco, y eso decide cómo llegar: en coche, el estacionamiento gratuito resuelve la mitad del día. Desde la Ciudad de México en transporte público, la Línea A del Metro termina en La Paz, sobre la misma salida hacia Los Reyes y Texcoco, y desde ahí siguen los camiones que van por la carretera federal. La vuelta es lo que hay que planear antes que el cartel: si el concierto estelar termina de noche, a las afueras de Texcoco quedan pocas opciones de transporte público a esa hora.",
+  },
 
 
   {
