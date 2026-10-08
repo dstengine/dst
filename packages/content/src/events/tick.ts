@@ -1447,7 +1447,7 @@ export const items: EventItem[] = [
   {
     slug: "pagliacci-yerevan-opera-2026",
     createdAt: "2026-10-06T20:15:00+04:00",
-    updatedAt: "2026-10-06T20:15:00+04:00",
+    updatedAt: "2026-10-09T01:41:00+04:00",
     site: "tick",
     title: "Լեոնկավալո. «Պայացներ»՝ Երևանի օպերային թատրոնում",
     titleSeo: "«Պայացներ»՝ Երևանի օպերային թատրոնում",
@@ -1462,6 +1462,11 @@ export const items: EventItem[] = [
     venue: "Ալ. Սպենդիարյանի անվան օպերայի և բալետի ազգային ակադեմիական թատրոն, Թումանյան 54",
     geo: { lat: 40.1862685, lng: 44.5151091 },
     organizer: "Ալ. Սպենդիարյանի անվան օպերայի և բալետի ազգային ակադեմիական թատրոն",
+    image: "/covers/pagliacci-yerevan-opera-2026.jpg",
+    imageAlt: "Կարմիր սրածայր գլխարկ և սպիտակ դիմակ՝ փոքրիկ թմբուկի վրա, կիսաբաց կարմիր վարագույրով բեմի առջև",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     category: "Օպերա և բալետ",
     tickets: { priceFrom: 4000, priceTo: 15000, currency: "AMD" },
     ticket: { url: "https://www.tomsarkgh.am/en/event/50346/", label: "Տոմսեր" },
@@ -1479,6 +1484,7 @@ export const items: EventItem[] = [
     ],
     i18n: {
       en: {
+        imageAlt: "A red pointed clown's hat and a white mask on a small drum, before a little stage with its red curtain half drawn",
         ticket: { url: "https://www.tomsarkgh.am/en/event/50346/", label: "Tickets" },
         title: "Leoncavallo's Pagliacci at the Yerevan Opera",
         titleSeo: "Pagliacci at the Yerevan Opera",
@@ -1508,7 +1514,7 @@ export const items: EventItem[] = [
   {
     slug: "bakian-sings-aznavour-yerevan-2026",
     createdAt: "2026-10-06T20:15:00+04:00",
-    updatedAt: "2026-10-06T20:15:00+04:00",
+    updatedAt: "2026-10-09T01:41:00+04:00",
     site: "tick",
     title: "Bakian sings Aznavour. Ազնավուրի երգերը Երևանում",
     cardTitle: "Bakian sings Aznavour",
@@ -1521,6 +1527,11 @@ export const items: EventItem[] = [
     country: "Հայաստան",
     venue: "Հայաստանի պետական ֆիլհարմոնիա, Բաբաջանյան համերգասրահ",
     organizer: "Հայաստանի պետական ֆիլհարմոնիա",
+    image: "/covers/bakian-sings-aznavour-yerevan-2026.jpg",
+    imageAlt: "Ակուստիկ կիթառ՝ աթոռին հենված, դատարկ բեմի վրա՝ մեկ լուսարձակի շողի տակ",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     category: "Համերգներ",
     tickets: { priceFrom: 10000, priceTo: 10000, currency: "AMD" },
     ticket: { url: "https://www.tomsarkgh.am/en/event/51599/", label: "Տոմսեր" },
@@ -1545,6 +1556,7 @@ export const items: EventItem[] = [
     ],
     i18n: {
       en: {
+        imageAlt: "An acoustic guitar leaning against a chair on an empty stage, under a single spotlight",
         ticket: { url: "https://www.tomsarkgh.am/en/event/51599/", label: "Tickets" },
         title: "Bakian sings Aznavour in Yerevan",
         cardTitle: "Bakian sings Aznavour",
@@ -1580,7 +1592,7 @@ export const items: EventItem[] = [
   {
     slug: "tamar-ballet-yerevan-opera-2026",
     createdAt: "2026-10-06T20:15:00+04:00",
-    updatedAt: "2026-10-06T20:15:00+04:00",
+    updatedAt: "2026-10-09T01:41:00+04:00",
     site: "tick",
     title: "«Թամար» բալետը՝ Երևանի օպերային թատրոնում",
     cardTitle: "Տոլստով. «Թամար»",
@@ -1594,6 +1606,11 @@ export const items: EventItem[] = [
     venue: "Ալ. Սպենդիարյանի անվան օպերայի և բալետի ազգային ակադեմիական թատրոն, Թումանյան 54",
     geo: { lat: 40.1862685, lng: 44.5151091 },
     organizer: "Ալ. Սպենդիարյանի անվան օպերայի և բալետի ազգային ակադեմիական թատրոն",
+    image: "/covers/tamar-ballet-yerevan-opera-2026.jpg",
+    imageAlt: "Ժայռոտ կղզյակ՝ լճի մեջտեղում, վրան՝ վառվող լապտեր, ջրի վրայով՝ լույսի արահետ, հետևում՝ սարեր",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     category: "Օպերա և բալետ",
     tickets: { priceFrom: 5000, priceTo: 25000, currency: "AMD" },
     ticket: { url: "https://www.tomsarkgh.am/en/event/51487/", label: "Տոմսեր" },
@@ -1613,6 +1630,7 @@ export const items: EventItem[] = [
     ],
     i18n: {
       en: {
+        imageAlt: "A rocky islet in a lake with a lit lantern on it, a path of light across the water and mountains behind",
         ticket: { url: "https://www.tomsarkgh.am/en/event/51487/", label: "Tickets" },
         title: "Tamar, a ballet at the Yerevan Opera",
         cardTitle: "Tolstov: Tamar",
@@ -1643,7 +1661,7 @@ export const items: EventItem[] = [
   {
     slug: "shostakovich-symphony-1-yerevan-2026",
     createdAt: "2026-10-09T01:20:00+04:00",
-    updatedAt: "2026-10-09T01:20:00+04:00",
+    updatedAt: "2026-10-09T01:41:00+04:00",
     site: "tick",
     title: "Շոստակովիչ. Սիմֆոնիա թիվ 1 և ժամանակակից հնչողություններ",
     titleSeo: "Շոստակովիչի Առաջին սիմֆոնիան Երևանում",
@@ -1658,6 +1676,11 @@ export const items: EventItem[] = [
     venue: "Արամ Խաչատրյան համերգասրահ, Մաշտոցի պող. 46",
     geo: { lat: 40.1862685, lng: 44.5151091 },
     organizer: "Հայաստանի պետական սիմֆոնիկ նվագախումբ",
+    image: "/covers/shostakovich-symphony-1-yerevan-2026.jpg",
+    imageAlt: "Կարմիր ջութակ և աղեղ՝ բաց նոտագրքի վրա, նարնջագույն ֆոնի վրա",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     category: "Դասական երաժշտություն",
     tickets: { priceFrom: 3000, priceTo: 15000, currency: "AMD" },
     ticket: { url: "https://www.tomsarkgh.am/en/event/51292/", label: "Տոմսեր" },
@@ -1676,6 +1699,7 @@ export const items: EventItem[] = [
     ],
     i18n: {
       en: {
+        imageAlt: "A red violin and bow lying on an open book of sheet music, on an orange ground",
         ticket: { url: "https://www.tomsarkgh.am/en/event/51292/", label: "Tickets" },
         title: "Shostakovich: Symphony No. 1 and Contemporary Sounds",
         titleSeo: "Shostakovich's First Symphony in Yerevan",
@@ -1706,7 +1730,7 @@ export const items: EventItem[] = [
   {
     slug: "madama-butterfly-yerevan-opera-2026",
     createdAt: "2026-10-09T01:20:00+04:00",
-    updatedAt: "2026-10-09T01:20:00+04:00",
+    updatedAt: "2026-10-09T01:41:00+04:00",
     site: "tick",
     title: "Պուչչինի. «Մադամ Բաթերֆլայ»՝ Երևանի օպերային թատրոնում",
     titleSeo: "«Մադամ Բաթերֆլայ»՝ Երևանի օպերային թատրոնում",
@@ -1721,6 +1745,11 @@ export const items: EventItem[] = [
     venue: "Ալ. Սպենդիարյանի անվան օպերայի և բալետի ազգային ակադեմիական թատրոն, Թումանյան 54",
     geo: { lat: 40.1862685, lng: 44.5151091 },
     organizer: "Ալ. Սպենդիարյանի անվան օպերայի և բալետի ազգային ակադեմիական թատրոն",
+    image: "/covers/madama-butterfly-yerevan-opera-2026.jpg",
+    imageAlt: "Կարմիր թղթե հովանոց, կախված լապտեր և փոքրիկ սեղան՝ վրան սպիտակ թղթե թիթեռ, ծիրանագույն ֆոնի վրա",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     category: "Օպերա և բալետ",
     tickets: { priceFrom: 5000, priceTo: 15000, currency: "AMD" },
     ticket: { url: "https://www.tomsarkgh.am/en/event/41369/", label: "Տոմսեր" },
@@ -1738,6 +1767,7 @@ export const items: EventItem[] = [
     ],
     i18n: {
       en: {
+        imageAlt: "A red paper parasol, a hanging lantern and a small table with a white paper butterfly on it, on an apricot ground",
         ticket: { url: "https://www.tomsarkgh.am/en/event/41369/", label: "Tickets" },
         title: "Puccini's Madama Butterfly at the Yerevan Opera",
         titleSeo: "Madama Butterfly at the Yerevan Opera",
@@ -1767,7 +1797,7 @@ export const items: EventItem[] = [
   {
     slug: "zayon-halloween-house-party-2026",
     createdAt: "2026-10-09T01:20:00+04:00",
-    updatedAt: "2026-10-09T01:20:00+04:00",
+    updatedAt: "2026-10-09T01:41:00+04:00",
     site: "tick",
     title: "Zayon Halloween house party",
     titleSeo: "Հելոուին Երևանում՝ Zayon Garden-ում, հոկտեմբերի 31",
@@ -1780,6 +1810,11 @@ export const items: EventItem[] = [
     country: "Հայաստան",
     venue: "ZAYON Garden, Դավթաշեն, 1-ին փողոց 2",
     organizer: "Ալվարդ Հովհաննիսյան ԱՁ",
+    image: "/covers/zayon-halloween-house-party-2026.jpg",
+    imageAlt: "Լուսավոր փորագրված դդում՝ խոտի վրա, երկու ծառի միջև ձգված լույսերի շարանի տակ",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     category: "Երեկույթներ",
     tickets: { priceFrom: 7000, priceTo: 10000, currency: "AMD" },
     ticket: { url: "https://www.tomsarkgh.am/en/event/51689/", label: "Տոմսեր" },
@@ -1799,6 +1834,7 @@ export const items: EventItem[] = [
     ],
     i18n: {
       en: {
+        imageAlt: "A glowing carved pumpkin on the grass beneath a string of lights hung between two trees",
         ticket: { url: "https://www.tomsarkgh.am/en/event/51689/", label: "Tickets" },
         title: "Zayon Halloween house party",
         titleSeo: "Halloween in Yerevan: Zayon Garden on 31 October",
