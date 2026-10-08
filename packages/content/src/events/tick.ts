@@ -1661,7 +1661,7 @@ export const items: EventItem[] = [
   {
     slug: "shostakovich-symphony-1-yerevan-2026",
     createdAt: "2026-10-09T01:20:00+04:00",
-    updatedAt: "2026-10-09T01:41:00+04:00",
+    updatedAt: "2026-10-09T01:46:15+04:00",
     site: "tick",
     title: "Շոստակովիչ. Սիմֆոնիա թիվ 1 և ժամանակակից հնչողություններ",
     titleSeo: "Շոստակովիչի Առաջին սիմֆոնիան Երևանում",
@@ -1677,7 +1677,7 @@ export const items: EventItem[] = [
     geo: { lat: 40.1862685, lng: 44.5151091 },
     organizer: "Հայաստանի պետական սիմֆոնիկ նվագախումբ",
     image: "/covers/shostakovich-symphony-1-yerevan-2026.jpg",
-    imageAlt: "Կարմիր ջութակ և աղեղ՝ բաց նոտագրքի վրա, նարնջագույն ֆոնի վրա",
+    imageAlt: "Կարմիր ջութակ և աղեղ՝ բաց գրքի վրա, նարնջագույն ֆոնի վրա",
     imageKind: "generated",
     imageWidth: 1536,
     imageHeight: 864,
@@ -1699,7 +1699,7 @@ export const items: EventItem[] = [
     ],
     i18n: {
       en: {
-        imageAlt: "A red violin and bow lying on an open book of sheet music, on an orange ground",
+        imageAlt: "A red violin and bow lying across an open book, on an orange ground",
         ticket: { url: "https://www.tomsarkgh.am/en/event/51292/", label: "Tickets" },
         title: "Shostakovich: Symphony No. 1 and Contemporary Sounds",
         titleSeo: "Shostakovich's First Symphony in Yerevan",

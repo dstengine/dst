@@ -89,7 +89,10 @@
         "detail": "the ribbon plain flat paper of even width with no markings, five or six clean right-angled turns, torn paper edges, flat empty ground around it, hard shadows beneath the ribbon"
       },
       "halloween-in-sleepy-hollow-2026": "a low arched stone bridge over a dark stream, a bare twisting tree leaning over it from the left bank, a single round carved lantern disc resting on the bridge parapet",
-      "off-broadway-week-fall-2026": "two identical theatre tickets overlapping at an angle, one offset from the other, a perforated stub on each"
+      "off-broadway-week-fall-2026": {
+        "idiom": "vector",
+        "subject": "two identical small theatre seats standing side by side in the centre of the frame, each a plain flat shape with a rounded back and a folded-down seat, an empty flat ground around them, nothing written anywhere"
+      }
     },
     "ldn": {
       "london-design-festival-2026": {
@@ -394,7 +397,10 @@
       "pagliacci-yerevan-opera-2026": "a clown's pointed hat and a plain mask resting on a small drum in front of a little travelling-show stage with its curtain half drawn, wide empty ground on both sides",
       "bakian-sings-aznavour-yerevan-2026": "a single acoustic guitar leaning against a plain wooden chair on an empty stage under one round spotlight, wide empty ground on both sides",
       "tamar-ballet-yerevan-opera-2026": "a small rocky island in the middle of a dark still lake with one lit lantern on it, a long path of light running across the water towards the viewer, low mountains behind",
-      "shostakovich-symphony-1-yerevan-2026": "a single red violin and bow lying across an open, empty music stand, a few loose sheet-music pages lifting in a draught behind it, wide empty ground on both sides",
+      "shostakovich-symphony-1-yerevan-2026": {
+        "idiom": "lino",
+        "subject": "a single violin and bow lying across an open, empty music stand, a few loose blank pages lifting behind it, wide empty ground on both sides"
+      },
       "madama-butterfly-yerevan-opera-2026": "a closed paper parasol leaning beside a small low lacquered table holding one folded paper butterfly, a round paper lantern hanging above, wide empty ground on both sides",
       "zayon-halloween-house-party-2026": "a carved pumpkin lantern glowing on the grass of a night garden under a string of round party lights hung between two dark trees, wide empty ground on both sides"
     }
@@ -478,7 +484,10 @@
         "detail": "the horse cut as one flat silhouette in mid-stride occupying the left two thirds of the frame, seven small round lantern shapes of decreasing size receding behind it in a gentle curve, hard shadow beneath the horse"
       },
       "no-pumpkin-flotilla-on-the-harlem-meer-this-year": "a dark still lake filling the lower half of the frame, a row of round carved pumpkin lanterns with triangle eyes sitting unlit along the near shore, a thin crescent moon disc high above, the open water between them and the far bank completely empty",
-      "trick-or-streets-2026-160-car-free-streets": "a long straight street running across the frame with no cars on it, small round carved pumpkin lanterns spaced along both kerbs",
+      "trick-or-streets-2026-160-car-free-streets": {
+        "idiom": "vector",
+        "subject": "a flat map seen from directly overhead, plain flat rectangles in two tones for the blocks, one wide street crossing the middle with nothing on it at all, a row of small round orange pumpkin shapes along both of its kerbs"
+      },
       "humm-opens-in-the-west-village-on-october-10": "a whole roast chicken on an oval plate beside a tall stemmed martini glass, seen from the side on a plain table"
     },
     "ldn": {
@@ -540,8 +549,14 @@
         "subject": "a tall bunch of cut paper stems and leaf shapes standing in a plain cylinder vase",
         "detail": "the vase a simple flat cylinder at the lower centre, nine or ten long stems rising from it fanning outward, each ending in a simple leaf or round bloom shape, cut from three paper tones, generous empty ground around them"
       },
-      "zula-opens-in-spitalfields-on-1-november": "a tall stacked burger built from layered flat paper discs, bun, patty, cheese and leaf each a separate cut layer, standing alone in the centre",
-      "coqfighter-opens-at-market-halls-canary-wharf": "three glossy chicken wings fanned on a round plate seen from directly above, one small red chilli beside the plate"
+      "zula-opens-in-spitalfields-on-1-november": {
+        "idiom": "lino",
+        "subject": "a tall stacked burger standing alone in the centre of the frame, bun, patty, cheese and a leaf of lettuce each a separate flat band"
+      },
+      "coqfighter-opens-at-market-halls-canary-wharf": {
+        "idiom": "vector",
+        "subject": "three chicken wing shapes fanned out on a round plate, one small red chilli lying beside the plate"
+      }
     },
     "cmx": {
       "la-marca-de-agua-de-claude-no-esta-en-las-palabras": "flat paper collage on warm cream, a long row of small identical magenta paper cards of exactly the same size and colour standing across the frame, the gaps between them clearly uneven while the cards themselves are indistinguishable, soft shadows, no lettering, no numerals, no text of any kind",

@@ -4,8 +4,13 @@ export const items: EventItem[] = [
   {
     slug: "moc27-motor-outdoor-camping-festival-dubai",
     createdAt: "2026-10-07T20:50:00+04:00",
-    updatedAt: "2026-10-07T20:50:00+04:00",
+    updatedAt: "2026-10-09T01:46:15+04:00",
     site: "dst",
+    image: "/covers/moc27-motor-outdoor-camping-festival-dubai.jpg",
+    imageAlt: "A small four-wheel drive on the crest of a pale dune under a white sun",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "MOC27: Motor, Outdoor & Camping Festival",
     titleSeo: "MOC27 Motor, Outdoor & Camping Festival in Dubai",
     summary:

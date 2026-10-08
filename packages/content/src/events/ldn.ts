@@ -4,8 +4,13 @@ export const items: EventItem[] = [
   {
     slug: "rowan-live-gillian-lynne-theatre-2027",
     createdAt: "2026-10-07T20:50:00+04:00",
-    updatedAt: "2026-10-07T20:50:00+04:00",
+    updatedAt: "2026-10-09T01:46:15+04:00",
     site: "ldn",
+    image: "/covers/rowan-live-gillian-lynne-theatre-2027.jpg",
+    imageAlt: "An empty red armchair standing centre stage between open red curtains",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
     title: "Rowan Live at the Gillian Lynne Theatre",
     titleSeo: "Rowan Live, Gillian Lynne Theatre, Feb–Mar 2027",
     summary:
