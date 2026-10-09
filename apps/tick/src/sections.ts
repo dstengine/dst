@@ -28,6 +28,9 @@ const KINDS: { slug: string; hy: string; en: string }[] = [
   { slug: "fashion", hy: "Նորաձևություն", en: "Fashion" },
   { slug: "opera-ballet", hy: "Օպերա և բալետ", en: "Opera and ballet" },
   { slug: "parties", hy: "Երեկույթներ", en: "Parties" },
+  // A season rather than a format: the daytime anime festival and the
+  // evening club parties belong together for the question people ask.
+  { slug: "halloween", hy: "Հելոուին", en: "Halloween" },
 ];
 
 const tags = (lang: Lang): Record<string, Vocabulary> =>
@@ -47,6 +50,35 @@ export function sections(items: FeedItem[], lang: Lang): Section[] {
     tags: tags(lang),
     home: HOME[lang],
     copy: (g) => {
+      if (g.key === "Հելոուին" || g.key === "Halloween") {
+        return lang === "hy"
+          ? {
+              title: "Հելոուին Երևանում 2026․ փառատոն և երեկույթներ",
+              description:
+                "Հելոուին Երևանում․ Aki Fest-ի ցերեկային անիմե փառատոնը, Oxygen-ի 18+ երեկույթը և Zayon Garden-ի բացօթյա երեկոն՝ ամսաթվերով ու տոմսերի գներով։",
+              h1: "Հելոուին Երևանում",
+              lede: "Հոկտեմբերի 31-ի երեք տարբերակ՝ ցերեկային անիմե փառատոն, գիշերային ակումբ և բացօթյա այգի։ Տեսեք ժամերը, մուտքի կանոններն ու տոմսերի գները՝ մինչև ընտրելը։",
+              headings: {
+                events: "Որտե՞ղ նշել Հելոուինը",
+                upcoming: "2026-ի ամսաթվերը",
+                past: "Անցած միջոցառումներ",
+                news: "Հելոուինի նորություններ",
+              },
+            }
+          : {
+              title: "Halloween in Yerevan 2026: events and parties",
+              description:
+                "Halloween in Yerevan: Aki Fest's daytime anime festival, Oxygen's 18+ party and an open-air night at Zayon Garden, with dates and ticket prices.",
+              h1: "Halloween in Yerevan",
+              lede: "Three ways to spend 31 October: an anime festival by day, a club at night and an open-air garden party. Check the hours, entry rules and prices before choosing.",
+              headings: {
+                events: "Where to go for Halloween",
+                upcoming: "2026 dates",
+                past: "Past events",
+                news: "Halloween news",
+              },
+            };
+      }
       const what = g.voc.plural ?? g.key;
       return lang === "hy"
         ? {
@@ -80,7 +112,7 @@ export function sectionHref(item: FeedItem, lang: Lang): string | undefined {
 
 // The tag this site is pushing right now, if any — see `promotedSection`.
 // Nothing yet: a promotion needs a season with enough dates under it.
-const PROMOTED: Record<Lang, string | undefined> = { hy: undefined, en: undefined };
+const PROMOTED: Record<Lang, string | undefined> = { hy: "Հելոուին", en: "Halloween" };
 
 const today = new Date().toISOString().slice(0, 10);
 export const promoted = {
