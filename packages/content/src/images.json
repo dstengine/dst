@@ -11046,6 +11046,54 @@
         ]
       ]
     },
+    "/covers/lord-mayors-show-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/lord-mayors-show-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/lord-mayors-show-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/lord-mayors-show-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/lord-mayors-show-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/lord-mayors-show-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/lord-mayors-show-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/lord-mayors-show-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/lord-mayors-show-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/lord-mayors-show-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/lord-mayors-show-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/nineteen-boroughs-close-a-road-for-a-bicycle.jpg": {
       "width": 1536,
       "height": 864,

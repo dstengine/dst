@@ -2,6 +2,59 @@ import type { NewsItem } from "../types.ts";
 
 export const items: NewsItem[] = [
   {
+    slug: "lord-mayors-show-2026-route-and-viewing-guide",
+    createdAt: "2026-10-09T10:00:00+04:00",
+    updatedAt: "2026-10-09T10:00:00+04:00",
+    site: "lnd",
+    image: "/covers/lord-mayors-show-2026.jpg",
+    imageAlt: "A red paper ceremonial coach beneath a line of bunting",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Lord Mayor's Show 2026: route, timings and where to watch",
+    titleSeo: "Lord Mayor's Show 2026 in London: route and timings",
+    summary:
+      "The free City of London procession starts at Mansion House at 11am on 14 November. Here is the route, return timetable, quieter viewing stretch and travel advice.",
+    date: "2026-10-09",
+    city: "London",
+    country: "United Kingdom",
+    category: "Heritage",
+    source: {
+      name: "The Lord Mayor's Show",
+      url: "https://www.lordmayorsshow.london/",
+      verifiedOn: "2026-10-09",
+    },
+    body: [
+      "The <strong>698th Lord Mayor of London</strong>, Alderman Bronek Masojada, will take part in the Show on <strong>Saturday 14 November 2026</strong>. The free procession starts from Mansion House at <strong>11am</strong>, passes through the Square Mile to the Royal Courts of Justice, then returns along the Thames in the early afternoon. This is a civic procession for the Lord Mayor of the City of London, not the Mayor of London. See the <a href=\"/events/lord-mayors-show-2026-london-boroughs/\">event page</a> for the date, map and official source.",
+      "## The procession route",
+      "The outward route runs from Mansion House via <strong>Cheapside</strong>, <strong>St Paul's Cathedral</strong> and <strong>Fleet Street</strong> to the Royal Courts of Justice at Aldwych. The return starts from Temple Place at about <strong>1.10pm</strong>, follows the Embankment and Queen Victoria Street, and brings the Lord Mayor back to Mansion House at about 2.30pm. <a href=\"https://www.google.com/maps/search/?api=1&amp;query=Mansion+House%2C+London\" target=\"_blank\" rel=\"noopener noreferrer\">📍 Mansion House map</a> · <a href=\"https://www.google.com/maps/search/?api=1&amp;query=St+Paul%27s+Cathedral%2C+London\" target=\"_blank\" rel=\"noopener noreferrer\">📍 St Paul's map</a> · <a href=\"https://www.google.com/maps/search/?api=1&amp;query=Royal+Courts+of+Justice%2C+London\" target=\"_blank\" rel=\"noopener noreferrer\">📍 Royal Courts map</a>.",
+      "## Where to watch",
+      "For the full morning spectacle, the organisers recommend the stretch between <strong>Bank and St Paul's</strong> as the outward procession passes from about 11am to noon. It is the busiest part of the route. For more space, go to the return leg along the <strong>Embankment between Temple and Blackfriars</strong>, from around 1.15pm; the pavements are wider and the crowd is lighter. The procession takes well over an hour to pass any one point. Once it is moving, you cannot cross the route at street level; use the underpasses at Bank, City Thameslink, Mansion House or Blackfriars.",
+      "## Getting there on Show day",
+      "Do not plan to drive into the City. Roads around the route close, buses divert and nearby parking bays are suspended. Bank and St Paul's stations are closest to the outward route but get very busy. Farringdon and City Thameslink are useful alternatives; Temple and Blackfriars are well placed for the return. The City Corporation and TfL publish the final road and bus arrangements nearer the date.",
+      "## What is confirmed so far",
+      "The Lord Mayor Elect is <strong>Alderman Bronek Masojada</strong>, who takes office at the Silent Ceremony on Friday 13 November. The procession commemorates the journey the newly appointed Lord Mayor has made to Westminster to swear allegiance to the Crown since the early 13th century. The 2025 procession had more than 7,000 participants and stretched for over three miles when lined up. The organisers have not yet published the 2026 processional order, so a final list of bands, companies and floats is still to come.",
+      "## Cost and access",
+      "Watching is free and does not require a ticket. The official souvenir programme, which carries the running order, costs <strong>£5</strong> from Scout and Guide volunteers on the day, cash only. The organisers publish separate access guidance for wheelchair users and visitors who want to avoid the densest crowds. Check their <a href=\"https://www.lordmayorsshow.london/practicalities/where-to-go/\" target=\"_blank\" rel=\"noopener noreferrer\">viewing advice</a> and <a href=\"https://www.lordmayorsshow.london/practicalities/timetable/\" target=\"_blank\" rel=\"noopener noreferrer\">official timetable</a> before setting out.",
+    ],
+    faq: [
+      {
+        q: "When does the Lord Mayor's Show start?",
+        a: "At 11am on Saturday 14 November 2026, from Mansion House.",
+      },
+      {
+        q: "Is the Lord Mayor's Show free to watch?",
+        a: "Yes. The procession is free and requires no ticket. The optional printed programme costs £5.",
+      },
+      {
+        q: "What is the quieter place to watch?",
+        a: "The return leg along the Embankment, especially between Temple and Blackfriars, from about 1.15pm.",
+      },
+    ],
+    expertise:
+      "The two useful decisions are which half of the procession to see and how early to arrive. Bank to St Paul's is the closest view of the morning departure and also the tightest crowd; Temple to Blackfriars gives more room for the return. Roads and buses change for the day, so the Tube, rail and river bus are more dependable than a car or a bus through the City.",
+  },
+  {
     slug: "zula-opens-in-spitalfields-on-1-november",
     createdAt: "2026-10-07T20:50:00+04:00",
     updatedAt: "2026-10-09T01:46:15+04:00",

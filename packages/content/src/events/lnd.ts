@@ -860,6 +860,67 @@ export const items: EventItem[] = [
   },
 
   {
+    slug: "lord-mayors-show-2026-london-boroughs",
+    createdAt: "2026-10-09T10:00:00+04:00",
+    updatedAt: "2026-10-09T10:00:00+04:00",
+    site: "lnd",
+    image: "/covers/lord-mayors-show-2026.jpg",
+    imageAlt: "A red paper ceremonial coach beneath a line of bunting",
+    imageKind: "generated",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Lord Mayor's Show 2026",
+    titleSeo: "Lord Mayor's Show 2026 in the City of London",
+    summary:
+      "The City of London's free Lord Mayor's Show returns on Saturday 14 November: an eight-century civic procession starting from Mansion House at 11am.",
+    start: "2026-11-14",
+    startTime: "11:00",
+    utcOffset: "+00:00",
+    venue: "Mansion House, City of London",
+    geo: { name: "Mansion House", lat: 51.5136, lng: -0.0890 },
+    city: "London",
+    country: "United Kingdom",
+    organizer: "The Lord Mayor's Show",
+    category: "Heritage",
+    tickets: { priceFrom: 0, currency: "GBP" },
+    source: {
+      name: "The Lord Mayor's Show",
+      url: "https://www.lordmayorsshow.london/",
+      verifiedOn: "2026-10-09",
+    },
+    body: [
+      "The Lord Mayor's Show is a three-mile civic procession through the Square Mile, held each November for more than eight centuries. The <strong>698th Lord Mayor of London</strong>, Alderman Bronek Masojada, will take part when the 2026 procession leaves Mansion House at <strong>11am on Saturday 14 November</strong>. It is free to watch, and you do not need a ticket.",
+      "## The route through the City and back",
+      "The outward procession runs from <strong>Mansion House</strong> through <strong>Cheapside</strong>, past <strong>St Paul's Cathedral</strong> and along <strong>Fleet Street</strong> to the Royal Courts of Justice. It returns in the early afternoon via the Embankment and Queen Victoria Street. The Lord Mayor Elect, <strong>Alderman Bronek Masojada</strong>, takes office the day before; this will be the 698th Lord Mayor's Show.",
+      "## Where to watch",
+      "For the busiest stretch, the organisers suggest watching between <strong>Bank and St Paul's</strong> as the outward procession passes from about 11am to noon. For more room, the return leg moves along the Embankment from about <strong>1.15pm</strong>; Temple to Blackfriars is the quieter stretch. The procession takes well over an hour to pass any one point.",
+      "## Getting there",
+      "Use public transport: roads through much of the City are closed, buses are diverted and parking bays are suspended. Bank and St Paul's stations are close to the outward route but get busy; Farringdon and City Thameslink are alternatives. Temple and Blackfriars work well for the return. Detailed road and bus arrangements are published nearer the day.",
+      "## Free entry and access",
+      "There is no admission charge. The organisers describe the procession as accessible and publish advice for wheelchair users and anyone concerned about crowds. A printed souvenir programme with the running order costs <strong>£5</strong> on the day; the 2026 processional order has not yet been announced.",
+    ],
+    faq: [
+      {
+        q: "When is the Lord Mayor's Show in 2026?",
+        a: "Saturday 14 November 2026. The procession sets off from Mansion House at 11am.",
+      },
+      {
+        q: "Is the Lord Mayor's Show free?",
+        a: "Yes. Watching the procession is free and no ticket is required. The optional printed programme costs £5.",
+      },
+      {
+        q: "Where does the procession go?",
+        a: "From Mansion House via Cheapside, St Paul's Cathedral and Fleet Street to the Royal Courts of Justice, then back via the Embankment and Queen Victoria Street.",
+      },
+      {
+        q: "Where is a quieter place to watch?",
+        a: "The organisers suggest the return leg along the Embankment from about 1.15pm, especially between Temple and Blackfriars.",
+      },
+    ],
+    expertise:
+      "The outward and return journeys suit different plans. Bank and St Paul's put you in the thick of the morning procession, while Temple and Blackfriars offer more pavement and a little more breathing room for the return. Either way, pick one side of the route before the bands arrive: once the procession is moving, you cannot cross the road at street level.",
+  },
+  {
     slug: "curse-of-the-mummy-london-dungeon-2026",
     createdAt: "2026-09-12T22:20:00+04:00",
     updatedAt: "2026-09-12T22:20:00+04:00",
