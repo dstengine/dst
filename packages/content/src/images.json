@@ -26606,6 +26606,62 @@
         ]
       ]
     },
+    "/covers/cyfest-17-yerevan-2026.jpg": {
+      "width": 3072,
+      "height": 1728,
+      "avif": [
+        [
+          480,
+          "/covers/cyfest-17-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/cyfest-17-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/cyfest-17-yerevan-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/cyfest-17-yerevan-2026-1440.avif"
+        ],
+        [
+          1920,
+          "/covers/cyfest-17-yerevan-2026-1920.avif"
+        ],
+        [
+          3072,
+          "/covers/cyfest-17-yerevan-2026-3072.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/cyfest-17-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/cyfest-17-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/cyfest-17-yerevan-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/cyfest-17-yerevan-2026-1440.webp"
+        ],
+        [
+          1920,
+          "/covers/cyfest-17-yerevan-2026-1920.webp"
+        ],
+        [
+          3072,
+          "/covers/cyfest-17-yerevan-2026-3072.webp"
+        ]
+      ]
+    },
     "/covers/discover-armenia-balloon-festival-2026.jpg": {
       "width": 1280,
       "height": 720,
@@ -26739,6 +26795,62 @@
         [
           1536,
           "/covers/equinox-fest-autumn-chapter-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/face-of-humanity-surenyants-yerevan-2026.jpg": {
+      "width": 3072,
+      "height": 1728,
+      "avif": [
+        [
+          480,
+          "/covers/face-of-humanity-surenyants-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/face-of-humanity-surenyants-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/face-of-humanity-surenyants-yerevan-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/face-of-humanity-surenyants-yerevan-2026-1440.avif"
+        ],
+        [
+          1920,
+          "/covers/face-of-humanity-surenyants-yerevan-2026-1920.avif"
+        ],
+        [
+          3072,
+          "/covers/face-of-humanity-surenyants-yerevan-2026-3072.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/face-of-humanity-surenyants-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/face-of-humanity-surenyants-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/face-of-humanity-surenyants-yerevan-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/face-of-humanity-surenyants-yerevan-2026-1440.webp"
+        ],
+        [
+          1920,
+          "/covers/face-of-humanity-surenyants-yerevan-2026-1920.webp"
+        ],
+        [
+          3072,
+          "/covers/face-of-humanity-surenyants-yerevan-2026-3072.webp"
         ]
       ]
     },
@@ -27342,6 +27454,62 @@
         ]
       ]
     },
+    "/covers/qarpet-cafesjian-yerevan-2026.jpg": {
+      "width": 3072,
+      "height": 1728,
+      "avif": [
+        [
+          480,
+          "/covers/qarpet-cafesjian-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/qarpet-cafesjian-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/qarpet-cafesjian-yerevan-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/qarpet-cafesjian-yerevan-2026-1440.avif"
+        ],
+        [
+          1920,
+          "/covers/qarpet-cafesjian-yerevan-2026-1920.avif"
+        ],
+        [
+          3072,
+          "/covers/qarpet-cafesjian-yerevan-2026-3072.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/qarpet-cafesjian-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/qarpet-cafesjian-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/qarpet-cafesjian-yerevan-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/qarpet-cafesjian-yerevan-2026-1440.webp"
+        ],
+        [
+          1920,
+          "/covers/qarpet-cafesjian-yerevan-2026-1920.webp"
+        ],
+        [
+          3072,
+          "/covers/qarpet-cafesjian-yerevan-2026-3072.webp"
+        ]
+      ]
+    },
     "/covers/rachmaninov-piano-concertos-1-3-yerevan-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -27819,6 +27987,62 @@
         [
           1536,
           "/covers/turandot-yerevan-opera-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/unfamiliar-city-gagik-ghazanchyan-yerevan-2026.jpg": {
+      "width": 3072,
+      "height": 1728,
+      "avif": [
+        [
+          480,
+          "/covers/unfamiliar-city-gagik-ghazanchyan-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/unfamiliar-city-gagik-ghazanchyan-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/unfamiliar-city-gagik-ghazanchyan-yerevan-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/unfamiliar-city-gagik-ghazanchyan-yerevan-2026-1440.avif"
+        ],
+        [
+          1920,
+          "/covers/unfamiliar-city-gagik-ghazanchyan-yerevan-2026-1920.avif"
+        ],
+        [
+          3072,
+          "/covers/unfamiliar-city-gagik-ghazanchyan-yerevan-2026-3072.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/unfamiliar-city-gagik-ghazanchyan-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/unfamiliar-city-gagik-ghazanchyan-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/unfamiliar-city-gagik-ghazanchyan-yerevan-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/unfamiliar-city-gagik-ghazanchyan-yerevan-2026-1440.webp"
+        ],
+        [
+          1920,
+          "/covers/unfamiliar-city-gagik-ghazanchyan-yerevan-2026-1920.webp"
+        ],
+        [
+          3072,
+          "/covers/unfamiliar-city-gagik-ghazanchyan-yerevan-2026-3072.webp"
         ]
       ]
     },

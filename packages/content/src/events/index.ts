@@ -27,19 +27,19 @@ export function eventsBySite(site: string): EventItem[] {
   return BY_SITE[site] ?? [];
 }
 
-/** Ascending by start date, only start >= now, capped at n. */
+/** Ascending by start date; include events still running, capped at n. */
 export function upcomingEvents(items: EventItem[], n: number, now: Date = new Date()): EventItem[] {
   const cutoff = now.toISOString().slice(0, 10);
   return items
-    .filter((e) => e.start >= cutoff)
+    .filter((e) => (e.end ?? e.start) >= cutoff)
     .sort((a, b) => (a.start < b.start ? -1 : a.start > b.start ? 1 : 0))
     .slice(0, n);
 }
 
-/** Descending by start date — everything before now, most recent first. */
+/** Descending by start date — only ended events, most recent first. */
 export function pastEvents(items: EventItem[], now: Date = new Date()): EventItem[] {
   const cutoff = now.toISOString().slice(0, 10);
   return items
-    .filter((e) => e.start < cutoff)
+    .filter((e) => (e.end ?? e.start) < cutoff)
     .sort((a, b) => (a.start < b.start ? 1 : a.start > b.start ? -1 : 0));
 }
