@@ -15,6 +15,12 @@ export const items: NewsItem[] = [
     titleSeo: "Երևանի 2808-ամյակը՝ համերգներ և փառատոներ",
     summary:
       "Երևանի քաղաքապետարանը հրապարակել է հոկտեմբերի 9–10-ի ծրագիրը․ Դիանա Աբգարի այգում՝ գարեջրի փառատոն ու Դիանա Արբենինայի համերգ, հաջորդ օրը՝ երաժշտական բեմեր ամբողջ քաղաքում։",
+    image: "/covers/yerevan-2808th-anniversary-2026.jpg",
+    imageAlt: "Երևանի 2808-ամյակի նարնջագույն և կարմիր տոնական պաստառը՝ հոկտեմբերի 9–10-ի ամսաթվերով",
+    imageKind: "illustration",
+    imageCredit: "Երևանի քաղաքապետարան",
+    imageWidth: 523,
+    imageHeight: 349,
     category: "Երևան",
     city: "Երևան",
     country: "Հայաստան",
@@ -38,6 +44,8 @@ export const items: NewsItem[] = [
     ],
     i18n: {
       en: {
+        imageAlt: "Orange and red Yerevan 2,808th anniversary poster with the 9–10 October dates",
+        imageCredit: "Yerevan Municipality",
         title: "Yerevan marks its 2,808th anniversary with concerts and festivals",
         cardTitle: "Yerevan's 2,808th anniversary, 9–10 October",
         titleSeo: "Yerevan's 2,808th anniversary: concerts and festivals",
@@ -73,6 +81,12 @@ export const items: NewsItem[] = [
     titleSeo: "Օդապարիկների փառատոնը Երևանում՝ մինչև հոկտեմբերի 11-ը",
     summary:
       "«Բացահայտիր Հայաստանը երկնքից» փառատոնի ութերորդ թողարկումը հոկտեմբերի 6–11-ն է․ Visit Yerevan-ը Երևանի թռիչքները նշում է առավոտյան ժամը 08:00-ին։",
+    image: "/covers/discover-armenia-balloon-festival-2026.jpg",
+    imageAlt: "Discover Armenia from the Sky փառատոնի պաստառը՝ Արարատի ֆոնին թռչող գունավոր օդապարիկներով",
+    imageKind: "illustration",
+    imageCredit: "Visit Yerevan",
+    imageWidth: 1280,
+    imageHeight: 720,
     category: "Փառատոներ",
     city: "Երևան",
     country: "Հայաստան",
@@ -93,6 +107,8 @@ export const items: NewsItem[] = [
     ],
     i18n: {
       en: {
+        imageAlt: "Discover Armenia from the Sky festival poster with colourful balloons flying over Mount Ararat",
+        imageCredit: "Visit Yerevan",
         title: "Yerevan's balloon festival runs until 11 October",
         cardTitle: "Twenty balloons over Yerevan",
         titleSeo: "Yerevan balloon festival runs until 11 October",
