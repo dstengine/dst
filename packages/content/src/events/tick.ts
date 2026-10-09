@@ -1,4 +1,5 @@
 import type { EventItem } from "../types.ts";
+import { items as cityDayItems } from "./tick-city-day.ts";
 
 // tick publishes in Armenian first and English second: each entry is
 // written in Armenian and carries its English in `i18n.en` — see
@@ -10,6 +11,7 @@ import type { EventItem } from "../types.ts";
 // read off Tomsarkgh, Yerevan's main box office, on the day in `verifiedOn`.
 
 export const items: EventItem[] = [
+  ...cityDayItems,
 
   {
     slug: "moct-clubnight-yerevan-2026-10-09",

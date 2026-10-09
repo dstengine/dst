@@ -27454,6 +27454,206 @@
         ]
       ]
     },
+    "/covers/yerevan-city-day-akunk-2026.jpg": {
+      "width": 1280,
+      "height": 720,
+      "avif": [
+        [
+          480,
+          "/covers/yerevan-city-day-akunk-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/yerevan-city-day-akunk-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/yerevan-city-day-akunk-2026-1024.avif"
+        ],
+        [
+          1280,
+          "/covers/yerevan-city-day-akunk-2026-1280.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/yerevan-city-day-akunk-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/yerevan-city-day-akunk-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/yerevan-city-day-akunk-2026-1024.webp"
+        ],
+        [
+          1280,
+          "/covers/yerevan-city-day-akunk-2026-1280.webp"
+        ]
+      ]
+    },
+    "/covers/yerevan-city-day-fkj-2026.jpg": {
+      "width": 1280,
+      "height": 720,
+      "avif": [
+        [
+          480,
+          "/covers/yerevan-city-day-fkj-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/yerevan-city-day-fkj-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/yerevan-city-day-fkj-2026-1024.avif"
+        ],
+        [
+          1280,
+          "/covers/yerevan-city-day-fkj-2026-1280.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/yerevan-city-day-fkj-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/yerevan-city-day-fkj-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/yerevan-city-day-fkj-2026-1024.webp"
+        ],
+        [
+          1280,
+          "/covers/yerevan-city-day-fkj-2026-1280.webp"
+        ]
+      ]
+    },
+    "/covers/yerevan-city-day-nemra-2026.jpg": {
+      "width": 1280,
+      "height": 720,
+      "avif": [
+        [
+          480,
+          "/covers/yerevan-city-day-nemra-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/yerevan-city-day-nemra-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/yerevan-city-day-nemra-2026-1024.avif"
+        ],
+        [
+          1280,
+          "/covers/yerevan-city-day-nemra-2026-1280.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/yerevan-city-day-nemra-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/yerevan-city-day-nemra-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/yerevan-city-day-nemra-2026-1024.webp"
+        ],
+        [
+          1280,
+          "/covers/yerevan-city-day-nemra-2026-1280.webp"
+        ]
+      ]
+    },
+    "/covers/yerevan-city-day-symphonic-folk-2026.jpg": {
+      "width": 1280,
+      "height": 720,
+      "avif": [
+        [
+          480,
+          "/covers/yerevan-city-day-symphonic-folk-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/yerevan-city-day-symphonic-folk-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/yerevan-city-day-symphonic-folk-2026-1024.avif"
+        ],
+        [
+          1280,
+          "/covers/yerevan-city-day-symphonic-folk-2026-1280.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/yerevan-city-day-symphonic-folk-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/yerevan-city-day-symphonic-folk-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/yerevan-city-day-symphonic-folk-2026-1024.webp"
+        ],
+        [
+          1280,
+          "/covers/yerevan-city-day-symphonic-folk-2026-1280.webp"
+        ]
+      ]
+    },
+    "/covers/yerevan-city-day-vanco-2026.jpg": {
+      "width": 1280,
+      "height": 720,
+      "avif": [
+        [
+          480,
+          "/covers/yerevan-city-day-vanco-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/yerevan-city-day-vanco-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/yerevan-city-day-vanco-2026-1024.avif"
+        ],
+        [
+          1280,
+          "/covers/yerevan-city-day-vanco-2026-1280.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/yerevan-city-day-vanco-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/yerevan-city-day-vanco-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/yerevan-city-day-vanco-2026-1024.webp"
+        ],
+        [
+          1280,
+          "/covers/yerevan-city-day-vanco-2026-1280.webp"
+        ]
+      ]
+    },
     "/covers/yerevan-fashion-week-2026.jpg": {
       "width": 1536,
       "height": 864,
