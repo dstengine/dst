@@ -862,7 +862,7 @@ export const items: EventItem[] = [
   {
     slug: "lord-mayors-show-2026-london-boroughs",
     createdAt: "2026-10-09T10:00:00+04:00",
-    updatedAt: "2026-10-09T11:00:00+04:00",
+    updatedAt: "2026-10-09T12:00:00+04:00",
     site: "lnd",
     image: "/covers/lord-mayors-show-2026.jpg",
     imageAlt: "A red paper ceremonial coach beneath a line of bunting",
@@ -898,6 +898,8 @@ export const items: EventItem[] = [
       "Use public transport: roads through much of the City are closed, buses are diverted and parking bays are suspended. Bank and St Paul's stations are close to the outward route but get busy; Farringdon and City Thameslink are alternatives. Temple and Blackfriars work well for the return. Detailed road and bus arrangements are published nearer the day.",
       "## Free entry and access",
       "There is no admission charge. The organisers describe the procession as accessible and publish advice for wheelchair users and anyone concerned about crowds. A printed souvenir programme with the running order costs <strong>£5</strong> on the day; the 2026 processional order has not yet been announced.",
+      "## Other things to do in the City that day",
+      "Make an afternoon of it with free entry to <strong>Guildhall Art Gallery</strong> (open 11am–5pm) or join a free guided walk from No. 1 Poultry between 3pm and 3.45pm. See the <a href=\"/news/lord-mayors-show-2026-route-and-viewing-guide/\">full day guide</a> for locations, maps and the procession viewing plan.",
     ],
     faq: [
       {

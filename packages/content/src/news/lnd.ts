@@ -4,17 +4,17 @@ export const items: NewsItem[] = [
   {
     slug: "lord-mayors-show-2026-route-and-viewing-guide",
     createdAt: "2026-10-09T10:00:00+04:00",
-    updatedAt: "2026-10-09T10:00:00+04:00",
+    updatedAt: "2026-10-09T12:00:00+04:00",
     site: "lnd",
     image: "/covers/lord-mayors-show-2026.jpg",
     imageAlt: "A red paper ceremonial coach beneath a line of bunting",
     imageKind: "generated",
     imageWidth: 1536,
     imageHeight: 864,
-    title: "Lord Mayor's Show 2026: route, timings and where to watch",
-    titleSeo: "Lord Mayor's Show 2026 in London: route and timings",
+    title: "Lord Mayor's Show 2026: what is on across the City",
+    titleSeo: "Lord Mayor's Show 2026: London route and day guide",
     summary:
-      "The free City of London procession starts at Mansion House at 11am on 14 November. Here is the route, return timetable, quieter viewing stretch and travel advice.",
+      "Plan Saturday 14 November in the City of London: the free Lord Mayor's procession, Guildhall Art Gallery and afternoon walking tours, with times, locations and maps.",
     date: "2026-10-09",
     city: "London",
     country: "United Kingdom",
@@ -32,6 +32,10 @@ export const items: NewsItem[] = [
       "For the full morning spectacle, the organisers recommend the stretch between <strong>Bank and St Paul's</strong> as the outward procession passes from about 11am to noon. It is the busiest part of the route. For more space, go to the return leg along the <strong>Embankment between Temple and Blackfriars</strong>, from around 1.15pm; the pavements are wider and the crowd is lighter. The procession takes well over an hour to pass any one point. Once it is moving, you cannot cross the route at street level; use the underpasses at Bank, City Thameslink, Mansion House or Blackfriars.",
       "## Getting there on Show day",
       "Do not plan to drive into the City. Roads around the route close, buses divert and nearby parking bays are suspended. Bank and St Paul's stations are closest to the outward route but get very busy. Farringdon and City Thameslink are useful alternatives; Temple and Blackfriars are well placed for the return. The City Corporation and TfL publish the final road and bus arrangements nearer the date.",
+      "## Make a full day of it: what else is on",
+      "The procession is the main event, but there are two confirmed ways to spend the afternoon nearby. <strong>Guildhall Art Gallery</strong> is open <strong>11am–5pm with free entry</strong>; its paintings trace London across more than 350 years, and the gallery has also shown portraits of past Lady Mayors. It is at Guildhall Yard, a short walk north of Bank. <a href=\"https://www.google.com/maps/search/?api=1&amp;query=Guildhall+Art+Gallery%2C+London\" target=\"_blank\" rel=\"noopener noreferrer\">📍 Guildhall Art Gallery map</a>.",
+      "From <strong>3pm to 3.45pm</strong>, free guided walks of the City's historic streets leave at regular intervals from <strong>No. 1 Poultry, Bucklersbury Passage</strong>. Each walk lasts about an hour; the route is described as wheelchair friendly, though some street surfaces are uneven. Donations to the Lord Mayor's Charity Appeal are welcome. <a href=\"https://www.google.com/maps/search/?api=1&amp;query=No.+1+Poultry%2C+London\" target=\"_blank\" rel=\"noopener noreferrer\">📍 No. 1 Poultry meeting point</a>. Before or after the procession, the <strong>City Information Centre</strong> beside St Paul's Cathedral can help with visitor information and the City Visitor Trail. <a href=\"https://www.google.com/maps/search/?api=1&amp;query=City+Information+Centre+St+Paul%27s%2C+London\" target=\"_blank\" rel=\"noopener noreferrer\">📍 City Information Centre map</a>.",
+      "A practical order is: choose a morning viewing point for the procession; visit Guildhall Art Gallery while the crowd thins; then join a 3pm walking tour. The gallery and tours are separate City activities, so check the City Corporation's listing for any changes before travelling.",
       "## What is confirmed so far",
       "The Lord Mayor Elect is <strong>Alderman Bronek Masojada</strong>, who takes office at the Silent Ceremony on Friday 13 November. The procession commemorates the journey the newly appointed Lord Mayor has made to Westminster to swear allegiance to the Crown since the early 13th century. The 2025 procession had more than 7,000 participants and stretched for over three miles when lined up. The organisers have not yet published the 2026 processional order, so a final list of bands, companies and floats is still to come.",
       "## Cost and access",
@@ -49,6 +53,10 @@ export const items: NewsItem[] = [
       {
         q: "What is the quieter place to watch?",
         a: "The return leg along the Embankment, especially between Temple and Blackfriars, from about 1.15pm.",
+      },
+      {
+        q: "What else can I do in the City that day?",
+        a: "Guildhall Art Gallery is open 11am–5pm with free entry, and free guided City walks leave from No. 1 Poultry between 3pm and 3.45pm.",
       },
     ],
     expertise:
