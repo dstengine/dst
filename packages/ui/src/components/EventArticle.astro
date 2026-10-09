@@ -93,6 +93,10 @@ interface Props {
 }
 const { item, backHref, ticketHref, sourceHref, more = [], moreNews = [], newsBase = "/news/", eventsBase = "/events/", publisher, categoryHref, promoted, where, pluralOf, moreEventsText, countdown = false, locale = "en-US", labels: labelOverrides } = Astro.props;
 const L = withLabels(labelOverrides);
+// Venue is part of the page's translated copy; geo.name stays with the
+// coordinates as the source-language map label. Prefer the venue so a
+// translated event page does not show an untranslated map heading.
+const mapPlace = item.venue ?? item.geo?.name ?? "";
 
 const todayIso = new Date().toISOString().slice(0, 10);
 const moreCards = more
@@ -589,12 +593,12 @@ const relatedItems = (item.related ?? []).map((card) => ({
 
   {item.geo && (
     <section class="locate">
-      <h2>{L.locate(item.geo.name)}</h2>
+      <h2>{L.locate(mapPlace)}</h2>
       <div class="locate-map">
         <iframe
           src={`https://www.openstreetmap.org/export/embed.html?bbox=${item.geo.lng - 0.02}%2C${item.geo.lat - 0.01}%2C${item.geo.lng + 0.02}%2C${item.geo.lat + 0.01}&layer=mapnik&marker=${item.geo.lat}%2C${item.geo.lng}`}
           loading="lazy"
-          title={L.mapTitle(item.geo.name)}
+          title={L.mapTitle(mapPlace)}
         />
       </div>
     </section>

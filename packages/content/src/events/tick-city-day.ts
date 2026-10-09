@@ -235,6 +235,14 @@ export const items: EventItem[] = [
         imageAlt: "Visit Yerevan jazz poster with FKJ and his 20:00 performance time on 10 October",
         imageCredit: "Visit Yerevan",
         speakersHeading: "Performers",
+        speakers: [
+          { name: "FKJ" },
+          { name: "Armenian State Jazz Orchestra" },
+          { name: "Karen Manukyan Trio" },
+          { name: "The Armenian Colors Quartet" },
+          { name: "Artyom Manukyan Trio" },
+          { name: "Malkhas Jazz Trio" },
+        ],
         body: [
           "Yerevan City Day's jazz programme takes place at the Cafesjian Sculpture Garden at the Cascade on 10 October, from 13:00 to 22:00.",
           "Performers include the Armenian State Jazz Orchestra, Karen Manukyan Trio, Vahagn Hayrapetyan's The Armenian Colors Quartet, Artyom Manukyan Trio, Malkhas Jazz Trio and others.",
@@ -305,7 +313,7 @@ export const items: EventItem[] = [
   {
     slug: "yerevan-city-day-armenian-music-wine-2026",
     createdAt: "2026-10-09T12:00:00+04:00",
-    updatedAt: "2026-10-09T12:00:00+04:00",
+    updatedAt: "2026-10-09T13:30:00+04:00",
     site: "tick",
     title: "Երևանի օրվա ազգային երաժշտությունն ու գինու փառատոնը",
     cardTitle: "Ազգային երաժշտություն և գինի",
@@ -351,6 +359,14 @@ export const items: EventItem[] = [
         imageAlt: "Visit Yerevan poster featuring the Akunk State Ethnographic Ensemble for City Day",
         imageCredit: "Visit Yerevan",
         speakersHeading: "Performers",
+        speakers: [
+          { name: "Sona Rubenyan" },
+          { name: "Arpi & Highway Band" },
+          { name: "Tmbata" },
+          { name: "Ethno Colors" },
+          { name: "Akunk State Ethnographic Ensemble" },
+          { name: "Zvartnots Qanun Ensemble" },
+        ],
         body: [
           "Yerevan City Day's Armenian music stage and wine festival take place on Northern Avenue on 10 October. Music runs from 13:00 to 18:00; the wine festival is open from 12:00 to 23:00.",
           "Performers include Sona Rubenyan, Arpi & Highway Band, Tmbata, Ethno Colors, Akunk State Ethnographic Ensemble and Zvartnots Qanun Ensemble, alongside folk song and dance groups.",
@@ -465,6 +481,12 @@ export const items: EventItem[] = [
         imageAlt: "Visit Yerevan poster for the Symphonic Folk concert on 10 October",
         imageCredit: "Visit Yerevan",
         speakersHeading: "Performers",
+        speakers: [
+          { name: "Yerevan Youth Orchestra" },
+          { name: "Armenian State Symphony Orchestra" },
+          { name: "Yerevan State Chamber Choir" },
+          { name: "Kamerton Vocal Studio" },
+        ],
         body: [
           "Yerevan City Day's classical programme is at Freedom Square on 10 October, from 17:00 to 20:30.",
           "The Symphonic Folk programme features the Yerevan Youth Orchestra, Armenian State Symphony Orchestra, Yerevan State Chamber Choir and Kamerton Vocal Studio.",
