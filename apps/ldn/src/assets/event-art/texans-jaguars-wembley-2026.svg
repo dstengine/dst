@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 864" role="img" aria-labelledby="title desc">
+  <title id="title">Texans versus Jaguars at Wembley</title>
+  <desc id="desc">An American football in front of the arch and towers of Wembley Stadium.</desc>
+  <defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#17243d"/><stop offset="1" stop-color="#a05d4f"/></linearGradient></defs>
+  <path fill="url(#sky)" d="M0 0h1536v864H0z"/>
+  <path fill="none" stroke="#e6d5b3" stroke-width="24" d="M305 650Q720 28 1118 650"/>
+  <path fill="#ecdfc5" d="M170 635h1196v229H170z"/>
+  <path fill="#25364a" d="M218 683h1100v181H218z"/>
+  <g fill="#e6d5b3"><path d="M242 672h30v192h-30zm82-18h26v210h-26zm82-16h24v226h-24zm782 0h24v226h-24zm82 16h26v210h-26zm82 18h30v192h-30z"/></g>
+  <path fill="none" stroke="#ddba78" stroke-width="10" d="M260 748h1016M280 808h976"/>
+  <path fill="#202c40" d="M0 864v-98q190-74 386 0t382 0q190-74 382 0t386 0v98z"/>
+  <g fill="#daba84"><circle cx="338" cy="775" r="13"/><circle cx="400" cy="786" r="11"/><circle cx="1120" cy="785" r="12"/><circle cx="1190" cy="772" r="13"/></g>
+  <g transform="rotate(18 768 440)"><path fill="#b96143" d="M590 440q178-142 356 0-178 142-356 0"/><path fill="#e6b274" d="M615 440q153-112 306 0-153 112-306 0"/><path fill="none" stroke="#f2dfb8" stroke-width="9" d="M735 417l56 48m-49-63 56 48m-49-63 56 48"/></g>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 864" role="img" aria-labelledby="title desc">
+  <title id="title">Eagles versus Jaguars at Tottenham</title>
+  <desc id="desc">An American football under lights with a London stadium roofline.</desc>
+  <defs><linearGradient id="night" x2="0" y2="1"><stop stop-color="#111a33"/><stop offset="1" stop-color="#253a58"/></linearGradient></defs>
+  <path fill="url(#night)" d="M0 0h1536v864H0z"/>
+  <circle cx="250" cy="150" r="5" fill="#fff2c7"/><circle cx="1280" cy="125" r="5" fill="#fff2c7"/><circle cx="1090" cy="210" r="4" fill="#fff2c7"/>
+  <path fill="#7891a5" d="M120 550l95-170 94 170h-36l-58-105-58 105zm220 0l95-170 94 170h-36l-58-105-58 105zm220 0l95-170 94 170h-36l-58-105-58 105zm220 0l95-170 94 170h-36l-58-105-58 105zm220 0l95-170 94 170h-36l-58-105-58 105zm220 0l95-170 94 170h-36l-58-105-58 105z"/>
+  <path fill="#1c2c43" d="M0 550h1536v314H0z"/>
+  <path fill="none" stroke="#d4b779" stroke-width="12" d="M120 620h1296M160 720h1216M200 820h1136"/>
+  <g fill="#d4b779"><path d="M300 568h18v296h-18zm500 0h18v296h-18zm500 0h18v296h-18z"/></g>
+  <g transform="rotate(-17 770 470)"><path fill="#b96545" d="M540 410q230-180 460 0-230 180-460 0"/><path fill="#e6b26d" d="M570 410q200-143 400 0-200 143-400 0"/><path fill="none" stroke="#f2d7a0" stroke-width="10" d="M738 379l64 62m-55-77 64 62m-55-77 64 62"/><path fill="#ead49d" d="M993 403l64 7-44 46z"/></g>
+  <path fill="#f5dca4" d="M82 117l52 18 18 52-18 52-52 18-52-18-18-52 18-52zM1440 185l32 11 11 32-11 32-32 11-32-11-11-32 11-32z"/>
+</svg>

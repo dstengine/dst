@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 864" role="img" aria-labelledby="title desc">
+  <title id="title">Arnulf Rainer retrospective</title>
+  <desc id="desc">An original abstract illustration of layered gestural marks on pale paper.</desc>
+  <path fill="#e9e3d6" d="M0 0h1536v864H0z"/>
+  <path fill="#f4f0e8" d="M84 64h1368v736H84z"/>
+  <path fill="none" stroke="#191919" stroke-width="82" stroke-linecap="round" d="M284 644q-65-310 140-425 190-106 278 75 50 108 11 296"/>
+  <path fill="none" stroke="#9c263a" stroke-width="48" stroke-linecap="round" d="M665 705q116-325 282-333 169-8 253 232"/>
+  <path fill="none" stroke="#242323" stroke-width="34" stroke-linecap="round" d="M208 260q294 244 595 98m-507 338q207-226 511-274m193 312q-10-219 184-384"/>
+  <path fill="none" stroke="#bd7743" stroke-width="24" stroke-linecap="round" d="M332 164q193 113 280 302m374-169q131-111 249-87"/>
+  <g fill="#272625"><circle cx="420" cy="378" r="14"/><circle cx="821" cy="566" r="11"/><circle cx="1012" cy="266" r="13"/><circle cx="1186" cy="632" r="16"/></g>
+  <path fill="#ddd4c6" d="M84 64h1368v28H84zM84 772h1368v28H84z"/>
+</svg>

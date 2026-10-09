@@ -2,6 +2,52 @@ import type { EventItem } from "../types.ts";
 
 export const items: EventItem[] = [
 
+  {
+    slug: "arnulf-rainer-retrospektive-albertina-2026",
+    createdAt: "2026-10-09T12:50:00+04:00",
+    updatedAt: "2026-10-09T12:50:00+04:00",
+    site: "vien",
+    image: "/covers/arnulf-rainer-retrospektive-albertina-2026.jpg",
+    imageAlt: "Abstrakte Illustration aus überlagerten schwarzen und roten Pinselbahnen auf hellem Papier",
+    imageKind: "illustration",
+    imageCredit: "Veranstaltungen Wien",
+    imageWidth: 3072,
+    imageHeight: 864,
+    title: "Arnulf Rainer: Retrospektive in der ALBERTINA",
+    titleSeo: "Arnulf Rainer in Wien: Retrospektive ab 13. November",
+    summary:
+      "Die ALBERTINA in Wien zeigt vom 13. November 2026 bis 25. April 2027 rund 70 Arbeiten Arnulf Rainers, von frühen Übermalungen bis zu späten Schleierbildern.",
+    start: "2026-11-13",
+    end: "2027-04-25",
+    utcOffset: "+01:00",
+    city: "Wien",
+    country: "Österreich",
+    venue: "ALBERTINA, Albertinaplatz 1, 1010 Wien",
+    geo: { name: "ALBERTINA Museum", lat: 48.2047, lng: 16.3681 },
+    organizer: "ALBERTINA",
+    category: "Ausstellungen",
+    source: {
+      name: "ALBERTINA",
+      url: "https://www.albertina.info/en/exhibitions/arnulf-rainer-2026/",
+      verifiedOn: "2026-10-09",
+    },
+    ticket: { url: "https://www.albertina.info/en/exhibitions/arnulf-rainer-2026/", label: "Ausstellung und Tickets" },
+    body: [
+      "Die ALBERTINA widmet <strong>Arnulf Rainer</strong> vom <strong>13. November 2026 bis 25. April 2027</strong> eine Retrospektive mit rund <strong>70 Arbeiten</strong>.",
+      "## Was die ALBERTINA zeigt",
+      "Die Ausstellung reicht von frühen Übermalungen der 1950er-Jahre über die <em>Face Farces</em> und Kreuzbilder bis zu den späten Schleierbildern. Die ALBERTINA zeigt Werke aus ihrer Sammlung, die rund 600 Arbeiten Rainers umfasst.",
+      "## Ort und Besuch",
+      "Die Ausstellung findet in der <strong>ALBERTINA, Albertinaplatz 1</strong>, im ersten Wiener Bezirk statt. Das Museum ist täglich von <strong>10 bis 18 Uhr</strong> geöffnet, mittwochs und freitags bis <strong>21 Uhr</strong>. <a href=\"https://www.google.com/maps/search/?api=1&amp;query=Albertinaplatz+1%2C+1010+Wien\" target=\"_blank\" rel=\"noopener noreferrer\">📍 ALBERTINA auf der Karte</a>.",
+      "## Was noch offen ist",
+      "Die ALBERTINA nennt die Laufzeit bis 25. April 2027. Prüfe auf der offiziellen Seite die aktuellen Ticketpreise und Führungen, bevor du hinfährst.",
+    ],
+    faq: [
+      { q: "Wann läuft die Arnulf-Rainer-Retrospektive?", a: "Vom 13. November 2026 bis 25. April 2027 in der ALBERTINA Wien." },
+      { q: "Wo findet die Ausstellung statt?", a: "In der ALBERTINA, Albertinaplatz 1, 1010 Wien." },
+      { q: "Wann ist die ALBERTINA geöffnet?", a: "Täglich von 10 bis 18 Uhr, mittwochs und freitags bis 21 Uhr." },
+    ],
+  },
+
 
   {
     slug: "her-story-albertina-2026",

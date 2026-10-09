@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 864" role="img" aria-labelledby="title desc">
+  <title id="title">Bolshoi Theatre Orchestra at Dubai Opera</title>
+  <desc id="desc">A conductor and orchestral instruments framed by an illuminated proscenium.</desc>
+  <defs><linearGradient id="room" x2="0" y2="1"><stop stop-color="#101c35"/><stop offset="1" stop-color="#703f3d"/></linearGradient></defs>
+  <path fill="url(#room)" d="M0 0h1536v864H0z"/>
+  <path fill="none" stroke="#e6bb72" stroke-width="18" d="M190 820V295Q190 80 768 80t578 215v525M250 820V310Q250 142 768 142t518 168v510"/>
+  <path fill="#eac782" d="M0 786h1536v78H0z"/>
+  <g fill="#f3d695"><path d="M252 530h26v256h-26zm110-36h24v292h-24zm110 47h24v245h-24zm652-8h24v253h-24zm110-39h24v292h-24zm110 31h24v261h-24z"/></g>
+  <g fill="#5d7890"><circle cx="320" cy="618" r="35"/><circle cx="434" cy="618" r="35"/><circle cx="548" cy="618" r="35"/><circle cx="988" cy="618" r="35"/><circle cx="1102" cy="618" r="35"/><circle cx="1216" cy="618" r="35"/></g>
+  <path fill="#d68b55" d="M740 370h56l22 120 44 120-64 16-34-95-35 95-64-16 44-120z"/>
+  <circle cx="768" cy="321" r="48" fill="#f0c394"/>
+  <path fill="#e4c56f" d="M760 484h16v180h-16zm-7 8l-94-62 11-17 87 56 89-56 11 17-96 62z"/>
+  <path fill="#f0d498" d="M677 419l-78-54q-22-18-4-38 18-18 37 1l83 68z"/>
+  <circle cx="483" cy="428" r="72" fill="none" stroke="#d5a452" stroke-width="18"/><path d="M445 370q-25-44-56-5m56 91q-25 44-56 5" fill="none" stroke="#d5a452" stroke-width="12"/>
+  <path fill="#d5a452" d="M1044 418q110-34 110 48v148h-34V474q0-30-76-4z"/><path fill="none" stroke="#d5a452" stroke-width="16" d="M1044 474q-40 0-40 40v102"/>
+</svg>

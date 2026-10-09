@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 864" role="img" aria-labelledby="title desc">
+  <title id="title">The Spirit of Mexico in Dubai</title>
+  <desc id="desc">A marigold sun, paper banners and a stepped arch at dusk.</desc>
+  <defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#182749"/><stop offset="1" stop-color="#5c254f"/></linearGradient></defs>
+  <path fill="url(#sky)" d="M0 0h1536v864H0z"/>
+  <circle cx="1170" cy="330" r="190" fill="#f4a443"/>
+  <g fill="#ffd074"><path d="M1170 70l22 112-22 17-22-17zM1430 330l-112 22-17-22 17-22zM1170 590l-22-112 22-17 22 17zM910 330l112-22 17 22-17 22z"/><path d="M1354 146l-47 104-27-2-2-27zM1354 514l-76-75 2-27 27-2zM986 514l47-104 27 2 2 27zM986 146l76 75-2 27-27 2z"/></g>
+  <path fill="#d94655" d="M0 0h170v90l-35 42-35-42-35 42-35-42V0zm300 0h170v90l-35 42-35-42-35 42-35-42V0zm300 0h170v90l-35 42-35-42-35 42-35-42V0zm300 0h170v90l-35 42-35-42-35 42-35-42V0z"/>
+  <path fill="#e8c45b" d="M0 690h1536v174H0z"/>
+  <path fill="#183f46" d="M90 864V700h180v-72h166v72h160V570h125v130h133v-94h120v94h142v-62h168v62h156v164z"/>
+  <path fill="#f17b46" d="M392 864V508h66V408h198v100h66v356zm44-356h242v46H436z"/>
+  <g fill="#f8d473"><circle cx="540" cy="587" r="12"/><circle cx="610" cy="587" r="12"/><circle cx="540" cy="650" r="12"/><circle cx="610" cy="650" r="12"/></g>
+  <path fill="#fff0ce" d="M96 747h28v80H96zm60-20h28v100h-28zm60 32h28v68h-28z"/>
+</svg>
