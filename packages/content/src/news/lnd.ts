@@ -209,7 +209,7 @@ export const items: NewsItem[] = [
   {
     slug: "the-uk-biobank-yardstick-behind-an-ageing-drug-trial",
     createdAt: "2026-08-30T11:52:01+04:00",
-    updatedAt: "2026-09-08T14:19:42+04:00",
+    updatedAt: "2026-10-09T06:00:00+04:00",
     site: "lnd",
     image: "/covers/the-uk-biobank-yardstick-behind-an-ageing-drug-trial.jpg",
     imageAlt: "A torn pale blue paper band across a deep navy ground with small cream markers standing along it, one of them red",
@@ -220,7 +220,7 @@ export const items: NewsItem[] = [
     cardTitle: "The UK Biobank yardstick",
     titleSeo: "A UK Biobank yardstick for biological age",
     summary:
-      "To judge whether a drug reversed ageing or merely treated a disease, researchers needed a picture of normal ageing. They took it from 55,319 UK Biobank adults.",
+      "A China drug trial used 55,319 UK Biobank records as its normal-ageing baseline. For London readers, the shared training data is the key caveat.",
     date: "2026-09-08",
     category: "Science",
     source: {
@@ -248,7 +248,7 @@ export const items: NewsItem[] = [
   {
     slug: "what-claudes-new-watermark-cannot-tell-you",
     createdAt: "2026-09-08T11:57:44+04:00",
-    updatedAt: "2026-09-08T14:19:42+04:00",
+    updatedAt: "2026-10-09T06:00:00+04:00",
     site: "lnd",
     image: "/covers/what-claudes-new-watermark-cannot-tell-you.jpg",
     imageAlt: "A long paper strip on a deep navy ground, solid at one end and fading to a faint outline at the other",
@@ -259,7 +259,7 @@ export const items: NewsItem[] = [
     cardTitle: "Where the watermark runs out",
     titleSeo: "Claude's watermark, and its limits",
     summary:
-      "Since 2 August, text from Anthropic's newer models carries an invisible mark. It thins on short passages, on figures and on code, and a paraphrase removes it.",
+      "For London readers assessing AI text, Anthropic's invisible Claude watermark weakens on short, factual or code-heavy passages and disappears after paraphrase.",
     date: "2026-09-08",
     category: "Tech",
     source: {
@@ -395,7 +395,7 @@ export const items: NewsItem[] = [
   {
     slug: "a-ten-sided-wave-at-saturns-south-pole",
     createdAt: "2026-09-06T08:48:11+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-09T06:00:00+04:00",
     site: "lnd",
     image: "/covers/a-ten-sided-wave-at-saturns-south-pole.jpg",
     imageAlt: "A pale blue paper decagon on a deep navy ground, its outline broken into ten straight segments with narrow gaps between them",
@@ -406,7 +406,7 @@ export const items: NewsItem[] = [
     cardTitle: "A ten-sided wave on Saturn",
     titleSeo: "Saturn has a ten-sided south pole",
     summary:
-      "For forty years Saturn has worn a hexagon at the north pole. Hubble has now confirmed a ten-sided wave at the south, and unlike the hexagon it is getting stronger.",
+      "For London readers following astronomy: Hubble confirms a strengthening ten-sided wave at Saturn's south pole, distinct from the stable northern hexagon.",
     date: "2026-09-05",
     category: "Science",
     source: {
@@ -621,7 +621,7 @@ export const items: NewsItem[] = [
   {
     slug: "fifteen-years-of-apple-in-numbers",
     createdAt: "2026-09-02T12:10:41+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-09T06:00:00+04:00",
     site: "lnd",
     image: "/covers/fifteen-years-of-apple-in-numbers.jpg",
     imageAlt: "Torn paper bars rising steadily from left to right, one of them red, a long wedge tapering away beneath them",
@@ -632,7 +632,7 @@ export const items: NewsItem[] = [
     cardTitle: "Fifteen years, in figures",
     titleSeo: "Tim Cook’s fifteen years, in numbers",
     summary:
-      "Tim Cook handed Apple over on 1 September. The figures he leaves behind are worth reading slowly, because one of them is rather harder than it looks.",
+      "For London readers tracking Big Tech: Tim Cook's 15 years at Apple end with a $4tn market value, $416bn revenue and 60% lower absolute emissions.",
     date: "2026-09-01",
     category: "Tech",
     source: {
@@ -659,7 +659,7 @@ export const items: NewsItem[] = [
   {
     slug: "venice-has-programmed-a-film-of-210-minutes",
     createdAt: "2026-09-01T16:34:47+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-09T06:00:00+04:00",
     site: "lnd",
     image: "/covers/venice-has-programmed-a-film-of-210-minutes.jpg",
     imageAlt: "A paper reel of film unspooling far past the edge of a small cinema seat",
@@ -670,7 +670,7 @@ export const items: NewsItem[] = [
     cardTitle: "A film of 210 minutes",
     titleSeo: "The longest film at Venice 2026",
     summary:
-      "The 83rd Mostra opens on 2 September with twenty films in competition. Its artistic director has warned that the selection runs long, and the longest of them is three and a half hours.",
+      "For London filmgoers following Venice, the 2026 competition's 210-minute Dau leads a 20-film lineup at the 83rd festival.",
     date: "2026-09-01",
     category: "Film",
     source: {
