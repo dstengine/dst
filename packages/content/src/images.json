@@ -10326,6 +10326,62 @@
         ]
       ]
     },
+    "/covers/christmas-at-kew-2026.jpg": {
+      "width": 3072,
+      "height": 1728,
+      "avif": [
+        [
+          480,
+          "/covers/christmas-at-kew-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/christmas-at-kew-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/christmas-at-kew-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/christmas-at-kew-2026-1440.avif"
+        ],
+        [
+          1920,
+          "/covers/christmas-at-kew-2026-1920.avif"
+        ],
+        [
+          3072,
+          "/covers/christmas-at-kew-2026-3072.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/christmas-at-kew-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/christmas-at-kew-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/christmas-at-kew-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/christmas-at-kew-2026-1440.webp"
+        ],
+        [
+          1920,
+          "/covers/christmas-at-kew-2026-1920.webp"
+        ],
+        [
+          3072,
+          "/covers/christmas-at-kew-2026-3072.webp"
+        ]
+      ]
+    },
     "/covers/claridges-flowers-is-on-brooks-mews.jpg": {
       "width": 1536,
       "height": 864,
@@ -10611,6 +10667,62 @@
         [
           1536,
           "/covers/eclipse-walk-tower-hamlets-cemetery-park-1536.webp"
+        ]
+      ]
+    },
+    "/covers/efg-london-jazz-festival-2026.jpg": {
+      "width": 3072,
+      "height": 1728,
+      "avif": [
+        [
+          480,
+          "/covers/efg-london-jazz-festival-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/efg-london-jazz-festival-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/efg-london-jazz-festival-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/efg-london-jazz-festival-2026-1440.avif"
+        ],
+        [
+          1920,
+          "/covers/efg-london-jazz-festival-2026-1920.avif"
+        ],
+        [
+          3072,
+          "/covers/efg-london-jazz-festival-2026-3072.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/efg-london-jazz-festival-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/efg-london-jazz-festival-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/efg-london-jazz-festival-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/efg-london-jazz-festival-2026-1440.webp"
+        ],
+        [
+          1920,
+          "/covers/efg-london-jazz-festival-2026-1920.webp"
+        ],
+        [
+          3072,
+          "/covers/efg-london-jazz-festival-2026-3072.webp"
         ]
       ]
     },
@@ -11043,6 +11155,62 @@
         [
           1536,
           "/covers/lambeth-fringe-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/london-parade-2027.jpg": {
+      "width": 3072,
+      "height": 1728,
+      "avif": [
+        [
+          480,
+          "/covers/london-parade-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/london-parade-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/london-parade-2027-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/london-parade-2027-1440.avif"
+        ],
+        [
+          1920,
+          "/covers/london-parade-2027-1920.avif"
+        ],
+        [
+          3072,
+          "/covers/london-parade-2027-3072.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/london-parade-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/london-parade-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/london-parade-2027-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/london-parade-2027-1440.webp"
+        ],
+        [
+          1920,
+          "/covers/london-parade-2027-1920.webp"
+        ],
+        [
+          3072,
+          "/covers/london-parade-2027-3072.webp"
         ]
       ]
     },
