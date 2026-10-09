@@ -12,6 +12,67 @@ import type { EventItem } from "../types.ts";
 export const items: EventItem[] = [
 
   {
+    slug: "moct-clubnight-yerevan-2026-10-09",
+    createdAt: "2026-10-09T04:11:00+04:00",
+    updatedAt: "2026-10-09T04:11:00+04:00",
+    site: "tick",
+    title: "MOCT-ի ակումբային երեկո Hayfilm-ում",
+    cardTitle: "MOCT Clubnight",
+    titleSeo: "MOCT Clubnight Երևանում՝ հոկտեմբերի 9-ին",
+    summary:
+      "Տեխնո և տրանս՝ տեղացի արտիստներով ու հյուրերով Թբիլիսիից։ Հոկտեմբերի 9-ին՝ MOCT-ում, Hayfilm Cluster, տոմսերը՝ 3000–5000 դրամ։",
+    start: "2026-10-09",
+    utcOffset: "+04:00",
+    city: "Երևան",
+    country: "Հայաստան",
+    venue: "Hayfilm Cluster, Աշտարակի խճուղի 30",
+    organizer: "MOCT",
+    category: "Երեկույթներ",
+    tickets: { priceFrom: 3000, priceTo: 5000, currency: "AMD" },
+    source: {
+      name: "MOCT event listing",
+      url: "https://esora.app/en/events/clubnight-01250ceb",
+      verifiedOn: "2026-10-09",
+    },
+    body: [
+      "MOCT-ը հոկտեմբերի 9-ին Hayfilm Cluster-ում կազմակերպում է տեխնոյի և տրանսի ակումբային երեկո՝ տեղացի արտիստների և Թբիլիսիից ժամանած հյուրերի մասնակցությամբ։",
+      "Երեկոն անցկացվում է Studio և Bar տարածքներում. երաժշտական ծրագիրը նկարագրված է որպես հիպնոտիկից մինչև էներգետիկ ու էյֆորիկ հնչողությունների շարունակական գիծ։",
+      "## Մուտք և տոմսեր",
+      "Հրապարակված գներն են 3000 և 5000 դրամ։ Կիրառվում է face control. մուտքը չթույլատրելու դեպքում նախապես գնված տոմսի գումարը վերադարձվում է երկու աշխատանքային օրվա ընթացքում։ Աղբյուրի էջում մեկնարկի ժամը նշված չէ։",
+    ],
+    faq: [
+      { q: "Ե՞րբ և որտե՞ղ է MOCT Clubnight-ը", a: "Հոկտեմբերի 9-ին՝ Hayfilm Cluster-ում, Աշտարակի խճուղի 30 հասցեում, Երևան։" },
+      { q: "Որքա՞ն արժեն տոմսերը", a: "Հրապարակված գները 3000 և 5000 դրամ են։" },
+      { q: "Ի՞նչ երաժշտություն է լինելու", a: "Տեխնո և տրանս՝ տեղացի արտիստներով ու Թբիլիսիից ժամանած հյուրերով։" },
+    ],
+    i18n: {
+      en: {
+        title: "MOCT club night at Hayfilm",
+        cardTitle: "MOCT Clubnight",
+        titleSeo: "MOCT Clubnight in Yerevan on 9 October",
+        summary:
+          "Techno and trance with local artists and guests from Tbilisi. On 9 October at MOCT, Hayfilm Cluster; tickets are listed at AMD 3,000–5,000.",
+        city: "Yerevan",
+        country: "Armenia",
+        venue: "Hayfilm Cluster, 30 Ashtarak Highway",
+        organizer: "MOCT",
+        category: "Parties",
+        body: [
+          "MOCT hosts a techno and trance club night at Hayfilm Cluster on 9 October, with local artists and guests from Tbilisi.",
+          "The event uses the Studio and Bar spaces, with music described as moving from deep and hypnotic to driving and euphoric.",
+          "## Entry and tickets",
+          "The published prices are AMD 3,000 and 5,000. Face control applies; if entry is denied, the organiser says prepaid tickets will be refunded within two business days. The listing does not give a start time.",
+        ],
+        faq: [
+          { q: "When and where is MOCT Clubnight?", a: "On 9 October at Hayfilm Cluster, 30 Ashtarak Highway, Yerevan." },
+          { q: "How much are tickets?", a: "The listed prices are AMD 3,000 and 5,000." },
+          { q: "What music is on?", a: "Techno and trance with local artists and guests from Tbilisi." },
+        ],
+      },
+    },
+  },
+
+  {
     slug: "aki-fest-halloween-yerevan-2026",
     createdAt: "2026-10-09T12:00:00+04:00",
     updatedAt: "2026-10-09T12:00:00+04:00",
