@@ -862,7 +862,7 @@ export const items: EventItem[] = [
   {
     slug: "lord-mayors-show-2026-london-boroughs",
     createdAt: "2026-10-09T10:00:00+04:00",
-    updatedAt: "2026-10-09T10:00:00+04:00",
+    updatedAt: "2026-10-09T11:00:00+04:00",
     site: "lnd",
     image: "/covers/lord-mayors-show-2026.jpg",
     imageAlt: "A red paper ceremonial coach beneath a line of bunting",
@@ -876,7 +876,7 @@ export const items: EventItem[] = [
     start: "2026-11-14",
     startTime: "11:00",
     utcOffset: "+00:00",
-    venue: "Mansion House, City of London",
+    venue: "Mansion House",
     geo: { name: "Mansion House", lat: 51.5136, lng: -0.0890 },
     city: "London",
     country: "United Kingdom",
@@ -891,7 +891,7 @@ export const items: EventItem[] = [
     body: [
       "The Lord Mayor's Show is a three-mile civic procession through the Square Mile, held each November for more than eight centuries. The <strong>698th Lord Mayor of London</strong>, Alderman Bronek Masojada, will take part when the 2026 procession leaves Mansion House at <strong>11am on Saturday 14 November</strong>. It is free to watch, and you do not need a ticket.",
       "## The route through the City and back",
-      "The outward procession runs from <strong>Mansion House</strong> through <strong>Cheapside</strong>, past <strong>St Paul's Cathedral</strong> and along <strong>Fleet Street</strong> to the Royal Courts of Justice. It returns in the early afternoon via the Embankment and Queen Victoria Street. The Lord Mayor Elect, <strong>Alderman Bronek Masojada</strong>, takes office the day before; this will be the 698th Lord Mayor's Show.",
+      "The outward procession runs from <strong>Mansion House</strong> through <strong>Cheapside</strong>, past <strong>St Paul's Cathedral</strong> and along <strong>Fleet Street</strong> to the Royal Courts of Justice. It returns in the early afternoon via the Embankment and Queen Victoria Street. The Lord Mayor Elect, <strong>Alderman Bronek Masojada</strong>, takes office the day before as the City's 698th Lord Mayor.",
       "## Where to watch",
       "For the busiest stretch, the organisers suggest watching between <strong>Bank and St Paul's</strong> as the outward procession passes from about 11am to noon. For more room, the return leg moves along the Embankment from about <strong>1.15pm</strong>; Temple to Blackfriars is the quieter stretch. The procession takes well over an hour to pass any one point.",
       "## Getting there",
