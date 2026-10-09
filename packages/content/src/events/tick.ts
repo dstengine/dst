@@ -28,6 +28,12 @@ export const items: EventItem[] = [
     venue: "Hayfilm Cluster, Աշտարակի խճուղի 30",
     organizer: "MOCT",
     category: "Երեկույթներ",
+    image: "/covers/moct-clubnight-yerevan-2026-10-09.jpg",
+    imageAlt: "MOCT Club 2026-ի սեզոնի բացման կապույտ պաստառը՝ հոկտեմբերի 9-ի ծրագրով և արտիստների անուններով",
+    imageKind: "illustration",
+    imageCredit: "MOCT",
+    imageWidth: 720,
+    imageHeight: 1280,
     tickets: { priceFrom: 3000, priceTo: 5000, currency: "AMD" },
     speakersHeading: "Կատարողներ",
     speakers: [
@@ -67,6 +73,8 @@ export const items: EventItem[] = [
         venue: "Hayfilm Cluster, 30 Ashtarak Highway",
         organizer: "MOCT",
         category: "Parties",
+        imageAlt: "Blue MOCT Club 2026 season kickoff poster for 9 October, with the line-up names",
+        imageCredit: "MOCT",
         speakersHeading: "Line-up",
         body: [
           "MOCT opens its fall season at Hayfilm Cluster on 9 October. The headliner is STAOX, a Tbilisi-based DJ, producer and live performer.",

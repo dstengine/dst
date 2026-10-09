@@ -26742,6 +26742,30 @@
         ]
       ]
     },
+    "/covers/moct-clubnight-yerevan-2026-10-09.jpg": {
+      "width": 720,
+      "height": 1280,
+      "avif": [
+        [
+          480,
+          "/covers/moct-clubnight-yerevan-2026-10-09-480.avif"
+        ],
+        [
+          720,
+          "/covers/moct-clubnight-yerevan-2026-10-09-720.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/moct-clubnight-yerevan-2026-10-09-480.webp"
+        ],
+        [
+          720,
+          "/covers/moct-clubnight-yerevan-2026-10-09-720.webp"
+        ]
+      ]
+    },
     "/covers/nervy-yerevan-2026.jpg": {
       "width": 1536,
       "height": 864,
