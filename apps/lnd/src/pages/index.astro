@@ -10,6 +10,8 @@ import { sections, NAV } from "../sections";
 
 const newsItems = newsBySite(siteId);
 const eventItems = eventsBySite(siteId);
+const today = new Date().toISOString().slice(0, 10);
+const upcomingItems = eventItems.filter((item) => item.start >= today);
 const sectionLinks = sections([...eventItems, ...newsItems]);
 ---
 <Layout title={home.title} description={home.description}>
@@ -18,6 +20,6 @@ const sectionLinks = sections([...eventItems, ...newsItems]);
     <p class="lede">{home.lede}</p>
     <SectionNav sections={sectionLinks} label={NAV.label} />
   </section>
-  <EventsBlock items={eventItems} heading="Events" eventsBase={eventsBase} />
+  <EventsBlock items={upcomingItems} heading="Upcoming" eventsBase={eventsBase} />
   <NewsBlock items={newsItems} heading="News" newsBase={newsBase} />
 </Layout>
