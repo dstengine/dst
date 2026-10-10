@@ -358,6 +358,105 @@ export const items: EventItem[] = [
   },
 
   {
+    slug: "halloween-royal-observatory-greenwich-2026",
+    createdAt: "2026-10-11T01:15:13+04:00",
+    updatedAt: "2026-10-11T01:15:13+04:00",
+    site: "lnd",
+    image: "/covers/halloween-royal-observatory-greenwich-2026.jpg",
+    imageAlt: "A small white domed building on top of a dark hill, a line of orange pumpkins leading down from it, a pale crescent moon in a light blue sky",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Halloween at the Royal Observatory 2026",
+    summary:
+      "Halloween in London at the Royal Observatory, in its last week before it closes on 2 November: a 45-minute Ghastly Greenwich tour at 4pm on 24, 27, 28 and 29 October, and a free pumpkin trail every day. Entry £24, children £12.",
+    start: "2026-10-24",
+    end: "2026-11-01",
+    startTime: "10:00",
+    endTime: "17:00",
+    utcOffset: "+01:00",
+    venue: "Royal Observatory Greenwich, Blackheath Avenue",
+    city: "London",
+    country: "United Kingdom",
+    geo: {
+      name: "Royal Observatory Greenwich",
+      lat: 51.4773623,
+      lng: -0.0008456,
+    },
+    organizer: "Royal Museums Greenwich",
+    category: "Halloween",
+    tickets: { priceFrom: 12, priceTo: 24, currency: "GBP" },
+    ticket: {
+      url: "https://www.rmg.co.uk/whats-on/royal-observatory/october-half-term",
+      label: "Tickets at Royal Museums Greenwich",
+    },
+    source: {
+      name: "Royal Museums Greenwich",
+      url: "https://www.rmg.co.uk/whats-on/royal-observatory/october-half-term",
+      verifiedOn: "2026-10-11",
+    },
+    body: [
+      "The home of Greenwich Mean Time shuts its gates on 2 November for a refurbishment, and it is spending its last half term on ghosts: a tour of Greenwich's treason, death and witchcraft, and a pumpkin trail round the observatory.",
+      "## Dates and times",
+      "<strong>Saturday 24 October to Sunday 1 November 2026</strong>, open <strong>10am to 5pm</strong>, last entry at <strong>4pm</strong>. From <strong>2 November</strong> the whole site closes for the First Light transformation project; the Peter Harrison Planetarium has been shut for it since September 2025.",
+      "## The Ghastly Greenwich tour",
+      "Forty-five minutes on the haunting history of Greenwich — its ghosts, treason, death and witchcraft. <strong>4pm</strong> on <strong>Saturday 24, Tuesday 27, Wednesday 28 and Thursday 29 October</strong>. It costs <strong>£5</strong> for adults, <strong>£3.50</strong> for students and <strong>£2.50</strong> for children, on top of admission.",
+      "## The Halloween trail",
+      "Every day, <strong>included with admission</strong>: riddles lead to pumpkins hidden round the site, and the letters found along the way unscramble into a secret word.",
+      "## What it costs",
+      "Admission to the Royal Observatory is <strong>£24</strong> for adults, <strong>£18</strong> for students and <strong>£12</strong> for children; <strong>under-4s</strong> and members go free. Royal Museums Greenwich pitch every half-term activity at ages 7 and up.",
+    ],
+    programme: [
+      {
+        heading: "24, 27, 28 and 29 October, 4pm — Ghastly Greenwich tour",
+        text: "45 minutes. £5 adults, £3.50 students, £2.50 children, on top of admission.",
+      },
+      {
+        heading: "Daily — Halloween trail",
+        text: "Riddles, hidden pumpkins and a secret word. Included with admission.",
+      },
+      {
+        heading: "24–25 October, 10.15am–1.30pm, and 31 October–1 November, 1.45–4.30pm — Observatory Unlocked: Moon",
+        text: "The observatory's astronomers on the lunar surface, beside Luke Jerram's two-metre Mirror Moon. Included with admission.",
+      },
+    ],
+    faq: [
+      {
+        q: "When is the Ghastly Greenwich tour?",
+        a: "At <strong>4pm</strong> on Saturday 24, Tuesday 27, Wednesday 28 and Thursday 29 October 2026. It lasts 45 minutes.",
+      },
+      {
+        q: "Is the Halloween trail free?",
+        a: "It is included with Royal Observatory admission — <strong>£24</strong> for adults, <strong>£12</strong> for children, free for under-4s.",
+      },
+      {
+        q: "When does the Royal Observatory close?",
+        a: "On <strong>2 November 2026</strong>, for a refurbishment. October half term is the last chance to visit this year.",
+      },
+      {
+        q: "What age are the Halloween activities for?",
+        a: "Royal Museums Greenwich suggest ages <strong>7 and up</strong> for all of them.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/halloween-eltham-palace-2026/",
+        eyebrow: "Eltham",
+        title: "Halloween half-term at Eltham Palace",
+        text: "The same nine days in the same borough: the Great Pumpkin Party, 10am to 4pm, included with entry.",
+      },
+      {
+        href: "/events/day-of-the-dead-horniman-2026/",
+        eyebrow: "Forest Hill",
+        title: "Day of the Dead at the Horniman",
+        text: "Saturday 31 October, 11am to 4pm: Aztec dancers, mariachi and a community ofrenda.",
+      },
+    ],
+    expertise:
+      "The tour is the thing to plan round, and its hour is the catch: it starts at 4pm, which is also the last entry to the site. Arrive at four for a four o'clock tour and one is cutting it awfully fine, so come for the afternoon — the trail first, the tour to close the day, and out into Greenwich Park as the light goes. There are only four of them, none on the second weekend, and after the 1st the gates do not open again this year. For a family with children under seven, Eltham's pumpkin party a few miles south-east is the kinder choice on the same dates.",
+  },
+
+  {
     slug: "halloween-eltham-palace-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
     updatedAt: "2026-10-04T06:43:34+04:00",

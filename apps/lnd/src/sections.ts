@@ -62,9 +62,9 @@ export function sections(items: FeedItem[]): Section[] {
         return {
           title: "Halloween in London 2026: what is on",
           description:
-            "Halloween 2026 across the London boroughs — two palaces over half term, a scare-free week in Barnes, a month of theme-park dates in Kingston upon Thames. Each date as the organiser published it.",
+            "Halloween 2026 across the London boroughs — two palaces over half term, ghost tours at the Royal Observatory before it closes, a scare-free week in Barnes. Each date as the organiser published it.",
           h1: "Halloween in London",
-          lede: "Two palaces over half term, a scare-free week of wetland folklore in Barnes, a month of selected dates at the theme park inside the London boundary — and, out past the boroughs in Watford, a hundred pumpkins over the Great Hall for seven weeks. Each date as the organiser gave it, and where we read it.",
+          lede: "Two palaces over half term, ghost tours at the Royal Observatory in its last week before a long closure, a scare-free week of wetland folklore in Barnes, a month of selected dates at the theme park inside the London boundary — and, out past the boroughs in Watford, a hundred pumpkins over the Great Hall for seven weeks. Each date as the organiser gave it, and where we read it.",
           headings: {
             events: "Where to go for Halloween",
             upcoming: "2026 dates",

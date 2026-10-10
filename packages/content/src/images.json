@@ -8090,6 +8090,38 @@
         ]
       ]
     },
+    "/covers/halloween-leadenhall-market-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/halloween-leadenhall-market-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/halloween-leadenhall-market-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/halloween-leadenhall-market-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/halloween-leadenhall-market-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/halloween-leadenhall-market-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/halloween-leadenhall-market-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/halloween-tower-of-london-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -11187,6 +11219,38 @@
         [
           1536,
           "/covers/halloween-hampton-court-palace-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/halloween-royal-observatory-greenwich-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/halloween-royal-observatory-greenwich-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/halloween-royal-observatory-greenwich-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/halloween-royal-observatory-greenwich-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/halloween-royal-observatory-greenwich-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/halloween-royal-observatory-greenwich-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/halloween-royal-observatory-greenwich-2026-1024.webp"
         ]
       ]
     },
