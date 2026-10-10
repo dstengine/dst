@@ -899,7 +899,7 @@ export const items: EventItem[] = [
       "## Free entry and access",
       "There is no admission charge. The organisers describe the procession as accessible and publish advice for wheelchair users and anyone concerned about crowds. A printed souvenir programme with the running order costs <strong>£5</strong> on the day; the 2026 processional order has not yet been announced.",
       "## Other things to do in the City that day",
-      "Make an afternoon of it with free entry to <strong>Guildhall Art Gallery</strong> (open 11am–5pm) or join a free guided walk from No. 1 Poultry between 3pm and 3.45pm. See the <a href=\"/news/lord-mayors-show-2026-route-and-viewing-guide/\">full day guide</a> for locations, maps and the procession viewing plan.",
+      "Make an afternoon of it with free entry to <strong>Guildhall Art Gallery</strong> (open 11am–5pm) or join a free guided walk from No. 1 Poultry between 3pm and 3.45pm. See the <a href=\"/news/lord-mayors-show-2026-route-and-viewing-guide/\" title=\"Lord Mayor's Show 2026 route and viewing guide\">full day guide</a> for locations, maps and the procession viewing plan.",
     ],
     faq: [
       {
@@ -1032,7 +1032,7 @@ export const items: EventItem[] = [
       "## The opening weekend",
       "The opening gala, <strong>Jazz Voice</strong>, is at the Royal Festival Hall on 13 November. On Saturday 14 November — the day of the Lord Mayor's Show — the programme includes <strong>Goldie: Dare to Dream</strong> with a live band and orchestra at the Royal Festival Hall, <strong>Asha Puthli</strong> at the Barbican and <strong>Caravan Palace</strong> at British Airways ARC. Other announced acts include <strong>Mariza</strong>, <strong>Melody Gardot</strong>, <strong>Fatoumata Diawara</strong>, <strong>GoGo Penguin</strong> and the <strong>Kronos Quartet</strong>.",
       "## Free performances and The Jazz Social",
-      "The programme also includes free and family events, among them <strong>South Asian Jazz</strong> on 14 November and <strong>Homegrown</strong> on 22 November. <strong>The Jazz Social</strong> returns at City Point near the Barbican with intimate performances, family activity and live broadcasts. The festival mixes free sessions with individually ticketed concerts; there is no single admission ticket for the whole programme. <a href=\"https://www.google.com/maps/search/?api=1&amp;query=City+Point%2C+1+Ropemaker+Street%2C+London\" target=\"_blank\" rel=\"noopener noreferrer\">📍 The Jazz Social at City Point</a> · <a href=\"https://www.google.com/maps/search/?api=1&amp;query=Royal+Festival+Hall%2C+London\" target=\"_blank\" rel=\"noopener noreferrer\">📍 Royal Festival Hall</a>.",
+      "The programme also includes free and family events, among them <strong>South Asian Jazz</strong> on 14 November and <strong>Homegrown</strong> on 22 November. <strong>The Jazz Social</strong> returns at City Point near the Barbican with intimate performances, family activity and live broadcasts. The festival mixes free sessions with individually ticketed concerts; there is no single admission ticket for the whole programme.",
       "Check the festival programme for each concert's start time, venue access and ticket availability: those details vary by performance.",
     ],
     faq: [
@@ -1055,7 +1055,7 @@ export const items: EventItem[] = [
     imageWidth: 3072,
     imageHeight: 1728,
     title: "Christmas at Kew 2026",
-    titleSeo: "Christmas at Kew 2026: dates, tickets and times",
+    titleSeo: "Christmas at Kew 2026: dates and tickets",
     summary:
       "Kew Gardens' after-dark light trail runs on selected nights from 13 November to 3 January, with timed entry, new installations and adult-only evenings.",
     start: "2026-11-13",
@@ -1084,7 +1084,7 @@ export const items: EventItem[] = [
       "## What is along the trail",
       "This year's route pairs new light installations with returning favourites, illuminated landscapes and the water display at <strong>Palm House Pond</strong>. There is a traditional fairground and seasonal food and drink. Kew has added <strong>adult-only evenings on 3 and 9 December</strong>; quiet-access sessions are also listed on selected dates for visitors who prefer a less busy, lower-sensory visit.",
       "## Tickets and getting there",
-      "Kew's event page lists tickets from <strong>£25.50</strong>; its booking guide lists adult off-peak tickets at <strong>£29.50</strong> and peak tickets at <strong>£37</strong>, including the booking fee. Advance booking is essential because each entry time has limited capacity. Kew Gardens station is served by the District line and London Overground. <a href=\"https://www.google.com/maps/search/?api=1&amp;query=Kew+Gardens%2C+Richmond%2C+London\" target=\"_blank\" rel=\"noopener noreferrer\">📍 Kew Gardens map</a>.",
+      "Kew's event page lists tickets from <strong>£25.50</strong>; its booking guide lists adult off-peak tickets at <strong>£29.50</strong> and peak tickets at <strong>£37</strong>, including the booking fee. Advance booking is essential because each entry time has limited capacity. Kew Gardens station is served by the District line and London Overground.",
       "Check the official dates page before travelling: the trail does not run every night, and entry-gate closing times vary. A light-trail ticket does not include daytime admission to Kew Gardens.",
     ],
     faq: [
@@ -1133,11 +1133,11 @@ export const items: EventItem[] = [
     body: [
       "Westminster starts the year with a street parade through central London. <strong>London Parade 2027</strong> is on <strong>Friday 1 January</strong>, from <strong>1pm to 4.30pm</strong>. General spectators can watch free from the streets; the organiser also offers separately ticketed grandstand options.",
       "## Route and viewing",
-      "The procession starts by <strong>The Ritz on Piccadilly</strong> and follows <strong>Piccadilly, Regent Street St James's, Pall Mall, Trafalgar Square and Whitehall</strong>, finishing by <strong>Parliament Square</strong>. The route is about <strong>2.2 miles</strong>. Green Park and Piccadilly are near the start, Trafalgar Square is a busy central stretch, and Whitehall leads towards the finish. <a href=\"https://www.google.com/maps/search/?api=1&amp;query=The+Ritz+London+Piccadilly\" target=\"_blank\" rel=\"noopener noreferrer\">📍 Piccadilly start map</a> · <a href=\"https://www.google.com/maps/search/?api=1&amp;query=Parliament+Square%2C+London\" target=\"_blank\" rel=\"noopener noreferrer\">📍 Parliament Square finish</a>.",
+      "The procession starts by <strong>The Ritz on Piccadilly</strong> and follows <strong>Piccadilly, Regent Street St James's, Pall Mall, Trafalgar Square and Whitehall</strong>, finishing by <strong>Parliament Square</strong>. The route is about <strong>2.2 miles</strong>. Green Park and Piccadilly are near the start, Trafalgar Square is a busy central stretch, and Whitehall leads towards the finish.",
       "## What to expect",
       "The organiser says more than <strong>8,000 performers</strong> are expected, including marching bands, cheerleaders, dancers, giant balloons, stunt displays, heritage vehicles and floats representing London's boroughs. The 2027 participant order has not been published, so names and running order may still change.",
       "## Getting there",
-      "Use public transport and check TfL before travelling: streets along the route close for the parade, and New Year's Eve operations can affect central London into New Year's Day. For the start, use Green Park or Piccadilly Circus; for Trafalgar Square, use Charing Cross or Leicester Square; for the finish, use Westminster. <a href=\"https://www.google.com/maps/search/?api=1&amp;query=London+Parade+Piccadilly+Trafalgar+Square+Whitehall\" target=\"_blank\" rel=\"noopener noreferrer\">📍 London Parade route map</a>.",
+      "Use public transport and check TfL before travelling: streets along the route close for the parade, and New Year's Eve operations can affect central London into New Year's Day. For the start, use Green Park or Piccadilly Circus; for Trafalgar Square, use Charing Cross or Leicester Square; for the finish, use Westminster.",
     ],
     faq: [
       { q: "When is London Parade 2027?", a: "Friday 1 January 2027, from 1pm to 4.30pm." },

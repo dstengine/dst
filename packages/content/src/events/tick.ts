@@ -24,7 +24,7 @@ export const items: EventItem[] = [
     cardTitle: "MOCT Clubnight",
     titleSeo: "MOCT Clubnight Երևանում՝ STAOX, հոկտեմբերի 9",
     summary:
-      "MOCT-ի սեզոնի բացումը հոկտեմբերի 9-ին՝ STAOX-ի գլխավորությամբ։ Studio-ում՝ techno, Bar-ում՝ house և trance. տոմսերը՝ 3000–5000 դրամ։",
+      "Երևանյան MOCT-ի սեզոնի բացումը հոկտեմբերի 9-ին՝ STAOX-ի գլխավորությամբ։ Studio-ում՝ techno, Bar-ում՝ house և trance. տոմսերը՝ 3000–5000 դրամ։",
     start: "2026-10-09",
     utcOffset: "+04:00",
     city: "Երևան",
@@ -71,7 +71,7 @@ export const items: EventItem[] = [
         cardTitle: "MOCT Clubnight",
         titleSeo: "MOCT Clubnight in Yerevan: STAOX on 9 October",
         summary:
-          "MOCT opens its season on 9 October, headlined by STAOX. Techno in the Studio, house and trance in the Bar; tickets are AMD 3,000–5,000.",
+          "Yerevan's MOCT opens its season on 9 October, headlined by STAOX. Techno in the Studio, house and trance in the Bar; tickets are AMD 3,000–5,000.",
         city: "Yerevan",
         country: "Armenia",
         venue: "Hayfilm Cluster, 30 Ashtarak Highway",
@@ -105,7 +105,7 @@ export const items: EventItem[] = [
     cardTitle: "Անիմե Հելոուին՝ Aki Fest-ում",
     titleSeo: "Հելոուին Երևանում՝ Aki Fest, հոկտեմբերի 31",
     summary:
-      "Անիմե, քոսփլեյ, K-pop, խաղեր և Artist Alley՝ հոկտեմբերի 31-ին Aki Fest-ում, ժամը 12:00–18:00։ Տոմսերը վաճառվում են մուտքի մոտ՝ 2500 դրամից։",
+      "Անիմե, քոսփլեյ, K-pop, խաղեր և Artist Alley՝ հոկտեմբերի 31-ին Երևանում՝ Aki Fest-ում, ժամը 12:00–18:00։ Տոմսերը վաճառվում են մուտքի մոտ՝ 2500 դրամից։",
     start: "2026-10-31",
     startTime: "12:00",
     end: "2026-10-31",
@@ -115,9 +115,9 @@ export const items: EventItem[] = [
     country: "Հայաստան",
     venue: "Մխիթար Հերացու փողոց 1/1, 5-րդ հարկ",
     organizer: "Aki Fest",
-    category: "Halloween",
+    category: "Հելոուին",
     image: "/covers/aki-fest-halloween-yerevan-2026.jpg",
-    imageAlt: "Paper theatre mask, folded fans and small star badges on a warm orange ground",
+    imageAlt: "Թղթե թատերական դիմակ, ծալովի հովհարներ և աստղաձև փոքր կրծքանշաններ տաք նարնջագույն ֆոնի վրա",
     imageKind: "generated",
     imageWidth: 1536,
     imageHeight: 864,
@@ -150,12 +150,13 @@ export const items: EventItem[] = [
         cardTitle: "Anime Halloween at Aki Fest",
         titleSeo: "Halloween in Yerevan: Aki Fest on 31 October",
         summary:
-          "Anime, cosplay, K-pop, games and an Artist Alley at Aki Fest on 31 October, noon to 6pm. Tickets are sold at the door, from 2,500 drams.",
+          "Anime, cosplay, K-pop, games and an Artist Alley at Aki Fest in Yerevan on 31 October, noon to 6pm. Tickets are sold at the door, from 2,500 drams.",
         city: "Yerevan",
         country: "Armenia",
         venue: "1/1 Mkhitar Heratsi Street, fifth floor",
         organizer: "Aki Fest",
         category: "Halloween",
+        imageAlt: "Paper theatre mask, folded fans and small star badges on a warm orange ground",
         ticket: { url: "https://akifest.com/", label: "Festival details" },
         body: [
           "Aki Fest's Halloween edition brings anime and cosplay together with a fandom market. It runs on 31 October from noon to 6pm, on the fifth floor at 1/1 Mkhitar Heratsi Street.",

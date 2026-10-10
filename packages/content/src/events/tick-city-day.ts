@@ -55,7 +55,6 @@ export const items: EventItem[] = [
         organizer: "Yerevan Municipality",
         category: "Concerts",
         imageAlt: "Official orange poster for Yerevan's 2,808th anniversary, dated 9–10 October",
-        imageCredit: "Yerevan Municipality",
         body: [
           "Yerevan's two-day City Day celebration opens on 9 October at Diana Abgar Park. Diana Arbenina performs with the Night Snipers band.",
           "## Time and place",
@@ -94,9 +93,13 @@ export const items: EventItem[] = [
     imageCredit: "Երևանի քաղաքապետարան",
     imageWidth: 523,
     imageHeight: 349,
-    source,
+    source: {
+      name: "Երևանի քաղաքապետարան",
+      url: "https://www.yerevan.am/hy/news/se-r-to-n-erewa-n-miasin-nshenk-mayrak-aghak-i-2808-amyake/",
+      verifiedOn: "2026-10-10",
+    },
     body: [
-      "Երևանի օրվա գարեջրի փառատոնը անցկացվում է Դիանա Աբգարի անվան զբոսայգում՝ հոկտեմբերի 9-ին և 10-ին։ Քաղաքային ուղեցույցում նշվում է, որ առաջին օրը փառատոնը մեկնարկում է ժամը 16:00-ին, իսկ հոկտեմբերի 10-ին կշարունակվի ռոք բեմի համերգների հետ զուգահեռ։",
+      "Երևանի օրվա գարեջրի փառատոնը անցկացվում է Դիանա Աբգարի անվան զբոսայգում՝ հոկտեմբերի 9-ին և 10-ին։ Քաղաքապետարանի հայտարարության համաձայն՝ առաջին օրը փառատոնը մեկնարկում է ժամը 16:00-ին, իսկ հոկտեմբերի 10-ին կշարունակվի ռոք բեմի համերգների հետ զուգահեռ։",
       "Հոկտեմբերի 9-ի երեկոյան այգու գլխավոր համերգին ելույթ կունենան Դիանա Արբենինան և «Նոչնիե սնայպերի»-ն։",
     ],
     faq: [
@@ -115,9 +118,8 @@ export const items: EventItem[] = [
         organizer: "Yerevan Municipality",
         category: "Festivals",
         imageAlt: "Official celebration poster for Yerevan's 2,808th anniversary and its city events",
-        imageCredit: "Yerevan Municipality",
         body: [
-          "The Yerevan City Day beer festival takes place at Diana Abgar Park on 9 and 10 October. The city guide says it opens at 16:00 on the first day and continues alongside the rock stage on 10 October.",
+          "The Yerevan City Day beer festival takes place at Diana Abgar Park on 9 and 10 October. City Hall's announcement says it opens at 16:00 on the first day and continues alongside the rock stage on 10 October.",
           "Diana Arbenina and Night Snipers headline the park's concert on the evening of 9 October.",
         ],
         faq: [
@@ -174,7 +176,6 @@ export const items: EventItem[] = [
         organizer: "Yerevan Municipality",
         category: "Concerts",
         imageAlt: "Official poster for Yerevan's 2,808th anniversary celebrations on 9–10 October",
-        imageCredit: "Yerevan Municipality",
         speakersHeading: "Performers",
         body: [
           "The Yerevan City Day pop concert is at Charles Aznavour Square on 10 October. The city's guide lists the stage from 12:00 to 18:00.",
@@ -213,10 +214,10 @@ export const items: EventItem[] = [
     imageHeight: 720,
     source,
     speakersHeading: "Կատարողներ",
-    speakers: [{ name: "FKJ" }, { name: "Հայաստանի պետական ջազ նվագախումբ" }, { name: "Karen Manukyan Trio" }, { name: "The Armenian Colors Quartet" }, { name: "Artyom Manukyan Trio" }, { name: "Malkhas Jazz Trio" }],
+    speakers: [{ name: "FKJ" }, { name: "Հայաստանի պետական ջազ նվագախումբ" }, { name: "Կարեն Մամիկոնյան տրիո" }, { name: "The Armenian Colors Quartet" }, { name: "Արտյոմ Մանուկյան տրիո" }, { name: "Մալխաս ջազ տրիո" }],
     body: [
       "Երևանի օրվա ջազային ծրագիրը հոկտեմբերի 10-ին Կասկադի Գաֆէսճեան քանդակների պարտեզում է՝ ժամը 13:00–22:00։",
-      "Օրվա ընթացքում ելույթ կունենան Հայաստանի պետական ջազ նվագախումբը, Karen Manukyan Trio-ն, Վահագն Հայրապետյանի The Armenian Colors Quartet-ը, Artyom Manukyan Trio-ն, Malkhas Jazz Trio-ն և այլ երաժիշտներ։",
+      "Օրվա ընթացքում ելույթ կունենան Հայաստանի պետական ջազ նվագախումբը, Կարեն Մամիկոնյան տրիոն, Վահագն Հայրապետյանի The Armenian Colors Quartet-ը, Արտյոմ Մանուկյան տրիոն, Մալխաս ջազ տրիոն և այլ երաժիշտներ։",
       "## Հատուկ հյուր՝ FKJ",
       "Ֆրանսիացի բազմագործիքահար FKJ-ի ելույթը նախատեսված է ժամը 20:00-ին։",
     ],
@@ -233,19 +234,18 @@ export const items: EventItem[] = [
         organizer: "Yerevan Municipality",
         category: "Concerts",
         imageAlt: "Visit Yerevan jazz poster with FKJ and his 20:00 performance time on 10 October",
-        imageCredit: "Visit Yerevan",
         speakersHeading: "Performers",
         speakers: [
           { name: "FKJ" },
           { name: "Armenian State Jazz Orchestra" },
-          { name: "Karen Manukyan Trio" },
+          { name: "Karen Mamikonyan Trio" },
           { name: "The Armenian Colors Quartet" },
           { name: "Artyom Manukyan Trio" },
           { name: "Malkhas Jazz Trio" },
         ],
         body: [
           "Yerevan City Day's jazz programme takes place at the Cafesjian Sculpture Garden at the Cascade on 10 October, from 13:00 to 22:00.",
-          "Performers include the Armenian State Jazz Orchestra, Karen Manukyan Trio, Vahagn Hayrapetyan's The Armenian Colors Quartet, Artyom Manukyan Trio, Malkhas Jazz Trio and others.",
+          "Performers include the Armenian State Jazz Orchestra, Karen Mamikonyan Trio, Vahagn Hayrapetyan's The Armenian Colors Quartet, Artyom Manukyan Trio, Malkhas Jazz Trio and others.",
           "## Special guest: FKJ",
           "French multi-instrumentalist FKJ is scheduled to perform at 20:00.",
         ],
@@ -300,7 +300,6 @@ export const items: EventItem[] = [
         organizer: "Yerevan Municipality",
         category: "Concerts",
         imageAlt: "Visit Yerevan poster for the Nemra concert on Yerevan City Day, 10 October",
-        imageCredit: "Visit Yerevan",
         speakersHeading: "Performers",
         body: [
           "The Yerevan City Day rock stage runs at Diana Abgar Park on 10 October, from 13:00 to 23:00.",
@@ -357,7 +356,6 @@ export const items: EventItem[] = [
         organizer: "Yerevan Municipality",
         category: "Festivals",
         imageAlt: "Visit Yerevan poster featuring the Akunk State Ethnographic Ensemble for City Day",
-        imageCredit: "Visit Yerevan",
         speakersHeading: "Performers",
         speakers: [
           { name: "Sona Rubenyan" },
@@ -422,7 +420,6 @@ export const items: EventItem[] = [
         organizer: "Yerevan Municipality",
         category: "Concerts",
         imageAlt: "Official poster for Yerevan's 2,808th anniversary city programme",
-        imageCredit: "Yerevan Municipality",
         speakersHeading: "Performers",
         body: [
           "Yerevan City Day's rap stage is at English Park on 10 October, from 17:00 to 22:00.",
@@ -479,7 +476,6 @@ export const items: EventItem[] = [
         organizer: "Yerevan Municipality",
         category: "Concerts",
         imageAlt: "Visit Yerevan poster for the Symphonic Folk concert on 10 October",
-        imageCredit: "Visit Yerevan",
         speakersHeading: "Performers",
         speakers: [
           { name: "Yerevan Youth Orchestra" },
@@ -542,7 +538,6 @@ export const items: EventItem[] = [
         organizer: "Yerevan Municipality",
         category: "Concerts",
         imageAlt: "Visit Yerevan poster for the electronic stage, featuring Vanco and his 21:30 set time",
-        imageCredit: "Visit Yerevan",
         speakersHeading: "Performers",
         body: [
           "Yerevan City Day's electronic stage is at Republic Square, beside the Singing Fountains, on 10 October. The programme runs from 17:00 to 23:00.",

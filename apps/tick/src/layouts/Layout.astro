@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "@dst/ui/BaseLayout.astro";
 import { site as SITES } from "../site.config";
-import { promoted } from "../sections";
+import { promoted, cityDayAhead } from "../sections";
 import { alternates, prefix } from "../i18n";
 import type { Lang } from "../content";
 import "../styles/theme.css";
@@ -36,7 +36,7 @@ const NAV = {
     { href: "/yerevan-city-day/", label: "Yerevan City Day", title: "Yerevan City Day concerts and events", icon: "star" },
     { href: "/about/", label: "About", title: "Who makes this site and how each date is checked", icon: "id" },
   ],
-}[lang];
+}[lang].filter((l) => cityDayAhead[lang] || !l.href.endsWith("yerevan-city-day/"));
 
 // Second, not last, when there is one: the one link here about what is
 // being asked for this month, and it removes itself when its last date has

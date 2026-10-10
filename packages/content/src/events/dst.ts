@@ -42,7 +42,7 @@ export const items: EventItem[] = [
       "## Date, hours and venue",
       "<strong>Saturday 24 October, 4pm–10pm</strong>, at <strong>Al Wasl Plaza, Expo City Dubai</strong>. This is an evening event rather than an all-day festival, so the published six-hour window is the useful planning detail.",
       "## Tickets and getting there",
-      "The listing shows tickets at <strong>AED 30</strong>. Check the organiser's page for availability and any updated entry conditions before setting out. Expo City Dubai is served by the Dubai Metro's Expo 2020 station. <a href=\"https://www.google.com/maps/search/?api=1&amp;query=Al+Wasl+Plaza%2C+Expo+City+Dubai\" target=\"_blank\" rel=\"noopener noreferrer\">📍 Al Wasl Plaza map</a>.",
+      "The listing shows tickets at <strong>AED 30</strong>. Check the organiser's page for availability and any updated entry conditions before setting out. Expo City Dubai is served by the Dubai Metro's Expo 2020 station.",
     ],
     faq: [
       { q: "When is The Spirit of Mexico in Dubai?", a: "Saturday 24 October 2026, from 4pm to 10pm." },
@@ -87,7 +87,7 @@ export const items: EventItem[] = [
     body: [
       "Dubai Opera has booked a first for its main auditorium: the <strong>Bolshoi Theatre Orchestra</strong> performs there on <strong>Thursday 3 December 2026 at 8pm</strong>. The concert is presented with Art Seasons and conducted by <strong>Valery Gergiev</strong>.",
       "## Tickets and venue",
-      "Dubai Opera lists tickets from <strong>AED 350</strong>. The concert is in the <strong>Main Auditorium</strong> at Dubai Opera, Sheikh Mohammed bin Rashid Boulevard, Downtown Dubai. <a href=\"https://www.google.com/maps/search/?api=1&amp;query=Dubai+Opera\" target=\"_blank\" rel=\"noopener noreferrer\">📍 Dubai Opera map</a>.",
+      "Dubai Opera lists tickets from <strong>AED 350</strong>. The concert is in the <strong>Main Auditorium</strong> at Dubai Opera, Sheikh Mohammed bin Rashid Boulevard, Downtown Dubai.",
       "## The orchestra",
       "The ensemble was formed in <strong>1776</strong> as part of the company that became the Bolshoi Theatre. Dubai Opera describes it as the orchestra's first performance at the venue; the event page lists Gergiev as conductor.",
     ],

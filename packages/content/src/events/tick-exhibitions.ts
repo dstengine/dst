@@ -49,7 +49,7 @@ export const items: EventItem[] = [
       "## Ինչ է ցուցադրվում",
       "Նախագիծը չի կրկնօրինակում մեկ որոշակի շրջանի կամ վայրի ավանդական ձևերը։ Հեղինակները միավորում են Արցախի ու Սևանի գորգագործական մոտիվները Սանահինի և Ջուղայի խաչքարային ժառանգության հետ։ Կենտրոնի նկարագրությամբ՝ յուրաքանչյուր քանդակ ունի իր պատմությունը՝ ծիրանենու ծաղկումից մինչև ավելի անձնական ու ինքնամփոփ ճանապարհորդություններ։",
       "## Որտեղ և երբ",
-      "Ցուցահանդեսը Գաֆէսճեան կենտրոնի <strong>Սասունցի Դավիթ սրահում</strong> է՝ Թամանյան 10 հասցեում։ Մուտքն անվճար է։ Ցուցասրահների աշխատանքային ժամերը տարբեր են Կասկադի մյուս բաց տարածքների ժամերից․ այցից առաջ ստուգիր կենտրոնի այցելուների էջը։ <a href=\"https://www.google.com/maps/search/?api=1&amp;query=Cafesjian+Center+for+the+Arts%2C+10+Tamanyan+Street%2C+Yerevan\" target=\"_blank\" rel=\"noopener noreferrer\">📍 Գաֆէսճեան կենտրոնը քարտեզի վրա</a>։",
+      "Ցուցահանդեսը Գաֆէսճեան կենտրոնի <strong>Սասունցի Դավիթ սրահում</strong> է՝ Թամանյան 10 հասցեում։ Մուտքն անվճար է։ Ցուցասրահների աշխատանքային ժամերը տարբեր են Կասկադի մյուս բաց տարածքների ժամերից․ այցից առաջ ստուգիր կենտրոնի այցելուների էջը։",
     ],
     faq: [
       { q: "Մինչև ե՞րբ է բաց «Քարպետ» ցուցահանդեսը Երևանում։", a: "Մինչև <strong>2026 թվականի դեկտեմբերի 12-ը</strong>՝ Գաֆէսճեան արվեստի կենտրոնի Սասունցի Դավիթ սրահում։" },
@@ -75,7 +75,7 @@ export const items: EventItem[] = [
           "## What is on view",
           "The project reinterprets rather than copies a single local tradition. The artists combine carpet motifs from Artsakh and Lake Sevan with the khachkar heritage of Sanahin and Julfa. The Center says each of the four sculptures has its own narrative, from an apricot tree in blossom to more personal, inward journeys.",
           "## Where and when",
-          "The exhibition is in the <strong>Sasuntsi Davit Gallery</strong> at the Cafesjian Center for the Arts, 10 Tamanyan Street. Admission is free. Gallery opening hours differ from the Cascade's outdoor spaces, so check the visitor page before going. <a href=\"https://www.google.com/maps/search/?api=1&amp;query=Cafesjian+Center+for+the+Arts%2C+10+Tamanyan+Street%2C+Yerevan\" target=\"_blank\" rel=\"noopener noreferrer\">📍 Cafesjian Center for the Arts map</a>.",
+          "The exhibition is in the <strong>Sasuntsi Davit Gallery</strong> at the Cafesjian Center for the Arts, 10 Tamanyan Street. Admission is free. Gallery opening hours differ from the Cascade's outdoor spaces, so check the visitor page before going.",
         ],
         faq: [
           { q: "How long is Qarpet on in Yerevan?", a: "Through <strong>12 December 2026</strong> at the Cafesjian Center for the Arts' Sasuntsi Davit Gallery." },
@@ -122,7 +122,7 @@ export const items: EventItem[] = [
       "## Ինչ փնտրել ցուցասրահում",
       "Նկարները սկզբում կարող են թվալ գծերի ու գունային բծերի խիտ դաշտեր։ Դրանց մեջ աստիճանաբար երևում են բարձրահարկ շենքեր ու ամբողջ թաղամասեր՝ տարբեր բարձրություններից ու հեռանկարներից։ Նկարչական մակերեսով անցնող անվադողի հետքերը ֆիզիկական շարժումը դարձնում են պատկեր։",
       "## Ցուցահանդեսի միտքը",
-      "Կենտրոնի ներկայացմամբ՝ գործերը հարցնում են, թե ինչ է տեղի ունենում քաղաքի զգացողության հետ, երբ ծանոթ շենքերն ու տարածքները կորցնում են իրենց կայուն իմաստը։ Ցուցահանդեսը նաև մտնում է CYFEST 17-ի <em>Natura Naturans</em> նախագծի շրջանակ՝ քաղաքը դիտարկելով որպես մարդու ստեղծած բնապատկեր։ Մուտքն անվճար է։ <a href=\"https://www.google.com/maps/search/?api=1&amp;query=Cafesjian+Center+for+the+Arts%2C+10+Tamanyan+Street%2C+Yerevan\" target=\"_blank\" rel=\"noopener noreferrer\">📍 Gallery One քարտեզի վրա</a>։",
+      "Կենտրոնի ներկայացմամբ՝ գործերը հարցնում են, թե ինչ է տեղի ունենում քաղաքի զգացողության հետ, երբ ծանոթ շենքերն ու տարածքները կորցնում են իրենց կայուն իմաստը։ Ցուցահանդեսը նաև մտնում է CYFEST 17-ի <em>Natura Naturans</em> նախագծի շրջանակ՝ քաղաքը դիտարկելով որպես մարդու ստեղծած բնապատկեր։ Մուտքն անվճար է։",
     ],
     faq: [
       { q: "Ե՞րբ է ցուցադրվում «Անծանոթ քաղաքը»։", a: "Մինչև <strong>2027 թվականի փետրվարի 28-ը</strong>՝ Գաֆէսճեան արվեստի կենտրոնի Gallery One սրահում։" },
@@ -133,7 +133,7 @@ export const items: EventItem[] = [
       en: {
         title: "Gagik Ghazanchyan: unFamiliar City at the Cafesjian Center",
         cardTitle: "unFamiliar City",
-        titleSeo: "Gagik Ghazanchyan in Yerevan: unFamiliar City through February",
+        titleSeo: "Ghazanchyan's unFamiliar City in Yerevan, until February",
         summary:
           "City fragments emerge from abstract, layered paintings in Gagik Ghazanchyan's 2024–26 work, at Cafesjian Center for the Arts in Yerevan through 28 February.",
         venue: "Cafesjian Center for the Arts, Gallery One, 10 Tamanyan Street",
@@ -148,7 +148,7 @@ export const items: EventItem[] = [
           "## What to look for in the gallery",
           "The paintings can first read as dense fields of lines and colour. Then fragments of buildings and whole high-rise districts emerge, seen from shifting heights and angles. Tire marks across the painted surface turn physical movement into another kind of image.",
           "## The exhibition's idea",
-          "The Center frames the work around what happens to a city's felt identity when familiar buildings and places lose stable meaning. The exhibition is also part of CYFEST 17's <em>Natura Naturans</em>, which considers the city as a human-made landscape. Admission is free. <a href=\"https://www.google.com/maps/search/?api=1&amp;query=Cafesjian+Center+for+the+Arts%2C+10+Tamanyan+Street%2C+Yerevan\" target=\"_blank\" rel=\"noopener noreferrer\">📍 Gallery One map</a>.",
+          "The Center frames the work around what happens to a city's felt identity when familiar buildings and places lose stable meaning. The exhibition is also part of CYFEST 17's <em>Natura Naturans</em>, which considers the city as a human-made landscape. Admission is free.",
         ],
         faq: [
           { q: "When is unFamiliar City on?", a: "Through <strong>28 February 2027</strong> at Gallery One, Cafesjian Center for the Arts." },
@@ -195,7 +195,7 @@ export const items: EventItem[] = [
       "## Ինչ է ուսումնասիրում ցուցահանդեսը",
       "Աշխատանքները անդրադառնում են բնական ու տեխնոլոգիական ուժերին, որոնք ազդում են մեր ընկալման վրա՝ արևի լույսից և երկրաբանական նյութերից մինչև մագնիսական դաշտեր ու էլեկտրամագնիսական ազդանշաններ։ Ցուցադրությունը կապում է մեդիաարվեստը Օրգանական դպրոցի ժառանգության և Կասկադի ճարտարապետության հետ։",
       "## Բացումը և ծրագիրը",
-      "Բացման արարողությունը հոկտեմբերի <strong>15-ին, ժամը 18:00-ին</strong> է՝ Գաֆէսճեան արվեստի կենտրոնում։ Փառատոնի բացման շաբաթը ներառում է կատարումներ, վիդեոցուցադրություններ, քննարկումներ և հնչյունային ծրագիր։ Տոմսերի կամ առանձին միջոցառումների ամրագրման պահանջը ստուգիր պաշտոնական ծրագրում։ Կենտրոնի ցուցասրահների մուտքն անվճար է, աշխատանքային ժամերը՝ ուրբաթից կիրակի 10:00–20:00։ <a href=\"https://www.google.com/maps/search/?api=1&amp;query=Cafesjian+Center+for+the+Arts%2C+10+Tamanyan+Street%2C+Yerevan\" target=\"_blank\" rel=\"noopener noreferrer\">📍 CYFEST-ը քարտեզի վրա</a>։",
+      "Բացման արարողությունը հոկտեմբերի <strong>15-ին, ժամը 18:00-ին</strong> է՝ Գաֆէսճեան արվեստի կենտրոնում։ Փառատոնի բացման շաբաթը ներառում է կատարումներ, վիդեոցուցադրություններ, քննարկումներ և հնչյունային ծրագիր։ Տոմսերի կամ առանձին միջոցառումների ամրագրման պահանջը ստուգիր պաշտոնական ծրագրում։ Կենտրոնի ցուցասրահների մուտքն անվճար է, աշխատանքային ժամերը՝ ուրբաթից կիրակի 10:00–20:00։",
     ],
     faq: [
       { q: "Ե՞րբ է CYFEST 17-ը Երևանում։", a: "2026 թվականի հոկտեմբերի 15-ից մինչև 2027 թվականի հունվարի 17-ը։ Բացումը հոկտեմբերի 15-ին՝ 18:00-ին։" },
@@ -221,7 +221,7 @@ export const items: EventItem[] = [
           "## What the exhibition explores",
           "The works consider the natural and technological forces that shape perception, from sunlight and geological matter to magnetic fields and electromagnetic signals. The programme puts media art in conversation with the legacy of the Organic School and the architecture of the Cascade.",
           "## Opening and public programme",
-          "The opening reception is on <strong>15 October at 6pm</strong> at the Cafesjian Center for the Arts. Opening week includes performances, video screenings, discussions and a sound programme. Check CYFEST's official programme for booking requirements for individual events. The Center's exhibition galleries are free to enter and open Friday to Sunday, 10am–8pm. <a href=\"https://www.google.com/maps/search/?api=1&amp;query=Cafesjian+Center+for+the+Arts%2C+10+Tamanyan+Street%2C+Yerevan\" target=\"_blank\" rel=\"noopener noreferrer\">📍 CYFEST venue map</a>.",
+          "The opening reception is on <strong>15 October at 6pm</strong> at the Cafesjian Center for the Arts. Opening week includes performances, video screenings, discussions and a sound programme. Check CYFEST's official programme for booking requirements for individual events. The Center's exhibition galleries are free to enter and open Friday to Sunday, 10am–8pm.",
         ],
         faq: [
           { q: "When is CYFEST 17 in Yerevan?", a: "From 15 October 2026 to 17 January 2027. The opening reception is on 15 October at 6pm." },
@@ -267,7 +267,7 @@ export const items: EventItem[] = [
       "## Երեք մեծ կտավ՝ մեկ սրահում",
       "«Լքյալը» միավորվում է Սուրենյանցի երկու այլ մոնումենտալ գործերի՝ «Պղծված սրբարանի» (1895) և «Կոտորածից հետո»-ի (1898) հետ։ Ցուցահանդեսում ներառված են նաև Փանոս Թերլեմեզյանի, Սարգիս Խաչատուրյանի, Մարիամ Ասլամազյանի և այլ արվեստագետների աշխատանքներ։",
       "## Այցի տեղեկություններ",
-      "Ցուցահանդեսը Հայաստանի ազգային պատկերասրահում է՝ Արամի 1 հասցեում։ Պատկերասրահը երկուշաբթի փակ է, իսկ տոմսարկղը փակվում է աշխատանքային օրվա ավարտից 45 րոպե առաջ։ Մուտքի գործող գինը ստուգիր պատկերասրահի տոմսերի հղումով։ <a href=\"https://www.google.com/maps/search/?api=1&amp;query=National+Gallery+of+Armenia%2C+1+Aram+Street%2C+Yerevan\" target=\"_blank\" rel=\"noopener noreferrer\">📍 Ազգային պատկերասրահը քարտեզի վրա</a>։",
+      "Ցուցահանդեսը Հայաստանի ազգային պատկերասրահում է՝ Արամի 1 հասցեում։ Պատկերասրահը երկուշաբթի փակ է, իսկ տոմսարկղը փակվում է աշխատանքային օրվա ավարտից 45 րոպե առաջ։ Մուտքի գործող գինը ստուգիր պատկերասրահի տոմսերի հղումով։",
     ],
     faq: [
       { q: "Մինչև ե՞րբ է բաց Սուրենյանցի ցուցահանդեսը։", a: "Մինչև <strong>2027 թվականի փետրվարի 17-ը</strong>՝ Հայաստանի ազգային պատկերասրահում։" },
@@ -278,7 +278,7 @@ export const items: EventItem[] = [
       en: {
         title: "The Face of Humanity: Vardges Sureniants at the National Gallery",
         cardTitle: "Sureniants at the National Gallery",
-        titleSeo: "Sureniants in Yerevan: The Face of Humanity through 17 February",
+        titleSeo: "Sureniants in Yerevan: The Face of Humanity to 17 Feb",
         summary:
           "The Abandoned returns to Armenia for the first time in over 130 years, alongside two monumental Sureniants paintings at Yerevan's National Gallery through 17 February.",
         venue: "National Gallery of Armenia, 1 Aram Street",
@@ -293,7 +293,7 @@ export const items: EventItem[] = [
           "## Three monumental paintings together",
           "<em>The Abandoned</em> is shown alongside two other large Sureniants works: <em>Desecrated Sanctity</em> (1895) and <em>After the Massacre</em> (1898). The exhibition also includes works by Panos Terlemezian, Sarkis Katchadourian, Mariam Aslamazyan and other artists.",
           "## Visiting information",
-          "The exhibition is at the National Gallery of Armenia, 1 Aram Street. The Gallery is closed on Mondays; its ticket office closes 45 minutes before the end of the working day. Check the Gallery's ticket link for current admission prices. <a href=\"https://www.google.com/maps/search/?api=1&amp;query=National+Gallery+of+Armenia%2C+1+Aram+Street%2C+Yerevan\" target=\"_blank\" rel=\"noopener noreferrer\">📍 National Gallery of Armenia map</a>.",
+          "The exhibition is at the National Gallery of Armenia, 1 Aram Street. The Gallery is closed on Mondays; its ticket office closes 45 minutes before the end of the working day. Check the Gallery's ticket link for current admission prices.",
         ],
         faq: [
           { q: "How long is The Face of Humanity on?", a: "Through <strong>17 February 2027</strong> at the National Gallery of Armenia in Yerevan." },

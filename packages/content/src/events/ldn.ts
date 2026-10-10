@@ -36,7 +36,7 @@ export const items: EventItem[] = [
       "## The London fixture",
       "This is one of three NFL regular-season games in London this autumn. The first Tottenham fixture was on 4 October; the Jaguars return to London the following week to meet the Houston Texans at Wembley on 18 October. The Eagles–Jaguars game is the only one of the three at Tottenham.",
       "## Getting to Tottenham Hotspur Stadium",
-      "The stadium is at 782 High Road, N17 0BX. The NFL's London guide publishes match-day travel and entry information; check it before leaving, as the area operates a managed event-day transport plan. <a href=\"https://www.google.com/maps/search/?api=1&amp;query=Tottenham+Hotspur+Stadium\" target=\"_blank\" rel=\"noopener noreferrer\">📍 Tottenham Hotspur Stadium map</a>.",
+      "The stadium is at 782 High Road, N17 0BX. The NFL's London guide publishes match-day travel and entry information; check it before leaving, as the area operates a managed event-day transport plan.",
     ],
     faq: [
       { q: "When is Eagles vs Jaguars in London?", a: "Sunday 11 October 2026, with kick-off at 2.30pm BST." },
@@ -79,7 +79,7 @@ export const items: EventItem[] = [
       "## Wembley is the third London game this season",
       "The fixture follows the Jaguars' game against the Philadelphia Eagles at Tottenham Hotspur Stadium on 11 October. The Jaguars therefore play consecutive regular-season games in London, changing stadiums between them; this Wembley date is the only 2026 London game at the national stadium.",
       "## Getting to Wembley Stadium",
-      "The stadium address is Wembley, London HA9 0WS. Use the official match-day travel advice for station access and arrival times. <a href=\"https://www.google.com/maps/search/?api=1&amp;query=Wembley+Stadium\" target=\"_blank\" rel=\"noopener noreferrer\">📍 Wembley Stadium map</a>.",
+      "The stadium address is Wembley, London HA9 0WS. Use the official match-day travel advice for station access and arrival times.",
     ],
     faq: [
       { q: "When do the Texans play the Jaguars at Wembley?", a: "Sunday 18 October 2026, kick-off at 2.30pm BST." },

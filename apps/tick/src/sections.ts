@@ -78,9 +78,9 @@ export function sections(items: FeedItem[], lang: Lang): Section[] {
           ? {
               title: "Հելոուին Երևանում 2026․ փառատոն և երեկույթներ",
               description:
-                "Հելոուին Երևանում․ Aki Fest-ի ցերեկային անիմե փառատոնը, Oxygen-ի 18+ երեկույթը և Zayon Garden-ի բացօթյա երեկոն՝ ամսաթվերով ու տոմսերի գներով։",
+                "Հելոուին Երևանում․ անիմե փառատոններ, ակումբային և բացօթյա երեկույթներ՝ ամսաթվերով, ժամերով ու տոմսերի գներով։",
               h1: "Հելոուին Երևանում",
-              lede: "Հոկտեմբերի 31-ի երեք տարբերակ՝ ցերեկային անիմե փառատոն, գիշերային ակումբ և բացօթյա այգի։ Տեսեք ժամերը, մուտքի կանոններն ու տոմսերի գները՝ մինչև ընտրելը։",
+              lede: "Որտե՞ղ նշել հոկտեմբերի 31-ը Երևանում՝ ցերեկային փառատոնից մինչև գիշերային ակումբ։ Տեսեք ժամերը, մուտքի կանոններն ու տոմսերի գները՝ մինչև ընտրելը։",
               headings: {
                 events: "Որտե՞ղ նշել Հելոուինը",
                 upcoming: "2026-ի ամսաթվերը",
@@ -91,9 +91,9 @@ export function sections(items: FeedItem[], lang: Lang): Section[] {
           : {
               title: "Halloween in Yerevan 2026: events and parties",
               description:
-                "Halloween in Yerevan: Aki Fest's daytime anime festival, Oxygen's 18+ party and an open-air night at Zayon Garden, with dates and ticket prices.",
+                "Halloween in Yerevan: anime festivals, club nights and open-air parties, with dates, times and ticket prices.",
               h1: "Halloween in Yerevan",
-              lede: "Three ways to spend 31 October: an anime festival by day, a club at night and an open-air garden party. Check the hours, entry rules and prices before choosing.",
+              lede: "Where to spend 31 October in Yerevan, from a daytime festival to a club night. Check the hours, entry rules and prices before choosing.",
               headings: {
                 events: "Where to go for Halloween",
                 upcoming: "2026 dates",
@@ -134,13 +134,21 @@ export function sectionHref(item: FeedItem, lang: Lang): string | undefined {
 }
 
 // The tag this site is pushing right now, if any — see `promotedSection`.
-// Nothing yet: a promotion needs a season with enough dates under it.
+// It drops out of the nav and the event pages by itself once its last date
+// has gone.
 const PROMOTED: Record<Lang, string | undefined> = { hy: "Հելոուին", en: "Halloween" };
 
 const today = new Date().toISOString().slice(0, 10);
 export const promoted = {
   hy: promotedSection(allSections.hy, PROMOTED.hy, today, site.hy.keyword),
   en: promotedSection(allSections.en, PROMOTED.en, today, site.en.keyword),
+};
+
+// Whether Yerevan City Day still has a date to come. The nav links to its
+// page only until then; the page itself stays, as the record of the day.
+export const cityDayAhead: Record<Lang, boolean> = {
+  hy: allSections.hy.some((s) => s.slug === "yerevan-city-day" && s.items.some((i) => "start" in i && (i.end ?? i.start) >= today)),
+  en: allSections.en.some((s) => s.slug === "yerevan-city-day" && s.items.some((i) => "start" in i && (i.end ?? i.start) >= today)),
 };
 
 export const pluralOf = (lang: Lang) => (key: string): string | undefined => tags(lang)[key]?.plural;
