@@ -68,7 +68,8 @@
     "dev:tokiohotel": "npm run dev --workspace=apps/tokiohotel",
     "test:content": "npm run test --workspace=packages/content",
     "style": "node tools/style.mjs",
-    "style:learn": "node tools/style-learn.mjs"
+    "style:learn": "node tools/style-learn.mjs",
+    "ga": "node scripts/ga.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.62.1",
