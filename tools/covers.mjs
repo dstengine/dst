@@ -203,9 +203,10 @@ function idiomFor(site, entry) {
   return IDIOMS[name];
 }
 
-/** The standard tier draws no one. */
+/** The standard tier draws no one who could be told apart: a crowd of
+    anonymous figures may fill a scene, a face may not. */
 const STYLE = (site, entry) =>
-  `${idiomFor(site, entry)}, generous negative space, no people, no faces, ${NEGATIVES}`;
+  `${idiomFor(site, entry)}, generous negative space, no faces, no identifying details, ${NEGATIVES}`;
 
 /** The figure tier is the one that draws people, and it stays on the right
     side of the reportage line by being plainly a cartoon. It keeps the paper
@@ -225,7 +226,7 @@ class Refused extends Error {}
 /** Licences that put no obligation on the pages the cover ends up on. */
 const OPEN_LICENCES = new Set(["CC0", "Public domain"]);
 
-const WIDTH = 1536, HEIGHT = 864;
+const WIDTH = 1024, HEIGHT = 1024;
 
 const TIERS = {
   standard: { model: "fal-ai/flux/schnell", steps: 4, perMp: 0.003 },

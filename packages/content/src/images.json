@@ -28526,6 +28526,38 @@
         ]
       ]
     },
+    "/covers/yerevan-city-day-night-crowd.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/yerevan-city-day-night-crowd-480.avif"
+        ],
+        [
+          768,
+          "/covers/yerevan-city-day-night-crowd-768.avif"
+        ],
+        [
+          1024,
+          "/covers/yerevan-city-day-night-crowd-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/yerevan-city-day-night-crowd-480.webp"
+        ],
+        [
+          768,
+          "/covers/yerevan-city-day-night-crowd-768.webp"
+        ],
+        [
+          1024,
+          "/covers/yerevan-city-day-night-crowd-1024.webp"
+        ]
+      ]
+    },
     "/covers/yerevan-city-day-symphonic-folk-2026.jpg": {
       "width": 1280,
       "height": 720,
