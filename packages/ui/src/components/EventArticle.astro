@@ -414,7 +414,7 @@ const jsonLd =
 // event was written from, which for most of these is the organiser's own
 // site and is where a ticket would be sold if there is one to sell.
 const action = (() => {
-  if (item.ticket && ticketHref) return { href: ticketHref, label: item.ticket.label ?? L.register, sells: true };
+  if (item.ticket && ticketHref) return { href: ticketHref, label: item.ticket.label ?? L.register, sells: item.ticket.sells !== false };
   // Nothing is being sold, so nothing is called tickets. A free community
   // meetup with a Tickets button reads as a page that has not been looked
   // at, and on a past one it reads as a page nobody maintains.

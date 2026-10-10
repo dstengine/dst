@@ -258,7 +258,10 @@ export interface EventItem extends ItemBase {
   // search engines. Set this and both say Online instead.
   online?: boolean;
   organizer?: string;
-  ticket?: { url: string; label?: string }; // -> /go/<slug>/, visible button
+  ticket?: { url: string; label?: string; sells?: false }; // -> /go/<slug>/, visible button
+  // `sells: false` marks a link that is the organiser's announcement rather
+  // than a seller — an entry fee paid at the door. Its button keeps its own
+  // label: no "tickets from" price, and a click is not counted as a sale.
   // What a seat costs and until when. A ticketing platform puts this at the
   // top of its page because it is the second question after the date, and a
   // listing that makes someone click through to a third party to learn the

@@ -1192,7 +1192,7 @@ describe("experiments", () => {
 
   test("ticket-price is on every tick event page that sells tickets at a price", () => {
     if (!liveExperiments("tick.am", "/events/x/", today).some((e) => e.id === "ticket-price")) return;
-    const priced = allEvents.filter((i) => i.site === "tick" && i.ticket && i.tickets?.priceFrom > 0 && i.body?.length);
+    const priced = allEvents.filter((i) => i.site === "tick" && i.ticket && i.ticket.sells !== false && i.tickets?.priceFrom > 0 && i.body?.length);
     assert.ok(priced.length > 0, "no priced tick event to test on");
     for (const item of priced) {
       for (const url of [`/events/${item.slug}/`, `/am/events/${item.slug}/`]) {
@@ -1211,10 +1211,14 @@ describe("experiments", () => {
   // click by this attribute. Without it every Tickets button on the network
   // was counted as an outbound_click — and the ticket-price test, whose
   // metric is ticket_click, would have measured nothing at all.
+  // A `sells: false` link is an announcement, not a seller, and says so by
+  // leaving the attribute off: a click on it is not a ticket sale.
   test("a ticket button says it is one", () => {
+    const notSold = new Set(allEvents.filter((i) => i.ticket?.sells === false).map((i) => `/go/${i.slug}-ticket/`));
     let seen = 0;
     for (const p of pages) {
       for (const a of anchorsOf(p.html).filter((a) => /class="button"/.test(a) && /href="\/go\/[^"]*-ticket\/"/.test(a))) {
+        if (notSold.has(a.match(/href="([^"]+)"/)[1])) continue;
         seen++;
         assert.match(a, /\sdata-ticket(?:=""|[\s>])/, `${p.app}${p.url}: a ticket button without data-ticket`);
       }
