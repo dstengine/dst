@@ -60,14 +60,14 @@ export function sections(items: FeedItem[], lang: Lang): Section[] {
         return lang === "hy"
           ? {
               title: "Երևանի օր 2026․ համերգներ և միջոցառումներ",
-              description: "Երևանի օրվա միջոցառումների էջ․ հոկտեմբերի 9-ի համերգն ու գարեջրի փառատոնը, հոկտեմբերի 10-ի յոթ բեմերը, ժամերն ու վայրերը։",
+              description: "Երևանի օրվա միջոցառումների էջ․ հոկտեմբերի 9-ի համերգն ու գարեջրի փառատոնը, հոկտեմբերի 10-ի յոթ բեմերը և house երեկույթը դրանցից հետո, ժամերն ու վայրերը։",
               h1: "Երևանի օր 2026",
               lede: "Երևանի օրվա համերգներն ու փառատոները՝ ըստ օրվա և վայրի։ Բացեք յուրաքանչյուր միջոցառման էջը՝ ծրագրի, ժամի, քարտեզի և աղբյուրի համար։",
               headings: { events: "Երևանի օրվա միջոցառումներ", upcoming: "Ծրագիր", past: "Անցած միջոցառումներ" },
             }
           : {
               title: "Yerevan City Day 2026: concerts and events",
-              description: "Yerevan City Day events: the 9 October concert and beer festival, seven stages on 10 October, with times and locations.",
+              description: "Yerevan City Day events: the 9 October concert and beer festival, seven stages on 10 October and a house after-party, with times and locations.",
               h1: "Yerevan City Day 2026",
               lede: "Yerevan City Day concerts and festivals by date and location. Open each event page for the line-up, time, map and source.",
               headings: { events: "Yerevan City Day events", upcoming: "Programme", past: "Past events" },

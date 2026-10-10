@@ -28406,6 +28406,30 @@
         ]
       ]
     },
+    "/covers/yerevan-city-day-afterparty-forty44-2026.jpg": {
+      "width": 650,
+      "height": 756,
+      "avif": [
+        [
+          480,
+          "/covers/yerevan-city-day-afterparty-forty44-2026-480.avif"
+        ],
+        [
+          650,
+          "/covers/yerevan-city-day-afterparty-forty44-2026-650.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/yerevan-city-day-afterparty-forty44-2026-480.webp"
+        ],
+        [
+          650,
+          "/covers/yerevan-city-day-afterparty-forty44-2026-650.webp"
+        ]
+      ]
+    },
     "/covers/yerevan-city-day-akunk-2026.jpg": {
       "width": 1280,
       "height": 720,
