@@ -12,6 +12,7 @@ import { isFree } from "@dst/content/admission";
 import LeadForm from "./LeadForm.astro";
 import VentureGrid from "./VentureGrid.astro";
 import FeedCards from "./FeedCards.astro";
+import BlockHead from "./BlockHead.astro";
 import SourceLine from "./SourceLine.astro";
 import Faq from "./Faq.astro";
 import { eventType } from "@dst/content/event-types";
@@ -70,6 +71,9 @@ interface Props {
       leads with it and takes its words — see `promotedSection` in
       \@dst/content/sections. */
   promoted?: { key: string; label: string; where: string; year: string };
+  /** The promoted tag's own page, for a link beside the tail's heading
+      when that tag leads it. Optional: without it the heading stands alone. */
+  promotedLink?: { href: string; label: string; title?: string };
   /** The site's head keyword, so the headings this component writes name a
       place instead of a filing word: "More New York parades", not "More
       events". Optional — a site that passes nothing keeps the bare
@@ -93,7 +97,7 @@ interface Props {
       reason. It names the cards, it does not choose them. */
   moreEventsText?: string;
 }
-const { item, backHref, ticketHref, sourceHref, more = [], moreNews = [], newsBase = "/news/", eventsBase = "/events/", publisher, categoryHref, promoted, where, pluralOf, moreEventsText, countdown = false, locale = "en-US", labels: labelOverrides } = Astro.props;
+const { item, backHref, ticketHref, sourceHref, more = [], moreNews = [], newsBase = "/news/", eventsBase = "/events/", publisher, categoryHref, promoted, promotedLink, where, pluralOf, moreEventsText, countdown = false, locale = "en-US", labels: labelOverrides } = Astro.props;
 const L = withLabels(labelOverrides);
 // Venue is part of the page's translated copy; geo.name stays with the
 // coordinates as the source-language map label. Prefer the venue so a
@@ -210,6 +214,7 @@ const tail = tailCards.length > 0
         ?? (promotedLeads && promoted
           ? L.moreTagged(promoted.label, promoted.where, promoted.year)
           : L.moreEvents(where, kindWord)),
+      link: promotedLeads ? promotedLink : undefined,
       cards: tailCards,
     }
   : newsCards.length > 0
@@ -650,7 +655,7 @@ const relatedItems = (item.related ?? []).map((card) => ({
 
   {tail && (
     <section class="event-article-more">
-      <h2>{tail.heading}</h2>
+      <BlockHead heading={tail.heading} link={"link" in tail ? tail.link : undefined} />
       <FeedCards items={tail.cards} columns={tail.cards.length} locale={locale} labels={L} />
     </section>
   )}

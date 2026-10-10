@@ -1,0 +1,64 @@
+---
+// A block's heading, and beside it the way on to the whole list when there
+// is one — the head row of EventsBlock and NewsBlock, for the blocks that
+// close an article or a section page. Without a link it is the bare h2 it
+// replaces, so a block that has nowhere to send the reader looks exactly
+// as it did.
+interface Props {
+  heading: string;
+  /** The list this block is three cards of. `title` is the page's own
+      name, which says more than repeating the link's words. */
+  link?: { href: string; label: string; title?: string };
+}
+const { heading, link } = Astro.props;
+---
+{link ? (
+  <div class="block-head">
+    <h2>{heading}</h2>
+    <a class="block-head-all" href={link.href} title={link.title ?? link.label}>{link.label}<span class="block-head-arrow" aria-hidden="true"> &rarr;</span></a>
+  </div>
+) : (
+  <h2>{heading}</h2>
+)}
+
+<style>
+  /* As in EventsBlock: wrap, with a heading that may grow but not be
+     squeezed, and the link dropping to its own line when short of room. The
+     h2 keeps its margin here — the row replaces a bare h2 inside a block
+     that already counts on it. */
+  .block-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-1) var(--space-3);
+  }
+  .block-head h2 { flex: 1 1 22rem; }
+  .block-head-all {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    flex-shrink: 0;
+    font-size: var(--step--1);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  /* On a phone the link is an outlined button on its own line, for the
+     reason EventsBlock gives: a short accent phrase alone on a line reads as
+     a stray caption. */
+  @media (max-width: 34rem) {
+    .block-head-all {
+      flex: 1 0 100%;
+      justify-content: center;
+      padding: 0.7em 1.3em;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: transparent;
+    }
+    .block-head-all:where(:hover, :focus-visible) {
+      background: var(--surface-sunk);
+      text-decoration: none;
+    }
+    .block-head-arrow { display: none; }
+  }
+</style>

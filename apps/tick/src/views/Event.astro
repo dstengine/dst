@@ -6,7 +6,7 @@ import { publisher, labels, type Lang } from "../content";
 import { site } from "../site.config";
 import { LOCALE, newsFor, eventsBase, newsBase } from "../i18n";
 import { go } from "../outbound";
-import { sectionHref, promoted, pluralOf } from "../sections";
+import { sectionHref, promoted, promotedLink, pluralOf } from "../sections";
 
 interface Props { lang: Lang; item: EventItem; more: EventItem[] }
 const { lang, item, more } = Astro.props;
@@ -28,6 +28,7 @@ const sourceHref = item.source?.url ? go(`${item.slug}-source`) : undefined;
     publisher={publisher}
     categoryHref={sectionHref(item, lang)}
     promoted={promoted[lang]}
+    promotedLink={promotedLink[lang]}
     labels={labels[lang]}
     where={site[lang].keyword}
     pluralOf={pluralOf(lang)}

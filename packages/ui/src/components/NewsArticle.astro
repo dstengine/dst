@@ -12,6 +12,7 @@ import type { EventItem, NewsItem } from "@dst/content/types";
 import LeadForm from "./LeadForm.astro";
 import VentureGrid from "./VentureGrid.astro";
 import FeedCards from "./FeedCards.astro";
+import BlockHead from "./BlockHead.astro";
 import CountdownScript from "./CountdownScript.astro";
 import SourceLine from "./SourceLine.astro";
 import ChipNav from "./ChipNav.astro";
@@ -40,6 +41,9 @@ interface Props {
       the events fallback below, which is the only tail here that lists
       events — see `promotedSection` in \@dst/content/sections. */
   promoted?: { key: string; label: string; where: string; year: string };
+  /** The promoted tag's own page, for a link beside the tail's heading
+      when that tag leads it. Optional: without it the heading stands alone. */
+  promotedLink?: { href: string; label: string; title?: string };
   /** Where this site keeps its feed. Defaults to the English paths every
       DST host uses; a site publishing in another language passes its own
       ("/noticias/", "/eventos/") so its URLs are in the language of the
@@ -76,7 +80,7 @@ interface Props {
   /** What that row is a row of, for a reader who reaches it by keyboard. */
   tagsLabel?: string;
 }
-const { item, backHref, more = [], moreEvents = [], newsBase = "/news/", eventsBase = "/events/", publisher, categoryHref, promoted, where, locale = "en-US", labels: labelOverrides, actionHref, tagLinks = [], tagsLabel = "In this story" } = Astro.props;
+const { item, backHref, more = [], moreEvents = [], newsBase = "/news/", eventsBase = "/events/", publisher, categoryHref, promoted, promotedLink, where, locale = "en-US", labels: labelOverrides, actionHref, tagLinks = [], tagsLabel = "In this story" } = Astro.props;
 const L = withLabels(labelOverrides);
 
 const todayIso = new Date().toISOString().slice(0, 10);
@@ -156,6 +160,7 @@ const tail = moreCards.length > 0
   : tailEvents.length > 0
     ? {
         heading: promotedLeads && promoted ? L.moreTagged(promoted.label, promoted.where, promoted.year) : L.comingUp(where),
+        link: promotedLeads ? promotedLink : undefined,
         cards: tailEvents,
       }
     : null;
@@ -333,7 +338,7 @@ const relatedItems = (item.related ?? []).map((card) => ({
 
   {tail && (
     <section class="news-article-more">
-      <h2>{tail.heading}</h2>
+      <BlockHead heading={tail.heading} link={"link" in tail ? tail.link : undefined} />
       <FeedCards items={tail.cards} columns={tail.cards.length} locale={locale} labels={L} />
       {/* Only when the tail is events: the countdown markup is inert without
           it, and a news article otherwise has nothing to count down to. */}

@@ -6,15 +6,17 @@ import Layout from "../layouts/Layout.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import SectionFeed from "@dst/ui/SectionFeed.astro";
 import FeedCards from "@dst/ui/FeedCards.astro";
+import BlockHead from "@dst/ui/BlockHead.astro";
+import CountdownScript from "@dst/ui/CountdownScript.astro";
 import type { Section as SectionT } from "@dst/content/sections";
 import type { EventItem } from "@dst/content/types";
-import { cardCountdown } from "@dst/ui/date";
 import { withLabels } from "@dst/ui/labels";
+import { cardCountdown } from "@dst/ui/date";
 import { isOn } from "@dst/content/when";
 import { labels, type Lang } from "../content";
 import { site } from "../site.config";
 import { LOCALE, eventsBase, newsBase, prefix } from "../i18n";
-import { allSections, NAV, promoted } from "../sections";
+import { allSections, NAV, promoted, promotedLink } from "../sections";
 
 interface Props { lang: Lang; section: SectionT }
 const { lang, section } = Astro.props;
@@ -22,8 +24,11 @@ const p = prefix(lang);
 const L = withLabels(labels[lang]);
 
 // The tag the site is pushing this month, as three cards under every other
-// subject — the same block the event pages end with, and gone by itself
-// once its last date has passed. Not on its own page, which is that list.
+// subject and a link to its own page — the same block the event pages end
+// with, gone by itself once its last date has passed. Not on the tag's own
+// page, which is that list. No hours on these cards, for the reason
+// EventArticle gives: the block repeats on every page, and its hours were
+// the same phrase a hundred times. They stay on the Halloween pages.
 const today = new Date().toISOString().slice(0, 10);
 const hot = promoted[lang];
 const hotCards = hot && hot.slug !== section.slug
@@ -66,14 +71,13 @@ const hotCards = hot && hot.slug !== section.slug
   </section>
   {hot && hotCards.length > 0 && (
     <section class="container section-promoted">
-      <h2><a href={`${p}${hot.slug}/`} title={hot.title}>{L.moreTagged(hot.label, hot.where, hot.year)}</a></h2>
+      <BlockHead heading={L.moreTagged(hot.label, hot.where, hot.year)} link={promotedLink[lang]} />
       <FeedCards items={hotCards} columns={hotCards.length} locale={LOCALE[lang]} labels={L} />
+      <CountdownScript />
     </section>
   )}
 </Layout>
 
 <style>
   .section-promoted { margin-top: var(--space-5); }
-  .section-promoted h2 a { color: inherit; text-decoration: none; }
-  .section-promoted h2 a:hover { text-decoration: underline; }
 </style>

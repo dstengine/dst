@@ -22,6 +22,7 @@
     "./LiCounter.astro": "./src/components/LiCounter.astro",
     "./Redirect.astro": "./src/components/Redirect.astro",
     "./FeedCards.astro": "./src/components/FeedCards.astro",
+    "./BlockHead.astro": "./src/components/BlockHead.astro",
     "./Icon.astro": "./src/components/Icon.astro",
     "./CountdownScript.astro": "./src/components/CountdownScript.astro",
     "./NewsList.astro": "./src/components/NewsList.astro",

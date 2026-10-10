@@ -78,7 +78,7 @@ export function sections(items: FeedItem[], lang: Lang): Section[] {
           ? {
               title: "Հելոուին Երևանում 2026․ փառատոն և երեկույթներ",
               description:
-                "Հելոուին Երևանում․ անիմե փառատոններ, ակումբային և բացօթյա երեկույթներ՝ ամսաթվերով, ժամերով ու տոմսերի գներով։",
+                "Հելոուին Երևանում․ անիմե փառատոն, ակումբային և բացօթյա երեկույթներ, մետալ համերգ և ղափամայի երեկո՝ ամսաթվերով, ժամերով ու գներով։",
               h1: "Հելոուին Երևանում",
               lede: "Որտե՞ղ նշել հոկտեմբերի 31-ը Երևանում՝ ցերեկային փառատոնից մինչև գիշերային ակումբ։ Տեսեք ժամերը, մուտքի կանոններն ու տոմսերի գները՝ մինչև ընտրելը։",
               headings: {
@@ -91,7 +91,7 @@ export function sections(items: FeedItem[], lang: Lang): Section[] {
           : {
               title: "Halloween in Yerevan 2026: events and parties",
               description:
-                "Halloween in Yerevan: anime festivals, club nights and open-air parties, with dates, times and ticket prices.",
+                "Halloween in Yerevan: an anime festival, club nights, open-air parties, a metal gig and a ghapama night, with dates, times and prices.",
               h1: "Halloween in Yerevan",
               lede: "Where to spend 31 October in Yerevan, from a daytime festival to a club night. Check the hours, entry rules and prices before choosing.",
               headings: {
@@ -143,6 +143,20 @@ export const promoted = {
   hy: promotedSection(allSections.hy, PROMOTED.hy, today, site.hy.keyword),
   en: promotedSection(allSections.en, PROMOTED.en, today, site.en.keyword),
 };
+
+// The way from the promoted cards to the tag's own page, worded per tag
+// because Armenian wants the genitive (Հելոուինի), which no rule over the
+// bare label would get right. A promoted tag with no words here gets no link.
+const PROMOTED_ALL: Record<Lang, Record<string, string>> = {
+  hy: { "Հելոուին": "Հելոուինի բոլոր միջոցառումները" },
+  en: { Halloween: "All Halloween events" },
+};
+const linkTo = (lang: Lang) => {
+  const hot = promoted[lang];
+  const label = hot && PROMOTED_ALL[lang][hot.key];
+  return hot && label ? { href: `${prefix(lang)}${hot.slug}/`, label, title: hot.title } : undefined;
+};
+export const promotedLink = { hy: linkTo("hy"), en: linkTo("en") };
 
 // Whether Yerevan City Day still has a date to come. The nav links to its
 // page only until then; the page itself stays, as the record of the day.
