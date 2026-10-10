@@ -13,9 +13,21 @@
 //     Search Console's ownership check scans the markup for a literal
 //     gtag('config', 'G-…') — with a variable there it reports finding no
 //     Analytics code at all.
-import { GA_MEASUREMENT_ID } from "../analytics";
+import { getMeasurementId } from "../analytics";
 
-const id = GA_MEASUREMENT_ID;
+interface Props {
+  id?: string;
+  networkFooter?: boolean;
+}
+
+const host = Astro.site?.hostname ?? "";
+const isDst = (host === "dst.llc" || host.endsWith(".dst.llc")) && Astro.props.networkFooter !== false;
+
+const id = getMeasurementId({
+  host,
+  networkFooter: Astro.props.networkFooter,
+  gaId: Astro.props.id,
+});
 
 // Interpolated straight into a <script>, so refuse anything that isn't the
 // shape of a measurement ID.
@@ -30,8 +42,7 @@ if (id && !valid) {
 // the page isn't on, and the site would report no sessions at all. Those
 // hosts get 'auto', which is the same measurement without the shared
 // session that would be meaningless for them anyway.
-const host = Astro.site?.hostname ?? "";
-const cookieDomain = host === "dst.llc" || host.endsWith(".dst.llc") ? "'.dst.llc'" : "'auto'";
+const cookieDomain = isDst ? "'.dst.llc'" : "'auto'";
 
 const snippet = `window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}

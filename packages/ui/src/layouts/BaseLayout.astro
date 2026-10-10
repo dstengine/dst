@@ -128,13 +128,15 @@ interface Props {
   /** This language's front page — where the wordmark goes and where the
       breadcrumb starts. "/" on every one-language site. */
   homeHref?: string;
+  /** Separate GA4 measurement ID, overriding the network/non-network default. */
+  gaId?: string;
   /** A tip jar in the footer, with its own heading and one row per chain.
       Opt-in: a site that declares nothing here renders nothing, which is
       every site but the one that asked for it. */
   donate?: { heading: string; addresses: { chain: string; address: string }[] };
 }
 
-const { title, titleSuffix, keyword, description, siteName, nav, crumbLabels, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [], footerSiteName = siteName, homeTitle, instagram, image, footerSites = [], networkFooter = true, publisher, defaultTheme, lang = "en", feedTitle, feedHref = "/rss.xml", alternates = [], homeHref = "/", noindex = false, prose = false, donate } = Astro.props;
+const { title, titleSuffix, keyword, description, siteName, nav, crumbLabels, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [], footerSiteName = siteName, homeTitle, instagram, image, footerSites = [], networkFooter = true, publisher, defaultTheme, lang = "en", feedTitle, feedHref = "/rss.xml", alternates = [], homeHref = "/", noindex = false, prose = false, donate, gaId } = Astro.props;
 // The suffix is the most expensive characters on the page, and it is only
 // worth them when it adds something the title has not already said.
 //
@@ -384,7 +386,7 @@ const lateIcons = navFootprint - nav.length * 28 > 700;
         )}
       />
     ))}
-    <Analytics />
+    <Analytics id={gaId} networkFooter={networkFooter} />
     {/* The lead pipeline is DST's, not every site's: it writes dst_ cookies
         and talks to api.dst.llc, so the layout no longer decides who is on
         it. A site hands it in — musical.today, which is not presented as
