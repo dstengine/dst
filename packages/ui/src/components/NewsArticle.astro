@@ -133,7 +133,9 @@ const eventCards = moreEvents
     imageAlt: e.imageAlt,
     imageFit: "cover" as const,
     event: true,
-    hours: cardHours(e),
+    // No hours on a promoted card: the same block closes every story on
+    // the site — see the tail of EventArticle.
+    hours: promoted && e.category === promoted.key ? undefined : cardHours(e),
     countdown: cardCountdown(e),
     dateInImage: e.dateInImage,
   }));

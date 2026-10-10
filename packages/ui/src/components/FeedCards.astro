@@ -20,7 +20,7 @@
 // item without artwork it beats both a blank panel and a lopsided grid where
 // one card has a cover and the next starts with a headline.
 import Photo from "./Photo.astro";
-import { formatDate } from "../date.ts";
+import { formatDate, formatCardDate } from "../date.ts";
 import { EN, type ArticleLabels } from "../labels.ts";
 
 export interface FeedCardItem {
@@ -127,9 +127,9 @@ const parts = (iso: string) => {
           </div>
         )}
         <div class="feed-body">
-          <p class="feed-meta">
+          <p class:list={["feed-meta", item.event && "feed-meta-event"]}>
             {item.eyebrow && <span class="feed-eyebrow">{item.eyebrow}</span>}
-            <time datetime={item.date}>{formatDate(item.date, locale)}</time>
+            <time datetime={item.date}>{item.event ? formatCardDate(item.date, locale) : formatDate(item.date, locale)}</time>
             {item.hours && <span class="feed-hours">{item.hours}</span>}
             {/* Filled in by CountdownScript where it's loaded; empty without
                 JavaScript, where the date above already says everything. */}
@@ -373,6 +373,12 @@ const parts = (iso: string) => {
      "Nov 17, 2026 ·in 3 months". */
   .feed-countdown:not(:empty)::before { content: "\00b7\00a0"; }
   .feed-hours { white-space: nowrap; }
+  /* An event's rubric has a line to itself, and the date and the hours share
+     the next. Inline, the three ran to whatever width the rubric left, and
+     on a card four to a row the hours landed at the start of the second or
+     third line, apart from their date, on seven cards in ten (measured
+     10 Oct 2026 on tick, Safari and Chrome, 320–1280px). */
+  .feed-meta-event .feed-eyebrow { flex-basis: 100%; }
   /* A chip, not a bare word: after a category and a date it read as a third
      run-on fragment of the same sentence. */
   .feed-past {

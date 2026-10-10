@@ -138,7 +138,11 @@ const moreCards = more
     imageAlt: other.imageAlt,
     imageFit: "cover" as const,
     event: true,
-    hours: cardHours(other),
+    // No hours on a promoted card under a page of another subject: that
+    // block is the same three cards on every page of the site, and their
+    // hours were fifty more copies of one phrase. They stay on the tag's own
+    // pages, in the listings, and on the event itself.
+    hours: promoted && other.category === promoted.key && item.category !== promoted.key ? undefined : cardHours(other),
     countdown: cardCountdown(other),
     dateInImage: other.dateInImage,
     past: hasEnded(other, todayIso),

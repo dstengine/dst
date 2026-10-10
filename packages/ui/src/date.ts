@@ -14,6 +14,17 @@ export function formatDate(iso: string, locale = "en-US"): string {
   });
 }
 
+/** An event card's date: day and month, and the year only for a date more
+    than eleven months off, either way. Nearer than that the year is the
+    one the reader is in, and on a card four to a row it was the part that
+    pushed the hours onto a line of their own: "10 հոկ, 2026 թ. 12:00–23:00"
+    is 27 characters in a line that holds 26. The `datetime` keeps it. */
+export function formatCardDate(iso: string, locale = "en-US", todayIso = new Date().toISOString().slice(0, 10)): string {
+  const days = Math.abs(Date.parse(`${iso}T00:00:00Z`) - Date.parse(`${todayIso}T00:00:00Z`)) / 86400000;
+  if (days > 330) return formatDate(iso, locale);
+  return new Date(`${iso}T00:00:00Z`).toLocaleDateString(locale, { month: "short", day: "numeric", timeZone: "UTC" });
+}
+
 /** The hours an event's card shows: its start, and its end when the event
     is one day long. Undefined unless the event set `displayHours`. */
 export function cardHours(e: {
