@@ -158,7 +158,7 @@ export const items: EventItem[] = [
     imageHeight: 349,
     source,
     speakersHeading: "Կատարողներ",
-    speakers: [{ name: "Aram MP3" }, { name: "Mohana Band" }, { name: "D'Litte" }, { name: "Project 12" }, { name: "Yellow Heart" }, { name: "Kami Friends" }],
+    speakers: [{ name: "Արամ MP3" }, { name: "Mohana Band" }, { name: "D'Litte" }, { name: "Project 12" }, { name: "Yellow Heart" }, { name: "Kami Friends" }],
     body: [
       "Երևանի օրվա փոփ համերգը հոկտեմբերի 10-ին Շառլ Ազնավուրի հրապարակում է։ Քաղաքային ուղեցույցը բեմի ծրագիրը նշում է ժամը 12:00–18:00-ը։",
       "Կատարողների թվում են Արամ MP3-ը, Mohana Band-ը, D'Litte-ը, Project 12-ը, Yellow Heart-ը և Kami Friends-ը։",
@@ -177,6 +177,7 @@ export const items: EventItem[] = [
         category: "Concerts",
         imageAlt: "Official poster for Yerevan's 2,808th anniversary celebrations on 9–10 October",
         speakersHeading: "Performers",
+        speakers: [{ name: "Aram MP3" }, { name: "Mohana Band" }, { name: "D'Litte" }, { name: "Project 12" }, { name: "Yellow Heart" }, { name: "Kami Friends" }],
         body: [
           "The Yerevan City Day pop concert is at Charles Aznavour Square on 10 October. The city's guide lists the stage from 12:00 to 18:00.",
           "Performers include Aram MP3, Mohana Band, D'Litte, Project 12, Yellow Heart and Kami Friends.",
@@ -282,7 +283,7 @@ export const items: EventItem[] = [
     imageHeight: 720,
     source,
     speakersHeading: "Կատարողներ",
-    speakers: [{ name: "Nemra" }, { name: "Bambir" }, { name: "FairWind" }, { name: "Another Story" }, { name: "The Beautified Project" }, { name: "Lav Eli" }],
+    speakers: [{ name: "«Նեմրա»" }, { name: "«Բամբիռ»" }, { name: "FairWind" }, { name: "Another Story" }, { name: "The Beautified Project" }, { name: "«Լավ էլի»" }],
     body: [
       "Երևանի օրվա ռոք բեմը հոկտեմբերի 10-ին գործում է Դիանա Աբգարի անվան զբոսայգում՝ ժամը 13:00–23:00։",
       "Համերգների ծրագրում են FairWind-ը, Another Story-ն, The Beautified Project-ը, «Լավ էլի»-ն, «Նեմրան», «Բամբիռը» և այլ հայկական կատարողներ։ Զբոսայգում կշարունակվի նաև գարեջրի փառատոնը։",
@@ -301,6 +302,7 @@ export const items: EventItem[] = [
         category: "Concerts",
         imageAlt: "Visit Yerevan poster for the Nemra concert on Yerevan City Day, 10 October",
         speakersHeading: "Performers",
+        speakers: [{ name: "Nemra" }, { name: "Bambir" }, { name: "FairWind" }, { name: "Another Story" }, { name: "The Beautified Project" }, { name: "Lav Eli" }],
         body: [
           "The Yerevan City Day rock stage runs at Diana Abgar Park on 10 October, from 13:00 to 23:00.",
           "The line-up includes FairWind, Another Story, The Beautified Project, Lav Eli, Nemra, Bambir and other Armenian acts. The beer festival continues in the park too.",
@@ -402,7 +404,7 @@ export const items: EventItem[] = [
     imageHeight: 349,
     source,
     speakersHeading: "Կատարողներ",
-    speakers: [{ name: "A Chilla" }, { name: "VNAS" }, { name: "Dav" }, { name: "GALIFE" }, { name: "Narek Mets Hayk" }, { name: "Misht Hasarak" }, { name: "47" }, { name: "Felo" }, { name: "Serjo" }],
+    speakers: [{ name: "A Chilla" }, { name: "ՎՆԱՍ" }, { name: "ԴԱՎ" }, { name: "GALIFE" }, { name: "Նարեկ Մեծ Հայք" }, { name: "«Միշտ Հասարակ»" }, { name: "47" }, { name: "Ֆելո" }, { name: "Սերժո" }],
     body: [
       "Երևանի օրվա ռեփ բեմը հոկտեմբերի 10-ին Անգլիական այգում է՝ ժամը 17:00–22:00։",
       "Քաղաքային ուղեցույցում նշված կատարողներն են A Chilla-ն, ՎՆԱՍ-ը, ԴԱՎ-ը, GALIFE-ը, Նարեկ Մեծ Հայքը, «Միշտ Հասարակ»-ը, 47-ը, Ֆելոն և Սերժոն։",
@@ -421,6 +423,7 @@ export const items: EventItem[] = [
         category: "Concerts",
         imageAlt: "Official poster for Yerevan's 2,808th anniversary city programme",
         speakersHeading: "Performers",
+        speakers: [{ name: "A Chilla" }, { name: "VNAS" }, { name: "Dav" }, { name: "GALIFE" }, { name: "Narek Mets Hayk" }, { name: "Misht Hasarak" }, { name: "47" }, { name: "Felo" }, { name: "Serjo" }],
         body: [
           "Yerevan City Day's rap stage is at English Park on 10 October, from 17:00 to 22:00.",
           "The city guide lists A Chilla, VNAS, Dav, GALIFE, Narek Mets Hayk, Misht Hasarak, 47, Felo and Serjo.",
@@ -539,6 +542,7 @@ export const items: EventItem[] = [
         category: "Concerts",
         imageAlt: "Visit Yerevan poster for the electronic stage, featuring Vanco and his 21:30 set time",
         speakersHeading: "Performers",
+        speakers: [{ name: "Vanco" }, { name: "Guevo Aka Kai" }, { name: "Roob" }, { name: "Socko" }, { name: "Alber Ensso" }],
         body: [
           "Yerevan City Day's electronic stage is at Republic Square, beside the Singing Fountains, on 10 October. The programme runs from 17:00 to 23:00.",
           "Guevo Aka Kai, Roob, Socko and Alber Ensso are on the line-up. Special guest Vanco is scheduled to play at 21:30.",

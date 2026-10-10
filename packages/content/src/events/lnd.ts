@@ -1057,7 +1057,7 @@ export const items: EventItem[] = [
     title: "Christmas at Kew 2026",
     titleSeo: "Christmas at Kew 2026: dates and tickets",
     summary:
-      "Kew Gardens' after-dark light trail runs on selected nights from 13 November to 3 January, with timed entry, new installations and adult-only evenings.",
+      "Kew Gardens' after-dark light trail in south-west London runs on selected nights from 13 November to 3 January, with timed entry, new installations and adult-only evenings.",
     start: "2026-11-13",
     end: "2027-01-03",
     utcOffset: "+00:00",
