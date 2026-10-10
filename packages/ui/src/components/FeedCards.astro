@@ -102,7 +102,7 @@ const parts = (iso: string) => {
 ---
 <div class="feed-shell">
 <div
-  class:list={["feed-cards", columns && "feed-cards-pinned", items.length === 1 && "feed-cards-single"]}
+  class:list={["feed-cards", columns && "feed-cards-pinned", items.length === 1 && "feed-cards-single", items.every((i) => i.event) && "feed-cards-events"]}
   style={columns ? `--feed-columns: ${columns}` : undefined}
 >
   {items.map((item) => {
@@ -368,10 +368,6 @@ const parts = (iso: string) => {
     color: var(--accent);
     font-weight: 600;
   }
-  /* A non-breaking space, not a plain one: the countdown is a flex item, so
-     the trailing space in generated content collapsed and every card read
-     "Nov 17, 2026 ·in 3 months". */
-  .feed-countdown:not(:empty)::before { content: "\00b7\00a0"; }
   .feed-hours { white-space: nowrap; }
   /* An event's rubric has a line to itself, and the date and the hours share
      the next. Inline, the three ran to whatever width the rubric left, and
@@ -380,8 +376,12 @@ const parts = (iso: string) => {
      10 Oct 2026 on tick, Safari and Chrome, 320–1280px). */
   .feed-meta-event .feed-eyebrow { flex-basis: 100%; }
   /* A chip, not a bare word: after a category and a date it read as a third
-     run-on fragment of the same sentence. */
-  .feed-past {
+     run-on fragment of the same sentence. The countdown is one too, for the
+     same reason and one more: as text behind a "·" it wrapped onto a line of
+     its own and opened that line with the dot. Empty until the script fills
+     it, and no chip while it is. */
+  .feed-past,
+  .feed-countdown:not(:empty) {
     padding: 0.15em 0.5em;
     border: 1px solid var(--border);
     border-radius: 999px;
@@ -395,6 +395,36 @@ const parts = (iso: string) => {
     font-size: var(--step-1);
     font-weight: 600;
   }
+  /* Every row of event cards shares its tracks — cover, meta line, title,
+     text — so the headlines of a row start on one line. Each card used to be
+     its own column, and a meta line of three lines beside one of two put
+     them at two heights: ten rows of sixteen on tick's four-wide calendar.
+     Only from 760px, where cards stand three or four to a row and none is
+     sideways: below it the odd card out and the lone card lay out a grid of
+     their own. Items start at the top of their track: stretched, a wrapping
+     meta line spread its lines apart to fill the height. One column: the odd
+     card out still carries the 5fr/7fr columns from 560px, which `display:
+     flex` had silenced, and a grid gave them back — a 150px cover beside
+     two of 359. */
+  @container (min-width: 760px) {
+    @supports (grid-template-rows: subgrid) {
+      .feed-cards.feed-cards-events:not(.feed-cards-single) > .feed-card {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        grid-row: span 4;
+        grid-template-rows: subgrid;
+        row-gap: 0;
+      }
+      .feed-cards.feed-cards-events:not(.feed-cards-single) .feed-body {
+        grid-row: span 3;
+        display: grid;
+        grid-template-rows: subgrid;
+        row-gap: 0;
+      }
+      .feed-cards.feed-cards-events:not(.feed-cards-single) .feed-body > * { align-self: start; }
+    }
+  }
+
   .feed-text {
     margin: 0;
     font-size: var(--step--1);

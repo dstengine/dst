@@ -23,8 +23,13 @@
     // stands alone, as it does with no JS at all.
     const known = Intl.RelativeTimeFormat.supportedLocalesOf([lang]).length > 0;
     const rtf = new Intl.RelativeTimeFormat(known ? lang : "en", { numeric: "auto" });
+    // "auto" past tomorrow reaches for the language's own word where it has
+    // one, and Armenian's for the day after tomorrow is four words — the
+    // longest label any card carried. From two days on, a number.
+    const rtfDays = new Intl.RelativeTimeFormat(known ? lang : "en", { numeric: "always" });
     const ahead = (days) => {
-      if (days < 14) return rtf.format(days, "day");
+      if (days < 2) return rtf.format(days, "day");
+      if (days < 14) return rtfDays.format(days, "day");
       if (days < 60) return rtf.format(Math.round(days / 7), "week");
       if (days < 345) return rtf.format(Math.round(days / 30.4), "month");
       return rtf.format(Math.round(days / 365), "year");
