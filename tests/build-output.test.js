@@ -1540,6 +1540,10 @@ describe("how much of each site is the template", () => {
   // three Halloween cards — Aki Fest, Oxygen, Zayon — and their venue lines
   // are the repeated runs. No sentence of prose repeats. The block goes when
   // the last of them is past on 31 October; put the number back to 30 then.
+  // 33 to 38 the same day, for the same three cards: they now carry their
+  // hours, because by day or by night is the choice between them, and
+  // "31 Oct 18:00" on fifty pages is fifty more repeated runs. Same date to
+  // undo it, same number to go back to.
   // riviera 13 → 15 on 8 September 2026: one more event, and the strip that
   // carries it repeats a headline and a summary on the front page, the events
   // index and every other page that shows the strip. Same ratchet, same real
@@ -1547,7 +1551,7 @@ describe("how much of each site is the template", () => {
   const CEILING = {
     dst: 25, llc: 16, visas: 19, riviera: 15, mbr: 17, palmcentral: 24,
     eco: 30, fwf: 20, musical: 35, nyc42: 27, ldn: 25, lnd: 25, cmx: 32, mxo: 25,
-    sol2go: 30, vien: 30, tick: 33, aivideo: 37,
+    sol2go: 30, vien: 30, tick: 38, aivideo: 37,
   };
 
   test("no site is more template than the ceiling it recorded", async () => {
