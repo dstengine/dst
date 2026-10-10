@@ -524,6 +524,163 @@ export const items: EventItem[] = [
   },
 
   {
+    slug: "halloween-kindermuseum-schoenbrunn-2026",
+    createdAt: "2026-10-11T01:15:13+04:00",
+    updatedAt: "2026-10-11T01:15:13+04:00",
+    site: "vien",
+    image: "/covers/halloween-kindermuseum-schoenbrunn-2026.jpg",
+    imageAlt: "Eine lange helle Schlossfassade mit grünem Dach und Reihen dunkelgrüner Fenster, nur die Tür in der Mitte leuchtet gelb, darüber eine schmale Mondsichel, auf cremefarbenem Grund",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Halloween im Kindermuseum Schönbrunn 2026",
+    summary:
+      "Halloween für Kinder in Wien: Vom 25. Oktober bis 2. November 2026 gibt es im Kindermuseum Schloss Schönbrunn einen Monsterparcours, eine Rätselrallye und zwei Abende Gruselführung im Dunkeln. Der Museumseintritt kostet 12 Euro, die Führung 23 Euro.",
+    start: "2026-10-25",
+    end: "2026-11-02",
+    startTime: "09:30",
+    endTime: "17:00",
+    utcOffset: "+01:00",
+    venue: "Kindermuseum Schloss Schönbrunn",
+    city: "Wien",
+    geo: {
+      name: "Kindermuseum Schloss Schönbrunn, Wien",
+      lat: 48.1853494,
+      lng: 16.311561,
+    },
+    organizer: "Schönbrunn Group",
+    category: "Halloween",
+    tickets: { priceFrom: 12, priceTo: 23, currency: "EUR" },
+    ticket: {
+      url: "https://www.kaiserkinder.at/tickets-und-preise/alle-tickets",
+      label: "Tickets beim Kindermuseum",
+    },
+    source: {
+      name: "Kindermuseum Schloss Schönbrunn",
+      url: "https://www.kaiserkinder.at/kinderprogramm/programm/halloween",
+      verifiedOn: "2026-10-11",
+    },
+    body: [
+      "Das Kindermuseum sitzt im Hauptgebäude von Schloss Schönbrunn, und zu Halloween macht es aus dem Schloss selbst den Stoff: eine kaiserliche Mumie, das schleimige Getier hinter den Gewändern der Herrscher, ein Leibarzt Maria Theresias, der durch die dunklen Räume spukt. Drei Programme über neun Tage, jedes für ein anderes Alter.",
+      "## Termine: Halloween im Kindermuseum 2026",
+      "<strong>25. Oktober bis 2. November 2026</strong>. Das Museum hat in dieser Zeit von <strong>9:30 bis 17 Uhr</strong> geöffnet, letzter Einlass um 16 Uhr. Ausnahme sind der <strong>29. und 30. Oktober</strong>: An diesen beiden Tagen schließt es schon um <strong>15:30 Uhr</strong>, letzter Einlass um 14:30 Uhr — abends gehört das Haus der Gruselführung.",
+      "## Was es kostet",
+      "Der Museumseintritt kostet <strong>12 Euro</strong>, für Erwachsene und für Kinder ab drei Jahren gleich, und gilt für ein fixes Zeitfenster. Monsterparcours und Rätselrallye sind darin <strong>inbegriffen</strong>. Die Gruselführung ist eigens zu bezahlen: <strong>23 Euro</strong> pro Person, ebenfalls für Kinder wie Erwachsene.",
+      "## Anreise",
+      "Mit der <strong>U4</strong> bis Schönbrunn, mit den Straßenbahnlinien <strong>10 und 60</strong> oder dem Bus <strong>10A</strong> bis Schloss Schönbrunn. Der Eingang zum Kindermuseum liegt auf der rechten Seite des Schlosses.",
+    ],
+    programme: [
+      {
+        heading: "25. und 26. Oktober — Ausbildung zum Monsterjäger",
+        text: "Ein Gruselparcours mit Stationen, am Ende gibt es eine Monsterjägerurkunde. Etwa 60 Minuten, letzter Start um 16 Uhr, empfohlen ab 4 Jahren. Im Museumseintritt inbegriffen.",
+      },
+      {
+        heading: "27. Oktober bis 2. November — Halloween-Rätselrallye",
+        text: "Schauriges und Ekliges aus der Geschichte des Schlosses und seiner Bewohner, auf einem Rätselblatt pro Familie. Täglich ab 9:30 Uhr, letzter Start um 16 Uhr, ab 7 Jahren, ohne Reservierung. Im Museumseintritt inbegriffen.",
+      },
+      {
+        heading: "29. und 30. Oktober — Gruselführung „Kopflos durch das Kindermuseum“",
+        text: "Eine Führung durch das dunkle Museum, Start um 17:00, 17:30, 18:00 und 18:30 Uhr, etwa 50 Minuten. Für Kinder ab 8 Jahren und nur in Begleitung eines Erwachsenen, 23 Euro pro Person. Taschenlampe mitbringen.",
+      },
+    ],
+    faq: [
+      {
+        q: "Wann ist Halloween im Kindermuseum Schönbrunn 2026?",
+        a: "Von <strong>25. Oktober bis 2. November 2026</strong>: der Monsterparcours am 25. und 26. Oktober, die Rätselrallye von 27. Oktober bis 2. November, die Gruselführung am 29. und 30. Oktober ab 17 Uhr.",
+      },
+      {
+        q: "Was kostet das Halloween-Programm?",
+        a: "Monsterparcours und Rätselrallye sind im Museumseintritt von <strong>12 Euro</strong> inbegriffen. Die Gruselführung kostet <strong>23 Euro</strong> pro Person.",
+      },
+      {
+        q: "Ab welchem Alter ist das Programm geeignet?",
+        a: "Der Monsterparcours wird ab 4 Jahren empfohlen, die Rätselrallye ab 7, die Gruselführung ab 8 Jahren — und dort ausdrücklich nicht für Babys, Kleinkinder oder Kinder, die leicht erschrecken.",
+      },
+      {
+        q: "Darf man verkleidet kommen?",
+        a: "Ja, das Kindermuseum lädt ausdrücklich dazu ein.",
+      },
+      {
+        q: "Muss man die Gruselführung reservieren?",
+        a: "Reservieren lässt sie sich nicht, nur kaufen: online über Imperial Tickets oder im Vorverkauf im Kindermuseum. Gekaufte Karten werden nicht zurückgenommen.",
+      },
+    ],
+    expertise:
+      "Die zwei Tage, an denen man sich verplanen kann, sind der 29. und der 30. Oktober. Tagsüber schließt das Museum dann um 15:30 Uhr statt um 17 Uhr, und wer erst nach dem Mittagessen kommt, hat bis zum letzten Einlass um 14:30 Uhr kaum Zeit für die Rätselrallye. Abends läuft die Gruselführung, für die es keine Reservierung gibt, nur gekaufte Karten ohne Rückgabe — und das Museum rät selbst ab, wenn ein Kind keine Geisterbahnen mag. Für Familien mit Kindern unter acht ist der 25. oder 26. Oktober der bessere Termin: Der Parcours ist ab vier Jahren und im Eintritt inbegriffen. Das Ticket gilt für ein fixes Zeitfenster, und das Museum rät selbst, es rechtzeitig zu sichern.",
+  },
+
+  {
+    slug: "cosmic-horrors-planetarium-wien-2026",
+    createdAt: "2026-10-11T01:15:13+04:00",
+    updatedAt: "2026-10-11T01:15:13+04:00",
+    site: "vien",
+    image: "/covers/cosmic-horrors-planetarium-wien-2026.jpg",
+    imageAlt: "Ein dunkler Nachthimmel mit einem Ringplaneten und mehreren kleinen runden Planeten über breiten Streifen in Orange und Rot, unten die Rundung einer roten Kuppel, auf cremefarbenem Grund",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Cosmic Horrors: Halloween im Planetarium Wien 2026",
+    summary:
+      "Halloween in Wien unter der Kuppel: Das Planetarium im Prater zeigt am 31. Oktober 2026 sein Halloween-Special „Cosmic Horrors“, acht Vorstellungen zu je 25 Minuten von 18:30 bis 22 Uhr, für 5 Euro. Empfohlen ab 10 Jahren.",
+    start: "2026-10-31",
+    startTime: "18:30",
+    endTime: "22:25",
+    utcOffset: "+01:00",
+    venue: "Planetarium Wien, Oswald-Thomas-Platz 1",
+    city: "Wien",
+    geo: {
+      name: "Planetarium Wien",
+      lat: 48.2161429,
+      lng: 16.3949402,
+    },
+    organizer: "Planetarium Wien",
+    category: "Halloween",
+    tickets: { priceFrom: 5, currency: "EUR" },
+    // Beide Prater-Seiten verlinken den Ticketverkauf der Volkshochschulen,
+    // zu denen das Planetarium gehört.
+    ticket: {
+      url: "https://www.vhs.at/planetarium-halloween",
+      label: "Tickets beim Planetarium Wien",
+    },
+    source: {
+      name: "Prater.at",
+      url: "https://prater.at/cosmic-horrors-2026/",
+      verifiedOn: "2026-10-11",
+    },
+    body: [
+      "Dunkle Energie, tödliche Strahlung, Welten, auf denen nichts überleben würde: Das Planetarium Wien hat für den Halloween-Abend eine eigene Show produziert, die ihren Grusel nicht erfinden muss. Sie besteht aus Orten, die es in unserer Galaxie und darüber hinaus tatsächlich gibt.",
+      "## Termine: Cosmic Horrors 2026",
+      "<strong>Samstag, 31. Oktober 2026</strong>. Acht Vorstellungen, jede halbe Stunde eine: um <strong>18:30, 19:00, 19:30, 20:00, 20:30, 21:00, 21:30 und 22:00 Uhr</strong>. Eine Vorstellung dauert <strong>25 Minuten</strong>, die letzte ist also um 22:25 Uhr vorbei.",
+      "## Was es kostet",
+      "<strong>5 Euro</strong>. Tickets verkauft das Planetarium online.",
+      "## Für wen",
+      "Empfohlen für Jugendliche und Erwachsene, die sich für den Weltraum begeistern, und für mutige Kinder <strong>ab 10 Jahren</strong>.",
+      "## Wo das ist",
+      "Im Planetarium am <strong>Oswald-Thomas-Platz 1</strong>, mitten im Wurstelprater neben dem Riesenrad. Vom Praterstern sind es wenige Minuten zu Fuß.",
+    ],
+    faq: [
+      {
+        q: "Wann läuft Cosmic Horrors im Planetarium Wien?",
+        a: "Am <strong>31. Oktober 2026</strong>, jede halbe Stunde von 18:30 bis 22 Uhr, acht Vorstellungen.",
+      },
+      {
+        q: "Was kostet eine Vorstellung?",
+        a: "<strong>5 Euro</strong>.",
+      },
+      {
+        q: "Wie lange dauert die Show?",
+        a: "25 Minuten.",
+      },
+      {
+        q: "Ab welchem Alter ist die Show geeignet?",
+        a: "Das Planetarium empfiehlt sie <strong>ab 10 Jahren</strong>.",
+      },
+    ],
+    expertise:
+      "Fünf Euro und 25 Minuten sind der günstigste und kürzeste Programmpunkt, den Halloween in Wien hat, und genau das macht ihn planbar: Er passt vor ein Abendessen oder zwischen zwei Runden im Wurstelprater, und der Abend hat dafür einen eigenen Grund: Der 31. Oktober ist der letzte Tag der Sommersaison, in der die Attraktionen im Prater täglich geöffnet haben. Wer mit Kindern kommt, nimmt eine der frühen Vorstellungen um 18:30 oder 19 Uhr; wer allein kommt, die letzte um 22 Uhr, wenn draußen am meisten los ist.",
+  },
+
+  {
     slug: "wiener-christkindlmarkt-2026",
     createdAt: "2026-09-12T22:20:00+04:00",
     updatedAt: "2026-09-12T22:20:00+04:00",

@@ -54,9 +54,9 @@ export function sections(items: FeedItem[]): Section[] {
         return {
           title: "Halloween in Wien 2026: was los ist",
           description:
-            "Halloween in Wien: ein Laufabend in der Prater Hauptallee und drei Tage Kürbisfest am Stadtrand, dazu die Zahlen des Handels — mit dem Datum, wie es die Veranstalter angegeben haben.",
+            "Halloween in Wien: Gruselführung im Kindermuseum Schönbrunn, Halloween-Show im Planetarium, Laufabend im Prater, Kürbisfest — mit Datum und Quelle.",
           h1: "Halloween in Wien",
-          lede: "Die Wiener Liste ist kurz und das hat einen Grund, der sich beziffern lässt: Halloween wird hier überwiegend zu Hause gefeiert. Was es trotzdem im Freien gibt, steht hier — mit Datum und Quelle.",
+          lede: "Die Wiener Liste ist kurz und das hat einen Grund, der sich beziffern lässt: Halloween wird hier überwiegend zu Hause gefeiert. Was es trotzdem außer Haus gibt, steht hier — mit Datum und Quelle.",
           headings: {
             events: "Wohin man zu Halloween geht",
             upcoming: "Termine 2026",
