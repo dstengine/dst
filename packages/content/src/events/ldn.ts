@@ -1070,6 +1070,97 @@ export const items: EventItem[] = [
   },
 
   {
+    slug: "halloween-leadenhall-market-2026",
+    createdAt: "2026-10-11T01:15:13+04:00",
+    updatedAt: "2026-10-11T01:15:13+04:00",
+    site: "ldn",
+    image: "/covers/halloween-leadenhall-market-2026.jpg",
+    imageAlt: "A large green and gold beetle beneath a red paper arch, sitting on top of a small shopfront with a grey awning, on a cream ground",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Halloween at Leadenhall Market 2026",
+    summary:
+      "Halloween in the City of London: a 4.5-metre light-up jewel beetle under Leadenhall Market's Victorian roof from 24 October to 1 November, free to see, and evening walking tours of the City's stranger history every Wednesday and Friday in October for £8.30.",
+    start: "2026-09-29",
+    end: "2026-11-01",
+    utcOffset: "+01:00",
+    venue: "Leadenhall Market, Gracechurch Street",
+    city: "London",
+    country: "United Kingdom",
+    geo: {
+      name: "Leadenhall Market, London",
+      lat: 51.5127276,
+      lng: -0.0833953,
+    },
+    organizer: "Leadenhall Market",
+    category: "Halloween",
+    tickets: { priceFrom: 0, currency: "GBP" },
+    ticket: {
+      url: "https://www.eventbrite.co.uk/e/leadenhall-market-burials-bombs-fantastic-beasts-tickets-1999781595585",
+      label: "Book the walking tour on Eventbrite",
+    },
+    source: {
+      name: "Leadenhall Market",
+      url: "https://leadenhallmarket.co.uk/halloween-at-leadenhall-market-2026/",
+      verifiedOn: "2026-10-11",
+    },
+    body: [
+      "The Victorian market in the City that turned up in <em>Harry Potter</em> spends October on curiosities: a giant beetle under the glass roof, a cabinet of miniature shops, and a walk through the Roman burials and medieval murders of the streets around it.",
+      "## The jewel beetle",
+      "A <strong>4.5-metre light-up jewel beetle</strong> under Leadenhall's roof. It appeared from 29 September to 7 October and comes back for Halloween from <strong>24 October to 1 November 2026</strong>. It is <strong>free to see</strong>.",
+      "## Burials, Bombs & Fantastic Beasts",
+      "An evening walking tour of the stranger side of the City — Roman burials, medieval murders, witchcraft and the creatures carved and told about in and around the market. <strong>Every Wednesday and Friday in October</strong>, <strong>6.30pm to 8pm</strong>, <strong>£8.30</strong>, and it must be booked in advance on Eventbrite.",
+      "## The Wunderkammer",
+      "An installation after the German cabinets of curiosities: three miniature shops, one of them a tiny video shop for the films Leadenhall has appeared in, from <em>Harry Potter</em> to <em>The Imaginarium of Doctor Parnassus</em>. For Halloween its serving hatch is taken over by SoLo Craft Fair, selling spell kits of herbs, scents and gems — ring the bell, <strong>Wednesday to Sunday, 1pm to 4pm</strong>.",
+      "## Where it is",
+      "Leadenhall Market, Gracechurch Street, EC3, in the City of London. The market is open seven days a week to walk through; shop hours vary.",
+    ],
+    programme: [
+      {
+        heading: "Wednesdays and Fridays in October — Burials, Bombs & Fantastic Beasts",
+        text: "Evening walking tour, 6.30pm to 8pm, £8.30, booked in advance on Eventbrite.",
+      },
+      {
+        heading: "Monday 19 October — Hallo-zine Making",
+        text: "A SoLo Craft Fair workshop. Places are limited and booked online in advance.",
+      },
+      {
+        heading: "Friday 23 October — Halloween Pocket Pumpkin Hand Warmer",
+        text: "A SoLo Craft Fair workshop. Places are limited and booked online in advance.",
+      },
+      {
+        heading: "24 October to 1 November — the jewel beetle",
+        text: "The 4.5-metre light-up beetle returns under the market roof. Free.",
+      },
+      {
+        heading: "Sunday 25 October — Vintage Furniture & Flea Market",
+        text: "Vintage furniture, homeware and fashion under the roof, 12pm to 5pm. Free to enter.",
+      },
+    ],
+    faq: [
+      {
+        q: "When is the giant beetle at Leadenhall Market?",
+        a: "For Halloween, from <strong>24 October to 1 November 2026</strong>. It was also there from 29 September to 7 October.",
+      },
+      {
+        q: "Does it cost anything to see?",
+        a: "No — the beetle is <strong>free to see</strong>, and so is the market itself.",
+      },
+      {
+        q: "When are the Halloween walking tours?",
+        a: "Every Wednesday and Friday in October, 6.30pm to 8pm. Tickets are <strong>£8.30</strong> and must be booked in advance on Eventbrite.",
+      },
+      {
+        q: "Where is Leadenhall Market?",
+        a: "On Gracechurch Street in the City of London, EC3.",
+      },
+    ],
+    expertise:
+      "Mind the gap in the middle of the month: the beetle went away on 7 October and does not come back until the 24th, so a visit for the photograph belongs in the last week. The walking tour runs the other way — it is an October fixture, and once the beetle is back only two evenings are left, Wednesday 28 and Friday 30. Either of those does both at once: the tour starts at 6.30pm with the beetle already in place under the roof. The spell-kit hatch is the one thing that needs daylight, since it shuts at 4pm — for that, come on a weekend afternoon, and on Sunday 25 October the flea market is on under the same roof.",
+  },
+
+  {
     slug: "halloween-tower-of-london-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
     updatedAt: "2026-09-08T22:51:25+04:00",
