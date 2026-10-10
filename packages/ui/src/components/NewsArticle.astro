@@ -19,6 +19,8 @@ import Variants from "./Variants.astro";
 import Faq from "./Faq.astro";
 import ImageNote from "./ImageNote.astro";
 import { ICONS } from "../icons.ts";
+import Icon from "./Icon.astro";
+import { mapEmbedUrl, directionsUrl } from "../maps.ts";
 import { formatDate, cardHours, cardCountdown } from "../date.ts";
 import { withLabels, type ArticleLabels } from "../labels.ts";
 import { readingMinutes } from "@dst/content/reading";
@@ -280,11 +282,18 @@ const relatedItems = (item.related ?? []).map((card) => ({
       <h2>{L.locate(item.geo.name)}</h2>
       <div class="locate-map">
         <iframe
-          src={`https://www.openstreetmap.org/export/embed.html?bbox=${item.geo.lng - 0.02}%2C${item.geo.lat - 0.01}%2C${item.geo.lng + 0.02}%2C${item.geo.lat + 0.01}&layer=mapnik&marker=${item.geo.lat}%2C${item.geo.lng}`}
+          src={mapEmbedUrl(item.geo.lat, item.geo.lng, { locale })}
           loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
           title={L.mapTitle(item.geo.name)}
         />
       </div>
+      <p class="locate-way">
+        <a class="button button-secondary" href={directionsUrl(item.geo.lat, item.geo.lng)} target="_blank" rel="nofollow noopener" title={L.directionsTitle(item.geo.name)}>
+          <Icon name="navigate" />
+          {L.directions}
+        </a>
+      </p>
     </section>
   )}
 
@@ -405,6 +414,7 @@ const relatedItems = (item.related ?? []).map((card) => ({
   .locate { margin-top: var(--space-4); }
   .locate-map { margin-top: var(--space-2); border: 1px solid var(--border); }
   .locate-map iframe { display: block; width: 100%; height: clamp(300px, 34vw, 440px); border: 0; }
+  .locate-way { margin-top: var(--space-2); }
 
   .news-article-form { margin-top: var(--space-4); }
 

@@ -134,6 +134,10 @@ export interface ArticleLabels {
   past: string;
   /** Title attribute on the map iframe, given the place's name. */
   mapTitle: (place: string) => string;
+  /** The button under the map that opens the route in Google Maps, and its
+      title — which says where it goes rather than repeating the label. */
+  directions: string;
+  directionsTitle: (place: string) => string;
 
   // Source line
   source: string;
@@ -205,6 +209,8 @@ export const EN: ArticleLabels = {
   subscribeCalendarTitle: "Opens your calendar app and subscribes to these dates",
   past: "Past",
   mapTitle: (place) => `Map — ${place}`,
+  directions: "Directions",
+  directionsTitle: (place) => (place ? `The way to ${place}, in Google Maps` : "The way there, in Google Maps"),
 
   source: "Source",
   checkedAgainstSource: "checked against the source",
@@ -285,6 +291,8 @@ export const ES: Partial<ArticleLabels> = {
   subscribeCalendarTitle: "Abre tu app de calendario y se suscribe a estas fechas",
   past: "Pasado",
   mapTitle: (place) => `Mapa — ${place}`,
+  directions: "Cómo llegar",
+  directionsTitle: (place) => (place ? `Ruta a ${place} en Google Maps` : "La ruta en Google Maps"),
 
   source: "Fuente",
   checkedAgainstSource: "verificado con la fuente el",
@@ -356,6 +364,8 @@ export const DE: Partial<ArticleLabels> = {
   subscribeCalendarTitle: "Öffnet die Kalender-App und abonniert diese Termine",
   past: "Vorbei",
   mapTitle: (place) => `Karte — ${place}`,
+  directions: "Route",
+  directionsTitle: (place) => (place ? `Der Weg zu ${place} in Google Maps` : "Der Weg dorthin in Google Maps"),
 
   source: "Quelle",
   checkedAgainstSource: "gegen die Quelle geprüft am",
@@ -438,6 +448,8 @@ export const HY: Partial<ArticleLabels> = {
   subscribeCalendarTitle: "Բացում է օրացույցի հավելվածը և բաժանորդագրում այս ամսաթվերին",
   past: "Անցած",
   mapTitle: (place) => `Քարտեզ — ${place}`,
+  directions: "Ինչպես հասնել",
+  directionsTitle: (place) => (place ? `Երթուղին դեպի ${place}՝ Google Maps-ում` : "Երթուղին՝ Google Maps-ում"),
 
   source: "Աղբյուր",
   checkedAgainstSource: "ստուգվել է",

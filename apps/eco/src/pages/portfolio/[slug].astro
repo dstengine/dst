@@ -3,6 +3,7 @@ import Photo from "@dst/ui/Photo.astro";
 import { go } from "../../outbound";
 import Layout from "../../layouts/Layout.astro";
 import Lightbox from "@dst/ui/Lightbox.astro";
+import { mapEmbedUrl } from "@dst/ui/maps";
 import { stories, type Story } from "../../data/stories";
 
 export function getStaticPaths() {
@@ -112,7 +113,8 @@ const { lat, lng } = story.location ?? {};
       <h2>Locate</h2>
       <div class="locate-map">
         <iframe
-          src={`https://www.openstreetmap.org/export/embed.html?bbox=${lng - 0.02}%2C${lat - 0.01}%2C${lng + 0.02}%2C${lat + 0.01}&layer=mapnik&marker=${lat}%2C${lng}`}
+          src={mapEmbedUrl(lat, lng, { zoom: 14, locale: "en" })}
+          referrerpolicy="no-referrer-when-downgrade"
           loading="lazy"
           title={`Map — ${story.location?.name ?? story.title}`}
         />

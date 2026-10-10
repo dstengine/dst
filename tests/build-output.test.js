@@ -1286,6 +1286,10 @@ describe("news and events", () => {
         const href = hrefOf(tag);
         if (!href?.startsWith("http")) continue;
         const host = new URL(href).host;
+        // The one way out that is not a hop: the route to the venue, under
+        // the map. It goes straight to Google Maps so that a phone opens it
+        // in the Maps app, and it is nofollow, so no link equity leaves with it.
+        if (href.startsWith("https://www.google.com/maps/dir/") && /rel="[^"]*\bnofollow\b/.test(tag)) continue;
         if (!NEWS_EVENTS_HOSTS.includes(host)) direct.push(`${p.app}${p.url} -> ${href}`);
       }
     }

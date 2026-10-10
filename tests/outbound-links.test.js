@@ -51,11 +51,16 @@ const isNetworkHost = (host) =>
 // added consciously, with the reason, not discovered in production.
 const ALLOWED = {
   "www.googletagmanager.com": "the analytics tag, loaded as a script",
-  "www.openstreetmap.org": "the keyless map embed used on venue and event pages",
+  "www.google.com": "the keyless Google Maps embed on venue, event and news pages, and the directions button under it",
   "nominatim.openstreetmap.org": "names the place behind GPS coordinates, once the visitor has granted them",
   "www.youtube-nocookie.com": "video the uploader allows to be embedded, in YouTube's no-cookie player",
   "counter.yadro.ru": "the LiveInternet counter, now on dst.llc/li/ alone rather than in every footer",
 };
+
+// A host allowed for one use is allowed for that use alone: google.com is
+// the map, not search results or anything else that lives on it.
+const ALLOWED_PATHS = { "www.google.com": /^\/maps(?:\/|$)/ };
+const allowed = (host, url) => Boolean(ALLOWED[host]) && (!ALLOWED_PATHS[host] || ALLOWED_PATHS[host].test(new URL(url).pathname));
 
 // Fields of a VideoObject that say where the embedded media lives rather
 // than sending a reader off the page. The host still has to be one the page
@@ -129,7 +134,7 @@ describe("outbound links, network-wide", () => {
         const element = tag.match(/^<(\w+)/)[1];
         for (const [, value] of tag.matchAll(URL_ATTRS)) {
           for (const { host, url } of externalHosts(value)) {
-            if (ALLOWED[host]) {
+            if (allowed(host, url)) {
               allowedSeen.set(host, (allowedSeen.get(host) ?? 0) + 1);
               continue;
             }
@@ -164,7 +169,7 @@ describe("outbound links, network-wide", () => {
     for (const f of files.filter((f) => f.ext === ".css")) {
       for (const [, url] of f.text.matchAll(/url\(\s*["']?(https?:\/\/[^)"']+)/g)) {
         const host = new URL(url).host;
-        if (!isNetworkHost(host) && !ALLOWED[host]) offenders.push(`${f.app}/${f.rel} -> ${url}`);
+        if (!isNetworkHost(host) && !allowed(host, url)) offenders.push(`${f.app}/${f.rel} -> ${url}`);
       }
     }
     assert.deepEqual(offenders, [], `stylesheets reaching off-network:\n${offenders.join("\n")}`);
@@ -179,7 +184,7 @@ describe("outbound links, network-wide", () => {
         const host = new URL(url).host;
         if (isNetworkHost(host)) continue;
         hosts.set(host, (hosts.get(host) ?? 0) + 1);
-        if (!ALLOWED[host]) offenders.push(`${f.app}/${f.rel} -> ${url}`);
+        if (!allowed(host, url)) offenders.push(`${f.app}/${f.rel} -> ${url}`);
       }
     }
     for (const [host, n] of [...hosts].sort()) {
@@ -214,7 +219,7 @@ describe("outbound links, network-wide", () => {
             }
             if (isNetworkHost(host) || host === "schema.org") return;
             if (field === "sameAs") sameAs.push(`${p.app}${p.url} -> ${value}`);
-            else if (MEDIA_FIELDS.has(field) && ALLOWED[host]) media.push(`${p.app}${p.url} -> ${value}`);
+            else if (MEDIA_FIELDS.has(field) && allowed(host, value)) media.push(`${p.app}${p.url} -> ${value}`);
             else offenders.push(`${p.app}${p.url}: ${field} -> ${value}`);
           } else if (Array.isArray(value)) value.forEach((v) => visit(v, field));
           else if (value && typeof value === "object") for (const k of Object.keys(value)) visit(value[k], k);
