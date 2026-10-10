@@ -242,6 +242,11 @@ export interface EventItem extends ItemBase {
   // with seven stages on one date, a festival whose day and night halves are
   // different events. Needs startTime; ignored without it.
   displayHours?: boolean;
+  // The image is the organiser's poster and has the date printed on it, so
+  // the card shows the poster clean instead of laying its own date over it:
+  // two dates on one cover is worse than none. The meta line under the
+  // cover still carries the date, and the hours if `displayHours` is set.
+  dateInImage?: boolean;
   // Fixed offset, not an IANA zone: the UAE has no daylight saving, so
   // +04:00 is correct year-round and needs no zone database to resolve.
   // Set explicitly for an event held outside the Gulf.

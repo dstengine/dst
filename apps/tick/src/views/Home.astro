@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import NewsBlock from "@dst/ui/NewsBlock.astro";
 import EventsBlock from "@dst/ui/EventsBlock.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
-import { home, words, type Lang } from "../content";
+import { home, words, labels, type Lang } from "../content";
 import { LOCALE, eventsFor, newsFor, eventsBase, newsBase, prefix } from "../i18n";
 import { allSections, NAV } from "../sections";
 
@@ -18,6 +18,6 @@ const w = words[lang];
     <p class="lede">{page.lede}</p>
     <SectionNav sections={allSections[lang]} label={NAV[lang].label} base={prefix(lang)} />
   </section>
-  <EventsBlock locale={LOCALE[lang]} items={eventsFor(lang)} heading={w.upcoming} eventsBase={eventsBase(lang)} allLabel={w.allEvents} />
+  <EventsBlock locale={LOCALE[lang]} items={eventsFor(lang)} heading={w.upcoming} eventsBase={eventsBase(lang)} allLabel={w.allEvents} labels={labels[lang]} />
   <NewsBlock locale={LOCALE[lang]} items={newsFor(lang)} heading={w.news} newsBase={newsBase(lang)} allLabel={w.allNews} />
 </Layout>

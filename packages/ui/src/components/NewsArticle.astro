@@ -19,7 +19,7 @@ import Variants from "./Variants.astro";
 import Faq from "./Faq.astro";
 import ImageNote from "./ImageNote.astro";
 import { ICONS } from "../icons.ts";
-import { formatDate, cardHours } from "../date.ts";
+import { formatDate, cardHours, cardCountdown } from "../date.ts";
 import { withLabels, type ArticleLabels } from "../labels.ts";
 import { readingMinutes } from "@dst/content/reading";
 import { isOn, withPromoted } from "@dst/content/when";
@@ -134,6 +134,8 @@ const eventCards = moreEvents
     imageFit: "cover" as const,
     event: true,
     hours: cardHours(e),
+    countdown: cardCountdown(e),
+    dateInImage: e.dateInImage,
   }));
 
 // Same trade as the tail of an event page: when the promoted tag leads,

@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import NewsBlock from "@dst/ui/NewsBlock.astro";
 import EventsBlock from "@dst/ui/EventsBlock.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
-import { home, siteId, newsBase, eventsBase } from "../content";
+import { home, siteId, newsBase, eventsBase, labels } from "../content";
 import { newsBySite } from "@dst/content/news";
 import { eventsBySite } from "@dst/content/events";
 import { sections, NAV } from "../sections";
@@ -18,6 +18,6 @@ const sectionLinks = sections([...eventItems, ...newsItems]);
     <p class="lede">{home.lede}</p>
     <SectionNav sections={sectionLinks} label={NAV.label} />
   </section>
-  <EventsBlock locale="de-AT" items={eventItems} heading="Termine" eventsBase={eventsBase} allLabel="Alle Termine" />
+  <EventsBlock locale="de-AT" items={eventItems} heading="Termine" eventsBase={eventsBase} allLabel="Alle Termine" labels={labels} />
   <NewsBlock locale="de-AT" items={newsItems} heading="Nachrichten" newsBase={newsBase} allLabel="Alle Nachrichten" />
 </Layout>

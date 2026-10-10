@@ -8,9 +8,10 @@
 // card leads with the date as its cover and carries a countdown.
 import type { EventItem } from "@dst/content/types";
 import FeedCards from "./FeedCards.astro";
-import { cardHours } from "../date.ts";
+import { cardHours, cardCountdown } from "../date.ts";
 import CountdownScript from "./CountdownScript.astro";
 import { isOn } from "@dst/content/when";
+import { withLabels, type ArticleLabels } from "../labels.ts";
 
 interface Props {
   items: EventItem[];
@@ -26,8 +27,11 @@ interface Props {
   /** Locale for dates on this page. Defaults to the network's English;
       a site writing in another language passes its own. */
   locale?: string;
+  /** The words the cards put on the page themselves — "under way" on a
+      card counting down to the hour. English unless the site passes its own. */
+  labels?: Partial<ArticleLabels>;
 }
-const { items, limit = 3, heading = "Events", eventsBase = "/events/", allLabel = "All events", locale } = Astro.props;
+const { items, limit = 3, heading = "Events", eventsBase = "/events/", allLabel = "All events", locale, labels } = Astro.props;
 // A `nav` slot sits between the head row and the cards: a site whose
 // calendar is cut into sections puts that row of links here, so the front
 // page offers the same way in as the calendar does. Empty on every site
@@ -60,6 +64,8 @@ const cards = upcoming.map((item) => {
     imageFit: "cover" as const,
     event: true,
     hours: cardHours(item),
+    countdown: cardCountdown(item),
+    dateInImage: item.dateInImage,
   };
 });
 ---
@@ -70,7 +76,7 @@ const cards = upcoming.map((item) => {
       <a class="events-block-all" href={eventsBase} title={allLabel}>{allLabel}<span class="events-block-arrow" aria-hidden="true"> &rarr;</span></a>
     </div>
     <slot name="nav" />
-    <FeedCards items={cards} columns={cards.length} locale={locale} />
+    <FeedCards items={cards} columns={cards.length} locale={locale} labels={withLabels(labels)} />
     <CountdownScript />
   </section>
 )}

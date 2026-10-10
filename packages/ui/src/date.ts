@@ -27,3 +27,22 @@ export function cardHours(e: {
   const oneDay = !e.end || e.end === e.start;
   return oneDay && e.endTime ? `${e.startTime}–${e.endTime}` : e.startTime;
 }
+
+/** What a card with `displayHours` counts down to: the start and the end as
+    full stamps, clock time and offset included, so the card can say "in 3
+    hours" and then "under way" — the same live count as the event's own
+    page. Undefined for every other event, whose card counts days: a bare
+    date has no hour to count to. */
+export function cardCountdown(e: {
+  displayHours?: boolean;
+  startTime?: string;
+  endTime?: string;
+  start: string;
+  end?: string;
+  utcOffset?: string;
+}): { start: string; end: string } | undefined {
+  if (!e.displayHours || !e.startTime) return undefined;
+  const offset = e.utcOffset ?? "+04:00";
+  const stamp = (day: string, time?: string) => (time ? `${day}T${time}:00${offset}` : day);
+  return { start: stamp(e.start, e.startTime), end: stamp(e.end ?? e.start, e.endTime) };
+}

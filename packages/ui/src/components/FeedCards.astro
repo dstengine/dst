@@ -47,8 +47,8 @@ export interface FeedCardItem {
   event?: boolean;
   /** Set when the picture already carries the date — a poster, a printed
       programme. Then the cover is left alone, because two dates on one
-      card is worse than none. Nothing in the network sets it yet; the
-      generated covers deliberately carry no lettering at all. */
+      card is worse than none. Ignored without an image. The generated
+      covers carry no lettering; an organiser's poster usually does. */
   dateInImage?: boolean;
   /** Marks an event that has already happened. */
   past?: boolean;
@@ -56,6 +56,9 @@ export interface FeedCardItem {
       them — see `cardHours` in ../date.ts. Shown on the date cover in place of the year,
       and after the date in the meta line. */
   hours?: string;
+  /** Stamps for the live count, from `cardCountdown`: hours and minutes
+      on the day, then "under way". Without them the card counts days. */
+  countdown?: { start: string; end: string };
 }
 
 
@@ -83,9 +86,10 @@ const monthLocale = locale === "en-US" ? "en-GB" : locale;
 
    A picture that already has the date printed on it — a poster, a printed
    programme — opts out, because two dates on one card is worse than none.
-   Nothing sets it yet; the covers deliberately carry no lettering at all.
-   News keeps its date in the meta line, where a filing stamp belongs. */
-const dated = (item: FeedCardItem) => Boolean(item.event && !item.dateInImage);
+   Without the picture there is nothing to carry the date, so the flag is
+   ignored and the plate comes back. News keeps its date in the meta line,
+   where a filing stamp belongs. */
+const dated = (item: FeedCardItem) => Boolean(item.event && !(item.dateInImage && item.image));
 
 const parts = (iso: string) => {
   const d = new Date(`${iso}T00:00:00Z`);
@@ -129,7 +133,9 @@ const parts = (iso: string) => {
             {item.hours && <span class="feed-hours">{item.hours}</span>}
             {/* Filled in by CountdownScript where it's loaded; empty without
                 JavaScript, where the date above already says everything. */}
-            {item.event && !item.past && <span class="feed-countdown" data-countdown datetime={item.date}></span>}
+            {item.event && !item.past && (item.countdown
+              ? <span class="feed-countdown" data-countdown-live data-start={item.countdown.start} data-end={item.countdown.end} data-now={L.underway} hidden></span>
+              : <span class="feed-countdown" data-countdown datetime={item.date}></span>)}
             {item.past && <span class="feed-past">{L.past}</span>}
           </p>
           <h3>{item.short ?? item.title}</h3>
