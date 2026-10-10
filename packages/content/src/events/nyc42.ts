@@ -317,7 +317,7 @@ export const items: EventItem[] = [
   {
     slug: "village-halloween-parade-2026",
     createdAt: "2026-08-30T23:32:06+04:00",
-    updatedAt: "2026-10-04T06:43:34+04:00",
+    updatedAt: "2026-10-11T01:07:54+04:00",
     updates: [
       {
         on: "2026-10-04",
@@ -343,7 +343,7 @@ export const items: EventItem[] = [
     utcOffset: "-04:00",
     city: "New York City",
     venue: "Sixth Avenue, Greenwich Village",
-    category: "Parade",
+    category: "Halloween",
     tickets: { priceFrom: 0, currency: "USD" },
     organizer: "Village Halloween Parade, Inc.",
     source: {
