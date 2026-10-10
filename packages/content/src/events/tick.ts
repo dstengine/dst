@@ -78,8 +78,8 @@ export const items: EventItem[] = [
         organizer: "MOCT",
         category: "Parties",
         imageAlt: "Blue MOCT Club 2026 season kickoff poster for 9 October, with the line-up names",
-        imageCredit: "MOCT",
         speakersHeading: "Line-up",
+        speakers: [{ name: "STAOX" }, { name: "IS" }, { name: "RAEVA" }, { name: "REDPING" }, { name: "NEBELL" }, { name: "ST NURIAR" }],
         body: [
           "MOCT opens its fall season at Hayfilm Cluster on 9 October. The headliner is STAOX, a Tbilisi-based DJ, producer and live performer.",
           "STAOX, IS, RAEVA and REDPING play the Studio; NEBELL and ST NURIAR play the Bar. MOCT describes the Studio programme as high-energy techno, with house and trance in the Bar.",
