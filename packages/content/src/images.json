@@ -26950,6 +26950,38 @@
         ]
       ]
     },
+    "/covers/ghapama-night-epos-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/ghapama-night-epos-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/ghapama-night-epos-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/ghapama-night-epos-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/ghapama-night-epos-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/ghapama-night-epos-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/ghapama-night-epos-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/grigory-sokolov-yerevan-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -27379,6 +27411,38 @@
         [
           1536,
           "/covers/macbeth-chamber-theatre-yerevan-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/mad-nation-11th-anniversary-tonelab-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/mad-nation-11th-anniversary-tonelab-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/mad-nation-11th-anniversary-tonelab-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/mad-nation-11th-anniversary-tonelab-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/mad-nation-11th-anniversary-tonelab-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/mad-nation-11th-anniversary-tonelab-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/mad-nation-11th-anniversary-tonelab-2026-1024.webp"
         ]
       ]
     },
