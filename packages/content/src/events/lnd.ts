@@ -862,7 +862,7 @@ export const items: EventItem[] = [
   {
     slug: "lord-mayors-show-2026-london-boroughs",
     createdAt: "2026-10-09T10:00:00+04:00",
-    updatedAt: "2026-10-09T12:00:00+04:00",
+    updatedAt: "2026-10-10T06:20:00+04:00",
     site: "lnd",
     image: "/covers/lord-mayors-show-2026.jpg",
     imageAlt: "A red paper ceremonial coach beneath a line of bunting",
@@ -998,7 +998,7 @@ export const items: EventItem[] = [
   {
     slug: "efg-london-jazz-festival-2026",
     createdAt: "2026-10-09T06:00:00+04:00",
-    updatedAt: "2026-10-09T06:00:00+04:00",
+    updatedAt: "2026-10-10T06:20:00+04:00",
     site: "lnd",
     image: "/covers/efg-london-jazz-festival-2026.jpg",
     imageAlt: "A golden trumpet shape above a row of listeners, with London music-hall silhouettes and stage lights",
@@ -1046,7 +1046,7 @@ export const items: EventItem[] = [
   {
     slug: "christmas-at-kew-2026",
     createdAt: "2026-10-09T06:00:00+04:00",
-    updatedAt: "2026-10-09T06:00:00+04:00",
+    updatedAt: "2026-10-10T06:20:00+04:00",
     site: "lnd",
     image: "/covers/christmas-at-kew-2026.jpg",
     imageAlt: "A glowing paper greenhouse arch, strings of warm lights and illuminated trees against a winter night",
@@ -1098,7 +1098,7 @@ export const items: EventItem[] = [
   {
     slug: "london-parade-new-years-day-2027",
     createdAt: "2026-10-09T06:00:00+04:00",
-    updatedAt: "2026-10-09T06:00:00+04:00",
+    updatedAt: "2026-10-10T06:20:00+04:00",
     site: "lnd",
     image: "/covers/london-parade-2027.jpg",
     imageAlt: "A paper parade float passes London buildings beneath confetti and stars, with a pale clock tower in the background",

@@ -5,7 +5,7 @@ export const items: EventItem[] = [
   {
     slug: "fall-celebrations-spirit-of-mexico-dubai-2026",
     createdAt: "2026-10-09T12:40:00+04:00",
-    updatedAt: "2026-10-09T12:40:00+04:00",
+    updatedAt: "2026-10-10T06:20:00+04:00",
     site: "dst",
     image: "/covers/fall-celebrations-spirit-of-mexico-dubai-2026.jpg",
     imageAlt: "Illustration of a marigold sun, papel picado banners and a stepped pink arch for a Mexican cultural evening in Dubai",
@@ -53,7 +53,7 @@ export const items: EventItem[] = [
   {
     slug: "bolshoi-theatre-orchestra-dubai-opera-2026",
     createdAt: "2026-10-09T12:40:00+04:00",
-    updatedAt: "2026-10-09T12:40:00+04:00",
+    updatedAt: "2026-10-10T06:20:00+04:00",
     site: "dst",
     image: "/covers/bolshoi-orchestra-dubai-opera-2026.jpg",
     imageAlt: "Illustration of a conductor and orchestral instruments beneath the arches of a Dubai opera house",

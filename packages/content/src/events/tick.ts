@@ -18,7 +18,7 @@ export const items: EventItem[] = [
   {
     slug: "moct-clubnight-yerevan-2026-10-09",
     createdAt: "2026-10-09T04:11:00+04:00",
-    updatedAt: "2026-10-09T04:15:00+04:00",
+    updatedAt: "2026-10-10T06:20:00+04:00",
     site: "tick",
     title: "MOCT-ի սեզոնի բացումը՝ STAOX-ի մասնակցությամբ",
     cardTitle: "MOCT Clubnight",
@@ -99,7 +99,7 @@ export const items: EventItem[] = [
   {
     slug: "aki-fest-halloween-yerevan-2026",
     createdAt: "2026-10-09T12:00:00+04:00",
-    updatedAt: "2026-10-09T12:00:00+04:00",
+    updatedAt: "2026-10-10T06:20:00+04:00",
     site: "tick",
     title: "Aki Fest-ի անիմե Հելոուինի փառատոնը",
     cardTitle: "Անիմե Հելոուին՝ Aki Fest-ում",

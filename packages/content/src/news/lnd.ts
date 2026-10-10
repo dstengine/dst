@@ -4,7 +4,7 @@ export const items: NewsItem[] = [
   {
     slug: "lord-mayors-show-2026-route-and-viewing-guide",
     createdAt: "2026-10-09T10:00:00+04:00",
-    updatedAt: "2026-10-09T12:00:00+04:00",
+    updatedAt: "2026-10-10T06:20:00+04:00",
     site: "lnd",
     image: "/covers/lord-mayors-show-2026.jpg",
     imageAlt: "A red paper ceremonial coach beneath a line of bunting",

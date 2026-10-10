@@ -7,7 +7,7 @@ export const items: NewsItem[] = [
   {
     slug: "yerevan-2808th-anniversary-2026",
     createdAt: "2026-10-09T10:00:00+04:00",
-    updatedAt: "2026-10-09T13:00:00+04:00",
+    updatedAt: "2026-10-10T06:20:00+04:00",
     site: "tick",
     date: "2026-10-09",
     title: "Երևանի 2808-ամյակը. յոթ բեմի ծրագիրը՝ հոկտեմբերի 9–10-ին",
@@ -100,7 +100,7 @@ export const items: NewsItem[] = [
   {
     slug: "discover-armenia-from-the-sky-balloon-festival-2026",
     createdAt: "2026-10-09T10:00:00+04:00",
-    updatedAt: "2026-10-09T10:00:00+04:00",
+    updatedAt: "2026-10-10T06:20:00+04:00",
     site: "tick",
     date: "2026-10-09",
     title: "Փուչիկների միջազգային փառատոնը Երևանում շարունակվում է մինչև հոկտեմբերի 11-ը",
@@ -160,7 +160,7 @@ export const items: NewsItem[] = [
   {
     slug: "yerevan-fashion-week-2026",
     createdAt: "2026-10-04T15:00:00+04:00",
-    updatedAt: "2026-10-09T12:00:00+04:00",
+    updatedAt: "2026-10-10T06:20:00+04:00",
     site: "tick",
     date: "2026-10-01",
     title: "Yerevan Fashion Week 2026. ցուցադրություններ, Fashion Talks և բաց շոուրում",

@@ -4,7 +4,7 @@ export const items: EventItem[] = [
   {
     slug: "eagles-jaguars-tottenham-nfl-london-2026",
     createdAt: "2026-10-09T12:45:00+04:00",
-    updatedAt: "2026-10-09T12:45:00+04:00",
+    updatedAt: "2026-10-10T06:20:00+04:00",
     site: "ldn",
     image: "/covers/eagles-jaguars-tottenham-nfl-london-2026.jpg",
     imageAlt: "Illustration of an American football beneath stadium floodlights, with the arch of Tottenham Hotspur Stadium behind it",
@@ -47,7 +47,7 @@ export const items: EventItem[] = [
   {
     slug: "texans-jaguars-wembley-nfl-london-2026",
     createdAt: "2026-10-09T12:45:00+04:00",
-    updatedAt: "2026-10-09T12:45:00+04:00",
+    updatedAt: "2026-10-10T06:20:00+04:00",
     site: "ldn",
     image: "/covers/texans-jaguars-wembley-nfl-london-2026.jpg",
     imageAlt: "Illustration of an American football with Wembley Stadium's twin towers rising under evening lights",

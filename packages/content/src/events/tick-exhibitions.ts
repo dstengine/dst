@@ -15,7 +15,7 @@ export const items: EventItem[] = [
   {
     slug: "qarpet-cafesjian-yerevan-2026",
     createdAt: "2026-10-09T13:00:00+04:00",
-    updatedAt: "2026-10-09T13:00:00+04:00",
+    updatedAt: "2026-10-10T06:20:00+04:00",
     site: "tick",
     title: "«Քարպետ»՝ Ալեքսանդր Նիկիտինի և Դմիտրի Բեկետովի ցուցահանդեսը",
     cardTitle: "«Քարպետ»՝ Կասկադում",
@@ -88,7 +88,7 @@ export const items: EventItem[] = [
   {
     slug: "unfamiliar-city-gagik-ghazanchyan-yerevan-2026",
     createdAt: "2026-10-09T13:00:00+04:00",
-    updatedAt: "2026-10-09T13:00:00+04:00",
+    updatedAt: "2026-10-10T06:20:00+04:00",
     site: "tick",
     title: "Գագիկ Ղազանչյանի «Անծանոթ քաղաքը»՝ Կասկադում",
     cardTitle: "«Անծանոթ քաղաքը»",
@@ -161,7 +161,7 @@ export const items: EventItem[] = [
   {
     slug: "cyfest-17-yerevan-2026",
     createdAt: "2026-10-09T13:00:00+04:00",
-    updatedAt: "2026-10-09T13:00:00+04:00",
+    updatedAt: "2026-10-10T06:20:00+04:00",
     site: "tick",
     title: "CYFEST 17 Երևանում․ «Բնություն արարող բնությունը»",
     cardTitle: "CYFEST 17՝ Կասկադում",
@@ -234,7 +234,7 @@ export const items: EventItem[] = [
   {
     slug: "face-of-humanity-surenyants-national-gallery-2026",
     createdAt: "2026-10-09T13:00:00+04:00",
-    updatedAt: "2026-10-09T13:00:00+04:00",
+    updatedAt: "2026-10-10T06:20:00+04:00",
     site: "tick",
     title: "«Մարդկային դեմքը»․ Վարդգես Սուրենյանցը ազգային պատկերասրահում",
     cardTitle: "Վարդգես Սուրենյանց՝ պատկերասրահում",

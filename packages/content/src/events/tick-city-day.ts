@@ -11,7 +11,7 @@ export const items: EventItem[] = [
   {
     slug: "yerevan-city-day-diana-arbenina-2026",
     createdAt: "2026-10-09T12:00:00+04:00",
-    updatedAt: "2026-10-09T12:00:00+04:00",
+    updatedAt: "2026-10-10T06:20:00+04:00",
     site: "tick",
     title: "Դիանա Արբենինա և «Նոչնիե սնայպերի». Երևանի օրվա համերգը",
     cardTitle: "Դիանա Արբենինան՝ Երևանի օրը",
@@ -70,7 +70,7 @@ export const items: EventItem[] = [
   {
     slug: "yerevan-city-day-beer-festival-2026",
     createdAt: "2026-10-09T12:00:00+04:00",
-    updatedAt: "2026-10-09T12:00:00+04:00",
+    updatedAt: "2026-10-10T06:20:00+04:00",
     site: "tick",
     title: "Երևանի օրվա գարեջրի փառատոնը՝ Դիանա Աբգարի այգում",
     cardTitle: "Գարեջրի փառատոն՝ Երևանի օրը",
@@ -132,7 +132,7 @@ export const items: EventItem[] = [
   {
     slug: "yerevan-city-day-pop-stage-2026",
     createdAt: "2026-10-09T12:00:00+04:00",
-    updatedAt: "2026-10-09T12:00:00+04:00",
+    updatedAt: "2026-10-10T06:20:00+04:00",
     site: "tick",
     title: "Երևանի օրվա փոփ բեմը՝ Շառլ Ազնավուրի հրապարակում",
     cardTitle: "Փոփ բեմ՝ Շառլ Ազնավուրի հրապարակում",
@@ -188,7 +188,7 @@ export const items: EventItem[] = [
   {
     slug: "yerevan-city-day-jazz-fkj-2026",
     createdAt: "2026-10-09T12:00:00+04:00",
-    updatedAt: "2026-10-09T12:00:00+04:00",
+    updatedAt: "2026-10-10T06:20:00+04:00",
     site: "tick",
     title: "Երևանի օրվա ջազ բեմը՝ Կասկադում և FKJ-ի մասնակցությամբ",
     cardTitle: "Ջազ Կասկադում․ FKJ՝ ժամը 20:00-ին",
@@ -256,7 +256,7 @@ export const items: EventItem[] = [
   {
     slug: "yerevan-city-day-rock-stage-2026",
     createdAt: "2026-10-09T12:00:00+04:00",
-    updatedAt: "2026-10-09T12:00:00+04:00",
+    updatedAt: "2026-10-10T06:20:00+04:00",
     site: "tick",
     title: "Երևանի օրվա ռոք բեմը՝ Դիանա Աբգարի անվան զբոսայգում",
     cardTitle: "Ռոք՝ Դիանա Աբգարի զբոսայգում",
@@ -312,7 +312,7 @@ export const items: EventItem[] = [
   {
     slug: "yerevan-city-day-armenian-music-wine-2026",
     createdAt: "2026-10-09T12:00:00+04:00",
-    updatedAt: "2026-10-09T13:30:00+04:00",
+    updatedAt: "2026-10-10T06:20:00+04:00",
     site: "tick",
     title: "Երևանի օրվա ազգային երաժշտությունն ու գինու փառատոնը",
     cardTitle: "Ազգային երաժշտություն և գինի",
@@ -376,7 +376,7 @@ export const items: EventItem[] = [
   {
     slug: "yerevan-city-day-rap-stage-2026",
     createdAt: "2026-10-09T12:00:00+04:00",
-    updatedAt: "2026-10-09T12:00:00+04:00",
+    updatedAt: "2026-10-10T06:20:00+04:00",
     site: "tick",
     title: "Երևանի օրվա ռեփ բեմը՝ Անգլիական այգում",
     cardTitle: "Ռեփ՝ Անգլիական այգում",
@@ -432,7 +432,7 @@ export const items: EventItem[] = [
   {
     slug: "yerevan-city-day-symphonic-folk-2026",
     createdAt: "2026-10-09T12:00:00+04:00",
-    updatedAt: "2026-10-09T12:00:00+04:00",
+    updatedAt: "2026-10-10T06:20:00+04:00",
     site: "tick",
     title: "«Սիմֆոնիկ ֆոլք». Երևանի օրվա դասական համերգը Ազատության հրապարակում",
     cardTitle: "Սիմֆոնիկ ֆոլք՝ Ազատության հրապարակում",
@@ -494,7 +494,7 @@ export const items: EventItem[] = [
   {
     slug: "yerevan-city-day-electronic-vanco-2026",
     createdAt: "2026-10-09T12:00:00+04:00",
-    updatedAt: "2026-10-09T12:00:00+04:00",
+    updatedAt: "2026-10-10T06:20:00+04:00",
     site: "tick",
     title: "Երևանի օրվա էլեկտրոնային բեմը՝ Vanco-ի մասնակցությամբ",
     cardTitle: "Էլեկտրոնային երաժշտություն․ Vanco՝ 21:30-ին",

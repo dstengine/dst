@@ -5,7 +5,7 @@ export const items: EventItem[] = [
   {
     slug: "arnulf-rainer-retrospektive-albertina-2026",
     createdAt: "2026-10-09T12:50:00+04:00",
-    updatedAt: "2026-10-09T12:50:00+04:00",
+    updatedAt: "2026-10-10T06:20:00+04:00",
     site: "vien",
     image: "/covers/arnulf-rainer-retrospective-albertina-2026.jpg",
     imageAlt: "Abstrakte Illustration aus überlagerten schwarzen und roten Pinselbahnen auf hellem Papier",
