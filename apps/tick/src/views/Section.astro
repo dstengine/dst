@@ -5,15 +5,47 @@
 import Layout from "../layouts/Layout.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import SectionFeed from "@dst/ui/SectionFeed.astro";
+import FeedCards from "@dst/ui/FeedCards.astro";
 import type { Section as SectionT } from "@dst/content/sections";
+import type { EventItem } from "@dst/content/types";
+import { cardCountdown } from "@dst/ui/date";
+import { withLabels } from "@dst/ui/labels";
+import { isOn } from "@dst/content/when";
 import { labels, type Lang } from "../content";
 import { site } from "../site.config";
 import { LOCALE, eventsBase, newsBase, prefix } from "../i18n";
-import { allSections, NAV } from "../sections";
+import { allSections, NAV, promoted } from "../sections";
 
 interface Props { lang: Lang; section: SectionT }
 const { lang, section } = Astro.props;
 const p = prefix(lang);
+const L = withLabels(labels[lang]);
+
+// The tag the site is pushing this month, as three cards under every other
+// subject — the same block the event pages end with, and gone by itself
+// once its last date has passed. Not on its own page, which is that list.
+const today = new Date().toISOString().slice(0, 10);
+const hot = promoted[lang];
+const hotCards = hot && hot.slug !== section.slug
+  ? hot.items
+      .filter((i): i is EventItem => "start" in i && isOn(i, today))
+      .sort((a, b) => (a.start < b.start ? -1 : 1))
+      .slice(0, 3)
+      .map((e) => ({
+        href: `${eventsBase(lang)}${e.slug}/`,
+        eyebrow: e.category,
+        date: e.start,
+        title: e.title,
+        short: e.cardTitle,
+        text: [e.venue, e.city].filter(Boolean).join(" · ") || e.summary,
+        image: e.image,
+        imageAlt: e.imageAlt,
+        imageFit: "cover" as const,
+        event: true,
+        countdown: cardCountdown(e),
+        dateInImage: e.dateInImage,
+      }))
+  : [];
 ---
 <Layout lang={lang} title={section.title} description={section.description}>
   <section class="container hero">
@@ -32,4 +64,16 @@ const p = prefix(lang);
       where={site[lang].keyword}
     />
   </section>
+  {hot && hotCards.length > 0 && (
+    <section class="container section-promoted">
+      <h2><a href={`${p}${hot.slug}/`} title={hot.title}>{L.moreTagged(hot.label, hot.where, hot.year)}</a></h2>
+      <FeedCards items={hotCards} columns={hotCards.length} locale={LOCALE[lang]} labels={L} />
+    </section>
+  )}
 </Layout>
+
+<style>
+  .section-promoted { margin-top: var(--space-5); }
+  .section-promoted h2 a { color: inherit; text-decoration: none; }
+  .section-promoted h2 a:hover { text-decoration: underline; }
+</style>

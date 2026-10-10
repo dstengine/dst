@@ -603,6 +603,7 @@ export const items: EventItem[] = [
     imageHeight: 756,
     speakersHeading: "Կատարողներ",
     speakers: [{ name: "TooTall" }],
+    ticket: { url: "https://www.instagram.com/forty44_evn/", label: "Forty44-ի Instagram-ը" },
     source: { name: "Forty44 Instagram", url: "https://www.instagram.com/forty44_evn/", verifiedOn: "2026-10-10" },
     body: [
       "Երևանի օրվա վերջին բեմերը փակվում են ժամը 23:00-ին, իսկ Փարպեցու փողոցում գիշերը շարունակվում է։ Հոկտեմբերի 10-ին Forty44 արտ-սրճարան-բարում TooTall-ը house է նվագում իր հրաժեշտի երեկույթում՝ ընկերների հետ, 22:00-ից մինչև ուշ գիշեր։",
@@ -632,6 +633,7 @@ export const items: EventItem[] = [
         category: "Parties",
         imageAlt: "Gold-toned TooTall @ Friends poster: the DJ in headphones, “10.10 Tonight”, “House Music All Night!” and the Forty44 logo",
         speakersHeading: "Line-up",
+        ticket: { url: "https://www.instagram.com/forty44_evn/", label: "Forty44 on Instagram" },
         speakers: [{ name: "TooTall" }],
         body: [
           "Yerevan City Day's last stages close at 23:00; on Parpetsi Street the night carries on. On 10 October TooTall plays house at Forty44, an art café-bar, at a going-away party with friends, from 22:00 till late.",
