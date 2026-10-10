@@ -236,6 +236,12 @@ export interface EventItem extends ItemBase {
   // published it.
   startTime?: string;
   endTime?: string;
+  // Put the hours on the event's card, not only on its page. Most cards are
+  // a date and nothing else, and that is right for a play at 19:00 like
+  // every other night. It is wrong where the time is the choice: a city day
+  // with seven stages on one date, a festival whose day and night halves are
+  // different events. Needs startTime; ignored without it.
+  displayHours?: boolean;
   // Fixed offset, not an IANA zone: the UAE has no daylight saving, so
   // +04:00 is correct year-round and needs no zone database to resolve.
   // Set explicitly for an event held outside the Gulf.

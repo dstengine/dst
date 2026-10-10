@@ -20,7 +20,7 @@ import CountdownScript from "./CountdownScript.astro";
 import Variants from "./Variants.astro";
 import Glance from "./Glance.astro";
 import { ICONS } from "../icons.ts";
-import { formatDate } from "../date.ts";
+import { formatDate, cardHours } from "../date.ts";
 import { headingWord, withLabels, type ArticleLabels } from "../labels.ts";
 import { isOn, hasEnded, withPromoted } from "@dst/content/when";
 
@@ -138,6 +138,7 @@ const moreCards = more
     imageAlt: other.imageAlt,
     imageFit: "cover" as const,
     event: true,
+    hours: cardHours(other),
     past: hasEnded(other, todayIso),
   }));
 

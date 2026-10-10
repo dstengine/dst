@@ -52,7 +52,12 @@ export interface FeedCardItem {
   dateInImage?: boolean;
   /** Marks an event that has already happened. */
   past?: boolean;
+  /** Clock hours, "13:00–22:00" or "21:00", for an event that asked for
+      them — see `cardHours` in ../date.ts. Shown on the date cover in place of the year,
+      and after the date in the meta line. */
+  hours?: string;
 }
+
 
 interface Props {
   items: FeedCardItem[];
@@ -110,7 +115,9 @@ const parts = (iso: string) => {
               <div class="feed-date" aria-hidden="true">
                 <span class="feed-date-day">{when.day}</span>
                 <span class="feed-date-month">{when.month}</span>
-                <span class="feed-date-year">{when.year}</span>
+                {item.hours
+                  ? <span class="feed-date-hours">{item.hours}</span>
+                  : <span class="feed-date-year">{when.year}</span>}
               </div>
             )}
           </div>
@@ -119,6 +126,7 @@ const parts = (iso: string) => {
           <p class="feed-meta">
             {item.eyebrow && <span class="feed-eyebrow">{item.eyebrow}</span>}
             <time datetime={item.date}>{formatDate(item.date, locale)}</time>
+            {item.hours && <span class="feed-hours">{item.hours}</span>}
             {/* Filled in by CountdownScript where it's loaded; empty without
                 JavaScript, where the date above already says everything. */}
             {item.event && !item.past && <span class="feed-countdown" data-countdown datetime={item.date}></span>}
@@ -228,6 +236,7 @@ const parts = (iso: string) => {
     .feed-cards-single .feed-date-day { font-size: clamp(3.5rem, 9cqw, 5.5rem); }
     .feed-cards-single .feed-date-month { font-size: var(--step-0); }
     .feed-cards-single .feed-date-year { font-size: var(--step-0); }
+    .feed-cards-single .feed-date-hours { font-size: var(--step-0); }
   }
 
   .feed-card {
@@ -321,6 +330,9 @@ const parts = (iso: string) => {
   .feed-date-day { font-size: var(--step-4); font-weight: 600; letter-spacing: -0.03em; }
   .feed-date-month { margin-top: 0.35em; font-size: var(--step--1); letter-spacing: 0.18em; }
   .feed-date-year { margin-top: 0.35em; font-size: var(--step--1); opacity: 0.65; }
+  /* Full strength, unlike the year it replaces: it is the reason the card
+     carries it. */
+  .feed-date-hours { margin-top: 0.5em; font-size: var(--step--1); font-weight: 600; white-space: nowrap; }
 
   .feed-body { padding: var(--space-3); }
   /* Single-column width: the card is the whole screen, so its padding is
@@ -354,6 +366,7 @@ const parts = (iso: string) => {
      the trailing space in generated content collapsed and every card read
      "Nov 17, 2026 ·in 3 months". */
   .feed-countdown:not(:empty)::before { content: "\00b7\00a0"; }
+  .feed-hours { white-space: nowrap; }
   /* A chip, not a bare word: after a category and a date it read as a third
      run-on fragment of the same sentence. */
   .feed-past {

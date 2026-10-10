@@ -5,6 +5,7 @@ import Layout from "../layouts/Layout.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import EventsList from "@dst/ui/EventsList.astro";
 import FeedCards from "@dst/ui/FeedCards.astro";
+import { cardHours } from "@dst/ui/date";
 import CountdownScript from "@dst/ui/CountdownScript.astro";
 import { eventsBySite, allEvents, upcomingEvents } from "@dst/content/events";
 import { newsBySite } from "@dst/content/news";
@@ -54,6 +55,7 @@ const networkCards = upcomingEvents(
     imageAlt: item.imageAlt,
     imageFit: "cover" as const,
     event: true,
+    hours: cardHours(item),
   };
 });
 ---

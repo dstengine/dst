@@ -5,6 +5,7 @@
 // rebuilds regularly, not a live app.
 import type { EventItem } from "@dst/content/types";
 import FeedCards from "./FeedCards.astro";
+import { cardHours } from "../date.ts";
 import Icon from "./Icon.astro";
 import { withLabels, type ArticleLabels } from "../labels.ts";
 import CountdownScript from "./CountdownScript.astro";
@@ -72,6 +73,7 @@ const toCard = (item: EventItem, past: boolean) => {
     imageAlt: item.imageAlt,
     imageFit: "cover" as const,
     event: true,
+    hours: cardHours(item),
     past,
   };
 };

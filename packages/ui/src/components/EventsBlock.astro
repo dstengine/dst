@@ -8,6 +8,7 @@
 // card leads with the date as its cover and carries a countdown.
 import type { EventItem } from "@dst/content/types";
 import FeedCards from "./FeedCards.astro";
+import { cardHours } from "../date.ts";
 import CountdownScript from "./CountdownScript.astro";
 import { isOn } from "@dst/content/when";
 
@@ -58,6 +59,7 @@ const cards = upcoming.map((item) => {
     imageAlt: item.imageAlt,
     imageFit: "cover" as const,
     event: true,
+    hours: cardHours(item),
   };
 });
 ---

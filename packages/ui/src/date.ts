@@ -13,3 +13,17 @@ export function formatDate(iso: string, locale = "en-US"): string {
     timeZone: "UTC",
   });
 }
+
+/** The hours an event's card shows: its start, and its end when the event
+    is one day long. Undefined unless the event set `displayHours`. */
+export function cardHours(e: {
+  displayHours?: boolean;
+  startTime?: string;
+  endTime?: string;
+  start: string;
+  end?: string;
+}): string | undefined {
+  if (!e.displayHours || !e.startTime) return undefined;
+  const oneDay = !e.end || e.end === e.start;
+  return oneDay && e.endTime ? `${e.startTime}–${e.endTime}` : e.startTime;
+}
