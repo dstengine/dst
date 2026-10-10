@@ -315,6 +315,178 @@ export const items: EventItem[] = [
       "The twentieth-anniversary framing means the popular panels will be busier than the schedule suggests, and NYCC queues form for the room, not the panel — once you are inside a hall you can usually stay for the next session. Picking a room for a block of the afternoon beats picking four panels in four buildings.",
   },
   {
+    slug: "trick-or-streets-nyc-2026",
+    createdAt: "2026-10-11T01:15:13+04:00",
+    updatedAt: "2026-10-11T01:15:13+04:00",
+    site: "nyc42",
+    image: "/covers/trick-or-streets-nyc-2026.jpg",
+    imageAlt: "A row of brownstone houses with pumpkins on their stoops behind a striped barrier closing the street to cars, under an orange sky",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Trick-or-Streets 2026: Halloween open streets",
+    summary:
+      "Halloween in New York City on 160 car-free Open Streets and plazas across all five boroughs, all through October and free: trick-or-treating, face painting, music and block parties, most of them on Saturday 31 October.",
+    start: "2026-10-01",
+    end: "2026-10-31",
+    utcOffset: "-04:00",
+    city: "New York City",
+    venue: "Open Streets and plazas in all five boroughs",
+    category: "Halloween",
+    tickets: { priceFrom: 0, currency: "USD" },
+    organizer: "NYC Department of Transportation",
+    ticket: {
+      url: "https://www.nyc.gov/html/dot/html/pedestrians/trickorstreets.shtml",
+      label: "Every street and time at NYC DOT",
+    },
+    source: {
+      name: "NYC DOT — Trick-or-Streets",
+      url: "https://www.nyc.gov/html/dot/html/pedestrians/trickorstreets.shtml",
+      verifiedOn: "2026-10-11",
+    },
+    body: [
+      "For one month a year the city hands Halloween its streets back. Trick-or-Streets closes Open Streets and plazas to cars for harvest and Halloween celebrations run by block associations, business districts, schools and community groups — <strong>160 of them in 2026</strong>, the most in the programme's five years.",
+      "## When and where",
+      "<strong>Throughout October 2026</strong>, in <strong>all five boroughs</strong>. The city's list runs from the first Saturday of the month to Halloween itself, and more than half of the events on it fall on <strong>Saturday 31 October</strong>, when the street is where the trick-or-treating is. Every event has its own block, date and hours on NYC DOT's page.",
+      "## What it costs",
+      "<strong>Nothing.</strong> The events are free, and NYC DOT says it is handing out <strong>75,000 pieces of candy</strong> along the way.",
+      "## What happens on the street",
+      "Each organiser runs its own: trick-or-treating, face painting, games, live music and costume contests. New this year, the <strong>Municipal Art Society of New York</strong> is leading free walking tours of the history and architecture of participating neighbourhoods — details still to be announced — and <strong>Street Lab</strong> is bringing Halloween play to events outside public schools in four boroughs.",
+      "Events can be delayed or cancelled in bad weather, so check the city's list on the day.",
+    ],
+    programme: [
+      {
+        heading: "Thursday 22 October, 2–6pm — Hillel Plaza, Brooklyn",
+        text: "Signature event at Flatbush Junction, with the Flatbush Nostrand Junction BID.",
+      },
+      {
+        heading: "Saturday 24 October, noon–5pm — Water Street, Staten Island",
+        text: "Signature event on Water Street from Canal Street to Beach Street, with the Van Duzer Civic Association.",
+      },
+      {
+        heading: "Sunday 25 October, 2–7pm — Austin Street, Queens",
+        text: "Signature event in Forest Hills, Austin Street from 71st Avenue to 71st Road, with Neighbors for A Safer Austin Street.",
+      },
+      {
+        heading: "Wednesday 28 October, 3–7pm — Canal Street, Manhattan",
+        text: "Signature event on Canal Street from Orchard Street to Essex Street, with the Canal Street Merchants Association.",
+      },
+      {
+        heading: "Saturday 31 October, 10am–3pm — James Baldwin Plaza, the Bronx",
+        text: "Signature event on Goulden Avenue at Mosholu Parkway, with the James Baldwin Outdoor Learning Center.",
+      },
+    ],
+    faq: [
+      {
+        q: "What is Trick-or-Streets?",
+        a: "NYC DOT's October programme of car-free streets and plazas for Halloween and harvest celebrations, run with local organisers. In 2026 there are <strong>160</strong> across the five boroughs.",
+      },
+      {
+        q: "Is Trick-or-Streets free?",
+        a: "Yes. Every event is free to attend.",
+      },
+      {
+        q: "When is Trick-or-Streets 2026?",
+        a: "Throughout October 2026. More than half of the listed events are on <strong>Saturday 31 October</strong>; the five signature events run from 22 to 31 October.",
+      },
+      {
+        q: "Where can I find the street near me?",
+        a: "NYC DOT lists every event with its block, borough, organiser, date and hours, and has a map with a date slider.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/village-halloween-parade-2026/",
+        eyebrow: "Greenwich Village",
+        title: "Village Halloween Parade",
+        text: "Saturday 31 October, 7pm, up Sixth Avenue: free to watch, free to march in costume.",
+      },
+      {
+        href: "/events/park-slope-halloween-parade-2026/",
+        eyebrow: "Park Slope",
+        title: "Park Slope Halloween Parade",
+        text: "The same evening at 6:30pm, down Seventh Avenue in Brooklyn: the family parade since 1986.",
+      },
+    ],
+    expertise:
+      "The useful thing about Trick-or-Streets is not the number 160 but the list behind it: it is the closest New York has to a register of where trick-or-treating will happen on the 31st, block by block, with hours. Most of the Halloween-day streets open at midday or in the afternoon and wind down by eight or nine, so a family evening is best planned backwards from the parade it ends at — the brownstone blocks of Park Slope and the Village both have closed streets within a short walk of their parade routes. The weekday signature events, Hillel Plaza on the 22nd and Canal Street on the 28th, start at two and three: they are after-school events, not evening ones.",
+  },
+
+  {
+    slug: "park-slope-halloween-parade-2026",
+    createdAt: "2026-10-11T01:15:13+04:00",
+    updatedAt: "2026-10-11T01:15:13+04:00",
+    site: "nyc42",
+    image: "/covers/park-slope-halloween-parade-2026.jpg",
+    imageAlt: "A long avenue between rows of brownstones lined with glowing pumpkins and paper lanterns, a large jack-o'-lantern face in a starry night sky",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Park Slope Halloween Parade 2026",
+    summary:
+      "Brooklyn's family Halloween parade in New York City, on Seventh Avenue in Park Slope on Saturday 31 October 2026: lining up from 6pm, stepping off at 6:30pm, with costumed families, musicians and puppets. Free.",
+    start: "2026-10-31",
+    startTime: "18:30",
+    endTime: "21:00",
+    utcOffset: "-04:00",
+    city: "New York City",
+    venue: "Seventh Avenue, Park Slope, Brooklyn",
+    category: "Halloween",
+    tickets: { priceFrom: 0, currency: "USD" },
+    organizer: "Park Slope Civic Council",
+    source: {
+      name: "NYC Tourism + Conventions",
+      url: "https://www.nyctourism.com/events/park-slope-halloween-parade/",
+      verifiedOn: "2026-10-11",
+    },
+    body: [
+      "The Village parade is the one the world comes to watch. Park Slope's is the one Brooklyn's families walk in — a neighbourhood tradition since <strong>1986</strong>, with costumed children, musicians, puppets and local groups filling Seventh Avenue on Halloween night.",
+      "## Date and time",
+      "<strong>Saturday 31 October 2026</strong>. People start lining up around <strong>6pm</strong> and the parade steps off at <strong>6:30pm</strong>. The city's street permit for the start on 14th Street runs from 6:30 to 9pm.",
+      "## The route",
+      "Along <strong>Seventh Avenue from 14th Street to 3rd Street</strong>, in Park Slope, Brooklyn.",
+      "## What it costs",
+      "<strong>Nothing</strong> — the parade is free, to watch and to walk in.",
+      "## Before and after",
+      "Seventh and Fifth Avenues are among the best trick-or-treating in the borough, and several Park Slope side streets are closed to cars for block parties the same afternoon under the city's Trick-or-Streets programme. The Park Slope Civic Council posts the final details on its Instagram as the date approaches.",
+    ],
+    faq: [
+      {
+        q: "When is the Park Slope Halloween Parade 2026?",
+        a: "On <strong>Saturday 31 October 2026</strong>. Lining up starts around 6pm; the parade steps off at <strong>6:30pm</strong>.",
+      },
+      {
+        q: "Where does the parade go?",
+        a: "Along Seventh Avenue in Park Slope, from 14th Street to 3rd Street.",
+      },
+      {
+        q: "Is it free?",
+        a: "Yes, it is free.",
+      },
+      {
+        q: "Who organises it?",
+        a: "The Park Slope Civic Council, which has run it since 1986.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/trick-or-streets-nyc-2026/",
+        eyebrow: "All five boroughs",
+        title: "Trick-or-Streets 2026",
+        text: "160 car-free streets and plazas for Halloween through October, most of them open on the 31st.",
+      },
+      {
+        href: "/events/village-halloween-parade-2026/",
+        eyebrow: "Greenwich Village",
+        title: "Village Halloween Parade",
+        text: "The same night at 7pm, up Sixth Avenue in Manhattan: free to watch, free to march in costume.",
+      },
+    ],
+    expertise:
+      "Half an hour and a river separate the two parades, and that is the choice a family has to make: the Village at 7pm is a spectacle with crowds to match, Park Slope at 6:30 is an evening a small child can actually walk in. The line-up begins at 6pm at the 14th Street end, so arrive there rather than somewhere along the route if the point is to march, and plan the afternoon on the side streets — the 8th, 11th and 17th Street blocks have their own Trick-or-Streets closures from early afternoon, and Montgomery Place and Polhemus Place open earlier still.",
+  },
+
+  {
     slug: "village-halloween-parade-2026",
     createdAt: "2026-08-30T23:32:06+04:00",
     updatedAt: "2026-10-11T01:07:54+04:00",

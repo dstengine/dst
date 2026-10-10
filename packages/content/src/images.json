@@ -22686,6 +22686,38 @@
         ]
       ]
     },
+    "/covers/park-slope-halloween-parade-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/park-slope-halloween-parade-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/park-slope-halloween-parade-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/park-slope-halloween-parade-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/park-slope-halloween-parade-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/park-slope-halloween-parade-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/park-slope-halloween-parade-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/rose-parade-2027.jpg": {
       "width": 1536,
       "height": 864,
@@ -23163,6 +23195,38 @@
         [
           1536,
           "/covers/trick-or-streets-2026-160-car-free-streets-1536.webp"
+        ]
+      ]
+    },
+    "/covers/trick-or-streets-nyc-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/trick-or-streets-nyc-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/trick-or-streets-nyc-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/trick-or-streets-nyc-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/trick-or-streets-nyc-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/trick-or-streets-nyc-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/trick-or-streets-nyc-2026-1024.webp"
         ]
       ]
     },
