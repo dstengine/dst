@@ -58,3 +58,14 @@ test('passes through optional fields unchanged', () => {
   assert.deepEqual(result.lead.meta, { source: 'riviera' });
   assert.equal(result.lead.ref.domain, 'riviera.dst.llc');
 });
+
+test('accepts and preserves lead.type, trimming whitespace', () => {
+  const result = parseLead({
+    lead: {
+      type: '  real_estate  ',
+      contacts: { phone: '+971501234567' },
+    },
+  });
+  assert.equal(result.ok, true);
+  assert.equal(result.lead.type, 'real_estate');
+});

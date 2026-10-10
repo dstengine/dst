@@ -34,6 +34,7 @@
  *
  * @typedef {Object} Lead
  * @property {string} [name]
+ * @property {string} [type] Optional lead classification ("general", "real_estate", "rent", "visa", "crypto", etc.)
  * @property {LeadContacts} contacts
  * @property {Object} [meta]
  * @property {LeadGeo} [geo]
@@ -77,5 +78,9 @@ export function parseLead(body) {
   if (!hasContact) {
     return { ok: false, error: 'lead.contacts needs at least one of email, phone, telegram, whatsapp' };
   }
-  return { ok: true, lead: { ...lead, contacts } };
+  const parsedLead = { ...lead, contacts };
+  if (typeof lead.type === 'string') {
+    parsedLead.type = lead.type.trim();
+  }
+  return { ok: true, lead: parsedLead };
 }

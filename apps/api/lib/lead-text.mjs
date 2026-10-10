@@ -58,6 +58,10 @@ export function formatLeadText(lead, opts = {}) {
     }
   }
 
+  if (lead.type) {
+    lines.push(`${bold('Type:')} ${escape(lead.type)}`);
+  }
+
   if (lead.form?.name) {
     lines.push(`${bold('Form:')} ${escape(lead.form.name)}${lead.form.description ? ` — ${escape(lead.form.description)}` : ''}`);
   }

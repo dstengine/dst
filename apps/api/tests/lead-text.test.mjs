@@ -132,3 +132,18 @@ test('formatLeadText renders plain text (no markdown) when bold/section are over
   assert.match(text, /^Activity \(1 event\(s\)\):$/m);
   assert.doesNotMatch(text, /\*/);
 });
+
+test('formatLeadText includes Type when lead.type is present', () => {
+  const text = formatLeadText({
+    type: 'real_estate',
+    contacts: { phone: '+971501234567' },
+  });
+  assert.match(text, /\*\*Type:\*\* real_estate/);
+});
+
+test('formatLeadText omits Type when lead.type is absent', () => {
+  const text = formatLeadText({
+    contacts: { phone: '+971501234567' },
+  });
+  assert.doesNotMatch(text, /Type:/);
+});
