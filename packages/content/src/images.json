@@ -27142,6 +27142,102 @@
         ]
       ]
     },
+    "/covers/khachaturian-symphony-with-bells-ridout-yerevan-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/khachaturian-symphony-with-bells-ridout-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/khachaturian-symphony-with-bells-ridout-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/khachaturian-symphony-with-bells-ridout-yerevan-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/khachaturian-symphony-with-bells-ridout-yerevan-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/khachaturian-symphony-with-bells-ridout-yerevan-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/khachaturian-symphony-with-bells-ridout-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/khachaturian-symphony-with-bells-ridout-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/khachaturian-symphony-with-bells-ridout-yerevan-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/khachaturian-symphony-with-bells-ridout-yerevan-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/khachaturian-symphony-with-bells-ridout-yerevan-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/last-ball-before-dawn-yerevan-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/last-ball-before-dawn-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/last-ball-before-dawn-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/last-ball-before-dawn-yerevan-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/last-ball-before-dawn-yerevan-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/last-ball-before-dawn-yerevan-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/last-ball-before-dawn-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/last-ball-before-dawn-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/last-ball-before-dawn-yerevan-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/last-ball-before-dawn-yerevan-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/last-ball-before-dawn-yerevan-2026-1536.webp"
+        ]
+      ]
+    },
     "/covers/lyubov-uspenskaya-yerevan-2027.jpg": {
       "width": 1536,
       "height": 864,
@@ -27355,6 +27451,54 @@
         [
           720,
           "/covers/moct-clubnight-yerevan-2026-10-09-720.webp"
+        ]
+      ]
+    },
+    "/covers/moveius-contemporary-ballet-yerevan-2026.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/moveius-contemporary-ballet-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/moveius-contemporary-ballet-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/moveius-contemporary-ballet-yerevan-2026-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/moveius-contemporary-ballet-yerevan-2026-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/moveius-contemporary-ballet-yerevan-2026-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/moveius-contemporary-ballet-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/moveius-contemporary-ballet-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/moveius-contemporary-ballet-yerevan-2026-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/moveius-contemporary-ballet-yerevan-2026-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/moveius-contemporary-ballet-yerevan-2026-1536.webp"
         ]
       ]
     },
