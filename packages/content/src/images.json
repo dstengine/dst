@@ -26734,6 +26734,38 @@
         ]
       ]
     },
+    "/covers/how-to-brew-pu-erh-tea-balls.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/how-to-brew-pu-erh-tea-balls-480.avif"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-pu-erh-tea-balls-768.avif"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-pu-erh-tea-balls-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/how-to-brew-pu-erh-tea-balls-480.webp"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-pu-erh-tea-balls-768.webp"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-pu-erh-tea-balls-1024.webp"
+        ]
+      ]
+    },
     "/covers/how-to-brew-pu-erh-tea.jpg": {
       "width": 1024,
       "height": 1024,

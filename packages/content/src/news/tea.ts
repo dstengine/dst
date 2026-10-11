@@ -657,4 +657,56 @@ export const items: NewsItem[] = [
       },
     ],
   },
+
+  {
+    slug: "how-to-brew-pu-erh-tea-balls",
+    createdAt: "2026-10-11T20:05:00+04:00",
+    updatedAt: "2026-10-11T20:05:00+04:00",
+    site: "tea",
+    image: "/covers/how-to-brew-pu-erh-tea-balls.jpg",
+    imageAlt: "A painting of a dark ball of pressed tea, its white wrapper opened like petals and twisted at the top with a gold tie, beside a white lidded cup and a glass cup of amber tea on a round mahogany table, a fire and an oxblood leather chair behind",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "How to brew pu-erh tea balls: sheng xiao qiu",
+    cardTitle: "How to brew a pu-erh ball",
+    titleSeo: "How to brew pu-erh tea balls: xiao qiu and dragon balls",
+    summary:
+      "A pu-erh tea ball is a single serving of raw tea pressed hard into a sphere — xiao qiu, a \"small ball\", in Chinese. Rinse it, give it a long first steep while it opens, then shorter ones: the water, ratios and times from the shops that sell them.",
+    date: "2026-10-11",
+    category: "Guide",
+    tags: ["Pu-erh"],
+    source: {
+      name: "Teasenz, 2019 Raw Cheng Yun Pu Erh Tea Balls",
+      url: "https://teasenz.eu/products/raw-cheng-yun-tea-balls",
+      verifiedOn: "2026-10-11",
+    },
+    body: [
+      "A tea ball is pu-erh made for one sitting: a single serving pressed hard into a sphere and wrapped on its own, so there is nothing to weigh and no cake to prise apart. The Chinese is <em>xiao qiu</em>, a small ball; English-speaking shops tend to sell the same thing as dragon balls. <em>Sheng</em> means raw — pu-erh left to age by itself rather than fermented in a heap first — so expect a cup that is bright and a touch astringent rather than dark and earthy. The <a href=\"/guides/how-to-brew-pu-erh-tea/\" title=\"How to brew pu-erh tea from a cake, raw and ripe\">pu-erh guide</a> tells the two apart at more length.",
+      "## One ball is the measure",
+      "Balls are sold by the piece. Teasenz, a Chinese tea shop that sells across Europe, puts its raw pu-erh balls at about 7 grams; Yunnan Sourcing's and Meimei Tea's weigh about 8. Every figure below is for one ball, put in whole. If yours is smaller, keep the proportion and use less water.",
+      "## The rinse",
+      "Pour hot water over the ball, wait, and throw the water away. Teasenz rinses a tightly pressed piece for longest — up to thirty seconds — and a ball is pressed tight. The rinse starts it opening, warms the pot and washes off any dust from storage.",
+      "## How to brew it",
+      "<strong>In a gaiwan or small pot:</strong> Teasenz brews one ball in 100 ml of water at 100°C — forty seconds for the first steep, then 25, 15, 20, 25, 30 and 30. The first is the longest because the ball is still opening; by the second the leaf has come loose and gives quickly, and from the third each steep is lengthened as it tires.",
+      "<strong>Short from the start:</strong> Yunnan Sourcing's advice for its own dragon balls runs the other way: short infusions at first, to coax the flavour out gradually. It is the gentler way into a young ball that came out bitter at forty seconds.",
+      "<strong>The water:</strong> Teasenz pours its balls at a full boil, but its own guide to water for raw pu-erh is cooler for small or broken leaf — 80 to 90°C while the tea is under three years old, 90 to 95°C from four to ten, and 95 to 100°C after that. If the first cup is harsh, let the kettle stand.",
+      "<strong>How long it lasts:</strong> Teasenz's schedule stops at seven steeps; Meimei Tea reckons one of its balls good for up to twenty, brewed gongfu-style.",
+      "<strong>In a teapot:</strong> one ball to 500 ml, and Teasenz gives two minutes, then a minute and a half, two minutes and four. Fewer cups, rather less ceremony, and entirely respectable.",
+    ],
+    faq: [
+      {
+        q: "How do you brew a pu-erh tea ball?",
+        a: "Unwrap one ball, rinse it in hot water for up to thirty seconds and pour that away, then brew it whole in about 100 ml. Teasenz uses water at 100°C and steeps of 40, 25, 15, 20, 25, 30 and 30 seconds; in a 500 ml teapot, 2, 1½, 2 and 4 minutes.",
+      },
+      {
+        q: "How many times can you steep a pu-erh tea ball?",
+        a: "Teasenz's schedule runs to seven steeps in a small pot and four in a teapot. Meimei Tea reckons a ball good for up to twenty, brewed gongfu-style.",
+      },
+      {
+        q: "What does xiao qiu mean?",
+        a: "Small ball (小球): a single serving of pu-erh pressed into a sphere. Sheng xiao qiu is raw pu-erh made that way; English-speaking shops often sell the same thing as dragon balls.",
+      },
+    ],
+  },
 ];
