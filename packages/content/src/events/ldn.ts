@@ -11,7 +11,7 @@ export const items: EventItem[] = [
     imageKind: "illustration",
     imageCredit: "London Today",
     imageWidth: 3072,
-    imageHeight: 864,
+    imageHeight: 1728,
     title: "Philadelphia Eagles vs Jacksonville Jaguars in London",
     titleSeo: "Eagles vs Jaguars in London: Tottenham, 11 October",
     summary:
@@ -54,7 +54,7 @@ export const items: EventItem[] = [
     imageKind: "illustration",
     imageCredit: "London Today",
     imageWidth: 3072,
-    imageHeight: 864,
+    imageHeight: 1728,
     title: "Houston Texans vs Jacksonville Jaguars at Wembley",
     titleSeo: "Texans vs Jaguars at Wembley: 18 October 2026",
     summary:

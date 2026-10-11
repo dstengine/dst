@@ -12,7 +12,7 @@ export const items: EventItem[] = [
     imageKind: "illustration",
     imageCredit: "DST",
     imageWidth: 3072,
-    imageHeight: 864,
+    imageHeight: 1728,
     title: "Fall Celebrations: The Spirit of Mexico",
     titleSeo: "The Spirit of Mexico in Dubai: date and tickets",
     summary:
@@ -60,7 +60,7 @@ export const items: EventItem[] = [
     imageKind: "illustration",
     imageCredit: "DST",
     imageWidth: 3072,
-    imageHeight: 864,
+    imageHeight: 1728,
     title: "Bolshoi Theatre Orchestra at Dubai Opera",
     titleSeo: "Bolshoi Theatre Orchestra in Dubai: 3 December",
     summary:

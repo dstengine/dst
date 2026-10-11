@@ -10,6 +10,7 @@ import { readFileSync, existsSync, readdirSync, statSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { imagesByHost } from "../packages/content/src/images.ts";
+import { allEvents } from "../packages/content/src/events/index.ts";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -134,5 +135,27 @@ describe("built pages serve them", () => {
       }
     }
     console.log(`${checked} raster <img> tags, every one with width and height`);
+  });
+
+  // An entry's imageWidth and imageHeight become the hero <img>'s width and
+  // height, so a wrong pair reserves the wrong box for the page's largest
+  // paint. covers.mjs went square on 10 Oct 2026 and entries written from
+  // the old template went on saying 1536×864; a few older ones said 864 for
+  // 1728. The manifest measured the file, so it is the one to believe.
+  test("an event's declared picture size is the size of the file", () => {
+    const hostOf = Object.fromEntries(SITES.map((s) => [s.app, s.host]));
+    let checked = 0;
+    for (const e of allEvents) {
+      if (!e.image || !e.imageWidth || !e.imageHeight) continue;
+      const entry = imagesByHost[hostOf[e.site]]?.[e.image];
+      if (!entry) continue;
+      assert.deepEqual(
+        [e.imageWidth, e.imageHeight],
+        [entry.width, entry.height],
+        `${e.site}/${e.slug}: declares ${e.imageWidth}×${e.imageHeight}, the file is ${entry.width}×${entry.height}`,
+      );
+      checked += 1;
+    }
+    console.log(`${checked} event pictures, every declared size matching its file`);
   });
 });

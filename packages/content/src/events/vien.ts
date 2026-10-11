@@ -12,7 +12,7 @@ export const items: EventItem[] = [
     imageKind: "illustration",
     imageCredit: "Veranstaltungen Wien",
     imageWidth: 3072,
-    imageHeight: 864,
+    imageHeight: 1728,
     title: "Arnulf Rainer: Retrospektive in der ALBERTINA",
     titleSeo: "Arnulf Rainer in Wien: Retrospektive ab 13. November",
     summary:
