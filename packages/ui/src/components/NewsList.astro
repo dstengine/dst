@@ -5,6 +5,7 @@
 // it. An item only links to its own page when it has a `body` — a thin item
 // with no detail page renders as a self-contained card instead (rule 7 in the
 // news/events spec).
+import { fitFor } from "../fit.ts";
 import { newsHref } from "@dst/content/paths";
 import type { NewsItem } from "@dst/content/types";
 import FeedCards from "./FeedCards.astro";
@@ -21,10 +22,6 @@ interface Props {
   locale?: string;
 }
 const { items, newsBase = "/news/", locale } = Astro.props;
-// A photograph fills its cover; a diagram is fitted whole. Unmarked images
-// are fitted too — that is the safe way round, since a cropped chart loses
-// the numbers while a fitted photo only sits in a slightly smaller box.
-const fitFor = (kind?: string) => (kind === "photo" || kind === "render" || kind === "generated" ? "cover" : "contain") as "cover" | "contain";
 // Ranked items lead, then the rest newest-first. `featured` is a rank, not
 // a flag: 1 is the story to lead with, and only a handful on a site carry a
 // number — a feed where everything is promoted promotes nothing. Same

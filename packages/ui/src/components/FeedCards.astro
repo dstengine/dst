@@ -291,6 +291,10 @@ const parts = (iso: string) => {
     /* contain by default: a diagram cropped is a chart with its numbers cut
        off. A photograph says so with imageFit and fills the box instead. */
     object-fit: contain;
+    /* Where a filled cover is cropped. Centred unless the site says
+       otherwise: a site whose pictures share a composition — tea.ceo's
+       rooms with the tea in the foreground — sets --cover-focus once. */
+    object-position: var(--cover-focus, 50% 50%);
     transition: transform 0.4s ease;
   }
   a.feed-card:hover .feed-cover img { transform: scale(1.03); }

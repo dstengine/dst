@@ -1,4 +1,5 @@
 ---
+import { fitFor } from "../fit.ts";
 import { newsHref } from "@dst/content/paths";
 import ArticleBody from "./ArticleBody.astro";
 import Photo from "./Photo.astro";
@@ -206,6 +207,7 @@ const newsCards = withPromoted(
     text: n.summary,
     image: n.image,
     imageAlt: n.imageAlt,
+    imageFit: fitFor(n.imageKind),
   }));
 // The heading names what is actually under it: the tag by name when the
 // tag owns the block, and "More events" on every page the season has not

@@ -9,4 +9,9 @@
   --accent-dark: #D9B25F;
   --accent-ink-dark: #F0D99A;
   --accent-tint-dark: #2A1A1C;
+  /* Every cover is a square room with the tea on the table in the
+     foreground, a third of the way up from the bottom. A centred 16:9 card
+     cut that off at the cup and kept the ceiling; 80% down keeps the cup,
+     the pot and the bowl whole on all fourteen. */
+  --cover-focus: 50% 80%;
 }
