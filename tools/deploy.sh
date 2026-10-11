@@ -10,10 +10,11 @@
 #   tools/deploy.sh --force llc    rebuild without the cached build
 #   tools/deploy.sh --list         the site -> project map
 #
-# Why this exists: a push rebuilds every app whose directory or ../../packages
-# the commit touched, and a packages change touches all of them. Seven or eight
-# builds a push, against a Hobby limit of 100 a day. When one site needs to go
-# out now, this sends that one.
+# Why this exists: a push builds only the sites whose files changed
+# (tools/vercel-ignore.mjs), but it still spends one deployment per linked
+# project, skipped or not, against a Hobby limit of 100 a day, and the
+# projects queue one at a time. When one site needs to go out now, this
+# sends that one.
 #
 # What it actually does: uploads the repo to one project, which builds it from
 # its own Root Directory (apps/<name>, set in the dashboard) exactly as a git
