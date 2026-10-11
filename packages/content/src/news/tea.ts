@@ -724,20 +724,21 @@ export const items: NewsItem[] = [
     cardTitle: "The story of 4:20 High Tea",
     titleSeo: "4:20 High Tea: the tale of a second pot at 16:20",
     summary:
-      "Every tea time has its story, and this is the tale of 4:20 High Tea: five gentlemen, a statue, a map to a lost row of tea bushes and a code that would not go away. Then how to keep it — a second pot of tea at twenty past four.",
+      "Every tea time has its story, and this is the story of 4:20 High Tea: five gentlemen, three country estates, a map to a lost row of tea bushes and a code that would not go away. Then how to keep it — a second pot of tea at twenty past four.",
     date: "2026-10-11",
     category: "Story",
     tags: ["Tea times"],
     body: [
-      "Twenty past four is not, by any old tradition, a tea time. Afternoon tea is at four and high tea at six. 4:20 High Tea has a story all the same, and we had better say at once that it is a tale: none of it happened, and nobody in it is real. It goes like this.",
+      "Twenty past four is not, by any old tradition, a tea time. Afternoon tea is at four and high tea at six. 4:20 High Tea has a story all the same, and it goes like this.",
       "## The tale",
-      "In the autumn of 1971, five gentlemen of a certain age heard of an old planter, home from Darjeeling, who had put a row of tea bushes in a walled garden on the Cornish coast and could no longer tend them. There was a map, drawn on the back of a menu from his club. The five took their tea by the urn in the morning room of their own club in St James's and called themselves the Urnests, which they thought very clever, and which was, a little. They agreed to meet by a statue of Catherine of Braganza — the Portuguese queen who made tea the fashion at the English court — at twenty past four, after real tennis, and go and look.",
-      "They reminded one another on the stairs. It began as \"4:20 Catherine\", and Her Majesty was soon dropped. They drove to Cornwall more than once in an elderly Rover and never found the bushes, though a great deal of tea was drunk from a flask in lay-bys along the A30. The phrase stayed.",
-      "It travelled by way of the string section. One Urnest's nephew played the cello in a touring quartet, another's sister ran the tea room of a concert hall, and four-twenty went round the green rooms and the tea rooms both. In Christmas week of 1990, after a carol service, somebody pressed a card into the hand of a county magazine's correspondent: they were going to meet at 4:20 on 4/20 for a pot in the cloisters. The magazine printed it, and the parish magazines did the rest.",
-      "The Urnests keep their proof — a tea towel printed 4:20, a cutting from the parish magazine and a bundle of postmarked letters — in a deed box at their bank. Among the theories their story saw off were the number of leaves in a proper pinch, a Noël Coward lyric and a Dutch teatime.",
+      "In the autumn of 1971, five gentlemen of a certain age heard of an old planter, home from Darjeeling, who had put a row of tea bushes in the walled garden at Trevellan, an estate on the Cornish coast, and could no longer tend them. There was a map, drawn on the back of a game card from a shoot. The five took their tea by the urn in the morning room at Kettlewood Park, where they shot together every autumn, and called themselves the Urnests, which they thought very clever, and which was, a little. They agreed to meet by the statue of Catherine of Braganza at the end of the long walk at Kettlewood — the Portuguese queen who made tea the fashion at the English court — at twenty past four, after real tennis, and go and look.",
+      "They reminded one another on the stairs. It began as \"4:20 Catherine\", and Her Majesty was soon dropped. They drove down to Trevellan more than once in an elderly Rover and never found the bushes, though a great deal of tea was drunk from a flask in lay-bys along the A30. The phrase stayed.",
+      "It travelled by way of the string section. One Urnest's nephew played the cello in a quartet that toured the country-house summers, another's sister ran the tea room at Caddiscombe Hall, and four-twenty went round the music rooms and the tea rooms both. In Christmas week of 1990, after carols in the great hall at Caddiscombe, somebody pressed a card into the hand of a county magazine's correspondent: they were going to meet at 4:20 on 4/20 for a pot in the orangery. The magazine printed it, and the parish magazines did the rest.",
+      "The Urnests keep their proof — a tea towel printed 4:20, a cutting from the parish magazine and a bundle of postmarked letters — in a deed box in the muniment room at Kettlewood. Among the theories their story saw off were the number of leaves in a proper pinch, a Noël Coward lyric and a Dutch teatime.",
       "## How to keep it",
       "At 16:20 on your own clock, a second pot. Not a meal — the sandwiches went at four and supper is at six — only the kettle on again and something in the cup with a bit of lift: a <a href=\"/guides/how-to-brew-darjeeling-tea/\" title=\"How to brew Darjeeling tea, first flush and second\">Darjeeling</a>, from the hills the old planter came home from, or a <a href=\"/guides/how-to-brew-dragon-well-longjing-tea/\" title=\"Dragon Well (Longjing) green tea, brewed in a glass\">Dragon Well</a> if the afternoon wants something greener.",
       "On the twentieth of April — 4/20, if one writes one's dates the American way round — the pot may as well be a large one. The <a href=\"/schedule/#four-twenty-high-tea\" title=\"4:20 High Tea, counting down to twenty past four on your own clock\">tea times page</a> counts down to it wherever you are, and will put it in your calendar with a reminder, so that nobody is caught at twenty-five past four with nothing in the pot.",
+      "<em>Names and facts have been changed.</em>",
     ],
     faq: [
       {
@@ -746,7 +747,7 @@ export const items: NewsItem[] = [
       },
       {
         q: "Is the story of 4:20 High Tea true?",
-        a: "No. The Urnests, their map and their statue are a tale told for fun, and nobody in it is real. The tea at twenty past four is real enough.",
+        a: "It is told as a story, with the names and the facts changed. The tea at twenty past four is real enough.",
       },
       {
         q: "What tea suits 4:20 High Tea?",
