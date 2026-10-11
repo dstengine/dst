@@ -1365,6 +1365,66 @@ export const items: EventItem[] = [
   },
 
   {
+    slug: "devfest-armenia-2026",
+    createdAt: "2026-10-11T18:24:00+04:00",
+    updatedAt: "2026-10-11T18:24:00+04:00",
+    site: "sol2go",
+    image: "/covers/devfest-armenia-2026.jpg",
+    imageAlt: "A violet corridor with a tall cream archway at the far end and two parallel lanes of pale mint floor tiles running towards it",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "DevFest Armenia 2026, Yerevan",
+    cardTitle: "DevFest Armenia 2026",
+    summary:
+      "GDG Yerevan's developer conference takes the American University of Armenia on 21 November, mid-DigiTec, and its call for speakers is open to Armenia's Solana engineers until 8 November.",
+    start: "2026-11-21",
+    startTime: "09:30",
+    endTime: "18:00",
+    utcOffset: "+04:00",
+    venue: "American University of Armenia, 40 Marshal Baghramyan Avenue",
+    city: "Yerevan",
+    country: "Armenia",
+    geo: { name: "American University of Armenia", lat: 40.1932783, lng: 44.5044891 },
+    organizer: "GDG Yerevan",
+    category: "Conference",
+    tickets: { priceFrom: 0, currency: "AMD" },
+    ticket: { url: "https://gdg.community.dev/events/details/google-gdg-yerevan-presents-devfest-armenia-2026/", label: "Register" },
+    source: {
+      name: "GDG Yerevan",
+      url: "https://gdg.community.dev/events/details/google-gdg-yerevan-presents-devfest-armenia-2026/",
+      verifiedOn: "2026-10-11",
+    },
+    body: [
+      "## Why it is on a Solana calendar",
+      "DevFest is the yearly conference of the Google Developer Groups, and nothing on its published programme mentions a blockchain. It earns its place here twice over. The date: Saturday 21 November is the middle day of <a href=\"/events/digitec-2026-yerevan/\" title=\"DigiTec 2026, Yerevan\">DigiTec</a>, so anyone in Yerevan for the Armenian tech year's main event can make a second conference of the same weekend. And the room: the invitation asks for developers, engineers, students and researchers — very nearly the crowd the <a href=\"/events/solana-armenia-meetup-yerevan-july-2026/\" title=\"Solana Armenia Meetup, Yerevan\">Solana Armenia meetup</a> drew 108 of in July, at three times the size.",
+      "## The call for speakers is the opening",
+      "Proposals go in on Sessionize until <strong>23:59 Yerevan time on 8 November</strong>: technical talks of <strong>20 minutes</strong>, workshops of up to <strong>60</strong>. Among the topics the organisers list are distributed systems, security, backend engineering, developer tooling and software architecture, and they ask that a talk connect to Google's technologies or to the wider open-source ecosystem. Product pitches, sales talks and recruiting presentations are refused outright.",
+      "Read plainly, that is a door for engineering and closed to promotion. A talk on running Rust in an open-source client under load, or on auditing programs that hold other people's money, sits inside the brief; a project's roadmap does not.",
+      "## What is confirmed",
+      "<strong>21 November 2026, 09:30 to 18:00</strong>, at the Akian College of Science and Engineering of the <strong>American University of Armenia</strong>, 40 Marshal Baghramyan Avenue. It is organised by <strong>GDG Yerevan</strong> with the college, and <strong>InTech.am</strong> is listed as a partner. Around <strong>20 speakers</strong> across <strong>two parallel tracks</strong>, and the call for speakers expects <strong>300 to 350</strong> attendees. <strong>Attendance is free</strong>; registration is on the GDG page.",
+      "## What is not confirmed yet",
+      "The speakers, the sessions and the agenda — the organisers say all three will be announced. There is no Web3 track on paper, and nothing here promises one.",
+    ],
+    faq: [
+      {
+        q: "When and where is DevFest Armenia 2026?",
+        a: "<strong>21 November 2026</strong>, 09:30 to 18:00, at the American University of Armenia, 40 Marshal Baghramyan Avenue, <strong>Yerevan</strong>.",
+      },
+      {
+        q: "Does it cost anything?",
+        a: "No. Attendance is <strong>free</strong>, with registration on GDG Yerevan's event page.",
+      },
+      {
+        q: "Can a Solana developer give a talk?",
+        a: "If the talk is technical and educational, yes: the call runs until <strong>8 November</strong> and lists distributed systems and security among its topics. Talks that promote a product or a project are not accepted.",
+      },
+    ],
+    expertise:
+      "Twenty minutes in front of three hundred general developers is an audience that has mostly never written a Solana program — the one a Solana meetup, however good, does not reach. The price of the slot is that the talk has to be about the engineering rather than the chain — which is usually the better talk anyway.",
+  },
+
+  {
     slug: "200ms-breakpoint-week-2026",
     createdAt: "2026-09-08T16:29:32+04:00",
     updatedAt: "2026-09-08T16:29:32+04:00",
