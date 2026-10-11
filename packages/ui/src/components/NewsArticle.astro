@@ -177,6 +177,7 @@ const minutes = readingMinutes(item);
 // has a named publisher instead of standing on its own.
 const absolute = (url: string) => (Astro.site ? new URL(url, Astro.site).href : url);
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
+const videoSrc = (id: string) => `https://www.youtube-nocookie.com/embed/${id}`;
 
 const jsonLd =
   item.jsonLd ??
@@ -193,6 +194,22 @@ const jsonLd =
     // only (see the news/events spec's rule 1) and must never reach
     // rendered output, JSON-LD included. The source's name alone is public.
     ...(item.source ? { isBasedOn: item.source.name } : {}),
+    // The video as the article's own, so search can show it beside the
+    // piece. Its thumbnail is the cover: YouTube's frame would be a
+    // third-party URL in the page, and the cover is what the piece is.
+    ...(item.video
+      ? {
+          video: {
+            "@type": "VideoObject",
+            name: item.video.title,
+            description: item.summary,
+            uploadDate: item.video.uploadedAt,
+            duration: item.video.duration,
+            embedUrl: videoSrc(item.video.id),
+            ...(item.image ? { thumbnailUrl: absolute(item.image) } : {}),
+          },
+        }
+      : {}),
   };
 
 // RelatedCard carries no VentureGrid-style status pill or icon, so both
@@ -246,7 +263,11 @@ const relatedItems = (item.related ?? []).map((card) => ({
     </p>
   )}
 
-  {item.image && (
+  {/* A video takes the cover's place on the page. The cover is still the
+      piece's picture everywhere else — its card, the share preview, the
+      video's thumbnail in search — but above the text two pictures of the
+      same thing is one too many, and the one that plays is the better. */}
+  {item.image && !item.video && (
     <figure class:list={["news-article-figure", { "figure-diagram": item.imageKind && item.imageKind !== "photo" }]}>
       <Photo
         src={item.image}
@@ -259,6 +280,21 @@ const relatedItems = (item.related ?? []).map((card) => ({
         height={item.imageHeight}
       />
       <ImageNote kind={item.imageKind} credit={item.imageCredit} caption={item.imageCaption} labels={L.imageKinds} />
+    </figure>
+  )}
+
+  {item.video && (
+    <figure class="news-article-video">
+      <div class="news-article-video-frame">
+        <iframe
+          src={videoSrc(item.video.id)}
+          title={item.video.title}
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <figcaption>{item.video.title} · {L.videoBy(item.video.channel)}</figcaption>
     </figure>
   )}
 
@@ -397,6 +433,18 @@ const relatedItems = (item.related ?? []).map((card) => ({
      so a diagram reads as wider than the text column without becoming a
      separate full-bleed band. */
   .figure-diagram img { object-fit: contain; background: transparent; height: auto; max-height: none; }
+
+  /* The frame holds 16:9 before the player arrives, so the text under it
+     does not jump when the lazy iframe loads. */
+  .news-article-video { margin: var(--space-4) 0 0; }
+  .news-article-video-frame {
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--surface-sunk);
+  }
+  .news-article-video-frame iframe { display: block; width: 100%; height: 100%; border: 0; }
+  .news-article-video figcaption { margin-top: var(--space-1); font-size: var(--step--1); color: var(--ink-muted); }
 
   .prose { margin-top: var(--space-4); max-width: none; }
   /* Justified, with hyphenation on. Justification without hyphens opens

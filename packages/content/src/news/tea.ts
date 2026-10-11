@@ -721,6 +721,13 @@ export const items: NewsItem[] = [
     imageKind: "generated",
     imageWidth: 1024,
     imageHeight: 1024,
+    video: {
+      id: "kj6yI6QmVh0",
+      title: "The 4:20 High Tea",
+      channel: "Confidence Architecture",
+      uploadedAt: "2026-10-11T11:03:36-07:00",
+      duration: "PT8M",
+    },
     title: "4:20 High Tea: the story of twenty past four",
     cardTitle: "The story of 4:20 High Tea",
     titleSeo: "4:20 High Tea: the tale of a second pot at 16:20",

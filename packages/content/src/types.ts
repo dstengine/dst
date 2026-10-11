@@ -43,6 +43,16 @@ export interface RelatedCard {
   eyebrow?: string;
 }
 
+// See NewsItem.video. What schema.org's VideoObject needs is here too, so
+// the page can describe the video to search as well as play it.
+export interface NewsVideo {
+  id: string; // the YouTube id: watch?v=<id>
+  title: string; // as the uploader titled it
+  channel: string;
+  uploadedAt: string; // ISO 8601, from the watch page
+  duration: string; // ISO 8601: "PT8M"
+}
+
 export interface Geo {
   name: string;
   lat: number;
@@ -131,6 +141,13 @@ interface ItemBase {
   // desktop is unreadable scaled into a phone column, and a landscape
   // viewBox has no room for type large enough to fix that.
   imageNarrow?: string;
+  // A YouTube video that tells the piece another way, played on the page in
+  // the no-cookie player in place of the cover — which stays the piece's
+  // picture on cards and in share previews. Check the id through YouTube's
+  // oEmbed endpoint before adding it: an upload with embedding switched off
+  // fails there, and would be a grey box here. The channel is printed under
+  // the player so a reader can see whose upload they are watching.
+  video?: NewsVideo;
   related?: RelatedCard[];
   geo?: Geo;
   form?: ItemForm;

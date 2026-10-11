@@ -136,6 +136,8 @@ export interface ArticleLabels {
   editorsChoice: string;
   /** Title attribute on the map iframe, given the place's name. */
   mapTitle: (place: string) => string;
+  /** Under an embedded video: whose upload it is, and where it lives. */
+  videoBy: (channel: string) => string;
   /** The button under the map that opens the route in Google Maps, and its
       title — which says where it goes rather than repeating the label. */
   directions: string;
@@ -212,6 +214,7 @@ export const EN: ArticleLabels = {
   past: "Past",
   editorsChoice: "Editors' choice",
   mapTitle: (place) => `Map — ${place}`,
+  videoBy: (channel) => `${channel} on YouTube`,
   directions: "Directions",
   directionsTitle: (place) => (place ? `The way to ${place}, in Google Maps` : "The way there, in Google Maps"),
 
@@ -295,6 +298,7 @@ export const ES: Partial<ArticleLabels> = {
   past: "Pasado",
   editorsChoice: "Elección del editor",
   mapTitle: (place) => `Mapa — ${place}`,
+  videoBy: (channel) => `${channel} en YouTube`,
   directions: "Cómo llegar",
   directionsTitle: (place) => (place ? `Ruta a ${place} en Google Maps` : "La ruta en Google Maps"),
 
@@ -369,6 +373,7 @@ export const DE: Partial<ArticleLabels> = {
   past: "Vorbei",
   editorsChoice: "Tipp der Redaktion",
   mapTitle: (place) => `Karte — ${place}`,
+  videoBy: (channel) => `${channel} auf YouTube`,
   directions: "Route",
   directionsTitle: (place) => (place ? `Der Weg zu ${place} in Google Maps` : "Der Weg dorthin in Google Maps"),
 
@@ -454,6 +459,7 @@ export const HY: Partial<ArticleLabels> = {
   past: "Անցած",
   editorsChoice: "Խմբագրի ընտրություն",
   mapTitle: (place) => `Քարտեզ — ${place}`,
+  videoBy: (channel) => `${channel}, YouTube`,
   directions: "Ինչպես հասնել",
   directionsTitle: (place) => (place ? `Երթուղին դեպի ${place}՝ Google Maps-ում` : "Երթուղին՝ Google Maps-ում"),
 
