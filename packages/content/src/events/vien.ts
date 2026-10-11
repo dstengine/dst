@@ -526,7 +526,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-kindermuseum-schoenbrunn-2026",
     createdAt: "2026-10-11T01:15:13+04:00",
-    updatedAt: "2026-10-11T01:15:13+04:00",
+    updatedAt: "2026-10-12T00:47:00+04:00",
     site: "vien",
     image: "/covers/halloween-kindermuseum-schoenbrunn-2026.jpg",
     imageAlt: "Eine lange helle Schlossfassade mit grünem Dach und Reihen dunkelgrüner Fenster, nur die Tür in der Mitte leuchtet gelb, darüber eine schmale Mondsichel, auf cremefarbenem Grund",
@@ -603,6 +603,20 @@ export const items: EventItem[] = [
       {
         q: "Muss man die Gruselführung reservieren?",
         a: "Reservieren lässt sie sich nicht, nur kaufen: online über Imperial Tickets oder im Vorverkauf im Kindermuseum. Gekaufte Karten werden nicht zurückgenommen.",
+      },
+    ],
+    related: [
+      {
+        href: "/veranstaltungen/halloween-special-vienna-open-lab-2026/",
+        eyebrow: "Landstraße",
+        title: "Halloween-Special im Vienna Open Lab",
+        text: "Gruselexperimente an Stationen am 28., 29. und 30. Oktober, für Kinder ab 7 mit Begleitung, 8 Euro pro Person.",
+      },
+      {
+        href: "/veranstaltungen/vienna-halloween-run-2026/",
+        eyebrow: "Prater",
+        title: "Vienna Halloween Run",
+        text: "Kinderläufe ab 16:40 Uhr und 2,5 oder 5 Kilometer in der Prater Hauptallee am 30. Oktober, verkleidet erwünscht.",
       },
     ],
     expertise:
@@ -828,5 +842,102 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Der Eistraum ist zwei Veranstaltungen in einer, und die Fläche, auf der man steht, entscheidet darüber, wie der Abend wird. Wer Runden drehen will, kommt unter der Woche und früh: Ab 17 Uhr verschwindet die Anfänger:innenfläche in die Eisstockbahnen, und genau dann füllt sich der Rest. Wer in der Gruppe kommt, dreht das um — der Eisstock ist der Teil, bei dem auch die mitkönnen, die nicht eislaufen. Und die zwei Rabatte sind kein Kleingeld: Montag mit dem kostenlosen Vorteilsclub sind minus 50 Prozent, dazu zehn Prozent auf Verleih und Services im Online-Shop, wenn man vorher bucht statt an der Kassa zu überlegen.",
+  },
+  {
+    slug: "halloween-special-vienna-open-lab-2026",
+    createdAt: "2026-10-12T00:36:00+04:00",
+    updatedAt: "2026-10-12T00:36:00+04:00",
+    site: "vien",
+    image: "/covers/halloween-special-vienna-open-lab-2026.jpg",
+    imageAlt: "Ein Laborkolben, aus dem grüner Schleim quillt, neben einem dampfenden Kessel und einem Mikroskop, darüber eine Spinne an ihrem Faden, auf cremefarbenem Grund",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Halloween-Special im Vienna Open Lab 2026",
+    summary:
+      "Halloween für Familien in Wien: Gruselexperimente an Stationen im Vienna Open Lab am 28., 29. und 30. Oktober 2026, für Kinder ab 7 mit Begleitung. 8 Euro pro Person, nur mit Anmeldung.",
+    start: "2026-10-28",
+    end: "2026-10-30",
+    startTime: "15:00",
+    endTime: "18:00",
+    utcOffset: "+01:00",
+    venue: "Vienna Open Lab, Dr. Bohr-Gasse 3, 1030 Wien",
+    city: "Wien",
+    country: "Österreich",
+    geo: {
+      name: "Vienna Open Lab, Wien",
+      lat: 48.189246,
+      lng: 16.401854,
+    },
+    organizer: "Vienna Open Lab",
+    category: "Halloween",
+    tickets: { priceFrom: 8, currency: "EUR" },
+    ticket: {
+      url: "https://www.viennaopenlab.at/de/aktuelles/2026-08-31-halloween-special-experimentierspass-fuer-die-ganze-familie/",
+      label: "Anmeldung beim Vienna Open Lab",
+    },
+    source: {
+      name: "Vienna Open Lab",
+      url: "https://www.viennaopenlab.at/de/aktuelles/2026-08-31-halloween-special-experimentierspass-fuer-die-ganze-familie/",
+      verifiedOn: "2026-10-12",
+    },
+    body: [
+      "Das Vienna Open Lab ist ein Mitmachlabor im Vienna BioCenter in Landstraße, in dem sonst Schulklassen pipettieren und mikroskopieren. Zu Halloween öffnet es an drei Nachmittagen für Familien: Spinnweben, die kleben, Kessel, die dampfen, und Gehirne aus Glibber, an Stationen, an denen Eltern und Kinder gemeinsam experimentieren.",
+      "## Termine",
+      "<strong>Mittwoch, 28.</strong> und <strong>Donnerstag, 29. Oktober 2026</strong> jeweils von <strong>15 bis 18 Uhr</strong>, <strong>Freitag, 30. Oktober</strong> von <strong>13 bis 16 Uhr</strong>. Eingelassen wird zu jeder vollen Stunde.",
+      "## Für wen",
+      "Für Familien mit Kindern <strong>ab 7 Jahren</strong>. Kinder kommen nur in Begleitung eines Erwachsenen hinein; allein abgeben kann man sie nicht.",
+      "## Kosten und Anmeldung",
+      "<strong>8 Euro pro Person</strong>, für Kinder wie Erwachsene. Ohne Anmeldung geht es nicht. Im Nachrichtenfeld der Buchung bittet das Lab um drei Angaben: wie viele Erwachsene kommen, wie viele Kinder und wie alt die Kinder sind.",
+      "Wer am Ende das Gruselquiz löst, bekommt einen Preis.",
+      "## Anreise",
+      "Das Lab liegt in der Dr. Bohr-Gasse 3 im 3. Bezirk, auf dem Gelände des Vienna BioCenter in St. Marx.",
+      "## Halloween in Wien in derselben Woche",
+      "Für jüngere Geschwister passt der <a href=\"/veranstaltungen/halloween-kindermuseum-schoenbrunn-2026/\" title=\"Halloween im Kindermuseum Schönbrunn 2026\">Monsterparcours im Kindermuseum Schönbrunn</a> ab 4 Jahren. Wer am Freitag danach noch Energie hat, findet sie beim <a href=\"/veranstaltungen/vienna-halloween-run-2026/\" title=\"Vienna Halloween Run 2026\">Vienna Halloween Run</a> in der Prater Hauptallee wieder.",
+    ],
+    programme: [
+      {
+        heading: "Mittwoch, 28. Oktober — 15 bis 18 Uhr",
+        text: "Experimentierstationen für Familien, Einlass um 15, 16 und 17 Uhr.",
+      },
+      {
+        heading: "Donnerstag, 29. Oktober — 15 bis 18 Uhr",
+        text: "Experimentierstationen für Familien, Einlass um 15, 16 und 17 Uhr.",
+      },
+      {
+        heading: "Freitag, 30. Oktober — 13 bis 16 Uhr",
+        text: "Experimentierstationen für Familien, Einlass um 13, 14 und 15 Uhr.",
+      },
+    ],
+    faq: [
+      {
+        q: "Wann ist das Halloween-Special im Vienna Open Lab?",
+        a: "Am 28. und 29. Oktober 2026 von 15 bis 18 Uhr und am 30. Oktober von 13 bis 16 Uhr, mit Einlass zu jeder vollen Stunde.",
+      },
+      {
+        q: "Ab welchem Alter?",
+        a: "Für Kinder ab 7 Jahren, und nur in Begleitung eines Erwachsenen.",
+      },
+      {
+        q: "Was kostet es, und muss man sich anmelden?",
+        a: "8 Euro pro Person, und eine Anmeldung ist nötig. In der Buchung die Zahl der Erwachsenen und Kinder und das Alter der Kinder angeben.",
+      },
+    ],
+    related: [
+      {
+        href: "/veranstaltungen/halloween-kindermuseum-schoenbrunn-2026/",
+        eyebrow: "Schloss Schönbrunn",
+        title: "Halloween im Kindermuseum Schönbrunn",
+        text: "Monsterparcours, Rätselrallye und Gruselführung im Dunkeln, im Museumseintritt von 12 Euro großteils inbegriffen.",
+      },
+      {
+        href: "/veranstaltungen/vienna-halloween-run-2026/",
+        eyebrow: "Prater",
+        title: "Vienna Halloween Run",
+        text: "Kinderläufe ab 16:40 Uhr und 2,5 oder 5 Kilometer in der Prater Hauptallee, Verkleidung ausdrücklich erwünscht.",
+      },
+    ],
+    expertise:
+      "Alle drei Termine liegen in den Herbstferien, und alle enden zu einer fixen Uhrzeit: Wer zum letzten Einlass kommt, hat bis Schluss nur noch eine Stunde für die Stationen und das Quiz. Der frühe Einlass kostet dasselbe und lässt Zeit für Fragen an die Leute im Labor, die bei so einem Nachmittag das Beste sind.",
   },
 ];

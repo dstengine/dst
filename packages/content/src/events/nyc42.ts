@@ -489,7 +489,7 @@ export const items: EventItem[] = [
   {
     slug: "village-halloween-parade-2026",
     createdAt: "2026-08-30T23:32:06+04:00",
-    updatedAt: "2026-10-11T01:07:54+04:00",
+    updatedAt: "2026-10-12T00:47:00+04:00",
     updates: [
       {
         on: "2026-10-04",
@@ -538,6 +538,20 @@ export const items: EventItem[] = [
       "## The theme for 2026",
       "The parade announces a theme each year, and 2026 runs under <strong>Body &amp; Soul</strong>. The Grand Marshal is <strong>Joey Arias</strong>, the cabaret singer and performance artist the parade calls a downtown icon. For reference, 2025 ran under «It’s a Potluck!» with <strong>City Harvest</strong> as Grand Marshal — the organisation that rescues fresh produce and delivers it free across the five boroughs.",
       "There is also an official after party at <strong>House of Yes</strong> in Industry City, Brooklyn, from <strong>9:00pm</strong>, which is ticketed separately.",
+    ],
+    related: [
+      {
+        href: "/events/tompkins-square-halloween-dog-parade-2026/",
+        eyebrow: "East Village",
+        title: "Tompkins Square Halloween Dog Parade",
+        text: "Two weeks earlier, at 11am on Saturday 17 October: costumed dogs down Avenue B in the parade's 36th year, free to watch.",
+      },
+      {
+        href: "/events/trick-or-streets-nyc-2026/",
+        eyebrow: "All five boroughs",
+        title: "Trick-or-Streets",
+        text: "160 car-free streets and plazas through October, with trick-or-treating and block parties, most of them on the 31st.",
+      },
     ],
     expertise:
       "The costume rule cuts both ways: if you are in costume you can join, and if you are in costume in the Village that night you will be swept into it whether you meant to be or not. For watching rather than marching, the north end of the route thins out considerably — the parade takes hours to pass, and the last third of it is the same parade with room to stand.",
@@ -2156,5 +2170,82 @@ export const items: EventItem[] = [
     ],
     expertise:
       "The season's shape is the useful thing to know. Four performances a day for nine weeks means supply is enormous and demand is not evenly spread: the cheap end of that $55-to-$250 range is a weekday morning or early afternoon in the first two weeks of November, and the expensive end is the week between Christmas and New Year, when the same 90 minutes costs several times as much. The 14-ticket season cap is worth planning around before you book anything — a family that buys four in November has ten left for the rest of the season, and there is no way to reset it by ordering again.",
+  },
+  {
+    slug: "tompkins-square-halloween-dog-parade-2026",
+    createdAt: "2026-10-12T00:36:00+04:00",
+    updatedAt: "2026-10-12T00:36:00+04:00",
+    site: "nyc42",
+    image: "/covers/tompkins-square-halloween-dog-parade-2026.jpg",
+    imageAlt: "Five small dogs in costumes, the first in a witch's hat, walking in a line past a row of autumn trees with a pumpkin among them, on a dark brown ground",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Tompkins Square Halloween Dog Parade 2026",
+    summary:
+      "New York's Halloween dog parade turns 36: costumed dogs march down Avenue B to Tompkins Square Park at 11am on Saturday 17 October 2026. Free to watch; come by 10:30.",
+    start: "2026-10-17",
+    startTime: "11:00",
+    utcOffset: "-04:00",
+    city: "New York City",
+    venue: "Avenue B and Tompkins Square Park, East Village",
+    geo: { name: "Tompkins Square Park", lat: 40.726486, lng: -73.981684 },
+    category: "Halloween",
+    tickets: { priceFrom: 0, currency: "USD" },
+    organizer: "New York Dog Parade",
+    ticket: {
+      url: "https://nydogparade.org/halloween-faqs",
+      label: "Parade details at New York Dog Parade",
+      sells: false,
+    },
+    source: {
+      name: "New York Dog Parade",
+      url: "https://nydogparade.org/halloween-faqs",
+      verifiedOn: "2026-10-11",
+    },
+    body: [
+      "The East Village has been putting its dogs in costume for Halloween for 36 years, and on <strong>Saturday 17 October 2026</strong> they go on parade again, a fortnight before the human version on Sixth Avenue.",
+      "## When and where",
+      "<strong>11am on Saturday 17 October.</strong> The parade marches south down <strong>Avenue B</strong>, from <strong>East 13th Street</strong> to <strong>East 7th Street</strong>, along the east side of Tompkins Square Park.",
+      "Alongside it the <strong>Festival Block</strong> takes over <strong>East 6th Street between Avenues B and C</strong>, from <strong>10am to 4pm</strong>.",
+      "## What it costs",
+      "Watching costs nothing. Marching is by registration, and the organisers say it is full for 2026, so this year the way to see it is from the sidewalk.",
+      "## When to get there",
+      "The organisers advise spectators to arrive <strong>between 10 and 10:30am</strong>. The route is six short blocks of Avenue B, which is not much sidewalk for a crowd that comes out for this every year.",
+      "## The rest of the month",
+      "The <a href=\"/events/village-halloween-parade-2026/\" title=\"Village Halloween Parade 2026 on Sixth Avenue\">Village Halloween Parade</a> follows on Saturday 31 October, and the city's <a href=\"/events/trick-or-streets-nyc-2026/\" title=\"Trick-or-Streets 2026: Halloween open streets\">Trick-or-Streets</a> open streets run all month.",
+    ],
+    faq: [
+      {
+        q: "When is the Tompkins Square Halloween Dog Parade 2026?",
+        a: "Saturday 17 October 2026 at <strong>11am</strong>, down Avenue B from East 13th to East 7th Street, beside Tompkins Square Park.",
+      },
+      {
+        q: "Is the dog parade free?",
+        a: "Free to watch. Registration to march is full for 2026.",
+      },
+      {
+        q: "When should I arrive?",
+        a: "The organisers suggest <strong>10 to 10:30am</strong>. The Festival Block on East 6th Street between Avenues B and C runs from 10am to 4pm.",
+      },
+    ],
+    // The other two New York Halloween pages a reader planning October
+    // weighs this against: the big parade and the month of open streets.
+    related: [
+      {
+        href: "/events/village-halloween-parade-2026/",
+        eyebrow: "Greenwich Village",
+        title: "Village Halloween Parade",
+        text: "The 53rd parade up Sixth Avenue at 7pm, free to watch and free to join in costume, rain or shine.",
+      },
+      {
+        href: "/events/trick-or-streets-nyc-2026/",
+        eyebrow: "All five boroughs",
+        title: "Trick-or-Streets",
+        text: "160 car-free streets and plazas across the five boroughs, with trick-or-treating and block parties, all free.",
+      },
+    ],
+    expertise:
+      "This is a morning event, which sets it apart from almost everything else on the New York Halloween calendar: the parade steps off at eleven, while the Festival Block on East 6th Street keeps going until four. So the half hour before the start decides how much of the parade you see, and the afternoon is the forgiving part.",
   },
 ];

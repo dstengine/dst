@@ -459,7 +459,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-eltham-palace-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-10-11T04:20:15+04:00",
+    updatedAt: "2026-10-12T00:47:00+04:00",
     site: "lnd",
     image: "/covers/halloween-eltham-palace-2026.jpg",
     imageAlt: "A large circular window divided into panes, lit pale, above a stepped pale block on a deep blue ground",
@@ -521,6 +521,12 @@ export const items: EventItem[] = [
         eyebrow: "Forest Hill",
         title: "Day of the Dead at the Horniman",
         text: "Saturday 31 October, 11am to 4pm: Aztec dancers, mariachi and a community ofrenda. £8, children £6.",
+      },
+      {
+        href: "/events/the-nightmare-realm-avery-hill-2026/",
+        eyebrow: "Avery Hill, Eltham",
+        title: "The Nightmare Realm",
+        text: "The grown-up fright up the road: three scare attractions in Avery Hill Mansion on 18 nights to 1 November, best from 13.",
       },
     ],
     expertise:
@@ -1245,5 +1251,80 @@ export const items: EventItem[] = [
     ],
     expertise:
       "The route is long enough that the choice of viewing point matters more than arriving at one exact minute. Piccadilly and Green Park give the start of the show; Trafalgar Square gives the densest atmosphere; Whitehall is the approach to the finish. The public can watch from the street at no charge, while a grandstand ticket is a different, reserved-seat experience.",
+  },
+  {
+    slug: "the-nightmare-realm-avery-hill-2026",
+    createdAt: "2026-10-12T00:36:00+04:00",
+    updatedAt: "2026-10-12T00:36:00+04:00",
+    site: "lnd",
+    image: "/covers/the-nightmare-realm-avery-hill-2026.jpg",
+    imageAlt: "A Victorian mansion with a dome and rows of lit windows behind bare trees, a full moon and two bats above it and a pale path winding up to its door",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "The Nightmare Realm at Avery Hill 2026",
+    summary:
+      "Halloween scare attractions in south-east London: The Nightmare Realm fills Avery Hill Mansion in Greenwich on 18 nights from 9 October to 1 November 2026. Best from 13; free parking.",
+    start: "2026-10-09",
+    end: "2026-11-01",
+    utcOffset: "+01:00",
+    city: "London",
+    country: "United Kingdom",
+    venue: "Avery Hill Mansion, Bexley Road, SE9 2PQ",
+    geo: { name: "Avery Hill Park", lat: 51.448272, lng: 0.076318 },
+    category: "Halloween",
+    organizer: "The Nightmare Realm",
+    ticket: {
+      url: "https://thenightmarerealm.com/",
+      label: "Nights and tickets at The Nightmare Realm",
+    },
+    source: {
+      name: "The Nightmare Realm — FAQ",
+      url: "https://thenightmarerealm.com/faq/",
+      verifiedOn: "2026-10-12",
+    },
+    body: [
+      "The Nightmare Realm has spent seventeen Halloweens frightening Ireland. In 2026 it opens in London for the first time, in <strong>Avery Hill Mansion</strong>, the Victorian house in Avery Hill Park, Eltham, for <strong>18 selected nights between 9 October and 1 November</strong>.",
+      "## What is inside",
+      "Three main attractions: <strong>Halloween Town</strong>, <strong>Avery Hill Asylum</strong> and <strong>Sundown Manor</strong>, plus five further experiences that the organisers prefer to keep to themselves until one is standing in them. Allow <strong>an hour and a half to two hours</strong>. The site closes at 10 or 10.30pm.",
+      "## Who it is for",
+      "The organisers recommend it <strong>from 13</strong>, and anyone under 16 must come with an adult over 18. It is, one gathers, a genuine fright rather than a pumpkin trail, and a family with younger children would be far happier at Eltham Palace by daylight.",
+      "## Nights and tickets",
+      "It does not open every night: only on the 18 dates on the booking page. Fridays, Saturdays and the final week are peak nights; Sunday to Thursday are off-peak. A <strong>Fast Pass</strong> is on sale for those who would rather not queue, and parking is free.",
+      "## Getting there",
+      "By Tube, take the Jubilee line to North Greenwich and the <strong>132 bus</strong> to Bexley Road / Reinickendorf Avenue. By rail, <strong>New Eltham</strong> station is about a fifteen-minute walk.",
+      "## Elsewhere in Eltham and Greenwich",
+      "The gentler half of the borough's Halloween is close by: the <a href=\"/events/halloween-eltham-palace-2026/\" title=\"Halloween half-term at Eltham Palace 2026\">Great Pumpkin Party at Eltham Palace</a> runs every day of half-term, and the <a href=\"/events/halloween-royal-observatory-greenwich-2026/\" title=\"Halloween at the Royal Observatory 2026\">Royal Observatory</a> offers Ghastly Greenwich tours in its last week before closing.",
+    ],
+    faq: [
+      {
+        q: "When is The Nightmare Realm open?",
+        a: "On 18 selected nights between 9 October and 1 November 2026. Fridays, Saturdays and the final week are peak nights; the booking page lists every date.",
+      },
+      {
+        q: "Is The Nightmare Realm suitable for children?",
+        a: "The organisers recommend it from 13, and under-16s must come with an adult over 18.",
+      },
+      {
+        q: "How do I get to Avery Hill Mansion?",
+        a: "Jubilee line to North Greenwich, then the 132 bus to Bexley Road / Reinickendorf Avenue; or New Eltham station, about fifteen minutes on foot. Parking on site is free.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/halloween-eltham-palace-2026/",
+        eyebrow: "Eltham",
+        title: "Halloween half-term at Eltham Palace",
+        text: "The Great Pumpkin Party at the art deco palace, 10am to 4pm, with storytelling, a trail and a daily fancy dress contest.",
+      },
+      {
+        href: "/events/halloween-royal-observatory-greenwich-2026/",
+        eyebrow: "Greenwich",
+        title: "Halloween at the Royal Observatory",
+        text: "A 45-minute Ghastly Greenwich tour at 4pm and a free pumpkin trail, in the Observatory's last week before it closes on 2 November.",
+      },
+    ],
+    expertise:
+      "The quiet nights are the clever ones. A scare attraction is a queue with frights at intervals, and on a peak Saturday in the final week the queue wins; on an off-peak Sunday to Thursday the same three houses come round far faster, and the Fast Pass becomes a luxury rather than a necessity. Do allow the full two hours, and do look up the last 132 back towards North Greenwich before setting off.",
   },
 ];

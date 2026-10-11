@@ -814,7 +814,7 @@ export const items: EventItem[] = [
   {
     slug: "festival-del-terror-six-flags-2026",
     createdAt: "2026-09-12T22:20:00+04:00",
-    updatedAt: "2026-09-12T22:20:00+04:00",
+    updatedAt: "2026-10-12T00:47:00+04:00",
     site: "cmx",
     image: "/covers/festival-del-terror-six-flags-2026.jpg",
     imageAlt:
@@ -886,6 +886,14 @@ export const items: EventItem[] = [
         a: "En el kilómetro 1.5 del Boulevard Picacho-Ajusco, colonia Jardines del Ajusco, alcaldía Tlalpan, al sur de la Ciudad de México.",
       },
     ],
+    related: [
+      {
+        href: "/eventos/maloween-aztlan-2026/",
+        eyebrow: "Chapultepec",
+        title: "Maloween en Aztlán",
+        text: "Una noche solo para mayores de 18: juegos mecánicos y fiesta de Halloween el sábado 24 de octubre, $480.",
+      },
+    ],
     expertise:
       "La diferencia entre los dos boletos es de casi mil pesos y no significa lo mismo para todos. Quien ya tiene Pase Anual paga $550 y entra a las ocho atracciones; quien no lo tiene paga desde $1,549 por el día completo, que es prácticamente el costo de un pase anual con descuento. Dicho de otro modo: si piensas ir dos veces en la temporada, el pase se paga solo. La segunda cuenta es de calendario — la temporada dura hasta el 16 de noviembre, así que las dos semanas posteriores al 2 de noviembre son las mismas ocho atracciones con la mitad de la fila, y son las que casi nadie considera porque ya pasó Halloween.",
   },
@@ -944,5 +952,87 @@ export const items: EventItem[] = [
     ],
     expertise:
       "El Estadio Banorte es el nombre comercial actual del recinto que casi todos siguen llamando Estadio Azteca, y es donde se jugó el partido inaugural del Mundial, el 11 de junio de 2026. Noviembre lo encuentra cuatro meses después del torneo, con el estadio ya libre del calendario de la FIFA y disponible para lo que no es futbol. La otra cosa que conviene saber antes de comprar: los boletos de acceso general y VIP suben de precio por fases, y para el 14 de septiembre ya iban en la cuarta banda publicada de cada tipo, con las tres anteriores agotadas — quien esperaba una fase más barata ya la perdió.",
+  },
+  {
+    slug: "maloween-aztlan-2026",
+    createdAt: "2026-10-12T00:36:00+04:00",
+    updatedAt: "2026-10-12T00:36:00+04:00",
+    site: "cmx",
+    image: "/covers/maloween-aztlan-2026.jpg",
+    imageAlt: "Una rueda de la fortuna y la vía de una montaña rusa contra un cielo de atardecer morado, con dos calabazas talladas y murciélagos al frente y una guirnalda de luces arriba",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Maloween 2026 en Aztlán Feria de Chapultepec",
+    titleSeo: "Maloween 2026 en Aztlán, Ciudad de México",
+    summary:
+      "Halloween para adultos en Ciudad de México: Maloween toma Aztlán, en Chapultepec, el sábado 24 de octubre de 18:00 a 01:00, con juegos mecánicos incluidos. Solo +18, $480.",
+    start: "2026-10-24",
+    end: "2026-10-25",
+    startTime: "18:00",
+    endTime: "01:00",
+    utcOffset: "-06:00",
+    venue: "Aztlán Feria de Chapultepec",
+    city: "Ciudad de México",
+    country: "México",
+    geo: {
+      name: "Aztlán Feria de Chapultepec",
+      lat: 19.416093,
+      lng: -99.195482,
+    },
+    organizer: "Gran Malo y Aztlán Feria de Chapultepec",
+    category: "Festival",
+    tickets: { priceFrom: 480, currency: "MXN" },
+    ticket: {
+      url: "https://aztlanferiadechapultepec.com.mx/producto/maloween/",
+      label: "Boletos en Aztlán",
+    },
+    source: {
+      name: "Aztlán Feria de Chapultepec",
+      url: "https://aztlanferiadechapultepec.com.mx/producto/maloween/",
+      verifiedOn: "2026-10-12",
+    },
+    body: [
+      "Una noche al año, el parque de diversiones de la Segunda Sección del Bosque de Chapultepec deja de ser para familias: el <strong>sábado 24 de octubre de 2026</strong>, Aztlán cierra temprano y reabre como <strong>Maloween</strong>, una fiesta de Halloween solo para mayores de edad.",
+      "## Fecha y horario",
+      "<strong>Sábado 24 de octubre, de 18:00 a 01:00</strong> del domingo. Ese día el parque cierra al público general a las <strong>17:00</strong>, así que quien pase la tarde en Aztlán tiene que salir y volver a entrar con el boleto de Maloween.",
+      "## Lo que incluye el boleto",
+      "El boleto cuesta <strong>$480</strong> e incluye el <strong>Brazalete Aztlán Plus</strong>: acceso a los juegos mecánicos de <strong>18:00 a 22:00</strong>. No incluye los juegos de destreza ni la <strong>Hacienda Maldita</strong>, que se paga aparte, $110.",
+      "Se vende en Ticketmaster y en la tienda en línea de Aztlán desde el 1 de octubre. El cartel musical lo anuncian los organizadores en su cuenta de Instagram, @maloween.mx.",
+      "## Las reglas que conviene saber antes",
+      "<strong>Solo mayores de 18 años, con identificación oficial.</strong> Quien haya consumido alcohol <strong>no puede subir a los juegos mecánicos</strong>, regla que ordena la noche por sí sola. Las barras aceptan <strong>solo tarjeta</strong>, el evento es libre de humo y el disfraz es recomendado.",
+      "## Al día siguiente",
+      "Quien aguante, tiene la <a href=\"/eventos/mega-procesion-de-las-catrinas-2026/\" title=\"Mega Procesión de las Catrinas 2026\">Mega Procesión de las Catrinas</a> el domingo 25, del Ángel de la Independencia al Zócalo. Y para sustos de parque temático con otra lógica, el <a href=\"/eventos/festival-del-terror-six-flags-2026/\" title=\"Festival del Terror 2026 en Six Flags México\">Festival del Terror de Six Flags</a> sigue hasta el 16 de noviembre.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo es Maloween 2026 en Aztlán?",
+        a: "El sábado 24 de octubre de 2026, de 18:00 a 01:00, en Aztlán Feria de Chapultepec.",
+      },
+      {
+        q: "¿Cuánto cuesta y qué incluye?",
+        a: "$480, con el Brazalete Aztlán Plus para los juegos mecánicos de 18:00 a 22:00. Los juegos de destreza y la Hacienda Maldita ($110) se pagan aparte.",
+      },
+      {
+        q: "¿Pueden ir menores de edad?",
+        a: "No. Es solo para mayores de 18 años y piden identificación oficial en la entrada.",
+      },
+    ],
+    related: [
+      {
+        href: "/eventos/mega-procesion-de-las-catrinas-2026/",
+        eyebrow: "Del Ángel al Zócalo",
+        title: "Mega Procesión de las Catrinas",
+        text: "Miles de catrinas del Ángel de la Independencia al Zócalo en su 13ª edición, gratis, y quien va maquillado es parte de la procesión.",
+      },
+      {
+        href: "/eventos/festival-del-terror-six-flags-2026/",
+        eyebrow: "Tlalpan",
+        title: "Festival del Terror en Six Flags México",
+        text: "Ocho atracciones de terror en Tlalpan y un Kids Boo Fest para quien no cumple los 13 años.",
+      },
+    ],
+    expertise:
+      "El orden de la noche ya viene decidido por las reglas: los juegos mecánicos solo funcionan de 18:00 a 22:00 y nadie que haya tomado puede subirse, así que las primeras cuatro horas son para los juegos y las barras esperan. Quien llegue a las nueve con ganas de una copa tiene que elegir. Y como las barras solo aceptan tarjeta, el efectivo sirve de poco adentro.",
   },
 ];

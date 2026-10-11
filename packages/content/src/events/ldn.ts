@@ -1072,7 +1072,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-leadenhall-market-2026",
     createdAt: "2026-10-11T01:15:13+04:00",
-    updatedAt: "2026-10-11T01:15:13+04:00",
+    updatedAt: "2026-10-12T00:47:00+04:00",
     site: "ldn",
     image: "/covers/halloween-leadenhall-market-2026.jpg",
     imageAlt: "A large green and gold beetle beneath a red paper arch, sitting on top of a small shopfront with a grey awning, on a cream ground",
@@ -1154,6 +1154,20 @@ export const items: EventItem[] = [
       {
         q: "Where is Leadenhall Market?",
         a: "On Gracechurch Street in the City of London, EC3.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/sky-garden-halloween-dance-of-the-dead-2026/",
+        eyebrow: "Sky Garden",
+        title: "Dance of the Dead at Sky Garden",
+        text: "Two streets away, 35 floors up: a Halloween party on 30 and 31 October with a welcome cocktail, live sets and a DJ. 18+.",
+      },
+      {
+        href: "/events/halloween-tower-of-london-2026/",
+        eyebrow: "Tower of London",
+        title: "Halloween at the Tower of London",
+        text: "Ghosts in daylight, 24 October to 1 November, 10.30am to 4pm, included with admission.",
       },
     ],
     expertise:
@@ -1597,5 +1611,83 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Two months sounds like plenty of time and is not, because the demand is concentrated in about three weeks. The evening sessions from the start of December to Christmas are the ones that go, and they go in the pre-sale rather than on the day — which makes the newsletter sign-up, not the price, the thing to act on now. If you would rather not compete for them: the second week of November and the first week of January are the same rink in the same courtyard with room to actually skate on it, and January has the added advantage that The Courtauld next door is quiet too.",
+  },
+  {
+    slug: "sky-garden-halloween-dance-of-the-dead-2026",
+    createdAt: "2026-10-12T00:36:00+04:00",
+    updatedAt: "2026-10-12T00:36:00+04:00",
+    site: "ldn",
+    image: "/covers/sky-garden-halloween-dance-of-the-dead-2026.jpg",
+    imageAlt: "A tall tapering tower filled with green plants and small lit windows, bats circling its top and a crescent moon in its glass base, above a dark city skyline on a cream ground",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Dance of the Dead: Sky Garden Halloween 2026",
+    titleSeo: "Dance of the Dead at Sky Garden, London Halloween 2026",
+    summary:
+      "Halloween in London 35 floors up: Sky Garden's Dance of the Dead party on Friday 30 and Saturday 31 October 2026, with a welcome cocktail, two live sets and a DJ. 18+, £38.50.",
+    start: "2026-10-30",
+    end: "2026-10-31",
+    startTime: "18:30",
+    utcOffset: "+00:00",
+    city: "London",
+    country: "United Kingdom",
+    venue: "Sky Garden, 20 Fenchurch Street",
+    geo: { name: "Sky Garden", lat: 51.51127, lng: -0.08354 },
+    category: "Halloween",
+    tickets: { priceFrom: 38.5, currency: "GBP" },
+    organizer: "Rhubarb Hospitality Collection at Sky Garden",
+    ticket: {
+      url: "https://www.designmynight.com/london/whats-on/live-music/halloween-at-sky-garden",
+      label: "Tickets at DesignMyNight",
+    },
+    source: {
+      name: "DesignMyNight — Dance of the Dead: Sky Garden Halloween Party",
+      url: "https://www.designmynight.com/london/whats-on/live-music/halloween-at-sky-garden",
+      verifiedOn: "2026-10-12",
+    },
+    body: [
+      "Sky Garden is the glasshouse on top of 20 Fenchurch Street, the building Londoners call the Walkie-Talkie, and for two nights this Halloween it becomes a party: <strong>Dance of the Dead</strong>, on <strong>Friday 30</strong> and <strong>Saturday 31 October 2026</strong>.",
+      "## Dates, times and tickets",
+      "Tickets are sold by arrival slot: <strong>6.30 to 9.30pm</strong>, <strong>8.45 to 10.45pm</strong> or <strong>9.30 to 10.45pm</strong>. Sky Garden's own page puts it at £35 a head; DesignMyNight, where its Book Now button leads, lists each ticket at <strong>£38.50</strong>.",
+      "Last entry on Fridays and Saturdays is at midnight. The ticket is standing only, with no seats.",
+      "## What the ticket buys",
+      "A welcome cocktail, a Dead Man's Finger; <strong>two live sets from ALR Music</strong>; a DJ; and the view, which is the reason anyone climbs this high on a Saturday night. Fancy dress is encouraged.",
+      "## Before you go",
+      "It is <strong>18+, with physical photo ID</strong>. The dress code is smart casual (no sportswear, flip-flops, shorts or football shirts), which a costume can satisfy if it tries. The venue is cashless, the kitchen takes its last orders at 10pm, and the open-air terrace shuts at 6pm, so the view is from behind glass.",
+      "The garden is naturally ventilated, so dress for late October rather than for a nightclub. Sky Garden also warns that a lift out of service has reduced its capacity and that some visitors may not get in at their booked time: aim for the start of your slot, not the end.",
+      "## Elsewhere in the City that week",
+      "Two streets away, <a href=\"/events/halloween-leadenhall-market-2026/\" title=\"Halloween at Leadenhall Market 2026\">Leadenhall Market</a> has a 4.5-metre light-up beetle under its Victorian roof until 1 November, free; by day, the <a href=\"/events/halloween-tower-of-london-2026/\" title=\"Halloween at the Tower of London 2026\">Tower of London</a> does ghosts until 4pm.",
+    ],
+    faq: [
+      {
+        q: "When is Dance of the Dead at Sky Garden?",
+        a: "Friday 30 and Saturday 31 October 2026, in three arrival slots between 6.30pm and 10.45pm. Last entry is midnight.",
+      },
+      {
+        q: "How much are tickets?",
+        a: "Sky Garden quotes £35 a person; tickets on DesignMyNight, where its booking button leads, are listed at <strong>£38.50</strong>. A welcome cocktail, two live sets and a DJ are included.",
+      },
+      {
+        q: "Is there an age limit or a dress code?",
+        a: "18+ only, with physical photo ID. Smart casual, with no sportswear, flip-flops, shorts or football shirts; fancy dress is encouraged.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/halloween-leadenhall-market-2026/",
+        eyebrow: "Leadenhall Market",
+        title: "Halloween at Leadenhall Market",
+        text: "A 4.5-metre light-up jewel beetle under the market's Victorian roof, free to see, two streets from Sky Garden.",
+      },
+      {
+        href: "/events/halloween-tower-of-london-2026/",
+        eyebrow: "Tower of London",
+        title: "Halloween at the Tower of London",
+        text: "Ghosts in daylight, 10.30am to 4pm, included with admission, and the one event in London that asks you not to wear a costume.",
+      },
+    ],
+    expertise:
+      "The slot is the decision that matters. The early one, from 6.30pm, catches the last of the light over the river and the room before it fills; the two later ones are the party proper, and with last entry at midnight they are also the ones a reduced capacity at the lifts will squeeze. Book the evening you want, then arrive at the front of your window.",
   },
 ];

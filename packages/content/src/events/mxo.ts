@@ -537,7 +537,7 @@ export const items: EventItem[] = [
   {
     slug: "fil-monterrey-2026",
     createdAt: "2026-09-12T17:21:29+04:00",
-    updatedAt: "2026-09-12T17:21:29+04:00",
+    updatedAt: "2026-10-12T00:47:00+04:00",
     site: "mxo",
     title: "FIL Monterrey 2026: El Colegio Nacional",
     summary:
@@ -570,6 +570,14 @@ export const items: EventItem[] = [
       "Talleres y experiencias interactivas sobre lectura, salud mental, pensamiento crítico y medio ambiente, además del <strong>Congreso de Literatura Infantil y Juvenil</strong>, encuentros de promotores de lectura y bibliotecarios, y <strong>Lucha Libro</strong>, una competencia de improvisación literaria.",
       "## Quién organiza",
       "La dirige <strong>Henoc de Santiago</strong> y la preside <strong>Carmen Junco</strong>. El <strong>Tecnológico de Monterrey</strong> desarrolla por su cuenta más de cien actividades académicas y culturales dentro de la feria.",
+    ],
+    related: [
+      {
+        href: "/eventos/parque-de-las-calabazas-monterrey-2026/",
+        eyebrow: "Parque Fundidora",
+        title: "Parque de las Calabazas",
+        text: "En el mismo parque, cinco fines de semana de casas del terror y sets de fotos hasta el 8 de noviembre, desde $100.",
+      },
     ],
     expertise:
       "La entrada libre cambia cómo se planea la visita: no hay boleto que obligue a un día concreto, así que conviene elegir por programa y no por fecha. Las presentaciones con nombres internacionales son las que llenan sala, y en una feria sin control de aforo por boleto el lugar se gana llegando antes, no comprando antes. Cintermex está dentro del Parque Fundidora, lo que significa que la caminata desde el estacionamiento es parte del plan y que se puede combinar la feria con el parque en la misma salida — dos cosas que rara vez coinciden en un recinto ferial.",
@@ -771,5 +779,79 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Quien va al FIG por los globos y no por los conciertos está yendo a un evento de madrugada, y esa es la decisión logística de todo el viaje: el despegue es a las 6:30 y hay que estar en el parque antes de esa hora, de modo que el alojamiento en León y la salida de madrugada se planean primero y el resto del programa después. La segunda advertencia es de calendario: el lunes 16 es día festivo en México, lo que convierte el fin de semana en uno largo y explica por qué el sábado y el domingo son los días llenos. El viernes tiene el despegue inaugural, la Noche Mágica y el primer concierto, y es el día con menos gente de los cuatro.",
+  },
+  {
+    slug: "parque-de-las-calabazas-monterrey-2026",
+    createdAt: "2026-10-12T00:36:00+04:00",
+    updatedAt: "2026-10-12T00:36:00+04:00",
+    site: "mxo",
+    image: "/covers/parque-de-las-calabazas-monterrey-2026.jpg",
+    imageAlt: "Un campo de calabazas naranjas sobre fondo verde, con una casa de techo puntiagudo, dos ruedas de la fortuna y chimeneas industriales en el horizonte",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Parque de las Calabazas 2026 en Parque Fundidora",
+    summary:
+      "Halloween en el norte de México: el Parque de las Calabazas abre en Parque Fundidora, Monterrey, cinco fines de semana del 9 de octubre al 8 de noviembre de 2026. Desde $100.",
+    start: "2026-10-09",
+    end: "2026-11-08",
+    utcOffset: "-06:00",
+    city: "Monterrey",
+    country: "México",
+    venue: "Parque Fundidora, junto a Expedición Amazonia",
+    geo: { name: "Parque Fundidora", lat: 25.678225, lng: -100.289574 },
+    category: "Festivales",
+    organizer: "Parque de las Calabazas",
+    tickets: { priceFrom: 100, priceTo: 300, currency: "MXN" },
+    ticket: {
+      url: "https://parquedelascalabazas.vivaticket.mx/espectaculo/parque-de-las-calabazas-2026--parque-fundidora/CALABAZAS2026",
+      label: "Boletos en Vivaticket",
+    },
+    source: {
+      name: "Parque de las Calabazas — Fundidora",
+      url: "https://www.parquedelascalabazas.com/fundidora/",
+      verifiedOn: "2026-10-12",
+    },
+    body: [
+      "Cinco fines de semana de calabazas, casas del terror y sets para fotos en el antiguo terreno de la Fundidora de Monterrey: el <strong>Parque de las Calabazas 2026</strong> abre en <strong>Parque Fundidora</strong> del <strong>9 de octubre al 8 de noviembre</strong>, de Halloween a Día de Muertos.",
+      "## Fechas y horarios",
+      "Solo abre viernes, sábado y domingo: los <strong>viernes de 15:00 a 23:00</strong> y los <strong>sábados y domingos de 12:00 a 23:00</strong>. Son cinco fines de semana: del 9 al 11, del 16 al 18 y del 23 al 25 de octubre, del 30 de octubre al 1 de noviembre y del 6 al 8 de noviembre.",
+      "## Dónde está",
+      "Junto a <strong>Expedición Amazonia</strong>, por los accesos <strong>1 y 7</strong> del parque, detrás del Holiday Inn.",
+      "## Lo que incluye el boleto",
+      "Más de <strong>30 sets para fotos</strong>, la <strong>Casa del Terror</strong>, el <strong>Laberinto sin Fin</strong>, la <strong>Casa de la Bruja</strong>, el <strong>Cementerio de Zombies</strong> y la <strong>Tumba de Drácula</strong>, además de shows infantiles, música en vivo, juegos interactivos, el Coloroom y Dibujalabaza.",
+      "## Lo que se paga aparte",
+      "Tallar una calabaza, la rueda de la fortuna, el <strong>Circo del Terror</strong>, los juegos mecánicos e inflables, la pintura de cara, el mercado Mercalabaza y los food trucks.",
+      "## Boletos",
+      "<strong>General desde $100</strong>, <strong>Fast Pass desde $200</strong> y <strong>VIP desde $300</strong>, más cargos por servicio. Se compran en Vivaticket o en la taquilla del parque.",
+      "## La otra sede",
+      "El mismo parque tiene una segunda sede en el <strong>Foro Valle Oriente</strong>, en San Pedro Garza García, con las mismas fechas y horarios.",
+      "## En Fundidora la misma semana",
+      "Hasta el 18 de octubre, la <a href=\"/eventos/fil-monterrey-2026/\" title=\"FIL Monterrey 2026: El Colegio Nacional\">FIL Monterrey</a> ocupa Cintermex, dentro del mismo parque y con entrada gratuita.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo abre el Parque de las Calabazas 2026 en Fundidora?",
+        a: "Del 9 de octubre al 8 de noviembre de 2026, solo viernes de 15:00 a 23:00 y sábados y domingos de 12:00 a 23:00.",
+      },
+      {
+        q: "¿Cuánto cuesta la entrada?",
+        a: "General desde $100, Fast Pass desde $200 y VIP desde $300, más cargos por servicio, en Vivaticket o en taquilla.",
+      },
+      {
+        q: "¿Qué no incluye el boleto?",
+        a: "Tallar calabazas, la rueda de la fortuna, el Circo del Terror, juegos mecánicos, inflables, pintura de cara, el Mercalabaza y la comida.",
+      },
+    ],
+    related: [
+      {
+        href: "/eventos/fil-monterrey-2026/",
+        eyebrow: "Cintermex",
+        title: "FIL Monterrey 2026",
+        text: "La feria del libro del norte de México en Cintermex, dentro de Fundidora, con entrada gratuita y El Colegio Nacional como Invitado de Honor.",
+      },
+    ],
+    expertise:
+      "El boleto general cubre las casas del terror y los sets de fotos, que es lo que la mayoría viene a ver; lo que suma rápido es la lista de extras, de la rueda de la fortuna a los food trucks. Conviene decidir antes qué se va a pagar aparte. Y si Fundidora queda lejos, la sede de Valle Oriente, en San Pedro, abre las mismas fechas y a las mismas horas.",
   },
 ];
