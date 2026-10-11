@@ -1,0 +1,63 @@
+---
+// One tea moment's countdown. The build cannot know the reader's clock, so
+// the count is empty in the HTML and filled in by the script. The words for
+// when the moment recurs — true everywhere — sit beside it on the page, so
+// a reader without the script still knows when to put the kettle on.
+import type { Recurrence } from "../schedule";
+
+interface Props {
+  recurs: Recurrence;
+}
+const { recurs } = Astro.props;
+---
+<p class="countdown" data-recurs={JSON.stringify(recurs)} aria-live="off">
+  <span class="countdown-status"></span>
+  <span class="countdown-when"></span>
+</p>
+
+<script>
+  import { nextOccurrence, status, when } from "../clock";
+
+  const els = [...document.querySelectorAll<HTMLElement>(".countdown[data-recurs]")];
+  const tick = () => {
+    const now = new Date();
+    for (const el of els) {
+      const o = nextOccurrence(JSON.parse(el.dataset.recurs!), now);
+      const statusEl = el.querySelector(".countdown-status")!;
+      const whenEl = el.querySelector(".countdown-when")!;
+      if (!o) continue;
+      const s = status(o, now);
+      statusEl.textContent = s.text;
+      whenEl.textContent = s.live ? "" : when(o, now);
+      el.classList.toggle("is-live", s.live);
+      el.dataset.start = String(o.start.getTime());
+    }
+  };
+  tick();
+  setInterval(tick, 1000);
+</script>
+
+<style>
+  .countdown {
+    margin: 0;
+    /* Held open before the first tick, so the card does not jump. */
+    min-height: 1.6em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0 var(--space-2);
+  }
+  .countdown-status {
+    font-family: var(--font-display);
+    font-size: var(--step-2);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: var(--accent-ink);
+    line-height: 1.15;
+  }
+  .countdown-when {
+    color: var(--ink-muted);
+    font-size: var(--step--1);
+  }
+  .countdown.is-live .countdown-status { color: var(--accent); }
+</style>

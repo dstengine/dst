@@ -38,6 +38,8 @@ const SITES = [
   { app: "mxo", host: "mxo.lol" },
   // AI video news, on its own domain and tied to nothing else in the network.
   { app: "aivideo", host: "aivideo.zone" },
+  // Tea guides and the tea times of the day, independent like aivideo.
+  { app: "tea", host: "tea.ceo" },
   // Both of these were missing from this list, and so from every test in
   // this file, until 3 October 2026. A green suite said nothing about them:
   // 399 anchors on tokiohotel and two on eco shipped with no title
@@ -863,7 +865,7 @@ describe("shipped SVG", () => {
 describe("news feeds", () => {
   const FEEDS = [
     "cmx", "dst", "eco", "fwf", "ldn", "llc", "lnd", "mbr", "musical", "mxo",
-    "nyc42", "palmcentral", "riviera", "sol2go", "tick", "vien", "visas", "aivideo",
+    "nyc42", "palmcentral", "riviera", "sol2go", "tick", "vien", "visas", "aivideo", "tea",
   ];
   const read = (app) => {
     const file = path.join(REPO, "apps", app, "dist", "rss.xml");
@@ -1560,10 +1562,15 @@ describe("how much of each site is the template", () => {
   // carries it repeats a headline and a summary on the front page, the events
   // index and every other page that shows the strip. Same ratchet, same real
   // fix, still not made.
+  // tea recorded 32 on 11 October 2026, its first day, measured at 31.0:
+  // twelve guides on a site of nineteen pages, so the "More tea guides"
+  // strip under each one carries most of the others' cards, and the chrome
+  // is a large share of a small site. No sentence of prose repeats. It falls
+  // as guides arrive.
   const CEILING = {
     dst: 25, llc: 16, visas: 19, riviera: 15, mbr: 17, palmcentral: 24,
     eco: 30, fwf: 20, musical: 35, nyc42: 27, ldn: 25, lnd: 25, cmx: 32, mxo: 25,
-    sol2go: 30, vien: 30, tick: 34, aivideo: 37,
+    sol2go: 30, vien: 30, tick: 34, aivideo: 37, tea: 32,
   };
 
   test("no site is more template than the ceiling it recorded", async () => {

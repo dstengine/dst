@@ -1,0 +1,15 @@
+<!-- tea.ceo's mark: a cup and saucer in brass on oxblood, the site's two
+     accents — the fittings and the leather of the rooms on its covers. The
+     two curls of steam are detail (data-detail) and drop out below 48px,
+     where the cup alone reads better. Centred on the cup and handle
+     together, with room to spare, so a crop to a circle keeps the handle. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <rect width="1024" height="1024" fill="#7A2230"/>
+  <g transform="translate(-19 10)">
+    <circle cx="738" cy="512" r="72" fill="none" stroke="#D9B25F" stroke-width="40"/>
+    <path d="M292 424 H732 C732 594 646 694 512 694 C378 694 292 594 292 424 Z" fill="#D9B25F"/>
+    <rect x="232" y="720" width="560" height="44" rx="22" fill="#D9B25F"/>
+    <path data-detail="" d="M448 372 C412 334 484 302 448 252" fill="none" stroke="#D9B25F" stroke-width="28" stroke-linecap="round"/>
+    <path data-detail="" d="M576 372 C540 334 612 302 576 252" fill="none" stroke="#D9B25F" stroke-width="28" stroke-linecap="round"/>
+  </g>
+</svg>

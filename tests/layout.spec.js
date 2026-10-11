@@ -55,6 +55,12 @@ const PAGES = [
   { site: "aivideo", path: "/comfyui/" },
   { site: "aivideo", path: "/screenwriters/" },
   { site: "aivideo", path: "/guides/" },
+  // tea fills its countdowns from the reader's clock after load: the cards
+  // must hold their size while the text arrives, at every width.
+  { site: "tea", path: "/" },
+  { site: "tea", path: "/schedule/" },
+  { site: "tea", path: "/guides/how-to-make-a-proper-cup-of-tea/" },
+  { site: "tea", path: "/green-tea/" },
 ];
 
 const url = (site, path) => `${baseUrl(site)}${path}`;

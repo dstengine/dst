@@ -1,0 +1,12 @@
+/* tea.ceo — oxblood on cream, brass on the dark ground: the leather and the
+   fittings of a country-house library, Halstead in The Gentlemen rather
+   than a café. The bottle green of the same rooms is left to the covers,
+   which are full of it, so the type does not have to say it twice. */
+:root {
+  --accent-light: #7A2230;
+  --accent-ink-light: #561620;
+  --accent-tint-light: #F5E8E6;
+  --accent-dark: #D9B25F;
+  --accent-ink-dark: #F0D99A;
+  --accent-tint-dark: #2A1A1C;
+}

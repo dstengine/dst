@@ -55,6 +55,7 @@ takes the whole group or none of it.
 | `vien` | vien.lol | Was in Wien los ist — Wien und Österreich, auf Deutsch | Feed |
 | `tick` | tick.am | Ինչ կա Երևանում — Yerevan events, English at `/`, Armenian at `/am/` | Feed |
 | `aivideo` | aivideo.zone | AI video: generative models, tools and AI editing | Feed |
+| `tea` | tea.ceo | Tea brewing guides and the tea times of the day, in British English | Feed |
 
 Two things the table does not show and that the code enforces:
 

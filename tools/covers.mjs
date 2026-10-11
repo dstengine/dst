@@ -6,7 +6,11 @@
 //   node tools/covers.mjs --force    # regenerate even what exists
 //   node tools/covers.mjs --force --lead   # ... but only the front-page ones
 //   node tools/covers.mjs --force --figure # ... or only the ones drawn from a photo
-//   node tools/covers.mjs --force <slug>   # ... or just the one that came back wrong
+//   node tools/covers.mjs --force <site>/<slug>  # ... or just the one that came back wrong
+//
+// A bare <slug> matches that slug on every site. Most sites have an `about`,
+// so `--force about` regenerates all of them — that overwrote eight sites'
+// committed covers once. Name the site.
 //
 // Three tiers, chosen by the shape of the entry in covers.json.
 //
@@ -183,6 +187,24 @@ const IDIOMS = {
     "cyberpunk neon illustration, glowing neon outlines and lit geometric forms on a dark ground, " +
     "bold simple shapes, luminous line work, stylised CG look, " +
     "plainly an illustration, never a photograph",
+  // tea's. The tea things where the site's register lives — a firelit
+  // country seat in the manner of Halstead in The Gentlemen, mahogany and
+  // oxblood leather — in gouache. The room belongs in the subject, not here:
+  // this is a claim about the painting. Realism is allowed on tea (a teapot
+  // by a fire reports no event), so gouache is chosen for the set, not for
+  // honesty: schnell rendered the same rooms in oils as near-photographs,
+  // some good and some catalogue, and the gouache set reads as one hand.
+  // Three idioms came before it. An old printed tea tin came back captioned
+  // on eight covers in thirteen, because a printed label is lettering and its
+  // margin is where the lettering goes. A watercolour was clean but daylit,
+  // a rectory rather than a ducal seat. This one signs itself in the
+  // bottom-right corner about one time in five, and "card table" drew a
+  // white torn-paper border twice: check the edges, and a signature is
+  // cropped off (top-left 960px square, scaled back up) rather than re-rolled.
+  gouache:
+    "painted gouache illustration, simplified shapes with thick visible brushwork, matte painted colour, " +
+    "warm firelight and lamplight against deep shadow, full-bleed painting running to every edge, " +
+    "plainly a painting, never a photograph",
 };
 
 /** One idiom per site, so a grid of cards reads as a set — and so that two
@@ -265,7 +287,7 @@ async function generate(site, slug, entry) {
   const tier = TIERS[kind];
   if (LEAD_ONLY && kind !== "lead") return false;
   if (FIGURE_ONLY && kind !== "figure") return false;
-  if (ONLY.size > 0 && !ONLY.has(slug)) return false;
+  if (ONLY.size > 0 && !ONLY.has(slug) && !ONLY.has(`${site}/${slug}`)) return false;
 
   const out = path.join(REPO, "apps", site, "public", "covers", `${slug}.jpg`);
   if (fs.existsSync(out) && !FORCE) return false;

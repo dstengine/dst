@@ -23,8 +23,10 @@ import { items as tick } from "./tick.ts";
 import { items as musical } from "./musical.ts";
 // aivideo.zone is independent too: AI video generation and editing.
 import { items as aivideo } from "./aivideo.ts";
+// tea.ceo is independent too: how to brew tea, and the tea times of the day.
+import { items as tea } from "./tea.ts";
 
-const BY_SITE: Record<string, NewsItem[]> = { dst, llc, visas, riviera, mbr, palmcentral, eco, fwf, nyc42, ldn, lnd, cmx, mxo, sol2go, vien, tick, musical, aivideo };
+const BY_SITE: Record<string, NewsItem[]> = { dst, llc, visas, riviera, mbr, palmcentral, eco, fwf, nyc42, ldn, lnd, cmx, mxo, sol2go, vien, tick, musical, aivideo, tea };
 
 export const allNews: NewsItem[] = Object.values(BY_SITE).flat();
 

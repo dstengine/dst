@@ -1,0 +1,37 @@
+# tea.ceo — tea guides, brewing times and the tea calendar
+
+> An independent guide to brewing tea, kind by kind and tea by tea — water temperature, steeping time and how much leaf — and a calendar of tea times and tea days with a live countdown to each. Written in British English. Every figure names where it came from.
+
+How this site works, in four rules:
+
+- **Every figure names where it came from.** A temperature or a steeping time is the grower's, the tea house's or the standard's, and the guide says whose. Where respectable sources disagree, the guide gives both.
+- **A story is told as a story.** Where a tale about tea cannot be checked — the duchess, the mandarin — the page says it is the tale and not the record.
+- **Nothing here is paid for.** No brand or tea house pays to be mentioned, ranked or linked.
+- **Your clock, not ours.** Tea times count down on the reader's own clock, and reminders are calendar files the reader keeps.
+
+## What a reader finds here
+
+- [Guides](https://tea.ceo/guides/): how to brew black, green, oolong, white and pu-erh tea, and named teas within them — Darjeeling, Earl Grey, sencha, matcha, Dragon Well.
+- [Tea times](https://tea.ceo/schedule/): early morning tea, breakfast tea, elevenses, afternoon tea, high tea and the bedtime cuppa on the reader's own clock, and the tea days of the year, each with a calendar file at `/schedule/<slug>.ics` and all of them at `/tea-times.ics`.
+- One page per family of tea once it has two guides: [black tea](https://tea.ceo/black-tea/) and [green tea](https://tea.ceo/green-tea/).
+- [About](https://tea.ceo/about/): the rules above, written out at length.
+- [Everything in one file](https://tea.ceo/llms-full.txt): every page as Markdown. Each page is also at its own address with `.md` appended.
+
+## Where the figures come from
+
+Growers and tea houses that publish their own methods (Ippodo for matcha and sencha, among others), the ISO 3103 tasting standard, the Royal Society of Chemistry's 2003 method, the Tea Board of India for what may be called Darjeeling, and the United Nations for International Tea Day. Each guide names its source and the date it was checked.
+
+## Guides
+
+- [How to make a proper cup of tea](https://tea.ceo/guides/how-to-make-a-proper-cup-of-tea/): The British cup of tea, made properly: freshly drawn water at a full boil, three to five minutes for a strong black blend, and the milk question settled — or at least explained. With the Royal Society of Chemistry's method and the ISO standard for comparison.
+- [Afternoon tea or high tea? The difference, and the times](https://tea.ceo/guides/afternoon-tea-vs-high-tea/): Afternoon tea is sandwiches, scones and cake at about four, invented by a duchess with time on her hands. High tea is a working family's evening meal at six. Hotels have spent decades muddling the two; here is which is which, and when each one is taken.
+- [How to brew black tea](https://tea.ceo/guides/how-to-brew-black-tea/): Black tea wants water at or near a full boil and three to five minutes. How much leaf, how long for which tea, and when to reach for the milk — from Assam and Ceylon to Darjeeling and Earl Grey.
+- [How to brew Darjeeling tea: first flush and second flush](https://tea.ceo/guides/how-to-brew-darjeeling-tea/): Darjeeling is the black tea that rewards a little care: about 80°C and three minutes for the spring first flush, boiling water for the summer second. What the flushes are, how the gardens themselves brew them, and why the name is protected.
+- [How to make Earl Grey tea — and a London Fog](https://tea.ceo/guides/how-to-make-earl-grey-tea/): Earl Grey is black tea scented with bergamot: freshly boiled water, three to four minutes, and not a second more. Milk or lemon, how to make a London Fog, and what is known — and what is merely told — about the Earl.
+- [How to brew green tea without making it bitter](https://tea.ceo/guides/how-to-brew-green-tea/): Green tea goes bitter for one reason above all: water that is too hot. Sixty-five to eighty degrees, a minute or three, and more leaf than you think — with the difference between Japanese and Chinese green teas.
+- [How to brew sencha, Japan's everyday green tea](https://tea.ceo/guides/how-to-brew-sencha/): Ippodo's method for sencha, Japan's everyday green tea: 10 grams of leaf, 210 ml of water at 80°C, one minute, and every last drop poured out. How to cool the water without a thermometer, and what shincha is.
+- [How to make matcha: usucha and koicha](https://tea.ceo/guides/how-to-make-matcha/): Matcha is green tea that is whisked rather than steeped. Ippodo's method for a bowl of usucha: 2 grams sifted, 60 ml of water at 80°C, fifteen seconds' brisk whisking. Thick koicha, a matcha latte, and the mistakes that make it lumpy or bitter.
+- [How to brew Dragon Well (Longjing) green tea](https://tea.ceo/guides/how-to-brew-dragon-well-longjing-tea/): China's most celebrated green tea, from the hills around West Lake in Hangzhou, brewed the way the grower Mrs Li brews it at home: 4 to 5 grams in an open glass at 85 to 90°C, sipped and topped up all day. And why the tea picked before Qingming costs so much more.
+- [How to brew oolong tea, Western style and gongfu](https://tea.ceo/guides/how-to-brew-oolong-tea/): Oolong wants hotter water than green tea — 85 to 95°C — and rewards being brewed again and again. A mugful the Western way, or the gongfu way: a lot of leaf, a small pot and steeps measured in seconds.
+- [How to brew white tea: Silver Needle and White Peony](https://tea.ceo/guides/how-to-brew-white-tea/): White tea is the least handled tea there is, and among the most forgiving to brew: 75 to 85°C, twice the usual leaf, and two or three minutes. Silver Needle, White Peony, and why aged white tea is a thing.
+- [How to brew pu-erh tea, raw and ripe](https://tea.ceo/guides/how-to-brew-pu-erh-tea/): Pu-erh is Yunnan's aged and fermented tea, usually pressed into cakes. Lever off a piece, rinse it, and brew it in just-boiled water in short, repeated steeps — or in a mug, topped up all day. Raw (sheng) and ripe (shou), and how to tell them apart.

@@ -19,6 +19,7 @@ export const PORTS = {
   vien: 4347,
   tick: 4348,
   aivideo: 4349,
+  tea: 4350,
 };
 
 export const baseUrl = (site) => `http://localhost:${PORTS[site]}`;

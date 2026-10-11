@@ -195,6 +195,19 @@
         "4349"
       ],
       "port": 4349
+    },
+    {
+      "name": "tea",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "astro",
+        "dev",
+        "--root",
+        "apps/tea",
+        "--port",
+        "4350"
+      ],
+      "port": 4350
     }
   ]
 }

@@ -23,6 +23,7 @@ export const HOSTS = {
   mxo: "mxo.lol",
   tokiohotel: "tokiohotel.vvm.space",
   aivideo: "aivideo.zone",
+  tea: "tea.ceo",
 };
 
 /** The app behind a host, for turning a changed lastmod slice back into a

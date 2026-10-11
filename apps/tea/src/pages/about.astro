@@ -1,0 +1,68 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { about } from "../content";
+import PageHero from "@dst/ui/PageHero.astro";
+---
+<Layout prose title={about.title} description={about.description}>
+  <PageHero
+    title={about.h1}
+    image="/covers/about.jpg"
+    imageAlt="A painting of a country-house hall: a tea tray on a mahogany table, oxblood leather armchairs, a fire in a pale stone fireplace, and stag's antlers either side of a landscape"
+    imageKind="generated"
+  >
+    <p class="lede">{about.lede}</p>
+  </PageHero>
+
+  <section class="container">
+    <h2>What this is</h2>
+    <p set:html={`<strong>tea.ceo</strong> is two things. A set of guides to brewing tea — each family of tea, and the named teas within it, with the water temperature, the steeping time and how much leaf — and a calendar of tea times: elevenses, afternoon tea and high tea on your own clock, and the tea days of the year, each counting down. Written in British English, by people who own more teapots than is strictly necessary.`} />
+  </section>
+
+  <section class="container">
+    <h2>The rules</h2>
+    <ol class="rules">
+      <li>
+        <h3>Every figure names where it came from</h3>
+        <p>A temperature or a steeping time is the grower's, the tea house's or the standard's, and the guide says whose. Where two respectable sources disagree, the guide gives both rather than splitting the difference and calling it a fact.</p>
+      </li>
+      <li>
+        <h3>A story is told as a story</h3>
+        <p>Tea is thick with legend — the duchess, the mandarin, the ship. Where a tale cannot be checked, the page says it is the tale and not the record.</p>
+      </li>
+      <li>
+        <h3>Nothing here is paid for</h3>
+        <p>No brand or tea house pays to be mentioned, ranked or linked. A shop named in a guide is named because it published the method, not because it asked.</p>
+      </li>
+      <li>
+        <h3>Your clock, not ours</h3>
+        <p>Tea times count down on the reader's own clock, and the calendar reminders are files you keep. Nobody is asked for an email address, and nothing about the reader is sent anywhere.</p>
+      </li>
+    </ol>
+  </section>
+</Layout>
+
+<style>
+  .rules {
+    margin: var(--space-3) 0 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: rule;
+    display: grid;
+    gap: var(--space-3);
+  }
+  .rules li {
+    counter-increment: rule;
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 0 var(--space-2);
+    align-items: baseline;
+  }
+  .rules li::before {
+    content: counter(rule);
+    color: var(--accent);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+  .rules h3 { margin: 0; font-size: var(--step-0); }
+  .rules p { margin: 0.25em 0 0; grid-column: 2; max-width: 62ch; color: var(--ink-muted); }
+</style>

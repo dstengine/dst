@@ -1,0 +1,109 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Countdown from "../../components/Countdown.astro";
+import { schedule, newsBase } from "../../content";
+import { moments } from "../../schedule";
+
+const daily = moments.filter((m) => "daily" in m.recurs);
+const days = moments.filter((m) => !("daily" in m.recurs));
+---
+<Layout title={schedule.title} description={schedule.description}>
+  <section class="container hero">
+    <h1>{schedule.h1}</h1>
+    <p class="lede">{schedule.lede}</p>
+    <p class="subscribe">
+      <a class="button" href="/tea-times.ics" download="tea-times.ics" title="Every tea time and tea day as one calendar file, with reminders">Add all tea times to my calendar</a>
+    </p>
+  </section>
+
+  {[
+    { id: "daily", heading: "Every day", note: "On your own clock, wherever you are.", list: daily },
+    { id: "days", heading: "Tea days of the year", note: "From midnight to midnight, your time.", list: days },
+  ].map((group) => (
+    <section class="container moments" aria-labelledby={`${group.id}-heading`}>
+      <h2 id={`${group.id}-heading`}>{group.heading}</h2>
+      <p class="moments-note">{group.note}</p>
+      <ol class="moment-list" data-sort>
+        {group.list.map((m) => (
+          <li class="moment" id={m.slug}>
+            <h3>{m.name}</h3>
+            <p class="moment-meta">{m.when}{m.origin && <> · {m.origin}</>}</p>
+            <Countdown recurs={m.recurs} />
+            <p class="moment-text">{m.text}</p>
+            <p class="moment-actions">
+              <a
+                class="button button-secondary"
+                href={`/schedule/${m.slug}.ics`}
+                download={`${m.slug}.ics`}
+                title={`${m.name} as a calendar entry with a reminder`}
+              >Remind me</a>
+              {m.guide && (
+                <a href={`${newsBase}${m.guide.slug}/`} title={`${m.guide.label} — a tea guide`}>{m.guide.label}</a>
+              )}
+            </p>
+          </li>
+        ))}
+      </ol>
+    </section>
+  ))}
+
+  <section class="container moments-how">
+    <h2>How the reminders work</h2>
+    <p>"Remind me" downloads a small calendar file. Open it and your phone or computer adds the tea time to your own calendar, repeating, with an alarm: five minutes before each daily tea time — long enough to boil a kettle — and at nine in the morning on a tea day. Nothing is sent to us, and nobody needs your email address.</p>
+  </section>
+</Layout>
+
+<script>
+  // Soonest first, on the reader's clock. The countdown script has already
+  // stamped each one with its next start; the order in the HTML is the
+  // order of the day, which is the right fallback without a clock.
+  const sort = () => {
+    for (const list of document.querySelectorAll<HTMLElement>("[data-sort]")) {
+      const items = [...list.children] as HTMLElement[];
+      const start = (li: HTMLElement) => Number(li.querySelector<HTMLElement>(".countdown")?.dataset.start ?? Infinity);
+      items.sort((a, b) => start(a) - start(b)).forEach((li) => list.appendChild(li));
+    }
+  };
+  // After the countdowns' first tick, which runs as the page loads.
+  requestAnimationFrame(sort);
+  setInterval(sort, 60_000);
+</script>
+
+<style>
+  .subscribe { margin-top: var(--space-3); }
+  .moments { margin-top: var(--space-4); }
+  .moments h2 { margin-bottom: 0; }
+  .moments-note { margin: 0.25em 0 var(--space-3); color: var(--ink-muted); }
+  .moment-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-3);
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+  }
+  .moment {
+    padding: var(--space-3);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    scroll-margin-top: 5rem;
+  }
+  .moment:target { border-color: var(--accent); }
+  .moment h3 { margin: 0; font-size: var(--step-1); }
+  .moment-meta { margin: 0; color: var(--ink-muted); font-size: var(--step--1); }
+  .moment-text { margin: var(--space-1) 0 0; }
+  .moment-actions {
+    margin: auto 0 0;
+    padding-top: var(--space-2);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2);
+  }
+  .moments-how { margin-block: var(--space-5) var(--space-4); }
+  .moments-how p { max-width: 62ch; color: var(--ink-muted); }
+</style>

@@ -26509,6 +26509,424 @@
       ]
     }
   },
+  "tea.ceo": {
+    "/covers/about.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/about-480.avif"
+        ],
+        [
+          768,
+          "/covers/about-768.avif"
+        ],
+        [
+          1024,
+          "/covers/about-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/about-480.webp"
+        ],
+        [
+          768,
+          "/covers/about-768.webp"
+        ],
+        [
+          1024,
+          "/covers/about-1024.webp"
+        ]
+      ]
+    },
+    "/covers/afternoon-tea-vs-high-tea.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/afternoon-tea-vs-high-tea-480.avif"
+        ],
+        [
+          768,
+          "/covers/afternoon-tea-vs-high-tea-768.avif"
+        ],
+        [
+          1024,
+          "/covers/afternoon-tea-vs-high-tea-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/afternoon-tea-vs-high-tea-480.webp"
+        ],
+        [
+          768,
+          "/covers/afternoon-tea-vs-high-tea-768.webp"
+        ],
+        [
+          1024,
+          "/covers/afternoon-tea-vs-high-tea-1024.webp"
+        ]
+      ]
+    },
+    "/covers/how-to-brew-black-tea.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/how-to-brew-black-tea-480.avif"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-black-tea-768.avif"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-black-tea-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/how-to-brew-black-tea-480.webp"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-black-tea-768.webp"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-black-tea-1024.webp"
+        ]
+      ]
+    },
+    "/covers/how-to-brew-darjeeling-tea.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/how-to-brew-darjeeling-tea-480.avif"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-darjeeling-tea-768.avif"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-darjeeling-tea-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/how-to-brew-darjeeling-tea-480.webp"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-darjeeling-tea-768.webp"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-darjeeling-tea-1024.webp"
+        ]
+      ]
+    },
+    "/covers/how-to-brew-dragon-well-longjing-tea.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/how-to-brew-dragon-well-longjing-tea-480.avif"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-dragon-well-longjing-tea-768.avif"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-dragon-well-longjing-tea-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/how-to-brew-dragon-well-longjing-tea-480.webp"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-dragon-well-longjing-tea-768.webp"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-dragon-well-longjing-tea-1024.webp"
+        ]
+      ]
+    },
+    "/covers/how-to-brew-green-tea.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/how-to-brew-green-tea-480.avif"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-green-tea-768.avif"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-green-tea-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/how-to-brew-green-tea-480.webp"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-green-tea-768.webp"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-green-tea-1024.webp"
+        ]
+      ]
+    },
+    "/covers/how-to-brew-oolong-tea.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/how-to-brew-oolong-tea-480.avif"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-oolong-tea-768.avif"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-oolong-tea-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/how-to-brew-oolong-tea-480.webp"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-oolong-tea-768.webp"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-oolong-tea-1024.webp"
+        ]
+      ]
+    },
+    "/covers/how-to-brew-pu-erh-tea.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/how-to-brew-pu-erh-tea-480.avif"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-pu-erh-tea-768.avif"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-pu-erh-tea-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/how-to-brew-pu-erh-tea-480.webp"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-pu-erh-tea-768.webp"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-pu-erh-tea-1024.webp"
+        ]
+      ]
+    },
+    "/covers/how-to-brew-sencha.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/how-to-brew-sencha-480.avif"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-sencha-768.avif"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-sencha-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/how-to-brew-sencha-480.webp"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-sencha-768.webp"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-sencha-1024.webp"
+        ]
+      ]
+    },
+    "/covers/how-to-brew-white-tea.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/how-to-brew-white-tea-480.avif"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-white-tea-768.avif"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-white-tea-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/how-to-brew-white-tea-480.webp"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-white-tea-768.webp"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-white-tea-1024.webp"
+        ]
+      ]
+    },
+    "/covers/how-to-make-a-proper-cup-of-tea.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/how-to-make-a-proper-cup-of-tea-480.avif"
+        ],
+        [
+          768,
+          "/covers/how-to-make-a-proper-cup-of-tea-768.avif"
+        ],
+        [
+          1024,
+          "/covers/how-to-make-a-proper-cup-of-tea-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/how-to-make-a-proper-cup-of-tea-480.webp"
+        ],
+        [
+          768,
+          "/covers/how-to-make-a-proper-cup-of-tea-768.webp"
+        ],
+        [
+          1024,
+          "/covers/how-to-make-a-proper-cup-of-tea-1024.webp"
+        ]
+      ]
+    },
+    "/covers/how-to-make-earl-grey-tea.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/how-to-make-earl-grey-tea-480.avif"
+        ],
+        [
+          768,
+          "/covers/how-to-make-earl-grey-tea-768.avif"
+        ],
+        [
+          1024,
+          "/covers/how-to-make-earl-grey-tea-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/how-to-make-earl-grey-tea-480.webp"
+        ],
+        [
+          768,
+          "/covers/how-to-make-earl-grey-tea-768.webp"
+        ],
+        [
+          1024,
+          "/covers/how-to-make-earl-grey-tea-1024.webp"
+        ]
+      ]
+    },
+    "/covers/how-to-make-matcha.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/how-to-make-matcha-480.avif"
+        ],
+        [
+          768,
+          "/covers/how-to-make-matcha-768.avif"
+        ],
+        [
+          1024,
+          "/covers/how-to-make-matcha-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/how-to-make-matcha-480.webp"
+        ],
+        [
+          768,
+          "/covers/how-to-make-matcha-768.webp"
+        ],
+        [
+          1024,
+          "/covers/how-to-make-matcha-1024.webp"
+        ]
+      ]
+    }
+  },
   "tick.am": {
     "/covers/about.jpg": {
       "width": 1536,

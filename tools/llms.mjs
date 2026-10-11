@@ -27,6 +27,8 @@ const SITES = {
   sol2go: { host: "sol2go.lol", news: "news", events: "events", newsLabel: "News", eventsLabel: "Events" },
   // No events: a section with no entries prints nothing.
   aivideo: { host: "aivideo.zone", news: "news", events: "events", newsLabel: "News", eventsLabel: "Events" },
+  // Guides rather than news, under /guides/; no events either.
+  tea: { host: "tea.ceo", news: "guides", events: "events", newsLabel: "Guides", eventsLabel: "Events" },
   vien: { host: "vien.lol", news: "nachrichten", events: "veranstaltungen", newsLabel: "Nachrichten", eventsLabel: "Termine" },
   ldn: { host: "ldn.lol", news: "news", events: "events", newsLabel: "News", eventsLabel: "Events" },
   lnd: { host: "lnd.lol", news: "news", events: "events", newsLabel: "News", eventsLabel: "Events" },

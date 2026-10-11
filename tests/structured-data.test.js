@@ -20,6 +20,8 @@ const APPS = ["dst", "llc", "visas", "riviera", "mbr", "palmcentral", "eco", "fw
   "nyc42", "ldn", "lnd", "cmx", "mxo", "sol2go", "vien", "tick",
   // AI video news, which publishes itself.
   "aivideo",
+  // Tea guides and tea times, which publishes itself.
+  "tea",
   // A tour archive on its own vvm.space host, tied to neither the group nor
   // the .lol five.
   "tokiohotel"];
@@ -41,6 +43,7 @@ const PUBLISHER = {
   cmx: "https://cmx.lol/#organization",
   mxo: "https://mxo.lol/#organization",
   aivideo: "https://aivideo.zone/#organization",
+  tea: "https://tea.ceo/#organization",
   tokiohotel: "https://tokiohotel.vvm.space/#organization",
 };
 const publisherFor = (app) => PUBLISHER[app] ?? ORGANIZATION_ID;

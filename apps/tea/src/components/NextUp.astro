@@ -1,0 +1,100 @@
+---
+// The front page's clock: whichever tea moment comes round next on the
+// reader's own clock. Chosen in the browser for the same reason the count
+// is — the build does not know what time it is where the reader sits — so
+// the HTML names the calendar instead, which is right at any hour.
+import type { Moment } from "../schedule";
+
+interface Props {
+  moments: Moment[];
+}
+const { moments } = Astro.props;
+const data = moments.map(({ slug, name, recurs }) => ({ slug, name, recurs }));
+---
+<section class="container next-up" aria-labelledby="next-up-heading" data-moments={JSON.stringify(data)}>
+  <p class="next-up-eyebrow" id="next-up-heading">The next tea time</p>
+  <p class="next-up-name"><a href="/schedule/" title="The tea calendar: every tea time and tea day, counting down">See the tea calendar</a></p>
+  <p class="next-up-status" aria-live="off"></p>
+  <p class="next-up-actions">
+    <a class="button next-up-ics" href="/schedule/" title="The next tea time as a calendar file, with a reminder" hidden>Add to my calendar</a>
+    <a class="next-up-all" href="/schedule/" title="Every tea time and tea day, counting down">All tea times</a>
+  </p>
+</section>
+
+<script>
+  import { nextOccurrence, status, when } from "../clock";
+
+  const box = document.querySelector<HTMLElement>(".next-up[data-moments]");
+  if (box) {
+    const moments = JSON.parse(box.dataset.moments!) as { slug: string; name: string; recurs: never }[];
+    const name = box.querySelector<HTMLAnchorElement>(".next-up-name a")!;
+    const statusEl = box.querySelector<HTMLElement>(".next-up-status")!;
+    const ics = box.querySelector<HTMLAnchorElement>(".next-up-ics")!;
+    const tick = () => {
+      const now = new Date();
+      // A day-long tea day is "on" from midnight, which would let it shout
+      // over every tea time on its date. The next timed moment wins; a tea
+      // day leads only when it is closer than any of them.
+      const next = moments
+        .map((m) => ({ m, o: nextOccurrence(m.recurs, now) }))
+        .filter((x) => x.o && !(x.o.allDay && x.o.start <= now))
+        .sort((a, b) => a.o!.start.getTime() - b.o!.start.getTime())[0];
+      if (!next) return;
+      const s = status(next.o!, now);
+      if (name.textContent !== next.m.name) {
+        name.textContent = next.m.name;
+        name.href = `/schedule/#${next.m.slug}`;
+        name.title = `${next.m.name}: when it is, and why it is a tea time`;
+        ics.href = `/schedule/${next.m.slug}.ics`;
+        ics.title = `${next.m.name} as a calendar file, with a reminder`;
+        ics.setAttribute("download", `${next.m.slug}.ics`);
+        ics.hidden = false;
+      }
+      statusEl.textContent = s.live ? s.text : `${s.text} · ${when(next.o!, now)}`;
+      box.classList.toggle("is-live", s.live);
+    };
+    tick();
+    setInterval(tick, 1000);
+  }
+</script>
+
+<style>
+  .next-up {
+    margin-block: var(--space-3) var(--space-4);
+    padding: var(--space-3);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--accent-tint);
+  }
+  .next-up p { margin: 0; }
+  .next-up-eyebrow {
+    color: var(--ink-muted);
+    font-size: var(--step--1);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .next-up-name {
+    font-family: var(--font-display);
+    font-size: var(--step-3);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-top: var(--space-1) !important;
+  }
+  .next-up-name a { color: var(--ink-strong); text-decoration: none; }
+  .next-up-name a:hover { color: var(--accent); }
+  .next-up-status {
+    margin-top: var(--space-1) !important;
+    font-size: var(--step-1);
+    font-variant-numeric: tabular-nums;
+    color: var(--accent-ink);
+    min-height: 1.5em;
+  }
+  .next-up.is-live .next-up-status { color: var(--accent); font-weight: 700; }
+  .next-up-actions {
+    margin-top: var(--space-2) !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2);
+  }
+</style>

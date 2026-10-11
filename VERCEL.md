@@ -121,4 +121,5 @@ CLI upload carries no `.git`, so the script always builds it.
 `tick` on 11 October 2026.
 `aivideo` (aivideo.zone, AI video news, 6 October 2026) was created linked:
 an independent site like the .lol ones, no links to the network and none
-from it.
+from it. `tea` (tea.ceo, tea guides and tea times, 11 October 2026) was
+created the same way.

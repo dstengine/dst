@@ -24,6 +24,8 @@ const APPS = ["dst", "llc", "visas", "riviera", "mbr", "palmcentral", "eco", "fw
   "nyc42", "ldn", "lnd", "cmx", "mxo", "sol2go", "vien", "tick",
   // AI video news, independent of the group.
   "aivideo",
+  // Tea guides and tea times, independent of the group.
+  "tea",
   // A tour archive on its own vvm.space host, tied to neither the group nor
   // the .lol five.
   "tokiohotel"];
@@ -38,6 +40,8 @@ const OWN_DOMAINS = ["fwf.lol", "musical.today",
   "tick.am", "tick.lnd.lol",
   // AI video news.
   "aivideo.zone",
+  // Tea guides.
+  "tea.ceo",
   // The tour archive. Named exactly, not as a vvm.space wildcard: most of
   // that zone is old A records pointing at machines that are no longer ours.
   "tokiohotel.vvm.space"];
