@@ -34,7 +34,10 @@ const sectionLinks = sections([...eventsBySite(siteId), ...items]);
 // host (riviera.dst.llc/news/slug), which NewsList's same-siteId relative
 // links can't express.
 const networkCards = latestNews(
-  allNews.filter((item) => item.site !== "dst"),
+  // The group's verticals only. The .lol sites, tick, musical and aivideo
+  // are independent sites: they share code with the hub, never a footprint,
+  // and a card of theirs here had no host to link to and a bare id for a label.
+  allNews.filter((item) => item.site in SITE_HOSTS),
   9,
 ).map((item) => {
   const host = SITE_HOSTS[item.site];

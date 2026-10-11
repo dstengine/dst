@@ -36,7 +36,10 @@ const sectionLinks = sections([...items, ...newsBySite(siteId)]);
 // is worse than listing nothing. Cross-siteId detail pages live on their own
 // host, which is why this isn't EventsList.
 const networkCards = upcomingEvents(
-  allEvents.filter((item) => item.site !== "dst"),
+  // The group's verticals only. The .lol sites, tick, musical and aivideo
+  // are independent sites: they share code with the hub, never a footprint,
+  // and a card of theirs here had no host to link to and a bare id for a label.
+  allEvents.filter((item) => item.site in SITE_HOSTS),
   9,
 ).map((item) => {
   const host = SITE_HOSTS[item.site];
