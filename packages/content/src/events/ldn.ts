@@ -1279,6 +1279,113 @@ export const items: EventItem[] = [
   },
 
   {
+    slug: "barbican-ghost-tours-2026",
+    createdAt: "2026-10-11T04:17:31+04:00",
+    updatedAt: "2026-10-11T04:17:31+04:00",
+    site: "ldn",
+    image: "/covers/barbican-ghost-tours-2026.jpg",
+    imageAlt: "Two tall cream slab towers edged in red against a black night sky with a crescent moon, a small pale figure standing in the gap between them and a red door in the dark terrace below",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Barbican Ghost Tours 2026",
+    summary:
+      "Ghost Tours: the Barbican After Dark — a 75 to 90-minute evening walk through the City of London's Brutalist landmark, over Roman forts and plague pits to the Library Stack Rooms. 8 October to 13 December 2026, age 12+, £26.50 standard.",
+    start: "2026-10-08",
+    end: "2026-12-13",
+    utcOffset: "+01:00",
+    venue: "Barbican Centre, Silk Street",
+    city: "London",
+    country: "United Kingdom",
+    geo: {
+      name: "Barbican Centre, London",
+      lat: 51.5198645,
+      lng: -0.0938978,
+    },
+    organizer: "Barbican Centre",
+    category: "Architecture",
+    tickets: { priceFrom: 19.5, priceTo: 26.5, currency: "GBP" },
+    ticket: {
+      url: "https://www.barbican.org.uk/whats-on/2026/event/ghost-tours-the-barbican-after-dark",
+      label: "Check dates and book at the Barbican",
+    },
+    source: {
+      name: "Barbican Centre",
+      url: "https://www.barbican.org.uk/whats-on/2026/event/ghost-tours-the-barbican-after-dark",
+      verifiedOn: "2026-10-11",
+    },
+    body: [
+      "A concrete arts centre from the 1970s is not where most people would look for a haunting, and the Barbican knows it — that is the hook of its own ghost tour. The estate sits on close to two thousand years of the City: a Roman fort, burial grounds, plague pits, fire, war and ruin. After dark, a guide walks you over all of it, and through the stories the building's own staff tell.",
+      "## Dates and times",
+      "<strong>Thursday 8 October to Sunday 13 December 2026</strong>. Tours leave on the hour in the evening. In most weeks they run Wednesday to Sunday, usually at <strong>6pm and 8pm</strong> midweek, <strong>8pm</strong> on Thursdays and, from mid-November, <strong>5pm and 7pm</strong> at weekends. Over half term, <strong>24 October to 1 November</strong>, there are tours every evening, and on <strong>Halloween</strong> six of them, from 4pm to the last at 9pm. The Barbican adds dates as it goes, aiming for about a month ahead.",
+      "## What is left",
+      "When we checked on <strong>11 October</strong>, every tour in October was <strong>sold out</strong>, Halloween night included. The first free place was at <strong>7pm on Sunday 1 November</strong>. Through November there were places on most weekends and on several Wednesdays and Fridays, and in December every date had one except the two Thursdays.",
+      "## The tour",
+      "It starts at the Tours Meeting Point outside <strong>the Barbican Shop on Level G</strong>, where you show your e-ticket, and lasts <strong>75 to 90 minutes</strong>, part of it outdoors. Between the Roman and plague history come the staff accounts: voices, figures glimpsed and gone, noises with no source, in spaces that change once the building empties for the night. It ends in the <strong>Library Stack Rooms</strong>, which the Barbican says have decades of sightings of their own.",
+      "## Before you book",
+      "The age guidance is <strong>12+</strong>, for themes of death, plague and the supernatural. The route has steps and uneven ground and is <strong>not wheelchair accessible</strong> at present; the Barbican's access team will advise on dates for a wheelchair-accessible tour. Dress for the weather.",
+      "## Tickets",
+      "Standard <strong>£26.50</strong>, of which £1.50 is the transaction fee. Under-16s and unwaged visitors pay <strong>£19.50</strong>, students <strong>£21.50</strong>, and access tickets are £19.50 with a free essential companion. Members pay <strong>£20</strong>, and Young Barbican — free to join for 16 to 29-year-olds — <strong>£8</strong>, both subject to availability. The £1.50 fee is charged per transaction rather than per ticket, and not at all when you book in person.",
+    ],
+    programme: [
+      {
+        heading: "Wednesday to Sunday evenings, most weeks",
+        text: "Tours on the hour, usually 6pm and 8pm midweek, 8pm on Thursdays, and 5pm and 7pm at weekends from 14 November.",
+      },
+      {
+        heading: "24 October to 1 November — half term",
+        text: "Tours every evening, Monday and Tuesday included.",
+      },
+      {
+        heading: "Saturday 31 October — Halloween",
+        text: "Six tours, on the hour from 4pm to 9pm. All sold out on 11 October.",
+      },
+      {
+        heading: "Sunday 13 December — last tours",
+        text: "5pm and 7pm.",
+      },
+    ],
+    faq: [
+      {
+        q: "When are the Barbican ghost tours?",
+        a: "From <strong>8 October to 13 December 2026</strong>, in the evening, on the hour — most weeks Wednesday to Sunday, and every evening over half term.",
+      },
+      {
+        q: "How much is a Barbican ghost tour?",
+        a: "<strong>£26.50</strong> standard, including a £1.50 transaction fee. Under-16s and unwaged £19.50, students £21.50, members £20, Young Barbican £8.",
+      },
+      {
+        q: "Is there a ghost tour on Halloween night?",
+        a: "Yes — six on 31 October, from 4pm to 9pm. All six were sold out when we checked on 11 October.",
+      },
+      {
+        q: "Can children go on the Barbican ghost tour?",
+        a: "The age guidance is <strong>12+</strong>, because the tour deals with death, plague and the supernatural.",
+      },
+      {
+        q: "How long is the tour and where does it start?",
+        a: "75 to 90 minutes, partly outdoors. It starts outside the Barbican Shop on Level G and ends in the Library Stack Rooms.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/halloween-leadenhall-market-2026/",
+        eyebrow: "Leadenhall Market",
+        title: "Halloween at Leadenhall Market",
+        text: "Another evening walk through the City's stranger history, Wednesdays and Fridays in October, £8.30.",
+      },
+      {
+        href: "/events/halloween-tower-of-london-2026/",
+        eyebrow: "Tower of London",
+        title: "Halloween at the Tower of London",
+        text: "Ghosts in daylight over half term, included with admission.",
+      },
+    ],
+    expertise:
+      "Book November, not Halloween. By 11 October the whole of October had gone, half term and the night itself included, while the weeks after still had room — and nothing on the Barbican's page sets the Halloween tours apart from the rest. November may be the better month for it anyway: once the clocks go back on 25 October, even a 5pm tour starts in the dark. If you are 16 to 29, join Young Barbican before you book; it costs nothing and turns £26.50 into £8 where those places are left. And book a group in one go, since the £1.50 fee is per transaction, not per ticket.",
+  },
+
+  {
     slug: "winnie-the-pooh-at-london-zoo-2026",
     createdAt: "2026-10-04T09:37:30+04:00",
     updatedAt: "2026-10-04T09:37:30+04:00",
