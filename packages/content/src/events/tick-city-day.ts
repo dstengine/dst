@@ -576,7 +576,7 @@ export const items: EventItem[] = [
   {
     slug: "yerevan-city-day-afterparty-forty44-2026",
     createdAt: "2026-10-11T00:10:00+04:00",
-    updatedAt: "2026-10-11T00:55:00+04:00",
+    updatedAt: "2026-10-11T04:35:00+04:00",
     site: "tick",
     title: "TooTall @ Friends․ հրաժեշտի house երեկույթ Forty44-ում",
     cardTitle: "Երևանի օրից հետո՝ house Forty44-ում",
@@ -587,6 +587,7 @@ export const items: EventItem[] = [
     startTime: "22:00",
     displayHours: true,
     dateInImage: true,
+    editorsChoice: true,
     utcOffset: "+04:00",
     city: "Երևան",
     country: "Հայաստան",

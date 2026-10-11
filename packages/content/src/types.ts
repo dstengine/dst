@@ -247,6 +247,12 @@ export interface EventItem extends ItemBase {
   // two dates on one cover is worse than none. The meta line under the
   // cover still carries the date, and the hours if `displayHours` is set.
   dateInImage?: boolean;
+  // The editors would go themselves. A mark on the card, nothing more: it
+  // does not reorder a list or lift the event into a block. Kept for a
+  // short list of venues whose own nights the site follows — on tick,
+  // Forty44 and MOCT — and set per entry, because not every night a
+  // venue we like puts on is one we would send a reader to.
+  editorsChoice?: boolean;
   // Fixed offset, not an IANA zone: the UAE has no daylight saving, so
   // +04:00 is correct year-round and needs no zone database to resolve.
   // Set explicitly for an event held outside the Gulf.

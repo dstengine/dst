@@ -50,6 +50,11 @@ export interface FeedCardItem {
       card is worse than none. Ignored without an image. The generated
       covers carry no lettering; an organiser's poster usually does. */
   dateInImage?: boolean;
+  /** The editors would go themselves: a mark in the corner of the cover.
+      On the cover rather than in the meta line, whose rows of rubric, date
+      and hours were measured to the character and have no room for a
+      fourth chip. */
+  editorsChoice?: boolean;
   /** Marks an event that has already happened. */
   past?: boolean;
   /** Clock hours, "13:00–22:00" or "21:00", for an event that asked for
@@ -115,6 +120,7 @@ const parts = (iso: string) => {
             {item.image && (
               <Photo class:list={[item.imageFit === "cover" && "feed-cover-fill"]} src={item.image} alt={item.imageAlt ?? ""} sizes="(max-width: 700px) 100vw, 380px" />
             )}
+            {item.editorsChoice && <span class="feed-pick">{L.editorsChoice}</span>}
             {dated(item) && (
               <div class="feed-date" aria-hidden="true">
                 <span class="feed-date-day">{when.day}</span>
@@ -316,6 +322,24 @@ const parts = (iso: string) => {
     color: #fff;
   }
   .feed-cover-backed .feed-date > * { position: relative; }
+
+  /* Solid, not tinted: it sits over a poster as often as over the date
+     plate, and a translucent chip over somebody else's lettering is
+     unreadable. Above the scrim, which is the next layer down. */
+  .feed-pick {
+    position: absolute;
+    top: var(--space-2);
+    left: var(--space-2);
+    z-index: 1;
+    padding: 0.2em 0.6em;
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--accent-ink);
+    font-size: var(--step--1);
+    font-weight: 600;
+    line-height: 1.3;
+    white-space: nowrap;
+  }
 
   .feed-cover-date {
     background: var(--accent-tint);

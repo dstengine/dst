@@ -132,6 +132,8 @@ export interface ArticleLabels {
   /** Chip on one card that has. Separate from the heading above because a
       language that inflects for number needs a singular here. */
   past: string;
+  /** Corner mark on the card of an event the editors would go to themselves. */
+  editorsChoice: string;
   /** Title attribute on the map iframe, given the place's name. */
   mapTitle: (place: string) => string;
   /** The button under the map that opens the route in Google Maps, and its
@@ -208,6 +210,7 @@ export const EN: ArticleLabels = {
   subscribeCalendarNote: "Every date on this page, kept up to date in your own calendar.",
   subscribeCalendarTitle: "Opens your calendar app and subscribes to these dates",
   past: "Past",
+  editorsChoice: "Editors' choice",
   mapTitle: (place) => `Map — ${place}`,
   directions: "Directions",
   directionsTitle: (place) => (place ? `The way to ${place}, in Google Maps` : "The way there, in Google Maps"),
@@ -290,6 +293,7 @@ export const ES: Partial<ArticleLabels> = {
   subscribeCalendarNote: "Todas las fechas de esta página, siempre al día en tu calendario.",
   subscribeCalendarTitle: "Abre tu app de calendario y se suscribe a estas fechas",
   past: "Pasado",
+  editorsChoice: "Elección del editor",
   mapTitle: (place) => `Mapa — ${place}`,
   directions: "Cómo llegar",
   directionsTitle: (place) => (place ? `Ruta a ${place} en Google Maps` : "La ruta en Google Maps"),
@@ -363,6 +367,7 @@ export const DE: Partial<ArticleLabels> = {
   subscribeCalendarNote: "Alle Termine dieser Seite, laufend aktuell im eigenen Kalender.",
   subscribeCalendarTitle: "Öffnet die Kalender-App und abonniert diese Termine",
   past: "Vorbei",
+  editorsChoice: "Tipp der Redaktion",
   mapTitle: (place) => `Karte — ${place}`,
   directions: "Route",
   directionsTitle: (place) => (place ? `Der Weg zu ${place} in Google Maps` : "Der Weg dorthin in Google Maps"),
@@ -447,6 +452,7 @@ export const HY: Partial<ArticleLabels> = {
   subscribeCalendarNote: "Այս էջի բոլոր ամսաթվերը՝ միշտ թարմ, ձեր սեփական օրացույցում։",
   subscribeCalendarTitle: "Բացում է օրացույցի հավելվածը և բաժանորդագրում այս ամսաթվերին",
   past: "Անցած",
+  editorsChoice: "Խմբագրի ընտրություն",
   mapTitle: (place) => `Քարտեզ — ${place}`,
   directions: "Ինչպես հասնել",
   directionsTitle: (place) => (place ? `Երթուղին դեպի ${place}՝ Google Maps-ում` : "Երթուղին՝ Google Maps-ում"),

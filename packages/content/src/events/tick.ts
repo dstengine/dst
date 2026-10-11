@@ -18,7 +18,7 @@ export const items: EventItem[] = [
   {
     slug: "moct-clubnight-yerevan-2026-10-09",
     createdAt: "2026-10-09T04:11:00+04:00",
-    updatedAt: "2026-10-10T06:20:00+04:00",
+    updatedAt: "2026-10-11T04:35:00+04:00",
     site: "tick",
     title: "MOCT-ի սեզոնի բացումը՝ STAOX-ի մասնակցությամբ",
     cardTitle: "MOCT Clubnight",
@@ -33,6 +33,7 @@ export const items: EventItem[] = [
     organizer: "MOCT",
     category: "Երեկույթներ",
     image: "/covers/moct-clubnight-yerevan-2026-10-09.jpg",
+    editorsChoice: true,
     imageAlt: "MOCT Club 2026-ի սեզոնի բացման կապույտ պաստառը՝ հոկտեմբերի 9-ի ծրագրով և արտիստների անուններով",
     imageKind: "illustration",
     imageCredit: "MOCT",
@@ -2664,13 +2665,13 @@ export const items: EventItem[] = [
   {
     slug: "ghapama-night-epos-yerevan-2026",
     createdAt: "2026-10-11T00:45:00+04:00",
-    updatedAt: "2026-10-11T00:45:00+04:00",
+    updatedAt: "2026-10-11T04:36:00+04:00",
     site: "tick",
     title: "«Հե՜յ, ջան ղափամա»․ ղափամայի երեկո Էպոսում",
     titleSeo: "Հելոուինի գիշերը՝ ղափամա Էպոսում, հոկտեմբերի 31",
     cardTitle: "Ղափամայի երեկո Էպոսում",
     summary:
-      "Հոկտեմբերի 31-ին՝ Հելոուինի գիշերը, Էպոսը (Աբովյան 10) ժամը 20:00-ից նշում է ղափամայի տոնը՝ Mohana-ի հայկական ֆոլկով և ժամանակակից ռիթմերով։ Մուտքը՝ 5000 դրամ։",
+      "Հոկտեմբերի 31-ին՝ Հելոուինի գիշերը, Երևանի Էպոսը (Աբովյան 10) ժամը 20:00-ից նշում է ղափամայի տոնը՝ Mohana-ի հայկական ֆոլկով և ժամանակակից ռիթմերով։ Մուտքը՝ 5000 դրամ։",
     start: "2026-10-31",
     startTime: "20:00",
     displayHours: true,
@@ -2712,7 +2713,7 @@ export const items: EventItem[] = [
         titleSeo: "Halloween night in Yerevan: ghapama and folk at Epos",
         cardTitle: "Ghapama night at Epos",
         summary:
-          "On 31 October, Halloween night, Epos at 10 Abovyan Street holds its ghapama evening from 20:00, with Armenian folk and modern rhythms from Mohana. Entry is 5,000 drams.",
+          "On 31 October, Halloween night, Epos at 10 Abovyan Street, Yerevan, holds its ghapama evening from 20:00, with Armenian folk and modern rhythms from Mohana. Entry is 5,000 drams.",
         city: "Yerevan",
         country: "Armenia",
         venue: "Epos, 10 Abovyan Street",

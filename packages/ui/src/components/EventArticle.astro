@@ -151,6 +151,7 @@ const moreCards = more
     hours: promoted && other.category === promoted.key && item.category !== promoted.key ? undefined : cardHours(other),
     countdown: cardCountdown(other),
     dateInImage: other.dateInImage,
+    editorsChoice: other.editorsChoice,
     past: hasEnded(other, todayIso),
   }));
 
