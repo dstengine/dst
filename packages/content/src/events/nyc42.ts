@@ -415,7 +415,7 @@ export const items: EventItem[] = [
   {
     slug: "park-slope-halloween-parade-2026",
     createdAt: "2026-10-11T01:15:13+04:00",
-    updatedAt: "2026-10-11T01:15:13+04:00",
+    updatedAt: "2026-10-12T02:45:00+04:00",
     site: "nyc42",
     image: "/covers/park-slope-halloween-parade-2026.jpg",
     imageAlt: "A long avenue between rows of brownstones lined with glowing pumpkins and paper lanterns, a large jack-o'-lantern face in a starry night sky",
@@ -481,6 +481,12 @@ export const items: EventItem[] = [
         title: "Village Halloween Parade",
         text: "The same night at 7pm, up Sixth Avenue in Manhattan: free to watch, free to march in costume.",
       },
+      {
+        href: "/events/rawayana-barclays-center-2026/",
+        eyebrow: "Prospect Heights",
+        title: "Rawayana at Barclays Center",
+        text: "The same evening at 7pm, a quarter of an hour's walk from the parade's end: the Venezuelan band's world tour.",
+      },
     ],
     expertise:
       "Half an hour and a river separate the two parades, and that is the choice a family has to make: the Village at 7pm is a spectacle with crowds to match, Park Slope at 6:30 is an evening a small child can actually walk in. The line-up begins at 6pm at the 14th Street end, so arrive there rather than somewhere along the route if the point is to march, and plan the afternoon on the side streets — the 8th, 11th and 17th Street blocks have their own Trick-or-Streets closures from early afternoon, and Montgomery Place and Polhemus Place open earlier still.",
@@ -489,7 +495,7 @@ export const items: EventItem[] = [
   {
     slug: "village-halloween-parade-2026",
     createdAt: "2026-08-30T23:32:06+04:00",
-    updatedAt: "2026-10-12T00:47:00+04:00",
+    updatedAt: "2026-10-12T02:45:00+04:00",
     updates: [
       {
         on: "2026-10-04",
@@ -551,6 +557,12 @@ export const items: EventItem[] = [
         eyebrow: "All five boroughs",
         title: "Trick-or-Streets",
         text: "160 car-free streets and plazas through October, with trick-or-treating and block parties, most of them on the 31st.",
+      },
+      {
+        href: "/events/harry-styles-madison-square-garden-final-night-2026/",
+        eyebrow: "Midtown",
+        title: "Harry Styles at Madison Square Garden",
+        text: "The same night, sixteen blocks north of the parade's end: the thirtieth and last show of the residency.",
       },
     ],
     expertise:
@@ -2247,5 +2259,145 @@ export const items: EventItem[] = [
     ],
     expertise:
       "This is a morning event, which sets it apart from almost everything else on the New York Halloween calendar: the parade steps off at eleven, while the Festival Block on East 6th Street keeps going until four. So the half hour before the start decides how much of the parade you see, and the afternoon is the forgiving part.",
+  },
+
+  {
+    slug: "harry-styles-madison-square-garden-final-night-2026",
+    createdAt: "2026-10-12T02:45:00+04:00",
+    updatedAt: "2026-10-12T02:45:00+04:00",
+    site: "nyc42",
+    image: "/covers/harry-styles-madison-square-garden-final-night-2026.jpg",
+    imageAlt: "A round drum-shaped arena at night wrapped in glowing orange bands of light, a dark street leading up to it, a crescent moon and a few bats in the sky",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Harry Styles at Madison Square Garden: the final night",
+    titleSeo: "Harry Styles's last Madison Square Garden night, New York",
+    summary:
+      "The last of Harry Styles's 30 nights at Madison Square Garden in New York falls on Halloween, Saturday 31 October 2026: the close of the Together, Together residency and his only US dates this year.",
+    start: "2026-10-31",
+    utcOffset: "-04:00",
+    city: "New York City",
+    venue: "Madison Square Garden, 4 Pennsylvania Plaza",
+    geo: { name: "Madison Square Garden", lat: 40.750513, lng: -73.993516 },
+    category: "Concert",
+    organizer: "Madison Square Garden Entertainment",
+    source: {
+      name: "MSG Entertainment",
+      url: "https://www.msgentertainment.com/?p=8937",
+      verifiedOn: "2026-10-12",
+    },
+    body: [
+      "Harry Styles has been playing Madison Square Garden three nights a week since the end of August. The thirtieth and last of those nights is <strong>Saturday 31 October 2026</strong>, and the calendar has put it on Halloween.",
+      "## The residency",
+      "<strong>Harry Styles: Together, Together</strong> has played the Garden on Wednesdays, Fridays and Saturdays since <strong>26 August</strong>. MSG Entertainment says the thirty shows are more than in any other city on the tour, and Styles's only dates in the United States this year.",
+      "## The final week",
+      "The last three nights are <strong>Wednesday 28</strong>, <strong>Friday 30</strong> and <strong>Saturday 31 October</strong>. MSG's announcement gives neither start times nor prices, so the Garden's own event listing is the place to check both before buying.",
+      "## The same night downtown",
+      "The <a href=\"/events/village-halloween-parade-2026/\" title=\"Village Halloween Parade 2026 on Sixth Avenue\">Village Halloween Parade</a> goes up Sixth Avenue from Canal Street at 7pm and ends at 15th Street, about sixteen blocks south of the Garden.",
+    ],
+    faq: [
+      {
+        q: "When is Harry Styles's last show at Madison Square Garden?",
+        a: "Saturday 31 October 2026, the thirtieth and final night of the residency.",
+      },
+      {
+        q: "How many nights did Harry Styles play at the Garden in 2026?",
+        a: "Thirty, on Wednesdays, Fridays and Saturdays from 26 August to 31 October.",
+      },
+      {
+        q: "Is Harry Styles playing anywhere else in the US in 2026?",
+        a: "No. According to MSG Entertainment, the Garden residency is his only run of US dates this year.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/village-halloween-parade-2026/",
+        eyebrow: "Greenwich Village",
+        title: "Village Halloween Parade",
+        text: "The same night at 7pm, up Sixth Avenue from Canal to 15th Street, free to watch and free to join in costume.",
+      },
+      {
+        href: "/events/rawayana-barclays-center-2026/",
+        eyebrow: "Brooklyn",
+        title: "Rawayana at Barclays Center",
+        text: "The other arena show on Halloween night: the Venezuelan band's world tour at 7pm on Atlantic Avenue.",
+      },
+    ],
+    expertise:
+      "On Halloween night the hard part is not the Garden but the streets around it. The Village parade fills Sixth Avenue below 15th Street from seven, which is when the doors at the Garden are at their busiest, and Midtown traffic is at its worst for the year. Penn Station sits directly beneath the arena, so the subway to 34th Street–Penn Station takes the avenues out of the question altogether.",
+  },
+
+  {
+    slug: "rawayana-barclays-center-2026",
+    createdAt: "2026-10-12T02:45:00+04:00",
+    updatedAt: "2026-10-12T02:45:00+04:00",
+    site: "nyc42",
+    image: "/covers/rawayana-barclays-center-2026.jpg",
+    imageAlt: "A small stage under a sweeping orange canopy strung with round lights, an acoustic guitar and a pair of conga drums standing in a pool of light",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Rawayana at Barclays Center 2026",
+    summary:
+      "Venezuelan band Rawayana bring their ¿Dónde Es El After? World Tour to Barclays Center in Brooklyn, New York, on Halloween, Saturday 31 October 2026. Show at 7pm, doors an hour earlier; tickets on Ticketmaster.",
+    start: "2026-10-31",
+    startTime: "19:00",
+    utcOffset: "-04:00",
+    city: "Brooklyn",
+    venue: "Barclays Center, 620 Atlantic Avenue",
+    geo: { name: "Barclays Center", lat: 40.682511, lng: -73.975252 },
+    category: "Concert",
+    organizer: "Barclays Center",
+    ticket: {
+      url: "https://www.ticketmaster.com/event/3000646BAB604050",
+      label: "Tickets on Ticketmaster",
+    },
+    source: {
+      name: "Barclays Center",
+      url: "https://www.barclayscenter.com/events/detail/rawayana",
+      verifiedOn: "2026-10-12",
+    },
+    body: [
+      "Rawayana, the band from Caracas, play Barclays Center on <strong>Saturday 31 October 2026</strong> on their <strong>¿Dónde Es El After?</strong> World Tour. The title asks where the after-party is, which on Halloween night in Brooklyn is a fair question.",
+      "## Times",
+      "The show is at <strong>7pm</strong>. Barclays Center opens its doors <strong>an hour before</strong> the scheduled start, so from about 6pm.",
+      "## Tickets",
+      "On sale now through Ticketmaster, linked from the arena's own page. The arena does not list prices.",
+      "## Getting there",
+      "Atlantic Av–Barclays Ctr station is right at the arena, with the 2, 3, 4, 5, B, D, N, Q and R trains, and the Long Island Rail Road comes into Atlantic Terminal across the street.",
+      "## Halloween in Brooklyn the same evening",
+      "The <a href=\"/events/park-slope-halloween-parade-2026/\" title=\"Park Slope Halloween Parade 2026\">Park Slope Halloween Parade</a> steps off on Seventh Avenue at 6:30pm and ends at 3rd Street, about a quarter of an hour's walk from the arena.",
+    ],
+    faq: [
+      {
+        q: "When do Rawayana play Barclays Center?",
+        a: "Saturday 31 October 2026, show at <strong>7pm</strong>, doors from about 6pm.",
+      },
+      {
+        q: "Where can I buy tickets?",
+        a: "Through Ticketmaster, linked from the Barclays Center event page. The arena does not publish prices.",
+      },
+      {
+        q: "How do I get to Barclays Center?",
+        a: "Atlantic Av–Barclays Ctr station, on the 2, 3, 4, 5, B, D, N, Q and R lines, is at the arena; the LIRR stops at Atlantic Terminal across the street.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/park-slope-halloween-parade-2026/",
+        eyebrow: "Park Slope",
+        title: "Park Slope Halloween Parade",
+        text: "Brooklyn's family parade up Seventh Avenue the same night, stepping off at 6:30pm. Free.",
+      },
+      {
+        href: "/events/harry-styles-madison-square-garden-final-night-2026/",
+        eyebrow: "Midtown",
+        title: "Harry Styles at Madison Square Garden",
+        text: "The other arena on Halloween night: the thirtieth and last show of the residency.",
+      },
+    ],
+    expertise:
+      "Nine subway lines meet under the arena, which is the reason to take one of them: on Halloween night the streets of Prospect Heights and Park Slope are full of trick-or-treaters and the Park Slope parade, and Flatbush Avenue is no quicker than walking. Come in costume if you like — it is the one night of the year a Brooklyn crowd will not look twice.",
   },
 ];

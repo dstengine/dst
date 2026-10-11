@@ -329,7 +329,7 @@ export const items: EventItem[] = [
   {
     slug: "gran-desfile-dia-de-muertos-2026",
     createdAt: "2026-08-30T20:37:08+04:00",
-    updatedAt: "2026-09-08T22:51:25+04:00",
+    updatedAt: "2026-10-12T02:45:00+04:00",
     featured: 2,
     site: "cmx",
     image: "/covers/gran-desfile-dia-de-muertos-2026.jpg",
@@ -388,6 +388,20 @@ export const items: EventItem[] = [
       {
         q: "¿Cuánta gente va?",
         a: "Más de <strong>un millón trescientos mil asistentes</strong>.",
+      },
+    ],
+    related: [
+      {
+        href: "/eventos/ofrenda-monumental-zocalo-2026/",
+        eyebrow: "Zócalo",
+        title: "Ofrenda Monumental del Zócalo",
+        text: "Donde termina el desfile: La Catrina de Posada en cartonería de 32 metros, del 29 de octubre al 2 de noviembre.",
+      },
+      {
+        href: "/eventos/festival-dia-de-muertos-chapultepec-2026/",
+        eyebrow: "Chapultepec",
+        title: "Festival de Día de Muertos en Chapultepec",
+        text: "El mismo fin de semana, del 30 de octubre al 1 de noviembre: Sendero del Cempasúchil, altares y drones sobre el Lago Mayor.",
       },
     ],
     expertise:
@@ -1034,5 +1048,167 @@ export const items: EventItem[] = [
     ],
     expertise:
       "El orden de la noche ya viene decidido por las reglas: los juegos mecánicos solo funcionan de 18:00 a 22:00 y nadie que haya tomado puede subirse, así que las primeras cuatro horas son para los juegos y las barras esperan. Quien llegue a las nueve con ganas de una copa tiene que elegir. Y como las barras solo aceptan tarjeta, el efectivo sirve de poco adentro.",
+  },
+
+  {
+    slug: "ofrenda-monumental-zocalo-2026",
+    createdAt: "2026-10-12T02:45:00+04:00",
+    updatedAt: "2026-10-12T02:45:00+04:00",
+    site: "cmx",
+    image: "/covers/ofrenda-monumental-zocalo-2026.jpg",
+    imageAlt: "Una catrina, un esqueleto con un gran sombrero de plumas rosas, de pie sobre un tapete de cempasúchil en una plaza enorme, frente a una catedral de dos torres y arcadas",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Ofrenda Monumental del Zócalo 2026",
+    titleSeo: "Ofrenda Monumental 2026 en el Zócalo de Ciudad de México",
+    summary:
+      "La Ofrenda Monumental de Día de Muertos en el Zócalo de Ciudad de México, del 29 de octubre al 2 de noviembre de 2026: un homenaje a La Catrina de José Guadalupe Posada, con una escultura de cartonería de 32 metros.",
+    start: "2026-10-29",
+    end: "2026-11-02",
+    utcOffset: "-06:00",
+    venue: "Zócalo (Plaza de la Constitución)",
+    city: "Ciudad de México",
+    country: "México",
+    geo: {
+      name: "Zócalo, Ciudad de México",
+      lat: 19.432647,
+      lng: -99.133199,
+    },
+    organizer: "Gobierno de la Ciudad de México",
+    category: "Día de Muertos",
+    ticket: {
+      url: "https://www.mexicocity.cdmx.gob.mx/e/dia-de-muertos-en-la-ciudad-de-mexico/",
+      label: "Guía oficial de Día de Muertos",
+      sells: false,
+    },
+    source: {
+      name: "Turismo de la Ciudad de México",
+      url: "https://www.mexicocity.cdmx.gob.mx/e/dia-de-muertos-en-la-ciudad-de-mexico/",
+      verifiedOn: "2026-10-12",
+    },
+    body: [
+      "Cada año el Gobierno de la Ciudad levanta en el Zócalo una ofrenda a la escala de la plaza. La de 2026 está dedicada a <strong>La Catrina de José Guadalupe Posada</strong>, y su pieza central es una escultura de cartonería de <strong>32 metros de altura</strong>.",
+      "## Fechas",
+      "Del <strong>jueves 29 de octubre al lunes 2 de noviembre de 2026</strong>. La guía oficial no publica horario de visita.",
+      "## Lo que hay alrededor",
+      "La guía anuncia conciertos gratuitos y actividades culturales junto a la ofrenda, todavía sin fechas ni horarios. Del 29 de octubre al 4 de noviembre se iluminan además las fachadas de los edificios de Gobierno y de Mercaderes, en la misma plaza.",
+      "## El sábado 31",
+      "Ese día el <a href=\"/eventos/gran-desfile-dia-de-muertos-2026/\" title=\"Gran Desfile de Día de Muertos 2026\">Gran Desfile de Día de Muertos</a> sale a las 14:00 de la Glorieta de la Diana Cazadora y termina en el Zócalo, así que la ofrenda queda en medio de la llegada.",
+      "## Cómo llegar",
+      "La estación Zócalo/Tenochtitlan de la Línea 2 del Metro sale directamente a la plaza.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo se puede ver la Ofrenda Monumental del Zócalo 2026?",
+        a: "Del jueves 29 de octubre al lunes 2 de noviembre de 2026, en la Plaza de la Constitución.",
+      },
+      {
+        q: "¿A quién está dedicada este año?",
+        a: "A <strong>La Catrina de José Guadalupe Posada</strong>, con una escultura de cartonería de 32 metros.",
+      },
+      {
+        q: "¿Hay algo más en el Zócalo esos días?",
+        a: "Conciertos gratuitos y actividades culturales, y del 29 de octubre al 4 de noviembre la iluminación de las fachadas de los edificios de Gobierno y de Mercaderes.",
+      },
+    ],
+    related: [
+      {
+        href: "/eventos/gran-desfile-dia-de-muertos-2026/",
+        eyebrow: "De la Diana al Zócalo",
+        title: "Gran Desfile de Día de Muertos",
+        text: "El sábado 31 a las 14:00, por Reforma hasta la plaza donde está la ofrenda.",
+      },
+      {
+        href: "/eventos/festival-dia-de-muertos-chapultepec-2026/",
+        eyebrow: "Chapultepec",
+        title: "Festival de Día de Muertos en Chapultepec",
+        text: "Tres días en la Segunda Sección: Sendero del Cempasúchil, altares y drones sobre el Lago Mayor.",
+      },
+    ],
+    expertise:
+      "Cinco días de ofrenda no valen lo mismo. El sábado 31 la plaza recibe al desfile y el 1 y el 2 de noviembre son los días grandes de la fiesta, así que el jueves 29 y el viernes 30 son los días para ver la Catrina de cerca y sin empujones. Y una escultura de 32 metros se entiende mejor desde lejos: conviene verla primero desde el otro lado de la plaza y acercarse después.",
+  },
+
+  {
+    slug: "festival-dia-de-muertos-chapultepec-2026",
+    createdAt: "2026-10-12T02:45:00+04:00",
+    updatedAt: "2026-10-12T02:45:00+04:00",
+    site: "cmx",
+    image: "/covers/festival-dia-de-muertos-chapultepec-2026.jpg",
+    imageAlt: "Un lago de noche con linternas de papel encendidas flotando sobre el agua, un sendero bordeado de cempasúchil en la orilla y árboles oscuros alrededor",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Festival de Día de Muertos en Chapultepec 2026",
+    titleSeo: "Día de Muertos 2026 en Chapultepec, Ciudad de México",
+    summary:
+      "Día de Muertos en el Bosque de Chapultepec, Ciudad de México: del 30 de octubre al 1 de noviembre de 2026, el Sendero del Cempasúchil, altares, carnaval y shows de drones en la Segunda Sección. Las linternas sobre el lago se pagan aparte.",
+    start: "2026-10-30",
+    end: "2026-11-01",
+    utcOffset: "-06:00",
+    venue: "Segunda Sección del Bosque de Chapultepec",
+    city: "Ciudad de México",
+    country: "México",
+    geo: {
+      name: "Paseo de los Compositores, Bosque de Chapultepec",
+      lat: 19.413781,
+      lng: -99.200138,
+    },
+    organizer: "Festival de Día de Muertos",
+    category: "Día de Muertos",
+    ticket: {
+      url: "https://festivaldiademuertos.com/",
+      label: "Sitio del festival",
+      sells: false,
+    },
+    source: {
+      name: "Festival de Día de Muertos",
+      url: "https://festivaldiademuertos.com/",
+      verifiedOn: "2026-10-12",
+    },
+    body: [
+      "Durante tres días la Segunda Sección del Bosque de Chapultepec se vuelve un festival de Día de Muertos alrededor del Lago Mayor: el <strong>Sendero del Cempasúchil</strong>, altares y ofrendas, un carnaval, comida y shows de drones sobre el agua.",
+      "## Fechas",
+      "<strong>Viernes 30 y sábado 31 de octubre y domingo 1 de noviembre de 2026</strong>, según el sitio del festival. La guía de Día de Muertos del Gobierno de la Ciudad anuncia un festival en el mismo lugar del 29 de octubre al 4 de noviembre; las fechas que publica el propio festival son las tres de arriba.",
+      "## Horario y drones",
+      "El sitio del festival no publica horario. Natasha Uren Vázquez, directora ejecutiva del Bosque de Chapultepec, anunció de 14:00 a 22:00 los tres días, con shows de drones a las <strong>19:45</strong> y a las <strong>21:45</strong>, según Publimetro.",
+      "## Lo que cuesta",
+      "En ese mismo anuncio, la entrada general es gratuita. Lo que se paga aparte es el <strong>Water Lantern Festival</strong>: linternas que se sueltan sobre el Lago Mayor, con boletos en Fever.",
+      "## Dónde",
+      "En el Paseo de los Compositores y el Lago Mayor de la Segunda Sección. La estación de Metro más cercana es Constituyentes, en la Línea 7.",
+      "## El mismo fin de semana",
+      "El sábado 31 a las 14:00 sale el <a href=\"/eventos/gran-desfile-dia-de-muertos-2026/\" title=\"Gran Desfile de Día de Muertos 2026\">Gran Desfile de Día de Muertos</a> por Reforma, rumbo a la <a href=\"/eventos/ofrenda-monumental-zocalo-2026/\" title=\"Ofrenda Monumental del Zócalo 2026\">Ofrenda Monumental del Zócalo</a>.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo es el Festival de Día de Muertos en Chapultepec 2026?",
+        a: "El 30 y 31 de octubre y el 1 de noviembre de 2026, en la Segunda Sección del Bosque de Chapultepec.",
+      },
+      {
+        q: "¿A qué hora son los shows de drones?",
+        a: "A las <strong>19:45</strong> y a las <strong>21:45</strong> cada día, según lo anunciado por la dirección del Bosque de Chapultepec.",
+      },
+      {
+        q: "¿Cuánto cuesta?",
+        a: "La entrada general es gratuita según el anuncio; el Water Lantern Festival en el Lago Mayor se paga aparte, en Fever.",
+      },
+    ],
+    related: [
+      {
+        href: "/eventos/ofrenda-monumental-zocalo-2026/",
+        eyebrow: "Zócalo",
+        title: "Ofrenda Monumental del Zócalo",
+        text: "La Catrina de Posada en cartonería de 32 metros, del 29 de octubre al 2 de noviembre.",
+      },
+      {
+        href: "/eventos/maloween-aztlan-2026/",
+        eyebrow: "Chapultepec",
+        title: "Maloween en Aztlán",
+        text: "Una semana antes, en la misma Segunda Sección: juegos mecánicos y fiesta de Halloween para mayores de 18.",
+      },
+    ],
+    expertise:
+      "De los dos shows de drones, el de las 21:45 es el que conviene. El de las 19:45 cae a la hora en que llegan casi todas las familias y la orilla del Lago Mayor está llena; el segundo se ve con más espacio, y quien llega temprano tiene la tarde para el Sendero con luz de día, que es como mejor se ve el cempasúchil.",
   },
 ];

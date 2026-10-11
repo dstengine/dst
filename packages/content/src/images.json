@@ -1730,6 +1730,38 @@
         ]
       ]
     },
+    "/covers/festival-dia-de-muertos-chapultepec-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/festival-dia-de-muertos-chapultepec-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/festival-dia-de-muertos-chapultepec-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/festival-dia-de-muertos-chapultepec-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/festival-dia-de-muertos-chapultepec-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/festival-dia-de-muertos-chapultepec-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/festival-dia-de-muertos-chapultepec-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/festival-xochiska-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -2335,6 +2367,38 @@
         [
           1536,
           "/covers/nayarit-en-los-pinos-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/ofrenda-monumental-zocalo-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/ofrenda-monumental-zocalo-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/ofrenda-monumental-zocalo-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/ofrenda-monumental-zocalo-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/ofrenda-monumental-zocalo-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/ofrenda-monumental-zocalo-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/ofrenda-monumental-zocalo-2026-1024.webp"
         ]
       ]
     },
@@ -11347,6 +11411,38 @@
         [
           1024,
           "/covers/halloween-royal-observatory-greenwich-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/herne-hill-velodrome-halloween-fireworks-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/herne-hill-velodrome-halloween-fireworks-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/herne-hill-velodrome-halloween-fireworks-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/herne-hill-velodrome-halloween-fireworks-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/herne-hill-velodrome-halloween-fireworks-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/herne-hill-velodrome-halloween-fireworks-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/herne-hill-velodrome-halloween-fireworks-2026-1024.webp"
         ]
       ]
     },
@@ -22670,6 +22766,38 @@
         ]
       ]
     },
+    "/covers/harry-styles-madison-square-garden-final-night-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/harry-styles-madison-square-garden-final-night-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/harry-styles-madison-square-garden-final-night-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/harry-styles-madison-square-garden-final-night-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/harry-styles-madison-square-garden-final-night-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/harry-styles-madison-square-garden-final-night-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/harry-styles-madison-square-garden-final-night-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/hubble-found-a-decagon-in-its-own-old-pictures.jpg": {
       "width": 1536,
       "height": 864,
@@ -23515,6 +23643,38 @@
         [
           1024,
           "/covers/park-slope-halloween-parade-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/rawayana-barclays-center-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/rawayana-barclays-center-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/rawayana-barclays-center-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/rawayana-barclays-center-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/rawayana-barclays-center-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/rawayana-barclays-center-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/rawayana-barclays-center-2026-1024.webp"
         ]
       ]
     },
@@ -25071,6 +25231,38 @@
         [
           1536,
           "/covers/dubai-run-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/halloween-run-west-beach-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/halloween-run-west-beach-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/halloween-run-west-beach-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/halloween-run-west-beach-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/halloween-run-west-beach-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/halloween-run-west-beach-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/halloween-run-west-beach-2026-1024.webp"
         ]
       ]
     },
@@ -28288,6 +28480,38 @@
         ]
       ]
     },
+    "/covers/dream-found-yerevan-marionette-theatre-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/dream-found-yerevan-marionette-theatre-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/dream-found-yerevan-marionette-theatre-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dream-found-yerevan-marionette-theatre-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dream-found-yerevan-marionette-theatre-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/dream-found-yerevan-marionette-theatre-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dream-found-yerevan-marionette-theatre-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/elgar-enigma-variations-yerevan-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -28789,6 +29013,38 @@
         [
           1536,
           "/covers/harvest-fest-van-ardi-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/karina-arustamyan-ghapama-day-ethnograph-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/karina-arustamyan-ghapama-day-ethnograph-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/karina-arustamyan-ghapama-day-ethnograph-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/karina-arustamyan-ghapama-day-ethnograph-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/karina-arustamyan-ghapama-day-ethnograph-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/karina-arustamyan-ghapama-day-ethnograph-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/karina-arustamyan-ghapama-day-ethnograph-2026-1024.webp"
         ]
       ]
     },
@@ -29389,6 +29645,38 @@
         [
           1536,
           "/covers/nervy-yerevan-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/oh-la-la-monsieur-paul-bohem-theatre-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/oh-la-la-monsieur-paul-bohem-theatre-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/oh-la-la-monsieur-paul-bohem-theatre-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/oh-la-la-monsieur-paul-bohem-theatre-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/oh-la-la-monsieur-paul-bohem-theatre-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/oh-la-la-monsieur-paul-bohem-theatre-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/oh-la-la-monsieur-paul-bohem-theatre-2026-1024.webp"
         ]
       ]
     },
@@ -30818,6 +31106,38 @@
         ]
       ]
     },
+    "/covers/halloween-horror-night-klyo-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/halloween-horror-night-klyo-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/halloween-horror-night-klyo-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/halloween-horror-night-klyo-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/halloween-horror-night-klyo-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/halloween-horror-night-klyo-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/halloween-horror-night-klyo-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/halloween-kindermuseum-schoenbrunn-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -31071,6 +31391,38 @@
         [
           1536,
           "/covers/openai-stuft-neues-modell-als-kritisch-fuer-cybersicherheit-ein-1536.webp"
+        ]
+      ]
+    },
+    "/covers/the-nun-halloween-dome-takeover-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/the-nun-halloween-dome-takeover-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/the-nun-halloween-dome-takeover-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/the-nun-halloween-dome-takeover-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/the-nun-halloween-dome-takeover-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/the-nun-halloween-dome-takeover-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/the-nun-halloween-dome-takeover-2026-1024.webp"
         ]
       ]
     },

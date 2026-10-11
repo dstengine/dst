@@ -205,7 +205,7 @@ export const items: EventItem[] = [
   {
     slug: "blackheath-fireworks-2026",
     createdAt: "2026-09-08T16:29:32+04:00",
-    updatedAt: "2026-09-12T17:35:10+04:00",
+    updatedAt: "2026-10-12T02:45:00+04:00",
     site: "lnd",
     image: "/covers/blackheath-fireworks-2026.jpg",
     imageAlt: "A single white and yellow firework bursting over a deep navy sky",
@@ -242,6 +242,14 @@ export const items: EventItem[] = [
       "<strong>Saturday 7 November 2026</strong> on <strong>Blackheath Common</strong>, run by <strong>Slammin Events</strong> in partnership with <strong>Lewisham Council</strong>. Capacity is <strong>40,000</strong>.",
       "## Blackheath Fireworks ticket prices",
       "<strong>Adult (16+) £17.60. Youth (11–15) £11. Child (0–10) £5.50.</strong> Family packages run from <strong>£28.08 to £51.36</strong>. Tickets are sold through See Tickets and have been released; the organisers expect them to go quickly.",
+    ],
+    related: [
+      {
+        href: "/events/herne-hill-velodrome-halloween-fireworks-2026/",
+        eyebrow: "Herne Hill",
+        title: "Halloween Fireworks at Herne Hill Velodrome",
+        text: "A week earlier, on Saturday 31 October: a bonfire at 6 and fireworks at 7 over the old Olympic track, advance tickets only.",
+      },
     ],
     expertise:
       "One kindly word of warning and one of encouragement. The warning: forty thousand tickets sounds like a great many until you remember that the heath is enormous and quite dark, and the walk back down towards the station afterwards is where an evening is either pleasant or ruined — Blackheath and Greenwich stations both queue, and the buses along the A2 do rather better than either. The encouragement: a display of this size, seen from open common land rather than between buildings, is genuinely a different thing from a municipal fifteen minutes in a park, and it is the one November evening in this corner of London that is worth the cold.",
@@ -536,7 +544,7 @@ export const items: EventItem[] = [
   {
     slug: "day-of-the-dead-horniman-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-09-23T01:09:31+04:00",
+    updatedAt: "2026-10-12T02:45:00+04:00",
     site: "lnd",
     image: "/covers/day-of-the-dead-horniman-2026.jpg",
     imageAlt: "Two strings of pale bunting crossing a deep blue ground, with layered paper flowers gathered at the left end",
@@ -607,6 +615,12 @@ export const items: EventItem[] = [
         eyebrow: "Richmond upon Thames",
         title: "Halloween at Hampton Court Palace",
         text: "The same nine days, 24 October to 1 November: ghosts in the corridors, a pumpkin trail outside and costumes welcome, all included with palace admission.",
+      },
+      {
+        href: "/events/herne-hill-velodrome-halloween-fireworks-2026/",
+        eyebrow: "Herne Hill",
+        title: "Halloween Fireworks at Herne Hill Velodrome",
+        text: "The same Saturday after dark: gates at 5pm, bonfire at 6, fireworks at 7, a short ride from Forest Hill.",
       },
     ],
     expertise:
@@ -1326,5 +1340,93 @@ export const items: EventItem[] = [
     ],
     expertise:
       "The quiet nights are the clever ones. A scare attraction is a queue with frights at intervals, and on a peak Saturday in the final week the queue wins; on an off-peak Sunday to Thursday the same three houses come round far faster, and the Fast Pass becomes a luxury rather than a necessity. Do allow the full two hours, and do look up the last 132 back towards North Greenwich before setting off.",
+  },
+
+  {
+    slug: "herne-hill-velodrome-halloween-fireworks-2026",
+    createdAt: "2026-10-12T02:45:00+04:00",
+    updatedAt: "2026-10-12T02:45:00+04:00",
+    site: "lnd",
+    image: "/covers/herne-hill-velodrome-halloween-fireworks-2026.jpg",
+    imageAlt: "A banked oval cycle track at night with a bonfire burning in the middle, fireworks bursting above it, and a yellow racing bicycle and a pumpkin in the foreground",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Halloween Fireworks at Herne Hill Velodrome 2026",
+    titleSeo: "Herne Hill Velodrome Halloween Fireworks 2026, London",
+    summary:
+      "A bonfire, fire-eaters and fireworks over Herne Hill Velodrome in south London on Saturday 31 October 2026: gates at 5pm, bonfire at 6, fireworks at 7. Adults £13, under-12s £1, advance tickets only.",
+    start: "2026-10-31",
+    startTime: "17:00",
+    endTime: "21:30",
+    utcOffset: "+00:00",
+    city: "London",
+    country: "United Kingdom",
+    venue: "Herne Hill Velodrome, Burbage Road, SE24",
+    geo: { name: "Herne Hill Velodrome", lat: 51.450712, lng: -0.091766 },
+    category: "Halloween",
+    organizer: "Friends of Herne Hill Velodrome",
+    tickets: { priceFrom: 1, priceTo: 13, currency: "GBP" },
+    ticket: {
+      url: "https://fhhv.cc/pages/halloween-fireworks-1",
+      label: "Tickets from the Friends of Herne Hill Velodrome",
+    },
+    source: {
+      name: "Friends of Herne Hill Velodrome",
+      url: "https://fhhv.cc/pages/halloween-fireworks-1",
+      verifiedOn: "2026-10-12",
+    },
+    body: [
+      "Most of London waits for the fifth of November. Herne Hill does not: the Friends of Herne Hill Velodrome light their bonfire on Halloween, <strong>Saturday 31 October 2026</strong>, in the middle of the track that held the cycling at the 1948 Olympics, and put on the fireworks an hour later.",
+      "## The evening, by the clock",
+      "Gates open at <strong>5pm</strong>, the fancy dress competition is at <strong>5.45</strong>, the bonfire is lit at <strong>6</strong> and the fireworks go up at <strong>7</strong>. Fire-eaters come between the bonfire and the fireworks, an LED dance show after them, and the evening closes at <strong>9.30pm</strong>.",
+      "## Tickets",
+      "<strong>Advance only</strong>, and nothing at the gate. Adults <strong>£13</strong>, 12 to 16 <strong>£8</strong>, under-12s <strong>£1</strong>, each plus a booking fee of £1, 75p or 50p. Under-12s must come with an adult. Refunds are given only if the event is cancelled, but a ticket may be passed on to someone else.",
+      "## What to know before going",
+      "There are food and drink stalls on site; alcohol, glass and outside food are not allowed. There is no parking at the velodrome and very little nearby. The event is wheelchair accessible, and the organisers ask to be told in advance. Proceeds go to the velodrome and to cycling in the wider community.",
+      "## Getting there",
+      "Herne Hill, North Dulwich and West Dulwich stations are each a short walk away, and the 3, 37 and 201 buses run close by.",
+      "## The rest of the weekend in south London",
+      "Earlier the same day, the <a href=\"/events/day-of-the-dead-horniman-2026/\" title=\"Day of the Dead at the Horniman 2026\">Horniman's Day of the Dead</a> in Forest Hill runs from 11am to 4pm. And for those who prefer their fireworks on the traditional date, or near enough, <a href=\"/events/blackheath-fireworks-2026/\" title=\"Blackheath Fireworks 2026\">Blackheath</a> follows a week later.",
+    ],
+    programme: [
+      { heading: "5pm", text: "Gates open." },
+      { heading: "5.45pm", text: "Fancy dress competition." },
+      { heading: "6pm", text: "Bonfire lit." },
+      { heading: "6.20pm", text: "Fire-eaters." },
+      { heading: "7pm", text: "Fireworks." },
+      { heading: "7.20pm", text: "LED dance show." },
+      { heading: "9.30pm", text: "Close." },
+    ],
+    faq: [
+      {
+        q: "What time are the Herne Hill Velodrome fireworks?",
+        a: "The fireworks are at <strong>7pm</strong> on Saturday 31 October 2026. Gates open at 5pm and the bonfire is lit at 6.",
+      },
+      {
+        q: "How much are tickets, and can I buy them on the night?",
+        a: "Adults £13, 12 to 16 £8 and under-12s £1, plus a booking fee. Tickets are sold <strong>in advance only</strong>.",
+      },
+      {
+        q: "Can I drive there?",
+        a: "Best not: there is no parking at the velodrome and little nearby. Herne Hill, North Dulwich and West Dulwich stations are all within walking distance.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/day-of-the-dead-horniman-2026/",
+        eyebrow: "Forest Hill",
+        title: "Day of the Dead at the Horniman",
+        text: "The same Saturday from 11am: Aztec dancers, mariachi and a community ofrenda in the museum gardens.",
+      },
+      {
+        href: "/events/blackheath-fireworks-2026/",
+        eyebrow: "Blackheath",
+        title: "Blackheath Fireworks",
+        text: "South-east London's biggest display a week later, on Saturday 7 November, for forty thousand.",
+      },
+    ],
+    expertise:
+      "The order of the evening is kinder to small children than most firework nights. The fancy dress judging comes first, at a quarter to six, so costumes are seen while their wearers are still fresh; the fireworks are at seven rather than half past eight; and a family can be home by eight without missing anything but the LED show. Do arrive at five rather than at ten to seven, though — the gates, not the fireworks, are where the evening queues.",
   },
 ];

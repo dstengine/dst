@@ -75,7 +75,7 @@ export const items: EventItem[] = [
   {
     slug: "dubai-fitness-challenge-2026",
     createdAt: "2026-08-25T18:18:34+04:00",
-    updatedAt: "2026-10-02T23:50:36+04:00",
+    updatedAt: "2026-10-12T02:45:00+04:00",
     site: "riviera",
     image: "/covers/dubai-fitness-challenge-2026.jpg",
     imageAlt: "A running track looping through a field of low city blocks, seen from above",
@@ -98,6 +98,14 @@ export const items: EventItem[] = [
     body: [
       "Dubai Fitness Challenge returns for its tenth edition from October 31 to November 29, 2026, asking residents to commit to 30 minutes of activity a day for 30 days — the format the city knows as 30x30.",
       "The month carries the usual flagship events: <a href=\"/events/dubai-run-2026/\" title=\"Dubai Run 2026\">Dubai Run</a> on 22 November, <a href=\"/events/dubai-ride-2026/\" title=\"Dubai Ride 2026\">Dubai Ride</a> on 1 November, Dubai Stand Up Paddle on 7 and 8 November and Dubai Yoga on 29 November, plus Fitness Villages, Fitness Hubs and free community classes across the city. Registration for the individual events runs through the challenge's own official channels.",
+    ],
+    related: [
+      {
+        href: "/events/halloween-run-west-beach-2026/",
+        eyebrow: "Palm Jumeirah",
+        title: "Halloween Run 2026 at West Beach",
+        text: "The first morning of the challenge in fancy dress: 1km, 3km and 5km on West Beach from 8:30am, with trophies for costumes.",
+      },
     ],
     expertise:
       "This is a city-wide programme rather than a Riviera one, but it lands here more usefully than most: the promenade is a continuous canal-front walking route, which is exactly what a 30-minutes-a-day commitment needs and what most Dubai communities have to drive to find. Expect the promenade to be noticeably busier in the evenings through November.",
@@ -265,5 +273,76 @@ export const items: EventItem[] = [
     ],
     expertise:
       "The 8:00am cut-off is the number that actually shapes the morning. It is not a pace requirement, it is a start-line closure: a 10km walk at an easy pace still finishes inside the window if you are through the line early, and does not if you arrive at half past seven. The other thing worth knowing is that the two routes have different characters despite the shared branding \u2014 the 5km through Downtown is enclosed and shaded in patches by the towers, and the 10km on Sheikh Zayed Road is wide, open and completely exposed, which at that hour in November is pleasant and at any other hour would not be.",
+  },
+
+  {
+    slug: "halloween-run-west-beach-2026",
+    createdAt: "2026-10-12T02:45:00+04:00",
+    updatedAt: "2026-10-12T02:45:00+04:00",
+    site: "riviera",
+    image: "/covers/halloween-run-west-beach-2026.jpg",
+    imageAlt: "A wide pale beach seen from above, a dotted running route with three small red flags and little orange pumpkins curving across the sand towards a turquoise sea, palm trees and villas at the far edge",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Halloween Run 2026 at West Beach",
+    summary:
+      "A costume fun run on Palm Jumeirah's West Beach on Saturday 31 October: 1km, 3km and 5km from 8:30am, AED 75 to 99 a runner or AED 250 for a family of four, with trophies for the costumes. A Halloween morning out for families at Azizi Riviera.",
+    start: "2026-10-31",
+    startTime: "08:30",
+    utcOffset: "+04:00",
+    venue: "West Beach, Palm Jumeirah",
+    city: "Dubai",
+    country: "United Arab Emirates",
+    organizer: "RaceME",
+    category: "Sport",
+    tickets: { priceFrom: 75, priceTo: 250, currency: "AED" },
+    ticket: { url: "https://raceroster.com/events/2026/140195/halloween-run-2026", label: "Entries on Race Roster" },
+    source: {
+      name: "Race Roster: Halloween Run 2026",
+      url: "https://raceroster.com/events/2026/140195/halloween-run-2026",
+      verifiedOn: "2026-10-12",
+    },
+    body: [
+      "Halloween falls on a Saturday this year, and RaceME marks it the way Dubai does most things outdoors from October onwards: early, by the sea, and in fancy dress. The <strong>Halloween Run</strong> is a short community run on <strong>West Beach</strong>, on the trunk of Palm Jumeirah, with distances small enough for a child in a costume.",
+      "## Distances and start times",
+      "Three distances, started five minutes apart on <strong>Saturday 31 October 2026</strong>: the <strong>5km at 8:30am</strong>, the <strong>3km at 8:35am</strong> and the <strong>1km at 8:40am</strong>. Race packs are collected at West Beach on the morning, from <strong>6:30 to 8:30am</strong> — the 6:30 that Visit Dubai lists is the pack desk opening, not the start.",
+      "## Entry fees",
+      "<strong>AED 75</strong> for the 1km, <strong>AED 85</strong> for the 3km and <strong>AED 99</strong> for the 5km. A <strong>family entry at AED 250</strong> covers four runners — two adults and two children — at any of the three distances. Entries are taken on Race Roster.",
+      "## The costume prizes",
+      "Prize-giving is at <strong>9:30am</strong>, and the trophies go to costumes rather than times, in five categories: Scariest Costume, Scariest Little Monster, Most Creative Group Costume, Best Couple Costume and Funniest Costume. Finishers collect a medal, and there is coffee and breakfast from vendors at the beach.",
+      "## Getting there",
+      "Parking at West Beach is paid. The run falls on the first morning of <a href=\"/events/dubai-fitness-challenge-2026/\" title=\"Dubai Fitness Challenge 2026\">Dubai Fitness Challenge</a>, so for anyone at Azizi Riviera planning to do the thirty days properly, it is a fairly painless first day of thirty.",
+    ],
+    faq: [
+      {
+        q: "When is the Halloween Run 2026 in Dubai?",
+        a: "Saturday 31 October 2026 at West Beach, Palm Jumeirah. The 5km starts at <strong>8:30am</strong>, the 3km at 8:35 and the 1km at 8:40; race packs are collected from 6:30am.",
+      },
+      {
+        q: "How much does the Halloween Run cost?",
+        a: "AED 75 for 1km, AED 85 for 3km and AED 99 for 5km, or <strong>AED 250</strong> for a family entry of two adults and two children.",
+      },
+      {
+        q: "Are there prizes for costumes?",
+        a: "Yes. Trophies are presented at 9:30am in five costume categories, from Scariest Little Monster to Best Couple Costume.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/dubai-fitness-challenge-2026/",
+        eyebrow: "City-wide",
+        title: "Dubai Fitness Challenge 2026",
+        text: "Thirty days of thirty minutes, starting the same morning and running to 29 November, with Dubai Ride and Dubai Run inside it.",
+      },
+      {
+        href: "/events/dubai-ride-2026/",
+        eyebrow: "Sheikh Zayed Road",
+        title: "Dubai Ride 2026",
+        text: "The next morning: Sheikh Zayed Road closed to cars and open to bicycles on Sunday 1 November.",
+      },
+    ],
+    expertise:
+      "The family entry is cheaper than it looks. Four separate 1km entries come to AED 300 and four 5km entries to AED 396, so at AED 250 it saves money at every distance — but it does not solve the clock. The 5km sets off ten minutes before the 1km, so a parent running the 5km cannot also walk a small child round the 1km; with two adults, one runs and one walks, and both are back for the costume trophies at half past nine, which is the part the children will remember.",
   },
 ];

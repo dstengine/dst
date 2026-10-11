@@ -626,7 +626,7 @@ export const items: EventItem[] = [
   {
     slug: "cosmic-horrors-planetarium-wien-2026",
     createdAt: "2026-10-11T01:15:13+04:00",
-    updatedAt: "2026-10-11T01:15:13+04:00",
+    updatedAt: "2026-10-12T02:45:00+04:00",
     site: "vien",
     image: "/covers/cosmic-horrors-planetarium-wien-2026.jpg",
     imageAlt: "Ein dunkler Nachthimmel mit einem Ringplaneten und mehreren kleinen runden Planeten über breiten Streifen in Orange und Rot, unten die Rundung einer roten Kuppel, auf cremefarbenem Grund",
@@ -688,6 +688,20 @@ export const items: EventItem[] = [
       {
         q: "Ab welchem Alter ist die Show geeignet?",
         a: "Das Planetarium empfiehlt sie <strong>ab 10 Jahren</strong>.",
+      },
+    ],
+    related: [
+      {
+        href: "/veranstaltungen/halloween-horror-night-klyo-2026/",
+        eyebrow: "Urania",
+        title: "Halloween Horror Night im KLYO",
+        text: "Am selben Abend ab 17:30 Uhr: Haunted House auf der Dachterrasse, Gruseldinner, Horrorfilm und Party.",
+      },
+      {
+        href: "/veranstaltungen/the-nun-halloween-dome-takeover-2026/",
+        eyebrow: "Favoriten",
+        title: "The Nun – Halloween Dome Takeover",
+        text: "Für danach: Clubnacht im Hallmann Dome von 21 bis 4 Uhr, ab 16 Jahren.",
       },
     ],
     expertise:
@@ -939,5 +953,166 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Alle drei Termine liegen in den Herbstferien, und alle enden zu einer fixen Uhrzeit: Wer zum letzten Einlass kommt, hat bis Schluss nur noch eine Stunde für die Stationen und das Quiz. Der frühe Einlass kostet dasselbe und lässt Zeit für Fragen an die Leute im Labor, die bei so einem Nachmittag das Beste sind.",
+  },
+
+  {
+    slug: "halloween-horror-night-klyo-2026",
+    createdAt: "2026-10-12T02:45:00+04:00",
+    updatedAt: "2026-10-12T02:45:00+04:00",
+    site: "vien",
+    image: "/covers/halloween-horror-night-klyo-2026.jpg",
+    imageAlt: "Ein Kuppelbau mit Sternwarte am Flussufer unter Vollmond und Fledermäusen, davor ein gedeckter Tisch mit zwei Kerzen",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Halloween Horror Night im KLYO 2026",
+    summary:
+      "Halloween in Wien in der Urania: Haunted House auf der KLYO-Dachterrasse, ein Drei-Gänge-Gruseldinner, ein Horrorfilm im Urania-Kino und eine Party im Dachsaal, am Samstag, 31. Oktober 2026, ab 17:30 Uhr.",
+    start: "2026-10-31",
+    startTime: "17:30",
+    utcOffset: "+01:00",
+    venue: "KLYO in der Urania, Uraniastraße 1, 1010 Wien",
+    city: "Wien",
+    country: "Österreich",
+    geo: {
+      name: "Urania, Wien",
+      lat: 48.211552,
+      lng: 16.383754,
+    },
+    organizer: "KLYO Wien",
+    category: "Halloween",
+    ticket: {
+      url: "https://reserve.molzait.com/?restaurantIds=klyo-235c931426fc4af",
+      label: "Reservierung beim KLYO",
+    },
+    source: {
+      name: "Stadt Wien, Veranstaltungen",
+      url: "https://www.wien.gv.at/veranstaltungen/halloween-horror-night-2026",
+      verifiedOn: "2026-10-12",
+    },
+    body: [
+      "Das KLYO, das Restaurant in der Urania am Donaukanal, macht aus Halloween einen ganzen Abend in einem Haus: vom Dach über den Speisesaal bis ins Kino.",
+      "## Das Programm",
+      "Ab <strong>17:30 Uhr</strong> am <strong>Samstag, 31. Oktober 2026</strong>: ein <strong>Haunted House auf der Dachterrasse</strong> des KLYO, ein <strong>Drei-Gänge-Halloween-Dinner</strong>, ein <strong>Horrorfilm im Urania Theater</strong> und danach eine große <strong>Halloween-Party im Dachsaal</strong> der Wiener Urania, gehostet von Heartbreak Hotel. Dazu eine aufwendige Halloween-Dekoration im ganzen Haus.",
+      "## Dresscode",
+      "Je gruseliger, desto besser — so steht es in der Ankündigung.",
+      "## Reservierung",
+      "Plätze vergibt das KLYO über sein Reservierungssystem. Einen Preis nennt der Veranstaltungskalender der Stadt nicht, und welcher Film gezeigt wird, auch nicht.",
+      "## Anreise",
+      "Die Urania steht an der Einmündung des Wienflusses in den Donaukanal, am Ende des Stubenrings. Die nächste U-Bahn-Station ist Schwedenplatz (U1, U4).",
+      "## Halloween in Wien am selben Abend",
+      "Wer lieber ins All als ins Gruselkabinett schaut, findet von 18:30 bis 22 Uhr die <a href=\"/veranstaltungen/cosmic-horrors-planetarium-wien-2026/\" title=\"Cosmic Horrors im Planetarium Wien 2026\">Cosmic Horrors im Planetarium</a> im Prater.",
+    ],
+    faq: [
+      {
+        q: "Wann ist die Halloween Horror Night im KLYO?",
+        a: "Am Samstag, 31. Oktober 2026, ab 17:30 Uhr, im KLYO in der Urania, Uraniastraße 1.",
+      },
+      {
+        q: "Was gehört zum Abend?",
+        a: "Ein Haunted House auf der Dachterrasse, ein Drei-Gänge-Halloween-Dinner, ein Horrorfilm im Urania Theater und eine Party im Dachsaal mit Heartbreak Hotel.",
+      },
+      {
+        q: "Gibt es einen Dresscode?",
+        a: "Ja: je gruseliger, desto besser.",
+      },
+    ],
+    related: [
+      {
+        href: "/veranstaltungen/cosmic-horrors-planetarium-wien-2026/",
+        eyebrow: "Prater",
+        title: "Cosmic Horrors im Planetarium",
+        text: "Am selben Abend acht Vorstellungen zu 25 Minuten, von 18:30 bis 22 Uhr, für 5 Euro.",
+      },
+      {
+        href: "/veranstaltungen/the-nun-halloween-dome-takeover-2026/",
+        eyebrow: "Favoriten",
+        title: "The Nun – Halloween Dome Takeover",
+        text: "Für danach: Clubnacht im Hallmann Dome von 21 bis 4 Uhr, ab 16 Jahren.",
+      },
+    ],
+    expertise:
+      "Der Abend hat eine Reihenfolge, und sie beginnt mit dem Essen: Dinner, Film, Party, alles unter einem Dach. Das ist bequem, macht aber die Reservierung zum Nadelöhr, denn gebucht wird über das Tischsystem des Restaurants. Wer an einem Samstag zu Halloween zu viert oder mehr kommen will, reserviert besser früh als am Abend selbst.",
+  },
+
+  {
+    slug: "the-nun-halloween-dome-takeover-2026",
+    createdAt: "2026-10-12T02:45:00+04:00",
+    updatedAt: "2026-10-12T02:45:00+04:00",
+    site: "vien",
+    image: "/covers/the-nun-halloween-dome-takeover-2026.jpg",
+    imageAlt: "Das Innere einer riesigen dunklen Kuppelhalle, rote und grüne Lichtstrahlen kreuzen sich über einer Menge von Silhouetten und einem DJ-Pult",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "The Nun – Halloween Dome Takeover 2026",
+    summary:
+      "Halloween-Clubbing in Wien: La Viesta übernimmt am Samstag, 31. Oktober 2026, den Hallmann Dome in Favoriten, von 21 bis 4 Uhr, mit Hip-Hop, R&B und Charts. Ab 16 mit Ausweis, Tickets derzeit ab 28 Euro.",
+    start: "2026-10-31",
+    end: "2026-11-01",
+    startTime: "21:00",
+    endTime: "04:00",
+    utcOffset: "+01:00",
+    venue: "Hallmann Dome, Gutheil-Schoder-Gasse 9, 1100 Wien",
+    city: "Wien",
+    country: "Österreich",
+    geo: {
+      name: "Hallmann Dome, Wien",
+      lat: 48.162649,
+      lng: 16.338898,
+    },
+    organizer: "La Viesta",
+    category: "Halloween",
+    tickets: { priceFrom: 28, currency: "EUR" },
+    ticket: {
+      url: "https://www.laviesta.at/the-nun-dome-takeover-halloween-31-10-2026/",
+      label: "Tickets bei La Viesta",
+    },
+    source: {
+      name: "La Viesta",
+      url: "https://www.laviesta.at/the-nun-dome-takeover-halloween-31-10-2026/",
+      verifiedOn: "2026-10-12",
+    },
+    body: [
+      "Der Wiener Partyveranstalter La Viesta übernimmt zu Halloween den Hallmann Dome in Favoriten: eine Clubnacht mit dunklen Visuals, Horror-Ästhetik und viel Licht, am <strong>Samstag, 31. Oktober 2026</strong>, von <strong>21 bis 4 Uhr</strong>.",
+      "## Musik",
+      "<strong>Hip-Hop, R&amp;B und Charts</strong>, aufgelegt von mehreren DJs.",
+      "## Tickets",
+      "Die Preise steigen in Phasen. Derzeit kostet das <strong>Standard-Ticket 28 Euro</strong>, die <strong>Fast Lane 33 Euro</strong> und das <strong>VIP-Ticket 49 Euro</strong>, jeweils zuzüglich Gebühr. VIP-Tische gibt es für 4 bis 10 Personen, von 400 bis 1.000 Euro.",
+      "## Einlass",
+      "<strong>Ab 16 Jahren</strong>, und nur mit Ausweis. Einlass ab 21 Uhr.",
+      "## Davor",
+      "Wer den Abend früher beginnen will, findet ab 17:30 Uhr die <a href=\"/veranstaltungen/halloween-horror-night-klyo-2026/\" title=\"Halloween Horror Night im KLYO 2026\">Halloween Horror Night im KLYO</a> in der Urania, mit Dinner, Film und Haunted House.",
+    ],
+    faq: [
+      {
+        q: "Wann ist The Nun – Halloween Dome Takeover?",
+        a: "Am Samstag, 31. Oktober 2026, von 21 bis 4 Uhr, im Hallmann Dome, Gutheil-Schoder-Gasse 9.",
+      },
+      {
+        q: "Was kosten die Tickets?",
+        a: "Derzeit 28 Euro Standard, 33 Euro Fast Lane, 49 Euro VIP, jeweils zuzüglich Gebühr. Die Preise steigen mit jeder Phase.",
+      },
+      {
+        q: "Ab welchem Alter?",
+        a: "Ab 16 Jahren, mit Ausweis.",
+      },
+    ],
+    related: [
+      {
+        href: "/veranstaltungen/halloween-horror-night-klyo-2026/",
+        eyebrow: "Urania",
+        title: "Halloween Horror Night im KLYO",
+        text: "Der frühe Teil des Abends: Haunted House, Gruseldinner, Horrorfilm und Party, ab 17:30 Uhr.",
+      },
+      {
+        href: "/veranstaltungen/cosmic-horrors-planetarium-wien-2026/",
+        eyebrow: "Prater",
+        title: "Cosmic Horrors im Planetarium",
+        text: "Halloween unter der Kuppel im Prater: acht Vorstellungen zu 25 Minuten ab 18:30 Uhr, für 5 Euro.",
+      },
+    ],
+    expertise:
+      "Der Preis ist hier eine Frage des Zeitpunkts, nicht des Abends: Das Standard-Ticket ist schon in der dritten Phase, und jede weitere macht es teurer. Wer sicher hingeht, kauft jetzt. Und der Einlass ist erst ab 16 und nur mit Ausweis — ohne bleibt man draußen, Ticket hin oder her.",
   },
 ];
