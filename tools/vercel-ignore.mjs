@@ -174,7 +174,12 @@ export function decide({ site, from, to = "HEAD", now = new Date() }) {
   // be in the clone; one commit of it is enough to diff against.
   if (!haveCommit(from)) {
     try {
-      git(["fetch", "--quiet", "--depth=1", "origin", from], { timeout: 30_000 });
+      // A clone whose remote wants credentials fails at once instead of
+      // waiting on a prompt nobody will answer.
+      git(["fetch", "--quiet", "--depth=1", "origin", from], {
+        timeout: 30_000,
+        env: { ...process.env, GIT_TERMINAL_PROMPT: "0" },
+      });
     } catch {}
   }
   if (!haveCommit(from)) return build(`the last deployed commit ${from.slice(0, 8)} is not in this clone`);
