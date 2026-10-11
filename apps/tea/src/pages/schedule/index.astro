@@ -1,8 +1,15 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Countdown from "../../components/Countdown.astro";
-import { schedule, newsBase } from "../../content";
+import { schedule, newsBase, siteId } from "../../content";
 import { moments } from "../../schedule";
+import { newsBySite } from "@dst/content/news";
+import { newsHref } from "@dst/content/paths";
+
+// A guide may live at a short address of its own, so its link is asked of
+// the entry rather than built from the slug.
+const entries = new Map(newsBySite(siteId).map((i) => [i.slug, i]));
+const guideHref = (slug: string) => newsHref(entries.get(slug) ?? { slug }, newsBase);
 
 const daily = moments.filter((m) => "daily" in m.recurs);
 const days = moments.filter((m) => !("daily" in m.recurs));
@@ -38,7 +45,7 @@ const days = moments.filter((m) => !("daily" in m.recurs));
                 title={`${m.name} as a calendar entry with a reminder`}
               >Remind me</a>
               {m.guide && (
-                <a href={`${newsBase}${m.guide.slug}/`} title={`${m.guide.label} — a tea guide`}>{m.guide.label}</a>
+                <a href={guideHref(m.guide.slug)} title={`${m.guide.label} — a tea guide`}>{m.guide.label}</a>
               )}
             </p>
           </li>

@@ -1,4 +1,5 @@
 ---
+import { newsHref } from "@dst/content/paths";
 import ArticleBody from "./ArticleBody.astro";
 import Photo from "./Photo.astro";
 import { itemContext, authoredBy } from '../schema';
@@ -105,7 +106,7 @@ const moreCards = withPromoted(
   todayIso,
 )
   .map((other) => ({
-    href: `${newsBase}${other.slug}/`,
+    href: newsHref(other, newsBase),
     eyebrow: other.category,
     date: other.date,
     title: other.title,

@@ -52,7 +52,8 @@ export const NAV = {
 export function sections(items: NewsItem[]): Section<NewsItem>[] {
   return buildSections<NewsItem>({
     items,
-    reserved: RESERVED,
+    // A guide's short address is a page of its own too (/420/).
+    reserved: [...RESERVED, ...items.flatMap((i) => (i.path ? [i.path.replace(/\//g, "")] : []))],
     intents: INTENTS,
     // No place sections: a guide to Darjeeling is about the tea, and a
     // reader in Darjeeling wants the same page as a reader in Leeds.

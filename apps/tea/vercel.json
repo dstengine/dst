@@ -1,4 +1,21 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "ignoreCommand": "node ../../tools/vercel-ignore.mjs tea"
+  "ignoreCommand": "node ../../tools/vercel-ignore.mjs tea",
+  "redirects": [
+    {
+      "source": "/guides/the-story-of-4-20-high-tea",
+      "destination": "/420/",
+      "statusCode": 301
+    },
+    {
+      "source": "/guides/the-story-of-4-20-high-tea/",
+      "destination": "/420/",
+      "statusCode": 301
+    },
+    {
+      "source": "/guides/the-story-of-4-20-high-tea.md",
+      "destination": "/420.md",
+      "statusCode": 301
+    }
+  ]
 }

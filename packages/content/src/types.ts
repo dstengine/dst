@@ -210,6 +210,12 @@ export interface Speaker {
 
 export interface NewsItem extends ItemBase {
   date: string; // ISO "YYYY-MM-DD"
+  // The page's own address, for an entry that has earned a short one: "/420/"
+  // rather than "/guides/the-story-of-4-20-high-tea/". One segment, slashes
+  // either side, and the slug matches it — lastmod finds an entry by the last
+  // segment of its URL. Without it the page is the feed's base plus the
+  // slug. Build every link to an entry through `newsHref`, never by hand.
+  path?: string;
   // Last day, inclusive, on which this item holds a card in every news block
   // on its site — the front page, the tail of every other article, an event
   // page's news. Ranking alone cannot promise that: a block shows three

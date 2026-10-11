@@ -1,39 +1,16 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import NewsArticle from "@dst/ui/NewsArticle.astro";
-import { sectionHrefFor } from "@dst/content/sections";
-import { siteId, newsBase, publisher } from "../../content";
-import { sections, tagLinks } from "../../sections";
+import Guide from "../../components/Guide.astro";
+import { siteId } from "../../content";
 import { newsBySite } from "@dst/content/news";
-import { go } from "../../outbound";
-import { moments } from "../../schedule";
-import Ceremony from "../../components/Ceremony.astro";
 
 export function getStaticPaths() {
   // No body, no page — the card says everything the entry has.
   const items = newsBySite(siteId).filter((i) => Array.isArray(i.body) && i.body.length > 0);
-  return items.map((item) => ({ params: { slug: item.slug }, props: { item, more: items } }));
+  // An entry with a short address of its own is built there instead — see
+  // ../[page].astro — and its old /guides/ address redirects (vercel.json).
+  return items.filter((i) => !i.path).map((item) => ({ params: { slug: item.slug }, props: { item, more: items } }));
 }
 
 const { item, more } = Astro.props;
-const all = sections(newsBySite(siteId));
-// The tea times this page is the page about, in the order of the day.
-const ceremony = moments.filter((m) => m.guide?.slug === item.slug && m.guide.about);
 ---
-<Layout title={item.titleSeo ?? item.title} description={item.summary} image={item.image}>
-  <NewsArticle
-    item={item}
-    more={more}
-    backHref={newsBase}
-    newsBase={newsBase}
-    publisher={publisher}
-    locale="en-GB"
-    labels={{ moreNews: () => "More tea guides" }}
-    categoryHref={sectionHrefFor(item, all)}
-    tagLinks={tagLinks(item, all)}
-    tagsLabel="More on"
-    actionHref={item.action ? go(`${item.slug}-action`) : undefined}
-  >
-    {ceremony.length > 0 && <Ceremony slot="lead" moments={ceremony} />}
-  </NewsArticle>
-</Layout>
+<Guide item={item} more={more} />

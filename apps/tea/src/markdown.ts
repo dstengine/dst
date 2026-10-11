@@ -9,6 +9,7 @@
 // never as a link.
 import type { NewsItem } from "@dst/content/types";
 import { newsBySite } from "@dst/content/news";
+import { newsHref } from "@dst/content/paths";
 import { about, guides, home, schedule, siteId } from "./content";
 import { moments } from "./schedule";
 import { sections } from "./sections";
@@ -65,7 +66,7 @@ export function newsMarkdown(n: NewsItem): string {
     line("Published", n.date),
     line("Kind", n.category),
     line("Topics", n.tags?.join(", ")),
-    line("Page", abs(`/guides/${n.slug}/`)),
+    line("Page", abs(newsHref(n, "/guides/"))),
     "",
     ...body(n.body),
     ...updates(n.updates),
@@ -74,8 +75,8 @@ export function newsMarkdown(n: NewsItem): string {
   ]);
 }
 
-const listing = <T extends { slug: string; title: string; summary: string }>(base: string, items: T[], date: (i: T) => string) =>
-  items.map((i) => `- ${date(i)} — [${md(i.title)}](${abs(`${base}${i.slug}/`)}): ${md(i.summary)}`);
+const listing = <T extends { slug: string; path?: string; title: string; summary: string }>(base: string, items: T[], date: (i: T) => string) =>
+  items.map((i) => `- ${date(i)} — [${md(i.title)}](${abs(newsHref(i, base))}): ${md(i.summary)}`);
 
 export interface Doc {
   /** The HTML page's path, "/guides/x/"; the Markdown copy is that plus ".md". */
@@ -110,6 +111,6 @@ export function docs(): Doc[] {
     { path: "/schedule/", markdown: join([`# ${schedule.h1}`, "", `> ${schedule.lede}`, "", ...calendar]) },
     ...sectionDocs,
     { path: "/about/", markdown: join([`# ${about.h1}`, "", `> ${about.lede}`]) },
-    ...nw.map((n) => ({ path: `/guides/${n.slug}/`, markdown: newsMarkdown(n) })),
+    ...nw.map((n) => ({ path: newsHref(n, "/guides/"), markdown: newsMarkdown(n) })),
   ];
 }

@@ -5,6 +5,7 @@
 // it. An item only links to its own page when it has a `body` — a thin item
 // with no detail page renders as a self-contained card instead (rule 7 in the
 // news/events spec).
+import { newsHref } from "@dst/content/paths";
 import type { NewsItem } from "@dst/content/types";
 import FeedCards from "./FeedCards.astro";
 
@@ -40,7 +41,7 @@ const sorted = [...items].sort(byRankThenDate);
 const cards = sorted.map((item) => {
   const hasPage = Array.isArray(item.body) && item.body.length > 0;
   return {
-    href: hasPage ? `${newsBase}${item.slug}/` : undefined,
+    href: hasPage ? newsHref(item, newsBase) : undefined,
     eyebrow: item.category,
     date: item.date,
     title: item.title,

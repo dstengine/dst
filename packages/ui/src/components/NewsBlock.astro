@@ -8,6 +8,7 @@
 // the theory that a summary strip shouldn't announce itself as a chapter.
 // In place that read as a thin shelf between two heavy sections, and the
 // heading looked like a label rather than a peer of "Hubs".
+import { newsHref } from "@dst/content/paths";
 import type { NewsItem } from "@dst/content/types";
 import FeedCards from "./FeedCards.astro";
 import { withPromoted } from "@dst/content/when";
@@ -51,7 +52,7 @@ const latest = withPromoted([...items].sort(byRankThenDate), limit, todayIso);
 const cards = latest.map((item) => {
   const hasPage = Array.isArray(item.body) && item.body.length > 0;
   return {
-    href: hasPage ? `${newsBase}${item.slug}/` : undefined,
+    href: hasPage ? newsHref(item, newsBase) : undefined,
     eyebrow: item.category,
     date: item.date,
     title: item.title,

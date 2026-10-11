@@ -711,11 +711,12 @@ export const items: NewsItem[] = [
   },
 
   {
-    slug: "the-story-of-4-20-high-tea",
+    slug: "420",
+    path: "/420/",
     createdAt: "2026-10-11T20:25:00+04:00",
     updatedAt: "2026-10-11T20:25:00+04:00",
     site: "tea",
-    image: "/covers/the-story-of-4-20-high-tea.jpg",
+    image: "/covers/420.jpg",
     imageAlt: "A painting of a copper tea urn with a brass tap on a small mahogany table, white cups and saucers set out on another, an oxblood leather wing chair, and late-afternoon sun from a tall window across green panelling and a gilt-framed mountain landscape",
     imageKind: "generated",
     imageWidth: 1024,

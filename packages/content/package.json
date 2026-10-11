@@ -13,6 +13,7 @@
     "./admission": "./src/admission.ts",
     "./when": "./src/when.ts",
     "./news": "./src/news/index.ts",
+    "./paths": "./src/paths.ts",
     "./events": "./src/events/index.ts",
     "./event-types": "./src/event-types.ts",
     "./ics": "./src/ics.ts",

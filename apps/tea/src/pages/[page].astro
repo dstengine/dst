@@ -1,0 +1,18 @@
+---
+// The guides that have earned a short address of their own — tea.ceo/420/
+// for the tale of 4:20 High Tea — built at that address rather than under
+// /guides/. Same page as any other guide; only the address differs.
+import Guide from "../components/Guide.astro";
+import { siteId } from "../content";
+import { newsBySite } from "@dst/content/news";
+
+export function getStaticPaths() {
+  const items = newsBySite(siteId).filter((i) => Array.isArray(i.body) && i.body.length > 0);
+  return items
+    .filter((i) => i.path)
+    .map((item) => ({ params: { page: item.path!.replace(/^\/|\/$/g, "") }, props: { item, more: items } }));
+}
+
+const { item, more } = Astro.props;
+---
+<Guide item={item} more={more} />

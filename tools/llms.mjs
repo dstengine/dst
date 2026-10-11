@@ -60,7 +60,7 @@ const { localize } = await import("../packages/content/src/i18n.ts");
 const entries = (list) =>
   list
     .filter((i) => Array.isArray(i.body) && i.body.length > 0)
-    .map((i) => ({ slug: i.slug, title: i.title, summary: i.summary, date: i.date ?? i.start }));
+    .map((i) => ({ slug: i.slug, path: i.path, title: i.title, summary: i.summary, date: i.date ?? i.start }));
 
 // llms.txt is read as plain text, so the HTML entities and tags that the
 // pages need are noise here.
@@ -80,7 +80,8 @@ const section = (label, base, host, items) => {
   const lines = items
     .slice()
     .sort((a, b) => (b.date ?? "").localeCompare(a.date ?? ""))
-    .map((i) => `- [${plain(i.title)}](https://${host}/${base}/${i.slug}/): ${plain(i.summary)}`);
+    // An entry with a short address of its own (`path`) is listed there.
+    .map((i) => `- [${plain(i.title)}](https://${host}${i.path ?? `/${base}/${i.slug}/`}): ${plain(i.summary)}`);
   return `\n## ${label}\n\n${lines.join("\n")}\n`;
 };
 
