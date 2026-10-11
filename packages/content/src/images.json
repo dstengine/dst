@@ -26766,6 +26766,38 @@
         ]
       ]
     },
+    "/covers/barekamutyun-from-music-to-movement-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/barekamutyun-from-music-to-movement-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/barekamutyun-from-music-to-movement-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/barekamutyun-from-music-to-movement-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/barekamutyun-from-music-to-movement-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/barekamutyun-from-music-to-movement-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/barekamutyun-from-music-to-movement-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/carmen-yerevan-opera-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -27747,6 +27779,38 @@
         [
           1536,
           "/covers/madama-butterfly-yerevan-opera-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/marriage-of-figaro-ghaplanyan-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/marriage-of-figaro-ghaplanyan-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/marriage-of-figaro-ghaplanyan-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/marriage-of-figaro-ghaplanyan-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/marriage-of-figaro-ghaplanyan-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/marriage-of-figaro-ghaplanyan-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/marriage-of-figaro-ghaplanyan-yerevan-2026-1024.webp"
         ]
       ]
     },
