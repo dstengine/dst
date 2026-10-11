@@ -27446,6 +27446,38 @@
         ]
       ]
     },
+    "/covers/kean-ghaplanyan-theatre-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/kean-ghaplanyan-theatre-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/kean-ghaplanyan-theatre-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/kean-ghaplanyan-theatre-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/kean-ghaplanyan-theatre-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/kean-ghaplanyan-theatre-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/kean-ghaplanyan-theatre-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/khachaturian-symphony-with-bells-ridout-yerevan-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -27782,6 +27814,38 @@
         ]
       ]
     },
+    "/covers/madaras-hyeyoon-park-yerevan-international-music-festival-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/madaras-hyeyoon-park-yerevan-international-music-festival-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/madaras-hyeyoon-park-yerevan-international-music-festival-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/madaras-hyeyoon-park-yerevan-international-music-festival-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/madaras-hyeyoon-park-yerevan-international-music-festival-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/madaras-hyeyoon-park-yerevan-international-music-festival-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/madaras-hyeyoon-park-yerevan-international-music-festival-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/marriage-of-figaro-ghaplanyan-yerevan-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -28027,6 +28091,38 @@
         [
           1536,
           "/covers/pagliacci-yerevan-opera-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/pene-pati-yerevan-international-music-festival-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/pene-pati-yerevan-international-music-festival-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/pene-pati-yerevan-international-music-festival-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/pene-pati-yerevan-international-music-festival-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/pene-pati-yerevan-international-music-festival-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/pene-pati-yerevan-international-music-festival-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/pene-pati-yerevan-international-music-festival-2026-1024.webp"
         ]
       ]
     },
