@@ -69,7 +69,11 @@ const cards = latest.map((item) => {
       <h2>{heading}</h2>
       <a class="news-block-all" href={newsBase} title={allLabel}>{allLabel}<span class="news-block-arrow" aria-hidden="true"> &rarr;</span></a>
     </div>
-    <FeedCards items={cards} columns={cards.length} locale={locale} />
+    {/* Pinned to one row only while one row is what it is. The block was
+        written for three cards; tea.ceo's front page asked it for twelve,
+        and twelve pinned columns came out 48px wide at 900px and pushed the
+        page sideways. Past three the cards wrap, as a list's do. */}
+    <FeedCards items={cards} columns={cards.length <= 3 ? cards.length : undefined} locale={locale} />
   </section>
 )}
 
