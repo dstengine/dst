@@ -69,6 +69,7 @@ export const moments: Moment[] = [
     recurs: { daily: "16:20" },
     when: "Every day at 16:20, your time",
     text: "A second pot at twenty past four, for those who find the hour amusing. Proper high tea is not until six; this one is merely elevated.",
+    guide: { slug: "the-story-of-4-20-high-tea", label: "Where 4:20 comes from" },
   },
   {
     slug: "high-tea",

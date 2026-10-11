@@ -26957,6 +26957,38 @@
           "/covers/how-to-make-matcha-1024.webp"
         ]
       ]
+    },
+    "/covers/the-story-of-4-20-high-tea.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/the-story-of-4-20-high-tea-480.avif"
+        ],
+        [
+          768,
+          "/covers/the-story-of-4-20-high-tea-768.avif"
+        ],
+        [
+          1024,
+          "/covers/the-story-of-4-20-high-tea-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/the-story-of-4-20-high-tea-480.webp"
+        ],
+        [
+          768,
+          "/covers/the-story-of-4-20-high-tea-768.webp"
+        ],
+        [
+          1024,
+          "/covers/the-story-of-4-20-high-tea-1024.webp"
+        ]
+      ]
     }
   },
   "tick.am": {
