@@ -286,13 +286,28 @@ export function runCardLine(run: Run): string {
 export function formatRun(run: Run): string {
   const fmt = (iso: string, opts: Intl.DateTimeFormatOptions) =>
     new Date(`${iso}T00:00:00Z`).toLocaleDateString("en-GB", { timeZone: "UTC", ...opts });
-  if (run.openRun && run.start) return `Playing since ${fmt(run.start, { day: "numeric", month: "long", year: "numeric" })}`;
+  // An open run announced ahead of its first preview has not been playing
+  // since anything yet: "Playing since 27 February 2027" is a false sentence.
+  if (run.openRun && run.start) return `${run.start > today() ? "From" : "Playing since"} ${fmt(run.start, { day: "numeric", month: "long", year: "numeric" })}`;
   if (!run.start) return "Dates not announced";
   if (!run.end) return fmt(run.start, { day: "numeric", month: "long", year: "numeric" });
   const sameMonth = run.start.slice(0, 7) === run.end.slice(0, 7);
-  const from = sameMonth ? fmt(run.start, { day: "numeric" }) : fmt(run.start, { day: "numeric", month: "long" });
+  // A run across New Year names both years: "17 November – 14 March 2027"
+  // reads as a November that comes after the March.
+  const sameYear = run.start.slice(0, 4) === run.end.slice(0, 4);
+  const from = sameMonth
+    ? fmt(run.start, { day: "numeric" })
+    : fmt(run.start, sameYear ? { day: "numeric", month: "long" } : { day: "numeric", month: "long", year: "numeric" });
   return `${from} – ${fmt(run.end, { day: "numeric", month: "long", year: "numeric" })}`;
 }
+
+/** formatRun's line inside a sentence: only its first letter drops, so a
+    month keeps its capital. */
+export const lowerFirst = (line: string): string => line.charAt(0).toLowerCase() + line.slice(1);
+
+/** The date an open run began, or begins, on its own: formatRun without the
+    "Playing since" or "From" in front. */
+export const openRunDate = (run: Run): string => formatRun(run).replace(/^(Playing since|From) /, "");
 
 /** The run's dates with their weekdays: "Tuesday 16 to Saturday 20 February
     2027". Arithmetic, not a claim — but it is the first thing anyone works
@@ -309,7 +324,8 @@ export function formatRunDays(run: Run): string | undefined {
   const full = { day: "numeric", month: "long", year: "numeric" } as const;
   if (!run.end || run.end === run.start) return named(run.start, full);
   const sameMonth = run.start.slice(0, 7) === run.end.slice(0, 7);
-  const from = named(run.start, sameMonth ? { day: "numeric" } : { day: "numeric", month: "long" });
+  const sameYear = run.start.slice(0, 4) === run.end.slice(0, 4);
+  const from = named(run.start, sameMonth ? { day: "numeric" } : sameYear ? { day: "numeric", month: "long" } : full);
   return `${from} to ${named(run.end, full)}`;
 }
 
@@ -463,7 +479,7 @@ export function runFaq(
     {
       q: whenQ,
       a: run.openRun
-        ? `It plays an open run — ${formatRun(run).toLowerCase()}, with no closing date announced.`
+        ? `It plays an open run — ${lowerFirst(formatRun(run))}, with no closing date announced.`
         : `${formatRun(run)}${venue ? `, at ${venue.name}` : ""}. Dates are local to ${city.name}.`,
     },
     {

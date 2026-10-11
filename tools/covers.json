@@ -1011,6 +1011,59 @@
       "dolly-tickets": {
         "subject": "a single torn paper stub with a perforated edge",
         "detail": "with a feather shape punched near one end, and the stub is completely blank and unprinted, plain paper with no writing, no numbers and no barcode anywhere"
+      },
+      "evita-about": "a single small curved wrought-iron balcony floating alone against a deep crimson ground, lit from above by one cone of spotlight, with white flower petals drifting down beneath it",
+      "evita-tickets": {
+        "subject": "a single torn paper stub with a perforated edge",
+        "detail": "with a small star shape punched near one end, and the stub is completely blank and unprinted, plain paper with no writing, no numbers and no barcode anywhere"
+      },
+      "purple-rain-about": "a single white dove with spread wings flying through slanting streaks of purple rain, above one round stage spotlight glowing on an empty stage floor",
+      "purple-rain-tickets": {
+        "subject": "a single torn paper stub with a perforated edge",
+        "detail": "with a raindrop shape punched near one end, and the stub is completely blank and unprinted, plain paper with no writing, no numbers and no barcode anywhere"
+      },
+      "paddington-about": "a battered old suitcase with a blank paper luggage label tied to its handle, and a floppy red bush hat resting on top",
+      "paddington-tickets": {
+        "subject": "a single torn paper stub with a perforated edge",
+        "detail": "with a small paw print punched near one end, and the stub is completely blank and unprinted, plain paper with no writing, no numbers and no barcode anywhere"
+      },
+      "full-monty-about": "a row of six empty wooden chairs under a single stage spotlight, with a yellow hard hat resting on one seat",
+      "full-monty-tickets": {
+        "subject": "a single torn paper stub with a perforated edge",
+        "detail": "with a bow-tie shape punched near one end, and the stub is completely blank and unprinted, plain paper with no writing, no numbers and no barcode anywhere"
+      },
+      "maybe-happy-ending-about": "two small round friendly robots sitting side by side on a windowsill, a potted plant between them and a city skyline beyond",
+      "maybe-happy-ending-tickets": {
+        "subject": "a single torn paper stub with a perforated edge",
+        "detail": "with a small battery shape punched near one end, and the stub is completely blank and unprinted, plain paper with no writing, no numbers and no barcode anywhere"
+      },
+      "jesus-christ-superstar-about": "a ring of thorny branches encircling a radiating burst of golden stage light",
+      "jesus-christ-superstar-tickets": {
+        "subject": "a single torn paper stub with a perforated edge",
+        "detail": "with a small crown shape punched near one end, and the stub is completely blank and unprinted, plain paper with no writing, no numbers and no barcode anywhere"
+      },
+      "rent-about": "a zigzag iron fire escape on a brick tenement wall, with a single lit candle on one windowsill",
+      "rent-tickets": {
+        "subject": "a single torn paper stub with a perforated edge",
+        "detail": "with a candle-flame shape punched near one end, and the stub is completely blank and unprinted, plain paper with no writing, no numbers and no barcode anywhere"
+      },
+      "one-day-about": "two winding lines of footprints meeting on a grassy hilltop above a city of rooftops, under a round summer sun",
+      "one-day-tickets": {
+        "subject": "a single torn paper stub with a perforated edge",
+        "detail": "with a small sun shape punched near one end, and the stub is completely blank and unprinted, plain paper with no writing, no numbers and no barcode anywhere"
+      },
+      "into-the-woods-about": "a dark forest of tall layered tree trunks with a winding path, a small red hooded cloak and a single golden slipper lying on the path",
+      "into-the-woods-tickets": {
+        "subject": "a single torn paper stub with a perforated edge",
+        "detail": "with a small leaf shape punched near one end, and the stub is completely blank and unprinted, plain paper with no writing, no numbers and no barcode anywhere"
+      },
+      "pride-about": {
+        "subject": "a miner's helmet with a glowing lamp resting on a patch of grass, with rolling green hills behind it",
+        "detail": "a long curling paper streamer striped in all six rainbow colours, red, orange, yellow, green, blue and violet, loops across the sky over the hills; there are no flags, no poles, no emblems and no writing anywhere"
+      },
+      "pride-tickets": {
+        "subject": "a single torn paper stub with a perforated edge",
+        "detail": "with a small heart shape punched near one end, and the stub is completely blank and unprinted, plain paper with no writing, no numbers and no barcode anywhere"
       }
     },
     "palmcentral": {

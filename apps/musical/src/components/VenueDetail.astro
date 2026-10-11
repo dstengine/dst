@@ -10,7 +10,7 @@ import Layout from "../layouts/Layout.astro";
 import RunTable from "./RunTable.astro";
 import EventCards from "./EventCards.astro";
 import { go } from "../outbound";
-import { checkedOn, cityBySlug, cityHasPage, formatRun, runsInGroup, showBySlug, statusOf, runsAtVenue, theVenue, venueBySlug, venues, venuePath, type Venue, } from "../content";
+import { checkedOn, cityBySlug, cityHasPage, formatRun, lowerFirst, openRunDate, today, runsInGroup, showBySlug, statusOf, runsAtVenue, theVenue, venueBySlug, venues, venuePath, type Venue, } from "../content";
 
 interface Props { venue: Venue }
 const { venue } = Astro.props;
@@ -97,7 +97,9 @@ const nextShow = next ? showBySlug(next.show)?.title ?? next.show : undefined;
 const lede = venue.summary
   ?? (next && nextShow
     ? next.openRun
-      ? `${nextShow} has been playing here since ${formatRun(next).replace(/^Playing since /, "")}.`
+      ? next.start && next.start > today()
+        ? `${nextShow} begins here on ${openRunDate(next)}, with no closing date announced.`
+        : `${nextShow} has been playing here since ${openRunDate(next)}.`
       : `${nextShow} plays here, ${formatRun(next)}.`
     : "Nothing on this site's calendar is booked here at the moment. The address and the directions are below.");
 // The head leads with the facts a search for the building asks for — the
@@ -115,7 +117,7 @@ const place = venue.name.includes(city.name) ? venue.name : `${venue.name}, ${ci
 const bookedShows = [...new Set(upcoming.map((r) => showBySlug(r.show)?.title ?? r.show))];
 const booked = next && nextShow
   ? bookedShows.length === 1
-    ? `The musical booked here: ${nextShow}, ${formatRun(next).replace(/^Playing since/, "playing since")}.`
+    ? `The musical booked here: ${nextShow}, ${lowerFirst(formatRun(next))}.`
     : `Musicals booked here: ${bookedShows.join(", ")}.`
   : undefined;
 const sentences = [

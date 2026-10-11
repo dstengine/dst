@@ -1726,4 +1726,344 @@ export const venues: Venue[] = [
       },
     ],
   },
+  {
+    slug: "winter-garden-theatre",
+    name: "Winter Garden Theatre",
+    city: "new-york",
+    address: "1634 Broadway, New York, NY 10019",
+    lat: 40.7616863,
+    lon: -73.983701,
+    opened: "1911",
+    capacity: 1600,
+    officialSlug: "venue-winter-garden-theatre",
+    summary:
+      "One of the three Broadway theatres that actually stands on Broadway, built inside a horse exchange. Evita begins previews here on 27 February 2027.",
+    transit:
+      "50th Street on the 1, C and E; 49th Street on the N, Q, R and W.",
+    details: [
+      { label: "Opened", value: "20 March 1911, inside the former American Horse Exchange" },
+      { label: "Rebuilt", value: "1922\u201323, by Herbert J. Krapp" },
+      { label: "Operator", value: "The Shubert Organization" },
+      { label: "Seats", value: "1,600" },
+    ],
+    sections: [
+      {
+        heading: "Inside the Winter Garden Theatre",
+        paragraphs: [
+          "The building began as the American Horse Exchange, finished in 1896, and the Shubert brothers turned it into a theatre that opened in 1911. Herbert J. Krapp remodelled it completely in 1922, and his auditorium is the one standing now: wide rather than deep, with a single balcony, two tiers of boxes and an interior that is a New York City landmark.",
+          "Its stage and backstage are why big musicals end up here. From 1982 to 2013 the Winter Garden held only two productions \u2014 Cats, for eighteen years, and then Mamma Mia!",
+          "The address is 1634 Broadway, which makes it one of only three Broadway theatres that are actually on Broadway. It belongs to the Shubert Organization, and its seats are sold by Telecharge, the Shubert box office.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "majestic-theatre",
+    name: "Majestic Theatre",
+    city: "new-york",
+    address: "245 West 44th Street, New York, NY 10036",
+    lat: 40.7583333,
+    lon: -73.9880556,
+    opened: "1927",
+    capacity: 1681,
+    officialSlug: "venue-majestic-theatre",
+    summary:
+      "Where The Phantom of the Opera played from 1988 to 2023, the longest run in Broadway history. Purple Rain begins previews here on 12 March 2027.",
+    transit:
+      "Times Square\u201342nd Street on the 1, 2, 3, 7, N, Q, R, W and S; 42nd Street\u2013Port Authority on the A, C and E.",
+    details: [
+      { label: "Opened", value: "28 March 1927" },
+      { label: "Architect", value: "Herbert J. Krapp" },
+      { label: "Operator", value: "The Shubert Organization, since 1930" },
+      { label: "Seats", value: "1,681 on two levels" },
+    ],
+    sections: [
+      {
+        heading: "Inside the Majestic Theatre",
+        paragraphs: [
+          "The Phantom of the Opera opened here in 1988 and closed in 2023, by then the longest-running production in Broadway history. Before it, Carousel, South Pacific, The Music Man, Camelot, A Little Night Music and The Wiz all opened on this stage.",
+          "Irwin S. Chanin built it in 1927 as one piece of a theatre-and-hotel complex, together with what are now the Bernard B. Jacobs and John Golden theatres and the Lincoln Hotel, all designed by Herbert J. Krapp. The Shuberts have run it since 1930, and both the facade and the interior are New York City landmarks.",
+          "With 1,681 seats on two levels it was always meant for large musicals. The orchestra is raked so steeply that its back rows sit a storey above the street. Tickets are sold by Telecharge.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "al-hirschfeld-theatre",
+    name: "Al Hirschfeld Theatre",
+    city: "new-york",
+    address: "302 West 45th Street, New York, NY 10036",
+    lat: 40.7593,
+    lon: -73.9892,
+    opened: "1924",
+    capacity: 1404,
+    officialSlug: "venue-al-hirschfeld-theatre",
+    summary:
+      "Built in 1924 for the vaudeville impresario Martin Beck and renamed for the caricaturist Al Hirschfeld. Paddington The Musical begins here on 30 March 2027.",
+    transit:
+      "42nd Street\u2013Port Authority on the A, C and E; 50th Street on the C and E.",
+    details: [
+      { label: "Opened", value: "11 November 1924, as the Martin Beck Theatre" },
+      { label: "Architect", value: "G. Albert Lansburgh" },
+      { label: "Operator", value: "ATG Entertainment" },
+      { label: "Seats", value: "about 1,400 on two levels" },
+    ],
+    sections: [
+      {
+        heading: "Inside the Al Hirschfeld Theatre",
+        paragraphs: [
+          "Martin Beck built it in 1924 and owned it outright \u2014 it was the only theatre in New York with no mortgage on it. G. Albert Lansburgh designed it in a Moorish and Byzantine style, with a double-height arcade along 45th Street and, inside, an octagonal ceiling with a multicoloured dome.",
+          "It carries the name of Al Hirschfeld, whose line drawings of Broadway casts ran in The New York Times for most of the twentieth century. The facade and the interior are both New York City landmarks.",
+          "It stands west of Eighth Avenue, at the far edge of the district, and is operated by ATG Entertainment, which sells its seats through ATG Tickets.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "todd-haimes-theatre",
+    name: "Todd Haimes Theatre",
+    city: "new-york",
+    address: "227 West 42nd Street, New York, NY 10036",
+    lat: 40.7568333,
+    lon: -73.9880556,
+    opened: "1918",
+    capacity: 740,
+    officialSlug: "venue-todd-haimes-theatre",
+    summary:
+      "The Selwyn of 1918, reached today through a glass building on 42nd Street and run by Roundabout Theatre Company. The Full Monty plays here from 3 April to 20 June 2027.",
+    transit:
+      "Times Square\u201342nd Street on the 1, 2, 3, 7, N, Q, R, W and S; 42nd Street\u2013Port Authority on the A, C and E.",
+    details: [
+      { label: "Opened", value: "2 October 1918, as the Selwyn Theatre" },
+      { label: "Architect", value: "George Keister" },
+      { label: "Operator", value: "Roundabout Theatre Company" },
+      { label: "Seats", value: "740 on two levels" },
+    ],
+    sections: [
+      {
+        heading: "Inside the Todd Haimes Theatre",
+        paragraphs: [
+          "Edgar and Archibald Selwyn opened it in 1918 under their own name. After Arch Selwyn went bankrupt in 1934 it became a cinema, and it stayed one for most of the next five decades before Roundabout Theatre Company brought it back to the stage; it was later known as the American Airlines Theatre before taking the name of Roundabout's longtime artistic director.",
+          "The six-storey Selwyn Building that once stood in front of it on 42nd Street collapsed at the end of 1997. The auditorium itself is on 43rd Street, fan-shaped, in blue and gold, and is now reached through the glass front of the New 42nd Street building.",
+          "At 740 seats it is about half the size of the big musical houses. The city and state of New York own it and lease it to New 42nd Street. Roundabout is a non-profit that sells its seasons as subscription packages first, and its runs are limited engagements.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "belasco-theatre",
+    name: "Belasco Theatre",
+    city: "new-york",
+    address: "111 West 44th Street, New York, NY 10036",
+    lat: 40.7566667,
+    lon: -73.9838889,
+    opened: "1907",
+    capacity: 1016,
+    officialSlug: "venue-belasco-theatre",
+    summary:
+      "David Belasco's own theatre of 1907, with his apartment still on the roof and Tiffany glass in the ceiling. Maybe Happy Ending has played here since November 2024.",
+    transit:
+      "Times Square\u201342nd Street on the 1, 2, 3, 7, N, Q, R, W and S; 42nd Street\u2013Bryant Park on the B, D, F and M.",
+    details: [
+      { label: "Opened", value: "16 October 1907, as the Stuyvesant Theatre" },
+      { label: "Architect", value: "George Keister" },
+      { label: "Operator", value: "The Shubert Organization, since 1948" },
+      { label: "Seats", value: "1,016 on three levels" },
+    ],
+    sections: [
+      {
+        heading: "Inside the Belasco Theatre",
+        paragraphs: [
+          "David Belasco opened it in 1907 as the Stuyvesant and renamed it after himself three years later. He had a ten-room duplex apartment built on top of the east wing to hold his collection, and the auditorium he left has Tiffany lighting and ceiling panels, dark woodwork and murals by Everett Shinn. Both the facade and the interior are New York City landmarks.",
+          "It sits east of Seventh Avenue, between Sixth and Seventh, which puts it on the quieter side of the district. At 1,016 seats on three levels it is a mid-sized house, and a close one for a musical.",
+          "There are no lifts. The main entrance has two steps and a side entrance none; the mezzanine and the balcony are each a flight of stairs up. The Shubert Organization has owned the building since 1948 and sells its seats through Telecharge.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "savoy-theatre",
+    name: "Savoy Theatre",
+    city: "london",
+    address: "Savoy Court, Strand, London WC2R 0ET",
+    lat: 51.5101,
+    lon: -0.1209,
+    opened: "1881",
+    capacity: 1150,
+    officialSlug: "venue-savoy-theatre",
+    summary:
+      "Built for Gilbert and Sullivan in 1881, and the first public building in the world lit entirely by electricity. Paddington The Musical has played here since November 2025.",
+    transit:
+      "Charing Cross, about seven minutes' walk along the Strand; buses 6, 9, 11, 15, 23, 87, 93, 139 and 176 stop on the Strand outside.",
+    details: [
+      { label: "Opened", value: "10 October 1881" },
+      { label: "Architect", value: "C. J. Phipps" },
+      { label: "Owner", value: "ATG Entertainment" },
+      { label: "Seats", value: "about 1,150 on three levels" },
+    ],
+    sections: [
+      {
+        heading: "Inside the Savoy Theatre",
+        paragraphs: [
+          "Richard D'Oyly Carte built it to stage the comic operas of Gilbert and Sullivan, on ground once occupied by the medieval Savoy Palace, and the works written for it are still called the Savoy operas. It was the first public building in the world to be lit entirely by electricity.",
+          "The room you sit in is not the one of 1881. Rupert D'Oyly Carte rebuilt the theatre in 1929, and it was rebuilt again after a fire, reopening in 1993. The building is Grade II* listed.",
+          "You go down to the stalls, not up: there are 75 steps from the foyer and no lift. Step-free seats are in the dress circle, which has its own street-level entrance on Carting Lane, and there is no cloakroom. ATG Entertainment owns the theatre and sells its tickets.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "theatre-royal-drury-lane",
+    name: "Theatre Royal Drury Lane",
+    city: "london",
+    address: "Catherine Street, Covent Garden, London WC2B 5JF",
+    lat: 51.5129942,
+    lon: -0.1202295,
+    opened: "1812; a theatre has stood on the site since 1663",
+    capacity: 1996,
+    officialSlug: "venue-theatre-royal-drury-lane",
+    summary:
+      "The oldest theatre site in London still in use: a stage here since 1663, and the present building since 1812. Jesus Christ Superstar plays here from 16 October 2026 to 9 January 2027.",
+    transit:
+      "Covent Garden on the Piccadilly line is the nearest station; Holborn and Temple are each about ten minutes' walk.",
+    details: [
+      { label: "Opened", value: "1812, the fourth theatre on a site in use since 1663" },
+      { label: "Owner", value: "LW Theatres" },
+      { label: "Seats", value: "1,996 on four levels" },
+      { label: "Listed", value: "Grade I" },
+    ],
+    sections: [
+      {
+        heading: "Inside Theatre Royal Drury Lane",
+        paragraphs: [
+          "Thomas Killigrew built the first theatre here in the early 1660s, when the Restoration let London's playhouses reopen. The building that stands now is the fourth on the site, opened in 1812 after its predecessor burned down in 1809. David Garrick ran the theatre before it, and so did Richard Brinsley Sheridan.",
+          "For most of two centuries it was one of the patent theatres, licensed with a monopoly on spoken drama in London, and it could fairly claim to be the city's leading stage. It faces Catherine Street, and backs onto the lane it is named after.",
+          "With 1,996 seats on four levels it is the largest of the London theatres on this site. LW Theatres, Andrew Lloyd Webber's company, owns it and sells its tickets direct.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "tom-stoppard-theatre",
+    name: "Tom Stoppard Theatre",
+    city: "london",
+    address: "104 St Martin's Lane, London WC2N 4BG",
+    lat: 51.510167,
+    lon: -0.1273592,
+    opened: "1892",
+    capacity: 640,
+    officialSlug: "venue-tom-stoppard-theatre",
+    summary:
+      "The Duke of York's Theatre until September 2026, when it was renamed in honour of Sir Tom Stoppard. Rent plays here until 29 May 2027.",
+    transit:
+      "Leicester Square on the Northern and Piccadilly lines and Charing Cross are each a few minutes' walk.",
+    details: [
+      { label: "Opened", value: "10 September 1892, as the Trafalgar Square Theatre" },
+      { label: "Renamed", value: "Duke of York's Theatre in 1895; Tom Stoppard Theatre in September 2026" },
+      { label: "Architect", value: "Walter Emden" },
+      { label: "Owner", value: "ATG Entertainment" },
+      { label: "Seats", value: "640 on three levels" },
+    ],
+    sections: [
+      {
+        heading: "Inside the Tom Stoppard Theatre",
+        paragraphs: [
+          "It opened in 1892 as the Trafalgar Square Theatre and became the Duke of York's in 1895, a name it kept for more than a century. Peter Pan had its first performance here, in 1904. In September 2026 the theatre was renamed for Sir Tom Stoppard.",
+          "With 640 seats on three levels it is one of the smaller houses in the West End, which makes it a close room for a rock musical. Walter Emden designed it.",
+          "ATG Entertainment owns it and sells its tickets through ATG Tickets, whose pages for the theatre still carry the old name in their addresses.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "garrick-theatre",
+    name: "Garrick Theatre",
+    city: "london",
+    address: "2 Charing Cross Road, London WC2H 0HH",
+    lat: 51.5099933,
+    lon: -0.1278259,
+    opened: "1889",
+    capacity: 733,
+    officialSlug: "venue-garrick-theatre",
+    summary:
+      "W. S. Gilbert's theatre of 1889, named after the actor David Garrick. One Day \u2013 The Musical plays here from 17 November 2026 to 14 March 2027.",
+    transit:
+      "Leicester Square on the Northern and Piccadilly lines is across the road; Charing Cross is a short walk south.",
+    details: [
+      { label: "Opened", value: "24 April 1889" },
+      { label: "Architects", value: "Walter Emden and C. J. Phipps" },
+      { label: "Owner", value: "Nimax Theatres" },
+      { label: "Seats", value: "733" },
+    ],
+    sections: [
+      {
+        heading: "Inside the Garrick Theatre",
+        paragraphs: [
+          "W. S. Gilbert, the words half of Gilbert and Sullivan, had it built and leased it to the actor-manager John Hare, who opened it in 1889 with a new play by Arthur Wing Pinero. It is named after David Garrick, the eighteenth-century actor who ran Drury Lane.",
+          "It is a 733-seat house on Charing Cross Road, opposite Leicester Square station. Nimax Theatres owns it and sells its tickets direct, without a booking fee; access bookings go through Nimax on 0330 333 4815.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "noel-coward-theatre",
+    name: "No\u00ebl Coward Theatre",
+    city: "london",
+    address: "85\u201388 St Martin's Lane, London WC2N 4AU",
+    lat: 51.5111212,
+    lon: -0.1274584,
+    opened: "1903",
+    capacity: 942,
+    officialSlug: "venue-noel-coward-theatre",
+    summary:
+      "Opened in 1903 as the New Theatre, then the Albery, and the No\u00ebl Coward since 2006. Into the Woods plays here until 9 January 2027.",
+    transit:
+      "Leicester Square on the Northern and Piccadilly lines and Charing Cross are each a few minutes' walk.",
+    details: [
+      { label: "Opened", value: "12 March 1903, as the New Theatre" },
+      { label: "Architect", value: "W. G. R. Sprague" },
+      { label: "Operator", value: "Delfont Mackintosh Theatres" },
+      { label: "Seats", value: "942 on four levels" },
+    ],
+    sections: [
+      {
+        heading: "Inside the No\u00ebl Coward Theatre",
+        paragraphs: [
+          "Charles Wyndham built it in 1903 behind his own Wyndham's Theatre, to designs by W. G. R. Sprague: classical outside, rococo inside. It was the New Theatre for seventy years and the Albery from 1973, and has been the No\u00ebl Coward since it reopened after refurbishment on 1 June 2006.",
+          "Delfont Mackintosh has run it since 2005 and sells its tickets; booking fees may apply except at the box office. It has 942 seats on four levels, a short walk along St Martin's Lane from the Tom Stoppard Theatre.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "bridge-theatre",
+    name: "Bridge Theatre",
+    city: "london",
+    address: "3 Potters Fields Park, London SE1 2SG",
+    lat: 51.5041,
+    lon: -0.0776,
+    opened: "2017",
+    capacity: 900,
+    officialSlug: "venue-bridge-theatre",
+    summary:
+      "A new theatre of 2017 at the foot of Tower Bridge, built by the two men who had run the National Theatre. Pride the Musical plays here from 12 November 2026.",
+    transit:
+      "London Bridge on the Jubilee and Northern lines is about ten minutes' walk; Tower Hill on the District and Circle lines is across Tower Bridge.",
+    details: [
+      { label: "Opened", value: "18 October 2017" },
+      { label: "Architects", value: "Haworth Tompkins" },
+      { label: "Founders", value: "Nicholas Hytner and Nick Starr" },
+      { label: "Seats", value: "900 seated, about 1,100 for a promenade staging" },
+    ],
+    sections: [
+      {
+        heading: "Inside the Bridge Theatre",
+        paragraphs: [
+          "Nicholas Hytner and Nick Starr, who had run the National Theatre together, opened it in October 2017 as the home of their London Theatre Company, in a new building by Haworth Tompkins on the south bank beside Tower Bridge.",
+          "The auditorium changes shape. It seats 900, or takes about 1,100 when the stalls are cleared for a promenade staging with the audience on its feet around the action. The Into the Woods now at the No\u00ebl Coward started here.",
+          "It is outside the West End, a walk along the river from London Bridge, and sells its own tickets; the theatre's site now presents it as one of the Trafalgar Entertainment Group's London venues.",
+        ],
+      },
+    ],
+  },
 ];

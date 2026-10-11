@@ -241,6 +241,9 @@ export interface Show {
       too little of the 60-character budget to win anything. The h1 stays
       the name of the show. */
   titleSeo?: string;
+  /** The name on a front-page card, where the full title will not fit:
+      "Dolly" for "DOLLY: A True Original Musical". */
+  short?: string;
   tagline: string;
   summary: string;
   /** The show this site is built around. It gets the front page's own

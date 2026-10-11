@@ -1523,4 +1523,440 @@ export const runs: Run[] = [
     ],
     tags: ["broadway", "open-run"],
   },
+  {
+    slug: "new-york",
+    show: "evita",
+    city: "new-york",
+    venue: "winter-garden-theatre",
+    start: "2027-02-27",
+    openRun: true,
+    sellers: [
+      {
+        slug: "tickets-evita-new-york",
+        name: "Telecharge",
+        official: true,
+        price: {
+          from: 74,
+          to: 447,
+          currency: "USD",
+          checkedOn: "2026-10-12",
+          note: "the range Telecharge's own price filter spans across the run; fees are added at checkout",
+        },
+      },
+    ],
+    summary:
+      "Previews begin on Saturday 27 February 2027 at 8pm and opening night is Thursday 25 March. No closing date has been announced, and the production's own calendar is on sale through November 2027.",
+    runningTime: "2 hours 25 minutes, including an interval",
+    language: "English",
+    ageGuidance:
+      "Children under 4 are not admitted. The production uses strobe lighting, loud sound effects, haze and stage blood.",
+    faq: [
+      {
+        q: "When does Evita start on Broadway?",
+        a: "The first preview is Saturday 27 February 2027 at 8pm at the Winter Garden Theatre, 1634 Broadway. Opening night is Thursday 25 March 2027.",
+      },
+      {
+        q: "Who sells the tickets?",
+        a: "Telecharge, the Shubert Organization's box office — the Winter Garden is a Shubert house, and the production's own site links straight to it. Groups of ten or more book through Broadway Inbound on 866-302-0995.",
+      },
+      {
+        q: "How far ahead can I book?",
+        a: "To November 2027, as the production's own ticket calendar had it on 12 October 2026. The run is open-ended, so that horizon is extended rather than reached.",
+      },
+    ],
+    tags: ["broadway", "open-run"],
+  },
+  {
+    slug: "new-york",
+    show: "purple-rain",
+    city: "new-york",
+    venue: "majestic-theatre",
+    start: "2027-03-12",
+    openRun: true,
+    sellers: [
+      {
+        slug: "tickets-purple-rain-new-york",
+        name: "Telecharge",
+        official: true,
+        price: {
+          from: 49,
+          to: 399,
+          currency: "USD",
+          checkedOn: "2026-10-12",
+          note: "the range Telecharge's own price filter spans across the run; fees are added at checkout",
+        },
+      },
+    ],
+    summary:
+      "Previews begin on Friday 12 March 2027 and opening night is Monday 12 April. No closing date has been announced, nor has the cast, and Telecharge lists the running time as still to be determined.",
+    language: "English",
+    faq: [
+      {
+        q: "When does Purple Rain start?",
+        a: "The first preview is Friday 12 March 2027 at the Majestic Theatre, 245 West 44th Street. Opening night is Monday 12 April 2027.",
+      },
+      {
+        q: "Who sells the tickets?",
+        a: "Telecharge — the Majestic is a Shubert Organization house, Telecharge is the Shubert box office, and the production's own site links to nothing else.",
+      },
+      {
+        q: "Who plays The Kid?",
+        a: "Nobody has been named yet. The production says casting will be announced at a later date.",
+      },
+    ],
+    tags: ["broadway", "open-run"],
+  },
+  {
+    slug: "new-york",
+    show: "paddington",
+    city: "new-york",
+    venue: "al-hirschfeld-theatre",
+    start: "2027-03-30",
+    openRun: true,
+    sellers: [
+      {
+        slug: "tickets-paddington-new-york",
+        name: "ATG Tickets",
+        official: true,
+      },
+    ],
+    summary:
+      "Performances begin on Tuesday 30 March 2027 and opening night is Sunday 18 April. This is the West End production's first transfer, and no closing date has been announced.",
+    runningTime: "About 2 hours 45 minutes, including an interval",
+    language: "English",
+    ageGuidance:
+      "Recommended for ages 6 and up. ATG's page gives two different minimum ages for admission — under 3 in one place, under 5 in its FAQ — so check with the box office before booking for a small child.",
+    faq: [
+      {
+        q: "When does Paddington start on Broadway?",
+        a: "The first performance is Tuesday 30 March 2027 at 7.30pm at the Al Hirschfeld Theatre, 302 West 45th Street. Opening night is Sunday 18 April 2027.",
+      },
+      {
+        q: "Who sells the tickets?",
+        a: "ATG Tickets — ATG Entertainment operates the Al Hirschfeld, and the production's own site sends you there. Groups of ten or more go through ATG's group sales, which take a reservation now and payment later with no added fees. The date the theatre's box office starts selling in person has not been announced.",
+      },
+      {
+        q: "Is the London production still running?",
+        a: "Yes. It opened at the Savoy Theatre in November 2025, has no closing date, and is booking into 2027.",
+      },
+    ],
+    tags: ["broadway", "open-run"],
+  },
+  {
+    slug: "london",
+    show: "paddington",
+    city: "london",
+    venue: "savoy-theatre",
+    start: "2025-11-01",
+    openRun: true,
+    sellers: [
+      {
+        slug: "tickets-paddington-london",
+        name: "ATG Tickets",
+        official: true,
+      },
+    ],
+    summary:
+      "Previews began on Saturday 1 November 2025 and the production opened on 30 November. It has no closing date, and the production's own site now advertises its best availability in 2027.",
+    language: "English",
+    faq: [
+      {
+        q: "Who sells the tickets?",
+        a: "ATG Tickets, which is the official ticketing page the production's own site sends you to; ATG Entertainment owns the Savoy. Online orders are capped at nine tickets.",
+      },
+      {
+        q: "Are there group rates?",
+        a: "Groups of ten or more book through Group Line on 020 7206 1174. On Monday, Wednesday and Thursday evenings and Thursday matinees, the two top price bands come down to £70 in the stalls and £55 in the dress circle. The production says these discounts may be withdrawn at any time.",
+      },
+      {
+        q: "Is the theatre step-free?",
+        a: "Only the dress circle. There are 75 steps down to the stalls from the foyer and no lift; the dress circle has its own street-level entrance on Carting Lane, with space for two wheelchairs.",
+      },
+    ],
+    tags: ["west-end", "open-run"],
+  },
+  {
+    slug: "new-york",
+    show: "full-monty",
+    city: "new-york",
+    venue: "todd-haimes-theatre",
+    start: "2027-04-03",
+    end: "2027-06-20",
+    sellers: [],
+    infoSlug: "full-monty-official",
+    summary:
+      "A limited Roundabout season from Saturday 3 April to Sunday 20 June 2027. Single tickets are not on sale yet — Roundabout sells its season to subscribers first — and the cast has not been announced.",
+    language: "English",
+    faq: [
+      {
+        q: "When does The Full Monty play?",
+        a: "From 3 April to 20 June 2027 at the Todd Haimes Theatre, 227 West 42nd Street, as Roundabout Theatre Company lists it. Opening night has been announced for Sunday 25 April.",
+      },
+      {
+        q: "Can I buy a ticket now?",
+        a: "Not a single ticket. Roundabout's page for the show offers its subscription packages, group bookings and a field for a promotional code; single tickets go on sale later, and the button on this page will change when they do.",
+      },
+      {
+        q: "Is it the film?",
+        a: "It is the American musical made from it in 2000, with a book by Terrence McNally and songs by David Yazbek, which moves the story from Sheffield to Buffalo, New York. This is its first Broadway revival.",
+      },
+    ],
+    tags: ["broadway"],
+  },
+  {
+    slug: "new-york",
+    show: "maybe-happy-ending",
+    city: "new-york",
+    venue: "belasco-theatre",
+    start: "2024-11-12",
+    openRun: true,
+    sellers: [
+      {
+        slug: "tickets-maybe-happy-ending-new-york",
+        name: "Telecharge",
+        official: true,
+        price: {
+          from: 55,
+          to: 399,
+          currency: "USD",
+          checkedOn: "2026-10-12",
+          note: "the range Telecharge's own price filter spans across all performances; fees are added at checkout",
+        },
+      },
+    ],
+    summary:
+      "The production opened at the Belasco on 12 November 2024 and won six Tony Awards the following June, Best Musical among them. No closing date has been announced.",
+    runningTime: "1 hour 40 minutes, with no interval",
+    language: "English",
+    ageGuidance:
+      "Recommended for ages 8 and up. Children under 4 are not admitted, and the production uses strobe lighting.",
+    faq: [
+      {
+        q: "Who sells the tickets?",
+        a: "Telecharge, the Shubert Organization's box office — the Belasco is a Shubert house, and the production's own site links straight to it. All sales are final: there are no exchanges or refunds unless a performance is cancelled.",
+      },
+      {
+        q: "Is there an interval?",
+        a: "No. The show runs 1 hour 40 minutes straight through, and the theatre opens 30 minutes before the curtain.",
+      },
+      {
+        q: "Is it playing on Halloween?",
+        a: "Yes, twice — 2pm and 7pm on Saturday 31 October 2026.",
+      },
+    ],
+    tags: ["broadway", "open-run"],
+  },
+  {
+    slug: "london",
+    show: "jesus-christ-superstar",
+    city: "london",
+    venue: "theatre-royal-drury-lane",
+    start: "2026-10-16",
+    end: "2027-01-09",
+    sellers: [
+      {
+        slug: "tickets-jesus-christ-superstar-london",
+        name: "LW Theatres",
+        official: true,
+        price: {
+          from: 25,
+          currency: "GBP",
+          checkedOn: "2026-10-12",
+          note: "no booking fees; every price includes a £1.70 restoration levy",
+          tiers: [
+            { name: "Ticket Plus Package", from: 35, note: "per person, on top of the seat" },
+            { name: "Private Box Experience", from: 65, note: "per person, on top of the seat" },
+            { name: "Gold Experience", from: 80, note: "per person, on top of the seat" },
+            { name: "Platinum Experience", from: 140, note: "per person, on top of the seat" },
+          ],
+        },
+      },
+    ],
+    summary:
+      "Twelve weeks at Drury Lane, from Friday 16 October 2026 to Saturday 9 January 2027, after a summer at the London Palladium. Sam Ryder plays Jesus, and nine guest stars take turns as King Herod.",
+    language: "English",
+    ageGuidance:
+      "Recommended 10+. Children under 4 are not admitted, and anyone 15 or under must be with an adult and may not sit alone. Contains flashing lights, pyrotechnics, smoke and haze, some violence, imitation blood and an onstage depiction of the crucifixion.",
+    bodyHeading: "The production, the theatre and the Herods",
+    body: [
+      "This is the Regent's Park Open Air Theatre production, directed by Timothy Sheader with choreography by Drew McOnie and design by Tom Scutt. It played the London Palladium from 20 June to 5 September 2026, and LW Theatres says it moved to Drury Lane rather than closing because of record demand for that season.",
+      "Sam Ryder came to it from Eurovision and the pop charts; Jesus at the Palladium was his first stage role, and he carries on in it here. Tyrone Huntley plays Judas, with Matty J as the alternate.",
+      "Herod gets a guest each week or two: Matt Bomer from 16 October, Rob Brydon from 2 November, Reece Shearsmith from 9 November, Bob The Drag Queen from 16 November, Michael Ball from 23 November, Simon Russell Beale from 7 December, Omid Djalili from 14 December, Layton Williams from 21 December and Glenn Close for the final week from 4 January. The producers say they cannot guarantee any particular performer.",
+    ],
+    faq: [
+      {
+        q: "What are the performance times?",
+        a: "Evenings at 7.30pm Monday to Saturday, with matinees at 2.30pm on Thursday and Saturday.",
+      },
+      {
+        q: "How long is it?",
+        a: "The Drury Lane page lists the running time as still to be confirmed. At the Palladium this summer the same production ran 2 hours, including a 20-minute interval.",
+      },
+      {
+        q: "Who sells the tickets?",
+        a: "LW Theatres, which owns Drury Lane and is the official box office for the run. It charges no booking fee, and its VIP packages are priced per person on top of the seat.",
+      },
+    ],
+    tags: ["west-end"],
+  },
+  {
+    slug: "london",
+    show: "rent",
+    city: "london",
+    venue: "tom-stoppard-theatre",
+    start: "2026-09-26",
+    end: "2027-05-29",
+    sellers: [
+      {
+        slug: "tickets-rent-london",
+        name: "ATG Tickets",
+        official: true,
+        price: {
+          from: 20,
+          currency: "GBP",
+          checkedOn: "2026-10-12",
+          note: "plus a £3.65 transaction fee",
+        },
+      },
+    ],
+    summary:
+      "Rent began on Saturday 26 September 2026, the month the Duke of York's Theatre became the Tom Stoppard Theatre, and the theatre lists it until Saturday 29 May 2027.",
+    runningTime: "2 hours 45 minutes, including an interval",
+    language: "English",
+    ageGuidance:
+      "Recommended for ages 14+. The theatre's content warnings cover HIV and AIDS, suicide, drug use and strobe lighting.",
+    faq: [
+      {
+        q: "Who is in it?",
+        a: "Gaten Matarazzo plays Mark, Travis Ross Roger, Alexa Lopez Mimi, Billy Nevers Collins, Lazy Violet Maureen, Danielle Fiamanya Joanne, Jeevan Braich Angel and Joaquin Pedro Valdes Benny. Luke Sheppard directs and Tom Jackson Greaves choreographs.",
+      },
+      {
+        q: "Who sells the tickets?",
+        a: "ATG Tickets — ATG Entertainment owns the theatre, and the theatre's own page links there. Seats start at £20, and a £3.65 transaction fee is added to the order.",
+      },
+      {
+        q: "Is this the Duke of York's?",
+        a: "Yes. The theatre was renamed for Sir Tom Stoppard in September 2026, and some booking pages still carry the old name in their addresses.",
+      },
+    ],
+    tags: ["west-end"],
+  },
+  {
+    slug: "london",
+    show: "one-day",
+    city: "london",
+    venue: "garrick-theatre",
+    start: "2026-11-17",
+    end: "2027-03-14",
+    sellers: [
+      {
+        slug: "tickets-one-day-london",
+        name: "Nimax Theatres",
+        official: true,
+        price: {
+          from: 30,
+          to: 155,
+          currency: "GBP",
+          checkedOn: "2026-10-12",
+          note: "no booking fee when booked direct",
+        },
+      },
+    ],
+    summary:
+      "From Tuesday 17 November 2026 to Sunday 14 March 2027, after its premiere at the Royal Lyceum Theatre in Edinburgh earlier in 2026.",
+    runningTime: "About 2 hours 40 minutes, including an interval",
+    language: "English",
+    ageGuidance: "Recommended 12+.",
+    faq: [
+      {
+        q: "Who is in it?",
+        a: "Jamie Muscato plays Dexter and Sharon Rose plays Emma. Max Webster directs, with choreography by Carrie-Anne Ingrouille and design by Rae Smith.",
+      },
+      {
+        q: "Who sells the tickets?",
+        a: "Nimax Theatres, which owns the Garrick and sells direct with no booking fee. Seats run from £30 to £155, and group rates apply on Tuesday, Wednesday, Thursday and Sunday performances.",
+      },
+      {
+        q: "Are there accessible performances?",
+        a: "A British Sign Language performance on Friday 22 January 2027 at 7.30pm, a captioned one on Saturday 6 February at 7.30pm and an audio-described one on Sunday 28 February at 3pm. Access bookings go through Nimax on 0330 333 4815.",
+      },
+    ],
+    tags: ["west-end"],
+  },
+  {
+    slug: "london",
+    show: "into-the-woods",
+    city: "london",
+    venue: "noel-coward-theatre",
+    start: "2026-09-22",
+    end: "2027-01-09",
+    sellers: [
+      {
+        slug: "tickets-into-the-woods-london",
+        name: "Delfont Mackintosh Theatres",
+        official: true,
+      },
+    ],
+    summary:
+      "Previews began on 22 September 2026 and the production opened on 7 October; it plays until Saturday 9 January 2027. It is the staging that began at the Bridge Theatre and won the Olivier Award for Best Musical Revival.",
+    runningTime: "About 2 hours 40 minutes, including an interval",
+    language: "English",
+    ageGuidance:
+      "Recommended 12+. Children under 3 are not admitted, and under-16s must sit next to a ticketholder aged 18 or over.",
+    faq: [
+      {
+        q: "What are the performance times?",
+        a: "Evenings at 7.30pm Monday to Saturday, with matinees at 2.30pm on Thursday and Saturday. There are no performances on 24 or 25 December or on 1 January.",
+      },
+      {
+        q: "Is it playing on Halloween?",
+        a: "Yes, twice — 2.30pm and 7.30pm on Saturday 31 October 2026, with Kate Fleetwood as the Witch.",
+      },
+      {
+        q: "Are there cheaper seats?",
+        a: "£25 tickets for under-30s, Monday to Thursday, two per person with photo ID. Otherwise prices vary by performance; booking fees may apply except in person at the box office.",
+      },
+    ],
+    tags: ["west-end"],
+  },
+  {
+    slug: "london",
+    show: "pride",
+    city: "london",
+    venue: "bridge-theatre",
+    start: "2026-11-12",
+    end: "2027-05-08",
+    sellers: [
+      {
+        slug: "tickets-pride-london",
+        name: "Bridge Theatre",
+        official: true,
+        price: {
+          from: 30,
+          currency: "GBP",
+          checkedOn: "2026-10-12",
+          note: "the first night's lowest price; the next performances on the theatre's calendar start at £36.50",
+        },
+      },
+    ],
+    summary:
+      "From Thursday 12 November 2026, after sold-out runs at the Sherman Theatre in Cardiff and at the National Theatre; the Bridge lists performances to 8 May 2027.",
+    runningTime: "2 hours 40 minutes, including an interval",
+    language: "English",
+    ageGuidance: "Recommended 12+.",
+    faq: [
+      {
+        q: "Who made it?",
+        a: "Stephen Beresford, who wrote the 2014 film, adapted it into the musical's book and lyrics, and Matthew Warchus, who directed the film, directs the stage version.",
+      },
+      {
+        q: "Who sells the tickets?",
+        a: "The Bridge Theatre's own box office; the production's site links straight to the theatre's calendar.",
+      },
+      {
+        q: "Are there accessible performances?",
+        a: "Captioned on Wednesday 3 February 2027 at 7.30pm, audio described with a touch tour on Wednesday 10 February at 7.30pm, British Sign Language on Wednesday 24 February at 7.30pm, and captioned again on Saturday 24 April at 2.30pm.",
+      },
+    ],
+  },
 ];

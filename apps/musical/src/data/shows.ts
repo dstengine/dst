@@ -592,4 +592,513 @@ export const shows: Show[] = [
       },
     ],
   },
+  {
+    slug: "evita",
+    title: "Evita",
+    titleSeo: "Evita the musical on Broadway: dates and tickets",
+    officialSlug: "evita-official",
+    officialDomain: "evitathemusical.com",
+    eyebrow: "The Broadway run, and what a ticket actually buys",
+    hubCard:
+      "Rachel Zegler as Eva Perón, in the staging that sang its biggest number to the street outside the Palladium.",
+    checkedOn: "12 October 2026",
+    tagline:
+      "Jamie Lloyd's staging of the Andrew Lloyd Webber and Tim Rice musical, with Rachel Zegler as Eva Perón, beginning previews at the Winter Garden Theatre on 27 February 2027.",
+    summary:
+      "Evita, the Lloyd Webber and Rice musical, at the Winter Garden Theatre on Broadway: previews, opening night, prices, running time and who sells the tickets — with the source for each.",
+    hook: [
+      "The most talked-about moment of London's theatre summer in 2025 happened on the pavement. Midway through Jamie Lloyd's Evita at the London Palladium, Rachel Zegler stepped out onto the theatre's exterior balcony and sang “Don't Cry for Me, Argentina” to Argyll Street, while the audience inside watched it on a screen.",
+      "The production played a twelve-week season, won Zegler the Olivier Award for Best Actress in a Musical, and is crossing the Atlantic: previews at the Winter Garden Theatre begin on 27 February 2027, and opening night is 25 March. What Broadway does with the balcony, the production has not said.",
+      "Below is the run as the production lists it: the dates, what a seat costs, how long the evening is, and who sells the tickets.",
+    ],
+    sections: [
+      {
+        slug: "about",
+        image: "/covers/evita-about.jpg",
+        imageAlt: "Cut-paper illustration: a small curved iron balcony against a crimson ground, lit by a single cone of light, with petals falling beneath it.",
+        label: "About the show",
+        title: "What Evita actually is",
+        description:
+          "A sung-through musical about Eva Perón, and the production that took it out onto the Palladium's balcony. What it is, who made it, and where it has been.",
+        body: [
+          "Evita follows Eva Duarte from a small-town childhood in Argentina to radio stardom, marriage to Juan Perón and a place as the most adored and most resented woman in the country, dead at thirty-three. Che, a narrator who is half chorus and half prosecutor, argues with her the whole way through.",
+          "Andrew Lloyd Webber wrote the music and Tim Rice the lyrics. It began as a concept album in 1976 and reached the London stage in 1978; it is sung almost end to end, and “Don't Cry for Me, Argentina” is the song everyone knows.",
+          "Jamie Lloyd's production played the London Palladium from June to 6 September 2025. It is produced by the Jamie Lloyd Company and Michael Harrison, and Rachel Zegler, who won the Olivier for it, plays Eva again on Broadway.",
+        ],
+      },
+      {
+        slug: "tickets",
+        image: "/covers/evita-tickets.jpg",
+        imageAlt: "Cut-paper illustration: a single torn paper stub with a small star punched near one end.",
+        label: "Tickets",
+        title: "Buying a ticket for Evita",
+        description:
+          "Who sells seats for the Evita musical at the Winter Garden Theatre, what they cost, how far ahead the calendar runs, and the age rule at the door.",
+        template: "tickets",
+        body: [
+          "Telecharge sells the tickets: the Winter Garden is a Shubert Organization house, and Telecharge is the Shubert box office. Its price filter ran from $74 to $447 across the run on 12 October 2026, with fees added at checkout. Groups of ten or more book through Broadway Inbound on 866-302-0995.",
+          "The calendar is on sale to November 2027. The run has no closing date, so that horizon moves as the production adds weeks rather than marking an end.",
+          "Children under 4 are not admitted. The evening runs 2 hours 25 minutes with an interval, and the production warns of strobe lighting, haze and stage blood.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "purple-rain",
+    title: "Purple Rain",
+    titleSeo: "Purple Rain the musical on Broadway: dates and tickets",
+    officialSlug: "purple-rain-official",
+    officialDomain: "purplerainbroadway.com",
+    eyebrow: "The Broadway run, and what a ticket actually buys",
+    hubCard:
+      "Prince's songs in the theatre that belonged to The Phantom of the Opera for thirty-five years.",
+    checkedOn: "12 October 2026",
+    tagline:
+      "A stage musical of Prince's 1984 film and album, directed by Saheem Ali, beginning previews at the Majestic Theatre on 12 March 2027.",
+    summary:
+      "Purple Rain, the Prince musical, at the Majestic Theatre on Broadway: previews, opening night, prices and who sells the tickets — with the source for each.",
+    hook: [
+      "For thirty-five years the Majestic Theatre was The Phantom of the Opera's. From 12 March 2027 it is Prince's: Purple Rain, the stage musical of his 1984 film and its Grammy-winning album, begins previews there and opens on 12 April.",
+      "It is not arriving untested. The musical had its world premiere in 2025 at the State Theatre in Minneapolis — Prince's city, and the film's.",
+      "More than twenty of his songs are in it, from “When Doves Cry” to “I Would Die 4 U”. Below is the run as the production lists it.",
+    ],
+    sections: [
+      {
+        slug: "about",
+        image: "/covers/purple-rain-about.jpg",
+        imageAlt: "Cut-paper illustration: a white dove between sweeping purple streaks, above a pool of stage light on a red floor.",
+        label: "About the show",
+        title: "What Purple Rain actually is",
+        description:
+          "A new musical built from a film and an album: what the story is, who wrote the book, and who is shaping Prince's music for the stage.",
+        body: [
+          "The 1984 film follows The Kid, a young Minneapolis musician fighting his rivals, his father's temper and his own on the way to one night on stage at First Avenue. The musical takes that story and the album that came with it, and adds more of the catalogue: “Take Me with You” and “The Beautiful Ones” are among the songs the production names.",
+          "Peter Duchan wrote the book and Saheem Ali directs. Jason Michael Webb supervises, arranges and orchestrates the music, Ebony Williams choreographs and David Zinn designs the set. Bobby Z and Morris Hayes, who both played in Prince's bands, are the production's music advisers. Orin Wolf produces.",
+          "The Kid has not been cast. The production says the company will be announced later, which leaves the first question anyone asks of a Prince musical — who sings these songs — open for now.",
+        ],
+      },
+      {
+        slug: "tickets",
+        image: "/covers/purple-rain-tickets.jpg",
+        imageAlt: "Cut-paper illustration: a single torn paper stub with a small raindrop-shaped hole near one corner.",
+        label: "Tickets",
+        title: "Buying a ticket for Purple Rain",
+        description:
+          "Who sells seats for the Purple Rain musical at the Majestic Theatre, what they cost, and what the production has not announced yet.",
+        template: "tickets",
+        body: [
+          "Telecharge sells the tickets, as it does for every Shubert Organization house; the production's own site links to nothing else. Its price filter ran from $49 to $399 across the run on 12 October 2026, with fees added at checkout.",
+          "Telecharge lists the running time as still to be determined, and the cast has not been announced. This page changes when either does.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "paddington",
+    title: "Paddington The Musical",
+    short: "Paddington",
+    titleSeo: "Paddington The Musical: Broadway and London tickets",
+    officialSlug: "paddington-official",
+    officialDomain: "paddingtonthemusical.com",
+    eyebrow: "The London and Broadway runs, and what a ticket actually buys",
+    hubCard:
+      "Seven Olivier Awards in its first season, and a bear played by two people at once.",
+    checkedOn: "12 October 2026",
+    tagline:
+      "Tom Fletcher's musical of Michael Bond's bear, directed by Luke Sheppard, playing the Savoy Theatre in London and beginning at the Al Hirschfeld Theatre on Broadway on 30 March 2027.",
+    summary:
+      "Paddington The Musical at the Savoy Theatre in London and the Al Hirschfeld Theatre on Broadway: dates, running time, age guidance and who sells the tickets — with the source for each.",
+    hook: [
+      "At the Savoy, the bear is two performers. Arti Shah is inside the costume, and James Hameed supplies the voice and the facial expressions — so the character everyone came to see is a collaboration, and the audience only ever sees half of it.",
+      "Paddington The Musical opened at the Savoy Theatre on 30 November 2025. In 2026 it took seven Olivier Awards, Best New Musical among them, along with nine WhatsOnStage Awards and the Critics' Circle award for Best New Musical.",
+      "It is still running in London with no closing date, and its first transfer begins at the Al Hirschfeld Theatre on Broadway on 30 March 2027. Below are both runs, and who sells each.",
+    ],
+    sections: [
+      {
+        slug: "about",
+        image: "/covers/paddington-about.jpg",
+        imageAlt: "Cut-paper illustration: a battered suitcase with a blank luggage label, and a red hat resting on top.",
+        label: "About the show",
+        title: "What Paddington The Musical actually is",
+        description:
+          "A new British musical built on Michael Bond's bear and the films, with songs by Tom Fletcher. What it is, who made it, and how the bear works.",
+        body: [
+          "A small bear from Peru arrives at Paddington station with a label round his neck asking someone to look after him, and the Brown family does. The characters are Michael Bond's, from the books he began in 1958; the story is inspired by the films rather than lifted from any one of them.",
+          "Tom Fletcher, of McFly, wrote the music and lyrics, Jessica Swale wrote the book, and Luke Sheppard directs. It is produced by Sonia Friedman Productions and StudioCanal, with Eliza Lumley Productions on behalf of Universal Music UK.",
+          "The Broadway site's line is “New York, please look after this bear” — the label round his neck, readdressed to a new city.",
+        ],
+      },
+      {
+        slug: "tickets",
+        image: "/covers/paddington-tickets.jpg",
+        imageAlt: "Cut-paper illustration: a single torn paper stub with a small paw print punched near one end.",
+        label: "Tickets",
+        title: "Paddington tickets in London and New York",
+        description:
+          "Who sells seats for Paddington The Musical at the Savoy and on Broadway, what the group rates are, and what each city says about small children.",
+        template: "tickets",
+        body: [
+          "Both runs sell through ATG Tickets, because ATG Entertainment owns the Savoy and operates the Al Hirschfeld. In London, online orders are capped at nine tickets, and groups of ten or more get midweek rates through Group Line on 020 7206 1174.",
+          "On Broadway, performances begin on 30 March 2027 and opening night is 18 April. The production recommends it for ages 6 and up; ATG's own page gives two different minimum ages for admission, so ask the box office before booking for a very young child.",
+          "No price is quoted here for either run. The seller's seat map is the figure that counts, and the button lands on it.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "full-monty",
+    title: "The Full Monty",
+    titleSeo: "The Full Monty musical on Broadway: dates and tickets",
+    officialSlug: "full-monty-official",
+    officialDomain: "roundabouttheatre.org",
+    eyebrow: "The Broadway run, and what a ticket actually buys",
+    hubCard:
+      "Six laid-off steelworkers and one night on stage, back on Broadway for the first time since 2002.",
+    checkedOn: "12 October 2026",
+    tagline:
+      "Terrence McNally and David Yazbek's musical of the British film, revived by Roundabout Theatre Company at the Todd Haimes Theatre from 3 April to 20 June 2027.",
+    summary:
+      "The Full Monty, the David Yazbek musical, at the Todd Haimes Theatre on Broadway: Roundabout's dates, opening night and how its tickets are sold — with the source for each.",
+    hook: [
+      "The film was set in Sheffield. When Terrence McNally and David Yazbek turned it into a musical in 2000, they moved it to Buffalo, New York, kept the closed steel mills and the unemployed men who decide to strip for money, and wrote an American score for them.",
+      "That production opened at the Eugene O'Neill Theatre on 26 October 2000, ran 770 performances and earned ten Tony nominations. This is its first Broadway revival: Roundabout Theatre Company stages it at the Todd Haimes Theatre for a limited season from 3 April to 20 June 2027, directed by Leigh Silverman.",
+      "Below is the season as Roundabout lists it, and how its seats are sold — which, at a subscription house, is not how the theatre next door does it.",
+    ],
+    sections: [
+      {
+        slug: "about",
+        image: "/covers/full-monty-about.jpg",
+        imageAlt: "Cut-paper illustration: a row of empty wooden chairs under a single spotlight, with a hard hat on one seat.",
+        label: "About the show",
+        title: "What The Full Monty actually is",
+        description:
+          "An American musical of a British film about laid-off steelworkers. Who wrote it, who is staging the revival, and what kind of evening it is.",
+        body: [
+          "Jerry and Dave have been out of work since the Buffalo mills closed, and are broke enough that a touring male revue gives Jerry an idea: a one-night strip show of their own, with whoever they can talk into it. It is a comedy about unemployment, fathers and sons, and bodies that were not built for the job.",
+          "Terrence McNally wrote the book and David Yazbek the music and lyrics; it was Yazbek's first Broadway score. The musical premiered at the Old Globe in San Diego in June 2000 and reached Broadway that October.",
+          "Leigh Silverman directs the revival and Connor Gallagher choreographs. Casting has not been announced.",
+        ],
+      },
+      {
+        slug: "tickets",
+        image: "/covers/full-monty-tickets.jpg",
+        imageAlt: "Cut-paper illustration: a blank torn paper stub on a pink ground, with two red ribbon bows and a round brass eyelet.",
+        label: "Tickets",
+        title: "Buying a ticket for The Full Monty",
+        description:
+          "How Roundabout sells The Full Monty musical at the Todd Haimes Theatre: subscriptions first, single tickets later, and the dates that are fixed so far.",
+        template: "tickets",
+        body: [
+          "Roundabout Theatre Company runs the Todd Haimes Theatre and sells its seats itself, through its own site and box office. On 12 October 2026 its page for the show offered subscription packages, group bookings and a field for a promotional code, but no single tickets.",
+          "Single tickets go on sale later, once the subscribers have booked. Until then this site lists no seller for the run, and the button goes to Roundabout's own page for the show.",
+          "The season runs from 3 April to 20 June 2027, with opening night on 25 April. Those are the only fixed dates so far.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "maybe-happy-ending",
+    title: "Maybe Happy Ending",
+    titleSeo: "Maybe Happy Ending the musical: Broadway tickets",
+    officialSlug: "maybe-happy-ending-official",
+    officialDomain: "maybehappyending.com",
+    eyebrow: "The Broadway run, and what a ticket actually buys",
+    hubCard:
+      "Two retired robots, a hundred minutes without an interval, and six Tony Awards, Best Musical among them.",
+    checkedOn: "12 October 2026",
+    tagline:
+      "Will Aronson and Hue Park's musical about two retired helper robots, directed by Michael Arden, at the Belasco Theatre since November 2024.",
+    summary:
+      "Maybe Happy Ending, the Tony-winning musical, at the Belasco Theatre on Broadway: prices, lottery and rush seats, running time, age guidance and who sells the tickets — with the source for each.",
+    hook: [
+      "It began in Seoul. The first production of Maybe Happy Ending opened there in 2016, in Korean, eight years before Broadway saw it in English.",
+      "It opened at the Belasco Theatre on 12 November 2024, and in June 2025 won six Tony Awards, Best Musical among them, with Darren Criss named Best Actor in a Musical for Oliver.",
+      "There is no closing date. Below is the run: what a seat costs, the cheap routes in, how long the evening is and who sells it.",
+    ],
+    sections: [
+      {
+        slug: "about",
+        image: "/covers/maybe-happy-ending-about.jpg",
+        imageAlt: "Cut-paper illustration: two small round robots side by side on a windowsill, a potted plant between them and a city beyond.",
+        label: "About the show",
+        title: "What Maybe Happy Ending actually is",
+        description:
+          "A small musical about two robots in near-future Seoul that became Broadway's Best Musical of 2025. What it is about, who made it, and how long it lasts.",
+        body: [
+          "Oliver and Claire are Helperbots, retired robots living alone in neighbouring apartments in near-future Seoul. Oliver is waiting for his old owner to come back for him; Claire's battery is failing and she needs a charger. A borrowed charger turns into a road trip, and the road trip into the one thing neither of them was built for.",
+          "Will Aronson wrote the music and Hue Park the lyrics, and they wrote the book together. Michael Arden directs. Darren Criss won his Tony as Oliver, with Helen J. Shen playing Claire opposite him.",
+          "It runs 1 hour 40 minutes with no interval and is recommended for ages 8 and up — a short evening by Broadway's standards.",
+        ],
+      },
+      {
+        slug: "tickets",
+        image: "/covers/maybe-happy-ending-tickets.jpg",
+        imageAlt: "Cut-paper illustration: a single torn paper stub held by a small brass clip at one end.",
+        label: "Tickets",
+        title: "Buying a ticket for Maybe Happy Ending",
+        description:
+          "Who sells seats for the Maybe Happy Ending musical at the Belasco, what they cost, and the three cheaper ways in: the lottery, the rush and standing room.",
+        template: "tickets",
+        body: [
+          "Telecharge sells the tickets — the Belasco is a Shubert house — and the box office at the theatre sells the same seats in person. Telecharge's price filter ran from $55 to $399 across all performances on 12 October 2026, with fees added at checkout. All sales are final.",
+          "There are three cheaper routes. A digital lottery offers seats at $20.64 for selected performances; in-person rush tickets go on sale at the box office when it opens each day, at $49 including fees; and when a performance is otherwise sold out, the box office may sell standing room at $42.",
+          "Groups of ten or more book through Broadway Inbound on 866-302-0995.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "jesus-christ-superstar",
+    title: "Jesus Christ Superstar",
+    titleSeo: "Jesus Christ Superstar musical in London: tickets",
+    officialSlug: "jesus-christ-superstar-official",
+    officialDomain: "lwtheatres.co.uk",
+    eyebrow: "The London run, and what a ticket actually buys",
+    hubCard:
+      "Sam Ryder as Jesus, and a different King Herod almost every week — Glenn Close gets the last one.",
+    checkedOn: "12 October 2026",
+    tagline:
+      "The Regent's Park Open Air Theatre production of Andrew Lloyd Webber and Tim Rice's rock musical, with Sam Ryder as Jesus, at the Theatre Royal Drury Lane from 16 October 2026 to 9 January 2027.",
+    summary:
+      "Jesus Christ Superstar, the Lloyd Webber and Rice musical, at the Theatre Royal Drury Lane in London: dates, the Herod guest stars, prices and who sells the tickets — with the source for each.",
+    hook: [
+      "King Herod has one song, and this production has nine people lined up to sing it. From Matt Bomer on 16 October to Glenn Close in the final week from 4 January, a different guest takes the part every week or two.",
+      "Around them is Timothy Sheader's production from Regent's Park Open Air Theatre, which spent the summer at the London Palladium and moves to the Theatre Royal Drury Lane for twelve weeks. Sam Ryder, who came to it from Eurovision, plays Jesus in his first stage role; Tyrone Huntley plays Judas.",
+      "Below is the Drury Lane season: the dates, the Herods, what a seat costs and who sells it.",
+    ],
+    sections: [
+      {
+        slug: "about",
+        image: "/covers/jesus-christ-superstar-about.jpg",
+        imageAlt: "Cut-paper illustration: a ring of thorny branches around a burst of golden stage light.",
+        label: "About the show",
+        title: "What Jesus Christ Superstar actually is",
+        description:
+          "A rock musical about the last week of Jesus's life, told largely from Judas's side. Who made it, and where this production comes from.",
+        body: [
+          "It covers the last days of Jesus's life, from the entry into Jerusalem to the crucifixion, and it is sung throughout. The point of view is often Judas's: the opening number is his, and the show treats his doubts as an argument rather than as plain betrayal.",
+          "Andrew Lloyd Webber and Tim Rice wrote it first as a concept album in 1970; the stage version followed on Broadway in 1971 and in London in 1972. “I Don't Know How to Love Him” and “Superstar” are the songs people know.",
+          "This staging began at Regent's Park Open Air Theatre, directed by Timothy Sheader with choreography by Drew McOnie and design by Tom Scutt, and played the London Palladium from 20 June to 5 September 2026 before the move to Drury Lane.",
+        ],
+      },
+      {
+        slug: "tickets",
+        image: "/covers/jesus-christ-superstar-tickets.jpg",
+        imageAlt: "Cut-paper illustration: a single torn paper stub with a small crown shape punched near one end.",
+        label: "Tickets",
+        title: "Jesus Christ Superstar tickets in London",
+        description:
+          "Who sells seats for the Jesus Christ Superstar musical at Drury Lane, what they cost, what the VIP packages add, and the age rules.",
+        template: "tickets",
+        body: [
+          "LW Theatres owns Drury Lane and sells the run directly, with no booking fees. Seats started at £25 on 12 October 2026, and every price includes a £1.70 restoration levy.",
+          "The packages are priced per person on top of the seat: Ticket Plus from £35, the Private Box Experience from £65, Gold from £80 and Platinum from £140.",
+          "It is recommended for ages 10 and up. Children under 4 are not admitted, under-16s must be with an adult, and the production warns of pyrotechnics, imitation blood and an onstage depiction of the crucifixion.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "rent",
+    title: "Rent",
+    titleSeo: "Rent the musical in London: dates and tickets",
+    officialSlug: "rent-official",
+    officialDomain: "tomstoppardtheatre.com",
+    eyebrow: "The London run, and what a ticket actually buys",
+    hubCard:
+      "Gaten Matarazzo as Mark, at the theatre that took Tom Stoppard's name the month the run began.",
+    checkedOn: "12 October 2026",
+    tagline:
+      "Jonathan Larson's musical, directed by Luke Sheppard with Gaten Matarazzo as Mark, at the Tom Stoppard Theatre until 29 May 2027.",
+    summary:
+      "Rent, Jonathan Larson's musical, at the Tom Stoppard Theatre in London: dates, cast, running time, age guidance and who sells the tickets — with the source for each.",
+    hook: [
+      "Jonathan Larson did not live to see Rent's first preview. He died suddenly in January 1996, aged thirty-five, on the morning of what was to be its first performance off-Broadway; the show went on to win the Pulitzer Prize for Drama and four Tony Awards, and to run twelve years on Broadway.",
+      "This London production is directed by Luke Sheppard — who also directs Paddington at the Savoy — with Gaten Matarazzo, of Stranger Things, as Mark. It began on 26 September 2026, the month the Duke of York's became the Tom Stoppard Theatre.",
+      "Below is the run as the theatre lists it, to 29 May 2027.",
+    ],
+    sections: [
+      {
+        slug: "about",
+        image: "/covers/rent-about.jpg",
+        imageAlt: "Cut-paper illustration: a zigzag fire escape on a brick tenement, with a single candle burning on a windowsill.",
+        label: "About the show",
+        title: "What Rent actually is",
+        description:
+          "A rock musical about a year in the lives of young artists in New York's East Village under the shadow of AIDS. What it is, who made it, and who is in this one.",
+        body: [
+          "It follows a year in the lives of a group of friends in New York's East Village around 1990 — a filmmaker, a songwriter, a dancer, a performance artist and the people who love them — while HIV and AIDS, poverty and an eviction bear down on them. It is a loose retelling of Puccini's La Bohème.",
+          "Larson wrote the book, the music and the lyrics. “Seasons of Love”, with its 525,600 minutes, is the song everybody knows.",
+          "Gaten Matarazzo plays Mark, with Travis Ross as Roger, Alexa Lopez as Mimi and Lazy Violet as Maureen; Tom Jackson Greaves choreographs. The theatre recommends it for ages 14 and up, with content warnings for HIV and AIDS, suicide, drug use and strobe lighting.",
+        ],
+      },
+      {
+        slug: "tickets",
+        image: "/covers/rent-tickets.jpg",
+        imageAlt: "Cut-paper illustration: a single torn paper stub with a candle-flame shape punched near one end.",
+        label: "Tickets",
+        title: "Rent tickets in London",
+        description:
+          "Who sells seats for the Rent musical at the Tom Stoppard Theatre, where prices start, and what is added at checkout.",
+        template: "tickets",
+        body: [
+          "ATG Tickets sells the run: ATG Entertainment owns the theatre, and the theatre's own page links there. Seats started at £20 on 12 October 2026, with a £3.65 transaction fee added to each order.",
+          "Some booking pages still carry the Duke of York's name in their addresses. It is the same building on St Martin's Lane, and the same seller.",
+          "The evening runs 2 hours 45 minutes with an interval, and the run is listed until 29 May 2027.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "one-day",
+    title: "One Day",
+    titleSeo: "One Day the musical in London: dates and tickets",
+    officialSlug: "one-day-official",
+    officialDomain: "nimaxtheatres.com",
+    eyebrow: "The London run, and what a ticket actually buys",
+    hubCard:
+      "Twenty years of one friendship, visited on the same date every year, with songs by a married couple.",
+    checkedOn: "12 October 2026",
+    tagline:
+      "A new musical of David Nicholls' novel, with a book by David Greig and songs by Abner and Amanda Ramirez, at the Garrick Theatre from 17 November 2026.",
+    summary:
+      "One Day, the musical of David Nicholls' novel, at the Garrick Theatre in London: dates, cast, prices, running time and who sells the tickets — with the source for each.",
+    hook: [
+      "The novel's trick is a date. One Day visits Emma and Dexter on 15 July every year for twenty years, starting the morning after they meet at their graduation, and leaves the reader to fill in everything in between.",
+      "The musical keeps it. David Greig wrote the book, Abner and Amanda Ramirez — the husband-and-wife duo Johnnyswim — wrote the music and lyrics, and Max Webster directs. It premiered in 2026 at the Royal Lyceum Theatre in Edinburgh, the city where the story begins.",
+      "It comes to the Garrick Theatre on 17 November 2026 for a season to 14 March 2027, with Jamie Muscato as Dexter and Sharon Rose as Emma. Below is the run, and who sells it.",
+    ],
+    sections: [
+      {
+        slug: "about",
+        image: "/covers/one-day-about.jpg",
+        imageAlt: "Cut-paper illustration: two footprints side by side on the crest of a golden hill, under a round summer sun.",
+        label: "About the show",
+        title: "What One Day actually is",
+        description:
+          "A new British musical of David Nicholls' bestselling novel: the story, the songwriters, and the production arriving in the West End.",
+        body: [
+          "Emma Morley and Dexter Mayhew spend one night together after graduating from Edinburgh in 1988 and then do not quite become a couple for two decades. She is an idealist who wants to write; he is charming and privileged, and becomes a television presenter on the way up and then on the way down. The story is the gap between them, measured once a year.",
+          "David Nicholls' novel came out in 2009 and has since been a film and a television series. This is its first stage musical.",
+          "Max Webster directs, with choreography by Carrie-Anne Ingrouille and design by Rae Smith. The evening runs about 2 hours 40 minutes with an interval, and it is recommended for ages 12 and up.",
+        ],
+      },
+      {
+        slug: "tickets",
+        image: "/covers/one-day-tickets.jpg",
+        imageAlt: "Cut-paper illustration: a single torn paper stub with a small sun shape punched near one end.",
+        label: "Tickets",
+        title: "One Day tickets in London",
+        description:
+          "Who sells seats for the One Day musical at the Garrick Theatre, what they cost, and the dates of the accessible performances.",
+        template: "tickets",
+        body: [
+          "Nimax Theatres owns the Garrick and sells the run directly, with no booking fee. Seats ran from £30 to £155 on 12 October 2026, and group rates apply on Tuesday, Wednesday, Thursday and Sunday performances.",
+          "There is a British Sign Language performance on 22 January 2027, a captioned one on 6 February and an audio-described one on 28 February; access bookings go through Nimax on 0330 333 4815.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "into-the-woods",
+    title: "Into the Woods",
+    titleSeo: "Into the Woods musical in London: dates and tickets",
+    officialSlug: "into-the-woods-official",
+    officialDomain: "delfontmackintosh.co.uk",
+    eyebrow: "The London run, and what a ticket actually buys",
+    hubCard:
+      "The Olivier-winning revival from the Bridge, now in the West End, with Kate Fleetwood as the Witch.",
+    checkedOn: "12 October 2026",
+    tagline:
+      "Jordan Fein's Olivier-winning staging of the Stephen Sondheim and James Lapine musical, with Kate Fleetwood as the Witch, at the Noël Coward Theatre until 9 January 2027.",
+    summary:
+      "Into the Woods, the Sondheim musical, at the Noël Coward Theatre in London: dates, performance times, the under-30s offer and who sells the tickets — with the source for each.",
+    hook: [
+      "The first act ends the way fairy tales end: everyone has their wish, and the curtain comes down on happily ever after. Then there is an interval, and the second act asks what happens next.",
+      "Jordan Fein's production began at the Bridge Theatre and won the Olivier Award for Best Musical Revival, with a second Olivier for its lighting. It has transferred to the Noël Coward Theatre, where previews began on 22 September 2026 and it opened on 7 October.",
+      "It plays until 9 January 2027. Below is the run, the performance times and who sells the seats.",
+    ],
+    sections: [
+      {
+        slug: "about",
+        image: "/covers/into-the-woods-about.jpg",
+        imageAlt: "Cut-paper illustration: a dark forest of tall trunks, a small red-hooded figure on a winding red path and a single golden slipper.",
+        label: "About the show",
+        title: "What Into the Woods actually is",
+        description:
+          "Sondheim and Lapine's musical of fairy tales that keep going after the happy ending. What it is, who made it, and who designed this production.",
+        body: [
+          "A baker and his wife, cursed by the witch next door to stay childless, go into the woods to collect four objects that will lift the spell — and run into Cinderella, Jack and his beanstalk, Little Red Riding Hood and Rapunzel, all on errands of their own.",
+          "Stephen Sondheim wrote the music and lyrics and James Lapine the book; it opened on Broadway in 1987. “Children Will Listen” and “No One Is Alone” come from it.",
+          "Jordan Fein directs. Tom Scutt, who also designs Jesus Christ Superstar at Drury Lane, designed it and won the Critics' Circle award for Best Designer; the company won Best Ensemble. Kate Fleetwood plays the Witch.",
+        ],
+      },
+      {
+        slug: "tickets",
+        image: "/covers/into-the-woods-tickets.jpg",
+        imageAlt: "Cut-paper illustration: a blank torn paper stub set inside a torn red paper frame.",
+        label: "Tickets",
+        title: "Into the Woods tickets in London",
+        description:
+          "Who sells seats for Into the Woods, the Sondheim musical, at the Noël Coward Theatre, the £25 offer for under-30s, and the performance times.",
+        template: "tickets",
+        body: [
+          "Delfont Mackintosh Theatres owns the Noël Coward and sells the run. Prices vary by performance, and booking fees may apply except in person at the box office.",
+          "Under-30s can buy £25 tickets for Monday to Thursday performances, two per person, with photo ID.",
+          "Evenings are at 7.30pm Monday to Saturday, with 2.30pm matinees on Thursday and Saturday; there are no performances on 24 or 25 December or on 1 January. It is recommended for ages 12 and up.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "pride",
+    title: "Pride",
+    titleSeo: "Pride the musical in London: dates and tickets",
+    officialSlug: "pride-official",
+    officialDomain: "pridethemusical.com",
+    eyebrow: "The London run, and what a ticket actually buys",
+    hubCard:
+      "London's gay activists and a Welsh mining valley in 1984, from the two people who made the film.",
+    checkedOn: "12 October 2026",
+    tagline:
+      "Stephen Beresford and Matthew Warchus's musical of their 2014 film about the miners' strike, at the Bridge Theatre from 12 November 2026.",
+    summary:
+      "Pride, the musical of the 2014 film, at the Bridge Theatre in London: dates, prices, accessible performances and who sells the tickets — with the source for each.",
+    hook: [
+      "In the summer of 1984 a group of lesbian and gay activists in London started collecting money for striking miners, and then had trouble finding a pit community that would take it. The group was Lesbians and Gays Support the Miners, and the community that said yes was in the Dulais Valley in south Wales.",
+      "Stephen Beresford wrote that story as the 2014 film Pride, which Matthew Warchus directed. Now they have made it a musical: Beresford wrote the book and lyrics, Warchus directs, and it played sold-out runs at the Sherman Theatre in Cardiff and at the National Theatre before arriving at the Bridge.",
+      "It begins at the Bridge Theatre on 12 November 2026, and the theatre's calendar runs to 8 May 2027. Below is the run, and how to book it.",
+    ],
+    sections: [
+      {
+        slug: "about",
+        image: "/covers/pride-about.jpg",
+        imageAlt: "Cut-paper illustration: a miner's helmet with a glowing lamp on the grass, and a rainbow-striped paper ribbon streaming over green hills.",
+        label: "About the show",
+        title: "What Pride actually is",
+        description:
+          "A new musical of a British film about the miners' strike and the activists who backed it. Who made it, and where it has played.",
+        body: [
+          "It is the story of LGSM and a Welsh mining community: two groups with nothing apparently in common, and what each did for the other during a strike that ended in defeat for the miners in 1985.",
+          "Stephen Beresford adapted his own screenplay into the book and lyrics, and Matthew Warchus directs the stage version as he directed the film. The score is by Christopher Nightingale, Josh Cohen and DJ Walde.",
+          "The evening runs 2 hours 40 minutes with an interval, and the theatre recommends it for ages 12 and up.",
+        ],
+      },
+      {
+        slug: "tickets",
+        image: "/covers/pride-tickets.jpg",
+        imageAlt: "Cut-paper illustration: a single torn paper stub with a small heart shape punched near one end.",
+        label: "Tickets",
+        title: "Pride tickets in London",
+        description:
+          "Who sells seats for the Pride musical at the Bridge Theatre, where prices start, and the dates of the accessible performances.",
+        template: "tickets",
+        body: [
+          "The Bridge Theatre sells its own tickets, and the production's site links straight to the theatre's calendar. On 12 October 2026 the first night's cheapest seat was £30, and the next performances on the calendar started at £36.50.",
+          "There are captioned performances on 3 February and 24 April 2027, an audio-described performance with a touch tour on 10 February, and a British Sign Language performance on 24 February.",
+          "The Bridge is not in the West End. It stands on the south bank beside Tower Bridge, a walk along the river from London Bridge station.",
+        ],
+      },
+    ],
+  },
 ];

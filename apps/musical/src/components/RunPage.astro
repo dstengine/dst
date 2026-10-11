@@ -18,7 +18,7 @@ import StatusBadge from "./StatusBadge.astro";
 import TicketButtons from "./TicketButtons.astro";
 import { go } from "../outbound";
 import { newsBySite } from "@dst/content/news";
-import { siteId, newsBase, formatDay, checkedOn, cityBySlug, cityHasPage, faqHeading, formatRun, formatRunDays, groupBySlug, otherRuns, priceFrom, priceIsFresh, priceLabel, priceTiers, priceValidUntil, formatPrice, relatedRuns, runFaq, runIntro, spell, statusOf, venueBySlug, venuePath, type Run, type Show, } from "../content";
+import { siteId, newsBase, formatDay, checkedOn, cityBySlug, cityHasPage, faqHeading, formatRun, formatRunDays, groupBySlug, otherRuns, priceFrom, priceIsFresh, priceLabel, priceTiers, priceValidUntil, formatPrice, relatedRuns, runFaq, runIntro, spell, statusOf, theVenue, venueBySlug, venuePath, type Run, type Show, } from "../content";
 
 interface Props { show: Show; run: Run }
 const { show, run } = Astro.props;
@@ -171,7 +171,7 @@ const eventLd: Record<string, unknown> = {
 ---
 <Layout
   title={headTitle}
-  description={`${show.title} in ${city.name}: ${formatRun(run)}${venue ? ` at ${venue.name}` : ""}. Dates, theatre and who is selling.`}
+  description={`${show.title} in ${city.name}: ${formatRun(run)}${venue ? ` at ${theVenue(venue.name)}` : ""}. The musical's dates, theatre and who is selling.`}
   jsonLd={[eventLd]}
 >
   <section class="container hero">

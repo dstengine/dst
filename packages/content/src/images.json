@@ -15794,6 +15794,70 @@
         ]
       ]
     },
+    "/covers/evita-about.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/evita-about-480.avif"
+        ],
+        [
+          768,
+          "/covers/evita-about-768.avif"
+        ],
+        [
+          1024,
+          "/covers/evita-about-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/evita-about-480.webp"
+        ],
+        [
+          768,
+          "/covers/evita-about-768.webp"
+        ],
+        [
+          1024,
+          "/covers/evita-about-1024.webp"
+        ]
+      ]
+    },
+    "/covers/evita-tickets.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/evita-tickets-480.avif"
+        ],
+        [
+          768,
+          "/covers/evita-tickets-768.avif"
+        ],
+        [
+          1024,
+          "/covers/evita-tickets-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/evita-tickets-480.webp"
+        ],
+        [
+          768,
+          "/covers/evita-tickets-768.webp"
+        ],
+        [
+          1024,
+          "/covers/evita-tickets-1024.webp"
+        ]
+      ]
+    },
     "/covers/fantasticks-about.jpg": {
       "width": 1536,
       "height": 864,
@@ -15890,6 +15954,70 @@
         ]
       ]
     },
+    "/covers/full-monty-about.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/full-monty-about-480.avif"
+        ],
+        [
+          768,
+          "/covers/full-monty-about-768.avif"
+        ],
+        [
+          1024,
+          "/covers/full-monty-about-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/full-monty-about-480.webp"
+        ],
+        [
+          768,
+          "/covers/full-monty-about-768.webp"
+        ],
+        [
+          1024,
+          "/covers/full-monty-about-1024.webp"
+        ]
+      ]
+    },
+    "/covers/full-monty-tickets.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/full-monty-tickets-480.avif"
+        ],
+        [
+          768,
+          "/covers/full-monty-tickets-768.avif"
+        ],
+        [
+          1024,
+          "/covers/full-monty-tickets-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/full-monty-tickets-480.webp"
+        ],
+        [
+          768,
+          "/covers/full-monty-tickets-768.webp"
+        ],
+        [
+          1024,
+          "/covers/full-monty-tickets-1024.webp"
+        ]
+      ]
+    },
     "/covers/galileo-about.jpg": {
       "width": 1536,
       "height": 864,
@@ -15983,6 +16111,134 @@
         [
           1536,
           "/covers/galileo-tickets-1536.webp"
+        ]
+      ]
+    },
+    "/covers/into-the-woods-about.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/into-the-woods-about-480.avif"
+        ],
+        [
+          768,
+          "/covers/into-the-woods-about-768.avif"
+        ],
+        [
+          1024,
+          "/covers/into-the-woods-about-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/into-the-woods-about-480.webp"
+        ],
+        [
+          768,
+          "/covers/into-the-woods-about-768.webp"
+        ],
+        [
+          1024,
+          "/covers/into-the-woods-about-1024.webp"
+        ]
+      ]
+    },
+    "/covers/into-the-woods-tickets.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/into-the-woods-tickets-480.avif"
+        ],
+        [
+          768,
+          "/covers/into-the-woods-tickets-768.avif"
+        ],
+        [
+          1024,
+          "/covers/into-the-woods-tickets-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/into-the-woods-tickets-480.webp"
+        ],
+        [
+          768,
+          "/covers/into-the-woods-tickets-768.webp"
+        ],
+        [
+          1024,
+          "/covers/into-the-woods-tickets-1024.webp"
+        ]
+      ]
+    },
+    "/covers/jesus-christ-superstar-about.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/jesus-christ-superstar-about-480.avif"
+        ],
+        [
+          768,
+          "/covers/jesus-christ-superstar-about-768.avif"
+        ],
+        [
+          1024,
+          "/covers/jesus-christ-superstar-about-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/jesus-christ-superstar-about-480.webp"
+        ],
+        [
+          768,
+          "/covers/jesus-christ-superstar-about-768.webp"
+        ],
+        [
+          1024,
+          "/covers/jesus-christ-superstar-about-1024.webp"
+        ]
+      ]
+    },
+    "/covers/jesus-christ-superstar-tickets.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/jesus-christ-superstar-tickets-480.avif"
+        ],
+        [
+          768,
+          "/covers/jesus-christ-superstar-tickets-768.avif"
+        ],
+        [
+          1024,
+          "/covers/jesus-christ-superstar-tickets-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/jesus-christ-superstar-tickets-480.webp"
+        ],
+        [
+          768,
+          "/covers/jesus-christ-superstar-tickets-768.webp"
+        ],
+        [
+          1024,
+          "/covers/jesus-christ-superstar-tickets-1024.webp"
         ]
       ]
     },
@@ -16226,6 +16482,134 @@
         ]
       ]
     },
+    "/covers/maybe-happy-ending-about.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/maybe-happy-ending-about-480.avif"
+        ],
+        [
+          768,
+          "/covers/maybe-happy-ending-about-768.avif"
+        ],
+        [
+          1024,
+          "/covers/maybe-happy-ending-about-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/maybe-happy-ending-about-480.webp"
+        ],
+        [
+          768,
+          "/covers/maybe-happy-ending-about-768.webp"
+        ],
+        [
+          1024,
+          "/covers/maybe-happy-ending-about-1024.webp"
+        ]
+      ]
+    },
+    "/covers/maybe-happy-ending-tickets.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/maybe-happy-ending-tickets-480.avif"
+        ],
+        [
+          768,
+          "/covers/maybe-happy-ending-tickets-768.avif"
+        ],
+        [
+          1024,
+          "/covers/maybe-happy-ending-tickets-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/maybe-happy-ending-tickets-480.webp"
+        ],
+        [
+          768,
+          "/covers/maybe-happy-ending-tickets-768.webp"
+        ],
+        [
+          1024,
+          "/covers/maybe-happy-ending-tickets-1024.webp"
+        ]
+      ]
+    },
+    "/covers/one-day-about.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/one-day-about-480.avif"
+        ],
+        [
+          768,
+          "/covers/one-day-about-768.avif"
+        ],
+        [
+          1024,
+          "/covers/one-day-about-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/one-day-about-480.webp"
+        ],
+        [
+          768,
+          "/covers/one-day-about-768.webp"
+        ],
+        [
+          1024,
+          "/covers/one-day-about-1024.webp"
+        ]
+      ]
+    },
+    "/covers/one-day-tickets.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/one-day-tickets-480.avif"
+        ],
+        [
+          768,
+          "/covers/one-day-tickets-768.avif"
+        ],
+        [
+          1024,
+          "/covers/one-day-tickets-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/one-day-tickets-480.webp"
+        ],
+        [
+          768,
+          "/covers/one-day-tickets-768.webp"
+        ],
+        [
+          1024,
+          "/covers/one-day-tickets-1024.webp"
+        ]
+      ]
+    },
     "/covers/online.jpg": {
       "width": 1536,
       "height": 864,
@@ -16271,6 +16655,70 @@
         [
           1536,
           "/covers/online-1536.webp"
+        ]
+      ]
+    },
+    "/covers/paddington-about.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/paddington-about-480.avif"
+        ],
+        [
+          768,
+          "/covers/paddington-about-768.avif"
+        ],
+        [
+          1024,
+          "/covers/paddington-about-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/paddington-about-480.webp"
+        ],
+        [
+          768,
+          "/covers/paddington-about-768.webp"
+        ],
+        [
+          1024,
+          "/covers/paddington-about-1024.webp"
+        ]
+      ]
+    },
+    "/covers/paddington-tickets.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/paddington-tickets-480.avif"
+        ],
+        [
+          768,
+          "/covers/paddington-tickets-768.avif"
+        ],
+        [
+          1024,
+          "/covers/paddington-tickets-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/paddington-tickets-480.webp"
+        ],
+        [
+          768,
+          "/covers/paddington-tickets-768.webp"
+        ],
+        [
+          1024,
+          "/covers/paddington-tickets-1024.webp"
         ]
       ]
     },
@@ -16367,6 +16815,198 @@
         [
           1536,
           "/covers/phantom-of-the-opera-tickets-1536.webp"
+        ]
+      ]
+    },
+    "/covers/pride-about.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/pride-about-480.avif"
+        ],
+        [
+          768,
+          "/covers/pride-about-768.avif"
+        ],
+        [
+          1024,
+          "/covers/pride-about-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/pride-about-480.webp"
+        ],
+        [
+          768,
+          "/covers/pride-about-768.webp"
+        ],
+        [
+          1024,
+          "/covers/pride-about-1024.webp"
+        ]
+      ]
+    },
+    "/covers/pride-tickets.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/pride-tickets-480.avif"
+        ],
+        [
+          768,
+          "/covers/pride-tickets-768.avif"
+        ],
+        [
+          1024,
+          "/covers/pride-tickets-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/pride-tickets-480.webp"
+        ],
+        [
+          768,
+          "/covers/pride-tickets-768.webp"
+        ],
+        [
+          1024,
+          "/covers/pride-tickets-1024.webp"
+        ]
+      ]
+    },
+    "/covers/purple-rain-about.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/purple-rain-about-480.avif"
+        ],
+        [
+          768,
+          "/covers/purple-rain-about-768.avif"
+        ],
+        [
+          1024,
+          "/covers/purple-rain-about-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/purple-rain-about-480.webp"
+        ],
+        [
+          768,
+          "/covers/purple-rain-about-768.webp"
+        ],
+        [
+          1024,
+          "/covers/purple-rain-about-1024.webp"
+        ]
+      ]
+    },
+    "/covers/purple-rain-tickets.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/purple-rain-tickets-480.avif"
+        ],
+        [
+          768,
+          "/covers/purple-rain-tickets-768.avif"
+        ],
+        [
+          1024,
+          "/covers/purple-rain-tickets-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/purple-rain-tickets-480.webp"
+        ],
+        [
+          768,
+          "/covers/purple-rain-tickets-768.webp"
+        ],
+        [
+          1024,
+          "/covers/purple-rain-tickets-1024.webp"
+        ]
+      ]
+    },
+    "/covers/rent-about.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/rent-about-480.avif"
+        ],
+        [
+          768,
+          "/covers/rent-about-768.avif"
+        ],
+        [
+          1024,
+          "/covers/rent-about-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/rent-about-480.webp"
+        ],
+        [
+          768,
+          "/covers/rent-about-768.webp"
+        ],
+        [
+          1024,
+          "/covers/rent-about-1024.webp"
+        ]
+      ]
+    },
+    "/covers/rent-tickets.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/rent-tickets-480.avif"
+        ],
+        [
+          768,
+          "/covers/rent-tickets-768.avif"
+        ],
+        [
+          1024,
+          "/covers/rent-tickets-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/rent-tickets-480.webp"
+        ],
+        [
+          768,
+          "/covers/rent-tickets-768.webp"
+        ],
+        [
+          1024,
+          "/covers/rent-tickets-1024.webp"
         ]
       ]
     },

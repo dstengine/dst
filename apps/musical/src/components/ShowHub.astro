@@ -11,7 +11,7 @@ import { ICONS } from "@dst/ui/icons";
 import Layout from "../layouts/Layout.astro";
 import Clips from "./Clips.astro";
 import EventCards from "./EventCards.astro";
-import { theVenue, checkedOn, cityBySlug, formatRun, groups, runsFor, runsInGroup, statusOf, upcomingRuns, venueBySlug, venuePath, type Show, } from "../content";
+import { theVenue, checkedOn, cityBySlug, formatRun, openRunDate, today, groups, runsFor, runsInGroup, statusOf, upcomingRuns, venueBySlug, venuePath, type Show, } from "../content";
 
 interface Props { show: Show }
 const { show } = Astro.props;
@@ -65,7 +65,7 @@ const faq = [
     // The run's first night, not the theatre's: a long run moves house —
     // Chicago opened at the Richard Rodgers — and "at the Ambassador since
     // 1996" would be a false sentence built out of two true fields.
-    a: `At ${theVenue(openVenue.name)} in ${cityBySlug(openRun.city)?.name ?? openRun.city}. The run has been going since ${formatRun(openRun).replace(/^Playing since /, "")}, with no closing date announced.`,
+    a: `At ${theVenue(openVenue.name)} in ${cityBySlug(openRun.city)?.name ?? openRun.city}. ${openRun.start && openRun.start > today() ? `The run begins on ${openRunDate(openRun)}` : `The run has been going since ${openRunDate(openRun)}`}, with no closing date announced.`,
   },
 ].filter(Boolean) as { q: string; a: string }[];
 
@@ -79,7 +79,7 @@ const glance = [
   },
   openRun && {
     label: "Open run",
-    value: `${cityBySlug(openRun.city)?.name ?? openRun.city}, since ${formatRun(openRun).replace("Playing since ", "")}`,
+    value: `${cityBySlug(openRun.city)?.name ?? openRun.city}, ${openRun.start && openRun.start > today() ? "from" : "since"} ${openRunDate(openRun)}`,
     icon: ICONS.stage,
     href: `/${show.slug}/${openRun.slug}/`,
   },
