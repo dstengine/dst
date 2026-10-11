@@ -27110,6 +27110,38 @@
         ]
       ]
     },
+    "/covers/gegham-grigorian-75-gala-domingo-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/gegham-grigorian-75-gala-domingo-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/gegham-grigorian-75-gala-domingo-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/gegham-grigorian-75-gala-domingo-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/gegham-grigorian-75-gala-domingo-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/gegham-grigorian-75-gala-domingo-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/gegham-grigorian-75-gala-domingo-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/ghapama-night-epos-yerevan-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -27427,6 +27459,70 @@
         [
           1536,
           "/covers/khachaturian-symphony-with-bells-ridout-yerevan-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/la-boheme-yerevan-opera-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/la-boheme-yerevan-opera-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/la-boheme-yerevan-opera-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/la-boheme-yerevan-opera-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/la-boheme-yerevan-opera-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/la-boheme-yerevan-opera-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/la-boheme-yerevan-opera-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/la-traviata-yerevan-opera-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/la-traviata-yerevan-opera-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/la-traviata-yerevan-opera-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/la-traviata-yerevan-opera-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/la-traviata-yerevan-opera-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/la-traviata-yerevan-opera-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/la-traviata-yerevan-opera-2026-1024.webp"
         ]
       ]
     },
