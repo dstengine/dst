@@ -6,6 +6,8 @@ import { siteId, newsBase, publisher } from "../../content";
 import { sections, tagLinks } from "../../sections";
 import { newsBySite } from "@dst/content/news";
 import { go } from "../../outbound";
+import { moments } from "../../schedule";
+import Ceremony from "../../components/Ceremony.astro";
 
 export function getStaticPaths() {
   // No body, no page — the card says everything the entry has.
@@ -15,6 +17,8 @@ export function getStaticPaths() {
 
 const { item, more } = Astro.props;
 const all = sections(newsBySite(siteId));
+// The tea times this page is the page about, in the order of the day.
+const ceremony = moments.filter((m) => m.guide?.slug === item.slug && m.guide.about);
 ---
 <Layout title={item.titleSeo ?? item.title} description={item.summary} image={item.image}>
   <NewsArticle
@@ -29,5 +33,7 @@ const all = sections(newsBySite(siteId));
     tagLinks={tagLinks(item, all)}
     tagsLabel="More on"
     actionHref={item.action ? go(`${item.slug}-action`) : undefined}
-  />
+  >
+    {ceremony.length > 0 && <Ceremony slot="lead" moments={ceremony} />}
+  </NewsArticle>
 </Layout>

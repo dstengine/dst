@@ -222,6 +222,11 @@ const relatedItems = (item.related ?? []).map((card) => ({
     <h1>{item.title}</h1>
   </header>
 
+  {/* Whatever the site has to say about the article's subject before the
+      article does — tea.ceo puts the countdown to the tea time a page is
+      about here. Empty, and so absent, everywhere else. */}
+  <slot name="lead" />
+
   {item.action && actionHref && (
     <p class="news-article-actions">
       <a class="button" href={actionHref} title={item.action.title ?? `${item.action.label} — ${item.title}`}>

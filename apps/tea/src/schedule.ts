@@ -28,8 +28,10 @@ export interface Moment {
   /** Who keeps it, when it is anyone's in particular. */
   origin?: string;
   text: string;
-  /** A guide on this site that goes with it. */
-  guide?: { slug: string; label: string };
+  /** A guide on this site that goes with it. `about` when the guide is the
+      page about this tea time rather than good reading beside it — that page
+      then counts down to it too. */
+  guide?: { slug: string; label: string; about?: true };
 }
 
 export const moments: Moment[] = [
@@ -61,7 +63,7 @@ export const moments: Moment[] = [
     recurs: { daily: "16:00" },
     when: "Every day at 16:00, your time",
     text: "Tea, sandwiches, scones and cake at four. The custom is credited to Anna, Duchess of Bedford, who around 1840 found the gap between luncheon and a dinner that had drifted towards nine o'clock a little long, and did something about it.",
-    guide: { slug: "afternoon-tea-vs-high-tea", label: "Afternoon tea or high tea?" },
+    guide: { slug: "afternoon-tea-vs-high-tea", label: "Afternoon tea or high tea?", about: true },
   },
   {
     slug: "four-twenty-high-tea",
@@ -69,7 +71,7 @@ export const moments: Moment[] = [
     recurs: { daily: "16:20" },
     when: "Every day at 16:20, your time",
     text: "A second pot at twenty past four, for those who find the hour amusing. Proper high tea is not until six; this one is merely elevated.",
-    guide: { slug: "the-story-of-4-20-high-tea", label: "The tale of 4:20 High Tea" },
+    guide: { slug: "the-story-of-4-20-high-tea", label: "The tale of 4:20 High Tea", about: true },
   },
   {
     slug: "high-tea",
@@ -77,7 +79,7 @@ export const moments: Moment[] = [
     recurs: { daily: "18:00" },
     when: "Every day at 18:00, your time",
     text: "The original high tea was a working family's evening meal: meat or a pie, bread and butter, and a strong pot to wash it down, on the table at about six. It has nothing whatever to do with cake stands, whatever the hotel brochures say.",
-    guide: { slug: "afternoon-tea-vs-high-tea", label: "Afternoon tea or high tea?" },
+    guide: { slug: "afternoon-tea-vs-high-tea", label: "Afternoon tea or high tea?", about: true },
   },
   {
     slug: "bedtime-cuppa",

@@ -1,0 +1,58 @@
+---
+// The countdown on a page about a tea time: the guide a tea time's entry in
+// the calendar marks as `about` it. A reader who has come to read about 4:20
+// High Tea is told first how long it is until the next one, and is offered
+// the same reminder the calendar gives — the page is about something that
+// happens every day, so the next one is the most useful fact on it.
+import Countdown from "./Countdown.astro";
+import type { Moment } from "../schedule";
+
+interface Props {
+  moments: Moment[];
+}
+const { moments } = Astro.props;
+---
+{moments.length > 0 && (
+  <aside class="ceremony" aria-label={moments.length > 1 ? "When these tea times next come round" : `When ${moments[0].name} next comes round`}>
+    {moments.map((m) => (
+      <div class="ceremony-moment">
+        <p class="ceremony-name">
+          <a href={`/schedule/#${m.slug}`} title={`${m.name} in the tea calendar, beside every other tea time`}>{m.name}</a>
+        </p>
+        <p class="ceremony-meta">{m.when}</p>
+        <Countdown recurs={m.recurs} />
+        <p class="ceremony-actions">
+          <a
+            class="button button-secondary"
+            href={`/schedule/${m.slug}.ics`}
+            download={`${m.slug}.ics`}
+            title={`${m.name} as a calendar entry with a reminder`}
+          >Remind me</a>
+        </p>
+      </div>
+    ))}
+  </aside>
+)}
+
+<style>
+  .ceremony {
+    margin-top: var(--space-3);
+    display: grid;
+    gap: var(--space-2);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  }
+  .ceremony-moment {
+    padding: var(--space-2) var(--space-3);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--radius);
+    background: var(--surface);
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .ceremony-name { margin: 0; font-weight: 700; }
+  .ceremony-name a { text-decoration: none; }
+  .ceremony-meta { margin: 0; color: var(--ink-muted); font-size: var(--step--1); }
+  .ceremony-actions { margin: var(--space-1) 0 0; }
+</style>
