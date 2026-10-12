@@ -5,7 +5,7 @@ export const items: EventItem[] = [
   {
     slug: "japan-matsuri-trafalgar-square-2026",
     createdAt: "2026-09-22T13:24:00+04:00",
-    updatedAt: "2026-10-02T23:50:36+04:00",
+    updatedAt: "2026-10-13T01:10:00+04:00",
     site: "lnd",
     image: "/covers/japan-matsuri-trafalgar-square-2026.jpg",
     imageAlt: "A large pale disc rising behind four horizontal bands on a deep navy ground",
@@ -42,6 +42,16 @@ export const items: EventItem[] = [
       "There is an official festival song, <em>Ibuki</em>, published in English and Japanese, with the clear expectation that visitors will sing and dance to it rather than listen politely. Londoners being Londoners, a good number do.",
       "## Practicalities",
       "Capacity is finite and the organisers operate one in, one out once the square is full; the conditions of entry are stricter than one might expect for an open square, so it is worth reading them rather than discovering them at the barrier. The full running order is published in advance.",
+      "## The following Sunday",
+      "For something altogether less dignified, the next Sunday, 11 October, brought <a href=\"/events/ski-sunday-surbiton-2026/\" title=\"Ski Sunday in Surbiton 2026\">Ski Sunday</a> to Surbiton: bathtubs and blocks of ice down St Mark's Hill, and just as free.",
+    ],
+    related: [
+      {
+        href: "/events/ski-sunday-surbiton-2026/",
+        eyebrow: "Surbiton",
+        title: "Ski Sunday in Surbiton",
+        text: "The following Sunday: two hours of snowless skiing down St Mark's Hill, free to watch and to enter.",
+      },
     ],
   },
 
@@ -49,7 +59,7 @@ export const items: EventItem[] = [
   {
     slug: "one-54-somerset-house-2026",
     createdAt: "2026-09-21T16:35:00+04:00",
-    updatedAt: "2026-09-21T16:35:00+04:00",
+    updatedAt: "2026-10-13T01:10:00+04:00",
     site: "lnd",
     image: "/covers/one-54-somerset-house-2026.jpg",
     imageAlt: "A large square courtyard of pale paving ringed by tall narrow window bands, with one small block standing at its centre",
@@ -85,6 +95,8 @@ export const items: EventItem[] = [
       "<strong>GBP 32</strong> standard, <strong>GBP 18</strong> concessions, and <strong>GBP 100</strong> for the VIP Thursday, which includes a cocktail. A disabled visitor's companion goes free, as do children of twelve and under.",
       "## The two things to look for",
       "This edition carries a <strong>Modernist spotlight</strong> alongside the contemporary galleries, and a curated section — <strong>1-54 Presents: West Wind</strong>, put together by <strong>Dr Nancy Dantas</strong>. A curated section at a commercial fair is the part that is arguing rather than selling, and it is usually the part worth the second hour.",
+      "## Across the bridge",
+      "Waterloo Bridge leads straight into Lambeth, where the <a href=\"/events/lambeth-fringe-2026/\" title=\"Lambeth Fringe 2026\">Lambeth Fringe</a> runs in small theatres, pubs and chapels until 25 October, and the <a href=\"/events/curse-of-the-mummy-london-dungeon-2026/\" title=\"Curse of the Mummy at The London Dungeon 2026\">London Dungeon</a> at County Hall opens its Halloween show on the 17th.",
     ],
     faq: [
       {
@@ -100,13 +112,21 @@ export const items: EventItem[] = [
         a: "The monumental installation stands in the <strong>Edmond J. Safra Fountain Court</strong>, the open courtyard of Somerset House.",
       },
     ],
+    related: [
+      {
+        href: "/events/lambeth-fringe-2026/",
+        eyebrow: "Lambeth",
+        title: "Lambeth Fringe 2026",
+        text: "Across Waterloo Bridge until 25 October: theatre, comedy and music in the borough's small rooms.",
+      },
+    ],
     expertise:
       "October in London belongs to the big fair in Regent's Park, and 1-54 has spent fourteen years turning that into an advantage: it is the same week, a twenty-minute walk from the Strand, and a fraction of the floor space, which means the galleries in it are within speaking distance rather than shouting distance. Thursday is the day the trade is in the building and Sunday afternoon is the day you can stand in front of something for as long as you like. Neither is the wrong answer; they are simply different fairs.",
   },
   {
     slug: "lambeth-fringe-2026",
     createdAt: "2026-08-30T11:52:01+04:00",
-    updatedAt: "2026-09-12T20:15:40+04:00",
+    updatedAt: "2026-10-13T01:10:00+04:00",
     site: "lnd",
     image: "/covers/lambeth-fringe-2026.jpg",
     imageAlt: "A cluster of small pale blue paper doorways of different heights on a deep navy ground, one lit chalk white",
@@ -138,6 +158,22 @@ export const items: EventItem[] = [
       "Theatre, comedy, cabaret, music and family work, staged in small rooms rather than in one festival site — theatres, pubs and chapels around the borough. Named supporters and associated venues include the <strong>Bread &amp; Roses Pub</strong>, <strong>St John's Waterloo</strong>, <strong>The Bridge at Waterloo</strong>, <strong>This is Clapham</strong>, <strong>Brixton BID</strong> and <strong>We Are Waterloo</strong>.",
       "## Its stated remit",
       "The festival is open to all, with an explicit remit to platform the work of women, LGBTQ+, global-majority and working-class artists.",
+      "## Also in Lambeth this October",
+      "Two other things in or beside the borough while the fringe is on. From 17 October the <a href=\"/events/curse-of-the-mummy-london-dungeon-2026/\" title=\"Curse of the Mummy at The London Dungeon 2026\">London Dungeon</a>, at County Hall, runs its Halloween show, Curse of the Mummy. And across Waterloo Bridge, <a href=\"/events/one-54-somerset-house-2026/\" title=\"1-54 Contemporary African Art Fair 2026\">1-54</a> fills three wings of Somerset House with contemporary African art from 15 to 18 October.",
+    ],
+    related: [
+      {
+        href: "/events/one-54-somerset-house-2026/",
+        eyebrow: "Somerset House",
+        title: "1-54 Contemporary African Art Fair",
+        text: "Across Waterloo Bridge, 15 to 18 October: three wings of Somerset House and a monumental installation.",
+      },
+      {
+        href: "/events/curse-of-the-mummy-london-dungeon-2026/",
+        eyebrow: "County Hall",
+        title: "Curse of the Mummy at The London Dungeon",
+        text: "The borough's Halloween show, 17 October to 1 November, included in the standard ticket.",
+      },
     ],
     expertise:
       "A fringe spread across a borough rather than gathered on one site rewards a different sort of planning: two shows in an evening is comfortable if they share a venue and rather ambitious if one is in Waterloo and the other in Clapham, since the connection is a bus more often than a tube. The rooms are small — Bread & Roses seats around fifty — so a well-reviewed show can sell out inside a week, which is not something Edinburgh-hardened audiences expect from a fringe. And do look at the church venues. St John's Waterloo is an unusually fine room for music, and a chapel acoustic flatters a small ensemble in a way a pub back room does not.",
@@ -146,7 +182,7 @@ export const items: EventItem[] = [
   {
     slug: "giant-summer-flea-olympic-park",
     createdAt: "2026-08-30T11:52:01+04:00",
-    updatedAt: "2026-09-12T20:15:40+04:00",
+    updatedAt: "2026-10-13T01:10:00+04:00",
     featured: 1,
     site: "lnd",
     image: "/covers/giant-summer-flea-olympic-park.jpg",
@@ -170,12 +206,21 @@ export const items: EventItem[] = [
     body: [
       "The Giant Summer Flea takes over Queen Elizabeth Olympic Park for a single Sunday, <strong>6 September 2026</strong>.",
       "One day only, which is the thing to note — a flea market that runs for a weekend forgives arriving late on the Saturday, and this one does not.",
+      "The following weekend, 12 and 13 September, <a href=\"/events/the-big-brine-hackney-bridge/\" title=\"The Big Brine\">The Big Brine</a> filled Hackney Bridge with pickles and ferments, a short walk away on the canal at Hackney Wick.",
+    ],
+    related: [
+      {
+        href: "/events/the-big-brine-hackney-bridge/",
+        eyebrow: "Hackney Bridge",
+        title: "The Big Brine",
+        text: "The following weekend, a short walk away on the canal: two days of fermented, pickled and brined food.",
+      },
     ],
   },
   {
     slug: "the-big-brine-hackney-bridge",
     createdAt: "2026-08-30T11:52:01+04:00",
-    updatedAt: "2026-09-12T20:15:40+04:00",
+    updatedAt: "2026-10-13T01:10:00+04:00",
     site: "lnd",
     image: "/covers/the-big-brine-hackney-bridge.jpg",
     imageAlt: "Rows of paper preserving jars on shelves with cut citrus discs",
@@ -199,13 +244,22 @@ export const items: EventItem[] = [
     body: [
       "The Big Brine runs at Hackney Bridge over <strong>12 and 13 September 2026</strong>, built entirely around fermented, pickled and brined food, with chef demonstrations and live music alongside it.",
       "Hackney Bridge is a five-minute walk from Hackney Wick station and sits on the canal, which makes it one of the easier east London venues to get to without a car.",
+      "The Sunday before, 6 September, <a href=\"/events/giant-summer-flea-olympic-park/\" title=\"The Giant Summer Flea\">The Giant Summer Flea</a> took over Queen Elizabeth Olympic Park, a short walk away.",
+    ],
+    related: [
+      {
+        href: "/events/giant-summer-flea-olympic-park/",
+        eyebrow: "Olympic Park",
+        title: "The Giant Summer Flea",
+        text: "The Sunday before, a short walk away: a one-day flea market in Queen Elizabeth Olympic Park.",
+      },
     ],
   },
 
   {
     slug: "blackheath-fireworks-2026",
     createdAt: "2026-09-08T16:29:32+04:00",
-    updatedAt: "2026-10-13T00:40:00+04:00",
+    updatedAt: "2026-10-13T01:10:00+04:00",
     site: "lnd",
     image: "/covers/blackheath-fireworks-2026.jpg",
     imageAlt: "A single white and yellow firework bursting over a deep navy sky",
@@ -214,8 +268,10 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Blackheath Fireworks 2026",
     summary:
-      "South-east London's biggest firework display returns to Blackheath Common on Saturday 7 November, ticketed, with adult entry at £17.60 and a capacity of forty thousand.",
+      "South-east London's biggest firework display returns to Blackheath Common on Saturday 7 November, 5pm to 10pm, ticketed, with adult entry at £17.60 and a capacity of forty thousand.",
     start: "2026-11-07",
+    startTime: "17:00",
+    endTime: "22:00",
     utcOffset: "+00:00",
     venue: "Blackheath Common",
     city: "London",
@@ -232,18 +288,35 @@ export const items: EventItem[] = [
       label: "Book tickets",
     },
     source: {
-      name: "Time Out London",
-      url: "https://www.timeout.com/london/news/blackheath-fireworks-tickets-have-been-released-for-bonfire-night-2026-090826",
-      verifiedOn: "2026-09-08",
+      name: "Blackheath Fireworks",
+      url: "https://www.blackheathfireworks.com/",
+      verifiedOn: "2026-10-13",
     },
     body: [
       "For years this was the great free spectacle of south-east London: you wandered up onto the heath and the sky did the rest. It is ticketed now, which is a change worth knowing about before you wander anywhere.",
       "## Blackheath Fireworks 2026 dates and times",
-      "<strong>Saturday 7 November 2026</strong> on <strong>Blackheath Common</strong>, run by <strong>Slammin Events</strong> in partnership with <strong>Lewisham Council</strong>. Capacity is <strong>40,000</strong>.",
+      "<strong>Saturday 7 November 2026</strong>, from <strong>5pm to 10pm</strong>, on <strong>Blackheath Common</strong>, run by <strong>Slammin Events</strong> in partnership with <strong>Lewisham Council</strong>. Capacity is <strong>40,000</strong>.",
       "## Blackheath Fireworks ticket prices",
-      "<strong>Adult (16+) £17.60. Youth (11–15) £11. Child (0–10) £5.50.</strong> Family packages run from <strong>£28.08 to £51.36</strong>. Tickets are sold through See Tickets and have been released; the organisers expect them to go quickly.",
+      "<strong>Adult (16+) £17.60. Youth (11–15) £11. Child (0–10) £5.50.</strong> Family tickets for one or two adults with two children are sold as well. Tickets are on general sale on the organiser's own site and through See Tickets.",
+      "## What is on besides the fireworks",
+      "In the Big Top, the UK garage pair <strong>DJ Luck &amp; MC Neat</strong> head the music, with the house DJ <strong>Brandon Block</strong>. <strong>Massaoke</strong>, the live-band sing-along, is back, as are the <strong>Lords of Lightning</strong>, and the <strong>Big Belly Comedy Club</strong> puts on a fireworks showcase. <strong>South London Samba</strong> drum through the evening, and the funfair has been extended this year; its rides are paid for on top of admission.",
       "## The other hill that night",
       "North London has its own display on the very same Saturday: <a href=\"/events/alexandra-palace-fireworks-2026/\" title=\"Alexandra Palace Fireworks & Drone Festival 2026\">Alexandra Palace</a> sends up fireworks and drones at 8pm, and does it all again for families at 6pm on the Sunday.",
+      "South-west London has two that weekend: <a href=\"/events/battersea-park-fireworks-2026/\" title=\"Battersea Park Fireworks 2026\">Battersea Park</a> on the Saturday and the Sunday, with Rudimental before the Saturday display, and Merton's second night at <a href=\"/events/merton-fireworks-in-the-park-2026/\" title=\"Fireworks in the Park 2026: Wimbledon Park and Morden Park\">Morden Park</a>. And on Bonfire Night proper, the Thursday before, <a href=\"/events/corams-fields-fireworks-night-2026/\" title=\"Fireworks Night at Coram's Fields 2026\">Coram's Fields</a> in Bloomsbury holds a free display for children and the grown-ups with them.",
+    ],
+    faq: [
+      {
+        q: "When are the Blackheath fireworks in 2026?",
+        a: "On Saturday 7 November 2026, from <strong>5pm to 10pm</strong>, on Blackheath Common.",
+      },
+      {
+        q: "How much are Blackheath fireworks tickets?",
+        a: "<strong>£17.60</strong> for adults (16+), <strong>£11</strong> for 11–15s and <strong>£5.50</strong> for children up to 10, with family tickets as well. Funfair rides cost extra.",
+      },
+      {
+        q: "Who is playing?",
+        a: "DJ Luck &amp; MC Neat and Brandon Block in the Big Top, with Massaoke, the Lords of Lightning, a comedy showcase and South London Samba.",
+      },
     ],
     related: [
       {
@@ -258,6 +331,12 @@ export const items: EventItem[] = [
         title: "Alexandra Palace Fireworks & Drone Festival",
         text: "The same Saturday in north London: fireworks and drones at 8pm, and a family display at 6pm on the Sunday.",
       },
+      {
+        href: "/events/battersea-park-fireworks-2026/",
+        eyebrow: "Battersea Park",
+        title: "Battersea Park Fireworks",
+        text: "The same Saturday, and again on Sunday: an 8.30pm display after a Rudimental DJ set, and a 7pm one on Sunday.",
+      },
     ],
     expertise:
       "One kindly word of warning and one of encouragement. The warning: forty thousand tickets sounds like a great many until you remember that the heath is enormous and quite dark, and the walk back down towards the station afterwards is where an evening is either pleasant or ruined — Blackheath and Greenwich stations both queue, and the buses along the A2 do rather better than either. The encouragement: a display of this size, seen from open common land rather than between buildings, is genuinely a different thing from a municipal fifteen minutes in a park, and it is the one November evening in this corner of London that is worth the cold.",
@@ -265,7 +344,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-hampton-court-palace-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-10-11T04:20:15+04:00",
+    updatedAt: "2026-10-13T01:10:00+04:00",
     site: "lnd",
     image: "/covers/halloween-hampton-court-palace-2026.jpg",
     imageAlt: "A dark blue crenellated roofline with three towers of different heights rising from it, the tallest carrying a small red flag",
@@ -305,7 +384,7 @@ export const items: EventItem[] = [
       "## Costumes are welcome — with rules",
       "Hampton Court wants visitors in costume, which is the opposite of the Tower of London's rule for the same week. The conditions are short: family-friendly and inoffensive, <strong>no masks of any kind</strong>, no realistic weapons or sharp props, no fake blood or glitter, and nothing long enough to drag on the floor.",
       "## How frightening it is",
-      "The palace says the experience is designed to be family-friendly and not overly frightening. It also says plainly what is in it: ghosts in full make-up and costume, darkness, loud noises, flashing lights and the occasional jump scare. The trail in the Wilderness is the part pitched at younger children.",
+      "The palace says the experience is designed to be family-friendly and not overly frightening. It also says plainly what is in it: ghosts in full make-up and costume, darkness, loud noises, flashing lights and the occasional jump scare. The trail in the Wilderness is the part pitched at younger children. For a half term with no jump scares at all, <a href=\"/events/super-natural-wwt-london-2026/\" title=\"SUPER Natural at WWT London 2026\">WWT London</a> at Barnes runs a scare-free week of willow wands and fungi hunts on the same dates.",
       "## Getting to Hampton Court Palace",
       "Trains leave London Waterloo every 30 minutes for Hampton Court, the end of the line; the station is a five-minute walk from the palace, across the bridge, in zone 6, and Oyster cards are accepted. Trains back to Waterloo leave at 23 and 53 minutes past the hour from Monday to Saturday, and at 05 and 35 past on Sundays. The entrance for walkers and cars is Trophy Gate, on the A308. The car park is small, cannot be booked and takes cards only, and dogs other than assistance dogs are not allowed in the palace or the gardens.",
     ],
@@ -367,6 +446,12 @@ export const items: EventItem[] = [
         eyebrow: "Forest Hill",
         title: "Day of the Dead at the Horniman",
         text: "Saturday 31 October, 11am to 4pm: Aztec dancers, mariachi and a community ofrenda. £8, children £6.",
+      },
+      {
+        href: "/events/super-natural-wwt-london-2026/",
+        eyebrow: "Barnes",
+        title: "SUPER Natural at WWT London",
+        text: "The same half term, scare-free: willow wands, a marshland potion and a fungi hunt, included with admission.",
       },
     ],
     expertise:
@@ -914,7 +999,7 @@ export const items: EventItem[] = [
   {
     slug: "ski-sunday-surbiton-2026",
     createdAt: "2026-09-12T22:20:00+04:00",
-    updatedAt: "2026-09-12T22:20:00+04:00",
+    updatedAt: "2026-10-13T01:10:00+04:00",
     site: "lnd",
     image: "/covers/ski-sunday-surbiton-2026.jpg",
     imageAlt:
@@ -959,6 +1044,8 @@ export const items: EventItem[] = [
       "At <strong>1.15pm</strong> the crowd moves to <strong>Claremont Gardens, KT6 4BN</strong>, for <strong>The King's Soup</strong> — a communal vegetarian eating experience that runs until <strong>4.30pm</strong>. It is the same afternoon and a five-minute walk, so the sensible plan is both rather than either.",
       "## Getting to Surbiton",
       "St Mark's Hill, Surbiton, KT6 4PJ, in the Royal Borough of Kingston upon Thames. Surbiton station is a short walk away and on the fast line into Waterloo, which makes this one of the easiest borough events in London to reach without a car — and given that the road is the venue, the car is not much use anyway.",
+      "## The Sunday before",
+      "A week earlier, on 4 October, <a href=\"/events/japan-matsuri-trafalgar-square-2026/\" title=\"Japan Matsuri at Trafalgar Square\">Japan Matsuri</a> filled Trafalgar Square for the day: another free Sunday of the early autumn, and considerably more decorous.",
     ],
     faq: [
       {
@@ -982,6 +1069,14 @@ export const items: EventItem[] = [
         a: "The Royal Borough of Kingston upon Thames, in south-west London. St Mark's Hill has the postcode KT6 4PJ.",
       },
     ],
+    related: [
+      {
+        href: "/events/japan-matsuri-trafalgar-square-2026/",
+        eyebrow: "Trafalgar Square",
+        title: "Japan Matsuri at Trafalgar Square",
+        text: "The Sunday before, 4 October: London's Japanese festival, free, from ten until eight.",
+      },
+    ],
     expertise:
       "The thing worth knowing about this one is that it is short: two hours, one hill, and no repeat performance. That makes the eleven o'clock start rather than the half-time arrival the sensible plan, and it makes the free soup afterwards more than an afterthought — The King's Soup runs until half past four, which is what turns a two-hour spectacle into an afternoon. Both halves are free and both are a five-minute walk apart, so the only thing being spent here is a Sunday. One would come out by train, since the road itself is closed for the occasion, and stay for the second half.",
   },
@@ -989,7 +1084,7 @@ export const items: EventItem[] = [
   {
     slug: "lord-mayors-show-2026-london-boroughs",
     createdAt: "2026-10-09T10:00:00+04:00",
-    updatedAt: "2026-10-10T06:20:00+04:00",
+    updatedAt: "2026-10-13T01:10:00+04:00",
     site: "lnd",
     image: "/covers/lord-mayors-show-2026.jpg",
     imageAlt: "A red paper ceremonial coach beneath a line of bunting",
@@ -1027,6 +1122,7 @@ export const items: EventItem[] = [
       "There is no admission charge. The organisers describe the procession as accessible and publish advice for wheelchair users and anyone concerned about crowds. A printed souvenir programme with the running order costs <strong>£5</strong> on the day; the 2026 processional order has not yet been announced.",
       "## Other things to do in the City that day",
       "Make an afternoon of it with free entry to <strong>Guildhall Art Gallery</strong> (open 11am–5pm) or join a free guided walk from No. 1 Poultry between 3pm and 3.45pm. See the <a href=\"/news/lord-mayors-show-2026-route-and-viewing-guide/\" title=\"Lord Mayor's Show 2026 route and viewing guide\">full day guide</a> for locations, maps and the procession viewing plan.",
+      "In the evening, the <a href=\"/events/efg-london-jazz-festival-2026/\" title=\"EFG London Jazz Festival 2026\">EFG London Jazz Festival</a> is in its first weekend, with Goldie at the Royal Festival Hall and Asha Puthli at the Barbican.",
     ],
     faq: [
       {
@@ -1046,13 +1142,33 @@ export const items: EventItem[] = [
         a: "The organisers suggest the return leg along the Embankment from about 1.15pm, especially between Temple and Blackfriars.",
       },
     ],
+    related: [
+      {
+        href: "/events/efg-london-jazz-festival-2026/",
+        eyebrow: "13–22 November",
+        title: "EFG London Jazz Festival",
+        text: "In its first weekend that night: Goldie at the Royal Festival Hall and Asha Puthli at the Barbican.",
+      },
+      {
+        href: "/events/christmas-at-kew-2026/",
+        eyebrow: "From 13 November",
+        title: "Christmas at Kew",
+        text: "Kew's after-dark light trail opens the evening before the Show, on selected nights until 3 January.",
+      },
+      {
+        href: "/events/london-parade-new-years-day-2027/",
+        eyebrow: "1 January",
+        title: "London Parade on New Year's Day",
+        text: "The year's other great procession, from Piccadilly to Parliament Square, free from the street.",
+      },
+    ],
     expertise:
       "The outward and return journeys suit different plans. Bank and St Paul's put you in the thick of the morning procession, while Temple and Blackfriars offer more pavement and a little more breathing room for the return. Either way, pick one side of the route before the bands arrive: once the procession is moving, you cannot cross the road at street level.",
   },
   {
     slug: "curse-of-the-mummy-london-dungeon-2026",
     createdAt: "2026-09-12T22:20:00+04:00",
-    updatedAt: "2026-09-12T22:20:00+04:00",
+    updatedAt: "2026-10-13T01:10:00+04:00",
     site: "lnd",
     image: "/covers/curse-of-the-mummy-london-dungeon-2026.jpg",
     imageAlt:
@@ -1096,6 +1212,8 @@ export const items: EventItem[] = [
       "The Dungeon is in the Riverside Building at County Hall on <strong>The Queen's Walk, SE1 7PB</strong> — the <strong>London Borough of Lambeth</strong>, south bank, between Westminster Bridge and the London Eye. Waterloo and Westminster are both a short walk, which is why this is the Halloween event in London that needs no planning around transport at all.",
       "## The one warning worth reading",
       "The Dungeon says plainly that it expects to sell out and advises pre-booking to guarantee entry. Since the show is included rather than extra, the constraint is not the money — it is the slot.",
+      "## Across the river that weekend",
+      "On the far side of Waterloo Bridge, <a href=\"/events/one-54-somerset-house-2026/\" title=\"1-54 Contemporary African Art Fair 2026\">1-54</a> fills Somerset House with contemporary African art until 18 October, a rather different way to spend the other half of an afternoon on the river. The <a href=\"/events/lambeth-fringe-2026/\" title=\"Lambeth Fringe 2026\">Lambeth Fringe</a> is on in the borough's small theatres until 25 October.",
     ],
     faq: [
       {
@@ -1119,13 +1237,21 @@ export const items: EventItem[] = [
         a: "The legend is. The show follows the Victorian amateur archaeologist Thomas Douglas Murray, who drew lots with friends for the mummy-board of a High Priestess of Amen-Ra and brought it to London to display, and the run of misfortunes attached to it afterwards — the tale of the Unlucky Mummy.",
       },
     ],
+    related: [
+      {
+        href: "/events/one-54-somerset-house-2026/",
+        eyebrow: "Somerset House",
+        title: "1-54 Contemporary African Art Fair",
+        text: "Across Waterloo Bridge until 18 October: the fair's fourteenth London edition.",
+      },
+    ],
     expertise:
       "Two numbers decide this visit. The first is £8: the difference per adult between booking online and paying on the door, which over a family of four is the price of a fifth person. The second is the slot — a standard ticket is timed, and the Dungeon's own advice is that it sells out at Halloween, so the choice is really between booking a weekday slot early or paying from £35 for Anytime Entry and keeping the day loose. The half-term week from 24 October is the busiest of the sixteen days by some distance; the three or four days before it, when the show is already on but the schools are not yet off, are the same show in a quieter building.",
   },
   {
     slug: "efg-london-jazz-festival-2026",
     createdAt: "2026-10-09T06:00:00+04:00",
-    updatedAt: "2026-10-10T06:20:00+04:00",
+    updatedAt: "2026-10-13T01:10:00+04:00",
     site: "lnd",
     image: "/covers/efg-london-jazz-festival-2026.jpg",
     imageAlt: "A golden trumpet shape above a row of listeners, with London music-hall silhouettes and stage lights",
@@ -1157,7 +1283,7 @@ export const items: EventItem[] = [
     body: [
       "Ten days, dozens of rooms and a programme that ranges from international headliners to free family sessions: the <strong>EFG London Jazz Festival</strong> takes over London from <strong>Friday 13 to Sunday 22 November 2026</strong>. Produced by <strong>Serious</strong>, performances run across concert halls, clubs and neighbourhood venues rather than one festival site.",
       "## The opening weekend",
-      "The opening gala, <strong>Jazz Voice</strong>, is at the Royal Festival Hall on 13 November. On Saturday 14 November — the day of the Lord Mayor's Show — the programme includes <strong>Goldie: Dare to Dream</strong> with a live band and orchestra at the Royal Festival Hall, <strong>Asha Puthli</strong> at the Barbican and <strong>Caravan Palace</strong> at British Airways ARC. Other announced acts include <strong>Mariza</strong>, <strong>Melody Gardot</strong>, <strong>Fatoumata Diawara</strong>, <strong>GoGo Penguin</strong> and the <strong>Kronos Quartet</strong>.",
+      "The opening gala, <strong>Jazz Voice</strong>, is at the Royal Festival Hall on 13 November. On Saturday 14 November — the day of the <a href=\"/events/lord-mayors-show-2026-london-boroughs/\" title=\"Lord Mayor's Show 2026\">Lord Mayor's Show</a> — the programme includes <strong>Goldie: Dare to Dream</strong> with a live band and orchestra at the Royal Festival Hall, <strong>Asha Puthli</strong> at the Barbican and <strong>Caravan Palace</strong> at British Airways ARC. Other announced acts include <strong>Mariza</strong>, <strong>Melody Gardot</strong>, <strong>Fatoumata Diawara</strong>, <strong>GoGo Penguin</strong> and the <strong>Kronos Quartet</strong>.",
       "## Free performances and The Jazz Social",
       "The programme also includes free and family events, among them <strong>South Asian Jazz</strong> on 14 November and <strong>Homegrown</strong> on 22 November. <strong>The Jazz Social</strong> returns at City Point near the Barbican with intimate performances, family activity and live broadcasts. The festival mixes free sessions with individually ticketed concerts; there is no single admission ticket for the whole programme.",
       "Check the festival programme for each concert's start time, venue access and ticket availability: those details vary by performance.",
@@ -1167,13 +1293,27 @@ export const items: EventItem[] = [
       { q: "Are there free events?", a: "Yes. The programme includes free family events such as South Asian Jazz on 14 November and Homegrown on 22 November. Many concerts are ticketed individually." },
       { q: "What is on during Lord Mayor's Show day?", a: "On Saturday 14 November, Goldie plays Royal Festival Hall, Asha Puthli plays the Barbican and Caravan Palace plays British Airways ARC; South Asian Jazz is also listed as a free family event." },
     ],
+    related: [
+      {
+        href: "/events/lord-mayors-show-2026-london-boroughs/",
+        eyebrow: "Saturday 14 November",
+        title: "Lord Mayor's Show 2026",
+        text: "The City's free procession on the festival's first Saturday, from Mansion House at 11am.",
+      },
+      {
+        href: "/events/christmas-at-kew-2026/",
+        eyebrow: "From 13 November",
+        title: "Christmas at Kew",
+        text: "The light trail opens on the festival's first night, with timed entry from 4.20pm.",
+      },
+    ],
     expertise:
       "This is a citywide programme, not one event in one building. Pick the show first, then plan around its venue: a Barbican matinee and a late set in Soho are a different evening from one concert at the Royal Festival Hall. The free family programme makes the festival more than a run of headline gigs, but each performance still has its own room, time and ticket status.",
   },
   {
     slug: "christmas-at-kew-2026",
     createdAt: "2026-10-09T06:00:00+04:00",
-    updatedAt: "2026-10-10T06:20:00+04:00",
+    updatedAt: "2026-10-13T01:10:00+04:00",
     site: "lnd",
     image: "/covers/christmas-at-kew-2026.jpg",
     imageAlt: "A glowing paper greenhouse arch, strings of warm lights and illuminated trees against a winter night",
@@ -1213,11 +1353,33 @@ export const items: EventItem[] = [
       "## Tickets and getting there",
       "Kew's event page lists tickets from <strong>£25.50</strong>; its booking guide lists adult off-peak tickets at <strong>£29.50</strong> and peak tickets at <strong>£37</strong>, including the booking fee. Advance booking is essential because each entry time has limited capacity. Kew Gardens station is served by the District line and London Overground.",
       "Check the official dates page before travelling: the trail does not run every night, and entry-gate closing times vary. A light-trail ticket does not include daytime admission to Kew Gardens.",
+      "## The same weekend, and the last one",
+      "The <a href=\"/events/efg-london-jazz-festival-2026/\" title=\"EFG London Jazz Festival 2026\">EFG London Jazz Festival</a> opens on the same Friday, 13 November, and the <a href=\"/events/lord-mayors-show-2026-london-boroughs/\" title=\"Lord Mayor's Show 2026\">Lord Mayor's Show</a> goes through the City the next morning. At the other end of the run, the trail's last night, 3 January, comes two days after the <a href=\"/events/london-parade-new-years-day-2027/\" title=\"London Parade on New Year's Day 2027\">London Parade</a>.",
     ],
     faq: [
       { q: "When is Christmas at Kew 2026?", a: "On selected dates from 13 November 2026 to 3 January 2027. Kew lists no event on 16, 23 or 28 November or on Christmas Day." },
       { q: "What time does the trail open?", a: "Timed entry slots run from 4.20pm to 7.40pm. The gardens usually close at 10pm; latest entry depends on the gate on your ticket." },
       { q: "How much are tickets?", a: "Kew lists entry from £25.50. Its booking guide lists adult off-peak tickets at £29.50 and peak tickets at £37, including the booking fee." },
+    ],
+    related: [
+      {
+        href: "/events/efg-london-jazz-festival-2026/",
+        eyebrow: "13–22 November",
+        title: "EFG London Jazz Festival",
+        text: "Opens the same night as the trail: ten days of jazz across London's halls and clubs.",
+      },
+      {
+        href: "/events/lord-mayors-show-2026-london-boroughs/",
+        eyebrow: "Saturday 14 November",
+        title: "Lord Mayor's Show 2026",
+        text: "The morning after the trail opens: the City's free procession from Mansion House.",
+      },
+      {
+        href: "/events/london-parade-new-years-day-2027/",
+        eyebrow: "1 January",
+        title: "London Parade on New Year's Day",
+        text: "Two days before the trail's last night: bands and borough floats from Piccadilly to Parliament Square.",
+      },
     ],
     expertise:
       "This is a ticketed evening walk with timed entry, not an open-ended visit to Kew after dark. Pick the entrance gate and slot before travelling, then allow time to reach it: the gardens are large, and a Victoria Gate booking is not interchangeable with arriving at Brentford Gate. If a quieter experience matters, use Kew's listed quiet-access dates rather than assuming a weekday will be calm.",
@@ -1225,7 +1387,7 @@ export const items: EventItem[] = [
   {
     slug: "london-parade-new-years-day-2027",
     createdAt: "2026-10-09T06:00:00+04:00",
-    updatedAt: "2026-10-10T06:20:00+04:00",
+    updatedAt: "2026-10-13T01:10:00+04:00",
     site: "lnd",
     image: "/covers/london-parade-2027.jpg",
     imageAlt: "A paper parade float passes London buildings beneath confetti and stars, with a pale clock tower in the background",
@@ -1265,11 +1427,27 @@ export const items: EventItem[] = [
       "The organiser says more than <strong>8,000 performers</strong> are expected, including marching bands, cheerleaders, dancers, giant balloons, stunt displays, heritage vehicles and floats representing London's boroughs. The 2027 participant order has not been published, so names and running order may still change.",
       "## Getting there",
       "Use public transport and check TfL before travelling: streets along the route close for the parade, and New Year's Eve operations can affect central London into New Year's Day. For the start, use Green Park or Piccadilly Circus; for Trafalgar Square, use Charing Cross or Leicester Square; for the finish, use Westminster.",
+      "## The other procession, and one more evening",
+      "The City has an older parade of its own, the <a href=\"/events/lord-mayors-show-2026-london-boroughs/\" title=\"Lord Mayor's Show 2026\">Lord Mayor's Show</a>, on 14 November. And Kew's <a href=\"/events/christmas-at-kew-2026/\" title=\"Christmas at Kew 2026\">Christmas light trail</a> runs until 3 January, if the holiday wants one more evening out.",
     ],
     faq: [
       { q: "When is London Parade 2027?", a: "Friday 1 January 2027, from 1pm to 4.30pm." },
       { q: "Is it free to watch?", a: "Yes. General street viewing is free. The organiser also sells separate grandstand tickets." },
       { q: "Where does the parade go?", a: "It starts by The Ritz on Piccadilly, passes Regent Street St James's, Pall Mall, Trafalgar Square and Whitehall, and finishes by Parliament Square." },
+    ],
+    related: [
+      {
+        href: "/events/lord-mayors-show-2026-london-boroughs/",
+        eyebrow: "Saturday 14 November",
+        title: "Lord Mayor's Show 2026",
+        text: "The City's own procession, eight centuries old and free to watch, from Mansion House.",
+      },
+      {
+        href: "/events/christmas-at-kew-2026/",
+        eyebrow: "Until 3 January",
+        title: "Christmas at Kew",
+        text: "The light trail's last nights fall just after New Year's Day.",
+      },
     ],
     expertise:
       "The route is long enough that the choice of viewing point matters more than arriving at one exact minute. Piccadilly and Green Park give the start of the show; Trafalgar Square gives the densest atmosphere; Whitehall is the approach to the finish. The public can watch from the street at no charge, while a grandstand ticket is a different, reserved-seat experience.",
@@ -1441,7 +1619,7 @@ export const items: EventItem[] = [
   {
     slug: "alexandra-palace-fireworks-2026",
     createdAt: "2026-10-13T00:40:00+04:00",
-    updatedAt: "2026-10-13T00:40:00+04:00",
+    updatedAt: "2026-10-13T01:10:00+04:00",
     site: "lnd",
     image: "/covers/alexandra-palace-fireworks-2026.jpg",
     imageAlt: "A white palace with a spire on top of a dark hill, two white fireworks bursting in the navy sky and a small drone hovering beside it",
@@ -1483,7 +1661,7 @@ export const items: EventItem[] = [
       "## Tickets",
       "Sold day by day through the Palace's festival site. The event pages print no adult prices; the Sunday under-10s fare is the only one quoted.",
       "## The same Saturday, south of the river",
-      "<a href=\"/events/blackheath-fireworks-2026/\" title=\"Blackheath Fireworks 2026\">Blackheath</a> holds its display on the very same evening, so London must choose its hill. And for those who could not wait for November, <a href=\"/events/herne-hill-velodrome-halloween-fireworks-2026/\" title=\"Halloween Fireworks at Herne Hill Velodrome 2026\">Herne Hill Velodrome</a> lights its bonfire on Halloween.",
+      "<a href=\"/events/blackheath-fireworks-2026/\" title=\"Blackheath Fireworks 2026\">Blackheath</a> holds its display on the very same evening, and <a href=\"/events/battersea-park-fireworks-2026/\" title=\"Battersea Park Fireworks 2026\">Battersea Park</a> holds one on each of the two, so London must choose its hill. And for those who could not wait for November, <a href=\"/events/herne-hill-velodrome-halloween-fireworks-2026/\" title=\"Halloween Fireworks at Herne Hill Velodrome 2026\">Herne Hill Velodrome</a> lights its bonfire on Halloween.",
     ],
     programme: [
       { heading: "Sat 4pm", text: "Gates open." },
@@ -1519,8 +1697,293 @@ export const items: EventItem[] = [
         title: "Halloween Fireworks at Herne Hill Velodrome",
         text: "A week earlier, on Saturday 31 October: a bonfire at 6 and fireworks at 7 over the old Olympic track.",
       },
+      {
+        href: "/events/battersea-park-fireworks-2026/",
+        eyebrow: "Battersea Park",
+        title: "Battersea Park Fireworks",
+        text: "The same weekend, south of the river: 8.30pm on Saturday, 7pm on Sunday, advance tickets only.",
+      },
     ],
     expertise:
       "Choose the day before the ticket. Saturday is a party with fireworks in the middle of it; Sunday is fireworks with a party for the under-tens around them, and it is over two hours earlier. Either way, last entry is five minutes after the display begins, which means the queue, not the sky, decides whether one sees it: be at the gates by seven on Saturday and by five on Sunday, and allow for the climb — the Palace is at the top of its hill for a reason.",
+  },
+
+  {
+    slug: "battersea-park-fireworks-2026",
+    createdAt: "2026-10-13T01:10:00+04:00",
+    updatedAt: "2026-10-13T01:10:00+04:00",
+    site: "lnd",
+    image: "/covers/battersea-park-fireworks-2026.jpg",
+    imageAlt: "Fireworks over a park lake with a small red pavilion and bare trees, a rowing boat in front and four white chimneys of a power station in the distance",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Battersea Park Fireworks 2026",
+    titleSeo: "Battersea Park Fireworks, London: 7 and 8 November 2026",
+    cardTitle: "Battersea Park Fireworks",
+    summary:
+      "Wandsworth's fireworks return to Battersea Park in south-west London on Saturday 7 and Sunday 8 November 2026: an 8.30pm display with a Rudimental DJ set on Saturday, a 7pm display on Sunday. Advance tickets only, £18 for adults on Saturday and £16.70 on Sunday.",
+    start: "2026-11-07",
+    end: "2026-11-08",
+    startTime: "18:00",
+    utcOffset: "+00:00",
+    city: "London",
+    country: "United Kingdom",
+    venue: "Battersea Park, SW11",
+    geo: { name: "Battersea Park", lat: 51.4792, lng: -0.1567 },
+    organizer: "Enable, on behalf of Wandsworth Council",
+    category: "Fireworks",
+    tickets: { priceFrom: 11.5, priceTo: 18, currency: "GBP" },
+    ticket: {
+      url: "https://www.batterseaparkfireworks.com/booktickets",
+      label: "Book tickets",
+    },
+    source: {
+      name: "Battersea Park Fireworks",
+      url: "https://www.batterseaparkfireworks.com/info",
+      verifiedOn: "2026-10-13",
+    },
+    body: [
+      "Battersea Park has two fireworks nights, and they are two different shows with different soundtracks. Saturday is the late one, with a drum and bass DJ before the display and a dance party after it. Sunday starts earlier and is over by 9.30pm. Both are produced by Enable, a not-for-profit, on behalf of Wandsworth Council.",
+      "## Saturday 7 November",
+      "Gates open at <strong>6pm</strong>, and the first hour is a happy hour with half-price fairground rides and £5 drinks. <strong>Rudimental</strong> play a DJ set at <strong>7.30pm</strong>, and <strong>Conjunto Sabroso</strong> bring salsa before the display too. The gates close at <strong>8pm</strong>, the fireworks start at about <strong>8.30pm</strong>, and a <strong>Disco Ceilidh</strong> takes over afterwards until the event closes at <strong>11pm</strong>.",
+      "## Sunday 8 November",
+      "Gates open at <strong>4.30pm</strong>. The <strong>Lords of Lightning</strong>, who fire high-voltage electricity from their own bodies, are on at <strong>5.45pm</strong>, and a Taylor Swift tribute act, <strong>Fearlessly Taylor</strong>, is also on the bill. Last entry is at <strong>6.30pm</strong>, the fireworks start at about <strong>7pm</strong>, and a pop afterparty with DJ Josh Lovatt in the big top runs until <strong>9.30pm</strong>.",
+      "## Tickets",
+      "Tickets are sold in advance only, through Kaboodle; there are none on the gate. On 13 October an adult ticket (16+) cost <strong>£18</strong> for Saturday and <strong>£16.70</strong> for Sunday, and a youth ticket (5–15) <strong>£11.50</strong> for either night, booking fee included, plus a £1 transaction fee per booking. Under-5s go free but still need a ticket. The price goes up as each release sells out, and tickets cannot be refunded.",
+      "## Rules at the gate",
+      "Under-18s must be with an adult aged 18 or over, and one adult can bring at most four. Bags are checked and there is no re-admission. Sparklers, dogs other than registered assistance dogs, your own food, glass and alcohol are not allowed. The bars and food stalls take cards only.",
+      "## Getting there",
+      "Battersea Park and Queenstown Road stations are the closest, and Battersea Power Station on the Northern line is a short walk. The park's car parks close in the afternoon and there is no parking on the night except a few disabled spaces. Bikes can be left at <strong>Albert Gate</strong>, which the organisers also suggest over Sun Gate if you are walking from Clapham Junction, as it should be quieter.",
+      "## The same weekend elsewhere",
+      "On the Saturday, <a href=\"/events/blackheath-fireworks-2026/\" title=\"Blackheath Fireworks 2026\">Blackheath</a> and <a href=\"/events/alexandra-palace-fireworks-2026/\" title=\"Alexandra Palace Fireworks & Drone Festival 2026\">Alexandra Palace</a> have their displays too, and Merton has its second night at <a href=\"/events/merton-fireworks-in-the-park-2026/\" title=\"Fireworks in the Park 2026: Wimbledon Park and Morden Park\">Morden Park</a>. On Bonfire Night itself, Thursday 5 November, <a href=\"/events/corams-fields-fireworks-night-2026/\" title=\"Fireworks Night at Coram's Fields 2026\">Coram's Fields</a> in Bloomsbury puts on a free display for children and the adults with them.",
+    ],
+    programme: [
+      { heading: "Sat 6pm", text: "Gates open; happy hour until 7pm." },
+      { heading: "Sat 7.30pm", text: "Rudimental DJ set." },
+      { heading: "Sat 8.30pm", text: "Fireworks, after last entry at 8pm. Disco Ceilidh follows; closes at 11pm." },
+      { heading: "Sun 4.30pm", text: "Gates open." },
+      { heading: "Sun 5.45pm", text: "Lords of Lightning." },
+      { heading: "Sun 7pm", text: "Fireworks, after last entry at 6.30pm. Afterparty until 9.30pm." },
+    ],
+    faq: [
+      {
+        q: "When are the Battersea Park fireworks in 2026?",
+        a: "Saturday 7 November, with the display at about <strong>8.30pm</strong>, and Sunday 8 November, at about <strong>7pm</strong>. Gates open at 6pm on Saturday and 4.30pm on Sunday.",
+      },
+      {
+        q: "How much are tickets?",
+        a: "On 13 October: <strong>£18</strong> for adults on Saturday, <strong>£16.70</strong> on Sunday, and <strong>£11.50</strong> for 5–15s on either night, booking fee included. Under-5s are free but need a ticket.",
+      },
+      {
+        q: "Can I buy tickets on the night?",
+        a: "No. Tickets are sold in advance only.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/blackheath-fireworks-2026/",
+        eyebrow: "Blackheath",
+        title: "Blackheath Fireworks",
+        text: "The same Saturday, 5pm to 10pm: south-east London's biggest display, with DJ Luck & MC Neat in the Big Top.",
+      },
+      {
+        href: "/events/merton-fireworks-in-the-park-2026/",
+        eyebrow: "Wimbledon Park and Morden Park",
+        title: "Merton's Fireworks in the Park",
+        text: "Thursday 5 and Saturday 7 November: two shows a night, at 6.45pm and 8.30pm.",
+      },
+      {
+        href: "/events/corams-fields-fireworks-night-2026/",
+        eyebrow: "Bloomsbury",
+        title: "Fireworks Night at Coram's Fields",
+        text: "Bonfire Night itself: a free 6pm display in the children's park, no ticket needed.",
+      },
+    ],
+    expertise:
+      "Pick the night by its last entry rather than its display time. The gates shut half an hour before the fireworks — 8pm on Saturday, 6.30pm on Sunday — and nobody gets in after that, so the queue at the gate decides your evening more than the weather does. Sunday is the easier night with children: it starts earlier, ends at 9.30pm, and the Lords of Lightning are on while small children are still awake. Saturday is the night if you want music on both sides of the display.",
+  },
+
+  {
+    slug: "merton-fireworks-in-the-park-2026",
+    createdAt: "2026-10-13T01:10:00+04:00",
+    updatedAt: "2026-10-13T01:10:00+04:00",
+    site: "lnd",
+    image: "/covers/merton-fireworks-in-the-park-2026.jpg",
+    imageAlt: "A lit observation wheel and a small carousel in a dark park, fireworks bursting above a line of trees and a few tiny figures on the grass",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Fireworks in the Park 2026: Wimbledon Park and Morden Park",
+    titleSeo: "Wimbledon and Morden Park Fireworks, London: November 2026",
+    cardTitle: "Merton's Fireworks in the Park",
+    summary:
+      "Merton's Fireworks in the Park in south-west London: Wimbledon Park on Thursday 5 November 2026 and Morden Park on Saturday 7 November, two shows each night at 6.45pm and 8.30pm. Adults £15.90, children £11.66.",
+    start: "2026-11-05",
+    end: "2026-11-07",
+    startTime: "17:15",
+    endTime: "22:00",
+    utcOffset: "+00:00",
+    city: "London",
+    country: "United Kingdom",
+    venue: "Wimbledon Park, SW19 (5 November) and Morden Park (7 November)",
+    organizer: "Merton Council",
+    category: "Fireworks",
+    tickets: { priceFrom: 11.66, priceTo: 15.9, currency: "GBP" },
+    ticket: {
+      url: "https://www.seetickets.com/tour/wimbledon-and-morden-park-fireworks",
+      label: "Tickets from See Tickets",
+    },
+    source: {
+      name: "Merton Council",
+      url: "https://www.merton.gov.uk/fireworks",
+      verifiedOn: "2026-10-13",
+    },
+    body: [
+      "Merton holds its fireworks in two parks on two nights: <strong>Wimbledon Park</strong> on Bonfire Night itself, <strong>Thursday 5 November</strong>, and <strong>Morden Park</strong> on <strong>Saturday 7 November</strong>. Each night has two separate shows set to music, an early one for younger children and a later one, with a funfair, a street food village and bars on site.",
+      "## Times",
+      "The timetable is the same at both parks. Gates and the funfair open at <strong>5.15pm</strong>, the first show is at <strong>6.45pm</strong>, the gates open for the second show at <strong>7.15pm</strong>, the second show is at <strong>8.30pm</strong>, and the funfair closes at <strong>10pm</strong>.",
+      "## Tickets",
+      "You book one of the two shows, not the whole evening. On 13 October an adult ticket (16+) cost <strong>£15.90</strong>, a child's (5–15) <strong>£11.66</strong> and a family ticket for two adults and two children <strong>£48.76</strong>, fees included, through See Tickets. The council says the shows sell out and advises booking ahead.",
+      "## New this year",
+      "An <strong>observation wheel</strong> with views across south London, with booking details still to come, and what the council calls big-name DJs on the night. Neither the wheel's price nor the DJs have been announced yet.",
+      "## Getting there",
+      "Wimbledon Park is next to Wimbledon Park station on the District line. Morden Park is a short walk from Morden South station and about fifteen minutes on foot from Morden, at the end of the Northern line. Ticket holders are emailed the event information close to the date, and the council's fireworks page has maps and directions.",
+      "## Other displays that week",
+      "The same Thursday, <a href=\"/events/corams-fields-fireworks-night-2026/\" title=\"Fireworks Night at Coram's Fields 2026\">Coram's Fields</a> in Bloomsbury has a free 6pm display for children and the adults with them. On the Saturday, while Morden Park has its turn, <a href=\"/events/battersea-park-fireworks-2026/\" title=\"Battersea Park Fireworks 2026\">Battersea Park</a> and <a href=\"/events/blackheath-fireworks-2026/\" title=\"Blackheath Fireworks 2026\">Blackheath</a> have theirs.",
+    ],
+    programme: [
+      { heading: "5.15pm", text: "Gates and funfair open for the first show." },
+      { heading: "6.45pm", text: "First fireworks show, the one suited to young children." },
+      { heading: "7.15pm", text: "Gates open for the second show." },
+      { heading: "8.30pm", text: "Second fireworks show." },
+      { heading: "10pm", text: "Funfair closes." },
+    ],
+    faq: [
+      {
+        q: "When are Merton's fireworks in 2026?",
+        a: "At Wimbledon Park on Thursday 5 November and at Morden Park on Saturday 7 November, with shows at <strong>6.45pm</strong> and <strong>8.30pm</strong> each night.",
+      },
+      {
+        q: "How much are tickets?",
+        a: "On 13 October: <strong>£15.90</strong> for adults, <strong>£11.66</strong> for 5–15s and <strong>£48.76</strong> for a family of two adults and two children, fees included.",
+      },
+      {
+        q: "Which show is better for young children?",
+        a: "The 6.45pm show. The council describes it as the one more suitable for young children.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/corams-fields-fireworks-night-2026/",
+        eyebrow: "Bloomsbury",
+        title: "Fireworks Night at Coram's Fields",
+        text: "The same Thursday: a free 6pm display in the children's park, no ticket needed.",
+      },
+      {
+        href: "/events/battersea-park-fireworks-2026/",
+        eyebrow: "Battersea Park",
+        title: "Battersea Park Fireworks",
+        text: "Saturday 7 and Sunday 8 November: Rudimental before the Saturday display, an earlier show on Sunday.",
+      },
+      {
+        href: "/events/blackheath-fireworks-2026/",
+        eyebrow: "Blackheath",
+        title: "Blackheath Fireworks",
+        text: "Saturday 7 November on the common: south-east London's biggest display.",
+      },
+    ],
+    expertise:
+      "Book the show, not the park. Both nights run the same two displays an hour and three-quarters apart, and the council itself points families to the early one, so for most households the question is only which night: a Thursday at Wimbledon Park or a Saturday at Morden Park. The Thursday is Bonfire Night proper, when most of London's big displays are still waiting for the weekend, so Wimbledon Park is one of the few places to see fireworks on the fifth itself.",
+  },
+
+  {
+    slug: "corams-fields-fireworks-night-2026",
+    createdAt: "2026-10-13T01:10:00+04:00",
+    updatedAt: "2026-10-13T01:10:00+04:00",
+    site: "lnd",
+    image: "/covers/corams-fields-fireworks-night-2026.jpg",
+    imageAlt: "A swing set in a square of Georgian houses at dusk, an adult pointing up at small fireworks above the rooftops",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Fireworks Night at Coram's Fields 2026",
+    titleSeo: "Free Fireworks at Coram's Fields, London: 5 November 2026",
+    cardTitle: "Coram's Fields Fireworks Night",
+    summary:
+      "A free fireworks display on Bonfire Night in central London: Coram's Fields, the children's park in Bloomsbury, opens at 3.30pm on Thursday 5 November 2026 for fireworks at 6pm. No ticket needed, but adults only with a child.",
+    start: "2026-11-05",
+    startTime: "15:30",
+    endTime: "19:00",
+    displayHours: true,
+    utcOffset: "+00:00",
+    city: "London",
+    country: "United Kingdom",
+    venue: "Coram's Fields, 93 Guilford Street, WC1N 1DN",
+    geo: { name: "Coram's Fields", lat: 51.5244, lng: -0.1206 },
+    organizer: "Coram's Fields",
+    category: "Fireworks",
+    tickets: { priceFrom: 0, currency: "GBP" },
+    ticket: {
+      url: "https://coramsfields.org/event/fireworks-night-2026/",
+      label: "Coram's Fields event page",
+      sells: false,
+    },
+    source: {
+      name: "Coram's Fields",
+      url: "https://coramsfields.org/event/fireworks-night-2026/",
+      verifiedOn: "2026-10-13",
+    },
+    body: [
+      "Coram's Fields keeps a rule one cannot help finding rather charming: no adult may come in unless accompanied by a child. It is a children's park in the middle of Bloomsbury, and on Bonfire Night it holds a fireworks display that costs nothing at all, which in central London is a rare thing.",
+      "## Thursday 5 November",
+      "The gates open at <strong>3.30pm</strong>, there are performances on a stage through the late afternoon, and the fireworks go up at <strong>6pm</strong>. The event closes at <strong>7pm</strong>, an hour at which a good many of its guests will be expected to be thinking about bed.",
+      "## Getting in",
+      "General entry is <strong>free</strong> and needs no ticket: one simply arrives. It is first come, first served, so entry is not guaranteed once the park is full. For a guaranteed place there are free <strong>Fast-Track</strong> tickets, booked in advance through Eventbrite, each for one adult and one child with more of either added on. They admit you at any time during the event, by the Pitches gate on the north side, opposite the Foundling Museum, though they do not come with a better view. Free <strong>accessible viewing</strong> tickets, entered from Guilford Street, are kept for families with a genuine access need, and there are only so many of them.",
+      "## Who may come",
+      "Children, and the adults who are with them. The rule applies to every kind of entry, Fast-Track and accessible included, so a party of grown-ups without a child will not be admitted, however nicely it asks.",
+      "## What else is on",
+      "Food and drink stalls, fairground rides and the stage performances. Guilford Street is closed to traffic for the evening and open to people on foot. And the display is broadcast to the children on the wards of Great Ormond Street Hospital, round the corner, which is perhaps the nicest detail of the whole affair.",
+      "## Getting there",
+      "Russell Square, on the Piccadilly line, is the nearest station and a few minutes' walk away; King's Cross St Pancras is a little further.",
+      "## The weekend after",
+      "For those who would like more of the same with a ticket, the big displays follow on Saturday 7 November: <a href=\"/events/battersea-park-fireworks-2026/\" title=\"Battersea Park Fireworks 2026\">Battersea Park</a> south of the river, <a href=\"/events/blackheath-fireworks-2026/\" title=\"Blackheath Fireworks 2026\">Blackheath</a> in the south-east and <a href=\"/events/alexandra-palace-fireworks-2026/\" title=\"Alexandra Palace Fireworks & Drone Festival 2026\">Alexandra Palace</a> in the north. And on this very Thursday, <a href=\"/events/merton-fireworks-in-the-park-2026/\" title=\"Fireworks in the Park 2026: Wimbledon Park and Morden Park\">Wimbledon Park</a> holds the first of Merton's two nights.",
+    ],
+    faq: [
+      {
+        q: "Is the Coram's Fields fireworks display free?",
+        a: "Yes. General entry is free and needs no ticket. Free Fast-Track tickets, booked on Eventbrite, guarantee entry.",
+      },
+      {
+        q: "What time are the fireworks?",
+        a: "At <strong>6pm</strong> on Thursday 5 November 2026. Gates open at 3.30pm and the event closes at 7pm.",
+      },
+      {
+        q: "Can adults go without children?",
+        a: "No. Coram's Fields is a children's park, and adults are admitted only with a child, whatever the kind of entry.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/merton-fireworks-in-the-park-2026/",
+        eyebrow: "Wimbledon Park",
+        title: "Merton's Fireworks in the Park",
+        text: "The same night in south-west London: shows at 6.45pm and 8.30pm, adults £15.90.",
+      },
+      {
+        href: "/events/battersea-park-fireworks-2026/",
+        eyebrow: "Battersea Park",
+        title: "Battersea Park Fireworks",
+        text: "Saturday 7 and Sunday 8 November; the Sunday display, at 7pm, is the earlier of the two.",
+      },
+      {
+        href: "/events/alexandra-palace-fireworks-2026/",
+        eyebrow: "Alexandra Palace",
+        title: "Alexandra Palace Fireworks & Drone Festival",
+        text: "The weekend after, in north London: a family display at 6pm on the Sunday.",
+      },
+    ],
+    expertise:
+      "Arrive early or book the Fast-Track: those are the two sensible courses. A free display in a small park in central London, on Bonfire Night itself, fills up, and general entry simply stops when it does, so a family turning up at a quarter to six is taking its chances. The Fast-Track tickets cost nothing and remove the gamble entirely; the one thing they do not buy is a better spot, so one still wants to be inside in good time for six o'clock.",
   },
 ];

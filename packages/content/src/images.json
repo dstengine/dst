@@ -10742,6 +10742,38 @@
         ]
       ]
     },
+    "/covers/battersea-park-fireworks-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/battersea-park-fireworks-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/battersea-park-fireworks-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/battersea-park-fireworks-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/battersea-park-fireworks-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/battersea-park-fireworks-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/battersea-park-fireworks-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/blackheath-fireworks-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -10987,6 +11019,38 @@
         [
           1536,
           "/covers/coqfighter-opens-at-market-halls-canary-wharf-1536.webp"
+        ]
+      ]
+    },
+    "/covers/corams-fields-fireworks-night-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/corams-fields-fireworks-night-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/corams-fields-fireworks-night-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/corams-fields-fireworks-night-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/corams-fields-fireworks-night-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/corams-fields-fireworks-night-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/corams-fields-fireworks-night-2026-1024.webp"
         ]
       ]
     },
@@ -11835,6 +11899,38 @@
         [
           1536,
           "/covers/lord-mayors-show-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/merton-fireworks-in-the-park-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/merton-fireworks-in-the-park-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/merton-fireworks-in-the-park-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/merton-fireworks-in-the-park-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/merton-fireworks-in-the-park-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/merton-fireworks-in-the-park-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/merton-fireworks-in-the-park-2026-1024.webp"
         ]
       ]
     },

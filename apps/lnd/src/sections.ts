@@ -35,6 +35,7 @@ const TAGS: Record<string, Vocabulary> = {
   // in Hertfordshire have nothing in common as formats — it says which
   // week of the year they belong to, and it is exactly what gets typed.
   Halloween: { slug: "halloween", plural: "Halloween", label: "Halloween" },
+  Fireworks: { slug: "fireworks", plural: "fireworks", label: "Fireworks" },
 };
 
 export const NAV = {
@@ -73,6 +74,23 @@ export function sections(items: FeedItem[]): Section[] {
           },
         };
       }
+      // Searched as Bonfire Night as often as fireworks, and for the year:
+      // the generic "Fireworks in London" heading carries neither.
+      if (g.key === "Fireworks") {
+        return {
+          title: "Bonfire Night fireworks in London 2026: where to go",
+          description:
+            "Bonfire Night 2026 in the London boroughs: a free display at Coram's Fields and Merton's at Wimbledon Park on the 5th, then Blackheath, Alexandra Palace and Battersea Park on Saturday 7 November.",
+          h1: "Bonfire Night fireworks in London",
+          lede: "Bonfire Night falls on a Thursday this year, so London has two of them: the fifth itself, with a free display in a Bloomsbury children's park and Merton's two shows at Wimbledon Park, and the Saturday after, when Blackheath, Alexandra Palace, Battersea Park and Morden Park all go up on the same evening. Each date, time and price as the organiser published it.",
+          headings: {
+            events: "Where to watch the fireworks",
+            upcoming: "2026 displays",
+            past: "Previous years",
+            news: "Fireworks news",
+          },
+        };
+      }
       const what = g.voc.plural ?? g.key.toLowerCase();
       const Title = `${what[0].toUpperCase()}${what.slice(1)}`;
       return {
@@ -96,9 +114,15 @@ export const allSections = sections([...eventsBySite(siteId), ...newsBySite(site
 // tail's heading in its own words — and it all switches itself off the day
 // the last date under it passes, which is the only reason a seasonal
 // promotion is safe to wire into a layout. See `promotedSection`.
-const PROMOTED = 'Halloween';
+//
+// Halloween until the night itself, then Bonfire Night. Each switches off on
+// its own once its last date passes; this only settles which of the two has
+// the header in the week after Halloween, when a palace or a studio tour is
+// still running its season and the fireworks are what people are looking for.
+const today = new Date().toISOString().slice(0, 10);
+const PROMOTED = today.slice(5) <= "10-31" ? "Halloween" : "Fireworks";
 
-export const promoted = promotedSection(allSections, PROMOTED, new Date().toISOString().slice(0, 10), site.keyword);
+export const promoted = promotedSection(allSections, PROMOTED, today, site.keyword);
 
 // The word a heading uses for a kind, in this site's language. The article
 // components know which kind a block came out as; only this file knows what
