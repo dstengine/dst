@@ -626,7 +626,7 @@ export const items: EventItem[] = [
   {
     slug: "cosmic-horrors-planetarium-wien-2026",
     createdAt: "2026-10-11T01:15:13+04:00",
-    updatedAt: "2026-10-12T02:45:00+04:00",
+    updatedAt: "2026-10-13T00:40:00+04:00",
     site: "vien",
     image: "/covers/cosmic-horrors-planetarium-wien-2026.jpg",
     imageAlt: "Ein dunkler Nachthimmel mit einem Ringplaneten und mehreren kleinen runden Planeten über breiten Streifen in Orange und Rot, unten die Rundung einer roten Kuppel, auf cremefarbenem Grund",
@@ -671,6 +671,8 @@ export const items: EventItem[] = [
       "Empfohlen für Jugendliche und Erwachsene, die sich für den Weltraum begeistern, und für mutige Kinder <strong>ab 10 Jahren</strong>.",
       "## Wo das ist",
       "Im Planetarium am <strong>Oswald-Thomas-Platz 1</strong>, mitten im Wurstelprater neben dem Riesenrad. Vom Praterstern sind es wenige Minuten zu Fuß.",
+      "## Davor im Stuwerviertel",
+      "Eine Viertelstunde zu Fuß entfernt spielt das Circus- & Clownmuseum um 13, 15 und 17 Uhr sein Halloween-Programm <a href=\"/veranstaltungen/coulrophobia-halloween-clownmuseum-wien-2026/\" title=\"Coulrophobia: Halloween im Clownmuseum Wien 2026\">Coulrophobia</a>, empfohlen ab 12 Jahren.",
     ],
     faq: [
       {
@@ -702,6 +704,12 @@ export const items: EventItem[] = [
         eyebrow: "Favoriten",
         title: "The Nun – Halloween Dome Takeover",
         text: "Für danach: Clubnacht im Hallmann Dome von 21 bis 4 Uhr, ab 16 Jahren.",
+      },
+      {
+        href: "/veranstaltungen/coulrophobia-halloween-clownmuseum-wien-2026/",
+        eyebrow: "Leopoldstadt",
+        title: "Coulrophobia im Clownmuseum",
+        text: "Davor: die Fools Brothers um 13, 15 und 17 Uhr, eine Viertelstunde zu Fuß, für 15 Euro.",
       },
     ],
     expertise:
@@ -1114,5 +1122,86 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Der Preis ist hier eine Frage des Zeitpunkts, nicht des Abends: Das Standard-Ticket ist schon in der dritten Phase, und jede weitere macht es teurer. Wer sicher hingeht, kauft jetzt. Und der Einlass ist erst ab 16 und nur mit Ausweis — ohne bleibt man draußen, Ticket hin oder her.",
+  },
+
+  {
+    slug: "coulrophobia-halloween-clownmuseum-wien-2026",
+    createdAt: "2026-10-13T00:40:00+04:00",
+    updatedAt: "2026-10-13T00:40:00+04:00",
+    site: "vien",
+    image: "/covers/coulrophobia-halloween-clownmuseum-wien-2026.jpg",
+    imageAlt: "Eine Hand im weißen Handschuh greift hinter einem roten Theatervorhang hervor und hält zwei Luftballons, am Bühnenrand liegt ein Kürbis",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Coulrophobia: Halloween im Clownmuseum Wien 2026",
+    summary:
+      "Halloween in Wien für Mutige ab 12: Das Circus- & Clownmuseum in der Leopoldstadt zeigt am Samstag, 31. Oktober 2026, „Coulrophobia“ mit den Fools Brothers, drei Vorstellungen um 13, 15 und 17 Uhr, für 15 Euro.",
+    start: "2026-10-31",
+    startTime: "13:00",
+    endTime: "17:45",
+    displayHours: true,
+    utcOffset: "+01:00",
+    venue: "Circus- & Clownmuseum Wien, Ilgplatz 7, 1020 Wien",
+    city: "Wien",
+    country: "Österreich",
+    geo: {
+      name: "Circus- & Clownmuseum Wien",
+      lat: 48.219364,
+      lng: 16.405665,
+    },
+    organizer: "Circus- & Clownmuseum Wien",
+    category: "Halloween",
+    tickets: { priceFrom: 15, currency: "EUR" },
+    ticket: {
+      url: "https://www.circus-clownmuseum.at/de/coulrophobia-halloween-special-13uhr",
+      label: "Tickets beim Museum",
+    },
+    source: {
+      name: "Circus- & Clownmuseum Wien",
+      url: "https://www.circus-clownmuseum.at/de/coulrophobia-halloween-special-13uhr",
+      verifiedOn: "2026-10-13",
+    },
+    body: [
+      "Coulrophobie ist die Angst vor Clowns, und das Wiener Circus- & Clownmuseum macht daraus zu Halloween ein Programm: Am <strong>Samstag, 31. Oktober 2026</strong>, spielen die <strong>Fools Brothers</strong> im kleinen Theater des Museums Clownerie, Zauberei und, so die Ankündigung, unheimlich-humorvolle Überraschungen.",
+      "## Drei Vorstellungen",
+      "Um <strong>13 Uhr</strong>, um <strong>15 Uhr</strong> und um <strong>17 Uhr</strong>, jeweils eine Dreiviertelstunde. Davor und danach stehen die Räume des Museums offen.",
+      "## Tickets und Alter",
+      "<strong>15 Euro</strong>, über Öticket oder mit Reservierung direkt beim Museum. Empfohlen <strong>ab 12 Jahren</strong>. Wer verkleidet kommt, ist ausdrücklich willkommen.",
+      "## Das Museum",
+      "Ein gemeinnütziger Kulturverein im Stuwerviertel, der sonst nur sonntags von 10 bis 13 Uhr öffnet, bei freiem Eintritt. Der Halloween-Samstag ist also auch eine seltene Gelegenheit, die Sammlung an einem anderen Tag zu sehen.",
+      "## Danach in den Prater",
+      "Das Planetarium liegt eine Viertelstunde zu Fuß entfernt und zeigt ab 18:30 Uhr seine <a href=\"/veranstaltungen/cosmic-horrors-planetarium-wien-2026/\" title=\"Cosmic Horrors im Planetarium Wien 2026\">Cosmic Horrors</a>: Nach der Vorstellung um 17 Uhr geht beides an einem Abend.",
+    ],
+    faq: [
+      {
+        q: "Wann ist Coulrophobia im Clownmuseum?",
+        a: "Am Samstag, 31. Oktober 2026, um 13, 15 und 17 Uhr, jeweils 45 Minuten, am Ilgplatz 7.",
+      },
+      {
+        q: "Was kostet es?",
+        a: "15 Euro, über Öticket oder mit Reservierung direkt beim Museum.",
+      },
+      {
+        q: "Ist das für Kinder?",
+        a: "Das Museum empfiehlt die Vorstellung ab 12 Jahren.",
+      },
+    ],
+    related: [
+      {
+        href: "/veranstaltungen/cosmic-horrors-planetarium-wien-2026/",
+        eyebrow: "Prater",
+        title: "Cosmic Horrors im Planetarium",
+        text: "Eine Viertelstunde zu Fuß und ab 18:30 Uhr: acht Vorstellungen zu 25 Minuten unter der Kuppel, für 5 Euro.",
+      },
+      {
+        href: "/veranstaltungen/halloween-horror-night-klyo-2026/",
+        eyebrow: "Urania",
+        title: "Halloween Horror Night im KLYO",
+        text: "Für den Abend: Haunted House, Gruseldinner, Horrorfilm und Party in der Urania, ab 17:30 Uhr.",
+      },
+    ],
+    expertise:
+      "Die drei Vorstellungen sind dieselbe Show; welche man nimmt, hängt am restlichen Tag. Die um 17 Uhr lässt sich mit dem Planetarium im Prater verbinden, die um 13 Uhr mit einem Nachmittag in der Sammlung selbst, die sonst nur sonntagvormittags offen ist. Das Theater ist klein: Wer eine bestimmte Uhrzeit will, reserviert vorher, statt auf die Kasse zu hoffen.",
   },
 ];

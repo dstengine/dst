@@ -549,7 +549,7 @@ export const items: EventItem[] = [
   {
     slug: "desfile-alebrijes-monumentales-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-09-12T17:35:10+04:00",
+    updatedAt: "2026-10-13T00:40:00+04:00",
     site: "cmx",
     image: "/covers/desfile-alebrijes-monumentales-2026.jpg",
     imageAlt: "Una criatura imaginaria de papel recortado, con el lomo de placas a rayas magenta y ocre, cuernos en espiral, cola larga y cuatro patas, sobre fondo crema",
@@ -558,7 +558,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Desfile de Alebrijes Monumentales 2026",
     summary:
-      "Sábado 17 de octubre a mediodía: los alebrijes salen del Zócalo rumbo al Ángel de la Independencia, y se quedan sobre Paseo de la Reforma hasta el 8 de noviembre. Es la 18ª edición y entrar no cuesta nada.",
+      "Sábado 17 de octubre a mediodía, en Ciudad de México: los alebrijes salen del Zócalo rumbo al Ángel de la Independencia, y se quedan sobre Paseo de la Reforma hasta el 8 de noviembre. Es la 18ª edición y entrar no cuesta nada.",
     start: "2026-10-17",
     startTime: "12:00",
     utcOffset: "-06:00",
@@ -587,6 +587,8 @@ export const items: EventItem[] = [
       "Una criatura imposible armada con partes de animales que no coinciden. La forma nace en el siglo XX con Pedro Linares, en cartonería, y el concurso del museo la volvió monumental",
       "## Cuánto cuesta ver el desfile de alebrijes",
       "<strong>Nada.</strong> El desfile y la exposición sobre Reforma son de acceso libre",
+      "## Para verlos de noche",
+      "El sábado 24 de octubre la <a href=\"/eventos/rodada-ciclista-dia-de-muertos-2026/\" title=\"Rodada Ciclista de Día de Muertos 2026\">rodada ciclista de Día de Muertos</a> recorre Reforma de 19:00 a 23:00 y pasa entre los alebrijes.",
     ],
     faq: [
       {
@@ -606,6 +608,14 @@ export const items: EventItem[] = [
         a: "No. Tanto el desfile como la exposición sobre Reforma son <strong>de acceso libre</strong>",
       },
     ],
+    related: [
+      {
+        href: "/eventos/rodada-ciclista-dia-de-muertos-2026/",
+        eyebrow: "24 de octubre",
+        title: "Rodada Ciclista de Día de Muertos",
+        text: "Una noche en bici por Reforma, entre los alebrijes, de 19:00 a 23:00.",
+      },
+    ],
     expertise:
       "Quien sólo tiene un rato conviene que lo use en Reforma y no en el Zócalo. El arranque a mediodía concentra a toda la gente en la plaza y los alebrijes salen de uno en uno; sobre Reforma pasan ya separados y con espacio para verlos completos. Y si el sábado no se puede, la temporada no se pierde: las tres semanas siguientes son la parte larga del evento, con los alebrijes quietos, de cerca y sin multitud",
   },
@@ -613,7 +623,7 @@ export const items: EventItem[] = [
   {
     slug: "mega-procesion-de-las-catrinas-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-09-12T17:35:10+04:00",
+    updatedAt: "2026-10-13T00:40:00+04:00",
     site: "cmx",
     image: "/covers/mega-procesion-de-las-catrinas-2026.jpg",
     imageAlt: "Tres sombreros de ala ancha de papel rosa en diagonal, cada uno con flores rojas sobre el ala",
@@ -622,7 +632,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Mega Procesión de las Catrinas 2026",
     summary:
-      "Domingo 25 de octubre: miles de catrinas caminan del Ángel de la Independencia al Zócalo. Es la 13ª edición, no cuesta nada y quien va maquillado es parte de la procesión.",
+      "Domingo 25 de octubre en Ciudad de México: miles de catrinas caminan del Ángel de la Independencia al Zócalo. Es la 13ª edición, no cuesta nada y quien va maquillado es parte de la procesión.",
     start: "2026-10-25",
     utcOffset: "-06:00",
     city: "Ciudad de México",
@@ -648,6 +658,8 @@ export const items: EventItem[] = [
       "<strong>Nada.</strong> No hay registro ni boleto",
       "## De dónde viene la catrina",
       "De un grabado. José Guadalupe Posada dibujó una calavera con sombrero de ala ancha para burlarse de quien renegaba de su origen; Diego Rivera le puso el nombre y el vestido largo con los que hoy se la reconoce",
+      "## La víspera",
+      "El sábado 24, sobre Reforma, la <a href=\"/eventos/rodada-ciclista-dia-de-muertos-2026/\" title=\"Rodada Ciclista de Día de Muertos 2026\">rodada ciclista de Día de Muertos</a> sale de la Fuente de Petróleos de 19:00 a 23:00, con concurso de disfraces: el mismo disfraz sirve dos días seguidos.",
     ],
     faq: [
       {
@@ -665,6 +677,14 @@ export const items: EventItem[] = [
       {
         q: "¿Qué pasa al llegar al Zócalo?",
         a: "Hay <strong>escenario de 14:00 a 20:00</strong>",
+      },
+    ],
+    related: [
+      {
+        href: "/eventos/rodada-ciclista-dia-de-muertos-2026/",
+        eyebrow: "Reforma",
+        title: "Rodada Ciclista de Día de Muertos",
+        text: "La víspera, el sábado 24 de 19:00 a 23:00: 19 kilómetros en bici, con concurso de disfraces.",
       },
     ],
     expertise:
@@ -1210,5 +1230,85 @@ export const items: EventItem[] = [
     ],
     expertise:
       "De los dos shows de drones, el de las 21:45 es el que conviene. El de las 19:45 cae a la hora en que llegan casi todas las familias y la orilla del Lago Mayor está llena; el segundo se ve con más espacio, y quien llega temprano tiene la tarde para el Sendero con luz de día, que es como mejor se ve el cempasúchil.",
+  },
+
+  {
+    slug: "rodada-ciclista-dia-de-muertos-2026",
+    createdAt: "2026-10-13T00:40:00+04:00",
+    updatedAt: "2026-10-13T00:40:00+04:00",
+    site: "cmx",
+    image: "/covers/rodada-ciclista-dia-de-muertos-2026.jpg",
+    imageAlt: "Ciclistas con la cara pintada de calavera y collares de cempasúchil pedalean por una avenida arbolada hacia una columna coronada por un ángel dorado",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Rodada Ciclista de Día de Muertos 2026",
+    summary:
+      "Paseo nocturno en bici por Día de Muertos en Ciudad de México: el sábado 24 de octubre de 2026, de 19:00 a 23:00, 19 kilómetros desde la Fuente de Petróleos hasta el Centro Histórico por Reforma y Juárez, con concurso de disfraces y DJ en la ruta.",
+    start: "2026-10-24",
+    startTime: "19:00",
+    endTime: "23:00",
+    utcOffset: "-06:00",
+    venue: "Paseo de la Reforma, de la Fuente de Petróleos al Centro Histórico",
+    city: "Ciudad de México",
+    country: "México",
+    geo: {
+      name: "Fuente de Petróleos, Ciudad de México",
+      lat: 19.427447,
+      lng: -99.203107,
+    },
+    organizer: "Gobierno de la Ciudad de México",
+    category: "Día de Muertos",
+    ticket: {
+      url: "https://www.mexicocity.cdmx.gob.mx/e/dia-de-muertos-en-la-ciudad-de-mexico/",
+      label: "Guía oficial de Día de Muertos",
+      sells: false,
+    },
+    source: {
+      name: "Turismo de la Ciudad de México",
+      url: "https://www.mexicocity.cdmx.gob.mx/e/dia-de-muertos-en-la-ciudad-de-mexico/",
+      verifiedOn: "2026-10-13",
+    },
+    body: [
+      "Una noche al año Reforma es de las bicicletas y de los muertos. La rodada de Día de Muertos sale el <strong>sábado 24 de octubre de 2026</strong> de la <strong>Fuente de Petróleos</strong>, de <strong>19:00 a 23:00</strong>, en un recorrido de <strong>19 kilómetros</strong> por Paseo de la Reforma y la Avenida Juárez hasta el Centro Histórico.",
+      "## Qué hay en la ruta",
+      "Puntos de <strong>Biciescuela</strong> para quien todavía no se suelta, <strong>préstamo de bicicletas</strong> para quien no trae la suya, un <strong>concurso de disfraces</strong> y escenarios con <strong>DJ</strong> a lo largo del camino. La guía oficial la presenta como un paseo familiar, para moverse y usar la bici, no como una carrera.",
+      "## Lo que se ve desde la bici",
+      "Ese sábado los <a href=\"/eventos/desfile-alebrijes-monumentales-2026/\" title=\"Desfile de Alebrijes Monumentales 2026\">alebrijes monumentales</a> siguen sobre las banquetas de Reforma, donde se quedan hasta el 8 de noviembre, y la rodada pasa entre ellos. Desde la noche anterior está encendida además «El Camino», la iluminación de Día de Muertos de Reforma entre el Ángel de la Independencia y la Puerta de los Leones.",
+      "## Costo",
+      "La guía oficial del Gobierno de la Ciudad no menciona costo ni registro previo.",
+      "## Al día siguiente",
+      "El domingo 25, sobre la misma avenida pero a pie, la <a href=\"/eventos/mega-procesion-de-las-catrinas-2026/\" title=\"Mega Procesión de las Catrinas 2026\">Mega Procesión de las Catrinas</a> camina del Ángel al Zócalo: el disfraz de la rodada sirve dos veces.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo es la rodada de Día de Muertos 2026 en Ciudad de México?",
+        a: "El sábado 24 de octubre de 2026, de 19:00 a 23:00, con salida en la Fuente de Petróleos.",
+      },
+      {
+        q: "¿Por dónde pasa?",
+        a: "Por Paseo de la Reforma y la Avenida Juárez hasta el Centro Histórico: 19 kilómetros en total.",
+      },
+      {
+        q: "¿Necesito bicicleta propia?",
+        a: "No necesariamente: en la ruta hay préstamo de bicicletas y puntos de Biciescuela.",
+      },
+    ],
+    related: [
+      {
+        href: "/eventos/desfile-alebrijes-monumentales-2026/",
+        eyebrow: "Reforma",
+        title: "Alebrijes Monumentales",
+        text: "Desfilan el 17 de octubre y se quedan sobre Reforma hasta el 8 de noviembre: la rodada pasa entre ellos.",
+      },
+      {
+        href: "/eventos/mega-procesion-de-las-catrinas-2026/",
+        eyebrow: "Del Ángel al Zócalo",
+        title: "Mega Procesión de las Catrinas",
+        text: "Al día siguiente, el domingo 25, miles de catrinas a pie por la misma avenida.",
+      },
+    ],
+    expertise:
+      "Diecinueve kilómetros, y de la Fuente de Petróleos al Zócalo por Reforma hay unos ocho: la cuenta sugiere ida y vuelta, aunque la guía oficial sólo publica la salida y el destino. Conviene planear como si hubiera que regresar pedaleando: agua, luz delantera y trasera aunque la calle esté cerrada, y algo de abrigo para cuando la noche refresca después de las diez.",
   },
 ];

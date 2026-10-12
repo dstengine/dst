@@ -1827,7 +1827,7 @@ export const items: EventItem[] = [
   {
     slug: "boo-at-the-zoo-bronx-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-09-08T22:51:25+04:00",
+    updatedAt: "2026-10-13T00:40:00+04:00",
     site: "nyc42",
     image: "/covers/boo-at-the-zoo-bronx-2026.jpg",
     imageAlt: "An arch of overlapping paper leaves in amber, ochre and cream above a pale band carrying three animal paw prints",
@@ -1836,7 +1836,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Boo at the Zoo 2026",
     summary:
-      "Six weekends of pumpkins, a candy trail and a costume parade at the Bronx Zoo, from 26 September to 1 November, free with zoo admission.",
+      "Six weekends of pumpkins, a candy trail and a costume parade at the Bronx Zoo in New York, from 26 September to 1 November, free with zoo admission.",
     start: "2026-09-26",
     end: "2026-11-01",
     utcOffset: "-04:00",
@@ -1858,6 +1858,8 @@ export const items: EventItem[] = [
       "The candy trail runs 11am to 2pm; most other activities run 11am to 4pm, some from 10am. They are spread across the zoo rather than gathered in one place — Astor Court, Giraffe Corner, Grizzly Corner, the Butterfly Patio, Rhino Trail, Rhino Garden and the Dancing Crane Pavilion each have something, from puppets and games to a hay maze and free face painting.",
       "## Getting to the Bronx Zoo",
       "The zoo is in the Bronx at 2300 Southern Boulevard. It is a long day out from Manhattan and a short one from the north Bronx, and the Halloween weekends are among the busiest the zoo has.",
+      "## Across Fordham Road",
+      "The New York Botanical Garden is just the other side of Fordham Road, and its <a href=\"/events/dia-de-los-muertos-nybg-2026/\" title=\"Día de los Muertos at NYBG 2026\">Día de los Muertos</a> runs until 2 November, with giant Catrina puppets on the last three days and a parade on Sunday 1 November.",
     ],
     faq: [
       {
@@ -1871,6 +1873,14 @@ export const items: EventItem[] = [
       {
         q: "What time does it finish?",
         a: "Activities and the final performances end at 4pm. The candy trail is the shorter window, 11am to 2pm.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/dia-de-los-muertos-nybg-2026/",
+        eyebrow: "New York Botanical Garden",
+        title: "Día de los Muertos at NYBG",
+        text: "Across Fordham Road until 2 November: a community ofrenda, giant Catrina puppets and a parade on 1 November, included with the All-Garden Pass.",
       },
     ],
     expertise:
@@ -2399,5 +2409,91 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Nine subway lines meet under the arena, which is the reason to take one of them: on Halloween night the streets of Prospect Heights and Park Slope are full of trick-or-treaters and the Park Slope parade, and Flatbush Avenue is no quicker than walking. Come in costume if you like — it is the one night of the year a Brooklyn crowd will not look twice.",
+  },
+
+  {
+    slug: "dia-de-los-muertos-nybg-2026",
+    createdAt: "2026-10-13T00:40:00+04:00",
+    updatedAt: "2026-10-13T00:40:00+04:00",
+    site: "nyc42",
+    image: "/covers/dia-de-los-muertos-nybg-2026.jpg",
+    imageAlt: "A paper skeleton in a long orange skirt and a flower-trimmed hat walking a curving path between marigolds, with orange bunting strung through dark trees",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Día de los Muertos at NYBG 2026",
+    titleSeo: "Día de los Muertos at the New York Botanical Garden 2026",
+    summary:
+      "Día de los Muertos in New York at the Botanical Garden in the Bronx, 3 October to 2 November 2026: a community ofrenda, giant Catrina puppets, papel picado workshops and a parade on Sunday 1 November, all included with the All-Garden Pass.",
+    start: "2026-10-03",
+    end: "2026-11-02",
+    startTime: "10:00",
+    endTime: "18:00",
+    utcOffset: "-04:00",
+    venue: "New York Botanical Garden, 2900 Southern Boulevard, Bronx",
+    city: "New York",
+    country: "United States",
+    geo: {
+      name: "New York Botanical Garden",
+      lat: 40.862243,
+      lng: -73.877154,
+    },
+    organizer: "New York Botanical Garden",
+    category: "Day of the Dead",
+    tickets: { priceFrom: 15, priceTo: 39, currency: "USD" },
+    ticket: {
+      url: "https://www.nybg.org/visit/tickets/",
+      label: "Tickets from NYBG",
+    },
+    source: {
+      name: "New York Botanical Garden",
+      url: "https://www.nybg.org/event/dia-de-los-muertos/",
+      verifiedOn: "2026-10-13",
+    },
+    body: [
+      "The Botanical Garden's Día de los Muertos lasts a month rather than a weekend, and it lives in the Everett Children's Adventure Garden: a community ofrenda, workshops and music from <strong>3 October to 2 November 2026</strong>, all of it included with the All-Garden Pass.",
+      "## The ofrenda",
+      "Anyone can add to the community altar: a photograph, or a few written lines about someone they have lost. The Garden asks for no food and no candles.",
+      "## The days with the most on",
+      "<strong>Lucrecia Novoa</strong>'s giant La Catrina and skeleton puppets walk the garden on <strong>31 October and 1 and 2 November</strong>, from 1 to 5pm; her monarch butterfly puppets come out a week earlier, on 24 and 25 October, from 11 to 3. The dancers of <strong>MAZarte</strong> perform every half hour from 1 to 5pm on 31 October and 2 November, and Bilingual Birdies sing on 31 October and 1 November. On the October weekends before that, the folk band <strong>Son Pecadores</strong> plays sets at 11, 12 and 1.",
+      "## The parade, Sunday 1 November",
+      "From <strong>1pm</strong>, wearable-art crafts to make for it. At <strong>2pm</strong> the procession sets off behind Son Pecadores and the Mascara Viva puppets; MAZarte dance on the Daffodil Hill Main Stage at 2.30, CoolMarx teaches cumbia sonidera at 3.15, and a dance party runs from 3.30 to 5. If the weather is bad the procession is cancelled and everything else goes ahead.",
+      "## Workshops",
+      "Papel picado and silk-flower making through the month. On 31 October, from 2 to 3pm, children aged 4 to 10 can model small clay alebrijes.",
+      "## Tickets",
+      "The festival comes with the <strong>All-Garden Pass</strong>: adults <strong>$35</strong> on weekdays and <strong>$39</strong> at weekends, seniors and students $31 and $35, children $15 and $17, under-2s free. The Garden is open Tuesday to Sunday, 10am to 6pm.",
+      "## Across Fordham Road",
+      "The Bronx Zoo is just the other side of Fordham Road, and its <a href=\"/events/boo-at-the-zoo-bronx-2026/\" title=\"Boo at the Zoo 2026\">Boo at the Zoo</a> runs on the same weekends until 1 November: pumpkins on one side of the road, marigolds and skeletons on the other.",
+    ],
+    faq: [
+      {
+        q: "When is Día de los Muertos at NYBG in 2026?",
+        a: "From 3 October to 2 November 2026. The parade is on Sunday 1 November, from 1 to 5pm.",
+      },
+      {
+        q: "Does it cost extra?",
+        a: "No. It is included in the All-Garden Pass: $35 for adults on weekdays, $39 at weekends, $15 and $17 for children.",
+      },
+      {
+        q: "What can I bring for the ofrenda?",
+        a: "A photograph or a written memory. No food and no candles.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/boo-at-the-zoo-bronx-2026/",
+        eyebrow: "Bronx Zoo",
+        title: "Boo at the Zoo",
+        text: "Across Fordham Road on the same weekends: pumpkins, a candy trail and a costume parade, free with zoo admission.",
+      },
+      {
+        href: "/events/village-halloween-parade-2026/",
+        eyebrow: "Sixth Avenue",
+        title: "Village Halloween Parade",
+        text: "The evening of 31 October, after the puppets have gone home: the city's own parade, free to watch and free to march in costume.",
+      },
+    ],
+    expertise:
+      "If you can go only once, go on the 31st or the 1st. The month-long part, the ofrenda and the workshops, is pleasant on any weekend; the puppets, the dancers and the parade are packed into the last three days. The parade is an outdoor procession the Garden will cancel in the rain, so on 1 November look at the sky before setting out, and come for the 1pm crafts rather than the 2pm start: the costume you make is the one you walk in.",
   },
 ];

@@ -313,7 +313,7 @@ export const items: EventItem[] = [
   {
     slug: "festival-de-vida-y-muerte-2026",
     createdAt: "2026-09-08T21:23:08+04:00",
-    updatedAt: "2026-10-04T06:43:34+04:00",
+    updatedAt: "2026-10-13T00:40:00+04:00",
     site: "mxo",
     image: "/covers/festival-de-vida-y-muerte-2026.jpg",
     imageAlt: "Una flor de cempas\u00fachil de papel, de p\u00e9talos naranjas y centro oscuro, sola sobre un fondo azul verdoso",
@@ -347,6 +347,8 @@ export const items: EventItem[] = [
       "M\u00fasica del D\u00eda de Muertos \u2014 mariachi, estudiantina, sones, huapango arribe\u00f1o y m\u00fasica tradicional de la Pen\u00ednsula de Yucat\u00e1n \u2014 adem\u00e1s de representaciones y un <strong>Concierto de Gala</strong> el <strong>31 de octubre</strong>, que se compra aparte del acceso al parque.",
       "## El Concierto de Gala: Pandora y Flans",
       "La gala de este a\u00f1o junta a <strong>Pandora y Flans</strong>, dentro de su gira <strong>+Inesperado Tour</strong>: el <strong>s\u00e1bado 31 de octubre a las 10:00 p.m.</strong> en el <strong>Teatro Gran Tlachco</strong> del parque. El organizador lo dice sin rodeos: <strong>no est\u00e1 incluido</strong> en la entrada al festival ni al Parque Xcaret.",
+      "## En la misma península",
+      "El mismo viernes 30, en Mérida, sale el <a href=\"/eventos/paseo-de-las-animas-merida-2026/\" title=\"Paseo de las Ánimas 2026 en Mérida\">Paseo de las Ánimas</a>, la procesión del Hanal Pixán, del Cementerio General al Parque de San Juan.",
     ],
     faq: [
       {
@@ -360,6 +362,14 @@ export const items: EventItem[] = [
       {
         q: "\u00bfEl Concierto de Gala entra con el boleto del parque?",
         a: "No. Es <strong>Pandora y Flans</strong>, el <strong>31 de octubre a las 10:00 p.m.</strong> en el Teatro Gran Tlachco, y el organizador lo vende aparte de la entrada al festival y al parque.",
+      },
+    ],
+    related: [
+      {
+        href: "/eventos/paseo-de-las-animas-merida-2026/",
+        eyebrow: "Mérida",
+        title: "Paseo de las Ánimas",
+        text: "El viernes 30 a las 6 de la tarde: la procesión del Hanal Pixán, del Cementerio General al Parque de San Juan.",
       },
     ],
     expertise:
@@ -853,5 +863,86 @@ export const items: EventItem[] = [
     ],
     expertise:
       "El boleto general cubre las casas del terror y los sets de fotos, que es lo que la mayoría viene a ver; lo que suma rápido es la lista de extras, de la rueda de la fortuna a los food trucks. Conviene decidir antes qué se va a pagar aparte. Y si Fundidora queda lejos, la sede de Valle Oriente, en San Pedro, abre las mismas fechas y a las mismas horas.",
+  },
+
+  {
+    slug: "paseo-de-las-animas-merida-2026",
+    createdAt: "2026-10-13T00:40:00+04:00",
+    updatedAt: "2026-10-13T00:40:00+04:00",
+    site: "mxo",
+    image: "/covers/paseo-de-las-animas-merida-2026.jpg",
+    imageAlt: "Mujeres con vestido blanco bordado, coronas de flores y la cara pintada de calavera caminan en procesión por una calle de casas coloniales hacia un arco de piedra",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Paseo de las Ánimas 2026 en Mérida",
+    summary:
+      "El Paseo de las Ánimas en Mérida, Yucatán, el viernes 30 de octubre de 2026 a las 6 de la tarde: del Cementerio General al Parque de San Juan, la procesión del Hanal Pixán, la fiesta maya de muertos del sureste de México.",
+    start: "2026-10-30",
+    startTime: "18:00",
+    utcOffset: "-06:00",
+    venue: "Del Cementerio General al Parque de San Juan",
+    city: "Mérida",
+    country: "México",
+    geo: {
+      name: "Cementerio General, Mérida",
+      lat: 20.949711,
+      lng: -89.640429,
+    },
+    organizer: "Ayuntamiento de Mérida",
+    category: "Día de Muertos",
+    ticket: {
+      url: "https://www.merida.gob.mx/animas/",
+      label: "Programa del Ayuntamiento",
+      sells: false,
+    },
+    source: {
+      name: "Ayuntamiento de Mérida",
+      url: "https://www.merida.gob.mx/animas/",
+      verifiedOn: "2026-10-13",
+    },
+    body: [
+      "En Yucatán la fiesta de muertos se llama por lo que se cocina: <em>Hanal Pixán</em>, en maya, es «comida de las ánimas». Y una noche Mérida sale a acompañarlas por la calle. El <strong>Paseo de las Ánimas</strong> parte el <strong>viernes 30 de octubre de 2026</strong> a las <strong>6 de la tarde</strong> del <strong>Cementerio General</strong> y termina en el <strong>Parque de San Juan</strong>.",
+      "## Qué es el paseo",
+      "Una procesión a pie. Es costumbre caminarla con el rostro pintado de calavera y el traje regional, el hipil o el terno, y a lo largo del camino hay altares para los muertos.",
+      "## La ruta",
+      "El Ayuntamiento publica la salida y la llegada. Entre los dos puntos hay unos dos kilómetros por el sur del Centro, y la prensa local describe un trayecto que pasa por el barrio de La Ermita.",
+      "## La noche siguiente",
+      "El sábado 31 a las 8 de la noche, el programa del Ayuntamiento pone el <strong>Desfile de Catrinas</strong> en la Plaza Grande.",
+      "## Dentro de qué festival",
+      "Los dos forman parte del Festival de las Ánimas, que según el Diario de Yucatán va del 24 de octubre al 2 de noviembre.",
+      "## Otras noches de muertos en México",
+      "En la misma península, el <a href=\"/eventos/festival-de-vida-y-muerte-2026/\" title=\"Festival de Vida y Muerte 2026\">Festival de Vida y Muerte</a> de Xcaret empieza también el 30 de octubre; y la noche del 1 de noviembre es la de <a href=\"/eventos/noche-de-muertos-michoacan-2026/\" title=\"Noche de Muertos en Michoacán 2026\">Janitzio y el lago de Pátzcuaro</a>.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo es el Paseo de las Ánimas 2026?",
+        a: "El viernes 30 de octubre de 2026, a las 6 de la tarde, del Cementerio General al Parque de San Juan, en Mérida.",
+      },
+      {
+        q: "¿Qué es el Hanal Pixán?",
+        a: "El nombre maya de la fiesta de muertos en Yucatán: «comida de las ánimas».",
+      },
+      {
+        q: "¿Hay algo más ese fin de semana?",
+        a: "El Desfile de Catrinas, el sábado 31 de octubre a las 8 de la noche en la Plaza Grande.",
+      },
+    ],
+    related: [
+      {
+        href: "/eventos/festival-de-vida-y-muerte-2026/",
+        eyebrow: "Xcaret",
+        title: "Festival de Vida y Muerte",
+        text: "En la misma península y desde el mismo viernes: cuatro días de altares, música y representaciones en la Riviera Maya.",
+      },
+      {
+        href: "/eventos/noche-de-muertos-michoacan-2026/",
+        eyebrow: "Michoacán",
+        title: "Noche de Muertos en Michoacán",
+        text: "La noche del 1 de noviembre en Janitzio, Tzintzuntzan y Jarácuaro: velas, cempasúchil y procesión al panteón.",
+      },
+    ],
+    expertise:
+      "La salida es lo primero que se llena. A las seis, el Cementerio General junta a quienes van a caminar y a quienes quieren la foto del arranque; para verlo pasar con calma conviene esperar a mitad de camino, en las calles del sur del Centro, y el final en San Juan es para quien quiere quedarse después. A finales de octubre en Mérida sigue haciendo calor a esa hora: agua y zapato cómodo antes que abrigo.",
   },
 ];

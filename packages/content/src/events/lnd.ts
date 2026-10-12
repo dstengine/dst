@@ -205,7 +205,7 @@ export const items: EventItem[] = [
   {
     slug: "blackheath-fireworks-2026",
     createdAt: "2026-09-08T16:29:32+04:00",
-    updatedAt: "2026-10-12T02:45:00+04:00",
+    updatedAt: "2026-10-13T00:40:00+04:00",
     site: "lnd",
     image: "/covers/blackheath-fireworks-2026.jpg",
     imageAlt: "A single white and yellow firework bursting over a deep navy sky",
@@ -242,6 +242,8 @@ export const items: EventItem[] = [
       "<strong>Saturday 7 November 2026</strong> on <strong>Blackheath Common</strong>, run by <strong>Slammin Events</strong> in partnership with <strong>Lewisham Council</strong>. Capacity is <strong>40,000</strong>.",
       "## Blackheath Fireworks ticket prices",
       "<strong>Adult (16+) £17.60. Youth (11–15) £11. Child (0–10) £5.50.</strong> Family packages run from <strong>£28.08 to £51.36</strong>. Tickets are sold through See Tickets and have been released; the organisers expect them to go quickly.",
+      "## The other hill that night",
+      "North London has its own display on the very same Saturday: <a href=\"/events/alexandra-palace-fireworks-2026/\" title=\"Alexandra Palace Fireworks & Drone Festival 2026\">Alexandra Palace</a> sends up fireworks and drones at 8pm, and does it all again for families at 6pm on the Sunday.",
     ],
     related: [
       {
@@ -249,6 +251,12 @@ export const items: EventItem[] = [
         eyebrow: "Herne Hill",
         title: "Halloween Fireworks at Herne Hill Velodrome",
         text: "A week earlier, on Saturday 31 October: a bonfire at 6 and fireworks at 7 over the old Olympic track, advance tickets only.",
+      },
+      {
+        href: "/events/alexandra-palace-fireworks-2026/",
+        eyebrow: "Alexandra Palace",
+        title: "Alexandra Palace Fireworks & Drone Festival",
+        text: "The same Saturday in north London: fireworks and drones at 8pm, and a family display at 6pm on the Sunday.",
       },
     ],
     expertise:
@@ -1428,5 +1436,91 @@ export const items: EventItem[] = [
     ],
     expertise:
       "The order of the evening is kinder to small children than most firework nights. The fancy dress judging comes first, at a quarter to six, so costumes are seen while their wearers are still fresh; the fireworks are at seven rather than half past eight; and a family can be home by eight without missing anything but the LED show. Do arrive at five rather than at ten to seven, though — the gates, not the fireworks, are where the evening queues.",
+  },
+
+  {
+    slug: "alexandra-palace-fireworks-2026",
+    createdAt: "2026-10-13T00:40:00+04:00",
+    updatedAt: "2026-10-13T00:40:00+04:00",
+    site: "lnd",
+    image: "/covers/alexandra-palace-fireworks-2026.jpg",
+    imageAlt: "A white palace with a spire on top of a dark hill, two white fireworks bursting in the navy sky and a small drone hovering beside it",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Alexandra Palace Fireworks & Drone Festival 2026",
+    titleSeo: "Alexandra Palace Fireworks and Drones 2026, London",
+    cardTitle: "Alexandra Palace Fireworks",
+    summary:
+      "Fireworks and a drone show over north London from Alexandra Palace on Saturday 7 and Sunday 8 November 2026: an 8pm display and a German Bier Festival on the Saturday, a 6pm display for families on the Sunday. Gates open at 4pm.",
+    start: "2026-11-07",
+    end: "2026-11-08",
+    startTime: "16:00",
+    utcOffset: "+00:00",
+    city: "London",
+    country: "United Kingdom",
+    venue: "Alexandra Palace Park, Alexandra Palace Way, N22",
+    geo: { name: "Alexandra Palace", lat: 51.59435, lng: -0.13064 },
+    category: "Fireworks",
+    organizer: "Alexandra Palace",
+    ticket: {
+      url: "https://fireworks.london/",
+      label: "Tickets from Alexandra Palace",
+    },
+    source: {
+      name: "Alexandra Palace",
+      url: "https://fireworks.london/saturday.html",
+      verifiedOn: "2026-10-13",
+    },
+    body: [
+      "Alexandra Palace has the advantage of altitude. It stands on one of the highest hills in north London, and on the weekend after Bonfire Night it sends up fireworks and a drone show that a good part of the city can see — though one sees it a great deal better from the park itself.",
+      "## Saturday 7 November: the grown-up evening",
+      "Gates open at <strong>4pm</strong> and the display begins, promptly, at <strong>8pm</strong>. The DJ <strong>Eats Everything</strong> is the special guest, with a Queen tribute and a brass band for company. In the Great Hall, entered by the Palm Court, the <strong>German Bier Festival</strong> runs until 11pm, with last entry at 10: strictly over-18s, Challenge 25 at every bar, and fancy dress encouraged.",
+      "## Sunday 8 November: the family one",
+      "Gates again at <strong>4pm</strong>, and the display rather earlier, at <strong>6pm</strong> — a kindness to anyone with a bedtime to keep. There is Barrioke with Shaun Williamson, a Junior Jungle kids' rave and marshmallows over fire pits, and the capacity is smaller than Saturday's. Tickets for the under-10s are <strong>£6.50</strong> including fees.",
+      "## Arriving",
+      "Last entry to the park is five minutes after the display begins — <strong>8.05pm</strong> on Saturday, <strong>6.05pm</strong> on Sunday — and the gates are at their busiest in the hour before. The park is all hills, steep in places and slippery in the wet, so sensible shoes are rather more than a suggestion.",
+      "## Tickets",
+      "Sold day by day through the Palace's festival site. The event pages print no adult prices; the Sunday under-10s fare is the only one quoted.",
+      "## The same Saturday, south of the river",
+      "<a href=\"/events/blackheath-fireworks-2026/\" title=\"Blackheath Fireworks 2026\">Blackheath</a> holds its display on the very same evening, so London must choose its hill. And for those who could not wait for November, <a href=\"/events/herne-hill-velodrome-halloween-fireworks-2026/\" title=\"Halloween Fireworks at Herne Hill Velodrome 2026\">Herne Hill Velodrome</a> lights its bonfire on Halloween.",
+    ],
+    programme: [
+      { heading: "Sat 4pm", text: "Gates open." },
+      { heading: "Sat 8pm", text: "Fireworks and drone show. Last entry 8.05pm." },
+      { heading: "Sat 11pm", text: "German Bier Festival closes; last entry at 10pm." },
+      { heading: "Sun 4pm", text: "Gates open." },
+      { heading: "Sun 6pm", text: "Fireworks and drone show. Last entry 6.05pm." },
+    ],
+    faq: [
+      {
+        q: "When are the Alexandra Palace fireworks in 2026?",
+        a: "On Saturday 7 November at <strong>8pm</strong> and Sunday 8 November at <strong>6pm</strong>. Gates open at 4pm on both days.",
+      },
+      {
+        q: "Which day suits children?",
+        a: "Sunday: the display is two hours earlier, the capacity is smaller, and there is a kids' rave and marshmallow fire pits. The Saturday Bier Festival is strictly over-18s.",
+      },
+      {
+        q: "Can I arrive late?",
+        a: "Only just. Last entry is at 8.05pm on Saturday and 6.05pm on Sunday.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/blackheath-fireworks-2026/",
+        eyebrow: "Blackheath",
+        title: "Blackheath Fireworks",
+        text: "The same Saturday, south of the river: south-east London's biggest display, for forty thousand.",
+      },
+      {
+        href: "/events/herne-hill-velodrome-halloween-fireworks-2026/",
+        eyebrow: "Herne Hill",
+        title: "Halloween Fireworks at Herne Hill Velodrome",
+        text: "A week earlier, on Saturday 31 October: a bonfire at 6 and fireworks at 7 over the old Olympic track.",
+      },
+    ],
+    expertise:
+      "Choose the day before the ticket. Saturday is a party with fireworks in the middle of it; Sunday is fireworks with a party for the under-tens around them, and it is over two hours earlier. Either way, last entry is five minutes after the display begins, which means the queue, not the sky, decides whether one sees it: be at the gates by seven on Saturday and by five on Sunday, and allow for the climb — the Palace is at the top of its hill for a reason.",
   },
 ];

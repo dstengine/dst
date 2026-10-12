@@ -114,7 +114,7 @@ export const items: EventItem[] = [
   {
     slug: "ripe-market-2026-27",
     createdAt: "2026-09-08T16:29:32+04:00",
-    updatedAt: "2026-10-02T23:50:36+04:00",
+    updatedAt: "2026-10-13T00:40:00+04:00",
     site: "riviera",
     image: "/covers/ripe-market-2026-27.jpg",
     imageAlt: "A row of blue and yellow market canopies with a low table under each, on pale blue",
@@ -145,6 +145,16 @@ export const items: EventItem[] = [
       "The <strong>15th season</strong> opens on <strong>10 October 2026</strong> and runs until <strong>2 May 2027</strong>, every <strong>Saturday and Sunday from 9am to 9pm</strong>, at <strong>Dubai Police Academy Park</strong> in Umm Suqeim, off Sheikh Zayed Road.",
       "## What is there",
       "Independent stalls selling fashion, home decor, art and locally made goods, produce from UAE farmers, food vendors, creative workshops, activities for children and live entertainment.",
+      "## The weeknight counterpart",
+      "Ripe is a weekend market. For the evenings in between, <a href=\"/events/global-village-season-31-2026/\" title=\"Global Village, Season 31\">Global Village</a> reopens on 14 October for its 31st season, open every day from 4pm until May.",
+    ],
+    related: [
+      {
+        href: "/events/global-village-season-31-2026/",
+        eyebrow: "Dubailand",
+        title: "Global Village, Season 31",
+        text: "Open every evening from 4pm, from 14 October into May 2027: the weeknight half of the outdoor season.",
+      },
     ],
     expertise:
       "From Riviera this is a drive rather than a walk — Umm Suqeim is on the other side of Sheikh Zayed Road from MBR City — and the twelve-hour opening is what makes that worth planning around. The market is at its emptiest in the first two hours and at its hottest, in both senses, in the middle of the afternoon; October and early November are the two months when the late-evening end of the window is the pleasant one. Note also what the season dates tell you about Dubai's outdoor calendar generally: 10 October to 2 May is roughly the whole of it, and most open-air weekend events in the city sit inside those two bookends.",
@@ -344,5 +354,82 @@ export const items: EventItem[] = [
     ],
     expertise:
       "The family entry is cheaper than it looks. Four separate 1km entries come to AED 300 and four 5km entries to AED 396, so at AED 250 it saves money at every distance — but it does not solve the clock. The 5km sets off ten minutes before the 1km, so a parent running the 5km cannot also walk a small child round the 1km; with two adults, one runs and one walks, and both are back for the costume trophies at half past nine, which is the part the children will remember.",
+  },
+
+  {
+    slug: "global-village-season-31-2026",
+    createdAt: "2026-10-13T00:40:00+04:00",
+    updatedAt: "2026-10-13T00:40:00+04:00",
+    site: "riviera",
+    image: "/covers/global-village-season-31-2026.jpg",
+    imageAlt: "A row of red-roofed pavilions on a waterfront pier with a Ferris wheel behind them and small boats on the water, under a pale blue sky",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Global Village, Season 31",
+    summary:
+      "Dubai's Global Village opens its 31st season on 14 October and runs into May 2027, every evening from 4pm: pavilions from across the world, food, shows and rides, a drive rather than a walk from Azizi Riviera.",
+    start: "2026-10-14",
+    end: "2027-05-01",
+    startTime: "16:00",
+    utcOffset: "+04:00",
+    venue: "Global Village, Sheikh Mohammed bin Zayed Road, Dubailand",
+    city: "Dubai",
+    country: "United Arab Emirates",
+    organizer: "Global Village",
+    category: "City-wide",
+    ticket: {
+      url: "https://www.globalvillage.ae/en/",
+      label: "Global Village website",
+      sells: false,
+    },
+    source: {
+      name: "Global Village",
+      url: "https://www.globalvillage.ae/en/plan-your-visit",
+      verifiedOn: "2026-10-13",
+    },
+    body: [
+      "Global Village is the other half of Dubai's outdoor season. Ripe Market is a weekend habit; Global Village is open every evening for seven months, with pavilions given over to countries and regions from across the world.",
+      "## Season 31 dates and hours",
+      "The park reopens on <strong>Wednesday 14 October 2026</strong> and runs into <strong>May 2027</strong>; it has not yet named the closing day. It opens at <strong>4pm</strong> every day and closes at <strong>midnight</strong> from Sunday to Wednesday and at <strong>1am</strong> from Thursday to Saturday and on public holidays. <strong>Tuesdays</strong>, public holidays aside, are kept for families, couples and women.",
+      "## Tickets",
+      "Season 31 prices have not been published: the park says tickets will be available later, and only its VIP Packs are on sale so far.",
+      "## What is there",
+      "Pavilions of food, crafts and goods from across the world, stage shows every evening and a funfair. The park's line for this season is an invitation to “a more wonderful world”.",
+      "## Getting there from Riviera",
+      "A drive, not a walk: Global Village is in Dubailand, off Sheikh Mohammed bin Zayed Road, about ten kilometres south of Meydan as the crow flies.",
+      "## The same season, elsewhere",
+      "For a weekend morning rather than a weeknight, <a href=\"/events/ripe-market-2026-27/\" title=\"Ripe Market, 15th season\">Ripe Market</a> is at Police Academy Park every Saturday and Sunday until 2 May; and from 6 November the <a href=\"/events/meydan-racing-season-2026-27/\" title=\"Meydan racing season 2026–27\">racing season at Meydan</a> brings the evenings back to Riviera's doorstep.",
+    ],
+    faq: [
+      {
+        q: "When does Global Village Season 31 open?",
+        a: "On Wednesday 14 October 2026. The season runs into May 2027; the closing day has not been announced.",
+      },
+      {
+        q: "What are the opening hours?",
+        a: "4pm to midnight from Sunday to Wednesday, 4pm to 1am from Thursday to Saturday. Tuesdays are for families, couples and women.",
+      },
+      {
+        q: "How much are tickets?",
+        a: "Season 31 prices are not out yet; only VIP Packs are on sale.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/ripe-market-2026-27/",
+        eyebrow: "Umm Suqeim",
+        title: "Ripe Market, 15th season",
+        text: "The weekend market at Police Academy Park, Saturdays and Sundays from 9am to 9pm, until 2 May.",
+      },
+      {
+        href: "/events/meydan-racing-season-2026-27/",
+        eyebrow: "Meydan",
+        title: "Meydan racing season 2026–27",
+        text: "Seventeen race nights from 6 November to 27 March, about a kilometre and a half from Riviera.",
+      },
+    ],
+    expertise:
+      "The cheapest decision about Global Village is the night. Thursday to Saturday it stays open an hour later and draws the crowds to match; Sunday to Wednesday the same pavilions are quieter, and Tuesday is the family night. From Riviera, a Monday or Wednesday after work is the visit with the least queueing for the car park. And the October evenings are still warm: the season's best weeks are November to February, when a 4pm opening is no longer the hot end of the day.",
   },
 ];

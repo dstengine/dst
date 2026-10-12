@@ -126,7 +126,7 @@ export const items: EventItem[] = [
   {
     slug: "breakpoint-2026-london",
     createdAt: "2026-09-06T09:36:42+04:00",
-    updatedAt: "2026-09-06T18:13:26+04:00",
+    updatedAt: "2026-10-13T00:40:00+04:00",
     site: "sol2go",
     image: "/covers/breakpoint-2026-london.jpg",
     imageAlt: "A tall paper hall with a barrel-vaulted glass roof cut as flat violet and lilac sheets, a wide crowd band of pale mint below it",
@@ -162,7 +162,7 @@ export const items: EventItem[] = [
       "## What a Breakpoint ticket costs",
       "<strong>Developers $250</strong>. <strong>Students $100</strong>. <strong>General admission $550</strong>, rising to <strong>$800</strong> late. The developer and student tiers are the interesting part of that table: a conference that prices its builders at less than half of general admission is telling you who it still wants in the room.",
       "## The week around it",
-      "Breakpoint is the middle of a fortnight, not a standalone. The <strong>Solana Hacker House</strong> runs 1–12 November, <strong>Scale or Die</strong> takes the day before on 14 November, and side events fill the evenings of the 16th. If you are flying in, the calendar to plan against is the fortnight, not the three days.",
+      "Breakpoint is the middle of a fortnight, not a standalone. The <strong>Solana Hacker House</strong> runs 1–12 November and closes with a <a href=\"/events/solana-demo-day-london-2026/\" title=\"Solana Demo Day London 2026\">Demo Day</a> on the 12th, <strong>Scale or Die</strong> takes the day before on 14 November, and side events fill the evenings of the 16th. If you are flying in, the calendar to plan against is the fortnight, not the three days.",
     ],
     expertise:
       "Two things are worth knowing before you buy. First, the price ladder is real: the late-bird tier at $800 is a $250 penalty for deciding in October, and the developer tier at $250 has historically sold out well before the general one. Second, a London Breakpoint is the cheapest one this conference has been to reach for anyone in Europe since Lisbon in 2023 — which is also why the room will be fuller than the ticket count suggests, because the side events do not require a badge. If the reason you are going is the hallway rather than the stage, the Hacker House fortnight and the free evening events may be the better half of the trip.",
@@ -230,7 +230,7 @@ export const items: EventItem[] = [
   {
     slug: "solana-hacker-house-london-2026",
     createdAt: "2026-09-06T09:36:42+04:00",
-    updatedAt: "2026-09-06T18:13:26+04:00",
+    updatedAt: "2026-10-13T00:40:00+04:00",
     site: "sol2go",
     image: "/covers/solana-hacker-house-london-2026.jpg",
     imageAlt: "Rows of flat desk shapes in lilac and mint paper receding under a long violet ceiling band",
@@ -246,6 +246,7 @@ export const items: EventItem[] = [
     startTime: "10:00",
     endTime: "20:00",
     utcOffset: "+00:00",
+    venue: "Somerset House, Strand",
     city: "London",
     country: "United Kingdom",
     organizer: "Solana Foundation",
@@ -266,8 +267,10 @@ export const items: EventItem[] = [
       "Workspace with wifi and power, food, lounges and dedicated build zones. The programme is described as “Workshops and deep dives across DeFi, security, infrastructure, and applications”, with Ecosystem Experts and Solana Foundation teams on hand.",
       "## Getting into the London Hacker House",
       "<strong>Approval is required</strong> and capacity is limited: you request to join through the event page, and the organisers ask that you keep your RSVP current rather than holding a place you will not use. Anyone wanting to lead a session applies through a typeform; sponsorship goes to events@solana.org.",
-      "## Where the address is",
-      "Not published. The venue is released to approved guests through the event page rather than announced, which is normal for a Hacker House and worth knowing before you book a hotel.",
+      "## Where it is",
+      "Somerset House, on the Strand, according to the organisers' Demo Day page. The Hacker House page itself still releases the address only to approved guests, which is normal for a Hacker House.",
+      "## How it ends",
+      "On the last day, 12 November, the house closes with the <a href=\"/events/solana-demo-day-london-2026/\" title=\"Solana Demo Day London 2026\">Solana Demo Day</a>: teams present live to founders and investors from 10:00, and the stream is open to anyone who cannot get to London.",
     ],
     expertise:
       "Thirteen days is unusually long — most Hacker Houses run five. The length is deliberate: this one exists to fill the run-up to Breakpoint, so the first week is the quiet, useful one and the second is when the conference crowd arrives and the desks stop being available. If you are coming to build rather than to network, the first week is the whole value of the trip, and it is also the week the Ecosystem Experts have time for a real conversation rather than a queue.",
@@ -1491,5 +1494,82 @@ export const items: EventItem[] = [
     ],
     expertise:
       "This is the first of the three technical days that now open Breakpoint week — 200ms on the 13th, Scale or Die on the 14th, then the conference from the 15th — and it is the one aimed at the trading side rather than the protocol side. Free but selective means the registration is a filter, not a formality: apply early and say what you run onchain, because the room is picked from what people write there. Being in the same building as the main conference also makes it the cheapest way to test whether the Breakpoint week is worth the flight, since nothing about this day depends on holding a conference ticket.",
+  },
+
+  {
+    slug: "solana-demo-day-london-2026",
+    createdAt: "2026-10-13T00:40:00+04:00",
+    updatedAt: "2026-10-13T00:40:00+04:00",
+    site: "sol2go",
+    image: "/covers/solana-demo-day-london-2026.jpg",
+    imageAlt: "An empty violet hall with arched windows, a small lectern on a low stage before a blank white screen and rows of chairs in the foreground",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Solana Demo Day London 2026",
+    summary:
+      "The Solana Hacker House in London ends on stage: teams present live to founders, investors and the community on Thursday 12 November, 10:00 to 18:30, three days before Breakpoint. Free, approved guests only, and streamed.",
+    start: "2026-11-12",
+    startTime: "10:00",
+    endTime: "18:30",
+    utcOffset: "+00:00",
+    city: "London",
+    country: "United Kingdom",
+    organizer: "Solana Foundation and Superteam UK",
+    category: "Demo Day",
+    audience: ["Founders", "Investors", "Developers"],
+    tickets: { priceFrom: 0 },
+    ticket: {
+      url: "https://luma.com/sol-demo-day",
+      label: "Request to join",
+    },
+    source: {
+      name: "Solana Foundation",
+      url: "https://luma.com/sol-demo-day",
+      verifiedOn: "2026-10-13",
+    },
+    body: [
+      "Two weeks of building, then a day of showing it. The Demo Day closes the <a href=\"/events/solana-hacker-house-london-2026/\" title=\"Solana Hacker House — London\">Solana Hacker House</a>, which runs from 1 to 12 November at Somerset House, and puts its teams in front of founders, investors and the Solana community.",
+      "## The day",
+      "<strong>Thursday 12 November 2026</strong>, <strong>10:00 to 18:30</strong> London time, with doors and registration from <strong>9:00</strong>. Teams present live, and the presentations are streamed for anyone who cannot get to London.",
+      "## Getting a seat",
+      "<strong>Free</strong>, but for <strong>approved guests only</strong>: you register on the event page and the hosts approve. The address goes to registered guests; the map pin on the page sits at Somerset House, on the Strand.",
+      "## Presenting",
+      "Applications to present are open, through the Solana Foundation's form. The hosts want teams showing a specific product or feature, and give priority to those not already presenting at Breakpoint or Scale or Die.",
+      "## Who runs it",
+      "The Solana Foundation, with Superteam UK as co-host.",
+      "## Three days later",
+      "<a href=\"/events/breakpoint-2026-london/\" title=\"Solana Breakpoint 2026\">Breakpoint</a> opens at Olympia on 15 November, with Scale or Die the day before. Demo Day costs nothing to attend, and by design many of the teams on its stage will not be on Breakpoint's.",
+    ],
+    faq: [
+      {
+        q: "When is Solana Demo Day London 2026?",
+        a: "Thursday 12 November 2026, 10:00 to 18:30, with doors at 9:00.",
+      },
+      {
+        q: "Does it cost anything?",
+        a: "No. It is free, but registration is subject to host approval.",
+      },
+      {
+        q: "Can I watch online?",
+        a: "Yes. The presentations are streamed.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/solana-hacker-house-london-2026/",
+        eyebrow: "1–12 November",
+        title: "Solana Hacker House London",
+        text: "The thirteen days of free workspace and workshops that the Demo Day closes.",
+      },
+      {
+        href: "/events/breakpoint-2026-london/",
+        eyebrow: "15–17 November",
+        title: "Solana Breakpoint 2026",
+        text: "The flagship conference at Olympia London, three days after the Demo Day.",
+      },
+    ],
+    expertise:
+      "Apply to present even if you would rather watch. The priority rule — teams not already on the Breakpoint or Scale or Die stage — makes the Demo Day the one slot of the fortnight kept open for smaller projects, and a team that built something in the Hacker House has a real chance at it. For a spectator it is the clearest look at what was actually built in those two weeks, three days before the conference turns everything into announcements.",
   },
 ];

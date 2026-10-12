@@ -1615,7 +1615,7 @@ export const items: EventItem[] = [
   {
     slug: "sky-garden-halloween-dance-of-the-dead-2026",
     createdAt: "2026-10-12T00:36:00+04:00",
-    updatedAt: "2026-10-12T00:36:00+04:00",
+    updatedAt: "2026-10-13T00:40:00+04:00",
     site: "ldn",
     image: "/covers/sky-garden-halloween-dance-of-the-dead-2026.jpg",
     imageAlt: "A tall tapering tower filled with green plants and small lit windows, bats circling its top and a crescent moon in its glass base, above a dark city skyline on a cream ground",
@@ -1658,6 +1658,8 @@ export const items: EventItem[] = [
       "The garden is naturally ventilated, so dress for late October rather than for a nightclub. Sky Garden also warns that a lift out of service has reduced its capacity and that some visitors may not get in at their booked time: aim for the start of your slot, not the end.",
       "## Elsewhere in the City that week",
       "Two streets away, <a href=\"/events/halloween-leadenhall-market-2026/\" title=\"Halloween at Leadenhall Market 2026\">Leadenhall Market</a> has a 4.5-metre light-up beetle under its Victorian roof until 1 November, free; by day, the <a href=\"/events/halloween-tower-of-london-2026/\" title=\"Halloween at the Tower of London 2026\">Tower of London</a> does ghosts until 4pm.",
+      "## Or with headphones",
+      "In Covent Garden on the Saturday, the <a href=\"/events/halloween-silent-disco-london-transport-museum-2026/\" title=\"Halloween Silent Disco at the London Transport Museum\">London Transport Museum's Halloween silent disco</a> puts its DJs among the old buses and trams, in two sessions until midnight.",
     ],
     faq: [
       {
@@ -1686,8 +1688,96 @@ export const items: EventItem[] = [
         title: "Halloween at the Tower of London",
         text: "Ghosts in daylight, 10.30am to 4pm, included with admission, and the one event in London that asks you not to wear a costume.",
       },
+      {
+        href: "/events/halloween-silent-disco-london-transport-museum-2026/",
+        eyebrow: "Covent Garden",
+        title: "Halloween Silent Disco at the Transport Museum",
+        text: "Saturday 31 October among the old buses and trams: two sessions from 6.30pm to midnight, over-18s.",
+      },
     ],
     expertise:
       "The slot is the decision that matters. The early one, from 6.30pm, catches the last of the light over the river and the room before it fills; the two later ones are the party proper, and with last entry at midnight they are also the ones a reduced capacity at the lifts will squeeze. Book the evening you want, then arrive at the front of your window.",
+  },
+
+  {
+    slug: "halloween-silent-disco-london-transport-museum-2026",
+    createdAt: "2026-10-13T00:40:00+04:00",
+    updatedAt: "2026-10-13T00:40:00+04:00",
+    site: "ldn",
+    image: "/covers/halloween-silent-disco-london-transport-museum-2026.jpg",
+    imageAlt: "Inside an old railway carriage with wooden slatted benches, two pairs of glowing headphones hanging on chains from the ceiling rail and paper bats overhead",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Halloween Silent Disco at the London Transport Museum",
+    cardTitle: "Halloween Silent Disco at the Transport Museum",
+    summary:
+      "A Halloween silent disco among the old buses and trams of the London Transport Museum in Covent Garden on Saturday 31 October 2026: two sessions, 6.30 to 9pm and 9.30 to midnight, several channels of DJs, over-18s, £25 to £27.50.",
+    start: "2026-10-31",
+    startTime: "18:30",
+    endTime: "23:59",
+    displayHours: true,
+    utcOffset: "+00:00",
+    venue: "London Transport Museum, Covent Garden Piazza, WC2E 7BB",
+    city: "London",
+    country: "United Kingdom",
+    geo: {
+      name: "London Transport Museum",
+      lat: 51.511984,
+      lng: -0.121227,
+    },
+    organizer: "London Transport Museum and Iconic Silent Discos",
+    category: "Halloween",
+    tickets: { priceFrom: 25, priceTo: 27.5, currency: "GBP" },
+    ticket: {
+      url: "https://www.ltmuseum.co.uk/whats-on/lates/iconic-silent-disco-halloween",
+      label: "Tickets from the London Transport Museum",
+    },
+    source: {
+      name: "London Transport Museum",
+      url: "https://www.ltmuseum.co.uk/whats-on/lates/iconic-silent-disco-halloween",
+      verifiedOn: "2026-10-13",
+    },
+    body: [
+      "The London Transport Museum's Lates turn the galleries into somewhere to spend an evening, and at Halloween the evening is a silent disco: headphones on, among the buses, trams and Underground carriages of the collection, on <strong>Saturday 31 October 2026</strong>.",
+      "## Two sessions",
+      "<strong>6.30pm to 9pm</strong>, or <strong>9.30pm to midnight</strong>. Each is its own ticket, so choose before booking.",
+      "## The music",
+      "DJs on several platforms at once, and you choose whom to listen to: singalong hits from the 80s, 90s and 2000s across three channels, and a channel of indie from Propaganda, the club night behind the event with Silent Disco King. There is also a ghoulish craft table for anyone who would rather make something than dance.",
+      "## Tickets and the small print",
+      "<strong>Over-18s only.</strong> Early bird tickets were <strong>£25</strong> and first release <strong>£27.50</strong>; a carer or companion goes free. If any are left on the night, they are sold at the museum's ticket desk. Tickets cannot be refunded but can be passed to someone else. There is a paid bar and no food.",
+      "## Elsewhere on the night",
+      "For Halloween higher up, <a href=\"/events/sky-garden-halloween-dance-of-the-dead-2026/\" title=\"Dance of the Dead: Sky Garden Halloween 2026\">Sky Garden's Dance of the Dead</a> is thirty-five floors over the City on the same Saturday, and the giant beetle of <a href=\"/events/halloween-leadenhall-market-2026/\" title=\"Halloween at Leadenhall Market 2026\">Halloween at Leadenhall Market</a> is free to see until 1 November.",
+    ],
+    faq: [
+      {
+        q: "When is the London Transport Museum Halloween silent disco?",
+        a: "On Saturday 31 October 2026, in two sessions: 6.30 to 9pm and 9.30pm to midnight.",
+      },
+      {
+        q: "How much are tickets?",
+        a: "Early bird £25, first release £27.50; carers and companions go free. Over-18s only.",
+      },
+      {
+        q: "Can I buy a ticket on the door?",
+        a: "Yes, at the museum's ticket desk, if any are left.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/sky-garden-halloween-dance-of-the-dead-2026/",
+        eyebrow: "Sky Garden",
+        title: "Dance of the Dead at Sky Garden",
+        text: "The same Saturday, 35 floors up: a welcome cocktail, two live sets and a DJ, 18+.",
+      },
+      {
+        href: "/events/halloween-leadenhall-market-2026/",
+        eyebrow: "Leadenhall Market",
+        title: "Halloween at Leadenhall Market",
+        text: "A 4.5-metre light-up beetle under the Victorian roof, free to see until 1 November.",
+      },
+    ],
+    expertise:
+      "The two sessions are not the same evening at different hours. The early one ends at nine, which suits anyone with a dinner, a second party or a last train to think of; the late one runs to midnight and is the one for people who came to dance rather than to look round the buses. Book the session, not the night — and a ticket that cannot be refunded can still be given to a friend.",
   },
 ];
