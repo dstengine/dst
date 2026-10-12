@@ -102,7 +102,7 @@ export const items: EventItem[] = [
   {
     slug: "viennale-2026",
     createdAt: "2026-09-06T09:36:42+04:00",
-    updatedAt: "2026-09-06T09:36:42+04:00",
+    updatedAt: "2026-10-12T04:35:00+04:00",
     site: "vien",
     image: "/covers/viennale-2026.jpg",
     imageAlt: "Ein Papierstreifen aus Filmkadern quer durchs Bild, drei Kader in Zinnoberrot, ein moosgrüner Lichtkegel am Rand",
@@ -111,7 +111,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Viennale 2026",
     summary:
-      "Österreichs größtes Filmfestival läuft vom 22. Oktober bis 3. November. Die 64. Ausgabe bringt eine Retrospektive zu Robert Aldrich und ein Ferien-Abo für Jugendliche um 20 Euro.",
+      "Österreichs größtes Filmfestival läuft vom 22. Oktober bis 3. November in Wien. Die 64. Ausgabe bringt eine Retrospektive zu Robert Aldrich und ein Ferien-Abo für Jugendliche um 20 Euro.",
     start: "2026-10-22",
     end: "2026-11-03",
     utcOffset: "+02:00",

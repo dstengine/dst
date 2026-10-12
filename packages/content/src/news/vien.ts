@@ -130,7 +130,7 @@ export const items: NewsItem[] = [
   {
     slug: "albertina-zeigt-picasso-und-bacon-ab-18-september",
     createdAt: "2026-09-08T00:12:45+04:00",
-    updatedAt: "2026-09-08T11:57:44+04:00",
+    updatedAt: "2026-10-12T04:35:00+04:00",
     site: "vien",
     image: "/covers/albertina-zeigt-picasso-und-bacon-ab-18-september.jpg",
     imageAlt: "Zwei ausgeschnittene Papierfiguren aus vermillionrotem und moosgrünem Papier, einander zugewandt, auf cremefarbenem Grund",
@@ -141,7 +141,7 @@ export const items: NewsItem[] = [
     cardTitle: "Picasso – Bacon in der Albertina",
     titleSeo: "Albertina: Picasso – Bacon ab 18. September",
     summary:
-      "Rund 70 Hauptwerke aus internationalen Sammlungen, von 18. September bis 31. Jänner 2027: zwei Maler, die den menschlichen Körper neu erfunden haben.",
+      "Rund 70 Hauptwerke aus internationalen Sammlungen, in der Wiener Albertina von 18. September bis 31. Jänner 2027: zwei Maler, die den menschlichen Körper neu erfunden haben.",
     date: "2026-09-07",
     category: "Museen",
     source: {

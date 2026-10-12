@@ -75,7 +75,7 @@ export function sections(items: FeedItem[]): Section[] {
           ? "Die Welt, von Wien aus gesehen — mit Quelle und Datum"
           : `${was} in Wien: Termine mit Quelle und Datum`,
         description: welt
-          ? "Was außerhalb Österreichs passiert, von hier aus erzählt — mit Quelle und Datum bei jedem Eintrag."
+          ? "Was außerhalb Österreichs passiert, von Wien aus erzählt — mit Quelle und Datum bei jedem Eintrag."
           : `${was} in Wien — mit Datum, wie es die Veranstalter angegeben haben, und der Quelle bei jedem Eintrag.`,
         h1: welt ? "Die Welt, von Wien aus" : `${was} in Wien`,
         lede: welt

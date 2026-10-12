@@ -181,7 +181,7 @@ export const items: NewsItem[] = [
   {
     slug: "kew-costs-ten-pounds-on-a-tuesday",
     createdAt: "2026-09-06T08:48:11+04:00",
-    updatedAt: "2026-09-06T20:58:51+04:00",
+    updatedAt: "2026-10-12T04:35:00+04:00",
     site: "ldn",
     image: "/covers/kew-costs-ten-pounds-on-a-tuesday.jpg",
     imageAlt: "A warm off-white ground with seven charcoal paper rectangles in a row, the second one cut down to a third of the height and printed in pillar-box red",
@@ -192,7 +192,7 @@ export const items: NewsItem[] = [
     cardTitle: "Kew is £10 on Tuesdays",
     titleSeo: "Kew Gardens: £10 tickets every Tuesday",
     summary:
-      "From 8 September to 29 December the Tuesday ticket is £10 instead of £25, and it includes the largest outdoor Henry Moore exhibition ever staged.",
+      "From 8 September to 29 December the Tuesday ticket to Kew in south-west London is £10 instead of £25, and it includes the largest outdoor Henry Moore exhibition ever staged.",
     date: "2026-09-06",
     category: "Days out",
     source: {
@@ -333,7 +333,7 @@ export const items: NewsItem[] = [
   {
     slug: "nature-and-us-opens-a-gallery-shut-since-1943",
     createdAt: "2026-09-02T13:01:24+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-12T04:35:00+04:00",
     site: "ldn",
     image: "/covers/nature-and-us-opens-a-gallery-shut-since-1943.jpg",
     imageAlt: "A tall paper archway in red, orange and deep red opening onto a pale cream interior",
@@ -344,7 +344,7 @@ export const items: NewsItem[] = [
     cardTitle: "Shut since 1943, open from 16 September",
     titleSeo: "Nature & Us opens at the Natural History Museum",
     summary:
-      "The Natural History Museum's new free gallery puts a 400,000-year-old hand-axe beside a Star Wars toy that spent the 1980s under the sea.",
+      "The new free gallery at London's Natural History Museum puts a 400,000-year-old hand-axe beside a Star Wars toy that spent the 1980s under the sea.",
     date: "2026-09-02",
     category: "Museums",
     source: {
@@ -371,7 +371,7 @@ export const items: NewsItem[] = [
   {
     slug: "lady-in-blue-takes-the-fourth-plinth",
     createdAt: "2026-09-02T13:01:24+04:00",
-    updatedAt: "2026-09-07T16:06:17+04:00",
+    updatedAt: "2026-10-12T04:35:00+04:00",
     site: "ldn",
     image: "/covers/lady-in-blue-takes-the-fourth-plinth.jpg",
     imageAlt: "A small blue paper figure standing on a pale stone-coloured block above a red band",
@@ -382,7 +382,7 @@ export const items: NewsItem[] = [
     cardTitle: "Lady in Blue takes the Fourth Plinth",
     titleSeo: "Tschabalala Self's Lady in Blue unveiled",
     summary:
-      "Tschabalala Self's Lady in Blue goes up in Trafalgar Square from 10 September and stays until summer 2028 — the longest commitment in public art here.",
+      "Tschabalala Self's Lady in Blue goes up in London's Trafalgar Square from 10 September and stays until summer 2028 — the longest commitment in public art here.",
     date: "2026-09-02",
     category: "Exhibitions",
     source: {
@@ -407,7 +407,7 @@ export const items: NewsItem[] = [
   {
     slug: "frieze-sculpture-in-regents-park",
     createdAt: "2026-09-02T13:01:24+04:00",
-    updatedAt: "2026-09-07T16:06:17+04:00",
+    updatedAt: "2026-10-12T04:35:00+04:00",
     site: "ldn",
     image: "/covers/frieze-sculpture-in-regents-park.jpg",
     imageAlt: "Upright abstract paper shapes in orange, green and charcoal standing on a band of green paper grass",
@@ -418,7 +418,7 @@ export const items: NewsItem[] = [
     cardTitle: "Frieze Sculpture: free, and outdoors",
     titleSeo: "Frieze Sculpture 2026 in Regent's Park",
     summary:
-      "From 16 September to 1 November, eleven artists take over the English Gardens on the theme of hybridity. No ticket, no booking, no queue.",
+      "From 16 September to 1 November, eleven artists take over the English Gardens of Regent's Park in London on the theme of hybridity. No ticket, no booking, no queue.",
     date: "2026-09-02",
     category: "Exhibitions",
     source: {
@@ -522,7 +522,7 @@ export const items: NewsItem[] = [
   {
     slug: "va-exhibitions-closing-dates",
     createdAt: "2026-08-30T20:53:51+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-12T04:35:00+04:00",
     site: "ldn",
     image: "/covers/va-exhibitions-closing-dates.jpg",
     imageAlt: "A row of gallery doorways receding, the nearest shutter half lowered under a clock",
@@ -531,7 +531,7 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "The V&A closing dates worth putting in a diary",
     summary:
-      "Four V&A exhibitions have published closing dates and one opens in November. Schiaparelli goes first, on 8 November — and it is the one with the shortest run left.",
+      "Four exhibitions at the V&A's London sites have published closing dates and one opens in November. Schiaparelli goes first, on 8 November — and it is the one with the shortest run left.",
     date: "2026-08-29",
     category: "Exhibitions",
     source: {
@@ -643,7 +643,7 @@ export const items: NewsItem[] = [
   {
     slug: "ten-exhibitions-on-in-london",
     createdAt: "2026-08-30T11:52:01+04:00",
-    updatedAt: "2026-09-07T16:06:17+04:00",
+    updatedAt: "2026-10-12T04:35:00+04:00",
     featured: 1,
     site: "ldn",
     image: "/covers/ten-exhibitions-on-in-london.jpg",
@@ -653,7 +653,7 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "What is actually hanging in London right now",
     summary:
-      "Ten shows are on the critics' list. Six of them close before January, one has sold more advance tickets than anything in Tate's 128-year history, and two of the best are free.",
+      "Ten London shows are on the critics' list. Six of them close before January, one has sold more advance tickets than anything in Tate's 128-year history, and two of the best are free.",
     date: "2026-08-27",
     category: "Exhibitions",
     source: {

@@ -23,14 +23,14 @@ export const home = {
 
 export const news = {
   title: "Was sich in Wien geändert hat",
-  description: "Kein Ticker. Ein paar Dinge pro Woche, die es zu wissen lohnt und die wir prüfen konnten.",
+  description: "Kein Ticker: ein paar Dinge pro Woche für Wien, die es zu wissen lohnt und die wir prüfen konnten.",
   h1: "Was sich in Wien geändert hat",
   lede: `Kein Ticker. Ein paar Dinge pro Woche, die es zu wissen lohnt und die wir gegen die Quelle prüfen konnten.`,
 };
 
 export const events = {
   title: "Veranstaltungen in Wien, nach Datum",
-  description: "Termine, die wir bei den Veranstaltern bestätigt haben. Ohne bestätigtes Datum steht hier nichts.",
+  description: "Termine in Wien, die wir bei den Veranstaltern bestätigt haben. Ohne bestätigtes Datum steht hier nichts.",
   h1: "Wien nach Datum",
   lede: `Termine, die wir bei den Veranstaltern bestätigt haben. Was kein bestätigtes Datum hat, wartet, bis es eines gibt.`,
 };

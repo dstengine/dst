@@ -158,7 +158,7 @@ export const items: EventItem[] = [
   {
     slug: "japan-matsuri-2026",
     createdAt: "2026-09-22T13:22:00+04:00",
-    updatedAt: "2026-09-22T13:22:00+04:00",
+    updatedAt: "2026-10-12T04:34:00+04:00",
     site: "ldn",
     image: "/covers/japan-matsuri-2026.jpg",
     imageAlt: "Seven narrow paper banners in red and charcoal hanging from a rod against a pale ground",
@@ -167,7 +167,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Japan Matsuri 2026",
     summary:
-      "The UK's biggest festival of Japanese culture and food takes Trafalgar Square for a day, free and ten hours long — with a door policy strict enough to be worth reading before you set off.",
+      "The UK's biggest festival of Japanese culture and food takes Trafalgar Square in London for a day, free and ten hours long — with a door policy strict enough to be worth reading before you set off.",
     start: "2026-10-04",
     end: "2026-10-04",
     utcOffset: "+01:00",
@@ -285,7 +285,7 @@ export const items: EventItem[] = [
   {
     slug: "bermondsey-street-festival-2026",
     createdAt: "2026-08-30T11:52:01+04:00",
-    updatedAt: "2026-09-12T20:43:17+04:00",
+    updatedAt: "2026-10-12T04:34:00+04:00",
     site: "ldn",
     image: "/covers/bermondsey-street-festival-2026.jpg",
     imageAlt: "A red paper bunting line strung across a warm off-white ground above two charcoal market stall shapes",
@@ -294,7 +294,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Bermondsey Street Festival 2026",
     summary:
-      "The street shuts to traffic on Saturday 19 September, 10am to 5pm, for the festival's twentieth year. Free, volunteer-run, and spread across three areas.",
+      "Bermondsey Street in south-east London shuts to traffic on Saturday 19 September, 10am to 5pm, for the festival's twentieth year. Free, volunteer-run, and spread across three areas.",
     start: "2026-09-19",
     startTime: "10:00",
     endTime: "17:00",
@@ -327,7 +327,7 @@ export const items: EventItem[] = [
   {
     slug: "bfi-london-film-festival-2026",
     createdAt: "2026-09-01T15:07:36+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-12T04:34:00+04:00",
     site: "ldn",
     image: "/covers/bfi-london-film-festival-2026.jpg",
     imageAlt: "A fanned stack of red paper rectangles with a dark aperture ring resting over them",
@@ -336,7 +336,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "BFI London Film Festival 2026",
     summary:
-      "Andrew Scott and Olivia Colman open the 70th LFF on 7 October in Elsinore. The festival runs to 18 October, and tickets go on general sale on 17 September.",
+      "Andrew Scott and Olivia Colman open the 70th BFI London Film Festival on 7 October in Elsinore. The festival runs to 18 October, and tickets go on general sale on 17 September.",
     start: "2026-10-07",
     end: "2026-10-18",
     city: "London",
@@ -377,7 +377,7 @@ export const items: EventItem[] = [
   {
     slug: "london-design-festival-2026",
     createdAt: "2026-08-30T21:45:40+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-12T04:34:00+04:00",
     featured: 1,
     site: "ldn",
     image: "/covers/london-design-festival-2026.jpg",
@@ -387,7 +387,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "London Design Festival 2026",
     summary:
-      "Nine days, eleven design districts and a light installation inside St Paul's Cathedral. The 24th festival runs 12–20 September, and most of it is free to walk into.",
+      "Nine days, eleven design districts across London and a light installation inside St Paul's Cathedral. The 24th festival runs 12–20 September, and most of it is free to walk into.",
     start: "2026-09-12",
     end: "2026-09-20",
     city: "London",
@@ -421,7 +421,7 @@ export const items: EventItem[] = [
   {
     slug: "open-house-festival-2026",
     createdAt: "2026-08-30T21:45:40+04:00",
-    updatedAt: "2026-09-12T20:43:17+04:00",
+    updatedAt: "2026-10-12T04:34:00+04:00",
     site: "ldn",
     image: "/covers/open-house-festival-2026.jpg",
     imageAlt: "Layered paper building facades with one small red door standing open",
@@ -430,7 +430,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Open House Festival 2026",
     summary:
-      "For nine days in September, buildings across all 33 boroughs open their doors for free. The 35th edition runs 12–20 September, and the ticketed places went on sale in August.",
+      "For nine days in September, buildings across all 33 of London's boroughs open their doors for free. The 35th edition runs 12–20 September, and the ticketed places went on sale in August.",
     start: "2026-09-12",
     end: "2026-09-20",
     city: "London",
@@ -462,7 +462,7 @@ export const items: EventItem[] = [
   {
     slug: "totally-thames-2026",
     createdAt: "2026-08-30T21:45:40+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-12T04:34:00+04:00",
     site: "ldn",
     image: "/covers/totally-thames-2026.jpg",
     imageAlt: "A paper river winding under a bridge span",
@@ -471,7 +471,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Totally Thames 2026",
     summary:
-      "A month of art, performance and river adventures along the Thames through September — a film installation on Blackfriars Bridge, a dance duet in the Brunel tunnel shaft, an opera about water.",
+      "A month of art, performance and river adventures along the Thames in London through September — a film installation on Blackfriars Bridge, a dance duet in the Brunel tunnel shaft, an opera about water.",
     start: "2026-09-01",
     end: "2026-09-30",
     city: "London",
@@ -603,7 +603,7 @@ export const items: EventItem[] = [
   {
     slug: "notting-hill-carnival-2026",
     createdAt: "2026-08-30T11:52:01+04:00",
-    updatedAt: "2026-09-12T20:43:17+04:00",
+    updatedAt: "2026-10-12T04:34:00+04:00",
     featured: 3,
     site: "ldn",
     image: "/covers/notting-hill-carnival-2026.jpg",
@@ -613,7 +613,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Notting Hill Carnival 2026",
     summary:
-      "Three days over the August bank holiday for Carnival's sixtieth year: Panorama on the Saturday, J'Ouvert and Children's Day on the Sunday, the main parade on the Monday. Free, and enormous.",
+      "Three days in west London over the August bank holiday for Carnival's sixtieth year: Panorama on the Saturday, J'Ouvert and Children's Day on the Sunday, the main parade on the Monday. Free, and enormous.",
     start: "2026-08-29",
     end: "2026-08-31",
     city: "London",
@@ -647,7 +647,7 @@ export const items: EventItem[] = [
   {
     slug: "andre-rieu-ovo-arena-2026",
     createdAt: "2026-09-04T20:51:35+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-12T04:34:00+04:00",
     image: "/covers/andre-rieu-ovo-arena-2026.jpg",
     imageAlt: "André Rieu playing the violin at the right of the Johann Strauss Orchestra, the players in ball gowns and tails behind gilded music stands",
     imageKind: "photo",
@@ -659,7 +659,7 @@ export const items: EventItem[] = [
     title: "André Rieu at OVO Arena Wembley",
     cardTitle: "André Rieu at Wembley",
     summary:
-      "Two nights, 17 and 18 September, with the Johann Strauss Orchestra. The arena lists a 6pm start; AXS puts doors at 6.30pm and the stage at 7.30pm on the Friday.",
+      "Two nights in London, 17 and 18 September, with the Johann Strauss Orchestra. The arena lists a 6pm start; AXS puts doors at 6.30pm and the stage at 7.30pm on the Friday.",
     start: "2026-09-17",
     end: "2026-09-18",
     startTime: "18:00",
@@ -695,7 +695,7 @@ export const items: EventItem[] = [
   {
     slug: "anastacia-ovo-arena-2026",
     createdAt: "2026-09-04T20:51:35+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-12T04:34:00+04:00",
     image: "/covers/anastacia-ovo-arena-2026.jpg",
     imageAlt: "Anastacia on stage in a black jacket with gold chain detail, pointing off to her right",
     imageKind: "photo",
@@ -707,7 +707,7 @@ export const items: EventItem[] = [
     title: "Anastacia at OVO Arena Wembley",
     cardTitle: "Anastacia at Wembley",
     summary:
-      "Saturday 26 September, doors 6pm and stage 7.30pm. The #NTK Tour 2026 reaches Wembley with Roachford and Acrobvt supporting.",
+      "Saturday 26 September in London, doors 6pm and stage 7.30pm. The #NTK Tour 2026 reaches Wembley with Roachford and Acrobvt supporting.",
     start: "2026-09-26",
     startTime: "18:00",
     utcOffset: "+01:00",
@@ -745,7 +745,7 @@ export const items: EventItem[] = [
   {
     slug: "simple-plan-ovo-arena-2026",
     createdAt: "2026-09-04T20:51:35+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-12T04:34:00+04:00",
     image: "/covers/simple-plan-ovo-arena-2026.jpg",
     imageAlt: "Pierre Bouvier singing into a microphone with an acoustic guitar slung across him, a screen glowing behind",
     imageKind: "photo",
@@ -757,7 +757,7 @@ export const items: EventItem[] = [
     title: "Simple Plan at OVO Arena Wembley",
     cardTitle: "Simple Plan at Wembley",
     summary:
-      "Saturday 3 October, doors 6pm and stage 7.30pm: the Bigger Than You Think! Europe Tour 2026, with Stand Atlantic and Charlotte Sands.",
+      "Saturday 3 October at Wembley in London, doors 6pm and stage 7.30pm: the Bigger Than You Think! Europe Tour 2026, with Stand Atlantic and Charlotte Sands.",
     start: "2026-10-03",
     startTime: "18:00",
     utcOffset: "+01:00",

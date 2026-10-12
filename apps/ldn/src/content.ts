@@ -20,7 +20,7 @@ export const home = {
 
 export const news = {
   title: "What changed in central London",
-  description: "A few things a week from the centre, each one checked against the source that reported it.",
+  description: "A few things a week from central London, each one checked against the source that reported it.",
   h1: "What changed in central London",
   lede: `A few things a week from the centre, each one checked against the source that reported it.`,
 };
