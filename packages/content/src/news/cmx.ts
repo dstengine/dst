@@ -98,7 +98,7 @@ export const items: NewsItem[] = [
   {
     slug: "festival-del-pan-dulce-en-el-monumento-a-la-revolucion",
     createdAt: "2026-09-08T00:12:45+04:00",
-    updatedAt: "2026-09-08T11:57:44+04:00",
+    updatedAt: "2026-10-13T04:36:07+04:00",
     site: "cmx",
     image: "/covers/festival-del-pan-dulce-en-el-monumento-a-la-revolucion.jpg",
     imageAlt: "Círculos de papel magenta y ciruela de distintos tamaños sobre fondo crema, uno de ellos con surcos concéntricos recortados",
@@ -109,7 +109,7 @@ export const items: NewsItem[] = [
     cardTitle: "Festival del Pan Dulce, gratis",
     titleSeo: "Festival del Pan Dulce: 11-13 septiembre",
     summary:
-      "Del viernes 11 al domingo 13 de septiembre, entrada libre en la explanada del Monumento a la Revolución: conchas, orejas, cuernitos, cochinitos y campechanas.",
+      "Del 11 al 13 de septiembre, entrada libre en el Monumento a la Revolución, en la Ciudad de México: conchas, orejas, cuernitos, cochinitos y campechanas.",
     date: "2026-09-07",
     category: "Ciudad",
     source: {
@@ -135,7 +135,7 @@ export const items: NewsItem[] = [
   {
     slug: "el-grito-de-miguel-hidalgo-con-paty-cantu",
     createdAt: "2026-09-06T08:48:11+04:00",
-    updatedAt: "2026-09-08T00:12:45+04:00",
+    updatedAt: "2026-10-13T04:36:07+04:00",
     site: "cmx",
     image: "/covers/el-grito-de-miguel-hidalgo-con-paty-cantu.jpg",
     imageAlt: "Tres franjas de papel verticales en verde, blanco y rojo apagados, con tres pequeños círculos de papel alineados a distinta altura",
@@ -146,7 +146,7 @@ export const items: NewsItem[] = [
     titleSeo: "Grito 2026 en Miguel Hidalgo: el cartel",
     cardTitle: "El Grito en Miguel Hidalgo: tres actos gratis",
     summary:
-      "El 15 de septiembre, en Parque Lira 94: Embajadores de la Cumbia Dinamita a las 19:00, Los Yaguaru a las 21:00 y Paty Cantú a las 23:15. Entrada libre.",
+      "El 15 de septiembre, en la alcaldía Miguel Hidalgo de la Ciudad de México: Embajadores de la Cumbia Dinamita a las 19:00, Los Yaguaru a las 21:00 y Paty Cantú a las 23:15. Entrada libre.",
     date: "2026-09-06",
     category: "Ciudad",
     source: {
@@ -211,7 +211,7 @@ export const items: NewsItem[] = [
   {
     slug: "el-metro-cumple-57-y-lo-festeja-con-cumbia",
     createdAt: "2026-09-03T07:30:21+04:00",
-    updatedAt: "2026-09-07T13:32:58+04:00",
+    updatedAt: "2026-10-13T04:36:07+04:00",
     site: "cmx",
     image: "/covers/el-metro-cumple-57-y-lo-festeja-con-cumbia.jpg",
     imageAlt: "Un círculo de papel naranja con una franja diagonal, rodeado de pequeñas figuras de papel en semicírculo",
@@ -222,7 +222,7 @@ export const items: NewsItem[] = [
     titleSeo: "El Metro cumple 57 años con conciertos",
     cardTitle: "El Metro cumple 57 y lo festeja con cumbia",
     summary:
-      "Del 2 al 5 de septiembre, en la Glorieta de Insurgentes: Aarón y Su Grupo Ilusión, Los Askis, La Sonora Dinamita y Son Tepito, sin costo.",
+      "El Metro de la Ciudad de México cumple 57: del 2 al 5 de septiembre, en la Glorieta de Insurgentes, Aarón y Su Grupo Ilusión, Los Askis, La Sonora Dinamita y Son Tepito, sin costo.",
     date: "2026-09-02",
     category: "Ciudad",
     source: {
@@ -322,7 +322,7 @@ export const items: NewsItem[] = [
   {
     slug: "ecobici-15-mil-bicicletas-tres-alcaldias",
     createdAt: "2026-09-01T15:07:36+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-13T04:36:07+04:00",
     site: "cmx",
     image: "/covers/ecobici-15-mil-bicicletas-tres-alcaldias.jpg",
     imageAlt: "Tres bicicletas de papel recortado en fila, con un arco satelital sobre ellas",
@@ -333,7 +333,7 @@ export const items: NewsItem[] = [
     cardTitle: "Ecobici pasa a 15 mil bicicletas",
     titleSeo: "Ecobici pasa a 15 mil bicicletas",
     summary:
-      "De 9 308 a 15 000 bicicletas y de 687 a 1 111 cicloestaciones. Iztapalapa, Iztacalco y Tlalpan entran al sistema a partir de septiembre",
+      "Ecobici, la bici pública de la Ciudad de México, pasa de 9 308 a 15 000 bicicletas y de 687 a 1 111 cicloestaciones. Iztapalapa, Iztacalco y Tlalpan entran a partir de septiembre.",
     date: "2026-08-28",
     category: "Movilidad",
     source: {
@@ -435,7 +435,7 @@ export const items: NewsItem[] = [
   {
     slug: "museo-del-gato-reforma",
     createdAt: "2026-08-30T23:51:30+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-13T04:36:07+04:00",
     featured: 2,
     site: "cmx",
     image: "/covers/museo-del-gato-reforma.jpg",
@@ -445,7 +445,7 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "Abrió un museo del gato en Reforma",
     summary:
-      "El Museo del Gato abrió el 8 de agosto en Paseo de la Reforma 87, en la Tabacalera. Lo opera La Gatería, el primer café de gatos de América Latina, y financia un programa móvil de esterilización.",
+      "El Museo del Gato abrió el 8 de agosto en Paseo de la Reforma 87, Ciudad de México. Lo opera La Gatería, el primer café de gatos de América Latina, y financia esterilización móvil.",
     date: "2026-08-30",
     category: "Ciudad",
     source: {
@@ -471,7 +471,7 @@ export const items: NewsItem[] = [
   {
     slug: "casa-del-lago-unam-sustentable",
     createdAt: "2026-08-30T20:37:08+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-13T04:36:07+04:00",
     site: "cmx",
     image: "/covers/casa-del-lago-unam-sustentable.jpg",
     imageAlt: "Un techo de pabellón con lluvia de tiras de papel cayendo hacia una cisterna",
@@ -480,7 +480,7 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "Casa del Lago capta su propia lluvia",
     summary:
-      "Dos años de obra en el recinto de Chapultepec: 60 mil litros de agua de lluvia por temporada, 60% menos consumo eléctrico y el primer plan integral de este tipo en un centro cultural de la UNAM.",
+      "Dos años de obra en Chapultepec, Ciudad de México: 60 mil litros de lluvia por temporada, 60% menos electricidad y el primer plan integral de su tipo en un centro cultural de la UNAM.",
     date: "2026-08-29",
     category: "Cultura",
     source: {
@@ -509,7 +509,7 @@ export const items: NewsItem[] = [
   {
     slug: "metrobus-cierres-por-mantenimiento",
     createdAt: "2026-08-30T20:37:08+04:00",
-    updatedAt: "2026-09-07T13:32:58+04:00",
+    updatedAt: "2026-10-13T04:36:07+04:00",
     site: "cmx",
     image: "/covers/metrobus-cierres-por-mantenimiento.jpg",
     imageAlt: "Una línea de transporte con estaciones marcadas, cortada por tramos con conos y barreras",
@@ -520,7 +520,7 @@ export const items: NewsItem[] = [
     titleSeo: "El Metrobús cierra 15 estaciones",
     cardTitle: "El Metrobús cerrará 15 estaciones",
     summary:
-      "Líneas 2, 3 y 5, en fines de semana alternados hasta noviembre. Tres de los cierres caen en estaciones de transbordo del Centro, y uno no dura un fin de semana sino dos.",
+      "Metrobús de la Ciudad de México: líneas 2, 3 y 5 cierran en fines de semana alternados hasta noviembre. Tres cierres caen en transbordos del Centro, y uno dura dos fines de semana.",
     date: "2026-08-25",
     category: "Movilidad",
     source: {
@@ -551,7 +551,7 @@ export const items: NewsItem[] = [
   {
     slug: "fin-de-semana-del-31-de-octubre",
     createdAt: "2026-08-30T20:37:08+04:00",
-    updatedAt: "2026-09-08T19:55:16+04:00",
+    updatedAt: "2026-10-13T04:36:07+04:00",
     site: "cmx",
     image: "/covers/fin-de-semana-del-31-de-octubre.jpg",
     imageAlt: "El cuadro partido a la mitad: flores de cempasúchil de un lado, una franja a cuadros del otro",
@@ -561,7 +561,7 @@ export const items: NewsItem[] = [
     title: "Desfile y Fórmula 1, el mismo fin de semana",
     titleSeo: "Desfile y F1, el mismo fin de semana",
     summary:
-      "El Gran Desfile de Día de Muertos y la clasificación del Gran Premio caen a la misma hora del sábado 31 de octubre, en extremos opuestos de la ciudad. Cómo se resuelve.",
+      "El Gran Desfile de Día de Muertos y la clasificación del Gran Premio caen a la misma hora del sábado 31 de octubre, en extremos opuestos de la Ciudad de México. Cómo se resuelve.",
     date: "2026-08-30",
     category: "Ciudad",
     source: {
@@ -616,7 +616,7 @@ export const items: NewsItem[] = [
   {
     slug: "plaza-de-la-conchita-jardin-polinizador",
     createdAt: "2026-08-30T11:52:01+04:00",
-    updatedAt: "2026-09-07T13:32:58+04:00",
+    updatedAt: "2026-10-13T04:36:07+04:00",
     site: "cmx",
     image: "/covers/plaza-de-la-conchita-jardin-polinizador.jpg",
     imageAlt: "Una plaza vista desde arriba con un área verde recortada, flores, abejas y mariposas",
@@ -626,7 +626,7 @@ export const items: NewsItem[] = [
     title: "La Plaza de la Conchita tendrá jardín polinizador",
     titleSeo: "Jardín polinizador en la Conchita",
     summary:
-      "Coyoacán interviene 3,352 metros cuadrados de áreas verdes en la Plaza de la Conchita para convertirlas en jardín polinizador, con autorización del INAH y presupuesto participativo.",
+      "Coyoacán, en la Ciudad de México, convierte 3,352 metros cuadrados de la Plaza de la Conchita en jardín polinizador, con autorización del INAH y presupuesto participativo.",
     date: "2026-08-28",
     category: "Ciudad",
     source: {
@@ -656,7 +656,7 @@ export const items: NewsItem[] = [
   {
     slug: "semovi-nuevo-contrato-ecobici",
     createdAt: "2026-08-30T11:52:01+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-13T04:36:07+04:00",
     site: "cmx",
     image: "/covers/semovi-nuevo-contrato-ecobici.jpg",
     imageAlt: "Una fila de bicicletas en su anclaje, en capas de papel, con un marcador de posición encima",
@@ -665,7 +665,7 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "Semovi endurece el contrato de Ecobici",
     summary:
-      "El nuevo contrato de Ecobici corre hasta 2036 y sube el sistema de 9,308 a 15 mil bicicletas. Hoy sólo una de cada diez trae localizador satelital; ahora todas deberán traerlo.",
+      "El nuevo contrato de Ecobici en la Ciudad de México corre hasta 2036 y sube el sistema de 9,308 a 15 mil bicicletas. Hoy sólo una de cada diez trae localizador; ahora todas deberán.",
     date: "2026-08-27",
     category: "Movilidad",
     source: {
@@ -696,7 +696,7 @@ export const items: NewsItem[] = [
   {
     slug: "betsabee-romero-homenaje-a-monsivais",
     createdAt: "2026-08-30T11:52:01+04:00",
-    updatedAt: "2026-09-07T16:06:17+04:00",
+    updatedAt: "2026-10-13T04:36:07+04:00",
     site: "cmx",
     image: "/covers/betsabee-romero-homenaje-a-monsivais.jpg",
     imageAlt: "Un muro de objetos enmarcados: lupas, una máscara de luchador y un televisor antiguo",
@@ -706,7 +706,7 @@ export const items: NewsItem[] = [
     title: "Betsabeé Romero arma a Monsiváis en el Estanquillo",
     titleSeo: "Betsabeé Romero en el Estanquillo",
     summary:
-      "Salas de lupas, lentes grabados, máscaras de lucha libre y televisores de bulbo: Betsabeé Romero convierte el Museo del Estanquillo en una lectura de Monsiváis. Abrió el 29 de agosto.",
+      "Lupas, lentes grabados, máscaras de lucha libre y televisores de bulbo: Betsabeé Romero lee a Monsiváis en el Museo del Estanquillo, en la Ciudad de México, desde el 29 de agosto.",
     date: "2026-08-26",
     category: "Exposición",
     source: {

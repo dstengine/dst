@@ -93,7 +93,7 @@ export const items: NewsItem[] = [
   {
     slug: "warum-claude-seit-august-jeden-satz-markiert",
     createdAt: "2026-09-08T11:57:44+04:00",
-    updatedAt: "2026-09-08T14:19:42+04:00",
+    updatedAt: "2026-10-13T04:36:07+04:00",
     site: "vien",
     image: "/covers/warum-claude-seit-august-jeden-satz-markiert.jpg",
     imageAlt: "Eine Reihe gleich großer Papierkarten auf cremefarbenem Grund, alle in derselben Farbe, mit unterschiedlich breiten Abständen",
@@ -104,7 +104,7 @@ export const items: NewsItem[] = [
     cardTitle: "Claudes unsichtbare Markierung",
     titleSeo: "Claude markiert seinen Text",
     summary:
-      "Anthropic versieht seit 2. August alles, was Claude schreibt, mit einer unsichtbaren Markierung. Sie steckt nicht in den Wörtern, sondern in deren Auswahl.",
+      "Seit 2. August markiert Anthropic alles, was Claude schreibt, unsichtbar in der Wortwahl. Lesen darf das nur, wer zugelassen ist — was das für Redaktionen und Hochschulen in Wien heißt.",
     date: "2026-09-08",
     category: "Welt",
     source: {

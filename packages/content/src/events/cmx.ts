@@ -128,7 +128,7 @@ export const items: EventItem[] = [
   {
     slug: "festival-cafe-y-chocolate-2026",
     createdAt: "2026-08-30T11:52:01+04:00",
-    updatedAt: "2026-09-08T15:51:10+04:00",
+    updatedAt: "2026-10-13T04:36:07+04:00",
     site: "cmx",
     image: "/covers/festival-cafe-y-chocolate-2026.jpg",
     imageAlt: "Una taza de papel rosa pálido recortada sobre un fondo crema, con una flor naranja de cinco pétalos apoyada en su costado izquierdo y una vaina de cacao abierta, en color vino, junto a ella",
@@ -139,7 +139,7 @@ export const items: EventItem[] = [
     titleSeo: "Café y Chocolate 2026 en Coyoacán",
     cardTitle: "Café y Chocolate, edición Día de Muertos",
     summary:
-      "Tres días de café, cacao y todo lo que lleva una ofrenda, del 2 al 4 de octubre en el Museo Nacional de Culturas Populares, en Coyoacán, con entrada libre.",
+      "Tres días de café, cacao y todo lo que lleva una ofrenda, del 2 al 4 de octubre en el Museo Nacional de Culturas Populares, en Coyoacán, Ciudad de México, con entrada libre.",
     start: "2026-10-02",
     end: "2026-10-04",
     startTime: "11:00",
@@ -174,7 +174,7 @@ export const items: EventItem[] = [
   {
     slug: "grito-2026-alcaldia-miguel-hidalgo",
     createdAt: "2026-09-06T22:44:30+04:00",
-    updatedAt: "2026-09-08T15:51:10+04:00",
+    updatedAt: "2026-10-13T04:36:07+04:00",
     site: "cmx",
     image: "/covers/grito-2026-alcaldia-miguel-hidalgo.jpg",
     imageAlt: "Una campana de papel magenta colgada de un hilo sobre un fondo crema, y debajo una hilera de banderines triangulares del mismo color",
@@ -185,7 +185,7 @@ export const items: EventItem[] = [
     titleSeo: "El Grito 2026 en Miguel Hidalgo",
     cardTitle: "El Grito en Miguel Hidalgo",
     summary:
-      "Tres conciertos gratuitos en la explanada de la alcaldía el 15 de septiembre: Embajadores de la Cumbia Dinamita a las 19:00, Los Yaguaru a las 21:00 y Paty Cantú a las 23:15.",
+      "Tres conciertos gratuitos en la alcaldía Miguel Hidalgo, Ciudad de México, el 15 de septiembre: Embajadores de la Cumbia Dinamita, Los Yaguaru y Paty Cantú a las 23:15.",
     start: "2026-09-15",
     startTime: "15:00",
     utcOffset: "-06:00",
@@ -218,7 +218,7 @@ export const items: EventItem[] = [
   {
     slug: "festival-xochiska-2026",
     createdAt: "2026-09-03T07:30:21+04:00",
-    updatedAt: "2026-09-06T22:44:30+04:00",
+    updatedAt: "2026-10-13T04:36:07+04:00",
     site: "cmx",
     image: "/covers/festival-xochiska-2026.jpg",
     imageAlt: "Una máscara de papel recortada en dos colores sobre un fondo crema, con franjas verticales detrás",
@@ -227,7 +227,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Festival Xochiska 2026",
     summary:
-      "Quince bandas de ska y punk más una función de lucha libre, el sábado 5 de septiembre en el Centro Deportivo Xochimilco, por $450.",
+      "Quince bandas de ska y punk más una función de lucha libre, el sábado 5 de septiembre en el Centro Deportivo Xochimilco, en la Ciudad de México, por $450.",
     start: "2026-09-05",
     startTime: "12:00",
     utcOffset: "-06:00",
@@ -264,7 +264,7 @@ export const items: EventItem[] = [
   {
     slug: "gran-premio-ciudad-de-mexico-2026",
     createdAt: "2026-08-30T20:37:08+04:00",
-    updatedAt: "2026-09-07T18:02:29+04:00",
+    updatedAt: "2026-10-13T04:36:07+04:00",
     featured: 1,
     site: "cmx",
     image: "/covers/gran-premio-ciudad-de-mexico-2026.jpg",
@@ -274,7 +274,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Gran Premio de la Ciudad de México 2026",
     summary:
-      "La Fórmula 1 vuelve al Autódromo Hermanos Rodríguez del 30 de octubre al 1 de noviembre, con la carrera el domingo a las 2pm y un reglamento técnico nuevo.",
+      "La Fórmula 1 vuelve al Autódromo Hermanos Rodríguez de la Ciudad de México del 30 de octubre al 1 de noviembre, con la carrera el domingo a las 2pm y un reglamento técnico nuevo.",
     start: "2026-10-30",
     end: "2026-11-01",
     startTime: "12:30",
@@ -329,7 +329,7 @@ export const items: EventItem[] = [
   {
     slug: "gran-desfile-dia-de-muertos-2026",
     createdAt: "2026-08-30T20:37:08+04:00",
-    updatedAt: "2026-10-12T02:45:00+04:00",
+    updatedAt: "2026-10-13T04:36:07+04:00",
     featured: 2,
     site: "cmx",
     image: "/covers/gran-desfile-dia-de-muertos-2026.jpg",
@@ -339,7 +339,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Gran Desfile de Día de Muertos 2026",
     summary:
-      "Sábado 31 de octubre sobre Paseo de la Reforma: más de cuatro horas de carros alegóricos, catrinas monumentales y danza. La temática todavía no se anuncia.",
+      "Sábado 31 de octubre sobre Paseo de la Reforma, en la Ciudad de México: más de cuatro horas de carros alegóricos, catrinas monumentales y danza. La temática todavía no se anuncia.",
     start: "2026-10-31",
     utcOffset: "-06:00",
     city: "Ciudad de México",
@@ -410,7 +410,7 @@ export const items: EventItem[] = [
   {
     slug: "del-color-de-la-sandia-cenart",
     createdAt: "2026-08-30T20:37:08+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-13T04:36:07+04:00",
     site: "cmx",
     image: "/covers/del-color-de-la-sandia-cenart.jpg",
     imageAlt: "Dos rebanadas de sandía recortadas en papel",
@@ -419,7 +419,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Del color de la sandía",
     summary:
-      "Ciclo de fiestas patrias en el Centro Nacional de las Artes durante septiembre: música mexicana, danza folclórica y ópera, buena parte con entrada libre.",
+      "Ciclo de fiestas patrias en el Centro Nacional de las Artes, en la Ciudad de México, durante septiembre: música mexicana, danza folclórica y ópera, buena parte con entrada libre.",
     start: "2026-09-02",
     startTime: "19:00",
     utcOffset: "-06:00",
@@ -461,7 +461,7 @@ export const items: EventItem[] = [
   {
     slug: "monsivais-en-el-estanquillo",
     createdAt: "2026-08-30T11:52:01+04:00",
-    updatedAt: "2026-09-07T13:32:58+04:00",
+    updatedAt: "2026-10-13T04:36:07+04:00",
     site: "cmx",
     image: "/covers/monsivais-en-el-estanquillo.jpg",
     imageAlt: "Siluetas de papel flotando en filas: un sombrero, una bicicleta, una guitarra, unos anteojos y un perro",
@@ -471,7 +471,7 @@ export const items: EventItem[] = [
     title: "Porque ahora pienso en ti, más que ayer, mucho más",
     titleSeo: "Monsiváis en el Museo del Estanquillo",
     summary:
-      "Cinco instalaciones inmersivas de Betsabeé Romero sobre el universo de Carlos Monsiváis: la primera instalación que el Museo del Estanquillo alberga en sus casi veinte años.",
+      "Cinco instalaciones inmersivas de Betsabeé Romero sobre Carlos Monsiváis, en el Museo del Estanquillo del Centro Histórico de la Ciudad de México: las primeras que alberga en casi veinte años.",
     start: "2026-08-29",
     startTime: "12:00",
     utcOffset: "-06:00",
@@ -848,7 +848,7 @@ export const items: EventItem[] = [
   {
     slug: "festival-del-terror-six-flags-2026",
     createdAt: "2026-09-12T22:20:00+04:00",
-    updatedAt: "2026-10-12T00:47:00+04:00",
+    updatedAt: "2026-10-13T04:36:07+04:00",
     site: "cmx",
     image: "/covers/festival-del-terror-six-flags-2026.jpg",
     imageAlt:
@@ -859,7 +859,7 @@ export const items: EventItem[] = [
     title: "Festival del Terror 2026 en Six Flags México",
     titleSeo: "Festival del Terror 2026, Six Flags Ciudad de México",
     summary:
-      "El Festival del Terror de Six Flags México, en Tlalpan, va del 3 de septiembre al 16 de noviembre: ocho atracciones de terror, Kids Boo Fest y reglas de acceso que conviene leer antes de disfrazarse.",
+      "El Festival del Terror de Six Flags México, en Tlalpan, Ciudad de México, va del 3 de septiembre al 16 de noviembre: ocho atracciones de terror, Kids Boo Fest y reglas de acceso.",
     start: "2026-09-03",
     end: "2026-11-16",
     utcOffset: "-06:00",

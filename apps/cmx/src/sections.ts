@@ -64,7 +64,7 @@ export function sections(items: FeedItem[]): Section[] {
         return {
           title: "Día de Muertos 2026 en la CDMX: qué hay",
           description:
-            "Alebrijes el 17 de octubre, catrinas el 25, el gran desfile el 31 y la alumbrada de Mixquic el 1 y 2 de noviembre — cada fecha como la publicó quien organiza",
+            "Día de Muertos en la Ciudad de México: alebrijes el 17 de octubre, catrinas el 25, el gran desfile el 31 y la alumbrada de Mixquic el 1 y 2 de noviembre, como lo publicó quien organiza.",
           h1: "Día de Muertos en la Ciudad de México",
           lede: "Quince días, cuatro actos y ninguno se parece al otro: los alebrijes salen del Zócalo a mediodía, las catrinas caminan un domingo, el desfile llena Reforma un sábado y Mixquic alumbra su panteón de noche. Cada fecha como la publicó quien organiza",
           headings: {

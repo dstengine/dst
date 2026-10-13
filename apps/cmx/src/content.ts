@@ -23,14 +23,14 @@ export const home = {
 
 export const news = {
   title: "Qué cambió en la Ciudad de México",
-  description: "No es un teletipo. Unas cuantas cosas por semana que vale la pena saber y que pudimos verificar.",
+  description: "Lo que cambia en la Ciudad de México, unas cuantas cosas por semana: lo que vale la pena saber y pudimos verificar, con la fuente a la vista.",
   h1: "Qué cambió en la Ciudad de México",
   lede: `No es un teletipo. Unas cuantas cosas por semana que vale la pena saber y que pudimos verificar.`,
 };
 
 export const events = {
   title: "Eventos en la Ciudad de México, por fecha",
-  description: "Fechas confirmadas con quien organiza. Un evento sin fecha confirmada no se publica hasta tenerla.",
+  description: "Eventos en la Ciudad de México con la fecha confirmada por quien organiza; lo que todavía no tiene fecha se publica en cuanto la tiene.",
   h1: "La Ciudad de México, por fecha",
   lede: `Fechas confirmadas con quien organiza. Un evento sin fecha confirmada no se publica hasta tenerla.`,
 };

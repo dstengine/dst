@@ -219,7 +219,7 @@ export const items: NewsItem[] = [
   {
     slug: "saturn-grew-a-ten-sided-shape",
     createdAt: "2026-09-06T08:48:11+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-13T04:36:07+04:00",
     site: "ldn",
     image: "/covers/saturn-grew-a-ten-sided-shape.jpg",
     imageAlt: "A charcoal paper decagon on a warm off-white ground, with a smaller red hexagon of paper set apart from it",
@@ -230,7 +230,7 @@ export const items: NewsItem[] = [
     cardTitle: "Saturn has grown a decagon",
     titleSeo: "Hubble finds a decagon at Saturn’s south pole",
     summary:
-      "Hubble has confirmed a ten-sided wave around Saturn’s south pole. Two amateur astronomers spotted the undulation in 2024; the paper landed on 2 September.",
+      "Hubble has confirmed a ten-sided wave at Saturn’s south pole that two amateurs spotted in 2024: a reminder of what a telescope in a London garden is actually good for.",
     date: "2026-09-05",
     category: "Science",
     source: {
@@ -444,7 +444,7 @@ export const items: NewsItem[] = [
   {
     slug: "apples-chairman-now-has-a-policy-job",
     createdAt: "2026-09-02T12:10:41+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-13T04:36:07+04:00",
     site: "ldn",
     image: "/covers/apples-chairman-now-has-a-policy-job.jpg",
     imageAlt: "Two paper columns flanking a red panel, a small folded white sheet floating between them, low steps beneath",
@@ -455,7 +455,7 @@ export const items: NewsItem[] = [
     cardTitle: "Apple's chairman: a policy job",
     titleSeo: "Apple’s chairman now has a policy remit",
     summary:
-      "Tim Cook stopped being chief executive on 1 September. His new role comes with a remit Apple wrote down: engaging with policymakers around the world.",
+      "Tim Cook stopped being Apple’s chief executive on 1 September. His new remit is policymakers, and many of the rules he will answer to are written in London and Brussels.",
     date: "2026-09-01",
     category: "Tech",
     source: {
