@@ -9,7 +9,7 @@ import { items as exhibitionItems } from "./tick-exhibitions.ts";
 // the same `updatedAt`.
 //
 // Prices are in drams as the box office publishes them. Every date here was
-// read off Tomsarkgh, Yerevan's main box office, on the day in `verifiedOn`.
+// read off the box office named in `source` on the day in `verifiedOn`.
 
 export const items: EventItem[] = [
   ...cityDayItems,
@@ -591,7 +591,7 @@ export const items: EventItem[] = [
   {
     slug: "grigory-sokolov-yerevan-2026",
     createdAt: "2026-10-04T20:00:00+04:00",
-    updatedAt: "2026-10-04T20:00:00+04:00",
+    updatedAt: "2026-10-13T16:50:00+04:00",
     site: "tick",
     title: "Գրիգորի Սոկոլով. դաշնամուրային մենահամերգ Երևանում",
     cardTitle: "Գրիգորի Սոկոլով. մենահամերգ",
@@ -610,24 +610,25 @@ export const items: EventItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     category: "Դասական երաժշտություն",
-    tickets: { priceFrom: 10000, priceTo: 70000, currency: "AMD" },
-    ticket: { url: "https://www.tomsarkgh.am/en/event/51312/", label: "Տոմսեր" },
-    source: { name: "Tomsarkgh", url: "https://www.tomsarkgh.am/en/event/51312/", verifiedOn: "2026-10-04" },
+    tickets: { priceFrom: 10000, priceTo: 100000, currency: "AMD" },
+    ticket: { url: "https://eventhub.am/am/classical/event/grigory-sokolov-ff4c7d62-9913-4302-aa62-18ace14449a0", label: "Տոմսեր" },
+    source: { name: "EventHub", url: "https://eventhub.am/en/classical/event/grigory-sokolov-ff4c7d62-9913-4302-aa62-18ace14449a0", verifiedOn: "2026-10-13" },
     body: [
       "Գրիգորի Սոկոլովը՝ համաշխարհային կատարողական արվեստի լեգենդը, ինչպես նրան անվանում են կազմակերպիչները, նոյեմբերի 14-ին մենահամերգով հանդես կգա Երևանում։",
       "Համերգը Երևանյան 18-րդ միջազգային երաժշտական փառատոնի փակումն է և տեղի կունենա Արամ Խաչատրյան համերգասրահում՝ ժամը 19:00-ին։",
       "## Ծրագիրը և տոմսերը",
-      "Համերգի ծրագիրը Tomsarkgh-ում դեռ հրապարակված չէ։ Տոմսերը 10000-ից 70000 դրամ են։",
+      "Ծրագրում Ֆրանց Շուբերտի Սի բեմոլ մաժոր սոնատն է (D. 960) և Յոհաննես Բրամսի թիվ 3 սոնատը՝ ֆա մինոր (op. 5)։",
+      "Տոմսերը 10000-ից 100000 դրամ են, իսկ VIP օթյակը՝ առանձին մուտքով և հյուրասիրությամբ, 800000 դրամ։ Գնված տոմսերը չեն վերադարձվում։",
     ],
     faq: [
-      { q: "Որքա՞ն արժե տոմսը", a: "10000-ից 70000 դրամ՝ կախված նստատեղից։" },
+      { q: "Որքա՞ն արժե տոմսը", a: "10000-ից 100000 դրամ՝ կախված նստատեղից. VIP օթյակը 800000 դրամ է։ Տոմսերը չեն վերադարձվում։" },
       { q: "Ե՞րբ է համերգը", a: "Նոյեմբերի 14-ին, ժամը 19:00-ին, Արամ Խաչատրյան համերգասրահում։" },
-      { q: "Ի՞նչ կնվագի Սոկոլովը", a: "Ծրագիրը դեռ հրապարակված չէ։" },
+      { q: "Ի՞նչ կնվագի Սոկոլովը", a: "Շուբերտի Սի բեմոլ մաժոր սոնատը (D. 960) և Բրամսի թիվ 3 սոնատը՝ ֆա մինոր (op. 5)։" },
     ],
     i18n: {
       en: {
         imageAlt: "A red grand piano with its lid raised beside an empty stool, under a shaft of light on an apricot ground",
-        ticket: { url: "https://www.tomsarkgh.am/en/event/51312/", label: "Tickets" },
+        ticket: { url: "https://eventhub.am/en/classical/event/grigory-sokolov-ff4c7d62-9913-4302-aa62-18ace14449a0", label: "Tickets" },
         title: "Grigory Sokolov: piano recital in Yerevan",
         cardTitle: "Grigory Sokolov in recital",
         summary:
@@ -640,12 +641,13 @@ export const items: EventItem[] = [
           "Grigory Sokolov — billed by the organisers, without much fear of contradiction, as a legend of the world's performing arts — gives a solo recital in Yerevan on 14 November.",
           "It is the closing concert of the 18th Yerevan International Music Festival, at the Aram Khachaturian Concert Hall, starting at 19:00.",
           "## Programme and tickets",
-          "The programme has not yet been published on Tomsarkgh. Tickets run from 10,000 to 70,000 drams.",
+          "The programme is Schubert's Piano Sonata in B-flat major, D. 960, and Brahms's Piano Sonata No. 3 in F minor, Op. 5.",
+          "Tickets run from 10,000 to 100,000 drams; a VIP box, with its own entrance and refreshments, is 800,000. Tickets are non-refundable.",
         ],
         faq: [
-          { q: "How much are tickets?", a: "From 10,000 to 70,000 drams depending on the seat." },
+          { q: "How much are tickets?", a: "From 10,000 to 100,000 drams depending on the seat; the VIP box is 800,000. Tickets are non-refundable." },
           { q: "When is it?", a: "On 14 November at 19:00, at the Aram Khachaturian Concert Hall." },
-          { q: "What will Sokolov play?", a: "The programme has not been published yet." },
+          { q: "What will Sokolov play?", a: "Schubert's Sonata in B-flat major, D. 960, and Brahms's Sonata No. 3 in F minor, Op. 5." },
         ],
       },
     },
@@ -654,7 +656,7 @@ export const items: EventItem[] = [
   {
     slug: "andru-donalds-enigma-yerevan-2026",
     createdAt: "2026-10-04T15:00:00+04:00",
-    updatedAt: "2026-10-04T15:00:00+04:00",
+    updatedAt: "2026-10-13T16:50:00+04:00",
     site: "tick",
     title: "Էնդրյու Դոնալդս. ENIGMA-ի ոսկե ձայնը Երևանում",
     cardTitle: "Էնդրյու Դոնալդս. ENIGMA-ի ձայնը",
@@ -674,8 +676,8 @@ export const items: EventItem[] = [
     imageHeight: 864,
     category: "Համերգներ",
     tickets: { priceFrom: 10000, priceTo: 50000, currency: "AMD" },
-    ticket: { url: "https://www.tomsarkgh.am/en/event/51067/", label: "Տոմսեր" },
-    source: { name: "Tomsarkgh", url: "https://www.tomsarkgh.am/en/event/51067/", verifiedOn: "2026-10-04" },
+    ticket: { url: "https://eventhub.am/am/concert/event/andru-donalds-e302df4d-63eb-4a49-a8cb-f3f0d6a55182", label: "Տոմսեր" },
+    source: { name: "EventHub", url: "https://eventhub.am/en/concert/event/andru-donalds-e302df4d-63eb-4a49-a8cb-f3f0d6a55182", verifiedOn: "2026-10-13" },
     body: [
       "Ճամայկացի երգիչ և երգահան Էնդրյու Դոնալդսը հայտնի դարձավ 1995 թվականին «Mishale» երգով, իսկ 1998-ին Միշել Կրետուն նրան հրավիրեց ENIGMA նախագիծ։ Մինչև 2008 թվականը նա աշխատել է ENIGMA-ի չորրորդից յոթերորդ ալբոմների վրա՝ «Seven Lives», «Boum-Boum», «Modern Crusaders» և այլ երգեր։",
       "Երևանում կհնչեն ENIGMA-ի հայտնի երգերը և Դոնալդսի մենահիթերը՝ լարային նվագախմբի և մանկական երգչախմբի ուղեկցությամբ։ Կազմակերպիչների խոսքով՝ այցն արտիստի համար անձնական է. նրա որդին հայկական արմատներ ունի։",
@@ -688,7 +690,7 @@ export const items: EventItem[] = [
     i18n: {
       en: {
         imageAlt: "A black vinyl record with a paper ribbon curling up from its red centre",
-        ticket: { url: "https://www.tomsarkgh.am/en/event/51067/", label: "Tickets" },
+        ticket: { url: "https://eventhub.am/en/concert/event/andru-donalds-e302df4d-63eb-4a49-a8cb-f3f0d6a55182", label: "Tickets" },
         title: "Andru Donalds: the voice of Enigma in Yerevan",
         cardTitle: "Andru Donalds: the voice of Enigma",
         summary:
@@ -713,7 +715,7 @@ export const items: EventItem[] = [
   {
     slug: "rachmaninov-piano-concertos-1-3-yerevan-2026",
     createdAt: "2026-10-04T20:00:00+04:00",
-    updatedAt: "2026-10-04T20:00:00+04:00",
+    updatedAt: "2026-10-13T16:50:00+04:00",
     site: "tick",
     title: "Ռախմանինով. Դաշնամուրի կոնցերտներ թիվ 1 և 3",
     cardTitle: "Ռախմանինով՝ կոնցերտներ 1 և 3",
@@ -734,8 +736,8 @@ export const items: EventItem[] = [
     imageHeight: 864,
     category: "Դասական երաժշտություն",
     tickets: { priceFrom: 3000, priceTo: 15000, currency: "AMD" },
-    ticket: { url: "https://www.tomsarkgh.am/en/event/51418/", label: "Տոմսեր" },
-    source: { name: "Tomsarkgh", url: "https://www.tomsarkgh.am/en/event/51418/", verifiedOn: "2026-10-04" },
+    ticket: { url: "https://eventhub.am/am/concert/event/rachmaninoff-piano-concertos-no-1-and-no-3-cbd9a318-ab60-4473-a560-6884ef928a1d", label: "Տոմսեր" },
+    source: { name: "EventHub", url: "https://eventhub.am/en/concert/event/rachmaninoff-piano-concertos-no-1-and-no-3-cbd9a318-ab60-4473-a560-6884ef928a1d", verifiedOn: "2026-10-13" },
     body: [
       "Խաչատրյանի անվան 14-րդ միջազգային փառատոնը բացվում է Ռախմանինովով։ Նոյեմբերի 26-ին դաշնակահարուհի Եվա Գևորգյանը Հայաստանի պետական սիմֆոնիկ նվագախմբի հետ նվագում է նրա Դաշնամուրի առաջին և երրորդ կոնցերտները, դիրիժորը՝ Սերգեյ Սմբատյանը։",
       "## Ծրագիրը",
@@ -751,7 +753,7 @@ export const items: EventItem[] = [
     i18n: {
       en: {
         imageAlt: "A long band of piano keys rising and falling like a wave across an apricot ground",
-        ticket: { url: "https://www.tomsarkgh.am/en/event/51418/", label: "Tickets" },
+        ticket: { url: "https://eventhub.am/en/concert/event/rachmaninoff-piano-concertos-no-1-and-no-3-cbd9a318-ab60-4473-a560-6884ef928a1d", label: "Tickets" },
         title: "Rachmaninov: Piano Concertos Nos. 1 and 3",
         cardTitle: "Rachmaninov: Concertos 1 and 3",
         summary:
@@ -772,61 +774,6 @@ export const items: EventItem[] = [
           { q: "How much are tickets?", a: "From 3,000 to 15,000 drams depending on the seat." },
           { q: "Can children come?", a: "Yes, from the age of six." },
           { q: "How long is the concert?", a: "About 67 minutes of music, in two halves with an interval between them." },
-        ],
-      },
-    },
-  },
-
-  {
-    slug: "lyubov-uspenskaya-yerevan-2027",
-    createdAt: "2026-10-04T15:00:00+04:00",
-    updatedAt: "2026-10-04T15:00:00+04:00",
-    site: "tick",
-    title: "Լյուբով Ուսպենսկայա. մեծ համերգ Երևանում",
-    summary:
-      "Ռուսական շանսոնի աստղ Լյուբով Ուսպենսկայան 2027 թվականի հունվարի 30-ին Երևանում է՝ Կարեն Դեմիրճյանի անվան մարզահամերգային համալիրում։",
-    start: "2027-01-30",
-    startTime: "19:00",
-    utcOffset: "+04:00",
-    city: "Երևան",
-    country: "Հայաստան",
-    venue: "Կարեն Դեմիրճյանի անվան մարզահամերգային համալիր",
-    geo: { lat: 40.1881503, lng: 44.4833297 },
-    image: "/covers/lyubov-uspenskaya-yerevan-2027.jpg",
-    imageAlt: "Ռոյալի ուրվագիծ՝ բաց կափարիչով, ոտքերի մոտ ընկած վարդով",
-    imageKind: "generated",
-    imageWidth: 1536,
-    imageHeight: 864,
-    category: "Համերգներ",
-    tickets: { priceFrom: 7000, priceTo: 50000, currency: "AMD" },
-    ticket: { url: "https://www.tomsarkgh.am/en/event/46842/", label: "Տոմսեր" },
-    source: { name: "Tomsarkgh", url: "https://www.tomsarkgh.am/en/event/46842/", verifiedOn: "2026-10-04" },
-    body: [
-      "Լյուբով Ուսպենսկայան՝ ռուսական շանսոնի թագուհին, Երևանում ներկայացնում է մեծ համերգային ծրագիր՝ միլիոնավոր ունկնդիրներին ծանոթ երգերով։",
-      "2027 թվականի հունվարի 30-ին, ժամը 19:00-ին, Կարեն Դեմիրճյանի անվան մարզահամերգային համալիրում։ Տոմսերը 7000-ից 50000 դրամ են։",
-    ],
-    faq: [
-      { q: "Որքա՞ն արժե տոմսը", a: "7000-ից 50000 դրամ՝ կախված նստատեղից։" },
-      { q: "Ե՞րբ է համերգը", a: "2027 թվականի հունվարի 30-ին, ժամը 19:00-ին։" },
-    ],
-    i18n: {
-      en: {
-        imageAlt: "The silhouette of a grand piano with its lid raised and a single rose lying at its feet",
-        ticket: { url: "https://www.tomsarkgh.am/en/event/46842/", label: "Tickets" },
-        title: "Lyubov Uspenskaya in concert in Yerevan",
-        summary:
-          "Lyubov Uspenskaya, the queen of Russian chanson, brings a full concert programme to the Karen Demirchyan Complex in Yerevan on 30 January 2027.",
-        city: "Yerevan",
-        country: "Armenia",
-        venue: "Karen Demirchyan Sports and Concert Complex",
-        category: "Concerts",
-        body: [
-          "Lyubov Uspenskaya, long billed as the queen of Russian chanson, brings a full concert programme to Yerevan: the songs millions know, sung live.",
-          "30 January 2027 at 19:00, at the Karen Demirchyan Sports and Concert Complex, with tickets from 7,000 to 50,000 drams.",
-        ],
-        faq: [
-          { q: "How much are tickets?", a: "From 7,000 to 50,000 drams depending on the seat." },
-          { q: "When is it?", a: "On 30 January 2027 at 19:00." },
         ],
       },
     },
@@ -1097,7 +1044,7 @@ export const items: EventItem[] = [
   {
     slug: "alice-sara-ott-symphonic-europe-yerevan-2026",
     createdAt: "2026-10-06T01:00:00+04:00",
-    updatedAt: "2026-10-06T01:00:00+04:00",
+    updatedAt: "2026-10-13T16:50:00+04:00",
     site: "tick",
     title: "«Սիմֆոնիկ Եվրոպա»՝ Ալիս Սառա Օտտ և Հայաստանի պետական սիմֆոնիկ նվագախումբ",
     titleSeo: "Ալիս Սառա Օտտ Երևանում՝ «Սիմֆոնիկ Եվրոպա»",
@@ -1119,8 +1066,8 @@ export const items: EventItem[] = [
     imageHeight: 864,
     category: "Դասական երաժշտություն",
     tickets: { priceFrom: 3000, priceTo: 15000, currency: "AMD" },
-    ticket: { url: "https://www.tomsarkgh.am/en/event/51579/", label: "Տոմսեր" },
-    source: { name: "Tomsarkgh", url: "https://www.tomsarkgh.am/en/event/51579/", verifiedOn: "2026-10-06" },
+    ticket: { url: "https://eventhub.am/am/concert/event/symphonic-europe-6dd8fad6-a0bc-4f2e-a7dc-87f968e67cf6", label: "Տոմսեր" },
+    source: { name: "EventHub", url: "https://eventhub.am/en/concert/event/symphonic-europe-6dd8fad6-a0bc-4f2e-a7dc-87f968e67cf6", verifiedOn: "2026-10-13" },
     body: [
       "Հայաստանի պետական սիմֆոնիկ նվագախումբը և Հայաստանում Եվրոպական միության պատվիրակությունը «Սիմֆոնիկ Եվրոպա» երեկոն նվիրում են Հայաստանի և Եվրոպայի ժողովուրդների մշակութային կապերին։ Մենակատարը դաշնակահար Ալիս Սառա Օտտն է, դիրիժորը՝ Սերգեյ Սմբատյանը։",
       "## Ծրագիրը",
@@ -1128,14 +1075,14 @@ export const items: EventItem[] = [
       "Հոկտեմբերի 24-ին, ժամը 19:30-ին։ Տոմսերը 3000-ից 15000 դրամ են, երեխաների մուտքը՝ 6 տարեկանից։",
     ],
     faq: [
-      { q: "Որքա՞ն արժե տոմսը", a: "3000-ից 15000 դրամ՝ կախված նստատեղից. վաճառվում են Tomsarkgh-ում և համերգասրահի տոմսարկղում։" },
+      { q: "Որքա՞ն արժե տոմսը", a: "3000-ից 15000 դրամ՝ կախված նստատեղից. վաճառվում են EventHub-ում և համերգասրահի տոմսարկղում։" },
       { q: "Ի՞նչ կնվագի Ալիս Սառա Օտտը", a: "Բեթհովենի Դաշնամուրի կոնցերտ թիվ 4 սոլ մաժոր։" },
       { q: "Կարելի՞ է գալ երեխաների հետ", a: "Այո, 6 տարեկանից. համերգը երկու բաժնով է՝ ընդմիջումով։" },
     ],
     i18n: {
       en: {
         imageAlt: "A red grand piano with its lid raised and a curling sea wave rising behind it",
-        ticket: { url: "https://www.tomsarkgh.am/en/event/51579/", label: "Tickets" },
+        ticket: { url: "https://eventhub.am/en/concert/event/symphonic-europe-6dd8fad6-a0bc-4f2e-a7dc-87f968e67cf6", label: "Tickets" },
         title: "Symphonic Europe: Alice Sara Ott and the Armenian State Symphony Orchestra",
         titleSeo: "Alice Sara Ott in Yerevan: Symphonic Europe",
         cardTitle: "Alice Sara Ott plays Beethoven",
@@ -1153,7 +1100,7 @@ export const items: EventItem[] = [
           "24 October at 19:30, with tickets from 3,000 to 15,000 drams. Children are admitted from the age of six.",
         ],
         faq: [
-          { q: "How much are tickets?", a: "From 3,000 to 15,000 drams depending on the seat, on sale at Tomsarkgh and the concert hall's box office." },
+          { q: "How much are tickets?", a: "From 3,000 to 15,000 drams depending on the seat, on sale at EventHub and the concert hall's box office." },
           { q: "What does Alice Sara Ott play?", a: "Beethoven's Piano Concerto No. 4 in G major." },
           { q: "Can children come?", a: "Yes, from the age of six; the concert is in two halves with an interval." },
         ],
@@ -1164,7 +1111,7 @@ export const items: EventItem[] = [
   {
     slug: "yerevan-international-music-festival-iddo-bar-shai-2026",
     createdAt: "2026-10-06T01:00:00+04:00",
-    updatedAt: "2026-10-06T01:00:00+04:00",
+    updatedAt: "2026-10-13T16:50:00+04:00",
     site: "tick",
     title: "Երևանի 18-րդ միջազգային երաժշտական փառատոն. Իդդո Բար-Շայ",
     cardTitle: "Իդդո Բար-Շայ. փառատոնի երեկո",
@@ -1185,13 +1132,13 @@ export const items: EventItem[] = [
     imageHeight: 864,
     category: "Դասական երաժշտություն",
     tickets: { priceFrom: 3000, priceTo: 15000, currency: "AMD" },
-    ticket: { url: "https://www.tomsarkgh.am/en/event/51514/", label: "Տոմսեր" },
-    source: { name: "Tomsarkgh", url: "https://www.tomsarkgh.am/en/event/51514/", verifiedOn: "2026-10-06" },
+    ticket: { url: "https://eventhub.am/am/classical/event/18th-yerevan-international-music-festival-fbb8fc59-2c29-4278-b394-1ac7a47f6c4f", label: "Տոմսեր" },
+    source: { name: "EventHub", url: "https://eventhub.am/en/classical/event/18th-yerevan-international-music-festival-fbb8fc59-2c29-4278-b394-1ac7a47f6c4f", verifiedOn: "2026-10-13" },
     body: [
       "Հոկտեմբերի 16-ին Երևանի 18-րդ միջազգային երաժշտական փառատոնի շրջանակում Հայաստանի ազգային ֆիլհարմոնիկ նվագախմբի հետ հանդես կգան դաշնակահար Իդդո Բար-Շայը և դիրիժոր Ջեք Գոնզալես-Հարդինգը։",
       "Այս տարի փառատոնը նվիրված է Հայաստանի Հանրապետության անկախության 35-ամյակին, հովանավորը VTB Armenia Bank-ն է։ Փառատոնը փակվում է նոյեմբերի 14-ին՝ Գրիգորի Սոկոլովի մենահամերգով։",
       "## Ծրագիրը և տոմսերը",
-      "Համերգի ծրագիրը Tomsarkgh-ում դեռ հրապարակված չէ։ Սկիզբը ժամը 19:00-ին է, տոմսերը 3000-ից 15000 դրամ են։",
+      "Համերգի ծրագիրը դեռ հրապարակված չէ։ Սկիզբը ժամը 19:00-ին է, տոմսերը 3000-ից 15000 դրամ են։",
     ],
     faq: [
       { q: "Որքա՞ն արժե տոմսը", a: "Փառատոնի այս երեկոյի տոմսերը 3000-ից 15000 դրամ են։" },
@@ -1201,7 +1148,7 @@ export const items: EventItem[] = [
     i18n: {
       en: {
         imageAlt: "A grand piano with sheets of music fanning up from it",
-        ticket: { url: "https://www.tomsarkgh.am/en/event/51514/", label: "Tickets" },
+        ticket: { url: "https://eventhub.am/en/classical/event/18th-yerevan-international-music-festival-fbb8fc59-2c29-4278-b394-1ac7a47f6c4f", label: "Tickets" },
         title: "18th Yerevan International Music Festival: Iddo Bar-Shai",
         cardTitle: "Iddo Bar-Shai at the festival",
         summary:
@@ -1215,7 +1162,7 @@ export const items: EventItem[] = [
           "On 16 October, as part of the 18th Yerevan International Music Festival, the pianist Iddo Bar-Shai joins the Armenian National Philharmonic Orchestra under the conductor Jack Gonzalez-Harding.",
           "This year's festival is dedicated to the 35th anniversary of Armenia's independence, with VTB Armenia Bank as its sponsor. It closes on 14 November with a recital by Grigory Sokolov.",
           "## Programme and tickets",
-          "The programme has not yet been published on Tomsarkgh. The concert starts at 19:00, and tickets cost 3,000 to 15,000 drams.",
+          "The programme has not been published yet. The concert starts at 19:00, and tickets cost 3,000 to 15,000 drams.",
         ],
         faq: [
           { q: "How much are tickets?", a: "Tickets for this festival evening cost 3,000 to 15,000 drams." },
@@ -1229,7 +1176,7 @@ export const items: EventItem[] = [
   {
     slug: "star-wars-the-planets-yerevan-2026",
     createdAt: "2026-10-06T01:00:00+04:00",
-    updatedAt: "2026-10-06T01:00:00+04:00",
+    updatedAt: "2026-10-13T16:50:00+04:00",
     site: "tick",
     title: "«Աստղային պատերազմներ» և «Մոլորակները»՝ Արամ Խաչատրյան համերգասրահում",
     titleSeo: "«Աստղային պատերազմներ» և «Մոլորակները» Երևանում",
@@ -1251,8 +1198,8 @@ export const items: EventItem[] = [
     imageHeight: 864,
     category: "Դասական երաժշտություն",
     tickets: { priceFrom: 4000, priceTo: 25000, currency: "AMD" },
-    ticket: { url: "https://www.tomsarkgh.am/en/event/51314/", label: "Տոմսեր" },
-    source: { name: "Tomsarkgh", url: "https://www.tomsarkgh.am/en/event/51314/", verifiedOn: "2026-10-06" },
+    ticket: { url: "https://eventhub.am/am/classical/event/star-wars-and-the-planets-ab1fba4f-1931-411d-b99d-8e0d9600bb40", label: "Տոմսեր" },
+    source: { name: "EventHub", url: "https://eventhub.am/en/classical/event/star-wars-and-the-planets-ab1fba4f-1931-411d-b99d-8e0d9600bb40", verifiedOn: "2026-10-13" },
     body: [
       "Հայաստանի պետական սիմֆոնիկ նվագախումբը մեկ երեկոյում միավորում է Գուստավ Հոլստի «Մոլորակները» և Ջոն Ուիլյամսի ամենահայտնի կինոթեմաները։ Երաժշտությանը կուղեկցեն մոլորակների պատկերներ՝ համերգասրահի պատերին։ Դիրիժորը Սերգեյ Սմբատյանն է։",
       "## Ծրագիրը",
@@ -1267,7 +1214,7 @@ export const items: EventItem[] = [
     i18n: {
       en: {
         imageAlt: "Planets of different sizes in an arc across a night sky, one of them ringed",
-        ticket: { url: "https://www.tomsarkgh.am/en/event/51314/", label: "Tickets" },
+        ticket: { url: "https://eventhub.am/en/classical/event/star-wars-and-the-planets-ab1fba4f-1931-411d-b99d-8e0d9600bb40", label: "Tickets" },
         title: "Star Wars and The Planets at the Aram Khachaturian Concert Hall",
         titleSeo: "Star Wars and The Planets in Yerevan",
         cardTitle: "Star Wars and The Planets",
@@ -1296,7 +1243,7 @@ export const items: EventItem[] = [
   {
     slug: "nervy-yerevan-2026",
     createdAt: "2026-10-06T01:00:00+04:00",
-    updatedAt: "2026-10-06T01:00:00+04:00",
+    updatedAt: "2026-10-13T16:50:00+04:00",
     site: "tick",
     title: "Nervy ռոք խումբը Երևանում",
     cardTitle: "Nervy",
@@ -1316,8 +1263,8 @@ export const items: EventItem[] = [
     imageHeight: 864,
     category: "Համերգներ",
     tickets: { priceFrom: 20000, priceTo: 120000, currency: "AMD" },
-    ticket: { url: "https://www.tomsarkgh.am/en/event/51482/", label: "Տոմսեր" },
-    source: { name: "Tomsarkgh", url: "https://www.tomsarkgh.am/en/event/51482/", verifiedOn: "2026-10-06" },
+    ticket: { url: "https://eventhub.am/am/concert/event/nervy-bbb52a21-d288-43c3-87aa-bf62ee579c47", label: "Տոմսեր" },
+    source: { name: "EventHub", url: "https://eventhub.am/en/concert/event/nervy-bbb52a21-d288-43c3-87aa-bf62ee579c47", verifiedOn: "2026-10-13" },
     body: [
       "Nervy ռոք խումբը նոյեմբերի 7-ին համերգ է տալիս Երևանում՝ Eventhub Yerevan-ում, Ավետիս Ահարոնյան 3/8 հասցեում։ Սկիզբը ժամը 20:00-ին է։",
       "Կազմակերպիչներն այն ներկայացնում են որպես ռոք՝ առանց դիմակների. բարձր կիթառներ, անկեղծ խոսքեր և համերգ, որտեղ բեմի և դահլիճի միջև հեռավորություն չկա։",
@@ -1327,12 +1274,12 @@ export const items: EventItem[] = [
     faq: [
       { q: "Որքա՞ն արժե տոմսը", a: "Պարահրապարակը՝ 20000 դրամ, բալկոնը՝ 28000 դրամ. ինքնագրերով աֆիշայով և Meet & Greet-ով տոմսերն ավելի թանկ են՝ մինչև 120000 դրամ։" },
       { q: "Ե՞րբ է սկսվում համերգը", a: "Նոյեմբերի 7-ին, ժամը 20:00-ին։" },
-      { q: "Կա՞ տարիքային սահմանափակում", a: "Tomsarkgh-ում համերգը նշված է 0+։" },
+      { q: "Կա՞ տարիքային սահմանափակում", a: "EventHub-ում համերգը նշված է 12+։" },
     ],
     i18n: {
       en: {
         imageAlt: "A red electric guitar standing on an empty stage before an arched doorway",
-        ticket: { url: "https://www.tomsarkgh.am/en/event/51482/", label: "Tickets" },
+        ticket: { url: "https://eventhub.am/en/concert/event/nervy-bbb52a21-d288-43c3-87aa-bf62ee579c47", label: "Tickets" },
         title: "Nervy in concert in Yerevan",
         cardTitle: "Nervy",
         summary:
@@ -1351,7 +1298,7 @@ export const items: EventItem[] = [
         faq: [
           { q: "How much are tickets?", a: "20,000 drams for the dance floor and 28,000 for the balcony; signed-poster and meet-and-greet tickets cost more, up to 120,000." },
           { q: "What time does it start?", a: "At 20:00 on 7 November." },
-          { q: "Is there an age limit?", a: "The box office lists it as 0+." },
+          { q: "Is there an age limit?", a: "EventHub lists it as 12+." },
         ],
       },
     },
@@ -1427,7 +1374,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-oxygen-yerevan-2026",
     createdAt: "2026-10-06T01:00:00+04:00",
-    updatedAt: "2026-10-09T12:00:00+04:00",
+    updatedAt: "2026-10-13T16:50:00+04:00",
     site: "tick",
     title: "Հելոուին Oxygen-ում",
     titleSeo: "Հելոուին Երևանում՝ Oxygen-ում, հոկտեմբերի 31",
@@ -1449,8 +1396,8 @@ export const items: EventItem[] = [
     imageHeight: 864,
     category: "Հելոուին",
     tickets: { priceFrom: 4000, priceTo: 6000, currency: "AMD" },
-    ticket: { url: "https://www.tomsarkgh.am/en/event/51668/", label: "Տոմսեր" },
-    source: { name: "Tomsarkgh", url: "https://www.tomsarkgh.am/en/event/51668/", verifiedOn: "2026-10-06" },
+    ticket: { url: "https://eventhub.am/am/club/event/halloween-at-oxygen-9b37d68a-34fe-43e0-8f15-fd5dd53fc2a0", label: "Տոմսեր" },
+    source: { name: "EventHub", url: "https://eventhub.am/en/club/event/halloween-at-oxygen-9b37d68a-34fe-43e0-8f15-fd5dd53fc2a0", verifiedOn: "2026-10-13" },
     speakersHeading: "Կատարողներ",
     speakers: [{ name: "KAI" }, { name: "T_GRAN" }, { name: "LIL. WAVE" }, { name: "DES1GNER" }],
     body: [
@@ -1467,7 +1414,7 @@ export const items: EventItem[] = [
     i18n: {
       en: {
         imageAlt: "A carved pumpkin on a dance floor, with a mirror ball and bats above it",
-        ticket: { url: "https://www.tomsarkgh.am/en/event/51668/", label: "Tickets" },
+        ticket: { url: "https://eventhub.am/en/club/event/halloween-at-oxygen-9b37d68a-34fe-43e0-8f15-fd5dd53fc2a0", label: "Tickets" },
         title: "Halloween at Oxygen",
         titleSeo: "Halloween in Yerevan: Oxygen on 31 October",
         cardTitle: "Halloween at Oxygen",
@@ -1773,7 +1720,7 @@ export const items: EventItem[] = [
   {
     slug: "tamar-ballet-yerevan-opera-2026",
     createdAt: "2026-10-06T20:15:00+04:00",
-    updatedAt: "2026-10-09T01:41:00+04:00",
+    updatedAt: "2026-10-13T16:50:00+04:00",
     site: "tick",
     title: "«Թամար» բալետը՝ Երևանի օպերային թատրոնում",
     cardTitle: "Տոլստով. «Թամար»",
@@ -1794,8 +1741,8 @@ export const items: EventItem[] = [
     imageHeight: 864,
     category: "Օպերա և բալետ",
     tickets: { priceFrom: 5000, priceTo: 25000, currency: "AMD" },
-    ticket: { url: "https://www.tomsarkgh.am/en/event/51487/", label: "Տոմսեր" },
-    source: { name: "Tomsarkgh", url: "https://www.tomsarkgh.am/en/event/51487/", verifiedOn: "2026-10-06" },
+    ticket: { url: "https://ticket.opera.am/hy/details/1748/V.%20Tolstov%20%22Tamar%22", label: "Տոմսեր" },
+    source: { name: "Opera.am", url: "https://opera.am/en/details/1748/V.%20Tolstov%20%22Tamar%22", verifiedOn: "2026-10-13" },
     body: [
       "«Թամարը» Ախթամարի լեգենդի ժամանակակից վերաիմաստավորումն է։ Գործողությունները ծավալվում են մեր օրերում. գլխավոր հերոսները ֆոտոլրագրող Արամն ու նկարչուհի Թամարն են, և նրանց հանդիպմամբ անցյալից եկող պատմությունը նոր ընթացք է ստանում՝ սիրո, ընտրության, հիշողության և անդառնալի կորստի մասին։",
       "Երաժշտությունը Վալերի Տոլստովինն է, բեմադրող բալետմայստերը Իլյա Ժիվոյն է, մտահղացման և լիբրետոյի հեղինակը՝ Գոշ Սարգսյանը։ Բեմանկարիչը Արթուր Դուրգարյանն է, զգեստների նկարիչը՝ Սոնյա Վարդանյանը։",
@@ -1812,7 +1759,7 @@ export const items: EventItem[] = [
     i18n: {
       en: {
         imageAlt: "A rocky islet in a lake with a lit lantern on it, a path of light across the water and mountains behind",
-        ticket: { url: "https://www.tomsarkgh.am/en/event/51487/", label: "Tickets" },
+        ticket: { url: "https://ticket.opera.am/en/details/1748/V.%20Tolstov%20%22Tamar%22", label: "Tickets" },
         title: "Tamar, a ballet at the Yerevan Opera",
         cardTitle: "Tolstov: Tamar",
         summary:
@@ -1842,7 +1789,7 @@ export const items: EventItem[] = [
   {
     slug: "shostakovich-symphony-1-yerevan-2026",
     createdAt: "2026-10-09T01:20:00+04:00",
-    updatedAt: "2026-10-09T01:46:15+04:00",
+    updatedAt: "2026-10-13T16:50:00+04:00",
     site: "tick",
     title: "Շոստակովիչ. Սիմֆոնիա թիվ 1 և ժամանակակից հնչողություններ",
     titleSeo: "Շոստակովիչի Առաջին սիմֆոնիան Երևանում",
@@ -1864,8 +1811,8 @@ export const items: EventItem[] = [
     imageHeight: 864,
     category: "Դասական երաժշտություն",
     tickets: { priceFrom: 3000, priceTo: 15000, currency: "AMD" },
-    ticket: { url: "https://www.tomsarkgh.am/en/event/51292/", label: "Տոմսեր" },
-    source: { name: "Tomsarkgh", url: "https://www.tomsarkgh.am/en/event/51292/", verifiedOn: "2026-10-09" },
+    ticket: { url: "https://eventhub.am/am/classical/event/shostakovich-symphony-no-1-and-contemporary-sounds-cf745540-d0f8-44cc-8a05-628e43f25884", label: "Տոմսեր" },
+    source: { name: "EventHub", url: "https://eventhub.am/en/classical/event/shostakovich-symphony-no-1-and-contemporary-sounds-cf745540-d0f8-44cc-8a05-628e43f25884", verifiedOn: "2026-10-13" },
     body: [
       "Հոկտեմբերի 15-ին Հայաստանի պետական սիմֆոնիկ նվագախումբը մեկ երեկոյում համադրում է հայկական, հունական և ռուսական երաժշտություն. ծրագրի կենտրոնում Դմիտրի Շոստակովիչի Առաջին սիմֆոնիան է։ Դիրիժորը հույն Գեորգիոս Բալացինոսն է։",
       "## Ծրագիրը",
@@ -1881,7 +1828,7 @@ export const items: EventItem[] = [
     i18n: {
       en: {
         imageAlt: "A red violin and bow lying across an open book, on an orange ground",
-        ticket: { url: "https://www.tomsarkgh.am/en/event/51292/", label: "Tickets" },
+        ticket: { url: "https://eventhub.am/en/classical/event/shostakovich-symphony-no-1-and-contemporary-sounds-cf745540-d0f8-44cc-8a05-628e43f25884", label: "Tickets" },
         title: "Shostakovich: Symphony No. 1 and Contemporary Sounds",
         titleSeo: "Shostakovich's First Symphony in Yerevan",
         cardTitle: "Shostakovich: Symphony No. 1",
@@ -1911,7 +1858,7 @@ export const items: EventItem[] = [
   {
     slug: "madama-butterfly-yerevan-opera-2026",
     createdAt: "2026-10-09T01:20:00+04:00",
-    updatedAt: "2026-10-09T01:41:00+04:00",
+    updatedAt: "2026-10-13T16:50:00+04:00",
     site: "tick",
     title: "Պուչչինի. «Մադամ Բաթերֆլայ»՝ Երևանի օպերային թատրոնում",
     titleSeo: "«Մադամ Բաթերֆլայ»՝ Երևանի օպերային թատրոնում",
@@ -1933,8 +1880,8 @@ export const items: EventItem[] = [
     imageHeight: 864,
     category: "Օպերա և բալետ",
     tickets: { priceFrom: 5000, priceTo: 15000, currency: "AMD" },
-    ticket: { url: "https://www.tomsarkgh.am/en/event/41369/", label: "Տոմսեր" },
-    source: { name: "Tomsarkgh", url: "https://www.tomsarkgh.am/en/event/41369/", verifiedOn: "2026-10-09" },
+    ticket: { url: "https://ticket.opera.am/hy/details/1738/G.%20Puccini%20%22Madame%20Butterfly%22", label: "Տոմսեր" },
+    source: { name: "Opera.am", url: "https://opera.am/en/details/1738/G.%20Puccini%20%22Madame%20Butterfly%22", verifiedOn: "2026-10-13" },
     body: [
       "Ջակոմո Պուչչինիի «Մադամ Բաթերֆլայը» Երևանի օպերային թատրոնի խաղացանկում է Սուքիաս Թորոսյանի բեմադրությամբ. նա նաև բեմադրող նկարիչն է։",
       "Երաժշտական ղեկավարն ու դիրիժորը Միհրան Աղաջանյանն է, խմբավարը՝ Նարինե Ոսկանյանը։",
@@ -1949,7 +1896,7 @@ export const items: EventItem[] = [
     i18n: {
       en: {
         imageAlt: "A red paper parasol, a hanging lantern and a small table with a white paper butterfly on it, on an apricot ground",
-        ticket: { url: "https://www.tomsarkgh.am/en/event/41369/", label: "Tickets" },
+        ticket: { url: "https://ticket.opera.am/en/details/1738/G.%20Puccini%20%22Madame%20Butterfly%22", label: "Tickets" },
         title: "Puccini's Madama Butterfly at the Yerevan Opera",
         titleSeo: "Madama Butterfly at the Yerevan Opera",
         cardTitle: "Puccini: Madama Butterfly",
@@ -2047,7 +1994,7 @@ export const items: EventItem[] = [
   {
     slug: "masquerade-ballet-yerevan-opera-2026",
     createdAt: "2026-10-09T02:00:00+04:00",
-    updatedAt: "2026-10-09T02:00:00+04:00",
+    updatedAt: "2026-10-13T16:50:00+04:00",
     site: "tick",
     title: "Խաչատրյանի «Դիմակահանդես» բալետը Երևանում",
     cardTitle: "Խաչատրյան. «Դիմակահանդես»",
@@ -2068,8 +2015,8 @@ export const items: EventItem[] = [
     imageHeight: 864,
     category: "Օպերա և բալետ",
     tickets: { priceFrom: 5000, priceTo: 28000, currency: "AMD" },
-    ticket: { url: "https://www.tomsarkgh.am/en/event/44568/", label: "Տոմսեր" },
-    source: { name: "Tomsarkgh", url: "https://www.tomsarkgh.am/en/event/44568/", verifiedOn: "2026-10-09" },
+    ticket: { url: "https://ticket.opera.am/hy/details/1691/A.%20Khachaturian%20%E2%80%9CMASQUERADE%E2%80%9D", label: "Տոմսեր" },
+    source: { name: "Opera.am", url: "https://opera.am/en/details/1691/A.%20Khachaturian%20%E2%80%9CMASQUERADE%E2%80%9D", verifiedOn: "2026-10-13" },
     body: [
       "«Դիմակահանդեսը» բալետ է Արամ Խաչատրյանի երաժշտությամբ՝ այն նույն երաժշտությամբ, որից աշխարհը ճանաչում է նրա «Վալսը»։ Երևանի օպերային թատրոնում այն բեմադրել է Վիլեն Գալստյանը, բեմանկարչությունն ու զգեստները Ավետիս Բարսեղյանինն են։",
       "Երաժշտական խմբագիրը Անուշ Կարապետյանն է, դիրիժորը՝ Րաֆֆի Միքայելյանը, փորձավարները՝ Էլվիրա Մնացականյանը, Սոնա Առուստամյանը, Հրաչյա Հովհաննիսյանը և Արթուր Գրիգորյանը։",
@@ -2086,7 +2033,7 @@ export const items: EventItem[] = [
     i18n: {
       en: {
         imageAlt: "A red half-mask on a long ribbon beside a pearl bracelet, with folds of curtain at one side",
-        ticket: { url: "https://www.tomsarkgh.am/en/event/44568/", label: "Tickets" },
+        ticket: { url: "https://ticket.opera.am/en/details/1691/A.%20Khachaturian%20%E2%80%9CMASQUERADE%E2%80%9D", label: "Tickets" },
         title: "Khachaturian's Masquerade at the Yerevan Opera",
         cardTitle: "Khachaturian: Masquerade",
         summary:
@@ -2116,7 +2063,7 @@ export const items: EventItem[] = [
   {
     slug: "anahit-tsitsikyan-100-sergey-khachatryan-yerevan-2026",
     createdAt: "2026-10-10T15:40:00+04:00",
-    updatedAt: "2026-10-10T15:40:00+04:00",
+    updatedAt: "2026-10-13T16:50:00+04:00",
     site: "tick",
     title: "Անահիտ Ցիցիկյան 100. Սերգեյ Խաչատրյան և Հայկ Հովսեփյան",
     titleSeo: "Սերգեյ Խաչատրյանը Երևանում՝ Անահիտ Ցիցիկյան 100",
@@ -2138,8 +2085,8 @@ export const items: EventItem[] = [
     imageHeight: 864,
     category: "Դասական երաժշտություն",
     tickets: { priceFrom: 3000, priceTo: 15000, currency: "AMD" },
-    ticket: { url: "https://www.tomsarkgh.am/en/event/51641/", label: "Տոմսեր" },
-    source: { name: "Tomsarkgh", url: "https://www.tomsarkgh.am/en/event/51641/", verifiedOn: "2026-10-10" },
+    ticket: { url: "https://eventhub.am/am/concert/event/anahit-tsitsikyan-100-93f5685f-986e-417f-84fb-77c7ab4b28fc", label: "Տոմսեր" },
+    source: { name: "EventHub", url: "https://eventhub.am/en/concert/event/anahit-tsitsikyan-100-93f5685f-986e-417f-84fb-77c7ab4b28fc", verifiedOn: "2026-10-13" },
     body: [
       "Հոկտեմբերի 30-ին Արամ Խաչատրյան համերգասրահում բացառիկ համերգ է՝ նվիրված ՀՀ ժողովրդական արտիստ Անահիտ Ցիցիկյանի՝ հայ ջութակի արվեստի նշանավոր ներկայացուցչի 100-ամյակին։",
       "## Կատարողները",
@@ -2156,7 +2103,7 @@ export const items: EventItem[] = [
     i18n: {
       en: {
         imageAlt: "A red violin and its bow on an orange ground, a small flowering sprig beside them",
-        ticket: { url: "https://www.tomsarkgh.am/en/event/51641/", label: "Tickets" },
+        ticket: { url: "https://eventhub.am/en/concert/event/anahit-tsitsikyan-100-93f5685f-986e-417f-84fb-77c7ab4b28fc", label: "Tickets" },
         title: "Anahit Tsitsikyan 100: Sergey Khachatryan and Haig Hovsepian",
         titleSeo: "Sergey Khachatryan in Yerevan: Anahit Tsitsikyan 100",
         cardTitle: "Anahit Tsitsikyan 100",
@@ -2256,7 +2203,7 @@ export const items: EventItem[] = [
   {
     slug: "tchaikovsky-pathetique-tjeknavorian-yerevan-2026",
     createdAt: "2026-10-10T15:40:00+04:00",
-    updatedAt: "2026-10-10T15:40:00+04:00",
+    updatedAt: "2026-10-13T16:50:00+04:00",
     site: "tick",
     title: "Չայկովսկի. «Պաթետիկ» սիմֆոնիա՝ երկրաշարժի զոհերի հիշատակին",
     titleSeo: "Չայկովսկու «Պաթետիկ» սիմֆոնիան Երևանում",
@@ -2278,8 +2225,8 @@ export const items: EventItem[] = [
     imageHeight: 864,
     category: "Դասական երաժշտություն",
     tickets: { priceFrom: 5000, priceTo: 12000, currency: "AMD" },
-    ticket: { url: "https://www.tomsarkgh.am/en/event/51555/", label: "Տոմսեր" },
-    source: { name: "Tomsarkgh", url: "https://www.tomsarkgh.am/en/event/51555/", verifiedOn: "2026-10-10" },
+    ticket: { url: "https://ticket.opera.am/hy/details/1767/P.%20Tchaikovsky%2C%20Symphony%20No.%206%3A%20dedicated%20to%20the%20memory%20of%20the%20earthquake%20victims", label: "Տոմսեր" },
+    source: { name: "Opera.am", url: "https://opera.am/en/details/1767/P.%20Tchaikovsky%2C%20Symphony%20No.%206%3A%20dedicated%20to%20the%20memory%20of%20the%20earthquake%20victims", verifiedOn: "2026-10-13" },
     body: [
       "Դեկտեմբերի 7-ին Ալ. Սպենդիարյանի անվան օպերայի և բալետի ազգային ակադեմիական թատրոնի սիմֆոնիկ նվագախումբը կատարում է Պյոտր Չայկովսկու «Պաթետիկ» սիմֆոնիան։ Դիրիժորը Լորիս Ճգնավորյանն է։",
       "Համերգը նվիրված է 1988 թվականի երկրաշարժի զոհերի հիշատակին։",
@@ -2296,7 +2243,7 @@ export const items: EventItem[] = [
     i18n: {
       en: {
         imageAlt: "A lit candle in a black stick beside a music stand holding an open dark-bound score, petals scattered on the ground",
-        ticket: { url: "https://www.tomsarkgh.am/en/event/51555/", label: "Tickets" },
+        ticket: { url: "https://ticket.opera.am/en/details/1767/P.%20Tchaikovsky%2C%20Symphony%20No.%206%3A%20dedicated%20to%20the%20memory%20of%20the%20earthquake%20victims", label: "Tickets" },
         title: "Tchaikovsky's Pathétique, in memory of the earthquake victims",
         titleSeo: "Tchaikovsky's Pathétique Symphony in Yerevan",
         cardTitle: "Tchaikovsky: Symphony No. 6",
@@ -2327,12 +2274,12 @@ export const items: EventItem[] = [
   {
     slug: "vienna-strauss-philharmonic-yerevan-2026",
     createdAt: "2026-10-09T02:00:00+04:00",
-    updatedAt: "2026-10-09T02:00:00+04:00",
+    updatedAt: "2026-10-13T16:50:00+04:00",
     site: "tick",
     title: "Վիեննայի Շտրաուս ֆիլհարմոնիկ նվագախումբը Երևանում",
     cardTitle: "Վիեննայի Շտրաուս ֆիլհարմոնիկ",
     summary:
-      "Վիեննայի Շտրաուս ֆիլհարմոնիկ նվագախումբը դեկտեմբերի 3-ին և 4-ին Երևանում է՝ Սպենդիարյանի անվան օպերայի և բալետի թատրոնում, «Վիեննական վալս» ծրագրով. տոմսերը՝ 7000-ից 28000 դրամ։",
+      "Վիեննայի Շտրաուս ֆիլհարմոնիկ նվագախումբը դեկտեմբերի 3-ին և 4-ին Երևանում է՝ Սպենդիարյանի անվան օպերայի և բալետի թատրոնում, «Վիեննական վալս» ծրագրով. տոմսերը՝ 15000-ից 35000 դրամ։",
     start: "2026-12-03",
     startTime: "19:00",
     utcOffset: "+04:00",
@@ -2347,30 +2294,30 @@ export const items: EventItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     category: "Դասական երաժշտություն",
-    tickets: { priceFrom: 7000, priceTo: 28000, currency: "AMD" },
-    ticket: { url: "https://www.tomsarkgh.am/en/event/51496/", label: "Տոմսեր" },
-    source: { name: "Tomsarkgh", url: "https://www.tomsarkgh.am/en/event/51496/", verifiedOn: "2026-10-09" },
+    tickets: { priceFrom: 15000, priceTo: 35000, currency: "AMD" },
+    ticket: { url: "https://ticket.opera.am/hy/details/1790/Vienna%20Strauss%20Philharmonie%20Orchestra", label: "Տոմսեր" },
+    source: { name: "Opera.am", url: "https://opera.am/en/details/1790/Vienna%20Strauss%20Philharmonie%20Orchestra", verifiedOn: "2026-10-13" },
     body: [
       "Վիեննայի Շտրաուսի ֆիլհարմոնիկ նվագախումբը (Vienna Strauss Philharmonie Orchestra) Երևանում ներկայացնում է «Վիեննական վալս» ծրագիրը՝ նվիրված վալսի ավանդույթին և Վիեննայի երաժշտական ժառանգությանը։ Երկու երեկո կա՝ դեկտեմբերի 3-ին և 4-ին, երկուսն էլ ժամը 19:00-ին, Երևանի օպերային թատրոնում։",
       "## Ծրագիրը",
       "Առաջին բաժնում՝ Մոցարտ. «Առևանգում սերալից» օպերայի նախերգանքը, Սիմֆոնիա սոլ մինոր, K. 183-ի և «Փոքրիկ գիշերային սերենադի» առաջին մասերը, «Յուպիտեր» սիմֆոնիայի եզրափակիչը։ Ապա՝ Ռոսսինիի «Իտալուհին Ալժիրում» օպերայի նախերգանքը, Շուբերտի թիվ 3 միջնարարը, Բրամսի Հունգարական պար թիվ 6-ը և Օֆենբախի կանկանը։",
       "Ընդմիջումից հետո՝ միայն Շտրաուսներ. Յոհան Շտրաուս որդու «Առավոտյան թերթեր» և «Արագացումներ» վալսները, «Որսի ժամանակ», «Աննա» և «Éljen a magyar!» պոլկաները, «Perpetuum mobile»-ն, ինչպես նաև Յոզեֆ Շտրաուսի «Հառաչանքներ» գալոպը։",
       "## Տոմսերը",
-      "Տոմսերը 7000-ից 28000 դրամ են։ Կազմակերպիչը Սպենդիարյանի անվան օպերայի և բալետի թատրոնն է։",
+      "Տոմսերը 15000-ից 35000 դրամ են։ Կազմակերպիչը Սպենդիարյանի անվան օպերայի և բալետի թատրոնն է։",
     ],
     faq: [
-      { q: "Որքա՞ն արժե տոմսը", a: "7000-ից 28000 դրամ՝ կախված նստատեղից։" },
+      { q: "Որքա՞ն արժե տոմսը", a: "15000-ից 35000 դրամ՝ կախված նստատեղից։" },
       { q: "Ե՞րբ է համերգը", a: "Դեկտեմբերի 3-ին և 4-ին, ժամը 19:00-ին։" },
       { q: "Ի՞նչ կհնչի", a: "Առաջին բաժնում՝ Մոցարտ, Ռոսսինի, Շուբերտ, Բրամս և Օֆենբախ, երկրորդում՝ Յոհան և Յոզեֆ Շտրաուսների վալսներ, պոլկաներ և գալոպ։" },
     ],
     i18n: {
       en: {
         imageAlt: "Two red violins facing each other beneath a small hanging chandelier, a waltzing line curling across the floor",
-        ticket: { url: "https://www.tomsarkgh.am/en/event/51496/", label: "Tickets" },
+        ticket: { url: "https://ticket.opera.am/en/details/1790/Vienna%20Strauss%20Philharmonie%20Orchestra", label: "Tickets" },
         title: "The Vienna Strauss Philharmonic in Yerevan",
         cardTitle: "Vienna Strauss Philharmonic",
         summary:
-          "The Vienna Strauss Philharmonie Orchestra brings its Viennese Waltz programme to Yerevan on 3 and 4 December, at the Spendiaryan Opera and Ballet Theatre; tickets from 7,000 drams.",
+          "The Vienna Strauss Philharmonie Orchestra brings its Viennese Waltz programme to Yerevan on 3 and 4 December, at the Spendiaryan Opera and Ballet Theatre; tickets from 15,000 drams.",
         city: "Yerevan",
         country: "Armenia",
         venue: "Spendiaryan Opera and Ballet Theatre, 54 Tumanyan Street",
@@ -2382,10 +2329,10 @@ export const items: EventItem[] = [
           "First half: Mozart's overture to The Abduction from the Seraglio, the first movements of the Symphony in G minor, K. 183, and of Eine kleine Nachtmusik, and the finale of the Jupiter. Then Rossini's overture to L'italiana in Algeri, Schubert's Entr'acte No. 3, Brahms's Hungarian Dance No. 6 and Offenbach's Can-Can.",
           "After the interval it is the Strausses alone: Johann II's Morning Papers and Accelerations waltzes, the polkas Auf der Jagd, Annen-Polka and Éljen a magyar!, Perpetuum mobile, and Josef Strauss's galop Seufzer. One could hardly ask for a more Viennese December.",
           "## Tickets",
-          "Tickets cost 7,000 to 28,000 drams. The concerts are presented by the Spendiaryan Opera and Ballet Theatre.",
+          "Tickets cost 15,000 to 35,000 drams. The concerts are presented by the Spendiaryan Opera and Ballet Theatre.",
         ],
         faq: [
-          { q: "How much are tickets?", a: "From 7,000 to 28,000 drams depending on the seat." },
+          { q: "How much are tickets?", a: "From 15,000 to 35,000 drams depending on the seat." },
           { q: "When is it?", a: "On 3 and 4 December, at 19:00." },
           { q: "What is played?", a: "Mozart, Rossini, Schubert, Brahms and Offenbach in the first half; waltzes, polkas and a galop by Johann and Josef Strauss in the second." },
         ],
@@ -2396,7 +2343,7 @@ export const items: EventItem[] = [
   {
     slug: "rachmaninov-piano-concertos-2-4-yerevan-2026",
     createdAt: "2026-10-09T02:00:00+04:00",
-    updatedAt: "2026-10-09T02:00:00+04:00",
+    updatedAt: "2026-10-13T16:50:00+04:00",
     site: "tick",
     title: "Ռախմանինով. Դաշնամուրի կոնցերտներ թիվ 2 և 4",
     cardTitle: "Ռախմանինով՝ կոնցերտներ 2 և 4",
@@ -2417,8 +2364,8 @@ export const items: EventItem[] = [
     imageHeight: 864,
     category: "Դասական երաժշտություն",
     tickets: { priceFrom: 3000, priceTo: 15000, currency: "AMD" },
-    ticket: { url: "https://www.tomsarkgh.am/en/event/51419/", label: "Տոմսեր" },
-    source: { name: "Tomsarkgh", url: "https://www.tomsarkgh.am/en/event/51419/", verifiedOn: "2026-10-09" },
+    ticket: { url: "https://eventhub.am/am/concert/event/rachmaninoff-piano-concertos-no-2-and-no-4-68d96be1-82c4-4b4e-b6ed-52c67401d92e", label: "Տոմսեր" },
+    source: { name: "EventHub", url: "https://eventhub.am/en/concert/event/rachmaninoff-piano-concertos-no-2-and-no-4-68d96be1-82c4-4b4e-b6ed-52c67401d92e", verifiedOn: "2026-10-13" },
     body: [
       "Խաչատրյանի անվան 14-րդ միջազգային փառատոնի երկրորդ երեկոն շարունակում է ռախմանինովյան շարքը։ Նոյեմբերի 26-ի առաջին և երրորդ կոնցերտներից հետո դաշնակահարուհի Եվա Գևորգյանը Հայաստանի պետական սիմֆոնիկ նվագախմբի հետ նվագում է մյուս երկուսը, դիրիժորը՝ Սերգեյ Սմբատյանը։",
       "## Ծրագիրը",
@@ -2434,7 +2381,7 @@ export const items: EventItem[] = [
     i18n: {
       en: {
         imageAlt: "A red piano keyboard seen from above, with two red ribbons sweeping out from it like waves",
-        ticket: { url: "https://www.tomsarkgh.am/en/event/51419/", label: "Tickets" },
+        ticket: { url: "https://eventhub.am/en/concert/event/rachmaninoff-piano-concertos-no-2-and-no-4-68d96be1-82c4-4b4e-b6ed-52c67401d92e", label: "Tickets" },
         title: "Rachmaninov: Piano Concertos Nos. 2 and 4",
         cardTitle: "Rachmaninov: Concertos 2 and 4",
         summary:
@@ -2601,7 +2548,7 @@ export const items: EventItem[] = [
   {
     slug: "khachaturian-symphony-with-bells-ridout-yerevan-2026",
     createdAt: "2026-10-09T15:40:00+04:00",
-    updatedAt: "2026-10-09T15:40:00+04:00",
+    updatedAt: "2026-10-13T16:50:00+04:00",
     site: "tick",
     title: "Խաչատրյանի «Զանգով սիմֆոնիան» և Թիմոթի Ռիդաութը",
     cardTitle: "Խաչատրյան՝ «Զանգով սիմֆոնիա»",
@@ -2623,8 +2570,8 @@ export const items: EventItem[] = [
     imageHeight: 864,
     category: "Դասական երաժշտություն",
     tickets: { priceFrom: 3000, priceTo: 15000, currency: "AMD" },
-    ticket: { url: "https://www.tomsarkgh.am/en/event/51428/", label: "Տոմսեր" },
-    source: { name: "Tomsarkgh", url: "https://www.tomsarkgh.am/en/event/51428/", verifiedOn: "2026-10-09" },
+    ticket: { url: "https://eventhub.am/am/concert/event/khachaturian-symphony-with-bells-041b3e44-a0f0-4ff1-b59e-5b0d6422a1a3", label: "Տոմսեր" },
+    source: { name: "EventHub", url: "https://eventhub.am/en/concert/event/khachaturian-symphony-with-bells-041b3e44-a0f0-4ff1-b59e-5b0d6422a1a3", verifiedOn: "2026-10-13" },
     body: [
       "Խաչատրյանի անվան 14-րդ միջազգային փառատոնի շրջանակում Հայաստանի պետական սիմֆոնիկ նվագախումբը ներկայացնում է ծրագիր, որտեղ արևելյան երաժշտական շեշտերը հանդիպում են հայկական սիմֆոնիզմի ամենահնչեղ գործերից մեկին։ Մենակատարը միջազգային բեմերում ճանաչված ալտահար Թիմոթի Ռիդաութն է, դիրիժորը՝ Սերգեյ Սմբատյանը։",
       "## Ծրագիրը",
@@ -2640,7 +2587,7 @@ export const items: EventItem[] = [
     i18n: {
       en: {
         imageAlt: "Three bells of different sizes and colours hanging from a red bar, a red viola and its bow lying beneath them",
-        ticket: { url: "https://www.tomsarkgh.am/en/event/51428/", label: "Tickets" },
+        ticket: { url: "https://eventhub.am/en/concert/event/khachaturian-symphony-with-bells-041b3e44-a0f0-4ff1-b59e-5b0d6422a1a3", label: "Tickets" },
         title: "Khachaturian's Symphony with Bells and Timothy Ridout",
         cardTitle: "Khachaturian: Symphony with Bells",
         titleSeo: "Khachaturian's Symphony with Bells in Yerevan",

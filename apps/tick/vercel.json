@@ -94,16 +94,6 @@
       "statusCode": 301
     },
     {
-      "source": "/en/events/lyubov-uspenskaya-yerevan-2027",
-      "destination": "/events/lyubov-uspenskaya-yerevan-2027/",
-      "statusCode": 301
-    },
-    {
-      "source": "/en/events/lyubov-uspenskaya-yerevan-2027/",
-      "destination": "/events/lyubov-uspenskaya-yerevan-2027/",
-      "statusCode": 301
-    },
-    {
       "source": "/en/events/romeo-juliet-deja-vu-2026",
       "destination": "/events/romeo-juliet-deja-vu-2026/",
       "statusCode": 301
@@ -141,6 +131,36 @@
     {
       "source": "/en/news/yerevan-fashion-week-2026/",
       "destination": "/news/yerevan-fashion-week-2026/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/events/lyubov-uspenskaya-yerevan-2027",
+      "destination": "/concerts/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/events/lyubov-uspenskaya-yerevan-2027/",
+      "destination": "/concerts/",
+      "statusCode": 301
+    },
+    {
+      "source": "/events/lyubov-uspenskaya-yerevan-2027",
+      "destination": "/concerts/",
+      "statusCode": 301
+    },
+    {
+      "source": "/events/lyubov-uspenskaya-yerevan-2027/",
+      "destination": "/concerts/",
+      "statusCode": 301
+    },
+    {
+      "source": "/am/events/lyubov-uspenskaya-yerevan-2027",
+      "destination": "/am/concerts/",
+      "statusCode": 301
+    },
+    {
+      "source": "/am/events/lyubov-uspenskaya-yerevan-2027/",
+      "destination": "/am/concerts/",
       "statusCode": 301
     }
   ]
