@@ -27,9 +27,11 @@
 // the sitemaps Google has fetched, and the URL Inspection verdict for each
 // sitemap URL — "Submitted and indexed", "Discovered - currently not
 // indexed" and the rest. Inspection allows 2,000 calls a day per property,
-// so answers are cached for 20 hours in ~/.cache/dst-idx/. A host whose
-// property has not been shared with the account is reported as such, not
-// skipped in silence.
+// so answers are cached for 20 hours in ~/.cache/dst-idx/. The account is a
+// verified owner of every repo host (its token file is in each
+// apps/*/public/), so a repo host that is not its property, a sitemap named
+// in robots.txt but never submitted, or one Google has not read in a week
+// is a problem; the hosts built elsewhere only get a note.
 //
 // Exit 1 when any host has a problem.
 import fs from "node:fs";
@@ -290,6 +292,8 @@ async function checkHost(host) {
 
   const maps = await readSitemaps(host, robots.sitemaps);
   report.sitemaps = maps.files;
+  // What a crawler is told to start from — the one that should be submitted.
+  report.declared = robots.sitemaps.length ? robots.sitemaps : [maps.guessed].filter(Boolean);
   if (!maps.files.length) add("problems", "no sitemap", robots.sitemaps.length ? robots.sitemaps.join(", ") : "none named in robots.txt, none at /sitemap-index.xml or /sitemap.xml");
   else if (!robots.sitemaps.length) add("warnings", "sitemap not named in robots.txt", maps.guessed);
   for (const e of maps.errors) add("problems", "sitemap file unreadable", e);
@@ -446,6 +450,41 @@ async function gscHost(report, auth, properties) {
   return out;
 }
 
+// A sitemap Google has not read is invisible from the outside: the file
+// answers 200, every check above passes, and nothing gets crawled from it.
+// dst.llc sat like that for five weeks, and eleven hosts were never in
+// Search Console at all, so the property and its sitemap are checked here
+// as problems rather than printed as a note nobody reads. A fresh submission
+// shows as pending with no download for a day or two; a week of that is
+// stuck, not slow.
+const NEVER_READ_DAYS = 7;
+const STALE_READ_DAYS = 21;
+const REPO_HOSTS = new Set(Object.values(HOSTS));
+
+function gscFindings(r) {
+  const g = r.gsc;
+  const add = (bucket, key, item) => (r[bucket][key] ??= []).push(item);
+  const days = (iso) => (Date.now() - Date.parse(iso)) / 86400_000;
+  // Only repo hosts carry the service account's token file, so only they
+  // can be expected to be its properties; the rest stay a note.
+  if (!g.property) {
+    if (REPO_HOSTS.has(r.host)) add("problems", "not in Search Console", `${r.host} — add the property and submit the sitemap`);
+  } else {
+    const submitted = new Map(g.sitemaps.map((s) => [s.path, s]));
+    for (const url of r.declared ?? []) if (!submitted.has(url)) add("problems", "sitemap not submitted to Search Console", url);
+    for (const s of g.sitemaps) {
+      if (!r.sitemaps.includes(s.path)) add("problems", "submitted sitemap is no longer served", s.path);
+      if (s.errors) add("problems", "Search Console reports sitemap errors", `${s.path}: ${s.errors}`);
+      if (!s.lastDownloaded && s.lastSubmitted && days(s.lastSubmitted) > NEVER_READ_DAYS)
+        add("problems", `sitemap never read by Google, submitted over ${NEVER_READ_DAYS} days ago`, `${s.path} (submitted ${s.lastSubmitted.slice(0, 10)})`);
+      if (s.lastDownloaded && days(s.lastDownloaded) > STALE_READ_DAYS)
+        add("warnings", `Google has not read the sitemap in ${STALE_READ_DAYS} days`, `${s.path} (last read ${s.lastDownloaded.slice(0, 10)})`);
+      if (s.warnings) add("warnings", "Search Console reports sitemap warnings", `${s.path}: ${s.warnings}`);
+    }
+  }
+  r.counts.problems = Object.values(r.problems).reduce((n, list) => n + list.length, 0);
+}
+
 // ---------------------------------------------------------------- run
 
 const started = Date.now();
@@ -465,7 +504,10 @@ if (flag("--gsc")) {
     const list = await fetch("https://www.googleapis.com/webmasters/v3/sites", { headers: { authorization: `Bearer ${auth.token}` } }).then((r) => r.json());
     const properties = new Set((list.siteEntry ?? []).filter((e) => e.permissionLevel !== "siteUnverifiedUser").map((e) => e.siteUrl));
     if (!properties.size) gscNote = `Search Console: ${auth.email} has been given no property yet`;
-    for (const r of reports) r.gsc = await gscHost(r, auth, properties);
+    for (const r of reports) {
+      r.gsc = await gscHost(r, auth, properties);
+      gscFindings(r);
+    }
   }
 }
 

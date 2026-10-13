@@ -34,13 +34,19 @@ hours against the 24 before them, which is the comparison the number
 claims to be. Week and month have whole days to work with and use ordinary
 date ranges. Everything downstream sees the same {current, previous} shape.
 
+The week and the month also carry Search Console: clicks, impressions and
+queries, and before them any host that is missing from Search Console or
+whose sitemap Google has not read — the failure no GA number shows.
+
 Credentials: GA4_KEY or ~/dst/.secrets/ga4-reader.json for the read,
 REPORTS_TELEGRAM_API_KEY / REPORTS_TELEGRAM_CHAT_ID from ~/dst/.env for the
 send. Nothing is printed that would put a secret in a log.
 """
-import os, sys, json, urllib.request
+import os, re, sys, json, urllib.request
 from collections import defaultdict
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
+from html import escape
+from urllib.parse import quote, urlparse
 
 from google.analytics.data_v1beta import BetaAnalyticsDataClient
 from google.analytics.data_v1beta.types import (
@@ -207,6 +213,126 @@ if seen.get("ticket_click"):
     for k, m in sorted(sellers.items(), key=lambda kv: -kv[1][0])[:10]:
         lines.append(f"{k[0][:26]:<27}{int(m[0]):>4}")
     lines.append("</pre>")
+
+
+# --- Search Console ----------------------------------------------------
+# Week and month only. Search Console publishes a day two or three days
+# late, so a 24-hour figure would be a zero every afternoon; the week here
+# is the last whole seven days it has, said with its dates, not GA's week.
+#
+# The same read checks that every site can be found at all. A host that is
+# not a property, or whose sitemap Google never fetched, looks healthy in
+# every other number above — dst.llc went five weeks like that and eleven
+# hosts were never added — so those lead the section, and a quiet week says
+# in one line that they were checked. Thresholds match tools/idx-check.mjs.
+GSC = "https://www.googleapis.com/webmasters/v3"
+GSC_LAG = 3
+NEVER_READ_DAYS, STALE_READ_DAYS = 7, 21
+
+
+def repo_hosts():
+    """The hosts in tools/hosts.mjs, read as text: it is a JS module, and
+    this list is the one thing Python needs from it."""
+    src = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "hosts.mjs")).read()
+    return re.findall(r':\s*"([^"]+)"', src.split("export const HOSTS = {", 1)[1].split("};", 1)[0])
+
+
+def search_console():
+    from google.oauth2 import service_account
+    from google.auth.transport.requests import AuthorizedSession
+    s = AuthorizedSession(service_account.Credentials.from_service_account_file(
+        os.environ["GOOGLE_APPLICATION_CREDENTIALS"],
+        scopes=["https://www.googleapis.com/auth/webmasters.readonly"]))
+
+    def get(path):
+        r = s.get(GSC + path, timeout=30)
+        r.raise_for_status()
+        return r.json()
+
+    sites = [e["siteUrl"] for e in get("/sites").get("siteEntry", [])
+             if e["permissionLevel"] != "siteUnverifiedUser"]
+    host_of = {site: urlparse(site).hostname or site.removeprefix("sc-domain:") for site in sites}
+    days = 7 if PERIOD == "week" else 30
+    end = (NOW - timedelta(days=GSC_LAG)).date()
+    start, prev_start = end - timedelta(days=days - 1), end - timedelta(days=2 * days - 1)
+    utc_now = datetime.now(timezone.utc)
+    age = lambda iso: (utc_now - datetime.fromisoformat(iso.replace("Z", "+00:00"))).days
+
+    alerts, waiting, totals, queries = [], 0, {}, []
+    for host in repo_hosts():
+        if host not in host_of.values():
+            alerts.append(f"{host} — not in Search Console")
+    for site in sites:
+        host, q = host_of[site], f"/sites/{quote(site, safe='')}"
+        maps = get(q + "/sitemaps").get("sitemap", [])
+        if not maps:
+            alerts.append(f"{host} — no sitemap submitted")
+        for m in maps:
+            name = urlparse(m["path"]).path.lstrip("/")
+            if int(m.get("errors", 0)):
+                alerts.append(f"{host} — {name}: {m['errors']} errors")
+            if not m.get("lastDownloaded") and m.get("lastSubmitted"):
+                if age(m["lastSubmitted"]) > NEVER_READ_DAYS:
+                    alerts.append(f"{host} — {name} never read, submitted {m['lastSubmitted'][:10]}")
+                else:
+                    waiting += 1
+            elif m.get("lastDownloaded") and age(m["lastDownloaded"]) > STALE_READ_DAYS:
+                alerts.append(f"{host} — {name} last read {m['lastDownloaded'][:10]}")
+
+        def query(dims, since, limit):
+            r = s.post(GSC + q + "/searchAnalytics/query", timeout=30, json={
+                "startDate": since.isoformat(), "endDate": end.isoformat(),
+                "dimensions": dims, "rowLimit": limit})
+            r.raise_for_status()
+            return r.json().get("rows", [])
+
+        # By date over both periods: one call, and a total that keeps the
+        # clicks Search Console hides from the per-query rows.
+        cur, prv = [0, 0], [0, 0]
+        for row in query(["date"], prev_start, 100):
+            bucket = cur if row["keys"][0] >= start.isoformat() else prv
+            bucket[0] += int(row["clicks"])
+            bucket[1] += int(row["impressions"])
+        totals[host] = (cur, prv)
+        if cur[1]:
+            queries += [(int(row["clicks"]), int(row["impressions"]), row["position"], row["keys"][0], host)
+                        for row in query(["query"], start, 10)]
+
+    fmt = lambda d: f"{d.day} {d:%b}"
+    out = ["", f"<b>Search</b> · {fmt(start)}–{fmt(end)}, vs the {days} days before"]
+    if alerts:
+        out += ["<b>Needs attention</b>", "<pre>"] + [escape(a) for a in alerts] + ["</pre>"]
+    else:
+        out.append(f"<i>All {len(sites)} properties checked: none missing, no sitemap stuck.</i>")
+    if waiting:
+        out.append(f"<i>{waiting} sitemap{'s' if waiting > 1 else ''} submitted this week, not read yet.</i>")
+    clicks = sum(c[0] for c, _ in totals.values()), sum(p[0] for _, p in totals.values())
+    shows = sum(c[1] for c, _ in totals.values()), sum(p[1] for _, p in totals.values())
+    out += ["<pre>", f"{'clicks':<12}{clicks[0]:>6}   {delta(*clicks)}",
+            f"{'impressions':<12}{shows[0]:>6}   {delta(*shows)}"]
+    ranked = sorted(((h, c, p) for h, (c, p) in totals.items() if c[1]), key=lambda t: (-t[1][0], -t[1][1]))
+    if ranked:
+        out.append("")
+        for h, c, p in ranked[:12]:
+            out.append(f"{h:<22}{c[0]:>4} /{c[1]:>6}")
+    out.append("</pre>")
+    if queries:
+        # Clicks first, then the impressions a query is earning without
+        # them — that second kind is where a page is one rewrite from traffic.
+        out += ["<b>Search · queries</b> (clicks / impressions, position)", "<pre>"]
+        for c, i, pos, k, h in sorted(queries, key=lambda t: (-t[0], -t[1]))[:10]:
+            out.append(f"{escape(k[:24]):<25}{c:>3} /{i:>5}  {pos:>4.1f}")
+        out.append("</pre>")
+    return out
+
+
+if PERIOD != "day":
+    try:
+        lines += search_console()
+    except Exception as e:
+        # The GA half is already written; a Search Console outage costs this
+        # section, not the digest.
+        lines += ["", f"<i>Search Console unavailable: {escape(type(e).__name__)}</i>"]
 
 text = "\n".join(lines)
 
