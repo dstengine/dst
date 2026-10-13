@@ -1,0 +1,106 @@
+---
+/* An age check over a page about alcohol, asked once per browser.
+
+   Built on the native <dialog>, like Lightbox. The page itself is rendered
+   in full underneath and stays in the HTML: nothing is hidden from a reader
+   without JS or from a crawler, and an age check is one of the overlays
+   Google's interstitial rule exempts as a legal one.
+
+   "Yes" is remembered in localStorage under `storageKey`, so the question
+   is not asked again on any page that shares the key. "No" is never
+   remembered; it leaves for `noHref`. Escape does not dismiss it, since the
+   question has to be answered. If storage is blocked (a private window,
+   cleared site data) the check simply asks again next time. */
+interface Props {
+  storageKey: string;
+  title: string;
+  text: string;
+  yes: string;
+  no: string;
+  noHref: string;
+  /** The way out's title attribute: where it goes, not its label again. */
+  noTitle: string;
+}
+const { storageKey, title, text, yes, no, noHref, noTitle } = Astro.props;
+---
+<dialog class="age-gate" data-age-gate={storageKey} closedby="none" aria-labelledby="age-gate-title" aria-describedby="age-gate-text">
+  <p class="age-gate-mark" aria-hidden="true">18+</p>
+  <p class="age-gate-title" id="age-gate-title">{title}</p>
+  <p id="age-gate-text">{text}</p>
+  <div class="age-gate-actions">
+    <button class="button" type="button" data-age-yes>{yes}</button>
+    <a class="button button-secondary" href={noHref} title={noTitle}>{no}</a>
+  </div>
+</dialog>
+
+<script is:inline>
+  (() => {
+    const dialog = document.querySelector("dialog[data-age-gate]");
+    if (!dialog || typeof dialog.showModal !== "function") return;
+    const key = dialog.getAttribute("data-age-gate");
+    let known = false;
+    try { known = localStorage.getItem(key) === "yes"; } catch { /* storage blocked */ }
+    if (known) return;
+
+    // closedby="none" keeps Escape from closing it where it is supported.
+    // Elsewhere a cancel can't always be prevented (Chrome lets Escape
+    // through before the reader has touched the page), so a close that
+    // came without the answer simply asks again.
+    let answered = false;
+    dialog.addEventListener("cancel", (e) => e.preventDefault());
+    dialog.addEventListener("close", () => { if (!answered) dialog.showModal(); });
+    dialog.querySelector("[data-age-yes]").addEventListener("click", () => {
+      answered = true;
+      try { localStorage.setItem(key, "yes"); } catch { /* storage blocked */ }
+      dialog.close();
+    });
+    dialog.showModal();
+  })();
+</script>
+
+<style>
+  .age-gate {
+    width: min(92vw, 26rem);
+    padding: var(--space-4) var(--space-3) var(--space-3);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: var(--ink);
+    text-align: center;
+  }
+  .age-gate::backdrop {
+    background: rgb(0 0 0 / 0.6);
+    backdrop-filter: blur(6px);
+  }
+  .age-gate-mark {
+    margin: 0 auto var(--space-2);
+    width: 4.5rem;
+    height: 4.5rem;
+    display: grid;
+    place-items: center;
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: var(--step-1);
+  }
+  /* A paragraph, not a heading: the question is not part of the page's
+     outline, and a search snippet should never quote it. */
+  .age-gate .age-gate-title {
+    margin: 0 0 var(--space-1);
+    font-family: var(--font-display, inherit);
+    font-size: var(--step-2);
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .age-gate #age-gate-text {
+    margin: 0 0 var(--space-3);
+    color: var(--ink-muted);
+  }
+  .age-gate-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+  .age-gate-actions .button { justify-content: center; }
+</style>

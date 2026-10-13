@@ -11,6 +11,7 @@
     "./DistrictLayout.astro": "./src/layouts/DistrictLayout.astro",
     "./Faq.astro": "./src/components/Faq.astro",
     "./ArticleBody.astro": "./src/components/ArticleBody.astro",
+    "./AgeGate.astro": "./src/components/AgeGate.astro",
     "./LeadForm.astro": "./src/components/LeadForm.astro",
     "./LeadTracking.astro": "./src/components/LeadTracking.astro",
     "./Callout.astro": "./src/components/Callout.astro",

@@ -9,6 +9,7 @@ import FeedCards from "@dst/ui/FeedCards.astro";
 import BlockHead from "@dst/ui/BlockHead.astro";
 import CountdownScript from "@dst/ui/CountdownScript.astro";
 import ArticleBody from "@dst/ui/ArticleBody.astro";
+import AgeGate from "@dst/ui/AgeGate.astro";
 import type { Section as SectionT } from "@dst/content/sections";
 import type { EventItem } from "@dst/content/types";
 import { withLabels } from "@dst/ui/labels";
@@ -17,7 +18,7 @@ import { isOn } from "@dst/content/when";
 import { labels, type Lang } from "../content";
 import { site } from "../site.config";
 import { LOCALE, eventsBase, newsBase, prefix } from "../i18n";
-import { allSections, NAV, promotedAll, linkFor } from "../sections";
+import { allSections, NAV, promotedAll, linkFor, ADULT } from "../sections";
 import { guides } from "../guides";
 
 interface Props { lang: Lang; section: SectionT }
@@ -26,6 +27,23 @@ const p = prefix(lang);
 const L = withLabels(labels[lang]);
 // The standing guide some subjects carry under their dates (../guides.ts).
 const guide = guides[lang][section.slug];
+// Asked once per browser, in either language: the answer is shared.
+const AGE = {
+  hy: {
+    title: "Ձեզ 18 տարեկան լրացե՞լ է",
+    text: "Այս էջը գինու համտեսների և ալկոհոլի մասին է։ Խնդրում ենք հաստատել, որ ձեզ 18 տարեկան լրացել է։",
+    yes: "Այո, ինձ 18 լրացել է",
+    no: "Ոչ, ինձ 18 չի լրացել",
+    noTitle: "Գլխավոր էջ՝ ամեն ինչ, որ կա Երևանում",
+  },
+  en: {
+    title: "Are you 18 or over?",
+    text: "This page is about wine tastings and alcohol. Please confirm that you are 18 or older.",
+    yes: "Yes, I am 18 or over",
+    no: "No, I am under 18",
+    noTitle: "The front page: everything on in Yerevan",
+  },
+}[lang];
 
 // The tag the site is pushing this month, as three cards under every other
 // subject and a link to its own page — the same block the event pages end
@@ -86,6 +104,7 @@ const blocks = promotedAll[lang]
     </section>
   ))}
   {blocks.length > 0 && <CountdownScript />}
+  {section.kind === "tag" && ADULT.has(section.slug) && <AgeGate storageKey="tick-age-18" noHref={p} {...AGE} />}
 </Layout>
 
 <style>
