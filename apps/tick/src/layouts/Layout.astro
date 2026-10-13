@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "@dst/ui/BaseLayout.astro";
 import { site as SITES } from "../site.config";
-import { promotedAll, cityDayAhead } from "../sections";
+import { promotedAll, cityDayAhead, iconOf } from "../sections";
 import { alternates, prefix } from "../i18n";
 import type { Lang } from "../content";
 import "../styles/theme.css";
@@ -42,7 +42,7 @@ const NAV = {
 // asked for this month, each removing itself when its last date has gone.
 const nav = [
   NAV[0],
-  ...hots.map((hot) => ({ href: `${p}${hot.slug}/`, label: hot.label, title: hot.title, icon: "star" })),
+  ...hots.map((hot) => ({ href: `${p}${hot.slug}/`, label: hot.label, title: hot.title, icon: iconOf(hot.slug) })),
   ...NAV.slice(1),
 ];
 ---

@@ -21,8 +21,9 @@ import { site } from "./site.config";
 const RESERVED = ["about", "events", "news", "go", "li", "am"];
 
 // `adult`: the subject is alcohol, so its page asks the reader's age once
-// (AgeGate) before showing itself.
-const KINDS: { slug: string; hy: string; en: string; adult?: boolean }[] = [
+// (AgeGate) before showing itself. `icon`: its mark from the shared set
+// (@dst/ui/icons) where the section is linked from the nav.
+const KINDS: { slug: string; hy: string; en: string; adult?: boolean; icon?: string }[] = [
   { slug: "concerts", hy: "Համերգներ", en: "Concerts" },
   { slug: "classical", hy: "Դասական երաժշտություն", en: "Classical" },
   { slug: "theatre", hy: "Թատրոն", en: "Theatre" },
@@ -30,14 +31,17 @@ const KINDS: { slug: string; hy: string; en: string; adult?: boolean }[] = [
   { slug: "fashion", hy: "Նորաձևություն", en: "Fashion" },
   { slug: "opera-ballet", hy: "Օպերա և բալետ", en: "Opera and ballet" },
   { slug: "parties", hy: "Երեկույթներ", en: "Parties" },
-  { slug: "wine", hy: "Գինի", en: "Wine", adult: true },
+  { slug: "wine", hy: "Գինի", en: "Wine", adult: true, icon: "wine" },
   // A season rather than a format: the daytime anime festival and the
   // evening club parties belong together for the question people ask.
-  { slug: "halloween", hy: "Հելոուին", en: "Halloween" },
+  { slug: "halloween", hy: "Հելոուին", en: "Halloween", icon: "pumpkin" },
 ];
 
 /** Section slugs whose page carries the 18+ check. */
 export const ADULT = new Set(KINDS.filter((k) => k.adult).map((k) => k.slug));
+
+/** A section's nav icon; a section without its own gets the star. */
+export const iconOf = (slug: string) => KINDS.find((k) => k.slug === slug)?.icon ?? "star";
 
 const tags = (lang: Lang): Record<string, Vocabulary> =>
   Object.fromEntries(KINDS.map((k) => [k[lang], { slug: k.slug, plural: k[lang] }]));
