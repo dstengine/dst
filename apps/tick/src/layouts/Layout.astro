@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "@dst/ui/BaseLayout.astro";
 import { site as SITES } from "../site.config";
-import { promoted, cityDayAhead } from "../sections";
+import { promotedAll, cityDayAhead } from "../sections";
 import { alternates, prefix } from "../i18n";
 import type { Lang } from "../content";
 import "../styles/theme.css";
@@ -19,7 +19,7 @@ interface Props {
 const { lang, title, description, jsonLd, image, noindex, prose } = Astro.props;
 const site = SITES[lang];
 const p = prefix(lang);
-const hot = promoted[lang];
+const hots = promotedAll[lang];
 
 const NAV = {
   hy: [
@@ -38,12 +38,13 @@ const NAV = {
   ],
 }[lang].filter((l) => cityDayAhead[lang] || !l.href.endsWith("yerevan-city-day/"));
 
-// Second, not last, when there is one: the one link here about what is
-// being asked for this month, and it removes itself when its last date has
-// gone.
-const nav = hot
-  ? [NAV[0], { href: `${p}${hot.slug}/`, label: hot.label, title: hot.title, icon: "star" }, ...NAV.slice(1)]
-  : NAV;
+// Second, not last, when there are any: the links here about what is being
+// asked for this month, each removing itself when its last date has gone.
+const nav = [
+  NAV[0],
+  ...hots.map((hot) => ({ href: `${p}${hot.slug}/`, label: hot.label, title: hot.title, icon: "star" })),
+  ...NAV.slice(1),
+];
 ---
 <BaseLayout
   {...site}

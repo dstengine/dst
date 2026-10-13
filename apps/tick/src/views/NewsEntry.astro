@@ -5,7 +5,7 @@ import type { NewsItem } from "@dst/content/types";
 import { publisher, labels, type Lang } from "../content";
 import { site } from "../site.config";
 import { LOCALE, eventsFor, eventsBase, newsBase } from "../i18n";
-import { sectionHref, promoted, promotedLink } from "../sections";
+import { sectionHref, promotedFor, linkFor } from "../sections";
 
 interface Props { lang: Lang; item: NewsItem; more: NewsItem[] }
 const { lang, item, more } = Astro.props;
@@ -21,8 +21,8 @@ const { lang, item, more } = Astro.props;
     eventsBase={eventsBase(lang)}
     publisher={publisher}
     categoryHref={sectionHref(item, lang)}
-    promoted={promoted[lang]}
-    promotedLink={promotedLink[lang]}
+    promoted={promotedFor(lang, item.category)}
+    promotedLink={linkFor(lang, promotedFor(lang, item.category))}
     labels={labels[lang]}
     where={site[lang].keyword}
   />

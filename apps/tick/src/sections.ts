@@ -28,6 +28,7 @@ const KINDS: { slug: string; hy: string; en: string }[] = [
   { slug: "fashion", hy: "Նորաձևություն", en: "Fashion" },
   { slug: "opera-ballet", hy: "Օպերա և բալետ", en: "Opera and ballet" },
   { slug: "parties", hy: "Երեկույթներ", en: "Parties" },
+  { slug: "wine", hy: "Գինի", en: "Wine" },
   // A season rather than a format: the daytime anime festival and the
   // evening club parties belong together for the question people ask.
   { slug: "halloween", hy: "Հելոուին", en: "Halloween" },
@@ -133,30 +134,37 @@ export function sectionHref(item: FeedItem, lang: Lang): string | undefined {
   return found ? `${prefix(lang)}${found.slug}/` : undefined;
 }
 
-// The tag this site is pushing right now, if any — see `promotedSection`.
-// It drops out of the nav and the event pages by itself once its last date
-// has gone.
-const PROMOTED: Record<Lang, string | undefined> = { hy: "Հելոուին", en: "Halloween" };
+// The tags this site is pushing right now, in order — see `promotedSection`.
+// Each drops out of the nav and the event pages by itself once its last
+// date has gone.
+const PROMOTED: Record<Lang, string[]> = { hy: ["Հելոուին", "Գինի"], en: ["Halloween", "Wine"] };
 
 const today = new Date().toISOString().slice(0, 10);
-export const promoted = {
-  hy: promotedSection(allSections.hy, PROMOTED.hy, today, site.hy.keyword),
-  en: promotedSection(allSections.en, PROMOTED.en, today, site.en.keyword),
-};
+const live = (lang: Lang) =>
+  PROMOTED[lang]
+    .map((key) => promotedSection(allSections[lang], key, today, site[lang].keyword))
+    .filter((hot): hot is NonNullable<typeof hot> => hot !== undefined);
+export const promotedAll = { hy: live("hy"), en: live("en") };
+// The first of them, for the places that show one.
+export const promoted = { hy: promotedAll.hy[0], en: promotedAll.en[0] };
 
 // The way from the promoted cards to the tag's own page, worded per tag
 // because Armenian wants the genitive (Հելոուինի), which no rule over the
 // bare label would get right. A promoted tag with no words here gets no link.
 const PROMOTED_ALL: Record<Lang, Record<string, string>> = {
-  hy: { "Հելոուին": "Հելոուինի բոլոր միջոցառումները" },
-  en: { Halloween: "All Halloween events" },
+  hy: { "Հելոուին": "Հելոուինի բոլոր միջոցառումները", "Գինի": "Գինու բոլոր միջոցառումները" },
+  en: { Halloween: "All Halloween events", Wine: "All wine events" },
 };
-const linkTo = (lang: Lang) => {
-  const hot = promoted[lang];
+export const linkFor = (lang: Lang, hot: (typeof promotedAll)["en"][number] | undefined) => {
   const label = hot && PROMOTED_ALL[lang][hot.key];
   return hot && label ? { href: `${prefix(lang)}${hot.slug}/`, label, title: hot.title } : undefined;
 };
-export const promotedLink = { hy: linkTo("hy"), en: linkTo("en") };
+export const promotedLink = { hy: linkFor("hy", promoted.hy), en: linkFor("en", promoted.en) };
+
+/** The promoted tag an entry's page leads its tail with: its own, when its
+    category is one of them, else the first. */
+export const promotedFor = (lang: Lang, category?: string) =>
+  promotedAll[lang].find((hot) => hot.key === category) ?? promoted[lang];
 
 // Whether Yerevan City Day still has a date to come. The nav links to its
 // page only until then; the page itself stays, as the record of the day.

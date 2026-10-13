@@ -16,7 +16,7 @@ import { isOn } from "@dst/content/when";
 import { labels, type Lang } from "../content";
 import { site } from "../site.config";
 import { LOCALE, eventsBase, newsBase, prefix } from "../i18n";
-import { allSections, NAV, promoted, promotedLink } from "../sections";
+import { allSections, NAV, promotedAll, linkFor } from "../sections";
 
 interface Props { lang: Lang; section: SectionT }
 const { lang, section } = Astro.props;
@@ -30,9 +30,9 @@ const L = withLabels(labels[lang]);
 // EventArticle gives: the block repeats on every page, and its hours were
 // the same phrase a hundred times. They stay on the Halloween pages.
 const today = new Date().toISOString().slice(0, 10);
-const hot = promoted[lang];
-const hotCards = hot && hot.slug !== section.slug
-  ? hot.items
+const blocks = promotedAll[lang]
+  .filter((hot) => hot.slug !== section.slug)
+  .map((hot) => ({ hot, cards: hot.items
       .filter((i): i is EventItem => "start" in i && isOn(i, today))
       .sort((a, b) => (a.start < b.start ? -1 : 1))
       .slice(0, 3)
@@ -50,8 +50,8 @@ const hotCards = hot && hot.slug !== section.slug
         countdown: cardCountdown(e),
         dateInImage: e.dateInImage,
         editorsChoice: e.editorsChoice,
-      }))
-  : [];
+      })) }))
+  .filter((b) => b.cards.length > 0);
 ---
 <Layout lang={lang} title={section.title} description={section.description}>
   <section class="container hero">
@@ -70,13 +70,13 @@ const hotCards = hot && hot.slug !== section.slug
       where={site[lang].keyword}
     />
   </section>
-  {hot && hotCards.length > 0 && (
+  {blocks.map(({ hot, cards }) => (
     <section class="container section-promoted">
-      <BlockHead heading={L.moreTagged(hot.label, hot.where, hot.year)} link={promotedLink[lang]} />
-      <FeedCards items={hotCards} columns={hotCards.length} locale={LOCALE[lang]} labels={L} />
-      <CountdownScript />
+      <BlockHead heading={L.moreTagged(hot.label, hot.where, hot.year)} link={linkFor(lang, hot)} />
+      <FeedCards items={cards} columns={cards.length} locale={LOCALE[lang]} labels={L} />
     </section>
-  )}
+  ))}
+  {blocks.length > 0 && <CountdownScript />}
 </Layout>
 
 <style>
