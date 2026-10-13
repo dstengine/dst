@@ -28014,6 +28014,38 @@
         ]
       ]
     },
+    "/covers/how-to-brew-georgian-green-tea.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/how-to-brew-georgian-green-tea-480.avif"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-georgian-green-tea-768.avif"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-georgian-green-tea-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/how-to-brew-georgian-green-tea-480.webp"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-georgian-green-tea-768.webp"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-georgian-green-tea-1024.webp"
+        ]
+      ]
+    },
     "/covers/how-to-brew-green-tea.jpg": {
       "width": 1024,
       "height": 1024,
