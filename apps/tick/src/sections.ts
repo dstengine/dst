@@ -103,6 +103,28 @@ export function sections(items: FeedItem[], lang: Lang): Section[] {
               },
             };
       }
+      // Named for the search — "wine tasting in Yerevan" — because the page
+      // answers it: the dated tastings, then the guide (../guides.ts) to
+      // the places that pour on any day.
+      if (g.key === "Գինի" || g.key === "Wine") {
+        return lang === "hy"
+          ? {
+              title: "Գինու համտես Երևանում․ համտեսներ, տուրեր, ամսաթվեր",
+              description:
+                "Գինու համտես Երևանում․ ամսաթվով համտեսներ, գինու գործարանների տուրեր և բերքահավաքի օրեր, և որտեղ համտեսել հայկական գինի ցանկացած օր՝ In Vino, Van Ardi, Voskeni, գներով։",
+              h1: "Գինու համտես Երևանում",
+              lede: "Գինու երեկոներ, բերքահավաքի օրեր և տուրեր՝ ամսաթվով, իսկ դրանցից ներքև՝ վայրեր, որտեղ հայկական գինի կարելի է համտեսել տարվա ցանկացած օր, գներով։",
+              headings: { events: "Գինու միջոցառումներ՝ ամսաթվով", upcoming: "Առաջիկայում", past: "Անցած միջոցառումներ" },
+            }
+          : {
+              title: "Wine tasting in Yerevan: tastings, tours and dates",
+              description:
+                "Wine tasting in Yerevan: dated tastings, winery tours and harvest days, and where to taste Armenian wine on any day — In Vino, Van Ardi, Voskeni — with prices.",
+              h1: "Wine tasting in Yerevan",
+              lede: "Wine evenings, harvest days and winery tours with a date, and below them the places that pour Armenian wine on any day of the year, with their prices.",
+              headings: { events: "Wine events with a date", upcoming: "Coming up", past: "Past wine events" },
+            };
+      }
       const what = g.voc.plural ?? g.key;
       return lang === "hy"
         ? {

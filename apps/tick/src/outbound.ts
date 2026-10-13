@@ -7,6 +7,7 @@
 // whichever language the button was pressed in.
 import { siteId } from "./content";
 import { eventsBySite } from "@dst/content/events";
+import { guideOutbound } from "./guides";
 
 export const outbound: Record<string, string> = {};
 
@@ -16,6 +17,9 @@ for (const event of eventsBySite(siteId)) {
   if (event.ticket) outbound[`${event.slug}-ticket`] = event.ticket.url;
   if (event.source?.url) outbound[`${event.slug}-source`] = event.source.url;
 }
+
+// The places a section guide points at (./guides.ts).
+Object.assign(outbound, guideOutbound);
 
 /** Path for an outbound link, e.g. go("equinox-fest-autumn-chapter-2026-ticket") */
 export function go(slug: string): string {

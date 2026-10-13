@@ -8,6 +8,7 @@ import SectionFeed from "@dst/ui/SectionFeed.astro";
 import FeedCards from "@dst/ui/FeedCards.astro";
 import BlockHead from "@dst/ui/BlockHead.astro";
 import CountdownScript from "@dst/ui/CountdownScript.astro";
+import ArticleBody from "@dst/ui/ArticleBody.astro";
 import type { Section as SectionT } from "@dst/content/sections";
 import type { EventItem } from "@dst/content/types";
 import { withLabels } from "@dst/ui/labels";
@@ -17,11 +18,14 @@ import { labels, type Lang } from "../content";
 import { site } from "../site.config";
 import { LOCALE, eventsBase, newsBase, prefix } from "../i18n";
 import { allSections, NAV, promotedAll, linkFor } from "../sections";
+import { guides } from "../guides";
 
 interface Props { lang: Lang; section: SectionT }
 const { lang, section } = Astro.props;
 const p = prefix(lang);
 const L = withLabels(labels[lang]);
+// The standing guide some subjects carry under their dates (../guides.ts).
+const guide = guides[lang][section.slug];
 
 // The tag the site is pushing this month, as three cards under every other
 // subject and a link to its own page — the same block the event pages end
@@ -70,6 +74,11 @@ const blocks = promotedAll[lang]
       where={site[lang].keyword}
     />
   </section>
+  {guide && (
+    <section class="container section-guide">
+      <ArticleBody blocks={guide} />
+    </section>
+  )}
   {blocks.map(({ hot, cards }) => (
     <section class="container section-promoted">
       <BlockHead heading={L.moreTagged(hot.label, hot.where, hot.year)} link={linkFor(lang, hot)} />
@@ -81,4 +90,5 @@ const blocks = promotedAll[lang]
 
 <style>
   .section-promoted { margin-top: var(--space-5); }
+  .section-guide { margin-top: var(--space-5); }
 </style>
