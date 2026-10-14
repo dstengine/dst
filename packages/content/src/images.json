@@ -28576,6 +28576,38 @@
         ]
       ]
     },
+    "/covers/ara-malikian-state-symphony-orchestra-yerevan-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/ara-malikian-state-symphony-orchestra-yerevan-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/ara-malikian-state-symphony-orchestra-yerevan-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/ara-malikian-state-symphony-orchestra-yerevan-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/ara-malikian-state-symphony-orchestra-yerevan-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/ara-malikian-state-symphony-orchestra-yerevan-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/ara-malikian-state-symphony-orchestra-yerevan-2027-1024.webp"
+        ]
+      ]
+    },
     "/covers/astor-piazzolla-tango-philharmonia-yerevan-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -29557,6 +29589,70 @@
         [
           1024,
           "/covers/ivor-bolton-anna-aglatova-yerevan-international-music-festival-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/james-cameron-in-conversation-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/james-cameron-in-conversation-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/james-cameron-in-conversation-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/james-cameron-in-conversation-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/james-cameron-in-conversation-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/james-cameron-in-conversation-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/james-cameron-in-conversation-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/jazz-aznavour-state-jazz-orchestra-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/jazz-aznavour-state-jazz-orchestra-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/jazz-aznavour-state-jazz-orchestra-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/jazz-aznavour-state-jazz-orchestra-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/jazz-aznavour-state-jazz-orchestra-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/jazz-aznavour-state-jazz-orchestra-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/jazz-aznavour-state-jazz-orchestra-yerevan-2026-1024.webp"
         ]
       ]
     },
