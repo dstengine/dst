@@ -272,7 +272,7 @@ export const items: NewsItem[] = [
   {
     slug: "fifty-buffalo-are-walking-through-two-boroughs",
     createdAt: "2026-08-30T11:52:01+04:00",
-    updatedAt: "2026-09-08T00:12:45+04:00",
+    updatedAt: "2026-10-14T04:34:54+04:00",
     site: "nyc42",
     image: "/covers/fifty-buffalo-are-walking-through-two-boroughs.jpg",
     imageAlt: "A row of amber paper animal silhouettes of the same shape and different sizes moving across a deep charcoal brown ground",
@@ -283,7 +283,7 @@ export const items: NewsItem[] = [
     cardTitle: "Fifty buffalo, two boroughs",
     titleSeo: "Return of the Buffalo: free, 18-19 September",
     summary:
-      "Return of the Buffalo: Tatanka Owe Akupi brings a herd of fifty puppets through Lower Manhattan on 18 September and Downtown Brooklyn on 19 September. It is free.",
+      "Return of the Buffalo: Tatanka Owe Akupi brings a herd of fifty puppets through New York — Lower Manhattan on 18 September, Downtown Brooklyn on 19 September. It is free.",
     date: "2026-09-07",
     category: "Free",
     source: {
@@ -309,7 +309,7 @@ export const items: NewsItem[] = [
   {
     slug: "moma-what-closes-and-what-opens-this-autumn",
     createdAt: "2026-09-06T22:44:30+04:00",
-    updatedAt: "2026-09-08T00:12:45+04:00",
+    updatedAt: "2026-10-14T04:34:54+04:00",
     site: "nyc42",
     image: "/covers/moma-what-closes-and-what-opens-this-autumn.jpg",
     imageAlt: "Five empty pale picture frames in pale wood hanging in a row on a dark brown wall, the one at the left tilted well off level and the other four hanging square",
@@ -320,7 +320,7 @@ export const items: NewsItem[] = [
     cardTitle: "MoMA: what closes, what opens",
     titleSeo: "MoMA autumn 2026: closing and opening dates",
     summary:
-      "The Kahlo and Rivera show ends 12 September and the Peggy Weil on 4 October. Between 15 September and 14 November, six more open — here are all the dates in one place.",
+      "At MoMA in New York, the Kahlo and Rivera show ends 12 September and the Peggy Weil on 4 October. Between 15 September and 14 November, six more open — here are all the dates in one place.",
     date: "2026-09-06",
     category: "Museums",
     source: {
@@ -347,7 +347,7 @@ export const items: NewsItem[] = [
   {
     slug: "seven-days-of-free-classes-in-bed-stuy",
     createdAt: "2026-09-06T08:48:11+04:00",
-    updatedAt: "2026-09-06T22:44:30+04:00",
+    updatedAt: "2026-10-14T04:34:54+04:00",
     site: "nyc42",
     image: "/covers/seven-days-of-free-classes-in-bed-stuy.jpg",
     imageAlt: "Seven amber paper bars of increasing width on a deep brown ground, the last one widening into a block-long shape",
@@ -358,7 +358,7 @@ export const items: NewsItem[] = [
     cardTitle: "Seven free days on MacDonough Street",
     titleSeo: "Art Is Alive 2026: free festival in Bed-Stuy",
     summary:
-      "Asase Yaa’s Art Is Alive runs 13–19 September on MacDonough Street: 90-minute classes all week, free, ending in a block party on the Saturday.",
+      "Asase Yaa’s Art Is Alive runs 13–19 September on MacDonough Street in Bed-Stuy, New York: 90-minute classes all week, free, ending in a block party on the Saturday.",
     date: "2026-09-06",
     category: "Free",
     source: {
@@ -419,7 +419,7 @@ export const items: NewsItem[] = [
   {
     slug: "the-parade-turns-100-a-century-and-two-years-late",
     createdAt: "2026-09-03T07:30:21+04:00",
-    updatedAt: "2026-09-07T09:58:34+04:00",
+    updatedAt: "2026-10-14T04:34:54+04:00",
     site: "nyc42",
     image: "/covers/the-parade-turns-100-a-century-and-two-years-late.jpg",
     imageAlt: "A row of amber and ochre paper balloon shapes on a deep brown ground, each tethered by thin cream lines",
@@ -430,7 +430,7 @@ export const items: NewsItem[] = [
     cardTitle: "The parade hits 100 on its 102nd year",
     titleSeo: "Macy's parade reaches its 100th edition",
     summary:
-      "November 26 brings a record 100 inflatable elements, a Hogwarts Great Hall float, a new Sorcerer's Apprentice Mickey and the return of Underdog.",
+      "New York's Thanksgiving parade on November 26 brings a record 100 inflatable elements, a Hogwarts Great Hall float, a new Sorcerer's Apprentice Mickey and the return of Underdog.",
     date: "2026-09-03",
     category: "Parade",
     source: {
@@ -456,7 +456,7 @@ export const items: NewsItem[] = [
   {
     slug: "fire-museum-reopens-after-two-years",
     createdAt: "2026-09-02T13:01:24+04:00",
-    updatedAt: "2026-09-03T07:30:21+04:00",
+    updatedAt: "2026-10-14T04:34:54+04:00",
     site: "nyc42",
     image: "/covers/fire-museum-reopens-after-two-years.jpg",
     imageAlt: "A tall red paper facade with two arched openings in gold at its base, on a warm brown ground",
@@ -467,7 +467,7 @@ export const items: NewsItem[] = [
     cardTitle: "The Fire Museum is open again",
     titleSeo: "NYC Fire Museum reopens on Spring Street",
     summary:
-      "Closed since May 2024 over the structural integrity of its 1904 firehouse, the city's fire museum reopened on 20 August — days before 11 September 2026.",
+      "Closed since May 2024 over the structural integrity of its 1904 firehouse, New York City's fire museum reopened on 20 August — days before 11 September 2026.",
     date: "2026-09-02",
     category: "Museums",
     source: {
@@ -533,7 +533,7 @@ export const items: NewsItem[] = [
   {
     slug: "transit-museum-bus-festival-turns-fifty",
     createdAt: "2026-09-02T13:01:24+04:00",
-    updatedAt: "2026-09-02T13:01:24+04:00",
+    updatedAt: "2026-10-14T04:34:54+04:00",
     site: "nyc42",
     image: "/covers/transit-museum-bus-festival-turns-fifty.jpg",
     imageAlt: "Three paper buses in cream, pale blue and green parked side by side on a brown ground",
@@ -544,7 +544,7 @@ export const items: NewsItem[] = [
     cardTitle: "Bus Festival, free, 19 September",
     titleSeo: "NY Transit Museum Bus Festival, 19 September",
     summary:
-      "Saturday 19 September, 10am to 3:30pm, Brooklyn Bridge Park, free — vintage buses at street level in the year the museum reaches its fiftieth.",
+      "Saturday 19 September, 10am to 3:30pm, free in Brooklyn Bridge Park — vintage New York buses at street level in the year the museum reaches its fiftieth.",
     date: "2026-09-02",
     category: "City",
     source: {
@@ -571,7 +571,7 @@ export const items: NewsItem[] = [
   {
     slug: "broadway-autumn-is-a-play-season",
     createdAt: "2026-09-02T13:01:24+04:00",
-    updatedAt: "2026-09-07T09:58:34+04:00",
+    updatedAt: "2026-10-14T04:34:54+04:00",
     site: "nyc42",
     image: "/covers/broadway-autumn-is-a-play-season.jpg",
     imageAlt: "A row of narrow upright paper strips in cream, orange and red on a dark navy ground",
@@ -582,7 +582,7 @@ export const items: NewsItem[] = [
     cardTitle: "Fifteen shows, eleven of them plays",
     titleSeo: "Broadway fall 2026: 15 shows, 4 musicals",
     summary:
-      "Eleven plays to four musicals, and eight of the fifteen are revivals. That ratio says more about the economics than any grosses report.",
+      "Broadway's autumn in New York: eleven plays to four musicals, and eight of the fifteen are revivals. That ratio says more about the economics than any grosses report.",
     date: "2026-09-02",
     category: "Theatre",
     source: {
@@ -648,7 +648,7 @@ export const items: NewsItem[] = [
   {
     slug: "venice-hands-out-a-lion-new-york-refuses-to-rank",
     createdAt: "2026-09-01T16:18:19+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-14T04:34:54+04:00",
     site: "nyc42",
     image: "/covers/venice-hands-out-a-lion-new-york-refuses-to-rank.jpg",
     imageAlt: "Two paper stacks of film frames: one topped by a small trophy, the other spread out in an even row with nothing above it",
@@ -659,7 +659,7 @@ export const items: NewsItem[] = [
     cardTitle: "Venice ranks. New York doesn't.",
     titleSeo: "Venice 2026 vs the New York Film Festival",
     summary:
-      "The 83rd Venice festival opens 2 September with a jury, a competition and a Golden Lion. NYFF opens 13 days later with none of the three, and that is a decision.",
+      "The 83rd Venice festival opens 2 September with a jury, a competition and a Golden Lion. The New York Film Festival opens 13 days later with none of the three, and that is a decision.",
     date: "2026-09-01",
     category: "Film",
     source: {
@@ -687,7 +687,7 @@ export const items: NewsItem[] = [
   {
     slug: "broadway-week-which-shows-are-worth-it",
     createdAt: "2026-08-30T20:41:51+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-14T04:34:54+04:00",
     featured: 1,
     site: "nyc42",
     image: "/covers/broadway-week-which-shows-are-worth-it.jpg",
@@ -697,7 +697,7 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "Broadway Week: which of the 25 is it for",
     summary:
-      "Twenty-five shows take the two-for-one from 8 to 20 September. They are not equally worth it, and the reason has less to do with the shows than with what each one costs the rest of the year.",
+      "Twenty-five New York shows take the two-for-one from 8 to 20 September. They are not equally worth it, and the reason has less to do with the shows than with what each one costs the rest of the year.",
     date: "2026-08-30",
     category: "Theatre",
     source: {
@@ -732,7 +732,7 @@ export const items: NewsItem[] = [
   {
     slug: "brooklyn-museum-fall-2026",
     createdAt: "2026-08-30T11:52:01+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-14T04:34:54+04:00",
     site: "nyc42",
     image: "/covers/brooklyn-museum-fall-2026.jpg",
     imageAlt: "Six framed panels hung in two rows on a gallery wall above a bench",
@@ -741,7 +741,7 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "The Brooklyn Museum sets out its autumn",
     summary:
-      "Six new shows open in October: manga in the Great Hall, fifty European masterpieces from the Pearlman Collection, Hopi kachina dolls and an installation in the lobby about the Tuskegee Airmen.",
+      "Six shows open at the Brooklyn Museum, New York, in October: manga in the Great Hall, fifty European works from the Pearlman Collection, Hopi kachina dolls and a lobby installation on the Tuskegee Airmen.",
     date: "2026-08-28",
     category: "Museums",
     source: {
@@ -772,7 +772,7 @@ export const items: NewsItem[] = [
   {
     slug: "hudson-river-foliage-cruises",
     createdAt: "2026-08-30T11:52:01+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-14T04:34:54+04:00",
     featured: 2,
     site: "nyc42",
     image: "/covers/hudson-river-foliage-cruises.jpg",
@@ -782,7 +782,7 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "Hudson foliage cruise tickets are on sale",
     summary:
-      "Circle Line has two foliage sailings this September: an eight-hour run to Bear Mountain on the 19th and 20th, and a four-hour trip toward Hook Mountain on the 26th and 27th. Last year sold out.",
+      "Circle Line has two foliage sailings from New York this September: an eight-hour run to Bear Mountain on the 19th and 20th, and a four-hour trip toward Hook Mountain on the 26th and 27th. Last year sold out.",
     date: "2026-08-26",
     category: "Outdoors",
     source: {

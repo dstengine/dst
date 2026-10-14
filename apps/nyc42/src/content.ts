@@ -20,9 +20,9 @@ export const home = {
 
 export const news = {
   title: "New York news: a few checked things a week",
-  description: "Not a wire feed. A few things a week that are worth knowing about and that we could check.",
+  description: "What changed in New York City this week: a few things worth knowing, each checked against its source and dated.",
   h1: "What changed in New York",
-  lede: `Not a wire feed. A few things a week that are worth knowing about and that we could check.`,
+  lede: `A few things a week that are worth knowing about and that we could check.`,
 };
 
 // The intent phrase, not the filing word. "Events" is what this page is

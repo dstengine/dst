@@ -108,8 +108,8 @@ export function sections(items: FeedItem[]): Section[] {
       if (g.kind === "place") {
         return {
           title: `Events in the ${g.key}`,
-          description: `Festivals, conventions and races in the ${g.key} — the dates as the organisers published them, with the source behind every entry.`,
-          h1: `Events in the ${g.key}`,
+          description: `Festivals, conventions and races in the ${g.key} worth the trip from New York — the dates as the organisers published them, with the source behind every entry.`,
+          h1: `Events in the ${g.key}, a trip from New York`,
           lede: `Big American events with published dates, from the Rose Parade in January to the desert in August — each date as the organiser gave it, and a link to where we read it. New York's own listings are on the rest of the site.`,
         };
       }
