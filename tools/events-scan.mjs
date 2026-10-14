@@ -125,7 +125,7 @@ function jsonLdNodes(html) {
     if (Array.isArray(node)) return node.forEach(walk);
     if (!node || typeof node !== "object") return;
     out.push(node);
-    for (const key of ["@graph", "itemListElement", "item", "subEvent", "event", "hasPart"]) {
+    for (const key of ["@graph", "mainEntity", "itemListElement", "item", "subEvent", "event", "hasPart"]) {
       if (node[key]) walk(node[key]);
     }
   };
@@ -143,7 +143,9 @@ function fromJsonLd(html, base) {
     title: unescape(e.name),
     start: String(e.startDate ?? "").slice(0, 10) || undefined,
     end: String(e.endDate ?? "").slice(0, 10) || undefined,
-    where: unescape(e.location?.name ?? e.location?.address?.addressLocality ?? ""),
+    // Eventix gives the place as a bare string rather than a Place.
+    where: unescape(typeof e.location === "string" ? e.location
+      : e.location?.name ?? e.location?.address?.addressLocality ?? ""),
     url: absolute(e.url ?? e["@id"] ?? "", base),
     note: e.offers ? "has offers" : undefined,
   }));
@@ -427,7 +429,24 @@ const key = (s) => String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, 
 
 /* ------------------------------------------------------------------ scan */
 
-async function readSource(src, watched) {
+/** A sitemap says a page exists and nothing about it. Where the pages
+    themselves carry Event markup (esora.app), `"follow": N` on the source
+    opens the N newest that nobody has seen yet and reads the event off each,
+    so the report gets a title, a date and a venue instead of a slug. A page
+    without markup stays the slug it was. */
+async function followPages(leads, limit, skip) {
+  const out = [];
+  for (const lead of leads.filter((l) => !skip.has(canonical(l.url))).slice(0, limit)) {
+    try {
+      const page = await get(lead.url);
+      const event = fromJsonLd(page.body, page.url)[0];
+      out.push(event ? { ...event, url: event.url || lead.url } : lead);
+    } catch { out.push(lead); }
+  }
+  return out;
+}
+
+async function readSource(src, watched, skip) {
   const kinds = src.kind && src.kind !== "auto" ? [src.kind] : ["jsonld", "rss", "ics", "sitemap"];
   const page = await get(src.url);
   if (src.kind === "watch") {
@@ -444,7 +463,10 @@ async function readSource(src, watched) {
         : await feedBehind(page.body, page.url);
       found = xml ? fromFeed(xml, page.url) : [];
     } else if (kind === "ics") found = fromIcs(page.body, page.url);
-    else if (kind === "sitemap") found = await fromSitemap(page.body, page.url, src.match);
+    else if (kind === "sitemap") {
+      found = await fromSitemap(page.body, page.url, src.match);
+      if (src.follow) found = await followPages(found, src.follow, skip);
+    }
     if (found.length) return found.map((f) => ({ ...f, kind }));
   }
   return [];
@@ -484,6 +506,7 @@ async function main() {
   // Hosts in parallel, each host serially — the pause in get() does the
   // second half, and one slow calendar should not decide how long the run
   // takes.
+  const skip = new Set([...have.urls, ...Object.values(seen).map((s) => s.url)]);
   const byHost = new Map();
   for (const src of wanted) {
     const host = new URL(src.url).host;
@@ -494,7 +517,7 @@ async function main() {
   await Promise.all([...byHost.values()].map(async (group) => {
     for (const src of group) {
       let found;
-      try { found = await readSource(src, watched); }
+      try { found = await readSource(src, watched, skip); }
       catch (err) { failures.push(`${src.site}  ${src.name}: ${err.message}`); continue; }
       if (found.length === 0) {
         if (src.kind === "watch") quiet.push(`${src.site}  ${src.name}: unchanged`);

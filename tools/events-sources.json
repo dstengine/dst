@@ -290,5 +290,55 @@
     "city": "Dubai",
     "match": "20[0-9]{2}|January|February|March|April|May|June|July|August|September|October|November|December",
     "notes": "Where GITEX, Cityscape and most of the trade calendar actually happen. Publishes no feed, no event markup and no sitemap — probed 22 September 2026 — so the page is watched for lines that were not on it last time."
+  },
+  {
+    "site": "yerevan",
+    "for": [
+      "tick"
+    ],
+    "city": "Yerevan",
+    "name": "Eventix, the coming months",
+    "url": "https://eventix.am/en/months",
+    "kind": "jsonld",
+    "require": "^https://eventix\\.am/en/(?!cinema/)",
+    "notes": "An aggregator: about 200 events with JSON-LD on one rolling page. Its startDate ends in Z but is Yerevan local time. Cite the box office it names (mostly EventHub), never Eventix. Cinema is filtered out."
+  },
+  {
+    "site": "yerevan",
+    "for": [
+      "tick"
+    ],
+    "city": "Yerevan",
+    "name": "Esora",
+    "url": "https://esora.app/sitemap.xml",
+    "kind": "sitemap",
+    "match": "/en/events/",
+    "follow": 25,
+    "notes": "Yerevan listings in hy/en/ru, ~2,100 events; every event page carries Event JSON-LD, so the 25 newest unseen pages are opened and read. A listing, not a source: confirm with the venue or box office."
+  },
+  {
+    "site": "yerevan",
+    "for": [
+      "tick"
+    ],
+    "city": "Yerevan",
+    "name": "EventHub",
+    "url": "https://eventhub.am/sitemap.xml",
+    "kind": "sitemap",
+    "match": "/en/[a-z-]+/event/",
+    "notes": "The box office behind most Eventix listings and tick's most cited source. Its sitemap has no dates for new pages and lagged on 14 Oct 2026, so the 25 unseen pages it lists first are opened and read for their Event JSON-LD.",
+    "follow": 25
+  },
+  {
+    "site": "yerevan",
+    "for": [
+      "tick"
+    ],
+    "city": "Yerevan",
+    "name": "Cafesjian Center for the Arts",
+    "url": "https://www.cmf.am/sitemap.xml",
+    "kind": "sitemap",
+    "match": "/en/programs-and-events/",
+    "notes": "Cascade exhibitions, talks and concerts. lastmod is per page and current."
   }
 ]
