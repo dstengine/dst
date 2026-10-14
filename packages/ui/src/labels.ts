@@ -132,6 +132,14 @@ export interface ArticleLabels {
   /** Chip on one card that has. Separate from the heading above because a
       language that inflects for number needs a singular here. */
   past: string;
+  /** Heading over the front-page block of events that began before today
+      and have not ended yet — apart from the ones still to come. */
+  onNow: string;
+  /** The meta-line date of such an event's card: its last day, given
+      formatted. Its first day is behind the reader and answers nothing. */
+  until: (date: string) => string;
+  /** The same word on the date cover, over the last day. */
+  untilCover: string;
   /** Corner mark on the card of an event the editors would go to themselves. */
   editorsChoice: string;
   /** Title attribute on the map iframe, given the place's name. */
@@ -212,6 +220,9 @@ export const EN: ArticleLabels = {
   subscribeCalendarNote: "Every date on this page, kept up to date in your own calendar.",
   subscribeCalendarTitle: "Opens your calendar app and subscribes to these dates",
   past: "Past",
+  onNow: "On now",
+  until: (date) => `until ${date}`,
+  untilCover: "until",
   editorsChoice: "Editors' choice",
   mapTitle: (place) => `Map — ${place}`,
   videoBy: (channel) => `${channel} on YouTube`,
@@ -296,6 +307,9 @@ export const ES: Partial<ArticleLabels> = {
   subscribeCalendarNote: "Todas las fechas de esta página, siempre al día en tu calendario.",
   subscribeCalendarTitle: "Abre tu app de calendario y se suscribe a estas fechas",
   past: "Pasado",
+  onNow: "En curso",
+  until: (date) => `hasta el ${date}`,
+  untilCover: "hasta",
   editorsChoice: "Elección del editor",
   mapTitle: (place) => `Mapa — ${place}`,
   videoBy: (channel) => `${channel} en YouTube`,
@@ -371,6 +385,9 @@ export const DE: Partial<ArticleLabels> = {
   subscribeCalendarNote: "Alle Termine dieser Seite, laufend aktuell im eigenen Kalender.",
   subscribeCalendarTitle: "Öffnet die Kalender-App und abonniert diese Termine",
   past: "Vorbei",
+  onNow: "Läuft gerade",
+  until: (date) => `bis ${date}`,
+  untilCover: "bis",
   editorsChoice: "Tipp der Redaktion",
   mapTitle: (place) => `Karte — ${place}`,
   videoBy: (channel) => `${channel} auf YouTube`,
@@ -457,6 +474,9 @@ export const HY: Partial<ArticleLabels> = {
   subscribeCalendarNote: "Այս էջի բոլոր ամսաթվերը՝ միշտ թարմ, ձեր սեփական օրացույցում։",
   subscribeCalendarTitle: "Բացում է օրացույցի հավելվածը և բաժանորդագրում այս ամսաթվերին",
   past: "Անցած",
+  onNow: "Այժմ ընթացքում",
+  until: (date) => `մինչև ${date}`,
+  untilCover: "մինչև",
   editorsChoice: "Խմբագրի ընտրություն",
   mapTitle: (place) => `Քարտեզ — ${place}`,
   videoBy: (channel) => `${channel}, YouTube`,

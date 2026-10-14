@@ -57,6 +57,12 @@ export interface FeedCardItem {
   editorsChoice?: boolean;
   /** Marks an event that has already happened. */
   past?: boolean;
+  /** ISO last day of an event that is already running. The card then dates
+      itself by when it closes — "until 25 Oct" — because its first day is
+      behind the reader, and a card leading with 16 September in mid-October
+      reads as a page nobody has looked at since. No countdown either: there
+      is nothing left to count down to. */
+  until?: string;
   /** Clock hours, "13:00–22:00" or "21:00", for an event that asked for
       them — see `cardHours` in ../date.ts. Shown on the date cover in place of the year,
       and after the date in the meta line. */
@@ -112,7 +118,7 @@ const parts = (iso: string) => {
 >
   {items.map((item) => {
     const Tag = item.href ? "a" : "article";
-    const when = parts(item.date);
+    const when = parts(item.until ?? item.date);
     return (
       <Tag class="feed-card" href={item.href} title={item.href ? item.title : undefined}>
         {(item.image || item.event) && (
@@ -123,6 +129,7 @@ const parts = (iso: string) => {
             {item.editorsChoice && <span class="feed-pick">{L.editorsChoice}</span>}
             {dated(item) && (
               <div class="feed-date" aria-hidden="true">
+                {item.until && <span class="feed-date-until">{L.untilCover}</span>}
                 <span class="feed-date-day">{when.day}</span>
                 <span class="feed-date-month">{when.month}</span>
                 {item.hours
@@ -135,11 +142,13 @@ const parts = (iso: string) => {
         <div class="feed-body">
           <p class:list={["feed-meta", item.event && "feed-meta-event"]}>
             {item.eyebrow && <span class="feed-eyebrow">{item.eyebrow}</span>}
-            <time datetime={item.date}>{item.event ? formatCardDate(item.date, locale) : formatDate(item.date, locale)}</time>
+            {item.until
+              ? <time datetime={item.until}>{L.until(formatCardDate(item.until, locale))}</time>
+              : <time datetime={item.date}>{item.event ? formatCardDate(item.date, locale) : formatDate(item.date, locale)}</time>}
             {item.hours && <span class="feed-hours">{item.hours}</span>}
             {/* Filled in by CountdownScript where it's loaded; empty without
                 JavaScript, where the date above already says everything. */}
-            {item.event && !item.past && (item.countdown
+            {item.event && !item.past && !item.until && (item.countdown
               ? <span class="feed-countdown" data-countdown-live data-start={item.countdown.start} data-end={item.countdown.end} data-now={L.underway} hidden></span>
               : <span class="feed-countdown" data-countdown datetime={item.date}></span>)}
             {item.past && <span class="feed-past">{L.past}</span>}
@@ -361,6 +370,7 @@ const parts = (iso: string) => {
     font-family: var(--font-mono);
     color: var(--accent-ink);
   }
+  .feed-date-until { margin-bottom: 0.35em; font-size: var(--step--1); letter-spacing: 0.18em; text-transform: uppercase; }
   .feed-date-day { font-size: var(--step-4); font-weight: 600; letter-spacing: -0.03em; }
   .feed-date-month { margin-top: 0.35em; font-size: var(--step--1); letter-spacing: 0.18em; }
   .feed-date-year { margin-top: 0.35em; font-size: var(--step--1); opacity: 0.65; }

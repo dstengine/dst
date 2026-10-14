@@ -1,7 +1,15 @@
 ---
 // Compact ~3-item embed for homepages (TODO 41/42) — the events counterpart
-// of NewsBlock.astro. Shows only upcoming events; renders nothing when
-// there are none, same "show it only when there's something to show" rule.
+// of NewsBlock.astro. Two groups: what is still to come, and what is already
+// running. Each renders only when it has something to show, and the block
+// renders nothing when neither does.
+//
+// They are apart because one list answered two questions badly. Sorted by
+// start, a fringe festival that opened on 24 September and runs to
+// 25 October sat at the top of "Upcoming" in mid-October, dated 24 September
+// — true, and read by everyone as a page left behind. A running event is
+// dated by when it closes and sorted by it, soonest first: the one about to
+// end is the one a reader can still miss.
 //
 // Same cards as the news block, with one difference that matters: a news
 // item's date is a filing stamp, an event's date is the whole point, so the
@@ -10,7 +18,7 @@ import type { EventItem } from "@dst/content/types";
 import FeedCards from "./FeedCards.astro";
 import { cardHours, cardCountdown } from "../date.ts";
 import CountdownScript from "./CountdownScript.astro";
-import { isOn } from "@dst/content/when";
+import { hasEnded, lastDay } from "@dst/content/when";
 import { withLabels, type ArticleLabels } from "../labels.ts";
 
 interface Props {
@@ -43,12 +51,26 @@ const todayIso = new Date().toISOString().slice(0, 10);
 // led with the next thing would be two answers to one question; both now
 // answer the only question a calendar is asked, which is what is next. See
 // EventsList for why the `featured` rank stopped moving events.
+//
+// An event that starts today belongs to what is coming: its card counts the
+// hours to it. Running means it opened on an earlier day.
+const byKey = (key: (e: EventItem) => string) => (a: EventItem, b: EventItem) => {
+  const x = key(a);
+  const y = key(b);
+  return x < y ? -1 : x > y ? 1 : 0;
+};
 const upcoming = items
-  .filter((e) => isOn(e, todayIso))
-  .sort((a, b) => (a.start < b.start ? -1 : a.start > b.start ? 1 : 0))
+  .filter((e) => e.start >= todayIso)
+  .sort(byKey((e) => e.start))
+  .slice(0, limit);
+const running = items
+  .filter((e) => e.start < todayIso && !hasEnded(e, todayIso))
+  .sort(byKey((e) => `${lastDay(e)} ${e.start}`))
   .slice(0, limit);
 
-const cards = upcoming.map((item) => {
+const L = withLabels(labels);
+
+const card = (item: EventItem, isRunning: boolean) => {
   const hasPage = Array.isArray(item.body) && item.body.length > 0;
   return {
     href: hasPage ? `${eventsBase}${item.slug}/` : undefined,
@@ -67,20 +89,28 @@ const cards = upcoming.map((item) => {
     countdown: cardCountdown(item),
     dateInImage: item.dateInImage,
     editorsChoice: item.editorsChoice,
+    until: isRunning ? lastDay(item) : undefined,
   };
-});
+};
+
+// The see-all link and the nav row go with whichever group comes first, so
+// a site with nothing still to come keeps its way into the calendar.
+const groups = [
+  { heading, cards: upcoming.map((e) => card(e, false)) },
+  { heading: L.onNow, cards: running.map((e) => card(e, true)) },
+].filter((g) => g.cards.length > 0);
 ---
-{cards.length > 0 && (
+{groups.map((g, i) => (
   <section class="container events-block">
     <div class="events-block-head">
-      <h2>{heading}</h2>
-      <a class="events-block-all" href={eventsBase} title={allLabel}>{allLabel}<span class="events-block-arrow" aria-hidden="true"> &rarr;</span></a>
+      <h2>{g.heading}</h2>
+      {i === 0 && <a class="events-block-all" href={eventsBase} title={allLabel}>{allLabel}<span class="events-block-arrow" aria-hidden="true"> &rarr;</span></a>}
     </div>
-    <slot name="nav" />
-    <FeedCards items={cards} columns={cards.length} locale={locale} labels={withLabels(labels)} />
-    <CountdownScript />
+    {i === 0 && <slot name="nav" />}
+    <FeedCards items={g.cards} columns={g.cards.length} locale={locale} labels={L} />
   </section>
-)}
+))}
+{groups.length > 0 && <CountdownScript />}
 
 <style>
   /* See NewsBlock: the head row zeroes the h2's margin for baseline
