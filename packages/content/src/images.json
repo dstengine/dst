@@ -28608,6 +28608,38 @@
         ]
       ]
     },
+    "/covers/artur-zakiyan-solo-piano-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/artur-zakiyan-solo-piano-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/artur-zakiyan-solo-piano-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/artur-zakiyan-solo-piano-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/artur-zakiyan-solo-piano-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/artur-zakiyan-solo-piano-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/artur-zakiyan-solo-piano-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/astor-piazzolla-tango-philharmonia-yerevan-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -31245,6 +31277,38 @@
         [
           1536,
           "/covers/vienna-strauss-philharmonic-yerevan-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/vigen-hovsepyan-ghapama-day-beer-academy-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/vigen-hovsepyan-ghapama-day-beer-academy-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/vigen-hovsepyan-ghapama-day-beer-academy-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/vigen-hovsepyan-ghapama-day-beer-academy-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/vigen-hovsepyan-ghapama-day-beer-academy-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/vigen-hovsepyan-ghapama-day-beer-academy-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/vigen-hovsepyan-ghapama-day-beer-academy-2026-1024.webp"
         ]
       ]
     },
