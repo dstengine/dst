@@ -460,7 +460,7 @@ export const items: EventItem[] = [
   {
     slug: "solana-summit-india-2026",
     createdAt: "2026-09-06T09:36:42+04:00",
-    updatedAt: "2026-10-14T22:10:00+04:00",
+    updatedAt: "2026-10-15T00:18:00+04:00",
     site: "sol2go",
     image: "/covers/solana-summit-india-2026.jpg",
     imageAlt: "A row of flat arched openings in violet paper with mint sea shapes behind them",
@@ -493,6 +493,12 @@ export const items: EventItem[] = [
       "Mumbai has a crowded first week of November. <a href=\"/events/devcon-8-mumbai-2026/\" title=\"Devcon 8, Mumbai, 3 to 6 November\">Devcon 8</a>, Ethereum's conference, opens the next morning and runs to the 6th; <a href=\"/events/ethglobal-mumbai-2026/\" title=\"ETHGlobal Mumbai, 5 to 7 November\">ETHGlobal Mumbai</a>, the hackathon, runs from the 5th to the 7th; and <strong>Pragma Mumbai</strong> is on the 6th. If you are travelling to India for one of them, the others are a day or two away.",
     ],
     related: [
+      {
+        href: "/events/devcon-8-agentic-hub-2026/",
+        eyebrow: "3 to 6 November",
+        title: "The Agentic Hub at Devcon 8",
+        text: "AI agents and x402 payments, which also run on Solana, inside Devcon from the next day.",
+      },
       {
         href: "/events/devcon-8-mumbai-2026/",
         eyebrow: "3 to 6 November",
@@ -1701,7 +1707,7 @@ export const items: EventItem[] = [
   {
     slug: "devcon-8-mumbai-2026",
     createdAt: "2026-10-14T22:10:00+04:00",
-    updatedAt: "2026-10-14T22:10:00+04:00",
+    updatedAt: "2026-10-15T00:18:00+04:00",
     site: "sol2go",
     image: "/covers/devcon-8-mumbai-2026.jpg",
     imageAlt: "A long curved glass convention hall lit warm from inside at dusk, palm trees along its front and a few figures walking to the doors",
@@ -1742,6 +1748,8 @@ export const items: EventItem[] = [
       "Discounts are claimed or applied for: <strong>$149</strong> for residents of India, <strong>$25</strong> for Indian students, $49 in ETH or $99 by card for international students, and free entry for Ethereum core developers. General admission tickets are anonymous and transferable; discounted ones are not, and an order holds two tickets at most.",
       "## The rest of the week",
       "<a href=\"/events/ethglobal-mumbai-2026/\" title=\"ETHGlobal Mumbai, 5 to 7 November\">ETHGlobal Mumbai</a>, the hackathon, runs from <strong>5 to 7 November</strong> in the same building, with <strong>Pragma Mumbai</strong>, ETHGlobal's conference, on the 6th.",
+      "## The AI side of the week",
+      "Inside Devcon, the <a href=\"/events/devcon-8-agentic-hub-2026/\" title=\"The Agentic Hub at Devcon 8, 3 to 6 November\">Agentic Hub</a> runs for all four days: hands-on sessions and live competitions on AI agents, ERC-8004 identity and x402 payments, which also run on Solana. On the evening of the 4th, NEAR's <a href=\"/events/diyas-near-devcon-mumbai-2026/\" title=\"Diyas: NEAR @ Devcon, Mumbai, 4 November\">Diyas</a> turns a rooftop into a game in which squads fire a swap intent from NEAR to Solana on-chain.",
     ],
     faq: [
       {
@@ -1756,8 +1764,18 @@ export const items: EventItem[] = [
         q: "Is Solana Summit India the same week?",
         a: "Yes: it is in Mumbai on Monday 2 November, the day before Devcon opens.",
       },
+      {
+        q: "Is there anything on AI agents at Devcon 8?",
+        a: "Yes. The Agentic Hub, one of Devcon's fourteen community hubs, runs on all four days with sessions and live competitions on ERC-8004, x402 and agent security, and a Devcon ticket covers it.",
+      },
     ],
     related: [
+      {
+        href: "/events/devcon-8-agentic-hub-2026/",
+        eyebrow: "3 to 6 November",
+        title: "The Agentic Hub at Devcon 8",
+        text: "AI agents, ERC-8004 and x402 on all four days, with live agent games.",
+      },
       {
         href: "/events/solana-summit-india-2026/",
         eyebrow: "2 November",
@@ -1784,7 +1802,7 @@ export const items: EventItem[] = [
   {
     slug: "ethglobal-mumbai-2026",
     createdAt: "2026-10-14T22:10:00+04:00",
-    updatedAt: "2026-10-14T22:10:00+04:00",
+    updatedAt: "2026-10-15T00:18:00+04:00",
     site: "sol2go",
     image: "/covers/ethglobal-mumbai-2026.jpg",
     imageAlt: "A hall at night with long rows of tables of laptops glowing mint under strings of small lights, a city skyline in the far window",
@@ -1847,6 +1865,12 @@ export const items: EventItem[] = [
     ],
     related: [
       {
+        href: "/events/devcon-8-agentic-hub-2026/",
+        eyebrow: "3 to 6 November",
+        title: "The Agentic Hub at Devcon 8",
+        text: "Four days of AI agents inside Devcon, the place to test an agent idea before the hackathon.",
+      },
+      {
         href: "/events/solana-summit-india-2026/",
         eyebrow: "2 November",
         title: "Solana Summit India",
@@ -1867,5 +1891,199 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Apply before 23 October even without a team: applications are individual, and ETHGlobal holds an online team-forming session on 30 October. The new rule favours anyone with a half-finished open-source project, as long as the new feature is built during the weekend.",
+  },
+
+  {
+    slug: "devcon-8-agentic-hub-2026",
+    createdAt: "2026-10-15T00:18:00+04:00",
+    updatedAt: "2026-10-15T00:18:00+04:00",
+    site: "sol2go",
+    image: "/covers/devcon-8-agentic-hub-2026.jpg",
+    imageAlt: "A glass-walled booth in a dark exhibition hall, a tall screen of glowing pink tiles inside it and small cups of tea on its mint floor",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "The Agentic Hub at Devcon 8",
+    cardTitle: "Agentic Hub, Devcon 8",
+    titleSeo: "Devcon 8 Agentic Hub: AI agents, 3–6 Nov",
+    summary:
+      "Four days of AI agents inside Devcon 8 in Mumbai, 3–6 November 2026: ERC-8004 identity, x402 payments that also run on Solana, and live agent games anyone can join.",
+    start: "2026-11-03",
+    end: "2026-11-06",
+    utcOffset: "+05:30",
+    venue: "Jio World Centre, G Block, Bandra Kurla Complex",
+    city: "Mumbai",
+    country: "India",
+    geo: {
+      name: "Jio World Centre",
+      lat: 19.063875,
+      lng: 72.866638,
+    },
+    organizer: "Devcon",
+    category: "Community hub",
+    editorsChoice: true,
+    tickets: { priceFrom: 499, priceTo: 999, currency: "USD" },
+    ticket: { url: "https://devcon.org/en/tickets/", label: "Devcon tickets" },
+    source: {
+      name: "Devcon Forum",
+      url: "https://forum.devcon.org/t/announcing-the-devcon-8-india-community-hubs/9191",
+      verifiedOn: "2026-10-15",
+    },
+    body: [
+      "Devcon chose fourteen community hubs for its Mumbai edition out of 32 proposals, and one of them is given over to AI agents. As Devcon describes it, agents already pay, trade and negotiate on Ethereum, and the <strong>Agentic Hub</strong> brings together the communities behind the open agent stack, <strong>ERC-8004, x402, account abstraction and agent security</strong>, for hands-on sessions and live competitions on all four days of <a href=\"/events/devcon-8-mumbai-2026/\" title=\"Devcon 8, Mumbai, 3 to 6 November\">Devcon 8</a>, <strong>3 to 6 November 2026</strong>, at the Jio World Centre.",
+      "## Why it is on a Solana calendar",
+      "Because of x402, the HTTP-402 machine-payments standard the hub builds its demos on. Its own site calls it blockchain-agnostic, supporting every EVM chain <strong>and Solana</strong>, so an agent that pays for an API over x402 on Solana speaks the same protocol as the agents at the hub's chai counter. The other reason is the calendar: <a href=\"/events/solana-summit-india-2026/\" title=\"Solana Summit India, Mumbai, 2 November\">Solana Summit India</a> is the day before Devcon opens.",
+      "## Who it is for",
+      "Crypto people who already work with AI, and developers who build with AI and want to see what a wallet does for an agent. The organisers' promise is that within ten minutes of walking in, anyone can register an agent on the ERC-8004 registries, give it scoped wallet permissions and watch it pay for a chai with a stablecoin micro-payment. A beginners' session, agents from zero, is planned for 09:30 every day.",
+      "## The programme",
+      "The organisers' sample programme runs from 09:00 to 18:00 each day, one theme a day, with the main sessions repeated so that no single slot fills up. The final schedule is set with the Devcon team, so read the days below as the plan rather than the timetable.",
+      "## The competitions",
+      "Seven games run on the hub's screen all week, for glory, stickers and chai rather than money. In <strong>Vault Agent</strong> you get two minutes at the microphone to talk an agent into opening a prize box it has been told never to open. There is a prompt-injection ladder where anyone can attack anyone's defence by QR code, a haggle-off between negotiating agents, <strong>Chai-per-Second</strong>, a race to find, negotiate and pay for a chai over x402, a remittance relay from a dollar stablecoin into a local-currency one, Agent Werewolf every night, and a prediction derby scored on calibration.",
+      "Wallet exercises run on testnets by default, with wallets the hub provides, so no attendee's own money is ever at stake.",
+      "## Who runs it",
+      "Community hubs are run by community groups rather than by Devcon, and they must stay educational: no single project may brand or market through one. This hub was proposed by <strong>Lena Hierzi</strong>, developer relations lead at Celo Core Co, with <strong>Solène Daviaud</strong> of Dev3pack, who co-hosted hubs at Devcon in Bangkok and Devconnect in Buenos Aires. Tracks are led by Vitto Rivabella (ERC-8004), Doris Hernandez (wallet security and account abstraction), Uttam Singh (latency and RPC), Aayush of Nethermind and Naina of Dev3pack India. Self, the identity project, is confirmed, and invitations are out to x402 contributors including Cloudflare, Mastercard and Coinbase.",
+      "## Getting in",
+      "The hub is part of Devcon, so a Devcon ticket covers it: <strong>$499 in ETH or $999 by card</strong>, or <strong>$149</strong> for residents of India. Competitions are joined by QR code, and the hub's screen is meant to be read from the aisle.",
+      "## The rest of the AI week",
+      "On the evening of 4 November, NEAR's <a href=\"/events/diyas-near-devcon-mumbai-2026/\" title=\"Diyas: NEAR @ Devcon, Mumbai, 4 November\">Diyas</a> turns a rooftop into a party-game version of the same idea, with squads building a swap intent from NEAR to Solana and firing it on-chain. From the 5th, <a href=\"/events/ethglobal-mumbai-2026/\" title=\"ETHGlobal Mumbai, 5 to 7 November\">ETHGlobal Mumbai</a> runs its hackathon in the same building.",
+    ],
+    programme: [
+      {
+        heading: "Day 1: the lay of the land",
+        text: "What shipped and where it still breaks, a live walkthrough of registering an agent on the ERC-8004 Identity Registry, and a clinic on how 8004, x402, AP2 and ACP fit together.",
+      },
+      {
+        heading: "Day 2: security and permissions",
+        text: "Delegating to an agent safely, with EIP-7702 delegation, session keys, spending caps and revocation; a threat-modelling round on prompt injection and key theft; and a red-team hour in which the audience tries to make a sandboxed agent misbehave.",
+      },
+      {
+        heading: "Day 3: payments in the real world",
+        text: "An agent buys a real chai through the hub's x402 endpoint, then stablecoins and agentic FX, and an India session on what machine payments can learn from UPI.",
+      },
+      {
+        heading: "Day 4: reputation and trust",
+        text: "The ERC-8004 reputation and validation registries, how reputation systems fail, a roadmap for the gaps, and the competition finals at 17:00.",
+      },
+    ],
+    faq: [
+      {
+        q: "What is the Agentic Hub at Devcon 8?",
+        a: "One of the fourteen community hubs Devcon selected for Mumbai: four days of hands-on sessions and live competitions on AI agents, built around ERC-8004, x402, account abstraction and agent security.",
+      },
+      {
+        q: "Do I need a separate ticket for the Agentic Hub?",
+        a: "No. It is part of Devcon 8, so a Devcon ticket covers it: $499 in ETH, $999 by card, or $149 for residents of India.",
+      },
+      {
+        q: "Does x402 work on Solana?",
+        a: "Yes. x402's own site describes it as blockchain-agnostic, supporting all EVM-compatible chains and Solana. ERC-8004, the agent identity standard the hub also covers, is an Ethereum standard.",
+      },
+      {
+        q: "Is the Agentic Hub for beginners?",
+        a: "Yes: the organisers plan an agents-from-zero session at 09:30 every day, and the competitions are joined by QR code.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/diyas-near-devcon-mumbai-2026/",
+        eyebrow: "4 November",
+        title: "Diyas: NEAR @ Devcon",
+        text: "A rooftop game in which squads fire a NEAR-to-Solana swap intent on-chain.",
+      },
+      {
+        href: "/events/devcon-8-mumbai-2026/",
+        eyebrow: "3 to 6 November",
+        title: "Devcon 8",
+        text: "The conference the hub sits inside, and what a ticket costs.",
+      },
+      {
+        href: "/events/ethglobal-mumbai-2026/",
+        eyebrow: "5 to 7 November",
+        title: "ETHGlobal Mumbai",
+        text: "The hackathon in the same building, free with a returnable stake.",
+      },
+    ],
+    expertise:
+      "Go on the first morning if you can. The beginners' session repeats every day, but an agent entered on day one has all four days on the competition ladder, and the finals are on the last afternoon. Day three, the payments day, is the one closest to what Solana builders ship.",
+  },
+
+  {
+    slug: "diyas-near-devcon-mumbai-2026",
+    createdAt: "2026-10-15T00:18:00+04:00",
+    updatedAt: "2026-10-15T00:18:00+04:00",
+    site: "sol2go",
+    image: "/covers/diyas-near-devcon-mumbai-2026.jpg",
+    imageAlt: "A rooftop at dusk lined with small flame-lit clay lamps and marigold garlands, a few couples standing before a skyline of towers",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Diyas: NEAR @ Devcon",
+    cardTitle: "Diyas: NEAR @ Devcon",
+    titleSeo: "Diyas: NEAR at Devcon Mumbai, 4 November",
+    summary:
+      "A Diwali-lit party game in Mumbai on 4 November 2026, 16:00 to 20:00: squads build a confidential swap intent from NEAR to Solana and fire it on-chain. Free, with approval.",
+    start: "2026-11-04",
+    startTime: "16:00",
+    endTime: "20:00",
+    utcOffset: "+05:30",
+    city: "Mumbai",
+    country: "India",
+    organizer: "ArQ and Abhiraj Mengade, NEAR Legion",
+    category: "Side event",
+    tickets: { priceFrom: 0, currency: "USD" },
+    ticket: { url: "https://luma.com/hr8w0hmd", label: "Request a place" },
+    source: {
+      name: "NEAR Legion on Luma",
+      url: "https://luma.com/hr8w0hmd",
+      verifiedOn: "2026-10-15",
+    },
+    body: [
+      "Diyas is NEAR's evening of Devcon week, on <strong>Wednesday 4 November 2026, 16:00 to 20:00</strong>: a rooftop at a Mumbai working space, lit with diyas, marigolds and string lights, turned into a live agent economy in which the guests play the chains, the swaps and the secrets. The hosts promise no slides and no talks, only the game.",
+      "## Why it is on a Solana calendar",
+      "Because the intent every squad builds ends on Solana. Each guest arrives with a persona card that NEAR AI makes from their RSVP answers, carrying shards of an intent. You find five others whose shards complete one valid cross-chain intent, <strong>from NEAR to Solana, a swap, in confidential mode</strong>, and take it to the Executor Booth, where an operator runs it as a real micro-intent of a dollar or two on-chain, with a testnet fallback, and prints the transaction hash.",
+      "## What you take home",
+      "A squad Polaroid with the transaction hash and a TEE attestation written on the back, which the desk trades for Diwali merchandise that is not on sale anywhere.",
+      "## Getting in",
+      "Free, with the hosts' approval. Fill in the RSVP questionnaire, because your persona card is made from it; come alone if you like, since squads form at the door; and bring a phone and your wallet handle. The hosts are ArQ and Abhiraj Mengade, and the evening is on NEAR Legion's events calendar.",
+      "## NEAR's other evenings that week",
+      "<strong>NEAR Builder's Cafe #2</strong>, on <strong>Saturday 31 October, 18:00 to 21:00</strong>, from the same hosts, is a reading evening: up to three people each bring one original text, from Turing and Shannon to <em>Attention Is All You Need</em>, and the room asks what changes now that machines can read, reason and act on it. The <strong>NEAR × Quantus Happy Hour</strong>, on <strong>Thursday 5 November, 18:00 to 21:00</strong> by G Block in Bandra Kurla Complex, is about quantum-resistant infrastructure and the confidential money NEAR Intents is bringing to cross-chain trading. Both need the hosts' approval.",
+      "And for all four days of Devcon, the <a href=\"/events/devcon-8-agentic-hub-2026/\" title=\"The Agentic Hub at Devcon 8, 3 to 6 November\">Agentic Hub</a> inside the Jio World Centre runs the working version of the same idea: agents with identities, wallets and x402 payments.",
+    ],
+    faq: [
+      {
+        q: "When and where is Diyas: NEAR @ Devcon?",
+        a: "On Wednesday 4 November 2026, from 16:00 to 20:00, on a rooftop at a working space in Mumbai. The listing names only the city.",
+      },
+      {
+        q: "Is Diyas free?",
+        a: "Yes. Places are free and approved by the hosts.",
+      },
+      {
+        q: "Do I need to know NEAR or Solana to play?",
+        a: "No. Guests who come alone are welcome, squads form at the door, and the operator at the Executor Booth runs the transaction.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/devcon-8-agentic-hub-2026/",
+        eyebrow: "3 to 6 November",
+        title: "The Agentic Hub at Devcon 8",
+        text: "Four days of AI agents, ERC-8004 and x402 inside Devcon.",
+      },
+      {
+        href: "/events/devcon-8-mumbai-2026/",
+        eyebrow: "3 to 6 November",
+        title: "Devcon 8",
+        text: "Ethereum's conference, the week this evening belongs to.",
+      },
+      {
+        href: "/events/solana-summit-india-2026/",
+        eyebrow: "2 November",
+        title: "Solana Summit India",
+        text: "Solana's own day in Mumbai, two days earlier.",
+      },
+    ],
+    expertise:
+      "Answer the RSVP questions properly: your persona card is made from them, and the hosts warn that a guest who skips them arrives as an NPC.",
   },
 ];
