@@ -100,7 +100,10 @@
       "tompkins-square-halloween-dog-parade-2026": "a flat side-on procession of small dogs in costumes walking in a line along a street band, one in a tiny witch hat, one in a cape, one dressed as a pumpkin, a row of park trees behind them with autumn leaves falling",
       "harry-styles-madison-square-garden-final-night-2026": "a squat round drum-shaped modern arena at night wrapped in smooth horizontal bands of warm light, a city street in front of it, a single microphone on a stand in the foreground, a few paper bats and a crescent moon in a deep blue sky, full-bleed to every edge",
       "rawayana-barclays-center-2026": "a low arena under a sweeping rust-brown latticed canopy at dusk, a small stage in front with a pair of conga drums and an acoustic guitar on a stand, strings of small lights overhead",
-      "dia-de-los-muertos-nybg-2026": "a giant papier-mâché skeleton puppet in a long dress and a wide flower-trimmed hat walking along a curving garden path, strings of cut-paper banners in pink, orange and green hanging between trees above, orange marigolds lining the path, two small skeleton puppets following behind"
+      "dia-de-los-muertos-nybg-2026": "a giant papier-mâché skeleton puppet in a long dress and a wide flower-trimmed hat walking along a curving garden path, strings of cut-paper banners in pink, orange and green hanging between trees above, orange marigolds lining the path, two small skeleton puppets following behind",
+      "macys-thanksgiving-day-parade-2026": "a giant round inflatable blue hippopotamus balloon floating high between two rows of plain flat-fronted tall buildings, a line of tiny figures below holding it down on long ropes, scraps of cut-paper confetti in the air, flat layered paper shapes with no shop signs and no lettering anywhere",
+      "rockefeller-center-christmas-tree-lighting-2026": "a very tall Christmas tree covered in small warm lights and topped by a large star, standing above a sunken plaza with an oval ice rink, a ring of flagpoles around the rink, one slender stepped art deco skyscraper rising straight up behind the tree",
+      "bryant-park-winter-village-2026": "an outdoor ice rink in a city park at dusk with small skaters on the ice, a row of little holiday kiosks with peaked roofs along one side, a few small clear dome igloos at the edge, bare trees strung with lights, tall buildings behind"
     },
     "ldn": {
       "london-design-festival-2026": {
@@ -162,7 +165,8 @@
       "winnie-the-pooh-at-london-zoo-2026": "a small round honey pot standing on an open book that lies on a low grassy mound, one rounded tree beside it, a trail of loose book pages curving away behind them into the distance",
       "rowan-live-gillian-lynne-theatre-2027": "a pair of tall stage curtains drawn apart around a single empty armchair standing under one round spotlight on a bare stage",
       "sky-garden-halloween-dance-of-the-dead-2026": "a tall glass tower that widens towards its top, the crown of it filled with green plants and tiny glowing lanterns, small paper bats circling it, a crescent moon over a low city skyline at night",
-      "halloween-silent-disco-london-transport-museum-2026": "the inside of an old railway carriage with wooden slatted seats, brass poles and leather hand straps hanging in a long row, three pairs of large over-ear headphones hanging from the straps and glowing pink, green and blue, a few small paper bats dangling from the curved ceiling, plain bare walls, dark night beyond the windows"
+      "halloween-silent-disco-london-transport-museum-2026": "the inside of an old railway carriage with wooden slatted seats, brass poles and leather hand straps hanging in a long row, three pairs of large over-ear headphones hanging from the straps and glowing pink, green and blue, a few small paper bats dangling from the curved ceiling, plain bare walls, dark night beyond the windows",
+      "regent-street-christmas-lights-2026": "a gently curving street of tall cream stone buildings at night, large glowing angel figures with outstretched wings hung on wires across the street one after another, receding along the curve, the road empty of traffic with small figures walking down the middle of it"
     },
     "lnd": {
       "giant-summer-flea-olympic-park": {
@@ -366,7 +370,8 @@
         "detail": "sixteen identical small rounded seat shapes evenly spaced in a single ring, the centre of the ring left as empty ground, each seat with a soft shadow"
       },
       "devfest-armenia-2026": "two long parallel lanes of small flat lilac and mint square tiles running from the front edge of the frame to one wide arched cream doorway on the far wall, an empty violet floor on either side, no lettering anywhere",
-      "solana-demo-day-london-2026": "a low raised stage with one small lectern before a wide blank screen glowing violet and mint, rows of simple chair shapes in the foreground seen from behind, a classical stone arcade with tall arched windows framing the hall"
+      "solana-demo-day-london-2026": "a low raised stage with one small lectern before a wide blank screen glowing violet and mint, rows of simple chair shapes in the foreground seen from behind, a classical stone arcade with tall arched windows framing the hall",
+      "solana-intelligence-summit-london-2026": "a neoclassical stone courtyard seen through a tall arched gateway, a long table in the middle of the courtyard set with a row of small glowing screens, a fine lattice of thin glowing lines rising from the screens into the evening air, tall pale stone facades with rows of windows on three sides"
     },
     "vien": {
       "viennale-2026": {
@@ -823,7 +828,9 @@
       "editing-ai-video-in-comfyui-nodes": "a large pair of scissors cutting through a glowing film strip, small plain boxes joined by cables around it",
       "ltx-2-5-vs-minimax-h3-open-video-models": "two tall glowing monoliths facing each other across the frame, one magenta and one cyan, small film frames and sound waves circling each",
       "kling-4-keyframes-shot-list-for-screenwriters": "a row of five blank glowing panels pinned to a dark wall, a single thread of light running from pin to pin in order",
-      "ai-video-prompt-formats-ltx-minimax-h3-kling": "three different glowing consoles side by side, each sending its own beam of light into one shared screen above them"
+      "ai-video-prompt-formats-ltx-minimax-h3-kling": "three different glowing consoles side by side, each sending its own beam of light into one shared screen above them",
+      "vidu-q4-preview-voice-references-4k": "a large glowing film frame on a screen, fed from below by three ribbons of glowing sound waves and a fan of many small reference picture cards arranged in an arc",
+      "comfyui-0-39-0-40-vidu-q4-heygen-camera-angle": "a wide graph of glowing rounded boxes joined by curving cables, one box holding a small film camera on a rotating dial, two new boxes sliding into place at the edge of the graph"
     },
     "tea": {
       "420": "a tall copper tea urn with a brass tap on a mahogany sideboard in a firelit wood-panelled common room, white china cups lined up beside it, an oxblood leather armchair, a gilt-framed landscape of hills on the panelling, low late-afternoon sun slanting through a tall window",

@@ -240,6 +240,16 @@
     "for": [
       "sol2go"
     ],
+    "name": "Solana Foundation on Luma",
+    "url": "https://api.lu.ma/ics/get?entity=calendar&id=cal-J8WZ4jDbwzD9TWi",
+    "kind": "ics",
+    "notes": "The Foundation's own calendar, as opposed to the community one above: summits and Breakpoint-week side events. It went back to 2022 when added in October 2026 and still had eight dates ahead, the Intelligence Summit at Somerset House among them."
+  },
+  {
+    "site": "solana",
+    "for": [
+      "sol2go"
+    ],
     "name": "Solana Armenia on Luma",
     "url": "https://api.lu.ma/ics/get?entity=calendar&id=cal-qSEPsYe7n65CxTj",
     "kind": "ics",

@@ -2116,7 +2116,7 @@ export const items: EventItem[] = [
   {
     slug: "christmas-spectacular-radio-city-2026",
     createdAt: "2026-09-12T22:20:00+04:00",
-    updatedAt: "2026-09-12T22:20:00+04:00",
+    updatedAt: "2026-10-14T21:25:00+04:00",
     site: "nyc42",
     image: "/covers/christmas-spectacular-radio-city-2026.jpg",
     imageAlt:
@@ -2188,6 +2188,20 @@ export const items: EventItem[] = [
       {
         q: "Where is Radio City Music Hall?",
         a: "1260 Avenue of the Americas, New York, NY 10020, in Midtown Manhattan. The box office is open Monday to Saturday from noon to 6 p.m.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/rockefeller-center-christmas-tree-lighting-2026/",
+        eyebrow: "December 2",
+        title: "Rockefeller Center Christmas Tree Lighting",
+        text: "The tree goes up a few minutes' walk from the Music Hall, at Rockefeller Plaza.",
+      },
+      {
+        href: "/events/bryant-park-winter-village-2026/",
+        eyebrow: "From October 28",
+        title: "Bank of America Winter Village at Bryant Park",
+        text: "Free skating and the holiday shops, straight down Sixth Avenue at 42nd Street.",
       },
     ],
     expertise:
@@ -2495,5 +2509,261 @@ export const items: EventItem[] = [
     ],
     expertise:
       "If you can go only once, go on the 31st or the 1st. The month-long part, the ofrenda and the workshops, is pleasant on any weekend; the puppets, the dancers and the parade are packed into the last three days. The parade is an outdoor procession the Garden will cancel in the rain, so on 1 November look at the sky before setting out, and come for the 1pm crafts rather than the 2pm start: the costume you make is the one you walk in.",
+  },
+
+  {
+    slug: "macys-thanksgiving-day-parade-2026",
+    createdAt: "2026-10-14T21:15:00+04:00",
+    updatedAt: "2026-10-14T21:15:00+04:00",
+    site: "nyc42",
+    image: "/covers/macys-thanksgiving-day-parade-2026.jpg",
+    imageAlt: "A giant blue hippopotamus balloon held on ropes above a street between tall buildings",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "The 100th Macy's Thanksgiving Day Parade",
+    cardTitle: "Macy's Thanksgiving Day Parade: the 100th",
+    titleSeo: "Macy's Thanksgiving Day Parade 2026: the 100th",
+    summary:
+      "New York's 100th Macy's Thanksgiving Day Parade is on Thursday, November 26, 2026, with a record 100 inflatables, Underdog flying for the first time since 1984, and the broadcast on NBC, Peacock and Telemundo from 8:30 a.m.",
+    start: "2026-11-26",
+    utcOffset: "-05:00",
+    city: "New York",
+    country: "United States",
+    organizer: "Macy's",
+    category: "Parade",
+    ticket: {
+      url: "https://www.macysinc.com/newsroom/news/news-details/2026/Macys-Kicks-Off-the-100-Day-Countdown-to-the-100th-Macys-Thanksgiving-Day-Parade/default.aspx",
+      label: "Macy's announcement",
+      sells: false,
+    },
+    source: {
+      name: "Macy's, Inc. newsroom",
+      url: "https://www.macysinc.com/newsroom/news/news-details/2026/Macys-Kicks-Off-the-100-Day-Countdown-to-the-100th-Macys-Thanksgiving-Day-Parade/default.aspx",
+      verifiedOn: "2026-10-14",
+    },
+    body: [
+      "A parade gets to its hundredth only once. Macy's marches its <strong>100th Thanksgiving Day Parade</strong> through Manhattan on <strong>Thursday, November 26, 2026</strong>, and has built the lineup around the number: <strong>100 inflatable elements</strong>, the most the parade has ever carried.",
+      "## New, and back after a long time",
+      "Two headliners lead the balloons: a brand-new <strong>Sorcerer's Apprentice Mickey</strong> from Disney, and a reimagined <strong>Underdog</strong>, whose flight on Thanksgiving morning will be his first over New York since <strong>1984</strong>. Two newcomers join them: <strong>Billie Brightpaw</strong>, the parade's newest character, and <strong>Tom Jr.</strong>, son of Tom Turkey.",
+      "## A century in one lineup",
+      "The <strong>Macy's All-Stars</strong> float brings back characters from parades past, Bullwinkle J. Moose, Olive Oyl, Popeye, Swee'Pea and Sonic the Hedgehog among them. A new float, <strong>Tony Sarg's Amazing Marionettes</strong>, honours the designer behind the parade's signature elements, with re-creations of his original characters and a puppet of Sarg himself. <strong>Felix the Cat</strong> returns too: in 1927 he was the parade's first character balloon, carried along the route on sticks, a year before the balloons were filled with helium.",
+      "## The balloon that got away",
+      "In the early years the balloons were let go at the end of the parade, and whoever returned one to Macy's got a prize. After the 1931 parade every balloon came back except the <strong>Blue Hippopotamus</strong>, last seen floating past the Empire State Building. It returns this year, and Macy's says the details of how will follow.",
+      "## Watching on TV",
+      "The parade is broadcast on <strong>NBC</strong>, <strong>Peacock</strong> and <strong>Telemundo</strong> from <strong>8:30 a.m. in every time zone</strong>.",
+      "## Watching on the street",
+      "Macy's announcement does not give the route or the time the parade steps off; those go up on macys.com/parade. Until then, the Herald Square flagship on 34th Street has a <strong>countdown clock</strong> to the 100th, and select Macy's stores are showing parade windows with balloons, archive images and facts from a century of parades.",
+    ],
+    faq: [
+      {
+        q: "When is the 2026 Macy's Thanksgiving Day Parade?",
+        a: "Thursday, November 26, 2026. It is the 100th Macy's Thanksgiving Day Parade.",
+      },
+      {
+        q: "What time is the parade on TV?",
+        a: "From 8:30 a.m. in all time zones, on NBC, Peacock and Telemundo.",
+      },
+      {
+        q: "Which balloons are new for the 100th parade?",
+        a: "Disney's Sorcerer's Apprentice Mickey is brand new, Underdog is reimagined and flies for the first time since 1984, and Billie Brightpaw and Tom Jr. are newcomers. Macy's says the lineup has a record 100 inflatable elements.",
+      },
+      {
+        q: "Has Macy's published the 2026 parade route?",
+        a: "Not in its 100-day announcement, which gives the date and the broadcast time. Macy's points to macys.com/parade for parade news.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/rockefeller-center-christmas-tree-lighting-2026/",
+        eyebrow: "December 2",
+        title: "Rockefeller Center Christmas Tree Lighting",
+        text: "The next big date of the New York season, six days after Thanksgiving.",
+      },
+      {
+        href: "/events/christmas-spectacular-radio-city-2026/",
+        eyebrow: "November 4 – January 4",
+        title: "Christmas Spectacular at Radio City",
+        text: "The Rockettes' season is already running by Thanksgiving week.",
+      },
+    ],
+    expertise:
+      "The 8:30 a.m. in that announcement is television's time, not the street's: the broadcast is scheduled so every time zone sees it at 8:30 local, which tells you nothing about when the balloons pass a given corner of Manhattan. Plan a morning on the route from the route Macy's publishes, not from the TV listing. If the centenary is the reason you are going, the things that exist only this year are the ones worth looking for: Underdog after 42 years, the Tony Sarg float and the Blue Hippopotamus.",
+  },
+
+  {
+    slug: "rockefeller-center-christmas-tree-lighting-2026",
+    createdAt: "2026-10-14T21:15:00+04:00",
+    updatedAt: "2026-10-14T21:15:00+04:00",
+    site: "nyc42",
+    image: "/covers/rockefeller-center-christmas-tree-lighting-2026.jpg",
+    imageAlt: "A tall lit Christmas tree with a star on top, standing above a fenced oval ice rink at night",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Rockefeller Center Christmas Tree Lighting 2026",
+    cardTitle: "Rockefeller Center Tree Lighting",
+    titleSeo: "Rockefeller Center Tree Lighting: Dec 2, 2026",
+    summary:
+      "New York's Rockefeller Center Christmas Tree arrives on November 7 for Meet the Tree Day and is lit at the annual ceremony on Wednesday, December 2, 2026. Visiting hours and the tree itself are still to be announced.",
+    start: "2026-12-02",
+    utcOffset: "-05:00",
+    venue: "Rockefeller Plaza",
+    city: "New York",
+    country: "United States",
+    geo: {
+      name: "Rockefeller Plaza",
+      lat: 40.758757,
+      lng: -73.97865,
+    },
+    organizer: "Rockefeller Center",
+    category: "Christmas",
+    ticket: {
+      url: "https://www.rockefellercenter.com/holidays/rockefeller-center-christmas-tree",
+      label: "Rockefeller Center",
+      sells: false,
+    },
+    source: {
+      name: "Rockefeller Center",
+      url: "https://www.rockefellercenter.com/holidays/rockefeller-center-christmas-tree",
+      verifiedOn: "2026-10-14",
+    },
+    body: [
+      "Two dates are fixed for the Rockefeller Center tree. It arrives at Rockefeller Plaza on <strong>Saturday, November 7</strong>, and it is lit at the annual Tree Lighting Ceremony on <strong>Wednesday, December 2, 2026</strong>.",
+      "## Meet the Tree Day: November 7",
+      "The arrival is an event of its own now. <strong>Meet the Tree Day</strong>, back for its second year, invites families to Rockefeller Center to welcome the tree as it comes into the city, weeks before the lights go on.",
+      "## The lighting: December 2",
+      "The ceremony is on <strong>December 2</strong>. Rockefeller Center has not yet published the time, the performers or the broadcast details, and says to check back as the season gets closer.",
+      "## What has not been announced",
+      "Where the tree comes from, how tall it is and who donated it. Visiting hours after the lighting are also still to come.",
+      "## After the season",
+      "As in past years, the 2026 tree will be given to <strong>Habitat for Humanity</strong>, milled, treated and made into lumber for building homes.",
+      "## Where it started",
+      "In December 1931, construction workers building Rockefeller Center pooled their money for a 20-foot balsam fir, decorated it with garlands their families made and put it up on Christmas Eve. The tradition has run from there.",
+    ],
+    faq: [
+      {
+        q: "When is the Rockefeller Center Christmas tree lighting in 2026?",
+        a: "Wednesday, December 2, 2026. The tree arrives at Rockefeller Plaza on November 7.",
+      },
+      {
+        q: "What is Meet the Tree Day?",
+        a: "The day the tree arrives, November 7, when Rockefeller Center invites families to come and welcome it. 2026 is its second year.",
+      },
+      {
+        q: "Where does the 2026 tree come from, and how tall is it?",
+        a: "Rockefeller Center had not announced either as of October 14, 2026.",
+      },
+      {
+        q: "What happens to the tree after Christmas?",
+        a: "It is donated to Habitat for Humanity, milled and made into lumber for building homes.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/christmas-spectacular-radio-city-2026/",
+        eyebrow: "November 4 – January 4",
+        title: "Christmas Spectacular at Radio City",
+        text: "The Rockettes, around the corner on Sixth Avenue, all season.",
+      },
+      {
+        href: "/events/bryant-park-winter-village-2026/",
+        eyebrow: "October 28 – February 28",
+        title: "Winter Village at Bryant Park",
+        text: "Free-admission skating eight blocks south, open well before the tree is lit.",
+      },
+      {
+        href: "/events/macys-thanksgiving-day-parade-2026/",
+        eyebrow: "November 26",
+        title: "The 100th Macy's Thanksgiving Day Parade",
+        text: "Thanksgiving morning, six days before the lighting.",
+      },
+    ],
+    expertise:
+      "Two dates, two different visits. Meet the Tree Day on November 7 is the one with room to stand: the tree is there, unlit, and the plaza is not yet the crush of December. The lighting on December 2 is a television event first, and the plaza around it fills accordingly. If the point is to see the tree lit rather than to be present at the switch, any evening after the ceremony does that, once Rockefeller Center publishes its visiting hours.",
+  },
+
+  {
+    slug: "bryant-park-winter-village-2026",
+    createdAt: "2026-10-14T21:15:00+04:00",
+    updatedAt: "2026-10-14T21:15:00+04:00",
+    site: "nyc42",
+    image: "/covers/bryant-park-winter-village-2026.jpg",
+    imageAlt: "Skaters on an outdoor rink with two dome kiosks, string lights and a city skyline at dusk",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Bank of America Winter Village at Bryant Park 2026",
+    cardTitle: "Winter Village at Bryant Park",
+    titleSeo: "Bryant Park Winter Village 2026: free skating",
+    summary:
+      "New York's Bryant Park Winter Village opens on October 28, 2026: free-admission skating on a 17,000-square-foot rink until February 28, 2027, the Holiday Shops until January 3, and The Lodge bar and food hall beside the ice.",
+    start: "2026-10-28",
+    end: "2027-02-28",
+    utcOffset: "-04:00",
+    venue: "Bryant Park",
+    city: "New York",
+    country: "United States",
+    geo: {
+      name: "Bryant Park",
+      lat: 40.753751,
+      lng: -73.983543,
+    },
+    category: "Christmas",
+    tickets: { priceFrom: 0, currency: "USD" },
+    ticket: {
+      url: "https://bryantpark.org/activities/bank-of-america-winter-village-at-bryant-park",
+      label: "Reserve a skating session",
+    },
+    source: {
+      name: "Bryant Park",
+      url: "https://bryantpark.org/activities/bank-of-america-winter-village-at-bryant-park",
+      verifiedOn: "2026-10-14",
+    },
+    body: [
+      "Bryant Park turns into its winter self on <strong>Wednesday, October 28, 2026</strong>, more than a month before the Rockefeller tree is lit. The <strong>Bank of America Winter Village</strong> has three parts, a rink, a market and a bar, and they close on different dates.",
+      "## The rink: October 28 to February 28",
+      "The centrepiece is a <strong>17,000-square-foot rink</strong> with <strong>free admission</strong>: you skate for nothing in your own skates, or rent a pair there, and the rink also puts on free skating shows. It is open <strong>daily, holidays included</strong>, from <strong>8 a.m. to 10 p.m.</strong>, and until <strong>midnight from November 19 to January 3</strong>. Sessions are reserved on Bryant Park's site.",
+      "## The Holiday Shops: October 28 to January 3",
+      "An open-air market run by Urbanspace along the park's paths, plazas and terraces, in custom-built “jewel box” kiosks, with makers from New York and around the world. <strong>Monday to Friday 11 a.m. to 8 p.m.</strong>, <strong>Saturday and Sunday 10 a.m. to 8 p.m.</strong>, every day including holidays; many shops stay open later at weekends and in peak season. The 2026 directory has not been posted yet.",
+      "## The Lodge: October 28 to February 28",
+      "The rinkside bar and food hall, open air, with full-service bars and food from local places. <strong>Daily, 10 a.m. to 10 p.m.</strong>, and to <strong>11:30 p.m. from November 18 to January 3</strong>.",
+      "## Igloos",
+      "<strong>Cozy Igloos</strong> are private domes for up to eight people: 90-minute sessions with seasonal food and drinks, booked separately and without access to the rink. Early in 2027 they become <strong>Rosy Igloos</strong> for the run-up to Valentine's Day.",
+    ],
+    faq: [
+      {
+        q: "When does Bryant Park Winter Village open in 2026?",
+        a: "Wednesday, October 28, 2026. The rink and The Lodge run until February 28, 2027; the Holiday Shops close on January 3.",
+      },
+      {
+        q: "Is ice skating at Bryant Park free?",
+        a: "Admission to the rink is free. You can bring your own skates or rent them at the rink.",
+      },
+      {
+        q: "What are the rink's hours?",
+        a: "Daily, including holidays, 8 a.m. to 10 p.m., extended to midnight from November 19 to January 3.",
+      },
+      {
+        q: "What are the Holiday Shops' hours?",
+        a: "Monday to Friday 11 a.m. to 8 p.m., Saturday and Sunday 10 a.m. to 8 p.m., from October 28, 2026 to January 3, 2027.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/rockefeller-center-christmas-tree-lighting-2026/",
+        eyebrow: "December 2",
+        title: "Rockefeller Center Christmas Tree Lighting",
+        text: "The tree arrives November 7 and is lit on December 2, eight blocks north.",
+      },
+      {
+        href: "/events/christmas-spectacular-radio-city-2026/",
+        eyebrow: "November 4 – January 4",
+        title: "Christmas Spectacular at Radio City",
+        text: "The Rockettes' season, a short walk up Sixth Avenue.",
+      },
+    ],
+    expertise:
+      "Free admission means the rink is busiest at the obvious times: December weekends and the holiday weeks. The opening weeks, from October 28 into November, are likely to be the quieter stretch, with the ice and the shops already open. From November 19 the rink runs until midnight, and a late weekday session is the way to get ice with room on it in December. Plan the Holiday Shops first if they are the reason for the trip, since they close on January 3 while the rink runs to the end of February.",
   },
 ];

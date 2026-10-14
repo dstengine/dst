@@ -134,6 +134,27 @@ export function sections(items: FeedItem[], lang: Lang): Section[] {
               headings: { events: "Wine events with a date", upcoming: "Coming up", past: "Past wine events" },
             };
       }
+      // "Classical music in Yerevan" is asked by visitors choosing an
+      // evening, so the page answers the halls as well as the dates.
+      if (g.key === "Դասական երաժշտություն" || g.key === "Classical") {
+        return lang === "hy"
+          ? {
+              title: "Դասական երաժշտություն Երևանում․ համերգներ և դահլիճներ",
+              description:
+                "Դասական համերգներ Երևանում՝ ամսաթվով և տոմսի գնով, և երեք դահլիճ, որտեղ դրանք հնչում են՝ Արամ Խաչատրյան համերգասրահ, Օպերա, Կոմիտասի անվան կամերային երաժշտության տուն։",
+              h1: "Դասական երաժշտություն Երևանում",
+              lede: "Սիմֆոնիկ, կամերային և երգեհոնային համերգներ՝ ամսաթվով, իսկ դրանցից ներքև՝ Երևանի երեք դահլիճները, որտեղ դրանք հնչում են, և ինչպես գնել տոմս։",
+              headings: { events: "Դասական համերգներ՝ ամսաթվով", upcoming: "Առաջիկայում", past: "Անցած համերգներ" },
+            }
+          : {
+              title: "Classical music in Yerevan: concerts and concert halls",
+              description:
+                "Classical concerts in Yerevan by date, with ticket prices, and the three halls they are played in: the Aram Khachaturian Concert Hall, the Opera and the Komitas Chamber Music House.",
+              h1: "Classical music in Yerevan",
+              lede: "Symphony, chamber and organ concerts by date, and below them the three Yerevan halls they are played in, with how to buy a ticket.",
+              headings: { events: "Classical concerts with a date", upcoming: "Coming up", past: "Past concerts" },
+            };
+      }
       const what = g.voc.plural ?? g.key;
       return lang === "hy"
         ? {

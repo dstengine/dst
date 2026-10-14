@@ -1780,4 +1780,92 @@ export const items: EventItem[] = [
     expertise:
       "The two sessions are not the same evening at different hours. The early one ends at nine, which suits anyone with a dinner, a second party or a last train to think of; the late one runs to midnight and is the one for people who came to dance rather than to look round the buses. Book the session, not the night — and a ticket that cannot be refunded can still be given to a friend.",
   },
+
+  {
+    slug: "regent-street-christmas-lights-2026",
+    createdAt: "2026-10-14T21:20:00+04:00",
+    updatedAt: "2026-10-14T21:20:00+04:00",
+    site: "ldn",
+    image: "/covers/regent-street-christmas-lights-2026.jpg",
+    imageAlt: "Red angels with outstretched wings hung across a curving street of cream stone buildings",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Regent Street Christmas lights switch-on 2026",
+    cardTitle: "Regent Street lights switch-on",
+    titleSeo: "Regent Street Christmas lights switch-on 2026",
+    summary:
+      "London's Regent Street switches on its Spirit of Christmas lights on Thursday 5 November 2026, closing the street to traffic from 5pm to 9pm for an evening of family entertainment and in-store events across Regent Street and St James's.",
+    start: "2026-11-05",
+    startTime: "17:00",
+    endTime: "21:00",
+    utcOffset: "+00:00",
+    venue: "Regent Street and St James's",
+    city: "London",
+    country: "United Kingdom",
+    geo: {
+      name: "Regent Street",
+      lat: 51.510717,
+      lng: -0.138597,
+    },
+    organizer: "Regent Street",
+    category: "Christmas",
+    ticket: {
+      url: "https://www.regentstreetonline.com/news/festive-spirits-return-for-2026",
+      label: "Regent Street's announcement",
+      sells: false,
+    },
+    source: {
+      name: "Regent Street",
+      url: "https://www.regentstreetonline.com/news/festive-spirits-return-for-2026",
+      verifiedOn: "2026-10-14",
+    },
+    body: [
+      "The angels are coming back. Regent Street's <strong>Spirit of Christmas</strong> lights, the great winged figures it calls Spirits, have hung over the street since <strong>2016</strong>, and they are switched on on <strong>Thursday 5 November 2026</strong>.",
+      "## Where the angels come from",
+      "Regent Street was the first place in central London to put up Christmas lights, in 1954, and the Spirits are drawn from that year's design: traditional angels playing trumpets, here without the trumpets. They were made by James Glancy Design with The Crown Estate, each one a hand-made sculpture built in London.",
+      "## The switch-on evening",
+      "For the occasion Regent Street <strong>closes to traffic from 5pm to 9pm</strong>, so the lights can be looked at from the middle of the road rather than a crowded pavement. The street promises entertainment for the whole family and an evening of in-store experiences, treats and offers from its shops, restaurants and bars, across Regent Street and St James's.",
+      "## What's new",
+      "The angels are the same, but Regent Street promises a new twist for 2026, with new details to discover. It has not said yet what they are.",
+      "## More to come",
+      "Regent Street says more details of the evening will follow on its website and social channels.",
+    ],
+    faq: [
+      {
+        q: "When are the Regent Street Christmas lights switched on in 2026?",
+        a: "Thursday 5 November 2026.",
+      },
+      {
+        q: "Is Regent Street closed to traffic for the switch-on?",
+        a: "Yes, from 5pm to 9pm on 5 November.",
+      },
+      {
+        q: "What are the Regent Street lights?",
+        a: "The Spirit of Christmas: large angel figures, the Spirits, hung along Regent Street every Christmas since 2016 and drawn from the street's first Christmas lights of 1954. Regent Street says the 2026 display has some new details.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/skate-at-somerset-house-2026/",
+        eyebrow: "From 11 November",
+        title: "Skate at Somerset House",
+        text: "The rink in the courtyard opens six days after the switch-on, a walk away on the Strand.",
+      },
+      {
+        href: "/events/lord-mayors-show-2026/",
+        eyebrow: "14 November",
+        title: "Lord Mayor's Show 2026",
+        text: "The City's procession, the Saturday after next.",
+      },
+      {
+        href: "/events/hyde-park-winter-wonderland-2026/",
+        eyebrow: "From 19 November",
+        title: "Hyde Park Winter Wonderland",
+        text: "The other big opening of London's Christmas, a fortnight later.",
+      },
+    ],
+    expertise:
+      "It is a Thursday, so the four traffic-free hours run into the end of the working day in the West End. The empty road is the point of the evening: Regent Street is closed to traffic from 5pm to 9pm on the 5th only, and on the nights that follow the angels are seen from the pavement.",
+  },
 ];

@@ -1459,7 +1459,7 @@ export const items: EventItem[] = [
   {
     slug: "200ms-breakpoint-week-2026",
     createdAt: "2026-09-08T16:29:32+04:00",
-    updatedAt: "2026-09-08T16:29:32+04:00",
+    updatedAt: "2026-10-14T21:10:00+04:00",
     site: "sol2go",
     image: "/covers/200ms-breakpoint-week-2026.jpg",
     imageAlt: "A stack of flat violet and mint slabs, each offset from the one below it, on deep violet",
@@ -1492,6 +1492,20 @@ export const items: EventItem[] = [
       "## Getting into 200ms",
       "Attendance is <strong>free but selective</strong>. Priority is given to <strong>Solana builders</strong>, <strong>core developers</strong> and <strong>onchain traders</strong>.",
     ],
+    related: [
+      {
+        href: "/events/solana-intelligence-summit-london-2026/",
+        eyebrow: "13 November, Somerset House",
+        title: "Solana Intelligence Summit",
+        text: "The Solana Foundation's AI day, the same Friday on the Strand.",
+      },
+      {
+        href: "/events/breakpoint-2026-london/",
+        eyebrow: "15–17 November",
+        title: "Solana Breakpoint 2026",
+        text: "The conference that opens in the same building two days later.",
+      },
+    ],
     expertise:
       "This is the first of the three technical days that now open Breakpoint week — 200ms on the 13th, Scale or Die on the 14th, then the conference from the 15th — and it is the one aimed at the trading side rather than the protocol side. Free but selective means the registration is a filter, not a formality: apply early and say what you run onchain, because the room is picked from what people write there. Being in the same building as the main conference also makes it the cheapest way to test whether the Breakpoint week is worth the flight, since nothing about this day depends on holding a conference ticket.",
   },
@@ -1499,7 +1513,7 @@ export const items: EventItem[] = [
   {
     slug: "solana-demo-day-london-2026",
     createdAt: "2026-10-13T00:40:00+04:00",
-    updatedAt: "2026-10-13T00:40:00+04:00",
+    updatedAt: "2026-10-14T21:10:00+04:00",
     site: "sol2go",
     image: "/covers/solana-demo-day-london-2026.jpg",
     imageAlt: "An empty violet hall with arched windows, a small lectern on a low stage before a blank white screen and rows of chairs in the foreground",
@@ -1568,8 +1582,103 @@ export const items: EventItem[] = [
         title: "Solana Breakpoint 2026",
         text: "The flagship conference at Olympia London, three days after the Demo Day.",
       },
+      {
+        href: "/events/solana-intelligence-summit-london-2026/",
+        eyebrow: "13 November",
+        title: "Solana Intelligence Summit",
+        text: "The Foundation's invite-only AI day, the next morning at Somerset House.",
+      },
     ],
     expertise:
       "Apply to present even if you would rather watch. The priority rule — teams not already on the Breakpoint or Scale or Die stage — makes the Demo Day the one slot of the fortnight kept open for smaller projects, and a team that built something in the Hacker House has a real chance at it. For a spectator it is the clearest look at what was actually built in those two weeks, three days before the conference turns everything into announcements.",
+  },
+
+  {
+    slug: "solana-intelligence-summit-london-2026",
+    createdAt: "2026-10-14T21:10:00+04:00",
+    updatedAt: "2026-10-14T21:10:00+04:00",
+    site: "sol2go",
+    image: "/covers/solana-intelligence-summit-london-2026.jpg",
+    imageAlt: "A stone courtyard seen through an arch, with a long table of small glowing screens in violet light",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Solana Intelligence Summit 2026",
+    cardTitle: "Solana Intelligence Summit, London",
+    titleSeo: "Solana Intelligence Summit, Somerset House, 13 Nov 2026",
+    summary:
+      "The Solana Foundation's AI day: talks, hands-on workshops, live demos and panels at Somerset House in London on Friday 13 November, 10:00 to 18:00, two days before Breakpoint. Free and invite-only, and full: new applicants join a waitlist.",
+    start: "2026-11-13",
+    startTime: "10:00",
+    endTime: "18:00",
+    utcOffset: "+00:00",
+    venue: "Somerset House, Strand, London WC2R 1LA",
+    city: "London",
+    country: "United Kingdom",
+    geo: {
+      name: "Somerset House",
+      lat: 51.511059,
+      lng: -0.117148,
+    },
+    organizer: "Solana Foundation",
+    category: "Conference",
+    audience: ["Developers", "Founders"],
+    tickets: { priceFrom: 0 },
+    ticket: {
+      url: "https://luma.com/intelligence-summit",
+      label: "Join the waitlist",
+    },
+    source: {
+      name: "Solana Foundation on Luma",
+      url: "https://luma.com/intelligence-summit",
+      verifiedOn: "2026-10-14",
+    },
+    body: [
+      "Breakpoint week has a day for traders, a day for protocol engineers and a day for teams to show what they built. The <strong>Solana Intelligence Summit</strong> is the one about AI: the Solana Foundation calls it an intimate, invite-only Solana AI event, at <strong>Somerset House</strong> on <strong>Friday 13 November 2026</strong>.",
+      "## The day",
+      "<strong>10:00 to 18:00</strong> London time at Somerset House, Strand, London WC2R 1LA. The programme is billed as talks, <strong>hands-on workshops</strong>, <strong>live demos</strong>, panels and interactive AI experiences, with art, merch and, in the hosts' words, maybe some hardware. A happy hour with food and drinks follows the main-stage programme. The full schedule has not been published yet.",
+      "## Getting in",
+      "It costs nothing, but it is <strong>by application</strong>: you apply on the event page and the hosts choose. On 14 October the page said <strong>Event Full</strong> and offered a <strong>waitlist</strong>, with a notice to those on it if places come free.",
+      "## Speaking",
+      "The Foundation is taking applications to speak, through a form linked from the event page.",
+      "## Where it sits in the week",
+      "Somerset House is the building the <a href=\"/events/solana-hacker-house-london-2026/\" title=\"Solana Hacker House — London\">Solana Hacker House</a> runs in from 1 to 12 November, and the <a href=\"/events/solana-demo-day-london-2026/\" title=\"Solana Demo Day London 2026\">Demo Day</a> closes it on the 12th. The same Friday, Jito's <a href=\"/events/200ms-breakpoint-week-2026/\" title=\"200ms — Jito's MEV and DeFi day\">200ms</a> is across town at Olympia, and <a href=\"/events/breakpoint-2026-london/\" title=\"Solana Breakpoint 2026\">Breakpoint</a> opens there on the 15th.",
+    ],
+    faq: [
+      {
+        q: "When is the Solana Intelligence Summit 2026?",
+        a: "Friday 13 November 2026, 10:00 to 18:00 London time, at Somerset House on the Strand, followed by a happy hour.",
+      },
+      {
+        q: "How do I get a place?",
+        a: "Through the Luma page. Attendance is free but invite-only and subject to the hosts' approval; on 14 October 2026 the event was full and the page offered a waitlist.",
+      },
+      {
+        q: "Does it clash with 200ms?",
+        a: "Yes: Jito's 200ms is on the same day at Olympia, on Hammersmith Road in west London, while Somerset House is on the Strand in central London.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/200ms-breakpoint-week-2026/",
+        eyebrow: "13 November, Olympia",
+        title: "200ms",
+        text: "Jito's day on Solana's microstructure and DeFi, the same Friday across town.",
+      },
+      {
+        href: "/events/solana-demo-day-london-2026/",
+        eyebrow: "12 November",
+        title: "Solana Demo Day London",
+        text: "The Hacker House teams present live, the day before, with the map pin on Somerset House.",
+      },
+      {
+        href: "/events/breakpoint-2026-london/",
+        eyebrow: "15–17 November",
+        title: "Solana Breakpoint 2026",
+        text: "The flagship conference at Olympia London, two days later.",
+      },
+    ],
+    expertise:
+      "A waitlist for an invite-only day is still read, not counted, so say what you are building with AI on Solana and what you would take from a workshop; a one-line request is easy to pass over. The clash with 200ms is the real decision of that Friday: one is for people who ship agents and models, the other for people who trade, and the two buildings are far enough apart that splitting the day loses most of both.",
   },
 ];
