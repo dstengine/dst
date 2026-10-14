@@ -262,7 +262,7 @@ export const tours: Tour[] = [
     years: "2026",
     blurb: "Seventeen arena nights across ten countries, twelve days after a new album lands.",
     summary: [
-      "Seventeen shows in twenty-seven days, from London on 28 October to Madrid on 23 November 2026. Ten countries; eight of the seventeen nights in Germany, which is what a band's home territory looks like on a map.",
+      "Seventeen shows in twenty-seven days, from London on 28 October to Madrid on 23 November 2026. Ten countries; seven of the seventeen nights in Germany, which is what a band's home territory looks like on a map.",
       "It was announced on 19 March 2025, alongside the anniversary show — eighteen months of notice for a run that will be, in practice, the Encore tour: the eighth studio album is out on 16 October 2026, twelve days before the opening night.",
     ],
     sections: [
