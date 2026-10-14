@@ -276,7 +276,7 @@ export const tours: Tour[] = [
       {
         heading: "What they will be playing",
         paragraphs: [
-          "Four songs from Encore have been public for months — “Changes” since November 2025, “California Nights” since February, “Memory Lane” since May, “Without You” since July — and the full tracklist since 20 August 2026. Everything else on the record will be twelve days old on opening night.",
+          "Five of the twelve songs on Encore are already out — “Changes” since November 2025, “California Nights” since February, “Memory Lane” since May, “Without You” since July and “Dye My Hair” since 4 September — and the full tracklist has been public since 20 August 2026. The other seven will be twelve days old on opening night, though Berlin may hear them live first, at the album release show in the Velodrom on 25 October.",
         ],
       },
     ],

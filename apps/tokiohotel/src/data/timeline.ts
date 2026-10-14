@@ -57,6 +57,8 @@ export const timeline: Moment[] = [
     text: "One concert, marking twenty years to the month since the single entered the German chart." },
   { when: "16 October 2026", sort: "2026-10-16", title: "Encore",
     text: "The eighth studio album, its name confirmed by an Amazon pre-order listing before the band said it themselves. Out twelve days before the tour opens." },
+  { when: "25 October 2026", sort: "2026-10-25", title: "The album release show",
+    text: "Encore's release show at the Velodrom in Berlin, sold as a bundle with the CD: nine days after the record, three before Wembley." },
   { when: "28 October 2026", sort: "2026-10-28", title: "Wembley",
     text: "The Arena Tour opens at OVO Arena Wembley: seventeen nights, ten countries, finishing in Madrid on 23 November." },
   { when: "14 July 2027", sort: "2027-07-14", title: "Summer Encore opens in Rome",
