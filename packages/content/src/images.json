@@ -29272,6 +29272,38 @@
         ]
       ]
     },
+    "/covers/dayme-arocena-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/dayme-arocena-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/dayme-arocena-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dayme-arocena-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dayme-arocena-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/dayme-arocena-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dayme-arocena-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/devfest-armenia-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -31352,6 +31384,38 @@
         ]
       ]
     },
+    "/covers/svetlana-navasardyan-piano-recital-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/svetlana-navasardyan-piano-recital-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/svetlana-navasardyan-piano-recital-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/svetlana-navasardyan-piano-recital-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/svetlana-navasardyan-piano-recital-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/svetlana-navasardyan-piano-recital-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/svetlana-navasardyan-piano-recital-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/swan-lake-yerevan-opera-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -32261,6 +32325,38 @@
         [
           1536,
           "/covers/yerevan-international-music-festival-iddo-bar-shai-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/yerevan-state-chamber-choir-30-tigran-hamasyan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/yerevan-state-chamber-choir-30-tigran-hamasyan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/yerevan-state-chamber-choir-30-tigran-hamasyan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/yerevan-state-chamber-choir-30-tigran-hamasyan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/yerevan-state-chamber-choir-30-tigran-hamasyan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/yerevan-state-chamber-choir-30-tigran-hamasyan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/yerevan-state-chamber-choir-30-tigran-hamasyan-2026-1024.webp"
         ]
       ]
     },
