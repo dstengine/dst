@@ -222,7 +222,8 @@ export const items: NewsItem[] = [
     },
   },
   {
-    slug: "snoop-dogg-yerevan-concert-status",
+    slug: "snoop-dogg",
+    path: "/snoop-dogg/",
     createdAt: "2026-10-17T19:05:00+04:00",
     updatedAt: "2026-10-17T19:05:00+04:00",
     site: "tick",
@@ -232,7 +233,7 @@ export const items: NewsItem[] = [
     titleSeo: "Snoop Dogg-ի համերգը Երևանում․ ամսաթիվ հաստատված չէ",
     summary:
       "Սնուփ Դոգի (Snoop Dogg) համերգը Երևանում նախատեսված էր 2023 թվականի սեպտեմբերի 23-ին՝ «Հրազդան» մարզադաշտում, հետաձգվեց և նոր ամսաթիվ չստացավ։ 2026 թվականի հոկտեմբերի 17-ի դրությամբ նոր ամսաթիվ, վայր կամ տոմսերի վաճառք հայտարարված չէ։",
-    image: "/covers/snoop-dogg-yerevan-concert-status.jpg",
+    image: "/covers/snoop-dogg.jpg",
     imageAlt: "Դատարկ մարզադաշտ մայրամուտին, մերկ հարթակի մեջտեղում՝ միայնակ խոսափողի կալ, վերևում՝ ֆերմայից կախված բեմական լույսեր և երկու դատարկ կարմիր պաստառ, երկու կողմում՝ դատարկ նստատեղերի շարքեր",
     imageKind: "generated",
     imageWidth: 1024,

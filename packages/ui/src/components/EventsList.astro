@@ -4,6 +4,7 @@
 // "now" is fixed at build time; that's an acceptable drift for a network that
 // rebuilds regularly, not a live app.
 import type { EventItem } from "@dst/content/types";
+import { eventHref } from "@dst/content/paths";
 import FeedCards from "./FeedCards.astro";
 import { cardHours, cardCountdown } from "../date.ts";
 import Icon from "./Icon.astro";
@@ -61,7 +62,7 @@ const byDate = (a: EventItem, b: EventItem) =>
 const toCard = (item: EventItem, past: boolean) => {
   const hasPage = Array.isArray(item.body) && item.body.length > 0;
   return {
-    href: hasPage ? `${eventsBase}${item.slug}/` : undefined,
+    href: hasPage ? eventHref(item, eventsBase) : undefined,
     eyebrow: item.category,
     date: item.start,
     title: item.title,

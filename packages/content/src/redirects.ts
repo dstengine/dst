@@ -60,6 +60,22 @@ export const redirects: Record<string, Redirect[]> = {
       why: "Same split as riviera, and it reached the two-entry threshold for one build. As there, the country is the site, so the events index is the honest destination.",
     },
   ],
+  // Written into tea's vercel.json by hand on 11 October 2026 and entered
+  // here on the 17th, when running tools/redirects.mjs would have dropped it.
+  tea: [
+    {
+      from: "/guides/the-story-of-4-20-high-tea/",
+      to: "/420/",
+      since: "2026-10-11",
+      why: "The tale of 4:20 High Tea earned a short address of its own, tea.ceo/420/, the day it was published.",
+    },
+    {
+      from: "/guides/the-story-of-4-20-high-tea.md",
+      to: "/420.md",
+      since: "2026-10-11",
+      why: "The Markdown twin of the same page followed it.",
+    },
+  ],
   ldn: [
     {
       from: "/art/",
@@ -101,6 +117,17 @@ export const redirects: Record<string, Redirect[]> = {
       to,
       since: "2026-10-13",
       why: "The Lyubov Uspenskaya concert was withdrawn, since tick keeps its ties to Russia to a minimum; its page goes to the concerts it was listed under.",
+    })),
+    [
+      ["/events/devfest-armenia-2026/", "/devfest/"],
+      ["/am/events/devfest-armenia-2026/", "/am/devfest/"],
+      ["/news/snoop-dogg-yerevan-concert-status/", "/snoop-dogg/"],
+      ["/am/news/snoop-dogg-yerevan-concert-status/", "/am/snoop-dogg/"],
+    ].map(([from, to]) => ({
+      from,
+      to,
+      since: "2026-10-17",
+      why: "The two pages tick pushes hardest took short addresses of their own at the root, the words people type: tick.am/devfest and tick.am/snoop-dogg.",
     })),
   ),
 };

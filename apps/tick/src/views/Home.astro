@@ -7,11 +7,11 @@ import FeedCards from "@dst/ui/FeedCards.astro";
 import BlockHead from "@dst/ui/BlockHead.astro";
 import CountdownScript from "@dst/ui/CountdownScript.astro";
 import { cardCountdown } from "@dst/ui/date";
-import { isOn } from "@dst/content/when";
+import { eventHref, newsHref } from "@dst/content/paths";
 import { home, words, labels, type Lang } from "../content";
 import { LOCALE, eventsFor, newsFor, eventsBase, newsBase, prefix } from "../i18n";
 import { allSections, NAV } from "../sections";
-import { TOP } from "../top";
+import { topFor } from "../top";
 
 interface Props { lang: Lang }
 const { lang } = Astro.props;
@@ -20,45 +20,37 @@ const w = words[lang];
 
 // The spotlight: ../top.ts, as cards, ahead of the date-ordered blocks —
 // and left out of those blocks, so no card shows twice on the page.
-const today = new Date().toISOString().slice(0, 10);
 const events = eventsFor(lang);
 const news = newsFor(lang);
-const top = TOP.flatMap((slug) => {
-  const e = events.find((i) => i.slug === slug);
-  if (e) {
-    return isOn(e, today)
-      ? [{
-          href: `${eventsBase(lang)}${e.slug}/`,
-          eyebrow: e.category,
-          date: e.start,
-          title: e.title,
-          short: e.cardTitle,
-          text: [e.venue, e.city].filter(Boolean).join(" · ") || e.summary,
-          image: e.image,
-          imageAlt: e.imageAlt,
-          imageFit: "cover" as const,
-          event: true,
-          countdown: cardCountdown(e),
-          dateInImage: e.dateInImage,
-          editorsChoice: e.editorsChoice,
-        }]
-      : [];
-  }
-  const n = news.find((i) => i.slug === slug);
-  return n
-    ? [{
-        href: `${newsBase(lang)}${n.slug}/`,
-        eyebrow: n.category,
-        date: n.date,
-        title: n.title,
-        short: n.cardTitle,
-        text: n.summary,
-        image: n.image,
-        imageAlt: n.imageAlt,
+const top = topFor(lang).map((t) =>
+  t.kind === "event"
+    ? {
+        href: t.href,
+        eyebrow: t.item.category,
+        date: t.item.start,
+        title: t.item.title,
+        short: t.item.cardTitle,
+        text: [t.item.venue, t.item.city].filter(Boolean).join(" · ") || t.item.summary,
+        image: t.item.image,
+        imageAlt: t.item.imageAlt,
         imageFit: "cover" as const,
-      }]
-    : [];
-});
+        event: true,
+        countdown: cardCountdown(t.item),
+        dateInImage: t.item.dateInImage,
+        editorsChoice: t.item.editorsChoice,
+      }
+    : {
+        href: t.href,
+        eyebrow: t.item.category,
+        date: t.item.date,
+        title: t.item.title,
+        short: t.item.cardTitle,
+        text: t.item.summary,
+        image: t.item.image,
+        imageAlt: t.item.imageAlt,
+        imageFit: "cover" as const,
+      },
+);
 const shown = new Set(top.map((c) => c.href));
 ---
 <Layout lang={lang} title={page.title} description={page.description}>
@@ -73,8 +65,8 @@ const shown = new Set(top.map((c) => c.href));
       <FeedCards items={top} columns={top.length} locale={LOCALE[lang]} labels={labels[lang]} />
     </section>
   )}
-  <EventsBlock locale={LOCALE[lang]} items={events.filter((e) => !shown.has(`${eventsBase(lang)}${e.slug}/`))} heading={w.upcoming} eventsBase={eventsBase(lang)} allLabel={w.allEvents} labels={labels[lang]} />
-  <NewsBlock locale={LOCALE[lang]} items={news.filter((n) => !shown.has(`${newsBase(lang)}${n.slug}/`))} heading={w.news} newsBase={newsBase(lang)} allLabel={w.allNews} />
+  <EventsBlock locale={LOCALE[lang]} items={events.filter((e) => !shown.has(eventHref(e, eventsBase(lang))))} heading={w.upcoming} eventsBase={eventsBase(lang)} allLabel={w.allEvents} labels={labels[lang]} />
+  <NewsBlock locale={LOCALE[lang]} items={news.filter((n) => !shown.has(newsHref(n, newsBase(lang))))} heading={w.news} newsBase={newsBase(lang)} allLabel={w.allNews} />
   {top.some((c) => "event" in c) && <CountdownScript />}
 </Layout>
 

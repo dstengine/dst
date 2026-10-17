@@ -1,6 +1,6 @@
 ---
 import { fitFor } from "../fit.ts";
-import { newsHref } from "@dst/content/paths";
+import { newsHref, eventHref } from "@dst/content/paths";
 import ArticleBody from "./ArticleBody.astro";
 import Photo from "./Photo.astro";
 import { itemContext } from '../schema';
@@ -136,7 +136,7 @@ const moreCards = more
     return aUp ? (a.start < b.start ? -1 : 1) : (a.start < b.start ? 1 : -1);
   })
   .map((other) => ({
-    href: `${eventsBase}${other.slug}/`,
+    href: eventHref(other, eventsBase),
     eyebrow: other.category,
     date: other.start,
     title: other.title,

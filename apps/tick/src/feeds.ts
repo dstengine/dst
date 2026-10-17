@@ -9,6 +9,7 @@
 import { toRss } from "@dst/content/rss";
 import { toIcs, toIcsCalendar } from "@dst/content/ics";
 import type { EventItem } from "@dst/content/types";
+import { eventHref, newsHref } from "@dst/content/paths";
 import { feed, calendar, type Lang } from "./content";
 import { eventsFor, newsFor, eventsBase, newsBase, prefix } from "./i18n";
 
@@ -17,7 +18,7 @@ const SITE = "https://tick.am";
 export function rss(lang: Lang): Response {
   // An entry with no page of its own has no URL to send a reader to.
   const items = newsFor(lang).filter((i) => Array.isArray(i.body) && i.body.length > 0);
-  const body = toRss(items, (item) => `${SITE}${newsBase(lang)}${item.slug}/`, {
+  const body = toRss(items, (item) => `${SITE}${newsHref(item, newsBase(lang))}`, {
     ...feed[lang],
     siteUrl: `${SITE}${prefix(lang)}`,
     self: `${SITE}${prefix(lang)}rss.xml`,
@@ -29,7 +30,7 @@ export function rss(lang: Lang): Response {
 // the file, which is the opposite of what a subscription URL is for.
 export function wholeCalendar(lang: Lang): Response {
   const items = eventsFor(lang).filter((i) => Array.isArray(i.body) && i.body.length > 0);
-  const body = toIcsCalendar(items, (item) => `${SITE}${eventsBase(lang)}${item.slug}/`, {
+  const body = toIcsCalendar(items, (item) => `${SITE}${eventHref(item, eventsBase(lang))}`, {
     ...calendar[lang],
     url: `${SITE}${eventsBase(lang)}`,
     source: `${SITE}${prefix(lang)}events.ics`,
@@ -43,7 +44,7 @@ export function icsPaths(lang: Lang) {
 }
 
 export function oneEvent(lang: Lang, item: EventItem): Response {
-  return new Response(toIcs(item, `${SITE}${eventsBase(lang)}${item.slug}/`), {
+  return new Response(toIcs(item, `${SITE}${eventHref(item, eventsBase(lang))}`), {
     headers: {
       "Content-Type": "text/calendar; charset=utf-8",
       "Content-Disposition": `attachment; filename="${item.slug}.ics"`,

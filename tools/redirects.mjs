@@ -13,8 +13,10 @@ import { fileURLToPath } from "node:url";
 import { redirectsFor, hostMovesFor } from "../packages/content/src/redirects.ts";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const IGNORE =
-  "git rev-parse HEAD^ >/dev/null 2>&1 || exit 1; git diff --quiet HEAD^ HEAD -- . ../../packages";
+// Each app's own ignore script since 11 October 2026 (tools/vercel-ignore.mjs),
+// which knows what that app reads; the git-diff one-liner this used to write
+// rebuilt every app on any change under packages/.
+const IGNORE = (app) => `node ../../tools/vercel-ignore.mjs ${app}`;
 
 let written = 0;
 for (const app of readdirSync(path.join(REPO, "apps"))) {
@@ -24,7 +26,7 @@ for (const app of readdirSync(path.join(REPO, "apps"))) {
   const hosts = hostMovesFor(app);
   const config = {
     $schema: "https://openapi.vercel.sh/vercel.json",
-    ignoreCommand: IGNORE,
+    ignoreCommand: IGNORE(app),
     ...(moves.length || hosts.length
       ? {
           redirects: [
@@ -44,7 +46,8 @@ for (const app of readdirSync(path.join(REPO, "apps"))) {
             // ends in a slash, and a link written by hand — or by whoever
             // copied it into a post two years ago — may not.
             ...moves.flatMap(({ from, to }) =>
-              [from.replace(/\/$/, ""), from].map((source) => ({
+              // One, when the address has no slash to drop (a .md file).
+              [...new Set([from.replace(/\/$/, ""), from])].map((source) => ({
                 source,
                 destination: to,
                 // 301 by number, not `permanent: true` — Vercel reads that

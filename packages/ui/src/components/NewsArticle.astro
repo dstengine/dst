@@ -1,5 +1,5 @@
 ---
-import { newsHref } from "@dst/content/paths";
+import { newsHref, eventHref } from "@dst/content/paths";
 import ArticleBody from "./ArticleBody.astro";
 import { fitFor } from "../fit.ts";
 import Photo from "./Photo.astro";
@@ -132,7 +132,7 @@ const eventCards = moreEvents
     return a.start < b.start ? -1 : 1;
   })
   .map((e) => ({
-    href: `${eventsBase}${e.slug}/`,
+    href: eventHref(e, eventsBase),
     eyebrow: e.category,
     date: e.start,
     title: e.title,

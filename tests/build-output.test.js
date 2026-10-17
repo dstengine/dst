@@ -729,9 +729,14 @@ describe("redirects", () => {
   // from SITES, and SITES deliberately leaves eco out (see "news and
   // events" below) — which quietly made every eco redirect look like a
   // redirect to nowhere. A built page is a directory with an index.html in
-  // it, and that is a question the filesystem answers for any app.
-  const built = (app, url) =>
-    existsSync(path.join(REPO, "apps", app, "dist", url.replace(/^\//, ""), "index.html"));
+  // it, and that is a question the filesystem answers for any app. An
+  // address that ends in a file name rather than a slash — tea's /420.md,
+  // the Markdown twin of /420/ — is that file itself.
+  const built = (app, url) => {
+    const rel = url.replace(/^\//, "");
+    const file = url.endsWith("/") ? path.join(rel, "index.html") : rel;
+    return existsSync(path.join(REPO, "apps", app, "dist", file));
+  };
 
   test("every redirect lands on a page that exists", () => {
     const broken = entries.filter((r) => !built(r.app, r.to)).map((r) => `${r.app}${r.from} -> ${r.to}`);
@@ -757,9 +762,13 @@ describe("redirects", () => {
       const served = JSON.parse(readFileSync(file, "utf8")).redirects ?? [];
       for (const r of redirects[app] ?? []) {
         // Both spellings of the old path are written, so each entry is two —
-        // and each is a 301: `permanent: true` would leave a 308.
-        const hops = served.filter((h) => h.destination === r.to && h.statusCode === 301);
-        if (hops.length < 2) stale.push(`${app}${r.from} -> ${r.to}`);
+        // and each is a 301: `permanent: true` would leave a 308. A file
+        // name has only the one spelling, so it is one.
+        const spellings = new Set([r.from.replace(/\/$/, ""), r.from]);
+        const hops = served.filter(
+          (h) => spellings.has(h.source) && h.destination === r.to && h.statusCode === 301,
+        );
+        if (hops.length < spellings.size) stale.push(`${app}${r.from} -> ${r.to}`);
       }
     }
     assert.deepEqual(stale, [], `in the register and not in vercel.json — run npm run redirects:\n  ${stale.join("\n  ")}`);

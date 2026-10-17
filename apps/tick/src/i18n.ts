@@ -25,9 +25,15 @@ export const prefix = (lang: Lang): string => (PATH[lang] ? `/${PATH[lang]}/` : 
 export const eventsBase = (lang: Lang) => `${prefix(lang)}events/`;
 export const newsBase = (lang: Lang) => `${prefix(lang)}news/`;
 
+// An entry with a short address of its own (`path`: "/devfest/") has it in
+// both languages, under each one's prefix — /devfest/ and /am/devfest/ —
+// so its twin is found the way every other page's is.
+const at = <T extends { path?: string }>(item: T, lang: Lang): T =>
+  item.path ? { ...item, path: `${prefix(lang)}${item.path.replace(/^\//, "")}` } : item;
+
 /** The site's feeds, in the page's language. */
-export const eventsFor = (lang: Lang) => eventsBySite(siteId).map((i) => localize(i, lang));
-export const newsFor = (lang: Lang) => newsBySite(siteId).map((i) => localize(i, lang));
+export const eventsFor = (lang: Lang) => eventsBySite(siteId).map((i) => at(localize(i, lang), lang));
+export const newsFor = (lang: Lang) => newsBySite(siteId).map((i) => at(localize(i, lang), lang));
 
 // What the switch in the header says. The label is the language's own
 // name for itself, short; the tooltip is in that language too, since it is
@@ -46,10 +52,21 @@ export function alternates(pathname: string) {
 /** Detail pages for a language: an entry with no body has no page. */
 export function eventPaths(lang: Lang) {
   const items = eventsFor(lang).filter((i) => Array.isArray(i.body) && i.body.length > 0);
-  return items.map((item) => ({ params: { slug: item.slug }, props: { item, more: items } }));
+  return items.filter((i) => !i.path).map((item) => ({ params: { slug: item.slug }, props: { item, more: items } }));
 }
 
 export function newsPaths(lang: Lang) {
   const items = newsFor(lang).filter((i) => Array.isArray(i.body) && i.body.length > 0);
-  return items.map((item) => ({ params: { slug: item.slug }, props: { item, more: items } }));
+  return items.filter((i) => !i.path).map((item) => ({ params: { slug: item.slug }, props: { item, more: items } }));
+}
+
+/** The entries built at a short address of their own instead (`path`). */
+export function shortPaths(lang: Lang) {
+  const events = eventsFor(lang).filter((i) => Array.isArray(i.body) && i.body.length > 0);
+  const news = newsFor(lang).filter((i) => Array.isArray(i.body) && i.body.length > 0);
+  const page = (path: string) => path.split("/").filter(Boolean).at(-1)!;
+  return [
+    ...events.filter((i) => i.path).map((item) => ({ params: { page: page(item.path!) }, props: { kind: "event" as const, item, more: events } })),
+    ...news.filter((i) => i.path).map((item) => ({ params: { page: page(item.path!) }, props: { kind: "news" as const, item, more: news } })),
+  ];
 }

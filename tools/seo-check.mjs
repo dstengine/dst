@@ -98,10 +98,14 @@ for (const app of fs.readdirSync(APPS).sort()) {
     const word = perLang[pageLang] ?? keyword;
     const has = (s) => s.toLowerCase().includes(word.toLowerCase());
     // A page we named ourselves, as against an article named after the thing
-    // it is about: sections are the short paths, one level deep.
+    // it is about: sections are the short paths, one level deep. Not every
+    // short path is a section, though — tick's /devfest/ and tea's /420/
+    // are articles given a short address, and say so in their structured
+    // data: the page's own top-level type is the event or the article.
     const segments = url.split("/").filter(Boolean);
     if (langs.includes(segments[0])) segments.shift();
-    const isSection = segments.length < 2;
+    const isArticle = /"@context":"https:\/\/schema\.org","@type":"(?:\w*Event|\w*Article|BlogPosting)"/.test(html);
+    const isSection = segments.length < 2 && !isArticle;
     const miss = [];
     if (!has(field(html, /<title>([\s\S]*?)<\/title>/i))) miss.push("title");
     if (isSection && !has(field(html, /<h1[^>]*>([\s\S]*?)<\/h1>/i))) miss.push("h1");

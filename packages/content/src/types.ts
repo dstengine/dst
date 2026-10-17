@@ -253,6 +253,13 @@ export interface NewsItem extends ItemBase {
 export interface EventItem extends ItemBase {
   start: string; // ISO "YYYY-MM-DD"
   end?: string;
+  // The page's own address, for an event that has earned a short one:
+  // "/devfest/" rather than "/events/devfest-armenia-2026/". The same rules
+  // as NewsItem.path — one segment, slashes either side, the slug matches
+  // it. On a site in two languages it is the root language's address, and
+  // the site puts its prefix in front for the other (tick: /am/devfest/).
+  // Build every link to an event through `eventHref`, never by hand.
+  path?: string;
   // Local clock time, "HH:MM". A date alone answers "which day" but not
   // "morning or evening", which is the first thing anyone deciding whether
   // to attend needs. Omitted rather than guessed when the organiser hasn't

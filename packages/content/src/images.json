@@ -29368,35 +29368,35 @@
         ]
       ]
     },
-    "/covers/devfest-armenia-2026.jpg": {
+    "/covers/devfest.jpg": {
       "width": 1024,
       "height": 1024,
       "avif": [
         [
           480,
-          "/covers/devfest-armenia-2026-480.avif"
+          "/covers/devfest-480.avif"
         ],
         [
           768,
-          "/covers/devfest-armenia-2026-768.avif"
+          "/covers/devfest-768.avif"
         ],
         [
           1024,
-          "/covers/devfest-armenia-2026-1024.avif"
+          "/covers/devfest-1024.avif"
         ]
       ],
       "webp": [
         [
           480,
-          "/covers/devfest-armenia-2026-480.webp"
+          "/covers/devfest-480.webp"
         ],
         [
           768,
-          "/covers/devfest-armenia-2026-768.webp"
+          "/covers/devfest-768.webp"
         ],
         [
           1024,
-          "/covers/devfest-armenia-2026-1024.webp"
+          "/covers/devfest-1024.webp"
         ]
       ]
     },
@@ -31432,35 +31432,35 @@
         ]
       ]
     },
-    "/covers/snoop-dogg-yerevan-concert-status.jpg": {
+    "/covers/snoop-dogg.jpg": {
       "width": 1024,
       "height": 1024,
       "avif": [
         [
           480,
-          "/covers/snoop-dogg-yerevan-concert-status-480.avif"
+          "/covers/snoop-dogg-480.avif"
         ],
         [
           768,
-          "/covers/snoop-dogg-yerevan-concert-status-768.avif"
+          "/covers/snoop-dogg-768.avif"
         ],
         [
           1024,
-          "/covers/snoop-dogg-yerevan-concert-status-1024.avif"
+          "/covers/snoop-dogg-1024.avif"
         ]
       ],
       "webp": [
         [
           480,
-          "/covers/snoop-dogg-yerevan-concert-status-480.webp"
+          "/covers/snoop-dogg-480.webp"
         ],
         [
           768,
-          "/covers/snoop-dogg-yerevan-concert-status-768.webp"
+          "/covers/snoop-dogg-768.webp"
         ],
         [
           1024,
-          "/covers/snoop-dogg-yerevan-concert-status-1024.webp"
+          "/covers/snoop-dogg-1024.webp"
         ]
       ]
     },

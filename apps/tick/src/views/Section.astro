@@ -15,6 +15,7 @@ import type { EventItem } from "@dst/content/types";
 import { withLabels } from "@dst/ui/labels";
 import { cardCountdown } from "@dst/ui/date";
 import { isOn } from "@dst/content/when";
+import { eventHref } from "@dst/content/paths";
 import { labels, type Lang } from "../content";
 import { site } from "../site.config";
 import { LOCALE, eventsBase, newsBase, prefix } from "../i18n";
@@ -59,7 +60,7 @@ const blocks = promotedAll[lang]
       .sort((a, b) => (a.start < b.start ? -1 : 1))
       .slice(0, 3)
       .map((e) => ({
-        href: `${eventsBase(lang)}${e.slug}/`,
+        href: eventHref(e, eventsBase(lang)),
         eyebrow: e.category,
         date: e.start,
         title: e.title,

@@ -15,6 +15,7 @@
 // item's date is a filing stamp, an event's date is the whole point, so the
 // card leads with the date as its cover and carries a countdown.
 import type { EventItem } from "@dst/content/types";
+import { eventHref } from "@dst/content/paths";
 import FeedCards from "./FeedCards.astro";
 import { cardHours, cardCountdown } from "../date.ts";
 import CountdownScript from "./CountdownScript.astro";
@@ -73,7 +74,7 @@ const L = withLabels(labels);
 const card = (item: EventItem, isRunning: boolean) => {
   const hasPage = Array.isArray(item.body) && item.body.length > 0;
   return {
-    href: hasPage ? `${eventsBase}${item.slug}/` : undefined,
+    href: hasPage ? eventHref(item, eventsBase) : undefined,
     eyebrow: item.category,
     date: item.start,
     title: item.title,

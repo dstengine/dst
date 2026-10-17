@@ -162,6 +162,46 @@
       "source": "/am/events/lyubov-uspenskaya-yerevan-2027/",
       "destination": "/am/concerts/",
       "statusCode": 301
+    },
+    {
+      "source": "/events/devfest-armenia-2026",
+      "destination": "/devfest/",
+      "statusCode": 301
+    },
+    {
+      "source": "/events/devfest-armenia-2026/",
+      "destination": "/devfest/",
+      "statusCode": 301
+    },
+    {
+      "source": "/am/events/devfest-armenia-2026",
+      "destination": "/am/devfest/",
+      "statusCode": 301
+    },
+    {
+      "source": "/am/events/devfest-armenia-2026/",
+      "destination": "/am/devfest/",
+      "statusCode": 301
+    },
+    {
+      "source": "/news/snoop-dogg-yerevan-concert-status",
+      "destination": "/snoop-dogg/",
+      "statusCode": 301
+    },
+    {
+      "source": "/news/snoop-dogg-yerevan-concert-status/",
+      "destination": "/snoop-dogg/",
+      "statusCode": 301
+    },
+    {
+      "source": "/am/news/snoop-dogg-yerevan-concert-status",
+      "destination": "/am/snoop-dogg/",
+      "statusCode": 301
+    },
+    {
+      "source": "/am/news/snoop-dogg-yerevan-concert-status/",
+      "destination": "/am/snoop-dogg/",
+      "statusCode": 301
     }
   ]
 }

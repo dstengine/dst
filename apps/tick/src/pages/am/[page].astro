@@ -1,0 +1,18 @@
+---
+// The entries that have earned a short address of their own — tick.am/devfest/
+// rather than /events/devfest-armenia-2026/. The same page as any other
+// event or news item; only the address differs. See `path` in
+// @dst/content/types, and `shortPaths` in ../i18n.ts.
+import Event from "../../views/Event.astro";
+import NewsEntry from "../../views/NewsEntry.astro";
+import { shortPaths } from "../../i18n";
+
+export function getStaticPaths() {
+  return shortPaths("hy");
+}
+
+const { kind, item, more } = Astro.props;
+---
+{kind === "event"
+  ? <Event lang="hy" item={item} more={more} />
+  : <NewsEntry lang="hy" item={item} more={more} />}

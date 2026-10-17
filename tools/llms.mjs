@@ -100,13 +100,18 @@ for (const app of wanted) {
     continue;
   }
   const langs = site.langs ?? [{ lang: undefined, prefix: "", newsLabel: site.newsLabel, eventsLabel: site.eventsLabel }];
-  const inLang = (list, lang) => (lang ? list.map((i) => localize(i, lang)) : list);
+  // A short address (`path`) is the root language's; the other language
+  // keeps it under its own prefix, as the site does: /devfest/, /am/devfest/.
+  const inLang = (list, lang, prefix = "") =>
+    (lang ? list.map((i) => localize(i, lang)) : list).map((i) =>
+      i.path && prefix ? { ...i, path: `/${prefix}${i.path.replace(/^\//, "")}` } : i,
+    );
   let news = [];
   let events = [];
   let text = readFileSync(head, "utf8").trimEnd() + "\n";
   for (const { lang, prefix, newsLabel, eventsLabel } of langs) {
-    news = entries(inLang(newsBySite(app), lang));
-    events = entries(inLang(eventsBySite(app), lang));
+    news = entries(inLang(newsBySite(app), lang, prefix));
+    events = entries(inLang(eventsBySite(app), lang, prefix));
     text +=
       section(eventsLabel, `${prefix}${site.events}`, site.host, events) +
       section(newsLabel, `${prefix}${site.news}`, site.host, news);

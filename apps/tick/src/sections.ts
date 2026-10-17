@@ -18,7 +18,11 @@ import { eventsFor, newsFor, prefix } from "./i18n";
 import { site } from "./site.config";
 
 // "am" is a slug too: it is where the Armenian pages live.
-const RESERVED = ["about", "events", "news", "go", "li", "am"];
+// So is every short address an entry has taken for itself (`path`).
+const RESERVED = [
+  "about", "events", "news", "go", "li", "am",
+  ...[...eventsFor("en"), ...newsFor("en")].flatMap((i) => (i.path ? [i.path.replace(/\//g, "")] : [])),
+];
 
 // `adult`: the subject is alcohol, so its page asks the reader's age once
 // (AgeGate) before showing itself. `icon`: its mark from the shared set

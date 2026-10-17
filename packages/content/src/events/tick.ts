@@ -3503,7 +3503,8 @@ export const items: EventItem[] = [
     },
   },
   {
-    slug: "devfest-armenia-2026",
+    slug: "devfest",
+    path: "/devfest/",
     createdAt: "2026-10-11T18:24:00+04:00",
     updatedAt: "2026-10-17T19:05:00+04:00",
     site: "tick",
@@ -3520,7 +3521,7 @@ export const items: EventItem[] = [
     venue: "Հայաստանի ամերիկյան համալսարան, Մարշալ Բաղրամյան 40",
     geo: { lat: 40.1932783, lng: 44.5044891 },
     organizer: "GDG Yerevan",
-    image: "/covers/devfest-armenia-2026.jpg",
+    image: "/covers/devfest.jpg",
     imageAlt: "Բաց նոութբուք՝ դատարկ բաց դեղին էկրանով, փայտե դարակի վրա, մի կողմում՝ կարմիր սուրճի բաժակ, մյուսում՝ կաթսայով բույս, նարնջակարմիր պատի ֆոնին",
     imageKind: "generated",
     imageWidth: 1024,
@@ -5840,7 +5841,7 @@ export const items: EventItem[] = [
       "## Երբ և որքան",
       "Նոյեմբերի 20–22-ին, առաջին օրը՝ ժամը 10:00-ից։ EventHub-ում տոմսը 15000 դրամ է՝ վաղ վաճառքի գնով մինչև նոյեմբերի 1-ը, տոմսերը չեն վերադարձվում։ Կազմակերպիչների կայքի համաձայն՝ ցուցահանդեսային տարածք մուտքն անվճար է։",
       "## Նույն շաբաթավերջին",
-      "Նոյեմբերի 21-ին՝ Digitec-ի երկրորդ օրը, Հայաստանի ամերիկյան համալսարանում անցնում է <a href=\"/am/events/devfest-armenia-2026/\" title=\"DevFest Armenia 2026՝ ծրագրավորողների կոնֆերանս Երևանում\">DevFest Armenia 2026-ը</a>՝ GDG Yerevan-ի ծրագրավորողների կոնֆերանսը, որին մասնակցությունն անվճար է՝ գրանցմամբ։",
+      "Նոյեմբերի 21-ին՝ Digitec-ի երկրորդ օրը, Հայաստանի ամերիկյան համալսարանում անցնում է <a href=\"/am/devfest/\" title=\"DevFest Armenia 2026՝ ծրագրավորողների կոնֆերանս Երևանում\">DevFest Armenia 2026-ը</a>՝ GDG Yerevan-ի ծրագրավորողների կոնֆերանսը, որին մասնակցությունն անվճար է՝ գրանցմամբ։",
     ],
     faq: [
       { q: "Ե՞րբ և որտե՞ղ է Digitec 2026-ը", a: "Նոյեմբերի 20–22-ին Երևանում՝ «Մերիդիան» ցուցահանդեսային կենտրոնում, Ոսկերիչների 1։" },
@@ -5879,7 +5880,7 @@ export const items: EventItem[] = [
           "## Dates and tickets",
           "20 to 22 November, from 10:00 on the first day. EventHub sells tickets at 15,000 drams, the early-bird price until 1 November, and they are non-refundable. According to the organisers' own site, the expo floor itself is free to enter — which makes it rather an easy afternoon out.",
           "## The same weekend",
-          "On Saturday 21 November, Digitec's middle day, GDG Yerevan holds <a href=\"/events/devfest-armenia-2026/\" title=\"DevFest Armenia 2026 in Yerevan: free developer conference\">DevFest Armenia 2026</a> at the American University of Armenia, a developer conference that is free with registration.",
+          "On Saturday 21 November, Digitec's middle day, GDG Yerevan holds <a href=\"/devfest/\" title=\"DevFest Armenia 2026 in Yerevan: free developer conference\">DevFest Armenia 2026</a> at the American University of Armenia, a developer conference that is free with registration.",
         ],
         faq: [
           { q: "When and where is Digitec 2026?", a: "From 20 to 22 November in Yerevan, at the Meridian Expo Centre, 1 Voskerichneri Street." },
@@ -5927,7 +5928,7 @@ export const items: EventItem[] = [
       "## Տոմսերը",
       "Վաղ վաճառքի տոմսը 5000 դրամ է, դեկտեմբերի 10-ից՝ 10000 դրամ։ Տոմսերը վաճառվում են EventHub-ում և չեն վերադարձվում, տեղերը սահմանափակ են։",
       "## Երբ և որտեղ",
-      "Դեկտեմբերի 26-ին, շաբաթ օրը, 10:00-ից 15:00, Հայաստանի ամերիկյան համալսարանի Մանուկյան դահլիճում՝ Մարշալ Բաղրամյան 40։ Նույն համալսարանում նոյեմբերի 21-ին անցնում է <a href=\"/am/events/devfest-armenia-2026/\" title=\"DevFest Armenia 2026՝ ծրագրավորողների կոնֆերանս Երևանում\">DevFest Armenia 2026-ը</a>՝ GDG Yerevan-ի կոնֆերանսը, որին մասնակցությունն անվճար է՝ գրանցմամբ։",
+      "Դեկտեմբերի 26-ին, շաբաթ օրը, 10:00-ից 15:00, Հայաստանի ամերիկյան համալսարանի Մանուկյան դահլիճում՝ Մարշալ Բաղրամյան 40։ Նույն համալսարանում նոյեմբերի 21-ին անցնում է <a href=\"/am/devfest/\" title=\"DevFest Armenia 2026՝ ծրագրավորողների կոնֆերանս Երևանում\">DevFest Armenia 2026-ը</a>՝ GDG Yerevan-ի կոնֆերանսը, որին մասնակցությունն անվճար է՝ գրանցմամբ։",
     ],
     faq: [
       { q: "Ե՞րբ և որտե՞ղ է JavaScript Summit Armenia 2026-ը", a: "Դեկտեմբերի 26-ին, 10:00-ից 15:00, Երևանում՝ Հայաստանի ամերիկյան համալսարանի Մանուկյան դահլիճում, Մարշալ Բաղրամյան 40։" },
@@ -5957,7 +5958,7 @@ export const items: EventItem[] = [
           "## Tickets",
           "Early-bird tickets are 5,000 drams; from 10 December they cost 10,000. They are sold on EventHub and are non-refundable, and seats are limited.",
           "## When and where",
-          "Saturday 26 December, 10:00 to 15:00, at Manoogian Hall, American University of Armenia, 40 Marshal Baghramyan Avenue. Five weeks earlier, on 21 November, the same university hosts <a href=\"/events/devfest-armenia-2026/\" title=\"DevFest Armenia 2026 in Yerevan: free developer conference\">DevFest Armenia 2026</a>, GDG Yerevan's conference, free with registration.",
+          "Saturday 26 December, 10:00 to 15:00, at Manoogian Hall, American University of Armenia, 40 Marshal Baghramyan Avenue. Five weeks earlier, on 21 November, the same university hosts <a href=\"/devfest/\" title=\"DevFest Armenia 2026 in Yerevan: free developer conference\">DevFest Armenia 2026</a>, GDG Yerevan's conference, free with registration.",
         ],
         faq: [
           { q: "When and where is JavaScript Summit Armenia 2026?", a: "On 26 December, 10:00 to 15:00, at Manoogian Hall, American University of Armenia, 40 Marshal Baghramyan Avenue, Yerevan." },
