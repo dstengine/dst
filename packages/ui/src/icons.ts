@@ -31,6 +31,8 @@ export const ICONS: Record<string, string> = {
   pumpkin: "M12 8.3c-1.2-.7-2.6-.9-4.2-.6C4.5 8.3 2.5 10.8 2.5 14c0 3.6 2.4 6 5.5 6 1.5 0 2.9-.4 4-1 1.1.6 2.5 1 4 1 3.1 0 5.5-2.4 5.5-6 0-3.2-2-5.7-5.3-6.3-1.6-.3-3-.1-4.2.6ZM12 8.3c0-2 .5-3.4 1.8-4.3M7 13l1.5-2 1.5 2ZM14 13l1.5-2 1.5 2ZM7.5 15.5c1.2 1.3 2.7 2 4.5 2s3.3-.7 4.5-2",
   // A wine glass, poured to the line where the bowl is widest.
   wine: "M7.5 3h9c.6 1.6.9 3 .9 4.3a5.4 5.4 0 0 1-10.8 0c0-1.3.3-2.7.9-4.3ZM6.8 7.5h10.4M12 12.7V21M8.5 21h7",
+  // Code: a pair of angle brackets with a slash between them.
+  code: "M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16",
   // A cat's head: two ear points over a round jaw, eyes as dots, a nose.
   cat: "M4.5 4.5 5 10a7 7 0 0 0 14 0l.5-5.5-3.7 3a9 9 0 0 0-7.6 0ZM9.5 12h.01M14.5 12h.01M12 14.6l-1 1h2Z",
   // A proscenium: two tabs of curtain drawn back over a stage floor.

@@ -99,10 +99,10 @@ export const about: Record<Lang, Page> = {
 
 // The headings and links the front page and the listings put on the page.
 export const words: Record<Lang, {
-  upcoming: string; allEvents: string; news: string; allNews: string;
+  top: string; upcoming: string; allEvents: string; news: string; allNews: string;
 }> = {
-  hy: { upcoming: "Առաջիկայում", allEvents: "Բոլոր միջոցառումները", news: "Նորություններ", allNews: "Բոլոր նորությունները" },
-  en: { upcoming: "Coming up", allEvents: "All events", news: "News", allNews: "All news" },
+  hy: { top: "Ուշադրության կենտրոնում", upcoming: "Առաջիկայում", allEvents: "Բոլոր միջոցառումները", news: "Նորություններ", allNews: "Բոլոր նորությունները" },
+  en: { top: "In the spotlight", upcoming: "Coming up", allEvents: "All events", news: "News", allNews: "All news" },
 };
 
 // The words the shared article components put on the page.

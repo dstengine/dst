@@ -35,6 +35,7 @@ const KINDS: { slug: string; hy: string; en: string; adult?: boolean; icon?: str
   // A season rather than a format: the daytime anime festival and the
   // evening club parties belong together for the question people ask.
   { slug: "halloween", hy: "Հելոուին", en: "Halloween", icon: "pumpkin" },
+  { slug: "tech", hy: "Տեխնոլոգիաներ", en: "Tech", icon: "code" },
 ];
 
 /** Section slugs whose page carries the 18+ check. */
@@ -134,6 +135,27 @@ export function sections(items: FeedItem[], lang: Lang): Section[] {
               headings: { events: "Wine events with a date", upcoming: "Coming up", past: "Past wine events" },
             };
       }
+      // Named for both searches — "IT conferences in Yerevan" in the title,
+      // "tech events" in the heading — because people ask it both ways.
+      if (g.key === "Տեխնոլոգիաներ" || g.key === "Tech") {
+        return lang === "hy"
+          ? {
+              title: "ՏՏ կոնֆերանսներ Երևանում․ տեխնոլոգիական միջոցառումներ",
+              description:
+                "ՏՏ և տեխնոլոգիական կոնֆերանսներ Երևանում՝ ամսաթվով․ ծրագրավորողների կոնֆերանսներ, արհեստական բանականության ցուցահանդեսներ և համայնքային հանդիպումներ՝ վայրով, տոմսի գնով կամ անվճար գրանցմամբ։",
+              h1: "Տեխնոլոգիական միջոցառումներ Երևանում",
+              lede: "Ծրագրավորողների կոնֆերանսներ, AI ցուցահանդեսներ և համայնքային հանդիպումներ՝ ամսաթվով, անվճար համայնքային միջոցառումներից մինչև վճարովի համաժողովներ։ Ամեն գրառման մոտ նշված է, թե որտեղ ենք ստուգել ամսաթիվը։",
+              headings: { events: "Տեխնոլոգիական միջոցառումներ՝ ամսաթվով", upcoming: "Առաջիկայում", past: "Անցած միջոցառումներ" },
+            }
+          : {
+              title: "IT conferences in Yerevan: tech events and dates",
+              description:
+                "IT and tech conferences in Yerevan by date: developer conferences, AI expos and community meetups, with the venue and the ticket price or free registration.",
+              h1: "Tech events in Yerevan",
+              lede: "Developer conferences, AI expos and community meetups with a date, from free community events to ticketed summits. Every entry says where we checked the date.",
+              headings: { events: "Tech events with a date", upcoming: "Coming up", past: "Past tech events" },
+            };
+      }
       // "Classical music in Yerevan" is asked by visitors choosing an
       // evening, so the page answers the halls as well as the dates.
       if (g.key === "Դասական երաժշտություն" || g.key === "Classical") {
@@ -189,7 +211,7 @@ export function sectionHref(item: FeedItem, lang: Lang): string | undefined {
 // The tags this site is pushing right now, in order — see `promotedSection`.
 // Each drops out of the nav and the event pages by itself once its last
 // date has gone.
-const PROMOTED: Record<Lang, string[]> = { hy: ["Հելոուին", "Գինի"], en: ["Halloween", "Wine"] };
+const PROMOTED: Record<Lang, string[]> = { hy: ["Հելոուին", "Գինի", "Տեխնոլոգիաներ"], en: ["Halloween", "Wine", "Tech"] };
 
 const today = new Date().toISOString().slice(0, 10);
 const live = (lang: Lang) =>
@@ -204,8 +226,8 @@ export const promoted = { hy: promotedAll.hy[0], en: promotedAll.en[0] };
 // because Armenian wants the genitive (Հելոուինի), which no rule over the
 // bare label would get right. A promoted tag with no words here gets no link.
 const PROMOTED_ALL: Record<Lang, Record<string, string>> = {
-  hy: { "Հելոուին": "Հելոուինի բոլոր միջոցառումները", "Գինի": "Գինու բոլոր միջոցառումները" },
-  en: { Halloween: "All Halloween events", Wine: "All wine events" },
+  hy: { "Հելոուին": "Հելոուինի բոլոր միջոցառումները", "Գինի": "Գինու բոլոր միջոցառումները", "Տեխնոլոգիաներ": "Տեխնոլոգիական բոլոր միջոցառումները" },
+  en: { Halloween: "All Halloween events", Wine: "All wine events", Tech: "All tech events" },
 };
 export const linkFor = (lang: Lang, hot: (typeof promotedAll)["en"][number] | undefined) => {
   const label = hot && PROMOTED_ALL[lang][hot.key];

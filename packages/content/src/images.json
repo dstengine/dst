@@ -30200,6 +30200,38 @@
         ]
       ]
     },
+    "/covers/javascript-summit-armenia-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/javascript-summit-armenia-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/javascript-summit-armenia-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/javascript-summit-armenia-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/javascript-summit-armenia-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/javascript-summit-armenia-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/javascript-summit-armenia-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/jazz-aznavour-state-jazz-orchestra-yerevan-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -31397,6 +31429,38 @@
         [
           1536,
           "/covers/shostakovich-symphony-1-yerevan-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/snoop-dogg-yerevan-concert-status.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/snoop-dogg-yerevan-concert-status-480.avif"
+        ],
+        [
+          768,
+          "/covers/snoop-dogg-yerevan-concert-status-768.avif"
+        ],
+        [
+          1024,
+          "/covers/snoop-dogg-yerevan-concert-status-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/snoop-dogg-yerevan-concert-status-480.webp"
+        ],
+        [
+          768,
+          "/covers/snoop-dogg-yerevan-concert-status-768.webp"
+        ],
+        [
+          1024,
+          "/covers/snoop-dogg-yerevan-concert-status-1024.webp"
         ]
       ]
     },
