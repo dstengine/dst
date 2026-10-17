@@ -123,7 +123,7 @@ Every page has an Armenian twin at the same address under /am/, and each says so
 
 ## News
 
-- [Snoop Dogg in Yerevan: no concert date confirmed](https://tick.am/snoop-dogg/): Snoop Dogg's Yerevan concert, set for 23 September 2023 at Hrazdan Stadium, was postponed and never given a new date. As of 17 October 2026 no date, venue or ticket sale has been announced.
+- [Snoop Dogg concert in Yerevan](https://tick.am/snoop-dogg/): Snoop Dogg's Yerevan concert was set for 23 September 2023 at Hrazdan Stadium, and postponed. What was planned, how ticket refunds worked and what has been reported since, with a source and a date for each.
 - [Yerevan's 2,808th anniversary: seven stages on 9–10 October](https://tick.am/news/yerevan-2808th-anniversary-2026/): For Yerevan's 2,808th birthday, Diana Arbenina and Night Snipers play Diana Abgar Park on 9 October. On 10 October, seven stages across the city span jazz, rock, Armenian music, pop, rap, classical and electronic music.
 - [Yerevan's balloon festival runs until 11 October](https://tick.am/news/discover-armenia-from-the-sky-balloon-festival-2026/): The eighth Discover Armenia from the Sky festival runs from 6 to 11 October; Visit Yerevan lists its city flights at 08:00.
 - [Yerevan Fashion Week 2026: shows, Fashion Talks and a public showroom](https://tick.am/news/yerevan-fashion-week-2026/): Yerevan Fashion Week's 8–11 October programme pairs the Old Gods exhibition at Erebuni with 20+ shows, Fashion Talks and a free public showroom at 91 Teryan Street from 9 to 11 October.
@@ -229,7 +229,7 @@ Every page has an Armenian twin at the same address under /am/, and each says so
 
 ## Նորություններ (in Armenian)
 
-- [Snoop Dogg-ը Երևանում․ համերգի ամսաթիվ հաստատված չէ](https://tick.am/am/snoop-dogg/): Սնուփ Դոգի (Snoop Dogg) համերգը Երևանում նախատեսված էր 2023 թվականի սեպտեմբերի 23-ին՝ «Հրազդան» մարզադաշտում, հետաձգվեց և նոր ամսաթիվ չստացավ։ 2026 թվականի հոկտեմբերի 17-ի դրությամբ նոր ամսաթիվ, վայր կամ տոմսերի վաճառք հայտարարված չէ։
+- [Snoop Dogg-ի համերգը Երևանում](https://tick.am/am/snoop-dogg/): Սնուփ Դոգի (Snoop Dogg) համերգը Երևանում նախատեսված էր 2023 թվականի սեպտեմբերի 23-ին՝ «Հրազդան» մարզադաշտում, և հետաձգվեց։ Ինչ էր նախատեսված, ինչպես էին վերադարձվում տոմսերի գումարները և ինչ է հաղորդվել դրանից հետո՝ ամեն տեղեկության աղբյուրով և ամսաթվով։
 - [Երևանի 2808-ամյակը. յոթ բեմի ծրագիրը՝ հոկտեմբերի 9–10-ին](https://tick.am/am/news/yerevan-2808th-anniversary-2026/): Երևանի 2808-ամյակին՝ հոկտեմբերի 9-ին, Դիանա Աբգարի այգում ելույթ կունենան Դիանա Արբենինան և «Նոչնիե սնայպերի»-ն։ Հոկտեմբերի 10-ին յոթ բեմ կաշխատի քաղաքի տարբեր հատվածներում՝ ջազից ու ռոքից մինչև ազգային, դասական և էլեկտրոնային երաժշտություն։
 - [Փուչիկների միջազգային փառատոնը Երևանում շարունակվում է մինչև հոկտեմբերի 11-ը](https://tick.am/am/news/discover-armenia-from-the-sky-balloon-festival-2026/): «Բացահայտիր Հայաստանը երկնքից» փառատոնի ութերորդ թողարկումը հոկտեմբերի 6–11-ն է․ Visit Yerevan-ը Երևանի թռիչքները նշում է առավոտյան ժամը 08:00-ին։
 - [Yerevan Fashion Week 2026. ցուցադրություններ, Fashion Talks և բաց շոուրում](https://tick.am/am/news/yerevan-fashion-week-2026/): Երևանում Yerevan Fashion Week-ի հոկտեմբերի 8–11-ի ծրագիրը միավորում է Էրեբունիում բացվող «Հին աստվածներ» ցուցահանդեսը, 20-ից ավելի ցուցադրություն, Fashion Talks և հոկտեմբերի 9–11-ի անվճար շոուրումը Տերյան 91-ում։
