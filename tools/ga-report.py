@@ -34,9 +34,11 @@ hours against the 24 before them, which is the comparison the number
 claims to be. Week and month have whole days to work with and use ordinary
 date ranges. Everything downstream sees the same {current, previous} shape.
 
-The week and the month also carry Search Console: clicks, impressions and
-queries, and before them any host that is missing from Search Console or
-whose sitemap Google has not read — the failure no GA number shows.
+Every period also carries Search Console: clicks, impressions and the
+queries behind them, host by host, and the queries that are shown and not
+clicked. The week and the month put before them any host that is missing
+from Search Console or whose sitemap Google has not read — the failure no
+GA number shows.
 
 Credentials: GA4_KEY or ~/dst/.secrets/ga4-reader.json for the read,
 REPORTS_TELEGRAM_API_KEY / REPORTS_TELEGRAM_CHAT_ID from ~/dst/.env for the
@@ -216,18 +218,26 @@ if seen.get("ticket_click"):
 
 
 # --- Search Console ----------------------------------------------------
-# Week and month only. Search Console publishes a day two or three days
-# late, so a 24-hour figure would be a zero every afternoon; the week here
-# is the last whole seven days it has, said with its dates, not GA's week.
+# Every period, read two ways. Search Console publishes a whole day two or
+# three days late, so the week and the month are the last whole days it
+# has, said with their dates rather than GA's. Read by date, a 24-hour
+# figure would be a zero every afternoon, so the day is read by hour from
+# the fresh data (`hourly_all`), which runs about six hours behind: the 24
+# hours that end on the newest hour any property has, against the 24
+# before them, said with the hour they end on.
 #
-# The same read checks that every site can be found at all. A host that is
-# not a property, or whose sitemap Google never fetched, looks healthy in
-# every other number above — dst.llc went five weeks like that and eleven
-# hosts were never added — so those lead the section, and a quiet week says
-# in one line that they were checked. Thresholds match tools/idx-check.mjs.
+# The week and the month also check that every site can be found at all. A
+# host that is not a property, or whose sitemap Google never fetched, looks
+# healthy in every other number above — dst.llc went five weeks like that
+# and eleven hosts were never added — so those lead the section, and a
+# quiet week says in one line that they were checked. Thresholds match
+# tools/idx-check.mjs. The day leaves that check to them: a sitemap still
+# waiting would be the same line seven times a week.
 GSC = "https://www.googleapis.com/webmasters/v3"
 GSC_LAG = 3
 NEVER_READ_DAYS, STALE_READ_DAYS = 7, 21
+QUERY_HOSTS = 6
+PER_HOST = 3 if PERIOD == "day" else 5
 
 
 def repo_hosts():
@@ -237,7 +247,9 @@ def repo_hosts():
     return re.findall(r':\s*"([^"]+)"', src.split("export const HOSTS = {", 1)[1].split("};", 1)[0])
 
 
-def search_console():
+def gsc():
+    """A GET, a searchAnalytics POST (the whole answer, metadata and all),
+    and the properties this account reads."""
     from google.oauth2 import service_account
     from google.auth.transport.requests import AuthorizedSession
     s = AuthorizedSession(service_account.Credentials.from_service_account_file(
@@ -249,9 +261,69 @@ def search_console():
         r.raise_for_status()
         return r.json()
 
+    def post(site, body):
+        r = s.post(GSC + f"/sites/{quote(site, safe='')}/searchAnalytics/query", timeout=30, json=body)
+        r.raise_for_status()
+        return r.json()
+
     sites = [e["siteUrl"] for e in get("/sites").get("siteEntry", [])
              if e["permissionLevel"] != "siteUnverifiedUser"]
     host_of = {site: urlparse(site).hostname or site.removeprefix("sc-domain:") for site in sites}
+    return get, post, sites, host_of
+
+
+def search_totals(totals):
+    """Clicks and impressions against the period before, then every host
+    that was shown at all. `totals` is {host: ([clicks, impr], [clicks, impr])}."""
+    clicks = sum(c[0] for c, _ in totals.values()), sum(p[0] for _, p in totals.values())
+    shows = sum(c[1] for c, _ in totals.values()), sum(p[1] for _, p in totals.values())
+    out = ["<pre>", f"{'clicks':<12}{clicks[0]:>6}   {delta(*clicks)}",
+           f"{'impressions':<12}{shows[0]:>6}   {delta(*shows)}"]
+    ranked = sorted(((h, c) for h, (c, _) in totals.items() if c[1]), key=lambda t: (-t[1][0], -t[1][1]))
+    if ranked:
+        out.append("")
+        for h, c in ranked[:12]:
+            out.append(f"{h:<22}{c[0]:>4} /{c[1]:>6}")
+    out.append("</pre>")
+    return out
+
+
+def search_queries(queries):
+    """Each host's best queries under its name, clicks first and then
+    impressions; then the network's queries that are shown and not picked.
+
+    The second list is the one to act on. A query on the first two result
+    pages that nobody clicks is a page one title or one summary away from
+    traffic, and ranked by clicks it never surfaces: tick's best-clicked
+    queries would push it off the end. `queries` is (clicks, impressions,
+    position, query, host). A query is padded before it is escaped, so an
+    ampersand does not shift its column.
+    """
+    by_host = defaultdict(list)
+    for q in queries:
+        by_host[q[4]].append(q)
+    hosts = sorted(by_host, key=lambda h: (-sum(q[0] for q in by_host[h]), -sum(q[1] for q in by_host[h])))
+    out, shown = [], set()
+    if hosts:
+        out += ["<b>Search · queries</b> (clicks / impressions, position)", "<pre>"]
+        for h in hosts[:QUERY_HOSTS]:
+            out.append(h)
+            for q in sorted(by_host[h], key=lambda t: (-t[0], -t[1]))[:PER_HOST]:
+                c, i, pos, k, _ = q
+                shown.add(q)
+                out.append(f" {escape(f'{k[:23]:<24}')}{c:>3} /{i:>5}  {pos:>4.1f}")
+        out.append("</pre>")
+    missed = sorted((q for q in queries if not q[0] and q[2] <= 20 and q not in shown), key=lambda t: -t[1])[:5]
+    if missed:
+        out += ["<b>Search · shown, not clicked</b> (impressions, position)", "<pre>"]
+        for _, i, pos, k, h in missed:
+            out.append(f"{escape(f'{k[:20]:<21}')}{i:>5}  {pos:>4.1f}  {h.split('.')[0][:10]}")
+        out.append("</pre>")
+    return out
+
+
+def search_console():
+    get, post, sites, host_of = gsc()
     days = 7 if PERIOD == "week" else 30
     end = (NOW - timedelta(days=GSC_LAG)).date()
     start, prev_start = end - timedelta(days=days - 1), end - timedelta(days=2 * days - 1)
@@ -279,12 +351,9 @@ def search_console():
             elif m.get("lastDownloaded") and age(m["lastDownloaded"]) > STALE_READ_DAYS:
                 alerts.append(f"{host} — {name} last read {m['lastDownloaded'][:10]}")
 
-        def query(dims, since, limit):
-            r = s.post(GSC + q + "/searchAnalytics/query", timeout=30, json={
-                "startDate": since.isoformat(), "endDate": end.isoformat(),
-                "dimensions": dims, "rowLimit": limit})
-            r.raise_for_status()
-            return r.json().get("rows", [])
+        query = lambda dims, since, limit: post(site, {
+            "startDate": since.isoformat(), "endDate": end.isoformat(),
+            "dimensions": dims, "rowLimit": limit}).get("rows", [])
 
         # By date over both periods: one call, and a total that keeps the
         # clicks Search Console hides from the per-query rows.
@@ -295,8 +364,10 @@ def search_console():
             bucket[1] += int(row["impressions"])
         totals[host] = (cur, prv)
         if cur[1]:
+            # Fifty, not the five that are printed: the unclicked ones sit
+            # below every clicked query on a host that has any.
             queries += [(int(row["clicks"]), int(row["impressions"]), row["position"], row["keys"][0], host)
-                        for row in query(["query"], start, 10)]
+                        for row in query(["query"], start, 50)]
 
     fmt = lambda d: f"{d.day} {d:%b}"
     out = ["", f"<b>Search</b> · {fmt(start)}–{fmt(end)}, vs the {days} days before"]
@@ -306,33 +377,69 @@ def search_console():
         out.append(f"<i>All {len(sites)} properties checked: none missing, no sitemap stuck.</i>")
     if waiting:
         out.append(f"<i>{waiting} sitemap{'s' if waiting > 1 else ''} submitted this week, not read yet.</i>")
-    clicks = sum(c[0] for c, _ in totals.values()), sum(p[0] for _, p in totals.values())
-    shows = sum(c[1] for c, _ in totals.values()), sum(p[1] for _, p in totals.values())
-    out += ["<pre>", f"{'clicks':<12}{clicks[0]:>6}   {delta(*clicks)}",
-            f"{'impressions':<12}{shows[0]:>6}   {delta(*shows)}"]
-    ranked = sorted(((h, c, p) for h, (c, p) in totals.items() if c[1]), key=lambda t: (-t[1][0], -t[1][1]))
-    if ranked:
-        out.append("")
-        for h, c, p in ranked[:12]:
-            out.append(f"{h:<22}{c[0]:>4} /{c[1]:>6}")
-    out.append("</pre>")
-    if queries:
-        # Clicks first, then the impressions a query is earning without
-        # them — that second kind is where a page is one rewrite from traffic.
-        out += ["<b>Search · queries</b> (clicks / impressions, position)", "<pre>"]
-        for c, i, pos, k, h in sorted(queries, key=lambda t: (-t[0], -t[1]))[:10]:
-            out.append(f"{escape(k[:24]):<25}{c:>3} /{i:>5}  {pos:>4.1f}")
-        out.append("</pre>")
-    return out
+    return out + search_totals(totals) + search_queries(queries)
 
 
-if PERIOD != "day":
-    try:
-        lines += search_console()
-    except Exception as e:
-        # The GA half is already written; a Search Console outage costs this
-        # section, not the digest.
-        lines += ["", f"<i>Search Console unavailable: {escape(type(e).__name__)}</i>"]
+def search_day():
+    _, post, sites, host_of = gsc()
+    # Dates here are Google's, in Pacific time, which is behind this
+    # machine's: three days back reaches both windows, and a day ahead is
+    # past the newest hour from either side of the date line.
+    span = lambda dims: {"startDate": (NOW - timedelta(days=3)).date().isoformat(),
+                         "endDate": (NOW + timedelta(days=1)).date().isoformat(),
+                         "dimensions": dims, "dataState": "hourly_all", "rowLimit": 25000}
+    hourly = {site: post(site, span(["hour"])) for site in sites}
+    # The window ends where Search Console says the hours stop being whole.
+    # The hours after that are in the answer too, but the newest is a
+    # fraction of an hour (2 impressions where the hour before had 10),
+    # and counting it would make every day look like a slump.
+    ends = [r["metadata"]["firstIncompleteHour"] for r in hourly.values()
+            if r.get("metadata", {}).get("firstIncompleteHour")]
+    if not ends:
+        return ["", "<b>Search</b>", "<i>Search Console has no hourly figures for any property.</i>"]
+    end = max(datetime.fromisoformat(e) for e in ends)
+
+    def window(key):
+        age = end - datetime.fromisoformat(key)
+        return "cur" if timedelta(0) < age <= timedelta(hours=24) else \
+               "prev" if timedelta(hours=24) < age <= timedelta(hours=48) else None
+
+    totals, queries = {}, []
+    for site, answer in hourly.items():
+        cur, prv = [0, 0], [0, 0]
+        for r in answer.get("rows", []):
+            w = window(r["keys"][0])
+            if w:
+                bucket = cur if w == "cur" else prv
+                bucket[0] += int(r["clicks"])
+                bucket[1] += int(r["impressions"])
+        totals[host_of[site]] = (cur, prv)
+        if not cur[1]:
+            continue
+        # Summed hour by hour, so the position is weighted by impressions:
+        # an hour with one impression at 40 must not count as much as an
+        # hour with twenty at 5.
+        agg = defaultdict(lambda: [0, 0, 0.0])
+        for r in post(site, span(["hour", "query"])).get("rows", []):
+            if window(r["keys"][0]) == "cur":
+                a = agg[r["keys"][1]]
+                a[0] += int(r["clicks"])
+                a[1] += int(r["impressions"])
+                a[2] += r["position"] * r["impressions"]
+        queries += [(c, i, p / i, k, host_of[site]) for k, (c, i, p) in agg.items() if i]
+
+    until = end.astimezone()
+    out = ["", f"<b>Search</b> · 24 hours to {until.day} {until:%b %H:%M}, vs the 24 before"]
+    return out + search_totals(totals) + search_queries(queries)
+
+
+SEARCH_AT = len(lines)
+try:
+    lines += search_day() if PERIOD == "day" else search_console()
+except Exception as e:
+    # The GA half is already written; a Search Console outage costs this
+    # section, not the digest.
+    lines += ["", f"<i>Search Console unavailable: {escape(type(e).__name__)}</i>"]
 
 text = "\n".join(lines)
 
@@ -344,11 +451,23 @@ token, chat = os.environ.get("REPORTS_TELEGRAM_API_KEY"), os.environ.get("REPORT
 if not token or not chat:
     raise SystemExit("REPORTS_TELEGRAM_API_KEY / REPORTS_TELEGRAM_CHAT_ID not set — source ~/dst/.env first")
 
-req = urllib.request.Request(
-    f"https://api.telegram.org/bot{token}/sendMessage",
-    data=json.dumps({"chat_id": chat, "text": text, "parse_mode": "HTML",
-                     "disable_web_page_preview": True}).encode(),
-    headers={"Content-Type": "application/json"})
-with urllib.request.urlopen(req) as r:
-    body = json.load(r)
-print(f"{PERIOD}: sent, message_id={body['result']['message_id']}" if body.get("ok") else "FAILED: " + str(body))
+
+def send(text):
+    req = urllib.request.Request(
+        f"https://api.telegram.org/bot{token}/sendMessage",
+        data=json.dumps({"chat_id": chat, "text": text, "parse_mode": "HTML",
+                         "disable_web_page_preview": True}).encode(),
+        headers={"Content-Type": "application/json"})
+    with urllib.request.urlopen(req) as r:
+        body = json.load(r)
+    print(f"{PERIOD}: sent, message_id={body['result']['message_id']}" if body.get("ok") else "FAILED: " + str(body))
+
+
+# Telegram refuses a message over 4096 characters outright, and the month
+# with its queries is already past three thousand: past the limit the
+# digest goes as two, split where Search begins, rather than not at all.
+if len(text) <= 4096:
+    send(text)
+else:
+    send("\n".join(lines[:SEARCH_AT]))
+    send("\n".join(lines[SEARCH_AT:]).lstrip("\n"))
