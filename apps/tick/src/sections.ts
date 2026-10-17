@@ -40,6 +40,10 @@ const KINDS: { slug: string; hy: string; en: string; adult?: boolean; icon?: str
   // evening club parties belong together for the question people ask.
   { slug: "halloween", hy: "Հելոուին", en: "Halloween", icon: "pumpkin" },
   { slug: "tech", hy: "Տեխնոլոգիաներ", en: "Tech", icon: "code" },
+  // The other season, and one page rather than two: in Yerevan the holiday
+  // runs from the December concerts through the Eve to Christmas on
+  // 6 January, and Ամանոր is the word for all of it.
+  { slug: "new-year", hy: "Ամանոր", en: "New Year", icon: "tree" },
 ];
 
 /** Section slugs whose page carries the 18+ check. */
@@ -160,6 +164,35 @@ export function sections(items: FeedItem[], lang: Lang): Section[] {
               headings: { events: "Tech events with a date", upcoming: "Coming up", past: "Past tech events" },
             };
       }
+      if (g.key === "Ամանոր" || g.key === "New Year") {
+        return lang === "hy"
+          ? {
+              title: "Ամանորը Երևանում․ համերգներ և միջոցառումներ",
+              description:
+                "Ամանորը Երևանում․ համերգներ, ներկայացումներ և տոնական միջոցառումներ դեկտեմբերից մինչև հունվարի 6-ի Սուրբ Ծնունդը՝ ամսաթվերով, ժամերով ու գներով։",
+              h1: "Ամանորը Երևանում",
+              lede: "Որտե՞ղ անցկացնել տոները Երևանում՝ դեկտեմբերյան համերգներից մինչև հունվարի 6-ի Սուրբ Ծնունդը։ Տեսեք ամսաթվերը, ժամերն ու տոմսերի գները՝ մինչև ընտրելը։",
+              headings: {
+                events: "Որտե՞ղ նշել Ամանորը",
+                upcoming: "Ամսաթվերը",
+                past: "Անցած միջոցառումներ",
+                news: "Ամանորի նորություններ",
+              },
+            }
+          : {
+              title: "New Year in Yerevan: concerts and events",
+              description:
+                "New Year in Yerevan: concerts, shows and celebrations from December to Armenian Christmas on 6 January, with dates, times and prices.",
+              h1: "New Year in Yerevan",
+              lede: "Where to spend the holidays in Yerevan, from the December concerts to Christmas on 6 January. Check the dates, times and prices before choosing.",
+              headings: {
+                events: "Where to go for New Year",
+                upcoming: "Dates",
+                past: "Past events",
+                news: "New Year news",
+              },
+            };
+      }
       // "Classical music in Yerevan" is asked by visitors choosing an
       // evening, so the page answers the halls as well as the dates.
       if (g.key === "Դասական երաժշտություն" || g.key === "Classical") {
@@ -215,7 +248,10 @@ export function sectionHref(item: FeedItem, lang: Lang): string | undefined {
 // The tags this site is pushing right now, in order — see `promotedSection`.
 // Each drops out of the nav and the event pages by itself once its last
 // date has gone.
-const PROMOTED: Record<Lang, string[]> = { hy: ["Հելոուին", "Գինի", "Տեխնոլոգիաներ"], en: ["Halloween", "Wine", "Tech"] };
+const PROMOTED: Record<Lang, string[]> = {
+  hy: ["Հելոուին", "Գինի", "Տեխնոլոգիաներ", "Ամանոր"],
+  en: ["Halloween", "Wine", "Tech", "New Year"],
+};
 
 const today = new Date().toISOString().slice(0, 10);
 const live = (lang: Lang) =>
@@ -230,8 +266,8 @@ export const promoted = { hy: promotedAll.hy[0], en: promotedAll.en[0] };
 // because Armenian wants the genitive (Հելոուինի), which no rule over the
 // bare label would get right. A promoted tag with no words here gets no link.
 const PROMOTED_ALL: Record<Lang, Record<string, string>> = {
-  hy: { "Հելոուին": "Հելոուինի բոլոր միջոցառումները", "Գինի": "Գինու բոլոր միջոցառումները", "Տեխնոլոգիաներ": "Տեխնոլոգիական բոլոր միջոցառումները" },
-  en: { Halloween: "All Halloween events", Wine: "All wine events", Tech: "All tech events" },
+  hy: { "Հելոուին": "Հելոուինի բոլոր միջոցառումները", "Գինի": "Գինու բոլոր միջոցառումները", "Տեխնոլոգիաներ": "Տեխնոլոգիական բոլոր միջոցառումները", "Ամանոր": "Ամանորի բոլոր միջոցառումները" },
+  en: { Halloween: "All Halloween events", Wine: "All wine events", Tech: "All tech events", "New Year": "All New Year events" },
 };
 export const linkFor = (lang: Lang, hot: (typeof promotedAll)["en"][number] | undefined) => {
   const label = hot && PROMOTED_ALL[lang][hot.key];

@@ -9,7 +9,7 @@
 //
 // Keine Ortsrubriken: alles hier steht in Wien, eine Seite /wien/ wäre die
 // Startseite unter einer zweiten Adresse. Dagegen steht `home`.
-import { buildSections, promotedSection, type Section, type Vocabulary } from "@dst/content/sections";
+import { buildSections, promotedFirst, type Section, type Vocabulary } from "@dst/content/sections";
 import type { FeedItem } from "@dst/content/sections";
 import { eventsBySite } from "@dst/content/events";
 import { newsBySite } from "@dst/content/news";
@@ -32,6 +32,11 @@ const TAGS: Record<string, Vocabulary> = {
   // nichts miteinander zu tun — gemeinsam ist ihnen die Woche im Jahr, und
   // genau die wird gesucht.
   Halloween: { slug: "halloween", plural: "Halloween", label: "Halloween" },
+  // Der Winter hat zwei solche Marken, und sie werden getrennt gesucht:
+  // „Weihnachtsmärkte Wien“ sind sechs Wochen und ein Dutzend Plätze,
+  // „Silvester Wien“ ist eine Nacht und die Frage, wo man sie verbringt.
+  Weihnachtsmarkt: { slug: "weihnachtsmaerkte", plural: "Weihnachtsmärkte", label: "Weihnachtsmärkte" },
+  Silvester: { slug: "silvester", plural: "Silvester", label: "Silvester" },
 };
 
 export const NAV = {
@@ -62,6 +67,36 @@ export function sections(items: FeedItem[]): Section[] {
             upcoming: "Termine 2026",
             past: "Frühere Jahre",
             news: "Meldungen zu Halloween",
+          },
+        };
+      }
+      if (g.key === "Weihnachtsmarkt") {
+        return {
+          title: "Weihnachtsmärkte in Wien 2026: Termine und Zeiten",
+          description:
+            "Weihnachtsmärkte in Wien 2026: der Christkindlmarkt am Rathausplatz ab 13. November und die anderen Märkte der Stadt — mit Öffnungszeiten, Datum und Quelle.",
+          h1: "Weihnachtsmärkte in Wien",
+          lede: "Der Rathausplatz macht am 13. November auf, die anderen Märkte in den Wochen danach. Hier stehen sie mit den Öffnungszeiten, wie die Veranstalter sie angegeben haben, und dem Link dorthin, wo wir es gelesen haben.",
+          headings: {
+            events: "Welche Märkte wann offen haben",
+            upcoming: "Termine 2026",
+            past: "Frühere Jahre",
+            news: "Meldungen zu den Weihnachtsmärkten",
+          },
+        };
+      }
+      if (g.key === "Silvester") {
+        return {
+          title: "Silvester in Wien 2026: was los ist",
+          description:
+            "Silvester in Wien: wo man den Jahreswechsel verbringt, mit Uhrzeit, Preis und Quelle bei jedem Eintrag.",
+          h1: "Silvester in Wien",
+          lede: "Wo man in Wien um Mitternacht am 31. Dezember steht und was es kostet, dorthin zu kommen — die Uhrzeit, wie die Veranstalter sie angegeben haben, und der Link dorthin, wo wir es gelesen haben.",
+          headings: {
+            events: "Wo man Silvester feiert",
+            upcoming: "Termine",
+            past: "Frühere Jahre",
+            news: "Meldungen zu Silvester",
           },
         };
       }
@@ -97,9 +132,16 @@ export const allSections = sections([...eventsBySite(siteId), ...newsBySite(site
 // tail's heading in its own words — and it all switches itself off the day
 // the last date under it passes, which is the only reason a seasonal
 // promotion is safe to wire into a layout. See `promotedSection`.
-const PROMOTED = 'Halloween';
+//
+// Die Saisonen in der Reihenfolge, in der sie kommen; siehe `promotedFirst`.
+// Ab dem 27. Dezember geht die eine Nacht der Saison vor, die sie beendet
+// und die noch läuft — die Eisfläche am Rathausplatz bleibt bis Dreikönig.
+const today = new Date().toISOString().slice(0, 10);
+const PROMOTED = today.slice(5) >= "12-27"
+  ? ["Silvester", "Weihnachtsmarkt"]
+  : ["Halloween", "Weihnachtsmarkt", "Silvester"];
 
-export const promoted = promotedSection(allSections, PROMOTED, new Date().toISOString().slice(0, 10), site.keyword);
+export const promoted = promotedFirst(allSections, PROMOTED, today, site.keyword);
 
 // The word a heading uses for a kind, in this site's language. The article
 // components know which kind a block came out as; only this file knows what

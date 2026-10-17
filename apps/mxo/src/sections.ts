@@ -7,7 +7,7 @@
 // excluir. Guanajuato, Guadalajara y la Ciudad de México llevan un evento
 // cada una hoy; la segunda entrada de cualquiera de ellas abre su página
 // sola, sin tocar este archivo.
-import { buildSections, promotedSection, type Section, type Vocabulary } from "@dst/content/sections";
+import { buildSections, promotedFirst, type Section, type Vocabulary } from "@dst/content/sections";
 import type { FeedItem } from "@dst/content/sections";
 import { eventsBySite } from "@dst/content/events";
 import { newsBySite } from "@dst/content/news";
@@ -47,6 +47,11 @@ const TAGS: Record<string, Vocabulary> = {
     plural: "Día de Muertos",
     label: "Día de Muertos",
   },
+  // Las dos fechas del invierno, buscadas por separado: la Navidad son
+  // tres semanas de posadas y pastorelas hasta Reyes; el Año Nuevo es una
+  // noche y dónde pasarla.
+  Navidad: { slug: "navidad", plural: "Navidad", label: "Navidad" },
+  "Año Nuevo": { slug: "ano-nuevo", plural: "Año Nuevo", label: "Año Nuevo" },
 };
 
 export const NAV = {
@@ -108,6 +113,36 @@ export function sections(items: FeedItem[]): Section[] {
           },
         };
       }
+      if (g.key === "Navidad") {
+        return {
+          title: "Navidad 2026 en México: dónde vivirla",
+          description:
+            "Posadas, pastorelas, ferias y la Rosca de Reyes por todo México, del 16 de diciembre al 6 de enero, con la fecha como la publicó quien organiza.",
+          h1: "Navidad en México",
+          lede: "De las posadas del 16 de diciembre al Día de Reyes, lo que hay en cada ciudad para estas fechas — cada fecha como la publicó quien organiza, y de dónde la sacamos.",
+          headings: {
+            events: "Dónde vivir la Navidad",
+            upcoming: "Fechas de esta temporada",
+            past: "Temporadas pasadas",
+            news: "Noticias de la Navidad",
+          },
+        };
+      }
+      if (g.key === "Año Nuevo") {
+        return {
+          title: "Año Nuevo en México: dónde recibirlo",
+          description:
+            "Año Nuevo en México: dónde recibirlo la noche del 31 de diciembre, ciudad por ciudad, con la hora, el precio y la fuente de cada evento.",
+          h1: "Año Nuevo en México",
+          lede: "Dónde estar a la medianoche del 31 de diciembre, de una plaza a otra — la hora como la publicó quien organiza, y de dónde la sacamos.",
+          headings: {
+            events: "Dónde recibir el Año Nuevo",
+            upcoming: "Fechas",
+            past: "Ediciones pasadas",
+            news: "Noticias de Año Nuevo",
+          },
+        };
+      }
       return {
         title: esMundo
           ? "Noticias del mundo, desde México, con fuente y fecha"
@@ -135,9 +170,15 @@ export const allSections = sections([...eventsBySite(siteId), ...newsBySite(site
 // tail's heading in its own words — and it all switches itself off the day
 // the last date under it passes, which is the only reason a seasonal
 // promotion is safe to wire into a layout. See `promotedSection`.
-const PROMOTED = 'Día de Muertos';
+// Las temporadas en el orden en que llegan; ver `promotedFirst`. Desde el
+// 26 de diciembre la noche del 31 va antes que la temporada que la rodea,
+// que sigue hasta Reyes.
+const today = new Date().toISOString().slice(0, 10);
+const PROMOTED = today.slice(5) >= "12-26"
+  ? ["Año Nuevo", "Navidad"]
+  : ["Día de Muertos", "Navidad", "Año Nuevo"];
 
-export const promoted = promotedSection(allSections, PROMOTED, new Date().toISOString().slice(0, 10), site.keyword);
+export const promoted = promotedFirst(allSections, PROMOTED, today, site.keyword);
 
 // The word a heading uses for a kind, in this site's language. The article
 // components know which kind a block came out as; only this file knows what

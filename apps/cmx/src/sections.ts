@@ -6,7 +6,7 @@
 // Sin secciones de lugar: todo lo que se publica aquí está en la Ciudad de
 // México, así que la regla de lugar daría una página /ciudad-de-mexico/ con
 // exactamente lo mismo que ya hay en /eventos/. Eso es lo que evita `home`.
-import { buildSections, promotedSection, type Section, type Vocabulary } from "@dst/content/sections";
+import { buildSections, promotedFirst, type Section, type Vocabulary } from "@dst/content/sections";
 import type { FeedItem } from "@dst/content/sections";
 import { eventsBySite } from "@dst/content/events";
 import { newsBySite } from "@dst/content/news";
@@ -42,6 +42,11 @@ const TAGS: Record<string, Vocabulary> = {
     plural: "Día de Muertos",
     label: "Día de Muertos",
   },
+  // Las dos fechas del invierno, y se buscan por separado: "Navidad en la
+  // CDMX" son tres semanas de posadas, pistas y villancicos hasta Reyes;
+  // "Año Nuevo" es una noche y dónde pasarla.
+  Navidad: { slug: "navidad", plural: "Navidad", label: "Navidad" },
+  "Año Nuevo": { slug: "ano-nuevo", plural: "Año Nuevo", label: "Año Nuevo" },
 };
 
 export const NAV = {
@@ -75,6 +80,36 @@ export function sections(items: FeedItem[]): Section[] {
           },
         };
       }
+      if (g.key === "Navidad") {
+        return {
+          title: "Navidad 2026 en la CDMX: qué hay",
+          description:
+            "Navidad en la Ciudad de México: posadas, pistas de hielo, villancicos y la Rosca de Reyes, con la fecha y la hora como las publicó quien organiza.",
+          h1: "Navidad en la Ciudad de México",
+          lede: "De las posadas del 16 de diciembre a la Rosca del 6 de enero, lo que hay en la ciudad para estas fechas — cada fecha como la publicó quien organiza, y el enlace a donde lo leímos.",
+          headings: {
+            events: "Dónde pasar la Navidad",
+            upcoming: "Fechas de esta temporada",
+            past: "Temporadas pasadas",
+            news: "Noticias de la Navidad",
+          },
+        };
+      }
+      if (g.key === "Año Nuevo") {
+        return {
+          title: "Año Nuevo en la CDMX: dónde recibirlo",
+          description:
+            "Año Nuevo en la Ciudad de México: dónde recibirlo la noche del 31 de diciembre, con la hora, el precio y la fuente de cada evento.",
+          h1: "Año Nuevo en la Ciudad de México",
+          lede: "Dónde estar a la medianoche del 31 de diciembre y qué cuesta llegar — la hora como la publicó quien organiza, y el enlace a donde lo leímos.",
+          headings: {
+            events: "Dónde recibir el Año Nuevo",
+            upcoming: "Fechas",
+            past: "Ediciones pasadas",
+            news: "Noticias de Año Nuevo",
+          },
+        };
+      }
       const que = g.voc.plural ?? g.key.toLowerCase();
       const Que = `${que[0].toUpperCase()}${que.slice(1)}`;
       return {
@@ -98,9 +133,15 @@ export const allSections = sections([...eventsBySite(siteId), ...newsBySite(site
 // tail's heading in its own words — and it all switches itself off the day
 // the last date under it passes, which is the only reason a seasonal
 // promotion is safe to wire into a layout. See `promotedSection`.
-const PROMOTED = 'Día de Muertos';
+// Las temporadas en el orden en que llegan; ver `promotedFirst`. Desde el
+// 26 de diciembre la noche del 31 va antes que la temporada que la rodea,
+// que sigue hasta Reyes.
+const today = new Date().toISOString().slice(0, 10);
+const PROMOTED = today.slice(5) >= "12-26"
+  ? ["Año Nuevo", "Navidad"]
+  : ["Día de Muertos", "Navidad", "Año Nuevo"];
 
-export const promoted = promotedSection(allSections, PROMOTED, new Date().toISOString().slice(0, 10), site.keyword);
+export const promoted = promotedFirst(allSections, PROMOTED, today, site.keyword);
 
 // The word a heading uses for a kind, in this site's language. The article
 // components know which kind a block came out as; only this file knows what

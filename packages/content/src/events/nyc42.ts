@@ -2116,7 +2116,7 @@ export const items: EventItem[] = [
   {
     slug: "christmas-spectacular-radio-city-2026",
     createdAt: "2026-09-12T22:20:00+04:00",
-    updatedAt: "2026-10-14T21:25:00+04:00",
+    updatedAt: "2026-10-17T20:53:00+04:00",
     site: "nyc42",
     image: "/covers/christmas-spectacular-radio-city-2026.jpg",
     imageAlt:
@@ -2140,7 +2140,7 @@ export const items: EventItem[] = [
       lng: -73.979279,
     },
     organizer: "MSG Entertainment",
-    category: "Theatre",
+    category: "Christmas",
     tickets: { priceFrom: 55, currency: "USD" },
     ticket: {
       url: "https://www.rockettes.com/christmas/calendar/",

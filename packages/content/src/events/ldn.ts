@@ -1473,7 +1473,7 @@ export const items: EventItem[] = [
   {
     slug: "hyde-park-winter-wonderland-2026",
     createdAt: "2026-09-12T22:20:00+04:00",
-    updatedAt: "2026-09-12T22:20:00+04:00",
+    updatedAt: "2026-10-17T20:53:00+04:00",
     site: "ldn",
     image: "/covers/hyde-park-winter-wonderland-2026.jpg",
     imageAlt:
@@ -1496,7 +1496,7 @@ export const items: EventItem[] = [
       lng: -0.162207,
     },
     organizer: "Hyde Park Winter Wonderland",
-    category: "Festival",
+    category: "Christmas",
     tickets: { priceFrom: 1, currency: "GBP" },
     ticket: {
       url: "https://hydeparkwinterwonderland.com/",

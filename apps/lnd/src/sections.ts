@@ -5,7 +5,7 @@
 // No place sections: everything on this site is tagged "London", so the
 // place rule would produce a /london/ page holding the whole site. `home`
 // below is what stops it.
-import { buildSections, promotedSection, type Section, type Vocabulary } from "@dst/content/sections";
+import { buildSections, promotedFirst, type Section, type Vocabulary } from "@dst/content/sections";
 import type { FeedItem } from "@dst/content/sections";
 import { eventsBySite } from "@dst/content/events";
 import { newsBySite } from "@dst/content/news";
@@ -36,6 +36,11 @@ const TAGS: Record<string, Vocabulary> = {
   // week of the year they belong to, and it is exactly what gets typed.
   Halloween: { slug: "halloween", plural: "Halloween", label: "Halloween" },
   Fireworks: { slug: "fireworks", plural: "fireworks", label: "Fireworks" },
+  // The winter's two dates. "New Year" rather than "New Year's Eve": out in
+  // the boroughs the night is mostly at home, and the event is the parade
+  // on the first.
+  Christmas: { slug: "christmas", plural: "Christmas", label: "Christmas" },
+  "New Year": { slug: "new-year", plural: "New Year", label: "New Year" },
 };
 
 export const NAV = {
@@ -91,6 +96,36 @@ export function sections(items: FeedItem[]): Section[] {
           },
         };
       }
+      if (g.key === "Christmas") {
+        return {
+          title: "Christmas in London 2026: what is on across the boroughs",
+          description:
+            "Christmas 2026 across the London boroughs: the light trail at Kew from 13 November and the rest of the season out past the centre — each date as the organiser published it.",
+          h1: "Christmas in London",
+          lede: "Kew lit up after dark from the middle of November, and the rest of the season out past the West End — markets, rinks and carols in the boroughs. Each date, time and price as the organiser gave it, and where we read it.",
+          headings: {
+            events: "Where to go for Christmas",
+            upcoming: "2026 dates",
+            past: "Previous years",
+            news: "Christmas news",
+          },
+        };
+      }
+      if (g.key === "New Year") {
+        return {
+          title: "New Year in London: 31 December and 1 January",
+          description:
+            "New Year in London: the free London Parade from Piccadilly to Parliament Square on 1 January, and where to see the year out the night before — each time as the organiser published it.",
+          h1: "New Year in London",
+          lede: "The night of the 31st and the morning after: the free parade through Westminster on New Year's Day, and the places to see the year out in the boroughs. Each date and time as the organiser gave it, and where we read it.",
+          headings: {
+            events: "Where to see the New Year in",
+            upcoming: "This year's dates",
+            past: "Previous years",
+            news: "New Year news",
+          },
+        };
+      }
       const what = g.voc.plural ?? g.key.toLowerCase();
       const Title = `${what[0].toUpperCase()}${what.slice(1)}`;
       return {
@@ -115,14 +150,21 @@ export const allSections = sections([...eventsBySite(siteId), ...newsBySite(site
 // the last date under it passes, which is the only reason a seasonal
 // promotion is safe to wire into a layout. See `promotedSection`.
 //
-// Halloween until the night itself, then Bonfire Night. Each switches off on
-// its own once its last date passes; this only settles which of the two has
-// the header in the week after Halloween, when a palace or a studio tour is
-// still running its season and the fireworks are what people are looking for.
+// Halloween until the night itself, then Bonfire Night, then Christmas, then
+// the New Year. Each switches off on its own once its last date passes, and
+// `promotedFirst` takes the first still standing. The date only settles who
+// leads where two overlap: the week after Halloween, when a palace or a
+// studio tour is still running its season and the fireworks are what people
+// are looking for; and the week after Christmas, when Kew is still lit and
+// the parade is what is coming.
 const today = new Date().toISOString().slice(0, 10);
-const PROMOTED = today.slice(5) <= "10-31" ? "Halloween" : "Fireworks";
+const PROMOTED = today.slice(5) <= "10-31"
+  ? ["Halloween", "Fireworks", "Christmas", "New Year"]
+  : today.slice(5) >= "12-26"
+    ? ["New Year", "Christmas"]
+    : ["Fireworks", "Christmas", "New Year"];
 
-export const promoted = promotedSection(allSections, PROMOTED, today, site.keyword);
+export const promoted = promotedFirst(allSections, PROMOTED, today, site.keyword);
 
 // The word a heading uses for a kind, in this site's language. The article
 // components know which kind a block came out as; only this file knows what

@@ -14,7 +14,7 @@
 //
 // The borough is the other interesting geography here and the data does not
 // carry it yet — when it does, this is where it goes.
-import { buildSections, promotedSection, type Section, type Vocabulary } from "@dst/content/sections";
+import { buildSections, promotedFirst, type Section, type Vocabulary } from "@dst/content/sections";
 import type { FeedItem } from "@dst/content/sections";
 import { isFree } from "@dst/content/admission";
 import { eventsBySite } from "@dst/content/events";
@@ -52,6 +52,11 @@ const TAGS: Record<string, Vocabulary> = {
   // of carved pumpkins have nothing in common as formats — it says which
   // week of the year they belong to, and it is exactly what gets typed.
   Halloween: { slug: "halloween", plural: "Halloween", label: "Halloween" },
+  // Two more dates, and two because they are searched apart: "Christmas in
+  // New York" is a season of rinks, trees and shows, "New Year's Eve in New
+  // York" is one night and where to stand for it.
+  Christmas: { slug: "christmas", plural: "Christmas", label: "Christmas" },
+  "New Year's Eve": { slug: "new-years-eve", plural: "New Year's Eve", label: "New Year's Eve" },
 };
 
 // The one section cut by a fact rather than a field. "Free things to do in
@@ -131,6 +136,36 @@ export function sections(items: FeedItem[]): Section[] {
           },
         };
       }
+      if (g.key === "Christmas") {
+        return {
+          title: "Christmas in New York 2026: what is on",
+          description:
+            "Christmas in New York: free skating at the Bryant Park Winter Village, the Rockettes at Radio City from November 4 and the Rockefeller Center tree lit on December 2 — each date as the organiser published it.",
+          h1: "Christmas in New York",
+          lede: "A free rink behind the library from the end of October, the Rockettes twice a day at Radio City, and the tree at Rockefeller Center lit on the first Wednesday in December — each date as the organiser gave it, and a link to where we read it.",
+          headings: {
+            events: "Where to go for Christmas",
+            upcoming: "2026 dates",
+            past: "Previous years",
+            news: "Christmas news",
+          },
+        };
+      }
+      if (g.key === "New Year's Eve") {
+        return {
+          title: "New Year's Eve in New York 2026: where to go",
+          description:
+            "New Year's Eve in New York: where to see the year out, with the time, the price and the way in for each — as the organiser published it.",
+          h1: "New Year's Eve in New York",
+          lede: "Where to be at midnight on December 31, and what it takes to get there: the time, the price and the way in for each, as the organiser gave it, with a link to where we read it.",
+          headings: {
+            events: "Where to see the New Year in",
+            upcoming: "This year's dates",
+            past: "Previous years",
+            news: "New Year's Eve news",
+          },
+        };
+      }
       const what = g.voc.plural ?? g.key.toLowerCase();
       const Title = `${what[0].toUpperCase()}${what.slice(1)}`;
       return {
@@ -154,9 +189,16 @@ export const allSections = sections([...eventsBySite(siteId), ...newsBySite(site
 // tail's heading in its own words — and it all switches itself off the day
 // the last date under it passes, which is the only reason a seasonal
 // promotion is safe to wire into a layout. See `promotedSection`.
-const PROMOTED = 'Halloween';
+//
+// The seasons in the order they come round; see `promotedFirst`. From
+// Boxing Day the one night outranks the season it ends, which is still
+// running — the rink stays open until February.
+const today = new Date().toISOString().slice(0, 10);
+const PROMOTED = today.slice(5) >= "12-26"
+  ? ["New Year's Eve", "Christmas"]
+  : ["Halloween", "Christmas", "New Year's Eve"];
 
-export const promoted = promotedSection(allSections, PROMOTED, new Date().toISOString().slice(0, 10), site.keyword);
+export const promoted = promotedFirst(allSections, PROMOTED, today, site.keyword);
 
 // The word a heading uses for a kind, in this site's language. The article
 // components know which kind a block came out as; only this file knows what

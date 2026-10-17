@@ -275,6 +275,26 @@ export function promotedSection<T extends FeedItem>(
   return { ...found, where, year: ahead[0].start.slice(0, 4) };
 }
 
+/** The first of a site's seasons that `promotedSection` would promote.
+ *
+ *  A site names its seasons once, in the order they come round — Halloween,
+ *  then Christmas, then New Year — and the header passes from each to the
+ *  next as the last date under it goes by. Nobody edits a constant on the
+ *  first of November, and a season that never reached the section threshold
+ *  is skipped rather than waited for. */
+export function promotedFirst<T extends FeedItem>(
+  all: Section<T>[],
+  keys: string[],
+  today: string,
+  where: string,
+): Promoted<T> | undefined {
+  for (const key of keys) {
+    const hot = promotedSection(all, key, today, where);
+    if (hot) return hot;
+  }
+  return undefined;
+}
+
 export function buildSections<T extends FeedItem, V extends Vocabulary = Vocabulary>(
   input: SectionsInput<T, V>,
 ): Section<T>[] {

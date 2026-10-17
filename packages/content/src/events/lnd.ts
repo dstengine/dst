@@ -1313,7 +1313,7 @@ export const items: EventItem[] = [
   {
     slug: "christmas-at-kew-2026",
     createdAt: "2026-10-09T06:00:00+04:00",
-    updatedAt: "2026-10-13T01:10:00+04:00",
+    updatedAt: "2026-10-17T20:53:00+04:00",
     site: "lnd",
     image: "/covers/christmas-at-kew-2026.jpg",
     imageAlt: "A glowing paper greenhouse arch, strings of warm lights and illuminated trees against a winter night",
@@ -1333,7 +1333,7 @@ export const items: EventItem[] = [
     country: "United Kingdom",
     geo: { name: "Kew Gardens", lat: 51.4786, lng: -0.2956 },
     organizer: "Royal Botanic Gardens, Kew",
-    category: "Light trail",
+    category: "Christmas",
     tickets: { priceFrom: 25.5, currency: "GBP" },
     ticket: {
       url: "https://www.kew.org/kew-gardens/whats-on/christmas",
@@ -1387,7 +1387,7 @@ export const items: EventItem[] = [
   {
     slug: "london-parade-new-years-day-2027",
     createdAt: "2026-10-09T06:00:00+04:00",
-    updatedAt: "2026-10-13T01:10:00+04:00",
+    updatedAt: "2026-10-17T20:53:00+04:00",
     site: "lnd",
     image: "/covers/london-parade-2027.jpg",
     imageAlt: "A paper parade float passes London buildings beneath confetti and stars, with a pale clock tower in the background",
@@ -1408,7 +1408,7 @@ export const items: EventItem[] = [
     country: "United Kingdom",
     geo: { name: "Piccadilly", lat: 51.5098, lng: -0.1342 },
     organizer: "London Parade",
-    category: "Parade",
+    category: "New Year",
     tickets: { priceFrom: 0, currency: "GBP" },
     ticket: {
       url: "https://londonparade.com/parade-location-timing/",

@@ -7,7 +7,7 @@
 // place rule would hand us a /london/ page holding precisely what /events/
 // holds; `home` below is what stops it. That is not a limitation of the
 // data, it is what a single-city site is.
-import { buildSections, promotedSection, type Section, type Vocabulary } from "@dst/content/sections";
+import { buildSections, promotedFirst, type Section, type Vocabulary } from "@dst/content/sections";
 import { isFree } from "@dst/content/admission";
 import type { FeedItem } from "@dst/content/sections";
 import { eventsBySite } from "@dst/content/events";
@@ -59,6 +59,10 @@ const TAGS: Record<string, Vocabulary> = {
   // garden after dark have nothing in common as formats — it says which
   // week of the year they belong to, and it is exactly what gets typed.
   Halloween: { slug: "halloween", plural: "Halloween", label: "Halloween" },
+  // Two more dates, searched apart: Christmas is six weeks of lights, rinks
+  // and fairs; New Year's Eve is one night and where to watch it.
+  Christmas: { slug: "christmas", plural: "Christmas", label: "Christmas" },
+  "New Year's Eve": { slug: "new-years-eve", plural: "New Year's Eve", label: "New Year's Eve" },
 };
 
 export const NAV = {
@@ -112,6 +116,36 @@ export function sections(items: FeedItem[]): Section[] {
           },
         };
       }
+      if (g.key === "Christmas") {
+        return {
+          title: "Christmas in central London 2026: what is on",
+          description:
+            "Christmas in central London: the Regent Street lights, lit on 5 November, Winter Wonderland in Hyde Park from 19 November and the rink at Somerset House — each date as the organiser published it.",
+          h1: "Christmas in central London",
+          lede: "Regent Street closes to traffic for the switch-on, Hyde Park fills with a fair for six weeks, and the courtyard at Somerset House turns to ice — with the dates the organisers themselves published, not the ones the listings sites repeat.",
+          headings: {
+            events: "Where to go for Christmas",
+            upcoming: "2026 dates",
+            past: "Previous years",
+            news: "Christmas news",
+          },
+        };
+      }
+      if (g.key === "New Year's Eve") {
+        return {
+          title: "New Year's Eve in central London 2026: where to go",
+          description:
+            "New Year's Eve in central London: where to see the year out, with the time, the price and how to get a place — as the organiser published it.",
+          h1: "New Year's Eve in central London",
+          lede: "Where to be at midnight on 31 December, and what it takes to get there — the time, the price and the way in, as the organiser gave it rather than as the listings sites repeat it.",
+          headings: {
+            events: "Where to see the New Year in",
+            upcoming: "This year's dates",
+            past: "Previous years",
+            news: "New Year's Eve news",
+          },
+        };
+      }
       const what = g.voc.plural ?? g.key.toLowerCase();
       return {
         title: `${what[0].toUpperCase()}${what.slice(1)} in central London: dates from the organiser`,
@@ -134,9 +168,16 @@ export const allSections = sections([...eventsBySite(siteId), ...newsBySite(site
 // tail's heading in its own words — and it all switches itself off the day
 // the last date under it passes, which is the only reason a seasonal
 // promotion is safe to wire into a layout. See `promotedSection`.
-const PROMOTED = 'Halloween';
+//
+// The seasons in the order they come round; see `promotedFirst`. From
+// Boxing Day the one night outranks the season it ends, which is still
+// running — Winter Wonderland stays open until 3 January.
+const today = new Date().toISOString().slice(0, 10);
+const PROMOTED = today.slice(5) >= "12-26"
+  ? ["New Year's Eve", "Christmas"]
+  : ["Halloween", "Christmas", "New Year's Eve"];
 
-export const promoted = promotedSection(allSections, PROMOTED, new Date().toISOString().slice(0, 10), site.keyword);
+export const promoted = promotedFirst(allSections, PROMOTED, today, site.keyword);
 
 // The word a heading uses for a kind, in this site's language. The article
 // components know which kind a block came out as; only this file knows what
