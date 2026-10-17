@@ -3,6 +3,7 @@ import BaseLayout from "@dst/ui/BaseLayout.astro";
 import { site as SITES } from "../site.config";
 import { promotedAll, cityDayAhead, iconOf } from "../sections";
 import { alternates, prefix } from "../i18n";
+import { topFor } from "../top";
 import type { Lang } from "../content";
 import "../styles/theme.css";
 
@@ -38,10 +39,14 @@ const NAV = {
   ],
 }[lang].filter((l) => cityDayAhead[lang] || !l.href.endsWith("yerevan-city-day/"));
 
-// Second, not last, when there are any: the links here about what is being
-// asked for this month, each removing itself when its last date has gone.
+// Second, not last, when there are any: first the entries the site is
+// pushing hardest (../top.ts), then the links here about what is being asked
+// for this month, each removing itself when its last date has gone. An
+// entry's title attribute is its search title, so the slot names the city
+// rather than repeating the label.
 const nav = [
   NAV[0],
+  ...topFor(lang).map((t) => ({ href: t.href, label: t.label, title: t.item.titleSeo ?? t.item.title, icon: t.icon })),
   ...hots.map((hot) => ({ href: `${p}${hot.slug}/`, label: hot.label, title: hot.title, icon: iconOf(hot.slug) })),
   ...NAV.slice(1),
 ];

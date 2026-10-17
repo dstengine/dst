@@ -33,6 +33,10 @@ export const ICONS: Record<string, string> = {
   wine: "M7.5 3h9c.6 1.6.9 3 .9 4.3a5.4 5.4 0 0 1-10.8 0c0-1.3.3-2.7.9-4.3ZM6.8 7.5h10.4M12 12.7V21M8.5 21h7",
   // Code: a pair of angle brackets with a slash between them.
   code: "M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16",
+  // A laptop: an open screen over the wedge of its keyboard.
+  laptop: "M5 5h14v10H5zM2 19h20l-2-4H4l-2 4Z",
+  // A stage microphone: the capsule, the cradle under it, the stand.
+  mic: "M12 3a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3ZM6 11a6 6 0 0 0 12 0M12 17v4M8 21h8",
   // A cat's head: two ear points over a round jaw, eyes as dots, a nose.
   cat: "M4.5 4.5 5 10a7 7 0 0 0 14 0l.5-5.5-3.7 3a9 9 0 0 0-7.6 0ZM9.5 12h.01M14.5 12h.01M12 14.6l-1 1h2Z",
   // A proscenium: two tabs of curtain drawn back over a stage floor.
