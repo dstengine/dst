@@ -68,6 +68,7 @@ export const items: NewsItem[] = [
     summary:
       "El festival de Xcaret, en el Caribe de México, cumple veinte ediciones del 30 de octubre al 2 de noviembre. El invitado de 2026 es Guanajuato, y el Concierto de Gala — Pandora y Flans — se vende aparte.",
     date: "2026-09-08",
+    until: "2026-11-02",
     city: "Riviera Maya",
     country: "M\u00e9xico",
     category: "Día de Muertos",
@@ -195,6 +196,7 @@ export const items: NewsItem[] = [
     summary:
       "Nueve días en Francisco I. Madero, Coahuila, con bailes, artesanía y gastronomía regional — y las fiestas patrias cayendo dentro del programa, no al lado de él.",
     date: "2026-09-07",
+    until: "2026-09-19",
     category: "Ferias",
     source: {
       name: "Ferias en México",
@@ -343,6 +345,7 @@ export const items: NewsItem[] = [
     summary:
       "El 40% de la Selección Oficial del 24 Festival Internacional de Cine de Morelia está dirigido por mujeres. El festival va del 16 al 25 de octubre.",
     date: "2026-09-02",
+    until: "2026-10-25",
     category: "Cine",
     source: {
       name: "IMCINE",
@@ -419,6 +422,7 @@ export const items: NewsItem[] = [
     summary:
       "La 83ª Mostra abre el 2 de septiembre. En la competencia anunciada en julio hay veinte títulos y uno solo cruza el Atlántico desde este lado",
     date: "2026-09-01",
+    until: "2026-09-12",
     category: "Cine",
     source: {
       name: "Screen International",
@@ -797,6 +801,7 @@ export const items: NewsItem[] = [
     summary:
       "La 44 edición de la Feria Internacional del Libro Infantil y Juvenil será del 13 al 22 de noviembre en el CENART, con entrada gratuita y convocatoria abierta para visitas escolares.",
     date: "2026-08-28",
+    until: "2026-11-22",
     category: "Ferias",
     source: {
       name: "Excélsior",
@@ -875,6 +880,7 @@ export const items: NewsItem[] = [
     summary:
       "Poesía en los muros, en vinilos que el visitante elige, en un video de diez horas y en un teléfono. La primera individual de John Giorno en la Ciudad de México está en kurimanzutto hasta el 10 de octubre.",
     date: "2026-08-26",
+    until: "2026-10-10",
     category: "Arte",
     source: {
       name: "El Universal Cultura",
@@ -921,6 +927,7 @@ export const items: NewsItem[] = [
     summary:
       "El British Museum exhibe los 70 metros del bordado hasta el 11 de julio de 2027. Desde México conviene anotar una fecha: el 21 de octubre se liberan las entradas de 2027.",
     date: "2026-09-13",
+    until: "2027-07-11",
     category: "Mundo",
     source: {
       name: "British Museum",

@@ -157,6 +157,7 @@ export const items: NewsItem[] = [
     summary:
       "Submissions close on 24 October. Two tracks, no admission fees, and a first cohort targeted to go live across Allfunds and Solana in Q4 2026 and Q1 2027.",
     date: "2026-09-21",
+    until: "2026-10-24",
     category: "Institutional",
     source: {
       name: "Solana",
@@ -207,6 +208,7 @@ export const items: NewsItem[] = [
     summary:
       "Anza's release schedule for Solana puts 10 per cent of stake on Agave 4.3 by 8 September, 25 per cent by 14 September, general adoption by 21 September and feature activation from 28 September.",
     date: "2026-09-07",
+    until: "2026-09-28",
     category: "Upgrades",
     source: {
       name: "Anza, via Solana Compass",

@@ -17,6 +17,7 @@ export const items: NewsItem[] = [
     summary:
       "The FTA's September reminder covers a group of Dubai companies that assumes it is out of scope: registered exempt persons owe an annual declaration on the same nine-month clock.",
     date: "2026-09-07",
+    until: "2026-09-30",
     category: "Tax",
     source: {
       name: "Federal Tax Authority",
@@ -132,6 +133,7 @@ export const items: NewsItem[] = [
     summary:
       "The FTA has reminded Dubai companies under the Dh3 million threshold that electing Small Business Relief means a simplified return, not no return. The deadline is 30 September.",
     date: "2026-09-03",
+    until: "2026-09-30",
     category: "Tax",
     source: {
       name: "Federal Tax Authority",
@@ -170,6 +172,7 @@ export const items: NewsItem[] = [
     summary:
       "Dubai companies above Dh50 million now have until 30 October to appoint an accredited service provider. Phase 1 still goes live on 1 January 2027.",
     date: "2026-09-03",
+    until: "2026-10-30",
     category: "Tax",
     source: {
       name: "Deloitte Middle East",

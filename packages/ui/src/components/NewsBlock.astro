@@ -12,7 +12,7 @@ import { fitFor } from "../fit.ts";
 import { newsHref } from "@dst/content/paths";
 import type { NewsItem } from "@dst/content/types";
 import FeedCards from "./FeedCards.astro";
-import { withPromoted } from "@dst/content/when";
+import { isCurrent, withPromoted } from "@dst/content/when";
 
 interface Props {
   items: NewsItem[];
@@ -42,9 +42,10 @@ const byRankThenDate = (a: NewsItem, b: NewsItem) => {
   }
   return a.date < b.date ? 1 : a.date > b.date ? -1 : 0;
 };
-// A promoted item is always one of the cards — see `promotedUntil`.
+// A promoted item is always one of the cards — see `promotedUntil` — and
+// an item whose subject is over is none of them — see `until`.
 const todayIso = new Date().toISOString().slice(0, 10);
-const latest = withPromoted([...items].sort(byRankThenDate), limit, todayIso);
+const latest = withPromoted(items.filter((i) => isCurrent(i, todayIso)).sort(byRankThenDate), limit, todayIso);
 
 const cards = latest.map((item) => {
   const hasPage = Array.isArray(item.body) && item.body.length > 0;

@@ -2,7 +2,7 @@ import { test, describe } from "node:test";
 import assert from "node:assert/strict";
 import { newsBySite, latestNews } from "../src/news/index.ts";
 import { eventsBySite, upcomingEvents, pastEvents } from "../src/events/index.ts";
-import { isPromoted, withPromoted } from "../src/when.ts";
+import { isCurrent, isPromoted, withPromoted } from "../src/when.ts";
 
 const news = (over) => ({ slug: "s", site: "x", title: "t", summary: "s", date: "2026-01-01", ...over });
 const event = (over) => ({ slug: "s", site: "x", title: "t", summary: "s", start: "2026-01-01", ...over });
@@ -104,5 +104,17 @@ describe("withPromoted", () => {
     assert.equal(isPromoted(item, "2026-10-19"), false);
     const input = ranked.map((i) => (i.slug === "e" ? { ...i, promotedUntil: "2026-10-18" } : i));
     assert.deepEqual(slugs(withPromoted(input, 3, "2026-10-19")), ["a", "b", "c"]);
+  });
+});
+
+describe("isCurrent", () => {
+  test("an item with no `until` never dates", () => {
+    assert.equal(isCurrent(news({}), "2030-01-01"), true);
+  });
+
+  test("the last day is inclusive, the day after is not", () => {
+    const item = news({ until: "2026-10-11" });
+    assert.equal(isCurrent(item, "2026-10-11"), true);
+    assert.equal(isCurrent(item, "2026-10-12"), false);
   });
 });

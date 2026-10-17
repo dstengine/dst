@@ -27,7 +27,7 @@ import Icon from "./Icon.astro";
 import { mapEmbedUrl, directionsUrl } from "../maps.ts";
 import { formatDate, cardHours, cardCountdown } from "../date.ts";
 import { headingWord, withLabels, type ArticleLabels } from "../labels.ts";
-import { isOn, hasEnded, withPromoted } from "@dst/content/when";
+import { isOn, isCurrent, hasEnded, withPromoted } from "@dst/content/when";
 
 interface Props {
   item: EventItem;
@@ -192,7 +192,7 @@ if (moreEventsText && tailCards.length === 0) {
 
 const newsCards = withPromoted(
   moreNews
-    .filter((n) => Array.isArray(n.body) && n.body.length > 0)
+    .filter((n) => isCurrent(n, todayIso) && Array.isArray(n.body) && n.body.length > 0)
     .sort((a, b) => (a.date < b.date ? 1 : -1)),
   // A promoted item is always one of the three — see `promotedUntil`.
   3,

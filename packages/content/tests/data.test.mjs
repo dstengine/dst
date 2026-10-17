@@ -47,6 +47,14 @@ describe("dates parse as valid ISO", () => {
           assert.match(item.promotedUntil, /^\d{4}-\d{2}-\d{2}$/, `${label}/${item.site}/${item.slug}: "promotedUntil"="${item.promotedUntil}" is not YYYY-MM-DD`);
           assert.ok(!Number.isNaN(new Date(item.promotedUntil).getTime()), `${label}/${item.site}/${item.slug}: "promotedUntil"="${item.promotedUntil}" did not parse`);
         }
+        // The same string comparison, and a story cannot stop being news
+        // before it was news: an `until` earlier than `date` is a typo that
+        // would keep the item out of every block from the day it went up.
+        if (item.until !== undefined) {
+          assert.match(item.until, /^\d{4}-\d{2}-\d{2}$/, `${label}/${item.site}/${item.slug}: "until"="${item.until}" is not YYYY-MM-DD`);
+          assert.ok(!Number.isNaN(new Date(item.until).getTime()), `${label}/${item.site}/${item.slug}: "until"="${item.until}" did not parse`);
+          assert.ok(item.until >= item[dateKey].slice(0, 10), `${label}/${item.site}/${item.slug}: "until"="${item.until}" is before ${dateKey}="${item[dateKey]}"`);
+        }
       }
     });
   }

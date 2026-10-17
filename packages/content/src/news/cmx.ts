@@ -19,6 +19,7 @@ export const items: NewsItem[] = [
     summary:
       "Salió de México en 1840 y se conserva en París. Ahora está en la Ciudad de México, en la Sala de Exposiciones Temporales del Museo Nacional de Antropología, con entrada libre y hasta el 6 de diciembre.",
     date: "2026-09-21",
+    until: "2026-12-06",
     city: "Ciudad de México",
     country: "México",
     category: "Exposición",
@@ -111,6 +112,7 @@ export const items: NewsItem[] = [
     summary:
       "Del 11 al 13 de septiembre, entrada libre en el Monumento a la Revolución, en la Ciudad de México: conchas, orejas, cuernitos, cochinitos y campechanas.",
     date: "2026-09-07",
+    until: "2026-09-13",
     category: "Ciudad",
     source: {
       name: "Chilango",
@@ -148,6 +150,7 @@ export const items: NewsItem[] = [
     summary:
       "El 15 de septiembre, en la alcaldía Miguel Hidalgo de la Ciudad de México: Embajadores de la Cumbia Dinamita a las 19:00, Los Yaguaru a las 21:00 y Paty Cantú a las 23:15. Entrada libre.",
     date: "2026-09-06",
+    until: "2026-09-15",
     category: "Ciudad",
     source: {
       name: "Chilango",
@@ -224,6 +227,7 @@ export const items: NewsItem[] = [
     summary:
       "El Metro de la Ciudad de México cumple 57: del 2 al 5 de septiembre, en la Glorieta de Insurgentes, Aarón y Su Grupo Ilusión, Los Askis, La Sonora Dinamita y Son Tepito, sin costo.",
     date: "2026-09-02",
+    until: "2026-09-05",
     category: "Ciudad",
     source: {
       name: "Chilango",
@@ -299,6 +303,7 @@ export const items: NewsItem[] = [
     summary:
       "La 83ª Mostra abre el 2 de septiembre en el Lido. Los Leones de Oro honoríficos ya tienen dueño: Ellen Burstyn y George Clooney.",
     date: "2026-09-01",
+    until: "2026-09-12",
     category: "Cine",
     source: {
       name: "Screen International",
@@ -522,6 +527,7 @@ export const items: NewsItem[] = [
     summary:
       "Metrobús de la Ciudad de México: líneas 2, 3 y 5 cierran en fines de semana alternados hasta noviembre. Tres cierres caen en transbordos del Centro, y uno dura dos fines de semana.",
     date: "2026-08-25",
+    until: "2026-11-20",
     category: "Movilidad",
     source: {
       name: "Time Out México",
@@ -563,6 +569,7 @@ export const items: NewsItem[] = [
     summary:
       "El Gran Desfile de Día de Muertos y la clasificación del Gran Premio caen a la misma hora del sábado 31 de octubre, en extremos opuestos de la Ciudad de México. Cómo se resuelve.",
     date: "2026-08-30",
+    until: "2026-11-01",
     category: "Ciudad",
     source: {
       name: "Time Out México",

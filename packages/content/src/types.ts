@@ -241,6 +241,15 @@ export interface NewsItem extends ItemBase {
   // leads with still leads. The pages are static: the card goes when the
   // site is next built after this date, not at midnight on it.
   promotedUntil?: string;
+  // Last day, inclusive, on which the story is still news — for an item
+  // whose subject has dates: a festival, an exhibition's run, a consultation
+  // that closes, a concert. After it the item leaves every "more news"
+  // block — the front page, the tail of other articles, an event page's
+  // news — so a reader looking for what is on is not offered what is over.
+  // Its own page stays, and so do the news index, the feed and the sitemap:
+  // that is the archive, and an archive keeps what happened. Absent means
+  // the story does not date. The same static-build caveat as above.
+  until?: string;
   // One button under the headline, for an item whose subject is a thing the
   // reader can go and get — a release, a tool. The event page's ticket
   // button, for news: it goes through the /go/<slug>-action/ hop like every

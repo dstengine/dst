@@ -327,6 +327,7 @@ export const items: NewsItem[] = [
     summary:
       "Europe's consumer technology show runs 4–8 September at Messe Berlin, drawing visitors from 140 countries — a floor built on things you can pick up.",
     date: "2026-09-02",
+    until: "2026-09-08",
     category: "Tech",
     source: {
       name: "IFA Berlin",

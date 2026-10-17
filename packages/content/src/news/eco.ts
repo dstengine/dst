@@ -54,6 +54,7 @@ export const items: NewsItem[] = [
     summary:
       "The Dubai Environment and Climate Change Authority stages the emirate’s first Environment Conference and Exhibition at the Grand Hyatt, across six themes that include food security, the circular economy and environmental AI.",
     date: "2026-09-06",
+    until: "2026-09-08",
     category: "Environment",
     source: {
       name: "Gulf News",

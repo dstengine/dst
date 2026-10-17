@@ -33,6 +33,10 @@ export const isOn = (event: Dated, today: string): boolean => !hasEnded(event, t
 export const isPromoted = (item: { promotedUntil?: string }, today: string): boolean =>
   item.promotedUntil !== undefined && today <= item.promotedUntil;
 
+/** A news item still worth offering as news, as of `today`. See `until`. */
+export const isCurrent = (item: { until?: string }, today: string): boolean =>
+  item.until === undefined || today <= item.until;
+
 /**
  * The first `limit` of `ranked`, except that every promoted item is in it.
  * A promoted item already above the line stays where it was; one below it

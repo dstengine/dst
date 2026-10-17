@@ -325,6 +325,7 @@ export const items: NewsItem[] = [
     summary:
       "The show that owned Dubai's October for forty-five years now runs 7–11 December at Expo City. October's hotel week has lost its anchor tenant.",
     date: "2026-09-02",
+    until: "2026-12-11",
     category: "Tech",
     source: {
       name: "Dubai Media Office",
@@ -397,6 +398,7 @@ export const items: NewsItem[] = [
     summary:
       "The power-sector show marks fifty years at the Dubai World Trade Centre from 1 to 3 September, with 35,000 expected from more than 150 countries.",
     date: "2026-09-01",
+    until: "2026-09-03",
     category: "Energy",
     source: {
       name: "Middle East Energy",
@@ -432,6 +434,7 @@ export const items: NewsItem[] = [
     summary:
       "IPS runs 7–9 September across five halls at the World Trade Centre, timed to Dubai Land Department's own calendar and co-located with AIM Congress.",
     date: "2026-09-02",
+    until: "2026-09-09",
     category: "Market",
     source: {
       name: "International Property Show",
@@ -467,6 +470,7 @@ export const items: NewsItem[] = [
     summary:
       "Super 98 is Dh3.80, Special 95 is Dh3.69, E-Plus is Dh3.61 and diesel is Dh4.30 a litre at Dubai pumps. Diesel is the number that matters, and not because of cars.",
     date: "2026-09-01",
+    until: "2026-09-30",
     category: "Energy",
     source: {
       name: "Khaleej Times",
@@ -613,6 +617,7 @@ export const items: NewsItem[] = [
     summary:
       "Dubai's largest technology show moves to the Dubai Exhibition Centre at Expo City for its 2026 edition, and shifts from its long-standing October slot to December 7–11.",
     date: "2025-10-08",
+    until: "2026-12-11",
     category: "Tech",
     source: {
       name: "Dubai Media Office",

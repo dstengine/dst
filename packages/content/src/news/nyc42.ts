@@ -17,6 +17,7 @@ export const items: NewsItem[] = [
     summary:
       "New York's Department of Transportation hands a record 160 Open Streets and plazas to Halloween this October, with free trick-or-treating, costume contests and one signature party in each borough.",
     date: "2026-10-07",
+    until: "2026-10-31",
     city: "New York",
     country: "United States",
     category: "Halloween",
@@ -128,6 +129,7 @@ export const items: NewsItem[] = [
     summary:
       "New York's Pumpkin Flotilla will not cross the Harlem Meer this Halloween: the Central Park Conservancy says the free event drew more people than its setup could safely handle. No replacement in 2026.",
     date: "2026-10-04",
+    until: "2026-10-31",
     city: "New York City",
     country: "United States",
     category: "Halloween",
@@ -188,6 +190,7 @@ export const items: NewsItem[] = [
       },
     ],
     date: "2026-09-21",
+    until: "2026-10-31",
     city: "New York City",
     country: "United States",
     category: "Parade",
@@ -235,6 +238,7 @@ export const items: NewsItem[] = [
     summary:
       "The cheapest way into Austin next March closes in nine days. SXSW puts the gap between the early-bird badge and the walk-up rate at up to $900.",
     date: "2026-09-08",
+    until: "2026-09-17",
     city: "Austin",
     country: "United States",
     category: "Convention",
@@ -285,6 +289,7 @@ export const items: NewsItem[] = [
     summary:
       "Return of the Buffalo: Tatanka Owe Akupi brings a herd of fifty puppets through New York — Lower Manhattan on 18 September, Downtown Brooklyn on 19 September. It is free.",
     date: "2026-09-07",
+    until: "2026-09-19",
     category: "Free",
     source: {
       name: "NYC Tourism + Conventions",
@@ -322,6 +327,7 @@ export const items: NewsItem[] = [
     summary:
       "At MoMA in New York, the Kahlo and Rivera show ends 12 September and the Peggy Weil on 4 October. Between 15 September and 14 November, six more open — here are all the dates in one place.",
     date: "2026-09-06",
+    until: "2026-11-14",
     category: "Museums",
     source: {
       name: "MoMA",
@@ -360,6 +366,7 @@ export const items: NewsItem[] = [
     summary:
       "Asase Yaa’s Art Is Alive runs 13–19 September on MacDonough Street in Bed-Stuy, New York: 90-minute classes all week, free, ending in a block party on the Saturday.",
     date: "2026-09-06",
+    until: "2026-09-19",
     category: "Free",
     source: {
       name: "Time Out New York",
@@ -432,6 +439,7 @@ export const items: NewsItem[] = [
     summary:
       "New York's Thanksgiving parade on November 26 brings a record 100 inflatable elements, a Hogwarts Great Hall float, a new Sorcerer's Apprentice Mickey and the return of Underdog.",
     date: "2026-09-03",
+    until: "2026-11-26",
     category: "Parade",
     source: {
       name: "Time Out New York",
@@ -546,6 +554,7 @@ export const items: NewsItem[] = [
     summary:
       "Saturday 19 September, 10am to 3:30pm, free in Brooklyn Bridge Park — vintage New York buses at street level in the year the museum reaches its fiftieth.",
     date: "2026-09-02",
+    until: "2026-09-19",
     category: "City",
     source: {
       name: "New York Transit Museum",
@@ -661,6 +670,7 @@ export const items: NewsItem[] = [
     summary:
       "The 83rd Venice festival opens 2 September with a jury, a competition and a Golden Lion. The New York Film Festival opens 13 days later with none of the three, and that is a decision.",
     date: "2026-09-01",
+    until: "2026-09-25",
     category: "Film",
     source: {
       name: "Screen International",
@@ -699,6 +709,7 @@ export const items: NewsItem[] = [
     summary:
       "Twenty-five New York shows take the two-for-one from 8 to 20 September. They are not equally worth it, and the reason has less to do with the shows than with what each one costs the rest of the year.",
     date: "2026-08-30",
+    until: "2026-09-20",
     category: "Theatre",
     source: {
       name: "Time Out New York",
@@ -784,6 +795,7 @@ export const items: NewsItem[] = [
     summary:
       "Circle Line has two foliage sailings from New York this September: an eight-hour run to Bear Mountain on the 19th and 20th, and a four-hour trip toward Hook Mountain on the 26th and 27th. Last year sold out.",
     date: "2026-08-26",
+    until: "2026-09-27",
     category: "Outdoors",
     source: {
       name: "Time Out New York",
@@ -861,6 +873,7 @@ export const items: NewsItem[] = [
     summary:
       "The National Retail Federation's most recent survey puts total Halloween spending at a record $13.1 billion — and $1 billion of that on costumes for animals. The most popular one is a pumpkin.",
     date: "2026-09-08",
+    until: "2026-10-31",
     country: "United States",
     category: "Halloween",
     source: {

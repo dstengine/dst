@@ -16,6 +16,7 @@ export const items: NewsItem[] = [
     summary:
       "Plan Saturday 14 November in the City of London: the free Lord Mayor's procession, Guildhall Art Gallery and afternoon walking tours, with times, locations and maps.",
     date: "2026-10-09",
+    until: "2026-11-14",
     city: "London",
     country: "United Kingdom",
     category: "Heritage",
@@ -297,6 +298,7 @@ export const items: NewsItem[] = [
     summary:
       "The 24th London Design Festival runs 12 to 20 September across eleven neighbourhood districts, from Walthamstow to Park Royal, with landmark installations including one inside St Paul's.",
     date: "2026-09-07",
+    until: "2026-09-20",
     category: "Architecture",
     source: {
       name: "London Design Festival",
@@ -372,6 +374,7 @@ export const items: NewsItem[] = [
     summary:
       "The London Cycling Festival runs on 20 September across 19 boroughs, with more than 30 led rides, four hubs and closed loops in Westminster and Tower Hamlets. Free, but ticketed.",
     date: "2026-09-06",
+    until: "2026-09-20",
     category: "Outdoors",
     source: {
       name: "London Cycling Campaign",
@@ -446,6 +449,7 @@ export const items: NewsItem[] = [
     summary:
       "Saturday 24 and Sunday 25 April 2027: the London Marathon runs twice, 100,000 people over the same Greenwich-to-Westminster route, after 1.33 million entered the 2026 ballot.",
     date: "2026-09-03",
+    until: "2027-04-25",
     category: "Sport",
     source: {
       name: "London Marathon Events",
@@ -521,6 +525,7 @@ export const items: NewsItem[] = [
     summary:
       "The 35th Open House runs 12–20 September across all 33 London boroughs, free. Booking opened at midday on 19 August, but a great deal needs no booking at all.",
     date: "2026-09-02",
+    until: "2026-09-20",
     category: "Architecture",
     source: {
       name: "Open City",
@@ -557,6 +562,7 @@ export const items: NewsItem[] = [
     summary:
       "TfL proposes withdrawing the 67 and rerouting the 149 in north-east London. Edmonton Green loses a direct link and peak waits go from seven minutes to eight. It closes 20 September.",
     date: "2026-09-02",
+    until: "2026-09-20",
     category: "Transport",
     source: {
       name: "Transport for London",
@@ -595,6 +601,7 @@ export const items: NewsItem[] = [
     summary:
       "Through September the London stretch of the river hosts 100-plus events from Richmond to Barking and Dagenham, including Catherine Yass's work on Blackfriars' disused columns.",
     date: "2026-09-02",
+    until: "2026-09-30",
     category: "Culture",
     source: {
       name: "Thames Festival Trust",
@@ -672,6 +679,7 @@ export const items: NewsItem[] = [
     summary:
       "For London filmgoers following Venice, the 2026 competition's 210-minute Dau leads a 20-film lineup at the 83rd festival.",
     date: "2026-09-01",
+    until: "2026-09-12",
     category: "Film",
     source: {
       name: "Screen International",
@@ -712,6 +720,7 @@ export const items: NewsItem[] = [
     summary:
       "The Friends of Tower Hamlets Cemetery Park in east London built a walk around the 12 August eclipse, using tree canopies as pinhole projectors and seven 19th-century graves as the route.",
     date: "2026-08-12",
+    until: "2026-08-12",
     category: "Community",
     source: {
       name: "East London Advertiser",
@@ -792,6 +801,7 @@ export const items: NewsItem[] = [
     summary:
       "The Northern line is out above Archway, the Windrush line is on buses south of Canada Water, and Barons Court loses its westbound trains until November. The full outer-London list.",
     date: "2026-08-27",
+    until: "2026-08-31",
     category: "Transport",
     source: {
       name: "MyLondon",
@@ -836,6 +846,7 @@ export const items: NewsItem[] = [
     summary:
       "Three hundred young people, twenty-four workshops, six institutions from BBC Music Studios to ABBA Voyage — and the only entry requirement is living or studying in one of four east London boroughs.",
     date: "2026-08-26",
+    until: "2026-08-26",
     category: "Community",
     source: {
       name: "East London Advertiser",

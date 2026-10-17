@@ -19,6 +19,7 @@ export const items: NewsItem[] = [
     summary:
       "Das Haus am Albertinaplatz in Wien feiert 2026 sein 250-jähriges Bestehen — mit drei Hauptausstellungen, einem Entdeckungspfad und mehreren Schauen, die noch im Oktober enden.",
     date: "2026-09-21",
+    until: "2026-12-31",
     city: "Wien",
     country: "Österreich",
     category: "Museen",
@@ -143,6 +144,7 @@ export const items: NewsItem[] = [
     summary:
       "Rund 70 Hauptwerke aus internationalen Sammlungen, in der Wiener Albertina von 18. September bis 31. Jänner 2027: zwei Maler, die den menschlichen Körper neu erfunden haben.",
     date: "2026-09-07",
+    until: "2027-01-31",
     category: "Museen",
     source: {
       name: "Albertina",
@@ -220,6 +222,7 @@ export const items: NewsItem[] = [
     summary:
       "„Schiele & Peschka“ und „Arena Wien“ laufen beide nur noch bis 27. September. Im musa bleibt dagegen bis 29. November Zeit — das ist der Unterschied zwischen drei Wochen und zwei Monaten.",
     date: "2026-09-05",
+    until: "2026-09-27",
     category: "Museen",
     featured: 1,
     source: {
@@ -296,6 +299,7 @@ export const items: NewsItem[] = [
     summary:
       "Wer in Wien nach Halloween-Veranstaltungen sucht, findet eine kurze Liste, und der Handel liefert die Erklärung: zuletzt 74 Euro pro Kopf, nach 59 im Jahr davor, vor allem für Süßigkeiten, Kürbisse und Snacks. Kostüme kommen erst an fünfter Stelle.",
     date: "2026-09-08",
+    until: "2026-10-31",
     category: "Halloween",
     source: {
       name: "Handelsverband",
@@ -333,6 +337,7 @@ export const items: NewsItem[] = [
     summary:
       "Das British Museum zeigt die 70 Meter lange Stickerei bis 11. Juli 2027. Alle Karten bis Jahresende sind vergeben; wer von Wien aus plant, merkt sich den 21. Oktober.",
     date: "2026-09-13",
+    until: "2027-07-11",
     category: "Welt",
     source: {
       name: "British Museum",

@@ -705,6 +705,7 @@ export const items: NewsItem[] = [
     summary:
       "The still that starts an image-to-video AI video clip often comes from an image model. xAI is retiring one of Grok Imagine's on 2 November and moving its requests to Image 2.0, which gained an automatic quality setting last week.",
     date: "2026-09-03",
+    until: "2026-11-02",
     category: "News",
     tags: ["Grok Imagine"],
     action: {

@@ -71,6 +71,7 @@ export const items: NewsItem[] = [
     summary:
       "A London decade told through both of its industries at once: Edward Enninful curates the photographers and the artists into one show, 8 October to 14 February.",
     date: "2026-09-21",
+    until: "2027-02-14",
     city: "London",
     country: "United Kingdom",
     category: "Exhibitions",
@@ -117,6 +118,7 @@ export const items: NewsItem[] = [
     summary:
       "London Fashion Week runs 17 to 21 September, with M&S making its debut on the schedule, Mulberry's first collection under Christopher Kane and McQueen's London return.",
     date: "2026-09-07",
+    until: "2026-09-21",
     category: "Fashion",
     source: {
       name: "British Fashion Council",
@@ -194,6 +196,7 @@ export const items: NewsItem[] = [
     summary:
       "From 8 September to 29 December the Tuesday ticket to Kew in south-west London is £10 instead of £25, and it includes the largest outdoor Henry Moore exhibition ever staged.",
     date: "2026-09-06",
+    until: "2026-12-29",
     category: "Days out",
     source: {
       name: "Time Out London",
@@ -270,6 +273,7 @@ export const items: NewsItem[] = [
     summary:
       "A new production runs 4 June to 18 September 2027 at the London Coliseum, directed by Nikolai Foster. Priority booking opens on 29 September.",
     date: "2026-09-03",
+    until: "2027-09-18",
     category: "Theatre",
     source: {
       name: "Charlie and the Chocolate Factory",
@@ -307,6 +311,7 @@ export const items: NewsItem[] = [
     summary:
       "Seventy metres of eleventh-century embroidery are on show in London from 10 September until 11 July 2027. Tickets are £33, and the next release is on 21 October.",
     date: "2026-09-02",
+    until: "2027-07-11",
     category: "Exhibitions",
     source: {
       name: "The British Museum",
@@ -420,6 +425,7 @@ export const items: NewsItem[] = [
     summary:
       "From 16 September to 1 November, eleven artists take over the English Gardens of Regent's Park in London on the theme of hybridity. No ticket, no booking, no queue.",
     date: "2026-09-02",
+    until: "2026-11-01",
     category: "Exhibitions",
     source: {
       name: "Frieze",
@@ -496,6 +502,7 @@ export const items: NewsItem[] = [
     summary:
       "Danny Boyle's Ink starts the 83rd Mostra on 2 September. It is the first of the three festivals that decide what London's cinemas show in October.",
     date: "2026-09-01",
+    until: "2026-09-12",
     category: "Film",
     source: {
       name: "Screen International",
@@ -533,6 +540,7 @@ export const items: NewsItem[] = [
     summary:
       "Four exhibitions at the V&A's London sites have published closing dates and one opens in November. Schiaparelli goes first, on 8 November — and it is the one with the shortest run left.",
     date: "2026-08-29",
+    until: "2027-01-10",
     category: "Exhibitions",
     source: {
       name: "Victoria and Albert Museum",
@@ -616,6 +624,7 @@ export const items: NewsItem[] = [
     summary:
       "London's second eclipse in a fortnight: 93% of the Moon in shadow at 5.12am on Friday 28 August, no glasses needed, and Parliament Hill the one obvious place to stand.",
     date: "2026-08-28",
+    until: "2026-08-28",
     category: "Sky",
     source: {
       name: "Evening Standard",
@@ -655,6 +664,7 @@ export const items: NewsItem[] = [
     summary:
       "Ten London shows are on the critics' list. Six of them close before January, one has sold more advance tickets than anything in Tate's 128-year history, and two of the best are free.",
     date: "2026-08-27",
+    until: "2027-01-17",
     category: "Exhibitions",
     source: {
       name: "Time Out London",

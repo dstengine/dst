@@ -139,6 +139,7 @@ export const items: NewsItem[] = [
     summary:
       "The Coca-Cola Arena hosts Chicago from 16 to 20 December 2026 — eight performances, and the first Broadway production staged on that arena floor.",
     date: "2026-09-06",
+    until: "2026-12-20",
     category: "Runs",
     source: {
       name: "Gulf News",
@@ -198,6 +199,7 @@ export const items: NewsItem[] = [
     summary:
       "Previews from 28 September, booking to 27 March 2027, at the Duke of York’s — now the Tom Stoppard Theatre. Gaten Matarazzo makes his West End debut as Mark.",
     date: "2026-09-05",
+    until: "2027-03-27",
     category: "Productions",
     source: {
       name: "London Theatre",
