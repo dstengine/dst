@@ -29376,6 +29376,38 @@
         ]
       ]
     },
+    "/covers/dj-twins-halloween-souly-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/dj-twins-halloween-souly-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/dj-twins-halloween-souly-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dj-twins-halloween-souly-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dj-twins-halloween-souly-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/dj-twins-halloween-souly-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dj-twins-halloween-souly-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/dream-found-yerevan-marionette-theatre-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -31237,6 +31269,38 @@
         [
           1536,
           "/covers/shostakovich-symphony-1-yerevan-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/sports-halloween-boulderland-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/sports-halloween-boulderland-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/sports-halloween-boulderland-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/sports-halloween-boulderland-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/sports-halloween-boulderland-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/sports-halloween-boulderland-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/sports-halloween-boulderland-2026-1024.webp"
         ]
       ]
     },
