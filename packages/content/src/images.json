@@ -29136,6 +29136,70 @@
         ]
       ]
     },
+    "/covers/best-of-abba-national-philharmonic-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/best-of-abba-national-philharmonic-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/best-of-abba-national-philharmonic-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/best-of-abba-national-philharmonic-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/best-of-abba-national-philharmonic-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/best-of-abba-national-philharmonic-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/best-of-abba-national-philharmonic-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/best-of-the-beatles-national-philharmonic-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/best-of-the-beatles-national-philharmonic-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/best-of-the-beatles-national-philharmonic-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/best-of-the-beatles-national-philharmonic-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/best-of-the-beatles-national-philharmonic-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/best-of-the-beatles-national-philharmonic-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/best-of-the-beatles-national-philharmonic-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/carmen-yerevan-opera-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -29333,6 +29397,38 @@
         [
           1024,
           "/covers/devfest-armenia-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/digitec-2026-meridian-expo-yerevan.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/digitec-2026-meridian-expo-yerevan-480.avif"
+        ],
+        [
+          768,
+          "/covers/digitec-2026-meridian-expo-yerevan-768.avif"
+        ],
+        [
+          1024,
+          "/covers/digitec-2026-meridian-expo-yerevan-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/digitec-2026-meridian-expo-yerevan-480.webp"
+        ],
+        [
+          768,
+          "/covers/digitec-2026-meridian-expo-yerevan-768.webp"
+        ],
+        [
+          1024,
+          "/covers/digitec-2026-meridian-expo-yerevan-1024.webp"
         ]
       ]
     },
