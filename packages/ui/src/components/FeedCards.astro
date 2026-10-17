@@ -354,13 +354,14 @@ const parts = (iso: string) => {
     white-space: nowrap;
   }
 
-  .feed-cover-date {
-    background: var(--accent-tint);
-    /* A photograph deserves whatever height its ratio asks for; a date does
-       not. Left at 16:9, a card that spans the full row turned three lines of
-       numbers into a 450px field of flat colour. */
-    max-height: 220px;
-  }
+  .feed-cover-date { background: var(--accent-tint); }
+  /* A photograph deserves whatever height its ratio asks for; a date does
+     not. Left at 16:9, a card that spans the full row turned three lines of
+     numbers into a 450px field of flat colour. Not when the date sits on
+     the cover art, though: that is a photograph, and capped like a flat
+     date it came out 220px tall beside a news card's 262px in tick's
+     two-card spotlight. */
+  .feed-cover-date:not(.feed-cover-backed) { max-height: 220px; }
   .feed-date {
     display: flex;
     max-width: 100%;

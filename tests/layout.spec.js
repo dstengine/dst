@@ -443,8 +443,10 @@ test.describe("feed cards", () => {
   // The cover is the coloured band at the top of every card in a row, and it
   // was the flex item that gave way when one card's headline ran two lines:
   // at 1280 a row of three came out 161/193/193 and the band stepped down on
-  // the first card alone.
-  for (const [site, path] of [["fwf", "/"], ["dst", "/"]]) {
+  // the first card alone. tick's spotlight is the same fault from the other
+  // side: the date cover over DevFest's art was capped at 220px, the Snoop
+  // Dogg cover beside it ran 262px.
+  for (const [site, path] of [["fwf", "/"], ["dst", "/"], ["tick", "/"], ["tick", "/am/"]]) {
     test(`${site}${path}: covers in a row are the same height`, async ({ page }) => {
       await page.setViewportSize({ width: 1280, height: 900 });
       await page.goto(url(site, path));
