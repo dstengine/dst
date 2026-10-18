@@ -4,6 +4,7 @@ import EventArticle from "@dst/ui/EventArticle.astro";
 import type { EventItem } from "@dst/content/types";
 import { publisher, labels, type Lang } from "../content";
 import { site } from "../site.config";
+import { datedTitle } from "@dst/ui/title";
 import { LOCALE, newsFor, eventsBase, newsBase } from "../i18n";
 import { go } from "../outbound";
 import { sectionHref, promotedFor, linkFor, pluralOf } from "../sections";
@@ -14,7 +15,7 @@ const { lang, item, more } = Astro.props;
 const ticketHref = item.ticket ? go(`${item.slug}-ticket`) : undefined;
 const sourceHref = item.source?.url ? go(`${item.slug}-source`) : undefined;
 ---
-<Layout lang={lang} title={item.titleSeo ?? item.title} description={item.summary} image={item.image}>
+<Layout lang={lang} title={datedTitle(item.titleSeo ?? item.title, item, site[lang])} description={item.summary} image={item.image}>
   <EventArticle
     locale={LOCALE[lang]}
     item={item}

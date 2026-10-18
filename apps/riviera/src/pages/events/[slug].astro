@@ -1,6 +1,7 @@
 ---
 import { siteId } from "../../content";
 import { site } from "../../site.config";
+import { datedTitle } from "@dst/ui/title";
 import { pluralOf } from "../../sections";
 import Layout from "../../layouts/Layout.astro";
 import EventArticle from "@dst/ui/EventArticle.astro";
@@ -20,7 +21,7 @@ const { item, more } = Astro.props;
 const ticketSlug = `${item.slug}-ticket`;
 const ticketHref = item.ticket && outbound[ticketSlug] ? `/go/${ticketSlug}/` : undefined;
 ---
-<Layout title={item.titleSeo ?? item.title} description={item.summary} image={item.image}>
+<Layout title={datedTitle(item.titleSeo ?? item.title, item, site)} description={item.summary} image={item.image}>
   <EventArticle item={item} more={more} moreNews={moreNews} backHref="/events/" ticketHref={ticketHref}
   where={site.keyword}
   pluralOf={pluralOf}

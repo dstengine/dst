@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { site } from "../../site.config";
+import { datedTitle } from "@dst/ui/title";
 import EventArticle from "@dst/ui/EventArticle.astro";
 import { siteId, newsBase, eventsBase, publisher, labels } from "../../content";
 import { eventsBySite } from "@dst/content/events";
@@ -25,7 +26,7 @@ const categoryHref = sectionHrefFor(item, allSections);
 const ticketHref = item.ticket ? go(`${item.slug}-ticket`) : undefined;
 const sourceHref = item.source?.url ? go(`${item.slug}-source`) : undefined;
 ---
-<Layout title={item.titleSeo ?? item.title} description={item.summary} image={item.image}>
+<Layout title={datedTitle(item.titleSeo ?? item.title, item, site)} description={item.summary} image={item.image}>
   <EventArticle
     locale="de-AT"
     item={item}

@@ -11,6 +11,7 @@ import type { NetworkSite } from '@dst/content/network';
 import { lastModified } from '@dst/content/lastmod';
 import { pageExperiments, visitorScript, visitorCss } from '../experiments';
 import Donate from "../components/Donate.astro";
+import { withSuffix } from "../title";
 
 interface Props {
   title: string;
@@ -21,7 +22,7 @@ interface Props {
       and where it was easy to copy a sibling's name in along with it. */
   titleSuffix?: string;
   /** The site's head keyword — the one word the suffix exists to supply.
-      See the note over `suffixAlreadySaid`. */
+      See `withSuffix` in ../title.ts. */
   keyword?: string;
   description: string;
   siteName: string;
@@ -155,23 +156,10 @@ const { title, titleSuffix, keyword, description, siteName, nav, crumbLabels, co
 // "Art in central London" and not inside a longer word, and
 // case-insensitively, because "DST events — DST" is the same duplication.
 //
-// "Word boundary" means letters, not `\b`: `\b` only knows the 63 ASCII
-// word characters, so to it every Armenian letter is punctuation and an
-// Armenian keyword was never found in an Armenian title — the suffix went
-// on every page of tick, saying Yerevan twice. And Armenian declines its
-// nouns where English puts a preposition: "in Yerevan" is Երևանում, one
-// word, so in a language listed here the keyword counts as said when a
-// case ending follows it. Not German, where "Wiener" is an adjective and
-// the suffix "Wien" says something it does not.
-const INFLECTED = new Set(["hy"]);
-const saidAlready = (needle?: string) => {
-  if (!needle) return false;
-  const word = needle.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const after = INFLECTED.has(lang.slice(0, 2)) ? "" : "(?![\\p{L}\\p{N}])";
-  return new RegExp(`(?<![\\p{L}\\p{N}])${word}${after}`, "iu").test(title);
-};
-const suffixAlreadySaid = saidAlready(titleSuffix) || saidAlready(keyword);
-const pageTitle = titleSuffix && !suffixAlreadySaid ? `${title} \u2014 ${titleSuffix}` : title;
+// The word-boundary and Armenian-inflection rules are in ../title.ts,
+// shared with event pages, which need to know whether the suffix is coming
+// before they decide whether their date fits.
+const pageTitle = withSuffix(title, titleSuffix, keyword, lang);
 const isDstHome = Astro.site?.hostname === "dst.llc";
 // The two strings the shell says on its own, in the language of the page.
 // Everything else in the chrome comes from the app; these were hardcoded in
