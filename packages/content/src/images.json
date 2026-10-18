@@ -30520,6 +30520,38 @@
         ]
       ]
     },
+    "/covers/love-6-premiere-ghaplanyan-theatre-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/love-6-premiere-ghaplanyan-theatre-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/love-6-premiere-ghaplanyan-theatre-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/love-6-premiere-ghaplanyan-theatre-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/love-6-premiere-ghaplanyan-theatre-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/love-6-premiere-ghaplanyan-theatre-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/love-6-premiere-ghaplanyan-theatre-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/macbeth-chamber-theatre-yerevan-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -31936,6 +31968,38 @@
         ]
       ]
     },
+    "/covers/uru-solo-concert-tonelab-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/uru-solo-concert-tonelab-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/uru-solo-concert-tonelab-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/uru-solo-concert-tonelab-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/uru-solo-concert-tonelab-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/uru-solo-concert-tonelab-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/uru-solo-concert-tonelab-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/vienna-gala-national-philharmonic-yerevan-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -32517,6 +32581,38 @@
         [
           1024,
           "/covers/yerevan-state-chamber-choir-30-tigran-hamasyan-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/yervand-yerkanyan-75-jubilee-concert-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/yervand-yerkanyan-75-jubilee-concert-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/yervand-yerkanyan-75-jubilee-concert-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/yervand-yerkanyan-75-jubilee-concert-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/yervand-yerkanyan-75-jubilee-concert-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/yervand-yerkanyan-75-jubilee-concert-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/yervand-yerkanyan-75-jubilee-concert-yerevan-2026-1024.webp"
         ]
       ]
     },
