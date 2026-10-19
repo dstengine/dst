@@ -28270,6 +28270,38 @@
         ]
       ]
     },
+    "/covers/how-to-brew-assam-tea.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/how-to-brew-assam-tea-480.avif"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-assam-tea-768.avif"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-assam-tea-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/how-to-brew-assam-tea-480.webp"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-assam-tea-768.webp"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-assam-tea-1024.webp"
+        ]
+      ]
+    },
     "/covers/how-to-brew-black-tea.jpg": {
       "width": 1024,
       "height": 1024,
