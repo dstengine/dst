@@ -89,6 +89,17 @@ const glance = [
   { label: "Last checked", value: show.checkedOn, icon: ICONS.list },
 ].filter(Boolean) as { label: string; value: string; icon: string; href?: string }[];
 
+// What the page is about, in the vocabulary a crawler reads: the work itself.
+// A run page says TheaterEvent for one night of it; this page is the show,
+// and its heading is the show's own name rather than a sentence of ours.
+const showLd = {
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  name: show.title,
+  url: new URL(`/${show.slug}/`, Astro.site).href,
+  genre: "Musical theatre",
+};
+
 const jump = [
   { id: "playing", label: "Where it plays" },
   showGroups.length > 0 && { id: "tours", label: "Tours" },
@@ -97,7 +108,7 @@ const jump = [
   faq.length > 0 && { id: "faq", label: "Questions" },
 ].filter(Boolean) as { id: string; label: string }[];
 ---
-<Layout title={show.titleSeo ?? show.title} description={show.summary}>
+<Layout title={show.titleSeo ?? show.title} description={show.summary} jsonLd={[showLd]}>
   <section class="container hero">
     <p class="eyebrow">{show.eyebrow}</p>
     <h1>{show.title}</h1>

@@ -126,7 +126,7 @@ export const items: NewsItem[] = [
   {
     slug: "chicago-takes-an-arena-stage-in-dubai",
     createdAt: "2026-09-06T08:48:11+04:00",
-    updatedAt: "2026-09-23T00:59:38+04:00",
+    updatedAt: "2026-10-20T17:49:09+04:00",
     site: "musical",
     image: "/covers/chicago-takes-an-arena-stage-in-dubai.jpg",
     imageAlt: "A wide dark paper arena bowl with a narrow lit rectangle of pale paper at its centre, five small chevrons above it",
@@ -137,7 +137,7 @@ export const items: NewsItem[] = [
     cardTitle: "Chicago plays an arena in Dubai",
     titleSeo: "Chicago at the Coca-Cola Arena",
     summary:
-      "The Coca-Cola Arena hosts Chicago from 16 to 20 December 2026 — eight performances, and the first Broadway production staged on that arena floor.",
+      "The Coca-Cola Arena hosts the musical Chicago from 16 to 20 December 2026 — eight performances, and the first Broadway production staged on that arena floor.",
     date: "2026-09-06",
     until: "2026-12-20",
     category: "Runs",
@@ -186,7 +186,7 @@ export const items: NewsItem[] = [
   {
     slug: "rent-turns-thirty-in-a-renamed-theatre",
     createdAt: "2026-09-06T08:48:11+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-20T17:49:09+04:00",
     site: "musical",
     image: "/covers/rent-turns-thirty-in-a-renamed-theatre.jpg",
     imageAlt: "A pale paper theatre facade on a dark ground, the nameplate above its doors left blank and slightly askew",
@@ -197,7 +197,7 @@ export const items: NewsItem[] = [
     cardTitle: "Rent at thirty, in a renamed theatre",
     titleSeo: "Rent, West End 2026: dates, cast and theatre",
     summary:
-      "Previews from 28 September, booking to 27 March 2027, at the Duke of York’s — now the Tom Stoppard Theatre. Gaten Matarazzo makes his West End debut as Mark.",
+      "Jonathan Larson's musical: previews from 28 September, booking to 27 March 2027, at the Duke of York’s — now the Tom Stoppard Theatre. Gaten Matarazzo makes his West End debut as Mark.",
     date: "2026-09-05",
     until: "2027-03-27",
     category: "Productions",

@@ -115,11 +115,20 @@ const facts = [
 ].filter(Boolean).join(", ");
 const place = venue.name.includes(city.name) ? venue.name : `${venue.name}, ${city.name}`;
 const bookedShows = [...new Set(upcoming.map((r) => showBySlug(r.show)?.title ?? r.show))];
+const playedShows = [...new Set(past.map((r) => showBySlug(r.show)?.title ?? r.show))];
+// With nothing booked, the building is still on this site for what has
+// played it — and a venue page that never says so is a page about a
+// theatre with no theatre in it. The word once, not twice: "The musical
+// booked here: Chicago The Musical" stutters, so a title that already
+// carries it takes the shorter lead.
+const saysMusical = (titles: string[]) => titles.every((t) => /musical/i.test(t));
 const booked = next && nextShow
   ? bookedShows.length === 1
-    ? `The musical booked here: ${nextShow}, ${lowerFirst(formatRun(next))}.`
-    : `Musicals booked here: ${bookedShows.join(", ")}.`
-  : undefined;
+    ? `${saysMusical([nextShow]) ? "Booked here" : "The musical booked here"}: ${nextShow}, ${lowerFirst(formatRun(next))}.`
+    : `${saysMusical(bookedShows) ? "Booked here" : "Musicals booked here"}: ${bookedShows.join(", ")}.`
+  : playedShows.length
+    ? `${saysMusical(playedShows) ? "Played here" : playedShows.length === 1 ? "The musical that played here" : "Musicals that have played here"}: ${playedShows.join(", ")}.`
+    : undefined;
 const sentences = [
   // The address names the city already, where it has one.
   `${venue.address?.includes(city.name) ? venue.name : place}${facts ? `: ${facts}.` : "."}`,

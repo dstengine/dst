@@ -42,7 +42,7 @@ export const songsSection: Section = {
   label: "The songs",
   title: "Chicago The Musical: every song, in order",
   description:
-    "The running order of the 1996 revival — the version now playing everywhere on this site's calendar — with who sings what and why it is there.",
+    "The running order of the musical's 1996 revival — the version now playing everywhere on this site's calendar — with who sings what and why it is there.",
   template: "songs",
   body: [
     "Two of these songs are famous enough to have escaped the show: \"All That Jazz\" opens it, and \"Cell Block Tango\" is the one people quote. The other seventeen are the reason the evening works — a vaudeville bill in which every number is a turn performed at the audience rather than a scene played to another character.",
