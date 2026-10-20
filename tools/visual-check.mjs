@@ -80,7 +80,10 @@ async function domFindings(page, width) {
 
       // Clipped text. A line clamp is a decision; this is an accident.
       const clipped = /hidden|clip/.test(cs.overflowX + cs.overflowY) && cs.webkitLineClamp === "none";
-      if (clipped && el.children.length === 0 && (el.scrollWidth > el.clientWidth + 2 || el.scrollHeight > el.clientHeight + 2))
+      // A 1×1 box is the screen-reader-only pattern: the text is meant for
+      // assistive tech and is hidden from sight on purpose.
+      const srOnly = el.clientWidth <= 1 && el.clientHeight <= 1;
+      if (clipped && !srOnly && el.children.length === 0 && (el.scrollWidth > el.clientWidth + 2 || el.scrollHeight > el.clientHeight + 2))
         say("text clipped by its box", el, `${el.scrollWidth}×${el.scrollHeight} in ${el.clientWidth}×${el.clientHeight}`);
     }
 

@@ -29,6 +29,7 @@ export const site = {
   partnerDisclosure: false,
   footerLinks: [
     { href: "/unstake/", label: "Unstake countdown" },
+    { href: "/seedgen/", label: "Seed phrase generator" },
     { href: "/about/", label: "About" },
   ],
   // A tip jar, and the only place on the site that asks for anything. The

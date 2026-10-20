@@ -1,4 +1,11 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "ignoreCommand": "node ../../tools/vercel-ignore.mjs sol2go"
+  "ignoreCommand": "node ../../tools/vercel-ignore.mjs sol2go",
+  "redirects": [
+    { "source": "/seedgen", "destination": "/seedgen/", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/seedgen/", "destination": "https://seedgen-flame.vercel.app/" },
+    { "source": "/seedgen/:path*", "destination": "https://seedgen-flame.vercel.app/:path*" }
+  ]
 }
