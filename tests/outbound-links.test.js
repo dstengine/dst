@@ -38,6 +38,9 @@ const OWN_DOMAINS = ["fwf.lol", "musical.today",
   "nyc42.lol", "ldn.lol", "lnd.lol", "cmx.lol", "mxo.lol", "sol2go.lol", "vien.lol",
   // tick answers on tick.am; tick.lnd.lol, where it launched, 301s there.
   "tick.am", "tick.lnd.lol",
+  // The seed phrase generator, linked from sol2go's footer; it opened at
+  // sol2go.lol/seedgen/ and moved to its own domain.
+  "seedgen.uk",
   // AI video news.
   "aivideo.zone",
   // Tea guides.

@@ -19,7 +19,8 @@
 export interface Redirect {
   /** The old path, with both slashes: "/art/". */
   from: string;
-  /** Where it goes now, on the same site. */
+  /** Where it goes now: a path on the same site, or a full URL when the
+      page left for a site of its own. */
   to: string;
   /** ISO date the address moved — this register is also a history. */
   since: string;
@@ -28,6 +29,14 @@ export interface Redirect {
 }
 
 export const redirects: Record<string, Redirect[]> = {
+  sol2go: [
+    {
+      from: "/seedgen/",
+      to: "https://seedgen.uk/",
+      since: "2026-10-20",
+      why: "The seed phrase generator opened at sol2go.lol/seedgen/, proxied from its own Vercel project while it waited for a name, and moved to seedgen.uk the same day the domain was pointed at it. It is a tool for five chains, not a page about Solana events.",
+    },
+  ],
   fwf: [
     {
       from: "/events/dubai-future-forum-2026/",

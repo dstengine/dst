@@ -738,8 +738,12 @@ describe("redirects", () => {
     return existsSync(path.join(REPO, "apps", app, "dist", file));
   };
 
+  // A full URL is a page that left for a site of its own (sol2go's
+  // /seedgen/ for seedgen.uk): no build here can vouch for it.
+  const local = (r) => r.to.startsWith("/");
+
   test("every redirect lands on a page that exists", () => {
-    const broken = entries.filter((r) => !built(r.app, r.to)).map((r) => `${r.app}${r.from} -> ${r.to}`);
+    const broken = entries.filter((r) => local(r) && !built(r.app, r.to)).map((r) => `${r.app}${r.from} -> ${r.to}`);
     assert.deepEqual(broken, [], `a redirect to nowhere:\n  ${broken.join("\n  ")}`);
   });
 

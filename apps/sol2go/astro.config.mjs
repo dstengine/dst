@@ -10,11 +10,6 @@ import { stripSvgComments } from "../../tools/svg-comments.mjs";
 const lastmod = JSON.parse(
   readFileSync(new URL("../../packages/content/src/lastmod.json", import.meta.url), "utf8"),
 );
-// /seedgen/ is not built here: vercel.json rewrites it to the seedgen
-// project (~/dst/seedgen), so git history in this repo knows nothing of
-// it. Its date is that repo's last release — bump it when seedgen ships.
-lastmod["sol2go.lol"] = { ...lastmod["sol2go.lol"], "/seedgen/": "2026-10-20T16:40:04+04:00" };
-
 export default defineConfig({
   site: "https://sol2go.lol",
   integrations: [
@@ -23,7 +18,6 @@ export default defineConfig({
       // would contradict both. /li/ carries the LiveInternet counter and is
       // noindex for the same reason — it exists to be opened deliberately.
       filter: (page) => !page.includes("/go/") && !page.endsWith("/li/"),
-      customPages: ["https://sol2go.lol/seedgen/"],
       // loc, lastmod, changefreq and priority — every field the
       // protocol defines for a URL. See tools/sitemap.mjs for what
       // each one is derived from and why.
