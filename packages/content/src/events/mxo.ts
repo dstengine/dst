@@ -119,7 +119,7 @@ export const items: EventItem[] = [
   {
     slug: "festival-internacional-cervantino-2026",
     createdAt: "2026-08-30T11:52:01+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-20T04:34:06+04:00",
     site: "mxo",
     image: "/covers/festival-internacional-cervantino-2026.jpg",
     imageAlt: "Tres arcos de papel de distinto tamaño anidados uno dentro de otro, en terracota y crema sobre un fondo verde",
@@ -128,7 +128,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Festival Internacional Cervantino 2026",
     summary:
-      "La 54ª edición va del 3 al 18 de octubre en Guanajuato, con Francia como país invitado de honor y programación en seis ciudades del estado.",
+      "La 54ª edición va del 3 al 18 de octubre en Guanajuato, México, con Francia como país invitado de honor y programación en seis ciudades del estado.",
     start: "2026-10-03",
     end: "2026-10-18",
     utcOffset: "-06:00",
@@ -161,7 +161,7 @@ export const items: EventItem[] = [
   {
     slug: "fil-guadalajara-2026",
     createdAt: "2026-08-30T23:36:45+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-20T04:34:06+04:00",
     featured: 1,
     site: "mxo",
     image: "/covers/fil-guadalajara-2026.jpg",
@@ -171,7 +171,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "FIL Guadalajara 2026: 40 años, Italia invitada",
     summary:
-      "La Feria Internacional del Libro de Guadalajara cumple 40 ediciones del 28 de noviembre al 6 de diciembre, con Italia como país Invitado de Honor y 61 autores italianos en Expo Guadalajara.",
+      "La Feria Internacional del Libro de Guadalajara cumple 40 ediciones del 28 de noviembre al 6 de diciembre, con Italia como país Invitado de Honor y 61 autores italianos en Expo Guadalajara, México.",
     start: "2026-11-28",
     end: "2026-12-06",
     utcOffset: "-06:00",
@@ -229,7 +229,7 @@ export const items: EventItem[] = [
   {
     slug: "filij-2026",
     createdAt: "2026-08-30T11:52:01+04:00",
-    updatedAt: "2026-09-06T14:02:45+04:00",
+    updatedAt: "2026-10-20T04:34:06+04:00",
     featured: 2,
     site: "mxo",
     image: "/covers/filij-2026.jpg",
@@ -239,7 +239,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "FILIJ 2026: el libro infantil y juvenil",
     summary:
-      "La 44 Feria Internacional del Libro Infantil y Juvenil ocupa el CENART del 13 al 22 de noviembre. Entrada gratuita, diez días, y convocatoria abierta para visitas escolares.",
+      "La 44 Feria Internacional del Libro Infantil y Juvenil ocupa el CENART, en la Ciudad de México, del 13 al 22 de noviembre. Entrada gratuita, diez días, y convocatoria abierta para visitas escolares.",
     start: "2026-11-13",
     end: "2026-11-22",
     startTime: "09:00",
@@ -491,7 +491,7 @@ export const items: EventItem[] = [
   {
     slug: "xantolo-huasteca-potosina-2026",
     createdAt: "2026-09-08T21:59:53+04:00",
-    updatedAt: "2026-09-08T21:59:53+04:00",
+    updatedAt: "2026-10-20T04:34:06+04:00",
     site: "mxo",
     image: "/covers/xantolo-huasteca-potosina-2026.jpg",
     imageAlt: "Tres máscaras ovaladas de papel — naranja, roja y crema — superpuestas en fila sobre un fondo verde oscuro",
@@ -500,7 +500,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Xantolo 2026 en la Huasteca Potosina",
     summary:
-      "Del 30 de octubre al 2 de noviembre, en Ciudad Valles, Tamazunchale y Aquismón: comparsas enmascaradas, arcos de cempasúchil y danzas tének y nahuas.",
+      "Del 30 de octubre al 2 de noviembre, en Ciudad Valles, Tamazunchale y Aquismón, en la Huasteca de San Luis Potosí (México): comparsas enmascaradas, arcos de cempasúchil y danzas tének y nahuas.",
     start: "2026-10-30",
     end: "2026-11-02",
     utcOffset: "-06:00",
@@ -719,7 +719,7 @@ export const items: EventItem[] = [
   {
     slug: "festival-internacional-del-globo-2026",
     createdAt: "2026-09-12T22:20:00+04:00",
-    updatedAt: "2026-09-12T22:20:00+04:00",
+    updatedAt: "2026-10-20T04:34:06+04:00",
     site: "mxo",
     image: "/covers/festival-internacional-del-globo-2026.jpg",
     imageAlt:
@@ -729,7 +729,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Festival Internacional del Globo 2026",
     summary:
-      "Cuatro días en León, Guanajuato, del 13 al 16 de noviembre: más de 200 globos de más de 25 países despegan juntos al amanecer, y Los Ángeles Azules abren el escenario principal.",
+      "Cuatro días en León, Guanajuato (México), del 13 al 16 de noviembre: más de 200 globos de más de 25 países despegan juntos al amanecer, y Los Ángeles Azules abren el escenario principal.",
     start: "2026-11-13",
     end: "2026-11-16",
     utcOffset: "-06:00",

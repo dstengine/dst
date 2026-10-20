@@ -183,7 +183,7 @@ export const items: NewsItem[] = [
   {
     slug: "la-feria-de-francisco-i-madero-abre-el-11-de-septiembre",
     createdAt: "2026-09-08T00:12:45+04:00",
-    updatedAt: "2026-09-08T11:57:44+04:00",
+    updatedAt: "2026-10-20T04:34:06+04:00",
     site: "mxo",
     image: "/covers/la-feria-de-francisco-i-madero-abre-el-11-de-septiembre.jpg",
     imageAlt: "Banderines de papel terracota y crema colgados en dos hileras sobre fondo verde bosque, uno de ellos girado de canto",
@@ -194,7 +194,7 @@ export const items: NewsItem[] = [
     cardTitle: "Feria Madero, del 11 al 19",
     titleSeo: "Feria Madero Coahuila: 11 al 19 de septiembre",
     summary:
-      "Nueve días en Francisco I. Madero, Coahuila, con bailes, artesanía y gastronomía regional — y las fiestas patrias cayendo dentro del programa, no al lado de él.",
+      "Nueve días en Francisco I. Madero, Coahuila, con bailes, artesanía y gastronomía regional — y las fiestas patrias de México cayendo dentro del programa, no al lado de él.",
     date: "2026-09-07",
     until: "2026-09-19",
     category: "Ferias",
@@ -259,7 +259,7 @@ export const items: NewsItem[] = [
   {
     slug: "mexico-cuarto-lugar-mundial-en-pib-turistico",
     createdAt: "2026-09-06T08:48:11+04:00",
-    updatedAt: "2026-09-06T20:58:51+04:00",
+    updatedAt: "2026-10-20T04:34:06+04:00",
     site: "mxo",
     image: "/covers/mexico-cuarto-lugar-mundial-en-pib-turistico.jpg",
     imageAlt: "Cuatro barras de papel de alturas decrecientes, la cuarta en un tono distinto y ligeramente separada de las otras tres",
@@ -270,7 +270,7 @@ export const items: NewsItem[] = [
     cardTitle: "Cuarto lugar mundial en PIB turístico",
     titleSeo: "México, cuarto en PIB turístico",
     summary:
-      "El WTTC presentó en Cancún sus cifras 2025: 149,400 millones de dólares de aportación al PIB y 237,900 millones en gasto de viajes de ocio. Solo Estados Unidos, China y Alemania están arriba.",
+      "El WTTC presentó en Cancún sus cifras 2025 para México: 149,400 millones de dólares de aportación al PIB y 237,900 millones en gasto de viajes de ocio. Solo Estados Unidos, China y Alemania están arriba.",
     date: "2026-09-06",
     category: "Turismo",
     source: {
@@ -332,7 +332,7 @@ export const items: NewsItem[] = [
   {
     slug: "morelia-anuncia-96-peliculas-mexicanas",
     createdAt: "2026-09-03T07:30:21+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-20T04:34:06+04:00",
     site: "mxo",
     image: "/covers/morelia-anuncia-96-peliculas-mexicanas.jpg",
     imageAlt: "Noventa y seis rectángulos de papel en cuadrícula, cuarenta de ellos en un tono distinto",
@@ -343,7 +343,7 @@ export const items: NewsItem[] = [
     cardTitle: "Morelia anuncia 96 películas mexicanas",
     titleSeo: "FICM 2026: 96 cintas mexicanas",
     summary:
-      "El 40% de la Selección Oficial del 24 Festival Internacional de Cine de Morelia está dirigido por mujeres. El festival va del 16 al 25 de octubre.",
+      "El 40% de la Selección Oficial del 24 Festival Internacional de Cine de Morelia, 96 películas hechas en México, está dirigido por mujeres. El festival va del 16 al 25 de octubre.",
     date: "2026-09-02",
     until: "2026-10-25",
     category: "Cine",
@@ -449,7 +449,7 @@ export const items: NewsItem[] = [
   {
     slug: "kia-ev3-pesqueria-nuevo-leon",
     createdAt: "2026-09-01T15:07:36+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-20T04:34:06+04:00",
     site: "mxo",
     image: "/covers/kia-ev3-pesqueria-nuevo-leon.jpg",
     imageAlt: "Un auto de papel recortado con una batería en el piso y un cable de carga en curva",
@@ -460,7 +460,7 @@ export const items: NewsItem[] = [
     cardTitle: "El primer KIA eléctrico de México",
     titleSeo: "El primer KIA eléctrico de México",
     summary:
-      "649 millones de dólares para producir el EV3 en Nuevo León. Es el primer vehículo eléctrico fabricado en la historia del estado",
+      "649 millones de dólares para producir el EV3 en Pesquería, Nuevo León: el primer KIA eléctrico hecho en México y el primer vehículo eléctrico fabricado en la historia del estado.",
     date: "2026-08-05",
     category: "Industria",
     source: {
@@ -711,7 +711,7 @@ export const items: NewsItem[] = [
   {
     slug: "cuatro-cienegas-borrego-cimarron",
     createdAt: "2026-08-30T20:53:51+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-20T04:34:06+04:00",
     site: "mxo",
     image: "/covers/cuatro-cienegas-borrego-cimarron.jpg",
     imageAlt: "Un borrego cimarrón en una loma del desierto, un bisonte al fondo y pozas de agua abajo",
@@ -720,7 +720,7 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "Los bisontes funcionaron; ahora va el borrego",
     summary:
-      "Cuarenta y siete bisontes devolvieron a Cuatro Ciénegas gato montés, pecaríes y venados. La siguiente pieza que la fundación quiere reponer es el borrego cimarrón: una manada fundacional de 12 a 15 ejemplares.",
+      "Cuarenta y siete bisontes devolvieron a Cuatro Ciénegas, en el norte de México, gato montés, pecaríes y venados. La siguiente pieza que la fundación quiere reponer es el borrego cimarrón: una manada fundacional de 12 a 15 ejemplares.",
     date: "2026-08-28",
     category: "Naturaleza",
     source: {
@@ -751,7 +751,7 @@ export const items: NewsItem[] = [
   {
     slug: "tren-ligero-texcoco-la-paz",
     createdAt: "2026-08-30T20:53:51+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-20T04:34:06+04:00",
     site: "mxo",
     image: "/covers/tren-ligero-texcoco-la-paz.jpg",
     imageAlt: "Una línea de tren ligero con estaciones marcadas y un tranvía al final, un lago detrás",
@@ -760,7 +760,7 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "El tren de Texcoco: once estaciones, 30 minutos",
     summary:
-      "El Edomex publicó el proyecto del Tren Ligero Texcoco–La Paz: 21 kilómetros, once estaciones, media hora de punta a punta contra los setenta minutos de hoy.",
+      "El Estado de México publicó el proyecto del Tren Ligero Texcoco–La Paz: 21 kilómetros, once estaciones, media hora de punta a punta contra los setenta minutos de hoy.",
     date: "2026-08-27",
     category: "Movilidad",
     source: {
@@ -790,7 +790,7 @@ export const items: NewsItem[] = [
   {
     slug: "filij-2026-regresa-al-cenart",
     createdAt: "2026-08-30T11:52:01+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-20T04:34:06+04:00",
     site: "mxo",
     image: "/covers/filij-2026-regresa-al-cenart.jpg",
     imageAlt: "Un libro abierto que se convierte en una carpa de papel, rodeado de animales de papel doblado",
@@ -799,7 +799,7 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "La FILIJ regresa al CENART con entrada gratuita",
     summary:
-      "La 44 edición de la Feria Internacional del Libro Infantil y Juvenil será del 13 al 22 de noviembre en el CENART, con entrada gratuita y convocatoria abierta para visitas escolares.",
+      "La 44 edición de la Feria Internacional del Libro Infantil y Juvenil será del 13 al 22 de noviembre en el CENART, en la Ciudad de México, con entrada gratuita y convocatoria abierta para visitas escolares.",
     date: "2026-08-28",
     until: "2026-11-22",
     category: "Ferias",
@@ -829,7 +829,7 @@ export const items: NewsItem[] = [
   {
     slug: "kusama-320-mil-visitantes",
     createdAt: "2026-08-30T11:52:01+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-20T04:34:06+04:00",
     site: "mxo",
     image: "/covers/kusama-320-mil-visitantes.jpg",
     imageAlt: "Un campo denso de círculos de papel de todos los tamaños con una sala espejada al centro",
@@ -838,7 +838,7 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "Kusama pasó de 320 mil visitantes",
     summary:
-      "Más de 320 mil personas vieron «Obsesión Infinita» en el Museo Tamayo entre 2014 y 2015. Al final el museo abrió 36 horas seguidas y casi 10 mil personas entraron en ese maratón.",
+      "Más de 320 mil personas vieron «Obsesión Infinita» en el Museo Tamayo de la Ciudad de México entre 2014 y 2015. Al final el museo abrió 36 horas seguidas y casi 10 mil personas entraron en ese maratón.",
     date: "2026-08-27",
     category: "Arte",
     source: {

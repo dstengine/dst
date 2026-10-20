@@ -23,16 +23,16 @@ export const home = {
 
 export const news = {
   title: "Qué cambió en la agenda de México",
-  description: "Unas cuantas cosas por semana, cada una verificada contra la fuente que la reportó.",
+  description: "Lo que cambió en la agenda de México: unas cuantas cosas por semana, cada una verificada contra la fuente que la reportó.",
   h1: "Qué cambió en la agenda de México",
   lede: `Unas cuantas cosas por semana, cada una verificada contra la fuente que la reportó.`,
 };
 
 export const events = {
   title: "Eventos en México, por fecha",
-  description: "La agenda nacional: cada fecha confirmada con quien organiza, no copiada de otro listado.",
+  description: "La agenda nacional de México: cada fecha confirmada con quien organiza, no copiada de otro listado.",
   h1: "México, por fecha",
-  lede: `La agenda nacional: cada fecha confirmada con quien organiza, no copiada de otro listado.`,
+  lede: `La agenda nacional de México: cada fecha confirmada con quien organiza, no copiada de otro listado.`,
 };
 
 export const about = {
