@@ -94,7 +94,7 @@ export const items: NewsItem[] = [
   {
     slug: "four-million-driverless-kilometres-and-a-satisfaction-score",
     createdAt: "2026-09-08T00:12:45+04:00",
-    updatedAt: "2026-09-08T11:33:45+04:00",
+    updatedAt: "2026-10-20T18:20:00+04:00",
     site: "fwf",
     image: "/covers/four-million-driverless-kilometres-and-a-satisfaction-score.jpg",
     imageAlt: "A long periwinkle paper ribbon looping across a deep indigo ground, a small lilac square riding on it",
@@ -105,7 +105,7 @@ export const items: NewsItem[] = [
     cardTitle: "Four million driverless kilometres",
     titleSeo: "Dubai robotaxis pass four million kilometres",
     summary:
-      "The RTA puts the programme past four million kilometres with 97 per cent customer satisfaction — a pairing that says more about the service than either figure alone.",
+      "Dubai's RTA puts the programme past four million kilometres with 97 per cent customer satisfaction — a pairing that says more about the service than either figure alone.",
     date: "2026-09-07",
     category: "Mobility",
     source: {
@@ -429,7 +429,7 @@ export const items: NewsItem[] = [
   {
     slug: "agentic-ai-half-of-uae-government-services",
     createdAt: "2026-09-01T15:07:36+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-20T18:20:00+04:00",
     site: "fwf",
     image: "/covers/agentic-ai-half-of-uae-government-services.jpg",
     imageAlt: "A grid of paper tiles with half of them replaced by linked hexagonal nodes",
@@ -440,7 +440,7 @@ export const items: NewsItem[] = [
     cardTitle: "Half of UAE services move to AI agents",
     titleSeo: "Half of UAE services go to AI",
     summary:
-      "Sheikh Mohammed has set a two-year target for 50% of federal sectors, services and operations to run on agentic AI — systems that plan and act, not just answer.",
+      "Sheikh Mohammed, Dubai's ruler, has set a two-year target for 50% of UAE federal sectors, services and operations to run on agentic AI — systems that plan and act, not just answer.",
     date: "2026-04-23",
     category: "AI",
     source: {
@@ -497,7 +497,7 @@ export const items: NewsItem[] = [
   {
     slug: "rta-starts-commercial-robotaxi-operations",
     createdAt: "2026-08-28T01:39:41+04:00",
-    updatedAt: "2026-08-31T01:24:01+04:00",
+    updatedAt: "2026-10-20T18:20:00+04:00",
     featured: 1,
     site: "fwf",
     image: "/covers/rta-starts-commercial-robotaxi-operations.jpg",
@@ -507,7 +507,7 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "Dubai's robotaxis go commercial",
     summary:
-      "The RTA began paid driverless taxi operations on 30 March 2026 with an initial 100 vehicles, bookable through the Uber and Apollo Go apps.",
+      "Dubai's RTA began paid driverless taxi operations on 30 March 2026 with an initial 100 vehicles, bookable through the Uber and Apollo Go apps.",
     date: "2026-03-30",
     category: "Mobility",
     source: {

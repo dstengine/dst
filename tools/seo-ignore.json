@@ -1,7 +1,68 @@
 {
+  "cmx": {
+    "/noticias/apple-cambia-de-director-general/": "Noticia global sin ángulo local en la fuente. Escribir la ciudad sería una frase falsa; la página está aquí porque el sitio la lee desde Ciudad de México.",
+    "/noticias/juegos-mundiales-robots-humanoides-2026/": "Noticia global sin ángulo local en la fuente. Escribir la ciudad sería una frase falsa; la página está aquí porque el sitio la lee desde Ciudad de México.",
+    "/noticias/la-marca-de-agua-de-claude-no-esta-en-las-palabras/": "Noticia global sin ángulo local en la fuente. Escribir la ciudad sería una frase falsa; la página está aquí porque el sitio la lee desde Ciudad de México.",
+    "/noticias/s301-la-estrella-mas-rapida/": "Noticia global sin ángulo local en la fuente. Escribir la ciudad sería una frase falsa; la página está aquí porque el sitio la lee desde Ciudad de México.",
+    "/noticias/saturno-tiene-ahora-un-decagono/": "Noticia global sin ángulo local en la fuente. Escribir la ciudad sería una frase falsa; la página está aquí porque el sitio la lee desde Ciudad de México.",
+    "/noticias/venecia-2026-dos-leones-antes-del-jurado/": "Noticia global sin ángulo local en la fuente. Escribir la ciudad sería una frase falsa; la página está aquí porque el sitio la lee desde Ciudad de México."
+  },
+  "dst": {
+    "/news/apple-hands-the-company-to-an-engineer/": "Global news with no Dubai angle in the source. Writing the city in would be a false sentence; the page is here because the group reads it from Dubai, and the footer and site name say so.",
+    "/news/openai-ships-gpt-6-astra/": "Global news with no Dubai angle in the source. Writing the city in would be a false sentence; the page is here because the group reads it from Dubai, and the footer and site name say so.",
+    "/news/rentosertib-what-six-aging-clocks-measured/": "Global news with no Dubai angle in the source. Writing the city in would be a false sentence; the page is here because the group reads it from Dubai, and the footer and site name say so.",
+    "/news/the-detector-for-claudes-watermark-is-not-for-you/": "Global news with no Dubai angle in the source. Writing the city in would be a false sentence; the page is here because the group reads it from Dubai, and the footer and site name say so."
+  },
+  "fwf": {
+    "/news/a-hardware-engineer-inherits-the-software-era/": "Global news with no Dubai angle in the source. Writing the city in would be a false sentence; the page is here because the forum's readers follow the beat, and the site name in the title already says Dubai.",
+    "/news/aging-endpoints-inside-a-disease-trial/": "Global news with no Dubai angle in the source. Writing the city in would be a false sentence; the page is here because the forum's readers follow the beat, and the site name in the title already says Dubai.",
+    "/news/an-agent-that-can-drive-a-microscope/": "Global news with no Dubai angle in the source. Writing the city in would be a false sentence; the page is here because the forum's readers follow the beat, and the site name in the title already says Dubai.",
+    "/news/claude-now-watermarks-the-text-it-writes/": "Global news with no Dubai angle in the source. Writing the city in would be a false sentence; the page is here because the forum's readers follow the beat, and the site name in the title already says Dubai.",
+    "/news/eu-classifies-chatgpt-as-a-search-engine/": "Global news with no Dubai angle in the source. Writing the city in would be a false sentence; the page is here because the forum's readers follow the beat, and the site name in the title already says Dubai.",
+    "/news/ifa-berlin-2026/": "Global news with no Dubai angle in the source. Writing the city in would be a false sentence; the page is here because the forum's readers follow the beat, and the site name in the title already says Dubai."
+  },
+  "mxo": {
+    "/noticias/capuchinos-cazan-cuando-falta-fruta/": "Noticia global sin ángulo mexicano en la fuente. Escribir el país sería una frase falsa; la página está aquí porque el sitio la lee desde México.",
+    "/noticias/cova-de-les-dones-inscripciones-romanas/": "Noticia global sin ángulo mexicano en la fuente. Escribir el país sería una frase falsa; la página está aquí porque el sitio la lee desde México.",
+    "/noticias/el-decagono-de-saturno-estaba-en-el-archivo/": "Noticia global sin ángulo mexicano en la fuente. Escribir el país sería una frase falsa; la página está aquí porque el sitio la lee desde México.",
+    "/noticias/el-texto-lleva-marca-la-imagen-lleva-firma/": "Noticia global sin ángulo mexicano en la fuente. Escribir el país sería una frase falsa; la página está aquí porque el sitio la lee desde México.",
+    "/noticias/gpt-6-astra-saturo-tres-examenes/": "Noticia global sin ángulo mexicano en la fuente. Escribir el país sería una frase falsa; la página está aquí porque el sitio la lee desde México.",
+    "/noticias/hirosaki-mil-ochocientas-personas-castillo/": "Noticia global sin ángulo mexicano en la fuente. Escribir el país sería una frase falsa; la página está aquí porque el sitio la lee desde México.",
+    "/noticias/moderna-vacuna-melanoma-fase-3/": "Noticia global sin ángulo mexicano en la fuente. Escribir el país sería una frase falsa; la página está aquí porque el sitio la lee desde México.",
+    "/noticias/record-temperatura-oceano-2026/": "Noticia global sin ángulo mexicano en la fuente. Escribir el país sería una frase falsa; la página está aquí porque el sitio la lee desde México.",
+    "/noticias/relojes-proteomicos-y-una-dosis-partida-en-dos/": "Noticia global sin ángulo mexicano en la fuente. Escribir el país sería una frase falsa; la página está aquí porque el sitio la lee desde México.",
+    "/noticias/telescopio-roman-lanzamiento/": "Noticia global sin ángulo mexicano en la fuente. Escribir el país sería una frase falsa; la página está aquí porque el sitio la lee desde México.",
+    "/noticias/veinticinco-anos-para-llegar-a-la-cima/": "Noticia global sin ángulo mexicano en la fuente. Escribir el país sería una frase falsa; la página está aquí porque el sitio la lee desde México.",
+    "/noticias/venecia-2026-una-sola-pelicula-latinoamericana/": "Noticia global sin ángulo mexicano en la fuente. Escribir el país sería una frase falsa; la página está aquí porque el sitio la lee desde México."
+  },
+  "nyc42": {
+    "/events/albuquerque-balloon-fiesta-2026/": "A US-national event outside New York, filed under /usa/. Naming the city in its summary would be a false sentence; the section page says why it is on a New York calendar.",
+    "/events/art-basel-miami-beach-2026/": "A US-national event outside New York, filed under /usa/. Naming the city in its summary would be a false sentence; the section page says why it is on a New York calendar.",
+    "/events/austin-city-limits-2026/": "A US-national event outside New York, filed under /usa/. Naming the city in its summary would be a false sentence; the section page says why it is on a New York calendar.",
+    "/events/bonnaroo-2026/": "A US-national event outside New York, filed under /usa/. Naming the city in its summary would be a false sentence; the section page says why it is on a New York calendar.",
+    "/events/burning-man-2026/": "A US-national event outside New York, filed under /usa/. Naming the city in its summary would be a false sentence; the section page says why it is on a New York calendar.",
+    "/events/ces-2027/": "A US-national event outside New York, filed under /usa/. Naming the city in its summary would be a false sentence; the section page says why it is on a New York calendar.",
+    "/events/coachella-2027/": "A US-national event outside New York, filed under /usa/. Naming the city in its summary would be a false sentence; the section page says why it is on a New York calendar.",
+    "/events/edc-las-vegas-2027/": "A US-national event outside New York, filed under /usa/. Naming the city in its summary would be a false sentence; the section page says why it is on a New York calendar.",
+    "/events/iowa-state-fair-2027/": "A US-national event outside New York, filed under /usa/. Naming the city in its summary would be a false sentence; the section page says why it is on a New York calendar.",
+    "/events/kentucky-derby-2027/": "A US-national event outside New York, filed under /usa/. Naming the city in its summary would be a false sentence; the section page says why it is on a New York calendar.",
+    "/events/lollapalooza-2026/": "A US-national event outside New York, filed under /usa/. Naming the city in its summary would be a false sentence; the section page says why it is on a New York calendar.",
+    "/events/rose-parade-2027/": "A US-national event outside New York, filed under /usa/. Naming the city in its summary would be a false sentence; the section page says why it is on a New York calendar.",
+    "/events/stagecoach-2027/": "A US-national event outside New York, filed under /usa/. Naming the city in its summary would be a false sentence; the section page says why it is on a New York calendar.",
+    "/events/sxsw-2027/": "A US-national event outside New York, filed under /usa/. Naming the city in its summary would be a false sentence; the section page says why it is on a New York calendar.",
+    "/events/ultra-miami-2027/": "A US-national event outside New York, filed under /usa/. Naming the city in its summary would be a false sentence; the section page says why it is on a New York calendar.",
+    "/news/apple-from-350-billion-to-four-trillion/": "Global news with no New York angle in the source. Writing the city in would be a false sentence; the page is here because the site reads it from New York.",
+    "/news/hubble-found-a-decagon-in-its-own-old-pictures/": "Global news with no New York angle in the source. Writing the city in would be a false sentence; the page is here because the site reads it from New York.",
+    "/news/nearly-a-billion-dollars-of-pet-costumes/": "Global news with no New York angle in the source. Writing the city in would be a false sentence; the page is here because the site reads it from New York.",
+    "/news/sxsw-badges-go-up-on-september-17/": "Global news with no New York angle in the source. Writing the city in would be a false sentence; the page is here because the site reads it from New York."
+  },
   "sol2go": {
     "/events/crypto-expo-dubai-2026/": "An institutional digital-asset expo, not a Solana event. The page says what it is doing on the calendar; writing Solana into its summary would be writing a claim the source does not make.",
     "/events/ethglobal-lisbon-2026/": "An Ethereum hackathon, listed for the rule change it made. Same reason.",
     "/events/ethglobal-tokyo-2026/": "An Ethereum hackathon, listed because people who build across chains keep both dates in one diary. Same reason."
+  },
+  "vien": {
+    "/nachrichten/openai-stuft-neues-modell-als-kritisch-fuer-cybersicherheit-ein/": "Weltnachricht ohne Wiener Bezug in der Quelle. Die Stadt hineinzuschreiben wäre ein falscher Satz; die Seite ist hier, weil die Redaktion sie aus Wien liest.",
+    "/nachrichten/warum-die-biologische-uhr-nach-vier-wochen-stehen-blieb/": "Weltnachricht ohne Wiener Bezug in der Quelle. Die Stadt hineinzuschreiben wäre ein falscher Satz; die Seite ist hier, weil die Redaktion sie aus Wien liest."
   }
 }
