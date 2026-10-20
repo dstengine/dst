@@ -28960,6 +28960,38 @@
         ]
       ]
     },
+    "/covers/anna-yeghoyan-trigger-khachaturian-hall-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/anna-yeghoyan-trigger-khachaturian-hall-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/anna-yeghoyan-trigger-khachaturian-hall-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/anna-yeghoyan-trigger-khachaturian-hall-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/anna-yeghoyan-trigger-khachaturian-hall-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/anna-yeghoyan-trigger-khachaturian-hall-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/anna-yeghoyan-trigger-khachaturian-hall-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/ara-malikian-state-symphony-orchestra-yerevan-2027.jpg": {
       "width": 1024,
       "height": 1024,
@@ -29861,6 +29893,38 @@
         [
           1024,
           "/covers/gegham-grigorian-75-gala-domingo-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/geronti-talalyan-100-philharmonia-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/geronti-talalyan-100-philharmonia-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/geronti-talalyan-100-philharmonia-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/geronti-talalyan-100-philharmonia-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/geronti-talalyan-100-philharmonia-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/geronti-talalyan-100-philharmonia-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/geronti-talalyan-100-philharmonia-yerevan-2026-1024.webp"
         ]
       ]
     },
@@ -30837,6 +30901,38 @@
         [
           1024,
           "/covers/madaras-hyeyoon-park-yerevan-international-music-festival-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/malkhas-jazz-trio-khachaturian-hall-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/malkhas-jazz-trio-khachaturian-hall-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/malkhas-jazz-trio-khachaturian-hall-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/malkhas-jazz-trio-khachaturian-hall-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/malkhas-jazz-trio-khachaturian-hall-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/malkhas-jazz-trio-khachaturian-hall-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/malkhas-jazz-trio-khachaturian-hall-yerevan-2026-1024.webp"
         ]
       ]
     },
