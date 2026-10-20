@@ -31136,6 +31136,38 @@
         ]
       ]
     },
+    "/covers/nutcracker-yerevan-opera-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/nutcracker-yerevan-opera-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/nutcracker-yerevan-opera-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/nutcracker-yerevan-opera-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/nutcracker-yerevan-opera-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/nutcracker-yerevan-opera-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/nutcracker-yerevan-opera-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/oh-la-la-monsieur-paul-bohem-theatre-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -31165,6 +31197,38 @@
         [
           1024,
           "/covers/oh-la-la-monsieur-paul-bohem-theatre-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/opera-ball-new-years-eve-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/opera-ball-new-years-eve-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/opera-ball-new-years-eve-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/opera-ball-new-years-eve-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/opera-ball-new-years-eve-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/opera-ball-new-years-eve-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/opera-ball-new-years-eve-yerevan-2026-1024.webp"
         ]
       ]
     },
@@ -31245,6 +31309,38 @@
         [
           1536,
           "/covers/pagliacci-yerevan-opera-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/parisian-verdict-ghaplanyan-theatre-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/parisian-verdict-ghaplanyan-theatre-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/parisian-verdict-ghaplanyan-theatre-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/parisian-verdict-ghaplanyan-theatre-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/parisian-verdict-ghaplanyan-theatre-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/parisian-verdict-ghaplanyan-theatre-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/parisian-verdict-ghaplanyan-theatre-yerevan-2026-1024.webp"
         ]
       ]
     },
