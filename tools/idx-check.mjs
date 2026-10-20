@@ -40,10 +40,11 @@ import path from "node:path";
 import crypto from "node:crypto";
 import { HOSTS } from "./hosts.mjs";
 
-/** Ours, but not built from this repo: rss.mobi has its own, and the rest
-    are the restored archives ~/dst/revive builds (fest.vvm.space and
-    concert.vvm.space only 308 to fest.one, so they are not listed). */
-const EXTRA = ["rss.mobi", "fest.one", "vvm.space", "sensation.vvm.space", "placebo.vvm.space", "d8.vvm.space", "maxidrom.vvm.space"];
+/** Ours, but not built from this repo: rss.mobi and seedgen.uk
+    (~/dst/seedgen) have their own, and the rest are the restored archives
+    ~/dst/revive builds (fest.vvm.space and concert.vvm.space only 308 to
+    fest.one, so they are not listed). */
+const EXTRA = ["rss.mobi", "seedgen.uk", "fest.one", "vvm.space", "sensation.vvm.space", "placebo.vvm.space", "d8.vvm.space", "maxidrom.vvm.space"];
 
 const UA = "Mozilla/5.0 (compatible; dst-idx-check/1.0; +https://dst.llc/)";
 const PER_HOST = 5; // parallel requests to one host
