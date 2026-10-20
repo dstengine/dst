@@ -699,7 +699,9 @@ const relatedItems = (item.related ?? []).map((card) => ({
   /* A link in running metadata, so it says so on hover and on focus. The
      card rule does not apply here: this is a word in a line of text, not a
      whole card that happens to be clickable. */
-  a.event-article-category { text-decoration: none; }
+  /* A 24px word is a 44px target: the padding is taken back by the margin,
+     so the line does not grow and the thumb still lands. */
+  a.event-article-category { text-decoration: none; display: inline-block; padding: 10px 0; margin: -10px 0; }
   a.event-article-category:hover,
   a.event-article-category:focus-visible { text-decoration: underline; }
   .event-article-header h1 { margin: 0; }

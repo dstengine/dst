@@ -1827,7 +1827,7 @@ export const items: EventItem[] = [
   {
     slug: "boo-at-the-zoo-bronx-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-10-13T00:40:00+04:00",
+    updatedAt: "2026-10-21T02:04:30+04:00",
     site: "nyc42",
     image: "/covers/boo-at-the-zoo-bronx-2026.jpg",
     imageAlt: "An arch of overlapping paper leaves in amber, ochre and cream above a pale band carrying three animal paw prints",
@@ -1835,6 +1835,7 @@ export const items: EventItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "Boo at the Zoo 2026",
+    titleSeo: "Boo at the Zoo 2026 dates and schedule",
     summary:
       "Six weekends of pumpkins, a candy trail and a costume parade at the Bronx Zoo in New York, from 26 September to 1 November, free with zoo admission.",
     start: "2026-09-26",

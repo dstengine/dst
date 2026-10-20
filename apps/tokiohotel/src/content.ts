@@ -10,7 +10,7 @@ export const publisher = {
 export const origin = "https://tokiohotel.vvm.space";
 
 export const home = {
-  title: "Tokio Hotel tour dates",
+  title: "Tokio Hotel tour dates 2026 and 2027",
   description:
     "Every Tokio Hotel tour date we can confirm: the Arena Tour 2026, the Summer Encore run in 2027, the nine tours behind them, and the albums each one carried.",
   h1: "Tokio Hotel on tour",

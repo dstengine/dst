@@ -3,6 +3,82 @@ import type { EventItem } from "../types.ts";
 export const items: EventItem[] = [
 
   {
+    slug: "halloween-wurstelprater-2026",
+    createdAt: "2026-10-21T02:04:30+04:00",
+    updatedAt: "2026-10-21T02:04:30+04:00",
+    site: "vien",
+    image: "/covers/halloween-wurstelprater-2026.jpg",
+    imageAlt: "Ein rotes Riesenrad aus Papier über einem grünen Wiesenband mit sechs orangen Kürbissen und einem Hexenhut, goldene Sterne im cremefarbenen Himmel",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Halloween im Wurstelprater 2026",
+    titleSeo: "Halloween im Prater 2026: fünf Tage, keine Parade",
+    summary:
+      "Halloween im Wiener Prater vom 27. bis 31. Oktober 2026, täglich 14 bis 17 Uhr: Kürbisschnitzen, Kinderschminken, Zaubershows und eine Bühne am Riesenradplatz, alles gratis. Eine Parade gibt es heuer nicht; am Abend des 31. Oktober spielen Schauspieler an den Attraktionen.",
+    start: "2026-10-27",
+    end: "2026-10-31",
+    startTime: "14:00",
+    endTime: "17:00",
+    utcOffset: "+01:00",
+    venue: "Wurstelprater, Riesenradplatz",
+    city: "Wien",
+    organizer: "Prater Wien GmbH",
+    category: "Halloween",
+    tickets: { priceFrom: 0, currency: "EUR" },
+    source: {
+      name: "Prater Wien",
+      url: "https://www.praterwien.com/en/events/details/halloween-at-wurstelprater/",
+      verifiedOn: "2026-10-21",
+    },
+    body: [
+      "Wer <strong>Halloween Parade Wien 2026</strong> sucht, bekommt vom Prater eine klare Antwort: Es gibt heuer keine. Stattdessen dehnt der Wurstelprater das Kinderprogramm zum ersten Mal auf <strong>fünf Nachmittage</strong> aus, von <strong>Dienstag, 27., bis Samstag, 31. Oktober 2026</strong>, jeweils <strong>14 bis 17 Uhr</strong>, und der Eintritt kostet wie immer nichts.",
+      "## Was im Prater geboten wird",
+      "Quer durch den Wurstelprater verteilt stehen Mitmach-Stationen: Kürbisschnitzen, Basteltische, Kinderschminken, Hüpfburgen, Fotopunkte und Zirkus-Workshops zum Mitmachen. Auf der Bühne am <strong>Riesenradplatz</strong> laufen Zaubershows und ein Showprogramm, Magic World Vienna zaubert an den Tischen, und Stelzengeher samt dem Praterwurst'l ziehen durch das Gelände. An einzelnen Stationen gibt es laut Veranstalter gratis Eis, Süßigkeiten, Chips und Getränke.",
+      "## Stempelpass und Verlosung",
+      "Am Riesenradplatz gibt es einen Stempelpass. Wer <strong>fünf Stempel</strong> gesammelt hat, wirft ihn dort in die Box; täglich um <strong>17 Uhr</strong> werden drei Gewinner gezogen. Am 31. Oktober zieht der Bezirksvorsteher der Leopoldstadt die Gewinner selbst.",
+      "## Der Abend des 31. Oktober",
+      "Nach dem Familienprogramm wird es gruseliger: Am Abend des 31. Oktober inszenieren Schauspieler an verschiedenen Attraktionen interaktive Szenen. Viele Fahrgeschäfte und Lokale sind dekoriert und haben Halloween-Angebote. Wer es dunkel und still mag, geht am selben Abend ins Planetarium nebenan zu <a href=\"/veranstaltungen/cosmic-horrors-planetarium-wien-2026/\" title=\"Cosmic Horrors im Planetarium Wien\">Cosmic Horrors</a>.",
+      "## Was noch offen ist",
+      "Der Prater nennt keine Uhrzeiten für die einzelnen Shows auf der Bühne und keine für die Szenen am 31. Oktober. Die Fahrgeschäfte kosten wie an jedem anderen Tag; frei ist nur das Programm.",
+    ],
+    faq: [
+      {
+        q: "Wann ist Halloween im Prater 2026?",
+        a: "Von <strong>Dienstag, 27., bis Samstag, 31. Oktober 2026</strong>, das Kinderprogramm täglich von 14 bis 17 Uhr.",
+      },
+      {
+        q: "Gibt es 2026 eine Halloween-Parade im Prater?",
+        a: "Nein. Der Prater schreibt ausdrücklich, dass es heuer keine Parade gibt. Am Abend des 31. Oktober spielen stattdessen Schauspieler an den Attraktionen.",
+      },
+      {
+        q: "Was kostet Halloween im Prater?",
+        a: "Der Eintritt in den Wurstelprater und das Kinderprogramm sind <strong>frei</strong>. Fahrgeschäfte kosten wie sonst auch.",
+      },
+      {
+        q: "Wo ist die Bühne?",
+        a: "Am Riesenradplatz, gleich beim Eingang vom Praterstern. Dort gibt es auch den Stempelpass.",
+      },
+    ],
+    related: [
+      {
+        href: "/veranstaltungen/cosmic-horrors-planetarium-wien-2026/",
+        eyebrow: "Planetarium Wien",
+        title: "Cosmic Horrors im Planetarium",
+        text: "Das Halloween-Special des Planetariums am 31. Oktober, zwei Minuten vom Riesenrad.",
+      },
+      {
+        href: "/veranstaltungen/vienna-halloween-run-2026/",
+        eyebrow: "Prater Hauptallee",
+        title: "Vienna Halloween Run",
+        text: "Am 30. Oktober laufen Kinder ab 16:40 Uhr und Erwachsene bis in die Dunkelheit, ein paar hundert Meter weiter in der Hauptallee.",
+      },
+    ],
+    expertise:
+      "Die Parade war an den Vorjahren das eine, was den Abend des 31. Oktober im Prater voll machte; ohne sie verteilt sich der Andrang auf fünf Nachmittage, und das ist für Familien mit kleinen Kindern die bessere Nachricht. Der Dienstag und der Mittwoch sind die ruhigsten Tage. Wer den Stempelpass will, fängt bei den Stationen weit hinten im Prater an und arbeitet sich zum Riesenradplatz vor, wo die Box steht: andersherum hat man um fünf den Pass voll und steht am falschen Ende.",
+  },
+
+  {
     slug: "arnulf-rainer-retrospektive-albertina-2026",
     createdAt: "2026-10-09T12:50:00+04:00",
     updatedAt: "2026-10-10T06:20:00+04:00",
@@ -395,7 +471,7 @@ export const items: EventItem[] = [
   {
     slug: "vienna-halloween-run-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-10-04T06:43:34+04:00",
+    updatedAt: "2026-10-21T02:04:30+04:00",
     site: "vien",
     image: "/covers/vienna-halloween-run-2026.jpg",
     imageAlt: "Eine helle Laufbahn, die in die Bildmitte führt, gesäumt von Bäumen mit rotem Herbstlaub",
@@ -403,8 +479,9 @@ export const items: EventItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "Vienna Halloween Run 2026",
+    titleSeo: "Vienna Halloween Run 2026: Halloween-Lauf im Prater",
     summary:
-      "Ein Laufabend in der Prater Hauptallee in Wien am 30. Oktober: Kinderläufe ab 16:40 Uhr, 2,5 Kilometer um 17:15 Uhr, 5 Kilometer um 18:30 und 19:30 Uhr. Bis 26. Oktober kostet der Start 17 bis 35 Euro, verkleidet laufen ist ausdrücklich erwünscht.",
+      "Der Halloween-Lauf in der Prater Hauptallee in Wien am 30. Oktober: Kinderläufe ab 16:40 Uhr, 2,5 Kilometer um 17:15 Uhr, 5 Kilometer um 18:30 und 19:30 Uhr. Bis 26. Oktober kostet der Start 17 bis 35 Euro, verkleidet laufen ist ausdrücklich erwünscht.",
     start: "2026-10-30",
     startTime: "15:30",
     utcOffset: "+01:00",
@@ -467,7 +544,7 @@ export const items: EventItem[] = [
   {
     slug: "kuerbisfest-am-himmel-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-09-12T17:35:10+04:00",
+    updatedAt: "2026-10-21T02:04:30+04:00",
     site: "vien",
     image: "/covers/kuerbisfest-am-himmel-2026.jpg",
     imageAlt: "Ein breiter Haufen runder Papierscheiben in Rot, Grün, Ocker und Creme, in vielen verschiedenen Größen",
@@ -476,7 +553,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Kürbisfest am Himmel 2026",
     summary:
-      "Drei Tage Kürbis am Stadtrand von Wien, von 24. bis 26. Oktober jeweils 10 bis 18 Uhr, mit über 200 Sorten zum Anschauen. Der Eintritt ist frei.",
+      "Drei Tage Kürbis am Cobenzl in Wien, von 24. bis 26. Oktober (Nationalfeiertag) jeweils 10 bis 18 Uhr, mit über 200 Sorten zum Anschauen. Der Eintritt ist frei, hinauf fährt der 38A.",
     start: "2026-10-24",
     end: "2026-10-26",
     startTime: "10:00",
@@ -495,11 +572,13 @@ export const items: EventItem[] = [
     body: [
       "Der ausgehöhlte Kürbis ist das eine Bild, das jeder mit dem Ende des Oktobers verbindet, und am Himmel in Sievering steht er drei Tage lang in über zweihundert Sorten nebeneinander — die meisten davon sehen nicht im Entferntesten aus wie das orange Ding aus dem Supermarkt.",
       "## Termine: Kürbisfest am Himmel 2026",
-      "<strong>24. bis 26. Oktober 2026</strong>, jeweils von <strong>10 bis 18 Uhr</strong>, Himmelstraße 125 im 19. Bezirk.",
+      "<strong>Samstag, 24., bis Montag, 26. Oktober 2026</strong> — der Montag ist der Nationalfeiertag —, jeweils von <strong>10 bis 18 Uhr</strong>, Himmelstraße 125 im 19. Bezirk.",
       "## Was der Eintritt zum Kürbisfest kostet",
       "<strong>Nichts.</strong> Das Fest ist frei zugänglich.",
       "## Was dort steht",
       "Über <strong>200 Kürbissorten</strong>, dazu das Gelände des Kuratoriums Wald am Stadtrand mit Blick über die Stadt.",
+      "## Anreise zum Kürbisfest am Himmel",
+      "Der Himmel liegt oberhalb von Sievering, zwischen Cobenzl und Kahlenberg. Der Veranstalter empfiehlt die <strong>U4 bis Heiligenstadt</strong> und von dort den <strong>Bus 38A bis Cobenzl</strong>; ausgestiegen wird an der Kreuzung Himmelstraße/Höhenstraße, wo der Eingang ist. Parkplätze rund um den Himmel sind knapp.",
     ],
     faq: [
       {
@@ -512,7 +591,11 @@ export const items: EventItem[] = [
       },
       {
         q: "Wo ist der Himmel?",
-        a: "In der Himmelstraße 125 im 19. Bezirk, am Stadtrand oberhalb von Sievering.",
+        a: "In der Himmelstraße 125 im 19. Bezirk, am Stadtrand oberhalb von Sievering, beim Cobenzl.",
+      },
+      {
+        q: "Wie kommt man zum Kürbisfest am Himmel?",
+        a: "Mit der <strong>U4 bis Heiligenstadt</strong>, dann mit dem <strong>Bus 38A bis Cobenzl</strong> und an der Kreuzung Himmelstraße/Höhenstraße aussteigen. Das empfiehlt der Veranstalter selbst; Parkplätze gibt es kaum.",
       },
       {
         q: "Wie viele Kürbissorten gibt es zu sehen?",
@@ -520,7 +603,7 @@ export const items: EventItem[] = [
       },
     ],
     expertise:
-      "Der Himmel liegt nicht an der U-Bahn, und das ist der Punkt, an dem die Anreise geplant gehört: Hinauf fährt der 39A, und an einem freien Nachmittag Ende Oktober ist er voll. Wer mit dem Auto kommt, findet in der Himmelstraße kaum Platz. Dafür bekommt man den Gegenwert, den ein Halloween-Programm im Innenstadtlokal nicht hat — Tageslicht, Aussicht über die Stadt und einen Grund, das Wochenende vor dem 31. Oktober im Freien zu verbringen.",
+      "Der Himmel liegt nicht an der U-Bahn, und das ist der Punkt, an dem die Anreise geplant gehört: Hinauf fährt der 38A über Grinzing zum Cobenzl, und an einem freien Nachmittag Ende Oktober ist er voll. Wer mit dem Auto kommt, findet in der Himmelstraße kaum Platz. Dafür bekommt man den Gegenwert, den ein Halloween-Programm im Innenstadtlokal nicht hat — Tageslicht, Aussicht über die Stadt und einen Grund, das Wochenende vor dem 31. Oktober im Freien zu verbringen.",
   },
 
   {
