@@ -13,7 +13,7 @@ const lastmod = JSON.parse(
 // /seedgen/ is not built here: vercel.json rewrites it to the seedgen
 // project (~/dst/seedgen), so git history in this repo knows nothing of
 // it. Its date is that repo's last release — bump it when seedgen ships.
-lastmod["sol2go.lol"] = { ...lastmod["sol2go.lol"], "/seedgen/": "2026-10-20T04:33:03+04:00" };
+lastmod["sol2go.lol"] = { ...lastmod["sol2go.lol"], "/seedgen/": "2026-10-20T16:40:04+04:00" };
 
 export default defineConfig({
   site: "https://sol2go.lol",
