@@ -225,7 +225,7 @@ export const items: NewsItem[] = [
   {
     slug: "sxsw-badges-go-up-on-september-17",
     createdAt: "2026-09-08T20:26:58+04:00",
-    updatedAt: "2026-09-08T20:26:58+04:00",
+    updatedAt: "2026-10-20T18:27:34+04:00",
     site: "nyc42",
     image: "/covers/sxsw-badges-go-up-on-september-17.jpg",
     imageAlt: "Two orange paper squares standing side by side on a ledge against a dark brown wall, the right one slightly taller",
@@ -236,7 +236,7 @@ export const items: NewsItem[] = [
     cardTitle: "SXSW early-bird ends September 17",
     titleSeo: "SXSW 2027 early-bird deadline",
     summary:
-      "The cheapest way into Austin next March closes in nine days. SXSW puts the gap between the early-bird badge and the walk-up rate at up to $900.",
+      "SXSW's early-bird window closed on September 17, a calendar note for anyone flying from New York next March: the saving against the walk-up rate was up to $900.",
     date: "2026-09-08",
     until: "2026-09-17",
     city: "Austin",
@@ -618,7 +618,7 @@ export const items: NewsItem[] = [
   {
     slug: "apple-from-350-billion-to-four-trillion",
     createdAt: "2026-09-02T12:10:41+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-20T18:27:34+04:00",
     site: "nyc42",
     image: "/covers/apple-from-350-billion-to-four-trillion.jpg",
     imageAlt: "A staircase of paper steps climbing from the lower left to a flat top at the right, a single marker lying at the top",
@@ -629,7 +629,7 @@ export const items: NewsItem[] = [
     cardTitle: "$350bn to $4tn, and then a handover",
     titleSeo: "Apple: $350bn to $4tn under Tim Cook",
     summary:
-      "Tim Cook handed Apple to John Ternus on 1 September. The run he closes out is the largest single-tenure value creation the market has recorded, and it is not repeatable.",
+      "Tim Cook handed Apple to John Ternus on 1 September. By the one currency New York's Wall Street measures a chief executive in, the run he closes out is the largest single-tenure value creation the market has recorded, and it is not repeatable.",
     date: "2026-09-01",
     category: "Business",
     source: {

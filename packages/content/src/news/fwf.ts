@@ -55,7 +55,7 @@ export const items: NewsItem[] = [
   {
     slug: "claude-now-watermarks-the-text-it-writes",
     createdAt: "2026-09-08T11:33:45+04:00",
-    updatedAt: "2026-09-08T14:19:42+04:00",
+    updatedAt: "2026-10-20T18:27:34+04:00",
     site: "fwf",
     image: "/covers/claude-now-watermarks-the-text-it-writes.jpg",
     imageAlt: "A row of small paper squares of the same size on a deep blue ground, most of them pale blue and two of them cream",
@@ -66,7 +66,7 @@ export const items: NewsItem[] = [
     cardTitle: "Claude's text carries a watermark now",
     titleSeo: "Claude now watermarks its text",
     summary:
-      "Since 2 August every new Claude model has been marking what it writes, using a keyed pattern in its own word choices. The detector is deliberately not public.",
+      "Since 2 August every new Claude model marks what it writes with a keyed pattern in its own word choices; the rule applies worldwide, Dubai included, and the detector is deliberately not public.",
     date: "2026-09-08",
     category: "AI",
     source: {
@@ -314,7 +314,7 @@ export const items: NewsItem[] = [
   {
     slug: "ifa-berlin-2026",
     createdAt: "2026-09-02T13:01:24+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-20T18:27:34+04:00",
     site: "fwf",
     image: "/covers/ifa-berlin-2026.jpg",
     imageAlt: "A wide arc of small paper rectangles in muted violets and greys sweeping across a bone-white ground",
@@ -325,7 +325,7 @@ export const items: NewsItem[] = [
     cardTitle: "IFA: 1,900 brands, 49 countries",
     titleSeo: "IFA Berlin 2026: 4–8 September",
     summary:
-      "Europe's consumer technology show runs 4–8 September at Messe Berlin, drawing visitors from 140 countries — a floor built on things you can pick up.",
+      "Europe's consumer technology show runs 4–8 September at Messe Berlin, ten weeks before Future World Forum Dubai, drawing visitors from 140 countries — a floor built on things you can pick up.",
     date: "2026-09-02",
     until: "2026-09-08",
     category: "Tech",

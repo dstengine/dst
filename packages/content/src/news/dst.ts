@@ -44,7 +44,7 @@ export const items: NewsItem[] = [
   {
     slug: "rentosertib-what-six-aging-clocks-measured",
     createdAt: "2026-08-25T18:18:34+04:00",
-    updatedAt: "2026-09-08T14:19:42+04:00",
+    updatedAt: "2026-10-20T18:27:34+04:00",
     site: "dst",
     image: "/covers/rentosertib-what-six-aging-clocks-measured.jpg",
     imageAlt: "Five pale paper discs on a deep slate ground, three of them crossed by a cream paper strip and two left bare",
@@ -55,7 +55,7 @@ export const items: NewsItem[] = [
     cardTitle: "Six clocks, one AI-designed drug",
     titleSeo: "Rentosertib: what six aging clocks measured",
     summary:
-      "Six proteomic aging clocks read a lower biological age in patients given rentosertib, an AI-designed drug. The authors say the reading is not yet clean.",
+      "Rentosertib comes from Insilico Medicine, whose first-listed address on the paper is Abu Dhabi, next door to Dubai. Six proteomic aging clocks read a lower biological age in treated patients; the authors say the reading is not yet clean.",
     date: "2026-09-08",
     category: "AI",
     source: {
@@ -84,7 +84,7 @@ export const items: NewsItem[] = [
   {
     slug: "the-detector-for-claudes-watermark-is-not-for-you",
     createdAt: "2026-09-08T11:57:44+04:00",
-    updatedAt: "2026-09-08T14:19:42+04:00",
+    updatedAt: "2026-10-20T18:27:34+04:00",
     site: "dst",
     image: "/covers/the-detector-for-claudes-watermark-is-not-for-you.jpg",
     imageAlt: "A sealed paper envelope beside an open one of the same size, its flap folded back",
@@ -95,7 +95,7 @@ export const items: NewsItem[] = [
     cardTitle: "Marked text, private detector",
     titleSeo: "Claude's watermark and who can read it",
     summary:
-      "Anthropic began watermarking Claude's output on 2 August. The mark is in the model's word choices, and the tool that reads it is in private preview.",
+      "Anthropic began watermarking Claude's output on 2 August, in Dubai as everywhere else. The mark is in the model's word choices, and the tool that reads it is in private preview.",
     date: "2026-09-08",
     category: "AI",
     source: {
@@ -159,7 +159,7 @@ export const items: NewsItem[] = [
   {
     slug: "openai-ships-gpt-6-astra",
     createdAt: "2026-09-06T20:58:51+04:00",
-    updatedAt: "2026-09-08T00:12:45+04:00",
+    updatedAt: "2026-10-20T18:27:34+04:00",
     site: "dst",
     image: "/covers/openai-ships-gpt-6-astra.jpg",
     imageAlt: "Six paper rectangles in a row on a slate blue ground, each one taller than the one before it, the last of them in warm amber",
@@ -170,7 +170,7 @@ export const items: NewsItem[] = [
     cardTitle: "GPT-6 Astra is out",
     titleSeo: "GPT-6 Astra: price, availability, benchmarks",
     summary:
-      "GPT-6 Astra shipped on 3 September at $10 and $50 per million tokens, through the OpenAI API, Microsoft Azure and AWS Bedrock. It is not top of every table, and enterprise access is off by default.",
+      "GPT-6 Astra shipped on 3 September at $10 and $50 per million tokens, through the OpenAI API, Microsoft Azure and AWS Bedrock. What DST notes from Dubai: not top of every table, and enterprise access off by default.",
     date: "2026-09-06",
     category: "AI",
     source: {
@@ -498,7 +498,7 @@ export const items: NewsItem[] = [
   {
     slug: "apple-hands-the-company-to-an-engineer",
     createdAt: "2026-09-02T12:10:41+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-20T18:27:34+04:00",
     site: "dst",
     image: "/covers/apple-hands-the-company-to-an-engineer.jpg",
     imageAlt: "A row of identical paper squares with one lifted out of the line and tilted above it",
@@ -509,7 +509,7 @@ export const items: NewsItem[] = [
     cardTitle: "Apple's new CEO built the hardware",
     titleSeo: "Apple promotes a hardware engineer to CEO",
     summary:
-      "John Ternus became Apple's chief executive on 1 September after twenty-five years inside the building. The interesting part is not that Apple replaced its CEO. It is who it did not look for.",
+      "John Ternus became Apple's chief executive on 1 September after twenty-five years inside the building. As DST reads it from Dubai, the interesting part is not that Apple replaced its CEO: it is who it did not look for.",
     date: "2026-09-01",
     category: "Tech",
     source: {

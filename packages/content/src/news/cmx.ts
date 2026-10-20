@@ -60,7 +60,7 @@ export const items: NewsItem[] = [
   {
     slug: "la-marca-de-agua-de-claude-no-esta-en-las-palabras",
     createdAt: "2026-08-30T11:52:01+04:00",
-    updatedAt: "2026-09-08T11:57:44+04:00",
+    updatedAt: "2026-10-20T18:27:34+04:00",
     site: "cmx",
     image: "/covers/la-marca-de-agua-de-claude-no-esta-en-las-palabras.jpg",
     imageAlt: "Una hilera de fichas de papel del mismo tamaño y color sobre fondo crema, con separaciones desiguales entre ellas",
@@ -71,7 +71,7 @@ export const items: NewsItem[] = [
     cardTitle: "La marca que viaja con el copiar y pegar",
     titleSeo: "La marca de agua de Claude",
     summary:
-      "Desde el 2 de agosto los modelos nuevos de Anthropic marcan lo que escriben. La señal no cambia el texto y sobrevive al copiar y pegar.",
+      "Desde el 2 de agosto los modelos nuevos de Anthropic marcan lo que escriben, en la Ciudad de México como en todo el mundo. La señal no cambia el texto y sobrevive al copiar y pegar.",
     date: "2026-09-08",
     category: "Tecnología",
     source: {
@@ -252,7 +252,7 @@ export const items: NewsItem[] = [
   {
     slug: "apple-cambia-de-director-general",
     createdAt: "2026-09-02T12:10:41+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-20T18:27:34+04:00",
     site: "cmx",
     image: "/covers/apple-cambia-de-director-general.jpg",
     imageAlt: "Un campo de discos de papel idénticos en filas regulares, todos a la misma altura y con la misma sombra",
@@ -263,7 +263,7 @@ export const items: NewsItem[] = [
     cardTitle: "Apple cambia de director general",
     titleSeo: "Apple: John Ternus sustituye a Tim Cook",
     summary:
-      "John Ternus asumió el 1 de septiembre. La empresa opera en más de 200 países y territorios, así que la decisión llega a todos los mercados el mismo día, incluido este.",
+      "John Ternus asumió el 1 de septiembre, y la decisión llega el mismo día a todos los mercados, la Ciudad de México incluida: la empresa opera en más de 200 países y territorios.",
     date: "2026-09-01",
     category: "Tecnología",
     source: {

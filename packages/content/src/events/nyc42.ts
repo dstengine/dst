@@ -1131,7 +1131,7 @@ export const items: EventItem[] = [
   {
     slug: "burning-man-2026",
     createdAt: "2026-09-08T20:26:58+04:00",
-    updatedAt: "2026-09-13T01:40:00+04:00",
+    updatedAt: "2026-10-20T18:27:34+04:00",
     site: "nyc42",
     image: "/covers/burning-man-2026.jpg",
     imageAlt: "Two amber paper rings around a pale disc, with one small upright amber rectangle standing at the centre, on a dark brown ground",
@@ -1141,7 +1141,7 @@ export const items: EventItem[] = [
     title: "Burning Man 2026",
     titleSeo: "Burning Man 2026: Black Rock City, Nevada",
     summary:
-      "A city of tens of thousands went up in the Nevada desert from August 30 to September 7 under the theme Axis Mundi, and then came down. The 2027 dates are already set.",
+      "For anyone in New York who plans a year ahead, the 2027 dates are already set: a city of tens of thousands went up in the Nevada desert from August 30 to September 7 under the theme Axis Mundi, and then came down.",
     start: "2026-08-30",
     end: "2026-09-07",
     utcOffset: "-07:00",
@@ -1192,7 +1192,7 @@ export const items: EventItem[] = [
   {
     slug: "sxsw-2027",
     createdAt: "2026-09-08T20:26:58+04:00",
-    updatedAt: "2026-09-13T01:40:00+04:00",
+    updatedAt: "2026-10-20T18:27:34+04:00",
     site: "nyc42",
     image: "/covers/sxsw-2027.jpg",
     imageAlt: "A long row of narrow paper bars in amber, ochre and cream, standing together on one level line, on a dark brown ground",
@@ -1202,7 +1202,7 @@ export const items: EventItem[] = [
     title: "SXSW 2027",
     titleSeo: "SXSW 2027: Austin dates and badge prices",
     summary:
-      "Austin's conference, film, music and comedy festivals run together March 15 to 21, 2027. Badges start at $550 and the early-bird prices end on September 17.",
+      "Austin's conference, film, music and comedy festivals run together March 15 to 21, 2027, a March trip from New York. Badges start at $550, and early-bird pricing ended on September 17.",
     start: "2027-03-15",
     end: "2027-03-21",
     utcOffset: "-05:00",
@@ -1254,7 +1254,7 @@ export const items: EventItem[] = [
   {
     slug: "ces-2027",
     createdAt: "2026-09-08T20:26:58+04:00",
-    updatedAt: "2026-09-13T01:40:00+04:00",
+    updatedAt: "2026-10-20T18:27:34+04:00",
     site: "nyc42",
     image: "/covers/ces-2027.jpg",
     imageAlt: "A dense grid of small textured paper squares filling the frame, with one larger bright amber square alone in a clear space at the centre",
@@ -1264,7 +1264,7 @@ export const items: EventItem[] = [
     title: "CES 2027",
     titleSeo: "CES 2027: Las Vegas dates and registration",
     summary:
-      "The Consumer Technology Association's show returns to Las Vegas from January 6 to 9, 2027, with registration already open and no public price published.",
+      "The Consumer Technology Association's show returns to Las Vegas from January 6 to 9, 2027 — the tech industry's January trip from New York — with registration already open and no public price published.",
     start: "2027-01-06",
     end: "2027-01-09",
     utcOffset: "-08:00",
@@ -1307,7 +1307,7 @@ export const items: EventItem[] = [
   {
     slug: "art-basel-miami-beach-2026",
     createdAt: "2026-09-08T20:26:58+04:00",
-    updatedAt: "2026-09-13T01:40:00+04:00",
+    updatedAt: "2026-10-20T18:27:34+04:00",
     site: "nyc42",
     image: "/covers/art-basel-miami-beach-2026.jpg",
     imageAlt: "Three square sheets of paper hung in a row on a dark brown ground, one amber, one russet, one yellow",
@@ -1317,7 +1317,7 @@ export const items: EventItem[] = [
     title: "Art Basel Miami Beach 2026",
     titleSeo: "Art Basel Miami Beach 2026: three public days",
     summary:
-      "The American edition of Art Basel runs December 4 to 6 in Miami Beach — three public days, and the week the rest of the city builds its own fairs around.",
+      "The American edition of Art Basel runs December 4 to 6 in Miami Beach, a December trip from New York, and the week the rest of Miami Beach builds its own fairs around.",
     start: "2026-12-04",
     end: "2026-12-06",
     utcOffset: "-05:00",
@@ -1355,7 +1355,7 @@ export const items: EventItem[] = [
   {
     slug: "rose-parade-2027",
     createdAt: "2026-09-08T20:42:10+04:00",
-    updatedAt: "2026-09-13T01:40:00+04:00",
+    updatedAt: "2026-10-20T18:27:34+04:00",
     site: "nyc42",
     image: "/covers/rose-parade-2027.jpg",
     imageAlt: "A long single band of small paper petals in red, orange, cream and pink laid edge to edge across a dark brown ground, empty above and below",
@@ -1365,7 +1365,7 @@ export const items: EventItem[] = [
     title: "Rose Parade 2027",
     titleSeo: "Rose Parade 2027: Pasadena, New Year's Day",
     summary:
-      "The 138th Rose Parade runs down Colorado Boulevard in Pasadena on New Year's Day 2027 \u2014 floats covered entirely in flowers and other natural material, and the one American parade that has run since 1890.",
+      "The 138th Rose Parade runs down Colorado Boulevard in Pasadena on New Year's Day 2027, a New Year's trip from New York — floats covered entirely in flowers and other natural material, and the one American parade that has run since 1890.",
     start: "2027-01-01",
     venue: "Colorado Boulevard",
     city: "Pasadena",
@@ -1400,7 +1400,7 @@ export const items: EventItem[] = [
   {
     slug: "coachella-2027",
     createdAt: "2026-09-08T20:42:10+04:00",
-    updatedAt: "2026-09-13T01:40:00+04:00",
+    updatedAt: "2026-10-20T18:27:34+04:00",
     site: "nyc42",
     image: "/covers/coachella-2027.jpg",
     imageAlt: "Two matching pale yellow paper palm trees standing on small orange sand mounds, one on each side of a wide brown frame",
@@ -1410,7 +1410,7 @@ export const items: EventItem[] = [
     title: "Coachella 2027",
     titleSeo: "Coachella 2027: Indio dates, both weekends",
     summary:
-      "Coachella returns to the Empire Polo Club in Indio for two identical weekends in April 2027. The dates are published; the line-up is not.",
+      "Coachella returns to the Empire Polo Club in Indio for two identical weekends in April 2027 — a trip from New York planned on the dates alone, because the dates are published and the line-up is not.",
     start: "2027-04-09",
     end: "2027-04-18",
     venue: "Empire Polo Club",
@@ -1451,7 +1451,7 @@ export const items: EventItem[] = [
   {
     slug: "edc-las-vegas-2027",
     createdAt: "2026-09-08T20:42:10+04:00",
-    updatedAt: "2026-09-13T01:40:00+04:00",
+    updatedAt: "2026-10-20T18:27:34+04:00",
     site: "nyc42",
     image: "/covers/edc-las-vegas-2027.jpg",
     imageAlt: "A flat orange paper ring with a red disc inside it, centred on a near-black ground",
@@ -1461,7 +1461,7 @@ export const items: EventItem[] = [
     title: "EDC Las Vegas 2027",
     titleSeo: "EDC Las Vegas 2027: dates at the Speedway",
     summary:
-      "Three nights at the Las Vegas Motor Speedway in May 2027. Electric Daisy Carnival runs after dark and ends at sunrise, which is the whole design of it.",
+      "Three nights at the Las Vegas Motor Speedway in May 2027, a May trip from New York. Electric Daisy Carnival runs after dark and ends at sunrise, which is the whole design of it.",
     start: "2027-05-14",
     end: "2027-05-16",
     venue: "Las Vegas Motor Speedway",
@@ -1498,7 +1498,7 @@ export const items: EventItem[] = [
   {
     slug: "lollapalooza-2026",
     createdAt: "2026-09-08T20:42:10+04:00",
-    updatedAt: "2026-09-13T01:40:00+04:00",
+    updatedAt: "2026-10-20T18:27:34+04:00",
     site: "nyc42",
     image: "/covers/lollapalooza-2026.jpg",
     imageAlt: "A cut-paper panel: orange skyscraper silhouettes along a deep navy sky, with a broad green lawn curving across the lower half",
@@ -1508,7 +1508,7 @@ export const items: EventItem[] = [
     title: "Lollapalooza 2026",
     titleSeo: "Lollapalooza 2026: Grant Park, Chicago dates",
     summary:
-      "Four days in Grant Park at the end of July 2026 \u2014 the festival that stopped touring and stayed in one city, in the middle of it rather than in a field outside.",
+      "Four days in Grant Park at the end of July 2026, a trip from New York to the festival that stopped touring and stayed in one city — in the middle of Chicago rather than in a field outside.",
     start: "2026-07-30",
     end: "2026-08-02",
     venue: "Grant Park",
@@ -1544,7 +1544,7 @@ export const items: EventItem[] = [
   {
     slug: "kentucky-derby-2027",
     createdAt: "2026-09-08T20:42:10+04:00",
-    updatedAt: "2026-09-13T01:40:00+04:00",
+    updatedAt: "2026-10-20T18:27:34+04:00",
     site: "nyc42",
     image: "/covers/kentucky-derby-2027.jpg",
     imageAlt: "Two tall paper crescents facing each other across a brown ground, one yellow and one orange",
@@ -1554,7 +1554,7 @@ export const items: EventItem[] = [
     title: "Kentucky Derby 2027",
     titleSeo: "Kentucky Derby 2027: Churchill Downs, May 1",
     summary:
-      "The 153rd running at Churchill Downs on Saturday, May 1, 2027. Gates open at 9am for a race that goes off in the early evening \u2014 the day is the event, not the two minutes.",
+      "The 153rd running at Churchill Downs on Saturday, May 1, 2027, worth the trip from New York for the day: gates open at 9am for a race that goes off in the early evening — the day is the event, not the two minutes.",
     start: "2027-05-01",
     venue: "Churchill Downs",
     city: "Louisville",
@@ -1594,7 +1594,7 @@ export const items: EventItem[] = [
   {
     slug: "austin-city-limits-2026",
     createdAt: "2026-09-08T20:54:08+04:00",
-    updatedAt: "2026-09-13T01:40:00+04:00",
+    updatedAt: "2026-10-20T18:27:34+04:00",
     site: "nyc42",
     image: "/covers/austin-city-limits-2026.jpg",
     imageAlt: "Six flat green paper trees on short orange trunks standing in a row across a dark brown ground, one of them much smaller than the rest",
@@ -1604,7 +1604,7 @@ export const items: EventItem[] = [
     title: "Austin City Limits 2026",
     titleSeo: "Austin City Limits 2026: Zilker Park dates",
     summary:
-      "Two weekends in Zilker Park at the start of October \u2014 the same bill played twice, in a park inside Austin rather than a field outside it.",
+      "Two weekends in Zilker Park at the start of October, a trip from New York either weekend — the same bill played twice, in a park inside Austin rather than a field outside it.",
     start: "2026-10-02",
     end: "2026-10-11",
     venue: "Zilker Park",
@@ -1641,7 +1641,7 @@ export const items: EventItem[] = [
   {
     slug: "ultra-miami-2027",
     createdAt: "2026-09-08T20:54:08+04:00",
-    updatedAt: "2026-09-14T12:00:00+04:00",
+    updatedAt: "2026-10-20T18:27:34+04:00",
     site: "nyc42",
     image: "/covers/ultra-miami-2027.jpg",
     imageAlt: "A long flat teal paper band running the width of a dark brown ground, with two narrow magenta paper spires standing on it near the left",
@@ -1651,7 +1651,7 @@ export const items: EventItem[] = [
     title: "Ultra Miami 2027",
     titleSeo: "Ultra Miami 2027: Bayfront Park dates",
     summary:
-      "Three days at Bayfront Park in downtown Miami at the end of March 2027 \u2014 an electronic festival held in the middle of a city, with the bay behind the stage.",
+      "Three days at Bayfront Park in downtown Miami at the end of March 2027, a March trip from New York — an electronic festival held in the middle of a city, with the bay behind the stage.",
     start: "2027-03-26",
     end: "2027-03-28",
     venue: "Bayfront Park",
@@ -1692,7 +1692,7 @@ export const items: EventItem[] = [
   {
     slug: "stagecoach-2027",
     createdAt: "2026-09-08T20:54:08+04:00",
-    updatedAt: "2026-09-13T01:40:00+04:00",
+    updatedAt: "2026-10-20T18:27:34+04:00",
     site: "nyc42",
     image: "/covers/stagecoach-2027.jpg",
     imageAlt: "A wheel of straight yellow and red paper spokes radiating from a small red disc, on a rust-orange ground",
@@ -1702,7 +1702,7 @@ export const items: EventItem[] = [
     title: "Stagecoach 2027",
     titleSeo: "Stagecoach 2027: California desert, April",
     summary:
-      "The country festival that follows Coachella into the same desert, a week later: April 23 to 25, 2027.",
+      "The country festival that follows Coachella into the same desert a fortnight after it opens: April 23 to 25, 2027 — a trip from New York that pairs with the one before it.",
     start: "2027-04-23",
     end: "2027-04-25",
     country: "United States",
@@ -1737,7 +1737,7 @@ export const items: EventItem[] = [
   {
     slug: "iowa-state-fair-2027",
     createdAt: "2026-09-08T20:54:08+04:00",
-    updatedAt: "2026-09-13T01:40:00+04:00",
+    updatedAt: "2026-10-20T18:27:34+04:00",
     site: "nyc42",
     image: "/covers/iowa-state-fair-2027.jpg",
     imageAlt: "A row of six paper corn cobs in yellow with pale green husk leaves, lying overlapping across a rust-brown ground",
@@ -1747,7 +1747,7 @@ export const items: EventItem[] = [
     title: "Iowa State Fair 2027",
     titleSeo: "Iowa State Fair 2027: Des Moines, 11 days",
     summary:
-      "Eleven days in Des Moines in August \u2014 one of the oldest and largest agricultural expositions in the country, and the largest event in Iowa.",
+      "Eleven days in Des Moines in August, a trip from New York into the middle of the country — one of the oldest and largest agricultural expositions in the US, and the largest event in Iowa.",
     start: "2027-08-12",
     end: "2027-08-22",
     city: "Des Moines",
@@ -1782,7 +1782,7 @@ export const items: EventItem[] = [
   {
     slug: "bonnaroo-2026",
     createdAt: "2026-09-08T20:54:08+04:00",
-    updatedAt: "2026-09-13T01:40:00+04:00",
+    updatedAt: "2026-10-20T18:27:34+04:00",
     site: "nyc42",
     image: "/covers/bonnaroo-2026.jpg",
     imageAlt: "A thick orange paper arch standing behind layered green paper hills against a near-black sky",
@@ -1792,7 +1792,7 @@ export const items: EventItem[] = [
     title: "Bonnaroo 2026",
     titleSeo: "Bonnaroo 2026: Manchester, Tennessee dates",
     summary:
-      "Four days on a farm in Manchester, Tennessee in June 2026, now past \u2014 the American festival that still means camping rather than commuting.",
+      "Four days on a farm in Manchester, Tennessee in June 2026, now past — a trip from New York made with a tent, to the American festival that still means camping rather than commuting.",
     start: "2026-06-11",
     end: "2026-06-14",
     city: "Manchester",
@@ -2036,7 +2036,7 @@ export const items: EventItem[] = [
   {
     slug: "albuquerque-balloon-fiesta-2026",
     createdAt: "2026-09-12T22:20:00+04:00",
-    updatedAt: "2026-09-12T22:20:00+04:00",
+    updatedAt: "2026-10-20T18:27:34+04:00",
     site: "nyc42",
     image: "/covers/albuquerque-balloon-fiesta-2026.jpg",
     imageAlt:
@@ -2046,7 +2046,7 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "Albuquerque International Balloon Fiesta 2026",
     summary:
-      "Nine days of mass ascensions and evening glows at Balloon Fiesta Park in New Mexico, October 3 to 11, with general admission at $22.24 a session and kids 12 and under free.",
+      "Nine days of mass ascensions and evening glows at Balloon Fiesta Park in New Mexico, October 3 to 11 — a trip from New York, and a dawn one — with general admission at $22.24 a session and kids 12 and under free.",
     start: "2026-10-03",
     end: "2026-10-11",
     utcOffset: "-06:00",

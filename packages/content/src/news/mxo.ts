@@ -409,7 +409,7 @@ export const items: NewsItem[] = [
   {
     slug: "venecia-2026-una-sola-pelicula-latinoamericana",
     createdAt: "2026-09-01T16:18:19+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-20T18:27:34+04:00",
     site: "mxo",
     image: "/covers/venecia-2026-una-sola-pelicula-latinoamericana.jpg",
     imageAlt: "Un campo de cuadros de papel color crema y uno solo en terracota, apartado del resto",
@@ -420,7 +420,7 @@ export const items: NewsItem[] = [
     cardTitle: "Una sola película latinoamericana",
     titleSeo: "Venecia 2026: una película latinoamericana",
     summary:
-      "La 83ª Mostra abre el 2 de septiembre. En la competencia anunciada en julio hay veinte títulos y uno solo cruza el Atlántico desde este lado",
+      "La 83ª Mostra abre el 2 de septiembre sin película de México en competencia: de los veinte títulos anunciados en julio, uno solo cruza el Atlántico desde este lado.",
     date: "2026-09-01",
     until: "2026-09-12",
     category: "Cine",
@@ -526,7 +526,7 @@ export const items: NewsItem[] = [
   {
     slug: "record-temperatura-oceano-2026",
     createdAt: "2026-08-30T23:55:54+04:00",
-    updatedAt: "2026-09-06T08:48:11+04:00",
+    updatedAt: "2026-10-20T18:27:34+04:00",
     site: "mxo",
     image: "/covers/record-temperatura-oceano-2026.jpg",
     imageAlt: "Olas de papel en capas que pasan del azul frío al naranja cálido hacia el frente",
@@ -535,7 +535,7 @@ export const items: NewsItem[] = [
     imageHeight: 864,
     title: "El océano nunca había estado tan caliente",
     summary:
-      "El 22 de agosto la temperatura media de la superficie del mar llegó a 21.1 °C, récord absoluto. Lo insólito es la fecha: agosto debería ser temporada de enfriamiento, no de máximos.",
+      "El 22 de agosto la temperatura media de la superficie del mar llegó a 21.1 °C, récord absoluto, en un mes que debería ser de enfriamiento. Para México, una temporada de huracanes que conviene mirar con el pronóstico en la mano.",
     date: "2026-08-30",
     category: "Mundo",
     source: {

@@ -60,7 +60,7 @@ export function sections(items: FeedItem[]): Section[] {
         AI: { h1: "AI in Dubai", title: "Dubai AI news, with a source and a date on each" },
         Crypto: { h1: "Crypto", title: "The crypto news DST follows from Dubai" },
         "Real estate": { h1: "Real estate", title: "Dubai real estate, as DST reads it" },
-        "United Arab Emirates": { h1: "The UAE, read from Dubai", title: "UAE news and events, read from Dubai" },
+        "United Arab Emirates": { h1: "The UAE, read from Dubai", title: "UAE events, read from Dubai" },
       };
       const named = HEADINGS[g.key] ?? { h1: g.label, title: g.label };
       return {
