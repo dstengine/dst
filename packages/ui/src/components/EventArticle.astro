@@ -715,12 +715,39 @@ const relatedItems = (item.related ?? []).map((card) => ({
   .event-article-organizer { color: var(--ink-faint); }
 
   .event-article-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-3); }
-  /* The buttons are laid out by the shared .button rule; this only puts the
-     mark beside the label without disturbing its padding or height. */
+  /* The buttons take the shared .button rule; this only puts the mark beside
+     the label without disturbing its padding or height. How the two sit on a
+     phone is the next rule. */
   .event-article-actions .button {
     display: inline-flex;
     align-items: center;
     gap: 0.55em;
+  }
+  /* On a phone the two actions wrap, and each fills its line (DESIGN.md, Line
+     breaks): a short button over a longer one, both pushed left, reads as a
+     broken pair at the spot where the reader decides. Where both labels fit
+     on one line (a 430px phone) they share it and grow to fill it. 480 is
+     this row's phone line, measured: the widest phone is 430, and above 480
+     the pair keeps its own widths, as on a desktop. A lone button, "Add to
+     calendar" with no ticket or source to link, is not a row and keeps its
+     size. */
+  @media (max-width: 480px) {
+    .event-article-actions .button:not(:only-child) { flex: 1 1 auto; justify-content: center; }
+    /* The secondary has a 1px border and the primary none: stacked
+       full-width they were 56 and 54 tall. */
+    .event-article-actions .button:not(.button-secondary):not(:only-child) { border: 1px solid transparent; }
+  }
+  /* A 360px Android or a 320px phone: the side padding comes in from 1.3em,
+     which keeps "Zum Kalender hinzufügen" on one line at 320 and "Regent
+     Street's announcement" at 360. */
+  @media (max-width: 360px) {
+    .event-article-actions .button:not(:only-child) { padding-inline: 0.9em; }
+  }
+  /* No phone is under 320: this is the desktop app's ~305px pane. One step
+     down in type keeps the longest labels on one line in a 277px column,
+     and the button is still 47px tall. */
+  @media (max-width: 319px) {
+    .event-article-actions .button:not(:only-child) { font-size: var(--step--1); }
   }
 
   .event-article-ended {
