@@ -1314,7 +1314,7 @@ export const items: EventItem[] = [
   {
     slug: "christmas-at-kew-2026",
     createdAt: "2026-10-09T06:00:00+04:00",
-    updatedAt: "2026-10-17T20:53:00+04:00",
+    updatedAt: "2026-10-21T21:35:00+04:00",
     site: "lnd",
     image: "/covers/christmas-at-kew-2026.jpg",
     imageAlt: "A glowing paper greenhouse arch, strings of warm lights and illuminated trees against a winter night",
@@ -1381,6 +1381,12 @@ export const items: EventItem[] = [
         title: "London Parade on New Year's Day",
         text: "Two days before the trail's last night: bands and borough floats from Piccadilly to Parliament Square.",
       },
+      {
+        href: "/events/peter-pan-cup-serpentine-christmas-day-2026/",
+        eyebrow: "25 December",
+        title: "Peter Pan Cup on Christmas Day",
+        text: "The Serpentine Swimming Club's Christmas morning race in Hyde Park, free to watch from the bank.",
+      },
     ],
     expertise:
       "This is a ticketed evening walk with timed entry, not an open-ended visit to Kew after dark. Pick the entrance gate and slot before travelling, then allow time to reach it: the gardens are large, and a Victoria Gate booking is not interchangeable with arriving at Brentford Gate. If a quieter experience matters, use Kew's listed quiet-access dates rather than assuming a weekday will be calm.",
@@ -1388,7 +1394,7 @@ export const items: EventItem[] = [
   {
     slug: "london-parade-new-years-day-2027",
     createdAt: "2026-10-09T06:00:00+04:00",
-    updatedAt: "2026-10-17T20:53:00+04:00",
+    updatedAt: "2026-10-21T21:35:00+04:00",
     site: "lnd",
     image: "/covers/london-parade-2027.jpg",
     imageAlt: "A paper parade float passes London buildings beneath confetti and stars, with a pale clock tower in the background",
@@ -1448,6 +1454,12 @@ export const items: EventItem[] = [
         eyebrow: "Until 3 January",
         title: "Christmas at Kew",
         text: "The light trail's last nights fall just after New Year's Day.",
+      },
+      {
+        href: "/events/peter-pan-cup-serpentine-christmas-day-2026/",
+        eyebrow: "25 December",
+        title: "Peter Pan Cup on Christmas Day",
+        text: "A week earlier: the Serpentine's Christmas morning race in Hyde Park, free to watch.",
       },
     ],
     expertise:
@@ -1986,5 +1998,106 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Arrive early or book the Fast-Track: those are the two sensible courses. A free display in a small park in central London, on Bonfire Night itself, fills up, and general entry simply stops when it does, so a family turning up at a quarter to six is taking its chances. The Fast-Track tickets cost nothing and remove the gamble entirely; the one thing they do not buy is a better spot, so one still wants to be inside in good time for six o'clock.",
+  },
+
+  {
+    slug: "peter-pan-cup-serpentine-christmas-day-2026",
+    createdAt: "2026-10-21T21:35:00+04:00",
+    updatedAt: "2026-10-21T21:35:00+04:00",
+    site: "lnd",
+    image: "/covers/peter-pan-cup-serpentine-christmas-day-2026.jpg",
+    imageAlt:
+      "Swimmers in yellow caps racing in a line down a long dark lake between snowy banks and bare trees, small crowds in coats watching from both sides, a silver cup in the water ahead of them, on a pale blue ground",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Peter Pan Cup 2026: the Serpentine's Christmas Day race",
+    cardTitle: "Peter Pan Cup, Christmas Day",
+    titleSeo: "Peter Pan Cup 2026: Serpentine Christmas swim, London",
+    summary:
+      "London's oldest Christmas morning tradition: the Serpentine Swimming Club races 100 yards across the lake in Hyde Park for the Peter Pan Cup, on Friday 25 December 2026 at 9am. Free to watch from the bank.",
+    start: "2026-12-25",
+    startTime: "09:00",
+    utcOffset: "+00:00",
+    venue: "The Serpentine, Hyde Park",
+    city: "London",
+    country: "United Kingdom",
+    geo: { name: "Serpentine Lido, Hyde Park", lat: 51.5046, lng: -0.1689 },
+    organizer: "Serpentine Swimming Club",
+    category: "Christmas",
+    tickets: { priceFrom: 0, currency: "GBP" },
+    ticket: {
+      url: "https://serpentineswimmingclub.com/christmas-day-race-and-peter-pan-cup",
+      label: "The race and its history",
+      sells: false,
+    },
+    source: {
+      name: "Serpentine Swimming Club",
+      url: "https://serpentineswimmingclub.com/christmas-day-race-and-peter-pan-cup",
+      verifiedOn: "2026-10-21",
+    },
+    body: [
+      "On Christmas morning, while most of London is still deciding whether to get dressed, the members of the Serpentine Swimming Club walk out onto the board at the Lido end of the lake in Hyde Park and race 100 yards for the <strong>Peter Pan Cup</strong>. The 2026 race is on <strong>Friday 25 December</strong> and starts at <strong>9am</strong> — promptly, the club insists, and it means it.",
+      "## Every Christmas since 1864",
+      "The club has swum its Christmas Day race every year since <strong>1864</strong>. The only year it did not happen was 2020, when the Covid regulations stopped it. The club believes it is the oldest race in the world to have been swum without a break, and the winner's name still turns up in newspapers from the United States to Malaysia.",
+      "## Why it is called the Peter Pan Cup",
+      "J.M. Barrie gave the first <strong>Peter Pan Cup</strong> in <strong>1903</strong>, just as his play was reaching the London stage, and presented a cup to the winner every year until 1932. After him the honour passed to Albert Greenbury, a member from 1909 and the club's president from 1935 to 1955. The Greenbury family has kept it ever since, and his granddaughter still races with the club.",
+      "## Who swims, and who watches",
+      "The race is a <strong>handicap</strong>, and it is for club members only. To be on the start list, a member needs a handicap and a good record in the club's Winter Series. For 2025 the club published its list of qualifiers on 18 December. Watching asks nothing of anyone: it is a public park, there are no tickets, and the right form is to arrive wrapped up rather well, a little before nine.",
+      "## The morning itself",
+      "The swimmers are ready to march down to the board from <strong>8.45am</strong>. In years gone by a piper has led them out, and the march is half the spectacle. The club keeps the water clear of other swimmers from <strong>8.30am to 9.15am</strong>. Members who are not racing swim before or after.",
+      "## Getting there on Christmas Day",
+      "This is the part that catches people out. <strong>TfL runs no Tube, bus or rail services on Christmas Day</strong>, so the journey to Hyde Park is on foot, by bicycle or by car. The Lido is on the south side of the Serpentine. From Knightsbridge or Kensington it is a short walk across the park.",
+      "## The rest of the holiday",
+      "<a href=\"/events/christmas-at-kew-2026/\" title=\"Christmas at Kew 2026\">Christmas at Kew</a> takes Christmas Day off but runs on either side of it, until 3 January. A week after the race, the <a href=\"/events/london-parade-new-years-day-2027/\" title=\"London Parade on New Year's Day 2027\">London Parade</a> crosses Westminster on New Year's Day.",
+    ],
+    faq: [
+      {
+        q: "When is the Peter Pan Cup 2026?",
+        a: "On Friday 25 December 2026. The race starts at 9am at the Serpentine in Hyde Park, London.",
+      },
+      {
+        q: "Can anyone swim in it?",
+        a: "No. The race is a handicap for members of the Serpentine Swimming Club who hold a handicap and have qualified through the club's Winter Series. Members who are not racing may swim before or after, but not between 8.30am and 9.15am.",
+      },
+      {
+        q: "Is it free to watch?",
+        a: "Yes. The race is in a public park and there are no tickets. Spectators watch from the bank by the Lido, on the south side of the lake.",
+      },
+      {
+        q: "How long is the race?",
+        a: "100 yards, swum as a handicap, so the slower swimmers start first and the fastest last.",
+      },
+      {
+        q: "Why is it called the Peter Pan Cup?",
+        a: "J.M. Barrie donated the first Peter Pan Cup in 1903 and presented one every year until 1932. The Greenbury family has continued the tradition since.",
+      },
+      {
+        q: "How do I get to Hyde Park on Christmas Day?",
+        a: "On foot, by bicycle or by car: TfL runs no Tube, bus or rail services on Christmas Day.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/christmas-at-kew-2026/",
+        eyebrow: "Until 3 January",
+        title: "Christmas at Kew",
+        text: "The light trail takes Christmas Day off and runs until 3 January.",
+      },
+      {
+        href: "/events/london-parade-new-years-day-2027/",
+        eyebrow: "1 January",
+        title: "London Parade on New Year's Day",
+        text: "A week after the race: bands and borough floats from Piccadilly to Parliament Square.",
+      },
+      {
+        href: "/events/lord-mayors-show-2026-london-boroughs/",
+        eyebrow: "Saturday 14 November",
+        title: "Lord Mayor's Show 2026",
+        text: "The other London custom that has outlived everyone who started it: the City's procession from Mansion House.",
+      },
+    ],
+    expertise:
+      "Plan the journey before the race. With no public transport on Christmas Day, the walk across the park is the real undertaking, and those who arrive at nine have missed the march to the board, which is half the point. The race itself is over in a few minutes: the handicap sends the slowest swimmers off first and the fastest last, so the finish is close by design. Stand near the end of the course rather than the start, and keep a flask about one's person. The swimmers are the only ones who are meant to be cold.",
   },
 ];
