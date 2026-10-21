@@ -80,8 +80,9 @@ export function ownRanges(e, kids) {
   return ranges;
 }
 
-/** Every record in one of musical's data files, as what it says and when
-    it says it changed.
+/** Every record in a feed file or one of musical's data files, as what it
+    says and when it says it changed. A feed has no nested records and no
+    whole-file sections, so there it is simply every entry.
 
     `key` names the record across versions of the file: its slug, after its
     show where it has one — a run's slug is only unique inside its show — and

@@ -87,9 +87,9 @@ interface ItemBase {
   // wrong date behind a matching hash, permanently and silently.
   //
   // A field cannot be wrong about which lines belong to it. What it can be
-  // is forgotten, so `npm run test:content` fails when an entry's text
-  // moved and `updatedAt` did not, and `node tools/item-dates.mjs` fills in
-  // what is missing from history.
+  // is forgotten, so `npm run test:dates` fails when an entry's text has
+  // moved since HEAD and `updatedAt` did not, and `node tools/item-dates.mjs`
+  // fills in what is missing from history.
   createdAt: string;
   updatedAt: string;
   title: string;
