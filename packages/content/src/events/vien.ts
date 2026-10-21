@@ -599,7 +599,7 @@ export const items: EventItem[] = [
   {
     slug: "kuerbisfest-am-himmel-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-10-21T04:56:51+04:00",
+    updatedAt: "2026-10-21T21:35:00+04:00",
     site: "vien",
     image: "/covers/kuerbisfest-am-himmel-2026.jpg",
     imageAlt: "Ein breiter Haufen runder Papierscheiben in Rot, Grün, Ocker und Creme, in vielen verschiedenen Größen",
@@ -680,6 +680,12 @@ export const items: EventItem[] = [
         eyebrow: "Prater",
         title: "Vienna Halloween Run 2026",
         text: "Der Halloween-Lauf in der Prater Hauptallee in Wien am 30. Oktober: Kinderläufe ab 16:40 Uhr, 2,5 Kilometer um 17:15 Uhr, 5 Kilometer um 18:30 und 19:30 Uhr. Bis 26. Oktober kostet der Start 17 bis 35 Euro, verkleidet laufen ist ausdrücklich erwünscht.",
+      },
+      {
+        href: "/veranstaltungen/wiener-silvesterpfad-2026/",
+        eyebrow: "Innenstadt und Prater",
+        title: "Wiener Silvesterpfad 2026",
+        text: "Das nächste große Fest unter freiem Himmel: Silvester auf den Plätzen der Innenstadt und im Prater, Eintritt frei.",
       },
     ],
     expertise:
@@ -883,7 +889,7 @@ export const items: EventItem[] = [
   {
     slug: "wiener-christkindlmarkt-2026",
     createdAt: "2026-09-12T22:20:00+04:00",
-    updatedAt: "2026-09-12T22:20:00+04:00",
+    updatedAt: "2026-10-21T21:35:00+04:00",
     site: "vien",
     image: "/covers/wiener-christkindlmarkt-2026.jpg",
     imageAlt:
@@ -923,7 +929,7 @@ export const items: EventItem[] = [
       "## Die Öffnungszeiten",
       "<strong>13. November bis 26. Dezember 2026</strong>, <strong>täglich 10 bis 22 Uhr</strong>. Am <strong>24. Dezember</strong> sperrt der Markt früher zu: <strong>10 bis 18:30 Uhr</strong>.",
       "## Der Eistraum am Christkindlmarkt",
-      "Die Eisfläche läuft länger als der Markt — <strong>13. November 2026 bis 6. Jänner 2027</strong>, ebenfalls <strong>täglich 10 bis 22 Uhr</strong>, am <strong>24. Dezember 10 bis 18:30 Uhr</strong>. Eine Ausnahme gibt es: <strong>am 31. Dezember geschlossen</strong>. Danach macht der Rathausplatz Pause und kommt am 22. Jänner als Wiener Eistraum zurück.",
+      "Die Eisfläche läuft länger als der Markt — <strong>13. November 2026 bis 6. Jänner 2027</strong>, ebenfalls <strong>täglich 10 bis 22 Uhr</strong>, am <strong>24. Dezember 10 bis 18:30 Uhr</strong>. Eine Ausnahme gibt es: <strong>am 31. Dezember geschlossen</strong>. An Silvester war der Rathausplatz zuletzt eine Station des <a href=\"/veranstaltungen/wiener-silvesterpfad-2026/\" title=\"Wiener Silvesterpfad 2026\">Wiener Silvesterpfads</a>. Nach dem 6. Jänner macht der Rathausplatz Pause und kommt am 22. Jänner als Wiener Eistraum zurück.",
       "## Wo das ist",
       "Am <strong>Rathausplatz</strong> zwischen Rathaus und Burgtheater, im ersten Bezirk. Der Markt gilt als einer der größten und meistbesuchten Weihnachtsmärkte Europas, und das Wiener Christkindl ist der Höhepunkt, den das Programm selbst voranstellt.",
       "## Anreise",
@@ -951,6 +957,20 @@ export const items: EventItem[] = [
         a: "Der Wiener Eistraum, vom 22. Jänner bis 7. März 2027 am selben Platz.",
       },
     ],
+    related: [
+      {
+        href: "/veranstaltungen/wiener-silvesterpfad-2026/",
+        eyebrow: "Innenstadt und Prater",
+        title: "Wiener Silvesterpfad 2026",
+        text: "Fünf Tage nach dem Markt: Silvester auf den Plätzen der Innenstadt und im Prater, Eintritt frei.",
+      },
+      {
+        href: "/veranstaltungen/wiener-eistraum-2027/",
+        eyebrow: "Rathausplatz",
+        title: "Wiener Eistraum 2027",
+        text: "Nach der Pause im Jänner kommt das Eis zurück auf den Rathausplatz, mit Sky Rink und Eisstockbahnen.",
+      },
+    ],
     expertise:
       "Zwei Daten entscheiden über den Besuch, und beide stehen nicht dort, wo man sie sucht. Das erste ist der 24. Dezember: Wer den Markt als Teil des Heiligen Abends plant, hat bis <strong>18:30 Uhr</strong> Zeit und nicht bis 22 Uhr. Das zweite ist der 26. Dezember — danach ist der Markt weg, die Eisfläche aber nicht, und die Tage zwischen Weihnachten und dem 6. Jänner sind der einzige Zeitraum, in dem man am Rathausplatz Platz hat. Wer den Markt selbst leer erleben will, kommt in der zweiten Novemberhälfte an einem Vormittag: geöffnet ist ab 10 Uhr, voll wird es ab dem späten Nachmittag.",
   },
@@ -958,7 +978,7 @@ export const items: EventItem[] = [
   {
     slug: "wiener-eistraum-2027",
     createdAt: "2026-09-12T22:20:00+04:00",
-    updatedAt: "2026-09-12T22:20:00+04:00",
+    updatedAt: "2026-10-21T21:35:00+04:00",
     site: "vien",
     image: "/covers/wiener-eistraum-2027.jpg",
     imageAlt:
@@ -1024,6 +1044,20 @@ export const items: EventItem[] = [
       {
         q: "Ab wann gibt es Eisstockschießen?",
         a: "Ab 17 Uhr wird die Anfänger:innenfläche zur Eisstockbahn.",
+      },
+    ],
+    related: [
+      {
+        href: "/veranstaltungen/wiener-christkindlmarkt-2026/",
+        eyebrow: "Rathausplatz",
+        title: "Wiener Christkindlmarkt 2026",
+        text: "Davor am selben Platz: der Markt bis 26. Dezember und die erste Eisfläche des Winters bis 6. Jänner.",
+      },
+      {
+        href: "/veranstaltungen/wiener-silvesterpfad-2026/",
+        eyebrow: "Innenstadt und Prater",
+        title: "Wiener Silvesterpfad 2026",
+        text: "Der Jahreswechsel auf den Plätzen der Innenstadt und im Prater, Eintritt frei.",
       },
     ],
     expertise:
@@ -1367,5 +1401,103 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Die drei Vorstellungen sind dieselbe Show; welche man nimmt, hängt am restlichen Tag. Die um 17 Uhr lässt sich mit dem Planetarium im Prater verbinden, die um 13 Uhr mit einem Nachmittag in der Sammlung selbst, die sonst nur sonntagvormittags offen ist. Das Theater ist klein: Wer eine bestimmte Uhrzeit will, reserviert vorher, statt auf die Kasse zu hoffen.",
+  },
+
+  {
+    slug: "wiener-silvesterpfad-2026",
+    createdAt: "2026-10-21T21:35:00+04:00",
+    updatedAt: "2026-10-21T21:35:00+04:00",
+    site: "vien",
+    image: "/covers/wiener-silvesterpfad-2026.jpg",
+    imageAlt:
+      "Ein Paar tanzt Walzer in einer engen Altstadtgasse bei Nacht, ringsum Menschen mit Sternspritzern, am Ende der Gasse ein heller gotischer Kirchturm unter einem dunkelgrünen Sternenhimmel, die Häuser in Zinnoberrot",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Wiener Silvesterpfad 2026",
+    titleSeo: "Wiener Silvesterpfad 2026: Silvester in Wien, Eintritt frei",
+    summary:
+      "Silvester in Wien auf der Straße: Der Silvesterpfad zieht am 31. Dezember von der Innenstadt bis zum Prater, mit Bühnen, Walzerkursen am Graben und Musik bis in die Neujahrsnacht. Der Eintritt ist frei.",
+    start: "2026-12-31",
+    end: "2027-01-01",
+    utcOffset: "+01:00",
+    venue: "Innere Stadt, Rathausplatz und Prater",
+    city: "Wien",
+    country: "Österreich",
+    geo: {
+      name: "Stephansplatz, Wien",
+      lat: 48.208492,
+      lng: 16.373127,
+    },
+    organizer: "stadt wien marketing",
+    category: "Silvester",
+    tickets: { priceFrom: 0, currency: "EUR" },
+    ticket: {
+      url: "https://www.wienersilvesterpfad.at/",
+      label: "Programm und Plan",
+      sells: false,
+    },
+    source: {
+      name: "Wiener Silvesterpfad",
+      url: "https://www.wienersilvesterpfad.at/faq/",
+      verifiedOn: "2026-10-21",
+    },
+    body: [
+      "Wien feiert den Jahreswechsel nicht auf einem Platz, sondern auf einem Weg: Der <strong>Wiener Silvesterpfad</strong> zieht am <strong>31. Dezember</strong> durch den ersten Bezirk und reicht bis zum Prater. Karten braucht man keine, der <strong>Eintritt ist frei</strong>. Der Veranstalter zählt ihn zu den größten Silvesterfeiern Europas.",
+      "Das Programm für den Jahreswechsel 2026/27 hat stadt wien marketing noch nicht veröffentlicht. Alles Weitere auf dieser Seite beschreibt den letzten Silvesterpfad, 2025/26, und wird nachgetragen, sobald der Veranstalter das neue Programm zeigt.",
+      "## Wann es losgeht",
+      "Zuletzt begann der Silvesterpfad am <strong>31. Dezember um 14 Uhr</strong> und endete am <strong>1. Jänner gegen 2 Uhr früh</strong>. Am Neujahrstag um <strong>11:15 Uhr</strong> wurde dann das <strong>Neujahrskonzert der Wiener Philharmoniker</strong> live aus dem Musikverein auf den Stephansplatz und auf den Wintermarkt am Riesenradplatz übertragen.",
+      "## Die acht Stationen",
+      "<strong>Rathausplatz</strong>, <strong>Freyung</strong>, <strong>Am Hof</strong>, <strong>Graben</strong>, <strong>Stephansplatz</strong>, <strong>Kärntner Straße</strong>, <strong>Neuer Markt</strong> und der <strong>Wintermarkt am Riesenradplatz im Prater</strong>. Gespielt wurde Pop und Rock, Blues, Funk und Soul, Disco, karibische und lateinamerikanische Rhythmen und DJ-Sets. Auf allen Bühnen arbeiteten Visual Jockeys mit Animationen auf großen LED-Wänden.",
+      "## Walzer am Graben",
+      "Die Tradition, die jedes Jahr wiederkommt: die <strong>Walzerkurse am Graben</strong>, damit um Mitternacht auch die Gäste im Dreivierteltakt drehen, die es sonst nicht tun. Für Kinder gibt es ein eigenes Unterhaltungsprogramm.",
+      "## Was man nicht mitnehmen darf",
+      "Am Gelände verboten sind <strong>Feuerwerkskörper, Böller und jede andere Pyrotechnik</strong>; erlaubt sind nur <strong>Sternspritzer</strong>, mit Abstand zu Menschen. Ebenfalls verboten: <strong>Dosen, Glasflaschen und PET-Flaschen</strong>, <strong>mitgebrachter Alkohol</strong>, Fahrräder, Scooter, Skateboards und andere Sportgeräte. An den Zugängen und am Gelände kontrolliert der Sicherheitsdienst Taschen.",
+      "Am Stephansplatz, am Graben und in der Kärntner Straße waren zuletzt zwischen <strong>22 Uhr und 3 Uhr</strong> <strong>Kinderwagen</strong> und <strong>Hunde</strong> verboten, ausgenommen Blindenführ- und Partnerhunde. Woanders müssen Hunde Leine und Maulkorb tragen.",
+      "## Essen, Trinken und Pfand",
+      "Gastronomie gibt es entlang des ganzen Pfads, Essen muss man nicht mitbringen. Getränke kommen in Mehrwegbechern und Tassen: zuletzt <strong>2 Euro Pfand für den Becher</strong> und <strong>5 Euro für das Häferl</strong>, das es mit Glücksmotiven gibt und das viele als Andenken behalten.",
+      "## Anreise",
+      "Mit den Öffis: <strong>Alle U-Bahn-Linien</strong> und viele Bus- und Straßenbahnlinien fahren die ganze Nacht. Wer mit dem Auto aus den Bundesländern kommt, stellt es an einer Park-and-Ride-Anlage an der U-Bahn ab. Im Veranstaltungsgebiet gilt Fahrverbot, und schon am <strong>Vormittag des 31. Dezember</strong> ist die <strong>Ringstraße</strong> wegen des Silvesterlaufs gesperrt.",
+      "## Davor in Wien",
+      "Bis zum 26. Dezember steht am Rathausplatz der <a href=\"/veranstaltungen/wiener-christkindlmarkt-2026/\" title=\"Wiener Christkindlmarkt am Rathausplatz 2026\">Wiener Christkindlmarkt</a>. Die Eisfläche davor bleibt bis 6. Jänner, ist aber genau am 31. Dezember geschlossen. Am 22. Jänner kommt dann der <a href=\"/veranstaltungen/wiener-eistraum-2027/\" title=\"Wiener Eistraum 2027\">Wiener Eistraum</a> auf den Platz zurück.",
+    ],
+    faq: [
+      {
+        q: "Wann ist der Wiener Silvesterpfad 2026?",
+        a: "Am 31. Dezember 2026. Das genaue Programm hat der Veranstalter noch nicht veröffentlicht. Zuletzt lief der Pfad von 14 Uhr bis etwa 2 Uhr früh am Neujahrstag.",
+      },
+      {
+        q: "Kostet der Silvesterpfad Eintritt?",
+        a: "Nein. Der Silvesterpfad ist eine öffentliche Veranstaltung, Karten braucht man keine.",
+      },
+      {
+        q: "Wo ist der Silvesterpfad?",
+        a: "Zuletzt an acht Stationen: Rathausplatz, Freyung, Am Hof, Graben, Stephansplatz, Kärntner Straße, Neuer Markt und der Wintermarkt am Riesenradplatz im Prater.",
+      },
+      {
+        q: "Darf man Feuerwerk mitnehmen?",
+        a: "Nein. Feuerwerkskörper, Böller und jede andere Pyrotechnik sind verboten, erlaubt sind nur Sternspritzer. Auch Dosen, Glas- und PET-Flaschen und mitgebrachter Alkohol sind am Gelände untersagt.",
+      },
+      {
+        q: "Wie kommt man in der Silvesternacht nach Hause?",
+        a: "Alle U-Bahn-Linien und viele Bus- und Straßenbahnlinien fahren die ganze Nacht. Die Ringstraße ist schon ab dem Vormittag des 31. Dezember wegen des Silvesterlaufs gesperrt.",
+      },
+    ],
+    related: [
+      {
+        href: "/veranstaltungen/wiener-christkindlmarkt-2026/",
+        eyebrow: "Rathausplatz",
+        title: "Wiener Christkindlmarkt 2026",
+        text: "Der Markt am Rathausplatz läuft bis 26. Dezember, die Eisfläche davor bis 6. Jänner, am 31. Dezember aber nicht.",
+      },
+      {
+        href: "/veranstaltungen/wiener-eistraum-2027/",
+        eyebrow: "Rathausplatz",
+        title: "Wiener Eistraum 2027",
+        text: "Ab 22. Jänner wieder über 10.000 Quadratmeter Eis vor dem Rathaus, mit Sky Rink und Eisstockbahnen am Abend.",
+      },
+    ],
+    expertise:
+      "Wo man um Mitternacht steht, entscheidet man besser vor dem Abend als in der Menge. Wer mit Kinderwagen oder Hund kommt, plant gleich mit dem Rathausplatz, der Freyung, Am Hof oder dem Prater: Am Stephansplatz, am Graben und in der Kärntner Straße waren beide zuletzt ab 22 Uhr verboten. Für den Heimweg braucht man keinen Plan B, die U-Bahn fährt die ganze Nacht, und das Auto bleibt besser an der Park-and-Ride-Anlage. Das Häferl um 5 Euro Pfand behält man oder gibt es zurück, und die Sternspritzer sind das einzige Feuer, das man mitbringen darf.",
   },
 ];
