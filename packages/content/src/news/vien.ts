@@ -6,7 +6,7 @@ export const items: NewsItem[] = [
   {
     slug: "zweihundertfuenfzig-jahre-albertina",
     createdAt: "2026-09-21T17:10:00+04:00",
-    updatedAt: "2026-09-21T17:10:00+04:00",
+    updatedAt: "2026-10-21T04:56:51+04:00",
     site: "vien",
     image: "/covers/zweihundertfuenfzig-jahre-albertina.jpg",
     imageAlt: "Ein hoher Stapel flacher Papierbögen von der Seite, ein Bogen rutscht unten seitlich heraus",
@@ -45,6 +45,20 @@ export const items: NewsItem[] = [
       {
         q: "Welche Ausstellungen enden zuerst?",
         a: "<strong>COLLECTING FOR THE FUTURE</strong> am <strong>11. Oktober 2026</strong> und <strong>THE WORLD IN FOCUS</strong> am <strong>26. Oktober 2026</strong>.",
+      },
+    ],
+    related: [
+      {
+        href: "/veranstaltungen/her-story-albertina-2026/",
+        eyebrow: "ab 30. Oktober",
+        title: "HER STORY in der ALBERTINA",
+        text: "Die ALBERTINA in Wien zeigt von 30. Oktober 2026 bis 17. Jänner 2027 erstmals ihren eigenen Bestand an Künstlerinnen — fünf Jahrhunderte, von Diana Scultori bis VALIE EXPORT.",
+      },
+      {
+        href: "/veranstaltungen/arnulf-rainer-retrospektive-albertina-2026/",
+        eyebrow: "ab 13. November",
+        title: "Arnulf Rainer: Retrospektive in der ALBERTINA",
+        text: "Die ALBERTINA in Wien zeigt vom 13. November 2026 bis 25. April 2027 rund 70 Arbeiten Arnulf Rainers, von frühen Übermalungen bis zu späten Schleierbildern.",
       },
     ],
     expertise:

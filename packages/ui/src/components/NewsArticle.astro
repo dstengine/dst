@@ -410,11 +410,18 @@ const relatedItems = (item.related ?? []).map((card) => ({
     padding-bottom: var(--space-5);
   }
   .news-article-header { max-width: none; }
-  .news-article-meta { display: flex; align-items: center; gap: var(--space-2); margin: 0 0 var(--space-1); font-size: var(--step--1); color: var(--ink-faint); }
+  /* The row wraps between its items, never inside one: at 320px the date
+     was parting from its year and the reading time from its word. */
+  .news-article-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0 var(--space-2); margin: 0 0 var(--space-1); font-size: var(--step--1); color: var(--ink-faint); }
+  .news-article-meta > * { white-space: nowrap; }
   .news-article-category { font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent, #1F5C4E); }
   /* A word in a line of text rather than a card, so it underlines on hover
      and on focus — see EventArticle. */
-  a.news-article-category { text-decoration: none; }
+  /* The word is 24px high and a thumb needs 44: the hit area grows to
+     44px and the matching negative margin hands the extra back, so the meta
+     row keeps its height and nothing on the page moves. `lh` is the
+     line box; the rem fallback is the same number at this size. */
+  a.news-article-category { display: inline-flex; align-items: center; min-height: 44px; margin-block: -0.625rem; margin-block: calc((1lh - 44px) / 2); text-decoration: none; }
   a.news-article-category:hover,
   a.news-article-category:focus-visible { text-decoration: underline; }
   .news-article-header h1 { margin: 0; }

@@ -534,9 +534,10 @@ export const items: EventItem[] = [
   {
     slug: "tata-simonyan-yerevan-2026",
     createdAt: "2026-10-04T15:00:00+04:00",
-    updatedAt: "2026-10-04T15:00:00+04:00",
+    updatedAt: "2026-10-21T04:59:31+04:00",
     site: "tick",
     title: "Թաթա Սիմոնյան. մենահամերգ Երևանում",
+    titleSeo: "Թաթա Սիմոնյանի համերգը Երևանում",
     summary:
       "Թաթա Սիմոնյանի մեծ մենահամերգը Երևանում՝ նոյեմբերի 7-ին Կարեն Դեմիրճյանի անվան մարզահամերգային համալիրում, Կարեն Սևակ բենդի կենդանի նվագակցությամբ։",
     start: "2026-11-07",
@@ -569,6 +570,7 @@ export const items: EventItem[] = [
         imageAlt: "A microphone at the centre of an empty stage under a red backdrop and spotlight beams",
         ticket: { url: "https://www.tomsarkgh.am/en/event/50900/", label: "Tickets" },
         title: "Tata Simonyan in concert in Yerevan",
+        titleSeo: "Tata Simonyan concert in Yerevan, 7 November 2026",
         summary:
           "Tata Simonyan plays the main hall of the Karen Demirchyan Complex in Yerevan on 7 November, with the Karen Sevak band and nothing pre-recorded.",
         city: "Yerevan",
@@ -848,7 +850,7 @@ export const items: EventItem[] = [
   {
     slug: "carmen-yerevan-opera-2026",
     createdAt: "2026-10-06T01:00:00+04:00",
-    updatedAt: "2026-10-20T18:50:00+04:00",
+    updatedAt: "2026-10-21T04:59:31+04:00",
     site: "tick",
     title: "«Կարմեն»՝ Երևանի օպերային թատրոնում",
     cardTitle: "Բիզե. «Կարմեն»",
@@ -888,6 +890,7 @@ export const items: EventItem[] = [
         imageAlt: "A red rose on an open paper fan, on an orange ground",
         ticket: { url: "https://www.tomsarkgh.am/en/event/44954/", label: "Tickets" },
         title: "Carmen at the Yerevan Opera",
+        titleSeo: "Carmen opera at the Yerevan Opera, 10 Oct – 14 Nov 2026",
         cardTitle: "Bizet: Carmen",
         summary:
           "Bizet's Carmen in Yerevan at the Spendiaryan Opera and Ballet Theatre on 10 October and 14 November, both at 18:00, with tickets from 4,000 to 18,000 drams.",
@@ -2137,7 +2140,7 @@ export const items: EventItem[] = [
   {
     slug: "masquerade-ballet-yerevan-opera-2026",
     createdAt: "2026-10-09T02:00:00+04:00",
-    updatedAt: "2026-10-20T18:50:00+04:00",
+    updatedAt: "2026-10-21T04:56:51+04:00",
     site: "tick",
     title: "Խաչատրյանի «Դիմակահանդես» բալետը Երևանում",
     cardTitle: "Խաչատրյան. «Դիմակահանդես»",
@@ -2168,6 +2171,8 @@ export const items: EventItem[] = [
       "Հոկտեմբերի 14-ին Արբենին՝ Րաֆֆի Գալստյան, Նինա՝ Անահիտ Վասիլյան, Անհայտը՝ Գրիգոր Գրիգորյան, Շտրալ՝ Կանա Սեմբա, Զվեզդիչ՝ Տիգրան Այվազյան, ծաղրածուներ՝ Գարեգին Բաբելյան և Գոռ Սարգսյան։",
       "## Երբ",
       "Հոկտեմբերի 14-ին և նոյեմբերի 12-ին՝ ժամը 19:00-ին, հոկտեմբերի 25-ին և նոյեմբերի 22-ին՝ ժամը 18:00-ին։ Բալետը երկու գործողությամբ է՝ 30-ական րոպե, և 20 րոպե ընդմիջումով։ Նոյեմբերի 12-ի տոմսերը 5000-ից 25000 դրամ են։",
+      "## Նույն բեմում",
+      "Նոյեմբերի 7-ից թատրոնը խաղում է <a href=\"/events/sasuntsi-davit-ballet-oratorio-yerevan-opera-2026/\" title=\"«Սասունցի Դավիթ» բալետ-օրատորիան Երևանի օպերային թատրոնում\">«Սասունցի Դավիթ»</a> բալետ-օրատորիան, իսկ դեկտեմբերի 5-ից՝ ամանորյա <a href=\"/events/nutcracker-yerevan-opera-2026/\" title=\"«Մարդուկ-Ջարդուկը» Երևանի օպերային թատրոնում\">«Մարդուկ-Ջարդուկը»</a>։",
     ],
     faq: [
       { q: "Որքա՞ն արժե տոմսը", a: "5000-ից 25000 դրամ՝ կախված նստատեղից, նոյեմբերի 12-ին։" },
@@ -2179,6 +2184,7 @@ export const items: EventItem[] = [
         imageAlt: "A red half-mask on a long ribbon beside a pearl bracelet, with folds of curtain at one side",
         ticket: { url: "https://ticket.opera.am/en/details/1691/A.%20Khachaturian%20%E2%80%9CMASQUERADE%E2%80%9D", label: "Tickets" },
         title: "Khachaturian's Masquerade at the Yerevan Opera",
+        titleSeo: "Masquerade ballet at the Yerevan Opera, 14 Oct – 22 Nov 2026",
         cardTitle: "Khachaturian: Masquerade",
         summary:
           "Aram Khachaturian's ballet Masquerade in Yerevan at the Spendiaryan Opera and Ballet Theatre on 14 and 25 October and 12 and 22 November, with tickets from 5,000 to 25,000 drams.",
@@ -2194,6 +2200,8 @@ export const items: EventItem[] = [
           "On 14 October Raffy Galstyan dances Arbenin and Anahit Vasilyan Nina, with Grigor Grigoryan as the Unknown, Kana Semba as Shtral, Tigran Ayvazyan as Zvezdich, and Garegin Babelyan and Gor Sargsyan as the jesters.",
           "## Dates",
           "14 October and 12 November at 19:00, 25 October and 22 November at 18:00. Two acts of 30 minutes each, with a 20-minute interval. Tickets for 12 November cost 5,000 to 25,000 drams.",
+          "## On the same stage",
+          "From 7 November the theatre gives the ballet-oratorio <a href=\"/events/sasuntsi-davit-ballet-oratorio-yerevan-opera-2026/\" title=\"Sasuntsi Davit at the Yerevan Opera\">Sasuntsi Davit</a>, and from 5 December its holiday <a href=\"/events/nutcracker-yerevan-opera-2026/\" title=\"The Nutcracker at the Yerevan Opera\">Nutcracker</a>.",
         ],
         faq: [
           { q: "How much are tickets?", a: "From 5,000 to 25,000 drams depending on the seat on 12 November." },
@@ -4518,7 +4526,7 @@ export const items: EventItem[] = [
   {
     slug: "collector-way-of-life-isabella-stewart-gardner-sardi-gallery-2026",
     createdAt: "2026-10-13T17:10:00+04:00",
-    updatedAt: "2026-10-13T17:10:00+04:00",
+    updatedAt: "2026-10-21T04:56:51+04:00",
     site: "tick",
     title: "Կոլեկցիոները որպես ապրելակերպ. Իզաբելա Ստյուարտ Գարդներ",
     titleSeo: "Իզաբելա Ստյուարտ Գարդների մասին Երևանում՝ հոկտեմբերի 28",
@@ -4551,7 +4559,7 @@ export const items: EventItem[] = [
       "Գարդները (1840–1924) ամերիկացի կոլեկցիոներ էր, որը Բոստոնում իր հավաքածուի համար վենետիկյան պալացցոյի ոճով թանգարան կառուցեց։ Այն բացվեց 1903 թվականին և մինչ օրս կրում է նրա անունը։",
       "Դասախոսը արվեստաբան Հասմիկ Գևորգյանն է՝ դասախոս և Սերգեյ Փարաջանովի թանգարանի նախկին գիտաշխատող։",
       "## Երբ և որքան",
-      "Հոկտեմբերի 28-ին, ժամը 19:00-ին, Մոսկովյան 31/114։ Մուտքը 15000 դրամ է։ Կազմակերպիչը Sardi Gallery-ն է։",
+      "Հոկտեմբերի 28-ին, ժամը 19:00-ին, Մոսկովյան 31/114։ Մուտքը 15000 դրամ է։ Կազմակերպիչը Sardi Gallery-ն է։ Նույն շաբաթներին Կասկադում <a href=\"/events/cyfest-17-yerevan-2026/\" title=\"CYFEST 17 Երևանում\">CYFEST 17-ը</a> է՝ մեդիաարվեստի ցուցահանդեսը, մուտքն անվճար։",
     ],
     faq: [
       { q: "Ե՞րբ և որտե՞ղ է", a: "Հոկտեմբերի 28-ին, ժամը 19:00-ին, Penthouse by Sardi Gallery-ում՝ Մոսկովյան 31/114, Երևան։" },
@@ -4581,7 +4589,7 @@ export const items: EventItem[] = [
           "Gardner (1840–1924) was the American collector who built a museum in Boston, in the manner of a Venetian palazzo, to house what she had gathered. It opened in 1903 and bears her name to this day.",
           "The speaker is the art historian Hasmik Gevorgyan, a lecturer and formerly a researcher at the Sergei Parajanov Museum.",
           "## Date and entry",
-          "28 October at 19:00, at 31/114 Moskovyan Street. Entry is 15,000 drams. Sardi Gallery organises the evening.",
+          "28 October at 19:00, at 31/114 Moskovyan Street. Entry is 15,000 drams. Sardi Gallery organises the evening. The same weeks have <a href=\"/events/cyfest-17-yerevan-2026/\" title=\"CYFEST 17 in Yerevan\">CYFEST 17</a> at the Cascade, the media-art exhibition, free to enter.",
         ],
         faq: [
           { q: "When and where is it?", a: "On 28 October at 19:00, at Penthouse by Sardi Gallery, 31/114 Moskovyan Street, Yerevan." },
@@ -6682,7 +6690,7 @@ export const items: EventItem[] = [
   {
     slug: "nutcracker-yerevan-opera-2026",
     createdAt: "2026-10-20T18:25:00+04:00",
-    updatedAt: "2026-10-20T18:25:00+04:00",
+    updatedAt: "2026-10-21T04:56:51+04:00",
     site: "tick",
     title: "«Մարդուկ-Ջարդուկը»՝ Երևանի օպերային թատրոնում",
     titleSeo: "«Մարդուկ-Ջարդուկը» Երևանում՝ դեկտեմբերի 5-ից հունվարի 24",
@@ -6713,7 +6721,7 @@ export const items: EventItem[] = [
       "## Ներկայացումների օրերը",
       "Դեկտեմբերի 5-ին՝ 18:00, 9-ին՝ 19:00, 11-ին՝ 19:00, 12-ին և 13-ին՝ 18:00, 17-ին՝ 19:00, 29-ին և 30-ին՝ 19:00։ Հունվարի 7-ին, 14-ին և 15-ին՝ 19:00, 24-ին՝ 18:00։",
       "## Տոմսեր",
-      "Տոմսերը 5000-ից 22000 դրամ են՝ կախված նստատեղից, վաճառվում են թատրոնի տոմսարկղի կայքում։ Ամանորյա շաբաթներին Երևանում կարելի է լսել նաև Ազգային ֆիլհարմոնիկի <a href=\"/events/vienna-gala-national-philharmonic-yerevan-2026/\" title=\"«Վիեննական գալա»-ն Երևանում, դեկտեմբերի 30\">«Վիեննական գալա»-ն</a> դեկտեմբերի 30-ին։",
+      "Տոմսերը 5000-ից 22000 դրամ են՝ կախված նստատեղից, վաճառվում են թատրոնի տոմսարկղի կայքում։ Ամանորյա շաբաթներին Երևանում կարելի է լսել նաև Ազգային ֆիլհարմոնիկի <a href=\"/events/vienna-gala-national-philharmonic-yerevan-2026/\" title=\"«Վիեննական գալա»-ն Երևանում, դեկտեմբերի 30\">«Վիեննական գալա»-ն</a> դեկտեմբերի 30-ին։ Մինչև նոյեմբերի 22-ը նույն բեմում Խաչատրյանի <a href=\"/events/masquerade-ballet-yerevan-opera-2026/\" title=\"Խաչատրյանի «Դիմակահանդես» բալետը Երևանում\">«Դիմակահանդեսը»</a> է։",
     ],
     faq: [
       { q: "Ե՞րբ է «Մարդուկ-Ջարդուկը»", a: "Դեկտեմբերի 5-ին, 9-ին, 11-ին, 12-ին, 13-ին, 17-ին, 29-ին և 30-ին, ապա հունվարի 7-ին, 14-ին, 15-ին և 24-ին։ Շաբաթ և կիրակի օրերին՝ 18:00-ին, մնացած օրերին՝ 19:00-ին։" },
@@ -6740,7 +6748,7 @@ export const items: EventItem[] = [
           "## Performance dates",
           "5 December at 18:00; 9 and 11 December at 19:00; 12 and 13 December at 18:00; 17, 29 and 30 December at 19:00. Then 7, 14 and 15 January at 19:00, and 24 January at 18:00.",
           "## Tickets",
-          "Tickets cost 5,000 to 22,000 drams depending on the seat, and are sold on the theatre's own box-office site. For the same week, the National Philharmonic's <a href=\"/events/vienna-gala-national-philharmonic-yerevan-2026/\" title=\"Vienna Gala in Yerevan, 30 December\">Vienna Gala</a> is on 30 December — one could rather make a holiday of it.",
+          "Tickets cost 5,000 to 22,000 drams depending on the seat, and are sold on the theatre's own box-office site. For the same week, the National Philharmonic's <a href=\"/events/vienna-gala-national-philharmonic-yerevan-2026/\" title=\"Vienna Gala in Yerevan, 30 December\">Vienna Gala</a> is on 30 December — one could rather make a holiday of it. Before the holidays, Khachaturian's <a href=\"/events/masquerade-ballet-yerevan-opera-2026/\" title=\"Khachaturian's Masquerade at the Yerevan Opera\">Masquerade</a> is on the same stage until 22 November.",
         ],
         faq: [
           { q: "When is The Nutcracker on?", a: "On 5, 9, 11, 12, 13, 17, 29 and 30 December, then 7, 14, 15 and 24 January. Weekend performances start at 18:00, the others at 19:00." },
@@ -6891,7 +6899,7 @@ export const items: EventItem[] = [
   {
     slug: "sasuntsi-davit-ballet-oratorio-yerevan-opera-2026",
     createdAt: "2026-10-20T18:50:00+04:00",
-    updatedAt: "2026-10-20T18:50:00+04:00",
+    updatedAt: "2026-10-21T04:56:51+04:00",
     site: "tick",
     title: "«Սասունցի Դավիթ» բալետ-օրատորիա՝ Երևանի օպերային թատրոնում",
     titleSeo: "«Սասունցի Դավիթ» բալետ-օրատորիան Երևանում",
@@ -6923,7 +6931,7 @@ export const items: EventItem[] = [
       "## Տոմսեր",
       "Տոմսերը 5000-ից 25000 դրամ են՝ կախված նստատեղից, և վաճառվում են թատրոնի տոմսարկղի կայքում։ Թատրոնի էջը առայժմ նշում է օրերը, ժամն ու գները. բեմադրական խմբի անունները դեռ հրապարակված չեն։",
       "## Նույն բեմում",
-      "Նոյեմբերին օպերային թատրոնում են նաև Խաչատրյանի <a href=\"/events/gayane-ballet-yerevan-2026/\" title=\"«Գայանե» բալետը Երևանի օպերային թատրոնում\">«Գայանե»</a> և Տիգրանյանի <a href=\"/events/anoush-tigranyan-yerevan-opera-2026/\" title=\"«Անուշ» օպերան Երևանի օպերային թատրոնում\">«Անուշ»</a> օպերան։",
+      "Նոյեմբերին օպերային թատրոնում են նաև Խաչատրյանի <a href=\"/events/gayane-ballet-yerevan-2026/\" title=\"«Գայանե» բալետը Երևանի օպերային թատրոնում\">«Գայանե»</a> և Տիգրանյանի <a href=\"/events/anoush-tigranyan-yerevan-opera-2026/\" title=\"«Անուշ» օպերան Երևանի օպերային թատրոնում\">«Անուշ»</a> օպերան, իսկ մինչև նոյեմբերի 22-ը՝ Խաչատրյանի <a href=\"/events/masquerade-ballet-yerevan-opera-2026/\" title=\"Խաչատրյանի «Դիմակահանդես» բալետը Երևանում\">«Դիմակահանդեսը»</a>։",
     ],
     faq: [
       { q: "Ո՞ր օրերին է «Սասունցի Դավիթը»", a: "Նոյեմբերի 7, 8, 28 և 29-ին, դեկտեմբերի 19 և 20-ին, ժամը 18:00-ին։" },
@@ -6951,7 +6959,7 @@ export const items: EventItem[] = [
           "## Tickets",
           "Seats cost 5,000 to 25,000 drams and are sold on the theatre's own box-office site. So far the theatre's page gives the dates, the time and the prices; the creative team has not been named.",
           "## On the same stage",
-          "November at the Opera also has Khachaturian's <a href=\"/events/gayane-ballet-yerevan-2026/\" title=\"Gayane at the Yerevan Opera\">Gayane</a> and Tigranyan's <a href=\"/events/anoush-tigranyan-yerevan-opera-2026/\" title=\"Anoush at the Yerevan Opera\">Anoush</a>.",
+          "November at the Opera also has Khachaturian's <a href=\"/events/gayane-ballet-yerevan-2026/\" title=\"Gayane at the Yerevan Opera\">Gayane</a> and Tigranyan's <a href=\"/events/anoush-tigranyan-yerevan-opera-2026/\" title=\"Anoush at the Yerevan Opera\">Anoush</a>, and Khachaturian's <a href=\"/events/masquerade-ballet-yerevan-opera-2026/\" title=\"Khachaturian's Masquerade at the Yerevan Opera\">Masquerade</a> runs until 22 November.",
         ],
         faq: [
           { q: "Which dates is Sasuntsi Davit on?", a: "7, 8, 28 and 29 November and 19 and 20 December, at 18:00." },

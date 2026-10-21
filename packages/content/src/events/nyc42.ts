@@ -1827,7 +1827,7 @@ export const items: EventItem[] = [
   {
     slug: "boo-at-the-zoo-bronx-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-10-21T02:04:30+04:00",
+    updatedAt: "2026-10-21T04:56:51+04:00",
     site: "nyc42",
     image: "/covers/boo-at-the-zoo-bronx-2026.jpg",
     imageAlt: "An arch of overlapping paper leaves in amber, ochre and cream above a pale band carrying three animal paw prints",
@@ -1835,9 +1835,9 @@ export const items: EventItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "Boo at the Zoo 2026",
-    titleSeo: "Boo at the Zoo 2026 dates and schedule",
+    titleSeo: "Boo at the Zoo 2026 dates and schedule, Bronx Zoo, New York",
     summary:
-      "Six weekends of pumpkins, a candy trail and a costume parade at the Bronx Zoo in New York, from 26 September to 1 November, free with zoo admission.",
+      "Boo at the Zoo 2026 at the Bronx Zoo in New York: Saturdays and Sundays from 26 September to 1 November, plus Monday 12 October, activities 11am to 4pm, free with zoo admission — pumpkins, a candy trail and a costume parade at 12pm, 1pm, 2pm and 3:15pm.",
     start: "2026-09-26",
     end: "2026-11-01",
     utcOffset: "-04:00",
@@ -1849,14 +1849,14 @@ export const items: EventItem[] = [
     source: {
       name: "Bronx Zoo",
       url: "https://bronxzoo.com/boo-at-the-zoo",
-      verifiedOn: "2026-09-08",
+      verifiedOn: "2026-10-21",
     },
     body: [
       "The zoo's Halloween runs for six weeks and costs nothing on top of getting in, which makes it the cheapest large Halloween in the city and the one least likely to frighten anybody.",
       "## Boo at the Zoo 2026 dates and times",
       "<strong>Saturdays and Sundays from 26 September to 1 November 2026</strong>, plus <strong>Monday 12 October</strong>. Activities run from 11am, with the last performances finishing at <strong>4pm</strong>. It is <strong>free with a Bronx Zoo ticket or membership</strong>.",
       "## What is on at Boo at the Zoo",
-      "The candy trail runs 11am to 2pm; most other activities run 11am to 4pm, some from 10am. They are spread across the zoo rather than gathered in one place — Astor Court, Giraffe Corner, Grizzly Corner, the Butterfly Patio, Rhino Trail, Rhino Garden and the Dancing Crane Pavilion each have something, from puppets and games to a hay maze and free face painting.",
+      "The costume parade sets off from Astor Court at <strong>12pm, 1pm, 2pm and 3:15pm</strong>. The candy trail on the Rhino Trail runs 11am to 2pm, one turn per family; most other activities run 11am to 4pm, some from 10am. They are spread across the zoo rather than gathered in one place — Astor Court, Giraffe Corner, Grizzly Corner, the Butterfly Patio, Rhino Trail, Rhino Garden and the Dancing Crane Pavilion each have something, from puppets and games to a hay maze and free face painting.",
       "## Getting to the Bronx Zoo",
       "The zoo is in the Bronx at 2300 Southern Boulevard. It is a long day out from Manhattan and a short one from the north Bronx, and the Halloween weekends are among the busiest the zoo has.",
       "## Across Fordham Road",
@@ -1874,6 +1874,10 @@ export const items: EventItem[] = [
       {
         q: "What time does it finish?",
         a: "Activities and the final performances end at 4pm. The candy trail is the shorter window, 11am to 2pm.",
+      },
+      {
+        q: "What time is the costume parade?",
+        a: "At 12pm, 1pm, 2pm and 3:15pm, starting from Astor Court.",
       },
     ],
     related: [

@@ -62,6 +62,7 @@
     "dev:mxo": "npm run dev --workspace=apps/mxo",
     "events": "node tools/events-scan.mjs",
     "seo": "node tools/seo-check.mjs",
+    "gsc": "node tools/gsc.mjs",
     "graph": "node tools/links-graph.mjs",
     "outbound": "node tools/outbound-check.mjs",
     "test:prices": "node --experimental-strip-types --test tests/prices.test.js",

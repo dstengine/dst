@@ -344,7 +344,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-hampton-court-palace-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-10-13T01:10:00+04:00",
+    updatedAt: "2026-10-21T04:56:51+04:00",
     site: "lnd",
     image: "/covers/halloween-hampton-court-palace-2026.jpg",
     imageAlt: "A dark blue crenellated roofline with three towers of different heights rising from it, the tallest carrying a small red flag",
@@ -352,6 +352,7 @@ export const items: EventItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "Halloween at Hampton Court Palace 2026",
+    titleSeo: "Hampton Court Palace Halloween 2026: 24 Oct – 1 Nov, London",
     summary:
       "Henry VIII's haunted palace, 24 October to 1 November: ghosts and projections indoors, a pumpkin trail in the Wilderness and storytelling six times a day, all included with admission — in the London borough of Richmond upon Thames.",
     start: "2026-10-24",

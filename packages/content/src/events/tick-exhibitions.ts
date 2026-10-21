@@ -161,7 +161,7 @@ export const items: EventItem[] = [
   {
     slug: "cyfest-17-yerevan-2026",
     createdAt: "2026-10-09T13:00:00+04:00",
-    updatedAt: "2026-10-10T06:20:00+04:00",
+    updatedAt: "2026-10-21T04:56:51+04:00",
     site: "tick",
     title: "CYFEST 17 Երևանում․ «Բնություն արարող բնությունը»",
     cardTitle: "CYFEST 17՝ Կասկադում",
@@ -187,7 +187,7 @@ export const items: EventItem[] = [
     source: {
       name: "CYFEST",
       url: "https://www.cyfest.art/cyfest-17-yerevan",
-      verifiedOn: "2026-10-09",
+      verifiedOn: "2026-10-21",
     },
     ticket: { url: "https://www.cyfest.art/cyfest-17-yerevan", label: "Փառատոնի ծրագիր" },
     body: [
@@ -196,6 +196,8 @@ export const items: EventItem[] = [
       "Աշխատանքները անդրադառնում են բնական ու տեխնոլոգիական ուժերին, որոնք ազդում են մեր ընկալման վրա՝ արևի լույսից և երկրաբանական նյութերից մինչև մագնիսական դաշտեր ու էլեկտրամագնիսական ազդանշաններ։ Ցուցադրությունը կապում է մեդիաարվեստը Օրգանական դպրոցի ժառանգության և Կասկադի ճարտարապետության հետ։",
       "## Բացումը և ծրագիրը",
       "Բացման արարողությունը հոկտեմբերի <strong>15-ին, ժամը 18:00-ին</strong> է՝ Գաֆէսճեան արվեստի կենտրոնում։ Փառատոնի բացման շաբաթը ներառում է կատարումներ, վիդեոցուցադրություններ, քննարկումներ և հնչյունային ծրագիր։ Տոմսերի կամ առանձին միջոցառումների ամրագրման պահանջը ստուգիր պաշտոնական ծրագրում։ Կենտրոնի ցուցասրահների մուտքն անվճար է, աշխատանքային ժամերը՝ ուրբաթից կիրակի 10:00–20:00։",
+      "## Նաև Երևանում",
+      "Հոկտեմբերի 28-ին Sardi Gallery-ի պենտհաուսում <a href=\"/events/collector-way-of-life-isabella-stewart-gardner-sardi-gallery-2026/\" title=\"Կոլեկցիոները որպես ապրելակերպ. Իզաբելա Ստյուարտ Գարդներ\">Իզաբելա Ստյուարտ Գարդների մասին դասախոսությունը</a> է՝ PENTHOUSE TALKS շարքից։",
     ],
     faq: [
       { q: "Ե՞րբ է CYFEST 17-ը Երևանում։", a: "2026 թվականի հոկտեմբերի 15-ից մինչև 2027 թվականի հունվարի 17-ը։ Բացումը հոկտեմբերի 15-ին՝ 18:00-ին։" },
@@ -206,7 +208,7 @@ export const items: EventItem[] = [
       en: {
         title: "CYFEST 17 Yerevan: Natura Naturans at the Cascade",
         cardTitle: "CYFEST 17 at the Cascade",
-        titleSeo: "CYFEST 17 in Yerevan: media art at the Cascade",
+        titleSeo: "CYFEST 17 Yerevan: media art at the Cascade to 17 Jan 2027",
         summary:
           "More than 35 artists bring international media art to the Cascade: CYFEST 17 runs at Cafesjian Center for the Arts in Yerevan from 15 October to 17 January.",
         venue: "Cafesjian Center for the Arts, 10 Tamanyan Street",
@@ -222,6 +224,8 @@ export const items: EventItem[] = [
           "The works consider the natural and technological forces that shape perception, from sunlight and geological matter to magnetic fields and electromagnetic signals. The programme puts media art in conversation with the legacy of the Organic School and the architecture of the Cascade.",
           "## Opening and public programme",
           "The opening reception is on <strong>15 October at 6pm</strong> at the Cafesjian Center for the Arts. Opening week includes performances, video screenings, discussions and a sound programme. Check CYFEST's official programme for booking requirements for individual events. The Center's exhibition galleries are free to enter and open Friday to Sunday, 10am–8pm.",
+          "## Also in Yerevan",
+          "On 28 October the Sardi Gallery penthouse has <a href=\"/events/collector-way-of-life-isabella-stewart-gardner-sardi-gallery-2026/\" title=\"The Collector as a Way of Life: Isabella Stewart Gardner\">a talk on Isabella Stewart Gardner</a>, from its PENTHOUSE TALKS series.",
         ],
         faq: [
           { q: "When is CYFEST 17 in Yerevan?", a: "From 15 October 2026 to 17 January 2027. The opening reception is on 15 October at 6pm." },

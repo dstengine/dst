@@ -81,7 +81,7 @@ export const items: EventItem[] = [
   {
     slug: "arnulf-rainer-retrospektive-albertina-2026",
     createdAt: "2026-10-09T12:50:00+04:00",
-    updatedAt: "2026-10-10T06:20:00+04:00",
+    updatedAt: "2026-10-21T04:56:51+04:00",
     site: "vien",
     image: "/covers/arnulf-rainer-retrospective-albertina-2026.jpg",
     imageAlt: "Abstrakte Illustration aus überlagerten schwarzen und roten Pinselbahnen auf hellem Papier",
@@ -108,6 +108,20 @@ export const items: EventItem[] = [
       verifiedOn: "2026-10-09",
     },
     ticket: { url: "https://www.albertina.info/en/exhibitions/arnulf-rainer-2026/", label: "Ausstellung und Tickets" },
+    related: [
+      {
+        href: "/veranstaltungen/her-story-albertina-2026/",
+        eyebrow: "ALBERTINA",
+        title: "HER STORY in der ALBERTINA",
+        text: "Die ALBERTINA in Wien zeigt ab 30. Oktober erstmals ihren eigenen Bestand an Künstlerinnen — fünf Jahrhunderte, von Diana Scultori bis VALIE EXPORT.",
+      },
+      {
+        href: "/nachrichten/zweihundertfuenfzig-jahre-albertina/",
+        eyebrow: "Jubiläum",
+        title: "250 Jahre ALBERTINA",
+        text: "Was im Jubiläumsjahr am Albertinaplatz zu sehen ist: drei Hauptausstellungen, ein Entdeckungspfad und die Schauen, die noch im Oktober enden.",
+      },
+    ],
     body: [
       "Die ALBERTINA widmet <strong>Arnulf Rainer</strong> vom <strong>13. November 2026 bis 25. April 2027</strong> eine Retrospektive mit rund <strong>70 Arbeiten</strong>.",
       "## Was die ALBERTINA zeigt",
@@ -128,7 +142,7 @@ export const items: EventItem[] = [
   {
     slug: "her-story-albertina-2026",
     createdAt: "2026-09-21T17:00:00+04:00",
-    updatedAt: "2026-09-21T17:00:00+04:00",
+    updatedAt: "2026-10-21T04:56:51+04:00",
     site: "vien",
     image: "/covers/her-story-albertina-2026.jpg",
     imageAlt: "Fünf hohe Rundbogennischen unterschiedlicher Höhe nebeneinander in einer cremefarbenen Wand, jede in einem anderen Farbton",
@@ -137,10 +151,17 @@ export const items: EventItem[] = [
     imageHeight: 864,
     title: "HER STORY. Künstlerinnen der ALBERTINA",
     cardTitle: "HER STORY in der ALBERTINA",
+    titleSeo: "Künstlerinnen der ALBERTINA Wien: HER STORY ab 30. Okt. 2026",
     summary:
-      "Die ALBERTINA in Wien zeigt ab 30. Oktober erstmals ihren eigenen Bestand an Künstlerinnen — fünf Jahrhunderte, von Diana Scultori bis VALIE EXPORT.",
+      "Die ALBERTINA in Wien zeigt von 30. Oktober 2026 bis 17. Jänner 2027 erstmals ihren eigenen Bestand an Künstlerinnen — fünf Jahrhunderte, von Diana Scultori bis VALIE EXPORT.",
+    updates: [
+      {
+        on: "2026-10-21",
+        text: "Die ALBERTINA nennt als Ende der Ausstellung den 17. Jänner 2027. Zuvor stand hier der 14. Februar, das Datum aus der Katalogankündigung.",
+      },
+    ],
     start: "2026-10-30",
-    end: "2027-02-14",
+    end: "2027-01-17",
     utcOffset: "+01:00",
     city: "Wien",
     country: "Österreich",
@@ -150,13 +171,13 @@ export const items: EventItem[] = [
     source: {
       name: "ALBERTINA",
       url: "https://www.albertina.at/",
-      verifiedOn: "2026-09-21",
+      verifiedOn: "2026-10-21",
     },
     ticket: { url: "https://www.albertina.at/", label: "Tickets" },
     body: [
       "Ein Museum, das seit 250 Jahren sammelt, weiß in der Regel sehr genau, was es besitzt. Diese Ausstellung stellt eine Frage, die trotzdem offen war: <strong>welche Künstlerinnen</strong> liegen eigentlich in den eigenen Beständen — und sie ist die <strong>erste umfassende Bestandsaufnahme</strong> dieser Art im Haus.",
       "## Termine",
-      "<strong>30. Oktober 2026 bis 14. Februar 2027</strong>, ALBERTINA, Albertinaplatz 1.",
+      "<strong>30. Oktober 2026 bis 17. Jänner 2027</strong>, ALBERTINA, Albertinaplatz 1.",
       "## Fünf Jahrhunderte",
       "Der Bogen reicht von der Druckgrafik der Renaissance bis in die Gegenwart: <strong>Diana Scultori</strong>, <strong>Magdalena de Passe</strong>, <strong>Maria Sibylla Merian</strong>, <strong>Angelika Kauffmann</strong>, <strong>Berthe Morisot</strong>, <strong>Käthe Kollwitz</strong>, <strong>Sonia Delaunay</strong>, <strong>Louise Bourgeois</strong>, <strong>Maria Lassnig</strong> und <strong>VALIE EXPORT</strong>.",
       "## Warum eine Sammlungsschau hier etwas anderes ist",
@@ -165,15 +186,29 @@ export const items: EventItem[] = [
     faq: [
       {
         q: "Wann läuft HER STORY in der ALBERTINA?",
-        a: "Von <strong>30. Oktober 2026 bis 14. Februar 2027</strong>.",
+        a: "Von <strong>30. Oktober 2026 bis 17. Jänner 2027</strong>.",
       },
       {
         q: "Handelt es sich um Leihgaben?",
         a: "Nein. Die Ausstellung ist eine <strong>Bestandsaufnahme der eigenen Sammlung</strong> und zeigt Werke aus fünf Jahrhunderten aus dem Haus selbst.",
       },
     ],
+    related: [
+      {
+        href: "/veranstaltungen/arnulf-rainer-retrospektive-albertina-2026/",
+        eyebrow: "ALBERTINA",
+        title: "Arnulf Rainer: Retrospektive in der ALBERTINA",
+        text: "Die ALBERTINA in Wien zeigt vom 13. November 2026 bis 25. April 2027 rund 70 Arbeiten Arnulf Rainers, von frühen Übermalungen bis zu späten Schleierbildern.",
+      },
+      {
+        href: "/nachrichten/zweihundertfuenfzig-jahre-albertina/",
+        eyebrow: "Jubiläum",
+        title: "250 Jahre ALBERTINA",
+        text: "Was im Jubiläumsjahr am Albertinaplatz zu sehen ist: drei Hauptausstellungen, ein Entdeckungspfad und die Schauen, die noch im Oktober enden.",
+      },
+    ],
     expertise:
-      "Sammlungsausstellungen auf Papier haben einen praktischen Vorteil und einen Nachteil, die beide selten dazugesagt werden: Papier verträgt nur wenig Licht, die Räume sind also dunkel und die Blätter werden danach für Jahre wieder eingelagert. Wer eines dieser Werke sehen will, sieht es in diesen dreieinhalb Monaten — oder auf absehbare Zeit gar nicht. Das ist das eigentliche Argument für den Besuch, und es gilt unabhängig davon, wie gut die Schau am Ende ausfällt.",
+      "Sammlungsausstellungen auf Papier haben einen praktischen Vorteil und einen Nachteil, die beide selten dazugesagt werden: Papier verträgt nur wenig Licht, die Räume sind also dunkel und die Blätter werden danach für Jahre wieder eingelagert. Wer eines dieser Werke sehen will, sieht es in diesen knapp drei Monaten — oder auf absehbare Zeit gar nicht. Das ist das eigentliche Argument für den Besuch, und es gilt unabhängig davon, wie gut die Schau am Ende ausfällt.",
   },
   {
     slug: "viennale-2026",
@@ -471,7 +506,7 @@ export const items: EventItem[] = [
   {
     slug: "vienna-halloween-run-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-10-21T02:04:30+04:00",
+    updatedAt: "2026-10-21T04:56:51+04:00",
     site: "vien",
     image: "/covers/vienna-halloween-run-2026.jpg",
     imageAlt: "Eine helle Laufbahn, die in die Bildmitte führt, gesäumt von Bäumen mit rotem Herbstlaub",
@@ -499,7 +534,7 @@ export const items: EventItem[] = [
     source: {
       name: "Vienna Halloween Run",
       url: "https://www.vienna-halloween-run.at/",
-      verifiedOn: "2026-10-04",
+      verifiedOn: "2026-10-21",
     },
     body: [
       "Halloween in Wien findet zum größten Teil in Wohnungen und Lokalen statt. Der Vienna Halloween Run ist das seltene Gegenteil: eine Veranstaltung im Freien, mit Startnummer, Zeitnehmung und einem Zieleinlauf im Dunkeln. Die erste Auflage hatte laut Veranstalter mehr als 1.300 Teilnehmerinnen und Teilnehmer; die zweite läuft am <strong>30. Oktober 2026</strong> in der Prater Hauptallee.",
@@ -537,6 +572,26 @@ export const items: EventItem[] = [
         a: "In der Prater Hauptallee, am Antifaschismusplatz 1 im 2. Bezirk.",
       },
     ],
+    related: [
+      {
+        href: "/veranstaltungen/kuerbisfest-am-himmel-2026/",
+        eyebrow: "Cobenzl",
+        title: "Kürbisfest am Himmel 2026",
+        text: "Drei Tage Kürbis am Cobenzl in Wien, von 24. bis 26. Oktober (Nationalfeiertag) jeweils 10 bis 18 Uhr, mit über 200 Sorten zum Anschauen. Der Eintritt ist frei, hinauf fährt der 38A.",
+      },
+      {
+        href: "/veranstaltungen/halloween-wurstelprater-2026/",
+        eyebrow: "Prater",
+        title: "Halloween im Wurstelprater 2026",
+        text: "Halloween im Wiener Prater vom 27. bis 31. Oktober 2026, täglich 14 bis 17 Uhr: Kürbisschnitzen, Kinderschminken, Zaubershows und eine Bühne am Riesenradplatz, alles gratis. Eine Parade gibt es heuer nicht; am Abend des 31. Oktober spielen Schauspieler an den Attraktionen.",
+      },
+      {
+        href: "/veranstaltungen/halloween-kindermuseum-schoenbrunn-2026/",
+        eyebrow: "Schönbrunn",
+        title: "Halloween im Kindermuseum Schönbrunn 2026",
+        text: "Halloween für Kinder in Wien: Vom 25. Oktober bis 2. November 2026 gibt es im Kindermuseum Schloss Schönbrunn einen Monsterparcours, eine Rätselrallye und zwei Abende Gruselführung im Dunkeln. Der Museumseintritt kostet 12 Euro, die Führung 23 Euro.",
+      },
+    ],
     expertise:
       "Zwei Dinge unterscheiden diesen Abend von einem gewöhnlichen Volkslauf. Erstens die Uhrzeit: Ende Oktober ist es um halb sieben bereits dunkel, und die Hauptallee ist keine hell beleuchtete Straße — wer die 5 Kilometer läuft, läuft den größten Teil davon im Halbdunkel. Zweitens das Kostüm, das hier nicht Zierde, sondern Ausrüstung ist: Was beim Fotografieren gut aussieht, wird nach zwei Kilometern schwer und warm. Die praktikable Lösung sind Maske und Umhang, die man im Ziel wieder anzieht, nicht das vollständige Ganzkörperkostüm.",
   },
@@ -544,7 +599,7 @@ export const items: EventItem[] = [
   {
     slug: "kuerbisfest-am-himmel-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-10-21T02:04:30+04:00",
+    updatedAt: "2026-10-21T04:56:51+04:00",
     site: "vien",
     image: "/covers/kuerbisfest-am-himmel-2026.jpg",
     imageAlt: "Ein breiter Haufen runder Papierscheiben in Rot, Grün, Ocker und Creme, in vielen verschiedenen Größen",
@@ -552,6 +607,7 @@ export const items: EventItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "Kürbisfest am Himmel 2026",
+    titleSeo: "Kürbisfest am Himmel 2026: 24.–26. Oktober am Cobenzl",
     summary:
       "Drei Tage Kürbis am Cobenzl in Wien, von 24. bis 26. Oktober (Nationalfeiertag) jeweils 10 bis 18 Uhr, mit über 200 Sorten zum Anschauen. Der Eintritt ist frei, hinauf fährt der 38A.",
     start: "2026-10-24",
@@ -567,16 +623,16 @@ export const items: EventItem[] = [
     source: {
       name: "Himmel — Kuratorium Wald",
       url: "https://www.himmel.at/kuerbisfest",
-      verifiedOn: "2026-09-08",
+      verifiedOn: "2026-10-21",
     },
     body: [
       "Der ausgehöhlte Kürbis ist das eine Bild, das jeder mit dem Ende des Oktobers verbindet, und am Himmel in Sievering steht er drei Tage lang in über zweihundert Sorten nebeneinander — die meisten davon sehen nicht im Entferntesten aus wie das orange Ding aus dem Supermarkt.",
       "## Termine: Kürbisfest am Himmel 2026",
-      "<strong>Samstag, 24., bis Montag, 26. Oktober 2026</strong> — der Montag ist der Nationalfeiertag —, jeweils von <strong>10 bis 18 Uhr</strong>, Himmelstraße 125 im 19. Bezirk.",
+      "<strong>Samstag, 24., bis Montag, 26. Oktober 2026</strong> — der Montag ist der Nationalfeiertag —, jeweils von <strong>10 bis 18 Uhr</strong>, Himmelstraße 125 im 19. Bezirk. Das Fest findet <strong>bei jeder Witterung</strong> statt.",
       "## Was der Eintritt zum Kürbisfest kostet",
       "<strong>Nichts.</strong> Das Fest ist frei zugänglich.",
       "## Was dort steht",
-      "Über <strong>200 Kürbissorten</strong>, dazu das Gelände des Kuratoriums Wald am Stadtrand mit Blick über die Stadt.",
+      "Über <strong>200 Kürbissorten</strong> zum Anschauen und Kaufen, eine <strong>Kürbisgourmetstraße</strong> mit Kürbisgerichten, Kürbisschnitzen und Drachenbasteln für Kinder — dazu das Gelände des Kuratoriums Wald am Stadtrand mit Blick über die Stadt. Das Café Restaurant Oktogon am Himmel hat offen.",
       "## Anreise zum Kürbisfest am Himmel",
       "Der Himmel liegt oberhalb von Sievering, zwischen Cobenzl und Kahlenberg. Der Veranstalter empfiehlt die <strong>U4 bis Heiligenstadt</strong> und von dort den <strong>Bus 38A bis Cobenzl</strong>; ausgestiegen wird an der Kreuzung Himmelstraße/Höhenstraße, wo der Eingang ist. Parkplätze rund um den Himmel sind knapp.",
     ],
@@ -600,6 +656,30 @@ export const items: EventItem[] = [
       {
         q: "Wie viele Kürbissorten gibt es zu sehen?",
         a: "Über <strong>200</strong>.",
+      },
+      {
+        q: "Was gibt es beim Kürbisfest zu tun?",
+        a: "Kürbisse anschauen und kaufen, Kürbisgerichte an der Kürbisgourmetstraße, für Kinder Kürbisschnitzen und Drachenbasteln. Das Fest findet bei jeder Witterung statt.",
+      },
+    ],
+    related: [
+      {
+        href: "/veranstaltungen/halloween-wurstelprater-2026/",
+        eyebrow: "Prater",
+        title: "Halloween im Wurstelprater 2026",
+        text: "Halloween im Wiener Prater vom 27. bis 31. Oktober 2026, täglich 14 bis 17 Uhr: Kürbisschnitzen, Kinderschminken, Zaubershows und eine Bühne am Riesenradplatz, alles gratis. Eine Parade gibt es heuer nicht; am Abend des 31. Oktober spielen Schauspieler an den Attraktionen.",
+      },
+      {
+        href: "/veranstaltungen/halloween-kindermuseum-schoenbrunn-2026/",
+        eyebrow: "Schönbrunn",
+        title: "Halloween im Kindermuseum Schönbrunn 2026",
+        text: "Halloween für Kinder in Wien: Vom 25. Oktober bis 2. November 2026 gibt es im Kindermuseum Schloss Schönbrunn einen Monsterparcours, eine Rätselrallye und zwei Abende Gruselführung im Dunkeln. Der Museumseintritt kostet 12 Euro, die Führung 23 Euro.",
+      },
+      {
+        href: "/veranstaltungen/vienna-halloween-run-2026/",
+        eyebrow: "Prater",
+        title: "Vienna Halloween Run 2026",
+        text: "Der Halloween-Lauf in der Prater Hauptallee in Wien am 30. Oktober: Kinderläufe ab 16:40 Uhr, 2,5 Kilometer um 17:15 Uhr, 5 Kilometer um 18:30 und 19:30 Uhr. Bis 26. Oktober kostet der Start 17 bis 35 Euro, verkleidet laufen ist ausdrücklich erwünscht.",
       },
     ],
     expertise:
@@ -709,7 +789,7 @@ export const items: EventItem[] = [
   {
     slug: "cosmic-horrors-planetarium-wien-2026",
     createdAt: "2026-10-11T01:15:13+04:00",
-    updatedAt: "2026-10-13T00:40:00+04:00",
+    updatedAt: "2026-10-21T04:56:51+04:00",
     site: "vien",
     image: "/covers/cosmic-horrors-planetarium-wien-2026.jpg",
     imageAlt: "Ein dunkler Nachthimmel mit einem Ringplaneten und mehreren kleinen runden Planeten über breiten Streifen in Orange und Rot, unten die Rundung einer roten Kuppel, auf cremefarbenem Grund",
@@ -717,6 +797,7 @@ export const items: EventItem[] = [
     imageWidth: 1024,
     imageHeight: 1024,
     title: "Cosmic Horrors: Halloween im Planetarium Wien 2026",
+    titleSeo: "Cosmic Horrors: Halloween im Planetarium Wien, 31. Okt. 2026",
     summary:
       "Halloween in Wien unter der Kuppel: Das Planetarium im Prater zeigt am 31. Oktober 2026 sein Halloween-Special „Cosmic Horrors“, acht Vorstellungen zu je 25 Minuten von 18:30 bis 22 Uhr, für 5 Euro. Empfohlen ab 10 Jahren.",
     start: "2026-10-31",
