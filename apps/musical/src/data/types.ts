@@ -19,8 +19,9 @@
     any run was a change to all of them. A field belongs to its record and
     cannot be wrong about which lines are its own. What it can be is
     forgotten, so editing a record means moving its `updatedAt` in the same
-    change; `node tools/item-dates.mjs` fills in what is missing from
-    history and never overwrites a date that is there.
+    change, and `npm run test:dates` fails on a record whose text differs
+    from HEAD under an unchanged one. `node tools/item-dates.mjs` fills in
+    what is missing from history and never overwrites a date that is there.
 
     A record's own words only. A show is dated by its fields, not by its
     sections and clips, which carry their own; a run is dated by the run,
