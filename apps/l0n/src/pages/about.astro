@@ -1,0 +1,75 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { about } from "../content";
+import PageHero from "@dst/ui/PageHero.astro";
+---
+<Layout
+  prose title={about.title} description={about.description}>
+  <PageHero
+    title={about.h1}
+    image="/covers/about.jpg"
+    imageAlt="Cut-paper illustration: sixteen blue and gold paper squares pinned in a grid on a pale wall, one corner curling."
+    imageKind="generated"
+  >
+    <p class="lede">{about.lede}</p>
+  </PageHero>
+
+  <section class="container">
+    <h2>What this is</h2>
+    <p set:html={`<strong>London Calendar</strong> keeps the fixed points of the London year — the Boat Race, the Marathon, Chelsea, the fireworks at midnight on the Thames — and publishes each one as soon as its organiser fixes the date, often many months ahead.`} />
+    <p set:html={`It is published by <a href="https://gb7.uk/" title="Free online tools and guides, in plain English">GB7</a>, which makes free online tools and guides.`} />
+  </section>
+
+  <section class="container">
+    <h2>The rules</h2>
+    <ol class="rules">
+      <li>
+        <h3>Every fact names where it came from, and when we last looked</h3>
+        <p>Not &ldquo;updated regularly&rdquo;. A source and a date, printed on the entry itself, so you can see how fresh the thing you are reading actually is.</p>
+      </li>
+      <li>
+        <h3>Nothing is listed on a date we could not confirm</h3>
+        <p>Dates come from the organiser, not from another listings page. A date that has only been reported waits until the organiser publishes it.</p>
+      </li>
+      <li>
+        <h3>What&rsquo;s on, not what went wrong</h3>
+        <p>This site covers what is happening, what is open and what changed for the better. Not politics, not crime, not tragedy, and not arguments. If a story needs a side taken, it belongs somewhere that can follow it up.</p>
+      </li>
+      <li>
+        <h3>We pick the best, and say why</h3>
+        <p>A listings site earns its keep by choosing. Picking out the best of something is the job, not a compromise &mdash; what it will not do is run a place down. A takedown of a named business is not what this is for.</p>
+      </li>
+      <li>
+        <h3>A page exists when there is something to put on it</h3>
+        <p>No empty sections waiting to be filled, and no index padded out to look busy. A section appears once there is something on it.</p>
+      </li>
+    </ol>
+  </section>
+
+</Layout>
+
+<style>
+  .rules {
+    margin: var(--space-3) 0 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: rule;
+    display: grid;
+    gap: var(--space-3);
+  }
+  .rules li {
+    counter-increment: rule;
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 0 var(--space-2);
+    align-items: baseline;
+  }
+  .rules li::before {
+    content: counter(rule);
+    color: var(--accent);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+  .rules h3 { margin: 0; font-size: var(--step-0); }
+  .rules p { margin: 0.25em 0 0; grid-column: 2; max-width: 62ch; color: var(--ink-muted); }
+</style>

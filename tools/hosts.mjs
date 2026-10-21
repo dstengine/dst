@@ -24,6 +24,8 @@ export const HOSTS = {
   tokiohotel: "tokiohotel.vvm.space",
   aivideo: "aivideo.zone",
   tea: "tea.ceo",
+  l0n: "l0n.uk",
+  aca: "acapulco.world",
 };
 
 /** The app behind a host, for turning a changed lastmod slice back into a

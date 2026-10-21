@@ -13,6 +13,10 @@ import { items as fwf } from "./fwf.ts";
 import { items as nyc42 } from "./nyc42.ts";
 import { items as ldn } from "./ldn.ts";
 import { items as lnd } from "./lnd.ts";
+// l0n.uk — a .uk sibling of the two London .lol sites, published by GB7.
+import { items as l0n } from "./l0n.ts";
+// acapulco.world — a standalone domain that publishes itself.
+import { items as aca } from "./aca.ts";
 import { items as cmx } from "./cmx.ts";
 import { items as mxo } from "./mxo.ts";
 import { items as sol2go } from "./sol2go.ts";
@@ -26,7 +30,7 @@ import { items as aivideo } from "./aivideo.ts";
 // tea.ceo is independent too: how to brew tea, and the tea times of the day.
 import { items as tea } from "./tea.ts";
 
-const BY_SITE: Record<string, NewsItem[]> = { dst, llc, visas, riviera, mbr, palmcentral, eco, fwf, nyc42, ldn, lnd, cmx, mxo, sol2go, vien, tick, musical, aivideo, tea };
+const BY_SITE: Record<string, NewsItem[]> = { dst, llc, visas, riviera, mbr, palmcentral, eco, fwf, nyc42, ldn, lnd, l0n, aca, cmx, mxo, sol2go, vien, tick, musical, aivideo, tea };
 
 export const allNews: NewsItem[] = Object.values(BY_SITE).flat();
 

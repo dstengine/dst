@@ -38,6 +38,8 @@ const SITES = {
   lnd: { label: "lnd" },
   cmx: { label: "cmx" },
   mxo: { label: "mxo" },
+  l0n: { label: "l0n" },
+  aca: { label: "aca" },
 };
 
 /** The accent a site declares for light mode, read from its own theme.css

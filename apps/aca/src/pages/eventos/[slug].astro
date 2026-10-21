@@ -1,0 +1,48 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { site } from "../../site.config";
+import { datedTitle } from "@dst/ui/title";
+import EventArticle from "@dst/ui/EventArticle.astro";
+import { siteId, newsBase, eventsBase, publisher, labels } from "../../content";
+import { eventsBySite } from "@dst/content/events";
+import { go } from "../../outbound";
+import { newsBySite } from "@dst/content/news";
+import { sectionHrefFor } from "@dst/content/sections";
+import { allSections, promoted, pluralOf } from "../../sections";
+
+export function getStaticPaths() {
+  const items = eventsBySite(siteId).filter((i) => Array.isArray(i.body) && i.body.length > 0);
+  return items.map((item) => ({ params: { slug: item.slug }, props: { item, more: items } }));
+}
+
+const moreNews = newsBySite(siteId);
+const { item, more } = Astro.props;
+// The subject page this entry's category has earned, when it has one.
+// The detail page cannot know whether its own word crossed the section
+// threshold, so the answer is read off the sections the site actually
+// built — the same list the nav is built from.
+const categoryHref = sectionHrefFor(item, allSections);
+// A seller if we have one, the source if we don't — see src/outbound.ts.
+const ticketHref = item.ticket ? go(`${item.slug}-ticket`) : undefined;
+const sourceHref = item.source?.url ? go(`${item.slug}-source`) : undefined;
+---
+<Layout title={datedTitle(item.titleSeo ?? item.title, item, site)} description={item.summary} image={item.image}>
+  <EventArticle
+    locale="es-MX"
+    item={item}
+    ticketHref={ticketHref}
+    sourceHref={sourceHref}
+    more={more}
+    moreNews={moreNews}
+    backHref={eventsBase}
+    newsBase={newsBase}
+    eventsBase={eventsBase}
+    publisher={publisher}
+    categoryHref={categoryHref}
+    promoted={promoted}
+    labels={labels}
+    where={site.keyword}
+    pluralOf={pluralOf}
+    moreEventsText={item.moreEventsText}
+  />
+</Layout>

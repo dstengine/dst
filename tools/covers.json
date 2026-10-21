@@ -18,7 +18,9 @@
     "vien": "warm cream ground with deep vermilion red and moss green, small gold highlights",
     "tick": "warm apricot tuff-stone ground with deep pomegranate red and dusty rose, small cream highlights",
     "aivideo": "near-black violet ground with hot magenta and electric cyan neon, small acid-yellow highlights",
-    "tea": "dark mahogany and oxblood leather, deep bottle-green plaster walls, antique brass and gilt catching the firelight, warm cream china"
+    "tea": "dark mahogany and oxblood leather, deep bottle-green plaster walls, antique brass and gilt catching the firelight, warm cream china",
+    "l0n": "pale stone ground with Oxford blue and old gold, one small red accent",
+    "aca": "warm sand ground with deep Pacific teal and sunset coral"
   },
   "idioms": {
     "aivideo": "cyberpunk",
@@ -535,6 +537,19 @@
       "dog-and-cat-khaghagortyan-yerevan-opera-2026": "a single paper dog and a paper cat sitting back to back on a wooden fence with a felt hat between them, a crescent moon above, flat cut-paper style, wide empty ground on both sides, no text, no lettering anywhere",
       "la-voix-humaine-reflections-dialogue-yerevan-opera-2026": "a single old black telephone with its receiver laid beside it on a small round table, a wilted rose beside it, a rainy window behind, flat cut-paper style, wide empty ground on both sides, no text, no lettering anywhere",
       "five-in-two-classical-marathon-yerevan-2026": "a single yellow bus with a violin case strapped to its roof on a winding road between rounded hills, autumn trees at the roadside, flat cut-paper style, wide empty ground on both sides, no text, no lettering anywhere"
+    },
+    "l0n": {
+      "new-years-eve-fireworks-london-2026": "fireworks bursting in the night sky above a wide river, a large observation wheel on the far bank, the embankment below as a dark paper strip",
+      "boat-race-2027": "two long slender rowing boats side by side on a river, their oars spread like wings, a low arched stone bridge behind them",
+      "london-marathon-2027": "a long paper ribbon road winding across a city of low rooftops, from a park of round trees to a river, small round markers along it",
+      "chelsea-flower-show-2027": "an ornamental show garden in layered paper, clipped hedges and a deep flower border in full bloom around a small open pavilion"
+    },
+    "aca": {
+      "alejandro-sanz-acapulco-2026": "a Spanish guitar leaning against a microphone stand on an empty stage under a single spotlight, a palm frond at one edge",
+      "ricardo-montaner-acapulco-2026": "a grand piano on an open-air stage facing a crescent moon over a calm bay",
+      "gnp-mexico-major-premier-padel-acapulco-2026": "a padel racket and a ball on a court enclosed by glass walls, seen from above",
+      "emmanuel-mijares-two-amigos-acapulco-2026": "two microphones on stands side by side on a stage under two spotlights, a string of small lights above them",
+      "abierto-mexicano-de-tenis-2027": "a tennis racket and a ball on a hard court by the sea, palm trees beyond the fence"
     }
   },
   "news": {
@@ -907,6 +922,12 @@
       "how-to-brew-pu-erh-tea-balls": "two dark round balls of pressed tea leaves the size of walnuts, one still in its white wrapper twisted shut at the top with a gold tie, the other bare, beside a small white porcelain lidded cup on a saucer and a glass cup of clear golden tea, on a polished mahogany side table by a fire burning in the grate, an oxblood leather wing chair beside it",
       "how-to-brew-georgian-green-tea": "a glass cup of pale golden-green tea and a small white porcelain gaiwan with its lid set aside, filled with dark green rolled tea leaves, on a polished mahogany table by a tall window, beyond the glass green hills planted with neat rows of tea bushes under low mist, an oxblood leather wing chair beside the table",
       "how-to-brew-assam-tea": "a large round brown teapot and a sturdy white cup of dark amber tea with a small milk jug beside it, a dish of dark twisted tea leaves flecked with golden tips, on a polished mahogany breakfast table by a tall window, beyond the glass a flat green river valley planted with rows of tea bushes under heavy monsoon clouds, an oxblood leather wing chair beside the table"
+    },
+    "l0n": {
+      "london-big-dates-2027-so-far": "four tall paper cards fanned out like a hand of cards, blue, gold, stone and red, a small paper firework burst above them"
+    },
+    "aca": {
+      "que-viene-a-acapulco-hasta-febrero-2027": "the curve of a wide bay at sunset with low hills behind it and a few slim towers along the shore"
     }
   },
   "pages": {
@@ -1191,6 +1212,12 @@
         "subject": "a tea caddy, a round teapot and a cup and saucer on a silver tray on a mahogany table in the great hall of an English country house",
         "detail": "a vast stone fireplace with a fire burning, stag's antlers and gilt-framed landscapes on tall plaster walls, an oxblood leather chesterfield drawn up to the table"
       }
+    },
+    "l0n": {
+      "about": "a grid of twelve blue and gold paper squares pinned to a pale wall, one corner turned over"
+    },
+    "aca": {
+      "acerca": "a small sailboat on a wide curved bay with green hills rising behind it"
     }
   }
 }

@@ -34,6 +34,8 @@ const SITES = {
   lnd: { host: "lnd.lol", news: "news", events: "events", newsLabel: "News", eventsLabel: "Events" },
   cmx: { host: "cmx.lol", news: "noticias", events: "eventos", newsLabel: "Noticias", eventsLabel: "Eventos" },
   mxo: { host: "mxo.lol", news: "noticias", events: "eventos", newsLabel: "Noticias", eventsLabel: "Eventos" },
+  l0n: { host: "l0n.uk", news: "news", events: "events", newsLabel: "News", eventsLabel: "Events" },
+  aca: { host: "acapulco.world", news: "noticias", events: "eventos", newsLabel: "Noticias", eventsLabel: "Eventos" },
   // Two languages: every entry is listed once per language, at its own
   // address and in its own words. English first because the head is in
   // English — it is the language most readers of this file read.

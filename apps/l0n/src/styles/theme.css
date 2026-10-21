@@ -1,0 +1,11 @@
+/* l0n.uk — Oxford blue, the colour of its publisher GB7 (gb7.uk), and not
+   the red of ldn.lol or the navy of lnd.lol: the three are separate sites
+   and must not read as one. */
+:root {
+  --accent-light: #1D4E89;
+  --accent-ink-light: #123562;
+  --accent-tint-light: #E4EDF8;
+  --accent-dark: #9CC1F2;
+  --accent-ink-dark: #D4E4FA;
+  --accent-tint-dark: #0E2240;
+}

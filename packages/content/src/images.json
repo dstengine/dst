@@ -1,4 +1,230 @@
 {
+  "acapulco.world": {
+    "/covers/abierto-mexicano-de-tenis-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/abierto-mexicano-de-tenis-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/abierto-mexicano-de-tenis-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/abierto-mexicano-de-tenis-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/abierto-mexicano-de-tenis-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/abierto-mexicano-de-tenis-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/abierto-mexicano-de-tenis-2027-1024.webp"
+        ]
+      ]
+    },
+    "/covers/acerca.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/acerca-480.avif"
+        ],
+        [
+          768,
+          "/covers/acerca-768.avif"
+        ],
+        [
+          1024,
+          "/covers/acerca-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/acerca-480.webp"
+        ],
+        [
+          768,
+          "/covers/acerca-768.webp"
+        ],
+        [
+          1024,
+          "/covers/acerca-1024.webp"
+        ]
+      ]
+    },
+    "/covers/alejandro-sanz-acapulco-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/alejandro-sanz-acapulco-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/alejandro-sanz-acapulco-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/alejandro-sanz-acapulco-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/alejandro-sanz-acapulco-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/alejandro-sanz-acapulco-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/alejandro-sanz-acapulco-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/emmanuel-mijares-two-amigos-acapulco-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/emmanuel-mijares-two-amigos-acapulco-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/emmanuel-mijares-two-amigos-acapulco-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/emmanuel-mijares-two-amigos-acapulco-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/emmanuel-mijares-two-amigos-acapulco-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/emmanuel-mijares-two-amigos-acapulco-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/emmanuel-mijares-two-amigos-acapulco-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/gnp-mexico-major-premier-padel-acapulco-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/gnp-mexico-major-premier-padel-acapulco-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/gnp-mexico-major-premier-padel-acapulco-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/gnp-mexico-major-premier-padel-acapulco-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/gnp-mexico-major-premier-padel-acapulco-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/gnp-mexico-major-premier-padel-acapulco-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/gnp-mexico-major-premier-padel-acapulco-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/que-viene-a-acapulco-hasta-febrero-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/que-viene-a-acapulco-hasta-febrero-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/que-viene-a-acapulco-hasta-febrero-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/que-viene-a-acapulco-hasta-febrero-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/que-viene-a-acapulco-hasta-febrero-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/que-viene-a-acapulco-hasta-febrero-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/que-viene-a-acapulco-hasta-febrero-2027-1024.webp"
+        ]
+      ]
+    },
+    "/covers/ricardo-montaner-acapulco-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/ricardo-montaner-acapulco-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/ricardo-montaner-acapulco-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/ricardo-montaner-acapulco-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/ricardo-montaner-acapulco-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/ricardo-montaner-acapulco-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/ricardo-montaner-acapulco-2026-1024.webp"
+        ]
+      ]
+    }
+  },
   "aivideo.zone": {
     "/covers/about.jpg": {
       "width": 1536,
@@ -7629,6 +7855,200 @@
         [
           1380,
           "/fwf-plaza-1380.webp"
+        ]
+      ]
+    }
+  },
+  "l0n.uk": {
+    "/covers/about.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/about-480.avif"
+        ],
+        [
+          768,
+          "/covers/about-768.avif"
+        ],
+        [
+          1024,
+          "/covers/about-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/about-480.webp"
+        ],
+        [
+          768,
+          "/covers/about-768.webp"
+        ],
+        [
+          1024,
+          "/covers/about-1024.webp"
+        ]
+      ]
+    },
+    "/covers/boat-race-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/boat-race-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/boat-race-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/boat-race-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/boat-race-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/boat-race-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/boat-race-2027-1024.webp"
+        ]
+      ]
+    },
+    "/covers/chelsea-flower-show-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/chelsea-flower-show-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/chelsea-flower-show-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/chelsea-flower-show-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/chelsea-flower-show-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/chelsea-flower-show-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/chelsea-flower-show-2027-1024.webp"
+        ]
+      ]
+    },
+    "/covers/london-big-dates-2027-so-far.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/london-big-dates-2027-so-far-480.avif"
+        ],
+        [
+          768,
+          "/covers/london-big-dates-2027-so-far-768.avif"
+        ],
+        [
+          1024,
+          "/covers/london-big-dates-2027-so-far-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/london-big-dates-2027-so-far-480.webp"
+        ],
+        [
+          768,
+          "/covers/london-big-dates-2027-so-far-768.webp"
+        ],
+        [
+          1024,
+          "/covers/london-big-dates-2027-so-far-1024.webp"
+        ]
+      ]
+    },
+    "/covers/london-marathon-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/london-marathon-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/london-marathon-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/london-marathon-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/london-marathon-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/london-marathon-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/london-marathon-2027-1024.webp"
+        ]
+      ]
+    },
+    "/covers/new-years-eve-fireworks-london-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/new-years-eve-fireworks-london-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/new-years-eve-fireworks-london-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/new-years-eve-fireworks-london-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/new-years-eve-fireworks-london-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/new-years-eve-fireworks-london-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/new-years-eve-fireworks-london-2026-1024.webp"
         ]
       ]
     }

@@ -1,0 +1,40 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { site } from "../../site.config";
+import NewsArticle from "@dst/ui/NewsArticle.astro";
+import { siteId, newsBase, eventsBase, publisher, labels } from "../../content";
+import { newsBySite } from "@dst/content/news";
+import { sectionHrefFor } from "@dst/content/sections";
+import { allSections, promoted } from "../../sections";
+import { eventsBySite } from "@dst/content/events";
+
+export function getStaticPaths() {
+  // No body, no page — the feed card says everything the entry has.
+  const items = newsBySite(siteId).filter((i) => Array.isArray(i.body) && i.body.length > 0);
+  return items.map((item) => ({ params: { slug: item.slug }, props: { item, more: items } }));
+}
+
+const moreEvents = eventsBySite(siteId);
+const { item, more } = Astro.props;
+// The subject page this entry's category has earned, when it has one.
+// The detail page cannot know whether its own word crossed the section
+// threshold, so the answer is read off the sections the site actually
+// built — the same list the nav is built from.
+const categoryHref = sectionHrefFor(item, allSections);
+---
+<Layout title={item.titleSeo ?? item.title} description={item.summary} image={item.image}>
+  <NewsArticle
+    locale="es-MX"
+    item={item}
+    more={more}
+    moreEvents={moreEvents}
+    backHref={newsBase}
+    newsBase={newsBase}
+    eventsBase={eventsBase}
+    publisher={publisher}
+    categoryHref={categoryHref}
+    promoted={promoted}
+    labels={labels}
+    where={site.keyword}
+  />
+</Layout>

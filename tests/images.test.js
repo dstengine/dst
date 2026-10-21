@@ -35,6 +35,8 @@ const SITES = [
   { app: "mxo", host: "mxo.lol" },
   { app: "aivideo", host: "aivideo.zone" },
   { app: "tea", host: "tea.ceo" },
+  { app: "l0n", host: "l0n.uk" },
+  { app: "aca", host: "acapulco.world" },
 ];
 
 /** Same rule as the generator: chrome is not content. */

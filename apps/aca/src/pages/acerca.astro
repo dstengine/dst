@@ -1,0 +1,74 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { about } from "../content";
+import PageHero from "@dst/ui/PageHero.astro";
+---
+<Layout
+  prose title={about.title} description={about.description}>
+  <PageHero
+    title={about.h1}
+    image="/covers/acerca.jpg"
+    imageAlt="Ilustración de papel recortado: un velero en una bahía curva, con cerros verdes y un sol naranja detrás."
+    imageKind="generated"
+  >
+    <p class="lede">{about.lede}</p>
+  </PageHero>
+
+  <section class="container">
+    <h2>Qué es esto</h2>
+    <p set:html={`<strong>Agenda Acapulco</strong> reúne lo que viene a Acapulco — los conciertos de Arena GNP Seguros y del Forum Mundo Imperial, el Abierto Mexicano de Tenis, el pádel — con la fecha como la publicó quien organiza.`} />
+  </section>
+
+  <section class="container">
+    <h2>Las reglas</h2>
+    <ol class="rules">
+      <li>
+        <h3>Cada dato dice de dónde salió y cuándo lo revisamos</h3>
+        <p>No &laquo;actualizado con frecuencia&raquo;. Una fuente y una fecha, impresas en la entrada misma, para que se vea qué tan reciente es lo que está leyendo.</p>
+      </li>
+      <li>
+        <h3>Nada se publica con una fecha que no pudimos confirmar</h3>
+        <p>Las fechas vienen de quien organiza, no de otro listado. Un evento cuya fecha no pudimos confirmar espera hasta que se pueda.</p>
+      </li>
+      <li>
+        <h3>Lo que está pasando, no lo que salió mal</h3>
+        <p>Este sitio cubre lo que hay, lo que abre y lo que cambió para bien. Ni política, ni crimen, ni tragedia, ni pleitos. Si una historia exige tomar partido, le corresponde a un medio que pueda darle seguimiento.</p>
+      </li>
+      <li>
+        <h3>Elegimos lo mejor, y decimos por qué</h3>
+        <p>Una cartelera se gana su lugar eligiendo. Señalar lo mejor de algo es el trabajo, no una concesión &mdash; lo que no hará es hundir un lugar. Una crítica demoledora a un negocio con nombre no es para lo que está.</p>
+      </li>
+      <li>
+        <h3>Una página existe cuando hay algo que poner en ella</h3>
+        <p>Sin secciones vacías esperando llenarse ni índices inflados para aparentar. Una sección aparece cuando ya hay algo en ella.</p>
+      </li>
+    </ol>
+  </section>
+
+</Layout>
+
+<style>
+  .rules {
+    margin: var(--space-3) 0 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: rule;
+    display: grid;
+    gap: var(--space-3);
+  }
+  .rules li {
+    counter-increment: rule;
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 0 var(--space-2);
+    align-items: baseline;
+  }
+  .rules li::before {
+    content: counter(rule);
+    color: var(--accent);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+  .rules h3 { margin: 0; font-size: var(--step-0); }
+  .rules p { margin: 0.25em 0 0; grid-column: 2; max-width: 62ch; color: var(--ink-muted); }
+</style>

@@ -22,6 +22,8 @@ const APPS = ["dst", "llc", "visas", "riviera", "mbr", "palmcentral", "eco", "fw
   "aivideo",
   // Tea guides and tea times, which publishes itself.
   "tea",
+  // The London calendar, which names GB7; and Acapulco, which publishes itself.
+  "l0n", "aca",
   // A tour archive on its own vvm.space host, tied to neither the group nor
   // the .lol five.
   "tokiohotel"];
@@ -44,6 +46,9 @@ const PUBLISHER = {
   mxo: "https://mxo.lol/#organization",
   aivideo: "https://aivideo.zone/#organization",
   tea: "https://tea.ceo/#organization",
+  // gb7.uk names l0n.uk among its own sites and declares this @id.
+  l0n: "https://gb7.uk/#organization",
+  aca: "https://acapulco.world/#organization",
   tokiohotel: "https://tokiohotel.vvm.space/#organization",
 };
 const publisherFor = (app) => PUBLISHER[app] ?? ORGANIZATION_ID;

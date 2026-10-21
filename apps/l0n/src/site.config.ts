@@ -1,0 +1,26 @@
+// What this site calls itself. Everything here is identity: the same on
+// every page, and the part a new site has to get right before anything
+// else. It lives outside Layout.astro because that file is a template, and
+// a template gets copied — these strings are exactly the part of a copy
+// that must not survive it.
+import { publisher, feed } from "./content";
+
+export const site = {
+  siteName: "London Calendar",
+  // The tooltip on the wordmark, and the one slot on every page of the site
+  // that is free to say what the site is: the link's own text is the name,
+  // so a title repeating it would say nothing twice.
+  homeTitle: "London's big dates for the year ahead, each from its organiser",
+  titleSuffix: "London",
+  // What this site is for, in one phrase, for tools/seo-check.mjs and for
+  // BaseLayout: the words that have to appear in the title, the h1 and the
+  // description of every page a reader could arrive on from a search.
+  keyword: "London",
+  lang: "en-GB",
+  publisher,
+  networkFooter: false,
+  partnerDisclosure: false,
+  footerLinks: [{ href: "/about/", label: "About" }],
+  /** Turns on the RSS autodiscovery link in the head. */
+  feedTitle: feed.title,
+};

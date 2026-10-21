@@ -40,6 +40,10 @@ const SITES = [
   { app: "aivideo", host: "aivideo.zone" },
   // Tea guides and the tea times of the day, independent like aivideo.
   { app: "tea", host: "tea.ceo" },
+  // London's big dates on a .uk domain, published by GB7 (gb7.uk).
+  { app: "l0n", host: "l0n.uk" },
+  // Acapulco, in Spanish, on its own domain.
+  { app: "aca", host: "acapulco.world" },
   // Both of these were missing from this list, and so from every test in
   // this file, until 3 October 2026. A green suite said nothing about them:
   // 399 anchors on tokiohotel and two on eco shipped with no title
@@ -785,7 +789,7 @@ describe("event calendars", () => {
     dst: "events", llc: "events", visas: "events", riviera: "events", mbr: "events",
     palmcentral: "events", eco: "events", fwf: "events", nyc42: "events", ldn: "events",
     lnd: "events", sol2go: "events", cmx: "eventos", mxo: "eventos", vien: "veranstaltungen",
-    musical: "events", tick: "events",
+    musical: "events", tick: "events", l0n: "events", aca: "eventos",
   };
   // Where the calendar is offered. Everywhere that is the events index, whose
   // address is the calendar's name; on musical the runs are the front page and
@@ -878,7 +882,7 @@ describe("shipped SVG", () => {
 describe("news feeds", () => {
   const FEEDS = [
     "cmx", "dst", "eco", "fwf", "ldn", "llc", "lnd", "mbr", "musical", "mxo",
-    "nyc42", "palmcentral", "riviera", "sol2go", "tick", "vien", "visas", "aivideo", "tea",
+    "nyc42", "palmcentral", "riviera", "sol2go", "tick", "vien", "visas", "aivideo", "tea", "l0n", "aca",
   ];
   const read = (app) => {
     const file = path.join(REPO, "apps", app, "dist", "rss.xml");
@@ -1593,6 +1597,11 @@ describe("how much of each site is the template", () => {
     dst: 25, llc: 16, visas: 19, riviera: 15, mbr: 17, palmcentral: 24,
     eco: 30, fwf: 20, musical: 35, nyc42: 27, ldn: 25, lnd: 25, cmx: 32, mxo: 25,
     sol2go: 30, vien: 30, tick: 36, aivideo: 37, tea: 32,
+    // Both recorded on 21 October 2026, their first day: l0n measured 16.4
+    // with four events and one roundup, aca 23.5 with five and one — small
+    // sites, so the chrome is a large share of each page. They fall as
+    // entries arrive.
+    l0n: 17, aca: 24,
   };
 
   test("no site is more template than the ceiling it recorded", async () => {

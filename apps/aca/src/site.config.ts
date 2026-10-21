@@ -1,0 +1,30 @@
+// What this site calls itself. Everything here is identity: the same on
+// every page, and the part a new site has to get right before anything
+// else. It lives outside Layout.astro because that file is a template, and
+// a template gets copied — these strings are exactly the part of a copy
+// that must not survive it.
+import { publisher, feed } from "./content";
+
+export const site = {
+  siteName: "Agenda Acapulco",
+  // The tooltip on the wordmark, and the one slot on every page of the site
+  // that is free to say what the site is: the link's own text is the name,
+  // so a title repeating it would say nothing twice.
+  homeTitle: "Qué hacer en Acapulco: conciertos y torneos con la fecha confirmada",
+  titleSuffix: "Acapulco",
+  // What this site is for, in one phrase, for tools/seo-check.mjs and for
+  // BaseLayout: the words that have to appear in the title, the h1 and the
+  // description of every page a reader could arrive on from a search — and
+  // the words the title suffix exists to supply when they are missing.
+  keyword: "Acapulco",
+  // The site publishes in Spanish: this is what <html lang> and the
+  // structured data say, and what the shared chrome picks its own two
+  // strings from.
+  lang: "es-MX",
+  publisher,
+  networkFooter: false,
+  partnerDisclosure: false,
+  footerLinks: [{ href: "/acerca/", label: "Acerca" }],
+  /** Turns on the RSS autodiscovery link in the head. */
+  feedTitle: feed.title,
+};

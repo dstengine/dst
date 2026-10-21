@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SectionNav from "@dst/ui/SectionNav.astro";
+import NewsList from "@dst/ui/NewsList.astro";
+import { news, siteId, newsBase } from "../content";
+import { newsBySite } from "@dst/content/news";
+import { eventsBySite } from "@dst/content/events";
+import { sections, NAV } from "../sections";
+
+const items = newsBySite(siteId);
+const sectionLinks = sections([...eventsBySite(siteId), ...items]);
+// An index holding fewer than three entries is thinner than the pages it
+// links to, so it stays out of the index until it has something to be an
+// index of. It keeps `follow` either way — the articles must stay reachable.
+const thin = items.length < 3;
+---
+<Layout title={news.title} description={news.description} noindex={thin}>
+  <section class="container hero">
+    <h1>{news.h1}</h1>
+    <p class="lede">{news.lede}</p>
+  </section>
+  <section class="container">
+    <SectionNav sections={sectionLinks} allHref="/" {...NAV} />
+    <NewsList locale="es-MX" items={items} newsBase={newsBase} />
+  </section>
+</Layout>

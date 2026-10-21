@@ -1,0 +1,43 @@
+---
+import BaseLayout from "@dst/ui/BaseLayout.astro";
+import { site } from "../site.config";
+import { promoted } from "../sections";
+import "../styles/theme.css";
+
+interface Props {
+  /** Forwarded to BaseLayout: see its `prose` prop. */
+  prose?: boolean;
+  title: string;
+  description: string;
+  jsonLd?: Record<string, unknown>[];
+  image?: string;
+  noindex?: boolean;
+}
+const { title, description, jsonLd, image, noindex, prose } = Astro.props;
+
+const nav = [
+  { href: "/", label: "The year", title: "London's big dates for the year ahead", icon: "home" },
+  // Second, not last: it is the one link here about what is being asked
+  // for this month, and it removes itself when the last date under it has
+  // gone. `title` is the section's own, so the tooltip is not the label.
+  ...(promoted
+    ? [{ href: `/${promoted.slug}/`, label: promoted.label, title: promoted.title, icon: "star" }]
+    : []),
+  { href: "/news/", label: "News", title: "London dates as their organisers fix them", icon: "news" },
+  { href: "/events/", label: "Events", title: "London events for the year ahead, by date", icon: "events" },
+  { href: "/about/", label: "About", title: "Who publishes the London calendar and how every date is checked", icon: "id" },
+];
+
+---
+<BaseLayout
+  {...site}
+  prose={prose}
+  title={title}
+  description={description}
+  nav={nav}
+  jsonLd={jsonLd}
+  image={image}
+  noindex={noindex}
+>
+  <slot />
+</BaseLayout>

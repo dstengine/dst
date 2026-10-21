@@ -1,0 +1,33 @@
+# Agenda Acapulco — qué hacer en Acapulco
+
+> Conciertos, tenis, pádel y lo que viene a Acapulco, cada fecha como la publicó quien organiza. Cada entrada nombra la fuente de la que salió y el día en que se verificó contra ella. Publicación independiente: no es medio de gobierno, no vende boletos y no representa a ningún recinto.
+
+Cómo trabaja este sitio, en cinco reglas:
+
+- **Cada dato nombra su fuente y la fecha en que se revisó.** La fuente se imprime como texto, no como liga.
+- **Nada se publica con una fecha que no se pudo confirmar.** Una fecha que sólo se reportó, y que quien organiza no publicó, espera.
+- **Qué hay y qué abre, no qué salió mal.** Ni política, ni nota roja, ni tragedia.
+- **Elegimos lo mejor y decimos por qué.** Señalar lo mejor de algo es el trabajo; hundir un negocio con nombre, no.
+- **Una página existe cuando hay algo que poner en ella.** No hay plantillas vacías esperando contenido.
+
+## Qué encuentra aquí quien lee
+
+- [Eventos](https://acapulco.world/eventos/): eventos con fecha confirmada, con horario, recinto, boletos y precios cuando quien organiza los publicó.
+- [Noticias](https://acapulco.world/noticias/): fechas que se anuncian y boletos que salen a la venta.
+- [Acerca](https://acapulco.world/acerca/): las reglas de arriba, escritas largo.
+
+## De dónde salen los datos
+
+De quien organiza: Mundo Imperial para Arena GNP Seguros y el Forum Mundo Imperial, MEXTENIS para el Abierto Mexicano de Tenis. Cada entrada imprime ese nombre y la fecha de verificación. Lo que no se ha anunciado se dice que no se ha anunciado.
+
+## Eventos
+
+- [Abierto Mexicano de Tenis 2027](https://acapulco.world/eventos/abierto-mexicano-de-tenis-2027/): El Abierto Mexicano de Tenis 2027, el ATP 500 de Acapulco, se juega del 20 al 27 de febrero; el cuadro principal va del lunes 22 a la final del sábado 27. Boletos a la venta desde el 19 de octubre.
+- [Emmanuel & Mijares: «Two Amigos» en Arena GNP Seguros](https://acapulco.world/eventos/emmanuel-mijares-two-amigos-acapulco-2026/): Emmanuel y Mijares llegan a Acapulco con «Two Amigos» el martes 29 de diciembre de 2026 a las 21:00 h, en Arena GNP Seguros. Boletos en taquilla y en los canales oficiales.
+- [GNP México Major Premier Pádel Acapulco 2026](https://acapulco.world/eventos/gnp-mexico-major-premier-padel-acapulco-2026/): El GNP México Major Premier Pádel se juega en Arena GNP Seguros, en Acapulco, del 23 al 29 de noviembre de 2026: abono para toda la semana o el Final Pack del 26 al 29.
+- [Montaner – El Último Regreso, en el Forum Mundo Imperial](https://acapulco.world/eventos/ricardo-montaner-acapulco-2026/): Ricardo Montaner llega a Acapulco con «El Último Regreso» el domingo 15 de noviembre de 2026 a las 21:00 h, en el Forum Mundo Imperial. Boletos en Funticket y en taquilla.
+- [Alejandro Sanz en Acapulco: «¿Y Ahora Qué? 2026»](https://acapulco.world/eventos/alejandro-sanz-acapulco-2026/): Alejandro Sanz trae su gira «¿Y Ahora Qué? 2026» a Acapulco el sábado 31 de octubre, en Arena GNP Seguros. Boletos en las taquillas de la arena y en Superboletos.
+
+## Noticias
+
+- [Qué viene a Acapulco hasta febrero: Sanz, Montaner, el pádel y el Abierto](https://acapulco.world/noticias/que-viene-a-acapulco-hasta-febrero-2027/): Alejandro Sanz el 31 de octubre, Montaner el 15 de noviembre, el pádel del 23 al 29, Emmanuel y Mijares el 29 de diciembre y el Abierto de Tenis en febrero: las fechas confirmadas en Acapulco.

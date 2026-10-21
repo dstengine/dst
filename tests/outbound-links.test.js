@@ -26,6 +26,8 @@ const APPS = ["dst", "llc", "visas", "riviera", "mbr", "palmcentral", "eco", "fw
   "aivideo",
   // Tea guides and tea times, independent of the group.
   "tea",
+  // London's big dates, published by GB7; and Acapulco, which publishes itself.
+  "l0n", "aca",
   // A tour archive on its own vvm.space host, tied to neither the group nor
   // the .lol five.
   "tokiohotel"];
@@ -45,6 +47,10 @@ const OWN_DOMAINS = ["fwf.lol", "musical.today",
   "aivideo.zone",
   // Tea guides.
   "tea.ceo",
+  // GB7, the free-tools publisher, and the London calendar it publishes.
+  "gb7.uk", "l0n.uk",
+  // Acapulco.
+  "acapulco.world",
   // The tour archive. Named exactly, not as a vvm.space wildcard: most of
   // that zone is old A records pointing at machines that are no longer ours.
   "tokiohotel.vvm.space"];

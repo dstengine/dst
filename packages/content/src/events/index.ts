@@ -13,13 +13,17 @@ import { items as fwf } from "./fwf.ts";
 import { items as nyc42 } from "./nyc42.ts";
 import { items as ldn } from "./ldn.ts";
 import { items as lnd } from "./lnd.ts";
+// l0n.uk — a .uk sibling of the two London .lol sites, published by GB7.
+import { items as l0n } from "./l0n.ts";
+// acapulco.world — a standalone domain that publishes itself.
+import { items as aca } from "./aca.ts";
 import { items as cmx } from "./cmx.ts";
 import { items as mxo } from "./mxo.ts";
 import { items as sol2go } from "./sol2go.ts";
 import { items as vien } from "./vien.ts";
 import { items as tick } from "./tick.ts";
 
-const BY_SITE: Record<string, EventItem[]> = { dst, llc, visas, riviera, mbr, palmcentral, eco, fwf, nyc42, ldn, lnd, cmx, mxo, sol2go, vien, tick };
+const BY_SITE: Record<string, EventItem[]> = { dst, llc, visas, riviera, mbr, palmcentral, eco, fwf, nyc42, ldn, lnd, l0n, aca, cmx, mxo, sol2go, vien, tick };
 
 export const allEvents: EventItem[] = Object.values(BY_SITE).flat();
 
