@@ -186,7 +186,7 @@ export const runs: Run[] = [
       { slug: "tickets-chicago-dubai-ticketmaster", name: "Ticketmaster AE" },
     ],
     summary:
-      "The first Broadway theatrical production ever staged at Coca-Cola Arena, brought in by Marquee Global Events: eight performances over five days in December, in a room that holds seventeen thousand people. Chicago was built for a Broadway house a tenth that size, which is the whole reason to see what it does with an arena. The first two days are matinees only; the last three add an evening.",
+      "The first Broadway theatrical production ever staged at Coca-Cola Arena, brought in by Marquee Global Events and Orbis Global Events: eight performances over five days in December, in a room that holds seventeen thousand people. Chicago was built for a Broadway house a tenth that size, which is the whole reason to see what it does with an arena. The first two days are matinees only; the last three add an evening.",
     ageGuidance:
       "12+ only. Everyone over 12 needs their own ticket, and anyone under 16 must be with a parent or an adult aged 18 or over. Government-issued photo ID may be asked for at the door.",
     faq: [
@@ -201,6 +201,22 @@ export const runs: Run[] = [
       {
         q: "When do the tickets arrive?",
         a: "The arena sends e-tickets five days before the performance, not at the moment of booking.",
+      },
+      {
+        q: "When do the doors open?",
+        a: "The arena opens two hours before the advertised start: at 1pm for a 3pm matinee and at 6pm for an 8pm performance.",
+      },
+      {
+        q: "Can I bring a bag?",
+        a: "A small one. The arena's limit is 30cm by 30cm, and backpacks are not allowed in at all. Anything larger goes to the Prohibited Items Kiosk outside the arena, which charges for it.",
+      },
+      {
+        q: "How do I get there, and is there parking?",
+        a: "There is paid parking on site, limited and first come, first served. It is ticketless, run by PARKONIC, and charged to your Salik account by default. There is no valet. Taxis and ride-hailing cars drop off in a zone in front of entrances A, B and C. The arena names Burj Khalifa/Dubai Mall as its nearest Metro station.",
+      },
+      {
+        q: "Can I eat and drink there?",
+        a: "Not anything bought outside: outside food and drink are not allowed in. Inside there are more than 35 food and drink counters across several levels, ten of them Tempo, which can also be ordered online with the ticket. The arena is licensed, though what is served varies by event. Once you leave, you cannot come back in.",
       },
     ],
     tags: ["arena", "gulf"],
