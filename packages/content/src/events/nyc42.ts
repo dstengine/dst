@@ -1192,7 +1192,7 @@ export const items: EventItem[] = [
   {
     slug: "sxsw-2027",
     createdAt: "2026-09-08T20:26:58+04:00",
-    updatedAt: "2026-10-20T18:27:34+04:00",
+    updatedAt: "2026-10-21T16:23:16+04:00",
     site: "nyc42",
     image: "/covers/sxsw-2027.jpg",
     imageAlt: "A long row of narrow paper bars in amber, ochre and cream, standing together on one level line, on a dark brown ground",
@@ -1202,7 +1202,7 @@ export const items: EventItem[] = [
     title: "SXSW 2027",
     titleSeo: "SXSW 2027: Austin dates and badge prices",
     summary:
-      "Austin's conference, film, music and comedy festivals run together March 15 to 21, 2027, a March trip from New York. Badges start at $550, and early-bird pricing ended on September 17.",
+      "Austin's conference, film, music and comedy festivals run together March 15 to 21, 2027, a March trip from New York. Badges start at $625 now that the early-bird window has closed, and SXSW says the rate will rise again.",
     start: "2027-03-15",
     end: "2027-03-21",
     utcOffset: "-05:00",
@@ -1211,23 +1211,23 @@ export const items: EventItem[] = [
     country: "United States",
     organizer: "SXSW",
     category: "Convention",
-    tickets: { priceFrom: 550, priceTo: 1395, currency: "USD" },
+    tickets: { priceFrom: 625, priceTo: 1495, currency: "USD" },
     source: {
       name: "SXSW",
       url: "https://www.sxsw.com/",
-      verifiedOn: "2026-09-08",
+      verifiedOn: "2026-10-21",
     },
     ticket: { url: "https://www.sxsw.com/", label: "Badges" },
     body: [
-      "Four festivals share one week and one city, and the badge you buy decides which of them you are actually at. That is the whole decision, and it is cheaper if it is made this month.",
+      "Four festivals share one week and one city, and the badge you buy decides which of them you are actually at. That is the whole decision, and it gets dearer the longer it is left.",
       "## SXSW 2027 dates",
       "<strong>March 15 to 21, 2027</strong>, in <strong>Austin, Texas</strong>. The event has run since <strong>1987</strong>.",
       "## The four halves of it",
-      "The <strong>Innovation Conference</strong>, the <strong>Film &amp; TV Festival</strong>, the <strong>Music Festival</strong> and the <strong>Comedy Festival</strong>, with <strong>13 content tracks</strong> across them \u2014 among them tech and AI, startups, the creator economy, design, health, gaming, sport and climate.",
+      "The <strong>Innovation Conference</strong>, the <strong>Film &amp; TV Festival</strong>, the <strong>Music Festival</strong> and the <strong>Comedy Festival</strong>, with <strong>13 content tracks</strong> across them — among them tech and AI, startups, the creator economy, design, health, gaming, sport and climate.",
       "## The badges",
-      "<strong>Platinum, $1,395</strong> \u2014 all four. <strong>Innovation, $895.</strong> <strong>Film &amp; TV, $775.</strong> <strong>Music, $550.</strong> Group rates exist.",
-      "## The deadline that matters now",
-      "Early-bird pricing runs to <strong>September 17</strong>, and the organisers put the gap between it and the walk-up rate at <strong>up to $900</strong>. That is the largest single number on this page and it expires six months before the event.",
+      "<strong>Platinum, $1,495</strong> — all four. <strong>Innovation, $995.</strong> <strong>Film &amp; TV, $850.</strong> <strong>Music, $625.</strong> Group rates exist, and a Music Festival wristband without the conference is $159. These are the October 2026 rates; at early-bird, which closed on September 17, they were $1,395, $895, $775 and $550.",
+      "## The deadline that mattered",
+      "Early-bird pricing ran to <strong>September 17</strong>, and the organisers put the gap between it and the walk-up rate at <strong>up to $900</strong>. The badge page now says only that prices will increase again, with no date — so what is on this page is the rate after the first step, and the date of the next one is not announced.",
     ],
     faq: [
       {
@@ -1236,19 +1236,19 @@ export const items: EventItem[] = [
       },
       {
         q: "How much is an SXSW badge?",
-        a: "<strong>$550</strong> for Music, <strong>$775</strong> for Film &amp; TV, <strong>$895</strong> for Innovation and <strong>$1,395</strong> for Platinum, which covers all four festivals.",
+        a: "<strong>$625</strong> for Music, <strong>$850</strong> for Film &amp; TV, <strong>$995</strong> for Innovation and <strong>$1,495</strong> for Platinum, which covers all four festivals — the rates in October 2026, after early-bird closed at $550 to $1,395.",
       },
       {
-        q: "When does early-bird pricing end?",
-        a: "<strong>September 17.</strong> The organisers put the saving against the walk-up rate at up to <strong>$900</strong>.",
+        q: "When did early-bird pricing end?",
+        a: "<strong>September 17, 2026.</strong> The organisers put the saving against the walk-up rate at up to <strong>$900</strong>; SXSW says the rate will rise again but gives no date.",
       },
       {
         q: "Do I need the Platinum badge?",
-        a: "Only if you intend to move between the four festivals. A single-festival badge is a third of the price, and the four run at once rather than in sequence \u2014 so the question is how much of the week you would really spend outside your own track.",
+        a: "Only if you intend to move between the four festivals. A single-festival badge is $625 to $995 against $1,495, and the four run at once rather than in sequence — so the question is how much of the week you would really spend outside your own track.",
       },
     ],
     expertise:
-      "The badge tiers are not a quality ladder, they are a map of the week, and the $845 between Music and Platinum buys optionality rather than access to anything better. Most people who buy Platinum spend the week in one or two tracks anyway, because the four festivals run concurrently in venues spread across a city and the walking is real. The other thing worth knowing from New York is that March in Austin is the week the whole industry is there, which means flights and rooms are priced accordingly and are booked long before the badge deadline \u2014 the $900 saved on the early bird is easy to lose twice over on a hotel booked in January.",
+      "The badge tiers are not a quality ladder, they are a map of the week, and the $870 between Music and Platinum buys optionality rather than access to anything better. Most people who buy Platinum spend the week in one or two tracks anyway, because the four festivals run concurrently in venues spread across a city and the walking is real. The other thing worth knowing from New York is that March in Austin is the week the whole industry is there, which means flights and rooms are priced accordingly and are booked long before the badge deadline \u2014 the $900 saved on the early bird is easy to lose twice over on a hotel booked in January.",
   },
 
   {
@@ -1307,7 +1307,7 @@ export const items: EventItem[] = [
   {
     slug: "art-basel-miami-beach-2026",
     createdAt: "2026-09-08T20:26:58+04:00",
-    updatedAt: "2026-10-20T18:27:34+04:00",
+    updatedAt: "2026-10-21T16:23:16+04:00",
     site: "nyc42",
     image: "/covers/art-basel-miami-beach-2026.jpg",
     imageAlt: "Three square sheets of paper hung in a row on a dark brown ground, one amber, one russet, one yellow",
@@ -1317,7 +1317,7 @@ export const items: EventItem[] = [
     title: "Art Basel Miami Beach 2026",
     titleSeo: "Art Basel Miami Beach 2026: three public days",
     summary:
-      "The American edition of Art Basel runs December 4 to 6 in Miami Beach, a December trip from New York, and the week the rest of Miami Beach builds its own fairs around.",
+      "The American edition of Art Basel opens to the public December 4 to 6 in Miami Beach, a December trip from New York, with a day ticket at $92 and the weekend at $170 — the week the rest of Miami Beach builds its own fairs around.",
     start: "2026-12-04",
     end: "2026-12-06",
     utcOffset: "-05:00",
@@ -1326,27 +1326,28 @@ export const items: EventItem[] = [
     country: "United States",
     organizer: "Art Basel",
     category: "Exhibitions",
+    tickets: { priceFrom: 92, priceTo: 170, currency: "USD" },
     source: {
       name: "Art Basel",
       url: "https://www.artbasel.com/miami-beach",
-      verifiedOn: "2026-09-08",
+      verifiedOn: "2026-10-21",
     },
-    ticket: { url: "https://www.artbasel.com/miami-beach", label: "Tickets" },
+    ticket: { url: "https://www.artbasel.com/miami-beach/buy-tickets", label: "Tickets" },
     body: [
       "Three days in December do something to Miami Beach that no other three days do, and most of what happens that week is not the fair.",
       "## Art Basel Miami Beach 2026 dates",
-      "<strong>December 4 to 6, 2026</strong>, in <strong>Miami Beach</strong>. UBS is the global lead partner.",
-      "## What is published and what is not",
-      "The dates are confirmed on Art Basel's own page. The gallery list, the ticket prices and the split between preview and public days are not on it yet, so they are not here \u2014 the ticket link goes to the source rather than to a number invented for a listing.",
+      "<strong>December 4 to 6, 2026</strong>, in <strong>Miami Beach</strong>, are the public days; VIP days run from 4pm on <strong>December 2</strong> and through <strong>December 3</strong>. UBS is the global lead partner.",
+      "## Tickets",
+      "On sale in Art Basel's own shop. A <strong>day ticket is $92</strong> for December 4, 5 or 6, single entry; <strong>First Access, $105</strong>, opens the doors an hour early, at 11am; the <strong>weekend ticket, $170</strong>, covers December 5 and 6 with re-entry; a <strong>reduced day ticket is $68</strong> for students, 13-to-18-year-olds, seniors, veterans and residents of Miami Beach, with proof; and a <strong>$132 combination ticket</strong> adds a public day at Design Miami, on the same day or another.",
     ],
     faq: [
       {
         q: "When is Art Basel Miami Beach 2026?",
-        a: "<strong>December 4 to 6, 2026</strong>, in Miami Beach.",
+        a: "<strong>December 4 to 6, 2026</strong>, in Miami Beach, after VIP days on December 2 and 3.",
       },
       {
         q: "How much are tickets?",
-        a: "Not yet published. Art Basel's own page carries a tickets link but no prices for this edition, so any figure quoted elsewhere is from a previous year.",
+        a: "<strong>$92</strong> for a day, <strong>$105</strong> with entry an hour early, <strong>$170</strong> for the weekend of December 5 and 6, <strong>$68</strong> reduced with proof, and <strong>$132</strong> with a day at Design Miami included — all from Art Basel's own shop.",
       },
     ],
     expertise:
@@ -1594,7 +1595,7 @@ export const items: EventItem[] = [
   {
     slug: "austin-city-limits-2026",
     createdAt: "2026-09-08T20:54:08+04:00",
-    updatedAt: "2026-10-20T18:27:34+04:00",
+    updatedAt: "2026-10-21T16:23:16+04:00",
     site: "nyc42",
     image: "/covers/austin-city-limits-2026.jpg",
     imageAlt: "Six flat green paper trees on short orange trunks standing in a row across a dark brown ground, one of them much smaller than the rest",
@@ -1604,7 +1605,7 @@ export const items: EventItem[] = [
     title: "Austin City Limits 2026",
     titleSeo: "Austin City Limits 2026: Zilker Park dates",
     summary:
-      "Two weekends in Zilker Park at the start of October, a trip from New York either weekend — the same bill played twice, in a park inside Austin rather than a field outside it.",
+      "Two weekends in Zilker Park at the start of October 2026, now past — a trip from New York either weekend, the same bill played twice, in a park inside Austin rather than a field outside it.",
     start: "2026-10-02",
     end: "2026-10-11",
     venue: "Zilker Park",
@@ -1615,11 +1616,11 @@ export const items: EventItem[] = [
     source: {
       name: "Austin City Limits Music Festival",
       url: "https://www.aclfestival.com/",
-      verifiedOn: "2026-09-08",
+      verifiedOn: "2026-10-21",
     },
     ticket: { url: "https://www.aclfestival.com/", label: "Tickets" },
     body: [
-      "The nearest of these to happening: three weeks from now, and in a city that is easy to fly into.",
+      "Over for this year: two weekends at the start of October, in a city that is easy to fly into. The 2027 dates are not announced; the festival's page offers a sign-up to hear first.",
       "## Austin City Limits 2026 dates",
       "<strong>October 2\u20134 and October 9\u201311, 2026</strong>, at <strong>Zilker Park</strong> in <strong>Austin, Texas</strong>. Two weekends, the same festival twice.",
       "## Why the park matters",
