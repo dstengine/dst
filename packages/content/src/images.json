@@ -22814,6 +22814,38 @@
         ]
       ]
     },
+    "/covers/coney-island-polar-bear-plunge-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/coney-island-polar-bear-plunge-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/coney-island-polar-bear-plunge-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/coney-island-polar-bear-plunge-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/coney-island-polar-bear-plunge-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/coney-island-polar-bear-plunge-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/coney-island-polar-bear-plunge-2027-1024.webp"
+        ]
+      ]
+    },
     "/covers/dia-de-los-muertos-nybg-2026.jpg": {
       "width": 1024,
       "height": 1024,

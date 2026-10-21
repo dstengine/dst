@@ -2600,7 +2600,7 @@ export const items: EventItem[] = [
   {
     slug: "rockefeller-center-christmas-tree-lighting-2026",
     createdAt: "2026-10-14T21:15:00+04:00",
-    updatedAt: "2026-10-14T21:15:00+04:00",
+    updatedAt: "2026-10-21T21:35:00+04:00",
     site: "nyc42",
     image: "/covers/rockefeller-center-christmas-tree-lighting-2026.jpg",
     imageAlt: "A tall lit Christmas tree with a star on top, standing above a fenced oval ice rink at night",
@@ -2684,6 +2684,12 @@ export const items: EventItem[] = [
         title: "The 100th Macy's Thanksgiving Day Parade",
         text: "Thanksgiving morning, six days before the lighting.",
       },
+      {
+        href: "/events/coney-island-polar-bear-plunge-2027/",
+        eyebrow: "January 1",
+        title: "Coney Island Polar Bear Plunge",
+        text: "New Year's Day at the far end of the D, F, N and Q: a dip in the Atlantic for charity.",
+      },
     ],
     expertise:
       "Two dates, two different visits. Meet the Tree Day on November 7 is the one with room to stand: the tree is there, unlit, and the plaza is not yet the crush of December. The lighting on December 2 is a television event first, and the plaza around it fills accordingly. If the point is to see the tree lit rather than to be present at the switch, any evening after the ceremony does that, once Rockefeller Center publishes its visiting hours.",
@@ -2692,7 +2698,7 @@ export const items: EventItem[] = [
   {
     slug: "bryant-park-winter-village-2026",
     createdAt: "2026-10-14T21:15:00+04:00",
-    updatedAt: "2026-10-14T21:15:00+04:00",
+    updatedAt: "2026-10-21T21:35:00+04:00",
     site: "nyc42",
     image: "/covers/bryant-park-winter-village-2026.jpg",
     imageAlt: "Skaters on an outdoor rink with two dome kiosks, string lights and a city skyline at dusk",
@@ -2768,8 +2774,116 @@ export const items: EventItem[] = [
         title: "Christmas Spectacular at Radio City",
         text: "The Rockettes' season, a short walk up Sixth Avenue.",
       },
+      {
+        href: "/events/coney-island-polar-bear-plunge-2027/",
+        eyebrow: "January 1",
+        title: "Coney Island Polar Bear Plunge",
+        text: "For those who prefer their cold water liquid: the New Year's Day dip at Coney Island.",
+      },
     ],
     expertise:
       "Free admission means the rink is busiest at the obvious times: December weekends and the holiday weeks. The opening weeks, from October 28 into November, are likely to be the quieter stretch, with the ice and the shops already open. From November 19 the rink runs until midnight, and a late weekday session is the way to get ice with room on it in December. Plan the Holiday Shops first if they are the reason for the trip, since they close on January 3 while the rink runs to the end of February.",
+  },
+
+  {
+    slug: "coney-island-polar-bear-plunge-2027",
+    createdAt: "2026-10-21T21:35:00+04:00",
+    updatedAt: "2026-10-21T21:35:00+04:00",
+    site: "nyc42",
+    image: "/covers/coney-island-polar-bear-plunge-2027.jpg",
+    imageAlt:
+      "Small paper figures in Santa hats and swimsuits running hand in hand across a grey beach beside a huge white-crested wave, a Ferris wheel, a roller coaster and a lattice tower behind them, on an ochre ground",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Coney Island Polar Bear Plunge 2027",
+    cardTitle: "Coney Island Polar Bear Plunge",
+    titleSeo: "Coney Island Polar Bear Plunge 2027: New York, Jan 1",
+    summary:
+      "New York's New Year's Day swim: the Coney Island Polar Bear Club opens the Atlantic to everyone on Friday, January 1, 2027, at Stillwell Avenue. Free to join, with donations going to Coney Island nonprofits.",
+    start: "2027-01-01",
+    utcOffset: "-05:00",
+    venue: "Coney Island Beach at Stillwell Avenue",
+    city: "New York",
+    country: "United States",
+    geo: {
+      name: "Coney Island Beach at Stillwell Avenue",
+      lat: 40.5724,
+      lng: -73.9814,
+    },
+    organizer: "Coney Island Polar Bear Club",
+    category: "New Year",
+    tickets: { priceFrom: 0, currency: "USD" },
+    ticket: {
+      url: "https://runsignup.com/Race/NY/Brooklyn/ConeyIslandPolarBearPlunge",
+      label: "Registration and donations",
+      sells: false,
+    },
+    source: {
+      name: "Coney Island Polar Bear Club",
+      url: "https://runsignup.com/Race/Info/NY/Brooklyn/ConeyIslandPolarBearPlunge",
+      verifiedOn: "2026-10-21",
+    },
+    body: [
+      "Every January 1, the Coney Island Polar Bear Club invites anyone who wants to start the year in the Atlantic to come and do it. The next plunge is on <strong>Friday, January 1, 2027</strong>, on the beach at <strong>Stillwell Avenue</strong> in Brooklyn. There is no fee. The club asks for a donation instead, and the money goes to Coney Island's nonprofits.",
+      "## What is announced for 2027",
+      "So far, the date. NYC Tourism lists the plunge for January 1, 2027, and says registration opens in November. The club has not published the 2027 schedule yet. The times, prices and rules below are from the last plunge, on January 1, 2026, which was the club's 123rd.",
+      "## How the day ran last time",
+      "On-site check-in opened at <strong>10am</strong>, and the plunge opened at <strong>11am</strong>. Registration closed at <strong>1pm</strong>, the last chance to go in was <strong>1:30pm</strong>, and the plunge ended at <strong>2pm</strong>. It is a window of a few hours, not a single starting gun.",
+      "## Registering and donating",
+      "There was no fee, but a minimum donation of <strong>$30</strong> was strongly encouraged, and donations are not refunded. Anyone who raised <strong>$50</strong> or more got a limited-edition beanie at the registration table, while supplies lasted. The five biggest fundraisers went into the water first, with the club's president. If you register online in advance, you get a QR code by email. If you sign up on the day, you register by scanning a QR code with your phone. There is no minimum age, but anyone under 18 needs a waiver signed by a parent or guardian who is there at check-in.",
+      "## Check-in, changing and lockers",
+      "Everyone checks in on <strong>Stillwell Avenue, in the Luna Park Scream Zone lot</strong>, and gets a wristband. Plunging without one can get you a fine. NYC Parks provides changing facilities on the Boardwalk at Stillwell Avenue, but nobody watches them. Lockers can be rented inside Luna Park, first come, first served, and they had to be emptied by 2pm. Wear a bathing suit or a costume. Bring a towel, old shoes and warm clothes for afterward.",
+      "## Getting there",
+      "Take the <strong>D, F, N or Q</strong> to Coney Island–Stillwell Avenue: the club strongly recommends the subway. Street parking on Stillwell Avenue, West 15th and West 10th Streets is limited. There is also a lot at Maimonides Park, 1904 Surf Avenue.",
+      "## Where the money goes",
+      "The plunge raises money for local organizations chosen by the club. They include the Alliance for Coney Island, the Coney Island History Project, Coney Island Library, Coney Island USA and the New York Aquarium.",
+      "## The rest of the season",
+      "The holiday season opens in Midtown with the <a href=\"/events/rockefeller-center-christmas-tree-lighting-2026/\" title=\"Rockefeller Center Christmas Tree Lighting 2026\">Rockefeller Center tree lighting</a> on December 2, and it keeps going after the plunge. The <a href=\"/events/christmas-spectacular-radio-city-2026/\" title=\"Christmas Spectacular at Radio City 2026\">Christmas Spectacular at Radio City</a> plays until January 4, and the <a href=\"/events/bryant-park-winter-village-2026/\" title=\"Winter Village at Bryant Park 2026\">Winter Village at Bryant Park</a> keeps skating until February 28.",
+    ],
+    faq: [
+      {
+        q: "When is the 2027 Coney Island Polar Bear Plunge?",
+        a: "Friday, January 1, 2027, on Coney Island Beach at Stillwell Avenue in Brooklyn. The club has not published the 2027 times. In 2026, check-in opened at 10am, the plunge opened at 11am and it ended at 2pm.",
+      },
+      {
+        q: "Does it cost anything?",
+        a: "There is no fee to plunge. In 2026 the club strongly encouraged a minimum donation of $30, and donations are non-refundable.",
+      },
+      {
+        q: "When does registration open?",
+        a: "In November, according to NYC Tourism. You can register online in advance or on the day, by scanning a QR code with your phone.",
+      },
+      {
+        q: "Is there a minimum age?",
+        a: "No. Anyone under 18 needs a waiver signed by a parent or guardian who is present at check-in.",
+      },
+      {
+        q: "Where do I change and leave my things?",
+        a: "NYC Parks provides changing facilities on the Boardwalk at Stillwell Avenue, but they are not monitored. Lockers can be rented inside Luna Park, first come, first served.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/bryant-park-winter-village-2026/",
+        eyebrow: "October 28 – February 28",
+        title: "Winter Village at Bryant Park",
+        text: "Skating in Midtown all winter, with free admission, for those who prefer their cold water frozen.",
+      },
+      {
+        href: "/events/rockefeller-center-christmas-tree-lighting-2026/",
+        eyebrow: "December 2",
+        title: "Rockefeller Center Tree Lighting",
+        text: "The season's opening night in Midtown, a month before the plunge closes it on the beach.",
+      },
+      {
+        href: "/events/christmas-spectacular-radio-city-2026/",
+        eyebrow: "November 4 – January 4",
+        title: "Christmas Spectacular at Radio City",
+        text: "The Rockettes play on until three days after the plunge.",
+      },
+    ],
+    expertise:
+      "Register at home. Check-in is one point on Stillwell Avenue for thousands of people, and a QR code that is already in your email is the difference between queuing and plunging. The plunge is a window, not a start: in 2026 it ran from 11am until the last entries at 1:30pm. Arriving after eleven on the D, F, N or Q still works, as long as you are through check-in well before the last entries. The things people forget are the ones the club lists last: old shoes for the sand and a dry layer for the ride home.",
   },
 ];
