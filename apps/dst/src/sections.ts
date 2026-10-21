@@ -19,7 +19,7 @@ import type { FeedItem } from "@dst/content/sections";
 // them and win the route silently.
 import { VERTICALS } from "./verticals";
 
-const RESERVED = ["contact", "events", "news", "go", "li", "sections", ...VERTICALS.map((v) => v.slug)];
+const RESERVED = ["contact", "events", "news", "go", "li", "sections", "network", ...VERTICALS.map((v) => v.slug)];
 
 // Only subjects the group actually works in get a page. "Trade" and
 // "Energy" are real labels on a card and would be pages about someone

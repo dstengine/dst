@@ -25,6 +25,10 @@ export const site = {
   // The hub lists the whole network in its footer, so every page of it
   // reaches the inner pages no other site links to.
   footerSites: NETWORK,
+  // The footer carries two or three pages per site; the rest — every guide,
+  // every entry — is one page further, so that no page in the network is
+  // reachable from the sitemap alone.
+  footerLinks: [{ href: "/network/", label: "Every page in the network" }],
   /** Turns on the RSS autodiscovery link in the head. */
   feedTitle: feed.title,
 };

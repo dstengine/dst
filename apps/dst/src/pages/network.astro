@@ -1,0 +1,206 @@
+---
+// Every page on the group's six sites, on one page of the hub.
+//
+// It exists for discovery. The subdomains carry a hundred-odd pages between
+// them and a crawler had found none: the hub's footer reaches each site's
+// front page and two or three inner ones, and nothing reaches the rest —
+// not the guides past the first three, not the news, not the events. A page
+// only the sitemap knows about is a page a crawler fetches last and
+// revisits least, and a sitemap on a host with no inbound links is read
+// late to begin with.
+//
+// So this is the one place in the network that links to everything, once.
+// The hand-written pages come from the network map, which the footer
+// already reads; the entries come from the feeds themselves, so a page
+// added to either shows up here on the next build without anyone
+// remembering it. One page rather than a longer footer: a hundred links
+// under every page is a link farm, and a hundred links on a page whose
+// subject is "where everything is" is an index.
+import Layout from "../layouts/Layout.astro";
+import { NETWORK } from "@dst/content/network";
+import { newsBySite } from "@dst/content/news";
+import { eventsBySite } from "@dst/content/events";
+
+const hasPage = (item: { body?: string[] }) => Array.isArray(item.body) && item.body.length > 0;
+
+const day = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
+const when = (iso: string) => day.format(new Date(`${iso}T00:00:00Z`));
+
+const sites = NETWORK.map((site) => {
+  const base = `https://${site.host}`;
+  const news = newsBySite(site.key)
+    .filter(hasPage)
+    .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0))
+    .map((item) => ({ href: `${base}/news/${item.slug}/`, label: item.title, title: item.summary, date: item.date }));
+  const events = eventsBySite(site.key)
+    .filter(hasPage)
+    .sort((a, b) => (a.start < b.start ? 1 : a.start > b.start ? -1 : 0))
+    .map((item) => ({ href: `${base}/events/${item.slug}/`, label: item.title, title: item.summary, date: item.start }));
+  // The front page and the two feed indexes are pages too, and the ones a
+  // crawler most needs: each of them links to everything under it.
+  const pages = [{ href: `${base}/`, label: "Front page", title: `${site.name} — ${site.blurb}` }, ...site.pages];
+  return {
+    ...site,
+    base,
+    pages,
+    news,
+    events,
+    total: pages.length + (news.length ? 1 + news.length : 0) + (events.length ? 1 + events.length : 0),
+  };
+});
+const total = sites.reduce((n, s) => n + s.total, 0);
+---
+<Layout
+  title="Every page on the sites DST runs from Dubai"
+  description="An index of every page on the six sites DST runs from Dubai — company formation, UAE residency, Palm Central, Azizi Riviera, MBR City and the eco record: guides, news and events, each linked directly."
+>
+  <section class="container hero">
+    <p class="eyebrow">Index</p>
+    <h1>Every page on the sites DST runs from Dubai</h1>
+    <p class="lede">
+      Each of the group's sites has an address and a feed of its own, and
+      most of what they publish is read on that site and nowhere else. This
+      page lists all of it: the guides, the news and the events of all six,
+      so that anything published anywhere in the network is one click from
+      here. The list is drawn from the sites themselves and grows with them.
+    </p>
+  </section>
+
+  <section class="container">
+    <nav class="net-jump" aria-label="Sites on this page">
+      {sites.map((s) => (
+        <a href={`#${s.key}`} title={`${s.name} — ${s.total} pages`}>{s.name}</a>
+      ))}
+    </nav>
+    <p class="net-count">{total} pages across {sites.length} sites.</p>
+
+    {sites.map((s) => (
+      <section class="net-site" id={s.key} aria-labelledby={`${s.key}-name`}>
+        <header class="net-head">
+          <h2 id={`${s.key}-name`}>
+            <a href={s.base} title={`${s.name} — ${s.blurb}`}>{s.name}</a>
+          </h2>
+          <p class="net-host">{s.host} · {s.total} pages</p>
+          <p class="net-blurb">{s.blurb}</p>
+        </header>
+        <div class="net-grid">
+          <div class="net-group">
+            <h3>Pages</h3>
+            <ul class="net-list">
+              {s.pages.map((p) => (
+                <li><a href={p.href} title={p.title}>{p.label}</a></li>
+              ))}
+            </ul>
+          </div>
+          {s.news.length > 0 && (
+            <div class="net-group">
+              <h3><a href={`${s.base}/news/`} title={`${s.name}: every news entry, newest first`}>News</a></h3>
+              <ul class="net-list net-dated">
+                {s.news.map((n) => (
+                  <li>
+                    <a href={n.href} title={n.title}>{n.label}</a>
+                    <time datetime={n.date}>{when(n.date)}</time>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {s.events.length > 0 && (
+            <div class="net-group">
+              <h3><a href={`${s.base}/events/`} title={`${s.name}: the events calendar`}>Events</a></h3>
+              <ul class="net-list net-dated">
+                {s.events.map((e) => (
+                  <li>
+                    <a href={e.href} title={e.title}>{e.label}</a>
+                    <time datetime={e.date}>{when(e.date)}</time>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      </section>
+    ))}
+  </section>
+</Layout>
+
+<style>
+  /* A row of in-page jumps: six names, wrapping as they need to. Chips
+     rather than a list, because the row is a control for a long page, not
+     content of its own. */
+  .net-jump { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-2); }
+  .net-jump a {
+    display: inline-flex; align-items: center; min-height: 44px;
+    padding: 0 var(--space-2);
+    border: 1px solid var(--border); border-radius: 999px;
+    text-decoration: none; color: inherit;
+  }
+  .net-jump a:hover { border-color: var(--accent); color: var(--accent); }
+  .net-count { margin: var(--space-2) 0 0; color: var(--ink-muted); }
+
+  .net-site {
+    margin-top: var(--space-5);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--border);
+    /* Jumping to a site from the row above lands its heading clear of the
+       sticky header, not under it. */
+    scroll-margin-top: var(--space-6, 5rem);
+  }
+  .net-head h2 { margin: 0; }
+  .net-head h2 a { text-decoration: none; color: inherit; }
+  .net-head h2 a:hover { color: var(--accent); }
+  .net-host {
+    margin: var(--space-1) 0 0;
+    font-family: var(--font-mono); font-size: var(--step--1);
+    letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-faint);
+  }
+  .net-blurb { margin: var(--space-1) 0 0; color: var(--ink-muted); max-width: 60ch; }
+
+  /* One column on a phone, the three groups side by side where they fit.
+     Fixed steps, not auto-fit: three groups into an auto-fit track came out
+     as two and a stray one. */
+  .net-grid {
+    display: grid; gap: var(--space-3) var(--space-4);
+    grid-template-columns: 1fr;
+    margin-top: var(--space-3);
+  }
+  @media (min-width: 64rem) { .net-grid { grid-template-columns: repeat(3, 1fr); } }
+  .net-group { min-width: 0; }
+  .net-group h3 {
+    margin: 0 0 var(--space-1);
+    font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink-muted); font-weight: 600;
+  }
+  .net-group h3 a { color: inherit; text-decoration: none; }
+  .net-group h3 a:hover { color: var(--accent); text-decoration: underline; }
+
+  /* One destination per row, each its own target, ruled apart — the same
+     shape as the footer's deep links, because it is the same kind of list.
+     The rule is the affordance; an underline as well made a long column
+     look hatched. */
+  .net-list { list-style: none; margin: 0; padding: 0; }
+  .net-list li {
+    display: flex; align-items: center; justify-content: space-between; gap: var(--space-2);
+    border-bottom: 1px solid var(--border);
+  }
+  .net-list li:last-child { border-bottom: 0; }
+  /* The whole row height is the target, not the one line of text in it:
+     the anchor grows to the row and centres its label, so a thumb landing
+     anywhere on the row lands on the link. */
+  .net-list a {
+    display: flex; align-items: center; flex: 1 1 auto;
+    min-height: 2.5rem; padding: 0.35rem 0;
+    text-decoration: none;
+  }
+  .net-list a:hover { color: var(--accent); text-decoration: underline; }
+  /* The date is a label on the row, never the thing that wraps: the title
+     takes the width, the date keeps its one line. */
+  .net-dated time {
+    flex: 0 0 auto;
+    font-family: var(--font-mono); font-size: var(--step--1);
+    color: var(--ink-faint); white-space: nowrap;
+  }
+  @media (max-width: 640px) {
+    .net-list a { min-height: 44px; }
+  }
+</style>

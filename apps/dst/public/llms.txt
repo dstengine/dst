@@ -19,6 +19,7 @@
 Subjects written out in full on dst.llc itself, rather than summarised. Each section mirrors the structure of a vertical's own site and repeats none of its text.
 
 - [Sections](https://dst.llc/sections/): index of the subjects covered in depth.
+- [Every page in the network](https://dst.llc/network/): one index of every page on the six sites — guides, news and events — each linked directly.
 - [Company formation](https://dst.llc/llc/): eight pages — free zones, mainland, registration, tax, banking, financing, payments.
 - [Residency and visas](https://dst.llc/visas/): five pages — the Golden Visa and the two durations two official sources give it, which property qualifies, sponsoring a family, and what to settle before a consultation.
 
