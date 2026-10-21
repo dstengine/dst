@@ -11,6 +11,8 @@ import { songsSection } from "./songs";
 export const shows: Show[] = [
   {
     slug: "chicago",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-22T00:47:07+04:00",
     title: "Chicago The Musical",
     short: "Chicago",
     officialSlug: "chicago-official",
@@ -33,6 +35,8 @@ export const shows: Show[] = [
       {
         id: "Xx_eoxvYvc8",
         slug: "all-that-jazz",
+        createdAt: "2026-08-29T07:43:23+04:00",
+        updatedAt: "2026-10-20T18:06:57+04:00",
         title: "All That Jazz — official video",
         channel: "Chicago The Musical",
         checkedOn: "29 August 2026",
@@ -46,6 +50,8 @@ export const shows: Show[] = [
       {
         id: "MnQKqtWT6nM",
         slug: "all-that-jazz-broadway",
+        createdAt: "2026-08-29T07:43:23+04:00",
+        updatedAt: "2026-10-20T18:06:57+04:00",
         title: "CHICAGO on Broadway: All That Jazz",
         channel: "Chicago The Musical",
         checkedOn: "29 August 2026",
@@ -59,6 +65,8 @@ export const shows: Show[] = [
       {
         id: "ly3ccyTI-Js",
         slug: "cell-block-tango",
+        createdAt: "2026-08-29T07:43:23+04:00",
+        updatedAt: "2026-10-20T18:06:57+04:00",
         title: "Cell Block Tango — 1997 cast recording",
         channel: "Michael Berresse — Topic",
         checkedOn: "29 August 2026",
@@ -72,6 +80,8 @@ export const shows: Show[] = [
       {
         id: "_qLrcTzUkGo",
         slug: "razzle-dazzle",
+        createdAt: "2026-08-29T07:43:23+04:00",
+        updatedAt: "2026-10-20T18:06:57+04:00",
         title: "Razzle Dazzle — 1997 cast recording",
         channel: "James Naughton — Topic",
         checkedOn: "29 August 2026",
@@ -86,6 +96,8 @@ export const shows: Show[] = [
     sections: [
       {
         slug: "about",
+        createdAt: "2026-08-29T07:43:23+04:00",
+        updatedAt: "2026-10-20T18:06:57+04:00",
         image: "/covers/chicago-about.jpg",
         imageAlt: "Cut-paper illustration: a tilted fedora hat resting on a bentwood chair.",
         label: "About the show",
@@ -103,6 +115,8 @@ export const shows: Show[] = [
       songsSection,
       {
         slug: "online",
+        createdAt: "2026-08-29T07:43:23+04:00",
+        updatedAt: "2026-10-20T18:06:57+04:00",
         image: "/covers/chicago-online.jpg",
         imageAlt: "Cut-paper illustration: a rounded screen with a play triangle and a strip of film sprockets.",
         label: "Watch online",
@@ -117,6 +131,8 @@ export const shows: Show[] = [
       },
       {
         slug: "tickets",
+        createdAt: "2026-08-29T07:43:23+04:00",
+        updatedAt: "2026-10-20T18:06:57+04:00",
         image: "/covers/chicago-tickets.jpg",
         imageAlt: "Cut-paper illustration: a fan of overlapping torn paper stubs with perforated edges.",
         label: "Tickets",
@@ -133,6 +149,8 @@ export const shows: Show[] = [
   },
   {
     slug: "cats",
+    createdAt: "2026-09-01T17:13:05+04:00",
+    updatedAt: "2026-10-20T18:06:57+04:00",
     title: "Cats",
     titleSeo: "Cats the musical 2026–27 tour: 23 theatres, dates",
     officialSlug: "cats-official",
@@ -153,6 +171,8 @@ export const shows: Show[] = [
     sections: [
       {
         slug: "about",
+        createdAt: "2026-09-01T17:13:05+04:00",
+        updatedAt: "2026-10-20T18:06:57+04:00",
         image: "/covers/cats-about.jpg",
         imageAlt: "Cut-paper illustration: a curled cat silhouette on a stack of angular junkyard shapes.",
         label: "About the show",
@@ -168,6 +188,8 @@ export const shows: Show[] = [
       },
       {
         slug: "tickets",
+        createdAt: "2026-09-01T17:13:05+04:00",
+        updatedAt: "2026-10-20T18:06:57+04:00",
         image: "/covers/cats-tickets.jpg",
         imageAlt: "Cut-paper illustration: a single torn paper stub with a perforated edge and one paw-shaped punch hole.",
         label: "Tickets",
@@ -184,6 +206,8 @@ export const shows: Show[] = [
   },
   {
     slug: "les-miserables",
+    createdAt: "2026-09-08T23:36:49+04:00",
+    updatedAt: "2026-10-20T18:06:57+04:00",
     title: "Les Misérables",
     officialSlug: "les-miserables-official",
     officialDomain: "london.lesmis.com",
@@ -203,6 +227,8 @@ export const shows: Show[] = [
     sections: [
       {
         slug: "about",
+        createdAt: "2026-09-08T23:36:49+04:00",
+        updatedAt: "2026-10-20T18:06:57+04:00",
         image: "/covers/les-miserables-about.jpg",
         imageAlt: "Cut-paper illustration: a torn tricolour flag rising from a stack of angular barricade shapes.",
         label: "About the show",
@@ -218,6 +244,8 @@ export const shows: Show[] = [
       },
       {
         slug: "tickets",
+        createdAt: "2026-09-08T23:36:49+04:00",
+        updatedAt: "2026-10-20T18:06:57+04:00",
         image: "/covers/les-miserables-tickets.jpg",
         imageAlt: "Cut-paper illustration: a single torn paper stub on a red ground, with a round eyelet punched near one end.",
         label: "Tickets",
@@ -234,6 +262,8 @@ export const shows: Show[] = [
   },
   {
     slug: "phantom-of-the-opera",
+    createdAt: "2026-09-08T23:36:49+04:00",
+    updatedAt: "2026-10-20T18:06:57+04:00",
     title: "The Phantom of the Opera",
     short: "Phantom of the Opera",
     officialSlug: "phantom-official",
@@ -254,6 +284,8 @@ export const shows: Show[] = [
     sections: [
       {
         slug: "about",
+        createdAt: "2026-09-08T23:36:49+04:00",
+        updatedAt: "2026-10-20T18:06:57+04:00",
         image: "/covers/phantom-of-the-opera-about.jpg",
         imageAlt: "Cut-paper illustration: a half-mask shape beside a hanging cluster of faceted glass drops.",
         label: "About the show",
@@ -269,6 +301,8 @@ export const shows: Show[] = [
       },
       {
         slug: "tickets",
+        createdAt: "2026-09-08T23:36:49+04:00",
+        updatedAt: "2026-10-20T18:06:57+04:00",
         image: "/covers/phantom-of-the-opera-tickets.jpg",
         imageAlt: "Cut-paper illustration: a single torn paper stub on a warm ground, notched at one end and perforated at the other.",
         label: "Tickets",
@@ -285,6 +319,8 @@ export const shows: Show[] = [
   },
   {
     slug: "lost-boys",
+    createdAt: "2026-09-13T03:28:04+04:00",
+    updatedAt: "2026-10-20T18:06:57+04:00",
     title: "The Lost Boys",
     titleSeo: "The Lost Boys musical: Broadway dates and tickets",
     officialSlug: "lost-boys-official",
@@ -305,6 +341,8 @@ export const shows: Show[] = [
     sections: [
       {
         slug: "about",
+        createdAt: "2026-09-13T03:28:04+04:00",
+        updatedAt: "2026-10-20T18:06:57+04:00",
         image: "/covers/lost-boys-about.jpg",
         imageAlt: "Cut-paper illustration: a boardwalk ferris wheel silhouette under a crescent moon, a bat shape crossing it.",
         label: "About the show",
@@ -320,6 +358,8 @@ export const shows: Show[] = [
       },
       {
         slug: "tickets",
+        createdAt: "2026-09-13T03:28:04+04:00",
+        updatedAt: "2026-10-20T18:06:57+04:00",
         image: "/covers/lost-boys-tickets.jpg",
         imageAlt: "Cut-paper illustration: a single torn paper stub with a crescent moon punched near one end.",
         label: "Tickets",
@@ -337,6 +377,8 @@ export const shows: Show[] = [
   },
   {
     slug: "wicked",
+    createdAt: "2026-09-13T03:28:04+04:00",
+    updatedAt: "2026-10-20T18:06:57+04:00",
     title: "Wicked",
     titleSeo: "Wicked the musical on Broadway: dates and tickets",
     officialSlug: "wicked-official",
@@ -357,6 +399,8 @@ export const shows: Show[] = [
     sections: [
       {
         slug: "about",
+        createdAt: "2026-09-13T03:28:04+04:00",
+        updatedAt: "2026-10-20T18:06:57+04:00",
         image: "/covers/wicked-about.jpg",
         imageAlt: "Cut-paper illustration: a tall pointed hat with a wide brim, alone on a flat horizon.",
         label: "About the show",
@@ -372,6 +416,8 @@ export const shows: Show[] = [
       },
       {
         slug: "tickets",
+        createdAt: "2026-09-13T03:28:04+04:00",
+        updatedAt: "2026-10-20T18:06:57+04:00",
         image: "/covers/wicked-tickets.jpg",
         imageAlt: "Cut-paper illustration: a single torn paper stub with a five-pointed star punched near one end.",
         label: "Tickets",
@@ -389,6 +435,8 @@ export const shows: Show[] = [
   },
   {
     slug: "wanted",
+    createdAt: "2026-09-13T06:49:58+04:00",
+    updatedAt: "2026-10-20T18:06:57+04:00",
     title: "Wanted",
     titleSeo: "Wanted the musical on Broadway: dates and tickets",
     officialSlug: "wanted-official",
@@ -409,6 +457,8 @@ export const shows: Show[] = [
     sections: [
       {
         slug: "about",
+        createdAt: "2026-09-13T06:49:58+04:00",
+        updatedAt: "2026-10-20T18:06:57+04:00",
         image: "/covers/wanted-about.jpg",
         imageAlt: "Cut-paper illustration: a blank sheet of paper pinned to a plank wall by one tack, its corner curling.",
         label: "About the show",
@@ -423,6 +473,8 @@ export const shows: Show[] = [
       },
       {
         slug: "tickets",
+        createdAt: "2026-09-13T06:49:58+04:00",
+        updatedAt: "2026-10-20T18:06:57+04:00",
         image: "/covers/wanted-tickets.jpg",
         imageAlt: "Cut-paper illustration: a single torn paper stub with a small square punched near one end.",
         label: "Tickets",
@@ -440,6 +492,8 @@ export const shows: Show[] = [
   },
   {
     slug: "galileo",
+    createdAt: "2026-09-13T06:49:58+04:00",
+    updatedAt: "2026-10-20T18:06:57+04:00",
     title: "Galileo",
     titleSeo: "Galileo the musical: Broadway dates and tickets",
     officialSlug: "galileo-official",
@@ -460,6 +514,8 @@ export const shows: Show[] = [
     sections: [
       {
         slug: "about",
+        createdAt: "2026-09-13T06:49:58+04:00",
+        updatedAt: "2026-09-13T06:49:58+04:00",
         image: "/covers/galileo-about.jpg",
         imageAlt: "Cut-paper illustration: the concentric rings of an orrery around one small brass sphere.",
         label: "About the show",
@@ -474,6 +530,8 @@ export const shows: Show[] = [
       },
       {
         slug: "tickets",
+        createdAt: "2026-09-13T06:49:58+04:00",
+        updatedAt: "2026-10-20T18:06:57+04:00",
         image: "/covers/galileo-tickets.jpg",
         imageAlt: "Cut-paper illustration: a single torn paper stub with a round hole punched near one end.",
         label: "Tickets",
@@ -491,6 +549,8 @@ export const shows: Show[] = [
   },
   {
     slug: "fantasticks",
+    createdAt: "2026-09-13T06:49:58+04:00",
+    updatedAt: "2026-10-20T18:06:57+04:00",
     title: "The Fantasticks",
     titleSeo: "The Fantasticks musical on Broadway: tickets",
     officialSlug: "fantasticks-official",
@@ -511,6 +571,8 @@ export const shows: Show[] = [
     sections: [
       {
         slug: "about",
+        createdAt: "2026-09-13T06:49:58+04:00",
+        updatedAt: "2026-09-13T06:49:58+04:00",
         image: "/covers/fantasticks-about.jpg",
         imageAlt: "Cut-paper illustration: a flat paper moon hanging above a low garden wall.",
         label: "About the show",
@@ -525,6 +587,8 @@ export const shows: Show[] = [
       },
       {
         slug: "tickets",
+        createdAt: "2026-09-13T06:49:58+04:00",
+        updatedAt: "2026-10-20T18:06:57+04:00",
         image: "/covers/fantasticks-tickets.jpg",
         imageAlt: "Cut-paper illustration: a single torn paper stub notched along one long edge.",
         label: "Tickets",
@@ -542,6 +606,8 @@ export const shows: Show[] = [
   },
   {
     slug: "dolly",
+    createdAt: "2026-09-13T06:49:58+04:00",
+    updatedAt: "2026-09-13T06:49:58+04:00",
     title: "DOLLY: A True Original Musical",
     short: "Dolly",
     titleSeo: "Dolly the musical on Broadway: dates and tickets",
@@ -563,6 +629,8 @@ export const shows: Show[] = [
     sections: [
       {
         slug: "about",
+        createdAt: "2026-09-13T06:49:58+04:00",
+        updatedAt: "2026-09-13T06:49:58+04:00",
         image: "/covers/dolly-about.jpg",
         imageAlt: "Cut-paper illustration: a wide-brimmed hat with a tall feather above a descending flight of steps.",
         label: "About the show",
@@ -577,6 +645,8 @@ export const shows: Show[] = [
       },
       {
         slug: "tickets",
+        createdAt: "2026-09-13T06:49:58+04:00",
+        updatedAt: "2026-10-20T18:06:57+04:00",
         image: "/covers/dolly-tickets.jpg",
         imageAlt: "Cut-paper illustration: a single torn paper stub with a feather shape punched near one end.",
         label: "Tickets",
@@ -594,6 +664,8 @@ export const shows: Show[] = [
   },
   {
     slug: "evita",
+    createdAt: "2026-10-12T02:08:20+04:00",
+    updatedAt: "2026-10-12T02:08:20+04:00",
     title: "Evita",
     titleSeo: "Evita the musical on Broadway: dates and tickets",
     officialSlug: "evita-official",
@@ -614,6 +686,8 @@ export const shows: Show[] = [
     sections: [
       {
         slug: "about",
+        createdAt: "2026-10-12T02:08:20+04:00",
+        updatedAt: "2026-10-12T02:08:20+04:00",
         image: "/covers/evita-about.jpg",
         imageAlt: "Cut-paper illustration: a small curved iron balcony against a crimson ground, lit by a single cone of light, with petals falling beneath it.",
         label: "About the show",
@@ -628,6 +702,8 @@ export const shows: Show[] = [
       },
       {
         slug: "tickets",
+        createdAt: "2026-10-12T02:08:20+04:00",
+        updatedAt: "2026-10-12T02:08:20+04:00",
         image: "/covers/evita-tickets.jpg",
         imageAlt: "Cut-paper illustration: a single torn paper stub with a small star punched near one end.",
         label: "Tickets",
@@ -645,6 +721,8 @@ export const shows: Show[] = [
   },
   {
     slug: "purple-rain",
+    createdAt: "2026-10-12T02:08:20+04:00",
+    updatedAt: "2026-10-12T02:08:20+04:00",
     title: "Purple Rain",
     titleSeo: "Purple Rain the musical on Broadway: dates and tickets",
     officialSlug: "purple-rain-official",
@@ -665,6 +743,8 @@ export const shows: Show[] = [
     sections: [
       {
         slug: "about",
+        createdAt: "2026-10-12T02:08:20+04:00",
+        updatedAt: "2026-10-12T02:08:20+04:00",
         image: "/covers/purple-rain-about.jpg",
         imageAlt: "Cut-paper illustration: a white dove between sweeping purple streaks, above a pool of stage light on a red floor.",
         label: "About the show",
@@ -679,6 +759,8 @@ export const shows: Show[] = [
       },
       {
         slug: "tickets",
+        createdAt: "2026-10-12T02:08:20+04:00",
+        updatedAt: "2026-10-12T02:08:20+04:00",
         image: "/covers/purple-rain-tickets.jpg",
         imageAlt: "Cut-paper illustration: a single torn paper stub with a small raindrop-shaped hole near one corner.",
         label: "Tickets",
@@ -695,6 +777,8 @@ export const shows: Show[] = [
   },
   {
     slug: "paddington",
+    createdAt: "2026-10-12T02:08:20+04:00",
+    updatedAt: "2026-10-12T02:08:20+04:00",
     title: "Paddington The Musical",
     short: "Paddington",
     titleSeo: "Paddington The Musical: Broadway and London tickets",
@@ -716,6 +800,8 @@ export const shows: Show[] = [
     sections: [
       {
         slug: "about",
+        createdAt: "2026-10-12T02:08:20+04:00",
+        updatedAt: "2026-10-12T02:08:20+04:00",
         image: "/covers/paddington-about.jpg",
         imageAlt: "Cut-paper illustration: a battered suitcase with a blank luggage label, and a red hat resting on top.",
         label: "About the show",
@@ -730,6 +816,8 @@ export const shows: Show[] = [
       },
       {
         slug: "tickets",
+        createdAt: "2026-10-12T02:08:20+04:00",
+        updatedAt: "2026-10-12T02:08:20+04:00",
         image: "/covers/paddington-tickets.jpg",
         imageAlt: "Cut-paper illustration: a single torn paper stub with a small paw print punched near one end.",
         label: "Tickets",
@@ -747,6 +835,8 @@ export const shows: Show[] = [
   },
   {
     slug: "full-monty",
+    createdAt: "2026-10-12T02:08:20+04:00",
+    updatedAt: "2026-10-12T02:08:20+04:00",
     title: "The Full Monty",
     titleSeo: "The Full Monty musical on Broadway: dates and tickets",
     officialSlug: "full-monty-official",
@@ -767,6 +857,8 @@ export const shows: Show[] = [
     sections: [
       {
         slug: "about",
+        createdAt: "2026-10-12T02:08:20+04:00",
+        updatedAt: "2026-10-12T02:08:20+04:00",
         image: "/covers/full-monty-about.jpg",
         imageAlt: "Cut-paper illustration: a row of empty wooden chairs under a single spotlight, with a hard hat on one seat.",
         label: "About the show",
@@ -781,6 +873,8 @@ export const shows: Show[] = [
       },
       {
         slug: "tickets",
+        createdAt: "2026-10-12T02:08:20+04:00",
+        updatedAt: "2026-10-12T02:08:20+04:00",
         image: "/covers/full-monty-tickets.jpg",
         imageAlt: "Cut-paper illustration: a blank torn paper stub on a pink ground, with two red ribbon bows and a round brass eyelet.",
         label: "Tickets",
@@ -798,6 +892,8 @@ export const shows: Show[] = [
   },
   {
     slug: "maybe-happy-ending",
+    createdAt: "2026-10-12T02:08:20+04:00",
+    updatedAt: "2026-10-12T02:08:20+04:00",
     title: "Maybe Happy Ending",
     titleSeo: "Maybe Happy Ending the musical: Broadway tickets",
     officialSlug: "maybe-happy-ending-official",
@@ -818,6 +914,8 @@ export const shows: Show[] = [
     sections: [
       {
         slug: "about",
+        createdAt: "2026-10-12T02:08:20+04:00",
+        updatedAt: "2026-10-12T02:08:20+04:00",
         image: "/covers/maybe-happy-ending-about.jpg",
         imageAlt: "Cut-paper illustration: two small round robots side by side on a windowsill, a potted plant between them and a city beyond.",
         label: "About the show",
@@ -832,6 +930,8 @@ export const shows: Show[] = [
       },
       {
         slug: "tickets",
+        createdAt: "2026-10-12T02:08:20+04:00",
+        updatedAt: "2026-10-12T02:08:20+04:00",
         image: "/covers/maybe-happy-ending-tickets.jpg",
         imageAlt: "Cut-paper illustration: a single torn paper stub held by a small brass clip at one end.",
         label: "Tickets",
@@ -849,6 +949,8 @@ export const shows: Show[] = [
   },
   {
     slug: "jesus-christ-superstar",
+    createdAt: "2026-10-12T02:08:20+04:00",
+    updatedAt: "2026-10-12T02:08:20+04:00",
     title: "Jesus Christ Superstar",
     titleSeo: "Jesus Christ Superstar musical in London: tickets",
     officialSlug: "jesus-christ-superstar-official",
@@ -869,6 +971,8 @@ export const shows: Show[] = [
     sections: [
       {
         slug: "about",
+        createdAt: "2026-10-12T02:08:20+04:00",
+        updatedAt: "2026-10-12T02:08:20+04:00",
         image: "/covers/jesus-christ-superstar-about.jpg",
         imageAlt: "Cut-paper illustration: a ring of thorny branches around a burst of golden stage light.",
         label: "About the show",
@@ -883,6 +987,8 @@ export const shows: Show[] = [
       },
       {
         slug: "tickets",
+        createdAt: "2026-10-12T02:08:20+04:00",
+        updatedAt: "2026-10-12T02:08:20+04:00",
         image: "/covers/jesus-christ-superstar-tickets.jpg",
         imageAlt: "Cut-paper illustration: a single torn paper stub with a small crown shape punched near one end.",
         label: "Tickets",
@@ -900,6 +1006,8 @@ export const shows: Show[] = [
   },
   {
     slug: "rent",
+    createdAt: "2026-10-12T02:08:20+04:00",
+    updatedAt: "2026-10-12T02:08:20+04:00",
     title: "Rent",
     titleSeo: "Rent the musical in London: dates and tickets",
     officialSlug: "rent-official",
@@ -920,6 +1028,8 @@ export const shows: Show[] = [
     sections: [
       {
         slug: "about",
+        createdAt: "2026-10-12T02:08:20+04:00",
+        updatedAt: "2026-10-12T02:08:20+04:00",
         image: "/covers/rent-about.jpg",
         imageAlt: "Cut-paper illustration: a zigzag fire escape on a brick tenement, with a single candle burning on a windowsill.",
         label: "About the show",
@@ -934,6 +1044,8 @@ export const shows: Show[] = [
       },
       {
         slug: "tickets",
+        createdAt: "2026-10-12T02:08:20+04:00",
+        updatedAt: "2026-10-12T02:08:20+04:00",
         image: "/covers/rent-tickets.jpg",
         imageAlt: "Cut-paper illustration: a single torn paper stub with a candle-flame shape punched near one end.",
         label: "Tickets",
@@ -951,6 +1063,8 @@ export const shows: Show[] = [
   },
   {
     slug: "one-day",
+    createdAt: "2026-10-12T02:08:20+04:00",
+    updatedAt: "2026-10-12T02:08:20+04:00",
     title: "One Day",
     titleSeo: "One Day the musical in London: dates and tickets",
     officialSlug: "one-day-official",
@@ -971,6 +1085,8 @@ export const shows: Show[] = [
     sections: [
       {
         slug: "about",
+        createdAt: "2026-10-12T02:08:20+04:00",
+        updatedAt: "2026-10-12T02:08:20+04:00",
         image: "/covers/one-day-about.jpg",
         imageAlt: "Cut-paper illustration: two footprints side by side on the crest of a golden hill, under a round summer sun.",
         label: "About the show",
@@ -985,6 +1101,8 @@ export const shows: Show[] = [
       },
       {
         slug: "tickets",
+        createdAt: "2026-10-12T02:08:20+04:00",
+        updatedAt: "2026-10-12T02:08:20+04:00",
         image: "/covers/one-day-tickets.jpg",
         imageAlt: "Cut-paper illustration: a single torn paper stub with a small sun shape punched near one end.",
         label: "Tickets",
@@ -1001,6 +1119,8 @@ export const shows: Show[] = [
   },
   {
     slug: "into-the-woods",
+    createdAt: "2026-10-12T02:08:20+04:00",
+    updatedAt: "2026-10-12T02:08:20+04:00",
     title: "Into the Woods",
     titleSeo: "Into the Woods musical in London: dates and tickets",
     officialSlug: "into-the-woods-official",
@@ -1021,6 +1141,8 @@ export const shows: Show[] = [
     sections: [
       {
         slug: "about",
+        createdAt: "2026-10-12T02:08:20+04:00",
+        updatedAt: "2026-10-12T02:08:20+04:00",
         image: "/covers/into-the-woods-about.jpg",
         imageAlt: "Cut-paper illustration: a dark forest of tall trunks, a small red-hooded figure on a winding red path and a single golden slipper.",
         label: "About the show",
@@ -1035,6 +1157,8 @@ export const shows: Show[] = [
       },
       {
         slug: "tickets",
+        createdAt: "2026-10-12T02:08:20+04:00",
+        updatedAt: "2026-10-12T02:08:20+04:00",
         image: "/covers/into-the-woods-tickets.jpg",
         imageAlt: "Cut-paper illustration: a blank torn paper stub set inside a torn red paper frame.",
         label: "Tickets",
@@ -1052,6 +1176,8 @@ export const shows: Show[] = [
   },
   {
     slug: "pride",
+    createdAt: "2026-10-12T02:08:20+04:00",
+    updatedAt: "2026-10-12T02:08:20+04:00",
     title: "Pride",
     titleSeo: "Pride the musical in London: dates and tickets",
     officialSlug: "pride-official",
@@ -1072,6 +1198,8 @@ export const shows: Show[] = [
     sections: [
       {
         slug: "about",
+        createdAt: "2026-10-12T02:08:20+04:00",
+        updatedAt: "2026-10-12T02:08:20+04:00",
         image: "/covers/pride-about.jpg",
         imageAlt: "Cut-paper illustration: a miner's helmet with a glowing lamp on the grass, and a rainbow-striped paper ribbon streaming over green hills.",
         label: "About the show",
@@ -1086,6 +1214,8 @@ export const shows: Show[] = [
       },
       {
         slug: "tickets",
+        createdAt: "2026-10-12T02:08:20+04:00",
+        updatedAt: "2026-10-12T02:08:20+04:00",
         image: "/covers/pride-tickets.jpg",
         imageAlt: "Cut-paper illustration: a single torn paper stub with a small heart shape punched near one end.",
         label: "Tickets",

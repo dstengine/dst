@@ -13,6 +13,8 @@ import type { Collection } from "./types";
 export const collections: Collection[] = [
   {
     slug: "broadway",
+    createdAt: "2026-09-13T03:28:04+04:00",
+    updatedAt: "2026-10-12T02:08:20+04:00",
     name: "Broadway",
     city: "new-york",
     eyebrow: "The district, theatre by theatre",
@@ -65,6 +67,8 @@ export const collections: Collection[] = [
   },
   {
     slug: "halloween",
+    createdAt: "2026-09-13T03:28:04+04:00",
+    updatedAt: "2026-10-12T02:08:20+04:00",
     name: "Halloween",
     eyebrow: "Musicals for the last week of October",
     h1: "Halloween musicals: what is on, and what a seat costs",

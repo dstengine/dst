@@ -10,6 +10,8 @@ import type { Country } from "./types";
 export const countries: Country[] = [
   {
     slug: "uk",
+    createdAt: "2026-09-13T13:07:58+04:00",
+    updatedAt: "2026-09-13T13:21:58+04:00",
     short: "UK",
     name: "United Kingdom",
     in: "the United Kingdom",
@@ -23,6 +25,8 @@ export const countries: Country[] = [
   },
   {
     slug: "ireland",
+    createdAt: "2026-09-13T13:07:58+04:00",
+    updatedAt: "2026-09-13T13:21:58+04:00",
     short: "Ireland",
     name: "Ireland",
     in: "Ireland",
@@ -35,6 +39,8 @@ export const countries: Country[] = [
   },
   {
     slug: "uae",
+    createdAt: "2026-09-13T13:07:58+04:00",
+    updatedAt: "2026-09-13T13:21:58+04:00",
     short: "UAE",
     name: "United Arab Emirates",
     in: "the United Arab Emirates",
@@ -47,6 +53,8 @@ export const countries: Country[] = [
   },
   {
     slug: "usa",
+    createdAt: "2026-09-13T13:07:58+04:00",
+    updatedAt: "2026-09-13T13:21:58+04:00",
     short: "USA",
     name: "United States",
     in: "the United States",
@@ -59,6 +67,8 @@ export const countries: Country[] = [
   },
   {
     slug: "japan",
+    createdAt: "2026-09-13T13:07:58+04:00",
+    updatedAt: "2026-09-13T13:21:58+04:00",
     short: "Japan",
     name: "Japan",
     in: "Japan",

@@ -16,6 +16,8 @@ import type { Venue } from "./types";
 export const venues: Venue[] = [
   {
     slug: "ambassador-theatre",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T03:28:04+04:00",
     name: "Ambassador Theatre",
     city: "new-york",
     image: "/venues/ambassador-theatre.jpg",
@@ -54,6 +56,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "sondheim-theatre",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "Sondheim Theatre",
     city: "london",
     image: "/venues/sondheim-theatre.jpg",
@@ -94,6 +98,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "his-majestys-theatre",
+    createdAt: "2026-09-08T23:36:49+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "His Majesty's Theatre",
     city: "london",
     image: "/venues/his-majestys-theatre.jpg",
@@ -135,6 +141,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "coca-cola-arena",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "Coca-Cola Arena",
     rootSlug: "coca-cola-arena",
     city: "dubai",
@@ -179,6 +187,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "tokyu-theatre-orb",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "Tokyu Theatre Orb",
     city: "tokyo",
     image: "/venues/tokyu-theatre-orb.jpg",
@@ -214,6 +224,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "orix-theater",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-22T00:47:07+04:00",
     name: "Orix Theater",
     city: "osaka",
     address: "Shinmachi, Nishi-ku, Osaka 550-0012",
@@ -246,6 +258,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "new-wimbledon-theatre",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "New Wimbledon Theatre",
     city: "wimbledon",
     address: "93 The Broadway, Greater London, SW19 1QG",
@@ -282,6 +296,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "theatre-royal-plymouth",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "Theatre Royal Plymouth",
     city: "plymouth",
     address: "Derry's Cross, Plymouth, PL1 2TR",
@@ -317,6 +333,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "wales-millennium-centre",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "Wales Millennium Centre",
     city: "cardiff",
     address: "Bute Place, Cardiff, CF10 5AL",
@@ -351,6 +369,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "sheffield-lyceum",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "Sheffield Lyceum Theatre",
     city: "sheffield",
     address: "Tudor Square, Sheffield, S1 2LA",
@@ -385,6 +405,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "liverpool-empire",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "Liverpool Empire",
     city: "liverpool",
     address: "11 Lime Street, Liverpool, L1 1JE",
@@ -420,6 +442,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "newcastle-theatre-royal",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "Newcastle Theatre Royal",
     city: "newcastle",
     address: "100 Grey Street, Newcastle upon Tyne, NE1 6BR",
@@ -455,6 +479,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "bournemouth-pavilion",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "Bournemouth Pavilion Theatre",
     city: "bournemouth",
     address: "Westover Road, Bournemouth, BH1 2BU",
@@ -491,6 +517,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "kings-theatre-glasgow",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "King's Theatre",
     city: "glasgow",
     address: "335 Bath Street, Glasgow, G2 4JR",
@@ -525,6 +553,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "his-majestys-theatre-aberdeen",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "His Majesty’s Theatre",
     city: "aberdeen",
     address: "Rosemount Viaduct, Aberdeen City, AB25 1GL",
@@ -560,6 +590,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "opera-house-manchester",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "Manchester Opera House",
     city: "manchester",
     address: "3 Quay Street, Manchester, M3 3HP",
@@ -594,6 +626,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "grand-opera-house-york",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-23T01:15:27+04:00",
     name: "Grand Opera House York",
     city: "york",
     address: "Cumberland Street, York, YO1 9SW",
@@ -632,6 +666,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "blackpool-opera-house",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "Blackpool Opera House",
     city: "blackpool",
     address: "Church Street, Blackpool, FY1 1HU",
@@ -667,6 +703,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "nottingham-royal-concert-hall",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "Royal Concert Hall",
     city: "nottingham",
     address: "Theatre Square, City of Nottingham, NG1 5ND",
@@ -704,6 +742,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "alhambra-theatre-bradford",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "Alhambra Theatre",
     city: "bradford",
     address: "Morley Street, Bradford, BD7 1AJ",
@@ -739,6 +779,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "cliffs-pavilion-southend",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "Cliffs Pavilion",
     city: "southend",
     address: "San Remo Parade, Southend-on-Sea, SS0 7RD",
@@ -773,6 +815,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "congress-theatre-eastbourne",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "Congress Theatre",
     city: "eastbourne",
     address: "Carlisle Road, Eastbourne, BN21 4JR",
@@ -808,6 +852,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "birmingham-hippodrome",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "Birmingham Hippodrome",
     city: "birmingham",
     address: "Hurst Street, Birmingham, B5 4TB",
@@ -843,6 +889,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "norwich-theatre-royal",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "Norwich Theatre Royal",
     city: "norwich",
     address: "Theatre Street, Norwich, NR2 1RL",
@@ -878,6 +926,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "theatre-royal-brighton",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "Theatre Royal Brighton",
     city: "brighton",
     address: "11 New Road, Brighton, BN1 1UF",
@@ -912,6 +962,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "grand-opera-house-belfast",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "Grand Opera House Belfast",
     city: "belfast",
     address: "2-4 Great Victoria Street, Belfast City District, BT2 7HR",
@@ -947,6 +999,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "bristol-hippodrome",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "Bristol Hippodrome",
     city: "bristol",
     address: "St Augustine's Parade, Bristol, BS1 4UZ",
@@ -981,6 +1035,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "milton-keynes-theatre",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "Milton Keynes Theatre",
     city: "milton-keynes",
     // Rendered, not photographed: the only freely licensed picture of this
@@ -1014,6 +1070,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "hall-for-cornwall",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "Hall for Cornwall",
     city: "truro",
     address: "Back Quay, Truro, TR1 2LL",
@@ -1048,6 +1106,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "new-theatre-oxford",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "New Theatre Oxford",
     city: "oxford",
     address: "18-20 George Street, Oxford, OX1 2AG",
@@ -1082,6 +1142,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "hull-new-theatre",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "Hull New Theatre",
     city: "hull",
     address: "Kingston Square, Hull, HU1 3HF",
@@ -1116,6 +1178,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "venue-cymru",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "Venue Cymru",
     city: "llandudno",
     address: "Ffordd Gwynedd, Llandudno, LL30 1BB",
@@ -1149,6 +1213,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "sunderland-empire",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "Sunderland Empire",
     city: "sunderland",
     address: "High Street West, Sunderland, SR1 3EX",
@@ -1183,6 +1249,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "orchard-theatre-dartford",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "Orchard Theatre",
     city: "dartford",
     address: "1 Home Gardens, Dartford, DA1 1ED",
@@ -1216,6 +1284,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "woking-theatre",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "Woking Theatre (New Victoria)",
     city: "woking",
     address: "Victoria Way, Woking, GU21 6GQ",
@@ -1250,6 +1320,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "everyman-theatre-cheltenham",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "Everyman Theatre",
     city: "cheltenham",
     address: "7-10 Regent Street, Cheltenham, GL50 1HE",
@@ -1285,6 +1357,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "regent-theatre-stoke",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "Regent Theatre",
     city: "stoke",
     address: "Piccadilly, Stoke-on-Trent, ST1 1AP",
@@ -1322,6 +1396,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "edinburgh-playhouse",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "Edinburgh Playhouse",
     city: "edinburgh",
     address: "18-22 Picardy Place, City of Edinburgh, EH1 3AA",
@@ -1356,6 +1432,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "palace-theatre-manchester",
+    createdAt: "2026-09-01T17:13:05+04:00",
+    updatedAt: "2026-09-13T02:45:38+04:00",
     name: "Palace Theatre",
     city: "manchester",
     address: "97 Oxford Street, Manchester, M1 6FT",
@@ -1392,6 +1470,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "theatre-royal-glasgow",
+    createdAt: "2026-09-01T17:13:05+04:00",
+    updatedAt: "2026-09-01T20:58:36+04:00",
     name: "Theatre Royal",
     city: "glasgow",
     address: "Hope Street, Glasgow, G2 3QA",
@@ -1431,6 +1511,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "marlowe-theatre-canterbury",
+    createdAt: "2026-09-01T17:13:05+04:00",
+    updatedAt: "2026-09-01T20:58:36+04:00",
     name: "Marlowe Theatre",
     city: "canterbury",
     address: "The Friars, Canterbury, CT1 2AS",
@@ -1467,6 +1549,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "bord-gais-energy-theatre",
+    createdAt: "2026-09-01T17:13:05+04:00",
+    updatedAt: "2026-09-01T20:58:36+04:00",
     name: "Bord Gáis Energy Theatre",
     city: "dublin",
     address: "Grand Canal Square, Dublin, D02 PA03",
@@ -1502,6 +1586,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "mayflower-theatre-southampton",
+    createdAt: "2026-09-01T17:13:05+04:00",
+    updatedAt: "2026-09-01T20:58:36+04:00",
     name: "Mayflower Theatre",
     city: "southampton",
     address: "22–26 Commercial Road, Southampton, SO15 1GE",
@@ -1539,6 +1625,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "palace-theatre",
+    createdAt: "2026-09-13T03:28:04+04:00",
+    updatedAt: "2026-09-13T03:28:04+04:00",
     name: "Palace Theatre",
     city: "new-york",
     address: "160 West 47th Street, New York, NY 10036",
@@ -1571,6 +1659,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "gershwin-theatre",
+    createdAt: "2026-09-13T03:28:04+04:00",
+    updatedAt: "2026-09-13T03:28:04+04:00",
     name: "Gershwin Theatre",
     city: "new-york",
     address: "222 West 51st Street, New York, NY 10019",
@@ -1602,6 +1692,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "james-earl-jones-theatre",
+    createdAt: "2026-09-13T06:49:58+04:00",
+    updatedAt: "2026-09-13T06:49:58+04:00",
     name: "James Earl Jones Theatre",
     city: "new-york",
     address: "138 West 48th Street, New York, NY 10036",
@@ -1634,6 +1726,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "shubert-theatre",
+    createdAt: "2026-09-13T06:49:58+04:00",
+    updatedAt: "2026-09-13T06:49:58+04:00",
     name: "Shubert Theatre",
     city: "new-york",
     address: "225 West 44th Street, New York, NY 10036",
@@ -1666,6 +1760,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "hayes-theater",
+    createdAt: "2026-09-13T06:49:58+04:00",
+    updatedAt: "2026-09-13T06:49:58+04:00",
     name: "Hayes Theater",
     city: "new-york",
     address: "240 West 44th Street, New York, NY 10036",
@@ -1697,6 +1793,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "st-james-theatre",
+    createdAt: "2026-09-13T06:49:58+04:00",
+    updatedAt: "2026-09-13T06:49:58+04:00",
     name: "St. James Theatre",
     city: "new-york",
     address: "246 West 44th Street, New York, NY 10036",
@@ -1728,6 +1826,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "winter-garden-theatre",
+    createdAt: "2026-10-12T02:08:20+04:00",
+    updatedAt: "2026-10-12T02:08:20+04:00",
     name: "Winter Garden Theatre",
     city: "new-york",
     address: "1634 Broadway, New York, NY 10019",
@@ -1759,6 +1859,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "majestic-theatre",
+    createdAt: "2026-10-12T02:08:20+04:00",
+    updatedAt: "2026-10-12T02:08:20+04:00",
     name: "Majestic Theatre",
     city: "new-york",
     address: "245 West 44th Street, New York, NY 10036",
@@ -1790,6 +1892,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "al-hirschfeld-theatre",
+    createdAt: "2026-10-12T02:08:20+04:00",
+    updatedAt: "2026-10-12T02:08:20+04:00",
     name: "Al Hirschfeld Theatre",
     city: "new-york",
     address: "302 West 45th Street, New York, NY 10036",
@@ -1821,6 +1925,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "todd-haimes-theatre",
+    createdAt: "2026-10-12T02:08:20+04:00",
+    updatedAt: "2026-10-12T02:08:20+04:00",
     name: "Todd Haimes Theatre",
     city: "new-york",
     address: "227 West 42nd Street, New York, NY 10036",
@@ -1852,6 +1958,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "belasco-theatre",
+    createdAt: "2026-10-12T02:08:20+04:00",
+    updatedAt: "2026-10-12T02:08:20+04:00",
     name: "Belasco Theatre",
     city: "new-york",
     address: "111 West 44th Street, New York, NY 10036",
@@ -1883,6 +1991,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "savoy-theatre",
+    createdAt: "2026-10-12T02:08:20+04:00",
+    updatedAt: "2026-10-12T02:08:20+04:00",
     name: "Savoy Theatre",
     city: "london",
     address: "Savoy Court, Strand, London WC2R 0ET",
@@ -1914,6 +2024,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "theatre-royal-drury-lane",
+    createdAt: "2026-10-12T02:08:20+04:00",
+    updatedAt: "2026-10-12T02:08:20+04:00",
     name: "Theatre Royal Drury Lane",
     city: "london",
     address: "Catherine Street, Covent Garden, London WC2B 5JF",
@@ -1945,6 +2057,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "tom-stoppard-theatre",
+    createdAt: "2026-10-12T02:08:20+04:00",
+    updatedAt: "2026-10-12T02:08:20+04:00",
     name: "Tom Stoppard Theatre",
     city: "london",
     address: "104 St Martin's Lane, London WC2N 4BG",
@@ -1977,6 +2091,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "garrick-theatre",
+    createdAt: "2026-10-12T02:08:20+04:00",
+    updatedAt: "2026-10-12T02:08:20+04:00",
     name: "Garrick Theatre",
     city: "london",
     address: "2 Charing Cross Road, London WC2H 0HH",
@@ -2007,6 +2123,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "noel-coward-theatre",
+    createdAt: "2026-10-12T02:08:20+04:00",
+    updatedAt: "2026-10-12T02:08:20+04:00",
     name: "No\u00ebl Coward Theatre",
     city: "london",
     address: "85\u201388 St Martin's Lane, London WC2N 4AU",
@@ -2037,6 +2155,8 @@ export const venues: Venue[] = [
   },
   {
     slug: "bridge-theatre",
+    createdAt: "2026-10-12T02:08:20+04:00",
+    updatedAt: "2026-10-12T02:08:20+04:00",
     name: "Bridge Theatre",
     city: "london",
     address: "3 Potters Fields Park, London SE1 2SG",

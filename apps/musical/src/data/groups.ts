@@ -7,6 +7,8 @@ import type { RunGroup } from "./types";
 export const groups: RunGroup[] = [
   {
     slug: "uk",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-10-20T18:06:57+04:00",
     show: "chicago",
     image: "/covers/chicago-uk.jpg",
     imageAlt: "Cut-paper illustration: a chain of stepping-stone discs crossing a folded island shape.",
@@ -20,6 +22,8 @@ export const groups: RunGroup[] = [
   },
   {
     slug: "international",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-10-20T18:06:57+04:00",
     show: "chicago",
     image: "/covers/chicago-international.jpg",
     imageAlt: "Cut-paper illustration: three discs spaced along the curve of a folded globe.",
@@ -32,6 +36,8 @@ export const groups: RunGroup[] = [
   },
   {
     slug: "uk",
+    createdAt: "2026-09-01T17:13:05+04:00",
+    updatedAt: "2026-10-20T18:06:57+04:00",
     show: "cats",
     image: "/covers/cats-uk.jpg",
     imageAlt: "Cut-paper illustration: a trail of paw-print discs crossing a folded island shape.",

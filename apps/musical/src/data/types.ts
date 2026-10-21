@@ -9,6 +9,27 @@
 // which is what lets one template serve a sold-out Broadway run and a stop
 // whose theatre has not been named yet.
 
+/** When a record was first published and when what it says last changed,
+    full ISO with offset, written down rather than inferred. Every record
+    that has a page of its own carries both, and the page is dated by them:
+    tools/lastmod.mjs reads them through ../dated.ts.
+
+    They exist because dating by file put 237 of 247 pages on one day for
+    one edit to one run: nearly every page reads runs.ts, so any change to
+    any run was a change to all of them. A field belongs to its record and
+    cannot be wrong about which lines are its own. What it can be is
+    forgotten, so editing a record means moving its `updatedAt` in the same
+    change; `node tools/item-dates.mjs` fills in what is missing from
+    history and never overwrites a date that is there.
+
+    A record's own words only. A show is dated by its fields, not by its
+    sections and clips, which carry their own; a run is dated by the run,
+    and its page by the run and its theatre (see ../dated.ts). */
+export interface Dated {
+  createdAt: string;
+  updatedAt: string;
+}
+
 /** Somewhere tickets for a run can actually be bought. */
 /** What a seller is asking, as read off their own page on a named day.
     Never estimated, never carried over from another stop, never averaged:
@@ -50,7 +71,7 @@ export interface Seller {
   price?: Price;
 }
 
-export interface Venue {
+export interface Venue extends Dated {
   slug: string;
   name: string;
   /** City slug. */
@@ -100,7 +121,7 @@ export interface Venue {
 
 /** A country, as a page. The name is what the data says a city is in; the
     slug is what a reader types, which is not the same string. */
-export interface Country {
+export interface Country extends Dated {
   slug: string;
   /** Exactly as cities spell it in `country`. The two are matched on this. */
   name: string;
@@ -120,7 +141,7 @@ export interface Country {
   intro?: string[];
 }
 
-export interface City {
+export interface City extends Dated {
   slug: string;
   name: string;
   country: string;
@@ -153,7 +174,7 @@ export interface City {
 
 /** A tour: many runs sold as one season. It gets an overview page, but not a
     level in anyone's URL. */
-export interface RunGroup {
+export interface RunGroup extends Dated {
   slug: string;
   /** The show the season belongs to. Two shows can both call their tour
       "uk" — the slug is only unique inside a show, exactly as a run's is. */
@@ -167,7 +188,7 @@ export interface RunGroup {
   imageAlt?: string;
 }
 
-export interface Run {
+export interface Run extends Dated {
   /** URL segment under the show: /chicago/<slug>/. Usually the city slug. */
   slug: string;
   show: string;
@@ -205,7 +226,7 @@ export interface Run {
 
 /** A video that can be embedded because its uploader allows embedding —
     checked through YouTube's oEmbed endpoint before it is added. */
-export interface Clip {
+export interface Clip extends Dated {
   id: string;
   slug: string;
   title: string;
@@ -219,7 +240,7 @@ export interface Clip {
 }
 
 /** An editorial page under a show: /chicago/history/. */
-export interface Section {
+export interface Section extends Dated {
   slug: string;
   label: string;
   title: string;
@@ -234,7 +255,7 @@ export interface Section {
   imageAlt?: string;
 }
 
-export interface Show {
+export interface Show extends Dated {
   slug: string;
   title: string;
   /** Used for <title> instead of `title` where the show's own name spends
@@ -289,7 +310,7 @@ export interface Show {
     be shorter and would also be a machine deciding that Chicago belongs on a
     Halloween page because somebody gets shot in it. Every entry here is a
     judgement, and a judgement gets written down. */
-export interface Collection {
+export interface Collection extends Dated {
   /** URL segment at the root: /broadway/. */
   slug: string;
   /** Breadcrumb and menu label. */

@@ -8,6 +8,8 @@ import type { City } from "./types";
 export const cities: City[] = [
   {
     slug: "dubai",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-01T19:42:25+04:00",
     name: "Dubai",
     country: "United Arab Emirates",
     intro: [
@@ -26,6 +28,8 @@ export const cities: City[] = [
   },
   {
     slug: "new-york",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-08-30T04:48:37+04:00",
     name: "New York",
     country: "United States",
     image: "/cities/new-york.jpg",
@@ -37,6 +41,8 @@ export const cities: City[] = [
   },
   {
     slug: "tokyo",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-08-30T04:48:37+04:00",
     name: "Tokyo",
     country: "Japan",
     image: "/cities/tokyo.jpg",
@@ -48,6 +54,8 @@ export const cities: City[] = [
   },
   {
     slug: "osaka",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-08-30T04:48:37+04:00",
     name: "Osaka",
     country: "Japan",
     image: "/cities/osaka.jpg",
@@ -59,6 +67,8 @@ export const cities: City[] = [
   },
   {
     slug: "london",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-10-12T02:08:20+04:00",
     name: "London",
     country: "United Kingdom",
     intro: [
@@ -78,6 +88,8 @@ export const cities: City[] = [
   },
   {
     slug: "wimbledon",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-09-08T23:36:49+04:00",
     name: "Wimbledon",
     country: "United Kingdom",
     image: "/cities/wimbledon.jpg",
@@ -89,6 +101,8 @@ export const cities: City[] = [
   },
   {
     slug: "plymouth",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-09-01T19:42:25+04:00",
     name: "Plymouth",
     country: "United Kingdom",
     intro: [
@@ -105,6 +119,8 @@ export const cities: City[] = [
   },
   {
     slug: "cardiff",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-09-01T19:42:25+04:00",
     name: "Cardiff",
     country: "United Kingdom",
     intro: [
@@ -120,6 +136,8 @@ export const cities: City[] = [
   },
   {
     slug: "sheffield",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-08-30T04:48:37+04:00",
     name: "Sheffield",
     country: "United Kingdom",
     image: "/cities/sheffield.jpg",
@@ -131,6 +149,8 @@ export const cities: City[] = [
   },
   {
     slug: "liverpool",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-09-01T19:42:25+04:00",
     name: "Liverpool",
     country: "United Kingdom",
     intro: [
@@ -146,6 +166,8 @@ export const cities: City[] = [
   },
   {
     slug: "newcastle",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-09-01T19:42:25+04:00",
     name: "Newcastle",
     country: "United Kingdom",
     intro: [
@@ -161,6 +183,8 @@ export const cities: City[] = [
   },
   {
     slug: "bournemouth",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-08-30T04:48:37+04:00",
     name: "Bournemouth",
     country: "United Kingdom",
     image: "/cities/bournemouth.jpg",
@@ -172,6 +196,8 @@ export const cities: City[] = [
   },
   {
     slug: "glasgow",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-09-01T19:42:25+04:00",
     name: "Glasgow",
     country: "United Kingdom",
     intro: [
@@ -187,6 +213,8 @@ export const cities: City[] = [
   },
   {
     slug: "aberdeen",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-09-01T19:42:25+04:00",
     name: "Aberdeen",
     country: "United Kingdom",
     intro: [
@@ -202,6 +230,8 @@ export const cities: City[] = [
   },
   {
     slug: "manchester",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-09-01T19:42:25+04:00",
     name: "Manchester",
     country: "United Kingdom",
     intro: [
@@ -217,6 +247,8 @@ export const cities: City[] = [
   },
   {
     slug: "york",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-08-30T04:48:37+04:00",
     name: "York",
     country: "United Kingdom",
     image: "/cities/york.jpg",
@@ -229,6 +261,8 @@ export const cities: City[] = [
   },
   {
     slug: "blackpool",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-08-30T04:48:37+04:00",
     name: "Blackpool",
     country: "United Kingdom",
     image: "/cities/blackpool.jpg",
@@ -240,6 +274,8 @@ export const cities: City[] = [
   },
   {
     slug: "nottingham",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-09-01T19:42:25+04:00",
     name: "Nottingham",
     country: "United Kingdom",
     intro: [
@@ -255,6 +291,8 @@ export const cities: City[] = [
   },
   {
     slug: "bradford",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-09-01T19:42:25+04:00",
     name: "Bradford",
     country: "United Kingdom",
     intro: [
@@ -270,6 +308,8 @@ export const cities: City[] = [
   },
   {
     slug: "dublin",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-09-01T19:42:25+04:00",
     name: "Dublin",
     country: "Ireland",
     intro: [
@@ -285,6 +325,8 @@ export const cities: City[] = [
   },
   {
     slug: "southend",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-08-30T04:48:37+04:00",
     name: "Southend",
     country: "United Kingdom",
     image: "/cities/southend.jpg",
@@ -296,6 +338,8 @@ export const cities: City[] = [
   },
   {
     slug: "eastbourne",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-08-30T04:48:37+04:00",
     name: "Eastbourne",
     country: "United Kingdom",
     image: "/cities/eastbourne.jpg",
@@ -307,6 +351,8 @@ export const cities: City[] = [
   },
   {
     slug: "birmingham",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-09-01T19:42:25+04:00",
     name: "Birmingham",
     country: "United Kingdom",
     intro: [
@@ -322,6 +368,8 @@ export const cities: City[] = [
   },
   {
     slug: "norwich",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-09-01T19:42:25+04:00",
     name: "Norwich",
     country: "United Kingdom",
     intro: [
@@ -337,6 +385,8 @@ export const cities: City[] = [
   },
   {
     slug: "brighton",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-08-30T04:48:37+04:00",
     name: "Brighton",
     country: "United Kingdom",
     image: "/cities/brighton.jpg",
@@ -348,6 +398,8 @@ export const cities: City[] = [
   },
   {
     slug: "belfast",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-09-01T19:42:25+04:00",
     name: "Belfast",
     country: "United Kingdom",
     intro: [
@@ -364,6 +416,8 @@ export const cities: City[] = [
   },
   {
     slug: "bristol",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-09-01T19:42:25+04:00",
     name: "Bristol",
     country: "United Kingdom",
     intro: [
@@ -379,6 +433,8 @@ export const cities: City[] = [
   },
   {
     slug: "milton-keynes",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-09-01T19:42:25+04:00",
     name: "Milton Keynes",
     country: "United Kingdom",
     intro: [
@@ -394,6 +450,8 @@ export const cities: City[] = [
   },
   {
     slug: "truro",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-08-30T04:48:37+04:00",
     name: "Truro",
     country: "United Kingdom",
     image: "/cities/truro.jpg",
@@ -406,6 +464,8 @@ export const cities: City[] = [
   },
   {
     slug: "oxford",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-09-01T19:42:25+04:00",
     name: "Oxford",
     country: "United Kingdom",
     intro: [
@@ -422,6 +482,8 @@ export const cities: City[] = [
   },
   {
     slug: "hull",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-09-01T19:42:25+04:00",
     name: "Hull",
     country: "United Kingdom",
     intro: [
@@ -437,6 +499,8 @@ export const cities: City[] = [
   },
   {
     slug: "llandudno",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-09-01T19:42:25+04:00",
     name: "Llandudno",
     country: "United Kingdom",
     intro: [
@@ -452,6 +516,8 @@ export const cities: City[] = [
   },
   {
     slug: "sunderland",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-09-01T19:42:25+04:00",
     name: "Sunderland",
     country: "United Kingdom",
     intro: [
@@ -467,6 +533,8 @@ export const cities: City[] = [
   },
   {
     slug: "dartford",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-08-30T04:48:37+04:00",
     name: "Dartford",
     country: "United Kingdom",
     image: "/cities/dartford.jpg",
@@ -478,6 +546,8 @@ export const cities: City[] = [
   },
   {
     slug: "woking",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-09-01T19:42:25+04:00",
     name: "Woking",
     country: "United Kingdom",
     intro: [
@@ -493,6 +563,8 @@ export const cities: City[] = [
   },
   {
     slug: "cheltenham",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-08-30T04:48:37+04:00",
     name: "Cheltenham",
     country: "United Kingdom",
     image: "/cities/cheltenham.jpg",
@@ -504,6 +576,8 @@ export const cities: City[] = [
   },
   {
     slug: "stoke",
+    createdAt: "2026-08-30T04:48:37+04:00",
+    updatedAt: "2026-08-30T04:48:37+04:00",
     name: "Stoke",
     country: "United Kingdom",
     image: "/cities/stoke.jpg",
@@ -515,6 +589,8 @@ export const cities: City[] = [
   },
   {
     slug: "edinburgh",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-01T19:42:25+04:00",
     name: "Edinburgh",
     country: "United Kingdom",
     intro: [
@@ -530,6 +606,8 @@ export const cities: City[] = [
   },
   {
     slug: "canterbury",
+    createdAt: "2026-09-01T17:13:05+04:00",
+    updatedAt: "2026-09-01T20:58:36+04:00",
     name: "Canterbury",
     country: "United Kingdom",
     image: "/cities/canterbury.jpg",
@@ -541,6 +619,8 @@ export const cities: City[] = [
   },
   {
     slug: "southampton",
+    createdAt: "2026-09-01T17:13:05+04:00",
+    updatedAt: "2026-09-01T20:58:36+04:00",
     name: "Southampton",
     country: "United Kingdom",
     image: "/cities/southampton.jpg",

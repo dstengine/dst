@@ -81,6 +81,8 @@ export const milestones: Milestone[] = [
 
 export const historySection: Section = {
   slug: "history",
+  createdAt: "2026-08-29T07:43:23+04:00",
+  updatedAt: "2026-09-01T20:58:36+04:00",
   image: "/covers/chicago-history.jpg",
   imageAlt: "Cut-paper illustration: a receding row of layered arched theatre fronts.",
   label: "History",

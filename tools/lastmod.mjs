@@ -26,6 +26,15 @@
 // and counting it would put every section of that site on the same date —
 // the noise this file exists to avoid. The entries cover it precisely.
 //
+// A site can also build pages out of records of its own rather than the
+// feed — musical.today's runs, theatres, cities and shows. Such a site dates
+// every record and says which page is which in `src/dated.ts` (see
+// datedPages there). Its records then work as entries do: a page that is a
+// record takes the record's date, a page that links to one counts it, and
+// the site's `src/data/` files leave the file half for the same reason the
+// feeds did — one edit to one run in runs.ts once dated 237 of musical's
+// 247 pages.
+//
 // Why a generated file rather than a build-time lookup: Vercel checks the
 // repo out shallow, so `git log` there reports the deploy commit for every
 // file and every page would claim to have changed today. lastmod is a crawl
@@ -35,11 +44,27 @@
 //   npm run build && node tools/lastmod.mjs
 import { execFileSync } from "node:child_process";
 import { readdirSync, readFileSync, writeFileSync, existsSync, statSync } from "node:fs";
+import { registerHooks } from "node:module";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { HOSTS } from "./hosts.mjs";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+
+// A site's own TypeScript imports its neighbours without an extension —
+// `from "./data/runs"` — which Vite resolves and Node does not. Only
+// src/dated.ts is loaded that way here, and only relative specifiers that
+// fail as written are retried with ".ts".
+registerHooks({
+  resolve(specifier, context, nextResolve) {
+    try {
+      return nextResolve(specifier, context);
+    } catch (err) {
+      if (!specifier.startsWith(".") || path.extname(specifier)) throw err;
+      return nextResolve(`${specifier}.ts`, context);
+    }
+  },
+});
 
 const gitDates = new Map();
 /** Last commit that touched a file, as an ISO date. */
@@ -242,7 +267,13 @@ function resolvePage(dir, [head, ...rest]) {
   const entries = readdirSync(dir, { withFileTypes: true });
 
   if (rest.length) {
-    const dirs = [path.join(dir, head)];
+    // A static directory wins over a dynamic one, as it does in Astro's own
+    // routing: musical.today's /venue/<slug>/ is venue/[slug].astro and
+    // never [show]/[slug].astro, which would also match it. Counting both
+    // dated 58 theatre pages by the show route's copy.
+    const statically = resolvePage(path.join(dir, head), rest);
+    if (statically.length) return statically;
+    const dirs = [];
     for (const e of entries) {
       if (e.isDirectory() && /^\[.+\]$/.test(e.name)) dirs.push(path.join(dir, e.name));
     }
@@ -285,26 +316,66 @@ for (const item of [...allEvents, ...allNews]) {
 
 const slugOf = (url) => url.split("/").filter(Boolean).at(-1) ?? "";
 
+// Every site that dates records of its own, by app: path -> the page's
+// record (see datedPages in apps/musical/src/dated.ts). Keyed by the whole
+// path rather than the last segment, because a record's slug is only unique
+// where it sits — /chicago/dublin/ and /cats/dublin/ are two runs, and
+// /dublin/ is a city.
+const records = new Map();
+for (const app of Object.keys(HOSTS)) {
+  const file = path.join(REPO, "apps", app, "src", "dated.ts");
+  if (!existsSync(file)) continue;
+  const { datedPages } = await import(pathToFileURL(file).href);
+  const pages = datedPages();
+  // A record without a date would leave its page out of the sitemap, and
+  // the tests would only say which URL; this says which record.
+  const valid = (date) => typeof date === "string" && !Number.isNaN(Date.parse(date));
+  const undated = [...pages].filter(([, p]) => !valid(p.updatedAt) || ("with" in p && !valid(p.with)));
+  if (undated.length) {
+    for (const [url] of undated) console.error(`apps/${app}: the record behind ${url} has no valid updatedAt`);
+    console.error(`give each record createdAt and updatedAt — "node tools/item-dates.mjs" fills them from history once it is committed`);
+    process.exit(1);
+  }
+  records.set(app, pages);
+}
+
+/** The dates a page that is a record is made of: the record, and what else
+    it prints in full. */
+const recordDates = (record) => [record.updatedAt, ...(record.with ? [record.with] : [])];
+
 // A feed holds a whole site's entries, so its commit date moves whenever any
 // one of them is touched. The entries carry their own dates now; the file
 // would only add that noise back.
 const isFeed = (file) =>
   /packages[\\/]content[\\/]src[\\/](events|news)[\\/]/.test(path.relative(REPO, file));
 
+// The same holds for a site's own data once its records are dated: runs.ts
+// is every run on musical.today, and its commit date is no page's.
+const isDatedData = (file) => {
+  const [apps, app, src, data] = path.relative(REPO, file).split(path.sep);
+  return apps === "apps" && src === "src" && data === "data" && records.has(app);
+};
+
 const MAIN = /<main[^>]*>([\s\S]*?)<\/main>/i;
 
 /** The entries a group page actually lists: internal links inside its
     <main> whose last segment is an entry of this app. Links to sibling
     groups fall out by themselves, which is what stops two sections that
-    link to each other from chasing each other's date. */
+    link to each other from chasing each other's date.
+
+    A link to a page that is a record counts that record's own date — never
+    the date that page was given here — so a city and the theatre it lists
+    cannot chase each other either. */
 function listed(html, app) {
   const known = entries.get(app);
-  if (!known) return [];
+  const own = records.get(app);
+  if (!known && !own) return [];
   const main = MAIN.exec(html);
   if (!main) return [];
   const dates = [];
   for (const [, href] of main[1].matchAll(/href="(\/[^"#?]*)"/g)) {
-    const date = known.get(slugOf(href));
+    const record = own?.get(href.endsWith("/") ? href : `${href}/`);
+    const date = record ? record.updatedAt : known?.get(slugOf(href));
     if (date) dates.push(date);
   }
   return dates;
@@ -335,7 +406,8 @@ for (const [app, host] of Object.entries(HOSTS)) {
     pages++;
 
     // An entry page says its own date, and nothing else has a say in it.
-    const mine = entries.get(app)?.get(slugOf(url));
+    const record = records.get(app)?.get(url);
+    const mine = record ? (record.entry ? newest(recordDates(record)) : undefined) : entries.get(app)?.get(slugOf(url));
     if (mine) {
       out[host][url] = mine;
       dated++;
@@ -344,10 +416,12 @@ for (const [app, host] of Object.entries(HOSTS)) {
     }
 
     // A group page: the newest entry it lists, against the files that shape
-    // it — its route, its copy, its vocabulary.
+    // it — its route, its copy, its vocabulary — and its own record, when it
+    // is one: a city's page is that city's words above the runs it lists.
     const dates = listed(readFileSync(file, "utf8"), app);
+    if (record) dates.push(...recordDates(record));
     for (const source of pagesFor(app, url).flatMap(sources)) {
-      if (isFeed(source)) continue;
+      if (isFeed(source) || isDatedData(source)) continue;
       const date = lastCommit(source);
       if (date) dates.push(date);
     }

@@ -13,6 +13,8 @@ import type { Run } from "./types";
 export const runs: Run[] = [
   {
     slug: "london",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-22T00:47:07+04:00",
     show: "les-miserables",
     city: "london",
     venue: "sondheim-theatre",
@@ -61,6 +63,8 @@ export const runs: Run[] = [
   },
   {
     slug: "london",
+    createdAt: "2026-09-08T23:36:49+04:00",
+    updatedAt: "2026-09-22T00:47:07+04:00",
     show: "phantom-of-the-opera",
     city: "london",
     venue: "his-majestys-theatre",
@@ -115,6 +119,8 @@ export const runs: Run[] = [
   },
   {
     slug: "new-york",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-13T06:49:58+04:00",
     show: "chicago",
     city: "new-york",
     venue: "ambassador-theatre",
@@ -170,6 +176,8 @@ export const runs: Run[] = [
   },
   {
     slug: "dubai",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-10-21T21:44:42+04:00",
     show: "chicago",
     city: "dubai",
     group: "international",
@@ -223,6 +231,8 @@ export const runs: Run[] = [
   },
   {
     slug: "tokyo",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-22T00:47:07+04:00",
     show: "chicago",
     city: "tokyo",
     group: "international",
@@ -238,6 +248,8 @@ export const runs: Run[] = [
   },
   {
     slug: "osaka",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-22T00:47:07+04:00",
     show: "chicago",
     city: "osaka",
     group: "international",
@@ -251,6 +263,8 @@ export const runs: Run[] = [
   },
   {
     slug: "wimbledon",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-02T09:36:44+04:00",
     show: "chicago",
     city: "wimbledon",
     group: "uk",
@@ -275,6 +289,8 @@ export const runs: Run[] = [
   },
   {
     slug: "plymouth",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-02T09:04:56+04:00",
     show: "chicago",
     city: "plymouth",
     group: "uk",
@@ -289,6 +305,8 @@ export const runs: Run[] = [
   },
   {
     slug: "cardiff",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-02T09:04:56+04:00",
     show: "chicago",
     city: "cardiff",
     group: "uk",
@@ -303,6 +321,8 @@ export const runs: Run[] = [
   },
   {
     slug: "sheffield",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-08-29T19:39:24+04:00",
     show: "chicago",
     city: "sheffield",
     group: "uk",
@@ -315,6 +335,8 @@ export const runs: Run[] = [
   },
   {
     slug: "liverpool",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-02T09:36:44+04:00",
     show: "chicago",
     city: "liverpool",
     group: "uk",
@@ -338,6 +360,8 @@ export const runs: Run[] = [
   },
   {
     slug: "newcastle",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-02T09:04:56+04:00",
     show: "chicago",
     city: "newcastle",
     group: "uk",
@@ -352,6 +376,8 @@ export const runs: Run[] = [
   },
   {
     slug: "bournemouth",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-02T09:04:56+04:00",
     show: "chicago",
     city: "bournemouth",
     group: "uk",
@@ -366,6 +392,8 @@ export const runs: Run[] = [
   },
   {
     slug: "glasgow",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-02T09:36:44+04:00",
     show: "chicago",
     city: "glasgow",
     group: "uk",
@@ -389,6 +417,8 @@ export const runs: Run[] = [
   },
   {
     slug: "aberdeen",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-22T00:47:07+04:00",
     show: "chicago",
     city: "aberdeen",
     group: "uk",
@@ -403,6 +433,8 @@ export const runs: Run[] = [
   },
   {
     slug: "manchester",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-02T09:36:44+04:00",
     show: "chicago",
     city: "manchester",
     group: "uk",
@@ -426,6 +458,8 @@ export const runs: Run[] = [
   },
   {
     slug: "york",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-02T09:36:44+04:00",
     show: "chicago",
     city: "york",
     group: "uk",
@@ -449,6 +483,8 @@ export const runs: Run[] = [
   },
   {
     slug: "blackpool",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-22T00:47:07+04:00",
     show: "chicago",
     city: "blackpool",
     group: "uk",
@@ -474,6 +510,8 @@ export const runs: Run[] = [
   },
   {
     slug: "nottingham",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-22T00:47:07+04:00",
     show: "chicago",
     city: "nottingham",
     group: "uk",
@@ -498,6 +536,8 @@ export const runs: Run[] = [
   },
   {
     slug: "bradford",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-02T09:04:56+04:00",
     show: "chicago",
     city: "bradford",
     group: "uk",
@@ -510,6 +550,8 @@ export const runs: Run[] = [
   },
   {
     slug: "dublin",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-08-29T19:39:24+04:00",
     show: "chicago",
     city: "dublin",
     group: "uk",
@@ -522,6 +564,8 @@ export const runs: Run[] = [
   },
   {
     slug: "southend",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-22T00:47:07+04:00",
     show: "chicago",
     city: "southend",
     group: "uk",
@@ -545,6 +589,8 @@ export const runs: Run[] = [
   },
   {
     slug: "eastbourne",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-22T00:47:07+04:00",
     show: "chicago",
     city: "eastbourne",
     group: "uk",
@@ -568,6 +614,8 @@ export const runs: Run[] = [
   },
   {
     slug: "birmingham",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-02T09:04:56+04:00",
     show: "chicago",
     city: "birmingham",
     group: "uk",
@@ -583,6 +631,8 @@ export const runs: Run[] = [
   },
   {
     slug: "norwich",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-02T09:04:56+04:00",
     show: "chicago",
     city: "norwich",
     group: "uk",
@@ -595,6 +645,8 @@ export const runs: Run[] = [
   },
   {
     slug: "brighton",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-02T09:36:44+04:00",
     show: "chicago",
     city: "brighton",
     group: "uk",
@@ -618,6 +670,8 @@ export const runs: Run[] = [
   },
   {
     slug: "belfast",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-02T09:04:56+04:00",
     show: "chicago",
     city: "belfast",
     group: "uk",
@@ -632,6 +686,8 @@ export const runs: Run[] = [
   },
   {
     slug: "bristol",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-02T09:36:44+04:00",
     show: "chicago",
     city: "bristol",
     group: "uk",
@@ -655,6 +711,8 @@ export const runs: Run[] = [
   },
   {
     slug: "milton-keynes",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-02T09:36:44+04:00",
     show: "chicago",
     city: "milton-keynes",
     group: "uk",
@@ -678,6 +736,8 @@ export const runs: Run[] = [
   },
   {
     slug: "truro",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-02T09:04:56+04:00",
     show: "chicago",
     city: "truro",
     group: "uk",
@@ -690,6 +750,8 @@ export const runs: Run[] = [
   },
   {
     slug: "oxford",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-02T09:36:44+04:00",
     show: "chicago",
     city: "oxford",
     group: "uk",
@@ -713,6 +775,8 @@ export const runs: Run[] = [
   },
   {
     slug: "hull",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-22T00:47:07+04:00",
     show: "chicago",
     city: "hull",
     group: "uk",
@@ -731,6 +795,8 @@ export const runs: Run[] = [
   },
   {
     slug: "llandudno",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-22T00:47:07+04:00",
     show: "chicago",
     city: "llandudno",
     group: "uk",
@@ -743,6 +809,8 @@ export const runs: Run[] = [
   },
   {
     slug: "sunderland",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-02T09:36:44+04:00",
     show: "chicago",
     city: "sunderland",
     group: "uk",
@@ -766,6 +834,8 @@ export const runs: Run[] = [
   },
   {
     slug: "dartford",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-08-29T19:39:24+04:00",
     show: "chicago",
     city: "dartford",
     group: "uk",
@@ -778,6 +848,8 @@ export const runs: Run[] = [
   },
   {
     slug: "woking",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-02T09:36:44+04:00",
     show: "chicago",
     city: "woking",
     group: "uk",
@@ -801,6 +873,8 @@ export const runs: Run[] = [
   },
   {
     slug: "cheltenham",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-02T09:04:56+04:00",
     show: "chicago",
     city: "cheltenham",
     group: "uk",
@@ -818,6 +892,8 @@ export const runs: Run[] = [
   },
   {
     slug: "stoke",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-02T09:36:44+04:00",
     show: "chicago",
     city: "stoke",
     group: "uk",
@@ -841,6 +917,8 @@ export const runs: Run[] = [
   },
   {
     slug: "edinburgh",
+    createdAt: "2026-08-29T07:43:23+04:00",
+    updatedAt: "2026-09-02T09:36:44+04:00",
     show: "chicago",
     city: "edinburgh",
     group: "uk",
@@ -869,6 +947,8 @@ export const runs: Run[] = [
   // stop is left without one.
   {
     slug: "plymouth",
+    createdAt: "2026-09-01T17:13:05+04:00",
+    updatedAt: "2026-09-02T09:04:56+04:00",
     show: "cats",
     city: "plymouth",
     group: "uk",
@@ -887,6 +967,8 @@ export const runs: Run[] = [
   },
   {
     slug: "hull",
+    createdAt: "2026-09-01T17:13:05+04:00",
+    updatedAt: "2026-09-22T00:47:07+04:00",
     show: "cats",
     city: "hull",
     group: "uk",
@@ -906,6 +988,8 @@ export const runs: Run[] = [
   },
   {
     slug: "birmingham",
+    createdAt: "2026-09-01T17:13:05+04:00",
+    updatedAt: "2026-09-02T09:04:56+04:00",
     show: "cats",
     city: "birmingham",
     group: "uk",
@@ -924,6 +1008,8 @@ export const runs: Run[] = [
   },
   {
     slug: "manchester",
+    createdAt: "2026-09-01T17:13:05+04:00",
+    updatedAt: "2026-09-02T09:36:44+04:00",
     show: "cats",
     city: "manchester",
     group: "uk",
@@ -948,6 +1034,8 @@ export const runs: Run[] = [
   },
   {
     slug: "bristol",
+    createdAt: "2026-09-01T17:13:05+04:00",
+    updatedAt: "2026-09-02T09:36:44+04:00",
     show: "cats",
     city: "bristol",
     group: "uk",
@@ -972,6 +1060,8 @@ export const runs: Run[] = [
   },
   {
     slug: "llandudno",
+    createdAt: "2026-09-01T17:13:05+04:00",
+    updatedAt: "2026-09-22T00:47:07+04:00",
     show: "cats",
     city: "llandudno",
     group: "uk",
@@ -996,6 +1086,8 @@ export const runs: Run[] = [
   },
   {
     slug: "glasgow",
+    createdAt: "2026-09-01T17:13:05+04:00",
+    updatedAt: "2026-09-02T09:36:44+04:00",
     show: "cats",
     city: "glasgow",
     group: "uk",
@@ -1020,6 +1112,8 @@ export const runs: Run[] = [
   },
   {
     slug: "nottingham",
+    createdAt: "2026-09-01T17:13:05+04:00",
+    updatedAt: "2026-09-22T00:47:07+04:00",
     show: "cats",
     city: "nottingham",
     group: "uk",
@@ -1045,6 +1139,8 @@ export const runs: Run[] = [
   },
   {
     slug: "canterbury",
+    createdAt: "2026-09-01T17:13:05+04:00",
+    updatedAt: "2026-09-02T09:04:56+04:00",
     show: "cats",
     city: "canterbury",
     group: "uk",
@@ -1063,6 +1159,8 @@ export const runs: Run[] = [
   },
   {
     slug: "sunderland",
+    createdAt: "2026-09-01T17:13:05+04:00",
+    updatedAt: "2026-09-02T09:04:56+04:00",
     show: "cats",
     city: "sunderland",
     group: "uk",
@@ -1077,6 +1175,8 @@ export const runs: Run[] = [
   },
   {
     slug: "aberdeen",
+    createdAt: "2026-09-01T17:13:05+04:00",
+    updatedAt: "2026-09-02T09:04:56+04:00",
     show: "cats",
     city: "aberdeen",
     group: "uk",
@@ -1095,6 +1195,8 @@ export const runs: Run[] = [
   },
   {
     slug: "norwich",
+    createdAt: "2026-09-01T17:13:05+04:00",
+    updatedAt: "2026-09-02T09:04:56+04:00",
     show: "cats",
     city: "norwich",
     group: "uk",
@@ -1109,6 +1211,8 @@ export const runs: Run[] = [
   },
   {
     slug: "belfast",
+    createdAt: "2026-09-01T17:13:05+04:00",
+    updatedAt: "2026-09-02T09:04:56+04:00",
     show: "cats",
     city: "belfast",
     group: "uk",
@@ -1127,6 +1231,8 @@ export const runs: Run[] = [
   },
   {
     slug: "dublin",
+    createdAt: "2026-09-01T17:13:05+04:00",
+    updatedAt: "2026-09-02T09:04:56+04:00",
     show: "cats",
     city: "dublin",
     group: "uk",
@@ -1145,6 +1251,8 @@ export const runs: Run[] = [
   },
   {
     slug: "oxford",
+    createdAt: "2026-09-01T17:13:05+04:00",
+    updatedAt: "2026-09-02T09:04:56+04:00",
     show: "cats",
     city: "oxford",
     group: "uk",
@@ -1159,6 +1267,8 @@ export const runs: Run[] = [
   },
   {
     slug: "southampton",
+    createdAt: "2026-09-01T17:13:05+04:00",
+    updatedAt: "2026-09-02T09:04:56+04:00",
     show: "cats",
     city: "southampton",
     group: "uk",
@@ -1177,6 +1287,8 @@ export const runs: Run[] = [
   },
   {
     slug: "edinburgh",
+    createdAt: "2026-09-01T17:13:05+04:00",
+    updatedAt: "2026-09-02T09:04:56+04:00",
     show: "cats",
     city: "edinburgh",
     group: "uk",
@@ -1191,6 +1303,8 @@ export const runs: Run[] = [
   },
   {
     slug: "bradford",
+    createdAt: "2026-09-01T17:13:05+04:00",
+    updatedAt: "2026-09-02T09:04:56+04:00",
     show: "cats",
     city: "bradford",
     group: "uk",
@@ -1209,6 +1323,8 @@ export const runs: Run[] = [
   },
   {
     slug: "liverpool",
+    createdAt: "2026-09-01T17:13:05+04:00",
+    updatedAt: "2026-09-02T09:04:56+04:00",
     show: "cats",
     city: "liverpool",
     group: "uk",
@@ -1223,6 +1339,8 @@ export const runs: Run[] = [
   },
   {
     slug: "woking",
+    createdAt: "2026-09-01T17:13:05+04:00",
+    updatedAt: "2026-09-02T09:04:56+04:00",
     show: "cats",
     city: "woking",
     group: "uk",
@@ -1237,6 +1355,8 @@ export const runs: Run[] = [
   },
   {
     slug: "cardiff",
+    createdAt: "2026-09-01T17:13:05+04:00",
+    updatedAt: "2026-09-02T09:04:56+04:00",
     show: "cats",
     city: "cardiff",
     group: "uk",
@@ -1255,6 +1375,8 @@ export const runs: Run[] = [
   },
   {
     slug: "milton-keynes",
+    createdAt: "2026-09-01T17:13:05+04:00",
+    updatedAt: "2026-09-02T09:04:56+04:00",
     show: "cats",
     city: "milton-keynes",
     group: "uk",
@@ -1273,6 +1395,8 @@ export const runs: Run[] = [
   },
   {
     slug: "newcastle",
+    createdAt: "2026-09-01T17:13:05+04:00",
+    updatedAt: "2026-09-02T09:04:56+04:00",
     show: "cats",
     city: "newcastle",
     group: "uk",
@@ -1291,6 +1415,8 @@ export const runs: Run[] = [
   },
   {
     slug: "new-york",
+    createdAt: "2026-09-13T03:28:04+04:00",
+    updatedAt: "2026-09-13T06:49:58+04:00",
     show: "lost-boys",
     city: "new-york",
     venue: "palace-theatre",
@@ -1343,6 +1469,8 @@ export const runs: Run[] = [
   },
   {
     slug: "new-york",
+    createdAt: "2026-09-13T03:28:04+04:00",
+    updatedAt: "2026-09-13T06:49:58+04:00",
     show: "wicked",
     city: "new-york",
     venue: "gershwin-theatre",
@@ -1396,6 +1524,8 @@ export const runs: Run[] = [
   },
   {
     slug: "new-york",
+    createdAt: "2026-09-13T06:49:58+04:00",
+    updatedAt: "2026-09-13T06:49:58+04:00",
     show: "wanted",
     city: "new-york",
     venue: "james-earl-jones-theatre",
@@ -1432,6 +1562,8 @@ export const runs: Run[] = [
   },
   {
     slug: "new-york",
+    createdAt: "2026-09-13T06:49:58+04:00",
+    updatedAt: "2026-09-13T06:49:58+04:00",
     show: "galileo",
     city: "new-york",
     venue: "shubert-theatre",
@@ -1469,6 +1601,8 @@ export const runs: Run[] = [
   },
   {
     slug: "new-york",
+    createdAt: "2026-09-13T06:49:58+04:00",
+    updatedAt: "2026-09-13T06:49:58+04:00",
     show: "fantasticks",
     city: "new-york",
     venue: "hayes-theater",
@@ -1506,6 +1640,8 @@ export const runs: Run[] = [
   },
   {
     slug: "new-york",
+    createdAt: "2026-09-13T06:49:58+04:00",
+    updatedAt: "2026-09-13T06:49:58+04:00",
     show: "dolly",
     city: "new-york",
     venue: "st-james-theatre",
@@ -1541,6 +1677,8 @@ export const runs: Run[] = [
   },
   {
     slug: "new-york",
+    createdAt: "2026-10-12T02:08:20+04:00",
+    updatedAt: "2026-10-12T02:08:20+04:00",
     show: "evita",
     city: "new-york",
     venue: "winter-garden-theatre",
@@ -1584,6 +1722,8 @@ export const runs: Run[] = [
   },
   {
     slug: "new-york",
+    createdAt: "2026-10-12T02:08:20+04:00",
+    updatedAt: "2026-10-12T02:08:20+04:00",
     show: "purple-rain",
     city: "new-york",
     venue: "majestic-theatre",
@@ -1624,6 +1764,8 @@ export const runs: Run[] = [
   },
   {
     slug: "new-york",
+    createdAt: "2026-10-12T02:08:20+04:00",
+    updatedAt: "2026-10-12T02:08:20+04:00",
     show: "paddington",
     city: "new-york",
     venue: "al-hirschfeld-theatre",
@@ -1660,6 +1802,8 @@ export const runs: Run[] = [
   },
   {
     slug: "london",
+    createdAt: "2026-10-12T02:08:20+04:00",
+    updatedAt: "2026-10-12T02:08:20+04:00",
     show: "paddington",
     city: "london",
     venue: "savoy-theatre",
@@ -1693,6 +1837,8 @@ export const runs: Run[] = [
   },
   {
     slug: "new-york",
+    createdAt: "2026-10-12T02:08:20+04:00",
+    updatedAt: "2026-10-12T02:08:20+04:00",
     show: "full-monty",
     city: "new-york",
     venue: "todd-haimes-theatre",
@@ -1721,6 +1867,8 @@ export const runs: Run[] = [
   },
   {
     slug: "new-york",
+    createdAt: "2026-10-12T02:08:20+04:00",
+    updatedAt: "2026-10-12T02:08:20+04:00",
     show: "maybe-happy-ending",
     city: "new-york",
     venue: "belasco-theatre",
@@ -1764,6 +1912,8 @@ export const runs: Run[] = [
   },
   {
     slug: "london",
+    createdAt: "2026-10-12T02:08:20+04:00",
+    updatedAt: "2026-10-12T02:08:20+04:00",
     show: "jesus-christ-superstar",
     city: "london",
     venue: "theatre-royal-drury-lane",
@@ -1817,6 +1967,8 @@ export const runs: Run[] = [
   },
   {
     slug: "london",
+    createdAt: "2026-10-12T02:08:20+04:00",
+    updatedAt: "2026-10-12T02:08:20+04:00",
     show: "rent",
     city: "london",
     venue: "tom-stoppard-theatre",
@@ -1859,6 +2011,8 @@ export const runs: Run[] = [
   },
   {
     slug: "london",
+    createdAt: "2026-10-12T02:08:20+04:00",
+    updatedAt: "2026-10-12T02:08:20+04:00",
     show: "one-day",
     city: "london",
     venue: "garrick-theatre",
@@ -1901,6 +2055,8 @@ export const runs: Run[] = [
   },
   {
     slug: "london",
+    createdAt: "2026-10-12T02:08:20+04:00",
+    updatedAt: "2026-10-12T02:08:20+04:00",
     show: "into-the-woods",
     city: "london",
     venue: "noel-coward-theatre",
@@ -1937,6 +2093,8 @@ export const runs: Run[] = [
   },
   {
     slug: "london",
+    createdAt: "2026-10-12T02:08:20+04:00",
+    updatedAt: "2026-10-12T02:08:20+04:00",
     show: "pride",
     city: "london",
     venue: "bridge-theatre",
