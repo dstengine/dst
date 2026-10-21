@@ -1601,7 +1601,14 @@ describe("how much of each site is the template", () => {
     // with four events and one roundup, aca 23.5 with five and one — small
     // sites, so the chrome is a large share of each page. They fall as
     // entries arrive.
-    l0n: 17, aca: 24,
+    // aca 24 → 32 the same evening, measured at 31.3, when it went from six
+    // entries to fifteen. The repeated runs are the venue lines — five
+    // events now share the Forum's address and five the arena's, so each
+    // crossed the five-page mark — and the card strip, which prints the
+    // next dates' summaries on every page. The box-office hours repeated on
+    // seven pages and now live on one news page the others link to. No
+    // sentence of prose repeats. It falls as the feed grows past the strip.
+    l0n: 17, aca: 32,
   };
 
   test("no site is more template than the ceiling it recorded", async () => {

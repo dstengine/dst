@@ -96,6 +96,102 @@
         ]
       ]
     },
+    "/covers/conciertos-y-shows-en-acapulco-diciembre-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/conciertos-y-shows-en-acapulco-diciembre-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/conciertos-y-shows-en-acapulco-diciembre-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/conciertos-y-shows-en-acapulco-diciembre-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/conciertos-y-shows-en-acapulco-diciembre-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/conciertos-y-shows-en-acapulco-diciembre-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/conciertos-y-shows-en-acapulco-diciembre-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/dinosaurios-en-vivo-acapulco-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/dinosaurios-en-vivo-acapulco-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/dinosaurios-en-vivo-acapulco-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dinosaurios-en-vivo-acapulco-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dinosaurios-en-vivo-acapulco-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/dinosaurios-en-vivo-acapulco-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dinosaurios-en-vivo-acapulco-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/el-cascanueces-acapulco-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/el-cascanueces-acapulco-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/el-cascanueces-acapulco-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/el-cascanueces-acapulco-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/el-cascanueces-acapulco-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/el-cascanueces-acapulco-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/el-cascanueces-acapulco-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/emmanuel-mijares-two-amigos-acapulco-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -128,6 +224,38 @@
         ]
       ]
     },
+    "/covers/espinoza-paz-acapulco-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/espinoza-paz-acapulco-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/espinoza-paz-acapulco-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/espinoza-paz-acapulco-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/espinoza-paz-acapulco-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/espinoza-paz-acapulco-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/espinoza-paz-acapulco-2027-1024.webp"
+        ]
+      ]
+    },
     "/covers/gnp-mexico-major-premier-padel-acapulco-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -157,6 +285,102 @@
         [
           1024,
           "/covers/gnp-mexico-major-premier-padel-acapulco-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/la-arrolladora-banda-el-limon-acapulco-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/la-arrolladora-banda-el-limon-acapulco-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/la-arrolladora-banda-el-limon-acapulco-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/la-arrolladora-banda-el-limon-acapulco-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/la-arrolladora-banda-el-limon-acapulco-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/la-arrolladora-banda-el-limon-acapulco-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/la-arrolladora-banda-el-limon-acapulco-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/manuel-medrano-acapulco-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/manuel-medrano-acapulco-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/manuel-medrano-acapulco-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/manuel-medrano-acapulco-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/manuel-medrano-acapulco-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/manuel-medrano-acapulco-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/manuel-medrano-acapulco-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/que-hacer-en-acapulco-noviembre-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/que-hacer-en-acapulco-noviembre-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/que-hacer-en-acapulco-noviembre-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/que-hacer-en-acapulco-noviembre-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/que-hacer-en-acapulco-noviembre-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/que-hacer-en-acapulco-noviembre-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/que-hacer-en-acapulco-noviembre-2026-1024.webp"
         ]
       ]
     },
@@ -221,6 +445,70 @@
         [
           1024,
           "/covers/ricardo-montaner-acapulco-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/taquillas-arena-gnp-seguros-forum-mundo-imperial.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/taquillas-arena-gnp-seguros-forum-mundo-imperial-480.avif"
+        ],
+        [
+          768,
+          "/covers/taquillas-arena-gnp-seguros-forum-mundo-imperial-768.avif"
+        ],
+        [
+          1024,
+          "/covers/taquillas-arena-gnp-seguros-forum-mundo-imperial-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/taquillas-arena-gnp-seguros-forum-mundo-imperial-480.webp"
+        ],
+        [
+          768,
+          "/covers/taquillas-arena-gnp-seguros-forum-mundo-imperial-768.webp"
+        ],
+        [
+          1024,
+          "/covers/taquillas-arena-gnp-seguros-forum-mundo-imperial-1024.webp"
+        ]
+      ]
+    },
+    "/covers/yuri-lucero-acapulco-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/yuri-lucero-acapulco-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/yuri-lucero-acapulco-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/yuri-lucero-acapulco-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/yuri-lucero-acapulco-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/yuri-lucero-acapulco-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/yuri-lucero-acapulco-2026-1024.webp"
         ]
       ]
     }

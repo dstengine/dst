@@ -23,6 +23,7 @@ const TAGS: Record<string, Vocabulary> = {
   Cultura: { slug: "cultura", plural: "cultura", label: "Cultura" },
   Navidad: { slug: "navidad", plural: "Navidad", label: "Navidad" },
   "Año Nuevo": { slug: "ano-nuevo", plural: "Año Nuevo", label: "Año Nuevo" },
+  Familia: { slug: "familia", plural: "planes en familia", label: "En familia" },
 };
 
 export const NAV = {
