@@ -29296,6 +29296,38 @@
         ]
       ]
     },
+    "/covers/candlenight-christmas-concert-red-hall-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/candlenight-christmas-concert-red-hall-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/candlenight-christmas-concert-red-hall-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/candlenight-christmas-concert-red-hall-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/candlenight-christmas-concert-red-hall-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/candlenight-christmas-concert-red-hall-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/candlenight-christmas-concert-red-hall-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/carmen-yerevan-opera-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -30392,6 +30424,38 @@
         ]
       ]
     },
+    "/covers/hayao-miyazaki-dreams-mystery-ensemble-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/hayao-miyazaki-dreams-mystery-ensemble-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/hayao-miyazaki-dreams-mystery-ensemble-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/hayao-miyazaki-dreams-mystery-ensemble-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/hayao-miyazaki-dreams-mystery-ensemble-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/hayao-miyazaki-dreams-mystery-ensemble-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/hayao-miyazaki-dreams-mystery-ensemble-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/hover-choir-vahagn-hayrapetyan-trio-yerevan-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -30693,6 +30757,38 @@
         [
           1536,
           "/covers/khachaturian-symphony-with-bells-ridout-yerevan-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/khachik-sahakyan-state-jazz-orchestra-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/khachik-sahakyan-state-jazz-orchestra-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/khachik-sahakyan-state-jazz-orchestra-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/khachik-sahakyan-state-jazz-orchestra-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/khachik-sahakyan-state-jazz-orchestra-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/khachik-sahakyan-state-jazz-orchestra-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/khachik-sahakyan-state-jazz-orchestra-yerevan-2026-1024.webp"
         ]
       ]
     },
