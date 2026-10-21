@@ -36,17 +36,48 @@ const { source, locale = "en-US", labels: L = EN } = Astro.props;
 
 <style>
   .source-line {
+    /* One value for the column gap and the dot drawn inside it (below). */
+    --source-line-gap: 1.4em;
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
-    gap: 0.5em;
+    gap: 0.5em var(--source-line-gap);
+    /* Not stray: when the checked span starts a line, its dot sits left of
+       the paragraph, and this clip is what keeps it from being painted.
+       Remove it and every wrapped line opens with a lone "·". Nothing in
+       the line takes focus today; a link added here would have its focus
+       ring cut, and needs `clip-path: inset(-1em -1em -1em 0)` (the left
+       edge only) in place of this. */
+    overflow: hidden;
     margin: var(--space-4) 0 0;
     font-size: var(--step--1);
     color: var(--ink-faint);
   }
-  .source-line-sep { color: var(--border); }
+  /* The dot is drawn by .source-line-checked::before. This span stays in the
+     HTML (aria-hidden) so the markup of every entry page is unchanged. As a
+     flex item of its own it went wherever wrapping put it: alone on a line,
+     after the name with nothing following, or ahead of the checked line. */
+  .source-line-sep { display: none; }
   .source-line-checked {
+    position: relative;
     font-family: var(--font-mono);
     font-variant-numeric: tabular-nums;
   }
+  /* Centred in the column gap to the left of the span: between name and
+     check when both are on one line, outside the paragraph (and clipped)
+     when the span starts a line. A separator only where it separates. */
+  .source-line-checked::before {
+    content: "\00B7";
+    /* Empty alternative text: screen readers stay as silent as they were for
+       the aria-hidden span. A browser that cannot parse it keeps the line above. */
+    content: "\00B7" / "";
+    position: absolute;
+    left: calc(-1 * var(--source-line-gap));
+    width: var(--source-line-gap);
+    text-align: center;
+    color: var(--border);
+  }
+  /* The date is the one thing this line publishes that nobody else does: it
+     stays whole, and the span wraps before it ("Sep" / "15, 2026" at 320). */
+  .source-line time { white-space: nowrap; }
 </style>
