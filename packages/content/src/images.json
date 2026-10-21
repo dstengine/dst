@@ -2785,6 +2785,38 @@
           "/covers/venecia-2026-dos-leones-antes-del-jurado-1536.webp"
         ]
       ]
+    },
+    "/covers/zona-maco-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/zona-maco-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/zona-maco-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/zona-maco-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/zona-maco-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/zona-maco-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/zona-maco-2027-1024.webp"
+        ]
+      ]
     }
   },
   "dst.llc": {

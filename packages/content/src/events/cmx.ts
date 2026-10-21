@@ -1311,4 +1311,81 @@ export const items: EventItem[] = [
     expertise:
       "Diecinueve kilómetros, y de la Fuente de Petróleos al Zócalo por Reforma hay unos ocho: la cuenta sugiere ida y vuelta, aunque la guía oficial sólo publica la salida y el destino. Conviene planear como si hubiera que regresar pedaleando: agua, luz delantera y trasera aunque la calle esté cerrada, y algo de abrigo para cuando la noche refresca después de las diez.",
   },
+
+  {
+    slug: "zona-maco-2027",
+    createdAt: "2026-10-21T21:35:00+04:00",
+    updatedAt: "2026-10-21T21:35:00+04:00",
+    site: "cmx",
+    image: "/covers/zona-maco-2027.jpg",
+    imageAlt:
+      "Una gran nave de exposición blanca con estructuras de luces en el techo, un lienzo grande en rojo vino, una escultura sobre un pedestal, dos sillones y dos vitrinas antiguas, y pocos visitantes caminando entre ellos, sobre fondo crema",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Zona Maco 2027",
+    titleSeo: "Zona Maco 2027: fechas y boletos, Ciudad de México",
+    summary:
+      "La semana del arte de la Ciudad de México: ZⓈONAMACO reúne arte contemporáneo, diseño, antigüedades y fotografía del 3 al 7 de febrero de 2027 en Centro Banamex. En 2026 la entrada general costó $475 en línea.",
+    start: "2027-02-03",
+    end: "2027-02-07",
+    utcOffset: "-06:00",
+    venue: "Centro Banamex",
+    city: "Ciudad de México",
+    country: "México",
+    geo: {
+      name: "Centro Banamex",
+      lat: 19.440158,
+      lng: -99.224082,
+    },
+    organizer: "ZⓈONAMACO",
+    category: "Exposición",
+    tickets: { priceFrom: 370, currency: "MXN" },
+    ticket: {
+      url: "https://zsonamaco.com/boletos/",
+      label: "Boletos y horarios",
+    },
+    source: {
+      name: "ZⓈONAMACO",
+      url: "https://zsonamaco.com/",
+      verifiedOn: "2026-10-21",
+    },
+    body: [
+      "La feria ya tiene fecha: <strong>ZⓈONAMACO 2027</strong> será del <strong>miércoles 3 al domingo 7 de febrero</strong> en <strong>Centro Banamex</strong>, en Lomas de Sotelo. Es la semana en que el arte de la Ciudad de México se concentra en un solo recinto. La propia feria se presenta como la plataforma de ferias de arte más grande de Latinoamérica.",
+      "## Cuatro ferias en un mismo recinto",
+      "ZⓈONAMACO no es una sola feria sino cuatro que ocurren al mismo tiempo. <strong>México Arte Contemporáneo</strong> reúne galerías nacionales e internacionales, con pintura, escultura, instalación, video y nuevas tecnologías. <strong>Diseño</strong>, desde 2011, se dedica al diseño contemporáneo. El <strong>Salón del Anticuario</strong>, desde 2014, presenta objetos históricos y arte decorativo anteriores a 1960. <strong>Foto</strong>, desde 2015, junta a fotógrafos emergentes y consagrados. Además están <strong>FORMA</strong>, para diseño y arte coleccionable, y las secciones <strong>Sur</strong>, <strong>Arte Moderno</strong> y <strong>Ejes</strong>, cada una con su curaduría.",
+      "## Quién la hace",
+      "La fundó <strong>Zélika García</strong> en <strong>2002</strong>, y desde entonces suma más de veinte ediciones. La directora artística es <strong>Direlia Lazo</strong>. El comité de selección de 2027 lo integran Teófilo Cohen (Proyectos Monclova), Karen Huber (Galería Karen Huber), Lauren Kelly (Sean Kelly Gallery), María Quiroga (Galerie Nordenhake) y Guilherme Simões de Assis (Simões de Assis).",
+      "## Boletos: lo que costaron en 2026",
+      "La venta para 2027 todavía aparece como «próximamente». En la edición 2026, la entrada general costó <strong>$475 en línea</strong> y <strong>$550 en taquilla</strong>. El pase de cuatro días, de jueves a domingo, costó <strong>$1,600 en línea</strong> y <strong>$1,900 en taquilla</strong>. Estudiantes e INAPAM pagaron <strong>$370</strong> en línea y <strong>$420</strong> en taquilla. La noche de <strong>Opening</strong> costó <strong>$570</strong> en línea y <strong>$730</strong> en taquilla. En línea se suma un <strong>13% de cargo por servicio</strong> al final de la compra.",
+      "## Horarios: los de 2026 como referencia",
+      "En 2026 la feria abrió el miércoles de 17:00 a 20:00 h, con la noche de inauguración. El jueves y el viernes abrió de 13:00 a 20:00 h, el sábado de 12:00 a 20:00 h y el domingo de 11:00 a 18:00 h. Las fechas de 2027 caen en los mismos días de la semana, pero los horarios oficiales se publicarán con la venta de boletos.",
+      "## Cómo llegar a Centro Banamex",
+      "Centro Banamex está en <strong>Avenida del Conscripto 311</strong>, Lomas de Sotelo, alcaldía Miguel Hidalgo, junto al Hipódromo de las Américas. La feria tiene en su sitio una sección de servicios con hoteles, restaurantes y transporte.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo es Zona Maco 2027?",
+        a: "Del miércoles 3 al domingo 7 de febrero de 2027, en Centro Banamex, Ciudad de México.",
+      },
+      {
+        q: "¿Cuánto cuestan los boletos?",
+        a: "Los precios de 2027 aún no se publican. En 2026 la entrada general costó $475 en línea y $550 en taquilla. El pase de cuatro días costó $1,600 en línea, y estudiantes e INAPAM pagaron $370 en línea. A la compra en línea se suma un 13% de cargo por servicio.",
+      },
+      {
+        q: "¿Dónde es Zona Maco?",
+        a: "En Centro Banamex, Avenida del Conscripto 311, Lomas de Sotelo, Miguel Hidalgo, Ciudad de México.",
+      },
+      {
+        q: "¿Qué incluye la feria?",
+        a: "Cuatro ferias simultáneas: México Arte Contemporáneo, Diseño, Salón del Anticuario y Foto. Además están FORMA y las secciones Sur, Arte Moderno y Ejes.",
+      },
+      {
+        q: "¿Qué horario tiene?",
+        a: "El de 2027 aún no se publica. En 2026 abrió el miércoles de 17:00 a 20:00 h, el jueves y el viernes de 13:00 a 20:00 h, el sábado de 12:00 a 20:00 h y el domingo de 11:00 a 18:00 h.",
+      },
+    ],
+    expertise:
+      "El pase de cuatro días se paga solo a partir de la cuarta visita. En 2026 costaba $1,600 en línea contra $475 por día, así que para recorrer la feria una o dos veces conviene el boleto suelto. Quien quiere ver las cuatro ferias con calma divide la visita: Arte Contemporáneo un día, y Diseño, Antiguarios y Foto otro. El jueves y el viernes abre a la una de la tarde, y esas primeras horas entre semana son las más tranquilas. El fin de semana se llena. Hay que comprar en línea: la taquilla cuesta entre 15 y 20 por ciento más, aunque en línea se suma el cargo por servicio.",
+  },
 ];
