@@ -220,6 +220,10 @@ h2 { overflow-wrap: break-word; }
    one: unbalanced, "the 2026 festival?" left its noun alone on the second
    line at 480 px. */
 .guide .faq-item summary { text-wrap: balance; }
+/* The page's own crumb is its title less the suffix, and at 320 px it took
+   a line of its own and left one word on the next ("dates, | tickets").
+   Pretty, not balance: balance split "2026 | dates" on the dates page. */
+.crumbs [aria-current="page"] { text-wrap: pretty; }
 
 /* Sources carry read dates, which a reader acts on: muted, not faint. */
 .guide-sources p {
@@ -311,4 +315,16 @@ h2 { overflow-wrap: break-word; }
 /* A thumb's target on a phone. */
 @media (max-width: 480px) {
   .hub-pages a { min-height: 44px; }
+}
+
+/* On a phone the page's chips and its "On this page" list stand between the
+   lede and the first section, and together they keep to one screen (568 px
+   at 320): the tickets page's eight headings at body size took 643. The
+   list steps down to the chips' size and the box gives up some padding;
+   the links stay inline, so each line is still the whole row to tap. A
+   heading that wraps is balanced, so no item ends on one word. */
+@media (max-width: 480px) {
+  .guide .on-this-page { padding: var(--space-2) var(--space-2) var(--space-2) var(--space-3); }
+  .guide .on-this-page ul { font-size: var(--step--1); line-height: 1.4; }
+  .guide .on-this-page li { text-wrap: balance; }
 }
