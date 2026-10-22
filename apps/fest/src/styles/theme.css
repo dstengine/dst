@@ -141,14 +141,25 @@ header.site-header .site-name {
 :where(h1, h2, h3, h4):lang(th) { line-height: 1.4; }
 :lang(th) .on-this-page-heading { letter-spacing: normal; }
 
-/* "Beyond The Valley location: Barunah Plains" is the longest heading the
-   guides have; at 320 px the size keeps every word of it on the screen and
-   the break is the net. */
+/* At 320 px the size keeps every word of every guide's h1 on the screen,
+   and the break is the net. The longest word is "Creamfields": 297 px at
+   the 30.24 px this size gave at 320 before Creamfields Chile, wider than
+   the 292 px column, so it broke "Creamfield|s" (line-break sweep, 22
+   October 2026). 1.375rem under the same slope sets it at 29 px there, 285
+   px wide; from 1182 px up the size is 3rem, as it was. */
 html h1 {
-  font-size: clamp(1.875rem, 1.45rem + 2.2vw, 3rem);
+  font-size: clamp(1.75rem, 1.375rem + 2.2vw, 3rem);
   overflow-wrap: break-word;
 }
 h2 { overflow-wrap: break-word; }
+/* A date in a Spanish heading (copy.ts, headingHtml): one unit wherever the
+   column holds it, wrapping inside itself where it cannot, so never wider
+   than the line. Below 360 px it is plain text: "15 de noviembre:" at the
+   heading's 24 px is wider than the 292 px column, and as a block it would
+   only take a line of its own and still break. */
+@media (min-width: 22.5rem) {
+  .keep-date { display: inline-block; }
+}
 
 /* fest.one has no menu: the guides are reached from the hub and from each
    other. BaseLayout still renders the empty row and its toggle. */
@@ -193,6 +204,22 @@ h2 { overflow-wrap: break-word; }
   line-height: 1.5;
   color: var(--ink);
 }
+/* The line on why the guide exists, when the lede is too long to carry it
+   (Creamfields Chile): body size and muted, so the answer above it stays
+   the first thing read. */
+.lede-why {
+  font-size: var(--step-0);
+  color: var(--ink-muted);
+}
+
+/* The facts at a glance under a heading of their own (Creamfields Chile's
+   "De un vistazo"): the heading takes the block's top margin, and the
+   block sits under it as a section's text does. */
+.guide-glance > h2 {
+  font-size: var(--step-2);
+  margin: var(--space-4) 0 0;
+}
+.guide .guide-glance .event-glance { margin-top: var(--space-2); }
 
 .guide-section > h2 {
   font-size: var(--step-2);
@@ -259,6 +286,93 @@ h2 { overflow-wrap: break-word; }
   .guide-section ul.cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
+/* A seller's price tables as text (Creamfields Chile: Punto Ticket's
+   twelve images, four phases by two prices each). The group's name is a
+   subheading, each table's name its caption. Every figure is the seller's
+   cell; a struck one keeps the seller's line and says "(tachado)", both in
+   the muted ink, and an unstruck one is plain ink: no accent, no weight,
+   nothing that would say "this phase is the open one", which the seller's
+   tables do not say. Cells at the small body step, never under 15px. */
+.guide-section h3 {
+  font-size: var(--step-1);
+  margin: var(--space-4) 0 0;
+}
+.price-table {
+  width: 100%;
+  max-width: 36rem;
+  margin: var(--space-2) 0 var(--space-3);
+  border-collapse: collapse;
+  font-size: var(--step--1);
+  font-variant-numeric: tabular-nums;
+}
+.price-table caption {
+  caption-side: top;
+  text-align: left;
+  font-size: var(--step-0);
+  font-weight: 600;
+  color: var(--ink);
+  padding-bottom: var(--space-1);
+}
+.price-table th,
+.price-table td {
+  padding: 0.4rem 0.75rem 0.4rem 0;
+  border-top: 1px solid var(--border);
+  text-align: left;
+  vertical-align: baseline;
+  color: var(--ink);
+}
+.price-table thead th {
+  border-top: 0;
+  font-weight: 600;
+  color: var(--ink-muted);
+}
+.price-table tbody th { font-weight: 600; }
+.price-table .struck { color: var(--ink-muted); }
+/* Below the width where a row's two prices and their "(tachado)" stop
+   fitting beside the phase, each phase stacks: its name, then each price
+   after its column's name. Measured on all twelve, dark and light, on 22
+   October 2026: the table form needs a 354px column, a 382px window, and
+   358px (386px) in the fallback font; 25rem leaves room for both and moves
+   with the reader's font size, so a 412px phone gets the table and a 390px
+   one the stack. Same table, restyled; the column heads stay for a screen
+   reader, and the roles in the markup keep the cells a table's while they
+   are blocks. */
+@media (max-width: 25rem) {
+  .price-table,
+  .price-table caption,
+  .price-table tbody,
+  .price-table tr,
+  .price-table th,
+  .price-table td { display: block; }
+  .price-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .price-table tbody tr {
+    padding: var(--space-1) 0;
+    border-top: 1px solid var(--border);
+  }
+  .price-table th,
+  .price-table td {
+    padding: 0;
+    border-top: 0;
+  }
+  .price-table td {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: var(--space-1);
+    margin-top: 0.15rem;
+  }
+  .price-table td::before {
+    content: attr(data-label);
+    color: var(--ink-muted);
+  }
+}
+
 /* Links out under the paragraph that cites them, one to a line (Field
    Day): named for what they are, since ul.lines is the lineup's ruled
    rows. On a phone each is a thumb's target, and the gap between rows
@@ -280,7 +394,8 @@ h2 { overflow-wrap: break-word; }
 .guide-faq-first { margin-top: var(--space-4); }
 
 /* Sources carry read dates, which a reader acts on: muted, not faint. */
-.guide-sources p {
+.guide-sources p,
+.guide-sources ul {
   font-size: var(--step--1);
   color: var(--ink-muted);
 }

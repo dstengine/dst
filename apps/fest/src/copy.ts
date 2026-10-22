@@ -195,19 +195,42 @@ const KEEP_TOGETHER = new RegExp(
   ].join("|"),
   "g",
 );
+// Spanish, as Chile writes it (Creamfields Chile): a day with its month,
+// and the year when "de 2026" follows ("14 de noviembre de 2026"); a time
+// with its "horas"; an area with its unit ("5.000 m²"); a struck price with
+// its "(tachado)", which says the figure is struck to a reader who cannot
+// see the line through it; a count with its noun ("4 entradas", "85
+// artistas").
+const MES = "(?:enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|setiembre|octubre|noviembre|diciembre)";
+const KEEP_ES = new RegExp(
+  [
+    `\\b\\d{1,2} de ${MES}(?: de \\d{4})?(?![\\p{L}\\d])`, // 14 de noviembre de 2026
+    `\\b\\d{1,2}:\\d{2} horas\\b`, // 12:00 horas
+    `\\b\\d[\\d.]* m²`, // 5.000 m²
+    `\\$\\d[\\d.]*\\d \\(tachado\\)`, // $128.000 (tachado)
+    `\\b\\d[\\d.,]*%? (?:años|meses|días|cuotas|abonos|entradas|personas|artistas|escenarios)(?!\\p{L})`, // 4 entradas
+  ].join("|"),
+  "gu",
+);
+/** Each language's keep-together list, by the guide's language: "es-CL"
+    reads es. A guide in a language with no row does not build. */
+const KEEP: Record<string, RegExp> = { en: KEEP_TOGETHER, es: KEEP_ES };
 const unescaped = (s: string) => s.replace(/&(amp|lt|gt|quot);/g, "_");
 /** The rendered HTML with its dates and counts kept whole, in each short
     run of text between two tags. Tags are left alone: a title attribute
     never gets a span. */
-const typeset = (html: string) =>
-  html
+const typeset = (html: string, lang: string) => {
+  const keep = KEEP[lang.slice(0, 2).toLowerCase()];
+  if (!keep) throw new Error(`copy.ts has no keep-together list for "${lang}"`);
+  return html
     .split(/(<[^>]*>)/)
     .map((run) =>
       run.startsWith("<") || [...unescaped(run)].length > 160
         ? run
-        : run.replace(KEEP_TOGETHER, (m) => `<span class="nowrap">${m}</span>`),
+        : run.replace(keep, (m) => `<span class="nowrap">${m}</span>`),
     )
     .join("");
+};
 
 // A heading is text Astro would escape, set as it always was, with three
 // breaks kept out of it: a month parted from its year ("1 January | 2027,",
@@ -230,9 +253,20 @@ const HEADING_KEEP = new RegExp(
   [`\\b${MONTH} \\d{4}\\b`, `(?:A?\\$)\\d[\\d,.]*\\d \\p{L}+`, `\\b\\d+[–-]\\d+\\p{L}*`].join("|"),
   "gu",
 );
+// A Spanish heading adds a day with its month, and its year when one
+// follows: "Domingo 15 de noviembre: seis escenarios", Creamfields Chile's
+// lineup days, broke "15 | de noviembre" and "14 de | noviembre" from 320
+// to 480 px in the line-break sweep. Not a nowrap: at the heading's 24 px,
+// "15 de noviembre:" is 313 px, wider than the 292 px column at 320, which
+// is the overflow a nowrap date caused on Field Day. It is an inline block
+// from 360 px up (theme.css, .keep-date): whole wherever it fits, wrapping
+// inside itself where it cannot, so it never overflows.
+const HEADING_KEEP_ES = new RegExp(`\\b\\d{1,2} de ${MES}(?: de \\d{4})?(?![\\p{L}\\d])[:,.;]?`, "giu");
 const ASTRO_ESCAPES: Record<string, string> = { "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" };
-export const headingHtml = (text: string) =>
-  text.replace(/[&<>'"]/g, (c) => ASTRO_ESCAPES[c]).replace(HEADING_KEEP, (m) => `<span class="nowrap">${m}</span>`);
+export const headingHtml = (text: string, lang = "en") => {
+  const html = text.replace(/[&<>'"]/g, (c) => ASTRO_ESCAPES[c]).replace(HEADING_KEEP, (m) => `<span class="nowrap">${m}</span>`);
+  return lang.slice(0, 2).toLowerCase() === "es" ? html.replace(HEADING_KEEP_ES, (m) => `<span class="keep-date">${m}</span>`) : html;
+};
 
 // A price card's total stays with the word before its "=": "$209.90 +
 // $10.00 fees = $219.90" may break before "fees", never between "=" and the
@@ -381,7 +415,10 @@ function marks(text: string, ctx: Ctx, site: string): { html: string; md: string
   if (plain.replace(/\s+/g, " ").trim() !== expected)
     throw new Error(`${ctx.where}: the rendered words differ from the copy:\n${plain}\n${expected}`);
 
-  return { html: typeset(html.trim()), md: md.trim(), text: plain.replace(/\s+/g, " ").trim() };
+  // A no-break space is the copy's own (a Glance date that must not part,
+  // which prints this text), so the words-alone rendering keeps it; every
+  // other run of space folds to one.
+  return { html: typeset(html.trim(), ctx.guide.lang), md: md.trim(), text: plain.replace(/[^\S ]+/g, " ").trim() };
 }
 
 /** A single string of copy (a lede, an answer, a blurb, a source line) as
@@ -411,8 +448,9 @@ export const SITE = "https://fest.one";
 
 type Part = { html: string; md: string };
 type Block =
-  | { kind: "p" | "quote"; parts: Part[] }
-  | { kind: "list" | "lines" | "links" | "cards"; parts: Part[] };
+  | { kind: "p" | "quote" | "h3"; parts: Part[] }
+  | { kind: "list" | "lines" | "links" | "cards"; parts: Part[] }
+  | { kind: "table"; rows: string[]; caption?: Part };
 
 /** A line that is one link and nothing else but its tags: a hop the copy
     names by its label after the paragraph that cites it. */
@@ -442,14 +480,23 @@ function card(item: string, ctx: Ctx): Part {
   return { html: parts.join(" "), md: marks(item, ctx, SITE).md };
 }
 
+/** A row of a table: "| Venta 2 | $98.000 | $78.400 (tachado) |". */
+const TABLE_ROW = /^\|.*\|$/;
+/** A lone "**Ticket General**" in a table section: the subheading over
+    its group of tables. */
+const SUBHEADING = /^\*\*([^*\n]+)\*\*$/;
+
 /** A section body's blocks. Paragraphs are separated by a blank line; a
     paragraph whose lines all start "- " is a list, "> " a quotation, and
     one of several plain lines a list of lines (the lineup's stages). Two
     kinds Field Day brought: a list whose every item opens with a **label**
     is a row of price cards, and a paragraph whose every line is a single
-    link is a run of link lines. A paragraph or item whose spans have all
-    expired is left out. */
-function parse(text: string, ctx: Ctx): Block[] {
+    link is a run of link lines. Two more in a section of kind "table"
+    (Creamfields Chile's prices): a paragraph of "|" rows is a table, with
+    the one-line paragraph before it as its caption, and a lone **label**
+    line is a subheading. A paragraph or item whose spans have all expired
+    is left out. */
+function parse(text: string, ctx: Ctx, table = false): Block[] {
   const blocks: Block[] = [];
   for (const para of splitSpans(text).split(/\n{2,}/)) {
     const lines = para.split("\n");
@@ -467,6 +514,15 @@ function parse(text: string, ctx: Ctx): Block[] {
     } else if (lines.every((l) => l.startsWith("> "))) {
       const part = render(lines.map((l) => l.slice(2)).join(" "));
       if (part) blocks.push({ kind: "quote", parts: [part] });
+    } else if (table && lines.map(live).filter(Boolean).length && lines.map(live).filter(Boolean).every((l) => TABLE_ROW.test(l))) {
+      const rows = lines.map(live).filter(Boolean);
+      // The line before it, a paragraph of one line, names it.
+      const before = blocks.at(-1);
+      const caption = before?.kind === "p" ? (blocks.pop(), before.parts[0]) : undefined;
+      blocks.push({ kind: "table", rows, caption });
+    } else if (table && lines.length === 1 && SUBHEADING.test(live(para))) {
+      const part = render(SUBHEADING.exec(live(para))![1]);
+      if (part) blocks.push({ kind: "h3", parts: [part] });
     } else if (lines.map(live).filter(Boolean).every((l) => LINK_LINE.test(l)) && lines.some((l) => live(l))) {
       blocks.push({ kind: "links", parts: keep(lines.map(render)) });
     } else if (lines.length > 1) {
@@ -480,9 +536,49 @@ function parse(text: string, ctx: Ctx): Block[] {
   return blocks;
 }
 
-export function blocks(text: string, ctx: Ctx): string {
-  return parse(text, ctx)
+/** A table's cells, the separator row ("|---|") left out. */
+const cells = (row: string) => row.slice(1, -1).split("|").map((c) => c.trim());
+const isRule = (row: string) => cells(row).every((c) => /^:?-{3,}:?$/.test(c));
+/** A price the seller strikes, as the copy writes it: "$128.000 (tachado)". */
+const STRUCK = /^(\$\d[\d.]*\d) \(tachado\)$/;
+
+/** A table: the header row as column heads, each row led by its first cell
+    as the row's head, each other cell carrying its column's name in
+    `data-label`, which the narrow layout prints before it (theme.css,
+    .price-table). The roles are written out because that layout sets the
+    parts as blocks, and a block loses the table's meaning for a screen
+    reader. A struck price keeps its strike and its word: the line through
+    the figure for the eye, "(tachado)" for everyone, both in the muted ink
+    and kept on one line. */
+function tableHtml(rows: string[], caption: Part | undefined, ctx: Ctx): string {
+  const [head, ...body] = rows.filter((r) => !isRule(r));
+  const heads = cells(head);
+  const cell = (text: string) => {
+    const struck = STRUCK.exec(text);
+    return struck
+      ? `<span class="nowrap"><s>${esc(struck[1])}</s> (tachado)</span>`
+      : marks(text, ctx, SITE).html;
+  };
+  const tr = (row: string) => {
+    const [first, ...rest] = cells(row);
+    if (rest.length !== heads.length - 1) throw new Error(`${ctx.where}: a table row has ${rest.length + 1} cells and its head ${heads.length}: "${row}"`);
+    const tds = rest.map((c, i) => `<td role="cell" data-label="${attr(heads[i + 1])}"${STRUCK.test(c) ? ' class="struck"' : ""}>${cell(c)}</td>`);
+    return `<tr role="row"><th scope="row" role="rowheader">${cell(first)}</th>${tds.join("")}</tr>`;
+  };
+  return [
+    `<table class="price-table" role="table">`,
+    caption ? `<caption>${caption.html}</caption>` : "",
+    `<thead role="rowgroup"><tr role="row">${heads.map((h) => `<th scope="col" role="columnheader">${cell(h)}</th>`).join("")}</tr></thead>`,
+    `<tbody role="rowgroup">${body.map(tr).join("")}</tbody>`,
+    `</table>`,
+  ].join("");
+}
+
+export function blocks(text: string, ctx: Ctx, table = false): string {
+  return parse(text, ctx, table)
     .map((b) => {
+      if (b.kind === "table") return tableHtml(b.rows, b.caption, ctx);
+      if (b.kind === "h3") return `<h3>${b.parts[0].html}</h3>`;
       if (b.kind === "p") return `<p>${b.parts[0].html}</p>`;
       if (b.kind === "quote") return `<blockquote><p>${b.parts[0].html}</p></blockquote>`;
       // Links out, one to a line: a lone one is a paragraph of its own.
@@ -493,9 +589,12 @@ export function blocks(text: string, ctx: Ctx): string {
     .join("\n");
 }
 
-export function blocksMd(text: string, ctx: Ctx): string {
-  return parse(text, ctx)
+export function blocksMd(text: string, ctx: Ctx, table = false): string {
+  return parse(text, ctx, table)
     .map((b) => {
+      // The table as the copy writes it, under its caption line.
+      if (b.kind === "table") return [...(b.caption ? [b.caption.md, ""] : []), ...b.rows].join("\n");
+      if (b.kind === "h3") return `### ${b.parts[0].md}`;
       if (b.kind === "p") return b.parts[0].md;
       if (b.kind === "quote") return `> ${b.parts[0].md}`;
       if (b.kind === "links" && b.parts.length === 1) return b.parts[0].md;
@@ -513,6 +612,9 @@ export function blocksMd(text: string, ctx: Ctx): string {
     A source whose span has expired is left out of the row. */
 export function sourcesHtml(text: string, ctx: Ctx): string {
   const lines = text.split("\n");
+  // Sources written as a list, one "- " item each (Creamfields Chile's,
+  // whose items are long sentences with their own reading dates): a list.
+  if (lines.length > 1 && lines.every((l) => l.startsWith("- "))) return blocks(text, ctx);
   if (lines.length === 1) {
     const one = inline(text, ctx);
     return one ? `<p>${one}</p>` : "";
@@ -523,6 +625,8 @@ export function sourcesHtml(text: string, ctx: Ctx): string {
 
 /** The same in Markdown: the row's sources on one line, " · " between. */
 export function sourcesMd(text: string, ctx: Ctx): string {
+  const lines = text.split("\n");
+  if (lines.length > 1 && lines.every((l) => l.startsWith("- "))) return blocksMd(text, ctx);
   return text
     .split("\n")
     .map((l) => inlineMd(l, ctx))

@@ -33,7 +33,7 @@ function guideDocs(guide: Guide, day: string): Doc[] {
     // Headings and questions as the page prints them that day (GuidePage).
     const plain = (text: string) => applySpans(text, guide, day, ctx.where).trim();
     const sections = page.sections.flatMap((s) => {
-      const body = blocksMd(s.body, ctx);
+      const body = blocksMd(s.body, ctx, s.kind === "table");
       return body ? [`## ${plain(s.heading)}`, "", body, ""] : [];
     });
     const faq = page.faq.flatMap((row) => {
@@ -57,7 +57,9 @@ function guideDocs(guide: Guide, day: string): Doc[] {
         "",
         `> ${page.description}`,
         "",
-        inlineMd(page.lede, ctx),
+        // The lede and, after a blank line, the line on why the guide
+        // exists (GuidePage), each a paragraph.
+        page.lede.split(/\n{2,}/).map((p) => inlineMd(p, ctx)).filter(Boolean).join("\n\n"),
         "",
         ...(page.faqFirst ? questions : []),
         ...sections,

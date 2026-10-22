@@ -20,7 +20,7 @@ import type { FestEvent, Guide, GuidePage } from "../data/types";
 import { applySpans, blocks, headingHtml, inline, inlineText, pathOf, sourcesHtml, withoutSuffix, type Ctx } from "../copy";
 import { mainPage } from "../rules";
 import { languagesFor } from "../routes";
-import { chrome, site } from "../site.config";
+import { chrome, langOf, site } from "../site.config";
 
 interface Props {
   event: FestEvent;
@@ -29,8 +29,8 @@ interface Props {
   today: string;
 }
 const { event, guide, page, today } = Astro.props;
-const words = chrome.en;
-const home = site.en;
+const words = chrome[langOf(guide.lang)];
+const home = site[langOf(guide.lang)];
 const path = pathOf(page);
 const ctx: Ctx = { event, guide, page, today, where: path };
 const main = mainPage(guide);
@@ -52,12 +52,20 @@ const languages = languagesFor(page, guide);
 // printed.
 const plain = (text: string) => applySpans(text, guide, today, path).trim();
 const sections = page.sections
-  .map((s) => ({ ...s, heading: plain(s.heading), html: blocks(s.body, ctx) }))
+  .map((s) => ({ ...s, heading: plain(s.heading), html: blocks(s.body, ctx, s.kind === "table") }))
   .filter((s) => s.html);
 // A jump link's label is the whole of what it does, so it carries no
 // tooltip: one that read the label back is the thing these pages may not
 // carry anywhere.
-const jumps = sections.map((s) => ({ id: s.id, label: s.heading, title: false as const }));
+// A page that names its own (Creamfields Chile's main page: four sections
+// and the questions, under short labels) has them as given, each checked
+// against what the page prints that day.
+const jumpIds = new Set([...sections.map((s) => s.id), "questions"]);
+for (const j of page.jumps ?? [])
+  if (!jumpIds.has(j.id)) throw new Error(`${path}: the jump "${j.label}" names #${j.id}, which the page does not print`);
+const jumps = page.jumps
+  ? page.jumps.map((j) => ({ ...j, title: false as const }))
+  : sections.map((s) => ({ id: s.id, label: s.heading, title: false as const }));
 
 // Each answer twice: as the page prints it, with its links to the guide's
 // other pages and the spans that keep a date whole, and as words alone for
@@ -73,7 +81,15 @@ const faq = page.faq
 // expressions is a space in the HTML, and Beyond The Valley's pages, which
 // have neither, must come out byte for byte as they were.
 const faqFirst = page.faqFirst === true;
-const lede = inline(page.lede, ctx);
+// The lede is its first paragraph. A second, after a blank line, is the
+// line on why the guide exists, set smaller under it (Creamfields Chile:
+// the fest director's gate-3 condition 2), so the answer still comes first.
+const [ledeFirst, ...ledeRest] = page.lede.split(/\n{2,}/);
+const lede = inline(ledeFirst, ctx);
+const why = ledeRest.length ? inline(ledeRest.join(" "), ctx) : "";
+// The facts at a glance print as text: a value's [key] tags are checked
+// and left out, as in the copy.
+const glance = page.glance?.map((g) => ({ label: g.label, value: inlineText(g.value, ctx), icon: ICONS.list }));
 const sources = page.sources === undefined ? "" : sourcesHtml(page.sources, ctx);
 const sourcesNote = page.sourcesNote === undefined ? "" : inline(page.sourcesNote, ctx);
 const links = page.links === undefined ? "" : inline(page.links, ctx);
@@ -88,7 +104,7 @@ const links = page.links === undefined ? "" : inline(page.links, ctx);
   />
   <header class="guide-head">
     <h1>{page.h1}</h1>
-    {lede && <p class="lede" set:html={lede} />}
+    {lede && <p class="lede" set:html={lede} />}{why && <p class="lede-why" set:html={why} />}
   </header>
 
   <ChipNav items={siblings} current={path} label={words.siblingNav} />
@@ -108,7 +124,12 @@ const links = page.links === undefined ? "" : inline(page.links, ctx);
       )}
     </div>
   )}
-  {page.glance && <Glance facts={page.glance.map((g) => ({ ...g, icon: ICONS.list }))} />}
+  {glance && (page.glanceHeading ? (
+    <section class="guide-glance" aria-labelledby="glance">
+      <h2 id="glance">{page.glanceHeading}</h2>
+      <Glance facts={glance} />
+    </section>
+  ) : <Glance facts={glance} />)}
   {(page.calendar || page.map) && (
     <p class="guide-files">
       {page.calendar && <a href={page.calendar.href} title={page.calendar.title}>{page.calendar.label}</a>}
@@ -116,7 +137,7 @@ const links = page.links === undefined ? "" : inline(page.links, ctx);
     </p>
   )}
 
-  <OnThisPage items={jumps} min={5} heading={page.onThisPage ?? words.onThisPage} />
+  <OnThisPage items={jumps} min={page.jumps ? 1 : 5} heading={page.onThisPage ?? words.onThisPage} />
 
   {faqFirst && faq.length > 0 && (
     page.faqHeading ? (
@@ -129,7 +150,7 @@ const links = page.links === undefined ? "" : inline(page.links, ctx);
     )
   )}{sections.map((s) => (
     <section class="guide-section" aria-labelledby={s.id}>
-      <h2 id={s.id} set:html={headingHtml(s.heading)} />
+      <h2 id={s.id} set:html={headingHtml(s.heading, guide.lang)} />
       <Fragment set:html={s.html} />
     </section>
   ))}

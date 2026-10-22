@@ -49,8 +49,23 @@ export interface FestEvent extends Dated {
   markup: {
     startDate: string;
     endDate: string;
-    organizer: { name: string; url: string };
-    offers: { prices: number[]; go: string; seller: string; validFrom: string };
+    /** The venue's address as the markup prints it, for a venue whose
+        sheet address is not Australia's "street, locality STATE postcode",
+        which rules.ts reads when this is absent. Region and postcode only
+        where the sheet has them (Creamfields Chile's has neither). */
+    address?: { streetAddress: string; addressLocality: string; addressRegion?: string; postalCode?: string; addressCountry: string };
+    /** The sheet key of the coordinates the markup prints ({ lat, lon }),
+        where they are not the scout's venue.lat and venue.lon. */
+    geo?: string;
+    /** The organiser's site, where it has one, goes out as `sameAs`. */
+    organizer: { name: string; url?: string };
+    /** Either price rows of the sheet, one offer each, at the seller's
+        price with its fee (Moshtix prints it), or one offer at one sheet
+        figure (`price.key`, an { amount }), where the seller prints its
+        prices without the fee and no source gives the total. */
+    offers:
+      | { prices: number[]; go: string; seller: string; validFrom: string }
+      | { price: { key: string; currency: string }; go: string; seller: string; validFrom: string };
   };
   /** Section 1 of the card, verbatim with every repair. Free-form on
       purpose: it is the scout's document, and copy.ts resolves the copy's
@@ -66,8 +81,10 @@ export interface Section {
   id: string;
   heading: string;
   body: string;
-  /** Reserved for the price tables a later guide brings (Creamfields);
-      every section is prose until a card ships one and checks it at 320. */
+  /** "table" reads a paragraph of "|" lines as a table, the one-line
+      paragraph before it as its caption and a lone "**label**" line as a
+      subheading (copy.ts): Creamfields Chile's twelve price tables. Every
+      other section is prose. */
   kind?: "prose" | "table";
 }
 
@@ -90,8 +107,14 @@ export interface Anchor {
 export interface Slots {
   /** A ticket button: the seller's line under it and a second link. */
   cta?: { href: string; label: string; title: string; seller: string; secondary?: { href: string; label: string; title: string } };
-  /** The facts at a glance, label and value. */
+  /** The facts at a glance, label and value. A value may carry [key]
+      tags, which are checked and left out; it carries no link. It prints
+      as text, out of typeset's reach, so a date that must not break takes
+      no-break spaces in the value itself ("15 de noviembre…",
+      Creamfields Chile; the fest director's gate-3 condition 3). */
   glance?: { label: string; value: string }[];
+  /** The heading over them, where the guide gives one. */
+  glanceHeading?: string;
   /** A status badge and its countdown target. */
   badge?: { text: string; until?: string };
   /** A calendar file for the edition. */
@@ -123,7 +146,8 @@ export interface GuidePage extends Dated, Slots {
       them share, "(read 21 October 2026 unless dated)". */
   sourcesNote?: string;
   /** One line is one paragraph. Several lines are one source each, set as
-      a row with a dot between them (copy.ts, sourcesHtml). */
+      a row with a dot between them (copy.ts, sourcesHtml), unless every
+      line opens "- ": then they are a list, one source an item. */
   sources?: string;
   links?: string;
   foot?: string;
@@ -131,6 +155,10 @@ export interface GuidePage extends Dated, Slots {
   /** The heading over the jump list, when a guide's language needs its own
       word for it rather than the language's (site.config.ts). */
   onThisPage?: string;
+  /** The jump list, where the page names its own: a section's id or
+      "questions", with a short label. Without it the list is the sections'
+      headings, from five sections up. */
+  jumps?: { id: string; label: string }[];
 }
 
 /** One guide: an event in one language. */

@@ -3,7 +3,7 @@
 // event's structured data says, and what a title must be.
 import { hasEnded, lastDay } from "@dst/content/when";
 import type { FestEvent, Guide, GuidePage } from "./data/types";
-import { expired, pathOf, SITE } from "./copy";
+import { expired, pathOf, resolve, SITE } from "./copy";
 
 /** The day the build is for, ISO. `FEST_TODAY` sets it, so the expiry of a
     price can be built and tested before the day comes (and a session on
@@ -71,28 +71,37 @@ export function musicEvent(event: FestEvent, guide: Guide, page: GuidePage, day:
   const prices = event.sheet.prices as Price[];
   const { markup } = event;
   // "4484 Hamilton Highway, Hesse VIC 3321": the street, then the locality,
-  // the state and the postcode as Australia writes them.
-  const address = /^(.*), (.+) ([A-Z]{2,3}) (\d{4})$/.exec(venue.address);
-  if (!address) throw new Error(`${event.slug}: venue.address "${venue.address}" is not "street, locality STATE postcode"`);
+  // the state and the postcode as Australia writes them. A venue elsewhere
+  // gives its parts in markup.address ("Av. Blanco Encalada 2540, Santiago
+  // Centro, Santiago, Chile" has no state and no postcode to read).
+  const postal = markup.address ?? { ...australian(event.slug, venue.address), addressCountry: venue.country };
+  // The point the markup names: the venue's own marker where the guide
+  // took it (Creamfields Chile's club page), else the scout's pair.
+  const at = markup.geo ? (resolve(event.sheet, markup.geo) as { lat: number; lon: number } | undefined) : venue;
+  if (!at || typeof at.lat !== "number" || typeof at.lon !== "number")
+    throw new Error(`${event.slug}: markup.geo "${markup.geo}" names no { lat, lon } in the sheet`);
   // The offers print the sheet's prices, so the guide must say when they
   // stop being true, as its price spans do.
   if (!guide.expires.prices)
     throw new Error(`${guide.event}/${guide.slug}: the MusicEvent prints prices, and "expires" has no prices date`);
+  const shown = !expired(guide, "prices", day);
   const offers = hasEnded(event.edition, day)
     ? undefined
-    : markup.offers.prices.map((i) => {
-        const row = prices[i];
-        if (!row) throw new Error(`${event.slug}: markup.offers names prices.${i}, which the sheet lacks`);
-        return {
-          "@type": "Offer",
-          name: row.label,
-          ...(expired(guide, "prices", day) ? {} : { price: row.total ?? row.amount, priceCurrency: row.currency }),
-          ...(soldOut(row.status) ? { availability: "https://schema.org/SoldOut" } : {}),
-          validFrom: markup.offers.validFrom,
-          url: `${SITE}/go/${event.slug}-${markup.offers.go}/`,
-          seller: { "@type": "Organization", name: markup.offers.seller },
-        };
-      });
+    : !("prices" in markup.offers)
+      ? [single(event, markup.offers, shown)]
+      : markup.offers.prices.map((i) => {
+          const row = prices[i];
+          if (!row) throw new Error(`${event.slug}: markup.offers names prices.${i}, which the sheet lacks`);
+          return {
+            "@type": "Offer",
+            name: row.label,
+            ...(shown ? { price: row.total ?? row.amount, priceCurrency: row.currency } : {}),
+            ...(soldOut(row.status) ? { availability: "https://schema.org/SoldOut" } : {}),
+            validFrom: markup.offers.validFrom,
+            url: `${SITE}/go/${event.slug}-${markup.offers.go}/`,
+            seller: { "@type": "Organization", name: markup.offers.seller },
+          };
+        });
   return {
     "@type": "MusicEvent",
     additionalType: "https://schema.org/Festival",
@@ -107,22 +116,46 @@ export function musicEvent(event: FestEvent, guide: Guide, page: GuidePage, day:
     location: {
       "@type": "Place",
       name: venue.name,
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: address[1],
-        addressLocality: address[2],
-        addressRegion: address[3],
-        postalCode: address[4],
-        addressCountry: venue.country,
-      },
-      geo: { "@type": "GeoCoordinates", latitude: venue.lat, longitude: venue.lon },
+      address: { "@type": "PostalAddress", ...postal },
+      geo: { "@type": "GeoCoordinates", latitude: at.lat, longitude: at.lon },
     },
     // The organiser's site as `sameAs`, not `url`: the network's structured
     // data names a third party only as an identity (tests/outbound-links).
-    organizer: { "@type": "Organization", name: markup.organizer.name, sameAs: markup.organizer.url },
+    // None where the organiser has no site of its own (Creamfields Chile's
+    // only channel is Instagram, a third party's page, which stays a hop).
+    organizer: {
+      "@type": "Organization",
+      name: markup.organizer.name,
+      ...(markup.organizer.url ? { sameAs: markup.organizer.url } : {}),
+    },
     publisher: { "@id": "https://fest.one/#organization" },
     mainEntityOfPage: { "@id": `${url}#webpage` },
     ...(offers ? { offers } : {}),
+  };
+}
+
+/** An Australian address in its parts, in the order the markup prints
+    them. */
+function australian(slug: string, address: string) {
+  const parts = /^(.*), (.+) ([A-Z]{2,3}) (\d{4})$/.exec(address);
+  if (!parts) throw new Error(`${slug}: venue.address "${address}" is not "street, locality STATE postcode"; give markup.address`);
+  return { streetAddress: parts[1], addressLocality: parts[2], addressRegion: parts[3], postalCode: parts[4] };
+}
+
+/** One offer at one sheet figure, for a seller whose prices carry no fee
+    and whose total no source prints (Creamfields Chile: Punto Ticket's
+    tables, the 12,5% charge added at checkout). The figure is a cell the
+    page prints; which cell moves only when the scout re-reads the tables.
+    No name, no availability: the seller says nothing about stock. */
+function single(event: FestEvent, offers: { price: { key: string; currency: string }; go: string; seller: string; validFrom: string }, shown: boolean) {
+  const figure = resolve(event.sheet, offers.price.key) as { amount?: unknown } | undefined;
+  if (typeof figure?.amount !== "number") throw new Error(`${event.slug}: markup.offers.price.key "${offers.price.key}" names no { amount } in the sheet`);
+  return {
+    "@type": "Offer",
+    ...(shown ? { price: figure.amount, priceCurrency: offers.price.currency } : {}),
+    validFrom: offers.validFrom,
+    url: `${SITE}/go/${event.slug}-${offers.go}/`,
+    seller: { "@type": "Organization", name: offers.seller },
   };
 }
 

@@ -6,7 +6,7 @@ import GuidePage from "../components/GuidePage.astro";
 import { assertRoutesAreUnique, alternatesFor, guideRoutes, type GuideRoute } from "../routes";
 import { assertTitle, mainPage, musicEvent, today } from "../rules";
 import { withSuffix } from "@dst/ui/title";
-import { site } from "../site.config";
+import { langOf, site } from "../site.config";
 
 export function getStaticPaths() {
   assertRoutesAreUnique();
@@ -19,7 +19,9 @@ export function getStaticPaths() {
 const { route } = Astro.props as { route: GuideRoute };
 const { event, guide, page } = route;
 const day = today();
-const { titleSuffix, keyword } = site.en;
+// The suffix and the keyword of the guide's language: a Spanish title ends
+// "guía del festival" and is held to "festival" as Spanish has it.
+const { titleSuffix, keyword } = site[langOf(guide.lang)];
 assertTitle(withSuffix(page.title, titleSuffix, keyword, guide.lang), keyword, route.path);
 
 // One event, one URL: the MusicEvent goes on the guide's main page only,

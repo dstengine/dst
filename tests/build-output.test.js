@@ -1064,9 +1064,10 @@ describe("sitemap", () => {
   // Sites whose pages honestly share one date, each with the reason and
   // the day the exemption ends. Not a threshold: a named site, so the next
   // one to go flat still fails.
-  const FLAT_OK = {
-    fest: "two guides committed on 22 Oct 2026; dated by entry in apps/fest/src/dated.ts; remove with the first guide dated another day (Creamfields Chile)",
-  };
+  // fest's exemption (two guides committed on 22 Oct 2026) went with
+  // Creamfields Chile, the third guide that day: its pages share 22 October
+  // with tick's, which vary, so the rule holds without it.
+  const FLAT_OK = {};
   for (const [app, why] of Object.entries(FLAT_OK)) console.log(`  ${app} may be flat: ${why}`);
 
   test("no site dates every page the same", () => {
@@ -1673,6 +1674,13 @@ describe("how much of each site is the template", () => {
     // independent of. Room for the second guide's chrome, not for a
     // template.
     fest: 5,
+    // Every figure above was taken with the a–z tokeniser. From 22 October
+    // 2026 tools/text-dupes.mjs counts Spanish, Portuguese, French and
+    // Armenian words whole (Creamfields Chile), measured that day on the
+    // same dists, old → new: cmx 20.45 → 19.06, mxo 19.97 → 19.72, aca
+    // 31.39 → 31.16, tick 34.17 → 32.22, whose Armenian pages now count
+    // (64,259 words → 100,516). No English page's word count moved, and no
+    // ceiling did.
   };
 
   test("no site is more template than the ceiling it recorded", async () => {

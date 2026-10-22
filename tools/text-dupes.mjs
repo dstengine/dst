@@ -22,10 +22,17 @@ export const MANY = 5;
 // Languages written without spaces between words. Splitting their text on
 // spaces finds one "word" per phrase, and the filter below keeps only a–z
 // and digits, so a Thai page scored as nothing at all. For these the words
-// come from the platform's own word breaker instead. Every other page keeps
-// the tokeniser it always had, byte for byte, so no site's score or its
-// ceiling in tests/build-output.test.js moves.
+// come from the platform's own word breaker instead.
 const SEGMENTED = new Set(["th", "lo", "km", "my", "zh", "ja"]);
+
+// Languages spaced as English is but written with letters outside a–z. The
+// a–z filter split "días" into "d" and "as" and "ñandú" into "and", and read
+// an Armenian page as no words at all. For these a word is a run of letters,
+// their marks and digits, on NFC text so that an accent typed as a separate
+// mark stays with its letter. English and every other language keep the
+// tokeniser they always had, byte for byte; the ceilings in
+// tests/build-output.test.js record what this moved on the es and hy sites.
+const LETTERED = new Set(["es", "pt", "hy", "fr"]);
 
 /** The page's language, from its <html lang>, lower-cased: "en-au", "th". */
 export const langOf = (html) => (html.match(/<html\b[^>]*?\slang="([^"]*)"/i)?.[1] ?? "").toLowerCase();
@@ -37,6 +44,8 @@ export function wordsOf(text, lang = "") {
     const segmenter = new Intl.Segmenter(base, { granularity: "word" });
     return [...segmenter.segment(text.toLowerCase())].filter((s) => s.isWordLike).map((s) => s.segment);
   }
+  if (LETTERED.has(base))
+    return text.toLowerCase().normalize("NFC").replace(/[^\p{L}\p{M}\p{N} ]+/gu, " ").split(/\s+/).filter(Boolean);
   return text.toLowerCase().replace(/[^a-z0-9 ]+/g, " ").split(/\s+/).filter(Boolean);
 }
 

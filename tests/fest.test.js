@@ -66,6 +66,15 @@ function strings(guide) {
     add("description", page.description);
     add("h1", page.h1);
     add("lede", page.lede);
+    // The facts at a glance and the page's own jump labels print too
+    // (Creamfields Chile's main page), so their tags and words are held to
+    // the same rules.
+    add("glanceHeading", page.glanceHeading);
+    page.glance?.forEach((g, i) => {
+      add(`glance.${i}.label`, g.label);
+      add(`glance.${i}.value`, g.value);
+    });
+    page.jumps?.forEach((j, i) => add(`jumps.${i}`, j.label));
     page.sections.forEach((s) => {
       add(`sections.${s.id}.heading`, s.heading);
       add(`sections.${s.id}`, s.body);
@@ -540,6 +549,15 @@ describe("scripts", () => {
     assert.ok(thai.includes("และ"), "the conjunction is a word of its own");
     assert.deepEqual(wordsOf("Camping and tents, from $385!", "en-au"), ["camping", "and", "tents", "from", "385"]);
     assert.deepEqual(wordsOf("Camping and tents", ""), ["camping", "and", "tents"]);
+  });
+
+  // Spanish and Armenian are spaced as English is, with letters outside
+  // a–z: an accent or an ñ keeps its word whole, an accent typed as a
+  // separate mark stays with its letter, and an Armenian page has words.
+  test("text-dupes keeps Spanish words whole and counts Armenian", () => {
+    assert.deepEqual(wordsOf("Dos días: ñandú, ¡12,5%!", "es-cl"), ["dos", "días", "ñandú", "12", "5"]);
+    assert.deepEqual(wordsOf("Dos días", "es"), ["dos", "días"]);
+    assert.deepEqual(wordsOf("Երևանի համերգներ", "hy"), ["երևանի", "համերգներ"]);
   });
 });
 

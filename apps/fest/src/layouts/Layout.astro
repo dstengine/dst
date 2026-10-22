@@ -3,7 +3,7 @@
 // for a guide's page, the guide's locale and anything the guide adds to the
 // footer. Nothing here is a word of any page.
 import BaseLayout from "@dst/ui/BaseLayout.astro";
-import { site as sites, type Lang } from "../site.config";
+import { langOf, site as sites, type Lang } from "../site.config";
 import type { Guide } from "../data/types";
 import "../styles/theme.css";
 
@@ -22,8 +22,9 @@ const { title, description, jsonLd, alternates, crumbLabels, guide, language = "
 
 // The guide's locale over the language's, and its own footer links after the
 // hub's. Spread, like the rest of the identity, so the layout sets none of
-// it by name.
-const own = sites[language];
+// it by name. A guide's page takes the row of the guide's language (es-CL
+// reads es); the hub, which has no guide, the one it names.
+const own = sites[guide ? langOf(guide.lang) : language];
 const site = {
   ...own,
   ...(guide ? { lang: guide.lang } : {}),

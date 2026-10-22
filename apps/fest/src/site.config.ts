@@ -7,9 +7,20 @@
 // A language's row holds the chrome its pages say around a guide; the
 // guide's own words, its page labels included, are the guide's (data/).
 // es, pt and th rows come with the cards that ship those guides, each with
-// its native reader.
+// its native reader: es with Creamfields Chile (es-CL), its strings passed
+// by the es-CL native reader at gate 3, and written to serve an es-MX guide
+// as they stand.
 
-export type Lang = "en";
+export type Lang = "en" | "es";
+
+/** The row a guide's locale reads: "es-CL" and "es-MX" read `es`. A
+    locale with no row throws, so a guide in a new language cannot build
+    with another language's words around it. */
+export function langOf(locale: string): Lang {
+  const lang = locale.slice(0, 2).toLowerCase();
+  if (!(lang in site)) throw new Error(`no row in site.config.ts for "${locale}"`);
+  return lang as Lang;
+}
 
 const publisher = {
   id: "https://fest.one/#organization",
@@ -58,6 +69,26 @@ export const site: Record<Lang, {
     // toggle and a light palette are there for the reader in the sun.
     defaultTheme: "dark",
   },
+  // The Spanish row, as en's but in Spanish. The hub stays English, so
+  // homeHref still names /festivals/ and only the words change.
+  es: {
+    siteName: "fest.one",
+    footerSiteName: "fest.one",
+    homeTitle: "Guías de festivales",
+    titleSuffix: "guía del festival",
+    keyword: "festival",
+    lang: "es",
+    homeHref: "/festivals/",
+    homeLabel: "Festivales",
+    footerLinks: [
+      { href: "/festivals/", label: "Todas las guías de festivales", title: "Cada guía en su idioma: fechas, entradas y line-ups" },
+    ],
+    publisher,
+    networkFooter: false,
+    partnerDisclosure: false,
+    analytics: false,
+    defaultTheme: "dark",
+  },
 };
 
 /** The words the guide template says itself, per language. */
@@ -80,8 +111,15 @@ export const chrome: Record<Lang, {
     llmsHeading: "fest.one festival guides",
     otherLanguages: "This guide in other languages",
   },
+  es: {
+    rootCrumbTitle: "Todas las guías de festivales",
+    siblingNav: "Esta guía",
+    onThisPage: "En esta página",
+    llmsHeading: "Guías de festivales de fest.one",
+    otherLanguages: "Esta guía en otros idiomas",
+  },
 };
 
 // Every keyword in one place for tools/seo-check.mjs, which reads this file
 // as text and picks the one matching each page's <html lang>.
-export const keywords = { en: "festival" };
+export const keywords = { en: "festival", es: "festival" };
