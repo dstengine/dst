@@ -42,7 +42,7 @@ export const events: FestEvent[] = [
   {
     slug: "creamfields-chile",
     createdAt: "2026-10-22T17:00:00+04:00",
-    updatedAt: "2026-10-22T17:00:00+04:00",
+    updatedAt: "2026-10-22T18:20:00+04:00",
     name: "Creamfields Chile",
     edition: { start: "2026-11-14", end: "2026-11-15" },
     // These keys carry no readOn of their own; the scout's round 1 read them
@@ -416,7 +416,13 @@ export const events: FestEvent[] = [
           "Faithless Sound System",
           "Bruno Martini",
         ],
-        by_day_source: "s20 (the seller's line-up-x-dia.png, read in full by the session in the pane, 2026-10-21); day and stage only, no set times; Morten plays both days; Saturday Main Stage carries one 'Artist TBC'",
+        // Dated 2026-10-22, not the session's pane read of the 21st: the
+        // gate-2 ruling (the card's section 4, fest director round 2 (b) and
+        // the session after gate 2, item 2) moved the line-up's reading to 22
+        // October once the fact-checker found the image byte-identical that
+        // day, and the critic's own fetch on 22 October found it
+        // hash-identical again (critic m1). lineup.readOn below says the same.
+        by_day_source: "s20 (the seller's line-up-x-dia.png, read in full by the session in the pane, 2026-10-22); day and stage only, no set times; Morten plays both days; Saturday Main Stage carries one 'Artist TBC'",
         by_day: [
           {
             day: "Sábado 14 de noviembre",
@@ -1590,9 +1596,11 @@ export const events: FestEvent[] = [
         // Google Maps names no place at this pair: opened at 390 px on 22 Oct
         // 2026, the hop lands on a pin titled with its coordinates
         // (33°27'30.7"S 70°40'14.7"W, "No hay opiniones"), so the title
-        // says it is a point and whose (fest director, gate 3, condition 9).
-        // The native reader confirms the string at QA.
-        title: "Un punto en el Club Hípico de Santiago en Google Maps: las coordenadas del club",
+        // says a nameless pin opens, and at whose coordinates (fest director,
+        // gate 3, condition 9). The native reader (es-CL) returned the first
+        // string, "Un punto en el Club Hípico de Santiago en Google Maps: las
+        // coordenadas del club", and wrote this one on 22 Oct 2026.
+        title: "Las coordenadas del Club Hípico de Santiago en Google Maps: se abre un pin sin nombre",
       },
       instagram: {
         url: "https://www.instagram.com/creamfields_cl",
@@ -1637,7 +1645,7 @@ export const guides: Guide[] = [
       {
         slug: "creamfields-chile",
         createdAt: "2026-10-22T17:00:00+04:00",
-        updatedAt: "2026-10-22T17:00:00+04:00",
+        updatedAt: "2026-10-22T18:20:00+04:00",
         kind: "main",
         label: "Guía",
         title: "Creamfields Chile 2026: fechas, entradas — guía del festival",
@@ -1692,7 +1700,7 @@ export const guides: Guide[] = [
           },
           {
             q: "¿Qué artistas se presentarán en Creamfields Chile 2026?",
-            a: "Calvin Harris, Charlotte de Witte, Fisher y Hugel en el Main Stage del domingo 15; Hardwell y Boris Brejcha en el del sábado 14 [lineup.by_day.1.stages.0.acts] [lineup.by_day.0.stages.0.acts]. También Don Diablo, Jonas Blue, The Blessed Madonna, Kölsch, Faithless Sound System, Enrico Sangiuliano y Âme Live, entre otros, según el line-up por día de Punto Ticket, leído el 21 de octubre de 2026 [lineup.by_day.0.stages.1.acts] [lineup.by_day.1.stages.2.acts] [lineup.by_day.1.stages.3.acts]. La lista completa, escenario por escenario, está en la página del line-up. → /creamfields-chile/line-up/",
+            a: "Calvin Harris, Charlotte de Witte, Fisher y Hugel en el Main Stage del domingo 15; Hardwell y Boris Brejcha en el del sábado 14 [lineup.by_day.1.stages.0.acts] [lineup.by_day.0.stages.0.acts]. También Don Diablo, Jonas Blue, The Blessed Madonna, Kölsch, Faithless Sound System, Enrico Sangiuliano y Âme Live, entre otros, según el line-up por día de Punto Ticket, leído el 22 de octubre de 2026 [lineup.by_day.0.stages.1.acts] [lineup.by_day.1.stages.2.acts] [lineup.by_day.1.stages.3.acts]. La lista completa, escenario por escenario, está en la página del line-up. → /creamfields-chile/line-up/",
           },
           {
             q: "¿Hay algún festival de electrónica en Chile?",
@@ -1704,7 +1712,7 @@ export const guides: Guide[] = [
           },
           {
             q: "¿Qué es Creamfields Chile?",
-            a: "Es la edición chilena de Creamfields, una marca de festival nacida en el Reino Unido cuya edición original se remonta a 1998, según CNN Chile [editions_v2.brand]. Lo produce Street Machine Producciones [event.organiser], dura dos días [editions_v2.items.0.dates], es para mayores de 18 años [age.min] y en 2025 celebró, según La Tercera, sus 20 años en Chile [editions_v2.items.1.dates_source].",
+            a: "Es la edición chilena de Creamfields, una marca de festival nacida en el Reino Unido cuya edición original se remonta a 1998, según CNN Chile [editions_v2.brand]. Lo produce Street Machine Producciones [event.organiser], dura dos días [editions_v2.items.0.dates], es para mayores de 18 años [age.min] y en 2025 celebró, según CNN Chile, sus 20 años en Chile [editions_v2.items.1.names].",
           },
           {
             q: "¿Cuándo fue Creamfields Chile 2025 y quiénes tocaron?",
@@ -1716,7 +1724,7 @@ export const guides: Guide[] = [
           },
         ],
         sourcesHeading: "Fuentes",
-        sources: "- [Punto Ticket, página oficial de Creamfields Chile 2026 (creamfields.cl redirige aquí)](/go/creamfields-chile-tickets/), leída el 22 de octubre de 2026 [sources.s1]\n- Line-up por día, imagen en la página de Punto Ticket, leída el 21 de octubre de 2026{{until prices}}; tablas de precios, leídas el 22 de octubre de 2026{{/until}} [sources.s20]\n- Punto Ticket, \"Creamfields Chile 2026: ¡Prepárense para la celebración más grande de la música electrónica!\", comunicado de la organización, leído el 22 de octubre de 2026 [sources.s7]\n- Punto Ticket, \"Creamfields Chile crece: Suma una nueva zona de 5.000 m² y estrena anfiteatro en Club Hípico\", leído el 22 de octubre de 2026 [sources.s15] [labels_v2.s15_headline]\n- [Club Hípico de Santiago, contacto](/go/creamfields-chile-venue/), leído el 22 de octubre de 2026 [sources.s3]\n- Prensa, citada en el texto: Radio Agricultura, 23 de mayo de 2025 y 17 de marzo de 2026 [sources.s21] [sources.s9]; La Tercera Culto, 26 de mayo de 2025 y 28 de abril de 2026 [sources.s8] [sources.s18]; CNN Chile, \"Vuelve Creamfields Chile: Cuándo es la edición 2026 en Santiago y cómo inscribirse para la preventa\" [sources.s10] [labels_v2.s10_headline]; Meganoticias y 24horas.cl, 7 de agosto de 2026 [sources.s12] [sources.s13]\n- [Creamfields Chile en Instagram, canal de la organización](/go/creamfields-chile-instagram/) [sources.s19]",
+        sources: "- [Punto Ticket, página oficial de Creamfields Chile 2026 (creamfields.cl redirige aquí)](/go/creamfields-chile-tickets/), leída el 22 de octubre de 2026 [sources.s1]\n- Line-up por día, imagen en la página de Punto Ticket, leída el 22 de octubre de 2026{{until prices}}; tablas de precios, leídas el 22 de octubre de 2026{{/until}} [sources.s20]\n- Punto Ticket, \"Creamfields Chile 2026: ¡Prepárense para la celebración más grande de la música electrónica!\", comunicado de la organización, leído el 22 de octubre de 2026 [sources.s7]\n- Punto Ticket, \"Creamfields Chile crece: Suma una nueva zona de 5.000 m² y estrena anfiteatro en Club Hípico\", leído el 22 de octubre de 2026 [sources.s15] [labels_v2.s15_headline]\n- [Club Hípico de Santiago, contacto](/go/creamfields-chile-venue/), leído el 22 de octubre de 2026 [sources.s3]\n- Prensa, citada en el texto: Radio Agricultura, 23 de mayo de 2025 y 17 de marzo de 2026 [sources.s21] [sources.s9]; La Tercera Culto, 26 de mayo de 2025 y 28 de abril de 2026 [sources.s8] [sources.s18]; CNN Chile, \"Vuelve Creamfields Chile: Cuándo es la edición 2026 en Santiago y cómo inscribirse para la preventa\" [sources.s10] [labels_v2.s10_headline]; Meganoticias y 24horas.cl, 7 de agosto de 2026 [sources.s12] [sources.s13]\n- [Creamfields Chile en Instagram, canal de la organización](/go/creamfields-chile-instagram/) [sources.s19]",
         anchors: [
           { target: "/creamfields-chile/entradas/", text: "página de entradas" },
           { target: "/creamfields-chile/line-up/", text: "página del line-up" },
@@ -1798,7 +1806,7 @@ export const guides: Guide[] = [
       {
         slug: "creamfields-chile/line-up",
         createdAt: "2026-10-22T17:00:00+04:00",
-        updatedAt: "2026-10-22T17:00:00+04:00",
+        updatedAt: "2026-10-22T18:20:00+04:00",
         kind: "lineup",
         label: "Line-up",
         title: "Creamfields Chile 2026: line-up por día — guía del festival",
@@ -1819,7 +1827,7 @@ export const guides: Guide[] = [
           {
             id: "horarios",
             heading: "Horarios",
-            body: "Al 22 de octubre de 2026 la organización ha publicado el día y el escenario de cada artista, pero no la hora de cada set ni la hora de apertura de puertas [schedule_v2.set_times] [schedule_v2.doors]. En 2025 el line-up por día se publicó el 4 de agosto, según Meganoticias [editions_v2.items.1.day_split_in_press] [sources.s23]. {{until prices}}Lo que sí está decidido: el Weekend Ticket cubre los dos días, y el Day Ticket es solo para el sábado o solo para el domingo [tickets.formats]; si vas por un artista, su día está en las listas de arriba, y los precios del Day Ticket de ese día están en la página de entradas. → /creamfields-chile/entradas/ {{/until}}Fechas, lugar y documentos de ingreso están en la página de Creamfields Chile 2026. → /creamfields-chile/",
+            body: "Al 22 de octubre de 2026 la organización ha publicado el día y el escenario de cada artista, pero no la hora de cada set ni la hora de apertura de puertas [schedule_v2.set_times] [schedule_v2.doors]. En 2025 el line-up por día se publicó el 4 de agosto, según Meganoticias [editions_v2.items.1.day_split_in_press] [sources.s23]. {{until prices}}Lo que sí está decidido: el Weekend Ticket cubre los dos días, y el Day Ticket es solo para el sábado o solo para el domingo [tickets.formats]; si vas por un artista, su día está en las listas de arriba, y los precios del Day Ticket de ese día están en la página de entradas. → /creamfields-chile/entradas/ {{/until}}Fechas y lugar están en la página de Creamfields Chile 2026. → /creamfields-chile/",
           },
           {
             id: "escenarios",
@@ -1831,7 +1839,7 @@ export const guides: Guide[] = [
         faq: [
           {
             q: "¿Cuál es el line-up por día de Creamfields 2026?",
-            a: "El sábado 14 de noviembre, en el Main Stage, Hardwell, Boris Brejcha, Morten, LP Giobbi, Aerobica y Carla Valenti, más un cupo que el vendedor publica como \"Artist TBC\" [lineup.by_day.0.stages.0.acts]; el domingo 15, Calvin Harris, Charlotte de Witte, Fisher, Hugel, Innellea, Miss Javi y O-Sessions [lineup.by_day.1.stages.0.acts]. Los seis escenarios de cada día, con todos sus nombres, están arriba, según la imagen de Punto Ticket leída el 21 de octubre de 2026 [sources.s20].",
+            a: "El sábado 14 de noviembre, en el Main Stage, Hardwell, Boris Brejcha, Morten, LP Giobbi, Aerobica y Carla Valenti, más un cupo que el vendedor publica como \"Artist TBC\" [lineup.by_day.0.stages.0.acts]; el domingo 15, Calvin Harris, Charlotte de Witte, Fisher, Hugel, Innellea, Miss Javi y O-Sessions [lineup.by_day.1.stages.0.acts]. Los seis escenarios de cada día, con todos sus nombres, están arriba, según la imagen de Punto Ticket leída el 22 de octubre de 2026 [sources.s20].",
           },
           {
             q: "¿Cuál es el horario de Creamfields 2026?",
@@ -1839,7 +1847,7 @@ export const guides: Guide[] = [
           },
         ],
         sourcesHeading: "Fuentes",
-        sources: "- [Line-up por día y escenario, imagen en la página de Punto Ticket](/go/creamfields-chile-tickets/), leída el 21 de octubre de 2026; sin horarios en la página ni en la imagen al 22 de octubre de 2026 [sources.s20] [schedule_v2]\n- Punto Ticket, página oficial de Creamfields Chile 2026 (Main Stage nombrado en el texto), leída el 22 de octubre de 2026 [sources.s1]\n- Punto Ticket, \"Creamfields Chile crece: Suma una nueva zona de 5.000 m² y estrena anfiteatro en Club Hípico\", leído el 22 de octubre de 2026 [sources.s15]\n- Prensa, citada en el texto: Meganoticias y 24horas.cl, 7 de agosto de 2026 [sources.s12] [sources.s13]; Meganoticias, 4 de agosto de 2025 [sources.s23]",
+        sources: "- [Line-up por día y escenario, imagen en la página de Punto Ticket](/go/creamfields-chile-tickets/), leída el 22 de octubre de 2026; sin horarios en la página ni en la imagen al 22 de octubre de 2026 [sources.s20] [schedule_v2]\n- Punto Ticket, página oficial de Creamfields Chile 2026 (Main Stage nombrado en el texto), leída el 22 de octubre de 2026 [sources.s1]\n- Punto Ticket, \"Creamfields Chile crece: Suma una nueva zona de 5.000 m² y estrena anfiteatro en Club Hípico\", leído el 22 de octubre de 2026 [sources.s15]\n- Prensa, citada en el texto: Meganoticias y 24horas.cl, 7 de agosto de 2026 [sources.s12] [sources.s13]; Meganoticias, 4 de agosto de 2025 [sources.s23]",
         anchors: [
           { target: "/creamfields-chile/entradas/", text: "página de entradas" },
           { target: "/creamfields-chile/", text: "página de Creamfields Chile 2026" },
