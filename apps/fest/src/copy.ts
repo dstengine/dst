@@ -35,6 +35,14 @@
 // - Lines that each open with a number and a full stop ("1. ", "2. "): a
 //   numbered list, whose numbers the list prints (Wonderfruit's sale
 //   rounds).
+// - `[list[selector].key]`: a list's item named by the selector the copy
+//   writes (Igloofest: `editions[Gatineau 2027].note`, `sellers[0]`,
+//   `transport[Montréal, métro]`), its `key` in the sheet or its index.
+// - `… sur sa page. → /igloofest/gatineau/ · → /igloofest/quebec/`: an
+//   arrow group, each target anchored in the same sentence; where the
+//   sentence names none of them, the guide's `anchors` say so (`visible`)
+//   and the targets print after it under their labels (Igloofest's tickets
+//   page, the fest director's D5).
 //
 // The text outside the anchors is never changed: `inline` checks that what
 // it renders reads exactly as the copy does with the marks taken out.
@@ -58,7 +66,15 @@ export const pathOf = (page: GuidePage) => `/${page.slug}/`;
 
 // ---------------------------------------------------------------- the sheet
 
-const TAG = /(^|\s+)\[([A-Za-z_][\w.]*)\](?!\()/g;
+// A key may name a list's item by a selector, then go on into it:
+// `editions[Gatineau 2027].note`, `sellers[0]` (Igloofest, whose copy
+// addresses the scout's lists that way). The sheet gives each item a
+// selector names a `key` equal to it; a number is an index.
+const TAG_BODY = "[A-Za-z_][\\w.]*(?:\\[[^\\]\\n]+\\](?:\\.[\\w.]+)?)?";
+const TAG = new RegExp(`(^|\\s+)\\[(${TAG_BODY})\\](?!\\()`, "g");
+/** A key's steps: `editions[Gatineau 2027].note` is editions, the item
+    keyed "Gatineau 2027", its note; `sellers.megatix` is two steps. */
+const keyParts = (key: string) => [...key.matchAll(/\[([^\]]+)\]|([^.[\]]+)/g)].map((m) => m[1] ?? m[2]);
 
 /** Every sheet key a string cites. */
 export function tags(text: string): string[] {
@@ -72,8 +88,8 @@ const isObject = (v: unknown): v is Record<string, unknown> =>
     `key` its items carry (`sellers.megatix`, `conflicts.c2`); `list.note`
     is the sheet's note on the list as a whole (`listNotes`). Undefined
     when it names nothing. */
-export function resolve(sheet: Record<string, unknown>, key: string): unknown {
-  const parts = key.split(".");
+export function resolve(sheet: Record<string, unknown>, key: string | string[]): unknown {
+  const parts = Array.isArray(key) ? key : keyParts(key);
   let at: unknown = sheet;
   for (let i = 0; i < parts.length; i++) {
     const part = parts[i];
@@ -115,9 +131,9 @@ const UNDATED = [/^sources(\.|$)/, /^not_found(\.|$)/, /^questions\./];
     its oldest row), else the event's `readOverrides`. Undefined only for
     the keys in UNDATED; any other key without a date is the sheet's fault. */
 export function readOn(event: FestEvent, key: string): string | undefined {
-  const parts = key.split(".");
+  const parts = keyParts(key);
   for (let n = parts.length; n > 0; n--) {
-    const v = resolve(event.sheet, parts.slice(0, n).join("."));
+    const v = resolve(event.sheet, parts.slice(0, n));
     if (isObject(v) && day(v.readOn)) return day(v.readOn);
     if (n === parts.length) {
       const inside = readOns(v);
@@ -298,10 +314,17 @@ const KEEP_ES_MX = new RegExp(
   ].join("|"),
   "gu",
 );
+// French, as Quebec writes it (Igloofest): a day with its month, and its
+// year when one follows ("14 janvier 2027", "1er janvier 2020"). A time,
+// a sum, a grouped figure and an ordinal need no span: the OQLF's no-break
+// spaces (oqlf, below) already hold each together, in long runs as well.
+const MOIS = "(?:janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre)";
+const FR_DATE = `(?<!\\d)\\d{1,2}(?:er)?[ \\u00a0]${MOIS}(?:[ \\u00a0]\\d{4})?(?![\\p{L}\\d])`;
+const KEEP_FR = new RegExp(FR_DATE, "gu");
 /** Each language's keep-together list, by the guide's locale where it has
     a row of its own ("es-MX"), else by its language: "es-CL" reads es. A
     guide in a language with no row does not build. */
-const KEEP: Record<string, RegExp> = { en: KEEP_TOGETHER, es: KEEP_ES, "es-mx": KEEP_ES_MX, pt: KEEP_PT, th: KEEP_TH };
+const KEEP: Record<string, RegExp> = { en: KEEP_TOGETHER, es: KEEP_ES, "es-mx": KEEP_ES_MX, pt: KEEP_PT, th: KEEP_TH, fr: KEEP_FR };
 // In a long run a split date is a nicety, but a sign and the number it
 // belongs to are one token wherever they stand: the sweep found "R$ |
 // 765,45", "(11) | 5666-8822", "nº | 12.933" and "Linha | 9-Esmeralda" in
@@ -386,7 +409,10 @@ const HEADING_KEEP_PT = new RegExp(`\\b\\d{1,2}º? de ${MES_PT}(?: de \\d{4})?(?
 // Thai the same way, with the bracket a date may close ("ไลน์อัพ
 // Wonderfruit 2026 (ประกาศ 1 กันยายน 2026)").
 const HEADING_KEEP_TH = new RegExp(`${THAI_DATE}[:,.;)]?`, "gu");
-const HEADING_KEEP_BY: Record<string, RegExp> = { es: HEADING_KEEP_ES, pt: HEADING_KEEP_PT, th: HEADING_KEEP_TH };
+// French the same way ("Fin de semaine 1 : jeudi 14, vendredi 15 et
+// samedi 16 janvier 2027", Igloofest's line-up weekends).
+const HEADING_KEEP_FR = new RegExp(`${FR_DATE}[:,.;]?`, "gu");
+const HEADING_KEEP_BY: Record<string, RegExp> = { es: HEADING_KEEP_ES, pt: HEADING_KEEP_PT, th: HEADING_KEEP_TH, fr: HEADING_KEEP_FR };
 const ASTRO_ESCAPES: Record<string, string> = { "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" };
 export const headingHtml = (text: string, lang = "en") => {
   const html = text.replace(/[&<>'"]/g, (c) => ASTRO_ESCAPES[c]).replace(HEADING_KEEP, (m) => `<span class="nowrap">${m}</span>`);
@@ -410,7 +436,9 @@ const keepTotals = (html: string) =>
 interface Piece { from: number; to: number; html: string; md: string; text: string }
 
 const LINK = /\[([^\]\n]+)\]\(([^)\s]+)\)/g;
-const ARROW = /\s*→ (\/[^\s]*\/)(?=\s|$)/g;
+// One arrow, or a group of them joined by " · " (Igloofest: "→
+// /igloofest/gatineau/ · → /igloofest/quebec/"), which is one mark.
+const ARROW = /\s*→ (\/[^\s]*\/)((?: · → \/[^\s]*\/)*)(?=\s|$)/g;
 const BOLD = /\*\*([^*\n]+)\*\*/g;
 
 // `{{read}}` and the words it prints: the language's "read on" and the day,
@@ -426,7 +454,7 @@ const READ_WORDS: Record<string, { word: string; months: string[] }> = {
 function readWords(rest: string, ctx: Ctx): string {
   const words = READ_WORDS[ctx.guide.lang.slice(0, 2).toLowerCase()];
   if (!words) throw new Error(`${ctx.where}: {{read}} has no words for "${ctx.guide.lang}" in copy.ts`);
-  const group = /^(?:\s+\[[A-Za-z_][\w.]*\](?!\())+/.exec(rest)?.[0] ?? "";
+  const group = new RegExp(`^(?:\\s+\\[${TAG_BODY}\\](?!\\())+`).exec(rest)?.[0] ?? "";
   const days = tags(group)
     .filter((k) => !isUndated(k))
     .map((k) => readOn(ctx.event, k))
@@ -522,9 +550,6 @@ function marks(text: string, ctx: Ctx, site: string): { html: string; md: string
   const masked = text.replace(TAG, (s) => " ".repeat(s.length));
   let regionStart = 0;
   for (const m of text.matchAll(ARROW)) {
-    const href = m[1];
-    const target = pages.find((p) => pathOf(p) === href);
-    if (!target) throw new Error(`${ctx.where}: → ${href} is not a page of this guide`);
     const before = masked.slice(regionStart, m.index!).trimEnd();
     // The last sentence before the arrow: after the last full stop, question
     // or exclamation mark (a closing quote may follow it) that has more text
@@ -532,30 +557,67 @@ function marks(text: string, ctx: Ctx, site: string): { html: string; md: string
     let start = 0;
     for (const b of before.matchAll(/[.!?]["”’)]?\s+(?=\S)/g)) start = b.index! + b[0].length;
     const sentence = before.slice(start);
-    const own = ctx.page?.anchors?.find((a) => a.target === href && sentence.includes(a.text));
-    let phrase: string;
-    if (own) phrase = own.text;
-    else {
-      const found = [...sentence.matchAll(/\bthe ([\p{L}-]+) page\b/gu)];
-      if (!ctx.guide.lang.startsWith("en") || found.length !== 1)
-        throw new Error(`${ctx.where}: the arrow to ${href} has no anchor in "${sentence.trim()}"; give the page an anchors entry`);
-      if (found[0][1] !== target.label.toLowerCase())
-        throw new Error(`${ctx.where}: "${found[0][0]}" points at ${href}, whose label is ${target.label}`);
-      phrase = found[0][0];
+    // Each target of a group anchors in that one sentence.
+    const hrefs = [m[1], ...[...m[2].matchAll(/→ (\/[^\s]*\/)/g)].map((x) => x[1])];
+    const shown: { href: string; label: string; title: string }[] = [];
+    for (const href of hrefs) {
+      const target = pages.find((p) => pathOf(p) === href);
+      if (!target) throw new Error(`${ctx.where}: → ${href} is not a page of this guide`);
+      const title = target.linkTitle ?? withoutSuffix(target.title);
+      const own =
+        ctx.page?.anchors?.find((a) => a.target === href && a.text !== undefined && sentence.includes(a.text)) ??
+        ctx.page?.anchors?.find((a) => a.target === href && a.visible);
+      if (own?.visible) {
+        shown.push({ href, label: target.label, title });
+        continue;
+      }
+      let phrase: string;
+      if (own?.text !== undefined) phrase = own.text;
+      else {
+        const found = [...sentence.matchAll(/\bthe ([\p{L}-]+) page\b/gu)];
+        if (!ctx.guide.lang.startsWith("en") || found.length !== 1)
+          throw new Error(`${ctx.where}: the arrow to ${href} has no anchor in "${sentence.trim()}"; give the page an anchors entry`);
+        if (found[0][1] !== target.label.toLowerCase())
+          throw new Error(`${ctx.where}: "${found[0][0]}" points at ${href}, whose label is ${target.label}`);
+        phrase = found[0][0];
+      }
+      // Once in the sentence, or the occurrence the anchor names where a
+      // phrase comes back (Igloofest's Montréal row: the row's own head
+      // word, then "Vieux-Port de Montréal").
+      const ats: number[] = [];
+      for (let i = sentence.indexOf(phrase); i >= 0; i = sentence.indexOf(phrase, i + 1)) ats.push(i);
+      const at = own?.nth !== undefined ? ats[own.nth - 1] : ats.length === 1 ? ats[0] : undefined;
+      if (at === undefined)
+        throw new Error(
+          own?.nth !== undefined
+            ? `${ctx.where}: "${phrase}" does not occur ${own.nth} times in "${sentence.trim()}"`
+            : `${ctx.where}: "${phrase}" must occur exactly once in "${sentence.trim()}"`,
+        );
+      const from = regionStart + start + at;
+      if (title === phrase) throw new Error(`${ctx.where}: the title of "${phrase}" repeats it`);
+      pieces.push({
+        from, to: from + phrase.length,
+        html: `<a href="${attr(href)}" title="${attr(title)}">${esc(phrase)}</a>`,
+        md: `[${phrase}](${site}${href})`,
+        text: phrase,
+      });
     }
-    const at = sentence.indexOf(phrase);
-    if (at < 0 || sentence.indexOf(phrase, at + 1) >= 0)
-      throw new Error(`${ctx.where}: "${phrase}" must occur exactly once in "${sentence.trim()}"`);
-    const from = regionStart + start + at;
-    const title = target.linkTitle ?? withoutSuffix(target.title);
-    if (title === phrase) throw new Error(`${ctx.where}: the title of "${phrase}" repeats it`);
+    if (shown.length && shown.length !== hrefs.length)
+      throw new Error(`${ctx.where}: an arrow group anchors all its targets in its sentence or shows all of them`);
+    // The arrows leave the words. Where they are shown, each target prints
+    // after the sentence under its label in the guide's row, its title the
+    // one every link to it carries; the arrows and the dot between are
+    // hidden from a screen reader, which says the two names (the fest
+    // director's gate-3 condition 4). The Markdown keeps the arrows. The
+    // words are not the copy's, so the words-only rendering leaves them out.
     pieces.push({
-      from, to: from + phrase.length,
-      html: `<a href="${attr(href)}" title="${attr(title)}">${esc(phrase)}</a>`,
-      md: `[${phrase}](${site}${href})`,
-      text: phrase,
+      from: m.index!, to: m.index! + m[0].length,
+      html: shown.length
+        ? ` <span class="arrow-links">${shown.map((s) => `<span aria-hidden="true">→ </span><a href="${attr(s.href)}" title="${attr(s.title)}">${esc(s.label)}</a>`).join('<span aria-hidden="true"> · </span>')}</span>`
+        : "",
+      md: shown.length ? ` ${shown.map((s) => `→ [${s.label}](${site}${s.href})`).join(" · ")}` : "",
+      text: "",
     });
-    pieces.push({ from: m.index!, to: m.index! + m[0].length, html: "", md: "", text: "" });
     regionStart = m.index! + m[0].length;
   }
 
@@ -616,12 +678,12 @@ export const SITE = "https://fest.one";
 type Part = { html: string; md: string };
 type Block =
   | { kind: "p" | "quote" | "h3"; parts: Part[] }
-  | { kind: "list" | "ol" | "lines" | "links" | "cards" | "dot-row" | "guide-cards"; parts: Part[] }
+  | { kind: "list" | "ol" | "lines" | "links" | "cards" | "dot-row" | "guide-cards" | "nights"; parts: Part[] }
   | { kind: "table"; rows: string[]; caption?: Part };
 
 /** A line that is one link and nothing else but its tags: a hop the copy
     names by its label after the paragraph that cites it. */
-const LINK_LINE = /^\[[^\]\n]+\]\([^)\s]+\)(?:\s+\[[A-Za-z_][\w.]*\])*$/;
+const LINK_LINE = new RegExp(`^\\[[^\\]\\n]+\\]\\([^)\\s]+\\)(?:\\s+\\[${TAG_BODY}\\])*$`);
 /** A price card: "**Label**: $209.90 + $10.00 fees = $219.90. On sale; …".
     The label, then the figures up to the total's full stop, then the rest,
     which is the ticket's status. A list is a row of cards only when every
@@ -716,6 +778,7 @@ function parse(text: string, ctx: Ctx, kind: Section["kind"] = "prose"): Block[]
       const items = lines.map((l) => live(l.slice(2))).filter(Boolean);
       if (!items.length) continue;
       if (kind === "cards" && items.every((i) => CARD_LEAD.test(i))) blocks.push({ kind: "guide-cards", parts: items.map((i) => guideCard(i, ctx)) });
+      else if (kind === "nights" && items.every(isNight)) blocks.push({ kind: "nights", parts: items.map((i) => nightCard(i, ctx)) });
       else if (items.every((i) => CARD_OPENING.test(i))) blocks.push({ kind: "cards", parts: items.map((i) => card(i, ctx)) });
       else blocks.push({ kind: "list", parts: keep(items.map(render)) });
     } else if (lines.every((l) => l.startsWith("> "))) {
@@ -854,4 +917,178 @@ export function sourcesMd(text: string, ctx: Ctx): string {
     .map((l) => inlineMd(l, ctx))
     .filter(Boolean)
     .join(" · ");
+}
+
+// ------------------------------------------------------------- typography
+
+// French as the OQLF sets it (Banque de dépannage linguistique,
+// « Espacement avant et après les signes de ponctuation » and « Espace
+// insécable »), in Quebec's usage: no space before « ; », « ? » and « ! »;
+// a no-break space before « : », inside « », between a figure and « $ »
+// or « % », before « cm », around the « h » of « 19 h 30 » and before it
+// in « 11 h », inside a grouped figure (« 18 000 », a whole one only: the
+// native reader's gate-3 note 6), after an ordinal (« 1er janvier »,
+// « 5e édition »), and after « BUNT. », an act's name that must not end a
+// line. The session's item 12 on Igloofest, as code. The copy keeps the
+// plain spaces its reviewers read; this runs on a French guide's strings
+// as the guide is loaded (data/events/index.ts). Every rule swaps a space
+// for a no-break one or drops it, and none adds a character, so a title
+// keeps its length or loses some.
+// A mark, a link's target, a span's braces, an arrow's path, a URL and an
+// e-mail address are not words, and keep their bytes.
+const OQLF_SKIP = new RegExp(
+  [
+    `\\[${TAG_BODY}\\](?!\\()`, // [editions[Gatineau 2027].note]
+    `\\]\\([^)\\s]+\\)`, // ](/go/igloofest-billets/)
+    `\\{\\{[^}]*\\}\\}`, // {{until prices}}
+    `→ \\/[^\\s]*\\/`, // → /igloofest/billets/
+    `https?:\\/\\/[^\\s)\\]]+`, // https://igloofest.ca/fr
+    `[\\w.+-]+@[\\w-]+(?:\\.[\\w-]+)+`, // info@igloofest.ca
+  ].join("|"),
+  "gu",
+);
+const OQLF_RULES: [RegExp, string][] = [
+  [/[  ]+([;?!])/g, "$1"], // Igloovillage ; → Igloovillage;
+  [/ :/g, " :"], // Montréal : → Montréal :
+  [/« /g, "« "],
+  [/ »/g, " »"],
+  [/(\d) ([$%])/g, "$1 $2"], // 49,00 $
+  [/(?<![\d,.])(\d{1,2}) h(?![\p{L}\d])/gu, "$1 h"], // 19 h, 11 h
+  [/(\d h) (\d{2})(?!\d)/g, "$1 $2"], // 19 h 30
+  [/(?<!\d)(\d{1,3}) (\d{3})(?!\d)/g, "$1 $2"], // 18 000
+  [/(\d) cm(?!\p{L})/gu, "$1 cm"], // 35 cm
+  [/(?<![\p{L}\d])(\d+(?:er|re|e)) (?=\p{L})/gu, "$1 "], // 1er janvier, 5e édition
+  [/\bBUNT\. /g, "BUNT. "],
+];
+export function oqlf(text: string): string {
+  const set = (s: string) => OQLF_RULES.reduce((t, [re, to]) => t.replace(re, to), s);
+  let out = "";
+  let at = 0;
+  for (const m of text.matchAll(OQLF_SKIP)) {
+    out += set(text.slice(at, m.index)) + m[0];
+    at = m.index! + m[0].length;
+  }
+  return out + set(text.slice(at));
+}
+
+/** A guide's language is French: "fr-CA". */
+export const isFrench = (lang: string) => lang.slice(0, 2).toLowerCase() === "fr";
+
+/** Values that are paths, ids, dates, keys and the structured data's
+    machine strings, not words: oqlf leaves them alone (the CTO's gate-3
+    bound (a) on Igloofest). */
+const MACHINE = new Set(["slug", "createdAt", "updatedAt", "event", "lang", "dir", "path", "href", "target", "id", "kind", "expires", "rel", "url", "source", "markup"]);
+/** Every word of a record set by oqlf, its machine values as they were. */
+export function typographed<T>(value: T, key = ""): T {
+  if (MACHINE.has(key)) return value;
+  if (typeof value === "string") return oqlf(value) as T;
+  if (Array.isArray(value)) return value.map((v) => typographed(v)) as T;
+  if (isObject(value)) return Object.fromEntries(Object.entries(value).map(([k, v]) => [k, typographed(v, k)])) as T;
+  return value;
+}
+
+// ------------------------------------------------------------------- dates
+
+const MOIS_NOMS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
+const JOURS = ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"];
+/** A day as the guide's language writes it in running text: "22 octobre
+    2026", "1er novembre 2026" (« Mis à jour le », GuidePage). A language
+    adds its row here before a guide in it asks for one. */
+const LONG_DATE: Record<string, (y: number, m: number, d: number) => string> = {
+  fr: (y, m, d) => oqlf(`${d === 1 ? "1er" : d} ${MOIS_NOMS[m - 1]} ${y}`),
+};
+export function longDate(iso: string, lang: string): string {
+  const write = LONG_DATE[lang.slice(0, 2).toLowerCase()];
+  if (!write) throw new Error(`copy.ts writes no dates in "${lang}"`);
+  const [y, m, d] = iso.slice(0, 10).split("-").map(Number);
+  return write(y, m, d);
+}
+
+/** The UTC offset a zone keeps at a local date and time ("-05:00" in
+    Montréal on 14 January 2027), from the zone data Node carries, so no
+    offset is written by hand (Igloofest's plan 5.3; the CTO's gate-3
+    item 6). The offset at the wall time read as UTC, then again at the
+    instant that gives: right on either side of a change of clocks. */
+export function zoneOffset(zone: string, local: string): string {
+  const fmt = new Intl.DateTimeFormat("en-US", { timeZone: zone, timeZoneName: "longOffset" });
+  const at = (t: number) => {
+    const name = fmt.formatToParts(new Date(t)).find((p) => p.type === "timeZoneName")?.value ?? "";
+    return name === "GMT" ? "+00:00" : name.slice(3);
+  };
+  const ms = (o: string) => (o.startsWith("-") ? -1 : 1) * (Number(o.slice(1, 3)) * 60 + Number(o.slice(4, 6))) * 60_000;
+  const wall = Date.parse(`${local}Z`);
+  if (Number.isNaN(wall)) throw new Error(`zoneOffset: "${local}" is not a local date and time`);
+  return at(wall - ms(at(wall)));
+}
+
+// ------------------------------------------------------------------ nights
+
+// A night of a line-up, one line each, as Igloofest Montréal's twelve are
+// written: "Jeudi 14 janvier 2027 — Scène Sapporo : Taima 19 h 30 · Lou
+// Phelps (DJ set) 20 h 30 · KAYTRANADA 22 h. Scène Vidéotron (Ferias) :
+// silktits 19 h 30 · Make A Dance 20 h 45." and its tags. The day, each
+// stage with the name the organiser sets over its night, and the stage's
+// sets, each an act and its start. A section of kind "nights" sets each
+// line as a card (theme.css, ul.nights): the day its heading, each stage
+// under it, each set time first, as the chrome asks. The Markdown twin
+// keeps the line as written, and a line the parse does not give back byte
+// for byte fails the build, so a card holds the copy's words and no other.
+interface Night {
+  day: string;
+  date: string;
+  stages: { name: string; label?: string; sets: { act: string; time: string }[] }[];
+}
+const NIGHT = new RegExp(`^(\\p{L}+ (\\d{1,2}) (${MOIS}) (\\d{4})) — (.+)$`, "u");
+const STAGE = /(Scène \S+)(?: \(([^)]+)\))? : (.*?)\.(?= Scène |$)/gu;
+const SET_TIME = /^(.+) (\d{1,2} h(?: \d{2})?)$/u;
+const TRAILING_TAGS = new RegExp(`(?:\\s+\\[${TAG_BODY}\\])+$`);
+
+export function parseNight(line: string): Night | undefined {
+  const m = NIGHT.exec(line);
+  if (!m) return undefined;
+  const [, day, d, month, y, rest] = m;
+  const date = `${y}-${String(MOIS_NOMS.indexOf(month) + 1).padStart(2, "0")}-${d.padStart(2, "0")}`;
+  const stages = [...rest.matchAll(STAGE)].map((s) => ({
+    name: s[1],
+    ...(s[2] ? { label: s[2] } : {}),
+    sets: s[3].split(" · ").map((x) => {
+      const t = SET_TIME.exec(x);
+      if (!t) throw new Error(`a set without its start: "${x}"`);
+      return { act: t[1], time: t[2] };
+    }),
+  }));
+  return stages.length ? { day, date, stages } : undefined;
+}
+
+export function formatNight(n: Night): string {
+  const stages = n.stages.map((s) => `${s.name}${s.label ? ` (${s.label})` : ""} : ${s.sets.map((x) => `${x.act} ${x.time}`).join(" · ")}.`);
+  return `${n.day} — ${stages.join(" ")}`;
+}
+
+const isNight = (item: string) => NIGHT.test(item.replace(TRAILING_TAGS, ""));
+
+/** One night's card. Its tags are checked as any are (marks), its words
+    must come back as the line, its day must fall on the weekday the line
+    names, and each start carries its offset from the event's zone. */
+function nightCard(item: string, ctx: Ctx): Part {
+  const md = marks(item, ctx, SITE).md;
+  const line = item.replace(TRAILING_TAGS, "");
+  const n = parseNight(line);
+  if (!n || formatNight(n) !== line) throw new Error(`${ctx.where}: a night's line does not read back as written: "${line}"`);
+  const [y, mo, d] = n.date.split("-").map(Number);
+  if (JOURS[new Date(Date.UTC(y, mo - 1, d)).getUTCDay()] !== n.day.split(" ")[0].toLowerCase())
+    throw new Error(`${ctx.where}: ${n.date} is not a ${n.day.split(" ")[0]}`);
+  const zone = ctx.event.markup.timeZone;
+  if (!zone) throw new Error(`${ctx.where}: a night's set times need the event's markup.timeZone`);
+  const time = (t: string) => {
+    const [, h, min = "00"] = /^(\d{1,2}) h(?: (\d{2}))?$/.exec(t)!;
+    const local = `${n.date}T${h.padStart(2, "0")}:${min}`;
+    return `<time datetime="${local}:00${zoneOffset(zone, local)}">${esc(t)}</time>`;
+  };
+  const stages = n.stages.map(
+    (s) =>
+      `<p class="night-stage">${esc(s.name)}${s.label ? ` <span class="night-label">(${esc(s.label)})</span>` : ""}</p>` +
+      `<ul class="night-sets">${s.sets.map((x) => `<li>${time(x.time)} <span class="night-act">${esc(x.act)}</span></li>`).join("")}</ul>`,
+  );
+  return { html: `<h3><time datetime="${n.date}">${esc(n.day)}</time></h3>${stages.join("")}`, md };
 }

@@ -3,7 +3,7 @@
 // event's structured data says, and what a title must be.
 import { hasEnded, lastDay } from "@dst/content/when";
 import type { FestEvent, Guide, GuidePage, Offer } from "./data/types";
-import { expired, pathOf, resolve, SITE } from "./copy";
+import { expired, pathOf, resolve, SITE, zoneOffset } from "./copy";
 
 /** The day the build is for, ISO. `FEST_TODAY` sets it, so the expiry of a
     price can be built and tested before the day comes (and a session on
@@ -71,12 +71,28 @@ interface Venue { name: string; address: string; lat: number; lon: number; count
     by day (Primavera Sound São Paulo), each day is a subEvent at the same
     place, its acts the performers by name as the organiser lists them,
     each a PerformingGroup: the sheet does not say which act is one
-    person. */
+    person. A subpage that is an edition of its own, at its own place and
+    dates (Igloofest's Québec and Gatineau), carries its own MusicEvent
+    from its own markup, with no offers: one event, one URL, three
+    editions. The venue is the sheet's `venue`, or the item of its list
+    of venues the markup names; a local time takes its offset from the
+    markup's zone. */
 export function musicEvent(event: FestEvent, guide: Guide, page: GuidePage, day: string): Record<string, unknown> {
   const url = `${SITE}${pathOf(page)}`;
-  const venue = event.sheet.venue as Venue;
+  const markup: FestEvent["markup"] | NonNullable<GuidePage["markup"]> = page.markup ?? event.markup;
+  const venue = (markup.venue ? resolve(event.sheet, markup.venue) : event.sheet.venue) as Venue;
+  if (!venue?.name) throw new Error(`${event.slug}: the markup's venue "${markup.venue ?? "venue"}" names no venue in the sheet`);
   const prices = event.sheet.prices as Price[];
-  const { markup } = event;
+  const sold = "offers" in markup ? markup.offers : undefined;
+  // "2027-01-14T19:30" in America/Toronto is 19:30 at -05:00 that day. A
+  // time with no offset and no zone to take one from is a time nobody can
+  // place, and fails the build; a date alone stays a date.
+  const placed = (value: string) => {
+    if (!/T\d{2}:\d{2}(?::\d{2})?$/.test(value)) return value;
+    if (!markup.timeZone) throw new Error(`${event.slug}: "${value}" has a time and no offset, and the markup names no timeZone`);
+    const local = value.slice(0, 16);
+    return `${local}:00${zoneOffset(markup.timeZone, local)}`;
+  };
   // "4484 Hamilton Highway, Hesse VIC 3321": the street, then the locality,
   // the state and the postcode as Australia writes them. A venue elsewhere
   // gives its parts in markup.address ("Av. Blanco Encalada 2540, Santiago
@@ -89,16 +105,16 @@ export function musicEvent(event: FestEvent, guide: Guide, page: GuidePage, day:
     throw new Error(`${event.slug}: markup.geo "${markup.geo}" names no { lat, lon } in the sheet`);
   // The offers print the sheet's prices, so the guide must say when they
   // stop being true, as its price spans do.
-  if (!guide.expires.prices)
+  if (sold && !guide.expires.prices)
     throw new Error(`${guide.event}/${guide.slug}: the MusicEvent prints prices, and "expires" has no prices date`);
-  const shown = !expired(guide, "prices", day);
-  const offers = hasEnded(event.edition, day)
+  const shown = sold ? !expired(guide, "prices", day) : false;
+  const offers = hasEnded(event.edition, day) || !sold
     ? undefined
-    : Array.isArray(markup.offers)
-      ? markup.offers.filter((o) => !o.priceValidUntil || day <= o.priceValidUntil).map((o) => channel(event, o, shown))
-      : !("prices" in markup.offers)
-      ? [single(event, markup.offers, shown)]
-      : markup.offers.prices.map((i) => {
+    : Array.isArray(sold)
+      ? sold.filter((o) => !o.priceValidUntil || day <= o.priceValidUntil).map((o) => channel(event, o, shown))
+      : !("prices" in sold)
+      ? [single(event, sold, shown)]
+      : sold.prices.map((i) => {
           const row = prices[i];
           if (!row) throw new Error(`${event.slug}: markup.offers names prices.${i}, which the sheet lacks`);
           return {
@@ -106,9 +122,9 @@ export function musicEvent(event: FestEvent, guide: Guide, page: GuidePage, day:
             name: row.label,
             ...(shown ? { price: row.total ?? row.amount, priceCurrency: row.currency } : {}),
             ...(soldOut(row.status) ? { availability: "https://schema.org/SoldOut" } : {}),
-            validFrom: markup.offers.validFrom,
-            url: `${SITE}/go/${event.slug}-${markup.offers.go}/`,
-            seller: { "@type": "Organization", name: markup.offers.seller },
+            validFrom: sold.validFrom,
+            url: `${SITE}/go/${event.slug}-${sold.go}/`,
+            seller: { "@type": "Organization", name: sold.seller },
           };
         });
   const place = {
@@ -144,11 +160,11 @@ export function musicEvent(event: FestEvent, guide: Guide, page: GuidePage, day:
     "@type": "MusicEvent",
     additionalType: "https://schema.org/Festival",
     "@id": `${url}#event`,
-    name: page.h1,
+    name: markup.name ?? page.h1,
     url,
     description: page.description,
-    startDate: markup.startDate,
-    endDate: markup.endDate,
+    startDate: placed(markup.startDate),
+    endDate: placed(markup.endDate),
     eventStatus: "https://schema.org/EventScheduled",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     location: place,
@@ -156,17 +172,28 @@ export function musicEvent(event: FestEvent, guide: Guide, page: GuidePage, day:
     // data names a third party only as an identity (tests/outbound-links).
     // None where the organiser has no site of its own (Creamfields Chile's
     // only channel is Instagram, a third party's page, which stays a hop).
-    organizer: {
-      "@type": "Organization",
-      name: markup.organizer.name,
-      ...(markup.organizer.url ? { sameAs: markup.organizer.url } : {}),
-    },
+    // An edition two companies put on names both (Igloofest Québec:
+    // Gestev and Multicolore); one whose producer no source names names
+    // none (Igloofest Gatineau).
+    ...(markup.organizer
+      ? {
+          organizer: Array.isArray(markup.organizer)
+            ? markup.organizer.map(organization)
+            : organization(markup.organizer),
+        }
+      : {}),
     publisher: { "@id": "https://fest.one/#organization" },
     mainEntityOfPage: { "@id": `${url}#webpage` },
     ...(offers?.length ? { offers } : {}),
     ...(subEvents ? { subEvent: subEvents } : {}),
   };
 }
+
+const organization = (o: { name: string; url?: string }) => ({
+  "@type": "Organization",
+  name: o.name,
+  ...(o.url ? { sameAs: o.url } : {}),
+});
 
 /** An Australian address in its parts, in the order the markup prints
     them. */

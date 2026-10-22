@@ -66,8 +66,23 @@ export interface FestEvent extends Dated {
       which price rows are the entry offers, sold through which /go/ hop.
       Each value names the sheet entry it was read from, beside it. */
   markup: {
+    /** With its offset ("2026-12-03T16:00:00+07:00"), or, where `timeZone`
+        is given, a local date and time whose offset rules.ts takes from the
+        zone ("2027-01-14T19:30", Igloofest). A date alone stays a date. */
     startDate: string;
     endDate: string;
+    /** The IANA zone the event's local times are in ("America/Toronto"):
+        its offsets and its night cards' set times are computed from it at
+        build, never written by hand. */
+    timeZone?: string;
+    /** The event's name in the markup, where it is not the page's h1:
+        Igloofest's main page marks up Montréal's run as « Igloofest
+        Montréal 2027 » (the SEO lead's D8). */
+    name?: string;
+    /** The sheet key of the venue ({ name, lat, lon, country }), where the
+        sheet holds a list of venues rather than one `venue`
+        ("venues.v1"). */
+    venue?: string;
     /** The venue's address as the markup prints it, for a venue whose
         sheet address is not Australia's "street, locality STATE postcode",
         which rules.ts reads when this is absent. Region and postcode only
@@ -121,8 +136,10 @@ export interface Section {
       acts of a day on Primavera Sound São Paulo's line-up page. "cards"
       reads a list whose items open with a **lead** as a column of cards,
       one a night (Zamna Tulum), each closed by the link its item ends on.
-      Every other section is prose. */
-  kind?: "prose" | "table" | "row" | "cards";
+      "nights" reads a list of a line-up's nights, one line each, as
+      cards: the day, each stage, each set time first (Igloofest Montréal's
+      twelve, copy.ts). Every other section is prose. */
+  kind?: "prose" | "table" | "row" | "cards" | "nights";
   /** The page's ticket button opens this section, under its heading,
       instead of the top of the page (Wonderfruit: the copy puts it under
       "where to buy"). */
@@ -140,7 +157,16 @@ export interface FaqRow {
     director's words, held beside the copy so the copy stays verbatim. */
 export interface Anchor {
   target: string;
-  text: string;
+  /** The phrase in the sentence before the arrow that becomes the link. */
+  text?: string;
+  /** Which occurrence of it, from 1, where the sentence says it more than
+      once (Igloofest's Montréal row: « Montréal : … Vieux-Port de
+      Montréal. »). */
+  nth?: number;
+  /** The sentence names no target of its arrow group, and the targets
+      print after it under their labels (Igloofest's tickets page: « … sont
+      sur sa page. » → Gatineau · Québec; the fest director's D5). */
+  visible?: true;
 }
 
 /** Blocks a guide's page may carry and this one does not: each is fed from
@@ -221,6 +247,12 @@ export interface GuidePage extends Dated, Slots {
       "questions", with a short label. Without it the list is the sections'
       headings, from five sections up. */
   jumps?: { id: string; label: string }[];
+  /** A MusicEvent of the page's own, for a subpage that is an edition of
+      its own at another place and time (Igloofest's Québec and Gatineau
+      pages), as the event's markup is written, without offers. */
+  markup?: Omit<FestEvent["markup"], "offers" | "subEvents" | "organizer"> & {
+    organizer?: { name: string; url?: string } | { name: string; url?: string }[];
+  };
 }
 
 /** One guide: an event in one language. */
@@ -246,5 +278,14 @@ export interface Guide extends Dated {
       sentence of its own. */
   footerLinks?: { href: string; label: string; title: string; rel?: string }[];
   footerNote?: string;
+  /** The row of pages' `aria-label`, where it names the event (« Pages du
+      guide Igloofest ») rather than saying the language's "This guide". */
+  navLabel?: string;
+  /** The questions' `aria-label`, where it is not their heading
+      (« Questions fréquentes sur Igloofest »). */
+  faqLabel?: string;
+  /** Each page says under its lede the day it last changed, the day its
+      sitemap entry gives (« Mis à jour le 22 octobre 2026 »). */
+  updatedLine?: true;
   pages: GuidePage[];
 }

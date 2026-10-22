@@ -18,10 +18,11 @@ import Glance from "@dst/ui/Glance.astro";
 import GuideCta from "./GuideCta.astro";
 import { ICONS } from "@dst/ui/icons";
 import type { FestEvent, Guide, GuidePage } from "../data/types";
-import { applySpans, blocks, headingHtml, inline, inlineText, pathOf, sourcesHtml, withoutSuffix, type Ctx } from "../copy";
+import { applySpans, blocks, headingHtml, inline, inlineText, longDate, pathOf, sourcesHtml, withoutSuffix, type Ctx } from "../copy";
 import { mainPage } from "../rules";
 import { languagesFor } from "../routes";
 import { chrome, langOf, site } from "../site.config";
+import { datedPages } from "../dated";
 
 interface Props {
   event: FestEvent;
@@ -120,6 +121,22 @@ const glanceNote = page.glanceNote === undefined ? "" : inline(page.glanceNote, 
 const sources = page.sources === undefined ? "" : sourcesHtml(page.sources, ctx);
 const sourcesNote = page.sourcesNote === undefined ? "" : inline(page.sourcesNote, ctx);
 const links = page.links === undefined ? "" : inline(page.links, ctx);
+// The day the page last changed, under its lede, where the guide prints
+// it (Igloofest: « Mis à jour le 22 octobre 2026 »): the day its sitemap
+// entry gives, the newer of its own date and its event's (dated.ts, as
+// tools/lastmod.mjs reads them), on that date's own clock.
+let updated: { iso: string; text: string } | undefined;
+if (guide.updatedLine) {
+  if (!words.updated) throw new Error(`${path}: the guide prints the day it changed, and site.config.ts has no words for it in "${guide.lang}"`);
+  const dated = datedPages().get(path)!;
+  const newest = [dated.updatedAt, dated.with ?? dated.updatedAt].reduce((a, b) => (Date.parse(b) > Date.parse(a) ? b : a));
+  updated = { iso: newest.slice(0, 10), text: longDate(newest, guide.lang) };
+}
+// A guide may label its row of pages and its questions with the event's
+// name (Igloofest: « Pages du guide Igloofest », « Questions fréquentes sur
+// Igloofest »); the questions are then named by that label, not by their
+// heading.
+const navLabel = guide.navLabel ?? words.siblingNav;
 ---
 <article class="container guide">
   <Breadcrumbs
@@ -132,10 +149,10 @@ const links = page.links === undefined ? "" : inline(page.links, ctx);
   />
   <header class="guide-head">
     <h1 id={page.h1Id}>{page.h1}</h1>
-    {lede && <p class="lede" set:html={lede} />}{ledeMore.map((l) => <p class="lede" set:html={l} />)}{why && <p class="lede-why" set:html={why} />}
+    {lede && <p class="lede" set:html={lede} />}{ledeMore.map((l) => <p class="lede" set:html={l} />)}{why && <p class="lede-why" set:html={why} />}{updated && <p class="guide-updated">{words.updated} <time datetime={updated.iso}>{updated.text}</time></p>}
   </header>
 
-  <ChipNav items={siblings} current={path} label={words.siblingNav} />
+  <ChipNav items={siblings} current={path} label={navLabel} />
   {languages.length > 0 && (
     <nav class="guide-languages" aria-label={words.otherLanguages}>
       {languages.map((l) => <a href={l.href} hreflang={l.lang} lang={l.lang} dir={l.dir} title={l.title}>{l.label}</a>)}
@@ -178,7 +195,7 @@ const links = page.links === undefined ? "" : inline(page.links, ctx);
   ))}
 
   {!faqFirst && faq.length > 0 && (
-    <section class="guide-section" aria-labelledby="questions">
+    <section class="guide-section" aria-labelledby={guide.faqLabel ? undefined : "questions"} aria-label={guide.faqLabel}>
       <h2 id="questions">{page.faqHeading}</h2>
       <Faq items={faq} />
     </section>

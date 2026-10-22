@@ -13,9 +13,13 @@
 // pt-BR native reader at gate 3, the root crumb "Festivais" and the
 // trail's "Trilha de navegação" after it; th with Wonderfruit (th-TH),
 // passed by the th-TH native reader at gate 3 and on the executor's
-// strings, every link to the English hub saying that it is English.
+// strings, every link to the English hub saying that it is English; fr
+// with Igloofest (fr-CA), its strings the copy's chrome block and the
+// fr-CA native reader's at gate 3 (swaps 2 and 3, fills 4). Its words are
+// set as the OQLF sets French (copy.ts, oqlf), and test:fest holds each
+// to it.
 
-export type Lang = "en" | "es" | "pt" | "th";
+export type Lang = "en" | "es" | "pt" | "th" | "fr";
 
 /** The row a guide's locale reads: "es-CL" and "es-MX" read `es`. A
     locale with no row throws, so a guide in a new language cannot build
@@ -136,6 +140,28 @@ export const site: Record<Lang, {
     analytics: false,
     defaultTheme: "dark",
   },
+  // Quebec French: the root crumb « Festivals », the wordmark's tooltip
+  // the approved « Guides de festivals sur fest.one », and the footer
+  // link's a sentence that says more than its label (the fr-CA native
+  // reader's gate-3 swap 3).
+  fr: {
+    siteName: "fest.one",
+    footerSiteName: "fest.one",
+    homeTitle: "Guides de festivals sur fest.one",
+    titleSuffix: "guide du festival",
+    keyword: "festival",
+    lang: "fr-CA",
+    homeHref: "/festivals/",
+    homeLabel: "Festivals",
+    footerLinks: [
+      { href: "/festivals/", label: "Guides de festivals", title: "Tous les guides de festivals sur fest.one, par événement et par langue" },
+    ],
+    publisher,
+    networkFooter: false,
+    partnerDisclosure: false,
+    analytics: false,
+    defaultTheme: "dark",
+  },
 };
 
 /** The words the guide template says itself, per language. */
@@ -162,6 +188,17 @@ export const chrome: Record<Lang, {
       name in the hub's row of pages, which a sighted reader does not see:
       " " where absent ("Tickets Beyond The Valley 2026/27"). */
   rowJoint?: string;
+  /** The words before the day a page last changed, where a guide prints
+      that line (Guide.updatedLine): « Mis à jour le ». */
+  updated?: string;
+  /** A hop's own page, which a reader sees only when neither its refresh
+      nor its script moves them on (pages/go/[slug].astro): the tab's
+      title before the event's name, the sentence before the target's
+      host, the link on to it and the link back to the guide. Where a row
+      has none, the hop is Redirect's own English page, as Beyond The
+      Valley's, Field Day's and every other non-French guide's hops print
+      it byte for byte. */
+  hop?: { title: string; leaving: string; go: string; back: string };
 }> = {
   en: {
     rootCrumbTitle: "Every festival guide on fest.one, by event and language",
@@ -169,6 +206,7 @@ export const chrome: Record<Lang, {
     onThisPage: "On this page",
     llmsHeading: "fest.one festival guides",
     otherLanguages: "This guide in other languages",
+    updated: "Updated",
   },
   es: {
     rootCrumbTitle: "Todas las guías de festivales",
@@ -203,8 +241,27 @@ export const chrome: Record<Lang, {
     skip: "ข้ามไปยังเนื้อหา",
     menu: "เปิดเมนู",
   },
+  // Quebec French. The skip link is Québec.ca's words and « Fil d'Ariane »
+  // the OQLF's for a breadcrumb; « Sur cette page » is what Canada.ca and
+  // Québec.ca set over a jump list (the native reader's gate-3 D7); the
+  // row's label and the other-languages label are filled so that no page
+  // falls back to English, though Igloofest's guide names its own row and
+  // has no other language yet (fill 4). The hop's words are the copy's
+  // chrome block.
+  fr: {
+    rootCrumbTitle: "Tous les guides de festivals sur fest.one, par événement et par langue",
+    siblingNav: "Ce guide",
+    onThisPage: "Sur cette page",
+    llmsHeading: "Guides de festivals sur fest.one",
+    otherLanguages: "Ce guide dans d'autres langues",
+    breadcrumbs: "Fil d'Ariane",
+    skip: "Aller au contenu",
+    menu: "Ouvrir le menu",
+    updated: "Mis à jour le",
+    hop: { title: "Vous quittez fest.one — guide du festival", leaving: "Vous quittez fest.one pour", go: "Continuer", back: "Retour au guide" },
+  },
 };
 
 // Every keyword in one place for tools/seo-check.mjs, which reads this file
 // as text and picks the one matching each page's <html lang>.
-export const keywords = { en: "festival", es: "festival", pt: "festival", th: "เทศกาล" };
+export const keywords = { en: "festival", es: "festival", pt: "festival", th: "เทศกาล", fr: "festival" };

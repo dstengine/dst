@@ -231,6 +231,15 @@ h2 { overflow-wrap: break-word; }
   font-size: var(--step-0);
   color: var(--ink-muted);
 }
+/* The day the page last changed, under its lede, where the guide prints it
+   (Igloofest: « Mis à jour le 22 octobre 2026 », the day its sitemap entry
+   gives): a date a reader weighs the page by, so muted and not faint, at
+   the small body step, as the sources' note is. */
+.guide-updated {
+  margin: var(--space-1) 0 0;
+  font-size: var(--step--1);
+  color: var(--ink-muted);
+}
 /* A Thai line carries marks above and below its letters: at 1.5 the lede's
    lines pack them against each other. */
 :lang(th) .lede { line-height: 1.6; }
@@ -397,6 +406,56 @@ h2 { overflow-wrap: break-word; }
     min-height: 44px;
   }
 }
+
+/* A night of a line-up as a card (a section of kind "nights", copy.ts:
+   Igloofest Montréal's twelve). The day is the card's heading, each stage
+   a line of its own and its sets under it, the start first: the reader
+   standing at the quay asks "what is on at 21 h", and a column of times
+   answers it. The card is the guide-cards card: border, surface, one
+   column, nothing that hovers. The stage's name and the organiser's label
+   over it, « (Ferias) », in the muted ink, never the faint one, since a
+   reader outdoors at night reads them (the fest director's gate-3
+   condition 5); the time in the ink, one run that never breaks, in figures
+   that line up. No transform and no tracking: the acts and the labels
+   print in the organiser's own casing (« KAYTRANADA », « Mystery
+   guests »). */
+.guide-section ul.nights {
+  display: grid;
+  gap: var(--space-2);
+  padding-left: 0;
+  list-style: none;
+}
+.guide-section ul.nights > li {
+  margin: 0;
+  padding: var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.guide-section ul.nights h3 { margin: 0; letter-spacing: normal; }
+.guide-section .night-stage {
+  margin: var(--space-2) 0 0;
+  color: var(--ink-muted);
+}
+.guide-section ul.night-sets {
+  margin: var(--space-1) 0 0;
+  padding-left: 0;
+  list-style: none;
+}
+.guide-section ul.night-sets li { margin: 0; }
+.guide-section ul.night-sets time {
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+@media (max-width: 480px) {
+  .guide-section ul.nights > li { padding: var(--space-2); }
+}
+
+/* The targets of an arrow whose sentence names none of them, printed after
+   it under their labels (Igloofest's tickets page: « … sont sur sa page.
+   → Gatineau · → Québec », copy.ts). Each name stays whole. */
+.arrow-links a { white-space: nowrap; }
 
 /* A seller's price tables as text (Creamfields Chile: Punto Ticket's
    twelve images, four phases by two prices each). The group's name is a
@@ -630,9 +689,13 @@ h2 { overflow-wrap: break-word; }
    at 320): the tickets page's eight headings at body size took 643. The
    list steps down to the chips' size and the box gives up some padding;
    the links stay inline, so each line is still the whole row to tap. A
-   heading that wraps is balanced, so no item ends on one word. */
+   heading that wraps is balanced, so no item ends on one word. The box also
+   sits a step nearer the chips, and its heading nearer its list: Igloofest's
+   lineup page, six headings of up to three lines under three rows of chips,
+   took 582. */
 @media (max-width: 480px) {
-  .guide .on-this-page { padding: var(--space-2) var(--space-2) var(--space-2) var(--space-3); }
+  .guide .on-this-page { margin-top: var(--space-3); padding: var(--space-2) var(--space-2) var(--space-2) var(--space-3); }
+  .guide .on-this-page-heading { margin-bottom: var(--space-1); }
   .guide .on-this-page ul { font-size: var(--step--1); line-height: 1.4; }
   .guide .on-this-page li { text-wrap: balance; }
   html:lang(th) .guide .on-this-page ul { line-height: 1.6; }

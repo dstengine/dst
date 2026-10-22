@@ -25,8 +25,10 @@ const { titleSuffix, keyword } = site[langOf(guide.lang)];
 assertTitle(withSuffix(page.title, titleSuffix, keyword, guide.lang), keyword, route.path);
 
 // One event, one URL: the MusicEvent goes on the guide's main page only,
-// first, so the page reads as the event it is.
-const jsonLd = page === mainPage(guide) ? [musicEvent(event, guide, page, day)] : [];
+// first, so the page reads as the event it is; and on a subpage that is an
+// edition of its own, with its own markup (Igloofest's Québec and
+// Gatineau, the SEO lead's gate-3 condition 4).
+const jsonLd = page === mainPage(guide) || page.markup ? [musicEvent(event, guide, page, day)] : [];
 // The BreadcrumbList names what the visible trail shows (GuidePage): the
 // event as the guide names it, and this page by its crumb where it has one.
 ---

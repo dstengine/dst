@@ -3,16 +3,46 @@
 // crawlable. The archive's robots.txt gets no Disallow: /go/ (BOOTSTRAP step
 // 3 adds only the sitemap line): a guide's offers.url is its /go/ hop, and
 // Google has to fetch the hop to read its noindex (ruling X4, 22 Oct 2026).
+//
+// A hop out of a guide whose language row has the hop's words (fr:
+// Igloofest) speaks that language, through Redirect's own props: its
+// <html lang>, its tab title, and the paragraph a reader sees only if
+// neither the refresh nor the script moves them on, which says where they
+// are going, links on to it and back to the guide (the copy's chrome
+// block; the CTO's gate-3 item 4). The link on keeps the rel every hop's
+// link has. Each link's tooltip says more than its label: the target's
+// host, and the guide's main title without its suffix (the SEO lead's
+// gate-3 condition 5). Both are a thumb's target on a phone, inline, since
+// the hop has no stylesheet (the fest director's gate-3 condition 7).
+// Every other hop is Redirect's English page, byte for byte as before.
 import Redirect from "@dst/ui/Redirect.astro";
 import { outbound } from "../../outbound";
+import { events, guides } from "../../data/events/index";
+import { mainPage } from "../../rules";
+import { withoutSuffix } from "../../copy";
+import { chrome, langOf } from "../../site.config";
 
 export function getStaticPaths() {
   return Object.entries(outbound).map(([slug, hop]) => ({
     params: { slug },
-    props: { to: hop.url },
+    props: { to: hop.url, event: hop.event },
   }));
 }
 
-const { to } = Astro.props;
+const { to, event } = Astro.props;
+const guide = guides.find((g) => g.event === event && chrome[langOf(g.lang)].hop);
+const words = guide ? chrome[langOf(guide.lang)].hop : undefined;
+const name = events.find((e) => e.slug === event)?.name ?? event;
+// The sentence is one string: Astro drops the space between two
+// expressions ("pourigloofest.ca", the first build).
+// A maps search is named by its service, not its host (« … pour Google
+// Maps. »: the fr-CA native reader's swap 1 on the executor's strings).
+const host = to.startsWith("https://www.google.com/maps/") ? "Google Maps" : new URL(to).host.replace(/^www\./, "");
+const back = guide ? { href: guide.path, title: withoutSuffix(mainPage(guide).title) } : undefined;
+const tap = "display:inline-block;min-height:44px;line-height:44px";
 ---
-<Redirect to={to} />
+{guide && words && back ? (
+  <Redirect to={to} lang={guide.lang} title={`${words.title} ${name}`}><p>{`${words.leaving} ${host}.`}</p><p><a href={to} rel="nofollow noopener external" title={host} style={tap}>{words.go}</a> · <a href={back.href} title={back.title} style={tap}>{words.back}</a></p></Redirect>
+) : (
+  <Redirect to={to} />
+)}
