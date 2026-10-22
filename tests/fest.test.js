@@ -977,7 +977,12 @@ describe("a French guide's built pages", { skip: built ? false : "apps/fest/dist
   });
 
   // Three MusicEvents, each its own edition at its own place, the offset
-  // from the zone; Montréal's three Offers while their span lasts.
+  // from the zone; Montréal's three Offers, priced while their span lasts.
+  // From the take-down day (expires.prices) each Offer keeps its name, its
+  // hop, its seller and its validFrom and loses its price and currency, as
+  // Beyond The Valley's, Field Day's and Zamna Tulum's do (the session's
+  // ruling on QA case 13b, 22 October 2026; the priceless Offer is a
+  // question for the network, written on Zamna Tulum's card).
   test("the three MusicEvents: names, offsets, places and Montréal's three offers", () => {
     const ev = (p) => jsonLd(html.get(p) ?? "").find((b) => b["@type"] === "MusicEvent");
     const h1 = (p) => words(/<h1\b[^>]*>([\s\S]*?)<\/h1>/.exec(html.get(p))[1]).trim();
@@ -1006,8 +1011,15 @@ describe("a French guide's built pages", { skip: built ? false : "apps/fest/dist
         ["Offer", 99, "CAD", "2026-10-23T11:00:00-04:00", "https://fest.one/go/igloofest-billets/"],
         ["Offer", 234, "CAD", "2026-10-23T11:00:00-04:00", "https://fest.one/go/igloofest-billets/"],
       ]);
-      for (const o of main.offers) assert.ok(!("priceValidUntil" in o) && !("availability" in o), "an offer with an end or a state");
-    } else assert.equal(main.offers, undefined);
+    } else {
+      assert.deepEqual(main.offers.map((o) => [o["@type"], o.name, o.validFrom, o.url, o.seller?.name]), [
+        ["Offer", "Admission générale", "2026-10-23T11:00:00-04:00", "https://fest.one/go/igloofest-billets/", "Billetterie Igloofest"],
+        ["Offer", "Terrasse VIP", "2026-10-23T11:00:00-04:00", "https://fest.one/go/igloofest-billets/", "Billetterie Igloofest"],
+        ["Offer", "Igloopasse", "2026-10-23T11:00:00-04:00", "https://fest.one/go/igloofest-billets/", "Billetterie Igloofest"],
+      ]);
+      for (const o of main.offers) assert.ok(!("price" in o) && !("priceCurrency" in o), "a price after the take-down");
+    }
+    for (const o of main.offers) assert.ok(!("priceValidUntil" in o) && !("availability" in o), "an offer with an end or a state");
     for (const p of ["/igloofest/billets/", "/igloofest/programmation/", "/igloofest/montreal/", "/igloofest/habillement/"]) assert.equal(ev(p), undefined, p);
   });
 

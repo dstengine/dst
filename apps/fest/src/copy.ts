@@ -315,12 +315,17 @@ const KEEP_ES_MX = new RegExp(
   "gu",
 );
 // French, as Quebec writes it (Igloofest): a day with its month, and its
-// year when one follows ("14 janvier 2027", "1er janvier 2020"). A time,
-// a sum, a grouped figure and an ordinal need no span: the OQLF's no-break
-// spaces (oqlf, below) already hold each together, in long runs as well.
+// year when one follows ("14 janvier 2027", "1er janvier 2020"); an age or
+// a count with its noun ("18 ans", "9 000 Igloosapiens"), which the
+// line-break sweep of 22 October 2026 found split at 320 px ("réservés aux
+// 18 | ans et plus", "plus de 9 000 | Igloosapiens"). A time, a sum, a
+// grouped figure and an ordinal need no span: the OQLF's no-break spaces
+// (oqlf, below) already hold each together, in long runs as well.
 const MOIS = "(?:janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre)";
 const FR_DATE = `(?<!\\d)\\d{1,2}(?:er)?[ \\u00a0]${MOIS}(?:[ \\u00a0]\\d{4})?(?![\\p{L}\\d])`;
-const KEEP_FR = new RegExp(FR_DATE, "gu");
+const FR_NOUN = "(?:ans|mois|jours|soirées|nuits|scènes|villes|billets|artistes|personnes|éditions|Igloosapiens)";
+const FR_COUNT = `(?<![\\d,.])\\d[\\d\\u00a0]*(?: à \\d+)?[ \\u00a0]${FR_NOUN}(?![\\p{L}\\d])`;
+const KEEP_FR = new RegExp([FR_DATE, FR_COUNT].join("|"), "gu");
 /** Each language's keep-together list, by the guide's locale where it has
     a row of its own ("es-MX"), else by its language: "es-CL" reads es. A
     guide in a language with no row does not build. */
@@ -347,11 +352,18 @@ const GLUE_PT = /(R\$|\(\d{2}\)|\bnº|§|\bCEP|\bLinha) (?=\d)/gu;
 // October 2026 measured 373 dates split from 320 to 1280 px on the three
 // pages before the dates joined the glue; the longest, "31 de diciembre de
 // 2026", is 211 px, inside the 262 px a card gives its text at 320.
+// In Quebec French the same holds for a date and for a count with its
+// noun: the guide's paragraphs run long between two links, and the sweep
+// of 22 October 2026 measured 83 dates split at 320 px on Igloofest's
+// seven pages ("consultée le 22 | octobre 2026", "du jeudi 14 | janvier
+// au samedi…") and "18 | ans", "21 | ans" in its age lines. The longest
+// glued date, "31 décembre 2026", is well inside the 292 px column.
 const GLUE_ES_MX = new RegExp([...ES_MX_TOKENS, `\\b\\d{1,2} de ${MES}(?: de \\d{4})?(?![\\p{L}\\d])`].join("|"), "gu");
 const GLUE: Record<string, (run: string) => string> = {
   pt: (run) => run.replace(GLUE_PT, "$1\u00a0"),
   "es-mx": (run) => run.replace(GLUE_ES_MX, (m) => m.replace(/ /g, "\u00a0")),
   th: (run) => run.replace(KEEP_TH, (m) => m.replace(/ /g, "\u00a0").replace(/–/g, "–\u2060")),
+  fr: (run) => run.replace(KEEP_FR, (m) => m.replace(/ /g, "\u00a0")),
 };
 const unescaped = (s: string) => s.replace(/&(amp|lt|gt|quot);/g, "_");
 /** The rendered HTML with its dates and counts kept whole, in each short
@@ -410,14 +422,30 @@ const HEADING_KEEP_PT = new RegExp(`\\b\\d{1,2}º? de ${MES_PT}(?: de \\d{4})?(?
 // Wonderfruit 2026 (ประกาศ 1 กันยายน 2026)").
 const HEADING_KEEP_TH = new RegExp(`${THAI_DATE}[:,.;)]?`, "gu");
 // French the same way ("Fin de semaine 1 : jeudi 14, vendredi 15 et
-// samedi 16 janvier 2027", Igloofest's line-up weekends).
-const HEADING_KEEP_FR = new RegExp(`${FR_DATE}[:,.;]?`, "gu");
+// samedi 16 janvier 2027", Igloofest's line-up weekends), with the
+// weekday a heading opens on ("Jeudi 14 janvier 2027", a night card's
+// day) and a count with its noun ("18 ans et plus", main's Montréal
+// heading). A weekday inside a heading stays out of the span: from 360 px
+// the span is a block, and "samedi 16 janvier 2027" at 24 px is wider
+// than the column there, so the block would take a line of its own and
+// leave "samedi" alone on it. French dates are wider than the column at
+// 320 px too ("22 octobre 2026" is 305 px at 24 px, the column 292), so
+// the span stays inline there as in English, and the day is joined to its
+// month and a count to its noun by a no-break space instead: the line may
+// break before the date or before its year, never between "14" and
+// "janvier" (the sweep of 22 October 2026 found « Jeudi 14 | janvier 2027 »
+// and « 18 | ans et plus » at 320).
+const JOUR = "(?:Lundi|Mardi|Mercredi|Jeudi|Vendredi|Samedi|Dimanche)";
+const HEADING_KEEP_FR = new RegExp(`(?:^${JOUR}[ \\u00a0])?${FR_DATE}[:,.;]?|${FR_COUNT}`, "gu");
 const HEADING_KEEP_BY: Record<string, RegExp> = { es: HEADING_KEEP_ES, pt: HEADING_KEEP_PT, th: HEADING_KEEP_TH, fr: HEADING_KEEP_FR };
+const HEADING_GLUE_FR = new RegExp(`(?<=\\d|\\der) (?=${MOIS}(?!\\p{L})|${FR_NOUN}(?!\\p{L}))`, "gu");
+const HEADING_GLUE: Record<string, (span: string) => string> = { fr: (m) => m.replace(HEADING_GLUE_FR, "\u00a0") };
 const ASTRO_ESCAPES: Record<string, string> = { "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" };
 export const headingHtml = (text: string, lang = "en") => {
   const html = text.replace(/[&<>'"]/g, (c) => ASTRO_ESCAPES[c]).replace(HEADING_KEEP, (m) => `<span class="nowrap">${m}</span>`);
   const keep = HEADING_KEEP_BY[lang.slice(0, 2).toLowerCase()];
-  return keep ? html.replace(keep, (m) => `<span class="keep-date">${m}</span>`) : html;
+  const glue = HEADING_GLUE[lang.slice(0, 2).toLowerCase()] ?? ((m: string) => m);
+  return keep ? html.replace(keep, (m) => `<span class="keep-date">${glue(m)}</span>`) : html;
 };
 
 // A price card's total stays with the word before its "=": "$209.90 +
@@ -1090,5 +1118,7 @@ function nightCard(item: string, ctx: Ctx): Part {
       `<p class="night-stage">${esc(s.name)}${s.label ? ` <span class="night-label">(${esc(s.label)})</span>` : ""}</p>` +
       `<ul class="night-sets">${s.sets.map((x) => `<li>${time(x.time)} <span class="night-act">${esc(x.act)}</span></li>`).join("")}</ul>`,
   );
-  return { html: `<h3><time datetime="${n.date}">${esc(n.day)}</time></h3>${stages.join("")}`, md };
+  // The day is a heading, set as one (headingHtml): « Jeudi 14 | janvier
+  // 2027 » split at 320 px when it went in as plain text.
+  return { html: `<h3><time datetime="${n.date}">${headingHtml(n.day, ctx.guide.lang)}</time></h3>${stages.join("")}`, md };
 }

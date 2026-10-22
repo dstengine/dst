@@ -40,7 +40,7 @@ export const events: FestEvent[] = [
   {
     slug: "igloofest",
     createdAt: "2026-10-22T22:00:00+04:00",
-    updatedAt: "2026-10-22T22:00:00+04:00",
+    updatedAt: "2026-10-22T23:18:00+04:00",
     name: "Igloofest",
     // The season, Montréal's first night to Edmonton's last: the hub's order.
     edition: { start: "2027-01-14", end: "2027-03-13" },
@@ -50,19 +50,24 @@ export const events: FestEvent[] = [
       // 1's repairs (21 October), 6 to 9 round 2's (22 October). The copy
       // cites two items by index and the list whole once, in the tickets
       // lede's price paragraph, for items 6 and 7 (no per-night price, no
-      // tax line), read on 22 October.
+      // tax line), read on 22 October. Item 0 (no gate wording at the quay)
+      // is the fact-checker's one-off re-read of s3, s5 and s15 on 22 October,
+      // 15:02 to 15:05 in Montréal, which the copy's « au 22 octobre 2026 »
+      // dates (card §4, the re-read for five read dates).
       "not_found_added": "2026-10-22",
-      "not_found_added.0": "2026-10-21",
+      "not_found_added.0": "2026-10-22",
       "not_found_added.4": "2026-10-21",
       // Round 1's "not found" lines and its Edmonton age row (null source,
       // "not stated on the French Edmonton site"): the scout's first read,
-      // dated by its oldest day, 21 October.
+      // dated by its oldest day, 21 October. Items 3 to 5 (the quay's
+      // street number, Gatineau's prices, Edmonton) and the age row take 22
+      // October, the day of the same one-off re-read, as the copy dates them.
       "not_found.2": "2026-10-21",
-      "not_found.3": "2026-10-21",
-      "not_found.4": "2026-10-21",
-      "not_found.5": "2026-10-21",
+      "not_found.3": "2026-10-22",
+      "not_found.4": "2026-10-22",
+      "not_found.5": "2026-10-22",
       "not_found.6": "2026-10-21",
-      "age.3": "2026-10-21",
+      "age.3": "2026-10-22",
       // The gate-1 repairs: "every line here rests on a page I read myself
       // on 2026-10-22" (the scout's block header).
       "stale_or_contradictory.2": "2026-10-22",
@@ -266,7 +271,7 @@ export const events: FestEvent[] = [
           "country": "CA",
           "timezone": "America/Toronto",
           "source": "s3",
-          "readOn": "2026-10-21",
+          "readOn": "2026-10-22",
           "note": "the organiser names the quay and no street number; no gate wording and no count of entrances on any page read (not_found). s3's 'Les rues de la Commune, Berri ou le boulevard Saint-Laurent vous donnent accès aux entrées du Vieux-Port et à ses stationnements' is about the Old Port's road entrances and car parks ('Des stationnements sont disponibles au Quai de l'horloge et au Quai King-Edward'): printed under 'Voiture' only, never as the festival's gates; W10. s15 (Accessibilité) names an 'entrée VIP sur la plate-forme ouest' and 'l'allée centrale, qui sert de sortie aux festivaliers à la fin de l'événement' — the only gate words the organiser prints"
         },
         {
@@ -822,7 +827,7 @@ export const events: FestEvent[] = [
           "city": "Montréal",
           "how": "Nous sommes à quelques minutes à pied des stations Champs-de-Mars et Place d'Armes, sur la ligne orange. Il est aussi possible de venir en autobus.",
           "source": "s5",
-          "readOn": "2026-10-21",
+          "readOn": "2026-10-22",
           "note": "s3 names the same two stations with the last-train lines; 'le plus souvent par la ligne orange' is nobody's sentence and is withdrawn; the lede names the two stations and 'ligne orange' as s5 has them; (c). The last-train lines are printed with the organiser's parentheses: 'Direction Montmorency : 00 h 51 tous les jours (sauf samedi 01 h 21)'; they were not compared with the STM's: stm.info timed out again at 21:35 UTC (curl 000), sto.ca answered 503"
         },
         {
