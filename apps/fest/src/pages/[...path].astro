@@ -1,0 +1,38 @@
+---
+// Every page of every guide, from the data: /beyond-the-valley/ and its
+// subpages now, a second language at /<event>/<hl>/ later.
+import Layout from "../layouts/Layout.astro";
+import GuidePage from "../components/GuidePage.astro";
+import { assertRoutesAreUnique, alternatesFor, guideRoutes, type GuideRoute } from "../routes";
+import { assertTitle, mainPage, musicEvent, today } from "../rules";
+import { withSuffix } from "@dst/ui/title";
+import { site } from "../site.config";
+
+export function getStaticPaths() {
+  assertRoutesAreUnique();
+  return guideRoutes().map((route) => ({
+    params: { path: route.page.slug },
+    props: { route },
+  }));
+}
+
+const { route } = Astro.props as { route: GuideRoute };
+const { event, guide, page } = route;
+const day = today();
+const { titleSuffix, keyword } = site.en;
+assertTitle(withSuffix(page.title, titleSuffix, keyword, guide.lang), keyword, route.path);
+
+// One event, one URL: the MusicEvent goes on the guide's main page only,
+// first, so the page reads as the event it is.
+const jsonLd = page === mainPage(guide) ? [musicEvent(event, guide, page, day)] : [];
+---
+<Layout
+  title={page.title}
+  description={page.description}
+  jsonLd={jsonLd}
+  alternates={alternatesFor(page, guide)}
+  crumbLabels={{ [event.slug]: event.name }}
+  guide={guide}
+>
+  <GuidePage event={event} guide={guide} page={page} today={day} />
+</Layout>

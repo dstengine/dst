@@ -16,26 +16,26 @@
   color-scheme: light dark;
 
   /* Neutrals — warm-cool off-white, not a stock cream, not stark white */
-  --bg: #FAF9F6;
-  --surface: #FFFFFF;
-  --surface-sunk: #F1EFEA;
-  --border: #E2DFD7;
+  --bg: var(--bg-light, #FAF9F6);
+  --surface: var(--surface-light, #FFFFFF);
+  --surface-sunk: var(--surface-sunk-light, #F1EFEA);
+  --border: var(--border-light, #E2DFD7);
 
-  --ink: #14181F;
-  --ink-muted: #565F6B;
+  --ink: var(--ink-light, #14181F);
+  --ink-muted: var(--ink-muted-light, #565F6B);
   /* Was #8A8F97, which measured 3.09:1 here — under the 4.5:1 WCAG AA
      needs at this size. It carries dates, captions and source lines, so
      "decorative grey" was never the right read for it. Then #6D727A, which
      cleared AA on --bg but only reached 4.21:1 on --surface-sunk, where
      table headers and glance labels sit. Now 5.09:1 / 4.67:1. */
-  --ink-faint: #666B73;
+  --ink-faint: var(--ink-faint-light, #666B73);
 
   /* One step past --ink, for the words an article marks as the ones to
      take away — dates, prices, the rule that decides the visit. Body text
      stops short of the extreme on purpose (see --ink below in the dark
      block), and a bold run is a small enough share of the page that it can
      have the extreme without the page glowing. */
-  --ink-strong: #000000;
+  --ink-strong: var(--ink-strong-light, #000000);
 
   /* Semantic (status), separate from any vertical's accent */
   --ok: #2A7A55;
@@ -107,24 +107,24 @@
   /* The un-stamped state: no stored choice, so the reader's own setting
      decides. :not() keeps an explicit light choice winning on a dark OS. */
   :root:not([data-theme="light"]) {
-    --bg: #121417;
-    --surface: #191C20;
-    --surface-sunk: #0E1013;
-    --border: #2B2F35;
+    --bg: var(--bg-dark, #121417);
+    --surface: var(--surface-dark, #191C20);
+    --surface-sunk: var(--surface-sunk-dark, #0E1013);
+    --border: var(--border-dark, #2B2F35);
 
     /* Not a near-white: #EDEEEE ran 18:1 against this background, and that
        much contrast blooms on OLED and is hardest on readers with
        astigmatism. 13.8:1 is still far above AA and stops the glow. */
-    --ink: #DCDFE3;
-    --ink-muted: #9BA1AA;
+    --ink: var(--ink-dark, #DCDFE3);
+    --ink-muted: var(--ink-muted-dark, #9BA1AA);
     /* Was #6C7178 at 4.27:1, then #7A7F86, which cleared AA on --bg and
        --surface-sunk but ran 4.24:1 on --surface, where glance labels sit.
        Now 4.9 / 4.79 / 5.34. */
-    --ink-faint: #83888F;
+    --ink-faint: var(--ink-faint-dark, #83888F);
     /* The one near-white on the page, and it is deliberate: --ink stays
        off it to stop the OLED bloom, and <strong> is the exception because
        it is a handful of words rather than a paragraph. */
-    --ink-strong: #FFFFFF;
+    --ink-strong: var(--ink-strong-dark, #FFFFFF);
 
     --ok: #7FCBA6;
     --ok-bg: #16261F;
@@ -134,15 +134,41 @@
 }
 
 :root[data-theme="dark"] {
-  --bg: #121417; --surface: #191C20; --surface-sunk: #0E1013; --border: #2B2F35;
-  --ink: #DCDFE3; --ink-muted: #9BA1AA; --ink-faint: #83888F; --ink-strong: #FFFFFF;
+  --bg: var(--bg-dark, #121417); --surface: var(--surface-dark, #191C20);
+  --surface-sunk: var(--surface-sunk-dark, #0E1013); --border: var(--border-dark, #2B2F35);
+  --ink: var(--ink-dark, #DCDFE3); --ink-muted: var(--ink-muted-dark, #9BA1AA);
+  --ink-faint: var(--ink-faint-dark, #83888F); --ink-strong: var(--ink-strong-dark, #FFFFFF);
   --ok: #7FCBA6; --ok-bg: #16261F; --warn: #D9AE6C; --warn-bg: #2C2313;
 }
 :root[data-theme="light"] {
-  --bg: #FAF9F6; --surface: #FFFFFF; --surface-sunk: #F1EFEA; --border: #E2DFD7;
-  --ink: #14181F; --ink-muted: #565F6B; --ink-faint: #666B73; --ink-strong: #000000;
+  --bg: var(--bg-light, #FAF9F6); --surface: var(--surface-light, #FFFFFF);
+  --surface-sunk: var(--surface-sunk-light, #F1EFEA); --border: var(--border-light, #E2DFD7);
+  --ink: var(--ink-light, #14181F); --ink-muted: var(--ink-muted-light, #565F6B);
+  --ink-faint: var(--ink-faint-light, #666B73); --ink-strong: var(--ink-strong-light, #000000);
   --ok: #2A7A55; --ok-bg: #E4F1EA; --warn: #8A6222; --warn-bg: #F3E9D6;
 }
+
+/* Neutrals — the ground, the surfaces, the rules and the three inks — are
+   the network's, and every value above is the one a site gets when it says
+   nothing. Each is read through a hook, as the accents below are: a site
+   whose look needs its own ground declares the hooks in its theme.css
+
+     :root {
+       --bg-light: …; --surface-light: …; --surface-sunk-light: …;
+       --border-light: …; --ink-light: …; --ink-muted-light: …;
+       --ink-faint-light: …; --ink-strong-light: …;
+       --bg-dark: …;  (and the same seven again, ending -dark)
+     }
+
+   and this file still decides which palette applies. Before the hooks the
+   neutrals were fixed at (0,2,0) here, so no theme.css could set a ground
+   of its own without restating the whole switch — the four blocks per site
+   the accent section below was written to retire. A site that declares
+   hooks declares all eight in both palettes: a missing one falls through
+   to the network's value, and the network's ink on a site's own ground is
+   a contrast pair nobody measured. fest.one was the first to need them
+   (22 October 2026); every other site declares none and computes exactly
+   the values written here. */
 
 /* Accent — the one part of the palette each site sets for itself. A site's
    src/styles/theme.css declares two palettes and nothing else:

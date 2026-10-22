@@ -1,0 +1,128 @@
+---
+// One page of a guide, whatever its kind: the trail, the h1 and the lede
+// with the answer in it, the row of the guide's pages, the sections, the
+// questions, the sources and the page's own closing line. Every word comes
+// from the guide's data or, for the few the template says itself, from the
+// language's row in site.config.ts.
+//
+// The blocks between the row and the sections (a ticket button with its
+// seller's line, the facts at a glance, a status badge, a calendar file, a
+// map link) are the guide's to fill. Beyond The Valley fills none: every
+// ticket is sold out, and a button would be this site selling what nobody
+// can buy. Each renders only when the page's data has it.
+import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
+import ChipNav from "@dst/ui/ChipNav.astro";
+import OnThisPage from "@dst/ui/OnThisPage.astro";
+import Faq from "@dst/ui/Faq.astro";
+import Glance from "@dst/ui/Glance.astro";
+import { ICONS } from "@dst/ui/icons";
+import type { FestEvent, Guide, GuidePage } from "../data/types";
+import { blocks, inline, pathOf, withoutSuffix, type Ctx } from "../copy";
+import { mainPage } from "../rules";
+import { languagesFor } from "../routes";
+import { chrome, site } from "../site.config";
+
+interface Props {
+  event: FestEvent;
+  guide: Guide;
+  page: GuidePage;
+  today: string;
+}
+const { event, guide, page, today } = Astro.props;
+const words = chrome.en;
+const home = site.en;
+const path = pathOf(page);
+const ctx: Ctx = { event, guide, page, today, where: path };
+const main = mainPage(guide);
+
+// The trail matches the one in the structured data (schema.ts): the hub,
+// then the guide's own page under the event's name, then this page under
+// its title without the suffix.
+const crumbs = page === main ? [] : [{ href: guide.path, label: event.name, title: withoutSuffix(main.title) }];
+
+const siblings = guide.pages.map((p) => ({ href: pathOf(p), label: p.label, title: withoutSuffix(p.title) }));
+// The event's guides in other languages. BaseLayout would put them in the
+// header, which cannot hold two names like "English (Australia)" beside the
+// wordmark at 320 px (the fixture proof of 22 Oct 2026); theme.css hides
+// that copy and the row sits here, under the guide's own pages.
+const languages = languagesFor(page, guide);
+
+const sections = page.sections
+  .map((s) => ({ ...s, html: blocks(s.body, ctx) }))
+  .filter((s) => s.html);
+// A jump link's label is the whole of what it does, so it carries no
+// tooltip: one that read the label back is the thing these pages may not
+// carry anywhere.
+const jumps = sections.map((s) => ({ id: s.id, label: s.heading, title: false as const }));
+
+const faq = page.faq
+  .map((row) => ({ q: row.q, a: inline(row.a, ctx), generic: row.generic }))
+  .filter((row) => row.a);
+const lede = inline(page.lede, ctx);
+const sources = page.sources === undefined ? "" : inline(page.sources, ctx);
+const links = page.links === undefined ? "" : inline(page.links, ctx);
+---
+<article class="container guide">
+  <Breadcrumbs
+    crumbs={crumbs}
+    current={withoutSuffix(page.title)}
+    homeHref={home.homeHref}
+    homeLabel={home.homeLabel}
+    homeTitle={words.rootCrumbTitle}
+  />
+  <header class="guide-head">
+    <h1>{page.h1}</h1>
+    {lede && <p class="lede" set:html={lede} />}
+  </header>
+
+  <ChipNav items={siblings} current={path} label={words.siblingNav} />
+  {languages.length > 0 && (
+    <nav class="guide-languages" aria-label={words.otherLanguages}>
+      {languages.map((l) => <a href={l.href} hreflang={l.lang} lang={l.lang} dir={l.dir} title={l.title}>{l.label}</a>)}
+    </nav>
+  )}
+
+  {page.badge && <p class="guide-badge">{page.badge.text}</p>}
+  {page.cta && (
+    <div class="guide-cta">
+      <a class="button" href={page.cta.href} title={page.cta.title} rel="nofollow">{page.cta.label}</a>
+      <p class="guide-cta-seller">{page.cta.seller}</p>
+      {page.cta.secondary && (
+        <a class="guide-cta-secondary" href={page.cta.secondary.href} title={page.cta.secondary.title} rel="nofollow">{page.cta.secondary.label}</a>
+      )}
+    </div>
+  )}
+  {page.glance && <Glance facts={page.glance.map((g) => ({ ...g, icon: ICONS.list }))} />}
+  {(page.calendar || page.map) && (
+    <p class="guide-files">
+      {page.calendar && <a href={page.calendar.href} title={page.calendar.title}>{page.calendar.label}</a>}
+      {page.map && <a href={page.map.href} title={page.map.title} rel="nofollow">{page.map.label}</a>}
+    </p>
+  )}
+
+  <OnThisPage items={jumps} min={5} heading={page.onThisPage ?? words.onThisPage} />
+
+  {sections.map((s) => (
+    <section class="guide-section" aria-labelledby={s.id}>
+      <h2 id={s.id}>{s.heading}</h2>
+      <Fragment set:html={s.html} />
+    </section>
+  ))}
+
+  {faq.length > 0 && (
+    <section class="guide-section" aria-labelledby="questions">
+      <h2 id="questions">{page.faqHeading}</h2>
+      <Faq items={faq} />
+    </section>
+  )}
+
+  {(sources || links) && (
+    <section class="guide-section guide-sources" aria-labelledby="sources">
+      <h2 id="sources">{page.sourcesHeading}</h2>
+      {sources && <p set:html={sources} />}
+      {links && <p class="guide-links" set:html={links} />}
+    </section>
+  )}
+
+  {page.foot && <p class="guide-foot">{page.foot}</p>}
+</article>

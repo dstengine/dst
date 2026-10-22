@@ -4,7 +4,11 @@
 // venue. Only worth rendering past a few entries, which is the caller's
 // call: pass the sections that exist and it hides itself below `min`.
 interface Props {
-  items: { id: string; label: string }[];
+  /** `title` is each link's tooltip: the label when unset, as it always
+      was; `false` for none at all. A jump link's label is already the
+      whole of what it does, and a tooltip that reads it back is the one
+      thing fest.one's pages may not carry. */
+  items: { id: string; label: string; title?: string | false }[];
   min?: number;
   heading?: string;
 }
@@ -15,7 +19,7 @@ const { items, min = 3, heading = "On this page" } = Astro.props;
     <p class="on-this-page-heading">{heading}</p>
     <ul>
       {items.map((item) => (
-        <li><a href={`#${item.id}`} title={item.label}>{item.label}</a></li>
+        <li><a href={`#${item.id}`} title={item.title === false ? undefined : (item.title ?? item.label)}>{item.label}</a></li>
       ))}
     </ul>
   </nav>

@@ -15,12 +15,19 @@ interface Props {
   /** The current page. Rendered as text, since it is where you already are. */
   current: string;
   homeLabel?: string;
+  /** Where the trail starts. "/" on every site whose home is its root; a
+      site whose home is a section (fest.one's /festivals/) passes it. */
+  homeHref?: string;
+  /** The root crumb's tooltip. Defaults to the label, as it always was; a
+      site with something to say about its home passes it, since a title
+      that reads the label back says nothing. */
+  homeTitle?: string;
 }
-const { crumbs, current, homeLabel = "Home" } = Astro.props;
+const { crumbs, current, homeLabel = "Home", homeHref = "/", homeTitle = homeLabel } = Astro.props;
 ---
 <nav class="crumbs" aria-label="Breadcrumb">
   <ol>
-    <li><a href="/" title={homeLabel}>{homeLabel}</a></li>
+    <li><a href={homeHref} title={homeTitle}>{homeLabel}</a></li>
     {crumbs.map((crumb) => (
       <li><a href={crumb.href} title={crumb.title ?? crumb.label}>{crumb.label}</a></li>
     ))}

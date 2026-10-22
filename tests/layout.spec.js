@@ -61,6 +61,10 @@ const PAGES = [
   { site: "tea", path: "/schedule/" },
   { site: "tea", path: "/guides/how-to-make-a-proper-cup-of-tea/" },
   { site: "tea", path: "/green-tea/" },
+  // fest.one has no menu and a row of a guide's pages under every h1; the
+  // tickets page carries the longest lists and the most links in a line.
+  { site: "fest", path: "/festivals/" },
+  { site: "fest", path: "/beyond-the-valley/tickets/" },
 ];
 
 const url = (site, path) => `${baseUrl(site)}${path}`;

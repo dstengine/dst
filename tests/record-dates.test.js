@@ -21,7 +21,7 @@ import { fileURLToPath } from "node:url";
 import { entries, records } from "../tools/record-blocks.mjs";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const DIRS = ["packages/content/src/events", "packages/content/src/news", "apps/musical/src/data"];
+const DIRS = ["packages/content/src/events", "packages/content/src/news", "apps/musical/src/data", "apps/fest/src/data/events"];
 
 /** The file as the last commit has it; empty for a file it never saw. */
 function atHead(rel) {

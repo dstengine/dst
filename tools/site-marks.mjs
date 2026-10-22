@@ -40,12 +40,20 @@ const SITES = {
   mxo: { label: "mxo" },
   l0n: { label: "l0n" },
   aca: { label: "aca" },
+  // Dark by default, so the mark is its dark accent — the lime — with the
+  // site's own dark ground for the letters: white on that lime is 1.6:1.
+  fest: { label: "fest", accent: "dark" },
 };
 
 /** The accent a site declares for light mode, read from its own theme.css
     so the mark and the site can never drift apart. */
-function accentOf(app) {
+function accentOf(app, which = "light") {
   const css = readFileSync(path.join(REPO, "apps", app, "src/styles/theme.css"), "utf8");
+  if (which === "dark") {
+    const dark = css.match(/--accent-dark:\s*(#[0-9a-fA-F]{3,8})/);
+    if (!dark) throw new Error(`${app}: no --accent-dark in theme.css`);
+    return dark[1];
+  }
   // Sites declare --accent-light and --accent-dark; older ones declared a
   // single --accent. Take the light one, which is what the mark is drawn on.
   const m = css.match(/:root\s*\{[^}]*--accent(?:-light)?:\s*(#[0-9a-fA-F]{3,8})/);
@@ -60,14 +68,23 @@ const SIZES = [
   ["favicon-16x16.png", 16],
 ];
 
-function svg(label, accent, size) {
+/** The ground a site declares for its dark palette, for letters drawn on
+    its dark accent. */
+function groundOf(app) {
+  const css = readFileSync(path.join(REPO, "apps", app, "src/styles/theme.css"), "utf8");
+  const m = css.match(/--bg-dark:\s*(#[0-9a-fA-F]{3,8})/);
+  if (!m) throw new Error(`${app}: no --bg-dark in theme.css`);
+  return m[1];
+}
+
+function svg(label, accent, size, ink = "#ffffff") {
   // One line of type, sized to the longest label so two- and three-character
   // marks come out optically similar rather than mathematically equal.
   const fontSize = label.length >= 3 ? size * 0.34 : size * 0.44;
   const radius = size * 0.22;
   return Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
   <rect width="${size}" height="${size}" rx="${radius}" fill="${accent}"/>
-  <text x="50%" y="50%" dy="0.35em" text-anchor="middle" fill="#ffffff"
+  <text x="50%" y="50%" dy="0.35em" text-anchor="middle" fill="${ink}"
         font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
         font-size="${fontSize}" font-weight="700" letter-spacing="${-fontSize * 0.03}">${label}</text>
 </svg>`);
@@ -108,9 +125,10 @@ for (const app of apps) {
     console.log(`${app}: ${site.mark} -> ${SIZES.map(([f]) => f).join(", ")}`);
     continue;
   }
-  const accent = accentOf(app);
+  const accent = accentOf(app, site.accent);
+  const ink = site.accent === "dark" ? groundOf(app) : undefined;
   for (const [file, size] of SIZES) {
-    await sharp(svg(site.label, accent, size)).png().toFile(path.join(dir, file));
+    await sharp(svg(site.label, accent, size, ink)).png().toFile(path.join(dir, file));
   }
   console.log(`${app}: ${accent} -> ${SIZES.map(([f]) => f).join(", ")}`);
 }

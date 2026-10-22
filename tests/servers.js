@@ -22,6 +22,14 @@ export const PORTS = {
   tea: 4350,
   l0n: 4351,
   aca: 4352,
+  fest: 4353,
+};
+
+/** Where a site's server is ready to be asked, when that is not "/". On
+    fest.one the root is the archive of the old festival site, served by
+    another deployment: the app's own front door is its hub. */
+export const HOME = {
+  fest: "/festivals/",
 };
 
 export const baseUrl = (site) => `http://localhost:${PORTS[site]}`;

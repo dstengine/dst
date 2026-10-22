@@ -25,13 +25,21 @@ const flag = (name, fallback) => {
 };
 const urls = args.filter((a) => a.includes("//") && !a.startsWith("--"));
 if (!urls.length) {
-  console.error("usage: node tools/shots.mjs <url> [more urls] [--widths 390,1280] [--schemes light,dark] [--out DIR] [--full]");
+  console.error("usage: node tools/shots.mjs <url> [more urls] [--widths 390,1280] [--schemes light,dark] [--theme light|dark] [--out DIR] [--full]");
   process.exit(2);
 }
 const widths = flag("widths", "390,1280").split(",").map(Number);
 const schemes = flag("schemes", "light,dark").split(",");
 const out = flag("out", mkdtempSync(path.join(tmpdir(), "shots-")));
 const fullPage = args.includes("--full");
+// The reader's stored choice, as the theme toggle leaves it: --schemes only
+// emulates the system setting, which a site with a default theme overrides.
+// Unset, nothing is stored and the file names are what they always were.
+const theme = flag("theme", undefined);
+if (theme !== undefined && theme !== "light" && theme !== "dark") {
+  console.error(`--theme takes light or dark, not ${theme}`);
+  process.exit(2);
+}
 // A block below the fold is still one screen a reader sees: scroll to it and
 // shoot that, rather than reading a page-tall image.
 const scroll = Number(flag("scroll", 0));
@@ -45,13 +53,14 @@ for (const scheme of schemes) {
       colorScheme: scheme,
       deviceScaleFactor: 1,
     });
+    if (theme) await ctx.addInitScript((t) => { try { localStorage.setItem("theme", t); } catch { /* opaque origin */ } }, theme);
     const page = await ctx.newPage();
     for (const url of urls) {
       await page.goto(url, { waitUntil: "networkidle" }).catch(() => {});
       if (scroll) await page.evaluate((y) => window.scrollTo(0, y), scroll);
       const { port, pathname } = new URL(url);
       const name = `${port || "site"}${pathname}`.replace(/[\/]+/g, "_").replace(/_$/, "") || "_root";
-      const file = path.join(out, `${name}-${width}-${scheme}.png`);
+      const file = path.join(out, `${name}-${width}-${scheme}${theme ? `-${theme}` : ""}.png`);
       await page.screenshot({ path: file, fullPage });
       console.log(file);
     }

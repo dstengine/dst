@@ -1,0 +1,30 @@
+---
+// The hub: every guide in every language, the next festivals first. The
+// home of the site's chrome (the wordmark, the first crumb and the footer
+// link all lead here), since the archive that shares the host keeps /.
+import Layout from "../layouts/Layout.astro";
+import HubEntry from "../components/HubEntry.astro";
+import { events, guides } from "../data/events/index";
+import { assertTitle, eventOf, hubOrder, today } from "../rules";
+import { hub } from "../hub";
+import { site } from "../site.config";
+import { withSuffix } from "@dst/ui/title";
+
+const day = today();
+const { titleSuffix, keyword } = site.en;
+assertTitle(withSuffix(hub.title, titleSuffix, keyword, "en"), keyword, hub.path);
+const ordered = hubOrder(guides, events, day);
+---
+<Layout
+  title={hub.title}
+  description={hub.description}
+  alternates={[{ lang: "en", href: hub.path, label: "English", title: hub.title }]}
+>
+  <div class="container hub">
+    <header class="hub-head">
+      <h1>{hub.h1}</h1>
+      <p class="lede">{hub.intro}</p>
+    </header>
+    {ordered.map((guide) => <HubEntry event={eventOf(events, guide)} guide={guide} today={day} />)}
+  </div>
+</Layout>

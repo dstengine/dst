@@ -49,7 +49,9 @@ interface Props {
   partnerDisclosure?: boolean;
   // Secondary links (privacy, terms) that don't belong in the primary nav —
   // most sites don't set this, so the footer stays exactly as before.
-  footerLinks?: { href: string; label: string }[];
+  // `title` is the tooltip; without one the label is repeated, as it always
+  // was. A site that can say more than the label passes its own.
+  footerLinks?: { href: string; label: string; title?: string }[];
   // Overrides `siteName` in the footer's copyright line only — the header
   // brand next to the logo still reads plain `siteName`. For sites that
   // want the DST name spelled out in the copyright line specifically
@@ -129,6 +131,19 @@ interface Props {
   /** This language's front page — where the wordmark goes and where the
       breadcrumb starts. "/" on every one-language site. */
   homeHref?: string;
+  /** What the breadcrumb trail in the structured data calls that front
+      page. Defaults to `siteName`, which is right wherever the home is the
+      site; a site whose home is a section — fest.one's guides start at
+      /festivals/, because the archive owns / — names it in its own words,
+      so the markup and the visible trail say the same thing. */
+  homeLabel?: string;
+  /** Whether the page loads the measurement tag at all. Defaults to true,
+      which is every site but one. False renders no <Analytics>, and so no
+      click tracker either: fest.one is served through an archive whose
+      Content-Security-Policy blocks the tag, and a tag that is blocked on
+      every page is a console error on every page and a measurement of
+      nothing. Search Console measures that site instead. */
+  analytics?: boolean;
   /** Separate GA4 measurement ID, overriding the network/non-network default. */
   gaId?: string;
   /** A tip jar in the footer, with its own heading and one row per chain.
@@ -137,7 +152,7 @@ interface Props {
   donate?: { heading: string; addresses: { chain: string; address: string }[] };
 }
 
-const { title, titleSuffix, keyword, description, siteName, nav, crumbLabels, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [], footerSiteName = siteName, homeTitle, instagram, image, footerSites = [], networkFooter = true, publisher, defaultTheme, lang = "en", feedTitle, feedHref = "/rss.xml", alternates = [], homeHref = "/", noindex = false, prose = false, donate, gaId } = Astro.props;
+const { title, titleSuffix, keyword, description, siteName, nav, crumbLabels, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [], footerSiteName = siteName, homeTitle, instagram, image, footerSites = [], networkFooter = true, publisher, defaultTheme, lang = "en", feedTitle, feedHref = "/rss.xml", alternates = [], homeHref = "/", homeLabel, analytics = true, noindex = false, prose = false, donate, gaId } = Astro.props;
 // The suffix is the most expensive characters on the page, and it is only
 // worth them when it adds something the title has not already said.
 //
@@ -236,6 +251,7 @@ const graph = Astro.site
       publisher,
       lang,
       home: homeHref,
+      homeName: homeLabel,
     })
   : undefined;
 
@@ -374,12 +390,15 @@ const lateIcons = navFootprint - nav.length * 28 > 700;
         )}
       />
     ))}
-    <Analytics id={gaId} networkFooter={networkFooter} />
+    {analytics && <Analytics id={gaId} networkFooter={networkFooter} />}
     {/* The lead pipeline is DST's, not every site's: it writes dst_ cookies
         and talks to api.dst.llc, so the layout no longer decides who is on
         it. A site hands it in — musical.today, which is not presented as
         part of the network, hands in nothing and ships none of the code. */}
     <slot name="tracking" />
+    {/* Whatever else one site's pages need in the head: fest.one preloads
+        the two font files its first paint uses. Empty everywhere else. */}
+    <slot name="head" />
   </head>
   <body>
     {/* First tab stop on every page. The header carries a nav of eight or
@@ -508,7 +527,7 @@ const lateIcons = navFootprint - nav.length * 28 > 700;
             {footerLinks.map((link, i) => (
               <>
                 {i > 0 && " · "}
-                <a href={link.href} title={link.label}>{link.label}</a>
+                <a href={link.href} title={link.title ?? link.label}>{link.label}</a>
               </>
             ))}
           </p>

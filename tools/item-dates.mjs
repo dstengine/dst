@@ -30,8 +30,10 @@ const FEEDS = ["packages/content/src/events", "packages/content/src/news"];
 // but each has a page of its own and is dated like one. Its files keep the
 // feed's layout, with two additions: a show holds its sections and clips
 // one level down, and the history and songs sections are each a file of
-// their own (see NESTED and wholeFile in ./record-blocks.mjs).
-const RECORDS = ["apps/musical/src/data"];
+// their own (see NESTED and wholeFile in ./record-blocks.mjs). fest.one's
+// event files are laid out the same way: an event and its guides at the top,
+// a guide's pages one level down.
+const RECORDS = ["apps/musical/src/data", "apps/fest/src/data/events"];
 const check = process.argv.includes("--check");
 
 /** Whether the committed file already holds this entry.

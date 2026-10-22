@@ -1,0 +1,39 @@
+---
+// One guide on the hub: the event's name linked to the guide, the guide's
+// language named in that language, its blurb, and a row of its other
+// pages. Everything after the name is the guide's and in its language, so
+// a Spanish-only reader who tapped the wordmark on a Spanish guide finds
+// their way back on an English page. The row's labels are one word each,
+// so each carries the event's name for a screen reader's list of links,
+// which would otherwise be ten links called "Tickets".
+import type { FestEvent, Guide } from "../data/types";
+import { inline, pathOf, withoutSuffix, type Ctx } from "../copy";
+import { mainPage } from "../rules";
+
+interface Props {
+  event: FestEvent;
+  guide: Guide;
+  today: string;
+}
+const { event, guide, today } = Astro.props;
+const main = mainPage(guide);
+const ctx: Ctx = { event, guide, today, where: `/festivals/ (${event.slug}/${guide.slug})` };
+const blurb = inline(guide.hubBlurb, ctx);
+const rest = guide.pages.filter((p) => p !== main);
+---
+<article class="hub-entry">
+  <h2>
+    <a href={guide.path} title={withoutSuffix(main.title)} lang={guide.lang}>{event.name}</a>
+    <span class="hub-lang" lang={guide.lang}>{guide.hubLabel}</span>
+  </h2>
+  {blurb && <p lang={guide.lang} dir={guide.dir} set:html={blurb} />}
+  {rest.length > 0 && (
+    <ul class="hub-pages" lang={guide.lang} dir={guide.dir}>
+      {rest.map((p) => (
+        <li>
+          <a href={pathOf(p)} title={withoutSuffix(p.title)}>{p.label}<span class="visually-hidden"> {event.name}</span></a>
+        </li>
+      ))}
+    </ul>
+  )}
+</article>

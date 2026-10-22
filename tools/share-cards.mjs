@@ -17,7 +17,15 @@ import sharp from "sharp";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const APPS = ["dst", "llc", "visas", "riviera", "mbr", "palmcentral", "eco", "fwf", "musical",
-  "nyc42", "ldn", "lnd", "cmx", "mxo", "sol2go", "vien", "tokiohotel", "tick", "aivideo", "tea", "l0n", "aca"];
+  "nyc42", "ldn", "lnd", "cmx", "mxo", "sol2go", "vien", "tokiohotel", "tick", "aivideo", "tea", "l0n", "aca", "fest"];
+
+// The page whose words go on the card, where it is not the front page:
+// fest.one's / is the archive's, so its guides start at /festivals/.
+const PAGE = { fest: "festivals/index.html" };
+// A site whose own ground is dark draws the card in its dark accent: the
+// light one is the olive its light theme needs for text on a pale ground,
+// and on this card's dark ground it would be the dimmest thing there.
+const DARK_ACCENT = new Set(["fest"]);
 
 const W = 1200;
 const H = 630;
@@ -54,7 +62,7 @@ function wrap(text, perLine, maxLines) {
 // Named apps only, when given: the others' dist/ may be stale.
 const only = process.argv.slice(2);
 for (const app of only.length ? only : APPS) {
-  const html = readFileSync(path.join(REPO, "apps", app, "dist", "index.html"), "utf8");
+  const html = readFileSync(path.join(REPO, "apps", app, "dist", PAGE[app] ?? "index.html"), "utf8");
   const siteName = attr(html, /<meta property="og:site_name" content="([^"]*)"/) ?? app;
   const description = attr(html, /<meta name="description" content="([^"]*)"/) ?? "";
   const host = new URL(attr(html, /<link rel="canonical" href="([^"]*)"/)).hostname;
@@ -63,8 +71,9 @@ for (const app of only.length ? only : APPS) {
   // a light/dark pair and no bare token. The card is drawn on a dark ground,
   // so the light-mode accent is the one that reads on it. Without this the
   // tool threw on the first .lol site and wrote no cards at all.
-  const accentMatch =
-    theme.match(/--accent:\s*([^;]+);/) || theme.match(/--accent-light:\s*([^;]+);/);
+  const accentMatch = DARK_ACCENT.has(app)
+    ? theme.match(/--accent-dark:\s*([^;]+);/)
+    : theme.match(/--accent:\s*([^;]+);/) || theme.match(/--accent-light:\s*([^;]+);/);
   if (!accentMatch) throw new Error(`apps/${app}/src/styles/theme.css declares no accent`);
   const accent = accentMatch[1].trim();
 

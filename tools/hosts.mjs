@@ -26,6 +26,9 @@ export const HOSTS = {
   tea: "tea.ceo",
   l0n: "l0n.uk",
   aca: "acapulco.world",
+  // Festival guides, served under fest.one through the archive's rewrite
+  // (~/.claude/skills/event-page/BOOTSTRAP.md); the archive keeps / itself.
+  fest: "fest.one",
 };
 
 /** The app behind a host, for turning a changed lastmod slice back into a

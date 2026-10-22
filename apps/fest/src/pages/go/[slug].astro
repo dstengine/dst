@@ -1,0 +1,16 @@
+---
+// The hops out: noindex, nofollow, kept out of the sitemap, and disallowed
+// in the archive's robots.txt from BOOTSTRAP step 3.
+import Redirect from "@dst/ui/Redirect.astro";
+import { outbound } from "../../outbound";
+
+export function getStaticPaths() {
+  return Object.entries(outbound).map(([slug, hop]) => ({
+    params: { slug },
+    props: { to: hop.url },
+  }));
+}
+
+const { to } = Astro.props;
+---
+<Redirect to={to} />

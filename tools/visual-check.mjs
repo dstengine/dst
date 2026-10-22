@@ -41,8 +41,18 @@ const shotDir = flag("shots", mkdtempSync(path.join(tmpdir(), "visual-")));
 // rather than only by eye. Default stays light so existing invocations mean
 // what they meant before.
 const schemes = flag("scheme", "light") === "both" ? ["light", "dark"] : [flag("scheme", "light")];
+// The reader's stored choice, as the theme toggle leaves it. --scheme only
+// emulates the system setting, which a site that stamps a default theme
+// (fwf, aivideo, fest) overrides on the first paint — so without this their
+// light palettes could not be checked at all. Unset, nothing is stored and
+// the run means what it always meant.
+const theme = flag("theme", undefined);
+if (theme !== undefined && theme !== "light" && theme !== "dark") {
+  console.error(`--theme takes light or dark, not ${theme}`);
+  process.exit(2);
+}
 if (!urls.length) {
-  console.error("usage: node tools/visual-check.mjs <url> [more urls] [--widths 390,1280] [--scheme light|dark|both]");
+  console.error("usage: node tools/visual-check.mjs <url> [more urls] [--widths 390,1280] [--scheme light|dark|both] [--theme light|dark]");
   process.exit(2);
 }
 
@@ -363,6 +373,7 @@ for (const url of urls) {
       hasTouch: width <= 640,
       colorScheme,
     });
+    if (theme) await ctx.addInitScript((t) => { try { localStorage.setItem("theme", t); } catch { /* opaque origin */ } }, theme);
     const page = await ctx.newPage();
     // networkidle is the right wait for a static page, but a page that embeds
     // something external — a YouTube iframe, a /go/ redirect — never reaches
@@ -376,9 +387,9 @@ for (const url of urls) {
       console.log(`${url} @${width} — network never went idle, checked after load`);
     }
     await page.waitForTimeout(400);
-    const suffix = schemes.length > 1 ? ` ${colorScheme}` : "";
+    const suffix = `${schemes.length > 1 ? ` ${colorScheme}` : ""}${theme ? ` theme:${theme}` : ""}`;
     const label = `${url} @${width}${suffix}`;
-    const name = `${url.replace(/[^a-z0-9]+/gi, "-").replace(/^-|-$/g, "")}${schemes.length > 1 ? `-${colorScheme}` : ""}`;
+    const name = `${url.replace(/[^a-z0-9]+/gi, "-").replace(/^-|-$/g, "")}${schemes.length > 1 ? `-${colorScheme}` : ""}${theme ? `-${theme}` : ""}`;
     const findings = [
       ...(await domFindings(page, width)),
       ...(await contrastFindings(page, path.join(shotDir, `${name}-${width}.png`))),

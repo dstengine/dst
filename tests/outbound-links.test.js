@@ -30,7 +30,9 @@ const APPS = ["dst", "llc", "visas", "riviera", "mbr", "palmcentral", "eco", "fw
   "l0n", "aca",
   // A tour archive on its own vvm.space host, tied to neither the group nor
   // the .lol five.
-  "tokiohotel"];
+  "tokiohotel",
+  // Festival guides on fest.one, which publishes itself.
+  "fest"];
 
 /** dst.llc itself and any subdomain of it, plus the network's own domains
     that don't sit under it — fwf.lol is published by DST but is a site
@@ -53,7 +55,9 @@ const OWN_DOMAINS = ["fwf.lol", "musical.today",
   "acapulco.world",
   // The tour archive. Named exactly, not as a vvm.space wildcard: most of
   // that zone is old A records pointing at machines that are no longer ours.
-  "tokiohotel.vvm.space"];
+  "tokiohotel.vvm.space",
+  // Festival guides, and the archive of the old festival site beside them.
+  "fest.one"];
 const isNetworkHost = (host) =>
   host === "dst.llc" ||
   host.endsWith(".dst.llc") ||

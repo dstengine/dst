@@ -26,7 +26,10 @@ const APPS = ["dst", "llc", "visas", "riviera", "mbr", "palmcentral", "eco", "fw
   "l0n", "aca",
   // A tour archive on its own vvm.space host, tied to neither the group nor
   // the .lol five.
-  "tokiohotel"];
+  "tokiohotel",
+  // Festival guides on fest.one, beside the old festival site's archive;
+  // the site publishes itself.
+  "fest"];
 const ORGANIZATION_ID = "https://dst.llc/#organization";
 
 // Who each host names as its publisher. Every site says DST unless it is
@@ -50,6 +53,7 @@ const PUBLISHER = {
   l0n: "https://gb7.uk/#organization",
   aca: "https://acapulco.world/#organization",
   tokiohotel: "https://tokiohotel.vvm.space/#organization",
+  fest: "https://fest.one/#organization",
 };
 const publisherFor = (app) => PUBLISHER[app] ?? ORGANIZATION_ID;
 

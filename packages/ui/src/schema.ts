@@ -91,6 +91,9 @@ export interface PageGraphInput {
       "am" in the address — would be a trail back to a page the reader
       cannot read. Defaults to the root, which is every one-language site. */
   home?: string;
+  /** The name of that front page in the trail. Defaults to `siteName`,
+      which is what the home is on every site whose home is its root. */
+  homeName?: string;
 }
 
 const websiteId = (origin: string) => `${origin}/#website`;
@@ -107,7 +110,13 @@ const withoutSuffix = (title: string) => title.split(" — ")[0].trim();
 
 function breadcrumbs(input: PageGraphInput) {
   const home = input.home ?? "/";
-  const inside = input.pathname.startsWith(home) ? input.pathname.slice(home.length) : input.pathname;
+  // A page outside its home is addressed from the root, not from the home:
+  // fest.one's home is /festivals/ and its guides live at /beyond-the-valley/,
+  // so building the path under the home invented /festivals/beyond-the-valley/,
+  // a crumb pointing at a page that does not exist. Every other site's pages
+  // sit under their home, and for them nothing here changes.
+  const under = input.pathname.startsWith(home);
+  const inside = under ? input.pathname.slice(home.length) : input.pathname;
   const segments = inside.split("/").filter(Boolean);
   if (segments.length === 0) return undefined;
 
@@ -116,8 +125,8 @@ function breadcrumbs(input: PageGraphInput) {
     ...(input.nav ?? []).map((item) => [item.href.replace(/^\/+|\/+$/g, ""), item.label] as [string, string]),
   ]);
 
-  const items = [{ name: input.siteName, item: `${input.origin}${home}` }];
-  let path = home.replace(/\/+$/, "");
+  const items = [{ name: input.homeName ?? input.siteName, item: `${input.origin}${home}` }];
+  let path = under ? home.replace(/\/+$/, "") : "";
   segments.forEach((segment, i) => {
     path += `/${segment}`;
     const last = i === segments.length - 1;

@@ -53,6 +53,13 @@ const SITES = [
   // legacy and still deployed.
   { app: "eco", host: "eco.dst.llc" },
   { app: "tokiohotel", host: "tokiohotel.vvm.space" },
+  // Festival guides on fest.one, which this app shares with the archive of
+  // the old festival site: the archive keeps / and serves robots.txt and
+  // sitemap.xml, so the app's home is /festivals/ and its robots are the
+  // archive's (BOOTSTRAP step 3 adds Disallow: /go/ and this sitemap there).
+  // The archive's Content-Security-Policy blocks the analytics tag, so the
+  // site carries none; Search Console measures it.
+  { app: "fest", host: "fest.one", home: "/festivals/", robots: "archive", analytics: false },
 ];
 const TITLE_LIMIT = 60;
 
@@ -81,7 +88,13 @@ const metaDescOf = (html) => {
   const m = html.match(/<meta name="description" content="([\s\S]*?)"/);
   return m ? decode(m[1]) : null;
 };
-const anchorsOf = (html) => [...html.matchAll(/<a\s[^>]*>/g)].map((m) => m[0]);
+// Structured data is left out: an FAQ answer may carry a link (Google's
+// FAQPage guidelines allow <a> in the answer text), and inside the JSON its
+// quotes are escaped, so the tag would read here as an anchor with no href
+// and no title. It is data about the page, not a link on it; the same
+// answer is printed in the page as a real anchor, and that one is checked.
+const anchorsOf = (html) =>
+  [...html.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g, "").matchAll(/<a\s[^>]*>/g)].map((m) => m[0]);
 const hrefOf = (tag) => (tag.match(/href="([^"]*)"/) || [])[1];
 const imgsOf = (html) => [...html.matchAll(/<img\s[^>]*>/g)].map((m) => m[0]);
 
@@ -325,7 +338,11 @@ describe("outbound hops", () => {
   });
 
   test("every site's robots.txt disallows /go/", () => {
-    for (const { app } of SITES) {
+    for (const { app, robots: owner } of SITES) {
+      if (owner === "archive") {
+        console.log(`  ${app}: robots.txt is the archive's on the same host, not built here`);
+        continue;
+      }
       const robots = path.join(REPO, "apps", app, "dist", "robots.txt");
       assert.ok(existsSync(robots), `apps/${app}: no robots.txt`);
       assert.match(readFileSync(robots, "utf8"), /^Disallow: \/go\/$/m, `apps/${app}: robots.txt does not disallow /go/`);
@@ -1048,6 +1065,14 @@ describe("sitemap", () => {
   // those. So the comparison is against the rest of the network on the same
   // run. A site flat while its neighbours vary is dated by its file; a
   // network flat all at once is a network that was just swept.
+  // Sites whose pages honestly share one date, each with the reason and
+  // the day the exemption ends. Not a threshold: a named site, so the next
+  // one to go flat still fails.
+  const FLAT_OK = {
+    fest: "one guide, one commit; dated by entry in apps/fest/src/dated.ts; remove with the second guide (Field Day)",
+  };
+  for (const [app, why] of Object.entries(FLAT_OK)) console.log(`  ${app} may be flat: ${why}`);
+
   test("no site dates every page the same", () => {
     const spread = new Map();
     for (const { app } of SITES) {
@@ -1078,6 +1103,7 @@ describe("sitemap", () => {
     // reporting last week's honest sweep as a fault.
     const variedDays = new Set(varied.flatMap((app) => [...spread.get(app)]));
     const flat = [...spread]
+      .filter(([a]) => !FLAT_OK[a])
       .filter(([, d]) => d.size === 1)
       .filter(([, d]) => !variedDays.has([...d][0]))
       .map(([a, d]) => `${a}: every page carries ${[...d][0]}`);
@@ -1123,7 +1149,11 @@ describe("sitemap", () => {
   });
 
   test("robots.txt points at a sitemap that exists", () => {
-    for (const { app, host } of SITES) {
+    for (const { app, host, robots: owner } of SITES) {
+      if (owner === "archive") {
+        console.log(`  ${app}: robots.txt is the archive's on the same host, not built here`);
+        continue;
+      }
       const robots = readFileSync(path.join(REPO, "apps", app, "dist", "robots.txt"), "utf8");
       const declared = (robots.match(/^Sitemap:\s*(\S+)$/m) || [])[1];
       assert.ok(declared, `apps/${app}: robots.txt declares no sitemap`);
@@ -1138,14 +1168,25 @@ describe("analytics", () => {
   // The tag comes from BaseLayout so the network is measured from one place.
   // Either every site carries it or none does — a site quietly missing it
   // shows up as a hole in the funnel rather than as an error.
+  //
+  // A site that says `analytics: false` above is the one exception, and it
+  // is held to the other half: no tag on any of its pages, and so no click
+  // tracker either. Each site is read at its own home.
   test("the tag is all-or-nothing across the network", () => {
-    const tagged = SITES.filter(({ app }) =>
-      pages.some((p) => p.app === app && p.url === "/" && p.html.includes("googletagmanager.com/gtag/js")),
+    const measured = SITES.filter((s) => s.analytics !== false);
+    const tagged = measured.filter(({ app, home = "/" }) =>
+      pages.some((p) => p.app === app && p.url === home && p.html.includes("googletagmanager.com/gtag/js")),
     ).map((s) => s.app);
     assert.ok(
-      tagged.length === 0 || tagged.length === SITES.length,
+      tagged.length === 0 || tagged.length === measured.length,
       `analytics is on some sites but not others: ${tagged.join(", ") || "(none)"}`,
     );
+    for (const { app } of SITES.filter((s) => s.analytics === false)) {
+      const home = SITES.find((s) => s.app === app).home ?? "/";
+      assert.ok(pages.some((p) => p.app === app && p.url === home), `${app}: its home ${home} was not built`);
+      const tagged = pages.filter((p) => p.app === app && /googletagmanager|gtag\(/.test(p.html)).map((p) => p.url);
+      assert.deepEqual(tagged, [], `${app} says analytics: false, and these pages carry the tag`);
+    }
   });
 
   // Search Console's ownership check scans the markup for a literal
@@ -1609,6 +1650,12 @@ describe("how much of each site is the template", () => {
     // seven pages and now live on one news page the others link to. No
     // sentence of prose repeats. It falls as the feed grows past the strip.
     l0n: 17, aca: 32,
+    // fest recorded 5 on 22 October 2026, its first day, measured at 1.6:
+    // one guide of six long pages and the hub; the repeated runs are the
+    // row of the guide's pages and the closing line naming whom the site is
+    // independent of. Room for the second guide's chrome, not for a
+    // template.
+    fest: 5,
   };
 
   test("no site is more template than the ceiling it recorded", async () => {

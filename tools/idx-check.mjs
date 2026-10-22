@@ -64,7 +64,9 @@ const optionValues = new Set(["--json", "--compare", "--details"].map(option).fi
 const names = argv.filter((a) => !a.startsWith("--") && !optionValues.has(a));
 const DETAILS = Number(option("--details") ?? 8);
 
-const ALL = [...Object.values(HOSTS), ...EXTRA];
+// A Set: fest.one is in both since apps/fest went into HOSTS, and a host
+// listed twice was checked twice.
+const ALL = [...new Set([...Object.values(HOSTS), ...EXTRA])];
 const targets = names.length
   ? names.map((n) => HOSTS[n] ?? n).filter((h) => {
       if (!ALL.includes(h)) console.error(`warning: ${h} is not one of ours as far as hosts.mjs knows; checking anyway`);

@@ -19,6 +19,27 @@ import { join, relative } from "node:path";
 /** A 6-word run on this many pages is a template, not a coincidence. */
 export const MANY = 5;
 
+// Languages written without spaces between words. Splitting their text on
+// spaces finds one "word" per phrase, and the filter below keeps only a–z
+// and digits, so a Thai page scored as nothing at all. For these the words
+// come from the platform's own word breaker instead. Every other page keeps
+// the tokeniser it always had, byte for byte, so no site's score or its
+// ceiling in tests/build-output.test.js moves.
+const SEGMENTED = new Set(["th", "lo", "km", "my", "zh", "ja"]);
+
+/** The page's language, from its <html lang>, lower-cased: "en-au", "th". */
+export const langOf = (html) => (html.match(/<html\b[^>]*?\slang="([^"]*)"/i)?.[1] ?? "").toLowerCase();
+
+/** A page's text as the list of words the shingles are made of. */
+export function wordsOf(text, lang = "") {
+  const base = lang.slice(0, 2);
+  if (SEGMENTED.has(base)) {
+    const segmenter = new Intl.Segmenter(base, { granularity: "word" });
+    return [...segmenter.segment(text.toLowerCase())].filter((s) => s.isWordLike).map((s) => s.segment);
+  }
+  return text.toLowerCase().replace(/[^a-z0-9 ]+/g, " ").split(/\s+/).filter(Boolean);
+}
+
 export function analyse(root) {
 const files = [];
 (function walk(dir) {
@@ -46,7 +67,7 @@ const head = (html, re) => html.match(re)?.[1]?.replace(/\s+/g, " ").trim() ?? "
 const pages = files.map((f) => {
   const html = readFileSync(f, "utf8");
   const text = textOf(html);
-  const words = text.toLowerCase().replace(/[^a-z0-9 ]+/g, " ").split(/\s+/).filter(Boolean);
+  const words = wordsOf(text, langOf(html));
   const shingles = new Set();
   for (let i = 0; i + 6 <= words.length; i++) shingles.add(words.slice(i, i + 6).join(" "));
   return {

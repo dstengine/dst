@@ -1,0 +1,51 @@
+---
+// Every page of fest.one: the language's identity from site.config.ts, and
+// for a guide's page, the guide's locale and anything the guide adds to the
+// footer. Nothing here is a word of any page.
+import BaseLayout from "@dst/ui/BaseLayout.astro";
+import { site as sites, type Lang } from "../site.config";
+import type { Guide } from "../data/types";
+import "../styles/theme.css";
+
+interface Props {
+  title: string;
+  description: string;
+  jsonLd?: Record<string, unknown>[];
+  alternates?: { lang: string; href: string; label: string; title: string }[];
+  /** Breadcrumb names for the trail in the structured data. */
+  crumbLabels?: Record<string, string>;
+  /** The guide the page belongs to; absent on the hub. */
+  guide?: Guide;
+  language?: Lang;
+}
+const { title, description, jsonLd, alternates, crumbLabels, guide, language = "en" } = Astro.props;
+
+// The guide's locale over the language's, and its own footer links after the
+// hub's. Spread, like the rest of the identity, so the layout sets none of
+// it by name.
+const own = sites[language];
+const site = {
+  ...own,
+  ...(guide ? { lang: guide.lang } : {}),
+  ...(guide?.footerLinks ? { footerLinks: [...own.footerLinks, ...guide.footerLinks] } : {}),
+  ...(guide?.footerNote ? { complianceNote: guide.footerNote } : {}),
+};
+---
+<BaseLayout
+  {...site}
+  title={title}
+  description={description}
+  nav={[]}
+  jsonLd={jsonLd}
+  alternates={alternates}
+  crumbLabels={crumbLabels}
+>
+  {/* Only the two faces the first paint needs: Chivo 400 for the text and
+      Syne 800 for the headings, Latin subset. Everything else loads when a
+      glyph asks for it (theme.css). */}
+  <Fragment slot="head">
+    <link rel="preload" href="/fonts/chivo-v21-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/syne-v24-latin.woff2" as="font" type="font/woff2" crossorigin />
+  </Fragment>
+  <slot />
+</BaseLayout>

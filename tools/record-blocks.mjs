@@ -48,8 +48,10 @@ export function entries(text, indent = 2, within = null) {
 }
 
 /** The arrays inside a top-level record whose entries are records of their
-    own: a show's sections and clips each have a page. */
-export const NESTED = ["sections", "clips"];
+    own: a show's sections and clips each have a page, and so does each page
+    of a fest.one guide (apps/fest/src/data/events), dated one by one so a
+    price coming off the tickets page does not re-date the lineup. */
+export const NESTED = ["sections", "clips", "pages"];
 
 /** A section exported on its own — `export const historySection: Section =
     {` — whose page is the whole file: the history section renders every
