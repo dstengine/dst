@@ -94,6 +94,12 @@ export interface PageGraphInput {
   /** The name of that front page in the trail. Defaults to `siteName`,
       which is what the home is on every site whose home is its root. */
   homeName?: string;
+  /** The current page's name in the trail. Defaults to the page's title
+      less its suffix, which is every page whose visible trail ends on that
+      title. A page whose visible trail ends on a shorter name of its own
+      (a fest.one guide page: "Ingressos", not the whole title) passes it
+      here, so the markup and the trail a reader sees name it alike. */
+  currentName?: string;
 }
 
 const websiteId = (origin: string) => `${origin}/#website`;
@@ -134,7 +140,7 @@ function breadcrumbs(input: PageGraphInput) {
     // menu's "/am/events/" names the crumb for "events" as well.
     const fromNav = navLabel.get(path.replace(/^\/+/, "")) ?? navLabel.get(segment);
     items.push({
-      name: last ? withoutSuffix(input.title) : (fromNav ?? titleFromSlug(segment)),
+      name: last ? (input.currentName ?? withoutSuffix(input.title)) : (fromNav ?? titleFromSlug(segment)),
       item: `${input.origin}${path}/`,
     });
   });

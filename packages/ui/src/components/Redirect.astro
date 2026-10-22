@@ -7,26 +7,39 @@
 // Static hosting can't issue a 3xx from a generated page, so this uses the
 // standard belt-and-braces pair — a meta refresh for clients with no JS,
 // and location.replace() so the hop doesn't land in browser history.
+//
+// The words are the page's own: a hop on a site that is not in English says
+// so in the site's language. The defaults are the English page every hop
+// printed before, so a site that passes nothing is unchanged. The default
+// slot is the paragraph a reader sees if neither the refresh nor the script
+// moves them, by default "Redirecting to <link>."; a slot keeps the link as
+// it is, since rel="nofollow noopener external" is what
+// tests/outbound-links.test.js holds every hop to. The slot hugs its
+// paragraph: whitespace around it would print into every hop's bytes.
 interface Props {
   to: string;
+  /** `<html lang>`. Defaults to "en". */
+  lang?: string;
+  /** The tab's title while the hop runs. Defaults to "Redirecting". */
+  title?: string;
 }
 
-const { to } = Astro.props;
+const { to, lang = "en", title = "Redirecting" } = Astro.props;
 ---
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex, nofollow" />
     <meta http-equiv="refresh" content={`0; url=${to}`} />
-    <title>Redirecting</title>
+    <title>{title}</title>
     <link rel="icon" href="data:," />
   </head>
   <body>
-    <p>
+    <slot><p>
       Redirecting to <a href={to} rel="nofollow noopener external">{to}</a>.
-    </p>
+    </p></slot>
     <script is:inline define:vars={{ to }}>
       location.replace(to);
     </script>

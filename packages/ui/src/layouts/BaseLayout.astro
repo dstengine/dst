@@ -36,6 +36,11 @@ interface Props {
   /** Breadcrumb names for path segments the nav has no entry for.
       See `crumbLabels` in schema.ts. */
   crumbLabels?: Record<string, string>;
+  /** The current page's name at the end of the breadcrumb trail in the
+      structured data. Defaults to the title less its suffix; a page whose
+      visible trail ends on a shorter name passes that name, so the two
+      trails agree. See `currentName` in schema.ts. */
+  crumbCurrent?: string;
   /** Title attribute on the wordmark, which links home from every page.
       Defaults to the site's name, which is the right answer only when
       the name is one a reader recognises; where it is not, this is a
@@ -51,7 +56,9 @@ interface Props {
   // most sites don't set this, so the footer stays exactly as before.
   // `title` is the tooltip; without one the label is repeated, as it always
   // was. A site that can say more than the label passes its own.
-  footerLinks?: { href: string; label: string; title?: string }[];
+  // `rel` is printed only when given; without it a link has none, as
+  // before.
+  footerLinks?: { href: string; label: string; title?: string; rel?: string }[];
   // Overrides `siteName` in the footer's copyright line only — the header
   // brand next to the logo still reads plain `siteName`. For sites that
   // want the DST name spelled out in the copyright line specifically
@@ -146,13 +153,20 @@ interface Props {
   analytics?: boolean;
   /** Separate GA4 measurement ID, overriding the network/non-network default. */
   gaId?: string;
+  /** The skip link's and the menu toggle's words, over the row `CHROME`
+      below has for the page's language. Defaults to that row, and to the
+      English one for a language the table has no row for. A site that
+      keeps its own table of strings per language (fest.one's
+      site.config.ts) passes its row here, so a new language is the app's
+      edit, reviewed with the rest of its words, and not this table's. */
+  chrome?: { skip?: string; menu?: string };
   /** A tip jar in the footer, with its own heading and one row per chain.
       Opt-in: a site that declares nothing here renders nothing, which is
       every site but the one that asked for it. */
   donate?: { heading: string; addresses: { chain: string; address: string }[] };
 }
 
-const { title, titleSuffix, keyword, description, siteName, nav, crumbLabels, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [], footerSiteName = siteName, homeTitle, instagram, image, footerSites = [], networkFooter = true, publisher, defaultTheme, lang = "en", feedTitle, feedHref = "/rss.xml", alternates = [], homeHref = "/", homeLabel, analytics = true, noindex = false, prose = false, donate, gaId } = Astro.props;
+const { title, titleSuffix, keyword, description, siteName, nav, crumbLabels, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [], footerSiteName = siteName, homeTitle, instagram, image, footerSites = [], networkFooter = true, publisher, defaultTheme, lang = "en", feedTitle, feedHref = "/rss.xml", alternates = [], homeHref = "/", homeLabel, analytics = true, noindex = false, prose = false, donate, gaId, crumbCurrent, chrome: chromeOverride } = Astro.props;
 // The suffix is the most expensive characters on the page, and it is only
 // worth them when it adds something the title has not already said.
 //
@@ -187,7 +201,12 @@ const CHROME: Record<string, { skip: string; menu: string }> = {
   de: { skip: "Zum Inhalt springen", menu: "Menü öffnen" },
   hy: { skip: "Անցնել բովանդակությանը", menu: "Բացել ընտրացանկը" },
 };
-const chrome = CHROME[lang.slice(0, 2)] ?? CHROME.en;
+// A site's own words, where it passes them, win over the table's.
+const chromeRow = CHROME[lang.slice(0, 2)] ?? CHROME.en;
+const chrome = {
+  skip: chromeOverride?.skip ?? chromeRow.skip,
+  menu: chromeOverride?.menu ?? chromeRow.menu,
+};
 
 // Absolute URLs: canonical and og:image are both meaningless as relative
 // paths — a crawler or a chat client resolves them against its own host.
@@ -252,6 +271,7 @@ const graph = Astro.site
       lang,
       home: homeHref,
       homeName: homeLabel,
+      currentName: crumbCurrent,
     })
   : undefined;
 
@@ -527,7 +547,7 @@ const lateIcons = navFootprint - nav.length * 28 > 700;
             {footerLinks.map((link, i) => (
               <>
                 {i > 0 && " · "}
-                <a href={link.href} title={link.title ?? link.label}>{link.label}</a>
+                <a href={link.href} title={link.title ?? link.label} rel={link.rel}>{link.label}</a>
               </>
             ))}
           </p>

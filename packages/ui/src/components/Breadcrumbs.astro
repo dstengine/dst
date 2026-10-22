@@ -22,10 +22,15 @@ interface Props {
       site with something to say about its home passes it, since a title
       that reads the label back says nothing. */
   homeTitle?: string;
+  /** What a screen reader announces the trail as. Defaults to
+      "Breadcrumb", which is every English page; a page in another
+      language passes the word in its own, or the landmark speaks English
+      in the middle of it. */
+  label?: string;
 }
-const { crumbs, current, homeLabel = "Home", homeHref = "/", homeTitle = homeLabel } = Astro.props;
+const { crumbs, current, homeLabel = "Home", homeHref = "/", homeTitle = homeLabel, label = "Breadcrumb" } = Astro.props;
 ---
-<nav class="crumbs" aria-label="Breadcrumb">
+<nav class="crumbs" aria-label={label}>
   <ol>
     <li><a href={homeHref} title={homeTitle}>{homeLabel}</a></li>
     {crumbs.map((crumb) => (
