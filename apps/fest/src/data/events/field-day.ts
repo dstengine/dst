@@ -34,7 +34,7 @@ export const events: FestEvent[] = [
   {
     slug: "field-day",
     createdAt: "2026-10-22T14:55:00+04:00",
-    updatedAt: "2026-10-22T14:55:00+04:00",
+    updatedAt: "2026-10-22T16:05:00+04:00",
     name: "Field Day",
     edition: { start: "2027-01-01", end: "2027-01-01" },
     // The event block carries no readOn of its own; the scout read it on
@@ -853,7 +853,10 @@ export const events: FestEvent[] = [
         url: "https://www.google.com/maps/search/?api=1&query=-33.868836%2C151.214573",
         source: "venue",
         kind: "maps",
-        title: "The Domain, Art Gallery Road, Sydney, on Google Maps",
+        // Google Maps opens these coordinates as an unnamed pin, not as a
+        // place called The Domain (opened on a phone, 22 October 2026), so
+        // the title promises a pin.
+        title: "A pin on The Domain, Sydney, in Google Maps: the venue's coordinates",
       },
       accessibility: {
         url: "https://fieldday.com.au/",

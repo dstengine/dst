@@ -1,6 +1,8 @@
 ---
-// The hops out: noindex, nofollow, kept out of the sitemap, and disallowed
-// in the archive's robots.txt from BOOTSTRAP step 3.
+// The hops out: noindex, nofollow and kept out of the sitemap, but left
+// crawlable. The archive's robots.txt gets no Disallow: /go/ (BOOTSTRAP step
+// 3 adds only the sitemap line): a guide's offers.url is its /go/ hop, and
+// Google has to fetch the hop to read its noindex (ruling X4, 22 Oct 2026).
 import Redirect from "@dst/ui/Redirect.astro";
 import { outbound } from "../../outbound";
 
