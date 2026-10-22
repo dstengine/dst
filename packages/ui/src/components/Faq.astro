@@ -5,6 +5,13 @@
 // FAQPage guidelines explicitly allow that subset in the answer text, so it
 // goes into the JSON-LD as-is rather than being stripped to plain text.
 //
+// `text`, when a site gives it, is what the JSON-LD carries instead: the
+// same answer as words alone. For answers whose markup belongs to the page
+// and means nothing off it: a link relative to the page (fest.one points a
+// reader to the guide's other pages from inside an answer) or a span the
+// stylesheet keeps on one line. The accordion still prints `a`. Without
+// `text`, `a` goes in as before.
+//
 // `generic` marks an answer that is the same wherever it appears: a site-wide
 // policy, a disclaimer, anything already said in the footer. Those still show
 // on the page — a reader asking the question deserves the answer where they
@@ -12,7 +19,7 @@
 // *this* page, and the identical claim repeated across sixty pages is what a
 // search engine reads as a template rather than as an answer. A block whose
 // answers are all generic emits no FAQPage at all.
-interface QA { q: string; a: string; generic?: boolean }
+interface QA { q: string; a: string; text?: string; generic?: boolean }
 interface Props { items: QA[] }
 
 const { items } = Astro.props;
@@ -24,7 +31,7 @@ const jsonLd = specific.length > 0 ? {
   mainEntity: specific.map((item) => ({
     "@type": "Question",
     name: item.q,
-    acceptedAnswer: { "@type": "Answer", text: item.a },
+    acceptedAnswer: { "@type": "Answer", text: item.text ?? item.a },
   })),
 } : null;
 ---

@@ -399,6 +399,33 @@ describe("the built pages", { skip: built ? false : "apps/fest/dist is missing: 
     for (const p of hops) assert.match(html.get(p), /<meta name="robots" content="noindex, ?nofollow"/, p);
     assert.doesNotMatch(readFileSync(path.join(DIST, "sitemap-0.xml"), "utf8"), /\/go\//);
   });
+
+  // The FAQPage markup is read off the page, where a link relative to it
+  // points nowhere and a span is not a tag an answer may carry; the answers
+  // there are words alone. The accordion on the page keeps both, and says
+  // the same words: each answer in the markup equals its accordion answer
+  // with the tags taken out.
+  test("an FAQPage answer is plain text, and the accordion's words", () => {
+    const bad = [];
+    let answers = 0;
+    for (const [p, h] of content) {
+      const printed = new Map(
+        [...h.matchAll(/<details class="faq-item"[^>]*>\s*<summary\b[^>]*>([\s\S]*?)<\/summary>\s*<p\b[^>]*>([\s\S]*?)<\/p>/g)].map((m) => [decode(m[1]), decode(m[2])]),
+      );
+      for (const m of h.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
+        const block = JSON.parse(m[1]);
+        if (block["@type"] !== "FAQPage") continue;
+        for (const q of block.mainEntity) {
+          answers++;
+          const text = q.acceptedAnswer.text;
+          if (/<[A-Za-z!/?]/.test(text)) bad.push(`${p}: a tag in the answer to "${q.name}"`);
+          else if (printed.get(q.name) !== text) bad.push(`${p}: the answer to "${q.name}" is not the accordion's`);
+        }
+      }
+    }
+    assert.ok(answers > 0, "no FAQPage answer was read");
+    assert.deepEqual(bad, []);
+  });
 });
 
 // ----------------------------------------------------- scripts and words

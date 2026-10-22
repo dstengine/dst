@@ -178,9 +178,10 @@ interface Piece { from: number; to: number; html: string; md: string; text: stri
 const LINK = /\[([^\]\n]+)\]\(([^)\s]+)\)/g;
 const ARROW = /\s*→ (\/[^\s]*\/)(?=\s|$)/g;
 
-/** One string of copy (a paragraph, a list item, an answer) as inline HTML
-    and Markdown, marks resolved. Expiry spans must already be applied. */
-function marks(text: string, ctx: Ctx, site: string): { html: string; md: string } {
+/** One string of copy (a paragraph, a list item, an answer) as inline HTML,
+    Markdown and plain text, marks resolved. Expiry spans must already be
+    applied. */
+function marks(text: string, ctx: Ctx, site: string): { html: string; md: string; text: string } {
   const pieces: Piece[] = [];
   const pages = ctx.guide.pages;
   // The words as the copy has them, marks aside: what the rendering must
@@ -289,7 +290,7 @@ function marks(text: string, ctx: Ctx, site: string): { html: string; md: string
   if (plain.replace(/\s+/g, " ").trim() !== expected)
     throw new Error(`${ctx.where}: the rendered words differ from the copy:\n${plain}\n${expected}`);
 
-  return { html: typeset(html.trim()), md: md.trim() };
+  return { html: typeset(html.trim()), md: md.trim(), text: plain.replace(/\s+/g, " ").trim() };
 }
 
 /** A single string of copy (a lede, an answer, a blurb, a source line) as
@@ -302,6 +303,15 @@ export function inline(text: string, ctx: Ctx): string {
 export function inlineMd(text: string, ctx: Ctx): string {
   const live = applySpans(text, ctx.guide, ctx.today, ctx.where);
   return live.trim() ? marks(live, ctx, SITE).md : "";
+}
+
+/** The same string as words alone: a link's label without the link, no
+    span around a date, nothing escaped. For structured data, which is read
+    off the page: a relative link inside it points nowhere, and a span is
+    not one of the tags an FAQ answer may carry. */
+export function inlineText(text: string, ctx: Ctx): string {
+  const live = applySpans(text, ctx.guide, ctx.today, ctx.where);
+  return live.trim() ? marks(live, ctx, SITE).text : "";
 }
 
 // ----------------------------------------------------------------- blocks

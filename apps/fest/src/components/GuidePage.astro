@@ -17,7 +17,7 @@ import Faq from "@dst/ui/Faq.astro";
 import Glance from "@dst/ui/Glance.astro";
 import { ICONS } from "@dst/ui/icons";
 import type { FestEvent, Guide, GuidePage } from "../data/types";
-import { blocks, inline, pathOf, withoutSuffix, type Ctx } from "../copy";
+import { blocks, inline, inlineText, pathOf, withoutSuffix, type Ctx } from "../copy";
 import { mainPage } from "../rules";
 import { languagesFor } from "../routes";
 import { chrome, site } from "../site.config";
@@ -55,8 +55,11 @@ const sections = page.sections
 // carry anywhere.
 const jumps = sections.map((s) => ({ id: s.id, label: s.heading, title: false as const }));
 
+// Each answer twice: as the page prints it, with its links to the guide's
+// other pages and the spans that keep a date whole, and as words alone for
+// the FAQPage markup, which is read off the page (Faq.astro, `text`).
 const faq = page.faq
-  .map((row) => ({ q: row.q, a: inline(row.a, ctx), generic: row.generic }))
+  .map((row) => ({ q: row.q, a: inline(row.a, ctx), text: inlineText(row.a, ctx), generic: row.generic }))
   .filter((row) => row.a);
 const lede = inline(page.lede, ctx);
 const sources = page.sources === undefined ? "" : inline(page.sources, ctx);

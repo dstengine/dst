@@ -32,4 +32,14 @@ export default defineConfig({
     stripSvgComments(),
   ],
   output: "static",
+  // A component's <script> is written where the component renders, and
+  // nowhere else. By default Astro 4 hoists every script it can reach
+  // through the imports into one module per page, whether or not the
+  // component renders: BaseLayout imports <Analytics>, so the click tracker
+  // inside it reached every page here although `analytics: false` renders
+  // no <Analytics>. The archive's CSP keeps the tag off this host, and a
+  // tracker with no tag to report to is code a reader downloads for
+  // nothing. This is Astro 5's default; the other sites keep the hoisting
+  // until the network moves to it as a whole.
+  experimental: { directRenderScript: true },
 });

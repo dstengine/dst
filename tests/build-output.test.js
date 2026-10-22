@@ -88,13 +88,7 @@ const metaDescOf = (html) => {
   const m = html.match(/<meta name="description" content="([\s\S]*?)"/);
   return m ? decode(m[1]) : null;
 };
-// Structured data is left out: an FAQ answer may carry a link (Google's
-// FAQPage guidelines allow <a> in the answer text), and inside the JSON its
-// quotes are escaped, so the tag would read here as an anchor with no href
-// and no title. It is data about the page, not a link on it; the same
-// answer is printed in the page as a real anchor, and that one is checked.
-const anchorsOf = (html) =>
-  [...html.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g, "").matchAll(/<a\s[^>]*>/g)].map((m) => m[0]);
+const anchorsOf = (html) => [...html.matchAll(/<a\s[^>]*>/g)].map((m) => m[0]);
 const hrefOf = (tag) => (tag.match(/href="([^"]*)"/) || [])[1];
 const imgsOf = (html) => [...html.matchAll(/<img\s[^>]*>/g)].map((m) => m[0]);
 
@@ -1170,8 +1164,14 @@ describe("analytics", () => {
   // shows up as a hole in the funnel rather than as an error.
   //
   // A site that says `analytics: false` above is the one exception, and it
-  // is held to the other half: no tag on any of its pages, and so no click
-  // tracker either. Each site is read at its own home.
+  // is held to the other half: no tag and no click tracker, anywhere in what
+  // it ships. Every file of its dist is read, the bundled scripts included,
+  // because that is where the tracker went the first time: Astro 4 bundles
+  // a component's <script> into every page that can reach the component
+  // through its imports, rendered or not, so a page with no <Analytics>
+  // still carried its click listener (fest.one, 22 Oct 2026). The
+  // tracker's own event name is in the pattern, not only gtag's. Each site
+  // is read at its own home.
   test("the tag is all-or-nothing across the network", () => {
     const measured = SITES.filter((s) => s.analytics !== false);
     const tagged = measured.filter(({ app, home = "/" }) =>
@@ -1181,11 +1181,26 @@ describe("analytics", () => {
       tagged.length === 0 || tagged.length === measured.length,
       `analytics is on some sites but not others: ${tagged.join(", ") || "(none)"}`,
     );
+    // Fonts and pictures are compressed bytes, where four letters can occur
+    // by chance; everything else is read, whatever its extension.
+    const BINARY = /\.(woff2?|ttf|otf|png|jpe?g|webp|avif|gif|ico|pdf)$/i;
     for (const { app } of SITES.filter((s) => s.analytics === false)) {
       const home = SITES.find((s) => s.app === app).home ?? "/";
       assert.ok(pages.some((p) => p.app === app && p.url === home), `${app}: its home ${home} was not built`);
-      const tagged = pages.filter((p) => p.app === app && /googletagmanager|gtag\(/.test(p.html)).map((p) => p.url);
-      assert.deepEqual(tagged, [], `${app} says analytics: false, and these pages carry the tag`);
+      const files = [];
+      const walk = (dir) => {
+        for (const name of readdirSync(dir)) {
+          const p = path.join(dir, name);
+          if (statSync(p).isDirectory()) walk(p);
+          else if (!BINARY.test(name)) files.push(p);
+        }
+      };
+      walk(path.join(REPO, "apps", app, "dist"));
+      assert.ok(files.some((f) => f.endsWith(".html")), `${app}: no HTML read in its dist`);
+      const tagged = files
+        .filter((f) => /googletagmanager|gtag|outbound_click/.test(readFileSync(f, "utf8")))
+        .map((f) => path.relative(REPO, f));
+      assert.deepEqual(tagged, [], `${app} says analytics: false, and these files carry the tag or the tracker`);
     }
   });
 
