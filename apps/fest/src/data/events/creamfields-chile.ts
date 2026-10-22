@@ -422,7 +422,7 @@ export const events: FestEvent[] = [
         // October once the fact-checker found the image byte-identical that
         // day, and the critic's own fetch on 22 October found it
         // hash-identical again (critic m1). lineup.readOn below says the same.
-        by_day_source: "s20 (the seller's line-up-x-dia.png, read in full by the session in the pane, 2026-10-22); day and stage only, no set times; Morten plays both days; Saturday Main Stage carries one 'Artist TBC'",
+        by_day_source: "s20 (the seller's line-up-x-dia.png, read in full by the session in the pane on 2026-10-21, byte-identical again on 2026-10-22); day and stage only, no set times; Morten plays both days; Saturday Main Stage carries one 'Artist TBC'",
         by_day: [
           {
             day: "Sábado 14 de noviembre",
