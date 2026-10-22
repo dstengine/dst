@@ -45,7 +45,14 @@ export function hubOrder(guides: Guide[], events: FestEvent[], day: string): Gui
   });
 }
 
-interface Price { label: string; amount: number; currency: string; status?: string }
+/** A price row of the sheet. `total` is the seller's price with its fee,
+    where the seller prints both (Moshtix): it is what a buyer pays, which
+    is what Google's Event reference asks an offer's price to be. */
+interface Price { label: string; amount: number; total?: number; currency: string; status?: string }
+
+/** Sold out in the seller's own words: Megatix's "sold out", Moshtix's
+    "Allocation Exhausted". */
+const soldOut = (status = "") => status === "sold out" || status.startsWith("Allocation Exhausted");
 interface Venue { name: string; address: string; lat: number; lon: number; country: string }
 
 /** The MusicEvent for a guide's main page: one event, one URL, so the
@@ -79,8 +86,8 @@ export function musicEvent(event: FestEvent, guide: Guide, page: GuidePage, day:
         return {
           "@type": "Offer",
           name: row.label,
-          ...(expired(guide, "prices", day) ? {} : { price: row.amount, priceCurrency: row.currency }),
-          ...(row.status === "sold out" ? { availability: "https://schema.org/SoldOut" } : {}),
+          ...(expired(guide, "prices", day) ? {} : { price: row.total ?? row.amount, priceCurrency: row.currency }),
+          ...(soldOut(row.status) ? { availability: "https://schema.org/SoldOut" } : {}),
           validFrom: markup.offers.validFrom,
           url: `${SITE}/go/${event.slug}-${markup.offers.go}/`,
           seller: { "@type": "Organization", name: markup.offers.seller },

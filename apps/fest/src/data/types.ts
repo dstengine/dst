@@ -16,8 +16,10 @@ export interface Dated {
     say so), a seller's document only as a plain Drive file view. */
 export interface GoTarget {
   url: string;
-  /** The sheet's source key (s1…) or, for a maps search, the sheet key of
-      the organiser's instruction it follows. */
+  /** The sheet's source key (s1…); for a maps search, the sheet key of
+      the organiser's instruction it follows; for an organiser's form that
+      the sheet holds as an official seller with its own URL and reading
+      (Field Day's MobTix form), that seller's key (`sellers.2`). */
   source: string;
   kind: "organiser" | "seller" | "resale" | "venue" | "public-body" | "press" | "seller-document" | "maps";
   /** For `resale`: the organiser's sources that name it as the official
@@ -113,7 +115,15 @@ export interface GuidePage extends Dated, Slots {
   sections: Section[];
   faqHeading?: string;
   faq: FaqRow[];
+  /** The questions before the sections, under no heading when the page
+      has no `faqHeading`: a page that is its questions (Field Day's FAQ). */
+  faqFirst?: boolean;
   sourcesHeading?: string;
+  /** One small line under the Sources heading: the reading date most of
+      them share, "(read 21 October 2026 unless dated)". */
+  sourcesNote?: string;
+  /** One line is one paragraph. Several lines are one source each, set as
+      a row with a dot between them (copy.ts, sourcesHtml). */
   sources?: string;
   links?: string;
   foot?: string;

@@ -9,7 +9,7 @@
 // following our hop.
 import { events, guides } from "./data/events/index";
 import type { Guide } from "./data/types";
-import { blocksMd, inlineMd, pathOf, SITE, type Ctx } from "./copy";
+import { applySpans, blocksMd, inlineMd, pathOf, SITE, sourcesMd, type Ctx } from "./copy";
 import { eventOf, hubOrder, mainPage, today } from "./rules";
 import { hub } from "./hub";
 import { chrome, site } from "./site.config";
@@ -30,14 +30,24 @@ function guideDocs(guide: Guide, day: string): Doc[] {
   const event = eventOf(events, guide);
   return guide.pages.map((page) => {
     const ctx: Ctx = { event, guide, page, today: day, where: `${pathOf(page)} (Markdown)` };
+    // Headings and questions as the page prints them that day (GuidePage).
+    const plain = (text: string) => applySpans(text, guide, day, ctx.where).trim();
     const sections = page.sections.flatMap((s) => {
       const body = blocksMd(s.body, ctx);
-      return body ? [`## ${s.heading}`, "", body, ""] : [];
+      return body ? [`## ${plain(s.heading)}`, "", body, ""] : [];
     });
     const faq = page.faq.flatMap((row) => {
       const a = inlineMd(row.a, ctx);
-      return a ? [`### ${row.q}`, "", a, ""] : [];
+      return a ? [`### ${plain(row.q)}`, "", a, ""] : [];
     });
+    // The questions under the page's heading for them; a page that opens on
+    // its questions and prints no heading over them (Field Day's FAQ) has
+    // them straight under its lede here too.
+    const questions = faq.length
+      ? page.faqHeading === undefined && page.faqFirst
+        ? faq
+        : [`## ${page.faqHeading ?? "FAQ"}`, "", ...faq]
+      : [];
     return {
       path: pathOf(page),
       title: page.title,
@@ -49,11 +59,14 @@ function guideDocs(guide: Guide, day: string): Doc[] {
         "",
         inlineMd(page.lede, ctx),
         "",
+        ...(page.faqFirst ? questions : []),
         ...sections,
-        ...(faq.length ? [`## ${page.faqHeading ?? "FAQ"}`, "", ...faq] : []),
+        ...(page.faqFirst ? [] : questions),
         page.sources !== undefined && `## ${page.sourcesHeading ?? "Sources"}`,
         page.sources !== undefined && "",
-        page.sources !== undefined && inlineMd(page.sources, ctx),
+        page.sources !== undefined && page.sourcesNote !== undefined && inlineMd(page.sourcesNote, ctx),
+        page.sources !== undefined && page.sourcesNote !== undefined && "",
+        page.sources !== undefined && sourcesMd(page.sources, ctx),
         page.sources !== undefined && "",
         page.links !== undefined && inlineMd(page.links, ctx),
         page.links !== undefined && "",

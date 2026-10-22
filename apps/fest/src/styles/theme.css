@@ -225,12 +225,91 @@ h2 { overflow-wrap: break-word; }
    Pretty, not balance: balance split "2026 | dates" on the dates page. */
 .crumbs [aria-current="page"] { text-wrap: pretty; }
 
+/* A seller's prices, one card a ticket in the seller's order (Field Day's
+   tickets page): the label, then the price with its fee and the total,
+   then the ticket's status. The cards are not links, so nothing about them
+   says "tap": no hover, no pointer, no focus ring (DESIGN.md). The label's
+   weight is the only emphasis, so a card whose allocation is gone reads
+   like one on sale but for its words. One column on a phone, two once a
+   card can hold its figures on one line beside another. */
+.guide-section ul.cards {
+  display: grid;
+  gap: var(--space-2);
+  padding-left: 0;
+  list-style: none;
+}
+.guide-section ul.cards li {
+  margin: 0;
+  padding: var(--space-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--ink);
+}
+.cards .card-label,
+.cards .card-figures,
+.cards .card-status { display: block; }
+.cards .card-figures { margin-top: 0.25rem; }
+.cards .card-status {
+  margin-top: 0.25rem;
+  font-size: var(--step--1);
+  color: var(--ink-muted);
+}
+@media (min-width: 561px) {
+  .guide-section ul.cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Links out under the paragraph that cites them, one to a line (Field
+   Day): named for what they are, since ul.lines is the lineup's ruled
+   rows. On a phone each is a thumb's target, and the gap between rows
+   (li + li above) keeps two from touching. */
+.guide-section .link-lines {
+  list-style: none;
+  padding-left: 0;
+}
+@media (max-width: 480px) {
+  .guide-section .link-lines a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
+
+/* A page that opens on its questions has no heading over them, so the
+   rows keep the distance a section's heading would have given them. */
+.guide-faq-first { margin-top: var(--space-4); }
+
 /* Sources carry read dates, which a reader acts on: muted, not faint. */
 .guide-sources p {
   font-size: var(--step--1);
   color: var(--ink-muted);
 }
 .guide-links { margin-top: var(--space-2); }
+/* The date most sources share, said once under the heading. */
+.guide-sources .guide-sources-note { margin: 0 0 var(--space-1); }
+/* Several sources (Field Day): each draws the dot before it, centred in
+   the row's gap, so wrapping never leaves a "·" at the end or the start of
+   a line (DESIGN.md, "A separator is drawn by the item that follows it").
+   An item that starts a line has its dot outside the row's left edge,
+   where the clip hides it; clip-path and not overflow, because the items
+   are links and overflow would cut their focus rings. The dot is drawn,
+   not text: screen readers skip it and copied text has none. */
+.guide-sources .sources-row {
+  --sources-gap: 1.25em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--sources-gap);
+  clip-path: inset(-1em -1em -1em 0);
+}
+.sources-row > span { position: relative; }
+.sources-row > span::before {
+  content: "\00B7";
+  content: "\00B7" / "";
+  position: absolute;
+  left: calc(-1 * var(--sources-gap));
+  width: var(--sources-gap);
+  text-align: center;
+}
 
 .guide-foot {
   margin-top: var(--space-5);

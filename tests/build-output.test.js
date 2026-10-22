@@ -56,7 +56,9 @@ const SITES = [
   // Festival guides on fest.one, which this app shares with the archive of
   // the old festival site: the archive keeps / and serves robots.txt and
   // sitemap.xml, so the app's home is /festivals/ and its robots are the
-  // archive's (BOOTSTRAP step 3 adds Disallow: /go/ and this sitemap there).
+  // archive's (BOOTSTRAP step 3 adds this sitemap there and no Disallow:
+  // /go/, since a guide's offers.url is its /go/ hop, which Google must be
+  // able to crawl to read its noindex; ruling X4, 22 Oct 2026).
   // The archive's Content-Security-Policy blocks the analytics tag, so the
   // site carries none; Search Console measures it.
   { app: "fest", host: "fest.one", home: "/festivals/", robots: "archive", analytics: false },
@@ -1063,7 +1065,7 @@ describe("sitemap", () => {
   // the day the exemption ends. Not a threshold: a named site, so the next
   // one to go flat still fails.
   const FLAT_OK = {
-    fest: "one guide, one commit; dated by entry in apps/fest/src/dated.ts; remove with the second guide (Field Day)",
+    fest: "two guides committed on 22 Oct 2026; dated by entry in apps/fest/src/dated.ts; remove with the first guide dated another day (Creamfields Chile)",
   };
   for (const [app, why] of Object.entries(FLAT_OK)) console.log(`  ${app} may be flat: ${why}`);
 

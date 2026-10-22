@@ -17,7 +17,7 @@ import Faq from "@dst/ui/Faq.astro";
 import Glance from "@dst/ui/Glance.astro";
 import { ICONS } from "@dst/ui/icons";
 import type { FestEvent, Guide, GuidePage } from "../data/types";
-import { blocks, inline, inlineText, pathOf, withoutSuffix, type Ctx } from "../copy";
+import { applySpans, blocks, headingHtml, inline, inlineText, pathOf, sourcesHtml, withoutSuffix, type Ctx } from "../copy";
 import { mainPage } from "../rules";
 import { languagesFor } from "../routes";
 import { chrome, site } from "../site.config";
@@ -47,8 +47,12 @@ const siblings = guide.pages.map((p) => ({ href: pathOf(p), label: p.label, titl
 // that copy and the row sits here, under the guide's own pages.
 const languages = languagesFor(page, guide);
 
+// A heading or a question may hold a figure that expires ("The three $99.90
+// tickets"): it reads as the day's copy does, words only, as it always
+// printed.
+const plain = (text: string) => applySpans(text, guide, today, path).trim();
 const sections = page.sections
-  .map((s) => ({ ...s, html: blocks(s.body, ctx) }))
+  .map((s) => ({ ...s, heading: plain(s.heading), html: blocks(s.body, ctx) }))
   .filter((s) => s.html);
 // A jump link's label is the whole of what it does, so it carries no
 // tooltip: one that read the label back is the thing these pages may not
@@ -59,10 +63,19 @@ const jumps = sections.map((s) => ({ id: s.id, label: s.heading, title: false as
 // other pages and the spans that keep a date whole, and as words alone for
 // the FAQPage markup, which is read off the page (Faq.astro, `text`).
 const faq = page.faq
-  .map((row) => ({ q: row.q, a: inline(row.a, ctx), text: inlineText(row.a, ctx), generic: row.generic }))
+  .map((row) => ({ q: plain(row.q), a: inline(row.a, ctx), text: inlineText(row.a, ctx), generic: row.generic }))
   .filter((row) => row.a);
+// A page whose questions are the page (Field Day's FAQ) has them first and
+// under no heading of its own: the h1 already names them. Without the
+// heading there is nothing for aria-labelledby to point at, so the rows sit
+// in a plain block. In the template the block and the note under Sources
+// sit flush against what follows them: a line break between two
+// expressions is a space in the HTML, and Beyond The Valley's pages, which
+// have neither, must come out byte for byte as they were.
+const faqFirst = page.faqFirst === true;
 const lede = inline(page.lede, ctx);
-const sources = page.sources === undefined ? "" : inline(page.sources, ctx);
+const sources = page.sources === undefined ? "" : sourcesHtml(page.sources, ctx);
+const sourcesNote = page.sourcesNote === undefined ? "" : inline(page.sourcesNote, ctx);
 const links = page.links === undefined ? "" : inline(page.links, ctx);
 ---
 <article class="container guide">
@@ -105,14 +118,23 @@ const links = page.links === undefined ? "" : inline(page.links, ctx);
 
   <OnThisPage items={jumps} min={5} heading={page.onThisPage ?? words.onThisPage} />
 
-  {sections.map((s) => (
+  {faqFirst && faq.length > 0 && (
+    page.faqHeading ? (
+      <section class="guide-section" aria-labelledby="questions">
+        <h2 id="questions">{page.faqHeading}</h2>
+        <Faq items={faq} />
+      </section>
+    ) : (
+      <div class="guide-section guide-faq-first"><Faq items={faq} /></div>
+    )
+  )}{sections.map((s) => (
     <section class="guide-section" aria-labelledby={s.id}>
-      <h2 id={s.id}>{s.heading}</h2>
+      <h2 id={s.id} set:html={headingHtml(s.heading)} />
       <Fragment set:html={s.html} />
     </section>
   ))}
 
-  {faq.length > 0 && (
+  {!faqFirst && faq.length > 0 && (
     <section class="guide-section" aria-labelledby="questions">
       <h2 id="questions">{page.faqHeading}</h2>
       <Faq items={faq} />
@@ -122,7 +144,7 @@ const links = page.links === undefined ? "" : inline(page.links, ctx);
   {(sources || links) && (
     <section class="guide-section guide-sources" aria-labelledby="sources">
       <h2 id="sources">{page.sourcesHeading}</h2>
-      {sources && <p set:html={sources} />}
+      {sourcesNote && <p class="guide-sources-note" set:html={sourcesNote} />}{sources && <Fragment set:html={sources} />}
       {links && <p class="guide-links" set:html={links} />}
     </section>
   )}

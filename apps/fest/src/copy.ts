@@ -15,9 +15,17 @@
 //   arrow ("the tickets page", or the guide's own `anchors` entry where the
 //   sentence has no such phrase), the arrow and the path go, and the title is
 //   the target's own title without the suffix.
+// - `[label](/field-day/faq/#cant-bring)`: a link to a section of a guide's
+//   page. Its title is that section's heading, which says more than "the
+//   section below" does.
+// - `**label**`: the label a price card opens with (Field Day's tickets
+//   page). Bold on the page and in the Markdown twin; plain words in the
+//   structured data.
 // - `{{until key}}…{{/until}}`: words that stop being true on a date the
 //   guide names in `expires` (a price, a fare). From that day the build
-//   drops them from the page, the Markdown twin and llms.txt.
+//   drops them from the page, the Markdown twin and llms.txt. A span may
+//   run across paragraphs, so a sentence and the link on the line under it
+//   go together; it may also sit in a heading or a question.
 //
 // The text outside the anchors is never changed: `inline` checks that what
 // it renders reads exactly as the copy does with the marks taken out.
@@ -134,6 +142,26 @@ export function applySpans(text: string, guide: Guide, today: string, where = ""
   return out.replace(/[ \t]{2,}/g, " ").replace(/^[ \t]+|[ \t]+$/gm, "");
 }
 
+/** A span that runs over a line break, cut into one span a line with the
+    same key: a body is read a paragraph and a line at a time, and each
+    piece then drops on its own day like any other. A list item's "- " and
+    a quotation's "> " stay outside, so a line whose words have gone is
+    still an empty item, which the parser leaves out. A span on one line is
+    returned as it was. */
+function splitSpans(text: string): string {
+  return text.replace(SPAN, (whole: string, key: string, body: string) => {
+    if (!body.includes("\n")) return whole;
+    return body
+      .split(/(\n+)/)
+      .map((seg) => {
+        if (seg.startsWith("\n")) return seg;
+        const [, mark = "", words] = /^(- |> )?([\s\S]*)$/.exec(seg)!;
+        return words.trim() ? `${mark}{{until ${key}}}${words}{{/until}}` : seg;
+      })
+      .join("");
+  });
+}
+
 // ----------------------------------------------------------------- inline
 
 const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -156,6 +184,14 @@ const KEEP_TOGETHER = new RegExp(
     `\\b${MONTH} \\d{1,2}(?:, \\d{4})?\\b`, // December 1, December 1, 2026
     `\\b${MONTH} \\d{4}\\b`, // October 2026
     `(?:A?\\$)?\\b\\d[\\d,.]*%? (?:km|min|mins|hrs?|hours?|minutes|days?|nights?|people|person|years?|tickets?|passes)\\b`, // 126 km, 4 people
+    // A price and the word after it, which says what the price is: "$219.90
+    // including fees" broke after the figure in Field Day's lede at 320 and
+    // 360 px, and the line-break sweep holds a figure to its word.
+    `(?:A?\\$)\\d[\\d,.]*\\d (?:including|plus|with|for|each|a|per)\\b`, // $219.90 including
+    // A word whose first part is one letter, which a line would otherwise
+    // break after its hyphen and strand: "alcohol, e-|cigarette liquids" in
+    // Field Day's can't-bring list at 320 px.
+    `\\b[A-Za-z](?:-[A-Za-z]+)+\\b`, // e-cigarette, A-to-Z
   ].join("|"),
   "g",
 );
@@ -173,10 +209,49 @@ const typeset = (html: string) =>
     )
     .join("");
 
+// A heading is text Astro would escape, set as it always was, with three
+// breaks kept out of it: a month parted from its year ("1 January | 2027,",
+// Field Day's "When" heading at 600 to 944 px) and a price from the noun it
+// prices ("$99.90 | tickets:", at 390 to 600), both found by the line-break
+// sweep, and a range parted at its dash ("18– | 25s,", the same tickets
+// heading at 1280, in the shots). Headings balance, and a balanced heading
+// breaks wherever its halves come out even, so those go in a span as in a
+// paragraph.
+// Not the whole date: at 320 px a heading is 24 px type in a 292 px column,
+// and "22 October 2026" alone measured wider than that, so a span around it
+// pushed the FAQ page 13 px sideways. The day may take the line before its
+// month there ("read 22 | October 2026"), which is where the heading broke
+// before. A day with its month and no year ("Monday 28 December", Beyond
+// The Valley's lineup days) is left as it was: Beyond The Valley's pages
+// are to come out byte for byte as before (Field Day's card, the fest
+// director's condition 11). The escaping is Astro's own (html-escaper), so
+// a heading with no match prints the bytes {heading} always printed.
+const HEADING_KEEP = new RegExp(
+  [`\\b${MONTH} \\d{4}\\b`, `(?:A?\\$)\\d[\\d,.]*\\d \\p{L}+`, `\\b\\d+[–-]\\d+\\p{L}*`].join("|"),
+  "gu",
+);
+const ASTRO_ESCAPES: Record<string, string> = { "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" };
+export const headingHtml = (text: string) =>
+  text.replace(/[&<>'"]/g, (c) => ASTRO_ESCAPES[c]).replace(HEADING_KEEP, (m) => `<span class="nowrap">${m}</span>`);
+
+// A price card's total stays with the word before its "=": "$209.90 +
+// $10.00 fees = $219.90" may break before "fees", never between "=" and the
+// total, which alone on a line reads as a figure of its own (the fest
+// director's condition 7 on Field Day). Cards only: the same figures in
+// running prose are prose, and Beyond The Valley's "= $2,911" is set as it
+// always was.
+const TOTAL = /[^\s<>]+ = (?:A?\$)\d[\d,.]*\d/g;
+const keepTotals = (html: string) =>
+  html
+    .split(/(<[^>]*>)/)
+    .map((run) => (run.startsWith("<") ? run : run.replace(TOTAL, (m) => `<span class="nowrap">${m}</span>`)))
+    .join("");
+
 interface Piece { from: number; to: number; html: string; md: string; text: string }
 
 const LINK = /\[([^\]\n]+)\]\(([^)\s]+)\)/g;
 const ARROW = /\s*→ (\/[^\s]*\/)(?=\s|$)/g;
+const BOLD = /\*\*([^*\n]+)\*\*/g;
 
 /** One string of copy (a paragraph, a list item, an answer) as inline HTML,
     Markdown and plain text, marks resolved. Expiry spans must already be
@@ -190,8 +265,17 @@ function marks(text: string, ctx: Ctx, site: string): { html: string; md: string
     .replace(ARROW, "")
     .replace(TAG, "")
     .replace(LINK, "$1")
+    .replace(BOLD, "$1")
     .replace(/\s+/g, " ")
     .trim();
+
+  for (const m of text.matchAll(BOLD))
+    pieces.push({
+      from: m.index!, to: m.index! + m[0].length,
+      html: `<strong>${esc(m[1])}</strong>`,
+      md: m[0],
+      text: m[1],
+    });
 
   for (const m of text.matchAll(TAG)) {
     if (resolve(ctx.event.sheet, m[2]) === undefined)
@@ -211,9 +295,16 @@ function marks(text: string, ctx: Ctx, site: string): { html: string; md: string
       if (!go || !href.endsWith("/")) throw new Error(`${ctx.where}: ${href} is not one of ${ctx.event.slug}'s /go/ hops`);
       target = { href, title: go.title, out: go.url };
     } else {
-      const page = pages.find((p) => pathOf(p) === href.replace(/#.*$/, ""));
+      const [path, id] = href.split("#");
+      const page = pages.find((p) => pathOf(p) === path);
       if (!page) throw new Error(`${ctx.where}: [${label}](${href}) links to no page of this guide`);
-      target = { href, title: withoutSuffix(page.title) };
+      if (id === undefined) target = { href, title: withoutSuffix(page.title) };
+      else {
+        // A section of a page: named by its heading, as it reads that day.
+        const section = page.sections.find((s) => s.id === id);
+        if (!section) throw new Error(`${ctx.where}: [${label}](${href}) names no section of ${path}`);
+        target = { href, title: applySpans(section.heading, ctx.guide, ctx.today, ctx.where).trim() };
+      }
     }
     if (target.title === label) throw new Error(`${ctx.where}: the title of [${label}] repeats its label`);
     const rel = target.out ? ' rel="nofollow"' : "";
@@ -318,29 +409,66 @@ export function inlineText(text: string, ctx: Ctx): string {
 
 export const SITE = "https://fest.one";
 
+type Part = { html: string; md: string };
 type Block =
-  | { kind: "p" | "quote"; parts: { html: string; md: string }[] }
-  | { kind: "list" | "lines"; parts: { html: string; md: string }[] };
+  | { kind: "p" | "quote"; parts: Part[] }
+  | { kind: "list" | "lines" | "links" | "cards"; parts: Part[] };
+
+/** A line that is one link and nothing else but its tags: a hop the copy
+    names by its label after the paragraph that cites it. */
+const LINK_LINE = /^\[[^\]\n]+\]\([^)\s]+\)(?:\s+\[[A-Za-z_][\w.]*\])*$/;
+/** A price card: "**Label**: $209.90 + $10.00 fees = $219.90. On sale; …".
+    The label, then the figures up to the total's full stop, then the rest,
+    which is the ticket's status. */
+const CARD = /^\*\*([^*\n]+)\*\*(:?)\s*([\s\S]*)$/;
+const CARD_FIGURES = / = (?:A?\$)\d[\d,.]*\d\.(?=\s|$)/;
+
+/** One price card: each of its three parts rendered and checked on its
+    own, set as a block of its own by the stylesheet (theme.css, ul.cards).
+    The spaces between them stay, so the card copies and reads as the
+    sentence the copy has. The Markdown is the item as written. */
+function card(item: string, ctx: Ctx): Part {
+  const m = CARD.exec(item);
+  if (!m) throw new Error(`${ctx.where}: a card must open with its **label**: "${item.slice(0, 40)}"`);
+  const [, label, colon, rest] = m;
+  const end = CARD_FIGURES.exec(rest);
+  const figures = end ? rest.slice(0, end.index + end[0].length) : rest;
+  const status = end ? rest.slice(end.index + end[0].length).trim() : "";
+  const parts = [
+    `<span class="card-label">${marks(`**${label}**${colon}`, ctx, SITE).html}</span>`,
+    `<span class="card-figures">${keepTotals(marks(figures, ctx, SITE).html)}</span>`,
+    ...(status ? [`<span class="card-status">${marks(status, ctx, SITE).html}</span>`] : []),
+  ];
+  return { html: parts.join(" "), md: marks(item, ctx, SITE).md };
+}
 
 /** A section body's blocks. Paragraphs are separated by a blank line; a
     paragraph whose lines all start "- " is a list, "> " a quotation, and
-    one of several plain lines a list of lines (the lineup's stages). A
-    paragraph or item whose spans have all expired is left out. */
+    one of several plain lines a list of lines (the lineup's stages). Two
+    kinds Field Day brought: a list whose every item opens with a **label**
+    is a row of price cards, and a paragraph whose every line is a single
+    link is a run of link lines. A paragraph or item whose spans have all
+    expired is left out. */
 function parse(text: string, ctx: Ctx): Block[] {
   const blocks: Block[] = [];
-  for (const para of text.split(/\n{2,}/)) {
+  for (const para of splitSpans(text).split(/\n{2,}/)) {
     const lines = para.split("\n");
+    const live = (s: string) => applySpans(s, ctx.guide, ctx.today, ctx.where).trim();
     const render = (s: string) => {
-      const live = applySpans(s, ctx.guide, ctx.today, ctx.where);
-      return live.trim() ? marks(live, ctx, SITE) : undefined;
+      const words = live(s);
+      return words ? marks(words, ctx, SITE) : undefined;
     };
-    const keep = (xs: ({ html: string; md: string } | undefined)[]) => xs.filter((x): x is { html: string; md: string } => !!x);
-    if (lines.every((l) => l.startsWith("- "))) {
-      const parts = keep(lines.map((l) => render(l.slice(2))));
-      if (parts.length) blocks.push({ kind: "list", parts });
+    const keep = (xs: (Part | undefined)[]) => xs.filter((x): x is Part => !!x);
+    if (lines.every((l) => l.startsWith("- ") || l === "-")) {
+      const items = lines.map((l) => live(l.slice(2))).filter(Boolean);
+      if (!items.length) continue;
+      if (items.every((i) => i.startsWith("**"))) blocks.push({ kind: "cards", parts: items.map((i) => card(i, ctx)) });
+      else blocks.push({ kind: "list", parts: keep(items.map(render)) });
     } else if (lines.every((l) => l.startsWith("> "))) {
       const part = render(lines.map((l) => l.slice(2)).join(" "));
       if (part) blocks.push({ kind: "quote", parts: [part] });
+    } else if (lines.map(live).filter(Boolean).every((l) => LINK_LINE.test(l)) && lines.some((l) => live(l))) {
+      blocks.push({ kind: "links", parts: keep(lines.map(render)) });
     } else if (lines.length > 1) {
       const parts = keep(lines.map(render));
       if (parts.length) blocks.push({ kind: "lines", parts });
@@ -357,7 +485,9 @@ export function blocks(text: string, ctx: Ctx): string {
     .map((b) => {
       if (b.kind === "p") return `<p>${b.parts[0].html}</p>`;
       if (b.kind === "quote") return `<blockquote><p>${b.parts[0].html}</p></blockquote>`;
-      const cls = b.kind === "lines" ? ' class="lines"' : "";
+      // Links out, one to a line: a lone one is a paragraph of its own.
+      if (b.kind === "links" && b.parts.length === 1) return `<p class="link-lines">${b.parts[0].html}</p>`;
+      const cls = b.kind === "list" ? "" : ` class="${b.kind === "links" ? "link-lines" : b.kind}"`;
       return `<ul${cls}>${b.parts.map((p) => `<li>${p.html}</li>`).join("")}</ul>`;
     })
     .join("\n");
@@ -368,7 +498,34 @@ export function blocksMd(text: string, ctx: Ctx): string {
     .map((b) => {
       if (b.kind === "p") return b.parts[0].md;
       if (b.kind === "quote") return `> ${b.parts[0].md}`;
+      if (b.kind === "links" && b.parts.length === 1) return b.parts[0].md;
       return b.parts.map((p) => `- ${p.md}`).join("\n");
     })
     .join("\n\n");
+}
+
+// ---------------------------------------------------------------- sources
+
+/** A page's sources. One line is one paragraph, as Beyond The Valley's
+    are. Several lines are one source each (Field Day's): a row whose items
+    each draw the "·" before them in the row's gap, so wrapping can never
+    leave a dot at the end or the start of a line (theme.css, .sources-row).
+    A source whose span has expired is left out of the row. */
+export function sourcesHtml(text: string, ctx: Ctx): string {
+  const lines = text.split("\n");
+  if (lines.length === 1) {
+    const one = inline(text, ctx);
+    return one ? `<p>${one}</p>` : "";
+  }
+  const items = lines.map((l) => inline(l, ctx)).filter(Boolean);
+  return items.length ? `<p class="sources-row">${items.map((i) => `<span>${i}</span>`).join("")}</p>` : "";
+}
+
+/** The same in Markdown: the row's sources on one line, " · " between. */
+export function sourcesMd(text: string, ctx: Ctx): string {
+  return text
+    .split("\n")
+    .map((l) => inlineMd(l, ctx))
+    .filter(Boolean)
+    .join(" · ");
 }

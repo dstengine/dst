@@ -3,8 +3,9 @@
 // event already listed is an entry in that event's `guides`, never a file.
 import type { FestEvent, Guide } from "../types";
 import * as beyondTheValley from "./beyond-the-valley";
+import * as fieldDay from "./field-day";
 
-const files = [beyondTheValley];
+const files = [beyondTheValley, fieldDay];
 
 export const events: FestEvent[] = files.flatMap((f) => f.events);
 export const guides: Guide[] = files.flatMap((f) => f.guides);

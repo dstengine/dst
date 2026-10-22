@@ -221,6 +221,29 @@ describe("the copy and its sheet", () => {
 const RUSSIAN = /(^|\.)(ru|su|xn--p1ai|xn--d1acj3b)$|(^|\.)(vk\.com|ok\.ru|yandex\.[a-z]+|ya\.ru|dzen\.ru|rutube\.ru|mail\.ru)$/;
 const hostOf = (url) => new URL(url).hostname.toLowerCase();
 
+/** A hop traces to the sheet entry it was read from, on that entry's own
+    host, whole hostname: a source in `sources`; for a maps search, the
+    sheet key of the organiser's instruction it follows; for an organiser's
+    form the sheet holds as an official seller with its own URL and reading
+    (Field Day's MobTix form), that seller's key, "sellers.N" (the fest
+    director's gate-3 condition 6). Nothing else is accepted. */
+function assertTraced(event, key, go) {
+  if (go.kind === "maps") {
+    assert.ok(copy.resolve(event.sheet, go.source) !== undefined, `go.${key}: source "${go.source}" names nothing on the sheet`);
+    assert.match(go.url, /^https:\/\/www\.google\.com\/maps\/search\/\?api=1&query=/, `go.${key}: a maps hop is a plain maps search`);
+    return;
+  }
+  if (/^sellers\.\d+$/.test(go.source)) {
+    const seller = copy.resolve(event.sheet, go.source);
+    assert.ok(seller?.official === true && seller.url && seller.readOn, `go.${key}: ${go.source} is not an official seller with its own url and readOn`);
+    assert.equal(hostOf(go.url), hostOf(seller.url), `go.${key}: leads to another host than its seller ${go.source}`);
+    return;
+  }
+  const source = (event.sheet.sources ?? {})[go.source];
+  assert.ok(source, `go.${key}: source "${go.source}" is not in the sheet's sources`);
+  assert.equal(hostOf(go.url), hostOf(source.url), `go.${key}: leads to another host than its source ${go.source}`);
+}
+
 describe("where a guide's links lead", () => {
   const KINDS = ["organiser", "seller", "resale", "venue", "public-body", "press", "seller-document", "maps"];
 
@@ -230,14 +253,7 @@ describe("where a guide's links lead", () => {
       for (const [key, go] of Object.entries(event.go)) {
         assert.ok(KINDS.includes(go.kind), `go.${key}: kind "${go.kind}"`);
         assert.ok(go.title && go.title.trim(), `go.${key}: a hop's anchor needs a title`);
-        if (go.kind === "maps") {
-          assert.ok(copy.resolve(event.sheet, go.source) !== undefined, `go.${key}: source "${go.source}" names nothing on the sheet`);
-          assert.match(go.url, /^https:\/\/www\.google\.com\/maps\/search\/\?api=1&query=/, `go.${key}: a maps hop is a plain maps search`);
-          continue;
-        }
-        const source = sources[go.source];
-        assert.ok(source, `go.${key}: source "${go.source}" is not in the sheet's sources`);
-        assert.equal(hostOf(go.url), hostOf(source.url), `go.${key}: leads to another host than its source ${go.source}`);
+        assertTraced(event, key, go);
       }
     });
 
@@ -266,6 +282,30 @@ describe("where a guide's links lead", () => {
         assert.match(go.url, /^https:\/\/drive\.google\.com\/file\/d\/[\w-]+\/view$/, `go.${key}`);
     });
   }
+
+  // The seller branch is the one loosening of the rule, so it is shown to
+  // hold on a sheet of its own: the seller's host and no other, and only a
+  // seller that is official, with its own URL and reading.
+  test("a seller's key traces a hop only to that seller's own host", () => {
+    const form = "https://docs.google.com/forms/d/e/fixture/viewform";
+    const event = {
+      sheet: {
+        sources: {},
+        sellers: [
+          { official: true, url: form, readOn: "2026-10-21" },
+          { official: false, url: "https://example.org/", readOn: "2026-10-21" },
+          { official: true, url: "https://example.net/" },
+        ],
+      },
+    };
+    const hop = (source, url) => ({ kind: "organiser", source, url, title: "fixture" });
+    assert.doesNotThrow(() => assertTraced(event, "form", hop("sellers.0", form)));
+    assert.throws(() => assertTraced(event, "form", hop("sellers.0", "https://forms.example.com/viewform")), /another host/);
+    assert.throws(() => assertTraced(event, "form", hop("sellers.0", "https://www.docs.google.com/forms/")), /another host/);
+    assert.throws(() => assertTraced(event, "form", hop("sellers.1", "https://example.org/")), /not an official seller/);
+    assert.throws(() => assertTraced(event, "form", hop("sellers.2", "https://example.net/")), /not an official seller/);
+    assert.throws(() => assertTraced(event, "form", hop("sellers.9", form)), /not an official seller/);
+  });
 });
 
 // ------------------------------------------------------- the built site
@@ -306,7 +346,7 @@ describe("the built pages", { skip: built ? false : "apps/fest/dist is missing: 
   const html = built ? pages() : new Map();
   const content = [...html].filter(([p]) => !p.startsWith("/go/"));
 
-  test("seven pages: the hub and six guide pages", () => {
+  test("the hub and every guide page, and no other content page", () => {
     const expected = ["/festivals/", ...guides.flatMap((g) => g.pages.map((p) => `/${p.slug}/`))].sort();
     assert.deepEqual(content.map(([p]) => p).sort(), expected);
   });
@@ -418,12 +458,41 @@ describe("the built pages", { skip: built ? false : "apps/fest/dist is missing: 
         for (const q of block.mainEntity) {
           answers++;
           const text = q.acceptedAnswer.text;
-          if (/<[A-Za-z!/?]/.test(text)) bad.push(`${p}: a tag in the answer to "${q.name}"`);
+          // No "<" at all, and no "[" that opens one of the copy's marks: a
+          // [key] tag after a space or a [label](href) link. A bracket inside
+          // a word is a quotation's own ("strongly discourage[s]", on Beyond
+          // The Valley's tickets page) and stays.
+          if (text.includes("<") || /(^|\s)\[[A-Za-z_][\w.]*\]|\[[^\]\n]*\]\(/.test(text))
+            bad.push(`${p}: a tag or a mark in the answer to "${q.name}"`);
           else if (printed.get(q.name) !== text) bad.push(`${p}: the answer to "${q.name}" is not the accordion's`);
         }
       }
     }
     assert.ok(answers > 0, "no FAQPage answer was read");
+    assert.deepEqual(bad, []);
+  });
+
+  // Faq.astro writes the rows not marked generic into FAQPage, and no block
+  // at all when every row is: so a page's markup holds exactly its live
+  // questions of its own, and a page whose rows are all generic (Field
+  // Day's main page, whose six are the FAQ page's in short) holds none.
+  test("each page's FAQPage holds its own live questions, and only those", () => {
+    const day = rules.today();
+    const bad = [];
+    for (const guide of guides) {
+      const event = rules.eventOf(events, guide);
+      for (const page of guide.pages) {
+        const p = `/${page.slug}/`;
+        const ctx = { event, guide, page, today: day, where: p };
+        const own = page.faq.filter((row) => !row.generic && copy.inline(row.a, ctx)).length;
+        const blocks = [...(html.get(p) ?? "").matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+          .map((m) => JSON.parse(m[1]))
+          .filter((b) => b["@type"] === "FAQPage");
+        const got = JSON.stringify(blocks.map((b) => b.mainEntity.length));
+        const want = JSON.stringify(own ? [own] : []);
+        if (got !== want) bad.push(`${p}: FAQPage question counts ${got}, its own live rows ${want}`);
+      }
+    }
     assert.deepEqual(bad, []);
   });
 });
