@@ -33,11 +33,16 @@ function nthWeekday(year: number, month: number, weekday: number, nth: number): 
 /** The occurrence that has not finished yet: the one on now, or the next. */
 export function nextOccurrence(r: Recurrence, now: Date = new Date()): Occurrence | undefined {
   if ("daily" in r) {
-    const [h, m] = r.daily.split(":").map(Number);
-    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate(), h, m);
-    const start = now.getTime() < today.getTime() + TIMED_WINDOW_MS
-      ? today
-      : new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, h, m);
+    // Each time's next start, and the soonest of them: a moment with two
+    // times has one count, to whichever comes first.
+    const starts = [r.daily].flat().map((time) => {
+      const [h, m] = time.split(":").map(Number);
+      const today = new Date(now.getFullYear(), now.getMonth(), now.getDate(), h, m);
+      return now.getTime() < today.getTime() + TIMED_WINDOW_MS
+        ? today
+        : new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, h, m);
+    });
+    const start = starts.reduce((a, b) => (b < a ? b : a));
     return { start, end: new Date(start.getTime() + TIMED_WINDOW_MS), allDay: false };
   }
   const day = (start: Date): Occurrence => ({ start, end: nextDay(start), allDay: true });

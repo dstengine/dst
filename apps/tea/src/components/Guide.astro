@@ -22,7 +22,7 @@ const { item, more } = Astro.props;
 const all = sections(newsBySite(siteId));
 // The tea times this page is the page about, in the order of the day.
 const ceremony = moments.filter((m) => m.guide?.slug === item.slug && m.guide.about);
-// Whether those tea times bring a picture that follows the clock.
+// Whether one of them brings a picture that follows the clock.
 const clockCover = ceremony.some((m) => m.cover);
 ---
 <Layout title={item.titleSeo ?? item.title} description={item.summary} image={item.image}>

@@ -72,20 +72,25 @@ function vevents(m: Moment): string[][] {
   ];
   const r = m.recurs;
   if ("daily" in r) {
-    const [h, min] = r.daily.split(":");
     // The first morning after publication, at the moment's time, with no
-    // zone: floating time is the reader's own clock.
+    // zone: floating time is the reader's own clock. A moment with two
+    // times is two daily entries — every calendar reads FREQ=DAILY, and
+    // not every one reads BYHOUR — under one UID for the first and a
+    // suffixed one for the rest.
     const first = ymd(nextDay(ORIGIN));
-    return [[
-      "BEGIN:VEVENT",
-      ...common(m.slug),
-      `DTSTART:${first}T${h}${min}00`,
-      "DURATION:PT30M",
-      "RRULE:FREQ=DAILY",
-      // Five minutes is the time it takes a kettle to boil.
-      ...alarm(`${m.name} in five minutes — kettle on`, "-PT5M"),
-      "END:VEVENT",
-    ]];
+    return [r.daily].flat().map((time, i) => {
+      const [h, min] = time.split(":");
+      return [
+        "BEGIN:VEVENT",
+        ...common(i === 0 ? m.slug : `${m.slug}-${h}${min}`),
+        `DTSTART:${first}T${h}${min}00`,
+        "DURATION:PT30M",
+        "RRULE:FREQ=DAILY",
+        // Five minutes is the time it takes a kettle to boil.
+        ...alarm(`${m.name} in five minutes — kettle on`, "-PT5M"),
+        "END:VEVENT",
+      ];
+    });
   }
   // An all-day entry's alarm fires at nine on the morning of the day: an
   // alarm at midnight is one nobody sees.

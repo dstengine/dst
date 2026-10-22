@@ -84,6 +84,12 @@ export const redirects: Record<string, Redirect[]> = {
       since: "2026-10-11",
       why: "The Markdown twin of the same page followed it.",
     },
+    {
+      from: "/schedule/four-twenty-night-tea.ics",
+      to: "/schedule/four-twenty-high-tea.ics",
+      since: "2026-10-22",
+      why: "The night tea at 04:20 was its own tea time for about an hour before it became the second time of 4:20 High Tea, whose calendar file now carries both.",
+    },
   ],
   ldn: [
     {

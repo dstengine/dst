@@ -839,7 +839,7 @@ export const items: NewsItem[] = [
     slug: "420",
     path: "/420/",
     createdAt: "2026-10-11T20:25:00+04:00",
-    updatedAt: "2026-10-22T20:40:00+04:00",
+    updatedAt: "2026-10-22T20:49:00+04:00",
     site: "tea",
     image: "/covers/420.jpg",
     imageAlt: "A painting of a copper tea urn with a brass tap on a small mahogany table, white cups and saucers set out on another, an oxblood leather wing chair, and late-afternoon sun from a tall window across green panelling and a gilt-framed mountain landscape",
@@ -873,7 +873,7 @@ export const items: NewsItem[] = [
       "On the twentieth of April — 4/20 on the Urnests' card, 20/4 on any British calendar — the pot may as well be a large one. The <a href=\"/schedule/#four-twenty-high-tea\" title=\"4:20 High Tea, counting down to twenty past four on your own clock\">tea times page</a> counts down to it wherever you are, and will put it in your calendar with a reminder, so that nobody is caught at twenty-five past four with nothing in the pot.",
       "## The night tea",
       "There is a second 4:20, and the Urnests kept that one too. At twenty past four in the morning — the end of a long night or the start of a long day, depending on which side of it you are standing — the night tea: a flask carried out along the long walk at Kettlewood and drunk lying on one's back under Skywalker, the great cedar at the end of it, which one of them named for the way its top seemed to walk across the stars as the night turned. The sky over Kettlewood is very dark and very full, and the Urnests held that nothing in it looked quite so good as it did from under Skywalker with a cup in hand.",
-      "The cup itself should be gentle. Nothing that will keep you from the last of the night, or quarrel with the first of the day: a <a href=\"/guides/how-to-brew-white-tea/\" title=\"How to brew white tea, the gentlest cup there is\">white tea</a>, a chamomile, or something that has never met a tea bush at all. The picture beside the count keeps the hours with you: from twenty past four in the afternoon it shows the night sky under Skywalker, and at twenty past four in the morning the sun comes back into the common room.",
+      "The cup itself should be gentle. Nothing that will keep you from the last of the night, or quarrel with the first of the day: a <a href=\"/guides/how-to-brew-white-tea/\" title=\"How to brew white tea, the gentlest cup there is\">white tea</a>, a chamomile, or something that has never met a tea bush at all. The count beside this tale runs from one 4:20 to the next, and the picture keeps the hours with it: from twenty past four in the afternoon it shows the night sky under Skywalker, and at twenty past four in the morning the sun comes back into the common room.",
       "<em>Names and facts have been changed.</em>",
     ],
     faq: [
@@ -887,7 +887,7 @@ export const items: NewsItem[] = [
       },
       {
         q: "Is there a 4:20 in the morning too?",
-        a: "There is: the night tea, at 04:20 on your own clock. The Urnests took theirs under the stars, and a white tea or a chamomile suits it better than the afternoon's Darjeeling. The tea times page counts down to both, and this page's picture turns to the night sky between the two.",
+        a: "There is: the night tea, at 04:20 on your own clock. The Urnests took theirs under the stars, and a white tea or a chamomile suits it better than the afternoon's Darjeeling. The count on this page and on the tea times page runs to whichever of the two comes next, and the picture beside it turns to the night sky in between.",
       },
       {
         q: "What tea suits 4:20 High Tea?",

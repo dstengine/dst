@@ -1,14 +1,15 @@
 ---
-// The picture beside the countdowns on a page about a tea time follows the
-// count. Each timed moment the page is about may bring a picture of its own
-// (`cover` in schedule.ts), and the figure shows the picture of whichever
-// moment comes round next: from twenty past four in the afternoon the tale
-// of 4:20 is lit by the night sky under Skywalker, and at twenty past four
-// in the morning the sun comes back into the common room. A moment without
-// a cover shows the page's own, so the swap is between pictures the build
-// has already made variants of — the script only moves the URLs the Photo
-// component would have printed. Without the script the page keeps its day
-// picture, which is also the one every card and share preview shows.
+// The picture beside the countdown on a page about a tea time follows the
+// count. A tea time that comes round twice a day may bring a picture for
+// one of its times (`cover` in schedule.ts), and the figure shows the
+// picture of whichever time the count runs towards: from twenty past four
+// in the afternoon the tale of 4:20 is lit by the night sky under
+// Skywalker, and at twenty past four in the morning the sun comes back into
+// the common room. The other time shows the page's own cover, so the swap
+// is between pictures the build has already made variants of — the script
+// only moves the URLs the Photo component would have printed. Without the
+// script the page keeps its day picture, which is also the one every card
+// and share preview shows.
 //
 // The switch is by the clock, not by the countdown's half-hour window: the
 // picture changes at 4:20 exactly, both times, because that is the promise
@@ -25,19 +26,21 @@ interface Props {
 }
 const { moments, image, alt } = Astro.props;
 
-const timed = moments.filter((m) => "daily" in m.recurs);
-const covers = timed.map((m) => {
-  const src = m.cover?.image ?? image;
-  const sources = imageSources(Astro.site?.hostname, src);
-  return {
-    at: (m.recurs as { daily: string }).daily,
-    src,
-    alt: m.cover?.alt ?? alt,
-    caption: m.cover?.caption ?? `${m.name}, at ${(m.recurs as { daily: string }).daily} on your clock`,
-    avif: sources?.avif ?? "",
-    webp: sources?.webp ?? "",
-  };
-});
+const covers = moments
+  .filter((m) => "daily" in m.recurs)
+  .flatMap((m) => [(m.recurs as { daily: string | string[] }).daily].flat().map((at) => {
+    const own = m.cover?.at === at ? m.cover : undefined;
+    const src = own?.image ?? image;
+    const sources = imageSources(Astro.site?.hostname, src);
+    return {
+      at,
+      src,
+      alt: own?.alt ?? alt,
+      caption: own?.caption ?? `${m.name}, at ${at} on your clock`,
+      avif: sources?.avif ?? "",
+      webp: sources?.webp ?? "",
+    };
+  }));
 // The HTML carries the page's own picture; the clock picks from there.
 const first = covers.find((c) => c.src === image) ?? covers[0];
 ---
@@ -60,7 +63,7 @@ const first = covers.find((c) => c.src === image) ?? covers[0];
     const caption = figure.querySelector<HTMLElement>(".night-cover-caption")!;
     let shown: Cover | undefined;
 
-    /** The moment that comes round next, strictly: at 16:20:00 the
+    /** The time that comes round next, strictly: at 16:20:00 the
         afternoon pot has come, and the night one is next. */
     const next = (now: Date): Cover => {
       const minutes = now.getHours() * 60 + now.getMinutes();

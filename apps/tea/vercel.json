@@ -16,6 +16,11 @@
       "source": "/guides/the-story-of-4-20-high-tea.md",
       "destination": "/420.md",
       "statusCode": 301
+    },
+    {
+      "source": "/schedule/four-twenty-night-tea.ics",
+      "destination": "/schedule/four-twenty-high-tea.ics",
+      "statusCode": 301
     }
   ]
 }
