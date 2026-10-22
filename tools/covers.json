@@ -910,6 +910,10 @@
     },
     "tea": {
       "420": "a tall copper tea urn with a brass tap on a mahogany sideboard in a firelit wood-panelled common room, white china cups lined up beside it, an oxblood leather armchair, a gilt-framed landscape of hills on the panelling, low late-afternoon sun slanting through a tall window",
+      "420-night": {
+        "subject": "the same wood-panelled common room deep in the night, the fire sunk to orange embers, a tall window filled with a vast deep indigo night sky dense with sharp stars and the pale band of the Milky Way, one long thin bright shooting star crossing it, the copper tea urn and a single steaming white china cup on the mahogany sideboard lit by one candle, the oxblood leather armchair empty",
+        "detail": "the tall window and its star-filled sky take most of the frame, the room around it in deep shadow with only the candle flame and the embers for light, the stars many small sharp points of white and pale gold against the indigo, the shooting star one long thin bright streak, no lettering, no numerals, no text of any kind"
+      },
       "how-to-make-a-proper-cup-of-tea": {
         "subject": "a round brown teapot pouring tea into a bone-china cup and saucer on a mahogany side table beside an oxblood leather chesterfield, a small milk jug beside it",
         "detail": "a great stone fireplace with a fire burning behind, a pair of stag's antlers mounted above the chimneypiece, a single curl of steam rising from the cup"

@@ -1,0 +1,113 @@
+---
+// The picture beside the countdowns on a page about a tea time follows the
+// count. Each timed moment the page is about may bring a picture of its own
+// (`cover` in schedule.ts), and the figure shows the picture of whichever
+// moment comes round next: from twenty past four in the afternoon the tale
+// of 4:20 is lit by the night sky under Skywalker, and at twenty past four
+// in the morning the sun comes back into the common room. A moment without
+// a cover shows the page's own, so the swap is between pictures the build
+// has already made variants of — the script only moves the URLs the Photo
+// component would have printed. Without the script the page keeps its day
+// picture, which is also the one every card and share preview shows.
+//
+// The switch is by the clock, not by the countdown's half-hour window: the
+// picture changes at 4:20 exactly, both times, because that is the promise
+// the page makes in words.
+import Photo from "@dst/ui/Photo.astro";
+import { imageSources } from "@dst/content/images";
+import type { Moment } from "../schedule";
+
+interface Props {
+  moments: Moment[];
+  /** The page's own cover, for the moments that bring none. */
+  image: string;
+  alt: string;
+}
+const { moments, image, alt } = Astro.props;
+
+const timed = moments.filter((m) => "daily" in m.recurs);
+const covers = timed.map((m) => {
+  const src = m.cover?.image ?? image;
+  const sources = imageSources(Astro.site?.hostname, src);
+  return {
+    at: (m.recurs as { daily: string }).daily,
+    src,
+    alt: m.cover?.alt ?? alt,
+    caption: m.cover?.caption ?? `${m.name}, at ${(m.recurs as { daily: string }).daily} on your clock`,
+    avif: sources?.avif ?? "",
+    webp: sources?.webp ?? "",
+  };
+});
+// The HTML carries the page's own picture; the clock picks from there.
+const first = covers.find((c) => c.src === image) ?? covers[0];
+---
+{covers.length > 1 && first && (
+  <figure class="night-cover" data-covers={JSON.stringify(covers)}>
+    <Photo src={first.src} alt={first.alt} loading="eager" fetchpriority="high" sizes="(max-width: 46rem) 100vw, 22rem" />
+    <figcaption class="night-cover-caption">{first.caption}</figcaption>
+  </figure>
+)}
+
+<script>
+  interface Cover { at: string; src: string; alt: string; caption: string; avif: string; webp: string }
+
+  const figure = document.querySelector<HTMLElement>(".night-cover[data-covers]");
+  if (figure) {
+    const covers = JSON.parse(figure.dataset.covers!) as Cover[];
+    const img = figure.querySelector("img")!;
+    const avif = figure.querySelector<HTMLSourceElement>('source[type="image/avif"]');
+    const webp = figure.querySelector<HTMLSourceElement>('source[type="image/webp"]');
+    const caption = figure.querySelector<HTMLElement>(".night-cover-caption")!;
+    let shown: Cover | undefined;
+
+    /** The moment that comes round next, strictly: at 16:20:00 the
+        afternoon pot has come, and the night one is next. */
+    const next = (now: Date): Cover => {
+      const minutes = now.getHours() * 60 + now.getMinutes();
+      const until = (c: Cover) => {
+        const [h, m] = c.at.split(":").map(Number);
+        return ((h * 60 + m - minutes + 1440 - 1) % 1440) + 1; // 1..1440, never 0
+      };
+      return covers.reduce((a, b) => (until(b) < until(a) ? b : a));
+    };
+
+    const tick = () => {
+      const c = next(new Date());
+      if (c === shown) return;
+      shown = c;
+      if (avif) avif.srcset = c.avif;
+      if (webp) webp.srcset = c.webp;
+      img.src = c.src;
+      img.alt = c.alt;
+      caption.textContent = c.caption;
+      figure.dataset.cover = c.at;
+    };
+    tick();
+    setInterval(tick, 1000);
+  }
+</script>
+
+<style>
+  .night-cover {
+    margin: 0;
+  }
+  .night-cover img {
+    display: block;
+    width: 100%;
+    /* Photo prints the file's own 1024×1024 as width/height attributes; without
+       this the height attribute wins over the ratio below. */
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: var(--radius);
+    background: var(--surface-sunk);
+  }
+  @media (min-width: 40rem) {
+    .night-cover img { aspect-ratio: 1; }
+  }
+  .night-cover-caption {
+    margin: var(--space-1) 0 0;
+    color: var(--ink-muted);
+    font-size: var(--step--1);
+  }
+</style>

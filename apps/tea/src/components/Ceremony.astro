@@ -11,9 +11,14 @@ interface Props {
   moments: Moment[];
 }
 const { moments } = Astro.props;
+// A picture that keeps the hours with the count — NightCover, on the pages
+// whose tea times bring one. It takes the first column; the cards stack
+// beside it.
+const hasCover = Astro.slots.has("cover");
 ---
 {moments.length > 0 && (
-  <aside class="ceremony" aria-label={moments.length > 1 ? "When these tea times next come round" : `When ${moments[0].name} next comes round`}>
+  <aside class:list={["ceremony", { "has-cover": hasCover }]} aria-label={moments.length > 1 ? "When these tea times next come round" : `When ${moments[0].name} next comes round`}>
+    {hasCover && <slot name="cover" />}
     {moments.map((m) => (
       <div class="ceremony-moment">
         <p class="ceremony-name">
@@ -50,6 +55,17 @@ const { moments } = Astro.props;
     display: flex;
     flex-direction: column;
     gap: 0.15rem;
+  }
+  .ceremony.has-cover {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  @media (min-width: 40rem) {
+    .ceremony.has-cover {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      grid-template-rows: auto auto;
+      align-items: start;
+    }
+    .ceremony.has-cover > :first-child { grid-row: 1 / -1; }
   }
   .ceremony-name { margin: 0; font-weight: 700; }
   .ceremony-name a { text-decoration: none; }

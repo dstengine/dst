@@ -12,6 +12,7 @@ import { newsBySite } from "@dst/content/news";
 import { go } from "../outbound";
 import { moments } from "../schedule";
 import Ceremony from "./Ceremony.astro";
+import NightCover from "./NightCover.astro";
 
 interface Props {
   item: NewsItem;
@@ -21,6 +22,8 @@ const { item, more } = Astro.props;
 const all = sections(newsBySite(siteId));
 // The tea times this page is the page about, in the order of the day.
 const ceremony = moments.filter((m) => m.guide?.slug === item.slug && m.guide.about);
+// Whether those tea times bring a picture that follows the clock.
+const clockCover = ceremony.some((m) => m.cover);
 ---
 <Layout title={item.titleSeo ?? item.title} description={item.summary} image={item.image}>
   <NewsArticle
@@ -36,6 +39,12 @@ const ceremony = moments.filter((m) => m.guide?.slug === item.slug && m.guide.ab
     tagsLabel="More on"
     actionHref={item.action ? go(`${item.slug}-action`) : undefined}
   >
-    {ceremony.length > 0 && <Ceremony slot="lead" moments={ceremony} />}
+    {ceremony.length > 0 && (
+      <Ceremony slot="lead" moments={ceremony}>
+        {clockCover && item.image && (
+          <NightCover slot="cover" moments={ceremony} image={item.image} alt={item.imageAlt ?? ""} />
+        )}
+      </Ceremony>
+    )}
   </NewsArticle>
 </Layout>

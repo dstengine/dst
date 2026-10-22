@@ -32,9 +32,27 @@ export interface Moment {
       page about this tea time rather than good reading beside it — that page
       then counts down to it too. */
   guide?: { slug: string; label: string; about?: true };
+  /** A picture of its own, for the hours this moment is the next one: the
+      guide page about it swaps its cover for this one while the count runs
+      towards it, and back when the next moment takes over. A moment without
+      one shows the page's own cover — see components/NightCover.astro. */
+  cover?: { image: string; alt: string; caption: string };
 }
 
 export const moments: Moment[] = [
+  {
+    slug: "four-twenty-night-tea",
+    name: "4:20 Night Tea",
+    recurs: { daily: "04:20" },
+    when: "Every day at 04:20, your time",
+    text: "The small hours' pot, at twenty past four in the morning, for those still up and those already awake. The Urnests took theirs out along the long walk at Kettlewood, flask in hand, flat on their backs under Skywalker — the great cedar at the end of it — and looked at the stars. Something that will let you sleep afterwards, or not mind that you don't: a white tea, or a cup that has never met a tea bush.",
+    guide: { slug: "420", label: "The tale of 4:20 High Tea", about: true },
+    cover: {
+      image: "/covers/420-night.jpg",
+      alt: "A painting of the green-panelled common room at night: a tall window full of stars, the Milky Way and one long shooting star across it, a steaming white cup on the sill, a candle and a copper kettle on the mahogany sideboard, and the oxblood leather armchair empty",
+      caption: "The night sky under Skywalker, until twenty past four in the morning",
+    },
+  },
   {
     slug: "early-morning-tea",
     name: "Early morning tea",

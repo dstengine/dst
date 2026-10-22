@@ -28978,6 +28978,38 @@
     }
   },
   "tea.ceo": {
+    "/covers/420-night.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/420-night-480.avif"
+        ],
+        [
+          768,
+          "/covers/420-night-768.avif"
+        ],
+        [
+          1024,
+          "/covers/420-night-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/420-night-480.webp"
+        ],
+        [
+          768,
+          "/covers/420-night-768.webp"
+        ],
+        [
+          1024,
+          "/covers/420-night-1024.webp"
+        ]
+      ]
+    },
     "/covers/420.jpg": {
       "width": 1024,
       "height": 1024,
