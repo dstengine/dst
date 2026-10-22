@@ -220,6 +220,23 @@ h2 { overflow-wrap: break-word; }
   margin: var(--space-4) 0 0;
 }
 .guide .guide-glance .event-glance { margin-top: var(--space-2); }
+/* The reading date the facts share, under them (Primavera Sound São
+   Paulo): a date a reader acts on, so muted and not faint, at the small
+   body step, as the sources' note is. */
+.guide-glance-note {
+  margin: var(--space-1) 0 0;
+  font-size: var(--step--1);
+  color: var(--ink-muted);
+}
+/* On a phone the facts sit between the chips and "On this page", and the
+   three passed 700 px at 320 on Primavera Sound São Paulo (796): the box
+   gives up padding as the "On this page" box does, and its rows close up
+   with it (the fest director's gate-3 condition 4). Only a Glance with no
+   heading of its own, straight under the guide: Creamfields Chile's, under
+   "De un vistazo", is a section of its own and stays as it shipped. */
+@media (max-width: 480px) {
+  .guide > .event-glance { padding: var(--space-2); gap: var(--space-1); }
+}
 
 .guide-section > h2 {
   font-size: var(--step-2);
@@ -236,6 +253,34 @@ h2 { overflow-wrap: break-word; }
 .guide-section ul.lines li {
   padding: var(--space-1) 0;
   border-top: 1px solid var(--border);
+}
+/* The acts of a day as one row (a section of kind "row", copy.ts): each
+   act draws the dot before it, centred in the row's gap, and the row clips
+   the dot of an act that starts a line, so no line starts or ends on a dot
+   and no name is parted from its dot ("· Courtney Barnett" opened a line
+   at every width from 320 to 1280 on Primavera Sound São Paulo's line-up
+   while the dots were text; DESIGN.md, "A separator is drawn by the item
+   that follows it"). clip-path and not overflow, so a focus ring is never
+   cut; the dot is drawn, not text, so screen readers and copied text skip
+   it, and the list says how many acts there are. */
+.guide-section ul.dot-row {
+  --dot-gap: 1.25em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--dot-gap);
+  padding-left: 0;
+  list-style: none;
+  clip-path: inset(-1em -1em -1em 0);
+}
+.guide-section ul.dot-row > li { position: relative; }
+.guide-section ul.dot-row > li + li { margin-top: 0; }
+.guide-section ul.dot-row > li::before {
+  content: "\00B7";
+  content: "\00B7" / "";
+  position: absolute;
+  left: calc(-1 * var(--dot-gap));
+  width: var(--dot-gap);
+  text-align: center;
 }
 .guide-section blockquote {
   margin: var(--space-3) 0;

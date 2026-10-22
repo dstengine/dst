@@ -74,6 +74,9 @@ function strings(guide) {
       add(`glance.${i}.label`, g.label);
       add(`glance.${i}.value`, g.value);
     });
+    // The line under them, and the one under the Sources heading
+    // (Primavera Sound São Paulo's): copy like the rest.
+    add("glanceNote", page.glanceNote);
     page.jumps?.forEach((j, i) => add(`jumps.${i}`, j.label));
     page.sections.forEach((s) => {
       add(`sections.${s.id}.heading`, s.heading);
@@ -83,6 +86,7 @@ function strings(guide) {
       add(`faq.${i}.q`, row.q);
       add(`faq.${i}.a`, row.a);
     });
+    add("sourcesNote", page.sourcesNote);
     add("sources", page.sources);
     add("links", page.links);
     add("foot", page.foot);
@@ -215,8 +219,20 @@ describe("the copy and its sheet", () => {
       const eve = new Date(Date.parse(guide.expires.prices) - DAY).toISOString().slice(0, 10);
       const before = rules.musicEvent(event, guide, main, eve);
       const after = rules.musicEvent(event, guide, main, guide.expires.prices);
-      assert.ok(before.offers.every((o) => typeof o.price === "number"), "offers carry a price while the reading holds");
+      // A list of channels (Primavera Sound São Paulo's) prices only an
+      // offer that names a sheet figure, and its stock status perishes with
+      // the prices: printed the day before, gone on the day.
+      const channels = Array.isArray(event.markup.offers) ? event.markup.offers : undefined;
+      before.offers.forEach((o, i) =>
+        assert.equal(typeof o.price === "number", channels ? !!channels[i].price : true, "offers carry a price while the reading holds"),
+      );
       assert.ok(after.offers?.every((o) => !("price" in o) && !("priceCurrency" in o)) ?? true, "no price once expired");
+      if (channels) {
+        before.offers.forEach((o, i) =>
+          assert.equal(o.availability, channels[i].availability && `https://schema.org/${channels[i].availability}`, "a channel's stock status while the prices hold"),
+        );
+        assert.ok(after.offers.every((o) => !("availability" in o)), "no stock status once the prices have expired");
+      }
       const end = new Date(Date.parse(event.edition.end ?? event.edition.start) + DAY).toISOString().slice(0, 10);
       assert.equal(rules.musicEvent(event, guide, main, end).offers, undefined, "no offers once the edition has ended");
     }
@@ -237,6 +253,16 @@ const hostOf = (url) => new URL(url).hostname.toLowerCase();
     (Field Day's MobTix form), that seller's key, "sellers.N" (the fest
     director's gate-3 condition 6). Nothing else is accepted. */
 function assertTraced(event, key, go) {
+  // A seller's document (Primavera Sound São Paulo's two Drive files): the
+  // link the seller's page gives to it, on the sheet, is the hop's URL less
+  // its query, and the file is on Drive.
+  if (go.kind === "seller-document") {
+    const link = copy.resolve(event.sheet, go.source);
+    assert.ok(typeof link?.url === "string", `go.${key}: ${go.source} names no link with a url on the sheet`);
+    assert.equal(link.url.split("?")[0], go.url, `go.${key}: not the url of ${go.source}, less its query`);
+    assert.equal(hostOf(go.url), "drive.google.com", `go.${key}: a seller's document is a Drive file`);
+    return;
+  }
   if (go.kind === "maps") {
     assert.ok(copy.resolve(event.sheet, go.source) !== undefined, `go.${key}: source "${go.source}" names nothing on the sheet`);
     assert.match(go.url, /^https:\/\/www\.google\.com\/maps\/search\/\?api=1&query=/, `go.${key}: a maps hop is a plain maps search`);
@@ -426,6 +452,31 @@ describe("the built pages", { skip: built ? false : "apps/fest/dist is missing: 
     }
     assert.deepEqual(bad, []);
     assert.equal(decode(html.get("/festivals/").match(/<title>([\s\S]*?)<\/title>/)[1]), hub.title);
+  });
+
+  // The trail a reader sees and the one the BreadcrumbList gives a search
+  // engine say the same names in the same order (the CTO's gate-3 item 3
+  // on Primavera Sound São Paulo, whose crumbs are the guide's own words).
+  test("the visible trail equals the BreadcrumbList names on every guide page", () => {
+    const bad = [];
+    const graph = (node, into = []) => {
+      if (Array.isArray(node)) node.forEach((n) => graph(n, into));
+      else if (node && typeof node === "object") {
+        if (node["@type"] === "BreadcrumbList") into.push(node);
+        Object.values(node).forEach((v) => graph(v, into));
+      }
+      return into;
+    };
+    for (const route of routes.guideRoutes()) {
+      const h = html.get(route.path) ?? "";
+      const nav = h.match(/<nav class="crumbs"[^>]*>([\s\S]*?)<\/nav>/)?.[1] ?? "";
+      const seen = [...nav.matchAll(/<li\b[^>]*>([\s\S]*?)<\/li>/g)].map((m) => decode(m[1]));
+      const lists = [...h.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].flatMap((m) => graph(JSON.parse(m[1])));
+      if (lists.length !== 1) { bad.push(`${route.path}: ${lists.length} BreadcrumbLists`); continue; }
+      const named = lists[0].itemListElement.map((i) => i.name);
+      if (!seen.length || JSON.stringify(seen) !== JSON.stringify(named)) bad.push(`${route.path}: "${seen.join(" › ")}" against "${named.join(" › ")}"`);
+    }
+    assert.deepEqual(bad, []);
   });
 
   test("an id appears once on a page, and a section's is not one the page keeps", () => {

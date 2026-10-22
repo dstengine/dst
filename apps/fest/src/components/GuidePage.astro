@@ -35,12 +35,20 @@ const path = pathOf(page);
 const ctx: Ctx = { event, guide, page, today, where: path };
 const main = mainPage(guide);
 
-// The trail matches the one in the structured data (schema.ts): the hub,
-// then the guide's own page under the event's name, then this page under
-// its title without the suffix.
-const crumbs = page === main ? [] : [{ href: guide.path, label: event.name, title: withoutSuffix(main.title) }];
+// The trail matches the one in the structured data (schema.ts, through
+// [...path].astro): the hub, then the guide's own page under the event's
+// name as the guide gives it, then this page under its crumb, or its title
+// without the suffix where it has none.
+const crumbs = page === main ? [] : [{ href: guide.path, label: guide.name ?? event.name, title: main.linkTitle ?? withoutSuffix(main.title) }];
+const current = page.crumb ?? withoutSuffix(page.title);
 
-const siblings = guide.pages.map((p) => ({ href: pathOf(p), label: p.label, title: withoutSuffix(p.title) }));
+// The sibling row's tooltips say what each page holds (navTitle), as the
+// other links to a page do (linkTitle, copy.ts), where the guide gives them.
+const siblings = guide.pages.map((p) => ({ href: pathOf(p), label: p.label, title: p.navTitle ?? withoutSuffix(p.title) }));
+// A tooltip that reads its label back says nothing (LOCAL.md): the build
+// stops on one, here where the guide's own strings meet.
+for (const c of crumbs) if (c.title === c.label) throw new Error(`${path}: the crumb "${c.label}" has its own label as its title`);
+for (const s of siblings) if (s.title === s.label) throw new Error(`${path}: the row's "${s.label}" has its own label as its title`);
 // The event's guides in other languages. BaseLayout would put them in the
 // header, which cannot hold two names like "English (Australia)" beside the
 // wordmark at 320 px (the fixture proof of 22 Oct 2026); theme.css hides
@@ -52,7 +60,7 @@ const languages = languagesFor(page, guide);
 // printed.
 const plain = (text: string) => applySpans(text, guide, today, path).trim();
 const sections = page.sections
-  .map((s) => ({ ...s, heading: plain(s.heading), html: blocks(s.body, ctx, s.kind === "table") }))
+  .map((s) => ({ ...s, heading: plain(s.heading), html: blocks(s.body, ctx, s.kind) }))
   .filter((s) => s.html);
 // A jump link's label is the whole of what it does, so it carries no
 // tooltip: one that read the label back is the thing these pages may not
@@ -60,11 +68,15 @@ const sections = page.sections
 // A page that names its own (Creamfields Chile's main page: four sections
 // and the questions, under short labels) has them as given, each checked
 // against what the page prints that day.
+// A label may sit in a span with the section it points at (Primavera Sound
+// São Paulo's "O que o organizador lista como valor", whose section goes
+// with the prices), and leaves the list on the same day.
 const jumpIds = new Set([...sections.map((s) => s.id), "questions"]);
-for (const j of page.jumps ?? [])
+const ownJumps = page.jumps?.map((j) => ({ ...j, label: plain(j.label) })).filter((j) => j.label);
+for (const j of ownJumps ?? [])
   if (!jumpIds.has(j.id)) throw new Error(`${path}: the jump "${j.label}" names #${j.id}, which the page does not print`);
-const jumps = page.jumps
-  ? page.jumps.map((j) => ({ ...j, title: false as const }))
+const jumps = ownJumps
+  ? ownJumps.map((j) => ({ ...j, title: false as const }))
   : sections.map((s) => ({ id: s.id, label: s.heading, title: false as const }));
 
 // Each answer twice: as the page prints it, with its links to the guide's
@@ -88,8 +100,10 @@ const [ledeFirst, ...ledeRest] = page.lede.split(/\n{2,}/);
 const lede = inline(ledeFirst, ctx);
 const why = ledeRest.length ? inline(ledeRest.join(" "), ctx) : "";
 // The facts at a glance print as text: a value's [key] tags are checked
-// and left out, as in the copy.
+// and left out, as in the copy. The line under them (the reading date they
+// share) is copy like any other.
 const glance = page.glance?.map((g) => ({ label: g.label, value: inlineText(g.value, ctx), icon: ICONS.list }));
+const glanceNote = page.glanceNote === undefined ? "" : inline(page.glanceNote, ctx);
 const sources = page.sources === undefined ? "" : sourcesHtml(page.sources, ctx);
 const sourcesNote = page.sourcesNote === undefined ? "" : inline(page.sourcesNote, ctx);
 const links = page.links === undefined ? "" : inline(page.links, ctx);
@@ -97,10 +111,11 @@ const links = page.links === undefined ? "" : inline(page.links, ctx);
 <article class="container guide">
   <Breadcrumbs
     crumbs={crumbs}
-    current={withoutSuffix(page.title)}
+    current={current}
     homeHref={home.homeHref}
     homeLabel={home.homeLabel}
     homeTitle={words.rootCrumbTitle}
+    label={words.breadcrumbs}
   />
   <header class="guide-head">
     <h1>{page.h1}</h1>
@@ -129,7 +144,7 @@ const links = page.links === undefined ? "" : inline(page.links, ctx);
       <h2 id="glance">{page.glanceHeading}</h2>
       <Glance facts={glance} />
     </section>
-  ) : <Glance facts={glance} />)}
+  ) : <Glance facts={glance} />)}{glanceNote && <p class="guide-glance-note" set:html={glanceNote} />}
   {(page.calendar || page.map) && (
     <p class="guide-files">
       {page.calendar && <a href={page.calendar.href} title={page.calendar.title}>{page.calendar.label}</a>}

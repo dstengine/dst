@@ -14,13 +14,14 @@
 //   another page of the guide. The anchor is the noun phrase before the
 //   arrow ("the tickets page", or the guide's own `anchors` entry where the
 //   sentence has no such phrase), the arrow and the path go, and the title is
-//   the target's own title without the suffix.
+//   the target's `linkTitle`, or its own title without the suffix.
 // - `[label](/field-day/faq/#cant-bring)`: a link to a section of a guide's
 //   page. Its title is that section's heading, which says more than "the
 //   section below" does.
 // - `**label**`: the label a price card opens with (Field Day's tickets
-//   page). Bold on the page and in the Markdown twin; plain words in the
-//   structured data.
+//   page), or a list item's lead words (Primavera Sound São Paulo's ticket
+//   types and editions). Bold on the page and in the Markdown twin; plain
+//   words in the structured data.
 // - `{{until key}}…{{/until}}`: words that stop being true on a date the
 //   guide names in `expires` (a price, a fare). From that day the build
 //   drops them from the page, the Markdown twin and llms.txt. A span may
@@ -29,7 +30,7 @@
 //
 // The text outside the anchors is never changed: `inline` checks that what
 // it renders reads exactly as the copy does with the marks taken out.
-import type { FestEvent, Guide, GuidePage } from "./data/types";
+import type { FestEvent, Guide, GuidePage, Section } from "./data/types";
 
 export interface Ctx {
   event: FestEvent;
@@ -212,22 +213,65 @@ const KEEP_ES = new RegExp(
   ].join("|"),
   "gu",
 );
+// Portuguese, as Brazil writes it (Primavera Sound São Paulo): a day with
+// its month, ordinal or not, and its year ("5 de dezembro de 2026", "1º de
+// dezembro"); a time, or a range of two ("12h30", "das 13h às 17h"); a sum
+// in reais with its sign ("R$ 765,45", the organiser's "R$1.200,00"); a
+// count or an age with its noun ("40 nomes", "5 a 15 anos"); a law's
+// number ("nº 10.741/2003"); a paragraph sign with its number ("§ 10"); a
+// line with its number and name ("Linha 9-Esmeralda", which would strand
+// "9-"); a phone number and a CEP, which a parent copies from the dates
+// page (the fest director's gate-3 condition 6); and two the line-break
+// sweep of 22 October 2026 found: "line-up", the guide's own word, which a
+// browser breaks at its hyphen ("line-|up" in a link at 600 px), and a
+// range of years ("de 2022 a | 2026" at 414).
+const MES_PT = "(?:janeiro|fevereiro|março|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro)";
+const HORA = "\\d{1,2}h(?:\\d{2})?";
+const KEEP_PT = new RegExp(
+  [
+    `\\b\\d{1,2}º? de ${MES_PT}(?: de \\d{4})?(?![\\p{L}\\d])`, // 5 de dezembro de 2026, 1º de dezembro
+    `\\b${HORA}(?: às ${HORA})?(?![\\p{L}\\d])`, // 12h30, 13h às 17h
+    `\\bR\\$ ?\\d[\\d.]*(?:,\\d{2})?`, // R$ 765,45, R$1.200,00
+    `\\b\\d[\\d.,]*%?(?: a \\d[\\d.,]*)? (?:anos|meses|dias|nomes|artistas|pessoas|vagas|parcelas|ingressos|edições|shows)(?!\\p{L})`, // 40 nomes, 5 a 15 anos
+    `\\bnº \\d[\\d./]*\\d`, // nº 10.741/2003
+    `§ \\d+º?`, // § 10, § 2º
+    `\\bLinha \\d+(?:-\\p{L}+)?`, // Linha 9-Esmeralda
+    `\\(\\d{2}\\) \\d{4,5}-\\d{4}\\b`, // (11) 5666-8822
+    `(?:\\bCEP )?\\b\\d{5}-\\d{3}\\b`, // CEP 04801-010
+    `\\b[Ll]ine-up\\b`, // line-up
+    `\\b\\d{4} a \\d{4}\\b`, // 2022 a 2026
+  ].join("|"),
+  "gu",
+);
 /** Each language's keep-together list, by the guide's language: "es-CL"
     reads es. A guide in a language with no row does not build. */
-const KEEP: Record<string, RegExp> = { en: KEEP_TOGETHER, es: KEEP_ES };
+const KEEP: Record<string, RegExp> = { en: KEEP_TOGETHER, es: KEEP_ES, pt: KEEP_PT };
+// In a long run a split date is a nicety, but a sign and the number it
+// belongs to are one token wherever they stand: the sweep found "R$ |
+// 765,45", "(11) | 5666-8822", "nº | 12.933" and "Linha | 9-Esmeralda" in
+// Primavera Sound São Paulo's paragraphs at 320 px, and a phone number
+// split in two is the fault the fest director's condition 6 names. A
+// no-break space holds each pair (the copy's words unchanged, as the
+// Glance's date is held), not a span, which would cut the paragraph into
+// pieces the sweep reads as short.
+const GLUE_PT = /(R\$|\(\d{2}\)|\bnº|§|\bCEP|\bLinha) (?=\d)/gu;
+const GLUE: Record<string, RegExp> = { pt: GLUE_PT };
 const unescaped = (s: string) => s.replace(/&(amp|lt|gt|quot);/g, "_");
 /** The rendered HTML with its dates and counts kept whole, in each short
-    run of text between two tags. Tags are left alone: a title attribute
-    never gets a span. */
+    run of text between two tags, and a language's glued pairs in the long
+    ones. Tags are left alone: a title attribute never gets a span. */
 const typeset = (html: string, lang: string) => {
   const keep = KEEP[lang.slice(0, 2).toLowerCase()];
   if (!keep) throw new Error(`copy.ts has no keep-together list for "${lang}"`);
+  const glue = GLUE[lang.slice(0, 2).toLowerCase()];
   return html
     .split(/(<[^>]*>)/)
     .map((run) =>
-      run.startsWith("<") || [...unescaped(run)].length > 160
+      run.startsWith("<")
         ? run
-        : run.replace(keep, (m) => `<span class="nowrap">${m}</span>`),
+        : [...unescaped(run)].length > 160
+          ? glue ? run.replace(glue, "$1\u00a0") : run
+          : run.replace(keep, (m) => `<span class="nowrap">${m}</span>`),
     )
     .join("");
 };
@@ -262,10 +306,15 @@ const HEADING_KEEP = new RegExp(
 // from 360 px up (theme.css, .keep-date): whole wherever it fits, wrapping
 // inside itself where it cannot, so it never overflows.
 const HEADING_KEEP_ES = new RegExp(`\\b\\d{1,2} de ${MES}(?: de \\d{4})?(?![\\p{L}\\d])[:,.;]?`, "giu");
+// Portuguese the same way ("Sábado, 5 de dezembro de 2026", Primavera
+// Sound São Paulo's line-up days), the day's ordinal included.
+const HEADING_KEEP_PT = new RegExp(`\\b\\d{1,2}º? de ${MES_PT}(?: de \\d{4})?(?![\\p{L}\\d])[:,.;]?`, "giu");
+const HEADING_KEEP_BY: Record<string, RegExp> = { es: HEADING_KEEP_ES, pt: HEADING_KEEP_PT };
 const ASTRO_ESCAPES: Record<string, string> = { "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" };
 export const headingHtml = (text: string, lang = "en") => {
   const html = text.replace(/[&<>'"]/g, (c) => ASTRO_ESCAPES[c]).replace(HEADING_KEEP, (m) => `<span class="nowrap">${m}</span>`);
-  return lang.slice(0, 2).toLowerCase() === "es" ? html.replace(HEADING_KEEP_ES, (m) => `<span class="keep-date">${m}</span>`) : html;
+  const keep = HEADING_KEEP_BY[lang.slice(0, 2).toLowerCase()];
+  return keep ? html.replace(keep, (m) => `<span class="keep-date">${m}</span>`) : html;
 };
 
 // A price card's total stays with the word before its "=": "$209.90 +
@@ -332,7 +381,7 @@ function marks(text: string, ctx: Ctx, site: string): { html: string; md: string
       const [path, id] = href.split("#");
       const page = pages.find((p) => pathOf(p) === path);
       if (!page) throw new Error(`${ctx.where}: [${label}](${href}) links to no page of this guide`);
-      if (id === undefined) target = { href, title: withoutSuffix(page.title) };
+      if (id === undefined) target = { href, title: page.linkTitle ?? withoutSuffix(page.title) };
       else {
         // A section of a page: named by its heading, as it reads that day.
         const section = page.sections.find((s) => s.id === id);
@@ -380,7 +429,7 @@ function marks(text: string, ctx: Ctx, site: string): { html: string; md: string
     if (at < 0 || sentence.indexOf(phrase, at + 1) >= 0)
       throw new Error(`${ctx.where}: "${phrase}" must occur exactly once in "${sentence.trim()}"`);
     const from = regionStart + start + at;
-    const title = withoutSuffix(target.title);
+    const title = target.linkTitle ?? withoutSuffix(target.title);
     if (title === phrase) throw new Error(`${ctx.where}: the title of "${phrase}" repeats it`);
     pieces.push({
       from, to: from + phrase.length,
@@ -449,7 +498,7 @@ export const SITE = "https://fest.one";
 type Part = { html: string; md: string };
 type Block =
   | { kind: "p" | "quote" | "h3"; parts: Part[] }
-  | { kind: "list" | "lines" | "links" | "cards"; parts: Part[] }
+  | { kind: "list" | "lines" | "links" | "cards" | "dot-row"; parts: Part[] }
   | { kind: "table"; rows: string[]; caption?: Part };
 
 /** A line that is one link and nothing else but its tags: a hop the copy
@@ -457,8 +506,12 @@ type Block =
 const LINK_LINE = /^\[[^\]\n]+\]\([^)\s]+\)(?:\s+\[[A-Za-z_][\w.]*\])*$/;
 /** A price card: "**Label**: $209.90 + $10.00 fees = $219.90. On sale; …".
     The label, then the figures up to the total's full stop, then the rest,
-    which is the ticket's status. */
+    which is the ticket's status. A list is a row of cards only when every
+    item opens so, label and colon: a list whose items only lead with bold
+    words ("**Passe Geral** (Primavera Pass, …): pista, …", "**2022** — …")
+    stays a list. */
 const CARD = /^\*\*([^*\n]+)\*\*(:?)\s*([\s\S]*)$/;
+const CARD_OPENING = /^\*\*[^*\n]+\*\*:/;
 const CARD_FIGURES = / = (?:A?\$)\d[\d,.]*\d\.(?=\s|$)/;
 
 /** One price card: each of its three parts rendered and checked on its
@@ -489,14 +542,19 @@ const SUBHEADING = /^\*\*([^*\n]+)\*\*$/;
 /** A section body's blocks. Paragraphs are separated by a blank line; a
     paragraph whose lines all start "- " is a list, "> " a quotation, and
     one of several plain lines a list of lines (the lineup's stages). Two
-    kinds Field Day brought: a list whose every item opens with a **label**
-    is a row of price cards, and a paragraph whose every line is a single
-    link is a run of link lines. Two more in a section of kind "table"
-    (Creamfields Chile's prices): a paragraph of "|" rows is a table, with
-    the one-line paragraph before it as its caption, and a lone **label**
-    line is a subheading. A paragraph or item whose spans have all expired
-    is left out. */
-function parse(text: string, ctx: Ctx, table = false): Block[] {
+    kinds Field Day brought: a list whose every item opens with a
+    **label** and its colon is a row of price cards, and a paragraph whose
+    every line is a single link is a run of link lines. Two more in a
+    section of kind "table" (Creamfields Chile's prices): a paragraph of
+    "|" rows is a table, with the one-line paragraph before it as its
+    caption, and a lone **label** line is a subheading. One in a section of
+    kind "row" (Primavera Sound São Paulo's acts of a day): a one-line
+    paragraph of items joined by " · " is a list, each item drawing the dot
+    before it, so the copy's " · " is a mark there, as it is between Field
+    Day's sources. A paragraph or item whose spans have all expired is
+    left out. */
+function parse(text: string, ctx: Ctx, kind: Section["kind"] = "prose"): Block[] {
+  const table = kind === "table";
   const blocks: Block[] = [];
   for (const para of splitSpans(text).split(/\n{2,}/)) {
     const lines = para.split("\n");
@@ -509,7 +567,7 @@ function parse(text: string, ctx: Ctx, table = false): Block[] {
     if (lines.every((l) => l.startsWith("- ") || l === "-")) {
       const items = lines.map((l) => live(l.slice(2))).filter(Boolean);
       if (!items.length) continue;
-      if (items.every((i) => i.startsWith("**"))) blocks.push({ kind: "cards", parts: items.map((i) => card(i, ctx)) });
+      if (items.every((i) => CARD_OPENING.test(i))) blocks.push({ kind: "cards", parts: items.map((i) => card(i, ctx)) });
       else blocks.push({ kind: "list", parts: keep(items.map(render)) });
     } else if (lines.every((l) => l.startsWith("> "))) {
       const part = render(lines.map((l) => l.slice(2)).join(" "));
@@ -520,6 +578,11 @@ function parse(text: string, ctx: Ctx, table = false): Block[] {
       const before = blocks.at(-1);
       const caption = before?.kind === "p" ? (blocks.pop(), before.parts[0]) : undefined;
       blocks.push({ kind: "table", rows, caption });
+    } else if (kind === "row" && lines.length === 1 && live(para).includes(" · ")) {
+      // A tag closing the paragraph stays with the last item, where marks()
+      // checks it and leaves it out.
+      const parts = keep(live(para).split(" · ").map(render));
+      if (parts.length) blocks.push({ kind: "dot-row", parts });
     } else if (table && lines.length === 1 && SUBHEADING.test(live(para))) {
       const part = render(SUBHEADING.exec(live(para))![1]);
       if (part) blocks.push({ kind: "h3", parts: [part] });
@@ -574,8 +637,8 @@ function tableHtml(rows: string[], caption: Part | undefined, ctx: Ctx): string 
   ].join("");
 }
 
-export function blocks(text: string, ctx: Ctx, table = false): string {
-  return parse(text, ctx, table)
+export function blocks(text: string, ctx: Ctx, kind: Section["kind"] = "prose"): string {
+  return parse(text, ctx, kind)
     .map((b) => {
       if (b.kind === "table") return tableHtml(b.rows, b.caption, ctx);
       if (b.kind === "h3") return `<h3>${b.parts[0].html}</h3>`;
@@ -589,8 +652,8 @@ export function blocks(text: string, ctx: Ctx, table = false): string {
     .join("\n");
 }
 
-export function blocksMd(text: string, ctx: Ctx, table = false): string {
-  return parse(text, ctx, table)
+export function blocksMd(text: string, ctx: Ctx, kind: Section["kind"] = "prose"): string {
+  return parse(text, ctx, kind)
     .map((b) => {
       // The table as the copy writes it, under its caption line.
       if (b.kind === "table") return [...(b.caption ? [b.caption.md, ""] : []), ...b.rows].join("\n");
@@ -598,6 +661,8 @@ export function blocksMd(text: string, ctx: Ctx, table = false): string {
       if (b.kind === "p") return b.parts[0].md;
       if (b.kind === "quote") return `> ${b.parts[0].md}`;
       if (b.kind === "links" && b.parts.length === 1) return b.parts[0].md;
+      // A row of names reads in Markdown as the copy writes it.
+      if (b.kind === "dot-row") return b.parts.map((p) => p.md).join(" · ");
       return b.parts.map((p) => `- ${p.md}`).join("\n");
     })
     .join("\n\n");

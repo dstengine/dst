@@ -1229,8 +1229,12 @@ export const guides: Guide[] = [
   {
     slug: "en-AU",
     createdAt: "2026-10-22T11:40:00+04:00",
-    updatedAt: "2026-10-22T11:40:00+04:00",
+    updatedAt: "2026-10-22T20:00:00+04:00",
     event: "beyond-the-valley",
+    // The event as the hub and the trail name it, with the edition, as the
+    // guides beside it do (the fest director's note at Primavera Sound São
+    // Paulo's gate 3, ruled by the session).
+    name: "Beyond The Valley 2026/27",
     lang: "en-AU",
     dir: "ltr",
     path: "/beyond-the-valley/",

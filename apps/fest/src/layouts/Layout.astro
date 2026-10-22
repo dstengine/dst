@@ -3,7 +3,7 @@
 // for a guide's page, the guide's locale and anything the guide adds to the
 // footer. Nothing here is a word of any page.
 import BaseLayout from "@dst/ui/BaseLayout.astro";
-import { langOf, site as sites, type Lang } from "../site.config";
+import { chrome as words, langOf, site as sites, type Lang } from "../site.config";
 import type { Guide } from "../data/types";
 import "../styles/theme.css";
 
@@ -14,11 +14,14 @@ interface Props {
   alternates?: { lang: string; href: string; label: string; title: string }[];
   /** Breadcrumb names for the trail in the structured data. */
   crumbLabels?: Record<string, string>;
+  /** The last of them, where the page's crumb is not its title less the
+      suffix. */
+  crumbCurrent?: string;
   /** The guide the page belongs to; absent on the hub. */
   guide?: Guide;
   language?: Lang;
 }
-const { title, description, jsonLd, alternates, crumbLabels, guide, language = "en" } = Astro.props;
+const { title, description, jsonLd, alternates, crumbLabels, crumbCurrent, guide, language = "en" } = Astro.props;
 
 // The guide's locale over the language's, and its own footer links after the
 // hub's. Spread, like the rest of the identity, so the layout sets none of
@@ -31,6 +34,10 @@ const site = {
   ...(guide?.footerLinks ? { footerLinks: [...own.footerLinks, ...guide.footerLinks] } : {}),
   ...(guide?.footerNote ? { complianceNote: guide.footerNote } : {}),
 };
+// The skip link and the menu button in the guide's language, where the
+// shared layout's own table has no row for it (pt); otherwise its row.
+const row = guide ? words[langOf(guide.lang)] : undefined;
+const chrome = row?.skip || row?.menu ? { skip: row.skip, menu: row.menu } : undefined;
 ---
 <BaseLayout
   {...site}
@@ -40,6 +47,8 @@ const site = {
   jsonLd={jsonLd}
   alternates={alternates}
   crumbLabels={crumbLabels}
+  crumbCurrent={crumbCurrent}
+  chrome={chrome}
 >
   {/* Only the two faces the first paint needs: Chivo 400 for the text and
       Syne 800 for the headings, Latin subset. Everything else loads when a

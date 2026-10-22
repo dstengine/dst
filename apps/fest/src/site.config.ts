@@ -9,9 +9,11 @@
 // es, pt and th rows come with the cards that ship those guides, each with
 // its native reader: es with Creamfields Chile (es-CL), its strings passed
 // by the es-CL native reader at gate 3, and written to serve an es-MX guide
-// as they stand.
+// as they stand; pt with Primavera Sound São Paulo (pt-BR), passed by the
+// pt-BR native reader at gate 3, the root crumb "Festivais" and the
+// trail's "Trilha de navegação" after it.
 
-export type Lang = "en" | "es";
+export type Lang = "en" | "es" | "pt";
 
 /** The row a guide's locale reads: "es-CL" and "es-MX" read `es`. A
     locale with no row throws, so a guide in a new language cannot build
@@ -89,6 +91,28 @@ export const site: Record<Lang, {
     analytics: false,
     defaultTheme: "dark",
   },
+  // Brazilian Portuguese, as en's but in Portuguese. The root crumb says
+  // "Festivais", the place a reader is in, where "Todos os guias" read as a
+  // button (the fest director's gate-3 condition 1); its tooltip, the
+  // wordmark's and the footer link's say what the hub holds.
+  pt: {
+    siteName: "fest.one",
+    footerSiteName: "fest.one",
+    homeTitle: "Todos os guias de festival do fest.one",
+    titleSuffix: "guia do festival",
+    keyword: "festival",
+    lang: "pt-BR",
+    homeHref: "/festivals/",
+    homeLabel: "Festivais",
+    footerLinks: [
+      { href: "/festivals/", label: "Todos os guias de festivais", title: "Todos os guias de festival do fest.one" },
+    ],
+    publisher,
+    networkFooter: false,
+    partnerDisclosure: false,
+    analytics: false,
+    defaultTheme: "dark",
+  },
 };
 
 /** The words the guide template says itself, per language. */
@@ -99,10 +123,22 @@ export const chrome: Record<Lang, {
   siblingNav: string;
   /** The heading over a page's jump list. */
   onThisPage: string;
-  /** The hub's own head for its Markdown twin and llms.txt. */
-  llmsHeading: string;
+  /** The hub's own head for its Markdown twin and llms.txt, which are
+      English: only en's row is read. */
+  llmsHeading?: string;
   /** The `aria-label` of the row of the guide's other languages. */
   otherLanguages: string;
+  /** The trail's `aria-label`; "Breadcrumb", the shared default, where
+      absent. */
+  breadcrumbs?: string;
+  /** The skip link's and the menu button's words, where BaseLayout's own
+      table has no row for the language (it has none for pt). */
+  skip?: string;
+  menu?: string;
+  /** What a screen reader hears between a page's label and the guide's
+      name in the hub's row of pages, which a sighted reader does not see:
+      " " where absent ("Tickets Beyond The Valley 2026/27"). */
+  rowJoint?: string;
 }> = {
   en: {
     rootCrumbTitle: "Every festival guide on fest.one, by event and language",
@@ -117,9 +153,23 @@ export const chrome: Record<Lang, {
     onThisPage: "En esta página",
     llmsHeading: "Guías de festivales de fest.one",
     otherLanguages: "Esta guía en otros idiomas",
+    breadcrumbs: "Ruta de navegación",
+  },
+  pt: {
+    rootCrumbTitle: "Todos os guias de festival do fest.one",
+    siblingNav: "Neste guia",
+    onThisPage: "Nesta página",
+    otherLanguages: "Este guia em outros idiomas",
+    breadcrumbs: "Trilha de navegação",
+    skip: "Pular para o conteúdo",
+    menu: "Abrir menu",
+    // "Ingressos do Primavera Sound São Paulo 2026": a festival's name takes
+    // the article (the pt-BR native reader on the executor's strings, 22
+    // Oct 2026).
+    rowJoint: " do ",
   },
 };
 
 // Every keyword in one place for tools/seo-check.mjs, which reads this file
 // as text and picks the one matching each page's <html lang>.
-export const keywords = { en: "festival", es: "festival" };
+export const keywords = { en: "festival", es: "festival", pt: "festival" };

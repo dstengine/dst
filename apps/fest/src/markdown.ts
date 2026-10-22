@@ -33,7 +33,7 @@ function guideDocs(guide: Guide, day: string): Doc[] {
     // Headings and questions as the page prints them that day (GuidePage).
     const plain = (text: string) => applySpans(text, guide, day, ctx.where).trim();
     const sections = page.sections.flatMap((s) => {
-      const body = blocksMd(s.body, ctx, s.kind === "table");
+      const body = blocksMd(s.body, ctx, s.kind);
       return body ? [`## ${plain(s.heading)}`, "", body, ""] : [];
     });
     const faq = page.faq.flatMap((row) => {
@@ -87,7 +87,7 @@ function hubDoc(day: string): Doc {
     const main = mainPage(guide);
     const ctx: Ctx = { event, guide, today: day, where: "/festivals/ (Markdown)" };
     return [
-      `## [${event.name}](${abs(`${guide.path.replace(/\/$/, "")}.md`)}) (${guide.hubLabel})`,
+      `## [${guide.name ?? event.name}](${abs(`${guide.path.replace(/\/$/, "")}.md`)}) (${guide.hubLabel})`,
       "",
       inlineMd(guide.hubBlurb, ctx),
       "",
@@ -124,7 +124,7 @@ export function llms(): string {
   ];
   for (const guide of hubOrder(guides, events, day)) {
     const event = eventOf(events, guide);
-    lines.push(`## ${event.name}, ${guide.hubLabel}`, "");
+    lines.push(`## ${guide.name ?? event.name}, ${guide.hubLabel}`, "");
     for (const page of guide.pages) lines.push(`- [${page.title}](${abs(`/${page.slug}.md`)}): ${page.description}`);
     lines.push("");
   }

@@ -19,7 +19,10 @@ export interface GoTarget {
   /** The sheet's source key (s1…); for a maps search, the sheet key of
       the organiser's instruction it follows; for an organiser's form that
       the sheet holds as an official seller with its own URL and reading
-      (Field Day's MobTix form), that seller's key (`sellers.2`). */
+      (Field Day's MobTix form), that seller's key (`sellers.2`); for a
+      seller's document, the sheet key of the link the seller's page gives
+      to it (`age.links.0`), whose url, less its query, is the hop's
+      (Primavera Sound São Paulo's two Drive files). */
   source: string;
   kind: "organiser" | "seller" | "resale" | "venue" | "public-body" | "press" | "seller-document" | "maps";
   /** For `resale`: the organiser's sources that name it as the official
@@ -30,11 +33,23 @@ export interface GoTarget {
   title: string;
 }
 
+/** One channel's offer in a list (markup.offers). `availability` is the
+    schema.org term without its URL ("InStock"); it perishes as a price
+    does, so both print only until the guide's `prices` expiry. */
+export interface Offer {
+  seller: string;
+  go: string;
+  name?: string;
+  validFrom?: string;
+  availability?: "InStock" | "SoldOut";
+  price?: { key: string; currency: string };
+}
+
 /** One festival: the scout's sheet and the hops out of the guide. */
 export interface FestEvent extends Dated {
   slug: string;
   /** The name as the organiser writes it; the crumb between the hub and a
-      guide's subpage. */
+      guide's subpage where the guide names the event no other way. */
   name: string;
   /** The edition the guides describe, ISO dates. It decides the hub's order
       and when the markup stops offering tickets (rules.ts). */
@@ -62,10 +77,18 @@ export interface FestEvent extends Dated {
     /** Either price rows of the sheet, one offer each, at the seller's
         price with its fee (Moshtix prints it), or one offer at one sheet
         figure (`price.key`, an { amount }), where the seller prints its
-        prices without the fee and no source gives the total. */
+        prices without the fee and no source gives the total, or a list of
+        offers, one per channel, each priced only where it names a sheet
+        figure (Primavera Sound São Paulo: Ingresse and the box office,
+        whose prices no source shows before a login). */
     offers:
       | { prices: number[]; go: string; seller: string; validFrom: string }
-      | { price: { key: string; currency: string }; go: string; seller: string; validFrom: string };
+      | { price: { key: string; currency: string }; go: string; seller: string; validFrom: string }
+      | Offer[];
+    /** One event a day, where the guide's sheet splits the line-up by day:
+        its name as the copy says it, its start with the offset, and the
+        sheet key of the day's acts, each printed as a performer. */
+    subEvents?: { name: string; startDate: string; acts: string }[];
   };
   /** Section 1 of the card, verbatim with every repair. Free-form on
       purpose: it is the scout's document, and copy.ts resolves the copy's
@@ -83,9 +106,12 @@ export interface Section {
   body: string;
   /** "table" reads a paragraph of "|" lines as a table, the one-line
       paragraph before it as its caption and a lone "**label**" line as a
-      subheading (copy.ts): Creamfields Chile's twelve price tables. Every
+      subheading (copy.ts): Creamfields Chile's twelve price tables. "row"
+      reads a one-line paragraph of items joined by " · " as a list whose
+      items each draw the dot before them (theme.css, ul.dot-row): the
+      acts of a day on Primavera Sound São Paulo's line-up page. Every
       other section is prose. */
-  kind?: "prose" | "table";
+  kind?: "prose" | "table" | "row";
 }
 
 export interface FaqRow {
@@ -115,6 +141,10 @@ export interface Slots {
   glance?: { label: string; value: string }[];
   /** The heading over them, where the guide gives one. */
   glanceHeading?: string;
+  /** One small line under them: the reading date the facts share
+      (Primavera Sound São Paulo's "Fontes lidas em …"). Inline copy, so
+      its tags are checked and left out. */
+  glanceNote?: string;
   /** A status badge and its countdown target. */
   badge?: { text: string; until?: string };
   /** A calendar file for the edition. */
@@ -131,6 +161,17 @@ export interface GuidePage extends Dated, Slots {
   /** The page's name in the guide's sibling row and on the hub, in the
       guide's language. */
   label: string;
+  /** The last crumb of the trail, visible and in the BreadcrumbList,
+      where it is not the title less its suffix (Primavera Sound São
+      Paulo's "Ingressos"). */
+  crumb?: string;
+  /** The tooltip of this page's link in the sibling row, which says what
+      the page holds; the title less its suffix where absent. */
+  navTitle?: string;
+  /** The tooltip of every other link to this page: in the copy, the
+      guide's crumb and the hub's row; the title less its suffix where
+      absent. */
+  linkTitle?: string;
   title: string;
   description: string;
   h1: string;
@@ -166,6 +207,10 @@ export interface Guide extends Dated {
   /** The guide's locale; unique within its event's file. */
   slug: string;
   event: string;
+  /** The event as this guide names it, year and all: the crumb between
+      the hub and a subpage, the hub's heading and the guide's heading in
+      llms.txt. The event's own name where absent. */
+  name?: string;
   lang: string;
   dir: "ltr" | "rtl";
   /** Its home, "/beyond-the-valley/" for an event's first guide and

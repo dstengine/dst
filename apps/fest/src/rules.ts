@@ -2,7 +2,7 @@
 // markup: which day it is, what has expired, the order of the hub, what the
 // event's structured data says, and what a title must be.
 import { hasEnded, lastDay } from "@dst/content/when";
-import type { FestEvent, Guide, GuidePage } from "./data/types";
+import type { FestEvent, Guide, GuidePage, Offer } from "./data/types";
 import { expired, pathOf, resolve, SITE } from "./copy";
 
 /** The day the build is for, ISO. `FEST_TODAY` sets it, so the expiry of a
@@ -64,7 +64,11 @@ interface Venue { name: string; address: string; lat: number; lon: number; count
     selling at them, so it is never printed as `priceValidUntil`: an offer
     names only the dates its sources give, and none of ours gives a date on
     which a price ends. No performer (the organiser ranks no act) and no
-    image until the guide has a cover. */
+    image until the guide has a cover. Where the sheet splits the line-up
+    by day (Primavera Sound São Paulo), each day is a subEvent at the same
+    place, its acts the performers by name as the organiser lists them,
+    each a PerformingGroup: the sheet does not say which act is one
+    person. */
 export function musicEvent(event: FestEvent, guide: Guide, page: GuidePage, day: string): Record<string, unknown> {
   const url = `${SITE}${pathOf(page)}`;
   const venue = event.sheet.venue as Venue;
@@ -87,7 +91,9 @@ export function musicEvent(event: FestEvent, guide: Guide, page: GuidePage, day:
   const shown = !expired(guide, "prices", day);
   const offers = hasEnded(event.edition, day)
     ? undefined
-    : !("prices" in markup.offers)
+    : Array.isArray(markup.offers)
+      ? markup.offers.map((o) => channel(event, o, shown))
+      : !("prices" in markup.offers)
       ? [single(event, markup.offers, shown)]
       : markup.offers.prices.map((i) => {
           const row = prices[i];
@@ -102,6 +108,27 @@ export function musicEvent(event: FestEvent, guide: Guide, page: GuidePage, day:
             seller: { "@type": "Organization", name: markup.offers.seller },
           };
         });
+  const place = {
+    "@type": "Place",
+    name: venue.name,
+    address: { "@type": "PostalAddress", ...postal },
+    geo: { "@type": "GeoCoordinates", latitude: at.lat, longitude: at.lon },
+  };
+  // Each day carries the place as well: Google reads a nested event as an
+  // item of its own, and one without a location as incomplete (the SEO
+  // lead's gate-3 condition 1 on Primavera Sound São Paulo).
+  const subEvents = markup.subEvents?.map((d) => {
+    const acts = resolve(event.sheet, d.acts);
+    if (!Array.isArray(acts) || !acts.every((a) => typeof a === "string"))
+      throw new Error(`${event.slug}: markup.subEvents names "${d.acts}", which is not a list of acts in the sheet`);
+    return {
+      "@type": "MusicEvent",
+      name: d.name,
+      startDate: d.startDate,
+      location: place,
+      performer: acts.map((name) => ({ "@type": "PerformingGroup", name })),
+    };
+  });
   return {
     "@type": "MusicEvent",
     additionalType: "https://schema.org/Festival",
@@ -113,12 +140,7 @@ export function musicEvent(event: FestEvent, guide: Guide, page: GuidePage, day:
     endDate: markup.endDate,
     eventStatus: "https://schema.org/EventScheduled",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-    location: {
-      "@type": "Place",
-      name: venue.name,
-      address: { "@type": "PostalAddress", ...postal },
-      geo: { "@type": "GeoCoordinates", latitude: at.lat, longitude: at.lon },
-    },
+    location: place,
     // The organiser's site as `sameAs`, not `url`: the network's structured
     // data names a third party only as an identity (tests/outbound-links).
     // None where the organiser has no site of its own (Creamfields Chile's
@@ -131,6 +153,7 @@ export function musicEvent(event: FestEvent, guide: Guide, page: GuidePage, day:
     publisher: { "@id": "https://fest.one/#organization" },
     mainEntityOfPage: { "@id": `${url}#webpage` },
     ...(offers ? { offers } : {}),
+    ...(subEvents ? { subEvent: subEvents } : {}),
   };
 }
 
@@ -156,6 +179,29 @@ function single(event: FestEvent, offers: { price: { key: string; currency: stri
     validFrom: offers.validFrom,
     url: `${SITE}/go/${event.slug}-${offers.go}/`,
     seller: { "@type": "Organization", name: offers.seller },
+  };
+}
+
+/** One channel's offer (markup.offers as a list): the seller and our hop
+    to it, the day sales opened where the sheet has it, and the stock
+    status and a price only while the guide's prices hold, since a status
+    perishes as a price does. A channel whose prices no source shows
+    (Ingresse's lots sit behind a login) names no price at all. */
+function channel(event: FestEvent, o: Offer, shown: boolean) {
+  let price: Record<string, unknown> = {};
+  if (o.price) {
+    const figure = resolve(event.sheet, o.price.key) as { amount?: unknown } | undefined;
+    if (typeof figure?.amount !== "number") throw new Error(`${event.slug}: an offer's price.key "${o.price.key}" names no { amount } in the sheet`);
+    price = { price: figure.amount, priceCurrency: o.price.currency };
+  }
+  return {
+    "@type": "Offer",
+    ...(o.name ? { name: o.name } : {}),
+    ...(shown ? price : {}),
+    ...(shown && o.availability ? { availability: `https://schema.org/${o.availability}` } : {}),
+    ...(o.validFrom ? { validFrom: o.validFrom } : {}),
+    url: `${SITE}/go/${event.slug}-${o.go}/`,
+    seller: { "@type": "Organization", name: o.seller },
   };
 }
 

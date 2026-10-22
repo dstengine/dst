@@ -27,13 +27,16 @@ assertTitle(withSuffix(page.title, titleSuffix, keyword, guide.lang), keyword, r
 // One event, one URL: the MusicEvent goes on the guide's main page only,
 // first, so the page reads as the event it is.
 const jsonLd = page === mainPage(guide) ? [musicEvent(event, guide, page, day)] : [];
+// The BreadcrumbList names what the visible trail shows (GuidePage): the
+// event as the guide names it, and this page by its crumb where it has one.
 ---
 <Layout
   title={page.title}
   description={page.description}
   jsonLd={jsonLd}
   alternates={alternatesFor(page, guide)}
-  crumbLabels={{ [event.slug]: event.name }}
+  crumbLabels={{ [event.slug]: guide.name ?? event.name }}
+  crumbCurrent={page.crumb}
   guide={guide}
 >
   <GuidePage event={event} guide={guide} page={page} today={day} />
