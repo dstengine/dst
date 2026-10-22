@@ -34,7 +34,7 @@ export const events: FestEvent[] = [
   {
     slug: "field-day",
     createdAt: "2026-10-22T14:55:00+04:00",
-    updatedAt: "2026-10-22T16:05:00+04:00",
+    updatedAt: "2026-10-22T16:40:00+04:00",
     name: "Field Day",
     edition: { start: "2027-01-01", end: "2027-01-01" },
     // The event block carries no readOn of its own; the scout read it on
@@ -45,17 +45,18 @@ export const events: FestEvent[] = [
     // "12:00pm, Fri 1 January, 2027" and the end the Botanic Gardens'
     // "12pm - 11pm" (editions.0.note, s3 and s7), at AEDT
     // (editions.0.utc_offset_on_event); the organiser is Fuzzy at s5
-    // (event.organiser). The offers are the five GA releases and VIP,
-    // prices.0 and prices.3 to prices.7, sold by Moshtix (sellers.0), each at
-    // the total Moshtix prints with its fee (rules.ts, Price.total), valid
-    // from the general on-sale, "12pm AEST, 10 September 2026"
-    // (sales_timeline.5). Left out: the Fast Forward Pass, an add-on to a GA
-    // ticket, and MobTix and Affordability Tix, sold by request.
+    // (event.organiser). The offers are the four GA releases and VIP,
+    // prices.3 to prices.7, sold by Moshtix (sellers.0), each at the total
+    // Moshtix prints with its fee (rules.ts, Price.total), valid from the
+    // general on-sale, "12pm AEST, 10 September 2026" (sales_timeline.5).
+    // Left out: the 18–25s ticket (prices.0), sold out in the presale and so
+    // never buyable on that validFrom; the Fast Forward Pass, an add-on to a
+    // GA ticket; and MobTix and Affordability Tix, sold by request.
     markup: {
       startDate: "2027-01-01T12:00:00+11:00",
       endDate: "2027-01-01T23:00:00+11:00",
       organizer: { name: "Fuzzy", url: "https://fuzzy.com.au/" },
-      offers: { prices: [0, 3, 4, 5, 6, 7], go: "tickets", seller: "Moshtix", validFrom: "2026-09-10T12:00:00+10:00" },
+      offers: { prices: [3, 4, 5, 6, 7], go: "tickets", seller: "Moshtix", validFrom: "2026-09-10T12:00:00+10:00" },
     },
     sheet: {
       event: {
@@ -893,7 +894,7 @@ export const guides: Guide[] = [
       {
         slug: "field-day",
         createdAt: "2026-10-22T14:55:00+04:00",
-        updatedAt: "2026-10-22T14:55:00+04:00",
+        updatedAt: "2026-10-22T16:40:00+04:00",
         kind: "main",
         label: "Overview",
         title: "Field Day 2027 Sydney: tickets, lineup — festival guide",
@@ -909,7 +910,7 @@ export const guides: Guide[] = [
           {
             id: "when",
             heading: "When: Friday 1 January 2027, 12pm to 11pm",
-            body: "The Botanic Gardens of Sydney's listing gives the hours as 12pm to 11pm; Moshtix gives the start as 12:00pm; the organiser hasn't published gate times and says it will \"share detailed transport info closer to the event\". [gates.0] [editions.0.note] [transport.0] Everything on this page is Sydney time, AEDT, which is UTC+11 on that day. [editions.0.utc_offset_on_event] Queensland, WA and the NT don't have daylight saving, so if you're flying in from there, check the time difference before you book. [sources.s20] The previous edition, Field Day 2026, was on Thursday 1 January 2026 at the same park. [editions.1]",
+            body: "The Botanic Gardens of Sydney's listing gives the hours as 12pm to 11pm; Moshtix gives the start as 12:00pm; the organiser hasn't published gate times and says it will \"share detailed transport info closer to the event\". [gates.0] [editions.0.note] [transport.0] Event-day times on this page are Sydney time, AEDT, which is UTC+11 on that day. [editions.0.utc_offset_on_event] Queensland, WA and the NT don't have daylight saving, so if you're flying in from there, check the time difference before you book. [sources.s20] The previous edition, Field Day 2026, was on Thursday 1 January 2026 at the same park. [editions.1]",
           },
           {
             id: "venue",
@@ -934,7 +935,7 @@ export const guides: Guide[] = [
           {
             id: "why",
             heading: "Why this guide",
-            body: "The organiser's site is a single page, and the rest of the answers, hours, prices by release, stations, what you can carry in, sit at Moshtix, the Botanic Gardens of Sydney, Fuzzy's terms and Transport for NSW; this guide puts what each of them says in one place, with the date it was read. A London festival is also called Field Day; it is a different event. [questions.23]",
+            body: "The organiser's site is a single page, and the rest of the answers, hours, the prices with fees, stations, what you can carry in, sit at Moshtix, the Botanic Gardens of Sydney, Fuzzy's terms and Transport for NSW; this guide puts what each of them says in one place, with the date it was read. A London festival is also called Field Day; it is a different event. [questions.23]",
           },
         ],
         faqHeading: "Questions readers ask",
@@ -951,7 +952,7 @@ export const guides: Guide[] = [
           },
           {
             q: "How much are Field Day tickets in Sydney?",
-            a: "{{until prices}}On 21 October 2026 the cheapest GA ticket on sale at Moshtix was Second Release, $209.90 plus a $10 fee, $219.90 in all; Final Release is $249.90 and VIP $309.90 with the fee (Moshtix, read 21 October 2026). [prices.4] [prices.6] [prices.7]{{/until}}",
+            a: "{{until prices}}On 21 October 2026 the cheapest GA ticket on sale at Moshtix was Second Release, $209.90 plus a $10 fee, $219.90 in all; Final Release was $249.90 and VIP $309.90 with the fee (Moshtix, read 21 October 2026). [prices.4] [prices.6] [prices.7]{{/until}}",
             generic: true,
           },
           {
@@ -978,7 +979,7 @@ export const guides: Guide[] = [
       {
         slug: "field-day/tickets",
         createdAt: "2026-10-22T14:55:00+04:00",
-        updatedAt: "2026-10-22T14:55:00+04:00",
+        updatedAt: "2026-10-22T16:40:00+04:00",
         kind: "tickets",
         label: "Tickets",
         title: "Field Day 2027 Sydney tickets: prices, fees — festival guide",
@@ -989,7 +990,7 @@ export const guides: Guide[] = [
           {
             id: "releases",
             heading: "Every release, as Moshtix showed it on 21 October 2026",
-            body: "{{until prices}}GA is sold in releases, each at its own price; Moshtix marks a release \"Allocation Exhausted\" when it's gone, and on 21 October 2026 it showed a quantity dropdown of 1 to 10 for each release still on sale. [editions.0.note] One card per ticket, Moshtix's price first, then the total with its fee: [prices]\n\n- **18–25s ticket**: $99.90 + $10.00 fees = $109.90. \"Allocation Exhausted\"; sales closed 11:00am, Thursday 10 September 2026. [prices.0] [sales_timeline.7]\n- **GA, First Release**: $189.90 + $10.00 fees = $199.90. \"Allocation Exhausted\". [prices.3]\n- **GA, Second Release**: $209.90 + $10.00 fees = $219.90. On sale; up to 10 per customer (Fuzzy's terms). [prices.4] [rules.3]\n- **GA, Third Release**: $219.90 + $10.00 fees = $229.90. On sale; up to 10 per customer. [prices.5]\n- **GA, Final Release**: $239.90 + $10.00 fees = $249.90. On sale; up to 10 per customer. [prices.6]\n- **VIP**: $299.90 + $10.00 fees = $309.90. On sale. [prices.7]\n- **Fast Forward Pass**: $39.90 + $5.00 fees = $44.90. On sale; \"Must be paired with a GA festival ticket\". [prices.8] [prices.8.seller_label]\n\nThe releases still on sale, VIP and the Fast Forward Pass close at 11pm on Friday 1 January 2027. [sales_timeline.7] Fuzzy's terms cap tickets at ten per customer per event. [rules.3]{{/until}}",
+            body: "{{until prices}}GA is sold in releases, each at its own price; Moshtix marks a release \"Allocation Exhausted\" when it's gone, and on 21 October 2026 it showed a quantity dropdown of 1 to 10 for each release still on sale. [editions.0.note] Fuzzy's terms set that limit per customer for the whole event. [rules.3] One card per ticket, Moshtix's price first, then the total with its fee: [prices]\n\n- **18–25s ticket**: $99.90 + $10.00 fees = $109.90. \"Allocation Exhausted\"; sales closed 11:00am, Thursday 10 September 2026. [prices.0] [sales_timeline.7]\n- **GA, First Release**: $189.90 + $10.00 fees = $199.90. \"Allocation Exhausted\". [prices.3]\n- **GA, Second Release**: $209.90 + $10.00 fees = $219.90. On sale. [prices.4]\n- **GA, Third Release**: $219.90 + $10.00 fees = $229.90. On sale. [prices.5]\n- **GA, Final Release**: $239.90 + $10.00 fees = $249.90. On sale. [prices.6]\n- **VIP**: $299.90 + $10.00 fees = $309.90. On sale. [prices.7]\n- **Fast Forward Pass**: $39.90 + $5.00 fees = $44.90. On sale; \"Must be paired with a GA festival ticket\". [prices.8] [prices.8.seller_label]\n\nThe releases still on sale, VIP and the Fast Forward Pass close at 11pm on Friday 1 January 2027. [sales_timeline.7] Fuzzy's terms cap tickets at ten per customer per event. [rules.3]{{/until}}",
           },
           {
             id: "from-prices",
@@ -1082,7 +1083,7 @@ export const guides: Guide[] = [
       {
         slug: "field-day/faq",
         createdAt: "2026-10-22T14:55:00+04:00",
-        updatedAt: "2026-10-22T14:55:00+04:00",
+        updatedAt: "2026-10-22T16:40:00+04:00",
         kind: "faq",
         label: "FAQ",
         title: "Field Day 2027 FAQ: 18+, pass-outs, bags — festival guide",
@@ -1140,7 +1141,7 @@ export const guides: Guide[] = [
           },
           {
             q: "Is Field Day 18+?",
-            a: "Yes. \"The event is strictly 18+, so you'll need valid photo ID to enter\" (organiser); Moshtix says the same. Fuzzy's terms accept a current photo driver's licence, a current passport or an accepted Proof of Age card. [age] [age.note]",
+            a: "Yes. \"The event is strictly 18+, so you'll need valid photo ID to enter\" (organiser); Moshtix lists it as 18+. Fuzzy's terms accept a current photo driver's licence, a current passport or an accepted Proof of Age card. [age] [age.note]",
           },
           {
             q: "What is the {{until prices}}$99.90 {{/until}}18–25s ticket and can I still get one?",

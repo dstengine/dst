@@ -62,9 +62,9 @@ interface Venue { name: string; address: string; lat: number; lon: number; count
     hop and availability; once the edition has ended, no offers at all. The
     expiry is the day we take our figures down, not a day the seller stops
     selling at them, so it is never printed as `priceValidUntil`: an offer
-    names only the dates its sources give, and none of ours gives an end of
-    sale yet. No performer (the organiser ranks no act) and no image until
-    the guide has a cover. */
+    names only the dates its sources give, and none of ours gives a date on
+    which a price ends. No performer (the organiser ranks no act) and no
+    image until the guide has a cover. */
 export function musicEvent(event: FestEvent, guide: Guide, page: GuidePage, day: string): Record<string, unknown> {
   const url = `${SITE}${pathOf(page)}`;
   const venue = event.sheet.venue as Venue;
