@@ -91,8 +91,13 @@ export interface FestEvent extends Dated {
       | Offer[];
     /** One event a day, where the guide's sheet splits the line-up by day:
         its name as the copy says it, its start with the offset, and the
-        sheet key of the day's acts, each printed as a performer. */
-    subEvents?: { name: string; startDate: string; acts: string }[];
+        sheet key of the day's acts, each printed as a performer. Several
+        keys where a night lists its acts in more than one place (Zamna
+        Tulum's Anyma night: the headliner, then the ten supports), and the
+        night's own offers where each night is sold on its own (Zamna
+        Tulum: General and VIP through the night's page), priced as the
+        event's channel offers are. */
+    subEvents?: { name: string; startDate: string; acts: string | string[]; offers?: Offer[] }[];
   };
   /** Section 1 of the card, verbatim with every repair. Free-form on
       purpose: it is the scout's document, and copy.ts resolves the copy's
@@ -113,9 +118,11 @@ export interface Section {
       subheading (copy.ts): Creamfields Chile's twelve price tables. "row"
       reads a one-line paragraph of items joined by " · " as a list whose
       items each draw the dot before them (theme.css, ul.dot-row): the
-      acts of a day on Primavera Sound São Paulo's line-up page. Every
-      other section is prose. */
-  kind?: "prose" | "table" | "row";
+      acts of a day on Primavera Sound São Paulo's line-up page. "cards"
+      reads a list whose items open with a **lead** as a column of cards,
+      one a night (Zamna Tulum), each closed by the link its item ends on.
+      Every other section is prose. */
+  kind?: "prose" | "table" | "row" | "cards";
   /** The page's ticket button opens this section, under its heading,
       instead of the top of the page (Wonderfruit: the copy puts it under
       "where to buy"). */

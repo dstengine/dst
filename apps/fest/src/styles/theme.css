@@ -359,6 +359,45 @@ h2 { overflow-wrap: break-word; }
   .guide-section ul.cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
+/* A night a card (a section of kind "cards", copy.ts: Zamna Tulum's five
+   nights, and Igloofest's after it): its lead in bold on a line of its
+   own, its words, then the link it ends on, on a line of its own. One
+   column at every width: the section is capped at the prose measure, two
+   columns would set a 70-word card in a 36-character line, and the nights
+   are read in their order (the fest director's gate-3 condition 3). The
+   cards are not links, so nothing on them hovers, points or moves; the
+   link inside is an ordinary link. The card's edge is its border, since
+   --surface sits close to the ground in the dark palette. The selectors
+   name the list's tag, as ul.lines does, to outrank the section's own list
+   rules, and the one gap replaces the li + li margin. */
+.guide-section ul.guide-cards {
+  display: grid;
+  gap: var(--space-2);
+  padding-left: 0;
+  list-style: none;
+}
+.guide-section ul.guide-cards li {
+  margin: 0;
+  padding: var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.guide-section ul.guide-cards li > strong:first-child,
+.guide-section ul.guide-cards .card-link { display: block; }
+.guide-section ul.guide-cards .card-link { margin-top: var(--space-1); }
+/* On a phone the card gives up padding, as the "On this page" box does,
+   so its text keeps 262 px at 320 (measured); the night's link is a thumb's
+   target. */
+@media (max-width: 480px) {
+  .guide-section ul.guide-cards li { padding: var(--space-2); }
+  .guide-section ul.guide-cards .card-link a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
+
 /* A seller's price tables as text (Creamfields Chile: Punto Ticket's
    twelve images, four phases by two prices each). The group's name is a
    subheading, each table's name its caption. Every figure is the seller's

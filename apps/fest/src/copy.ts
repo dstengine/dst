@@ -275,9 +275,33 @@ const KEEP_TH = new RegExp(
   ].join("|"),
   "gu",
 );
-/** Each language's keep-together list, by the guide's language: "es-CL"
-    reads es. A guide in a language with no row does not build. */
-const KEEP: Record<string, RegExp> = { en: KEEP_TOGETHER, es: KEEP_ES, pt: KEEP_PT, th: KEEP_TH };
+// Mexican Spanish (Zamna Tulum) is Chile's list and the forms its copy
+// adds: a sum with its currency code ("90 USD", "6.00 USD", "1,403.01
+// USD": decimal point, comma thousands), a clock time on its own or with
+// its "a. m." ("22:00", "3:00 a. m."), a sale phase with its ordinal ("1.er
+// release", "4.º release"), a phone number ("+52 55 7200 0052") and the
+// seller's three-word name, "Mr Nice VIP", which a 264 px card would
+// otherwise break after its "Mr" (the fest director's gate-3 condition 4).
+// A row of its own, so Chile's pages come out as they were.
+const ES_MX_TOKENS = [
+  `\\b\\d[\\d,]*(?:\\.\\d+)? USD\\b`, // 90 USD, 1,403.01 USD
+  `\\b\\d{1,2}:\\d{2} [ap]\\. m\\.`, // 3:00 a. m.
+  `\\b\\d\\.(?:er|º|ª|o) release\\b`, // 1.er release, 4.º release
+  `\\+52(?: \\d{2,4}){3}\\b`, // +52 55 7200 0052
+  `\\bMr Nice VIP\\b`, // Mr Nice VIP
+];
+const KEEP_ES_MX = new RegExp(
+  [
+    KEEP_ES.source,
+    ...ES_MX_TOKENS,
+    `\\b\\d{1,2}:\\d{2}\\b(?! horas| [ap]\\. m\\.)`, // 22:00
+  ].join("|"),
+  "gu",
+);
+/** Each language's keep-together list, by the guide's locale where it has
+    a row of its own ("es-MX"), else by its language: "es-CL" reads es. A
+    guide in a language with no row does not build. */
+const KEEP: Record<string, RegExp> = { en: KEEP_TOGETHER, es: KEEP_ES, "es-mx": KEEP_ES_MX, pt: KEEP_PT, th: KEEP_TH };
 // In a long run a split date is a nicety, but a sign and the number it
 // belongs to are one token wherever they stand: the sweep found "R$ |
 // 765,45", "(11) | 5666-8822", "nº | 12.933" and "Linha | 9-Esmeralda" in
@@ -293,8 +317,17 @@ const GLUE_PT = /(R\$|\(\d{2}\)|\bnº|§|\bCEP|\bLinha) (?=\d)/gu;
 // dash takes a word joiner after it, since a browser breaks after a dash
 // ("21– | 22 ตุลาคม 2026" in the stay lede at 320 px, 22 October 2026); the
 // words unchanged.
+// In Mexican Spanish the same holds for the forms its row adds, and for a
+// date: a night card runs long between its lead and its link, and "90 |
+// USD", "+52 55 | 7200 0052", "Mr | Nice VIP" or "22 de | octubre de 2026"
+// split at a line's end read as two things. The line-break sweep of 22
+// October 2026 measured 373 dates split from 320 to 1280 px on the three
+// pages before the dates joined the glue; the longest, "31 de diciembre de
+// 2026", is 211 px, inside the 262 px a card gives its text at 320.
+const GLUE_ES_MX = new RegExp([...ES_MX_TOKENS, `\\b\\d{1,2} de ${MES}(?: de \\d{4})?(?![\\p{L}\\d])`].join("|"), "gu");
 const GLUE: Record<string, (run: string) => string> = {
   pt: (run) => run.replace(GLUE_PT, "$1\u00a0"),
+  "es-mx": (run) => run.replace(GLUE_ES_MX, (m) => m.replace(/ /g, "\u00a0")),
   th: (run) => run.replace(KEEP_TH, (m) => m.replace(/ /g, "\u00a0").replace(/–/g, "–\u2060")),
 };
 const unescaped = (s: string) => s.replace(/&(amp|lt|gt|quot);/g, "_");
@@ -302,9 +335,9 @@ const unescaped = (s: string) => s.replace(/&(amp|lt|gt|quot);/g, "_");
     run of text between two tags, and a language's glued pairs in the long
     ones. Tags are left alone: a title attribute never gets a span. */
 const typeset = (html: string, lang: string) => {
-  const keep = KEEP[lang.slice(0, 2).toLowerCase()];
+  const keep = KEEP[lang.toLowerCase()] ?? KEEP[lang.slice(0, 2).toLowerCase()];
   if (!keep) throw new Error(`copy.ts has no keep-together list for "${lang}"`);
-  const glue = GLUE[lang.slice(0, 2).toLowerCase()];
+  const glue = GLUE[lang.toLowerCase()] ?? GLUE[lang.slice(0, 2).toLowerCase()];
   return html
     .split(/(<[^>]*>)/)
     .map((run) =>
@@ -583,7 +616,7 @@ export const SITE = "https://fest.one";
 type Part = { html: string; md: string };
 type Block =
   | { kind: "p" | "quote" | "h3"; parts: Part[] }
-  | { kind: "list" | "ol" | "lines" | "links" | "cards" | "dot-row"; parts: Part[] }
+  | { kind: "list" | "ol" | "lines" | "links" | "cards" | "dot-row" | "guide-cards"; parts: Part[] }
   | { kind: "table"; rows: string[]; caption?: Part };
 
 /** A line that is one link and nothing else but its tags: a hop the copy
@@ -620,6 +653,34 @@ function card(item: string, ctx: Ctx): Part {
   return { html: parts.join(" "), md: marks(item, ctx, SITE).md };
 }
 
+/** A card of a section of kind "cards": "**Jueves 31 de diciembre de 2026
+    — RENAISSANCE Tulum NYE.** Sasha, … [Página de la noche en el
+    organizador (en inglés)](/go/zamna-tulum-renaissance/)". The lead, then
+    the words, then the link the item ends on, set on a line of its own
+    (theme.css, ul.guide-cards). Five cards end on the same words, so each
+    link also carries the card's name for a screen reader, after a colon
+    (the native reader, es-MX, on the executor's strings): the lead after
+    its dash, else the whole lead, less its full stop. Words only the
+    hidden span adds are not the copy's and are not checked as it is. */
+const CARD_LEAD = /^\*\*([^*\n]+)\*\*/;
+const CARD_LINK = /\s*(\[[^\]\n]+\]\([^)\s]+\))$/;
+function guideCard(item: string, ctx: Ctx): Part {
+  const lead = CARD_LEAD.exec(item);
+  if (!lead) throw new Error(`${ctx.where}: a card must open with its **lead**: "${item.slice(0, 40)}"`);
+  const link = CARD_LINK.exec(item);
+  const words = link ? item.slice(0, link.index) : item;
+  let html = marks(words, ctx, SITE).html;
+  if (link) {
+    const name = (lead[1].split(" — ").at(-1) ?? lead[1]).replace(/\.$/, "").trim();
+    const a = marks(link[1], ctx, SITE).html;
+    if (!a.endsWith("</a>")) throw new Error(`${ctx.where}: a card's last link did not render as one: "${link[1]}"`);
+    // A space before it, so the card's text copies and reads as the item's
+    // words, though the link is set on a line of its own.
+    html += ` <span class="card-link">${a.replace(/<\/a>$/, `<span class="visually-hidden">: ${esc(name)}</span></a>`)}</span>`;
+  }
+  return { html, md: marks(item, ctx, SITE).md };
+}
+
 /** A row of a table: "| Venta 2 | $98.000 | $78.400 (tachado) |". */
 const TABLE_ROW = /^\|.*\|$/;
 /** A lone "**Ticket General**" in a table section: the subheading over
@@ -654,7 +715,8 @@ function parse(text: string, ctx: Ctx, kind: Section["kind"] = "prose"): Block[]
     if (lines.every((l) => l.startsWith("- ") || l === "-")) {
       const items = lines.map((l) => live(l.slice(2))).filter(Boolean);
       if (!items.length) continue;
-      if (items.every((i) => CARD_OPENING.test(i))) blocks.push({ kind: "cards", parts: items.map((i) => card(i, ctx)) });
+      if (kind === "cards" && items.every((i) => CARD_LEAD.test(i))) blocks.push({ kind: "guide-cards", parts: items.map((i) => guideCard(i, ctx)) });
+      else if (items.every((i) => CARD_OPENING.test(i))) blocks.push({ kind: "cards", parts: items.map((i) => card(i, ctx)) });
       else blocks.push({ kind: "list", parts: keep(items.map(render)) });
     } else if (lines.every((l) => l.startsWith("> "))) {
       const part = render(lines.map((l) => l.slice(2)).join(" "));

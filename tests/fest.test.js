@@ -161,12 +161,14 @@ describe("the copy and its sheet", () => {
   });
 
   // A figure in dollars, reais or baht outside a span would outlive its
-  // reading: the build could never take it down.
+  // reading: the build could never take it down. So would one written
+  // with its currency code after it, as Mexico writes dollars ("90 USD",
+  // Zamna Tulum), which the sign's pattern does not see.
   test("every price sits in an expiry span", () => {
     const loose = [];
     for (const { where, text, guide } of all) {
       const left = copy.applySpans(text, guide, END_OF_TIME, where);
-      const hit = left.match(/[^\s]*\$\s?\d[\d,.]*|\d[\d,]*\s?บาท/g);
+      const hit = left.match(/[^\s]*\$\s?\d[\d,.]*|\d[\d,]*\s?บาท|\d[\d,.]*\s?(?:USD|MXN|BRL|CLP|THB|CAD|EUR)\b/g);
       if (hit) loose.push(`${where}: ${hit.join(", ")}`);
     }
     assert.deepEqual(loose, [], "wrap the sentence in {{until prices}}…{{/until}} (or the key its expiry has)");
@@ -559,9 +561,13 @@ describe("the built pages", { skip: built ? false : "apps/fest/dist is missing: 
       const r = routesByPath.get(p);
       if (!r) continue;
       if (!title.includes(r.event.name)) bad.push(`${p}: no "${r.event.name}"`);
-      const year = r.event.edition.start.slice(0, 4);
+      // The edition's year as its name carries it: the year it starts, or
+      // the year it ends where it runs across New Year and the organiser
+      // names it by that (Zamna Tulum 2027, from 31 December 2026; the CTO's
+      // Z6). No other year.
+      const years = [...new Set([r.event.edition.start, r.event.edition.end ?? r.event.edition.start].map((d) => d.slice(0, 4)))];
       const description = decode(h.match(/<meta name="description" content="([^"]*)"/)?.[1] ?? "");
-      if (!title.includes(year) && !(YEARLESS[p] && description.includes(year))) bad.push(`${p}: no ${year}`);
+      if (!years.some((y) => title.includes(y) || (YEARLESS[p] && description.includes(y)))) bad.push(`${p}: no ${years.join(" or ")}`);
     }
     assert.deepEqual(bad, []);
     assert.equal(decode(html.get("/festivals/").match(/<title>([\s\S]*?)<\/title>/)[1]), hub.title);

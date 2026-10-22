@@ -120,16 +120,24 @@ export function musicEvent(event: FestEvent, guide: Guide, page: GuidePage, day:
   // Each day carries the place as well: Google reads a nested event as an
   // item of its own, and one without a location as incomplete (the SEO
   // lead's gate-3 condition 1 on Primavera Sound São Paulo).
+  // A night sold on its own carries its own offers (Zamna Tulum), on the
+  // same terms as the event's: figures while the guide's prices hold, none
+  // at all once the edition has ended.
   const subEvents = markup.subEvents?.map((d) => {
-    const acts = resolve(event.sheet, d.acts);
-    if (!Array.isArray(acts) || !acts.every((a) => typeof a === "string"))
-      throw new Error(`${event.slug}: markup.subEvents names "${d.acts}", which is not a list of acts in the sheet`);
+    const acts = (Array.isArray(d.acts) ? d.acts : [d.acts]).flatMap((k) => {
+      const list = resolve(event.sheet, k);
+      if (!Array.isArray(list) || !list.every((a) => typeof a === "string"))
+        throw new Error(`${event.slug}: markup.subEvents names "${k}", which is not a list of acts in the sheet`);
+      return list as string[];
+    });
+    const own = d.offers && !hasEnded(event.edition, day) ? d.offers.map((o) => channel(event, o, shown)) : [];
     return {
       "@type": "MusicEvent",
       name: d.name,
       startDate: d.startDate,
       location: place,
       performer: acts.map((name) => ({ "@type": "PerformingGroup", name })),
+      ...(own.length ? { offers: own } : {}),
     };
   });
   return {
