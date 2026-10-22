@@ -15,6 +15,7 @@ import ChipNav from "@dst/ui/ChipNav.astro";
 import OnThisPage from "@dst/ui/OnThisPage.astro";
 import Faq from "@dst/ui/Faq.astro";
 import Glance from "@dst/ui/Glance.astro";
+import GuideCta from "./GuideCta.astro";
 import { ICONS } from "@dst/ui/icons";
 import type { FestEvent, Guide, GuidePage } from "../data/types";
 import { applySpans, blocks, headingHtml, inline, inlineText, pathOf, sourcesHtml, withoutSuffix, type Ctx } from "../copy";
@@ -93,12 +94,24 @@ const faq = page.faq
 // expressions is a space in the HTML, and Beyond The Valley's pages, which
 // have neither, must come out byte for byte as they were.
 const faqFirst = page.faqFirst === true;
+// Where the page gives its h1 an id (Wonderfruit's FAQ), the block is a
+// section the h1 names.
 // The lede is its first paragraph. A second, after a blank line, is the
 // line on why the guide exists, set smaller under it (Creamfields Chile:
 // the fest director's gate-3 condition 2), so the answer still comes first.
+// A guide may keep more paragraphs as the lede (`ledeParas`: Wonderfruit's
+// facts, then its prices with their reading date); the line on why is
+// what follows them.
 const [ledeFirst, ...ledeRest] = page.lede.split(/\n{2,}/);
 const lede = inline(ledeFirst, ctx);
-const why = ledeRest.length ? inline(ledeRest.join(" "), ctx) : "";
+const ledeCount = page.ledeParas ?? 1;
+const ledeMore = ledeRest.slice(0, ledeCount - 1).map((p) => inline(p, ctx)).filter(Boolean);
+const whyParas = ledeRest.slice(ledeCount - 1);
+const why = whyParas.length ? inline(whyParas.join(" "), ctx) : "";
+// The ticket button sits at the top, or under the heading of the section
+// the copy puts it in (`cta: true`), never both.
+const ctaInSection = page.sections.some((s) => s.cta);
+if (ctaInSection && !page.cta) throw new Error(`${path}: a section asks for the ticket button, and the page has none`);
 // The facts at a glance print as text: a value's [key] tags are checked
 // and left out, as in the copy. The line under them (the reading date they
 // share) is copy like any other.
@@ -118,8 +131,8 @@ const links = page.links === undefined ? "" : inline(page.links, ctx);
     label={words.breadcrumbs}
   />
   <header class="guide-head">
-    <h1>{page.h1}</h1>
-    {lede && <p class="lede" set:html={lede} />}{why && <p class="lede-why" set:html={why} />}
+    <h1 id={page.h1Id}>{page.h1}</h1>
+    {lede && <p class="lede" set:html={lede} />}{ledeMore.map((l) => <p class="lede" set:html={l} />)}{why && <p class="lede-why" set:html={why} />}
   </header>
 
   <ChipNav items={siblings} current={path} label={words.siblingNav} />
@@ -130,15 +143,7 @@ const links = page.links === undefined ? "" : inline(page.links, ctx);
   )}
 
   {page.badge && <p class="guide-badge">{page.badge.text}</p>}
-  {page.cta && (
-    <div class="guide-cta">
-      <a class="button" href={page.cta.href} title={page.cta.title} rel="nofollow">{page.cta.label}</a>
-      <p class="guide-cta-seller">{page.cta.seller}</p>
-      {page.cta.secondary && (
-        <a class="guide-cta-secondary" href={page.cta.secondary.href} title={page.cta.secondary.title} rel="nofollow">{page.cta.secondary.label}</a>
-      )}
-    </div>
-  )}
+  {page.cta && !ctaInSection && <GuideCta cta={page.cta} />}
   {glance && (page.glanceHeading ? (
     <section class="guide-glance" aria-labelledby="glance">
       <h2 id="glance">{page.glanceHeading}</h2>
@@ -160,12 +165,14 @@ const links = page.links === undefined ? "" : inline(page.links, ctx);
         <h2 id="questions">{page.faqHeading}</h2>
         <Faq items={faq} />
       </section>
+    ) : page.h1Id ? (
+      <section class="guide-section guide-faq-first" aria-labelledby={page.h1Id}><Faq items={faq} /></section>
     ) : (
       <div class="guide-section guide-faq-first"><Faq items={faq} /></div>
     )
   )}{sections.map((s) => (
     <section class="guide-section" aria-labelledby={s.id}>
-      <h2 id={s.id} set:html={headingHtml(s.heading, guide.lang)} />
+      <h2 id={s.id} set:html={headingHtml(s.heading, guide.lang)} />{s.cta && page.cta && <GuideCta cta={page.cta} />}
       <Fragment set:html={s.html} />
     </section>
   ))}

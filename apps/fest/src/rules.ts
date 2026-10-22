@@ -62,8 +62,11 @@ interface Venue { name: string; address: string; lat: number; lon: number; count
     hop and availability; once the edition has ended, no offers at all. The
     expiry is the day we take our figures down, not a day the seller stops
     selling at them, so it is never printed as `priceValidUntil`: an offer
-    names only the dates its sources give, and none of ours gives a date on
-    which a price ends. No performer (the organiser ranks no act) and no
+    names only the dates its sources give. Where a source does give the
+    last day of a sale (Wonderfruit's November Sale, which its organiser
+    ends on 9 November), the offer prints it, and from the next day is left
+    out; with every offer gone, the event has none (the SEO lead's gate-3
+    condition 4 on Wonderfruit). No performer (the organiser ranks no act) and no
     image until the guide has a cover. Where the sheet splits the line-up
     by day (Primavera Sound São Paulo), each day is a subEvent at the same
     place, its acts the performers by name as the organiser lists them,
@@ -92,7 +95,7 @@ export function musicEvent(event: FestEvent, guide: Guide, page: GuidePage, day:
   const offers = hasEnded(event.edition, day)
     ? undefined
     : Array.isArray(markup.offers)
-      ? markup.offers.map((o) => channel(event, o, shown))
+      ? markup.offers.filter((o) => !o.priceValidUntil || day <= o.priceValidUntil).map((o) => channel(event, o, shown))
       : !("prices" in markup.offers)
       ? [single(event, markup.offers, shown)]
       : markup.offers.prices.map((i) => {
@@ -152,7 +155,7 @@ export function musicEvent(event: FestEvent, guide: Guide, page: GuidePage, day:
     },
     publisher: { "@id": "https://fest.one/#organization" },
     mainEntityOfPage: { "@id": `${url}#webpage` },
-    ...(offers ? { offers } : {}),
+    ...(offers?.length ? { offers } : {}),
     ...(subEvents ? { subEvent: subEvents } : {}),
   };
 }
@@ -200,6 +203,7 @@ function channel(event: FestEvent, o: Offer, shown: boolean) {
     ...(shown ? price : {}),
     ...(shown && o.availability ? { availability: `https://schema.org/${o.availability}` } : {}),
     ...(o.validFrom ? { validFrom: o.validFrom } : {}),
+    ...(shown && o.priceValidUntil ? { priceValidUntil: o.priceValidUntil } : {}),
     url: `${SITE}/go/${event.slug}-${o.go}/`,
     seller: { "@type": "Organization", name: o.seller },
   };

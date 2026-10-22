@@ -27,6 +27,14 @@
 //   drops them from the page, the Markdown twin and llms.txt. A span may
 //   run across paragraphs, so a sentence and the link on the line under it
 //   go together; it may also sit in a heading or a question.
+// - `{{read}}` before a group of tags: the day the facts those tags name
+//   were read, printed where the mark stands ("อ่านเมื่อ 22 ตุลาคม 2026"),
+//   on Wonderfruit's price, sale-state, gate-hours, transport and hotel
+//   lines whose words carry no date (the session after its gate 2). The
+//   words are the language's (READ_WORDS), the year always the Gregorian.
+// - Lines that each open with a number and a full stop ("1. ", "2. "): a
+//   numbered list, whose numbers the list prints (Wonderfruit's sale
+//   rounds).
 //
 // The text outside the anchors is never changed: `inline` checks that what
 // it renders reads exactly as the copy does with the marks taken out.
@@ -243,9 +251,33 @@ const KEEP_PT = new RegExp(
   ].join("|"),
   "gu",
 );
+// Thai, as Thailand writes it (Wonderfruit): a day or a range of days with
+// its month, and its year when one follows ("3–7 ธันวาคม 2026"); a sum
+// with its baht ("12,900 บาท"); a time with its "น." ("16:00 น."); a
+// distance, a span of time or a count with its noun ("135 กิโลเมตร", "3
+// คน", "20–24 ปี"); "VAT 7%". Thai leaves no space between words, only
+// between phrases and around a number or a Latin word, so the space inside
+// "12,900 บาท" is exactly where a line breaks, and leaves the figure
+// without its unit (the plan's "12,900 บาท never splits"). Lookbehinds,
+// not \b, which knows no Thai letter. The month names are the table the
+// read dates print from (READ_WORDS): Gregorian years throughout, never
+// the Buddhist calendar a bare th-TH locale would print.
+const THAI_MONTHS = ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"];
+const DUEAN = `(?:${THAI_MONTHS.join("|")})`;
+const THAI_DATE = `(?<![\\d,])\\d{1,2}(?:–\\d{1,2})? ${DUEAN}(?: \\d{4}(?!\\d))?`;
+const KEEP_TH = new RegExp(
+  [
+    THAI_DATE, // 3–7 ธันวาคม 2026, 2 พฤศจิกายน
+    `(?<![\\d,.])\\d[\\d,]*(?:–\\d[\\d,]*)? ?บาท`, // 12,900 บาท
+    `(?<![\\d.:])\\d{1,2}[:.]\\d{2}(?:–\\d{1,2}[:.]\\d{2})? น\\.`, // 16:00 น.
+    `(?<![\\d,.])\\d[\\d,.]*(?:–\\d[\\d,.]*)? (?:กิโลเมตร|ชั่วโมง|นาที|คน|แห่ง|วัน|คืน|ปี|ใบ|หลัง|เตียง|เวที|ครั้ง)`, // 3 คน, 20–24 ปี
+    `VAT \\d+%`, // VAT 7%
+  ].join("|"),
+  "gu",
+);
 /** Each language's keep-together list, by the guide's language: "es-CL"
     reads es. A guide in a language with no row does not build. */
-const KEEP: Record<string, RegExp> = { en: KEEP_TOGETHER, es: KEEP_ES, pt: KEEP_PT };
+const KEEP: Record<string, RegExp> = { en: KEEP_TOGETHER, es: KEEP_ES, pt: KEEP_PT, th: KEEP_TH };
 // In a long run a split date is a nicety, but a sign and the number it
 // belongs to are one token wherever they stand: the sweep found "R$ |
 // 765,45", "(11) | 5666-8822", "nº | 12.933" and "Linha | 9-Esmeralda" in
@@ -255,7 +287,16 @@ const KEEP: Record<string, RegExp> = { en: KEEP_TOGETHER, es: KEEP_ES, pt: KEEP_
 // Glance's date is held), not a span, which would cut the paragraph into
 // pieces the sweep reads as short.
 const GLUE_PT = /(R\$|\(\d{2}\)|\bnº|§|\bCEP|\bLinha) (?=\d)/gu;
-const GLUE: Record<string, RegExp> = { pt: GLUE_PT };
+// In Thai every item of the keep-together list is such a token: a Thai
+// paragraph runs long between two links, and a date or a sum split at its
+// space reads as two facts. Its spaces turn no-break, and a range's en
+// dash takes a word joiner after it, since a browser breaks after a dash
+// ("21– | 22 ตุลาคม 2026" in the stay lede at 320 px, 22 October 2026); the
+// words unchanged.
+const GLUE: Record<string, (run: string) => string> = {
+  pt: (run) => run.replace(GLUE_PT, "$1\u00a0"),
+  th: (run) => run.replace(KEEP_TH, (m) => m.replace(/ /g, "\u00a0").replace(/–/g, "–\u2060")),
+};
 const unescaped = (s: string) => s.replace(/&(amp|lt|gt|quot);/g, "_");
 /** The rendered HTML with its dates and counts kept whole, in each short
     run of text between two tags, and a language's glued pairs in the long
@@ -270,7 +311,7 @@ const typeset = (html: string, lang: string) => {
       run.startsWith("<")
         ? run
         : [...unescaped(run)].length > 160
-          ? glue ? run.replace(glue, "$1\u00a0") : run
+          ? glue ? glue(run) : run
           : run.replace(keep, (m) => `<span class="nowrap">${m}</span>`),
     )
     .join("");
@@ -309,7 +350,10 @@ const HEADING_KEEP_ES = new RegExp(`\\b\\d{1,2} de ${MES}(?: de \\d{4})?(?![\\p{
 // Portuguese the same way ("Sábado, 5 de dezembro de 2026", Primavera
 // Sound São Paulo's line-up days), the day's ordinal included.
 const HEADING_KEEP_PT = new RegExp(`\\b\\d{1,2}º? de ${MES_PT}(?: de \\d{4})?(?![\\p{L}\\d])[:,.;]?`, "giu");
-const HEADING_KEEP_BY: Record<string, RegExp> = { es: HEADING_KEEP_ES, pt: HEADING_KEEP_PT };
+// Thai the same way, with the bracket a date may close ("ไลน์อัพ
+// Wonderfruit 2026 (ประกาศ 1 กันยายน 2026)").
+const HEADING_KEEP_TH = new RegExp(`${THAI_DATE}[:,.;)]?`, "gu");
+const HEADING_KEEP_BY: Record<string, RegExp> = { es: HEADING_KEEP_ES, pt: HEADING_KEEP_PT, th: HEADING_KEEP_TH };
 const ASTRO_ESCAPES: Record<string, string> = { "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" };
 export const headingHtml = (text: string, lang = "en") => {
   const html = text.replace(/[&<>'"]/g, (c) => ASTRO_ESCAPES[c]).replace(HEADING_KEEP, (m) => `<span class="nowrap">${m}</span>`);
@@ -336,15 +380,51 @@ const LINK = /\[([^\]\n]+)\]\(([^)\s]+)\)/g;
 const ARROW = /\s*→ (\/[^\s]*\/)(?=\s|$)/g;
 const BOLD = /\*\*([^*\n]+)\*\*/g;
 
+// `{{read}}` and the words it prints: the language's "read on" and the day,
+// from a month table, never the locale's calendar (a bare th-TH prints
+// 2569 for 2026; the session after Wonderfruit's gate 3).
+const READ = /\{\{read\}\}/g;
+const READ_WORDS: Record<string, { word: string; months: string[] }> = {
+  th: { word: "อ่านเมื่อ", months: THAI_MONTHS },
+};
+/** "อ่านเมื่อ 21–22 ตุลาคม 2026": when the facts named by the tags right
+    after the mark were read, the oldest reading to the newest. A mark with
+    no tag after it that has a reading dates nothing, and fails the build. */
+function readWords(rest: string, ctx: Ctx): string {
+  const words = READ_WORDS[ctx.guide.lang.slice(0, 2).toLowerCase()];
+  if (!words) throw new Error(`${ctx.where}: {{read}} has no words for "${ctx.guide.lang}" in copy.ts`);
+  const group = /^(?:\s+\[[A-Za-z_][\w.]*\](?!\())+/.exec(rest)?.[0] ?? "";
+  const days = tags(group)
+    .filter((k) => !isUndated(k))
+    .map((k) => readOn(ctx.event, k))
+    .filter((d): d is string => !!d)
+    .sort();
+  if (!days.length) throw new Error(`${ctx.where}: {{read}} is followed by no tag with a reading`);
+  const [y1, m1, d1] = days[0].split("-").map(Number);
+  const [y2, m2, d2] = days[days.length - 1].split("-").map(Number);
+  const month = (n: number) => words.months[n - 1];
+  const when =
+    days[0] === days[days.length - 1] ? `${d1} ${month(m1)} ${y1}`
+    : y1 === y2 && m1 === m2 ? `${d1}–${d2} ${month(m1)} ${y1}`
+    : y1 === y2 ? `${d1} ${month(m1)} – ${d2} ${month(m2)} ${y2}`
+    : `${d1} ${month(m1)} ${y1} – ${d2} ${month(m2)} ${y2}`;
+  return `${words.word} ${when}`;
+}
+
 /** One string of copy (a paragraph, a list item, an answer) as inline HTML,
     Markdown and plain text, marks resolved. Expiry spans must already be
     applied. */
 function marks(text: string, ctx: Ctx, site: string): { html: string; md: string; text: string } {
   const pieces: Piece[] = [];
   const pages = ctx.guide.pages;
+  // Each {{read}} with the words it prints, which are the copy's from here
+  // on: the check at the end expects them where the mark stands.
+  const reads = [...text.matchAll(READ)].map((m) => ({ at: m.index!, words: readWords(text.slice(m.index! + m[0].length), ctx) }));
+  let nth = 0;
   // The words as the copy has them, marks aside: what the rendering must
   // come back to (checked at the end).
   const expected = text
+    .replace(READ, () => reads[nth++].words)
     .replace(ARROW, "")
     .replace(TAG, "")
     .replace(LINK, "$1")
@@ -359,6 +439,11 @@ function marks(text: string, ctx: Ctx, site: string): { html: string; md: string
       md: m[0],
       text: m[1],
     });
+
+  // Muted on the page (theme.css, .read), words in the twins and the
+  // structured data, where a reader takes them as the copy's.
+  for (const r of reads)
+    pieces.push({ from: r.at, to: r.at + "{{read}}".length, html: `<span class="read">${esc(r.words)}</span>`, md: r.words, text: r.words });
 
   for (const m of text.matchAll(TAG)) {
     if (resolve(ctx.event.sheet, m[2]) === undefined)
@@ -498,7 +583,7 @@ export const SITE = "https://fest.one";
 type Part = { html: string; md: string };
 type Block =
   | { kind: "p" | "quote" | "h3"; parts: Part[] }
-  | { kind: "list" | "lines" | "links" | "cards" | "dot-row"; parts: Part[] }
+  | { kind: "list" | "ol" | "lines" | "links" | "cards" | "dot-row"; parts: Part[] }
   | { kind: "table"; rows: string[]; caption?: Part };
 
 /** A line that is one link and nothing else but its tags: a hop the copy
@@ -513,6 +598,8 @@ const LINK_LINE = /^\[[^\]\n]+\]\([^)\s]+\)(?:\s+\[[A-Za-z_][\w.]*\])*$/;
 const CARD = /^\*\*([^*\n]+)\*\*(:?)\s*([\s\S]*)$/;
 const CARD_OPENING = /^\*\*[^*\n]+\*\*:/;
 const CARD_FIGURES = / = (?:A?\$)\d[\d,.]*\d\.(?=\s|$)/;
+/** A step of a numbered list: "3. ". */
+const ORDERED = /^\d+\. /;
 
 /** One price card: each of its three parts rendered and checked on its
     own, set as a block of its own by the stylesheet (theme.css, ul.cards).
@@ -588,6 +675,11 @@ function parse(text: string, ctx: Ctx, kind: Section["kind"] = "prose"): Block[]
       if (part) blocks.push({ kind: "h3", parts: [part] });
     } else if (lines.map(live).filter(Boolean).every((l) => LINK_LINE.test(l)) && lines.some((l) => live(l))) {
       blocks.push({ kind: "links", parts: keep(lines.map(render)) });
+    } else if (lines.length > 1 && lines.every((l) => ORDERED.test(l))) {
+      // Steps in their order (Wonderfruit's four sale rounds): a numbered
+      // list, whose numbers the list prints, so they leave the words.
+      const parts = keep(lines.map((l) => render(l.replace(ORDERED, ""))));
+      if (parts.length) blocks.push({ kind: "ol", parts });
     } else if (lines.length > 1) {
       const parts = keep(lines.map(render));
       if (parts.length) blocks.push({ kind: "lines", parts });
@@ -644,6 +736,7 @@ export function blocks(text: string, ctx: Ctx, kind: Section["kind"] = "prose"):
       if (b.kind === "h3") return `<h3>${b.parts[0].html}</h3>`;
       if (b.kind === "p") return `<p>${b.parts[0].html}</p>`;
       if (b.kind === "quote") return `<blockquote><p>${b.parts[0].html}</p></blockquote>`;
+      if (b.kind === "ol") return `<ol>${b.parts.map((p) => `<li>${p.html}</li>`).join("")}</ol>`;
       // Links out, one to a line: a lone one is a paragraph of its own.
       if (b.kind === "links" && b.parts.length === 1) return `<p class="link-lines">${b.parts[0].html}</p>`;
       const cls = b.kind === "list" ? "" : ` class="${b.kind === "links" ? "link-lines" : b.kind}"`;
@@ -661,6 +754,8 @@ export function blocksMd(text: string, ctx: Ctx, kind: Section["kind"] = "prose"
       if (b.kind === "p") return b.parts[0].md;
       if (b.kind === "quote") return `> ${b.parts[0].md}`;
       if (b.kind === "links" && b.parts.length === 1) return b.parts[0].md;
+      // Numbered again from one: a step whose words have expired is gone.
+      if (b.kind === "ol") return b.parts.map((p, i) => `${i + 1}. ${p.md}`).join("\n");
       // A row of names reads in Markdown as the copy writes it.
       if (b.kind === "dot-row") return b.parts.map((p) => p.md).join(" · ");
       return b.parts.map((p) => `- ${p.md}`).join("\n");

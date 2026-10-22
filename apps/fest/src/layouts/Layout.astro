@@ -38,6 +38,9 @@ const site = {
 // shared layout's own table has no row for it (pt); otherwise its row.
 const row = guide ? words[langOf(guide.lang)] : undefined;
 const chrome = row?.skip || row?.menu ? { skip: row.skip, menu: row.menu } : undefined;
+// A Thai page's text needs its face for the first paint as a Latin page
+// needs Chivo: the Thai file is preloaded there, and only there.
+const thai = guide ? langOf(guide.lang) === "th" : false;
 ---
 <BaseLayout
   {...site}
@@ -56,6 +59,7 @@ const chrome = row?.skip || row?.menu ? { skip: row.skip, menu: row.menu } : und
   <Fragment slot="head">
     <link rel="preload" href="/fonts/chivo-v21-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/syne-v24-latin.woff2" as="font" type="font/woff2" crossorigin />
+    {thai && <link rel="preload" href="/fonts/noto-sans-thai-v29-thai.woff2" as="font" type="font/woff2" crossorigin />}
   </Fragment>
   <slot />
 </BaseLayout>

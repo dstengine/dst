@@ -41,6 +41,10 @@ export interface Offer {
   go: string;
   name?: string;
   validFrom?: string;
+  /** The last day the seller sells at this price, where its source names
+      one (Wonderfruit's November Sale, which its organiser ends on 9
+      November): printed, and from the next day the offer is left out. */
+  priceValidUntil?: string;
   availability?: "InStock" | "SoldOut";
   price?: { key: string; currency: string };
 }
@@ -68,7 +72,7 @@ export interface FestEvent extends Dated {
         sheet address is not Australia's "street, locality STATE postcode",
         which rules.ts reads when this is absent. Region and postcode only
         where the sheet has them (Creamfields Chile's has neither). */
-    address?: { streetAddress: string; addressLocality: string; addressRegion?: string; postalCode?: string; addressCountry: string };
+    address?: { streetAddress?: string; addressLocality: string; addressRegion?: string; postalCode?: string; addressCountry: string };
     /** The sheet key of the coordinates the markup prints ({ lat, lon }),
         where they are not the scout's venue.lat and venue.lon. */
     geo?: string;
@@ -112,6 +116,10 @@ export interface Section {
       acts of a day on Primavera Sound São Paulo's line-up page. Every
       other section is prose. */
   kind?: "prose" | "table" | "row";
+  /** The page's ticket button opens this section, under its heading,
+      instead of the top of the page (Wonderfruit: the copy puts it under
+      "where to buy"). */
+  cta?: true;
 }
 
 export interface FaqRow {
@@ -132,7 +140,7 @@ export interface Anchor {
     the page's data, and GuidePage renders nothing for a slot left empty. */
 export interface Slots {
   /** A ticket button: the seller's line under it and a second link. */
-  cta?: { href: string; label: string; title: string; seller: string; secondary?: { href: string; label: string; title: string } };
+  cta?: { href: string; label: string; title: string; seller?: string; secondary?: { href: string; label: string; title: string } };
   /** The facts at a glance, label and value. A value may carry [key]
       tags, which are checked and left out; it carries no link. It prints
       as text, out of typeset's reach, so a date that must not break takes
@@ -175,7 +183,13 @@ export interface GuidePage extends Dated, Slots {
   title: string;
   description: string;
   h1: string;
+  /** The h1's id, where a block is labelled by it (Wonderfruit's FAQ page,
+      whose questions sit under no heading of their own). */
+  h1Id?: string;
   lede: string;
+  /** How many of the lede's paragraphs print as the lede; the rest is the
+      line on why the guide exists. One where absent. */
+  ledeParas?: number;
   sections: Section[];
   faqHeading?: string;
   faq: FaqRow[];
@@ -223,7 +237,7 @@ export interface Guide extends Dated {
   expires: Record<string, string>;
   /** Links the footer carries on this guide's pages after the hub, and a
       sentence of its own. */
-  footerLinks?: { href: string; label: string; title: string }[];
+  footerLinks?: { href: string; label: string; title: string; rel?: string }[];
   footerNote?: string;
   pages: GuidePage[];
 }

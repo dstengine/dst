@@ -11,9 +11,11 @@
 // by the es-CL native reader at gate 3, and written to serve an es-MX guide
 // as they stand; pt with Primavera Sound São Paulo (pt-BR), passed by the
 // pt-BR native reader at gate 3, the root crumb "Festivais" and the
-// trail's "Trilha de navegação" after it.
+// trail's "Trilha de navegação" after it; th with Wonderfruit (th-TH),
+// passed by the th-TH native reader at gate 3 and on the executor's
+// strings, every link to the English hub saying that it is English.
 
-export type Lang = "en" | "es" | "pt";
+export type Lang = "en" | "es" | "pt" | "th";
 
 /** The row a guide's locale reads: "es-CL" and "es-MX" read `es`. A
     locale with no row throws, so a guide in a new language cannot build
@@ -113,6 +115,27 @@ export const site: Record<Lang, {
     analytics: false,
     defaultTheme: "dark",
   },
+  // Thai: "เทศกาล" the root crumb, the place a reader is in; its tooltip,
+  // the wordmark's and the footer link's say that the hub they open is in
+  // English (the approved chrome block, Wonderfruit's card).
+  th: {
+    siteName: "fest.one",
+    footerSiteName: "fest.one",
+    homeTitle: "รวมคู่มือเทศกาลทั้งหมดของ fest.one หน้านี้เป็นภาษาอังกฤษ",
+    titleSuffix: "คู่มือเทศกาล",
+    keyword: "เทศกาล",
+    lang: "th-TH",
+    homeHref: "/festivals/",
+    homeLabel: "เทศกาล",
+    footerLinks: [
+      { href: "/festivals/", label: "คู่มือเทศกาลทั้งหมด", title: "รวมคู่มือทุกเทศกาลของ fest.one หน้านี้เป็นภาษาอังกฤษ" },
+    ],
+    publisher,
+    networkFooter: false,
+    partnerDisclosure: false,
+    analytics: false,
+    defaultTheme: "dark",
+  },
 };
 
 /** The words the guide template says itself, per language. */
@@ -168,8 +191,20 @@ export const chrome: Record<Lang, {
     // Oct 2026).
     rowJoint: " do ",
   },
+  // A plain space between a page's label and the guide's name ("บัตร
+  // Wonderfruit 2026"), as Thai sets one before a Latin word (the th-TH
+  // native reader on the executor's strings).
+  th: {
+    rootCrumbTitle: "รวมคู่มือเทศกาลทั้งหมด หน้านี้เป็นภาษาอังกฤษ",
+    siblingNav: "หน้าในคู่มือนี้",
+    onThisPage: "ในหน้านี้",
+    otherLanguages: "คู่มือนี้ในภาษาอื่น",
+    breadcrumbs: "เส้นทางนำทาง",
+    skip: "ข้ามไปยังเนื้อหา",
+    menu: "เปิดเมนู",
+  },
 };
 
 // Every keyword in one place for tools/seo-check.mjs, which reads this file
 // as text and picks the one matching each page's <html lang>.
-export const keywords = { en: "festival", es: "festival", pt: "festival" };
+export const keywords = { en: "festival", es: "festival", pt: "festival", th: "เทศกาล" };

@@ -160,13 +160,13 @@ describe("the copy and its sheet", () => {
     assert.deepEqual(late, []);
   });
 
-  // A dollar figure outside a span would outlive its reading: the build
-  // could never take it down.
+  // A figure in dollars, reais or baht outside a span would outlive its
+  // reading: the build could never take it down.
   test("every price sits in an expiry span", () => {
     const loose = [];
     for (const { where, text, guide } of all) {
       const left = copy.applySpans(text, guide, END_OF_TIME, where);
-      const hit = left.match(/[^\s]*\$\s?\d[\d,.]*/g);
+      const hit = left.match(/[^\s]*\$\s?\d[\d,.]*|\d[\d,]*\s?บาท/g);
       if (hit) loose.push(`${where}: ${hit.join(", ")}`);
     }
     assert.deepEqual(loose, [], "wrap the sentence in {{until prices}}…{{/until}} (or the key its expiry has)");
@@ -216,7 +216,11 @@ describe("the copy and its sheet", () => {
       const event = rules.eventOf(events, guide);
       const main = rules.mainPage(guide);
       if (!guide.expires.prices) continue;
-      const eve = new Date(Date.parse(guide.expires.prices) - DAY).toISOString().slice(0, 10);
+      // The day before the figures come off, or before the first sale an
+      // offer names the end of (Wonderfruit's 9 November), whichever comes
+      // first: the last day every offer prints.
+      const ends = (Array.isArray(event.markup.offers) ? event.markup.offers : []).map((o) => o.priceValidUntil).filter(Boolean);
+      const eve = [new Date(Date.parse(guide.expires.prices) - DAY).toISOString().slice(0, 10), ...ends].sort()[0];
       const before = rules.musicEvent(event, guide, main, eve);
       const after = rules.musicEvent(event, guide, main, guide.expires.prices);
       // A list of channels (Primavera Sound São Paulo's) prices only an
@@ -231,10 +235,116 @@ describe("the copy and its sheet", () => {
         before.offers.forEach((o, i) =>
           assert.equal(o.availability, channels[i].availability && `https://schema.org/${channels[i].availability}`, "a channel's stock status while the prices hold"),
         );
-        assert.ok(after.offers.every((o) => !("availability" in o)), "no stock status once the prices have expired");
+        assert.ok(after.offers?.every((o) => !("availability" in o)) ?? true, "no stock status once the prices have expired");
       }
       const end = new Date(Date.parse(event.edition.end ?? event.edition.start) + DAY).toISOString().slice(0, 10);
       assert.equal(rules.musicEvent(event, guide, main, end).offers, undefined, "no offers once the edition has ended");
+    }
+  });
+
+  // An offer whose source names the last day of its sale (Wonderfruit's
+  // November Sale, 9 November) prints that day as priceValidUntil, beside
+  // the day the sale opened, and is gone the day after; once every offer's
+  // sale has ended the event has none (the SEO lead's gate-3 conditions 3
+  // and 4 on Wonderfruit: no offer on the 10 November build).
+  test("an offer's own end of sale prints, and the offer goes the day after", () => {
+    let seen = 0;
+    for (const guide of guides) {
+      const event = rules.eventOf(events, guide);
+      const offers = Array.isArray(event.markup.offers) ? event.markup.offers : [];
+      const ends = [...new Set(offers.map((o) => o.priceValidUntil).filter(Boolean))].sort();
+      if (!ends.length) continue;
+      seen++;
+      const main = rules.mainPage(guide);
+      const next = (d) => new Date(Date.parse(d) + DAY).toISOString().slice(0, 10);
+      for (const until of ends) {
+        const on = rules.musicEvent(event, guide, main, until).offers ?? [];
+        const ending = on.filter((o) => o.priceValidUntil === until);
+        assert.equal(ending.length, offers.filter((o) => o.priceValidUntil === until).length, `${event.slug}: the offers that end on ${until} print that day`);
+        for (const o of ending) assert.ok(o.validFrom && typeof o.price === "number", `${event.slug}: an offer with its end of sale has its start and its price`);
+        const after = rules.musicEvent(event, guide, main, next(until)).offers ?? [];
+        assert.ok(after.every((o) => o.priceValidUntil !== until), `${event.slug}: an offer that ends on ${until} is gone on ${next(until)}`);
+      }
+      if (offers.every((o) => o.priceValidUntil))
+        assert.equal(rules.musicEvent(event, guide, main, next(ends.at(-1))).offers, undefined, `${event.slug}: no offer once every sale has ended`);
+    }
+    assert.ok(seen > 0, "no guide's offers name an end of sale");
+  });
+
+  // Thai lines that state a price, the state of a sale, the gates' hours,
+  // a transport or a hotel fact print the day those facts were read: in
+  // their own words ("อ่านวันที่ 22 ตุลาคม"), or through {{read}} (the
+  // session after Wonderfruit's gate 2, item 4). Every insertion is printed
+  // here for the native reader, and each has a day, a month in full and a
+  // Gregorian year: a bare th-TH locale prints 2569.
+  const READ_CLASS = /^(prices\.|editions\.\d+\.(salesPhases|hours)|transport\.|sellers\.0(\.|$))/;
+  const READ_DATED = /อ่านเมื่อ|อ่านวันที่|ณ วันที่|เมื่อ(วันที่)? ?\d{1,2}(–\d{1,2})? (ตุลาคม|กันยายน|พฤศจิกายน)/;
+  const THAI_MONTH = /(มกราคม|กุมภาพันธ์|มีนาคม|เมษายน|พฤษภาคม|มิถุนายน|กรกฎาคม|สิงหาคม|กันยายน|ตุลาคม|พฤศจิกายน|ธันวาคม)/;
+  test("a Thai line with a price, a sale state, hours or a fare says when it was read", (t) => {
+    const bare = [];
+    const printed = [];
+    for (const { where, text, guide, event, page } of all) {
+      if (!guide.lang.startsWith("th")) continue;
+      const unspanned = text.replace(/\{\{until \w+\}\}|\{\{\/until\}\}/g, "");
+      for (const line of unspanned.split("\n"))
+        if (copy.tags(line).some((k) => READ_CLASS.test(k)) && !READ_DATED.test(line) && !line.includes("{{read}}"))
+          bare.push(`${where}: ${line.slice(0, 80)}`);
+      if (!text.includes("{{read}}")) continue;
+      for (const [field, words] of [["title", page?.title], ["description", page?.description], ["h1", page?.h1]])
+        assert.ok(!words?.includes("{{read}}"), `${where}: {{read}} in the ${field}`);
+      const ctx = { event, guide, page, today: isoDay(guide.createdAt), where };
+      const html = copy.inline(text, ctx).replace(/<span class="nowrap">([^<]*)<\/span>/g, "$1").replace(/\u00a0/g, " ");
+      for (const m of html.matchAll(/<span class="read">([^<]*)<\/span>/g)) {
+        printed.push(`${where}: ${m[1]}`);
+        assert.match(m[1], /^อ่านเมื่อ \d{1,2}(–\d{1,2})? /, `${where}: "${m[1]}" opens with its day`);
+        assert.match(m[1], THAI_MONTH, `${where}: "${m[1]}" has no month in full`);
+        assert.match(m[1], /\b20\d\d$/, `${where}: "${m[1]}" has no Gregorian year`);
+      }
+    }
+    for (const line of printed) t.diagnostic(line);
+    assert.deepEqual(bare, [], "date the line in its words, or put {{read}} before its tags");
+    for (const guide of guides.filter((g) => g.lang.startsWith("th"))) {
+      assert.ok(printed.length > 0, `${guide.event}/${guide.slug}: no {{read}} printed`);
+      assert.ok(!guide.hubBlurb.includes("{{read}}"), `${guide.event}/${guide.slug}: {{read}} in the hub's blurb`);
+      for (const page of guide.pages) for (const g of page.glance ?? []) assert.ok(!g.value.includes("{{read}}"), `${page.slug}: {{read}} in the glance`);
+      const main = rules.mainPage(guide);
+      assert.doesNotMatch(JSON.stringify(rules.musicEvent(rules.eventOf(events, guide), guide, main, isoDay(guide.createdAt))), /อ่านเมื่อ/, "no read date in the markup");
+    }
+  });
+
+  // The glance's "checked on" is the span of the readings behind the main
+  // page's own words, not a date written once and left.
+  test("a Thai glance's reading date is the span of its page's readings", () => {
+    for (const guide of guides.filter((g) => g.lang.startsWith("th"))) {
+      const event = rules.eventOf(events, guide);
+      const main = rules.mainPage(guide);
+      const row = main.glance?.find((g) => g.label === "ตรวจสอบเมื่อ");
+      if (!row) continue;
+      const days = all
+        .filter((s) => s.guide === guide && s.page === main)
+        .flatMap((s) => copy.tags(s.text))
+        .filter((k) => !copy.isUndated(k))
+        .map((k) => copy.readOn(event, k))
+        .filter(Boolean)
+        .sort();
+      const [y1, m1, d1] = days[0].split("-").map(Number);
+      const [y2, m2, d2] = days.at(-1).split("-").map(Number);
+      const month = (n) => THAI_MONTH.source.slice(1, -1).split("|")[n - 1];
+      const want = days[0] === days.at(-1) ? `${d1} ${month(m1)} ${y1}` : y1 === y2 && m1 === m2 ? `${d1}–${d2} ${month(m1)} ${y1}` : `${d1} ${month(m1)} – ${d2} ${month(m2)} ${y2}`;
+      assert.equal(row.value.replace(/\u00a0/g, " ").replace(/\u2060/g, ""), want, `${main.slug}: the glance's reading date`);
+    }
+  });
+
+  // "Sold out" is a fact of one camping tier on the stay page, never of the
+  // event: not in a title, a summary, an h1 or a lede, and no offer says it.
+  test("a Thai guide says sold out only where the copy does", () => {
+    for (const guide of guides.filter((g) => g.lang.startsWith("th"))) {
+      for (const page of guide.pages)
+        for (const field of ["title", "description", "h1", "lede"])
+          assert.doesNotMatch(page[field], /sold out|SoldOut|ขายหมด/i, `${page.slug}: ${field}`);
+      const main = rules.mainPage(guide);
+      const markup = JSON.stringify(rules.musicEvent(rules.eventOf(events, guide), guide, main, isoDay(guide.createdAt)));
+      assert.doesNotMatch(markup, /SoldOut/, `${guide.event}/${guide.slug}: an offer marked sold out`);
     }
   });
 });
@@ -363,8 +473,11 @@ function pages() {
   return out;
 }
 
+// The words a reader sees: tags out, entities back, and the word joiner a
+// Thai range carries after its dash (copy.ts, GLUE.th) taken out, as it has
+// no width and no sound.
 const decode = (s) =>
-  s.replace(/<[^>]+>/g, "").replace(/&nbsp;/g, " ").replace(/&quot;/g, '"').replace(/&#39;|&#x27;/g, "'")
+  s.replace(/<[^>]+>/g, "").replace(/\u2060/g, "").replace(/&nbsp;/g, " ").replace(/&quot;/g, '"').replace(/&#39;|&#x27;/g, "'")
     .replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim();
 
 /** The anchors of a page: href, title and the text a reader sees. */
@@ -554,6 +667,81 @@ describe("the built pages", { skip: built ? false : "apps/fest/dist is missing: 
       }
     }
     assert.deepEqual(bad, []);
+  });
+});
+
+// ----------------------------------------------------- a Thai guide's pages
+
+describe("a Thai guide's built pages", { skip: built ? false : "apps/fest/dist is missing: npm run build:fest first" }, () => {
+  const html = built ? pages() : new Map();
+  const content = [...html].filter(([p]) => !p.startsWith("/go/"));
+  const thai = ([, h]) => /<html[^>]*\slang="th/.test(h);
+
+  // Its face is preloaded where its letters are, and nowhere else: every
+  // other page would fetch 27 kB it never paints.
+  test("Noto Sans Thai is preloaded on the Thai pages, and only there", () => {
+    const wrong = content
+      .filter((e) => /noto-sans-thai-v29-thai\.woff2" as="font"/.test(e[1]) !== thai(e))
+      .map(([p]) => p);
+    assert.deepEqual(wrong, []);
+    assert.ok(content.some(thai), "no Thai page was built");
+  });
+
+  // A page of a guide is a page to read: the main text of each Thai page
+  // holds at least 400 Thai words, counted as Thai splits them.
+  test("each Thai page holds at least 400 words", () => {
+    const seg = new Intl.Segmenter("th", { granularity: "word" });
+    const short = [];
+    for (const [p, h] of content.filter(thai)) {
+      const main = /<main\b[^>]*>([\s\S]*?)<\/main>/.exec(h)?.[1] ?? "";
+      const text = decode(main.replace(/<script\b[\s\S]*?<\/script>/g, ""));
+      const n = [...seg.segment(text)].filter((s) => s.isWordLike).length;
+      if (n < 400) short.push(`${p}: ${n} words`);
+    }
+    assert.deepEqual(short, []);
+  });
+
+  // A sum, a time or a date is one token in Thai, where a line breaks at
+  // any space: "12,900 | บาท" leaves a figure without its unit. Each one in
+  // the main text is in a no-break span or joined by no-break spaces
+  // (copy.ts, KEEP_TH and its glue; a heading's keep-date span), never by a
+  // plain space, and a range's dash is joined to the figure after it.
+  test("a Thai sum, time or date never breaks at its space", () => {
+    const split = [];
+    const TOKEN = /\d–(?!\u2060)\d|\d[\d,]*(?:–\d[\d,]*)? บาท|\d{1,2}[:.]\d{2} น\.|\d{1,2}(?:–\d{1,2})? (?:มกราคม|กุมภาพันธ์|มีนาคม|เมษายน|พฤษภาคม|มิถุนายน|กรกฎาคม|สิงหาคม|กันยายน|ตุลาคม|พฤศจิกายน|ธันวาคม)/g;
+    for (const [p, h] of content.filter(thai)) {
+      const main = (/<main\b[^>]*>([\s\S]*?)<\/main>/.exec(h)?.[1] ?? "")
+        .replace(/<script\b[\s\S]*?<\/script>/g, "")
+        .replace(/<span class="(nowrap|keep-date)">[^<]*<\/span>/g, "");
+      for (const run of main.split(/<[^>]*>/))
+        for (const m of run.matchAll(TOKEN)) split.push(`${p}: "${m[0]}"`);
+    }
+    assert.deepEqual(split, []);
+  });
+
+  // The button says what the copy says, once, where the copy puts it.
+  test("the ticket button is the copy's, once a page", () => {
+    const bad = [];
+    for (const guide of guides.filter((g) => g.lang.startsWith("th")))
+      for (const page of guide.pages) {
+        const h = html.get(`/${page.slug}/`) ?? "";
+        const buttons = [...h.matchAll(/<a class="button"[^>]*>([\s\S]*?)<\/a>/g)].map((m) => decode(m[1]));
+        const want = page.cta ? [page.cta.label] : [];
+        if (JSON.stringify(buttons) !== JSON.stringify(want)) bad.push(`/${page.slug}/: ${JSON.stringify(buttons)}, the copy's ${JSON.stringify(want)}`);
+      }
+    assert.deepEqual(bad, []);
+  });
+
+  // Every name a landmark points at is on the page: a FAQ block labelled
+  // by its h1 (Wonderfruit's), each section by its heading.
+  test("every aria-labelledby names an id on its page", () => {
+    const loose = [];
+    for (const [p, h] of content) {
+      const ids = new Set([...h.matchAll(/\sid="([^"]+)"/g)].map((m) => m[1]));
+      for (const m of h.matchAll(/\saria-labelledby="([^"]+)"/g))
+        for (const id of m[1].split(/\s+/)) if (!ids.has(id)) loose.push(`${p}: #${id}`);
+    }
+    assert.deepEqual(loose, []);
   });
 });
 

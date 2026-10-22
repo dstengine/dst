@@ -1,0 +1,19 @@
+---
+// A guide's ticket button: the link to the seller through its hop, the
+// seller's line under it where the guide gives one, and a second link. At
+// the top of the page, or under the heading of the section the copy puts it
+// in (Section.cta, Wonderfruit's "where to buy"); GuidePage decides which.
+import type { Slots } from "../data/types";
+
+interface Props {
+  cta: NonNullable<Slots["cta"]>;
+}
+const { cta } = Astro.props;
+---
+<div class="guide-cta">
+  <a class="button" href={cta.href} title={cta.title} rel="nofollow">{cta.label}</a>
+  {cta.seller && <p class="guide-cta-seller">{cta.seller}</p>}
+  {cta.secondary && (
+    <a class="guide-cta-secondary" href={cta.secondary.href} title={cta.secondary.title} rel="nofollow">{cta.secondary.label}</a>
+  )}
+</div>

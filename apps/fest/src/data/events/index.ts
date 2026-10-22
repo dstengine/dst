@@ -6,8 +6,9 @@ import * as beyondTheValley from "./beyond-the-valley";
 import * as fieldDay from "./field-day";
 import * as creamfieldsChile from "./creamfields-chile";
 import * as primaveraSoundSaoPaulo from "./primavera-sound-sao-paulo";
+import * as wonderfruit from "./wonderfruit";
 
-const files = [beyondTheValley, fieldDay, creamfieldsChile, primaveraSoundSaoPaulo];
+const files = [beyondTheValley, fieldDay, creamfieldsChile, primaveraSoundSaoPaulo, wonderfruit];
 
 export const events: FestEvent[] = files.flatMap((f) => f.events);
 export const guides: Guide[] = files.flatMap((f) => f.guides);
