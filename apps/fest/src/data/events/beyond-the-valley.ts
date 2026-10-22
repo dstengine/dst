@@ -26,7 +26,7 @@ export const events: FestEvent[] = [
   {
     slug: "beyond-the-valley",
     createdAt: "2026-10-22T11:40:00+04:00",
-    updatedAt: "2026-10-22T11:40:00+04:00",
+    updatedAt: "2026-10-22T14:35:00+04:00",
     name: "Beyond The Valley",
     edition: { start: "2026-12-28", end: "2027-01-01" },
     readOverrides: { event: "2026-10-21", "event.edition_count_note": "2026-10-22" },
@@ -36,13 +36,15 @@ export const events: FestEvent[] = [
     // "vacated by 6pm local time ... on 1st January 2027" at AEDT
     // (editions.0.note, venue.utc_offset_on_event); the organiser is
     // Untitled Group at s16; the offers are the six entry tiers, prices.0 to
-    // prices.5, sold by Megatix, valid from Megatix's on_sale_datetime of
-    // 7 August 2026 (sales_timeline.3).
+    // prices.5, sold by Megatix, valid from the organiser's Main Presale,
+    // "6 pm, Thursday 6th August" (sales_timeline.2, s3), at AEST, Victoria's
+    // offset in August (s14 prints "6PM AEST"). Not 7 August: that general
+    // on-sale was cancelled when the presale sold out (sales_timeline.3).
     markup: {
       startDate: "2026-12-28T08:00:00+11:00",
       endDate: "2027-01-01T18:00:00+11:00",
       organizer: { name: "Untitled Group", url: "https://www.untitledgroup.com.au/" },
-      offers: { prices: [0, 1, 2, 3, 4, 5], go: "tickets", seller: "Megatix", validFrom: "2026-08-07" },
+      offers: { prices: [0, 1, 2, 3, 4, 5], go: "tickets", seller: "Megatix", validFrom: "2026-08-06T18:00:00+10:00" },
     },
     sheet: {
       event: {
