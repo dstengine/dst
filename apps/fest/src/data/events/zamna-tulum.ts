@@ -45,7 +45,7 @@ export const events: FestEvent[] = [
   {
     slug: "zamna-tulum",
     createdAt: "2026-10-22T21:53:00+04:00",
-    updatedAt: "2026-10-22T21:53:00+04:00",
+    updatedAt: "2026-10-22T22:47:00+04:00",
     name: "Zamna Tulum",
     edition: { start: "2026-12-31", end: "2027-01-10" },
     // The scout's event line carries no readOn of its own: written with
@@ -669,7 +669,7 @@ export const events: FestEvent[] = [
         note: "organiser gives only the 22:00 start and no end time; the house rule on every page is 'Respect the venue and other attendees'",
         seller: {
           source: "s27",
-          readOn: "2026-10-21",
+          readOn: "2026-10-22",
           start: "'HORA: Desde las 22:00 hrs.'",
           entryCloses: "'El acceso a los eventos se cierra a las 3:00 am (A pesar de que el horario puede extenderse en algunos eventos, es necesario que anticipes tu entrada)' — access closes at 03:00; the event's hours may run on at some events, the access close is not said to extend; arrive before (s27)",
           reentry: "'Está prohibido el reingreso al evento' — once out, no return, wristband or not",
@@ -683,10 +683,10 @@ export const events: FestEvent[] = [
         age: 18,
         id: "the seller's terms (s26, cl. 11.1): nominative tickets require 'la documentación necesaria que acredite suficientemente su identidad' or entry may be refused; neither the organiser nor the product page describes an ID check",
         source: "s26",
-        readOn: "2026-10-21",
+        readOn: "2026-10-22",
         prohibitedItems: {
           source: "s27",
-          readOn: "2026-10-21",
+          readOn: "2026-10-22",
           statedBy: "Mr Nice VIP, on the night's product page; the organiser's pages carry only 'Respect the venue and other attendees' (s10–s14) and the seller's general terms (s26) only the promoter's reserved right of admission (cl. 12.1) and 'políticas de acceso y salida establecidas por el Promotor' (cl. 11.2)",
           text: "Objetos prohibidos: objetos de vidrio o punzocortantes, fuegos artificiales, bengalas o antorchas, sustancias ilegales o controladas (incluyendo sustancias psicoactivas), bebidas alcohólicas, alimentos, óxido nitroso, perros o mascotas, cometas o astas extensibles, equipos láseres portátiles, palos selfies, drones, equipo de filmación profesional, aerosoles, megáfonos, bocinas, mochilas, maletas, o cualquier artículo que pueda considerarse razonablemente para uso como arma",
           note: "'mochilas, maletas' are named; small bags ('bolsas') are not mentioned either way — the page says nothing about bag size, so the guide prints the list as the seller's and makes no bag-size claim",
@@ -701,7 +701,7 @@ export const events: FestEvent[] = [
       refunds: {
         source: "s26",
         sources: ["s26", "s27"],
-        readOn: "2026-10-21",
+        readOn: "2026-10-22",
         text: "Mr Nice VIP terms: 'No se permiten reembolsos' (cl. 10.1); changes or corrections only up to 72 hours before the night; bad weather or force majeure (the product page names storms and hurricanes) is no ground for a refund; if the promoter cancels, the refund is limited to the ticket price and the 15 % fee is not returned; a postponement is refunded as wallet credit; illegal resale or the attempt is ground for cancelling the ticket without refund (cl. 9.2); one scan per ticket, the first presented counts; Delaware law and courts (cl. 14.2)",
       },
       lineup: {
