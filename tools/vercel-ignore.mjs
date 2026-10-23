@@ -197,7 +197,10 @@ export function decide({ site, from, to = "HEAD", now = new Date() }) {
     if (builtOn < today) return build(`last built from a commit of ${builtOn}, and listings are cut by date`);
   }
 
-  const files = git(["diff", "--name-only", "--no-renames", from, to]).split("\n").filter(Boolean);
+  // -z: paths verbatim. Without it git quotes a non-ASCII name in octal
+  // escapes ("apps/fest/public/_assets/…\321\205…"), which matches no rule
+  // here and so built every site for an image in one app.
+  const files = git(["diff", "--name-only", "-z", "--no-renames", from, to]).split("\0").filter(Boolean);
   const ctx = {
     site,
     reads: site === "dst" ? ["dst", ...HUB_READS] : [site],
