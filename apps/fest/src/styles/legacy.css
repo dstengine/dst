@@ -9,6 +9,17 @@
 }
 .legacy-page > * { max-width: var(--prose-width); }
 
+/* The h1 is the archive's: the real names of Russian venues and bands,
+   transliterated, in the wide display face. At the guides' 29 px at 320,
+   "Nizhegorodskaya" is 401 px in a 292 px column, and the break split it
+   mid-word (QA, round 1). So the size is held to what the h1's longest
+   unbreakable run needs: LegacyPage.astro counts its characters into
+   --h1-chars, and at about one em a character (the face's widest measured
+   is 0.97) that run fits the column (100cqi). A heading of short words
+   keeps the guides' size; from about 500 px up every one does. */
+.legacy-page { container-type: inline-size; }
+.legacy-page h1 { font-size: min(var(--h1-size), 100cqi / var(--h1-chars, 1)); }
+
 /* Its sections were full-bleed bands with their own gutter (.wrap); here
    they are one column under the h1. */
 .legacy .wrap { padding: 0; margin: 0; max-width: none; }
@@ -32,6 +43,12 @@
    long Russian lines in the display face ran to three lines at 1280. */
 .legacy h2 { font-size: var(--step-2); }
 .legacy h3 { font-size: var(--step-1); }
+/* The archive kept its headings' dates and names on one line ("Sensation
+   <span class="nowrap">2015 Amsterdam</span>"), 309 px at 320 in this face,
+   wider than the column: the page scrolled sideways. Each such run is one
+   unit wherever the line holds it, and wraps inside itself only where the
+   column cannot, as a guide's .keep-date does (theme.css). */
+.legacy :is(h2, h3, h4) .nowrap { display: inline-block; white-space: normal; }
 
 /* A list of pages: one card a row, the whole card the link. A clickable
    card never underlines (DESIGN.md). */

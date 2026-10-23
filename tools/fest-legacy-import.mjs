@@ -28,8 +28,7 @@
 //
 // Not imported: the 17 paging pages behind query strings (/node?page=N,
 // /mainpage?page=N, /sensation2015/node?page=N), which vercel.json
-// redirects to the listings they paged; the archive's stylesheet; its
-// /sensation2015/rss.xml.
+// redirects to the listings they paged; the archive's stylesheet.
 //
 //   node tools/fest-legacy-import.mjs [archive dir]
 import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
@@ -45,8 +44,14 @@ const PUBLIC = path.join(APP, "public");
 const ORIGIN = "https://fest.one";
 /** The day the archive was restored, which every page of it carries. */
 const RESTORED = "2026-10-04";
-/** The files at the archive's root that the app serves as they are. */
-const ROOT_FILES = ["archive.svg", "rss.xml", "google4a741a6201736f1b.html", "favicon.ico"];
+/** The day /archive/ first existed: a new address, whose content (the old
+    front page and the list of every page under it) was put together for
+    this app, so the restore date would date it before it was made. */
+const ARCHIVE_HOME_MADE = "2026-10-23";
+/** The archive's files that the app serves as they are, at the same path:
+    its two feeds, the placeholder picture and the Search Console token.
+    A feed reader that holds /sensation2015/rss.xml keeps reading it. */
+const ROOT_FILES = ["archive.svg", "rss.xml", "sensation2015/rss.xml", "google4a741a6201736f1b.html", "favicon.ico"];
 /** What the archive's front page is called in a trail, and where it lives. */
 const ARCHIVE_HOME = { href: "/archive/", label: "Archive" };
 /** The three pages that had no trail of their own: their crumb is the
@@ -59,11 +64,18 @@ const HUB_CRUMBS = { "/archive/": "Archive", "/concert/": "Concert", "/sensation
 const SUFFIX = "festival archive";
 const KEYWORD = "festival";
 const MONTHS = { January: "Jan", February: "Feb", March: "Mar", April: "Apr", August: "Aug", September: "Sept", October: "Oct", November: "Nov", December: "Dec" };
+const MONTH = `(${Object.keys(MONTHS).join("|")})`;
+const FULL_MONTH = "(January|February|March|April|May|June|July|August|September|October|November|December)";
+/** A month as part of a date: after a day ("6 November") or before a year
+    ("January 2016"). A month word anywhere else is a name: the band Dead
+    by April lost its "April" to a pass over the whole title (QA, round 1). */
+const DATE_MONTH = new RegExp(`(?<=\\b\\d{1,2} )${MONTH}\\b|\\b${MONTH}(?= \\d{4}\\b)`, "g");
 /** The titles that do not fit in 60 with the suffix even with the month
     shortened: the archive's title cut down by hand, saying the same. */
 const SHORT = {
   "/aurora-concert-hall/": "Aurora Concert Hall concerts, 2015–2016",
   "/concert/": "Concert and festival listings in Russia, 2015–2017",
+  "/dead-by-april/ekaterinburg2016/": "Dead by April, Yekaterinburg, 6 Nov 2016",
   "/dobrynin/moskva2016/": "Vyacheslav Dobrynin, Moscow, 29 Jan 2016",
   "/dom-hudozhnika/": "Central House of Artists, 2015–2016",
   "/dom-muziki/": "Moscow House of Music concerts, 2015–2016",
@@ -81,11 +93,11 @@ const SHORT = {
   "/today/": "The Today page, 2016–2017",
 };
 const fits = (title) => [...withSuffix(title, SUFFIX, KEYWORD, "en")].length <= 60;
-/** The archive's title, or where it does not fit, its month shortened, or
-    where that does not either, the short one above. */
+/** The archive's title, or where it does not fit, the month of its date
+    shortened, or where that does not either, the short one above. */
 function fitTitle(path, title) {
   if (fits(title)) return title;
-  const short = title.replace(new RegExp(`\\b(${Object.keys(MONTHS).join("|")})\\b`, "g"), (m) => MONTHS[m]);
+  const short = title.replace(DATE_MONTH, (m) => MONTHS[m]);
   if (fits(short)) return short;
   if (SHORT[path] && fits(SHORT[path])) return SHORT[path];
   throw new Error(`${path}: "${title}" does not fit in 60 with " — ${SUFFIX}"; give it a short title in SHORT`);
@@ -222,6 +234,12 @@ function cleanBody(record) {
     counts.banners++;
     return "";
   });
+  // The restore's note on a page ("Restored from a snapshot of 24
+  // February 2017") keeps its date on one line: at 320 px it broke "24 |
+  // February 2017" on nine pages (QA, round 1).
+  body = body.replace(/<p class="archived">[\s\S]*?<\/p>/g, (note) =>
+    note.replace(new RegExp(`\\b(\\d{1,2}) ${FULL_MONTH} (\\d{4})\\b`, "g"), "$1\u00a0$2\u00a0$3"),
+  );
   // Any other empty alt is the page's own picture.
   body = body.replace(/(<img\s[^>]*?)alt=""/g, (_, head) => {
     counts.alts++;
@@ -252,7 +270,15 @@ function crumbsOf(record) {
 const pages = raw.map((r) => {
   const body = cleanBody(r);
   const times = [...body.matchAll(/<time datetime="(\d{4}-\d{2}-\d{2})/g)].map((m) => m[1]).sort();
-  const h1Html = r.html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)?.[1]?.trim() ?? r.title;
+  // The archive kept a heading's date on one line (<span class="nowrap">9
+  // November 2016</span>). In this app's display face that is 402 px, wider
+  // than the 292 px column at 320, and the h1 ran off the screen (QA, round
+  // 1). Here the day stays with its month and the year may take the next
+  // line: "9 November" fits the column, a whole date may not.
+  const h1Html = (r.html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)?.[1]?.trim() ?? r.title).replace(
+    /<span class="nowrap">([^<]*)<\/span>/g,
+    (_, date) => date.replace(/^(\d{1,2}) /, "$1\u00a0"),
+  );
   // The site's subject belongs in every summary. An archive summary that
   // does not name it gets one true sentence saying where the page is.
   const description = /festival/i.test(r.description)
@@ -271,7 +297,7 @@ const pages = raw.map((r) => {
     ...(r.noindex ? { noindex: true } : {}),
     ...(r.image ? { image: r.image } : {}),
     createdAt: times[0] ?? RESTORED,
-    updatedAt: RESTORED,
+    updatedAt: r.path === ARCHIVE_HOME.href ? ARCHIVE_HOME_MADE : RESTORED,
     body,
   };
 });
@@ -294,7 +320,10 @@ for (const asset of [...assets].sort()) {
   copied++;
 }
 const roots = ROOT_FILES.filter((name) => existsSync(path.join(ARCHIVE, name)));
-for (const name of roots) copyFileSync(path.join(ARCHIVE, name), path.join(PUBLIC, name));
+for (const name of roots) {
+  mkdirSync(path.dirname(path.join(PUBLIC, name)), { recursive: true });
+  copyFileSync(path.join(ARCHIVE, name), path.join(PUBLIC, name));
+}
 
 console.log(`${pages.length} pages to ${path.relative(REPO, OUT)} (${paging.length} paging pages left to vercel.json)`);
 console.log(`${pages.filter((p) => p.noindex).length} noindex, ${pages.filter((p) => p.was).length} moved (${pages.filter((p) => p.was).map((p) => `${p.was} -> ${p.path}`).join(", ")})`);

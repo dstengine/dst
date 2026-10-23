@@ -1102,15 +1102,16 @@ function textFiles(dir, into = []) {
 // 2026 (card 2026-10-23-fest-one-new-engine), and its text is the Russian
 // it was written in. The session's ruling on that card makes it the one
 // exemption from the two script cases below, and scopes it: the imported
-// records (legacy/), the archive's feed and pictures copied as they are,
-// and in dist the folder of each legacy page, read from the records and
-// never listed by hand. Everything else in the app, the hub, the chrome
-// and every guide's dist included, is held to both cases as before.
+// records (legacy/), the archive's two feeds and its pictures copied as
+// they are, and in dist the folder of each legacy page, read from the
+// records and never listed by hand. Everything else in the app, the hub,
+// the chrome and every guide's dist included, is held to both cases as
+// before.
 const LEGACY_DIST = new Set(legacyPages.map((p) => path.join(DIST, p.path, "index.html")));
+const LEGACY_FEEDS = ["rss.xml", path.join("sensation2015", "rss.xml")];
 const isArchive = (file) =>
   file.startsWith(path.join(APP, "legacy") + path.sep) ||
-  file === path.join(APP, "public", "rss.xml") ||
-  file === path.join(DIST, "rss.xml") ||
+  LEGACY_FEEDS.some((feed) => file === path.join(APP, "public", feed) || file === path.join(DIST, feed)) ||
   file.startsWith(path.join(APP, "public", "_assets") + path.sep) ||
   file.startsWith(path.join(DIST, "_assets") + path.sep) ||
   LEGACY_DIST.has(file);

@@ -161,9 +161,12 @@ header.site-header .site-name {
    the 30.24 px this size gave at 320 before Creamfields Chile, wider than
    the 292 px column, so it broke "Creamfield|s" (line-break sweep, 22
    October 2026). 1.375rem under the same slope sets it at 29 px there, 285
-   px wide; from 1182 px up the size is 3rem, as it was. */
+   px wide; from 1182 px up the size is 3rem, as it was. A token, so an
+   archive page's h1 (legacy.css) can be held below it where its longest
+   word needs less. */
+html:root { --h1-size: clamp(1.75rem, 1.375rem + 2.2vw, 3rem); }
 html h1 {
-  font-size: clamp(1.75rem, 1.375rem + 2.2vw, 3rem);
+  font-size: var(--h1-size);
   overflow-wrap: break-word;
 }
 h2 { overflow-wrap: break-word; }

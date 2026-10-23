@@ -3,6 +3,7 @@ import sitemap from "@astrojs/sitemap";
 import { readFileSync } from "node:fs";
 import { sitemapEntry, sitemapIndexLastmod } from "../../tools/sitemap.mjs";
 import { stripSvgComments } from "../../tools/svg-comments.mjs";
+import { legacyTrail } from "./legacy-trail.mjs";
 
 // When each page's content last changed, generated from git history by
 // tools/lastmod.mjs. Read as JSON rather than imported from @dst/content
@@ -37,6 +38,9 @@ export default defineConfig({
     // After sitemap(), so it rewrites the index that one just wrote.
     sitemapIndexLastmod(),
     stripSvgComments(),
+    // An archive page's BreadcrumbList names the trail it shows, not the
+    // segments of its address (legacy-trail.mjs).
+    legacyTrail(),
   ],
   output: "static",
   // A component's <script> is written where the component renders, and

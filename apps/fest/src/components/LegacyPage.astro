@@ -20,13 +20,31 @@ const { page } = Astro.props;
 // the archive's own listings reached many of them only through the paging
 // pages that were not imported (vercel.json redirects those), and a page
 // nothing links to is a page nobody finds. Its tooltip is the page's
-// summary, which says more than its title.
+// summary, which says more than its title. A label's date is one unit
+// (no-break spaces): at 320 px the list broke "4 | November 2016" across
+// lines on 11 rows (QA, round 1).
+const MONTH = "January|February|March|April|May|June|July|August|September|October|November|December";
+const glueDates = (label: string) =>
+  label
+    .replace(new RegExp(`\\b(\\d{1,2}) (${MONTH})\\b`, "g"), "$1\u00a0$2")
+    .replace(new RegExp(`\\b(${MONTH}) (\\d{4})\\b`, "g"), "$1\u00a0$2");
+// The h1's longest run that cannot break: a word, or a day glued to its
+// month by the import ("9\u00a0November"). legacy.css sizes the h1 by it.
+const h1Chars = Math.max(
+  ...page.h1
+    .replace(/<[^>]+>/g, "")
+    .replace(/&nbsp;|&#160;/g, "\u00a0")
+    .replace(/&[a-z]+;|&#\d+;/g, "x")
+    .split(/[ \t\n]+/)
+    .map((run) => [...run].length),
+);
 const index =
   page.path === "/archive/"
     ? legacyPages
         .filter((p) => p !== page)
         .map((p) => ({ href: p.path, label: p.archiveTitle ?? p.title, title: p.description }))
         .sort((a, b) => a.label.localeCompare(b.label, "en"))
+        .map((l) => ({ ...l, label: glueDates(l.label) }))
     : [];
 ---
 <div class="container legacy-page">
@@ -38,7 +56,7 @@ const index =
     homeTitle={chrome.en.rootCrumbTitle}
     label={chrome.en.breadcrumbs}
   />
-  <h1 set:html={page.h1} />
+  <h1 set:html={page.h1} style={`--h1-chars: ${h1Chars}`} />
   <div class="legacy" set:html={page.body} />
   {index.length > 0 && (
     <section class="legacy-index" aria-labelledby="legacy-index">
