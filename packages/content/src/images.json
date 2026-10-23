@@ -786,6 +786,54 @@
         ]
       ]
     },
+    "/covers/comfyui-0-41-0-42-hdr-reference-latents-lightvae.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/comfyui-0-41-0-42-hdr-reference-latents-lightvae-480.avif"
+        ],
+        [
+          768,
+          "/covers/comfyui-0-41-0-42-hdr-reference-latents-lightvae-768.avif"
+        ],
+        [
+          1024,
+          "/covers/comfyui-0-41-0-42-hdr-reference-latents-lightvae-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/comfyui-0-41-0-42-hdr-reference-latents-lightvae-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/comfyui-0-41-0-42-hdr-reference-latents-lightvae-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/comfyui-0-41-0-42-hdr-reference-latents-lightvae-480.webp"
+        ],
+        [
+          768,
+          "/covers/comfyui-0-41-0-42-hdr-reference-latents-lightvae-768.webp"
+        ],
+        [
+          1024,
+          "/covers/comfyui-0-41-0-42-hdr-reference-latents-lightvae-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/comfyui-0-41-0-42-hdr-reference-latents-lightvae-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/comfyui-0-41-0-42-hdr-reference-latents-lightvae-1536.webp"
+        ]
+      ]
+    },
     "/covers/editing-ai-video-in-comfyui-nodes.jpg": {
       "width": 1536,
       "height": 864,
@@ -1023,6 +1071,54 @@
         [
           1536,
           "/covers/kling-4-0-announced-flash-early-access-1536.webp"
+        ]
+      ]
+    },
+    "/covers/kling-4-0-fully-available.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/kling-4-0-fully-available-480.avif"
+        ],
+        [
+          768,
+          "/covers/kling-4-0-fully-available-768.avif"
+        ],
+        [
+          1024,
+          "/covers/kling-4-0-fully-available-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/kling-4-0-fully-available-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/kling-4-0-fully-available-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/kling-4-0-fully-available-480.webp"
+        ],
+        [
+          768,
+          "/covers/kling-4-0-fully-available-768.webp"
+        ],
+        [
+          1024,
+          "/covers/kling-4-0-fully-available-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/kling-4-0-fully-available-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/kling-4-0-fully-available-1536.webp"
         ]
       ]
     },
@@ -27021,6 +27117,54 @@
         [
           1536,
           "/covers/about-1536.webp"
+        ]
+      ]
+    },
+    "/covers/alpenglow-is-live-votor-finality-150ms.jpg": {
+      "width": 1536,
+      "height": 864,
+      "avif": [
+        [
+          480,
+          "/covers/alpenglow-is-live-votor-finality-150ms-480.avif"
+        ],
+        [
+          768,
+          "/covers/alpenglow-is-live-votor-finality-150ms-768.avif"
+        ],
+        [
+          1024,
+          "/covers/alpenglow-is-live-votor-finality-150ms-1024.avif"
+        ],
+        [
+          1440,
+          "/covers/alpenglow-is-live-votor-finality-150ms-1440.avif"
+        ],
+        [
+          1536,
+          "/covers/alpenglow-is-live-votor-finality-150ms-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/alpenglow-is-live-votor-finality-150ms-480.webp"
+        ],
+        [
+          768,
+          "/covers/alpenglow-is-live-votor-finality-150ms-768.webp"
+        ],
+        [
+          1024,
+          "/covers/alpenglow-is-live-votor-finality-150ms-1024.webp"
+        ],
+        [
+          1440,
+          "/covers/alpenglow-is-live-votor-finality-150ms-1440.webp"
+        ],
+        [
+          1536,
+          "/covers/alpenglow-is-live-votor-finality-150ms-1536.webp"
         ]
       ]
     },

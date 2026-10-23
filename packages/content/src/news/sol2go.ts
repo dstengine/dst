@@ -3,6 +3,64 @@ import type { NewsItem } from "../types.ts";
 export const items: NewsItem[] = [
 
   {
+    slug: "alpenglow-is-live-votor-finality-150ms",
+    createdAt: "2026-10-23T04:40:00+04:00",
+    updatedAt: "2026-10-23T04:40:00+04:00",
+    site: "sol2go",
+    image: "/covers/alpenglow-is-live-votor-finality-150ms.jpg",
+    imageAlt: "A row of flat lilac paper blocks across a deep violet ground, one taller mint block among them and the blocks after it narrower and closer together, with a small cream disc high on the right",
+    imageKind: "illustration",
+    imageWidth: 1536,
+    imageHeight: 864,
+    title: "Alpenglow is live: Solana finalises in one round now",
+    cardTitle: "Alpenglow is live",
+    titleSeo: "Alpenglow live on Solana: 150ms finality",
+    summary:
+      "Solana switched consensus from TowerBFT to Alpenglow on 21 October at slot 459,653,000, epoch 1064. Finality goes from 12.8 seconds to an expected 150 milliseconds, slots halve to 200ms, and vote transactions leave the blocks, which changes what every dashboard counts.",
+    date: "2026-10-23",
+    category: "Upgrades",
+    featured: 1,
+    source: {
+      name: "Solana Foundation",
+      url: "https://solana.com/upgrades/alpenglow",
+      verifiedOn: "2026-10-23",
+    },
+    body: [
+      "On <strong>Wednesday 21 October 2026</strong>, at about <strong>13:36 UTC</strong>, Solana stopped agreeing with itself the way it had since launch. Epoch <strong>1064</strong> began under TowerBFT, ran it for its first 5,000 slots, and at slot <strong>459,653,000</strong> handed over to <strong>Alpenglow</strong>. The last TowerBFT block, slot 459,652,999, is the genesis block of the new consensus; its certificate was signed by <strong>446 of 654</strong> validators.",
+      "## What changed on the wire",
+      "Under TowerBFT a validator voted by sending a transaction, and a block was final once enough votes had stacked up over 32 slots: <strong>12.8 seconds</strong>. Under <strong>Votor</strong>, the first phase of Alpenglow, validators send votes directly to one another and bundle them into certificates. If at least <strong>80 per cent</strong> of stake notarises a block, it is final after <strong>one round</strong>; otherwise a second round with <strong>60 per cent</strong> thresholds finishes the job. The design tolerates 20 per cent adversarial stake plus 20 per cent offline.",
+      "## The headline number, honestly",
+      "The Foundation puts finality at roughly <strong>150 milliseconds</strong> after a block is proposed, and adds in the same breath that “the 150ms is an expectation, not a constant”: one-round finality is faster than two-round, and the network decides which it gets. Slots themselves went from <strong>400ms</strong> to <strong>200ms</strong>. The <code>confirmed</code> and <code>finalized</code> commitment levels now describe the same state, and <code>confirmed</code> is slated for removal in a later release.",
+      "## What it costs a validator",
+      "Voting used to cost about <strong>1 SOL</strong> an epoch in vote transaction fees, paid from the identity account. It is now a flat <strong>0.8 SOL</strong> per epoch, the Validator Admission Ticket of SIMD-0357, taken from the vote account and burned, on top of the rent-exempt minimum. The fee charged at the start of an epoch pays for the next one, and the first was charged at the start of epoch 1064. The migration required an Agave-based client: <strong>Agave v4.3.2</strong>, <strong>Jito-Solana v4.3.2-jito</strong> or <strong>Harmonic Salsa v4.3.2-harmonic</strong>. Firedancer and Frankendancer were not supported for it.",
+      "## What changed for everyone else",
+      "Vote transactions are no longer in blocks, so transaction counts and TPS “dropped sharply” on activation without any drop in activity; a dashboard, a benchmark or an alert threshold with a vote-inclusive baseline needs a new one. Proof of History no longer paces block production, so tick entries have left the shred stream, where a leader used to emit 64 a slot. And <code>Clock.unix_timestamp</code> is no longer the stake-weighted median of vote timestamps: the leader sets it, within a range bounded by the parent's timestamp and twice the elapsed slot time.",
+      "## What has not happened",
+      "<strong>Rotor</strong>, the second phase, which replaces Turbine's tree of relays with a single relay layer, is planned for a later release and not scheduled. And the date itself slipped: <a href=\"/news/alpenglow-now-has-dates-and-the-first-one-is-a-stake-percentage/\" title=\"Alpenglow finally has dates, and the first one is a stake percentage\">Anza's schedule</a> had feature activation beginning 28 September; devnet switched on 25 September, and mainnet took another three and a half weeks. <a href=\"/events/breakpoint-2026-london/\" title=\"Solana Breakpoint 2026\">Breakpoint in London</a>, 15 to 17 November, will be the first with Alpenglow running.",
+    ],
+    expertise:
+      "The number worth watching now is not 150 milliseconds but the share of blocks that finalise in one round. Votor's fast path needs 80 per cent of stake to notarise, and the genesis certificate carried 446 of 654 validators by count, which says nothing about stake; a network that keeps landing on the 60 per cent fallback has activated Alpenglow and is quietly getting two-round finality instead. The other thing to notice is how much of this upgrade is subtraction. Votes left the blocks, ticks left the ledger, the median timestamp left the clock, and a commitment level is leaving the RPC; every one of those is a quantity someone's dashboard was built on, and the dashboards will be wrong before anyone's code is.",
+    faq: [
+      {
+        q: "When did Alpenglow activate on Solana?",
+        a: "On <strong>21 October 2026</strong> at about 13:36 UTC, in epoch 1064, from slot 459,653,000. Devnet had switched on 25 September.",
+      },
+      {
+        q: "What is Solana's finality time after Alpenglow?",
+        a: "Roughly <strong>150 milliseconds</strong> after a block is proposed when 80 per cent of stake notarises it in one round, against 12.8 seconds under TowerBFT. The Foundation calls 150ms an expectation, not a constant.",
+      },
+      {
+        q: "Do I need to change my application for Alpenglow?",
+        a: "Not the code that sends transactions. The <code>confirmed</code> and <code>finalized</code> commitment levels now mean the same thing and <code>confirmed</code> will be removed later; anything that counts transactions or TPS needs a new baseline, because vote transactions are no longer in blocks.",
+      },
+      {
+        q: "Is Rotor live?",
+        a: "No. Rotor, the relay layer that replaces Turbine, is planned for a later release and has no date.",
+      },
+    ],
+  },
+
+  {
     slug: "rushframe-ai-video-editor-crypto-worlds-fair-pitch-video",
     createdAt: "2026-10-05T22:05:00+04:00",
     updatedAt: "2026-10-05T22:50:00+04:00",
