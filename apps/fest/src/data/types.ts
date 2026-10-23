@@ -287,5 +287,13 @@ export interface Guide extends Dated {
   /** Each page says under its lede the day it last changed, the day its
       sitemap entry gives (« Mis à jour le 22 octobre 2026 »). */
   updatedLine?: true;
+  /** The guide's cover, a path under public/ ("/covers/igloofest.jpg"),
+      drawn by tools/covers.mjs from its line in tools/covers.json:
+      abstract shapes in the site's palette, never the event's artwork, a
+      logo, an act or a photograph. Decorative on the main page (alt="",
+      aria-hidden, no caption), and the share picture of every page of the
+      guide and the MusicEvent's `image`. Absent, the pages show none and
+      share the site's card. */
+  cover?: string;
   pages: GuidePage[];
 }

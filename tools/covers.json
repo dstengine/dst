@@ -20,7 +20,8 @@
     "aivideo": "near-black violet ground with hot magenta and electric cyan neon, small acid-yellow highlights",
     "tea": "dark mahogany and oxblood leather, deep bottle-green plaster walls, antique brass and gilt catching the firelight, warm cream china",
     "l0n": "pale stone ground with Oxford blue and old gold, one small red accent",
-    "aca": "warm sand ground with deep Pacific teal and sunset coral"
+    "aca": "warm sand ground with deep Pacific teal and sunset coral",
+    "fest": "deep teal-black ground with dark slate-teal layers, lime signal green and pale lime, small pale cool grey-green highlights"
   },
   "idioms": {
     "aivideo": "cyberpunk",
@@ -559,6 +560,36 @@
       "la-arrolladora-banda-el-limon-acapulco-2026": "a brass tuba, a trumpet and a snare drum grouped on a stage under string lights, a lime half at one corner",
       "yuri-lucero-acapulco-2026": "two vintage microphones on stands facing each other on a stage, confetti in the air, a bay at night behind",
       "espinoza-paz-acapulco-2027": "a cowboy hat resting on an acoustic guitar on a stage, scattered red paper hearts, a palm frond at one edge"
+    },
+    "fest": {
+      "beyond-the-valley": {
+        "subject": "broad flat farm plains cut into striped paddock bands under low rounded rises, a large pale lime sun disc resting low between two rises, a scatter of small pale dots in the sky above",
+        "detail": "flat overlapping paper bands parallel to the frame, stacked like a stage set: two or three low rounded rises in dark slate-teal, below them wide horizontal paddock bands, some cut with thin parallel lime stripes like ploughed rows, the big pale lime half disc of the sun sitting in the dip between the two highest rises, a handful of tiny pale grey-green dots high in the dark sky; the whole composition sits in a wide horizontal band across the middle of the square, with plain dark ground above and below it"
+      },
+      "creamfields-chile": {
+        "subject": "a jagged range of high mountain peaks with pale snow caps against a deep teal-black night sky, a fan of thin lime light rays rising from behind a low band of plain city rectangles at their foot",
+        "detail": "full-bleed cut paper running past every edge of the frame, the sky the deep teal-black ground itself: three overlapping ridges of sharp triangular peaks in dark slate-teal and lighter teal, the highest ridge capped with pale grey-green, along the foot of the mountains a row of small flat rectangles of uneven heights in near-black teal, and from behind them a fan of seven thin straight lime rays opening upwards across the mountains; the whole composition sits in a wide horizontal band across the middle of the square, with plain dark ground above and below it"
+      },
+      "field-day": {
+        "subject": "a wide open park lawn with round tree-crown discs at dusk, a band of tall plain city tower rectangles behind it, a strip of calm water at one side",
+        "detail": "flat cut-paper bands parallel to the frame, the sky the deep teal-black ground itself: a broad lime lawn band across the lower part of the composition with five or six large round dark teal tree-crown discs on short trunks, behind the lawn a row of tall flat rectangles of uneven heights in slate-teal and dark teal with a few pale grey-green edges, a narrow pale band of water at the right edge, a small pale lime sun disc low on the left; the whole composition sits in a wide horizontal band across the middle of the square, with plain dark ground above and below it"
+      },
+      "primavera-sound-sao-paulo": {
+        "subject": "a dense crowd of tall plain tower rectangles filling the whole width of the frame, side by side and overlapping like a stage set, a broad lime band sweeping in one long loop across their feet, a scatter of small round pale lime discs above them like blossoms against the night sky",
+        "detail": "flat cut-paper sheets parallel to the frame, the sky the deep teal-black ground itself, the towers in slate-teal, dark teal and near-black with a few pale grey-green edges, far more towers than in any ordinary skyline, the lime band one smooth unbroken curve; the whole composition sits in a wide horizontal band across the middle of the square, with plain dark ground above and below it"
+      },
+      "wonderfruit": {
+        "subject": "a large lime half disc rising like a low sun over striped bands of flat fields, three thin concentric arcs around it, a scatter of small pointed oval and teardrop shapes drifting up the right side",
+        "detail": "flat paper shapes on the deep ground colour: the half disc in signal lime at the centre of the composition, sitting on four or five wide horizontal field bands in dark teal, slate and pale lime, three thin pale grey-green arcs around the disc, and to its right a loose diagonal scatter of small pointed ovals and teardrops in lime and pale lime, as if seeds were lifting on the wind; the whole composition sits in a wide horizontal band across the middle of the square, with plain dark ground above and below it"
+      },
+      "zamna-tulum": {
+        "subject": "a round cenote opening seen from directly overhead, its rim of concentric torn-paper rings, a pale lime water disc at its centre, large broad overlapping crescent and teardrop shapes of a jungle canopy pressing in around it",
+        "detail": "orthographic and flat: one large circular opening in the middle of the frame, rimmed with three concentric torn rings in dark slate-teal and near-black, a pale lime disc of water at its centre with two thin pale ripple rings, and pressing in from the left and right edges a few large broad shapes with smooth edges, wide rounded teardrops and long curved crescents in lime, deep teal and pale grey-green, overlapping one another like a canopy, a few small round pale discs among them; the whole composition sits in a wide horizontal band across the middle of the square, with plain dark ground above and below it"
+      },
+      "igloofest": {
+        "subject": "a low dome built of irregular faceted ice blocks under a dark winter sky scattered with six-pointed crystal shapes, thin lime arcs of an aurora above",
+        "detail": "flat cut-paper: a low wide dome of irregular angular blocks in pale grey-green, pale lime and light teal at the centre of the composition, a narrow pale snow band under it, above it a dark sky with seven or eight six-pointed crystal shapes of different sizes in pale grey-green and pale lime, and two or three thin lime arcs sweeping across the sky from left to right; the whole composition sits in a wide horizontal band across the middle of the square, with plain dark ground above and below it"
+      }
     }
   },
   "news": {

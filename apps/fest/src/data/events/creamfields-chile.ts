@@ -1630,11 +1630,12 @@ export const guides: Guide[] = [
   {
     slug: "es-CL",
     createdAt: "2026-10-22T17:00:00+04:00",
-    updatedAt: "2026-10-22T17:00:00+04:00",
+    updatedAt: "2026-10-23T14:10:00+04:00",
     event: "creamfields-chile",
     lang: "es-CL",
     dir: "ltr",
     path: "/creamfields-chile/",
+    cover: "/covers/creamfields-chile.jpg",
     hubLabel: "Español (Chile)",
     hubBlurb: "Creamfields Chile 2026 se hace el sábado 14 y el domingo 15 de noviembre de 2026 en el Club Hípico de Santiago, Av. Blanco Encalada 2540, Santiago Centro [editions_v2.items.0.dates] [venue.address].",
     // The prices and the sale lines come off the day after the edition, 16

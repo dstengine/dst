@@ -1338,7 +1338,7 @@ export const guides: Guide[] = [
   {
     slug: "es-MX",
     createdAt: "2026-10-22T21:53:00+04:00",
-    updatedAt: "2026-10-22T21:53:00+04:00",
+    updatedAt: "2026-10-23T14:10:00+04:00",
     event: "zamna-tulum",
     // The season as the hub and the trail name it: the organiser names
     // every season page "… 2027".
@@ -1346,6 +1346,7 @@ export const guides: Guide[] = [
     lang: "es-MX",
     dir: "ltr",
     path: "/zamna-tulum/",
+    cover: "/covers/zamna-tulum.jpg",
     hubLabel: "Español (México)",
     hubBlurb: "Temporada del 31 de diciembre de 2026 al 10 de enero de 2027 en Tulum, Quintana Roo: fechas y cartelera, boletos y Multipass, dónde queda y cómo llegar [editions.0.start] [editions.0.end] [venue.address].",
     // The figures in USD come off on 2 December 2026, six weeks after the

@@ -1229,7 +1229,7 @@ export const guides: Guide[] = [
   {
     slug: "en-AU",
     createdAt: "2026-10-22T11:40:00+04:00",
-    updatedAt: "2026-10-22T20:00:00+04:00",
+    updatedAt: "2026-10-23T14:10:00+04:00",
     event: "beyond-the-valley",
     // The event as the hub and the trail name it, with the edition, as the
     // guides beside it do (the fest director's note at Primavera Sound São
@@ -1238,6 +1238,7 @@ export const guides: Guide[] = [
     lang: "en-AU",
     dir: "ltr",
     path: "/beyond-the-valley/",
+    cover: "/covers/beyond-the-valley.jpg",
     hubLabel: "English (Australia)",
     hubBlurb: "Beyond The Valley is a four-night camping festival over New Year's at Barunah Plains, 126 km west of Melbourne, strictly 18+, and its 2026/27 edition sold out in the presale, as The Music Network reported on 6 August 2026. [editions.0] [venue.note] [age] [sales_timeline.3] The guide dates every price and gate time, lists the lineup by day and stage, and quotes what the organiser says about Tixel, its only authorised resale.",
     expires: { prices: "2026-12-02", busFares: "2026-12-03" },

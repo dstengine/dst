@@ -20,8 +20,11 @@ interface Props {
   /** The guide the page belongs to; absent on the hub. */
   guide?: Guide;
   language?: Lang;
+  /** The share picture (og:image), where the page has one of its own: a
+      guide's cover. Absent, BaseLayout shares the site's card. */
+  image?: string;
 }
-const { title, description, jsonLd, alternates, crumbLabels, crumbCurrent, guide, language = "en" } = Astro.props;
+const { title, description, jsonLd, alternates, crumbLabels, crumbCurrent, guide, language = "en", image } = Astro.props;
 
 // The guide's locale over the language's, and its own footer links after the
 // hub's. Spread, like the rest of the identity, so the layout sets none of
@@ -52,6 +55,7 @@ const thai = guide ? langOf(guide.lang) === "th" : false;
   crumbLabels={crumbLabels}
   crumbCurrent={crumbCurrent}
   chrome={chrome}
+  image={image}
 >
   {/* Only the two faces the first paint needs: Chivo 400 for the text and
       Syne 800 for the headings, Latin subset. Everything else loads when a

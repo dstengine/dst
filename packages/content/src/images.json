@@ -6865,6 +6865,232 @@
       ]
     }
   },
+  "fest.one": {
+    "/covers/beyond-the-valley.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/beyond-the-valley-480.avif"
+        ],
+        [
+          768,
+          "/covers/beyond-the-valley-768.avif"
+        ],
+        [
+          1024,
+          "/covers/beyond-the-valley-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/beyond-the-valley-480.webp"
+        ],
+        [
+          768,
+          "/covers/beyond-the-valley-768.webp"
+        ],
+        [
+          1024,
+          "/covers/beyond-the-valley-1024.webp"
+        ]
+      ]
+    },
+    "/covers/creamfields-chile.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/creamfields-chile-480.avif"
+        ],
+        [
+          768,
+          "/covers/creamfields-chile-768.avif"
+        ],
+        [
+          1024,
+          "/covers/creamfields-chile-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/creamfields-chile-480.webp"
+        ],
+        [
+          768,
+          "/covers/creamfields-chile-768.webp"
+        ],
+        [
+          1024,
+          "/covers/creamfields-chile-1024.webp"
+        ]
+      ]
+    },
+    "/covers/field-day.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/field-day-480.avif"
+        ],
+        [
+          768,
+          "/covers/field-day-768.avif"
+        ],
+        [
+          1024,
+          "/covers/field-day-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/field-day-480.webp"
+        ],
+        [
+          768,
+          "/covers/field-day-768.webp"
+        ],
+        [
+          1024,
+          "/covers/field-day-1024.webp"
+        ]
+      ]
+    },
+    "/covers/igloofest.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/igloofest-480.avif"
+        ],
+        [
+          768,
+          "/covers/igloofest-768.avif"
+        ],
+        [
+          1024,
+          "/covers/igloofest-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/igloofest-480.webp"
+        ],
+        [
+          768,
+          "/covers/igloofest-768.webp"
+        ],
+        [
+          1024,
+          "/covers/igloofest-1024.webp"
+        ]
+      ]
+    },
+    "/covers/primavera-sound-sao-paulo.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/primavera-sound-sao-paulo-480.avif"
+        ],
+        [
+          768,
+          "/covers/primavera-sound-sao-paulo-768.avif"
+        ],
+        [
+          1024,
+          "/covers/primavera-sound-sao-paulo-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/primavera-sound-sao-paulo-480.webp"
+        ],
+        [
+          768,
+          "/covers/primavera-sound-sao-paulo-768.webp"
+        ],
+        [
+          1024,
+          "/covers/primavera-sound-sao-paulo-1024.webp"
+        ]
+      ]
+    },
+    "/covers/wonderfruit.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/wonderfruit-480.avif"
+        ],
+        [
+          768,
+          "/covers/wonderfruit-768.avif"
+        ],
+        [
+          1024,
+          "/covers/wonderfruit-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/wonderfruit-480.webp"
+        ],
+        [
+          768,
+          "/covers/wonderfruit-768.webp"
+        ],
+        [
+          1024,
+          "/covers/wonderfruit-1024.webp"
+        ]
+      ]
+    },
+    "/covers/zamna-tulum.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/zamna-tulum-480.avif"
+        ],
+        [
+          768,
+          "/covers/zamna-tulum-768.avif"
+        ],
+        [
+          1024,
+          "/covers/zamna-tulum-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/zamna-tulum-480.webp"
+        ],
+        [
+          768,
+          "/covers/zamna-tulum-768.webp"
+        ],
+        [
+          1024,
+          "/covers/zamna-tulum-1024.webp"
+        ]
+      ]
+    }
+  },
   "fwf.lol": {
     "/covers/a-hardware-engineer-inherits-the-software-era.jpg": {
       "width": 1536,

@@ -1160,13 +1160,14 @@ export const guides: Guide[] = [
   {
     slug: "th-TH",
     createdAt: "2026-10-22T21:05:00+04:00",
-    updatedAt: "2026-10-22T21:05:00+04:00",
+    updatedAt: "2026-10-23T14:10:00+04:00",
     event: "wonderfruit",
     // The event as the hub and the trail name it, with its year.
     name: "Wonderfruit 2026",
     lang: "th-TH",
     dir: "ltr",
     path: "/wonderfruit/",
+    cover: "/covers/wonderfruit.jpg",
     hubLabel: "ภาษาไทย",
     hubBlurb: mainDescription,
     // The figures in baht come off on 2 December 2026, six weeks after the

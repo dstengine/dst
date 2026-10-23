@@ -1832,12 +1832,13 @@ export const guides: Guide[] = [
   {
     slug: "fr-CA",
     createdAt: "2026-10-22T22:00:00+04:00",
-    updatedAt: "2026-10-22T22:00:00+04:00",
+    updatedAt: "2026-10-23T14:10:00+04:00",
     event: "igloofest",
     name: "Igloofest 2027",
     lang: "fr-CA",
     dir: "ltr",
     path: "/igloofest/",
+    cover: "/covers/igloofest.jpg",
     hubLabel: "Français (Canada)",
     hubBlurb: "Igloofest 2027 : Montréal du 14 janvier au 6 février, Gatineau du 11 au 13 février, Québec du 4 au 6 mars, Edmonton du 11 au 13 mars. Dates, billets, programmation, métro et quoi porter, vérifiés sur les sites de l'organisateur, avec la date de consultation. [editions.0] [editions[Gatineau 2027]] [editions[Québec 2027]] [editions.3]",
     // Six weeks after the oldest reading inside the spans: the seller row

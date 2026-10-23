@@ -1081,13 +1081,14 @@ export const guides: Guide[] = [
   {
     slug: "pt-BR",
     createdAt: "2026-10-22T20:00:00+04:00",
-    updatedAt: "2026-10-22T20:00:00+04:00",
+    updatedAt: "2026-10-23T14:10:00+04:00",
     event: "primavera-sound-sao-paulo",
     // The event as the hub and the trail name it, with its year.
     name: "Primavera Sound São Paulo 2026",
     lang: "pt-BR",
     dir: "ltr",
     path: "/primavera-sound-sao-paulo/",
+    cover: "/covers/primavera-sound-sao-paulo.jpg",
     hubLabel: "Português (Brasil)",
     hubBlurb: mainDescription,
     // The figures in reais come off on 2 December 2026, six weeks after the

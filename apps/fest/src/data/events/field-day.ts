@@ -879,11 +879,12 @@ export const guides: Guide[] = [
   {
     slug: "en-AU",
     createdAt: "2026-10-22T14:55:00+04:00",
-    updatedAt: "2026-10-22T14:55:00+04:00",
+    updatedAt: "2026-10-23T14:10:00+04:00",
     event: "field-day",
     lang: "en-AU",
     dir: "ltr",
     path: "/field-day/",
+    cover: "/covers/field-day.jpg",
     hubLabel: "English (Australia)",
     hubBlurb: "Field Day 2027 is on Friday 1 January 2027 at The Domain in Sydney, on Gadigal Country, with a 12pm start (Moshtix) and an 11pm finish (the Botanic Gardens' listing). [editions.0.start] [editions.0.note] [gates.0] It's Fuzzy's one-day dance festival on New Year's Day: three stages on parkland in the middle of the city, no camping, and strictly 18+. [event.organiser] [history.3] [age]",
     // Prices are Moshtix's of 21 October 2026, 42 days good; the MobTix

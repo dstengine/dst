@@ -66,8 +66,10 @@ interface Venue { name: string; address: string; lat: number; lon: number; count
     last day of a sale (Wonderfruit's November Sale, which its organiser
     ends on 9 November), the offer prints it, and from the next day is left
     out; with every offer gone, the event has none (the SEO lead's gate-3
-    condition 4 on Wonderfruit). No performer (the organiser ranks no act) and no
-    image until the guide has a cover. Where the sheet splits the line-up
+    condition 4 on Wonderfruit). No performer (the organiser ranks no act).
+    The image is the guide's cover, the abstract picture its main page
+    shows (Google's Event reference recommends one), and none where the
+    guide has no cover. Where the sheet splits the line-up
     by day (Primavera Sound São Paulo), each day is a subEvent at the same
     place, its acts the performers by name as the organiser lists them,
     each a PerformingGroup: the sheet does not say which act is one
@@ -163,6 +165,7 @@ export function musicEvent(event: FestEvent, guide: Guide, page: GuidePage, day:
     name: markup.name ?? page.h1,
     url,
     description: page.description,
+    ...(guide.cover ? { image: `${SITE}${guide.cover}` } : {}),
     startDate: placed(markup.startDate),
     endDate: placed(markup.endDate),
     eventStatus: "https://schema.org/EventScheduled",

@@ -31,6 +31,8 @@ assertTitle(withSuffix(page.title, titleSuffix, keyword, guide.lang), keyword, r
 const jsonLd = page === mainPage(guide) || page.markup ? [musicEvent(event, guide, page, day)] : [];
 // The BreadcrumbList names what the visible trail shows (GuidePage): the
 // event as the guide names it, and this page by its crumb where it has one.
+// Every page of a guide shares its cover: a link to the camping page is a
+// link to the same festival, and the picture says which one.
 ---
 <Layout
   title={page.title}
@@ -40,6 +42,7 @@ const jsonLd = page === mainPage(guide) || page.markup ? [musicEvent(event, guid
   crumbLabels={{ [event.slug]: guide.name ?? event.name }}
   crumbCurrent={page.crumb}
   guide={guide}
+  image={guide.cover}
 >
   <GuidePage event={event} guide={guide} page={page} today={day} />
 </Layout>

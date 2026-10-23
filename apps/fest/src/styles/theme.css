@@ -247,6 +247,28 @@ h2 { overflow-wrap: break-word; }
    muted, as the sources' dates are. */
 .read { color: var(--ink-muted); }
 
+/* A guide's cover on its main page (GuidePage): the square picture shown
+   as a band, cropped from its middle, which is where tools/covers.json
+   asks each subject to sit, so on a 320 px phone it takes about 150 px and
+   not a whole screen. A background, being decorative (GuidePage says why);
+   the page sets the two image-sets (avif, webp, then the jpeg), and the
+   width picks one. */
+.guide-cover {
+  width: 100%;
+  max-width: var(--prose-width);
+  aspect-ratio: 2 / 1;
+  margin: var(--space-4) 0 0;
+  border-radius: var(--radius);
+  background-color: var(--surface-sunk);
+  background-image: var(--cover-wide);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media (max-width: 480px) {
+  .guide-cover { background-image: var(--cover-narrow); }
+}
+
 /* The facts at a glance under a heading of their own (Creamfields Chile's
    "De un vistazo"): the heading takes the block's top margin, and the
    block sits under it as a section's text does. */
