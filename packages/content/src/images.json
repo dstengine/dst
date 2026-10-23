@@ -31726,6 +31726,38 @@
         ]
       ]
     },
+    "/covers/if-you-had-stayed-puppet-theatre-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/if-you-had-stayed-puppet-theatre-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/if-you-had-stayed-puppet-theatre-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/if-you-had-stayed-puppet-theatre-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/if-you-had-stayed-puppet-theatre-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/if-you-had-stayed-puppet-theatre-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/if-you-had-stayed-puppet-theatre-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/ivor-bolton-anna-aglatova-yerevan-international-music-festival-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -32395,6 +32427,38 @@
         [
           1024,
           "/covers/madaras-hyeyoon-park-yerevan-international-music-festival-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/makar-ekmalyan-170-organ-festival-komitas-house-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/makar-ekmalyan-170-organ-festival-komitas-house-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/makar-ekmalyan-170-organ-festival-komitas-house-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/makar-ekmalyan-170-organ-festival-komitas-house-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/makar-ekmalyan-170-organ-festival-komitas-house-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/makar-ekmalyan-170-organ-festival-komitas-house-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/makar-ekmalyan-170-organ-festival-komitas-house-yerevan-2026-1024.webp"
         ]
       ]
     },
@@ -33899,6 +33963,38 @@
         [
           1024,
           "/covers/the-aunt-from-paris-bohem-theatre-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/the-bambir-tonelab-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/the-bambir-tonelab-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/the-bambir-tonelab-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/the-bambir-tonelab-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/the-bambir-tonelab-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/the-bambir-tonelab-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/the-bambir-tonelab-yerevan-2026-1024.webp"
         ]
       ]
     },
