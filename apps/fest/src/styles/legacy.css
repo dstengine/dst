@@ -1,0 +1,104 @@
+/* The archive's pages inside the app (LegacyPage.astro): the fewest rules
+   that make its classes read as plain blocks in this theme. Every value is
+   a token; every selector is under .legacy, so nothing here reaches a
+   guide or the hub. The archive's own stylesheet is not carried over. */
+.legacy-page {
+  padding-top: var(--space-3);
+  padding-bottom: var(--space-5);
+  overflow-wrap: break-word;
+}
+.legacy-page > * { max-width: var(--prose-width); }
+
+/* Its sections were full-bleed bands with their own gutter (.wrap); here
+   they are one column under the h1. */
+.legacy .wrap { padding: 0; margin: 0; max-width: none; }
+.legacy section,
+.legacy .hero { margin: var(--space-4) 0 0; padding: 0; background: none; }
+.legacy > :first-child { margin-top: 0; }
+.legacy img { max-width: 100%; height: auto; }
+.legacy figure { margin: var(--space-3) 0; }
+
+/* Labels: the eyebrow over a block, the key before a value. */
+.legacy .eyebrow,
+.legacy .k,
+.legacy .label,
+.legacy .meta,
+.legacy .archived {
+  color: var(--ink-muted);
+  font-size: var(--step--1);
+}
+.legacy .lede { font-size: var(--step-1); }
+/* Its headings sit under the page's h1, a step below the guides' own:
+   long Russian lines in the display face ran to three lines at 1280. */
+.legacy h2 { font-size: var(--step-2); }
+.legacy h3 { font-size: var(--step-1); }
+
+/* A list of pages: one card a row, the whole card the link. A clickable
+   card never underlines (DESIGN.md). */
+.legacy .cards { list-style: none; margin: var(--space-2) 0 0; padding: 0; }
+.legacy .cards > li + li,
+.legacy .cards > a + a { margin-top: var(--space-2); }
+.legacy .card,
+.legacy .cards > a {
+  display: block;
+  padding: var(--space-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--ink);
+  text-decoration: none;
+}
+.legacy .card:hover,
+.legacy .cards > a:hover { border-color: var(--accent); text-decoration: none; }
+.legacy .card .pic,
+.legacy .card .t,
+.legacy .card .meta,
+.legacy .card .sum,
+.legacy .cards > a > b,
+.legacy .cards > a > span { display: block; }
+.legacy .card .t,
+.legacy .cards > a > b { color: var(--accent-ink); font-weight: 600; }
+.legacy .card .pic { margin-bottom: var(--space-1); }
+
+/* Side blocks (artists, venues, the same night elsewhere), one under the
+   other. */
+.legacy .cols > * + * { margin-top: var(--space-3); }
+.legacy .block {
+  padding: var(--space-2);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.legacy .block h3 { margin-top: 0; }
+
+/* Facts: a label over each value. */
+.legacy .facts { margin: var(--space-2) 0 0; }
+.legacy .facts > div + div { margin-top: var(--space-1); }
+.legacy .facts dt { color: var(--ink-muted); font-size: var(--step--1); }
+.legacy .facts dd { margin: 0; }
+
+/* Rows of short items: chips, a city strip, a ticket stub, a dated run. */
+.legacy .chips,
+.legacy .strip,
+.legacy .stub,
+.legacy .tags { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-2); }
+.legacy .listing > div,
+.legacy .route > div { padding: var(--space-1) 0; border-bottom: 1px solid var(--border); }
+.legacy .listing > div > *,
+.legacy .route > div > * { margin-right: var(--space-1); }
+
+/* Where the page came from: the archive's footer, at the foot. */
+.legacy .legacy-foot,
+.legacy .credits {
+  margin-top: var(--space-5);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--border);
+  color: var(--ink-muted);
+  font-size: var(--step--1);
+}
+.legacy .legacy-foot .credits { margin-top: 0; padding-top: 0; border-top: 0; }
+
+/* A thumb's target on a phone, as the hub's row of pages has: the tags
+   under a listing and the chips are short links set in a line. */
+@media (max-width: 480px) {
+  .legacy .tags a,
+  .legacy .chips a { display: inline-flex; align-items: center; min-height: 44px; }
+}

@@ -1,4 +1,59 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "ignoreCommand": "node ../../tools/vercel-ignore.mjs fest"
+  "ignoreCommand": "node ../../tools/vercel-ignore.mjs fest",
+  "redirects": [
+    {
+      "source": "/festivals",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/festivals/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/festivals.md",
+      "destination": "/index.md",
+      "statusCode": 301
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/sitemap-index.xml",
+      "statusCode": 301
+    },
+    {
+      "source": "/node",
+      "has": [
+        {
+          "type": "query",
+          "key": "page"
+        }
+      ],
+      "destination": "/concert/",
+      "statusCode": 301
+    },
+    {
+      "source": "/mainpage",
+      "has": [
+        {
+          "type": "query",
+          "key": "page"
+        }
+      ],
+      "destination": "/archive/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sensation2015/node",
+      "has": [
+        {
+          "type": "query",
+          "key": "page"
+        }
+      ],
+      "destination": "/sensation2015/",
+      "statusCode": 301
+    }
+  ]
 }

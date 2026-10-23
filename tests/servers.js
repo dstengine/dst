@@ -25,11 +25,9 @@ export const PORTS = {
   fest: 4353,
 };
 
-/** Where a site's server is ready to be asked, when that is not "/". On
-    fest.one the root is the archive of the old festival site, served by
-    another deployment: the app's own front door is its hub. */
-export const HOME = {
-  fest: "/festivals/",
-};
+/** Where a site's server is ready to be asked, when that is not "/".
+    fest.one's was its hub at /festivals/ until 23 Oct 2026, when the hub
+    moved to the root; every site answers at / now. */
+export const HOME = {};
 
 export const baseUrl = (site) => `http://localhost:${PORTS[site]}`;

@@ -19,9 +19,9 @@ const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const APPS = ["dst", "llc", "visas", "riviera", "mbr", "palmcentral", "eco", "fwf", "musical",
   "nyc42", "ldn", "lnd", "cmx", "mxo", "sol2go", "vien", "tokiohotel", "tick", "aivideo", "tea", "l0n", "aca", "fest"];
 
-// The page whose words go on the card, where it is not the front page:
-// fest.one's / is the archive's, so its guides start at /festivals/.
-const PAGE = { fest: "festivals/index.html" };
+// The page whose words go on the card, where it is not the front page.
+// fest.one's was /festivals/ until its hub moved to / (23 Oct 2026).
+const PAGE = {};
 // A site whose own ground is dark draws the card in its dark accent: the
 // light one is the olive its light theme needs for text on a pale ground,
 // and on this card's dark ground it would be the dimmest thing there.

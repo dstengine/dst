@@ -1,4 +1,10 @@
-// Writes each app's vercel.json from packages/content/src/redirects.ts.
+// Writes each app's vercel.json from packages/content/src/redirects.ts,
+// and from the app's own apps/<app>/redirects.json where it has one: the
+// same fields (from, to, since, why), plus `query` for an address that
+// only existed with a query string (/node?page=2), which the register
+// cannot say. An app's own file changes only that app's build, where an
+// entry in the shared register rebuilds every site (fest.one's move onto
+// one app, 23 Oct 2026).
 //
 // Vercel serves the 301s, because a 301 is a thing only the host can send:
 // Astro's static redirects emit a meta refresh, which moves the reader and
@@ -22,12 +28,15 @@ let written = 0;
 for (const app of readdirSync(path.join(REPO, "apps"))) {
   const file = path.join(REPO, "apps", app, "vercel.json");
   if (!existsSync(file)) continue;
-  const moves = redirectsFor(app);
+  const ownFile = path.join(REPO, "apps", app, "redirects.json");
+  const own = existsSync(ownFile) ? JSON.parse(readFileSync(ownFile, "utf8")) : [];
+  const moves = [...redirectsFor(app), ...own.filter((r) => !r.query)];
+  const queries = own.filter((r) => r.query);
   const hosts = hostMovesFor(app);
   const config = {
     $schema: "https://openapi.vercel.sh/vercel.json",
     ignoreCommand: IGNORE(app),
-    ...(moves.length || hosts.length
+    ...(moves.length || hosts.length || queries.length
       ? {
           redirects: [
             // A host the site has left comes first: the reader goes to the
@@ -56,6 +65,15 @@ for (const app of readdirSync(path.join(REPO, "apps"))) {
                 statusCode: 301,
               })),
             ),
+            // An address with a query string: one rule for every value of
+            // the key, matched on the path as it was written. Vercel passes
+            // the query on to the destination, where it does nothing.
+            ...queries.map(({ from, query, to }) => ({
+              source: from,
+              has: [{ type: "query", key: query }],
+              destination: to,
+              statusCode: 301,
+            })),
           ],
         }
       : {}),
@@ -63,7 +81,8 @@ for (const app of readdirSync(path.join(REPO, "apps"))) {
   const text = JSON.stringify(config, null, 2) + "\n";
   if (readFileSync(file, "utf8") === text) continue;
   writeFileSync(file, text);
-  console.log(`${app}: ${moves.length} redirect${moves.length === 1 ? "" : "s"}`);
+  const count = moves.length + queries.length;
+  console.log(`${app}: ${count} redirect${count === 1 ? "" : "s"}`);
   written++;
 }
 console.log(written ? `${written} vercel.json rewritten` : "every vercel.json already matches the register");

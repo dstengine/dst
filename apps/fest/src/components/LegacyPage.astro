@@ -1,0 +1,51 @@
+---
+// One page of the archive of the old festival site, inside the app: the
+// trail and the h1 in the app's own markup, then the archive's body as it
+// was written (legacy/pages.json, from tools/fest-legacy-import.mjs). The
+// body keeps the archive's classes and its own lang marks, which put
+// lang="ru" on every Russian run and leave the English summaries around
+// them English; legacy.css makes those classes read as plain blocks in
+// this site's theme. No redesign: the card that brought the archive in
+// (2026-10-23-fest-one-new-engine) keeps its body as it is.
+import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
+import { legacyPages, type LegacyPage } from "../legacy";
+import { chrome, site } from "../site.config";
+import "../styles/legacy.css";
+
+interface Props {
+  page: LegacyPage;
+}
+const { page } = Astro.props;
+// The archive's front page ends on a list of every page of it, by title:
+// the archive's own listings reached many of them only through the paging
+// pages that were not imported (vercel.json redirects those), and a page
+// nothing links to is a page nobody finds. Its tooltip is the page's
+// summary, which says more than its title.
+const index =
+  page.path === "/archive/"
+    ? legacyPages
+        .filter((p) => p !== page)
+        .map((p) => ({ href: p.path, label: p.archiveTitle ?? p.title, title: p.description }))
+        .sort((a, b) => a.label.localeCompare(b.label, "en"))
+    : [];
+---
+<div class="container legacy-page">
+  <Breadcrumbs
+    crumbs={page.crumbs}
+    current={page.current}
+    homeHref={site.en.homeHref}
+    homeLabel={site.en.homeLabel}
+    homeTitle={chrome.en.rootCrumbTitle}
+    label={chrome.en.breadcrumbs}
+  />
+  <h1 set:html={page.h1} />
+  <div class="legacy" set:html={page.body} />
+  {index.length > 0 && (
+    <section class="legacy-index" aria-labelledby="legacy-index">
+      <h2 id="legacy-index">Every page of the archive</h2>
+      <ul>
+        {index.map((l) => <li><a href={l.href} title={l.title}>{l.label}</a></li>)}
+      </ul>
+    </section>
+  )}
+</div>

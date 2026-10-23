@@ -1,11 +1,12 @@
 // Every address this app serves, from the data, and the rules that keep
-// them clear of each other and of the archive that shares the host.
+// them clear of each other.
 //
-// fest.one answers from two places: the archive of the old festival site
-// keeps every path it has (/, /sensation2015/, /robots.txt, /sitemap.xml)
-// and hands everything else to this app. So a guide may take any path the
-// archive does not, an event's first guide sits at /<event>/ whatever its
-// language, and a second language at /<event>/<hl>/. A guide's subpages are
+// fest.one is this app alone since 23 Oct 2026: the hub at /, the guides,
+// and the archive of the old festival site at the addresses it always had
+// (/concert/, /sensation2015/, the artist, venue and city pages; its front
+// page moved to /archive/). So a guide may take any path the archive does
+// not, an event's first guide sits at /<event>/ whatever its language, and
+// a second language at /<event>/<hl>/. A guide's subpages are
 // named in its own language (Primavera's ingressos/, Creamfields'
 // entradas/), which is why the language segments are reserved below: a
 // subpage called "es" could never be told from a Spanish guide.
@@ -13,9 +14,10 @@ import { events, guides } from "./data/events/index";
 import type { FestEvent, Guide, GuidePage } from "./data/types";
 import { pathOf, withoutSuffix } from "./copy";
 import { eventOf, mainPage } from "./rules";
+import { legacyPages, type LegacyPage } from "./legacy";
 
 /** First segments the app keeps for itself. */
-export const RESERVED = ["festivals", "go", "fonts", "_astro", "sitemap-index.xml", "sitemap-0.xml", "llms.txt"];
+export const RESERVED = ["festivals", "go", "fonts", "_astro", "_assets", "sitemap-index.xml", "sitemap-0.xml", "llms.txt"];
 
 /** A language or locale segment, "es" or "pt-BR". */
 const LANGUAGE = /^[a-z]{2}(-[A-Z]{2})?$/;
@@ -36,6 +38,16 @@ export function guideRoutes(): GuideRoute[] {
   });
 }
 
+export interface LegacyRoute {
+  page: LegacyPage;
+  path: string;
+}
+
+/** Every page of the archive, at its own address. */
+export function legacyRoutes(): LegacyRoute[] {
+  return legacyPages.map((page) => ({ page, path: page.path }));
+}
+
 /** Fails the build on two pages at one address, a page at a reserved
     address, a page outside its guide, or a guide at a language segment's
     address that is not its language. The .md twins are addresses too:
@@ -49,7 +61,14 @@ export function assertRoutesAreUnique() {
     seen.set(address, by);
   };
   for (const name of RESERVED) claim(`/${name}`, "the app");
-  claim("/festivals.md", "the hub's Markdown twin");
+  claim("/", "the hub");
+  claim("/index.md", "the hub's Markdown twin");
+  // The archive's pages first: they had their addresses before any guide.
+  for (const { path } of legacyRoutes()) {
+    const first = path.split("/").filter(Boolean)[0];
+    if (RESERVED.includes(first)) throw new Error(`legacy ${path}: takes the reserved /${first}/`);
+    claim(path, `the archive's ${path}`);
+  }
   for (const { event, guide, page, path } of guideRoutes()) {
     const by = `${event.slug}/${guide.slug}/${page.kind}`;
     const segments = page.slug.split("/");

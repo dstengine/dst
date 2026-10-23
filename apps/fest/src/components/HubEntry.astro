@@ -23,7 +23,7 @@ interface Props {
 }
 const { event, guide, today } = Astro.props;
 const main = mainPage(guide);
-const ctx: Ctx = { event, guide, today, where: `/festivals/ (${event.slug}/${guide.slug})` };
+const ctx: Ctx = { event, guide, today, where: `/ (${event.slug}/${guide.slug})` };
 const blurb = inline(guide.hubBlurb, ctx);
 const rest = guide.pages.filter((p) => p !== main);
 const name = guide.name ?? event.name;

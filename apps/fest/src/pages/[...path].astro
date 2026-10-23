@@ -1,39 +1,67 @@
 ---
 // Every page of every guide, from the data: /beyond-the-valley/ and its
-// subpages now, a second language at /<event>/<hl>/ later.
+// subpages, a second language at /<event>/<hl>/; and every page of the
+// archive of the old festival site, at the address it always had
+// (legacy/pages.json). One rest route for both, so assertRoutesAreUnique
+// sees every address the app serves.
 import Layout from "../layouts/Layout.astro";
 import GuidePage from "../components/GuidePage.astro";
-import { assertRoutesAreUnique, alternatesFor, guideRoutes, type GuideRoute } from "../routes";
+import LegacyPage from "../components/LegacyPage.astro";
+import { LEGACY_SUFFIX } from "../legacy";
+import { assertRoutesAreUnique, alternatesFor, guideRoutes, legacyRoutes, type GuideRoute, type LegacyRoute } from "../routes";
 import { assertTitle, mainPage, musicEvent, today } from "../rules";
 import { withSuffix } from "@dst/ui/title";
 import { langOf, site } from "../site.config";
 
 export function getStaticPaths() {
   assertRoutesAreUnique();
-  return guideRoutes().map((route) => ({
-    params: { path: route.page.slug },
-    props: { route },
-  }));
+  return [
+    ...guideRoutes().map((route) => ({
+      params: { path: route.page.slug },
+      props: { route },
+    })),
+    ...legacyRoutes().map((legacy) => ({
+      params: { path: legacy.path.replace(/^\/|\/$/g, "") },
+      props: { legacy },
+    })),
+  ];
 }
 
-const { route } = Astro.props as { route: GuideRoute };
-const { event, guide, page } = route;
+const { route, legacy } = Astro.props as { route?: GuideRoute; legacy?: LegacyRoute };
+const { event, guide, page } = route ?? ({} as GuideRoute);
 const day = today();
 // The suffix and the keyword of the guide's language: a Spanish title ends
 // "guía del festival" and is held to "festival" as Spanish has it.
-const { titleSuffix, keyword } = site[langOf(guide.lang)];
-assertTitle(withSuffix(page.title, titleSuffix, keyword, guide.lang), keyword, route.path);
+const { titleSuffix, keyword } = site[langOf(guide?.lang ?? "en")];
+// A legacy title is English, as the archive wrote it, and where it lacks
+// "festival" takes the archive's suffix (Iron Maiden in Moscow, 25 June
+// 2016 — festival archive), held to 60 and the keyword as a guide's is.
+if (legacy) assertTitle(withSuffix(legacy.page.title, LEGACY_SUFFIX, keyword, "en"), keyword, legacy.path);
+else assertTitle(withSuffix(page.title, titleSuffix, keyword, guide.lang), keyword, route!.path);
 
 // One event, one URL: the MusicEvent goes on the guide's main page only,
 // first, so the page reads as the event it is; and on a subpage that is an
 // edition of its own, with its own markup (Igloofest's Québec and
 // Gatineau, the SEO lead's gate-3 condition 4).
-const jsonLd = page === mainPage(guide) || page.markup ? [musicEvent(event, guide, page, day)] : [];
+const jsonLd = !legacy && (page === mainPage(guide) || page.markup) ? [musicEvent(event, guide, page, day)] : [];
 // The BreadcrumbList names what the visible trail shows (GuidePage): the
 // event as the guide names it, and this page by its crumb where it has one.
 // Every page of a guide shares its cover: a link to the camping page is a
 // link to the same festival, and the picture says which one.
 ---
+{legacy ? (
+<Layout
+  title={legacy.page.title}
+  description={legacy.page.description}
+  crumbLabels={Object.fromEntries(legacy.page.crumbs.map((c) => [c.href.replace(/^\/|\/$/g, ""), c.label]))}
+  crumbCurrent={legacy.page.current}
+  image={legacy.page.image}
+  noindex={legacy.page.noindex}
+  titleSuffix={LEGACY_SUFFIX}
+>
+  <LegacyPage page={legacy.page} />
+</Layout>
+) : (
 <Layout
   title={page.title}
   description={page.description}
@@ -46,3 +74,4 @@ const jsonLd = page === mainPage(guide) || page.markup ? [musicEvent(event, guid
 >
   <GuidePage event={event} guide={guide} page={page} today={day} />
 </Layout>
+)}

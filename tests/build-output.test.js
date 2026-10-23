@@ -53,15 +53,13 @@ const SITES = [
   // legacy and still deployed.
   { app: "eco", host: "eco.dst.llc" },
   { app: "tokiohotel", host: "tokiohotel.vvm.space" },
-  // Festival guides on fest.one, which this app shares with the archive of
-  // the old festival site: the archive keeps / and serves robots.txt and
-  // sitemap.xml, so the app's home is /festivals/ and its robots are the
-  // archive's (BOOTSTRAP step 3 adds this sitemap there and no Disallow:
-  // /go/, since a guide's offers.url is its /go/ hop, which Google must be
-  // able to crawl to read its noindex; ruling X4, 22 Oct 2026).
-  // The archive's Content-Security-Policy blocks the analytics tag, so the
-  // site carries none; Search Console measures it.
-  { app: "fest", host: "fest.one", home: "/festivals/", robots: "archive", analytics: false },
+  // Festival guides on fest.one, and the archive of the old festival site
+  // as pages of the same app since 23 Oct 2026: the hub is the root and the
+  // app writes robots.txt, with no Disallow: /go/, since a guide's
+  // offers.url is its /go/ hop, which Google must be able to crawl to read
+  // its noindex (ruling X4, 22 Oct 2026). The site carries no analytics
+  // tag; Search Console measures it.
+  { app: "fest", host: "fest.one", robots: "crawlable-go", analytics: false },
 ];
 const TITLE_LIMIT = 60;
 
@@ -337,6 +335,10 @@ describe("outbound hops", () => {
     for (const { app, robots: owner } of SITES) {
       if (owner === "archive") {
         console.log(`  ${app}: robots.txt is the archive's on the same host, not built here`);
+        continue;
+      }
+      if (owner === "crawlable-go") {
+        console.log(`  ${app}: its /go/ hops stay crawlable so their noindex is read (ruling X4)`);
         continue;
       }
       const robots = path.join(REPO, "apps", app, "dist", "robots.txt");
@@ -1673,7 +1675,15 @@ describe("how much of each site is the template", () => {
     // row of the guide's pages and the closing line naming whom the site is
     // independent of. Room for the second guide's chrome, not for a
     // template.
-    fest: 5,
+    // fest 5 → 34 on 23 October 2026, measured at 32.6, when the archive of
+    // the old festival site became 109 of its pages, its body kept as
+    // written. The tokeniser reads only their English, and most of that is
+    // the archive's own note on each page ("Archive. Restored from a
+    // snapshot of …; all events have passed …") and its side blocks of
+    // artists and venues; the Russian text between them counts no words.
+    // The guides and the hub measure 0.9 on their own. It falls only if the
+    // archive's bodies are rewritten, which that card left as debt.
+    fest: 34,
     // Every figure above was taken with the a–z tokeniser. From 22 October
     // 2026 tools/text-dupes.mjs counts Spanish, Portuguese, French and
     // Armenian words whole (Creamfields Chile), measured that day on the

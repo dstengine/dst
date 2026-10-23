@@ -9,12 +9,17 @@
 // The main page also carries the guide's own words (its language name and
 // blurb are the hub's link to it), so it takes the guide's date as well.
 //
+// Each page of the archive of the old festival site is a record too
+// (legacy/pages.json), dated by its own updatedAt: the day the archive was
+// restored, until a page of it is edited.
+//
 // The hub is not here: it is a list, and lastmod.mjs dates it by the pages
 // it links to against the files that shape it (src/hub.ts among them).
 //
 // No @dst/* import and no import of anything that has one: lastmod.mjs loads
 // this file with Node's type stripping.
 import { events, guides } from "./data/events/index";
+import { legacyPages } from "./legacy";
 
 export interface DatedPage {
   updatedAt: string;
@@ -35,5 +40,6 @@ export function datedPages(): Map<string, DatedPage> {
       pages.set(path, { updatedAt: own, with: event.updatedAt, entry: true });
     }
   }
+  for (const page of legacyPages) pages.set(page.path, { updatedAt: page.updatedAt, entry: true });
   return pages;
 }

@@ -1,0 +1,41 @@
+[
+  {
+    "from": "/festivals/",
+    "to": "/",
+    "since": "2026-10-23",
+    "why": "The hub of the festival guides lived at /festivals/ while the archive of the old festival site kept /; when the app took the whole host, the hub moved to the root. Its old address is in the sitemap index Google has and in eight indexing requests."
+  },
+  {
+    "from": "/festivals.md",
+    "to": "/index.md",
+    "since": "2026-10-23",
+    "why": "The hub's Markdown twin, which llms.txt named, moved with the hub."
+  },
+  {
+    "from": "/sitemap.xml",
+    "to": "/sitemap-index.xml",
+    "since": "2026-10-23",
+    "why": "The archive's own sitemap, which Search Console has; the app's index lists every page the archive's did."
+  },
+  {
+    "from": "/node",
+    "query": "page",
+    "to": "/concert/",
+    "since": "2026-10-23",
+    "why": "The archive's paging of its listing (/node?page=N), which was not imported: the listing it paged is /concert/."
+  },
+  {
+    "from": "/mainpage",
+    "query": "page",
+    "to": "/archive/",
+    "since": "2026-10-23",
+    "why": "The paging of the archive's front page (/mainpage?page=N), which was not imported: that front page is /archive/ now."
+  },
+  {
+    "from": "/sensation2015/node",
+    "query": "page",
+    "to": "/sensation2015/",
+    "since": "2026-10-23",
+    "why": "The paging of the Sensation 2015 fan site's listing, which was not imported: its front page is /sensation2015/."
+  }
+]

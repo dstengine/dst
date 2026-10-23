@@ -6866,6 +6866,1454 @@
     }
   },
   "fest.one": {
+    "/_assets/concert.one/images/iron-maiden.jpg": {
+      "width": 1120,
+      "height": 240,
+      "avif": [
+        [
+          480,
+          "/_assets/concert.one/images/iron-maiden-480.avif"
+        ],
+        [
+          768,
+          "/_assets/concert.one/images/iron-maiden-768.avif"
+        ],
+        [
+          1024,
+          "/_assets/concert.one/images/iron-maiden-1024.avif"
+        ],
+        [
+          1120,
+          "/_assets/concert.one/images/iron-maiden-1120.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/concert.one/images/iron-maiden-480.webp"
+        ],
+        [
+          768,
+          "/_assets/concert.one/images/iron-maiden-768.webp"
+        ],
+        [
+          1024,
+          "/_assets/concert.one/images/iron-maiden-1024.webp"
+        ],
+        [
+          1120,
+          "/_assets/concert.one/images/iron-maiden-1120.webp"
+        ]
+      ]
+    },
+    "/_assets/concert.one/sites/default/files/field/image/1120x240-AlaiOli.jpg": {
+      "width": 1120,
+      "height": 240,
+      "avif": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/field/image/1120x240-AlaiOli-480.avif"
+        ],
+        [
+          768,
+          "/_assets/concert.one/sites/default/files/field/image/1120x240-AlaiOli-768.avif"
+        ],
+        [
+          1024,
+          "/_assets/concert.one/sites/default/files/field/image/1120x240-AlaiOli-1024.avif"
+        ],
+        [
+          1120,
+          "/_assets/concert.one/sites/default/files/field/image/1120x240-AlaiOli-1120.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/field/image/1120x240-AlaiOli-480.webp"
+        ],
+        [
+          768,
+          "/_assets/concert.one/sites/default/files/field/image/1120x240-AlaiOli-768.webp"
+        ],
+        [
+          1024,
+          "/_assets/concert.one/sites/default/files/field/image/1120x240-AlaiOli-1024.webp"
+        ],
+        [
+          1120,
+          "/_assets/concert.one/sites/default/files/field/image/1120x240-AlaiOli-1120.webp"
+        ]
+      ]
+    },
+    "/_assets/concert.one/sites/default/files/field/image/dsksdqwdads.jpg": {
+      "width": 1120,
+      "height": 240,
+      "avif": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/field/image/dsksdqwdads-480.avif"
+        ],
+        [
+          768,
+          "/_assets/concert.one/sites/default/files/field/image/dsksdqwdads-768.avif"
+        ],
+        [
+          1024,
+          "/_assets/concert.one/sites/default/files/field/image/dsksdqwdads-1024.avif"
+        ],
+        [
+          1120,
+          "/_assets/concert.one/sites/default/files/field/image/dsksdqwdads-1120.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/field/image/dsksdqwdads-480.webp"
+        ],
+        [
+          768,
+          "/_assets/concert.one/sites/default/files/field/image/dsksdqwdads-768.webp"
+        ],
+        [
+          1024,
+          "/_assets/concert.one/sites/default/files/field/image/dsksdqwdads-1024.webp"
+        ],
+        [
+          1120,
+          "/_assets/concert.one/sites/default/files/field/image/dsksdqwdads-1120.webp"
+        ]
+      ]
+    },
+    "/_assets/concert.one/sites/default/files/field/image/iron-maiden.jpg": {
+      "width": 640,
+      "height": 137,
+      "avif": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/field/image/iron-maiden-480.avif"
+        ],
+        [
+          640,
+          "/_assets/concert.one/sites/default/files/field/image/iron-maiden-640.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/field/image/iron-maiden-480.webp"
+        ],
+        [
+          640,
+          "/_assets/concert.one/sites/default/files/field/image/iron-maiden-640.webp"
+        ]
+      ]
+    },
+    "/_assets/concert.one/sites/default/files/field/image/koncert-zemfira-online.jpg": {
+      "width": 480,
+      "height": 107,
+      "avif": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/field/image/koncert-zemfira-online-480.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/field/image/koncert-zemfira-online-480.webp"
+        ]
+      ]
+    },
+    "/_assets/concert.one/sites/default/files/field/image/slazarevkchbanner.jpg": {
+      "width": 1120,
+      "height": 240,
+      "avif": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/field/image/slazarevkchbanner-480.avif"
+        ],
+        [
+          768,
+          "/_assets/concert.one/sites/default/files/field/image/slazarevkchbanner-768.avif"
+        ],
+        [
+          1024,
+          "/_assets/concert.one/sites/default/files/field/image/slazarevkchbanner-1024.avif"
+        ],
+        [
+          1120,
+          "/_assets/concert.one/sites/default/files/field/image/slazarevkchbanner-1120.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/field/image/slazarevkchbanner-480.webp"
+        ],
+        [
+          768,
+          "/_assets/concert.one/sites/default/files/field/image/slazarevkchbanner-768.webp"
+        ],
+        [
+          1024,
+          "/_assets/concert.one/sites/default/files/field/image/slazarevkchbanner-1024.webp"
+        ],
+        [
+          1120,
+          "/_assets/concert.one/sites/default/files/field/image/slazarevkchbanner-1120.webp"
+        ]
+      ]
+    },
+    "/_assets/concert.one/sites/default/files/field/image/the-prodigy-moscow.jpg": {
+      "width": 1140,
+      "height": 588,
+      "avif": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/field/image/the-prodigy-moscow-480.avif"
+        ],
+        [
+          768,
+          "/_assets/concert.one/sites/default/files/field/image/the-prodigy-moscow-768.avif"
+        ],
+        [
+          1024,
+          "/_assets/concert.one/sites/default/files/field/image/the-prodigy-moscow-1024.avif"
+        ],
+        [
+          1140,
+          "/_assets/concert.one/sites/default/files/field/image/the-prodigy-moscow-1140.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/field/image/the-prodigy-moscow-480.webp"
+        ],
+        [
+          768,
+          "/_assets/concert.one/sites/default/files/field/image/the-prodigy-moscow-768.webp"
+        ],
+        [
+          1024,
+          "/_assets/concert.one/sites/default/files/field/image/the-prodigy-moscow-1024.webp"
+        ],
+        [
+          1140,
+          "/_assets/concert.one/sites/default/files/field/image/the-prodigy-moscow-1140.webp"
+        ]
+      ]
+    },
+    "/_assets/concert.one/sites/default/files/styles/960/public/field/image/the-prodigy-moscow.jpg": {
+      "width": 960,
+      "height": 495,
+      "avif": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/960/public/field/image/the-prodigy-moscow-480.avif"
+        ],
+        [
+          768,
+          "/_assets/concert.one/sites/default/files/styles/960/public/field/image/the-prodigy-moscow-768.avif"
+        ],
+        [
+          960,
+          "/_assets/concert.one/sites/default/files/styles/960/public/field/image/the-prodigy-moscow-960.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/960/public/field/image/the-prodigy-moscow-480.webp"
+        ],
+        [
+          768,
+          "/_assets/concert.one/sites/default/files/styles/960/public/field/image/the-prodigy-moscow-768.webp"
+        ],
+        [
+          960,
+          "/_assets/concert.one/sites/default/files/styles/960/public/field/image/the-prodigy-moscow-960.webp"
+        ]
+      ]
+    },
+    "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/1120x240-AlaiOli.jpg": {
+      "width": 1120,
+      "height": 240,
+      "avif": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/1120x240-AlaiOli-480.avif"
+        ],
+        [
+          768,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/1120x240-AlaiOli-768.avif"
+        ],
+        [
+          1024,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/1120x240-AlaiOli-1024.avif"
+        ],
+        [
+          1120,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/1120x240-AlaiOli-1120.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/1120x240-AlaiOli-480.webp"
+        ],
+        [
+          768,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/1120x240-AlaiOli-768.webp"
+        ],
+        [
+          1024,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/1120x240-AlaiOli-1024.webp"
+        ],
+        [
+          1120,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/1120x240-AlaiOli-1120.webp"
+        ]
+      ]
+    },
+    "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/Alai-Oli-1120х240.jpg": {
+      "width": 960,
+      "height": 206,
+      "avif": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/Alai-Oli-1120х240-480.avif"
+        ],
+        [
+          768,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/Alai-Oli-1120х240-768.avif"
+        ],
+        [
+          960,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/Alai-Oli-1120х240-960.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/Alai-Oli-1120х240-480.webp"
+        ],
+        [
+          768,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/Alai-Oli-1120х240-768.webp"
+        ],
+        [
+          960,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/Alai-Oli-1120х240-960.webp"
+        ]
+      ]
+    },
+    "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/dead_by_april.jpg": {
+      "width": 960,
+      "height": 600,
+      "avif": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/dead_by_april-480.avif"
+        ],
+        [
+          768,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/dead_by_april-768.avif"
+        ],
+        [
+          960,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/dead_by_april-960.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/dead_by_april-480.webp"
+        ],
+        [
+          768,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/dead_by_april-768.webp"
+        ],
+        [
+          960,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/dead_by_april-960.webp"
+        ]
+      ]
+    },
+    "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/dsksdqwdads.jpg": {
+      "width": 960,
+      "height": 206,
+      "avif": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/dsksdqwdads-480.avif"
+        ],
+        [
+          768,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/dsksdqwdads-768.avif"
+        ],
+        [
+          960,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/dsksdqwdads-960.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/dsksdqwdads-480.webp"
+        ],
+        [
+          768,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/dsksdqwdads-768.webp"
+        ],
+        [
+          960,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/dsksdqwdads-960.webp"
+        ]
+      ]
+    },
+    "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/infected-mushroom-moskva-2016.jpg": {
+      "width": 960,
+      "height": 206,
+      "avif": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/infected-mushroom-moskva-2016-480.avif"
+        ],
+        [
+          768,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/infected-mushroom-moskva-2016-768.avif"
+        ],
+        [
+          960,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/infected-mushroom-moskva-2016-960.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/infected-mushroom-moskva-2016-480.webp"
+        ],
+        [
+          768,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/infected-mushroom-moskva-2016-768.webp"
+        ],
+        [
+          960,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/infected-mushroom-moskva-2016-960.webp"
+        ]
+      ]
+    },
+    "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/mavnslbanner.jpg": {
+      "width": 960,
+      "height": 206,
+      "avif": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/mavnslbanner-480.avif"
+        ],
+        [
+          768,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/mavnslbanner-768.avif"
+        ],
+        [
+          960,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/mavnslbanner-960.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/mavnslbanner-480.webp"
+        ],
+        [
+          768,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/mavnslbanner-768.webp"
+        ],
+        [
+          960,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/mavnslbanner-960.webp"
+        ]
+      ]
+    },
+    "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/slazarevkchbanner.jpg": {
+      "width": 960,
+      "height": 206,
+      "avif": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/slazarevkchbanner-480.avif"
+        ],
+        [
+          768,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/slazarevkchbanner-768.avif"
+        ],
+        [
+          960,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/slazarevkchbanner-960.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/slazarevkchbanner-480.webp"
+        ],
+        [
+          768,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/slazarevkchbanner-768.webp"
+        ],
+        [
+          960,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/slazarevkchbanner-960.webp"
+        ]
+      ]
+    },
+    "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-moscow.jpg": {
+      "width": 960,
+      "height": 495,
+      "avif": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-moscow-480.avif"
+        ],
+        [
+          768,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-moscow-768.avif"
+        ],
+        [
+          960,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-moscow-960.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-moscow-480.webp"
+        ],
+        [
+          768,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-moscow-768.webp"
+        ],
+        [
+          960,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-moscow-960.webp"
+        ]
+      ]
+    },
+    "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-nizhny-novgorod.jpg": {
+      "width": 1140,
+      "height": 588,
+      "avif": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-nizhny-novgorod-480.avif"
+        ],
+        [
+          768,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-nizhny-novgorod-768.avif"
+        ],
+        [
+          1024,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-nizhny-novgorod-1024.avif"
+        ],
+        [
+          1140,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-nizhny-novgorod-1140.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-nizhny-novgorod-480.webp"
+        ],
+        [
+          768,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-nizhny-novgorod-768.webp"
+        ],
+        [
+          1024,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-nizhny-novgorod-1024.webp"
+        ],
+        [
+          1140,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-nizhny-novgorod-1140.webp"
+        ]
+      ]
+    },
+    "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy.jpg": {
+      "width": 1140,
+      "height": 588,
+      "avif": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-480.avif"
+        ],
+        [
+          768,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-768.avif"
+        ],
+        [
+          1024,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-1024.avif"
+        ],
+        [
+          1140,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-1140.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-480.webp"
+        ],
+        [
+          768,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-768.webp"
+        ],
+        [
+          1024,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-1024.webp"
+        ],
+        [
+          1140,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-1140.webp"
+        ]
+      ]
+    },
+    "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy_0.jpg": {
+      "width": 960,
+      "height": 495,
+      "avif": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy_0-480.avif"
+        ],
+        [
+          768,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy_0-768.avif"
+        ],
+        [
+          960,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy_0-960.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy_0-480.webp"
+        ],
+        [
+          768,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy_0-768.webp"
+        ],
+        [
+          960,
+          "/_assets/concert.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy_0-960.webp"
+        ]
+      ]
+    },
+    "/_assets/concert.one/sites/default/files/styles/large/public/field/image/1120roxxete.jpg": {
+      "width": 480,
+      "height": 103,
+      "avif": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/large/public/field/image/1120roxxete-480.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/large/public/field/image/1120roxxete-480.webp"
+        ]
+      ]
+    },
+    "/_assets/concert.one/sites/default/files/styles/large/public/field/image/Moscow Dance Nigh1120x240_P_0.jpg": {
+      "width": 480,
+      "height": 103,
+      "avif": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/large/public/field/image/Moscow Dance Nigh1120x240_P_0-480.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/large/public/field/image/Moscow Dance Nigh1120x240_P_0-480.webp"
+        ]
+      ]
+    },
+    "/_assets/concert.one/sites/default/files/styles/large/public/field/image/Moscow Dance Nigh1120x240_P_1.jpg": {
+      "width": 480,
+      "height": 103,
+      "avif": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/large/public/field/image/Moscow Dance Nigh1120x240_P_1-480.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/large/public/field/image/Moscow Dance Nigh1120x240_P_1-480.webp"
+        ]
+      ]
+    },
+    "/_assets/concert.one/sites/default/files/styles/large/public/field/image/imagine-dragons.jpg": {
+      "width": 480,
+      "height": 123,
+      "avif": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/large/public/field/image/imagine-dragons-480.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/large/public/field/image/imagine-dragons-480.webp"
+        ]
+      ]
+    },
+    "/_assets/concert.one/sites/default/files/styles/large/public/field/image/iron-maiden.jpg": {
+      "width": 640,
+      "height": 137,
+      "avif": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/large/public/field/image/iron-maiden-480.avif"
+        ],
+        [
+          640,
+          "/_assets/concert.one/sites/default/files/styles/large/public/field/image/iron-maiden-640.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/large/public/field/image/iron-maiden-480.webp"
+        ],
+        [
+          640,
+          "/_assets/concert.one/sites/default/files/styles/large/public/field/image/iron-maiden-640.webp"
+        ]
+      ]
+    },
+    "/_assets/concert.one/sites/default/files/styles/large/public/field/image/koncert-zemfira-online.jpg": {
+      "width": 480,
+      "height": 107,
+      "avif": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/large/public/field/image/koncert-zemfira-online-480.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/concert.one/sites/default/files/styles/large/public/field/image/koncert-zemfira-online-480.webp"
+        ]
+      ]
+    },
+    "/_assets/concert.one/sites/default/files/styles/medium/public/field/image/21022-Scooter-920-200.jpg": {
+      "width": 220,
+      "height": 48,
+      "avif": [
+        [
+          220,
+          "/_assets/concert.one/sites/default/files/styles/medium/public/field/image/21022-Scooter-920-200-220.avif"
+        ]
+      ],
+      "webp": [
+        [
+          220,
+          "/_assets/concert.one/sites/default/files/styles/medium/public/field/image/21022-Scooter-920-200-220.webp"
+        ]
+      ]
+    },
+    "/_assets/fest.one/sites/default/files/field/image/13531006.jpg": {
+      "width": 1100,
+      "height": 734,
+      "avif": [
+        [
+          480,
+          "/_assets/fest.one/sites/default/files/field/image/13531006-480.avif"
+        ],
+        [
+          768,
+          "/_assets/fest.one/sites/default/files/field/image/13531006-768.avif"
+        ],
+        [
+          1024,
+          "/_assets/fest.one/sites/default/files/field/image/13531006-1024.avif"
+        ],
+        [
+          1100,
+          "/_assets/fest.one/sites/default/files/field/image/13531006-1100.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/fest.one/sites/default/files/field/image/13531006-480.webp"
+        ],
+        [
+          768,
+          "/_assets/fest.one/sites/default/files/field/image/13531006-768.webp"
+        ],
+        [
+          1024,
+          "/_assets/fest.one/sites/default/files/field/image/13531006-1024.webp"
+        ],
+        [
+          1100,
+          "/_assets/fest.one/sites/default/files/field/image/13531006-1100.webp"
+        ]
+      ]
+    },
+    "/_assets/fest.one/sites/default/files/field/image/the-prodigy-samara.jpg": {
+      "width": 1140,
+      "height": 588,
+      "avif": [
+        [
+          480,
+          "/_assets/fest.one/sites/default/files/field/image/the-prodigy-samara-480.avif"
+        ],
+        [
+          768,
+          "/_assets/fest.one/sites/default/files/field/image/the-prodigy-samara-768.avif"
+        ],
+        [
+          1024,
+          "/_assets/fest.one/sites/default/files/field/image/the-prodigy-samara-1024.avif"
+        ],
+        [
+          1140,
+          "/_assets/fest.one/sites/default/files/field/image/the-prodigy-samara-1140.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/fest.one/sites/default/files/field/image/the-prodigy-samara-480.webp"
+        ],
+        [
+          768,
+          "/_assets/fest.one/sites/default/files/field/image/the-prodigy-samara-768.webp"
+        ],
+        [
+          1024,
+          "/_assets/fest.one/sites/default/files/field/image/the-prodigy-samara-1024.webp"
+        ],
+        [
+          1140,
+          "/_assets/fest.one/sites/default/files/field/image/the-prodigy-samara-1140.webp"
+        ]
+      ]
+    },
+    "/_assets/fest.one/sites/default/files/field/image/the-prodigy.jpg": {
+      "width": 1140,
+      "height": 588,
+      "avif": [
+        [
+          480,
+          "/_assets/fest.one/sites/default/files/field/image/the-prodigy-480.avif"
+        ],
+        [
+          768,
+          "/_assets/fest.one/sites/default/files/field/image/the-prodigy-768.avif"
+        ],
+        [
+          1024,
+          "/_assets/fest.one/sites/default/files/field/image/the-prodigy-1024.avif"
+        ],
+        [
+          1140,
+          "/_assets/fest.one/sites/default/files/field/image/the-prodigy-1140.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/fest.one/sites/default/files/field/image/the-prodigy-480.webp"
+        ],
+        [
+          768,
+          "/_assets/fest.one/sites/default/files/field/image/the-prodigy-768.webp"
+        ],
+        [
+          1024,
+          "/_assets/fest.one/sites/default/files/field/image/the-prodigy-1024.webp"
+        ],
+        [
+          1140,
+          "/_assets/fest.one/sites/default/files/field/image/the-prodigy-1140.webp"
+        ]
+      ]
+    },
+    "/_assets/fest.one/sites/default/files/styles/960/public/field/image/PLA_APFUTD_1000X1000_e5043434-2bf4-4493-bd57-847c71ea95af_1024x1024.png": {
+      "width": 960,
+      "height": 960,
+      "avif": [
+        [
+          480,
+          "/_assets/fest.one/sites/default/files/styles/960/public/field/image/PLA_APFUTD_1000X1000_e5043434-2bf4-4493-bd57-847c71ea95af_1024x1024-480.avif"
+        ],
+        [
+          768,
+          "/_assets/fest.one/sites/default/files/styles/960/public/field/image/PLA_APFUTD_1000X1000_e5043434-2bf4-4493-bd57-847c71ea95af_1024x1024-768.avif"
+        ],
+        [
+          960,
+          "/_assets/fest.one/sites/default/files/styles/960/public/field/image/PLA_APFUTD_1000X1000_e5043434-2bf4-4493-bd57-847c71ea95af_1024x1024-960.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/fest.one/sites/default/files/styles/960/public/field/image/PLA_APFUTD_1000X1000_e5043434-2bf4-4493-bd57-847c71ea95af_1024x1024-480.webp"
+        ],
+        [
+          768,
+          "/_assets/fest.one/sites/default/files/styles/960/public/field/image/PLA_APFUTD_1000X1000_e5043434-2bf4-4493-bd57-847c71ea95af_1024x1024-768.webp"
+        ],
+        [
+          960,
+          "/_assets/fest.one/sites/default/files/styles/960/public/field/image/PLA_APFUTD_1000X1000_e5043434-2bf4-4493-bd57-847c71ea95af_1024x1024-960.webp"
+        ]
+      ]
+    },
+    "/_assets/fest.one/sites/default/files/styles/960/public/field/image/placebo-vypustyat-sbornik-i-novyj-mini-albom_14703853381461.png": {
+      "width": 960,
+      "height": 467,
+      "avif": [
+        [
+          480,
+          "/_assets/fest.one/sites/default/files/styles/960/public/field/image/placebo-vypustyat-sbornik-i-novyj-mini-albom_14703853381461-480.avif"
+        ],
+        [
+          768,
+          "/_assets/fest.one/sites/default/files/styles/960/public/field/image/placebo-vypustyat-sbornik-i-novyj-mini-albom_14703853381461-768.avif"
+        ],
+        [
+          960,
+          "/_assets/fest.one/sites/default/files/styles/960/public/field/image/placebo-vypustyat-sbornik-i-novyj-mini-albom_14703853381461-960.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/fest.one/sites/default/files/styles/960/public/field/image/placebo-vypustyat-sbornik-i-novyj-mini-albom_14703853381461-480.webp"
+        ],
+        [
+          768,
+          "/_assets/fest.one/sites/default/files/styles/960/public/field/image/placebo-vypustyat-sbornik-i-novyj-mini-albom_14703853381461-768.webp"
+        ],
+        [
+          960,
+          "/_assets/fest.one/sites/default/files/styles/960/public/field/image/placebo-vypustyat-sbornik-i-novyj-mini-albom_14703853381461-960.webp"
+        ]
+      ]
+    },
+    "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/1120x240-AlaiOli.jpg": {
+      "width": 1120,
+      "height": 240,
+      "avif": [
+        [
+          480,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/1120x240-AlaiOli-480.avif"
+        ],
+        [
+          768,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/1120x240-AlaiOli-768.avif"
+        ],
+        [
+          1024,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/1120x240-AlaiOli-1024.avif"
+        ],
+        [
+          1120,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/1120x240-AlaiOli-1120.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/1120x240-AlaiOli-480.webp"
+        ],
+        [
+          768,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/1120x240-AlaiOli-768.webp"
+        ],
+        [
+          1024,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/1120x240-AlaiOli-1024.webp"
+        ],
+        [
+          1120,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/1120x240-AlaiOli-1120.webp"
+        ]
+      ]
+    },
+    "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/Logotip-gruppy-Leningrad.jpg": {
+      "width": 768,
+      "height": 768,
+      "avif": [
+        [
+          480,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/Logotip-gruppy-Leningrad-480.avif"
+        ],
+        [
+          768,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/Logotip-gruppy-Leningrad-768.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/Logotip-gruppy-Leningrad-480.webp"
+        ],
+        [
+          768,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/Logotip-gruppy-Leningrad-768.webp"
+        ]
+      ]
+    },
+    "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/MD_PN_1120x240.jpg": {
+      "width": 1120,
+      "height": 240,
+      "avif": [
+        [
+          480,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/MD_PN_1120x240-480.avif"
+        ],
+        [
+          768,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/MD_PN_1120x240-768.avif"
+        ],
+        [
+          1024,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/MD_PN_1120x240-1024.avif"
+        ],
+        [
+          1120,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/MD_PN_1120x240-1120.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/MD_PN_1120x240-480.webp"
+        ],
+        [
+          768,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/MD_PN_1120x240-768.webp"
+        ],
+        [
+          1024,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/MD_PN_1120x240-1024.webp"
+        ],
+        [
+          1120,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/MD_PN_1120x240-1120.webp"
+        ]
+      ]
+    },
+    "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/dead_by_april.jpg": {
+      "width": 960,
+      "height": 600,
+      "avif": [
+        [
+          480,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/dead_by_april-480.avif"
+        ],
+        [
+          768,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/dead_by_april-768.avif"
+        ],
+        [
+          960,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/dead_by_april-960.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/dead_by_april-480.webp"
+        ],
+        [
+          768,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/dead_by_april-768.webp"
+        ],
+        [
+          960,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/dead_by_april-960.webp"
+        ]
+      ]
+    },
+    "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/deep-purple.jpg": {
+      "width": 1120,
+      "height": 240,
+      "avif": [
+        [
+          480,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/deep-purple-480.avif"
+        ],
+        [
+          768,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/deep-purple-768.avif"
+        ],
+        [
+          1024,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/deep-purple-1024.avif"
+        ],
+        [
+          1120,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/deep-purple-1120.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/deep-purple-480.webp"
+        ],
+        [
+          768,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/deep-purple-768.webp"
+        ],
+        [
+          1024,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/deep-purple-1024.webp"
+        ],
+        [
+          1120,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/deep-purple-1120.webp"
+        ]
+      ]
+    },
+    "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/infected-mushroom-moskva-2016.jpg": {
+      "width": 960,
+      "height": 206,
+      "avif": [
+        [
+          480,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/infected-mushroom-moskva-2016-480.avif"
+        ],
+        [
+          768,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/infected-mushroom-moskva-2016-768.avif"
+        ],
+        [
+          960,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/infected-mushroom-moskva-2016-960.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/infected-mushroom-moskva-2016-480.webp"
+        ],
+        [
+          768,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/infected-mushroom-moskva-2016-768.webp"
+        ],
+        [
+          960,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/infected-mushroom-moskva-2016-960.webp"
+        ]
+      ]
+    },
+    "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/louna-rocks.jpg": {
+      "width": 960,
+      "height": 377,
+      "avif": [
+        [
+          480,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/louna-rocks-480.avif"
+        ],
+        [
+          768,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/louna-rocks-768.avif"
+        ],
+        [
+          960,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/louna-rocks-960.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/louna-rocks-480.webp"
+        ],
+        [
+          768,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/louna-rocks-768.webp"
+        ],
+        [
+          960,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/louna-rocks-960.webp"
+        ]
+      ]
+    },
+    "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/rammstein-maxidrom-2016.jpg": {
+      "width": 1140,
+      "height": 720,
+      "avif": [
+        [
+          480,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/rammstein-maxidrom-2016-480.avif"
+        ],
+        [
+          768,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/rammstein-maxidrom-2016-768.avif"
+        ],
+        [
+          1024,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/rammstein-maxidrom-2016-1024.avif"
+        ],
+        [
+          1140,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/rammstein-maxidrom-2016-1140.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/rammstein-maxidrom-2016-480.webp"
+        ],
+        [
+          768,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/rammstein-maxidrom-2016-768.webp"
+        ],
+        [
+          1024,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/rammstein-maxidrom-2016-1024.webp"
+        ],
+        [
+          1140,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/rammstein-maxidrom-2016-1140.webp"
+        ]
+      ]
+    },
+    "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/slazarevkchbanner.jpg": {
+      "width": 960,
+      "height": 206,
+      "avif": [
+        [
+          480,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/slazarevkchbanner-480.avif"
+        ],
+        [
+          768,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/slazarevkchbanner-768.avif"
+        ],
+        [
+          960,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/slazarevkchbanner-960.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/slazarevkchbanner-480.webp"
+        ],
+        [
+          768,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/slazarevkchbanner-768.webp"
+        ],
+        [
+          960,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/slazarevkchbanner-960.webp"
+        ]
+      ]
+    },
+    "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-moscow.jpg": {
+      "width": 960,
+      "height": 495,
+      "avif": [
+        [
+          480,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-moscow-480.avif"
+        ],
+        [
+          768,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-moscow-768.avif"
+        ],
+        [
+          960,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-moscow-960.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-moscow-480.webp"
+        ],
+        [
+          768,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-moscow-768.webp"
+        ],
+        [
+          960,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-moscow-960.webp"
+        ]
+      ]
+    },
+    "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-nizhny-novgorod.jpg": {
+      "width": 1140,
+      "height": 588,
+      "avif": [
+        [
+          480,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-nizhny-novgorod-480.avif"
+        ],
+        [
+          768,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-nizhny-novgorod-768.avif"
+        ],
+        [
+          1024,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-nizhny-novgorod-1024.avif"
+        ],
+        [
+          1140,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-nizhny-novgorod-1140.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-nizhny-novgorod-480.webp"
+        ],
+        [
+          768,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-nizhny-novgorod-768.webp"
+        ],
+        [
+          1024,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-nizhny-novgorod-1024.webp"
+        ],
+        [
+          1140,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-nizhny-novgorod-1140.webp"
+        ]
+      ]
+    },
+    "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy.jpg": {
+      "width": 1140,
+      "height": 588,
+      "avif": [
+        [
+          480,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-480.avif"
+        ],
+        [
+          768,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-768.avif"
+        ],
+        [
+          1024,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-1024.avif"
+        ],
+        [
+          1140,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-1140.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-480.webp"
+        ],
+        [
+          768,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-768.webp"
+        ],
+        [
+          1024,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-1024.webp"
+        ],
+        [
+          1140,
+          "/_assets/fest.one/sites/default/files/styles/960_concert_one/public/field/image/the-prodigy-1140.webp"
+        ]
+      ]
+    },
+    "/_assets/maxidrom.vvm.space/sites/default/files/field/image/ivan-dorn.jpg": {
+      "width": 640,
+      "height": 137,
+      "avif": [
+        [
+          480,
+          "/_assets/maxidrom.vvm.space/sites/default/files/field/image/ivan-dorn-480.avif"
+        ],
+        [
+          640,
+          "/_assets/maxidrom.vvm.space/sites/default/files/field/image/ivan-dorn-640.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/maxidrom.vvm.space/sites/default/files/field/image/ivan-dorn-480.webp"
+        ],
+        [
+          640,
+          "/_assets/maxidrom.vvm.space/sites/default/files/field/image/ivan-dorn-640.webp"
+        ]
+      ]
+    },
+    "/_assets/placebo2016.ru/sites/default/files/styles/960/public/field/image/плацебо___itok_tnNi2rB5.jpg": {
+      "width": 960,
+      "height": 640,
+      "avif": [
+        [
+          480,
+          "/_assets/placebo2016.ru/sites/default/files/styles/960/public/field/image/плацебо___itok_tnNi2rB5-480.avif"
+        ],
+        [
+          768,
+          "/_assets/placebo2016.ru/sites/default/files/styles/960/public/field/image/плацебо___itok_tnNi2rB5-768.avif"
+        ],
+        [
+          960,
+          "/_assets/placebo2016.ru/sites/default/files/styles/960/public/field/image/плацебо___itok_tnNi2rB5-960.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/_assets/placebo2016.ru/sites/default/files/styles/960/public/field/image/плацебо___itok_tnNi2rB5-480.webp"
+        ],
+        [
+          768,
+          "/_assets/placebo2016.ru/sites/default/files/styles/960/public/field/image/плацебо___itok_tnNi2rB5-768.webp"
+        ],
+        [
+          960,
+          "/_assets/placebo2016.ru/sites/default/files/styles/960/public/field/image/плацебо___itok_tnNi2rB5-960.webp"
+        ]
+      ]
+    },
+    "/_assets/ponominalu.ru/partners/img/468x60_Ponominalu_06.jpg": {
+      "width": 468,
+      "height": 60,
+      "avif": [
+        [
+          468,
+          "/_assets/ponominalu.ru/partners/img/468x60_Ponominalu_06-468.avif"
+        ]
+      ],
+      "webp": [
+        [
+          468,
+          "/_assets/ponominalu.ru/partners/img/468x60_Ponominalu_06-468.webp"
+        ]
+      ]
+    },
     "/covers/beyond-the-valley.jpg": {
       "width": 1024,
       "height": 1024,

@@ -85,7 +85,7 @@ function hubDoc(day: string): Doc {
   const entries = hubOrder(guides, events, day).flatMap((guide) => {
     const event = eventOf(events, guide);
     const main = mainPage(guide);
-    const ctx: Ctx = { event, guide, today: day, where: "/festivals/ (Markdown)" };
+    const ctx: Ctx = { event, guide, today: day, where: "/ (Markdown)" };
     return [
       `## [${guide.name ?? event.name}](${abs(`${guide.path.replace(/\/$/, "")}.md`)}) (${guide.hubLabel})`,
       "",
@@ -99,9 +99,26 @@ function hubDoc(day: string): Doc {
     path: hub.path,
     title: hub.title,
     summary: hub.description,
-    markdown: join([`# ${hub.h1}`, "", `> ${hub.description}`, "", hub.intro, "", ...entries]),
+    markdown: join([`# ${hub.h1}`, "", `> ${hub.description}`, "", hub.intro, "", ...entries, ...archiveMd()]),
   };
 }
+
+/** The hub's foot, the archive of the old festival site: its three
+    sections, linked to their pages (they have no Markdown twin). */
+function archiveMd(): string[] {
+  return [
+    `## ${hub.archive.heading}`,
+    "",
+    hub.archive.intro,
+    "",
+    ...hub.archive.links.map((l) => `- [${l.label}](${abs(l.href)}): ${l.line}`),
+    "",
+  ];
+}
+
+/** The address of a page's Markdown twin: /beyond-the-valley.md, and the
+    hub's, at the root, /index.md. */
+export const mdPath = (path: string) => (path === "/" ? "/index.md" : `${path.replace(/\/$/, "")}.md`);
 
 export function docs(): Doc[] {
   const day = today();
@@ -119,7 +136,7 @@ export function llms(): string {
     "",
     hub.intro,
     "",
-    `- [${hub.h1}](${abs("/festivals.md")}): ${site.en.homeTitle}`,
+    `- [${hub.h1}](${abs(mdPath(hub.path))}): ${site.en.homeTitle}`,
     "",
   ];
   for (const guide of hubOrder(guides, events, day)) {
@@ -128,5 +145,6 @@ export function llms(): string {
     for (const page of guide.pages) lines.push(`- [${page.title}](${abs(`/${page.slug}.md`)}): ${page.description}`);
     lines.push("");
   }
+  lines.push(...archiveMd());
   return lines.join("\n");
 }

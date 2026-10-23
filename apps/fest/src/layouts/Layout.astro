@@ -23,8 +23,12 @@ interface Props {
   /** The share picture (og:image), where the page has one of its own: a
       guide's cover. Absent, BaseLayout shares the site's card. */
   image?: string;
+  /** Out of the index: the archive's /contacts/, which it kept out too. */
+  noindex?: boolean;
+  /** The title's suffix, over the language's: a legacy page's (legacy.ts). */
+  titleSuffix?: string;
 }
-const { title, description, jsonLd, alternates, crumbLabels, crumbCurrent, guide, language = "en", image } = Astro.props;
+const { title, description, jsonLd, alternates, crumbLabels, crumbCurrent, guide, language = "en", image, noindex, titleSuffix } = Astro.props;
 
 // The guide's locale over the language's, and its own footer links after the
 // hub's. Spread, like the rest of the identity, so the layout sets none of
@@ -36,6 +40,7 @@ const site = {
   ...(guide ? { lang: guide.lang } : {}),
   ...(guide?.footerLinks ? { footerLinks: [...own.footerLinks, ...guide.footerLinks] } : {}),
   ...(guide?.footerNote ? { complianceNote: guide.footerNote } : {}),
+  ...(titleSuffix ? { titleSuffix } : {}),
 };
 // The skip link and the menu button in the guide's language, where the
 // shared layout's own table has no row for it (pt); otherwise its row.
@@ -56,6 +61,7 @@ const thai = guide ? langOf(guide.lang) === "th" : false;
   crumbCurrent={crumbCurrent}
   chrome={chrome}
   image={image}
+  noindex={noindex}
 >
   {/* Only the two faces the first paint needs: Chivo 400 for the text and
       Syne 800 for the headings, Latin subset. Everything else loads when a

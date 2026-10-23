@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="180" viewBox="0 0 320 180" role="img" aria-label="Image not preserved in the archive">
+  <rect width="320" height="180" fill="#e9e9ec"/>
+  <path d="M232 44h44l20 20v72h-64z" fill="#d6d6db"/>
+  <path d="M276 44l20 20h-20z" fill="#c2c2c8"/>
+  <g fill="none" stroke="#b4b4bc" stroke-width="2">
+    <rect x="24" y="44" width="180" height="92"/>
+    <path d="M24 112l44-32 34 24 30-22 72 54"/>
+  </g>
+  <circle cx="72" cy="70" r="10" fill="#b4b4bc"/>
+  <text x="24" y="162" font-family="system-ui, sans-serif" font-size="13" fill="#76767e">not preserved in the archive</text>
+</svg>

@@ -41,6 +41,7 @@ const rules = await import("../apps/fest/src/rules.ts");
 const routes = await import("../apps/fest/src/routes.ts");
 const { keywords } = await import("../apps/fest/src/site.config.ts");
 const { hub } = await import("../apps/fest/src/hub.ts");
+const { legacyPages } = await import("../apps/fest/src/legacy.ts");
 const { wordsOf } = await import("../tools/text-dupes.mjs");
 
 const DAY = 86_400_000;
@@ -496,21 +497,28 @@ const anchors = (html) =>
 describe("the built pages", { skip: built ? false : "apps/fest/dist is missing: npm run build:fest first" }, () => {
   const html = built ? pages() : new Map();
   const content = [...html].filter(([p]) => !p.startsWith("/go/"));
+  // The archive of the old festival site, whose pages are the app's since
+  // 23 Oct 2026 and keep the archive's body as written: held to what every
+  // page of the site is (titles, hops, ids), not to what a guide's linking
+  // is, which was built for the guides.
+  const LEGACY = new Set(legacyPages.map((p) => p.path));
 
   test("the hub and every guide page, and no other content page", () => {
-    const expected = ["/festivals/", ...guides.flatMap((g) => g.pages.map((p) => `/${p.slug}/`))].sort();
+    const expected = ["/", ...guides.flatMap((g) => g.pages.map((p) => `/${p.slug}/`)), ...LEGACY].sort();
     assert.deepEqual(content.map(([p]) => p).sort(), expected);
   });
 
-  // fest.one's root is the old festival site's archive, a different site:
-  // nothing of ours points at it, so a reader never leaves the guides by
-  // tapping the wordmark.
-  test('nothing links to the root: no href="/", "https://fest.one/" or "/#"', () => {
+  // The hub is the root since 23 Oct 2026, and /festivals/, where it was
+  // while the archive kept /, is a redirect: nothing links to the redirect
+  // (the wordmark, the root crumb and the footer link lead to /), and
+  // nothing links to a fragment of the root, which has none.
+  test('nothing links to the hub\'s old address: no href="/festivals/" or "/#"', () => {
     const found = [];
     for (const [p, h] of html)
-      for (const bad of ['href="/"', 'href="https://fest.one/"', 'href="/#'])
+      for (const bad of ['href="/festivals/"', 'href="/festivals"', 'href="https://fest.one/festivals/"', 'href="/#'])
         if (h.includes(bad)) found.push(`${p}: ${bad}`);
     assert.deepEqual(found, []);
+    assert.ok(html.get("/").includes('class="site-name" href="/"'), "the wordmark does not lead to /");
   });
 
   // A tooltip that reads the label back spends the attribute on nothing
@@ -536,7 +544,7 @@ describe("the built pages", { skip: built ? false : "apps/fest/dist is missing: 
   });
 
   test("every page has at least three other pages linking to it", () => {
-    const inbound = new Map(content.map(([p]) => [p, new Set()]));
+    const inbound = new Map(content.filter(([p]) => !LEGACY.has(p)).map(([p]) => [p, new Set()]));
     for (const [from, h] of content)
       for (const a of anchors(h)) {
         const to = a.href?.replace(/^https:\/\/fest\.one/, "").replace(/#.*$/, "");
@@ -571,7 +579,7 @@ describe("the built pages", { skip: built ? false : "apps/fest/dist is missing: 
       if (!years.some((y) => title.includes(y) || (YEARLESS[p] && description.includes(y)))) bad.push(`${p}: no ${years.join(" or ")}`);
     }
     assert.deepEqual(bad, []);
-    assert.equal(decode(html.get("/festivals/").match(/<title>([\s\S]*?)<\/title>/)[1]), hub.title);
+    assert.equal(decode(html.get("/").match(/<title>([\s\S]*?)<\/title>/)[1]), hub.title);
   });
 
   // The trail a reader sees and the one the BreadcrumbList gives a search
@@ -1090,6 +1098,24 @@ function textFiles(dir, into = []) {
   return into;
 }
 
+// The archive of the old festival site is content of this app since 23 Oct
+// 2026 (card 2026-10-23-fest-one-new-engine), and its text is the Russian
+// it was written in. The session's ruling on that card makes it the one
+// exemption from the two script cases below, and scopes it: the imported
+// records (legacy/), the archive's feed and pictures copied as they are,
+// and in dist the folder of each legacy page, read from the records and
+// never listed by hand. Everything else in the app, the hub, the chrome
+// and every guide's dist included, is held to both cases as before.
+const LEGACY_DIST = new Set(legacyPages.map((p) => path.join(DIST, p.path, "index.html")));
+const isArchive = (file) =>
+  file.startsWith(path.join(APP, "legacy") + path.sep) ||
+  file === path.join(APP, "public", "rss.xml") ||
+  file === path.join(DIST, "rss.xml") ||
+  file.startsWith(path.join(APP, "public", "_assets") + path.sep) ||
+  file.startsWith(path.join(DIST, "_assets") + path.sep) ||
+  LEGACY_DIST.has(file);
+const appText = () => textFiles(APP).filter((f) => !isArchive(f));
+
 /** Languages written in Cyrillic. None of the guides is, yet. */
 const CYRILLIC_LANGS = ["uk", "be", "bg", "sr", "mk", "kk", "ky", "mn", "tg"];
 
@@ -1100,13 +1126,13 @@ describe("scripts", () => {
   // Escaped, so this file carries no Cyrillic of its own.
   test("no yery, e or yo (U+044B, U+044D, U+0451) anywhere in apps/fest", () => {
     if (guides.some((g) => g.lang.slice(0, 2) === "be")) return;
-    const hits = textFiles(APP).filter((f) => /[\u044B\u044D\u0451]/.test(readFileSync(f, "utf8")));
+    const hits = appText().filter((f) => /[\u044B\u044D\u0451]/.test(readFileSync(f, "utf8")));
     assert.deepEqual(hits.map((f) => path.relative(REPO, f)), []);
   });
 
   test("no Cyrillic at all while no guide is in a Cyrillic script", () => {
     if (guides.some((g) => CYRILLIC_LANGS.includes(g.lang.slice(0, 2)))) return;
-    const hits = textFiles(APP).filter((f) => /[\u0400-\u04FF]/.test(readFileSync(f, "utf8")));
+    const hits = appText().filter((f) => /[\u0400-\u04FF]/.test(readFileSync(f, "utf8")));
     assert.deepEqual(hits.map((f) => path.relative(REPO, f)), []);
   });
 

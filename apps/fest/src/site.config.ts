@@ -59,26 +59,27 @@ export const site: Record<Lang, {
     // The hub's language. A guide's pages carry the guide's own locale
     // (en-AU for Beyond The Valley), which Layout.astro puts over this.
     lang: "en",
-    // The archive owns /, so the guides' home is the hub: the wordmark, the
-    // breadcrumb root and the footer link all go there, and nothing here
-    // links to /.
-    homeHref: "/festivals/",
+    // The hub is the root since 23 Oct 2026 (it was /festivals/ while the
+    // archive of the old festival site kept /): the wordmark, the
+    // breadcrumb root and the footer link all go there.
+    homeHref: "/",
     homeLabel: "Festivals",
     footerLinks: [
-      { href: "/festivals/", label: "All festival guides", title: "Every guide, each in its own language: dates, tickets and lineups" },
+      { href: "/", label: "All festival guides", title: "Every guide, each in its own language: dates, tickets and lineups" },
     ],
     publisher,
     networkFooter: false,
     partnerDisclosure: false,
-    // The archive's Content-Security-Policy blocks the tag; Search Console
-    // measures this site instead.
+    // Search Console measures this site. The tag was off because the
+    // archive that shared the host blocked it by its Content-Security-Policy;
+    // turning it on is a decision of its own, not this move's.
     analytics: false,
-    // The look of the archive's front page the guides sit beside. The
-    // toggle and a light palette are there for the reader in the sun.
+    // The look of the archive's front page the guides were built beside.
+    // The toggle and a light palette are there for the reader in the sun.
     defaultTheme: "dark",
   },
   // The Spanish row, as en's but in Spanish. The hub stays English, so
-  // homeHref still names /festivals/ and only the words change.
+  // homeHref still names it and only the words change.
   es: {
     siteName: "fest.one",
     footerSiteName: "fest.one",
@@ -86,10 +87,10 @@ export const site: Record<Lang, {
     titleSuffix: "guía del festival",
     keyword: "festival",
     lang: "es",
-    homeHref: "/festivals/",
+    homeHref: "/",
     homeLabel: "Festivales",
     footerLinks: [
-      { href: "/festivals/", label: "Todas las guías de festivales", title: "Cada guía en su idioma: fechas, entradas y line-ups" },
+      { href: "/", label: "Todas las guías de festivales", title: "Cada guía en su idioma: fechas, entradas y line-ups" },
     ],
     publisher,
     networkFooter: false,
@@ -108,10 +109,10 @@ export const site: Record<Lang, {
     titleSuffix: "guia do festival",
     keyword: "festival",
     lang: "pt-BR",
-    homeHref: "/festivals/",
+    homeHref: "/",
     homeLabel: "Festivais",
     footerLinks: [
-      { href: "/festivals/", label: "Todos os guias de festivais", title: "Todos os guias de festival do fest.one" },
+      { href: "/", label: "Todos os guias de festivais", title: "Todos os guias de festival do fest.one" },
     ],
     publisher,
     networkFooter: false,
@@ -129,10 +130,10 @@ export const site: Record<Lang, {
     titleSuffix: "คู่มือเทศกาล",
     keyword: "เทศกาล",
     lang: "th-TH",
-    homeHref: "/festivals/",
+    homeHref: "/",
     homeLabel: "เทศกาล",
     footerLinks: [
-      { href: "/festivals/", label: "คู่มือเทศกาลทั้งหมด", title: "รวมคู่มือทุกเทศกาลของ fest.one หน้านี้เป็นภาษาอังกฤษ" },
+      { href: "/", label: "คู่มือเทศกาลทั้งหมด", title: "รวมคู่มือทุกเทศกาลของ fest.one หน้านี้เป็นภาษาอังกฤษ" },
     ],
     publisher,
     networkFooter: false,
@@ -151,10 +152,10 @@ export const site: Record<Lang, {
     titleSuffix: "guide du festival",
     keyword: "festival",
     lang: "fr-CA",
-    homeHref: "/festivals/",
+    homeHref: "/",
     homeLabel: "Festivals",
     footerLinks: [
-      { href: "/festivals/", label: "Guides de festivals", title: "Tous les guides de festivals sur fest.one, par événement et par langue" },
+      { href: "/", label: "Guides de festivals", title: "Tous les guides de festivals sur fest.one, par événement et par langue" },
     ],
     publisher,
     networkFooter: false,

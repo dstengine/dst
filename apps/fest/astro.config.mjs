@@ -11,18 +11,25 @@ const lastmod = JSON.parse(
   readFileSync(new URL("../../packages/content/src/lastmod.json", import.meta.url), "utf8"),
 );
 
-// fest.one is served through the archive of the old festival site, which
-// keeps /, /robots.txt and /sitemap.xml and hands every path it does not
-// have to this app. So this sitemap is the second one on the host: the
-// archive's robots.txt names it beside its own (BOOTSTRAP step 3), and
-// nothing here may be served at a path the archive answers.
+// Archive pages the old site itself kept out of search (/contacts/): noindex,
+// so out of the sitemap too.
+const noindex = new Set(
+  JSON.parse(readFileSync(new URL("./legacy/pages.json", import.meta.url), "utf8"))
+    .filter((p) => p.noindex)
+    .map((p) => "https://fest.one" + p.path),
+);
+
+// fest.one is this app alone: the hub at /, the guides, and the archive of
+// the old festival site as pages of its own (legacy/pages.json). So this
+// sitemap is the host's only one, named by public/robots.txt, and the old
+// /sitemap.xml redirects to its index (vercel.json).
 export default defineConfig({
   site: "https://fest.one",
   integrations: [
     sitemap({
-      // /go/ hops are noindex, nofollow; a sitemap entry would contradict
-      // them.
-      filter: (page) => !page.includes("/go/"),
+      // /go/ hops and noindex archive pages: a sitemap entry would
+      // contradict their robots tag.
+      filter: (page) => !page.includes("/go/") && !noindex.has(page),
       // loc, lastmod, changefreq and priority: every field the protocol
       // defines for a URL. See tools/sitemap.mjs.
       serialize: sitemapEntry(lastmod),
