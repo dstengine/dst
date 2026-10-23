@@ -15,12 +15,12 @@ import ChipNav from "@dst/ui/ChipNav.astro";
 import OnThisPage from "@dst/ui/OnThisPage.astro";
 import Faq from "@dst/ui/Faq.astro";
 import Glance from "@dst/ui/Glance.astro";
-import { imagesByHost } from "@dst/content/images";
 import GuideCta from "./GuideCta.astro";
 import { ICONS } from "@dst/ui/icons";
 import type { FestEvent, Guide, GuidePage } from "../data/types";
 import { applySpans, blocks, headingHtml, inline, inlineText, longDate, pathOf, sourcesHtml, withoutSuffix, type Ctx } from "../copy";
 import { mainPage } from "../rules";
+import { coverStyle as coverCss } from "../cover";
 import { languagesFor } from "../routes";
 import { chrome, langOf, site } from "../site.config";
 import { datedPages } from "../dated";
@@ -147,17 +147,10 @@ const navLabel = guide.navLabel ?? words.siblingNav;
 // <img>: the network's output test holds every <img> to an alt that says
 // what it shows (tests/build-output.test.js, "images"), which is right for
 // a photograph and wrong for abstract shapes that depict nothing.
-// The variants are tools/images.mjs's, from the manifest Photo.astro reads:
-// 480 and 768 px wide for a phone's 292 px band at one and two device
-// pixels, 768 and 1024 for the 736 px column (theme.css picks by width).
+// The two image-sets (tools/images.mjs's variants) come from cover.ts,
+// which the hub's cards share.
 const cover = page === main ? guide.cover : undefined;
-const variants = cover ? imagesByHost[Astro.site?.hostname ?? ""]?.[cover] : undefined;
-const at = (format: "avif" | "webp", width: number) => variants?.[format].find(([w]) => w === width)?.[1];
-const set = (one: number, two: number) =>
-  variants && at("avif", one) && at("avif", two) && at("webp", one) && at("webp", two)
-    ? `image-set(url(${at("avif", one)}) type('image/avif') 1x, url(${at("avif", two)}) type('image/avif') 2x, url(${at("webp", one)}) type('image/webp') 1x, url(${at("webp", two)}) type('image/webp') 2x, url(${cover}) type('image/jpeg') 1x)`
-    : `url(${cover})`;
-const coverStyle = cover ? `--cover-narrow: ${set(480, 768)}; --cover-wide: ${set(768, 1024)}` : "";
+const coverStyle = cover ? coverCss(cover, Astro.site?.hostname ?? "") : "";
 ---
 <article class="container guide">
   <Breadcrumbs

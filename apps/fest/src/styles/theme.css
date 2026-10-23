@@ -669,22 +669,138 @@ h2 { overflow-wrap: break-word; }
 }
 
 /* ---- the hub ----------------------------------------------------------- */
-.hub-entry {
-  margin-top: var(--space-4);
+/* The guides as cards in a grid, under a heading per month (index.astro).
+   The grid takes the container's width; the head, the jump list, the foot
+   keep the paragraph's measure (.hub > *). */
+.hub > .hub-month { max-width: none; }
+/* A month's heading, and the foot's: a signpost, quieter than the cards'
+   names under it, on a rule. The first sits a step nearer the lede, so on
+   a 390 px phone the first guide's name is on the first screen (the
+   front-page card of 23 Oct 2026: 588 px against 614). The first section
+   under .hub is always a month (the head is a header, the jump list a
+   nav); a section put before them would take this rule. */
+.hub-month > h2,
+.hub-about > h2 {
+  margin: var(--space-5) 0 0;
   padding-top: var(--space-3);
   border-top: 1px solid var(--border);
-}
-.hub-entry h2 {
-  margin: 0 0 var(--space-1);
-  font-size: var(--step-3);
-}
-.hub-lang {
-  display: block;
-  margin-top: 0.35rem;
   font-family: var(--font-body);
-  font-weight: 400;
-  font-size: var(--step--1);
+  font-weight: 600;
+  font-size: var(--step-1);
   letter-spacing: normal;
+  line-height: 1.3;
+  color: var(--ink-muted);
+}
+.hub-month:first-of-type > h2 { margin-top: var(--space-3); }
+/* One column on a phone, two from about 720 px, three at 1280; a month
+   with one guide shows one card at its neighbours' width. Rows align at
+   the top, so a long blurb makes a taller card and moves nothing else. */
+.hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+  gap: var(--space-4) var(--space-3);
+  align-items: start;
+  margin-top: var(--space-2);
+}
+.hub-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+/* The cover, drawn as on the guide's main page (.guide-cover): the square
+   as a 2:1 band from its middle, a background, being decorative. The image
+   set goes by the card's width, not the viewport's: a card is at most 452
+   px wide under 481 and 436 from 768, so the narrow set (480 at one device
+   pixel, 768 at two) serves it everywhere but the single column between
+   481 and 767, where a card reaches 719 px. It sits above the name though
+   it follows it in the page (HubEntry says why). */
+.hub-card-cover {
+  order: -1;
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  border-radius: var(--radius);
+  background-color: var(--surface-sunk);
+  background-image: var(--cover-narrow);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-decoration: none;
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  .hub-card-cover { background-image: var(--cover-wide); }
+}
+/* A guide with no cover yet: its dates on the panel, in the display face
+   and the accent, as a feed card with no picture puts its date there. The
+   dates are one flex item (.hub-card-cover-text), so they wrap as a line of
+   text does; and on the panel a date may wrap inside itself, balanced: in
+   the display face at this size "15 de nov de 2026" alone is wider than a
+   card at 320 and at 1280, and kept whole it ran out of the panel (the
+   build's no-cover shot, 23 Oct 2026). The panel is hidden from assistive
+   technology and the meta line says the dates in full. */
+.hub-card-cover-dates .hub-card-cover-text { text-wrap: balance; }
+.hub-card-cover-dates .nowrap { white-space: normal; }
+.hub-card-cover-dates {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2);
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--step-2);
+  line-height: 1.2;
+  color: var(--accent);
+}
+.hub-card h3 {
+  margin: var(--space-2) 0 0;
+  font-size: var(--step-2);
+}
+/* The dates, the place and the language, in a row that wraps. The dot
+   between two items is drawn by the one that follows (as SourceLine's is,
+   packages/ui): centred in the column gap, or left of the paragraph when
+   the item starts a line, where the clip below keeps it from being
+   painted, so no line opens with a lone dot. Nothing here takes focus, so
+   the clip cuts no focus ring. The dot is --ink-faint, not --border: the
+   dark palette's border is too faint to see as a character. A no-cover
+   card's hidden dates are out of the flow, so the place's dot falls left
+   of the paragraph and is clipped with it. */
+.hub-card-meta {
+  --hub-meta-gap: 1.4em;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25em var(--hub-meta-gap);
+  overflow: hidden;
+  margin: var(--space-1) 0 0;
+  font-size: var(--step--1);
+  color: var(--ink-muted);
+}
+.hub-card-meta > * + * { position: relative; }
+.hub-card-meta > * + *::before {
+  content: "\00B7";
+  /* Empty alternative text: a screen reader hears no separator. */
+  content: "\00B7" / "";
+  position: absolute;
+  left: calc(-1 * var(--hub-meta-gap));
+  width: var(--hub-meta-gap);
+  text-align: center;
+  color: var(--ink-faint);
+}
+/* The blurb whole, never clamped: it is the guide's approved copy, and a
+   cut at a sentence cannot be made in Thai. */
+.hub-card-blurb {
+  margin: var(--space-1) 0 0;
+  font-size: var(--step--1);
+  color: var(--ink);
+  text-wrap: pretty;
+}
+:lang(th) .hub-card-blurb { line-height: 1.6; }
+/* The foot: how the guides are made, then one line to the archive. */
+.hub-about > p { margin-top: var(--space-2); }
+.hub-archive-line {
+  margin-top: var(--space-3);
+  font-size: var(--step--1);
   color: var(--ink-muted);
 }
 .hub-pages {

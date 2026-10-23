@@ -1,45 +1,62 @@
 ---
-// One guide on the hub: the event's name linked to the guide, the guide's
-// language named in that language, its blurb, and a row of its other
-// pages. Everything after the name is the guide's and in its language, so
-// a Spanish-only reader who tapped the wordmark on a Spanish guide finds
+// One guide's card on the hub: the event's name linked to the guide, its
+// cover, a line with the edition's dates, its place and the guide's language
+// named in that language, its blurb, and a row of its other pages. Every
+// value comes from rules.ts (hubCard), which decides; this file prints.
+//
+// Everything after the name is the guide's and in its language, so a
+// Spanish-only reader who tapped the wordmark on a Spanish guide finds
 // their way back on an English page. The row's labels are one word each,
 // so each carries the event's name for a screen reader's list of links,
-// which would otherwise be ten links called "Tickets". The event is named
-// as the guide names it, and each link's tooltip is the one every other
-// link to that page carries (linkTitle), where the guide gives one. The
-// words between a label and the name are the language's (site.config.ts,
-// rowJoint): "Tickets Beyond The Valley 2026/27", "Ingressos do Primavera
-// Sound São Paulo 2026".
-import type { FestEvent, Guide } from "../data/types";
-import { inline, pathOf, withoutSuffix, type Ctx } from "../copy";
-import { mainPage } from "../rules";
+// which would otherwise be ten links called "Tickets". The words between a
+// label and the name are the language's (site.config.ts, rowJoint):
+// "Tickets Beyond The Valley 2026/27", "Ingressos do Primavera Sound São
+// Paulo 2026".
+//
+// The name's link comes first in the page and the cover is lifted above it
+// by CSS (order: -1): of two links to one page, the first is the one a
+// crawler is likeliest to read, and the cover's has no text. The cover is a
+// second way to the guide for a reader who taps the picture, hidden from
+// assistive technology and the tab order; with no cover, its panel shows
+// the dates, and the meta line keeps them as hidden text instead.
+//
+// Not FeedCards (packages/ui): its cards are one language with a date
+// plate, a countdown and an eyebrow, and these carry a lang and dir per
+// card, the guide's row of pages under the blurb and an Intl date range in
+// the guide's locale; a guide card is a site component, not a copy of the
+// shared one.
+import HubDates from "./HubDates.astro";
+import type { HubCard } from "../rules";
 import { chrome, langOf } from "../site.config";
 
 interface Props {
-  event: FestEvent;
-  guide: Guide;
-  today: string;
+  card: HubCard;
 }
-const { event, guide, today } = Astro.props;
-const main = mainPage(guide);
-const ctx: Ctx = { event, guide, today, where: `/ (${event.slug}/${guide.slug})` };
-const blurb = inline(guide.hubBlurb, ctx);
-const rest = guide.pages.filter((p) => p !== main);
-const name = guide.name ?? event.name;
-const joint = chrome[langOf(guide.lang)].rowJoint ?? " ";
+const { card } = Astro.props;
+const joint = chrome[langOf(card.lang)].rowJoint ?? " ";
 ---
-<article class="hub-entry">
-  <h2>
-    <a href={guide.path} title={main.linkTitle ?? withoutSuffix(main.title)} lang={guide.lang}>{name}</a>
-    <span class="hub-lang" lang={guide.lang}>{guide.hubLabel}</span>
-  </h2>
-  {blurb && <p lang={guide.lang} dir={guide.dir} set:html={blurb} />}
-  {rest.length > 0 && (
-    <ul class="hub-pages" lang={guide.lang} dir={guide.dir}>
-      {rest.map((p) => (
+<article class="hub-card">
+  <h3><a href={card.href} title={card.linkTitle} lang={card.lang}>{card.name}</a></h3>
+  <a
+    class:list={["hub-card-cover", card.onCover && "hub-card-cover-dates"]}
+    href={card.href}
+    title={card.linkTitle}
+    aria-hidden="true"
+    tabindex="-1"
+    style={card.coverStyle}
+    lang={card.onCover ? card.lang : undefined}
+  >{card.onCover && <span class="hub-card-cover-text"><HubDates dates={card.dates} /></span>}</a>
+  <p class="hub-card-meta" lang={card.lang} dir={card.dir}>
+    {card.when ? <span class="hub-card-when"><HubDates dates={card.when} /></span> : <span class="visually-hidden">{card.dates.text}</span>}
+    <span class="hub-card-where">{card.place}</span>
+    <span class="hub-card-lang">{card.label}</span>
+  </p>
+  {card.blurb && <p class="hub-card-blurb" lang={card.lang} dir={card.dir} set:html={card.blurb} />}
+  {card.pages.length > 0 && (
+    <ul class="hub-pages" lang={card.lang} dir={card.dir}>
+      {card.pages.map((p) => (
         <li>
-          <a href={pathOf(p)} title={p.linkTitle ?? withoutSuffix(p.title)}>{p.label}<span class="visually-hidden">{joint}{name}</span></a>
+          <a href={p.href} title={p.title}>{p.label}<span class="visually-hidden">{joint}{card.name}</span></a>
         </li>
       ))}
     </ul>

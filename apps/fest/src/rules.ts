@@ -1,9 +1,12 @@
 // The decisions the pages make from the data, in one place and with no
-// markup: which day it is, what has expired, the order of the hub, what the
-// event's structured data says, and what a title must be.
+// markup: which day it is, what has expired, the order of the hub and what
+// each of its cards says, what the event's structured data says, and what a
+// title must be.
 import { hasEnded, lastDay } from "@dst/content/when";
 import type { FestEvent, Guide, GuidePage, Offer } from "./data/types";
-import { expired, pathOf, resolve, SITE, zoneOffset } from "./copy";
+import { expired, inline, pathOf, resolve, SITE, withoutSuffix, zoneOffset, type Ctx } from "./copy";
+import { coverStyle } from "./cover";
+import { hub } from "./hub";
 
 /** The day the build is for, ISO. `FEST_TODAY` sets it, so the expiry of a
     price can be built and tested before the day comes (and a session on
@@ -43,6 +46,140 @@ export function hubOrder(guides: Guide[], events: FestEvent[], day: string): Gui
     const by = enda ? lastDay(eb).localeCompare(lastDay(ea)) : ea.start.localeCompare(eb.start);
     return by || eventOf(events, a).name.localeCompare(eventOf(events, b).name) || a.slug.localeCompare(b.slug);
   });
+}
+
+/** The hub's sections: the editions not yet ended by the month they start,
+    in hubOrder's order, each headed by the month's name as Intl prints it
+    ("November 2026"); then the ended ones under "Past editions", most
+    recent first. A season that has begun stays under the month it opened,
+    and its card's own dates say when it ends. The ids are the jump list's
+    anchors: "m-2026-11", ..., "past". */
+export interface HubSection { id: string; heading: string; title: string; guides: Guide[] }
+export function hubSections(guides: Guide[], events: FestEvent[], day: string): HubSection[] {
+  const monthName = new Intl.DateTimeFormat("en-GB", { month: "long", year: "numeric", timeZone: "UTC" });
+  const sections: HubSection[] = [];
+  for (const guide of hubOrder(guides, events, day)) {
+    const edition = eventOf(events, guide).edition;
+    const ended = hasEnded(edition, day);
+    const month = edition.start.slice(0, 7);
+    const id = ended ? "past" : `m-${month}`;
+    let section = sections.find((s) => s.id === id);
+    if (!section) {
+      const heading = ended ? hub.pastHeading : monthName.format(new Date(`${month}-01T00:00:00Z`));
+      section = { id, heading, title: ended ? hub.pastTitle : hub.monthTitle(heading), guides: [] };
+      sections.push(section);
+    }
+    section.guides.push(guide);
+  }
+  return sections;
+}
+
+/** The jump list's items, one per section, each link's title saying more
+    than its label (OnThisPage renders them from five sections up). */
+export const hubJumps = (sections: HubSection[]) => sections.map((s) => ({ id: s.id, label: s.heading, title: s.title }));
+
+/** An edition's dates as the card prints them, in the guide's language and
+    the Gregorian calendar (a Thai date says 2026, not 2569): the whole
+    string as Intl prints it, and its two ends, each a <time> that never
+    splits, with what Intl puts between them cut at the space after the
+    dash, the one place the line may break ("31 de dic de 2026 – 10 de ene
+    de 2027" is wider than a 292 px card). A range Intl joins with no space
+    ("3–7 ธ.ค. 2026") has no gap and stays whole. `datetime` is the ISO day
+    or the interval, for the tests and the Markdown twin: HTML's datetime
+    has no interval, so the page gives each end its own. */
+export interface HubDates {
+  text: string;
+  datetime: string;
+  ends: { text: string; datetime: string }[];
+  joint: string;
+  gap: string;
+}
+export function hubDates(edition: FestEvent["edition"], lang: string): HubDates {
+  const format = new Intl.DateTimeFormat(lang, { day: "numeric", month: "short", year: "numeric", calendar: "gregory", timeZone: "UTC" });
+  const at = (iso: string) => new Date(`${iso}T00:00:00Z`);
+  const { start, end } = edition;
+  if (!end || end === start) {
+    const text = format.format(at(start));
+    return { text, datetime: start, ends: [{ text, datetime: start }], joint: "", gap: "" };
+  }
+  const parts = format.formatRangeToParts(at(start), at(end));
+  const text = parts.map((p) => p.value).join("");
+  const dash = parts.findIndex((p) => p.source === "shared" && p.type === "literal" && /[\u2013\u2014-]/.test(p.value));
+  // A locale that joins its range some other way: each end in full, as
+  // Intl prints a single day, around an en dash.
+  if (dash < 0)
+    return { text, datetime: `${start}/${end}`, ends: [{ text: format.format(at(start)), datetime: start }, { text: format.format(at(end)), datetime: end }], joint: " \u2013", gap: " " };
+  const literal = parts[dash].value;
+  const gap = /\s+$/u.exec(literal)?.[0] ?? "";
+  const side = (from: number, to?: number) => parts.slice(from, to).map((p) => p.value).join("");
+  return {
+    text,
+    datetime: `${start}/${end}`,
+    ends: [{ text: side(0, dash), datetime: start }, { text: side(dash + 1), datetime: end }],
+    joint: literal.slice(0, literal.length - gap.length),
+    gap,
+  };
+}
+
+/** Where the edition is, on its card: the guide's own `hubPlace` where it
+    has one, else the locality the MusicEvent prints (the markup's address,
+    or the Australian venue's address read in parts) and the country's name
+    in the guide's language. */
+function placeOf(event: FestEvent, guide: Guide): string {
+  if (guide.hubPlace) return guide.hubPlace;
+  const markup = event.markup;
+  const venue = (markup.venue ? resolve(event.sheet, markup.venue) : event.sheet.venue) as Venue | undefined;
+  const locality = markup.address?.addressLocality ?? (venue?.address ? australian(event.slug, venue.address).addressLocality : undefined);
+  const code = markup.address?.addressCountry ?? venue?.country;
+  const country = code ? new Intl.DisplayNames(guide.lang, { type: "region" }).of(code) : undefined;
+  return [locality, country].filter(Boolean).join(", ");
+}
+
+/** One guide's card on the hub, everything HubEntry.astro prints and
+    nothing it decides: the name and its link, the cover (absent: the dates
+    go on the panel, and the meta line carries them as hidden text, since
+    the panel is hidden from a screen reader), the dates, the place and the
+    language, the blurb, and the row of the guide's other pages. (The words
+    between a page's label and the event's name, for a screen reader's list
+    of links, are the language's chrome: HubEntry takes them from
+    site.config.ts, which node's test runner cannot import from here.) */
+export interface HubCard {
+  name: string;
+  href: string;
+  lang: string;
+  dir: "ltr" | "rtl";
+  linkTitle: string;
+  coverStyle?: string;
+  onCover: boolean;
+  dates: HubDates;
+  when?: HubDates;
+  place: string;
+  label: string;
+  blurb: string;
+  pages: { href: string; label: string; title: string }[];
+}
+export function hubCard(event: FestEvent, guide: Guide, day: string, host: string): HubCard {
+  const main = mainPage(guide);
+  const ctx: Ctx = { event, guide, today: day, where: `/ (${event.slug}/${guide.slug})` };
+  const dates = hubDates(event.edition, guide.lang);
+  const onCover = !guide.cover;
+  return {
+    name: guide.name ?? event.name,
+    href: guide.path,
+    lang: guide.lang,
+    dir: guide.dir,
+    linkTitle: main.linkTitle ?? withoutSuffix(main.title),
+    ...(guide.cover ? { coverStyle: coverStyle(guide.cover, host) } : {}),
+    onCover,
+    dates,
+    ...(onCover ? {} : { when: dates }),
+    place: placeOf(event, guide),
+    label: guide.hubLabel,
+    blurb: inline(guide.hubBlurb, ctx),
+    pages: guide.pages
+      .filter((p) => p !== main)
+      .map((p) => ({ href: pathOf(p), label: p.label, title: p.linkTitle ?? withoutSuffix(p.title) })),
+  };
 }
 
 /** A price row of the sheet. `total` is the seller's price with its fee,

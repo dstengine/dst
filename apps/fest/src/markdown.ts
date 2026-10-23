@@ -10,7 +10,7 @@
 import { events, guides } from "./data/events/index";
 import type { Guide } from "./data/types";
 import { applySpans, blocksMd, inlineMd, pathOf, SITE, sourcesMd, type Ctx } from "./copy";
-import { eventOf, hubOrder, mainPage, today } from "./rules";
+import { eventOf, hubCard, hubOrder, hubSections, mainPage, today } from "./rules";
 import { hub } from "./hub";
 import { chrome, site } from "./site.config";
 
@@ -82,24 +82,35 @@ function guideDocs(guide: Guide, day: string): Doc[] {
 }
 
 function hubDoc(day: string): Doc {
-  const entries = hubOrder(guides, events, day).flatMap((guide) => {
-    const event = eventOf(events, guide);
-    const main = mainPage(guide);
-    const ctx: Ctx = { event, guide, today: day, where: "/ (Markdown)" };
-    return [
-      `## [${guide.name ?? event.name}](${abs(`${guide.path.replace(/\/$/, "")}.md`)}) (${guide.hubLabel})`,
-      "",
-      inlineMd(guide.hubBlurb, ctx),
-      "",
-      ...guide.pages.filter((p) => p !== main).map((p) => `- [${p.label}](${abs(`/${p.slug}.md`)}): ${p.description}`),
-      "",
-    ];
-  });
+  // The page's months, each guide under its month with its dates and place
+  // on a line of their own (the card's meta line), then how the guides are
+  // made and the archive's three fronts, which the page itself reduces to
+  // one line.
+  const months = hubSections(guides, events, day).flatMap((section) => [
+    `## ${section.heading}`,
+    "",
+    ...section.guides.flatMap((guide) => {
+      const event = eventOf(events, guide);
+      const main = mainPage(guide);
+      const card = hubCard(event, guide, day, "");
+      const ctx: Ctx = { event, guide, today: day, where: "/ (Markdown)" };
+      return [
+        `### [${card.name}](${abs(`${guide.path.replace(/\/$/, "")}.md`)}) (${guide.hubLabel})`,
+        "",
+        `${card.dates.text} · ${card.place}`,
+        "",
+        inlineMd(guide.hubBlurb, ctx),
+        "",
+        ...guide.pages.filter((p) => p !== main).map((p) => `- [${p.label}](${abs(`/${p.slug}.md`)}): ${p.description}`),
+        "",
+      ];
+    }),
+  ]);
   return {
     path: hub.path,
     title: hub.title,
     summary: hub.description,
-    markdown: join([`# ${hub.h1}`, "", `> ${hub.description}`, "", hub.intro, "", ...entries, ...archiveMd()]),
+    markdown: join([`# ${hub.h1}`, "", `> ${hub.description}`, "", hub.intro, "", ...months, `## ${hub.aboutHeading}`, "", hub.about, "", ...archiveMd()]),
   };
 }
 
@@ -135,6 +146,10 @@ export function llms(): string {
     `> ${hub.description}`,
     "",
     hub.intro,
+    "",
+    // The sentence on how the guides are sourced, which the hub prints at
+    // its foot: the map keeps the promise the pages make.
+    hub.about,
     "",
     `- [${hub.h1}](${abs(mdPath(hub.path))}): ${site.en.homeTitle}`,
     "",

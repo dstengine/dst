@@ -272,6 +272,12 @@ export interface Guide extends Dated {
   /** The language named in itself, for the hub: "English (Australia)". */
   hubLabel: string;
   hubBlurb: string;
+  /** The place on the guide's hub card, in the guide's language, where the
+      locality the markup gives would mislead (Beyond The Valley's postal
+      "Hesse"; Igloofest's "Montréal", one of four cities). From the
+      guide's own copy. Absent, the card prints the locality and the
+      country's name (rules.ts, hubCard). */
+  hubPlace?: string;
   /** From these days the build drops the matching {{until key}} spans. */
   expires: Record<string, string>;
   /** Links the footer carries on this guide's pages after the hub, and a

@@ -1,14 +1,21 @@
 ---
-// The hub, at the root of fest.one: every guide in every language, the
-// next festivals first, and at its foot the archive of the old festival
-// site, whose pages are this app's too. The home of the site's chrome (the
-// wordmark, the first crumb and the footer link all lead here). It was
-// /festivals/ while the archive kept /, and that address redirects here
-// (vercel.json).
+// The hub, at the root of fest.one: every guide in every language as a
+// card, grouped by the month its edition starts, the next festivals first
+// and the editions that have ended last (rules.ts, hubSections and
+// hubCard). A one-sentence lede, so the first guide is on a phone's first
+// screen; the sentence on how the guides are sourced at the foot, and under
+// it one line to the archive of the old festival site, whose pages are this
+// app's too (the user's decision of 23 Oct 2026: the front page need not
+// link the old events; the Markdown twin and llms.txt still name all three
+// of its fronts). A jump list of the months from five sections up. The home
+// of the site's chrome (the wordmark, the first crumb and the footer link
+// all lead here). It was /festivals/ while the archive kept /, and that
+// address redirects here (vercel.json).
 import Layout from "../layouts/Layout.astro";
 import HubEntry from "../components/HubEntry.astro";
+import OnThisPage from "@dst/ui/OnThisPage.astro";
 import { events, guides } from "../data/events/index";
-import { assertTitle, eventOf, hubOrder, today } from "../rules";
+import { assertTitle, eventOf, hubCard, hubJumps, hubSections, today } from "../rules";
 import { hub } from "../hub";
 import { site } from "../site.config";
 import { withSuffix } from "@dst/ui/title";
@@ -16,7 +23,9 @@ import { withSuffix } from "@dst/ui/title";
 const day = today();
 const { titleSuffix, keyword } = site.en;
 assertTitle(withSuffix(hub.title, titleSuffix, keyword, "en"), keyword, hub.path);
-const ordered = hubOrder(guides, events, day);
+const sections = hubSections(guides, events, day);
+const host = Astro.site?.hostname ?? "";
+const { line } = hub.archive;
 ---
 <Layout
   title={hub.title}
@@ -28,15 +37,19 @@ const ordered = hubOrder(guides, events, day);
       <h1>{hub.h1}</h1>
       <p class="lede">{hub.intro}</p>
     </header>
-    {ordered.map((guide) => <HubEntry event={eventOf(events, guide)} guide={guide} today={day} />)}
-    <section class="hub-entry hub-archive" aria-labelledby="hub-archive">
-      <h2 id="hub-archive">{hub.archive.heading}</h2>
-      <p>{hub.archive.intro}</p>
-      <ul>
-        {hub.archive.links.map((l) => (
-          <li><a href={l.href} title={l.title}>{l.label}</a>: {l.line}</li>
-        ))}
-      </ul>
+    <OnThisPage items={hubJumps(sections)} min={5} heading={hub.onThisPage} />
+    {sections.map((s) => (
+      <section class="hub-month" aria-labelledby={s.id}>
+        <h2 id={s.id}>{s.heading}</h2>
+        <div class="hub-grid">
+          {s.guides.map((guide) => <HubEntry card={hubCard(eventOf(events, guide), guide, day, host)} />)}
+        </div>
+      </section>
+    ))}
+    <section class="hub-about" aria-labelledby="about">
+      <h2 id="about">{hub.aboutHeading}</h2>
+      <p>{hub.about}</p>
     </section>
+    <p class="hub-archive-line">{line.before}<a href={line.link.href} title={line.link.title}>{line.link.label}</a>{line.after}</p>
   </div>
 </Layout>

@@ -1,0 +1,22 @@
+---
+// An edition's dates on a hub card (rules.ts, hubDates): each end a <time>
+// with its own ISO day, since HTML's datetime has no interval, and each in a
+// span that never splits; between them the dash stays with the first end,
+// and the space after it is the one place the line may break. A range Intl
+// joins with no space ("3–7 ธ.ค. 2026") is one span. Printed twice by
+// HubEntry: on the meta line, and on the panel of a card with no cover.
+import type { HubDates } from "../rules";
+
+interface Props {
+  dates: HubDates;
+}
+const { dates } = Astro.props;
+const [first, last] = dates.ends;
+---
+{last === undefined ? (
+  <span class="nowrap"><time datetime={first.datetime}>{first.text}</time></span>
+) : dates.gap ? (
+  <Fragment><span class="nowrap"><time datetime={first.datetime}>{first.text}</time>{dates.joint}</span>{dates.gap}<span class="nowrap"><time datetime={last.datetime}>{last.text}</time></span></Fragment>
+) : (
+  <span class="nowrap"><time datetime={first.datetime}>{first.text}</time>{dates.joint}<time datetime={last.datetime}>{last.text}</time></span>
+)}

@@ -477,6 +477,35 @@ test.describe("feed cards", () => {
       }
     });
   }
+
+  // fest.one's hub cards (apps/fest, HubEntry.astro) are the same shape in
+  // a grid of their own: a row's covers are one height however long a
+  // card's blurb runs (December's row puts Beyond The Valley's, the
+  // longest, beside Wonderfruit's), since the rows align at the top and
+  // the cover is a 2:1 band of the card's width.
+  test("fest/: hub covers in a row are the same height", async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 900 });
+    await page.goto(url("fest", "/"));
+
+    const rows = await page.evaluate(() => {
+      const groups = [];
+      for (const grid of document.querySelectorAll(".hub-grid")) {
+        const byTop = new Map();
+        for (const card of grid.querySelectorAll(":scope > .hub-card")) {
+          const top = Math.round(card.getBoundingClientRect().top);
+          const h = Math.round(card.querySelector(".hub-card-cover").getBoundingClientRect().height);
+          byTop.set(top, [...(byTop.get(top) ?? []), h]);
+        }
+        for (const heights of byTop.values()) if (heights.length > 1) groups.push(heights);
+      }
+      return groups;
+    });
+
+    expect(rows.length, "no multi-card row to measure").toBeGreaterThan(0);
+    for (const heights of rows) {
+      expect(new Set(heights).size, `covers in one row measured ${heights.join("/")}`).toBe(1);
+    }
+  });
 });
 
 test.describe("skip link", () => {

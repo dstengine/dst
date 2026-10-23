@@ -38,6 +38,7 @@ const DIST = path.join(APP, "dist");
 const { events, guides } = await import("../apps/fest/src/data/events/index.ts");
 const copy = await import("../apps/fest/src/copy.ts");
 const rules = await import("../apps/fest/src/rules.ts");
+const cover = await import("../apps/fest/src/cover.ts");
 const routes = await import("../apps/fest/src/routes.ts");
 const { keywords } = await import("../apps/fest/src/site.config.ts");
 const { hub } = await import("../apps/fest/src/hub.ts");
@@ -49,6 +50,21 @@ const isoDay = (iso) => iso.slice(0, 10);
 const daysBetween = (from, to) => Math.round((Date.parse(to) - Date.parse(from)) / DAY);
 const newest = (...dates) => dates.sort((a, b) => Date.parse(b) - Date.parse(a))[0];
 
+/** The guides the hub's cards were built on (the front-page card of 23 Oct
+    2026), and what each card's meta line says: Intl's dates in the guide's
+    language, compared with any run of spaces as one (U+2009 and U+202F
+    vary with the ICU that builds), the place, the language's name. */
+const HUB_CARDS = {
+  "/creamfields-chile/": { when: "14 – 15 de nov de 2026", place: "Santiago, Chile", label: "Español (Chile)" },
+  "/wonderfruit/": { when: "3–7 ธ.ค. 2026", place: "พัทยา, ไทย", label: "ภาษาไทย" },
+  "/primavera-sound-sao-paulo/": { when: "5 – 6 de dez. de 2026", place: "São Paulo, Brasil", label: "Português (Brasil)" },
+  "/beyond-the-valley/": { when: "28 Dec 2026 – 1 Jan 2027", place: "Barunah Plains, Victoria, Australia", label: "English (Australia)" },
+  "/zamna-tulum/": { when: "31 de dic de 2026 – 10 de ene de 2027", place: "Tulum, México", label: "Español (México)" },
+  "/field-day/": { when: "1 Jan 2027", place: "Sydney, Australia", label: "English (Australia)" },
+  "/igloofest/": { when: "14 janv. – 13 mars 2027", place: "Montréal, Gatineau, Québec, Edmonton", label: "Français (Canada)" },
+};
+const HUB_SEVEN = new Set(Object.keys(HUB_CARDS));
+
 /** The day every span has expired by: what a page holds once its prices
     have all come off. */
 const END_OF_TIME = "9999-12-31";
@@ -59,6 +75,8 @@ const END_OF_TIME = "9999-12-31";
 function strings(guide) {
   const main = rules.mainPage(guide);
   const out = [{ where: `${guide.event}/${guide.slug} hubBlurb`, text: guide.hubBlurb, dated: guide.updatedAt }];
+  // The place on the guide's hub card, where the guide gives its own.
+  if (guide.hubPlace !== undefined) out.push({ where: `${guide.event}/${guide.slug} hubPlace`, text: guide.hubPlace, dated: guide.updatedAt });
   for (const page of guide.pages) {
     const dated = page === main ? newest(page.updatedAt, guide.updatedAt) : page.updatedAt;
     const at = (field) => `${page.slug} ${field}`;
@@ -213,6 +231,77 @@ describe("the copy and its sheet", () => {
     assert.deepEqual(order, ["b", "a", "d", "c"]);
     // On the edition's last day it is still on, and still first.
     assert.equal(rules.hubOrder([g("b"), g("a")], evs, "2027-01-01")[0].event, "b");
+  });
+
+  // The hub's months, cards and jump list (the front-page card of 23 Oct
+  // 2026). The weekday routine adds a guide a day, so each case reads only
+  // the seven guides this card was built on: a new guide is never a red
+  // test here for being true.
+  test("hub sections: by the month the edition starts, then the past ones under one heading", () => {
+    const at = (day) =>
+      rules.hubSections(guides, events, day)
+        .map((s) => ({ id: s.id, heading: s.heading, events: s.guides.filter((g) => HUB_SEVEN.has(g.path)).map((g) => g.event) }))
+        .filter((s) => s.events.length);
+    assert.deepEqual(at("2026-10-24"), [
+      { id: "m-2026-11", heading: "November 2026", events: ["creamfields-chile"] },
+      { id: "m-2026-12", heading: "December 2026", events: ["wonderfruit", "primavera-sound-sao-paulo", "beyond-the-valley", "zamna-tulum"] },
+      { id: "m-2027-01", heading: "January 2027", events: ["field-day", "igloofest"] },
+    ]);
+    // hubOrder breaks the tie on one last day (1 January 2027) by name.
+    assert.deepEqual(at("2027-02-01"), [
+      { id: "m-2027-01", heading: "January 2027", events: ["igloofest"] },
+      { id: "past", heading: "Past editions", events: ["zamna-tulum", "beyond-the-valley", "field-day", "wonderfruit", "primavera-sound-sao-paulo", "creamfields-chile"] },
+    ]);
+  });
+
+  test("hub jump list: one item per section in order, each title more than its label", () => {
+    const ev = (slug, start, end) => ({ slug, name: slug, edition: { start, end } });
+    const g = (event) => ({ slug: "en", event });
+    const evs = [ev("a", "2026-11-14"), ev("b", "2026-12-05"), ev("c", "2027-01-14"), ev("d", "2027-02-20"), ev("e", "2027-03-06"), ev("z", "2026-06-01", "2026-06-03")];
+    const items = rules.hubJumps(rules.hubSections(evs.map((e) => g(e.slug)), evs, "2026-10-24"));
+    assert.deepEqual(items.map((i) => i.id), ["m-2026-11", "m-2026-12", "m-2027-01", "m-2027-02", "m-2027-03", "past"]);
+    assert.equal(items[0].label, "November 2026");
+    assert.equal(items[0].title, "Festival guides for November 2026");
+    assert.equal(items.at(-1).title, "Festival guides for past editions");
+    for (const i of items) assert.notEqual(i.title.toLowerCase(), i.label.toLowerCase());
+  });
+
+  test("hub cards: each guide's dates, place, language and cover", () => {
+    const got = {};
+    for (const guide of guides.filter((g) => HUB_SEVEN.has(g.path))) {
+      const c = rules.hubCard(rules.eventOf(events, guide), guide, "2026-10-24", "fest.one");
+      const { start, end } = rules.eventOf(events, guide).edition;
+      got[guide.path] = { when: c.when?.text.replace(/\s+/g, " "), place: c.place, label: c.label };
+      assert.equal(c.dates.datetime, end && end !== start ? `${start}/${end}` : start, guide.path);
+      assert.equal(c.dates.ends[0].datetime, start, guide.path);
+      assert.equal(c.dates.ends.at(-1).datetime, end ?? start, guide.path);
+      assert.equal(c.label, guide.hubLabel);
+      assert.equal(c.onCover, false, guide.path);
+      const slug = guide.cover.replace(/^\/covers\/|\.jpg$/g, "");
+      for (const want of ["--cover-narrow: image-set(", "--cover-wide: image-set(", `/covers/${slug}-480.avif`, `/covers/${slug}-768.avif`])
+        assert.ok(c.coverStyle.includes(want), `${guide.path}: the cover style lacks ${want}`);
+    }
+    assert.deepEqual(got, HUB_CARDS);
+    // Gregorian, not the Buddhist era a Thai date takes by default.
+    assert.ok(got["/wonderfruit/"].when.includes("2026") && !got["/wonderfruit/"].when.includes("2569"));
+  });
+
+  test("hub card without a cover: the dates go on the panel, and the meta line has no <time>", () => {
+    const guide = guides.find((g) => g.path === "/beyond-the-valley/");
+    const event = rules.eventOf(events, guide);
+    const c = rules.hubCard(event, { ...guide, cover: undefined }, "2026-10-24", "fest.one");
+    assert.equal(c.onCover, true);
+    assert.equal(c.when, undefined);
+    assert.equal(c.coverStyle, undefined);
+    assert.equal(c.dates.text.replace(/\s+/g, " "), "28 Dec 2026 – 1 Jan 2027");
+  });
+
+  // Moved out of GuidePage.astro into cover.ts for the hub's cards: the
+  // string /beyond-the-valley/ printed before the move, as the fixture.
+  test("cover style: the guide page's image-sets, unchanged by the move to cover.ts", () => {
+    const set = (a, b) =>
+      `image-set(url(/covers/beyond-the-valley-${a}.avif) type('image/avif') 1x, url(/covers/beyond-the-valley-${b}.avif) type('image/avif') 2x, url(/covers/beyond-the-valley-${a}.webp) type('image/webp') 1x, url(/covers/beyond-the-valley-${b}.webp) type('image/webp') 2x, url(/covers/beyond-the-valley.jpg) type('image/jpeg') 1x)`;
+    assert.equal(cover.coverStyle("/covers/beyond-the-valley.jpg", "fest.one"), `--cover-narrow: ${set(480, 768)}; --cover-wide: ${set(768, 1024)}`);
   });
 
   test("the event's markup drops its prices with the span, and its offers with the edition", () => {
@@ -692,6 +781,56 @@ describe("the built pages", { skip: built ? false : "apps/fest/dist is missing: 
 });
 
 // ----------------------------------------------------- a Thai guide's pages
+
+// The hub's built page (the front-page card of 23 Oct 2026): its months as
+// the data gives them on the build's day, each of the seven guides' cards
+// with its dates, place and cover, and one line to the archive.
+describe("the hub's built page", { skip: built ? false : "apps/fest/dist is missing: npm run build:fest first" }, () => {
+  const h = built ? readFileSync(path.join(DIST, "index.html"), "utf8") : "";
+  const cards = [...h.matchAll(/<article class="hub-card">([\s\S]*?)<\/article>/g)].map((m) => m[1]);
+  const cardOf = (href) => cards.find((c) => c.includes(`<h3><a href="${href}"`));
+
+  test("its months are the data's, in order, and the jump list shows from five", () => {
+    const sections = rules.hubSections(guides, events, rules.today());
+    const printed = [...h.matchAll(/<section class="hub-month" aria-labelledby="([^"]+)"> <h2 id="\1">([^<]*)<\/h2>/g)].map((m) => [m[1], m[2]]);
+    assert.deepEqual(printed, sections.map((s) => [s.id, s.heading]));
+    assert.equal(cards.length, guides.length);
+    assert.equal(h.includes('<nav class="on-this-page"'), sections.length >= 5);
+  });
+
+  test("each card: the name's link first, the cover hidden, the dates in <time>s, the place", () => {
+    const bad = [];
+    for (const [href, want] of Object.entries(HUB_CARDS)) {
+      const c = cardOf(href);
+      if (!c) { bad.push(`${href}: no card`); continue; }
+      const guide = guides.find((g) => g.path === href);
+      const { start, end } = rules.eventOf(events, guide).edition;
+      const name = c.indexOf(`<h3><a href="${href}"`);
+      const coverAt = c.indexOf('class="hub-card-cover"');
+      if (!(name >= 0 && name < coverAt)) bad.push(`${href}: the cover's link comes before the name's`);
+      const coverTag = c.slice(c.lastIndexOf("<a", coverAt), c.indexOf(">", coverAt));
+      const slug = guide.cover.replace(/^\/covers\/|\.jpg$/g, "");
+      for (const want of ['aria-hidden="true"', 'tabindex="-1"', " title=", "--cover-narrow", "--cover-wide", "image-set(", `/covers/${slug}-480.avif`, `/covers/${slug}-768.avif`])
+        if (!coverTag.includes(want)) bad.push(`${href}: the cover lacks ${want}`);
+      const when = c.match(/<span class="hub-card-when">([\s\S]*?)<\/span><\/span>(?= <span class="hub-card-where">)/)?.[0] ?? "";
+      if (decode(when) !== want.when) bad.push(`${href}: dates "${decode(when)}"`);
+      const times = [...when.matchAll(/<time datetime="([^"]+)">/g)].map((m) => m[1]);
+      if (times[0] !== start || times.at(-1) !== (end ?? start)) bad.push(`${href}: <time>s ${times.join(", ")}`);
+      const place = decode(c.match(/<span class="hub-card-where">([\s\S]*?)<\/span>/)?.[1] ?? "");
+      if (place !== want.place) bad.push(`${href}: place "${place}"`);
+    }
+    assert.deepEqual(bad, []);
+  });
+
+  test("one link to the archive, none to its other fronts; the Markdown twin keeps all three", () => {
+    assert.equal(h.split('href="/archive/"').length - 1, 1);
+    assert.ok(!h.includes('href="/concert/"') && !h.includes('href="/sensation2015/"'));
+    const md = readFileSync(path.join(DIST, "index.md"), "utf8");
+    for (const p of ["/archive/", "/concert/", "/sensation2015/"]) assert.ok(md.includes(`(https://fest.one${p})`), `index.md lacks ${p}`);
+    // A cover is a background: the page's pictures are the chrome's two.
+    assert.equal(h.split("<img").length - 1, 2);
+  });
+});
 
 describe("a Thai guide's built pages", { skip: built ? false : "apps/fest/dist is missing: npm run build:fest first" }, () => {
   const html = built ? pages() : new Map();
