@@ -290,10 +290,10 @@ export interface Guide extends Dated {
   /** The guide's cover, a path under public/ ("/covers/igloofest.jpg"),
       drawn by tools/covers.mjs from its line in tools/covers.json:
       abstract shapes in the site's palette, never the event's artwork, a
-      logo, an act or a photograph. Decorative on the main page (alt="",
-      aria-hidden, no caption), and the share picture of every page of the
-      guide and the MusicEvent's `image`. Absent, the pages show none and
-      share the site's card. */
+      logo, an act or a photograph. Decorative on the main page (a CSS
+      background, aria-hidden, no caption), and the share picture of every
+      page of the guide and the MusicEvent's `image`. Absent, the pages
+      show none and share the site's card. */
   cover?: string;
   pages: GuidePage[];
 }
