@@ -70,10 +70,12 @@ export const site: Record<Lang, {
     publisher,
     networkFooter: false,
     partnerDisclosure: false,
-    // Search Console measures this site. The tag was off because the
-    // archive that shared the host blocked it by its Content-Security-Policy;
-    // turning it on is a decision of its own, not this move's.
-    analytics: false,
+    // The tag was off while the archive that shared the host blocked it by
+    // its Content-Security-Policy. The host has been this app's alone since
+    // 23 Oct 2026 and sends no such header, so the site is measured like
+    // the other independent ones (the non-DST property; user's word,
+    // 24 Oct 2026). Every language row says the same.
+    analytics: true,
     // The look of the archive's front page the guides were built beside.
     // The toggle and a light palette are there for the reader in the sun.
     defaultTheme: "dark",
@@ -95,7 +97,7 @@ export const site: Record<Lang, {
     publisher,
     networkFooter: false,
     partnerDisclosure: false,
-    analytics: false,
+    analytics: true,
     defaultTheme: "dark",
   },
   // Brazilian Portuguese, as en's but in Portuguese. The root crumb says
@@ -117,7 +119,7 @@ export const site: Record<Lang, {
     publisher,
     networkFooter: false,
     partnerDisclosure: false,
-    analytics: false,
+    analytics: true,
     defaultTheme: "dark",
   },
   // Thai: "เทศกาล" the root crumb, the place a reader is in; its tooltip,
@@ -138,7 +140,7 @@ export const site: Record<Lang, {
     publisher,
     networkFooter: false,
     partnerDisclosure: false,
-    analytics: false,
+    analytics: true,
     defaultTheme: "dark",
   },
   // Quebec French: the root crumb « Festivals », the wordmark's tooltip
@@ -160,7 +162,7 @@ export const site: Record<Lang, {
     publisher,
     networkFooter: false,
     partnerDisclosure: false,
-    analytics: false,
+    analytics: true,
     defaultTheme: "dark",
   },
 };

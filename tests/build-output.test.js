@@ -57,9 +57,10 @@ const SITES = [
   // as pages of the same app since 23 Oct 2026: the hub is the root and the
   // app writes robots.txt, with no Disallow: /go/, since a guide's
   // offers.url is its /go/ hop, which Google must be able to crawl to read
-  // its noindex (ruling X4, 22 Oct 2026). The site carries no analytics
-  // tag; Search Console measures it.
-  { app: "fest", host: "fest.one", robots: "crawlable-go", analytics: false },
+  // its noindex (ruling X4, 22 Oct 2026). The site carries the tag like
+  // every other since 24 Oct 2026; the archive's Content-Security-Policy
+  // that kept it off left with the archive's hosting.
+  { app: "fest", host: "fest.one", robots: "crawlable-go" },
 ];
 const TITLE_LIMIT = 60;
 
