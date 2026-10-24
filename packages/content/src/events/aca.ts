@@ -14,7 +14,7 @@ export const items: EventItem[] = [
   {
     slug: "alejandro-sanz-acapulco-2026",
     createdAt: "2026-10-21T21:40:00+04:00",
-    updatedAt: "2026-10-21T22:35:00+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
     site: "aca",
     image: "/covers/alejandro-sanz-acapulco-2026.jpg",
     imageAlt: "Una guitarra española recargada en un pie de micrófono bajo un cono de luz, con una hoja de palma en la esquina",
@@ -54,6 +54,14 @@ export const items: EventItem[] = [
       {
         q: "¿Dónde compro boletos?",
         a: "En la taquilla de Arena GNP Seguros y en Superboletos.",
+      },
+    ],
+    related: [
+      {
+        href: "/eventos/hechizos-meztizza-halloween-acapulco-2026/",
+        eyebrow: "31 de octubre",
+        title: "Hechizos Meztizza 2",
+        text: "Halloween en Meztizza, con un show de Thriller y DJ en vivo.",
       },
     ],
   },
@@ -301,7 +309,7 @@ export const items: EventItem[] = [
   {
     slug: "manuel-medrano-acapulco-2026",
     createdAt: "2026-10-21T22:25:00+04:00",
-    updatedAt: "2026-10-21T22:25:00+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
     site: "aca",
     image: "/covers/manuel-medrano-acapulco-2026.jpg",
     imageAlt: "Un micrófono en su pie junto a un banco de madera vacío, bajo dos reflectores, con una flor de hibisco roja en el piso",
@@ -357,6 +365,12 @@ export const items: EventItem[] = [
         eyebrow: "Noviembre",
         title: "Noviembre en Acapulco",
         text: "Medrano, Montaner y la semana del Premier Pádel, con sus fechas.",
+      },
+      {
+        href: "/eventos/hechizos-meztizza-halloween-acapulco-2026/",
+        eyebrow: "31 de octubre",
+        title: "Hechizos Meztizza 2",
+        text: "Halloween en Meztizza, con un show de Thriller y DJ en vivo.",
       },
     ],
   },
@@ -673,5 +687,88 @@ export const items: EventItem[] = [
         text: "Una semana después: el ATP 500 de Acapulco, con la final el sábado 27.",
       },
     ],
+  },
+  {
+    slug: "hechizos-meztizza-halloween-acapulco-2026",
+    createdAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
+    site: "aca",
+    image: "/covers/hechizos-meztizza-halloween-acapulco-2026.jpg",
+    imageAlt: "Un bailarín de chaqueta roja bajo un foco en un pequeño escenario, entre palmeras, murciélagos y calabazas talladas",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Hechizos Meztizza 2: Halloween en Meztizza, Acapulco",
+    cardTitle: "Hechizos Meztizza 2",
+    titleSeo: "Hechizos Meztizza 2, Halloween en Acapulco: 31 de octubre",
+    summary:
+      "La noche de Halloween en Acapulco, en el restaurante Meztizza: el sábado 31 de octubre de 2026, «Hechizos Meztizza 2» trae un show de Thriller en homenaje a Michael Jackson con El Azteca, personajes de terror en la bienvenida y DJ en vivo. Reservaciones al 744 531 2736; quedan pocos lugares.",
+    start: "2026-10-31",
+    utcOffset: "-06:00",
+    venue: "Meztizza Restaurante, Calle de la Pinzona 195",
+    city: "Acapulco",
+    country: "México",
+    geo: { name: "Calle de la Pinzona, Acapulco", lat: 16.84354, lng: -99.91189 },
+    organizer: "Meztizza Restaurante",
+    category: "Música",
+    ticket: {
+      url: "https://www.instagram.com/meztizzaacapulco/p/DeuwK8qowqn/",
+      label: "Reservaciones en Meztizza",
+      sells: false,
+    },
+    source: {
+      name: "Meztizza Acapulco en Instagram",
+      url: "https://www.instagram.com/meztizzaacapulco/p/DeuwK8qowqn/",
+      verifiedOn: "2026-10-24",
+    },
+    body: [
+      "Meztizza vuelve a celebrar Halloween con nombre propio. <strong>Hechizos Meztizza 2</strong> es el <strong>sábado 31 de octubre de 2026</strong> en el restaurante de la calle de la Pinzona, a una cuadra de la Costera.",
+      "## El show",
+      "El plato fuerte es <strong>Thriller</strong>, un homenaje a <strong>Michael Jackson</strong> a cargo de <strong>El Azteca</strong>. La bienvenida la dan «los personajes más terroríficos», y la noche sigue con <strong>DJ en vivo</strong>.",
+      "## Reservaciones",
+      "Por teléfono al <strong>744 531 2736</strong>. En sus publicaciones de esta semana, el restaurante avisa que <strong>quedan pocos lugares</strong>. No ha publicado precio ni horario, así que conviene preguntarlos al reservar.",
+      "## La misma noche en Acapulco",
+      "El 31 de octubre <a href=\"/eventos/alejandro-sanz-acapulco-2026/\" title=\"Alejandro Sanz en Acapulco 2026\">Alejandro Sanz</a> canta en Arena GNP Seguros, y una semana después <a href=\"/eventos/manuel-medrano-acapulco-2026/\" title=\"Manuel Medrano en Acapulco 2026\">Manuel Medrano</a> llega al Forum Mundo Imperial.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo es Hechizos Meztizza 2?",
+        a: "El sábado 31 de octubre de 2026, en Meztizza Restaurante, calle de la Pinzona 195, Acapulco.",
+      },
+      {
+        q: "¿Cómo reservo?",
+        a: "Por teléfono al 744 531 2736. El restaurante avisa que quedan pocos lugares.",
+      },
+      {
+        q: "¿Cuánto cuesta?",
+        a: "Meztizza no ha publicado precio ni horario; hay que preguntarlos al reservar.",
+      },
+      {
+        q: "¿Qué incluye la noche?",
+        a: "Un show de Thriller en homenaje a Michael Jackson con El Azteca, personajes de terror en la bienvenida y DJ en vivo.",
+      },
+    ],
+    related: [
+      {
+        href: "/eventos/alejandro-sanz-acapulco-2026/",
+        eyebrow: "31 de octubre",
+        title: "Alejandro Sanz en Acapulco",
+        text: "La misma noche: «¿Y Ahora Qué? 2026» en Arena GNP Seguros.",
+      },
+      {
+        href: "/eventos/manuel-medrano-acapulco-2026/",
+        eyebrow: "6 de noviembre",
+        title: "Manuel Medrano en el Forum",
+        text: "El «Superior Tour» en el Forum Mundo Imperial.",
+      },
+      {
+        href: "/eventos/dinosaurios-en-vivo-acapulco-2026/",
+        eyebrow: "5 de diciembre",
+        title: "Dinosaurios en Vivo en Acapulco",
+        text: "Dinosaurios de tamaño real y malabaristas de fuego, para ir con niños.",
+      },
+    ],
+    expertise:
+      "Reserve hoy y pregunte tres cosas por teléfono: a qué hora empieza el show, si hay consumo mínimo o cover, y si conviene llegar disfrazado. Con lugares contados y una sola noche, el que llama primero elige mesa. Si esa noche también va al concierto de Alejandro Sanz, deje tiempo de sobra para moverse por la ciudad: es la noche más ocupada del fin de semana.",
   },
 ];
