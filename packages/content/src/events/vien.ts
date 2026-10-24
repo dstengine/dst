@@ -1957,4 +1957,96 @@ export const items: EventItem[] = [
     expertise:
       "Ein Friedhof, der zu Halloween einlädt, ist in Wien weniger seltsam, als es klingt: Die Stadt hat ein entspanntes Verhältnis zum Tod, und die Bestattung Wien führt am Zentralfriedhof sogar ein eigenes Museum. Kommen Sie vor der Dämmerung, wenn die Kinder die Rätselrallye noch bei Tageslicht beginnen sollen, und rechnen Sie am Abend vor Allerheiligen mit vielen Besuchern auf dem Friedhof, die nicht wegen Halloween da sind. Ein bisschen Rücksicht auf dem Weg zur Halle 2 gehört dazu.",
   },
+
+  {
+    slug: "altwiener-christkindlmarkt-freyung-2026",
+    createdAt: "2026-10-25T02:30:00+04:00",
+    updatedAt: "2026-10-25T02:30:00+04:00",
+    site: "vien",
+    image: "/covers/altwiener-christkindlmarkt-freyung-2026.jpg",
+    imageAlt: "Kleine Holzbuden mit roten Dächern, ein Lebkuchenherz und Tannenbäumchen auf einem Platz, dahinter eine alte Kirche mit Turm und Sterne",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Altwiener Christkindlmarkt auf der Freyung 2026",
+    cardTitle: "Altwiener Christkindlmarkt",
+    titleSeo: "Altwiener Christkindlmarkt Wien 2026: Freyung, Zeiten",
+    summary:
+      "Der Altwiener Christkindlmarkt auf der Freyung in Wien hat vom 14. November bis 23. Dezember 2026 täglich von 10 bis 21 Uhr geöffnet: Kunsthandwerk, Spielzeug, Schmuck, Lederwaren und Kerzen, Lebkuchen und Punsch, dazu ein Adventprogramm mit Musik, Puppentheater und Handwerksvorführungen auf der Marktbühne.",
+    start: "2026-11-14",
+    end: "2026-12-23",
+    startTime: "10:00",
+    endTime: "21:00",
+    utcOffset: "+01:00",
+    venue: "Freyung, 1010 Wien",
+    city: "Wien",
+    country: "Österreich",
+    geo: { name: "Freyung", lat: 48.2113966, lng: 16.3660651 },
+    organizer: "Altwiener Märkte Betriebs GmbH",
+    category: "Weihnachtsmarkt",
+    tickets: { priceFrom: 0, currency: "EUR" },
+    ticket: {
+      url: "https://altwiener-markt.at/christmas",
+      label: "Altwiener Christkindlmarkt",
+      sells: false,
+    },
+    source: {
+      name: "Altwiener Christkindlmarkt",
+      url: "https://altwiener-markt.at/christmas",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "Wer den Rathausplatz zu laut findet, geht ein paar Schritte weiter: Auf der <strong>Freyung</strong> im ersten Bezirk steht von <strong>Samstag, 14. November, bis Mittwoch, 23. Dezember 2026</strong> der <strong>Altwiener Christkindlmarkt</strong>, <strong>täglich von 10 bis 21 Uhr</strong>.",
+      "## Was es gibt",
+      "Kunsthandwerk, <strong>Spielzeug</strong>, <strong>Schmuck</strong>, <strong>Lederwaren</strong>, Textilien und <strong>Kerzen</strong>; dazu <strong>Lebkuchen</strong> und <strong>Punsch</strong>.",
+      "## Das Adventprogramm",
+      "Die Bühne am Marktplatz hat fast jeden Tag etwas: Die <strong>Eröffnung</strong> ist am Samstag, 14. November, um 17 Uhr mit Mission ImBRASSible. An mehreren Tagen zeigen Handwerker ihre Arbeit, etwa <strong>Drechseln</strong> mit Hans Moser am 21. und 22. November von 10 bis 16 Uhr, <strong>Kerzenkunst</strong> am 29. November und <strong>Glasblasen</strong> am 5. Dezember. An den meisten Tagen gibt es um 16:30 Uhr Adventmusik.",
+      "## Für Kinder",
+      "Die <strong>Puppenbühne Träumeland</strong> spielt am Dienstag, 1. Dezember, und am Freitag, 4. Dezember, jeweils um 10 Uhr.",
+      "## Für einen guten Zweck",
+      "Der Markt sammelt Spenden für die <strong>Stiftung Kindertraum</strong>. Am Samstag, 28. November, kann man von 10 bis 15:30 Uhr Adventkränze binden, der Erlös geht an die Stiftung.",
+      "## Weitere Märkte in der Nähe",
+      "Der <a href=\"/veranstaltungen/wiener-christkindlmarkt-2026/\" title=\"Wiener Christkindlmarkt am Rathausplatz 2026\">Christkindlmarkt am Rathausplatz</a> ist zu Fuß in wenigen Minuten erreichbar, der <a href=\"/veranstaltungen/art-advent-karlsplatz-2026/\" title=\"Art Advent Karlsplatz Wien 2026: Termine, Öffnungszeiten\">Art Advent am Karlsplatz</a> liegt auf der anderen Seite der Innenstadt.",
+    ],
+    faq: [
+      {
+        q: "Wann hat der Altwiener Christkindlmarkt 2026 geöffnet?",
+        a: "Vom 14. November bis 23. Dezember 2026, täglich von 10 bis 21 Uhr.",
+      },
+      {
+        q: "Wo ist der Altwiener Christkindlmarkt?",
+        a: "Auf der Freyung im ersten Bezirk, 1010 Wien.",
+      },
+      {
+        q: "Kostet der Markt Eintritt?",
+        a: "Nein, der Markt ist frei zugänglich.",
+      },
+      {
+        q: "Gibt es ein Programm für Kinder?",
+        a: "Ja, die Puppenbühne Träumeland spielt am 1. und 4. Dezember um 10 Uhr.",
+      },
+    ],
+    related: [
+      {
+        href: "/veranstaltungen/wiener-christkindlmarkt-2026/",
+        eyebrow: "Rathausplatz",
+        title: "Wiener Christkindlmarkt am Rathausplatz",
+        text: "Der große Markt vor dem Rathaus, ein paar Minuten zu Fuß entfernt.",
+      },
+      {
+        href: "/veranstaltungen/weihnachtsmarkt-schloss-schoenbrunn-2026/",
+        eyebrow: "Schönbrunn",
+        title: "Weihnachtsmarkt Schönbrunn",
+        text: "Der Markt im Ehrenhof des Schlosses, bis 6. Jänner.",
+      },
+      {
+        href: "/veranstaltungen/art-advent-karlsplatz-2026/",
+        eyebrow: "Karlsplatz",
+        title: "Art Advent am Karlsplatz",
+        text: "Kunsthandwerk vor der Karlskirche, bis 23. Dezember.",
+      },
+    ],
+    expertise:
+      "Kommen Sie an einem Vormittag unter der Woche, wenn die Handwerker vorführen und die Gassen zwischen den Buden noch leer sind. Ab dem späten Nachmittag füllt sich die Freyung mit Leuten aus den Büros der Innenstadt, die auf einen Punsch kommen. Wer Geschenke sucht, findet hier eher Handgemachtes als am Rathausplatz, und Bargeld schadet bei kleinen Ständen nie.",
+  },
 ];
