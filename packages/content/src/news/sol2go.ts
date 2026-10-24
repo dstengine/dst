@@ -365,4 +365,144 @@ export const items: NewsItem[] = [
     expertise:
       "The interesting thing about a two-stage rollout like this is what it tells you about the risk model. Both July gates are additive: a BLS public key in a vote account and an admission ticket are new fields and new checks, and neither changes what the network agrees is true. The consensus switch is not additive, and it is the only part that can split the network if it goes wrong — so it is deliberately last, deliberately on devnet first, and deliberately separated from the plumbing by three months. Anyone reading the July activations as “Alpenglow is live” has read the changelog and not the design.",
   },
+  {
+    slug: "samsung-wallet-puts-usdc-on-solana-in-82-million-pockets",
+    createdAt: "2026-10-24T16:00:00+04:00",
+    updatedAt: "2026-10-24T16:00:00+04:00",
+    site: "sol2go",
+    image: "/covers/samsung-wallet-puts-usdc-on-solana-in-82-million-pockets.jpg",
+    imageAlt: "A mint paper square frame on a lilac ground with a single cream paper disc inside its upper right",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Samsung Wallet puts USDC on Solana into 82 million American pockets",
+    cardTitle: "Samsung Wallet: USDC on Solana",
+    titleSeo: "Samsung Wallet adds USDC on Solana: 82m devices",
+    summary:
+      "Samsung Wallet adds USDC on Solana for its 82 million Galaxy devices in the United States from the last week of October 2026, announced with the Solana Foundation on 7 October. The largest consumer distribution any Solana stablecoin has had, and the Foundation's own account of why.",
+    date: "2026-10-24",
+    category: "Institutional",
+    source: {
+      name: "Solana Foundation",
+      url: "https://solana.com/news/samsung-wallet",
+      verifiedOn: "2026-10-24",
+    },
+    body: [
+      "The <strong>Solana Foundation</strong> announced on <strong>7 October 2026</strong> that <strong>Samsung Wallet</strong> will support <strong>USDC on Solana</strong>, rolling out to <strong>82 million Galaxy devices</strong> in the <strong>United States</strong> from the <strong>last week of October</strong>.",
+      "## What a user gets",
+      "A USDC balance inside the wallet app that already holds their cards and keys, with Solana as the chain the dollars move on. The Foundation's framing is that the user will not need to know which chain it is; the announcement's point is that it is this one.",
+      "## Who said what",
+      "<strong>Woncheol Chai</strong>, who leads Samsung Wallet, called it bringing digital dollars to everyday payments; <strong>Lily Liu</strong>, the Foundation's president, framed it as stablecoins reaching the device layer.",
+      "## The number behind it",
+      "The Foundation puts stablecoin transfer volume on Solana at <strong>$5.25 trillion</strong> so far in 2026. Samsung's 82 million devices are a distribution channel of a different order from any exchange or wallet start-up.",
+      "## What is not in the announcement",
+      "Whether other stablecoins or other chains follow in Samsung Wallet, whether the feature leaves the United States, and what the fees are. The announcement names USDC, Solana and the US, and nothing else.",
+    ],
+    faq: [
+      {
+        q: "Which stablecoin does Samsung Wallet support on Solana?",
+        a: "<strong>USDC</strong>, Circle's dollar stablecoin, on the Solana network, for Galaxy devices in the United States.",
+      },
+      {
+        q: "When does USDC on Solana arrive in Samsung Wallet?",
+        a: "From the <strong>last week of October 2026</strong>, on 82 million US Galaxy devices, according to the Solana Foundation's announcement of 7 October.",
+      },
+    ],
+    expertise:
+      "The thing that matters is which chain a phone maker chose when it had to pick one, and it picked the one whose fees are a fraction of a cent and whose settlement is now a few hundred milliseconds, because a payment in a wallet app has to feel like a card tap. The number to watch is not the 82 million but the active-address count on Solana in November; if a few per cent of those devices hold a balance, it is the largest onboarding in the chain's history, and if they do not, the announcement was a press release.",
+  },
+
+  {
+    slug: "solana-dvp-is-an-open-source-settlement-program-for-banks",
+    createdAt: "2026-10-24T16:00:00+04:00",
+    updatedAt: "2026-10-24T16:00:00+04:00",
+    site: "sol2go",
+    image: "/covers/solana-dvp-is-an-open-source-settlement-program-for-banks.jpg",
+    imageAlt: "Two flat lilac paper hands exchanging a mint square and a cream square at the same instant, on a deep violet ground",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Solana DvP is an open-source settlement program for banks: both legs or neither",
+    cardTitle: "Solana DvP for institutions",
+    titleSeo: "Solana DvP: atomic settlement program, open source",
+    summary:
+      "The Solana Foundation released Solana DvP on 6 October 2026: an MIT-licensed on-chain escrow program for delivery-versus-payment, settling both sides of a trade in one transaction or neither. It handles SPL Token and Token-2022 assets and was built with input from J.P. Morgan.",
+    date: "2026-10-24",
+    category: "Institutional",
+    source: {
+      name: "Solana Foundation",
+      url: "https://solana.com/news/solana-foundation-launches-solana-dv-p-an-atomic-settlement-program-built-for-financial-institutions",
+      verifiedOn: "2026-10-24",
+    },
+    body: [
+      "<strong>Delivery versus payment</strong> is the rule in securities settlement that the asset and the money change hands at the same moment or not at all. On <strong>6 October 2026</strong> the <strong>Solana Foundation</strong> published a program that does it on-chain: <strong>Solana DvP</strong>.",
+      "## What it is",
+      "An <strong>escrow program</strong> on Solana, <strong>open source under the MIT licence</strong>. Two parties deposit their legs of a trade, the program checks that both match the agreed terms, and one transaction releases both; if either leg is missing or wrong, nothing moves. It works with <strong>SPL Token</strong> and <strong>Token-2022</strong> assets, so a tokenised bond and a stablecoin can be the two legs.",
+      "## Who built it",
+      "The Foundation, with input from <strong>J.P. Morgan</strong>, whose blockchain unit has run DvP experiments on its own ledger for years. <strong>Catherine Gu</strong> of the Foundation and <strong>Rhodel D'souza</strong> of J.P. Morgan are quoted in the release.",
+      "## Why atomic matters",
+      "Settlement risk, the chance one side pays and the other fails to deliver, is the reason securities settlement takes a day or two and needs a central counterparty. A program that makes both legs one transaction removes the risk rather than insuring it, which is the argument for doing this on a public chain at all.",
+      "## What it is not",
+      "Not a product and not a venue. A bank that wants to use it integrates the program into its own systems; the Foundation supplies the code, the audit trail and the licence.",
+    ],
+    faq: [
+      {
+        q: "What is Solana DvP?",
+        a: "An open-source escrow program on Solana for <strong>delivery-versus-payment</strong> settlement: both legs of a trade settle in one transaction or neither does. Released by the Solana Foundation on 6 October 2026 under the MIT licence.",
+      },
+      {
+        q: "Which tokens does Solana DvP support?",
+        a: "<strong>SPL Token</strong> and <strong>Token-2022</strong> assets, which covers stablecoins and tokenised securities issued on Solana.",
+      },
+    ],
+    expertise:
+      "The open licence is the news. Every bank that has run a DvP pilot has done it on a private ledger it controls, and the pilots have stayed pilots because no counterparty wants to settle on another bank's chain. An MIT-licensed program on a public network that any institution can audit and deploy is a neutral venue by construction, and J.P. Morgan's name on it is the first time one of those banks has put its input into code that its competitors can run. The Token-2022 support is what makes it usable for securities, because that is the standard with the transfer hooks compliance teams require.",
+  },
+
+  {
+    slug: "geo-aware-leader-schedule-simd-0675",
+    createdAt: "2026-10-24T16:00:00+04:00",
+    updatedAt: "2026-10-24T16:00:00+04:00",
+    site: "sol2go",
+    image: "/covers/geo-aware-leader-schedule-simd-0675.jpg",
+    imageAlt: "Six small white paper dots laid in an open arc across the lower half of a violet ground, the two end dots larger than the rest",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "A geo-aware leader schedule: SIMD-0675 wants consecutive leaders to be neighbours",
+    cardTitle: "Geo-aware leader schedule",
+    titleSeo: "Solana SIMD-0675: geo-aware leader schedule",
+    summary:
+      "SIMD-0675 proposes reordering Solana's leader schedule so that runs of consecutive leaders sit in the same region, cutting the hand-off time between blocks. The Foundation's post of 14 October lays out the model, a 29 ms gain at a run length of seven, and the objections about resilience and Asian stake.",
+    date: "2026-10-24",
+    category: "Upgrades",
+    source: {
+      name: "Solana Foundation",
+      url: "https://solana.com/news/geo-aware-leader-schedule",
+      verifiedOn: "2026-10-24",
+    },
+    body: [
+      "Every slot on Solana has a leader, and the schedule of leaders is drawn by stake-weighted lottery. The hand-off from one leader to the next crosses whatever distance separates them, and when a validator in Frankfurt hands to one in Tokyo the light takes longer than the block. <strong>SIMD-0675</strong>, published with its companion <strong>SIMD-0674</strong>, proposes to arrange the schedule so that neighbours follow neighbours.",
+      "## What it changes",
+      "Nothing about who is chosen. The proposal <strong>reorders the existing random schedule</strong> so that consecutive leaders within a run are in the same geographic region; the lottery stays stake-weighted and the set of leaders in an epoch is unchanged.",
+      "## The two knobs",
+      "<strong>σ</strong>, a <strong>stake floor</strong> of about <strong>10 per cent</strong>, below which a region is not grouped; and <strong>γ</strong>, the <strong>run length</strong>, between <strong>3 and 7</strong> consecutive slots given to one region before the schedule moves on.",
+      "## The modelled gain",
+      "At γ = 7 the Foundation's model gives <strong>29.1 milliseconds</strong> saved per hand-off against today's schedule. Under Alpenglow, where a block is final in about 150 ms, that is a large fraction of the budget.",
+      "## The objections",
+      "The post lists them. <strong>Resilience</strong>: a regional outage during that region's run takes several consecutive slots rather than one. <strong>Asia</strong>: with about <strong>10.4 per cent</strong> of stake, the region sits at the floor and may be grouped or not depending on the epoch. <strong>Fictitious location</strong>: a validator that lies about where it is could be scheduled into a run it then slows. The proposal is at the discussion stage.",
+    ],
+    faq: [
+      {
+        q: "What does SIMD-0675 propose?",
+        a: "A <strong>geo-aware leader schedule</strong>: the random leader schedule is reordered so consecutive leaders in a short run are in the same region, cutting block hand-off time. Who is a leader does not change.",
+      },
+      {
+        q: "How much faster would Solana be?",
+        a: "The Foundation's model gives about <strong>29 ms</strong> saved per hand-off at a run length of seven. It is a proposal, not an activated change.",
+      },
+    ],
+    expertise:
+      "This is the kind of proposal that only makes sense after Alpenglow. When finality was twelve seconds, thirty milliseconds of hand-off was noise; at 150 ms it is a fifth of the block. The objection that counts is the Asia one, because a floor set at ten per cent and a region at 10.4 is a rule that flips between epochs, and a schedule that is sometimes grouped and sometimes not is harder to reason about than either. Expect the number to move before the vote, and expect the proposal to pass in some form, because the people who run the largest stake are in the two regions that gain most.",
+  },
 ];
