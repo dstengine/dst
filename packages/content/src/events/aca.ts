@@ -771,4 +771,87 @@ export const items: EventItem[] = [
     expertise:
       "Reserve hoy y pregunte tres cosas por teléfono: a qué hora empieza el show, si hay consumo mínimo o cover, y si conviene llegar disfrazado. Con lugares contados y una sola noche, el que llama primero elige mesa. Si esa noche también va al concierto de Alejandro Sanz, deje tiempo de sobra para moverse por la ciudad: es la noche más ocupada del fin de semana.",
   },
+
+  {
+    slug: "encuentro-cocineras-tradicionales-guerrero-acapulco-2026",
+    createdAt: "2026-10-25T02:30:00+04:00",
+    updatedAt: "2026-10-25T02:30:00+04:00",
+    site: "aca",
+    image: "/covers/encuentro-cocineras-tradicionales-guerrero-acapulco-2026.jpg",
+    imageAlt: "Una mesa larga con ollas de barro, tortillas y un plato de chiles rojos, bajo banderines de colores y un sol",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Festival Gastronómico y Encuentro de Cocineras Tradicionales de Guerrero 2026",
+    cardTitle: "Cocineras Tradicionales de Guerrero",
+    titleSeo: "Cocineras Tradicionales en Acapulco: 21 y 22 de noviembre",
+    summary:
+      "Más de 30 cocineras tradicionales de las ocho regiones de Guerrero y más de 100 platillos llegan al Centro Cultural Acapulco el sábado 21 y el domingo 22 de noviembre de 2026, con entrada libre: el Festival Gastronómico y Quinto Encuentro de Cocineras Tradicionales del Estado, con Puebla como estado invitado.",
+    start: "2026-11-21",
+    end: "2026-11-22",
+    utcOffset: "-06:00",
+    venue: "Centro Cultural Acapulco",
+    city: "Acapulco",
+    country: "México",
+    organizer: "Secretaría de Cultura de Guerrero",
+    category: "Gastronomía",
+    tickets: { priceFrom: 0, currency: "MXN" },
+    ticket: {
+      url: "https://guerrero.quadratin.com.mx/anuncia-evelyn-festival-gastronomico-2026-en-acapulco/",
+      label: "Anuncio del festival",
+      sells: false,
+    },
+    source: {
+      name: "Quadratín Guerrero",
+      url: "https://guerrero.quadratin.com.mx/anuncia-evelyn-festival-gastronomico-2026-en-acapulco/",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "La cocina de todo Guerrero se reúne en Acapulco. El <strong>Festival Gastronómico y Quinto Encuentro de Cocineras Tradicionales del Estado de Guerrero</strong> es el <strong>sábado 21 y el domingo 22 de noviembre de 2026</strong> en el <strong>Centro Cultural Acapulco</strong>, con <strong>entrada libre</strong>.",
+      "## Las cocineras y los platillos",
+      "Llegan <strong>más de 30 cocineras tradicionales</strong> de las <strong>ocho regiones</strong> del estado con <strong>más de 100 platillos</strong>, de la Costa Chica a la Montaña y de Tierra Caliente al puerto. <strong>Puebla</strong> es el estado invitado.",
+      "## El programa",
+      "Hay un <strong>Concurso de Platillo de Rescate</strong>, para recetas que se estaban perdiendo, una <strong>charla de la chef Avril</strong> y música de <strong>sones y chilenas</strong>, la música de la costa de Guerrero.",
+      "## Quién lo organiza",
+      "El Gobierno de Guerrero y su Secretaría de Cultura lo anunciaron el 20 de octubre. El programa por horario todavía no se ha publicado.",
+      "## Ese mes en Acapulco",
+      "Al día siguiente empieza el <a href=\"/eventos/gnp-mexico-major-premier-padel-acapulco-2026/\" title=\"Premier Pádel en Acapulco: 23 al 29 de noviembre de 2026\">Premier Pádel</a>, del 23 al 29 de noviembre, y una semana antes <a href=\"/eventos/ricardo-montaner-acapulco-2026/\" title=\"Ricardo Montaner en Acapulco: 15 de noviembre de 2026\">Ricardo Montaner</a> canta en el Forum.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo es el Encuentro de Cocineras Tradicionales 2026?",
+        a: "El sábado 21 y el domingo 22 de noviembre de 2026, en el Centro Cultural Acapulco.",
+      },
+      {
+        q: "¿Cuánto cuesta entrar?",
+        a: "Nada: la entrada es libre.",
+      },
+      {
+        q: "¿Qué habrá?",
+        a: "Más de 30 cocineras tradicionales y más de 100 platillos de las ocho regiones de Guerrero, un Concurso de Platillo de Rescate, una charla de la chef Avril y sones y chilenas. Puebla es el estado invitado.",
+      },
+    ],
+    related: [
+      {
+        href: "/eventos/gnp-mexico-major-premier-padel-acapulco-2026/",
+        eyebrow: "23 al 29 de noviembre",
+        title: "Premier Pádel en Acapulco",
+        text: "El torneo de pádel empieza al día siguiente del encuentro.",
+      },
+      {
+        href: "/eventos/ricardo-montaner-acapulco-2026/",
+        eyebrow: "15 de noviembre",
+        title: "Ricardo Montaner en el Forum",
+        text: "El concierto de la semana anterior en el Forum Mundo Imperial.",
+      },
+      {
+        href: "/eventos/el-cascanueces-acapulco-2026/",
+        eyebrow: "6 de diciembre",
+        title: "El Cascanueces en el Forum",
+        text: "El ballet de Navidad, para ir con niños.",
+      },
+    ],
+    expertise:
+      "Vaya con hambre y lleve efectivo: los platillos de la Montaña o de Tierra Caliente rara vez se encuentran en un restaurante del puerto, y este fin de semana llegan todos juntos. Si puede, vaya el sábado temprano, cuando hay más de todo; los platillos más pedidos suelen acabarse antes del cierre.",
+  },
 ];
