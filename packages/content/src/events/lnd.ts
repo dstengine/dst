@@ -344,7 +344,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-hampton-court-palace-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-10-21T04:56:51+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
     site: "lnd",
     image: "/covers/halloween-hampton-court-palace-2026.jpg",
     imageAlt: "A dark blue crenellated roofline with three towers of different heights rising from it, the tallest carrying a small red flag",
@@ -454,6 +454,12 @@ export const items: EventItem[] = [
         title: "SUPER Natural at WWT London",
         text: "The same half term, scare-free: willow wands, a marshland potion and a fungi hunt, included with admission.",
       },
+      {
+        href: "/events/halloween-strawberry-hill-house-2026/",
+        eyebrow: "Until 1 November",
+        title: "Halloween at Strawberry Hill House",
+        text: "Walpole's gothic villa in Twickenham, with a candlelit late on Halloween night.",
+      },
     ],
     expertise:
       "One might suggest the morning this year rather than the afternoon. From the Sunday the palace closes at four and admits no one after three, so the late-light visit that flatters Hampton Court in other months is simply not on offer during half term. Arrive at ten, see the haunted rooms first, and keep the Wilderness for after lunch, when the smaller members of the party will want to be out of doors in any case; the storyteller sits every forty-five minutes, so nobody need be hurried towards it. The train from Waterloo remains the civilised arrangement — the car park is modest, cannot be booked, and accepts nothing but a card.",
@@ -561,7 +567,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-eltham-palace-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-10-12T00:47:00+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
     site: "lnd",
     image: "/covers/halloween-eltham-palace-2026.jpg",
     imageAlt: "A large circular window divided into panes, lit pale, above a stepped pale block on a deep blue ground",
@@ -629,6 +635,12 @@ export const items: EventItem[] = [
         eyebrow: "Avery Hill, Eltham",
         title: "The Nightmare Realm",
         text: "The grown-up fright up the road: three scare attractions in Avery Hill Mansion on 18 nights to 1 November, best from 13.",
+      },
+      {
+        href: "/events/halloween-strawberry-hill-house-2026/",
+        eyebrow: "Until 1 November",
+        title: "Halloween at Strawberry Hill House",
+        text: "Walpole's gothic villa in Twickenham, with a candlelit late on Halloween night.",
       },
     ],
     expertise:
@@ -2328,5 +2340,99 @@ export const items: EventItem[] = [
         a: "Four Tet, Shy FX and Blawan on the Friday; HAAi and Egyptian Lover on the Saturday; DJ Harvey, Antal & Hunee, Chez Damier and Soichi Terada on the Sunday, with more to come.",
       },
     ],
+  },
+  {
+    slug: "halloween-strawberry-hill-house-2026",
+    createdAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
+    site: "lnd",
+    image: "/covers/halloween-strawberry-hill-house-2026.jpg",
+    imageAlt: "A white gothic country house of cut paper with a crenellated tower and candlelit pointed windows, a bare tree beside it and a crescent moon",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Halloween at Strawberry Hill House 2026: Walpole's Gothic castle after dark",
+    cardTitle: "Halloween at Strawberry Hill House",
+    titleSeo: "Strawberry Hill House Halloween 2026, Twickenham, London",
+    summary:
+      "Horace Walpole's Gothic castle in Twickenham keeps Halloween properly: a candlelit late on Saturday 31 October 2026 from 6pm, £25 with a glass of fizz for anyone in costume, a supernatural guided tour that day and a £2 garden trail all half-term. Strawberry Hill House is in the London Borough of Richmond upon Thames.",
+    start: "2026-10-23",
+    end: "2026-11-01",
+    utcOffset: "+00:00",
+    venue: "Strawberry Hill House",
+    city: "London",
+    country: "United Kingdom",
+    geo: { name: "Strawberry Hill House, 268 Waldegrave Road, Twickenham TW1 4ST", lat: 51.4382, lng: -0.33473 },
+    organizer: "Strawberry Hill House & Garden",
+    category: "Halloween",
+    tickets: { priceFrom: 2, priceTo: 25, currency: "GBP" },
+    ticket: {
+      url: "https://tickets.strawberryhillhouse.org.uk/event-tickets/70471?catID=13844",
+      label: "Book the candlelit late",
+    },
+    source: {
+      name: "Strawberry Hill House & Garden",
+      url: "https://www.strawberryhillhouse.org.uk/halloween/",
+      verifiedOn: "2026-10-24",
+    },
+    body: [
+      "If one is to spend Halloween in a London house at all, it may as well be the one where the Gothic novel began. <strong>Strawberry Hill House</strong> in Twickenham, Horace Walpole's little Gothic castle, keeps Halloween from <strong>23 October to 1 November 2026</strong>, and on the night itself it opens after dark, by candlelight.",
+      "## After Dark: the candlelit late",
+      "On <strong>Saturday 31 October</strong> the house opens for <strong>Strawberry Hill After Dark</strong>, with arrival slots from <strong>6pm to 8pm</strong>. Tickets are <strong>£25</strong>, or <strong>£17.50</strong> for students, and anyone who comes in costume is handed a glass of fizz on the house. The Tarot Booth Collective reads cards from 6pm to 9pm, for those who would rather know.",
+      "## Death, Dreams and the Supernatural",
+      "Earlier the same day, the Halloween guided tour, <strong>Death, Dreams and the Supernatural</strong>, takes the house at a more sensible hour: <strong>11am, 1pm, 2.30pm and 3pm</strong>, at <strong>£24</strong>, or £20 at the reduced rate.",
+      "## Witches' marks and gloomth",
+      "The theme of the fortnight is the house's own folklore: the <strong>witches' marks</strong> and runes cut to keep evil out, and the stories of ghosts seen within its walls. Walpole had a word for the mood he built here, <strong>gloomth</strong>, and he wrote <strong>The Castle of Otranto</strong>, the first Gothic novel, in this house. Halloween is rather the point of the place.",
+      "## For younger visitors: the garden trail",
+      "The <strong>Halloween Garden Trail</strong> runs from <strong>24 October to 1 November</strong>, 10am to 4pm: a map is <strong>£2</strong> and comes with a sweet treat, and there is no need to book. On Saturday 31 October the <strong>Teddington Tintype</strong> photobooth is in the house from 10am to 4pm, for a portrait in the Victorian manner.",
+      "## The Magic Lantern Show",
+      "The Magic Lantern Show on Friday 30 October is <strong>sold out</strong>.",
+      "## Elsewhere on the night",
+      "<a href=\"/events/halloween-hampton-court-palace-2026/\" title=\"Halloween at Hampton Court Palace 2026\">Hampton Court Palace</a>, a few miles up the river in the same borough, runs its own Halloween until 1 November. Across London, the <a href=\"/events/herne-hill-velodrome-halloween-fireworks-2026/\" title=\"Herne Hill Velodrome Halloween fireworks 2026\">Herne Hill Velodrome</a> has its bonfire and fireworks the same Saturday, and <a href=\"/events/halloween-eltham-palace-2026/\" title=\"Halloween at Eltham Palace 2026\">Eltham Palace</a> its Great Pumpkin Party all half-term.",
+    ],
+    faq: [
+      {
+        q: "When is the Strawberry Hill House Halloween candlelit late?",
+        a: "On Saturday 31 October 2026, with arrival slots from 6pm to 8pm, at Strawberry Hill House, 268 Waldegrave Road, Twickenham TW1 4ST.",
+      },
+      {
+        q: "How much are tickets for Strawberry Hill After Dark?",
+        a: "£25 standard and £17.50 for students. Guests in costume get a free glass of fizz.",
+      },
+      {
+        q: "Is there a Halloween tour in the daytime?",
+        a: "Yes. Death, Dreams and the Supernatural runs on Saturday 31 October at 11am, 1pm, 2.30pm and 3pm, at £24, or £20 at the reduced rate.",
+      },
+      {
+        q: "Is there anything for children?",
+        a: "The Halloween Garden Trail runs from 24 October to 1 November, 10am to 4pm. A map costs £2, includes a sweet treat and needs no booking.",
+      },
+      {
+        q: "Can I still book the Magic Lantern Show?",
+        a: "No, the Magic Lantern Show on Friday 30 October is sold out.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/halloween-hampton-court-palace-2026/",
+        eyebrow: "Until 1 November",
+        title: "Halloween at Hampton Court Palace",
+        text: "Up the river in the same borough: Henry VIII's palace in its Halloween dress.",
+      },
+      {
+        href: "/events/halloween-eltham-palace-2026/",
+        eyebrow: "Until 1 November",
+        title: "Halloween at Eltham Palace",
+        text: "The Great Pumpkin Party at the art deco palace: storytelling, a trail and a fancy dress contest every day.",
+      },
+      {
+        href: "/events/herne-hill-velodrome-halloween-fireworks-2026/",
+        eyebrow: "Saturday 31 October",
+        title: "Herne Hill Velodrome Halloween fireworks",
+        text: "A bonfire, fire-eaters and fireworks over the track the same night; advance tickets only.",
+      },
+    ],
+    expertise:
+      "Choose by the hour. The guided tour at 11am or 1pm is the better way to understand the house, and the candlelit late is the better way to feel it; the late, frankly, is where Walpole's gloomth was always meant to be seen. Arrive early in one's slot, since the rooms are small and candlelight is unforgiving of crowds, and do come dressed: the fizz is free only to those who make the effort. Strawberry Hill station is a short walk away, which is a mercy on a Saturday night in half-term.",
   },
 ];
