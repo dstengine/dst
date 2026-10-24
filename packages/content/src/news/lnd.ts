@@ -911,4 +911,49 @@ export const items: NewsItem[] = [
     expertise:
       "The practical lesson for anyone arguing about a local building is in how the Aalto case was assembled. It is a serial nomination — thirteen separate places presented as one property because they demonstrate a single idea — rather than thirteen bids competing on individual merit. That is the structure that lets modest buildings clear a bar none of them would clear alone, and it is available at every level of listing, not just UNESCO's. The second lesson is the authorship correction. Naming the studio and the partners alongside Aalto widens the significance of the work from one person's biography to a way of working, and significance that rests on a way of working is much harder to dismiss when the building in question is not the famous one.",
   },
+  {
+    slug: "theos-pizza-opens-on-rye-lane-peckham",
+    createdAt: "2026-10-24T16:10:00+04:00",
+    updatedAt: "2026-10-24T16:10:00+04:00",
+    site: "lnd",
+    image: "/covers/theos-pizza-opens-on-rye-lane-peckham.jpg",
+    imageAlt: "A round pizza with a blistered paper crust on a dark board, a shopfront with an awning behind it",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Theo's opens a third pizzeria on Rye Lane, Peckham, on 6 November",
+    cardTitle: "Theo's comes to Rye Lane",
+    titleSeo: "Theo's Pizza opens in Peckham, London: 6 November, Rye Lane",
+    summary:
+      "The south London pizzeria from Elephant & Castle and Camberwell opens its third room at 285 Rye Lane, Peckham, at 6pm on Friday 6 November 2026, after half-price soft-launch nights.",
+    date: "2026-10-24",
+    until: "2026-11-06",
+    city: "London",
+    country: "United Kingdom",
+    category: "Food",
+    source: {
+      name: "Time Out London",
+      url: "https://www.timeout.com/london/news/theos-pizza-parlour-new-location-peckham-102226",
+      verifiedOn: "2026-10-24",
+    },
+    body: [
+      "Theo's has stayed south of the river for a decade, and the third branch does not break the habit. The blistered, puffy-crusted pizzas of <strong>Elephant &amp; Castle</strong> and <strong>Camberwell</strong> are coming to <strong>285 Rye Lane</strong>.",
+      "## When",
+      "The official launch is at <strong>6pm on Friday 6 November 2026</strong>. Before that the kitchen runs <strong>soft-launch nights at half price</strong> while it tests its ovens and timings; places are drawn from the comments under the announcement on Instagram.",
+      "## What to expect",
+      "The same pizzas as the other two rooms — Time Out's words are \"authentically-blackened\" and \"laden with abundant fresh toppings\". A menu for the new site has not been published.",
+    ],
+    faq: [
+      {
+        q: "When does Theo's open in Peckham?",
+        a: "At <strong>6pm on Friday 6 November 2026</strong>, at 285 Rye Lane.",
+      },
+      {
+        q: "Where are the other Theo's?",
+        a: "Elephant & Castle and Camberwell — Peckham is the third.",
+      },
+    ],
+    expertise:
+      "Rye Lane is the right street for it: the stretch between Peckham Rye station and the Rye is where the borough eats out now, and a half-price soft launch on a street that busy fills in an hour. One would go on a weeknight in the first fortnight, before the weekend queues set in, and walk the five minutes from the station rather than drive — there is nowhere to park on Rye Lane and never has been.",
+  },
 ];
