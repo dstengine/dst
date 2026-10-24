@@ -1,0 +1,35 @@
+---
+// Every room that has earned a page (../venues.ts), the ones with the most
+// still to come first.
+import Layout from "../layouts/Layout.astro";
+import VenueCards from "@dst/ui/VenueCards.astro";
+import { venuesPage, labels, type Lang } from "../content";
+import { LOCALE } from "../i18n";
+import { allVenues, venuesBase } from "../venues";
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const page = venuesPage[lang];
+const today = new Date().toISOString().slice(0, 10);
+const items = allVenues[lang].map((v) => ({
+  href: `${venuesBase(lang)}${v.slug}/`,
+  name: v.name,
+  kind: v.kind,
+  address: v.address,
+  // A run that opened last week is on today: "next" is the first day a
+  // reader can still go, not the day it began.
+  next: v.next ? (v.next.start < today ? today : v.next.start) : undefined,
+  count: v.items.length,
+}));
+// As /events/: an index of fewer than three is thinner than its pages.
+const thin = items.length < 3;
+---
+<Layout lang={lang} title={page.title} description={page.description} noindex={thin}>
+  <section class="container hero">
+    <h1>{page.h1}</h1>
+    <p class="lede">{page.lede}</p>
+  </section>
+  <section class="container">
+    <VenueCards items={items} locale={LOCALE[lang]} labels={labels[lang]} />
+  </section>
+</Layout>

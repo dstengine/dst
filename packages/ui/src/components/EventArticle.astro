@@ -60,6 +60,10 @@ interface Props {
       category was printed and dead on every detail page in the network —
       the one word on the page a reader might want more of. */
   categoryHref?: string;
+  /** The venue's own page on this site, when its room has one — see
+      `venueHrefFor` in @dst/content/venues. The Where row and the venue
+      line under the headline then lead there. */
+  venueHref?: string;
   /** Locale for dates on this page. Defaults to the network's English;
       a site writing in another language passes its own. */
   locale?: string;
@@ -99,7 +103,7 @@ interface Props {
       reason. It names the cards, it does not choose them. */
   moreEventsText?: string;
 }
-const { item, backHref, ticketHref, sourceHref, more = [], moreNews = [], newsBase = "/news/", eventsBase = "/events/", publisher, categoryHref, promoted, promotedLink, where, pluralOf, moreEventsText, countdown = false, locale = "en-US", labels: labelOverrides } = Astro.props;
+const { item, backHref, ticketHref, sourceHref, more = [], moreNews = [], newsBase = "/news/", eventsBase = "/events/", publisher, categoryHref, venueHref, promoted, promotedLink, where, pluralOf, moreEventsText, countdown = false, locale = "en-US", labels: labelOverrides } = Astro.props;
 const L = withLabels(labelOverrides);
 // Venue is part of the page's translated copy; geo.name stays with the
 // coordinates as the source-language map label. Prefer the venue so a
@@ -308,6 +312,7 @@ const glance: { label: string; value: string; icon: string }[] = [
     label: L.where,
     value: [item.venue, item.city].filter(Boolean).join(", "),
     icon: ICONS.pin,
+    href: venueHref,
   },
   price && { label: L.ticketsRow, value: price, icon: ICONS.ticket },
   item.tickets?.salesEnd && {
@@ -483,7 +488,9 @@ const relatedItems = (item.related ?? []).map((card) => ({
     <h1>{item.title}</h1>
     {(item.venue || item.city || item.organizer) && (
       <p class="event-article-details">
-        {[item.venue, item.city].filter(Boolean).join(", ")}
+        {venueHref && item.venue
+          ? <><a class="event-article-venue" href={venueHref} title={L.venueTitle(item.venue)}>{item.venue}</a>{item.city && `, ${item.city}`}</>
+          : [item.venue, item.city].filter(Boolean).join(", ")}
         {item.organizer && <span class="event-article-organizer"> &middot; {L.organizedBy} {item.organizer}</span>}
       </p>
     )}

@@ -1,0 +1,119 @@
+---
+// One room: what it is, where it stands, the way there, and every date the
+// site holds for it. Composed from the engine's parts — Glance, MapEmbed,
+// EventsList — the way an event page is, because a venue page is the same
+// facts panel over a different list.
+//
+// The h1 is the room's real name, which is why the page's title and summary
+// carry the city instead: the name is what the search for the room says,
+// the city is what tells the engine which room.
+import Layout from "../layouts/Layout.astro";
+import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
+import Glance from "@dst/ui/Glance.astro";
+import MapEmbed from "@dst/ui/MapEmbed.astro";
+import EventsList from "@dst/ui/EventsList.astro";
+import { ICONS } from "@dst/ui/icons";
+import { withLabels } from "@dst/ui/labels";
+import { formatCardDate } from "@dst/ui/date";
+import { eventHref } from "@dst/content/paths";
+import type { Venue, VenueSpec } from "@dst/content/venues";
+import { venuesPage, portal, labels, type Lang } from "../content";
+import { site } from "../site.config";
+import { LOCALE, eventsBase, prefix } from "../i18n";
+import { NAV } from "../layouts/nav";
+import { venuesBase } from "../venues";
+
+interface Props { lang: Lang; venue: Venue & VenueSpec & { short?: string } }
+const { lang, venue } = Astro.props;
+const p = prefix(lang);
+const L = withLabels(labels[lang]);
+const w = portal[lang];
+const city = site[lang].keyword;
+const today = new Date().toISOString().slice(0, 10);
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+
+const next = venue.next;
+const nextDay = next ? (next.start < today ? today : next.start) : undefined;
+const nextDate = nextDay ? formatCardDate(nextDay, LOCALE[lang]) : undefined;
+const count = venue.items.length;
+
+// The head: the room and the city in the first words, then what the search
+// for the room asks — how many dates, which is next, where it is. The title
+// takes the short name where there is one: sixty characters hold
+// "Khachaturian Concert Hall, Yerevan" and not the full name with it.
+const short = venue.short ?? venue.name;
+const title = lang === "hy"
+  ? `${short}, Երևան․ ինչ կա և տոմսեր`
+  : `${short}, Yerevan: what's on and tickets`;
+const description = lang === "hy"
+  ? `${venue.name}՝ Երևանում${venue.address ? `, ${venue.address}` : ""}․ ${L.eventCount(count)} այս օրացույցում${next && nextDate ? `, հաջորդը՝ ${next.title}, ${nextDate}` : ""}։ Քարտեզ, երթուղի և ամեն միջոցառում՝ գնով ու աղբյուրով։`
+  : `${venue.name} in Yerevan${venue.address ? `, ${venue.address}` : ""}: ${L.eventCount(count)} on this calendar${next && nextDate ? `, next ${next.title} on ${nextDate}` : ""}. Map, directions and every event with its price and source.`;
+const lede = lang === "hy"
+  ? `${venue.kind ?? "Վայր"}${venue.address ? `՝ ${venue.address}` : ""}։ Բոլոր ամսաթվերը, որ ունենք այս վայրի համար՝ առաջիկան առաջինը, քարտեզով և երթուղով։`
+  : `${venue.kind ?? "Venue"}${venue.address ? ` at ${venue.address}` : ""}. Every date this site holds for it, the next first, with a map and the way there.`;
+
+const glance = [
+  venue.kind && { label: w.kind, value: venue.kind, icon: ICONS.building },
+  venue.address && { label: w.address, value: `${venue.address}, ${city}`, icon: ICONS.pin },
+  next && nextDate && { label: w.next, value: `${next.title}, ${nextDate}`, icon: ICONS.events, href: eventHref(next, eventsBase(lang)) },
+  { label: w.count, value: L.eventCount(count), icon: ICONS.list },
+].filter((f): f is Exclude<typeof f, false | undefined | ""> => Boolean(f));
+
+const absolute = (path: string) => new URL(path, Astro.site).href;
+// @context first: tools/seo-check.mjs reads the top type from the first
+// bytes to know the page is about one named thing.
+const placeLd: Record<string, unknown> = {
+  "@context": "https://schema.org",
+  "@type": venue.schemaType ?? "Place",
+  "@id": `${canonical}#place`,
+  name: venue.name,
+  url: canonical,
+  address: {
+    "@type": "PostalAddress",
+    ...(venue.address ? { streetAddress: venue.address } : {}),
+    addressLocality: city,
+    addressCountry: "AM",
+  },
+  ...(venue.geo ? { geo: { "@type": "GeoCoordinates", latitude: venue.geo.lat, longitude: venue.geo.lng } } : {}),
+  ...(venue.upcoming.length
+    ? {
+        event: venue.upcoming.slice(0, 10).map((e) => ({
+          "@type": "Event",
+          name: e.title,
+          startDate: e.start,
+          ...(e.end && e.end !== e.start ? { endDate: e.end } : {}),
+          location: { "@id": `${canonical}#place` },
+          ...(Array.isArray(e.body) && e.body.length ? { url: absolute(eventHref(e, eventsBase(lang))) } : {}),
+        })),
+      }
+    : {}),
+};
+---
+<Layout lang={lang} title={title} description={description} jsonLd={[placeLd]} crumbCurrent={venue.name}>
+  <section class="container hero">
+    <Breadcrumbs
+      crumbs={[{ href: venuesBase(lang), label: w.venuesNav, title: venuesPage[lang].title }]}
+      current={venue.name}
+      homeHref={p}
+      homeLabel={NAV[lang][0].label}
+      homeTitle={NAV[lang][0].title}
+      label={w.trail}
+    />
+    <h1>{venue.name}</h1>
+    <p class="lede">{lede}</p>
+    <Glance facts={glance} />
+  </section>
+  {venue.geo && (
+    <section class="container venue-map">
+      <h2>{L.locate(venue.name)}</h2>
+      <MapEmbed lat={venue.geo.lat} lon={venue.geo.lng} name={venue.name} locale={lang} />
+    </section>
+  )}
+  <section class="container">
+    <EventsList locale={LOCALE[lang]} items={venue.items} eventsBase={eventsBase(lang)} labels={labels[lang]} />
+  </section>
+</Layout>
+
+<style>
+  .venue-map { margin-top: var(--space-4); }
+</style>

@@ -1,0 +1,105 @@
+---
+// The calendar by month: one line per month that has earned a page
+// (../months.ts), the months still to come first, then the record.
+import Layout from "../layouts/Layout.astro";
+import { withLabels } from "@dst/ui/labels";
+import { calendarPage, labels, type Lang } from "../content";
+import { site } from "../site.config";
+import { allMonths, monthHref, monthLabel } from "../months";
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const page = calendarPage[lang];
+const L = withLabels(labels[lang]);
+const where = site[lang].keyword;
+const months = allMonths[lang];
+const ahead = months.filter((m) => m.ahead);
+const gone = months.filter((m) => !m.ahead).reverse();
+const thin = months.length < 2;
+
+// Three names, so the line says what the month is rather than how long.
+const sample = (titles: string[]) => {
+  const out: string[] = [];
+  for (const t of titles) {
+    if (out.join(", ").length + t.length > 110) break;
+    out.push(t);
+  }
+  return out.join(", ");
+};
+const row = (m: (typeof months)[number]) => ({
+  href: monthHref(m.key, lang),
+  label: monthLabel(m.key, lang),
+  title: L.monthHeading(monthLabel(m.key, lang), where),
+  count: L.eventCount(m.items.length),
+  names: sample(m.items.map((e) => e.title)),
+});
+---
+<Layout lang={lang} title={page.title} description={page.description} noindex={thin}>
+  <section class="container hero">
+    <h1>{page.h1}</h1>
+    <p class="lede">{page.lede}</p>
+  </section>
+  <section class="container">
+    {ahead.length > 0 && (
+      <ol class="months-grid">
+        {ahead.map(row).map((m) => (
+          <li>
+            <a href={m.href} title={m.title}><strong>{m.label}</strong><span class="months-count">{m.count}</span></a>
+            {m.names && <p>{m.names}</p>}
+          </li>
+        ))}
+      </ol>
+    )}
+    {gone.length > 0 && (
+      <>
+        <h2>{L.pastGroup(where)}</h2>
+        <ol class="months-grid months-past">
+          {gone.map(row).map((m) => (
+            <li>
+              <a href={m.href} title={m.title}><strong>{m.label}</strong><span class="months-count">{m.count}</span></a>
+              {m.names && <p>{m.names}</p>}
+            </li>
+          ))}
+        </ol>
+      </>
+    )}
+  </section>
+</Layout>
+
+<style>
+  /* Cards in a grid, two or three across where there is room: a month is
+     a thing to pick, like a venue, and a column of bare lines read as a
+     table of contents. The link fills the card's top edge at 44px, so the
+     whole month name is the target, not the word alone. */
+  .months-grid {
+    list-style: none;
+    margin: var(--space-3) 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+    gap: var(--space-3);
+  }
+  .months-grid li {
+    padding: var(--space-2) var(--space-3) var(--space-3);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+  .months-grid a {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.25em 1em;
+    min-height: 44px;
+    padding: 0.4em 0;
+    color: inherit;
+    text-decoration: none;
+    font-size: var(--step-1);
+  }
+  .months-grid a:where(:hover, :focus-visible) { text-decoration: none; }
+  .months-grid a:where(:hover, :focus-visible) strong { color: var(--accent); }
+  .months-count { font-family: var(--font-mono); font-size: var(--step--1); color: var(--ink-faint); }
+  .months-grid p { margin: var(--space-1) 0 0; font-size: var(--step--1); color: var(--ink-muted); }
+  .months-past li { background: var(--surface-sunk); }
+</style>

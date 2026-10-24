@@ -14,6 +14,8 @@ export const ICONS: Record<string, string> = {
   news: "M4 4h13a2 2 0 0 1 2 2v13a1 1 0 0 1-1 1H6a2 2 0 0 1-2-2V4ZM4 4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2M8 8h8M8 12h8M8 16h4",
   events: "M4 5h16v15a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5ZM4 9h16M8 2v4M16 2v4M8 13h2M14 13h2M8 17h2M14 17h2",
   rent: "M15 7a4 4 0 1 1-4 4M15 7a4 4 0 0 0-4-4M15 7v2m-4 2H4l2 2m0-4-2 2",
+  // A lens and its handle.
+  search: "M11 4a7 7 0 1 0 0 14a7 7 0 1 0 0-14ZM20 20l-4-4",
   pin: "M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21ZM12 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z",
   clock: "M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18ZM12 7v5l3.5 2",
   // A stub with the notch a barrier tears along, and a perforated line.

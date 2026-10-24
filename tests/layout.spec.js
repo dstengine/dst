@@ -48,6 +48,11 @@ const PAGES = [
   { site: "tick", path: "/events/equinox-fest-autumn-chapter-2026/" },
   { site: "tick", path: "/am/events/equinox-fest-autumn-chapter-2026/" },
   { site: "tick", path: "/am/about/" },
+  // The portal pages: a venue's facts panel beside its map, a month's chip
+  // row, the venue grid — each in the longer language where it has one.
+  { site: "tick", path: "/venues/" },
+  { site: "tick", path: "/am/venues/aram-khachaturian-concert-hall/" },
+  { site: "tick", path: "/am/calendar/" },
   // aivideo prints model prompts in <code> inside running text — long
   // unbroken strings, the classic way to push a phone page sideways.
   { site: "aivideo", path: "/" },
@@ -182,6 +187,24 @@ test.describe("header", () => {
       }
     }
   });
+});
+
+// tick's Armenian labels add up to more than the capped column holds even
+// tightened, so that header gives the row a line of its own under the
+// wordmark (`navBar` in BaseLayout). The line is one line, at every width.
+test("a nav too long for the column takes a line of its own, unwrapped", async ({ page }) => {
+  for (const width of [DENSE_NAV_BREAKPOINT + 40, 1280, 1440, 1920]) {
+    await page.setViewportSize({ width, height: 800 });
+    await page.goto(url("tick", "/am/"));
+    await expect(page.locator(".nav-desktop"), `inline row hidden @ ${width}`).toBeVisible();
+    await expect(page.locator(".nav-toggle"), `toggle shown @ ${width}`).toBeHidden();
+    const tops = await page.locator(".nav-desktop li").evaluateAll((els) =>
+      els.map((el) => Math.round(el.getBoundingClientRect().top)),
+    );
+    expect(new Set(tops).size, `nav wrapped onto ${new Set(tops).size} rows @ ${width}`).toBe(1);
+    const nameBottom = await page.locator(".site-name").evaluate((el) => el.getBoundingClientRect().bottom);
+    expect(tops[0], `the row sits beside the wordmark @ ${width}, not under it`).toBeGreaterThanOrEqual(Math.round(nameBottom));
+  }
 });
 
 test.describe("mobile menu", () => {

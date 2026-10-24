@@ -8,6 +8,7 @@ import { datedTitle } from "@dst/ui/title";
 import { LOCALE, newsFor, eventsBase, newsBase } from "../i18n";
 import { go } from "../outbound";
 import { sectionHref, promotedFor, linkFor, pluralOf } from "../sections";
+import { venueHref } from "../venues";
 
 interface Props { lang: Lang; item: EventItem; more: EventItem[] }
 const { lang, item, more } = Astro.props;
@@ -28,6 +29,7 @@ const sourceHref = item.source?.url ? go(`${item.slug}-source`) : undefined;
     eventsBase={eventsBase(lang)}
     publisher={publisher}
     categoryHref={sectionHref(item, lang)}
+    venueHref={venueHref(item, lang)}
     promoted={promotedFor(lang, item.category)}
     promotedLink={linkFor(lang, promotedFor(lang, item.category))}
     labels={labels[lang]}

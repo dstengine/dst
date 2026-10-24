@@ -151,6 +151,30 @@ export interface ArticleLabels {
   directions: string;
   directionsTitle: (place: string) => string;
 
+  // Venues, months and search — the portal furniture. Each has a default
+  // so a site that has none of these pages renders what it rendered before.
+  /** Heading over the site's venue pages, given the site's head keyword. */
+  venues: (where?: string) => string;
+  allVenues: string;
+  /** Title attribute on a link to a venue's page, given its name. */
+  venueTitle: (name: string) => string;
+  /** On a venue card: its next date, given formatted. */
+  nextOn: (date: string) => string;
+  /** On a venue card: how many dates the site holds for it. */
+  eventCount: (n: number) => string;
+  /** Names the row of month links, and heads the calendar index. */
+  byMonth: string;
+  /** Heading of a month's page, given the month formatted ("November 2026")
+      and the site's head keyword. */
+  monthHeading: (month: string, where?: string) => string;
+  /** The search box: its label, its placeholder, the line under it, and
+      what it says with no match and with n of them. */
+  search: string;
+  searchPlaceholder: string;
+  searchHint: string;
+  searchNone: string;
+  searchCount: (n: number) => string;
+
   // Source line
   source: string;
   checkedAgainstSource: string;
@@ -228,6 +252,19 @@ export const EN: ArticleLabels = {
   videoBy: (channel) => `${channel} on YouTube`,
   directions: "Directions",
   directionsTitle: (place) => (place ? `The way to ${place}, in Google Maps` : "The way there, in Google Maps"),
+
+  venues: (where) => (where ? `Venues in ${where}` : "Venues"),
+  allVenues: "All venues",
+  venueTitle: (name) => `Everything on at ${name}`,
+  nextOn: (date) => `Next: ${date}`,
+  eventCount: (n) => `${n} ${n === 1 ? "event" : "events"}`,
+  byMonth: "By month",
+  monthHeading: (month, where) => (where ? `${month} in ${where}` : month),
+  search: "Search",
+  searchPlaceholder: "Search events, venues, artists",
+  searchHint: "A name, a venue or a month — results appear as you type.",
+  searchNone: "Nothing found",
+  searchCount: (n) => `${n} ${n === 1 ? "result" : "results"}`,
 
   source: "Source",
   checkedAgainstSource: "checked against the source",
@@ -316,6 +353,19 @@ export const ES: Partial<ArticleLabels> = {
   directions: "Cómo llegar",
   directionsTitle: (place) => (place ? `Ruta a ${place} en Google Maps` : "La ruta en Google Maps"),
 
+  venues: (where) => (where ? `Recintos en ${where}` : "Recintos"),
+  allVenues: "Todos los recintos",
+  venueTitle: (name) => `Todo lo que hay en ${name}`,
+  nextOn: (date) => `Próximo: ${date}`,
+  eventCount: (n) => `${n} ${n === 1 ? "evento" : "eventos"}`,
+  byMonth: "Por mes",
+  monthHeading: (month, where) => (where ? `${month} en ${where}` : month),
+  search: "Buscar",
+  searchPlaceholder: "Busca eventos, recintos, artistas",
+  searchHint: "Un nombre, un recinto o un mes: los resultados aparecen al escribir.",
+  searchNone: "Sin resultados",
+  searchCount: (n) => `${n} ${n === 1 ? "resultado" : "resultados"}`,
+
   source: "Fuente",
   checkedAgainstSource: "verificado con la fuente el",
   checkedTitle: (name) => `Última verificación con ${name} en esta fecha`,
@@ -393,6 +443,19 @@ export const DE: Partial<ArticleLabels> = {
   videoBy: (channel) => `${channel} auf YouTube`,
   directions: "Route",
   directionsTitle: (place) => (place ? `Der Weg zu ${place} in Google Maps` : "Der Weg dorthin in Google Maps"),
+
+  venues: (where) => (where ? `Spielstätten in ${where}` : "Spielstätten"),
+  allVenues: "Alle Spielstätten",
+  venueTitle: (name) => `Alles, was in ${name} läuft`,
+  nextOn: (date) => `Nächster Termin: ${date}`,
+  eventCount: (n) => `${n} ${n === 1 ? "Termin" : "Termine"}`,
+  byMonth: "Nach Monat",
+  monthHeading: (month, where) => (where ? `${month} in ${where}` : month),
+  search: "Suche",
+  searchPlaceholder: "Veranstaltungen, Orte, Künstler suchen",
+  searchHint: "Ein Name, ein Ort oder ein Monat – die Treffer erscheinen beim Tippen.",
+  searchNone: "Nichts gefunden",
+  searchCount: (n) => `${n} ${n === 1 ? "Treffer" : "Treffer"}`,
 
   source: "Quelle",
   checkedAgainstSource: "gegen die Quelle geprüft am",
@@ -482,6 +545,20 @@ export const HY: Partial<ArticleLabels> = {
   videoBy: (channel) => `${channel}, YouTube`,
   directions: "Ինչպես հասնել",
   directionsTitle: (place) => (place ? `Երթուղին դեպի ${place}՝ Google Maps-ում` : "Երթուղին՝ Google Maps-ում"),
+
+  venues: (where) => (where ? `${hyGenitive(where)} դահլիճներն ու վայրերը` : "Դահլիճներ և վայրեր"),
+  allVenues: "Բոլոր վայրերը",
+  venueTitle: (name) => `Ամեն ինչ, որ կա ${name}-ում`,
+  nextOn: (date) => `Հաջորդը՝ ${date}`,
+  // A noun after a numeral stays singular in Armenian.
+  eventCount: (n) => `${n} միջոցառում`,
+  byMonth: "Ըստ ամսի",
+  monthHeading: (month, where) => (where ? `${month}՝ ${hyLocative(where)}` : month),
+  search: "Փնտրել",
+  searchPlaceholder: "Փնտրեք միջոցառում, վայր, արտիստ",
+  searchHint: "Անուն, վայր կամ ամիս՝ արդյունքները երևում են մուտքագրելիս։",
+  searchNone: "Ոչինչ չի գտնվել",
+  searchCount: (n) => `${n} արդյունք`,
 
   source: "Աղբյուր",
   checkedAgainstSource: "ստուգվել է",

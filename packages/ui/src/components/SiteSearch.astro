@@ -1,0 +1,237 @@
+---
+// A search box over the site's own entries, answered in the reader's
+// browser.
+//
+// The sites are static, so there is no server to ask. What there is instead
+// is one JSON file per site and language (@dst/content/search), written at
+// build time and fetched the first time the box is focused — never on page
+// load, because most readers never touch it, and a listing page should not
+// pay for a feature a reader did not ask for. Every word typed must be found
+// in a record's title, summary, venue or kind; the results are the records
+// that pass, in the index's own order (next dates first), capped so the
+// list stays shorter than the page under it.
+//
+// Without JavaScript the box is a form that submits to the page it is on,
+// which reloads the page: harmless, and the chips and the lists under it
+// are the way through. With it, the same form never leaves the page; the
+// query goes into the address (?q=) so a result list can be shared.
+import Icon from "./Icon.astro";
+import { withLabels, type ArticleLabels } from "../labels.ts";
+
+interface Props {
+  /** Where the records are: "/search.json", "/am/search.json". */
+  indexHref: string;
+  /** Locale for the dates in the results. */
+  locale?: string;
+  labels?: Partial<ArticleLabels>;
+  /** Unique on the page, for the label and the results list. */
+  id?: string;
+  /** Words to show as results before anything is typed: how many. 0 shows
+      nothing until the reader types, which is the default. */
+  limit?: number;
+}
+const { indexHref, locale = "en-US", labels: labelOverrides, id = "site-search", limit = 12 } = Astro.props;
+const L = withLabels(labelOverrides);
+---
+<form
+  class="site-search"
+  role="search"
+  method="get"
+  action=""
+  data-index={indexHref}
+  data-locale={locale}
+  data-limit={limit}
+  data-none={L.searchNone}
+  data-count-one={L.searchCount(1)}
+  data-count-many={L.searchCount(2)}
+  data-past={L.past}
+>
+  <label class="site-search-field" for={`${id}-input`}>
+    <Icon name="search" />
+    <span class="visually-hidden">{L.search}</span>
+    <input id={`${id}-input`} type="search" name="q" placeholder={L.searchPlaceholder} autocomplete="off" spellcheck="false" aria-describedby={`${id}-hint`} aria-controls={`${id}-results`} />
+  </label>
+  <p class="site-search-hint" id={`${id}-hint`}>{L.searchHint}</p>
+  <p class="site-search-status" aria-live="polite" hidden></p>
+  <ol class="site-search-results" id={`${id}-results`} hidden></ol>
+</form>
+
+<script>
+  // One box per page in practice, but written for any number.
+  for (const form of document.querySelectorAll<HTMLFormElement>("form.site-search")) {
+    const input = form.querySelector<HTMLInputElement>("input[type=search]")!;
+    const status = form.querySelector<HTMLElement>(".site-search-status")!;
+    const list = form.querySelector<HTMLOListElement>(".site-search-results")!;
+    const { index, locale, limit, none, countOne, countMany, past } = form.dataset as Record<string, string>;
+    const max = Number(limit) || 12;
+    type Rec = { h: string; t: string; s?: string; w?: string; c?: string; d: string; x?: string; e?: 1; p?: 1 };
+    let records: Rec[] | null = null;
+    let loading: Promise<Rec[]> | null = null;
+
+    const load = () => {
+      if (records) return Promise.resolve(records);
+      if (!loading) {
+        loading = fetch(index, { credentials: "same-origin" })
+          .then((r) => (r.ok ? r.json() : []))
+          .then((j: Rec[]) => (records = j))
+          .catch(() => (records = []));
+      }
+      return loading;
+    };
+
+    const fold = (s: string) => s.normalize("NFKC").toLowerCase();
+    const date = (iso: string) =>
+      new Date(`${iso}T00:00:00Z`).toLocaleDateString(locale || "en-GB", { day: "numeric", month: "short", timeZone: "UTC" });
+    // The plural rule lives in the labels; the page carries the two forms
+    // and this picks between them by whether the count is one.
+    const count = (n: number) => (n === 1 ? countOne : countMany.replace(/\d+/, String(n)));
+
+    const render = (q: string, found: Rec[]) => {
+      list.textContent = "";
+      if (!q) {
+        status.hidden = true;
+        list.hidden = true;
+        return;
+      }
+      status.hidden = false;
+      status.textContent = found.length ? count(found.length) : none;
+      list.hidden = found.length === 0;
+      for (const r of found.slice(0, max)) {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.href = r.h;
+        a.title = r.t;
+        const time = document.createElement("time");
+        time.dateTime = r.d;
+        time.textContent = r.x ? `${date(r.d)} – ${date(r.x)}` : date(r.d);
+        const head = document.createElement("span");
+        head.className = "site-search-meta";
+        head.append(time);
+        if (r.c) {
+          const c = document.createElement("span");
+          c.className = "site-search-kind";
+          c.textContent = r.c;
+          head.append(c);
+        }
+        if (r.p) {
+          const p = document.createElement("span");
+          p.className = "site-search-past";
+          p.textContent = past;
+          head.append(p);
+        }
+        const title = document.createElement("strong");
+        title.textContent = r.t;
+        a.append(head, title);
+        if (r.w) {
+          const w = document.createElement("span");
+          w.className = "site-search-where";
+          w.textContent = r.w;
+          a.append(w);
+        }
+        li.append(a);
+        list.append(li);
+      }
+    };
+
+    const search = async () => {
+      const q = input.value.trim();
+      const words = fold(q).split(/\s+/).filter(Boolean);
+      if (words.length === 0) return render("", []);
+      const all = await load();
+      const found = all.filter((r) => {
+        const hay = fold([r.t, r.s, r.w, r.c].filter(Boolean).join(" "));
+        return words.every((w) => hay.includes(w));
+      });
+      render(q, found);
+      const url = new URL(location.href);
+      if (q) url.searchParams.set("q", q);
+      else url.searchParams.delete("q");
+      history.replaceState(null, "", url);
+    };
+
+    let timer: number | undefined;
+    input.addEventListener("focus", () => void load(), { once: true });
+    input.addEventListener("input", () => {
+      window.clearTimeout(timer);
+      timer = window.setTimeout(search, 120);
+    });
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      void search();
+    });
+    const initial = new URL(location.href).searchParams.get("q");
+    if (initial) {
+      input.value = initial;
+      void search();
+    }
+  }
+</script>
+
+<style>
+  .site-search { margin-top: var(--space-3); }
+  .site-search-field {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 0 var(--space-3);
+    min-height: 52px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: var(--ink-muted);
+  }
+  .site-search-field:focus-within { border-color: var(--accent); color: var(--ink); }
+  .site-search-field :global(svg) { flex: none; width: 1.25em; height: 1.25em; color: var(--accent); }
+  .site-search-field input {
+    flex: 1 1 auto;
+    min-width: 0;
+    border: 0;
+    background: transparent;
+    color: var(--ink);
+    font: inherit;
+    font-size: var(--step-0);
+    padding: 0.6em 0;
+  }
+  .site-search-field input:focus { outline: none; }
+  .site-search-field input::-webkit-search-cancel-button { cursor: pointer; }
+  .site-search-hint { margin: var(--space-1) 0 0; font-size: var(--step--1); color: var(--ink-faint); }
+  .site-search-status { margin: var(--space-2) 0 0; font-family: var(--font-mono); font-size: var(--step--1); color: var(--ink-muted); }
+  .site-search-results {
+    margin: var(--space-2) 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: var(--space-1);
+  }
+  .site-search-results a {
+    display: grid;
+    gap: 0.2em;
+    padding: var(--space-2) var(--space-3);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: inherit;
+    text-decoration: none;
+  }
+  .site-search-results a:where(:hover, :focus-visible) { border-color: var(--accent); text-decoration: none; }
+  .site-search-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25em 0.75em;
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    color: var(--ink-faint);
+  }
+  .site-search-kind { color: var(--accent); }
+  .site-search-past { color: var(--ink-faint); }
+  .site-search-results strong { font-weight: 600; line-height: 1.3; }
+  .site-search-where { font-size: var(--step--1); color: var(--ink-muted); }
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+</style>

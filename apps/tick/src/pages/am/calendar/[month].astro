@@ -1,0 +1,9 @@
+---
+import Month from "../../../views/Month.astro";
+import { allMonths } from "../../../months";
+
+export function getStaticPaths() {
+  return allMonths.hy.map((month) => ({ params: { month: month.key }, props: { month } }));
+}
+---
+<Month lang="hy" month={Astro.props.month} />

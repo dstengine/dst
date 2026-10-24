@@ -324,6 +324,18 @@ const denseNav = navFootprint > 1040;
 // the row can afford to keep them: a sum that already counted them would
 // answer its own question.
 const lateIcons = navFootprint - nav.length * 28 > 700;
+// A row that would not fit the capped 1180px column even tightened gets a
+// line of its own under the wordmark — a menu bar, which is what a portal's
+// header is anyway — instead of breaking mid-row at every desktop width.
+// tick's Armenian labels are the case: eleven of them add up to 950px
+// beside a 190px wordmark and the toggles, and no width helps because the
+// column stops growing at 1180. Estimated the way navFootprint is, from
+// the row as measured: 8.5px a character at the tightened size, 14px
+// between items, the column less the wordmark and the 170px the toggles
+// take. The 40px margin keeps a row that just fits off its own line.
+const rowNeeds = nav.reduce((sum, item) => sum + item.label.length, 0) * 8.5 + (nav.length - 1) * 14;
+const rowRoom = 1180 - (siteName.length * 11 + 40) - 170;
+const navBar = denseNav && rowNeeds > rowRoom + 40;
 ---
 <!doctype html>
 <html
@@ -439,7 +451,7 @@ const lateIcons = navFootprint - nav.length * 28 > 700;
         reaching a word of the content. Off-screen until focused. */}
     <a class="skip-link" href="#content">{chrome.skip}</a>
     <header class="site-header">
-      <div class="container header-inner">
+      <div class:list={["container", "header-inner", navBar && "header-inner-bar"]}>
         {/* No `title` unless the site wrote one. The fallback used to be
             the site name, which is the text of the link itself — a tooltip
             that reads back the word under the cursor. An empty attribute is
@@ -453,7 +465,7 @@ const lateIcons = navFootprint - nav.length * 28 > 700;
           {siteName}
         </a>
         <div class="header-actions">
-          <nav class:list={["site-nav", denseNav && "site-nav-dense"]}>
+          <nav class:list={["site-nav", denseNav && "site-nav-dense", navBar && "site-nav-bar"]}>
             <ul class:list={["nav-desktop", denseNav && "nav-desktop-dense", lateIcons && "nav-icons-late"]}>
               {nav.map((item) => (
                 <li>
@@ -790,6 +802,17 @@ const lateIcons = navFootprint - nav.length * 28 > 700;
   }
   .nav-desktop-dense { gap: var(--space-2); }
   .nav-desktop-dense a { font-size: 0.875rem; }
+  /* The menu bar — `navBar` in the frontmatter. The actions box dissolves
+     into the header row (display: contents), so the toggles stay beside the
+     wordmark and the nav, ordered last, wraps to a line of its own across
+     the whole column. Below 1200 the dense rule above has already swapped
+     the row for the dropdown. */
+  @media (min-width: 1201px) {
+    .header-inner-bar { flex-wrap: wrap; gap: 0 var(--space-3); }
+    .header-inner-bar .header-actions { display: contents; }
+    .header-inner-bar .site-name { margin-right: auto; }
+    .header-inner-bar .site-nav-bar { flex-basis: 100%; order: 3; padding-top: var(--space-1); }
+  }
 
 
   .nav-toggle summary {

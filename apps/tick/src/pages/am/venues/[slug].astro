@@ -1,0 +1,9 @@
+---
+import Venue from "../../../views/Venue.astro";
+import { allVenues } from "../../../venues";
+
+export function getStaticPaths() {
+  return allVenues.hy.map((venue) => ({ params: { slug: venue.slug }, props: { venue } }));
+}
+---
+<Venue lang="hy" venue={Astro.props.venue} />

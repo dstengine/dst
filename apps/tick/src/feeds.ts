@@ -10,6 +10,7 @@ import { toRss } from "@dst/content/rss";
 import { toIcs, toIcsCalendar } from "@dst/content/ics";
 import type { EventItem } from "@dst/content/types";
 import { eventHref, newsHref } from "@dst/content/paths";
+import { searchRecords } from "@dst/content/search";
 import { feed, calendar, type Lang } from "./content";
 import { eventsFor, newsFor, eventsBase, newsBase, prefix } from "./i18n";
 
@@ -50,4 +51,12 @@ export function oneEvent(lang: Lang, item: EventItem): Response {
       "Content-Disposition": `attachment; filename="${item.slug}.ics"`,
     },
   });
+}
+
+// The search box's records, one file per language — see
+// @dst/content/search for what is in them and why so little.
+export function searchIndex(lang: Lang): Response {
+  const today = new Date().toISOString().slice(0, 10);
+  const records = searchRecords(eventsFor(lang), newsFor(lang), { eventsBase: eventsBase(lang), newsBase: newsBase(lang), today });
+  return new Response(JSON.stringify(records), { headers: { "Content-Type": "application/json; charset=utf-8" } });
 }

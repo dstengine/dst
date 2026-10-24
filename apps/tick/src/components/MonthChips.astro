@@ -1,0 +1,23 @@
+---
+// The months still to come, as a row of chips, and the way to the whole
+// calendar. One row on the front page, the events page and every month
+// page; gone months are on /calendar/ only, where the record belongs.
+import ChipNav from "@dst/ui/ChipNav.astro";
+import { withLabels } from "@dst/ui/labels";
+import { calendarPage, portal, labels, type Lang } from "../content";
+import { site } from "../site.config";
+import { allMonths, calendarBase, monthHref, monthLabel, monthChip } from "../months";
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const L = withLabels(labels[lang]);
+const where = site[lang].keyword;
+const ahead = allMonths[lang].filter((m) => m.ahead);
+const items = ahead.length
+  ? [
+      { href: calendarBase(lang), label: portal[lang].allMonths, title: calendarPage[lang].title },
+      ...ahead.map((m) => ({ href: monthHref(m.key, lang), label: monthChip(m.key, lang), title: L.monthHeading(monthLabel(m.key, lang), where) })),
+    ]
+  : [];
+---
+<ChipNav items={items} label={portal[lang].months} />

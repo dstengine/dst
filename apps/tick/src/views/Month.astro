@@ -1,0 +1,67 @@
+---
+// One month: everything on in the city for at least one day of it, split
+// the way the whole calendar is — what is to come, what is running, what
+// has gone — with the other months a chip away.
+import Layout from "../layouts/Layout.astro";
+import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
+import ChipNav from "@dst/ui/ChipNav.astro";
+import EventsList from "@dst/ui/EventsList.astro";
+import { withLabels } from "@dst/ui/labels";
+import type { Month } from "@dst/content/months";
+import { calendarPage, portal, labels, type Lang } from "../content";
+import { site } from "../site.config";
+import { LOCALE, eventsBase, prefix } from "../i18n";
+import { NAV } from "../layouts/nav";
+import { allMonths, calendarBase, monthHref, monthLabel, monthChip, monthIn } from "../months";
+
+interface Props { lang: Lang; month: Month }
+const { lang, month } = Astro.props;
+const p = prefix(lang);
+const L = withLabels(labels[lang]);
+const w = portal[lang];
+const where = site[lang].keyword;
+const label = monthLabel(month.key, lang);
+const n = month.items.length;
+
+// A few names, so the summary says what the month holds, not only how much.
+const sample = (() => {
+  const out: string[] = [];
+  for (const t of month.items.map((e) => e.title)) {
+    if (out.join(", ").length + t.length > 90) break;
+    out.push(t);
+  }
+  return out.join(", ");
+})();
+const title = lang === "hy"
+  ? `Միջոցառումներ Երևանում՝ ${label.charAt(0).toLowerCase()}${label.slice(1)}`
+  : `Events in Yerevan ${monthIn(month.key, lang)}`;
+const description = lang === "hy"
+  ? `${L.eventCount(n)} Երևանում ${monthIn(month.key, lang)}՝ ${sample}։ Ամեն մեկը՝ ամսաթվով, գնով և աղբյուրով։`
+  : `${L.eventCount(n)} in Yerevan ${monthIn(month.key, lang)}: ${sample}. Each with its date, its price and the source we checked.`;
+const lede = lang === "hy"
+  ? `Ամեն ինչ, որ կա Երևանում ${monthIn(month.key, lang)} գոնե մեկ օր՝ ${L.eventCount(n)}, կազմակերպիչների տված ամսաթվով, գնով և այն հղումով, որտեղ կարդացել ենք։`
+  : `Everything on in Yerevan for at least one day ${monthIn(month.key, lang)}: ${L.eventCount(n)}, with the date as the organisers gave it, the price and where we read it.`;
+
+const chips = [
+  { href: calendarBase(lang), label: w.allMonths, title: calendarPage[lang].title },
+  ...allMonths[lang].map((m) => ({ href: monthHref(m.key, lang), label: monthChip(m.key, lang), title: L.monthHeading(monthLabel(m.key, lang), where) })),
+];
+---
+<Layout lang={lang} title={title} description={description} crumbCurrent={label}>
+  <section class="container hero">
+    <Breadcrumbs
+      crumbs={[{ href: calendarBase(lang), label: w.calendar, title: calendarPage[lang].title }]}
+      current={label}
+      homeHref={p}
+      homeLabel={NAV[lang][0].label}
+      homeTitle={NAV[lang][0].title}
+      label={w.trail}
+    />
+    <h1>{L.monthHeading(label, where)}</h1>
+    <p class="lede">{lede}</p>
+  </section>
+  <section class="container">
+    <ChipNav items={chips} current={monthHref(month.key, lang)} label={w.months} />
+    <EventsList locale={LOCALE[lang]} items={month.items} eventsBase={eventsBase(lang)} labels={labels[lang]} where={where} />
+  </section>
+</Layout>

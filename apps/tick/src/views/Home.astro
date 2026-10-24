@@ -6,6 +6,12 @@ import SectionNav from "@dst/ui/SectionNav.astro";
 import FeedCards from "@dst/ui/FeedCards.astro";
 import BlockHead from "@dst/ui/BlockHead.astro";
 import CountdownScript from "@dst/ui/CountdownScript.astro";
+import SiteSearch from "@dst/ui/SiteSearch.astro";
+import VenueCards from "@dst/ui/VenueCards.astro";
+import MonthChips from "../components/MonthChips.astro";
+import { withLabels } from "@dst/ui/labels";
+import { site } from "../site.config";
+import { allVenues, venuesBase } from "../venues";
 import { cardCountdown } from "@dst/ui/date";
 import { eventHref, newsHref } from "@dst/content/paths";
 import { home, words, labels, type Lang } from "../content";
@@ -52,12 +58,25 @@ const top = topFor(lang).map((t) =>
       },
 );
 const shown = new Set(top.map((c) => c.href));
+const p = prefix(lang);
+const L = withLabels(labels[lang]);
+const today = new Date().toISOString().slice(0, 10);
+// The rooms with the most still to come, four of them: the venues page
+// has the rest.
+const venues = allVenues[lang].slice(0, 4).map((v) => ({
+  href: `${venuesBase(lang)}${v.slug}/`,
+  name: v.name,
+  kind: v.kind,
+  address: v.address,
+  next: v.next ? (v.next.start < today ? today : v.next.start) : undefined,
+  count: v.items.length,
+}));
 ---
 <Layout lang={lang} title={page.title} description={page.description}>
   <section class="container hero">
     <h1>{page.h1}</h1>
     <p class="lede">{page.lede}</p>
-    <SectionNav sections={allSections[lang]} label={NAV[lang].label} base={prefix(lang)} />
+    <SiteSearch indexHref={`${p}search.json`} locale={LOCALE[lang]} labels={labels[lang]} />
   </section>
   {top.length > 0 && (
     <section class="container home-top">
@@ -65,11 +84,26 @@ const shown = new Set(top.map((c) => c.href));
       <FeedCards items={top} columns={top.length} locale={LOCALE[lang]} labels={labels[lang]} />
     </section>
   )}
-  <EventsBlock locale={LOCALE[lang]} items={events.filter((e) => !shown.has(eventHref(e, eventsBase(lang))))} heading={w.upcoming} eventsBase={eventsBase(lang)} allLabel={w.allEvents} labels={labels[lang]} />
+  <EventsBlock locale={LOCALE[lang]} items={events.filter((e) => !shown.has(eventHref(e, eventsBase(lang))))} heading={w.upcoming} eventsBase={eventsBase(lang)} allLabel={w.allEvents} labels={labels[lang]}>
+    {/* The ways into the calendar, under the spotlight rather than above
+        it: the first event is the point of the page, and a row of chips
+        before it pushed it below the fold on a phone. */}
+    <Fragment slot="nav">
+      <SectionNav sections={allSections[lang]} label={NAV[lang].label} base={p} />
+      <MonthChips lang={lang} />
+    </Fragment>
+  </EventsBlock>
+  {venues.length > 0 && (
+    <section class="container home-venues">
+      <BlockHead heading={L.venues(site[lang].keyword)} link={{ href: venuesBase(lang), label: L.allVenues, title: L.venues(site[lang].keyword) }} />
+      <VenueCards items={venues} columns={venues.length} locale={LOCALE[lang]} labels={labels[lang]} />
+    </section>
+  )}
   <NewsBlock locale={LOCALE[lang]} items={news.filter((n) => !shown.has(newsHref(n, newsBase(lang))))} heading={w.news} newsBase={newsBase(lang)} allLabel={w.allNews} />
   {top.some((c) => "event" in c) && <CountdownScript />}
 </Layout>
 
 <style>
   .home-top { margin-top: var(--space-5); }
+  .home-venues { margin-top: var(--space-5); }
 </style>

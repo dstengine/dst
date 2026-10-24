@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import EventsList from "@dst/ui/EventsList.astro";
+import SiteSearch from "@dst/ui/SiteSearch.astro";
+import MonthChips from "../components/MonthChips.astro";
 import { events, labels, type Lang } from "../content";
 import { site } from "../site.config";
 import { LOCALE, eventsFor, eventsBase, prefix } from "../i18n";
@@ -21,9 +23,11 @@ const thin = items.length < 3;
   <section class="container hero">
     <h1>{page.h1}</h1>
     <p class="lede">{page.lede}</p>
+    <SiteSearch indexHref={`${p}search.json`} locale={LOCALE[lang]} labels={labels[lang]} />
   </section>
   <section class="container">
     <SectionNav sections={allSections[lang]} allHref={p} base={p} {...NAV[lang]} />
+    <MonthChips lang={lang} />
     <EventsList locale={LOCALE[lang]} items={items} eventsBase={eventsBase(lang)} labels={labels[lang]}
       calendarHref={new URL(`${p}events.ics`, Astro.site).href}
       where={site[lang].keyword}

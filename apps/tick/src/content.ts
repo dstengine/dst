@@ -80,6 +80,56 @@ export const news: Record<Lang, Page> = {
   },
 };
 
+export const venuesPage: Record<Lang, Page> = {
+  hy: {
+    title: "Երևանի համերգասրահներն ու վայրերը․ ինչ կա որտեղ",
+    description:
+      "Երևանի համերգասրահները, թատրոնները, ակումբներն ու զբոսայգիները՝ հասցեով, քարտեզով և բոլոր ամսաթվերով՝ Խաչատրյան համերգասրահ, Օպերա, Կոմիտասի տուն և այլն։",
+    h1: "Երևանի դահլիճներն ու վայրերը",
+    lede: "Վայրերը, որտեղ անցնում են քաղաքի միջոցառումները՝ հասցեով, քարտեզով և այն ամենով, ինչ կա ամեն մեկում։ Առաջինը նրանք են, որտեղ ավելի շատ բան է սպասվում։",
+  },
+  en: {
+    title: "Concert halls and venues in Yerevan: what's on where",
+    description:
+      "Yerevan's concert halls, theatres, clubs and parks, each with its address, a map and every date we hold for it: the Khachaturian hall, the Opera, the Komitas house and more.",
+    h1: "Venues in Yerevan",
+    lede: "The rooms the city's events happen in, with the address, the map and what is on at each, the ones with the most to come first.",
+  },
+};
+
+export const calendarPage: Record<Lang, Page> = {
+  hy: {
+    title: "Միջոցառումներ Երևանում՝ ըստ ամսի",
+    description:
+      "Երևանի համերգները, ներկայացումներն ու փառատոները՝ ըստ ամիսների։ Ամեն ամիս՝ իր էջով, ամսաթվերով, գներով ու աղբյուրներով․ անցած ամիսները մնում են որպես հիշողություն։",
+    h1: "Երևանը՝ ըստ ամսի",
+    lede: "Մեկ էջ՝ ամեն ամսվա համար, այն ամենով, ինչ կա Երևանում գոնե մեկ օր այդ ամսում։ Անցած ամիսները մնում են՝ որպես քաղաքի հիշողություն։",
+  },
+  en: {
+    title: "Events in Yerevan by month",
+    description:
+      "Yerevan's concerts, theatre and festivals month by month: one page per month with dates, prices and sources, and past months kept as the record of what the city had on.",
+    h1: "Yerevan by month",
+    lede: "One page per month, with everything on in Yerevan for at least a day of it. Past months stay as the record of what the city had on.",
+  },
+};
+
+// The words the portal pages put on the page themselves: the menu entry
+// for the venues, the calendar's crumb, the rows of a venue's facts panel.
+export const portal: Record<Lang, {
+  venuesNav: string; calendar: string; months: string; allMonths: string; trail: string;
+  kind: string; address: string; next: string; count: string;
+}> = {
+  hy: {
+    venuesNav: "Վայրեր", calendar: "Օրացույց", months: "Ըստ ամսի", allMonths: "Բոլոր ամիսները", trail: "Ուղի",
+    kind: "Ինչ է", address: "Հասցե", next: "Հաջորդն այստեղ", count: "Այս օրացույցում",
+  },
+  en: {
+    venuesNav: "Venues", calendar: "Calendar", months: "By month", allMonths: "All months", trail: "Breadcrumb",
+    kind: "What it is", address: "Address", next: "Next here", count: "On this calendar",
+  },
+};
+
 export const about: Record<Lang, Page> = {
   hy: {
     title: "Tick-ի մասին՝ Երևանի միջոցառումների օրացույց",

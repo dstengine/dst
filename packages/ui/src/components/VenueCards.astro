@@ -1,0 +1,97 @@
+---
+// The rooms a site's events happen in, as a grid of cards: the name, what
+// kind of room it is, where it stands, when it is next in use and how many
+// dates the site holds for it. The listing for /venues/ and the strip on a
+// front page; the venue's own page is the site's, composed from Glance,
+// MapEmbed and EventsList.
+//
+// Not FeedCards: a venue has no date cover and no headline to clamp, and a
+// card drawn for a thing that happens is wrong for a thing that stands
+// there. What the two share is the grid and the frame, so a row of these
+// sits level with a row of events on the same page.
+import { formatCardDate } from "../date.ts";
+import { withLabels, type ArticleLabels } from "../labels.ts";
+
+export interface VenueCardItem {
+  href: string;
+  name: string;
+  /** What kind of room: "Concert hall", "Theatre". The eyebrow. */
+  kind?: string;
+  address?: string;
+  /** ISO date of the next event, when there is one. */
+  next?: string;
+  /** How many dates the site holds for it, past and to come. */
+  count: number;
+}
+
+interface Props {
+  items: VenueCardItem[];
+  /** Pin the column count when the caller knows how many cards there are. */
+  columns?: number;
+  locale?: string;
+  labels?: Partial<ArticleLabels>;
+}
+const { items, columns, locale = "en-US", labels: labelOverrides } = Astro.props;
+const L = withLabels(labelOverrides);
+---
+{items.length > 0 && (
+  <div class="venue-shell">
+    <div class:list={["venue-cards", columns && "venue-cards-pinned"]} style={columns ? `--venue-columns: ${columns}` : undefined}>
+      {items.map((v) => (
+        <a class="venue-card" href={v.href} title={L.venueTitle(v.name)}>
+          <p class="venue-meta">
+            {v.kind && <span class="venue-kind">{v.kind}</span>}
+            <span class="venue-count">{L.eventCount(v.count)}</span>
+          </p>
+          <h3>{v.name}</h3>
+          {v.address && <p class="venue-address">{v.address}</p>}
+          {v.next && (
+            <p class="venue-next">
+              <time datetime={v.next}>{L.nextOn(formatCardDate(v.next, locale))}</time>
+            </p>
+          )}
+        </a>
+      ))}
+    </div>
+  </div>
+)}
+
+<style>
+  .venue-shell { container-type: inline-size; }
+  .venue-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr));
+    gap: var(--space-3);
+    margin-top: var(--space-3);
+  }
+  @container (min-width: 760px) {
+    .venue-cards-pinned { grid-template-columns: repeat(var(--venue-columns), minmax(0, 1fr)); }
+  }
+  .venue-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    padding: var(--space-3);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: inherit;
+    text-decoration: none;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+  /* A clickable card never underlines on hover: the frame carries the state. */
+  .venue-card:where(:hover, :focus-visible) { border-color: var(--accent); transform: translateY(-2px); text-decoration: none; }
+  .venue-card h3 { margin: 0; font-size: var(--step-0); line-height: 1.3; }
+  .venue-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.25em 0.75em;
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    color: var(--ink-faint);
+  }
+  .venue-kind { color: var(--accent); text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.75rem; }
+  .venue-address { margin: 0; font-size: var(--step--1); color: var(--ink-muted); }
+  .venue-next { margin: auto 0 0; padding-top: var(--space-1); font-size: var(--step--1); font-weight: 600; color: var(--ink); }
+</style>

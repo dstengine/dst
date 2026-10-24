@@ -25,6 +25,9 @@
     "./images.json": "./src/images.json",
     "./rss": "./src/rss.ts",
     "./i18n": "./src/i18n.ts",
-    "./experiments": "./src/experiments.ts"
+    "./experiments": "./src/experiments.ts",
+    "./venues": "./src/venues.ts",
+    "./months": "./src/months.ts",
+    "./search": "./src/search.ts"
   }
 }

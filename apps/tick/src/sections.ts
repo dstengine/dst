@@ -20,7 +20,7 @@ import { site } from "./site.config";
 // "am" is a slug too: it is where the Armenian pages live.
 // So is every short address an entry has taken for itself (`path`).
 const RESERVED = [
-  "about", "events", "news", "go", "li", "am",
+  "about", "events", "news", "venues", "calendar", "search", "go", "li", "am",
   ...[...eventsFor("en"), ...newsFor("en")].flatMap((i) => (i.path ? [i.path.replace(/\//g, "")] : [])),
 ];
 

@@ -10,7 +10,7 @@ import { cardHours, cardCountdown } from "../date.ts";
 import Icon from "./Icon.astro";
 import { withLabels, type ArticleLabels } from "../labels.ts";
 import CountdownScript from "./CountdownScript.astro";
-import { isOn, hasEnded } from "@dst/content/when";
+import { isOn, hasEnded, lastDay } from "@dst/content/when";
 
 interface Props {
   items: EventItem[];
@@ -82,13 +82,22 @@ const toCard = (item: EventItem, past: boolean) => {
   };
 };
 
-// On the last day, not the first: a run that began before today and ends
-// after it is on, and belongs above the fold rather than under "Past".
-// See @dst/content/when.
+// Three groups, not two. A run that opened before today and has not closed
+// is on — and it is not "upcoming": on 21 October the listing opened with
+// exhibitions dated 16 May, 17 September and 1 October, three of the first
+// four cards, each dated by a day five months behind the reader. The front
+// page's block (EventsBlock) had already split them off under "On now",
+// dated by the day they close — the one a reader can still miss — and the
+// listing now does the same, so one feed stops behaving two ways.
+// See @dst/content/when for why "on" is decided on the last day.
 const upcoming = items
-  .filter((e) => isOn(e, todayIso))
+  .filter((e) => isOn(e, todayIso) && e.start >= todayIso)
   .sort(byDate)
   .map((e) => toCard(e, false));
+const running = items
+  .filter((e) => isOn(e, todayIso) && e.start < todayIso)
+  .sort((a, b) => (lastDay(a) < lastDay(b) ? -1 : lastDay(a) > lastDay(b) ? 1 : byDate(a, b)))
+  .map((e) => ({ ...toCard(e, false), until: lastDay(e) }));
 const past = items
   .filter((e) => hasEnded(e, todayIso))
   .sort((a, b) => (a.start < b.start ? 1 : a.start > b.start ? -1 : 0))
@@ -101,6 +110,12 @@ const past = items
         <h3 class="events-group-heading">{L.upcoming(where)}</h3>
         <FeedCards items={upcoming} columns={upcoming.length <= 2 ? upcoming.length : undefined} locale={locale} labels={L} />
         <CountdownScript />
+      </div>
+    )}
+    {running.length > 0 && (
+      <div class="events-group">
+        <h3 class="events-group-heading">{L.onNow}</h3>
+        <FeedCards items={running} columns={running.length <= 2 ? running.length : undefined} locale={locale} labels={L} />
       </div>
     )}
     {past.length > 0 && (
