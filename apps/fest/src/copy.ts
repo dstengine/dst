@@ -390,8 +390,11 @@ const GLUE_ES_MX = new RegExp([...ES_MX_TOKENS, `\\b\\d{1,2} de ${MES}(?: de \\d
 // dates, against one each unglued), and "24 October | 2026" reads as one
 // date still. "en-au" has its own row, the identity, since typeset falls
 // back from a locale to its language and would give Beyond The Valley and
-// Field Day this glue.
-const GLUE_EN = new RegExp([...EN_TOKENS, `\\b\\d{1,2} ${MONTH}\\b`].join("|"), "g");
+// Field Day this glue. A count keeps its unit too, as KEEP_TOGETHER does
+// for short runs: the twin's lede broke "10 | years" at 320 px and
+// "180 | days" survived to 1280 (QA round 1, 9d). "Years" is capitalised
+// where it quotes a season's name.
+const GLUE_EN = new RegExp([...EN_TOKENS, `\\b\\d{1,2} ${MONTH}\\b`, `\\b\\d[\\d,.]*%? (?:km|mins?|hrs?|hours?|minutes|days?|nights?|people|person|[Yy]ears?|tickets?|passes)\\b`].join("|"), "g");
 const GLUE: Record<string, (run: string) => string> = {
   en: (run) => run.replace(GLUE_EN, (m) => m.replace(/ /g, "\u00a0")),
   "en-au": (run) => run,

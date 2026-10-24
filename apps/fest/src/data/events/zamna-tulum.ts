@@ -59,7 +59,7 @@ export const events: FestEvent[] = [
   {
     slug: "zamna-tulum",
     createdAt: "2026-10-22T21:53:00+04:00",
-    updatedAt: "2026-10-24T04:57:00+04:00",
+    updatedAt: "2026-10-24T05:35:00+04:00",
     name: "Zamna Tulum",
     edition: { start: "2026-12-31", end: "2027-01-10" },
     // The scout's event line carries no readOn of its own: written with
@@ -1996,7 +1996,7 @@ export const events: FestEvent[] = [
         url: "https://mrnicevip.com/es/596-zamna-stay-",
         source: "s30",
         kind: "seller",
-        title: "Paquetes con los hoteles Aluna, Copal o Prana en Mr Nice VIP",
+        title: "Paquetes con los hoteles Aluna, Copal, Prana o Bloom en Mr Nice VIP",
       },
       official: {
         url: "https://zamnafestival.com/events?venue=zamna-tulum",
