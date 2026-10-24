@@ -11,7 +11,7 @@ export const items: EventItem[] = [
   {
     slug: "dubai-future-week-2026",
     createdAt: "2026-08-28T01:39:41+04:00",
-    updatedAt: "2026-09-23T02:13:04+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
     site: "fwf",
     image: "/covers/dubai-future-week-2026.jpg",
     imageAlt: "Five pale lilac paper bands of different widths fanning out from one periwinkle point on an indigo ground",
@@ -124,6 +124,12 @@ export const items: EventItem[] = [
         text: "The one-day urban-technology conference on 16 November, two days before the week opens.",
         eyebrow: "16 November",
       },
+      {
+        href: "/events/please-leave-by-10-halloween-dubai-2026/",
+        eyebrow: "31 October",
+        title: "Please Leave By 10, Halloween",
+        text: "The evening off: a Halloween party at Studio A, Dubai Harbour, 17:00 to 22:00, 21+.",
+      },
     ],
     updates: [
       {
@@ -214,7 +220,7 @@ export const items: EventItem[] = [
   {
     slug: "gitex-global-2026",
     createdAt: "2026-08-28T01:56:27+04:00",
-    updatedAt: "2026-08-31T08:15:19+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
     site: "fwf",
     image: "/covers/gitex-global-2026.jpg",
     imageAlt: "A grid of pavilion roofs seen from above with a domed hall at the centre",
@@ -243,6 +249,14 @@ export const items: EventItem[] = [
     body: [
       "GITEX Global runs 7–11 December 2026 at Dubai Exhibition Centre in Expo City: over 200,000 attendees from more than 180 countries, 6,800 exhibiting companies, 400-plus government entities and around 2,000 startups.",
       "For the subjects this site follows it is the widest floor of the year. Smart-city systems, government platforms, mobility and urban AI all have their own halls, and most of the vendors who take a stand at a one-day forum in November are here in December at ten times the scale.",
+    ],
+    related: [
+      {
+        href: "/events/please-leave-by-10-halloween-dubai-2026/",
+        eyebrow: "31 October",
+        title: "Please Leave By 10, Halloween",
+        text: "The evening off: a Halloween party at Studio A, Dubai Harbour, 17:00 to 22:00, 21+.",
+      },
     ],
     expertise:
       "Worth knowing when you are budgeting. A week at GITEX and a seat at a one-day forum are not the same purchase, and if the reason for going is to meet suppliers rather than to be met, the December floor covers in one day what a small November conference covers in its entirety. The case for the smaller room is the opposite one: it is small enough to speak to someone.",
@@ -448,5 +462,88 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Of the Gulf's three AI shows this is the one where the buyers outnumber the sellers. Dubai's Gitex is a general technology fair with an AI wing; Riyadh's LEAP is bigger and younger; Abu Dhabi's is the one where the sovereign AI programmes exhibit as buyers and the chip makers come to meet them. For a company selling AI into government, it is the room to be in; for a start-up selling to consumers, it is the wrong one. May in Abu Dhabi is already hot, so plan the days indoors.",
+  },
+  {
+    slug: "please-leave-by-10-halloween-dubai-2026",
+    createdAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
+    site: "fwf",
+    image: "/covers/please-leave-by-10-halloween-dubai-2026.jpg",
+    imageAlt: "A dark waterfront studio with its door open on a warm pink-lit room, people in silhouette and bats inside, yachts in the marina and a crescent moon",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Please Leave By 10: Halloween Edition",
+    cardTitle: "Please Leave By 10, Halloween",
+    titleSeo: "Please Leave By 10 Halloween, Dubai Harbour: 31 October",
+    summary:
+      "A Halloween party that ends at 10pm: Please Leave By 10 takes over Studio A at Dubai Harbour on Saturday 31 October 2026 from 5pm, with DJ VLR playing 90s, 2000s and early-2010s pop, R&B and hip hop. Strictly 21+; Late Bird tickets are AED 150 with one drink, the cheaper tiers sold out.",
+    start: "2026-10-31",
+    startTime: "17:00",
+    endTime: "22:00",
+    utcOffset: "+04:00",
+    venue: "STUDIO A, Dubai Harbour",
+    city: "Dubai",
+    geo: { name: "Dubai Harbour", lat: 25.09563, lng: 55.13816 },
+    organizer: "Please Leave By 10 | Dubai",
+    category: "Halloween",
+    tickets: { priceFrom: 150, currency: "AED" },
+    ticket: { url: "https://luma.com/uhtvn2kw", label: "Late Bird AED 150" },
+    source: {
+      name: "Luma: PLEASE LEAVE BY 10, Halloween Edition",
+      url: "https://luma.com/uhtvn2kw",
+      verifiedOn: "2026-10-24",
+    },
+    body: [
+      "<strong>Please Leave By 10</strong> is a party with its ending in its name, and its Halloween edition is on <strong>Saturday 31 October 2026</strong> at <strong>STUDIO A, Dubai Harbour</strong>, from <strong>5pm to 10pm</strong>: five hours, and home at a civilised hour.",
+      "## The music",
+      "<strong>DJ VLR</strong> plays five hours of <strong>90s, 2000s and early-2010s pop, R&B and hip hop</strong>, with Halloween surprises promised. The suggested costume is your former self or a 2000s pop-culture icon; an emo kid, a fashion mistake or a horror-film character also qualify.",
+      "## Tickets",
+      "The Early Bird (AED 130) and Standard (AED 140) tiers are <strong>sold out</strong>, and the <strong>Late Bird is AED 150</strong>. Every package includes <strong>one drink</strong>, collected as a coupon at the door. Halloween make-up by Bling Charmars is an optional extra at <strong>AED 55 to 75</strong>. Tables are booked with the venue on 050 443 0933, daily from 11am to midnight; everyone else is first come, first served.",
+      "## House rules",
+      "Strictly <strong>21+</strong>. No sharp objects, costume props included. Under the venue's policy for this event, entry is not permitted in traditional or religious attire, and guests may be photographed or filmed for the organiser's promotion.",
+      "## The evening off",
+      "The rest of this calendar is conferences, from <a href=\"/\" title=\"Future World Forum Dubai 2026\">Future World Forum</a> on 16 November to <a href=\"/events/dubai-future-week-2026/\" title=\"Dubai Future Week 2026\">Dubai Future Week</a> two days later. This is the one entry that looks firmly backwards, and the only one that promises to have everyone home by ten.",
+    ],
+    faq: [
+      {
+        q: "When is Please Leave By 10: Halloween Edition?",
+        a: "On Saturday 31 October 2026, 5pm to 10pm, at STUDIO A, Dubai Harbour.",
+      },
+      {
+        q: "How much are tickets?",
+        a: "The Late Bird package is AED 150 and includes one drink. The Early Bird (AED 130) and Standard (AED 140) packages are sold out.",
+      },
+      {
+        q: "Is there an age limit?",
+        a: "Yes, it is strictly 21+.",
+      },
+      {
+        q: "What should I wear?",
+        a: "A Halloween costume: the organisers suggest your former self or a 2000s pop-culture icon. Traditional or religious attire is not permitted at this event under the venue's policy, and sharp props are not allowed.",
+      },
+    ],
+    related: [
+      {
+        href: "/",
+        eyebrow: "16 November",
+        title: "Future World Forum Dubai 2026",
+        text: "Smart cities, PropTech and digital finance, in one day.",
+      },
+      {
+        href: "/events/dubai-future-week-2026/",
+        eyebrow: "18–21 November",
+        title: "Dubai Future Week 2026",
+        text: "Two days after the forum: four days on what comes next.",
+      },
+      {
+        href: "/events/gitex-global-2026/",
+        eyebrow: "7–11 December",
+        title: "GITEX Global 2026",
+        text: "The region's largest technology show, at Dubai Exhibition Centre.",
+      },
+    ],
+    expertise:
+      "Buy the Late Bird now rather than at the door: two tiers have already sold out, and a party that ends at ten fills early rather than late. The early finish is the format's whole idea, so the best of it is the first two hours, when the room is full and the 2000s are still a novelty. Decide on the make-up add-on before you arrive, and leave the plastic scythe at home: sharp props are turned away at the door.",
   },
 ];
