@@ -460,4 +460,41 @@ export const items: NewsItem[] = [
     expertise:
       "The person this helps most is the Indian or Filipino professional working in the Gulf's neighbours, or in Europe, who has family in Dubai and visits for a week. The 14-day visa at Dh172.50 is cheaper and faster than any advance visa, and the only document that matters is the residence card, so keep it in the hand luggage. The catch is the six-month validity of that card: a permit in its last months disqualifies the holder at the counter, with no appeal and a flight back. Check the expiry before booking, not at the gate.",
   },
+
+  {
+    slug: "residence-for-gcc-nationals-wives-and-children-with-foreign-passports",
+    createdAt: "2026-10-25T02:30:00+04:00",
+    updatedAt: "2026-10-25T02:30:00+04:00",
+    site: "visas",
+    image: "/covers/residence-for-gcc-nationals-wives-and-children-with-foreign-passports.jpg",
+    imageAlt: "A large paper house shape sheltering three plain passport booklets of different colours, a small key resting in front of them",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Residence for the wives and children of GCC nationals",
+    cardTitle: "Residence for GCC families",
+    titleSeo: "UAE residence for GCC nationals' families: fees, papers",
+    summary:
+      "Dubai's GDRFA issues UAE residence to the wives and children of GCC nationals who hold a foreign passport. The fee is AED 220, with AED 500 more for an application made inside the country; the documents are a photo, a passport copy and, over 18, a medical; the grace period after expiry is 60 days.",
+    date: "2026-10-25",
+    category: "Residency",
+    source: {
+      name: "GDRFA Dubai, Issuance of a residence for family members of GCC citizens",
+      url: "https://gdrfad.gov.ae/en/node/13962",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "A GCC national's family does not always share a GCC passport: a wife may have kept her own nationality, and a child may hold a foreign passport too. For that family Dubai's <strong>General Directorate of Residency and Foreigners Affairs</strong> has a service of its own: a <strong>residence permit for the wives and children of GCC nationals who hold foreign passports</strong>. It sits among the residence services without a work permit.",
+      "## What it costs",
+      "The residence permit fee is <strong>AED 200</strong>, plus the <strong>AED 10</strong> Knowledge Dirham and the <strong>AED 10</strong> Innovation Dirham: <strong>AED 220</strong>. An application made by someone already inside the UAE costs <strong>AED 500</strong> more, and delivery is <strong>AED 20</strong>. For a residence longer than two years, the issuance fee rises by <strong>AED 100</strong> for each extra year.",
+      "## What to bring",
+      "Three things: a recent <strong>colour photograph on a white background</strong>, a <strong>copy of the passport</strong>, and for anyone <strong>over 18</strong>, a <strong>medical examination</strong> approved by the authorities. The GDRFA lists no other conditions for the service.",
+      "## Where to apply",
+      "Online, through GDRFA's smart services at smart.gdrfad.gov.ae, signing in with <strong>UAE Pass</strong>, around the clock. Or in person at a <strong>Customer Happiness Centre</strong> or an <strong>Amer centre</strong>, during their normal hours: take a queue ticket, hand in the application and pay.",
+      "## When it ends",
+      "After the permit expires or is cancelled, the holder has a <strong>60-day grace period</strong> to stay in the country.",
+    ],
+    expertise:
+      "The figure people miss is the AED 500. A wife or child who flew in on a visit visa and applies from inside the UAE pays more than three times the base fee, so if the family is still abroad and the timing allows, apply before they travel. For a long permit, do the sum before choosing the length: every year past the second adds AED 100 to a fee that starts at AED 220.",
+  },
 ];
