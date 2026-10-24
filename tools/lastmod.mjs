@@ -44,27 +44,13 @@
 //   npm run build && node tools/lastmod.mjs
 import { execFileSync } from "node:child_process";
 import { readdirSync, readFileSync, writeFileSync, existsSync, statSync } from "node:fs";
-import { registerHooks } from "node:module";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { HOSTS } from "./hosts.mjs";
+// Also what lets Node load a site's own TypeScript, src/dated.ts below.
+import { pagesFor, unread } from "./routes.mjs";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-
-// A site's own TypeScript imports its neighbours without an extension —
-// `from "./data/runs"` — which Vite resolves and Node does not. Only
-// src/dated.ts is loaded that way here, and only relative specifiers that
-// fail as written are retried with ".ts".
-registerHooks({
-  resolve(specifier, context, nextResolve) {
-    try {
-      return nextResolve(specifier, context);
-    } catch (err) {
-      if (!specifier.startsWith(".") || path.extname(specifier)) throw err;
-      return nextResolve(`${specifier}.ts`, context);
-    }
-  },
-});
 
 const gitDates = new Map();
 /** Last commit that touched a file, as an ISO date. */
@@ -242,60 +228,6 @@ function sources(pageFile) {
 
 const appOf = (file) => path.relative(REPO, file).split(path.sep)[1];
 
-/** Every source page that could have produced a built URL.
-
-    Usually one. But a site can carry two dynamic routes at the same level —
-    musical.today has cities at `[city].astro` and shows at `[show]/` — and
-    from the built path alone there is no telling which one produced
-    /chicago/. Rather than guess, return both and let the caller take the
-    newest date among them: both routes render the same content file anyway,
-    so the answer only differs when one of the route files itself is edited. */
-function pagesFor(app, url) {
-  const root = path.join(REPO, "apps", app, "src", "pages");
-  const segments = url.split("/").filter(Boolean);
-  if (!segments.length) {
-    const home = path.join(root, "index.astro");
-    return existsSync(home) ? [home] : [];
-  }
-  return resolvePage(root, segments);
-}
-
-const isDir = (p) => existsSync(p) && statSync(p).isDirectory();
-
-function resolvePage(dir, [head, ...rest]) {
-  if (!isDir(dir)) return [];
-  const entries = readdirSync(dir, { withFileTypes: true });
-
-  if (rest.length) {
-    // A static directory wins over a dynamic one, as it does in Astro's own
-    // routing: musical.today's /venue/<slug>/ is venue/[slug].astro and
-    // never [show]/[slug].astro, which would also match it. Counting both
-    // dated 58 theatre pages by the show route's copy.
-    const statically = resolvePage(path.join(dir, head), rest);
-    if (statically.length) return statically;
-    const dirs = [];
-    for (const e of entries) {
-      if (e.isDirectory() && /^\[.+\]$/.test(e.name)) dirs.push(path.join(dir, e.name));
-    }
-    return dirs.flatMap((d) => resolvePage(d, rest));
-  }
-
-  // The last segment: a static page wins outright over a dynamic route.
-  const exact = [path.join(dir, head, "index.astro"), path.join(dir, `${head}.astro`)]
-    .filter((c) => existsSync(c) && statSync(c).isFile());
-  if (exact.length) return exact;
-
-  const dynamic = [];
-  for (const e of entries) {
-    if (e.isFile() && /^\[.+\]\.astro$/.test(e.name)) dynamic.push(path.join(dir, e.name));
-    else if (e.isDirectory() && /^\[.+\]$/.test(e.name)) {
-      const index = path.join(dir, e.name, "index.astro");
-      if (existsSync(index)) dynamic.push(index);
-    }
-  }
-  return dynamic;
-}
-
 const walk = (dir) =>
   readdirSync(dir, { withFileTypes: true }).flatMap((e) =>
     e.isDirectory() ? walk(path.join(dir, e.name)) : [path.join(dir, e.name)],
@@ -418,9 +350,12 @@ for (const [app, host] of Object.entries(HOSTS)) {
     // A group page: the newest entry it lists, against the files that shape
     // it — its route, its copy, its vocabulary — and its own record, when it
     // is one: a city's page is that city's words above the runs it lists.
+    // The route is the one that built the page, not every route its path
+    // fits: see tools/routes.mjs.
     const dates = listed(readFileSync(file, "utf8"), app);
     if (record) dates.push(...recordDates(record));
-    for (const source of pagesFor(app, url).flatMap(sources)) {
+    const routes = await pagesFor(path.join(REPO, "apps", app, "src", "pages"), url);
+    for (const source of routes.flatMap(sources)) {
       if (isFeed(source) || isDatedData(source)) continue;
       const date = lastCommit(source);
       if (date) dates.push(date);
@@ -439,3 +374,8 @@ for (const [host, urls] of Object.entries(out)) {
   const dates = Object.values(urls).sort();
   console.log(`  ${host.padEnd(20)} ${Object.keys(urls).length} pages, newest ${dates.at(-1)?.slice(0, 10)}`);
 }
+// A route that could not say which pages it builds leaves its pages dated
+// by every route at their level, the old way. Not a failure, but worth
+// seeing: the dates there are a little newer than they should be.
+for (const [page, why] of unread)
+  console.log(`  ${path.relative(REPO, page)}: getStaticPaths did not run here (${why}); its level is dated by every route on it`);

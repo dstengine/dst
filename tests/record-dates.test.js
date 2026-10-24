@@ -19,6 +19,7 @@ import { readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { entries, records } from "../tools/record-blocks.mjs";
+import { pagesFor, unread } from "../tools/routes.mjs";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DIRS = ["packages/content/src/events", "packages/content/src/news", "apps/musical/src/data", "apps/fest/src/data/events"];
@@ -70,4 +71,45 @@ describe("a record's updatedAt moves when its text does", () => {
       assert.deepEqual(backwards, [], `${rel}: edited, and updatedAt moved backwards`);
     });
   }
+});
+
+// A group page is dated by the files that shape it, and the first of them is
+// the route that built it. Where two dynamic routes sit at one level —
+// tick's [page].astro (short addresses: /devfest/) beside [section].astro
+// (/halloween/) — the path fits both, and counting both dated every section
+// by the event view as well: each edit to Event.astro moved all of tick's
+// section pages in the sitemap while none of them changed. tools/routes.mjs
+// asks each route's getStaticPaths which pages are its own.
+describe("a group page is dated by the route that built it", () => {
+  const relative = (root, pages) => pages.map((p) => path.relative(root, p));
+
+  test("tick's sections and short addresses each go to their own route", async () => {
+    const root = path.join(REPO, "apps/tick/src/pages");
+    const { allSections } = await import("../apps/tick/src/sections.ts");
+    const { shortPaths } = await import("../apps/tick/src/i18n.ts");
+    for (const [lang, prefix] of [["en", ""], ["hy", "am/"]]) {
+      assert.ok(allSections[lang].length > 0, `tick has no ${lang} sections to check`);
+      for (const { slug } of allSections[lang])
+        assert.deepEqual(relative(root, await pagesFor(root, `/${prefix}${slug}/`)), [`${prefix}[section].astro`], `/${prefix}${slug}/`);
+      for (const { params } of shortPaths(lang))
+        assert.deepEqual(relative(root, await pagesFor(root, `/${prefix}${params.page}/`)), [`${prefix}[page].astro`], `/${prefix}${params.page}/`);
+    }
+    const unreadHere = [...unread.keys()].filter((p) => p.startsWith(root));
+    assert.deepEqual(unreadHere, [], "a tick route whose getStaticPaths did not run here");
+  });
+
+  const root = path.join(REPO, "tests/fixtures/routes");
+
+  test("the route whose getStaticPaths lists the page built it", async () => {
+    assert.deepEqual(relative(root, await pagesFor(root, "/one/")), ["[listed].astro"]);
+  });
+
+  test("a route that lists other pages did not build this one", async () => {
+    assert.deepEqual(relative(root, await pagesFor(root, "/three/")), ["[vite].astro"]);
+    assert.ok(unread.has(path.join(root, "[vite].astro")), "[vite].astro ran in Node, so the fixture tests nothing");
+  });
+
+  test("where no route can say, every route at the level counts, as before", async () => {
+    assert.deepEqual(relative(root, await pagesFor(root, "/unread/x/")), ["unread/[a].astro", "unread/[b].astro"]);
+  });
 });

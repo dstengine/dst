@@ -1,0 +1,14 @@
+---
+// Two dynamic routes at one level, as tick's [page] and [section] are. This
+// one says which pages it builds; its neighbour cannot say it here. There
+// is no Card.astro: components are dropped before getStaticPaths is run.
+import Card from "./Card.astro";
+import { slugs } from "./slugs";
+
+export function getStaticPaths() {
+  return slugs.map((listed) => ({ params: { listed } }));
+}
+
+const { listed } = Astro.params;
+---
+<Card title={listed} />

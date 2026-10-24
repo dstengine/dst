@@ -1,0 +1,8 @@
+---
+// Runs under Vite and not in Node: astro:content is Astro's own module.
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  return (await getCollection("posts")).map((post) => ({ params: { vite: post.slug } }));
+}
+---
