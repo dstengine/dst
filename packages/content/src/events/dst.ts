@@ -848,4 +848,95 @@ export const items: EventItem[] = [
     expertise:
       "Treat the AED 220 as a ticket to a DJ night in a themed hall rather than a day at the park: the announcement prices the party, not the rides, and a day ticket's worth of coasters is not promised. The Haunted Town is the right room for it, a horror zone that most Halloween venues in the city have to build from scratch each October. The practical catch is the finish. One in the morning on the far side of the E311 is a long way from most of Dubai, so book the ride home before the last track rather than after it.",
   },
+
+  {
+    slug: "emirates-dubai-7s-2026",
+    createdAt: "2026-10-25T02:30:00+04:00",
+    updatedAt: "2026-10-25T02:30:00+04:00",
+    site: "dst",
+    image: "/covers/emirates-dubai-7s-2026.jpg",
+    imageAlt: "A rugby ball in mid-air between tall white posts, three small players running on the green pitch below and a stand of orange seats behind",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Emirates Dubai 7s 2026: three days at The Sevens",
+    cardTitle: "Emirates Dubai 7s 2026",
+    titleSeo: "Emirates Dubai 7s 2026: dates, tickets and line-up",
+    summary:
+      "The Emirates Dubai 7s fills The Sevens Stadium from November 27 to 29, 2026: the opening round of the HSBC SVNS on Saturday and Sunday, Jax Jones and Melanie C on the Beats on 2 stage, and a Family Friday at AED 75 with under-15s free.",
+    start: "2026-11-27",
+    end: "2026-11-29",
+    utcOffset: "+04:00",
+    venue: "The Sevens Stadium, Al Ain Road",
+    city: "Dubai",
+    country: "United Arab Emirates",
+    geo: { name: "The Sevens Stadium", lat: 24.994479, lng: 55.468241 },
+    organizer: "Emirates Dubai Rugby Sevens",
+    category: "Sport",
+    tickets: { priceFrom: 40, currency: "AED" },
+    ticket: {
+      url: "https://www.emiratesdubai7s.com/tickets",
+      label: "Tickets",
+    },
+    source: {
+      name: "Emirates Dubai 7s",
+      url: "https://www.emiratesdubai7s.com/tickets",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "Dubai's biggest weekend of sport returns to <strong>The Sevens Stadium</strong> on the Al Ain Road from <strong>Friday, November 27, to Sunday, November 29, 2026</strong>. Rugby is the centre of it, with six other competitions, three music stages and a kids' zone around it.",
+      "## The rugby",
+      "Saturday and Sunday are the <strong>opening round of the HSBC SVNS</strong>, the world sevens series, on Pitch 1: day one of the tournament on Saturday, the finals and the trophy presentation on Sunday evening. Around it the festival site runs <strong>Invitational Rugby</strong>, the <strong>WODON3</strong> fitness competition, <strong>Rebound Padel</strong>, <strong>cricket</strong>, <strong>netball</strong> and, for the first time at the 7s, <strong>Gaelic football</strong>.",
+      "## Family Friday",
+      "Friday's ticket is <strong>AED 75</strong>, and <strong>under-15s go free</strong> that day. It covers the local and invitational sports, the youth tournament finals, the WODON3 elite competition and an extended kids' zone, with local artists and DJs on every stage.",
+      "## Saturday, Sunday and the 3-day pass",
+      "A single day on Saturday or Sunday is <strong>AED 455</strong>, with children aged <strong>10 to 14 at AED 115</strong>, <strong>4 to 9 at AED 40</strong> and <strong>under-4s free</strong> with registration. The <strong>3-day general admission</strong> pass is <strong>AED 595</strong>. A <strong>family ticket</strong> for two adults and two children is <strong>AED 1,136</strong>, and groups of six or more adults pay AED 446 each. Reserved grandstand seats for the weekend are AED 695 or AED 825.",
+      "## The music",
+      "<strong>Jax Jones</strong> and <strong>Melanie C</strong> headline <strong>Beats on 2</strong>, the party stage by the second pitch, with headline DJ sets on Saturday and Sunday and local artists on all three stages across the three days.",
+      "## Getting in",
+      "Tickets are not printed. They arrive in the wallet section of the official Emirates Dubai 7s app, on the App Store and Google Play, and the same wallet pays for food and drink inside.",
+      "## The same month in Dubai",
+      "The <a href=\"/events/dubai-fitness-challenge-2026/\" title=\"Dubai Fitness Challenge 2026: dates, Dubai Ride, Dubai Run\">Dubai Fitness Challenge</a> ends on the Sunday of the 7s, and <a href=\"/events/trevor-noah-dubai-opera-2026/\" title=\"Trevor Noah Dubai Opera 2026: dates and tickets from AED 295\">Trevor Noah</a> plays Dubai Opera from November 25.",
+    ],
+    faq: [
+      {
+        q: "When is the Emirates Dubai 7s 2026?",
+        a: "From Friday, November 27, to Sunday, November 29, 2026, at The Sevens Stadium on the Al Ain Road.",
+      },
+      {
+        q: "How much are Dubai 7s tickets?",
+        a: "Friday is <strong>AED 75</strong> with under-15s free; Saturday or Sunday is <strong>AED 455</strong>; the 3-day pass is <strong>AED 595</strong>; a family ticket for two adults and two children is AED 1,136.",
+      },
+      {
+        q: "Who plays the music stage?",
+        a: "Jax Jones and Melanie C headline Beats on 2.",
+      },
+      {
+        q: "Which sports are on besides the HSBC SVNS?",
+        a: "Invitational Rugby, WODON3 Fitness, Rebound Padel, cricket, netball and, new this year, Gaelic football.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/dubai-fitness-challenge-2026/",
+        eyebrow: "Until November 29",
+        title: "Dubai Fitness Challenge 2026",
+        text: "The city's thirty days of activity end on the same Sunday as the 7s.",
+      },
+      {
+        href: "/events/trevor-noah-dubai-opera-2026/",
+        eyebrow: "From November 25",
+        title: "Trevor Noah at Dubai Opera",
+        text: "Stand-up the same week, tickets from AED 295.",
+      },
+      {
+        href: "/events/global-village-season-31-2026/",
+        eyebrow: "All season",
+        title: "Global Village Season 31",
+        text: "The pavilions on Sheikh Mohammed bin Zayed Road, AED 30 entry.",
+      },
+    ],
+    expertise:
+      "For anyone weighing a move, the 7s is the one weekend when expat Dubai turns up in one place: schools, clubs and companies field teams, and the stands are a fair cross-section of who lives here. Buy the 3-day pass rather than a single day: it costs AED 140 more than Saturday alone and adds Sunday's finals and the quieter Friday. The stadium is well outside the centre on the Al Ain Road, so settle the journey home before the day.",
+  },
 ];
