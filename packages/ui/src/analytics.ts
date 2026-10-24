@@ -10,8 +10,14 @@
 //
 // A deploy overrides either property via PUBLIC_GA_ID or PUBLIC_GA_ID_NON_DST.
 // Individual sites can also declare their own `gaId` in site.config.ts.
+//
+// The non-DST property is "Independent sites" (560638741) in the DST
+// Analytics account, created 24 Oct 2026 and shared with the ga4-reader
+// service account. Its predecessor G-8M9K2P4W7X (11–24 Oct 2026) belonged
+// to no account of ours: a real stream somewhere, unreadable, and the
+// two weeks it collected are gone.
 const CONFIGURED_DST_ID = "G-JBB43WWXW9";
-const CONFIGURED_NON_DST_ID = "G-8M9K2P4W7X";
+const CONFIGURED_NON_DST_ID = "G-SZ1C5XNM0Y";
 
 export const GA_MEASUREMENT_ID: string = import.meta.env.PUBLIC_GA_ID || CONFIGURED_DST_ID;
 export const GA_NON_DST_MEASUREMENT_ID: string =
