@@ -485,8 +485,9 @@ h2 { overflow-wrap: break-word; }
 /* A seller's price tables as text (Creamfields Chile: Punto Ticket's
    twelve images, four phases by two prices each). The group's name is a
    subheading, each table's name its caption. Every figure is the seller's
-   cell; a struck one keeps the seller's line and says "(tachado)", both in
-   the muted ink, and an unstruck one is plain ink: no accent, no weight,
+   cell; a struck one keeps the seller's line and says "(tachado)", or
+   "(crossed out)" on the English twin's tables, both in the muted ink,
+   and an unstruck one is plain ink: no accent, no weight,
    nothing that would say "this phase is the open one", which the seller's
    tables do not say. Cells at the small body step, never under 15px. */
 .guide-section h3 {
@@ -524,16 +525,21 @@ h2 { overflow-wrap: break-word; }
 }
 .price-table tbody th { font-weight: 600; }
 .price-table .struck { color: var(--ink-muted); }
-/* Below the width where a row's two prices and their "(tachado)" stop
+/* Below the width where a row's two prices and their struck word stop
    fitting beside the phase, each phase stacks: its name, then each price
-   after its column's name. Measured on all twelve, dark and light, on 22
-   October 2026: the table form needs a 354px column, a 382px window, and
-   358px (386px) in the fallback font; 25rem leaves room for both and moves
-   with the reader's font size, so a 412px phone gets the table and a 390px
-   one the stack. Same table, restyled; the column heads stay for a screen
-   reader, and the roles in the markup keep the cells a table's while they
-   are blocks. */
-@media (max-width: 25rem) {
+   after its column's name. One value serves both languages, and the
+   longer string sets it. Spanish, "$128.000 (tachado)", measured on all
+   twelve, dark and light, on 22 October 2026: the table form needs a
+   354px column, a 382px window, and 358px (386px) in the fallback font.
+   English, "128,000 (crossed out)", four characters longer, on the built
+   page on 24 October 2026: a 403px column, a 431px window, and 406px
+   (434px) in the fallback font, so at 25rem a 412px phone scrolled the
+   page sideways. 28rem clears the English fallback by 14px and moves
+   with the reader's font size: a 449px window gets the table, 448px and
+   every phone under it the stack.
+   Same table, restyled; the column heads stay for a screen reader, and the
+   roles in the markup keep the cells a table's while they are blocks. */
+@media (max-width: 28rem) {
   .price-table,
   .price-table caption,
   .price-table tbody,

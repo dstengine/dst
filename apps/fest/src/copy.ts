@@ -333,13 +333,32 @@ const KEEP_FR = new RegExp([FR_DATE, FR_COUNT].join("|"), "gu");
 // with its ordinal ("1st release", "4th release"), a phone number ("+52 55
 // 7200 0052") and the seller's three-word name, "Mr Nice VIP". A later
 // English guide adds the forms its own sweep finds, each with the guide
-// that needed it.
+// that needed it. Creamfields Chile's (24 October 2026) writes a sum with
+// its code before it, as Chile's pesos and GOV.UK's dollars are printed
+// for an English reader ("CLP 98,000", "USD 46"), and the club's phone
+// ("+56 2 2693 9600").
 const EN_TOKENS = [
   `\\b\\d[\\d,]*(?:\\.\\d+)? USD\\b`, // 2,196 USD, 6.00 USD (Zamna Tulum)
   `\\b\\d{1,2}:\\d{2} [ap]\\.m\\.`, // 3:00 a.m. (Zamna Tulum)
   `\\b\\d(?:st|nd|rd|th) release\\b`, // 1st release, 4th release (Zamna Tulum)
   `\\+52(?: \\d{2,4}){3}\\b`, // +52 55 7200 0052 (Zamna Tulum)
   `\\bMr Nice VIP\\b`, // Mr Nice VIP (Zamna Tulum)
+  `\\b(?:CLP|USD) \\d[\\d,]*\\b`, // CLP 98,000, USD 46 (Creamfields Chile)
+  `\\+56(?: \\d{1,4}){3}\\b`, // +56 2 2693 9600 (Creamfields Chile)
+  // The line-break sweep of Creamfields Chile's English pages (24 October
+  // 2026) found each of these split at a line's end, from 320 to 480 px: a
+  // size from its unit, a phase from its number, a share from its word, an
+  // ordinal from its noun, the seller's quoted age from its word, and the
+  // "line-" of a short link text stranding its "up" (DESIGN.md: a short
+  // hyphenated word strands no scrap). A short run holds each in a span; in
+  // a long one a no-break space holds the first five, and the hyphen is
+  // prose's to break.
+  `\\b\\d[\\d,.]* m²`, // 5,000 m², and the seller's own "5.000 m²" (Creamfields Chile)
+  `\\bVenta \\d\\b`, // Venta 3 (Creamfields Chile)
+  `\\b\\d+% off\\b`, // 20% off (Creamfields Chile)
+  `\\b\\d+(?:st|nd|rd|th) anniversary\\b`, // 20th anniversary (Creamfields Chile)
+  `\\b\\d+ años\\b`, // "mayores de 18 años", quoted (Creamfields Chile)
+  `\\b[Ll]ine-up\\b`, // the line-up page (Creamfields Chile)
 ];
 const KEEP_EN = new RegExp([KEEP_TOGETHER.source, ...EN_TOKENS].join("|"), "g");
 /** Each language's keep-together list, by the guide's locale where it has
@@ -394,7 +413,7 @@ const GLUE_ES_MX = new RegExp([...ES_MX_TOKENS, `\\b\\d{1,2} de ${MES}(?: de \\d
 // for short runs: the twin's lede broke "10 | years" at 320 px and
 // "180 | days" survived to 1280 (QA round 1, 9d). "Years" is capitalised
 // where it quotes a season's name.
-const GLUE_EN = new RegExp([...EN_TOKENS, `\\b\\d{1,2} ${MONTH}\\b`, `\\b\\d[\\d,.]*%? (?:km|mins?|hrs?|hours?|minutes|days?|nights?|people|person|[Yy]ears?|tickets?|passes)\\b`].join("|"), "g");
+const GLUE_EN = new RegExp([...EN_TOKENS, `\\b\\d{1,2} ${MONTH}\\b`, `\\b\\d[\\d,.]*%? (?:km|mins?|hrs?|hours?|minutes|days?|nights?|people|person|[Yy]ears?|tickets?|passes|artists)\\b`].join("|"), "g");
 const GLUE: Record<string, (run: string) => string> = {
   en: (run) => run.replace(GLUE_EN, (m) => m.replace(/ /g, "\u00a0")),
   "en-au": (run) => run,
@@ -475,12 +494,23 @@ const HEADING_KEEP_TH = new RegExp(`${THAI_DATE}[:,.;)]?`, "gu");
 // and « 18 | ans et plus » at 320).
 const JOUR = "(?:Lundi|Mardi|Mercredi|Jeudi|Vendredi|Samedi|Dimanche)";
 const HEADING_KEEP_FR = new RegExp(`(?:^${JOUR}[ \\u00a0])?${FR_DATE}[:,.;]?|${FR_COUNT}`, "gu");
+// An English heading, the house's "en" and not Beyond The Valley's frozen
+// "en-au", adds a day with its month and no year, and a share with its
+// word: the line-break sweep of 24 October 2026 broke Creamfields Chile's
+// line-up days ("Saturday 14 | November: six stages") from 320 to 480 px,
+// and its tickets heading ("Banco de Chile: 20% | off and instalments") at
+// 320 and from 430 to 480. "15 November:" is about 150 px at the heading's
+// 24 px, half the 292 px column at 320, so a nowrap holds it whole at
+// every width, as the date with its year above. A day with its year is
+// left to the span above, as it was.
+const HEADING_KEEP_EN = new RegExp(`\\b\\d{1,2} ${MONTH}\\b(?! \\d)[:,.;]?|\\b\\d+% off\\b`, "g");
 const HEADING_KEEP_BY: Record<string, RegExp> = { es: HEADING_KEEP_ES, pt: HEADING_KEEP_PT, th: HEADING_KEEP_TH, fr: HEADING_KEEP_FR };
 const HEADING_GLUE_FR = new RegExp(`(?<=\\d|\\der) (?=${MOIS}(?!\\p{L})|${FR_NOUN}(?!\\p{L}))`, "gu");
 const HEADING_GLUE: Record<string, (span: string) => string> = { fr: (m) => m.replace(HEADING_GLUE_FR, "\u00a0") };
 const ASTRO_ESCAPES: Record<string, string> = { "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" };
 export const headingHtml = (text: string, lang = "en") => {
-  const html = text.replace(/[&<>'"]/g, (c) => ASTRO_ESCAPES[c]).replace(HEADING_KEEP, (m) => `<span class="nowrap">${m}</span>`);
+  const set = text.replace(/[&<>'"]/g, (c) => ASTRO_ESCAPES[c]).replace(HEADING_KEEP, (m) => `<span class="nowrap">${m}</span>`);
+  const html = lang.toLowerCase() === "en" ? set.replace(HEADING_KEEP_EN, (m) => `<span class="nowrap">${m}</span>`) : set;
   const keep = HEADING_KEEP_BY[lang.slice(0, 2).toLowerCase()];
   const glue = HEADING_GLUE[lang.slice(0, 2).toLowerCase()] ?? ((m: string) => m);
   return keep ? html.replace(keep, (m) => `<span class="keep-date">${glue(m)}</span>`) : html;
@@ -915,8 +945,15 @@ function parse(text: string, ctx: Ctx, kind: Section["kind"] = "prose"): Block[]
 /** A table's cells, the separator row ("|---|") left out. */
 const cells = (row: string) => row.slice(1, -1).split("|").map((c) => c.trim());
 const isRule = (row: string) => cells(row).every((c) => /^:?-{3,}:?$/.test(c));
-/** A price the seller strikes, as the copy writes it: "$128.000 (tachado)". */
-const STRUCK = /^(\$\d[\d.]*\d) \(tachado\)$/;
+/** A price the seller strikes, as the copy writes it, with the word its
+    guide's language says it in: "$128.000 (tachado)" on the Spanish
+    tables, "128,000 (crossed out)" on the English twin's (Creamfields
+    Chile, 24 October 2026). */
+const STRUCK = /^(\$\d[\d.]*\d|\d{1,3}(?:,\d{3})+) \((tachado|crossed out)\)$/;
+/** The struck word of each language that has a table. A cell in another
+    language's word would print struck on the wrong page, so the build
+    stops on it, as on a row with the wrong count of cells. */
+const STRUCK_WORD: Record<string, string> = { es: "tachado", en: "crossed out" };
 
 /** A table: the header row as column heads, each row led by its first cell
     as the row's head, each other cell carrying its column's name in
@@ -924,15 +961,16 @@ const STRUCK = /^(\$\d[\d.]*\d) \(tachado\)$/;
     .price-table). The roles are written out because that layout sets the
     parts as blocks, and a block loses the table's meaning for a screen
     reader. A struck price keeps its strike and its word: the line through
-    the figure for the eye, "(tachado)" for everyone, both in the muted ink
-    and kept on one line. */
+    the figure for the eye, "(tachado)" or "(crossed out)" for everyone,
+    both in the muted ink and kept on one line. */
 function tableHtml(rows: string[], caption: Part | undefined, ctx: Ctx): string {
   const [head, ...body] = rows.filter((r) => !isRule(r));
   const heads = cells(head);
   const cell = (text: string) => {
     const struck = STRUCK.exec(text);
+    if (struck && struck[2] !== STRUCK_WORD[ctx.guide.lang.split("-")[0]]) throw new Error(`${ctx.where}: a struck price says "(${struck[2]})" on a guide in ${ctx.guide.lang}: "${text}"`);
     return struck
-      ? `<span class="nowrap"><s>${esc(struck[1])}</s> (tachado)</span>`
+      ? `<span class="nowrap"><s>${esc(struck[1])}</s> (${struck[2]})</span>`
       : marks(text, ctx, SITE).html;
   };
   const tr = (row: string) => {

@@ -183,15 +183,34 @@ describe("the copy and its sheet", () => {
   // reading: the build could never take it down. So would one written
   // with its currency code after it, as Mexico writes dollars ("90 USD",
   // Zamna Tulum), which the sign's pattern does not see, or with its sign
-  // after it, as Quebec does (« 49,00 $ », « 39 $ », Igloofest).
+  // after it, as Quebec does (« 49,00 $ », « 39 $ », Igloofest), or with
+  // its code before it, as Creamfields Chile's English guide writes pesos
+  // ("CLP 98,000").
   test("every price sits in an expiry span", () => {
     const loose = [];
     for (const { where, text, guide } of all) {
       const left = copy.applySpans(text, guide, END_OF_TIME, where);
-      const hit = left.match(/[^\s]*\$\s?\d[\d,.]*|\d[\d,]*\s?\$(?!\s?\d)|\d[\d,]*\s?บาท|\d[\d,.]*\s?(?:USD|MXN|BRL|CLP|THB|CAD|EUR)\b/g);
+      const hit = left.match(/[^\s]*\$\s?\d[\d,.]*|\d[\d,]*\s?\$(?!\s?\d)|\d[\d,]*\s?บาท|\d[\d,.]*\s?(?:USD|MXN|BRL|CLP|THB|CAD|EUR)\b|\bCLP\s?\d[\d,.]*/g);
       if (hit) loose.push(`${where}: ${hit.join(", ")}`);
     }
     assert.deepEqual(loose, [], "wrap the sentence in {{until prices}}…{{/until}} (or the key its expiry has)");
+  });
+
+  // A price table's cells print a figure with neither sign nor code
+  // ("128,000", Creamfields Chile's English tables), which no pattern above
+  // can tell from a count; in a section of kind "table", any grouped
+  // figure or sign left once every span is gone is a price that would
+  // outlive its reading (the CTO, gate 3 of that guide).
+  test("every figure in a price table sits in an expiry span", () => {
+    const loose = [];
+    for (const guide of guides)
+      for (const page of guide.pages)
+        for (const s of page.sections.filter((x) => x.kind === "table")) {
+          const where = `${page.slug} sections.${s.id}`;
+          const hit = copy.applySpans(s.body, guide, END_OF_TIME, where).match(/\d{1,3}(?:,\d{3})+|\$\d/g);
+          if (hit) loose.push(`${where}: ${hit.join(", ")}`);
+        }
+    assert.deepEqual(loose, [], "wrap the row, the caption or the table in {{until prices}}…{{/until}}");
   });
 
   // Clock-driven by design: from the day `expires` names, the build drops
@@ -631,6 +650,57 @@ describe("where a guide's links lead", () => {
     const btvEvent = rules.eventOf(events, btv);
     assert.equal(at(btv, btvEvent, short), short);
     assert.equal(at(btv, btvEvent, long), long);
+    // Creamfields Chile's forms, on its own twin: a code before its sum,
+    // and the club's phone; en-AU leaves them as they were.
+    const cream = events.find((e) => e.slug === "creamfields-chile");
+    const cen = guides.find((g) => g.event === "creamfields-chile" && g.lang === "en");
+    const chile = "From CLP 98,000 a day, USD 46 a day by the travel advice, and the club on +56 2 2693 9600.";
+    const set = at(cen, cream, chile);
+    for (const token of ["CLP 98,000", "USD 46", "+56 2 2693 9600"]) assert.ok(set.includes(`<span class="nowrap">${token}</span>`), token);
+    assert.equal(at(btv, btvEvent, chile), chile);
+    // And what its line-break sweep found split (copy.ts, EN_TOKENS): a
+    // size with its unit, a phase with its number, a share with its word,
+    // an ordinal with its noun, a quoted age with its word, and "line-up"
+    // whole in a short run; in a long one, the same pairs and a count of
+    // artists by no-break spaces.
+    const sweep = "On 5,000 m², Venta 3 at 20% off, the 20th anniversary, \"mayores de 18 años\", and the line-up page.";
+    const swept = at(cen, cream, sweep);
+    for (const token of ["5,000 m²", "Venta 3", "20% off", "20th anniversary", "18 años", "line-up"]) assert.ok(swept.includes(`<span class="nowrap">${token}</span>`), token);
+    const prose = `${"Two days at the Club Hípico, six stages a day, every name in the order of the seller's own pictures. ".repeat(2)}It counts 85 artists, a zone of 5.000 m², Venta 3 at 20% off, the 20th anniversary and "mayores de 18 años".`;
+    const glued = at(cen, cream, prose);
+    for (const pair of ["85\u00a0artists", "5.000\u00a0m²", "Venta\u00a03", "20%\u00a0off", "20th\u00a0anniversary", "18\u00a0años"]) assert.ok(glued.includes(pair), pair);
+    assert.equal(at(btv, btvEvent, sweep), sweep);
+    assert.equal(at(btv, btvEvent, prose), prose);
+  });
+
+  // An English heading keeps a day with its month and a share with its
+  // word ("Saturday 14 | November: six stages" and "20% | off" broke in
+  // Creamfields Chile's sweep); en-AU's headings are set as they were.
+  test("an English heading keeps a day with its month, and en-AU's is unchanged", () => {
+    assert.equal(copy.headingHtml("Saturday 14 November: six stages", "en"), 'Saturday <span class="nowrap">14 November:</span> six stages');
+    assert.equal(copy.headingHtml("Banco de Chile: 20% off and instalments, for its cardholders", "en"), 'Banco de Chile: <span class="nowrap">20% off</span> and instalments, for its cardholders');
+    assert.equal(copy.headingHtml("Monday 28 December", "en-AU"), "Monday 28 December");
+    assert.equal(copy.headingHtml("What the tables showed on 24 October 2026", "en"), 'What the tables showed on 24 <span class="nowrap">October 2026</span>');
+  });
+
+  // A struck price prints its strike and its word, in the language of its
+  // guide: the Spanish tables' "$128.000 (tachado)" and the English twin's
+  // "128,000 (crossed out)" (Creamfields Chile). An open price is plain,
+  // and a word of the other language is a fault the build stops on.
+  test("a struck price is struck in Spanish and in English, an open one plain", () => {
+    const event = events.find((e) => e.slug === "creamfields-chile");
+    const table = (lang, rows) => {
+      const guide = guides.find((g) => g.event === "creamfields-chile" && g.lang === lang);
+      return copy.blocks(rows, { event, guide, today: "2026-10-24", where: "fixture" }, "table");
+    };
+    const es = table("es-CL", "| Fase | Precio normal |\n|---|---|\n| Venta 3 | $128.000 (tachado) |\n| Venta 4 | $160.000 |");
+    assert.ok(es.includes('<td role="cell" data-label="Precio normal" class="struck"><span class="nowrap"><s>$128.000</s> (tachado)</span></td>'), es);
+    assert.ok(es.includes('<td role="cell" data-label="Precio normal">$160.000</td>'), es);
+    const en = table("en", "| Phase | Normal price |\n|---|---|\n| Venta 3 | 128,000 (crossed out) |\n| Venta 4 | 160,000 |");
+    assert.ok(en.includes('<td role="cell" data-label="Normal price" class="struck"><span class="nowrap"><s>128,000</s> (crossed out)</span></td>'), en);
+    assert.ok(en.includes('<td role="cell" data-label="Normal price">160,000</td>'), en);
+    assert.throws(() => table("en", "| Phase | Normal price |\n|---|---|\n| Venta 3 | 128,000 (tachado) |"), /a struck price says "\(tachado\)" on a guide in en/);
+    assert.throws(() => table("es-CL", "| Fase | Precio normal |\n|---|---|\n| Venta 3 | $128.000 (crossed out) |"), /a struck price says "\(crossed out\)" on a guide in es-CL/);
   });
 });
 
@@ -984,6 +1054,32 @@ describe("the built pages", { skip: built ? false : "apps/fest/dist is missing: 
       }
     }
     assert.deepEqual(bad, []);
+  });
+
+  // Every price table built: one a "|" block of its table sections' live
+  // copy, and one struck cell a struck word of its guide's language, which
+  // tableHtml prints struck; a word it missed would print as an open price
+  // (Creamfields Chile's English "(crossed out)", 24 Oct 2026). The twin's
+  // tickets page carries the Spanish one's twelve tables until the 16th.
+  test("each price table and each struck cell the copy holds is built", () => {
+    const day = rules.today();
+    const WORD = { es: "(tachado)", en: "(crossed out)" };
+    const bad = [];
+    for (const guide of guides)
+      for (const page of guide.pages) {
+        const live = page.sections.filter((x) => x.kind === "table").map((x) => copy.applySpans(x.body, guide, day, page.slug)).join("\n\n");
+        const p = `/${page.slug}/`;
+        const got = html.get(p) ?? "";
+        const tables = live.split(/\n{2,}/).filter((b) => b.split("\n").every((l) => /^\|.*\|$/.test(l.trim())) && b.trim()).length;
+        const word = WORD[guide.lang.split("-")[0]];
+        const cellsStruck = word ? live.split(` ${word} |`).length - 1 : 0;
+        const builtTables = got.split('<table class="price-table"').length - 1;
+        const builtStruck = got.split('class="struck"').length - 1;
+        if (builtTables !== tables || builtStruck !== cellsStruck) bad.push(`${p}: ${builtTables} tables and ${builtStruck} struck cells built, the copy's ${tables} and ${cellsStruck}`);
+      }
+    assert.deepEqual(bad, []);
+    const twin = guides.find((g) => g.event === "creamfields-chile" && g.lang === "en");
+    if (day < twin.expires.prices) assert.equal((html.get("/creamfields-chile/en/tickets/") ?? "").split('<table class="price-table"').length - 1, 12);
   });
 });
 
