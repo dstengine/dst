@@ -505,4 +505,85 @@ export const items: EventItem[] = [
     expertise:
       "Choose the day by the children rather than the programme: the page lists one programme for all three days at one price, and Saturday, Halloween itself, is the one everyone else will choose. Pack a change of clothes, since the playground's water play is part of the deal, and arrive well before dark if the haunted house is for small children, because the same haunted house reads very differently after dark.",
   },
+
+  {
+    slug: "un-2026-water-conference-abu-dhabi",
+    createdAt: "2026-10-25T02:30:00+04:00",
+    updatedAt: "2026-10-25T02:30:00+04:00",
+    site: "eco",
+    image: "/covers/un-2026-water-conference-abu-dhabi.jpg",
+    imageAlt: "A single water drop holding a small globe, rings of ripples spreading out around it on a green ground",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "UN 2026 Water Conference in Abu Dhabi",
+    cardTitle: "UN 2026 Water Conference",
+    titleSeo: "UN 2026 Water Conference: 8–10 December, Abu Dhabi",
+    summary:
+      "The UN 2026 Water Conference meets at ADNEC in Abu Dhabi from Tuesday 8 to Thursday 10 December 2026, co-hosted by the UAE and Senegal, to take stock of SDG 6, clean water and sanitation for all: six interactive dialogues over three days, from cooperation and investment to people and the planet.",
+    start: "2026-12-08",
+    end: "2026-12-10",
+    utcOffset: "+04:00",
+    venue: "ADNEC Centre Abu Dhabi",
+    city: "Abu Dhabi",
+    country: "United Arab Emirates",
+    geo: { name: "ADNEC, Abu Dhabi National Exhibition Centre", lat: 24.4181, lng: 54.4336 },
+    organizer: "United Nations, co-hosted by the UAE and Senegal",
+    category: "Summit",
+    ticket: {
+      url: "https://sdgs.un.org/conferences/water2026",
+      label: "Conference page",
+      sells: false,
+    },
+    source: {
+      name: "United Nations, UN 2026 Water Conference",
+      url: "https://sdgs.un.org/conferences/water2026",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "The United Nations holds its next conference on water in the Gulf. The <strong>UN 2026 Water Conference</strong> meets at <strong>ADNEC</strong> in <strong>Abu Dhabi</strong> from <strong>Tuesday 8 to Thursday 10 December 2026</strong>, co-hosted by the <strong>UAE</strong> and <strong>Senegal</strong>, to review progress on <strong>Sustainable Development Goal 6</strong>: clean water and sanitation for all. It follows the 2023 conference in New York.",
+      "## Six dialogues",
+      "The conference is built around six interactive dialogues, two a day. <strong>8 December</strong>: cooperation, and water for prosperity. <strong>9 December</strong>: investments, and water for people. <strong>10 December</strong>: water for the planet, and the multilateral processes that govern it.",
+      "## Who can take part",
+      "Member states, the UN system and stakeholders registered through the conference page. The deadline for stakeholder registration is <strong>6 November 2026</strong> at 23:59 New York time; for UN system entities it is <strong>13 November</strong>.",
+      "## Around it",
+      "It opens less than three weeks after <a href=\"/events/cop31-antalya-2026/\" title=\"COP31 Antalya: 9–20 November 2026, how to attend\">COP31 in Antalya</a> closes, and ADNEC hosts <a href=\"/events/abu-dhabi-sustainability-week-2027/\" title=\"Abu Dhabi Sustainability Week 2027: 10–14 January\">Abu Dhabi Sustainability Week</a> a month later.",
+    ],
+    faq: [
+      {
+        q: "When and where is the UN 2026 Water Conference?",
+        a: "From Tuesday 8 to Thursday 10 December 2026, at ADNEC in Abu Dhabi, co-hosted by the UAE and Senegal.",
+      },
+      {
+        q: "What is the conference about?",
+        a: "It reviews progress on SDG 6, clean water and sanitation for all, through six interactive dialogues: cooperation, prosperity, investments, people, the planet and multilateral processes.",
+      },
+      {
+        q: "How do stakeholders register?",
+        a: "Through the conference page on sdgs.un.org, by 6 November 2026 at 23:59 New York time; UN system entities have until 13 November.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/cop31-antalya-2026/",
+        eyebrow: "9–20 November",
+        title: "COP31 in Antalya",
+        text: "The UN climate conference, which closes less than three weeks before.",
+      },
+      {
+        href: "/events/abu-dhabi-sustainability-week-2027/",
+        eyebrow: "10–14 January",
+        title: "Abu Dhabi Sustainability Week 2027",
+        text: "At ADNEC again a month later.",
+      },
+      {
+        href: "/events/world-future-energy-summit-2027/",
+        eyebrow: "12–14 January",
+        title: "World Future Energy Summit 2027",
+        text: "The exhibition during Sustainability Week, with a hall for water.",
+      },
+    ],
+    expertise:
+      "For a Gulf audience the subject is not abstract. The UAE draws most of its drinking water from desalination, so the questions the dialogues on investment and the planet will press, energy per cubic metre and what happens to the brine, are the local ones. If you are an NGO or company that wants to be in the room, the date that matters is 6 November, not 8 December.",
+  },
 ];
