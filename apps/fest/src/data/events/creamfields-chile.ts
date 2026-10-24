@@ -1933,7 +1933,7 @@ export const guides: Guide[] = [
   {
     slug: "es-CL",
     createdAt: "2026-10-22T17:00:00+04:00",
-    updatedAt: "2026-10-23T14:10:00+04:00",
+    updatedAt: "2026-10-24T09:17:00+04:00",
     event: "creamfields-chile",
     lang: "es-CL",
     dir: "ltr",
@@ -1941,9 +1941,9 @@ export const guides: Guide[] = [
     cover: "/covers/creamfields-chile.jpg",
     hubLabel: "Español (Chile)",
     hubBlurb: "Creamfields Chile 2026 se hace el sábado 14 y el domingo 15 de noviembre de 2026 en el Club Hípico de Santiago, Av. Blanco Encalada 2540, Santiago Centro [editions_v2.items.0.dates] [venue.address].",
-    // The prices and the sale lines come off the day after the edition, 16
-    // November 2026, well inside the 42 days the oldest reading in a span
-    // allows (tickets.service_charge, 21 October: 2 December).
+    // The prices and the sale lines come off on 16 November 2026, the day
+    // after the edition, inside 42 days of each span's oldest reading: sale,
+    // sellers.0.kind, 21 Oct (2 Dec); prices, reserve_plan_v2.seller_page.text, 22 Oct (3 Dec).
     expires: { prices: "2026-11-16", sale: "2026-11-16" },
     pages: [
       {
@@ -2162,7 +2162,7 @@ export const guides: Guide[] = [
   {
     slug: "en",
     createdAt: "2026-10-24T08:25:00+04:00",
-    updatedAt: "2026-10-24T08:25:00+04:00",
+    updatedAt: "2026-10-24T09:17:00+04:00",
     event: "creamfields-chile",
     // The English twin: the same edition and sheet, for a reader who
     // searches in English. Second in the list, so the Spanish guide stays the
@@ -2174,16 +2174,16 @@ export const guides: Guide[] = [
     cover: "/covers/creamfields-chile.jpg",
     hubLabel: "English",
     hubBlurb: "Creamfields Chile 2026 is on Saturday 14 and Sunday 15 November 2026 at the Club Hípico de Santiago, Av. Blanco Encalada 2540, Santiago Centro [editions_v2.items.0.dates] [venue.address].",
-    // The Spanish guide's day: every reading inside a span is of 24 October
-    // 2026, or of 21 October for the service charge, inside 42 days on the
-    // 16th.
+    // The Spanish guide's day, inside 42 days of each span's oldest reading:
+    // sale, sellers.0.kind, 21 October (2 December); prices,
+    // reserve_plan_v2.seller_page.text, 22 October (3 December).
     expires: { prices: "2026-11-16", sale: "2026-11-16" },
     footerNote: "An independent guide, written from the sources named in it, each with the date it was read. None of them has a hand in it.",
     pages: [
       {
         slug: "creamfields-chile/en",
         createdAt: "2026-10-24T08:25:00+04:00",
-        updatedAt: "2026-10-24T08:25:00+04:00",
+        updatedAt: "2026-10-24T09:17:00+04:00",
         kind: "main",
         label: "Guide",
         crumb: "Creamfields Chile 2026",
@@ -2313,7 +2313,7 @@ export const guides: Guide[] = [
         ],
         sourcesHeading: "Sources",
         sourcesNote: "Read on 24 October 2026 unless another date is given.",
-        sources: "- [Punto Ticket, the official Creamfields Chile 2026 page (creamfields.cl forwards here)](/go/creamfields-chile-tickets/): dates, entry conditions, the cashless wristband [sources.s1]\n- The line-up{{until prices}} and the twelve price tables{{/until}}, pictures on the same page [sources.s20]\n- [Club Hípico de Santiago, contact page](/go/creamfields-chile-venue/), read 22 October 2026 [sources.s3]\n- Centropuerto, airport buses: the home page in English and the República and Maipú route pages, at centropuerto.cl [sources.s32] [sources.s36] [sources.s37]\n- [GOV.UK, Chile entry requirements](/go/creamfields-chile-gov-uk/), updated 9 October 2026 [sources.s30]\n- [Government of Canada, travel advice for Chile](/go/creamfields-chile-travel-gc-ca/), updated 19 October 2026 [sources.s31]\n- [Chile Travel (Sernatur), \"Two days of electronic music in Santiago\"](/go/creamfields-chile-chile-travel/) [sources.s35]\n- Creamfields, \"History\" and \"International\", at creamfields.com [sources.s28] [sources.s29]\n- Press, cited in the text, each read 22 October 2026: Radio Agricultura, 23 May 2025 and 17 March 2026 [sources.s21] [sources.s9]. La Tercera Culto, 26 May 2025 [sources.s8]. CNN Chile, \"Vuelve Creamfields Chile: Cuándo es la edición 2026 en Santiago y cómo inscribirse para la preventa\" [sources.s10]. Meganoticias and 24horas.cl, 7 August 2026 [sources.s12] [sources.s13] [editions_v2.readOn]\n- [Creamfields Chile on Instagram, the organiser's channel](/go/creamfields-chile-instagram/) [sources.s19]",
+        sources: "- [Punto Ticket, the official Creamfields Chile 2026 page (creamfields.cl forwards here)](/go/creamfields-chile-tickets/): dates, entry conditions, the cashless wristband [sources.s1]\n- The line-up{{until prices}} and the twelve price tables{{/until}}, pictures on the same page [sources.s20]\n- [Club Hípico de Santiago, contact page](/go/creamfields-chile-venue/), read 22 October 2026 [sources.s3]\n- Centropuerto, airport buses: the home page in English and the República and Maipú route pages, at centropuerto.cl [sources.s32] [sources.s36] [sources.s37]\n- [GOV.UK, Chile entry requirements](/go/creamfields-chile-gov-uk/), updated 9 October 2026 [sources.s30]\n- [Government of Canada, travel advice for Chile](/go/creamfields-chile-travel-gc-ca/), updated 19 October 2026 [sources.s31]\n- [Chile Travel (Sernatur), \"Two days of electronic music in Santiago\"](/go/creamfields-chile-chile-travel/) [sources.s35]\n- Creamfields, \"History\" and \"International\", at creamfields.com [sources.s28] [sources.s29]\n- Press, cited in the text, each read 22 October 2026: Radio Agricultura, 23 May 2025 and 17 March 2026 [sources.s21] [sources.s9]. La Tercera Culto, 26 May 2025 [sources.s8]. CNN Chile, \"Vuelve Creamfields Chile: Cuándo es la edición 2026 en Santiago y cómo inscribirse para la preventa\" [sources.s10]. Meganoticias and 24horas.cl, 7 August 2026 [sources.s12] [sources.s13] [editions_v2.readOn]\n- [Creamfields Chile on Instagram, the organiser's channel](/go/creamfields-chile-instagram/), for news. It was not read for this guide, and no fact here rests on it [sources.s19]",
       },
       {
         slug: "creamfields-chile/en/tickets",

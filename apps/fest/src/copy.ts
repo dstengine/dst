@@ -343,6 +343,10 @@ const EN_TOKENS = [
   `\\b\\d(?:st|nd|rd|th) release\\b`, // 1st release, 4th release (Zamna Tulum)
   `\\+52(?: \\d{2,4}){3}\\b`, // +52 55 7200 0052 (Zamna Tulum)
   `\\bMr Nice VIP\\b`, // Mr Nice VIP (Zamna Tulum)
+  // A bonus with its word, ahead of the bare sum below so that it wins at
+  // the same place: QA round 1 (24 October 2026) found the five short items
+  // of the main page's bonus scale broken at 320 px, "CLP 6,000 | bonus".
+  `\\bCLP \\d[\\d,]* bonus\\b`, // CLP 5,000 bonus (Creamfields Chile)
   `\\b(?:CLP|USD) \\d[\\d,]*\\b`, // CLP 98,000, USD 46 (Creamfields Chile)
   `\\+56(?: \\d{1,4}){3}\\b`, // +56 2 2693 9600 (Creamfields Chile)
   // The line-break sweep of Creamfields Chile's English pages (24 October

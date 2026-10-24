@@ -658,6 +658,10 @@ describe("where a guide's links lead", () => {
     const set = at(cen, cream, chile);
     for (const token of ["CLP 98,000", "USD 46", "+56 2 2693 9600"]) assert.ok(set.includes(`<span class="nowrap">${token}</span>`), token);
     assert.equal(at(btv, btvEvent, chile), chile);
+    // The bonus scale's items keep the word with its figure (QA round 1).
+    const scale = "CLP 50,000 loaded: CLP 5,000 bonus";
+    assert.ok(at(cen, cream, scale).includes('<span class="nowrap">CLP 5,000 bonus</span>'));
+    assert.equal(at(btv, btvEvent, scale), scale);
     // And what its line-break sweep found split (copy.ts, EN_TOKENS): a
     // size with its unit, a phase with its number, a share with its word,
     // an ordinal with its noun, a quoted age with its word, and "line-up"
