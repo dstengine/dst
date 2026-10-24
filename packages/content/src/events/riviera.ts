@@ -75,7 +75,7 @@ export const items: EventItem[] = [
   {
     slug: "dubai-fitness-challenge-2026",
     createdAt: "2026-08-25T18:18:34+04:00",
-    updatedAt: "2026-10-12T02:45:00+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
     site: "riviera",
     image: "/covers/dubai-fitness-challenge-2026.jpg",
     imageAlt: "A running track looping through a field of low city blocks, seen from above",
@@ -105,6 +105,12 @@ export const items: EventItem[] = [
         eyebrow: "Palm Jumeirah",
         title: "Halloween Run 2026 at West Beach",
         text: "The first morning of the challenge in fancy dress: 1km, 3km and 5km on West Beach from 8:30am, with trophies for costumes.",
+      },
+      {
+        href: "/events/after-dark-halloween-night-run-kite-beach-2026/",
+        eyebrow: "Kite Beach",
+        title: "After Dark night run, Kite Beach",
+        text: "A Friday night Halloween run on 30 October; the list is full and the waitlist open.",
       },
     ],
     expertise:
@@ -288,7 +294,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-run-west-beach-2026",
     createdAt: "2026-10-12T02:45:00+04:00",
-    updatedAt: "2026-10-12T02:45:00+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
     site: "riviera",
     image: "/covers/halloween-run-west-beach-2026.jpg",
     imageAlt: "A wide pale beach seen from above, a dotted running route with three small red flags and little orange pumpkins curving across the sand towards a turquoise sea, palm trees and villas at the far edge",
@@ -350,6 +356,12 @@ export const items: EventItem[] = [
         eyebrow: "Sheikh Zayed Road",
         title: "Dubai Ride 2026",
         text: "The next morning: Sheikh Zayed Road closed to cars and open to bicycles on Sunday 1 November.",
+      },
+      {
+        href: "/events/after-dark-halloween-night-run-kite-beach-2026/",
+        eyebrow: "Kite Beach",
+        title: "After Dark night run, Kite Beach",
+        text: "A Friday night Halloween run on 30 October; the list is full and the waitlist open.",
       },
     ],
     expertise:
@@ -540,5 +552,88 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Go early. One free evening on a waterfront of this size means the promenade is full by eight, and the installations read best in the first hour after dark, around six, when the souk is still half empty and the abras are still running at their daytime frequency. Eat at the souk afterwards rather than before, when the tables have turned once.",
+  },
+  {
+    slug: "after-dark-halloween-night-run-kite-beach-2026",
+    createdAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
+    site: "riviera",
+    image: "/covers/after-dark-halloween-night-run-kite-beach-2026.jpg",
+    imageAlt: "Two runners with head torches on a pale beach at night, palm trees, a moon reflected in the sea and kites in the sky",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "After Dark: Halloween Community Night Run at Kite Beach",
+    cardTitle: "After Dark night run, Kite Beach",
+    titleSeo: "Kite Beach Halloween Night Run, 30 Oct, from Azizi Riviera",
+    summary:
+      "Five Dubai running communities meet at SOIL on Kite Beach on Friday 30 October 2026 at 7:30pm for a night run along the beach, all paces welcome, with glow sticks, music and Halloween outfits optional. The list is full and a waitlist is open on Luma. A Friday evening run for Azizi Riviera residents, the night before the Halloween races.",
+    start: "2026-10-30",
+    startTime: "19:30",
+    endTime: "21:30",
+    utcOffset: "+04:00",
+    venue: "SOIL, Kite Beach",
+    city: "Dubai",
+    country: "United Arab Emirates",
+    geo: { name: "SOIL, Kite Beach", lat: 25.16794, lng: 55.21119 },
+    organizer: "Off Pace",
+    category: "Sport",
+    ticket: { url: "https://luma.com/42zdqx0n", label: "Waitlist on Luma", sells: false },
+    source: {
+      name: "Luma: After Dark, Halloween Community Night Run",
+      url: "https://luma.com/42zdqx0n",
+      verifiedOn: "2026-10-24",
+    },
+    body: [
+      "Five of Dubai's running communities are putting on one night run together. <strong>After Dark</strong> meets at <strong>SOIL on Kite Beach</strong> on <strong>Friday 30 October 2026</strong> at <strong>7:30pm</strong>, runs along the beach after dark and finishes back at SOIL by 9:30pm.",
+      "## Who is running it",
+      "Off Pace presents it with <strong>TINARC</strong>, <strong>KYN Hybrid</strong>, <strong>Wolfpack Fitness</strong> and <strong>Women Who Thrive</strong>. It is billed for <strong>all paces and all levels</strong>: come to run, to meet people, or for the atmosphere.",
+      "## Glow sticks, music and costumes",
+      "There are glow sticks and lights, and music along the way. Halloween outfits are welcome but, in the organisers' words, definitely not required.",
+      "## Getting a place",
+      "The run is <strong>full</strong>, and the Luma page has a <strong>waitlist</strong>; 128 people had signed up by 24 October. No price is listed.",
+      "## The morning after",
+      "If one run is not enough, the <a href=\"/events/halloween-run-west-beach-2026/\" title=\"Halloween Run 2026 at West Beach\">Halloween Run at West Beach</a> on Palm Jumeirah starts at 8:30am the next day, the first morning of <a href=\"/events/dubai-fitness-challenge-2026/\" title=\"Dubai Fitness Challenge 2026\">Dubai Fitness Challenge</a>.",
+    ],
+    faq: [
+      {
+        q: "When is the After Dark Halloween night run at Kite Beach?",
+        a: "On Friday 30 October 2026, 7:30pm to 9:30pm, starting and finishing at SOIL on Kite Beach, Umm Suqeim.",
+      },
+      {
+        q: "Can I still join?",
+        a: "The run is full. The Luma page has a waitlist.",
+      },
+      {
+        q: "Do I need to be fast?",
+        a: "No. The organisers bill it for all paces and all levels.",
+      },
+      {
+        q: "Do I have to wear a costume?",
+        a: "No. Halloween outfits are welcome but not required.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/halloween-run-west-beach-2026/",
+        eyebrow: "Saturday 31 October",
+        title: "Halloween Run 2026 at West Beach",
+        text: "The next morning: 1 km, 3 km and 5 km in costume on Palm Jumeirah.",
+      },
+      {
+        href: "/events/dubai-fitness-challenge-2026/",
+        eyebrow: "From 31 October",
+        title: "Dubai Fitness Challenge 2026",
+        text: "Thirty days of free workouts and runs across the city.",
+      },
+      {
+        href: "/events/dubai-run-2026/",
+        eyebrow: "22 November",
+        title: "Dubai Run 2026",
+        text: "Sheikh Zayed Road closed to traffic for a free 5 km and 10 km.",
+      },
+    ],
+    expertise:
+      "Join the waitlist even though the list says full: community runs usually lose some of their sign-ups on the night, and five clubs' worth of runners is a crowd that can absorb a few more. Bring a light of your own as well as the glow sticks, because the beach path is darker than the road beside it, and expect to run at conversation pace: a run billed for all levels waits for its slowest group.",
   },
 ];
