@@ -67,6 +67,7 @@ export const ICONS: Record<string, string> = {
   users: "M9 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7ZM2.5 20c.7-3.3 3.2-5 6.5-5s5.8 1.7 6.5 5M16 5.5a3 3 0 0 1 0 6M18 15c2 .7 3.2 2.3 3.5 5",
   chat: "M4 5h16v11H9l-5 4V5ZM8 9h8M8 12.5h5",
   help: "M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18ZM9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.8.4-1 .8-1 1.7M12 17h.01",
+  key: "M7.5 12a4.5 4.5 0 1 0 0 9a4.5 4.5 0 1 0 0-9ZM10.7 13.3 20.5 3.5M16.5 7.5l3 3M13.8 10.2l2.2 2.2",
 };
 
 export function iconFor(href: string): string | undefined {
