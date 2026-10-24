@@ -1815,4 +1815,92 @@ export const items: EventItem[] = [
     expertise:
       "Elija la fecha por el punto de salida antes que por el día: el Ángel queda junto a la línea 7 del Metrobús y a las esculturas de Camino a la Luz, mientras que las dos salidas desde Cibeles, el 25 y el 31, son las más cómodas para quien vive o se hospeda en la Roma y la Condesa. El 31 de octubre será la noche más concurrida de la temporada. Coma algo antes: la cena incluida es ligera y el recorrido termina a las once.",
   },
+
+  {
+    slug: "e-prix-ciudad-de-mexico-2027",
+    createdAt: "2026-10-25T02:30:00+04:00",
+    updatedAt: "2026-10-25T02:30:00+04:00",
+    site: "cmx",
+    image: "/covers/e-prix-ciudad-de-mexico-2027.jpg",
+    imageAlt: "Un monoplaza rojo de carreras de frente en la pista, con las gradas de un estadio llenas de público detrás",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "E-Prix de la Ciudad de México 2027",
+    cardTitle: "E-Prix de la Ciudad de México 2027",
+    titleSeo: "E-Prix de la Ciudad de México 2027: 16 de enero, boletos",
+    summary:
+      "La Fórmula E vuelve al Autódromo Hermanos Rodríguez de la Ciudad de México el sábado 16 de enero de 2027 con la tercera fecha del campeonato, el debut en México del auto GEN4 y un concierto de Mau y Ricky al terminar la carrera, incluido para todos los asistentes.",
+    start: "2027-01-16",
+    utcOffset: "-06:00",
+    venue: "Autódromo Hermanos Rodríguez",
+    city: "Ciudad de México",
+    country: "México",
+    geo: { name: "Autódromo Hermanos Rodríguez", lat: 19.406245, lng: -99.094593 },
+    organizer: "Fórmula E",
+    category: "Deporte",
+    ticket: {
+      url: "https://www.fiaformulae.com/en/mexicocity",
+      label: "Boletos",
+      sells: false,
+    },
+    source: {
+      name: "Fórmula E, Bridgestone Mexico City E-Prix",
+      url: "https://www.fiaformulae.com/en/mexicocity",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "La Fórmula E abre su año en la Ciudad de México. El <strong>Bridgestone Mexico City E-Prix 2027</strong> es el <strong>sábado 16 de enero de 2027</strong> en el <strong>Autódromo Hermanos Rodríguez</strong>, como tercera fecha del campeonato, con un trazado que atraviesa el <strong>Foro Sol</strong>.",
+      "## El GEN4 llega a México",
+      "Es la primera vez que el auto <strong>GEN4</strong> corre en México. Tiene <strong>600 kW</strong> de potencia y <strong>tracción total activa</strong>, llega a <strong>335 km/h</strong> y, según la Fórmula E, es en promedio <strong>diez segundos más rápido por vuelta de clasificación</strong> que su antecesor, con hasta <strong>150% más carga aerodinámica</strong>. Corre con la nueva llanta Bridgestone POTENZA.",
+      "## Lo que dicen los pilotos",
+      "El piloto español Pepe Martí, de CUPRA Kiro, ha señalado el paso por el estadio como una de las partes más emocionantes del circuito.",
+      "## Concierto de Mau y Ricky",
+      "Al terminar la carrera, el dúo venezolano <strong>Mau y Ricky</strong>, con varias nominaciones al Latin GRAMMY, da un concierto incluido en todos los boletos.",
+      "## Boletos",
+      "En la fase 2, del <strong>22 de octubre al 9 de noviembre de 2026</strong>, los precios son: <strong>Foro GNP y zona accesible</strong> (gradas Sur y Norte), <strong>$600</strong>; <strong>Gradas</strong>, <strong>$1,000</strong>; <strong>Platino Plus</strong>, <strong>$1,100</strong>; <strong>Box Oro</strong>, <strong>$1,600</strong>; y <strong>Box Diamante</strong>, <strong>$1,900</strong>, en pesos y sin los cargos de Ticketmaster. El <strong>10 de noviembre</strong> pasan a la siguiente fase de precios.",
+      "## En el mismo autódromo",
+      "Antes del E-Prix, el Autódromo recibe el <a href=\"/eventos/corona-capital-2026/\" title=\"Corona Capital 2026\">Corona Capital</a> del 20 al 22 de noviembre y el <a href=\"/eventos/coca-cola-flow-fest-2026/\" title=\"Flow Fest 2026, Ciudad de México: fechas, cartel, boletos\">Flow Fest</a> el 28 y 29 de noviembre.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo es el E-Prix de la Ciudad de México 2027?",
+        a: "El sábado 16 de enero de 2027, en el Autódromo Hermanos Rodríguez.",
+      },
+      {
+        q: "¿Cuánto cuestan los boletos?",
+        a: "En la fase 2, del 22 de octubre al 9 de noviembre de 2026, van de $600 en el Foro GNP a $1,900 en Box Diamante, sin cargos de Ticketmaster. Suben el 10 de noviembre.",
+      },
+      {
+        q: "¿Quién da el concierto después de la carrera?",
+        a: "Mau y Ricky, incluido en todos los boletos.",
+      },
+      {
+        q: "¿Qué es el GEN4?",
+        a: "El nuevo auto de la Fórmula E: 600 kW, tracción total activa, 335 km/h y hasta 150% más carga aerodinámica que el anterior. En México debuta en esta carrera.",
+      },
+    ],
+    related: [
+      {
+        href: "/eventos/corona-capital-2026/",
+        eyebrow: "20 al 22 de noviembre",
+        title: "Corona Capital 2026",
+        text: "El festival en el mismo autódromo, dos meses antes.",
+      },
+      {
+        href: "/eventos/coca-cola-flow-fest-2026/",
+        eyebrow: "28 y 29 de noviembre",
+        title: "Flow Fest 2026",
+        text: "Reguetón en la Curva 4 del Autódromo.",
+      },
+      {
+        href: "/eventos/gran-premio-ciudad-de-mexico-2026/",
+        eyebrow: "30 de octubre al 1 de noviembre",
+        title: "Gran Premio de la Ciudad de México 2026",
+        text: "La Fórmula 1 en el mismo circuito.",
+      },
+    ],
+    expertise:
+      "Si ya sabe que va, compre antes del 10 de noviembre: es el día en que los precios suben de fase. El Foro GNP es la zona más barata de esta fase. Como el concierto de Mau y Ricky es después de la carrera, cuente con salir del Autódromo ya de noche y planee el regreso en Metro o aplicación con tiempo.",
+  },
 ];
