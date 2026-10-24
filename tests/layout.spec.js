@@ -632,6 +632,11 @@ test.describe("A/B/n", () => {
   const EVENT = "/events/elgar-enigma-variations-yerevan-2026/";
   const LABELS = { label: "Tickets", buy: "Buy tickets", price: "Tickets from AMD 3,000" };
   const button = (page) => page.locator("a.button[data-ticket]");
+  // data-experiments, and the `exp` on every GA4 event, list every test
+  // the page view is in — an event page on tick is in meta-hook too — so
+  // the ticket-price tag is looked for among them, not as the whole value.
+  const tags = (value) => (value ?? "").split(" ").filter(Boolean);
+  const ours = (list) => list.filter((t) => t.startsWith("ticket-price:"));
   const state = (page) =>
     page.evaluate(() => ({
       chosen: document.documentElement.getAttribute("data-exp-ticket-price"),
@@ -645,8 +650,10 @@ test.describe("A/B/n", () => {
     await page.goto(url("tick", EVENT));
     const first = await state(page);
     expect(Object.keys(LABELS)).toContain(first.chosen);
-    expect(first.tags).toBe(`ticket-price:${first.chosen}`);
-    expect(first.impressions).toEqual([`ticket-price:${first.chosen}`]);
+    expect(ours(tags(first.tags))).toEqual([`ticket-price:${first.chosen}`]);
+    expect(ours(first.impressions)).toEqual([`ticket-price:${first.chosen}`]);
+    // One impression per test, each carrying its own tag only.
+    expect(first.impressions).toEqual(tags(first.tags));
     await expect(button(page)).toHaveText(LABELS[first.chosen], { useInnerText: true });
 
     // The same visitor in the other language is the same visitor.
@@ -665,8 +672,9 @@ test.describe("A/B/n", () => {
     });
     const click = events.find((e) => e[1] === "ticket_click");
     expect(click, `no ticket_click among ${JSON.stringify(events)}`).toBeTruthy();
-    const { chosen } = await state(page);
-    expect(click[2].exp).toBe(`ticket-price:${chosen}`);
+    const { chosen, tags: onPage } = await state(page);
+    expect(tags(click[2].exp)).toContain(`ticket-price:${chosen}`);
+    expect(click[2].exp, "every test the page view is in").toBe(onPage);
     // The words on screen, not all three labels run together.
     expect(click[2].text).toBe(LABELS[chosen]);
   });
@@ -676,8 +684,8 @@ test.describe("A/B/n", () => {
       await page.goto(url("tick", `${EVENT}?exp=ticket-price:${variant}`));
       await expect(button(page)).toHaveText(text, { useInnerText: true });
       const s = await state(page);
-      expect(s.tags, "a forced variant is tagged as a visit").toBeNull();
-      expect(s.impressions).toEqual([]);
+      expect(ours(tags(s.tags)), "a forced variant is tagged as a visit").toEqual([]);
+      expect(ours(s.impressions)).toEqual([]);
     }
   });
 

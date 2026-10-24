@@ -2,7 +2,8 @@ import { test, describe } from "node:test";
 import assert from "node:assert/strict";
 import vm from "node:vm";
 import { EXPERIMENTS, liveExperiments, bucket, variantOf, fnv1a, BUCKET_JS } from "../src/experiments.ts";
-import { NETWORK } from "../src/network.ts";
+import { HOSTS as APP_HOSTS } from "../../../tools/hosts.mjs";
+import { hookTitle, eventMeta } from "../../ui/src/meta.ts";
 
 const exp = (over) => ({
   id: "t",
@@ -19,7 +20,9 @@ describe("the registry", () => {
   // An id and a variant are an HTML attribute name, a CSS selector and a
   // GA4 parameter value; anything outside this set breaks one of the three.
   const NAME = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
-  const HOSTS = new Set([...NETWORK.map((s) => s.host), "tick.am", "aivideo.zone"]);
+  // Every host an app of ours serves — the one list tools/lastmod.mjs and
+  // tools/pipeline.mjs read, so a site launched there is ours here too.
+  const HOSTS = new Set(Object.values(APP_HOSTS));
 
   for (const e of EXPERIMENTS) {
     test(`${e.id} is well-formed`, () => {
@@ -127,5 +130,34 @@ describe("variantOf", () => {
     assert.equal(variantOf(e, "k", "2025-12-31"), "a");
     assert.equal(variantOf(e, "k", "2026-06-01"), "a");
     assert.equal(variantOf(e, "k", "2026-02-01"), bucket(e, "k"));
+  });
+});
+
+describe("meta-hook titles", () => {
+  // The hook is built in @dst/ui/meta; what it may never do is give two
+  // pages of one site the same title.
+  const tick = { lang: "en-GB", titleSuffix: "Yerevan", keyword: "Yerevan" };
+  const stage = (slug, titleSeo, start = "2026-10-10") => ({ slug, title: titleSeo, titleSeo, summary: "s", start });
+  const rock = stage("rock", "Yerevan City Day: rock concert at Diana Abgar Park");
+  const rap = stage("rap", "Yerevan City Day: rap concert at English Park");
+
+  test("cuts a title to its name when the name is the page's own", () => {
+    assert.equal(hookTitle(rock.titleSeo, rock, tick), "Yerevan City Day 2026: dates, prices & tips");
+  });
+
+  test("keeps the control when another page goes by the same name", () => {
+    assert.equal(hookTitle(rock.titleSeo, rock, tick, [rap]), undefined);
+  });
+
+  test("another year's edition is another name", () => {
+    assert.equal(hookTitle(rock.titleSeo, rock, tick, [stage("rap-2025", rap.titleSeo, "2025-10-11")]), "Yerevan City Day 2026: dates, prices & tips");
+  });
+
+  test("eventMeta checks the page against its siblings, not against itself", () => {
+    // /events/rock/ on tick.am falls in the hook arm.
+    const page = { host: "tick.am", path: "/events/rock/", today: "2026-10-25" };
+    assert.equal(eventMeta(rock, tick, page).variant, "hook");
+    assert.equal(eventMeta(rock, tick, { ...page, siblings: [rock] }).title, "Yerevan City Day 2026: dates, prices & tips");
+    assert.equal(eventMeta(rock, tick, { ...page, siblings: [rock, rap] }).title, rock.titleSeo);
   });
 });

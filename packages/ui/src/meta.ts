@@ -36,6 +36,7 @@ const HOOKS: Record<string, {
 export const DESCRIPTION_LIMIT = 160;
 
 export interface MetaEvent {
+  slug?: string;
   title: string;
   titleSeo?: string;
   summary: string;
@@ -57,6 +58,10 @@ export interface MetaPage {
   key?: string;
   /** The build's date; today when absent. */
   today?: string;
+  /** The site's other event pages in this page's language — `more` in
+      every template. A hook cut to the name before the title's colon must
+      not be a name another page also carries. */
+  siblings?: MetaEvent[];
 }
 
 export interface EventMeta { title: string; description: string; variant: string }
@@ -70,7 +75,8 @@ export function eventMeta(item: MetaEvent, site: MetaSite, page: MetaPage): Even
   if (!exp || !liveExperiments(page.host, page.path, today).some((e) => e.id === META_TEST)) return plain;
   const variant = variantOf(exp, page.key ?? page.path, today);
   if (variant !== "hook") return { ...plain, variant };
-  const title = hookTitle(base, item, site) ?? plain.title;
+  const others = (page.siblings ?? []).filter((o) => o !== item && !(item.slug && o.slug === item.slug));
+  const title = hookTitle(base, item, site, others) ?? plain.title;
   return { title, description: hookDescription(item, site), variant };
 }
 
@@ -79,18 +85,30 @@ export function eventMeta(item: MetaEvent, site: MetaSite, page: MetaPage): Even
     same two over the name alone when the base already carries a tail of its
     own ("Halloween im Prater 2026: fünf Tage, keine Parade" → "Halloween im
     Prater 2026: Termine & Preise"); nothing when none fits, and the page
-    keeps its dated title. */
-export function hookTitle(base: string, event: { start: string }, site: MetaSite): string | undefined {
-  const lang = (site.lang ?? "en").slice(0, 2);
-  const hook = HOOKS[lang] ?? HOOKS.en;
-  const year = event.start.slice(0, 4);
-  const dated = (name: string) => (/\b(19|20)\d\d\b/.test(name) ? name : `${name} ${year}`);
-  const head = base.split(/:\s|\s[–—]\s/)[0];
-  const names = head.length >= 12 && head !== base ? [dated(base), dated(head)] : [dated(base)];
+    keeps its dated title.
+
+    The name alone only when no other page of the site goes by it in the
+    same year (`others`): six stages of Yerevan City Day are each "Yerevan
+    City Day: <the stage>", and cut to the name they would be six pages
+    under one title, none of them saying which stage it is. */
+export function hookTitle(
+  base: string,
+  event: { start: string },
+  site: MetaSite,
+  others: { title: string; titleSeo?: string; start: string }[] = [],
+): string | undefined {
+  const locale = site.lang ?? "en";
+  const hook = HOOKS[locale.slice(0, 2)] ?? HOOKS.en;
+  const head = headOf(base);
+  const key = (name: string, start: string) => dated(name, start).toLocaleLowerCase(locale);
+  const shared = others.some((o) => key(headOf(o.titleSeo ?? o.title), o.start) === key(head, event.start));
+  const names = head.length >= 12 && head !== base && !shared
+    ? [dated(base, event.start), dated(head, event.start)]
+    : [dated(base, event.start)];
   for (const named of names) {
     for (const words of [hook.long, hook.short]) {
       const candidate = `${named}: ${words}`;
-      if (withSuffix(candidate, site.titleSuffix, site.keyword, site.lang ?? "en").length <= TITLE_LIMIT) return candidate;
+      if (withSuffix(candidate, site.titleSuffix, site.keyword, locale).length <= TITLE_LIMIT) return candidate;
     }
   }
   return undefined;
@@ -118,6 +136,17 @@ export function hookDescription(item: MetaEvent, site: MetaSite): string {
   if (said(whole)) return whole;
   const tail = ` — ${site.keyword}`;
   return `${fit(DESCRIPTION_LIMIT - tail.length)}${tail}`;
+}
+
+/** A title up to its own tail: "Halloween im Prater" of "Halloween im
+    Prater: fünf Tage, keine Parade". The whole title when it has none. */
+function headOf(base: string): string {
+  return base.split(/:\s|\s[–—]\s/)[0];
+}
+
+/** The name with its year, unless it names one already. */
+function dated(name: string, start: string): string {
+  return /\b(19|20)\d\d\b/.test(name) ? name : `${name} ${start.slice(0, 4)}`;
 }
 
 function when(event: { start: string; end?: string }, locale: string): string {

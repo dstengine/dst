@@ -18,7 +18,7 @@ const sourceHref = item.source?.url ? go(`${item.slug}-source`) : undefined;
 // The search title and description, with the meta-hook page test applied
 // (@dst/ui/meta). Keyed like BaseLayout keys the page: its English path,
 // so both language twins show the same variant.
-const meta = eventMeta(item, site[lang], { host: Astro.site?.hostname ?? "", path: Astro.url.pathname, key: alternates(Astro.url.pathname)[0].href });
+const meta = eventMeta(item, site[lang], { host: Astro.site?.hostname ?? "", path: Astro.url.pathname, key: alternates(Astro.url.pathname)[0].href, siblings: more });
 ---
 <Layout lang={lang} title={meta.title} description={meta.description} image={item.image}>
   <EventArticle

@@ -44,7 +44,8 @@ export function track(name: TrackEvent, params: Record<string, unknown> = {}): v
     if (typeof gtag !== "function") return;
     // The A/B/n tests this page view is in, as "id:variant id:variant".
     // On every event rather than only the impression, so a ticket_click can
-    // be split by variant without joining it to anything.
+    // be split by variant without joining it to anything — as "contains
+    // ticket-price:buy", since a page in two tests carries both tags.
     const exp = document.documentElement.getAttribute("data-experiments");
     gtag("event", name, {
       // Which site in the network the event came from. Every host reports
