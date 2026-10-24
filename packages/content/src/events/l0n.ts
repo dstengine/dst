@@ -6,7 +6,7 @@ export const items: EventItem[] = [
   {
     slug: "new-years-eve-fireworks-london-2026",
     createdAt: "2026-10-21T21:40:00+04:00",
-    updatedAt: "2026-10-21T21:40:00+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
     site: "l0n",
     image: "/covers/new-years-eve-fireworks-london-2026.jpg",
     imageAlt: "Fireworks bursting over a wide river at night, a big observation wheel standing on the far bank",
@@ -60,6 +60,14 @@ export const items: EventItem[] = [
       {
         q: "When do tickets go on sale?",
         a: "The first batch at <strong>noon on Friday 23 October 2026</strong>, on Ticketmaster only. A second batch follows on a date still to be announced.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/duran-duran-danse-macabre-halloween-o2-2026/",
+        eyebrow: "31 October",
+        title: "Duran Duran's Halloween at The O2",
+        text: "Duran Duran's Danse Macabre at The O2 on Halloween night.",
       },
     ],
   },
@@ -433,7 +441,7 @@ export const items: EventItem[] = [
   {
     slug: "philip-glass-at-90-southbank-2027",
     createdAt: "2026-10-24T16:10:00+04:00",
-    updatedAt: "2026-10-24T16:10:00+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
     site: "l0n",
     image: "/covers/philip-glass-at-90-southbank-2027.jpg",
     imageAlt: "Twelve narrow vertical paper bars in rising shades of grey and gold, repeating across a dark ground like a score",
@@ -489,5 +497,97 @@ export const items: EventItem[] = [
         a: "The Southbank Centre does not list him as a performer. The concerts are by Riot Ensemble, Brooklyn Rider, Manchester Collective and, for the symphony, an orchestra still to be named with Davóne Tines.",
       },
     ],
+    related: [
+      {
+        href: "/events/duran-duran-danse-macabre-halloween-o2-2026/",
+        eyebrow: "31 October",
+        title: "Duran Duran's Halloween at The O2",
+        text: "Duran Duran's Danse Macabre at The O2 on Halloween night.",
+      },
+    ],
+  },
+  {
+    slug: "duran-duran-danse-macabre-halloween-o2-2026",
+    createdAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
+    site: "l0n",
+    image: "/covers/duran-duran-danse-macabre-halloween-o2-2026.jpg",
+    imageAlt: "A great white tent dome with yellow masts on a river bank at night, a line of small dancing skeletons along the water before it",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Duran Duran: The Danse Macabre Halloween Party at The O2",
+    cardTitle: "Duran Duran's Halloween at The O2",
+    titleSeo: "Duran Duran Halloween at The O2, London: 31 October 2026",
+    summary:
+      "Duran Duran end their UK arena tour with their first Halloween show in London: The Danse Macabre Halloween Party at The O2 on Saturday 31 October 2026, doors 6.30pm, fans encouraged to dress up, and a set of twisted hits, deep cuts and rarities. Tickets through AXS, The O2's official partner.",
+    start: "2026-10-31",
+    startTime: "18:30",
+    utcOffset: "+00:00",
+    venue: "The O2, Greenwich Peninsula",
+    city: "London",
+    country: "United Kingdom",
+    geo: { name: "The O2", lat: 51.50293, lng: 0.00318 },
+    organizer: "Duran Duran",
+    category: "Music",
+    ticket: { url: "https://www.theo2.co.uk/events/detail/duran-duran-2026", label: "Tickets on The O2" },
+    source: {
+      name: "Duran Duran",
+      url: "https://duranduran.com/?p=80340",
+      verifiedOn: "2026-10-24",
+    },
+    body: [
+      "Duran Duran have thrown a Halloween party twice before, and this year they bring it to London. <strong>The Danse Macabre Halloween Party</strong> at <strong>The O2</strong> on <strong>Saturday 31 October 2026</strong> is the finale of the band's UK arena tour and their first Halloween show in the capital. Doors open at <strong>6.30pm</strong>.",
+      "## The third Danse Macabre",
+      "The first Danse Macabre party was in Las Vegas in 2022, and the second at Co-op Live in Manchester in 2025. London is the third.",
+      "## What to expect",
+      "The band promise <strong>twisted hits, unexpected deep cuts and rarely played treasures</strong>, and fans are encouraged to come dressed up. No support act has been announced for the London date.",
+      "## Tickets",
+      "Tickets went on general sale on 10 July, after a presale on 8 July. <strong>AXS</strong> is The O2's official ticketing partner, so buy through The O2's own event page rather than a resale site.",
+      "## The tour before it",
+      "The arena tour reaches London after Glasgow on 15 October, Belfast on 18 October, Birmingham on 20 October, Liverpool on 23 October and Leeds on 24 October.",
+      "## Getting there",
+      "The O2 is on the Greenwich Peninsula, beside North Greenwich station on the Jubilee line. After Halloween, the next big night on this calendar is <a href=\"/events/new-years-eve-fireworks-london-2026/\" title=\"London New Year's Eve fireworks 2026\">New Year's Eve on the Thames</a>.",
+    ],
+    faq: [
+      {
+        q: "When is Duran Duran's Halloween show at The O2?",
+        a: "On Saturday 31 October 2026. Doors open at 6.30pm.",
+      },
+      {
+        q: "Where can I buy tickets?",
+        a: "Through The O2's event page: AXS is The O2's official ticketing partner.",
+      },
+      {
+        q: "Should I dress up?",
+        a: "Yes, if you like. Fans are encouraged to come in costume for the Danse Macabre Halloween Party.",
+      },
+      {
+        q: "Is there a support act?",
+        a: "None has been announced for the London date.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/new-years-eve-fireworks-london-2026/",
+        eyebrow: "31 December",
+        title: "London New Year's Eve fireworks 2026",
+        text: "The Mayor's fireworks on the Thames, tickets from £20 for Londoners.",
+      },
+      {
+        href: "/events/philip-glass-at-90-southbank-2027/",
+        eyebrow: "30–31 January 2027",
+        title: "Philip Glass at 90",
+        text: "Music in 12 Parts in full and a UK premiere at the Southbank Centre.",
+      },
+      {
+        href: "/events/gala-2027/",
+        eyebrow: "Presale 30 October",
+        title: "GALA 2027, Peckham Rye Park",
+        text: "Four Tet, HAAi and DJ Harvey in the first wave, the day before Halloween.",
+      },
+    ],
+    expertise:
+      "A Halloween show is a different evening from an ordinary arena night, and this one is built that way: the setlist is promised to wander well off the greatest hits, which rewards the people who know the albums, and the crowd is asked to dress up, which rewards everyone else. Get there early: the Jubilee line to North Greenwich on a Saturday night, half the carriage in costume, is slow going.",
   },
 ];
