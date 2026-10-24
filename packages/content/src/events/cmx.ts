@@ -848,7 +848,7 @@ export const items: EventItem[] = [
   {
     slug: "festival-del-terror-six-flags-2026",
     createdAt: "2026-09-12T22:20:00+04:00",
-    updatedAt: "2026-10-13T04:36:07+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
     site: "cmx",
     image: "/covers/festival-del-terror-six-flags-2026.jpg",
     imageAlt:
@@ -926,6 +926,12 @@ export const items: EventItem[] = [
         eyebrow: "Chapultepec",
         title: "Maloween en Aztlán",
         text: "Una noche solo para mayores de 18: juegos mecánicos y fiesta de Halloween el sábado 24 de octubre, $480.",
+      },
+      {
+        href: "/eventos/turibus-del-terror-cdmx-2026/",
+        eyebrow: "Hasta el 2 de noviembre",
+        title: "Turibús del Terror",
+        text: "Un recorrido nocturno por casas con leyenda, con salida del Ángel, desde $799.",
       },
     ],
     expertise:
@@ -1655,7 +1661,7 @@ export const items: EventItem[] = [
   {
     slug: "camino-a-la-luz-reforma-2026",
     createdAt: "2026-10-24T16:00:00+04:00",
-    updatedAt: "2026-10-24T16:00:00+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
     site: "cmx",
     image: "/covers/camino-a-la-luz-reforma-2026.jpg",
     imageAlt:
@@ -1710,5 +1716,103 @@ export const items: EventItem[] = [
         a: "Veintidós piezas lumínicas de gran formato: catrinas, calaveras, túneles de luz, xoloitzcuintles, ajolotes y cempasúchil.",
       },
     ],
+    related: [
+      {
+        href: "/eventos/turibus-del-terror-cdmx-2026/",
+        eyebrow: "Hasta el 2 de noviembre",
+        title: "Turibús del Terror",
+        text: "Un recorrido nocturno por casas con leyenda, con salida del Ángel, desde $799.",
+      },
+    ],
+  },
+  {
+    slug: "turibus-del-terror-cdmx-2026",
+    createdAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
+    site: "cmx",
+    image: "/covers/turibus-del-terror-cdmx-2026.jpg",
+    imageAlt: "Un autobús rojo de dos pisos con fantasmas asomados a las ventanas, de noche, frente a una columna coronada por una figura dorada alada y una luna llena",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Turibús del Terror 2026 en la Ciudad de México",
+    cardTitle: "Turibús del Terror",
+    titleSeo: "Turibús del Terror 2026, Ciudad de México: fechas y precio",
+    summary:
+      "Un recorrido nocturno de unas cuatro horas por casas con leyenda de la Ciudad de México: el Turibús del Terror sale a las 19:00 del Ángel de la Independencia, o de la Fuente de Cibeles el 25 y el 31 de octubre, con paradas en el Hotel Posada del Sol, la Casa Negra, la Casona de Fidel y la Casa del País de los Duendes. Adultos, $799 MXN con cena ligera; últimas salidas el 1 y el 2 de noviembre.",
+    start: "2026-10-03",
+    end: "2026-11-02",
+    startTime: "19:00",
+    endTime: "23:00",
+    utcOffset: "-06:00",
+    venue: "Ángel de la Independencia, Paseo de la Reforma",
+    city: "Ciudad de México",
+    country: "México",
+    geo: { name: "Ángel de la Independencia", lat: 19.427, lng: -99.16767 },
+    organizer: "Turibús",
+    category: "Cultura",
+    tickets: { priceFrom: 799, currency: "MXN" },
+    ticket: {
+      url: "https://www.turibus.com.mx/es/cdmx/experiencias/turibus-del-terror",
+      label: "Boletos desde $799",
+    },
+    source: {
+      name: "Turibús",
+      url: "https://www.turibus.com.mx/es/cdmx/experiencias/turibus-del-terror",
+      verifiedOn: "2026-10-24",
+    },
+    body: [
+      "El Turibús cambia la ruta de los monumentos por la de los fantasmas. El <strong>Turibús del Terror</strong> es un recorrido nocturno de unas <strong>cuatro horas</strong>, de las <strong>19:00 a las 23:00</strong>, por cuatro casas de la Ciudad de México con historia de aparecidos.",
+      "## Las cuatro paradas",
+      "El <strong>Hotel Posada del Sol</strong>, la <strong>Casa Negra</strong>, la <strong>Casona de Fidel</strong> y la <strong>Casa del País de los Duendes</strong>.",
+      "## Fechas y punto de salida",
+      "En octubre salió los días 3, 4, 9, 10, 16, 17, 18 y 23, y quedan el <strong>24 y el 30 de octubre</strong> y el <strong>1 y el 2 de noviembre</strong> desde el <strong>Ángel de la Independencia</strong>. El <strong>25 y el 31 de octubre</strong> sale de la <strong>Fuente de Cibeles</strong>, en la colonia Roma. El abordaje es a las <strong>18:30</strong>.",
+      "## Qué incluye y cuánto cuesta",
+      "El boleto de adulto (13 años en adelante) cuesta <strong>$799 MXN</strong>, y hay tarifas para niños de 4 a 12 años y para INAPAM. Incluye el viaje redondo en Turibús, una cena ligera (hamburguesa, papas y bebida), un coordinador y seguro de viajero.",
+      "## Antes de subir",
+      "Hay que conservar el boleto y la pulsera durante todo el recorrido. El Turibús recomienda zapatos cómodos y una chamarra: son cuatro horas de noche, entrando y saliendo del autobús.",
+      "## La misma semana",
+      "El recorrido coincide con la temporada de <a href=\"/eventos/camino-a-la-luz-reforma-2026/\" title=\"Camino a la Luz 2026 en Reforma\">Camino a la Luz</a>, las esculturas de luz que van del Ángel hacia Chapultepec, y con la <a href=\"/eventos/ofrenda-monumental-zocalo-2026/\" title=\"Ofrenda Monumental del Zócalo 2026\">Ofrenda Monumental del Zócalo</a> a partir del 29 de octubre.",
+    ],
+    faq: [
+      {
+        q: "¿Qué días sale el Turibús del Terror 2026?",
+        a: "Quedan el 24 y el 30 de octubre y el 1 y el 2 de noviembre desde el Ángel de la Independencia, y el 25 y el 31 de octubre desde la Fuente de Cibeles. El recorrido va de las 19:00 a las 23:00, con abordaje a las 18:30.",
+      },
+      {
+        q: "¿Cuánto cuesta el Turibús del Terror?",
+        a: "$799 MXN el boleto de adulto (13 años en adelante). Hay tarifas para niños de 4 a 12 años y para INAPAM.",
+      },
+      {
+        q: "¿Qué casas visita?",
+        a: "El Hotel Posada del Sol, la Casa Negra, la Casona de Fidel y la Casa del País de los Duendes.",
+      },
+      {
+        q: "¿Incluye cena?",
+        a: "Sí, una cena ligera: hamburguesa, papas y bebida. También incluye el viaje redondo, un coordinador y seguro de viajero.",
+      },
+    ],
+    related: [
+      {
+        href: "/eventos/camino-a-la-luz-reforma-2026/",
+        eyebrow: "Hasta el 8 de noviembre",
+        title: "Camino a la Luz en Reforma",
+        text: "Veintidós esculturas de luz del Ángel a Chapultepec, junto al punto de salida.",
+      },
+      {
+        href: "/eventos/ofrenda-monumental-zocalo-2026/",
+        eyebrow: "Del 29 de octubre al 2 de noviembre",
+        title: "Ofrenda Monumental del Zócalo",
+        text: "Un homenaje a La Catrina de Posada, con una escultura de cartonería de 32 metros.",
+      },
+      {
+        href: "/eventos/festival-del-terror-six-flags-2026/",
+        eyebrow: "Hasta el 16 de noviembre",
+        title: "Festival del Terror en Six Flags",
+        text: "Ocho atracciones de terror en Tlalpan, para quien prefiere el susto dentro de un parque.",
+      },
+    ],
+    expertise:
+      "Elija la fecha por el punto de salida antes que por el día: el Ángel queda junto a la línea 7 del Metrobús y a las esculturas de Camino a la Luz, mientras que las dos salidas desde Cibeles, el 25 y el 31, son las más cómodas para quien vive o se hospeda en la Roma y la Condesa. El 31 de octubre será la noche más concurrida de la temporada. Coma algo antes: la cena incluida es ligera y el recorrido termina a las once.",
   },
 ];
