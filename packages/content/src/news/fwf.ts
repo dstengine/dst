@@ -580,4 +580,73 @@ export const items: NewsItem[] = [
     expertise:
       "This is the PropTech story most worth following, because it is the one with a government registry behind it. Fractional property platforms have existed for a decade and mostly foundered on the same question — what exactly does the buyer own if the platform closes. A pilot that answers it at the land registry is a different proposition, and it is why property tokenisation keeps appearing on Dubai conference agendas while it has quietly dropped off others.",
   },
+  {
+    slug: "glydways-pods-on-trial-at-bluewaters",
+    createdAt: "2026-10-24T16:00:00+04:00",
+    updatedAt: "2026-10-24T16:00:00+04:00",
+    site: "fwf",
+    image: "/covers/glydways-pods-on-trial-at-bluewaters.jpg",
+    imageAlt: "A chain of small pale lilac paper capsules on a thin curving track across an indigo ground",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Glydways pods are on trial at Bluewaters: four seats, no driver, 20,000 passengers an hour",
+    cardTitle: "Glydways pods on trial",
+    titleSeo: "Glydways Dubai trial: driverless pods at Bluewaters",
+    summary:
+      "Dubai's RTA began a four-week trial of Glydways' automated transit system at Bluewaters on 12 October 2026: four-to-six-seat driverless vehicles on a narrow dedicated guideway at up to 50 km/h, with a claimed capacity of more than 20,000 passengers an hour. Five corridors are under study for a permanent line.",
+    date: "2026-10-24",
+    category: "Mobility",
+    source: {
+      name: "Roads and Transport Authority",
+      url: "https://www.rta.ae/wps/portal/rta/ae/home/news-and-media/all-news/NewsDetails/launching-the-trial-operations-for-the-automated-transit-system-to-enhance-flexible-mobility-options",
+      verifiedOn: "2026-10-24",
+    },
+    body: [
+      "Dubai has trialled most of the ways a city can move people without a driver: the robotaxis now in <a href=\"/news/rta-starts-commercial-robotaxi-operations/\" title=\"RTA starts commercial robotaxi operations\">commercial service</a>, the air taxi, the autonomous bus. On <strong>12 October 2026</strong> the <strong>Roads and Transport Authority</strong> added one more: <strong>Glydways</strong>' automated transit system, on trial at <strong>Bluewaters</strong> for <strong>four weeks</strong>.",
+      "## What it is",
+      "Small driverless vehicles for <strong>four to six passengers</strong> on a <strong>dedicated guideway</strong> narrower than a traffic lane, running <strong>on demand</strong> rather than to a timetable, at up to <strong>50 km/h</strong>. Because the vehicles are small and continuous, the RTA puts the line capacity at <strong>more than 20,000 passengers an hour</strong> in each direction, the figure of a light-rail line at a fraction of its cost.",
+      "## Where it might go",
+      "The authority lists the corridors under study: a <strong>2.8 km</strong> link from the <strong>National Paints</strong> Metro station to Bluewaters, and lines in <strong>Jumeirah Village Circle</strong>, <strong>Festival City</strong>, <strong>Business Bay</strong> and <strong>Mohammed Bin Rashid City</strong>. None has a date or a budget.",
+      "## Who said what",
+      "<strong>Mattar Al Tayer</strong>, the RTA's director general, framed the trial within the plan to make a quarter of the city's journeys autonomous by 2030; <strong>Mark Seeger</strong>, Glydways' chief executive, said Dubai is the company's first deployment outside the United States.",
+    ],
+    expertise:
+      "Glydways is a personal-rapid-transit idea with 2020s software, and the reason it is interesting in Dubai is the city's shape: wide blocks, long walks from any metro station to any front door, and a climate that makes the walk the reason people drive. The corridors on the RTA's list are all last-mile problems next to a metro station, which is the one job this kind of system is good at. The thing to watch is not the trial but whether the National Paints link gets a contract; a 2.8 km first line is how the RTA has started every mode it later built out.",
+  },
+
+  {
+    slug: "five-student-teams-four-days-and-mistral-the-rtas-traffic-challenge",
+    createdAt: "2026-10-24T16:00:00+04:00",
+    updatedAt: "2026-10-24T16:00:00+04:00",
+    site: "fwf",
+    image: "/covers/five-student-teams-four-days-and-mistral-the-rtas-traffic-challenge.jpg",
+    imageAlt: "Five pale lilac paper dots in a row on an indigo ground, a periwinkle traffic-light bar standing beside them",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Five student teams, four days and Mistral: the RTA's traffic-flow challenge",
+    cardTitle: "RTA's AI traffic challenge",
+    titleSeo: "Dubai RTA Smart Mobility Challenge: AI for traffic",
+    summary:
+      "The RTA ran a Smart Mobility Innovation Challenge at its headquarters: five teams of Canadian University Dubai students spent four days with Mistral AI's tools on traffic-signal optimisation, congestion prediction, flow diagnosis, intersection coordination and decision support. A small event, and a sign of which AI vendor the authority is working with.",
+    date: "2026-10-24",
+    category: "AI",
+    source: {
+      name: "Roads and Transport Authority",
+      url: "https://www.rta.ae/wps/portal/rta/ae/home/news-and-media/all-news/NewsDetails/smart-mobility-innovation-challenge-seeks-technological-solutions-to-improve-traffic-flow-efficiency-in-dubai",
+      verifiedOn: "2026-10-24",
+    },
+    body: [
+      "The <strong>Roads and Transport Authority</strong> announced on <strong>20 October 2026</strong> the results of a <strong>Smart Mobility Innovation Challenge</strong>: <strong>five teams</strong> of students from <strong>Canadian University Dubai</strong>, <strong>four days</strong> at the RTA's headquarters, working on the city's traffic with tools from <strong>Mistral AI</strong>.",
+      "## The problems",
+      "The teams took five briefs: <strong>traffic-signal optimisation</strong>, <strong>congestion prediction</strong>, <strong>traffic-flow diagnosis</strong>, <strong>coordination between intersections</strong> and <strong>decision support</strong> for the operators in the authority's control centre. Each produced a concept and a demonstration against RTA data.",
+      "## The vendor",
+      "The tools were <strong>Mistral AI</strong>'s, the French model company. The RTA has named its AI partners sparingly, and this is the first time Mistral appears in its announcements.",
+      "## What it is and is not",
+      "A student hackathon, not a procurement. The concepts are the authority's to take forward or not, and the announcement makes no commitment to any of them.",
+    ],
+    expertise:
+      "Read it for the vendor, not the students. Dubai's government has been choosing between American, Chinese and European model providers for the systems that will run its infrastructure, and a four-day exercise inside the RTA's building on RTA traffic data with Mistral's tools is a data-sovereignty decision as much as a technical one: a European provider that will run on-premises is the kind a transport authority can let near its signal network. The signal-optimisation brief is the one with a real system behind it; the authority's adaptive signals already run on their own software, and the question is whether a model does better than the heuristics.",
+  },
 ];
