@@ -31742,6 +31742,38 @@
         ]
       ]
     },
+    "/covers/armenian-yeralegend-evening-pop-symphony-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/armenian-yeralegend-evening-pop-symphony-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/armenian-yeralegend-evening-pop-symphony-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/armenian-yeralegend-evening-pop-symphony-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/armenian-yeralegend-evening-pop-symphony-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/armenian-yeralegend-evening-pop-symphony-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/armenian-yeralegend-evening-pop-symphony-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/artur-zakiyan-solo-piano-yerevan-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -32931,6 +32963,38 @@
         [
           1536,
           "/covers/halloween-oxygen-yerevan-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/halloween-sarsap-night-bak75-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/halloween-sarsap-night-bak75-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/halloween-sarsap-night-bak75-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/halloween-sarsap-night-bak75-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/halloween-sarsap-night-bak75-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/halloween-sarsap-night-bak75-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/halloween-sarsap-night-bak75-yerevan-2026-1024.webp"
         ]
       ]
     },
@@ -34563,6 +34627,38 @@
         [
           3072,
           "/covers/qarpet-cafesjian-yerevan-2026-3072.webp"
+        ]
+      ]
+    },
+    "/covers/queen-vs-beatles-mystery-ensemble-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/queen-vs-beatles-mystery-ensemble-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/queen-vs-beatles-mystery-ensemble-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/queen-vs-beatles-mystery-ensemble-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/queen-vs-beatles-mystery-ensemble-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/queen-vs-beatles-mystery-ensemble-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/queen-vs-beatles-mystery-ensemble-yerevan-2026-1024.webp"
         ]
       ]
     },
