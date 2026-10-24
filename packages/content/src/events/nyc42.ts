@@ -3251,4 +3251,92 @@ export const items: EventItem[] = [
     expertise:
       "Arrive at noon if the trick-or-treat trail is the point: an afternoon event with a trail is always busiest in its middle hours. The garden is a short walk from the end of the 7 train, so there is no need for a car, and it finishes at five, early enough to get a child across the city for one of the evening parades. Members should bring their cards, since that is the difference between free and $10 a head.",
   },
+
+  {
+    slug: "nybg-holiday-train-show-2026",
+    createdAt: "2026-10-25T02:30:00+04:00",
+    updatedAt: "2026-10-25T02:30:00+04:00",
+    site: "nyc42",
+    image: "/covers/nybg-holiday-train-show-2026.jpg",
+    imageAlt: "A small red model train crossing a bridge under a glasshouse roof, past a palm tree, little pines, pinecones and tiny skyscrapers with lit windows",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Holiday Train Show 2026 at the New York Botanical Garden",
+    cardTitle: "NYBG Holiday Train Show",
+    titleSeo: "NYBG Holiday Train Show 2026, New York: dates, evenings",
+    summary:
+      "The New York Botanical Garden's Holiday Train Show runs from November 14, 2026, to January 10, 2027, in the Bronx: model trains loop past nearly 200 New York landmarks built from palm fronds, pinecones, cinnamon sticks and other plant parts, this year with a new One Vanderbilt, and on fifteen dates the evenings run to 8pm.",
+    start: "2026-11-14",
+    end: "2027-01-10",
+    utcOffset: "-05:00",
+    venue: "Enid A. Haupt Conservatory, New York Botanical Garden, Bronx",
+    city: "New York",
+    country: "United States",
+    geo: { name: "New York Botanical Garden", lat: 40.862243, lng: -73.877154 },
+    organizer: "New York Botanical Garden",
+    category: "Christmas",
+    ticket: {
+      url: "https://www.nybg.org/event/holiday-train-show/",
+      label: "Tickets",
+    },
+    source: {
+      name: "New York Botanical Garden",
+      url: "https://www.nybg.org/event/holiday-train-show/",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "The Bronx's winter tradition opens on <strong>Saturday, November 14, 2026</strong>, and runs to <strong>Sunday, January 10, 2027</strong>. In the <strong>Enid A. Haupt Conservatory</strong>, model trains run past <strong>nearly 200 replicas of New York landmarks</strong>, every one made of plant parts such as palm fronds, pinecones and cinnamon sticks. Outside, more trains run through a lit mountain landscape.",
+      "## New this year",
+      "A replica of <strong>One Vanderbilt</strong>, the tower beside Grand Central, joins the city in miniature.",
+      "## Evenings to 8pm",
+      "On fifteen dates the show stays open until <strong>8pm</strong>, with last entry at <strong>7:15pm</strong> and live music: <strong>November 27, 28 and 29</strong>; <strong>December 5, 11, 12, 18, 19, 20, 26, 27, 28, 29 and 30</strong>; and <strong>January 2</strong>.",
+      "## Sensory-friendly mornings",
+      "Two mornings are set aside for visitors who need a calmer show: <strong>Saturday, November 21</strong>, and <strong>Saturday, January 9</strong>, from <strong>9 to 11am</strong>.",
+      "## Tickets",
+      "The show is included in the garden's <strong>All-Garden Pass</strong>, which also opens the outdoor gardens. Booking ahead is recommended, and optional only on quieter weekdays. Members have a preview day on Friday, November 13.",
+      "## The same season in New York",
+      "The <a href=\"/events/rockefeller-center-christmas-tree-lighting-2026/\" title=\"Rockefeller Center Tree Lighting: Dec 2, 2026\">Rockefeller Center tree</a> is lit on December 2, and the <a href=\"/events/christmas-spectacular-radio-city-2026/\" title=\"Christmas Spectacular 2026: New York Dates, Tickets\">Christmas Spectacular</a> plays Radio City until January 4.",
+    ],
+    faq: [
+      {
+        q: "When is the NYBG Holiday Train Show 2026?",
+        a: "From Saturday, November 14, 2026, to Sunday, January 10, 2027, with a members' preview on November 13.",
+      },
+      {
+        q: "Is the Holiday Train Show open in the evening?",
+        a: "Until 8pm, last entry 7:15pm, on November 27, 28 and 29; December 5, 11, 12, 18, 19, 20, 26, 27, 28, 29 and 30; and January 2.",
+      },
+      {
+        q: "What is new in 2026?",
+        a: "A replica of One Vanderbilt, among nearly 200 New York landmarks built from plant parts.",
+      },
+      {
+        q: "Are there sensory-friendly sessions?",
+        a: "Yes, on Saturday, November 21, and Saturday, January 9, from 9 to 11am.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/rockefeller-center-christmas-tree-lighting-2026/",
+        eyebrow: "December 2",
+        title: "Rockefeller Center Tree Lighting",
+        text: "The tree on Rockefeller Plaza is lit for the season.",
+      },
+      {
+        href: "/events/bryant-park-winter-village-2026/",
+        eyebrow: "Until February 28",
+        title: "Winter Village at Bryant Park",
+        text: "Free skating and the holiday shops in Midtown.",
+      },
+      {
+        href: "/events/christmas-spectacular-radio-city-2026/",
+        eyebrow: "Until January 4",
+        title: "Christmas Spectacular at Radio City",
+        text: "The Rockettes' season, dates and tickets.",
+      },
+    ],
+    expertise:
+      "The late evenings fall almost all on weekends and the week after Christmas, which is when the crowds come anyway. For a quieter visit, pick a weekday in the second half of November, before the school holidays, and book ahead anyway. Families with a child who finds crowds hard should take the two sensory-friendly mornings seriously: they are the only sessions built for it.",
+  },
 ];
