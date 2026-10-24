@@ -207,6 +207,22 @@ test("a nav too long for the column takes a line of its own, unwrapped", async (
   }
 });
 
+// The search box builds its result rows at runtime, after Astro has scoped
+// the page's CSS, so a scoped selector never reaches them: shipped once as
+// bare running text (scan 2026-10-24, tick-09). The rows are cards.
+test("search results are styled rows, not running text", async ({ page }) => {
+  await page.goto(url("tick", "/?q=opera"));
+  const row = page.locator(".site-search-results a").first();
+  await expect(row).toBeVisible();
+  const got = await row.evaluate((el) => {
+    const cs = getComputedStyle(el);
+    return { display: cs.display, border: cs.borderTopWidth, meta: getComputedStyle(el.querySelector(".site-search-meta")).display };
+  });
+  expect(got.display, "a result is a block, not inline text").toBe("grid");
+  expect(got.border, "a result has its card border").toBe("1px");
+  expect(got.meta, "the date line is a flex row").toBe("flex");
+});
+
 test.describe("mobile menu", () => {
   test.beforeEach(async ({ page }) => {
     await page.setViewportSize({ width: 820, height: 800 });
