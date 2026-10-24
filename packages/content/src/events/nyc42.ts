@@ -415,7 +415,7 @@ export const items: EventItem[] = [
   {
     slug: "park-slope-halloween-parade-2026",
     createdAt: "2026-10-11T01:15:13+04:00",
-    updatedAt: "2026-10-12T02:45:00+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
     site: "nyc42",
     image: "/covers/park-slope-halloween-parade-2026.jpg",
     imageAlt: "A long avenue between rows of brownstones lined with glowing pumpkins and paper lanterns, a large jack-o'-lantern face in a starry night sky",
@@ -487,6 +487,12 @@ export const items: EventItem[] = [
         title: "Rawayana at Barclays Center",
         text: "The same evening at 7pm, a quarter of an hour's walk from the parade's end: the Venezuelan band's world tour.",
       },
+      {
+        href: "/events/halloween-at-the-garden-queens-botanical-2026/",
+        eyebrow: "Flushing, Queens",
+        title: "Halloween at Queens Botanical Garden",
+        text: "A family Halloween afternoon at Queens Botanical Garden on October 31, noon to 5 p.m.",
+      },
     ],
     expertise:
       "Half an hour and a river separate the two parades, and that is the choice a family has to make: the Village at 7pm is a spectacle with crowds to match, Park Slope at 6:30 is an evening a small child can actually walk in. The line-up begins at 6pm at the 14th Street end, so arrive there rather than somewhere along the route if the point is to march, and plan the afternoon on the side streets — the 8th, 11th and 17th Street blocks have their own Trick-or-Streets closures from early afternoon, and Montgomery Place and Polhemus Place open earlier still.",
@@ -495,7 +501,7 @@ export const items: EventItem[] = [
   {
     slug: "village-halloween-parade-2026",
     createdAt: "2026-08-30T23:32:06+04:00",
-    updatedAt: "2026-10-12T02:45:00+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
     updates: [
       {
         on: "2026-10-04",
@@ -563,6 +569,12 @@ export const items: EventItem[] = [
         eyebrow: "Midtown",
         title: "Harry Styles at Madison Square Garden",
         text: "The same night, sixteen blocks north of the parade's end: the thirtieth and last show of the residency.",
+      },
+      {
+        href: "/events/halloween-at-the-garden-queens-botanical-2026/",
+        eyebrow: "Flushing, Queens",
+        title: "Halloween at Queens Botanical Garden",
+        text: "A family Halloween afternoon at Queens Botanical Garden on October 31, noon to 5 p.m.",
       },
     ],
     expertise:
@@ -3152,5 +3164,91 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Food expos sell out their morning slots first, because the samples run out by mid-afternoon; Saturday at opening is the serious buyer's visit, Sunday after lunch is the quiet one. Bring a cooler bag — the bakeries sell frozen, and the bus back to Port Authority is not refrigerated.",
+  },
+  {
+    slug: "halloween-at-the-garden-queens-botanical-2026",
+    createdAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
+    site: "nyc42",
+    image: "/covers/halloween-at-the-garden-queens-botanical-2026.jpg",
+    imageAlt: "A winding garden path under orange autumn trees, pumpkins on hay bales and a child in costume carrying a basket",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Halloween at the Garden 2026, Queens Botanical Garden",
+    cardTitle: "Halloween at Queens Botanical Garden",
+    titleSeo: "Halloween at Queens Botanical Garden, New York: Oct 31",
+    summary:
+      "A family Halloween afternoon in Flushing, New York, on Saturday, October 31, 2026, noon to 5pm: a costume showcase, a trick-or-treat trail, crafts, a spooky-plants lesson, live performances and The Cat in the Hat characters at Queens Botanical Garden. $10 for non-members, $8 for children, members free.",
+    start: "2026-10-31",
+    startTime: "12:00",
+    endTime: "17:00",
+    utcOffset: "-04:00",
+    venue: "Queens Botanical Garden, 43-50 Main Street, Flushing",
+    city: "New York",
+    country: "United States",
+    geo: { name: "Queens Botanical Garden", lat: 40.74994, lng: -73.83006 },
+    organizer: "Queens Botanical Garden",
+    category: "Halloween",
+    tickets: { priceFrom: 8, priceTo: 10, currency: "USD" },
+    ticket: { url: "https://feverup.com/m/787855", label: "Tickets on Fever" },
+    source: {
+      name: "Queens Botanical Garden",
+      url: "https://queensbotanical.org/event/halloween-at-the-garden-2026/",
+      verifiedOn: "2026-10-24",
+    },
+    body: [
+      "Queens Botanical Garden spends Halloween afternoon as a family party. <strong>Halloween at the Garden</strong> runs on <strong>Saturday, October 31, 2026</strong>, from <strong>noon to 5pm</strong>, across the garden in Flushing.",
+      "## What's on",
+      "A <strong>costume showcase</strong>, a <strong>trick-or-treat trail</strong>, crafts, a lesson on <strong>spooky plants</strong>, a walk with the storyteller <strong>Darlene Deloris</strong>, live performances and a vendor fair. For the grown-ups there is a bar pouring autumn beers and ciders.",
+      "## The Cat in the Hat",
+      "The Cat in the Hat is the day's sponsor, and its characters are in the garden to meet.",
+      "## Tickets",
+      "Members get in free. Non-members pay <strong>$10</strong> and children <strong>$8</strong>, with tickets sold through Fever.",
+      "## Getting there",
+      "The garden is at 43-50 Main Street, a walk south from Flushing–Main Street, the last stop on the 7 train.",
+      "## The rest of Halloween",
+      "The afternoon ends in good time for the evening: Brooklyn's <a href=\"/events/park-slope-halloween-parade-2026/\" title=\"Park Slope Halloween Parade 2026\">Park Slope Halloween Parade</a> steps off at 6:30pm, and the <a href=\"/events/village-halloween-parade-2026/\" title=\"Village Halloween Parade 2026\">Village Halloween Parade</a> goes up Sixth Avenue at 7pm.",
+    ],
+    faq: [
+      {
+        q: "When is Halloween at the Garden 2026?",
+        a: "On Saturday, October 31, 2026, from noon to 5pm, at Queens Botanical Garden, 43-50 Main Street, Flushing.",
+      },
+      {
+        q: "How much are tickets?",
+        a: "$10 for non-members and $8 for children. Members get in free. Tickets are sold through Fever.",
+      },
+      {
+        q: "What is there for kids?",
+        a: "A costume showcase, a trick-or-treat trail, crafts, a spooky-plants lesson, a storytelling walk, live performances and The Cat in the Hat characters to meet.",
+      },
+      {
+        q: "How do I get to Queens Botanical Garden?",
+        a: "Take the 7 train to Flushing–Main Street, the last stop, and walk south along Main Street.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/park-slope-halloween-parade-2026/",
+        eyebrow: "6:30pm, October 31",
+        title: "Park Slope Halloween Parade",
+        text: "Brooklyn's family parade on Seventh Avenue: costumed families, musicians and puppets. Free.",
+      },
+      {
+        href: "/events/village-halloween-parade-2026/",
+        eyebrow: "7pm, October 31",
+        title: "Village Halloween Parade 2026",
+        text: "The 53rd parade up Sixth Avenue, free to watch and free to march in costume.",
+      },
+      {
+        href: "/events/dia-de-los-muertos-nybg-2026/",
+        eyebrow: "Until November 2",
+        title: "Día de los Muertos at NYBG",
+        text: "The other botanical garden's autumn festival: an ofrenda and giant Catrina puppets in the Bronx.",
+      },
+    ],
+    expertise:
+      "Arrive at noon if the trick-or-treat trail is the point: an afternoon event with a trail is always busiest in its middle hours. The garden is a short walk from the end of the 7 train, so there is no need for a car, and it finishes at five, early enough to get a child across the city for one of the evening parades. Members should bring their cards, since that is the difference between free and $10 a head.",
   },
 ];
