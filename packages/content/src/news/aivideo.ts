@@ -1441,4 +1441,67 @@ export const items: NewsItem[] = [
       },
     ],
   },
+
+  {
+    slug: "ltx-2-v1-5-0-replace-and-guide-keyframes-fp8",
+    createdAt: "2026-10-25T02:30:00+04:00",
+    updatedAt: "2026-10-25T02:30:00+04:00",
+    site: "aivideo",
+    image: "/covers/ltx-2-v1-5-0-replace-and-guide-keyframes-fp8.jpg",
+    imageAlt: "Neon magenta and cyan frames glowing on a near-black ground, a thin yellow line running beneath them",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "LTX-2 v1.5.0: replace and guide keyframes, interpolation in the main pipeline, fp8 on newer GPUs",
+    cardTitle: "LTX-2 v1.5.0",
+    titleSeo: "LTX-2 v1.5.0: replace and guide keyframes",
+    summary:
+      "Lightricks released v1.5.0 of the LTX-2 code that runs the open LTX-2.5 AI video model on 18 October 2026: image conditioning now says whether a frame is replaced or only guides, keyframe interpolation moved into the main two-stage pipeline, and fp8 matrix maths speeds up GPUs of compute capability 8.9 and newer. Outputs are no longer bit-identical to earlier releases.",
+    date: "2026-10-25",
+    category: "News",
+    tags: ["LTX"],
+    action: {
+      url: "https://github.com/Lightricks/LTX-2/releases/tag/v1.5.0",
+      label: "v1.5.0 release notes",
+      title: "Lightricks' LTX-2 v1.5.0 release and its notes, on GitHub",
+      icon: "download",
+    },
+    source: {
+      name: "Lightricks on GitHub",
+      url: "https://github.com/Lightricks/LTX-2/releases/tag/v1.5.0",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "Lightricks published <strong>v1.5.0</strong> of the LTX-2 code on <strong>18 October 2026</strong>. It is the code that runs the <a href=\"/news/ltx-2-5-open-weights-comfyui/\" title=\"LTX-2.5: open AI video model with multi-shot\">LTX-2.5 open weights</a>, not a new model, and it changes how a still image steers a clip.",
+      "## Replace or guide",
+      "An image binding now takes a mode. On the command line it is <code>--image PATH FRAME_IDX STRENGTH replace|guide</code>, with an optional CRF value at the end. <strong>Replace</strong> puts the image into the clip as that frame; <strong>guide</strong> lets it steer the frames around it without being copied in.",
+      "Replace has a constraint: the frame index, counted in pixel frames, must be <strong>0</strong> or <strong>1 plus a multiple of 8</strong>, so 1, 9, 17 and on. In Python, <code>ImageConditioningInput.at</code>, <code>.replace</code> and <code>.guide</code> take the place of the old <code>frame_idx</code> argument.",
+      "## Keyframes in the main pipeline",
+      "Keyframe interpolation, making a clip that passes through several given images, is now done by <code>TI2VidTwoStagesPipeline</code> with guide bindings, and the separate <code>KeyframeInterpolationPipeline</code> is removed. Audio can be refined in the same run with <code>--refine-audio</code>, or <code>refine_audio=True</code> from Python.",
+      "## Faster on newer cards",
+      "The performance work was done with doubleAI. Matrix multiplications run in <strong>fp8</strong> on GPUs of <strong>compute capability 8.9 and above</strong>, the RTX 40 series and L40 generation onwards, and H100. The DFR epilogue is tiled at no more than <strong>1024 px</strong> with <strong>64 px</strong> of overlap, and the Gemma text encoder is faster across several GPUs.",
+      "## Not bit-identical",
+      "Lightricks says outputs from v1.5.0 are <strong>not bit-identical</strong> to earlier releases. The same seed and prompt will give a slightly different clip.",
+      "## A bug fixed",
+      "Long 1080p clips could turn grey from <strong>frame 128</strong> onwards under PyTorch older than 2.13, because RMSNorm offsets wrapped past 2<sup>32</sup>. That is fixed.",
+      "## Where this fits",
+      "September's 1.4.0 added long clips in overlapping windows and a one-pass HDR master; see <a href=\"/news/ltx-2-5-september-loras-long-clips-hdr/\" title=\"LTX-2.5: 14 new LoRAs, long AI video and HDR\">LTX-2.5's September</a>.",
+    ],
+    faq: [
+      {
+        q: "What is new in LTX-2 v1.5.0?",
+        a: "Image bindings that either <strong>replace</strong> a frame or only <strong>guide</strong> the clip, keyframe interpolation inside <code>TI2VidTwoStagesPipeline</code>, <strong>fp8</strong> speed-ups on compute capability 8.9+ GPUs, and a fix for grey frames in long 1080p clips.",
+      },
+      {
+        q: "Which frames can a replace binding use?",
+        a: "Frame <strong>0</strong>, or any frame that is <strong>1 plus a multiple of 8</strong> in pixel space: 1, 9, 17 and so on.",
+      },
+      {
+        q: "Will my old seeds give the same video?",
+        a: "No. Lightricks says v1.5.0 output is <strong>not bit-identical</strong> to earlier releases, so keep the old version for any clip you need to reproduce exactly.",
+      },
+    ],
+    expertise:
+      "Two things to do before upgrading. Pin the old release in any project where a client has approved a shot, because the new numerics will not reproduce it. And move scripts off KeyframeInterpolationPipeline now: it is gone, and the guide binding in the two-stage pipeline is its replacement. The fp8 gain only arrives on Ada-, Hopper- or newer cards; an RTX 30 series or an A100, at compute capability 8.6 and 8.0, does not take the fp8 path.",
+  },
 ];
