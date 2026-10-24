@@ -41,6 +41,14 @@ interface Props {
       visible trail ends on a shorter name passes that name, so the two
       trails agree. See `currentName` in schema.ts. */
   crumbCurrent?: string;
+  /** The structured data's whole breadcrumb trail, home first and this
+      page last, for a page whose address is not its trail (a guide's
+      second language, /zamna-tulum/en/). Absent, the trail is walked from
+      the address, which is every page of every other site. Given, it alone
+      makes the list, so it is never passed with `crumbLabels` or
+      `crumbCurrent`: two sources for one list are how a visible trail and
+      its markup come apart. See `trail` in schema.ts. */
+  crumbTrail?: { name: string; path: string }[];
   /** Title attribute on the wordmark, which links home from every page.
       Defaults to the site's name, which is the right answer only when
       the name is one a reader recognises; where it is not, this is a
@@ -166,7 +174,10 @@ interface Props {
   donate?: { heading: string; addresses: { chain: string; address: string }[] };
 }
 
-const { title, titleSuffix, keyword, description, siteName, nav, crumbLabels, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [], footerSiteName = siteName, homeTitle, instagram, image, footerSites = [], networkFooter = true, publisher, defaultTheme, lang = "en", feedTitle, feedHref = "/rss.xml", alternates = [], homeHref = "/", homeLabel, analytics = true, noindex = false, prose = false, donate, gaId, crumbCurrent, chrome: chromeOverride } = Astro.props;
+const { title, titleSuffix, keyword, description, siteName, nav, crumbLabels, complianceNote, jsonLd = [], logoSrc = "/logo-mini.png", favicon = true, partnerDisclosure = true, footerLinks = [], footerSiteName = siteName, homeTitle, instagram, image, footerSites = [], networkFooter = true, publisher, defaultTheme, lang = "en", feedTitle, feedHref = "/rss.xml", alternates = [], homeHref = "/", homeLabel, analytics = true, noindex = false, prose = false, donate, gaId, crumbCurrent, crumbTrail, chrome: chromeOverride } = Astro.props;
+if (crumbTrail && (crumbLabels !== undefined || crumbCurrent !== undefined)) {
+  throw new Error(`${Astro.url.pathname}: crumbTrail is the whole breadcrumb list; pass it without crumbLabels or crumbCurrent`);
+}
 // The suffix is the most expensive characters on the page, and it is only
 // worth them when it adds something the title has not already said.
 //
@@ -272,6 +283,7 @@ const graph = Astro.site
       home: homeHref,
       homeName: homeLabel,
       currentName: crumbCurrent,
+      trail: crumbTrail,
     })
   : undefined;
 

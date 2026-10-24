@@ -403,3 +403,85 @@ describe("markup that is about this page and not about the template", () => {
     }
   });
 });
+
+// The trail itself, from the function every page's graph comes from, with
+// no build: what a page that gives its trail gets, and what every page that
+// does not still gets. The second is the default every other site relies on,
+// so it is pinned on the two shapes the network has — a one-language site,
+// and a site whose second language keeps its home at /am/.
+describe("breadcrumb trail", () => {
+  let pageGraph;
+  before(async () => {
+    ({ pageGraph } = await import("../packages/ui/src/schema.ts"));
+  });
+  const crumbsOf = (graph) => graph["@graph"].find((n) => n["@type"] === "BreadcrumbList");
+  const items = (list) => list.itemListElement.map(({ position, name, item }) => [position, name, item]);
+  const page = (over) => ({
+    origin: "https://fest.one",
+    siteName: "fest.one",
+    pathname: "/zamna-tulum/en/tickets/",
+    canonical: "https://fest.one/zamna-tulum/en/tickets/",
+    title: "Zamna Tulum 2027 tickets — Festival guides",
+    description: "d",
+    ...over,
+  });
+
+  test("a given trail is the whole list: its items, in order, as absolute URLs", () => {
+    const list = crumbsOf(pageGraph(page({
+      trail: [
+        { name: "Festivals", path: "/" },
+        { name: "Zamna Tulum 2027", path: "/zamna-tulum/en/" },
+        { name: "Tickets", path: "/zamna-tulum/en/tickets/" },
+      ],
+    })));
+    assert.equal(list["@id"], "https://fest.one/zamna-tulum/en/tickets/#breadcrumb");
+    assert.deepEqual(items(list), [
+      [1, "Festivals", "https://fest.one/"],
+      [2, "Zamna Tulum 2027", "https://fest.one/zamna-tulum/en/"],
+      [3, "Tickets", "https://fest.one/zamna-tulum/en/tickets/"],
+    ]);
+  });
+
+  test("without a trail, the address is walked as before", () => {
+    const one = crumbsOf(pageGraph({
+      origin: "https://llc.dst.llc", siteName: "DST LLC", pathname: "/zones/dmcc/",
+      canonical: "https://llc.dst.llc/zones/dmcc/", title: "DMCC free zone — Company setup", description: "d",
+      nav: [{ href: "/zones/", label: "Free zones" }],
+    }));
+    assert.deepEqual(items(one), [
+      [1, "DST LLC", "https://llc.dst.llc/"],
+      [2, "Free zones", "https://llc.dst.llc/zones/"],
+      [3, "DMCC free zone", "https://llc.dst.llc/zones/dmcc/"],
+    ]);
+    const am = crumbsOf(pageGraph({
+      origin: "https://tick.am", siteName: "tick", pathname: "/am/events/jazz-night/",
+      canonical: "https://tick.am/am/events/jazz-night/", title: "Jazz night — tick", description: "d",
+      nav: [{ href: "/am/events/", label: "Events AM" }], lang: "hy", home: "/am/", homeName: "Home AM",
+    }));
+    assert.deepEqual(items(am), [
+      [1, "Home AM", "https://tick.am/am/"],
+      [2, "Events AM", "https://tick.am/am/events/"],
+      [3, "Jazz night", "https://tick.am/am/events/jazz-night/"],
+    ]);
+  });
+
+  test("a trail that ends anywhere but this page is refused", () => {
+    assert.throws(
+      () => pageGraph(page({ trail: [{ name: "Festivals", path: "/" }, { name: "Zamna Tulum 2027", path: "/zamna-tulum/en/" }] })),
+      /ends at \/zamna-tulum\/en\/, not at this page/,
+    );
+  });
+
+  test("a path that is not from the root is refused", () => {
+    assert.throws(
+      () => pageGraph(page({ trail: [{ name: "Festivals", path: "/" }, { name: "Tickets", path: "zamna-tulum/en/tickets/" }] })),
+      /is not a path from the root/,
+    );
+  });
+
+  test("a trail of one, the home alone, carries no list", () => {
+    const graph = pageGraph(page({ pathname: "/", canonical: "https://fest.one/", trail: [{ name: "Festivals", path: "/" }] }));
+    assert.equal(crumbsOf(graph), undefined);
+    assert.equal(graph["@graph"].find((n) => n["@type"] === "WebPage").breadcrumb, undefined);
+  });
+});

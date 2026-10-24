@@ -100,6 +100,16 @@ export interface PageGraphInput {
       (a fest.one guide page: "Ingressos", not the whole title) passes it
       here, so the markup and the trail a reader sees name it alike. */
   currentName?: string;
+  /** The whole trail, home first and this page last, for a page whose
+      address is not its trail. A guide's second language at
+      /zamna-tulum/en/ is one crumb for two segments: walked from the
+      address, its trail would pass through the first language's page and
+      a crumb named "En". Absent, the trail is walked from the address,
+      which is every page of every other site. Given, it alone makes the
+      list: `home`, `homeName`, `nav`, `crumbLabels` and `currentName` do
+      not shape it. Each `path` is from the root ("/zamna-tulum/en/"), and
+      the last one is this page's. */
+  trail?: { name: string; path: string }[];
 }
 
 const websiteId = (origin: string) => `${origin}/#website`;
@@ -114,7 +124,37 @@ function titleFromSlug(slug: string): string {
     breadcrumb wants only the page's own name. */
 const withoutSuffix = (title: string) => title.split(" — ")[0].trim();
 
+/** The list itself, whichever way its items were found, so a given trail
+    and a walked one print the same shape in the same key order. */
+function crumbList(input: PageGraphInput, items: { name: string; item: string }[]) {
+  return {
+    "@type": "BreadcrumbList",
+    "@id": `${input.canonical}#breadcrumb`,
+    itemListElement: items.map((entry, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: entry.name,
+      item: entry.item,
+    })),
+  };
+}
+
+/** A trail the page gave. Both throws are for the build, not the reader:
+    a relative path would print "https://fest.onezamna-tulum/", and a trail
+    that ends anywhere but here is another page's trail. One item is the
+    home alone, which carries no list, as a walked home does not. */
+function givenCrumbs(input: PageGraphInput, trail: { name: string; path: string }[]) {
+  for (const step of trail) {
+    if (!step.path.startsWith("/")) throw new Error(`${input.pathname}: the breadcrumb trail's "${step.path}" is not a path from the root`);
+  }
+  const end = trail[trail.length - 1]?.path;
+  if (end !== input.pathname) throw new Error(`${input.pathname}: the breadcrumb trail ends at ${end}, not at this page`);
+  if (trail.length < 2) return undefined;
+  return crumbList(input, trail.map((step) => ({ name: step.name, item: `${input.origin}${step.path}` })));
+}
+
 function breadcrumbs(input: PageGraphInput) {
+  if (input.trail) return givenCrumbs(input, input.trail);
   const home = input.home ?? "/";
   // A page outside its home is addressed from the root, not from the home:
   // fest.one's home is /festivals/ and its guides live at /beyond-the-valley/,
@@ -145,16 +185,7 @@ function breadcrumbs(input: PageGraphInput) {
     });
   });
 
-  return {
-    "@type": "BreadcrumbList",
-    "@id": `${input.canonical}#breadcrumb`,
-    itemListElement: items.map((entry, i) => ({
-      "@type": "ListItem",
-      position: i + 1,
-      name: entry.name,
-      item: entry.item,
-    })),
-  };
+  return crumbList(input, items);
 }
 
 /** The graph for one page: organization, site, page, breadcrumbs. */
