@@ -1677,7 +1677,12 @@ describe("how much of each site is the template", () => {
     // next dates' summaries on every page. The box-office hours repeated on
     // seven pages and now live on one news page the others link to. No
     // sentence of prose repeats. It falls as the feed grows past the strip.
-    l0n: 17, aca: 32,
+    // l0n 17 → 18 on 25 October 2026, measured at 17.8, when the Six Nations
+    // card joined the strip: its headline prints on seven pages and the
+    // stadium's address line ("Allianz Stadium, Twickenham, 200 Whitton
+    // Road") on eight, and /sport/ went from three cards to four. The new
+    // page itself measures 9%. No sentence of prose repeats.
+    l0n: 18, aca: 32,
     // fest recorded 5 on 22 October 2026, its first day, measured at 1.6:
     // one guide of six long pages and the hub; the repeated runs are the
     // row of the guide's pages and the closing line naming whom the site is
