@@ -626,15 +626,16 @@ describe("where a guide's links lead", () => {
     assert.match(copy.inline("The [organiser's listing](/go/zamna-tulum-official/).", { ...ctx, event: titled }), /title="Zamna Tulum&#39;s event listing"|title="Zamna Tulum's event listing"/);
   });
 
-  // An offer as another guide's copy gives it (Offer.perGuide): keyed by
-  // the language of one of the event's guides, never the first guide's,
-  // whose words the shared fields already are.
-  test("an offer's perGuide names another guide of its event, never the first", () => {
+  // An offer as another guide's copy gives it (Offer.perGuide), and a day
+  // (a subEvents item's perGuide, its name): keyed by the language of one
+  // of the event's guides, never the first guide's, whose words the shared
+  // fields already are.
+  test("an offer's or a day's perGuide names another guide of its event, never the first", () => {
     const bad = [];
     for (const event of events) {
       const own = guides.filter((g) => g.event === event.slug);
       const offers = [...(Array.isArray(event.markup.offers) ? event.markup.offers : []), ...(event.markup.subEvents ?? []).flatMap((d) => d.offers ?? [])];
-      for (const o of offers)
+      for (const o of [...offers, ...(event.markup.subEvents ?? [])])
         for (const [lang, over] of Object.entries(o.perGuide ?? {})) {
           if (!own.some((g) => g.lang === lang)) bad.push(`${event.slug}: perGuide.${lang}, and no ${lang} guide`);
           if (lang === own[0].lang) bad.push(`${event.slug}: perGuide.${lang} is the first guide's`);
@@ -670,6 +671,23 @@ describe("where a guide's links lead", () => {
     };
     assert.equal(address("en"), JSON.stringify({ "@type": "PostalAddress", addressLocality: "Pattaya", addressRegion: "Chonburi", addressCountry: "TH" }));
     assert.equal(address("th-TH"), JSON.stringify({ "@type": "PostalAddress", addressLocality: "พัทยา", addressRegion: "ชลบุรี", addressCountry: "TH" }));
+  });
+
+  // Primavera Sound São Paulo's English MusicEvent names its two days and
+  // the box office as its page does (subEvents[].perGuide, Offer.perGuide);
+  // the Portuguese one keeps the Portuguese guide's words (gate 3, CTO 2).
+  test("Primavera Sound São Paulo's English MusicEvent names its days and the box office in English; the Portuguese one as before", () => {
+    const event = events.find((e) => e.slug === "primavera-sound-sao-paulo");
+    const node = (lang) => {
+      const guide = guides.find((g) => g.event === event.slug && g.lang === lang);
+      return rules.musicEvent(event, guide, rules.mainPage(guide), "2026-10-24");
+    };
+    const en = node("en");
+    const pt = node("pt-BR");
+    assert.deepEqual(en.subEvent.map((d) => d.name), ["Saturday 5 December", "Sunday 6 December"]);
+    assert.deepEqual(pt.subEvent.map((d) => d.name), ["Sábado, 5 de dezembro", "Domingo, 6 de dezembro"]);
+    assert.deepEqual(en.offers.map((o) => o.seller.name), ["Ingresse", "Working Title box office"]);
+    assert.deepEqual(pt.offers.map((o) => o.seller.name), ["Ingresse", "Bilheteria oficial (Working Title)"]);
   });
 
   // The house's English ("en") keeps its tokens and dates together and
@@ -728,6 +746,20 @@ describe("where a guide's links lead", () => {
     for (const pair of ["85\u00a0artists", "5.000\u00a0m²", "Venta\u00a03", "20%\u00a0off", "20th\u00a0anniversary", "18\u00a0años"]) assert.ok(glued.includes(pair), pair);
     assert.equal(at(btv, btvEvent, sweep), sweep);
     assert.equal(at(btv, btvEvent, prose), prose);
+    // Primavera Sound São Paulo's forms, the Portuguese row's as its English
+    // copy quotes them: a law's number, the circuit's phone, the bag size.
+    // A short run holds each in a span, a long one by no-break spaces; en-AU
+    // leaves them as they were.
+    const psp = events.find((e) => e.slug === "primavera-sound-sao-paulo");
+    const pen = guides.find((g) => g.event === "primavera-sound-sao-paulo" && g.lang === "en");
+    const brazil = "Under Lei nº 12.933/2013, call (11) 5666-8822, and bring a bag up to 20 × 30 cm.";
+    const kept = at(pen, psp, brazil);
+    for (const token of ["nº 12.933/2013", "(11) 5666-8822", "20 × 30 cm"]) assert.ok(kept.includes(`<span class="nowrap">${token}</span>`), token);
+    const para = `${"Two days at the Autódromo de Interlagos, gates at half past twelve, and every rule in the promoter's own terms. ".repeat(2)}${brazil}`;
+    const held = at(pen, psp, para);
+    for (const pair of ["nº\u00a012.933/2013", "(11)\u00a05666-8822", "20\u00a0×\u00a030\u00a0cm"]) assert.ok(held.includes(pair), pair);
+    assert.equal(at(btv, btvEvent, brazil), brazil);
+    assert.equal(at(btv, btvEvent, para), para);
   });
 
   // An English heading keeps a day with its month and a share with its
@@ -738,6 +770,23 @@ describe("where a guide's links lead", () => {
     assert.equal(copy.headingHtml("Banco de Chile: 20% off and instalments, for its cardholders", "en"), 'Banco de Chile: <span class="nowrap">20% off</span> and instalments, for its cardholders');
     assert.equal(copy.headingHtml("Monday 28 December", "en-AU"), "Monday 28 December");
     assert.equal(copy.headingHtml("What the tables showed on 24 October 2026", "en"), 'What the tables showed on 24 <span class="nowrap">October 2026</span>');
+  });
+
+  // A month with its year wider than the column at 320 px is a keep-date in
+  // an English heading, not a nowrap: "December 2026" pushed Primavera Sound
+  // São Paulo's English line-up page sideways. A narrower month keeps its
+  // nowrap and en-AU's headings are set as they were. "line-up came out"
+  // holds the word and the verb apart, and an h1 holds the runs its page
+  // names (h1Keep), escaped as Astro escapes the text it prints.
+  test("an English heading's wide month is a keep-date, and an h1 keeps the runs its page names", () => {
+    assert.equal(copy.headingHtml("Saturday 5 December 2026", "en"), 'Saturday 5 <span class="keep-date">December 2026</span>');
+    assert.equal(copy.headingHtml("Weekend 4: 4–6 February 2027", "en"), 'Weekend 4: <span class="nowrap">4–6</span> <span class="nowrap">February 2027</span>');
+    assert.equal(copy.headingHtml("Saturday 5 December 2026", "en-AU"), 'Saturday 5 <span class="nowrap">December 2026</span>');
+    assert.equal(copy.headingHtml("When the line-up came out", "en"), 'When the <span class="nowrap">line-up</span> <span class="nowrap">came out</span>');
+    assert.equal(copy.headingHtml("Questions about the line-up", "en"), "Questions about the line-up");
+    assert.equal(copy.h1Html("Primavera Sound São Paulo 2026 line-up by day", ["line-up", "by day"]), 'Primavera Sound São Paulo 2026 <span class="nowrap">line-up</span> <span class="nowrap">by day</span>');
+    assert.equal(copy.h1Html(`Montreal's "Igloofest" & more`), "Montreal&#39;s &quot;Igloofest&quot; &amp; more");
+    assert.throws(() => copy.h1Html("Igloofest 2027 line-up", ["by day"]), /not once/);
   });
 
   // A heading's longest unbreakable run (copy.ts, longestRun), which holds
@@ -1022,6 +1071,7 @@ describe("the built pages", { skip: built ? false : "apps/fest/dist is missing: 
     assert.equal(count["igloofest:en:en"], 17);
     assert.equal(count["zamna-tulum:en:en"], 14);
     assert.equal(count["wonderfruit:en:en"], 6);
+    assert.equal(count["primavera-sound-sao-paulo:en:en"], 13);
   });
 
   // An event in two languages: every page names each of its event's

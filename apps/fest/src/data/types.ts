@@ -68,12 +68,14 @@ export interface Offer {
   priceValidUntil?: string;
   availability?: "InStock" | "SoldOut";
   price?: { key: string; currency: string };
-  /** The hop and the tier name as another guide's copy gives them, keyed
-      by that guide's `lang`: Zamna Tulum's English twin sells the
-      Multipass through its own hops and names Mr Nice VIP's tier "General
-      1st release". There is one markup per event; what a guide does not
-      override is shared, and the event's first guide never has an entry. */
-  perGuide?: Record<string, { go?: string; name?: string }>;
+  /** The hop, the tier name and the seller as another guide's copy gives
+      them, keyed by that guide's `lang`: Zamna Tulum's English twin sells
+      the Multipass through its own hops and names Mr Nice VIP's tier
+      "General 1st release", and Primavera Sound São Paulo's names the box
+      office in English, "Working Title box office". There is one markup per
+      event; what a guide does not override is shared, and the event's
+      first guide never has an entry. */
+  perGuide?: Record<string, { go?: string; name?: string; seller?: string }>;
 }
 
 /** One festival: the scout's sheet and the hops out of the guide. */
@@ -147,8 +149,10 @@ export interface FestEvent extends Dated {
         Tulum's Anyma night: the headliner, then the ten supports), and the
         night's own offers where each night is sold on its own (Zamna
         Tulum: General and VIP through the night's page), priced as the
-        event's channel offers are. */
-    subEvents?: { name: string; startDate: string; acts: string | string[]; offers?: Offer[] }[];
+        event's channel offers are. A later guide names the day in its
+        own words through the day's perGuide, keyed as Offer.perGuide is:
+        Primavera Sound São Paulo's English twin, "Saturday 5 December". */
+    subEvents?: { name: string; startDate: string; acts: string | string[]; offers?: Offer[]; perGuide?: Record<string, { name?: string }> }[];
   };
   /** Section 1 of the card, verbatim with every repair. Free-form on
       purpose: it is the scout's document, and copy.ts resolves the copy's
@@ -262,6 +266,14 @@ export interface GuidePage extends Dated, Slots {
   /** The h1's id, where a block is labelled by it (Wonderfruit's FAQ page,
       whose questions sit under no heading of their own). */
   h1Id?: string;
+  /** Runs of the h1 held on one line, each once in it (a nowrap span,
+      copy.ts h1Html): a short hyphenated word strands no scrap (DESIGN.md),
+      and Primavera Sound São Paulo's English line-up h1 broke "2026 line- |
+      up by day" at 305 and 320 px (the line-break sweep, 24 October 2026).
+      Per page, where the sweep finds the break: "line-up" in Creamfields
+      Chile's, Igloofest's and Zamna Tulum's English h1s broke at none of
+      its 17 widths, and those pages keep their bytes. */
+  h1Keep?: string[];
   lede: string;
   /** How many of the lede's paragraphs print as the lede; the rest is the
       line on why the guide exists. One where absent. */

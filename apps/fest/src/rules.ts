@@ -343,7 +343,9 @@ export function musicEvent(event: FestEvent, guide: Guide, page: GuidePage, day:
     const own = d.offers && !hasEnded(event.edition, day) ? d.offers.map((o) => channel(event, inGuide(o), shown)) : [];
     return {
       "@type": "MusicEvent",
-      name: d.name,
+      // The day as this guide's copy names it, where the day has an entry
+      // for the guide's language (perGuide), as an offer does.
+      name: d.perGuide?.[guide.lang]?.name ?? d.name,
       startDate: d.startDate,
       location: place,
       performer: acts.map((name) => ({ "@type": "PerformingGroup", name })),

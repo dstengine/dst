@@ -388,6 +388,15 @@ const EN_TOKENS = [
   // The Canadian dollar, its code before the sum as Chile's pesos are,
   // with its cents where the shop prints them ("CAD 166.75").
   `\\bCAD \\d[\\d,]*(?:\\.\\d{2})?\\b`, // CAD 49.00, CAD 15 (Igloofest)
+  // Primavera Sound São Paulo's English pages (24 October 2026) quote what
+  // GLUE_PT holds together on the Portuguese guide: a law's number after
+  // its "nº" ("Lei nº 12.933/2013"), the circuit's phone after its area
+  // code ("(11) 5666-8822"), and the bag rule's size with its unit ("20 ×
+  // 30 cm"). The first two are KEEP_PT's own forms. No other "en" page
+  // prints any of the three.
+  `\\bnº \\d[\\d./]*\\d`, // Lei nº 12.933/2013 (Primavera Sound São Paulo)
+  `\\(\\d{2}\\) \\d{4,5}-\\d{4}\\b`, // (11) 5666-8822 (Primavera Sound São Paulo)
+  `\\b\\d+ × \\d+ cm\\b`, // 20 × 30 cm (Primavera Sound São Paulo)
 ];
 const KEEP_EN = new RegExp([KEEP_TOGETHER.source, ...EN_TOKENS].join("|"), "g");
 /** Each language's keep-together list, by the guide's locale where it has
@@ -554,7 +563,25 @@ const HEADING_KEEP_FR = new RegExp(`(?:^${JOUR}[ \\u00a0])?${FR_DATE}[:,.;]?|${F
 // scrap). Not every "line-up": the word is in five other headings on
 // Creamfields Chile's, Wonderfruit's and Zamna Tulum's English pages,
 // which the sweep did not flag and which are to come out byte for byte.
-const HEADING_KEEP_EN = new RegExp(`\\b\\d{1,2} ${MONTH}\\b(?! \\d)[:,.;]?|\\b\\d+% off\\b|\\bno line-up\\b`, "g");
+// The same for "line-up came out": Primavera Sound São Paulo's English
+// line-up heading "When the line-up came out" balanced to "When the line- |
+// up came out" from 305 to 480 px (the sweep of 24 October 2026). The word
+// goes in one span and "came out" in another: the three words in one are
+// wider than the column at 320, and with the word alone held the heading
+// set "When the | line-up came | out" from 305 to 340 px.
+const HEADING_KEEP_EN = new RegExp(`\\b\\d{1,2} ${MONTH}\\b(?! \\d)[:,.;]?|\\b\\d+% off\\b|\\bno line-up\\b|\\bline-up(?= came out\\b)|(?<=\\bline-up )came out\\b`, "g");
+// A month with its year that is wider than the column: at the heading's
+// 24 px "September 2026" is 322 px, "December 2026" 311 and "November 2026"
+// 308, against the 292 px column at 320, so the nowrap of HEADING_KEEP held
+// "December 2026" past the edge and pushed Primavera Sound São Paulo's
+// English line-up page sideways at 305 and 320 px ("Saturday 5 December
+// 2026", scroll width 325 at 320; the sweep of 24 October 2026). Such a
+// date is a keep-date instead (theme.css): plain text below 360 px, where
+// the year may take the line after its month, and whole from 360, where
+// the column holds it. Every other month fits at 320 with its year
+// (February's 280 px is the widest) and keeps its nowrap. English only,
+// as above: no other guide has such a heading yet.
+const HEADING_WIDE_EN = /<span class="nowrap">((?:September|November|December) \d{4})<\/span>/g;
 const HEADING_KEEP_BY: Record<string, RegExp> = { es: HEADING_KEEP_ES, pt: HEADING_KEEP_PT, th: HEADING_KEEP_TH, fr: HEADING_KEEP_FR };
 const HEADING_GLUE_FR = new RegExp(`(?<=\\d|\\der) (?=${MOIS}(?!\\p{L})|${FR_NOUN}(?!\\p{L}))`, "gu");
 const HEADING_GLUE: Record<string, (span: string) => string> = { fr: (m) => m.replace(HEADING_GLUE_FR, "\u00a0") };
@@ -578,11 +605,21 @@ const HEADING_BREAKS = /[ \t\n\u200b\u00ad\u0E00-\u0E7F\u3040-\u30FF\p{Script=Ha
 export const longestRun = (text: string) => Math.max(0, ...text.split(HEADING_BREAKS).map((run) => [...run.replace(/\u2060/g, "")].length));
 export const headingHtml = (text: string, lang = "en") => {
   const set = text.replace(/[&<>'"]/g, (c) => ASTRO_ESCAPES[c]).replace(HEADING_KEEP, (m) => `<span class="nowrap">${m}</span>`);
-  const html = lang.toLowerCase() === "en" ? set.replace(HEADING_KEEP_EN, (m) => `<span class="nowrap">${m}</span>`) : set;
+  const html = lang.toLowerCase() === "en" ? set.replace(HEADING_WIDE_EN, '<span class="keep-date">$1</span>').replace(HEADING_KEEP_EN, (m) => `<span class="nowrap">${m}</span>`) : set;
   const keep = HEADING_KEEP_BY[lang.slice(0, 2).toLowerCase()];
   const glue = HEADING_GLUE[lang.slice(0, 2).toLowerCase()] ?? ((m: string) => m);
   return keep ? html.replace(keep, (m) => `<span class="keep-date">${glue(m)}</span>`) : html;
 };
+// A guide's h1 as Astro prints text ({page.h1}), with the runs its page
+// holds on one line (Page.h1Keep) in a nowrap span. An h1 without them
+// prints the bytes it always printed. A run that is not once in the h1
+// stops the build, as a crumb that is its own title does (GuidePage).
+export const h1Html = (text: string, keep: string[] = []) =>
+  keep.reduce((html, run) => {
+    const at = run.replace(/[&<>'"]/g, (c) => ASTRO_ESCAPES[c]);
+    if (html.split(at).length !== 2) throw new Error(`h1Keep "${run}" is not once in the h1 "${text}"`);
+    return html.replace(at, `<span class="nowrap">${at}</span>`);
+  }, text.replace(/[&<>'"]/g, (c) => ASTRO_ESCAPES[c]));
 
 // A price card's total stays with the word before its "=": "$209.90 +
 // $10.00 fees = $219.90" may break before "fees", never between "=" and the
