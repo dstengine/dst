@@ -2208,4 +2208,92 @@ export const items: EventItem[] = [
     expertise:
       "Pick the film before the night: Rocky Horror on Halloween is the one where the audience joins in, and the one that will sell first, while Edward Scissorhands on the Thursday is the quiet choice. Bring a warm layer whichever you book. It is a rooftop in London at the end of October, the screening starts after dark, and the rebook-or-refund promise covers weather that stops a show, not weather that merely makes it chilly.",
   },
+
+  {
+    slug: "english-national-ballet-nutcracker-london-coliseum-2026",
+    createdAt: "2026-10-25T02:30:00+04:00",
+    updatedAt: "2026-10-25T02:30:00+04:00",
+    site: "ldn",
+    image: "/covers/english-national-ballet-nutcracker-london-coliseum-2026.jpg",
+    imageAlt: "A ballerina in a white tutu and a wooden nutcracker soldier facing each other on a stage under a tall Christmas tree, a giant mouse shadow on the curtain",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "English National Ballet's Nutcracker at the London Coliseum",
+    cardTitle: "ENB's Nutcracker at the Coliseum",
+    titleSeo: "The Nutcracker 2026, London Coliseum: ENB dates and ages",
+    summary:
+      "English National Ballet's Nutcracker returns to the London Coliseum from Thursday 17 December 2026 to Sunday 10 January 2027: Christmas Eve in Edwardian London, more than 100 dancers and musicians, and the English National Ballet Philharmonic playing Tchaikovsky live. About two hours with an interval, for ages five and up.",
+    start: "2026-12-17",
+    end: "2027-01-10",
+    utcOffset: "+00:00",
+    venue: "London Coliseum, St Martin's Lane",
+    city: "London",
+    country: "United Kingdom",
+    geo: { name: "London Coliseum", lat: 51.5100038, lng: -0.1262319 },
+    organizer: "English National Ballet",
+    category: "Theatre",
+    ticket: {
+      url: "https://www.ballet.org.uk/production/nutcracker/",
+      label: "Tickets",
+    },
+    source: {
+      name: "English National Ballet, Nutcracker",
+      url: "https://www.ballet.org.uk/production/nutcracker/",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "<strong>English National Ballet</strong> brings its <strong>Nutcracker</strong> back to the <strong>London Coliseum</strong> on St Martin's Lane from <strong>Thursday 17 December 2026</strong> to <strong>Sunday 10 January 2027</strong>, with more than 100 dancers and musicians on and below the stage.",
+      "## The story",
+      "This production opens on <strong>Christmas Eve in Edwardian London</strong>, at <strong>Drosselmeyer's Sweets & Delights Emporium</strong>, and carries on through the battle with the <strong>Rat King</strong>.",
+      "## The music",
+      "Tchaikovsky's score is played live by the <strong>English National Ballet Philharmonic</strong> in the pit.",
+      "## How long, and for whom",
+      "The performance runs for about <strong>two hours</strong>, including an interval. It is recommended for <strong>ages five and over</strong>; under-fives are welcome at the <strong>family-friendly performance</strong> on <strong>Saturday 9 January at 2pm</strong>.",
+      "## After the run",
+      "English National Ballet stays at the Coliseum into the new year with <strong>Romeo & Juliet</strong>, from 14 to 24 January 2027.",
+      "## More of London in December",
+      "Before or after the ballet, <a href=\"/events/skate-at-somerset-house-2026/\" title=\"Skate at Somerset House 2026\">the rink at Somerset House</a> is a short walk away, and <a href=\"/events/cirque-alice-royal-festival-hall-2026/\" title=\"Cirque Alice, Royal Festival Hall London: Christmas 2026\">Cirque Alice</a> plays across the river at the Royal Festival Hall.",
+    ],
+    faq: [
+      {
+        q: "When is English National Ballet's Nutcracker at the London Coliseum?",
+        a: "From Thursday 17 December 2026 to Sunday 10 January 2027.",
+      },
+      {
+        q: "How long is the Nutcracker?",
+        a: "About two hours, including an interval.",
+      },
+      {
+        q: "Can I bring a child under five?",
+        a: "The ballet is recommended for ages five and over. Under-fives are welcome at the family-friendly performance on Saturday 9 January 2027 at 2pm.",
+      },
+      {
+        q: "Is the music live?",
+        a: "Yes. The English National Ballet Philharmonic plays Tchaikovsky's score at every performance.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/skate-at-somerset-house-2026/",
+        eyebrow: "11 November – 10 January",
+        title: "Skate at Somerset House 2026",
+        text: "The courtyard rink, ten minutes' walk from the Coliseum.",
+      },
+      {
+        href: "/events/cirque-alice-royal-festival-hall-2026/",
+        eyebrow: "12 December – 3 January",
+        title: "Cirque Alice at the Royal Festival Hall",
+        text: "Wonderland as circus on the South Bank.",
+      },
+      {
+        href: "/events/hyde-park-winter-wonderland-2026/",
+        eyebrow: "19 November – 3 January",
+        title: "Hyde Park Winter Wonderland 2026",
+        text: "Rides, markets and ice in the park.",
+      },
+    ],
+    expertise:
+      "If a child under five is coming, the Saturday 9 January matinee at 2pm is the one to book: it is the only performance meant for them. The Coliseum is the largest theatre in the West End, so the cheapest seats at the top of the house are a long way from the stage; for a first Nutcracker, the stalls or the dress circle are worth the difference.",
+  },
 ];
