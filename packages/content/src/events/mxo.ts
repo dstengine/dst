@@ -1179,4 +1179,85 @@ export const items: EventItem[] = [
     expertise:
       "El Fast Pass es la decisión que importa: siete experiencias en una sola noche son muchas filas, y las noches de fin de semana cerca del 31 serán las más llenas. Si las fechas lo permiten, las de noviembre, ya pasado Halloween, son la apuesta tranquila. La colonia Americana es zona de bares y restaurantes, así que conviene llegar en taxi o aplicación y no buscar estacionamiento sobre Avenida de la Paz un sábado por la noche.",
   },
+
+  {
+    slug: "score-baja-1000-2026",
+    createdAt: "2026-10-25T02:30:00+04:00",
+    updatedAt: "2026-10-25T02:30:00+04:00",
+    site: "mxo",
+    image: "/covers/score-baja-1000-2026.jpg",
+    imageAlt: "Una camioneta todoterreno cruzando el desierto entre cactus, con montañas ocres y el mar al fondo",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "SCORE Baja 1000 2026: de Cabo a Cabo",
+    cardTitle: "SCORE Baja 1000 2026",
+    titleSeo: "SCORE Baja 1000 2026 en Los Cabos, México: fechas",
+    summary:
+      "La 59.ª SCORE Baja 1000 se corre del 9 al 15 de noviembre de 2026 en San José del Cabo, Baja California Sur, México: una ruta que sale de Los Cabos y vuelve a Los Cabos, como cierre del Campeonato Mundial del Desierto SCORE, con más de 250 equipos.",
+    start: "2026-11-09",
+    end: "2026-11-15",
+    utcOffset: "-07:00",
+    venue: "San José del Cabo, Baja California Sur",
+    city: "San José del Cabo",
+    country: "México",
+    geo: { name: "San José del Cabo", lat: 23.0598364, lng: -109.7025148 },
+    organizer: "SCORE International",
+    category: "Deporte",
+    ticket: {
+      url: "https://www.score-international.com/",
+      label: "SCORE International",
+      sells: false,
+    },
+    source: {
+      name: "SCORE International",
+      url: "https://www.score-international.com/",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "La carrera todoterreno más conocida de México llega a su edición 59. La <strong>SCORE Baja 1000</strong> tiene su semana del <strong>9 al 15 de noviembre de 2026</strong> en <strong>San José del Cabo</strong>, Baja California Sur.",
+      "## De Cabo a Cabo",
+      "Este año la ruta es un circuito: sale de Los Cabos, recorre el desierto de la península y vuelve a Los Cabos. Es la <strong>última fecha del Campeonato Mundial del Desierto SCORE 2026</strong>, la que decide los títulos de la temporada.",
+      "## Los equipos",
+      "SCORE cuenta <strong>más de 250 equipos</strong> inscritos en las distintas clases de autos, UTV y motocicletas.",
+      "## También en Los Cabos",
+      "Un mes después, del 9 al 13 de diciembre, la misma región recibe el <a href=\"/eventos/ficc-los-cabos-2026/\" title=\"Festival de Cine de Los Cabos 2026, México: fechas, boletos\">Festival Internacional de Cine de Los Cabos</a>.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo es la Baja 1000 2026?",
+        a: "La semana de la carrera va del 9 al 15 de noviembre de 2026, en San José del Cabo, Baja California Sur.",
+      },
+      {
+        q: "¿Por dónde pasa la ruta?",
+        a: "Es un circuito de Cabo a Cabo: sale de Los Cabos y vuelve a Los Cabos.",
+      },
+      {
+        q: "¿Cuántos equipos corren?",
+        a: "Más de 250, según SCORE International.",
+      },
+    ],
+    related: [
+      {
+        href: "/eventos/ficc-los-cabos-2026/",
+        eyebrow: "9 al 13 de diciembre",
+        title: "Festival de Cine de Los Cabos 2026",
+        text: "Cine en la misma región, un mes después de la carrera.",
+      },
+      {
+        href: "/eventos/festival-internacional-del-globo-2026/",
+        eyebrow: "13 al 16 de noviembre",
+        title: "Festival Internacional del Globo 2026",
+        text: "Los globos de León, la misma semana del cierre de la Baja.",
+      },
+      {
+        href: "/eventos/fil-guadalajara-2026/",
+        eyebrow: "28 de noviembre",
+        title: "FIL Guadalajara 2026",
+        text: "Cuarenta años de la feria del libro, con Italia invitada.",
+      },
+    ],
+    expertise:
+      "Para verla en persona conviene reservar hospedaje en San José del Cabo cuanto antes: más de 250 equipos, con sus equipos de apoyo, llenan la ciudad esa semana. La ruta oficial con sus puntos de acceso se publica antes de la carrera; los lugares para el público cerca de la salida y la meta son los más fáciles, y adentrarse en el desierto pide vehículo adecuado, agua y paciencia.",
+  },
 ];
