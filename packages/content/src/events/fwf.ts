@@ -546,4 +546,86 @@ export const items: EventItem[] = [
     expertise:
       "Buy the Late Bird now rather than at the door: two tiers have already sold out, and a party that ends at ten fills early rather than late. The early finish is the format's whole idea, so the best of it is the first two hours, when the room is full and the 2000s are still a novelty. Decide on the make-up add-on before you arrive, and leave the plastic scythe at home: sharp props are turned away at the door.",
   },
+
+  {
+    slug: "abu-dhabi-finance-week-2026",
+    createdAt: "2026-10-25T02:30:00+04:00",
+    updatedAt: "2026-10-25T02:30:00+04:00",
+    site: "fwf",
+    image: "/covers/abu-dhabi-finance-week-2026.jpg",
+    imageAlt: "Glass towers on a small island at dusk, a bridge to either shore, the towers reflected in the water and stacks of gold coins in front",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Abu Dhabi Finance Week 2026",
+    cardTitle: "Abu Dhabi Finance Week 2026",
+    titleSeo: "Abu Dhabi Finance Week 2026: 7–10 December, from Dubai",
+    summary:
+      "The fifth Abu Dhabi Finance Week runs from Monday 7 to Thursday 10 December 2026 on Al Maryah Island, hosted by ADGM under the theme The Capital Community, Powered by Partnerships: more than 70 events, 800 speakers and 35,000 participants, about an hour and a half by road from Dubai.",
+    start: "2026-12-07",
+    end: "2026-12-10",
+    utcOffset: "+04:00",
+    venue: "ADGM, Al Maryah Island",
+    city: "Abu Dhabi",
+    geo: { name: "Abu Dhabi Global Market, Al Maryah Island", lat: 24.5013163, lng: 54.3885386 },
+    organizer: "Abu Dhabi Global Market (ADGM)",
+    category: "Conference",
+    ticket: {
+      url: "https://www.investwithabudhabi.com/en/news/abu-dhabi-finance-week-2026",
+      label: "Announcement",
+      sells: false,
+    },
+    source: {
+      name: "Abu Dhabi Investment Office",
+      url: "https://www.investwithabudhabi.com/en/news/abu-dhabi-finance-week-2026",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "The capital's finance week reaches its fifth edition. <strong>Abu Dhabi Finance Week</strong> runs from <strong>Monday 7 to Thursday 10 December 2026</strong> on <strong>Al Maryah Island</strong>, hosted by <strong>ADGM</strong>, the international financial centre based there.",
+      "## The theme",
+      "This year's is <strong>The Capital Community, Powered by Partnerships</strong>: the week as a meeting place for sovereign funds, asset managers, banks and the companies they back, rather than a single conference stage.",
+      "## The scale",
+      "The organisers expect <strong>more than 70 events</strong>, <strong>800 speakers</strong> and <strong>35,000 participants</strong> over the four days. Last year's edition had <strong>819 speakers</strong> and ended with <strong>82 memoranda of understanding</strong> signed.",
+      "## From Dubai",
+      "Al Maryah Island is about an hour and a half by road from central Dubai. With seventy events across four days, most visitors from Dubai pick the two or three that matter to them rather than the whole week.",
+      "## Before it in Dubai",
+      "November in Dubai has its own future-facing fortnight: the <a href=\"/\" title=\"Future World Forum Dubai 2026\">Future World Forum</a> on 16 November and <a href=\"/events/dubai-future-week-2026/\" title=\"Dubai Future Week 2026: 18–21 November and how to register\">Dubai Future Week</a> from 18 to 21 November.",
+    ],
+    faq: [
+      {
+        q: "When is Abu Dhabi Finance Week 2026?",
+        a: "From Monday 7 to Thursday 10 December 2026, on Al Maryah Island in Abu Dhabi.",
+      },
+      {
+        q: "Who hosts Abu Dhabi Finance Week?",
+        a: "ADGM, Abu Dhabi Global Market, the international financial centre on Al Maryah Island.",
+      },
+      {
+        q: "How big is ADFW 2026?",
+        a: "More than 70 events, 800 speakers and 35,000 participants are expected. The 2025 edition had 819 speakers and 82 memoranda of understanding signed.",
+      },
+    ],
+    related: [
+      {
+        href: "/",
+        eyebrow: "16 November",
+        title: "Future World Forum Dubai 2026",
+        text: "The forum this site is named for, three weeks before.",
+      },
+      {
+        href: "/events/dubai-future-week-2026/",
+        eyebrow: "18–21 November",
+        title: "Dubai Future Week 2026",
+        text: "Emirates Towers and the Museum of the Future, and how to register.",
+      },
+      {
+        href: "/events/step-dubai-2027/",
+        eyebrow: "3–4 February",
+        title: "Step Dubai 2027",
+        text: "The start-up festival at Dubai Internet City in the new year.",
+      },
+    ],
+    expertise:
+      "Plan ADFW as a set of days, not one event. The flagship sessions are where the headlines come from, but the side events are where a Dubai founder or adviser actually meets an Abu Dhabi fund, and they are spread across the island and the hotels around it. Book a room on Al Maryah or Reem for the nights you need rather than driving back to Dubai at the end of each day.",
+  },
 ];
