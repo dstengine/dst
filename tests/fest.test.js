@@ -745,14 +745,27 @@ describe("where a guide's links lead", () => {
   // no-break space joins ("Programmation\u00a0:" is one run, where a split
   // on \s made it two: QA and the critic, round 1, 24 October 2026), a dash
   // breaks unless a word joiner follows it, and Thai and CJK letters break
-  // as spaces do, so only the Latin words of such a heading count.
-  test("a heading's run joins at a no-break space, breaks at a free dash, and counts no Thai or CJK", () => {
+  // as spaces do, so only the Latin words of such a heading count. The
+  // dash fixtures each have their longest run across the dash, so each
+  // rule decides one (the critic, round 2: the first ones held either way).
+  // A free hyphen shortens "Jacques-Cartier", a joiner lengthens it, the
+  // dash or slash counts with the word before it, and a hyphen-minus before
+  // a digit joins where U+2010 does not (UAX #14).
+  test("a heading's run joins at a no-break space, breaks after a free dash, and counts no Thai or CJK", () => {
     assert.equal(copy.longestRun("Programmation Igloofest 2027"), 13);
     assert.equal(copy.longestRun("Wonderfruit 2026 accommodation and travel"), 13);
     assert.equal(copy.longestRun("Programmation\u00a0: la soirée"), 15);
     assert.equal(copy.longestRun("Billets\u202f: 49\u2007$"), 9);
     assert.equal(copy.longestRun("The three $99.90 tickets: 18–25s, MobTix"), 8);
     assert.equal(copy.longestRun("21–\u206024 octobre"), 7);
+    assert.equal(copy.longestRun("Le Quai Jacques-Cartier"), 8);
+    assert.equal(copy.longestRun("Le Quai Jacques-\u2060Cartier"), 15);
+    assert.equal(copy.longestRun("Wonderfruit 2026 accommodation–and travel"), 14);
+    assert.equal(copy.longestRun("accommodation—and travel"), 14);
+    assert.equal(copy.longestRun("accommodation/travel"), 14);
+    assert.equal(copy.longestRun("Covid-19 rules"), 8);
+    assert.equal(copy.longestRun("Wonderfruit-2026"), 16);
+    assert.equal(copy.longestRun("Wonderfruit\u20102026"), 12);
     assert.equal(copy.longestRun("Wonderfruit 2026 ที่พักและการเดินทาง"), 11);
     assert.equal(copy.longestRun("Wonderfruit 2026 音樂節指南"), 11);
     assert.equal(copy.longestRun("ワンダーフルーツ はじめての"), 0);

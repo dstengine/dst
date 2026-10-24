@@ -530,7 +530,12 @@ const ASTRO_ESCAPES: Record<string, string> = { "&": "&amp;", "<": "&lt;", ">": 
 // made it 13). Thai and the CJK scripts break between their words without
 // a space, so their letters count as breaks: such a heading is held only
 // by the Latin words in it. The word joiner has no width and no count.
-const HEADING_BREAKS = /[ \t\n\u200b\u00ad\u0E00-\u0E7F\u3040-\u30FF\p{Script=Han}]+|[-\u2010\u2013\u2014/](?!\u2060)/u;
+// The break comes after the dash, so the dash ends the line and counts
+// with the word before it ("accommodation–" is 14), and a hyphen-minus
+// before a digit does not break at all ("Covid-19" is 8), as UAX #14 has
+// it (the critic, round 2, 24 October 2026: the dash was split out and
+// counted with neither word). No built h1 moved with it.
+const HEADING_BREAKS = /[ \t\n\u200b\u00ad\u0E00-\u0E7F\u3040-\u30FF\p{Script=Han}]+|(?<=[\u2010\u2013\u2014/]|-(?!\d))(?!\u2060)/u;
 export const longestRun = (text: string) => Math.max(0, ...text.split(HEADING_BREAKS).map((run) => [...run.replace(/\u2060/g, "")].length));
 export const headingHtml = (text: string, lang = "en") => {
   const set = text.replace(/[&<>'"]/g, (c) => ASTRO_ESCAPES[c]).replace(HEADING_KEEP, (m) => `<span class="nowrap">${m}</span>`);
