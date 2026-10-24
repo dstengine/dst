@@ -29,8 +29,19 @@ export interface GoTarget {
       resale. */
   namedBy?: string[];
   /** The anchor's tooltip: what the target answers, never the link's own
-      words again. */
+      words again. In the language of `titleLang`'s guide. */
   title: string;
+  /** The tooltip in each other language whose guide links the hop, keyed
+      by that guide's `lang` ({ en: "…" } on a Spanish guide's hop that its
+      English twin links too). A guide that links a hop with no title in
+      its language fails the build (copy.ts), so no tooltip reaches a page
+      in another language by accident. */
+  titles?: Record<string, string>;
+  /** The `lang` of the guide that `title` is written for: the first guide,
+      in data order, that links the hop, else the event's first guide. Set
+      by data/events/index.ts as it loads; the data never writes it. It is
+      also the language of the hop's own page (pages/go/[slug].astro). */
+  titleLang?: string;
 }
 
 /** One channel's offer in a list (markup.offers). `availability` is the
@@ -47,6 +58,12 @@ export interface Offer {
   priceValidUntil?: string;
   availability?: "InStock" | "SoldOut";
   price?: { key: string; currency: string };
+  /** The hop and the tier name as another guide's copy gives them, keyed
+      by that guide's `lang`: Zamna Tulum's English twin sells the
+      Multipass through its own hops and names Mr Nice VIP's tier "General
+      1st release". There is one markup per event; what a guide does not
+      override is shared, and the event's first guide never has an entry. */
+  perGuide?: Record<string, { go?: string; name?: string }>;
 }
 
 /** One festival: the scout's sheet and the hops out of the guide. */

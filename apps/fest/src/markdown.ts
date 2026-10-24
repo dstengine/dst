@@ -10,7 +10,7 @@
 import { events, guides } from "./data/events/index";
 import type { Guide } from "./data/types";
 import { applySpans, blocksMd, inlineMd, pathOf, SITE, sourcesMd, type Ctx } from "./copy";
-import { eventOf, hubCard, hubOrder, hubSections, mainPage, today } from "./rules";
+import { eventOf, firstGuides, hubCard, hubOrder, hubSections, mainPage, today, twinsOf } from "./rules";
 import { hub } from "./hub";
 import { chrome, site } from "./site.config";
 
@@ -85,14 +85,15 @@ function hubDoc(day: string): Doc {
   // The page's months, each guide under its month with its dates and place
   // on a line of their own (the card's meta line), then how the guides are
   // made and the archive's three fronts, which the page itself reduces to
-  // one line.
+  // one line. An event's further languages follow its pages, one line
+  // each, as the card's last chips (rules.ts, hubCard).
   const months = hubSections(guides, events, day).flatMap((section) => [
     `## ${section.heading}`,
     "",
     ...section.guides.flatMap((guide) => {
       const event = eventOf(events, guide);
       const main = mainPage(guide);
-      const card = hubCard(event, guide, day, "");
+      const card = hubCard(event, guide, day, "", twinsOf(guides, guide));
       const ctx: Ctx = { event, guide, today: day, where: "/ (Markdown)" };
       return [
         `### [${card.name}](${abs(`${guide.path.replace(/\/$/, "")}.md`)}) (${guide.hubLabel})`,
@@ -102,6 +103,7 @@ function hubDoc(day: string): Doc {
         inlineMd(guide.hubBlurb, ctx),
         "",
         ...guide.pages.filter((p) => p !== main).map((p) => `- [${p.label}](${abs(`/${p.slug}.md`)}): ${p.description}`),
+        ...card.twins.map((t) => `- [${t.label}](${abs(mdPath(t.href))}): ${t.description}`),
         "",
       ];
     }),
@@ -137,7 +139,8 @@ export function docs(): Doc[] {
 }
 
 /** /llms.txt: the site's map, every guide and its pages, each linked to its
-    Markdown twin. */
+    Markdown twin. Each event's first guide in the hub's order, followed by
+    its further languages (Zamna Tulum's English after its Spanish). */
 export function llms(): string {
   const day = today();
   const lines = [
@@ -154,11 +157,13 @@ export function llms(): string {
     `- [${hub.h1}](${abs(mdPath(hub.path))}): ${site.en.homeTitle}`,
     "",
   ];
-  for (const guide of hubOrder(guides, events, day)) {
-    const event = eventOf(events, guide);
-    lines.push(`## ${guide.name ?? event.name}, ${guide.hubLabel}`, "");
-    for (const page of guide.pages) lines.push(`- [${page.title}](${abs(`/${page.slug}.md`)}): ${page.description}`);
-    lines.push("");
+  for (const first of hubOrder(firstGuides(guides), events, day)) {
+    for (const guide of [first, ...twinsOf(guides, first)]) {
+      const event = eventOf(events, guide);
+      lines.push(`## ${guide.name ?? event.name}, ${guide.hubLabel}`, "");
+      for (const page of guide.pages) lines.push(`- [${page.title}](${abs(`/${page.slug}.md`)}): ${page.description}`);
+      lines.push("");
+    }
   }
   lines.push(...archiveMd());
   return lines.join("\n");

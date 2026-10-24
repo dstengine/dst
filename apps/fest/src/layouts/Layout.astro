@@ -17,6 +17,10 @@ interface Props {
   /** The last of them, where the page's crumb is not its title less the
       suffix. */
   crumbCurrent?: string;
+  /** The whole trail for the structured data, home first and this page
+      last, in place of the two above: a guide's page, whose trail is not
+      its address (rules.ts, guideTrail). */
+  crumbTrail?: { name: string; path: string }[];
   /** The guide the page belongs to; absent on the hub. */
   guide?: Guide;
   language?: Lang;
@@ -28,7 +32,7 @@ interface Props {
   /** The title's suffix, over the language's: a legacy page's (legacy.ts). */
   titleSuffix?: string;
 }
-const { title, description, jsonLd, alternates, crumbLabels, crumbCurrent, guide, language = "en", image, noindex, titleSuffix } = Astro.props;
+const { title, description, jsonLd, alternates, crumbLabels, crumbCurrent, crumbTrail, guide, language = "en", image, noindex, titleSuffix } = Astro.props;
 
 // The guide's locale over the language's, and its own footer links after the
 // hub's. Spread, like the rest of the identity, so the layout sets none of
@@ -59,6 +63,7 @@ const thai = guide ? langOf(guide.lang) === "th" : false;
   alternates={alternates}
   crumbLabels={crumbLabels}
   crumbCurrent={crumbCurrent}
+  crumbTrail={crumbTrail}
   chrome={chrome}
   image={image}
   noindex={noindex}

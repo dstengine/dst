@@ -1,8 +1,16 @@
 ---
-// One guide's card on the hub: the event's name linked to the guide, its
-// cover, a line with the edition's dates, its place and the guide's language
-// named in that language, its blurb, and a row of its other pages. Every
-// value comes from rules.ts (hubCard), which decides; this file prints.
+// One event's card on the hub, its first guide's: the event's name linked
+// to the guide, its cover, a line with the edition's dates, its place and
+// the guide's language named in that language, its blurb, and a row of its
+// other pages, with each further language of the event as the row's last
+// chip ("English" on Zamna Tulum's Spanish card). Every value comes from
+// rules.ts (hubCard), which decides; this file prints.
+//
+// A twin is a chip, not a card: a second card would print the same name,
+// cover and dates twice in one month, and the chip sits where a reader of
+// the card's row looks for the guide's other ways in. It is in its own
+// language (`lang`, `hreflang`), and its hidden words are that language's
+// too ("English Zamna Tulum 2027"), not the card's.
 //
 // Everything after the name is the guide's and in its language, so a
 // Spanish-only reader who tapped the wordmark on a Spanish guide finds
@@ -34,6 +42,12 @@ interface Props {
 }
 const { card } = Astro.props;
 const joint = chrome[langOf(card.lang)].rowJoint ?? " ";
+// The row: the guide's other pages, then each twin in its own language.
+// One list and one map, so a card with no twin prints the bytes it did.
+const chips = [
+  ...card.pages.map((p) => ({ ...p, lang: undefined, dir: undefined, joint, name: card.name })),
+  ...card.twins.map((t) => ({ href: t.href, label: t.label, title: t.title, lang: t.lang, dir: t.dir !== card.dir ? t.dir : undefined, joint: chrome[langOf(t.lang)].rowJoint ?? " ", name: t.name })),
+];
 ---
 <article class="hub-card">
   <h3><a href={card.href} title={card.linkTitle} lang={card.lang}>{card.name}</a></h3>
@@ -52,11 +66,11 @@ const joint = chrome[langOf(card.lang)].rowJoint ?? " ";
     <span class="hub-card-lang">{card.label}</span>
   </p>
   {card.blurb && <p class="hub-card-blurb" lang={card.lang} dir={card.dir} set:html={card.blurb} />}
-  {card.pages.length > 0 && (
+  {chips.length > 0 && (
     <ul class="hub-pages" lang={card.lang} dir={card.dir}>
-      {card.pages.map((p) => (
+      {chips.map((c) => (
         <li>
-          <a href={p.href} title={p.title}>{p.label}<span class="visually-hidden">{joint}{card.name}</span></a>
+          <a href={c.href} lang={c.lang} hreflang={c.lang} dir={c.dir} title={c.title}>{c.label}<span class="visually-hidden">{c.joint}{c.name}</span></a>
         </li>
       ))}
     </ul>

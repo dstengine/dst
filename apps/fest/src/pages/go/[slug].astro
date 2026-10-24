@@ -4,8 +4,11 @@
 // 3 adds only the sitemap line): a guide's offers.url is its /go/ hop, and
 // Google has to fetch the hop to read its noindex (ruling X4, 22 Oct 2026).
 //
-// A hop out of a guide whose language row has the hop's words (fr:
-// Igloofest) speaks that language, through Redirect's own props: its
+// A hop speaks the language of the guide its title is written for, the
+// first guide that links it (GoTarget.titleLang: Zamna Tulum's English-only
+// hops are its English guide's, its shared ones its Spanish guide's). Where
+// that language's row has the hop's words (fr: Igloofest), the page speaks
+// it, through Redirect's own props: its
 // <html lang>, its tab title, and the paragraph a reader sees only if
 // neither the refresh nor the script moves them on, which says where they
 // are going, links on to it and back to the guide (the copy's chrome
@@ -14,7 +17,8 @@
 // host, and the guide's main title without its suffix (the SEO lead's
 // gate-3 condition 5). Both are a thumb's target on a phone, inline, since
 // the hop has no stylesheet (the fest director's gate-3 condition 7).
-// Every other hop is Redirect's English page, byte for byte as before.
+// Every other hop, a language with no hop row (en, es) among them, is
+// Redirect's English page, byte for byte as before.
 import Redirect from "@dst/ui/Redirect.astro";
 import { outbound } from "../../outbound";
 import { events, guides } from "../../data/events/index";
@@ -25,12 +29,12 @@ import { chrome, langOf } from "../../site.config";
 export function getStaticPaths() {
   return Object.entries(outbound).map(([slug, hop]) => ({
     params: { slug },
-    props: { to: hop.url, event: hop.event },
+    props: { to: hop.url, event: hop.event, titleLang: hop.titleLang },
   }));
 }
 
-const { to, event } = Astro.props;
-const guide = guides.find((g) => g.event === event && chrome[langOf(g.lang)].hop);
+const { to, event, titleLang } = Astro.props;
+const guide = guides.find((g) => g.event === event && g.lang === titleLang && chrome[langOf(g.lang)].hop);
 const words = guide ? chrome[langOf(guide.lang)].hop : undefined;
 const name = events.find((e) => e.slug === event)?.name ?? event;
 // The sentence is one string: Astro drops the space between two

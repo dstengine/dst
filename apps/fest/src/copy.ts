@@ -326,10 +326,32 @@ const FR_DATE = `(?<!\\d)\\d{1,2}(?:er)?[ \\u00a0]${MOIS}(?:[ \\u00a0]\\d{4})?(?
 const FR_NOUN = "(?:ans|mois|jours|soirées|nuits|scènes|villes|billets|artistes|personnes|éditions|Igloosapiens)";
 const FR_COUNT = `(?<![\\d,.])\\d[\\d\\u00a0]*(?: à \\d+)?[ \\u00a0]${FR_NOUN}(?![\\p{L}\\d])`;
 const KEEP_FR = new RegExp([FR_DATE, FR_COUNT].join("|"), "gu");
+// English, as Zamna Tulum's English guide writes it (the twin of its
+// Mexican Spanish one, 24 October 2026): the forms ES_MX_TOKENS holds, as
+// the English copy prints them. A sum with its currency code ("2,196 USD",
+// "6.00 USD"), a clock time with its "a.m." ("3:00 a.m."), a sale phase
+// with its ordinal ("1st release", "4th release"), a phone number ("+52 55
+// 7200 0052") and the seller's three-word name, "Mr Nice VIP". A later
+// English guide adds the forms its own sweep finds, each with the guide
+// that needed it.
+const EN_TOKENS = [
+  `\\b\\d[\\d,]*(?:\\.\\d+)? USD\\b`, // 2,196 USD, 6.00 USD (Zamna Tulum)
+  `\\b\\d{1,2}:\\d{2} [ap]\\.m\\.`, // 3:00 a.m. (Zamna Tulum)
+  `\\b\\d(?:st|nd|rd|th) release\\b`, // 1st release, 4th release (Zamna Tulum)
+  `\\+52(?: \\d{2,4}){3}\\b`, // +52 55 7200 0052 (Zamna Tulum)
+  `\\bMr Nice VIP\\b`, // Mr Nice VIP (Zamna Tulum)
+];
+const KEEP_EN = new RegExp([KEEP_TOGETHER.source, ...EN_TOKENS].join("|"), "g");
 /** Each language's keep-together list, by the guide's locale where it has
     a row of its own ("es-MX"), else by its language: "es-CL" reads es. A
-    guide in a language with no row does not build. */
-const KEEP: Record<string, RegExp> = { en: KEEP_TOGETHER, es: KEEP_ES, "es-mx": KEEP_ES_MX, pt: KEEP_PT, th: KEEP_TH, fr: KEEP_FR };
+    guide in a language with no row does not build.
+    "en" is the house's English as it stands: the keep list and the tokens,
+    and the glue below, as es-MX, th and fr have; an English guide in a
+    locale with no row of its own (a bare "en", an "en-GB" to come) takes
+    it. "en-au" is a frozen row: Beyond The Valley's and Field Day's pages
+    as they were set before "en" took the tokens, so that a token added for
+    a later English guide never re-sets them. */
+const KEEP: Record<string, RegExp> = { en: KEEP_EN, "en-au": KEEP_TOGETHER, es: KEEP_ES, "es-mx": KEEP_ES_MX, pt: KEEP_PT, th: KEEP_TH, fr: KEEP_FR };
 // In a long run a split date is a nicety, but a sign and the number it
 // belongs to are one token wherever they stand: the sweep found "R$ |
 // 765,45", "(11) | 5666-8822", "nº | 12.933" and "Linha | 9-Esmeralda" in
@@ -359,7 +381,20 @@ const GLUE_PT = /(R\$|\(\d{2}\)|\bnº|§|\bCEP|\bLinha) (?=\d)/gu;
 // au samedi…") and "18 | ans", "21 | ans" in its age lines. The longest
 // glued date, "31 décembre 2026", is well inside the 292 px column.
 const GLUE_ES_MX = new RegExp([...ES_MX_TOKENS, `\\b\\d{1,2} de ${MES}(?: de \\d{4})?(?![\\p{L}\\d])`].join("|"), "gu");
+// In English the same holds for the tokens and for a day with its month,
+// as in Mexican Spanish: Zamna Tulum's English pages run long between two
+// links, and "2,196 | USD", "Mr | Nice VIP" or "24 | October 2026" split
+// at a line's end read as two things. The year stays free: the line-break
+// sweep of 24 October 2026 found the whole date glued left "Announced on"
+// alone on a 320 px card's line (three such lines on the main page, two on
+// dates, against one each unglued), and "24 October | 2026" reads as one
+// date still. "en-au" has its own row, the identity, since typeset falls
+// back from a locale to its language and would give Beyond The Valley and
+// Field Day this glue.
+const GLUE_EN = new RegExp([...EN_TOKENS, `\\b\\d{1,2} ${MONTH}\\b`].join("|"), "g");
 const GLUE: Record<string, (run: string) => string> = {
+  en: (run) => run.replace(GLUE_EN, (m) => m.replace(/ /g, "\u00a0")),
+  "en-au": (run) => run,
   pt: (run) => run.replace(GLUE_PT, "$1\u00a0"),
   "es-mx": (run) => run.replace(GLUE_ES_MX, (m) => m.replace(/ /g, "\u00a0")),
   th: (run) => run.replace(KEEP_TH, (m) => m.replace(/ /g, "\u00a0").replace(/–/g, "–\u2060")),
@@ -464,6 +499,32 @@ const keepTotals = (html: string) =>
 interface Piece { from: number; to: number; html: string; md: string; text: string }
 
 const LINK = /\[([^\]\n]+)\]\(([^)\s]+)\)/g;
+/** The keys of an event's hops that a string links, as `](/go/<event>-
+    <key>/)`: found with LINK itself, so the loader reads exactly the
+    links that inline renders. */
+export const goKeysIn = (text: string, eventSlug: string): string[] => {
+  const prefix = `/go/${eventSlug}-`;
+  return [...text.matchAll(LINK)].map((m) => m[2]).filter((href) => href.startsWith(prefix) && href.endsWith("/")).map((href) => href.slice(prefix.length, -1));
+};
+/** For each of an event's hops, the `lang` of the first of its guides, in
+    data order, whose strings link it, else the first guide's: the
+    language its `title` is written in (GoTarget.titleLang). Every string
+    of the raw guide counts, walked before any typesetting, so a link in a
+    field added later (an FAQ, a slot, a source line, a blurb) is found
+    without a list of fields to keep. */
+export function hopLanguages(event: { slug: string; go: Record<string, unknown> }, guides: Guide[]): Record<string, string> {
+  const own = guides.filter((g) => g.event === event.slug);
+  const langs: Record<string, string> = {};
+  const walk = (value: unknown, lang: string): void => {
+    if (typeof value === "string") {
+      for (const key of goKeysIn(value, event.slug)) if (key in event.go && !(key in langs)) langs[key] = lang;
+    } else if (Array.isArray(value)) for (const v of value) walk(v, lang);
+    else if (value && typeof value === "object") for (const v of Object.values(value)) walk(v, lang);
+  };
+  for (const guide of own) walk(guide, guide.lang);
+  if (own.length > 0) for (const key of Object.keys(event.go)) langs[key] ??= own[0].lang;
+  return langs;
+}
 // One arrow, or a group of them joined by " · " (Igloofest: "→
 // /igloofest/gatineau/ · → /igloofest/quebec/"), which is one mark.
 const ARROW = /\s*→ (\/[^\s]*\/)((?: · → \/[^\s]*\/)*)(?=\s|$)/g;
@@ -550,7 +611,11 @@ function marks(text: string, ctx: Ctx, site: string): { html: string; md: string
       const prefix = `${ctx.event.slug}-`;
       const go = slug.startsWith(prefix) ? ctx.event.go[slug.slice(prefix.length)] : undefined;
       if (!go || !href.endsWith("/")) throw new Error(`${ctx.where}: ${href} is not one of ${ctx.event.slug}'s /go/ hops`);
-      target = { href, title: go.title, out: go.url };
+      // The tooltip in the guide's own language: `title` for the guide it
+      // was written for, else that guide's entry in `titles`.
+      const title = ctx.guide.lang === go.titleLang ? go.title : go.titles?.[ctx.guide.lang];
+      if (title === undefined) throw new Error(`${ctx.where}: ${href} has no title in ${ctx.guide.lang}`);
+      target = { href, title, out: go.url };
     } else {
       const [path, id] = href.split("#");
       const page = pages.find((p) => pathOf(p) === path);

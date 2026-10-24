@@ -3,8 +3,9 @@
 // build, over dist.
 //
 // BaseLayout (packages/ui) builds a page's BreadcrumbList from its address,
-// one crumb a path segment. A guide's address is its trail, so that is
-// right for every guide. An archive page's is not: /iron-maiden/moskva2016/
+// one crumb a path segment, unless the page gives it the trail whole
+// (`crumbTrail`), as every guide page now does ([...path].astro, from
+// rules.ts guideTrail). An archive page's address is not its trail: /iron-maiden/moskva2016/
 // shows Festivals > Archive > Concert > Iron Maiden in Moscow, and its
 // address would name /iron-maiden/, a page this site has never served (58
 // of the 109 named one; the session's ruling on card
@@ -14,11 +15,13 @@
 // last (the page, its canonical), and between them the archive's crumbs,
 // every one a page of this app.
 //
-// Why here and not in the layout: a trail given to BaseLayout is a prop of
-// packages/ui, which every site builds from, and that card leaves
-// packages/ui alone. The prop is the later, cleaner fix (the card's debt
-// list); this pass goes when it lands. An Astro integration rather than a
-// step after the build because the app builds on Vercel on its own (see
+// Why here and not in the layout: this pass came first, when that card left
+// packages/ui alone. The prop exists now (BaseLayout's `crumbTrail`, added
+// for the English twin of Zamna Tulum, card 2026-10-24-zamna-tulum-en).
+// Moving the 109 archive pages onto it would retire this file, which is a
+// deletion: it is the follow-up recorded in that card's section 11, and
+// waits for the user's word. An Astro integration rather than a step after
+// the build because the app builds on Vercel on its own (see
 // tools/svg-comments.mjs).
 import { readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";

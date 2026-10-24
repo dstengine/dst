@@ -19,7 +19,7 @@ import GuideCta from "./GuideCta.astro";
 import { ICONS } from "@dst/ui/icons";
 import type { FestEvent, Guide, GuidePage } from "../data/types";
 import { applySpans, blocks, headingHtml, inline, inlineText, longDate, pathOf, sourcesHtml, withoutSuffix, type Ctx } from "../copy";
-import { mainPage } from "../rules";
+import { guideTrail, mainPage } from "../rules";
 import { coverStyle as coverCss } from "../cover";
 import { languagesFor } from "../routes";
 import { chrome, langOf, site } from "../site.config";
@@ -38,12 +38,12 @@ const path = pathOf(page);
 const ctx: Ctx = { event, guide, page, today, where: path };
 const main = mainPage(guide);
 
-// The trail matches the one in the structured data (schema.ts, through
-// [...path].astro): the hub, then the guide's own page under the event's
-// name as the guide gives it, then this page under its crumb, or its title
-// without the suffix where it has none.
-const crumbs = page === main ? [] : [{ href: guide.path, label: guide.name ?? event.name, title: main.linkTitle ?? withoutSuffix(main.title) }];
-const current = page.crumb ?? withoutSuffix(page.title);
+// The trail is the one in the structured data: the hub, then the guide's
+// own page under the event's name as the guide gives it, then this page
+// under its crumb, or its title without the suffix where it has none. One
+// function makes both (rules.ts, guideTrail; [...path].astro passes it to
+// BaseLayout as crumbTrail).
+const { crumbs, current } = guideTrail(event, guide, page);
 
 // The sibling row's tooltips say what each page holds (navTitle), as the
 // other links to a page do (linkTitle, copy.ts), where the guide gives them.
@@ -74,7 +74,10 @@ const sections = page.sections
 // A label may sit in a span with the section it points at (Primavera Sound
 // São Paulo's "O que o organizador lista como valor", whose section goes
 // with the prices), and leaves the list on the same day.
-const jumpIds = new Set([...sections.map((s) => s.id), "questions"]);
+// The sources section is a jump target where the page prints it, on the
+// template's own condition below (Zamna Tulum's English main page jumps to
+// it).
+const jumpIds = new Set([...sections.map((s) => s.id), "questions", ...(page.sources !== undefined || page.links !== undefined ? ["sources"] : [])]);
 const ownJumps = page.jumps?.map((j) => ({ ...j, label: plain(j.label) })).filter((j) => j.label);
 for (const j of ownJumps ?? [])
   if (!jumpIds.has(j.id)) throw new Error(`${path}: the jump "${j.label}" names #${j.id}, which the page does not print`);

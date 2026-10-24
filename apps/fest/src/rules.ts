@@ -30,6 +30,18 @@ export const mainPage = (guide: Guide): GuidePage => {
   return main;
 };
 
+/** The first guide of each event, in data order: the one whose page is
+    the event's x-default (routes.ts, alternatesFor) and whose card the hub
+    prints. An event's further guides are its twins, each a chip on that
+    card (twinsOf), never a card of their own. */
+export const firstGuides = (guides: Guide[]): Guide[] =>
+  guides.filter((guide, i) => guides.findIndex((g) => g.event === guide.event) === i);
+
+/** The guides of the same event after this one, in data order: Zamna
+    Tulum's English twin, after its Mexican Spanish guide. */
+export const twinsOf = (guides: Guide[], guide: Guide): Guide[] =>
+  guides.filter((g, i) => g.event === guide.event && i > guides.indexOf(guide));
+
 /** The hub's order: editions still to come or on now by their first day,
     soonest first; then the ones that have ended, the most recent first;
     ties by the event's name, then the guide's locale. A reader looking for
@@ -53,12 +65,13 @@ export function hubOrder(guides: Guide[], events: FestEvent[], day: string): Gui
     ("November 2026"); then the ended ones under "Past editions", most
     recent first. A season that has begun stays under the month it opened,
     and its card's own dates say when it ends. The ids are the jump list's
-    anchors: "m-2026-11", ..., "past". */
+    anchors: "m-2026-11", ..., "past". One card per event: each event's
+    first guide, its twins in the card's row (firstGuides). */
 export interface HubSection { id: string; heading: string; title: string; guides: Guide[] }
 export function hubSections(guides: Guide[], events: FestEvent[], day: string): HubSection[] {
   const monthName = new Intl.DateTimeFormat("en-GB", { month: "long", year: "numeric", timeZone: "UTC" });
   const sections: HubSection[] = [];
-  for (const guide of hubOrder(guides, events, day)) {
+  for (const guide of hubOrder(firstGuides(guides), events, day)) {
     const edition = eventOf(events, guide).edition;
     const ended = hasEnded(edition, day);
     const month = edition.start.slice(0, 7);
@@ -139,10 +152,15 @@ function placeOf(event: FestEvent, guide: Guide): string {
     nothing it decides: the name and its link, the cover (absent: the dates
     go on the panel, and the meta line carries them as hidden text, since
     the panel is hidden from a screen reader), the dates, the place and the
-    language, the blurb, and the row of the guide's other pages. (The words
-    between a page's label and the event's name, for a screen reader's list
-    of links, are the language's chrome: HubEntry takes them from
-    site.config.ts, which node's test runner cannot import from here.) */
+    language, the blurb, and the row of the guide's other pages, ending in
+    one chip for each of the event's guides in another language (`twins`,
+    the caller's rules.twinsOf: Zamna Tulum's "English"), each with its
+    language, its main page's link title, the event's name as that guide
+    gives it, and that page's description for the Markdown twin. (The
+    words between a page's label and the event's name, for a screen
+    reader's list of links, are the language's chrome: HubEntry takes them
+    from site.config.ts, which node's test runner cannot import from
+    here.) */
 export interface HubCard {
   name: string;
   href: string;
@@ -157,8 +175,9 @@ export interface HubCard {
   label: string;
   blurb: string;
   pages: { href: string; label: string; title: string }[];
+  twins: { href: string; label: string; lang: string; dir: "ltr" | "rtl"; title: string; name: string; description: string }[];
 }
-export function hubCard(event: FestEvent, guide: Guide, day: string, host: string): HubCard {
+export function hubCard(event: FestEvent, guide: Guide, day: string, host: string, twins: Guide[]): HubCard {
   const main = mainPage(guide);
   const ctx: Ctx = { event, guide, today: day, where: `/ (${event.slug}/${guide.slug})` };
   const dates = hubDates(event.edition, guide.lang);
@@ -179,6 +198,33 @@ export function hubCard(event: FestEvent, guide: Guide, day: string, host: strin
     pages: guide.pages
       .filter((p) => p !== main)
       .map((p) => ({ href: pathOf(p), label: p.label, title: p.linkTitle ?? withoutSuffix(p.title) })),
+    twins: twins.map((twin) => {
+      const own = mainPage(twin);
+      return {
+        href: twin.path,
+        label: twin.hubLabel,
+        lang: twin.lang,
+        dir: twin.dir,
+        title: own.linkTitle ?? withoutSuffix(own.title),
+        name: twin.name ?? event.name,
+        description: own.description,
+      };
+    }),
+  };
+}
+
+/** A guide page's trail below the hub: the guide's own page under the
+    event's name as the guide gives it, then this page under its crumb, or
+    its title without the suffix where it has none. GuidePage prints it and
+    [...path].astro gives it to the structured data whole (BaseLayout's
+    crumbTrail), so the two cannot part: a guide in a second language sits
+    at /zamna-tulum/en/, where a trail walked from the address would name
+    /zamna-tulum/ and a crumb "En". */
+export function guideTrail(event: FestEvent, guide: Guide, page: GuidePage): { crumbs: { href: string; label: string; title: string }[]; current: string } {
+  const main = mainPage(guide);
+  return {
+    crumbs: page === main ? [] : [{ href: guide.path, label: guide.name ?? event.name, title: main.linkTitle ?? withoutSuffix(main.title) }],
+    current: page.crumb ?? withoutSuffix(page.title),
   };
 }
 
@@ -223,6 +269,11 @@ export function musicEvent(event: FestEvent, guide: Guide, page: GuidePage, day:
   if (!venue?.name) throw new Error(`${event.slug}: the markup's venue "${markup.venue ?? "venue"}" names no venue in the sheet`);
   const prices = event.sheet.prices as Price[];
   const sold = "offers" in markup ? markup.offers : undefined;
+  // An offer as this guide's copy gives it: its own hop and tier name where
+  // the offer has an entry for the guide's language (Offer.perGuide), the
+  // shared ones elsewhere. The first guide has none, so it prints what it
+  // always did.
+  const inGuide = (o: Offer): Offer => ({ ...o, ...o.perGuide?.[guide.lang] });
   // "2027-01-14T19:30" in America/Toronto is 19:30 at -05:00 that day. A
   // time with no offset and no zone to take one from is a time nobody can
   // place, and fails the build; a date alone stays a date.
@@ -250,7 +301,7 @@ export function musicEvent(event: FestEvent, guide: Guide, page: GuidePage, day:
   const offers = hasEnded(event.edition, day) || !sold
     ? undefined
     : Array.isArray(sold)
-      ? sold.filter((o) => !o.priceValidUntil || day <= o.priceValidUntil).map((o) => channel(event, o, shown))
+      ? sold.filter((o) => !o.priceValidUntil || day <= o.priceValidUntil).map((o) => channel(event, inGuide(o), shown))
       : !("prices" in sold)
       ? [single(event, sold, shown)]
       : sold.prices.map((i) => {
@@ -285,7 +336,7 @@ export function musicEvent(event: FestEvent, guide: Guide, page: GuidePage, day:
         throw new Error(`${event.slug}: markup.subEvents names "${k}", which is not a list of acts in the sheet`);
       return list as string[];
     });
-    const own = d.offers && !hasEnded(event.edition, day) ? d.offers.map((o) => channel(event, o, shown)) : [];
+    const own = d.offers && !hasEnded(event.edition, day) ? d.offers.map((o) => channel(event, inGuide(o), shown)) : [];
     return {
       "@type": "MusicEvent",
       name: d.name,

@@ -1,8 +1,8 @@
 ---
-// The hub, at the root of fest.one: every guide in every language as a
-// card, grouped by the month its edition starts, the next festivals first
-// and the editions that have ended last (rules.ts, hubSections and
-// hubCard). A one-sentence lede, so the first guide is on a phone's first
+// The hub, at the root of fest.one: one card per event, its first guide's,
+// with each further language as the last chip of its pages row, grouped by
+// the month its edition starts, the next festivals first and the editions
+// that have ended last (rules.ts, hubSections, hubCard and twinsOf). A one-sentence lede, so the first guide is on a phone's first
 // screen; the sentence on how the guides are sourced at the foot, and under
 // it one line to the archive of the old festival site, whose pages are this
 // app's too (the user's decision of 23 Oct 2026: the front page need not
@@ -15,7 +15,7 @@ import Layout from "../layouts/Layout.astro";
 import HubEntry from "../components/HubEntry.astro";
 import OnThisPage from "@dst/ui/OnThisPage.astro";
 import { events, guides } from "../data/events/index";
-import { assertTitle, eventOf, hubCard, hubJumps, hubSections, today } from "../rules";
+import { assertTitle, eventOf, hubCard, hubJumps, hubSections, today, twinsOf } from "../rules";
 import { hub } from "../hub";
 import { site } from "../site.config";
 import { withSuffix } from "@dst/ui/title";
@@ -42,7 +42,7 @@ const { line } = hub.archive;
       <section class="hub-month" aria-labelledby={s.id}>
         <h2 id={s.id}>{s.heading}</h2>
         <div class="hub-grid">
-          {s.guides.map((guide) => <HubEntry card={hubCard(eventOf(events, guide), guide, day, host)} />)}
+          {s.guides.map((guide) => <HubEntry card={hubCard(eventOf(events, guide), guide, day, host, twinsOf(guides, guide))} />)}
         </div>
       </section>
     ))}

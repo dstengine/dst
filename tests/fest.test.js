@@ -40,7 +40,7 @@ const copy = await import("../apps/fest/src/copy.ts");
 const rules = await import("../apps/fest/src/rules.ts");
 const cover = await import("../apps/fest/src/cover.ts");
 const routes = await import("../apps/fest/src/routes.ts");
-const { keywords } = await import("../apps/fest/src/site.config.ts");
+const { chrome, keywords, langOf } = await import("../apps/fest/src/site.config.ts");
 const { hub } = await import("../apps/fest/src/hub.ts");
 const { legacyPages } = await import("../apps/fest/src/legacy.ts");
 const { wordsOf } = await import("../tools/text-dupes.mjs");
@@ -269,7 +269,7 @@ describe("the copy and its sheet", () => {
   test("hub cards: each guide's dates, place, language and cover", () => {
     const got = {};
     for (const guide of guides.filter((g) => HUB_SEVEN.has(g.path))) {
-      const c = rules.hubCard(rules.eventOf(events, guide), guide, "2026-10-24", "fest.one");
+      const c = rules.hubCard(rules.eventOf(events, guide), guide, "2026-10-24", "fest.one", rules.twinsOf(guides, guide));
       const { start, end } = rules.eventOf(events, guide).edition;
       got[guide.path] = { when: c.when?.text.replace(/\s+/g, " "), place: c.place, label: c.label };
       assert.equal(c.dates.datetime, end && end !== start ? `${start}/${end}` : start, guide.path);
@@ -289,7 +289,7 @@ describe("the copy and its sheet", () => {
   test("hub card without a cover: the dates go on the panel, and the meta line has no <time>", () => {
     const guide = guides.find((g) => g.path === "/beyond-the-valley/");
     const event = rules.eventOf(events, guide);
-    const c = rules.hubCard(event, { ...guide, cover: undefined }, "2026-10-24", "fest.one");
+    const c = rules.hubCard(event, { ...guide, cover: undefined }, "2026-10-24", "fest.one", []);
     assert.equal(c.onCover, true);
     assert.equal(c.when, undefined);
     assert.equal(c.coverStyle, undefined);
@@ -544,6 +544,94 @@ describe("where a guide's links lead", () => {
     assert.throws(() => assertTraced(event, "form", hop("sellers.2", "https://example.net/")), /not an official seller/);
     assert.throws(() => assertTraced(event, "form", hop("sellers.9", form)), /not an official seller/);
   });
+
+  // An event in two languages (Zamna Tulum: es-MX, then its English twin)
+  // has one set of hops. Each hop's `title` is in the language of the first
+  // guide that links it (titleLang, set by the loader), and every other
+  // guide that links it reads its own entry of `titles`; an entry for a
+  // language that does not link the hop, or for the hop's own language, is
+  // a tooltip nobody reads or a second one for the same page.
+  const linked = (guide) => {
+    const keys = new Set();
+    const walk = (v) => {
+      if (typeof v === "string") copy.goKeysIn(v, guide.event).forEach((k) => keys.add(k));
+      else if (v && typeof v === "object") Object.values(v).forEach(walk);
+    };
+    walk(guide);
+    return keys;
+  };
+  test("a hop has a title in the language of every guide that links it, and titles holds no other", () => {
+    const bad = [];
+    for (const event of events) {
+      const own = guides.filter((g) => g.event === event.slug);
+      const links = new Map(own.map((g) => [g, linked(g)]));
+      for (const [key, go] of Object.entries(event.go)) {
+        const first = own.find((g) => links.get(g).has(key)) ?? own[0];
+        if (go.titleLang !== first?.lang) bad.push(`${event.slug} go.${key}: titleLang ${go.titleLang}, the first guide linking it is ${first?.lang}`);
+        for (const g of own.filter((x) => links.get(x).has(key)))
+          if (g.lang !== go.titleLang && !go.titles?.[g.lang]) bad.push(`${event.slug} go.${key}: no title in ${g.lang}, which links it`);
+        for (const lang of Object.keys(go.titles ?? {})) {
+          if (lang === go.titleLang) bad.push(`${event.slug} go.${key}: titles.${lang} is the hop's own language`);
+          else if (!own.some((g) => g.lang === lang && links.get(g).has(key))) bad.push(`${event.slug} go.${key}: titles.${lang}, and no ${lang} guide links it`);
+        }
+      }
+    }
+    assert.deepEqual(bad, []);
+  });
+
+  // A hop written for the twin alone, which the first guide then links too,
+  // takes the first guide's language: the twin's page fails the build until
+  // the hop has a title in English, rather than print the Spanish one.
+  test("a twin-only hop the first guide comes to link fails the twin's page until titles has it", () => {
+    const event = events.find((e) => e.slug === "zamna-tulum");
+    const [es, en] = guides.filter((g) => g.event === "zamna-tulum");
+    const esLinking = { ...es, hubBlurb: `${es.hubBlurb} [Zamna](/go/zamna-tulum-official/)` };
+    const langs = copy.hopLanguages(event, [esLinking, en]);
+    assert.equal(langs.official, "es-MX");
+    assert.equal(copy.hopLanguages(event, [es, en]).official, "en");
+    const fixture = { ...event, go: Object.fromEntries(Object.entries(event.go).map(([k, t]) => [k, { ...t, titleLang: langs[k] }])) };
+    const ctx = { event: fixture, guide: en, today: "2026-10-24", where: "fixture" };
+    assert.throws(() => copy.inline("The [organiser's listing](/go/zamna-tulum-official/).", ctx), /\/go\/zamna-tulum-official\/ has no title in en/);
+    const titled = { ...fixture, go: { ...fixture.go, official: { ...fixture.go.official, titles: { en: "Zamna Tulum's event listing" } } } };
+    assert.match(copy.inline("The [organiser's listing](/go/zamna-tulum-official/).", { ...ctx, event: titled }), /title="Zamna Tulum&#39;s event listing"|title="Zamna Tulum's event listing"/);
+  });
+
+  // An offer as another guide's copy gives it (Offer.perGuide): keyed by
+  // the language of one of the event's guides, never the first guide's,
+  // whose words the shared fields already are.
+  test("an offer's perGuide names another guide of its event, never the first", () => {
+    const bad = [];
+    for (const event of events) {
+      const own = guides.filter((g) => g.event === event.slug);
+      const offers = [...(Array.isArray(event.markup.offers) ? event.markup.offers : []), ...(event.markup.subEvents ?? []).flatMap((d) => d.offers ?? [])];
+      for (const o of offers)
+        for (const [lang, over] of Object.entries(o.perGuide ?? {})) {
+          if (!own.some((g) => g.lang === lang)) bad.push(`${event.slug}: perGuide.${lang}, and no ${lang} guide`);
+          if (lang === own[0].lang) bad.push(`${event.slug}: perGuide.${lang} is the first guide's`);
+          if (over.go && !event.go[over.go]) bad.push(`${event.slug}: perGuide.${lang}.go "${over.go}" is no hop`);
+        }
+    }
+    assert.deepEqual(bad, []);
+  });
+
+  // The house's English ("en") keeps its tokens and dates together and
+  // glues them in a long run; en-AU, Beyond The Valley's and Field Day's,
+  // is set as it was before "en" took them.
+  test("an English twin's tokens keep together, and en-AU is set as before", () => {
+    const zamna = events.find((e) => e.slug === "zamna-tulum");
+    const en = guides.find((g) => g.event === "zamna-tulum" && g.lang === "en");
+    const btv = guides.find((g) => g.lang === "en-AU");
+    const short = "Mr Nice VIP sells it at 2,196 USD until 3:00 a.m. in its 4th release.";
+    const long = `${"A season of single nights in the jungle at Tulum, with doors at ten and the last set at dawn, sold night by night. ".repeat(2)}Read on 24 October 2026, from Mr Nice VIP at 2,196 USD.`;
+    const at = (guide, event, text) => copy.inline(text, { event, guide, today: "2026-10-24", where: "fixture" });
+    const twin = at(en, zamna, short);
+    for (const token of ["Mr Nice VIP", "2,196 USD", "3:00 a.m.", "4th release"]) assert.ok(twin.includes(`<span class="nowrap">${token}</span>`), token);
+    // A day with its month glued, its year left free (copy.ts, GLUE_EN).
+    assert.ok(at(en, zamna, long).includes("24\u00a0October 2026") && at(en, zamna, long).includes("Mr\u00a0Nice\u00a0VIP") && at(en, zamna, long).includes("2,196\u00a0USD"));
+    const btvEvent = rules.eventOf(events, btv);
+    assert.equal(at(btv, btvEvent, short), short);
+    assert.equal(at(btv, btvEvent, long), long);
+  });
 });
 
 // ------------------------------------------------------- the built site
@@ -692,8 +780,127 @@ describe("the built pages", { skip: built ? false : "apps/fest/dist is missing: 
       if (lists.length !== 1) { bad.push(`${route.path}: ${lists.length} BreadcrumbLists`); continue; }
       const named = lists[0].itemListElement.map((i) => i.name);
       if (!seen.length || JSON.stringify(seen) !== JSON.stringify(named)) bad.push(`${route.path}: "${seen.join(" › ")}" against "${named.join(" › ")}"`);
+      // And the same addresses: each crumb's link made absolute, the last
+      // the page's canonical. Every item is the hub or a page of this
+      // guide, so a guide in a second language (/zamna-tulum/en/) cannot
+      // send its trail through the first guide's page or a crumb "En".
+      const hrefs = [...nav.matchAll(/<li\b[^>]*>([\s\S]*?)<\/li>/g)].map((m) => m[1].match(/<a href="([^"]+)"/)?.[1]);
+      const canonical = h.match(/<link rel="canonical" href="([^"]+)"/)?.[1];
+      const seenUrls = hrefs.map((href, i) => (i === hrefs.length - 1 ? canonical : href && `https://fest.one${href}`));
+      const urls = lists[0].itemListElement.map((i) => i.item);
+      if (JSON.stringify(seenUrls) !== JSON.stringify(urls)) bad.push(`${route.path}: ${seenUrls.join(" › ")} against ${urls.join(" › ")}`);
+      const own = new Set(["https://fest.one/", ...route.guide.pages.map((p) => `https://fest.one/${p.slug}/`)]);
+      for (const u of urls) if (!own.has(u)) bad.push(`${route.path}: the BreadcrumbList names ${u}, not the hub or a page of this guide`);
     }
     assert.deepEqual(bad, []);
+  });
+
+  // Each hop's tooltip on a guide's page is its title in that guide's
+  // language: the hop's own where the guide is its titleLang, else the
+  // guide's entry in `titles` (copy.ts).
+  test("a hop's tooltip on a guide page is in that guide's language", () => {
+    const bad = [];
+    for (const route of routes.guideRoutes()) {
+      for (const a of anchors(html.get(route.path) ?? "").filter((x) => x.href?.startsWith(`/go/${route.event.slug}-`))) {
+        const go = route.event.go[a.href.slice(`/go/${route.event.slug}-`.length, -1)];
+        const want = route.guide.lang === go.titleLang ? go.title : go.titles?.[route.guide.lang];
+        if (decode(a.title ?? "") !== decode(want ?? "")) bad.push(`${route.path}: ${a.href} titled "${a.title}", not "${want}"`);
+      }
+    }
+    assert.deepEqual(bad, []);
+  });
+
+  // A hop's page speaks the language its title is written in, where that
+  // language's chrome has the hop's words (fr: Igloofest's twenty); every
+  // other hop is Redirect's English page with no link back (Zamna Tulum's
+  // fourteen English-only hops among them, as en has no hop row).
+  test("a hop's page speaks its titleLang guide's language, or is the English redirect", () => {
+    const bad = [];
+    const count = {};
+    for (const event of events)
+      for (const [key, go] of Object.entries(event.go)) {
+        const p = `/go/${event.slug}-${key}/`;
+        const h = html.get(p) ?? "";
+        const guide = guides.find((g) => g.event === event.slug && g.lang === go.titleLang);
+        const words = guide && chrome[langOf(guide.lang)].hop;
+        const lang = h.match(/<html[^>]*\slang="([^"]+)"/)?.[1];
+        if (words) {
+          if (lang !== guide.lang) bad.push(`${p}: <html lang="${lang}">, not ${guide.lang}`);
+          if (!anchors(h).some((a) => a.href === guide.path)) bad.push(`${p}: no link back to ${guide.path}`);
+        } else {
+          if (lang !== "en") bad.push(`${p}: <html lang="${lang}">, not Redirect's en`);
+          if (anchors(h).some((a) => guides.some((g) => g.path === a.href))) bad.push(`${p}: a link back on Redirect's English page`);
+        }
+        const tag = `${event.slug}:${go.titleLang}:${words ? "own" : "en"}`;
+        count[tag] = (count[tag] ?? 0) + 1;
+      }
+    assert.deepEqual(bad, []);
+    assert.equal(count["igloofest:fr-CA:own"], 20);
+    assert.equal(count["zamna-tulum:en:en"], 14);
+  });
+
+  // An event in two languages: every page names each of its event's
+  // guides' page of the same kind, and x-default is the first guide's.
+  test("an event in two languages: hreflang to each guide's page of the kind, x-default the first", () => {
+    const bad = [];
+    for (const route of routes.guideRoutes()) {
+      const own = guides.filter((g) => g.event === route.event.slug);
+      if (own.length < 2) continue;
+      const want = own.flatMap((g) => g.pages.filter((p) => p.kind === route.page.kind).map((p) => `${g.lang} https://fest.one/${p.slug}/`));
+      const first = own[0].pages.find((p) => p.kind === route.page.kind);
+      if (first) want.push(`x-default https://fest.one/${first.slug}/`);
+      const got = [...(html.get(route.path) ?? "").matchAll(/<link rel="alternate" hreflang="([^"]+)" href="([^"]+)">/g)].map((m) => `${m[1]} ${m[2]}`);
+      if (JSON.stringify(got) !== JSON.stringify(want)) bad.push(`${route.path}: ${got.join(", ")}`);
+    }
+    assert.deepEqual(bad, []);
+  });
+
+  // A guide's MusicEvent sells only through hops its own pages link (the
+  // SEO lead's note 2 on the English twin): an offer's url is one of the
+  // /go/ links of that guide's pages, its twin's not counted.
+  const musicEvents = (h) => {
+    const out = [];
+    const walk = (n) => {
+      if (Array.isArray(n)) n.forEach(walk);
+      else if (n && typeof n === "object") {
+        if (n["@type"] === "MusicEvent") out.push(n);
+        Object.values(n).forEach(walk);
+      }
+    };
+    for (const m of h.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) walk(JSON.parse(m[1]));
+    return out;
+  };
+  test("a guide's MusicEvent offers lead through hops that guide's pages link", () => {
+    const bad = [];
+    for (const guide of guides) {
+      const hrefs = new Set(guide.pages.flatMap((p) => anchors(html.get(`/${p.slug}/`) ?? "").map((a) => a.href)));
+      for (const page of guide.pages)
+        for (const me of musicEvents(html.get(`/${page.slug}/`) ?? ""))
+          for (const o of me.offers ?? []) {
+            const at = o.url.replace(/^https:\/\/fest\.one/, "");
+            if (!at.startsWith("/go/") || !hrefs.has(at)) bad.push(`/${page.slug}/: ${me.name} offers through ${o.url}, which no page of the guide links`);
+          }
+    }
+    assert.deepEqual(bad, []);
+  });
+
+  test("Zamna Tulum's English MusicEvent sells through its own hops and names its tiers; the Spanish one as before", () => {
+    const offers = (p) => musicEvents(html.get(p) ?? "").flatMap((me) => (me.offers ?? []).map((o) => ({ event: me.name, name: o.name, seller: o.seller.name, url: o.url.replace("https://fest.one/go/zamna-tulum-", "").replace(/\/$/, "") })));
+    const en = offers("/zamna-tulum/en/");
+    const es = offers("/zamna-tulum/");
+    // Once the edition has ended neither page offers anything (musicEvent).
+    if (rules.today() > events.find((e) => e.slug === "zamna-tulum").edition.end) {
+      assert.deepEqual([en, es], [[], []]);
+      return;
+    }
+    const multipass = (list, seller) => list.filter((o) => o.event === "Zamna Tulum 2027" && o.seller === seller).map((o) => o.url);
+    assert.deepEqual(multipass(en, "Mr Nice VIP"), ["multipass-en", "multipass-en"]);
+    assert.deepEqual(multipass(en, "Tixr"), ["tixr-multipass", "tixr-multipass"]);
+    assert.deepEqual(multipass(es, "Mr Nice VIP"), ["multipass", "multipass"]);
+    assert.deepEqual(multipass(es, "Tixr"), ["tixr", "tixr"]);
+    const general = (list) => list.find((o) => o.event.startsWith("ANYMA") && o.name.startsWith("General"))?.name;
+    assert.equal(general(en), "General 1st release");
+    assert.equal(general(es), "General 1.er release");
   });
 
   test("an id appears once on a page, and a section's is not one the page keeps", () => {
@@ -794,7 +1001,8 @@ describe("the hub's built page", { skip: built ? false : "apps/fest/dist is miss
     const sections = rules.hubSections(guides, events, rules.today());
     const printed = [...h.matchAll(/<section class="hub-month" aria-labelledby="([^"]+)"> <h2 id="\1">([^<]*)<\/h2>/g)].map((m) => [m[1], m[2]]);
     assert.deepEqual(printed, sections.map((s) => [s.id, s.heading]));
-    assert.equal(cards.length, guides.length);
+    // One card per event: a guide's twins are chips on its card.
+    assert.equal(cards.length, rules.firstGuides(guides).length);
     assert.equal(h.includes('<nav class="on-this-page"'), sections.length >= 5);
   });
 
@@ -820,6 +1028,52 @@ describe("the hub's built page", { skip: built ? false : "apps/fest/dist is miss
       if (place !== want.place) bad.push(`${href}: place "${place}"`);
     }
     assert.deepEqual(bad, []);
+  });
+
+  // A guide in a further language of an event is a chip, the last of its
+  // event's card's row, in its own language, and has no card of its own;
+  // the Markdown twin lists it after its first guide's pages, and llms.txt
+  // gives it its own section right after its first guide's.
+  test("a twin is the last chip of its event's card, in its own language, and has no card", () => {
+    const bad = [];
+    let twins = 0;
+    for (const first of rules.firstGuides(guides)) {
+      const event = rules.eventOf(events, first);
+      const c = cardOf(first.path) ?? "";
+      const chips = [...(c.match(/<ul class="hub-pages"[^>]*>([\s\S]*?)<\/ul>/)?.[1] ?? "").matchAll(/<li>\s*(<a\b[\s\S]*?<\/a>)\s*<\/li>/g)].map((m) => m[1]);
+      const own = rules.twinsOf(guides, first);
+      own.forEach((twin, i) => {
+        twins++;
+        const chip = chips.at(i - own.length) ?? "";
+        const main = rules.mainPage(twin);
+        const title = main.linkTitle ?? copy.withoutSuffix(main.title);
+        const joint = chrome[langOf(twin.lang)].rowJoint ?? " ";
+        const want = `<a href="${twin.path}" lang="${twin.lang}" hreflang="${twin.lang}" title="${title}">${twin.hubLabel}<span class="visually-hidden">${joint}${twin.name ?? event.name}</span></a>`;
+        if (chip !== want) bad.push(`${first.path}: chip ${chip}`);
+        if (cards.some((x) => x.includes(`<h3><a href="${twin.path}"`))) bad.push(`${twin.path}: a card of its own`);
+      });
+    }
+    assert.ok(twins > 0, "no twin on the hub");
+    assert.deepEqual(bad, []);
+  });
+
+  test("index.md lists a twin after its first guide's pages, and llms.txt right after its section", () => {
+    const md = readFileSync(path.join(DIST, "index.md"), "utf8");
+    const llms = readFileSync(path.join(DIST, "llms.txt"), "utf8");
+    for (const first of rules.firstGuides(guides)) {
+      const event = rules.eventOf(events, first);
+      let section = `## ${first.name ?? event.name}, ${first.hubLabel}\n`;
+      for (const twin of rules.twinsOf(guides, first)) {
+        const main = rules.mainPage(twin);
+        const line = `- [${twin.hubLabel}](https://fest.one${twin.path.replace(/\/$/, "")}.md): ${main.description}`;
+        assert.ok(md.includes(line), `index.md lacks ${line}`);
+        const next = `## ${twin.name ?? event.name}, ${twin.hubLabel}\n`;
+        const at = llms.indexOf(section);
+        const after = llms.indexOf("\n## ", at + 1);
+        assert.ok(at >= 0 && llms.slice(after + 1).startsWith(next), `llms.txt: "${next.trim()}" does not follow "${section.trim()}"`);
+        section = next;
+      }
+    }
   });
 
   test("one link to the archive, none to its other fronts; the Markdown twin keeps all three", () => {

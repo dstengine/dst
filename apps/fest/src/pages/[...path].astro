@@ -9,7 +9,7 @@ import GuidePage from "../components/GuidePage.astro";
 import LegacyPage from "../components/LegacyPage.astro";
 import { LEGACY_SUFFIX } from "../legacy";
 import { assertRoutesAreUnique, alternatesFor, guideRoutes, legacyRoutes, type GuideRoute, type LegacyRoute } from "../routes";
-import { assertTitle, mainPage, musicEvent, today } from "../rules";
+import { assertTitle, guideTrail, mainPage, musicEvent, today } from "../rules";
 import { withSuffix } from "@dst/ui/title";
 import { langOf, site } from "../site.config";
 
@@ -44,8 +44,19 @@ else assertTitle(withSuffix(page.title, titleSuffix, keyword, guide.lang), keywo
 // edition of its own, with its own markup (Igloofest's Québec and
 // Gatineau, the SEO lead's gate-3 condition 4).
 const jsonLd = !legacy && (page === mainPage(guide) || page.markup) ? [musicEvent(event, guide, page, day)] : [];
-// The BreadcrumbList names what the visible trail shows (GuidePage): the
-// event as the guide names it, and this page by its crumb where it has one.
+// The BreadcrumbList is the visible trail (GuidePage), whole: the hub under
+// the language's home label, the guide's own page under the event's name as
+// the guide gives it, and this page by its crumb where it has one, each at
+// its own address (rules.ts, guideTrail). Given whole, not walked from the
+// address, since a guide's second language sits at /zamna-tulum/en/ and the
+// walk would name /zamna-tulum/ and a crumb "En". An archive page walks.
+const trail = route
+  ? (() => {
+      const { crumbs, current } = guideTrail(event, guide, page);
+      const { homeHref, homeLabel } = site[langOf(guide.lang)];
+      return [{ name: homeLabel, path: homeHref }, ...crumbs.map((c) => ({ name: c.label, path: c.href })), { name: current, path: route.path }];
+    })()
+  : undefined;
 // Every page of a guide shares its cover: a link to the camping page is a
 // link to the same festival, and the picture says which one.
 ---
@@ -67,8 +78,7 @@ const jsonLd = !legacy && (page === mainPage(guide) || page.markup) ? [musicEven
   description={page.description}
   jsonLd={jsonLd}
   alternates={alternatesFor(page, guide)}
-  crumbLabels={{ [event.slug]: guide.name ?? event.name }}
-  crumbCurrent={page.crumb}
+  crumbTrail={trail}
   guide={guide}
   image={guide.cover}
 >
