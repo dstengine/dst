@@ -39,6 +39,7 @@
     "./analytics": "./src/analytics.ts",
     "./date": "./src/date.ts",
     "./title": "./src/title.ts",
+    "./meta": "./src/meta.ts",
     "./district/ContentPage.astro": "./src/components/district/ContentPage.astro",
     "./district/DistrictHub.astro": "./src/components/district/DistrictHub.astro",
     "./district/PhotoHero.astro": "./src/components/district/PhotoHero.astro",

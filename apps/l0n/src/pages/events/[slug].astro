@@ -1,7 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { site } from "../../site.config";
-import { datedTitle } from "@dst/ui/title";
+import { eventMeta } from "@dst/ui/meta";
 import EventArticle from "@dst/ui/EventArticle.astro";
 import { siteId, newsBase, eventsBase, publisher } from "../../content";
 import { eventsBySite } from "@dst/content/events";
@@ -25,8 +25,11 @@ const categoryHref = sectionHrefFor(item, allSections);
 // A seller if we have one, the source if we don't — see src/outbound.ts.
 const ticketHref = item.ticket ? go(`${item.slug}-ticket`) : undefined;
 const sourceHref = item.source?.url ? go(`${item.slug}-source`) : undefined;
+// The search title and description, with the meta-hook page test applied
+// (@dst/ui/meta); the control is the dated title and the summary.
+const meta = eventMeta(item, site, { host: Astro.site?.hostname ?? "", path: Astro.url.pathname });
 ---
-<Layout title={datedTitle(item.titleSeo ?? item.title, item, site)} description={item.summary} image={item.image}>
+<Layout title={meta.title} description={meta.description} image={item.image}>
   <EventArticle
     item={item}
     ticketHref={ticketHref}

@@ -4,8 +4,8 @@ import EventArticle from "@dst/ui/EventArticle.astro";
 import type { EventItem } from "@dst/content/types";
 import { publisher, labels, type Lang } from "../content";
 import { site } from "../site.config";
-import { datedTitle } from "@dst/ui/title";
-import { LOCALE, newsFor, eventsBase, newsBase } from "../i18n";
+import { eventMeta } from "@dst/ui/meta";
+import { LOCALE, newsFor, eventsBase, newsBase, alternates } from "../i18n";
 import { go } from "../outbound";
 import { sectionHref, promotedFor, linkFor, pluralOf } from "../sections";
 import { venueHref } from "../venues";
@@ -15,8 +15,12 @@ const { lang, item, more } = Astro.props;
 // A seller if we have one, the source if we don't — see ../outbound.ts.
 const ticketHref = item.ticket ? go(`${item.slug}-ticket`) : undefined;
 const sourceHref = item.source?.url ? go(`${item.slug}-source`) : undefined;
+// The search title and description, with the meta-hook page test applied
+// (@dst/ui/meta). Keyed like BaseLayout keys the page: its English path,
+// so both language twins show the same variant.
+const meta = eventMeta(item, site[lang], { host: Astro.site?.hostname ?? "", path: Astro.url.pathname, key: alternates(Astro.url.pathname)[0].href });
 ---
-<Layout lang={lang} title={datedTitle(item.titleSeo ?? item.title, item, site[lang])} description={item.summary} image={item.image}>
+<Layout lang={lang} title={meta.title} description={meta.description} image={item.image}>
   <EventArticle
     locale={LOCALE[lang]}
     item={item}

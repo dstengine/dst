@@ -93,6 +93,28 @@ export const EXPERIMENTS: Experiment[] = [
       "Expect title > label, by enough to pay for a button that wraps on a phone.",
     metric: "outbound_click on the entry's /go/<slug>-action/ hop ÷ experience_impression, per variant",
   },
+  {
+    // Search-result copy: does a title and description that promise the
+    // reader what they came for (dates, prices, how to get there) get
+    // clicked more than the plain dated title and the summary? Within the
+    // SEO rules all the same: the site's keyword stays in both, the title
+    // stays inside TITLE_LIMIT, every word is a fact read from the entry.
+    // The variant is built in @dst/ui/meta from the entry's own fields, so
+    // nothing is typed per page and nothing can be stale.
+    id: "meta-hook",
+    unit: "page",
+    hosts: ["tick.am", "vien.lol", "lnd.lol", "ldn.lol", "nyc42.lol", "cmx.lol", "mxo.lol", "fwf.lol", "sol2go.lol"],
+    paths: "^/(?:am/)?(?:events|veranstaltungen|eventos)/[^/]+/$",
+    variants: ["plain", "hook"],
+    start: "2026-10-24",
+    hypothesis:
+      "An event page is clicked more often when its search result reads like the answer rather than the heading: " +
+      "\"Name 2026: dates, prices & tips\" over \"Name, 7 Nov 2026\", and a description opening with the dates, the city and the price " +
+      "over the summary's first sentence. Expect hook > plain by a fifth or more at the same position; a smaller lift is not worth " +
+      "a title Google is likelier to rewrite. Decided at 2,000 impressions per arm or after eight weeks, whichever comes first, " +
+      "by tools/ab-meta.mjs.",
+    metric: "Search Console clicks ÷ impressions per variant on the event pages, since 2026-10-24, compared at matching average position",
+  },
 ];
 
 /** Every test running on this page today that has not been decided.

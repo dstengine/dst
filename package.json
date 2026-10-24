@@ -71,6 +71,7 @@
     "seo": "node tools/seo-check.mjs",
     "gsc": "node tools/gsc.mjs",
     "seo-top": "node tools/seo-top.mjs",
+    "ab-meta": "node tools/ab-meta.mjs",
     "graph": "node tools/links-graph.mjs",
     "outbound": "node tools/outbound-check.mjs",
     "test:prices": "node --experimental-strip-types --test tests/prices.test.js",
