@@ -119,7 +119,7 @@ export const items: EventItem[] = [
   {
     slug: "adipec-2026",
     createdAt: "2026-09-08T19:46:47+04:00",
-    updatedAt: "2026-09-08T19:46:47+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
     site: "eco",
     image: "/covers/adipec-2026.jpg",
     imageAlt: "A row of narrow paper bars of differing heights and three green tones, standing along a cream band on a green ground",
@@ -170,6 +170,14 @@ export const items: EventItem[] = [
       {
         q: "Is ADIPEC in Abu Dhabi or Dubai?",
         a: "<strong>Abu Dhabi</strong>, at ADNEC. It is roughly a ninety-minute drive from Dubai, which is why the week is usually planned as a stay rather than a day trip.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/spooktacular-al-barari-2026/",
+        eyebrow: "30 October to 1 November",
+        title: "Spooktacular Al Barari",
+        text: "A Halloween weekend in Dubai's garden community, 15:00 to 21:00, AED 169.",
       },
     ],
     expertise:
@@ -364,7 +372,7 @@ export const items: EventItem[] = [
   {
     slug: "ev-world-2026-dubai",
     createdAt: "2026-10-24T16:00:00+04:00",
-    updatedAt: "2026-10-24T16:00:00+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
     site: "eco",
     image: "/covers/ev-world-2026-dubai.jpg",
     imageAlt: "A sage paper car outline with a cream plug at its tail on a deep forest green ground, three small cream bolts above",
@@ -400,7 +408,101 @@ export const items: EventItem[] = [
       "## Why it matters here",
       "Dubai has set a target for the share of electric vehicles on its roads by 2030 and has the region's densest charging network, most of it DEWA's. An RTA-run show is the authority putting the charging operators and the car makers in the same hall as the people who write the rules.",
     ],
+    related: [
+      {
+        href: "/events/spooktacular-al-barari-2026/",
+        eyebrow: "30 October to 1 November",
+        title: "Spooktacular Al Barari",
+        text: "A Halloween weekend in Dubai's garden community, 15:00 to 21:00, AED 169.",
+      },
+    ],
     expertise:
       "The exhibition to compare it with is the Dubai International Motor Show, and the difference is that this one is run by the regulator. That means the sessions on charging standards, tariff rules and the licensing of charging operators are first-hand, and for a company in the charging business those three days are the clearest reading of the RTA's intentions it will get this year. The car halls are for the public; the conference room is for the trade.",
+  },
+  {
+    slug: "spooktacular-al-barari-2026",
+    createdAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
+    site: "eco",
+    image: "/covers/spooktacular-al-barari-2026.jpg",
+    imageAlt: "A cut-paper garden of palms and ferns around a still pond, pumpkins along a wooden boardwalk and a small play tower among the trees",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Spooktacular Al Barari 2026",
+    cardTitle: "Spooktacular Al Barari",
+    titleSeo: "Spooktacular Al Barari: Halloween, 30 Oct–1 Nov",
+    summary:
+      "A Halloween weekend outdoors in Al Barari, Dubai's garden community: 30 October to 1 November 2026, 3pm to 9pm daily, with a haunted house, a maze, a costume parade, craft corners and a horror trampoline at the Al Barari Playground. Tickets are AED 169 per person.",
+    start: "2026-10-30",
+    end: "2026-11-01",
+    startTime: "15:00",
+    endTime: "21:00",
+    utcOffset: "+04:00",
+    venue: "Al Barari Playground",
+    city: "Dubai",
+    country: "United Arab Emirates",
+    geo: { name: "Al Barari", lat: 25.10828, lng: 55.31877 },
+    organizer: "Al Barari",
+    category: "Halloween",
+    tickets: { priceFrom: 169, currency: "AED" },
+    ticket: {
+      url: "https://dubai.platinumlist.net/event-tickets/al-barari-dubai/casual-ticket-office?id_event_show=5946515",
+      label: "Tickets AED 169",
+    },
+    source: {
+      name: "Al Barari",
+      url: "https://www.albarari.com/spooktacular-albarari-2026",
+      verifiedOn: "2026-10-24",
+    },
+    body: [
+      "Al Barari keeps its Halloween outdoors. <strong>Spooktacular Al Barari</strong> runs for three afternoons, <strong>Friday 30 October to Sunday 1 November 2026</strong>, from <strong>3pm to 9pm</strong>, at the community's playground, with a haunted house, a maze and a costume parade on the programme and the playground's water play areas open alongside.",
+      "## Why it is on an environmental calendar",
+      "For its setting. Al Barari is the Dubai community laid out around gardens rather than towers, and the invitation to this weekend reads, fairly enough, \"The gardens are calling\". It is a Halloween held in the planting, at the time of year when Dubai's late afternoons are first mild enough to spend outside.",
+      "## The programme",
+      "A <strong>Haunted House</strong> and the <strong>Maze of the Unknown</strong>; a <strong>Halloween Parade</strong> with the Spooktacular Dance; a <strong>Spooky Stage</strong> with interactive games; a photo booth; craft corners for <strong>masquerade masks</strong> and creepy-crawly <strong>spiders</strong>; <strong>pumpkin painting</strong>; face painting and temporary tattoos; and <strong>Meet Our Spooky Creatures</strong>. The <strong>Horror Trampoline</strong> is for children aged <strong>3 and over</strong>, and there is trick or treat.",
+      "## Tickets",
+      "Entry is <strong>AED 169 per person</strong>, booked on Platinumlist. The page gives one price for everyone, with no separate rate for children. Cotton candy and popcorn are complimentary, and there are local market stalls and food trucks. Questions go to the playground on +971 55 406 8327 or info@albarariplayground.com.",
+    ],
+    faq: [
+      {
+        q: "When is Spooktacular Al Barari 2026?",
+        a: "From Friday 30 October to Sunday 1 November 2026, 3pm to 9pm each day, at the Al Barari Playground in Dubai.",
+      },
+      {
+        q: "How much are Spooktacular Al Barari tickets?",
+        a: "AED 169 per person, on Platinumlist.",
+      },
+      {
+        q: "Is it suitable for small children?",
+        a: "Most of it is: crafts, pumpkin painting, face painting, a costume parade and water play. The Horror Trampoline is for children aged 3 and over.",
+      },
+      {
+        q: "Is there food at Spooktacular Al Barari?",
+        a: "Yes. Cotton candy and popcorn are complimentary, and there are local markets and food trucks.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/ev-world-2026-dubai/",
+        eyebrow: "10–12 November",
+        title: "EV World 2026 Dubai",
+        text: "The RTA's first electric vehicle exhibition, at Dubai World Trade Centre.",
+      },
+      {
+        href: "/events/zayed-sustainability-prize-awards-2027/",
+        eyebrow: "12 January",
+        title: "Zayed Sustainability Prize 2027",
+        text: "The awards ceremony is open to the public, during Abu Dhabi Sustainability Week.",
+      },
+      {
+        href: "/events/abu-dhabi-sustainability-week-2027/",
+        eyebrow: "10–14 January",
+        title: "Abu Dhabi Sustainability Week 2027",
+        text: "Abu Dhabi's week of sustainability summits, with the Zayed Prize ceremony inside it.",
+      },
+    ],
+    expertise:
+      "Choose the day by the children rather than the programme: the page lists one programme for all three days at one price, and Saturday, Halloween itself, is the one everyone else will choose. Pack a change of clothes, since the playground's water play is part of the deal, and arrive well before dark if the haunted house is for small children, because the same haunted house reads very differently after dark.",
   },
 ];
