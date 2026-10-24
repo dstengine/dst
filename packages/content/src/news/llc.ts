@@ -519,4 +519,40 @@ export const items: NewsItem[] = [
     expertise:
       "Two groups of companies should read this that assume it is for someone else. The first is the UAE subsidiary of a foreign group near the threshold: the test uses the group's consolidated accounts, and a Dubai trading arm with Dh30 million of revenue is in scope if its parent in Frankfurt is. The second is the UAE-headquartered group with one foreign branch, because a permanent establishment abroad is enough to make a group multinational for this purpose. The guide's section on permanent establishments is the one those groups need, and it is the one the summary does not mention.",
   },
+
+  {
+    slug: "tourist-vat-refunds-now-take-one-business-day",
+    createdAt: "2026-10-25T02:30:00+04:00",
+    updatedAt: "2026-10-25T02:30:00+04:00",
+    site: "llc",
+    image: "/covers/tourist-vat-refunds-now-take-one-business-day.jpg",
+    imageAlt: "A teal shopping bag with a blank paper tag, a dotted arrow curving towards it on a teal ground",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Tourist VAT refunds now take one business day",
+    cardTitle: "Tourist VAT refunds in a day",
+    titleSeo: "Tourist VAT refund in Dubai: now one business day",
+    summary:
+      "The Federal Tax Authority and Planet launched an AI-powered refund platform on 20 October 2026: tourists leaving through Dubai International, Zayed International or Sharjah now get their VAT back in one business day instead of about nine. What that means for a Dubai shop on the scheme.",
+    date: "2026-10-25",
+    category: "Tax",
+    source: {
+      name: "Federal Tax Authority",
+      url: "https://tax.gov.ae/en/media.centre/News/federal.tax.authority.launches.worlds.firstofitskind.aipowered.digital.platform.for.tourist.tax.refunds.aspx",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "The UAE's VAT refund for tourists has been rebuilt. On <strong>20 October 2026</strong> the <strong>Federal Tax Authority</strong> and <strong>Planet</strong>, the company that runs the scheme with it, launched an AI-powered digital platform that cuts the time for a refund to reach a tourist from about <strong>nine business days to one</strong>. It is live at <strong>Dubai International</strong>, <strong>Zayed International</strong> in Abu Dhabi and <strong>Sharjah</strong> airports.",
+      "## The numbers",
+      "About <strong>16,700 retail outlets</strong> are connected to the scheme: <strong>1,326</strong> joined in 2025 and <strong>769</strong> in the first nine months of 2026. There are <strong>98 self-service kiosks</strong>, which already handle <strong>22.4%</strong> of refund transactions.",
+      "Since 2018 the scheme has refunded <strong>AED 4.2 billion</strong> over <strong>25 million</strong> transactions. The authority expects about <strong>4 million transactions</strong> and <strong>AED 692 million</strong> in refunds between November 2026 and October 2027, and puts tourist satisfaction at 93%.",
+      "## What it changes for a shop",
+      "The release describes a faster process, not new rules. A shop still issues the refund at the till and the tourist still validates it on departure; what has changed is how quickly the money comes back. A refund in one business day is a better reason for a visitor to buy from a shop that offers it, which matters most for fashion, electronics, perfume and jewellery retailers with a tourist trade.",
+      "## For a company being set up",
+      "The scheme only works for a business registered for VAT. A company planning to sell to visitors from a mall or souk in Dubai should treat VAT registration and joining the tourist refund scheme as one step, rather than discovering the second after opening.",
+    ],
+    expertise:
+      "Count the scheme into the plan for any retail licence aimed at visitors. The 769 outlets that joined in nine months are the competition a new shop opens against, and a faster refund raises what a tourist expects at the till. The authority's figures also say where tourists claim: almost a quarter of refunds already go through a kiosk, so the paperwork a shop hands over has to work without a person to explain it.",
+  },
 ];
