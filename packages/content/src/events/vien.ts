@@ -5,7 +5,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-wurstelprater-2026",
     createdAt: "2026-10-21T02:04:30+04:00",
-    updatedAt: "2026-10-21T02:04:30+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
     site: "vien",
     image: "/covers/halloween-wurstelprater-2026.jpg",
     imageAlt: "Ein rotes Riesenrad aus Papier über einem grünen Wiesenband mit sechs orangen Kürbissen und einem Hexenhut, goldene Sterne im cremefarbenen Himmel",
@@ -72,6 +72,12 @@ export const items: EventItem[] = [
         eyebrow: "Prater Hauptallee",
         title: "Vienna Halloween Run",
         text: "Am 30. Oktober laufen Kinder ab 16:40 Uhr und Erwachsene bis in die Dunkelheit, ein paar hundert Meter weiter in der Hauptallee.",
+      },
+      {
+        href: "/veranstaltungen/halloween-zentralfriedhof-wien-2026/",
+        eyebrow: "31. Oktober",
+        title: "Halloween am Zentralfriedhof",
+        text: "Rätselrallye und Sargprobeliegen in der Halle 2, 16 bis 20 Uhr, Eintritt frei.",
       },
     ],
     expertise:
@@ -795,7 +801,7 @@ export const items: EventItem[] = [
   {
     slug: "cosmic-horrors-planetarium-wien-2026",
     createdAt: "2026-10-11T01:15:13+04:00",
-    updatedAt: "2026-10-21T04:56:51+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
     site: "vien",
     image: "/covers/cosmic-horrors-planetarium-wien-2026.jpg",
     imageAlt: "Ein dunkler Nachthimmel mit einem Ringplaneten und mehreren kleinen runden Planeten über breiten Streifen in Orange und Rot, unten die Rundung einer roten Kuppel, auf cremefarbenem Grund",
@@ -880,6 +886,12 @@ export const items: EventItem[] = [
         eyebrow: "Leopoldstadt",
         title: "Coulrophobia im Clownmuseum",
         text: "Davor: die Fools Brothers um 13, 15 und 17 Uhr, eine Viertelstunde zu Fuß, für 15 Euro.",
+      },
+      {
+        href: "/veranstaltungen/halloween-zentralfriedhof-wien-2026/",
+        eyebrow: "31. Oktober",
+        title: "Halloween am Zentralfriedhof",
+        text: "Rätselrallye und Sargprobeliegen in der Halle 2, 16 bis 20 Uhr, Eintritt frei.",
       },
     ],
     expertise:
@@ -1847,5 +1859,102 @@ export const items: EventItem[] = [
         a: "Ja: Strohlandschaft, Draisinenexpress, Karussell der Fundgegenstände und Drehorgelmusik.",
       },
     ],
+  },
+  {
+    slug: "halloween-zentralfriedhof-wien-2026",
+    createdAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
+    site: "vien",
+    image: "/covers/halloween-zentralfriedhof-wien-2026.jpg",
+    imageAlt: "Eine Allee herbstlicher Bäume führt zu einer Kirche mit grüner Kuppel, davor ein schmiedeeisernes Tor und drei Kürbisse",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Halloween am Wiener Zentralfriedhof 2026",
+    cardTitle: "Halloween am Zentralfriedhof",
+    titleSeo: "Halloween am Zentralfriedhof Wien 2026: 31. Oktober, gratis",
+    summary:
+      "Halloween in Wien auf dem Zentralfriedhof: Am Samstag, 31. Oktober 2026, öffnen Bestattung Wien und Friedhöfe Wien von 16 bis 20 Uhr die Halle 2 beim Tor 2, mit Rätselrallye für Familien, Sargprobeliegen für Mutige und Goodiebags. Eintritt frei, Spenden gehen an das MOMO Kinderpalliativzentrum.",
+    start: "2026-10-31",
+    startTime: "16:00",
+    endTime: "20:00",
+    utcOffset: "+01:00",
+    venue: "Halle 2, Zentralfriedhof (Tor 2), Simmeringer Hauptstraße 234",
+    city: "Wien",
+    geo: {
+      name: "Zentralfriedhof, 2. Tor",
+      lat: 48.15431,
+      lng: 16.44265,
+    },
+    organizer: "Bestattung Wien und Friedhöfe Wien",
+    category: "Halloween",
+    tickets: { priceFrom: 0, currency: "EUR" },
+    ticket: {
+      url: "https://www.bestattungwien.at/halloween-2026",
+      label: "Programm bei der Bestattung Wien",
+      sells: false,
+    },
+    source: {
+      name: "Bestattung Wien",
+      url: "https://www.bestattungwien.at/halloween-2026",
+      verifiedOn: "2026-10-24",
+    },
+    body: [
+      "Wo, wenn nicht hier: Der Wiener Zentralfriedhof feiert Halloween. Am <strong>Samstag, 31. Oktober 2026</strong>, laden Bestattung Wien und Friedhöfe Wien von <strong>16 bis 20 Uhr</strong> in die <strong>Halle 2</strong> beim Tor 2.",
+      "## Programm",
+      "Für Familien gibt es eine <strong>Rätselrallye</strong>, die Rätselkarte bekommt man am Eingang. Wer sich traut, macht das <strong>Sargprobeliegen</strong>. Dazu gibt es <strong>Goodiebags</strong> und ein paar Überraschungen.",
+      "## Eintritt",
+      "Der <strong>Eintritt ist frei</strong>. Um eine freiwillige Spende wird gebeten; sie geht an das <strong>MOMO Kinderpalliativzentrum</strong> in Wien.",
+      "## Für wen",
+      "Für Familien und für alle, die sich trauen. Kinder kommen nur in Begleitung Erwachsener.",
+      "## Anreise",
+      "Die Halle 2 liegt beim Tor 2, dem Haupttor an der Simmeringer Hauptstraße 234. Die Straßenbahnlinien 11 und 71 halten an der Station Zentralfriedhof 2. Tor direkt davor.",
+      "## Danach in Wien",
+      "Wer um 20 Uhr noch nicht genug hat: Im Planetarium im Prater läuft <a href=\"/veranstaltungen/cosmic-horrors-planetarium-wien-2026/\" title=\"Cosmic Horrors: Halloween im Planetarium Wien 2026\">Cosmic Horrors</a> bis 22 Uhr, jede halbe Stunde eine Vorstellung. Am Nachmittag davor gibt es im <a href=\"/veranstaltungen/halloween-wurstelprater-2026/\" title=\"Halloween im Wurstelprater 2026\">Wurstelprater</a> Kürbisschnitzen und Kinderschminken, gratis.",
+    ],
+    faq: [
+      {
+        q: "Wann ist Halloween am Zentralfriedhof 2026?",
+        a: "Am <strong>Samstag, 31. Oktober 2026</strong>, von 16 bis 20 Uhr, in der Halle 2 beim Tor 2.",
+      },
+      {
+        q: "Was kostet der Eintritt?",
+        a: "Nichts, der <strong>Eintritt ist frei</strong>. Freiwillige Spenden gehen an das MOMO Kinderpalliativzentrum.",
+      },
+      {
+        q: "Was gibt es zu tun?",
+        a: "Eine Rätselrallye für Familien, Sargprobeliegen für Mutige, Goodiebags und Überraschungen.",
+      },
+      {
+        q: "Dürfen Kinder allein kommen?",
+        a: "Nein, Kinder nur in Begleitung Erwachsener.",
+      },
+      {
+        q: "Wie komme ich hin?",
+        a: "Mit den Straßenbahnlinien 11 oder 71 bis zur Station Zentralfriedhof 2. Tor.",
+      },
+    ],
+    related: [
+      {
+        href: "/veranstaltungen/cosmic-horrors-planetarium-wien-2026/",
+        eyebrow: "Prater",
+        title: "Cosmic Horrors im Planetarium",
+        text: "Am selben Abend bis 22 Uhr: das Halloween-Special unter der Kuppel, 5 Euro.",
+      },
+      {
+        href: "/veranstaltungen/halloween-wurstelprater-2026/",
+        eyebrow: "27. bis 31. Oktober",
+        title: "Halloween im Wurstelprater",
+        text: "Kürbisschnitzen, Kinderschminken und Zaubershows am Riesenradplatz, gratis.",
+      },
+      {
+        href: "/veranstaltungen/coulrophobia-halloween-clownmuseum-wien-2026/",
+        eyebrow: "Leopoldstadt",
+        title: "Coulrophobia im Clownmuseum",
+        text: "Halloween für Mutige ab 12, drei Vorstellungen am 31. Oktober.",
+      },
+    ],
+    expertise:
+      "Ein Friedhof, der zu Halloween einlädt, ist in Wien weniger seltsam, als es klingt: Die Stadt hat ein entspanntes Verhältnis zum Tod, und die Bestattung Wien führt am Zentralfriedhof sogar ein eigenes Museum. Kommen Sie vor der Dämmerung, wenn die Kinder die Rätselrallye noch bei Tageslicht beginnen sollen, und rechnen Sie am Abend vor Allerheiligen mit vielen Besuchern auf dem Friedhof, die nicht wegen Halloween da sind. Ein bisschen Rücksicht auf dem Weg zur Halle 2 gehört dazu.",
   },
 ];
