@@ -271,6 +271,18 @@ if (london) {
   london.source = { name: "OVO Arena Wembley", url: "ovo-arena-events", verifiedOn: checkedOn };
 }
 
+// Vienna has a sister site too — in German, which is what the Stadthalle
+// crowd reads — so the stop page points at its listings rather than at ours.
+const vienna = cities.find((c) => c.slug === "vienna");
+if (vienna) {
+  vienna.cityGuide = {
+    host: "vien.lol",
+    url: "https://vien.lol/veranstaltungen/",
+    label: "was in Wien los ist",
+    note: "our Vienna listings, in German",
+  };
+}
+
 // The tour data is written without knowing which cities have pages; this is
 // where it finds out, so a routing row links to a stop page only when there
 // is one to link to.

@@ -107,7 +107,6 @@ export const feelItAllEast2015: Show[] = [
 // gave most of them as a city and a date.
 export const summerEncore2027: Show[] = [
   { date: "2027-07-14", city: "Rome", country: "Italy", venue: "Cavea, Auditorium Parco della Musica", startTime: "21:00", ticket: "vivaticket-rome" },
-  { date: "2027-07-19", city: "Warsaw", country: "Poland", venue: "Progresja Summer Stage", ticket: "ebilet-warsaw" },
   { date: "2027-08-05", city: "Aurich", country: "Germany", venue: "Mehrzweckgelände Tannenhausen", startTime: "20:00", ticket: "eventim-aurich" },
   { date: "2027-08-06", city: "Dortmund", country: "Germany", venue: "Westfalenpark", startTime: "20:00", ticket: "eventim-dortmund" },
   { date: "2027-08-08", city: "Würzburg", country: "Germany", venue: "Residenzplatz", startTime: "19:00", ticket: "eventim-wurzburg", price: { from: 93.35, to: 104.35, currency: "EUR", seller: "Eventim", checkedOn: "2026-09-23", note: "standing only; front-of-stage showed as currently unavailable" } },
@@ -116,6 +115,7 @@ export const summerEncore2027: Show[] = [
   { date: "2027-08-13", city: "Dresden", country: "Germany", venue: "Open Air P5, Messe Dresden", startTime: "19:00", ticket: "eventim-dresden" },
   { date: "2027-08-15", city: "Magdeburg", country: "Germany", venue: "Domplatz", startTime: "19:00", ticket: "eventim-magdeburg", price: { from: 95.95, currency: "EUR", seller: "Eventim", checkedOn: "2026-09-23", note: "one category, unreserved" } },
   { date: "2027-08-17", city: "Halle (Saale)", country: "Germany", venue: "Freilichtbühne Peißnitz", startTime: "19:00", ticket: "eventim-halle" },
+  { date: "2027-08-19", city: "Warsaw", country: "Poland", venue: "Progresja Summer Stage", startTime: "19:00", ticket: "ebilet-warsaw", price: { from: 256.9, currency: "PLN", seller: "eBilet", checkedOn: "2026-10-24", note: "all compulsory fees included, as eBilet prints it" } },
   { date: "2027-08-19", city: "Sankt Pölten", country: "Austria", venue: "Frequency Festival", ticket: "frequency-tickets" },
   { date: "2027-08-23", city: "Hamburg", country: "Germany", venue: "MS Dockville festival site", startTime: "19:15", ticket: "eventim-hamburg" },
   { date: "2027-08-25", city: "Berlin", country: "Germany", venue: "Waldbühne", startTime: "19:00", ticket: "eventim-berlin" },

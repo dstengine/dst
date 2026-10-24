@@ -177,11 +177,11 @@ export const albums: Album[] = [
     label: "Announced without a label",
     language: "Not announced",
     tour: "arena-tour-2026",
-    upcoming: true,
     blurb: "Out twelve days before the tour opens in London. Five of its twelve songs were out before it.",
     body: [
       "The eighth album has been arriving in public for the better part of a year: “Changes” in November 2025, “California Nights” in February 2026, “Memory Lane” in May, “Without You” in July and “Dye My Hair” on 4 September. The name came out of a mystery-word puzzle the band posted across their accounts on 25 May 2026, and was confirmed by an early Amazon pre-order listing before the band confirmed it themselves.",
-      "The cover art was revealed on 18 August 2026 and the full tracklist on the 20th. Release is 16 October 2026, with an album release show at the Velodrom in Berlin on the 25th — and twelve days before the Arena Tour opens at Wembley, which is close enough that London will be among the first rooms in the world to hear most of it played live.",
+      "The cover art was revealed on 18 August 2026 and the full tracklist on the 20th. It came out on 16 October 2026, with an album release show at the Velodrom in Berlin on the 25th — twelve days before the Arena Tour opens at Wembley, which is close enough that London will be among the first rooms in the world to hear most of it played live.",
+      "The band's own shop lists it at €18.90 on CD and €69.90 as a Deluxe Fanbox; the bundle of the CD with a sweat jacket, at €89.90, had sold out by 24 October 2026.",
       "The band's own announcements call it the seventh studio album, a count that leaves out Scream, the English-language record made from the first two. This site counts Scream, which makes Encore the eighth.",
     ],
     singles: [
