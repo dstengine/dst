@@ -505,4 +505,59 @@ export const items: NewsItem[] = [
     expertise:
       "This is the kind of proposal that only makes sense after Alpenglow. When finality was twelve seconds, thirty milliseconds of hand-off was noise; at 150 ms it is a fifth of the block. The objection that counts is the Asia one, because a floor set at ten per cent and a region at 10.4 is a rule that flips between epochs, and a schedule that is sometimes grouped and sometimes not is harder to reason about than either. Expect the number to move before the vote, and expect the proposal to pass in some form, because the people who run the largest stake are in the two regions that gain most.",
   },
+
+  {
+    slug: "jp-morgan-tokenized-money-market-funds-mony-jltxx-on-solana",
+    createdAt: "2026-10-25T02:30:00+04:00",
+    updatedAt: "2026-10-25T02:30:00+04:00",
+    site: "sol2go",
+    image: "/covers/jp-morgan-tokenized-money-market-funds-mony-jltxx-on-solana.jpg",
+    imageAlt: "Two stacks of paper discs on pale lilac strips on a violet ground, a row of small cream squares between them",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "J.P. Morgan Asset Management brings its tokenized money market funds, MONY and JLTXX, to Solana",
+    cardTitle: "J.P. Morgan's MONY and JLTXX on Solana",
+    titleSeo: "J.P. Morgan's tokenized money market funds come to Solana",
+    summary:
+      "On 22 October 2026 J.P. Morgan Asset Management made two tokenized money market funds available on Solana to qualified US investors: MONY, a private fund launched in December 2025, and JLTXX, a registered government fund built for stablecoin issuers under the GENIUS Act. Subscriptions go through Morgan Money; tokens land in investors' own addresses.",
+    date: "2026-10-25",
+    category: "Institutional",
+    source: {
+      name: "J.P. Morgan Asset Management via PR Newswire",
+      url: "https://www.prnewswire.com/news-releases/jp-morgan-asset-management-expands-access-to-its-tokenized-money-market-funds-on-solana-302917188.html",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "J.P. Morgan Asset Management, with <strong>USD 4.8 trillion</strong> under management at the end of September, announced on <strong>22 October 2026</strong> that two of its tokenized money market funds are now available on <strong>Solana</strong> to qualified US investors.",
+      "## The two funds",
+      "<strong>MONY</strong>, the My OnChain Net Yield Fund, is a <strong>506(c) private placement</strong> paying US dollar yields, open in general to qualified purchasers and accredited investors. It launched in <strong>December 2025</strong>; the firm says J.P. Morgan was then the largest global systemically important bank to put a tokenized money market fund on a public blockchain.",
+      "<strong>JLTXX</strong>, the JPMorgan OnChain Liquidity–Token Money Market Fund, is a <strong>US registered government money market fund</strong> designed to invest in a way that supports <strong>stablecoin issuers</strong> under the <strong>GENIUS Act</strong>, the US stablecoin law.",
+      "## How it works",
+      "Investors subscribe and redeem through <strong>Morgan Money</strong>, the firm's trading and analytics platform for liquidity management. The fund tokens are then delivered to the investor's own blockchain address.",
+      "## The token addresses",
+      "MONY on Solana: <code>EToDtBM2knZ8N1BHyUq2Riq5ngWTcoD3k6qpsgf7CKYY</code>.",
+      "JLTXX on Solana: <code>J4cTuCH6frt4AnEmKfMS2k8hsUf7K94PV62sjUJno8Cz</code>.",
+      "## Why Solana",
+      "Paul Przybylski, who heads product for digital and tokenized assets at the firm, put the case in terms of clients: they work on more than one network, and the funds they hold for liquidity should be on those networks too, so that stablecoin issuers and institutions can reach the same funds wherever they operate.",
+      "## The pattern",
+      "It is the second J.P. Morgan step towards Solana this month: the Foundation's open-source <a href=\"/news/solana-dvp-is-an-open-source-settlement-program-for-banks/\" title=\"Solana DvP: atomic settlement program, open source\">Solana DvP</a> escrow program was built with input from J.P. Morgan's blockchain unit.",
+    ],
+    faq: [
+      {
+        q: "Which J.P. Morgan funds are on Solana?",
+        a: "<strong>MONY</strong>, the My OnChain Net Yield Fund, and <strong>JLTXX</strong>, the JPMorgan OnChain Liquidity–Token Money Market Fund, since 22 October 2026.",
+      },
+      {
+        q: "Who can buy them?",
+        a: "Qualified US investors. MONY is a 506(c) private placement, generally for qualified purchasers and accredited investors; JLTXX is a registered government money market fund aimed at stablecoin issuers.",
+      },
+      {
+        q: "How do the tokens reach a wallet?",
+        a: "Subscriptions and redemptions go through J.P. Morgan's Morgan Money platform, and the tokens are delivered to the investor's own blockchain address.",
+      },
+    ],
+    expertise:
+      "JLTXX is the fund to watch, not MONY. A government money market fund shaped around the GENIUS Act is a place for a stablecoin issuer to park its reserves, and putting it on Solana puts those reserves one transfer away from the chain where the stablecoins circulate. Before relying on any token claiming to be either fund, check the mint against the two addresses in J.P. Morgan's release; anyone can mint a token with the same ticker.",
+  },
 ];
