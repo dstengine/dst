@@ -1,0 +1,65 @@
+{
+ "readOn": "2026-10-24",
+ "expires": "2026-12-05",
+ "ranges": {
+  "ga": "59.00–89.00",
+  "vip": "91.75–166.75",
+  "baddie": "159.00–237.00"
+ },
+ "unpriced": {
+  "dates": [
+   "2027-01-30"
+  ]
+ },
+ "nights": [
+  {
+   "key": "2027-01-14",
+   "ga": "89.00",
+   "sapporo": "166.75",
+   "multicolore": "135.00–145.00",
+   "intelcom": "135.00–145.00",
+   "poppers": "125.25–134.50",
+   "casino": "125.25–134.50",
+   "nyx_east": "207.00–237.00",
+   "nyx_west": "207.00–237.00",
+   "lowest": {
+    "ga": "89.00",
+    "vip": "125.25",
+    "baddie": "207.00"
+   }
+  },
+  {
+   "key": "2027-01-21",
+   "ga": "59.00–69.00",
+   "sapporo": "143.75",
+   "multicolore": "99.00–125.00",
+   "intelcom": "99.00–125.00",
+   "poppers": "101.00–116.00",
+   "casino": "116.00",
+   "nyx_east": "159.00–169.00",
+   "nyx_west": "159.00–169.00",
+   "lowest": {
+    "ga": "59.00",
+    "vip": "99.00",
+    "baddie": "159.00"
+   },
+   "note": "VIP - Multicolore and VIP - Intelcom read SOLD OUT at the morning read of 24 Oct 2026 and 99.00–125.00 each at the evening re-read; the other six areas unchanged"
+  },
+  {
+   "key": "2027-02-06",
+   "ga": "69.00",
+   "sapporo": "143.75",
+   "multicolore": "125.00",
+   "intelcom": "109.00–125.00",
+   "poppers": "101.00–116.00",
+   "casino": "101.00–116.00",
+   "nyx_east": "159.00–169.00",
+   "nyx_west": "159.00–169.00",
+   "lowest": {
+    "ga": "69.00",
+    "vip": "101.00",
+    "baddie": "159.00"
+   }
+  }
+ ]
+}

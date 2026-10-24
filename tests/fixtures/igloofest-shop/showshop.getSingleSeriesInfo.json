@@ -1,0 +1,30 @@
+{
+ "result": [
+  {
+   "seriesCode": "IGLMTL2027"
+  },
+  {
+   "eventCode": "IGLOOMTL20270114",
+   "date": "2027-01-14 19:30:00",
+   "seriesCode": "IGLMTL2027",
+   "eventTypeCode": "IGLOOMTL2027J1",
+   "layoutCode": "IGLOOMTL2027J1"
+  },
+  {
+   "eventCode": "IGLOOMTL20270121",
+   "date": "2027-01-21 19:30:00",
+   "seriesCode": "IGLMTL2027",
+   "eventTypeCode": "IGLOOMTL2027J4",
+   "layoutCode": "IGLOOMTL2027J4"
+  },
+  {
+   "eventCode": "IGLOOMTL20270130",
+   "date": "2027-01-30 19:30:00",
+   "seriesCode": "IGLMTL2027",
+   "eventTypeCode": "IGLOOMTL2027J9",
+   "layoutCode": "IGLOOMTL2027J9"
+  }
+ ],
+ "error": null,
+ "id": 1
+}
