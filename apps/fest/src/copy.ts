@@ -353,8 +353,9 @@ const EN_TOKENS = [
   // The baht keeps the word after it that says what the sum prices, as
   // KEEP_TOGETHER holds a dollar price to its word: Wonderfruit's sweep
   // found "THB 1,700 | a guest" and "THB 5,000 | at the door" at 320 and
-  // 390 px.
-  `\\bTHB \\d[\\d,]*(?: (?:a|at|in|before|for|each|per)\\b)?`, // THB 12,900, THB 1,700 a guest (Wonderfruit)
+  // 390 px. The sum ends on a digit, so a comma after it stays outside
+  // the span ("THB 9,500,", the critic's round 1).
+  `\\bTHB \\d(?:[\\d,]*\\d)?(?: (?:a|at|in|before|for|each|per)\\b)?`, // THB 12,900, THB 1,700 a guest (Wonderfruit)
   // The line-break sweep of Creamfields Chile's English pages (24 October
   // 2026) found each of these split at a line's end, from 320 to 480 px: a
   // size from its unit, a phase from its number, a share from its word, an

@@ -66,7 +66,7 @@ export const events: FestEvent[] = [
   {
     slug: "wonderfruit",
     createdAt: "2026-10-22T21:05:00+04:00",
-    updatedAt: "2026-10-24T09:53:00+04:00",
+    updatedAt: "2026-10-24T10:49:00+04:00",
     name: "Wonderfruit",
     edition: { start: "2026-12-03", end: "2026-12-07" },
     // Keys whose rows carry no readOn of their own: the scout's event line,
@@ -1484,14 +1484,14 @@ export const events: FestEvent[] = [
         source: "s9",
         kind: "organiser",
         title: "หน้า Venues บน wonderfruit.co",
-        titles: { en: "The 26 named venues on site, on wonderfruit.co" },
+        titles: { en: "The festival's 26 named venues, on wonderfruit.co" },
       },
       map: {
         url: "https://www.google.com/maps/search/?api=1&query=12.9027695,100.9998528",
         source: "venue.coordsNote",
         kind: "maps",
         title: "หมุดตามพิกัดจากหน้า FAQ ของผู้จัด บน Google Maps (ไม่มีชื่อสถานที่)",
-        titles: { en: "The point the organiser's FAQ links, in Google Maps: opens as a pin without a name" },
+        titles: { en: "The spot the organiser's FAQ links to, in Google Maps: it opens as an unnamed pin" },
       },
       programme: {
         url: "https://wonderfruit.co/guide-to-wonder?lang=thai",
@@ -1570,7 +1570,7 @@ export const events: FestEvent[] = [
         url: "https://wonderfruit.co/tickets",
         source: "s2",
         kind: "organiser",
-        title: "Every Wonderfruit pass and its button, on wonderfruit.co",
+        title: "Every Wonderfruit pass, its price and how to buy it, on wonderfruit.co",
       },
       "programme-en": {
         url: "https://wonderfruit.co/guide-to-wonder",
@@ -1608,7 +1608,7 @@ export const guides: Guide[] = [
   {
     slug: "th-TH",
     createdAt: "2026-10-22T21:05:00+04:00",
-    updatedAt: "2026-10-23T14:10:00+04:00",
+    updatedAt: "2026-10-24T10:49:00+04:00",
     event: "wonderfruit",
     // The event as the hub and the trail name it, with its year.
     name: "Wonderfruit 2026",
@@ -1619,7 +1619,7 @@ export const guides: Guide[] = [
     hubLabel: "ภาษาไทย",
     hubBlurb: mainDescription,
     // The figures in baht come off on 2 December 2026, six weeks after the
-    // oldest price reading (21 October), the day before the gates open; the
+    // oldest price reading (24 October), the day before the gates open; the
     // lines that call The November Sale the next round, on 10 November, the
     // day after it ends.
     expires: { prices: "2026-12-02", nov: "2026-11-10" },
@@ -1634,7 +1634,7 @@ export const guides: Guide[] = [
       {
         slug: "wonderfruit",
         createdAt: "2026-10-22T21:05:00+04:00",
-        updatedAt: "2026-10-24T09:53:00+04:00",
+        updatedAt: "2026-10-24T10:49:00+04:00",
         kind: "main",
         label: "ภาพรวม",
         crumb: "Wonderfruit 2026",
@@ -1727,7 +1727,7 @@ export const guides: Guide[] = [
           {
             id: "lineup",
             heading: "ไลน์อัพ Wonderfruit 2026 (ทยอยประกาศตั้งแต่ 1 กันยายน 2026)",
-            body: "รายชื่อชุดแรกออกมาในแถลงข่าวของผู้จัดวันที่ 1 กันยายน 2026 และหน้าโปรแกรม Guide to Wonder ของผู้จัดยังเขียนกำกับว่า \"AND MORE TO COME\" ตารางเวลาเต็มจะออกภายหลังบน Wonder App ตามคำถามที่พบบ่อยของผู้จัด [lineup.announcedOn] [lineup.announcedNote] แต่ตารางชุดแรกออกแล้ว หน้า Directory ของผู้จัดซึ่งขึ้นหัวว่า \"FIRST RELEASE\" มีศิลปินดนตรี 136 ราย ในจำนวนนี้ 110 รายมีวันและเวลาแสดงแล้ว อ่านเมื่อ 24 ตุลาคม 2026 [lineup.directory] [lineup.directory.counts] [lineup.announcedNote.schedule] ชื่อที่ประกาศในแถลงข่าว ตามลำดับ: Tangerine Dream, Eli Keszler, Orphx, ITSU & ARS, Jesse You, JakoJako, Loyboy, Gerd Janson, Hamdi Ryder, Omoloko, ffan, Faustus, Nubya Garcia, Jane Fitz, Nicolas Lutz, Sweely, DOTT, Shanka Tribe, DJ Python, Genderfunk และ The Paradise Bangkok Molam International Band [lineup.acts] [lineup.actsForms] ใน Directory ยังมีชื่อที่ไม่อยู่ในแถลงข่าว เช่น Nightmares on Wax, Marcel Dettmann, Mano Le Tough, Jim O'Rourke & Eiko Ishibashi, Phum Viphurit, Kuniyuki (Live) และ Howie Lee [lineup.directory] [หน้า Directory ของผู้จัด](/go/wonderfruit-directory/)\n\nสายดนตรีรากเหง้าและหมอลำ (Root Music): Sansae, Thee Marloes, Jarb Cat, Ghetto All Stars, Toomturn Molam Group, Sombat Simla, MAKARA, Rattanakosin Breakin' Crew, Khontan & The Hymmapan Express และ Chamroen Bang Fai Bolan [lineup.rootMusic] เวที Solar Village: Jason Kendig, Alex Albrecht, Markie, Pam Anantr, AWARË, Salin และ Carps [lineup.solarVillage] โปรแกรมพิเศษที่ประกาศแล้วมี From Sound to Screen ซึ่งฉายหนังของ Nick Dwyer พร้อมดนตรีสดสามค่ำคืน Sonic Minds โดย MSCTY_Studio กับ May-T, Sunju Hargun และ Quantum Aria (Carl Stone กับ Akaihirume) โซนหมอลำอีสาน Molam World และธีมสุขภาพกายใจ \"Rooted in the Inner Axis\" [lineup.programmes] ณ วันที่ 24 ตุลาคม 2026 ยังมี Rituals & Ceremonies ซึ่งรวมถึง Dhyana ที่ Black Turtle เป็นผู้คัดสรร [lineup.programmesMore.0] นอกจากนี้ยังมีครัว Open Kitchen กับโต๊ะเชฟของ Wonder Kitchen งานศิลปะจัดวางที่ประกาศชื่อแล้ว 15 ชิ้น และ Unconditional Space ในหัวข้อ \"Tropicality: New Beginnings\" [lineup.programmesMore] [หน้าโปรแกรมของผู้จัด (มีภาษาไทย)](/go/wonderfruit-programme/)",
+            body: "รายชื่อชุดแรกออกมาในแถลงข่าวของผู้จัดวันที่ 1 กันยายน 2026 และหน้าโปรแกรม Guide to Wonder ของผู้จัดยังเขียนกำกับว่า \"AND MORE TO COME\" ตารางเวลาเต็มจะออกภายหลังบน Wonder App ตามคำถามที่พบบ่อยของผู้จัด [lineup.announcedOn] [lineup.announcedNote] แต่ตารางเวลาชุดแรกออกแล้ว หน้า Directory ของผู้จัดซึ่งขึ้นหัวว่า \"FIRST RELEASE\" มีศิลปินดนตรี 136 ราย ในจำนวนนี้ 110 รายมีวันและเวลาแสดงแล้ว อ่านเมื่อ 24 ตุลาคม 2026 [lineup.directory] [lineup.directory.counts] [lineup.announcedNote.schedule] ชื่อที่ประกาศในแถลงข่าว ตามลำดับ: Tangerine Dream, Eli Keszler, Orphx, ITSU & ARS, Jesse You, JakoJako, Loyboy, Gerd Janson, Hamdi Ryder, Omoloko, ffan, Faustus, Nubya Garcia, Jane Fitz, Nicolas Lutz, Sweely, DOTT, Shanka Tribe, DJ Python, Genderfunk และ The Paradise Bangkok Molam International Band [lineup.acts] [lineup.actsForms] ใน Directory ยังมีชื่อที่ไม่อยู่ในแถลงข่าว เช่น Nightmares on Wax, Marcel Dettmann, Mano Le Tough, Jim O'Rourke & Eiko Ishibashi, Phum Viphurit, Kuniyuki (Live) และ Howie Lee [lineup.directory] [หน้า Directory ของผู้จัด](/go/wonderfruit-directory/)\n\nสายดนตรีรากเหง้าและหมอลำ (Root Music): Sansae, Thee Marloes, Jarb Cat, Ghetto All Stars, Toomturn Molam Group, Sombat Simla, MAKARA, Rattanakosin Breakin' Crew, Khontan & The Hymmapan Express และ Chamroen Bang Fai Bolan [lineup.rootMusic] เวที Solar Village: Jason Kendig, Alex Albrecht, Markie, Pam Anantr, AWARË, Salin และ Carps [lineup.solarVillage] โปรแกรมพิเศษที่ประกาศแล้วมี From Sound to Screen ซึ่งฉายหนังของ Nick Dwyer พร้อมดนตรีสดสามค่ำคืน Sonic Minds โดย MSCTY_Studio กับ May-T, Sunju Hargun และ Quantum Aria (Carl Stone กับ Akaihirume) โซนหมอลำอีสาน Molam World และธีมสุขภาพกายใจ \"Rooted in the Inner Axis\" [lineup.programmes] ณ วันที่ 24 ตุลาคม 2026 ยังมี Rituals & Ceremonies ซึ่งรวมถึง Dhyana ที่ Black Turtle เป็นผู้คัดสรร [lineup.programmesMore.0] นอกจากนี้ยังมีครัว Open Kitchen กับโต๊ะเชฟของ Wonder Kitchen งานศิลปะจัดวางที่ประกาศชื่อแล้ว 15 ชิ้น และ Unconditional Space ในหัวข้อ \"Tropicality: New Beginnings\" [lineup.programmesMore] [หน้าโปรแกรมของผู้จัด (มีภาษาไทย)](/go/wonderfruit-programme/)",
           },
           {
             id: "editions",
@@ -1891,7 +1891,7 @@ export const guides: Guide[] = [
       {
         slug: "wonderfruit/faq",
         createdAt: "2026-10-22T21:05:00+04:00",
-        updatedAt: "2026-10-24T09:53:00+04:00",
+        updatedAt: "2026-10-24T10:49:00+04:00",
         kind: "faq",
         label: "คำถามที่พบบ่อย",
         navTitle: "เด็ก เอกสาร สุนัข การจ่ายเงิน การเข้าออก และการคืนบัตร",
@@ -1953,7 +1953,7 @@ export const guides: Guide[] = [
           },
           {
             q: "ตารางเวลาเต็มของ Wonderfruit 2026 ออกเมื่อไหร่",
-            a: "ตารางเวลาเต็มยังไม่ออก หน้าโปรแกรมของผู้จัดยังเขียนว่า \"AND MORE TO COME\" และคำถามที่พบบ่อยระบุว่าตารางเวลาเต็มจะประกาศบน Wonder App [lineup.announcedNote] [lineup.announcedNote.schedule] แต่ตารางชุดแรกออกแล้ว หน้า Directory ของผู้จัดซึ่งขึ้นหัวว่า \"FIRST RELEASE\" ระบุวันและเวลาแสดงของศิลปินดนตรี 110 รายจากทั้งหมด 136 ราย อ่านเมื่อ 24 ตุลาคม 2026 [lineup.directory] [lineup.directory.counts] ชื่อที่ประกาศแล้วตั้งแต่ 1 กันยายน อยู่ที่หน้าภาพรวม [lineup.announcedOn]",
+            a: "ตารางเวลาเต็มยังไม่ออก หน้าโปรแกรมของผู้จัดยังเขียนว่า \"AND MORE TO COME\" และคำถามที่พบบ่อยระบุว่าตารางเวลาเต็มจะประกาศบน Wonder App [lineup.announcedNote] [lineup.announcedNote.schedule] แต่ตารางเวลาชุดแรกออกแล้ว หน้า Directory ของผู้จัดซึ่งขึ้นหัวว่า \"FIRST RELEASE\" ระบุวันและเวลาแสดงของศิลปินดนตรี 110 รายจากทั้งหมด 136 ราย อ่านเมื่อ 24 ตุลาคม 2026 [lineup.directory] [lineup.directory.counts] ชื่อที่ประกาศแล้วตั้งแต่ 1 กันยายน อยู่ที่หน้าภาพรวม [lineup.announcedOn]",
           },
           {
             q: "Wonderfruit 2027 จัดเมื่อไหร่",
@@ -1997,7 +1997,7 @@ export const guides: Guide[] = [
       {
         slug: "wonderfruit/en",
         createdAt: "2026-10-24T09:53:00+04:00",
-        updatedAt: "2026-10-24T09:53:00+04:00",
+        updatedAt: "2026-10-24T10:49:00+04:00",
         kind: "main",
         label: "Guide",
         crumb: "Wonderfruit 2026",
@@ -2015,7 +2015,7 @@ export const guides: Guide[] = [
           secondary: {
             href: "/go/wonderfruit-tickets-en/",
             label: "The organiser's ticket page",
-            title: "Every Wonderfruit pass and its button, on wonderfruit.co",
+            title: "Every Wonderfruit pass, its price and how to buy it, on wonderfruit.co",
           },
         },
         glance: [
@@ -2051,7 +2051,7 @@ export const guides: Guide[] = [
           {
             id: "dates",
             heading: "Dates and gate times",
-            body: "The festival runs for five days, from Thursday afternoon to Monday morning. Ticketmelon's page gives the span as \"03 December 2026, 16:00 - 07 December 2026, 12:00\" [editions.0.sellerEventLine]. The organiser's FAQ, read 24 October 2026, sets the gates [editions.0.hours]:\n\n- Thursday 3 December: gates open at 16:00, last entry at midnight [editions.0.hours.0]\n- Friday 4 to Sunday 6 December: gates open at 08:00, last entry at midnight [editions.0.hours.1] [editions.0.hours.2] [editions.0.hours.3]\n- Monday 7 December: the last morning. The Sunday Pass runs to Monday sunrise. Camping and cabins check out at 12:00 [editions.0.hours.4]\n\nBetween midnight and 08:00 nobody is let back in. That matters most on the last night. If you leave after midnight on Sunday 6 December, you cannot come back in on Monday 7 [editions.0.hoursNote]. The organiser adds that the times may change [editions.0.hoursNote].",
+            body: "The festival runs for five days, from Thursday afternoon to Monday morning. Ticketmelon's page gives the span as \"03 December 2026, 16:00 - 07 December 2026, 12:00\" [editions.0.sellerEventLine]. The organiser's FAQ, read 24 October 2026, sets the gates [editions.0.hours]:\n\n- Thursday 3 December: gates open at 16:00, last entry at midnight [editions.0.hours.0]\n- Friday 4 to Sunday 6 December: gates open at 08:00, last entry at midnight [editions.0.hours.1] [editions.0.hours.2] [editions.0.hours.3]\n- Monday 7 December: the last morning. The Sunday Pass runs to Monday sunrise. Camping and cabins check out at 12:00 [editions.0.hours.4].\n\nBetween midnight and 08:00 nobody is let back in. That matters most on the last night. If you leave after midnight on Sunday 6 December, you cannot come back in on Monday 7 [editions.0.hoursNote]. The organiser adds that the times may change [editions.0.hoursNote].",
           },
           {
             id: "lineup",
@@ -2087,12 +2087,12 @@ export const guides: Guide[] = [
         faq: [
         ],
         sourcesHeading: "Sources",
-        sources: "- Wonderfruit, the organiser: [home page](/go/wonderfruit-official-en/), [tickets](/go/wonderfruit-tickets-en/), [FAQ](/go/wonderfruit-faq/), [venues](/go/wonderfruit-venue/), [Guide to Wonder](/go/wonderfruit-programme-en/), [Directory](/go/wonderfruit-directory/), terms and conditions, Decade of Wonder, Wonderpost, [Wonderfruit Chapters Kyoto](/go/wonderfruit-kyoto/) — read 21–24 October 2026\n- [Ticketmelon, Wonderfruit 2026 – The November Sale](/go/wonderfruit-ticketmelon/) — read 21–24 October 2026\n- The organiser's press release of 1 September 2026\n- [GOV.UK, Thailand entry requirements](/go/wonderfruit-gov-uk/), updated 12 October 2026, [Thailand Digital Arrival Card](/go/wonderfruit-tdac/), [Tourism Authority of Thailand, 1 September 2026](/go/wonderfruit-tat-visa/) — read 24 October 2026\n- Time Out Bangkok, 29 May 2025, Time Out Asia, 9 March 2026, The Standard, 25 December 2024 — read 21 October 2026",
+        sources: "- Wonderfruit, the organiser: [home page](/go/wonderfruit-official-en/), [tickets](/go/wonderfruit-tickets-en/), [FAQ](/go/wonderfruit-faq/), [venues](/go/wonderfruit-venue/), [Guide to Wonder](/go/wonderfruit-programme-en/), [Directory](/go/wonderfruit-directory/), terms and conditions, Decade of Wonder, Wonderpost, [Wonderfruit Chapters Kyoto](/go/wonderfruit-kyoto/) — read 21–24 October 2026\n- [Ticketmelon, Wonderfruit 2026 – The November Sale](/go/wonderfruit-ticketmelon/) — read 21–24 October 2026\n- The organiser's press release of 1 September 2026\n- [GOV.UK, Thailand entry requirements](/go/wonderfruit-gov-uk/), updated 12 October 2026, [Thailand Digital Arrival Card](/go/wonderfruit-tdac/), [Tourism Authority of Thailand, 1 September 2026](/go/wonderfruit-tat-visa/) — read 24 October 2026\n- Time Out Bangkok, 29 May 2025, Time Out Asia, 9 March 2026, The Standard, 25 December 2024 — read 21–22 October 2026",
       },
       {
         slug: "wonderfruit/en/tickets",
         createdAt: "2026-10-24T09:53:00+04:00",
-        updatedAt: "2026-10-24T09:53:00+04:00",
+        updatedAt: "2026-10-24T10:49:00+04:00",
         kind: "tickets",
         label: "Tickets",
         crumb: "Tickets",
@@ -2109,7 +2109,7 @@ export const guides: Guide[] = [
           secondary: {
             href: "/go/wonderfruit-tickets-en/",
             label: "The organiser's ticket page",
-            title: "Every Wonderfruit pass and its button, on wonderfruit.co",
+            title: "Every Wonderfruit pass, its price and how to buy it, on wonderfruit.co",
           },
         },
         jumps: [
@@ -2207,7 +2207,7 @@ export const guides: Guide[] = [
       {
         slug: "wonderfruit/en/faq",
         createdAt: "2026-10-24T09:53:00+04:00",
-        updatedAt: "2026-10-24T09:53:00+04:00",
+        updatedAt: "2026-10-24T10:49:00+04:00",
         kind: "faq",
         label: "Questions",
         crumb: "FAQ",
@@ -2336,7 +2336,7 @@ export const guides: Guide[] = [
           },
         ],
         sourcesHeading: "Sources",
-        sources: "Wonderfruit [FAQ](/go/wonderfruit-faq/), [tickets](/go/wonderfruit-tickets-en/), terms and conditions, Program Passes post, [General Camping](/go/wonderfruit-general-camping/), [Hotels & Travel](/go/wonderfruit-hotels/), [Directory](/go/wonderfruit-directory/), Wonderpost, [Wonderfruit Chapters Kyoto](/go/wonderfruit-kyoto/) — read 21–24 October 2026\n[Ticketmelon, Wonderfruit 2026 – The November Sale](/go/wonderfruit-ticketmelon/) — read 21–24 October 2026\n[GOV.UK](/go/wonderfruit-gov-uk/), [Thailand Digital Arrival Card](/go/wonderfruit-tdac/), [Tourism Authority of Thailand](/go/wonderfruit-tat-visa/) — read 24 October 2026\nTime Out Bangkok, 29 May 2025, Time Out Asia, 9 March 2026, The Standard, 25 December 2024 — read 21 October 2026",
+        sources: "Wonderfruit [FAQ](/go/wonderfruit-faq/), [tickets](/go/wonderfruit-tickets-en/), terms and conditions, Program Passes post, [General Camping](/go/wonderfruit-general-camping/), [Hotels & Travel](/go/wonderfruit-hotels/), [Directory](/go/wonderfruit-directory/), Wonderpost, [Wonderfruit Chapters Kyoto](/go/wonderfruit-kyoto/) — read 21–24 October 2026\n[Ticketmelon, Wonderfruit 2026 – The November Sale](/go/wonderfruit-ticketmelon/) — read 21–24 October 2026\n[GOV.UK](/go/wonderfruit-gov-uk/), [Thailand Digital Arrival Card](/go/wonderfruit-tdac/), [Tourism Authority of Thailand](/go/wonderfruit-tat-visa/) — read 24 October 2026\nTime Out Bangkok, 29 May 2025, Time Out Asia, 9 March 2026, The Standard, 25 December 2024 — read 21–22 October 2026",
       },
     ],
   },

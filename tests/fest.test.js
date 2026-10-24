@@ -707,6 +707,9 @@ describe("where a guide's links lead", () => {
     // A shared three-bed tent stranded its "bed" at 320 px (copy.ts,
     // EN_TOKENS); the critic's round 1 found the token unpinned.
     assert.ok(at(wen, wf, "A shared three-bed tent.").includes('<span class="nowrap">three-bed</span>'));
+    // A sum ends on its digit: the comma after it stays outside the span
+    // (the critic's round 1 found "THB 9,500," seven times).
+    assert.ok(at(wen, wf, "The Weekend Pass is THB 9,500, a little less.").includes('<span class="nowrap">THB 9,500</span>, a little less.'));
     assert.equal(at(btv, btvEvent, baht), baht);
     // The bonus scale's items keep the word with its figure (QA round 1).
     const scale = "CLP 50,000 loaded: CLP 5,000 bonus";
