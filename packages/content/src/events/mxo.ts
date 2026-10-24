@@ -945,4 +945,140 @@ export const items: EventItem[] = [
     expertise:
       "La salida es lo primero que se llena. A las seis, el Cementerio General junta a quienes van a caminar y a quienes quieren la foto del arranque; para verlo pasar con calma conviene esperar a mitad de camino, en las calles del sur del Centro, y el final en San Juan es para quien quiere quedarse después. A finales de octubre en Mérida sigue haciendo calor a esa hora: agua y zapato cómodo antes que abrigo.",
   },
+  {
+    slug: "feria-yucatan-xmatkuil-2026",
+    createdAt: "2026-10-24T16:00:00+04:00",
+    updatedAt: "2026-10-24T16:00:00+04:00",
+    site: "mxo",
+    image: "/covers/feria-yucatan-xmatkuil-2026.jpg",
+    imageAlt:
+      "Un recinto de feria de papel recortado visto desde arriba: una rueda de la fortuna, un teatro al aire libre con escenario, corrales con ganado diminuto y filas de puestos bajo palmeras, sobre fondo crema",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Feria Yucatán Xmatkuil 2026",
+    cardTitle: "Feria Yucatán Xmatkuil 2026",
+    titleSeo: "Feria Yucatán Xmatkuil 2026, México: fechas y conciertos",
+    summary:
+      "La feria de Mérida, en el sureste de México, va del 6 al 29 de noviembre de 2026 en Xmatkuil: conciertos gratuitos en el Teatro del Pueblo, de Original Banda El Limón a Bronco, y de pago en el Centro de Espectáculos Montejo con Carín León, Marco Antonio Solís, Christian Nodal y Ozuna, boletos en TusBoletos.",
+    start: "2026-11-06",
+    end: "2026-11-29",
+    utcOffset: "-06:00",
+    venue: "Recinto ferial de Xmatkuil, Mérida",
+    city: "Mérida",
+    country: "México",
+    geo: {
+      name: "Feria Yucatán Xmatkuil",
+      lat: 20.85800,
+      lng: -89.61500,
+    },
+    organizer: "Gobierno del Estado de Yucatán",
+    category: "Ferias",
+    tickets: { priceFrom: 550, priceTo: 4400, currency: "MXN" },
+    ticket: {
+      url: "https://www.tusboletos.mx/",
+      label: "Boletos del Montejo",
+    },
+    source: {
+      name: "Diario de Yucatán",
+      url: "https://www.yucatan.com.mx/imagen/2026/10/21/feria-yucatan-xmatkuil-2026-cartelera-de-artistas-y-fechas-de-conciertos.html",
+      verifiedOn: "2026-10-24",
+    },
+    programme: [
+      {
+        heading: "Teatro del Pueblo, gratis",
+        text: "Original Banda El Limón abre el 6 de noviembre; Reik el 18, Ha-Ash y Matisse el 19, Los Auténticos Decadentes y Los Caligaris el 25, Grupo Cañaveral el 26, Santos Bravos el 27 a las 20:00; Bronco cierra el 29.",
+      },
+      {
+        heading: "Centro de Espectáculos Montejo, de pago",
+        text: "Carín León el 13 (de $770 a $4,400), Marco Antonio Solís el 14 (de $770 a $4,400), Christian Nodal el 21 (de $550 a $2,750), Ozuna el 28 (de $770 a $2,090).",
+      },
+    ],
+    body: [
+      "La Feria Yucatán es la fiesta grande del sureste y la feria estatal con el cartel más largo de noviembre. Del <strong>6 al 29 de noviembre de 2026</strong>, el recinto de <strong>Xmatkuil</strong>, al sur de Mérida, reúne exposición ganadera, juegos mecánicos, gastronomía yucateca y dos escenarios que funcionan con reglas distintas.",
+      "## Lo gratuito: Teatro del Pueblo",
+      "El Teatro del Pueblo no cobra. Abre la <strong>Original Banda El Limón</strong> el viernes 6 y cierra <strong>Bronco</strong> el domingo 29. En medio pasan <strong>Reik</strong> (18), <strong>Ha-Ash y Matisse</strong> (19), <strong>Los Auténticos Decadentes y Los Caligaris</strong> (25), <strong>Grupo Cañaveral</strong> (26) y <strong>Santos Bravos</strong> (27, 20:00). Para Santos Bravos las autoridades anunciaron boletos gratuitos cuya entrega aún no tenía fecha ni lugar al cierre de esta nota.",
+      "## Lo de pago: Centro de Espectáculos Montejo",
+      "<strong>Carín León</strong> el 13 de noviembre con su Muda Tour, <strong>Marco Antonio Solís</strong> el 14 con el Tour Gratitud, ambos con boletos de <strong>$770 a $4,400</strong>; <strong>Christian Nodal</strong> el 21 con Pal Corazón, de <strong>$550 a $2,750</strong>; <strong>Ozuna</strong> el 28, de <strong>$770 a $2,090</strong>. Los boletos se venden en <strong>TusBoletos.mx</strong>; los organizadores piden comprar solo en puntos oficiales por la circulación de entradas clonadas.",
+      "## Un detalle",
+      "La hora de Nodal aparece como 21:00 en una fuente y 22:00 en otra: conviene confirmarla en el boleto.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo es la Feria Yucatán Xmatkuil 2026?",
+        a: "Del 6 al 29 de noviembre de 2026, en el recinto ferial de Xmatkuil, Mérida.",
+      },
+      {
+        q: "¿Qué conciertos son gratis?",
+        a: "Los del Teatro del Pueblo: Original Banda El Limón, Reik, Ha-Ash y Matisse, Los Auténticos Decadentes y Los Caligaris, Grupo Cañaveral, Santos Bravos y Bronco, entre otros.",
+      },
+      {
+        q: "¿Cuánto cuestan los conciertos del Montejo?",
+        a: "Carín León y Marco Antonio Solís de $770 a $4,400; Christian Nodal de $550 a $2,750; Ozuna de $770 a $2,090, en TusBoletos.mx.",
+      },
+    ],
+  },
+
+  {
+    slug: "ficc-los-cabos-2026",
+    createdAt: "2026-10-24T16:00:00+04:00",
+    updatedAt: "2026-10-24T16:00:00+04:00",
+    site: "mxo",
+    image: "/covers/ficc-los-cabos-2026.jpg",
+    imageAlt:
+      "Una pantalla de cine de papel recortado plantada en una playa de papel, un arco de roca en el mar al fondo, filas de sillas pequeñas en la arena y un sol bajo, sobre fondo crema",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Festival Internacional de Cine y Creatividad de Los Cabos 2026",
+    cardTitle: "FICC Los Cabos 2026",
+    titleSeo: "Festival de Cine de Los Cabos 2026, México: fechas, boletos",
+    summary:
+      "La 14ª edición del Festival Internacional de Cine y Creatividad de Los Cabos, en Baja California Sur, México, va del 9 al 13 de diciembre de 2026 bajo el lema #BeyondTheScreen: cine, música, arte digital y animación, con preventa abierta para la proyección inaugural y los pases diarios de Cine e Industria.",
+    start: "2026-12-09",
+    end: "2026-12-13",
+    utcOffset: "-07:00",
+    venue: "Los Cabos, Baja California Sur",
+    city: "Los Cabos",
+    country: "México",
+    geo: {
+      name: "Los Cabos, Baja California Sur",
+      lat: 22.89050,
+      lng: -109.91670,
+    },
+    organizer: "CaboCine",
+    category: "Festivales",
+    ticket: {
+      url: "https://ficloscabos.org/",
+      label: "Preventa",
+    },
+    source: {
+      name: "FICC Los Cabos",
+      url: "https://ficloscabos.org/",
+      verifiedOn: "2026-10-24",
+    },
+    body: [
+      "El festival de Los Cabos nació como mercado de cine entre México, Estados Unidos y Canadá, y en su <strong>14ª edición</strong> se llama a sí mismo Festival Internacional de Cine y Creatividad: <strong>el cine como punto de encuentro entre la música, el arte digital, la animación y la comunidad</strong>, en palabras del propio festival. Del <strong>9 al 13 de diciembre de 2026</strong>, con el lema <strong>#BeyondTheScreen</strong>.",
+      "## El programa",
+      "Una <strong>proyección inaugural</strong>, el <strong>Programa de Cine e Industria</strong> con acceso por día, y las secciones <strong>Campus</strong> y <strong>Comunidad</strong>. Para la industria, tres plataformas: <strong>La Baja Inspira</strong>, <strong>Frequencies of Now</strong> y el <strong>Fondo Fílmico Gabriel Figueroa</strong>, el fondo de apoyo a proyectos mexicanos que el festival ha mantenido desde sus primeras ediciones.",
+      "## Boletos",
+      "La <strong>preventa</strong> está abierta en Boletia desde el sitio del festival, para la proyección inaugural y los pases diarios de Cine e Industria. Los precios y las sedes de cada función aún no se han publicado; esta página se actualiza cuando aparezcan.",
+      "## Cómo encaja en el calendario",
+      "Diciembre en Los Cabos es temporada alta; el festival cae entre el fin de <a href=\"/eventos/fil-guadalajara-2026/\" title=\"FIL Guadalajara 2026\">la FIL de Guadalajara</a> y las vacaciones, y los vuelos y hoteles se pagan como tales.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo es el Festival de Cine de Los Cabos 2026?",
+        a: "Del 9 al 13 de diciembre de 2026; es la 14ª edición.",
+      },
+      {
+        q: "¿Ya hay boletos?",
+        a: "Sí, la preventa está abierta en Boletia para la proyección inaugural y los pases diarios del Programa de Cine e Industria. Los precios no están publicados.",
+      },
+      {
+        q: "¿Qué es el Fondo Fílmico Gabriel Figueroa?",
+        a: "La plataforma de industria del festival que apoya proyectos mexicanos en desarrollo y posproducción.",
+      },
+    ],
+  },
 ];

@@ -988,4 +988,156 @@ export const items: NewsItem[] = [
     expertise:
       "Vale la pena mirar este caso desde México por el tipo de bien que protege. Casi todo lo que tenemos inscrito es un objeto con perímetro: un centro histórico, una zona arqueológica, una reserva con polígono. Boma–Badingilo protege un proceso que atraviesa el polígono, y eso obliga a un manejo distinto, más parecido al que exige la mariposa monarca que al de una ciudad colonial: lo que hay que conservar es la continuidad del corredor, no el estado de un sitio. La consecuencia práctica es incómoda y conviene nombrarla: un corredor se pierde por acumulación de decisiones pequeñas —un tramo de carretera, una cerca, una parcela— ninguna de las cuales parece, por separado, un daño al patrimonio. La lista sirve para volver visible esa suma antes de que se complete.",
   },
+  {
+    slug: "ficm-2026-ganadores-6-meses-en-el-edificio-rosa-con-azul",
+    createdAt: "2026-10-24T16:00:00+04:00",
+    updatedAt: "2026-10-24T16:00:00+04:00",
+    site: "mxo",
+    image: "/covers/ficm-2026-ganadores-6-meses-en-el-edificio-rosa-con-azul.jpg",
+    imageAlt:
+      "Un edificio de departamentos de papel recortado en rosa y azul, con una ventana iluminada, y frente a él un ojo grande de papel sobre un pedestal, sobre fondo crema",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Morelia premia a 6 meses en el edificio rosa con azul: los ganadores del 24 FICM",
+    cardTitle: "Los ganadores del FICM 2026",
+    titleSeo: "Ganadores FICM 2026 (México): 6 meses en el edificio rosa",
+    summary:
+      "El 24 Festival Internacional de Cine de Morelia, en Michoacán, México, dio el Ojo a Mejor Largometraje Mexicano y el Premio del Público a 6 meses en el edificio rosa con azul, de Bruno Santamaría Razo; Nicolás Pereda ganó dirección por Lo demás es ruido, Forensita el documental y Naza el público internacional.",
+    date: "2026-10-24",
+    city: "Morelia",
+    country: "México",
+    category: "Cine",
+    source: {
+      name: "Festival Internacional de Cine de Morelia",
+      url: "https://moreliafilmfest.com/el-24deg-ficm-premio-lo-mejor-de-su-seleccion-oficial-e-impulso-morelia-12",
+      verifiedOn: "2026-10-24",
+    },
+    body: [
+      "Dos premios para la misma película y desde los dos lados de la sala: el jurado y el público del <strong>24 FICM</strong> coincidieron en <strong>6 meses en el edificio rosa con azul</strong>, de <strong>Bruno Santamaría Razo</strong>, que se lleva el <strong>Ojo a Mejor Largometraje Mexicano</strong> y el <strong>Premio del Público a Largometraje Mexicano</strong>. El festival anunció los premios el 23 de octubre, al cierre de una competencia de <strong>96 películas</strong>.",
+      "## Largometraje de ficción",
+      "<strong>Nicolás Pereda</strong> gana el Ojo a Mejor Dirección por <strong>Lo demás es ruido</strong>, y <strong>Teresa Sánchez</strong>, por la misma cinta, el Ojito a Mejor Actriz. El Ojito a Mejor Actor es para <strong>Sam Louwyck</strong> por <strong>Salón de belleza</strong>; el guion, para <strong>Joaquín Ruano</strong> por <strong>Nosotros</strong>; la fotografía, para <strong>Gökhan Tiryaki</strong> por <strong>El jardín que soñamos</strong>, de Joaquín del Paso, que recibe además una mención especial. El Premio Casa Wabi-Escine a ópera prima es para <strong>Fernanda Tovar</strong> por <strong>Chicas tristes</strong>.",
+      "## Documental y cortometraje",
+      "<strong>Forensita</strong>, de <strong>Pablo Vaca</strong>, es el Ojo a Mejor Largometraje Documental Mexicano, con mención para Los mariachis perdidos, de Francisco Ohem. En cortometraje: <strong>Cuna de lobas</strong> (Emilia Schettino Bustamante) en animación, <strong>Voces del bosque</strong> (Teresa Camou y Arturo López Barrera) en documental y <strong>Cuerda manual</strong> (Gustavo Obregón) en ficción. El Ojo de la Sección Michoacana es para <strong>Buenos días, buenas noches, buenas tardes</strong>, de Adrián González-Camargo.",
+      "## El público",
+      "Además del largometraje mexicano, el público premió a <strong>yātrā</strong>, de Alejandro Rugama, en documental, y a <strong>Naza</strong>, de Yuval Abraham y Rachel Szor, como mejor largometraje internacional.",
+      "## Impulso Morelia 12",
+      "La plataforma de posproducción repartió servicios y dinero entre proyectos en curso: <strong>Galerna</strong>, de Tatiana Huezo, se lleva el Premio José María Riba y una semana de sala de color; <strong>Legítima</strong>, de Elisa Miller, y <strong>Toda el agua del mundo</strong>, de Diego del Río, dividen el Premio Churubusco, de $350,000 cada parte; <strong>Homeboys</strong>, de Alonso Garibay y Alejandro Bernal, recibe el Premio Ambulante-Eugenio Polgovsky y un voucher de $100,000 de Caffeine.",
+      "## Antes",
+      "La selección se anunció en septiembre con <a href=\"/noticias/morelia-anuncia-96-peliculas-mexicanas/\" title=\"FICM 2026: 96 cintas mexicanas\">96 películas mexicanas, el 40% dirigidas por mujeres</a>; el festival corrió del 16 al 25 de octubre en <a href=\"/eventos/ficm-morelia-2026/\" title=\"FICM 2026 en Morelia\">Morelia</a>.",
+    ],
+    faq: [
+      {
+        q: "¿Qué película ganó el FICM 2026?",
+        a: "6 meses en el edificio rosa con azul, de Bruno Santamaría Razo: Ojo a Mejor Largometraje Mexicano y Premio del Público a Largometraje Mexicano.",
+      },
+      {
+        q: "¿Quién ganó mejor dirección en Morelia 2026?",
+        a: "Nicolás Pereda, por Lo demás es ruido.",
+      },
+      {
+        q: "¿Cuál fue el mejor documental del FICM 2026?",
+        a: "Forensita, de Pablo Vaca; el público premió a yātrā, de Alejandro Rugama.",
+      },
+    ],
+  },
+
+  {
+    slug: "mariposa-monarca-temporada-2026-2027-cuando-abren-los-santuarios",
+    createdAt: "2026-10-24T16:00:00+04:00",
+    updatedAt: "2026-10-24T16:00:00+04:00",
+    site: "mxo",
+    image: "/covers/mariposa-monarca-temporada-2026-2027-cuando-abren-los-santuarios.jpg",
+    imageAlt:
+      "Cientos de pequeñas mariposas de papel naranja y negro colgando en racimos de ramas de oyamel de papel verde oscuro, un sendero diminuto con dos figuras abajo, sobre fondo crema",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Mariposa monarca 2026-2027: cuándo llegan y cuándo abren los santuarios",
+    cardTitle: "Mariposa monarca 2026-2027",
+    titleSeo: "Mariposa monarca 2026-2027 en México: santuarios, apertura",
+    summary:
+      "Las primeras monarcas llegan a los bosques de Michoacán y el Estado de México en los primeros días de noviembre, según la Conanp; los cinco santuarios abren al público unas semanas después. La temporada 2026-2027 aún no tiene fecha oficial de apertura: la anterior abrió el 21 de noviembre y cerró el 31 de marzo.",
+    date: "2026-10-24",
+    until: "2027-03-31",
+    city: "Angangueo",
+    country: "México",
+    category: "Naturaleza",
+    source: {
+      name: "Animal Político",
+      url: "https://grupoanimal.mx/estados/mariposa-monarca-2026-2027-cuando-llegan-santuarios-mexico",
+      verifiedOn: "2026-10-24",
+    },
+    body: [
+      "Cada otoño la pregunta vuelve antes que las mariposas: ¿cuándo se puede ir? La respuesta tiene dos fechas distintas, y conviene no confundirlas. Una es cuando <strong>llegan</strong> las monarcas; la otra, cuando los santuarios <strong>abren</strong>.",
+      "## Cuándo llegan",
+      "Según la Conanp, las primeras monarcas suelen arribar a sus sitios de hibernación <strong>durante los primeros días de noviembre</strong>, tras recorrer más de 4,000 kilómetros desde Canadá y el norte de Estados Unidos. Las colonias se forman en las semanas siguientes, en los oyameles por encima de los 3,000 metros.",
+      "## Cuándo abren",
+      "Los santuarios no abren con la primera mariposa sino cuando las colonias están asentadas. En la temporada <strong>2025-2026</strong> abrieron alrededor del <strong>21 de noviembre</strong> y cerraron el <strong>31 de marzo</strong>, en horario de <strong>8:00 a 17:00</strong>. Para <strong>2026-2027 no hay todavía una fecha oficial</strong>; esta página se actualiza cuando la Conanp o el gobierno de Michoacán la anuncien.",
+      "## Dónde",
+      "Cinco santuarios abiertos al público. En Michoacán: <strong>El Rosario</strong> (Ocampo), el más visitado; <strong>Sierra Chincua</strong> (Angangueo); y <strong>Senguio</strong>. En el Estado de México: <strong>Piedra Herrada</strong>, cerca de Valle de Bravo, y <strong>San Mateo Almomoloa</strong>, en Temascaltepec. Todos se recorren a pie o a caballo cuesta arriba, con guías locales de los ejidos.",
+      "## Cómo encaja con el calendario",
+      "Quien va por el <a href=\"/eventos/noche-de-muertos-michoacan-2026/\" title=\"Noche de Muertos en Michoacán 2026\">Día de Muertos a Michoacán</a> llega una o dos semanas antes que las mariposas; la combinación clásica es el <a href=\"/eventos/festival-de-vida-y-muerte-2026/\" title=\"Festival de Vida y Muerte 2026\">Festival de Vida y Muerte</a> en el centro de Michoacán y los santuarios ya en diciembre, cuando las colonias están completas y el frío las mantiene quietas en los árboles.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo llega la mariposa monarca a México en 2026?",
+        a: "Según la Conanp, las primeras suelen llegar en los primeros días de noviembre; las colonias se asientan en las semanas siguientes.",
+      },
+      {
+        q: "¿Cuándo abren los santuarios de la mariposa monarca 2026-2027?",
+        a: "Aún no hay fecha oficial. La temporada 2025-2026 abrió alrededor del 21 de noviembre y cerró el 31 de marzo.",
+      },
+      {
+        q: "¿Cuáles son los santuarios de la mariposa monarca?",
+        a: "El Rosario, Sierra Chincua y Senguio en Michoacán; Piedra Herrada y San Mateo Almomoloa en el Estado de México.",
+      },
+    ],
+  },
+
+  {
+    slug: "el-whitney-cuenta-25-anos-de-arte-en-internet",
+    createdAt: "2026-10-24T16:00:00+04:00",
+    updatedAt: "2026-10-24T16:00:00+04:00",
+    site: "mxo",
+    image: "/covers/el-whitney-cuenta-25-anos-de-arte-en-internet.jpg",
+    imageAlt:
+      "Una docena de ventanas de navegador de papel recortado de distintos tamaños flotando en una sala blanca, cada una de un color plano con una barra de título diminuta, dos figuras de papel caminando entre ellas, sobre fondo crema",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "El Whitney cuenta 25 años de arte en internet con más de cien obras en una sala",
+    cardTitle: "25 años de arte en internet",
+    titleSeo: "Whitney artport: 25 años de arte en internet",
+    summary:
+      "El Museo Whitney de Nueva York abre el 21 de noviembre de 2026 artport: A History of Internet Art, más de cien obras de net art encargadas desde 2001 para su galería en línea, montadas en el sexto piso como ventanas de navegador flotantes, con el estreno mundial de Human Unreadable Act III, de Operator. Desde México, la galería en línea se visita sin boleto.",
+    date: "2026-10-24",
+    city: "Nueva York",
+    country: "Estados Unidos",
+    category: "Mundo",
+    source: {
+      name: "Whitney Museum of American Art",
+      url: "https://whitney.org/exhibitions/artport-25",
+      verifiedOn: "2026-10-24",
+    },
+    body: [
+      "Los museos nunca han sabido qué hacer con el arte hecho para internet: no se cuelga, no se guarda y, con cada versión de navegador, deja de funcionar. El <strong>Whitney</strong> resolvió el problema a su manera en <strong>2001</strong>: en lugar de coleccionarlo, lo encargó. Su galería en línea, <strong>artport</strong>, cumple 25 años, y por primera vez el archivo entero entra al edificio.",
+      "## La muestra",
+      "<strong>artport: A History of Internet Art</strong> abre el <strong>21 de noviembre de 2026</strong> en el sexto piso del museo, en Nueva York, y en línea. Son <strong>más de cien obras</strong> encargadas para el sitio, en tres grupos que siguen la historia de los encargos: las <strong>Gate Pages</strong> de 2001 a 2006, portales a los sitios de los artistas; las <strong>Commissions</strong>, que continúan desde 2001; y <strong>Sunrise/Sunset</strong>, la serie que corrió de 2009 a 2024, con su sucesora <strong>On the Hour</strong>. La sala está diseñada para parecer un conjunto de <strong>ventanas de navegador flotantes</strong>.",
+      "## De qué hablan",
+      "Código, visualización de datos, narrativa no lineal, mundos construidos, videojuegos y arte generado con inteligencia artificial, sobre privacidad, identidad, vigilancia y la frontera entre la vida en línea y fuera de ella, en palabras del museo. Es, de paso, la historia de la web vista por quienes la usaron como material.",
+      "## Un estreno",
+      "La exposición incluye el <strong>estreno mundial de Human Unreadable Act III</strong>, del dúo <strong>Operator</strong>, cierre de una coreografía generativa en tres actos iniciada en 2023, en el teatro del museo los días <strong>19, 21 y 22 de noviembre</strong>. La curadora es <strong>Christiane Paul</strong>, curadora de arte digital del Whitney, con David Lisbon y Colin Brooks. La fecha de cierre no se ha anunciado.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo abre artport: A History of Internet Art?",
+        a: "El 21 de noviembre de 2026, en el sexto piso del Whitney, en Nueva York, y en línea. No hay fecha de cierre anunciada.",
+      },
+      {
+        q: "¿Qué es artport?",
+        a: "La galería en línea del Whitney para encargos de arte en internet, abierta en 2001; la muestra reúne más de cien obras encargadas para ella.",
+      },
+    ],
+  },
 ];
