@@ -466,7 +466,7 @@ export const items: EventItem[] = [
   {
     slug: "please-leave-by-10-halloween-dubai-2026",
     createdAt: "2026-10-24T19:00:00+04:00",
-    updatedAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-25T01:30:00+04:00",
     site: "fwf",
     image: "/covers/please-leave-by-10-halloween-dubai-2026.jpg",
     imageAlt: "A dark waterfront studio with its door open on a warm pink-lit room, people in silhouette and bats inside, yachts in the marina and a crescent moon",
@@ -484,7 +484,7 @@ export const items: EventItem[] = [
     utcOffset: "+04:00",
     venue: "STUDIO A, Dubai Harbour",
     city: "Dubai",
-    geo: { name: "Dubai Harbour", lat: 25.09563, lng: 55.13816 },
+    geo: { name: "STUDIO A, Dubai Harbour", lat: 25.0907, lng: 55.1264 },
     organizer: "Please Leave By 10 | Dubai",
     category: "Halloween",
     tickets: { priceFrom: 150, currency: "AED" },
