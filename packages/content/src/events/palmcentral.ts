@@ -176,4 +176,90 @@ export const items: EventItem[] = [
     expertise:
       "Go on a Wednesday or Thursday if you can. The programme is the same five nights a week, and the Halloween weekend is the one every family in the city will pick. Seen from Palm Jebel Ali, the trip is also the reverse of the usual Dubai commute: the big family parks are the near ones from this end of the city, and Downtown is the far one.",
   },
+
+  {
+    slug: "gulfood-2027",
+    createdAt: "2026-10-25T02:30:00+04:00",
+    updatedAt: "2026-10-25T02:30:00+04:00",
+    site: "palmcentral",
+    image: "/covers/gulfood-2027.jpg",
+    imageAlt: "A long market aisle seen from above, stalls piled with grain, fruit and spices on both sides and small visitors walking down the middle",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Gulfood 2027 at Expo City and the World Trade Centre",
+    cardTitle: "Gulfood 2027",
+    titleSeo: "Gulfood 2027 from Palm Central: dates, hours, Expo City",
+    summary:
+      "Gulfood 2027 runs from March 15 to 19, 2027, at Dubai World Trade Centre and at the Dubai Exhibition Centre in Expo City, the half of the show nearest Palm Central: more than 8,500 exhibitors from 195 countries and 1.5 million products, with India as country partner.",
+    start: "2027-03-15",
+    end: "2027-03-19",
+    utcOffset: "+04:00",
+    venue: "Dubai Exhibition Centre, Expo City Dubai, and Dubai World Trade Centre",
+    city: "Dubai",
+    geo: { name: "Dubai Exhibition Centre, Expo City Dubai", lat: 24.959572, lng: 55.145022 },
+    organizer: "Dubai World Trade Centre",
+    category: "Expo",
+    ticket: {
+      url: "https://www.gulfood.com/",
+      label: "Register to visit",
+      sells: false,
+    },
+    source: {
+      name: "Gulfood",
+      url: "https://www.gulfood.com/",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "The Middle East's food and drink trade show returns from <strong>Monday, March 15, to Friday, March 19, 2027</strong>, split across two venues: <strong>Dubai World Trade Centre</strong> in the city centre and the <strong>Dubai Exhibition Centre</strong> in <strong>Expo City</strong>, the one closer to Palm Jebel Ali.",
+      "## Size",
+      "Gulfood counts <strong>more than 8,500 exhibitors</strong> from <strong>195 countries</strong> and over <strong>1.5 million products</strong>. <strong>India</strong> is the country partner for 2027, and the show is organised by Dubai World Trade Centre.",
+      "## Hours",
+      "From Monday to Thursday, <strong>10:00 to 18:00</strong>; on Friday, March 19, <strong>10:00 to 17:00</strong>.",
+      "## Who it is for",
+      "Gulfood is a trade show: buyers, distributors, importers, chefs and food businesses. Visitors register in advance on the Gulfood website.",
+      "## From Palm Central",
+      "For anyone living or working at the Palm Jebel Ali end of the city, the Expo City half of the show is the near one, and Dubai World Trade Centre is the long drive up Sheikh Zayed Road.",
+    ],
+    faq: [
+      {
+        q: "When is Gulfood 2027?",
+        a: "From Monday, March 15, to Friday, March 19, 2027.",
+      },
+      {
+        q: "Where is Gulfood 2027?",
+        a: "At two venues: Dubai World Trade Centre and the Dubai Exhibition Centre in Expo City Dubai.",
+      },
+      {
+        q: "What are the opening hours?",
+        a: "10:00 to 18:00 from March 15 to 18, and 10:00 to 17:00 on March 19.",
+      },
+      {
+        q: "Can anyone visit Gulfood?",
+        a: "It is a trade show for the food and drink industry; visitors register in advance on the Gulfood website.",
+      },
+    ],
+    related: [
+      {
+        href: "/location/",
+        eyebrow: "Palm Jebel Ali",
+        title: "Where Palm Central sits",
+        text: "Closer to Jebel Ali and Expo City than to Downtown: the real drive times.",
+      },
+      {
+        href: "/prices/",
+        eyebrow: "Price list",
+        title: "Palm Central prices",
+        text: "Prices by unit type, both release phases.",
+      },
+      {
+        href: "/golden-visa/",
+        eyebrow: "AED 2 million",
+        title: "Palm Central and the Golden Visa",
+        text: "What the AED 2 million threshold means for a Palm Central unit.",
+      },
+    ],
+    expertise:
+      "Find out which venue holds your sectors before you set off: the two halves of Gulfood are at opposite ends of the city, and a buyer who needs both should give each its own day rather than cross the city at noon. From Palm Jebel Ali, start with Expo City. Friday closes an hour earlier than the rest of the week.",
+  },
 ];
