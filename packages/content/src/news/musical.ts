@@ -401,4 +401,59 @@ export const items: NewsItem[] = [
     expertise:
       "The Garrick is the tell. A producer who believed One Day was the next Wicked would have waited for a 1,400-seat house; choosing a 700-seater says the show is built as a chamber piece and priced as one, and that it expects to sell on the title and the two leads rather than on scale. Muscato and Rose are both West End names with followings, and four months of them is a sensible first bet. If it extends past March the show has found its audience; if it announces a new cast for the spring, it has found a run.",
   },
+
+  {
+    slug: "high-school-musical-opens-at-troubadour-wembley-park",
+    createdAt: "2026-10-25T02:30:00+04:00",
+    updatedAt: "2026-10-25T02:30:00+04:00",
+    site: "musical",
+    image: "/covers/high-school-musical-opens-at-troubadour-wembley-park.jpg",
+    imageAlt: "A red paper basketball court seen from above on a cream ground, a basketball at the top edge of the court",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "High School Musical opens at Troubadour Wembley Park with Harry Judd as Coach Bolton",
+    cardTitle: "High School Musical at Wembley Park",
+    titleSeo: "High School Musical London 2026: Troubadour Wembley Park",
+    summary:
+      "Disney's High School Musical had its London press night at the Troubadour Wembley Park Theatre on 20 October 2026 and is booking to 3 January 2027: the production from the Lowry in Salford, with Tobias Turley and Leonor Correia as Troy and Gabriella, Harry Judd as Coach Bolton and KayCee Stroh as Ms Darbus.",
+    date: "2026-10-25",
+    category: "Productions",
+    source: {
+      name: "Official London Theatre",
+      url: "https://officiallondontheatre.com/show/high-school-musical-111473306/",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "Disney's <strong>High School Musical</strong> is playing London again. Previews at the <strong>Troubadour Wembley Park Theatre</strong> began on <strong>12 October 2026</strong>, the press night was on <strong>20 October</strong>, and the run is <strong>booking to 3 January 2027</strong>.",
+      "## Where it comes from",
+      "This is the production that played the <strong>Lowry in Salford</strong> in the summer, produced by Hope Mill Theatre and Chris Harper Productions in association with Lowry. WhatsOnStage calls it the show's first UK non-replica production, which means a staging made here rather than a copy of the American one. The stage version dates from 2006, and London first saw it at the Hammersmith Apollo in 2008.",
+      "## The cast",
+      "<strong>Tobias Turley</strong> is Troy Bolton and <strong>Leonor Correia</strong> is Gabriella Montez; <strong>Caitlin Tipping</strong> and <strong>Luke Bayer</strong> are Sharpay and Ryan Evans. <strong>Harry Judd</strong>, McFly's drummer, plays Coach Bolton, and <strong>KayCee Stroh</strong>, from the original films, plays Ms Darbus.",
+      "## The makers",
+      "<strong>Joseph Houston</strong> and <strong>William Whelton</strong> co-direct, <strong>Aaron Renfree</strong> choreographs, the book is <strong>David Simpatico</strong>'s, and the music is adapted, arranged and produced by <strong>Bryan Louiselle</strong>.",
+      "## The reviews",
+      "Four stars from Time Out, WhatsOnStage, The Stage and London Theatre, three from the Guardian. The praise went to the energy, the basketball-court staging and the leads; the reservations to the book and a few of the songs.",
+      "## The practical part",
+      "The show runs <strong>2 hours 20 minutes</strong> with an interval. Age guidance is <strong>6+</strong>; under-16s must sit with an adult and under-3s are not admitted. Seats start at <strong>£31</strong>. The BSL-interpreted and captioned performance is on 11 November at 7.30pm, and the audio-described one on 18 November at 7.30pm.",
+      "## The McFly connection",
+      "Judd's bandmate Tom Fletcher wrote the songs for <a href=\"/paddington/london/\" title=\"Paddington The Musical in London\">Paddington at the Savoy</a>, so for the next ten weeks McFly has a hand in two of London's family musicals.",
+    ],
+    related: [
+      {
+        href: "/paddington/london/",
+        eyebrow: "Savoy Theatre",
+        title: "Paddington The Musical in London",
+        text: "Seven Oliviers, songs by Tom Fletcher, an open run.",
+      },
+      {
+        href: "/one-day/london/",
+        eyebrow: "Garrick Theatre",
+        title: "One Day in London",
+        text: "From 17 November 2026, booking to 14 March 2027.",
+      },
+    ],
+    expertise:
+      "Twelve weeks over Christmas, a Disney title, guidance of 6+ and seats from £31: this is a family booking, priced and placed for it. Wembley Park is outside the West End but on the Jubilee and Metropolitan lines, which for a family coming in from north-west London or the Home Counties is an easier evening than Leicester Square. The age line is the thing to read before buying: under-3s are not admitted at all, and every under-16 needs an adult in the next seat.",
+  },
 ];
