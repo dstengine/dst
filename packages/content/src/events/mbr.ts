@@ -43,7 +43,7 @@ export const items: EventItem[] = [
   {
     slug: "dubai-racing-carnival-2026-27",
     createdAt: "2026-09-08T16:29:32+04:00",
-    updatedAt: "2026-09-12T17:35:10+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
     site: "mbr",
     image: "/covers/dubai-racing-carnival-2026-27.jpg",
     imageAlt: "A dark horse in flat silhouette galloping past a long rail, on deep teal",
@@ -82,6 +82,14 @@ export const items: EventItem[] = [
       "The club lists dining at <strong>Bisou</strong>, <strong>Alba</strong> and <strong>Himitsu</strong>, the <strong>Parade Ring Lounge</strong> and the <strong>Finish Line Brunch</strong>. <strong>Behind-the-scenes stable tours</strong> return from <strong>October</strong>, before the racing starts. Memberships cover all sixteen meetings.",
       "## Where it sits in the district",
       "Meydan Racecourse is inside MBR City, on the Nad Al Sheba side. It is the district's largest public building and the reason Al Meydan Road exists in the shape it does.",
+    ],
+    related: [
+      {
+        href: "/events/city-walk-halloween-run-2026/",
+        eyebrow: "31 October",
+        title: "City Walk Halloween Run",
+        text: "A costume run at City Walk, a short drive north of MBR City, from AED 20.",
+      },
     ],
     expertise:
       "The ten-dirham ticket is the fact worth knowing, because it changes what the racecourse is for a resident: not an occasion, but somewhere to go on a Friday evening for less than a cinema seat. The stable tours are the other underused thing here — they run from October, which is before the season, and they are the only time the working side of the site is open to people who are not owners. If you live in the district, the practical planning note is the reverse of a visitor's: the sixteen meetings are the sixteen evenings when Al Meydan Road and the Nad Al Sheba approaches carry crowd traffic, and the big nights in March are the ones to leave the car at home for.",
@@ -133,7 +141,7 @@ export const items: EventItem[] = [
   {
     slug: "dubai-shopping-festival-2026-27",
     createdAt: "2026-10-24T16:00:00+04:00",
-    updatedAt: "2026-10-24T16:00:00+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
     site: "mbr",
     image: "/covers/dubai-shopping-festival-2026-27.jpg",
     imageAlt: "A cut-paper shopping bag with a small burst of paper fireworks above its handles on a warm grey ground",
@@ -164,7 +172,97 @@ export const items: EventItem[] = [
       "## The calendar",
       "The day-by-day programme, fireworks sites and concert dates are published on the Visit Dubai page through November and December.",
     ],
+    related: [
+      {
+        href: "/events/city-walk-halloween-run-2026/",
+        eyebrow: "31 October",
+        title: "City Walk Halloween Run",
+        text: "A costume run at City Walk, a short drive north of MBR City, from AED 20.",
+      },
+    ],
     expertise:
       "DSF is the one period of the year when MBR City's position between Downtown and the airport turns from an advantage into a cost: Al Khail Road carries the festival's traffic both ways every evening for six weeks. Residents who can shift their commute earlier do; the rest learn the Meydan Road back route to Business Bay. The racecourse is the district's own festival venue, and the carnival nights in late December are the ones to book, because they sell to the city's visitors as well as its residents.",
+  },
+  {
+    slug: "city-walk-halloween-run-2026",
+    createdAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
+    site: "mbr",
+    image: "/covers/city-walk-halloween-run-2026.jpg",
+    imageAlt: "Children in a witch hat, a cape and a hood running down a street of low shopfronts under strings of round lights, a pumpkin by the kerb",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Run Wild this Halloween: City Walk Halloween Run 2026",
+    cardTitle: "City Walk Halloween Run",
+    titleSeo: "City Walk Halloween Run 2026: 31 October, near MBR City",
+    summary:
+      "A 2.5 km fun run and a 5 km in fancy dress through City Walk on Saturday 31 October 2026 at 6:30pm, AED 55 for adults and AED 20 for children under 12, with chip timing and a finisher's medal, as part of Dubai Fitness Challenge. City Walk is a short drive north of MBR City.",
+    start: "2026-10-31",
+    startTime: "18:30",
+    utcOffset: "+04:00",
+    venue: "City Walk",
+    city: "Dubai",
+    geo: { name: "City Walk", lat: 25.20816, lng: 55.26187 },
+    organizer: "City Walk",
+    category: "Sport",
+    tickets: { priceFrom: 20, priceTo: 55, currency: "AED" },
+    ticket: { url: "https://www.fitze.ae/web/halloween-run-2026/", label: "Register from AED 20" },
+    source: {
+      name: "City Walk",
+      url: "https://www.citywalk.ae/en/whats-on/halloweenrun2026",
+      verifiedOn: "2026-10-24",
+    },
+    body: [
+      "City Walk turns its streets into a costume race on Halloween night. <strong>Run Wild this Halloween</strong> starts at <strong>6:30pm on Saturday 31 October 2026</strong>, with two distances: a <strong>2.5 km Fun Run</strong> and a <strong>5 km</strong>.",
+      "## Entry",
+      "<strong>AED 55</strong> for adults and <strong>AED 20</strong> for children under 12, who must run with a registered adult. Every runner gets a <strong>chip-timed bib</strong> and a <strong>finisher's medal</strong>. Registration is on Fitze.",
+      "## Costumes",
+      "Fancy dress is the point of it, with one rule from the organisers: the costume has to be safe to run in.",
+      "## Part of Dubai Fitness Challenge",
+      "The run belongs to <strong>Dubai Fitness Challenge 2026</strong>, the city's thirty days of exercise, which opens the same day and runs to 29 November.",
+      "## From MBR City",
+      "City Walk is a short drive north of MBR City, close enough for a 6:30pm start after a Saturday at home. The following Friday, 6 November, the <a href=\"/events/dubai-racing-carnival-2026-27/\" title=\"Dubai Racing Carnival 2026/27 at Meydan\">Dubai Racing Carnival</a> opens at Meydan, MBR City's own racecourse.",
+    ],
+    faq: [
+      {
+        q: "When is the City Walk Halloween Run 2026?",
+        a: "On Saturday 31 October 2026, starting at 6:30pm at City Walk, Dubai.",
+      },
+      {
+        q: "How much does it cost?",
+        a: "AED 55 for adults and AED 20 for children under 12, on Fitze.",
+      },
+      {
+        q: "Can children run on their own?",
+        a: "No. Children under 12 must run with a registered adult.",
+      },
+      {
+        q: "What distances are there?",
+        a: "A 2.5 km Fun Run and a 5 km. Every runner gets a chip-timed bib and a finisher's medal.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/dubai-racing-carnival-2026-27/",
+        eyebrow: "From 6 November",
+        title: "Dubai Racing Carnival 2026/27",
+        text: "Sixteen race meetings at Meydan, general admission from AED 10.",
+      },
+      {
+        href: "/events/ev-world-2026-dubai/",
+        eyebrow: "10–12 November",
+        title: "EV World 2026",
+        text: "The RTA's electric vehicle exhibition at Dubai World Trade Centre.",
+      },
+      {
+        href: "/events/dubai-shopping-festival-2026-27/",
+        eyebrow: "4 December to 17 January",
+        title: "Dubai Shopping Festival 2026–27",
+        text: "Six weeks of promotions, fireworks and concerts across the city.",
+      },
+    ],
+    expertise:
+      "Pick the 2.5 km if children are running: under-12s must run with a registered adult, so the adult's distance is the family's distance. Then arrive early. The start is at 6:30pm on Halloween evening in one of the city's busiest weekend districts, and the car parks will fill before the race does.",
   },
 ];
