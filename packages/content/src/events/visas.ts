@@ -4,7 +4,7 @@ export const items: EventItem[] = [
   {
     slug: "irex-residency-citizenship-conclave-dubai-2027",
     createdAt: "2026-08-25T18:18:34+04:00",
-    updatedAt: "2026-10-02T23:50:36+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
     site: "visas",
     image: "/covers/irex-residency-citizenship-conclave-dubai-2027.jpg",
     imageAlt: "Two paper landmasses with a small house on one and a dotted arc curving to the other",
@@ -38,6 +38,14 @@ export const items: EventItem[] = [
       "The IREX Residency & Citizenship Conclave holds its 28th edition in Dubai on January 30 and 31, 2027, at Anantara Downtown in Business Bay, running 11:00 to 19:00 on both days.",
       "It gathers residency and citizenship-by-investment programmes from more than a dozen countries — past editions have featured US EB-5 regional centres alongside Greece, Portugal, Malta, the UK, Australia, New Zealand, Malaysia, Thailand and Caribbean programmes.",
     ],
+    related: [
+      {
+        href: "/events/spooky-sea-son-seaworld-abu-dhabi-2026/",
+        eyebrow: "Families",
+        title: "Spooky Sea-son at SeaWorld Abu Dhabi",
+        text: "Halloween at SeaWorld Abu Dhabi until 1 November, from AED 320.",
+      },
+    ],
     expertise:
       "Worth being clear about what this is not: it sells routes into other countries, not UAE residency. It earns a place here because the audience overlaps almost exactly — people already holding or considering a UAE visa who want a second residency, and who are best placed to compare what AED 2 million buys under the Golden Visa against what a comparable sum buys elsewhere. Treat any figure quoted on a stand as a starting point to verify, not a quote: investment-migration thresholds move, and several of the programmes represented have repriced in recent years.",
   },
@@ -45,7 +53,7 @@ export const items: EventItem[] = [
   {
     slug: "citizenship-expo-abu-dhabi-2026",
     createdAt: "2026-09-08T16:29:32+04:00",
-    updatedAt: "2026-10-02T23:50:36+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
     site: "visas",
     image: "/covers/citizenship-expo-abu-dhabi-2026.jpg",
     imageAlt: "A passport booklet lying open on warm sand, both pages blank",
@@ -78,7 +86,100 @@ export const items: EventItem[] = [
       "## The format",
       "It is built around <strong>one-to-one meetings</strong> with programme specialists rather than a conference programme.",
     ],
+    related: [
+      {
+        href: "/events/spooky-sea-son-seaworld-abu-dhabi-2026/",
+        eyebrow: "Families",
+        title: "Spooky Sea-son at SeaWorld Abu Dhabi",
+        text: "Halloween at SeaWorld Abu Dhabi until 1 November, from AED 320.",
+      },
+    ],
     expertise:
       "The UAE is not on that list, and that is worth understanding rather than reading as an omission: the Golden Visa is a residency granted on eligibility, not a programme sold through agents, so it has no stand to take. What the expo is genuinely useful for is the comparison the brochures make impossible — the same question about processing time, physical-presence requirements and what happens to the family, asked of a Caribbean citizenship programme and a European residence permit within the same hour. Take the question you actually care about and repeat it verbatim; the differences between the answers are the whole value of the trip.",
+  },
+  {
+    slug: "spooky-sea-son-seaworld-abu-dhabi-2026",
+    createdAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
+    site: "visas",
+    image: "/covers/spooky-sea-son-seaworld-abu-dhabi-2026.jpg",
+    imageAlt: "An aquarium window with fish and a manta ray, a carved pumpkin before the glass and a small family watching",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Spooky Sea-son at SeaWorld Yas Island, Abu Dhabi",
+    cardTitle: "Spooky Sea-son at SeaWorld Abu Dhabi",
+    titleSeo: "SeaWorld Abu Dhabi Spooky Sea-son: UAE Halloween to 1 Nov",
+    summary:
+      "SeaWorld Yas Island's Halloween runs daily until 1 November 2026: a new Spooky Live Show at One Ocean, storytime with Juniper and a candy treasure hunt, with single-day tickets from AED 320 and a Halloween sleepover on 31 October. For families new to the UAE, it is the capital's big Halloween day out.",
+    start: "2026-10-03",
+    end: "2026-11-01",
+    startTime: "10:00",
+    endTime: "18:00",
+    utcOffset: "+04:00",
+    venue: "SeaWorld Yas Island, Abu Dhabi",
+    city: "Abu Dhabi",
+    country: "United Arab Emirates",
+    geo: { name: "SeaWorld Yas Island, Abu Dhabi", lat: 24.48587, lng: 54.61899 },
+    organizer: "SeaWorld Yas Island, Abu Dhabi",
+    category: "Halloween",
+    tickets: { priceFrom: 320, priceTo: 375, currency: "AED" },
+    ticket: { url: "https://www.seaworldabudhabi.com/en/tickets", label: "Tickets from AED 320" },
+    source: {
+      name: "SeaWorld Yas Island, Abu Dhabi",
+      url: "https://www.seaworldabudhabi.com/en/events/spooky-sea-son",
+      verifiedOn: "2026-10-24",
+    },
+    body: [
+      "SeaWorld Yas Island, Abu Dhabi, runs its Halloween as a season rather than a night. <strong>Spooky Sea-son</strong> runs <strong>daily until 1 November 2026</strong>, within the park's hours of <strong>10am to 6pm</strong>.",
+      "## What is on",
+      "A new <strong>Spooky Live Show</strong> at One Ocean, <strong>storytime with Juniper</strong>, and a <strong>candy treasure hunt</strong> through the park. Sakina appears in a Spooky Sea-son mermaid costume.",
+      "## Tickets",
+      "A <strong>single-day ticket is AED 375</strong> for adults and <strong>AED 320</strong> for juniors under 1.1 metres, on SeaWorld's own ticket page. Parking is free.",
+      "## The Halloween sleepover",
+      "For one night, <strong>31 October to 1 November</strong>, the park runs a <strong>Spooky Sea-son Sleepover</strong>, from 5:30pm to 9:45am the next morning. Details are on the event page.",
+      "## A first autumn in the UAE",
+      "This is a residency site, and it lists the event for the people a residency site is for: families who have just moved to the UAE, for whom a first October is mostly a question of where the children can go. In the capital, this is the answer with the most fish in it. Yas Island is about an hour's drive from Dubai, and ten days after Halloween the same city hosts <a href=\"/events/citizenship-expo-abu-dhabi-2026/\" title=\"Citizenship Expo Abu Dhabi 2026\">Citizenship Expo Abu Dhabi</a> at ADNEC.",
+    ],
+    faq: [
+      {
+        q: "When is Spooky Sea-son at SeaWorld Abu Dhabi?",
+        a: "Daily until 1 November 2026, during park hours, 10am to 6pm.",
+      },
+      {
+        q: "How much is a SeaWorld Abu Dhabi ticket?",
+        a: "A single-day ticket is AED 375 for adults and AED 320 for juniors under 1.1 metres. Parking is free.",
+      },
+      {
+        q: "What is on for Halloween?",
+        a: "A new Spooky Live Show at One Ocean, storytime with Juniper, a candy treasure hunt, and Sakina in a Spooky Sea-son mermaid costume.",
+      },
+      {
+        q: "Is there a Halloween sleepover?",
+        a: "Yes: the Spooky Sea-son Sleepover runs from 5:30pm on 31 October to 9:45am on 1 November.",
+      },
+    ],
+    related: [
+      {
+        href: "/family/",
+        eyebrow: "Families",
+        title: "UAE family residency: what changes day to day",
+        text: "Schooling, healthcare and settling in, beyond the legal mechanics.",
+      },
+      {
+        href: "/events/citizenship-expo-abu-dhabi-2026/",
+        eyebrow: "10–12 November",
+        title: "Citizenship Expo Abu Dhabi 2026",
+        text: "Fifty-plus residency and citizenship programmes under one roof at ADNEC.",
+      },
+      {
+        href: "/events/irex-residency-citizenship-conclave-dubai-2027/",
+        eyebrow: "30–31 January",
+        title: "IREX Residency Conclave",
+        text: "Residency and citizenship programmes from 12+ countries, at Anantara Downtown Dubai.",
+      },
+    ],
+    expertise:
+      "Go on a weekday if school allows it: the Halloween programme is the same every day of the season, and the weekends are when the park fills. Junior pricing goes by height rather than age, so measure before booking, and plan the treasure hunt for the start of the day, while the children still have the patience for it. The sleepover is the one part that happens on a single date; if it appeals, it is the thing to book first.",
   },
 ];
