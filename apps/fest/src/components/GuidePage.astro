@@ -58,6 +58,21 @@ for (const s of siblings) if (s.title === s.label) throw new Error(`${path}: the
 // that copy and the row sits here, under the guide's own pages.
 const languages = languagesFor(page, guide);
 
+// The h1's longest run that cannot break, in a script that breaks at
+// spaces: Thai breaks between its words without one, and a hyphen or a
+// dash is a break of its own. The size (theme.css, --h1-size) holds 11
+// characters at 320 px ("Creamfields", 285 px of a 292 px column); a
+// longer run broke mid-word: "accommod|ation" in Wonderfruit's English
+// stay h1, 390 px at 29 px, and "Programmatio|n" in Igloofest's (line-break
+// sweep, 24 October 2026). Such an h1 is held on a phone to what its run
+// needs, as an archive page's is (legacy.css): the column, 100vw less the
+// phone gutter (tokens.css, .container), over 1.08 em a character, the
+// face's widest measured being 1.03 ("accommodation"). Wider than about
+// 490 px (for 13 characters) the token is the smaller and wins. Every
+// other h1 has no style and keeps its bytes.
+const h1Run = Math.max(...page.h1.split(/[\s\u0E00-\u0E7F\-\u2013\u2014/]+/).map((run) => [...run].length));
+const h1Fit = h1Run > 11 ? `font-size: min(var(--h1-size), calc((100vw - 2 * var(--space-2)) / ${(h1Run * 1.08).toFixed(2)}))` : undefined;
+
 // A heading or a question may hold a figure that expires ("The three $99.90
 // tickets"): it reads as the day's copy does, words only, as it always
 // printed.
@@ -165,7 +180,7 @@ const coverStyle = cover ? coverCss(cover, Astro.site?.hostname ?? "") : "";
     label={words.breadcrumbs}
   />
   <header class="guide-head">
-    <h1 id={page.h1Id}>{page.h1}</h1>
+    <h1 id={page.h1Id} style={h1Fit}>{page.h1}</h1>
     {lede && <p class="lede" set:html={lede} />}{ledeMore.map((l) => <p class="lede" set:html={l} />)}{why && <p class="lede-why" set:html={why} />}{updated && <p class="guide-updated">{words.updated} <time datetime={updated.iso}>{updated.text}</time></p>}
   </header>
 

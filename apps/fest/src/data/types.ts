@@ -44,6 +44,16 @@ export interface GoTarget {
   titleLang?: string;
 }
 
+/** A venue's address in its parts, as the markup prints it
+    (FestEvent.markup.address). */
+export interface PostalParts {
+  streetAddress?: string;
+  addressLocality: string;
+  addressRegion?: string;
+  postalCode?: string;
+  addressCountry: string;
+}
+
 /** One channel's offer in a list (markup.offers). `availability` is the
     schema.org term without its URL ("InStock"); it perishes as a price
     does, so both print only until the guide's `prices` expiry. */
@@ -104,7 +114,16 @@ export interface FestEvent extends Dated {
         sheet address is not Australia's "street, locality STATE postcode",
         which rules.ts reads when this is absent. Region and postcode only
         where the sheet has them (Creamfields Chile's has neither). */
-    address?: { streetAddress?: string; addressLocality: string; addressRegion?: string; postalCode?: string; addressCountry: string };
+    address?: PostalParts;
+    /** The address's parts as a later guide writes them, keyed by that
+        guide's `lang` and shaped as Offer.perGuide: the event's first
+        guide never has an entry, and what an entry does not name stays the
+        address's. Wonderfruit's English twin names Pattaya and Chonburi,
+        which the Thai guide's address gives in Thai script (the SEO lead's
+        note 12, 24 October 2026). A country code and a postcode do not
+        change with the language, so only the street, the locality and the
+        region can. */
+    perGuide?: Record<string, { address?: Partial<Pick<PostalParts, "streetAddress" | "addressLocality" | "addressRegion">> }>;
     /** The sheet key of the coordinates the markup prints ({ lat, lon }),
         where they are not the scout's venue.lat and venue.lon. */
     geo?: string;

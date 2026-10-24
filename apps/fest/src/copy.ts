@@ -336,7 +336,8 @@ const KEEP_FR = new RegExp([FR_DATE, FR_COUNT].join("|"), "gu");
 // that needed it. Creamfields Chile's (24 October 2026) writes a sum with
 // its code before it, as Chile's pesos and GOV.UK's dollars are printed
 // for an English reader ("CLP 98,000", "USD 46"), and the club's phone
-// ("+56 2 2693 9600").
+// ("+56 2 2693 9600"). Wonderfruit's (24 October 2026) writes the baht the
+// same way ("THB 12,900"), which its sweep found split at 320 px.
 const EN_TOKENS = [
   `\\b\\d[\\d,]*(?:\\.\\d+)? USD\\b`, // 2,196 USD, 6.00 USD (Zamna Tulum)
   `\\b\\d{1,2}:\\d{2} [ap]\\.m\\.`, // 3:00 a.m. (Zamna Tulum)
@@ -349,6 +350,11 @@ const EN_TOKENS = [
   `\\bCLP \\d[\\d,]* bonus\\b`, // CLP 5,000 bonus (Creamfields Chile)
   `\\b(?:CLP|USD) \\d[\\d,]*\\b`, // CLP 98,000, USD 46 (Creamfields Chile)
   `\\+56(?: \\d{1,4}){3}\\b`, // +56 2 2693 9600 (Creamfields Chile)
+  // The baht keeps the word after it that says what the sum prices, as
+  // KEEP_TOGETHER holds a dollar price to its word: Wonderfruit's sweep
+  // found "THB 1,700 | a guest" and "THB 5,000 | at the door" at 320 and
+  // 390 px.
+  `\\bTHB \\d[\\d,]*(?: (?:a|at|in|before|for|each|per)\\b)?`, // THB 12,900, THB 1,700 a guest (Wonderfruit)
   // The line-break sweep of Creamfields Chile's English pages (24 October
   // 2026) found each of these split at a line's end, from 320 to 480 px: a
   // size from its unit, a phase from its number, a share from its word, an
@@ -363,6 +369,7 @@ const EN_TOKENS = [
   `\\b\\d+(?:st|nd|rd|th) anniversary\\b`, // 20th anniversary (Creamfields Chile)
   `\\b\\d+ años\\b`, // "mayores de 18 años", quoted (Creamfields Chile)
   `\\b[Ll]ine-up\\b`, // the line-up page (Creamfields Chile)
+  `\\bthree-bed\\b`, // a shared three-bed tent stranded its "bed" at 320 px (Wonderfruit)
 ];
 const KEEP_EN = new RegExp([KEEP_TOGETHER.source, ...EN_TOKENS].join("|"), "g");
 /** Each language's keep-together list, by the guide's locale where it has
@@ -618,6 +625,14 @@ function marks(text: string, ctx: Ctx, site: string): { html: string; md: string
     .replace(BOLD, "$1")
     .replace(/\s+/g, " ")
     .trim();
+  // A mark TAG cannot read is neither stripped nor checked: a range such as
+  // "[reread.prices.0-3]" stops TAG_BODY at its hyphen, passes the check at
+  // the end (which strips the same pattern from both sides) and prints as
+  // text. A key-like mark left once tags and links are out stops the build
+  // instead (the CTO's gate-3 note 3, Wonderfruit's English twin, 24
+  // October 2026).
+  const unread = text.replace(TAG, "").replace(LINK, "").match(/\[[A-Za-z_]\w*\.[^\]\n]*\](?!\()/);
+  if (unread) throw new Error(`${ctx.where}: ${unread[0]} is a mark the tag pattern cannot read`);
 
   for (const m of text.matchAll(BOLD))
     pieces.push({

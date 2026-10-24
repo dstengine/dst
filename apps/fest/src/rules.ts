@@ -286,8 +286,12 @@ export function musicEvent(event: FestEvent, guide: Guide, page: GuidePage, day:
   // "4484 Hamilton Highway, Hesse VIC 3321": the street, then the locality,
   // the state and the postcode as Australia writes them. A venue elsewhere
   // gives its parts in markup.address ("Av. Blanco Encalada 2540, Santiago
-  // Centro, Santiago, Chile" has no state and no postcode to read).
-  const postal = markup.address ?? { ...australian(event.slug, venue.address), addressCountry: venue.country };
+  // Centro, Santiago, Chile" has no state and no postcode to read). A
+  // later guide may write the parts in its own language (markup.perGuide:
+  // Wonderfruit's English twin, "Pattaya", where the Thai guide has
+  // "พัทยา"); a spread keeps the address's keys in their order, and a guide
+  // with no entry spreads nothing, so its address is what it was.
+  const postal = { ...(markup.address ?? { ...australian(event.slug, venue.address), addressCountry: venue.country }), ...markup.perGuide?.[guide.lang]?.address };
   // The point the markup names: the venue's own marker where the guide
   // took it (Creamfields Chile's club page), else the scout's pair.
   const at = markup.geo ? (resolve(event.sheet, markup.geo) as { lat: number; lon: number } | undefined) : venue;

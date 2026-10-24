@@ -128,6 +128,17 @@ describe("the copy and its sheet", () => {
     assert.deepEqual(missing, [], "a tag that resolves to nothing cites nothing");
   });
 
+  // A range mark ("[reread.prices.0-3]") is no tag to TAG, which stops at
+  // the hyphen: it would print as text, so marks() stops the build on it
+  // (the CTO's gate-3 note 3, Wonderfruit's English twin).
+  test("a key-like mark the tag pattern cannot read stops the build", () => {
+    const event = events.find((e) => e.slug === "wonderfruit");
+    const guide = guides.find((g) => g.event === "wonderfruit" && g.lang === "en");
+    const ctx = { event, guide, today: "2026-10-24", where: "fixture" };
+    assert.throws(() => copy.inline("The door price is THB 20,000 [prices.1] [reread.prices.0-3].", ctx), /\[reread\.prices\.0-3\] is a mark the tag pattern cannot read/);
+    assert.ok(!copy.inline("The door price is THB 20,000 [prices.1].", ctx).includes("["));
+  });
+
   test("every cited fact has a read date", () => {
     const undated = [];
     for (const { where, text, event } of all)
@@ -633,6 +644,34 @@ describe("where a guide's links lead", () => {
     assert.deepEqual(bad, []);
   });
 
+  // The markup's own perGuide (an address in a later guide's language) is
+  // keyed as an offer's is: by the lang of one of the event's guides, never
+  // the first's, whose words the address already is.
+  test("the markup's perGuide names another guide of its event, never the first", () => {
+    const bad = [];
+    for (const event of events) {
+      const own = guides.filter((g) => g.event === event.slug);
+      for (const lang of Object.keys(event.markup.perGuide ?? {})) {
+        if (!own.some((g) => g.lang === lang)) bad.push(`${event.slug}: markup.perGuide.${lang}, and no ${lang} guide`);
+        if (lang === own[0].lang) bad.push(`${event.slug}: markup.perGuide.${lang} is the first guide's`);
+      }
+    }
+    assert.deepEqual(bad, []);
+  });
+
+  // Wonderfruit's English MusicEvent gives the place as its page does, in
+  // English; the Thai one keeps the Thai guide's words (the SEO lead's
+  // note 12).
+  test("Wonderfruit's English MusicEvent is in Pattaya, Chonburi; the Thai one as before", () => {
+    const event = events.find((e) => e.slug === "wonderfruit");
+    const address = (lang) => {
+      const guide = guides.find((g) => g.event === "wonderfruit" && g.lang === lang);
+      return JSON.stringify(rules.musicEvent(event, guide, rules.mainPage(guide), "2026-10-24").location.address);
+    };
+    assert.equal(address("en"), JSON.stringify({ "@type": "PostalAddress", addressLocality: "Pattaya", addressRegion: "Chonburi", addressCountry: "TH" }));
+    assert.equal(address("th-TH"), JSON.stringify({ "@type": "PostalAddress", addressLocality: "พัทยา", addressRegion: "ชลบุรี", addressCountry: "TH" }));
+  });
+
   // The house's English ("en") keeps its tokens and dates together and
   // glues them in a long run; en-AU, Beyond The Valley's and Field Day's,
   // is set as it was before "en" took them.
@@ -658,6 +697,14 @@ describe("where a guide's links lead", () => {
     const set = at(cen, cream, chile);
     for (const token of ["CLP 98,000", "USD 46", "+56 2 2693 9600"]) assert.ok(set.includes(`<span class="nowrap">${token}</span>`), token);
     assert.equal(at(btv, btvEvent, chile), chile);
+    // Wonderfruit's baht, its code before the sum, held as Chile's pesos
+    // are, and with the word that says what it prices.
+    const wf = events.find((e) => e.slug === "wonderfruit");
+    const wen = guides.find((g) => g.event === "wonderfruit" && g.lang === "en");
+    const baht = "The 5-Day Full Pass costs THB 12,900 and the Weekend Pass THB 11,500.";
+    assert.ok(at(wen, wf, baht).includes('<span class="nowrap">THB 12,900</span>'));
+    assert.ok(at(wen, wf, "Daily breakfast for the whole stay: THB 1,700 a guest.").includes('<span class="nowrap">THB 1,700 a</span>'));
+    assert.equal(at(btv, btvEvent, baht), baht);
     // The bonus scale's items keep the word with its figure (QA round 1).
     const scale = "CLP 50,000 loaded: CLP 5,000 bonus";
     assert.ok(at(cen, cream, scale).includes('<span class="nowrap">CLP 5,000 bonus</span>'));
@@ -911,6 +958,7 @@ describe("the built pages", { skip: built ? false : "apps/fest/dist is missing: 
     assert.deepEqual(bad, []);
     assert.equal(count["igloofest:fr-CA:own"], 20);
     assert.equal(count["zamna-tulum:en:en"], 14);
+    assert.equal(count["wonderfruit:en:en"], 6);
   });
 
   // An event in two languages: every page names each of its event's
