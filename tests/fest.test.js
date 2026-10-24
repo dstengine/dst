@@ -995,7 +995,8 @@ describe("the built pages", { skip: built ? false : "apps/fest/dist is missing: 
   // A hop's page speaks the language its title is written in, where that
   // language's chrome has the hop's words (fr: Igloofest's twenty); every
   // other hop is Redirect's English page with no link back (Zamna Tulum's
-  // fourteen English-only hops among them, as en has no hop row).
+  // fourteen English-only hops among them, and Igloofest's seventeen
+  // English ones, as en has no hop row).
   test("a hop's page speaks its titleLang guide's language, or is the English redirect", () => {
     const bad = [];
     const count = {};
@@ -1018,6 +1019,7 @@ describe("the built pages", { skip: built ? false : "apps/fest/dist is missing: 
       }
     assert.deepEqual(bad, []);
     assert.equal(count["igloofest:fr-CA:own"], 20);
+    assert.equal(count["igloofest:en:en"], 17);
     assert.equal(count["zamna-tulum:en:en"], 14);
     assert.equal(count["wonderfruit:en:en"], 6);
   });
@@ -1557,18 +1559,32 @@ describe("a French guide's built pages", { skip: built ? false : "apps/fest/dist
     }
   });
 
-  // Director's gate-3 condition 1: the capitalised word and the schema's
-  // sold-out term nowhere in the app's output, its Markdown, llms.txt and
-  // hop pages included; the lower-case one only in the approved sentence.
-  // Another guide's own pages are its own: Beyond The Valley and Field Day
-  // mark tiers that did sell out with SoldOut, which is true there.
-  test("« Complet » and SoldOut appear nowhere in dist", () => {
+  // Director's gate-3 condition 1 (the French card, 21–22 October 2026,
+  // when the pass was on sale): the capitalised word nowhere in the app's
+  // output, its Markdown, llms.txt and hop pages included; the lower-case
+  // one only in the approved sentence. The schema's sold-out term is no
+  // longer banned but pinned, since the English twin's gate 3 (SEO 8b, 24
+  // October 2026): the 2027 Igloopass is sold out on the shop and on both
+  // FAQs read that day, so each main page's pass offer says so, once,
+  // while the prices hold, and no other Igloofest file says it, from the
+  // take-down day none at all. Another guide's own pages are its own:
+  // Beyond The Valley and Field Day mark tiers that did sell out with
+  // SoldOut, which is true there.
+  test("« Complet » nowhere in dist, and SoldOut only in the two Igloopass offers while prices hold", () => {
     const others = events.map((e) => e.slug).filter((s) => s !== "igloofest");
     const theirs = (rel) => others.some((s) => rel.startsWith(`${s}/`) || rel === `${s}.md` || rel.startsWith(`go/${s}-`));
-    const hits = textFiles(DIST)
-      .filter((f) => !theirs(path.relative(DIST, f)))
-      .filter((f) => /\bComplet\b|SoldOut/.test(readFileSync(f, "utf8")));
-    assert.deepEqual(hits.map((f) => path.relative(DIST, f)), []);
+    const ours = textFiles(DIST).filter((f) => !theirs(path.relative(DIST, f)));
+    const holding = (re) => ours.filter((f) => re.test(readFileSync(f, "utf8"))).map((f) => path.relative(DIST, f)).sort();
+    assert.deepEqual(holding(/\bComplet\b/), []);
+    const sold = day < frenchGuides[0].expires.prices ? ["igloofest/en/index.html", "igloofest/index.html"] : [];
+    assert.deepEqual(holding(/SoldOut/), sold);
+    for (const rel of sold) {
+      const h = readFileSync(path.join(DIST, rel), "utf8");
+      assert.equal(h.match(/SoldOut/g).length, 1, rel);
+      const offers = jsonLd(h).find((b) => b["@type"] === "MusicEvent").offers;
+      const pass = rel.startsWith("igloofest/en/") ? "Igloopass" : "Igloopasse";
+      assert.deepEqual(offers.filter((o) => "availability" in o).map((o) => [o.name, o.availability]), [[pass, "https://schema.org/SoldOut"]], rel);
+    }
     for (const [p, h] of content)
       for (const m of words(h).matchAll(/\bcomplet\b/g)) {
         const around = words(h).slice(m.index - 30, m.index + 20);
@@ -1576,14 +1592,30 @@ describe("a French guide's built pages", { skip: built ? false : "apps/fest/dist
       }
   });
 
-  // The five addresses and the shop's host are text a reader copies, never
-  // a link (the gate-2 carry, b).
-  test("the e-mail addresses and billets.igloofest.ca print as text, never as links", () => {
+  // The addresses are text a reader copies, never a link (the gate-2
+  // carry, b). The shop's host is text on the guide pages and a link on
+  // one page only, the English twin's hop to the shop, /go/igloofest-shop/
+  // (noindex, nofollow), whose link is the hop's own target: the session's
+  // ruling 1b and SEO 3 on card 2026-10-24-igloofest-en, 24 October 2026.
+  // The French cards' rule of 21–22 October holds on every other page, the
+  // French guide's twenty hops included. groupe@igloofest.ca no longer
+  // prints: the French F-list of 24 October keeps one bottle-service
+  // address, groupe@multicolore.ca.
+  test("the e-mail addresses print as text, and billets.igloofest.ca is linked by its hop alone", () => {
     const text = content.map(([, h]) => words(h)).join(" ");
-    for (const s of ["groupe@igloofest.ca", "groupe@multicolore.ca", "info@igloofest.ca", "info@gestev.com", "info@Igloofestgatineau.net", "billets.igloofest.ca"])
+    for (const s of ["groupe@multicolore.ca", "info@igloofest.ca", "info@gestev.com", "info@Igloofestgatineau.net", "billets.igloofest.ca"])
       assert.ok(text.includes(s), `${s} is not on any page`);
+    assert.ok(!text.includes("groupe@igloofest.ca"), "groupe@igloofest.ca prints again");
+    const shop = events.find((e) => e.slug === "igloofest").go.shop.url;
+    assert.match(shop, /^https:\/\/billets\.igloofest\.ca\//);
+    const linking = [];
     for (const [p, h] of html)
-      for (const a of anchors(h)) assert.ok(!/@|billets\.igloofest\.ca|^mailto:/.test(a.href ?? ""), `${p}: a link to ${a.href}`);
+      for (const a of anchors(h)) {
+        assert.ok(!/@|^mailto:/.test(a.href ?? ""), `${p}: a link to ${a.href}`);
+        if (/billets\.igloofest\.ca/.test(a.href ?? "")) linking.push([p, a.href.replace(/&amp;/g, "&"), /nofollow/.test(a.rel)]);
+      }
+    assert.deepEqual(linking, [["/go/igloofest-shop/", shop, true]]);
+    assert.match(html.get("/go/igloofest-shop/"), /<meta name="robots" content="noindex, ?nofollow"/);
   });
 
   // Three MusicEvents, each its own edition at its own place, the offset
@@ -1600,7 +1632,9 @@ describe("a French guide's built pages", { skip: built ? false : "apps/fest/dist
     const main = ev("/igloofest/");
     assert.equal(main.name, "Igloofest Montréal 2027");
     assert.equal(main.startDate, "2027-01-14T19:30:00-05:00");
-    assert.equal(main.endDate, "2027-02-06");
+    // The last night ends at 00:30 on the Sunday (hours_montreal, the
+    // English twin's card, 24 October 2026).
+    assert.equal(main.endDate, "2027-02-07T00:30:00-05:00");
     const quebec = ev("/igloofest/quebec/");
     assert.equal(quebec.name, h1("/igloofest/quebec/"));
     assert.equal(quebec.description, description("/igloofest/quebec/"));
@@ -1616,10 +1650,11 @@ describe("a French guide's built pages", { skip: built ? false : "apps/fest/dist
     assert.equal(gatineau.offers, undefined);
     const guide = frenchGuides[0];
     if (day < guide.expires.prices) {
-      assert.deepEqual(main.offers.map((o) => [o["@type"], o.price, o.priceCurrency, o.validFrom, o.url]), [
-        ["Offer", 49, "CAD", "2026-10-23T11:00:00-04:00", "https://fest.one/go/igloofest-billets/"],
-        ["Offer", 99, "CAD", "2026-10-23T11:00:00-04:00", "https://fest.one/go/igloofest-billets/"],
-        ["Offer", 234, "CAD", "2026-10-23T11:00:00-04:00", "https://fest.one/go/igloofest-billets/"],
+      // The pass sold out while the prices hold (SEO 8b, 24 October 2026).
+      assert.deepEqual(main.offers.map((o) => [o["@type"], o.price, o.priceCurrency, o.validFrom, o.url, o.availability]), [
+        ["Offer", 49, "CAD", "2026-10-23T11:00:00-04:00", "https://fest.one/go/igloofest-billets/", undefined],
+        ["Offer", 99, "CAD", "2026-10-23T11:00:00-04:00", "https://fest.one/go/igloofest-billets/", undefined],
+        ["Offer", 234, "CAD", "2026-10-23T11:00:00-04:00", "https://fest.one/go/igloofest-billets/", "https://schema.org/SoldOut"],
       ]);
     } else {
       assert.deepEqual(main.offers.map((o) => [o["@type"], o.name, o.validFrom, o.url, o.seller?.name]), [
@@ -1627,9 +1662,9 @@ describe("a French guide's built pages", { skip: built ? false : "apps/fest/dist
         ["Offer", "Terrasse VIP", "2026-10-23T11:00:00-04:00", "https://fest.one/go/igloofest-billets/", "Billetterie Igloofest"],
         ["Offer", "Igloopasse", "2026-10-23T11:00:00-04:00", "https://fest.one/go/igloofest-billets/", "Billetterie Igloofest"],
       ]);
-      for (const o of main.offers) assert.ok(!("price" in o) && !("priceCurrency" in o), "a price after the take-down");
+      for (const o of main.offers) assert.ok(!("price" in o) && !("priceCurrency" in o) && !("availability" in o), "a price or a state after the take-down");
     }
-    for (const o of main.offers) assert.ok(!("priceValidUntil" in o) && !("availability" in o), "an offer with an end or a state");
+    for (const o of main.offers) assert.ok(!("priceValidUntil" in o), "an offer with an end");
     for (const p of ["/igloofest/billets/", "/igloofest/programmation/", "/igloofest/montreal/", "/igloofest/habillement/"]) assert.equal(ev(p), undefined, p);
   });
 
@@ -1688,6 +1723,321 @@ describe("a French guide's built pages", { skip: built ? false : "apps/fest/dist
     }
   });
 });
+
+// ------------------------------------------- Igloofest's English twin
+
+// Igloofest's guide in English (card 2026-10-24-igloofest-en), the second
+// beside the French one, at /igloofest/en/: its night lines read in
+// English, its two markups shared with the French pages, its tokens, its
+// updated line, and its seven pages as built.
+const igloofestData = await import("../apps/fest/src/data/events/igloofest.ts");
+const igloofestEn = guides.find((g) => g.event === "igloofest" && g.lang === "en");
+const igloofestFr = guides.find((g) => g.event === "igloofest" && g.lang === "fr-CA");
+
+describe("Igloofest's English guide", () => {
+  // The English row of the night grammar (copy.ts, NIGHT_GRAMMAR): each of
+  // the twelve lines reads back as written, never reads as French, and its
+  // card holds its words, each start at Montréal's winter offset.
+  test("an English night line parses and reads back, twelve of twelve, and its card says the same", () => {
+    const event = rules.eventOf(events, igloofestEn);
+    const words = (t) => t.replace(/<[^>]+>/g, " ").replace(/&nbsp;/g, " ").replace(/&amp;/g, "&").replace(/&#39;/g, "'").match(/[\p{L}\p{N}]+/gu).sort();
+    let n = 0;
+    for (const page of igloofestEn.pages)
+      for (const s of page.sections.filter((x) => x.kind === "nights")) {
+        const ctx = { event, guide: igloofestEn, page, today: rules.today(), where: s.id };
+        const cards = copy.blocks(s.body, ctx, s.kind).split("<li><h3>").slice(1).map((c) => c.split("</ul></li></ul>")[0]);
+        const lines = s.body.split("\n").filter((l) => l.startsWith("- ")).map((l) => l.slice(2).replace(/(\s+\[[^\]]*(?:\[[^\]]*\][^\]]*)?\])+$/, ""));
+        lines.forEach((line, i) => {
+          const night = copy.parseNight(line, "en");
+          assert.ok(night, `${s.id}: "${line}" is not a night`);
+          assert.equal(copy.formatNight(night, "en"), line);
+          assert.equal(copy.parseNight(line), undefined, `${s.id}: "${night.day}" reads as French`);
+          assert.deepEqual(words(cards[i] ?? ""), words(line), `${s.id}: the card of "${night.day}"`);
+          const starts = [...(cards[i] ?? "").matchAll(/<time datetime="([^"]+T[^"]+)">(\d{2}:\d{2})<\/time>/g)];
+          assert.equal(starts.length, night.stages.flatMap((x) => x.sets).length, `${s.id}: a start per set`);
+          for (const [, at, shown] of starts) assert.equal(at, `${night.date}T${shown}:00-05:00`, `${s.id}: ${night.day}`);
+          n++;
+        });
+        assert.equal(cards.length, 3, `${s.id}: three cards`);
+      }
+    assert.equal(n, 12);
+  });
+
+  // The nights guard (copy.ts, nights, the CTO's gate-3 item 2): a list in
+  // a nights section is nights in its guide's language, or the build
+  // stops, naming the section and the line. A nights section with no list
+  // stops it too, and a language with no grammar row never reads as French.
+  test("a nights section holds nights in its guide's language, or the build stops", () => {
+    const event = rules.eventOf(events, igloofestEn);
+    const at = (guide, text) => copy.blocks(text, { event, guide, today: "2026-10-24", where: "fixture" }, "nights");
+    const en = "- Thursday 14 January 2027 — Sapporo Stage: Taima 19:30 · KAYTRANADA 22:00.";
+    const fr = "- Jeudi 14 janvier 2027 — Scène Sapporo\u00a0: Taima 19\u00a0h\u00a030.";
+    assert.match(at(igloofestEn, en), /^<ul class="nights"><li><h3><time datetime="2027-01-14">/);
+    assert.match(at(igloofestFr, fr), /^<ul class="nights"><li><h3><time datetime="2027-01-14">/);
+    assert.throws(() => at(igloofestEn, `${en}\n${fr}`), /^Error: fixture: a nights section holds a line that is not a night in en: "Jeudi 14 janvier 2027/);
+    assert.throws(() => at(igloofestFr, en), /fixture: a nights section holds a line that is not a night in fr-CA: "Thursday 14 January 2027/);
+    assert.throws(() => at(igloofestEn, "Thursday 14 January 2027, the Sapporo Stage: Taima at 19:30."), /fixture: a nights section with no night list/);
+    assert.throws(() => at(igloofestEn, "- Friday 14 January 2027 — Sapporo Stage: Taima 19:30."), /fixture: 2027-01-14 is not a Friday/);
+    assert.throws(() => copy.parseNight(en.slice(2), "pt-BR"), /copy\.ts reads no nights in "pt-BR"/);
+  });
+
+  // Commit-day forms of the updated line (copy.ts, LONG_DATE.en).
+  test("an English updated line writes the day as a British reader does", () => {
+    assert.equal(copy.longDate("2026-10-24T12:00:00+04:00", "en"), "24 October 2026");
+    assert.equal(copy.longDate("2026-11-01", "en"), "1 November 2026");
+  });
+
+  // Two EN_TOKENS forms (copy.ts): a run that is a short weekday date and
+  // nothing else ("| Thu 14 Jan |", the prices by night) is one span, where
+  // a date inside a longer run is left to the forms before; a Canadian sum
+  // is one span in a short run and glued in a long one; en-AU is set as
+  // before.
+  test("an English Igloofest table keeps its weekday dates and its Canadian sums together; en-AU as before", () => {
+    const event = rules.eventOf(events, igloofestEn);
+    const ctx = { event, guide: igloofestEn, today: "2026-10-24", where: "fixture" };
+    const table = copy.blocks("| Night | General admission |\n|---|---|\n| Thu 14 Jan | 89.00 |", ctx, "table");
+    assert.ok(table.includes('<th scope="row" role="rowheader"><span class="nowrap">Thu 14 Jan</span></th>'), table);
+    assert.equal(copy.inline("On Thu 14 Jan the doors open.", ctx), 'On Thu <span class="nowrap">14 Jan</span> the doors open.');
+    const wf = events.find((e) => e.slug === "wonderfruit");
+    const wen = guides.find((g) => g.event === "wonderfruit" && g.lang === "en");
+    assert.equal(copy.inline("Sat 5 – Mon 7 Dec", { event: wf, guide: wen, today: "2026-10-24", where: "fixture" }), 'Sat 5 – Mon <span class="nowrap">7 Dec</span>');
+    const sums = "The VIP areas went up to CAD 166.75, general admission from CAD 49.00, the shuttle CAD 15.";
+    const set = copy.inline(sums, ctx);
+    for (const token of ["CAD 166.75", "CAD 49.00", "CAD 15"]) assert.ok(set.includes(`<span class="nowrap">${token}</span>`), token);
+    const long = `${"Twelve nights on the quay in the Old Port, two stages, the cold and the crowd, every set at its own start. ".repeat(2)}Across the nine nights the VIP areas went up to CAD 166.75.`;
+    assert.ok(copy.inline(long, ctx).includes("CAD\u00a0166.75"));
+    const btv = guides.find((g) => g.lang === "en-AU");
+    const btvCtx = { event: rules.eventOf(events, btv), guide: btv, today: "2026-10-24", where: "fixture" };
+    assert.equal(copy.inline(sums, btvCtx), sums);
+    // en-AU holds the day with its month, as it did, and the run no more.
+    assert.equal(copy.inline("Thu 14 Jan", btvCtx), 'Thu <span class="nowrap">14 Jan</span>');
+  });
+
+  // The cards' hidden names (copy.ts, guideCard; the en-GB reader on the
+  // executor's strings, note 1): a section whose leads say whom each card
+  // is for joins the name with ", for", and a link that already ends on
+  // its card's name gets nothing more. Zamna Tulum's cards keep their
+  // ": " and their names, and a guide not in English cannot ask for ", for".
+  test("the abroad cards' links are named for whom each card is, and once", () => {
+    const event = rules.eventOf(events, igloofestEn);
+    const main = igloofestEn.pages.find((p) => p.kind === "main");
+    const s = main.sections.find((x) => x.id === "abroad");
+    const html = copy.blocks(s.body, { event, guide: igloofestEn, page: main, today: rules.today(), where: s.id }, s.kind);
+    assert.deepEqual([...html.matchAll(/<span class="card-link"><a\b[^>]*>([\s\S]*?)<\/a><\/span>/g)].map((m) => decode(m[1])), [
+      "GOV.UK: Canada entry requirements, for British citizens",
+      "Government of Canada: the eTA",
+      "Government of Canada: who can apply for an eTA, for US citizens",
+      "Government of Canada: what you need to enter Canada, for US permanent residents",
+    ]);
+    for (const g of guides.filter((x) => x.event === "zamna-tulum"))
+      for (const p of g.pages)
+        for (const x of p.sections.filter((y) => y.kind === "cards")) {
+          const h = copy.blocks(x.body, { event: rules.eventOf(events, g), guide: g, page: p, today: "2026-10-24", where: x.id }, x.kind);
+          assert.equal((h.match(/<span class="visually-hidden">: /g) ?? []).length, (h.match(/<span class="card-link">/g) ?? []).length, `${g.lang} ${x.id}`);
+        }
+    const body = "- **Les Britanniques.** Un passeport valide. [La page des billets](/go/igloofest-billets/)";
+    const page = { ...igloofestFr.pages[0], sections: [{ id: "fixture", heading: "Fixture", kind: "cards", cardsFor: true, body }] };
+    assert.throws(() => copy.blocks(body, { event, guide: igloofestFr, page, today: "2026-10-24", where: "fixture" }, "cards"), /fixture: cardsFor joins a card's name with ", for", which is English, and this guide is in fr-CA/);
+  });
+
+  // The Quebec City and Gatineau MusicEvents are one value each, held by
+  // both guides' pages (igloofest.ts, QUEBEC_MARKUP and GATINEAU_MARKUP;
+  // typographed hands markup back by reference), and frozen to the last
+  // object, so a write anywhere throws (the CTO's gate-3 item 7).
+  test("the Quebec City and Gatineau markups: one frozen object, held by both guides", () => {
+    for (const [kind, markup] of [["quebec", igloofestData.QUEBEC_MARKUP], ["gatineau", igloofestData.GATINEAU_MARKUP]]) {
+      const held = [igloofestFr, igloofestEn].map((g) => g.pages.find((p) => p.kind === kind)?.markup);
+      assert.deepEqual(held.map((m) => m === markup), [true, true], kind);
+      const unfrozen = [];
+      (function walk(v, at) {
+        if (!v || typeof v !== "object") return;
+        if (!Object.isFrozen(v)) unfrozen.push(at || "(root)");
+        for (const [k, x] of Object.entries(v)) walk(x, `${at}.${k}`);
+      })(markup, "");
+      assert.deepEqual(unfrozen, [], kind);
+      assert.throws(() => { markup.address.streetAddress = "x"; }, TypeError, kind);
+    }
+  });
+});
+
+describe("Igloofest's English built pages", { skip: built ? false : "apps/fest/dist is missing: npm run build:fest first" }, () => {
+  const html = built ? pages() : new Map();
+  const english = [...html].filter(([p, h]) => (p.startsWith("/igloofest/en/") || p.startsWith("/go/igloofest-")) && /<html[^>]*\slang="en"/.test(h));
+  const content = english.filter(([p]) => !p.startsWith("/go/"));
+  const day = rules.today();
+  const prices = day < igloofestEn.expires.prices;
+  const words = (s) => s.replace(/<[^>]+>/g, "").replace(/&nbsp;/g, "\u00a0").replace(/&quot;/g, '"').replace(/&#39;|&#x27;/g, "'")
+    .replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&").replace(/[ \t\n\r]+/g, " ");
+  const jsonLd = (h) => [...h.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => JSON.parse(m[1]));
+  const ev = (p) => jsonLd(html.get(p) ?? "").find((b) => b["@type"] === "MusicEvent");
+  const mdOf = (p) => {
+    const f = path.join(DIST, `${p.replace(/\/$/, "")}.md`);
+    return existsSync(f) ? readFileSync(f, "utf8") : undefined;
+  };
+
+  test("seven English pages and seventeen English hops", () => {
+    assert.deepEqual(content.map(([p]) => p).sort(), igloofestEn.pages.map((pg) => `/${pg.slug}/`).sort());
+    assert.equal(content.length, 7);
+    assert.equal(english.filter(([p]) => p.startsWith("/go/")).length, 17);
+  });
+
+  // The OQLF's spaces are the French guide's (copy.ts, oqlf): none reaches
+  // an English page, in its text, its attributes, its JSON-LD or its
+  // Markdown (the brief: "must not touch the English guide"). Two things
+  // are exempt, and only these (the CTO's gate-3 item 6): the links to the
+  // French page that languagesFor (routes.ts) gives every guide page, which
+  // carry lang="fr-CA" and the French page's title, and the PostalAddress
+  // the guides share, the organiser's French address by ruling (item 5),
+  // which must equal the French page's. There are two such links, the
+  // header's switch and the language row's, each to the French page that
+  // pairs with this one and titled with that page's own title: a third, or
+  // one to anywhere else, is not exempt.
+  test("the OQLF's spaces never reach an English Igloofest page", () => {
+    const FAULTS = [/\u00a0[:;?!»]/, /«/, /\d[\u00a0 ]h(?:[\u00a0 ]\d{2})?(?![\p{L}\d])/u];
+    const bad = [];
+    for (const [p, h] of english) {
+      const french = [...h.matchAll(/<a\b[^>]*\slang="fr-CA"[^>]*>[\s\S]*?<\/a>/g)].map((m) => m[0]);
+      assert.equal(french.length, p.startsWith("/go/") ? 0 : 2, `${p}: the header's switch and the language row's French link`);
+      if (french.length) {
+        assert.equal(french.filter((a) => a.startsWith('<a class="lang-switch"')).length, 1, `${p}: one header switch`);
+        // Astro writes an apostrophe as &#39; in a <title> and as itself in
+        // an attribute: both are read back to text before they are compared.
+        const unescape = (s) => s.replace(/&#39;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, "&");
+        const attr = (a, k) => unescape(new RegExp(`\\s${k}="([^"]*)"`).exec(a)?.[1] ?? "");
+        const theirs = unescape(/<title>([^<]*)<\/title>/.exec(html.get(frenchOf(p)) ?? "")?.[1] ?? "");
+        for (const a of french) {
+          assert.equal(attr(a, "href"), frenchOf(p), `${p}: a French link to another page`);
+          assert.ok(theirs.startsWith(`${attr(a, "title")} \u2014 `), `${p}: a French link title that is not the French page's`);
+        }
+      }
+      const rest = french.reduce((s, a) => s.replace(a, " "), h);
+      const addresses = [];
+      const strip = (v) => {
+        if (Array.isArray(v)) return v.map(strip);
+        if (!v || typeof v !== "object") return v;
+        if (v["@type"] === "PostalAddress") return addresses.push(v), undefined;
+        return Object.fromEntries(Object.entries(v).map(([k, x]) => [k, strip(x)]));
+      };
+      const ld = jsonLd(rest).map(strip);
+      if (addresses.length) {
+        const theirs = [];
+        (function walk(v) {
+          if (Array.isArray(v)) v.forEach(walk);
+          else if (v && typeof v === "object") v["@type"] === "PostalAddress" ? theirs.push(v) : Object.values(v).forEach(walk);
+        })(jsonLd(html.get(frenchOf(p)) ?? ""));
+        assert.deepEqual(addresses, theirs, `${p}: an address that is not the French page's`);
+      }
+      const body = /<body\b[^>]*>([\s\S]*)<\/body>/.exec(rest)?.[1] ?? "";
+      const texts = [
+        ["title", words(/<title>([\s\S]*?)<\/title>/.exec(rest)?.[1] ?? "")],
+        ["text", words(body.replace(/<script\b[\s\S]*?<\/script>/g, " ").replace(/<style\b[\s\S]*?<\/style>/g, " "))],
+        ...[...rest.matchAll(/\s(?:title|aria-label|alt|content)="([^"]*)"/g)].map((m) => ["attribute", words(m[1])]),
+        ["JSON-LD", JSON.stringify(ld)],
+      ];
+      const md = p.startsWith("/go/") ? undefined : mdOf(p);
+      if (md !== undefined) texts.push(["md", md]);
+      for (const [where, t] of texts)
+        for (const re of FAULTS) {
+          const m = re.exec(t);
+          if (m) bad.push(`${p} ${where}: "${t.slice(Math.max(0, m.index - 25), m.index + 15)}"`);
+        }
+    }
+    assert.deepEqual(bad, []);
+  });
+
+  // The Montréal edition's MusicEvent on the English main page: the shared
+  // name, start and end (the last night ends at 00:30, hours_montreal),
+  // and three offers named in English through the English hop to the shop,
+  // the pass sold out while the prices hold (SEO 8a to 8c), priceless and
+  // stateless from the take-down. Quebec City's and Gatineau's are named
+  // and described by their English pages, at the French pages' place.
+  test("the English MusicEvents: Montréal's three offers through the shop's hop, and the other two named by their pages", () => {
+    const h1 = (p) => words(/<h1\b[^>]*>([\s\S]*?)<\/h1>/.exec(html.get(p))[1]).trim();
+    const description = (p) => words(/<meta name="description" content="([^"]*)"/.exec(html.get(p))[1]);
+    const main = ev("/igloofest/en/");
+    assert.equal(main.name, "Igloofest Montréal 2027");
+    assert.equal(main.startDate, "2027-01-14T19:30:00-05:00");
+    assert.equal(main.endDate, "2027-02-07T00:30:00-05:00");
+    const shop = "https://fest.one/go/igloofest-shop/";
+    if (prices)
+      assert.deepEqual(main.offers.map((o) => [o["@type"], o.name, o.price, o.priceCurrency, o.url, o.availability, o.seller?.name]), [
+        ["Offer", "General admission", 49, "CAD", shop, undefined, "Billetterie Igloofest"],
+        ["Offer", "VIP terrace", 99, "CAD", shop, undefined, "Billetterie Igloofest"],
+        ["Offer", "Igloopass", 234, "CAD", shop, "https://schema.org/SoldOut", "Billetterie Igloofest"],
+      ]);
+    else {
+      assert.deepEqual(main.offers.map((o) => [o["@type"], o.name, o.url, o.seller?.name]), [
+        ["Offer", "General admission", shop, "Billetterie Igloofest"],
+        ["Offer", "VIP terrace", shop, "Billetterie Igloofest"],
+        ["Offer", "Igloopass", shop, "Billetterie Igloofest"],
+      ]);
+      for (const o of main.offers) assert.ok(!("price" in o) && !("priceCurrency" in o) && !("availability" in o), "a price or a state after the take-down");
+    }
+    for (const o of main.offers) assert.ok(!("priceValidUntil" in o), "an offer with an end");
+    for (const [en, fr] of [["/igloofest/en/quebec-city/", "/igloofest/quebec/"], ["/igloofest/en/gatineau/", "/igloofest/gatineau/"]]) {
+      const mine = ev(en);
+      const theirs = ev(fr);
+      assert.equal(mine.name, h1(en), en);
+      assert.equal(mine.description, description(en), en);
+      for (const k of ["startDate", "endDate", "location", "organizer", "offers"]) assert.deepEqual(mine[k], theirs[k], `${en}: ${k}`);
+    }
+    for (const p of ["/igloofest/en/tickets/", "/igloofest/en/lineup/", "/igloofest/en/montreal/", "/igloofest/en/what-to-wear/"]) assert.equal(ev(p), undefined, p);
+  });
+
+  // Every English page's questions are its own (Faq.astro), and no row is
+  // in a span: the counts hold at every clock.
+  test("FAQPage: six, six, one, three, four, three and two questions, at every clock", () => {
+    const want = { "/igloofest/en/": 6, "/igloofest/en/tickets/": 6, "/igloofest/en/lineup/": 1, "/igloofest/en/montreal/": 3, "/igloofest/en/what-to-wear/": 4, "/igloofest/en/quebec-city/": 3, "/igloofest/en/gatineau/": 2 };
+    for (const [p, n] of Object.entries(want))
+      assert.deepEqual(jsonLd(html.get(p)).filter((b) => b["@type"] === "FAQPage").map((b) => b.mainEntity.length), [n], p);
+  });
+
+  // "Updated" says the day the sitemap gives the page, in English.
+  test("each English page's updated line is its sitemap lastmod", () => {
+    const maps = readdirSync(DIST).filter((f) => /^sitemap.*\.xml$/.test(f)).map((f) => readFileSync(path.join(DIST, f), "utf8")).join("");
+    for (const [p, h] of content) {
+      const shown = /<p class="guide-updated">Updated <time datetime="(\d{4}-\d{2}-\d{2})">([^<]+)<\/time><\/p>/.exec(h);
+      assert.ok(shown, `${p}: no updated line`);
+      const entry = new RegExp(`<loc>https://fest\\.one${p.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}</loc>[\\s\\S]*?<lastmod>([^<]+)</lastmod>`).exec(maps);
+      assert.ok(entry, `${p}: not in the sitemap`);
+      assert.equal(entry[1].slice(0, 10), shown[1], p);
+      assert.equal(shown[2], copy.longDate(shown[1], "en"), p);
+    }
+  });
+
+  // The take-down (expires.prices): the tickets page's prices section and
+  // its chip go with their span (SEO 2, item 19), and no English page, its
+  // markup and its Markdown included, prints a Canadian price (SEO 5).
+  test("from the take-down, no prices section, no chip to it, and no Canadian price on an English page", () => {
+    const tickets = html.get("/igloofest/en/tickets/");
+    assert.equal(/href="#prices"/.test(tickets), prices, "the chip to #prices");
+    assert.equal(/\sid="prices"/.test(tickets), prices, "the prices section");
+    if (prices) return;
+    const PRICE = /CAD \d|CAN\$\s?\d|(?<![A-Z])\$\s?\d/;
+    const bad = [];
+    for (const [p, h] of content) {
+      const body = /<body\b[^>]*>([\s\S]*)<\/body>/.exec(h)?.[1] ?? "";
+      for (const [where, t] of [["text", words(body.replace(/<script\b[\s\S]*?<\/script>/g, " "))], ["JSON-LD", JSON.stringify(jsonLd(h))], ["md", mdOf(p) ?? ""]]) {
+        const m = PRICE.exec(t);
+        if (m) bad.push(`${p} ${where}: "${t.slice(Math.max(0, m.index - 25), m.index + 15)}"`);
+      }
+    }
+    assert.deepEqual(bad, []);
+  });
+
+  // No English h1 has a run over 11 characters (copy.ts, longestRun), so
+  // none carries .long-run or a style of its own (the session's ruling 2).
+  test("no English Igloofest h1 carries long-run or a style", () => {
+    for (const [p, h] of content) assert.doesNotMatch(/<h1\b[^>]*>/.exec(h)[0], /\s(?:class|style)=/, p);
+  });
+});
+
+/** The French page of an English Igloofest page's kind. */
+function frenchOf(p) {
+  const kind = igloofestEn.pages.find((pg) => `/${pg.slug}/` === p)?.kind;
+  const page = igloofestFr.pages.find((pg) => pg.kind === kind);
+  return page ? `/${page.slug}/` : p;
+}
 
 function textFiles(dir, into = []) {
   if (!existsSync(dir)) return into;

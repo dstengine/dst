@@ -371,6 +371,23 @@ const EN_TOKENS = [
   `\\b\\d+ años\\b`, // "mayores de 18 años", quoted (Creamfields Chile)
   `\\b[Ll]ine-up\\b`, // the line-up page (Creamfields Chile)
   `\\bthree-bed\\b`, // a shared three-bed tent stranded its "bed" at 320 px (Wonderfruit)
+  // The sweep of Igloofest's English pages (24 October 2026): a bag's size
+  // parted from its unit ("15.25 | cm" at 412 and 414 px, "35 | cm" at
+  // 360, the what-to-wear page) and a presale's "sign-" stranding its
+  // "ups" from 430 to 449 px (the main page). No other "en" page prints
+  // either: Beyond The Valley's "cm" and Field Day's "sign-up" are en-AU.
+  `\\b\\d[\\d,.]* cm\\b`, // 35 cm, 15.25 cm (Igloofest)
+  `\\bsign-ups?\\b`, // sign-ups (Igloofest)
+  // A table cell or an item that is a short weekday date and nothing else
+  // (Igloofest's prices by night, "Thu 14 Jan"), anchored to the whole
+  // run: typeset tries this list on each run between two tags, so the form
+  // reaches no date inside a sentence, nor Wonderfruit's "Sat 5 – Mon 7
+  // Dec". GLUE_EN reads the list too and inherits the form, inert there,
+  // as no long run is a date alone.
+  `^(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun) \\d{1,2} ${MONTH}$`, // Thu 14 Jan (Igloofest)
+  // The Canadian dollar, its code before the sum as Chile's pesos are,
+  // with its cents where the shop prints them ("CAD 166.75").
+  `\\bCAD \\d[\\d,]*(?:\\.\\d{2})?\\b`, // CAD 49.00, CAD 15 (Igloofest)
 ];
 const KEEP_EN = new RegExp([KEEP_TOGETHER.source, ...EN_TOKENS].join("|"), "g");
 /** Each language's keep-together list, by the guide's locale where it has
@@ -427,7 +444,21 @@ const GLUE_ES_MX = new RegExp([...ES_MX_TOKENS, `\\b\\d{1,2} de ${MES}(?: de \\d
 // where it quotes a season's name.
 const GLUE_EN = new RegExp([...EN_TOKENS, `\\b\\d{1,2} ${MONTH}\\b`, `\\b\\d[\\d,.]*%? (?:km|mins?|hrs?|hours?|minutes|days?|nights?|people|person|[Yy]ears?|tickets?|passes|artists)\\b`].join("|"), "g");
 const GLUE: Record<string, (run: string) => string> = {
-  en: (run) => run.replace(GLUE_EN, (m) => m.replace(/ /g, "\u00a0")),
+  // An opening quote is held to a bracket it opens on by a word joiner:
+  // Chrome breaks between the two, and the sweep of 24 October 2026 left
+  // the quote alone at a line's end and the bracketed "(DJ set)" opening
+  // the next, at 320 and 480 px (Igloofest's English line-up page). And
+  // "e-ticket" keeps its "e-", which the take-down shot of the English
+  // tickets page left alone at a line's end at 390 px ("Your e- |
+  // ticket"): a short run holds it already (KEEP_TOGETHER's one-letter
+  // form), a long one breaks it as prose. Only that word, which no "en"
+  // page but Igloofest's prints: Zamna Tulum's "e-gates" and "T-shirt"
+  // are set as they were. The words unchanged.
+  en: (run) =>
+    run
+      .replace(GLUE_EN, (m) => m.replace(/ /g, "\u00a0"))
+      .replace(/(^|\s)("|&quot;)\(/g, "$1$2\u2060(")
+      .replace(/\be-(?=tickets?\b)/g, "e-\u2060"),
   "en-au": (run) => run,
   pt: (run) => run.replace(GLUE_PT, "$1\u00a0"),
   "es-mx": (run) => run.replace(GLUE_ES_MX, (m) => m.replace(/ /g, "\u00a0")),
@@ -515,7 +546,15 @@ const HEADING_KEEP_FR = new RegExp(`(?:^${JOUR}[ \\u00a0])?${FR_DATE}[:,.;]?|${F
 // 24 px, half the 292 px column at 320, so a nowrap holds it whole at
 // every width, as the date with its year above. A day with its year is
 // left to the span above, as it was.
-const HEADING_KEEP_EN = new RegExp(`\\b\\d{1,2} ${MONTH}\\b(?! \\d)[:,.;]?|\\b\\d+% off\\b`, "g");
+//
+// And a "no line-up" kept whole: the sweep of Igloofest's English line-up
+// page (24 October 2026) found its heading "Gatineau, Quebec City,
+// Edmonton: no line-up by 24 October 2026" balanced to "no line- | up by"
+// at 768 and 1280 px (DESIGN.md: a short hyphenated word strands no
+// scrap). Not every "line-up": the word is in five other headings on
+// Creamfields Chile's, Wonderfruit's and Zamna Tulum's English pages,
+// which the sweep did not flag and which are to come out byte for byte.
+const HEADING_KEEP_EN = new RegExp(`\\b\\d{1,2} ${MONTH}\\b(?! \\d)[:,.;]?|\\b\\d+% off\\b|\\bno line-up\\b`, "g");
 const HEADING_KEEP_BY: Record<string, RegExp> = { es: HEADING_KEEP_ES, pt: HEADING_KEEP_PT, th: HEADING_KEEP_TH, fr: HEADING_KEEP_FR };
 const HEADING_GLUE_FR = new RegExp(`(?<=\\d|\\der) (?=${MOIS}(?!\\p{L})|${FR_NOUN}(?!\\p{L}))`, "gu");
 const HEADING_GLUE: Record<string, (span: string) => string> = { fr: (m) => m.replace(HEADING_GLUE_FR, "\u00a0") };
@@ -889,7 +928,8 @@ function card(item: string, ctx: Ctx): Part {
     hidden span adds are not the copy's and are not checked as it is. */
 const CARD_LEAD = /^\*\*([^*\n]+)\*\*/;
 const CARD_LINK = /\s*(\[[^\]\n]+\]\([^)\s]+\))$/;
-function guideCard(item: string, ctx: Ctx): Part {
+function guideCard(item: string, ctx: Ctx, forWhom = false): Part {
+  if (forWhom && ctx.guide.lang.slice(0, 2).toLowerCase() !== "en") throw new Error(`${ctx.where}: cardsFor joins a card's name with ", for", which is English, and this guide is in ${ctx.guide.lang}`);
   const lead = CARD_LEAD.exec(item);
   if (!lead) throw new Error(`${ctx.where}: a card must open with its **lead**: "${item.slice(0, 40)}"`);
   const link = CARD_LINK.exec(item);
@@ -901,7 +941,14 @@ function guideCard(item: string, ctx: Ctx): Part {
     if (!a.endsWith("</a>")) throw new Error(`${ctx.where}: a card's last link did not render as one: "${link[1]}"`);
     // A space before it, so the card's text copies and reads as the item's
     // words, though the link is set on a line of its own.
-    html += ` <span class="card-link">${a.replace(/<\/a>$/, `<span class="visually-hidden">: ${esc(name)}</span></a>`)}</span>`;
+    // The link's words already end on the card's name ("Government of
+    // Canada: the eTA" under "The eTA."): a screen reader would hear it
+    // twice, so the link gets nothing more. A section whose leads say
+    // whom each card is for (Section.cardsFor) joins the name with ",
+    // for" (the en-GB reader on card 2026-10-24-igloofest-en).
+    const said = /^\[([^\]\n]+)\]/.exec(link[1])![1];
+    const hidden = said.toLowerCase().endsWith(name.toLowerCase()) ? "" : `<span class="visually-hidden">${forWhom ? ", for " : ": "}${esc(name)}</span>`;
+    html += ` <span class="card-link">${a.replace(/<\/a>$/, `${hidden}</a>`)}</span>`;
   }
   return { html, md: marks(item, ctx, SITE).md };
 }
@@ -928,6 +975,8 @@ const SUBHEADING = /^\*\*([^*\n]+)\*\*$/;
     left out. */
 function parse(text: string, ctx: Ctx, kind: Section["kind"] = "prose"): Block[] {
   const table = kind === "table";
+  // The section this text is the body of, for what it says of its cards.
+  const forWhom = kind === "cards" && !!ctx.page?.sections.find((s) => s.body === text)?.cardsFor;
   const blocks: Block[] = [];
   for (const para of splitSpans(text).split(/\n{2,}/)) {
     const lines = para.split("\n");
@@ -940,8 +989,8 @@ function parse(text: string, ctx: Ctx, kind: Section["kind"] = "prose"): Block[]
     if (lines.every((l) => l.startsWith("- ") || l === "-")) {
       const items = lines.map((l) => live(l.slice(2))).filter(Boolean);
       if (!items.length) continue;
-      if (kind === "cards" && items.every((i) => CARD_LEAD.test(i))) blocks.push({ kind: "guide-cards", parts: items.map((i) => guideCard(i, ctx)) });
-      else if (kind === "nights" && items.every(isNight)) blocks.push({ kind: "nights", parts: items.map((i) => nightCard(i, ctx)) });
+      if (kind === "cards" && items.every((i) => CARD_LEAD.test(i))) blocks.push({ kind: "guide-cards", parts: items.map((i) => guideCard(i, ctx, forWhom)) });
+      else if (kind === "nights") blocks.push({ kind: "nights", parts: nights(items, ctx) });
       else if (items.every((i) => CARD_OPENING.test(i))) blocks.push({ kind: "cards", parts: items.map((i) => card(i, ctx)) });
       else blocks.push({ kind: "list", parts: keep(items.map(render)) });
     } else if (lines.every((l) => l.startsWith("> "))) {
@@ -976,6 +1025,9 @@ function parse(text: string, ctx: Ctx, kind: Section["kind"] = "prose"): Block[]
       if (part) blocks.push({ kind: "p", parts: [part] });
     }
   }
+  // The guard's other half (nights, above): nights written as prose, with
+  // no list, would ship no cards and no error.
+  if (kind === "nights" && !blocks.some((b) => b.kind === "nights")) throw new Error(`${ctx.where}: a nights section with no night list`);
   return blocks;
 }
 
@@ -1162,11 +1214,19 @@ export function typographed<T>(value: T, key = ""): T {
 
 const MOIS_NOMS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
 const JOURS = ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"];
+// The English names (Igloofest's English twin, card 2026-10-24-igloofest-en),
+// each list once: the night lines read their dates with them, and
+// LONG_DATE.en writes the updated line with MONTHS_EN.
+const MONTHS_EN = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const DAYS_EN = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 /** A day as the guide's language writes it in running text: "22 octobre
     2026", "1er novembre 2026" (« Mis à jour le », GuidePage). A language
     adds its row here before a guide in it asks for one. */
 const LONG_DATE: Record<string, (y: number, m: number, d: number) => string> = {
   fr: (y, m, d) => oqlf(`${d === 1 ? "1er" : d} ${MOIS_NOMS[m - 1]} ${y}`),
+  // "24 October 2026", "1 November 2026": the day as a British reader
+  // writes it, with no ordinal (Igloofest's English updated line).
+  en: (y, m, d) => `${d} ${MONTHS_EN[m - 1]} ${y}`,
 };
 export function longDate(iso: string, lang: string): string {
   const write = LONG_DATE[lang.slice(0, 2).toLowerCase()];
@@ -1214,16 +1274,91 @@ const STAGE = /(Scène \S+)(?: \(([^)]+)\))? : (.*?)\.(?= Scène |$)/gu;
 const SET_TIME = /^(.+) (\d{1,2} h(?: \d{2})?)$/u;
 const TRAILING_TAGS = new RegExp(`(?:\\s+\\[${TAG_BODY}\\])+$`);
 
-export function parseNight(line: string): Night | undefined {
-  const m = NIGHT.exec(line);
+// The same line in English, as Igloofest's English twin writes its twelve
+// (card 2026-10-24-igloofest-en): "Thursday 14 January 2027 — Sapporo
+// Stage: Taima 19:30 · Lou Phelps (DJ set) 20:30 · KAYTRANADA 22:00.
+// Videotron Stage (Ferias): silktits 19:30 · Make A Dance 20:45." The day
+// and the month in full, a stage any capitalised word before "Stage", as
+// the French one is any word after « Scène », so this file names no
+// festival's stages, a colon with no space before it, and a 24-hour start.
+const NIGHT_EN = new RegExp(`^((?:${DAYS_EN.join("|")}) (\\d{1,2}) (${MONTHS_EN.join("|")}) (\\d{4})) — (.+)$`, "u");
+const STAGE_EN = /(\p{Lu}\S* Stage)(?: \(([^)]+)\))?: (.*?)\.(?= \p{Lu}\S* Stage|$)/gu;
+const SET_TIME_EN = /^(.+) (\d{2}:\d{2})$/u;
+
+/** How a language writes a night: the line and its date, a stage with its
+    night's name and its sets, a set's act and its start; the month and
+    weekday names the date is read and checked with; what follows a
+    stage's name; a start's hour and minutes; and how the card sets the
+    day as its heading. A guide's language picks its row (grammar), and a
+    language with no row does not build: it never reads as French. */
+interface NightGrammar {
+  line: RegExp;
+  stage: RegExp;
+  set: RegExp;
+  months: string[];
+  days: string[];
+  colon: string;
+  clock: (t: string) => [string, string];
+  day: (d: string, lang: string) => string;
+}
+const NIGHT_GRAMMAR: Record<string, NightGrammar> = {
+  fr: {
+    line: NIGHT,
+    stage: STAGE,
+    set: SET_TIME,
+    months: MOIS_NOMS,
+    days: JOURS,
+    // A no-break space before the colon, as STAGE reads it.
+    colon: "\u00a0:",
+    clock: (t) => {
+      const [, h, min = "00"] = /^(\d{1,2}) h(?: (\d{2}))?$/.exec(t)!;
+      return [h, min];
+    },
+    day: headingHtml,
+  },
+  en: {
+    line: NIGHT_EN,
+    stage: STAGE_EN,
+    set: SET_TIME_EN,
+    months: MONTHS_EN,
+    days: DAYS_EN,
+    colon: ":",
+    clock: (t) => {
+      const [h, min] = t.split(":");
+      return [h, min];
+    },
+    // The date after the weekday a keep-date span (theme.css), as the French
+    // cards' is: from 360 px a block, so a card too narrow for the heading
+    // breaks after the weekday, "Thursday | 14 January 2027", as the French
+    // cards break (the card's plan, 5.5a). Below 360 it is plain text that
+    // may break before its month, "Thursday 14 | January 2027", as an
+    // English heading's date does (HEADING_KEEP). The plan glued the day to
+    // its month with a no-break space, and "29 January 2027", 273 px at the
+    // card's 20 px, came out wider than the card's 262 px of text at 320:
+    // five cards stood 8 to 11 px past the column, and all twelve 16 to 26
+    // px at 305 (the build's measure, 24 October 2026).
+    day: (d, lang) => headingHtml(d, lang).replace(/^(\p{L}+) (.+)$/su, '$1 <span class="keep-date">$2</span>'),
+  },
+};
+function grammar(lang: string): NightGrammar {
+  const row = NIGHT_GRAMMAR[lang.slice(0, 2).toLowerCase()];
+  if (!row) throw new Error(`copy.ts reads no nights in "${lang}"`);
+  return row;
+}
+
+/** A night line read in a language's grammar: "fr" when none is named,
+    as every call before the English twin was. */
+export function parseNight(line: string, lang = "fr"): Night | undefined {
+  const g = grammar(lang);
+  const m = g.line.exec(line);
   if (!m) return undefined;
   const [, day, d, month, y, rest] = m;
-  const date = `${y}-${String(MOIS_NOMS.indexOf(month) + 1).padStart(2, "0")}-${d.padStart(2, "0")}`;
-  const stages = [...rest.matchAll(STAGE)].map((s) => ({
+  const date = `${y}-${String(g.months.indexOf(month) + 1).padStart(2, "0")}-${d.padStart(2, "0")}`;
+  const stages = [...rest.matchAll(g.stage)].map((s) => ({
     name: s[1],
     ...(s[2] ? { label: s[2] } : {}),
     sets: s[3].split(" · ").map((x) => {
-      const t = SET_TIME.exec(x);
+      const t = g.set.exec(x);
       if (!t) throw new Error(`a set without its start: "${x}"`);
       return { act: t[1], time: t[2] };
     }),
@@ -1231,28 +1366,35 @@ export function parseNight(line: string): Night | undefined {
   return stages.length ? { day, date, stages } : undefined;
 }
 
-export function formatNight(n: Night): string {
-  const stages = n.stages.map((s) => `${s.name}${s.label ? ` (${s.label})` : ""} : ${s.sets.map((x) => `${x.act} ${x.time}`).join(" · ")}.`);
+export function formatNight(n: Night, lang = "fr"): string {
+  const { colon } = grammar(lang);
+  const stages = n.stages.map((s) => `${s.name}${s.label ? ` (${s.label})` : ""}${colon} ${s.sets.map((x) => `${x.act} ${x.time}`).join(" · ")}.`);
   return `${n.day} — ${stages.join(" ")}`;
 }
 
-const isNight = (item: string) => NIGHT.test(item.replace(TRAILING_TAGS, ""));
+const isNight = (item: string, lang: string) => grammar(lang).line.test(item.replace(TRAILING_TAGS, ""));
 
 /** One night's card. Its tags are checked as any are (marks), its words
     must come back as the line, its day must fall on the weekday the line
-    names, and each start carries its offset from the event's zone. */
+    names, and each start carries its offset from the event's zone, all
+    in its guide's language (grammar). */
 function nightCard(item: string, ctx: Ctx): Part {
+  const lang = ctx.guide.lang;
+  const g = grammar(lang);
   const md = marks(item, ctx, SITE).md;
   const line = item.replace(TRAILING_TAGS, "");
-  const n = parseNight(line);
-  if (!n || formatNight(n) !== line) throw new Error(`${ctx.where}: a night's line does not read back as written: "${line}"`);
+  const n = parseNight(line, lang);
+  if (!n || formatNight(n, lang) !== line) throw new Error(`${ctx.where}: a night's line does not read back as written: "${line}"`);
   const [y, mo, d] = n.date.split("-").map(Number);
-  if (JOURS[new Date(Date.UTC(y, mo - 1, d)).getUTCDay()] !== n.day.split(" ")[0].toLowerCase())
-    throw new Error(`${ctx.where}: ${n.date} is not a ${n.day.split(" ")[0]}`);
+  // Lower case on both sides: JOURS is written so, DAYS_EN as English
+  // writes a weekday.
+  const weekday = n.day.split(" ")[0];
+  if (g.days[new Date(Date.UTC(y, mo - 1, d)).getUTCDay()].toLowerCase() !== weekday.toLowerCase())
+    throw new Error(`${ctx.where}: ${n.date} is not a ${weekday}`);
   const zone = ctx.event.markup.timeZone;
   if (!zone) throw new Error(`${ctx.where}: a night's set times need the event's markup.timeZone`);
   const time = (t: string) => {
-    const [, h, min = "00"] = /^(\d{1,2}) h(?: (\d{2}))?$/.exec(t)!;
+    const [h, min] = g.clock(t);
     const local = `${n.date}T${h.padStart(2, "0")}:${min}`;
     return `<time datetime="${local}:00${zoneOffset(zone, local)}">${esc(t)}</time>`;
   };
@@ -1262,6 +1404,18 @@ function nightCard(item: string, ctx: Ctx): Part {
       `<ul class="night-sets">${s.sets.map((x) => `<li>${time(x.time)} <span class="night-act">${esc(x.act)}</span></li>`).join("")}</ul>`,
   );
   // The day is a heading, set as one (headingHtml): « Jeudi 14 | janvier
-  // 2027 » split at 320 px when it went in as plain text.
-  return { html: `<h3><time datetime="${n.date}">${headingHtml(n.day, ctx.guide.lang)}</time></h3>${stages.join("")}`, md };
+  // 2027 » split at 320 px when it went in as plain text. Each language
+  // sets its own (NightGrammar.day).
+  return { html: `<h3><time datetime="${n.date}">${g.day(n.day, lang)}</time></h3>${stages.join("")}`, md };
+}
+
+/** A nights section's list: every item a night in its guide's language,
+    or the build stops, naming the section and the first item that is not
+    one (the CTO's gate-3 item 2 on card 2026-10-24-igloofest-en). Such a
+    list once fell through to plain bullets without a word, which is how
+    an English twin would have shipped twelve of them. */
+function nights(items: string[], ctx: Ctx): Part[] {
+  const stray = items.find((i) => !isNight(i, ctx.guide.lang));
+  if (stray !== undefined) throw new Error(`${ctx.where}: a nights section holds a line that is not a night in ${ctx.guide.lang}: "${stray}"`);
+  return items.map((i) => nightCard(i, ctx));
 }

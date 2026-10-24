@@ -176,6 +176,13 @@ export interface Section {
       cards: the day, each stage, each set time first (Igloofest Montréal's
       twelve, copy.ts). Every other section is prose. */
   kind?: "prose" | "table" | "row" | "cards" | "nights";
+  /** In a section of kind "cards", each card's lead says whom the card is
+      for (Igloofest's "Coming from abroad": "British citizens.", "US
+      citizens."), so its link's hidden name reads "GOV.UK: Canada entry
+      requirements, for British citizens" where it would read "…: British
+      citizens" (copy.ts, guideCard; the en-GB reader on the executor's
+      strings, card 2026-10-24-igloofest-en). English only. */
+  cardsFor?: true;
   /** The page's ticket button opens this section, under its heading,
       instead of the top of the page (Wonderfruit: the copy puts it under
       "where to buy"). */
