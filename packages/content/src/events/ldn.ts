@@ -1615,7 +1615,7 @@ export const items: EventItem[] = [
   {
     slug: "sky-garden-halloween-dance-of-the-dead-2026",
     createdAt: "2026-10-12T00:36:00+04:00",
-    updatedAt: "2026-10-13T00:40:00+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
     site: "ldn",
     image: "/covers/sky-garden-halloween-dance-of-the-dead-2026.jpg",
     imageAlt: "A tall tapering tower filled with green plants and small lit windows, bats circling its top and a crescent moon in its glass base, above a dark city skyline on a cream ground",
@@ -1694,6 +1694,12 @@ export const items: EventItem[] = [
         title: "Halloween Silent Disco at the Transport Museum",
         text: "Saturday 31 October among the old buses and trams: two sessions from 6.30pm to midnight, over-18s.",
       },
+      {
+        href: "/events/joia-rooftop-halloween-movies-battersea-2026/",
+        eyebrow: "29–31 October",
+        title: "JOIA rooftop Halloween films, Battersea",
+        text: "Halloween films on a rooftop at Battersea Power Station, from £75.",
+      },
     ],
     expertise:
       "The slot is the decision that matters. The early one, from 6.30pm, catches the last of the light over the river and the room before it fills; the two later ones are the party proper, and with last entry at midnight they are also the ones a reduced capacity at the lifts will squeeze. Book the evening you want, then arrive at the front of your window.",
@@ -1702,7 +1708,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-silent-disco-london-transport-museum-2026",
     createdAt: "2026-10-13T00:40:00+04:00",
-    updatedAt: "2026-10-13T00:40:00+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
     site: "ldn",
     image: "/covers/halloween-silent-disco-london-transport-museum-2026.jpg",
     imageAlt: "Inside an old railway carriage with wooden slatted benches, two pairs of glowing headphones hanging on chains from the ceiling rail and paper bats overhead",
@@ -1775,6 +1781,12 @@ export const items: EventItem[] = [
         eyebrow: "Leadenhall Market",
         title: "Halloween at Leadenhall Market",
         text: "A 4.5-metre light-up beetle under the Victorian roof, free to see until 1 November.",
+      },
+      {
+        href: "/events/joia-rooftop-halloween-movies-battersea-2026/",
+        eyebrow: "29–31 October",
+        title: "JOIA rooftop Halloween films, Battersea",
+        text: "Halloween films on a rooftop at Battersea Power Station, from £75.",
       },
     ],
     expertise:
@@ -2101,5 +2113,99 @@ export const items: EventItem[] = [
         a: "Covent Garden has not published a time yet.",
       },
     ],
+  },
+  {
+    slug: "joia-rooftop-halloween-movies-battersea-2026",
+    createdAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
+    site: "ldn",
+    image: "/covers/joia-rooftop-halloween-movies-battersea-2026.jpg",
+    imageAlt: "Rows of red-and-white striped deckchairs on a rooftop facing a blank outdoor cinema screen, four white power-station chimneys behind",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "JOIA Rooftop Halloween Movie Pop Up & Dinner at art'otel Battersea",
+    cardTitle: "JOIA rooftop Halloween films, Battersea",
+    titleSeo: "JOIA Rooftop Halloween Films 2026, Battersea, London",
+    summary:
+      "Three Halloween films with dinner on JOIA's rooftop at art'otel London Battersea Power Station: Edward Scissorhands on 29 October, Ghostbusters on 30 October and The Rocky Horror Picture Show on Halloween night, screening at 7.30pm after dinner in Henrique Sá Pessoa's restaurant. From £75 a head; over-18s only.",
+    start: "2026-10-29",
+    end: "2026-10-31",
+    startTime: "17:30",
+    endTime: "22:00",
+    utcOffset: "+00:00",
+    venue: "JOIA, art'otel London Battersea Power Station",
+    city: "London",
+    country: "United Kingdom",
+    geo: { name: "art'otel London Battersea Power Station, 1 Electric Boulevard, SW11 8BJ", lat: 51.4808, lng: -0.14529 },
+    organizer: "JOIA at art'otel London Battersea Power Station",
+    category: "Halloween",
+    tickets: { priceFrom: 75, priceTo: 90, currency: "GBP" },
+    ticket: {
+      url: "https://www.designmynight.com/london/bars/battersea/joia/joia-rooftop-halloween-movie-pop-up-dinner-at-artotel-london-battersea-power-station-1?t=tickets",
+      label: "Tickets from £75",
+    },
+    source: {
+      name: "DesignMyNight: JOIA Rooftop Halloween Movie Pop Up & Dinner",
+      url: "https://www.designmynight.com/london/bars/battersea/joia/joia-rooftop-halloween-movie-pop-up-dinner-at-artotel-london-battersea-power-station-1?t=tickets",
+      verifiedOn: "2026-10-24",
+    },
+    body: [
+      "For the three nights before Halloween, JOIA's rooftop at art'otel London Battersea Power Station becomes an open-air cinema, with dinner first. It is the pop-up's third year, and the 2026 films run from the gentle to the participatory.",
+      "## The films",
+      "<strong>Thursday 29 October</strong>: Edward Scissorhands. <strong>Friday 30 October</strong>: Ghostbusters. <strong>Saturday 31 October</strong>: The Rocky Horror Picture Show, on Halloween night itself.",
+      "## How the evening runs",
+      "Dinner is in <strong>JOIA</strong>, the restaurant of the Portuguese chef <strong>Henrique Sá Pessoa</strong>, between <strong>5.30pm and 7pm</strong>. The screening on the rooftop starts at <strong>7.30pm</strong>, and the evening ends at <strong>10pm</strong>.",
+      "## Prices",
+      "From <strong>£75 a person</strong> for chair seating and <strong>£90 a person</strong> for sofa seating. With fees, the checkout came to £79.50 for a chair and £190.80 for a sofa for two on 24 October, and service charge is not included.",
+      "## Before you book",
+      "Over-18s only. The screenings are outdoors and depend on the weather; if a night is called off, guests can rebook or take a refund.",
+      "## Other Halloween nights",
+      "<a href=\"/events/sky-garden-halloween-dance-of-the-dead-2026/\" title=\"Dance of the Dead: Sky Garden Halloween 2026\">Sky Garden's Dance of the Dead</a> is on the same Friday and Saturday, 35 floors up in the City, and the <a href=\"/events/halloween-silent-disco-london-transport-museum-2026/\" title=\"Halloween Silent Disco at the London Transport Museum\">Halloween silent disco at the London Transport Museum</a> takes over Covent Garden on Halloween night.",
+    ],
+    faq: [
+      {
+        q: "Which films are showing at the JOIA Rooftop Halloween pop-up?",
+        a: "Edward Scissorhands on Thursday 29 October, Ghostbusters on Friday 30 October and The Rocky Horror Picture Show on Saturday 31 October 2026.",
+      },
+      {
+        q: "How much does it cost?",
+        a: "From £75 a person for chair seating and £90 a person for sofa seating, with fees at checkout. Service charge is not included.",
+      },
+      {
+        q: "What time does it start?",
+        a: "Dinner in JOIA is from 5.30pm to 7pm, the screening starts at 7.30pm, and the evening ends at 10pm.",
+      },
+      {
+        q: "Is there an age limit?",
+        a: "Yes, it is for over-18s only.",
+      },
+      {
+        q: "What happens if it rains?",
+        a: "The screenings are weather-dependent. If a night is called off, guests can rebook or take a refund.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/sky-garden-halloween-dance-of-the-dead-2026/",
+        eyebrow: "30 and 31 October",
+        title: "Dance of the Dead at Sky Garden",
+        text: "A welcome cocktail, two live sets and a DJ, 35 floors up. 18+, £38.50.",
+      },
+      {
+        href: "/events/halloween-silent-disco-london-transport-museum-2026/",
+        eyebrow: "Saturday 31 October",
+        title: "Halloween Silent Disco at the Transport Museum",
+        text: "Several channels of DJs among the old buses and trams in Covent Garden.",
+      },
+      {
+        href: "/events/halloween-tower-of-london-2026/",
+        eyebrow: "Until 1 November",
+        title: "Halloween at the Tower of London",
+        text: "Ghosts in daylight, included with admission.",
+      },
+    ],
+    expertise:
+      "Pick the film before the night: Rocky Horror on Halloween is the one where the audience joins in, and the one that will sell first, while Edward Scissorhands on the Thursday is the quiet choice. Bring a warm layer whichever you book. It is a rooftop in London at the end of October, the screening starts after dark, and the rebook-or-refund promise covers weather that stops a show, not weather that merely makes it chilly.",
   },
 ];
