@@ -56,7 +56,7 @@ export const events: FestEvent[] = [
   {
     slug: "igloofest",
     createdAt: "2026-10-22T22:00:00+04:00",
-    updatedAt: "2026-10-24T16:30:00+04:00",
+    updatedAt: "2026-10-24T18:50:00+04:00",
     name: "Igloofest",
     // The season, Montréal's first night to Edmonton's last: the hub's order.
     edition: { start: "2027-01-14", end: "2027-03-13" },
@@ -2043,6 +2043,7 @@ export const events: FestEvent[] = [
         "source": "s25",
         "readOn": "2026-10-24",
         "expires": "2026-12-05",
+        "note": "the figures are the 18:40 +04 reading of 24 Oct 2026 by tools/igloofest-shop-diff.mjs (the shop's own JSON calls), confirmed on screen night by night; the shop keeps an area's price text in the page under a \"Sold Out\" overlay, so a read by price text alone (the evening re-read) reports sold-out areas as on sale. Re-read with the script, never by price text",
         "terms": {
           "text": "Advertised prices include service fees. Taxes are extra. Max 6 tickets per transaction. Price subject to change without notice. No exchange / no refund.",
           "source": "s25",
@@ -2067,13 +2068,13 @@ export const events: FestEvent[] = [
           "ga": "49.00–89.00",
           "vip": "91.75–166.75",
           "baddie": "149.00–237.00",
-          "note": "lowest and highest figure the shop showed across the twelve nights (nine at the morning read of 24 Oct 2026, all twelve at the evening re-read the same day; the figures did not move); vip = the five VIP areas, baddie = the two NYX areas; computed by script from nights[]",
+          "note": "lowest and highest figure the shop showed for areas on sale across the twelve nights (nine at the morning read of 24 Oct 2026, all twelve at the evening re-read and at the 18:40 +04 script read the same day; the figures did not move); vip = the five VIP areas, baddie = the two NYX areas; computed by script from nights[]",
           "source": "s25",
           "readOn": "2026-10-24"
         },
         "unpriced": {
           "dates": [],
-          "note": "none at the evening re-read of 24 Oct 2026 (the session, English shop in Chrome, all twelve night pages); at the morning read 30 Jan, 4 Feb and 5 Feb showed no price list at repeated reads (two, two and one) while the list page said Buy",
+          "note": "none at the evening re-read of 24 Oct 2026 (the session, English shop in Chrome, all twelve night pages) nor at the 18:40 +04 read by tools/igloofest-shop-diff.mjs (12 priced nights, 0 unpriced); at the morning read 30 Jan, 4 Feb and 5 Feb showed no price list at repeated reads (two, two and one) while the list page said Buy",
           "source": "s25",
           "readOn": "2026-10-24"
         },
@@ -2130,18 +2131,18 @@ export const events: FestEvent[] = [
             "key": "2027-01-21",
             "ga": "59.00–69.00",
             "sapporo": "143.75",
-            "multicolore": "99.00–125.00",
-            "intelcom": "99.00–125.00",
+            "multicolore": "SOLD OUT",
+            "intelcom": "SOLD OUT",
             "poppers": "101.00–116.00",
             "casino": "116.00",
             "nyx_east": "159.00–169.00",
-            "nyx_west": "159.00–169.00",
+            "nyx_west": "169.00",
             "lowest": {
               "ga": "59.00",
-              "vip": "99.00",
+              "vip": "101.00",
               "baddie": "159.00"
             },
-            "note": "VIP - Multicolore and VIP - Intelcom read SOLD OUT at the morning read of 24 Oct 2026 and 99.00–125.00 each at the evening re-read; the other six areas unchanged"
+            "note": "VIP - Multicolore and VIP - Intelcom read SOLD OUT at the morning read of 24 Oct 2026 and 99.00–125.00 each at the evening re-read, which took the price text the shop keeps under its \"Sold Out\" overlay; tools/igloofest-shop-diff.mjs at 18:40 +04 the same day, confirmed on screen, gives both SOLD OUT and NYX West 169.00 (159.00–169.00 at both earlier reads); lowest VIP back to Poppers' 101.00"
           },
           {
             "key": "2027-01-22",
@@ -2210,7 +2211,7 @@ export const events: FestEvent[] = [
           {
             "key": "2027-01-30",
             "ga": "79.00",
-            "sapporo": "125.50–143.75",
+            "sapporo": "SOLD OUT",
             "multicolore": "125.00",
             "intelcom": "125.00",
             "poppers": "116.00",
@@ -2222,15 +2223,15 @@ export const events: FestEvent[] = [
               "vip": "116.00",
               "baddie": "237.00"
             },
-            "note": "priced at the evening re-read of 24 Oct 2026; at the morning read no price list on the night's page (two reads); the list page said Buy"
+            "note": "priced at the evening re-read of 24 Oct 2026; at the morning read no price list on the night's page (two reads); the list page said Buy. The evening re-read gave VIP - Sapporo 125.50–143.75 from the price text the shop keeps under its \"Sold Out\" overlay; tools/igloofest-shop-diff.mjs at 18:40 +04 the same day, confirmed on screen, gives SOLD OUT"
           },
           {
             "key": "2027-02-04",
             "ga": "49.00–69.00",
             "sapporo": "125.50–143.75",
-            "multicolore": "99.00–125.00",
+            "multicolore": "SOLD OUT",
             "intelcom": "99.00–125.00",
-            "poppers": "91.75–116.00",
+            "poppers": "SOLD OUT",
             "casino": "91.75–116.00",
             "nyx_east": "149.00–159.00",
             "nyx_west": "149.00–159.00",
@@ -2239,7 +2240,7 @@ export const events: FestEvent[] = [
               "vip": "91.75",
               "baddie": "149.00"
             },
-            "note": "priced at the evening re-read of 24 Oct 2026; at the morning read no price list (two reads)"
+            "note": "priced at the evening re-read of 24 Oct 2026; at the morning read no price list (two reads). The evening re-read gave VIP - Multicolore 99.00–125.00 and VIP - Poppers 91.75–116.00 from the price text the shop keeps under its \"Sold Out\" overlay; tools/igloofest-shop-diff.mjs at 18:40 +04 the same day, confirmed on screen, gives both SOLD OUT; lowest VIP 91.75 now from Casino alone"
           },
           {
             "key": "2027-02-05",
@@ -2263,16 +2264,17 @@ export const events: FestEvent[] = [
             "ga": "69.00",
             "sapporo": "143.75",
             "multicolore": "125.00",
-            "intelcom": "109.00–125.00",
+            "intelcom": "125.00",
             "poppers": "101.00–116.00",
             "casino": "101.00–116.00",
-            "nyx_east": "159.00–169.00",
+            "nyx_east": "169.00",
             "nyx_west": "159.00–169.00",
             "lowest": {
               "ga": "69.00",
               "vip": "101.00",
               "baddie": "159.00"
-            }
+            },
+            "note": "VIP - Intelcom 109.00–125.00 and NYX East 159.00–169.00 at the morning and evening reads of 24 Oct 2026; tools/igloofest-shop-diff.mjs at 18:40 +04 the same day, confirmed on screen, gives 125.00 and 169.00, one level on sale each"
           }
         ]
       },
@@ -2917,7 +2919,7 @@ export const guides: Guide[] = [
       {
         slug: "igloofest/billets",
         createdAt: "2026-10-22T22:00:00+04:00",
-        updatedAt: "2026-10-24T16:30:00+04:00",
+        updatedAt: "2026-10-24T18:50:00+04:00",
         kind: "tickets",
         label: "Billets",
         crumb: "Billets",
@@ -2925,7 +2927,7 @@ export const guides: Guide[] = [
         title: "Billets Igloofest 2027 : prix et vente — guide du festival",
         description: "Billets du festival Igloofest 2027 : la billetterie acceptée, prévente et vente générale de Montréal, Igloopasse, Gatineau, Québec, Edmonton, remboursements.",
         h1: "Billets Igloofest 2027",
-        lede: "{{until prices}}Sur la page « Passes et billets » d'igloofest.ca, consultée le 22 octobre 2026, trois billets sont affichés pour Igloofest Montréal 2027, chacun « À partir de » : l'admission générale à 49,00 $, la terrasse VIP à 99,00 $ et l'Igloopasse, les douze soirées du jeudi 14 janvier au samedi 6 février en admission générale, à 234,00 $. [ticket_cards] [prices[AG]] [prices[VIP]] [prices[Igloopasse]] [editions.0] Chaque bouton « Acheter » mène à la salle d'attente de la billetterie de l'organisateur, billets.igloofest.ca, et aucun des trois billets n'était affiché complet ce jour-là. [ticket_cards] [sales[Montréal Igloopasse]] [sellers[0]] La page française ne dit rien des taxes ; sa version anglaise ajoute « +tx » à l'admission générale et à la terrasse VIP, pas à l'Igloopasse. [ticket_cards.english] [prices[Igloopasse].note]{{/until}} Le 24 octobre 2026, la billetterie et la FAQ de la page « Passes et billets » indiquaient que l'Igloopasse était épuisée pour 2027. [sales[Montréal Igloopasse].soldOut] [sales[Montréal Igloopasse].note]\n\nL'organisateur a annoncé la prévente par infolettre et SMS pour le jeudi 22 octobre 2026 à 11 h (heure de l'Est) et la vente générale pour le vendredi 23 octobre 2026 à 11 h ; la salle d'attente de sa billetterie donnait la même heure pour le 23 octobre. [sale_times] [sales.0] [sales.1] [sources.s4] [sources.s24] Le 24 octobre 2026, la billetterie proposait les douze soirées à l'unité. [sale_times.status] [sources.s25] {{until prices}}« À partir de » est son prix de départ : « Les billets sont vendus par paliers progressifs pour nous permettre d'offrir des billets aux meilleurs prix à nos early birds. » [pricing_model] Ce jour-là, dans sa version anglaise, la billetterie affichait un prix par zone pour chacune des douze soirées, frais de service compris, taxes en sus : de 49,00 $ à 89,00 $ en admission générale et de 91,75 $ à 166,75 $ dans les zones VIP. [prices_nights.ranges] [prices_nights.terms] [prices_nights.unpriced]{{/until}}",
+        lede: "{{until prices}}Sur la page « Passes et billets » d'igloofest.ca, consultée le 22 octobre 2026, trois billets sont affichés pour Igloofest Montréal 2027, chacun « À partir de » : l'admission générale à 49,00 $, la terrasse VIP à 99,00 $ et l'Igloopasse, les douze soirées du jeudi 14 janvier au samedi 6 février en admission générale, à 234,00 $. [ticket_cards] [prices[AG]] [prices[VIP]] [prices[Igloopasse]] [editions.0] Chaque bouton « Acheter » mène à la salle d'attente de la billetterie de l'organisateur, billets.igloofest.ca, et aucun des trois billets n'était affiché complet ce jour-là. [ticket_cards] [sales[Montréal Igloopasse]] [sellers[0]] La page française ne dit rien des taxes ; sa version anglaise ajoute « +tx » à l'admission générale et à la terrasse VIP, pas à l'Igloopasse. [ticket_cards.english] [prices[Igloopasse].note]{{/until}} Le 24 octobre 2026, la billetterie et la FAQ de la page « Passes et billets » indiquaient que l'Igloopasse était épuisée pour 2027. [sales[Montréal Igloopasse].soldOut] [sales[Montréal Igloopasse].note]\n\nL'organisateur a annoncé la prévente par infolettre et SMS pour le jeudi 22 octobre 2026 à 11 h (heure de l'Est) et la vente générale pour le vendredi 23 octobre 2026 à 11 h ; la salle d'attente de sa billetterie donnait la même heure pour le 23 octobre. [sale_times] [sales.0] [sales.1] [sources.s4] [sources.s24] Le 24 octobre 2026, la billetterie proposait les douze soirées à l'unité. [sale_times.status] [sources.s25] {{until prices}}« À partir de » est son prix de départ : « Les billets sont vendus par paliers progressifs pour nous permettre d'offrir des billets aux meilleurs prix à nos early birds. » [pricing_model] Ce jour-là, dans sa version anglaise, la billetterie affichait des prix pour chacune des douze soirées, frais de service compris, taxes en sus : de 49,00 $ à 89,00 $ en admission générale et de 91,75 $ à 166,75 $ dans les zones VIP. [prices_nights.ranges] [prices_nights.terms] [prices_nights.unpriced] Certaines zones VIP étaient déjà épuisées pour trois soirées : le jeudi 21 janvier, le samedi 30 janvier et le jeudi 4 février. [prices_nights.nights[2027-01-21]] [prices_nights.nights[2027-01-30]] [prices_nights.nights[2027-02-04]]{{/until}}",
         ledeParas: 2,
         sections: [
           {
@@ -2958,7 +2960,7 @@ export const guides: Guide[] = [
         faq: [
           {
             q: "Quel est le prix d'un billet pour l'Igloofest?",
-            a: "{{until prices}}Pour Montréal 2027, la billetterie de l'organisateur, billets.igloofest.ca, consultée le 24 octobre 2026 dans sa version anglaise, vend les billets à la soirée : de 49,00 $ à 89,00 $ en admission générale et de 91,75 $ à 166,75 $ dans les zones VIP, selon la soirée et le palier, frais de service compris, taxes en sus. [prices_nights.ranges] [prices_nights.terms] [sellers[0]] [prices_nights.unpriced] L'organisateur vend « par paliers progressifs ». [pricing_model] Les fiches de sa page « Passes et billets » affichent toujours « À partir de 49,00 $ » et « À partir de 99,00 $ », et l'Igloopasse est épuisée pour 2027. [ticket_cards] [sales[Montréal Igloopasse].soldOut] Pour Québec, le prix connu est celui de 2026 : « à partir de 39 $ + taxes » sur quebec.igloofest.ca, selon le communiqué du 12 novembre 2025. [prices.1] Source : la billetterie de l'organisateur et la page « Passes et billets » d'igloofest.ca, consultées le 24 octobre 2026, et le communiqué d'Igloofest Québec du 12 novembre 2025, consulté le 22 octobre 2026. [sources.s25] [sources.s2] [sources.s2en] [sources.s7]{{/until}}",
+            a: "{{until prices}}Pour Montréal 2027, la billetterie de l'organisateur, billets.igloofest.ca, consultée le 24 octobre 2026 dans sa version anglaise, vend les billets à la soirée : de 49,00 $ à 89,00 $ en admission générale et de 91,75 $ à 166,75 $ dans les zones VIP, selon la soirée et le palier, frais de service compris, taxes en sus. [prices_nights.ranges] [prices_nights.terms] [sellers[0]] [prices_nights.unpriced] Ce jour-là, certaines zones VIP étaient déjà épuisées pour les soirées du 21 et du 30 janvier et du 4 février. [prices_nights.nights[2027-01-21]] [prices_nights.nights[2027-01-30]] [prices_nights.nights[2027-02-04]] L'organisateur vend « par paliers progressifs ». [pricing_model] Les fiches de sa page « Passes et billets » affichent toujours « À partir de 49,00 $ » et « À partir de 99,00 $ », et l'Igloopasse est épuisée pour 2027. [ticket_cards] [sales[Montréal Igloopasse].soldOut] Pour Québec, le prix connu est celui de 2026 : « à partir de 39 $ + taxes » sur quebec.igloofest.ca, selon le communiqué du 12 novembre 2025. [prices.1] Source : la billetterie de l'organisateur et la page « Passes et billets » d'igloofest.ca, consultées le 24 octobre 2026, et le communiqué d'Igloofest Québec du 12 novembre 2025, consulté le 22 octobre 2026. [sources.s25] [sources.s2] [sources.s2en] [sources.s7]{{/until}}",
           },
           {
             q: "Quand commence la vente des billets pour Igloofest 2027?",
@@ -3465,7 +3467,7 @@ export const guides: Guide[] = [
       {
         slug: "igloofest/en/tickets",
         createdAt: "2026-10-24T12:20:00+04:00",
-        updatedAt: "2026-10-24T16:30:00+04:00",
+        updatedAt: "2026-10-24T18:50:00+04:00",
         kind: "tickets",
         label: "Tickets",
         crumb: "Tickets",
@@ -3494,7 +3496,7 @@ export const guides: Guide[] = [
             id: "prices",
             heading: "Montreal 2027: prices night by night",
             kind: "table",
-            body: "{{until prices}}On 24 October 2026 the shop showed a price for each area on all twelve nights. [prices_nights.unpriced]{{/until}}\n\n{{until prices}}Lowest price shown per night, in CAD, service fees included, taxes extra, read 24 October 2026 [prices_nights.terms] [prices_nights.nights[2027-01-14].lowest] [prices_nights.nights[2027-01-15].lowest] [prices_nights.nights[2027-01-16].lowest] [prices_nights.nights[2027-01-21].lowest] [prices_nights.nights[2027-01-22].lowest] [prices_nights.nights[2027-01-23].lowest] [prices_nights.nights[2027-01-28].lowest] [prices_nights.nights[2027-01-29].lowest] [prices_nights.nights[2027-01-30].lowest] [prices_nights.nights[2027-02-04].lowest] [prices_nights.nights[2027-02-05].lowest] [prices_nights.nights[2027-02-06].lowest]{{/until}}\n\n{{until prices}}| Night | General admission | VIP areas | Baddie Zone |\n|---|---|---|---|\n| Thu 14 Jan | 89.00 | 125.25 | 207.00 |\n| Fri 15 Jan | 59.00 | 91.75 | 159.00 |\n| Sat 16 Jan | 59.00 | 91.75 | 159.00 |\n| Thu 21 Jan | 59.00 | 99.00 | 159.00 |\n| Fri 22 Jan | 69.00 | 101.00 | 169.00 |\n| Sat 23 Jan | 69.00 | 101.00 | 149.00 |\n| Thu 28 Jan | 59.00 | 91.75 | 149.00 |\n| Fri 29 Jan | 49.00 | 91.75 | 159.00 |\n| Sat 30 Jan | 79.00 | 116.00 | 237.00 |\n| Thu 4 Feb | 49.00 | 91.75 | 149.00 |\n| Fri 5 Feb | 79.00 | 125.25 | 207.00 |\n| Sat 6 Feb | 69.00 | 101.00 | 159.00 |{{/until}}\n\n{{until prices}}General admission comes in tiers, which the shop names Early Bird, Regular, Last Chance and Day of show. Where a night showed two prices, two tiers were on sale at once, and the table gives the lower. [prices_nights.tiers] The organiser's French tickets page puts it in one sentence: \"Les billets sont vendus par paliers progressifs pour nous permettre d'offrir des billets aux meilleurs prix à nos early birds.\" Prices rise in steps, and the earliest buyers pay least. [pricing_model] The shop's terms read \"Advertised prices include service fees. Taxes are extra.\" No page gives a tax rate. [prices_nights.terms] [not_found_added.7]{{/until}}\n\n{{until prices}}The five VIP areas are VIP - Sapporo, VIP - Multicolore, VIP - Intelcom, VIP - Poppers and VIP - Casino de Montréal. The NYX Cosmetics Baddie Zone is sold in two areas, Side Stage East and Side Stage West. [prices_nights.areas] Across the twelve nights the VIP areas went up to CAD 166.75, on the opening night and on Friday 5 February. The Baddie Zone went up to CAD 237.00 on those two nights and on Saturday 30 January. [prices_nights.ranges] [prices_nights.nights[2027-01-14]] [prices_nights.nights[2027-01-30]] [prices_nights.nights[2027-02-05]]{{/until}}\n\n{{until prices}}On 24 October 2026 the cheapest general admission, CAD 49.00, was for two nights: Friday 29 January, when the Sapporo Stage lists only \"Mystery guests\", and Thursday 4 February, with Fcukers. The dearest, CAD 89.00, was for the opening night, Thursday 14 January, with KAYTRANADA, and for Friday 5 February, with Boris Brejcha. [prices_nights.nights[2027-01-29]] [prices_nights.nights[2027-02-04]] [prices_nights.nights[2027-01-14]] [prices_nights.nights[2027-02-05]] [lineup.nights.7] [lineup.nights.9] [lineup.nights.0] [lineup.nights.10]{{/until}}\n\n{{until prices}}The cards on the organiser's English tickets page carry \"Starting at\" figures of their own. The table gives the shop's, with its fees included. [ticket_cards.english]{{/until}}",
+            body: "{{until prices}}On 24 October 2026 the shop showed prices for all twelve nights, though some VIP areas had already sold out for three of them. [prices_nights.unpriced] [prices_nights.nights[2027-01-21]] [prices_nights.nights[2027-01-30]] [prices_nights.nights[2027-02-04]]{{/until}}\n\n{{until prices}}Lowest price shown per night, in CAD, service fees included, taxes extra, read 24 October 2026 [prices_nights.terms] [prices_nights.nights[2027-01-14].lowest] [prices_nights.nights[2027-01-15].lowest] [prices_nights.nights[2027-01-16].lowest] [prices_nights.nights[2027-01-21].lowest] [prices_nights.nights[2027-01-22].lowest] [prices_nights.nights[2027-01-23].lowest] [prices_nights.nights[2027-01-28].lowest] [prices_nights.nights[2027-01-29].lowest] [prices_nights.nights[2027-01-30].lowest] [prices_nights.nights[2027-02-04].lowest] [prices_nights.nights[2027-02-05].lowest] [prices_nights.nights[2027-02-06].lowest]{{/until}}\n\n{{until prices}}| Night | General admission | VIP areas | Baddie Zone |\n|---|---|---|---|\n| Thu 14 Jan | 89.00 | 125.25 | 207.00 |\n| Fri 15 Jan | 59.00 | 91.75 | 159.00 |\n| Sat 16 Jan | 59.00 | 91.75 | 159.00 |\n| Thu 21 Jan | 59.00 | 101.00 | 159.00 |\n| Fri 22 Jan | 69.00 | 101.00 | 169.00 |\n| Sat 23 Jan | 69.00 | 101.00 | 149.00 |\n| Thu 28 Jan | 59.00 | 91.75 | 149.00 |\n| Fri 29 Jan | 49.00 | 91.75 | 159.00 |\n| Sat 30 Jan | 79.00 | 116.00 | 237.00 |\n| Thu 4 Feb | 49.00 | 91.75 | 149.00 |\n| Fri 5 Feb | 79.00 | 125.25 | 207.00 |\n| Sat 6 Feb | 69.00 | 101.00 | 159.00 |{{/until}}\n\n{{until prices}}General admission comes in tiers, which the shop names Early Bird, Regular, Last Chance and Day of show. Where a night showed two prices, two tiers were on sale at once, and the table gives the lower. [prices_nights.tiers] The organiser's French tickets page puts it in one sentence: \"Les billets sont vendus par paliers progressifs pour nous permettre d'offrir des billets aux meilleurs prix à nos early birds.\" Prices rise in steps, and the earliest buyers pay least. [pricing_model] The shop's terms read \"Advertised prices include service fees. Taxes are extra.\" No page gives a tax rate. [prices_nights.terms] [not_found_added.7]{{/until}}\n\n{{until prices}}The five VIP areas are VIP - Sapporo, VIP - Multicolore, VIP - Intelcom, VIP - Poppers and VIP - Casino de Montréal. The NYX Cosmetics Baddie Zone is sold in two areas, Side Stage East and Side Stage West. [prices_nights.areas] Across the twelve nights the VIP areas went up to CAD 166.75, on the opening night and on Friday 5 February. The Baddie Zone went up to CAD 237.00 on those two nights and on Saturday 30 January. [prices_nights.ranges] [prices_nights.nights[2027-01-14]] [prices_nights.nights[2027-01-30]] [prices_nights.nights[2027-02-05]] The areas already sold out, which the table leaves out, were VIP - Multicolore and VIP - Intelcom for Thursday 21 January, VIP - Sapporo for Saturday 30 January, and VIP - Multicolore and VIP - Poppers for Thursday 4 February. [prices_nights.nights[2027-01-21]] [prices_nights.nights[2027-01-30]] [prices_nights.nights[2027-02-04]]{{/until}}\n\n{{until prices}}On 24 October 2026 the cheapest general admission, CAD 49.00, was for two nights: Friday 29 January, when the Sapporo Stage lists only \"Mystery guests\", and Thursday 4 February, with Fcukers. The dearest, CAD 89.00, was for the opening night, Thursday 14 January, with KAYTRANADA, and for Friday 5 February, with Boris Brejcha. [prices_nights.nights[2027-01-29]] [prices_nights.nights[2027-02-04]] [prices_nights.nights[2027-01-14]] [prices_nights.nights[2027-02-05]] [lineup.nights.7] [lineup.nights.9] [lineup.nights.0] [lineup.nights.10]{{/until}}\n\n{{until prices}}The cards on the organiser's English tickets page carry \"Starting at\" figures of their own. The table gives the shop's, with its fees included. [ticket_cards.english]{{/until}}",
           },
           {
             id: "igloopass",
@@ -3521,7 +3523,7 @@ export const guides: Guide[] = [
         faq: [
           {
             q: "How much are Igloofest tickets?",
-            a: "In Montreal the organiser's shop prices each night separately, and sells in rising tiers. [sale_times.status] [pricing_model] {{until prices}}On 24 October 2026 it showed general admission from CAD 49.00 to CAD 89.00 a night, service fees included and taxes extra. The VIP areas ran from CAD 91.75 to CAD 166.75, and the Baddie Zone from CAD 149.00 to CAD 237.00. [prices_nights.ranges] [prices_nights.terms] {{/until}}The Igloopass is sold out. [sales[Montréal Igloopasse].soldOut] Gatineau, Quebec City and Edmonton had published no 2027 price. [not_found.4] [edmonton_tickets] Source: the organiser's shop, its English Passes and tickets page and its sites for the other three cities, read 24 October 2026. [sources.s25] [sources.s2en] [sources.s9en] [sources.s13b] [sources.s23c]",
+            a: "In Montreal the organiser's shop prices each night separately, and sells in rising tiers. [sale_times.status] [pricing_model] {{until prices}}On 24 October 2026 it showed general admission from CAD 49.00 to CAD 89.00 a night, service fees included and taxes extra. The VIP areas ran from CAD 91.75 to CAD 166.75, and the Baddie Zone from CAD 149.00 to CAD 237.00. [prices_nights.ranges] [prices_nights.terms] Some VIP areas had already sold out for three nights: 21 and 30 January, and 4 February. [prices_nights.nights[2027-01-21]] [prices_nights.nights[2027-01-30]] [prices_nights.nights[2027-02-04]] {{/until}}The Igloopass is sold out. [sales[Montréal Igloopasse].soldOut] Gatineau, Quebec City and Edmonton had published no 2027 price. [not_found.4] [edmonton_tickets] Source: the organiser's shop, its English Passes and tickets page and its sites for the other three cities, read 24 October 2026. [sources.s25] [sources.s2en] [sources.s9en] [sources.s13b] [sources.s23c]",
           },
           {
             q: "When do Igloofest tickets go on sale?",
