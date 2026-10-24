@@ -760,6 +760,17 @@ describe("where a guide's links lead", () => {
     for (const pair of ["nº\u00a012.933/2013", "(11)\u00a05666-8822", "20\u00a0×\u00a030\u00a0cm"]) assert.ok(held.includes(pair), pair);
     assert.equal(at(btv, btvEvent, brazil), brazil);
     assert.equal(at(btv, btvEvent, para), para);
+    // A railway line keeps its number and colour (QA round 1), and a count
+    // its "acts": one span in a short run, glued in a long one, and en-AU
+    // leaves them as they were.
+    const rail = "Change at Pinheiros to Line 9-Esmeralda, or take Line 13 from the airport, for 40 acts.";
+    const railKept = at(pen, psp, rail);
+    for (const token of ["Line 9-Esmeralda", "Line 13", "40 acts"]) assert.ok(railKept.includes(`<span class="nowrap">${token}</span>`), token);
+    const railPara = `${"Two days at the Autódromo de Interlagos, gates at half past twelve, and every rule in the promoter's own terms. ".repeat(2)}${rail}`;
+    const railHeld = at(pen, psp, railPara);
+    for (const pair of ["Line\u00a09-Esmeralda", "Line\u00a013", "40\u00a0acts"]) assert.ok(railHeld.includes(pair), pair);
+    assert.equal(at(btv, btvEvent, rail), rail);
+    assert.equal(at(btv, btvEvent, railPara), railPara);
   });
 
   // An English heading keeps a day with its month and a share with its

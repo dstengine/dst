@@ -397,6 +397,17 @@ const EN_TOKENS = [
   `\\bnº \\d[\\d./]*\\d`, // Lei nº 12.933/2013 (Primavera Sound São Paulo)
   `\\(\\d{2}\\) \\d{4,5}-\\d{4}\\b`, // (11) 5666-8822 (Primavera Sound São Paulo)
   `\\b\\d+ × \\d+ cm\\b`, // 20 × 30 cm (Primavera Sound São Paulo)
+  // A railway line is named by its number and colour, "Line 9-Esmeralda",
+  // as a terminal is by its number: QA round 1 (24 October 2026) found
+  // "Line | 9-Esmeralda", "Line | 5-Lilás" and "Line | 13" split on the
+  // English main and dates pages from 305 to 480 px. The letters are
+  // written out, as KEEP_EN is compiled without "u" (no \p{L} here). A
+  // hyphen inside a long run stays prose's to break.
+  `\\bLine \\d+(?:-[A-Za-zÀ-ÿ]+)?`, // Line 9-Esmeralda, Line 13 (Primavera Sound São Paulo)
+  // The same round's sweep found a count parted from its noun in the
+  // line-up page's lede, "has 40 | acts," at 315 to 325 px. Wonderfruit's
+  // "2026 acts" sits in a link's title, which typeset never reaches.
+  `\\b\\d+ acts\\b`, // 40 acts, 20 acts a day (Primavera Sound São Paulo)
 ];
 const KEEP_EN = new RegExp([KEEP_TOGETHER.source, ...EN_TOKENS].join("|"), "g");
 /** Each language's keep-together list, by the guide's locale where it has
