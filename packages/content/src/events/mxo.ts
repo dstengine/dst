@@ -1098,7 +1098,7 @@ export const items: EventItem[] = [
   {
     slug: "scream-park-guadalajara-2026",
     createdAt: "2026-10-24T19:00:00+04:00",
-    updatedAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-25T01:30:00+04:00",
     site: "mxo",
     image: "/covers/scream-park-guadalajara-2026.jpg",
     imageAlt: "Una mansión con torreón detrás de un maizal rojo, una carpa de circo a rayas a su lado, niebla y una luna llena",
@@ -1117,7 +1117,7 @@ export const items: EventItem[] = [
     venue: "Mansión Clover Lawn, Avenida de la Paz, colonia Americana",
     city: "Guadalajara",
     country: "México",
-    geo: { name: "Mansión Clover Lawn, Avenida de la Paz, Guadalajara", lat: 20.67037, lng: -103.36038 },
+    geo: { name: "Mansión Clover Lawn, Avenida de la Paz, Guadalajara", lat: 20.6716, lng: -103.3655 },
     organizer: "Scream Park",
     category: "Festivales",
     tickets: { priceFrom: 550, currency: "MXN" },
