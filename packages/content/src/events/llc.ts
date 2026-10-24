@@ -4,7 +4,7 @@ export const items: EventItem[] = [
   {
     slug: "gitex-global-2026",
     createdAt: "2026-08-25T18:18:34+04:00",
-    updatedAt: "2026-08-31T08:15:19+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
     site: "llc",
     image: "/covers/gitex-global-2026.jpg",
     imageAlt: "A grid of small exhibition stands in cut paper seen from a high angle",
@@ -33,6 +33,14 @@ export const items: EventItem[] = [
       "GITEX Global runs December 7–11, 2026 at Dubai Exhibition Centre — the region's largest technology event, expecting over 200,000 attendees from 180+ countries, 6,800+ exhibiting companies, and 400+ government entities.",
       "Around 2,000 startups exhibit alongside established enterprises, which makes it one of the denser weeks in Dubai for anyone setting up or scaling a company here to run into investors, partners, and free zone representatives in one place.",
     ],
+    related: [
+      {
+        href: "/events/halloween-weekend-radisson-red-dubai-silicon-oasis-2026/",
+        eyebrow: "30–31 October",
+        title: "Halloween at Radisson RED, Silicon Oasis",
+        text: "Two Halloween nights at Radisson RED in the Dubai Silicon Oasis free zone, from AED 50.",
+      },
+    ],
     expertise:
       "A week like this is also a practical trigger point for company formation: firms often time their Dubai entity setup to be operational before GITEX so exhibiting or attending happens under their own trade licence rather than a visitor visa.",
     ticket: {
@@ -44,7 +52,7 @@ export const items: EventItem[] = [
   {
     slug: "seamless-middle-east-2027",
     createdAt: "2026-09-08T16:29:32+04:00",
-    updatedAt: "2026-09-08T16:29:32+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
     site: "llc",
     image: "/covers/seamless-middle-east-2027.jpg",
     imageAlt: "A blank pale mint payment card with a small gold chip, lying flat on deep teal",
@@ -76,7 +84,102 @@ export const items: EventItem[] = [
       "## Trade only",
       "Registration is not open to the public. A new company can register on its trade licence, which is generally the first thing that licence is good for beyond the licence itself.",
     ],
+    related: [
+      {
+        href: "/events/halloween-weekend-radisson-red-dubai-silicon-oasis-2026/",
+        eyebrow: "30–31 October",
+        title: "Halloween at Radisson RED, Silicon Oasis",
+        text: "Two Halloween nights at Radisson RED in the Dubai Silicon Oasis free zone, from AED 50.",
+      },
+    ],
     expertise:
       "Go with the licence in hand, and go on the first day. The value here is not the keynotes; it is that a merchant-services conversation which normally takes three weeks of email happens in ten minutes at a stand, and you can have that conversation four times before lunch and compare. Ask each one the same two things: the settlement period, and what they require from a company with no trading history in the UAE. That second answer varies more between providers than any published rate card suggests, and it is the answer that decides whether a new licence can trade this quarter or next.",
+  },
+  {
+    slug: "halloween-weekend-radisson-red-dubai-silicon-oasis-2026",
+    createdAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
+    site: "llc",
+    image: "/covers/halloween-weekend-radisson-red-dubai-silicon-oasis-2026.jpg",
+    imageAlt: "A modern hotel tower with a glowing red lobby, pumpkins floating in the pool before it and a crescent moon over low towers",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Halloween Weekend at Radisson RED Dubai Silicon Oasis",
+    cardTitle: "Halloween at Radisson RED, Silicon Oasis",
+    titleSeo: "Halloween at Radisson RED Dubai Silicon Oasis, 30–31 Oct",
+    summary:
+      "Two Halloween nights at Radisson RED in Dubai Silicon Oasis, one of the city's technology free zones: Paws & Potions for pets on Friday 30 October, a family fest and a 21+ rooftop soirée on Saturday 31 October. Children AED 50 with a meal, adults AED 75 redeemable on food and drink.",
+    start: "2026-10-30",
+    end: "2026-10-31",
+    utcOffset: "+04:00",
+    venue: "Radisson RED Dubai Silicon Oasis",
+    city: "Dubai",
+    geo: { name: "Radisson RED Dubai Silicon Oasis", lat: 25.11903, lng: 55.37998 },
+    organizer: "Radisson RED Dubai Silicon Oasis",
+    category: "Halloween",
+    tickets: { priceFrom: 50, priceTo: 225, currency: "AED" },
+    ticket: {
+      url: "https://dubai.platinumlist.net/event-tickets/halloween-weekend-at-radisson-red-dubai-silicon-oasis",
+      label: "Tickets from AED 50",
+    },
+    source: {
+      name: "Platinumlist",
+      url: "https://dubai.platinumlist.net/event-tickets/halloween-weekend-at-radisson-red-dubai-silicon-oasis",
+      verifiedOn: "2026-10-24",
+    },
+    body: [
+      "Radisson RED in Dubai Silicon Oasis splits its Halloween over two nights and three crowds: pets on Friday, families on Saturday afternoon, and adults on the roof on Saturday night.",
+      "## Friday 30 October: Paws & Potions",
+      "From <strong>5pm to 3am</strong> in the hotel's <strong>OUIBar + Garden</strong>. Pets come in free, and the evening has a <strong>Best Dressed Pet Competition</strong>.",
+      "## Saturday 31 October: Family Fun Fest",
+      "The garden opens at <strong>2pm</strong> for the <strong>Family Fun Fest</strong>, with children's activities and trick or treat, and the bar runs on until 3am.",
+      "## Saturday night: the REDROOF Halloween Soirée",
+      "Upstairs, the <strong>REDROOF Halloween Soirée</strong> is strictly <strong>21+</strong>, with a DJ.",
+      "## Tickets",
+      "<strong>Children (5 to 11): AED 50</strong>, with a children's meal and trick or treat. <strong>Adults (12 and over): AED 75</strong>, fully redeemable on food and drink. <strong>Family of four (two adults, two children): AED 225</strong>. All three are sold on Platinumlist.",
+      "## Silicon Oasis after hours",
+      "Dubai Silicon Oasis is one of the three free zones our <a href=\"/zones/\" title=\"Dubai free zones compared by business activity\">free zone guide</a> suggests for software, IT and digital consulting companies, a technology park where the licence, the office and the flat can all be in one district. For a founder who has just set up there, this is what the neighbourhood does on a Halloween weekend.",
+    ],
+    faq: [
+      {
+        q: "When is the Halloween Weekend at Radisson RED Dubai Silicon Oasis?",
+        a: "Friday 30 October 2026, 5pm to 3am (Paws & Potions), and Saturday 31 October, from 2pm (Family Fun Fest), with the 21+ REDROOF Halloween Soirée that night.",
+      },
+      {
+        q: "How much are the tickets?",
+        a: "AED 50 for children aged 5 to 11, including a children's meal and trick or treat; AED 75 for adults aged 12 and over, fully redeemable on food and drink; AED 225 for a family of two adults and two children.",
+      },
+      {
+        q: "Can I bring my dog?",
+        a: "On Friday, yes: pets enter free at Paws & Potions, and there is a Best Dressed Pet Competition.",
+      },
+      {
+        q: "Is the rooftop party open to everyone?",
+        a: "No, the REDROOF Halloween Soirée is strictly 21+.",
+      },
+    ],
+    related: [
+      {
+        href: "/zones/",
+        eyebrow: "Free zones",
+        title: "Which Dubai free zone fits your business",
+        text: "Start with the activity, not the price: Silicon Oasis is one of the tech picks.",
+      },
+      {
+        href: "/events/gitex-global-2026/",
+        eyebrow: "7–11 December",
+        title: "GITEX Global 2026",
+        text: "The region's largest tech and startup conference, at Dubai Exhibition Centre.",
+      },
+      {
+        href: "/events/seamless-middle-east-2027/",
+        eyebrow: "24–26 May 2027",
+        title: "Seamless Middle East 2027",
+        text: "Payments, fintech and e-commerce, for choosing how a new company will get paid.",
+      },
+    ],
+    expertise:
+      "The adult ticket is the clever part: AED 75 that comes back as food and drink is a cover charge in name only, which makes the Saturday garden a cheap evening out by Dubai standards. Families should note the age bands, since children's tickets cover 5 to 11 and anyone from 12 pays the adult rate, and that the rooftop is 21+ without exception. Silicon Oasis is a long way from the beach-side hotels, which is why its Halloween is a neighbourhood night rather than a destination one.",
   },
 ];
