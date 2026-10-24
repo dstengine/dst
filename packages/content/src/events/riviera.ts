@@ -636,4 +636,91 @@ export const items: EventItem[] = [
     expertise:
       "Join the waitlist even though the list says full: community runs usually lose some of their sign-ups on the night, and five clubs' worth of runners is a crowd that can absorb a few more. Bring a light of your own as well as the glow sticks, because the beach path is darker than the road beside it, and expect to run at conversation pace: a run billed for all levels waits for its slowest group.",
   },
+
+  {
+    slug: "sole-dxb-2026",
+    createdAt: "2026-10-25T02:30:00+04:00",
+    updatedAt: "2026-10-25T02:30:00+04:00",
+    site: "riviera",
+    image: "/covers/sole-dxb-2026.jpg",
+    imageAlt: "A single sneaker on a round open-air stage under a spotlight, a speaker stack either side, a crowd of small figures in front and dunes and sea behind",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Sole DXB 2026 at The Square, Nad Al Sheba",
+    cardTitle: "Sole DXB 2026",
+    titleSeo: "Sole DXB 2026: 11–13 December, from Azizi Riviera",
+    summary:
+      "Sole DXB, Dubai's festival of music, sneakers and street culture, moves from d3 to The Square in Nad Al Sheba for Friday 11 to Sunday 13 December 2026, a short drive from Azizi Riviera: Overmono live, Masego, Lola Young, Nia Archives, Rema and Smino on the main stage, three-day passes from AED 495.",
+    start: "2026-12-11",
+    end: "2026-12-13",
+    utcOffset: "+04:00",
+    venue: "The Square, Nad Al Sheba",
+    city: "Dubai",
+    country: "United Arab Emirates",
+    organizer: "Sole DXB",
+    category: "Festival",
+    tickets: { priceFrom: 495, priceTo: 875, currency: "AED" },
+    ticket: {
+      url: "https://sole.digital/",
+      label: "Sole DXB",
+      sells: false,
+    },
+    source: {
+      name: "Sole DXB",
+      url: "https://sole.digital/",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "Sole DXB has a new home. The festival of music, sneakers, fashion and street culture leaves Dubai Design District for <strong>The Square</strong> in <strong>Nad Al Sheba</strong>, the district of Meydan Racecourse, from <strong>Friday 11 to Sunday 13 December 2026</strong>. From Azizi Riviera it is now a short drive across the neighbourhood rather than a trip to the creek.",
+      "## The main stage",
+      "<strong>Overmono</strong> play live, with <strong>Masego</strong>, <strong>Lola Young</strong>, <strong>Nia Archives</strong>, <strong>Naisha</strong>, <strong>Smino</strong>, <strong>Rema</strong>, <strong>Odeal</strong> and <strong>Hajaj</strong>.",
+      "## Stage Two",
+      "The second stage leans to jazz, electronics and the wider world: London drummer <strong>Yussef Dayes</strong>, <strong>Matthew Herbert</strong>, <strong>Maii and Zeid</strong>, <strong>Gia Fu</strong>, the Malian singer <strong>Fatoumata Diawara</strong> and Delhi's <strong>Peter Cat Recording Co.</strong>",
+      "## Tickets",
+      "Three-day passes are on sale now: <strong>general admission AED 495</strong>, open to all ages; the <strong>VIP Grandstand AED 775</strong>, 21 and over; the <strong>Golden Circle AED 825</strong> for all ages, or <strong>AED 875</strong> in its 21-and-over version. Single-day tickets follow later. Tickets are sold through Platinumlist.",
+      "## Part of the Shopping Festival",
+      "Sole DXB is part of the <a href=\"/events/dubai-shopping-festival-2026-27/\" title=\"Dubai Shopping Festival 2026–27 from Azizi Riviera\">Dubai Shopping Festival</a>, which runs from 4 December to 17 January.",
+    ],
+    faq: [
+      {
+        q: "When is Sole DXB 2026?",
+        a: "From Friday 11 to Sunday 13 December 2026, at The Square in Nad Al Sheba.",
+      },
+      {
+        q: "Who is playing Sole DXB 2026?",
+        a: "Overmono (live), Masego, Lola Young, Nia Archives, Naisha, Smino, Rema, Odeal and Hajaj on the main stage; Yussef Dayes, Matthew Herbert, Maii and Zeid, Gia Fu, Fatoumata Diawara and Peter Cat Recording Co. on Stage Two.",
+      },
+      {
+        q: "How much are Sole DXB tickets?",
+        a: "Three-day passes are AED 495 for general admission, AED 775 for the VIP Grandstand (21+), and AED 825 or AED 875 for the Golden Circle, the second 21+.",
+      },
+      {
+        q: "Can children go?",
+        a: "Yes, with a general admission or the all-ages Golden Circle pass. The VIP Grandstand and the other Golden Circle are 21 and over.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/dubai-shopping-festival-2026-27/",
+        eyebrow: "4 December – 17 January",
+        title: "Dubai Shopping Festival 2026–27",
+        text: "Sole DXB is part of it: six weeks of sales across the city.",
+      },
+      {
+        href: "/events/meydan-racing-season-2026-27/",
+        eyebrow: "Nad Al Sheba",
+        title: "Meydan racing season 2026–27",
+        text: "Racing at Meydan, in the same district, all winter.",
+      },
+      {
+        href: "/events/dubai-marathon-2027/",
+        eyebrow: "17 January",
+        title: "Dubai Marathon 2027",
+        text: "The next big date on the calendar after the festival season.",
+      },
+    ],
+    expertise:
+      "Choose the pass by who is coming. General admission and one Golden Circle are open to all ages; the VIP Grandstand and the other Golden Circle are 21 and over, so a family ticket decision is made at the checkout, not at the gate. If the main stage is the point, the Golden Circle's AED 330 over general admission buys the front; for Stage Two's jazz and world line-up, general admission is all you need.",
+  },
 ];
