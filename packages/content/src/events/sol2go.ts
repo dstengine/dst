@@ -54,7 +54,7 @@ export const items: EventItem[] = [
   {
     slug: "crypto-expo-dubai-2026",
     createdAt: "2026-09-06T09:36:42+04:00",
-    updatedAt: "2026-09-07T16:11:31+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
     site: "sol2go",
     image: "/covers/crypto-expo-dubai-2026.jpg",
     imageAlt: "A wide flat hall in violet paper with two rows of small stand shapes and one tall mint tower rising behind it",
@@ -118,6 +118,14 @@ export const items: EventItem[] = [
       "Among the speakers listed on the site are <strong>Simon O’Brien</strong>, Executive Director of Markets at the <strong>Financial Services Regulatory Authority of Abu Dhabi Global Market</strong>, who led the development of ADGM’s virtual asset regulatory framework, and <strong>Sohaib Memon</strong>, a Virtual Assets Supervisory Officer at the <strong>Capital Market Authority</strong>. That is the difference between this event and the rest of the autumn in one line.",
       "## What the site does not publish",
       "Ticket prices. The organiser sends you to a booking page rather than printing a table, so we are not quoting a figure. The full agenda, the exhibitor list and the floor plan each have a page on the site; the side event, the awards and the HashMining &amp; AI Summit are named in the navigation without dates of their own.",
+    ],
+    related: [
+      {
+        href: "/events/crypto-after-dark-halloween-dubai-2026/",
+        eyebrow: "29 October",
+        title: "Crypto After Dark, Halloween",
+        text: "A Halloween crypto night at SLS Dubai, 19:00 to 02:00, entry on Luma approval.",
+      },
     ],
     expertise:
       "Read the audience list before you buy, because it is the whole review. Six segments are named and not one of them is a developer: this is a licensing, custody and allocation room, and two of the people on the programme supervise virtual assets for a living. If you are raising, selling infrastructure or trying to get a straight answer out of a regulator, two days at the World Trade Centre is a cheaper way to do it than two months of email. If you came to talk about consensus, this is the wrong hall, and the London fortnight in November is the one to save the flight for.",
@@ -1278,7 +1286,7 @@ export const items: EventItem[] = [
   {
     slug: "blockchain-life-2026-dubai",
     createdAt: "2026-09-06T17:57:17+04:00",
-    updatedAt: "2026-09-07T15:37:04+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
     site: "sol2go",
     image: "/covers/blockchain-life-2026-dubai.jpg",
     imageAlt:
@@ -1341,6 +1349,14 @@ export const items: EventItem[] = [
       "The organisers count <strong>100+ side events</strong> between <strong>27 November and 6 December</strong> under the Blockchain Life Week banner. If you are travelling for the forum, the two days in the arena are the smaller part of the trip.",
       "## What a seat costs",
       "Early-bird pricing runs <strong>Standard $189, Business $329, VIP $999</strong>, and the published later prices are $399, $729 and $2,099 — so the gap between booking now and booking at the door is larger than most conferences'. Prices are quoted in dollars and charged in dirhams.",
+    ],
+    related: [
+      {
+        href: "/events/crypto-after-dark-halloween-dubai-2026/",
+        eyebrow: "29 October",
+        title: "Crypto After Dark, Halloween",
+        text: "A Halloween crypto night at SLS Dubai, 19:00 to 02:00, entry on Luma approval.",
+      },
     ],
     expertise:
       "Buy the ticket well before December or don't buy it at all: standard more than doubles, and VIP goes up by $1,100. The forum is also the excuse for the week rather than the week itself — check the side-event calendar before you decide which nights to be in town.",
@@ -2199,5 +2215,86 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Consensus Hong Kong falls in the week before the Lunar New Year in 2027, which is why the dates are early February and why the city is at its most expensive and most crowded. Book the hotel with the ticket. The practical reason to go is the side-event week, which runs from the weekend before: the Asian exchanges host their own gatherings and those are where the listings and the market-making conversations happen, not in the convention centre. Register for them separately; most are free and most cap.",
+  },
+  {
+    slug: "crypto-after-dark-halloween-dubai-2026",
+    createdAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
+    site: "sol2go",
+    image: "/covers/crypto-after-dark-halloween-dubai-2026.jpg",
+    imageAlt: "A violet night skyline of paper towers seen from a rooftop, carved pumpkin lanterns on the ledge and round discs drifting in the sky",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Crypto After Dark: Halloween Edition, Dubai",
+    cardTitle: "Crypto After Dark, Halloween",
+    titleSeo: "Crypto After Dark Halloween, Dubai: 29 Oct, Solana angle",
+    summary:
+      "Dubai's Web3 crowd in costume on Thursday 29 October 2026, 7pm to 2am, at Smoke & Mirrors in SLS Dubai, Business Bay: founders, investors and traders, hosted by Welcome3, CodeCraft Group and TraderChamber, with entry by host approval. A general crypto night, a month before Blockchain Life brings the region's Solana builders back to the city.",
+    start: "2026-10-29",
+    startTime: "19:00",
+    endTime: "02:00",
+    utcOffset: "+04:00",
+    venue: "Smoke & Mirrors, SLS Dubai",
+    city: "Dubai",
+    country: "United Arab Emirates",
+    geo: { name: "SLS Dubai Hotel & Residences", lat: 25.18459, lng: 55.29229 },
+    organizer: "Welcome3, CodeCraft Group and TraderChamber",
+    category: "Meetup",
+    ticket: { url: "https://luma.com/4igw650r", label: "Request to join", sells: false },
+    source: {
+      name: "Luma: CRYPTO AFTER DARK | Halloween Edition",
+      url: "https://luma.com/4igw650r",
+      verifiedOn: "2026-10-24",
+    },
+    body: [
+      "Dubai's crypto calendar has a Halloween night. <strong>Crypto After Dark: Halloween Edition</strong> is on <strong>Thursday 29 October 2026</strong>, from <strong>7pm to 2am</strong>, at <strong>Smoke & Mirrors</strong>, the bar at SLS Dubai on Marasi Drive in Business Bay. The organisers promise drinks, music and the city's founders, investors, traders and industry leaders in one room, with \"a little Halloween mischief\".",
+      "## Who is behind it",
+      "Three networks put it on together: <strong>Welcome3</strong>, a private network for Web3 founders, investors and industry leaders; <strong>CodeCraft Group</strong>, a Web3 go-to-market agency; and <strong>TraderChamber</strong>, a network connecting traders, venues and projects. The hosts named on the page are Claire Rennie, Andrew Thomas, Chris Robert and Brian Dede.",
+      "## Getting in",
+      "Registration is by <strong>host approval</strong>: request to join on Luma and wait for the yes. No price is listed. The dress code is <strong>smart casual, with Halloween costumes encouraged</strong>, and shorts, caps and flip-flops are not allowed, which rules out a fair number of costumes as well.",
+      "## Why it is on a Solana calendar",
+      "The page names no chain, and this is a general crypto night rather than a Solana one. It is on this calendar as the Dubai Web3 crowd's Halloween, a month before <a href=\"/events/blockchain-life-2026-dubai/\" title=\"Blockchain Life 2026, Dubai\">Blockchain Life</a> brings the region's Solana builders to the city for its week of side events: an early look at who is in town for the season.",
+    ],
+    faq: [
+      {
+        q: "When and where is Crypto After Dark: Halloween Edition?",
+        a: "On Thursday 29 October 2026, 7pm to 2am, at Smoke & Mirrors in SLS Dubai, Marasi Drive, Business Bay.",
+      },
+      {
+        q: "How do I get in?",
+        a: "Request to join on Luma. Registration is subject to host approval, and no price is listed.",
+      },
+      {
+        q: "Is there a dress code?",
+        a: "Smart casual, with Halloween costumes encouraged. Shorts, caps and flip-flops are not permitted.",
+      },
+      {
+        q: "Is it a Solana event?",
+        a: "No. It is a general crypto evening hosted by Welcome3, CodeCraft Group and TraderChamber; it is listed here as part of Dubai's Web3 season, which Blockchain Life opens in December.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/blockchain-life-2026-dubai/",
+        eyebrow: "1–2 December, Dubai",
+        title: "Blockchain Life 2026",
+        text: "The Gulf's biggest general crypto forum, and the week of side events around it.",
+      },
+      {
+        href: "/events/labitconf-2026-buenos-aires/",
+        eyebrow: "30–31 October",
+        title: "LABITCONF 2026, Buenos Aires",
+        text: "The same weekend: Latin America's oldest Bitcoin conference, with a Solana side-event calendar.",
+      },
+      {
+        href: "/events/devcon-8-mumbai-2026/",
+        eyebrow: "3–6 November",
+        title: "Devcon 8, Mumbai",
+        text: "The week after Halloween, three hours' flight from Dubai.",
+      },
+    ],
+    expertise:
+      "On an approval list the host is choosing the room, so fill in the Luma profile properly before requesting: a blank one reads as a no. Mind the day of the week too. The UAE weekend starts on Saturday, so most of this room is at work on Friday morning, and the useful hours of a networking night are the first two, not the last two.",
   },
 ];
