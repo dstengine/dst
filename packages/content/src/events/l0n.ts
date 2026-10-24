@@ -590,4 +590,87 @@ export const items: EventItem[] = [
     expertise:
       "A Halloween show is a different evening from an ordinary arena night, and this one is built that way: the setlist is promised to wander well off the greatest hits, which rewards the people who know the albums, and the crowd is asked to dress up, which rewards everyone else. Get there early: the Jubilee line to North Greenwich on a Saturday night, half the carriage in costume, is slow going.",
   },
+
+  {
+    slug: "six-nations-2027-england-at-twickenham",
+    createdAt: "2026-10-25T02:30:00+04:00",
+    updatedAt: "2026-10-25T02:30:00+04:00",
+    site: "l0n",
+    image: "/covers/six-nations-2027-england-at-twickenham.jpg",
+    imageAlt: "A rugby ball on an orange kicking tee in long grass at dusk, tall white rugby posts with orange pads behind it and a floodlight glowing on a mast",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "England's Six Nations 2027 home games at Twickenham",
+    cardTitle: "Six Nations 2027 at Twickenham",
+    titleSeo: "Six Nations 2027 at Twickenham, London: England's dates",
+    summary:
+      "England play three Guinness Men's Six Nations matches at Allianz Stadium, Twickenham, in south-west London in 2027: France on Sunday 14 February at 15:10, Italy on Saturday 20 February at 16:40, and Scotland for the Calcutta Cup on Saturday 13 March at 16:40.",
+    start: "2027-02-14",
+    end: "2027-03-13",
+    utcOffset: "+00:00",
+    venue: "Allianz Stadium, Twickenham, 200 Whitton Road",
+    city: "London",
+    country: "United Kingdom",
+    geo: { name: "Allianz Stadium, Twickenham", lat: 51.4560051, lng: -0.3415047 },
+    organizer: "Rugby Football Union",
+    category: "Sport",
+    ticket: {
+      url: "https://www.allianzstadiumtwickenham.com/whats-on",
+      label: "What's on at Twickenham",
+      sells: false,
+    },
+    source: {
+      name: "Allianz Stadium Twickenham, What's on",
+      url: "https://www.allianzstadiumtwickenham.com/whats-on",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "England's three home games in the <strong>Guinness Men's Six Nations 2027</strong> are all at <strong>Allianz Stadium, Twickenham</strong>, and the stadium has published the dates and kick-offs.",
+      "## The three matches",
+      "<strong>England v France</strong>: Sunday 14 February 2027, kick-off <strong>15:10</strong>.",
+      "<strong>England v Italy</strong>: Saturday 20 February 2027, kick-off <strong>16:40</strong>.",
+      "<strong>England v Scotland</strong>: Saturday 13 March 2027, kick-off <strong>16:40</strong>, with the <strong>Calcutta Cup</strong>, the oldest trophy in international rugby, on the line.",
+      "## Getting there",
+      "The stadium is on Whitton Road in Twickenham, in the London Borough of Richmond upon Thames. Twickenham station, on the line from Waterloo, is the nearest; on match days the walk goes with the crowd.",
+      "## Later in the spring",
+      "London's next big sporting dates are on the river and the road: <a href=\"/events/boat-race-2027/\" title=\"The Boat Race 2027: 11 April, Putney to Mortlake\">the Boat Race</a> on 11 April and the <a href=\"/events/london-marathon-2027/\" title=\"London Marathon 2027: two days, 24 and 25 April\">London Marathon</a> on 24 and 25 April.",
+    ],
+    faq: [
+      {
+        q: "When do England play at Twickenham in the 2027 Six Nations?",
+        a: "Against France on Sunday 14 February at 15:10, Italy on Saturday 20 February at 16:40, and Scotland on Saturday 13 March at 16:40.",
+      },
+      {
+        q: "Which match is the Calcutta Cup?",
+        a: "England v Scotland, on Saturday 13 March 2027 at Twickenham.",
+      },
+      {
+        q: "Where is Allianz Stadium, Twickenham?",
+        a: "On Whitton Road in Twickenham, south-west London. The nearest station is Twickenham, with trains from Waterloo.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/boat-race-2027/",
+        eyebrow: "11 April",
+        title: "The Boat Race 2027",
+        text: "Oxford and Cambridge on the Thames, Putney to Mortlake.",
+      },
+      {
+        href: "/events/london-marathon-2027/",
+        eyebrow: "24 and 25 April",
+        title: "London Marathon 2027",
+        text: "For the first time over two days, Greenwich to Westminster.",
+      },
+      {
+        href: "/events/philip-glass-at-90-southbank-2027/",
+        eyebrow: "30–31 January",
+        title: "Philip Glass at 90",
+        text: "Two nights at the Southbank Centre a fortnight before France.",
+      },
+    ],
+    expertise:
+      "France is the fixture most people want, so decide on it first; Italy six days later is usually the easier ticket, and a good first international for a child. After the match the queue at Twickenham station is long, and St Margaret's, one stop towards London, is often the quicker way home.",
+  },
 ];
