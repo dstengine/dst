@@ -456,7 +456,7 @@ export const items: EventItem[] = [
   {
     slug: "dubai-fitness-challenge-2026",
     createdAt: "2026-10-24T16:00:00+04:00",
-    updatedAt: "2026-10-24T16:00:00+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
     site: "dst",
     image: "/covers/dubai-fitness-challenge-2026.jpg",
     imageAlt: "A grid of 42 small paper squares in blue, grey and cream on a navy ground, each with a single running figure, one square carrying a small gold dot",
@@ -502,6 +502,14 @@ export const items: EventItem[] = [
       {
         q: "When are Dubai Ride and Dubai Run 2026?",
         a: "Dubai Ride is Sunday, November 1, from 06:00; Dubai Run is Sunday, November 22, from 06:30, both on Sheikh Zayed Road and both free.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/haunted-town-night-img-worlds-2026/",
+        eyebrow: "October 31",
+        title: "Haunted Town Night at IMG Worlds",
+        text: "Halloween indoors with DJ Bliss and DJ Badir, 20:00 to 01:00, from AED 220.",
       },
     ],
     expertise:
@@ -685,7 +693,7 @@ export const items: EventItem[] = [
   {
     slug: "global-village-season-31-2026",
     createdAt: "2026-10-24T16:00:00+04:00",
-    updatedAt: "2026-10-24T16:00:00+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
     site: "dst",
     image: "/covers/global-village-season-31-2026.jpg",
     imageAlt: "A ring of small pavilions in cut paper, each roof a different shape, around a lit central square",
@@ -743,7 +751,101 @@ export const items: EventItem[] = [
         a: "Sunday to Wednesday 16:00 to midnight; Thursday to Saturday 16:00 to 01:00. Tuesdays are for ladies and families.",
       },
     ],
+    related: [
+      {
+        href: "/events/haunted-town-night-img-worlds-2026/",
+        eyebrow: "October 31",
+        title: "Haunted Town Night at IMG Worlds",
+        text: "Halloween indoors with DJ Bliss and DJ Badir, 20:00 to 01:00, from AED 220.",
+      },
+    ],
     expertise:
       "Global Village is the one Dubai attraction priced for residents rather than tourists, and the AED 25 weekday ticket has barely moved in a decade while everything around it has doubled. It also sits in Dubailand, the district whose villa communities — Villanova, Arabian Ranches III, Damac Hills 2 — have been the volume market for families since 2023; a season pass is part of the household budget there in a way it is not on the coast.",
+  },
+  {
+    slug: "haunted-town-night-img-worlds-2026",
+    createdAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
+    site: "dst",
+    image: "/covers/haunted-town-night-img-worlds-2026.jpg",
+    imageAlt: "A crooked cut-paper haunted house with lit windows inside a vast indoor hall, a crowd in silhouette before it and bats under the roof",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Haunted Town Night 2026 at IMG Worlds of Adventure",
+    cardTitle: "Haunted Town Night at IMG Worlds",
+    titleSeo: "Haunted Town Night 2026, IMG Worlds Dubai: October 31",
+    summary:
+      "Halloween night itself at Dubai's largest indoor theme park: Haunted Town Night runs on Saturday, October 31, 2026, from 8pm to 1am in The Haunted Town at IMG Worlds of Adventure, with DJ Bliss and DJ Badir headlining. Tickets are AED 220 including VAT.",
+    start: "2026-10-31",
+    startTime: "20:00",
+    endTime: "01:00",
+    utcOffset: "+04:00",
+    venue: "The Haunted Town, IMG Worlds of Adventure",
+    city: "Dubai",
+    country: "United Arab Emirates",
+    geo: { name: "IMG Worlds of Adventure", lat: 25.08139, lng: 55.31813 },
+    organizer: "IMG Worlds of Adventure",
+    category: "Halloween",
+    tickets: { priceFrom: 220, currency: "AED" },
+    ticket: { url: "https://www.imgworlds.com/tickets/buy-now", label: "Tickets AED 220" },
+    source: {
+      name: "IMG Worlds of Adventure",
+      url: "https://www.imgworlds.com/news/haunted-town-night-2026-date-time-djs-and-tickets",
+      verifiedOn: "2026-10-24",
+    },
+    body: [
+      "IMG Worlds of Adventure keeps a horror quarter open all year: The Haunted Town, with its walk-through Haunted Hotel and a horror-themed café. On Halloween itself, <strong>Saturday, October 31, 2026</strong>, the zone becomes a late-night party. <strong>Haunted Town Night</strong> runs from <strong>8pm to 1am</strong>, and the park has built it around music rather than rides.",
+      "## The DJs",
+      "Two headline DJs are announced: <strong>DJ Bliss</strong> and <strong>DJ Badir</strong>. IMG Worlds has not named any other acts.",
+      "## Two hours past closing",
+      "On an ordinary Saturday the park closes at 11pm. Haunted Town Night carries on to <strong>1am</strong>, five hours in all, so plan the journey home for the small hours: the park is out on Sheikh Mohammed Bin Zayed Road, well away from the metro.",
+      "## Tickets",
+      "The announced price is <strong>AED 220, including VAT</strong>, booked through the park's ticket page. The announcement prices the night and says nothing about which rides in the other zones are running during it, so if the coasters matter, ask guest relations before booking: GuestRelations@imgworlds.com or +971 4 403 8888.",
+      "## The Haunted Hotel",
+      "The zone's own attraction is the <strong>Haunted Hotel</strong>, a maze of corridors and changing scenery with live scares. It admits guests aged <strong>15 and over</strong> only, and anyone between 15 and 18 shows an ID card at the entrance.",
+      "## The rest of the weekend",
+      "<a href=\"/events/global-village-season-31-2026/\" title=\"Global Village Season 31\">Global Village</a> is a few minutes along the same road and also stays open until 1am on Saturdays. Halloween is also the first day of the <a href=\"/events/dubai-fitness-challenge-2026/\" title=\"Dubai Fitness Challenge 2026\">Dubai Fitness Challenge</a>, which runs to November 29.",
+    ],
+    faq: [
+      {
+        q: "When is Haunted Town Night 2026 at IMG Worlds?",
+        a: "On Saturday, October 31, 2026, from 8pm to 1am, at The Haunted Town in IMG Worlds of Adventure, Dubai.",
+      },
+      {
+        q: "How much are Haunted Town Night tickets?",
+        a: "AED 220, including VAT, on the IMG Worlds ticket page.",
+      },
+      {
+        q: "Who is playing at Haunted Town Night?",
+        a: "DJ Bliss and DJ Badir are the two headline DJs.",
+      },
+      {
+        q: "Can teenagers go into the Haunted Hotel?",
+        a: "From 15. The Haunted Hotel admits guests aged 15 and over, and those aged 15 to 18 must show an ID card at the entrance.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/global-village-season-31-2026/",
+        eyebrow: "Open until 1am on Saturdays",
+        title: "Global Village Season 31",
+        text: "The other late Saturday on the same road: pavilions of more than 90 cultures, AED 25 to 30.",
+      },
+      {
+        href: "/events/dubai-fitness-challenge-2026/",
+        eyebrow: "From October 31",
+        title: "Dubai Fitness Challenge 2026",
+        text: "Thirty days of free workouts and runs, starting on Halloween.",
+      },
+      {
+        href: "/events/noor-festival-of-lights-al-seef-2026/",
+        eyebrow: "November 7",
+        title: "Noor Festival of Lights 2026",
+        text: "A week later: a free evening of lights and a Diwali procession on Dubai Creek.",
+      },
+    ],
+    expertise:
+      "Treat the AED 220 as a ticket to a DJ night in a themed hall rather than a day at the park: the announcement prices the party, not the rides, and a day ticket's worth of coasters is not promised. The Haunted Town is the right room for it, a horror zone that most Halloween venues in the city have to build from scratch each October. The practical catch is the finish. One in the morning on the far side of the E311 is a long way from most of Dubai, so book the ride home before the last track rather than after it.",
   },
 ];
