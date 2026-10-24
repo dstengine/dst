@@ -691,4 +691,56 @@ export const items: NewsItem[] = [
     expertise:
       "Star ratings and closing dates pull in opposite directions. The five-star show on this list has days left; two of the three-star ones run into next year. A list read top-down sends you to the thing that is about to vanish and leaves the rest unseen — which is exactly backwards, because the ones with months left are the ones you can plan around a quiet Tuesday.",
   },
+  {
+    slug: "fka-twigs-curates-meltdown-2027",
+    createdAt: "2026-10-24T15:40:00+04:00",
+    updatedAt: "2026-10-24T15:40:00+04:00",
+    site: "ldn",
+    image: "/covers/fka-twigs-curates-meltdown-2027.jpg",
+    imageAlt:
+      "A cut-paper stage of concrete grey layers on a plum ground, one slim white paper spotlight beam crossing it",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "FKA twigs curates Meltdown 2027, and headlines it herself",
+    cardTitle: "FKA twigs takes Meltdown 2027",
+    titleSeo: "Meltdown 2027 London: FKA twigs curates, 10–20 June",
+    summary:
+      "The Southbank Centre has named FKA twigs the 32nd curator of Meltdown, London's artist-curated festival, for 10 to 20 June 2027 — eleven days of concerts, two weekends of free events, and a one-off headline show of her own.",
+    date: "2026-10-24",
+    until: "2027-06-20",
+    city: "London",
+    country: "United Kingdom",
+    category: "Music",
+    source: {
+      name: "Southbank Centre",
+      url: "https://www.southbankcentre.co.uk/events/meltdown/",
+      verifiedOn: "2026-10-24",
+    },
+    body: [
+      "Meltdown has been handing its programme to one artist a year since 1993, and the thirty-second name is <strong>FKA twigs</strong>. The Southbank Centre announced her on 21 October: she picks the acts, and she plays a <strong>one-off headline show</strong> of her own during the festival.",
+      "## When",
+      "<strong>Thursday 10 to Sunday 20 June 2027</strong> — eleven days across the Southbank Centre's halls, with <strong>dozens of concerts</strong> and <strong>two weekends of free events</strong>, in the venue's own words.",
+      "## What she has said",
+      "Her statement promises \"a slice of all that has raised me and continues to inspire me\" — London's club and art undergrounds, where she started, and the collision of cultures she credits for the city's music.",
+      "## What is not announced",
+      "The line-up and the details of her headline show come <strong>in spring 2027</strong>. Nothing is on sale yet; the Southbank Centre's gigs newsletter is the channel it points to for first word.",
+    ],
+    faq: [
+      {
+        q: "When is Meltdown 2027?",
+        a: "<strong>10 to 20 June 2027</strong>, at the Southbank Centre.",
+      },
+      {
+        q: "Is FKA twigs performing at Meltdown?",
+        a: "Yes — a one-off headline show of her own, with the date and details to be announced in spring 2027.",
+      },
+      {
+        q: "When do Meltdown 2027 tickets go on sale?",
+        a: "Not announced. The line-up and on-sale dates follow in spring.",
+      },
+    ],
+    expertise:
+      "The curator is the whole festival at Meltdown — David Bowie's 2002 edition and Grace Jones's in 2022 are remembered for who they invited, not for the venue. Twigs came up through the London club scene, so expect a programme heavy on the collectives and producers who shaped her, rather than a run of established names. The practical note: Meltdown's biggest shows sell out on the day of announcement, so the spring line-up is the date to watch, not June.",
+  },
 ];
