@@ -2886,4 +2886,271 @@ export const items: EventItem[] = [
     expertise:
       "Register at home. Check-in is one point on Stillwell Avenue for thousands of people, and a QR code that is already in your email is the difference between queuing and plunging. The plunge is a window, not a start: in 2026 it ran from 11am until the last entries at 1:30pm. Arriving after eleven on the D, F, N or Q still works, as long as you are through check-in well before the last entries. The things people forget are the ones the club lists last: old shoes for the sand and a dry layer for the ride home.",
   },
+  {
+    slug: "paranormal-activity-free-outdoor-screening-broadway-2026",
+    createdAt: "2026-10-24T16:00:00+04:00",
+    updatedAt: "2026-10-24T16:00:00+04:00",
+    site: "nyc42",
+    image: "/covers/paranormal-activity-free-outdoor-screening-broadway-2026.jpg",
+    imageAlt:
+      "A tall white paper screen hung between two dark theatre facades on a narrow street, rows of tiny seated paper figures before it, a crescent moon and a few orange paper leaves above, on an ochre ground",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Paranormal Activity: a free Halloween screening on West 52nd Street",
+    cardTitle: "Paranormal Activity: free Halloween screening",
+    titleSeo: "Paranormal Activity free screening, New York, Halloween 2026",
+    summary:
+      "The 2007 horror film is shown for free on West 52nd Street in New York on Saturday, October 31, 2026, at 5pm, outside the August Wilson Theatre where its stage version is running; everyone who comes is entered to win Broadway tickets.",
+    start: "2026-10-31",
+    startTime: "17:00",
+    utcOffset: "-04:00",
+    venue: "West 52nd Street between Broadway and 8th Avenue",
+    city: "New York",
+    country: "United States",
+    geo: {
+      name: "August Wilson Theatre, 245 West 52nd Street",
+      lat: 40.76341,
+      lng: -73.98407,
+    },
+    organizer: "Paranormal Activity on Broadway",
+    category: "Halloween",
+    tickets: { priceFrom: 0, currency: "USD" },
+    source: {
+      name: "Time Out New York",
+      url: "https://www.timeout.com/newyork/news/a-free-paranormal-activity-outdoor-screening-is-taking-over-broadway-on-halloween-nightand-it-could-get-you-free-theater-tickets-102226",
+      verifiedOn: "2026-10-24",
+    },
+    body: [
+      "The street outside the August Wilson Theatre becomes a cinema for one evening. On <strong>Saturday, October 31</strong>, at <strong>5pm</strong>, the block of <strong>West 52nd Street between Broadway and 8th Avenue</strong> screens <strong>Paranormal Activity</strong>, the found-footage horror film of 2007, for free.",
+      "## Why that theatre",
+      "The stage version of Paranormal Activity plays inside the August Wilson Theatre, and its run has been <strong>extended through February 28, 2027</strong>. The screening is the show's Halloween gift to the street: everyone who turns up is <strong>entered to win tickets</strong> to the Broadway production.",
+      "## Practical",
+      "No tickets and no seats to book: come to the block before 5pm and find a spot. It is a street screening at the end of October, so dress for standing outside in the dark. Theatre district subways: 50th Street on the 1 and on the C and E.",
+    ],
+    faq: [
+      {
+        q: "When is the free Paranormal Activity screening?",
+        a: "Saturday, October 31, 2026, at 5pm, on West 52nd Street between Broadway and 8th Avenue.",
+      },
+      {
+        q: "Is it really free?",
+        a: "Yes. There are no tickets; attendees are entered to win tickets to the Broadway show.",
+      },
+      {
+        q: "How long is Paranormal Activity on Broadway running?",
+        a: "The run at the August Wilson Theatre has been extended through February 28, 2027.",
+      },
+    ],
+    expertise:
+      "Street screenings in the theatre district are rare because the block has to be closed, and this one is a promotion for a show that has just announced an extension — which means the production is confident enough to spend on it. The practical read: the film is 86 minutes, so a 5pm start ends before the Halloween crowds fill Times Square, and the subway home is a two-minute walk.",
+  },
+
+  {
+    slug: "abt-spring-season-koch-theater-2027",
+    createdAt: "2026-10-24T16:00:00+04:00",
+    updatedAt: "2026-10-24T16:00:00+04:00",
+    site: "nyc42",
+    image: "/covers/abt-spring-season-koch-theater-2027.jpg",
+    imageAlt:
+      "A single paper dancer in a white tutu balanced on one point before a tall arched colonnade of cream paper, a red camellia on the floor, on an ochre ground",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "American Ballet Theatre Spring Season 2027 at the David H. Koch Theater",
+    cardTitle: "ABT Spring Season 2027",
+    titleSeo: "ABT Spring Season 2027: New York dates, Koch Theater",
+    summary:
+      "American Ballet Theatre dances three programmes at Lincoln Center's David H. Koch Theater in New York from March 4 to 21, 2027: modern icons with a Chroma company premiere, Neumeier's Lady of the Camellias and a Masterworks bill with a Whiteside world premiere. $30 Under 30 and rush tickets.",
+    start: "2027-03-04",
+    end: "2027-03-21",
+    utcOffset: "-05:00",
+    venue: "David H. Koch Theater, Lincoln Center",
+    city: "New York",
+    country: "United States",
+    geo: {
+      name: "David H. Koch Theater, Lincoln Center",
+      lat: 40.77253,
+      lng: -73.98354,
+    },
+    organizer: "American Ballet Theatre",
+    category: "Ballet",
+    tickets: { priceFrom: 20, currency: "USD" },
+    ticket: {
+      url: "https://www.abt.org/performances/spring-season/",
+      label: "Tickets and schedule",
+    },
+    source: {
+      name: "American Ballet Theatre",
+      url: "https://www.abt.org/performances/spring-season/",
+      verifiedOn: "2026-10-24",
+    },
+    programme: [
+      {
+        heading: "Icons of Modern Repertory, March 4–7",
+        text: "Symphonie Concertante, Serenade after Plato's Symposium and the company premiere of Wayne McGregor's Chroma, to Joby Talbot's arrangements of The White Stripes.",
+      },
+      {
+        heading: "Lady of the Camellias, March 12–18",
+        text: "John Neumeier's full-length ballet after Dumas, to Chopin.",
+      },
+      {
+        heading: "Masterworks, March 19–21",
+        text: "Balanchine's Apollo, a new James Whiteside pas de deux in its world premiere, Nuages and Twyla Tharp's In the Upper Room.",
+      },
+    ],
+    body: [
+      "ABT's spring weeks at Lincoln Center are the company's modern half of the year, before the story ballets of the Met season. In 2027 they run from <strong>March 4 to 21</strong> at the <strong>David H. Koch Theater</strong>, in three bills.",
+      "## The three programmes",
+      "<strong>Icons of Modern Repertory</strong> (March 4–7) pairs Symphonie Concertante and Serenade after Plato's Symposium with the <strong>company premiere of Chroma</strong>, Wayne McGregor's piece to Joby Talbot's orchestrations of The White Stripes. <strong>Lady of the Camellias</strong> (March 12–18) is John Neumeier's full-length ballet to Chopin. <strong>Masterworks</strong> (March 19–21) opens with Balanchine's Apollo, adds a <strong>world premiere</strong> pas de deux by James Whiteside, then Nuages and Twyla Tharp's In the Upper Room.",
+      "## ABT For All",
+      "On <strong>Saturday, March 6, at 11am</strong> the company gives ABT For All, its open-to-everyone family performance.",
+      "## Cheaper seats",
+      "<strong>$30 Under 30</strong> for anyone under thirty; <strong>student rush $20 to $30</strong> and <strong>general rush $35</strong> on the day. The box office phone is 212-496-0600.",
+    ],
+    faq: [
+      {
+        q: "When is ABT's 2027 spring season?",
+        a: "March 4 to 21, 2027, at the David H. Koch Theater, Lincoln Center.",
+      },
+      {
+        q: "What is new in the season?",
+        a: "The company premiere of Wayne McGregor's Chroma (March 4–7) and the world premiere of a James Whiteside pas de deux on the Masterworks bill (March 19–21).",
+      },
+      {
+        q: "How do I get cheap ABT tickets?",
+        a: "$30 Under 30 for under-thirties, student rush $20–30 and general rush $35 on the day of performance.",
+      },
+    ],
+    expertise:
+      "The Koch Theater is a smaller house than the Met, so the spring season is where ABT is seen close: Chroma in particular, a piece built on ten dancers and a lit back wall, loses nothing from the fourth ring. Rush tickets are the way in — the general rush at $35 is a quarter of the orchestra price, and the March programmes rarely sell out the way the summer Swan Lakes do.",
+  },
+
+  {
+    slug: "whitney-artport-history-of-internet-art-2026",
+    createdAt: "2026-10-24T16:00:00+04:00",
+    updatedAt: "2026-10-24T16:00:00+04:00",
+    site: "nyc42",
+    image: "/covers/whitney-artport-history-of-internet-art-2026.jpg",
+    imageAlt:
+      "A dozen cut-paper browser windows of different sizes floating in a white room, each a different flat colour with a tiny title bar, two paper figures walking between them, on an ochre ground",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "artport: A History of Internet Art at the Whitney",
+    cardTitle: "artport: A History of Internet Art",
+    titleSeo: "artport: A History of Internet Art, Whitney New York, Nov 21",
+    summary:
+      "The Whitney Museum in New York opens artport: A History of Internet Art on November 21, 2026 — 25 years of its online gallery, more than 100 commissioned net-art works on the sixth floor and online, and the world premiere of Operator's Human Unreadable Act III on November 19, 21 and 22.",
+    start: "2026-11-21",
+    utcOffset: "-05:00",
+    venue: "Whitney Museum of American Art, 99 Gansevoort Street",
+    city: "New York",
+    country: "United States",
+    geo: {
+      name: "Whitney Museum of American Art",
+      lat: 40.73963,
+      lng: -74.00889,
+    },
+    organizer: "Whitney Museum of American Art",
+    category: "Exhibitions",
+    ticket: {
+      url: "https://whitney.org/exhibitions/artport-25",
+      label: "Exhibition page",
+      sells: false,
+    },
+    source: {
+      name: "Whitney Museum of American Art",
+      url: "https://whitney.org/exhibitions/artport-25",
+      verifiedOn: "2026-10-24",
+    },
+    body: [
+      "The Whitney launched <strong>artport</strong>, its online gallery for commissioned net art, in <strong>2001</strong>. For the 25th anniversary the museum brings a quarter century of it into the building: <strong>more than 100 works</strong> commissioned for the site, shown on the <strong>sixth floor</strong> and online, opening <strong>November 21, 2026</strong>.",
+      "## How it is laid out",
+      "Three strands, matching how artport commissioned: the <strong>Gate Pages</strong> of 2001–2006, portals to artists' own sites; the main <strong>Commissions</strong>, running since 2001; and <strong>Sunrise/Sunset</strong>, the series that ran from 2009 to 2024, with its successor <strong>On the Hour</strong>. The open floor is designed to feel like floating browser windows. The works range across code, data visualisation, nonlinear narrative, worldbuilding, gaming environments and AI-driven net art, on privacy, identity, surveillance and the line between online and offline life.",
+      "## The performance",
+      "The exhibition includes the <strong>world premiere of Human Unreadable Act III</strong> by the duo Operator, the last part of a generative choreography work unfolding since 2023, in the Susan and John Hess Family Theater on <strong>November 19, 21 and 22</strong>; the November 19 performance is 7 to 8:30pm. Members preview the show on November 18, 12 to 6pm.",
+      "## Who made it",
+      "Organised by <strong>Christiane Paul</strong>, Curator of Digital Art, with David Lisbon and Colin Brooks. The closing date has not been announced.",
+    ],
+    faq: [
+      {
+        q: "When does artport: A History of Internet Art open?",
+        a: "November 21, 2026, on the Whitney's sixth floor and online. The closing date is not announced yet.",
+      },
+      {
+        q: "What is in the show?",
+        a: "More than 100 net-art works commissioned for artport since 2001, in three strands: Gate Pages, Commissions and Sunrise/Sunset with On the Hour.",
+      },
+      {
+        q: "When is Human Unreadable Act III?",
+        a: "November 19, 21 and 22, 2026, in the Whitney's Hess Family Theater; the November 19 performance runs 7 to 8:30pm.",
+      },
+    ],
+    expertise:
+      "Net art is the one medium museums have never worked out how to hang, and the Whitney has been the exception since 2001 because it commissioned the work instead of collecting it afterwards. This is the first time the whole archive is in a room. Go for the Gate Pages — the 2001–2006 portals are the web as it looked before platforms, and most of them no longer run anywhere else.",
+  },
+
+  {
+    slug: "wicked-gluten-free-expo-meadowlands-2026",
+    createdAt: "2026-10-24T16:00:00+04:00",
+    updatedAt: "2026-10-24T16:00:00+04:00",
+    site: "nyc42",
+    image: "/covers/wicked-gluten-free-expo-meadowlands-2026.jpg",
+    imageAlt:
+      "Long rows of paper market stalls under a wide hall roof, each stall piled with cut-paper loaves, cakes and jars in cream, brown and red, small figures carrying tote bags between them, on an ochre ground",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Wicked Gluten Free Expo NJ/NY Metro 2026 at the Meadowlands",
+    cardTitle: "Wicked Gluten Free Expo NJ/NY",
+    titleSeo: "Wicked Gluten Free Expo 2026 New York: Nov 7–8, Secaucus",
+    summary:
+      "The gluten-free food expo for the New York area returns to the Meadowlands Exposition Center in Secaucus, New Jersey, on Saturday and Sunday, November 7–8, 2026: more than 100 booths of celiac-safe food to taste and buy, tickets online only.",
+    start: "2026-11-07",
+    end: "2026-11-08",
+    utcOffset: "-05:00",
+    venue: "Meadowlands Exposition Center, 355 Plaza Drive, Secaucus, NJ",
+    city: "Secaucus",
+    country: "United States",
+    geo: {
+      name: "Meadowlands Exposition Center",
+      lat: 40.78757,
+      lng: -74.04176,
+    },
+    organizer: "Wicked Gluten Free",
+    category: "Convention",
+    ticket: {
+      url: "https://wickedglutenfree.com/expos-events/",
+      label: "Tickets",
+    },
+    source: {
+      name: "Wicked Gluten Free",
+      url: "https://wickedglutenfree.com/expos-events/",
+      verifiedOn: "2026-10-24",
+    },
+    body: [
+      "Wicked Gluten Free has run its NJ/NY Metro expo since <strong>2016</strong>, and it is the one weekend a year when a celiac can walk a hall and eat everything in it. The 2026 edition is <strong>Saturday and Sunday, November 7–8</strong>, at the <strong>Meadowlands Exposition Center</strong> in Secaucus, across the river from Midtown.",
+      "## What is there",
+      "<strong>More than 100 booths</strong> of brands and bakeries, all gluten-free, with samples to taste and products to buy at show prices. Previous editions ran Saturday 10am to 5pm and Sunday 10am to 3pm; check the ticket page for this year's hours.",
+      "## Tickets and getting there",
+      "<strong>Tickets are sold online only</strong>, through the organiser's page; there is no door sale. From Manhattan, NJ Transit buses from Port Authority reach Secaucus in about twenty minutes; the expo centre is at 355 Plaza Drive, by the Harmon Meadow shops.",
+    ],
+    faq: [
+      {
+        q: "When is the Wicked Gluten Free Expo NJ/NY 2026?",
+        a: "Saturday and Sunday, November 7–8, 2026, at the Meadowlands Exposition Center in Secaucus, New Jersey.",
+      },
+      {
+        q: "Can I buy tickets at the door?",
+        a: "No. Tickets are sold online only, through the organiser's page.",
+      },
+      {
+        q: "Is everything at the expo gluten-free?",
+        a: "Yes — more than 100 booths, all gluten-free, with samples and products to buy.",
+      },
+    ],
+    expertise:
+      "Food expos sell out their morning slots first, because the samples run out by mid-afternoon; Saturday at opening is the serious buyer's visit, Sunday after lunch is the quiet one. Bring a cooler bag — the bakeries sell frozen, and the bus back to Port Authority is not refrigerated.",
+  },
 ];

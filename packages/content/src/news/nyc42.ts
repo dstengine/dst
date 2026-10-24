@@ -973,4 +973,52 @@ export const items: NewsItem[] = [
     expertise:
       "The listing is worth watching rather than filing away, because peatland status cuts both ways. The same carbon store that made the case is also what makes the site sensitive to anything that lowers the water table nearby — drainage, extraction, changed rainfall — and dried peat does not merely stop accumulating, it becomes fuel. A fire in dried peat burns downward through the archive and releases the carbon the citation praises. That is why the water-level detail matters to a visitor as more than a trip-planning note: it is the single variable the whole property rests on. For a New York reader used to parks defined by their boundaries, this is a different kind of protected place, one defined by a process that has to keep running.",
   },
+  {
+    slug: "delta-marathon-week-perks-jfk-laguardia",
+    createdAt: "2026-10-24T16:00:00+04:00",
+    updatedAt: "2026-10-24T16:00:00+04:00",
+    site: "nyc42",
+    image: "/covers/delta-marathon-week-perks-jfk-laguardia.jpg",
+    imageAlt:
+      "A paper airliner tail rising behind a baggage carousel of cut paper, small figures in running shoes holding a long paper banner, a single paper medal on a ribbon, on an ochre ground",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Delta turns JFK and LaGuardia baggage claim into a marathon welcome, October 29–30",
+    cardTitle: "Delta's marathon welcome at JFK and LaGuardia",
+    titleSeo: "New York Marathon 2026: Delta perks at JFK, LaGuardia",
+    summary:
+      "Ahead of the TCS New York City Marathon on Sunday, November 1, 2026, Delta sets up treats and sign-making stations at the JFK and LaGuardia baggage claims on Thursday and Friday, October 29–30, from noon, and boards marathoners first on November 1 and 2.",
+    date: "2026-10-24",
+    until: "2026-11-02",
+    city: "New York",
+    country: "United States",
+    category: "Sport",
+    source: {
+      name: "Time Out New York",
+      url: "https://www.timeout.com/newyork/news/delta-airlines-is-helping-nyc-marathon-runners-with-free-priority-boarding-pre-race-treats-and-more-102326",
+      verifiedOn: "2026-10-24",
+    },
+    body: [
+      "Some fifty thousand runners fly into New York this week, and the marathon's airline sponsor has decided the race starts at the carousel. <strong>Delta</strong> is setting up at the baggage claims of <strong>JFK and LaGuardia</strong> on <strong>Thursday, October 29, and Friday, October 30</strong>, from <strong>noon</strong>.",
+      "## What is there",
+      "<strong>Treats</strong> for arriving passengers and <strong>sign-making stations</strong> for the families and friends who will be standing on First Avenue on Sunday with a piece of cardboard. Marathon weekend in New York is as much a spectator event as a race, and the signs are half the fun.",
+      "## On the way home",
+      "On <strong>Sunday, November 1, and Monday, November 2</strong>, Delta boards runners first: finishers join a <strong>Marathoners' Zone 1</strong> priority group, medal presumably optional but recommended.",
+      "## The race",
+      "The <a href=\"/events/tcs-new-york-city-marathon-2026/\" title=\"TCS New York City Marathon 2026\">TCS New York City Marathon</a> runs from Staten Island to Central Park through all five boroughs on Sunday, November 1.",
+    ],
+    faq: [
+      {
+        q: "When are Delta's marathon perks at JFK and LaGuardia?",
+        a: "Thursday, October 29, and Friday, October 30, 2026, from noon, at the baggage claims of both airports.",
+      },
+      {
+        q: "Do runners board first after the marathon?",
+        a: "Yes, on November 1 and 2 Delta boards marathoners in a Marathoners' Zone 1 priority group.",
+      },
+    ],
+    expertise:
+      "A sponsor activation at baggage claim is a small thing, but it tells you how the weekend works: the marathon is the one race where the city's airports, hotels and subway all plan around a Sunday morning in November. If you are flying in to watch, Friday noon at LaGuardia is also when the sign-making table is quietest.",
+  },
 ];
