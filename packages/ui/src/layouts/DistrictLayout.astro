@@ -16,6 +16,11 @@ interface Props {
   description: string;
   siteName: string;
   titleSuffix: string;
+  /** The site's head keyword, forwarded to BaseLayout so that a title
+      which already says "Azizi Riviera" is not given " — Azizi Riviera
+      Guide" on top: see `withSuffix` in ../title.ts. Until 24 October
+      2026 it stopped here, and every district page carried the suffix. */
+  keyword?: string;
   complianceNote: string;
   partnerDisclosure?: boolean;
   /** Forwarded to BaseLayout: turns on the RSS autodiscovery link. */
@@ -35,7 +40,7 @@ interface Props {
 }
 
 const {
-  title, description, siteName, titleSuffix, complianceNote,
+  title, description, siteName, titleSuffix, keyword, complianceNote,
   partnerDisclosure = true, jsonLd, feedTitle,
   eyebrow, h1, lede, ledeWidth, image, imageAlt, imageKind,
   prose,
@@ -59,6 +64,7 @@ const nav = [
   prose={prose}
   title={title}
   titleSuffix={titleSuffix}
+  keyword={keyword}
   description={description}
   siteName={siteName}
   homeTitle={`Living in ${siteName}: coffee, food, pools, rent`}
