@@ -704,6 +704,9 @@ describe("where a guide's links lead", () => {
     const baht = "The 5-Day Full Pass costs THB 12,900 and the Weekend Pass THB 11,500.";
     assert.ok(at(wen, wf, baht).includes('<span class="nowrap">THB 12,900</span>'));
     assert.ok(at(wen, wf, "Daily breakfast for the whole stay: THB 1,700 a guest.").includes('<span class="nowrap">THB 1,700 a</span>'));
+    // A shared three-bed tent stranded its "bed" at 320 px (copy.ts,
+    // EN_TOKENS); the critic's round 1 found the token unpinned.
+    assert.ok(at(wen, wf, "A shared three-bed tent.").includes('<span class="nowrap">three-bed</span>'));
     assert.equal(at(btv, btvEvent, baht), baht);
     // The bonus scale's items keep the word with its figure (QA round 1).
     const scale = "CLP 50,000 loaded: CLP 5,000 bonus";
@@ -732,6 +735,24 @@ describe("where a guide's links lead", () => {
     assert.equal(copy.headingHtml("Banco de Chile: 20% off and instalments, for its cardholders", "en"), 'Banco de Chile: <span class="nowrap">20% off</span> and instalments, for its cardholders');
     assert.equal(copy.headingHtml("Monday 28 December", "en-AU"), "Monday 28 December");
     assert.equal(copy.headingHtml("What the tables showed on 24 October 2026", "en"), 'What the tables showed on 24 <span class="nowrap">October 2026</span>');
+  });
+
+  // A heading's longest unbreakable run (copy.ts, longestRun), which holds
+  // an h1 over 11 characters to its column (theme.css, .long-run): a
+  // no-break space joins ("Programmation\u00a0:" is one run, where a split
+  // on \s made it two: QA and the critic, round 1, 24 October 2026), a dash
+  // breaks unless a word joiner follows it, and Thai and CJK letters break
+  // as spaces do, so only the Latin words of such a heading count.
+  test("a heading's run joins at a no-break space, breaks at a free dash, and counts no Thai or CJK", () => {
+    assert.equal(copy.longestRun("Programmation Igloofest 2027"), 13);
+    assert.equal(copy.longestRun("Wonderfruit 2026 accommodation and travel"), 13);
+    assert.equal(copy.longestRun("Programmation\u00a0: la soirée"), 15);
+    assert.equal(copy.longestRun("Billets\u202f: 49\u2007$"), 9);
+    assert.equal(copy.longestRun("The three $99.90 tickets: 18–25s, MobTix"), 8);
+    assert.equal(copy.longestRun("21–\u206024 octobre"), 7);
+    assert.equal(copy.longestRun("Wonderfruit 2026 ที่พักและการเดินทาง"), 11);
+    assert.equal(copy.longestRun("Wonderfruit 2026 音樂節指南"), 11);
+    assert.equal(copy.longestRun("ワンダーフルーツ はじめての"), 0);
   });
 
   // A struck price prints its strike and its word, in the language of its
@@ -804,6 +825,30 @@ describe("the built pages", { skip: built ? false : "apps/fest/dist is missing: 
   test("the hub and every guide page, and no other content page", () => {
     const expected = ["/", ...guides.flatMap((g) => g.pages.map((p) => `/${p.slug}/`)), ...LEGACY].sort();
     assert.deepEqual(content.map(([p]) => p).sort(), expected);
+  });
+
+  // An h1 whose longest run is over 11 characters carries .long-run and
+  // its run, and theme.css holds it to that run on a phone, never below
+  // --step-2, hyphenated below it (the fest director's ruling at QA, 24
+  // October 2026). These are the pages that carry it: a third is a title
+  // edit that changed a page's h1 size, and must be seen. No h2 carries it
+  // yet: the h2s' hyphenation moves eight pages and is a card of its own.
+  test("exactly two h1s carry long-run, each with its own run, and no h2 does", () => {
+    const raw = (s) => s.replace(/<[^>]+>/g, "").replace(/&nbsp;/g, "\u00a0").replace(/&quot;/g, '"').replace(/&#39;|&#x27;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&");
+    const h1s = {}, h2s = [], missed = [];
+    for (const [p, h] of content) {
+      for (const m of h.matchAll(/<h1\b([^>]*)>([\s\S]*?)<\/h1>/g)) {
+        const run = copy.longestRun(raw(m[2]));
+        if (/\bclass="[^"]*\blong-run\b/.test(m[1])) {
+          h1s[p] = Number(m[1].match(/style="--h1-run: (\d+)"/)?.[1]);
+          assert.equal(h1s[p], run, `${p}: --h1-run is not the h1's run`);
+        } else if (run > 11 && h.includes('<article class="container guide">')) missed.push(`${p}: ${run}`);
+      }
+      for (const m of h.matchAll(/<h2\b([^>]*)>/g)) if (/\blong-run\b/.test(m[1])) h2s.push(p);
+    }
+    assert.deepEqual(h1s, { "/igloofest/programmation/": 13, "/wonderfruit/en/stay/": 13 });
+    assert.deepEqual(missed, []);
+    assert.deepEqual(h2s, []);
   });
 
   // The hub is the root since 23 Oct 2026, and /festivals/, where it was

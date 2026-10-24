@@ -519,6 +519,18 @@ const HEADING_KEEP_BY: Record<string, RegExp> = { es: HEADING_KEEP_ES, pt: HEADI
 const HEADING_GLUE_FR = new RegExp(`(?<=\\d|\\der) (?=${MOIS}(?!\\p{L})|${FR_NOUN}(?!\\p{L}))`, "gu");
 const HEADING_GLUE: Record<string, (span: string) => string> = { fr: (m) => m.replace(HEADING_GLUE_FR, "\u00a0") };
 const ASTRO_ESCAPES: Record<string, string> = { "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" };
+// A heading's longest run that cannot break, in characters: GuidePage.astro
+// holds an h1 whose run is over 11 to what the run needs, and lets the
+// browser hyphenate it (theme.css, .long-run). A line breaks at a space, a
+// tab or a newline, and after a hyphen, a dash or a slash unless a word
+// joiner follows it; a no-break space (U+00A0, U+202F, U+2007) joins, as
+// the glue means it to, so "Programmation\u00a0:" is one run of 15 (QA and
+// the critic, round 1, 24 October 2026: the first count split on \s and
+// made it 13). Thai and the CJK scripts break between their words without
+// a space, so their letters count as breaks: such a heading is held only
+// by the Latin words in it. The word joiner has no width and no count.
+const HEADING_BREAKS = /[ \t\n\u200b\u00ad\u0E00-\u0E7F\u3040-\u30FF\p{Script=Han}]+|[-\u2010\u2013\u2014/](?!\u2060)/u;
+export const longestRun = (text: string) => Math.max(0, ...text.split(HEADING_BREAKS).map((run) => [...run.replace(/\u2060/g, "")].length));
 export const headingHtml = (text: string, lang = "en") => {
   const set = text.replace(/[&<>'"]/g, (c) => ASTRO_ESCAPES[c]).replace(HEADING_KEEP, (m) => `<span class="nowrap">${m}</span>`);
   const html = lang.toLowerCase() === "en" ? set.replace(HEADING_KEEP_EN, (m) => `<span class="nowrap">${m}</span>`) : set;

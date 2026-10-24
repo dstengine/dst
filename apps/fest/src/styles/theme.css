@@ -169,6 +169,24 @@ html h1 {
   font-size: var(--h1-size);
   overflow-wrap: break-word;
 }
+/* A guide's h1 whose longest unbreakable run is over 11 characters
+   (GuidePage.astro, copy.ts longestRun) carries .long-run and the run as
+   --h1-run: on a phone it is held to what that run needs, the column
+   (100vw less the phone gutter, tokens.css .container) over 1.08 em a
+   character, Syne 800's widest measured being 1.03 ("accommodation").
+   Never below a section heading's size, --step-2: an h1 smaller than its
+   own h2s inverts the page (the critic, round 1, 24 October 2026). Below
+   that floor the browser hyphenates by the page's lang, and a drawn hyphen
+   is a clean break where a mid-word split with no hyphen was the fault
+   (the fest director's ruling at QA). From about 490 px the token is the
+   smaller and wins. -webkit- for iOS Safari before 17. */
+html h1.long-run {
+  font-size: clamp(var(--step-2), calc((100vw - 2 * var(--space-2)) / (var(--h1-run) * 1.08)), var(--h1-size));
+}
+.long-run {
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
 h2 { overflow-wrap: break-word; }
 /* A date in a Spanish heading (copy.ts, headingHtml): one unit wherever the
    column holds it, wrapping inside itself where it cannot, so never wider
