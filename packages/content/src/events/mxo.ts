@@ -275,7 +275,7 @@ export const items: EventItem[] = [
   {
     slug: "fiestas-de-octubre-2026",
     createdAt: "2026-09-08T16:29:32+04:00",
-    updatedAt: "2026-09-08T16:34:13+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
     site: "mxo",
     image: "/covers/fiestas-de-octubre-2026.jpg",
     imageAlt: "Una rueda de la fortuna naranja y crema, de líneas planas, sobre un fondo verde oscuro",
@@ -306,6 +306,14 @@ export const items: EventItem[] = [
       "El <strong>Foro Principal</strong> presenta conciertos <strong>incluidos en la entrada general</strong>. El <strong>Palenque</strong> se vende por separado; entre los nombres confirmados están <strong>Alejandro Fernández</strong>, <strong>Grupo Firme</strong>, <strong>Banda MS</strong>, <strong>María José</strong>, <strong>Kany García</strong>, <strong>Jorge Medina</strong> y <strong>Josi Cuen</strong>.",
       "## Lo demás",
       "Juegos mecánicos, áreas gastronómicas y entretenimiento familiar. La venta de boletos <strong>inició el 27 de julio</strong> a través de mipase.net y de puntos físicos autorizados en la ciudad.",
+    ],
+    related: [
+      {
+        href: "/eventos/scream-park-guadalajara-2026/",
+        eyebrow: "Hasta el 15 de noviembre",
+        title: "Scream Park Guadalajara",
+        text: "Siete experiencias de terror en la colonia Americana de Guadalajara, desde $550.",
+      },
     ],
     expertise:
       "La diferencia entre los dos escenarios es la que decide el presupuesto de la visita y casi nadie la explica al comprar: el Foro Principal entra con el boleto general, así que un cartel de nombres grandes puede salir por el precio de la entrada, mientras que el Palenque es un boleto aparte por función. Para quien viaja desde fuera de Jalisco, la lectura práctica es que un mes de feria significa que casi cualquier fin de semana de octubre sirve, y que los caros son los dos primeros y el último: entre semana, a mitad de mes, el mismo recinto se recorre sin fila.",
@@ -793,7 +801,7 @@ export const items: EventItem[] = [
   {
     slug: "parque-de-las-calabazas-monterrey-2026",
     createdAt: "2026-10-12T00:36:00+04:00",
-    updatedAt: "2026-10-12T00:36:00+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
     site: "mxo",
     image: "/covers/parque-de-las-calabazas-monterrey-2026.jpg",
     imageAlt: "Un campo de calabazas naranjas sobre fondo verde, con una casa de techo puntiagudo, dos ruedas de la fortuna y chimeneas industriales en el horizonte",
@@ -859,6 +867,12 @@ export const items: EventItem[] = [
         eyebrow: "Cintermex",
         title: "FIL Monterrey 2026",
         text: "La feria del libro del norte de México en Cintermex, dentro de Fundidora, con entrada gratuita y El Colegio Nacional como Invitado de Honor.",
+      },
+      {
+        href: "/eventos/scream-park-guadalajara-2026/",
+        eyebrow: "Hasta el 15 de noviembre",
+        title: "Scream Park Guadalajara",
+        text: "Siete experiencias de terror en la colonia Americana de Guadalajara, desde $550.",
       },
     ],
     expertise:
@@ -1080,5 +1094,89 @@ export const items: EventItem[] = [
         a: "La plataforma de industria del festival que apoya proyectos mexicanos en desarrollo y posproducción.",
       },
     ],
+  },
+  {
+    slug: "scream-park-guadalajara-2026",
+    createdAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-24T19:00:00+04:00",
+    site: "mxo",
+    image: "/covers/scream-park-guadalajara-2026.jpg",
+    imageAlt: "Una mansión con torreón detrás de un maizal rojo, una carpa de circo a rayas a su lado, niebla y una luna llena",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Scream Park 2026 en Guadalajara",
+    cardTitle: "Scream Park Guadalajara",
+    titleSeo: "Scream Park 2026 Guadalajara, México: fechas y boletos",
+    summary:
+      "El parque de sustos de Guadalajara, en el occidente de México, vuelve en 2026 a la Mansión Clover Lawn, en la colonia Americana: siete experiencias, de un granero y un maizal a una mansión y un carnaval de payasos, más un show en vivo. Boletos desde $550 en Boletia, con noches a la venta del 24 de octubre al 15 de noviembre.",
+    start: "2026-10-24",
+    end: "2026-11-15",
+    startTime: "19:00",
+    utcOffset: "-06:00",
+    venue: "Mansión Clover Lawn, Avenida de la Paz, colonia Americana",
+    city: "Guadalajara",
+    country: "México",
+    geo: { name: "Mansión Clover Lawn, Avenida de la Paz, Guadalajara", lat: 20.67037, lng: -103.36038 },
+    organizer: "Scream Park",
+    category: "Festivales",
+    tickets: { priceFrom: 550, currency: "MXN" },
+    ticket: { url: "https://boletia.com/billboards/scream-park", label: "Boletos desde $550" },
+    source: {
+      name: "Boletia: Scream Park",
+      url: "https://boletia.com/billboards/scream-park",
+      verifiedOn: "2026-10-24",
+    },
+    body: [
+      "«Este 2026, Scream Park regresa a Guadalajara»: el parque de sustos vuelve a la <strong>Mansión Clover Lawn</strong>, sobre Avenida de la Paz en la colonia Americana, con <strong>siete experiencias</strong> y un show en vivo.",
+      "## Las siete experiencias",
+      "<strong>Sinners</strong>, en un granero; <strong>Field of Screams</strong>, en un maizal; <strong>The Mansion</strong>; <strong>CarnEvil</strong>; <strong>Clowns of Madness</strong>; <strong>The Witch's Eye</strong>, que es el bar; y <strong>Whispers from the Veil</strong>. Además, un show en vivo.",
+      "## Boletos",
+      "Hay tres tipos de boleto: <strong>General</strong>, <strong>General + Fast Pass</strong> y <strong>R.I.P. Experience</strong>. Los precios van <strong>desde $550</strong> en Boletia, y las noches empiezan a las <strong>19:00</strong>.",
+      "## Noches a la venta",
+      "El 24 de octubre, el calendario de Boletia tiene a la venta todas las noches del <strong>24 al 31 de octubre</strong> y las del <strong>1, 5, 6, 7, 8, 13, 14 y 15 de noviembre</strong>. Las fechas anteriores de octubre ya pasaron.",
+      "## En Guadalajara, la misma temporada",
+      "Las <a href=\"/eventos/fiestas-de-octubre-2026/\" title=\"Fiestas de Octubre 2026\">Fiestas de Octubre</a> siguen en Zapopan hasta el 1 de noviembre, y el 28 de noviembre abre la <a href=\"/eventos/fil-guadalajara-2026/\" title=\"FIL Guadalajara 2026\">FIL Guadalajara</a>, que cumple 40 ediciones.",
+    ],
+    faq: [
+      {
+        q: "¿Dónde es Scream Park 2026?",
+        a: "En la Mansión Clover Lawn, sobre Avenida de la Paz, en la colonia Americana de Guadalajara.",
+      },
+      {
+        q: "¿Cuánto cuestan los boletos de Scream Park?",
+        a: "Desde $550 en Boletia. Hay boleto General, General + Fast Pass y R.I.P. Experience.",
+      },
+      {
+        q: "¿Qué días abre Scream Park?",
+        a: "El 24 de octubre, Boletia tenía a la venta todas las noches del 24 al 31 de octubre y las del 1, 5, 6, 7, 8, 13, 14 y 15 de noviembre, a partir de las 19:00.",
+      },
+      {
+        q: "¿Qué experiencias tiene?",
+        a: "Siete: Sinners, Field of Screams, The Mansion, CarnEvil, Clowns of Madness, The Witch's Eye (el bar) y Whispers from the Veil, además de un show en vivo.",
+      },
+    ],
+    related: [
+      {
+        href: "/eventos/fiestas-de-octubre-2026/",
+        eyebrow: "Hasta el 1 de noviembre",
+        title: "Fiestas de Octubre 2026",
+        text: "Un mes de feria en Zapopan, con conciertos incluidos en la entrada general.",
+      },
+      {
+        href: "/eventos/parque-de-las-calabazas-monterrey-2026/",
+        eyebrow: "Hasta el 8 de noviembre",
+        title: "Parque de las Calabazas en Monterrey",
+        text: "El Halloween del norte, en Parque Fundidora, desde $100.",
+      },
+      {
+        href: "/eventos/fil-guadalajara-2026/",
+        eyebrow: "Del 28 de noviembre al 6 de diciembre",
+        title: "FIL Guadalajara 2026",
+        text: "Cuarenta ediciones de la feria del libro, con Italia como invitada.",
+      },
+    ],
+    expertise:
+      "El Fast Pass es la decisión que importa: siete experiencias en una sola noche son muchas filas, y las noches de fin de semana cerca del 31 serán las más llenas. Si las fechas lo permiten, las de noviembre, ya pasado Halloween, son la apuesta tranquila. La colonia Americana es zona de bares y restaurantes, así que conviene llegar en taxi o aplicación y no buscar estacionamiento sobre Avenida de la Paz un sábado por la noche.",
   },
 ];
