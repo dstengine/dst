@@ -978,6 +978,38 @@
         ]
       ]
     },
+    "/covers/grok-imagine-video-1-5-lite-two-cents-a-second.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/grok-imagine-video-1-5-lite-two-cents-a-second-480.avif"
+        ],
+        [
+          768,
+          "/covers/grok-imagine-video-1-5-lite-two-cents-a-second-768.avif"
+        ],
+        [
+          1024,
+          "/covers/grok-imagine-video-1-5-lite-two-cents-a-second-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/grok-imagine-video-1-5-lite-two-cents-a-second-480.webp"
+        ],
+        [
+          768,
+          "/covers/grok-imagine-video-1-5-lite-two-cents-a-second-768.webp"
+        ],
+        [
+          1024,
+          "/covers/grok-imagine-video-1-5-lite-two-cents-a-second-1024.webp"
+        ]
+      ]
+    },
     "/covers/grok-imagine-video-1-5-references-text-to-video.jpg": {
       "width": 1536,
       "height": 864,
@@ -1023,6 +1055,38 @@
         [
           1536,
           "/covers/grok-imagine-video-1-5-references-text-to-video-1536.webp"
+        ]
+      ]
+    },
+    "/covers/helix-world-preview-a-world-model-you-can-walk-through.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/helix-world-preview-a-world-model-you-can-walk-through-480.avif"
+        ],
+        [
+          768,
+          "/covers/helix-world-preview-a-world-model-you-can-walk-through-768.avif"
+        ],
+        [
+          1024,
+          "/covers/helix-world-preview-a-world-model-you-can-walk-through-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/helix-world-preview-a-world-model-you-can-walk-through-480.webp"
+        ],
+        [
+          768,
+          "/covers/helix-world-preview-a-world-model-you-can-walk-through-768.webp"
+        ],
+        [
+          1024,
+          "/covers/helix-world-preview-a-world-model-you-can-walk-through-1024.webp"
         ]
       ]
     },
@@ -1410,6 +1474,38 @@
         ]
       ]
     },
+    "/covers/reka-rho-1-one-model-that-writes-draws-and-films.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/reka-rho-1-one-model-that-writes-draws-and-films-480.avif"
+        ],
+        [
+          768,
+          "/covers/reka-rho-1-one-model-that-writes-draws-and-films-768.avif"
+        ],
+        [
+          1024,
+          "/covers/reka-rho-1-one-model-that-writes-draws-and-films-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/reka-rho-1-one-model-that-writes-draws-and-films-480.webp"
+        ],
+        [
+          768,
+          "/covers/reka-rho-1-one-model-that-writes-draws-and-films-768.webp"
+        ],
+        [
+          1024,
+          "/covers/reka-rho-1-one-model-that-writes-draws-and-films-1024.webp"
+        ]
+      ]
+    },
     "/covers/sora-api-alternatives-video-apis-still-open.jpg": {
       "width": 1536,
       "height": 864,
@@ -1506,6 +1602,38 @@
         ]
       ]
     },
+    "/covers/tavus-griffin-lite-video-model-that-talks-back.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/tavus-griffin-lite-video-model-that-talks-back-480.avif"
+        ],
+        [
+          768,
+          "/covers/tavus-griffin-lite-video-model-that-talks-back-768.avif"
+        ],
+        [
+          1024,
+          "/covers/tavus-griffin-lite-video-model-that-talks-back-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/tavus-griffin-lite-video-model-that-talks-back-480.webp"
+        ],
+        [
+          768,
+          "/covers/tavus-griffin-lite-video-model-that-talks-back-768.webp"
+        ],
+        [
+          1024,
+          "/covers/tavus-griffin-lite-video-model-that-talks-back-1024.webp"
+        ]
+      ]
+    },
     "/covers/vidu-q4-preview-voice-references-4k.jpg": {
       "width": 1024,
       "height": 1024,
@@ -1535,6 +1663,38 @@
         [
           1024,
           "/covers/vidu-q4-preview-voice-references-4k-1024.webp"
+        ]
+      ]
+    },
+    "/covers/what-real-time-means-in-ai-video.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/what-real-time-means-in-ai-video-480.avif"
+        ],
+        [
+          768,
+          "/covers/what-real-time-means-in-ai-video-768.avif"
+        ],
+        [
+          1024,
+          "/covers/what-real-time-means-in-ai-video-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/what-real-time-means-in-ai-video-480.webp"
+        ],
+        [
+          768,
+          "/covers/what-real-time-means-in-ai-video-768.webp"
+        ],
+        [
+          1024,
+          "/covers/what-real-time-means-in-ai-video-1024.webp"
         ]
       ]
     }
@@ -1732,6 +1892,38 @@
         ]
       ]
     },
+    "/covers/camino-a-la-luz-reforma-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/camino-a-la-luz-reforma-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/camino-a-la-luz-reforma-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/camino-a-la-luz-reforma-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/camino-a-la-luz-reforma-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/camino-a-la-luz-reforma-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/camino-a-la-luz-reforma-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/campo-de-xolos-festival-del-xoloitzcuintle-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -1825,6 +2017,38 @@
         [
           1536,
           "/covers/casa-del-lago-unam-sustentable-1536.webp"
+        ]
+      ]
+    },
+    "/covers/coca-cola-flow-fest-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/coca-cola-flow-fest-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/coca-cola-flow-fest-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/coca-cola-flow-fest-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/coca-cola-flow-fest-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/coca-cola-flow-fest-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/coca-cola-flow-fest-2026-1024.webp"
         ]
       ]
     },
@@ -2209,6 +2433,38 @@
         [
           1536,
           "/covers/el-metro-cumple-57-y-lo-festeja-con-cumbia-1536.webp"
+        ]
+      ]
+    },
+    "/covers/feria-de-las-calacas-cenart-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/feria-de-las-calacas-cenart-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/feria-de-las-calacas-cenart-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/feria-de-las-calacas-cenart-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/feria-de-las-calacas-cenart-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/feria-de-las-calacas-cenart-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/feria-de-las-calacas-cenart-2026-1024.webp"
         ]
       ]
     },
@@ -2852,6 +3108,38 @@
         ]
       ]
     },
+    "/covers/megaofrenda-unam-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/megaofrenda-unam-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/megaofrenda-unam-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/megaofrenda-unam-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/megaofrenda-unam-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/megaofrenda-unam-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/megaofrenda-unam-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/metrobus-cierres-por-mantenimiento.jpg": {
       "width": 1536,
       "height": 864,
@@ -3393,6 +3681,38 @@
         [
           1536,
           "/covers/venecia-2026-dos-leones-antes-del-jurado-1536.webp"
+        ]
+      ]
+    },
+    "/covers/vitae-fest-zocalo-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/vitae-fest-zocalo-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/vitae-fest-zocalo-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/vitae-fest-zocalo-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/vitae-fest-zocalo-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/vitae-fest-zocalo-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/vitae-fest-zocalo-2026-1024.webp"
         ]
       ]
     },
@@ -3966,6 +4286,70 @@
         ]
       ]
     },
+    "/covers/dubai-design-week-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/dubai-design-week-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/dubai-design-week-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dubai-design-week-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dubai-design-week-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/dubai-design-week-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dubai-design-week-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/dubai-fitness-challenge-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/dubai-fitness-challenge-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/dubai-fitness-challenge-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dubai-fitness-challenge-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dubai-fitness-challenge-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/dubai-fitness-challenge-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dubai-fitness-challenge-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/dubai-property-opened-2100-jobs-to-emiratis.jpg": {
       "width": 1536,
       "height": 864,
@@ -4355,6 +4739,38 @@
         [
           1536,
           "/covers/gitex-moves-to-expo-city-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/global-village-season-31-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/global-village-season-31-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/global-village-season-31-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/global-village-season-31-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/global-village-season-31-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/global-village-season-31-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/global-village-season-31-2026-1024.webp"
         ]
       ]
     },
@@ -5030,6 +5446,38 @@
         ]
       ]
     },
+    "/covers/noor-festival-of-lights-al-seef-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/noor-festival-of-lights-al-seef-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/noor-festival-of-lights-al-seef-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/noor-festival-of-lights-al-seef-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/noor-festival-of-lights-al-seef-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/noor-festival-of-lights-al-seef-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/noor-festival-of-lights-al-seef-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/openai-ships-gpt-6-astra.jpg": {
       "width": 1536,
       "height": 864,
@@ -5654,6 +6102,38 @@
         ]
       ]
     },
+    "/covers/trevor-noah-dubai-opera-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/trevor-noah-dubai-opera-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/trevor-noah-dubai-opera-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/trevor-noah-dubai-opera-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/trevor-noah-dubai-opera-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/trevor-noah-dubai-opera-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/trevor-noah-dubai-opera-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/uae-fuel-prices-september-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -6208,6 +6688,38 @@
         ]
       ]
     },
+    "/covers/abu-dhabi-sustainability-week-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/abu-dhabi-sustainability-week-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/abu-dhabi-sustainability-week-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/abu-dhabi-sustainability-week-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/abu-dhabi-sustainability-week-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/abu-dhabi-sustainability-week-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/abu-dhabi-sustainability-week-2027-1024.webp"
+        ]
+      ]
+    },
     "/covers/adipec-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -6253,6 +6765,38 @@
         [
           1536,
           "/covers/adipec-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/cop31-antalya-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/cop31-antalya-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/cop31-antalya-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/cop31-antalya-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/cop31-antalya-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/cop31-antalya-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/cop31-antalya-2026-1024.webp"
         ]
       ]
     },
@@ -6349,6 +6893,38 @@
         [
           1536,
           "/covers/dubai-holds-its-first-environment-conference-this-week-1536.webp"
+        ]
+      ]
+    },
+    "/covers/ev-world-2026-dubai.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/ev-world-2026-dubai-480.avif"
+        ],
+        [
+          768,
+          "/covers/ev-world-2026-dubai-768.avif"
+        ],
+        [
+          1024,
+          "/covers/ev-world-2026-dubai-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/ev-world-2026-dubai-480.webp"
+        ],
+        [
+          768,
+          "/covers/ev-world-2026-dubai-768.webp"
+        ],
+        [
+          1024,
+          "/covers/ev-world-2026-dubai-1024.webp"
         ]
       ]
     },
@@ -6688,6 +7264,38 @@
         ]
       ]
     },
+    "/covers/world-future-energy-summit-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/world-future-energy-summit-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/world-future-energy-summit-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/world-future-energy-summit-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/world-future-energy-summit-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/world-future-energy-summit-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/world-future-energy-summit-2027-1024.webp"
+        ]
+      ]
+    },
     "/covers/world-green-economy-summit-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -6733,6 +7341,38 @@
         [
           1536,
           "/covers/world-green-economy-summit-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/zayed-sustainability-prize-awards-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/zayed-sustainability-prize-awards-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/zayed-sustainability-prize-awards-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/zayed-sustainability-prize-awards-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/zayed-sustainability-prize-awards-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/zayed-sustainability-prize-awards-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/zayed-sustainability-prize-awards-2027-1024.webp"
         ]
       ]
     },
@@ -8732,6 +9372,38 @@
         ]
       ]
     },
+    "/covers/ai-everything-abu-dhabi-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/ai-everything-abu-dhabi-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/ai-everything-abu-dhabi-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/ai-everything-abu-dhabi-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/ai-everything-abu-dhabi-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/ai-everything-abu-dhabi-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/ai-everything-abu-dhabi-2027-1024.webp"
+        ]
+      ]
+    },
     "/covers/an-agent-that-can-drive-a-microscope.jpg": {
       "width": 1536,
       "height": 864,
@@ -9260,6 +9932,38 @@
         ]
       ]
     },
+    "/covers/five-student-teams-four-days-and-mistral-the-rtas-traffic-challenge.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/five-student-teams-four-days-and-mistral-the-rtas-traffic-challenge-480.avif"
+        ],
+        [
+          768,
+          "/covers/five-student-teams-four-days-and-mistral-the-rtas-traffic-challenge-768.avif"
+        ],
+        [
+          1024,
+          "/covers/five-student-teams-four-days-and-mistral-the-rtas-traffic-challenge-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/five-student-teams-four-days-and-mistral-the-rtas-traffic-challenge-480.webp"
+        ],
+        [
+          768,
+          "/covers/five-student-teams-four-days-and-mistral-the-rtas-traffic-challenge-768.webp"
+        ],
+        [
+          1024,
+          "/covers/five-student-teams-four-days-and-mistral-the-rtas-traffic-challenge-1024.webp"
+        ]
+      ]
+    },
     "/covers/four-million-driverless-kilometres-and-a-satisfaction-score.jpg": {
       "width": 1536,
       "height": 864,
@@ -9401,6 +10105,38 @@
         [
           1536,
           "/covers/gitex-global-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/glydways-pods-on-trial-at-bluewaters.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/glydways-pods-on-trial-at-bluewaters-480.avif"
+        ],
+        [
+          768,
+          "/covers/glydways-pods-on-trial-at-bluewaters-768.avif"
+        ],
+        [
+          1024,
+          "/covers/glydways-pods-on-trial-at-bluewaters-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/glydways-pods-on-trial-at-bluewaters-480.webp"
+        ],
+        [
+          768,
+          "/covers/glydways-pods-on-trial-at-bluewaters-768.webp"
+        ],
+        [
+          1024,
+          "/covers/glydways-pods-on-trial-at-bluewaters-1024.webp"
         ]
       ]
     },
@@ -9644,6 +10380,38 @@
         ]
       ]
     },
+    "/covers/step-dubai-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/step-dubai-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/step-dubai-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/step-dubai-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/step-dubai-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/step-dubai-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/step-dubai-2027-1024.webp"
+        ]
+      ]
+    },
     "/covers/the-train-reaches-dubai-on-30-september.jpg": {
       "width": 1536,
       "height": 864,
@@ -9836,6 +10604,38 @@
         ]
       ]
     },
+    "/covers/web-summit-qatar-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/web-summit-qatar-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/web-summit-qatar-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/web-summit-qatar-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/web-summit-qatar-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/web-summit-qatar-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/web-summit-qatar-2027-1024.webp"
+        ]
+      ]
+    },
     "/fwf-hero.jpg": {
       "width": 1380,
       "height": 602,
@@ -10014,6 +10814,38 @@
         ]
       ]
     },
+    "/covers/gala-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/gala-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/gala-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/gala-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/gala-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/gala-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/gala-2027-1024.webp"
+        ]
+      ]
+    },
     "/covers/london-big-dates-2027-so-far.jpg": {
       "width": 1024,
       "height": 1024,
@@ -10078,6 +10910,38 @@
         ]
       ]
     },
+    "/covers/meltdown-2027-fka-twigs.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/meltdown-2027-fka-twigs-480.avif"
+        ],
+        [
+          768,
+          "/covers/meltdown-2027-fka-twigs-768.avif"
+        ],
+        [
+          1024,
+          "/covers/meltdown-2027-fka-twigs-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/meltdown-2027-fka-twigs-480.webp"
+        ],
+        [
+          768,
+          "/covers/meltdown-2027-fka-twigs-768.webp"
+        ],
+        [
+          1024,
+          "/covers/meltdown-2027-fka-twigs-1024.webp"
+        ]
+      ]
+    },
     "/covers/new-years-eve-fireworks-london-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -10107,6 +10971,102 @@
         [
           1024,
           "/covers/new-years-eve-fireworks-london-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/philip-glass-at-90-southbank-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/philip-glass-at-90-southbank-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/philip-glass-at-90-southbank-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/philip-glass-at-90-southbank-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/philip-glass-at-90-southbank-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/philip-glass-at-90-southbank-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/philip-glass-at-90-southbank-2027-1024.webp"
+        ]
+      ]
+    },
+    "/covers/serendipity-arts-festival-london-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/serendipity-arts-festival-london-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/serendipity-arts-festival-london-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/serendipity-arts-festival-london-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/serendipity-arts-festival-london-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/serendipity-arts-festival-london-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/serendipity-arts-festival-london-2027-1024.webp"
+        ]
+      ]
+    },
+    "/covers/wimbledon-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/wimbledon-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/wimbledon-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/wimbledon-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/wimbledon-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/wimbledon-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/wimbledon-2027-1024.webp"
         ]
       ]
     }
@@ -10528,6 +11488,70 @@
         ]
       ]
     },
+    "/covers/cirque-alice-royal-festival-hall-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/cirque-alice-royal-festival-hall-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/cirque-alice-royal-festival-hall-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/cirque-alice-royal-festival-hall-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/cirque-alice-royal-festival-hall-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/cirque-alice-royal-festival-hall-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/cirque-alice-royal-festival-hall-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/covent-garden-christmas-lights-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/covent-garden-christmas-lights-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/covent-garden-christmas-lights-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/covent-garden-christmas-lights-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/covent-garden-christmas-lights-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/covent-garden-christmas-lights-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/covent-garden-christmas-lights-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/diwali-on-the-square-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -10629,6 +11653,70 @@
         [
           3072,
           "/covers/eagles-jaguars-tottenham-nfl-london-2026-3072.webp"
+        ]
+      ]
+    },
+    "/covers/fka-twigs-curates-meltdown-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/fka-twigs-curates-meltdown-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/fka-twigs-curates-meltdown-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/fka-twigs-curates-meltdown-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/fka-twigs-curates-meltdown-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/fka-twigs-curates-meltdown-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/fka-twigs-curates-meltdown-2027-1024.webp"
+        ]
+      ]
+    },
+    "/covers/freddie-mercury-splendid-things-va-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/freddie-mercury-splendid-things-va-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/freddie-mercury-splendid-things-va-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/freddie-mercury-splendid-things-va-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/freddie-mercury-splendid-things-va-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/freddie-mercury-splendid-things-va-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/freddie-mercury-splendid-things-va-2026-1024.webp"
         ]
       ]
     },
@@ -11269,6 +12357,38 @@
         [
           1536,
           "/covers/london-fashion-week-september-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/london-literature-festival-dua-lipa-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/london-literature-festival-dua-lipa-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/london-literature-festival-dua-lipa-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/london-literature-festival-dua-lipa-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/london-literature-festival-dua-lipa-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/london-literature-festival-dua-lipa-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/london-literature-festival-dua-lipa-2026-1024.webp"
         ]
       ]
     },
@@ -12402,6 +13522,38 @@
     }
   },
   "llc.dst.llc": {
+    "/covers/abu-dhabi-will-host-the-imf-and-world-bank-meetings-in-2029.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/abu-dhabi-will-host-the-imf-and-world-bank-meetings-in-2029-480.avif"
+        ],
+        [
+          768,
+          "/covers/abu-dhabi-will-host-the-imf-and-world-bank-meetings-in-2029-768.avif"
+        ],
+        [
+          1024,
+          "/covers/abu-dhabi-will-host-the-imf-and-world-bank-meetings-in-2029-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/abu-dhabi-will-host-the-imf-and-world-bank-meetings-in-2029-480.webp"
+        ],
+        [
+          768,
+          "/covers/abu-dhabi-will-host-the-imf-and-world-bank-meetings-in-2029-768.webp"
+        ],
+        [
+          1024,
+          "/covers/abu-dhabi-will-host-the-imf-and-world-bank-meetings-in-2029-1024.webp"
+        ]
+      ]
+    },
     "/covers/apple-published-its-succession-134-days-early.jpg": {
       "width": 1536,
       "height": 864,
@@ -12594,6 +13746,70 @@
         ]
       ]
     },
+    "/covers/e-invoicing-providers-are-accredited-under-a-new-decision.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/e-invoicing-providers-are-accredited-under-a-new-decision-480.avif"
+        ],
+        [
+          768,
+          "/covers/e-invoicing-providers-are-accredited-under-a-new-decision-768.avif"
+        ],
+        [
+          1024,
+          "/covers/e-invoicing-providers-are-accredited-under-a-new-decision-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/e-invoicing-providers-are-accredited-under-a-new-decision-480.webp"
+        ],
+        [
+          768,
+          "/covers/e-invoicing-providers-are-accredited-under-a-new-decision-768.webp"
+        ],
+        [
+          1024,
+          "/covers/e-invoicing-providers-are-accredited-under-a-new-decision-1024.webp"
+        ]
+      ]
+    },
+    "/covers/e-invoicing-tax-groups-get-two-years-and-the-storage-rule-goes.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/e-invoicing-tax-groups-get-two-years-and-the-storage-rule-goes-480.avif"
+        ],
+        [
+          768,
+          "/covers/e-invoicing-tax-groups-get-two-years-and-the-storage-rule-goes-768.avif"
+        ],
+        [
+          1024,
+          "/covers/e-invoicing-tax-groups-get-two-years-and-the-storage-rule-goes-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/e-invoicing-tax-groups-get-two-years-and-the-storage-rule-goes-480.webp"
+        ],
+        [
+          768,
+          "/covers/e-invoicing-tax-groups-get-two-years-and-the-storage-rule-goes-768.webp"
+        ],
+        [
+          1024,
+          "/covers/e-invoicing-tax-groups-get-two-years-and-the-storage-rule-goes-1024.webp"
+        ]
+      ]
+    },
     "/covers/exempt-from-the-tax-still-means-a-filing-on-30-september.jpg": {
       "width": 1536,
       "height": 864,
@@ -12639,6 +13855,38 @@
         [
           1536,
           "/covers/exempt-from-the-tax-still-means-a-filing-on-30-september-1536.webp"
+        ]
+      ]
+    },
+    "/covers/federal-budget-2027-is-90-billion-dirhams.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/federal-budget-2027-is-90-billion-dirhams-480.avif"
+        ],
+        [
+          768,
+          "/covers/federal-budget-2027-is-90-billion-dirhams-768.avif"
+        ],
+        [
+          1024,
+          "/covers/federal-budget-2027-is-90-billion-dirhams-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/federal-budget-2027-is-90-billion-dirhams-480.webp"
+        ],
+        [
+          768,
+          "/covers/federal-budget-2027-is-90-billion-dirhams-768.webp"
+        ],
+        [
+          1024,
+          "/covers/federal-budget-2027-is-90-billion-dirhams-1024.webp"
         ]
       ]
     },
@@ -13119,6 +14367,38 @@
         [
           1536,
           "/covers/the-global-minimum-tax-grows-a-side-door-1536.webp"
+        ]
+      ]
+    },
+    "/covers/the-top-up-tax-guide-says-who-registers.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/the-top-up-tax-guide-says-who-registers-480.avif"
+        ],
+        [
+          768,
+          "/covers/the-top-up-tax-guide-says-who-registers-768.avif"
+        ],
+        [
+          1024,
+          "/covers/the-top-up-tax-guide-says-who-registers-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/the-top-up-tax-guide-says-who-registers-480.webp"
+        ],
+        [
+          768,
+          "/covers/the-top-up-tax-guide-says-who-registers-768.webp"
+        ],
+        [
+          1024,
+          "/covers/the-top-up-tax-guide-says-who-registers-1024.webp"
         ]
       ]
     },
@@ -14004,6 +15284,38 @@
         ]
       ]
     },
+    "/covers/gala-festival-peckham-rye-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/gala-festival-peckham-rye-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/gala-festival-peckham-rye-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/gala-festival-peckham-rye-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/gala-festival-peckham-rye-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/gala-festival-peckham-rye-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/gala-festival-peckham-rye-2027-1024.webp"
+        ]
+      ]
+    },
     "/covers/giant-summer-flea-olympic-park.jpg": {
       "width": 1536,
       "height": 864,
@@ -14177,6 +15489,38 @@
         [
           1024,
           "/covers/halloween-royal-observatory-greenwich-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/hampton-court-palace-ice-rink-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/hampton-court-palace-ice-rink-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/hampton-court-palace-ice-rink-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/hampton-court-palace-ice-rink-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/hampton-court-palace-ice-rink-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/hampton-court-palace-ice-rink-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/hampton-court-palace-ice-rink-2026-1024.webp"
         ]
       ]
     },
@@ -14812,6 +16156,70 @@
         ]
       ]
     },
+    "/covers/queens-house-ice-rink-greenwich-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/queens-house-ice-rink-greenwich-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/queens-house-ice-rink-greenwich-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/queens-house-ice-rink-greenwich-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/queens-house-ice-rink-greenwich-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/queens-house-ice-rink-greenwich-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/queens-house-ice-rink-greenwich-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/santas-winter-garden-fulham-palace-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/santas-winter-garden-fulham-palace-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/santas-winter-garden-fulham-palace-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/santas-winter-garden-fulham-palace-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/santas-winter-garden-fulham-palace-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/santas-winter-garden-fulham-palace-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/santas-winter-garden-fulham-palace-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/ski-sunday-surbiton-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -15180,6 +16588,38 @@
         ]
       ]
     },
+    "/covers/theos-pizza-opens-on-rye-lane-peckham.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/theos-pizza-opens-on-rye-lane-peckham-480.avif"
+        ],
+        [
+          768,
+          "/covers/theos-pizza-opens-on-rye-lane-peckham-768.avif"
+        ],
+        [
+          1024,
+          "/covers/theos-pizza-opens-on-rye-lane-peckham-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/theos-pizza-opens-on-rye-lane-peckham-480.webp"
+        ],
+        [
+          768,
+          "/covers/theos-pizza-opens-on-rye-lane-peckham-768.webp"
+        ],
+        [
+          1024,
+          "/covers/theos-pizza-opens-on-rye-lane-peckham-1024.webp"
+        ]
+      ]
+    },
     "/covers/totally-thames-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -15422,6 +16862,38 @@
     }
   },
   "mbr.dst.llc": {
+    "/covers/al-asayel-and-al-mustaqbal-limits-rise-on-1-november.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/al-asayel-and-al-mustaqbal-limits-rise-on-1-november-480.avif"
+        ],
+        [
+          768,
+          "/covers/al-asayel-and-al-mustaqbal-limits-rise-on-1-november-768.avif"
+        ],
+        [
+          1024,
+          "/covers/al-asayel-and-al-mustaqbal-limits-rise-on-1-november-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/al-asayel-and-al-mustaqbal-limits-rise-on-1-november-480.webp"
+        ],
+        [
+          768,
+          "/covers/al-asayel-and-al-mustaqbal-limits-rise-on-1-november-768.webp"
+        ],
+        [
+          1024,
+          "/covers/al-asayel-and-al-mustaqbal-limits-rise-on-1-november-1024.webp"
+        ]
+      ]
+    },
     "/covers/al-meydan-street-gets-a-billion-dirham-rebuild.jpg": {
       "width": 1536,
       "height": 864,
@@ -15515,6 +16987,38 @@
         [
           1536,
           "/covers/coffee-1536.webp"
+        ]
+      ]
+    },
+    "/covers/dh2-1-trillion-of-projects-are-under-way-in-dubai.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/dh2-1-trillion-of-projects-are-under-way-in-dubai-480.avif"
+        ],
+        [
+          768,
+          "/covers/dh2-1-trillion-of-projects-are-under-way-in-dubai-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dh2-1-trillion-of-projects-are-under-way-in-dubai-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dh2-1-trillion-of-projects-are-under-way-in-dubai-480.webp"
+        ],
+        [
+          768,
+          "/covers/dh2-1-trillion-of-projects-are-under-way-in-dubai-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dh2-1-trillion-of-projects-are-under-way-in-dubai-1024.webp"
         ]
       ]
     },
@@ -15662,6 +17166,38 @@
         ]
       ]
     },
+    "/covers/dubai-shopping-festival-2026-27.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/dubai-shopping-festival-2026-27-480.avif"
+        ],
+        [
+          768,
+          "/covers/dubai-shopping-festival-2026-27-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dubai-shopping-festival-2026-27-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dubai-shopping-festival-2026-27-480.webp"
+        ],
+        [
+          768,
+          "/covers/dubai-shopping-festival-2026-27-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dubai-shopping-festival-2026-27-1024.webp"
+        ]
+      ]
+    },
     "/covers/dubai-world-cup-2027.jpg": {
       "width": 1536,
       "height": 864,
@@ -15710,6 +17246,38 @@
         ]
       ]
     },
+    "/covers/ev-world-2026-dubai.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/ev-world-2026-dubai-480.avif"
+        ],
+        [
+          768,
+          "/covers/ev-world-2026-dubai-768.avif"
+        ],
+        [
+          1024,
+          "/covers/ev-world-2026-dubai-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/ev-world-2026-dubai-480.webp"
+        ],
+        [
+          768,
+          "/covers/ev-world-2026-dubai-768.webp"
+        ],
+        [
+          1024,
+          "/covers/ev-world-2026-dubai-1024.webp"
+        ]
+      ]
+    },
     "/covers/food.jpg": {
       "width": 1536,
       "height": 864,
@@ -15755,6 +17323,38 @@
         [
           1536,
           "/covers/food-1536.webp"
+        ]
+      ]
+    },
+    "/covers/glydways-pods-are-on-trial-and-mbr-city-is-on-the-route-list.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/glydways-pods-are-on-trial-and-mbr-city-is-on-the-route-list-480.avif"
+        ],
+        [
+          768,
+          "/covers/glydways-pods-are-on-trial-and-mbr-city-is-on-the-route-list-768.avif"
+        ],
+        [
+          1024,
+          "/covers/glydways-pods-are-on-trial-and-mbr-city-is-on-the-route-list-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/glydways-pods-are-on-trial-and-mbr-city-is-on-the-route-list-480.webp"
+        ],
+        [
+          768,
+          "/covers/glydways-pods-are-on-trial-and-mbr-city-is-on-the-route-list-768.webp"
+        ],
+        [
+          1024,
+          "/covers/glydways-pods-are-on-trial-and-mbr-city-is-on-the-route-list-1024.webp"
         ]
       ]
     },
@@ -18992,6 +20592,38 @@
         ]
       ]
     },
+    "/covers/galileo-opens-on-broadway-in-december-with-three-scientists-producing.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/galileo-opens-on-broadway-in-december-with-three-scientists-producing-480.avif"
+        ],
+        [
+          768,
+          "/covers/galileo-opens-on-broadway-in-december-with-three-scientists-producing-768.avif"
+        ],
+        [
+          1024,
+          "/covers/galileo-opens-on-broadway-in-december-with-three-scientists-producing-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/galileo-opens-on-broadway-in-december-with-three-scientists-producing-480.webp"
+        ],
+        [
+          768,
+          "/covers/galileo-opens-on-broadway-in-december-with-three-scientists-producing-768.webp"
+        ],
+        [
+          1024,
+          "/covers/galileo-opens-on-broadway-in-december-with-three-scientists-producing-1024.webp"
+        ]
+      ]
+    },
     "/covers/galileo-tickets.jpg": {
       "width": 1536,
       "height": 864,
@@ -19312,6 +20944,38 @@
         ]
       ]
     },
+    "/covers/lloyd-webbers-mona-lisa-musical-opens-in-london-next-autumn.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/lloyd-webbers-mona-lisa-musical-opens-in-london-next-autumn-480.avif"
+        ],
+        [
+          768,
+          "/covers/lloyd-webbers-mona-lisa-musical-opens-in-london-next-autumn-768.avif"
+        ],
+        [
+          1024,
+          "/covers/lloyd-webbers-mona-lisa-musical-opens-in-london-next-autumn-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/lloyd-webbers-mona-lisa-musical-opens-in-london-next-autumn-480.webp"
+        ],
+        [
+          768,
+          "/covers/lloyd-webbers-mona-lisa-musical-opens-in-london-next-autumn-768.webp"
+        ],
+        [
+          1024,
+          "/covers/lloyd-webbers-mona-lisa-musical-opens-in-london-next-autumn-1024.webp"
+        ]
+      ]
+    },
     "/covers/lost-boys-about.jpg": {
       "width": 1536,
       "height": 864,
@@ -19501,6 +21165,38 @@
         [
           1024,
           "/covers/one-day-about-1024.webp"
+        ]
+      ]
+    },
+    "/covers/one-day-the-musical-opens-at-the-garrick-in-november.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/one-day-the-musical-opens-at-the-garrick-in-november-480.avif"
+        ],
+        [
+          768,
+          "/covers/one-day-the-musical-opens-at-the-garrick-in-november-768.avif"
+        ],
+        [
+          1024,
+          "/covers/one-day-the-musical-opens-at-the-garrick-in-november-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/one-day-the-musical-opens-at-the-garrick-in-november-480.webp"
+        ],
+        [
+          768,
+          "/covers/one-day-the-musical-opens-at-the-garrick-in-november-768.webp"
+        ],
+        [
+          1024,
+          "/covers/one-day-the-musical-opens-at-the-garrick-in-november-1024.webp"
         ]
       ]
     },
@@ -19981,6 +21677,70 @@
         [
           1536,
           "/covers/rent-turns-thirty-in-a-renamed-theatre-1536.webp"
+        ]
+      ]
+    },
+    "/covers/schmigadoon-keeps-jennifer-simard-to-november-and-books-to-april.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/schmigadoon-keeps-jennifer-simard-to-november-and-books-to-april-480.avif"
+        ],
+        [
+          768,
+          "/covers/schmigadoon-keeps-jennifer-simard-to-november-and-books-to-april-768.avif"
+        ],
+        [
+          1024,
+          "/covers/schmigadoon-keeps-jennifer-simard-to-november-and-books-to-april-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/schmigadoon-keeps-jennifer-simard-to-november-and-books-to-april-480.webp"
+        ],
+        [
+          768,
+          "/covers/schmigadoon-keeps-jennifer-simard-to-november-and-books-to-april-768.webp"
+        ],
+        [
+          1024,
+          "/covers/schmigadoon-keeps-jennifer-simard-to-november-and-books-to-april-1024.webp"
+        ]
+      ]
+    },
+    "/covers/the-notebook-opens-the-judi-dench-theatre-in-april-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/the-notebook-opens-the-judi-dench-theatre-in-april-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/the-notebook-opens-the-judi-dench-theatre-in-april-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/the-notebook-opens-the-judi-dench-theatre-in-april-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/the-notebook-opens-the-judi-dench-theatre-in-april-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/the-notebook-opens-the-judi-dench-theatre-in-april-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/the-notebook-opens-the-judi-dench-theatre-in-april-2027-1024.webp"
         ]
       ]
     },
@@ -22490,6 +24250,38 @@
         ]
       ]
     },
+    "/covers/el-whitney-cuenta-25-anos-de-arte-en-internet.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/el-whitney-cuenta-25-anos-de-arte-en-internet-480.avif"
+        ],
+        [
+          768,
+          "/covers/el-whitney-cuenta-25-anos-de-arte-en-internet-768.avif"
+        ],
+        [
+          1024,
+          "/covers/el-whitney-cuenta-25-anos-de-arte-en-internet-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/el-whitney-cuenta-25-anos-de-arte-en-internet-480.webp"
+        ],
+        [
+          768,
+          "/covers/el-whitney-cuenta-25-anos-de-arte-en-internet-768.webp"
+        ],
+        [
+          1024,
+          "/covers/el-whitney-cuenta-25-anos-de-arte-en-internet-1024.webp"
+        ]
+      ]
+    },
     "/covers/feria-del-chile-mole-y-pozole-atlacomulco-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -22535,6 +24327,38 @@
         [
           1536,
           "/covers/feria-del-chile-mole-y-pozole-atlacomulco-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/feria-yucatan-xmatkuil-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/feria-yucatan-xmatkuil-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/feria-yucatan-xmatkuil-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/feria-yucatan-xmatkuil-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/feria-yucatan-xmatkuil-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/feria-yucatan-xmatkuil-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/feria-yucatan-xmatkuil-2026-1024.webp"
         ]
       ]
     },
@@ -22775,6 +24599,70 @@
         [
           1536,
           "/covers/festival-internacional-del-globo-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/ficc-los-cabos-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/ficc-los-cabos-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/ficc-los-cabos-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/ficc-los-cabos-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/ficc-los-cabos-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/ficc-los-cabos-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/ficc-los-cabos-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/ficm-2026-ganadores-6-meses-en-el-edificio-rosa-con-azul.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/ficm-2026-ganadores-6-meses-en-el-edificio-rosa-con-azul-480.avif"
+        ],
+        [
+          768,
+          "/covers/ficm-2026-ganadores-6-meses-en-el-edificio-rosa-con-azul-768.avif"
+        ],
+        [
+          1024,
+          "/covers/ficm-2026-ganadores-6-meses-en-el-edificio-rosa-con-azul-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/ficm-2026-ganadores-6-meses-en-el-edificio-rosa-con-azul-480.webp"
+        ],
+        [
+          768,
+          "/covers/ficm-2026-ganadores-6-meses-en-el-edificio-rosa-con-azul-768.webp"
+        ],
+        [
+          1024,
+          "/covers/ficm-2026-ganadores-6-meses-en-el-edificio-rosa-con-azul-1024.webp"
         ]
       ]
     },
@@ -23303,6 +25191,38 @@
         [
           1536,
           "/covers/la-feria-de-francisco-i-madero-abre-el-11-de-septiembre-1536.webp"
+        ]
+      ]
+    },
+    "/covers/mariposa-monarca-temporada-2026-2027-cuando-abren-los-santuarios.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/mariposa-monarca-temporada-2026-2027-cuando-abren-los-santuarios-480.avif"
+        ],
+        [
+          768,
+          "/covers/mariposa-monarca-temporada-2026-2027-cuando-abren-los-santuarios-768.avif"
+        ],
+        [
+          1024,
+          "/covers/mariposa-monarca-temporada-2026-2027-cuando-abren-los-santuarios-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/mariposa-monarca-temporada-2026-2027-cuando-abren-los-santuarios-480.webp"
+        ],
+        [
+          768,
+          "/covers/mariposa-monarca-temporada-2026-2027-cuando-abren-los-santuarios-768.webp"
+        ],
+        [
+          1024,
+          "/covers/mariposa-monarca-temporada-2026-2027-cuando-abren-los-santuarios-1024.webp"
         ]
       ]
     },
@@ -24137,6 +26057,38 @@
         [
           1536,
           "/covers/about-1536.webp"
+        ]
+      ]
+    },
+    "/covers/abt-spring-season-koch-theater-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/abt-spring-season-koch-theater-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/abt-spring-season-koch-theater-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/abt-spring-season-koch-theater-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/abt-spring-season-koch-theater-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/abt-spring-season-koch-theater-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/abt-spring-season-koch-theater-2027-1024.webp"
         ]
       ]
     },
@@ -25353,6 +27305,38 @@
         [
           1024,
           "/covers/coney-island-polar-bear-plunge-2027-1024.webp"
+        ]
+      ]
+    },
+    "/covers/delta-marathon-week-perks-jfk-laguardia.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/delta-marathon-week-perks-jfk-laguardia-480.avif"
+        ],
+        [
+          768,
+          "/covers/delta-marathon-week-perks-jfk-laguardia-768.avif"
+        ],
+        [
+          1024,
+          "/covers/delta-marathon-week-perks-jfk-laguardia-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/delta-marathon-week-perks-jfk-laguardia-480.webp"
+        ],
+        [
+          768,
+          "/covers/delta-marathon-week-perks-jfk-laguardia-768.webp"
+        ],
+        [
+          1024,
+          "/covers/delta-marathon-week-perks-jfk-laguardia-1024.webp"
         ]
       ]
     },
@@ -26604,6 +28588,38 @@
         ]
       ]
     },
+    "/covers/paranormal-activity-free-outdoor-screening-broadway-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/paranormal-activity-free-outdoor-screening-broadway-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/paranormal-activity-free-outdoor-screening-broadway-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/paranormal-activity-free-outdoor-screening-broadway-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/paranormal-activity-free-outdoor-screening-broadway-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/paranormal-activity-free-outdoor-screening-broadway-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/paranormal-activity-free-outdoor-screening-broadway-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/park-slope-halloween-parade-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -27387,9 +29403,201 @@
           "/covers/village-halloween-parade-2026-1536.webp"
         ]
       ]
+    },
+    "/covers/whitney-artport-history-of-internet-art-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/whitney-artport-history-of-internet-art-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/whitney-artport-history-of-internet-art-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/whitney-artport-history-of-internet-art-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/whitney-artport-history-of-internet-art-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/whitney-artport-history-of-internet-art-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/whitney-artport-history-of-internet-art-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/wicked-gluten-free-expo-meadowlands-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/wicked-gluten-free-expo-meadowlands-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/wicked-gluten-free-expo-meadowlands-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/wicked-gluten-free-expo-meadowlands-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/wicked-gluten-free-expo-meadowlands-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/wicked-gluten-free-expo-meadowlands-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/wicked-gluten-free-expo-meadowlands-2026-1024.webp"
+        ]
+      ]
     }
   },
   "palmcentral.dst.llc": {
+    "/covers/350000-homes-by-2030-is-the-number-the-palm-will-be-priced-against.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/350000-homes-by-2030-is-the-number-the-palm-will-be-priced-against-480.avif"
+        ],
+        [
+          768,
+          "/covers/350000-homes-by-2030-is-the-number-the-palm-will-be-priced-against-768.avif"
+        ],
+        [
+          1024,
+          "/covers/350000-homes-by-2030-is-the-number-the-palm-will-be-priced-against-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/350000-homes-by-2030-is-the-number-the-palm-will-be-priced-against-480.webp"
+        ],
+        [
+          768,
+          "/covers/350000-homes-by-2030-is-the-number-the-palm-will-be-priced-against-768.webp"
+        ],
+        [
+          1024,
+          "/covers/350000-homes-by-2030-is-the-number-the-palm-will-be-priced-against-1024.webp"
+        ]
+      ]
+    },
+    "/covers/a-mortgage-at-fifty-per-cent-paid-on-palm-jebel-ali.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/a-mortgage-at-fifty-per-cent-paid-on-palm-jebel-ali-480.avif"
+        ],
+        [
+          768,
+          "/covers/a-mortgage-at-fifty-per-cent-paid-on-palm-jebel-ali-768.avif"
+        ],
+        [
+          1024,
+          "/covers/a-mortgage-at-fifty-per-cent-paid-on-palm-jebel-ali-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/a-mortgage-at-fifty-per-cent-paid-on-palm-jebel-ali-480.webp"
+        ],
+        [
+          768,
+          "/covers/a-mortgage-at-fifty-per-cent-paid-on-palm-jebel-ali-768.webp"
+        ],
+        [
+          1024,
+          "/covers/a-mortgage-at-fifty-per-cent-paid-on-palm-jebel-ali-1024.webp"
+        ]
+      ]
+    },
+    "/covers/bay-estate-is-nakheels-new-gated-community-on-dubai-islands.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/bay-estate-is-nakheels-new-gated-community-on-dubai-islands-480.avif"
+        ],
+        [
+          768,
+          "/covers/bay-estate-is-nakheels-new-gated-community-on-dubai-islands-768.avif"
+        ],
+        [
+          1024,
+          "/covers/bay-estate-is-nakheels-new-gated-community-on-dubai-islands-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/bay-estate-is-nakheels-new-gated-community-on-dubai-islands-480.webp"
+        ],
+        [
+          768,
+          "/covers/bay-estate-is-nakheels-new-gated-community-on-dubai-islands-768.webp"
+        ],
+        [
+          1024,
+          "/covers/bay-estate-is-nakheels-new-gated-community-on-dubai-islands-1024.webp"
+        ]
+      ]
+    },
+    "/covers/bay-grove-residences-gets-its-main-contractor.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/bay-grove-residences-gets-its-main-contractor-480.avif"
+        ],
+        [
+          768,
+          "/covers/bay-grove-residences-gets-its-main-contractor-768.avif"
+        ],
+        [
+          1024,
+          "/covers/bay-grove-residences-gets-its-main-contractor-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/bay-grove-residences-gets-its-main-contractor-480.webp"
+        ],
+        [
+          768,
+          "/covers/bay-grove-residences-gets-its-main-contractor-768.webp"
+        ],
+        [
+          1024,
+          "/covers/bay-grove-residences-gets-its-main-contractor-1024.webp"
+        ]
+      ]
+    },
     "/covers/international-property-show-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -27483,6 +29691,38 @@
         [
           1536,
           "/covers/jebel-ali-village-hands-over-892-homes-1536.webp"
+        ]
+      ]
+    },
+    "/covers/nakheel-rebuilds-three-kilometres-of-dubai-islands-shoreline.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/nakheel-rebuilds-three-kilometres-of-dubai-islands-shoreline-480.avif"
+        ],
+        [
+          768,
+          "/covers/nakheel-rebuilds-three-kilometres-of-dubai-islands-shoreline-768.avif"
+        ],
+        [
+          1024,
+          "/covers/nakheel-rebuilds-three-kilometres-of-dubai-islands-shoreline-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/nakheel-rebuilds-three-kilometres-of-dubai-islands-shoreline-480.webp"
+        ],
+        [
+          768,
+          "/covers/nakheel-rebuilds-three-kilometres-of-dubai-islands-shoreline-768.webp"
+        ],
+        [
+          1024,
+          "/covers/nakheel-rebuilds-three-kilometres-of-dubai-islands-shoreline-1024.webp"
         ]
       ]
     },
@@ -28016,6 +30256,38 @@
         ]
       ]
     },
+    "/covers/al-asayel-street-goes-to-80-from-1-november.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/al-asayel-street-goes-to-80-from-1-november-480.avif"
+        ],
+        [
+          768,
+          "/covers/al-asayel-street-goes-to-80-from-1-november-768.avif"
+        ],
+        [
+          1024,
+          "/covers/al-asayel-street-goes-to-80-from-1-november-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/al-asayel-street-goes-to-80-from-1-november-480.webp"
+        ],
+        [
+          768,
+          "/covers/al-asayel-street-goes-to-80-from-1-november-768.webp"
+        ],
+        [
+          1024,
+          "/covers/al-asayel-street-goes-to-80-from-1-november-1024.webp"
+        ]
+      ]
+    },
     "/covers/dubai-completed-104-projects-in-six-months.jpg": {
       "width": 1536,
       "height": 864,
@@ -28160,6 +30432,38 @@
         ]
       ]
     },
+    "/covers/dubai-marathon-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/dubai-marathon-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/dubai-marathon-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dubai-marathon-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dubai-marathon-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/dubai-marathon-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dubai-marathon-2027-1024.webp"
+        ]
+      ]
+    },
     "/covers/dubai-ride-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -28253,6 +30557,70 @@
         [
           1536,
           "/covers/dubai-run-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/dubai-shopping-festival-2026-27.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/dubai-shopping-festival-2026-27-480.avif"
+        ],
+        [
+          768,
+          "/covers/dubai-shopping-festival-2026-27-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dubai-shopping-festival-2026-27-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dubai-shopping-festival-2026-27-480.webp"
+        ],
+        [
+          768,
+          "/covers/dubai-shopping-festival-2026-27-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dubai-shopping-festival-2026-27-1024.webp"
+        ]
+      ]
+    },
+    "/covers/four-bus-routes-and-an-abra-to-global-village.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/four-bus-routes-and-an-abra-to-global-village-480.avif"
+        ],
+        [
+          768,
+          "/covers/four-bus-routes-and-an-abra-to-global-village-768.avif"
+        ],
+        [
+          1024,
+          "/covers/four-bus-routes-and-an-abra-to-global-village-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/four-bus-routes-and-an-abra-to-global-village-480.webp"
+        ],
+        [
+          768,
+          "/covers/four-bus-routes-and-an-abra-to-global-village-768.webp"
+        ],
+        [
+          1024,
+          "/covers/four-bus-routes-and-an-abra-to-global-village-1024.webp"
         ]
       ]
     },
@@ -28365,6 +30733,38 @@
         [
           1536,
           "/covers/meydan-racing-season-2026-27-1536.webp"
+        ]
+      ]
+    },
+    "/covers/noor-festival-of-lights-al-seef-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/noor-festival-of-lights-al-seef-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/noor-festival-of-lights-al-seef-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/noor-festival-of-lights-al-seef-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/noor-festival-of-lights-al-seef-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/noor-festival-of-lights-al-seef-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/noor-festival-of-lights-al-seef-2026-1024.webp"
         ]
       ]
     },
@@ -29130,6 +31530,38 @@
         ]
       ]
     },
+    "/covers/consensus-hong-kong-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/consensus-hong-kong-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/consensus-hong-kong-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/consensus-hong-kong-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/consensus-hong-kong-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/consensus-hong-kong-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/consensus-hong-kong-2027-1024.webp"
+        ]
+      ]
+    },
     "/covers/coworking-fridays-belgrade-september-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -29626,6 +32058,38 @@
         ]
       ]
     },
+    "/covers/geo-aware-leader-schedule-simd-0675.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/geo-aware-leader-schedule-simd-0675-480.avif"
+        ],
+        [
+          768,
+          "/covers/geo-aware-leader-schedule-simd-0675-768.avif"
+        ],
+        [
+          1024,
+          "/covers/geo-aware-leader-schedule-simd-0675-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/geo-aware-leader-schedule-simd-0675-480.webp"
+        ],
+        [
+          768,
+          "/covers/geo-aware-leader-schedule-simd-0675-768.webp"
+        ],
+        [
+          1024,
+          "/covers/geo-aware-leader-schedule-simd-0675-1024.webp"
+        ]
+      ]
+    },
     "/covers/islanddao-v5-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -29671,6 +32135,38 @@
         [
           1536,
           "/covers/islanddao-v5-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/labitconf-2026-buenos-aires.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/labitconf-2026-buenos-aires-480.avif"
+        ],
+        [
+          768,
+          "/covers/labitconf-2026-buenos-aires-768.avif"
+        ],
+        [
+          1024,
+          "/covers/labitconf-2026-buenos-aires-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/labitconf-2026-buenos-aires-480.webp"
+        ],
+        [
+          768,
+          "/covers/labitconf-2026-buenos-aires-768.webp"
+        ],
+        [
+          1024,
+          "/covers/labitconf-2026-buenos-aires-1024.webp"
         ]
       ]
     },
@@ -29914,6 +32410,38 @@
         ]
       ]
     },
+    "/covers/samsung-wallet-puts-usdc-on-solana-in-82-million-pockets.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/samsung-wallet-puts-usdc-on-solana-in-82-million-pockets-480.avif"
+        ],
+        [
+          768,
+          "/covers/samsung-wallet-puts-usdc-on-solana-in-82-million-pockets-768.avif"
+        ],
+        [
+          1024,
+          "/covers/samsung-wallet-puts-usdc-on-solana-in-82-million-pockets-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/samsung-wallet-puts-usdc-on-solana-in-82-million-pockets-480.webp"
+        ],
+        [
+          768,
+          "/covers/samsung-wallet-puts-usdc-on-solana-in-82-million-pockets-768.webp"
+        ],
+        [
+          1024,
+          "/covers/samsung-wallet-puts-usdc-on-solana-in-82-million-pockets-1024.webp"
+        ]
+      ]
+    },
     "/covers/scale-or-die-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -30087,6 +32615,38 @@
         [
           1024,
           "/covers/solana-demo-day-london-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/solana-dvp-is-an-open-source-settlement-program-for-banks.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/solana-dvp-is-an-open-source-settlement-program-for-banks-480.avif"
+        ],
+        [
+          768,
+          "/covers/solana-dvp-is-an-open-source-settlement-program-for-banks-768.avif"
+        ],
+        [
+          1024,
+          "/covers/solana-dvp-is-an-open-source-settlement-program-for-banks-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/solana-dvp-is-an-open-source-settlement-program-for-banks-480.webp"
+        ],
+        [
+          768,
+          "/covers/solana-dvp-is-an-open-source-settlement-program-for-banks-768.webp"
+        ],
+        [
+          1024,
+          "/covers/solana-dvp-is-an-open-source-settlement-program-for-banks-1024.webp"
         ]
       ]
     },
@@ -30988,6 +33548,38 @@
         ]
       ]
     },
+    "/covers/how-to-brew-ceylon-tea.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/how-to-brew-ceylon-tea-480.avif"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-ceylon-tea-768.avif"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-ceylon-tea-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/how-to-brew-ceylon-tea-480.webp"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-ceylon-tea-768.webp"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-ceylon-tea-1024.webp"
+        ]
+      ]
+    },
     "/covers/how-to-brew-darjeeling-tea.jpg": {
       "width": 1024,
       "height": 1024,
@@ -31052,6 +33644,38 @@
         ]
       ]
     },
+    "/covers/how-to-brew-genmaicha.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/how-to-brew-genmaicha-480.avif"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-genmaicha-768.avif"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-genmaicha-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/how-to-brew-genmaicha-480.webp"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-genmaicha-768.webp"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-genmaicha-1024.webp"
+        ]
+      ]
+    },
     "/covers/how-to-brew-georgian-green-tea.jpg": {
       "width": 1024,
       "height": 1024,
@@ -31113,6 +33737,70 @@
         [
           1024,
           "/covers/how-to-brew-green-tea-1024.webp"
+        ]
+      ]
+    },
+    "/covers/how-to-brew-gyokuro.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/how-to-brew-gyokuro-480.avif"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-gyokuro-768.avif"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-gyokuro-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/how-to-brew-gyokuro-480.webp"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-gyokuro-768.webp"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-gyokuro-1024.webp"
+        ]
+      ]
+    },
+    "/covers/how-to-brew-hojicha.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/how-to-brew-hojicha-480.avif"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-hojicha-768.avif"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-hojicha-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/how-to-brew-hojicha-480.webp"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-hojicha-768.webp"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-hojicha-1024.webp"
         ]
       ]
     },
@@ -31340,6 +34028,38 @@
         ]
       ]
     },
+    "/covers/how-to-make-masala-chai.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/how-to-make-masala-chai-480.avif"
+        ],
+        [
+          768,
+          "/covers/how-to-make-masala-chai-768.avif"
+        ],
+        [
+          1024,
+          "/covers/how-to-make-masala-chai-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/how-to-make-masala-chai-480.webp"
+        ],
+        [
+          768,
+          "/covers/how-to-make-masala-chai-768.webp"
+        ],
+        [
+          1024,
+          "/covers/how-to-make-masala-chai-1024.webp"
+        ]
+      ]
+    },
     "/covers/how-to-make-matcha.jpg": {
       "width": 1024,
       "height": 1024,
@@ -31419,6 +34139,38 @@
         [
           1536,
           "/covers/about-1536.webp"
+        ]
+      ]
+    },
+    "/covers/akhtamar-quartet-babajanyan-hall-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/akhtamar-quartet-babajanyan-hall-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/akhtamar-quartet-babajanyan-hall-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/akhtamar-quartet-babajanyan-hall-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/akhtamar-quartet-babajanyan-hall-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/akhtamar-quartet-babajanyan-hall-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/akhtamar-quartet-babajanyan-hall-yerevan-2026-1024.webp"
         ]
       ]
     },
@@ -35574,6 +38326,38 @@
         ]
       ]
     },
+    "/covers/three-sisters-ghaplanyan-theatre-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/three-sisters-ghaplanyan-theatre-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/three-sisters-ghaplanyan-theatre-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/three-sisters-ghaplanyan-theatre-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/three-sisters-ghaplanyan-theatre-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/three-sisters-ghaplanyan-theatre-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/three-sisters-ghaplanyan-theatre-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/tim-burton-mystery-ensemble-yerevan-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -36608,6 +39392,38 @@
         ]
       ]
     },
+    "/covers/art-advent-karlsplatz-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/art-advent-karlsplatz-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/art-advent-karlsplatz-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/art-advent-karlsplatz-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/art-advent-karlsplatz-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/art-advent-karlsplatz-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/art-advent-karlsplatz-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/cosmic-horrors-planetarium-wien-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -36717,6 +39533,102 @@
         [
           1536,
           "/covers/der-teppich-von-bayeux-hat-frankreich-verlassen-1536.webp"
+        ]
+      ]
+    },
+    "/covers/down-syndrom-ueber-uns-mit-uns-wien-museum-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/down-syndrom-ueber-uns-mit-uns-wien-museum-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/down-syndrom-ueber-uns-mit-uns-wien-museum-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/down-syndrom-ueber-uns-mit-uns-wien-museum-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/down-syndrom-ueber-uns-mit-uns-wien-museum-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/down-syndrom-ueber-uns-mit-uns-wien-museum-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/down-syndrom-ueber-uns-mit-uns-wien-museum-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/farbenspiel-mode-wien-museum-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/farbenspiel-mode-wien-museum-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/farbenspiel-mode-wien-museum-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/farbenspiel-mode-wien-museum-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/farbenspiel-mode-wien-museum-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/farbenspiel-mode-wien-museum-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/farbenspiel-mode-wien-museum-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/franz-west-albertina-modern-wien-museum-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/franz-west-albertina-modern-wien-museum-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/franz-west-albertina-modern-wien-museum-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/franz-west-albertina-modern-wien-museum-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/franz-west-albertina-modern-wien-museum-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/franz-west-albertina-modern-wien-museum-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/franz-west-albertina-modern-wien-museum-2026-1024.webp"
         ]
       ]
     },
@@ -37456,6 +40368,38 @@
         ]
       ]
     },
+    "/covers/weihnachtsmarkt-schloss-schoenbrunn-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/weihnachtsmarkt-schloss-schoenbrunn-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/weihnachtsmarkt-schloss-schoenbrunn-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/weihnachtsmarkt-schloss-schoenbrunn-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/weihnachtsmarkt-schloss-schoenbrunn-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/weihnachtsmarkt-schloss-schoenbrunn-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/weihnachtsmarkt-schloss-schoenbrunn-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/wien-ist-2026-zweitlebenswerteste-stadt-der-welt.jpg": {
       "width": 1536,
       "height": 864,
@@ -37922,6 +40866,38 @@
         ]
       ]
     },
+    "/covers/dubai-golden-visas-for-private-school-teachers-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/dubai-golden-visas-for-private-school-teachers-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/dubai-golden-visas-for-private-school-teachers-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dubai-golden-visas-for-private-school-teachers-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dubai-golden-visas-for-private-school-teachers-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/dubai-golden-visas-for-private-school-teachers-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dubai-golden-visas-for-private-school-teachers-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/dubai-issued-66078-golden-visas-in-six-months.jpg": {
       "width": 1536,
       "height": 864,
@@ -38018,6 +40994,38 @@
         ]
       ]
     },
+    "/covers/dubais-five-year-tourist-visa-what-it-costs.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/dubais-five-year-tourist-visa-what-it-costs-480.avif"
+        ],
+        [
+          768,
+          "/covers/dubais-five-year-tourist-visa-what-it-costs-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dubais-five-year-tourist-visa-what-it-costs-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dubais-five-year-tourist-visa-what-it-costs-480.webp"
+        ],
+        [
+          768,
+          "/covers/dubais-five-year-tourist-visa-what-it-costs-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dubais-five-year-tourist-visa-what-it-costs-1024.webp"
+        ]
+      ]
+    },
     "/covers/entry-visa-opens-to-six-more-nationalities.jpg": {
       "width": 1536,
       "height": 864,
@@ -38063,6 +41071,38 @@
         [
           1536,
           "/covers/entry-visa-opens-to-six-more-nationalities-1536.webp"
+        ]
+      ]
+    },
+    "/covers/europes-entry-exit-system-is-fully-live.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/europes-entry-exit-system-is-fully-live-480.avif"
+        ],
+        [
+          768,
+          "/covers/europes-entry-exit-system-is-fully-live-768.avif"
+        ],
+        [
+          1024,
+          "/covers/europes-entry-exit-system-is-fully-live-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/europes-entry-exit-system-is-fully-live-480.webp"
+        ],
+        [
+          768,
+          "/covers/europes-entry-exit-system-is-fully-live-768.webp"
+        ],
+        [
+          1024,
+          "/covers/europes-entry-exit-system-is-fully-live-1024.webp"
         ]
       ]
     },
@@ -38351,6 +41391,70 @@
         [
           1536,
           "/covers/properties-1536.webp"
+        ]
+      ]
+    },
+    "/covers/the-uk-eta-costs-20-pounds-now.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/the-uk-eta-costs-20-pounds-now-480.avif"
+        ],
+        [
+          768,
+          "/covers/the-uk-eta-costs-20-pounds-now-768.avif"
+        ],
+        [
+          1024,
+          "/covers/the-uk-eta-costs-20-pounds-now-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/the-uk-eta-costs-20-pounds-now-480.webp"
+        ],
+        [
+          768,
+          "/covers/the-uk-eta-costs-20-pounds-now-768.webp"
+        ],
+        [
+          1024,
+          "/covers/the-uk-eta-costs-20-pounds-now-1024.webp"
+        ]
+      ]
+    },
+    "/covers/visa-on-arrival-for-residents-abroad-what-it-costs-at-the-airport.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/visa-on-arrival-for-residents-abroad-what-it-costs-at-the-airport-480.avif"
+        ],
+        [
+          768,
+          "/covers/visa-on-arrival-for-residents-abroad-what-it-costs-at-the-airport-768.avif"
+        ],
+        [
+          1024,
+          "/covers/visa-on-arrival-for-residents-abroad-what-it-costs-at-the-airport-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/visa-on-arrival-for-residents-abroad-what-it-costs-at-the-airport-480.webp"
+        ],
+        [
+          768,
+          "/covers/visa-on-arrival-for-residents-abroad-what-it-costs-at-the-airport-768.webp"
+        ],
+        [
+          1024,
+          "/covers/visa-on-arrival-for-residents-abroad-what-it-costs-at-the-airport-1024.webp"
         ]
       ]
     },
