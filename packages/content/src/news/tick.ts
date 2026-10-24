@@ -101,13 +101,13 @@ export const items: NewsItem[] = [
   {
     slug: "discover-armenia-from-the-sky-balloon-festival-2026",
     createdAt: "2026-10-09T10:00:00+04:00",
-    updatedAt: "2026-10-10T06:20:00+04:00",
+    updatedAt: "2026-10-24T19:01:00+04:00",
     site: "tick",
     date: "2026-10-09",
     until: "2026-10-11",
-    title: "Փուչիկների միջազգային փառատոնը Երևանում շարունակվում է մինչև հոկտեմբերի 11-ը",
+    title: "Օդապարիկների փառատոնը Երևանում 2026՝ հոկտեմբերի 6–11",
     cardTitle: "Երևանի երկնքում՝ 20 օդապարիկ",
-    titleSeo: "Օդապարիկների փառատոնը Երևանում՝ մինչև հոկտեմբերի 11-ը",
+    titleSeo: "Օդապարիկների փառատոն 2026 Երևանում՝ հոկտեմբերի 6–11",
     summary:
       "«Բացահայտիր Հայաստանը երկնքից» փառատոնի ութերորդ թողարկումը հոկտեմբերի 6–11-ն է․ Visit Yerevan-ը Երևանի թռիչքները նշում է առավոտյան ժամը 08:00-ին։",
     image: "/covers/discover-armenia-balloon-festival-2026.jpg",
@@ -137,9 +137,9 @@ export const items: NewsItem[] = [
     i18n: {
       en: {
         imageAlt: "Discover Armenia from the Sky festival poster with colourful balloons flying over Mount Ararat",
-        title: "Yerevan's balloon festival runs until 11 October",
+        title: "Yerevan's balloon festival 2026: 6–11 October",
         cardTitle: "Twenty balloons over Yerevan",
-        titleSeo: "Yerevan balloon festival runs until 11 October",
+        titleSeo: "Yerevan balloon festival 2026: 6–11 October",
         summary:
           "The eighth Discover Armenia from the Sky festival runs from 6 to 11 October; Visit Yerevan lists its city flights at 08:00.",
         category: "Festivals",
