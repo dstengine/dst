@@ -422,7 +422,7 @@ export const items: EventItem[] = [
   {
     slug: "spooktacular-al-barari-2026",
     createdAt: "2026-10-24T19:00:00+04:00",
-    updatedAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-25T01:30:00+04:00",
     site: "eco",
     image: "/covers/spooktacular-al-barari-2026.jpg",
     imageAlt: "A cut-paper garden of palms and ferns around a still pond, pumpkins along a wooden boardwalk and a small play tower among the trees",
@@ -442,7 +442,7 @@ export const items: EventItem[] = [
     venue: "Al Barari Playground",
     city: "Dubai",
     country: "United Arab Emirates",
-    geo: { name: "Al Barari", lat: 25.10828, lng: 55.31877 },
+    geo: { name: "Al Barari Playground", lat: 25.0997, lng: 55.3179 },
     organizer: "Al Barari",
     category: "Halloween",
     tickets: { priceFrom: 169, currency: "AED" },
