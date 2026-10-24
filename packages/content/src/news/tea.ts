@@ -1149,4 +1149,59 @@ export const items: NewsItem[] = [
       },
     ],
   },
+
+  {
+    slug: "how-to-brew-jasmine-tea",
+    createdAt: "2026-10-25T02:30:00+04:00",
+    updatedAt: "2026-10-25T02:30:00+04:00",
+    site: "tea",
+    image: "/covers/how-to-brew-jasmine-tea.jpg",
+    imageAlt: "A painting of a glass cup of pale gold jasmine tea with green tea pearls floating in it, on a saucer, white jasmine blossoms on the table and a brass teapot behind",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "How to brew jasmine tea",
+    titleSeo: "How to brew jasmine tea: pearls at 85°C, 2–3 minutes",
+    summary:
+      "Jasmine tea is green tea scented with jasmine flowers, and it brews like a green tea: water at 85°C, two teaspoons of leaf to 240 ml, two to three minutes, then again. The Tao of Tea's Jasmine Pearls, hand-rolled spring buds from Hunan, give two or three good infusions.",
+    date: "2026-10-25",
+    category: "Guide",
+    tags: ["Green tea"],
+    source: {
+      name: "The Tao of Tea, Jasmine Pearls",
+      url: "https://taooftea.com/product/jasmine-pearls/",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "Jasmine tea is not a blend of tea and petals. It is a <strong>green tea scented with jasmine flowers</strong>, the leaf left to take up the perfume and the flowers then taken away, so what reaches the cup is green tea that smells of jasmine. Brew it as a green tea and it is sweet; brew it like a black tea and it is bitter perfume.",
+      "## The tea used here",
+      "<strong>Jasmine Pearls</strong> from The Tao of Tea, from <strong>Hunan</strong>. Only newly sprouted <strong>spring leaves</strong> are used: the top bud and a long stem, the lower leaves discarded. The buds are withered in bamboo trays and each one is <strong>rolled by hand</strong> into a pearl between thumb and forefinger, at least <strong>2,000 pearls to a pound</strong>. The rolled pearls are then heat-infused with jasmine flowers <strong>several times</strong>; the higher grades <strong>at least five</strong>.",
+      "## What you need",
+      "<strong>2 teaspoons</strong> of pearls for <strong>8 oz</strong>, about <strong>240 ml</strong>, of water, and a way to get the water to <strong>85°C</strong> (185°F). A glass cup or a small pot lets you watch the pearls open.",
+      "## The method",
+      "Bring the water to the boil and let it cool to 85°C, or stop the kettle short of boiling. Pour it over the pearls and steep <strong>2 to 3 minutes</strong>. Pour off all the tea, leaving the leaf, and brew again the same way: the pearls give <strong>2 to 3 infusions</strong>.",
+      "## What it should taste like",
+      "Smooth and balanced green tea under a strong jasmine scent, with no bitterness. If the cup is harsh, the water was too hot or the leaf sat too long; if it is thin, use more pearls rather than more time.",
+      "## Other green teas",
+      "<a href=\"/guides/how-to-brew-dragon-well-longjing-tea/\" title=\"How to brew Dragon Well (Longjing) tea\">Dragon Well</a>, China's best-known unscented green tea, takes its water a little hotter; <a href=\"/guides/how-to-brew-gyokuro/\" title=\"How to brew gyokuro tea: 60°C, 90 seconds, little water\">gyokuro</a> wants much cooler water.",
+    ],
+    faq: [
+      {
+        q: "What temperature for jasmine tea?",
+        a: "<strong>85°C</strong> (185°F), like most green teas. Boiling water makes the leaf bitter.",
+      },
+      {
+        q: "How long should jasmine tea steep?",
+        a: "<strong>2 to 3 minutes</strong> per infusion, with <strong>2 teaspoons</strong> of Jasmine Pearls to about 240 ml of water.",
+      },
+      {
+        q: "How many times can jasmine pearls be brewed?",
+        a: "<strong>Two or three</strong> times, by The Tao of Tea's instructions.",
+      },
+      {
+        q: "Is jasmine tea green tea?",
+        a: "Usually, yes. Jasmine Pearls are a green tea from Hunan, scented with jasmine flowers several times, at least five for the higher grades.",
+      },
+    ],
+  },
 ];
