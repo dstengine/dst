@@ -265,4 +265,85 @@ export const items: EventItem[] = [
     expertise:
       "Pick the 2.5 km if children are running: under-12s must run with a registered adult, so the adult's distance is the family's distance. Then arrive early. The start is at 6:30pm on Halloween evening in one of the city's busiest weekend districts, and the car parks will fill before the race does.",
   },
+
+  {
+    slug: "well-b-festival-meydan-2026",
+    createdAt: "2026-10-25T02:30:00+04:00",
+    updatedAt: "2026-10-25T02:30:00+04:00",
+    site: "mbr",
+    image: "/covers/well-b-festival-meydan-2026.jpg",
+    imageAlt: "White hexagons on a teal ground, small figures running and boxing inside some of them, one hexagon filled with golden sand",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Well B Festival 2026 at Meydan",
+    cardTitle: "Well B Festival 2026",
+    titleSeo: "Well B Festival 2026, Meydan: 14–15 Nov, from MBR City",
+    summary:
+      "A wellness and fitness festival at Meydan Racecourse, next to MBR City, on Saturday 14 and Sunday 15 November 2026: a 5K run, Hyrox-style racing, boxing, MMA and street soccer in the Hive Arena, yoga and recovery zones, talks, and a village of eight nations.",
+    start: "2026-11-14",
+    end: "2026-11-15",
+    utcOffset: "+04:00",
+    venue: "Meydan Racecourse",
+    city: "Dubai",
+    geo: { name: "Meydan Racecourse", lat: 25.157635, lng: 55.303194 },
+    organizer: "Well B Festival",
+    category: "Festival",
+    ticket: {
+      url: "https://www.wellbfestival.com/",
+      label: "Register interest",
+      sells: false,
+    },
+    source: {
+      name: "Well B Festival",
+      url: "https://www.wellbfestival.com/",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "A new two-day festival of fitness and wellbeing takes over <strong>Meydan Racecourse</strong> on <strong>Saturday 14 and Sunday 15 November 2026</strong>. Its zones are all named for bees, and between them they cover running, combat sports, yoga, talks and a market.",
+      "## The zones",
+      "<strong>Hive Arena</strong> is the combat and team corner: boxing, MMA and street soccer. <strong>Flight Deck</strong> is the main stage. <strong>Hive Rocks</strong> is Hyrox-style fitness racing, and <strong>Hive 5</strong> is a <strong>5K run</strong>. <strong>Bee Well</strong> holds yoga and the slower classes, and <strong>Recoverbe</strong> is for recovery afterwards.",
+      "<strong>Hive Minds</strong> is the talks programme. The <strong>Bee United Nations Village</strong> brings eight nations to one site, and <strong>Hive Merchants</strong> gathers more than twenty brands.",
+      "## Tickets",
+      "Tickets are not on sale yet. The festival takes registrations of interest on its website.",
+      "## The same month at Meydan",
+      "The racecourse is busy all November: the <a href=\"/events/dubai-racing-carnival-2026-27/\" title=\"Dubai Racing Carnival 2026/27\">Dubai Racing Carnival</a> season opens there on 6 November, and the <a href=\"/events/dubai-shopping-festival-2026-27/\" title=\"Dubai Shopping Festival 2026–27 from MBR City: 4 Dec–17 Jan\">Dubai Shopping Festival</a> follows from 4 December.",
+    ],
+    faq: [
+      {
+        q: "When is Well B Festival 2026?",
+        a: "On Saturday 14 and Sunday 15 November 2026, at Meydan Racecourse.",
+      },
+      {
+        q: "What is on at Well B Festival?",
+        a: "Boxing, MMA and street soccer in the Hive Arena, Hyrox-style racing at Hive Rocks, a 5K run (Hive 5), yoga at Bee Well, a recovery zone, talks at Hive Minds, a village of eight nations and more than twenty brands.",
+      },
+      {
+        q: "How do I get tickets?",
+        a: "Tickets are not on sale yet; register interest on the festival's website.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/dubai-racing-carnival-2026-27/",
+        eyebrow: "From 6 November",
+        title: "Dubai Racing Carnival 2026/27",
+        text: "The winter racing season at the same racecourse.",
+      },
+      {
+        href: "/events/ev-world-2026-dubai/",
+        eyebrow: "10–12 November",
+        title: "EV World 2026",
+        text: "Electric cars at Dubai World Trade Centre the week before.",
+      },
+      {
+        href: "/events/dubai-shopping-festival-2026-27/",
+        eyebrow: "4 December – 17 January",
+        title: "DSF 2026–27",
+        text: "Six weeks of sales across the city.",
+      },
+    ],
+    expertise:
+      "The zone names are all bee puns, so read the map before you go: the 5K is Hive 5, the Hyrox-style racing is Hive Rocks, the talks are Hive Minds. For MBR City residents Meydan is the nearest big venue of the season, close enough to come for one zone in the morning and go home, which is the best way to do a festival built for doing rather than watching.",
+  },
 ];
