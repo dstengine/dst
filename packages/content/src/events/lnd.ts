@@ -2435,4 +2435,95 @@ export const items: EventItem[] = [
     expertise:
       "Choose by the hour. The guided tour at 11am or 1pm is the better way to understand the house, and the candlelit late is the better way to feel it; the late, frankly, is where Walpole's gloomth was always meant to be seen. Arrive early in one's slot, since the rooms are small and candlelight is unforgiving of crowds, and do come dressed: the fizz is free only to those who make the effort. Strawberry Hill station is a short walk away, which is a mercy on a Saturday night in half-term.",
   },
+
+  {
+    slug: "jack-and-the-beanstalk-hackney-empire-panto-2026",
+    createdAt: "2026-10-25T02:30:00+04:00",
+    updatedAt: "2026-10-25T02:30:00+04:00",
+    site: "lnd",
+    image: "/covers/jack-and-the-beanstalk-hackney-empire-panto-2026.jpg",
+    imageAlt: "A giant beanstalk climbing out of a small red theatre stage into the clouds, a boy and a cow walking below",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Jack and the Beanstalk, Hackney Empire's pantomime 2026",
+    cardTitle: "Jack and the Beanstalk at Hackney Empire",
+    titleSeo: "Hackney Empire panto 2026, London: Jack and the Beanstalk",
+    summary:
+      "Hackney Empire's 2026 pantomime in east London is Jack and the Beanstalk, from 21 November to 31 December, with Clive Rowe directing and playing Dame Trot and Kat B as Simple Simon. Seats are £10 to £48, for all ages, with BSL-interpreted, relaxed and audio-described performances.",
+    start: "2026-11-21",
+    end: "2026-12-31",
+    utcOffset: "+00:00",
+    venue: "Hackney Empire, Mare Street",
+    city: "London",
+    country: "United Kingdom",
+    geo: { name: "Hackney Empire", lat: 51.5456229, lng: -0.0557025 },
+    organizer: "Hackney Empire",
+    category: "Theatre",
+    tickets: { priceFrom: 10, priceTo: 48, currency: "GBP" },
+    ticket: {
+      url: "https://hackneyempire.co.uk/events/jack-and-the-beanstalk",
+      label: "Book tickets",
+    },
+    source: {
+      name: "Hackney Empire, Jack and the Beanstalk",
+      url: "https://hackneyempire.co.uk/events/jack-and-the-beanstalk",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "Christmas in Hackney would hardly be Christmas without the Empire's pantomime, and this year it is <strong>Jack and the Beanstalk</strong>, from <strong>Saturday 21 November</strong> to <strong>Thursday 31 December 2026</strong>, at the old variety theatre on Mare Street.",
+      "## The company",
+      "<strong>Clive Rowe</strong> directs and also plays the Dame, <strong>Dame Trot</strong>; <strong>Kat B</strong> is <strong>Simple Simon</strong>. The script is by <strong>Will Brenton</strong> and the music by <strong>Steven Edis</strong>.",
+      "## Tickets",
+      "Seats are <strong>£10 to £48</strong>, plus £1.50 when booking online or by phone. Concessions are £2 off, groups of ten or more £3 off, and school groups pay £14. NHS staff pay £12 on Wednesday 2, Friday 4 and Friday 11 December at 7pm.",
+      "## Accessible performances",
+      "<strong>BSL-interpreted</strong>: Saturday 5 December at 1.30pm and 6pm, and Thursday 17 December at 1.30pm and 7pm.",
+      "<strong>Relaxed and dementia-friendly</strong>: Saturday 5 December at 1.30pm.",
+      "<strong>Audio-described</strong>: Sunday 6 December at 1pm.",
+      "## Who it is for",
+      "Everyone. The show is for all ages, and under-threes may sit on a grown-up's lap.",
+      "## Elsewhere in the boroughs",
+      "For a December afternoon further afield, there are the lights of <a href=\"/events/christmas-at-kew-2026/\" title=\"Christmas at Kew 2026: dates and tickets\">Christmas at Kew</a> in Richmond, or the <a href=\"/events/queens-house-ice-rink-greenwich-2026/\" title=\"Queen's House Ice Rink 2026, Greenwich, London: 18 Nov–3 Jan\">ice rink at the Queen's House</a> in Greenwich.",
+    ],
+    faq: [
+      {
+        q: "When is the Hackney Empire panto 2026?",
+        a: "Jack and the Beanstalk runs from Saturday 21 November to Thursday 31 December 2026.",
+      },
+      {
+        q: "How much are tickets?",
+        a: "£10 to £48, plus £1.50 for booking online or by phone. Concessions are £2 off and groups of ten or more £3 off.",
+      },
+      {
+        q: "Who plays the Dame?",
+        a: "Clive Rowe, who also directs, plays Dame Trot. Kat B plays Simple Simon.",
+      },
+      {
+        q: "Are there BSL or relaxed performances?",
+        a: "BSL-interpreted on 5 December at 1.30pm and 6pm and 17 December at 1.30pm and 7pm; relaxed and dementia-friendly on 5 December at 1.30pm; audio-described on 6 December at 1pm.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/christmas-at-kew-2026/",
+        eyebrow: "13 November – 3 January",
+        title: "Christmas at Kew 2026",
+        text: "The illuminated trail through the gardens in Richmond.",
+      },
+      {
+        href: "/events/queens-house-ice-rink-greenwich-2026/",
+        eyebrow: "18 November – 3 January",
+        title: "Queen's House Ice Rink",
+        text: "Skating in front of the Queen's House in Greenwich.",
+      },
+      {
+        href: "/events/santas-winter-garden-fulham-palace-2026/",
+        eyebrow: "20 November – 23 December",
+        title: "Santa's Winter Garden, Fulham Palace",
+        text: "Father Christmas in the walled garden by the river.",
+      },
+    ],
+    expertise:
+      "The Saturday and late-December performances fill first, as one would expect, so for the widest choice of seats book a weekday early in the run. A weeknight at 7pm is often the kindest choice for grown-ups coming straight from work. If someone in the party needs a quieter house, the relaxed performance on Saturday 5 December at 1.30pm is the one to choose.",
+  },
 ];
