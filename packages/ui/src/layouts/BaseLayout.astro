@@ -329,11 +329,15 @@ const lateIcons = navFootprint - nav.length * 28 > 700;
 // header is anyway — instead of breaking mid-row at every desktop width.
 // tick's Armenian labels are the case: eleven of them add up to 950px
 // beside a 190px wordmark and the toggles, and no width helps because the
-// column stops growing at 1180. Estimated the way navFootprint is, from
-// the row as measured: 8.5px a character at the tightened size, 14px
-// between items, the column less the wordmark and the 170px the toggles
-// take. The 40px margin keeps a row that just fits off its own line.
-const rowNeeds = nav.reduce((sum, item) => sum + item.label.length, 0) * 8.5 + (nav.length - 1) * 14;
+// column stops growing at 1180. Estimated from the row as measured at the
+// tightened size: 8.5px a character of Armenian, 7.75 of Latin (llc's ten
+// labels take 7.65, palmcentral's 7.44, tick's English 8.04), 14px between
+// items, the column less the wordmark and the 170px the toggles take. At a
+// flat 8.5 llc's row, which fits on one line at 73px, read as 6px too long
+// and got a line of its own from 24 to 25 Oct 2026. The 40px margin keeps
+// a row that just fits off its own line.
+const glyphs = (label: string) => label.length * (/[^\u0000-\u024F]/.test(label) ? 8.5 : 7.75);
+const rowNeeds = nav.reduce((sum, item) => sum + glyphs(item.label), 0) + (nav.length - 1) * 14;
 const rowRoom = 1180 - (siteName.length * 11 + 40) - 170;
 const navBar = denseNav && rowNeeds > rowRoom + 40;
 // The header's copy of the name, with the words either side of a " · " held
