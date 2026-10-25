@@ -723,4 +723,91 @@ export const items: EventItem[] = [
     expertise:
       "Choose the pass by who is coming. General admission and one Golden Circle are open to all ages; the VIP Grandstand and the other Golden Circle are 21 and over, so a family ticket decision is made at the checkout, not at the gate. If the main stage is the point, the Golden Circle's AED 330 over general admission buys the front; for Stage Two's jazz and world line-up, general admission is all you need.",
   },
+  {
+    slug: "icons-of-porsche-2026",
+    createdAt: "2026-10-25T04:30:00+04:00",
+    updatedAt: "2026-10-25T04:30:00+04:00",
+    site: "riviera",
+    image: "/covers/icons-of-porsche-2026.jpg",
+    imageAlt: "Rows of small sports cars in different colours parked in a fan on an open square under a clear blue sky",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Icons of Porsche 2026 at The Square, Nad Al Sheba",
+    cardTitle: "Icons of Porsche 2026",
+    titleSeo: "Icons of Porsche 2026: 21–22 Nov, from Azizi Riviera",
+    summary:
+      "Icons of Porsche, the region's biggest Porsche festival, comes to The Square in Nad Al Sheba on November 21 and 22, 2026, from 4pm to 11pm: more than 1,000 cars, art, music and food trucks, AED 85 a ticket and under-12s free. From Azizi Riviera it is a short drive across Meydan.",
+    start: "2026-11-21",
+    end: "2026-11-22",
+    utcOffset: "+04:00",
+    venue: "The Square, Nad Al Sheba",
+    city: "Dubai",
+    country: "United Arab Emirates",
+    organizer: "Porsche Middle East and Africa",
+    category: "Entertainment",
+    tickets: { priceFrom: 85, currency: "AED" },
+    ticket: {
+      url: "https://www.iconsofporsche.com/home",
+      label: "Tickets",
+    },
+    source: {
+      name: "Porsche Newsroom",
+      url: "https://newsroom.porsche.com/en_PME/2026/company/porsche-icons-dubai-2026-43391.html",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "The sixth <strong>Icons of Porsche</strong> takes over <strong>The Square</strong> in <strong>Nad Al Sheba</strong> on <strong>Saturday 21 and Sunday 22 November 2026</strong>, from <strong>4pm to 11pm</strong> both days. The Square is on the Meydan side of the city, a short drive from Azizi Riviera.",
+      "## What is on",
+      "More than <strong>1,000 cars</strong> from every generation of Porsche, owned and driven in by the community, with Porsche art from around the world, DJs and live bands, family games and food trucks. This year's theme marks <strong>75 years of Porsche in motorsport</strong>.",
+      "## Tickets",
+      "A ticket is <strong>AED 85</strong>, and <strong>children under 12 go free</strong> with a ticketed adult. Tickets are sold on the festival's own site.",
+      "## How big it has become",
+      "The 2025 edition drew more than <strong>30,000 fans</strong> and more than 1,000 cars. Across its six years the festival counts more than <strong>105,000 visitors</strong> and more than <strong>12 world and regional premieres</strong>.",
+      "## Who runs it",
+      "Porsche Middle East and Africa, with Porsche Centre Dubai (Al Nabooda) and Porsche Centre Abu Dhabi (Ali & Sons).",
+      "## Before and after",
+      "<a href=\"/events/meydan-racing-season-2026-27/\" title=\"Meydan racing season 2026–27\">Meydan's racing season</a> is already under way next door, and <a href=\"/events/sole-dxb-2026/\" title=\"Sole DXB 2026: 11–13 December, from Azizi Riviera\">Sole DXB</a> takes the same square three weeks later, December 11 to 13.",
+    ],
+    faq: [
+      {
+        q: "When is Icons of Porsche 2026?",
+        a: "Saturday 21 and Sunday 22 November 2026, from 4pm to 11pm both days.",
+      },
+      {
+        q: "Where is it held?",
+        a: "At The Square in Nad Al Sheba, the Meydan side of Dubai.",
+      },
+      {
+        q: "How much is a ticket?",
+        a: "<strong>AED 85</strong>; children under 12 go free with a ticketed adult.",
+      },
+      {
+        q: "Who organises it?",
+        a: "Porsche Middle East and Africa, with Porsche Centre Dubai (Al Nabooda) and Porsche Centre Abu Dhabi (Ali & Sons).",
+      },
+    ],
+    related: [
+      {
+        href: "/events/meydan-racing-season-2026-27/",
+        eyebrow: "From November 6",
+        title: "Meydan racing season 2026–27",
+        text: "Race nights at the course next to The Square.",
+      },
+      {
+        href: "/events/sole-dxb-2026/",
+        eyebrow: "December 11–13",
+        title: "Sole DXB 2026",
+        text: "Music and street culture on the same square.",
+      },
+      {
+        href: "/events/dubai-shopping-festival-2026-27/",
+        eyebrow: "From December 4",
+        title: "Dubai Shopping Festival 2026–27",
+        text: "Six weeks of sales, fireworks and concerts.",
+      },
+    ],
+    expertise:
+      "Nad Al Sheba is the Azizi Riviera side of town for an event like this: no Sheikh Zayed Road, no Business Bay traffic, and a drive home that stays inside the neighbourhood. With children the arithmetic is simple, since under-12s go free: a family of four with two young children pays AED 170. A 4pm start in late November catches the last of the daylight, so arrive early if the cars are for photographing, and stay for the music once the lights come on.",
+  },
 ];
