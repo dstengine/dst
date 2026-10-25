@@ -262,4 +262,87 @@ export const items: EventItem[] = [
     expertise:
       "Find out which venue holds your sectors before you set off: the two halves of Gulfood are at opposite ends of the city, and a buyer who needs both should give each its own day rather than cross the city at noon. From Palm Jebel Ali, start with Expo City. Friday closes an hour earlier than the rest of the week.",
   },
+  {
+    slug: "big-5-global-2026",
+    createdAt: "2026-10-25T04:30:00+04:00",
+    updatedAt: "2026-10-25T04:30:00+04:00",
+    site: "palmcentral",
+    image: "/covers/big-5-global-2026.jpg",
+    imageAlt: "A long exhibition hall under steel trusses, stacks of orange blocks along one side and small visitors walking down the aisle",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Big 5 Global 2026 at Dubai World Trade Centre",
+    cardTitle: "Big 5 Global 2026",
+    titleSeo: "Big 5 Global 2026 from Palm Central: 23–26 November",
+    summary:
+      "Big 5 Global, the construction trade show, fills Dubai World Trade Centre from November 23 to 26, 2026: more than 1,800 exhibitors, 450 speakers and visitors from 165 countries. For anyone following Palm Central and Palm Jebel Ali, it is the week the building trade is in one hall.",
+    start: "2026-11-23",
+    end: "2026-11-26",
+    startTime: "11:00",
+    endTime: "17:00",
+    utcOffset: "+04:00",
+    venue: "Dubai World Trade Centre",
+    city: "Dubai",
+    geo: { name: "Dubai World Trade Centre", lat: 25.2238026, lng: 55.2877222 },
+    organizer: "dmg events",
+    category: "Expo",
+    ticket: {
+      url: "https://www.big5global.com/",
+      label: "Register to visit",
+      sells: false,
+    },
+    source: {
+      name: "Big 5 Global",
+      url: "https://www.big5global.com/",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "The region's construction trade show returns to <strong>Dubai World Trade Centre</strong> from <strong>Monday, November 23, to Thursday, November 26, 2026</strong>. <strong>Big 5 Global</strong> counts more than <strong>65,000 attendees</strong>, <strong>1,800 exhibitors</strong>, <strong>55,000 products</strong> and <strong>450 speakers</strong>, from more than <strong>165 countries</strong>.",
+      "## Hours",
+      "Monday, November 23: <strong>11:00 to 18:00</strong>. Tuesday and Wednesday: <strong>10:00 to 18:00</strong>. Thursday, November 26: <strong>10:00 to 17:00</strong>. Visitors under 21 are not admitted.",
+      "## Nine shows in one",
+      "Alongside the main show run <strong>Big 5 Heavy</strong>, <strong>Totally Concrete</strong>, <strong>Marble &amp; Stone World</strong>, <strong>Urban Design &amp; Landscape</strong>, <strong>Windows, Doors &amp; Facades</strong>, <strong>HVACR World</strong>, <strong>GeoWorld</strong> and <strong>Future FM</strong>, the facilities management show.",
+      "## The talks",
+      "The programme has a <strong>Leaders' Summit</strong>, the <strong>LiveableCitiesX Summit</strong> and the <strong>FutureTech Summit</strong>, plus the Global Impact Awards and the free Big 5 Talks on the show floor. Speakers announced include Abdulla Ali Alhosani of the RTA, Ahmed Al Khatib of Expo City Dubai, Najib Khatib of Khatib &amp; Alami and Ali Sharif Al Marzooqi of Deyaar.",
+      "## Registration",
+      "Visitors register online in advance; the organisers say prices go up at the door.",
+      "## Next on the calendar",
+      "The next big trade show for the west of the city is <a href=\"/events/gulfood-2027/\" title=\"Gulfood 2027 from Palm Central: dates, hours, Expo City\">Gulfood 2027</a> in March, half of it at Expo City.",
+    ],
+    faq: [
+      {
+        q: "When is Big 5 Global 2026?",
+        a: "From Monday, November 23, to Thursday, November 26, 2026, at Dubai World Trade Centre.",
+      },
+      {
+        q: "What are the opening hours?",
+        a: "11:00–18:00 on the Monday, 10:00–18:00 on Tuesday and Wednesday, and 10:00–17:00 on the Thursday.",
+      },
+      {
+        q: "Can anyone go?",
+        a: "It is a trade show: visitors register online, and no one under 21 is admitted.",
+      },
+      {
+        q: "How do I get there from Palm Central?",
+        a: "Dubai World Trade Centre is on Sheikh Zayed Road at the city end, with its own metro station on the Red Line.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/gulfood-2027/",
+        eyebrow: "March 15–19, 2027",
+        title: "Gulfood 2027",
+        text: "The food and drink trade show, half of it at Expo City.",
+      },
+      {
+        href: "/events/motiongate-fright-nights-ix-2026/",
+        eyebrow: "Until November 8",
+        title: "Fright Nights IX at Motiongate",
+        text: "The Halloween nights at the parks next door to Palm Jebel Ali.",
+      },
+    ],
+    expertise:
+      "Big 5 is the week the contractors, consultants and suppliers behind every master plan in Dubai are in one building, which makes it the best place to hear what is actually being built and on what timetable. For anyone weighing a purchase on Palm Jebel Ali, the useful sessions are the Leaders' Summit and LiveableCitiesX, where developers and authorities speak in public; the show floor is for trade buyers. The World Trade Centre is at the far end of Sheikh Zayed Road from Palm Central, with its own stop on the Red Line, so the metro is a fair alternative to a long drive in show-week traffic.",
+  },
 ];
