@@ -44,6 +44,7 @@ const L = withLabels(labelOverrides);
   data-none={L.searchNone}
   data-count-one={L.searchCount(1)}
   data-count-many={L.searchCount(2)}
+  data-first={L.searchFirst(limit)}
   data-past={L.past}
 >
   <label class="site-search-field" for={`${id}-input`}>
@@ -62,9 +63,9 @@ const L = withLabels(labelOverrides);
     const input = form.querySelector<HTMLInputElement>("input[type=search]")!;
     const status = form.querySelector<HTMLElement>(".site-search-status")!;
     const list = form.querySelector<HTMLOListElement>(".site-search-results")!;
-    const { index, locale, limit, none, countOne, countMany, past } = form.dataset as Record<string, string>;
+    const { index, locale, limit, none, countOne, countMany, first, past } = form.dataset as Record<string, string>;
     const max = Number(limit) || 12;
-    type Rec = { h: string; t: string; s?: string; w?: string; c?: string; d: string; x?: string; e?: 1; p?: 1 };
+    type Rec = { h: string; t: string; s?: string; w?: string; c?: string; d: string; x?: string; dl?: string; xl?: string; e?: 1; p?: 1 };
     let records: Rec[] | null = null;
     let loading: Promise<Rec[]> | null = null;
 
@@ -80,8 +81,11 @@ const L = withLabels(labelOverrides);
     };
 
     const fold = (s: string) => s.normalize("NFKC").toLowerCase();
-    const date = (iso: string) =>
-      new Date(`${iso}T00:00:00Z`).toLocaleDateString(locale || "en-GB", { day: "numeric", month: "short", timeZone: "UTC" });
+    // The index carries each date as the site's cards print it (`dl`, `xl`);
+    // the browser formats only a record written without them, and a browser
+    // with no data for the site's language answers in English.
+    const date = (iso: string, label?: string) =>
+      label ?? new Date(`${iso}T00:00:00Z`).toLocaleDateString(locale || "en-GB", { day: "numeric", month: "short", timeZone: "UTC" });
     // The plural rule lives in the labels; the page carries the two forms
     // and this picks between them by whether the count is one.
     const count = (n: number) => (n === 1 ? countOne : countMany.replace(/\d+/, String(n)));
@@ -94,7 +98,7 @@ const L = withLabels(labelOverrides);
         return;
       }
       status.hidden = false;
-      status.textContent = found.length ? count(found.length) : none;
+      status.textContent = !found.length ? none : found.length > max ? `${count(found.length)}, ${first}` : count(found.length);
       list.hidden = found.length === 0;
       for (const r of found.slice(0, max)) {
         const li = document.createElement("li");
@@ -103,7 +107,7 @@ const L = withLabels(labelOverrides);
         a.title = r.t;
         const time = document.createElement("time");
         time.dateTime = r.d;
-        time.textContent = r.x ? `${date(r.d)} – ${date(r.x)}` : date(r.d);
+        time.textContent = r.x ? `${date(r.d, r.dl)} – ${date(r.x, r.xl)}` : date(r.d, r.dl);
         const head = document.createElement("span");
         head.className = "site-search-meta";
         head.append(time);
@@ -179,6 +183,14 @@ const L = withLabels(labelOverrides);
     border-radius: var(--radius);
     background: var(--surface);
     color: var(--ink-muted);
+  }
+  /* On a phone the field gives its side padding to the input: at 320 the
+     input was 206px and the placeholder is the only instruction the box
+     has. The labels keep every placeholder under 206px anyway; the 20px
+     won here is the room a wider fallback face needs (Armenian has no
+     glyphs in the system face and is set in whatever the phone has). */
+  @media (max-width: 399px) {
+    .site-search-field { padding: 0 var(--space-2); }
   }
   .site-search-field:focus-within { border-color: var(--accent); color: var(--ink); }
   .site-search-field :global(svg) { flex: none; width: 1.25em; height: 1.25em; color: var(--accent); }

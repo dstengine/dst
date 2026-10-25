@@ -12,7 +12,7 @@ import { calendarPage, portal, labels, type Lang } from "../content";
 import { site } from "../site.config";
 import { LOCALE, eventsBase, prefix } from "../i18n";
 import { NAV } from "../layouts/nav";
-import { allMonths, calendarBase, monthHref, monthLabel, monthChip, monthIn } from "../months";
+import { allMonths, calendarBase, monthHref, monthLabel, monthChip, monthIn, monthSample } from "../months";
 
 interface Props { lang: Lang; month: Month }
 const { lang, month } = Astro.props;
@@ -23,15 +23,9 @@ const where = site[lang].keyword;
 const label = monthLabel(month.key, lang);
 const n = month.items.length;
 
-// A few names, so the summary says what the month holds, not only how much.
-const sample = (() => {
-  const out: string[] = [];
-  for (const t of month.items.map((e) => e.title)) {
-    if (out.join(", ").length + t.length > 90) break;
-    out.push(t);
-  }
-  return out.join(", ");
-})();
+// A few names, so the summary says what the month holds, not only how much:
+// what opens in it first, the same names its card on /calendar/ gives.
+const sample = monthSample(month, 90);
 const title = lang === "hy"
   ? `Միջոցառումներ Երևանում՝ ${label.charAt(0).toLowerCase()}${label.slice(1)}`
   : `Events in Yerevan ${monthIn(month.key, lang)}`;
@@ -62,6 +56,6 @@ const chips = [
   </section>
   <section class="container">
     <ChipNav items={chips} current={monthHref(month.key, lang)} label={w.months} />
-    <EventsList locale={LOCALE[lang]} items={month.items} eventsBase={eventsBase(lang)} labels={labels[lang]} where={where} />
+    <EventsList locale={LOCALE[lang]} items={month.items} eventsBase={eventsBase(lang)} labels={labels[lang]} where={where} from={month.first} />
   </section>
 </Layout>

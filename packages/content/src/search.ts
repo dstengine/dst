@@ -30,6 +30,12 @@ export interface SearchRecord {
   d: string;
   /** An event's last day, when it has one. */
   x?: string;
+  /** `d` and `x` as the site's cards print them, when the site passed a
+      formatter. Written at build because a reader's browser may hold no
+      data for the site's language: Chromium has none for Armenian, and
+      asked for "hy-AM" it answers in American English, "Oct 8". */
+  dl?: string;
+  xl?: string;
   /** 1 for an event; absent for news. */
   e?: 1;
   /** 1 for an event that is over. */
@@ -42,8 +48,20 @@ const line = (s: string | undefined, max = 160) => (s && s.length > max ? `${s.s
 export function searchRecords(
   events: EventItem[],
   news: NewsItem[],
-  { eventsBase, newsBase, today }: { eventsBase: string; newsBase: string; today: string },
+  {
+    eventsBase,
+    newsBase,
+    today,
+    format,
+  }: {
+    eventsBase: string;
+    newsBase: string;
+    today: string;
+    /** ISO day → the words a card prints for it, in the site's language. */
+    format?: (iso: string) => string;
+  },
 ): SearchRecord[] {
+  const label = (key: "dl" | "xl", iso: string | undefined) => (format && iso ? { [key]: format(iso) } : {});
   const ev = events
     .filter(hasPage)
     .sort((a, b) => (a.start < b.start ? -1 : a.start > b.start ? 1 : 0));
@@ -57,6 +75,8 @@ export function searchRecords(
     c: e.category,
     d: e.start,
     ...(e.end && e.end !== e.start ? { x: e.end } : {}),
+    ...label("dl", e.start),
+    ...label("xl", e.end && e.end !== e.start ? e.end : undefined),
     e: 1,
     ...(hasEnded(e, today) ? { p: 1 } : {}),
   });
@@ -66,6 +86,7 @@ export function searchRecords(
     s: line(n.summary),
     c: n.category,
     d: n.date,
+    ...label("dl", n.date),
   });
   return [
     ...ahead.map(toEvent),

@@ -31,10 +31,17 @@ interface Props {
   /** Absolute https URL of this site's whole-calendar .ics. Absent on a
       site that doesn't publish one, and the block then isn't drawn. */
   calendarHref?: string;
+  /** The day the list is read from (ISO), when that is not today: a page
+      about a month still to come passes its first day, so a run that
+      opened before it sits with the runs, not at the head of "Upcoming"
+      dated by a day before the month began. Never earlier than today. */
+  from?: string;
 }
-const { items, eventsBase = "/events/", locale, labels: labelOverrides, calendarHref, where } = Astro.props;
+const { items, eventsBase = "/events/", locale, labels: labelOverrides, calendarHref, where, from } = Astro.props;
 const L = withLabels(labelOverrides);
-const todayIso = new Date().toISOString().slice(0, 10);
+const today = new Date().toISOString().slice(0, 10);
+const asOf = from && from > today ? from : today;
+const later = asOf > today;
 
 // webcal: is what hands the URL straight to a calendar app as a
 // subscription. The same address over https downloads the file instead,
@@ -91,15 +98,15 @@ const toCard = (item: EventItem, past: boolean) => {
 // listing now does the same, so one feed stops behaving two ways.
 // See @dst/content/when for why "on" is decided on the last day.
 const upcoming = items
-  .filter((e) => isOn(e, todayIso) && e.start >= todayIso)
+  .filter((e) => isOn(e, asOf) && e.start >= asOf)
   .sort(byDate)
   .map((e) => toCard(e, false));
 const running = items
-  .filter((e) => isOn(e, todayIso) && e.start < todayIso)
+  .filter((e) => isOn(e, asOf) && e.start < asOf)
   .sort((a, b) => (lastDay(a) < lastDay(b) ? -1 : lastDay(a) > lastDay(b) ? 1 : byDate(a, b)))
   .map((e) => ({ ...toCard(e, false), until: lastDay(e) }));
 const past = items
-  .filter((e) => hasEnded(e, todayIso))
+  .filter((e) => hasEnded(e, asOf))
   .sort((a, b) => (a.start < b.start ? 1 : a.start > b.start ? -1 : 0))
   .map((e) => toCard(e, true));
 ---
@@ -114,7 +121,7 @@ const past = items
     )}
     {running.length > 0 && (
       <div class="events-group">
-        <h3 class="events-group-heading">{L.onNow}</h3>
+        <h3 class="events-group-heading">{later ? L.startedEarlier : L.onNow}</h3>
         <FeedCards items={running} columns={running.length <= 2 ? running.length : undefined} locale={locale} labels={L} />
       </div>
     )}

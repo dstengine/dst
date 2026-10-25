@@ -223,6 +223,40 @@ test("search results are styled rows, not running text", async ({ page }) => {
   expect(got.meta, "the date line is a flex row").toBe("flex");
 });
 
+// The placeholder is the box's only instruction; cut at a phone's width it
+// read "Search events, venues," and in Armenian ended in a lone "·" (scan
+// 2026-10-24, tick-11). Measured in the input's own font.
+test("the search placeholder is whole in the field at 320", async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 800 });
+  for (const path of ["/", "/am/", "/events/", "/am/events/"]) {
+    await page.goto(url("tick", path));
+    const { text, input } = await page.locator(".site-search input").evaluate((el) => {
+      const span = document.createElement("span");
+      const cs = getComputedStyle(el);
+      span.style.cssText = `position:absolute;visibility:hidden;white-space:pre;font:${cs.font};letter-spacing:${cs.letterSpacing}`;
+      span.textContent = el.placeholder;
+      document.body.append(span);
+      return { text: span.getBoundingClientRect().width, input: el.clientWidth };
+    });
+    expect(text, `${path}: placeholder ${text}px in a ${input}px input`).toBeLessThanOrEqual(input);
+  }
+});
+
+// A month still to come opens with its own days. Runs that began before it
+// sit under their own heading, dated by the day they close; on 24 October
+// the November page opened with three cards dated in October (tick-12).
+test("a month still to come lists no 'upcoming' card dated before its first day", async ({ page }) => {
+  const d = new Date();
+  const next = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 1)).toISOString().slice(0, 10);
+  for (const prefix of ["", "/am"]) {
+    const res = await page.goto(url("tick", `${prefix}/calendar/${next.slice(0, 7)}/`));
+    test.skip(!res || res.status() === 404, "next month has no page yet");
+    const first = await page.locator(".events-group").first().locator(".feed-meta time").evaluateAll((els) => els.map((el) => el.getAttribute("datetime")));
+    expect(first.length, "the first group has cards").toBeGreaterThan(0);
+    expect(first.filter((iso) => iso < next), `${prefix || "/"}: upcoming dated before ${next}`).toEqual([]);
+  }
+});
+
 test.describe("mobile menu", () => {
   test.beforeEach(async ({ page }) => {
     await page.setViewportSize({ width: 820, height: 800 });

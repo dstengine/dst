@@ -11,8 +11,9 @@ import { toIcs, toIcsCalendar } from "@dst/content/ics";
 import type { EventItem } from "@dst/content/types";
 import { eventHref, newsHref } from "@dst/content/paths";
 import { searchRecords } from "@dst/content/search";
+import { formatCardDate } from "@dst/ui/date";
 import { feed, calendar, type Lang } from "./content";
-import { eventsFor, newsFor, eventsBase, newsBase, prefix } from "./i18n";
+import { LOCALE, eventsFor, newsFor, eventsBase, newsBase, prefix } from "./i18n";
 
 const SITE = "https://tick.am";
 
@@ -57,6 +58,9 @@ export function oneEvent(lang: Lang, item: EventItem): Response {
 // @dst/content/search for what is in them and why so little.
 export function searchIndex(lang: Lang): Response {
   const today = new Date().toISOString().slice(0, 10);
-  const records = searchRecords(eventsFor(lang), newsFor(lang), { eventsBase: eventsBase(lang), newsBase: newsBase(lang), today });
+  // Dates formatted here, the way the cards under the box print them: the
+  // reader's browser may have no Armenian to format them with.
+  const format = (iso: string) => formatCardDate(iso, LOCALE[lang], today);
+  const records = searchRecords(eventsFor(lang), newsFor(lang), { eventsBase: eventsBase(lang), newsBase: newsBase(lang), today, format });
   return new Response(JSON.stringify(records), { headers: { "Content-Type": "application/json; charset=utf-8" } });
 }

@@ -135,6 +135,11 @@ export interface ArticleLabels {
   /** Heading over the front-page block of events that began before today
       and have not ended yet — apart from the ones still to come. */
   onNow: string;
+  /** The same group on a page that starts later than today — a month still
+      to come: the runs that opened before that page's first day and reach
+      into it. "On now" would be false there for a run that opens next
+      month and is already under way by the one the page is about. */
+  startedEarlier: string;
   /** The meta-line date of such an event's card: its last day, given
       formatted. Its first day is behind the reader and answers nothing. */
   until: (date: string) => string;
@@ -170,10 +175,16 @@ export interface ArticleLabels {
   /** The search box: its label, its placeholder, the line under it, and
       what it says with no match and with n of them. */
   search: string;
+  /** Whole at 320px: under 206px in the field's 18px, the input's width
+      there with the side padding of a wider screen. Nouns, no verb — the
+      icon and the hidden label already say "search". */
   searchPlaceholder: string;
   searchHint: string;
   searchNone: string;
   searchCount: (n: number) => string;
+  /** Said after the count when the box lists fewer than it found: the
+      reader who scrolls to the end of twelve was told twenty-five. */
+  searchFirst: (shown: number) => string;
 
   // Source line
   source: string;
@@ -245,6 +256,7 @@ export const EN: ArticleLabels = {
   subscribeCalendarTitle: "Opens your calendar app and subscribes to these dates",
   past: "Past",
   onNow: "On now",
+  startedEarlier: "Started earlier",
   until: (date) => `until ${date}`,
   untilCover: "until",
   editorsChoice: "Editors' choice",
@@ -261,10 +273,11 @@ export const EN: ArticleLabels = {
   byMonth: "By month",
   monthHeading: (month, where) => (where ? `${month} in ${where}` : month),
   search: "Search",
-  searchPlaceholder: "Search events, venues, artists",
+  searchPlaceholder: "Events, venues, artists",
   searchHint: "A name, a venue or a month — results appear as you type.",
   searchNone: "Nothing found",
   searchCount: (n) => `${n} ${n === 1 ? "result" : "results"}`,
+  searchFirst: (n) => `the first ${n} shown`,
 
   source: "Source",
   checkedAgainstSource: "checked against the source",
@@ -345,6 +358,7 @@ export const ES: Partial<ArticleLabels> = {
   subscribeCalendarTitle: "Abre tu app de calendario y se suscribe a estas fechas",
   past: "Pasado",
   onNow: "En curso",
+  startedEarlier: "Empezaron antes",
   until: (date) => `hasta el ${date}`,
   untilCover: "hasta",
   editorsChoice: "Elección del editor",
@@ -361,10 +375,11 @@ export const ES: Partial<ArticleLabels> = {
   byMonth: "Por mes",
   monthHeading: (month, where) => (where ? `${month} en ${where}` : month),
   search: "Buscar",
-  searchPlaceholder: "Busca eventos, recintos, artistas",
+  searchPlaceholder: "Eventos, recintos, artistas",
   searchHint: "Un nombre, un recinto o un mes: los resultados aparecen al escribir.",
   searchNone: "Sin resultados",
   searchCount: (n) => `${n} ${n === 1 ? "resultado" : "resultados"}`,
+  searchFirst: (n) => `se muestran los ${n} primeros`,
 
   source: "Fuente",
   checkedAgainstSource: "verificado con la fuente el",
@@ -436,6 +451,7 @@ export const DE: Partial<ArticleLabels> = {
   subscribeCalendarTitle: "Öffnet die Kalender-App und abonniert diese Termine",
   past: "Vorbei",
   onNow: "Läuft gerade",
+  startedEarlier: "Schon früher gestartet",
   until: (date) => `bis ${date}`,
   untilCover: "bis",
   editorsChoice: "Tipp der Redaktion",
@@ -452,10 +468,11 @@ export const DE: Partial<ArticleLabels> = {
   byMonth: "Nach Monat",
   monthHeading: (month, where) => (where ? `${month} in ${where}` : month),
   search: "Suche",
-  searchPlaceholder: "Veranstaltungen, Orte, Künstler suchen",
+  searchPlaceholder: "Events, Orte, Künstler",
   searchHint: "Ein Name, ein Ort oder ein Monat – die Treffer erscheinen beim Tippen.",
   searchNone: "Nichts gefunden",
   searchCount: (n) => `${n} ${n === 1 ? "Treffer" : "Treffer"}`,
+  searchFirst: (n) => `die ersten ${n} angezeigt`,
 
   source: "Quelle",
   checkedAgainstSource: "gegen die Quelle geprüft am",
@@ -538,6 +555,7 @@ export const HY: Partial<ArticleLabels> = {
   subscribeCalendarTitle: "Բացում է օրացույցի հավելվածը և բաժանորդագրում այս ամսաթվերին",
   past: "Անցած",
   onNow: "Այժմ ընթացքում",
+  startedEarlier: "Սկսվել են ավելի վաղ",
   until: (date) => `մինչև ${date}`,
   untilCover: "մինչև",
   editorsChoice: "Խմբագրի ընտրություն",
@@ -555,10 +573,11 @@ export const HY: Partial<ArticleLabels> = {
   byMonth: "Ըստ ամսի",
   monthHeading: (month, where) => (where ? `${month}՝ ${hyLocative(where)}` : month),
   search: "Փնտրել",
-  searchPlaceholder: "Փնտրեք միջոցառում, վայր, արտիստ",
+  searchPlaceholder: "Միջոցառում կամ վայր",
   searchHint: "Անուն, վայր կամ ամիս՝ արդյունքները երևում են մուտքագրելիս։",
   searchNone: "Ոչինչ չի գտնվել",
   searchCount: (n) => `${n} արդյունք`,
+  searchFirst: (n) => `առաջին ${n}-ը`,
 
   source: "Աղբյուր",
   checkedAgainstSource: "ստուգվել է",

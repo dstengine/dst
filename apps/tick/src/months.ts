@@ -1,6 +1,6 @@
 // The calendar cut by month, in both languages — the rules are in
 // @dst/content/months; this file holds the words and the dates.
-import { buildMonths, monthHref as hrefFor, type Month } from "@dst/content/months";
+import { buildMonths, monthHref as hrefFor, monthOf, type Month } from "@dst/content/months";
 import type { Lang } from "./content";
 import { LOCALE, eventsFor, prefix } from "./i18n";
 
@@ -46,4 +46,26 @@ export function monthIn(key: string, lang: Lang): string {
     return `${key.slice(0, 4)}-ի ${name}ին`;
   }
   return `in ${monthLabel(key, lang)}`;
+}
+
+/** A few names for a month's card and its summary: the events that open in
+    it, soonest first, by the short name a card gives them. A run from an
+    earlier month fills in only when fewer than three open in this one —
+    an exhibition on from May to December is in every month, and taken
+    first it made October, November and December say the same sentence.
+    The first name is always taken, so a long one never leaves the line
+    empty; after it a name that would pass `budget` characters is skipped
+    for a shorter one further on. */
+export function monthSample(month: Month, budget = 110): string {
+  const opening = month.items.filter((e) => monthOf(e.start) === month.key);
+  const pool = opening.length >= 3 ? opening : [...opening, ...month.items.filter((e) => monthOf(e.start) < month.key)];
+  const out: string[] = [];
+  for (const e of pool) {
+    if (out.length === 3) break;
+    const name = e.cardTitle ?? e.title;
+    if (out.includes(name)) continue;
+    if (out.length && [...out, name].join(", ").length > budget) continue;
+    out.push(name);
+  }
+  return out.join(", ");
 }

@@ -33,6 +33,22 @@ describe("searchRecords", () => {
     assert.deepEqual(item, { h: "/news/n/", t: "t", s: "s", c: "city", d: "2026-11-01" });
   });
 
+  test("with a formatter, each record carries its dates as the site prints them; without one, none", () => {
+    const format = (iso) => `[${iso}]`;
+    const [run, one, item] = searchRecords(
+      [event({ slug: "run", start: "2026-11-20", end: "2026-12-06" }), event({ slug: "one", start: "2026-11-21", end: "2026-11-21" })],
+      [news({ slug: "n", date: "2026-11-02" })],
+      { ...bases, format },
+    );
+    assert.equal(run.dl, "[2026-11-20]");
+    assert.equal(run.xl, "[2026-12-06]");
+    assert.equal(one.dl, "[2026-11-21]");
+    assert.equal(one.xl, undefined);
+    assert.equal(item.dl, "[2026-11-02]");
+    const [plain] = searchRecords([event({ slug: "run", start: "2026-11-20", end: "2026-12-06" })], [], bases);
+    assert.equal("dl" in plain || "xl" in plain, false);
+  });
+
   test("a one-day event has no end, a venue-less one no where, and a long summary is cut to a line", () => {
     const [r] = searchRecords([event({ slug: "one", start: "2026-11-20", end: "2026-11-20", summary: "x".repeat(200) })], [], bases);
     assert.equal(r.x, undefined);

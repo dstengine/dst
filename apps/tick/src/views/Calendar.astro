@@ -5,7 +5,7 @@ import Layout from "../layouts/Layout.astro";
 import { withLabels } from "@dst/ui/labels";
 import { calendarPage, labels, type Lang } from "../content";
 import { site } from "../site.config";
-import { allMonths, monthHref, monthLabel } from "../months";
+import { allMonths, monthHref, monthLabel, monthSample } from "../months";
 
 interface Props { lang: Lang }
 const { lang } = Astro.props;
@@ -17,21 +17,14 @@ const ahead = months.filter((m) => m.ahead);
 const gone = months.filter((m) => !m.ahead).reverse();
 const thin = months.length < 2;
 
-// Three names, so the line says what the month is rather than how long.
-const sample = (titles: string[]) => {
-  const out: string[] = [];
-  for (const t of titles) {
-    if (out.join(", ").length + t.length > 110) break;
-    out.push(t);
-  }
-  return out.join(", ");
-};
+// Three names, so the line says what the month is rather than how long;
+// the names of what opens in it, so no two months say the same line.
 const row = (m: (typeof months)[number]) => ({
   href: monthHref(m.key, lang),
   label: monthLabel(m.key, lang),
   title: L.monthHeading(monthLabel(m.key, lang), where),
   count: L.eventCount(m.items.length),
-  names: sample(m.items.map((e) => e.title)),
+  names: monthSample(m),
 });
 ---
 <Layout lang={lang} title={page.title} description={page.description} noindex={thin}>
