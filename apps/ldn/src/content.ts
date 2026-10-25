@@ -1,3 +1,5 @@
+import { EN_GB, type ArticleLabels } from "@dst/ui/labels";
+
 // The site publishes itself: these five domains are independent of the DST
 // group and of each other, so every block of structured data on them has to
 // name this host rather than the group — see VERCEL.md.
@@ -45,6 +47,11 @@ export const about = {
   h1: "About London Today, a central London listings site",
   lede: `What is on in central London, with a source and a date on every entry.`,
 };
+
+// The words the shared article components put on the page, in British
+// English ("Organised by", "Organiser"). Every page passes them with
+// locale="en-GB", which also puts the day before the month.
+export const labels: Partial<ArticleLabels> = EN_GB;
 
 /**
  * The site's RSS channel. It lives here rather than in the route because

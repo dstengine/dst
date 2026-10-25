@@ -292,6 +292,18 @@ export const EN: ArticleLabels = {
 };
 
 /**
+ * British English, for the London sites: they declare `lang="en-GB"`, are read
+ * from UK search, and write "organisers" and "programme" in their own copy,
+ * so the one word the EN set spells the American way reads British too.
+ * Everything else in EN already does ("Programme", "Under way").
+ */
+export const EN_GB: ArticleLabels = {
+  ...EN,
+  organizedBy: "Organised by",
+  organizer: "Organiser",
+};
+
+/**
  * The other two languages the network publishes in. They live here, not in
  * the app, because the second Spanish site copied the first one's file
  * verbatim — sixty lines that then had to be corrected twice whenever a

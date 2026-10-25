@@ -1,3 +1,5 @@
+import { EN_GB, type ArticleLabels } from "@dst/ui/labels";
+
 // GB7 publishes this site (gb7.uk names it among its own), so the
 // structured data on every page names GB7 rather than the host — the same
 // @id the publisher's own page declares. It is an A/B/n sibling of ldn.lol
@@ -46,6 +48,11 @@ export const about = {
   h1: "About London Calendar",
   lede: `London's big dates for the year ahead, published by GB7, with a source and a date on every entry.`,
 };
+
+// The words the shared article components put on the page, in British
+// English ("Organised by", "Organiser"). Every page passes them with
+// locale="en-GB", which also puts the day before the month.
+export const labels: Partial<ArticleLabels> = EN_GB;
 
 /**
  * The site's RSS channel. It lives here rather than in the route because

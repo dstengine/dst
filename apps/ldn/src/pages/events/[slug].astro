@@ -3,7 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import { site } from "../../site.config";
 import { eventMeta } from "@dst/ui/meta";
 import EventArticle from "@dst/ui/EventArticle.astro";
-import { siteId, newsBase, eventsBase, publisher } from "../../content";
+import { siteId, newsBase, eventsBase, publisher, labels } from "../../content";
 import { eventsBySite } from "@dst/content/events";
 import { go } from "../../outbound";
 import { newsBySite } from "@dst/content/news";
@@ -32,6 +32,8 @@ const meta = eventMeta(item, site, { host: Astro.site?.hostname ?? "", path: Ast
 <Layout title={meta.title} description={meta.description} image={item.image}>
   <EventArticle
     item={item}
+    locale="en-GB"
+    labels={labels}
     ticketHref={ticketHref}
     sourceHref={sourceHref}
     more={more}

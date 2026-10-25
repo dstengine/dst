@@ -2,7 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import { site } from "../../site.config";
 import NewsArticle from "@dst/ui/NewsArticle.astro";
-import { siteId, newsBase, eventsBase, publisher } from "../../content";
+import { siteId, newsBase, eventsBase, publisher, labels } from "../../content";
 import { newsBySite } from "@dst/content/news";
 import { sectionHrefFor } from "@dst/content/sections";
 import { allSections, promoted } from "../../sections";
@@ -25,6 +25,8 @@ const categoryHref = sectionHrefFor(item, allSections);
 <Layout title={item.titleSeo ?? item.title} description={item.summary} image={item.image}>
   <NewsArticle
     item={item}
+    locale="en-GB"
+    labels={labels}
     more={more}
     moreEvents={moreEvents}
     backHref={newsBase}
