@@ -166,13 +166,21 @@ const L = withLabels(labelOverrides);
     const initial = new URL(location.href).searchParams.get("q");
     if (initial) {
       input.value = initial;
-      void search();
+      // A shared ?q= link is a request for the results. Where the box sits
+      // below the first screen — tick's front page keeps it under the
+      // spotlight — the page goes to it rather than opening on the hero.
+      void search().then(() => {
+        if (form.getBoundingClientRect().top > innerHeight * 0.6) form.scrollIntoView({ block: "start" });
+      });
     }
   }
 </script>
 
 <style>
-  .site-search { margin-top: var(--space-3); }
+  /* scroll-margin: a shared ?q= link scrolls the box to the top, and on a
+     phone the header is sticky; the field must not land under it. The
+     offset is BaseLayout's, set only where the header sticks. */
+  .site-search { margin-top: var(--space-3); scroll-margin-top: var(--header-clear, 0); }
   .site-search-field {
     display: flex;
     align-items: center;

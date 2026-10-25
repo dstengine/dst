@@ -311,6 +311,29 @@ test("the search placeholder is whole in the field at 320", async ({ page }) => 
   }
 });
 
+// On a phone the header sticks, so whatever scrolls itself to the top has
+// to stop below it. The header is 73px on every site and the offset was
+// 64, which hid the top of each anchored heading; on tick a shared ?q= link
+// now scrolls the search box up, which made it the first to show (tick-14).
+test("on a phone, an anchor and a ?q= link land clear of the sticky header", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 800 });
+  const clear = () => page.evaluate(() => {
+    const box = document.querySelector(location.hash || ".site-search");
+    return { top: Math.round(box.getBoundingClientRect().top), header: Math.round(document.querySelector(".site-header").getBoundingClientRect().bottom), y: scrollY };
+  });
+  await page.goto(url("fest", "/creamfields-chile/#entradas"));
+  const a = await clear();
+  expect(a.y, "the anchor scrolled").toBeGreaterThan(0);
+  expect(a.top, "#entradas under the header").toBeGreaterThanOrEqual(a.header);
+  for (const path of ["/?q=opera", `/am/?q=${encodeURIComponent("Օպերա")}`]) {
+    await page.goto(url("tick", path));
+    await expect(page.locator(".site-search-results a").first()).toBeVisible();
+    await expect.poll(() => page.evaluate(() => scrollY), { message: `${path}: scrolled to the box` }).toBeGreaterThan(0);
+    const q = await clear();
+    expect(q.top, `${path}: the search box under the header`).toBeGreaterThanOrEqual(q.header);
+  }
+});
+
 // The facts panel's label column is the panel's: a fixed 9rem broke "On this
 // calendar" and «Այս օրացույցում» over two lines beside one-line values
 // (scan 2026-10-24, net-25). Every label one line, every value at one x.

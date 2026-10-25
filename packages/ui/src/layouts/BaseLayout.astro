@@ -819,8 +819,12 @@ const wordmark = siteName.replaceAll(" · ", "\u00A0·\u00A0");
   @media (max-width: 700px) {
     .site-header { position: sticky; top: 0; }
     /* An in-page anchor must not land under the header it just scrolled
-       past. 4rem is the header at this width plus a little air. */
-    :global(main [id]) { scroll-margin-top: 4rem; }
+       past. The header is 73px at this width on every site (measured at
+       320 and 390, 25 Oct 2026; the 4rem this used to be hid 9px of every
+       anchored heading); 5rem clears it with a little air. One number,
+       read by anything else that scrolls itself into view. */
+    :global(:root) { --header-clear: 5rem; }
+    :global(main [id]) { scroll-margin-top: var(--header-clear); }
   }
   /* A long nav gets a tightened row — smaller type, no icons, narrower gaps
      — which is enough to hold one line on a wide screen. Below 1200 the row

@@ -76,7 +76,6 @@ const venues = allVenues[lang].slice(0, 4).map((v) => ({
   <section class="container hero">
     <h1>{page.h1}</h1>
     <p class="lede">{page.lede}</p>
-    <SiteSearch indexHref={`${p}search.json`} locale={LOCALE[lang]} labels={labels[lang]} />
   </section>
   {top.length > 0 && (
     <section class="container home-top">
@@ -87,10 +86,13 @@ const venues = allVenues[lang].slice(0, 4).map((v) => ({
   <EventsBlock locale={LOCALE[lang]} items={events.filter((e) => !shown.has(eventHref(e, eventsBase(lang))))} heading={w.upcoming} eventsBase={eventsBase(lang)} allLabel={w.allEvents} labels={labels[lang]}>
     {/* The ways into the calendar, under the spotlight rather than above
         it: the first event is the point of the page, and a row of chips
-        before it pushed it below the fold on a phone. */}
+        before it pushed it below the fold on a phone. The search box is
+        one of them: in the hero it took the room the chips gave back and
+        put the first event 915px down at 320 (scan 2026-10-24, tick-14). */}
     <Fragment slot="nav">
       <SectionNav sections={allSections[lang]} label={NAV[lang].label} base={p} />
       <MonthChips lang={lang} />
+      <SiteSearch indexHref={`${p}search.json`} locale={LOCALE[lang]} labels={labels[lang]} />
     </Fragment>
   </EventsBlock>
   {venues.length > 0 && (
