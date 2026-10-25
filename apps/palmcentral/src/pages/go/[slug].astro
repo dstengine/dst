@@ -1,0 +1,14 @@
+---
+import Redirect from "@dst/ui/Redirect.astro";
+import { outbound } from "../../outbound";
+
+export function getStaticPaths() {
+  return Object.entries(outbound).map(([slug, to]) => ({
+    params: { slug },
+    props: { to },
+  }));
+}
+
+const { to } = Astro.props;
+---
+<Redirect to={to} />
