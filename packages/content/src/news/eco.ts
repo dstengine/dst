@@ -316,4 +316,40 @@ export const items: NewsItem[] = [
     expertise:
       "For anyone tracking conservation in the Gulf, the useful part of this citation is the baseline it fixes. A figure like 1,099 species, published by name and date, turns future monitoring into arithmetic: any survey from here can be compared against it, and a decline becomes a number rather than an impression. That is worth more than the plaque. The second thing worth noting is the framing of the endemism claim — species richness in an arid mountain system is concentrated at water, and a wadi is where the water is, which means the pressure points are predictable: groundwater abstraction, road access and visitor numbers at exactly the pools that make the count possible. The danger list exists because inscription alone changes none of that.",
   },
+  {
+    slug: "dubai-award-for-sustainable-transport-goes-to-ammans-brt",
+    createdAt: "2026-10-25T04:30:00+04:00",
+    updatedAt: "2026-10-25T04:30:00+04:00",
+    site: "eco",
+    image: "/covers/dubai-award-for-sustainable-transport-goes-to-ammans-brt.jpg",
+    imageAlt: "A long green paper bus on its own lane through a pale stone city on hills, a small trophy shape in the sky above",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Amman's bus rapid transit takes the top Dubai award for sustainable transport",
+    cardTitle: "Amman's BRT wins in Dubai",
+    titleSeo: "Dubai sustainable transport award: Amman BRT wins",
+    summary:
+      "The 14th Dubai Award for Sustainable Transport gave its $100,000 Elite Award to the Greater Amman Municipality's bus rapid transit, which carried 73.9 million passengers. Etihad Rail, DP World, Careem Bike and Dubai Police's cycling safety work were among the other winners of a record 750 entries.",
+    date: "2026-10-25",
+    category: "Transport",
+    source: {
+      name: "Roads and Transport Authority",
+      url: "https://www.rta.ae/wps/portal/rta/ae/home/news-and-media/all-news/NewsDetails/mansoor-bin-mohammed-honours-winners-of-14th-dubai-award-for-sustainable-transport",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "The <strong>Dubai Award for Sustainable Transport</strong>, run by the <strong>RTA</strong> under the patronage of Sheikh Hamdan bin Mohammed, handed out its 14th round of prizes at <strong>Dubai World Trade Centre</strong> on <strong>15 October 2026</strong>. Sheikh Mansoor bin Mohammed honoured the winners.",
+      "## The Elite Award",
+      "The top prize, chosen from the first-place winners of every category except the student awards, carries a trophy and <strong>$100,000</strong>. It went outside the UAE: to the <strong>Greater Amman Municipality</strong> for its <strong>bus rapid transit</strong>, which runs with the Amman Bus services as one network with one fare system. It has <strong>193 buses</strong> on <strong>nine routes</strong> over <strong>215 km</strong>, and has carried <strong>73.9 million passengers</strong>, about 2.1 million a month. A second phase will add more than 43 km and three routes in the south and west of the city.",
+      "## The other winners",
+      "Among the organisations honoured were <strong>Abu Dhabi Mobility</strong>, <strong>Etihad Rail</strong>, <strong>DP World</strong>, <strong>Keeta Drone</strong>, <strong>UAEV</strong>, <strong>Dubai Police</strong> for its safe cycling work, <strong>Careem Bike</strong>, and Qatar's Ministry of Transport together with the Dubai Civil Aviation Authority.",
+      "## Students",
+      "Yousef Al Badawi of Ajman University took first place in the NextGen for Mobility Award for <strong>Smart Solar Pedestrian Nodes</strong>: solar shades at crossings that also harvest water from the air. Shamas Abdulraouf of the Indian School in Abu Dhabi took first place in the Outstanding Student Solutions Award for <strong>Empty Miles</strong>, a platform that fills spare space in commercial vans to cut empty trips. Both awards pay AED 60,000, 40,000 and 20,000 for the first three places.",
+      "## A bigger field",
+      "This round drew more than <strong>750 entries</strong>, up 400 per cent, and <strong>158 finalists</strong>, up 140 per cent. Entries came from 45 entities in nine countries and from 460 individuals in 22. Tony Seba, who writes on technology disruption, gave the keynote.",
+    ],
+    expertise:
+      "The Amman result is the one to read twice. Bus rapid transit gives buses their own lanes, level boarding and priority at junctions, and it is built at a fraction of the cost of rail, which is why it is the workhorse of sustainable transport in cities without a metro budget. A Gulf award going to a bus network rather than to a drone or a rail line puts passengers carried ahead of novelty. The 2.1 million passengers a month is the number to hold any new scheme in the region against, Dubai's own bus lanes included.",
+  },
 ];
