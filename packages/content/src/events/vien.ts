@@ -2049,4 +2049,93 @@ export const items: EventItem[] = [
     expertise:
       "Kommen Sie an einem Vormittag unter der Woche, wenn die Handwerker vorführen und die Gassen zwischen den Buden noch leer sind. Ab dem späten Nachmittag füllt sich die Freyung mit Leuten aus den Büros der Innenstadt, die auf einen Punsch kommen. Wer Geschenke sucht, findet hier eher Handgemachtes als am Rathausplatz, und Bargeld schadet bei kleinen Ständen nie.",
   },
+  {
+    slug: "weihnachtsmarkt-spittelberg-2026",
+    createdAt: "2026-10-25T04:30:00+04:00",
+    updatedAt: "2026-10-25T04:30:00+04:00",
+    site: "vien",
+    image: "/covers/weihnachtsmarkt-spittelberg-2026.jpg",
+    imageAlt: "Eine schmale Gasse mit alten Biedermeierhäusern, Lichterketten zwischen den Fenstern und kleine Holzstände mit grünen Zweigen",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Weihnachtsmarkt am Spittelberg 2026",
+    cardTitle: "Weihnachtsmarkt am Spittelberg",
+    titleSeo: "Weihnachtsmarkt Spittelberg Wien 2026: Termine, Zeiten",
+    summary:
+      "Der Weihnachtsmarkt am Spittelberg in Wien-Neubau öffnet am Freitag, 13. November 2026, um 14 Uhr und läuft bis 23. Dezember: werktags von 14 bis 21:30 Uhr, am Wochenende und an Feiertagen ab 11 Uhr. Er ist ein Öko-Event mit fairen, regionalen und vegetarischen Angeboten.",
+    start: "2026-11-13",
+    end: "2026-12-23",
+    startTime: "14:00",
+    endTime: "21:30",
+    utcOffset: "+01:00",
+    venue: "Spittelberg, 1070 Wien",
+    city: "Wien",
+    country: "Österreich",
+    geo: { name: "Spittelberggasse", lat: 48.2035618, lng: 16.3551469 },
+    organizer: "Weihnachtsmarkt am Spittelberg",
+    category: "Weihnachtsmarkt",
+    tickets: { priceFrom: 0, currency: "EUR" },
+    ticket: {
+      url: "https://www.spittelberg.at/",
+      label: "Weihnachtsmarkt am Spittelberg",
+      sells: false,
+    },
+    source: {
+      name: "Weihnachtsmarkt am Spittelberg",
+      url: "https://www.spittelberg.at/",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "Zwischen den Biedermeierhäusern im 7. Bezirk beginnt der Advent früh: Der <strong>Weihnachtsmarkt am Spittelberg</strong> öffnet am <strong>Freitag, 13. November 2026, ab 14 Uhr</strong> und bleibt bis <strong>23. Dezember</strong>.",
+      "## Öffnungszeiten",
+      "<strong>Montag bis Freitag</strong> von <strong>14 bis 21:30 Uhr</strong>. <strong>Samstag, Sonntag und an Feiertagen</strong> von <strong>11 bis 21:30 Uhr</strong>.",
+      "## Spittelberg goes Green!",
+      "Der Markt ist ein <strong>Öko-Event</strong>. Unter dem Motto <strong>Spittelberg goes Green!</strong> setzen die Stände auf faire Produkte, regionale und biologische Zutaten, vegetarische und vegane Speisen und einen sparsamen Umgang mit Ressourcen.",
+      "## Für Kinder",
+      "Ein eigenes <strong>Kinderprogramm</strong> gehört zum Markt; die Termine stehen auf der Website des Weihnachtsmarkts.",
+      "## Weitere Märkte",
+      "Wer mehrere Märkte an einem Abend verbinden will: Der <a href=\"/veranstaltungen/wiener-christkindlmarkt-2026/\" title=\"Wiener Christkindlmarkt am Rathausplatz 2026\">Christkindlmarkt am Rathausplatz</a> und der <a href=\"/veranstaltungen/altwiener-christkindlmarkt-freyung-2026/\" title=\"Altwiener Christkindlmarkt Wien 2026: Freyung, Zeiten\">Altwiener Christkindlmarkt auf der Freyung</a> liegen nicht weit entfernt in der Inneren Stadt.",
+    ],
+    faq: [
+      {
+        q: "Wann ist der Weihnachtsmarkt am Spittelberg 2026?",
+        a: "Vom 13. November bis 23. Dezember 2026. Er öffnet am Freitag, 13. November, um 14 Uhr.",
+      },
+      {
+        q: "Wie sind die Öffnungszeiten?",
+        a: "Montag bis Freitag 14 bis 21:30 Uhr, Samstag, Sonntag und Feiertag 11 bis 21:30 Uhr.",
+      },
+      {
+        q: "Wo genau ist der Markt?",
+        a: "In den Gassen des Spittelbergs im 7. Bezirk, Neubau, rund um die Spittelberggasse.",
+      },
+      {
+        q: "Gibt es vegetarisches Essen?",
+        a: "Ja. Der Markt ist ein Öko-Event, mit vegetarischen und veganen Speisen sowie regionalen und biologischen Produkten.",
+      },
+    ],
+    related: [
+      {
+        href: "/veranstaltungen/wiener-christkindlmarkt-2026/",
+        eyebrow: "13. November – 26. Dezember",
+        title: "Wiener Christkindlmarkt am Rathausplatz",
+        text: "Der große Markt vor dem Rathaus.",
+      },
+      {
+        href: "/veranstaltungen/altwiener-christkindlmarkt-freyung-2026/",
+        eyebrow: "14. November – 23. Dezember",
+        title: "Altwiener Christkindlmarkt",
+        text: "Handwerk und Krippen auf der Freyung.",
+      },
+      {
+        href: "/veranstaltungen/art-advent-karlsplatz-2026/",
+        eyebrow: "13. November – 23. Dezember",
+        title: "Art Advent Karlsplatz",
+        text: "Kunsthandwerk vor der Karlskirche.",
+      },
+    ],
+    expertise:
+      "Der Spittelberg ist der Markt in den Gassen, nicht auf einem Platz: Die Stände stehen zwischen den Hausfassaden, und das macht ihn an Wochenendabenden eng. Wer in Ruhe schauen will, kommt unter der Woche kurz nach 14 Uhr. Am Samstag und Sonntag öffnet er schon um 11 Uhr, und der Vormittag ist dann die ruhigste Zeit, um in Ruhe Geschenke zu suchen.",
+  },
 ];
