@@ -343,7 +343,9 @@ function judge(exp, read, from, to) {
   else if (due) status = "DUE";
   else if (exp.decideBy && ((power.sampleOn && power.sampleOn > exp.decideBy) || shortByDate)) status = "UNDERPOWERED";
   else status = "RUNNING";
-  if (status === "DUE" || status === "NO RULE") {
+  if (busiest === 0) {
+    verdict = `${status === "NO RULE" ? "no decision rule; " : ""}nothing to read yet — no arm has a single unit`;
+  } else if (status === "DUE" || status === "NO RULE") {
     const best = others.filter((a, i) => pAdj[i] < ALPHA).sort((x, y) => (y.lift ?? 0) - (x.lift ?? 0))[0];
     if (!best) verdict = `no difference seen; at this size only lifts of ${pct(power.seesNow)} or more were visible, so "no effect" means "no large effect"`;
     else if ((best.lift ?? 0) < 0) verdict = `${control.variant} beats ${best.variant} (p ${best.p.toFixed(3)}): keep the control`;
@@ -386,7 +388,8 @@ function print(exp, read, j, from, to) {
       ? `  pace: ${fmtN(j.smallest)} of ${fmtN(exp.sample)} ${unit} in the smaller arm, ${j.perDay.toFixed(1)}/day → sample reached ${pw.sampleOn ?? "never at this pace"}`
       : `  pace: ${fmtN(j.smallest)} ${unit} in the smaller arm, ${j.perDay.toFixed(1)}/day → ≈ ${fmtN(pw.atDecideBy)} per arm by ${exp.decideBy}`);
   }
-  console.log(`  power: baseline ${rate(pw.baseline)}${read.baseline ? " (28 days before start)" : pw.baseline ? " (control so far)" : " — unknown, no clicks yet"}` +
+  if (!pw.baseline) console.log(`  power: baseline unknown — no ${exp.unit === "page" ? "clicks" : "goals"} yet`);
+  else console.log(`  power: baseline ${rate(pw.baseline)}${read.baseline ? " (28 days before start)" : " (control so far)"}` +
     ` · sees now ≥ ${pct(pw.seesNow)}` + (pw.seesByDecideBy ? ` · by ${exp.decideBy} ≥ ${pct(pw.seesByDecideBy)}` : "") +
     (exp.lift && pw.needForLift ? ` · ${pct(exp.lift)} needs ${fmtN(pw.needForLift)}/arm${pw.liftOn ? ` (≈ ${pw.liftOn})` : ""}` : ""));
   for (const w of j.warnings) console.log(`  ! ${w}`);
