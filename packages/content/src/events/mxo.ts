@@ -1260,4 +1260,86 @@ export const items: EventItem[] = [
     expertise:
       "Para verla en persona conviene reservar hospedaje en San José del Cabo cuanto antes: más de 250 equipos, con sus equipos de apoyo, llenan la ciudad esa semana. La ruta oficial con sus puntos de acceso se publica antes de la carrera; los lugares para el público cerca de la salida y la meta son los más fáciles, y adentrarse en el desierto pide vehículo adecuado, agua y paciencia.",
   },
+  {
+    slug: "carnaval-de-mazatlan-2027",
+    createdAt: "2026-10-25T04:30:00+04:00",
+    updatedAt: "2026-10-25T04:30:00+04:00",
+    site: "mxo",
+    image: "/covers/carnaval-de-mazatlan-2027.jpg",
+    imageAlt: "Un carro alegórico con un venado y una bailarina de vestido rojo avanzando por un malecón, con comparsas y confeti alrededor",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Carnaval Internacional de Mazatlán 2027: Amamos nuestras tradiciones",
+    cardTitle: "Carnaval de Mazatlán 2027",
+    titleSeo: "Carnaval de Mazatlán 2027, México: fechas y desfiles",
+    summary:
+      "El Carnaval Internacional de Mazatlán 2027, en Sinaloa, México, se celebra del 4 al 9 de febrero con el tema Amamos nuestras tradiciones, con desfiles el domingo 7 y el martes 9. En 2026 la fiesta llevó a más de 157,000 turistas al puerto y dejó la ocupación hotelera en 88%.",
+    start: "2027-02-04",
+    end: "2027-02-09",
+    utcOffset: "-07:00",
+    venue: "Paseo Olas Altas, Mazatlán",
+    city: "Mazatlán",
+    country: "México",
+    geo: { name: "Paseo Olas Altas, Mazatlán", lat: 23.1977062, lng: -106.4267808 },
+    organizer: "Instituto Municipal de Cultura, Turismo y Arte de Mazatlán",
+    category: "Festivales",
+    ticket: {
+      url: "https://culturamazatlan.com/prensa/2026/08/anuncian-vision-fechas-y-convocatorias-para-el-carnaval-internacional-mazatlan-2027-amamos-nuestras-tradiciones/",
+      label: "Anuncio oficial",
+      sells: false,
+    },
+    source: {
+      name: "Instituto Municipal de Cultura, Turismo y Arte de Mazatlán",
+      url: "https://culturamazatlan.com/prensa/2026/08/anuncian-vision-fechas-y-convocatorias-para-el-carnaval-internacional-mazatlan-2027-amamos-nuestras-tradiciones/",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "El puerto de Mazatlán, en Sinaloa, ya tiene fechas para su fiesta mayor: el <strong>Carnaval Internacional de Mazatlán 2027</strong> va del <strong>jueves 4 al martes 9 de febrero de 2027</strong>, con el tema <strong>Amamos nuestras tradiciones</strong>. Lo anunció el Instituto Municipal de Cultura, Turismo y Arte el 26 de agosto de 2026.",
+      "## Los desfiles",
+      "Los dos desfiles son el <strong>domingo 7</strong> y el <strong>martes 9 de febrero</strong>, el último día del carnaval.",
+      "## Las sedes",
+      "El carnaval se reparte entre el <strong>Paseo Olas Altas</strong>, el <strong>Teatro Ángela Peralta</strong>, el <strong>Estadio Teodoro Mariscal</strong>, el <strong>Estadio El Encanto</strong> y, por primera vez, el <strong>Lienzo Charro</strong>.",
+      "## El tema",
+      "Los motivos de 2027 vienen de la tradición local: los textiles de Villa Unión, el venado, el juego de pelota ulama, el marinero, el malecón y la charrería.",
+      "## Antes del carnaval",
+      "La gala final de las reinas es el <strong>16 de enero de 2027</strong>. Las comparsas, de 30 a 35 integrantes, compiten por premios de 80,000, 60,000 y 40,000 pesos.",
+      "## Cuánta gente llega",
+      "En 2026 el carnaval dejó una ocupación hotelera del <strong>88%</strong>, más de <strong>157,000 turistas</strong> y una derrama de <strong>1,111 millones de pesos</strong>, según el Instituto.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo es el Carnaval de Mazatlán 2027?",
+        a: "Del jueves 4 al martes 9 de febrero de 2027.",
+      },
+      {
+        q: "¿Qué días son los desfiles?",
+        a: "El domingo 7 y el martes 9 de febrero de 2027.",
+      },
+      {
+        q: "¿Cuál es el tema?",
+        a: "Amamos nuestras tradiciones: textiles de Villa Unión, el venado, el ulama, el marinero, el malecón y la charrería.",
+      },
+      {
+        q: "¿Cuándo se corona a las reinas?",
+        a: "La gala final de las reinas es el 16 de enero de 2027.",
+      },
+    ],
+    related: [
+      {
+        href: "/eventos/fil-guadalajara-2026/",
+        eyebrow: "28 de noviembre – 6 de diciembre",
+        title: "FIL Guadalajara 2026",
+        text: "La feria del libro más grande del mundo en español, en el occidente de México.",
+      },
+      {
+        href: "/eventos/ficc-los-cabos-2026/",
+        eyebrow: "9–13 de diciembre",
+        title: "Festival de Cine de Los Cabos 2026",
+        text: "Cine en el otro extremo del Pacífico mexicano.",
+      },
+    ],
+    expertise:
+      "Con 88% de ocupación hotelera en 2026, el problema del carnaval no es el desfile sino la cama: reserve hospedaje en cuanto tenga fechas. Si solo puede ir unos días, elija entre el fin de semana, con el desfile del domingo 7, y el cierre, con el del martes 9. Para un desfile, lleve agua y llegue con tiempo: el lugar junto a la ruta se gana temprano.",
+  },
 ];
