@@ -1,4 +1,4 @@
-import { endDay } from "@dst/content/when";
+import { endDay, hasEnded, lastDay } from "@dst/content/when";
 
 // Shared "Jan 3, 2026" formatter for news/events dates — parsed with an
 // explicit UTC time-of-day so a plain "YYYY-MM-DD" string never lands on
@@ -58,4 +58,14 @@ export function cardCountdown(e: {
   const offset = e.utcOffset ?? "+04:00";
   const stamp = (day: string, time?: string) => (time ? `${day}T${time}:00${offset}` : day);
   return { start: stamp(e.start, e.startTime), end: stamp(endDay(e), e.endTime) };
+}
+
+/** The day a running event's card is dated by: its last day, when it
+    opened before `todayIso` and has not closed. Undefined for an event
+    still to come, one that starts today (its card counts the hours), and
+    one that is over. FeedCards then prints "until <day>" on the plate and
+    in the meta line. `todayIso` is passed in, never read here: the caller
+    has taken the date once for the whole page (see @dst/content/when). */
+export function cardUntil(e: { start: string; end?: string }, todayIso: string): string | undefined {
+  return e.start < todayIso && !hasEnded(e, todayIso) ? lastDay(e) : undefined;
 }

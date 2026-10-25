@@ -26,7 +26,7 @@ import Glance from "./Glance.astro";
 import { ICONS } from "../icons.ts";
 import Icon from "./Icon.astro";
 import { mapEmbedUrl, directionsUrl } from "../maps.ts";
-import { formatDate, cardHours, cardCountdown } from "../date.ts";
+import { formatDate, cardHours, cardCountdown, cardUntil } from "../date.ts";
 import { caps } from "../caps.ts";
 import { headingWord, withLabels, type ArticleLabels } from "../labels.ts";
 import { isOn, isCurrent, hasEnded, withPromoted } from "@dst/content/when";
@@ -115,30 +115,37 @@ const mapPlace = item.venue ?? item.geo?.name ?? "";
 const todayIso = new Date().toISOString().slice(0, 10);
 const moreCards = more
   .filter((other) => other.slug !== item.slug && Array.isArray(other.body) && other.body.length > 0)
-  // Three keys in order, and the first two are both about subject rather
-  // than date. Date alone put a flea market under a Halloween palace
-  // because it happened to be sooner — three cards is too few to spend on
-  // the coincidence of the calendar when the site knows what the page is
-  // about.
+  // Four keys in order. Three cards is too few to spend on the coincidence
+  // of the calendar when the site knows what the page is about, and too few
+  // to spend on anything the reader can no longer go to.
   //
-  // The promoted tag outranks even the page's own subject, on purpose: it
-  // is the site's answer to what is being asked for this month, and it is
-  // the same answer on every page. On a page that is itself under that tag
-  // the two keys agree and nothing moves. Within a subject the date order
-  // is the same as without one: what is still to come, then the past, most
-  // recent first.
+  // The promoted tag first, on purpose: it is the site's answer to what is
+  // being asked for this month, and it is the same answer on every page. On
+  // a page that is itself under that tag the keys agree and nothing moves.
+  //
+  // Then what is still on, ahead of what is over. Subject used to come
+  // first, and sol2go's Halloween page offered two meetups from July and
+  // September over nineteen events still to come. A past card is for a site
+  // with too few still on to fill the row.
+  //
+  // Then, within what is still on, the page's own subject. Date alone put a
+  // flea market under a Halloween palace because it happened to be sooner,
+  // and that stays impossible while anything of the page's subject is on.
+  //
+  // Then the date: soonest first for what is on or to come, most recent
+  // first for the past.
   .sort((a, b) => {
     if (promoted) {
       const aHot = a.category === promoted.key && isOn(a, todayIso);
       const bHot = b.category === promoted.key && isOn(b, todayIso);
       if (aHot !== bHot) return aHot ? -1 : 1;
     }
-    const aSame = a.category === item.category;
-    const bSame = b.category === item.category;
-    if (aSame !== bSame) return aSame ? -1 : 1;
     const aUp = isOn(a, todayIso);
     const bUp = isOn(b, todayIso);
     if (aUp !== bUp) return aUp ? -1 : 1;
+    const aSame = a.category === item.category;
+    const bSame = b.category === item.category;
+    if (aSame !== bSame) return aSame ? -1 : 1;
     return aUp ? (a.start < b.start ? -1 : 1) : (a.start < b.start ? 1 : -1);
   })
   .map((other) => ({
@@ -161,6 +168,10 @@ const moreCards = more
     dateInImage: other.dateInImage,
     editorsChoice: other.editorsChoice,
     past: hasEnded(other, todayIso),
+    // A run that opened on an earlier day is dated by the day it closes, as
+    // on the events index and the front page's block: its first day is one
+    // the reader has already missed.
+    until: cardUntil(other, todayIso),
   }));
 
 // If the promoted tag got to the front, the block belongs to it: the

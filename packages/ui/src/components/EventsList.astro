@@ -6,7 +6,7 @@
 import type { EventItem } from "@dst/content/types";
 import { eventHref } from "@dst/content/paths";
 import FeedCards from "./FeedCards.astro";
-import { cardHours, cardCountdown } from "../date.ts";
+import { cardHours, cardCountdown, cardUntil } from "../date.ts";
 import Icon from "./Icon.astro";
 import { withLabels, type ArticleLabels } from "../labels.ts";
 import CountdownScript from "./CountdownScript.astro";
@@ -96,7 +96,9 @@ const toCard = (item: EventItem, past: boolean) => {
 // page's block (EventsBlock) had already split them off under "On now",
 // dated by the day they close — the one a reader can still miss — and the
 // listing now does the same, so one feed stops behaving two ways.
-// See @dst/content/when for why "on" is decided on the last day.
+// See @dst/content/when for why "on" is decided on the last day. The date
+// a running card carries is cardUntil's (../date.ts), the one rule this
+// listing, the front page's block and an event page's tail all read.
 const upcoming = items
   .filter((e) => isOn(e, asOf) && e.start >= asOf)
   .sort(byDate)
@@ -104,7 +106,7 @@ const upcoming = items
 const running = items
   .filter((e) => isOn(e, asOf) && e.start < asOf)
   .sort((a, b) => (lastDay(a) < lastDay(b) ? -1 : lastDay(a) > lastDay(b) ? 1 : byDate(a, b)))
-  .map((e) => ({ ...toCard(e, false), until: lastDay(e) }));
+  .map((e) => ({ ...toCard(e, false), until: cardUntil(e, asOf) }));
 const past = items
   .filter((e) => hasEnded(e, asOf))
   .sort((a, b) => (a.start < b.start ? 1 : a.start > b.start ? -1 : 0))

@@ -17,7 +17,7 @@
 import type { EventItem } from "@dst/content/types";
 import { eventHref } from "@dst/content/paths";
 import FeedCards from "./FeedCards.astro";
-import { cardHours, cardCountdown } from "../date.ts";
+import { cardHours, cardCountdown, cardUntil } from "../date.ts";
 import CountdownScript from "./CountdownScript.astro";
 import { hasEnded, lastDay } from "@dst/content/when";
 import { withLabels, type ArticleLabels } from "../labels.ts";
@@ -71,7 +71,7 @@ const running = items
 
 const L = withLabels(labels);
 
-const card = (item: EventItem, isRunning: boolean) => {
+const card = (item: EventItem) => {
   const hasPage = Array.isArray(item.body) && item.body.length > 0;
   return {
     href: hasPage ? eventHref(item, eventsBase) : undefined,
@@ -90,15 +90,15 @@ const card = (item: EventItem, isRunning: boolean) => {
     countdown: cardCountdown(item),
     dateInImage: item.dateInImage,
     editorsChoice: item.editorsChoice,
-    until: isRunning ? lastDay(item) : undefined,
+    until: cardUntil(item, todayIso),
   };
 };
 
 // The see-all link and the nav row go with whichever group comes first, so
 // a site with nothing still to come keeps its way into the calendar.
 const groups = [
-  { heading, cards: upcoming.map((e) => card(e, false)) },
-  { heading: L.onNow, cards: running.map((e) => card(e, true)) },
+  { heading, cards: upcoming.map((e) => card(e)) },
+  { heading: L.onNow, cards: running.map((e) => card(e)) },
 ].filter((g) => g.cards.length > 0);
 ---
 {groups.map((g, i) => (

@@ -882,6 +882,102 @@ describe("event calendars", () => {
     }
     assert.deepEqual(missing, [], `events pages with no link to their own calendar:\n  ${missing.join("\n  ")}`);
   });
+
+  // The "More events" tail under an event page dates its cards the way the
+  // events index does: a run that opened before the build day says when it
+  // closes ("until 1 Nov"), and an event that is over says Past. A card dated
+  // before the build day with neither is a run shown by a first day the
+  // reader has already missed: 475 of them on the 25 Oct 2026 build, under
+  // the Halloween pages people were landing on (hw-net-14).
+  //
+  // The build day is the one the build wrote into the site's calendar
+  // (DTSTAMP is the build's clock, see ics.ts), not a file's mtime, which cp,
+  // rsync and Syncthing keep or reset. A calendar stamped in the first hour
+  // of a UTC day may come from a build that crossed midnight and rendered
+  // its first pages the day before, so that build is held to the day before.
+  //
+  // Only event cards count: when a site has no other event, the block falls
+  // back to its latest news, and a news card is dated by its filing day.
+  // musical has a calendar but no event pages, so no tail to read.
+  const NO_EVENT_PAGES = new Set(["musical"]);
+  const TAIL = /<section class="event-article-more"[^>]*>([\s\S]*?)<\/section>/;
+  const tailCards = (html) => {
+    const m = html.match(TAIL);
+    if (!m) return null;
+    return [...m[1].matchAll(/<a class="feed-card"[^>]*href="([^"]*)"[^>]*>([\s\S]*?)<\/a>/g)]
+      .filter(([, , body]) => body.includes('class="feed-meta feed-meta-event"'))
+      .map(([, href, body]) => ({
+        href,
+        datetime: (body.match(/<time datetime="([^"]+)"/) || [])[1],
+        past: body.includes('class="feed-past"'),
+      }));
+  };
+  const dayBefore = (iso) => new Date(Date.parse(`${iso}T00:00:00Z`) - 86400000).toISOString().slice(0, 10);
+  const floorDay = (app) => {
+    const m = read(app).match(/^DTSTAMP:(\d{4})(\d\d)(\d\d)T(\d\d)/m);
+    assert.ok(m, `${app}/${CALENDARS[app]}.ics: no DTSTAMP to date the build by`);
+    const day = `${m[1]}-${m[2]}-${m[3]}`;
+    return m[4] === "00" ? dayBefore(day) : day;
+  };
+  const eventTails = () =>
+    pages
+      .filter((p) => p.app in CALENDARS && !NO_EVENT_PAGES.has(p.app))
+      .map((p) => ({ ...p, cards: tailCards(p.html) }))
+      .filter((p) => p.cards);
+
+  test("an event page's More events tail dates nothing before the build day unless it says Past", () => {
+    const floor = Object.fromEntries(Object.keys(CALENDARS).filter((a) => !NO_EVENT_PAGES.has(a)).map((a) => [a, floorDay(a)]));
+    const stale = eventTails().flatMap((p) =>
+      p.cards
+        .filter((c) => c.datetime < floor[p.app] && !c.past)
+        .map((c) => `${p.app} ${p.url}: ${c.href} dated ${c.datetime}`));
+    assert.deepEqual(stale, [], `tail cards dated by a day already gone, neither "until" nor Past:\n  ${stale.slice(0, 40).join("\n  ")}${stale.length > 40 ? `\n  …and ${stale.length - 40} more` : ""}`);
+  });
+
+  // And it offers a past event only when the site has too few still on to
+  // fill it. Sorted subject first, sol2go's Halloween page offered two
+  // meetups from July and September over nineteen events still to come.
+  // "Still on" is what the site's events index lists outside its Past group:
+  // the a.feed-card elements in .events-lists (an event with no page is an
+  // <article>, which no tail takes; dst draws other sites' events below the
+  // list), less the page's own card. tick's /am/ pages read /am/events/.
+  test("an event page's More events tail offers a past event only when fewer than three are still on", () => {
+    const live = new Map();
+    const liveOthers = (app, url) => {
+      const index = `${app === "tick" && url.startsWith("/am/") ? "/am" : ""}/${CALENDARS[app]}/`;
+      if (!live.has(app + index)) {
+        const html = readFileSync(path.join(REPO, "apps", app, "dist", index, "index.html"), "utf8");
+        const start = html.search(/<div class="events-lists"/);
+        assert.ok(start >= 0, `${app}${index}: no .events-lists to count what is still on`);
+        // Walk the divs from .events-lists to its close; its groups are its children.
+        const hrefs = [];
+        const re = /<div\b[^>]*>|<\/div>/g;
+        re.lastIndex = start;
+        const open = [];
+        for (let m; (m = re.exec(html)); ) {
+          if (m[0].startsWith("</")) {
+            const group = open.pop();
+            if (group && !group.past) {
+              for (const a of html.slice(group.from, m.index).matchAll(/<a class="feed-card"[^>]*href="([^"]*)"/g)) hrefs.push(a[1]);
+            }
+            if (open.length === 0) break;
+          } else {
+            const isGroup = open.length === 1 && /class="events-group[ "]/.test(m[0]);
+            open.push(isGroup ? { from: m.index, past: m[0].includes("events-group-past") } : null);
+          }
+        }
+        live.set(app + index, { hrefs });
+      }
+      const { hrefs } = live.get(app + index);
+      return { index, count: hrefs.filter((h) => h !== url).length };
+    };
+    const stray = eventTails()
+      .filter((p) => p.cards.some((c) => c.past))
+      .map((p) => ({ p, ...liveOthers(p.app, p.url) }))
+      .filter(({ count }) => count >= 3)
+      .map(({ p, index, count }) => `${p.app} ${p.url}: ${p.cards.filter((c) => c.past).length} Past card(s) while ${index} lists ${count} others still on`);
+    assert.deepEqual(stray, [], `tails offering what is over ahead of what is still on:\n  ${stray.join("\n  ")}`);
+  });
 });
 
 // The glance's Duration row. It used to vanish on any event with an `end`,

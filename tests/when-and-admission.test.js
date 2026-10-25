@@ -12,6 +12,7 @@ import assert from "node:assert/strict";
 
 const { lastDay, hasEnded, isOn } = await import("../packages/content/src/when.ts");
 const { isFree } = await import("../packages/content/src/admission.ts");
+const { cardUntil } = await import("../packages/ui/src/date.ts");
 
 const TODAY = "2026-09-12";
 
@@ -46,6 +47,18 @@ describe("when an event is over", () => {
     ]) {
       assert.notEqual(isOn(e, TODAY), hasEnded(e, TODAY));
     }
+  });
+
+  // The date on a running event's card: the events index, the front page's
+  // block and an event page's "More events" tail all read this one rule.
+  test("a running event's card is dated by its last day, and no other card is", () => {
+    assert.equal(cardUntil({ start: "2026-09-08", end: "2026-09-20" }, TODAY), "2026-09-20");
+    assert.equal(cardUntil({ start: "2026-09-08", end: TODAY }, TODAY), TODAY);
+    // One that starts today is still to come: its card counts the hours.
+    assert.equal(cardUntil({ start: TODAY, end: "2026-09-20" }, TODAY), undefined);
+    assert.equal(cardUntil({ start: "2026-09-20" }, TODAY), undefined);
+    assert.equal(cardUntil({ start: "2026-09-01", end: "2026-09-11" }, TODAY), undefined);
+    assert.equal(cardUntil({ start: "2026-09-11" }, TODAY), undefined);
   });
 });
 
