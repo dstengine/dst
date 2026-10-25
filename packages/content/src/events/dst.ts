@@ -939,4 +939,92 @@ export const items: EventItem[] = [
     expertise:
       "For anyone weighing a move, the 7s is the one weekend when expat Dubai turns up in one place: schools, clubs and companies field teams, and the stands are a fair cross-section of who lives here. Buy the 3-day pass rather than a single day: it costs AED 140 more than Saturday alone and adds Sunday's finals and the quieter Friday. The stadium is well outside the centre on the Al Ain Road, so settle the journey home before the day.",
   },
+  {
+    slug: "dubai-duty-free-tennis-championships-2027",
+    createdAt: "2026-10-25T04:30:00+04:00",
+    updatedAt: "2026-10-25T04:30:00+04:00",
+    site: "dst",
+    image: "/covers/dubai-duty-free-tennis-championships-2027.jpg",
+    imageAlt: "A yellow tennis ball in mid-air above a blue hard court with white lines and a net across it",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Dubai Duty Free Tennis Championships 2027",
+    cardTitle: "Dubai Tennis Championships 2027",
+    titleSeo: "Dubai Duty Free Tennis 2027: 14–27 February",
+    summary:
+      "The Dubai Duty Free Tennis Championships return to the tennis stadium in Garhoud from February 14 to 27, 2027: the women's WTA 1000 week first, then the men's ATP 500. Jessica Pegula and Daniil Medvedev are the champions to beat, and tickets are announced as available soon.",
+    start: "2027-02-14",
+    end: "2027-02-27",
+    utcOffset: "+04:00",
+    venue: "Dubai Duty Free Tennis Stadium, Garhoud",
+    city: "Dubai",
+    country: "United Arab Emirates",
+    geo: { name: "Dubai Duty Free Tennis Stadium", lat: 25.2429386, lng: 55.3424785 },
+    organizer: "Dubai Duty Free",
+    category: "Sport",
+    ticket: {
+      url: "https://www.dubaidutyfreetennischampionships.com/",
+      label: "Official site",
+      sells: false,
+    },
+    source: {
+      name: "Dubai Duty Free Tennis Championships",
+      url: "https://www.dubaidutyfreetennischampionships.com/",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "Dubai's tennis fortnight has its dates: the <strong>Dubai Duty Free Tennis Championships</strong> run from <strong>February 14 to 27, 2027</strong> at the <strong>Dubai Duty Free Tennis Stadium</strong> in Garhoud, a few minutes from Dubai International.",
+      "## Two tournaments, one after the other",
+      "The women play first. The WTA calendar puts Dubai's <strong>WTA 1000</strong> in the week of <strong>February 15</strong>, and the men's <strong>ATP 500</strong> follows on the same courts the next week, ending on Saturday the 27th.",
+      "## The champions to beat",
+      "<strong>Jessica Pegula</strong> won the women's title in 2026. <strong>Daniil Medvedev</strong> won the men's, his second in Dubai after 2023; Tallon Griekspoor withdrew injured from the final. The doubles went to <strong>Harri Heliövaara and Henry Patten</strong>, 7-5 7-5 over Marcelo Arévalo and Mate Pavić, and to <strong>Gabriela Dabrowski and Luisa Stefani</strong>.",
+      "## The Gulf swing",
+      "Dubai is the last stop of three. Abu Dhabi's WTA 500 is in the week of February 1 and Doha's WTA 1000 runs from February 7 to 13, so most of the women's field arrives straight from Qatar.",
+      "## Tickets",
+      "The organisers list tickets as available soon, on the championships' own site.",
+      "## The same month in Dubai",
+      "The <a href=\"/events/world-governments-summit-2027/\" title=\"World Governments Summit 2027, Dubai\">World Governments Summit</a> opens the month on February 1 to 3, and <a href=\"/events/global-village-season-31-2026/\" title=\"Global Village Dubai Season 31: dates, hours, AED 30 tickets\">Global Village</a> is open every evening until May.",
+    ],
+    faq: [
+      {
+        q: "When is the Dubai tennis tournament in 2027?",
+        a: "From February 14 to 27, 2027: the women's WTA 1000 in the week of February 15, then the men's ATP 500.",
+      },
+      {
+        q: "Where is it played?",
+        a: "At the Dubai Duty Free Tennis Stadium in Garhoud, close to Dubai International airport.",
+      },
+      {
+        q: "Who won in 2026?",
+        a: "Jessica Pegula won the women's singles and Daniil Medvedev the men's, his second Dubai title.",
+      },
+      {
+        q: "Are tickets on sale?",
+        a: "Not yet: the official site lists them as available soon.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/world-governments-summit-2027/",
+        eyebrow: "February 1–3",
+        title: "World Governments Summit 2027",
+        text: "The other big February date in Dubai.",
+      },
+      {
+        href: "/events/global-village-season-31-2026/",
+        eyebrow: "Until May 1",
+        title: "Global Village Season 31",
+        text: "The pavilions on Sheikh Mohammed bin Zayed Road, AED 30 entry.",
+      },
+      {
+        href: "/events/emirates-dubai-7s-2026/",
+        eyebrow: "November 27–29",
+        title: "Emirates Dubai 7s 2026",
+        text: "The season's other big weekend of sport.",
+      },
+    ],
+    expertise:
+      "The two weeks are two different tournaments with one stadium, so the first choice is the week, not the seat: the women's WTA 1000 comes straight from Doha's, a week after it, and the men's ATP 500 closes the fortnight on Saturday the 27th. The stadium sits inside the Aviation Club in Garhoud, close to Dubai International, which makes it one of the easiest places in the city to watch sport at the top level.",
+  },
 ];
