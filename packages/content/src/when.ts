@@ -23,6 +23,25 @@ type Dated = Pick<EventItem, "start" | "end">;
 /** The last day an event is on. */
 export const lastDay = (event: Dated): string => event.end ?? event.start;
 
+// A night that runs past midnight — 20:00 to 01:00 — is one evening, and
+// an entry writes it the way the poster does: one date, and an end time
+// earlier than the start. Read literally that ends nineteen hours before it
+// begins, which a calendar refuses (RFC 5545 §3.8.2.2: DTEND after DTSTART)
+// and Search Console reports as an invalid endDate. The end time belongs to
+// the next morning. An entry with its own `end` already says which day.
+type Timed = Pick<EventItem, "start" | "end" | "startTime" | "endTime">;
+
+/** The calendar day the clock's `endTime` falls on. */
+export function endDay(event: Timed): string {
+  if (event.end) return event.end;
+  if (event.startTime && event.endTime && event.endTime < event.startTime) {
+    const d = new Date(`${event.start}T00:00:00Z`);
+    d.setUTCDate(d.getUTCDate() + 1);
+    return d.toISOString().slice(0, 10);
+  }
+  return event.start;
+}
+
 /** Over, as of `today` (ISO "YYYY-MM-DD"). */
 export const hasEnded = (event: Dated, today: string): boolean => lastDay(event) < today;
 

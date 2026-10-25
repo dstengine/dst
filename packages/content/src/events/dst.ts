@@ -765,7 +765,7 @@ export const items: EventItem[] = [
   {
     slug: "haunted-town-night-img-worlds-2026",
     createdAt: "2026-10-24T19:00:00+04:00",
-    updatedAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-25T06:20:00+04:00",
     site: "dst",
     image: "/covers/haunted-town-night-img-worlds-2026.jpg",
     imageAlt: "A crooked cut-paper haunted house with lit windows inside a vast indoor hall, a crowd in silhouette before it and bats under the roof",

@@ -11,6 +11,7 @@ import type { Publisher } from '../schema';
 // under it while intent is still fresh.
 import type { EventItem, NewsItem } from "@dst/content/types";
 import { isFree } from "@dst/content/admission";
+import { endDay } from "@dst/content/when";
 import LeadForm from "./LeadForm.astro";
 import VentureGrid from "./VentureGrid.astro";
 import FeedCards from "./FeedCards.astro";
@@ -235,7 +236,7 @@ const tail = tailCards.length > 0
 const offset = item.utcOffset ?? "+04:00";
 const stamp = (day: string, time?: string) => (time ? `${day}T${time}:00${offset}` : day);
 const startStamp = stamp(item.start, item.startTime);
-const endStamp = item.end || item.endTime ? stamp(item.end ?? item.start, item.endTime) : undefined;
+const endStamp = item.end || item.endTime ? stamp(endDay(item), item.endTime) : undefined;
 
 // Absolute, because a crawler resolves a relative URL in JSON-LD against
 // nothing in particular; and tied to the page's own graph, so the event
@@ -248,7 +249,8 @@ const duration = (() => {
   if (!item.startTime || !item.endTime || item.end) return undefined;
   const [sh, sm] = item.startTime.split(":").map(Number);
   const [eh, em] = item.endTime.split(":").map(Number);
-  const minutes = eh * 60 + em - (sh * 60 + sm);
+  // Past midnight, 20:00–01:00 is five hours, not minus nineteen.
+  const minutes = (eh * 60 + em - (sh * 60 + sm) + 24 * 60) % (24 * 60);
   if (!Number.isFinite(minutes) || minutes <= 0) return undefined;
   return L.durationValue(Math.floor(minutes / 60), minutes % 60);
 })();

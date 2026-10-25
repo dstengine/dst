@@ -1,3 +1,5 @@
+import { endDay } from "@dst/content/when";
+
 // Shared "Jan 3, 2026" formatter for news/events dates — parsed with an
 // explicit UTC time-of-day so a plain "YYYY-MM-DD" string never lands on
 // the wrong side of midnight depending on the visitor's local timezone.
@@ -55,5 +57,5 @@ export function cardCountdown(e: {
   if (!e.displayHours || !e.startTime) return undefined;
   const offset = e.utcOffset ?? "+04:00";
   const stamp = (day: string, time?: string) => (time ? `${day}T${time}:00${offset}` : day);
-  return { start: stamp(e.start, e.startTime), end: stamp(e.end ?? e.start, e.endTime) };
+  return { start: stamp(e.start, e.startTime), end: stamp(endDay(e), e.endTime) };
 }

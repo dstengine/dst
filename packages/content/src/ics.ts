@@ -1,4 +1,5 @@
 import type { EventItem } from "./types.ts";
+import { endDay } from "./when.ts";
 
 // iCalendar file for a single event, so "add to calendar" works without
 // the visitor holding an account anywhere. Ticketing platforms treat this
@@ -85,9 +86,8 @@ function vevent(item: EventItem, pageUrl: string, now: Date): string[] {
 
   if (timed) {
     lines.push(`DTSTART:${stampUtc(new Date(`${item.start}T${item.startTime}:00${offset}`))}`);
-    const endDay = item.end ?? item.start;
     const endTime = item.endTime ?? item.startTime;
-    lines.push(`DTEND:${stampUtc(new Date(`${endDay}T${endTime}:00${offset}`))}`);
+    lines.push(`DTEND:${stampUtc(new Date(`${endDay(item)}T${endTime}:00${offset}`))}`);
   } else {
     // No clock time published, so this is an all-day entry rather than an
     // invented 00:00 start.

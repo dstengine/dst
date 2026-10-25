@@ -24,6 +24,27 @@ describe("ics: timed events", () => {
     assert.equal(field(ics, "DTEND"), "DTEND:20260907T140000Z");
   });
 
+  test("a night past midnight ends the next morning, not before it began", () => {
+    const ics = toIcs({ ...base, startTime: "20:00", endTime: "01:00" }, "https://dst.llc/x/", NOW);
+    console.log("  20:00–01:00 ->", field(ics, "DTSTART"), field(ics, "DTEND"));
+    assert.equal(field(ics, "DTSTART"), "DTSTART:20260907T160000Z");
+    assert.equal(field(ics, "DTEND"), "DTEND:20260907T210000Z");
+  });
+
+  test("an entry with its own end day keeps it", () => {
+    const ics = toIcs({ ...base, end: "2026-09-08", startTime: "21:00", endTime: "04:00" }, "https://dst.llc/x/", NOW);
+    assert.equal(field(ics, "DTEND"), "DTEND:20260908T000000Z");
+  });
+
+  test("no timed event in the data ends before it starts", () => {
+    const bad = allEvents.filter((e) => {
+      if (!e.startTime) return false;
+      const ics = toIcs(e, "https://dst.llc/x/", NOW);
+      return field(ics, "DTEND").slice(6) < field(ics, "DTSTART").slice(8);
+    });
+    assert.deepEqual(bad.map((e) => `${e.site}/${e.slug}`), []);
+  });
+
   test("an explicit utcOffset is honoured for events outside the Gulf", () => {
     const ics = toIcs({ ...base, startTime: "10:00", utcOffset: "+00:00" }, "https://dst.llc/x/", NOW);
     console.log("  10:00 +00:00 ->", field(ics, "DTSTART"));

@@ -2,7 +2,7 @@ import { test, describe } from "node:test";
 import assert from "node:assert/strict";
 import { newsBySite, latestNews } from "../src/news/index.ts";
 import { eventsBySite, upcomingEvents, pastEvents } from "../src/events/index.ts";
-import { isCurrent, isPromoted, withPromoted } from "../src/when.ts";
+import { endDay, isCurrent, isPromoted, withPromoted } from "../src/when.ts";
 
 const news = (over) => ({ slug: "s", site: "x", title: "t", summary: "s", date: "2026-01-01", ...over });
 const event = (over) => ({ slug: "s", site: "x", title: "t", summary: "s", start: "2026-01-01", ...over });
@@ -116,5 +116,23 @@ describe("isCurrent", () => {
     const item = news({ until: "2026-10-11" });
     assert.equal(isCurrent(item, "2026-10-11"), true);
     assert.equal(isCurrent(item, "2026-10-12"), false);
+  });
+});
+
+describe("endDay", () => {
+  test("a one-day event ends on its day", () => {
+    assert.equal(endDay({ start: "2026-10-31", startTime: "18:00", endTime: "22:00" }), "2026-10-31");
+  });
+  test("an end time earlier than the start is the next morning", () => {
+    assert.equal(endDay({ start: "2026-10-31", startTime: "20:00", endTime: "01:00" }), "2026-11-01");
+    assert.equal(endDay({ start: "2026-12-31", startTime: "21:00", endTime: "00:00" }), "2027-01-01");
+  });
+  test("an entry's own end day wins", () => {
+    assert.equal(endDay({ start: "2026-10-31", end: "2026-11-01", startTime: "21:00", endTime: "04:00" }), "2026-11-01");
+    assert.equal(endDay({ start: "2026-10-24", end: "2026-11-15", startTime: "19:00" }), "2026-11-15");
+  });
+  test("no clock times: the start, or the end when there is one", () => {
+    assert.equal(endDay({ start: "2026-10-31" }), "2026-10-31");
+    assert.equal(endDay({ start: "2026-10-31", end: "2026-11-02" }), "2026-11-02");
   });
 });
