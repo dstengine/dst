@@ -1903,4 +1903,89 @@ export const items: EventItem[] = [
     expertise:
       "Si ya sabe que va, compre antes del 10 de noviembre: es el día en que los precios suben de fase. El Foro GNP es la zona más barata de esta fase. Como el concierto de Mau y Ricky es después de la carrera, cuente con salir del Autódromo ya de noche y planee el regreso en Metro o aplicación con tiempo.",
   },
+  {
+    slug: "edc-mexico-2027",
+    createdAt: "2026-10-25T04:30:00+04:00",
+    updatedAt: "2026-10-25T04:30:00+04:00",
+    site: "cmx",
+    image: "/covers/edc-mexico-2027.jpg",
+    imageAlt: "Un escenario de festival coronado por una flor gigante, con luces de colores y fuegos artificiales, y una multitud pequeña al frente",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "EDC México 2027: Bajo el Cielo Eléctrico",
+    cardTitle: "EDC México 2027",
+    titleSeo: "EDC México 2027 en Ciudad de México: 19–21 de febrero",
+    summary:
+      "EDC México, el festival de música electrónica de Insomniac, vuelve a la Ciudad de México del 19 al 21 de febrero de 2027 bajo el tema Bajo el Cielo Eléctrico: tres noches de música, bailarines, zanqueros, acróbatas, arte inmersivo y fuegos artificiales. Los boletos ya están a la venta.",
+    start: "2027-02-19",
+    end: "2027-02-21",
+    utcOffset: "-06:00",
+    venue: "Autódromo Hermanos Rodríguez",
+    city: "Ciudad de México",
+    country: "México",
+    geo: { name: "Autódromo Hermanos Rodríguez", lat: 19.406245, lng: -99.094593 },
+    organizer: "Insomniac",
+    category: "Festivales",
+    ticket: {
+      url: "https://mexico.edc.com/",
+      label: "Boletos",
+    },
+    source: {
+      name: "EDC México",
+      url: "https://mexico.edc.com/",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "El festival de música electrónica de Insomniac ya tiene fechas en la capital: <strong>EDC México 2027</strong> se celebra del <strong>viernes 19 al domingo 21 de febrero de 2027</strong> en la Ciudad de México, con el tema <strong>Bajo el Cielo Eléctrico</strong>.",
+      "## Qué hay",
+      "Además de los escenarios, EDC es un festival para recorrer: <strong>bailarines</strong>, <strong>zanqueros</strong> y <strong>acróbatas</strong> entre el público, <strong>instalaciones de arte inmersivo</strong> y <strong>fuegos artificiales</strong> cada noche.",
+      "## Boletos",
+      "La venta ya abrió en la página oficial, con dos experiencias: <strong>Experiencia General</strong> y <strong>Skydeck</strong>.",
+      "## La sede",
+      "La página oficial no menciona la sede. La prensa mexicana sitúa la edición 2027 en el <strong>Autódromo Hermanos Rodríguez</strong>; confírmela en el boleto antes de planear el traslado.",
+      "## El mismo mes",
+      "Dos semanas antes, <a href=\"/eventos/zona-maco-2027/\" title=\"Zona Maco 2027: fechas y boletos, Ciudad de México\">Zona Maco</a> llena el Centro Banamex del 3 al 7 de febrero, y en enero el Autódromo recibe el <a href=\"/eventos/e-prix-ciudad-de-mexico-2027/\" title=\"E-Prix de la Ciudad de México 2027: 16 de enero, boletos\">E-Prix de la Ciudad de México</a>.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo es EDC México 2027?",
+        a: "Del viernes 19 al domingo 21 de febrero de 2027, en la Ciudad de México.",
+      },
+      {
+        q: "¿Dónde es?",
+        a: "La página oficial no publica la sede; la prensa la sitúa en el Autódromo Hermanos Rodríguez. Revise el boleto.",
+      },
+      {
+        q: "¿Ya hay boletos?",
+        a: "Sí, en mexico.edc.com, en Experiencia General y Skydeck.",
+      },
+      {
+        q: "¿Cuál es el tema de 2027?",
+        a: "Bajo el Cielo Eléctrico.",
+      },
+    ],
+    related: [
+      {
+        href: "/eventos/zona-maco-2027/",
+        eyebrow: "3–7 de febrero",
+        title: "Zona Maco 2027",
+        text: "La semana del arte, en Centro Banamex.",
+      },
+      {
+        href: "/eventos/e-prix-ciudad-de-mexico-2027/",
+        eyebrow: "16 de enero",
+        title: "E-Prix de la Ciudad de México 2027",
+        text: "La Fórmula E en el Autódromo.",
+      },
+      {
+        href: "/eventos/corona-capital-2026/",
+        eyebrow: "20–22 de noviembre",
+        title: "Corona Capital 2026",
+        text: "El otro gran festival de la ciudad, antes de terminar el año.",
+      },
+    ],
+    expertise:
+      "Tres noches seguidas piden plan: decida antes de comprar si va a las tres o a una, y entre Experiencia General y Skydeck, porque cambiar después cuesta más que elegir bien al principio. La salida al final de la noche es la parte difícil de cualquier festival en el Autódromo: acuerde un punto de encuentro con su grupo antes de entrar, cargue el teléfono y tenga pensado el regreso, porque a la salida todos piden coche al mismo tiempo.",
+  },
 ];
