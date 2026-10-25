@@ -97,7 +97,7 @@ export const items: EventItem[] = [
   {
     slug: "motiongate-fright-nights-ix-2026",
     createdAt: "2026-10-24T19:00:00+04:00",
-    updatedAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-25T06:29:00+04:00",
     site: "palmcentral",
     image: "/covers/motiongate-fright-nights-ix-2026.jpg",
     imageAlt: "A red cut-paper castle gateway with a big wheel rising behind it against a full moon, a lit path running through the arch",
@@ -180,7 +180,7 @@ export const items: EventItem[] = [
   {
     slug: "gulfood-2027",
     createdAt: "2026-10-25T02:30:00+04:00",
-    updatedAt: "2026-10-25T02:30:00+04:00",
+    updatedAt: "2026-10-25T06:29:00+04:00",
     site: "palmcentral",
     image: "/covers/gulfood-2027.jpg",
     imageAlt: "A long market aisle seen from above, stalls piled with grain, fruit and spices on both sides and small visitors walking down the middle",
@@ -265,7 +265,7 @@ export const items: EventItem[] = [
   {
     slug: "big-5-global-2026",
     createdAt: "2026-10-25T04:30:00+04:00",
-    updatedAt: "2026-10-25T04:30:00+04:00",
+    updatedAt: "2026-10-25T06:29:00+04:00",
     site: "palmcentral",
     image: "/covers/big-5-global-2026.jpg",
     imageAlt: "A long exhibition hall under steel trusses, stacks of orange blocks along one side and small visitors walking down the aisle",
