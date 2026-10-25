@@ -5,7 +5,7 @@
 // neither, and the address of its twin is its own with the prefix swapped —
 // which is what makes the hreflang pair and the switch in the header safe
 // to derive rather than declare.
-import { localize } from "@dst/content/i18n";
+import { localize, localizeLinks } from "@dst/content/i18n";
 import { eventsBySite } from "@dst/content/events";
 import { newsBySite } from "@dst/content/news";
 import { siteId, LANGS, type Lang } from "./content";
@@ -31,9 +31,14 @@ export const newsBase = (lang: Lang) => `${prefix(lang)}news/`;
 const at = <T extends { path?: string }>(item: T, lang: Lang): T =>
   item.path ? { ...item, path: `${prefix(lang)}${item.path.replace(/^\//, "")}` } : item;
 
+// The links inside an entry's words point at pages in its language too:
+// an Armenian body typed with "/events/aki-fest/" sends its reader to
+// "/am/events/aki-fest/", the twin, rather than to the English page.
+const inLang = <T extends { path?: string }>(item: T, lang: Lang): T => at(localizeLinks(item, prefix(lang)), lang);
+
 /** The site's feeds, in the page's language. */
-export const eventsFor = (lang: Lang) => eventsBySite(siteId).map((i) => at(localize(i, lang), lang));
-export const newsFor = (lang: Lang) => newsBySite(siteId).map((i) => at(localize(i, lang), lang));
+export const eventsFor = (lang: Lang) => eventsBySite(siteId).map((i) => inLang(localize(i, lang), lang));
+export const newsFor = (lang: Lang) => newsBySite(siteId).map((i) => inLang(localize(i, lang), lang));
 
 // What the switch in the header says. The label is the language's own
 // name for itself, short; the tooltip is in that language too, since it is

@@ -320,6 +320,25 @@ describe("links", () => {
 
   // Links out of the network are checked in tests/outbound-links.test.js,
   // which crawls all seven apps rather than the six listed here.
+
+  // A link in an Armenian page's text answered in English: the bodies were
+  // typed with "/events/…", and 82 of them sent an /am/ reader to the
+  // English twin (hw-tick-01). Inside <main>, an /am/ page links its own
+  // language; the switch to English sits in the header, outside it.
+  test("an /am/ page's text links the Armenian pages", () => {
+    const own = pages.filter((p) => p.app === "tick" && p.url.startsWith("/am/"));
+    if (own.length === 0) return;
+    const stray = [];
+    for (const p of own) {
+      const main = p.html.match(/<main[\s\S]*<\/main>/)?.[0] ?? "";
+      for (const tag of anchorsOf(main)) {
+        const href = hrefOf(tag) ?? "";
+        const file = /\.[a-z0-9]+$/i.test(href.split(/[?#]/)[0].split("/").at(-1));
+        if (href.startsWith("/") && !href.startsWith("/am/") && !href.startsWith("/go/") && !file) stray.push(`${p.url} -> ${href}`);
+      }
+    }
+    assert.deepEqual(stray, [], `English links on Armenian pages: ${JSON.stringify(stray.slice(0, 20), null, 1)}`);
+  });
 });
 
 describe("outbound hops", () => {
