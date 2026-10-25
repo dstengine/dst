@@ -691,7 +691,7 @@ export const items: EventItem[] = [
   {
     slug: "hechizos-meztizza-halloween-acapulco-2026",
     createdAt: "2026-10-24T19:00:00+04:00",
-    updatedAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-25T22:10:00+04:00",
     site: "aca",
     image: "/covers/hechizos-meztizza-halloween-acapulco-2026.jpg",
     imageAlt: "Un bailarín de chaqueta roja bajo un foco en un pequeño escenario, entre palmeras, murciélagos y calabazas talladas",
@@ -705,7 +705,7 @@ export const items: EventItem[] = [
       "La noche de Halloween en Acapulco, en el restaurante Meztizza: el sábado 31 de octubre de 2026, «Hechizos Meztizza 2» trae un show de Thriller en homenaje a Michael Jackson con El Azteca, personajes de terror en la bienvenida y DJ en vivo. Reservaciones al 744 531 2736; quedan pocos lugares.",
     start: "2026-10-31",
     utcOffset: "-06:00",
-    venue: "Meztizza Restaurante, Calle de la Pinzona 195",
+    venue: "Meztizza Restaurante",
     city: "Acapulco",
     country: "México",
     geo: { name: "Calle de la Pinzona, Acapulco", lat: 16.84354, lng: -99.91189 },

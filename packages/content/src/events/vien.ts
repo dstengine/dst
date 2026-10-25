@@ -93,7 +93,7 @@ export const items: EventItem[] = [
   {
     slug: "arnulf-rainer-retrospektive-albertina-2026",
     createdAt: "2026-10-09T12:50:00+04:00",
-    updatedAt: "2026-10-21T04:56:51+04:00",
+    updatedAt: "2026-10-25T22:10:00+04:00",
     site: "vien",
     image: "/covers/arnulf-rainer-retrospective-albertina-2026.jpg",
     imageAlt: "Abstrakte Illustration aus überlagerten schwarzen und roten Pinselbahnen auf hellem Papier",
@@ -110,7 +110,7 @@ export const items: EventItem[] = [
     utcOffset: "+01:00",
     city: "Wien",
     country: "Österreich",
-    venue: "ALBERTINA, Albertinaplatz 1, 1010 Wien",
+    venue: "ALBERTINA",
     geo: { name: "ALBERTINA Museum", lat: 48.2047, lng: 16.3681 },
     organizer: "ALBERTINA",
     category: "Ausstellungen",
@@ -154,7 +154,7 @@ export const items: EventItem[] = [
   {
     slug: "her-story-albertina-2026",
     createdAt: "2026-09-21T17:00:00+04:00",
-    updatedAt: "2026-10-21T04:56:51+04:00",
+    updatedAt: "2026-10-25T22:48:00+04:00",
     site: "vien",
     image: "/covers/her-story-albertina-2026.jpg",
     imageAlt: "Fünf hohe Rundbogennischen unterschiedlicher Höhe nebeneinander in einer cremefarbenen Wand, jede in einem anderen Farbton",
@@ -177,7 +177,7 @@ export const items: EventItem[] = [
     utcOffset: "+01:00",
     city: "Wien",
     country: "Österreich",
-    venue: "ALBERTINA, Albertinaplatz 1",
+    venue: "ALBERTINA",
     organizer: "ALBERTINA",
     category: "Ausstellungen",
     source: {
@@ -305,7 +305,7 @@ export const items: EventItem[] = [
   {
     slug: "vienna-coffee-festival-2026",
     createdAt: "2026-09-08T16:29:32+04:00",
-    updatedAt: "2026-09-08T16:34:13+04:00",
+    updatedAt: "2026-10-25T22:48:00+04:00",
     site: "vien",
     image: "/covers/vienna-coffee-festival-2026.jpg",
     imageAlt: "Ein goldener Ring mit einer roten Scheibe darin und drei kurzen roten Dampfstrichen darüber, auf cremefarbenem Grund",
@@ -318,7 +318,7 @@ export const items: EventItem[] = [
     start: "2026-09-11",
     end: "2026-09-13",
     utcOffset: "+02:00",
-    venue: "Marx Halle, Karl-Farkas-Gasse 19",
+    venue: "Marx Halle",
     city: "Wien",
     country: "Österreich",
     organizer: "Lefor Oberbauer",
@@ -518,7 +518,7 @@ export const items: EventItem[] = [
   {
     slug: "vienna-halloween-run-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-10-25T18:20:00+01:00",
+    updatedAt: "2026-10-25T22:48:00+04:00",
     site: "vien",
     image: "/covers/vienna-halloween-run-2026.jpg",
     imageAlt: "Eine helle Laufbahn, die in die Bildmitte führt, gesäumt von Bäumen mit rotem Herbstlaub",
@@ -532,7 +532,7 @@ export const items: EventItem[] = [
     start: "2026-10-30",
     startTime: "15:30",
     utcOffset: "+01:00",
-    venue: "Prater Hauptallee, Antifaschismusplatz 1",
+    venue: "Prater Hauptallee",
     city: "Wien",
     organizer: "Fairsport Events e.U.",
     category: "Halloween",
@@ -819,7 +819,7 @@ export const items: EventItem[] = [
   {
     slug: "cosmic-horrors-planetarium-wien-2026",
     createdAt: "2026-10-11T01:15:13+04:00",
-    updatedAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-25T22:48:00+04:00",
     site: "vien",
     image: "/covers/cosmic-horrors-planetarium-wien-2026.jpg",
     imageAlt: "Ein dunkler Nachthimmel mit einem Ringplaneten und mehreren kleinen runden Planeten über breiten Streifen in Orange und Rot, unten die Rundung einer roten Kuppel, auf cremefarbenem Grund",
@@ -827,6 +827,7 @@ export const items: EventItem[] = [
     imageWidth: 1024,
     imageHeight: 1024,
     title: "Cosmic Horrors: Halloween im Planetarium Wien 2026",
+    cardTitle: "Cosmic Horrors im Planetarium",
     titleSeo: "Cosmic Horrors: Halloween im Planetarium Wien, 31. Okt. 2026",
     summary:
       "Halloween in Wien unter der Kuppel: Das Planetarium im Prater zeigt am 31. Oktober 2026 sein Halloween-Special „Cosmic Horrors“, acht Vorstellungen zu je 25 Minuten von 18:30 bis 22 Uhr, für 5 Euro. Empfohlen ab 10 Jahren.",
@@ -834,7 +835,7 @@ export const items: EventItem[] = [
     startTime: "18:30",
     endTime: "22:25",
     utcOffset: "+01:00",
-    venue: "Planetarium Wien, Oswald-Thomas-Platz 1",
+    venue: "Planetarium",
     city: "Wien",
     geo: {
       name: "Planetarium Wien",
@@ -1096,7 +1097,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-special-vienna-open-lab-2026",
     createdAt: "2026-10-12T00:36:00+04:00",
-    updatedAt: "2026-10-12T00:36:00+04:00",
+    updatedAt: "2026-10-25T22:48:00+04:00",
     site: "vien",
     image: "/covers/halloween-special-vienna-open-lab-2026.jpg",
     imageAlt: "Ein Laborkolben, aus dem grüner Schleim quillt, neben einem dampfenden Kessel und einem Mikroskop, darüber eine Spinne an ihrem Faden, auf cremefarbenem Grund",
@@ -1111,7 +1112,7 @@ export const items: EventItem[] = [
     startTime: "15:00",
     endTime: "18:00",
     utcOffset: "+01:00",
-    venue: "Vienna Open Lab, Dr. Bohr-Gasse 3, 1030 Wien",
+    venue: "Vienna Open Lab",
     city: "Wien",
     country: "Österreich",
     geo: {
@@ -1141,7 +1142,7 @@ export const items: EventItem[] = [
       "<strong>8 Euro pro Person</strong>, für Kinder wie Erwachsene. Ohne Anmeldung geht es nicht. Im Nachrichtenfeld der Buchung bittet das Lab um drei Angaben: wie viele Erwachsene kommen, wie viele Kinder und wie alt die Kinder sind.",
       "Wer am Ende das Gruselquiz löst, bekommt einen Preis.",
       "## Anreise",
-      "Das Lab liegt in der Dr. Bohr-Gasse 3 im 3. Bezirk, auf dem Gelände des Vienna BioCenter in St. Marx.",
+      "Das Lab liegt in der Dr. Bohr-Gasse 3, 1030 Wien, auf dem Gelände des Vienna BioCenter in St. Marx.",
       "## Halloween in Wien in derselben Woche",
       "Für jüngere Geschwister passt der <a href=\"/veranstaltungen/halloween-kindermuseum-schoenbrunn-2026/\" title=\"Halloween im Kindermuseum Schönbrunn 2026\">Monsterparcours im Kindermuseum Schönbrunn</a> ab 4 Jahren. Wer am Freitag danach noch Energie hat, findet sie beim <a href=\"/veranstaltungen/vienna-halloween-run-2026/\" title=\"Vienna Halloween Run 2026\">Vienna Halloween Run</a> in der Prater Hauptallee wieder.",
     ],
@@ -1194,7 +1195,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-horror-night-klyo-2026",
     createdAt: "2026-10-12T02:45:00+04:00",
-    updatedAt: "2026-10-12T02:45:00+04:00",
+    updatedAt: "2026-10-25T22:48:00+04:00",
     site: "vien",
     image: "/covers/halloween-horror-night-klyo-2026.jpg",
     imageAlt: "Ein Kuppelbau mit Sternwarte am Flussufer unter Vollmond und Fledermäusen, davor ein gedeckter Tisch mit zwei Kerzen",
@@ -1207,7 +1208,7 @@ export const items: EventItem[] = [
     start: "2026-10-31",
     startTime: "17:30",
     utcOffset: "+01:00",
-    venue: "KLYO in der Urania, Uraniastraße 1, 1010 Wien",
+    venue: "KLYO in der Urania",
     city: "Wien",
     country: "Österreich",
     geo: {
@@ -1242,7 +1243,7 @@ export const items: EventItem[] = [
     faq: [
       {
         q: "Wann ist die Halloween Horror Night im KLYO?",
-        a: "Am Samstag, 31. Oktober 2026, ab 17:30 Uhr, im KLYO in der Urania, Uraniastraße 1.",
+        a: "Am Samstag, 31. Oktober 2026, ab 17:30 Uhr, im KLYO in der Urania, Uraniastraße 1, 1010 Wien.",
       },
       {
         q: "Was gehört zum Abend?",
@@ -1274,7 +1275,7 @@ export const items: EventItem[] = [
   {
     slug: "the-nun-halloween-dome-takeover-2026",
     createdAt: "2026-10-12T02:45:00+04:00",
-    updatedAt: "2026-10-12T02:45:00+04:00",
+    updatedAt: "2026-10-25T22:48:00+04:00",
     site: "vien",
     image: "/covers/the-nun-halloween-dome-takeover-2026.jpg",
     imageAlt: "Das Innere einer riesigen dunklen Kuppelhalle, rote und grüne Lichtstrahlen kreuzen sich über einer Menge von Silhouetten und einem DJ-Pult",
@@ -1289,7 +1290,7 @@ export const items: EventItem[] = [
     startTime: "21:00",
     endTime: "04:00",
     utcOffset: "+01:00",
-    venue: "Hallmann Dome, Gutheil-Schoder-Gasse 9, 1100 Wien",
+    venue: "Hallmann Dome",
     city: "Wien",
     country: "Österreich",
     geo: {
@@ -1323,7 +1324,7 @@ export const items: EventItem[] = [
     faq: [
       {
         q: "Wann ist The Nun – Halloween Dome Takeover?",
-        a: "Am Samstag, 31. Oktober 2026, von 21 bis 4 Uhr, im Hallmann Dome, Gutheil-Schoder-Gasse 9.",
+        a: "Am Samstag, 31. Oktober 2026, von 21 bis 4 Uhr, im Hallmann Dome, Gutheil-Schoder-Gasse 9, 1100 Wien.",
       },
       {
         q: "Was kosten die Tickets?",
@@ -1355,7 +1356,7 @@ export const items: EventItem[] = [
   {
     slug: "coulrophobia-halloween-clownmuseum-wien-2026",
     createdAt: "2026-10-13T00:40:00+04:00",
-    updatedAt: "2026-10-13T00:40:00+04:00",
+    updatedAt: "2026-10-25T22:48:00+04:00",
     site: "vien",
     image: "/covers/coulrophobia-halloween-clownmuseum-wien-2026.jpg",
     imageAlt: "Eine Hand im weißen Handschuh greift hinter einem roten Theatervorhang hervor und hält zwei Luftballons, am Bühnenrand liegt ein Kürbis",
@@ -1363,6 +1364,7 @@ export const items: EventItem[] = [
     imageWidth: 1024,
     imageHeight: 1024,
     title: "Coulrophobia: Halloween im Clownmuseum Wien 2026",
+    cardTitle: "Coulrophobia im Clownmuseum",
     summary:
       "Halloween in Wien für Mutige ab 12: Das Circus- & Clownmuseum in der Leopoldstadt zeigt am Samstag, 31. Oktober 2026, „Coulrophobia“ mit den Fools Brothers, drei Vorstellungen um 13, 15 und 17 Uhr, für 15 Euro.",
     start: "2026-10-31",
@@ -1370,7 +1372,7 @@ export const items: EventItem[] = [
     endTime: "17:45",
     displayHours: true,
     utcOffset: "+01:00",
-    venue: "Circus- & Clownmuseum Wien, Ilgplatz 7, 1020 Wien",
+    venue: "Circus- & Clownmuseum",
     city: "Wien",
     country: "Österreich",
     geo: {
@@ -1378,7 +1380,7 @@ export const items: EventItem[] = [
       lat: 48.219364,
       lng: 16.405665,
     },
-    organizer: "Circus- & Clownmuseum Wien",
+    organizer: "Circus- & Clownmuseum",
     category: "Halloween",
     tickets: { priceFrom: 15, currency: "EUR" },
     ticket: {
@@ -1404,7 +1406,7 @@ export const items: EventItem[] = [
     faq: [
       {
         q: "Wann ist Coulrophobia im Clownmuseum?",
-        a: "Am Samstag, 31. Oktober 2026, um 13, 15 und 17 Uhr, jeweils 45 Minuten, am Ilgplatz 7.",
+        a: "Am Samstag, 31. Oktober 2026, um 13, 15 und 17 Uhr, jeweils 45 Minuten, am Ilgplatz 7, 1020 Wien.",
       },
       {
         q: "Was kostet es?",
@@ -1533,7 +1535,7 @@ export const items: EventItem[] = [
   {
     slug: "franz-west-albertina-modern-wien-museum-2026",
     createdAt: "2026-10-24T16:00:00+04:00",
-    updatedAt: "2026-10-24T16:00:00+04:00",
+    updatedAt: "2026-10-25T22:48:00+04:00",
     site: "vien",
     image: "/covers/franz-west-albertina-modern-wien-museum-2026.jpg",
     imageAlt:
@@ -1549,7 +1551,7 @@ export const items: EventItem[] = [
     start: "2026-11-06",
     end: "2027-05-02",
     utcOffset: "+01:00",
-    venue: "Albertina Modern, Karlsplatz 5, und Wien Museum, Karlsplatz 8",
+    venue: "Albertina Modern und Wien Museum, Karlsplatz",
     city: "Wien",
     country: "Österreich",
     geo: {
@@ -1572,7 +1574,7 @@ export const items: EventItem[] = [
     body: [
       "Franz West wäre am <strong>16. Februar 2027</strong> achtzig geworden. Wien feiert das mit zwei Ausstellungen, die am selben Tag öffnen, einen Platz voneinander entfernt liegen und sich die Arbeit teilen: Die <strong>Albertina Modern</strong> nimmt sich die Skulptur, das <strong>Wien Museum</strong> die Stadt.",
       "## Albertina Modern: Die Revolution der Skulptur",
-      "Vom <strong>6. November 2026 bis 29. März 2027</strong>, täglich 10 bis 18 Uhr. Im Zentrum stehen die <strong>Passstücke</strong>, jene unförmigen Gipsobjekte, die man in die Hand nehmen und am Körper tragen soll, sowie die großen Arbeiten: <strong>Sisyphos</strong> (2002), <strong>Sexualitätssymbol</strong>, <strong>Zwei Lemuren</strong> und der <strong>Onkel-Stuhl</strong>. West hat die Skulptur vom Sockel geholt und zum Gebrauchsgegenstand gemacht; die Albertina zeigt, wie.",
+      "Vom <strong>6. November 2026 bis 29. März 2027</strong> am Karlsplatz 5, täglich 10 bis 18 Uhr. Im Zentrum stehen die <strong>Passstücke</strong>, jene unförmigen Gipsobjekte, die man in die Hand nehmen und am Körper tragen soll, sowie die großen Arbeiten: <strong>Sisyphos</strong> (2002), <strong>Sexualitätssymbol</strong>, <strong>Zwei Lemuren</strong> und der <strong>Onkel-Stuhl</strong>. West hat die Skulptur vom Sockel geholt und zum Gebrauchsgegenstand gemacht; die Albertina zeigt, wie.",
       "## Wien Museum: Franz West und Wien",
       "Vom <strong>6. November 2026 bis 2. Mai 2027</strong> am Karlsplatz 8, kuratiert von <strong>Judith Nicka-Stöckl und Vincent Weisl</strong>. Schlüsselwerk ist das <strong>Zitat</strong> von 1985. Eintritt <strong>9 Euro, ermäßigt 7</strong>; <strong>unter 19 Jahren und am ersten Sonntag im Monat frei</strong>. Das Ticket des Wien Museums enthält einen ermäßigten Eintritt in die Albertina Modern.",
       "## Das Atelier",
@@ -1611,7 +1613,7 @@ export const items: EventItem[] = [
   {
     slug: "farbenspiel-mode-wien-museum-2026",
     createdAt: "2026-10-24T16:00:00+04:00",
-    updatedAt: "2026-10-24T16:00:00+04:00",
+    updatedAt: "2026-10-25T22:48:00+04:00",
     site: "vien",
     image: "/covers/farbenspiel-mode-wien-museum-2026.jpg",
     imageAlt:
@@ -1627,7 +1629,7 @@ export const items: EventItem[] = [
     start: "2026-10-01",
     end: "2027-03-28",
     utcOffset: "+02:00",
-    venue: "Wien Museum, Karlsplatz 8",
+    venue: "Wien Museum",
     city: "Wien",
     country: "Österreich",
     geo: {
@@ -1673,7 +1675,7 @@ export const items: EventItem[] = [
   {
     slug: "down-syndrom-ueber-uns-mit-uns-wien-museum-2026",
     createdAt: "2026-10-24T16:00:00+04:00",
-    updatedAt: "2026-10-24T16:00:00+04:00",
+    updatedAt: "2026-10-25T22:48:00+04:00",
     site: "vien",
     image: "/covers/down-syndrom-ueber-uns-mit-uns-wien-museum-2026.jpg",
     imageAlt:
@@ -1689,7 +1691,7 @@ export const items: EventItem[] = [
     start: "2026-10-22",
     end: "2027-01-24",
     utcOffset: "+02:00",
-    venue: "Wien Museum, Karlsplatz 8",
+    venue: "Wien Museum",
     city: "Wien",
     country: "Österreich",
     geo: {
@@ -1736,7 +1738,7 @@ export const items: EventItem[] = [
   {
     slug: "weihnachtsmarkt-schloss-schoenbrunn-2026",
     createdAt: "2026-10-24T16:00:00+04:00",
-    updatedAt: "2026-10-24T16:00:00+04:00",
+    updatedAt: "2026-10-25T22:48:00+04:00",
     site: "vien",
     image: "/covers/weihnachtsmarkt-schloss-schoenbrunn-2026.jpg",
     imageAlt:
@@ -1754,7 +1756,7 @@ export const items: EventItem[] = [
     startTime: "10:00",
     endTime: "21:00",
     utcOffset: "+01:00",
-    venue: "Ehrenhof, Schloss Schönbrunn, Schönbrunner Schloßstraße",
+    venue: "Ehrenhof, Schloss Schönbrunn",
     city: "Wien",
     country: "Österreich",
     geo: {
@@ -1881,7 +1883,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-zentralfriedhof-wien-2026",
     createdAt: "2026-10-24T19:00:00+04:00",
-    updatedAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-25T22:48:00+04:00",
     site: "vien",
     image: "/covers/halloween-zentralfriedhof-wien-2026.jpg",
     imageAlt: "Eine Allee herbstlicher Bäume führt zu einer Kirche mit grüner Kuppel, davor ein schmiedeeisernes Tor und drei Kürbisse",
@@ -1897,7 +1899,7 @@ export const items: EventItem[] = [
     startTime: "16:00",
     endTime: "20:00",
     utcOffset: "+01:00",
-    venue: "Halle 2, Zentralfriedhof (Tor 2), Simmeringer Hauptstraße 234",
+    venue: "Halle 2, Zentralfriedhof",
     city: "Wien",
     geo: {
       name: "Zentralfriedhof, 2. Tor",
@@ -1979,7 +1981,7 @@ export const items: EventItem[] = [
   {
     slug: "altwiener-christkindlmarkt-freyung-2026",
     createdAt: "2026-10-25T02:30:00+04:00",
-    updatedAt: "2026-10-25T02:30:00+04:00",
+    updatedAt: "2026-10-25T22:10:00+04:00",
     site: "vien",
     image: "/covers/altwiener-christkindlmarkt-freyung-2026.jpg",
     imageAlt: "Kleine Holzbuden mit roten Dächern, ein Lebkuchenherz und Tannenbäumchen auf einem Platz, dahinter eine alte Kirche mit Turm und Sterne",
@@ -1996,7 +1998,7 @@ export const items: EventItem[] = [
     startTime: "10:00",
     endTime: "21:00",
     utcOffset: "+01:00",
-    venue: "Freyung, 1010 Wien",
+    venue: "Freyung",
     city: "Wien",
     country: "Österreich",
     geo: { name: "Freyung", lat: 48.2113966, lng: 16.3660651 },
@@ -2070,7 +2072,7 @@ export const items: EventItem[] = [
   {
     slug: "weihnachtsmarkt-spittelberg-2026",
     createdAt: "2026-10-25T04:30:00+04:00",
-    updatedAt: "2026-10-25T04:30:00+04:00",
+    updatedAt: "2026-10-25T22:10:00+04:00",
     site: "vien",
     image: "/covers/weihnachtsmarkt-spittelberg-2026.jpg",
     imageAlt: "Eine schmale Gasse mit alten Biedermeierhäusern, Lichterketten zwischen den Fenstern und kleine Holzstände mit grünen Zweigen",
@@ -2087,7 +2089,7 @@ export const items: EventItem[] = [
     startTime: "14:00",
     endTime: "21:30",
     utcOffset: "+01:00",
-    venue: "Spittelberg, 1070 Wien",
+    venue: "Spittelberg",
     city: "Wien",
     country: "Österreich",
     geo: { name: "Spittelberggasse", lat: 48.2035618, lng: 16.3551469 },

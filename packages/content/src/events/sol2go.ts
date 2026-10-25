@@ -2219,7 +2219,7 @@ export const items: EventItem[] = [
   {
     slug: "crypto-after-dark-halloween-dubai-2026",
     createdAt: "2026-10-24T19:00:00+04:00",
-    updatedAt: "2026-10-25T06:20:00+04:00",
+    updatedAt: "2026-10-25T22:10:00+04:00",
     site: "sol2go",
     image: "/covers/crypto-after-dark-halloween-dubai-2026.jpg",
     imageAlt: "A violet night skyline of paper towers seen from a rooftop, carved pumpkin lanterns on the ledge and round discs drifting in the sky",
@@ -2243,7 +2243,7 @@ export const items: EventItem[] = [
     category: "Meetup",
     ticket: { url: "https://luma.com/4igw650r", label: "Request to join", sells: false },
     source: {
-      name: "Luma: CRYPTO AFTER DARK | Halloween Edition",
+      name: "Crypto After Dark on Luma",
       url: "https://luma.com/4igw650r",
       verifiedOn: "2026-10-24",
     },

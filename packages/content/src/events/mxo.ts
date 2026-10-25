@@ -647,7 +647,7 @@ export const items: EventItem[] = [
   {
     slug: "ficm-morelia-2026",
     createdAt: "2026-09-12T22:20:00+04:00",
-    updatedAt: "2026-09-12T22:20:00+04:00",
+    updatedAt: "2026-10-25T22:10:00+04:00",
     site: "mxo",
     image: "/covers/ficm-morelia-2026.jpg",
     imageAlt:
@@ -661,7 +661,7 @@ export const items: EventItem[] = [
     start: "2026-10-16",
     end: "2026-10-25",
     utcOffset: "-06:00",
-    venue: "Morelia",
+    venue: "Teatro Mariano Matamoros y Cinépolis",
     city: "Morelia",
     country: "México",
     geo: {
@@ -1098,7 +1098,7 @@ export const items: EventItem[] = [
   {
     slug: "scream-park-guadalajara-2026",
     createdAt: "2026-10-24T19:00:00+04:00",
-    updatedAt: "2026-10-25T01:30:00+04:00",
+    updatedAt: "2026-10-25T22:10:00+04:00",
     site: "mxo",
     image: "/covers/scream-park-guadalajara-2026.jpg",
     imageAlt: "Una mansión con torreón detrás de un maizal rojo, una carpa de circo a rayas a su lado, niebla y una luna llena",
@@ -1114,7 +1114,7 @@ export const items: EventItem[] = [
     end: "2026-11-15",
     startTime: "19:00",
     utcOffset: "-06:00",
-    venue: "Mansión Clover Lawn, Avenida de la Paz, colonia Americana",
+    venue: "Mansión Clover Lawn",
     city: "Guadalajara",
     country: "México",
     geo: { name: "Mansión Clover Lawn, Avenida de la Paz, Guadalajara", lat: 20.6716, lng: -103.3655 },
@@ -1123,7 +1123,7 @@ export const items: EventItem[] = [
     tickets: { priceFrom: 550, currency: "MXN" },
     ticket: { url: "https://boletia.com/billboards/scream-park", label: "Boletos desde $550" },
     source: {
-      name: "Boletia: Scream Park",
+      name: "Boletia",
       url: "https://boletia.com/billboards/scream-park",
       verifiedOn: "2026-10-24",
     },

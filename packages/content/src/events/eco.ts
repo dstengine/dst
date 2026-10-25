@@ -119,7 +119,7 @@ export const items: EventItem[] = [
   {
     slug: "adipec-2026",
     createdAt: "2026-09-08T19:46:47+04:00",
-    updatedAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-25T22:10:00+04:00",
     site: "eco",
     image: "/covers/adipec-2026.jpg",
     imageAlt: "A row of narrow paper bars of differing heights and three green tones, standing along a cream band on a green ground",
@@ -132,7 +132,7 @@ export const items: EventItem[] = [
     start: "2026-11-02",
     end: "2026-11-05",
     utcOffset: "+04:00",
-    venue: "ADNEC Centre Abu Dhabi",
+    venue: "ADNEC Centre",
     city: "Abu Dhabi",
     country: "United Arab Emirates",
     organizer: "dmg events",
@@ -186,7 +186,7 @@ export const items: EventItem[] = [
   {
     slug: "abu-dhabi-sustainability-week-2027",
     createdAt: "2026-10-24T16:00:00+04:00",
-    updatedAt: "2026-10-24T16:00:00+04:00",
+    updatedAt: "2026-10-25T22:29:00+04:00",
     site: "eco",
     image: "/covers/abu-dhabi-sustainability-week-2027.jpg",
     imageAlt: "About a dozen pale green paper leaves fanned around a cream disc on a forest green ground, a low mound of moss beneath it",
@@ -199,7 +199,7 @@ export const items: EventItem[] = [
       "ADSW 2027 runs 10–14 January at ADNEC, hosted by Masdar under the theme Securing Systems. Sustaining Growth.: the invitation-only Summit on 12–13 January, the IRENA Assembly on 10–11, the Zayed Sustainability Prize awards and the World Future Energy Summit exhibition open to registered visitors.",
     start: "2027-01-10",
     end: "2027-01-14",
-    venue: "ADNEC, Abu Dhabi",
+    venue: "ADNEC",
     city: "Abu Dhabi",
     geo: {
       name: "ADNEC, Abu Dhabi National Exhibition Centre",
@@ -232,7 +232,7 @@ export const items: EventItem[] = [
   {
     slug: "world-future-energy-summit-2027",
     createdAt: "2026-10-24T16:00:00+04:00",
-    updatedAt: "2026-10-24T16:00:00+04:00",
+    updatedAt: "2026-10-25T22:29:00+04:00",
     site: "eco",
     image: "/covers/world-future-energy-summit-2027.jpg",
     imageAlt: "A sheet of darker green paper on a forest green ground with three small orange paper suns on it",
@@ -247,7 +247,7 @@ export const items: EventItem[] = [
     end: "2027-01-14",
     startTime: "07:30",
     endTime: "17:00",
-    venue: "ADNEC, Abu Dhabi",
+    venue: "ADNEC",
     city: "Abu Dhabi",
     geo: {
       name: "ADNEC, Abu Dhabi National Exhibition Centre",
@@ -280,7 +280,7 @@ export const items: EventItem[] = [
   {
     slug: "zayed-sustainability-prize-awards-2027",
     createdAt: "2026-10-24T16:00:00+04:00",
-    updatedAt: "2026-10-24T16:00:00+04:00",
+    updatedAt: "2026-10-25T22:29:00+04:00",
     site: "eco",
     image: "/covers/zayed-sustainability-prize-awards-2027.jpg",
     imageAlt: "A gold paper rosette on two red ribbons inside a cream ring, with paper fir trees, a green hill and scattered gold dots, on a forest green ground",
@@ -292,7 +292,7 @@ export const items: EventItem[] = [
     summary:
       "The Zayed Sustainability Prize awards ceremony is on 12 January 2027 at the ICC Hall, ADNEC, during Abu Dhabi Sustainability Week, and is open to the public: eleven winners across Health, Food, Energy, Water, Climate Action and Global High Schools.",
     start: "2027-01-12",
-    venue: "ICC Hall, ADNEC, Abu Dhabi",
+    venue: "ICC Hall, ADNEC",
     city: "Abu Dhabi",
     geo: {
       name: "ADNEC, Abu Dhabi National Exhibition Centre",
@@ -372,7 +372,7 @@ export const items: EventItem[] = [
   {
     slug: "ev-world-2026-dubai",
     createdAt: "2026-10-24T16:00:00+04:00",
-    updatedAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-25T22:10:00+04:00",
     site: "eco",
     image: "/covers/ev-world-2026-dubai.jpg",
     imageAlt: "A sage paper car outline with a cream plug at its tail on a deep forest green ground, three small cream bolts above",
@@ -380,6 +380,7 @@ export const items: EventItem[] = [
     imageWidth: 1024,
     imageHeight: 1024,
     title: "EV World 2026, Dubai's first electric vehicle exhibition",
+    cardTitle: "EV World 2026",
     titleSeo: "EV World 2026 Dubai: 10–12 November at DWTC",
     summary:
       "The RTA's first Dubai International Electric Vehicle Exhibition and Conference runs 10–12 November 2026 at Dubai World Trade Centre, with more than 300 companies, 70 speakers and an expected 10,000 visitors under the theme Driving a Smart and Sustainable Mobility Future.",
@@ -509,7 +510,7 @@ export const items: EventItem[] = [
   {
     slug: "un-2026-water-conference-abu-dhabi",
     createdAt: "2026-10-25T02:30:00+04:00",
-    updatedAt: "2026-10-25T02:30:00+04:00",
+    updatedAt: "2026-10-25T22:10:00+04:00",
     site: "eco",
     image: "/covers/un-2026-water-conference-abu-dhabi.jpg",
     imageAlt: "A single water drop holding a small globe, rings of ripples spreading out around it on a green ground",
@@ -524,7 +525,7 @@ export const items: EventItem[] = [
     start: "2026-12-08",
     end: "2026-12-10",
     utcOffset: "+04:00",
-    venue: "ADNEC Centre Abu Dhabi",
+    venue: "ADNEC Centre",
     city: "Abu Dhabi",
     country: "United Arab Emirates",
     geo: { name: "ADNEC, Abu Dhabi National Exhibition Centre", lat: 24.4181, lng: 54.4336 },
