@@ -1,5 +1,37 @@
 {
   "acapulco.world": {
+    "/covers/abierto-mexicano-de-tenis-2027-tres-top-10.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/abierto-mexicano-de-tenis-2027-tres-top-10-480.avif"
+        ],
+        [
+          768,
+          "/covers/abierto-mexicano-de-tenis-2027-tres-top-10-768.avif"
+        ],
+        [
+          1024,
+          "/covers/abierto-mexicano-de-tenis-2027-tres-top-10-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/abierto-mexicano-de-tenis-2027-tres-top-10-480.webp"
+        ],
+        [
+          768,
+          "/covers/abierto-mexicano-de-tenis-2027-tres-top-10-768.webp"
+        ],
+        [
+          1024,
+          "/covers/abierto-mexicano-de-tenis-2027-tres-top-10-1024.webp"
+        ]
+      ]
+    },
     "/covers/abierto-mexicano-de-tenis-2027.jpg": {
       "width": 1024,
       "height": 1024,
@@ -1602,6 +1634,38 @@
         ]
       ]
     },
+    "/covers/runway-mcp-adds-sound-effects-and-voiceover.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/runway-mcp-adds-sound-effects-and-voiceover-480.avif"
+        ],
+        [
+          768,
+          "/covers/runway-mcp-adds-sound-effects-and-voiceover-768.avif"
+        ],
+        [
+          1024,
+          "/covers/runway-mcp-adds-sound-effects-and-voiceover-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/runway-mcp-adds-sound-effects-and-voiceover-480.webp"
+        ],
+        [
+          768,
+          "/covers/runway-mcp-adds-sound-effects-and-voiceover-768.webp"
+        ],
+        [
+          1024,
+          "/covers/runway-mcp-adds-sound-effects-and-voiceover-1024.webp"
+        ]
+      ]
+    },
     "/covers/sora-api-alternatives-video-apis-still-open.jpg": {
       "width": 1536,
       "height": 864,
@@ -2369,6 +2433,38 @@
         [
           1536,
           "/covers/ecobici-15-mil-bicicletas-tres-alcaldias-1536.webp"
+        ]
+      ]
+    },
+    "/covers/edc-mexico-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/edc-mexico-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/edc-mexico-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/edc-mexico-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/edc-mexico-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/edc-mexico-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/edc-mexico-2027-1024.webp"
         ]
       ]
     },
@@ -4475,6 +4571,38 @@
         [
           1024,
           "/covers/dubai-design-week-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/dubai-duty-free-tennis-championships-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/dubai-duty-free-tennis-championships-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/dubai-duty-free-tennis-championships-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dubai-duty-free-tennis-championships-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dubai-duty-free-tennis-championships-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/dubai-duty-free-tennis-championships-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dubai-duty-free-tennis-championships-2027-1024.webp"
         ]
       ]
     },
@@ -7069,6 +7197,38 @@
         [
           1536,
           "/covers/dp-world-names-its-first-methanol-dual-fuel-ship-1536.webp"
+        ]
+      ]
+    },
+    "/covers/dubai-award-for-sustainable-transport-goes-to-ammans-brt.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/dubai-award-for-sustainable-transport-goes-to-ammans-brt-480.avif"
+        ],
+        [
+          768,
+          "/covers/dubai-award-for-sustainable-transport-goes-to-ammans-brt-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dubai-award-for-sustainable-transport-goes-to-ammans-brt-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dubai-award-for-sustainable-transport-goes-to-ammans-brt-480.webp"
+        ],
+        [
+          768,
+          "/covers/dubai-award-for-sustainable-transport-goes-to-ammans-brt-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dubai-award-for-sustainable-transport-goes-to-ammans-brt-1024.webp"
         ]
       ]
     },
@@ -9916,6 +10076,38 @@
         ]
       ]
     },
+    "/covers/dubai-fintech-summit-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/dubai-fintech-summit-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/dubai-fintech-summit-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dubai-fintech-summit-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dubai-fintech-summit-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/dubai-fintech-summit-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dubai-fintech-summit-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/dubai-future-forum-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -11259,6 +11451,38 @@
         [
           1024,
           "/covers/london-big-dates-2027-so-far-1024.webp"
+        ]
+      ]
+    },
+    "/covers/london-book-fair-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/london-book-fair-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/london-book-fair-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/london-book-fair-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/london-book-fair-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/london-book-fair-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/london-book-fair-2027-1024.webp"
         ]
       ]
     },
@@ -13760,6 +13984,38 @@
         ]
       ]
     },
+    "/covers/the-snowman-peacock-theatre-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/the-snowman-peacock-theatre-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/the-snowman-peacock-theatre-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/the-snowman-peacock-theatre-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/the-snowman-peacock-theatre-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/the-snowman-peacock-theatre-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/the-snowman-peacock-theatre-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/tokio-hotel-ovo-arena-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -14175,6 +14431,38 @@
         [
           1536,
           "/covers/difc-passes-10000-active-companies-1536.webp"
+        ]
+      ]
+    },
+    "/covers/dmcc-foundations-start-at-100-dollars-of-assets.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/dmcc-foundations-start-at-100-dollars-of-assets-480.avif"
+        ],
+        [
+          768,
+          "/covers/dmcc-foundations-start-at-100-dollars-of-assets-768.avif"
+        ],
+        [
+          1024,
+          "/covers/dmcc-foundations-start-at-100-dollars-of-assets-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/dmcc-foundations-start-at-100-dollars-of-assets-480.webp"
+        ],
+        [
+          768,
+          "/covers/dmcc-foundations-start-at-100-dollars-of-assets-768.webp"
+        ],
+        [
+          1024,
+          "/covers/dmcc-foundations-start-at-100-dollars-of-assets-1024.webp"
         ]
       ]
     },
@@ -15297,6 +15585,38 @@
         [
           1536,
           "/covers/bus-routes-67-and-149-consultation-1536.webp"
+        ]
+      ]
+    },
+    "/covers/christmas-at-eltham-palace-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/christmas-at-eltham-palace-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/christmas-at-eltham-palace-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/christmas-at-eltham-palace-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/christmas-at-eltham-palace-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/christmas-at-eltham-palace-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/christmas-at-eltham-palace-2026-1024.webp"
         ]
       ]
     },
@@ -18139,6 +18459,38 @@
         [
           1536,
           "/covers/pools-1536.webp"
+        ]
+      ]
+    },
+    "/covers/ras-al-khor-and-al-khail-roads-gain-a-lane.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/ras-al-khor-and-al-khail-roads-gain-a-lane-480.avif"
+        ],
+        [
+          768,
+          "/covers/ras-al-khor-and-al-khail-roads-gain-a-lane-768.avif"
+        ],
+        [
+          1024,
+          "/covers/ras-al-khor-and-al-khail-roads-gain-a-lane-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/ras-al-khor-and-al-khail-roads-gain-a-lane-480.webp"
+        ],
+        [
+          768,
+          "/covers/ras-al-khor-and-al-khail-roads-gain-a-lane-768.webp"
+        ],
+        [
+          1024,
+          "/covers/ras-al-khor-and-al-khail-roads-gain-a-lane-1024.webp"
         ]
       ]
     },
@@ -22176,6 +22528,38 @@
         ]
       ]
     },
+    "/covers/pride-the-musical-opens-at-the-bridge-theatre.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/pride-the-musical-opens-at-the-bridge-theatre-480.avif"
+        ],
+        [
+          768,
+          "/covers/pride-the-musical-opens-at-the-bridge-theatre-768.avif"
+        ],
+        [
+          1024,
+          "/covers/pride-the-musical-opens-at-the-bridge-theatre-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/pride-the-musical-opens-at-the-bridge-theatre-480.webp"
+        ],
+        [
+          768,
+          "/covers/pride-the-musical-opens-at-the-bridge-theatre-768.webp"
+        ],
+        [
+          1024,
+          "/covers/pride-the-musical-opens-at-the-bridge-theatre-1024.webp"
+        ]
+      ]
+    },
     "/covers/pride-tickets.jpg": {
       "width": 1024,
       "height": 1024,
@@ -24711,6 +25095,38 @@
         [
           1536,
           "/covers/capuchinos-cazan-cuando-falta-fruta-1536.webp"
+        ]
+      ]
+    },
+    "/covers/carnaval-de-mazatlan-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/carnaval-de-mazatlan-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/carnaval-de-mazatlan-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/carnaval-de-mazatlan-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/carnaval-de-mazatlan-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/carnaval-de-mazatlan-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/carnaval-de-mazatlan-2027-1024.webp"
         ]
       ]
     },
@@ -28828,6 +29244,38 @@
         ]
       ]
     },
+    "/covers/lightscape-brooklyn-botanic-garden-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/lightscape-brooklyn-botanic-garden-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/lightscape-brooklyn-botanic-garden-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/lightscape-brooklyn-botanic-garden-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/lightscape-brooklyn-botanic-garden-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/lightscape-brooklyn-botanic-garden-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/lightscape-brooklyn-botanic-garden-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/lollapalooza-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -30430,6 +30878,38 @@
         ]
       ]
     },
+    "/covers/big-5-global-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/big-5-global-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/big-5-global-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/big-5-global-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/big-5-global-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/big-5-global-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/big-5-global-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/gulfood-2027.jpg": {
       "width": 1024,
       "height": 1024,
@@ -31613,6 +32093,38 @@
         [
           1024,
           "/covers/halloween-run-west-beach-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/icons-of-porsche-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/icons-of-porsche-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/icons-of-porsche-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/icons-of-porsche-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/icons-of-porsche-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/icons-of-porsche-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/icons-of-porsche-2026-1024.webp"
         ]
       ]
     },
@@ -33242,6 +33754,38 @@
         ]
       ]
     },
+    "/covers/open-usd-ousd-is-live-on-solana.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/open-usd-ousd-is-live-on-solana-480.avif"
+        ],
+        [
+          768,
+          "/covers/open-usd-ousd-is-live-on-solana-768.avif"
+        ],
+        [
+          1024,
+          "/covers/open-usd-ousd-is-live-on-solana-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/open-usd-ousd-is-live-on-solana-480.webp"
+        ],
+        [
+          768,
+          "/covers/open-usd-ousd-is-live-on-solana-768.webp"
+        ],
+        [
+          1024,
+          "/covers/open-usd-ousd-is-live-on-solana-1024.webp"
+        ]
+      ]
+    },
     "/covers/pr1me-london-dinner-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -34857,6 +35401,38 @@
         [
           1024,
           "/covers/how-to-brew-jasmine-tea-1024.webp"
+        ]
+      ]
+    },
+    "/covers/how-to-brew-lapsang-souchong.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/how-to-brew-lapsang-souchong-480.avif"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-lapsang-souchong-768.avif"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-lapsang-souchong-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/how-to-brew-lapsang-souchong-480.webp"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-lapsang-souchong-768.webp"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-lapsang-souchong-1024.webp"
         ]
       ]
     },
@@ -37651,6 +38227,38 @@
         [
           1024,
           "/covers/love-6-premiere-ghaplanyan-theatre-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/luca-minnelli-golden-voice-of-venice-yerevan-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/luca-minnelli-golden-voice-of-venice-yerevan-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/luca-minnelli-golden-voice-of-venice-yerevan-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/luca-minnelli-golden-voice-of-venice-yerevan-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/luca-minnelli-golden-voice-of-venice-yerevan-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/luca-minnelli-golden-voice-of-venice-yerevan-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/luca-minnelli-golden-voice-of-venice-yerevan-2027-1024.webp"
         ]
       ]
     },
@@ -41584,6 +42192,38 @@
         ]
       ]
     },
+    "/covers/weihnachtsmarkt-spittelberg-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/weihnachtsmarkt-spittelberg-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/weihnachtsmarkt-spittelberg-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/weihnachtsmarkt-spittelberg-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/weihnachtsmarkt-spittelberg-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/weihnachtsmarkt-spittelberg-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/weihnachtsmarkt-spittelberg-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/wien-ist-2026-zweitlebenswerteste-stadt-der-welt.jpg": {
       "width": 1536,
       "height": 864,
@@ -42383,6 +43023,38 @@
         [
           1536,
           "/covers/family-1536.webp"
+        ]
+      ]
+    },
+    "/covers/golden-visa-help-at-the-nakheel-and-meraas-sales-centre.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/golden-visa-help-at-the-nakheel-and-meraas-sales-centre-480.avif"
+        ],
+        [
+          768,
+          "/covers/golden-visa-help-at-the-nakheel-and-meraas-sales-centre-768.avif"
+        ],
+        [
+          1024,
+          "/covers/golden-visa-help-at-the-nakheel-and-meraas-sales-centre-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/golden-visa-help-at-the-nakheel-and-meraas-sales-centre-480.webp"
+        ],
+        [
+          768,
+          "/covers/golden-visa-help-at-the-nakheel-and-meraas-sales-centre-768.webp"
+        ],
+        [
+          1024,
+          "/covers/golden-visa-help-at-the-nakheel-and-meraas-sales-centre-1024.webp"
         ]
       ]
     },
