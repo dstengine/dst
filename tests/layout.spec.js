@@ -74,6 +74,26 @@ const PAGES = [
 
 const url = (site, path) => `${baseUrl(site)}${path}`;
 
+/** The header as a reader at this width gets it: how wide the document is,
+    where the menu button ends, how many lines the wordmark's own text takes
+    (distinct line tops of its text node — the logo beside it is not a line),
+    the header's height, and the characters either side of a "·" in the name. */
+function headerReading() {
+  const name = document.querySelector(".site-header .site-name");
+  const text = [...name.childNodes].filter((n) => n.nodeType === 3 && n.textContent.trim()).pop();
+  const range = document.createRange();
+  range.selectNodeContents(text);
+  const tops = new Set([...range.getClientRects()].filter((r) => r.width > 1).map((r) => Math.round(r.top)));
+  const dot = text.textContent.indexOf("·");
+  return {
+    scrollWidth: document.documentElement.scrollWidth,
+    burgerRight: document.querySelector(".nav-toggle summary").getBoundingClientRect().right,
+    lines: tops.size,
+    header: document.querySelector(".site-header").getBoundingClientRect().height,
+    aroundDot: dot < 0 ? null : [text.textContent.charCodeAt(dot - 1), text.textContent.charCodeAt(dot + 1)],
+  };
+}
+
 // Analytics is inert until a measurement ID is configured, but once one is
 // these tests would reach for Google on every navigation. Keep the suite off
 // the network and independent of it being up.
@@ -130,6 +150,55 @@ test.describe("header", () => {
       const lineHeight = await name.evaluate((el) => parseFloat(getComputedStyle(el).fontSize) * 1.6);
       expect(box.height, "site name wrapped to a second line").toBeLessThan(lineHeight * 1.6);
     });
+  }
+
+  // On a phone it was the other way round: the name was nowrap and could not
+  // shrink, so a long one pushed the menu off the screen. mxo's "Ferias y
+  // Festivales de México" made the page 356px wide at 320 and put the burger
+  // past the right edge; llc, vien and tick overflowed too. Up to 560px the
+  // name now wraps between its words, two lines at most inside the same
+  // header, and tick's "Tick · Yerevan" is held as one run by no-break
+  // spaces. Measured in the desktop project on purpose: a mobile device
+  // context widens the viewport to fit the page, which hides exactly this.
+  const LONG_NAMES = [
+    ["llc", "/", [305, 320, 340, 360, 384, 390]],
+    ["mxo", "/", [305, 320, 340, 360, 390, 393]],
+    ["vien", "/", [305, 320, 340, 360, 390]],
+    ["tick", "/", [305, 320, 340, 360, 390]],
+    ["tick", "/am/", [305, 320, 340, 360, 390]],
+  ];
+  for (const [site, path, widths] of LONG_NAMES) {
+    for (const width of widths) {
+      test(`${site}${path}: a long name gives way to the menu @ ${width}`, async ({ page }) => {
+        await page.setViewportSize({ width: 414, height: 800 });
+        await page.goto(url(site, path));
+        const { header: at414 } = await page.evaluate(headerReading);
+        await page.setViewportSize({ width, height: 800 });
+        const now = await page.evaluate(headerReading);
+        expect(now.scrollWidth, "the page scrolls sideways").toBe(width);
+        expect(now.burgerRight, "the menu button is not 14px inside the edge").toBeLessThanOrEqual(width - 14);
+        expect(now.lines, "the wordmark took more lines than it may").toBeLessThanOrEqual(site === "tick" ? 1 : 2);
+        expect(now.header, "the header changed height").toBe(at414);
+        if (site === "tick") expect(now.aroundDot, "the dot is not held by U+00A0 on both sides").toEqual([0xa0, 0xa0]);
+      });
+    }
+  }
+
+  // The reference names, which fit at every width: whatever is done for the
+  // long ones, these stay on one line, in a header as tall as the same page's
+  // at 414 (73px here; a machine with other fonts may differ).
+  for (const site of ["visas", "dst"]) {
+    for (const width of [305, 320, 360, 390]) {
+      test(`${site}/: a name that fits stays on one line @ ${width}`, async ({ page }) => {
+        await page.setViewportSize({ width: 414, height: 800 });
+        await page.goto(url(site, "/"));
+        const { header: at414 } = await page.evaluate(headerReading);
+        await page.setViewportSize({ width, height: 800 });
+        const now = await page.evaluate(headerReading);
+        expect(now.lines, "the wordmark wrapped").toBe(1);
+        expect(now.header, "the header changed height").toBe(at414);
+      });
+    }
   }
 
   // The inline nav wrapped to a second row through the whole tablet range

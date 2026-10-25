@@ -52,3 +52,27 @@ for (const app of Object.keys(PORTS)) {
     }
   });
 }
+
+/* The phone wordmark gives way in WebKit too. A shrinkable flex item and
+   `text-wrap: balance` are places where the two engines can part, and mxo's
+   is the longest name in the network: at 320 it once made the page 356px
+   wide and put the menu button off the screen. */
+test("mxo: the wordmark wraps and the menu stays on screen in WebKit @ 320", async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 800 });
+  await page.goto(`${baseUrl("mxo")}/`, { waitUntil: "domcontentloaded" });
+  await page.evaluate(() => document.fonts.ready);
+  const now = await page.evaluate(() => {
+    const name = document.querySelector(".site-header .site-name");
+    const text = [...name.childNodes].filter((n) => n.nodeType === 3 && n.textContent.trim()).pop();
+    const range = document.createRange();
+    range.selectNodeContents(text);
+    return {
+      scrollWidth: document.documentElement.scrollWidth,
+      burgerRight: document.querySelector(".nav-toggle summary").getBoundingClientRect().right,
+      lines: new Set([...range.getClientRects()].filter((r) => r.width > 1).map((r) => Math.round(r.top))).size,
+    };
+  });
+  expect(now.scrollWidth, "the page scrolls sideways").toBe(320);
+  expect(now.burgerRight, "the menu button is not 14px inside the edge").toBeLessThanOrEqual(306);
+  expect(now.lines, "the wordmark took more than two lines").toBeLessThanOrEqual(2);
+});

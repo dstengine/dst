@@ -336,6 +336,12 @@ const lateIcons = navFootprint - nav.length * 28 > 700;
 const rowNeeds = nav.reduce((sum, item) => sum + item.label.length, 0) * 8.5 + (nav.length - 1) * 14;
 const rowRoom = 1180 - (siteName.length * 11 + 40) - 170;
 const navBar = denseNav && rowNeeds > rowRoom + 40;
+// The header's copy of the name, with the words either side of a " · " held
+// as one run: a separator never ends or starts a line of the wordmark
+// (tick's "Tick · Yerevan" would otherwise break after the dot at 305px).
+// Everywhere else — <title>, og:site_name, JSON-LD, the footer — the name
+// keeps its plain spaces.
+const wordmark = siteName.replaceAll(" · ", "\u00A0·\u00A0");
 ---
 <!doctype html>
 <html
@@ -462,7 +468,7 @@ const navBar = denseNav && rowNeeds > rowRoom + 40;
               "DST" made the link announce itself twice — "DST DST" on the
               hub, where the name is the same word. */}
           <img class="site-logo" src={logoSrc} alt="" aria-hidden="true" width="28" height="28" />
-          {siteName}
+          {wordmark}
         </a>
         <div class="header-actions">
           <nav class:list={["site-nav", denseNav && "site-nav-dense", navBar && "site-nav-bar"]}>
@@ -745,17 +751,48 @@ const navBar = denseNav && rowNeeds > rowRoom + 40;
      tangled with the site name, so at and below tablet width it's
      replaced by a native <details> dropdown — zero JS, same pattern as
      the Faq component elsewhere in this design system. */
-  /* The name is nowrap and doesn't shrink, so on a phone the longest one in
-     the network ("Dubai Company Formation") took 335px of the 342px the
-     header has at 390px and shoved the menu button off the screen. */
+  /* On a phone the name steps down a size here and again at 380px, and
+     where even that leaves the row short it wraps between its words. Nowrap
+     and unshrinkable, the longest name in the network ("Dubai Company
+     Formation") took 335px of the 342px the header has at 390px and shoved
+     the menu button off the screen. */
   @media (max-width: 560px) {
     .site-name { font-size: var(--step-0); }
     .site-logo { width: 24px; height: 24px; }
+    /* A long name wraps between its words rather than pushing the menu off
+       the screen: mxo's 30 characters needed 356px at 320 and 398 at 390.
+       Never inside a word: overflow-wrap stays normal and min-width stays
+       auto, so the name is never narrower than its longest word. Two lines
+       sit inside the 44px row (20.8px each here, 18px at 380 and below), so
+       the header keeps its height and the sticky offset below does not move.
+       A name that fits is untouched: shrink only happens when the row is
+       short, and each line-height is a whole, even number of px under the
+       1.6em the name inherits from body's line-height in tokens.css (a
+       change there belongs here too), so a one-line name's glyphs stay on
+       the pixel they had. At 1.15 they moved a fraction, and in Chrome
+       fest.one's wordmark rose 1px. */
+    .site-name {
+      flex-shrink: 1;
+      white-space: normal;
+      line-height: calc(1.6em - 8px);
+      text-wrap: balance;
+    }
+    .header-actions { flex-shrink: 0; }
   }
 
   /* A 320px phone is narrower still — the same name overflows again there. */
   @media (max-width: 380px) {
-    .site-name { font-size: var(--step--1); }
+    .site-name { font-size: var(--step--1); line-height: calc(1.6em - 6px); }
+  }
+
+  /* At 305 a name beside three controls has no slack: tick's
+     "Tick · Yerevan" beside its language switch needed 309px, vien's 308.
+     The gap steps down from 24px to 14px, which still clears the burger's
+     44px overlay (inset -10px), and the language switch gives back 4px a
+     side more of its 44px box. */
+  @media (max-width: 340px) {
+    .header-actions { gap: var(--space-2); }
+    .lang-switch { margin-inline: -0.5rem; }
   }
 
   /* Which of the two navs is on screen. The dropdown's own styling sits
