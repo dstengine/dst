@@ -25,6 +25,7 @@ import { ICONS } from "../icons.ts";
 import Icon from "./Icon.astro";
 import { mapEmbedUrl, directionsUrl } from "../maps.ts";
 import { formatDate, cardHours, cardCountdown } from "../date.ts";
+import { caps } from "../caps.ts";
 import { withLabels, type ArticleLabels } from "../labels.ts";
 import { readingMinutes } from "@dst/content/reading";
 import { isOn, isCurrent, withPromoted } from "@dst/content/when";
@@ -236,8 +237,8 @@ const relatedItems = (item.related ?? []).map((card) => ({
   <header class="news-article-header">
     <p class="news-article-meta">
       {item.category && (categoryHref
-        ? <a class="news-article-category" href={categoryHref} title={L.categoryTitle(item.category)}>{item.category}</a>
-        : <span class="news-article-category">{item.category}</span>)}
+        ? <a class="news-article-category" href={categoryHref} title={L.categoryTitle(item.category)}>{caps(item.category)}</a>
+        : <span class="news-article-category">{caps(item.category)}</span>)}
       <time datetime={item.date}>{formatDate(item.date, locale)}</time>
       {minutes > 0 && <span class="news-article-reading">{L.minRead(minutes)}</span>}
     </p>

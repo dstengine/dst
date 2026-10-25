@@ -21,6 +21,7 @@
 // one card has a cover and the next starts with a headline.
 import Photo from "./Photo.astro";
 import { formatDate, formatCardDate } from "../date.ts";
+import { caps } from "../caps.ts";
 import { EN, type ArticleLabels } from "../labels.ts";
 
 export interface FeedCardItem {
@@ -129,7 +130,7 @@ const parts = (iso: string) => {
             {item.editorsChoice && <span class="feed-pick">{L.editorsChoice}</span>}
             {dated(item) && (
               <div class="feed-date" aria-hidden="true">
-                {item.until && <span class="feed-date-until">{L.untilCover}</span>}
+                {item.until && <span class="feed-date-until">{caps(L.untilCover)}</span>}
                 <span class="feed-date-day">{when.day}</span>
                 <span class="feed-date-month">{when.month}</span>
                 {item.hours
@@ -141,7 +142,7 @@ const parts = (iso: string) => {
         )}
         <div class="feed-body">
           <p class:list={["feed-meta", item.event && "feed-meta-event"]}>
-            {item.eyebrow && <span class="feed-eyebrow">{item.eyebrow}</span>}
+            {item.eyebrow && <span class="feed-eyebrow">{caps(item.eyebrow)}</span>}
             {item.until
               ? <time datetime={item.until}>{L.until(formatCardDate(item.until, locale))}</time>
               : <time datetime={item.date}>{item.event ? formatCardDate(item.date, locale) : formatDate(item.date, locale)}</time>}

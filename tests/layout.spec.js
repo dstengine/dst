@@ -400,6 +400,30 @@ test("a tick section page shows its first card before the subject chips", async 
   }
 });
 
+// CSS capitals spell the Armenian "և" the classical way, "ԵՒ" ("ԵՐԵՒԱՆ",
+// "ՕՊԵՐԱ ԵՒ ԲԱԼԵՏ"); in Armenia it is "ԵՎ". caps() hands such text over in
+// capitals already, so no uppercased element on an Armenian page may still
+// hold the lowercase ligature. One page for each place it was found: the
+// calendar's eyebrows and "until", an event's facts and category, a news
+// article's category.
+test("tick's Armenian capitals spell և as ԵՎ", async ({ page }) => {
+  for (const path of [
+    "/am/calendar/2026-11/",
+    "/am/events/carmen-yerevan-opera-2026/",
+    "/am/events/akhtamar-quartet-babajanyan-hall-yerevan-2026/",
+    "/am/news/yerevan-fashion-week-2026/",
+  ]) {
+    await page.goto(url("tick", path));
+    const left = await page.evaluate(() =>
+      [...document.querySelectorAll("body *")]
+        .filter((el) => getComputedStyle(el).textTransform === "uppercase")
+        .map((el) => [...el.childNodes].filter((n) => n.nodeType === 3).map((n) => n.textContent).join("").trim())
+        .filter((text) => text.includes("և")),
+    );
+    expect(left, `${path}: uppercased text still holding "և"`).toEqual([]);
+  }
+});
+
 // The facts panel's label column is the panel's: a fixed 9rem broke "On this
 // calendar" and «Այս օրացույցում» over two lines beside one-line values
 // (scan 2026-10-24, net-25). Every label one line, every value at one x.
