@@ -1204,4 +1204,82 @@ export const items: NewsItem[] = [
       },
     ],
   },
+  {
+    slug: "how-to-brew-lapsang-souchong",
+    createdAt: "2026-10-25T04:30:00+04:00",
+    updatedAt: "2026-10-25T04:30:00+04:00",
+    site: "tea",
+    image: "/covers/how-to-brew-lapsang-souchong.jpg",
+    imageAlt: "A painting of a timber smokehouse lined with racks of dark tea leaves, a pine-log fire glowing beneath them, smoke drifting up past a teapot and a cup of amber tea",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "How to brew lapsang souchong",
+    titleSeo: "How to brew lapsang souchong tea: 90–95°C, 2–5 minutes",
+    summary:
+      "Lapsang souchong is the smoked black tea of Fujian, its leaves dried over pine fires. Brew about 3 g in 240–300 ml of water just off the boil, 90–95°C, for two to five minutes; or brew it gongfu style in a small pot kept for this tea alone, and steep it again and again.",
+    date: "2026-10-25",
+    category: "Guide",
+    tags: ["Black tea"],
+    source: {
+      name: "Imperial Tea Court, Lapsang Souchong",
+      url: "https://www.imperialtea.com/products/lapsang-souchong",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "Lapsang souchong is the tea people either ask for by name or never order twice. It is a <strong>black tea from Fujian</strong>, in south-east China, whose oxidised leaves are cured over <strong>smoking pine-log fires</strong>. The smoke goes into the leaf, and into the cup: rich and malty underneath, campfire on top.",
+      "## The short version",
+      "About <strong>3 g of leaf</strong> to <strong>240–300 ml</strong> of water (8–10 fl oz), at <strong>90–95°C</strong> (194–203°F), for <strong>two to five minutes</strong>. That is the guidance of Imperial Tea Court, which sells it.",
+      "## Water",
+      "Just off the boil, at 90–95°C, rather than at a rolling boil.",
+      "## Time",
+      "Start at two minutes and taste, then go longer for a stronger cup, up to five.",
+      "## Gongfu style",
+      "Lapsang also suits the small-pot method: more leaf, a small teapot or a gaiwan, and short infusions, each a little longer than the last. If you use a <strong>Yixing clay pot</strong>, keep one for lapsang alone, because unglazed clay holds on to the smoke and passes it to every tea brewed in it afterwards.",
+      "## Re-steeping",
+      "The same leaves give several cups. Lengthen each steep gradually as the leaf opens and gives up less.",
+      "## Milk or not",
+      "Either: taken plain, the smoke is at its clearest, and milk softens it. For the plain black teas, see <a href=\"/guides/how-to-brew-black-tea/\" title=\"How to brew black tea\">how to brew black tea</a>; for another Chinese tea made for many small infusions, <a href=\"/guides/how-to-brew-oolong-tea/\" title=\"How to brew oolong tea: Western and gongfu\">how to brew oolong</a>.",
+    ],
+    faq: [
+      {
+        q: "What temperature should lapsang souchong be brewed at?",
+        a: "90–95°C (194–203°F): just off the boil.",
+      },
+      {
+        q: "How long should lapsang souchong steep?",
+        a: "Two to five minutes. Start at two, taste, and go longer for a stronger cup.",
+      },
+      {
+        q: "How much tea do I use?",
+        a: "About 3 g of leaf to 240–300 ml of water.",
+      },
+      {
+        q: "Why does lapsang souchong taste smoky?",
+        a: "Its leaves are cured over smoking pine-log fires in Fujian, and the smoke stays in the leaf.",
+      },
+    ],
+    related: [
+      {
+        href: "/guides/how-to-brew-black-tea/",
+        eyebrow: "Black tea",
+        title: "How to brew black tea",
+        text: "Assam, Ceylon, Darjeeling and the breakfast blends.",
+      },
+      {
+        href: "/guides/how-to-brew-oolong-tea/",
+        eyebrow: "Oolong",
+        title: "How to brew oolong tea",
+        text: "Western style and gongfu, with many short infusions.",
+      },
+      {
+        href: "/guides/how-to-make-earl-grey-tea/",
+        eyebrow: "Scented black tea",
+        title: "How to make Earl Grey tea",
+        text: "The other black tea with a scent of its own.",
+      },
+    ],
+    expertise:
+      "The commonest mistake with lapsang is treating it as a strong breakfast tea and leaving the bag in. The smoke is already strong at two minutes, and past five it turns bitter rather than richer. Make the first cup short and lengthen from there. A good lapsang should taste of tea first and smoke second; if the smoke is all there is, the leaf is a poor one, and no brewing will fix it.",
+  },
 ];
