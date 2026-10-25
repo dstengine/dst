@@ -5,7 +5,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-wurstelprater-2026",
     createdAt: "2026-10-21T02:04:30+04:00",
-    updatedAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-25T18:20:00+01:00",
     site: "vien",
     image: "/covers/halloween-wurstelprater-2026.jpg",
     imageAlt: "Ein rotes Riesenrad aus Papier über einem grünen Wiesenband mit sechs orangen Kürbissen und einem Hexenhut, goldene Sterne im cremefarbenen Himmel",
@@ -78,6 +78,12 @@ export const items: EventItem[] = [
         eyebrow: "31. Oktober",
         title: "Halloween am Zentralfriedhof",
         text: "Rätselrallye und Sargprobeliegen in der Halle 2, 16 bis 20 Uhr, Eintritt frei.",
+      },
+      {
+        href: "/veranstaltungen/perchtenlauf-prater-wien-2026/",
+        eyebrow: "29. November, Riesenradplatz",
+        title: "Perchtenlauf im Prater 2026",
+        text: "Am selben Platz, einen Monat später: über 220 Perchten aus 17 Vereinen, ab 17 Uhr, Eintritt frei.",
       },
     ],
     expertise:
@@ -512,7 +518,7 @@ export const items: EventItem[] = [
   {
     slug: "vienna-halloween-run-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-10-21T04:56:51+04:00",
+    updatedAt: "2026-10-25T18:20:00+01:00",
     site: "vien",
     image: "/covers/vienna-halloween-run-2026.jpg",
     imageAlt: "Eine helle Laufbahn, die in die Bildmitte führt, gesäumt von Bäumen mit rotem Herbstlaub",
@@ -597,6 +603,12 @@ export const items: EventItem[] = [
         title: "Halloween im Kindermuseum Schönbrunn 2026",
         text: "Halloween für Kinder in Wien: Vom 25. Oktober bis 2. November 2026 gibt es im Kindermuseum Schloss Schönbrunn einen Monsterparcours, eine Rätselrallye und zwei Abende Gruselführung im Dunkeln. Der Museumseintritt kostet 12 Euro, die Führung 23 Euro.",
       },
+      {
+        href: "/veranstaltungen/perchtenlauf-prater-wien-2026/",
+        eyebrow: "29. November, Prater",
+        title: "Perchtenlauf im Prater 2026",
+        text: "Nach dem Lauf in der Hauptallee kommt der nächste Abend im Dunkeln: über 220 Perchten am Riesenradplatz, Eintritt frei.",
+      },
     ],
     expertise:
       "Zwei Dinge unterscheiden diesen Abend von einem gewöhnlichen Volkslauf. Erstens die Uhrzeit: Ende Oktober ist es um halb sieben bereits dunkel, und die Hauptallee ist keine hell beleuchtete Straße — wer die 5 Kilometer läuft, läuft den größten Teil davon im Halbdunkel. Zweitens das Kostüm, das hier nicht Zierde, sondern Ausrüstung ist: Was beim Fotografieren gut aussieht, wird nach zwei Kilometern schwer und warm. Die praktikable Lösung sind Maske und Umhang, die man im Ziel wieder anzieht, nicht das vollständige Ganzkörperkostüm.",
@@ -605,7 +617,7 @@ export const items: EventItem[] = [
   {
     slug: "kuerbisfest-am-himmel-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-10-21T21:35:00+04:00",
+    updatedAt: "2026-10-25T18:20:00+01:00",
     site: "vien",
     image: "/covers/kuerbisfest-am-himmel-2026.jpg",
     imageAlt: "Ein breiter Haufen runder Papierscheiben in Rot, Grün, Ocker und Creme, in vielen verschiedenen Größen",
@@ -692,6 +704,12 @@ export const items: EventItem[] = [
         eyebrow: "Innenstadt und Prater",
         title: "Wiener Silvesterpfad 2026",
         text: "Das nächste große Fest unter freiem Himmel: Silvester auf den Plätzen der Innenstadt und im Prater, Eintritt frei.",
+      },
+      {
+        href: "/veranstaltungen/perchtenlauf-prater-wien-2026/",
+        eyebrow: "29. November, Prater",
+        title: "Perchtenlauf im Prater 2026",
+        text: "Über 220 Perchten aus 17 Vereinen am Wintermarkt am Riesenradplatz in Wien, ab 17 Uhr, Eintritt frei.",
       },
     ],
     expertise:
@@ -2137,5 +2155,93 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Der Spittelberg ist der Markt in den Gassen, nicht auf einem Platz: Die Stände stehen zwischen den Hausfassaden, und das macht ihn an Wochenendabenden eng. Wer in Ruhe schauen will, kommt unter der Woche kurz nach 14 Uhr. Am Samstag und Sonntag öffnet er schon um 11 Uhr, und der Vormittag ist dann die ruhigste Zeit, um in Ruhe Geschenke zu suchen.",
+  },
+  {
+    slug: "perchtenlauf-prater-wien-2026",
+    createdAt: "2026-10-25T18:20:00+01:00",
+    updatedAt: "2026-10-25T18:20:00+01:00",
+    site: "vien",
+    title: "Perchtenlauf im Prater 2026",
+    cardTitle: "Perchtenlauf im Prater",
+    titleSeo: "Perchtenlauf Prater Wien 2026: Riesenradplatz, November",
+    summary:
+      "Der Perchtenlauf im Wiener Prater ist am Sonntag, 29. November 2026, um 17 Uhr: Über 220 Maskenträgerinnen und Maskenträger aus 17 Vereinen ziehen durch den Wintermarkt am Riesenradplatz. Der Eintritt ist frei, die Strecke ist eingezäunt.",
+    start: "2026-11-29",
+    startTime: "17:00",
+    utcOffset: "+01:00",
+    venue: "Wintermarkt am Riesenradplatz, Prater",
+    city: "Wien",
+    geo: { name: "Riesenradplatz", lat: 48.2166, lng: 16.3959 },
+    organizer: "Wintermarkt Prater Wien",
+    category: "Brauchtum",
+    tickets: { priceFrom: 0, currency: "EUR" },
+    ticket: {
+      url: "https://www.wintermarkt.at/winterabenteuer/perchtenlauf/",
+      label: "Wintermarkt Prater Wien",
+      sells: false,
+    },
+    source: {
+      name: "Wintermarkt Prater Wien",
+      url: "https://www.wintermarkt.at/winterabenteuer/perchtenlauf/",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "Am ersten Adventsonntag wird es im Prater laut: Der <strong>Perchtenlauf am Wintermarkt</strong> beginnt am <strong>Sonntag, 29. November 2026, um 17 Uhr</strong> rund um den <strong>Riesenradplatz</strong>. Der Veranstalter erwartet <strong>über 220 Maskenträgerinnen und Maskenträger</strong>, der Eintritt ist <strong>frei</strong>.",
+      "## Wer läuft",
+      "Gastgeber sind die <strong>Ybbstaler Schluchtenteufln</strong>, die den familienfreundlichen Praterlauf jedes Jahr ausrichten. Heuer kommen 16 weitere Vereine dazu: Odlwonga Feuerteifin, Haager Schlossteufel, Luzifers Schattenfürsten, Teuflische Kreaturen aus Kittsee, Prochenberg Perchten, Neuzeuger Höhlenteufeln, Türnitzer Grobn Teifln, Kematner Urteufeln, Perwarther Ruinenteufel, Steyrer-Teufelsperchten, Valentiner Wehrteufln, Wolfsberg Teifl´n Böheimkirchen, Pözteifln, The Oldtown Demons, Luzifer´s Höllen Dämonen und Custodes Noctis.",
+      "## Strecke und Regeln",
+      "Die Perchten laufen hinter einem Zaun, und <strong>jede Percht kommt an jedem Zaunabschnitt vorbei</strong>. Einen besonders guten Platz muss man sich also nicht erkämpfen. Den Plan der Laufroute mit den Fußgängerübergängen stellt der Wintermarkt auf seiner Seite zum Perchtenlauf bereit.",
+      "Der Veranstalter bittet um drei Dinge: Kindern und Menschen, die Unterstützung brauchen, den Platz direkt am Zaun lassen; die Perchten nicht anfassen, weil sie unter den Masken oft nur eingeschränkt sehen und hören; und für ein Foto die Begleitpersonen der Gruppe ansprechen.",
+      "## Der Wintermarkt rundherum",
+      "Der Lauf gehört zum <strong>Wintermarkt am Riesenradplatz</strong>, der vom <strong>20. November 2026 bis 6. Jänner 2027</strong> täglich offen hat, an Wochenenden und Feiertagen von 11 bis 22 Uhr. Der Eintritt ist auch dort frei. Erreichbar ist der Prater öffentlich über den Praterstern.",
+      "## Was noch offen ist",
+      "Der Veranstalter nennt die Beginnzeit, aber kein Ende des Laufs. Wie lange der Zug dauert, hängt an der Zahl der Gruppen; wer mit kleinen Kindern kommt, plant am besten etwas Zeit davor ein, um einen Platz am Zaun zu finden.",
+      "## Weitere Termine im Prater",
+      "Zum Jahreswechsel ist der Prater wieder Bühne: Der <a href=\"/veranstaltungen/wiener-silvesterpfad-2026/\" title=\"Wiener Silvesterpfad 2026\">Wiener Silvesterpfad</a> reicht von der Innenstadt bis in den Prater. Wer im Advent lieber durch Buden spaziert, findet den <a href=\"/veranstaltungen/wiener-christkindlmarkt-2026/\" title=\"Wiener Christkindlmarkt am Rathausplatz 2026\">Christkindlmarkt am Rathausplatz</a>, der eine Woche vor dem Wintermarkt öffnet.",
+    ],
+    faq: [
+      {
+        q: "Wann ist der Perchtenlauf im Prater 2026?",
+        a: "Am <strong>Sonntag, 29. November 2026, um 17 Uhr</strong>, am Wintermarkt rund um den Riesenradplatz.",
+      },
+      {
+        q: "Was kostet der Perchtenlauf?",
+        a: "Nichts. Der Eintritt zum Lauf und zum Wintermarkt ist <strong>frei</strong>, Karten gibt es keine.",
+      },
+      {
+        q: "Wie viele Perchten laufen mit?",
+        a: "Der Veranstalter erwartet über 220 Maskenträgerinnen und Maskenträger aus 17 Vereinen, angeführt von den Ybbstaler Schluchtenteufln.",
+      },
+      {
+        q: "Ist der Perchtenlauf für Kinder geeignet?",
+        a: "Der Veranstalter kündigt ihn als familienfreundlich an. Die Strecke ist eingezäunt, und Kinder sollen die Plätze direkt am Zaun bekommen.",
+      },
+      {
+        q: "Wo sieht man am besten?",
+        a: "Überall am Zaun: Jede Percht kommt an jedem Abschnitt vorbei. Den Routenplan gibt es auf der Seite des Wintermarkts.",
+      },
+    ],
+    related: [
+      {
+        href: "/veranstaltungen/wiener-silvesterpfad-2026/",
+        eyebrow: "Innenstadt und Prater",
+        title: "Wiener Silvesterpfad 2026",
+        text: "Silvester auf den Plätzen der Innenstadt und im Prater, Eintritt frei.",
+      },
+      {
+        href: "/veranstaltungen/wiener-christkindlmarkt-2026/",
+        eyebrow: "13. November – 26. Dezember",
+        title: "Wiener Christkindlmarkt am Rathausplatz",
+        text: "Der große Markt vor dem Rathaus.",
+      },
+      {
+        href: "/veranstaltungen/halloween-wurstelprater-2026/",
+        eyebrow: "Prater",
+        title: "Halloween im Wurstelprater 2026",
+        text: "Das Herbstprogramm am selben Platz, Ende Oktober.",
+      },
+    ],
+    expertise:
+      "Ende November ist es um 17 Uhr schon dunkel, und genau darauf ist der Lauf gebaut: Fell, Hörner und Glocken wirken im Licht der Buden ganz anders als bei Tag. Für kleine Kinder kann das zu viel sein. Hilfreich ist, vorher zu erklären, dass unter jeder Maske ein Mensch aus einem Verein steckt, und sich einen Platz am Zaun mit einem Erwachsenen dahinter zu suchen. Wer danach bleibt, hat den ganzen Abend am Wintermarkt vor sich, der sonntags bis 22 Uhr offen hat.",
   },
 ];
