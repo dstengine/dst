@@ -1365,7 +1365,7 @@ export const items: EventItem[] = [
   {
     slug: "digitec-2026-yerevan",
     createdAt: "2026-09-06T18:42:33+04:00",
-    updatedAt: "2026-10-11T18:35:00+04:00",
+    updatedAt: "2026-10-26T02:15:00+04:00",
     site: "sol2go",
     image: "/covers/digitec-2026-yerevan.jpg",
     imageAlt: "A violet exhibition hall with a row of pale lilac booth counters down each side wall, mint banners and track lights hanging between the columns, a large blank cream board on the far wall and an empty floor down the middle",
@@ -1385,7 +1385,7 @@ export const items: EventItem[] = [
     geo: { name: "Meridian Expo", lat: 40.1663961, lng: 44.4999562 },
     organizer: "Union of Advanced Technology Enterprises (UATE)",
     category: "Expo",
-    tickets: { priceFrom: 0 },
+    tickets: { priceFrom: 0, currency: "AMD" },
     ticket: { url: "https://digitec.am/en-US/", label: "Register" },
     source: {
       name: "DigiTec",
@@ -1551,7 +1551,7 @@ export const items: EventItem[] = [
   {
     slug: "solana-demo-day-london-2026",
     createdAt: "2026-10-13T00:40:00+04:00",
-    updatedAt: "2026-10-14T21:10:00+04:00",
+    updatedAt: "2026-10-26T02:15:00+04:00",
     site: "sol2go",
     image: "/covers/solana-demo-day-london-2026.jpg",
     imageAlt: "An empty violet hall with arched windows, a small lectern on a low stage before a blank white screen and rows of chairs in the foreground",
@@ -1570,7 +1570,7 @@ export const items: EventItem[] = [
     organizer: "Solana Foundation and Superteam UK",
     category: "Demo Day",
     audience: ["Founders", "Investors", "Developers"],
-    tickets: { priceFrom: 0 },
+    tickets: { priceFrom: 0, currency: "GBP" },
     ticket: {
       url: "https://luma.com/sol-demo-day",
       label: "Request to join",
@@ -1634,7 +1634,7 @@ export const items: EventItem[] = [
   {
     slug: "solana-intelligence-summit-london-2026",
     createdAt: "2026-10-14T21:10:00+04:00",
-    updatedAt: "2026-10-14T21:10:00+04:00",
+    updatedAt: "2026-10-26T02:15:00+04:00",
     site: "sol2go",
     image: "/covers/solana-intelligence-summit-london-2026.jpg",
     imageAlt: "A stone courtyard seen through an arch, with a long table of small glowing screens in violet light",
@@ -1661,22 +1661,23 @@ export const items: EventItem[] = [
     organizer: "Solana Foundation",
     category: "Conference",
     audience: ["Developers", "Founders"],
-    tickets: { priceFrom: 0 },
+    tickets: { priceFrom: 0, currency: "GBP" },
     ticket: {
       url: "https://luma.com/intelligence-summit",
       label: "Join the waitlist",
+      soldOut: true,
     },
     source: {
       name: "Solana Foundation on Luma",
       url: "https://luma.com/intelligence-summit",
-      verifiedOn: "2026-10-14",
+      verifiedOn: "2026-10-26",
     },
     body: [
       "Breakpoint week has a day for traders, a day for protocol engineers and a day for teams to show what they built. The <strong>Solana Intelligence Summit</strong> is the one about AI: the Solana Foundation calls it an intimate, invite-only Solana AI event, at <strong>Somerset House</strong> on <strong>Friday 13 November 2026</strong>.",
       "## The day",
       "<strong>10:00 to 18:00</strong> London time at Somerset House, Strand, London WC2R 1LA. The programme is billed as talks, <strong>hands-on workshops</strong>, <strong>live demos</strong>, panels and interactive AI experiences, with art, merch and, in the hosts' words, maybe some hardware. A happy hour with food and drinks follows the main-stage programme. The full schedule has not been published yet.",
       "## Getting in",
-      "It costs nothing, but it is <strong>by application</strong>: you apply on the event page and the hosts choose. On 14 October the page said <strong>Event Full</strong> and offered a <strong>waitlist</strong>, with a notice to those on it if places come free.",
+      "It costs nothing, but it is <strong>by application</strong>: you apply on the event page and the hosts choose. On 26 October the page said <strong>Event Full</strong> and offered a <strong>waitlist</strong>, with a notice to those on it if places come free.",
       "## Speaking",
       "The Foundation is taking applications to speak, through a form linked from the event page.",
       "## Where it sits in the week",
@@ -1689,7 +1690,7 @@ export const items: EventItem[] = [
       },
       {
         q: "How do I get a place?",
-        a: "Through the Luma page. Attendance is free but invite-only and subject to the hosts' approval; on 14 October 2026 the event was full and the page offered a waitlist.",
+        a: "Through the Luma page. Attendance is free but invite-only and subject to the hosts' approval; on 26 October 2026 the event was full and the page offered a waitlist.",
       },
       {
         q: "Does it clash with 200ms?",

@@ -10,7 +10,7 @@ import type { Publisher } from '../schema';
 // doesn't: dates/venue/organizer in the header, and a ticket button right
 // under it while intent is still fresh.
 import type { EventItem, NewsItem } from "@dst/content/types";
-import { isFree } from "@dst/content/admission";
+import { isFree, ticketAvailability } from "@dst/content/admission";
 import { endDay, runDays } from "@dst/content/when";
 import LeadForm from "./LeadForm.astro";
 import VentureGrid from "./VentureGrid.astro";
@@ -349,15 +349,19 @@ const glance: { label: string; value: string; icon: string }[] = [
 
 // AggregateOffer when there's a range, plain Offer when there's one price —
 // the two are not interchangeable in the spec, and a range submitted as an
-// Offer is what makes a price disappear from the rich result.
+// Offer is what makes a price disappear from the rich result. The stock is
+// the link's: SoldOut when the entry says so, nothing when the link only
+// announces, InStock when it sells (@dst/content/admission). A sold-out
+// offer keeps its price, which is the price that sold out.
 const offers = (() => {
   if (!item.ticket || !ticketHref) return undefined;
   const url = absolute(ticketHref);
   const t = item.tickets;
   const validThrough = t?.salesEnd ? `${t.salesEnd}T23:59:59${offset}` : undefined;
+  const stock = ticketAvailability(item);
   const common = {
     url,
-    availability: "https://schema.org/InStock",
+    ...(stock ? { availability: `https://schema.org/${stock}` } : {}),
     ...(validThrough ? { validThrough } : {}),
   };
   if (t?.priceFrom === undefined) return { "@type": "Offer", ...common };
@@ -440,9 +444,11 @@ const jsonLd =
 
 // The primary button. A seller if we have one; failing that, the page the
 // event was written from, which for most of these is the organiser's own
-// site and is where a ticket would be sold if there is one to sell.
+// site and is where a ticket would be sold if there is one to sell. It
+// sells only when the offer says InStock: a waitlist on a full run is not a
+// sale, so its click is not a ticket_click and no price goes on it.
 const action = (() => {
-  if (item.ticket && ticketHref) return { href: ticketHref, label: item.ticket.label ?? L.register, sells: item.ticket.sells !== false };
+  if (item.ticket && ticketHref) return { href: ticketHref, label: item.ticket.label ?? L.register, sells: ticketAvailability(item) === "InStock" };
   // Nothing is being sold, so nothing is called tickets. A free community
   // meetup with a Tickets button reads as a page that has not been looked
   // at, and on a past one it reads as a page nobody maintains.

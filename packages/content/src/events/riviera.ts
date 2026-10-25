@@ -570,7 +570,7 @@ export const items: EventItem[] = [
   {
     slug: "after-dark-halloween-night-run-kite-beach-2026",
     createdAt: "2026-10-24T19:00:00+04:00",
-    updatedAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-26T02:15:00+04:00",
     site: "riviera",
     image: "/covers/after-dark-halloween-night-run-kite-beach-2026.jpg",
     imageAlt: "Two runners with head torches on a pale beach at night, palm trees, a moon reflected in the sea and kites in the sky",
@@ -581,7 +581,7 @@ export const items: EventItem[] = [
     cardTitle: "After Dark night run, Kite Beach",
     titleSeo: "Kite Beach Halloween Night Run, 30 Oct, from Azizi Riviera",
     summary:
-      "Five Dubai running communities meet at SOIL on Kite Beach on Friday 30 October 2026 at 7:30pm for a night run along the beach, all paces welcome, with glow sticks, music and Halloween outfits optional. The list is full and a waitlist is open on Luma. A Friday evening run for Azizi Riviera residents, the night before the Halloween races.",
+      "Five Dubai running communities meet at SOIL on Kite Beach on Friday 30 October 2026 at 7:30pm for a night run along the beach, all paces welcome, with glow sticks, music and Halloween outfits optional. A Friday evening run for Azizi Riviera residents, the night before the Halloween races.",
     start: "2026-10-30",
     startTime: "19:30",
     endTime: "21:30",
@@ -592,11 +592,11 @@ export const items: EventItem[] = [
     geo: { name: "SOIL, Kite Beach", lat: 25.16794, lng: 55.21119 },
     organizer: "Off Pace",
     category: "Sport",
-    ticket: { url: "https://luma.com/42zdqx0n", label: "Waitlist on Luma", sells: false },
+    ticket: { url: "https://luma.com/42zdqx0n", label: "Waitlist on Luma", sells: false, soldOut: true },
     source: {
       name: "Luma: After Dark, Halloween Community Night Run",
       url: "https://luma.com/42zdqx0n",
-      verifiedOn: "2026-10-24",
+      verifiedOn: "2026-10-26",
     },
     body: [
       "Five of Dubai's running communities are putting on one night run together. <strong>After Dark</strong> meets at <strong>SOIL on Kite Beach</strong> on <strong>Friday 30 October 2026</strong> at <strong>7:30pm</strong>, runs along the beach after dark and finishes back at SOIL by 9:30pm.",

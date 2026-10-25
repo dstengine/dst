@@ -23,3 +23,17 @@ export function isFree(item: { tickets?: EventItem["tickets"] }): boolean {
   const t = item.tickets;
   return t?.priceFrom === 0 && (t.priceTo ?? 0) === 0;
 }
+
+// Whether the ticket link still gets a reader in, in schema.org's word for
+// it. A seller is InStock; a full run or a sold-out sale is SoldOut; an
+// announcement (`sells: false`) claims nothing, so it has no word at all.
+// The event's offer and its button's ticket_click both read this, so the
+// markup and the analytics say what the page says. Until 25 Oct 2026 every
+// offer said InStock, on a full run and a free cemetery evening among them.
+export function ticketAvailability(item: { ticket?: EventItem["ticket"] }): "InStock" | "SoldOut" | undefined {
+  const t = item.ticket;
+  if (!t) return undefined;
+  if (t.soldOut) return "SoldOut";
+  if (t.sells === false) return undefined;
+  return "InStock";
+}

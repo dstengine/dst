@@ -920,7 +920,7 @@ export const items: EventItem[] = [
   {
     slug: "wiener-christkindlmarkt-2026",
     createdAt: "2026-09-12T22:20:00+04:00",
-    updatedAt: "2026-10-21T21:35:00+04:00",
+    updatedAt: "2026-10-26T02:15:00+04:00",
     site: "vien",
     image: "/covers/wiener-christkindlmarkt-2026.jpg",
     imageAlt:
@@ -949,6 +949,7 @@ export const items: EventItem[] = [
     ticket: {
       url: "https://www.christkindlmarkt.at/",
       label: "Öffnungszeiten und Programm",
+      sells: false,
     },
     source: {
       name: "Wiener Christkindlmarkt",

@@ -324,10 +324,17 @@ export interface EventItem extends ItemBase {
   // search engines. Set this and both say Online instead.
   online?: boolean;
   organizer?: string;
-  ticket?: { url: string; label?: string; sells?: false }; // -> /go/<slug>/, visible button
+  ticket?: { url: string; label?: string; sells?: false; soldOut?: true }; // -> /go/<slug>/, visible button
   // `sells: false` marks a link that is the organiser's announcement rather
   // than a seller — an entry fee paid at the door. Its button keeps its own
   // label: no "tickets from" price, and a click is not counted as a sale.
+  // `soldOut: true`: what this link sells is gone. The list is full or the
+  // tickets have sold out, and the link stays for a waitlist or a resale.
+  // It describes this link only: when one ticket type sells out and the
+  // button moves to another that is still on sale, the flag stays off, and
+  // a few places left ("quedan pocos lugares") is not sold out. The body
+  // says it, next to the date it was checked; the markup says SoldOut
+  // (ticketAvailability in ./admission.ts).
   // What a seat costs and until when. A ticketing platform puts this at the
   // top of its page because it is the second question after the date, and a
   // listing that makes someone click through to a third party to learn the

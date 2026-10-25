@@ -234,6 +234,22 @@ describe("ticketing facts", () => {
       assert.ok(item.ticket?.url, `events/${item.site}/${item.slug}: has a price but no ticket link`);
     }
   });
+
+  // A price with no currency is read in dirhams (EventArticle, @dst/ui/meta):
+  // right for a Gulf event and wrong anywhere else. Three free days in London
+  // and Yerevan went out as "price 0, AED" until 25 Oct 2026. An entry with a
+  // ticket and a price outside the UAE names its currency; a Gulf entry may
+  // leave it to the default. Outside means a country that is not the UAE, a
+  // clock that is not +04:00, or a site whose events are not Gulf events.
+  test("a priced ticket outside the UAE names its currency", () => {
+    const GULF = new Set(["dst", "llc", "visas", "riviera", "mbr", "palmcentral", "fwf", "eco"]);
+    const inUae = (item) =>
+      item.country ? item.country === "United Arab Emirates" : (item.utcOffset ?? "+04:00") === "+04:00" && GULF.has(item.site);
+    const unnamed = allEvents
+      .filter((item) => item.ticket && item.tickets?.priceFrom !== undefined && !item.tickets.currency && !inUae(item))
+      .map((item) => `events/${item.site}/${item.slug}`);
+    assert.deepEqual(unnamed, [], `priced in AED by default, outside the UAE: ${unnamed.join(", ")}`);
+  });
 });
 
 describe("programme and audience", () => {
@@ -382,5 +398,37 @@ describe("run days", () => {
     const flagged = allEvents.filter(unzonedRisk);
     for (const e of flagged) t.diagnostic(`clock change inside ${e.site}/${e.slug} (${e.start}–${e.end}, ${e.utcOffset}): repeats in UTC; give the site a zone in CLOCK_ZONES`);
     console.log(`${flagged.length} unzoned runs across a clock change`);
+  });
+});
+
+// `ticket.soldOut` puts SoldOut in the event's markup, and the house rule is
+// that a status lives in the text. So an entry that sets the flag says so
+// where the reader looks: its body or FAQ, or a translation's. This reads
+// prose, which tests/when-and-admission.test.js refuses to do for "free",
+// and the direction is why it may: there the prose would decide the field;
+// here the field is set by hand and the prose is only asked to agree with
+// it. The reverse is not tested: Sky Garden's body says "sold out" of a
+// ticket type its button no longer sells. If the pattern ever blocks a
+// correct entry, it becomes a t.diagnostic, not a rewrite of the entry.
+describe("what the ticket link sells", () => {
+  const SAYS_SO = new RegExp(
+    [
+      "sold[ -]out", "\\bfull\\b", "fully booked", "booked (?:up|out)", "no tickets left", "wait(?:ing )?list",
+      "ausverkauft", "ausgebucht", "warteliste",
+      "agotad", "lleno", "lista de espera", "\\bcupos?\\b", "sin lugares", "no quedan",
+      "սպառ", "սպասման ցուցակ",
+    ].join("|"),
+    "iu",
+  );
+
+  test("an entry marked soldOut says so in its body or FAQ", () => {
+    const flagged = allEvents.filter((item) => item.ticket?.soldOut);
+    for (const item of flagged) {
+      const words = [item, ...Object.values(item.i18n ?? {})]
+        .flatMap((w) => [...(w.body ?? []), ...(w.faq ?? []).flatMap((f) => [f.q, f.a])])
+        .join("\n");
+      assert.match(words, SAYS_SO, `events/${item.site}/${item.slug}: soldOut, but neither its body nor its FAQ tells the reader`);
+    }
+    console.log(`soldOut: ${flagged.map((i) => `${i.site}/${i.slug}`).join(", ") || "none"}`);
   });
 });

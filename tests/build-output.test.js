@@ -11,6 +11,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { allNews } from "../packages/content/src/news/index.ts";
 import { allEvents } from "../packages/content/src/events/index.ts";
+import { ticketAvailability } from "../packages/content/src/admission.ts";
 import { runDays } from "../packages/content/src/when.ts";
 import { redirects } from "../packages/content/src/redirects.ts";
 import { liveExperiments } from "../packages/content/src/experiments.ts";
@@ -1434,7 +1435,7 @@ describe("experiments", () => {
 
   test("ticket-price is on every tick event page that sells tickets at a price", () => {
     if (!liveExperiments("tick.am", "/events/x/", today).some((e) => e.id === "ticket-price")) return;
-    const priced = allEvents.filter((i) => i.site === "tick" && i.ticket && i.ticket.sells !== false && i.tickets?.priceFrom > 0 && i.body?.length);
+    const priced = allEvents.filter((i) => i.site === "tick" && ticketAvailability(i) === "InStock" && i.tickets?.priceFrom > 0 && i.body?.length);
     assert.ok(priced.length > 0, "no priced tick event to test on");
     for (const item of priced) {
       for (const url of [`/events/${item.slug}/`, `/am/events/${item.slug}/`]) {
@@ -1454,18 +1455,29 @@ describe("experiments", () => {
   // was counted as an outbound_click — and the ticket-price test, whose
   // metric is ticket_click, would have measured nothing at all.
   // A `sells: false` link is an announcement, not a seller, and says so by
-  // leaving the attribute off: a click on it is not a ticket sale.
+  // leaving the attribute off: a click on it is not a ticket sale. Nor is a
+  // waitlist on a full run (`soldOut`): the attribute follows the offer's
+  // InStock (@dst/content/admission), and is checked both ways. Keyed by
+  // site as well as slug, because dst's Global Village sells and riviera's
+  // only announces; keyed by slug alone, dst's button went unchecked.
   test("a ticket button says it is one", () => {
-    const notSold = new Set(allEvents.filter((i) => i.ticket?.sells === false).map((i) => `/go/${i.slug}-ticket/`));
+    const stock = new Map(allEvents.filter((i) => i.ticket).map((i) => [`${i.site}/go/${i.slug}-ticket/`, ticketAvailability(i)]));
     let seen = 0;
+    let unsold = 0;
     for (const p of pages) {
       for (const a of anchorsOf(p.html).filter((a) => /class="button"/.test(a) && /href="\/go\/[^"]*-ticket\/"/.test(a))) {
-        if (notSold.has(a.match(/href="([^"]+)"/)[1])) continue;
+        const key = `${p.app}${hrefOf(a)}`;
+        if (stock.has(key) && stock.get(key) !== "InStock") {
+          unsold++;
+          assert.doesNotMatch(a, /\sdata-ticket(?:=""|[\s>])/, `${p.app}${p.url}: data-ticket on a link that sells nothing (${stock.get(key) ?? "an announcement"})`);
+          continue;
+        }
         seen++;
         assert.match(a, /\sdata-ticket(?:=""|[\s>])/, `${p.app}${p.url}: a ticket button without data-ticket`);
       }
     }
     assert.ok(seen > 20, `expected the network's ticket buttons, found ${seen}`);
+    assert.ok(unsold > 20, `expected the announcements and waitlists, found ${unsold}`);
   });
 });
 
@@ -1485,6 +1497,41 @@ describe("structured data", () => {
         }
       }
     }
+  });
+
+  // An event's offer says what its ticket link sells, decided in one place
+  // (@dst/content/admission): InStock where the link sells, SoldOut where
+  // the entry says what it sells is gone, no word at all where the link
+  // only announces. Every offer said InStock until 25 Oct 2026, on a full
+  // run, a restaurant that books by phone and a free cemetery evening among
+  // them. Matched on site and slug: dst's Global Village sells, riviera's
+  // announces.
+  test("an event's offer says what its link sells", () => {
+    const offersOf = (html) => {
+      const out = [];
+      const visit = (n) => {
+        if (Array.isArray(n)) return n.forEach(visit);
+        if (!n || typeof n !== "object") return;
+        if (n.offers) out.push(...[n.offers].flat());
+        for (const [k, v] of Object.entries(n)) if (k !== "offers") visit(v);
+      };
+      for (const m of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) visit(JSON.parse(m[1]));
+      return out;
+    };
+    const counts = { InStock: 0, SoldOut: 0, none: 0 };
+    for (const p of contentPages()) {
+      for (const offer of offersOf(p.html)) {
+        const slug = String(offer.url ?? "").match(/\/go\/(.+)-ticket\/$/)?.[1];
+        if (!slug) continue;
+        const entry = allEvents.find((e) => e.site === p.app && e.slug === slug);
+        assert.ok(entry, `${p.app}${p.url}: an offer for /go/${slug}-ticket/, and no ${p.app} entry of that slug`);
+        const stock = ticketAvailability(entry);
+        if (stock) assert.equal(offer.availability, `https://schema.org/${stock}`, `${p.app}${p.url}: the offer says ${offer.availability}, the link ${stock}`);
+        else assert.ok(!("availability" in offer), `${p.app}${p.url}: the offer says ${offer.availability} for a link that only announces`);
+        counts[stock ?? "none"]++;
+      }
+    }
+    assert.ok(counts.SoldOut >= 2 && counts.none >= 40 && counts.InStock > 400, `expected the network's offers, found ${JSON.stringify(counts)}`);
   });
 });
 

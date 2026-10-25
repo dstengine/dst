@@ -11,7 +11,7 @@ import { test, describe } from "node:test";
 import assert from "node:assert/strict";
 
 const { lastDay, hasEnded, isOn } = await import("../packages/content/src/when.ts");
-const { isFree } = await import("../packages/content/src/admission.ts");
+const { isFree, ticketAvailability } = await import("../packages/content/src/admission.ts");
 const { cardUntil } = await import("../packages/ui/src/date.ts");
 
 const TODAY = "2026-09-12";
@@ -89,3 +89,30 @@ describe("what counts as free", () => {
 // libre" while the Austrian ones write "Eintritt frei". A test that reads
 // prose to check a field is the same mistake `isFree` exists to prevent,
 // pointed the other way.
+
+// A third fact decided in one place: what the ticket link still sells, in
+// schema.org's word for it. Until 25 Oct 2026 every event's offer said
+// InStock, a full run and a free cemetery evening among them.
+describe("what the ticket link sells", () => {
+  const url = "https://example.com/";
+
+  test("no ticket link, no word on stock", () => {
+    assert.equal(ticketAvailability({}), undefined);
+  });
+
+  test("a seller is in stock", () => {
+    assert.equal(ticketAvailability({ ticket: { url } }), "InStock");
+  });
+
+  test("an announcement claims nothing", () => {
+    assert.equal(ticketAvailability({ ticket: { url, sells: false } }), undefined);
+  });
+
+  test("a full list or a sold-out sale is sold out", () => {
+    assert.equal(ticketAvailability({ ticket: { url, soldOut: true } }), "SoldOut");
+  });
+
+  test("a full run whose link is a waitlist page is sold out, not silent", () => {
+    assert.equal(ticketAvailability({ ticket: { url, sells: false, soldOut: true } }), "SoldOut");
+  });
+});
