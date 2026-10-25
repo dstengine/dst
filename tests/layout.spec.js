@@ -118,6 +118,43 @@ test.describe("no horizontal overflow", () => {
   }
 });
 
+// sol2go's tip jar prints its wallet addresses in full. The grid track had a
+// 24rem minimum, and on a phone that track was wider than the list: every
+// page of the site slid sideways under a finger. Wrapped, an address must
+// still keep its last four characters together, because those are what a
+// reader checks against a hardware wallet's screen.
+test.describe("tip jar", () => {
+  for (const path of ["/", "/events/"]) {
+    for (const width of [305, 320, 360, 390]) {
+      test(`sol2go${path} @ ${width}: the addresses wrap inside the page`, async ({ page }) => {
+        await page.setViewportSize({ width, height: 900 });
+        await page.goto(url("sol2go", path));
+        const m = await page.evaluate(() => {
+          const codes = [...document.querySelectorAll(".donate-address code")];
+          return {
+            // clientWidth, not the viewport: a classic scrollbar takes its
+            // width out of the page without scrolling it sideways.
+            clientWidth: document.documentElement.clientWidth,
+            scrollWidth: document.documentElement.scrollWidth,
+            rights: codes.map((c) => c.getBoundingClientRect().right),
+            tails: codes.map((c) => {
+              const text = c.lastChild;
+              const range = document.createRange();
+              range.setStart(text, text.length - 4);
+              range.setEnd(text, text.length);
+              return range.getClientRects().length;
+            }),
+          };
+        });
+        expect(m.rights.length, "the tip jar is on the page").toBeGreaterThan(0);
+        expect(m.scrollWidth, "the page scrolls sideways").toBe(m.clientWidth);
+        for (const right of m.rights) expect(right, "an address runs off the screen").toBeLessThanOrEqual(m.clientWidth);
+        for (const rects of m.tails) expect(rects, "an address's last four characters are split across lines").toBe(1);
+      });
+    }
+  }
+});
+
 // The one site in two languages. The switch in the header has to land on
 // the same page in the other language — not that language's front page —
 // and the page it lands on has to say which language it is in.

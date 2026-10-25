@@ -33,7 +33,11 @@ const { addresses, heading } = Astro.props;
           data-address={a.address}
           title={`Copy the ${a.chain} address`}
         >
-          <code>{a.address}</code>
+          {/* A break opportunity halfway: an address too long for its line
+              splits into two halves, never into a whole address and a
+              stray last character. The last four are what a reader checks,
+              and <wbr> adds nothing to the copied text. */}
+          <code>{a.address.slice(0, Math.ceil(a.address.length / 2))}<wbr />{a.address.slice(Math.ceil(a.address.length / 2))}</code>
         </button>
       </li>
     ))}
@@ -102,13 +106,15 @@ const { addresses, heading } = Astro.props;
   }
 
   .donate-list {
-    /* One column on a phone, two side by side from tablet width up. The
-       track minimum is what the longest address here needs to sit on one
-       line — a third column would fit the page and not the address, and an
-       address broken across lines is the one thing a reader has to check
-       character by character. */
+    /* One column up to about 840px, two side by side above that. A wide
+       track keeps most addresses on one line, and an address broken across
+       lines is the one thing a reader has to check character by character.
+       When the list is narrower than the 24rem minimum — any phone, or a
+       large root font — the track is capped at the list's own width and the
+       address wraps inside its button: a page that slides sideways is worse
+       than a second line. */
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(24rem, 100%), 1fr));
     gap: var(--space-1) var(--space-3);
     margin: 0;
     padding: 0;
