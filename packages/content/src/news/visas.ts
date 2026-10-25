@@ -497,4 +497,38 @@ export const items: NewsItem[] = [
     expertise:
       "The figure people miss is the AED 500. A wife or child who flew in on a visit visa and applies from inside the UAE pays more than three times the base fee, so if the family is still abroad and the timing allows, apply before they travel. For a long permit, do the sum before choosing the length: every year past the second adds AED 100 to a fee that starts at AED 220.",
   },
+  {
+    slug: "golden-visa-help-at-the-nakheel-and-meraas-sales-centre",
+    createdAt: "2026-10-25T04:30:00+04:00",
+    updatedAt: "2026-10-25T04:30:00+04:00",
+    site: "visas",
+    image: "/covers/golden-visa-help-at-the-nakheel-and-meraas-sales-centre.jpg",
+    imageAlt: "A gold card and a set of house keys beside a small model of two villas",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Golden visa help now comes with a Nakheel or Meraas home",
+    cardTitle: "Golden visa at the sales centre",
+    titleSeo: "UAE Golden Visa via Nakheel and Meraas: how it works",
+    summary:
+      "Buyers at the Meraas and Nakheel sales centre in Dubai can now start a UAE residency application at the same desk: a facilitation service for the 10-year Golden Visa on property worth AED 2 million or more, with the application filed by an accredited visa provider and the decision left to the authorities.",
+    date: "2026-10-25",
+    category: "Golden visa",
+    source: {
+      name: "Nakheel",
+      url: "https://www.nakheel.com/en/media-centre/press-releases/news-detail/2026/06/29/meraas-and-nakheel-enhance-customer-experience-with-dedicated-golden-visa-facilitation",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "The property route to UAE residency now starts where the property is bought. <strong>Dubai Holding Real Estate</strong> has put a <strong>Golden Visa and investor residency facilitation service</strong> into the <strong>Meraas and Nakheel sales centre</strong>, announced on 29 June 2026.",
+      "## What the service does",
+      "Specialists at the sales centre advise on <strong>eligibility</strong>, the <strong>documents</strong> and the <strong>application</strong>. The application itself is submitted by an <strong>accredited visa service provider</strong>: Meraas and Nakheel say they act strictly as facilitators. The service is open to <strong>existing customers</strong> as well as new buyers.",
+      "## The visa it is for",
+      "The <strong>10-year UAE Golden Visa</strong> for real estate investors who own a property, or a group of properties, worth <strong>AED 2 million or more</strong>, subject to the conditions and to approval by the authorities. The Dubai Land Department describes it as a renewable residence permit, and holders can sponsor family members. The desk also covers the shorter investor residency options open to property owners in Dubai.",
+      "## What it does not change",
+      "Eligibility, the documents required, the government fees and the approval all stay with the UAE authorities. A facilitation desk makes the paperwork easier to start; it does not make a property that falls short of the threshold qualify.",
+    ],
+    expertise:
+      "The AED 2 million is the value that matters, and on an off-plan purchase the question of when a property counts is the one to ask before signing: what has been paid, what the title deed or the developer's documents show, and whether a mortgage reduces the qualifying amount. A sales desk that handles the visa is convenient, but it is still the developer's desk; ask the accredited provider, in writing, which documents it will file and what the government fees come to before you rely on the visa in your plans.",
+  },
 ];
