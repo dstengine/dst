@@ -357,4 +357,58 @@ export const items: NewsItem[] = [
     expertise:
       "Read this next to the Al Meydan Street rebuild. The district's problem has never been the speed of the approach roads but the junctions where they meet Al Meydan Street, which still runs at signals. Raising Al Asayel to eighty shortens the approach by seconds and lengthens the queue at the light by the same amount until the interchange is built. The limit that will change the district's commute is the one on Al Meydan Street after the rebuild, and that one has not been announced.",
   },
+  {
+    slug: "ras-al-khor-and-al-khail-roads-gain-a-lane",
+    createdAt: "2026-10-25T04:30:00+04:00",
+    updatedAt: "2026-10-25T04:30:00+04:00",
+    site: "mbr",
+    image: "/covers/ras-al-khor-and-al-khail-roads-gain-a-lane.jpg",
+    imageAlt: "Two cut-paper roads running side by side in a long S-curve across a teal ground, dashed lane lines along each",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Ras Al Khor Road and Al Khail Road each gain a lane on the way past MBR City",
+    cardTitle: "A fourth lane on Ras Al Khor and Al Khail",
+    titleSeo: "MBR City roads: a fourth lane on Ras Al Khor and Al Khail",
+    summary:
+      "Two roads past MBR City now have four lanes instead of three: Ras Al Khor Road towards Al Khail, and a 1 km stretch of Al Khail towards Abu Dhabi. The RTA counts a third more capacity on each.",
+    date: "2026-10-25",
+    category: "Transport",
+    source: {
+      name: "Roads and Transport Authority",
+      url: "https://www.rta.ae/wps/portal/rta/ae/home/news-and-media/all-news/NewsDetails/adding-new-lanes-and-traffic-solutions-on-ras-al-khor-and-al-khail-roads",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "Two of the roads that carry Mohammed Bin Rashid City's commute have one more lane. The <strong>RTA</strong> announced the work, part of its rapid traffic solutions programme, on <strong>28 July 2026</strong>.",
+      "## Ras Al Khor Road",
+      "A new lane on <strong>Ras Al Khor Road</strong> in the direction of <strong>Al Khail Road</strong>, from the <strong>Financial Centre Street</strong> intersection to the Al Khail southbound ramp, takes the road from <strong>three lanes to four</strong>. The RTA puts the capacity gain at <strong>33 per cent</strong>.",
+      "## The Meydan exit",
+      "The same package improves the <strong>exit from Financial Centre Street towards Meydan</strong> and the entrance onto Ras Al Khor Road towards Financial Centre Street. With the new lane, the RTA expects the trip on Ras Al Khor Road towards Al Khail Road to fall from <strong>15 minutes to 12</strong>, a fifth less.",
+      "## Al Khail Road",
+      "A new lane of about <strong>1 km</strong> on <strong>Al Khail Road</strong> towards Abu Dhabi also takes the road from <strong>three lanes to four</strong>, again a third more capacity, with peak-hour journeys up to <strong>20 per cent</strong> quicker.",
+      "## What came before",
+      "The RTA puts the package's gain in road efficiency at 20 per cent. It follows earlier work in the same area: a new exit from Financial Centre Street to Ras Al Khor Road, a wider <strong>Exit 25</strong> from Ras Al Khor Road to Al Khail Road towards Al Meydan Street, and upgrades at several points in Business Bay.",
+    ],
+    faq: [
+      {
+        q: "Where exactly is the new lane on Ras Al Khor Road?",
+        a: "In the direction of Al Khail Road, from the Financial Centre Street intersection to the ramp onto Al Khail southbound.",
+      },
+      {
+        q: "How much time does it save?",
+        a: "The RTA expects the trip on Ras Al Khor Road towards Al Khail Road to take 12 minutes instead of 15.",
+      },
+      {
+        q: "What changed on Al Khail Road?",
+        a: "A new lane of about 1 km towards Abu Dhabi, four lanes where there were three, with peak-hour journeys up to 20 per cent quicker.",
+      },
+      {
+        q: "When was it announced?",
+        a: "On 28 July 2026, as part of the RTA's rapid traffic solutions for busy locations.",
+      },
+    ],
+    expertise:
+      "The Meydan exit is the part of this that touches the district directly: a smoother exit from Financial Centre Street towards Meydan is a quicker evening drive from Downtown and DIFC to the northern edge of MBR City. The two extra lanes help the through traffic that passes the district on the way to Al Khail and Abu Dhabi. Neither changes the junctions inside the district itself.",
+  },
 ];
