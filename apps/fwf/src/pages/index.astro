@@ -14,6 +14,18 @@ import Photo from "@dst/ui/Photo.astro";
 
 const newsItems = newsBySite(siteId);
 
+// Most searches that find this page are for the Dubai Future Forum, a
+// different event that in 2026 is part of Dubai Future Week. The note
+// below sends those readers to the week's own page, with the forum's name
+// in the link, rather than leaving them on a guide to another conference.
+const week = otherEvents.find((e) => e.slug === "dubai-future-week-2026");
+const weekDates = week?.end
+  ? new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "long", timeZone: "UTC" })
+      .formatRange(new Date(`${week.start}T00:00:00Z`), new Date(`${week.end}T00:00:00Z`))
+      // "18 – 21 November" → "18–21 November", as the rest of the site writes it.
+      .replace(/\s–\s/, "–")
+  : undefined;
+
 const explore = [
   { href: "/programme/", title: "Programme", description: "The five sectors the day is built around, and who each one is aimed at." },
   { href: "/tickets/", title: "Tickets", description: `${ticketsFrom} to ${ticketsTo}, with sales closing ${formatDate(forum.tickets!.salesEnd!)}.` },
@@ -144,6 +156,15 @@ const jsonLd = [
     page itself is live and marked as scheduled. Ask the organiser for the
     venue in writing before spending anything non-refundable.
   </Callout>
+
+  {week && weekDates && (
+    <Callout kind="note">
+      <strong>Looking for the Dubai Future Forum?</strong> That is a
+      different event: in 2026 the Dubai Future Foundation runs it as part
+      of <a href={`/events/${week.slug}/`} title={week.titleSeo ?? week.title}>Dubai Future Week</a>,
+      <span class="nowrap">{weekDates}</span> at {week.venue}.
+    </Callout>
+  )}
 
   <section class="container">
     <h2>What the day covers</h2>
@@ -421,4 +442,6 @@ const jsonLd = [
   }
 
   .table-note { font-size: var(--step--1); color: var(--ink-muted); }
+  /* A date range broken after its dash reads as two dates. */
+  .nowrap { white-space: nowrap; }
 </style>
