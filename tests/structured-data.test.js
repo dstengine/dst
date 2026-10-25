@@ -264,6 +264,40 @@ describe("the network graph", () => {
   });
 });
 
+// When an event ends, by its own markup. An endDate before the startDate
+// is the shape a calendar refuses, and a timed endDate equal to its start
+// is an event of no length — the page then claims less than its calendar
+// file, which simply has no end. Two stamps with a clock time compare as
+// instants; a bare date on either side compares by day, because a date-only
+// end ("2026-11-15") means the whole of that day.
+describe("event dates", () => {
+  const withStart = (v, out = []) => {
+    if (Array.isArray(v)) v.forEach((x) => withStart(x, out));
+    else if (v && typeof v === "object") {
+      if (typeof v.startDate === "string") out.push(v);
+      Object.values(v).forEach((x) => withStart(x, out));
+    }
+    return out;
+  };
+  const timed = (stamp) => stamp.includes("T");
+
+  test("no event ends before it starts, or at the very moment it starts", () => {
+    const bad = [];
+    let ends = 0;
+    for (const p of pages) {
+      for (const n of withStart(p.blocks)) {
+        if (typeof n.endDate !== "string") continue;
+        ends++;
+        const { startDate: s, endDate: e } = n;
+        const wrong = timed(s) && timed(e) ? Date.parse(e) <= Date.parse(s) : e.slice(0, 10) < s.slice(0, 10);
+        if (wrong) bad.push(`${p.app}${p.url}: ${s} -> ${e}`);
+      }
+    }
+    assert.deepEqual(bad, [], `endDate not after startDate:\n${bad.join("\n")}`);
+    console.log(`  ${ends} endDates after their startDate`);
+  });
+});
+
 describe("share pictures", () => {
   test("every page has an og:image that exists", () => {
     for (const p of pages) {

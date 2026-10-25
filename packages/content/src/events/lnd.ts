@@ -1832,7 +1832,7 @@ export const items: EventItem[] = [
   {
     slug: "merton-fireworks-in-the-park-2026",
     createdAt: "2026-10-13T01:10:00+04:00",
-    updatedAt: "2026-10-13T01:10:00+04:00",
+    updatedAt: "2026-10-25T23:43:00+04:00",
     site: "lnd",
     image: "/covers/merton-fireworks-in-the-park-2026.jpg",
     imageAlt: "A lit observation wheel and a small carousel in a dark park, fireworks bursting above a line of trees and a few tiny figures on the grass",
@@ -1846,6 +1846,7 @@ export const items: EventItem[] = [
       "Merton's Fireworks in the Park in south-west London: Wimbledon Park on Thursday 5 November 2026 and Morden Park on Saturday 7 November, two shows each night at 6.45pm and 8.30pm. Adults £15.90, children £11.66.",
     start: "2026-11-05",
     end: "2026-11-07",
+    dates: ["2026-11-05", "2026-11-07"],
     startTime: "17:15",
     endTime: "22:00",
     utcOffset: "+00:00",
@@ -1862,7 +1863,7 @@ export const items: EventItem[] = [
     source: {
       name: "Merton Council",
       url: "https://www.merton.gov.uk/fireworks",
-      verifiedOn: "2026-10-13",
+      verifiedOn: "2026-10-25",
     },
     body: [
       "Merton holds its fireworks in two parks on two nights: <strong>Wimbledon Park</strong> on Bonfire Night itself, <strong>Thursday 5 November</strong>, and <strong>Morden Park</strong> on <strong>Saturday 7 November</strong>. Each night has two separate shows set to music, an early one for younger children and a later one, with a funfair, a street food village and bars on site.",
@@ -1871,7 +1872,7 @@ export const items: EventItem[] = [
       "## Tickets",
       "You book one of the two shows, not the whole evening. On 13 October an adult ticket (16+) cost <strong>£15.90</strong>, a child's (5–15) <strong>£11.66</strong> and a family ticket for two adults and two children <strong>£48.76</strong>, fees included, through See Tickets. The council says the shows sell out and advises booking ahead.",
       "## New this year",
-      "An <strong>observation wheel</strong> with views across south London, with booking details still to come, and what the council calls big-name DJs on the night. Neither the wheel's price nor the DJs have been announced yet.",
+      "An <strong>observation wheel</strong> with views across south London, which you book on the night, first come, first served, and DJs on both nights: <strong>Lisa Maffia</strong> at Wimbledon Park and <strong>Dean McCullough</strong> at Morden Park.",
       "## Getting there",
       "Wimbledon Park is next to Wimbledon Park station on the District line. Morden Park is a short walk from Morden South station and about fifteen minutes on foot from Morden, at the end of the Northern line. Ticket holders are emailed the event information close to the date, and the council's fireworks page has maps and directions.",
       "## Other displays that week",
@@ -2115,7 +2116,7 @@ export const items: EventItem[] = [
   {
     slug: "queens-house-ice-rink-greenwich-2026",
     createdAt: "2026-10-24T16:10:00+04:00",
-    updatedAt: "2026-10-24T16:10:00+04:00",
+    updatedAt: "2026-10-25T23:43:00+04:00",
     site: "lnd",
     image: "/covers/queens-house-ice-rink-greenwich-2026.jpg",
     imageAlt: "A pale oval of ice in cut paper below a white colonnaded house, a river and towers beyond it",
@@ -2125,10 +2126,11 @@ export const items: EventItem[] = [
     title: "Queen's House Ice Rink 2026, Greenwich",
     titleSeo: "Queen's House Ice Rink 2026, Greenwich, London: 18 Nov–3 Jan",
     summary:
-      "Greenwich's open-air ice rink in front of the Queen's House returns from 18 November 2026 to 3 January 2027, 10am to 9pm daily, with sessions for toddlers, students and SEND families — one of London's quieter Christmas rinks.",
+      "Greenwich's open-air ice rink in front of the Queen's House returns from 18 November 2026 to 3 January 2027, 11am to 9pm, closed on Christmas Day, with sessions for toddlers, students and SEND families — one of London's quieter Christmas rinks.",
     start: "2026-11-18",
     end: "2027-01-03",
-    startTime: "10:00",
+    closedDates: ["2026-12-25"],
+    startTime: "11:00",
     endTime: "21:00",
     utcOffset: "+00:00",
     venue: "Queen's House, Romney Road, Greenwich, SE10 9NF",
@@ -2138,15 +2140,15 @@ export const items: EventItem[] = [
     organizer: "Royal Museums Greenwich with Tamarisk Events",
     category: "Christmas",
     source: {
-      name: "Royal Museums Greenwich",
-      url: "https://www.rmg.co.uk/queens-house/attractions/queens-house-ice-rink",
-      verifiedOn: "2026-10-24",
+      name: "The Queen's House Ice Rink",
+      url: "https://thequeenshouseicerink.com/",
+      verifiedOn: "2026-10-25",
     },
     ticket: { url: "https://www.rmg.co.uk/queens-house/attractions/queens-house-ice-rink", label: "Book a session" },
     body: [
       "The rink with the best view in London is back on the lawn of the <strong>Queen's House</strong>: Inigo Jones's white villa behind you, the Thames and Canary Wharf in front, and the whole of Maritime Greenwich's World Heritage Site around you.",
       "## Dates and hours",
-      "<strong>Wednesday 18 November 2026 to Sunday 3 January 2027</strong>, <strong>10am to 9pm</strong>. Royal Museums Greenwich sells timed sessions and asks you to book ahead; the rink is produced by <strong>Tamarisk Events</strong> this year.",
+      "<strong>Wednesday 18 November 2026 to Sunday 3 January 2027</strong>, <strong>11am to 9pm</strong>, with the last session at 8pm; the rink rests on Christmas Day. Those are the hours of <strong>Tamarisk Events</strong>, who produce the rink this year; Royal Museums Greenwich, who sell the timed sessions and ask you to book ahead, give 10am as the opening time, so go by the time on your booking.",
       "## On the ice",
       "There is a <strong>'skate-off pit lane'</strong> for a breather mid-session and a viewing area for whoever stays in their shoes. Special sessions run for <strong>toddlers</strong>, <strong>students</strong> and <strong>SEND families</strong>, and there are group and school rates.",
       "## Make a day of it",
@@ -2155,7 +2157,7 @@ export const items: EventItem[] = [
     faq: [
       {
         q: "When does the Queen's House Ice Rink open in 2026?",
-        a: "On <strong>18 November 2026</strong>, running to <strong>3 January 2027</strong>, 10am to 9pm.",
+        a: "On <strong>18 November 2026</strong>, running to <strong>3 January 2027</strong> every day except Christmas Day, 11am to 9pm.",
       },
       {
         q: "Do I need to book?",
@@ -2172,7 +2174,7 @@ export const items: EventItem[] = [
   {
     slug: "hampton-court-palace-ice-rink-2026",
     createdAt: "2026-10-24T16:10:00+04:00",
-    updatedAt: "2026-10-24T16:10:00+04:00",
+    updatedAt: "2026-10-25T23:43:00+04:00",
     site: "lnd",
     image: "/covers/hampton-court-palace-ice-rink-2026.jpg",
     imageAlt: "A rectangle of pale ice in cut paper before a long red-brick palace front with turrets and chimneys",
@@ -2185,6 +2187,7 @@ export const items: EventItem[] = [
       "Skating in front of Henry VIII's palace in south-west London from 20 November 2026 to 3 January 2027, first session 10am and last 8pm, closed Christmas Day; a separate ticket from palace admission, with quieter morning sessions daily.",
     start: "2026-11-20",
     end: "2027-01-03",
+    closedDates: ["2026-12-25"],
     startTime: "10:00",
     endTime: "20:00",
     utcOffset: "+00:00",

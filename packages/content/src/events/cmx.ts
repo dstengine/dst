@@ -1728,7 +1728,7 @@ export const items: EventItem[] = [
   {
     slug: "turibus-del-terror-cdmx-2026",
     createdAt: "2026-10-24T19:00:00+04:00",
-    updatedAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-25T23:43:00+04:00",
     site: "cmx",
     image: "/covers/turibus-del-terror-cdmx-2026.jpg",
     imageAlt: "Un autobús rojo de dos pisos con fantasmas asomados a las ventanas, de noche, frente a una columna coronada por una figura dorada alada y una luna llena",
@@ -1742,6 +1742,11 @@ export const items: EventItem[] = [
       "Un recorrido nocturno de unas cuatro horas por casas con leyenda de la Ciudad de México: el Turibús del Terror sale a las 19:00 del Ángel de la Independencia, o de la Fuente de Cibeles el 25 y el 31 de octubre, con paradas en el Hotel Posada del Sol, la Casa Negra, la Casona de Fidel y la Casa del País de los Duendes. Adultos, $799 MXN con cena ligera; últimas salidas el 1 y el 2 de noviembre.",
     start: "2026-10-03",
     end: "2026-11-02",
+    dates: [
+      "2026-10-03", "2026-10-04", "2026-10-09", "2026-10-10", "2026-10-16",
+      "2026-10-17", "2026-10-18", "2026-10-23", "2026-10-24", "2026-10-25",
+      "2026-10-30", "2026-10-31", "2026-11-01", "2026-11-02",
+    ],
     startTime: "19:00",
     endTime: "23:00",
     utcOffset: "-06:00",
@@ -1759,14 +1764,14 @@ export const items: EventItem[] = [
     source: {
       name: "Turibús",
       url: "https://www.turibus.com.mx/es/cdmx/experiencias/turibus-del-terror",
-      verifiedOn: "2026-10-24",
+      verifiedOn: "2026-10-25",
     },
     body: [
       "El Turibús cambia la ruta de los monumentos por la de los fantasmas. El <strong>Turibús del Terror</strong> es un recorrido nocturno de unas <strong>cuatro horas</strong>, de las <strong>19:00 a las 23:00</strong>, por cuatro casas de la Ciudad de México con historia de aparecidos.",
       "## Las cuatro paradas",
       "El <strong>Hotel Posada del Sol</strong>, la <strong>Casa Negra</strong>, la <strong>Casona de Fidel</strong> y la <strong>Casa del País de los Duendes</strong>.",
       "## Fechas y punto de salida",
-      "En octubre salió los días 3, 4, 9, 10, 16, 17, 18 y 23, y quedan el <strong>24 y el 30 de octubre</strong> y el <strong>1 y el 2 de noviembre</strong> desde el <strong>Ángel de la Independencia</strong>. El <strong>25 y el 31 de octubre</strong> sale de la <strong>Fuente de Cibeles</strong>, en la colonia Roma. El abordaje es a las <strong>18:30</strong>.",
+      "Sale desde el <strong>Ángel de la Independencia</strong> los días 3, 4, 9, 10, 16, 17, 18, 23, 24 y 30 de octubre y el 1 y el 2 de noviembre, y desde la <strong>Fuente de Cibeles</strong>, en la colonia Roma, el 25 y el 31 de octubre. Las últimas cuatro salidas son el <strong>30 y el 31 de octubre</strong> y el <strong>1 y el 2 de noviembre</strong>. El abordaje es a las <strong>18:30</strong>.",
       "## Qué incluye y cuánto cuesta",
       "El boleto de adulto (13 años en adelante) cuesta <strong>$799 MXN</strong>, y hay tarifas para niños de 4 a 12 años y para INAPAM. Incluye el viaje redondo en Turibús, una cena ligera (hamburguesa, papas y bebida), un coordinador y seguro de viajero.",
       "## Antes de subir",
@@ -1777,7 +1782,7 @@ export const items: EventItem[] = [
     faq: [
       {
         q: "¿Qué días sale el Turibús del Terror 2026?",
-        a: "Quedan el 24 y el 30 de octubre y el 1 y el 2 de noviembre desde el Ángel de la Independencia, y el 25 y el 31 de octubre desde la Fuente de Cibeles. El recorrido va de las 19:00 a las 23:00, con abordaje a las 18:30.",
+        a: "Sale del Ángel de la Independencia los días 3, 4, 9, 10, 16, 17, 18, 23, 24 y 30 de octubre y el 1 y el 2 de noviembre, y de la Fuente de Cibeles el 25 y el 31 de octubre; las últimas cuatro salidas son el 30 y el 31 de octubre y el 1 y el 2 de noviembre. El recorrido va de las 19:00 a las 23:00, con abordaje a las 18:30.",
       },
       {
         q: "¿Cuánto cuesta el Turibús del Terror?",

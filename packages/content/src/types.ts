@@ -262,6 +262,18 @@ export interface NewsItem extends ItemBase {
 export interface EventItem extends ItemBase {
   start: string; // ISO "YYYY-MM-DD"
   end?: string;
+  // The days a span actually runs on, for a run that is not every day: ISO
+  // dates in order, the first equal to `start`, the last to `end`. Lists,
+  // cards and the kicker keep the span; the calendar file reads the list.
+  // Needs `startTime` and `end`, and never an overnight window, whose `end`
+  // is a last morning rather than a last night. The glance table's "a day"
+  // fits a listed run in English and Spanish; German "täglich" claims every
+  // day, so a weekend-only list on vien wants its own word first.
+  dates?: string[];
+  // Days inside a daily run when it is shut: ISO dates strictly between
+  // `start` and the last night. Needs `startTime` and `end`; never together
+  // with `dates` — use whichever list is shorter.
+  closedDates?: string[];
   // The page's own address, for an event that has earned a short one:
   // "/devfest/" rather than "/events/devfest-armenia-2026/". The same rules
   // as NewsItem.path — one segment, slashes either side, the slug matches
@@ -273,6 +285,15 @@ export interface EventItem extends ItemBase {
   // "morning or evening", which is the first thing anyone deciding whether
   // to attend needs. Omitted rather than guessed when the organiser hasn't
   // published it.
+  //
+  // On a span (`end` after `start`) the two are a daily window: the calendar
+  // file repeats it on every day of the run, or on `dates`, minus
+  // `closedDates`, and the glance table gives its length as "a day". So a
+  // continuous run — a hackathon from Saturday 10:00 to Sunday 18:00 —
+  // cannot be written with them: leave `endTime` out and say the hours in
+  // the body. The same for hours that differ by weekday (Global Village,
+  // open to midnight or to 1am by the day): no single `endTime` is true, so
+  // there is none, and the body carries the table.
   startTime?: string;
   endTime?: string;
   // Put the hours on the event's card, not only on its page. Most cards are

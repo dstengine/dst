@@ -1,5 +1,5 @@
 import type { EventItem } from "./types.ts";
-import { endDay } from "./when.ts";
+import { endDay, eachDay, runDays } from "./when.ts";
 
 // iCalendar file for a single event, so "add to calendar" works without
 // the visitor holding an account anywhere. Ticketing platforms treat this
@@ -56,6 +56,52 @@ const UID_HOSTS: Record<string, string> = {
   tick: "tick.lnd.lol",
 };
 
+// Sites whose events sit in a zone that moves its clocks. A daily run is
+// written as a UTC start repeated every day, and a UTC recurrence keeps the
+// UTC clock: across the last Sunday of October a 10:30 opening in London
+// would show at 09:30 for the rest of the run. Such a run stays one block
+// from its first morning to its last evening, which is what the file said
+// before; repeating it at the local hour needs TZID and a VTIMEZONE, which
+// is a later change. Every other site is in a zone without a clock change:
+// the Gulf, Armenia, and Mexico except the northern border, which follows
+// US summer time and would be mapped here the day a run there is listed.
+// sol2go's cities vary; its runs are checked by the data test instead.
+export const CLOCK_ZONES: Record<string, string> = {
+  ldn: "Europe/London",
+  lnd: "Europe/London",
+  l0n: "Europe/London",
+  vien: "Europe/Vienna",
+  nyc42: "America/New_York",
+};
+
+/** The zone's UTC offset at one instant, as "+01:00" — the form `utcOffset` takes. */
+function zoneOffset(zone: string, at: Date): string {
+  const name = new Intl.DateTimeFormat("en-US", { timeZone: zone, timeZoneName: "longOffset" })
+    .formatToParts(at)
+    .find((part) => part.type === "timeZoneName")?.value;
+  // ICU writes GMT itself as a bare "GMT", every other offset as "GMT+01:00".
+  return !name || name === "GMT" ? "+00:00" : name.slice(3);
+}
+
+/**
+ * Whether any occurrence of the run starts or ends at a local time other
+ * than the one its `utcOffset` states. Every occurrence, not the first and
+ * the last: a run from October to April has the same offset at both ends
+ * and a different one all winter. It also catches an entry whose offset is
+ * simply wrong for its days.
+ */
+export function crossesClockChange(item: EventItem, days: string[]): boolean {
+  const zone = CLOCK_ZONES[item.site];
+  if (!zone || !item.startTime) return false;
+  const offset = item.utcOffset ?? "+04:00";
+  const { startTime, endTime } = item;
+  return days.some((day) => {
+    const instants = [new Date(`${day}T${startTime}:00${offset}`)];
+    if (endTime) instants.push(new Date(`${endDay({ start: day, startTime, endTime })}T${endTime}:00${offset}`));
+    return instants.some((at) => zoneOffset(zone, at) !== offset);
+  });
+}
+
 const stampUtc = (d: Date) => d.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
 const dateOnly = (iso: string) => iso.replace(/-/g, "");
 
@@ -85,9 +131,33 @@ function vevent(item: EventItem, pageUrl: string, now: Date): string[] {
   ];
 
   if (timed) {
-    lines.push(`DTSTART:${stampUtc(new Date(`${item.start}T${item.startTime}:00${offset}`))}`);
-    const endTime = item.endTime ?? item.startTime;
-    lines.push(`DTEND:${stampUtc(new Date(`${endDay(item)}T${endTime}:00${offset}`))}`);
+    const startTime = item.startTime as string;
+    const at = (day: string, time: string) => stampUtc(new Date(`${day}T${time}:00${offset}`));
+    const days = runDays(item);
+    if (days && !crossesClockChange(item, days)) {
+      // A run: the first occurrence, repeated daily until the last one
+      // starts, minus the days it does not run. UNTIL is a UTC stamp because
+      // DTSTART is one (RFC 5545 §3.3.10), and each EXDATE sits on the same
+      // UTC clock as DTSTART, or a client matches none of them (§3.8.5.1).
+      const [first, last] = [days[0], days[days.length - 1]];
+      lines.push(`DTSTART:${at(first, startTime)}`);
+      if (item.endTime) {
+        lines.push(`DTEND:${at(endDay({ start: first, startTime, endTime: item.endTime }), item.endTime)}`);
+      }
+      lines.push(`RRULE:FREQ=DAILY;UNTIL=${at(last, startTime)}`);
+      const runs = new Set(days);
+      const skipped = eachDay(first, last).filter((day) => !runs.has(day));
+      if (skipped.length > 0) lines.push(`EXDATE:${skipped.map((day) => at(day, startTime)).join(",")}`);
+    } else {
+      lines.push(`DTSTART:${at(item.start, startTime)}`);
+      // A single day with a start and nothing published about its end has
+      // no DTEND at all. DTEND equal to DTSTART breaks RFC 5545 §3.8.2.2,
+      // which wants it later; without one, §3.6.1 reads the event as
+      // ending when it starts, which is all the entry knows.
+      if (item.endTime || (item.end && item.end !== item.start)) {
+        lines.push(`DTEND:${at(endDay(item), item.endTime ?? startTime)}`);
+      }
+    }
   } else {
     // No clock time published, so this is an all-day entry rather than an
     // invented 00:00 start.

@@ -11,7 +11,7 @@ import type { Publisher } from '../schema';
 // under it while intent is still fresh.
 import type { EventItem, NewsItem } from "@dst/content/types";
 import { isFree } from "@dst/content/admission";
-import { endDay } from "@dst/content/when";
+import { endDay, runDays } from "@dst/content/when";
 import LeadForm from "./LeadForm.astro";
 import VentureGrid from "./VentureGrid.astro";
 import FeedCards from "./FeedCards.astro";
@@ -246,14 +246,19 @@ const absolute = (url: string) => (Astro.site ? new URL(url, Astro.site).href : 
 const canonicalUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
 
 // How long the day runs, from the clock times rather than repeated by hand.
+// On a run of several days the times are a daily window (see EventItem),
+// so the length is a day's and says so: "4 hours a day", not "4 hours"
+// under a ten-day fair. `runDays` is the rule the calendar file repeats
+// the window by; one night that ends past midnight is not a run.
 const duration = (() => {
-  if (!item.startTime || !item.endTime || item.end) return undefined;
+  if (!item.startTime || !item.endTime) return undefined;
   const [sh, sm] = item.startTime.split(":").map(Number);
   const [eh, em] = item.endTime.split(":").map(Number);
   // Past midnight, 20:00–01:00 is five hours, not minus nineteen.
   const minutes = (eh * 60 + em - (sh * 60 + sm) + 24 * 60) % (24 * 60);
   if (!Number.isFinite(minutes) || minutes <= 0) return undefined;
-  return L.durationValue(Math.floor(minutes / 60), minutes % 60);
+  const value = L.durationValue(Math.floor(minutes / 60), minutes % 60);
+  return runDays(item) ? L.durationPerDay(value) : value;
 })();
 
 const currency = item.tickets?.currency ?? "AED";

@@ -2,6 +2,8 @@ import { test, describe } from "node:test";
 import assert from "node:assert/strict";
 import { allNews, newsBySite } from "../src/news/index.ts";
 import { allEvents, eventsBySite } from "../src/events/index.ts";
+import { runDays, addDays } from "../src/when.ts";
+import { CLOCK_ZONES, crossesClockChange } from "../src/ics.ts";
 
 const SITES = ["dst", "llc", "visas", "riviera", "mbr", "palmcentral", "eco"];
 
@@ -286,5 +288,99 @@ describe("translations", () => {
         }
       }
     }
+  });
+});
+
+// `dates` and `closedDates` say which days a run actually happens on (see
+// EventItem in ../src/types.ts). The calendar file is built from them, so an
+// entry that gets them wrong sends a phone the wrong nights — or, worse,
+// falls back to one block without anyone noticing.
+describe("run days", () => {
+  const ISO = /^\d{4}-\d{2}-\d{2}$/;
+  const listed = allEvents.filter((e) => e.dates !== undefined || e.closedDates !== undefined);
+
+  test("every listed day is a real date, in order, on a timed span", () => {
+    for (const e of listed) {
+      const where = `events/${e.site}/${e.slug}`;
+      assert.ok(!(e.dates && e.closedDates), `${where}: carries both dates and closedDates — use the shorter list`);
+      assert.ok(e.startTime, `${where}: run days need a startTime`);
+      assert.ok(e.end && e.end !== e.start, `${where}: run days need an end after the start`);
+      const days = e.dates ?? e.closedDates;
+      assert.ok(Array.isArray(days) && days.length > 0, `${where}: an empty list`);
+      for (const [i, day] of days.entries()) {
+        assert.match(day, ISO, `${where}: "${day}" is not YYYY-MM-DD`);
+        assert.equal(new Date(`${day}T00:00:00Z`).toISOString().slice(0, 10), day, `${where}: "${day}" is not a calendar day`);
+        if (i > 0) assert.ok(day > days[i - 1], `${where}: "${day}" does not come after "${days[i - 1]}"`);
+      }
+      console.log(`${where}: ${e.dates ? `${days.length} dates` : `${days.length} closed`}`);
+    }
+  });
+
+  test("`dates` runs from start to end, and not overnight", () => {
+    for (const e of listed.filter((x) => x.dates)) {
+      const where = `events/${e.site}/${e.slug}`;
+      assert.equal(e.dates[0], e.start, `${where}: the first date is not start`);
+      assert.equal(e.dates.at(-1), e.end, `${where}: the last date is not end`);
+      // An overnight window's `end` is its last morning; with `dates` it
+      // would be its last night, and the JSON-LD endDate would close the
+      // run before that night began.
+      assert.ok(!(e.endTime && e.endTime < e.startTime), `${where}: dates with an overnight window`);
+    }
+  });
+
+  test("`closedDates` fall strictly inside the run", () => {
+    for (const e of listed.filter((x) => x.closedDates)) {
+      const where = `events/${e.site}/${e.slug}`;
+      const lastNight = e.endTime && e.endTime < e.startTime ? addDays(e.end, -1) : e.end;
+      for (const day of e.closedDates) {
+        assert.ok(day > e.start && day < lastNight, `${where}: closed "${day}" is not between ${e.start} and ${lastNight}`);
+      }
+    }
+  });
+
+  test("a listed run never falls back to one block across a clock change", () => {
+    for (const e of listed) {
+      if (!CLOCK_ZONES[e.site]) continue;
+      assert.equal(crossesClockChange(e, runDays(e)), false, `events/${e.site}/${e.slug}: crosses a clock change in ${CLOCK_ZONES[e.site]}, so the file would ignore its list`);
+    }
+  });
+
+  // A site outside CLOCK_ZONES is trusted to have no clock change. sol2go's
+  // cities vary, so a run there in Europe or North America across the last
+  // Sunday of March or October, or the second Sunday of March or the first
+  // of November, would repeat at the wrong hour after the change. Flagged,
+  // not failed: the answer is a zone for the site, not a different entry.
+  const QUIET = new Set(["+04:00", "+03:00", "-06:00"]);
+  const changeDays = (year) => {
+    const sunday = (month, nth) => {
+      if (nth < 0) {
+        const d = new Date(Date.UTC(year, month + 1, 0));
+        d.setUTCDate(d.getUTCDate() - d.getUTCDay());
+        return d.toISOString().slice(0, 10);
+      }
+      const d = new Date(Date.UTC(year, month, 1));
+      d.setUTCDate(1 + ((7 - d.getUTCDay()) % 7) + 7 * (nth - 1));
+      return d.toISOString().slice(0, 10);
+    };
+    return [sunday(2, -1), sunday(9, -1), sunday(2, 2), sunday(10, 1)];
+  };
+  const unzonedRisk = (e) => {
+    const days = runDays(e);
+    if (!days || CLOCK_ZONES[e.site] || QUIET.has(e.utcOffset ?? "+04:00")) return false;
+    const [first, last] = [days[0], days.at(-1)];
+    const years = new Set([first.slice(0, 4), last.slice(0, 4)].map(Number));
+    return [...years].flatMap(changeDays).some((d) => d > first && d <= last);
+  };
+
+  test("the clock-change flag knows the change days and fires on them", () => {
+    assert.deepEqual(changeDays(2026), ["2026-03-29", "2026-10-25", "2026-03-08", "2026-11-01"]);
+    assert.equal(unzonedRisk({ site: "sol2go", start: "2026-10-20", end: "2026-10-30", startTime: "10:00", endTime: "18:00", utcOffset: "+01:00" }), true);
+    assert.equal(unzonedRisk({ site: "sol2go", start: "2026-11-01", end: "2026-11-12", startTime: "10:00", endTime: "20:00", utcOffset: "+00:00" }), false);
+  });
+
+  test("runs on sites outside CLOCK_ZONES that cross a European or US change are flagged", (t) => {
+    const flagged = allEvents.filter(unzonedRisk);
+    for (const e of flagged) t.diagnostic(`clock change inside ${e.site}/${e.slug} (${e.start}–${e.end}, ${e.utcOffset}): repeats in UTC; give the site a zone in CLOCK_ZONES`);
+    console.log(`${flagged.length} unzoned runs across a clock change`);
   });
 });

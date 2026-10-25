@@ -11,6 +11,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { allNews } from "../packages/content/src/news/index.ts";
 import { allEvents } from "../packages/content/src/events/index.ts";
+import { runDays } from "../packages/content/src/when.ts";
 import { redirects } from "../packages/content/src/redirects.ts";
 import { liveExperiments } from "../packages/content/src/experiments.ts";
 import { verticalPaths } from "../apps/dst/src/verticals.ts";
@@ -880,6 +881,49 @@ describe("event calendars", () => {
       if (!html.includes(`webcal://`) || !html.includes(`/${base}.ics`)) missing.push(`/${page}/ on ${app}`);
     }
     assert.deepEqual(missing, [], `events pages with no link to their own calendar:\n  ${missing.join("\n  ")}`);
+  });
+});
+
+// The glance's Duration row. It used to vanish on any event with an `end`,
+// so JOIA's three evenings, a ten-day fair and a month of bus tours showed
+// their hours and no length; and when it showed, "10 hours" under a ten-day
+// fair read as the fair's length. Now every event with both clock times
+// shows it, and on a run of several days (`runDays`, the rule the calendar
+// file repeats the window by) the value says it is a day's.
+describe("the glance's duration", () => {
+  // What marks a day's length in each label set (packages/ui/src/labels.ts).
+  const PER_DAY = [/ a day$/, / al día$/, / täglich$/, /^Օրական /];
+  // The row is told apart from its neighbours by its hourglass icon.
+  const HOURGLASS = 'd="M6 2h12M6 22h12';
+
+  test("every event with both clock times says how long, and whether that is a day's", () => {
+    const pagesOf = new Map();
+    for (const app of new Set(allEvents.map((e) => e.site))) {
+      const dist = path.join(REPO, "apps", app, "dist");
+      if (!existsSync(dist)) continue;
+      for (const f of readdirSync(dist, { recursive: true })) {
+        if (!f.endsWith("/index.html") || f.startsWith("go/")) continue;
+        const key = `${app}/${f.split("/").at(-2)}`;
+        pagesOf.set(key, [...(pagesOf.get(key) ?? []), path.join(dist, f)]);
+      }
+    }
+    const faults = [];
+    let checked = 0;
+    for (const e of allEvents.filter((x) => x.body?.length && x.startTime && x.endTime)) {
+      for (const file of pagesOf.get(`${e.site}/${e.path?.replaceAll("/", "") || e.slug}`) ?? []) {
+        checked++;
+        const html = readFileSync(file, "utf8");
+        const row = [...html.matchAll(/<div class="event-glance-row"[^>]*><dt[^>]*>([\s\S]*?)<\/dt><dd[^>]*>([^<]*)<\/dd><\/div>/g)]
+          .find((m) => m[1].includes(HOURGLASS));
+        const where = path.relative(REPO, file);
+        if (!row) { faults.push(`${where}: no Duration row`); continue; }
+        const perDay = PER_DAY.some((re) => re.test(row[2]));
+        if (perDay !== Boolean(runDays(e))) faults.push(`${where}: "${row[2]}" ${perDay ? "says a day's on a single occurrence" : "lacks the per-day word on a run"}`);
+      }
+    }
+    assert.ok(checked > 0, "no event page with both clock times was found");
+    assert.deepEqual(faults, [], `Duration rows:\n  ${faults.join("\n  ")}`);
+    console.log(`  ${checked} event pages with both clock times`);
   });
 });
 

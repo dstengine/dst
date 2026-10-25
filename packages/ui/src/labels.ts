@@ -59,6 +59,9 @@ export interface ArticleLabels {
   duration: string;
   /** "2 hours 30 minutes" — assembled here so the plural rules are local. */
   durationValue: (hours: number, minutes: number) => string;
+  /** The same length as a daily window on a run of several days: "4 hours a
+      day". The word goes where the language puts it. */
+  durationPerDay: (value: string) => string;
   format: string;
   inPerson: string;
   online: string;
@@ -220,6 +223,7 @@ export const EN: ArticleLabels = {
     [hours && `${hours} hour${hours === 1 ? "" : "s"}`, minutes && `${minutes} minutes`]
       .filter(Boolean)
       .join(" "),
+  durationPerDay: (value) => `${value} a day`,
   format: "Format",
   inPerson: "In person",
   online: "Online",
@@ -335,6 +339,7 @@ export const ES: Partial<ArticleLabels> = {
     [hours && `${hours} hora${hours === 1 ? "" : "s"}`, minutes && `${minutes} minutos`]
       .filter(Boolean)
       .join(" "),
+  durationPerDay: (value) => `${value} al día`,
   format: "Formato",
   inPerson: "Presencial",
   where: "Dónde",
@@ -425,9 +430,12 @@ export const DE: Partial<ArticleLabels> = {
   timeFrom: (start) => `Ab ${start}`,
   duration: "Dauer",
   durationValue: (hours, minutes) =>
-    [hours && `${hours} Stunde${hours === 1 ? "" : "n"}`, minutes && `${minutes} Minuten`]
+    [hours && `${hours} Stunde${hours === 1 ? "" : "n"}`, minutes && `${minutes} Minute${minutes === 1 ? "" : "n"}`]
       .filter(Boolean)
       .join(" "),
+  // "täglich", not "pro Tag": vien's own copy says "täglich 10 bis 22 Uhr",
+  // and "pro Tag" broke onto two lines at 320.
+  durationPerDay: (value) => `${value} täglich`,
   format: "Format",
   inPerson: "Vor Ort",
   where: "Wo",
@@ -531,6 +539,9 @@ export const HY: Partial<ArticleLabels> = {
   // A noun after a numeral stays singular in Armenian: 2 ժամ, not 2 ժամեր.
   durationValue: (hours, minutes) =>
     [hours && `${hours} ժամ`, minutes && `${minutes} րոպե`].filter(Boolean).join(" "),
+  // "Per day" comes first in Armenian, and capitalised like every other
+  // value here that opens with a word.
+  durationPerDay: (value) => `Օրական ${value}`,
   format: "Ձևաչափ",
   inPerson: "Տեղում",
   online: "Առցանց",

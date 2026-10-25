@@ -1615,7 +1615,7 @@ export const items: EventItem[] = [
   {
     slug: "sky-garden-halloween-dance-of-the-dead-2026",
     createdAt: "2026-10-12T00:36:00+04:00",
-    updatedAt: "2026-10-25T21:30:00+04:00",
+    updatedAt: "2026-10-25T23:43:00+04:00",
     site: "ldn",
     image: "/covers/sky-garden-halloween-dance-of-the-dead-2026.jpg",
     imageAlt: "A tall tapering tower filled with green plants and small lit windows, bats circling its top and a crescent moon in its glass base, above a dark city skyline on a cream ground",
@@ -1628,6 +1628,7 @@ export const items: EventItem[] = [
       "Halloween in London 35 floors up: Sky Garden's Dance of the Dead party on Friday 30 and Saturday 31 October 2026, with a welcome cocktail, two live sets and a DJ. 18+, £38.50.",
     start: "2026-10-30",
     end: "2026-10-31",
+    dates: ["2026-10-30", "2026-10-31"],
     startTime: "18:30",
     utcOffset: "+00:00",
     city: "London",
@@ -1711,7 +1712,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-silent-disco-london-transport-museum-2026",
     createdAt: "2026-10-13T00:40:00+04:00",
-    updatedAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-25T23:43:00+04:00",
     site: "ldn",
     image: "/covers/halloween-silent-disco-london-transport-museum-2026.jpg",
     imageAlt: "Inside an old railway carriage with wooden slatted benches, two pairs of glowing headphones hanging on chains from the ceiling rail and paper bats overhead",
@@ -1724,7 +1725,7 @@ export const items: EventItem[] = [
       "A Halloween silent disco among the old buses and trams of the London Transport Museum in Covent Garden on Saturday 31 October 2026: two sessions, 6.30 to 9pm and 9.30 to midnight, several channels of DJs, over-18s, £25 to £27.50.",
     start: "2026-10-31",
     startTime: "18:30",
-    endTime: "23:59",
+    endTime: "00:00",
     displayHours: true,
     utcOffset: "+00:00",
     venue: "London Transport Museum, Covent Garden Piazza, WC2E 7BB",
@@ -2120,7 +2121,7 @@ export const items: EventItem[] = [
   {
     slug: "joia-rooftop-halloween-movies-battersea-2026",
     createdAt: "2026-10-24T19:00:00+04:00",
-    updatedAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-25T23:43:00+04:00",
     site: "ldn",
     image: "/covers/joia-rooftop-halloween-movies-battersea-2026.jpg",
     imageAlt: "Rows of red-and-white striped deckchairs on a rooftop facing a blank outdoor cinema screen, four white power-station chimneys behind",
@@ -2131,7 +2132,7 @@ export const items: EventItem[] = [
     cardTitle: "JOIA rooftop Halloween films, Battersea",
     titleSeo: "JOIA Rooftop Halloween Films 2026, Battersea, London",
     summary:
-      "Three Halloween films with dinner on JOIA's rooftop at art'otel London Battersea Power Station: Edward Scissorhands on 29 October, Ghostbusters on 30 October and The Rocky Horror Picture Show on Halloween night, screening at 7.30pm after dinner in Henrique Sá Pessoa's restaurant. From £75 a head; over-18s only.",
+      "Three Halloween films with dinner on JOIA's rooftop at art'otel London Battersea Power Station: Edward Scissorhands on 29 October, Ghostbusters on 30 October and The Rocky Horror Picture Show on Halloween night, screening at 7.30pm after dinner at JOIA, or on 29 October at TOZI Pizzeria & Cicchetti Bar. From £75 a head; over-18s only.",
     start: "2026-10-29",
     end: "2026-10-31",
     startTime: "17:30",
@@ -2151,14 +2152,14 @@ export const items: EventItem[] = [
     source: {
       name: "DesignMyNight: JOIA Rooftop Halloween Movie Pop Up & Dinner",
       url: "https://www.designmynight.com/london/bars/battersea/joia/joia-rooftop-halloween-movie-pop-up-dinner-at-artotel-london-battersea-power-station-1?t=tickets",
-      verifiedOn: "2026-10-24",
+      verifiedOn: "2026-10-25",
     },
     body: [
       "For the three nights before Halloween, JOIA's rooftop at art'otel London Battersea Power Station becomes an open-air cinema, with dinner first. It is the pop-up's third year, and the 2026 films run from the gentle to the participatory.",
       "## The films",
       "<strong>Thursday 29 October</strong>: Edward Scissorhands. <strong>Friday 30 October</strong>: Ghostbusters. <strong>Saturday 31 October</strong>: The Rocky Horror Picture Show, on Halloween night itself.",
       "## How the evening runs",
-      "Dinner is in <strong>JOIA</strong>, the restaurant of the Portuguese chef <strong>Henrique Sá Pessoa</strong>, between <strong>5.30pm and 7pm</strong>. The screening on the rooftop starts at <strong>7.30pm</strong>, and the evening ends at <strong>10pm</strong>.",
+      "Dinner is in <strong>JOIA</strong>, the restaurant of the Portuguese chef <strong>Henrique Sá Pessoa</strong>, between <strong>5.30pm and 7pm</strong>, except on Thursday 29 October, when it is at <strong>TOZI Pizzeria & Cicchetti Bar</strong>, in the same hotel. The screening on the rooftop starts at <strong>7.30pm</strong>, and the evening ends at <strong>10pm</strong>.",
       "## Prices",
       "From <strong>£75 a person</strong> for chair seating and <strong>£90 a person</strong> for sofa seating. With fees, the checkout came to £79.50 for a chair and £190.80 for a sofa for two on 24 October, and service charge is not included.",
       "## Before you book",
@@ -2177,7 +2178,7 @@ export const items: EventItem[] = [
       },
       {
         q: "What time does it start?",
-        a: "Dinner in JOIA is from 5.30pm to 7pm, the screening starts at 7.30pm, and the evening ends at 10pm.",
+        a: "Dinner is from 5.30pm to 7pm, at JOIA on 30 and 31 October and at TOZI Pizzeria & Cicchetti Bar on 29 October; the screening starts at 7.30pm, and the evening ends at 10pm.",
       },
       {
         q: "Is there an age limit?",

@@ -719,7 +719,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-kindermuseum-schoenbrunn-2026",
     createdAt: "2026-10-11T01:15:13+04:00",
-    updatedAt: "2026-10-12T00:47:00+04:00",
+    updatedAt: "2026-10-25T23:43:00+04:00",
     site: "vien",
     image: "/covers/halloween-kindermuseum-schoenbrunn-2026.jpg",
     imageAlt: "Eine lange helle Schlossfassade mit grünem Dach und Reihen dunkelgrüner Fenster, nur die Tür in der Mitte leuchtet gelb, darüber eine schmale Mondsichel, auf cremefarbenem Grund",
@@ -728,7 +728,7 @@ export const items: EventItem[] = [
     imageHeight: 1024,
     title: "Halloween im Kindermuseum Schönbrunn 2026",
     summary:
-      "Halloween für Kinder in Wien: Vom 25. Oktober bis 2. November 2026 gibt es im Kindermuseum Schloss Schönbrunn einen Monsterparcours, eine Rätselrallye und zwei Abende Gruselführung im Dunkeln. Der Museumseintritt kostet 12 Euro, die Führung 23 Euro.",
+      "Halloween für Kinder in Wien: Vom 25. Oktober bis 2. November 2026 gibt es im Kindermuseum Schloss Schönbrunn einen Monsterparcours, eine Rätselrallye und zwei Abende Gruselführung im Dunkeln. Der Museumseintritt kostet 12 Euro, die Führung 23 Euro. Am 29. und 30. Oktober schließt das Museum schon um 15:30 Uhr.",
     start: "2026-10-25",
     end: "2026-11-02",
     startTime: "09:30",
@@ -1097,7 +1097,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-special-vienna-open-lab-2026",
     createdAt: "2026-10-12T00:36:00+04:00",
-    updatedAt: "2026-10-25T22:48:00+04:00",
+    updatedAt: "2026-10-25T23:43:00+04:00",
     site: "vien",
     image: "/covers/halloween-special-vienna-open-lab-2026.jpg",
     imageAlt: "Ein Laborkolben, aus dem grüner Schleim quillt, neben einem dampfenden Kessel und einem Mikroskop, darüber eine Spinne an ihrem Faden, auf cremefarbenem Grund",
@@ -1106,7 +1106,7 @@ export const items: EventItem[] = [
     imageHeight: 1024,
     title: "Halloween-Special im Vienna Open Lab 2026",
     summary:
-      "Halloween für Familien in Wien: Gruselexperimente an Stationen im Vienna Open Lab am 28., 29. und 30. Oktober 2026, für Kinder ab 7 mit Begleitung. 8 Euro pro Person, nur mit Anmeldung.",
+      "Halloween für Familien in Wien: Gruselexperimente an Stationen im Vienna Open Lab am 28., 29. und 30. Oktober 2026, für Kinder ab 7 mit Begleitung. 8 Euro pro Person, nur mit Anmeldung. Geöffnet am 28. und 29. Oktober von 15 bis 18 Uhr, am 30. Oktober von 13 bis 16 Uhr.",
     start: "2026-10-28",
     end: "2026-10-30",
     startTime: "15:00",

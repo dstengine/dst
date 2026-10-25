@@ -1098,7 +1098,7 @@ export const items: EventItem[] = [
   {
     slug: "scream-park-guadalajara-2026",
     createdAt: "2026-10-24T19:00:00+04:00",
-    updatedAt: "2026-10-25T22:10:00+04:00",
+    updatedAt: "2026-10-25T23:43:00+04:00",
     site: "mxo",
     image: "/covers/scream-park-guadalajara-2026.jpg",
     imageAlt: "Una mansión con torreón detrás de un maizal rojo, una carpa de circo a rayas a su lado, niebla y una luna llena",
@@ -1112,6 +1112,12 @@ export const items: EventItem[] = [
       "El parque de sustos de Guadalajara, en el occidente de México, vuelve en 2026 a la Mansión Clover Lawn, en la colonia Americana: siete experiencias, de un granero y un maizal a una mansión y un carnaval de payasos, más un show en vivo. Boletos desde $550 en Boletia, con noches a la venta del 24 de octubre al 15 de noviembre.",
     start: "2026-10-24",
     end: "2026-11-15",
+    dates: [
+      "2026-10-24", "2026-10-25", "2026-10-26", "2026-10-27", "2026-10-28",
+      "2026-10-29", "2026-10-30", "2026-10-31", "2026-11-01", "2026-11-05",
+      "2026-11-06", "2026-11-07", "2026-11-08", "2026-11-13", "2026-11-14",
+      "2026-11-15",
+    ],
     startTime: "19:00",
     utcOffset: "-06:00",
     venue: "Mansión Clover Lawn",

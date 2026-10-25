@@ -2,7 +2,7 @@ import { test, describe } from "node:test";
 import assert from "node:assert/strict";
 import { newsBySite, latestNews } from "../src/news/index.ts";
 import { eventsBySite, upcomingEvents, pastEvents } from "../src/events/index.ts";
-import { endDay, isCurrent, isPromoted, withPromoted } from "../src/when.ts";
+import { endDay, runDays, isCurrent, isPromoted, withPromoted } from "../src/when.ts";
 
 const news = (over) => ({ slug: "s", site: "x", title: "t", summary: "s", date: "2026-01-01", ...over });
 const event = (over) => ({ slug: "s", site: "x", title: "t", summary: "s", start: "2026-01-01", ...over });
@@ -134,5 +134,40 @@ describe("endDay", () => {
   test("no clock times: the start, or the end when there is one", () => {
     assert.equal(endDay({ start: "2026-10-31" }), "2026-10-31");
     assert.equal(endDay({ start: "2026-10-31", end: "2026-11-02" }), "2026-11-02");
+  });
+});
+
+// One case for each rule in `runDays`, in the order it applies them.
+describe("runDays", () => {
+  const run = { start: "2026-10-29", end: "2026-10-31", startTime: "17:30", endTime: "22:00" };
+  test("no start time: not a timed run", () => {
+    assert.equal(runDays({ start: "2026-10-29", end: "2026-10-31" }), undefined);
+  });
+  test("`dates` is the answer whenever it is there, with or without an end time", () => {
+    assert.deepEqual(runDays({ ...run, dates: ["2026-10-29", "2026-10-31"] }), ["2026-10-29", "2026-10-31"]);
+    assert.deepEqual(runDays({ start: "2026-10-30", end: "2026-10-31", startTime: "18:30", dates: ["2026-10-30", "2026-10-31"] }), ["2026-10-30", "2026-10-31"]);
+  });
+  test("one day, written with or without `end`, is a single occurrence", () => {
+    assert.equal(runDays({ start: "2026-10-31", startTime: "18:30", endTime: "00:00" }), undefined);
+    assert.equal(runDays({ start: "2026-10-31", end: "2026-10-31", startTime: "12:00", endTime: "18:00" }), undefined);
+  });
+  test("a span with no end time and no closed days stays one block", () => {
+    assert.equal(runDays({ start: "2026-10-09", end: "2027-01-30", startTime: "19:00" }), undefined);
+  });
+  test("one night written with its next-day end is not a run", () => {
+    assert.equal(runDays({ start: "2026-12-31", end: "2027-01-01", startTime: "20:00", endTime: "00:30" }), undefined);
+  });
+  test("an overnight run's last night starts the day before its `end`", () => {
+    assert.deepEqual(runDays({ start: "2026-11-05", end: "2026-11-08", startTime: "20:00", endTime: "02:00" }), ["2026-11-05", "2026-11-06", "2026-11-07"]);
+  });
+  test("a daily window gives every day from start to end", () => {
+    assert.deepEqual(runDays(run), ["2026-10-29", "2026-10-30", "2026-10-31"]);
+  });
+  test("`closedDates` takes days out, and opts in a span with no end time", () => {
+    assert.deepEqual(runDays({ ...run, closedDates: ["2026-10-30"] }), ["2026-10-29", "2026-10-31"]);
+    assert.deepEqual(runDays({ start: "2026-11-07", end: "2026-11-09", startTime: "16:00", closedDates: ["2026-11-08"] }), ["2026-11-07", "2026-11-09"]);
+  });
+  test("a run across a month and a year counts its days", () => {
+    assert.equal(runDays({ start: "2026-11-20", end: "2027-01-03", startTime: "10:00", endTime: "20:00", closedDates: ["2026-12-25"] }).length, 44);
   });
 });
