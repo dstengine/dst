@@ -555,4 +555,42 @@ export const items: NewsItem[] = [
     expertise:
       "Count the scheme into the plan for any retail licence aimed at visitors. The 769 outlets that joined in nine months are the competition a new shop opens against, and a faster refund raises what a tourist expects at the till. The authority's figures also say where tourists claim: almost a quarter of refunds already go through a kiosk, so the paperwork a shop hands over has to work without a person to explain it.",
   },
+  {
+    slug: "dmcc-foundations-start-at-100-dollars-of-assets",
+    createdAt: "2026-10-25T04:30:00+04:00",
+    updatedAt: "2026-10-25T04:30:00+04:00",
+    site: "llc",
+    image: "/covers/dmcc-foundations-start-at-100-dollars-of-assets.jpg",
+    imageAlt: "A small wooden box on a pale stone plinth, thin lines rising from it to two paper tags and a smaller orange box",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "DMCC now has foundations, and one can start with USD 100 of assets",
+    cardTitle: "DMCC Foundations are here",
+    titleSeo: "DMCC Foundation in Dubai: rules, USD 100 minimum",
+    summary:
+      "DMCC formally established its Foundations Regulations on 23 September 2026: a Dubai free-zone foundation is a legal entity separate from its founder, built for succession, long-term asset holding and family governance, and it can be set up with initial assets from USD 100. Onboarding opens in the coming weeks.",
+    date: "2026-10-25",
+    category: "Free zones",
+    source: {
+      name: "DMCC",
+      url: "https://dmcc.ae/latest-news/dmcc-establishes-foundations-regulations-to-expand-private-wealth-and-structuring-offering-for-members",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "Dubai's biggest free zone has a new legal form. On <strong>23 September 2026</strong> <strong>DMCC</strong> formally established its <strong>Foundations Regulations</strong>, three months after it said in June that it was preparing them.",
+      "## What a DMCC Foundation is",
+      "A <strong>separate legal entity</strong> from its founder, its councillors, its guardian and its beneficiaries. It holds and manages assets according to its stated objectives and governance arrangements, which makes it a tool for <strong>succession planning</strong>, <strong>long-term asset holding</strong> and keeping a family's wealth together across generations.",
+      "## What the founder can decide",
+      "The founder writes the provisions on beneficiaries, on how assets are managed and distributed, and on how decisions are taken. Certain powers can be <strong>reserved</strong> to the founder or to other named people, including powers over investment decisions, appointments and beneficiaries.",
+      "## The minimum",
+      "A DMCC Foundation can be established with <strong>initial assets from USD 100</strong>. That is a floor for the asset requirement, not a price list: the licence and registration fees are not in the announcement.",
+      "## Who it is for",
+      "DMCC names high-net-worth individuals, family offices, entrepreneurs and international private wealth clients. It sits beside the <strong>SPV and HoldCo licences</strong> DMCC introduced in 2025, and beside its Wealth Hub and FinX.",
+      "## When it opens",
+      "The guidance on setting up and running a foundation, and a digital onboarding process, are due <strong>in the coming weeks</strong>. Until then DMCC is taking registrations of interest on the Foundations page of its website.",
+    ],
+    expertise:
+      "A foundation is not a trading company, and the two answer different questions. A DMCC company with a licence is how a founder does business in Dubai; a foundation is how the shares of that company, a property or a portfolio are held and passed on. The useful sequence for a family business is the trading company first, then the holding structure above it once there is something worth holding. Until the guidance is published, the fee schedule and the annual filing obligations are the two things to ask a registered agent before committing.",
+  },
 ];
