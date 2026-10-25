@@ -2526,4 +2526,92 @@ export const items: EventItem[] = [
     expertise:
       "The Saturday and late-December performances fill first, as one would expect, so for the widest choice of seats book a weekday early in the run. A weeknight at 7pm is often the kindest choice for grown-ups coming straight from work. If someone in the party needs a quieter house, the relaxed performance on Saturday 5 December at 1.30pm is the one to choose.",
   },
+  {
+    slug: "christmas-at-eltham-palace-2026",
+    createdAt: "2026-10-25T04:30:00+04:00",
+    updatedAt: "2026-10-25T04:30:00+04:00",
+    site: "lnd",
+    image: "/covers/christmas-at-eltham-palace-2026.jpg",
+    imageAlt: "A medieval great hall with a timber hammer-beam roof, market tables of pottery and jewellery beneath it, and a wreath on the arched doorway",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Christmas at Eltham Palace 2026: the fair and Father Christmas",
+    cardTitle: "Christmas at Eltham Palace",
+    titleSeo: "Christmas at Eltham Palace, London: 5–20 December 2026",
+    summary:
+      "Christmas at Eltham Palace, in the Royal Borough of Greenwich in south-east London: a makers' fair in the medieval Great Hall on 5 and 6 December 2026, included with admission, and Father Christmas on every weekend from 5 to 20 December, at £15 a child, or £12 for English Heritage members.",
+    start: "2026-12-05",
+    end: "2026-12-20",
+    utcOffset: "+00:00",
+    venue: "Eltham Palace and Gardens, Court Yard, SE9 5NP",
+    city: "London",
+    country: "United Kingdom",
+    geo: { name: "Eltham Palace", lat: 51.4470989, lng: 0.0485919 },
+    organizer: "English Heritage",
+    category: "Christmas",
+    tickets: { priceFrom: 12, priceTo: 15, currency: "GBP" },
+    ticket: {
+      url: "https://www.english-heritage.org.uk/visit/whats-on/eltham-palace-father-christmas-5-to-20-dec-2026/",
+      label: "Book Father Christmas",
+    },
+    source: {
+      name: "English Heritage",
+      url: "https://www.english-heritage.org.uk/visit/whats-on/eltham-palace-christmas-fair-sat-5-to-sun-6-dec/",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "Eltham Palace keeps Christmas properly. On the first weekend of December the medieval <strong>Great Hall</strong> becomes a makers' fair, and on every weekend until the 20th <strong>Father Christmas</strong> is in residence.",
+      "## The Christmas Fair, 5 and 6 December",
+      "<strong>Saturday 5 and Sunday 6 December 2026</strong>, <strong>10am to 4pm</strong>. Makers fill the Great Hall with jewellery, pottery and artwork. There are marshmallows to toast at the fire pits, mulled wine at the café, a community <strong>Wreath Trail</strong> and free tours of the gardens.",
+      "The fair is <strong>included with admission</strong>. Booking ahead saves 15 per cent, and English Heritage members go free.",
+      "## Father Christmas, weekends 5 to 20 December",
+      "Sessions at <strong>10.20, 11, 11.40, 12.20, 1.40, 2.20 and 3pm</strong> on each weekend day. A visit is <strong>£15 a child</strong> for non-members, on top of admission, and <strong>£12</strong> for members. Every child receives a present.",
+      "Sessions must be booked in advance. One adult may accompany each child, and the palace asks families to arrive fifteen minutes early.",
+      "## Finding it",
+      "Eltham Palace and Gardens, Court Yard, Eltham, <strong>SE9 5NP</strong>.",
+      "## The rest of the season",
+      "<a href=\"/events/christmas-at-kew-2026/\" title=\"Christmas at Kew 2026: dates and tickets\">Christmas at Kew</a> lights its trail from 13 November, and the <a href=\"/events/queens-house-ice-rink-greenwich-2026/\" title=\"Queen's House Ice Rink 2026, Greenwich, London: 18 Nov–3 Jan\">Queen's House ice rink</a> is open in Greenwich from 18 November.",
+    ],
+    faq: [
+      {
+        q: "When is the Eltham Palace Christmas Fair?",
+        a: "Saturday 5 and Sunday 6 December 2026, from 10am to 4pm, in the Great Hall.",
+      },
+      {
+        q: "Is the fair free?",
+        a: "It is included with admission to the palace; booking ahead saves 15 per cent, and English Heritage members go free.",
+      },
+      {
+        q: "How much is Father Christmas?",
+        a: "£15 a child for non-members, plus admission, or £12 for members. Every child receives a present.",
+      },
+      {
+        q: "When can children see Father Christmas?",
+        a: "On weekends from 5 to 20 December, in sessions from 10.20am to 3pm. Book in advance and arrive fifteen minutes early.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/halloween-eltham-palace-2026/",
+        eyebrow: "Half-term",
+        title: "Halloween at Eltham Palace",
+        text: "The palace's autumn family days.",
+      },
+      {
+        href: "/events/christmas-at-kew-2026/",
+        eyebrow: "From 13 November",
+        title: "Christmas at Kew 2026",
+        text: "The illuminated trail through the gardens.",
+      },
+      {
+        href: "/events/queens-house-ice-rink-greenwich-2026/",
+        eyebrow: "18 November – 3 January",
+        title: "Queen's House Ice Rink",
+        text: "Skating beside the Queen's House in Greenwich.",
+      },
+    ],
+    expertise:
+      "One would be wise to treat the two halves separately. The fair is a drop-in day and wants no planning beyond an admission ticket bought in advance for the discount. Father Christmas, by contrast, is booked by the session, and the 5 and 6 December sessions share the palace with the fair, which makes for a full house. A family that wants both in one outing should book a morning session on the fair weekend and see the Great Hall afterwards; a family that wants a quieter visit should choose a later weekend.",
+  },
 ];
