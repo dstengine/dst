@@ -22,14 +22,17 @@ import { datedTitle, withSuffix, saidAlready, TITLE_LIMIT } from "./title.ts";
 export const META_TEST = "meta-hook";
 
 /** What the hook variant says, per language of the site. Facts come from
-    the entry; these are the few joining words. */
+    the entry; these are the few joining words. `unpriced` is the title's
+    two lengths for an entry with no `tickets.priceFrom`: its page shows no
+    price, so its title cannot promise one. A free entry has a price. */
 const HOOKS: Record<string, {
-  long: string; short: string; free: string; from: (price: string) => string; know: string;
+  long: string; short: string; unpriced: { long: string; short: string };
+  free: string; from: (price: string) => string; know: string;
 }> = {
-  en: { long: "dates, prices & tips", short: "dates & prices", free: "Free entry", from: (p) => `Tickets from ${p}`, know: "What to know before you go." },
-  de: { long: "Termine, Preise & Tipps", short: "Termine & Preise", free: "Eintritt frei", from: (p) => `Tickets ab ${p}`, know: "Was man vorher wissen sollte." },
-  es: { long: "fechas, precios y consejos", short: "fechas y precios", free: "Entrada gratis", from: (p) => `Boletos desde ${p}`, know: "Lo que hay que saber antes de ir." },
-  hy: { long: "ամսաթվեր, գներ, խորհուրդներ", short: "ամսաթվեր և գներ", free: "Մուտքն ազատ է", from: (p) => `Տոմսերը՝ ${p}-ից`, know: "Ինչ արժե գիտենալ նախապես։" },
+  en: { long: "dates, prices & tips", short: "dates & prices", unpriced: { long: "dates & what to know", short: "dates & tips" }, free: "Free entry", from: (p) => `Tickets from ${p}`, know: "What to know before you go." },
+  de: { long: "Termine, Preise & Tipps", short: "Termine & Preise", unpriced: { long: "Termine & Wissenswertes", short: "Termine & Tipps" }, free: "Eintritt frei", from: (p) => `Tickets ab ${p}`, know: "Was man vorher wissen sollte." },
+  es: { long: "fechas, precios y consejos", short: "fechas y precios", unpriced: { long: "fechas y lo que debes saber", short: "fechas y consejos" }, free: "Entrada gratis", from: (p) => `Boletos desde ${p}`, know: "Lo que hay que saber antes de ir." },
+  hy: { long: "ամսաթվեր, գներ, խորհուրդներ", short: "ամսաթվեր և գներ", unpriced: { long: "ամսաթվեր, մանրամասներ, խորհուրդներ", short: "ամսաթվեր և խորհուրդներ" }, free: "Մուտքն ազատ է", from: (p) => `Տոմսերը՝ ${p}-ից`, know: "Ինչ արժե գիտենալ նախապես։" },
 };
 
 /** Google cuts a description around here on a phone. */
@@ -90,15 +93,20 @@ export function eventMeta(item: MetaEvent, site: MetaSite, page: MetaPage): Even
     The name alone only when no other page of the site goes by it in the
     same year (`others`): six stages of Yerevan City Day are each "Yerevan
     City Day: <the stage>", and cut to the name they would be six pages
-    under one title, none of them saying which stage it is. */
+    under one title, none of them saying which stage it is.
+
+    Without a price on the entry the words leave the price out ("Dubai
+    Future Week 2026: dates & what to know"); a free entry keeps them,
+    because "free" is its price. */
 export function hookTitle(
   base: string,
-  event: { start: string },
+  event: { start: string; tickets?: { priceFrom?: number } },
   site: MetaSite,
   others: { title: string; titleSeo?: string; start: string }[] = [],
 ): string | undefined {
   const locale = site.lang ?? "en";
-  const hook = HOOKS[locale.slice(0, 2)] ?? HOOKS.en;
+  const lang = HOOKS[locale.slice(0, 2)] ?? HOOKS.en;
+  const hook = event.tickets?.priceFrom === undefined ? lang.unpriced : lang;
   const head = headOf(base);
   const key = (name: string, start: string) => dated(name, start).toLocaleLowerCase(locale);
   const shared = others.some((o) => key(headOf(o.titleSeo ?? o.title), o.start) === key(head, event.start));

@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import vm from "node:vm";
 import { EXPERIMENTS, liveExperiments, bucket, variantOf, fnv1a, BUCKET_JS } from "../src/experiments.ts";
 import { HOSTS as APP_HOSTS } from "../../../tools/hosts.mjs";
-import { hookTitle, eventMeta } from "../../ui/src/meta.ts";
+import { hookTitle, hookDescription, eventMeta } from "../../ui/src/meta.ts";
 
 const exp = (over) => ({
   id: "t",
@@ -149,7 +149,8 @@ describe("meta-hook titles", () => {
   // The hook is built in @dst/ui/meta; what it may never do is give two
   // pages of one site the same title.
   const tick = { lang: "en-GB", titleSuffix: "Yerevan", keyword: "Yerevan" };
-  const stage = (slug, titleSeo, start = "2026-10-10") => ({ slug, title: titleSeo, titleSeo, summary: "s", start });
+  // The City Day stages are free, and free is a price: the words keep it.
+  const stage = (slug, titleSeo, start = "2026-10-10") => ({ slug, title: titleSeo, titleSeo, summary: "s", start, tickets: { priceFrom: 0 } });
   const rock = stage("rock", "Yerevan City Day: rock concert at Diana Abgar Park");
   const rap = stage("rap", "Yerevan City Day: rap concert at English Park");
 
@@ -171,5 +172,65 @@ describe("meta-hook titles", () => {
     assert.equal(eventMeta(rock, tick, page).variant, "hook");
     assert.equal(eventMeta(rock, tick, { ...page, siblings: [rock] }).title, "Yerevan City Day 2026: dates, prices & tips");
     assert.equal(eventMeta(rock, tick, { ...page, siblings: [rock, rap] }).title, rock.titleSeo);
+  });
+});
+
+describe("meta-hook words and the price", () => {
+  // A hook title may only promise what the page shows. The page shows a
+  // price when the entry has tickets.priceFrom, so without one the title
+  // says dates and tips and nothing about prices — in every language.
+  const PRICE_WORDS = /prices|Preise|precios|գներ/u;
+  const fwf = { titleSuffix: "Future World Forum Dubai", keyword: "Dubai" };
+  const week = { slug: "dubai-future-week-2026", title: "Dubai Future Week 2026", summary: "Dubai Future Week runs 18–21 November 2026 in Dubai.", start: "2026-11-18", end: "2026-11-21", city: "Dubai" };
+  const sites = [
+    { lang: "en-GB", titleSuffix: "London", keyword: "London" },
+    { lang: "en-US", titleSuffix: "New York 42", keyword: "New York" },
+    { lang: "de-AT", titleSuffix: "Wien", keyword: "Wien" },
+    { lang: "es-MX", titleSuffix: "México", keyword: "México" },
+    { lang: "hy-AM", titleSuffix: "Երևան", keyword: "Երևան" },
+  ];
+
+  test("an entry with a registration link and no price is not promised prices", () => {
+    assert.equal(hookTitle(week.title, week, fwf), "Dubai Future Week 2026: dates & what to know");
+  });
+
+  test("no language promises a price the entry does not carry", () => {
+    for (const site of sites) {
+      const unpriced = hookTitle("Expo", { start: "2026-11-18" }, site);
+      const priced = hookTitle("Expo", { start: "2026-11-18", tickets: { priceFrom: 20, currency: "EUR" } }, site);
+      assert.ok(unpriced && !PRICE_WORDS.test(unpriced), `${site.lang}: ${unpriced}`);
+      assert.ok(priced && PRICE_WORDS.test(priced), `${site.lang}: ${priced}`);
+    }
+  });
+
+  test("each language's words, long and short", () => {
+    const at = (lang, name) => hookTitle(name, { start: "2026-11-18" }, { lang });
+    assert.equal(at("de-AT", "Wiener Eistraum"), "Wiener Eistraum 2026: Termine & Wissenswertes");
+    assert.equal(at("es-MX", "Carnaval de Mazatlán"), "Carnaval de Mazatlán 2026: fechas y lo que debes saber");
+    assert.equal(at("hy-AM", "Համերգ"), "Համերգ 2026: ամսաթվեր, մանրամասներ, խորհուրդներ");
+    // 36 characters of name leave room in 60 for "dates & tips" and not
+    // for "dates & what to know"; in German, the same for its two.
+    const name = "Winter Fair at Greenwich Market Hall";
+    assert.equal(at("en-GB", name), `${name} 2026: dates & tips`);
+    assert.equal(at("de-AT", name), `${name} 2026: Termine & Tipps`);
+  });
+
+  test("a free entry and a priced one keep the prices, and the description says which", () => {
+    const free = { ...week, tickets: { priceFrom: 0 } };
+    const paid = { ...week, tickets: { priceFrom: 350, currency: "AED" } };
+    assert.equal(hookTitle(free.title, free, fwf), "Dubai Future Week 2026: dates, prices & tips");
+    assert.equal(hookTitle(paid.title, paid, fwf), "Dubai Future Week 2026: dates, prices & tips");
+    assert.match(hookDescription(free, fwf), /\. Free entry\. /);
+    assert.match(hookDescription(paid, fwf), /\. Tickets from AED\s?350\. /);
+    assert.doesNotMatch(hookDescription(week, fwf), /Free entry|Tickets from/);
+  });
+
+  test("eventMeta on a hook-arm page leaves the price out when the entry has none", () => {
+    // /events/rock/ on tick.am falls in the hook arm.
+    const page = { host: "tick.am", path: "/events/rock/", today: "2026-10-25" };
+    const site = { lang: "en-GB", titleSuffix: "Yerevan", keyword: "Yerevan" };
+    const meta = eventMeta({ ...week, slug: "rock", title: "Rock concert in Yerevan" }, site, page);
+    assert.equal(meta.variant, "hook");
+    assert.equal(meta.title, "Rock concert in Yerevan 2026: dates & what to know");
   });
 });

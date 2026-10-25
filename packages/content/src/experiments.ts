@@ -142,6 +142,18 @@ export const EXPERIMENTS: Experiment[] = [
     // 2026-10-25 by the owner's decision, after one day of data (four
     // clicks), before any outcome could steer it. By 19 Dec the test
     // sees about +24%; a +20% lift needs about 13,400 per arm.
+    //
+    // A treatment fix on 2026-10-25, before any outcome could steer it:
+    // the hook title said "dates, prices & tips" or "dates & prices" on
+    // every page, and 34 of the 127 upcoming hook-arm pages carry no
+    // tickets.priceFrom, so 18 of them promised prices their page does not
+    // show. Without a price the title now says "dates & what to know" or
+    // "dates & tips", and the same in de, es and hy (@dst/ui/meta); priced
+    // and free entries keep their words, and every description is as it
+    // was. One page, lnd.lol's Queen's House Ice Rink, gains a hook title
+    // it could not fit before, because the price-less words are shorter.
+    // A fix of harm, not a change of the question: the arms, the metric
+    // and the rule stay as they are.
     lift: 0.2,
     decideBy: "2026-12-19",
   },
