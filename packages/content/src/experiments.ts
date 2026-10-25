@@ -62,6 +62,23 @@ export interface Experiment {
   hypothesis: string;
   /** The one number that settles it. */
   metric: string;
+  /** The same number as tools/ab.mjs reads it. A page test's is always
+      Search Console clicks per impression and needs nothing here. A
+      visitor test's is the GA4 event that counts as success, per visitor
+      who saw the variant — optionally only where the event's `param`
+      matches `match` (a RegExp source). GA4 reports `param`, `exp` and
+      `exp_variant_string` only once they are registered as custom
+      dimensions, and from that day on, never backwards. */
+  goal?: { event: string; param?: string; match?: string };
+  /** The decision rule, fixed before launch, so that reading the numbers
+      early cannot move it. `lift`: the smallest relative gain worth
+      shipping (0.2 is a fifth) — it sizes the sample. `sample`: units per
+      arm at which the test is read and decided (impressions for a page
+      test, visitors for a visitor test). `decideBy`: the date it is
+      decided whatever the sample reached. */
+  lift?: number;
+  sample?: number;
+  decideBy?: string;
 }
 
 export const EXPERIMENTS: Experiment[] = [
@@ -77,6 +94,7 @@ export const EXPERIMENTS: Experiment[] = [
       "\"Tickets\" (control) names the destination; \"Buy tickets\" names the act; \"Tickets from AMD 3,000\" " +
       "gives the price, which is what most readers leave the page to find out. Expect price ≥ buy > label.",
     metric: "ticket_click ÷ experience_impression, per variant, on event pages with a price",
+    goal: { event: "ticket_click" },
   },
   {
     id: "action-label",
@@ -92,6 +110,7 @@ export const EXPERIMENTS: Experiment[] = [
       "longer, but it names the destination and what is found there, which is what a reader weighing a click away wants to know. " +
       "Expect title > label, by enough to pay for a button that wraps on a phone.",
     metric: "outbound_click on the entry's /go/<slug>-action/ hop ÷ experience_impression, per variant",
+    goal: { event: "outbound_click", param: "hop", match: "-action$" },
   },
   {
     // Search-result copy: does a title and description that promise the
@@ -114,6 +133,10 @@ export const EXPERIMENTS: Experiment[] = [
       "a title Google is likelier to rewrite. Decided at 2,000 impressions per arm or after eight weeks, whichever comes first, " +
       "by tools/ab-meta.mjs.",
     metric: "Search Console clicks ÷ impressions per variant on the event pages, since 2026-10-24, compared at matching average position",
+    // The rule as the hypothesis wrote it on launch day, nothing added.
+    lift: 0.2,
+    sample: 2000,
+    decideBy: "2026-12-19",
   },
 ];
 

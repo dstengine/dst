@@ -42,6 +42,18 @@ describe("the registry", () => {
       if (e.paths) assert.doesNotThrow(() => new RegExp(e.paths), "paths is a valid RegExp");
       assert.ok(e.hypothesis.length > 40, "the hypothesis is written down before the numbers arrive");
       assert.ok(e.metric.trim(), "the metric is named");
+      if (e.unit === "visitor") {
+        assert.match(e.goal?.event ?? "", /^[a-z_]+$/, "a visitor test names its GA4 goal event");
+        if (e.goal.match) assert.doesNotThrow(() => new RegExp(e.goal.match), "goal.match is a valid RegExp");
+        assert.equal(Boolean(e.goal.param), Boolean(e.goal.match), "goal.param and goal.match come together");
+      }
+      if (e.lift !== undefined) assert.ok(e.lift > 0, "lift is a positive fraction");
+      if (e.sample !== undefined) assert.ok(Number.isInteger(e.sample) && e.sample > 0, "sample is a count per arm");
+      if (e.decideBy) assert.ok(e.decideBy > e.start, "decideBy is after start");
+      // Every test launched since /ab exists carries its whole rule.
+      if (e.start > "2026-10-25") {
+        assert.ok(e.lift && e.sample && e.decideBy, "lift, sample and decideBy are fixed before launch");
+      }
     });
   }
 
