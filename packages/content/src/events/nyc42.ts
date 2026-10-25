@@ -3339,4 +3339,90 @@ export const items: EventItem[] = [
     expertise:
       "The late evenings fall almost all on weekends and the week after Christmas, which is when the crowds come anyway. For a quieter visit, pick a weekday in the second half of November, before the school holidays, and book ahead anyway. Families with a child who finds crowds hard should take the two sensory-friendly mornings seriously: they are the only sessions built for it.",
   },
+  {
+    slug: "lightscape-brooklyn-botanic-garden-2026",
+    createdAt: "2026-10-25T04:30:00+04:00",
+    updatedAt: "2026-10-25T04:30:00+04:00",
+    site: "nyc42",
+    image: "/covers/lightscape-brooklyn-botanic-garden-2026.jpg",
+    imageAlt: "A winding garden path at night between bare trees lit in orange and violet, two small figures walking along it",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Lightscape 2026 at Brooklyn Botanic Garden",
+    cardTitle: "Lightscape at Brooklyn Botanic Garden",
+    titleSeo: "Lightscape 2026 New York: Brooklyn Botanic Garden prices",
+    summary:
+      "Lightscape, the after-dark light trail through Brooklyn Botanic Garden in New York, runs from November 20, 2026, to January 3, 2027, with timed entry from $29 for adults on value nights, $15 for children and free under 3. Two 21+ nights and two sensory-friendly evenings are on the calendar in December.",
+    start: "2026-11-20",
+    end: "2027-01-03",
+    utcOffset: "-05:00",
+    venue: "Brooklyn Botanic Garden, Brooklyn",
+    city: "New York",
+    country: "United States",
+    geo: { name: "Brooklyn Botanic Garden", lat: 40.6676619, lng: -73.9636261 },
+    organizer: "Brooklyn Botanic Garden",
+    category: "Christmas",
+    tickets: { priceFrom: 15, priceTo: 44, currency: "USD" },
+    ticket: {
+      url: "https://www.bbg.org/lightscape",
+      label: "Tickets",
+    },
+    source: {
+      name: "Brooklyn Botanic Garden",
+      url: "https://www.bbg.org/lightscape",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "Brooklyn's winter light trail returns. <strong>Lightscape</strong> opens at <strong>Brooklyn Botanic Garden</strong> on <strong>November 20, 2026</strong>, and runs until <strong>January 3, 2027</strong>: an evening walk through the garden lit by installations, with timed entry.",
+      "## Prices",
+      "Tickets are priced by night, in three tiers. <strong>Adults</strong>: $29 on value nights, $39 off-peak and $44 peak. <strong>Children 3 to 11</strong>: $15, $22 and $28. Garden members pay $29, $33 and $37 for adults and $15, $17 and $20 for children. <strong>Under 3s go free.</strong>",
+      "## Special nights",
+      "Two evenings are for <strong>21 and over</strong>: December 10 and 17. Two are <strong>sensory-friendly</strong>, with entry at 4pm, on December 3 and 18. The garden's <strong>Family Benefit</strong> night is December 8.",
+      "## Rules worth knowing",
+      "Entry is timed. Tickets cannot be refunded, but can be exchanged for <strong>$10</strong>. The trail opens in all weather; if a night is cancelled, the garden says so before 2pm that day.",
+      "## The same season",
+      "The <a href=\"/events/nybg-holiday-train-show-2026/\" title=\"NYBG Holiday Train Show 2026, New York: dates, evenings\">Holiday Train Show</a> fills the other botanical garden, in the Bronx, and the <a href=\"/events/rockefeller-center-christmas-tree-lighting-2026/\" title=\"Rockefeller Center Tree Lighting: Dec 2, 2026\">Rockefeller Center tree</a> is lit on December 2.",
+    ],
+    faq: [
+      {
+        q: "When is Lightscape 2026?",
+        a: "From November 20, 2026, to January 3, 2027, in the evenings, with timed entry.",
+      },
+      {
+        q: "How much are tickets?",
+        a: "Adults pay $29, $39 or $44 depending on the night; children 3 to 11 pay $15, $22 or $28; under 3s are free.",
+      },
+      {
+        q: "Are there adults-only nights?",
+        a: "Yes: December 10 and 17 are for visitors 21 and over.",
+      },
+      {
+        q: "What if it rains?",
+        a: "Lightscape opens in all weather. If a night has to be cancelled, the garden announces it before 2pm.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/nybg-holiday-train-show-2026/",
+        eyebrow: "From November 14",
+        title: "NYBG Holiday Train Show",
+        text: "Model trains through a city of plants in the Bronx.",
+      },
+      {
+        href: "/events/rockefeller-center-christmas-tree-lighting-2026/",
+        eyebrow: "December 2",
+        title: "Rockefeller Center tree lighting",
+        text: "The city's tree, lit on a Wednesday night.",
+      },
+      {
+        href: "/events/bryant-park-winter-village-2026/",
+        eyebrow: "Until February 28",
+        title: "Bryant Park Winter Village",
+        text: "Free-admission skating and holiday shops in Midtown.",
+      },
+    ],
+    expertise:
+      "The price tier is the night, not the seat, so the cheapest Lightscape is the same walk on a value night: a family of two adults and two children pays $88 on a value night and $144 on a peak one. Buy for the night you can actually make, since a change costs $10 a ticket and there are no refunds. With small children, the sensory-friendly evenings start at 4pm, early enough to be home for bedtime.",
+  },
 ];
