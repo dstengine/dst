@@ -11,7 +11,7 @@ export const items: EventItem[] = [
   {
     slug: "dubai-future-week-2026",
     createdAt: "2026-08-28T01:39:41+04:00",
-    updatedAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-25T05:05:00+04:00",
     site: "fwf",
     image: "/covers/dubai-future-week-2026.jpg",
     imageAlt: "Five pale lilac paper bands of different widths fanning out from one periwinkle point on an indigo ground",
@@ -19,11 +19,18 @@ export const items: EventItem[] = [
     imageWidth: 1536,
     imageHeight: 864,
     title: "Dubai Future Week 2026",
-    // The two questions a search for the week asks are "when" and "how do I
-    // get in"; the venue is in the summary, where it fits and the title does not.
-    titleSeo: "Dubai Future Week 2026: 18–21 November and how to register",
+    // The forum's name is what people search for: in Search Console, 12–24
+    // Oct 2026, "dubai future forum" and "dubai future forum 2026" were most
+    // of the site's impressions, and Google sent them to the front page,
+    // which is about a different event; in Google Trends (UAE) the forum
+    // peaks every November, the week's own name only began rising in October
+    // and "future world forum" barely registers. In 2026 the forum is part of the
+    // week, so the title names both; registration and the venue are in the
+    // summary, where they fit and the title does not. The "&" keeps the name
+    // short enough for meta-hook's "<name>: dates & …" to fit as well.
+    titleSeo: "Dubai Future Week & Dubai Future Forum 2026: 18–21 November",
     summary:
-      "Dubai Future Week runs 18–21 November 2026 at Emirates Towers and the Museum of the Future: about 75 events in five tracks, with registration open on the official site. It folds in the Dubai Future Forum and Dubai AI Week.",
+      "Dubai Future Week now takes in the Dubai Future Forum and Dubai AI Week: about 75 events in five tracks, 18–21 November 2026, at Emirates Towers and the Museum of the Future. Registration is open on the official site.",
     start: "2026-11-18",
     end: "2026-11-21",
     venue: "Emirates Towers and the Museum of the Future",
@@ -550,7 +557,7 @@ export const items: EventItem[] = [
   {
     slug: "abu-dhabi-finance-week-2026",
     createdAt: "2026-10-25T02:30:00+04:00",
-    updatedAt: "2026-10-25T02:30:00+04:00",
+    updatedAt: "2026-10-25T05:05:00+04:00",
     site: "fwf",
     image: "/covers/abu-dhabi-finance-week-2026.jpg",
     imageAlt: "Glass towers on a small island at dusk, a bridge to either shore, the towers reflected in the water and stacks of gold coins in front",
@@ -589,7 +596,7 @@ export const items: EventItem[] = [
       "## From Dubai",
       "Al Maryah Island is about an hour and a half by road from central Dubai. With seventy events across four days, most visitors from Dubai pick the two or three that matter to them rather than the whole week.",
       "## Before it in Dubai",
-      "November in Dubai has its own future-facing fortnight: the <a href=\"/\" title=\"Future World Forum Dubai 2026\">Future World Forum</a> on 16 November and <a href=\"/events/dubai-future-week-2026/\" title=\"Dubai Future Week 2026: 18–21 November and how to register\">Dubai Future Week</a> from 18 to 21 November.",
+      "November in Dubai has its own future-facing fortnight: the <a href=\"/\" title=\"Future World Forum Dubai 2026\">Future World Forum</a> on 16 November and <a href=\"/events/dubai-future-week-2026/\" title=\"Dubai Future Week & Dubai Future Forum 2026: 18–21 November\">Dubai Future Week</a> from 18 to 21 November.",
     ],
     faq: [
       {
@@ -627,5 +634,91 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Plan ADFW as a set of days, not one event. The flagship sessions are where the headlines come from, but the side events are where a Dubai founder or adviser actually meets an Abu Dhabi fund, and they are spread across the island and the hotels around it. Book a room on Al Maryah or Reem for the nights you need rather than driving back to Dubai at the end of each day.",
+  },
+  {
+    slug: "dubai-fintech-summit-2026",
+    createdAt: "2026-10-25T04:30:00+04:00",
+    updatedAt: "2026-10-25T04:30:00+04:00",
+    site: "fwf",
+    image: "/covers/dubai-fintech-summit-2026.jpg",
+    imageAlt: "A low arched resort building beside the water at dusk, small wooden abras moored in front of it",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Dubai FinTech Summit 2026 at Madinat Jumeirah",
+    cardTitle: "Dubai FinTech Summit 2026",
+    titleSeo: "Dubai FinTech Summit 2026: 2–3 November, Madinat Jumeirah",
+    summary:
+      "The fourth Dubai FinTech Summit, hosted by DIFC, runs on November 2 and 3, 2026, at Madinat Jumeirah under the theme Connecting Markets, Transforming Economies: more than 10,000 leaders, 1,000 investors and 300 speakers from over 120 countries, with the FinTech World Cup final on stage.",
+    start: "2026-11-02",
+    end: "2026-11-03",
+    utcOffset: "+04:00",
+    venue: "Madinat Jumeirah",
+    city: "Dubai",
+    geo: { name: "Madinat Jumeirah", lat: 25.1333783, lng: 55.1874023 },
+    organizer: "Dubai International Financial Centre (DIFC), managed by Trescon",
+    category: "Conference",
+    ticket: {
+      url: "https://www.dubaifintechsummit.com/",
+      label: "Passes",
+    },
+    source: {
+      name: "Dubai FinTech Summit",
+      url: "https://www.dubaifintechsummit.com/",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "Dubai's fintech conference has a new date. The fourth <strong>Dubai FinTech Summit</strong>, first set for 11 and 12 May, now runs on <strong>Monday 2 and Tuesday 3 November 2026</strong> at <strong>Madinat Jumeirah</strong>. It is hosted by <strong>DIFC</strong>, held under the patronage of Sheikh Maktoum bin Mohammed and managed by Trescon, with MultiBank Group as co-host.",
+      "## The theme",
+      "This year's is <strong>Connecting Markets, Transforming Economies</strong>.",
+      "## The scale",
+      "The organisers expect more than <strong>10,000 leaders</strong>, <strong>1,000 investors</strong>, <strong>300 speakers</strong> and <strong>200 exhibitors</strong> from more than <strong>120 countries</strong>, with more than 20 regulators, five exchanges and 30 bank executives among them.",
+      "## On the programme",
+      "The <strong>FinTech World Cup Grand Finale</strong>, the DFS Dialogues, the Innovation Arena and the FinTech Launchpad for start-ups. Speakers announced include <strong>Essa Kazim</strong>, governor of DIFC, <strong>Noel Quinn</strong>, <strong>Jenny Johnson</strong> of Franklin Templeton and <strong>Kentaro Okuda</strong>.",
+      "## Passes",
+      "Passes are sold on the summit's own site.",
+      "## Later in the season",
+      "The <a href=\"/\" title=\"Future World Forum Dubai 2026: 16 November\">Future World Forum</a> follows on 16 November, and <a href=\"/events/abu-dhabi-finance-week-2026/\" title=\"Abu Dhabi Finance Week 2026: 7–10 December, from Dubai\">Abu Dhabi Finance Week</a> runs from 7 to 10 December.",
+    ],
+    faq: [
+      {
+        q: "When is the Dubai FinTech Summit 2026?",
+        a: "On Monday 2 and Tuesday 3 November 2026. It was first announced for 11 and 12 May.",
+      },
+      {
+        q: "Where is it held?",
+        a: "At Madinat Jumeirah, on the coast between Umm Suqeim and Al Sufouh.",
+      },
+      {
+        q: "Who organises it?",
+        a: "DIFC hosts it, Trescon manages it, and MultiBank Group is co-host, under the patronage of Sheikh Maktoum bin Mohammed.",
+      },
+      {
+        q: "What is the FinTech World Cup?",
+        a: "A start-up pitch competition whose grand final is held on the summit stage.",
+      },
+    ],
+    related: [
+      {
+        href: "/",
+        eyebrow: "November 16",
+        title: "Future World Forum Dubai 2026",
+        text: "The forum this site is named after.",
+      },
+      {
+        href: "/events/abu-dhabi-finance-week-2026/",
+        eyebrow: "December 7–10",
+        title: "Abu Dhabi Finance Week 2026",
+        text: "ADGM's finance week on Al Maryah Island.",
+      },
+      {
+        href: "/events/gitex-global-2026/",
+        eyebrow: "December 7–11",
+        title: "GITEX Global 2026",
+        text: "The technology show at the World Trade Centre.",
+      },
+    ],
+    expertise:
+      "Two days and a crowded programme means choosing before arriving. For a founder raising money, the investor count and the FinTech Launchpad are the reason to buy a pass; for anyone setting up a licensed business, the twenty-odd regulators in the building are the rarer opportunity, since a hallway conversation with a supervisor is worth more than any panel. The move from May to November puts the summit a month before Abu Dhabi Finance Week, so for many visitors the two now make one trip.",
   },
 ];
