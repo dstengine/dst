@@ -1504,4 +1504,67 @@ export const items: NewsItem[] = [
     expertise:
       "Two things to do before upgrading. Pin the old release in any project where a client has approved a shot, because the new numerics will not reproduce it. And move scripts off KeyframeInterpolationPipeline now: it is gone, and the guide binding in the two-stage pipeline is its replacement. The fp8 gain only arrives on Ada-, Hopper- or newer cards; an RTX 30 series or an A100, at compute capability 8.6 and 8.0, does not take the fp8 path.",
   },
+  {
+    slug: "runway-mcp-adds-sound-effects-and-voiceover",
+    createdAt: "2026-10-25T04:30:00+04:00",
+    updatedAt: "2026-10-25T04:30:00+04:00",
+    site: "aivideo",
+    image: "/covers/runway-mcp-adds-sound-effects-and-voiceover.jpg",
+    imageAlt: "A neon cyan video timeline on a dark violet ground, a magenta sound waveform rising beneath the frames and a small glowing microphone beside it",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Runway MCP adds sound effects, voiceovers and background removal to AI video agents",
+    cardTitle: "Runway MCP: sound and voice",
+    titleSeo: "AI video sound in Runway MCP: Mirelo SFX and Fish Audio",
+    summary:
+      "Runway's MCP server, which lets an AI agent drive Runway's tools, gained sound in mid-October 2026: Mirelo SFX 2.0 writes a separate effects track for an AI video clip from a description, and Fish Audio Drama 3 turns a script into a voiceover in seven voices. BiRefNet v2 background removal arrived the same week. All three need a paid plan.",
+    date: "2026-10-25",
+    category: "News",
+    tags: ["Runway"],
+    action: {
+      url: "https://runway.com/changelog",
+      label: "Runway changelog",
+      title: "Runway's product changelog, with the MCP updates of October 2026",
+      icon: "document",
+    },
+    source: {
+      name: "Runway changelog",
+      url: "https://runway.com/changelog",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "<strong>Runway MCP</strong> is the server that lets an AI agent, in Cursor or any other client that speaks the Model Context Protocol, call Runway's generation tools directly. In the week of 12 October it learned to make sound.",
+      "## Mirelo SFX 2.0, 15 October",
+      "Give the agent a clip and describe the sound you want, from footsteps to room ambience, and <strong>Mirelo SFX 2.0</strong> returns it as a <strong>separate audio track</strong>, ready to drop into the edit rather than baked into the video.",
+      "## Fish Audio Drama 3, 14 October",
+      "<strong>Fish Audio Drama 3</strong> turns a script into a voiceover. It has <strong>seven voices</strong> and takes <strong>delivery cues</strong> for whispers, laughter and dramatic moments.",
+      "## BiRefNet v2, 15 October",
+      "<strong>Background removal</strong> with BiRefNet v2: it finds the foreground on its own, for product shots, illustrations and assets headed for a composite.",
+      "## Also this month",
+      "<strong>Seedream 5.0 Flash</strong> (12 October) makes 1K or 2K images from text or from up to ten reference images, also in Runway MCP. In Runway's own Agent, <strong>Seedance 2.5 Draft mode</strong> (2 October) makes fast 480p drafts. Enterprise workspaces can now cap the credits each project spends (9 October).",
+      "## Who gets it",
+      "The three MCP additions are on <strong>paid plans</strong>.",
+    ],
+    faq: [
+      {
+        q: "What is Runway MCP?",
+        a: "A Model Context Protocol server that lets an AI agent use Runway's tools from an MCP client such as Cursor.",
+      },
+      {
+        q: "What does Mirelo SFX 2.0 do?",
+        a: "It generates sound effects for a clip from a text description and returns them as a separate audio track.",
+      },
+      {
+        q: "How many voices does Fish Audio Drama 3 have?",
+        a: "Seven, with delivery cues for whispers, laughter and dramatic moments.",
+      },
+      {
+        q: "Are the new tools free?",
+        a: "No. Mirelo SFX 2.0, Fish Audio Drama 3 and BiRefNet v2 are listed for paid plans.",
+      },
+    ],
+    expertise:
+      "The separate audio track is the detail that matters. A video model that generates sound with the picture gives you a mix that is hard to fix; an effects track on its own can be levelled, cut and replaced in the edit like any recorded foley. Put that together with a scripted voiceover from the same agent and the rough cut of a short spot, picture, effects and voice, can come out of one conversation, with every layer still editable. Check the credit cost per generation on your plan before letting an agent loop on sound, since an agent will happily ask for take after take.",
+  },
 ];
