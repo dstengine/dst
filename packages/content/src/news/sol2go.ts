@@ -560,4 +560,61 @@ export const items: NewsItem[] = [
     expertise:
       "JLTXX is the fund to watch, not MONY. A government money market fund shaped around the GENIUS Act is a place for a stablecoin issuer to park its reserves, and putting it on Solana puts those reserves one transfer away from the chain where the stablecoins circulate. Before relying on any token claiming to be either fund, check the mint against the two addresses in J.P. Morgan's release; anyone can mint a token with the same ticker.",
   },
+  {
+    slug: "open-usd-ousd-is-live-on-solana",
+    createdAt: "2026-10-25T04:30:00+04:00",
+    updatedAt: "2026-10-25T04:30:00+04:00",
+    site: "sol2go",
+    image: "/covers/open-usd-ousd-is-live-on-solana.jpg",
+    imageAlt: "Five paper ribbons of different colours wound around one large white paper coin on a violet ground, a row of small squares running out from beneath it",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Open USD, the stablecoin backed by Coinbase, Mastercard, Shopify, Stripe and Visa, is live on Solana",
+    cardTitle: "Open USD (OUSD) on Solana",
+    titleSeo: "Open USD (OUSD) live on Solana: Bridge-issued stablecoin",
+    summary:
+      "Open USD (OUSD), the Open Standard stablecoin issued by Bridge, went live natively on Solana on 30 September 2026. Businesses mint and redeem it 1:1 for dollars at no cost; reserves sit at BlackRock, Lead Bank and BNY, with monthly attestations, and Coinbase, Mastercard, Shopify, Stripe and Visa are its five founding partners.",
+    date: "2026-10-25",
+    category: "Institutional",
+    source: {
+      name: "Solana Foundation",
+      url: "https://solana.com/news/open-usd-is-live-on-solana",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "<strong>Open USD (OUSD)</strong>, the stablecoin of <strong>Open Standard</strong>, has been live on <strong>Solana</strong> since <strong>30 September 2026</strong>. Businesses can <strong>mint and burn it 1:1</strong> for US dollars <strong>at no cost</strong>, and use it for payments, settlement and treasury from the first day.",
+      "## Who issues it, and where the dollars are",
+      "OUSD is issued by <strong>Bridge</strong>. Its reserves are held at <strong>BlackRock</strong>, <strong>Lead Bank</strong> and <strong>BNY</strong>, and attestations are published <strong>monthly</strong> at reserves.bridge.xyz/ousd.",
+      "## Who is behind it",
+      "Five founding partners, with <strong>equal initial stakes</strong>: <strong>Coinbase</strong>, <strong>Mastercard</strong>, <strong>Shopify</strong>, <strong>Stripe</strong> and <strong>Visa</strong>. Together they have committed <strong>more than USD 1 billion</strong> to OUSD liquidity. More than <strong>200 companies</strong> plan to integrate it, UBS, SBI Holdings and Jeeves among the recent names.",
+      "## Native, not wrapped",
+      "OUSD is issued <strong>natively on Solana</strong>. There is no wrapped version standing in for a token held on another chain, and no separate pool of liquidity to reconcile against an original: the OUSD on Solana is the instrument itself.",
+      "## The mint",
+      "<code>ousd2mJsPEckLHcSCDxyKD7NDGARZcfLbDZkKiatYHB</code>. It uses <strong>Token-2022</strong>, the token standard PayPal, Fiserv and Western Union use for their regulated stablecoins on Solana, with extensions such as confidential transfers built into the protocol rather than into a separate contract.",
+      "## The network it lands on",
+      "The Foundation puts Solana's stablecoin volume in 2026 at <strong>more than USD 5 trillion</strong>. Stablecoin supply on the network is <strong>USD 17.4 billion</strong>, up 18.8 per cent in a year; the number of addresses moving stablecoins in a week has more than doubled; the median transaction fee is about <strong>USD 0.0013</strong>.",
+      "Jamal Raees, who runs payments at the Solana Foundation, argued that a stablecoin is worth as much as the counterparties it can settle with. Another big name on the same rails: <a href=\"/news/samsung-wallet-puts-usdc-on-solana-in-82-million-pockets/\" title=\"Samsung Wallet adds USDC on Solana: 82m devices\">Samsung Wallet's USDC on Solana</a>.",
+    ],
+    faq: [
+      {
+        q: "What is Open USD?",
+        a: "<strong>OUSD</strong>, the stablecoin of Open Standard, issued by Bridge and redeemable 1:1 for US dollars. It has been live on Solana since 30 September 2026.",
+      },
+      {
+        q: "Who holds the reserves?",
+        a: "BlackRock, Lead Bank and BNY. Attestations are published monthly at reserves.bridge.xyz/ousd.",
+      },
+      {
+        q: "Who are the founding partners?",
+        a: "Coinbase, Mastercard, Shopify, Stripe and Visa, with equal initial stakes and more than USD 1 billion committed to liquidity.",
+      },
+      {
+        q: "What is the OUSD mint address on Solana?",
+        a: "<code>ousd2mJsPEckLHcSCDxyKD7NDGARZcfLbDZkKiatYHB</code>, a Token-2022 token.",
+      },
+    ],
+    expertise:
+      "The ownership is the unusual part. Most dollar stablecoins belong to one issuer and one balance sheet; OUSD has five founding partners who are each other's competitors in payments, with equal stakes, which is a bet that merchants and card networks would rather hold a dollar nobody in particular owns. Native issuance matters for the same treasury reason the Foundation gives: a wrapped token carries the risk of whatever bridge holds the original, and that is the line a credit committee reads first. As with any new ticker, check the mint address before accepting a payment; a token named OUSD at any other address is not this one.",
+  },
 ];
