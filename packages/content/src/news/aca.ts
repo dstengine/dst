@@ -250,4 +250,69 @@ export const items: NewsItem[] = [
       },
     ],
   },
+  {
+    slug: "abierto-mexicano-de-tenis-2027-tres-top-10",
+    createdAt: "2026-10-25T04:30:00+04:00",
+    updatedAt: "2026-10-25T04:30:00+04:00",
+    site: "aca",
+    image: "/covers/abierto-mexicano-de-tenis-2027-tres-top-10.jpg",
+    imageAlt: "Tres pelotas de tenis amarillas sobre una cancha azul junto a la red, con palmeras y una bahía al fondo",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Shelton, Cobolli y Tiafoe: tres Top 10 confirmados para el Abierto Mexicano de Tenis 2027",
+    cardTitle: "Tres Top 10 para el AMT 2027",
+    titleSeo: "Abierto de Acapulco 2027: Shelton, Cobolli y Tiafoe",
+    summary:
+      "El Abierto Mexicano de Tenis vuelve a Acapulco del 20 al 27 de febrero de 2027 con tres Top 10 confirmados: Ben Shelton, número 4 del mundo; Flavio Cobolli, campeón defensor, y Frances Tiafoe. La qualy costará 350 pesos el fin de semana, y los niños entran gratis.",
+    date: "2026-10-25",
+    city: "Acapulco",
+    country: "México",
+    source: {
+      name: "Abierto Mexicano Telcel presentado por HSBC",
+      url: "https://www.abiertomexicanodetenis.com/2026/10/21/tres-top-10-confirmados-para-el-abierto-mexicano-telcel-presentado-por-hsbc-2027/",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "Mextenis anunció el 21 de octubre los primeros nombres del <strong>Abierto Mexicano Telcel presentado por HSBC 2027</strong>, la edición XXXIV del ATP 500 de Acapulco, que se juega del <strong>20 al 27 de febrero de 2027</strong> en la <strong>Arena GNP Seguros</strong>. Son seis jugadores del Top 30, tres de ellos del Top 10.",
+      "## Los tres Top 10",
+      "<strong>Ben Shelton</strong>, número 4 del mundo, regresa tras el mejor año de su carrera: revalidó el Masters 1000 de Canadá y llegó a la final del US Open. <strong>Flavio Cobolli</strong>, número 6, vuelve a defender el título que ganó en febrero de 2026 al vencer en la final a <strong>Frances Tiafoe</strong>, hoy número 9, que también está confirmado.",
+      "## Los otros tres",
+      "El estadounidense <strong>Brandon Nakashima</strong> (número 17), finalista del Masters de Canadá; el argentino <strong>Francisco Cerúndolo</strong> (número 21), que debuta en Acapulco después de jugar en Los Cabos, y el italiano <strong>Lorenzo Musetti</strong> (número 26), que regresa tras un 2026 con lesiones. Mextenis anunciará más jugadores en los próximos días.",
+      "## La qualy y el Kids Day",
+      "El sábado y el domingo de la qualy la entrada costará <strong>350 pesos</strong> y los <strong>niños no pagan</strong>, con el tradicional Kids Day. Por primera vez, la <strong>ceremonia del draw</strong> del sábado, donde se definen los partidos de primera ronda, será abierta al público y contará con uno de los jugadores del cuadro principal.",
+      "## Boletos",
+      "Los boletos son <strong>100% digitales</strong> y se compran a través de Mextenis Account Manager by Ticketmaster, desde la página del torneo. Cada entrada lleva un código de barras dinámico que cambia constantemente para evitar falsificaciones. El torneo también estrena patrocinador: Clamato.",
+      "## El torneo",
+      "Fechas, sede y cómo llegar, en la guía del <a href=\"/eventos/abierto-mexicano-de-tenis-2027/\" title=\"Abierto Mexicano de Tenis 2027: 20–27 de febrero\">Abierto Mexicano de Tenis 2027</a>.",
+    ],
+    faq: [
+      {
+        q: "¿Quiénes juegan el Abierto Mexicano de Tenis 2027?",
+        a: "Hasta ahora están confirmados Ben Shelton, Flavio Cobolli, Frances Tiafoe, Brandon Nakashima, Francisco Cerúndolo y Lorenzo Musetti. Mextenis anunciará más nombres.",
+      },
+      {
+        q: "¿Cuándo es el torneo?",
+        a: "Del 20 al 27 de febrero de 2027, en la Arena GNP Seguros de Acapulco.",
+      },
+      {
+        q: "¿Cuánto cuesta la qualy?",
+        a: "350 pesos el sábado y el domingo de la qualy; los niños entran gratis.",
+      },
+      {
+        q: "¿Dónde se compran los boletos?",
+        a: "Desde abiertomexicanodetenis.com, que lleva a Mextenis Account Manager by Ticketmaster. Todos los boletos son digitales.",
+      },
+    ],
+    related: [
+      {
+        href: "/eventos/abierto-mexicano-de-tenis-2027/",
+        eyebrow: "20–27 de febrero",
+        title: "Abierto Mexicano de Tenis 2027",
+        text: "Fechas, sede y boletos del ATP 500 de Acapulco.",
+      },
+    ],
+    expertise:
+      "La qualy es la entrada más barata a la semana: 350 pesos por adulto, los niños gratis, y el sábado, por primera vez, la ceremonia del draw a la vista del público. Para una familia que quiere ver tenis de este nivel sin pagar el cuadro principal, es el fin de semana que conviene. Como los boletos son solo digitales y el código de barras cambia todo el tiempo, una captura de pantalla no sirve: descargue la app de Ticketmaster y entre a su cuenta antes de salir hacia la Arena.",
+  },
 ];
