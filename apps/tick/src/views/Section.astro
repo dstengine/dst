@@ -82,7 +82,6 @@ const blocks = promotedAll[lang]
     <p class="lede">{section.lede}</p>
   </section>
   <section class="container">
-    <SectionNav sections={allSections[lang]} current={`${p}${section.slug}/`} allHref={p} base={p} {...NAV[lang]} />
     <SectionFeed
       items={section.items}
       eventsBase={eventsBase(lang)}
@@ -92,6 +91,15 @@ const blocks = promotedAll[lang]
       headings={section.headings}
       where={site[lang].keyword}
     />
+    {/* The other subjects come after this one's list, not before it: a
+        reader who searched "Halloween" chooses another subject once the
+        list is read. Before this, the eleven chips took four rows at 320 (six in
+        Armenian) and put the first card 746px down, 882 on /am/ (scan
+        2026-10-24-halloween, hw-tick-04) — the move tick-04 made on the
+        front page. */}
+    <div class="section-ways">
+      <SectionNav sections={allSections[lang]} current={`${p}${section.slug}/`} allHref={p} base={p} {...NAV[lang]} />
+    </div>
   </section>
   {guide && (
     <section class="container section-guide">
@@ -109,6 +117,7 @@ const blocks = promotedAll[lang]
 </Layout>
 
 <style>
+  .section-ways { margin-top: var(--space-5); }
   .section-promoted { margin-top: var(--space-5); }
   .section-guide { margin-top: var(--space-5); }
 </style>

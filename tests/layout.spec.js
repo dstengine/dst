@@ -371,6 +371,29 @@ test("on a phone, an anchor and a ?q= link land clear of the sticky header", asy
   }
 });
 
+// A subject page's list comes before the way to the other subjects: the
+// eleven chips first took four rows at 320, six in Armenian, and put
+// Halloween's first card 746px down, 882 on /am/ (hw-tick-04). Every
+// section page the front page's chips lead to, in both languages.
+test("a tick section page shows its first card before the subject chips", async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 900 });
+  for (const home of ["/", "/am/"]) {
+    await page.goto(url("tick", home));
+    const hrefs = await page.locator(".chip-nav a").evaluateAll((els) => els.map((a) => a.getAttribute("href")));
+    const sections = [...new Set(hrefs)].filter((h) => h !== home && !h.includes("/calendar/"));
+    expect(sections.length, `${home}: section chips`).toBeGreaterThan(3);
+    for (const href of sections) {
+      await page.goto(url("tick", href));
+      const { card, chips } = await page.evaluate(() => ({
+        card: document.querySelector("main a.feed-card")?.getBoundingClientRect().top ?? null,
+        chips: document.querySelector("main .chip-nav")?.getBoundingClientRect().top ?? null,
+      }));
+      if (card === null || chips === null) continue;
+      expect(card, `${href}: the first card above the chips`).toBeLessThan(chips);
+    }
+  }
+});
+
 // The facts panel's label column is the panel's: a fixed 9rem broke "On this
 // calendar" and «Այս օրացույցում» over two lines beside one-line values
 // (scan 2026-10-24, net-25). Every label one line, every value at one x.
