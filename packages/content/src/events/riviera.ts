@@ -570,7 +570,7 @@ export const items: EventItem[] = [
   {
     slug: "after-dark-halloween-night-run-kite-beach-2026",
     createdAt: "2026-10-24T19:00:00+04:00",
-    updatedAt: "2026-10-26T02:15:00+04:00",
+    updatedAt: "2026-10-26T03:20:00+04:00",
     site: "riviera",
     image: "/covers/after-dark-halloween-night-run-kite-beach-2026.jpg",
     imageAlt: "Two runners with head torches on a pale beach at night, palm trees, a moon reflected in the sea and kites in the sky",
@@ -581,7 +581,7 @@ export const items: EventItem[] = [
     cardTitle: "After Dark night run, Kite Beach",
     titleSeo: "Kite Beach Halloween Night Run, 30 Oct, from Azizi Riviera",
     summary:
-      "Five Dubai running communities meet at SOIL on Kite Beach on Friday 30 October 2026 at 7:30pm for a night run along the beach, all paces welcome, with glow sticks, music and Halloween outfits optional. A Friday evening run for Azizi Riviera residents, the night before the Halloween races.",
+      "Halloween night run on Kite Beach, Friday 30 October 2026, 7:30pm from SOIL: five Dubai communities, all paces welcome. A Friday night out from Azizi Riviera.",
     start: "2026-10-30",
     startTime: "19:30",
     endTime: "21:30",
@@ -599,7 +599,7 @@ export const items: EventItem[] = [
       verifiedOn: "2026-10-26",
     },
     body: [
-      "Five of Dubai's running communities are putting on one night run together. <strong>After Dark</strong> meets at <strong>SOIL on Kite Beach</strong> on <strong>Friday 30 October 2026</strong> at <strong>7:30pm</strong>, runs along the beach after dark and finishes back at SOIL by 9:30pm.",
+      "Five Dubai communities are putting on one night run together. <strong>After Dark</strong> meets at <strong>SOIL on Kite Beach</strong> on <strong>Friday 30 October 2026</strong> at <strong>7:30pm</strong>, runs along the beach after dark and finishes back at SOIL by 9:30pm.",
       "## Who is running it",
       "Off Pace presents it with <strong>TINARC</strong>, <strong>KYN Hybrid</strong>, <strong>Wolfpack Fitness</strong> and <strong>Women Who Thrive</strong>. It is billed for <strong>all paces and all levels</strong>: come to run, to meet people, or for the atmosphere.",
       "## Glow sticks, music and costumes",

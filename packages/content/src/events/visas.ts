@@ -100,7 +100,7 @@ export const items: EventItem[] = [
   {
     slug: "spooky-sea-son-seaworld-abu-dhabi-2026",
     createdAt: "2026-10-24T19:00:00+04:00",
-    updatedAt: "2026-10-25T06:28:00+04:00",
+    updatedAt: "2026-10-26T03:20:00+04:00",
     site: "visas",
     image: "/covers/spooky-sea-son-seaworld-abu-dhabi-2026.jpg",
     imageAlt: "An aquarium window with fish and a manta ray, a carved pumpkin before the glass and a small family watching",
@@ -111,7 +111,7 @@ export const items: EventItem[] = [
     cardTitle: "Spooky Sea-son at SeaWorld Abu Dhabi",
     titleSeo: "SeaWorld Abu Dhabi Spooky Sea-son: UAE Halloween to 1 Nov",
     summary:
-      "SeaWorld Yas Island's Halloween runs daily until 1 November 2026: a new Spooky Live Show at One Ocean, storytime with Juniper and a candy treasure hunt, with single-day tickets from AED 320 and a Halloween sleepover on 31 October. For families new to the UAE, it is the capital's big Halloween day out.",
+      "Daily to 1 November 2026, from AED 320: SeaWorld Abu Dhabi's Halloween, with a Spooky Live Show and a candy hunt. A big day out for families new to the UAE.",
     start: "2026-10-03",
     end: "2026-11-01",
     startTime: "10:00",
