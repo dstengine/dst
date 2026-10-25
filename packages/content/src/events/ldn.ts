@@ -1615,7 +1615,7 @@ export const items: EventItem[] = [
   {
     slug: "sky-garden-halloween-dance-of-the-dead-2026",
     createdAt: "2026-10-12T00:36:00+04:00",
-    updatedAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-25T21:30:00+04:00",
     site: "ldn",
     image: "/covers/sky-garden-halloween-dance-of-the-dead-2026.jpg",
     imageAlt: "A tall tapering tower filled with green plants and small lit windows, bats circling its top and a crescent moon in its glass base, above a dark city skyline on a cream ground",
@@ -1635,24 +1635,27 @@ export const items: EventItem[] = [
     venue: "Sky Garden, 20 Fenchurch Street",
     geo: { name: "Sky Garden", lat: 51.51127, lng: -0.08354 },
     category: "Halloween",
-    tickets: { priceFrom: 38.5, currency: "GBP" },
+    // No ticket price: the £38.50 standing tickets have sold out, and a bar
+    // table's £25 a head is a minimum spend, not the price of a ticket.
+    tickets: { currency: "GBP" },
     organizer: "Rhubarb Hospitality Collection at Sky Garden",
     ticket: {
-      url: "https://www.designmynight.com/london/whats-on/live-music/halloween-at-sky-garden",
-      label: "Tickets at DesignMyNight",
+      url: "https://www.sevenrooms.com/experiences/skygardenbars/get-spooky-in-the-sky-5849390855340032",
+      label: "Book a bar table",
     },
     source: {
-      name: "DesignMyNight — Dance of the Dead: Sky Garden Halloween Party",
-      url: "https://www.designmynight.com/london/whats-on/live-music/halloween-at-sky-garden",
-      verifiedOn: "2026-10-12",
+      name: "Sky Garden Bars — Dance of the Dead",
+      url: "https://www.sevenrooms.com/experiences/skygardenbars/get-spooky-in-the-sky-5849390855340032",
+      verifiedOn: "2026-10-25",
     },
     body: [
       "Sky Garden is the glasshouse on top of 20 Fenchurch Street, the building Londoners call the Walkie-Talkie, and for two nights this Halloween it becomes a party: <strong>Dance of the Dead</strong>, on <strong>Friday 30</strong> and <strong>Saturday 31 October 2026</strong>.",
       "## Dates, times and tickets",
-      "Tickets are sold by arrival slot: <strong>6.30 to 9.30pm</strong>, <strong>8.45 to 10.45pm</strong> or <strong>9.30 to 10.45pm</strong>. Sky Garden's own page puts it at £35 a head; DesignMyNight, where its Book Now button leads, lists each ticket at <strong>£38.50</strong>.",
-      "Last entry on Fridays and Saturdays is at midnight. The ticket is standing only, with no seats.",
+      "Standing tickets were sold by arrival slot: <strong>6.30 to 9.30pm</strong>, <strong>8.45 to 10.45pm</strong> or <strong>9.30 to 10.45pm</strong>, at £35 a head on Sky Garden's own page and <strong>£38.50</strong> on DesignMyNight. By 25 October they had <strong>sold out</strong>.",
+      "Two ways in are left. A <strong>bar table</strong>, booked through Sky Garden Bars, comes with party access and a <strong>£25-a-head minimum spend</strong> on food and drink. Or book dinner at <strong>Darwin Brasserie</strong> or <strong>Fenchurch Restaurant</strong>, Sky Garden's two restaurants, and the party comes free. Sky Garden says bar tables are limited too.",
+      "Last entry on Fridays and Saturdays is at midnight, and the music runs until 2am.",
       "## What the ticket buys",
-      "A welcome cocktail, a Dead Man's Finger; <strong>two live sets from ALR Music</strong>; a DJ; and the view, which is the reason anyone climbs this high on a Saturday night. Fancy dress is encouraged.",
+      "A welcome cocktail, a Dead Man's Finger; <strong>two live sets from ALR Music</strong>; a DJ; and the view, which is the reason anyone climbs this high on a Saturday night. Fancy dress is encouraged. A bar-table booking lists the same live sets and DJ, but not the cocktail.",
       "## Before you go",
       "It is <strong>18+, with physical photo ID</strong>. The dress code is smart casual (no sportswear, flip-flops, shorts or football shirts), which a costume can satisfy if it tries. The venue is cashless, the kitchen takes its last orders at 10pm, and the open-air terrace shuts at 6pm, so the view is from behind glass.",
       "The garden is naturally ventilated, so dress for late October rather than for a nightclub. Sky Garden also warns that a lift out of service has reduced its capacity and that some visitors may not get in at their booked time: aim for the start of your slot, not the end.",
@@ -1668,7 +1671,7 @@ export const items: EventItem[] = [
       },
       {
         q: "How much are tickets?",
-        a: "Sky Garden quotes £35 a person; tickets on DesignMyNight, where its booking button leads, are listed at <strong>£38.50</strong>. A welcome cocktail, two live sets and a DJ are included.",
+        a: "Standing tickets, £35 on Sky Garden's own page and £38.50 on DesignMyNight, had sold out by 25 October. A bar table with party access now carries a <strong>£25-a-head minimum spend</strong> on food and drink, and dinner at Darwin Brasserie or Fenchurch Restaurant includes the party free.",
       },
       {
         q: "Is there an age limit or a dress code?",
