@@ -314,7 +314,8 @@ function judge(exp, read, from, to) {
   const reach = (n) => (perDay > 0 && Number.isFinite(n) ? addDays(to, Math.ceil(Math.max(0, n - smallest) / perDay)) : null);
   power.sampleOn = exp.sample ? reach(exp.sample) : null;
   power.liftOn = power.needForLift ? reach(power.needForLift) : null;
-  power.seesByDecideBy = base && exp.decideBy ? liftAt(base, smallest + perDay * Math.max(0, daysFrom(to, exp.decideBy)), comparisons) : null;
+  power.atDecideBy = exp.decideBy ? smallest + perDay * Math.max(0, daysFrom(to, exp.decideBy)) : null;
+  power.seesByDecideBy = base && exp.decideBy ? liftAt(base, power.atDecideBy, comparisons) : null;
 
   const warnings = [];
   if (read.srm && read.srm.p < 0.001) warnings.push(`sample ratio mismatch (p ${read.srm.p.toExponential(1)}): the split itself is broken, nothing else in this read can be trusted`);
@@ -328,13 +329,19 @@ function judge(exp, read, from, to) {
   if (power.seesAtRule && exp.lift && power.seesAtRule > exp.lift) {
     warnings.push(`the rule's ${exp.sample} per arm can only see lifts of ${pct(power.seesAtRule)} or more, not the ${pct(exp.lift)} the hypothesis is about; that needs ${fmtN(power.needForLift)} per arm`);
   }
+  // A rule with a date and no sample is decided on that date, so what
+  // matters is what the pace will have gathered by then.
+  const shortByDate = !exp.sample && exp.lift && power.seesByDecideBy && power.seesByDecideBy > exp.lift;
+  if (shortByDate) {
+    warnings.push(`by ${exp.decideBy}, at this pace, it can see lifts of ${pct(power.seesByDecideBy)} or more; the ${pct(exp.lift)} it is about needs ${fmtN(power.needForLift)} per arm${power.liftOn ? ` (≈ ${power.liftOn})` : ""}`);
+  }
 
   let status, verdict;
   const due = (exp.sample && smallest >= exp.sample) || (exp.decideBy && today >= exp.decideBy);
   if (warnings.some((w) => w.startsWith("sample ratio") || w.startsWith("one arm"))) status = "BROKEN";
   else if (!exp.sample && !exp.decideBy) status = "NO RULE";
   else if (due) status = "DUE";
-  else if (exp.decideBy && power.sampleOn && power.sampleOn > exp.decideBy) status = "UNDERPOWERED";
+  else if (exp.decideBy && ((power.sampleOn && power.sampleOn > exp.decideBy) || shortByDate)) status = "UNDERPOWERED";
   else status = "RUNNING";
   if (status === "DUE" || status === "NO RULE") {
     const best = others.filter((a, i) => pAdj[i] < ALPHA).sort((x, y) => (y.lift ?? 0) - (x.lift ?? 0))[0];
@@ -357,7 +364,7 @@ function print(exp, read, j, from, to) {
   const unit = exp.unit === "page" ? "impr" : "users";
   const total = exp.decideBy ? daysFrom(exp.start, exp.decideBy) : null;
   console.log(`\n# ${exp.id} · ${exp.unit} test · ${exp.hosts.length} host${exp.hosts.length > 1 ? "s" : ""} · ${from} → ${to} (day ${j.elapsed}${total ? ` of ${total}` : ""})`);
-  console.log(`  rule: ${exp.lift ? `lift ≥ ${pct(exp.lift)}` : "no lift named"} · ${exp.sample ? `${fmtN(exp.sample)} ${unit}/arm` : "no sample"} · ${exp.decideBy ? `by ${exp.decideBy}` : "no date"}`);
+  console.log(`  rule: ${exp.lift ? `lift ≥ ${pct(exp.lift)}` : "no lift named"} · ${exp.sample ? `${fmtN(exp.sample)} ${unit}/arm · ` : ""}${exp.decideBy ? `${exp.sample ? "or " : "decided on "}${exp.decideBy}` : "no date"}`);
   for (const a of read.arms) {
     const parts = [`  ${a.variant.padEnd(8)}`];
     if (exp.unit === "page") parts.push(`pages ${String(a.units).padStart(4)}`);
@@ -375,7 +382,9 @@ function print(exp, read, j, from, to) {
   const pw = j.power;
   console.log(`  status: ${j.status}${j.verdict ? ` — ${j.verdict}` : ""}`);
   if (j.status === "RUNNING" || j.status === "UNDERPOWERED") {
-    console.log(`  pace: ${fmtN(j.smallest)} of ${fmtN(exp.sample)} ${unit} in the smaller arm, ${j.perDay.toFixed(1)}/day → sample reached ${pw.sampleOn ?? "never at this pace"}`);
+    console.log(exp.sample
+      ? `  pace: ${fmtN(j.smallest)} of ${fmtN(exp.sample)} ${unit} in the smaller arm, ${j.perDay.toFixed(1)}/day → sample reached ${pw.sampleOn ?? "never at this pace"}`
+      : `  pace: ${fmtN(j.smallest)} ${unit} in the smaller arm, ${j.perDay.toFixed(1)}/day → ≈ ${fmtN(pw.atDecideBy)} per arm by ${exp.decideBy}`);
   }
   console.log(`  power: baseline ${rate(pw.baseline)}${read.baseline ? " (28 days before start)" : pw.baseline ? " (control so far)" : " — unknown, no clicks yet"}` +
     ` · sees now ≥ ${pct(pw.seesNow)}` + (pw.seesByDecideBy ? ` · by ${exp.decideBy} ≥ ${pct(pw.seesByDecideBy)}` : "") +

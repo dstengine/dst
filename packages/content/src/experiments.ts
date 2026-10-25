@@ -130,12 +130,19 @@ export const EXPERIMENTS: Experiment[] = [
       "An event page is clicked more often when its search result reads like the answer rather than the heading: " +
       "\"Name 2026: dates, prices & tips\" over \"Name, 7 Nov 2026\", and a description opening with the dates, the city and the price " +
       "over the summary's first sentence. Expect hook > plain by a fifth or more at the same position; a smaller lift is not worth " +
-      "a title Google is likelier to rewrite. Decided at 2,000 impressions per arm or after eight weeks, whichever comes first, " +
-      "by tools/ab-meta.mjs.",
+      "a title Google is likelier to rewrite. Decided after eight weeks, on 2026-12-19 " +
+      "(the launch rule also stopped at 2,000 impressions per arm, if sooner; dropped on 2026-10-25, see below), " +
+      "by tools/ab.mjs.",
     metric: "Search Console clicks ÷ impressions per variant on the event pages, since 2026-10-24, compared at matching average position",
-    // The rule as the hypothesis wrote it on launch day, nothing added.
+    // The launch rule was "2,000 impressions per arm or 19 Dec, whichever
+    // first". At the pages' 3.1% CTR in the 28 days before the start,
+    // 2,000 per arm can only tell a lift of +49% or more from noise, and
+    // it would have arrived around 6 Nov — the test would have been
+    // decided where the fifth it is about cannot be seen. Dropped on
+    // 2026-10-25 by the owner's decision, after one day of data (four
+    // clicks), before any outcome could steer it. By 19 Dec the test
+    // sees about +24%; a +20% lift needs about 13,400 per arm.
     lift: 0.2,
-    sample: 2000,
     decideBy: "2026-12-19",
   },
 ];
