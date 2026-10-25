@@ -45,12 +45,22 @@ const { facts, min = 2, class: className } = Astro.props;
     border-radius: var(--radius);
     background: var(--surface-sunk);
     display: grid;
+    /* The label column is the panel's, not each row's: as wide as its
+       longest label and never narrower than the 9rem it always was. A
+       fixed 9rem broke "On this calendar", "Opening night" and "Paying
+       inside" over two lines beside a one-line value in a panel with
+       hundreds of px to spare; sized per row, the values would start at a
+       different x on every line. The rows take the columns by subgrid. */
+    grid-template-columns: minmax(9rem, max-content) 1fr;
     gap: var(--space-2);
   }
   .event-glance-row {
     display: grid;
-    grid-template-columns: 9rem 1fr;
-    gap: var(--space-2);
+    grid-column: 1 / -1;
+    grid-template-columns: subgrid;
+    /* Its own, so a page that tightens the panel's gap (fest's guide)
+       tightens the rows, not the space between a label and its value. */
+    column-gap: var(--space-2);
     align-items: baseline;
   }
   .event-glance dt {
@@ -73,6 +83,7 @@ const { facts, min = 2, class: className } = Astro.props;
   /* A key/value table never scrolls sideways on a phone — the label is half
      the content, and taking it off screen orphans every value. It stacks. */
   @media (max-width: 560px) {
+    .event-glance { grid-template-columns: 1fr; }
     .event-glance-row { grid-template-columns: 1fr; gap: 0.15rem; }
   }
 </style>

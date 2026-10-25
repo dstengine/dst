@@ -242,6 +242,23 @@ test("the search placeholder is whole in the field at 320", async ({ page }) => 
   }
 });
 
+// The facts panel's label column is the panel's: a fixed 9rem broke "On this
+// calendar" and «Այս օրացույցում» over two lines beside one-line values
+// (scan 2026-10-24, net-25). Every label one line, every value at one x.
+test("a facts panel keeps each label on one line and its values on one x", async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  for (const path of ["/venues/aram-khachaturian-concert-hall/", "/am/venues/aram-khachaturian-concert-hall/"]) {
+    await page.goto(url("tick", path));
+    const rows = await page.locator(".event-glance-row").evaluateAll((els) => els.map((r) => {
+      const span = r.querySelector("dt span");
+      return { lines: Math.round(span.getBoundingClientRect().height / parseFloat(getComputedStyle(span).lineHeight)), x: Math.round(r.querySelector("dd").getBoundingClientRect().left) };
+    }));
+    expect(rows.length, `${path}: the panel has rows`).toBeGreaterThan(1);
+    expect(rows.filter((r) => r.lines > 1), `${path}: a two-line label`).toEqual([]);
+    expect(new Set(rows.map((r) => r.x)).size, `${path}: values start at one x`).toBe(1);
+  }
+});
+
 // A month still to come opens with its own days. Runs that began before it
 // sit under their own heading, dated by the day they close; on 24 October
 // the November page opened with three cards dated in October (tick-12).
