@@ -47,10 +47,13 @@ const jsonLd = specific.length > 0 ? {
 
 <style>
   .faq { display: flex; flex-direction: column; gap: var(--space-1); margin: var(--space-3) 0; }
+  /* The box draws the row and the summary inside it is what toggles, so the
+     padding lives on the summary and the answer rather than here. Padding on
+     the box was a band around the question that looked tappable and opened
+     nothing: on a one-line question only the middle 29px worked. */
   .faq-item {
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: var(--space-2) var(--space-3);
     background: var(--surface);
   }
   .faq-item summary {
@@ -62,6 +65,14 @@ const jsonLd = specific.length > 0 ? {
     align-items: center;
     justify-content: space-between;
     gap: var(--space-2);
+    /* The box's old padding, so the whole visible row is the target: 57px
+       for one line. 44px is the floor the network tests for, written down
+       in case a token ever shrinks the line. The inner radius keeps the
+       focus ring and the tap highlight, which now cover the row, inside
+       the box's rounded corners. */
+    padding: var(--space-2) var(--space-3);
+    min-height: 44px;
+    border-radius: calc(var(--radius) - 1px);
   }
   /* Native <details> markers differ by browser (a filled triangle in some,
      nothing styleable in others) and don't take an open/closed transition.
@@ -79,5 +90,12 @@ const jsonLd = specific.length > 0 ? {
     transition: transform 150ms ease;
   }
   .faq-item[open] summary::after { transform: rotate(-135deg); }
-  .faq-item p { margin: var(--space-1) 0 0; color: var(--ink-muted); }
+  /* Open, the summary keeps 8px under the question for the answer's gap, so
+     the question and its chevron stay put when the row opens. */
+  .faq-item[open] summary { padding-bottom: var(--space-1); }
+  /* Margin, not padding: the global cap on paragraphs, `max-width:
+     var(--measure)`, measures the border box, so side padding would narrow
+     every answer from 38rem to 35rem on a wide screen and re-wrap it. The
+     box's 1px border keeps the bottom margin inside the box. */
+  .faq-item p { margin: 0 var(--space-3) var(--space-2); color: var(--ink-muted); }
 </style>
