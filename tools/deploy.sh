@@ -32,7 +32,7 @@ CACHE="$REPO/.vercel/project-ids.env"   # .vercel/ is gitignored
 
 # Site -> Vercel project. The hub is plain `dst`; the *.dst.llc verticals
 # carry the prefix; a site on its own domain carries its own name.
-SITES=(dst llc visas riviera mbr palmcentral eco api fwf musical nyc42 ldn lnd cmx mxo sol2go vien tokiohotel tick aivideo tea l0n aca fest)
+SITES=(dst llc visas riviera mbr palmcentral eco api fwf musical nyc42 ldn lnd cmx mxo sol2go vien tokiohotel tick aivideo tea l0n aca fest random)
 project_for() {
   case "$1" in
     dst) echo "dst" ;;
@@ -40,7 +40,7 @@ project_for() {
     # projects carry their own names instead of the group prefix. The five
     # .lol ones are year-long experiments and are independent of the group
     # and of each other — shared code, never a shared footprint.
-    fwf|musical|nyc42|ldn|lnd|cmx|mxo|sol2go|vien|tokiohotel|tick|aivideo|tea|l0n|aca) echo "$1" ;;
+    fwf|musical|nyc42|ldn|lnd|cmx|mxo|sol2go|vien|tokiohotel|tick|aivideo|tea|l0n|aca|random) echo "$1" ;;
     # The guides are served under fest.one by the archive's rewrite, and the
     # archive's own project already holds the name "fest".
     fest) echo "fest-guides" ;;

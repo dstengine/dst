@@ -56,6 +56,7 @@ takes the whole group or none of it.
 | `tick` | tick.am | Ինչ կա Երևանում — Yerevan events, English at `/`, Armenian at `/am/` | Feed |
 | `aivideo` | aivideo.zone | AI video: generative models, tools and AI editing | Feed |
 | `tea` | tea.ceo | Tea brewing guides and the tea times of the day, in British English | Feed |
+| `random` | random.directory | RandomX guides: the algorithm, the hardware, the miners and the coins | Feed |
 | `l0n` | l0n.uk | London's big dates for the year ahead, published by GB7 | Feed |
 | `aca` | acapulco.world | Qué hacer en Acapulco: conciertos, tenis y pádel | Feed |
 

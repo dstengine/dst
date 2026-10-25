@@ -31535,6 +31535,296 @@
       ]
     }
   },
+  "random.directory": {
+    "/covers/about.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/about-480.avif"
+        ],
+        [
+          768,
+          "/covers/about-768.avif"
+        ],
+        [
+          1024,
+          "/covers/about-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/about-480.webp"
+        ],
+        [
+          768,
+          "/covers/about-768.webp"
+        ],
+        [
+          1024,
+          "/covers/about-1024.webp"
+        ]
+      ]
+    },
+    "/covers/coins-mined-with-randomx.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/coins-mined-with-randomx-480.avif"
+        ],
+        [
+          768,
+          "/covers/coins-mined-with-randomx-768.avif"
+        ],
+        [
+          1024,
+          "/covers/coins-mined-with-randomx-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/coins-mined-with-randomx-480.webp"
+        ],
+        [
+          768,
+          "/covers/coins-mined-with-randomx-768.webp"
+        ],
+        [
+          1024,
+          "/covers/coins-mined-with-randomx-1024.webp"
+        ]
+      ]
+    },
+    "/covers/p2pool.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/p2pool-480.avif"
+        ],
+        [
+          768,
+          "/covers/p2pool-768.avif"
+        ],
+        [
+          1024,
+          "/covers/p2pool-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/p2pool-480.webp"
+        ],
+        [
+          768,
+          "/covers/p2pool-768.webp"
+        ],
+        [
+          1024,
+          "/covers/p2pool-1024.webp"
+        ]
+      ]
+    },
+    "/covers/randomx-memory-requirements.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/randomx-memory-requirements-480.avif"
+        ],
+        [
+          768,
+          "/covers/randomx-memory-requirements-768.avif"
+        ],
+        [
+          1024,
+          "/covers/randomx-memory-requirements-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/randomx-memory-requirements-480.webp"
+        ],
+        [
+          768,
+          "/covers/randomx-memory-requirements-768.webp"
+        ],
+        [
+          1024,
+          "/covers/randomx-memory-requirements-1024.webp"
+        ]
+      ]
+    },
+    "/covers/randomx-on-apple-silicon.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/randomx-on-apple-silicon-480.avif"
+        ],
+        [
+          768,
+          "/covers/randomx-on-apple-silicon-768.avif"
+        ],
+        [
+          1024,
+          "/covers/randomx-on-apple-silicon-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/randomx-on-apple-silicon-480.webp"
+        ],
+        [
+          768,
+          "/covers/randomx-on-apple-silicon-768.webp"
+        ],
+        [
+          1024,
+          "/covers/randomx-on-apple-silicon-1024.webp"
+        ]
+      ]
+    },
+    "/covers/randomx-v2.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/randomx-v2-480.avif"
+        ],
+        [
+          768,
+          "/covers/randomx-v2-768.avif"
+        ],
+        [
+          1024,
+          "/covers/randomx-v2-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/randomx-v2-480.webp"
+        ],
+        [
+          768,
+          "/covers/randomx-v2-768.webp"
+        ],
+        [
+          1024,
+          "/covers/randomx-v2-1024.webp"
+        ]
+      ]
+    },
+    "/covers/randomx-variants.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/randomx-variants-480.avif"
+        ],
+        [
+          768,
+          "/covers/randomx-variants-768.avif"
+        ],
+        [
+          1024,
+          "/covers/randomx-variants-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/randomx-variants-480.webp"
+        ],
+        [
+          768,
+          "/covers/randomx-variants-768.webp"
+        ],
+        [
+          1024,
+          "/covers/randomx-variants-1024.webp"
+        ]
+      ]
+    },
+    "/covers/what-is-randomx.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/what-is-randomx-480.avif"
+        ],
+        [
+          768,
+          "/covers/what-is-randomx-768.avif"
+        ],
+        [
+          1024,
+          "/covers/what-is-randomx-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/what-is-randomx-480.webp"
+        ],
+        [
+          768,
+          "/covers/what-is-randomx-768.webp"
+        ],
+        [
+          1024,
+          "/covers/what-is-randomx-1024.webp"
+        ]
+      ]
+    },
+    "/covers/xmrig.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/xmrig-480.avif"
+        ],
+        [
+          768,
+          "/covers/xmrig-768.avif"
+        ],
+        [
+          1024,
+          "/covers/xmrig-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/xmrig-480.webp"
+        ],
+        [
+          768,
+          "/covers/xmrig-768.webp"
+        ],
+        [
+          1024,
+          "/covers/xmrig-1024.webp"
+        ]
+      ]
+    }
+  },
   "riviera.dst.llc": {
     "/covers/a-500-metre-bridge-opens-on-the-way-into-town.jpg": {
       "width": 1536,

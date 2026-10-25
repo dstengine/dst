@@ -21,11 +21,13 @@
     "tea": "dark mahogany and oxblood leather, deep bottle-green plaster walls, antique brass and gilt catching the firelight, warm cream china",
     "l0n": "pale stone ground with Oxford blue and old gold, one small red accent",
     "aca": "warm sand ground with deep Pacific teal and sunset coral",
-    "fest": "deep teal-black ground with dark slate-teal layers, lime signal green and pale lime, small pale cool grey-green highlights"
+    "fest": "deep teal-black ground with dark slate-teal layers, lime signal green and pale lime, small pale cool grey-green highlights",
+    "random": "deep indigo and signal orange on a warm off-white ground"
   },
   "idioms": {
     "aivideo": "cyberpunk",
-    "tea": "gouache"
+    "tea": "gouache",
+    "random": "vector"
   },
   "covers": {
     "nyc42": {
@@ -1139,6 +1141,16 @@
       "que-hacer-en-acapulco-noviembre-2026": "two theatre spotlights standing on the beach sand pointing at the sea at dusk, beside a palm leaf",
       "taquillas-arena-gnp-seguros-forum-mundo-imperial": "a ticket booth window with a striped awning, a palm tree beside it and a velvet rope queue barrier",
       "abierto-mexicano-de-tenis-2027-tres-top-10": "three yellow tennis balls on a blue court beside the net, palm trees and a wide bay with hills behind"
+    },
+    "random": {
+      "what-is-randomx": "a processor chip seen from above, its pins fanning out into rows of small square cells",
+      "randomx-v2": "two blocks built of small square cells standing side by side on a flat ground, the right block half as tall again as the left",
+      "randomx-memory-requirements": "a row of memory modules standing upright like books on a shelf, each printed with a grid of small square cells",
+      "randomx-variants": "a ring of keys of different shapes hanging from one iron loop, each key's bit cut as a pattern of square cells",
+      "coins-mined-with-randomx": "a scattering of plain round blank tokens on a ruled ledger page, each token stamped with a different small grid of square cells and nothing else",
+      "p2pool": "a ring of small houses joined by lines into a chain around a round pool of water, each roof marked with one square cell",
+      "xmrig": "a small stationary engine with a large flywheel and two pistons, its plain flat housing printed with a grid of square cells and nothing else",
+      "randomx-on-apple-silicon": "a small square box-shaped desktop computer on a desk beside a desk lamp, its flat top printed with a grid of square cells"
     }
   },
   "pages": {
@@ -1429,6 +1441,9 @@
     },
     "aca": {
       "acerca": "a small sailboat on a wide curved bay with green hills rising behind it"
+    },
+    "random": {
+      "about": "an open card-index drawer, its cards printed with rows of small square cells"
     }
   }
 }

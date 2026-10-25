@@ -1,0 +1,20 @@
+/* random.directory — indigo ink on paper, signal orange on the dark ground:
+   the two colours of a printed datasheet and of a terminal at night. The
+   covers are flat vector drawings in the same indigo and orange, so the
+   type and the pictures read as one set. They began as linocuts and moved
+   to vector on the first day: seven of nine linocuts signed themselves in
+   a corner, which tools/covers.mjs says to fix by changing the idiom. */
+:root {
+  --accent-light: #2B3A8C;
+  --accent-ink-light: #1C2766;
+  --accent-tint-light: #E9ECF7;
+  --accent-dark: #F2994A;
+  --accent-ink-dark: #F8C08C;
+  --accent-tint-dark: #2A2016;
+}
+
+/* A count stays with its word and a date stays whole: the guides wrap
+   "2080 MiB", "25 October 2026" and short command-line flags in a span of
+   this class. A class rather than &nbsp;, so copied text, the feed and the
+   Markdown copies keep plain spaces. */
+.nowrap { white-space: nowrap; }

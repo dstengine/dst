@@ -122,4 +122,5 @@ CLI upload carries no `.git`, so the script always builds it.
 `aivideo` (aivideo.zone, AI video news, 6 October 2026) was created linked:
 an independent site like the .lol ones, no links to the network and none
 from it. `tea` (tea.ceo, tea guides and tea times, 11 October 2026) was
-created the same way.
+created the same way, and so was `random` (random.directory, RandomX
+guides, 25 October 2026).

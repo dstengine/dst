@@ -34,6 +34,7 @@ const SITES = {
   tick: { mark: "tools/marks/tick.svg", close: "172 172 680 680" },
   aivideo: { mark: "tools/marks/aivideo.svg", close: "160 160 704 704" },
   tea: { mark: "tools/marks/tea.svg", close: "160 160 704 704" },
+  random: { mark: "tools/marks/random.svg", close: "160 160 704 704" },
   ldn: { label: "ldn" },
   lnd: { label: "lnd" },
   cmx: { label: "cmx" },

@@ -1,0 +1,32 @@
+# random.directory — RandomX guides: the algorithm, the hardware, the miners and the coins
+
+> An independent reference to RandomX, the proof of work Monero has run since 30 November 2019 and other coins run in one form or another: how a hash is made, what RandomX v2 changes, how much memory and what kind of machine it needs, the variants and the coins built on them, and the software that mines them. Written in English. Every figure names where it came from.
+
+How this site works, in four rules:
+
+- **Every figure names where it came from.** A memory size, a parameter or a release date is the specification's, the source code's or the publishing project's, and the guide says which and when it was checked.
+- **Our own measurements say they are ours.** Figures from machines we run are marked as such, with the machine and the conditions.
+- **No price talk, no promise of earnings.** The guides are about the algorithm and the software, not what a coin is worth or what a miner will make.
+- **Nothing here is paid for.** No pool, coin or software project pays to be mentioned, ranked or linked.
+
+## What a reader finds here
+
+- [Guides](https://random.directory/guides/): what RandomX is, RandomX v2, memory requirements, the variants (rx/0, rx/2, rx/wow, rx/arq and others), the coins that use it, P2Pool, XMRig, and RandomX on Apple Silicon.
+- One page per subject once it has two guides: [algorithm](https://random.directory/algorithm/), [hardware](https://random.directory/hardware/) and [mining](https://random.directory/mining/).
+- [About](https://random.directory/about/): the rules above, written out at length.
+- [Everything in one file](https://random.directory/llms-full.txt): every page as Markdown. Each page is also at its own address with `.md` appended.
+
+## Where the figures come from
+
+The RandomX specification, design notes and release notes in the tevador/RandomX repository; the source code and release notes of XMRig and P2Pool; Monero's own repository for where its switch to RandomX v2 stands; and, marked as ours, measurements on a Mac mini M1. Each guide names its source and the date it was checked.
+
+## Guides
+
+- [What is RandomX? The CPU proof of work, explained](https://random.directory/guides/what-is-randomx/): RandomX is the proof of work Monero has run since 30 November 2019: random programs executed in a virtual machine over a 2080 MiB dataset, built so that an ordinary CPU stays the efficient way to mine. How one hash is made, and why it needs that much memory.
+- [RandomX v2: what changes and when Monero switches](https://random.directory/guides/randomx-v2/): RandomX v2, released in March 2026, makes each hash about 53% more work — longer programs, AES in the main loop, a rarer rounding change and a deeper prefetch — for a small loss of hashrate. Monero has not switched yet: the change waits for a hard fork with no date set.
+- [How much memory does RandomX need?](https://random.directory/guides/randomx-memory-requirements/): RandomX needs 2080 MiB of shared memory to mine in fast mode, 256 MiB to verify in light mode, and a 2 MiB scratchpad for every mining thread. Where each figure comes from, what huge pages do for it, and how much free RAM a machine needs in practice.
+- [RandomX variants: rx/0, rx/2, rx/wow, rx/arq and more](https://random.directory/guides/randomx-variants/): RandomX is a family: Monero's rx/0 and the coming rx/2, and variants for Wownero, ArQmA, Graft, Safex and YadaCoin, each with its own salt and some with smaller scratchpads or shorter loops. What each RandomX variant changes, read from XMRig's source.
+- [Which coins use RandomX?](https://random.directory/guides/coins-mined-with-randomx/): Monero is the coin RandomX was built for, but not the only one: XMRig's own coin table lists Monero, Zephyr and Townforge on standard RandomX, and Wownero, ArQmA, Graft and YadaCoin on variants of it. What each runs, and what such a list does not tell you.
+- [P2Pool: mining RandomX without a pool operator](https://random.directory/guides/p2pool/): P2Pool is a decentralised Monero pool: a sidechain of its own, merge-mined with Monero, that pays each miner straight from the block, with no fee and nobody holding the funds. Its main, mini and nano chains, what it needs to run, and how a RandomX miner connects.
+- [XMRig: the RandomX miner, set up and explained](https://random.directory/guides/xmrig/): XMRig is the open-source miner most RandomX mining runs on: CPU first, with OpenCL for AMD and a plugin for NVIDIA, and official builds for Windows, Linux, macOS and FreeBSD. Its RandomX algorithm names, the settings that matter, and the 1% donation.
+- [RandomX on Apple Silicon: what an M1 Mac can do](https://random.directory/guides/randomx-on-apple-silicon/): RandomX runs on Apple Silicon through its ARM64 JIT and hardware AES, but without the huge pages it gets on Linux: macOS on arm64 has no 2 MiB pages to give the dataset. What we measured on a Mac mini M1, and the ARM fix in RandomX 1.2.2 and 2.0.1.

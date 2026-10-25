@@ -1,0 +1,22 @@
+<!-- random.directory's mark: a three-by-three grid of cells in signal orange
+     on indigo, the site's two accents, five of them inked and four left
+     open — a scratchpad, or a card index, filled at random. The four open
+     cells are detail (data-detail) and drop out below 48px, where the five
+     solid squares read better on their own. Centred, with the margin inside
+     the crop, so a circle keeps every corner cell. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <rect width="1024" height="1024" fill="#2B3A8C"/>
+  <g fill="#F2994A">
+    <rect x="232" y="232" width="160" height="160" rx="20"/>
+    <rect x="632" y="232" width="160" height="160" rx="20"/>
+    <rect x="432" y="432" width="160" height="160" rx="20"/>
+    <rect x="632" y="432" width="160" height="160" rx="20"/>
+    <rect x="232" y="632" width="160" height="160" rx="20"/>
+  </g>
+  <g fill="none" stroke="#F2994A" stroke-width="22">
+    <rect data-detail="" x="443" y="243" width="138" height="138" rx="12"/>
+    <rect data-detail="" x="243" y="443" width="138" height="138" rx="12"/>
+    <rect data-detail="" x="443" y="643" width="138" height="138" rx="12"/>
+    <rect data-detail="" x="643" y="643" width="138" height="138" rx="12"/>
+  </g>
+</svg>

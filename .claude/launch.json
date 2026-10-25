@@ -208,6 +208,19 @@
         "4350"
       ],
       "port": 4350
+    },
+    {
+      "name": "random",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "astro",
+        "dev",
+        "--root",
+        "apps/random",
+        "--port",
+        "4354"
+      ],
+      "port": 4354
     }
   ]
 }

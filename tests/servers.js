@@ -23,6 +23,7 @@ export const PORTS = {
   l0n: 4351,
   aca: 4352,
   fest: 4353,
+  random: 4354,
 };
 
 /** Where a site's server is ready to be asked, when that is not "/".

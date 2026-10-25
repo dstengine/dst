@@ -40,6 +40,8 @@ const SITES = [
   { app: "aivideo", host: "aivideo.zone" },
   // Tea guides and the tea times of the day, independent like aivideo.
   { app: "tea", host: "tea.ceo" },
+  // RandomX guides, independent like tea.
+  { app: "random", host: "random.directory" },
   // London's big dates on a .uk domain, published by GB7 (gb7.uk).
   { app: "l0n", host: "l0n.uk" },
   // Acapulco, in Spanish, on its own domain.
@@ -917,7 +919,7 @@ describe("shipped SVG", () => {
 describe("news feeds", () => {
   const FEEDS = [
     "cmx", "dst", "eco", "fwf", "ldn", "llc", "lnd", "mbr", "musical", "mxo",
-    "nyc42", "palmcentral", "riviera", "sol2go", "tick", "vien", "visas", "aivideo", "tea", "l0n", "aca",
+    "nyc42", "palmcentral", "riviera", "sol2go", "tick", "vien", "visas", "aivideo", "tea", "l0n", "aca", "random",
   ];
   const read = (app) => {
     const file = path.join(REPO, "apps", app, "dist", "rss.xml");

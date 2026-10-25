@@ -29,8 +29,10 @@ import { items as musical } from "./musical.ts";
 import { items as aivideo } from "./aivideo.ts";
 // tea.ceo is independent too: how to brew tea, and the tea times of the day.
 import { items as tea } from "./tea.ts";
+// random.directory is independent too: RandomX, the miners and the coins.
+import { items as random } from "./random.ts";
 
-const BY_SITE: Record<string, NewsItem[]> = { dst, llc, visas, riviera, mbr, palmcentral, eco, fwf, nyc42, ldn, lnd, l0n, aca, cmx, mxo, sol2go, vien, tick, musical, aivideo, tea };
+const BY_SITE: Record<string, NewsItem[]> = { dst, llc, visas, riviera, mbr, palmcentral, eco, fwf, nyc42, ldn, lnd, l0n, aca, cmx, mxo, sol2go, vien, tick, musical, aivideo, tea, random };
 
 export const allNews: NewsItem[] = Object.values(BY_SITE).flat();
 

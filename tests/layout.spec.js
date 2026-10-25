@@ -66,6 +66,12 @@ const PAGES = [
   { site: "tea", path: "/schedule/" },
   { site: "tea", path: "/guides/how-to-make-a-proper-cup-of-tea/" },
   { site: "tea", path: "/green-tea/" },
+  // random.directory sets algorithm names and command lines in <code>
+  // inside running text, the same risk as aivideo's prompts.
+  { site: "random", path: "/" },
+  { site: "random", path: "/guides/randomx-variants/" },
+  { site: "random", path: "/guides/p2pool/" },
+  { site: "random", path: "/algorithm/" },
   // fest.one has no menu and a row of a guide's pages under every h1; the
   // tickets page carries the longest lists and the most links in a line.
   { site: "fest", path: "/" },

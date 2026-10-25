@@ -17,7 +17,7 @@ import sharp from "sharp";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const APPS = ["dst", "llc", "visas", "riviera", "mbr", "palmcentral", "eco", "fwf", "musical",
-  "nyc42", "ldn", "lnd", "cmx", "mxo", "sol2go", "vien", "tokiohotel", "tick", "aivideo", "tea", "l0n", "aca", "fest"];
+  "nyc42", "ldn", "lnd", "cmx", "mxo", "sol2go", "vien", "tokiohotel", "tick", "aivideo", "tea", "l0n", "aca", "fest", "random"];
 
 // The page whose words go on the card, where it is not the front page.
 // fest.one's was /festivals/ until its hub moved to / (23 Oct 2026).

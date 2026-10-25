@@ -26,6 +26,8 @@ export const HOSTS = {
   tea: "tea.ceo",
   l0n: "l0n.uk",
   aca: "acapulco.world",
+  // RandomX guides, independent of the group.
+  random: "random.directory",
   // Festival guides, served under fest.one through the archive's rewrite
   // (~/.claude/skills/event-page/BOOTSTRAP.md); the archive keeps / itself.
   fest: "fest.one",

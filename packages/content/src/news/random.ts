@@ -1,0 +1,442 @@
+import type { NewsItem } from "../types.ts";
+
+// random.directory: RandomX, the proof of work, and the software and coins
+// built on it. Guides rather than news — a memory size is still true after
+// the next release — filed under /guides/. Every entry is tagged with one of
+// three subjects, Algorithm, Hardware or Mining; the subject pages
+// (apps/random/src/sections.ts) are built from those tags.
+//
+// The voice is plain technical English. Every figure comes from the
+// specification, the source code or the project that published it, and the
+// guide names which. Figures from machines we run ourselves say so, with the
+// machine and the conditions. No prices and no earnings: they change by the
+// hour, and the algorithm changes by the release.
+
+export const items: NewsItem[] = [
+
+  {
+    slug: "what-is-randomx",
+    createdAt: "2026-10-25T22:10:00+04:00",
+    updatedAt: "2026-10-25T22:10:00+04:00",
+    site: "random",
+    image: "/covers/what-is-randomx.jpg",
+    imageAlt: "A flat illustration of a processor chip in indigo and orange, its pins running out into circuit traces across the picture",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    featured: 1,
+    title: "What is RandomX? The CPU proof of work, explained",
+    summary:
+      "RandomX is the proof of work Monero has run since 30 November 2019: random programs executed in a virtual machine over a 2080 MiB dataset, built so that an ordinary CPU stays the efficient way to mine. How one hash is made, and why it needs that much memory.",
+    date: "2026-10-25",
+    category: "Guide",
+    tags: ["Algorithm"],
+    source: {
+      name: "RandomX README and specification (tevador/RandomX on GitHub)",
+      url: "https://github.com/tevador/RandomX",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "RandomX is a proof-of-work algorithm built for general-purpose CPUs. Each hash runs a set of randomly generated programs in a virtual machine whose instruction set — integer maths, floating-point maths and branches — is translated into the processor's own machine code on the fly. The outputs are folded into a <span class=\"nowrap\">256-bit</span> result with the Blake2b hash. It was designed as the proof of work for Monero, and Monero switched to it on <strong><span class=\"nowrap\">30 November 2019</span></strong>.",
+      "The point of the design is in its first sentence: the work is the kind of work a CPU already does well. A chip built only for RandomX would need most of what a CPU has — a floating-point unit, an instruction decoder, branch handling, large caches — so its advantage over the processor in an ordinary computer stays small.",
+      "## How one hash is made",
+      "<strong>The key and the cache.</strong> Every hash depends on a key, and on Monero the key is the hash of a block in the chain. From the key, RandomX builds a <strong><span class=\"nowrap\">256 MiB</span> cache</strong> with Argon2d: <span class=\"nowrap\">262,144 blocks</span> of <span class=\"nowrap\">1 KiB</span>, three passes, one lane. On Monero the key changes every <span class=\"nowrap\">2048 blocks</span>, about <span class=\"nowrap\">2.8 days</span>, with a delay of <span class=\"nowrap\">64 blocks</span>, about two hours, so a miner has time to prepare the next one.",
+      "<strong>The dataset.</strong> From the cache, RandomX expands a read-only <strong>dataset of <span class=\"nowrap\">2080 MiB</span></strong> — a <span class=\"nowrap\">2 GiB</span> base of <span class=\"nowrap\">2,147,483,648 bytes</span> plus <span class=\"nowrap\">33,554,368 bytes</span> of extra — one 64-byte item at a time. All mining threads share it.",
+      "<strong>The scratchpad.</strong> Each thread has its own <strong><span class=\"nowrap\">2 MiB</span> scratchpad</strong>, filled from the input with an AES-based generator. It is split in three levels that mirror a CPU's caches: the first <span class=\"nowrap\">16 KiB</span>, the first <span class=\"nowrap\">256 KiB</span> and the whole <span class=\"nowrap\">2 MiB</span>.",
+      "<strong>The programs.</strong> The virtual machine runs <strong><span class=\"nowrap\">8 programs</span></strong> per hash, each of <span class=\"nowrap\">256 instructions</span> in RandomX v1, and each program loops <strong><span class=\"nowrap\">2048 times</span></strong>. Every loop reads the scratchpad and one 64-byte item of the dataset, at an address that is only known when the previous loop has finished — which is what makes the dataset impossible to skip.",
+      "<strong>The result.</strong> The scratchpad is hashed with AES, and Blake2b turns what is left into the <span class=\"nowrap\">256-bit</span> hash that is compared with the network's target.",
+      "## Fast mode and light mode",
+      "RandomX can run in two modes that give the same results. <strong>Fast mode</strong> builds the whole <span class=\"nowrap\">2080 MiB</span> dataset once for each key and reads it for every hash; it is the mode for mining. <strong>Light mode</strong> keeps only the <span class=\"nowrap\">256 MiB</span> cache and works out each dataset item when it is needed, which is much slower; it is meant for checking a proof, not for producing one. The <a href=\"/guides/randomx-memory-requirements/\" title=\"How much memory RandomX needs in fast mode, light mode and per thread\">memory guide</a> has what that means for a machine.",
+      "## What a CPU needs for it",
+      "The RandomX README lists what efficient mining asks of a processor: a <span class=\"nowrap\">64-bit</span> architecture, an IEEE 754 floating-point unit, hardware AES (AES-NI on x86, the cryptography extensions on ARMv8), <span class=\"nowrap\">16 KiB</span> of L1, <span class=\"nowrap\">256 KiB</span> of L2 and <span class=\"nowrap\">2 MiB</span> of L3 cache per mining thread, support for large memory pages, and at least <span class=\"nowrap\">2.5 GiB</span> of free RAM per NUMA node. By its own count, most Intel and AMD processors made since <span class=\"nowrap\">2011 qualify</span>.",
+      "Memory speed matters as well as size. The README puts DDR3 at about 1500 to <span class=\"nowrap\">2000 hashes</span> a second per memory channel and DDR4 at about 4000 to 6000, depending on frequency and timings, so a fast processor on one channel waits on its memory.",
+      "## The audits",
+      "Between May and <span class=\"nowrap\">August 2019</span>, before Monero switched, RandomX was audited by four independent teams: Trail of Bits, X41 D-SEC, Kudelski Security and Quarkslab, coordinated by OSTIF. None found a critical vulnerability; several changes to the algorithm and the code were made because of them. Arweave, an early adopter of RandomX, paid for the first audit, and donations from the Monero community paid for the other three.",
+      "## What came next",
+      "In <span class=\"nowrap\">March 2026</span> a second version of the algorithm was released, with longer programs and AES inside the main loop; Monero has not switched to it yet. The <a href=\"/guides/randomx-v2/\" title=\"RandomX v2: the four changes, the cost per hash and Monero's switch\">RandomX v2 guide</a> has the changes and where the switch stands, and the <a href=\"/guides/randomx-variants/\" title=\"RandomX variants and what each one changes\">variants guide</a> has the versions other coins run.",
+    ],
+    faq: [
+      {
+        q: "Who created RandomX?",
+        a: "RandomX was designed by the developer known as tevador as a proof of work for Monero, and its reference code is published in the tevador/RandomX repository on GitHub. Monero switched to it on 30 November 2019.",
+      },
+      {
+        q: "Is RandomX ASIC-resistant?",
+        a: "It is designed to keep the advantage of specialised hardware small, not to make such hardware impossible. A chip for RandomX has to carry most of what a CPU carries — a floating-point unit, branch handling, large caches and fast memory — so it ends up much like a CPU. The README adds that the key must change and must not be chosen by the miner for that to hold.",
+      },
+      {
+        q: "Can RandomX be mined in a web browser?",
+        a: "Not efficiently. The README calls web mining infeasible: the dataset needs more than 2 GiB of memory, and neither JavaScript nor WebAssembly supports the directed rounding of floating-point operations that RandomX uses.",
+      },
+    ],
+  },
+
+  {
+    slug: "randomx-v2",
+    createdAt: "2026-10-25T22:05:00+04:00",
+    updatedAt: "2026-10-25T22:05:00+04:00",
+    site: "random",
+    image: "/covers/randomx-v2.jpg",
+    imageAlt: "A flat illustration of two blocks of small square cells standing side by side, one indigo and one orange",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    featured: 2,
+    title: "RandomX v2: what changes and when Monero switches",
+    summary:
+      "RandomX v2, released in March 2026, makes each hash about 53% more work — longer programs, AES in the main loop, a rarer rounding change and a deeper prefetch — for a small loss of hashrate. Monero has not switched yet: the change waits for a hard fork with no date set.",
+    date: "2026-10-25",
+    category: "Guide",
+    tags: ["Algorithm"],
+    source: {
+      name: "RandomX v2 design note and release notes (tevador/RandomX on GitHub); Monero pull request 10038",
+      url: "https://github.com/tevador/RandomX/blob/master/doc/design_v2.md",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "RandomX v2 is the first change to the algorithm itself since Monero adopted it in 2019. It was merged into the reference code on <span class=\"nowrap\">17 February 2026</span> and released as <strong>RandomX 2.0 on <span class=\"nowrap\">25 March 2026</span></strong>. It is not a new algorithm: the cache, the dataset and the scratchpad are the sizes they were, and in the specification's table of parameters the program size is the only one that differs between v1 and v2. What changes is how much work one hash does with them.",
+      "## The four changes",
+      "<strong>Longer programs.</strong> Each of the eight programs in a hash grows from <span class=\"nowrap\">256 instructions</span> to <strong>384</strong>. The design note gives the reason: processors have become much faster since 2019 and memory has not. A Ryzen 9 9950X is more than <span class=\"nowrap\">1.5 times</span> as fast as the 2019 Ryzen 9 3950X in most benchmarks, but only 20 to <span class=\"nowrap\">25% faster</span> in RandomX, because both wait about 50 to <span class=\"nowrap\">55 nanoseconds</span> for a line from memory. Longer programs give a fast core something to do while it waits.",
+      "<strong>AES in the main loop.</strong> The two groups of floating-point registers are now mixed with AES rather than XOR, which doubles the AES work per hash. The note says this fills a gap where the processor sat idle waiting for the scratchpad, so it costs little — and that it means specialised hardware has to build AES into the virtual machine itself, not only into the step that fills the scratchpad.",
+      "<strong>A rarer rounding change.</strong> In v1 the CFROUND instruction changes the floating-point rounding mode on every loop. x86 processors were not built for that, and the note puts its cost at up to 10% of hashrate on Ryzen — an easy advantage for a chip that was. In v2 it changes the mode only about one time in sixteen.",
+      "<strong>A deeper prefetch.</strong> The dataset is read two loops ahead instead of one, which goes with the longer programs: more time between asking for a line and needing it.",
+      "## What it costs per hash",
+      "The pull request counts the work. A v1 hash is 4,194,304 virtual-machine instructions and 262,144 AES operations, <strong>4,456,448 in all</strong>; a v2 hash is <span class=\"nowrap\">6,291,456 instructions</span> and 524,288 AES operations, <strong>6,815,744 in all</strong> — 52.9% more.",
+      "The hashrate falls by much less than that, and on some machines it rises. In the design note's own tests a Ryzen 9 9950X at <span class=\"nowrap\">285 W</span> went from 27,186 to <span class=\"nowrap\">26,792 hashes</span> a second, 98.6% of its v1 speed, while doing 50.7% more work per joule. A Ryzen 7 3700X kept 85.4% of its speed and an Intel Core i7-8650U at <span class=\"nowrap\">15 W</span> kept 77.3%; a Ryzen AI 9 HX 370 at <span class=\"nowrap\">28 W</span> got faster, at 108%. The design note's point is efficiency: on every machine it tested, the work done per joule went up, by between 16% and 67%.",
+      "## When Monero switches",
+      "Not yet. As of <span class=\"nowrap\">25 October 2026</span> Monero still runs v1. The change to Monero itself is pull request 10038, \"support RandomX V2 and commitments in v17\", opened in <span class=\"nowrap\">August 2025</span> and still open, last updated in mid-<span class=\"nowrap\">October 2026</span>. As its title says, it is planned for protocol version 17, which means a hard fork, and no date has been set. Monero's last network upgrade was on <span class=\"nowrap\">13 August 2022</span>, at block 2,688,888.",
+      "The software is ready ahead of the network. XMRig added RandomX v2 in version 6.26.0 on <span class=\"nowrap\">28 March 2026</span>, under the algorithm name <code>rx/2</code>. P2Pool's v5.0 beta of <span class=\"nowrap\">1 October 2026</span> lists RandomX v2 support among its new features, but it runs only on the beta stress network for FCMP++ and Carrot, Monero's planned privacy upgrade, and refuses to run on the main P2Pool chains.",
+      "Until the fork, mining Monero means mining <code>rx/0</code>, and a miner set to <code>rx/2</code> would produce hashes the network rejects. The <a href=\"/guides/xmrig/\" title=\"XMRig, the RandomX miner: algorithms, settings and the donation\">XMRig guide</a> has how a miner is told which one to run.",
+    ],
+    faq: [
+      {
+        q: "Does RandomX v2 need more memory?",
+        a: "No. The cache stays at 256 MiB, the dataset at 2080 MiB and the scratchpad at 2 MiB per thread. In the specification's parameter table the only value that differs between v1 and v2 is the program size, 256 instructions against 384.",
+      },
+      {
+        q: "Is RandomX v2 live on Monero?",
+        a: "Not as of 25 October 2026. The change is Monero pull request 10038, planned for protocol version 17, and it needs a hard fork for which no date has been set. Until then Monero runs RandomX v1, rx/0.",
+      },
+      {
+        q: "Which miners support RandomX v2?",
+        a: "XMRig from version 6.26.0, released on 28 March 2026, under the name rx/2. The reference library has it from RandomX 2.0, released on 25 March 2026, and the 2.0.1 release of 10 May 2026 fixed a rare wrong hash on ARM and RISC-V.",
+      },
+    ],
+  },
+
+  {
+    slug: "randomx-memory-requirements",
+    createdAt: "2026-10-25T22:00:00+04:00",
+    updatedAt: "2026-10-25T22:00:00+04:00",
+    site: "random",
+    image: "/covers/randomx-memory-requirements.jpg",
+    imageAlt: "A flat illustration of three memory modules standing upright, each faced with a grid of orange square cells",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    featured: 3,
+    title: "How much memory does RandomX need?",
+    titleSeo: "RandomX memory requirements: 2080 MiB, 256 MiB, 2 MiB",
+    summary:
+      "RandomX needs 2080 MiB of shared memory to mine in fast mode, 256 MiB to verify in light mode, and a 2 MiB scratchpad for every mining thread. Where each figure comes from, what huge pages do for it, and how much free RAM a machine needs in practice.",
+    date: "2026-10-25",
+    category: "Guide",
+    tags: ["Hardware"],
+    source: {
+      name: "RandomX specification and README (tevador/RandomX on GitHub)",
+      url: "https://github.com/tevador/RandomX/blob/master/doc/specs.md",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "RandomX uses three pieces of memory, and the figure people quote — about <span class=\"nowrap\">2 GB</span> — is the biggest of them. All three sizes are set in the specification and are the same in RandomX v1 and v2.",
+      "## The three pieces",
+      "<strong>The dataset: <span class=\"nowrap\">2080 MiB</span>, shared.</strong> A read-only block of <span class=\"nowrap\">2,147,483,648 bytes</span> plus <span class=\"nowrap\">33,554,368 bytes</span> of extra, built once from the cache and read by every mining thread. It is rebuilt when the key changes — on Monero, every <span class=\"nowrap\">2048 blocks</span>, about <span class=\"nowrap\">2.8 days</span>. Only fast mode, the mode for mining, has one.",
+      "<strong>The cache: <span class=\"nowrap\">256 MiB</span>, shared.</strong> <span class=\"nowrap\">262,144 blocks</span> of <span class=\"nowrap\">1 KiB</span>, made from the key with Argon2d. The dataset is built from it. In light mode there is no dataset and each item is worked out from the cache when it is needed: the same hash, much more slowly. That is the mode for verifying blocks, not for mining them.",
+      "<strong>The scratchpad: <span class=\"nowrap\">2 MiB</span> per thread.</strong> Every mining thread has its own, split into levels of <span class=\"nowrap\">16 KiB</span>, <span class=\"nowrap\">256 KiB</span> and <span class=\"nowrap\">2 MiB</span> that are meant to sit in the processor's L1, L2 and L3 caches. This is the figure behind the README's requirement of <span class=\"nowrap\">2 MiB</span> of L3 cache per mining thread, and it is why miners such as XMRig choose a thread count from the size of the L3 cache: on a processor with <span class=\"nowrap\">16 MiB</span> of L3, eight scratchpads fill it, and a ninth has nowhere to go but main memory.",
+      "## What a machine needs",
+      "For mining, the README asks for <strong>at least <span class=\"nowrap\">2.5 GiB</span> of free RAM per NUMA node</strong>. That covers the <span class=\"nowrap\">2080 MiB</span> dataset, the <span class=\"nowrap\">256 MiB</span> cache it is built from and a <span class=\"nowrap\">2 MiB</span> scratchpad per thread, with some room to spare. \"Per NUMA node\" matters on servers with more than one processor socket: the dataset is best kept in the memory next to the cores that read it, so a two-socket machine wants that much free on each side.",
+      "Free means free. A computer with <span class=\"nowrap\">4 GiB</span> of RAM and a desktop running has rarely got <span class=\"nowrap\">2.5 GiB</span> to give, and a dataset that is pushed out to swap makes every hash wait on the disk. The README notes that the requirement of more than <span class=\"nowrap\">2 GiB</span> rules out many low-end machines, such as the IoT devices that make up large botnets — and makes web mining infeasible.",
+      "## Bandwidth, not only size",
+      "Every loop of every program reads a 64-byte line of the dataset at an address that cannot be known in advance, so a processor spends much of each hash waiting on memory. The README's rule of thumb is about 1500 to <span class=\"nowrap\">2000 hashes</span> a second per channel of DDR3 and 4000 to 6000 per channel of DDR4, depending on frequency and timings. A fast processor with one memory module installed is held to one channel's worth.",
+      "## Huge pages",
+      "The README lists support for large memory pages among RandomX's requirements. With ordinary <span class=\"nowrap\">4 KiB</span> pages, a <span class=\"nowrap\">2080 MiB</span> dataset spans more than half a million pages, and almost every random read also misses the processor's table of page addresses. Huge pages of <span class=\"nowrap\">2 MiB</span> cut that to about a thousand. On Linux they have to be reserved; P2Pool's own instructions reserve 3072 of them, <span class=\"nowrap\">6 GiB</span>, because monerod, P2Pool and XMRig each want some. XMRig can also put the dataset in <span class=\"nowrap\">1 GiB</span> pages, on Linux only.",
+      "Not every system has them. On a Mac with Apple Silicon we found no <span class=\"nowrap\">2 MiB</span> pages to be had at all — the <a href=\"/guides/randomx-on-apple-silicon/\" title=\"RandomX on Apple Silicon: what we measured on an M1 Mac\">Apple Silicon guide</a> has what we measured.",
+    ],
+    faq: [
+      {
+        q: "Can you mine RandomX with 2 GB of RAM?",
+        a: "Not in fast mode. The dataset alone is 2080 MiB, more than 2 GiB, before the cache, the scratchpads and the operating system. Light mode runs in 256 MiB but is much slower and is meant for verifying, not mining.",
+      },
+      {
+        q: "Does every mining thread need its own dataset?",
+        a: "No. All threads share one dataset of 2080 MiB; each thread has only its own 2 MiB scratchpad. On a server with several NUMA nodes, a copy per node is faster, which is why the README asks for 2.5 GiB of free RAM per node.",
+      },
+      {
+        q: "How many threads should a RandomX miner run?",
+        a: "As a rule, no more than one for every 2 MiB of L3 cache, because each thread's scratchpad is meant to stay in that cache. Miners such as XMRig work the number out from the cache size by default.",
+      },
+    ],
+  },
+
+  {
+    slug: "randomx-variants",
+    createdAt: "2026-10-25T21:55:00+04:00",
+    updatedAt: "2026-10-25T21:55:00+04:00",
+    site: "random",
+    image: "/covers/randomx-variants.jpg",
+    imageAlt: "A flat illustration of a bunch of keys of different shapes on rings, in indigo and orange, one fob cut with square cells",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "RandomX variants: rx/0, rx/2, rx/wow, rx/arq and more",
+    summary:
+      "RandomX is a family: Monero's rx/0 and the coming rx/2, and variants for Wownero, ArQmA, Graft, Safex and YadaCoin, each with its own salt and some with smaller scratchpads or shorter loops. What each RandomX variant changes, read from XMRig's source.",
+    date: "2026-10-25",
+    category: "Guide",
+    tags: ["Algorithm"],
+    source: {
+      name: "XMRig source code, src/crypto/randomx/randomx.cpp and src/base/crypto/Algorithm.h (xmrig/xmrig on GitHub)",
+      url: "https://github.com/xmrig/xmrig/blob/master/src/crypto/randomx/randomx.cpp",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "RandomX was written to be configured. Its parameters — the salt for the cache, the size of the scratchpad, the length of the programs, how often each instruction appears — are constants a coin can change, and several coins have. The result is a family of algorithms that share the design and give completely different hashes. XMRig, the miner most of them use, keeps every variant it supports in one file, and that file is the source for this list.",
+      "## Why a variant gives different hashes",
+      "Every variant has its own <strong>Argon salt</strong>, the string mixed into the cache at the start. A different salt means a different cache, a different dataset and therefore a different hash for the same input, so hardware or software tuned to one variant computes nothing useful for another. Some variants also change the amount of work, which changes the hashrate a machine gets.",
+      "None of the variants in XMRig's source changes the size of the dataset: they all need the same <span class=\"nowrap\">2080 MiB</span> to mine in fast mode.",
+      "## The variants",
+      "<strong><code>rx/0</code> — RandomX, the reference configuration.</strong> What Monero runs today. Salt <code>RandomX\\x03</code>, three Argon2 passes on one lane, a <span class=\"nowrap\">2 MiB</span> scratchpad, <span class=\"nowrap\">8 programs</span> of <span class=\"nowrap\">256 instructions</span>, each looping <span class=\"nowrap\">2048 times</span>.",
+      "<strong><code>rx/2</code> — RandomX v2.</strong> The reference configuration with programs of <span class=\"nowrap\">384 instructions</span> and the four v2 changes: the rarer CFROUND, AES in the main loop, the prefetch two loops ahead, and commitments. Monero plans to switch to it in a hard fork for which no date has been set; the <a href=\"/guides/randomx-v2/\" title=\"RandomX v2: the four changes, the cost per hash and Monero's switch\">RandomX v2 guide</a> has the detail.",
+      "<strong><code>rx/wow</code> — RandomWOW, for Wownero.</strong> Salt <code>RandomWOW\\x01</code>. Programs loop <span class=\"nowrap\">1024 times</span> instead of 2048, but there are 16 of them instead of 8; the scratchpad is <span class=\"nowrap\">1 MiB</span> with a <span class=\"nowrap\">128 KiB</span> second level; several instructions appear more or less often than in rx/0, and the AES keys that fill the scratchpad are its own.",
+      "<strong><code>rx/arq</code> — RandomARQ, for ArQmA.</strong> The lightest of the family: one Argon2 pass, <span class=\"nowrap\">4 programs</span> looping <span class=\"nowrap\">1024 times</span>, and a scratchpad of only <span class=\"nowrap\">256 KiB</span> with a <span class=\"nowrap\">128 KiB</span> second level — a quarter of the per-hash work of rx/0 and an eighth of its scratchpad.",
+      "<strong><code>rx/graft</code> — RandomGRAFT, for Graft.</strong> Two Argon2 lanes instead of one, programs of <span class=\"nowrap\">280 instructions</span>, and the two rotate instructions rebalanced.",
+      "<strong><code>rx/sfx</code> — RandomSFX, for Safex Cash.</strong> The reference configuration with its own salt, <code>RandomSFX\\x01</code>, and nothing else changed.",
+      "<strong><code>rx/yada</code> — RandomYada, for YadaCoin.</strong> Salt <code>RandomXYadaCoin\\x03</code>, four Argon2 passes, and a lower target latency for SuperscalarHash, the function that builds the dataset, at <span class=\"nowrap\">150 instead</span> of 170.",
+      "An older variant, RandomXL for Loki, appears in XMRig's documentation of algorithm names but is no longer in its source.",
+      "## Choosing one in a miner",
+      "A miner has to be told which variant to run, or told the coin and left to work it out. XMRig takes it from the pool when the pool supports algorithm negotiation, from a pool's <code>coin</code> setting, or from its <code>algo</code> setting with the names above. The wrong variant does not fail loudly: the miner hashes at full speed and every share is rejected. The <a href=\"/guides/coins-mined-with-randomx/\" title=\"Which coins use RandomX and which variant each runs\">coins guide</a> has which coin runs which.",
+      "For a new coin, the RandomX repository has its own configuration guidelines, which set out which parameters can safely be changed and by how much.",
+    ],
+    faq: [
+      {
+        q: "What is rx/0?",
+        a: "The name XMRig and other miners use for RandomX in its reference configuration, the version Monero has run since 30 November 2019. RandomX v2, which Monero plans to adopt in a future hard fork, is rx/2.",
+      },
+      {
+        q: "Do RandomX variants need less memory?",
+        a: "Not for the dataset: every variant in XMRig's source keeps the 2080 MiB dataset of fast mode. Some have smaller scratchpads per thread — 1 MiB for Wownero's rx/wow, 256 KiB for ArQmA's rx/arq — so they need less CPU cache per thread.",
+      },
+    ],
+  },
+
+  {
+    slug: "coins-mined-with-randomx",
+    createdAt: "2026-10-25T21:50:00+04:00",
+    updatedAt: "2026-10-25T21:50:00+04:00",
+    site: "random",
+    image: "/covers/coins-mined-with-randomx.jpg",
+    imageAlt: "A flat illustration of plain round tokens in indigo and orange scattered over a ruled ledger page, a few stamped with small grids of square cells",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Which coins use RandomX?",
+    titleSeo: "Which coins use RandomX? Monero, Wownero, Zephyr and more",
+    summary:
+      "Monero is the coin RandomX was built for, but not the only one: XMRig's own coin table lists Monero, Zephyr and Townforge on standard RandomX, and Wownero, ArQmA, Graft and YadaCoin on variants of it. What each runs, and what such a list does not tell you.",
+    date: "2026-10-25",
+    category: "Guide",
+    tags: ["Mining"],
+    source: {
+      name: "XMRig source code, src/base/crypto/Coin.cpp (xmrig/xmrig on GitHub); RandomX README",
+      url: "https://github.com/xmrig/xmrig/blob/master/src/base/crypto/Coin.cpp",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "RandomX was designed for Monero, and Monero is still by far the best-known coin that runs it. But the algorithm is open and configurable, and other coins have taken it up, either as it is or as a variant of their own. The most practical list of them is the one inside the miner: XMRig keeps a table of the coins it knows by name, with the algorithm and the target time between blocks for each.",
+      "## Coins on standard RandomX, rx/0",
+      "<strong>Monero (XMR).</strong> The coin RandomX was built for, on it since <span class=\"nowrap\">30 November 2019</span>, with a block every <span class=\"nowrap\">120 seconds</span>. Monero plans to move to RandomX v2 in a future hard fork — the <a href=\"/guides/randomx-v2/\" title=\"RandomX v2: the four changes, the cost per hash and Monero's switch\">RandomX v2 guide</a> has where that stands.",
+      "<strong>Zephyr (ZEPH).</strong> Runs the same rx/<span class=\"nowrap\">0 as</span> Monero, with the same 120-second block target in XMRig's table. Same algorithm does not mean same coin: Zephyr has its own chain, its own pools and its own addresses.",
+      "<strong>Townforge.</strong> Also rx/0, with a much shorter target of <span class=\"nowrap\">30 seconds</span> a block.",
+      "## Coins on RandomX variants",
+      "<strong>Wownero (WOW)</strong> runs RandomWOW, <code>rx/wow</code>. <strong>ArQmA (ARQ)</strong> runs RandomARQ, <code>rx/arq</code>, the lightest variant. <strong>Graft (GRFT)</strong> runs RandomGRAFT, <code>rx/graft</code>. <strong>YadaCoin (YDA)</strong> runs RandomYada, <code>rx/yada</code>. In XMRig's table Wownero targets a block every <span class=\"nowrap\">300 seconds</span> and the other three every 120. The <a href=\"/guides/randomx-variants/\" title=\"RandomX variants and what each one changes\">variants guide</a> has what each variant changes.",
+      "XMRig also supports <code>rx/sfx</code>, the variant for Safex Cash, as an algorithm, though Safex has no entry in its table of coins.",
+      "## Beyond the miner's table",
+      "The RandomX README names <strong>Arweave</strong> as one of the early adopters of RandomX; Arweave paid for the first of the four security audits in 2019. Outside both lists, the QRL project's improvement proposal QIP-009, of <span class=\"nowrap\">November 2019</span>, set out a move of its mining to RandomX.",
+      "## What a list like this does not tell you",
+      "A coin in a miner's table is a coin the miner knows how to talk to. It says nothing about whether that network is busy, how many people mine it, what it is worth, or whether a pool for it is still running — and coins come and go faster than miners' source code is tidied. Before pointing a machine at any of them, check that the chain is producing blocks and that the pool is paying. This site does not track prices or earnings, and will not.",
+    ],
+    faq: [
+      {
+        q: "Is Monero the only coin that uses RandomX?",
+        a: "No. XMRig's coin table lists Monero, Zephyr and Townforge on standard RandomX (rx/0), and Wownero, ArQmA, Graft and YadaCoin on variants of it. The RandomX README also names Arweave as an early adopter.",
+      },
+      {
+        q: "Can I mine Zephyr with my Monero settings?",
+        a: "With the same algorithm, yes — both run rx/0 — but not with the same pool or address. Zephyr is a separate chain, so the miner needs a Zephyr pool and a Zephyr wallet address.",
+      },
+    ],
+  },
+
+  {
+    slug: "p2pool",
+    createdAt: "2026-10-25T21:45:00+04:00",
+    updatedAt: "2026-10-25T21:45:00+04:00",
+    site: "random",
+    image: "/covers/p2pool.jpg",
+    imageAlt: "A flat illustration of a ring of small houses around a round blue pool, each house joined to the next by a thin line",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "P2Pool: mining RandomX without a pool operator",
+    titleSeo: "P2Pool: decentralised RandomX mining for Monero",
+    summary:
+      "P2Pool is a decentralised Monero pool: a sidechain of its own, merge-mined with Monero, that pays each miner straight from the block, with no fee and nobody holding the funds. Its main, mini and nano chains, what it needs to run, and how a RandomX miner connects.",
+    date: "2026-10-25",
+    category: "Guide",
+    tags: ["Mining"],
+    source: {
+      name: "P2Pool README and releases (SChernykh/p2pool on GitHub)",
+      url: "https://github.com/SChernykh/p2pool",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "Most Monero mining goes through pools, and a pool is a server somebody runs: it decides which transactions go into the blocks its miners find, holds their earnings until it pays them, and can be shut down. Solo mining avoids all of that, but a small miner may wait a very long time for a block. P2Pool is the third way. It is a pool with no operator — a chain of its own, run by the miners' own nodes, that pays every miner directly from each Monero block the pool finds.",
+      "## How it works",
+      "P2Pool keeps a <strong>sidechain</strong> of its own, merge-mined with Monero. Miners find shares on the sidechain, which is far easier than finding a Monero block, and each share stays in the payout window for up to <strong><span class=\"nowrap\">2160 sidechain</span> blocks</strong>, about six hours. When anyone in the pool finds a Monero block, its reward is split between every wallet with a share in the window, in proportion to the difficulty of their shares — and paid out in that same block. There is no pool wallet; nobody holds anyone's money.",
+      "From its own comparison: <strong><span class=\"nowrap\">0% fee</span></strong>, no payout fee, and a minimum payout of about <strong><span class=\"nowrap\">0.00027 XMR</span></strong>, the Monero block reward divided by 2160. A centralised pool's minimum is typically 0.001 to <span class=\"nowrap\">0.01 XMR</span>, and solo mining pays only in whole blocks of <span class=\"nowrap\">0.6 XMR</span> or more. The sidechain makes a block every <span class=\"nowrap\">10 seconds</span> by default.",
+      "One caveat is in the README itself: if the pool as a whole finds Monero blocks less often than once every six hours — below about 15 MH/s — not every share is paid. Over time, it says, payouts average out to what a regular pool would pay.",
+      "## Main, mini and nano",
+      "There are three public sidechains. <strong>Main</strong> is the default; <strong>mini</strong> and <strong>nano</strong> are separate sidechains, joined by starting P2Pool with <code><span class=\"nowrap\">--mini</span></code> or <code><span class=\"nowrap\">--nano</span></code> — never both. A share counts only on the chain it was found on. The README does not rank them, but its own example starts P2Pool with <code><span class=\"nowrap\">--mini</span></code>, and each chain has a status page of its own. Each has its own peer-to-peer port: <span class=\"nowrap\">37889 for</span> main, <span class=\"nowrap\">37888 for</span> mini, <span class=\"nowrap\">37890 for</span> nano.",
+      "## What it needs",
+      "<strong>A synced Monero node.</strong> monerod v0.18.0.0 or newer, started with <code><span class=\"nowrap\">--zmq-pub</span> tcp://127.0.0.1:18083</code>, which P2Pool cannot work without. The README recommends v0.18.4.6 or newer; the newest Monero release on <span class=\"nowrap\">25 October 2026</span> was v0.18.5.4, of 17 October.",
+      "<strong>P2Pool itself</strong>, given the wallet address: <code>./p2pool <span class=\"nowrap\">--host</span> 127.0.0.1 <span class=\"nowrap\">--wallet</span> YOUR_ADDRESS <span class=\"nowrap\">--mini</span></code>. The first sync takes five to ten minutes. The address can be a primary one, starting with 4, or a subaddress given with <code><span class=\"nowrap\">--subaddress</span></code> alongside the primary. Wallet addresses are public on P2Pool, so the README recommends a new wallet just for it.",
+      "<strong>A miner</strong>, pointed at P2Pool rather than at a pool: <code>./xmrig <span class=\"nowrap\">-o</span> 127.0.0.1:3333</code>. The wallet address goes to P2Pool, not to the miner; any address set in XMRig is ignored. One P2Pool node can serve many miners. The <a href=\"/guides/xmrig/\" title=\"XMRig, the RandomX miner: algorithms, settings and the donation\">XMRig guide</a> has the miner's side.",
+      "<strong>Open ports</strong> help: 18080 for Monero and the sidechain's port for P2Pool. And on Linux, huge pages for all three programs — the README reserves 3072 of them with <code>sudo sysctl vm.nr_hugepages=3072</code>. It also advises running the lot under a separate, restricted user account.",
+      "## Versions",
+      "The newest stable release on <span class=\"nowrap\">25 October 2026</span> was <strong>P2Pool v4.18.1</strong>, of <span class=\"nowrap\">22 September 2026</span>. A v5.0 beta followed on 1 October with support for RandomX v2 and Monero's coming FCMP++ upgrade, but it runs only on the beta stress network and refuses the main, mini and nano chains. It also drops subaddress support, because of changes in Monero's consensus rules. When Monero forks, both Monero and P2Pool have to be updated as soon as the new versions are out.",
+    ],
+    faq: [
+      {
+        q: "Does P2Pool charge a fee?",
+        a: "No. P2Pool has a 0% pool fee and no payout fee. Rewards are paid directly from each Monero block the pool finds to the wallets with shares in the payout window.",
+      },
+      {
+        q: "Should I use P2Pool main, mini or nano?",
+        a: "They are three separate sidechains, joined with no flag, --mini or --nano, and a share counts only on the chain it was found on. The P2Pool README does not rank them, but its own example command uses --mini. All three have the same 0% fee.",
+      },
+      {
+        q: "Where does the wallet address go when mining on P2Pool?",
+        a: "To P2Pool, with --wallet. The miner, such as XMRig, connects to P2Pool at 127.0.0.1:3333 and any wallet address set in the miner is ignored.",
+      },
+    ],
+  },
+
+  {
+    slug: "xmrig",
+    createdAt: "2026-10-25T21:40:00+04:00",
+    updatedAt: "2026-10-25T21:40:00+04:00",
+    site: "random",
+    image: "/covers/xmrig.jpg",
+    imageAlt: "A flat illustration of a small stationary engine with a large indigo flywheel and an orange housing pierced by a grid of square cells",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "XMRig: the RandomX miner, set up and explained",
+    summary:
+      "XMRig is the open-source miner most RandomX mining runs on: CPU first, with OpenCL for AMD and a plugin for NVIDIA, and official builds for Windows, Linux, macOS and FreeBSD. Its RandomX algorithm names, the settings that matter, and the 1% donation.",
+    date: "2026-10-25",
+    category: "Guide",
+    tags: ["Mining"],
+    action: {
+      url: "https://github.com/xmrig/xmrig/releases",
+      label: "XMRig releases",
+      title: "XMRig's official releases, with SHA256 checksums",
+      icon: "download",
+    },
+    source: {
+      name: "XMRig README, release notes and source code (xmrig/xmrig on GitHub)",
+      url: "https://github.com/xmrig/xmrig",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "XMRig is an open-source miner for RandomX and several other proofs of work, published under the GPL <span class=\"nowrap\">3.0 licence</span>. It mines on the CPU first and foremost, which is what RandomX is for; it can also use AMD graphics cards through OpenCL, and NVIDIA cards through a separate CUDA plugin. Official builds are published for Windows, Linux, macOS and FreeBSD, including arm64 builds for macOS and Windows.",
+      "## Versions",
+      "The newest release on <span class=\"nowrap\">25 October 2026</span> was <strong>XMRig 6.26.0</strong>, of <span class=\"nowrap\">28 March 2026</span>. Its headline change is support for <strong>RandomX v2</strong>, alongside faster code for RISC-V processors. Version 6.25.0, of <span class=\"nowrap\">23 December 2025</span>, had added RISC-V support with a JIT compiler and solo-mining support for Monero's FCMP++ hard fork. Every release is published with SHA256 checksums, and a download is worth checking against them.",
+      "## The RandomX algorithms",
+      "XMRig names each RandomX variant it supports: <code>rx/0</code> for RandomX as Monero runs it, <code>rx/2</code> for RandomX v2, and <code>rx/wow</code>, <code>rx/arq</code>, <code>rx/graft</code>, <code>rx/sfx</code> and <code>rx/yada</code> for the variants. It learns which one to run in one of three ways: from the pool, if the pool supports algorithm negotiation; from a pool's <code>coin</code> setting, which saves changing the setting when the coin forks; or from a pool's <code>algo</code> setting. The <a href=\"/guides/randomx-variants/\" title=\"RandomX variants and what each one changes\">variants guide</a> has what each name means.",
+      "## The settings that matter",
+      "<strong>The pool.</strong> <code><span class=\"nowrap\">-o</span></code> gives the pool's address and <code><span class=\"nowrap\">-u</span></code> the wallet or login. On <a href=\"/guides/p2pool/\" title=\"P2Pool, decentralised RandomX mining for Monero\">P2Pool</a>, the address is the local node, <code><span class=\"nowrap\">-o</span> 127.0.0.1:3333</code>, and the wallet is set in P2Pool rather than in XMRig.",
+      "<strong>Huge pages.</strong> On by default, and switched off with <code><span class=\"nowrap\">--no-huge-pages</span></code>. On Linux, <code><span class=\"nowrap\">--randomx-1gb-pages</span></code> puts the RandomX dataset in <span class=\"nowrap\">1 GiB</span> pages. If the system has none reserved, XMRig mines without them, more slowly; the <a href=\"/guides/randomx-memory-requirements/\" title=\"How much memory RandomX needs in fast mode, light mode and per thread\">memory guide</a> has why they matter.",
+      "<strong>The mode.</strong> <code><span class=\"nowrap\">--randomx-mode</span></code> takes <code>auto</code>, <code>fast</code> or <code>light</code>. Fast mode needs the <span class=\"nowrap\">2080 MiB</span> dataset and is the one for mining.",
+      "<strong>Threads.</strong> XMRig picks a thread count itself, from the processor's cache, and on most machines that guess is the one to start from: RandomX wants about <span class=\"nowrap\">2 MiB</span> of L3 cache per thread.",
+      "## The donation",
+      "By default XMRig mines for its developers <strong>1% of the time</strong>, one minute in every hundred, which its usage text spells out. The <code><span class=\"nowrap\">--donate-level</span></code> option can raise it; in the source the minimum is also 1, so lowering it to zero means changing the source and building XMRig yourself, as the README says.",
+      "## Before the first share",
+      "XMRig has a built-in benchmark, <code><span class=\"nowrap\">--bench=1M</span></code> up to <code><span class=\"nowrap\">--bench=10M</span></code>, which hashes a fixed number of times and prints a result hash that can be compared with a known one — a quick check that the build computes RandomX correctly on that machine before it is pointed at a pool. After that, the miner's own log says what matters: whether huge pages were allocated, how many threads started, and whether shares are accepted.",
+    ],
+    faq: [
+      {
+        q: "Is XMRig free?",
+        a: "Yes. XMRig is open source under the GPL 3.0 licence. By default it donates 1% of mining time, one minute in a hundred, to its developers; going below that means building it from modified source.",
+      },
+      {
+        q: "Can XMRig mine RandomX v2?",
+        a: "Yes, from version 6.26.0, released on 28 March 2026, under the algorithm name rx/2. Monero itself still runs rx/0 until its hard fork to v2, for which no date has been set.",
+      },
+      {
+        q: "Does XMRig run on Apple Silicon Macs?",
+        a: "Yes. XMRig publishes an official macOS arm64 build. Apple Silicon has hardware AES, but macOS does not give the dataset 2 MiB huge pages.",
+      },
+    ],
+  },
+
+  {
+    slug: "randomx-on-apple-silicon",
+    createdAt: "2026-10-25T21:35:00+04:00",
+    updatedAt: "2026-10-25T21:35:00+04:00",
+    site: "random",
+    image: "/covers/randomx-on-apple-silicon.jpg",
+    imageAlt: "A flat illustration of a small box-shaped desktop computer with a screen of orange square cells, beside an indigo desk lamp",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "RandomX on Apple Silicon: what an M1 Mac can do",
+    summary:
+      "RandomX runs on Apple Silicon through its ARM64 JIT and hardware AES, but without the huge pages it gets on Linux: macOS on arm64 has no 2 MiB pages to give the dataset. What we measured on a Mac mini M1, and the ARM fix in RandomX 1.2.2 and 2.0.1.",
+    date: "2026-10-25",
+    category: "Guide",
+    tags: ["Hardware"],
+    source: {
+      name: "Our own measurements on a Mac mini M1; RandomX README and release notes (tevador/RandomX on GitHub)",
+      url: "https://github.com/tevador/RandomX/releases",
+      verifiedOn: "2026-10-25",
+    },
+    body: [
+      "Apple's M-series chips meet what the RandomX README asks of a processor: a <span class=\"nowrap\">64-bit</span> architecture, an IEEE 754 floating-point unit and hardware AES through the ARMv8 cryptography extensions. RandomX has a JIT compiler for ARM64 that turns its programs into native code, and XMRig publishes an official build for macOS on arm64. So a Mac mines RandomX. What it does not get is the help that a Linux machine gets from its memory system.",
+      "## No huge pages",
+      "On Linux, a miner puts the <span class=\"nowrap\">2080 MiB</span> dataset in <span class=\"nowrap\">2 MiB</span> huge pages, or even <span class=\"nowrap\">1 GiB</span> ones, so that a random read of it rarely misses the processor's table of page addresses. On macOS on Apple Silicon we found none to be had. Our test program asked for a <span class=\"nowrap\">2 MiB</span> superpage with both <code>mmap</code> and <code>vm_allocate</code>, and both refused it with EINVAL: the page size is always <span class=\"nowrap\">16 KiB</span>. That is better than the <span class=\"nowrap\">4 KiB</span> pages of an x86 machine without huge pages, but the dataset still spans more than 130,000 of them, and nearly every dataset read misses that table on its way to memory.",
+      "## Hardware AES counts",
+      "RandomX fills and hashes each thread's <span class=\"nowrap\">2 MiB</span> scratchpad with AES, and does it for every hash. On our Mac mini M1, tevador's reference RandomX with hardware AES made <strong><span class=\"nowrap\">614 hashes</span> a second against 537</strong> with software AES on the same machine, 14% more, with the same result hash. Any build of a RandomX miner for Apple Silicon should use it; the official ones do.",
+      "## The machine matters more than the code",
+      "The biggest variable we found was not in the miner. The same build gave anywhere from <strong>110 to <span class=\"nowrap\">880 hashes</span> a second</strong> on the same Mac mini, depending on what else the machine was doing — load averages from 17 to 210, and up to <span class=\"nowrap\">25 GB</span> of swap in use. Even the processor time for one hash moved with it: <span class=\"nowrap\">4.24 ms</span> at a load average of about 87 and <span class=\"nowrap\">2.78 ms</span> at 15 to 27, 34% less, with no change to the code. Other programs share the chip's caches and its memory with the miner, and RandomX is built to need both.",
+      "So a figure for an M1 means little without the state of the machine it came from. Ours were taken on <span class=\"nowrap\">25 October 2026</span> with three mining threads at low priority, on a Mac mini doing other work; they describe that machine on that day, not the chip.",
+      "## The ARM fix",
+      "On <span class=\"nowrap\">10 May 2026</span> the RandomX reference code put out <strong>1.2.2</strong> and <strong>2.0.1</strong> as recommended updates: earlier versions could produce an invalid hash about once in <span class=\"nowrap\">268 million</span> on ARM and RISC-V systems, through a bug in the JIT's ISUB_R instruction. An invalid hash is a share the pool rejects, so the cost is small, but it is a reason to keep a Mac's miner current. XMRig carries its own copy of the RandomX code; its newest release, 6.26.0 of <span class=\"nowrap\">28 March 2026</span>, came out before the fix, so whether a given build has it is a question for XMRig's own changes. An earlier release, 1.2.1 of <span class=\"nowrap\">October 2023</span>, had already fixed how RandomX clears the instruction cache on Apple Silicon.",
+      "The <a href=\"/guides/randomx-memory-requirements/\" title=\"How much memory RandomX needs in fast mode, light mode and per thread\">memory guide</a> has the rest of what RandomX asks of a machine.",
+    ],
+    faq: [
+      {
+        q: "Can you mine RandomX on a Mac?",
+        a: "Yes. XMRig publishes official macOS builds for both Apple Silicon (arm64) and Intel (x64), and RandomX has a JIT compiler for ARM64. A Mac needs the same 2080 MiB of free memory for the dataset as any other machine.",
+      },
+      {
+        q: "Does macOS support huge pages for RandomX?",
+        a: "Not on Apple Silicon, in our tests: asking macOS for a 2 MiB superpage with mmap or vm_allocate returned EINVAL, and the page size stayed at 16 KiB. Linux can give the RandomX dataset 2 MiB or 1 GiB pages.",
+      },
+      {
+        q: "Does the M1 have hardware AES for RandomX?",
+        a: "Yes, through the ARMv8 cryptography extensions. On our Mac mini M1, RandomX with hardware AES made 614 hashes a second against 537 with software AES, 14% more.",
+      },
+    ],
+  },
+];

@@ -1,0 +1,68 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { about } from "../content";
+import PageHero from "@dst/ui/PageHero.astro";
+---
+<Layout prose title={about.title} description={about.description}>
+  <PageHero
+    title={about.h1}
+    image="/covers/about.jpg"
+    imageAlt="A flat illustration of an open drawer packed with cards printed with small square cells, in indigo and orange"
+    imageKind="generated"
+  >
+    <p class="lede">{about.lede}</p>
+  </PageHero>
+
+  <section class="container">
+    <h2>What this is</h2>
+    <p set:html={`<strong>random.directory</strong> is a reference to RandomX, the proof of work Monero has run since 30 November 2019 and a number of other coins run in one form or another. It covers how the algorithm works, what RandomX v2 changes, how much memory and what kind of machine a miner needs, the variants and the coins built on them, and the software that mines them. It is written for people who run a miner, or are about to, and want the figure rather than the folklore.`} />
+  </section>
+
+  <section class="container">
+    <h2>The rules</h2>
+    <ol class="rules">
+      <li>
+        <h3>Every figure names where it came from</h3>
+        <p>A memory size, a parameter or a release date comes from the specification, the source code or the project that published it, and the guide says which and when it was checked. Where the code and the documentation disagree, the guide says so.</p>
+      </li>
+      <li>
+        <h3>Our own measurements say they are ours</h3>
+        <p>Some figures come from machines we run ourselves. Those are marked as our measurements, with the machine and the conditions, and never stand in for a published benchmark.</p>
+      </li>
+      <li>
+        <h3>No price talk, no promise of earnings</h3>
+        <p>What a coin is worth and what a miner will earn change by the hour and are not this site's subject. The guides are about the algorithm and the software, which change by the release.</p>
+      </li>
+      <li>
+        <h3>Nothing here is paid for</h3>
+        <p>No pool, coin or software project pays to be mentioned, ranked or linked. A project named in a guide is named because it is the source of the fact.</p>
+      </li>
+    </ol>
+  </section>
+</Layout>
+
+<style>
+  .rules {
+    margin: var(--space-3) 0 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: rule;
+    display: grid;
+    gap: var(--space-3);
+  }
+  .rules li {
+    counter-increment: rule;
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 0 var(--space-2);
+    align-items: baseline;
+  }
+  .rules li::before {
+    content: counter(rule);
+    color: var(--accent);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+  .rules h3 { margin: 0; font-size: var(--step-0); }
+  .rules p { margin: 0.25em 0 0; grid-column: 2; max-width: 62ch; color: var(--ink-muted); }
+</style>

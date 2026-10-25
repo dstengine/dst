@@ -22,6 +22,8 @@ const APPS = ["dst", "llc", "visas", "riviera", "mbr", "palmcentral", "eco", "fw
   "aivideo",
   // Tea guides and tea times, which publishes itself.
   "tea",
+  // RandomX guides, which publishes itself.
+  "random",
   // The London calendar, which names GB7; and Acapulco, which publishes itself.
   "l0n", "aca",
   // A tour archive on its own vvm.space host, tied to neither the group nor
@@ -49,6 +51,7 @@ const PUBLISHER = {
   mxo: "https://mxo.lol/#organization",
   aivideo: "https://aivideo.zone/#organization",
   tea: "https://tea.ceo/#organization",
+  random: "https://random.directory/#organization",
   // gb7.uk names l0n.uk among its own sites and declares this @id.
   l0n: "https://gb7.uk/#organization",
   aca: "https://acapulco.world/#organization",

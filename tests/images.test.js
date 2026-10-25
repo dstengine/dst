@@ -35,6 +35,7 @@ const SITES = [
   { app: "mxo", host: "mxo.lol" },
   { app: "aivideo", host: "aivideo.zone" },
   { app: "tea", host: "tea.ceo" },
+  { app: "random", host: "random.directory" },
   { app: "l0n", host: "l0n.uk" },
   { app: "aca", host: "acapulco.world" },
   { app: "fest", host: "fest.one" },
