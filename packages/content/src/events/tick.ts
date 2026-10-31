@@ -18,9 +18,9 @@ export const items: EventItem[] = [
   {
     slug: "halloween-weekend-forty44-yerevan-2026",
     createdAt: "2026-10-31T12:45:00+04:00",
-    updatedAt: "2026-10-31T13:19:00+04:00",
+    updatedAt: "2026-10-31T13:25:00+04:00",
     site: "tick",
-    title: "Հելոուին Forty44-ում՝ շաբաթ գիշեր",
+    title: "Հելոուին Forty44-ում",
     titleSeo: "Հելոուին Երևանում՝ Forty44, հոկտեմբերի 31, 22:00",
     cardTitle: "Հելոուին Forty44-ում",
     summary:
@@ -67,7 +67,7 @@ export const items: EventItem[] = [
       en: {
         imageAlt: "Forty44's Halloween Weekend poster: line-drawn portraits of Nebell and SAME on dark blue, with orange stars and pumpkins, the dates 30.10.26 and 31.10.26 and the time 22:00",
         ticket: { url: "https://www.instagram.com/p/De9q_cigXNH/", label: "Details", sells: false },
-        title: "Halloween at Forty44, Saturday night",
+        title: "Halloween at Forty44",
         titleSeo: "Halloween in Yerevan: Forty44, 31 October, 22:00",
         cardTitle: "Halloween at Forty44",
         summary:
