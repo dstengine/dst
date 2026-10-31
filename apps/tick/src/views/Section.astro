@@ -90,7 +90,10 @@ const blocks = promotedAll[lang]
       <Share title={section.h1} labels={labels[lang]} />
     </div>
   </PromoHero>
-  <section class="container">
+  {/* On the season's own page (Halloween, New Year), what is over goes
+      grey — the cover, the plate — and the editors' picks keep their colour
+      whatever the hour: FeedCards.astro, `.season`. */}
+  <section class:list={["container", { season: promotedAll[lang].some((hot) => hot.slug === section.slug) }]}>
     <SectionFeed
       items={section.items}
       eventsBase={eventsBase(lang)}

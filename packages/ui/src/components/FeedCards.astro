@@ -487,6 +487,19 @@ const parts = (iso: string) => {
     background: var(--ok);
     color: var(--bg);
   }
+  /* A season's page (`.season`, set by the site's section view on the
+     promoted tag's own list): a card whose event is over — the chip says
+     "ended", or the build filed it under the past — goes grey, cover and
+     plate alike, so the night's remaining places are the ones in colour.
+     An editor's pick keeps its colour: it is still the recommendation
+     (Halloween night on tick, the owner's word 31 Oct 2026). */
+  :global(.season) .feed-card:is([data-state="ended"], :has(.feed-past)):not(:has(.feed-pick)) .feed-cover {
+    filter: grayscale(1);
+    opacity: 0.8;
+  }
+  :global(.season) .feed-card:is([data-state="ended"], :has(.feed-past)):not(:has(.feed-pick)) h3 {
+    color: var(--ink-muted);
+  }
   @keyframes feed-late-glow {
     50% { box-shadow: 0 0 0 1px var(--ok), 0 0 0.5rem color-mix(in srgb, var(--ok) 20%, transparent); }
   }
