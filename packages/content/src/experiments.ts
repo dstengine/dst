@@ -97,6 +97,28 @@ export const EXPERIMENTS: Experiment[] = [
     goal: { event: "ticket_click" },
   },
   {
+    // Underpowered on tick alone, and launched knowing it (31 Oct 2026, the
+    // user's call): the planner gives share clicks at ~3% of 20 visitors a
+    // day 252 days to see +50%. The split is in place so the words are
+    // not chosen by taste alone, and so the same test can widen to every
+    // host that gets the button, where the sample arrives.
+    id: "share-label",
+    unit: "visitor",
+    hosts: ["tick.am"],
+    paths: "^/(?:am/)?events/[^/]+/$",
+    variants: ["share", "invite"],
+    start: "2026-10-31",
+    hypothesis:
+      "A share button is pressed more often when it names the people than the act: " +
+      "\"Share\" (control) says what the button does, \"Invite friends\" says who it is for and why. " +
+      "Expect invite > share, by half or more — anything less is not worth the longer label.",
+    metric: "share_click with cta_kind=button ÷ experience_impression, per variant, on event pages",
+    goal: { event: "share_click", param: "cta_kind", match: "^button$" },
+    lift: 0.5,
+    sample: 2515,
+    decideBy: "2027-01-02",
+  },
+  {
     id: "action-label",
     unit: "visitor",
     hosts: ["aivideo.zone"],

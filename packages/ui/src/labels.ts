@@ -49,6 +49,14 @@ export interface ArticleLabels {
   addToCalendar: string;
   /** Title attribute on the calendar button, given the event's own name. */
   addToCalendarTitle: (title: string) => string;
+  /** The share button on an event page, and its variant under the
+      `share-label` test (@dst/content/experiments): the act, or the people. */
+  share: string;
+  inviteFriends: string;
+  /** What the button says for a moment after it copied the link, on a
+      browser without a share sheet. */
+  linkCopied: string;
+  shareTitle: (title: string) => string;
 
   // Glance rows
   /** Over the run of dates, repeated in the table from the line above it. */
@@ -214,6 +222,10 @@ export const EN: ArticleLabels = {
   ticketsFrom: (price) => `Tickets from ${price}`,
   addToCalendar: "Add to calendar",
   addToCalendarTitle: (title) => `Add ${title} to your calendar`,
+  share: "Share",
+  inviteFriends: "Invite friends",
+  linkCopied: "Link copied",
+  shareTitle: (title) => `Share ${title}`,
 
   dates: "Dates",
   time: "Time",
@@ -330,6 +342,10 @@ export const ES: Partial<ArticleLabels> = {
   ticketsFrom: (price) => `Boletos desde ${price}`,
   addToCalendar: "Agregar al calendario",
   addToCalendarTitle: (title) => `Agregar ${title} a tu calendario`,
+  share: "Compartir",
+  inviteFriends: "Invitar amigos",
+  linkCopied: "Enlace copiado",
+  shareTitle: (title) => `Compartir ${title}`,
 
   dates: "Fechas",
   time: "Horario",
@@ -424,6 +440,10 @@ export const DE: Partial<ArticleLabels> = {
   ticketsFrom: (price) => `Tickets ab ${price}`,
   addToCalendar: "Zum Kalender hinzufügen",
   addToCalendarTitle: (title) => `${title} zum Kalender hinzufügen`,
+  share: "Teilen",
+  inviteFriends: "Freunde einladen",
+  linkCopied: "Link kopiert",
+  shareTitle: (title) => `${title} teilen`,
 
   dates: "Termine",
   time: "Uhrzeit",
@@ -531,6 +551,10 @@ export const HY: Partial<ArticleLabels> = {
   ticketsFrom: (price) => `Տոմսեր՝ ${price}-ից`,
   addToCalendar: "Ավելացնել օրացույցում",
   addToCalendarTitle: (title) => `«${title}» — ավելացնել ձեր օրացույցում`,
+  share: "Կիսվել",
+  inviteFriends: "Հրավիրել ընկերներին",
+  linkCopied: "Հղումը պատճենված է",
+  shareTitle: (title) => `Կիսվել «${title}»-ով`,
 
   dates: "Ամսաթվեր",
   time: "Ժամ",

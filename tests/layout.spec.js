@@ -965,3 +965,74 @@ test.describe("A/B/n: aivideo's action-label", () => {
     }
   });
 });
+
+// share-label: the share button on tick's event pages says "Share" or
+// "Invite friends" per visitor; the floating mark on a phone has no words
+// and is outside the test. See @dst/content/experiments.
+test.describe("share-label", () => {
+  const EVENT = "/events/elgar-enigma-variations-yerevan-2026/";
+  const LABELS = { share: "Share", invite: "Invite friends" };
+  const button = (page) => page.locator("button.share-button");
+  const tags = (value) => (value ?? "").split(" ").filter(Boolean);
+  const ours = (list) => list.filter((t) => t.startsWith("share-label:"));
+  const state = (page) =>
+    page.evaluate(() => ({
+      chosen: document.documentElement.getAttribute("data-exp-share-label"),
+      tags: document.documentElement.getAttribute("data-experiments"),
+    }));
+
+  test("a visitor sees one label and keeps it in the other language", async ({ page }) => {
+    await page.goto(url("tick", EVENT));
+    const first = await state(page);
+    expect(Object.keys(LABELS)).toContain(first.chosen);
+    expect(ours(tags(first.tags))).toEqual([`share-label:${first.chosen}`]);
+    await expect(button(page)).toHaveText(LABELS[first.chosen], { useInnerText: true });
+    await page.goto(url("tick", `/am${EVENT}`));
+    expect((await state(page)).chosen).toBe(first.chosen);
+  });
+
+  test("?exp= shows the variant asked for and counts nothing", async ({ page }) => {
+    for (const [variant, text] of Object.entries(LABELS)) {
+      await page.goto(url("tick", `${EVENT}?exp=share-label:${variant}`));
+      await expect(button(page)).toHaveText(text, { useInnerText: true });
+      expect(ours(tags((await state(page)).tags))).toEqual([]);
+    }
+  });
+
+  test("a press is a share_click that names the button and its words", async ({ page }) => {
+    await page.goto(url("tick", EVENT));
+    const { chosen } = await state(page);
+    const events = await page.evaluate(async () => {
+      const sent = [];
+      window.gtag = (...args) => sent.push(args);
+      document.querySelector("button.share-button").click();
+      await new Promise((r) => setTimeout(r, 200));
+      return sent;
+    });
+    const click = events.find((e) => e[1] === "share_click");
+    expect(click, `no share_click among ${JSON.stringify(events)}`).toBeTruthy();
+    expect(click[2].cta_kind).toBe("button");
+    expect(click[2].cta_text).toBe(LABELS[chosen]);
+    expect(tags(click[2].exp)).toContain(`share-label:${chosen}`);
+  });
+
+  test("the floating mark shows on a phone only, and is not the button", async ({ page }) => {
+    await page.setViewportSize({ width: 360, height: 740 });
+    await page.goto(url("tick", EVENT));
+    const fab = page.locator("button.share-fab");
+    await expect(fab).toBeVisible();
+    const box = await fab.boundingBox();
+    expect(box.width).toBeGreaterThanOrEqual(44);
+    expect(box.height).toBeGreaterThanOrEqual(44);
+    const kinds = await page.evaluate(async () => {
+      const sent = [];
+      window.gtag = (...args) => sent.push(args);
+      document.querySelector("button.share-fab").click();
+      await new Promise((r) => setTimeout(r, 200));
+      return sent.filter((e) => e[1] === "share_click").map((e) => e[2].cta_kind);
+    });
+    expect(kinds).toEqual(["fab"]);
+    await page.setViewportSize({ width: 1280, height: 800 });
+    await expect(fab).toBeHidden();
+  });
+});

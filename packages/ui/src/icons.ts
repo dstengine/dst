@@ -4,6 +4,7 @@
 // venue's real logo requires the business's own asset, not something
 // scraped from the web — see VenueCard.astro.
 export const ICONS: Record<string, string> = {
+  share: "M21 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0M9 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0M21 19a3 3 0 1 1-6 0 3 3 0 0 1 6 0M8.6 13.5l6.8 4M15.4 6.5l-6.8 4",
   coffee: "M3 8h13a3 3 0 0 1 0 6h-1M3 8v7a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V8M3 8V5h9v3M6 2v1.5M9 2v1.5",
   food: "M4 2v7a2 2 0 0 0 2 2v9M4 2v4M6 2v4M8 2v4M8 2v9a2 2 0 0 1-2 2M16 2c-2 0-3 2-3 5s1 4 3 4v9",
   pools: "M2 8c1.5-1.5 3-1.5 4.5 0s3 1.5 4.5 0 3-1.5 4.5 0 3 1.5 4.5 0M2 14c1.5-1.5 3-1.5 4.5 0s3 1.5 4.5 0 3-1.5 4.5 0 3 1.5 4.5 0M2 20c1.5-1.5 3-1.5 4.5 0s3 1.5 4.5 0 3-1.5 4.5 0 3 1.5 4.5 0",

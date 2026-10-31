@@ -29,6 +29,8 @@ export type TrackEvent =
   | "outbound_click"
   | "ticket_click"
   | "add_to_calendar"
+  // The share button on an event page: native share sheet or a copied link.
+  | "share_click"
   | "phone_click"
   | "cta_click"
   // GA4's own name for "this visitor saw this variant of a test", with the
