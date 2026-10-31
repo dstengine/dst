@@ -3,6 +3,74 @@ import type { NewsItem } from "../types.ts";
 // Armenian first, English in `i18n.en` — see the note in ../events/tick.ts.
 
 export const items: NewsItem[] = [
+  {
+    slug: "halloween-yerevan-2026-page",
+    createdAt: "2026-10-31T17:25:00+04:00",
+    updatedAt: "2026-10-31T17:25:00+04:00",
+    site: "tick",
+    date: "2026-10-31",
+    until: "2026-11-01",
+    title: "Հելոուին Երևանում 2026․ 13 միջոցառում մեկ էջում",
+    cardTitle: "Հելոուինի 13 միջոցառումը՝ մեկ էջում",
+    titleSeo: "Հելոուին Երևանում 2026․ 13 միջոցառում մեկ էջում",
+    summary:
+      "Հելոուին Երևանում, հոկտեմբերի 31․ անիմե փառատոն, մագլցում, վարպետաց դասեր, ղափամայի երեք երեկո և վեց գիշերային երեկույթ մեկ էջում՝ ժամերով, հասցեներով ու քարտեզով։ Էջը ցույց է տալիս, թե որ միջոցառումն է հենց հիմա ընթանում։",
+    image: "/news/halloween-yerevan-2026-page.svg",
+    imageAlt: "Պաստառ մուգ ֆոնի վրա․ նարնջագույն դդում լուսնի առջև, «Հելոուին Երևանում», «13 միջոցառում մեկ էջում» և հասցեն tick.am/halloween",
+    imageKind: "illustration",
+    imageCredit: "Tick",
+    imageWidth: 1200,
+    imageHeight: 630,
+    category: "Հելոուին",
+    city: "Երևան",
+    country: "Հայաստան",
+    source: { name: "Tick", url: "https://tick.am/halloween/", verifiedOn: "2026-10-31" },
+    body: [
+      "Հոկտեմբերի 31-ի բոլոր 13 միջոցառումները Երևանում հավաքված են մեկ էջում՝ <a href=\"/halloween/\" title=\"Հելոուին Երևանում 2026\">Հելոուին Երևանում</a>։ Ցերեկային փառատոնից մինչև բարեր, որոնք փակվում են լուսադեմին․ յուրաքանչյուր քարտի վրա՝ ժամը, հասցեն և ճանապարհը քարտեզով։",
+      "## Ցերեկը",
+      "<a href=\"/events/aki-fest-halloween-yerevan-2026/\" title=\"Անիմե Հելոուին Aki Fest-ում\">Անիմե Հելոուինը Aki Fest-ում</a> սկսվում է 12:00-ին և ավարտվում 18:00-ին։ 17:00-ից՝ <a href=\"/events/sports-halloween-boulderland-2026/\" title=\"Մագլցման Հելոուին Boulderland-ում\">մագլցման Հելոուինը Boulderland-ում</a> և <a href=\"/events/zayon-halloween-house-party-2026/\" title=\"Հելոուին ZAYON Garden-ում\">տնային երեկույթը ZAYON Garden-ում</a>, 18:00-ից՝ <a href=\"/events/halloween-artlav-yerevan-2026/\" title=\"Հելոուին ArtLav-ում\">վարպետաց դասերը ArtLav-ում</a>։",
+      "## Ղափամայի երեկո",
+      "Հոկտեմբերի 31-ը նաև ղափամայի օրն է, և Աբովյան փողոցի շուրջ երեք երեկո սկսվում է 20:00-ին․ <a href=\"/events/ghapama-night-epos-yerevan-2026/\" title=\"Ղափամայի երեկո Էպոսում\">Էպոսում</a>, <a href=\"/events/karina-arustamyan-ghapama-day-ethnograph-2026/\" title=\"Կարինա Առուստամյան Ethnograph-ում\">Ethnograph-ում Կարինա Առուստամյանի հետ</a> և <a href=\"/events/vigen-hovsepyan-ghapama-day-beer-academy-2026/\" title=\"Վիգեն Հովսեփյան Beer Academy-ում\">Beer Academy-ում Վիգեն Հովսեփյանի հետ</a>։",
+      "## Գիշերը",
+      "<a href=\"/events/halloween-oxygen-yerevan-2026/\" title=\"Հելոուին Oxygen-ում\">Oxygen-ը</a> բացվում է 18:00-ին, <a href=\"/events/mad-nation-11th-anniversary-tonelab-2026/\" title=\"Mad Nation-ը 11 տարեկան է՝ Tonelab-ում\">Mad Nation-ի տարեդարձը Tonelab-ում</a>՝ 20:00-ին, <a href=\"/events/dj-twins-halloween-souly-2026/\" title=\"DJ TWINS Souly-ում\">DJ TWINS-ը Souly-ում</a> և <a href=\"/events/halloween-weekend-forty44-yerevan-2026/\" title=\"Հելոուին Forty44-ում\">SAME-ը Forty44-ում</a>՝ 21:00-ին, <a href=\"/events/halloween-karaoke-ufo-bar-yerevan-2026/\" title=\"Հելոուին-կարաոկե UFO բարում\">կարաոկեն UFO բարում</a> և <a href=\"/events/halloween-sarsap-night-bak75-yerevan-2026/\" title=\"SARSAP Night Բակ75-ում\">SARSAP Night-ը Բակ75-ում</a>՝ 21:30-ին։ Forty44-ը բաց է մինչև 03:00, UFO-ն՝ մինչև 04:00։",
+      "## Ինչ է ցույց տալիս էջը",
+      "Յուրաքանչյուր քարտ ասում է, թե միջոցառումն առաջիկա՞ է, հենց հիմա՞ է ընթանում, թե՞ արդեն ավարտվել է․ ընթացող միջոցառման կողքին վառվում է կանաչ կետ։ Միջոցառման էջում հասցեն տանում է քարտեզ, «Ճանապարհ» կոճակը՝ երթուղի, իսկ «Կիսվել»-ը ուղարկում է հղումն ընկերներին։ Մուտքի գները և դրես կոդը յուրաքանչյուր էջի վրա են, կազմակերպչի խոսքերով և աղբյուրով։",
+    ],
+    faq: [
+      { q: "Որտե՞ղ տեսնել Երևանի Հելոուինի բոլոր միջոցառումները", a: "tick.am/halloween էջում․ հոկտեմբերի 31-ի 13 միջոցառում՝ ժամերով, հասցեներով և քարտեզով։" },
+      { q: "Ո՞ր միջոցառումներն են մինչև լուսադեմ", a: "Forty44-ը բաց է մինչև 03:00, UFO բարի կարաոկեն՝ մինչև 04:00։" },
+      { q: "Ինչպե՞ս իմանալ, թե միջոցառումը հիմա ընթանո՞ւմ է", a: "Քարտի վրա կանաչ կետով «Ընթացքում է» նշումն ասում է, որ միջոցառումը հենց հիմա ընթանում է, «Ավարտված է»՝ որ արդեն անցել է։" },
+    ],
+    i18n: {
+      en: {
+        imageAlt: "A poster on a dark ground: an orange pumpkin before a moon, the words Halloween in Yerevan, 13 events on one page, and the address tick.am/halloween",
+        title: "Halloween in Yerevan 2026: 13 events on one page",
+        cardTitle: "All 13 Halloween events on one page",
+        titleSeo: "Halloween in Yerevan 2026: 13 events on one page",
+        summary:
+          "Halloween in Yerevan on 31 October: an anime festival, climbing, craft workshops, three ghapama nights and six parties on one page, with hours, addresses and a map. The page shows which event is on right now.",
+        category: "Halloween",
+        city: "Yerevan",
+        country: "Armenia",
+        body: [
+          "All 13 events of 31 October in Yerevan are on one page, <a href=\"/halloween/\" title=\"Halloween in Yerevan 2026\">Halloween in Yerevan</a>: from a daytime festival to bars that close at dawn, with the hour, the address and directions on every card.",
+          "## Daytime",
+          "<a href=\"/events/aki-fest-halloween-yerevan-2026/\" title=\"Anime Halloween at Aki Fest\">Anime Halloween at Aki Fest</a> runs from 12:00 to 18:00. From 17:00, <a href=\"/events/sports-halloween-boulderland-2026/\" title=\"Climbing Halloween at Boulderland\">climbing Halloween at Boulderland</a> and <a href=\"/events/zayon-halloween-house-party-2026/\" title=\"Halloween house party at ZAYON Garden\">the house party at ZAYON Garden</a>; from 18:00, <a href=\"/events/halloween-artlav-yerevan-2026/\" title=\"Halloween at ArtLav\">the craft night at ArtLav</a>.",
+          "## Ghapama night",
+          "31 October is also Ghapama Day, and three evenings around Abovyan Street begin at 20:00: at <a href=\"/events/ghapama-night-epos-yerevan-2026/\" title=\"Ghapama night at Epos\">Epos</a>, at <a href=\"/events/karina-arustamyan-ghapama-day-ethnograph-2026/\" title=\"Karina Arustamyan at Ethnograph\">Ethnograph with Karina Arustamyan</a> and at <a href=\"/events/vigen-hovsepyan-ghapama-day-beer-academy-2026/\" title=\"Vigen Hovsepyan at Beer Academy\">Beer Academy with Vigen Hovsepyan</a>.",
+          "## Night",
+          "<a href=\"/events/halloween-oxygen-yerevan-2026/\" title=\"Halloween at Oxygen\">Oxygen</a> opens at 18:00, <a href=\"/events/mad-nation-11th-anniversary-tonelab-2026/\" title=\"Mad Nation turn 11 at Tonelab\">Mad Nation's anniversary at Tonelab</a> at 20:00, <a href=\"/events/dj-twins-halloween-souly-2026/\" title=\"DJ TWINS at Souly\">DJ TWINS at Souly</a> and <a href=\"/events/halloween-weekend-forty44-yerevan-2026/\" title=\"Halloween at Forty44\">SAME at Forty44</a> at 21:00, <a href=\"/events/halloween-karaoke-ufo-bar-yerevan-2026/\" title=\"Halloween karaoke at UFO Bar\">karaoke at UFO Bar</a> and <a href=\"/events/halloween-sarsap-night-bak75-yerevan-2026/\" title=\"SARSAP Night at Bak75\">SARSAP Night at Bak75</a> at 21:30. Forty44 is open until 03:00, UFO until 04:00.",
+          "## What the page shows",
+          "Every card says whether the event is coming up, on right now or already over; a green dot lights beside one that is under way. On an event's page the address opens the map, the Directions button a route, and Share sends the link to friends. Entry prices and dress codes are on each page, in the organiser's words and with the source.",
+        ],
+        faq: [
+          { q: "Where can I see every Halloween event in Yerevan?", a: "On tick.am/halloween: 13 events on 31 October, with hours, addresses and a map." },
+          { q: "Which events run until dawn?", a: "Forty44 is open until 03:00 and the karaoke at UFO Bar until 04:00." },
+          { q: "How do I know whether an event is on right now?", a: "An \"Under way\" chip with a green dot on the card means it is happening now; \"Ended\" means it is over." },
+        ],
+      },
+    },
+  },
 
   {
     slug: "yerevan-2808th-anniversary-2026",
