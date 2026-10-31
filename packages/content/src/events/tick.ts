@@ -18,7 +18,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-weekend-forty44-yerevan-2026",
     createdAt: "2026-10-31T12:45:00+04:00",
-    updatedAt: "2026-10-31T13:31:00+04:00",
+    updatedAt: "2026-10-31T13:26:00+04:00",
     site: "tick",
     title: "Հելոուին Forty44-ում՝ շաբաթ գիշեր",
     titleSeo: "Հելոուին Երևանում՝ Forty44, հոկտեմբերի 31, 22:00",
