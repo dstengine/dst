@@ -14,7 +14,7 @@ import type { Section as SectionT } from "@dst/content/sections";
 import type { EventItem } from "@dst/content/types";
 import { withLabels } from "@dst/ui/labels";
 import { cardCountdown } from "@dst/ui/date";
-import { isOn } from "@dst/content/when";
+import { isOn, placedAfter } from "@dst/content/when";
 import { eventHref } from "@dst/content/paths";
 import { labels, type Lang } from "../content";
 import { site } from "../site.config";
@@ -57,9 +57,9 @@ const AGE = {
 const today = new Date().toISOString().slice(0, 10);
 const blocks = promotedAll[lang]
   .filter((hot) => hot.slug !== section.slug)
-  .map((hot) => ({ hot, cards: hot.items
+  .map((hot) => ({ hot, cards: placedAfter(hot.items
       .filter((i): i is EventItem => "start" in i && isOn(i, today))
-      .sort((a, b) => (a.start < b.start ? -1 : 1))
+      .sort((a, b) => (b.editorsChoice ? 1 : 0) - (a.editorsChoice ? 1 : 0) || (a.start < b.start ? -1 : 1)))
       .slice(0, 3)
       .map((e) => ({
         href: eventHref(e, eventsBase(lang)),

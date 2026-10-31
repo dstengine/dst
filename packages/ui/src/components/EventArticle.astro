@@ -11,7 +11,7 @@ import type { Publisher } from '../schema';
 // under it while intent is still fresh.
 import type { EventItem, NewsItem } from "@dst/content/types";
 import { isFree, ticketAvailability } from "@dst/content/admission";
-import { endDay, runDays } from "@dst/content/when";
+import { endDay, runDays, placedAfter } from "@dst/content/when";
 import LeadForm from "./LeadForm.astro";
 import VentureGrid from "./VentureGrid.astro";
 import FeedCards from "./FeedCards.astro";
@@ -129,7 +129,7 @@ const L = withLabels(labelOverrides);
 const mapPlace = item.venue ?? item.geo?.name ?? "";
 
 const todayIso = new Date().toISOString().slice(0, 10);
-const moreCards = more
+const moreCards = placedAfter(more
   .filter((other) => other.slug !== item.slug && Array.isArray(other.body) && other.body.length > 0)
   // Four keys in order. Three cards is too few to spend on the coincidence
   // of the calendar when the site knows what the page is about, and too few
@@ -163,7 +163,9 @@ const moreCards = more
     const bSame = b.category === item.category;
     if (aSame !== bSame) return aSame ? -1 : 1;
     return aUp ? (a.start < b.start ? -1 : 1) : (a.start < b.start ? 1 : -1);
-  })
+  }), item.slug)
+  // A card that names the one before it (`after`) follows it: the tail's
+  // Halloween block runs Forty44, UFO, Mut — the order of the night.
   .map((other) => ({
     href: eventHref(other, eventsBase),
     eyebrow: other.category,

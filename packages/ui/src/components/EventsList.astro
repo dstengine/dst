@@ -10,7 +10,7 @@ import { cardHours, cardCountdown, cardUntil, cardClock } from "../date.ts";
 import Icon from "./Icon.astro";
 import { withLabels, type ArticleLabels } from "../labels.ts";
 import CountdownScript from "./CountdownScript.astro";
-import { isOn, hasEnded, lastDay } from "@dst/content/when";
+import { isOn, hasEnded, lastDay, placedAfter } from "@dst/content/when";
 
 interface Props {
   items: EventItem[];
@@ -113,10 +113,10 @@ const toCard = (item: EventItem, past: boolean) => {
 // listing, the front page's block and an event page's tail all read.
 const byPickThenDate = (a: EventItem, b: EventItem) =>
   (b.editorsChoice ? 1 : 0) - (a.editorsChoice ? 1 : 0) || byDate(a, b);
-const upcoming = items
-  .filter((e) => isOn(e, asOf) && e.start >= asOf)
-  .sort(picksFirst ? byPickThenDate : byDate)
-  .map((e) => toCard(e, false));
+// With the picks lifted, a card that names one of them (`after`) follows it.
+const upcoming = ((sorted) => (picksFirst ? placedAfter(sorted) : sorted))(
+  items.filter((e) => isOn(e, asOf) && e.start >= asOf).sort(picksFirst ? byPickThenDate : byDate),
+).map((e) => toCard(e, false));
 const running = items
   .filter((e) => isOn(e, asOf) && e.start < asOf)
   .sort((a, b) => (lastDay(a) < lastDay(b) ? -1 : lastDay(a) > lastDay(b) ? 1 : byDate(a, b)))

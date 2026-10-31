@@ -76,6 +76,16 @@
       if (el.dataset.state) card.dataset.state = el.dataset.state; else delete card.dataset.state;
       if (el.dataset.state === "running" && lateAt(offset)) card.dataset.late = ""; else delete card.dataset.late;
     };
+    // The glow passes down the night: while an editor's pick is open in the
+    // small hours it glows; once the last pick has closed, whatever is still
+    // open takes it (`data-last`) — Forty44 and UFO, then Mut at Hayfilm
+    // until morning. Page-wide, so the hub's two lists agree.
+    const relay = () => {
+      const late = [...document.querySelectorAll(".feed-card[data-late]")];
+      const pickOpen = late.some((c) => c.querySelector(".feed-pick"));
+      for (const c of document.querySelectorAll(".feed-card[data-last]")) delete c.dataset.last;
+      if (!pickOpen) for (const c of late) c.dataset.last = "";
+    };
     const daysBetween = (from, to) => Math.round((Date.parse(`${to}T00:00:00Z`) - Date.parse(`${from}T00:00:00Z`)) / DAY);
     // A stamp with a clock time is an instant; a bare date is a whole day
     // in the event's calendar, and counting to its UTC midnight would be
@@ -107,6 +117,7 @@
       if (text && text === running) el.dataset.state = "running";
       markCard(el, offset);
     }
+    relay();
 
     // The live variant, on an event page and on a card with displayHours:
     // the day count above until the start is under two days away, then
@@ -143,6 +154,7 @@
         el.dataset.state = over(end, offset) ? "ended" : begun ? "running" : "";
         markCard(el, offset);
       }
+      relay();
     };
     if (live.length) {
       tick();

@@ -111,3 +111,26 @@ export function withPromoted<T extends { promotedUntil?: string }>(ranked: T[], 
   const keep = new Set([...promoted, ...rest]);
   return ranked.filter((i) => keep.has(i));
 }
+
+/** A sorted list with every item that names an `after` moved to sit right
+    behind the item it names, when that item is in the list; the rest keep
+    their order. Applied only where the editors' picks are lifted to the
+    front — see `after` in types.ts. */
+export function placedAfter<T extends { slug: string; after?: string }>(items: T[], self?: string): T[] {
+  // On the named card's own page (`self`), the card that follows it leads
+  // the tail: UFO's page offers Mut first.
+  const lead = items.filter((i) => i.after !== undefined && i.after === self);
+  const rest = items.filter((i) => !lead.includes(i));
+  const out = lead.concat(rest.filter((i) => !i.after || !rest.some((o) => o.slug === i.after)));
+  items = rest;
+  // Two cards behind the same one keep their order: each goes after the
+  // last one already placed there.
+  const tail = new Map<string, T>();
+  for (const i of items) {
+    if (!i.after || out.includes(i)) continue;
+    const anchor = tail.get(i.after) ?? out.find((o) => o.slug === i.after)!;
+    out.splice(out.indexOf(anchor) + 1, 0, i);
+    tail.set(i.after, i);
+  }
+  return out;
+}

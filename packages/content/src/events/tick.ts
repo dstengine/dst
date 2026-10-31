@@ -18,7 +18,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-weekend-forty44-yerevan-2026",
     createdAt: "2026-10-31T12:45:00+04:00",
-    updatedAt: "2026-10-31T17:20:00+04:00",
+    updatedAt: "2026-10-31T19:25:00+04:00",
     site: "tick",
     title: "Հելոուին Forty44-ում՝ շաբաթ գիշեր",
     titleSeo: "Հելոուին Երևանում՝ Forty44 արտ-բար, հոկտեմբերի 31",
@@ -56,7 +56,7 @@ export const items: EventItem[] = [
       "## Մուտքը",
       "Գրառումը մուտքի գին կամ տոմս չի նշում․ գալիս եք և մտնում։ Կոստյումն ողջունվում է՝ Հելոուին է։",
       "## Նույն գիշերը",
-      "Հոկտեմբերի 31-ին Երևանում են նաև <a href=\"/events/halloween-karaoke-ufo-bar-yerevan-2026/\" title=\"Հելոուին-կարաոկե UFO բարում\">Հելոուին-կարաոկեն UFO բարում</a>, <a href=\"/events/halloween-oxygen-yerevan-2026/\" title=\"Հելոուին Oxygen-ում\">Հելոուինը Oxygen-ում</a> և <a href=\"/events/halloween-sarsap-night-bak75-yerevan-2026/\" title=\"Halloween SARSAP Night Bak75-ում\">SARSAP Night-ը Bak75-ում</a>։",
+      "Հոկտեմբերի 31-ին Երևանում են նաև <a href=\"/events/halloween-karaoke-ufo-bar-yerevan-2026/\" title=\"Հելոուին-կարաոկե UFO բարում\">Հելոուին-կարաոկեն UFO բարում</a>, <a href=\"/events/halloween-oxygen-yerevan-2026/\" title=\"Հելոուին Oxygen-ում\">Հելոուինը Oxygen-ում</a> և <a href=\"/events/halloween-sarsap-night-bak75-yerevan-2026/\" title=\"Halloween SARSAP Night Bak75-ում\">SARSAP Night-ը Bak75-ում</a>։ Forty44-ը փակվում է 03:00-ին․ դրանից հետո UFO Bar-ը բաց է մինչև 04:00, իսկ <a href=\"/events/mut-moct-hayfilm-halloween-yerevan-2026/\" title=\"ՄՈՒԹ՝ MOCT-ի Հելոուինի գիշերը Hayfilm-ում\">ՄՈՒԹ-ը Hayfilm-ում</a>՝ մինչև առավոտյան 09:00։",
     ],
     faq: [
       { q: "Ե՞րբ է Հելոուինը Forty44-ում", a: "Շաբաթ, հոկտեմբերի 31-ին․ արտ-բարը բաց է 18:00-ից, SAME-ը նվագում է 22:00-ից։ Ուրբաթ գիշերը Nebell-ի հետ արդեն անցել է։" },
@@ -89,7 +89,7 @@ export const items: EventItem[] = [
           "## Getting in",
           "The post names no entry price and no ticket: you turn up and walk in. Costumes are welcome; it is Halloween.",
           "## The same night",
-          "Also in Yerevan on 31 October: <a href=\"/events/halloween-karaoke-ufo-bar-yerevan-2026/\" title=\"Halloween karaoke at UFO Bar\">Halloween karaoke at UFO Bar</a>, <a href=\"/events/halloween-oxygen-yerevan-2026/\" title=\"Halloween at Oxygen\">Halloween at Oxygen</a> and <a href=\"/events/halloween-sarsap-night-bak75-yerevan-2026/\" title=\"Halloween SARSAP Night at Bak75\">SARSAP Night at Bak75</a>.",
+          "Also in Yerevan on 31 October: <a href=\"/events/halloween-karaoke-ufo-bar-yerevan-2026/\" title=\"Halloween karaoke at UFO Bar\">Halloween karaoke at UFO Bar</a>, <a href=\"/events/halloween-oxygen-yerevan-2026/\" title=\"Halloween at Oxygen\">Halloween at Oxygen</a> and <a href=\"/events/halloween-sarsap-night-bak75-yerevan-2026/\" title=\"Halloween SARSAP Night at Bak75\">SARSAP Night at Bak75</a>. Forty44 closes at 03:00; after that UFO Bar is open until 04:00 and <a href=\"/events/mut-moct-hayfilm-halloween-yerevan-2026/\" title=\"Mut: MOCT's Halloween night at Hayfilm\">Mut at Hayfilm</a> until 09:00.",
         ],
         faq: [
           { q: "When is Halloween at Forty44?", a: "Saturday 31 October: the art bar opens at 18:00 and SAME plays from 22:00. The Friday night with Nebell has already been." },
@@ -104,7 +104,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-karaoke-ufo-bar-yerevan-2026",
     createdAt: "2026-10-31T12:45:00+04:00",
-    updatedAt: "2026-10-31T17:20:00+04:00",
+    updatedAt: "2026-10-31T19:25:00+04:00",
     site: "tick",
     title: "Հելոուին-կարաոկե UFO բարում",
     titleSeo: "Հելոուին Երևանում՝ կարաոկե UFO բարում, հոկտեմբերի 31",
@@ -142,7 +142,7 @@ export const items: EventItem[] = [
       "## Մուտքը",
       "Գրառումը մուտքի գին կամ տոմս չի նշում։",
       "## Նույն գիշերը",
-      "Հոկտեմբերի 31-ին Երևանում են նաև <a href=\"/events/halloween-weekend-forty44-yerevan-2026/\" title=\"Հելոուին Forty44-ում\">Հելոուինը Forty44-ում SAME-ի հետ</a>, <a href=\"/events/halloween-artlav-yerevan-2026/\" title=\"Հելոուին ArtLav-ում\">վարպետաց դասերը ArtLav-ում</a> և <a href=\"/events/dj-twins-halloween-souly-2026/\" title=\"DJ Twins-ի Հելոուինը Souly-ում\">DJ Twins-ի երեկույթը Souly-ում</a>։",
+      "Հոկտեմբերի 31-ին Երևանում են նաև <a href=\"/events/halloween-weekend-forty44-yerevan-2026/\" title=\"Հելոուին Forty44-ում\">Հելոուինը Forty44-ում SAME-ի հետ</a>, <a href=\"/events/halloween-artlav-yerevan-2026/\" title=\"Հելոուին ArtLav-ում\">վարպետաց դասերը ArtLav-ում</a> և <a href=\"/events/dj-twins-halloween-souly-2026/\" title=\"DJ Twins-ի Հելոուինը Souly-ում\">DJ Twins-ի երեկույթը Souly-ում</a>։ UFO-ն փակվում է 04:00-ին․ դրանից հետո բաց է միայն <a href=\"/events/mut-moct-hayfilm-halloween-yerevan-2026/\" title=\"ՄՈՒԹ՝ MOCT-ի Հելոուինի գիշերը Hayfilm-ում\">ՄՈՒԹ-ը Hayfilm-ում</a>՝ մինչև առավոտյան 09:00։",
     ],
     faq: [
       { q: "Ե՞րբ է Հելոուին-կարաոկեն UFO-ում", a: "Հոկտեմբերի 31-ին, շաբաթ, 21:30-ից մինչև 04:00։" },
@@ -175,7 +175,7 @@ export const items: EventItem[] = [
           "## Getting in",
           "The post names no entry price and no ticket.",
           "## The same night",
-          "Also in Yerevan on 31 October: <a href=\"/events/halloween-weekend-forty44-yerevan-2026/\" title=\"Halloween at Forty44\">Halloween at Forty44 with SAME</a>, <a href=\"/events/halloween-artlav-yerevan-2026/\" title=\"Halloween at ArtLav\">the craft night at ArtLav</a> and <a href=\"/events/dj-twins-halloween-souly-2026/\" title=\"DJ Twins' Halloween at Souly\">DJ Twins' party at Souly</a>.",
+          "Also in Yerevan on 31 October: <a href=\"/events/halloween-weekend-forty44-yerevan-2026/\" title=\"Halloween at Forty44\">Halloween at Forty44 with SAME</a>, <a href=\"/events/halloween-artlav-yerevan-2026/\" title=\"Halloween at ArtLav\">the craft night at ArtLav</a> and <a href=\"/events/dj-twins-halloween-souly-2026/\" title=\"DJ Twins' Halloween at Souly\">DJ Twins' party at Souly</a>. UFO closes at 04:00; the one place still open after that is <a href=\"/events/mut-moct-hayfilm-halloween-yerevan-2026/\" title=\"Mut: MOCT's Halloween night at Hayfilm\">Mut at Hayfilm</a>, until 09:00.",
         ],
         faq: [
           { q: "When is Halloween karaoke at UFO?", a: "On Saturday 31 October from 21:30 until 04:00." },
@@ -8954,8 +8954,11 @@ export const items: EventItem[] = [
   {
     slug: "mut-moct-hayfilm-halloween-yerevan-2026",
     createdAt: "2026-10-31T19:00:00+04:00",
-    updatedAt: "2026-10-31T19:00:00+04:00",
+    updatedAt: "2026-10-31T19:25:00+04:00",
     site: "tick",
+    // The card follows UFO's: Forty44 closes at 03:00, UFO at 04:00, and this
+    // is where the night goes on until 09:00 (the owner's order, 31 Oct 2026).
+    after: "halloween-karaoke-ufo-bar-yerevan-2026",
     title: "ՄՈՒԹ․ MOCT-ի Հելոուինի գիշերը Hayfilm Cluster-ում",
     titleSeo: "Հելոուին Երևանում՝ ՄՈՒԹ Hayfilm-ում, հոկտեմբերի 31",
     cardTitle: "ՄՈՒԹ Hayfilm-ում",
@@ -8974,7 +8977,6 @@ export const items: EventItem[] = [
     imageAlt: "ՄՈՒԹ երեկույթի պաստառը․ մեծ հայատառ ՄՈՒԹ գրությունը էլիպսի մեջ, կարմիր ֆոնին մուգ շաղախ, վերևում OCT 31 SAT և HAYFILM, դահլիճների դիջեյների անունները",
     imageKind: "illustration",
     imageCredit: "MOCT Promo poster, adapted",
-    dateInImage: true,
     imageWidth: 1024,
     imageHeight: 1024,
     category: "Հելոուին",
@@ -8998,19 +9000,19 @@ export const items: EventItem[] = [
     ],
     i18n: {
       en: {
-        title: "ՄՈՒԹ: MOCT's Halloween night at Hayfilm Cluster",
-        titleSeo: "Halloween in Yerevan: ՄՈՒԹ at Hayfilm Cluster, 31 October",
-        cardTitle: "ՄՈՒԹ at Hayfilm",
+        title: "Mut: MOCT's Halloween night at Hayfilm Cluster",
+        titleSeo: "Halloween in Yerevan: Mut by MOCT at Hayfilm, 31 October",
+        cardTitle: "Mut by MOCT at Hayfilm",
         summary:
           "An all-night Halloween rave in Yerevan on 31 October at Hayfilm Cluster, 30 Ashtarak Highway: nine DJs across three rooms from 23:00 to 09:00, electro, breakbeat, techno and dark house; the price is not published.",
         city: "Yerevan",
         country: "Armenia",
         venue: "Hayfilm Cluster, 30 Ashtarak Highway",
         organizer: "MOCT Promo",
-        imageAlt: "The ՄՈՒԹ party poster: the word ՄՈՒԹ in large Armenian letters inside an ellipse, a dark smear across a red ground, OCT 31 SAT and HAYFILM above, the DJs' names by room",
+        imageAlt: "The Mut party poster: the word ՄՈՒԹ in large Armenian letters inside an ellipse, a dark smear across a red ground, OCT 31 SAT and HAYFILM above, the DJs' names by room",
         category: "Halloween",
         body: [
-          "On the night of 31 October MOCT Promo holds ՄՈՒԹ (‘Mut’, Armenian for darkness) at Hayfilm Cluster, the longest of Yerevan's Halloween parties: it opens at 23:00 and runs until 09:00 the next morning. Three rooms, the Projector Room, the Studio and the bar, and nine DJs.",
+          "On the night of 31 October MOCT Promo holds Mut (ՄՈՒԹ, Armenian for darkness) at Hayfilm Cluster, the longest of Yerevan's Halloween parties: it opens at 23:00 and runs until 09:00 the next morning. Three rooms, the Projector Room, the Studio and the bar, and nine DJs.",
           "The organiser promises ‘haunted electro and twisted breakbeats, hypnotic techno spells, dark house grooves and ghostly trance’.",
           "## The rooms",
           "Main: ÉLÉKTRA, GFRND, Karina Saakyan, Kogeno. Bar: Your Reference (DE) b2b hessIless, Hofmann. Studio: DJ STRIP, DSCTQ, Fluctt. Set times are not on the poster or the Resident Advisor page.",

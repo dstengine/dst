@@ -243,3 +243,32 @@ for (const c of CASES) {
     }
   });
 }
+
+// The glow's relay (FeedCards `data-late`, `data-last`): in the small hours
+// an open editor's pick glows; once the last pick has closed, the cards still
+// open take it. Halloween night in Yerevan: Forty44 (to 03:00), UFO (to
+// 04:00), Mut at Hayfilm (to 09:00, not a pick).
+const card = (id, pick, chip) => `<article class="feed-card" id="${id}">${pick ? '<span class="feed-pick">Editors\u2019 choice</span>' : ""}${chip}</article>`;
+const NIGHT = (w) =>
+  card("forty44", true, live("c1", "2026-10-31T21:00:00+04:00", "2026-11-01T03:00:00+04:00", w, { offset: "+04:00" }))
+  + card("ufo", true, live("c2", "2026-10-31T21:30:00+04:00", "2026-11-01T04:00:00+04:00", w, { offset: "+04:00" }))
+  + card("mut", false, live("c3", "2026-10-31T23:00:00+04:00", "2026-11-01T09:00:00+04:00", w, { offset: "+04:00" }));
+const RELAY = [
+  ["23:30", "2026-10-31T23:30:00+04:00", { forty44: [false, false], ufo: [false, false], mut: [false, false] }],
+  ["01:00", "2026-11-01T01:00:00+04:00", { forty44: [true, false], ufo: [true, false], mut: [true, false] }],
+  ["03:30", "2026-11-01T03:30:00+04:00", { forty44: [false, false], ufo: [true, false], mut: [true, false] }],
+  ["04:30", "2026-11-01T04:30:00+04:00", { forty44: [false, false], ufo: [false, false], mut: [true, true] }],
+  ["06:30", "2026-11-01T06:30:00+04:00", { forty44: [false, false], ufo: [false, false], mut: [false, false] }],
+];
+for (const [label, at, want] of RELAY) {
+  test(`relay ${label}: late and last marks on Halloween night, Yerevan`, async ({ browser }) => {
+    const context = await browser.newContext({ timezoneId: "Asia/Yerevan" });
+    const page = await context.newPage();
+    await page.clock.setFixedTime(new Date(at));
+    await page.setContent(`<!doctype html><html lang="en"><body>${NIGHT(en)}<script>${SCRIPT}</script></body></html>`);
+    const got = await page.evaluate(() =>
+      Object.fromEntries([...document.querySelectorAll(".feed-card")].map((c) => [c.id, [c.hasAttribute("data-late"), c.hasAttribute("data-last")]])));
+    await context.close();
+    expect(got).toEqual(want);
+  });
+}

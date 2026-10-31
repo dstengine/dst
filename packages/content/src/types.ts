@@ -324,6 +324,14 @@ export interface EventItem extends ItemBase {
   // Forty44 and MOCT — and set per entry, because not every night a
   // venue we like puts on is one we would send a reader to.
   editorsChoice?: boolean;
+  // The slug of the card this one sits right behind in a list that puts the
+  // editors' picks first (a subject page, the tail of an event page, the
+  // promoted block). The picks are where the night starts; this is where it
+  // goes on once they close — Mut at Hayfilm after UFO on Halloween night,
+  // 31 Oct 2026. Date order is untouched where the picks are not lifted
+  // (the whole-site listing, the month pages), and the field does nothing
+  // when the named card is not in the list.
+  after?: string;
   // Fixed offset, not an IANA zone: the UAE has no daylight saving, so
   // +04:00 is correct year-round and needs no zone database to resolve.
   // Set explicitly for an event held outside the Gulf.

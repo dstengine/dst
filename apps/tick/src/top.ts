@@ -18,6 +18,9 @@ import type { Lang } from "./content";
 export const TOP = [
   { slug: "halloween-weekend-forty44-yerevan-2026", label: "Forty44", icon: "pumpkin", nav: false },
   { slug: "halloween-karaoke-ufo-bar-yerevan-2026", label: "UFO Bar", icon: "mic", nav: false },
+  // Third on purpose: the night's last stop, open until 09:00 after Forty44
+  // (03:00) and UFO (04:00). Not an editors' pick.
+  { slug: "mut-moct-hayfilm-halloween-yerevan-2026", label: "MOCT", icon: "stage", nav: false },
   { slug: "devfest", label: "DevFest", icon: "laptop" },
 ];
 

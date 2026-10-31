@@ -2,7 +2,7 @@ import { test, describe } from "node:test";
 import assert from "node:assert/strict";
 import { newsBySite, latestNews } from "../src/news/index.ts";
 import { eventsBySite, upcomingEvents, pastEvents } from "../src/events/index.ts";
-import { endDay, runDays, isCurrent, isPromoted, withPromoted } from "../src/when.ts";
+import { endDay, runDays, isCurrent, isPromoted, withPromoted, placedAfter } from "../src/when.ts";
 
 const news = (over) => ({ slug: "s", site: "x", title: "t", summary: "s", date: "2026-01-01", ...over });
 const event = (over) => ({ slug: "s", site: "x", title: "t", summary: "s", start: "2026-01-01", ...over });
@@ -169,5 +169,25 @@ describe("runDays", () => {
   });
   test("a run across a month and a year counts its days", () => {
     assert.equal(runDays({ start: "2026-11-20", end: "2027-01-03", startTime: "10:00", endTime: "20:00", closedDates: ["2026-12-25"] }).length, 44);
+  });
+});
+
+describe("placedAfter", () => {
+  const slugs = (xs) => xs.map((x) => x.slug);
+  test("a card that names one in the list moves to sit right behind it", () => {
+    const list = [{ slug: "forty44" }, { slug: "ufo" }, { slug: "aki" }, { slug: "bak75" }, { slug: "mut", after: "ufo" }];
+    assert.deepEqual(slugs(placedAfter(list)), ["forty44", "ufo", "mut", "aki", "bak75"]);
+  });
+  test("the named card absent: the list is untouched", () => {
+    const list = [{ slug: "aki" }, { slug: "mut", after: "ufo" }];
+    assert.deepEqual(slugs(placedAfter(list)), ["aki", "mut"]);
+  });
+  test("on the named card's own page it leads the list", () => {
+    const list = [{ slug: "forty44" }, { slug: "aki" }, { slug: "mut", after: "ufo" }];
+    assert.deepEqual(slugs(placedAfter(list, "ufo")), ["mut", "forty44", "aki"]);
+  });
+  test("two cards behind the same one keep their order", () => {
+    const list = [{ slug: "ufo" }, { slug: "x" }, { slug: "a", after: "ufo" }, { slug: "b", after: "ufo" }];
+    assert.deepEqual(slugs(placedAfter(list)), ["ufo", "a", "b", "x"]);
   });
 });
