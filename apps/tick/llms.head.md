@@ -1,6 +1,6 @@
 # Tick · Yerevan — what's on in Yerevan
 
-> Events and culture news for Yerevan and Armenia, in English at the root and in Armenian under /am/. Every entry names the source it came from and the day it was last checked against it. An independent publication: no ministry, no ticket sales, tied to no venue.
+> Events and culture news for Yerevan and Armenia, in English at the root and in Armenian under /am/. Every entry names the source it came from and the day it was last checked against it. An independent publication: no ministry, tied to no venue. Tickets are bought through the button on each event page, which opens the organiser's or the box office's own sale.
 
 How the site works, in five rules:
 
