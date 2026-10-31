@@ -132,8 +132,10 @@ const parts = (iso: string) => {
   {items.map((item) => {
     const Tag = item.href ? "a" : "article";
     const when = parts(item.until ?? item.date);
+    // data-cta: the click is counted as a cta_click of kind "feed-card"
+    // (Analytics.astro), with the card's title as cta_text.
     return (
-      <Tag class="feed-card" href={item.href} title={item.href ? item.title : undefined}>
+      <Tag class="feed-card" href={item.href} title={item.href ? item.title : undefined} data-cta={item.href ? "feed-card" : undefined}>
         {(item.image || item.event) && (
           <div class:list={["feed-cover", dated(item) && "feed-cover-date", dated(item) && item.image && "feed-cover-backed"]}>
             {item.image && (

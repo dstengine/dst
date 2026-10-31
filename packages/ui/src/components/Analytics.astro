@@ -73,14 +73,19 @@ gtag('config', '${id}', { cookie_domain: ${cookieDomain} });`;
   // generate_lead or lead_failed. The theme toggle sits on all 385 pages
   // and would out-number every other event on the network several times
   // over to answer a question `prefers-color-scheme` mostly answers first.
-  const CTA = ".button, .button-secondary, .link-card, .cta-banner";
+  // `data-cta="<kind>"` lets a component name its own kind of call to
+  // action — a feed card, the Halloween pumpkin — without this file
+  // learning its class: the attribute is the kind the report shows.
+  const CTA = ".button, .button-secondary, .link-card, .cta-banner, [data-cta]";
 
   /** A card's label can be a whole paragraph. Reports want the thing that
       was clicked, not the copy around it — and only the words on screen:
       a button under test carries every variant's label, hidden but for
       one, and textContent would report all three run together. */
+  // A link with no words — the pumpkin, a floating mark — is named by its
+  // aria-label, which is what a screen reader would have said for it.
   const label = (el: Element) =>
-    ((el as HTMLElement).innerText ?? el.textContent)?.trim().replace(/\s+/g, " ").slice(0, 60);
+    (((el as HTMLElement).innerText ?? el.textContent)?.trim() || el.getAttribute("aria-label") || "").replace(/\s+/g, " ").slice(0, 60);
 
   // One impression per test this page view shows, once, at load: the
   // denominator of every A/B/n result. A page test is in the page itself;
@@ -135,7 +140,9 @@ gtag('config', '${id}', { cookie_domain: ${cookieDomain} });`;
         // The path only. A full URL would carry the query string, and the
         // query string is where UTM tags and anything a visitor typed live.
         cta_href: href.split(/[?#]/)[0] || href,
-        cta_kind: link.classList.contains("link-card")
+        cta_kind: link.getAttribute("data-cta")
+          ? link.getAttribute("data-cta")
+          : link.classList.contains("link-card")
           ? "card"
           : link.classList.contains("cta-banner")
             ? "banner"

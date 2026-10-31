@@ -22,7 +22,7 @@ const { href, label } = Astro.props;
 const FROM = "2026-10-31T00:00:00+04:00";
 const UNTIL = "2026-11-02T00:00:00+04:00";
 ---
-<a class="pumpkin-link button" href={href} aria-label={label} title={label} data-pumpkin data-from={FROM} data-until={UNTIL} hidden>
+<a class="pumpkin-link button" href={href} aria-label={label} title={label} data-pumpkin data-cta="pumpkin" data-from={FROM} data-until={UNTIL} hidden>
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={ICONS.pumpkin} /></svg>
 </a>
 <script is:inline>

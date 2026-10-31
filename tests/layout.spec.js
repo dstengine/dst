@@ -625,6 +625,46 @@ test.describe("analytics", () => {
     const hop = events.find((e) => e[1] === "ticket_click")[2].hop;
     expect(hop).toBe("future-world-forum-dubai-2026-ticket");
   });
+
+  // The three things a reader taps most on tick without leaving the site:
+  // a feed card, the Halloween pumpkin and the share mark. Each is a
+  // cta_click (or share_click) with a kind the report can split on, and
+  // a link with no words is named by its aria-label.
+  test("a feed card, the pumpkin and the share mark are each counted by kind", async ({ page }) => {
+    // The pumpkin links to /halloween/, so it is on every page but that one;
+    // the share mark is on the pages that have something to share.
+    await page.goto(url("tick", "/"));
+    await captureEvents(page);
+    const home = await page.evaluate(() => {
+      document.addEventListener("click", (e) => e.preventDefault(), true);
+      document.querySelector("a.feed-card[href]").click();
+      const pumpkin = document.querySelector("[data-pumpkin]");
+      pumpkin.hidden = false;
+      pumpkin.click();
+      return window.__events;
+    });
+    await page.goto(url("tick", "/halloween/"));
+    await captureEvents(page);
+    const shared = await page.evaluate(() => {
+      document.addEventListener("click", (e) => e.preventDefault(), true);
+      document.querySelector("[data-share='fab']").click();
+      return window.__events;
+    });
+    const events = [...home, ...shared];
+
+    const ctas = events.filter((e) => e[1] === "cta_click").map((e) => e[2]);
+    const card = ctas.find((c) => c.cta_kind === "feed-card");
+    expect(card, `no feed-card cta_click among ${JSON.stringify(events)}`).toBeTruthy();
+    expect(card.cta_text, "a card click carries no title").toBeTruthy();
+    expect(card.cta_href).toMatch(/^\//);
+    const pumpkin = ctas.find((c) => c.cta_kind === "pumpkin");
+    expect(pumpkin, "no pumpkin cta_click").toBeTruthy();
+    expect(pumpkin.cta_text, "the pumpkin carries no label").toBeTruthy();
+    expect(pumpkin.cta_href).toBe("/halloween/");
+    const share = events.find((e) => e[1] === "share_click");
+    expect(share, "no share_click").toBeTruthy();
+    expect(share[2].cta_kind).toBe("fab");
+  });
 });
 
 test.describe("reading measure", () => {
