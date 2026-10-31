@@ -819,7 +819,7 @@ export const items: EventItem[] = [
   {
     slug: "cosmic-horrors-planetarium-wien-2026",
     createdAt: "2026-10-11T01:15:13+04:00",
-    updatedAt: "2026-10-25T22:48:00+04:00",
+    updatedAt: "2026-10-31T20:25:00+01:00",
     site: "vien",
     image: "/covers/cosmic-horrors-planetarium-wien-2026.jpg",
     imageAlt: "Ein dunkler Nachthimmel mit einem Ringplaneten und mehreren kleinen runden Planeten über breiten Streifen in Orange und Rot, unten die Rundung einer roten Kuppel, auf cremefarbenem Grund",
@@ -911,6 +911,12 @@ export const items: EventItem[] = [
         eyebrow: "31. Oktober",
         title: "Halloween am Zentralfriedhof",
         text: "Rätselrallye und Sargprobeliegen in der Halle 2, 16 bis 20 Uhr, Eintritt frei.",
+      },
+      {
+        href: "/veranstaltungen/zentralfriedhof-bei-nacht-fuehrung-wien-2026/",
+        eyebrow: "Simmering, bis März",
+        title: "Zentralfriedhof bei Nacht",
+        text: "Nach Halloween im Dunkeln: zwei Stunden Nachtführung über den Zentralfriedhof, ab 37 Euro.",
       },
     ],
     expertise:
@@ -1884,7 +1890,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-zentralfriedhof-wien-2026",
     createdAt: "2026-10-24T19:00:00+04:00",
-    updatedAt: "2026-10-25T22:48:00+04:00",
+    updatedAt: "2026-10-31T20:25:00+01:00",
     site: "vien",
     image: "/covers/halloween-zentralfriedhof-wien-2026.jpg",
     imageAlt: "Eine Allee herbstlicher Bäume führt zu einer Kirche mit grüner Kuppel, davor ein schmiedeeisernes Tor und drei Kürbisse",
@@ -1974,9 +1980,123 @@ export const items: EventItem[] = [
         title: "Coulrophobia im Clownmuseum",
         text: "Halloween für Mutige ab 12, drei Vorstellungen am 31. Oktober.",
       },
+      {
+        href: "/veranstaltungen/zentralfriedhof-bei-nacht-fuehrung-wien-2026/",
+        eyebrow: "Bis 27. März 2027",
+        title: "Zentralfriedhof bei Nacht",
+        text: "Die Nachtführung von GabiTours ab Tor 2: zwei Stunden, zwei Touren zur Wahl, ab 37 Euro, ab 14 Jahren.",
+      },
     ],
     expertise:
       "Ein Friedhof, der zu Halloween einlädt, ist in Wien weniger seltsam, als es klingt: Die Stadt hat ein entspanntes Verhältnis zum Tod, und die Bestattung Wien führt am Zentralfriedhof sogar ein eigenes Museum. Kommen Sie vor der Dämmerung, wenn die Kinder die Rätselrallye noch bei Tageslicht beginnen sollen, und rechnen Sie am Abend vor Allerheiligen mit vielen Besuchern auf dem Friedhof, die nicht wegen Halloween da sind. Ein bisschen Rücksicht auf dem Weg zur Halle 2 gehört dazu.",
+  },
+
+  {
+    slug: "zentralfriedhof-bei-nacht-fuehrung-wien-2026",
+    createdAt: "2026-10-31T20:25:00+01:00",
+    updatedAt: "2026-10-31T20:25:00+01:00",
+    site: "vien",
+    image: "/covers/zentralfriedhof-bei-nacht-fuehrung-wien-2026.jpg",
+    imageAlt: "Eine kleine Kirche mit grüner Kuppel am Ende einer Allee kahler Bäume, davor Reihen von Grabsteinen und eine kleine Gestalt auf dem Weg, darüber Sterne",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Der Zentralfriedhof bei Nacht: Nachtführungen 2026/27",
+    cardTitle: "Zentralfriedhof bei Nacht",
+    titleSeo: "Zentralfriedhof bei Nacht: Nachtführung Wien, ab 37 Euro",
+    summary:
+      "Von Allerheiligen, 1. November 2026, bis 27. März 2027, ab 37 Euro: GabiTours führt in Kooperation mit Friedhöfe Wien an Abenden über den Wiener Zentralfriedhof, zwei Stunden, auf Deutsch. Zwei Touren zur Wahl, „Führung zum Fürchten“ und „Tragödien und Schicksal“, Treffpunkt Tor 2, ab 14 Jahren.",
+    start: "2026-11-01",
+    end: "2027-03-27",
+    utcOffset: "+01:00",
+    venue: "Wiener Zentralfriedhof, Tor 2",
+    city: "Wien",
+    geo: {
+      name: "Zentralfriedhof, 2. Tor",
+      lat: 48.15431,
+      lng: 16.44265,
+    },
+    organizer: "GabiTours in Kooperation mit Friedhöfe Wien",
+    category: "Friedhofsführung",
+    tickets: { priceFrom: 37, priceTo: 49, currency: "EUR" },
+    ticket: {
+      url: "https://www.gabitours.at/destinations/der-zentralfriedhof-bei-nacht/",
+      label: "Termine und Buchung bei GabiTours",
+    },
+    source: {
+      name: "GabiTours",
+      url: "https://www.gabitours.at/destinations/der-zentralfriedhof-bei-nacht/",
+      verifiedOn: "2026-10-31",
+    },
+    body: [
+      "Den Wiener Zentralfriedhof gibt es auch im Dunkeln zu sehen: Die <strong>Nachtführungen</strong> von <strong>GabiTours</strong> laufen in Kooperation mit <strong>Friedhöfe Wien</strong>, dem Betreiber des Friedhofs, und dauern <strong>zwei Stunden</strong>. Nach Halloween geht es mit <strong>Allerheiligen, Sonntag, 1. November 2026</strong>, weiter, und die Saison 2026/27 läuft bis <strong>Samstag, 27. März 2027</strong>; nach Ende März gibt es keine Nachtführungen mehr, sie finden laut Veranstalter ausschließlich von Mitte Oktober bis Ende März statt.",
+      "## Zwei Touren zur Wahl",
+      "Die <strong>„Führung zum Fürchten“</strong> ist die klassische Nachtführung: zwei Stunden im Dunkeln über den Friedhof, mit den Geschichten, die so ein Ort bei Nacht bereithält.",
+      "Die zweite Tour, <strong>„Tragödien und Schicksal – die andere Nachtführung“</strong>, setzt einen anderen Schwerpunkt. Sie erzählt von Menschen, die tragisch oder viel zu früh gestorben sind, von fast Vergessenen und von Berühmten, mit Stationen bei den Gräbern von Hansi Dujmic, Gabriele Possanner und Falco, und sie erklärt, wie der Friedhof funktioniert: unterschiedliche Bestattungskulturen, wann und warum Gräber aufgelassen werden und was mit vergessenen Gräbern geschieht. Preis, Dauer, Treffpunkt und Mindestalter sind bei beiden Touren gleich.",
+      "## Termine",
+      "Geführt wird an <strong>Abenden</strong>, meist an <strong>Samstagen</strong>, mit Beginnzeiten zwischen etwa <strong>18 und 21 Uhr</strong>; an Allerheiligen gibt es sechs Termine von 18 bis 21 Uhr. Stand <strong>31. Oktober 2026</strong> sind Allerheiligen und alle Samstage im November (7., 14., 21. und 28.) <strong>ausverkauft</strong>.",
+      "Freie Plätze gab es an diesem Tag ab dem <strong>5. Dezember 2026</strong>: am 5., 12. und 19. Dezember um 20:45 Uhr („Tragödien und Schicksal“) und am 19. Dezember um 21 Uhr („Führung zum Fürchten“), am 23. Jänner 2027 um 20:30 und 20:45 Uhr, am 30. Jänner um 20:45 Uhr, und im Februar und März an den Samstagen meist um 18:00, 18:15 oder 20:45 Uhr, zuletzt am 27. März um 18:00 und 18:15 Uhr. Die Zahl der freien Plätze ändert sich laufend; die aktuelle Liste steht auf der Seite von GabiTours.",
+      "## Preis und Buchung",
+      "Die Führung kostet <strong>49 Euro</strong> pro Person, <strong>ermäßigt 37 Euro</strong> für Teilnehmer unter 19, über 65 oder mit Behindertenpass. Gebucht wird <strong>ausschließlich online</strong>: Termin in der Liste auf der Tourseite wählen, mit einem kostenlosen Kundenkonto bei GabiTours anmelden und mit Online-Banking, Karte, Apple Pay oder Google Pay bezahlen; Reservierungen ohne Zahlung gibt es nicht. Tickets werden nicht verschickt, <strong>die Buchungsbestätigung per Mail gilt als Ticket</strong>. Fragen beantwortet GabiTours unter <strong>+43 663 032 340 09</strong> oder per Mail an <strong>office@gabitours.at</strong>.",
+      "## Für wen",
+      "Die Führungen sind auf <strong>Deutsch</strong> und für Teilnehmer <strong>ab 14 Jahren</strong>. Eine Tour findet ab <strong>15 Teilnehmern</strong> statt.",
+      "## Treffpunkt und Anreise",
+      "Treffpunkt und Ende ist das <strong>Tor 2</strong>, das Haupttor an der <strong>Simmeringer Hauptstraße 234, 1110 Wien</strong>. Die Straßenbahnlinien <strong>11 und 71</strong> halten an der Station Zentralfriedhof 2. Tor direkt davor.",
+      "## Mehr vom Zentralfriedhof",
+      "Am Halloween-Nachmittag öffneten Bestattung Wien und Friedhöfe Wien am selben Tor die Halle 2 für Familien: <a href=\"/veranstaltungen/halloween-zentralfriedhof-wien-2026/\" title=\"Halloween am Wiener Zentralfriedhof 2026\">Halloween am Zentralfriedhof</a>, mit Rätselrallye und Sargprobeliegen. Die Nachtführung ist das Angebot für den Rest des Winters.",
+    ],
+    faq: [
+      {
+        q: "Wann gibt es Nachtführungen am Zentralfriedhof?",
+        a: "Von Mitte Oktober bis Ende März, an Abenden mit Beginn zwischen etwa 18 und 21 Uhr, meist an Samstagen. In der Saison 2026/27 ist der letzte Termin am <strong>27. März 2027</strong>.",
+      },
+      {
+        q: "Was kostet die Nachtführung am Zentralfriedhof?",
+        a: "<strong>49 Euro</strong> pro Person, <strong>ermäßigt 37 Euro</strong> für Teilnehmer unter 19, über 65 oder mit Behindertenpass.",
+      },
+      {
+        q: "Wie lange dauert die Führung?",
+        a: "Zwei Stunden.",
+      },
+      {
+        q: "Wo ist der Treffpunkt?",
+        a: "Beim <strong>Tor 2</strong> des Zentralfriedhofs, Simmeringer Hauptstraße 234, 1110 Wien, Straßenbahn 11 oder 71 bis Zentralfriedhof 2. Tor. Dort endet die Führung auch.",
+      },
+      {
+        q: "Ab welchem Alter darf man mit?",
+        a: "Ab <strong>14 Jahren</strong>.",
+      },
+      {
+        q: "Was ist der Unterschied zwischen den zwei Touren?",
+        a: "Die „Führung zum Fürchten“ ist die gruselige Nachtführung. „Tragödien und Schicksal“ erzählt von tragisch oder jung Verstorbenen, Vergessenen und Berühmten und davon, wie der Friedhof funktioniert. Preis, Dauer und Treffpunkt sind gleich.",
+      },
+      {
+        q: "Wie bekomme ich ein Ticket?",
+        a: "Nur online auf der Tourseite von GabiTours: Termin wählen, mit Kundenkonto anmelden und bezahlen. Die Buchungsbestätigung per Mail gilt als Ticket.",
+      },
+    ],
+    related: [
+      {
+        href: "/veranstaltungen/halloween-zentralfriedhof-wien-2026/",
+        eyebrow: "Am selben Tor",
+        title: "Halloween am Zentralfriedhof",
+        text: "Rätselrallye und Sargprobeliegen in der Halle 2 am 31. Oktober, Eintritt frei.",
+      },
+      {
+        href: "/veranstaltungen/perchtenlauf-prater-wien-2026/",
+        eyebrow: "29. November, Riesenradplatz",
+        title: "Perchtenlauf im Prater 2026",
+        text: "Der andere dunkle Brauch des Wiener Winters: über 220 Perchten aus 17 Vereinen, ab 17 Uhr, Eintritt frei.",
+      },
+      {
+        href: "/veranstaltungen/wiener-christkindlmarkt-2026/",
+        eyebrow: "Ab 13. November",
+        title: "Wiener Christkindlmarkt",
+        text: "Für einen Dezember-Samstag: erst der Rathausplatz am Nachmittag, dann die Führung am Abend.",
+      },
+    ],
+    expertise:
+      "Allerheiligen ist am Zentralfriedhof der Tag der Grabbesuche, und die Nachtführungen sind an diesem Abend und im ganzen November früh vergeben. Wer heuer noch mitgehen will, plant mit Dezember oder dem späten Winter, wenn es schon gegen halb fünf dunkel wird und die frühen Termine um 18 Uhr wirklich im Finstern beginnen. Ziehen Sie sich wärmer an, als es in der Stadt nötig wäre: Das Gelände ist weit und offen, und zwei Stunden im Gehen und Stehen sind im Jänner lang.",
   },
 
   {
@@ -2250,7 +2370,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-party-schiff-donau-wien-2026",
     createdAt: "2026-10-31",
-    updatedAt: "2026-10-31T13:34:00+04:00",
+    updatedAt: "2026-10-31T20:25:00+01:00",
     site: "vien",
     image: "/covers/halloween-party-schiff-donau-wien-2026.jpg",
     imageAlt: "Ein rotes Schiff aus Papier mit Schlot und Wimpel auf einem schmalen grünen Flussband, zwei Kürbisse an Deck, drei Fledermäuse und eine Mondsichel am cremefarbenen Himmel",
@@ -2332,6 +2452,12 @@ export const items: EventItem[] = [
         eyebrow: "Simmering",
         title: "Halloween am Zentralfriedhof",
         text: "Rätselrallye, Sargprobeliegen und Goodiebags in der Halle 2, 16 bis 20 Uhr, Eintritt frei.",
+      },
+      {
+        href: "/veranstaltungen/zentralfriedhof-bei-nacht-fuehrung-wien-2026/",
+        eyebrow: "Simmering, bis März",
+        title: "Zentralfriedhof bei Nacht",
+        text: "Gruselig geht es auch nach dem 31. Oktober weiter: Nachtführungen über den Zentralfriedhof, ab 37 Euro.",
       },
     ],
     expertise:

@@ -848,7 +848,7 @@ export const items: EventItem[] = [
   {
     slug: "festival-del-terror-six-flags-2026",
     createdAt: "2026-09-12T22:20:00+04:00",
-    updatedAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-31T23:25:00+04:00",
     site: "cmx",
     image: "/covers/festival-del-terror-six-flags-2026.jpg",
     imageAlt:
@@ -932,6 +932,12 @@ export const items: EventItem[] = [
         eyebrow: "Hasta el 2 de noviembre",
         title: "Turibús del Terror",
         text: "Un recorrido nocturno por casas con leyenda, con salida del Ángel, desde $799.",
+      },
+      {
+        href: "/eventos/la-llorona-xochimilco-2026/",
+        eyebrow: "Del 31 de octubre al 22 de noviembre",
+        title: "La Llorona en Xochimilco",
+        text: "Teatro en trajineras por los canales de Cuemanco, para todas las edades, desde $560.",
       },
     ],
     expertise:
@@ -1661,7 +1667,7 @@ export const items: EventItem[] = [
   {
     slug: "camino-a-la-luz-reforma-2026",
     createdAt: "2026-10-24T16:00:00+04:00",
-    updatedAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-31T23:25:00+04:00",
     site: "cmx",
     image: "/covers/camino-a-la-luz-reforma-2026.jpg",
     imageAlt:
@@ -1723,12 +1729,18 @@ export const items: EventItem[] = [
         title: "Turibús del Terror",
         text: "Un recorrido nocturno por casas con leyenda, con salida del Ángel, desde $799.",
       },
+      {
+        href: "/eventos/la-llorona-xochimilco-2026/",
+        eyebrow: "Del 31 de octubre al 22 de noviembre",
+        title: "La Llorona en Xochimilco",
+        text: "La leyenda montada como teatro en trajineras, con salida del Embarcadero Cuemanco, desde $560.",
+      },
     ],
   },
   {
     slug: "turibus-del-terror-cdmx-2026",
     createdAt: "2026-10-24T19:00:00+04:00",
-    updatedAt: "2026-10-25T23:43:00+04:00",
+    updatedAt: "2026-10-31T23:25:00+04:00",
     site: "cmx",
     image: "/covers/turibus-del-terror-cdmx-2026.jpg",
     imageAlt: "Un autobús rojo de dos pisos con fantasmas asomados a las ventanas, de noche, frente a una columna coronada por una figura dorada alada y una luna llena",
@@ -1816,9 +1828,108 @@ export const items: EventItem[] = [
         title: "Festival del Terror en Six Flags",
         text: "Ocho atracciones de terror en Tlalpan, para quien prefiere el susto dentro de un parque.",
       },
+      {
+        href: "/eventos/la-llorona-xochimilco-2026/",
+        eyebrow: "Del 31 de octubre al 22 de noviembre",
+        title: "La Llorona en Xochimilco",
+        text: "La leyenda montada como teatro en trajineras en Cuemanco, con más de 50 actores, desde $560.",
+      },
     ],
     expertise:
       "Elija la fecha por el punto de salida antes que por el día: el Ángel queda junto a la línea 7 del Metrobús y a las esculturas de Camino a la Luz, mientras que las dos salidas desde Cibeles, el 25 y el 31, son las más cómodas para quien vive o se hospeda en la Roma y la Condesa. El 31 de octubre será la noche más concurrida de la temporada. Coma algo antes: la cena incluida es ligera y el recorrido termina a las once.",
+  },
+
+  {
+    slug: "la-llorona-xochimilco-2026",
+    createdAt: "2026-10-31T23:25:00+04:00",
+    updatedAt: "2026-10-31T23:25:00+04:00",
+    site: "cmx",
+    image: "/covers/la-llorona-xochimilco-2026.jpg",
+    imageAlt: "Una figura blanca con velo de pie en una trajinera sobre un canal al atardecer, entre carrizos y montañas moradas",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "La Llorona 2026 en Xochimilco: teatro en trajineras en Cuemanco",
+    cardTitle: "La Llorona en Xochimilco",
+    titleSeo: "La Llorona 2026 en Xochimilco, Ciudad de México: funciones",
+    summary:
+      "Del 31 de octubre al 22 de noviembre de 2026, desde 560 pesos en línea: La Llorona, la leyenda montada como teatro sobre trajineras en los canales de Xochimilco, con más de 50 actores y música en vivo, sale del Embarcadero Cuemanco, en el sur de la Ciudad de México. Funciones a las 18:00, 21:00 y, el 31 de octubre y el 1 de noviembre, también a las 23:00.",
+    start: "2026-10-31",
+    end: "2026-11-22",
+    dates: [
+      "2026-10-31", "2026-11-01", "2026-11-02", "2026-11-06", "2026-11-07",
+      "2026-11-08", "2026-11-13", "2026-11-14", "2026-11-15", "2026-11-20",
+      "2026-11-21", "2026-11-22",
+    ],
+    startTime: "18:00",
+    utcOffset: "-06:00",
+    venue: "Embarcadero Cuemanco, Xochimilco",
+    city: "Ciudad de México",
+    country: "México",
+    geo: { name: "Embarcadero Cuemanco", lat: 19.28916, lng: -99.10175 },
+    category: "Día de Muertos",
+    tickets: { priceFrom: 560, currency: "MXN" },
+    ticket: {
+      url: "https://ticketplanet.com.mx/05-10-LA-LLORONA/",
+      label: "Boletos desde $560",
+    },
+    source: {
+      name: "Ticket Planet",
+      url: "https://ticketplanet.com.mx/05-10-LA-LLORONA/",
+      verifiedOn: "2026-10-31",
+    },
+    body: [
+      "Cada temporada de Día de Muertos, la leyenda de <strong>La Llorona</strong> vuelve a los canales de Xochimilco. Es una obra de teatro que se ve desde una <strong>trajinera</strong>: un espectáculo inmersivo con <strong>más de 50 actores</strong>, <strong>música en vivo</strong> y efectos escénicos que convierten las chinampas en escenario. Sale del <strong>Embarcadero Cuemanco</strong> y es para <strong>todas las edades</strong>.",
+      "## Funciones",
+      "<strong>Sábado 31 de octubre</strong>: 18:00, 21:00 y 23:00.<br><strong>Domingo 1 de noviembre</strong>: 18:00, 21:00 y 23:00.<br><strong>Lunes 2 de noviembre</strong>: 18:00 y 21:00.<br><strong>Viernes 6, sábado 7 y domingo 8 de noviembre</strong>: 18:00 y 21:00.<br><strong>Viernes 13 de noviembre</strong>: 18:00.<br><strong>Sábado 14 y domingo 15 de noviembre</strong>: 18:00 y 21:00.<br><strong>Viernes 20, sábado 21 y domingo 22 de noviembre</strong>: 18:00 y 21:00.",
+      "Es el calendario que publica la taquilla al 31 de octubre; la última función es el domingo 22 de noviembre. Las horas son de la Ciudad de México.",
+      "## Boletos",
+      "Se venden en línea en <strong>Ticket Planet</strong>, la taquilla oficial, <strong>desde 560 pesos</strong>. La taquilla reparte la temporada en cuatro listados: uno para el 31 de octubre, otro del 1 al 8 de noviembre, otro del 13 al 15 y otro del 20 al 22 de noviembre; la fecha y la hora se eligen dentro de cada uno.",
+      "## Dónde se aborda",
+      "En el <strong>Embarcadero Cuemanco</strong>, sobre Periférico Sur (Blvd. Adolfo Ruiz Cortines) s/n, colonia Barrio 18, alcaldía Xochimilco, junto a la pista olímpica de canotaje Virgilio Uribe. Con el mismo nombre se presentan otros montajes en la zona de Cuemanco: esta página es la del Embarcadero Cuemanco con boletos en Ticket Planet.",
+      "## Cuánto dura",
+      "El recorrido en trajinera puede durar varias horas. La taquilla no publica hora de apertura de puertas, así que conviene llegar con margen antes de la función.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo es La Llorona en Xochimilco 2026?",
+        a: "El 31 de octubre y el 1, 2, 6, 7, 8, 13, 14, 15, 20, 21 y 22 de noviembre de 2026, en el Embarcadero Cuemanco. Hay funciones a las 18:00 y a las 21:00 casi todos esos días, a las 23:00 el 31 de octubre y el 1 de noviembre, y solo a las 18:00 el 13 de noviembre.",
+      },
+      {
+        q: "¿Cuánto cuesta La Llorona en Xochimilco?",
+        a: "Los boletos en línea cuestan desde 560 pesos en Ticket Planet.",
+      },
+      {
+        q: "¿Dónde se toma la trajinera?",
+        a: "En el Embarcadero Cuemanco, sobre Periférico Sur s/n, colonia Barrio 18, alcaldía Xochimilco, Ciudad de México.",
+      },
+      {
+        q: "¿Pueden ir niños?",
+        a: "Sí: la taquilla la anuncia como evento para todas las edades.",
+      },
+    ],
+    related: [
+      {
+        href: "/eventos/alumbrada-mixquic-2026/",
+        eyebrow: "1 y 2 de noviembre",
+        title: "La Alumbrada de Mixquic",
+        text: "El panteón de San Andrés Mixquic, en Tláhuac, iluminado con velas y cempasúchil.",
+      },
+      {
+        href: "/eventos/turibus-del-terror-cdmx-2026/",
+        eyebrow: "Hasta el 2 de noviembre",
+        title: "Turibús del Terror",
+        text: "Un recorrido nocturno por casas con leyenda, con salida del Ángel, desde $799.",
+      },
+      {
+        href: "/eventos/camino-a-la-luz-reforma-2026/",
+        eyebrow: "Hasta el 8 de noviembre",
+        title: "Camino a la Luz en Reforma",
+        text: "Veintidós esculturas de luz del Ángel a Chapultepec, de 19:00 a 23:00.",
+      },
+    ],
+    expertise:
+      "Si va el 31 de octubre o el 1 de noviembre, piense en la hora de regreso antes que en la de inicio: Cuemanco está en el extremo sur de la ciudad y el recorrido puede durar varias horas, así que la función de las 23:00 termina muy tarde. La de las 18:00 es la que mejor funciona con niños. Y si esas dos noches se llenan, quedan diez fechas más hasta el 22 de noviembre, ya fuera del pico de Día de Muertos.",
   },
 
   {

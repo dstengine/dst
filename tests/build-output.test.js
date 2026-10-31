@@ -1930,7 +1930,10 @@ describe("how much of each site is the template", () => {
     // honest sentence about guarantees, printed on every page. The small
     // sites feel it most; no sentence of prose repeats beyond the card's.
     dst: 25, llc: 16, visas: 24, riviera: 15, mbr: 22, palmcentral: 30,
-    eco: 30, fwf: 22, musical: 35, nyc42: 27, ldn: 25, lnd: 25, cmx: 32, mxo: 25,
+    // mxo 25 → 26 on 1 November 2026, measured at 25.0 after two Día de
+    // Muertos entries (Toluca, Atlixco) joined the season strip, whose cards
+    // print on every event page of the section. No sentence of prose repeats.
+    eco: 30, fwf: 22, musical: 35, nyc42: 27, ldn: 25, lnd: 25, cmx: 32, mxo: 26,
     // tick 36 → 37 the same evening, measured at 36.2, when the promo card
     // went under the fact table of every event page as well (EventArticle
     // `promo`): the card's three lines twice on a page, 146 pages.

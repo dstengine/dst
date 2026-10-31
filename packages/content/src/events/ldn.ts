@@ -1072,7 +1072,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-leadenhall-market-2026",
     createdAt: "2026-10-11T01:15:13+04:00",
-    updatedAt: "2026-10-12T00:47:00+04:00",
+    updatedAt: "2026-10-31T19:20:00+00:00",
     site: "ldn",
     image: "/covers/halloween-leadenhall-market-2026.jpg",
     imageAlt: "A large green and gold beetle beneath a red paper arch, sitting on top of a small shopfront with a grey awning, on a cream ground",
@@ -1169,6 +1169,12 @@ export const items: EventItem[] = [
         title: "Halloween at the Tower of London",
         text: "Ghosts in daylight, 24 October to 1 November, 10.30am to 4pm, included with admission.",
       },
+      {
+        href: "/events/day-of-the-dead-camden-market-2026/",
+        eyebrow: "Sunday 1 November",
+        title: "Day of the Dead at Camden Market",
+        text: "The beetle's last day is also Día de los Muertos: free mariachi, Catrinas and Mexican stalls in Camden, 1pm to 7pm.",
+      },
     ],
     expertise:
       "Mind the gap in the middle of the month: the beetle went away on 7 October and does not come back until the 24th, so a visit for the photograph belongs in the last week. The walking tour runs the other way — it is an October fixture, and once the beetle is back only two evenings are left, Wednesday 28 and Friday 30. Either of those does both at once: the tour starts at 6.30pm with the beetle already in place under the roof. The spell-kit hatch is the one thing that needs daylight, since it shuts at 4pm — for that, come on a weekend afternoon, and on Sunday 25 October the flea market is on under the same roof.",
@@ -1177,7 +1183,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-tower-of-london-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-10-11T04:20:15+04:00",
+    updatedAt: "2026-10-31T19:20:00+00:00",
     site: "ldn",
     image: "/covers/halloween-tower-of-london-2026.jpg",
     imageAlt: "Four crenellated tower shapes standing in a row, three red and one charcoal, above a dark band",
@@ -1230,6 +1236,14 @@ export const items: EventItem[] = [
       {
         q: "What time do the ghosts appear?",
         a: "They gather at the Haunted Forge at 11.15am, 12.45pm and 2.45pm each day, and appear around the Tower in between.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/day-of-the-dead-camden-market-2026/",
+        eyebrow: "Sunday 1 November",
+        title: "Day of the Dead at Camden Market",
+        text: "After the ghosts leave at 4pm on the last day: a free Día de los Muertos in Camden until 7pm, with mariachi and Catrinas parades.",
       },
     ],
     expertise:
@@ -1295,7 +1309,7 @@ export const items: EventItem[] = [
   {
     slug: "barbican-ghost-tours-2026",
     createdAt: "2026-10-11T04:17:31+04:00",
-    updatedAt: "2026-10-11T04:17:31+04:00",
+    updatedAt: "2026-10-31T19:20:00+00:00",
     site: "ldn",
     image: "/covers/barbican-ghost-tours-2026.jpg",
     imageAlt: "Two tall cream slab towers edged in red against a black night sky with a crescent moon, a small pale figure standing in the gap between them and a red door in the dark terrace below",
@@ -1393,6 +1407,12 @@ export const items: EventItem[] = [
         eyebrow: "Tower of London",
         title: "Halloween at the Tower of London",
         text: "Ghosts in daylight over half term, included with admission.",
+      },
+      {
+        href: "/events/day-of-the-dead-camden-market-2026/",
+        eyebrow: "Sunday 1 November",
+        title: "Day of the Dead at Camden Market",
+        text: "Free mariachi, Catrinas parades and papel picado at Hawley Wharf, 1pm to 7pm, the day after Halloween.",
       },
     ],
     expertise:
@@ -2475,5 +2495,98 @@ export const items: EventItem[] = [
     ],
     expertise:
       "The 2.30pm door is the one to meet: the garden tour fills the first forty minutes and the timetable lists no later point to join. The afternoon runs past sunset in a walled garden at the end of October, so dress for being outside. The two film sessions are of unnamed short films, which makes the ceremonies and the saining workshop the part a ticket is really buying.",
+  },
+  {
+    slug: "day-of-the-dead-camden-market-2026",
+    createdAt: "2026-10-31T19:20:00+00:00",
+    updatedAt: "2026-10-31T19:20:00+00:00",
+    site: "ldn",
+    image: "/covers/day-of-the-dead-camden-market-2026.jpg",
+    imageAlt: "Strings of red, yellow and blue paper bunting over a canal lined with orange brick arches and lit market stalls",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Día de los Muertos: Day of the Dead in Camden Market 2026",
+    cardTitle: "Day of the Dead at Camden Market",
+    titleSeo: "Day of the Dead at Camden Market 2026, London: 1 Nov",
+    summary:
+      "Sunday 1 November 2026, free: Camden Market's Día de los Muertos fills Hawley Wharf in north London from 1pm to 7pm, with mariachi bands, Catrina parades, papel picado workshops and Mexican market stalls.",
+    start: "2026-11-01",
+    startTime: "13:00",
+    endTime: "19:00",
+    displayHours: true,
+    utcOffset: "+00:00",
+    venue: "Camden Market Hawley Wharf, 1 Dockray Place, NW1 8QH",
+    city: "London",
+    country: "United Kingdom",
+    organizer: "Camden Market",
+    category: "Halloween",
+    tickets: { priceFrom: 0, currency: "GBP" },
+    ticket: {
+      url: "https://www.eventbrite.co.uk/e/dia-de-los-meurtos-day-of-the-dead-tickets-2001063300198",
+      label: "Book a free place on Eventbrite",
+    },
+    source: {
+      name: "Camden Market: Día de los Muertos",
+      url: "https://camdenmarket.com/events/dia-de-los-muertos-day-of-the-dead-in-camden-market",
+      verifiedOn: "2026-10-31",
+    },
+    body: [
+      "Halloween is one night; the Day of the Dead comes straight after it. On <strong>Sunday 1 November 2026</strong> Camden Market marks <strong>Día de los Muertos</strong> at <strong>Hawley Wharf</strong>, the canalside part of the market, with an afternoon of mariachi, Catrinas and Mexican food, and it costs nothing to go.",
+      "## Date, times and price",
+      "<strong>Sunday 1 November 2026, 1pm to 7pm.</strong> The festival is <strong>free</strong> and open to everyone, and so is every activity in it. Camden Market asks visitors to book a free place on its Eventbrite page, but no ticket is needed on the day and walk-ins are welcome.",
+      "## What is on",
+      "Parades led by <strong>Catrinas</strong>, the elegant skeleton ladies of the Mexican holiday, and by <strong>mariachi bands</strong> move across the site through the afternoon, and a stage holds live music and dance performances. Around them are traditional decorations, an altar, cactus gardens, face-painting and a market of Mexican stalls, food and drink.",
+      "The drop-in workshops include a <strong>chocolate experience</strong> and <strong>papel picado</strong>, the cut-paper banners strung over the streets for the Day of the Dead. The market pitches the day at friends, families and children alike.",
+      "Camden Market has not published a timetable for the parades, the stage or the workshops, and names no performers, so plan on the afternoon rather than on a particular set.",
+      "## Where it is",
+      "Camden Market Hawley Wharf, <strong>1 Dockray Place, London NW1 8QH</strong>, by the Regent's Canal in Camden Town, north London. Camden Town Underground station is a few minutes' walk away.",
+      "## Halloween that is still on",
+      "The Halloween weekend runs into the same Sunday elsewhere in London: the ghosts of <a href=\"/events/halloween-tower-of-london-2026/\" title=\"Halloween at the Tower of London 2026\">Halloween at the Tower of London</a> appear until 4pm, and the light-up beetle of <a href=\"/events/halloween-leadenhall-market-2026/\" title=\"Halloween at Leadenhall Market 2026\">Halloween at Leadenhall Market</a> is free to see on its last day.",
+    ],
+    faq: [
+      {
+        q: "When is Day of the Dead at Camden Market in 2026?",
+        a: "On <strong>Sunday 1 November 2026</strong>, from 1pm to 7pm, at Camden Market Hawley Wharf.",
+      },
+      {
+        q: "Is Camden Market's Day of the Dead free?",
+        a: "Yes. The festival and all its activities are free. Camden Market asks people to book a free place on Eventbrite, but walk-ins are welcome.",
+      },
+      {
+        q: "What is there to do?",
+        a: "Catrinas and mariachi parades across the site, live music and dance on a stage, a chocolate experience and papel picado workshops, face-painting, an altar, cactus gardens and Mexican food and market stalls.",
+      },
+      {
+        q: "Is it suitable for children?",
+        a: "Yes. Camden Market describes it as a day for friends, families and children, with drop-in workshops and face-painting.",
+      },
+      {
+        q: "Where is Hawley Wharf?",
+        a: "At 1 Dockray Place, London NW1 8QH, the canalside part of Camden Market in Camden Town, a short walk from Camden Town station.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/halloween-tower-of-london-2026/",
+        eyebrow: "Until 1 November",
+        title: "Halloween at the Tower of London",
+        text: "Ghosts in daylight, 10.30am to 4pm, included with admission.",
+      },
+      {
+        href: "/events/halloween-leadenhall-market-2026/",
+        eyebrow: "Until 1 November",
+        title: "Halloween at Leadenhall Market",
+        text: "A 4.5-metre light-up jewel beetle under the Victorian roof, free to see.",
+      },
+      {
+        href: "/events/barbican-ghost-tours-2026/",
+        eyebrow: "Until 13 December",
+        title: "Barbican ghost tours",
+        text: "Evening ghost tours of the Barbican, running until 13 December.",
+      },
+    ],
+    expertise:
+      "With no published timetable, the parades are the thing you cannot plan for, and they move across the whole site: arrive by mid-afternoon, buy something to eat and stay put near the stage, and the Catrinas and the mariachi will come past. The free Eventbrite place is not a condition of entry, but it costs nothing and is the market's way of counting heads, so book one if your plans are firm. Dress for a canalside November afternoon, since most of it happens outdoors and the light goes before five.",
   },
 ];

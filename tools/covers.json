@@ -117,7 +117,19 @@
       "halloween-at-the-garden-queens-botanical-2026": "a garden path between autumn trees in orange and gold, small children in costumes carrying pumpkin baskets, a row of pumpkins on hay bales, afternoon light, flat cut-paper shapes, plain border-free edges",
       "nybg-holiday-train-show-2026": "a small model train crossing a bridge inside a glasshouse, past tiny skyscrapers made of palm fronds, pinecones and cinnamon sticks, warm lights in their windows, no text",
       "lightscape-brooklyn-botanic-garden-2026": "a winding garden path at night under arches of glowing lights, bare trees lit in violet and gold, small figures walking along the path",
-      "dia-de-muertos-st-marks-church-new-york-2026": "a churchyard under bare autumn trees with a tiered ofrenda of marigolds, candles and sugar skulls, strings of papel picado overhead in orange and magenta, flat cut-paper shapes, no people, no text"
+      "dia-de-muertos-st-marks-church-new-york-2026": "a churchyard under bare autumn trees with a tiered ofrenda of marigolds, candles and sugar skulls, strings of papel picado overhead in orange and magenta, flat cut-paper shapes, no people, no text",
+      "day-of-the-dead-green-wood-cemetery-2026": {
+        "subject": "a cemetery gate of pale paper Gothic arches and spires at dusk, a low meadow before it with a small table of an ofrenda heaped with orange marigolds and candles, strings of papel picado in orange and magenta hung between two bare trees, no people, no text",
+        "detail": "the gate is a flat silhouette of pointed arches and thin spires layered in cream and ochre against a deep evening sky, the meadow a wide curving band of brown paper in front, a narrow path of small stepping stones leading off to a little chapel shape among the trees on the right; marigold petals scattered across the grass, one crescent moon, no border, no lettering, no numbers anywhere"
+      },
+      "dia-de-muertos-lincoln-center-2026": {
+        "subject": "a tall glass-walled atrium room at night with a tiered community ofrenda of marigolds, candles and small blank photo frames along one wall, a jarana guitar and a cajón drum on a low stage beside it, strings of papel picado overhead, no people, no text",
+        "detail": "the atrium is drawn as a flat box of tall vertical window panes in pale cream paper with a deep blue night behind them, the ofrenda stepped in three levels of ochre paper covered in orange marigold dots and small flame shapes, the blank frames cream rectangles with nothing inside them; the instruments simple flat shapes on a dark stage band, the cut-paper banners in orange and magenta zigzagging across the top of the frame, no lettering, no numbers anywhere"
+      },
+      "jason-takes-manhattan-live-soundtrack-lincoln-center-2026": {
+        "subject": "a white paper screen hung in a tall glass room at night showing a small flat Manhattan skyline, in front of it a DJ table with two turntables, rows of tiny seated paper figures in pointed hats and capes watching, a pale cream hockey-goalie mask shape hanging from the top of the screen, no text",
+        "detail": "playful rather than frightening: the mask is a simple oval of cream paper with small round holes, no blade, no blood, nothing sharp anywhere; the skyline on the screen in ochre and amber, two round black records on the turntables, a few paper bats and a crescent moon above the room, orange paper leaves on the floor, no lettering, no numbers anywhere"
+      }
     },
     "ldn": {
       "london-design-festival-2026": {
@@ -188,7 +200,11 @@
       "joia-rooftop-halloween-movies-battersea-2026": "a rooftop terrace at night with rows of striped deckchairs facing a large blank outdoor cinema screen glowing pale, four tall white chimney shapes of a brick power station rising behind it",
       "english-national-ballet-nutcracker-london-coliseum-2026": "a ballerina in a white tutu and a wooden nutcracker soldier facing each other on a stage under a tall Christmas tree, a giant mouse shadow on the curtain, no text",
       "the-snowman-peacock-theatre-2026": "a theatre stage with its red curtain drawn back on a snowy night scene, a snowman standing in the snow under stars and green northern lights",
-      "secret-ceremony-season-of-the-witch-chelsea-physic-garden-london-2026": "a walled botanical garden at dusk under a thin crescent moon, bundles of dried herbs tied with string, a single red rose, a steaming teacup and a small film reel resting among broad leaves, deep purple sky and moss green beds, no people, no text"
+      "secret-ceremony-season-of-the-witch-chelsea-physic-garden-london-2026": "a walled botanical garden at dusk under a thin crescent moon, bundles of dried herbs tied with string, a single red rose, a steaming teacup and a small film reel resting among broad leaves, deep purple sky and moss green beds, no people, no text",
+      "day-of-the-dead-camden-market-2026": {
+        "subject": "rows of cut-paper papel picado banners strung in scallops across the top of the frame above a canalside wharf of low brick arches, marigold garlands, a stylised sugar-skull shape made of flat paper petals and a small potted cactus on a stall table, no people, no lettering",
+        "detail": "Flat layered paper cut-outs with no vanishing point, the banners' cut-out patterns letting light through, marigold orange against a deep evening blue, abstract and never a photograph of the festival."
+      }
     },
     "lnd": {
       "giant-summer-flea-olympic-park": {
@@ -275,7 +291,11 @@
       "turibus-del-terror-cdmx-2026": "a red open-top double-decker tour bus seen from the side on a wide avenue at night, its windows glowing, a tall column topped by a small golden winged figure behind it, small ghost shapes peeking over the rail of the upper deck, a full moon, flat cut-paper shapes",
       "e-prix-ciudad-de-mexico-2027": "an electric open-wheel race car seen from the front, racing along a curving track into a stadium packed with small spectators, zigzag bolts of light in the sky above, plain unmarked bodywork",
       "edc-mexico-2027": "a festival stage shaped like a giant flower glowing with coloured lights under a night sky of fireworks, a small crowd in front",
-      "festival-cacao-para-todos-anahuacalli-ciudad-de-mexico-2026": "a dark volcanic-stone stepped pyramid museum rising behind a long market table, cacao pods split open to show their pale beans, small round cups of frothy chocolate, orange marigold flowers and bone-shaped sweet bread loaves scattered along the table, flat cut-paper shapes on a cream background"
+      "festival-cacao-para-todos-anahuacalli-ciudad-de-mexico-2026": "a dark volcanic-stone stepped pyramid museum rising behind a long market table, cacao pods split open to show their pale beans, small round cups of frothy chocolate, orange marigold flowers and bone-shaped sweet bread loaves scattered along the table, flat cut-paper shapes on a cream background",
+      "la-llorona-xochimilco-2026": {
+        "subject": "a long flat-bottomed trajinera boat of cut paper gliding along a dark canal at night, a tall slender veiled figure in a flowing white gown standing on a chinampa bank beside it, reeds and willow shapes along the water, a few small lanterns on the boat, a crescent moon above",
+        "detail": "built as layered bands of canal water in three paper tones across the lower third, the trajinera's arched painted canopy as plain unmarked colour blocks, the veiled figure's gown trailing into the mist as torn paper edges, marigold discs floating on the water in the foreground, no lettering anywhere, no faces"
+      }
     },
     "mxo": {
       "fil-guadalajara-2026": {
@@ -310,7 +330,15 @@
       "scream-park-guadalajara-2026": "an old mansion with a pointed turret behind a field of tall corn stalks, a striped circus tent at its side, a band of fog and a full moon",
       "score-baja-1000-2026": "an off-road truck kicking up dust on a desert track between cacti, ochre mountains behind and the sea on the horizon, no numbers, no text",
       "carnaval-de-mazatlan-2027": "a carnival float of cut paper with a large deer and embroidered textiles rolling along a seafront promenade, dancers in costume and confetti around it, the sea beside",
-      "animas-que-si-amanezca-guadalajara-2026": "a festival stage cut from paper under strings of papel picado, marigolds in orange and sugar skulls in white along the front, a thin crescent moon and candle flames in the night sky, flat cut-paper shapes, no people, no lettering"
+      "animas-que-si-amanezca-guadalajara-2026": "a festival stage cut from paper under strings of papel picado, marigolds in orange and sugar skulls in white along the front, a thin crescent moon and candle flames in the night sky, flat cut-paper shapes, no people, no lettering",
+      "feria-del-alfenique-toluca-2026": {
+        "subject": "a row of small sugar-paste skulls and little cut-paper figures of lambs and flowers laid along a market stall counter, a festival stage with strings of papel picado rising behind it, flat cut-paper shapes, no people, no lettering",
+        "detail": "the sugar skulls in white with tiny dots of colour on cream paper, the stall a low flat band across the foot of the frame, the stage a simple arch of darker paper behind with two rows of papel picado and a scatter of marigold blossoms in orange, soft shadows between the paper layers"
+      },
+      "valle-de-catrinas-atlixco-2026": {
+        "subject": "three towering catrina figures cut from flat paper standing in a town square, each crowned with a stylised pre-Hispanic feathered headdress, a volcano with a small plume on the horizon behind them, no lettering",
+        "detail": "the catrinas tall and slender with plain skull faces in cream and long skirts in orange, ochre and turquoise, small arcade shapes of the square at their feet and a scatter of marigold flowers along the ground, the volcano a single pale triangle with a curl of smoke, soft shadows between layers"
+      }
     },
     "dst": {
       "blockchain-life-dubai-2026": "a wide arena bowl seen from directly above as concentric paper rings, a chain of small linked hexagons running straight across the middle",
@@ -512,7 +540,11 @@
       "altwiener-christkindlmarkt-freyung-2026": "small wooden market stalls with candles, gingerbread hearts and wooden toys on a triangular square, an old church behind, snowflakes falling, no signs, no text",
       "weihnachtsmarkt-spittelberg-2026": "a narrow lane of old Biedermeier houses, strings of lights between the windows, small wooden stalls decked with green fir branches, tiny figures strolling",
       "perchtenlauf-prater-wien-2026": "a procession of shaggy masked Alpine Perchten figures with tall curved horns, fur coats and big bronze bells at their waists walking past a low fence, a giant Ferris wheel of cut paper behind them, small market huts with strings of lights, tiny onlookers behind the fence, dark winter sky with a few stars, no faces of onlookers, no text",
-      "halloween-party-schiff-donau-wien-2026": "a long paper riverboat with a tall funnel gliding along a wide river band across the lower frame, three pumpkins cut from vermilion paper on its deck, a few small bats and a thin crescent moon in the cream sky above"
+      "halloween-party-schiff-donau-wien-2026": "a long paper riverboat with a tall funnel gliding along a wide river band across the lower frame, three pumpkins cut from vermilion paper on its deck, a few small bats and a thin crescent moon in the cream sky above",
+      "zentralfriedhof-bei-nacht-fuehrung-wien-2026": {
+        "subject": "a flat side-on band composition: a long cemetery avenue at night lined with bare winter tree shapes and rows of low plain headstones, a large green-domed church at the far end of the avenue, a small group of tiny flat walking figures near a tall wrought-iron gate in the foreground, one figure holding a small round lantern that throws a soft gold pool of light, a thin crescent moon above",
+        "detail": "the night sky one unbroken deep flat tone with a few small gold star points, the dome cut from moss green paper and the gate from dark paper with simple vertical bars, headstones as plain rounded slips with no carving, no names, no crosses with text, no faces on the figures, no pumpkins, no lettering, no numerals anywhere"
+      }
     },
     "tick": {
       "new-year-with-the-stars-yerevan-opera-2026": "a single gilded concert microphone on a stand beside two champagne coupes on the ground, a small fir sprig with one red bauble, a few cut-paper stars and confetti above, flat cut-paper style, wide empty ground on both sides, no text, no lettering, no numbers, no logos anywhere",
@@ -674,7 +706,15 @@
       "yuri-lucero-acapulco-2026": "two vintage microphones on stands facing each other on a stage, confetti in the air, a bay at night behind",
       "espinoza-paz-acapulco-2027": "a cowboy hat resting on an acoustic guitar on a stage, scattered red paper hearts, a palm frond at one edge",
       "hechizos-meztizza-halloween-acapulco-2026": "a lone dancer silhouette in a red jacket caught mid-move on a small restaurant stage under one spotlight, carved pumpkins and paper bats around the stage, palm fronds and a dark bay with a few lights behind",
-      "encuentro-cocineras-tradicionales-guerrero-acapulco-2026": "a long table with clay pots, casseroles of mole, tortillas on a comal and baskets of chillies, under strings of colourful cut-paper bunting, no figures, no text"
+      "encuentro-cocineras-tradicionales-guerrero-acapulco-2026": "a long table with clay pots, casseroles of mole, tortillas on a comal and baskets of chillies, under strings of colourful cut-paper bunting, no figures, no text",
+      "tapeshtli-dia-de-muertos-acapulco-2026": {
+        "subject": "a low collective altar laid on a bed of woven reeds, heaped with marigold petals, candles and pan de muerto, a path of orange flower petals running from it toward a calm bay at dusk with a few small lights on the water",
+        "detail": "entirely abstract cut paper: marigolds are layered orange paper rosettes, candle flames are small teardrop cut-outs, papel picado banners above are plain scalloped strips with simple geometric holes and no letters or numbers, no skulls with faces, no figures and no text anywhere"
+      },
+      "astrid-hadad-vivir-muriendo-acapulco-2026": {
+        "subject": "an empty open-air stage by the sea at night with a single microphone stand under one spotlight, framed by an arch of marigold garlands and a few lit candles along the stage edge, palm fronds at one side",
+        "detail": "flat abstract cut paper, no performer and no audience, the garlands are strings of orange paper rosettes, the banners are plain scalloped strips with no letters, no faces, no text anywhere"
+      }
     },
     "fest": {
       "beyond-the-valley": {

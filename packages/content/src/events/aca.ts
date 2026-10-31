@@ -14,7 +14,7 @@ export const items: EventItem[] = [
   {
     slug: "alejandro-sanz-acapulco-2026",
     createdAt: "2026-10-21T21:40:00+04:00",
-    updatedAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-10-31T23:20:00+04:00",
     site: "aca",
     image: "/covers/alejandro-sanz-acapulco-2026.jpg",
     imageAlt: "Una guitarra española recargada en un pie de micrófono bajo un cono de luz, con una hoja de palma en la esquina",
@@ -62,6 +62,12 @@ export const items: EventItem[] = [
         eyebrow: "31 de octubre",
         title: "Hechizos Meztizza 2",
         text: "Halloween en Meztizza, con un show de Thriller y DJ en vivo.",
+      },
+      {
+        href: "/eventos/tapeshtli-dia-de-muertos-acapulco-2026/",
+        eyebrow: "31 de octubre al 2 de noviembre",
+        title: "Tapeshtli 2026, Día de Muertos",
+        text: "El festival del Ayuntamiento empieza esa noche a las 18:00 en el Zócalo.",
       },
     ],
   },
@@ -691,7 +697,7 @@ export const items: EventItem[] = [
   {
     slug: "hechizos-meztizza-halloween-acapulco-2026",
     createdAt: "2026-10-24T19:00:00+04:00",
-    updatedAt: "2026-10-25T22:10:00+04:00",
+    updatedAt: "2026-10-31T23:20:00+04:00",
     site: "aca",
     image: "/covers/hechizos-meztizza-halloween-acapulco-2026.jpg",
     imageAlt: "Un bailarín de chaqueta roja bajo un foco en un pequeño escenario, entre palmeras, murciélagos y calabazas talladas",
@@ -729,6 +735,7 @@ export const items: EventItem[] = [
       "Por teléfono al <strong>744 531 2736</strong>. En sus publicaciones de esta semana, el restaurante avisa que <strong>quedan pocos lugares</strong>. No ha publicado precio ni horario, así que conviene preguntarlos al reservar.",
       "## La misma noche en Acapulco",
       "El 31 de octubre <a href=\"/eventos/alejandro-sanz-acapulco-2026/\" title=\"Alejandro Sanz en Acapulco 2026\">Alejandro Sanz</a> canta en Arena GNP Seguros, y una semana después <a href=\"/eventos/manuel-medrano-acapulco-2026/\" title=\"Manuel Medrano en Acapulco 2026\">Manuel Medrano</a> llega al Forum Mundo Imperial.",
+      "En el centro, el <a href=\"/eventos/tapeshtli-dia-de-muertos-acapulco-2026/\" title=\"Tapeshtli 2026, Día de Muertos en Acapulco: 31 oct al 2 nov\">Tapeshtli 2026</a>, el festival de Día de Muertos del Ayuntamiento, se inaugura esa misma noche a las 18:00 en el Zócalo y sigue hasta el 2 de noviembre.",
     ],
     faq: [
       {
@@ -750,6 +757,12 @@ export const items: EventItem[] = [
     ],
     related: [
       {
+        href: "/eventos/tapeshtli-dia-de-muertos-acapulco-2026/",
+        eyebrow: "31 de octubre al 2 de noviembre",
+        title: "Tapeshtli 2026, Día de Muertos",
+        text: "El festival del Ayuntamiento empieza esa noche a las 18:00 en el Zócalo.",
+      },
+      {
         href: "/eventos/alejandro-sanz-acapulco-2026/",
         eyebrow: "31 de octubre",
         title: "Alejandro Sanz en Acapulco",
@@ -770,6 +783,188 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Reserve hoy y pregunte tres cosas por teléfono: a qué hora empieza el show, si hay consumo mínimo o cover, y si conviene llegar disfrazado. Con lugares contados y una sola noche, el que llama primero elige mesa. Si esa noche también va al concierto de Alejandro Sanz, deje tiempo de sobra para moverse por la ciudad: es la noche más ocupada del fin de semana.",
+  },
+
+  {
+    slug: "tapeshtli-dia-de-muertos-acapulco-2026",
+    createdAt: "2026-10-31T23:20:00+04:00",
+    updatedAt: "2026-10-31T23:20:00+04:00",
+    site: "aca",
+    image: "/covers/tapeshtli-dia-de-muertos-acapulco-2026.jpg",
+    imageAlt: "Un tapete de cempasúchil con velas encendidas frente a una bahía al atardecer, con palmeras y pequeñas lanchas en el agua",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Tapeshtli 2026: el festival de Día de Muertos de Acapulco",
+    cardTitle: "Tapeshtli 2026, Día de Muertos",
+    titleSeo: "Tapeshtli 2026, Día de Muertos en Acapulco: 31 oct al 2 nov",
+    summary:
+      "Del sábado 31 de octubre al lunes 2 de noviembre de 2026, sin boletos a la venta: el Tapeshtli, festival de Día de Muertos del Ayuntamiento de Acapulco, con altar monumental en el Zócalo, recorrido de altares, concurso de ofrendas sobre el mar, circo y acrobacia, Astrid Hadad en concierto y visitas a dos panteones.",
+    start: "2026-10-31",
+    end: "2026-11-02",
+    utcOffset: "-06:00",
+    venue: "Zócalo de Acapulco, Jardín del Puerto y panteones El Palmar y Las Cruces",
+    city: "Acapulco",
+    country: "México",
+    geo: { name: "Zócalo de Acapulco", lat: 16.8497, lng: -99.9081 },
+    organizer: "Gobierno Municipal de Acapulco: Secretaría de Bienestar y Desarrollo Comunitario y Dirección de Cultura",
+    category: "Cultura",
+    ticket: {
+      url: "https://www.facebook.com/BienestarAca/posts/1452160640432058/",
+      label: "Programa oficial",
+      sells: false,
+    },
+    source: {
+      name: "Secretaría de Bienestar y Desarrollo Comunitario de Acapulco",
+      url: "https://www.facebook.com/BienestarAca/posts/1452160640432058/",
+      verifiedOn: "2026-10-31",
+    },
+    programme: [
+      {
+        heading: "Sábado 31 de octubre · Zócalo",
+        text: "A las 18:00, inauguración del Tapeshtli Monumental, «El Camino de las Flores» con Brava Teatro, «El Vuelo», un espectáculo de circo mexicano con fuego y acrobacia aérea, y degustación de platillos típicos.",
+      },
+      {
+        heading: "Domingo 1 de noviembre · Fuerte de San Diego y Jardín del Puerto",
+        text: "A las 17:00, recorrido de altares desde el Puente del Fuerte de San Diego hasta el Jardín del Puerto. A las 18:30, concurso de ofrendas sobre el mar, «Reviviendo Nuestras Tradiciones». A las 20:30, Astrid Hadad en concierto con «Vivir Muriendo».",
+      },
+      {
+        heading: "Lunes 2 de noviembre · Panteones",
+        text: "El Tapeshtli Itinerante visita el Panteón El Palmar a las 11:00 y el Panteón Las Cruces a las 14:00.",
+      },
+    ],
+    body: [
+      "El Día de Muertos de Acapulco tiene nombre propio. El <strong>Tapeshtli 2026</strong> va del <strong>sábado 31 de octubre al lunes 2 de noviembre</strong>, con un programa distinto cada día: el Zócalo la primera noche, el Fuerte de San Diego y el Jardín del Puerto la segunda, y dos panteones de la ciudad el último día.",
+      "## Qué es el Tapeshtli",
+      "Es el festival municipal de Día de Muertos que el Ayuntamiento organiza desde 2022. Su nombre recuerda la ofrenda que los acapulqueños ponían a sus difuntos sobre un tapete de carrizo; la primera edición estrenó un tapete monumental en el Zócalo.",
+      "## La noche principal",
+      "El <strong>domingo 1 de noviembre</strong> es el día más lleno. A las <strong>17:00</strong> sale el recorrido de altares del Puente del Fuerte de San Diego, a las <strong>18:30</strong> empieza el concurso de ofrendas sobre el mar en el Jardín del Puerto, y a las <strong>20:30</strong> cierra <a href=\"/eventos/astrid-hadad-vivir-muriendo-acapulco-2026/\" title=\"Astrid Hadad en Acapulco: «Vivir Muriendo», 1 de noviembre\">Astrid Hadad con «Vivir Muriendo»</a>.",
+      "## Entrada",
+      "Es un evento público del Ayuntamiento, al aire libre, sin boletos a la venta. El programa oficial no publica precio.",
+      "## La misma noche en Acapulco",
+      "El sábado 31 también hay Halloween en <a href=\"/eventos/hechizos-meztizza-halloween-acapulco-2026/\" title=\"Hechizos Meztizza 2, Halloween en Acapulco\">Meztizza</a>, y <a href=\"/eventos/alejandro-sanz-acapulco-2026/\" title=\"Alejandro Sanz en Acapulco 2026\">Alejandro Sanz</a> canta en Arena GNP Seguros.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo es el Tapeshtli 2026 en Acapulco?",
+        a: "Del sábado 31 de octubre al lunes 2 de noviembre de 2026. Empieza el sábado a las 18:00 en el Zócalo.",
+      },
+      {
+        q: "¿Cuánto cuesta?",
+        a: "El programa no publica precio: es un evento público del Ayuntamiento, al aire libre, sin boletos a la venta.",
+      },
+      {
+        q: "¿A qué hora es el recorrido de altares?",
+        a: "El domingo 1 de noviembre a las 17:00, del Puente del Fuerte de San Diego al Jardín del Puerto. A las 18:30 sigue el concurso de ofrendas sobre el mar.",
+      },
+      {
+        q: "¿A qué hora canta Astrid Hadad?",
+        a: "El domingo 1 de noviembre a las 20:30, en el Jardín del Puerto, con su espectáculo «Vivir Muriendo».",
+      },
+      {
+        q: "¿Qué hay el 2 de noviembre?",
+        a: "El Tapeshtli Itinerante: a las 11:00 en el Panteón El Palmar y a las 14:00 en el Panteón Las Cruces.",
+      },
+    ],
+    related: [
+      {
+        href: "/eventos/astrid-hadad-vivir-muriendo-acapulco-2026/",
+        eyebrow: "1 de noviembre",
+        title: "Astrid Hadad en Acapulco",
+        text: "«Vivir Muriendo», el concierto de la noche de Muertos, a las 20:30.",
+      },
+      {
+        href: "/eventos/hechizos-meztizza-halloween-acapulco-2026/",
+        eyebrow: "31 de octubre",
+        title: "Hechizos Meztizza 2",
+        text: "Halloween en Meztizza, con un show de Thriller y DJ en vivo.",
+      },
+      {
+        href: "/eventos/alejandro-sanz-acapulco-2026/",
+        eyebrow: "31 de octubre",
+        title: "Alejandro Sanz en Acapulco",
+        text: "La misma noche: «¿Y Ahora Qué? 2026» en Arena GNP Seguros.",
+      },
+    ],
+    expertise:
+      "Si solo puede ir un día, que sea el domingo 1: entre las 17:00 y las 20:30 ve el recorrido de altares y las ofrendas sobre el mar, y se queda al concierto, todo a pie entre el Fuerte de San Diego y el Jardín del Puerto. Llegue antes de las 17:00 para caminar el recorrido desde el principio, y si puede, llegue al centro sin coche: es la noche de más gente del festival.",
+  },
+
+  {
+    slug: "astrid-hadad-vivir-muriendo-acapulco-2026",
+    createdAt: "2026-10-31T23:20:00+04:00",
+    updatedAt: "2026-10-31T23:20:00+04:00",
+    site: "aca",
+    image: "/covers/astrid-hadad-vivir-muriendo-acapulco-2026.jpg",
+    imageAlt: "Un escenario de playa con telón naranja bordeado de cempasúchil, un micrófono bajo un haz de luz y el mar entre palmeras al fondo",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Astrid Hadad en Acapulco: «Vivir Muriendo» en el Tapeshtli 2026",
+    cardTitle: "Astrid Hadad, «Vivir Muriendo»",
+    titleSeo: "Astrid Hadad en Acapulco: «Vivir Muriendo», 1 de noviembre",
+    summary:
+      "El domingo 1 de noviembre de 2026 a las 20:30, sin boletos a la venta: Astrid Hadad presenta «Vivir Muriendo» en el Jardín del Puerto, en el centro de Acapulco. Es el concierto de la noche de Día de Muertos del Tapeshtli, el festival del Ayuntamiento, al aire libre.",
+    start: "2026-11-01",
+    startTime: "20:30",
+    utcOffset: "-06:00",
+    venue: "Jardín del Puerto, centro de Acapulco",
+    city: "Acapulco",
+    country: "México",
+    geo: { name: "Centro de Acapulco", lat: 16.8497, lng: -99.9081 },
+    organizer: "Gobierno Municipal de Acapulco: Secretaría de Bienestar y Desarrollo Comunitario y Dirección de Cultura",
+    category: "Música",
+    ticket: {
+      url: "https://www.facebook.com/BienestarAca/posts/1452160640432058/",
+      label: "Programa oficial",
+      sells: false,
+    },
+    source: {
+      name: "Secretaría de Bienestar y Desarrollo Comunitario de Acapulco",
+      url: "https://www.facebook.com/BienestarAca/posts/1452160640432058/",
+      verifiedOn: "2026-10-31",
+    },
+    body: [
+      "Astrid Hadad vuelve a Acapulco en Día de Muertos. Presenta <strong>«Vivir Muriendo»</strong> el <strong>domingo 1 de noviembre de 2026 a las 20:30</strong>, como cierre de la noche principal del <a href=\"/eventos/tapeshtli-dia-de-muertos-acapulco-2026/\" title=\"Tapeshtli 2026, Día de Muertos en Acapulco: 31 oct al 2 nov\">Tapeshtli 2026</a>.",
+      "## El espectáculo",
+      "«Vivir Muriendo» es el espectáculo de cabaret en el que Astrid Hadad celebra la vida honrando a la muerte, un programa hecho para estas fechas. Ella misma anunció la fecha en sus redes: Zacatecas el sábado 31 de octubre y Acapulco el domingo 1 de noviembre.",
+      "## Dónde",
+      "En el <strong>Jardín del Puerto</strong>, según el programa municipal; la artista lo anuncia como el Zócalo. Los dos están en el centro de Acapulco.",
+      "## Entrada",
+      "Es un concierto del programa municipal Tapeshtli, al aire libre y sin boletos a la venta. Ni el Ayuntamiento ni la artista han publicado precio.",
+      "## Antes del concierto",
+      "A las <strong>17:00</strong> sale el recorrido de altares desde el Puente del Fuerte de San Diego, y a las <strong>18:30</strong> empieza el concurso de ofrendas sobre el mar en el Jardín del Puerto: se puede llegar temprano y quedarse hasta el concierto.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo canta Astrid Hadad en Acapulco?",
+        a: "El domingo 1 de noviembre de 2026 a las 20:30, con «Vivir Muriendo».",
+      },
+      {
+        q: "¿Dónde es el concierto?",
+        a: "En el Jardín del Puerto, en el centro de Acapulco, según el programa del Ayuntamiento. La artista lo anuncia como el Zócalo.",
+      },
+      {
+        q: "¿Hay que comprar boleto?",
+        a: "No hay boletos a la venta: es un concierto al aire libre del festival municipal Tapeshtli. No se ha publicado precio.",
+      },
+    ],
+    related: [
+      {
+        href: "/eventos/tapeshtli-dia-de-muertos-acapulco-2026/",
+        eyebrow: "31 de octubre al 2 de noviembre",
+        title: "Tapeshtli 2026",
+        text: "El festival de Día de Muertos completo: altar monumental, ofrendas sobre el mar y panteones.",
+      },
+      {
+        href: "/eventos/manuel-medrano-acapulco-2026/",
+        eyebrow: "6 de noviembre",
+        title: "Manuel Medrano en el Forum",
+        text: "El concierto de la semana siguiente en el Forum Mundo Imperial.",
+      },
+    ],
+    expertise:
+      "Llegue con tiempo al centro: el concierto cierra la noche más concurrida del festival, después del recorrido de altares y del concurso de ofrendas. Lleve algo para sentarse o vaya preparado para estar de pie, y si viene de la zona Diamante, cuente con el tráfico de una noche de fiesta en el centro.",
   },
 
   {

@@ -2446,7 +2446,7 @@ export const items: EventItem[] = [
   {
     slug: "dia-de-los-muertos-nybg-2026",
     createdAt: "2026-10-13T00:40:00+04:00",
-    updatedAt: "2026-10-13T00:40:00+04:00",
+    updatedAt: "2026-10-31T23:20:00+04:00",
     site: "nyc42",
     image: "/covers/dia-de-los-muertos-nybg-2026.jpg",
     imageAlt: "A paper skeleton in a long orange skirt and a flower-trimmed hat walking a curving path between marigolds, with orange bunting strung through dark trees",
@@ -2523,6 +2523,18 @@ export const items: EventItem[] = [
         eyebrow: "Sixth Avenue",
         title: "Village Halloween Parade",
         text: "The evening of 31 October, after the puppets have gone home: the city's own parade, free to watch and free to march in costume.",
+      },
+      {
+        href: "/events/day-of-the-dead-green-wood-cemetery-2026/",
+        eyebrow: "4pm, 2 November",
+        title: "Day of the Dead at Green-Wood",
+        text: "The same last day in Brooklyn: a free family celebration at the cemetery, 4 to 7pm.",
+      },
+      {
+        href: "/events/dia-de-muertos-lincoln-center-2026/",
+        eyebrow: "6pm, 1 November",
+        title: "Día de Muertos at Lincoln Center",
+        text: "After the parade, a free evening ofrenda and live band on Broadway.",
       },
     ],
     expertise:
@@ -2901,7 +2913,7 @@ export const items: EventItem[] = [
   {
     slug: "paranormal-activity-free-outdoor-screening-broadway-2026",
     createdAt: "2026-10-24T16:00:00+04:00",
-    updatedAt: "2026-10-24T16:00:00+04:00",
+    updatedAt: "2026-10-31T23:20:00+04:00",
     site: "nyc42",
     image: "/covers/paranormal-activity-free-outdoor-screening-broadway-2026.jpg",
     imageAlt:
@@ -2952,6 +2964,20 @@ export const items: EventItem[] = [
       {
         q: "How long is Paranormal Activity on Broadway running?",
         a: "The run at the August Wilson Theatre has been extended through February 28, 2027.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/jason-takes-manhattan-live-soundtrack-lincoln-center-2026/",
+        eyebrow: "7:30pm, October 31",
+        title: "Jason Takes Manhattan at Lincoln Center",
+        text: "The second free horror film of the night, two subway stops uptown, with a live DJ soundtrack. Ages 17+.",
+      },
+      {
+        href: "/events/village-halloween-parade-2026/",
+        eyebrow: "7pm, October 31",
+        title: "Village Halloween Parade 2026",
+        text: "The parade up Sixth Avenue, free to watch and free to march in costume.",
       },
     ],
     expertise:
@@ -3429,7 +3455,7 @@ export const items: EventItem[] = [
   {
     slug: "dia-de-muertos-st-marks-church-new-york-2026",
     createdAt: "2026-10-31",
-    updatedAt: "2026-10-31T13:34:00+04:00",
+    updatedAt: "2026-10-31T23:20:00+04:00",
     site: "nyc42",
     image: "/covers/dia-de-muertos-st-marks-church-new-york-2026.jpg",
     imageAlt: "A cut-paper chapel at night between bare trees, strings of orange and yellow sugar-skull cut-outs hung across the sky, and in front a round ofrenda heaped with marigolds and ringed with lit candles",
@@ -3472,7 +3498,7 @@ export const items: EventItem[] = [
       "## Who it is for",
       "Everyone: there is no age restriction, and the organizer describes the day as welcoming to all. It is a family afternoon of remembrance and music rather than a costume party, so there is no dress code. Questions go to Mano a Mano at (212) 587-3070 or info@manoamano.us.",
       "## The rest of the weekend",
-      "The churchyard closes at 5pm, which leaves the evening for the <a href=\"/events/village-halloween-parade-2026/\" title=\"Village Halloween Parade 2026\">Village Halloween Parade</a> up Sixth Avenue, west across the Village. The other Day of the Dead in town is the <a href=\"/events/dia-de-los-muertos-nybg-2026/\" title=\"Día de los Muertos at NYBG 2026\">New York Botanical Garden's</a>, in the Bronx until November 2.",
+      "The churchyard closes at 5pm, which leaves the evening for the <a href=\"/events/village-halloween-parade-2026/\" title=\"Village Halloween Parade 2026\">Village Halloween Parade</a> up Sixth Avenue, west across the Village. The other Day of the Dead in town is the <a href=\"/events/dia-de-los-muertos-nybg-2026/\" title=\"Día de los Muertos at NYBG 2026\">New York Botanical Garden's</a>, in the Bronx until November 2. On Sunday evening, after the churchyard closes, Mano a Mano helps build a second ofrenda at <a href=\"/events/dia-de-muertos-lincoln-center-2026/\" title=\"Día de Muertos at Lincoln Center 2026\">Lincoln Center</a> from 6pm, and on Monday, November 2, <a href=\"/events/day-of-the-dead-green-wood-cemetery-2026/\" title=\"Day of the Dead at Green-Wood Cemetery 2026\">Green-Wood Cemetery</a> in Brooklyn closes the season.",
     ],
     faq: [
       {
@@ -3507,8 +3533,284 @@ export const items: EventItem[] = [
         title: "Trick-or-Streets 2026",
         text: "Car-free Halloween streets across the five boroughs, free.",
       },
+      {
+        href: "/events/dia-de-muertos-lincoln-center-2026/",
+        eyebrow: "6pm, November 1",
+        title: "Día de Muertos at Lincoln Center",
+        text: "A community ofrenda with Mano a Mano and Guachinangos in the Atrium, free.",
+      },
     ],
     expertise:
       "Come at noon if the ofrenda is the point: the photographs go up through the afternoon and the altar is fullest, and busiest, by the 3pm concert. The workshops are the one timed thing for children, 2pm to 3pm, so an afternoon that starts at two gets the workshop, the concert and the market in order. It is outdoors on the last day of October, so dress for the weather; the organizer only cancels for weather that is dangerous, not for rain.",
+  },
+
+  {
+    slug: "jason-takes-manhattan-live-soundtrack-lincoln-center-2026",
+    createdAt: "2026-10-31T23:20:00+04:00",
+    updatedAt: "2026-10-31T23:20:00+04:00",
+    site: "nyc42",
+    image: "/covers/jason-takes-manhattan-live-soundtrack-lincoln-center-2026.jpg",
+    imageAlt: "A pale screen showing a cut-paper Manhattan skyline with a hockey mask hanging from its top edge, rows of small figures in pointed witch hats watching in the dark",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Friday the 13th Part VIII: Jason Takes Manhattan, with a live soundtrack at Lincoln Center",
+    cardTitle: "Jason Takes Manhattan at Lincoln Center",
+    titleSeo: "Jason Takes Manhattan at Lincoln Center, New York, Oct 31",
+    summary:
+      "Saturday, October 31, 2026, at 7:30pm, free: a Halloween screening of Jason Takes Manhattan in the David Rubenstein Atrium at Lincoln Center, New York, with a live original soundtrack by DJ 2-Tone Jones. Ages 17 and up; come in costume.",
+    start: "2026-10-31",
+    startTime: "19:30",
+    utcOffset: "-04:00",
+    venue: "David Rubenstein Atrium, Lincoln Center, 1887 Broadway, Manhattan",
+    city: "New York",
+    country: "United States",
+    geo: { name: "David Rubenstein Atrium, Lincoln Center", lat: 40.772, lng: -73.9822 },
+    organizer: "Lincoln Center Presents",
+    category: "Halloween",
+    tickets: { priceFrom: 0, currency: "USD" },
+    ticket: {
+      url: "https://www.lincolncenter.org/series/lincoln-center-presents/friday-the-13th-part-viii-jason-takes-manhattan-729",
+      label: "Event page at Lincoln Center",
+      sells: false,
+    },
+    source: {
+      name: "Lincoln Center",
+      url: "https://www.lincolncenter.org/series/lincoln-center-presents/friday-the-13th-part-viii-jason-takes-manhattan-729",
+      verifiedOn: "2026-10-31",
+    },
+    body: [
+      "Jason Voorhees finally gets his trip to New York, and on Halloween night New York returns the favor. At <strong>7:30pm on Saturday, October 31, 2026</strong>, Lincoln Center screens <strong>Friday the 13th Part VIII: Jason Takes Manhattan</strong>, the 1989 horror-comedy, in the <strong>David Rubenstein Atrium</strong> on Broadway, and the film's music is replaced by a <strong>live original soundtrack from DJ 2-Tone Jones</strong>.",
+      "## What kind of night it is",
+      "It is a \"Can I Kick It?\" screening, co-presented by <strong>Shaolin Jazz</strong>, and part of <strong>Beats, Rhymes & Sights</strong>, Lincoln Center's hip-hop series curated by Xavier \"X\" Jernigan. A slasher sequel with a DJ cutting its score in the room is meant to be watched loudly, with an audience that knows when to laugh. Lincoln Center asks people to come in their best Halloween costume.",
+      "## Free, but come early",
+      "<strong>Admission is free</strong> and there is nothing to book. Lincoln Center's advance Fast Track reservations have closed, and most of the Atrium's capacity was always General Admission: first come, first served, at the door. Entry is not guaranteed once the room is full, and Lincoln Center recommends joining the General Admission line at least an hour before the start, so by 6:30pm.",
+      "## Who it is for",
+      "<strong>Ages 17 and up.</strong> Lincoln Center warns that the film has violence, graphic imagery, intense scenes and some sexual content. It is a Jason movie, and the warning is accurate.",
+      "## Getting there",
+      "The Atrium is at <strong>1887 Broadway</strong>, between West 62nd and West 63rd Streets, across Broadway from the Lincoln Center plaza. The 1 train stops at 66 St–Lincoln Center; 59 St–Columbus Circle, three blocks south, has the A, B, C, D and 1. Uptown is far from the Village Halloween Parade, which keeps the walk from the subway calm on a night when Sixth Avenue is not.",
+    ],
+    faq: [
+      {
+        q: "When is the Jason Takes Manhattan screening at Lincoln Center?",
+        a: "Saturday, October 31, 2026, at 7:30pm, in the David Rubenstein Atrium, 1887 Broadway, New York.",
+      },
+      {
+        q: "Is it free?",
+        a: "Yes. Entry is free and first come, first served. Fast Track reservations have closed, and entry is not guaranteed once the Atrium is full.",
+      },
+      {
+        q: "Is there an age limit?",
+        a: "Yes, ages 17 and up. Lincoln Center warns of violence, graphic imagery, intense scenes and some sexual content.",
+      },
+      {
+        q: "Who plays the live soundtrack?",
+        a: "DJ 2-Tone Jones, with an original live score. The screening is co-presented by Shaolin Jazz in Lincoln Center's Beats, Rhymes & Sights series.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/paranormal-activity-free-outdoor-screening-broadway-2026/",
+        eyebrow: "5pm, October 31",
+        title: "Paranormal Activity on West 52nd Street",
+        text: "The other free horror film of Halloween night, on a closed theater-district block, over before this one starts.",
+      },
+      {
+        href: "/events/dia-de-muertos-lincoln-center-2026/",
+        eyebrow: "6pm, November 1",
+        title: "Día de Muertos at Lincoln Center",
+        text: "The same Atrium the next evening: a community ofrenda and Guachinangos, free.",
+      },
+      {
+        href: "/events/village-halloween-parade-2026/",
+        eyebrow: "7pm, October 31",
+        title: "Village Halloween Parade 2026",
+        text: "The parade up Sixth Avenue, free to watch and free to march in costume.",
+      },
+    ],
+    expertise:
+      "A free Lincoln Center night with closed reservations fills from the front of the line, and on Halloween the line is in costume. Lincoln Center itself says to arrive an hour early, so plan to be on Broadway by 6:30pm. The two horror screenings of the night only just fit together: Paranormal Activity on West 52nd Street starts at 5pm and runs 86 minutes, so it ends around 6:30, and the 1 train from 50th Street to 66th Street is two stops, which puts you in the line late rather than early. Costumes help the mood, but masks that cover the whole face are hard to watch a film through.",
+  },
+
+  {
+    slug: "dia-de-muertos-lincoln-center-2026",
+    createdAt: "2026-10-31T23:20:00+04:00",
+    updatedAt: "2026-10-31T23:20:00+04:00",
+    site: "nyc42",
+    image: "/covers/dia-de-muertos-lincoln-center-2026.jpg",
+    imageAlt: "A tiered ofrenda of marigolds, candles and small empty frames inside a tall glass-walled hall at night, a guitar resting at its foot",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Día de Muertos Celebration at Lincoln Center 2026",
+    cardTitle: "Día de Muertos at Lincoln Center",
+    titleSeo: "Día de Muertos at Lincoln Center, New York: Nov 1, 2026",
+    summary:
+      "Sunday, November 1, 2026, at 6pm, free: a Día de Muertos evening in the David Rubenstein Atrium at Lincoln Center, New York, with a community ofrenda built with Mano a Mano and a set by Guachinangos of son jarocho, cumbia and rancheras. All ages; bring copies of photographs for the altar.",
+    start: "2026-11-01",
+    startTime: "18:00",
+    utcOffset: "-05:00",
+    venue: "David Rubenstein Atrium, Lincoln Center, 1887 Broadway, Manhattan",
+    city: "New York",
+    country: "United States",
+    geo: { name: "David Rubenstein Atrium, Lincoln Center", lat: 40.772, lng: -73.9822 },
+    organizer: "Lincoln Center Presents",
+    category: "Halloween",
+    tickets: { priceFrom: 0, currency: "USD" },
+    ticket: {
+      url: "https://www.lincolncenter.org/series/lincoln-center-presents/dandiacutea-de-muertos-celebration-740",
+      label: "Event page at Lincoln Center",
+      sells: false,
+    },
+    source: {
+      name: "Lincoln Center",
+      url: "https://www.lincolncenter.org/series/lincoln-center-presents/dandiacutea-de-muertos-celebration-740",
+      verifiedOn: "2026-10-31",
+    },
+    body: [
+      "The evening of Día de Muertos in Manhattan. On <strong>Sunday, November 1, 2026, at 6pm</strong>, the <strong>David Rubenstein Atrium</strong> at Lincoln Center holds a free celebration for about an hour and a half: a <strong>community ofrenda</strong> that anyone can add to, and a band to dance to.",
+      "## The ofrenda",
+      "The altar is built together with <strong>Mano a Mano: Mexican Culture Without Borders</strong>, the same group whose festival fills the churchyard of St. Mark's Church downtown that afternoon. Bring <strong>copies of photographs, notes or letters</strong> for the people you want to honor, and add them to the ofrenda during the evening.",
+      "## The music",
+      "<strong>Guachinangos</strong> play a sound rooted in Mexican folk music and grown in the diaspora: son jarocho, cumbia, champeta, rancheras and other Latin American rhythms. They come with the <strong>México Now Festival</strong>, which Lincoln Center describes as New York City's first and only independent festival of contemporary Mexican art and culture. Lincoln Center tags the night all ages, cumbia and participatory, so expect to be asked onto the floor.",
+      "## Free, first come",
+      "<strong>Admission is free.</strong> Advance Fast Track reservations have closed, and most of the Atrium's capacity is General Admission anyway: walk in, first come, first served. Entry is not guaranteed once the room is full, and Lincoln Center recommends joining the General Admission line at least an hour before the start, so by 5pm.",
+      "## When and where",
+      "<strong>Sunday, November 1, 2026, 6pm</strong>, for about 1 hour 30 minutes, at <strong>1887 Broadway</strong> between West 62nd and West 63rd Streets. Take the 1 train to 66 St–Lincoln Center, or the A, B, C, D or 1 to 59 St–Columbus Circle. Clocks go back an hour at 2am that morning, so by 6pm it is already dark.",
+      "## Earlier the same day",
+      "Mano a Mano's own festival in the churchyard of <a href=\"/events/dia-de-muertos-st-marks-church-new-york-2026/\" title=\"Día de Muertos at St. Mark's Church in-the-Bowery 2026\">St. Mark's Church in-the-Bowery</a> runs from noon on November 1 and closes before this one starts, so the two make one long day. In the Bronx, the <a href=\"/events/dia-de-los-muertos-nybg-2026/\" title=\"Día de los Muertos at NYBG 2026\">New York Botanical Garden</a> holds its parade that afternoon.",
+    ],
+    faq: [
+      {
+        q: "When is Día de Muertos at Lincoln Center in 2026?",
+        a: "Sunday, November 1, 2026, at 6pm, in the David Rubenstein Atrium, 1887 Broadway, New York. It runs about 1 hour 30 minutes.",
+      },
+      {
+        q: "Is it free?",
+        a: "Yes. Admission is free and first come, first served. Fast Track reservations have closed, and entry is not guaranteed once the Atrium is full.",
+      },
+      {
+        q: "What should I bring for the ofrenda?",
+        a: "Copies of photographs, notes or letters for the loved ones you want to honor. The altar is built with Mano a Mano: Mexican Culture Without Borders.",
+      },
+      {
+        q: "Who is playing?",
+        a: "Guachinangos, with the México Now Festival: son jarocho, cumbia, champeta, rancheras and other Latin American rhythms.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/dia-de-muertos-st-marks-church-new-york-2026/",
+        eyebrow: "From noon, November 1",
+        title: "Día de Muertos at St. Mark's Church",
+        text: "Mano a Mano's churchyard festival in the East Village, free, before this evening starts.",
+      },
+      {
+        href: "/events/day-of-the-dead-green-wood-cemetery-2026/",
+        eyebrow: "4pm, November 2",
+        title: "Day of the Dead at Green-Wood",
+        text: "The last celebration of the season, free, at the Brooklyn cemetery the next afternoon.",
+      },
+      {
+        href: "/events/dia-de-los-muertos-nybg-2026/",
+        eyebrow: "Until November 2",
+        title: "Día de los Muertos at NYBG",
+        text: "An ofrenda and giant Catrina puppets at the Botanical Garden in the Bronx.",
+      },
+    ],
+    expertise:
+      "Print the photographs at home: the ofrenda wants copies, and a drugstore printer on Broadway on a Sunday evening is not a plan. Atrium nights with closed reservations are decided at the door, and Lincoln Center's own advice is to be in line an hour early, by 5pm. If the day started downtown at St. Mark's, allow about half an hour on the subway from East 10th Street to 66th Street, and leave the churchyard by about 4:30 to be in line near five.",
+  },
+
+  {
+    slug: "day-of-the-dead-green-wood-cemetery-2026",
+    createdAt: "2026-10-31T23:20:00+04:00",
+    updatedAt: "2026-10-31T23:20:00+04:00",
+    site: "nyc42",
+    image: "/covers/day-of-the-dead-green-wood-cemetery-2026.jpg",
+    imageAlt: "A cut-paper cemetery chapel with twin towers between two bare trees, a small ofrenda of marigolds and candles at its door and a winding path in front",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Day of the Dead Family Celebration at Green-Wood Cemetery 2026",
+    cardTitle: "Day of the Dead at Green-Wood Cemetery",
+    titleSeo: "Day of the Dead at Green-Wood Cemetery, New York: Nov 2",
+    summary:
+      "Monday, November 2, 2026, 4pm to 7pm, free: Green-Wood Cemetery's Day of the Dead Family Celebration in Brooklyn, New York, with crafts, music, performances and hands-on activities on the Main Entrance Meadow and by the Historic Chapel. Walk-ins welcome; last entry 6:30pm.",
+    start: "2026-11-02",
+    startTime: "16:00",
+    endTime: "19:00",
+    utcOffset: "-05:00",
+    venue: "The Green-Wood Cemetery, Main Entrance, Fifth Avenue at 25th Street, Brooklyn",
+    city: "New York",
+    country: "United States",
+    geo: { name: "The Green-Wood Cemetery, Main Entrance", lat: 40.6585, lng: -73.9947 },
+    organizer: "The Green-Wood Cemetery",
+    category: "Halloween",
+    tickets: { priceFrom: 0, currency: "USD" },
+    ticket: {
+      url: "https://www.green-wood.com/event/day-of-the-dead-family-celebration-3/",
+      label: "Free registration from Green-Wood",
+    },
+    source: {
+      name: "The Green-Wood Cemetery",
+      url: "https://www.green-wood.com/event/day-of-the-dead-family-celebration-3/",
+      verifiedOn: "2026-10-31",
+    },
+    body: [
+      "The season's last Day of the Dead in New York falls on the day itself. On <strong>Monday, November 2, 2026</strong>, from <strong>4pm to 7pm</strong>, <strong>Green-Wood Cemetery</strong> in Brooklyn holds its free <strong>Day of the Dead Family Celebration</strong>: crafts, music, performances and hands-on activities about the history and traditions of Día de Muertos, which Latin America marks from October 31 to November 2 with altars, music, food and dance.",
+      "## Where in the cemetery",
+      "Two places, close together. The celebration starts on the <strong>Main Entrance Meadow</strong>, just inside the gate at <strong>Fifth Avenue and 25th Street</strong> (500 25th Street), and continues <strong>near the Historic Chapel</strong>. The walk to the chapel takes about five minutes over uneven ground and stairs, so wear proper shoes; Green-Wood has a vehicle to carry anyone who needs help getting there.",
+      "## What children can do",
+      "The crafts and activities run until supplies run out or the performances begin, whichever comes first. With children who want to make something, come at four rather than at six.",
+      "## Price and registration",
+      "<strong>Free.</strong> Green-Wood asks people to register on Eventbrite so it can gauge numbers and send updates, and suggests a <strong>$10 donation</strong> when you do, but registration is not required. There are no tickets and nobody checks names, so walk-ins are welcome. <strong>Admission ends at 6:30pm.</strong> Food and drinks are sold on site.",
+      "## Weather",
+      "It is outdoors in November. Green-Wood decides about the weather at least three hours before the start, and a cancellation goes out by email to everyone registered: one practical reason to register.",
+      "## Getting there",
+      "The R train stops at 25 St, at Fourth Avenue, one block from the main entrance. Clocks went back on Sunday, so it is dark well before seven; bring a light for the path to the chapel.",
+      "## The day before",
+      "On Sunday, November 1, the evening <a href=\"/events/dia-de-muertos-lincoln-center-2026/\" title=\"Día de Muertos at Lincoln Center 2026\">Día de Muertos at Lincoln Center</a> has a community ofrenda and a live band. The <a href=\"/events/dia-de-los-muertos-nybg-2026/\" title=\"Día de los Muertos at NYBG 2026\">New York Botanical Garden</a> in the Bronx also closes its month-long festival on November 2.",
+    ],
+    faq: [
+      {
+        q: "When is Day of the Dead at Green-Wood Cemetery in 2026?",
+        a: "Monday, November 2, 2026, from 4pm to 7pm. Admission ends at 6:30pm.",
+      },
+      {
+        q: "Is it free?",
+        a: "Yes. Registration on Eventbrite is suggested, with an optional $10 donation, but it is not required and walk-ins are welcome.",
+      },
+      {
+        q: "Where in Green-Wood is it held?",
+        a: "On the Main Entrance Meadow at Fifth Avenue and 25th Street, Brooklyn, and near the Historic Chapel, about a five-minute walk over uneven ground and stairs.",
+      },
+      {
+        q: "Is there food?",
+        a: "Yes, food and drinks are sold on site.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/dia-de-muertos-lincoln-center-2026/",
+        eyebrow: "6pm, November 1",
+        title: "Día de Muertos at Lincoln Center",
+        text: "A community ofrenda and Guachinangos in the Atrium on Broadway, free.",
+      },
+      {
+        href: "/events/dia-de-los-muertos-nybg-2026/",
+        eyebrow: "Until November 2",
+        title: "Día de los Muertos at NYBG",
+        text: "An ofrenda and giant Catrina puppets at the Botanical Garden in the Bronx.",
+      },
+      {
+        href: "/events/dia-de-muertos-st-marks-church-new-york-2026/",
+        eyebrow: "Until November 1",
+        title: "Día de Muertos at St. Mark's Church",
+        text: "Mano a Mano's festival in an East Village churchyard, free.",
+      },
+    ],
+    expertise:
+      "A Monday-afternoon event fills after school and after work, so the crafts, which stop when the performances start or the supplies run out, go to whoever comes early. Arrive near four with children, and near six if the performances are the point, but before the 6:30 last entry. Register even though you don't have to: it is the only way to hear about a weather cancellation before you are on the R train.",
   },
 ];
