@@ -39328,6 +39328,38 @@
         ]
       ]
     },
+    "/covers/new-year-with-the-stars-yerevan-opera-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/new-year-with-the-stars-yerevan-opera-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/new-year-with-the-stars-yerevan-opera-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/new-year-with-the-stars-yerevan-opera-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/new-year-with-the-stars-yerevan-opera-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/new-year-with-the-stars-yerevan-opera-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/new-year-with-the-stars-yerevan-opera-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/nutcracker-yerevan-opera-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -39909,6 +39941,38 @@
         [
           1536,
           "/covers/samvel-hayrapetyan-violin-yerevan-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/sargis-manukyan-friends-old-new-year-yerevan-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/sargis-manukyan-friends-old-new-year-yerevan-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/sargis-manukyan-friends-old-new-year-yerevan-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/sargis-manukyan-friends-old-new-year-yerevan-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/sargis-manukyan-friends-old-new-year-yerevan-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/sargis-manukyan-friends-old-new-year-yerevan-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/sargis-manukyan-friends-old-new-year-yerevan-2027-1024.webp"
         ]
       ]
     },
@@ -41005,6 +41069,38 @@
         [
           1024,
           "/covers/winter-tales-mystery-ensemble-komitas-house-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/world-of-john-williams-mystery-ensemble-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/world-of-john-williams-mystery-ensemble-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/world-of-john-williams-mystery-ensemble-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/world-of-john-williams-mystery-ensemble-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/world-of-john-williams-mystery-ensemble-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/world-of-john-williams-mystery-ensemble-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/world-of-john-williams-mystery-ensemble-yerevan-2026-1024.webp"
         ]
       ]
     },
