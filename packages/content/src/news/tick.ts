@@ -301,6 +301,10 @@ export const items: NewsItem[] = [
     updatedAt: "2026-10-17T19:34:00+04:00",
     site: "tick",
     date: "2026-10-17",
+    // Off the front page and the "more news" tails for now (the owner's
+    // word, 31 Oct 2026); the page, the index, the feed and the sitemap
+    // keep it. Drop this line to show it again.
+    until: "2026-10-30",
     title: "Snoop Dogg-ի համերգը Երևանում",
     cardTitle: "Snoop Dogg-ը Երևանում",
     titleSeo: "Snoop Dogg-ի համերգը Երևանում (Սնուփ Դոգ)",
