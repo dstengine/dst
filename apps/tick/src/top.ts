@@ -15,6 +15,8 @@ import { eventsFor, newsFor, eventsBase, newsBase } from "./i18n";
 import type { Lang } from "./content";
 
 export const TOP = [
+  { slug: "halloween-weekend-forty44-yerevan-2026", label: "Forty44", icon: "pumpkin" },
+  { slug: "halloween-karaoke-ufo-bar-yerevan-2026", label: "UFO Bar", icon: "mic" },
   { slug: "devfest", label: "DevFest", icon: "laptop" },
   { slug: "snoop-dogg", label: "Snoop Dogg", icon: "mic" },
 ];
