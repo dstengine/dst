@@ -8,7 +8,7 @@ import { eventMeta } from "@dst/ui/meta";
 import { LOCALE, newsFor, eventsBase, newsBase, alternates } from "../i18n";
 import { go } from "../outbound";
 import { sectionHref, promotedFor, linkFor, pluralOf } from "../sections";
-import { venueHref } from "../venues";
+import { venueHref, placeOf } from "../venues";
 
 interface Props { lang: Lang; item: EventItem; more: EventItem[] }
 const { lang, item, more } = Astro.props;
@@ -35,6 +35,7 @@ const meta = eventMeta(item, site[lang], { host: Astro.site?.hostname ?? "", pat
     share
     categoryHref={sectionHref(item, lang)}
     venueHref={venueHref(item, lang)}
+    place={placeOf(item, lang)}
     promoted={promotedFor(lang, item.category)}
     promotedLink={linkFor(lang, promotedFor(lang, item.category))}
     labels={labels[lang]}

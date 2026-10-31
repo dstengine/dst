@@ -19,6 +19,7 @@ import BlockHead from "./BlockHead.astro";
 import SourceLine from "./SourceLine.astro";
 import Faq from "./Faq.astro";
 import { eventType } from "@dst/content/event-types";
+import { placeFacts, type VenueSpec } from "@dst/content/venues";
 import ImageNote from "./ImageNote.astro";
 import CountdownScript from "./CountdownScript.astro";
 import Variants from "./Variants.astro";
@@ -67,6 +68,11 @@ interface Props {
       `venueHrefFor` in @dst/content/venues. The Where row and the venue
       line under the headline then lead there. */
   venueHref?: string;
+  /** The declared venue the entry's `venue` line names, in the page's
+      language, when the site keeps a venue table — see `venueOf` in
+      @dst/content/venues. The markup then takes the place's name, street
+      and type from it instead of reading them out of the line. */
+  place?: VenueSpec;
   /** Locale for dates on this page. Defaults to the network's English;
       a site writing in another language passes its own. */
   locale?: string;
@@ -111,7 +117,7 @@ interface Props {
       reason. It names the cards, it does not choose them. */
   moreEventsText?: string;
 }
-const { item, backHref, ticketHref, sourceHref, more = [], moreNews = [], newsBase = "/news/", eventsBase = "/events/", publisher, categoryHref, venueHref, promoted, promotedLink, where, pluralOf, moreEventsText, countdown = false, locale = "en-US", labels: labelOverrides, share = false } = Astro.props;
+const { item, backHref, ticketHref, sourceHref, more = [], moreNews = [], newsBase = "/news/", eventsBase = "/events/", publisher, categoryHref, venueHref, place, promoted, promotedLink, where, pluralOf, moreEventsText, countdown = false, locale = "en-US", labels: labelOverrides, share = false } = Astro.props;
 const L = withLabels(labelOverrides);
 // Venue is part of the page's translated copy; geo.name stays with the
 // coordinates as the source-language map label. Prefer the venue so a
@@ -426,37 +432,31 @@ const jsonLd =
           const at = ticketHref ?? sourceHref;
           return at ? { location: { "@type": "VirtualLocation", url: absolute(at) } } : {};
         })()
-      : item.venue || item.city
-      ? (() => {
-          // The venue field is written "Name, street" across the network
-          // ("Forty44, 16 Ghazar Parpetsi Street"; in Mexico "Name, street
-          // number, colonia, alcaldía"). Google's event result needs the
-          // street in `address`, not folded into the place's name: the first
-          // comma ends the name, the rest is the street address as written.
-          // A venue with no comma is a name alone. The country goes in as
-          // the entry spells it; schema.org takes a name there as well as a
+      : (() => {
+          // Name, street and type: see placeFacts in @dst/content/venues —
+          // the site's declared venue first, else the venue line split only
+          // where its tail reads as a street. The country goes in as the
+          // entry spells it; schema.org takes a name there as well as a
           // code, and the entry's word is the one the page shows.
-          const venue = item.venue ?? item.city ?? "";
-          const cut = venue.indexOf(",");
-          const name = cut > 0 ? venue.slice(0, cut).trim() : venue;
-          const street = cut > 0 ? venue.slice(cut + 1).trim() : undefined;
+          const at = placeFacts(item, place);
+          if (!at) return {};
           return {
             location: {
-              "@type": "Place",
-              name,
-              ...(item.geo
-                ? { geo: { "@type": "GeoCoordinates", latitude: item.geo.lat, longitude: item.geo.lng } }
+              "@type": at.type,
+              name: at.name,
+              ...(at.geo
+                ? { geo: { "@type": "GeoCoordinates", latitude: at.geo.lat, longitude: at.geo.lng } }
                 : {}),
               address: {
                 "@type": "PostalAddress",
-                ...(street ? { streetAddress: street } : {}),
-                ...(item.city ? { addressLocality: item.city } : {}),
+                ...(at.street ? { streetAddress: at.street } : {}),
+                ...(at.locality ? { addressLocality: at.locality } : {}),
+                ...(at.region ? { addressRegion: at.region } : {}),
                 ...(item.country ? { addressCountry: item.country } : {}),
               },
             },
           };
-        })()
-      : {}),
+        })()),
     // The people, in the field search engines read them from. `performer` is
     // schema.org's word for whoever is on the stage, and a conference
     // speaker is on the stage; `affiliation` is why `org` is its own field

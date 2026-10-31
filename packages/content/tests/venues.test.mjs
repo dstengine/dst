@@ -64,3 +64,41 @@ describe("venueHrefFor", () => {
     assert.equal(venueHrefFor(event({ venue: "Spendiaryan Opera" }), built, "/venues/"), undefined);
   });
 });
+
+const { placeFacts, looksLikeStreet } = await import("../src/venues.ts");
+
+describe("placeFacts", () => {
+  const at = (venue, city = "London") => placeFacts({ venue, city });
+
+  test("a street after the name goes to the street, the name keeps the rest", () => {
+    assert.deepEqual(at("Chelsea Physic Garden, 66 Royal Hospital Road"), { type: "Place", name: "Chelsea Physic Garden", street: "66 Royal Hospital Road", locality: "London" });
+    assert.deepEqual(at("Armenian State Philharmonia, Babajanyan Concert Hall, 2 Abovyan Street", "Yerevan"), { type: "Place", name: "Armenian State Philharmonia, Babajanyan Concert Hall", street: "2 Abovyan Street", locality: "Yerevan" });
+    assert.equal(at("Forty44, Ղազար Փարպեցու փողոց 16", "Երևան").street, "Ղազար Փարպեցու փողոց 16");
+    assert.equal(at("Centro Deportivo, Francisco Goitia S/N, Xochimilco", "CDMX").street, "Francisco Goitia S/N, Xochimilco");
+  });
+
+  test("a tail that is not a street stays in the name and no street is claimed", () => {
+    for (const v of ["Dubai Opera, Main Auditorium", "River Thames, Putney to Mortlake", "Curva 4, Autódromo Hermanos Rodríguez", "Explanada del Estadio Akron, Zapopan", "Dubai World Trade Centre, Halls 4–8", "ADNEC, Hall 9", "Wimbledon Park, SW19 (5 November) and Morden Park (7 November)"]) {
+      const f = at(v);
+      assert.equal(f.name, v);
+      assert.equal(f.street, undefined);
+    }
+  });
+
+  test("the street test reads Armenian, German and Spanish street words, not lookalikes", () => {
+    for (const s of ["Տիգրան Պետրոսյան փողոց", "Straße des 17. Juni", "Calle Museo", "SE1 8XX", "Ashtarak Highway 30"]) assert.ok(looksLikeStreet(s), s);
+    for (const s of ["Main Auditorium", "Expo City", "Strand", "Prater", "Stadium"]) assert.ok(!looksLikeStreet(s), s);
+  });
+
+  test("a declared venue answers first, with its own type, street, town and region", () => {
+    const winery = { slug: "w", match: ["Van Ardi"], name: "Van Ardi Winery", schemaType: "Winery", locality: "Sasunik", region: "Aragatsotn Province" };
+    assert.deepEqual(placeFacts({ venue: "Van Ardi Winery, Sasunik, Aragatsotn province", city: "Sasunik" }, winery), { type: "Winery", name: "Van Ardi Winery", locality: "Sasunik", region: "Aragatsotn Province" });
+    const hall = { slug: "h", match: ["Armenian State"], name: "Babajanyan Concert Hall", address: "2 Abovyan Street", schemaType: "MusicVenue", geo: { lat: 1, lng: 2 } };
+    assert.deepEqual(placeFacts({ venue: "Armenian State Philharmonia, Babajanyan Concert Hall", city: "Yerevan" }, hall), { type: "MusicVenue", name: "Babajanyan Concert Hall", street: "2 Abovyan Street", locality: "Yerevan", geo: { lat: 1, lng: 2 } });
+  });
+
+  test("nothing to say is nothing", () => {
+    assert.equal(placeFacts({}), undefined);
+    assert.deepEqual(placeFacts({ city: "Dubai" }), { type: "Place", name: "Dubai", locality: "Dubai" });
+  });
+});
