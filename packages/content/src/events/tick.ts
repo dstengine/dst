@@ -8954,10 +8954,11 @@ export const items: EventItem[] = [
   {
     slug: "mut-moct-hayfilm-halloween-yerevan-2026",
     createdAt: "2026-10-31T19:00:00+04:00",
-    updatedAt: "2026-10-31T19:32:00+04:00",
+    updatedAt: "2026-10-31T21:15:00+04:00",
     site: "tick",
     // The card follows UFO's: Forty44 closes at 03:00, UFO at 04:00, and this
     // is where the night goes on until 09:00 (the owner's order, 31 Oct 2026).
+    editorsChoice: true,
     after: "halloween-karaoke-ufo-bar-yerevan-2026",
     title: "ՄՈՒԹ․ MOCT-ի Հելոուինի գիշերը Hayfilm Cluster-ում",
     titleSeo: "Հելոուին Երևանում՝ ՄՈՒԹ Hayfilm-ում, հոկտեմբերի 31",
