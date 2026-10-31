@@ -427,16 +427,35 @@ const jsonLd =
           return at ? { location: { "@type": "VirtualLocation", url: absolute(at) } } : {};
         })()
       : item.venue || item.city
-      ? {
-          location: {
-            "@type": "Place",
-            name: item.venue ?? item.city,
-            ...(item.geo
-              ? { geo: { "@type": "GeoCoordinates", latitude: item.geo.lat, longitude: item.geo.lng } }
-              : {}),
-            ...(item.city ? { address: { "@type": "PostalAddress", addressLocality: item.city } } : {}),
-          },
-        }
+      ? (() => {
+          // The venue field is written "Name, street" across the network
+          // ("Forty44, 16 Ghazar Parpetsi Street"; in Mexico "Name, street
+          // number, colonia, alcaldía"). Google's event result needs the
+          // street in `address`, not folded into the place's name: the first
+          // comma ends the name, the rest is the street address as written.
+          // A venue with no comma is a name alone. The country goes in as
+          // the entry spells it; schema.org takes a name there as well as a
+          // code, and the entry's word is the one the page shows.
+          const venue = item.venue ?? item.city ?? "";
+          const cut = venue.indexOf(",");
+          const name = cut > 0 ? venue.slice(0, cut).trim() : venue;
+          const street = cut > 0 ? venue.slice(cut + 1).trim() : undefined;
+          return {
+            location: {
+              "@type": "Place",
+              name,
+              ...(item.geo
+                ? { geo: { "@type": "GeoCoordinates", latitude: item.geo.lat, longitude: item.geo.lng } }
+                : {}),
+              address: {
+                "@type": "PostalAddress",
+                ...(street ? { streetAddress: street } : {}),
+                ...(item.city ? { addressLocality: item.city } : {}),
+                ...(item.country ? { addressCountry: item.country } : {}),
+              },
+            },
+          };
+        })()
       : {}),
     // The people, in the field search engines read them from. `performer` is
     // schema.org's word for whoever is on the stage, and a conference
