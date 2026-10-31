@@ -6,7 +6,7 @@
 import type { EventItem } from "@dst/content/types";
 import { eventHref } from "@dst/content/paths";
 import FeedCards from "./FeedCards.astro";
-import { cardHours, cardCountdown, cardUntil } from "../date.ts";
+import { cardHours, cardCountdown, cardUntil, cardClock } from "../date.ts";
 import Icon from "./Icon.astro";
 import { withLabels, type ArticleLabels } from "../labels.ts";
 import CountdownScript from "./CountdownScript.astro";
@@ -83,6 +83,7 @@ const toCard = (item: EventItem, past: boolean) => {
     event: true,
     hours: cardHours(item),
     countdown: cardCountdown(item),
+    ...cardClock(item),
     dateInImage: item.dateInImage,
     editorsChoice: item.editorsChoice,
     past,
@@ -111,6 +112,10 @@ const past = items
   .filter((e) => hasEnded(e, asOf))
   .sort((a, b) => (a.start < b.start ? 1 : a.start > b.start ? -1 : 0))
   .map((e) => toCard(e, true));
+
+// CountdownScript goes under the last group, not inside the first. It is
+// inline, so it reads only the chips above it: the running group's cards
+// came after it, and a page with nothing upcoming had no script at all.
 ---
 {items.length > 0 && (
   <div class="events-lists">
@@ -118,7 +123,6 @@ const past = items
       <div class="events-group">
         <h3 class="events-group-heading">{L.upcoming(where)}</h3>
         <FeedCards items={upcoming} columns={upcoming.length <= 2 ? upcoming.length : undefined} locale={locale} labels={L} />
-        <CountdownScript />
       </div>
     )}
     {running.length > 0 && (
@@ -133,6 +137,7 @@ const past = items
         <FeedCards items={past} columns={past.length <= 2 ? past.length : undefined} locale={locale} labels={L} />
       </div>
     )}
+    {(upcoming.length > 0 || running.length > 0) && <CountdownScript />}
     {subscribeHref && (
       <a class="events-subscribe" href={subscribeHref} title={L.subscribeCalendarTitle}>
         <Icon name="events" />

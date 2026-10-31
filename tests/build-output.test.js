@@ -979,6 +979,59 @@ describe("event calendars", () => {
       .map(({ p, index, count }) => `${p.app} ${p.url}: ${p.cards.filter((c) => c.past).length} Past card(s) while ${index} lists ${count} others still on`);
     assert.deepEqual(stray, [], `tails offering what is over ahead of what is still on:\n  ${stray.join("\n  ")}`);
   });
+
+  test("a dated card's chip knows the event's last day and the word for after it", () => {
+    // The build files each card under "upcoming", "on now" or "past" on the
+    // day it runs; between two builds only the chip knows what day it is.
+    // Without the event's end it went blank on a run's second day and stayed
+    // blank after the last, and a running card had no chip at all: on
+    // 2 Nov lnd's /halloween/ showed nine "until 1 Nov" cards with nothing
+    // beside them, and mxo's hub kept an empty chip on a run that was on.
+    const CONTAINERS = [["div", "events-lists"], ["section", "events-block"], ["section", "event-article-more"], ["section", "news-article-more"]];
+    // Every `<tag class="… cls …">…</tag>` in the page, nesting counted.
+    const blocksOf = (html, tag, cls) =>
+      [...html.matchAll(new RegExp(`<${tag}\\b[^>]*class="[^"]*\\b${cls}\\b[^"]*"[^>]*>`, "g"))].map((m) => {
+        const tok = new RegExp(`<${tag}\\b|</${tag}>`, "g");
+        tok.lastIndex = m.index + m[0].length;
+        let depth = 1;
+        let t;
+        while (depth > 0 && (t = tok.exec(html))) depth += t[0][1] === "/" ? -1 : 1;
+        return html.slice(m.index, t ? t.index : html.length);
+      });
+    const bad = [];
+    let checked = 0;
+    for (const page of pages.filter((p) => p.app in CALENDARS)) {
+      for (const [tag, cls] of CONTAINERS) {
+        for (const block of blocksOf(page.html, tag, cls)) {
+          for (const [card] of block.matchAll(/<(a|article) class="feed-card"[\s\S]*?<\/\1>/g)) {
+            if (!card.includes("feed-meta-event") || card.includes('class="feed-past"')) continue;
+            checked++;
+            const where = `${page.app}${page.url} ${(card.match(/href="([^"]*)"/) || [])[1] ?? "(no link)"}`;
+            const date = (card.match(/<time datetime="([^"]*)"/) || [])[1];
+            const chips = card.match(/<span class="feed-countdown"[^>]*>/g) ?? [];
+            if (chips.length !== 1) {
+              bad.push(`${where}: ${chips.length} chips`);
+              continue;
+            }
+            const chip = chips[0];
+            const get = (name) => (chip.match(new RegExp(`\\s${name}="([^"]*)"`)) || [])[1];
+            const end = get("data-end");
+            if (!/^\d{4}-\d\d-\d\d/.test(end ?? "") || !get("data-ended")) {
+              bad.push(`${where}: no data-end or no data-ended`);
+              continue;
+            }
+            if (!get("datetime") && !/\sdata-countdown-live/.test(chip)) {
+              // A running card's chip: never counts, never "under way",
+              // hidden until its last day has passed.
+              if (!/\shidden[\s>]/.test(chip) || get("data-now") !== undefined || end.slice(0, 10) !== date) bad.push(`${where}: until chip ${chip}`);
+            } else if (end.slice(0, 10) < date) bad.push(`${where}: data-end ${end} before ${date}`);
+          }
+        }
+      }
+    }
+    assert.ok(checked > 0, "no dated event card found on any calendar site: the selectors no longer match FeedCards");
+    assert.deepEqual(bad, [], `event cards whose chip cannot say "under way" or "ended":\n  ${bad.slice(0, 40).join("\n  ")}`);
+  });
 });
 
 // The glance's Duration row. It used to vanish on any event with an `end`,

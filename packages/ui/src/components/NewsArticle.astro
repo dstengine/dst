@@ -24,7 +24,7 @@ import ImageNote from "./ImageNote.astro";
 import { ICONS } from "../icons.ts";
 import Icon from "./Icon.astro";
 import { mapEmbedUrl, directionsUrl } from "../maps.ts";
-import { formatDate, cardHours, cardCountdown } from "../date.ts";
+import { formatDate, cardHours, cardCountdown, cardClock } from "../date.ts";
 import { caps } from "../caps.ts";
 import { withLabels, type ArticleLabels } from "../labels.ts";
 import { readingMinutes } from "@dst/content/reading";
@@ -149,6 +149,7 @@ const eventCards = moreEvents
     // the site — see the tail of EventArticle.
     hours: promoted && e.category === promoted.key ? undefined : cardHours(e),
     countdown: cardCountdown(e),
+    ...cardClock(e),
     dateInImage: e.dateInImage,
     editorsChoice: e.editorsChoice,
   }));

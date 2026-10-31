@@ -69,3 +69,31 @@ export function cardCountdown(e: {
 export function cardUntil(e: { start: string; end?: string }, todayIso: string): string | undefined {
   return e.start < todayIso && !hasEnded(e, todayIso) ? lastDay(e) : undefined;
 }
+
+/** What a card's chip needs to say "under way" and "ended" from the reader's
+    clock, whatever group the build put the card in.
+    - `end`: the last day, read as `hasEnded` and the index read it
+      (`lastDay`); for a night that runs past midnight, the end stamp, so
+      Crypto After Dark (19:00–02:00) is still on at 00:30 instead of
+      "ended" at midnight. The stamp takes `cardCountdown`'s offset rule.
+    - `utcOffset`: the entry's own, or nothing. The chip then reads the
+      reader's day, not Dubai's. That departs on purpose from types.ts, where
+      an entry with no offset is a Gulf event: 22 nyc42 entries are American
+      events that carry none.
+    - `gaps`: the entry lists its days (`dates`), so the days between them
+      are not "under way" (Merton's fireworks, 5 and 7 Nov, not the 6th). */
+export function cardClock(e: {
+  start: string;
+  end?: string;
+  startTime?: string;
+  endTime?: string;
+  utcOffset?: string;
+  dates?: string[];
+}): { end: string; utcOffset?: string; gaps?: boolean } {
+  const overnight = Boolean(e.startTime && e.endTime && e.endTime < e.startTime);
+  return {
+    end: overnight ? `${endDay(e)}T${e.endTime}:00${e.utcOffset ?? "+04:00"}` : lastDay(e),
+    utcOffset: e.utcOffset,
+    gaps: e.dates ? true : undefined,
+  };
+}

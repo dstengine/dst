@@ -1,12 +1,20 @@
 ---
-// Client-side time relative to now: "in 5 months" next to an upcoming
-// event's date, and an "ended" flag once it has passed.
+// Client-side time relative to now, beside an event's date: "in 5 months"
+// before it, "under way" while it runs and "ended" once it is over, on its
+// card; and the "ended" badge on the event's own page.
 //
 // It has to run in the browser: these sites are statically generated, so
 // anything baked in at build time would be wrong within days of shipping —
 // and a page still advertising a date that has gone is the standard
-// failure mode of event listings. The absolute date is always in the HTML,
-// so with no JS the date still stands on its own.
+// failure mode of event listings. The build files each card under
+// "upcoming", "on now" or "past" on the day it runs, and between two builds
+// only this script knows what day it is, so the card says it itself. The
+// absolute date is always in the HTML, so with no JS the date still stands
+// on its own.
+//
+// The day is the event's own, not UTC's. Counted from UTC midnight, the
+// Village Halloween Parade's page in New York said "Ended" at 20:30 on the
+// night of the parade, and its card said "today" the evening before.
 ---
 <script is:inline>
   (() => {
@@ -20,7 +28,9 @@
     // answers in its own, and an Armenian card says "tomorrow". Chromium
     // builds ship without Armenian, so on those the label is left out and
     // the absolute date — rendered at build time, in the right language —
-    // stands alone, as it does with no JS at all.
+    // stands alone, as it does with no JS at all. The site's own words
+    // ("under way", "ended") come from the page, not the browser, so they
+    // stand either way.
     const known = Intl.RelativeTimeFormat.supportedLocalesOf([lang]).length > 0;
     const rtf = new Intl.RelativeTimeFormat(known ? lang : "en", { numeric: "auto" });
     // "auto" past tomorrow reaches for the language's own word where it has
@@ -34,46 +44,75 @@
       if (days < 345) return rtf.format(Math.round(days / 30.4), "month");
       return rtf.format(Math.round(days / 365), "year");
     };
-    const midnightUtc = (d) => Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate());
-    const today = midnightUtc(new Date());
-    const daysFrom = (el) => {
-      const iso = el.getAttribute("datetime") || el.closest("[datetime]")?.getAttribute("datetime");
-      if (!iso) return null;
-      return Math.round((Date.parse(`${iso}T00:00:00Z`) - today) / DAY);
-    };
 
+    // The calendar day it is where the event is: the entry's UTC offset
+    // when the element carries one, else the reader's own day. An offset is
+    // the entry's, taken at its start, so across a clock change the day
+    // turns an hour off (early in autumn, late in spring), never more.
+    const pad = (n) => String(n).padStart(2, "0");
+    const dayAt = (offset) => {
+      const now = new Date();
+      const m = /^([+-])(\d\d):?(\d\d)$/.exec(offset || "");
+      if (!m) return `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+      const mins = (m[1] === "-" ? -1 : 1) * (Number(m[2]) * 60 + Number(m[3]));
+      return new Date(now.getTime() + mins * 60000).toISOString().slice(0, 10);
+    };
+    const daysBetween = (from, to) => Math.round((Date.parse(`${to}T00:00:00Z`) - Date.parse(`${from}T00:00:00Z`)) / DAY);
+    // A stamp with a clock time is an instant; a bare date is a whole day
+    // in the event's calendar, and counting to its UTC midnight would be
+    // precise and wrong.
+    const timed = (iso) => /T\d\d:\d\d/.test(iso || "");
+    const at = (iso) => Date.parse(timed(iso) ? iso : `${iso}T00:00:00Z`);
+    // Over at the end stamp when it has a clock time (a night that runs
+    // past midnight), else once the event's last day is behind it.
+    const over = (end, offset) => (timed(end) ? Date.now() >= at(end) : dayAt(offset) > end);
+
+    // A card's chip. One that carries its end (`data-end`) says "under way"
+    // after the first day and "ended" after the last, whatever group the
+    // build put the card in. One without counts the days to its date and
+    // goes blank on it, as musical's run chip and fwf's forum figure do.
     for (const el of document.querySelectorAll("[data-countdown]")) {
-      const days = daysFrom(el);
-      if (days === null || days < 0 || !known) continue;
-      el.textContent = ahead(days);
+      const { end, offset, now: running, ended } = el.dataset;
+      // A chip that knows its end reads only its own datetime: an `until`
+      // card's chip carries none, so it never counts.
+      const iso = el.getAttribute("datetime") || (end ? null : el.closest("[datetime]")?.getAttribute("datetime"));
+      const today = dayAt(offset);
+      let text = "";
+      if (end && ended && over(end, offset)) text = ended;
+      else if (iso && iso < today) text = end && running ? running : "";
+      else if (iso && known) text = ahead(daysBetween(today, iso));
+      el.textContent = text;
+      // Hidden only where the markup can say so: a chip without an end has
+      // always kept its place, empty.
+      if (end) el.hidden = !text;
     }
 
     // The live variant, on an event page and on a card with displayHours:
     // the day count above until the start is under two days away, then
-    // hours and minutes — but only when the stamp carries a clock time and
-    // an offset. A bare
-    // date is a day in some time zone the page does not know, and counting
-    // down to its UTC midnight would be precise and wrong. "Under way" while
-    // it runs, and nothing after: the ended badge takes over from there.
-    const timed = (iso) => /T\d\d:\d\d/.test(iso || "");
-    const at = (iso) => Date.parse(timed(iso) ? iso : `${iso}T00:00:00Z`);
+    // hours and minutes — but only when the stamp carries a clock time.
+    // "Under way" while it runs, then "ended" on a card. The page's own
+    // header chip carries no word for after, and goes blank: the ended
+    // badge beside it takes over there.
     const live = [...document.querySelectorAll("[data-countdown-live]")];
     const tick = () => {
       const now = Date.now();
       for (const el of live) {
-        const { start, end, now: runningLabel } = el.dataset;
-        // An end with no clock time runs to the end of that day.
-        const endAt = timed(end) ? at(end) : at(end) + DAY;
+        const { start, end, now: running, ended } = el.dataset;
+        // Without its own offset the chip takes its start stamp's, which
+        // is the entry's offset, or Dubai's where the entry names none.
+        const offset = el.dataset.offset || (timed(start) ? start.slice(-6) : undefined);
+        const today = dayAt(offset);
         const left = at(start) - now;
-        // "Under way" is the site's own word, not the browser's, so it
-        // stands even where the relative count is left out.
+        // A start with no clock time begins with the event's day.
+        const begun = timed(start) ? left <= 0 : today >= start.slice(0, 10);
+        // "Under way" and "ended" are the site's own words, not the
+        // browser's, so they stand even where the relative count is left out.
         let text = "";
-        if (left <= 0) text = now < endAt ? runningLabel || "" : "";
+        if (over(end, offset)) text = ended || "";
+        else if (begun) text = running || "";
         else if (!known) text = "";
-        else if (left >= 2 * DAY || !timed(start)) {
-          const days = Math.round((Date.parse(`${start.slice(0, 10)}T00:00:00Z`) - midnightUtc(new Date())) / DAY);
-          text = ahead(Math.max(days, 0));
-        } else if (left >= 3600000) text = rtf.format(Math.floor(left / 3600000), "hour");
+        else if (left >= 2 * DAY || !timed(start)) text = ahead(Math.max(daysBetween(today, start.slice(0, 10)), 0));
+        else if (left >= 3600000) text = rtf.format(Math.floor(left / 3600000), "hour");
         else text = rtf.format(Math.max(1, Math.ceil(left / 60000)), "minute");
         el.textContent = text;
         el.hidden = !el.textContent;
@@ -84,11 +123,11 @@
       setInterval(tick, 30000);
     }
 
-    // An end date means the event runs until then; without one, the start
-    // date is also the last day.
+    // The event page's badge, on the same day as its cards: the last day
+    // in `datetime`, or the end stamp of a night that runs past midnight.
     for (const el of document.querySelectorAll("[data-event-ended]")) {
-      const days = daysFrom(el);
-      if (days !== null && days < 0) el.hidden = false;
+      const end = el.dataset.end || el.getAttribute("datetime");
+      if (end && over(end, el.dataset.offset)) el.hidden = false;
     }
   })();
 </script>

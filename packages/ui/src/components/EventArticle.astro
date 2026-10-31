@@ -26,7 +26,7 @@ import Glance from "./Glance.astro";
 import { ICONS } from "../icons.ts";
 import Icon from "./Icon.astro";
 import { mapEmbedUrl, directionsUrl } from "../maps.ts";
-import { formatDate, cardHours, cardCountdown, cardUntil } from "../date.ts";
+import { formatDate, cardHours, cardCountdown, cardUntil, cardClock } from "../date.ts";
 import { caps } from "../caps.ts";
 import { headingWord, withLabels, type ArticleLabels } from "../labels.ts";
 import { isOn, isCurrent, hasEnded, withPromoted } from "@dst/content/when";
@@ -165,6 +165,7 @@ const moreCards = more
     // pages, in the listings, and on the event itself.
     hours: promoted && other.category === promoted.key && item.category !== promoted.key ? undefined : cardHours(other),
     countdown: cardCountdown(other),
+    ...cardClock(other),
     dateInImage: other.dateInImage,
     editorsChoice: other.editorsChoice,
     past: hasEnded(other, todayIso),
@@ -249,6 +250,13 @@ const offset = item.utcOffset ?? "+04:00";
 const stamp = (day: string, time?: string) => (time ? `${day}T${time}:00${offset}` : day);
 const startStamp = stamp(item.start, item.startTime);
 const endStamp = item.end || item.endTime ? stamp(endDay(item), item.endTime) : undefined;
+// The "ended" badge goes by the event's own day, as its cards do: counted
+// from UTC it came up at 20:30 on the night of nyc42's parade. A night that
+// runs past midnight is over at its end stamp, not at midnight. An entry
+// that lists its days (`dates`) gets no "under way" in the header, as on its
+// cards: the chip cannot tell a listed day from the gap between two.
+const clock = cardClock(item);
+const badgeEnd = clock.end.includes("T") ? clock.end : undefined;
 
 // Absolute, because a crawler resolves a relative URL in JSON-LD against
 // nothing in particular; and tied to the page's own graph, so the event
@@ -502,11 +510,12 @@ const relatedItems = (item.related ?? []).map((card) => ({
           data-countdown-live
           data-start={startStamp}
           data-end={endStamp ?? stamp(item.start, item.endTime)}
-          data-now={L.underway}
+          data-offset={item.utcOffset}
+          data-now={item.dates ? undefined : L.underway}
           hidden
         ></span>
       )}
-      <span class="event-article-ended" data-event-ended datetime={item.end ?? item.start} hidden>
+      <span class="event-article-ended" data-event-ended datetime={item.end ?? item.start} data-end={badgeEnd} data-offset={item.utcOffset} hidden>
         {L.ended}
       </span>
     </p>

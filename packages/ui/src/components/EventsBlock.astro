@@ -17,7 +17,7 @@
 import type { EventItem } from "@dst/content/types";
 import { eventHref } from "@dst/content/paths";
 import FeedCards from "./FeedCards.astro";
-import { cardHours, cardCountdown, cardUntil } from "../date.ts";
+import { cardHours, cardCountdown, cardUntil, cardClock } from "../date.ts";
 import CountdownScript from "./CountdownScript.astro";
 import { hasEnded, lastDay } from "@dst/content/when";
 import { withLabels, type ArticleLabels } from "../labels.ts";
@@ -88,6 +88,7 @@ const card = (item: EventItem) => {
     event: true,
     hours: cardHours(item),
     countdown: cardCountdown(item),
+    ...cardClock(item),
     dateInImage: item.dateInImage,
     editorsChoice: item.editorsChoice,
     until: cardUntil(item, todayIso),
