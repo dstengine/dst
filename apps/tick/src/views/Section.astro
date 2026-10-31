@@ -143,8 +143,13 @@ const blocks = promotedAll[lang]
     min-height: 44px;
   }
   .section-share :global(.share-button:hover) { color: var(--ink); text-decoration: underline; }
+  /* Only the link is hidden on a phone, never its wrapper: the floating
+     mark and the toast are rendered inside the same component, and a
+     fixed element inside a display:none parent is gone with it (found on
+     the live site, 31 Oct 2026). */
   @media (max-width: 700px) {
-    .section-share { display: none; }
+    .section-share { margin-top: 0; }
+    .section-share :global(.share-button) { display: none; }
   }
   .section-ways { margin-top: var(--space-5); }
   .section-promoted { margin-top: var(--space-5); }
