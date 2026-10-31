@@ -69,8 +69,13 @@ const subscribeHref = calendarHref?.replace(/^https?:/, "webcal:");
 //
 // `featured` survives on EventItem and still ranks news; it no longer moves
 // an event.
+// Same day, then by the hour: two Halloween nights on 31 October listed
+// the 21:30 one over the 21:00 one, in whatever order the file held them.
+// An entry without an hour sorts before those with one — an all-day thing
+// comes first in a day.
 const byDate = (a: EventItem, b: EventItem) =>
-  a.start < b.start ? -1 : a.start > b.start ? 1 : 0;
+  a.start < b.start ? -1 : a.start > b.start ? 1
+  : (a.startTime ?? "") < (b.startTime ?? "") ? -1 : (a.startTime ?? "") > (b.startTime ?? "") ? 1 : 0;
 
 const toCard = (item: EventItem, past: boolean) => {
   const hasPage = Array.isArray(item.body) && item.body.length > 0;
