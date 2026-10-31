@@ -19,7 +19,7 @@ export const TOP = [
   { slug: "halloween-weekend-forty44-yerevan-2026", label: "Forty44", icon: "pumpkin", nav: false },
   { slug: "halloween-karaoke-ufo-bar-yerevan-2026", label: "UFO Bar", icon: "mic", nav: false },
   { slug: "devfest", label: "DevFest", icon: "laptop" },
-  { slug: "snoop-dogg", label: "Snoop Dogg", icon: "mic" },
+  { slug: "snoop-dogg", label: "Snoop Dogg", icon: "mic", nav: false },
 ];
 
 type Top = { label: string; icon: string; href: string; nav: boolean } & (
