@@ -8954,7 +8954,7 @@ export const items: EventItem[] = [
   {
     slug: "mut-moct-hayfilm-halloween-yerevan-2026",
     createdAt: "2026-10-31T19:00:00+04:00",
-    updatedAt: "2026-10-31T19:25:00+04:00",
+    updatedAt: "2026-10-31T19:32:00+04:00",
     site: "tick",
     // The card follows UFO's: Forty44 closes at 03:00, UFO at 04:00, and this
     // is where the night goes on until 09:00 (the owner's order, 31 Oct 2026).
@@ -9001,8 +9001,8 @@ export const items: EventItem[] = [
     i18n: {
       en: {
         title: "Mut: MOCT's Halloween night at Hayfilm Cluster",
-        titleSeo: "Halloween in Yerevan: Mut by MOCT at Hayfilm, 31 October",
-        cardTitle: "Mut by MOCT at Hayfilm",
+        titleSeo: "Halloween in Yerevan: MOCT's Mut at Hayfilm, 31 October",
+        cardTitle: "MOCT Halloween: Mut at Hayfilm",
         summary:
           "An all-night Halloween rave in Yerevan on 31 October at Hayfilm Cluster, 30 Ashtarak Highway: nine DJs across three rooms from 23:00 to 09:00, electro, breakbeat, techno and dark house; the price is not published.",
         city: "Yerevan",
