@@ -5,7 +5,8 @@
 // read as one of the set rather than an advert dropped in. It is not a
 // link: nothing to click, nothing to buy; the reader says the code at the
 // door and the venue hears where they came from. The honest line about
-// guarantees is part of the copy, not small print.
+// guarantees is part of the copy, not small print (shortened to one
+// clause on the owner's word, 31 Oct 2026).
 //
 // Site-wide across the network since 31 Oct 2026: every intro leaves the
 // right half of its row empty. The code is the host, from `Astro.site`.
@@ -20,19 +21,19 @@ const { lang = "en", code = Astro.site ? new URL(Astro.site).hostname : "" } = A
 const T = {
   en: {
     eyebrow: "Promo code",
-    text: `No guarantees: this is a marketing experiment. Just say it at the door, with all respect from ${code}.`,
+    text: `No guarantees. Just say it at the door, with all respect from ${code}.`,
   },
   es: {
     eyebrow: "Código promocional",
-    text: `Sin garantías: es un experimento de marketing. Solo dilo en la entrada, con todo el respeto de ${code}.`,
+    text: `Sin garantías. Solo dilo en la entrada, con todo el respeto de ${code}.`,
   },
   de: {
     eyebrow: "Promo-Code",
-    text: `Ohne Gewähr: ein Marketing-Experiment. Einfach am Eingang nennen, mit besten Grüßen von ${code}.`,
+    text: `Ohne Gewähr. Einfach am Eingang nennen, mit besten Grüßen von ${code}.`,
   },
   hy: {
     eyebrow: "Պրոմոկոդ",
-    text: `Երաշխիքներ չկան՝ սա մարքեթինգային փորձ է։ Պարզապես ասեք այն մուտքի մոտ՝ ${code}-ի ամենայն հարգանքով։`,
+    text: `Երաշխիքներ չկան։ Պարզապես ասեք այն մուտքի մոտ՝ ${code}-ի ամենայն հարգանքով։`,
   },
 }[lang];
 ---

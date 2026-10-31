@@ -30,6 +30,7 @@ import Icon from "./Icon.astro";
 import { mapEmbedUrl, directionsUrl } from "../maps.ts";
 import { formatDate, cardHours, cardCountdown, cardUntil, cardClock } from "../date.ts";
 import { caps } from "../caps.ts";
+import PromoCode from "./PromoCode.astro";
 import { headingWord, withLabels, type ArticleLabels } from "../labels.ts";
 import { isOn, isCurrent, hasEnded, withPromoted } from "@dst/content/when";
 
@@ -90,6 +91,10 @@ interface Props {
       where there is not. Opt-in per site; the button's words are under the
       `share-label` test where that test runs. */
   share?: boolean;
+  /** The site's promo card (PromoCode.astro) under the fact table: the
+      language of its words. Left out, no card. tick's event pages since
+      31 Oct 2026. */
+  promo?: "en" | "es" | "de" | "hy";
   /** The site's promoted tag, when it has a date still to come: its key as
       it stands in the data and the label to head the tail with. The block
       leads with it and takes its words — see `promotedSection` in
@@ -121,7 +126,7 @@ interface Props {
       reason. It names the cards, it does not choose them. */
   moreEventsText?: string;
 }
-const { item, backHref, ticketHref, sourceHref, more = [], moreNews = [], newsBase = "/news/", eventsBase = "/events/", publisher, categoryHref, venueHref, mapHref, place, promoted, promotedLink, where, pluralOf, moreEventsText, countdown = false, locale = "en-US", labels: labelOverrides, share = false } = Astro.props;
+const { item, backHref, ticketHref, sourceHref, more = [], moreNews = [], newsBase = "/news/", eventsBase = "/events/", publisher, categoryHref, venueHref, mapHref, place, promoted, promotedLink, where, pluralOf, moreEventsText, countdown = false, locale = "en-US", labels: labelOverrides, share = false, promo } = Astro.props;
 const L = withLabels(labelOverrides);
 // Venue is part of the page's translated copy; geo.name stays with the
 // coordinates as the source-language map label. Prefer the venue so a
@@ -614,6 +619,10 @@ const relatedItems = (item.related ?? []).map((card) => ({
 
   <Glance facts={glance} />
 
+  {/* The code, where the reader has just read the hours and the price and
+      is deciding to go: under the facts, before the story. */}
+  {promo && <div class="event-article-promo"><PromoCode lang={promo} /></div>}
+
   {/* Above the original description on purpose: once something has
       happened, what came of it is the news, and the announcement is
       background. */}
@@ -998,5 +1007,5 @@ const relatedItems = (item.related ?? []).map((card) => ({
      dates, not down the sentences. */
   .article-update dt { font-family: var(--font-mono); font-size: var(--step--1); color: var(--ink-muted); }
   .article-update dd { margin: 0.25rem 0 0; max-width: 46rem; }
+  .event-article-promo { margin: var(--space-4) 0 0; }
 </style>
-

@@ -34,6 +34,7 @@ const meta = eventMeta(item, site[lang], { host: Astro.site?.hostname ?? "", pat
     publisher={publisher}
     share
     countdown
+    promo={lang}
     categoryHref={sectionHref(item, lang)}
     venueHref={venueHref(item, lang)}
     place={placeOf(item, lang)}
