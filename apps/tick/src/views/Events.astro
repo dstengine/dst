@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "../components/PromoHero.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import EventsList from "@dst/ui/EventsList.astro";
 import SiteSearch from "@dst/ui/SiteSearch.astro";
@@ -20,11 +21,11 @@ const items = eventsFor(lang);
 const thin = items.length < 3;
 ---
 <Layout lang={lang} title={page.title} description={page.description} noindex={thin}>
-  <section class="container hero">
+  <PromoHero lang={lang}>
     <h1>{page.h1}</h1>
     <p class="lede">{page.lede}</p>
     <SiteSearch indexHref={`${p}search.json`} locale={LOCALE[lang]} labels={labels[lang]} />
-  </section>
+  </PromoHero>
   <section class="container">
     <SectionNav sections={allSections[lang]} allHref={p} base={p} {...NAV[lang]} />
     <MonthChips lang={lang} />

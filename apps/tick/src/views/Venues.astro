@@ -2,6 +2,7 @@
 // Every room that has earned a page (../venues.ts), the ones with the most
 // still to come first.
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "../components/PromoHero.astro";
 import VenueCards from "@dst/ui/VenueCards.astro";
 import { venuesPage, labels, type Lang } from "../content";
 import { LOCALE } from "../i18n";
@@ -25,10 +26,10 @@ const items = allVenues[lang].map((v) => ({
 const thin = items.length < 3;
 ---
 <Layout lang={lang} title={page.title} description={page.description} noindex={thin}>
-  <section class="container hero">
+  <PromoHero lang={lang}>
     <h1>{page.h1}</h1>
     <p class="lede">{page.lede}</p>
-  </section>
+  </PromoHero>
   <section class="container">
     <VenueCards items={items} locale={LOCALE[lang]} labels={labels[lang]} />
   </section>

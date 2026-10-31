@@ -2,6 +2,7 @@
 // The calendar by month: one line per month that has earned a page
 // (../months.ts), the months still to come first, then the record.
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "../components/PromoHero.astro";
 import { withLabels } from "@dst/ui/labels";
 import { calendarPage, labels, type Lang } from "../content";
 import { site } from "../site.config";
@@ -28,10 +29,10 @@ const row = (m: (typeof months)[number]) => ({
 });
 ---
 <Layout lang={lang} title={page.title} description={page.description} noindex={thin}>
-  <section class="container hero">
+  <PromoHero lang={lang}>
     <h1>{page.h1}</h1>
     <p class="lede">{page.lede}</p>
-  </section>
+  </PromoHero>
   <section class="container">
     {ahead.length > 0 && (
       <ol class="months-grid">

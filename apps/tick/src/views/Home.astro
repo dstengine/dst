@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "../components/PromoHero.astro";
 import NewsBlock from "@dst/ui/NewsBlock.astro";
 import EventsBlock from "@dst/ui/EventsBlock.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
@@ -73,10 +74,10 @@ const venues = allVenues[lang].slice(0, 4).map((v) => ({
 }));
 ---
 <Layout lang={lang} title={page.title} description={page.description}>
-  <section class="container hero">
+  <PromoHero lang={lang}>
     <h1>{page.h1}</h1>
     <p class="lede">{page.lede}</p>
-  </section>
+  </PromoHero>
   {top.length > 0 && (
     <section class="container home-top">
       <BlockHead heading={w.top} />

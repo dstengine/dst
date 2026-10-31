@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "../components/PromoHero.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import NewsList from "@dst/ui/NewsList.astro";
 import { news, type Lang } from "../content";
@@ -16,10 +17,10 @@ const items = newsFor(lang);
 const thin = items.length < 3;
 ---
 <Layout lang={lang} title={page.title} description={page.description} noindex={thin}>
-  <section class="container hero">
+  <PromoHero lang={lang}>
     <h1>{page.h1}</h1>
     <p class="lede">{page.lede}</p>
-  </section>
+  </PromoHero>
   <section class="container">
     <SectionNav sections={allSections[lang]} allHref={p} base={p} {...NAV[lang]} />
     <NewsList locale={LOCALE[lang]} items={items} newsBase={newsBase(lang)} />

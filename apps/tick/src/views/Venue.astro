@@ -8,6 +8,7 @@
 // carry the city instead: the name is what the search for the room says,
 // the city is what tells the engine which room.
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "../components/PromoHero.astro";
 import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
 import Glance from "@dst/ui/Glance.astro";
 import MapEmbed from "@dst/ui/MapEmbed.astro";
@@ -90,7 +91,7 @@ const placeLd: Record<string, unknown> = {
 };
 ---
 <Layout lang={lang} title={title} description={description} jsonLd={[placeLd]} crumbCurrent={venue.name}>
-  <section class="container hero">
+  <PromoHero lang={lang}>
     <Breadcrumbs
       crumbs={[{ href: venuesBase(lang), label: w.venuesNav, title: venuesPage[lang].title }]}
       current={venue.name}
@@ -102,7 +103,7 @@ const placeLd: Record<string, unknown> = {
     <h1>{venue.name}</h1>
     <p class="lede">{lede}</p>
     <Glance facts={glance} />
-  </section>
+  </PromoHero>
   {venue.geo && (
     <section class="container venue-map">
       <h2>{L.locate(venue.name)}</h2>
