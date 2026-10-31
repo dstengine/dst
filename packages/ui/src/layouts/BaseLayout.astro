@@ -330,16 +330,22 @@ const lateIcons = navFootprint - nav.length * 28 > 700;
 // tick's Armenian labels are the case: eleven of them add up to 950px
 // beside a 190px wordmark and the toggles, and no width helps because the
 // column stops growing at 1180. Estimated from the row as measured at the
-// tightened size: 8.5px a character of Armenian, 7.75 of Latin (llc's ten
-// labels take 7.65, palmcentral's 7.44, tick's English 8.04), 14px between
-// items, the column less the wordmark and the 170px the toggles take. At a
-// flat 8.5 llc's row, which fits on one line at 73px, read as 6px too long
-// and got a line of its own from 24 to 25 Oct 2026. The 40px margin keeps
-// a row that just fits off its own line.
-const glyphs = (label: string) => label.length * (/[^\u0000-\u024F]/.test(label) ? 8.5 : 7.75);
+// tightened size: 8.5px a character of Armenian, 7.65 of Latin, 14px
+// between items; the column less the wordmark, the toggles and the gaps
+// between the three. Every constant is a browser measurement of 31 Oct
+// 2026 at 1440: the Armenian row 848px for 85 characters, llc's Latin row
+// 700 for 75; the wordmark 14.7px a character plus the logo (llc 335 for
+// 23, tick 186 for 12); the theme toggle 70, the pair with a language
+// switch 130; 48 between the wordmark and the actions. The earlier model
+// (11px a character of wordmark, a flat 170 for the toggles, a 40px
+// margin) read tick's Armenian row as fitting with 35px to spare when it
+// was 29px short, and "Մեր մասին" sat on a second line from the day the
+// Halloween item joined the row. No margin: the numbers are measured, and
+// a row that is short by one pixel wraps.
+const glyphs = (label: string) => label.length * (/[^\u0000-\u024F]/.test(label) ? 8.5 : 7.65);
 const rowNeeds = nav.reduce((sum, item) => sum + glyphs(item.label), 0) + (nav.length - 1) * 14;
-const rowRoom = 1180 - (siteName.length * 11 + 40) - 170;
-const navBar = denseNav && rowNeeds > rowRoom + 40;
+const rowRoom = 1180 - (siteName.length * 14.7 + 10) - (alternates.length ? 130 : 70) - 48;
+const navBar = denseNav && rowNeeds > rowRoom;
 // The header's copy of the name, with the words either side of a " · " held
 // as one run: a separator never ends or starts a line of the wordmark
 // (tick's "Tick · Yerevan" would otherwise break after the dot at 305px).
