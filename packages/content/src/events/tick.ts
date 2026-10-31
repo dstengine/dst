@@ -9071,8 +9071,8 @@ export const items: EventItem[] = [
 
   {
     slug: "halloween-weekend-forty44-yerevan-2026",
-    createdAt: "2026-10-31T12:45:00+04:00",
-    updatedAt: "2026-10-31T12:45:00+04:00",
+    createdAt: "2026-10-31T12:58:00+04:00",
+    updatedAt: "2026-10-31T12:58:00+04:00",
     site: "tick",
     title: "Halloween Weekend Forty44-ում՝ Nebell և SAME",
     titleSeo: "Հելոուին Երևանում՝ Forty44, հոկտեմբերի 30–31",
@@ -9090,8 +9090,9 @@ export const items: EventItem[] = [
     geo: { lat: 40.1849996, lng: 44.5105708 },
     organizer: "Forty44",
     image: "/covers/halloween-weekend-forty44-yerevan-2026.jpg",
-    imageAlt: "Թղթե ապլիկացիա․ DJ-ի վահանակ երկու նվագարկիչով, կողքին երկու փորագրված դդում, մուգ կապույտ պատին՝ նարնջագույն աստղերի շարան",
-    imageKind: "generated",
+    imageAlt: "Forty44-ի Halloween Weekend-ի պաստառը․ Nebell-ի և SAME-ի գծանկար դիմանկարները մուգ կապույտ ֆոնին, նարնջագույն աստղեր ու դդումներ, 30.10.26 և 31.10.26, 22:00",
+    imageKind: "illustration",
+    imageCredit: "Forty44",
     imageWidth: 1024,
     imageHeight: 1024,
     editorsChoice: true,
@@ -9119,7 +9120,7 @@ export const items: EventItem[] = [
     ],
     i18n: {
       en: {
-        imageAlt: "A cut-paper collage: a DJ booth with two turntables, two carved pumpkins beside it, and a string of orange paper stars across a dark blue wall",
+        imageAlt: "Forty44's Halloween Weekend poster: line-drawn portraits of Nebell and SAME on dark blue, with orange stars and pumpkins, the dates 30.10.26 and 31.10.26 and the time 22:00",
         ticket: { url: "https://www.instagram.com/p/De9q_cigXNH/", label: "Details", sells: false },
         title: "Halloween Weekend at Forty44: Nebell and SAME",
         titleSeo: "Halloween in Yerevan: Forty44 Weekend, 30–31 October",
@@ -9156,8 +9157,8 @@ export const items: EventItem[] = [
 
   {
     slug: "halloween-karaoke-ufo-bar-yerevan-2026",
-    createdAt: "2026-10-31T12:45:00+04:00",
-    updatedAt: "2026-10-31T12:45:00+04:00",
+    createdAt: "2026-10-31T12:58:00+04:00",
+    updatedAt: "2026-10-31T12:58:00+04:00",
     site: "tick",
     title: "Հելոուին-կարաոկե UFO բարում",
     titleSeo: "Հելոուին Երևանում՝ կարաոկե UFO բարում, հոկտեմբերի 31",
@@ -9174,8 +9175,9 @@ export const items: EventItem[] = [
     geo: { lat: 40.1873149, lng: 44.5134466 },
     organizer: "UFO Bar",
     image: "/covers/halloween-karaoke-ufo-bar-yerevan-2026.jpg",
-    imageAlt: "Թղթե ապլիկացիա․ միկրոֆոն կանգնակի վրա, վերևում կախված թղթե թռչող ափսե՝ կանաչ լույսի շիթով, աթոռակին՝ փորագրված դդում և վհուկի գլխարկ",
-    imageKind: "generated",
+    imageAlt: "UFO բարի Halloween Karaoke-ի պաստառը․ բարի մուգ կարմիր ինտերիեր՝ միկրոֆոն, մոմեր, դդում և հրեշների դիմակների գծանկար, «Oct 31, start 21:30, dress code: costumes»",
+    imageKind: "render",
+    imageCredit: "UFO Bar",
     imageWidth: 1024,
     imageHeight: 1024,
     editorsChoice: true,
@@ -9203,7 +9205,7 @@ export const items: EventItem[] = [
     ],
     i18n: {
       en: {
-        imageAlt: "A cut-paper collage: a microphone on a stand, a paper flying saucer above it casting a cone of green light, and a carved pumpkin with a witch's hat on a stool",
+        imageAlt: "UFO Bar's Halloween Karaoke poster: a dark red bar interior with a microphone, candles, a pumpkin and a sheet of drawn monster masks, reading Oct 31, start 21:30, dress code: costumes",
         ticket: { url: "https://www.instagram.com/ufo.evn/p/DfAJWbqsFAY/", label: "Details", sells: false },
         title: "Halloween karaoke at UFO Bar",
         titleSeo: "Halloween in Yerevan: karaoke night at UFO Bar, 31 October",
