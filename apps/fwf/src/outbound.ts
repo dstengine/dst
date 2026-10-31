@@ -7,6 +7,7 @@
 // links: a reader deciding whether to attend needs one click to the seller,
 // so it renders as a visible button — through the hop like everything else.
 import { forum, otherEvents } from "./content";
+import { mapPlaceUrl } from "@dst/ui/maps";
 
 export const outbound: Record<string, string> = {
   tickets: forum.ticket!.url,
@@ -21,6 +22,8 @@ export const outbound: Record<string, string> = {
 // registration opened and made the gap obvious.
 for (const event of otherEvents) {
   if (event.ticket) outbound[`${event.slug}-ticket`] = event.ticket.url;
+  // `<slug>-map` is the venue on Google Maps, for the address in the facts.
+  if (event.geo) outbound[`${event.slug}-map`] = mapPlaceUrl(event.geo.lat, event.geo.lng);
   if (event.source?.url) outbound[`${event.slug}-source`] = event.source.url;
 }
 

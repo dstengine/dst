@@ -34,7 +34,7 @@ const meta = eventMeta(item, site, { host: Astro.site?.hostname ?? "", path: Ast
     item={item}
     locale="en-GB"
     labels={labels}
-    ticketHref={ticketHref}
+    ticketHref={ticketHref} mapHref={item.geo ? `/go/${item.slug}-map/` : undefined}
     sourceHref={sourceHref}
     more={more}
     moreNews={moreNews}

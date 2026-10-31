@@ -3,6 +3,7 @@
 // domains collect no link equity from our pages, and /go/ is disallowed in
 // robots.txt so the hops never get crawled or indexed themselves.
 import { stories } from "./data/stories";
+import { mapPlaceUrl } from "@dst/ui/maps";
 import { siteId } from "./content";
 import { eventsBySite } from "@dst/content/events";
 
@@ -18,6 +19,8 @@ export const outbound: Record<string, string> = {
 // suite's site list until 3 October 2026.
 for (const event of eventsBySite(siteId)) {
   if (event.ticket) outbound[`${event.slug}-ticket`] = event.ticket.url;
+  // `<slug>-map` is the venue on Google Maps, for the address in the facts.
+  if (event.geo) outbound[`${event.slug}-map`] = mapPlaceUrl(event.geo.lat, event.geo.lng);
 }
 
 // A story's map link points at whichever map service the coordinates came

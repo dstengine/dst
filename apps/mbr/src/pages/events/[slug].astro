@@ -23,7 +23,7 @@ const ticketHref = item.ticket ? `/go/${item.slug}-ticket/` : undefined;
 const meta = eventMeta(item, site, { host: Astro.site?.hostname ?? "", path: Astro.url.pathname, siblings: more });
 ---
 <Layout title={meta.title} description={meta.description} image={item.image}>
-  <EventArticle item={item} more={more} moreNews={moreNews} backHref="/events/" ticketHref={ticketHref}
+  <EventArticle item={item} more={more} moreNews={moreNews} backHref="/events/" ticketHref={ticketHref} mapHref={item.geo ? `/go/${item.slug}-map/` : undefined}
   where={site.keyword}
   pluralOf={pluralOf}
   moreEventsText={item.moreEventsText}

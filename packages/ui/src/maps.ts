@@ -34,3 +34,10 @@ export function mapEmbedUrl(lat: number, lng: number, { zoom = 15, locale }: { z
 export function directionsUrl(lat: number, lng: number): string {
   return `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
 }
+
+/** The place itself on the map, as Google's documented search URL: the pin
+    with its name, hours and photos, in the app on a phone. For the address
+    in an event's facts, which goes out through the site's /go/ hop. */
+export function mapPlaceUrl(lat: number, lng: number): string {
+  return `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
+}

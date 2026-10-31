@@ -3,6 +3,7 @@
 // domains collect no link equity from our pages, and /go/ is disallowed in
 // robots.txt so the hops never get crawled or indexed themselves.
 import { siteId } from "./content";
+import { mapPlaceUrl } from "@dst/ui/maps";
 import { eventsBySite } from "@dst/content/events";
 
 export const outbound: Record<string, string> = {};
@@ -11,6 +12,8 @@ export const outbound: Record<string, string> = {};
 // convention events/[slug].astro looks up when building ticketHref.
 for (const event of eventsBySite(siteId)) {
   if (event.ticket) outbound[`${event.slug}-ticket`] = event.ticket.url;
+  // `<slug>-map` is the venue on Google Maps, for the address in the facts.
+  if (event.geo) outbound[`${event.slug}-map`] = mapPlaceUrl(event.geo.lat, event.geo.lng);
 }
 
 /** Path for an outbound link, e.g. go("dubai-world-cup-2027-ticket") -> "/go/dubai-world-cup-2027-ticket/" */

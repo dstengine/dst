@@ -6,6 +6,7 @@
 // Venue entries are derived from the venue data rather than listed by hand,
 // so adding a venue with an externalHref registers its redirect automatically.
 import { siteId, coffeeVenues } from "./content";
+import { mapPlaceUrl } from "@dst/ui/maps";
 import { eventsBySite } from "@dst/content/events";
 
 export const outbound: Record<string, string> = {};
@@ -19,6 +20,8 @@ for (const venue of Object.values(coffeeVenues)) {
 // is the convention events/[slug].astro looks up when building ticketHref.
 for (const event of eventsBySite(siteId)) {
   if (event.ticket) outbound[`${event.slug}-ticket`] = event.ticket.url;
+  // `<slug>-map` is the venue on Google Maps, for the address in the facts.
+  if (event.geo) outbound[`${event.slug}-map`] = mapPlaceUrl(event.geo.lat, event.geo.lng);
 }
 
 // Sources cited in the written guide pages.

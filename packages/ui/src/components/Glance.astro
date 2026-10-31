@@ -15,6 +15,11 @@ interface Fact {
   icon: string;
   /** Turns the value into a link — a venue, a seller, a city page. */
   href?: string;
+  /** The link's title; the value itself when not given. */
+  title?: string;
+  /** A value in more than one link — a venue's name to its page, its
+      address to the map. Wins over `href` when given. */
+  parts?: { text: string; href: string; title?: string }[];
 }
 
 interface Props {
@@ -33,7 +38,9 @@ const { facts, min = 2, class: className } = Astro.props;
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={fact.icon} /></svg>
           <span>{caps(fact.label)}</span>
         </dt>
-        <dd>{fact.href ? <a href={fact.href} title={fact.value}>{fact.value}</a> : fact.value}</dd>
+        <dd>{fact.parts
+          ? fact.parts.map((part) => <a href={part.href} title={part.title ?? part.text}>{part.text}</a>)
+          : fact.href ? <a href={fact.href} title={fact.title ?? fact.value}>{fact.value}</a> : fact.value}</dd>
       </div>
     ))}
   </dl>

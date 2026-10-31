@@ -6,6 +6,7 @@
 // One hop serves both languages: the destination is the same box office
 // whichever language the button was pressed in.
 import { siteId } from "./content";
+import { mapPlaceUrl } from "@dst/ui/maps";
 import { eventsBySite } from "@dst/content/events";
 import { guideOutbound } from "./guides";
 
@@ -15,6 +16,8 @@ export const outbound: Record<string, string> = {};
 // facts came from, and the button's fallback when there is no seller.
 for (const event of eventsBySite(siteId)) {
   if (event.ticket) outbound[`${event.slug}-ticket`] = event.ticket.url;
+  // `<slug>-map` is the venue on Google Maps, for the address in the facts.
+  if (event.geo) outbound[`${event.slug}-map`] = mapPlaceUrl(event.geo.lat, event.geo.lng);
   if (event.source?.url) outbound[`${event.slug}-source`] = event.source.url;
 }
 

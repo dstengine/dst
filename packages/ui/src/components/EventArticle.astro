@@ -68,6 +68,10 @@ interface Props {
       `venueHrefFor` in @dst/content/venues. The Where row and the venue
       line under the headline then lead there. */
   venueHref?: string;
+  /** The venue on Google Maps through this site's /go/<slug>-map/ hop, for
+      the address in the facts (31 Oct 2026). With a venue page as well,
+      the name goes to the page and the address to the map. */
+  mapHref?: string;
   /** The declared venue the entry's `venue` line names, in the page's
       language, when the site keeps a venue table — see `venueOf` in
       @dst/content/venues. The markup then takes the place's name, street
@@ -117,7 +121,7 @@ interface Props {
       reason. It names the cards, it does not choose them. */
   moreEventsText?: string;
 }
-const { item, backHref, ticketHref, sourceHref, more = [], moreNews = [], newsBase = "/news/", eventsBase = "/events/", publisher, categoryHref, venueHref, place, promoted, promotedLink, where, pluralOf, moreEventsText, countdown = false, locale = "en-US", labels: labelOverrides, share = false } = Astro.props;
+const { item, backHref, ticketHref, sourceHref, more = [], moreNews = [], newsBase = "/news/", eventsBase = "/events/", publisher, categoryHref, venueHref, mapHref, place, promoted, promotedLink, where, pluralOf, moreEventsText, countdown = false, locale = "en-US", labels: labelOverrides, share = false } = Astro.props;
 const L = withLabels(labelOverrides);
 // Venue is part of the page's translated copy; geo.name stays with the
 // coordinates as the source-language map label. Prefer the venue so a
@@ -347,12 +351,25 @@ const glance: { label: string; value: string; icon: string }[] = [
   { label: L.format, value: item.online ? L.online : L.inPerson, icon: ICONS.users },
   // An online event with no venue has nowhere to print: "Format: Online"
   // followed by "Where: Online" is one fact wearing two rows.
-  (item.venue || (item.city && !item.online)) && {
-    label: L.where,
-    value: [item.venue, item.city].filter(Boolean).join(", "),
-    icon: ICONS.pin,
-    href: venueHref,
-  },
+  (item.venue || (item.city && !item.online)) && (() => {
+    const value = [item.venue, item.city].filter(Boolean).join(", ");
+    // Both a venue page and a map: the name is the page's, the rest of the
+    // line — street, city — is the map's. One link alone takes the line.
+    const cut = item.venue ? item.venue.indexOf(",") : -1;
+    const name = cut > 0 ? item.venue!.slice(0, cut) : item.venue ?? "";
+    const rest = value.slice(name.length);
+    const parts = venueHref && mapHref && item.venue && rest
+      ? [{ text: name, href: venueHref, title: L.venueTitle(item.venue) }, { text: rest, href: mapHref, title: L.mapTitle(mapPlace) }]
+      : undefined;
+    return {
+      label: L.where,
+      value,
+      icon: ICONS.pin,
+      href: venueHref ?? mapHref,
+      title: venueHref ? undefined : mapHref ? L.mapTitle(mapPlace) : undefined,
+      parts,
+    };
+  })(),
   price && { label: L.ticketsRow, value: price, icon: ICONS.ticket },
   item.tickets?.salesEnd && {
     label: L.salesClose,
@@ -927,6 +944,11 @@ const relatedItems = (item.related ?? []).map((card) => ({
   .locate-map { margin-top: var(--space-2); border: 1px solid var(--border); }
   .locate-map iframe { display: block; width: 100%; height: clamp(300px, 34vw, 440px); border: 0; }
   .locate-way { margin-top: var(--space-2); }
+  /* On a phone the one button under the map fills the line, like the
+     action row's buttons do (31 Oct 2026). */
+  @media (max-width: 480px) {
+    .locate-way .button { display: flex; width: 100%; justify-content: center; }
+  }
 
   .event-article-form { margin-top: var(--space-4); }
 
