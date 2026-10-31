@@ -81,15 +81,14 @@ const blocks = promotedAll[lang]
 <Layout lang={lang} title={section.title} description={section.description}>
   <PromoHero lang={lang}>
     {/* A subject page is the one a reader sends on: "where do we go for
-        Halloween" is answered by the list, not by one event. The button sits
-        in the heading's row, level with the name it shares; on a phone the
-        floating mark (Share.astro) is the control, and the button alone
-        under the lede read as an orphan. */}
-    <div class="section-head">
-      <h1>{section.h1}</h1>
+        Halloween" is answered by the list, not by one event. The control is
+        a quiet link under the lede; on a phone the floating mark
+        (Share.astro) is the control instead. */}
+    <h1>{section.h1}</h1>
+    <p class="lede">{section.lede}</p>
+    <div class="section-share">
       <Share title={section.h1} labels={labels[lang]} />
     </div>
-    <p class="lede">{section.lede}</p>
   </PromoHero>
   <section class="container">
     <SectionFeed
@@ -130,10 +129,22 @@ const blocks = promotedAll[lang]
   /* The heading wraps its words, the button never wraps the heading: the
      heading keeps a 20rem floor and the row wraps the button under it when
      the two cannot share a line (DESIGN.md, a heading beside a link). */
-  .section-head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-4); }
-  .section-head h1 { flex: 1 1 20rem; margin: 0; }
+  /* Under the lede as a quiet link, not a bordered button: beside the
+     heading it read as a control dropped between the title and the promo
+     card (31 Oct 2026). Same markup, so the share-label test still counts
+     its words; a phone has the floating mark instead. */
+  .section-share { margin-top: var(--space-2); }
+  .section-share :global(.share-button) {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--ink-muted);
+    font-size: var(--step--1);
+    min-height: 44px;
+  }
+  .section-share :global(.share-button:hover) { color: var(--ink); text-decoration: underline; }
   @media (max-width: 700px) {
-    .section-head :global(.share-button) { display: none; }
+    .section-share { display: none; }
   }
   .section-ways { margin-top: var(--space-5); }
   .section-promoted { margin-top: var(--space-5); }
