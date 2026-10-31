@@ -36,8 +36,14 @@ interface Props {
       opened before it sits with the runs, not at the head of "Upcoming"
       dated by a day before the month began. Never earlier than today. */
   from?: string;
+  /** Editors' choice ahead of the rest of the upcoming group, then by date.
+      A section page is a subject's list, and the reader who searched the
+      subject wants our pick before the first thing on the calendar; the
+      whole-site listing and the month pages stay in date order, where a
+      pick jumping a week ahead would read as a wrong date. */
+  picksFirst?: boolean;
 }
-const { items, eventsBase = "/events/", locale, labels: labelOverrides, calendarHref, where, from } = Astro.props;
+const { items, eventsBase = "/events/", locale, labels: labelOverrides, calendarHref, where, from, picksFirst = false } = Astro.props;
 const L = withLabels(labelOverrides);
 const today = new Date().toISOString().slice(0, 10);
 const asOf = from && from > today ? from : today;
@@ -100,9 +106,11 @@ const toCard = (item: EventItem, past: boolean) => {
 // See @dst/content/when for why "on" is decided on the last day. The date
 // a running card carries is cardUntil's (../date.ts), the one rule this
 // listing, the front page's block and an event page's tail all read.
+const byPickThenDate = (a: EventItem, b: EventItem) =>
+  (b.editorsChoice ? 1 : 0) - (a.editorsChoice ? 1 : 0) || byDate(a, b);
 const upcoming = items
   .filter((e) => isOn(e, asOf) && e.start >= asOf)
-  .sort(byDate)
+  .sort(picksFirst ? byPickThenDate : byDate)
   .map((e) => toCard(e, false));
 const running = items
   .filter((e) => isOn(e, asOf) && e.start < asOf)

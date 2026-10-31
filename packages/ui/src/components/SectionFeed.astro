@@ -75,7 +75,7 @@ const both = events.length > 0 && news.length > 0;
     {(both || headings.events) && (
       <h2 class="section-feed-heading">{headings.events ?? L.eventsHeading(where)}</h2>
     )}
-    <EventsList items={events} eventsBase={eventsBase} locale={locale} labels={eventLabels} where={where} />
+    <EventsList items={events} eventsBase={eventsBase} locale={locale} labels={eventLabels} where={where} picksFirst />
   </>
 )}
 {news.length > 0 && (

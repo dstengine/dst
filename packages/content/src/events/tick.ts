@@ -18,11 +18,11 @@ export const items: EventItem[] = [
   {
     slug: "halloween-weekend-forty44-yerevan-2026",
     createdAt: "2026-10-31T12:45:00+04:00",
-    updatedAt: "2026-10-31T13:06:00+04:00",
+    updatedAt: "2026-10-31T13:19:00+04:00",
     site: "tick",
-    title: "Հելոուին Forty44-ում՝ SAME, շաբաթ գիշեր",
+    title: "Հելոուին Forty44-ում՝ շաբաթ գիշեր",
     titleSeo: "Հելոուին Երևանում՝ Forty44, հոկտեմբերի 31, 22:00",
-    cardTitle: "Հելոուին Forty44-ում՝ SAME",
+    cardTitle: "Հելոուին Forty44-ում",
     summary:
       "Հելոուինի գիշերը Երևանի Forty44 բարում՝ շաբաթ, հոկտեմբերի 31-ին, 22:00-ից նվագում է SAME-ը․ ուրբաթ Nebell-ն արդեն բացել է շաբաթավերջը։ Ղազար Փարպեցու 16, մուտքի գինը հայտարարված չէ։",
     start: "2026-10-31",
@@ -67,9 +67,9 @@ export const items: EventItem[] = [
       en: {
         imageAlt: "Forty44's Halloween Weekend poster: line-drawn portraits of Nebell and SAME on dark blue, with orange stars and pumpkins, the dates 30.10.26 and 31.10.26 and the time 22:00",
         ticket: { url: "https://www.instagram.com/p/De9q_cigXNH/", label: "Details", sells: false },
-        title: "Halloween at Forty44: SAME, Saturday night",
+        title: "Halloween at Forty44, Saturday night",
         titleSeo: "Halloween in Yerevan: Forty44, 31 October, 22:00",
-        cardTitle: "Halloween at Forty44: SAME",
+        cardTitle: "Halloween at Forty44",
         summary:
           "Halloween night at Forty44 in Yerevan: SAME plays Saturday 31 October from 22:00, after Nebell opened the weekend on the Friday, with Jägermeister. 16 Ghazar Parpetsi Street; no entry price is announced.",
         city: "Yerevan",
@@ -140,7 +140,7 @@ export const items: EventItem[] = [
       "## Մուտքը",
       "Գրառումը մուտքի գին կամ տոմս չի նշում։",
       "## Նույն գիշերը",
-      "Հոկտեմբերի 31-ին Երևանում են նաև <a href=\"/events/halloween-weekend-forty44-yerevan-2026/\" title=\"Հելոուին Forty44-ում՝ SAME\">Հելոուինը Forty44-ում SAME-ի հետ</a>, <a href=\"/events/halloween-artlav-yerevan-2026/\" title=\"Հելոուին ArtLav-ում\">վարպետաց դասերը ArtLav-ում</a> և <a href=\"/events/dj-twins-halloween-souly-2026/\" title=\"DJ Twins-ի Հելոուինը Souly-ում\">DJ Twins-ի երեկույթը Souly-ում</a>։",
+      "Հոկտեմբերի 31-ին Երևանում են նաև <a href=\"/events/halloween-weekend-forty44-yerevan-2026/\" title=\"Հելոուին Forty44-ում\">Հելոուինը Forty44-ում SAME-ի հետ</a>, <a href=\"/events/halloween-artlav-yerevan-2026/\" title=\"Հելոուին ArtLav-ում\">վարպետաց դասերը ArtLav-ում</a> և <a href=\"/events/dj-twins-halloween-souly-2026/\" title=\"DJ Twins-ի Հելոուինը Souly-ում\">DJ Twins-ի երեկույթը Souly-ում</a>։",
     ],
     faq: [
       { q: "Ե՞րբ է Հելոուին-կարաոկեն UFO-ում", a: "Հոկտեմբերի 31-ին, շաբաթ, 21:30-ից։" },
@@ -173,7 +173,7 @@ export const items: EventItem[] = [
           "## Getting in",
           "The post names no entry price and no ticket.",
           "## The same night",
-          "Also in Yerevan on 31 October: <a href=\"/events/halloween-weekend-forty44-yerevan-2026/\" title=\"Halloween at Forty44: SAME\">Halloween at Forty44 with SAME</a>, <a href=\"/events/halloween-artlav-yerevan-2026/\" title=\"Halloween at ArtLav\">the craft night at ArtLav</a> and <a href=\"/events/dj-twins-halloween-souly-2026/\" title=\"DJ Twins' Halloween at Souly\">DJ Twins' party at Souly</a>.",
+          "Also in Yerevan on 31 October: <a href=\"/events/halloween-weekend-forty44-yerevan-2026/\" title=\"Halloween at Forty44\">Halloween at Forty44 with SAME</a>, <a href=\"/events/halloween-artlav-yerevan-2026/\" title=\"Halloween at ArtLav\">the craft night at ArtLav</a> and <a href=\"/events/dj-twins-halloween-souly-2026/\" title=\"DJ Twins' Halloween at Souly\">DJ Twins' party at Souly</a>.",
         ],
         faq: [
           { q: "When is Halloween karaoke at UFO?", a: "On Saturday 31 October from 21:30." },
