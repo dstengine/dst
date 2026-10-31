@@ -3425,4 +3425,90 @@ export const items: EventItem[] = [
     expertise:
       "The price tier is the night, not the seat, so the cheapest Lightscape is the same walk on a value night: a family of two adults and two children pays $88 on a value night and $144 on a peak one. Buy for the night you can actually make, since a change costs $10 a ticket and there are no refunds. With small children, the sensory-friendly evenings start at 4pm, early enough to be home for bedtime.",
   },
+
+  {
+    slug: "dia-de-muertos-st-marks-church-new-york-2026",
+    createdAt: "2026-10-31",
+    updatedAt: "2026-10-31",
+    site: "nyc42",
+    image: "/covers/dia-de-muertos-st-marks-church-new-york-2026.jpg",
+    imageAlt: "A cut-paper churchyard with a tiered ofrenda of marigolds, candles and sugar skulls under strings of papel picado, bare autumn trees behind",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Día de Muertos at St. Mark's Church in-the-Bowery 2026",
+    cardTitle: "Día de Muertos at St. Mark's Church",
+    titleSeo: "Día de Muertos at St. Mark's Church, New York: Oct 31",
+    summary:
+      "Saturday, October 31, 2026, noon to 5pm, free: Mano a Mano's Día de Muertos festival in the churchyard of St. Mark's Church in-the-Bowery, East 10th Street, New York, with a community ofrenda, a Mexican folk-art and food marketplace, art workshops at 2pm and a 3pm concert. The festival continues on Sunday, November 1 from noon.",
+    start: "2026-10-31",
+    startTime: "12:00",
+    endTime: "17:00",
+    utcOffset: "-04:00",
+    venue: "St. Mark's Church in-the-Bowery, 131 E 10th St, Manhattan",
+    city: "New York",
+    country: "United States",
+    geo: { name: "St. Mark's Church in-the-Bowery", lat: 40.730341, lng: -73.9871194 },
+    organizer: "Mano a Mano: Mexican Culture Without Borders",
+    category: "Halloween",
+    tickets: { priceFrom: 0, currency: "USD" },
+    ticket: {
+      url: "https://www.manoamano.nyc/event-details/day-of-the-dead-dia-de-muertos-nyc-2026-10-31",
+      label: "Free ticket from Mano a Mano",
+    },
+    source: {
+      name: "Mano a Mano",
+      url: "https://www.manoamano.nyc/event-details/day-of-the-dead-dia-de-muertos-nyc-2026-10-31",
+      verifiedOn: "2026-10-31",
+    },
+    body: [
+      "A Day of the Dead that has been in the same East Village churchyard for half a century. <strong>Mano a Mano: Mexican Culture Without Borders</strong> has held its <strong>Día de Muertos</strong> festival on the grounds of <strong>St. Mark's Church in-the-Bowery</strong> since 1974, and the 2026 edition fills Halloween Saturday, <strong>October 31</strong>, from <strong>noon to 5pm</strong>, then carries on into Sunday, November 1.",
+      "## What happens",
+      "The <strong>community ofrenda</strong> is open all afternoon, from noon to 5pm: bring copies of photographs, notes or letters for the people you want to remember (copies, not originals). Alongside it a <strong>marketplace</strong> sells Mexican folk art and Mexican food. <strong>Art-making workshops</strong> run from 2pm to 3pm, and at <strong>3pm</strong> there is a <strong>concert</strong> with Guadalupe Peraza, Cheo Pardo and Stefan Paolini, including the Peraza–Paolini duet and a preview of <em>Mexamorphosis</em>.",
+      "## When and where",
+      "<strong>Saturday, October 31, 2026, 12pm to 5pm</strong>, outdoors in the churchyard of St. Mark's Church in-the-Bowery, <strong>131 E 10th Street</strong>, New York, NY 10003. The festival returns on <strong>Sunday, November 1</strong> from noon; the organizer's own announcement gives the whole run as October 30 to November 1, noon to 5pm each day. It is rain or shine, and only dangerous weather would cancel it.",
+      "## Tickets and price",
+      "<strong>Admission is free.</strong> The organizer's page lists a General Admission ticket at $0.00, and you can register for one there; the folk art and food in the marketplace are for sale.",
+      "## Who it is for",
+      "Everyone: there is no age restriction, and the organizer describes the day as welcoming to all. It is a family afternoon of remembrance and music rather than a costume party, so there is no dress code. Questions go to Mano a Mano at (212) 587-3070 or info@manoamano.us.",
+      "## The rest of the weekend",
+      "The churchyard closes at 5pm, which leaves the evening for the <a href=\"/events/village-halloween-parade-2026/\" title=\"Village Halloween Parade 2026\">Village Halloween Parade</a> up Sixth Avenue, west across the Village. The other Day of the Dead in town is the <a href=\"/events/dia-de-los-muertos-nybg-2026/\" title=\"Día de los Muertos at NYBG 2026\">New York Botanical Garden's</a>, in the Bronx until November 2.",
+    ],
+    faq: [
+      {
+        q: "When is Día de Muertos at St. Mark's Church in 2026?",
+        a: "Saturday, October 31, 2026, from noon to 5pm, in the churchyard of St. Mark's Church in-the-Bowery, 131 E 10th Street, New York. It continues on Sunday, November 1 from noon.",
+      },
+      {
+        q: "Is the Mano a Mano Day of the Dead festival free?",
+        a: "Yes. Admission is free; the organizer's page lists a $0.00 General Admission ticket you can register for. Food and folk art in the marketplace are for purchase.",
+      },
+      {
+        q: "What can I bring to the ofrenda?",
+        a: "Copies of photographs, notes or letters for the people you want to remember. The organizer asks for copies rather than originals.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/village-halloween-parade-2026/",
+        eyebrow: "7pm, October 31",
+        title: "Village Halloween Parade 2026",
+        text: "The parade up Sixth Avenue, free to watch and free to march in costume.",
+      },
+      {
+        href: "/events/dia-de-los-muertos-nybg-2026/",
+        eyebrow: "Until November 2",
+        title: "Día de los Muertos at NYBG",
+        text: "An ofrenda and giant Catrina puppets at the Botanical Garden in the Bronx.",
+      },
+      {
+        href: "/events/trick-or-streets-nyc-2026/",
+        eyebrow: "October 31",
+        title: "Trick-or-Streets 2026",
+        text: "Car-free Halloween streets across the five boroughs, free.",
+      },
+    ],
+    expertise:
+      "Come at noon if the ofrenda is the point: the photographs go up through the afternoon and the altar is fullest, and busiest, by the 3pm concert. The workshops are the one timed thing for children, 2pm to 3pm, so an afternoon that starts at two gets the workshop, the concert and the market in order. It is outdoors on the last day of October, so dress for the weather; the organizer only cancels for weather that is dangerous, not for rain.",
+  },
 ];

@@ -1993,4 +1993,87 @@ export const items: EventItem[] = [
     expertise:
       "Tres noches seguidas piden plan: decida antes de comprar si va a las tres o a una, y entre Experiencia General y Skydeck, porque cambiar después cuesta más que elegir bien al principio. La salida al final de la noche es la parte difícil de cualquier festival en el Autódromo: acuerde un punto de encuentro con su grupo antes de entrar, cargue el teléfono y tenga pensado el regreso, porque a la salida todos piden coche al mismo tiempo.",
   },
+  {
+    slug: "festival-cacao-para-todos-anahuacalli-ciudad-de-mexico-2026",
+    createdAt: "2026-10-31",
+    updatedAt: "2026-10-31",
+    site: "cmx",
+    image: "/covers/festival-cacao-para-todos-anahuacalli-ciudad-de-mexico-2026.jpg",
+    imageAlt:
+      "Una pirámide escalonada de piedra volcánica oscura al fondo, y al frente mazorcas de cacao abiertas, jícaras de chocolate espumoso, flores de cempasúchil y panes de muerto, todo en papel recortado sobre fondo crema",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "XVI Festival Cacao Para Todos 2026 en el Museo Anahuacalli",
+    cardTitle: "Festival Cacao Para Todos 2026",
+    titleSeo: "Cacao Para Todos 2026 en el Anahuacalli, Ciudad de México",
+    summary:
+      "Del 29 de octubre al 2 de noviembre de 2026, con acceso gratuito a la expo-venta, el XVI Festival Cacao Para Todos reúne en el Museo Diego Rivera Anahuacalli de la Ciudad de México a más de 60 expositores de cacao y chocolate de varios estados, de 10:00 a 19:00: pozol, tejate, chilate, tascalate, chocolate de metate y pan de muerto. Las salas del museo se pagan aparte, desde $25.",
+    start: "2026-10-29",
+    end: "2026-11-02",
+    startTime: "10:00",
+    endTime: "19:00",
+    utcOffset: "-06:00",
+    venue: "Museo Diego Rivera Anahuacalli, Calle Museo 150, San Pablo Tepetlapa, Coyoacán",
+    city: "Ciudad de México",
+    country: "México",
+    geo: {
+      name: "Museo Diego Rivera Anahuacalli",
+      lat: 19.3225793,
+      lng: -99.144077,
+    },
+    organizer: "Cacao Para Todos (Artefacto México y Nawal Cacao), con el Museo Anahuacalli",
+    category: "Festival",
+    tickets: { priceFrom: 0, priceTo: 130, currency: "MXN" },
+    ticket: {
+      url: "https://boletos.museoanahuacalli.org.mx/tickets/es/museo-anahuacalli-cdmx",
+      label: "Boletos del museo",
+    },
+    source: {
+      name: "Museo Anahuacalli",
+      url: "https://www.museoanahuacalli.org.mx/festival-del-cacao",
+      verifiedOn: "2026-10-31",
+    },
+    body: [
+      "El cacao vuelve a la pirámide de Diego Rivera. La <strong>XVI edición del Festival Cacao Para Todos</strong> se celebra del <strong>jueves 29 de octubre al lunes 2 de noviembre de 2026</strong> en la explanada del <strong>Museo Diego Rivera Anahuacalli</strong>, en Coyoacán, de <strong>10:00 a 19:00</strong> cada día, con <strong>acceso gratuito a la expo-venta</strong>.",
+      "## Qué hay",
+      "El museo anuncia <strong>más de 60 expositores</strong> de varios estados del país; el organizador cuenta <strong>75 participantes</strong> entre productores artesanales, chocolateros, cultivadores de cacao y artesanos. Se beben las cuatro bebidas de cacao que casi nunca coinciden en una misma mesa: <strong>pozol</strong> de Tabasco y Chiapas, <strong>tejate</strong> de Oaxaca, <strong>chilate</strong> de Guerrero y <strong>tascalate</strong> de Chiapas. Hay <strong>chocolate de metate</strong>, <strong>pan de muerto</strong>, talleres y experiencias sensoriales para todas las edades, y música en vivo.",
+      "## Cuándo y dónde",
+      "Cinco días, de jueves a lunes, en <strong>Calle Museo 150, San Pablo Tepetlapa, Coyoacán, C.P. 04620</strong>. El festival abre de 10:00 a 19:00. Algunos medios dieron el 1 de noviembre como cierre; la página del museo, igual que UnoTV y Crónica, dice <strong>2 de noviembre</strong>, y esa es la fecha que seguimos aquí.",
+      "## Entrada y boletos",
+      "La expo-venta es <strong>gratuita</strong>. Entrar a las salas del museo se paga aparte: <strong>$130</strong> general, <strong>$100</strong> residentes nacionales con identificación oficial, <strong>$40</strong> estudiantes y maestros, <strong>$25</strong> mayores de 60 y niños de 6 a 12 años, y <strong>$30</strong> por permiso de fotografía. Durante el festival el museo amplía su horario a <strong>10:00–18:30</strong> (normalmente abre de 11:00 a 17:30). Los boletos se venden en la taquilla en línea del museo.",
+      "## Para quién",
+      "Es un festival de productores, no una feria de marcas: se compra directo a quien cosecha y a quien hace el chocolate. Los talleres y las experiencias sensoriales están pensados para <strong>todas las edades</strong>, así que funciona con niños. No hay código de vestir; la explanada es al aire libre.",
+      "## La misma semana",
+      "En el mismo recinto está montada la ofrenda 2026 del museo, <strong>Altar en memoria de Saturnino Herrán</strong>, del 28 de octubre al 29 de noviembre, y hasta el 2 de noviembre corre el taller <strong>Recuerdo y tradición</strong>. En el Centro, la <a href=\"/eventos/ofrenda-monumental-zocalo-2026/\" title=\"Ofrenda Monumental 2026 en el Zócalo de Ciudad de México\">Ofrenda Monumental del Zócalo</a> cierra el mismo día. No confunda este festival con el <a href=\"/eventos/festival-cafe-y-chocolate-2026/\" title=\"Café y Chocolate 2026 en Coyoacán\">Festival de Café y Chocolate</a> del Museo de Culturas Populares, que fue a principios de octubre.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo es el Festival Cacao Para Todos 2026?",
+        a: "Del jueves 29 de octubre al lunes 2 de noviembre de 2026, de 10:00 a 19:00, en el Museo Diego Rivera Anahuacalli, Coyoacán.",
+      },
+      {
+        q: "¿Cuánto cuesta la entrada?",
+        a: "La expo-venta es gratuita. Las salas del museo se pagan aparte: $130 general, $100 residentes nacionales, $40 estudiantes y maestros, $25 mayores de 60 y niños de 6 a 12 años.",
+      },
+      {
+        q: "¿Qué se puede comer y beber?",
+        a: "Pozol, tejate, chilate y tascalate, chocolate de metate y pan de muerto, de más de 60 expositores de varios estados.",
+      },
+    ],
+    related: [
+      {
+        href: "/eventos/ofrenda-monumental-zocalo-2026/",
+        eyebrow: "29 de octubre – 2 de noviembre",
+        title: "Ofrenda Monumental 2026",
+        text: "La ofrenda del Zócalo, los mismos días.",
+      },
+      {
+        href: "/eventos/festival-cafe-y-chocolate-2026/",
+        eyebrow: "2–4 de octubre",
+        title: "Café y Chocolate 2026",
+        text: "El otro festival de chocolate de Coyoacán, ya pasado.",
+      },
+    ],
+  },
 ];
