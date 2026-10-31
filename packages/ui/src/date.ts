@@ -73,9 +73,10 @@ export function cardUntil(e: { start: string; end?: string }, todayIso: string):
 /** What a card's chip needs to say "under way" and "ended" from the reader's
     clock, whatever group the build put the card in.
     - `end`: the last day, read as `hasEnded` and the index read it
-      (`lastDay`); for a night that runs past midnight, the end stamp, so
-      Crypto After Dark (19:00–02:00) is still on at 00:30 instead of
-      "ended" at midnight. The stamp takes `cardCountdown`'s offset rule.
+      (`lastDay`); with a closing hour, the end stamp, so Crypto After Dark
+      (19:00–02:00) is still on at 00:30 instead of "ended" at midnight, and
+      a party that closes at 23:00 is over at 23:00. The stamp takes
+      `cardCountdown`'s offset rule.
     - `utcOffset`: the entry's own, or nothing. The chip then reads the
       reader's day, not Dubai's. That departs on purpose from types.ts, where
       an entry with no offset is a Gulf event: 22 nyc42 entries are American
@@ -90,9 +91,13 @@ export function cardClock(e: {
   utcOffset?: string;
   dates?: string[];
 }): { end: string; utcOffset?: string; gaps?: boolean } {
-  const overnight = Boolean(e.startTime && e.endTime && e.endTime < e.startTime);
+  // A known closing hour is the end, before midnight as well as after it:
+  // a party that closes at 23:00 is over at 23:00, not at the day's end, so
+  // the card says "ended" and the bars still open are the ones that glow
+  // (Halloween night on tick, 31 Oct 2026). Without a closing hour the
+  // last day stands, read as `hasEnded` and the index read it.
   return {
-    end: overnight ? `${endDay(e)}T${e.endTime}:00${e.utcOffset ?? "+04:00"}` : lastDay(e),
+    end: e.endTime ? `${endDay(e)}T${e.endTime}:00${e.utcOffset ?? "+04:00"}` : lastDay(e),
     utcOffset: e.utcOffset,
     gaps: e.dates ? true : undefined,
   };
