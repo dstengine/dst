@@ -21,6 +21,8 @@ import { site } from "../site.config";
 import { LOCALE, eventsBase, newsBase, prefix } from "../i18n";
 import { allSections, NAV, promotedAll, linkFor, ADULT } from "../sections";
 import { guides } from "../guides";
+import PromoCode from "../components/PromoCode.astro";
+import { promoFor } from "../promo";
 
 interface Props { lang: Lang; section: SectionT }
 const { lang, section } = Astro.props;
@@ -53,6 +55,8 @@ const AGE = {
 // EventArticle gives: the block repeats on every page, and its hours were
 // the same phrase a hundred times. They stay on the Halloween pages.
 const today = new Date().toISOString().slice(0, 10);
+// The code said at the door, beside the intro, while its night is on (../promo.ts).
+const promo = promoFor(section.slug, today);
 const blocks = promotedAll[lang]
   .filter((hot) => hot.slug !== section.slug)
   .map((hot) => ({ hot, cards: hot.items
@@ -77,9 +81,12 @@ const blocks = promotedAll[lang]
   .filter((b) => b.cards.length > 0);
 ---
 <Layout lang={lang} title={section.title} description={section.description}>
-  <section class="container hero">
-    <h1>{section.h1}</h1>
-    <p class="lede">{section.lede}</p>
+  <section class:list={["container", "hero", { "hero-promo": promo }]}>
+    <div>
+      <h1>{section.h1}</h1>
+      <p class="lede">{section.lede}</p>
+    </div>
+    {promo && <PromoCode code={promo.code} lang={lang} />}
   </section>
   <section class="container">
     <SectionFeed
@@ -120,4 +127,21 @@ const blocks = promotedAll[lang]
   .section-ways { margin-top: var(--space-5); }
   .section-promoted { margin-top: var(--space-5); }
   .section-guide { margin-top: var(--space-5); }
+  /* The intro keeps the left edge; the promo card takes the room to its
+     right that the 34rem lede leaves empty, and sits on the lede's level
+     rather than the h1's. On a phone it follows the lede. */
+  .hero-promo {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: var(--space-4);
+    row-gap: var(--space-3);
+    align-items: end;
+  }
+  @media (max-width: 700px) {
+    .hero-promo { grid-template-columns: minmax(0, 1fr); }
+    /* Stacked, the card is the last thing in the hero and the next heading
+       sat on its border. On the section, not the card: a scoped selector
+       does not reach a child component's root. */
+    .hero-promo { padding-bottom: var(--space-4); }
+  }
 </style>
