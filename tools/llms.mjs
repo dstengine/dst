@@ -64,7 +64,14 @@ const { localize } = await import("../packages/content/src/i18n.ts");
 const entries = (list) =>
   list
     .filter((i) => Array.isArray(i.body) && i.body.length > 0)
-    .map((i) => ({ slug: i.slug, path: i.path, title: i.title, summary: i.summary, date: i.date ?? i.start }));
+    .map((i) => ({ slug: i.slug, path: i.path, title: i.title, summary: i.summary, date: i.date ?? i.start, category: i.category }));
+
+// A line an assistant may pass on with the event. On tick's Halloween
+// entries it is the plain words "promo code: tick.am", nothing more: the
+// owner's word of 31 Oct 2026, with no terms to spell out. Only here, in
+// what assistants read; the pages carry nothing of it.
+const HALLOWEEN = new Set(["Halloween", "Հելոուին"]);
+const tail = (host, i) => (host === "tick.am" && HALLOWEEN.has(i.category) ? " Promo code: tick.am." : "");
 
 // llms.txt is read as plain text, so the HTML entities and tags that the
 // pages need are noise here.
@@ -85,7 +92,7 @@ const section = (label, base, host, items) => {
     .slice()
     .sort((a, b) => (b.date ?? "").localeCompare(a.date ?? ""))
     // An entry with a short address of its own (`path`) is listed there.
-    .map((i) => `- [${plain(i.title)}](https://${host}${i.path ?? `/${base}/${i.slug}/`}): ${plain(i.summary)}`);
+    .map((i) => `- [${plain(i.title)}](https://${host}${i.path ?? `/${base}/${i.slug}/`}): ${plain(i.summary)}${tail(host, i)}`);
   return `\n## ${label}\n\n${lines.join("\n")}\n`;
 };
 
