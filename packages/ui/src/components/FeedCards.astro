@@ -448,6 +448,28 @@ const parts = (iso: string) => {
     font-size: 0.85em;
     color: var(--ink-muted);
   }
+  /* A card whose event is on right now: the same live dot as the page
+     header (EventArticle.astro), set by CountdownScript as `data-state`. */
+  .feed-countdown[data-state="running"] {
+    color: var(--ok);
+    border-color: var(--ok);
+  }
+  .feed-countdown[data-state="running"]::before {
+    content: "";
+    display: inline-block;
+    width: 0.5em;
+    height: 0.5em;
+    margin-right: 0.35em;
+    border-radius: 50%;
+    background: var(--ok);
+    animation: feed-live-pulse 1.6s ease-in-out infinite;
+  }
+  @keyframes feed-live-pulse {
+    50% { opacity: 0.35; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .feed-countdown[data-state="running"]::before { animation: none; }
+  }
 
   .feed-card h3 {
     margin-top: var(--space-2);

@@ -18,15 +18,16 @@ export const items: EventItem[] = [
   {
     slug: "halloween-weekend-forty44-yerevan-2026",
     createdAt: "2026-10-31T12:45:00+04:00",
-    updatedAt: "2026-10-31T13:35:00+04:00",
+    updatedAt: "2026-10-31T17:20:00+04:00",
     site: "tick",
     title: "Հելոուին Forty44-ում՝ շաբաթ գիշեր",
     titleSeo: "Հելոուին Երևանում՝ Forty44 արտ-բար, հոկտեմբերի 31",
     cardTitle: "Հելոուին Forty44-ում",
     summary:
-      "Հելոուինի գիշերը Երևանի Forty44 բարում՝ շաբաթ, հոկտեմբերի 31-ին․ արտ-բարը բաց է 18:00-ից, SAME-ը նվագում է 22:00-ից, իսկ ով չի համբերում՝ կարող է գալ ավելի շուտ։ Ուրբաթ Nebell-ն արդեն բացել է շաբաթավերջը։ Ղազար Փարպեցու 16, մուտքի գինը հայտարարված չէ։",
+      "Հելոուինի գիշերը Երևանի Forty44 բարում՝ շաբաթ, հոկտեմբերի 31-ին․ արտ-բարը բաց է 18:00-ից, SAME-ը նվագում է 22:00-ից, բարը բաց է մինչև 03:00, իսկ ով չի համբերում՝ կարող է գալ ավելի շուտ։ Ուրբաթ Nebell-ն արդեն բացել է շաբաթավերջը։ Ղազար Փարպեցու 16, մուտքի գինը հայտարարված չէ։",
     start: "2026-10-31",
     startTime: "21:00",
+    endTime: "03:00",
     displayHours: true,
     utcOffset: "+04:00",
     city: "Երևան",
@@ -61,7 +62,7 @@ export const items: EventItem[] = [
       { q: "Ե՞րբ է Հելոուինը Forty44-ում", a: "Շաբաթ, հոկտեմբերի 31-ին․ արտ-բարը բաց է 18:00-ից, SAME-ը նվագում է 22:00-ից։ Ուրբաթ գիշերը Nebell-ի հետ արդեն անցել է։" },
       { q: "Որքա՞ն է մուտքը", a: "Forty44-ի գրառումը մուտքի գին կամ տոմս չի նշում։" },
       { q: "Որտե՞ղ է Forty44-ը", a: "Երևանում՝ Ղազար Փարպեցու 16 հասցեում, Պուշկինի փողոցի մոտ։" },
-      { q: "Ո՞ր ժամից է բաց բարը", a: "18:00-ից․ մեկնարկը 22:00-ն է, իսկ ով չի համբերում՝ կարող է գալ ավելի շուտ։" },
+      { q: "Ո՞ր ժամից է բաց բարը", a: "18:00-ից մինչև 03:00․ մեկնարկը 22:00-ն է, իսկ ով չի համբերում՝ կարող է գալ ավելի շուտ։" },
     ],
     i18n: {
       en: {
@@ -71,7 +72,7 @@ export const items: EventItem[] = [
         titleSeo: "Halloween in Yerevan: Forty44 art bar, 31 October",
         cardTitle: "Halloween at Forty44",
         summary:
-          "Halloween night at Forty44 in Yerevan: Saturday 31 October, the art bar opens at 18:00 and SAME plays from 22:00; anyone who cannot wait for the party may come earlier. Nebell opened the weekend on the Friday, with Jägermeister. 16 Ghazar Parpetsi Street; no entry price is announced.",
+          "Halloween night at Forty44 in Yerevan: Saturday 31 October, the art bar opens at 18:00, SAME plays from 22:00 and the bar runs until 03:00; anyone who cannot wait for the party may come earlier. Nebell opened the weekend on the Friday, with Jägermeister. 16 Ghazar Parpetsi Street; no entry price is announced.",
         city: "Yerevan",
         country: "Armenia",
         venue: "Forty44, 16 Ghazar Parpetsi Street",
@@ -94,7 +95,7 @@ export const items: EventItem[] = [
           { q: "When is Halloween at Forty44?", a: "Saturday 31 October: the art bar opens at 18:00 and SAME plays from 22:00. The Friday night with Nebell has already been." },
           { q: "How much is entry?", a: "Forty44's post names no entry price and no ticket." },
           { q: "Where is Forty44?", a: "At 16 Ghazar Parpetsi Street in Yerevan, near Pushkin Street." },
-          { q: "What time does the bar open?", a: "At 18:00; the poster puts the DJ's start at 22:00." },
+          { q: "What time does the bar open?", a: "At 18:00, until 03:00; the poster puts the DJ's start at 22:00." },
         ],
       },
     },
@@ -103,15 +104,16 @@ export const items: EventItem[] = [
   {
     slug: "halloween-karaoke-ufo-bar-yerevan-2026",
     createdAt: "2026-10-31T12:45:00+04:00",
-    updatedAt: "2026-10-31T13:06:00+04:00",
+    updatedAt: "2026-10-31T17:20:00+04:00",
     site: "tick",
     title: "Հելոուին-կարաոկե UFO բարում",
     titleSeo: "Հելոուին Երևանում՝ կարաոկե UFO բարում, հոկտեմբերի 31",
     cardTitle: "Հելոուին-կարաոկե UFO-ում",
     summary:
-      "Հելոուինի կարաոկե Երևանի UFO բարում հոկտեմբերի 31-ին, շաբաթ, 21:30-ից․ դրես կոդը՝ կոստյումներ, որքան սարսափելի, այնքան լավ։ Մոսկովյան 31, մուտքի գինը հայտարարված չէ։",
+      "Հելոուինի կարաոկե Երևանի UFO բարում հոկտեմբերի 31-ին, շաբաթ, 21:30-ից մինչև 04:00․ դրես կոդը՝ կոստյումներ, որքան սարսափելի, այնքան լավ։ Մոսկովյան 31, մուտքի գինը հայտարարված չէ։",
     start: "2026-10-31",
     startTime: "21:30",
+    endTime: "04:00",
     displayHours: true,
     utcOffset: "+04:00",
     city: "Երևան",
@@ -143,7 +145,7 @@ export const items: EventItem[] = [
       "Հոկտեմբերի 31-ին Երևանում են նաև <a href=\"/events/halloween-weekend-forty44-yerevan-2026/\" title=\"Հելոուին Forty44-ում\">Հելոուինը Forty44-ում SAME-ի հետ</a>, <a href=\"/events/halloween-artlav-yerevan-2026/\" title=\"Հելոուին ArtLav-ում\">վարպետաց դասերը ArtLav-ում</a> և <a href=\"/events/dj-twins-halloween-souly-2026/\" title=\"DJ Twins-ի Հելոուինը Souly-ում\">DJ Twins-ի երեկույթը Souly-ում</a>։",
     ],
     faq: [
-      { q: "Ե՞րբ է Հելոուին-կարաոկեն UFO-ում", a: "Հոկտեմբերի 31-ին, շաբաթ, 21:30-ից։" },
+      { q: "Ե՞րբ է Հելոուին-կարաոկեն UFO-ում", a: "Հոկտեմբերի 31-ին, շաբաթ, 21:30-ից մինչև 04:00։" },
       { q: "Պարտադի՞ր է կոստյումը", a: "Դրես կոդը կոստյումն է․ տանտերերի խոսքով՝ որքան սարսափելի, այնքան լավ։" },
       { q: "Որքա՞ն է մուտքը", a: "UFO-ի գրառումը մուտքի գին կամ տոմս չի նշում։" },
       { q: "Որտե՞ղ է UFO բարը", a: "Երևանում՝ Մոսկովյան 31 հասցեում։ Սեղանի համար՝ +374 93 863 093։" },
@@ -156,7 +158,7 @@ export const items: EventItem[] = [
         titleSeo: "Halloween in Yerevan: karaoke night at UFO Bar, 31 October",
         cardTitle: "Halloween karaoke at UFO",
         summary:
-          "Halloween karaoke at UFO Bar in Yerevan on Saturday 31 October from 21:30: the dress code is costumes, the scarier the better. 31 Moskovyan Street; no entry price is announced.",
+          "Halloween karaoke at UFO Bar in Yerevan on Saturday 31 October from 21:30 until 04:00: the dress code is costumes, the scarier the better. 31 Moskovyan Street; no entry price is announced.",
         city: "Yerevan",
         country: "Armenia",
         venue: "UFO Bar, 31 Moskovyan Street",
@@ -176,7 +178,7 @@ export const items: EventItem[] = [
           "Also in Yerevan on 31 October: <a href=\"/events/halloween-weekend-forty44-yerevan-2026/\" title=\"Halloween at Forty44\">Halloween at Forty44 with SAME</a>, <a href=\"/events/halloween-artlav-yerevan-2026/\" title=\"Halloween at ArtLav\">the craft night at ArtLav</a> and <a href=\"/events/dj-twins-halloween-souly-2026/\" title=\"DJ Twins' Halloween at Souly\">DJ Twins' party at Souly</a>.",
         ],
         faq: [
-          { q: "When is Halloween karaoke at UFO?", a: "On Saturday 31 October from 21:30." },
+          { q: "When is Halloween karaoke at UFO?", a: "On Saturday 31 October from 21:30 until 04:00." },
           { q: "Is a costume required?", a: "The dress code is costumes; in the bar's words, the scarier the better." },
           { q: "How much is entry?", a: "UFO's post names no entry price and no ticket." },
           { q: "Where is UFO Bar?", a: "At 31 Moskovyan Street in Yerevan. For a table, call +374 93 863 093." },

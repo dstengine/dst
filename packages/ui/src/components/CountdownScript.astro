@@ -85,6 +85,7 @@
       // Hidden only where the markup can say so: a chip without an end has
       // always kept its place, empty.
       if (end) el.hidden = !text;
+      if (text && text === running) el.dataset.state = "running";
     }
 
     // The live variant, on an event page and on a card with displayHours:
@@ -116,6 +117,10 @@
         else text = rtf.format(Math.max(1, Math.ceil(left / 60000)), "minute");
         el.textContent = text;
         el.hidden = !el.textContent;
+        // Whether the event is on right now, for the styles: a reader
+        // glancing at a page at midnight should see a light, not read a
+        // word. "running" between the start and the end, "ended" after.
+        el.dataset.state = over(end, offset) ? "ended" : begun ? "running" : "";
       }
     };
     if (live.length) {

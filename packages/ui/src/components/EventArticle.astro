@@ -849,6 +849,26 @@ const relatedItems = (item.related ?? []).map((card) => ({
     color: var(--accent);
     font-weight: 600;
   }
+  /* On now: a live dot before the word, so the state reads at a glance
+     from across the page. The script sets `data-state` (CountdownScript). */
+  .event-article-countdown[data-state="running"] { color: var(--ok); }
+  .event-article-countdown[data-state="running"]::before {
+    content: "";
+    display: inline-block;
+    width: 0.55em;
+    height: 0.55em;
+    margin-right: 0.4em;
+    border-radius: 50%;
+    background: var(--ok);
+    vertical-align: 0.05em;
+    animation: event-live-pulse 1.6s ease-in-out infinite;
+  }
+  @keyframes event-live-pulse {
+    50% { opacity: 0.35; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .event-article-countdown[data-state="running"]::before { animation: none; }
+  }
   .event-article-outcome { margin-top: var(--space-4); }
   .event-article-outcome h2 { margin-bottom: 0; }
 
