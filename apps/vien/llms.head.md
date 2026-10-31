@@ -1,6 +1,6 @@
 # Veranstaltungen Wien — was in Wien los ist
 
-> Termine und Nachrichten für Wien und Österreich. Jeder Eintrag nennt die Quelle, aus der er stammt, und den Tag, an dem er dagegen geprüft wurde. Unabhängige Publikation: keine Behörde, kein Ticketverkauf, keinem Haus zugehörig.
+> Termine und Nachrichten für Wien und Österreich. Jeder Eintrag nennt die Quelle, aus der er stammt, und den Tag, an dem er dagegen geprüft wurde. Unabhängige Publikation: keine Behörde, keinem Haus zugehörig. Tickets kauft man über den Button auf jeder Veranstaltungsseite, der den offiziellen Verkauf des Veranstalters oder der Kasse öffnet.
 
 Wie diese Seite arbeitet, in fünf Regeln:
 

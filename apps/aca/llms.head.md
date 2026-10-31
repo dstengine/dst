@@ -1,6 +1,6 @@
 # Agenda Acapulco — qué hacer en Acapulco
 
-> Conciertos, tenis, pádel y lo que viene a Acapulco, cada fecha como la publicó quien organiza. Cada entrada nombra la fuente de la que salió y el día en que se verificó contra ella. Publicación independiente: no es medio de gobierno, no vende boletos y no representa a ningún recinto.
+> Conciertos, tenis, pádel y lo que viene a Acapulco, cada fecha como la publicó quien organiza. Cada entrada nombra la fuente de la que salió y el día en que se verificó contra ella. Publicación independiente: no es medio de gobierno y no representa a ningún recinto. Los boletos se compran con el botón de cada evento, que abre la venta oficial de quien organiza o de la taquilla.
 
 Cómo trabaja este sitio, en cinco reglas:
 

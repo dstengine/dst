@@ -1,6 +1,6 @@
 # London Today — what's on in central London
 
-> Listings and news for central London — zones 1 and 2, not the outer boroughs. Every entry names the source it came from and the day it was checked against it. Independent publication: not a government outlet, not a ticket seller, not affiliated with any venue.
+> Listings and news for central London — zones 1 and 2, not the outer boroughs. Every entry names the source it came from and the day it was checked against it. Independent publication: not a government outlet and tied to no venue. Tickets are bought through the button on each event page, which opens the organiser's or the box office's own sale.
 
 How this site works, in five rules:
 

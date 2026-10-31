@@ -1,6 +1,6 @@
 # London Calendar — London's big dates for the year ahead
 
-> The fixed points of the London year, published as soon as their organisers fix the dates. Every entry names the source it came from and the day it was checked against it. Published by GB7 (gb7.uk). Independent: not a government outlet, not a ticket seller, not affiliated with any venue.
+> The fixed points of the London year, published as soon as their organisers fix the dates. Every entry names the source it came from and the day it was checked against it. Published by GB7 (gb7.uk). Independent: not a government outlet and tied to no venue. Tickets are bought through the button on each event page, which opens the organiser's or the box office's own sale.
 
 How this site works, in five rules:
 

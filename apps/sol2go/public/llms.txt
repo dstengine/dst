@@ -1,6 +1,6 @@
 # sol2go — where Solana meets in person
 
-> A calendar and a newsfeed for the Solana ecosystem: hackathons, conferences and city meetups, plus the wider crypto calendar they sit in. Every entry names the source it came from and the day it was checked against it. Independent publication: not affiliated with the Solana Foundation, not an exchange, not a ticket seller, and not a financial adviser.
+> A calendar and a newsfeed for the Solana ecosystem: hackathons, conferences and city meetups, plus the wider crypto calendar they sit in. Every entry names the source it came from and the day it was checked against it. Independent publication: not affiliated with the Solana Foundation, not an exchange and not a financial adviser. Tickets and registrations go through the button on each event page, which opens the organiser's own sale or sign-up.
 
 How this site works, in five rules:
 
