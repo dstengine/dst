@@ -1,6 +1,7 @@
 ---
 import { siteId } from "../content";
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import Callout from "@dst/ui/Callout.astro";
 import VentureGrid from "@dst/ui/VentureGrid.astro";
 import NewsBlock from "@dst/ui/NewsBlock.astro";
@@ -30,7 +31,7 @@ const items = stories.map((story) => ({
   title="DST's environmental portfolio"
   description="DST's eco portfolio — a running record of individual, funded environmental initiatives, added as they happen."
 >
-  <section class="container hero">
+  <PromoHero>
     <p class="eyebrow">Eco</p>
     <h1>Where the money went</h1>
     <p class="lede">
@@ -38,7 +39,7 @@ const items = stories.map((story) => ({
       each one added here after it happened rather than before. The first is a
       stand of Douglas fir on the Shaytanka river, in the Sverdlovsk region.
     </p>
-  </section>
+  </PromoHero>
 
   <section class="container" id="portfolio">
     <h2>Eco portfolio</h2>

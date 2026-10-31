@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import { epoch } from "../content";
 
 // Everything live on this page is filled in by the script at the bottom.
@@ -9,10 +10,10 @@ import { epoch } from "../content";
 const slotNews = "/news/solana-slots-are-250ms-and-every-block-limit-came-down-with-them/";
 ---
 <Layout prose title={epoch.title} description={epoch.description}>
-  <section class="container hero">
+  <PromoHero>
     <h1>{epoch.h1}</h1>
     <p class="lede">{epoch.lede}</p>
-  </section>
+  </PromoHero>
 
   <section class="container">
     <div class="epoch-card" data-epoch aria-busy="true">

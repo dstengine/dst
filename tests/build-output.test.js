@@ -1924,7 +1924,12 @@ describe("how much of each site is the template", () => {
   // the UK ETA card on visas). No sentence of prose repeats. Same ratchet
   // as riviera's; the real fix is still a strip that varies by page.
   const CEILING = {
-    dst: 25, llc: 16, visas: 24, riviera: 15, mbr: 22, palmcentral: 29,
+    // palmcentral 29 → 30 and l0n 18 → 20 on 31 October 2026, measured at
+    // 29.6 and 19.7, when the promo card (PromoCode.astro) joined every
+    // intro on the network: three short lines, the site's own host and the
+    // honest sentence about guarantees, printed on every page. The small
+    // sites feel it most; no sentence of prose repeats beyond the card's.
+    dst: 25, llc: 16, visas: 24, riviera: 15, mbr: 22, palmcentral: 30,
     eco: 30, fwf: 22, musical: 35, nyc42: 27, ldn: 25, lnd: 25, cmx: 32, mxo: 25,
     sol2go: 30, vien: 30, tick: 36, aivideo: 37, tea: 32,
     // Both recorded on 21 October 2026, their first day: l0n measured 16.4
@@ -1943,7 +1948,7 @@ describe("how much of each site is the template", () => {
     // stadium's address line ("Allianz Stadium, Twickenham, 200 Whitton
     // Road") on eight, and /sport/ went from three cards to four. The new
     // page itself measures 9%. No sentence of prose repeats.
-    l0n: 18, aca: 32,
+    l0n: 20, aca: 32,
     // fest recorded 5 on 22 October 2026, its first day, measured at 1.6:
     // one guide of six long pages and the hub; the repeated runs are the
     // row of the guide's pages and the closing line naming whom the site is

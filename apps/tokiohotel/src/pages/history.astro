@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
 import SourceNote from "../components/SourceNote.astro";
 import { history as copy } from "../content";
@@ -7,11 +8,11 @@ import { orderedTimeline } from "../data/timeline";
 import { WIKIPEDIA, band } from "../data/band";
 ---
 <Layout prose title={copy.title} description={copy.description}>
-  <section class="container hero">
+  <PromoHero>
     <Breadcrumbs crumbs={[]} current={copy.title} homeLabel="Dates" />
     <h1>{copy.h1}</h1>
     <p class="lede">{copy.lede}</p>
-  </section>
+  </PromoHero>
 
   <section class="container">
     <ol class="timeline">

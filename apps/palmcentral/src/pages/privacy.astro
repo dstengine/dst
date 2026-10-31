@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import PhotoHero from "@dst/ui/district/PhotoHero.astro";
 import InterestForm from "../components/InterestForm.astro";
 import { siteHeaderImage, currentUnits } from "../content";
@@ -8,7 +9,7 @@ import { siteHeaderImage, currentUnits } from "../content";
   title="Privacy Policy"
   description="What this site collects when you register interest in Palm Central, how it's used, who it's shared with, and how analytics works across the DST network."
 >
-  <section class="container hero">
+  <PromoHero>
     <PhotoHero
       eyebrow="Privacy"
       title="Privacy policy for the Palm Central site"
@@ -23,7 +24,7 @@ import { siteHeaderImage, currentUnits } from "../content";
     <div class="hero-actions">
       <a class="button" href="#interest" title="Register interest in Palm Central">Register interest</a>
     </div>
-  </section>
+  </PromoHero>
 
   <section class="container">
     <h2>Who this is</h2>

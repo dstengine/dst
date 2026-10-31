@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
 import Glance from "@dst/ui/Glance.astro";
 import SourceNote from "../../components/SourceNote.astro";
@@ -113,12 +114,12 @@ const jsonLd = playing
   : [];
 ---
 <Layout prose title={headTitle} description={description} jsonLd={jsonLd}>
-  <section class="container hero">
+  <PromoHero>
     <Breadcrumbs crumbs={[{ href: "/cities/", label: "Cities" }]} current={city.name} homeLabel="Dates" />
     <h1>{title}</h1>
     <p class="lede">{description}</p>
     <Glance facts={facts} />
-  </section>
+  </PromoHero>
 
   {playing && city.stops.map((stop) => (
     <section class="container">

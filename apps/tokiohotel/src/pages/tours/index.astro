@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
 import { tours as copy } from "../../content";
 import { tours } from "../../data/tours";
@@ -7,11 +8,11 @@ import { checkedOn } from "../../data/band";
 import { albumForTour } from "../../data/albums";
 ---
 <Layout prose title={copy.title} description={copy.description}>
-  <section class="container hero">
+  <PromoHero>
     <Breadcrumbs crumbs={[]} current={copy.title} homeLabel="Dates" />
     <h1>{copy.h1}</h1>
     <p class="lede">{copy.lede}</p>
-  </section>
+  </PromoHero>
 
   <section class="container">
     <ol class="tours">

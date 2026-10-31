@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import NewsList from "@dst/ui/NewsList.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import { siteId, newsBase } from "../content";
@@ -14,10 +15,10 @@ export function getStaticPaths() {
 const { section, all } = Astro.props;
 ---
 <Layout title={section.title} description={section.description}>
-  <section class="container hero">
+  <PromoHero>
     <h1>{section.h1}</h1>
     <p class="lede">{section.lede}</p>
-  </section>
+  </PromoHero>
   <section class="container">
     <SectionNav sections={all} current={`/${section.slug}/`} allHref={newsBase} {...NAV} />
     <NewsList items={section.items} newsBase={newsBase} locale="en-GB" />

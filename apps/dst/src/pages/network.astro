@@ -17,6 +17,7 @@
 // under every page is a link farm, and a hundred links on a page whose
 // subject is "where everything is" is an index.
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import { NETWORK } from "@dst/content/network";
 import { newsBySite } from "@dst/content/news";
 import { eventsBySite } from "@dst/content/events";
@@ -54,7 +55,7 @@ const total = sites.reduce((n, s) => n + s.total, 0);
   title="Every page on the sites DST runs from Dubai"
   description="An index of every page on the six sites DST runs from Dubai — company formation, UAE residency, Palm Central, Azizi Riviera, MBR City and the eco record: guides, news and events, each linked directly."
 >
-  <section class="container hero">
+  <PromoHero>
     <p class="eyebrow">Index</p>
     <h1>Every page on the sites DST runs from Dubai</h1>
     <p class="lede">
@@ -64,7 +65,7 @@ const total = sites.reduce((n, s) => n + s.total, 0);
       so that anything published anywhere in the network is one click from
       here. The list is drawn from the sites themselves and grows with them.
     </p>
-  </section>
+  </PromoHero>
 
   <section class="container">
     <nav class="net-jump" aria-label="Sites on this page">

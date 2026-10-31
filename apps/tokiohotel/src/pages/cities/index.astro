@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
 import { cities as copy } from "../../content";
 import { citiesOn, pastOnlyCities } from "../../data/cities";
@@ -21,11 +22,11 @@ const runs = ["arena-tour-2026", "summer-encore-2027"].map((slug) => {
 const past = pastOnlyCities();
 ---
 <Layout prose title={copy.title} description={copy.description}>
-  <section class="container hero">
+  <PromoHero>
     <Breadcrumbs crumbs={[]} current={copy.title} homeLabel="Dates" />
     <h1>{copy.h1}</h1>
     <p class="lede">{copy.lede}</p>
-  </section>
+  </PromoHero>
 
   {runs.map(({ tour, stops }) => (
     <section class="container">

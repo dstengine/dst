@@ -1,6 +1,7 @@
 ---
 import { siteId } from "../content";
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import NewsList from "@dst/ui/NewsList.astro";
 import { newsBySite } from "@dst/content/news";
@@ -17,14 +18,14 @@ const sectionLinks = sections([...eventsBySite(siteId), ...newsBySite(siteId)]);
   title="Business setup news"
   description="Updates on Dubai company formation — regulatory changes, new guidance, and updates to this site's own tools."
 >
-  <section class="container hero">
+  <PromoHero>
     <p class="eyebrow">News</p>
     <h1>What's changing in Dubai company formation</h1>
     <p class="lede">
       Regulatory changes and updates that affect setting up or running a
       Dubai company, kept apart from the reference pages themselves.
     </p>
-  </section>
+  </PromoHero>
 
   <section class="container">
     <SectionNav sections={sectionLinks} {...NAV} />

@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import { site } from "../site.config";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import EventsList from "@dst/ui/EventsList.astro";
@@ -16,7 +17,7 @@ const sectionLinks = sections([...eventsBySite(siteId), ...newsBySite(siteId)]);
   title="Dubai future-tech events: smart cities, PropTech, finance"
   description="A calendar of the Dubai conferences on the subjects Future World Forum covers — smart cities, PropTech, digital finance and mobility — with dates, venues and what each one actually is."
 >
-  <section class="container hero">
+  <PromoHero>
     <p class="eyebrow">Calendar</p>
     <h1>Dubai future-tech events</h1>
     <p class="lede">
@@ -30,7 +31,7 @@ const sectionLinks = sections([...eventsBySite(siteId), ...newsBySite(siteId)]);
       <a href="/" title="Future World Forum Dubai 2026 — dates, tickets and programme">Future World Forum Dubai 2026</a>,
       {forumDate}, is on the front page.
     </p>
-  </section>
+  </PromoHero>
 
   <section class="container">
     <SectionNav sections={sectionLinks} {...NAV} />

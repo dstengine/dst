@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import { site } from "../site.config";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import EventsList from "@dst/ui/EventsList.astro";
@@ -13,10 +14,10 @@ const sectionLinks = sections([...items, ...newsBySite(siteId)]);
 const thin = items.length < 3;
 ---
 <Layout title={events.title} description={events.description} noindex={thin}>
-  <section class="container hero">
+  <PromoHero lang="es">
     <h1>{events.h1}</h1>
     <p class="lede">{events.lede}</p>
-  </section>
+  </PromoHero>
   <section class="container">
     <SectionNav sections={sectionLinks} allHref="/" {...NAV} />
     <EventsList locale="es-MX" items={items} eventsBase={eventsBase} labels={labels}

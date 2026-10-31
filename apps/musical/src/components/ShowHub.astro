@@ -9,6 +9,7 @@ import Faq from "@dst/ui/Faq.astro";
 import OnThisPage from "@dst/ui/OnThisPage.astro";
 import { ICONS } from "@dst/ui/icons";
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import Clips from "./Clips.astro";
 import EventCards from "./EventCards.astro";
 import { theVenue, checkedOn, cityBySlug, formatRun, openRunDate, today, groups, runsFor, runsInGroup, statusOf, upcomingRuns, venueBySlug, venuePath, type Show, } from "../content";
@@ -109,13 +110,13 @@ const jump = [
 ].filter(Boolean) as { id: string; label: string }[];
 ---
 <Layout title={show.titleSeo ?? show.title} description={show.summary} jsonLd={[showLd]}>
-  <section class="container hero">
+  <PromoHero>
     <p class="eyebrow">{show.eyebrow}</p>
     <h1>{show.title}</h1>
     <p class="lede">{show.hook[0]}</p>
     <OnThisPage items={jump} />
     <Glance facts={glance} />
-  </section>
+  </PromoHero>
 
   <section class="container prose">
     {show.hook.slice(1).map((paragraph) => <p>{paragraph}</p>)}

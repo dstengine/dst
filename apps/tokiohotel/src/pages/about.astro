@@ -1,14 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import { about } from "../content";
 import { checkedOn, WIKIPEDIA } from "../data/band";
 import SourceNote from "../components/SourceNote.astro";
 ---
 <Layout prose title={about.title} description={about.description}>
-  <section class="container hero">
+  <PromoHero>
     <h1>{about.h1}</h1>
     <p class="lede">{about.lede}</p>
-  </section>
+  </PromoHero>
 
   <section class="container">
     <h2>What this is</h2>

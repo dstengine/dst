@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import Callout from "@dst/ui/Callout.astro";
 import PhotoHero from "@dst/ui/district/PhotoHero.astro";
 import InterestForm from "../components/InterestForm.astro";
@@ -9,7 +10,7 @@ import { siteHeaderImage, currentPhase, soldOutPhase, currentUnits, phase1Units 
   title="Palm Central prices, both phases"
   description="Palm Central prices by unit type, both release phases: the current Phase 2 (from AED 2.7M) and the sold-out Phase 1 (from AED 2.5M), side by side."
 >
-  <section class="container hero">
+  <PromoHero>
     <PhotoHero
       eyebrow="Prices"
       title="Palm Central prices, both phases"
@@ -26,7 +27,7 @@ import { siteHeaderImage, currentPhase, soldOutPhase, currentUnits, phase1Units 
     <div class="hero-actions">
       <a class="button" href="#interest" title="Register interest in Palm Central">Register interest</a>
     </div>
-  </section>
+  </PromoHero>
 
   <Callout kind="note">
     <strong>{soldOutPhase.label}</strong> ({soldOutPhase.released}) <strong>is sold out</strong> — {soldOutPhase.status} Only

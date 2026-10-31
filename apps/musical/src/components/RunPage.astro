@@ -13,6 +13,7 @@ import OnThisPage from "@dst/ui/OnThisPage.astro";
 import CountdownScript from "@dst/ui/CountdownScript.astro";
 import { ICONS } from "@dst/ui/icons";
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import EventCards from "./EventCards.astro";
 import StatusBadge from "./StatusBadge.astro";
 import TicketButtons from "./TicketButtons.astro";
@@ -174,7 +175,7 @@ const eventLd: Record<string, unknown> = {
   description={`${show.title} in ${city.name}: ${formatRun(run)}${venue ? ` at ${theVenue(venue.name)}` : ""}. The musical's dates, theatre and who is selling.`}
   jsonLd={[eventLd]}
 >
-  <section class="container hero">
+  <PromoHero>
     <Breadcrumbs
       crumbs={[
         { href: `/${show.slug}/`, label: show.title },
@@ -201,7 +202,7 @@ const eventLd: Record<string, unknown> = {
     />
     <Glance facts={glance} />
     {jump.length > 3 && <OnThisPage items={jump} />}
-  </section>
+  </PromoHero>
 
   {/* The prose, where the run has any. It sits above the seller list and
       the theatre because it is the thing a reader who has not decided yet

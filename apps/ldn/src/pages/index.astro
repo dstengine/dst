@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import NewsBlock from "@dst/ui/NewsBlock.astro";
 import EventsBlock from "@dst/ui/EventsBlock.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
@@ -13,11 +14,11 @@ const eventItems = eventsBySite(siteId);
 const sectionLinks = sections([...eventItems, ...newsItems]);
 ---
 <Layout title={home.title} description={home.description}>
-  <section class="container hero">
+  <PromoHero>
     <h1>{home.h1}</h1>
     <p class="lede">{home.lede}</p>
     <SectionNav sections={sectionLinks} label={NAV.label} />
-  </section>
+  </PromoHero>
   <EventsBlock locale="en-GB" items={eventItems} heading="Events" eventsBase={eventsBase} labels={labels} />
   <NewsBlock locale="en-GB" items={newsItems} heading="News" newsBase={newsBase} />
 </Layout>

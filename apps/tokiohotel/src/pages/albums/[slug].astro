@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
 import Glance from "@dst/ui/Glance.astro";
 import SourceNote from "../../components/SourceNote.astro";
@@ -41,12 +42,12 @@ const previous = index > 0 ? albums[index - 1] : undefined;
 const next = index < albums.length - 1 ? albums[index + 1] : undefined;
 ---
 <Layout prose title={headTitle} description={description}>
-  <section class="container hero">
+  <PromoHero>
     <Breadcrumbs crumbs={[{ href: "/albums/", label: "Albums" }]} current={album.title} homeLabel="Dates" />
     <h1>{album.title}</h1>
     <p class="lede">{album.blurb}</p>
     <Glance facts={facts} />
-  </section>
+  </PromoHero>
 
   <section class="container">
     {album.body.map((p) => <p>{p}</p>)}

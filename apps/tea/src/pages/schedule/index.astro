@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import Countdown from "../../components/Countdown.astro";
 import { schedule, newsBase, siteId } from "../../content";
 import { moments } from "../../schedule";
@@ -15,13 +16,13 @@ const daily = moments.filter((m) => "daily" in m.recurs);
 const days = moments.filter((m) => !("daily" in m.recurs));
 ---
 <Layout title={schedule.title} description={schedule.description}>
-  <section class="container hero">
+  <PromoHero>
     <h1>{schedule.h1}</h1>
     <p class="lede">{schedule.lede}</p>
     <p class="subscribe">
       <a class="button" href="/tea-times.ics" download="tea-times.ics" title="Every tea time and tea day as one calendar file, with reminders">Add all tea times to my calendar</a>
     </p>
-  </section>
+  </PromoHero>
 
   {[
     { id: "daily", heading: "Every day", note: "On your own clock, wherever you are.", list: daily },

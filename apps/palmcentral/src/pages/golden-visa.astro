@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import Callout from "@dst/ui/Callout.astro";
 import PhotoHero from "@dst/ui/district/PhotoHero.astro";
 import InterestForm from "../components/InterestForm.astro";
@@ -9,7 +10,7 @@ import { siteHeaderImage, currentUnits } from "../content";
   title="Golden Visa Eligibility"
   description="Every Palm Central unit type clears the AED 2 million Golden Visa threshold. What that gets you, and how the property route actually works."
 >
-  <section class="container hero">
+  <PromoHero>
     <PhotoHero
       eyebrow="Golden Visa"
       title="Golden Visa at Palm Central: every unit clears the threshold"
@@ -27,7 +28,7 @@ import { siteHeaderImage, currentUnits } from "../content";
     <div class="hero-actions">
       <a class="button" href="#interest" title="Register interest in Palm Central">Register interest</a>
     </div>
-  </section>
+  </PromoHero>
 
   <section class="container">
     <h2>Where each unit type sits against the threshold</h2>

@@ -1,6 +1,7 @@
 ---
 import { siteId } from "../content";
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import Callout from "@dst/ui/Callout.astro";
 import NewsBlock from "@dst/ui/NewsBlock.astro";
 import EventsBlock from "@dst/ui/EventsBlock.astro";
@@ -14,7 +15,7 @@ const eventItems = eventsBySite(siteId);
   title="How to Start a Business"
   description="A practical guide to starting a business in Dubai: choosing between mainland, free zone, and offshore structures, what registration actually costs, and what to sort out afterwards."
 >
-  <section class="container hero">
+  <PromoHero>
     <p class="eyebrow">Company formation</p>
     <h1>How to start a business in Dubai</h1>
     <p class="lede">
@@ -25,7 +26,7 @@ const eventItems = eventsBySite(siteId);
       isn't whether you can register a company here; it's which structure
       actually fits what you're building.
     </p>
-  </section>
+  </PromoHero>
 
   <section class="container">
     <h2>Three structures, one decision</h2>

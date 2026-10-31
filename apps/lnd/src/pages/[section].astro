@@ -3,6 +3,7 @@
 // the data, so this file never needs editing when one earns or loses its
 // page.
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import { site } from "../site.config";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import SectionFeed from "@dst/ui/SectionFeed.astro";
@@ -19,10 +20,10 @@ export function getStaticPaths() {
 const { section, all } = Astro.props;
 ---
 <Layout title={section.title} description={section.description}>
-  <section class="container hero">
+  <PromoHero>
     <h1>{section.h1}</h1>
     <p class="lede">{section.lede}</p>
-  </section>
+  </PromoHero>
   <section class="container">
     <SectionNav sections={all} current={`/${section.slug}/`} allHref="/" {...NAV} />
     <SectionFeed locale="en-GB" labels={labels} items={section.items} eventsBase={eventsBase} newsBase={newsBase} headings={section.headings}

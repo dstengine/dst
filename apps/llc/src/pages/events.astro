@@ -2,6 +2,7 @@
 import { siteId } from "../content";
 import { site } from "../site.config";
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import EventsList from "@dst/ui/EventsList.astro";
 import { eventsBySite } from "@dst/content/events";
@@ -18,14 +19,14 @@ const sectionLinks = sections([...eventsBySite(siteId), ...newsBySite(siteId)]);
   title="Business setup events"
   description="Webinars and in-person sessions on Dubai company formation, when there are any scheduled."
 >
-  <section class="container hero">
+  <PromoHero>
     <p class="eyebrow">Events</p>
     <h1>Dubai company formation events</h1>
     <p class="lede">
       Sessions on setting up or running a Dubai company, published here
       once there's something scheduled.
     </p>
-  </section>
+  </PromoHero>
 
   <section class="container">
     <SectionNav sections={sectionLinks} {...NAV} />

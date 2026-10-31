@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import PhotoHero from "@dst/ui/district/PhotoHero.astro";
 import InterestForm from "../components/InterestForm.astro";
 import { siteHeaderImage, distances, currentUnits } from "../content";
@@ -8,7 +9,7 @@ import { siteHeaderImage, distances, currentUnits } from "../content";
   title="Where Palm Central is on Palm Jebel Ali: the Spine"
   description="Where Palm Central sits on Palm Jebel Ali's master plan, and real drive times to Dubai Marina, Downtown, and both airports."
 >
-  <section class="container hero">
+  <PromoHero>
     <PhotoHero
       eyebrow="Location"
       title="Palm Central on The Spine, between Fronds M and N"
@@ -25,7 +26,7 @@ import { siteHeaderImage, distances, currentUnits } from "../content";
     <div class="hero-actions">
       <a class="button" href="#interest" title="Register interest in Palm Central">Register interest</a>
     </div>
-  </section>
+  </PromoHero>
 
   <section class="container">
     <h2>Why the Spine specifically</h2>

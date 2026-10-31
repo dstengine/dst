@@ -5,6 +5,7 @@
 import { siteId } from "../content";
 import { site } from "../site.config";
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import SectionFeed from "@dst/ui/SectionFeed.astro";
 import { sections, NAV } from "../sections";
@@ -19,11 +20,11 @@ export function getStaticPaths() {
 const { section, all } = Astro.props;
 ---
 <Layout title={section.title} description={section.description}>
-  <section class="container hero">
+  <PromoHero>
     <p class="eyebrow">By subject</p>
     <h1>{section.h1}</h1>
     <p class="lede">{section.lede}</p>
-  </section>
+  </PromoHero>
   <section class="container">
     <SectionNav sections={all} current={`/${section.slug}/`} {...NAV} />
     <SectionFeed items={section.items} headings={section.headings}

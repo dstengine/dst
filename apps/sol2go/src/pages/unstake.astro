@@ -1,12 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import { unstake } from "../content";
 ---
 <Layout prose title={unstake.title} description={unstake.description}>
-  <section class="container hero">
+  <PromoHero>
     <h1>{unstake.h1}</h1>
     <p class="lede">{unstake.lede}</p>
-  </section>
+  </PromoHero>
 
   <section class="container">
     <form class="unstake-form" data-unstake-form novalidate>

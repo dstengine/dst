@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import NewsBlock from "@dst/ui/NewsBlock.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import NextUp from "../components/NextUp.astro";
@@ -12,10 +13,10 @@ const items = newsBySite(siteId);
 const sectionLinks = sections(items);
 ---
 <Layout title={home.title} description={home.description}>
-  <section class="container hero">
+  <PromoHero>
     <h1>{home.h1}</h1>
     <p class="lede">{home.lede}</p>
-  </section>
+  </PromoHero>
   <NextUp moments={moments} />
   <section class="container">
     <SectionNav sections={sectionLinks} allHref={newsBase} {...NAV} />

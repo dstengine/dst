@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
 import SourceNote from "../../components/SourceNote.astro";
 import { albums as copy } from "../../content";
@@ -10,11 +11,11 @@ import { tourBySlug } from "../../data/tours";
 const year = (iso: string) => iso.slice(0, 4);
 ---
 <Layout prose title={copy.title} description={copy.description}>
-  <section class="container hero">
+  <PromoHero>
     <Breadcrumbs crumbs={[]} current={copy.title} homeLabel="Dates" />
     <h1>{copy.h1}</h1>
     <p class="lede">{copy.lede}</p>
-  </section>
+  </PromoHero>
 
   <section class="container">
     <ol class="albums">

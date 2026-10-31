@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import NewsList from "@dst/ui/NewsList.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import { guides, siteId, newsBase } from "../content";
@@ -13,10 +14,10 @@ const items = newsBySite(siteId);
 const thin = items.length < 3;
 ---
 <Layout title={guides.title} description={guides.description} noindex={thin}>
-  <section class="container hero">
+  <PromoHero>
     <h1>{guides.h1}</h1>
     <p class="lede">{guides.lede}</p>
-  </section>
+  </PromoHero>
   <section class="container">
     <SectionNav sections={sections(items)} current={newsBase} allHref={newsBase} {...NAV} />
     <NewsList items={items} newsBase={newsBase} locale="en-GB" />

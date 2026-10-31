@@ -4,6 +4,7 @@
 // the show and what makes this performance of it different from the others.
 import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import Clips from "./Clips.astro";
 import { checkedOn, type Clip, type Show } from "../content";
 
@@ -26,7 +27,7 @@ const videoLd = {
 <Layout
   prose
   title={clip.title} description={clip.note ?? `${clip.title} — ${show.title}, playing here.`} jsonLd={[videoLd]}>
-  <section class="container hero">
+  <PromoHero>
     <Breadcrumbs
       crumbs={[
         { href: `/${show.slug}/`, label: show.title },
@@ -38,7 +39,7 @@ const videoLd = {
     <p class="eyebrow">{show.title} · online</p>
     <h1>{clip.title}</h1>
     {clip.note && <p class="lede">{clip.note}</p>}
-  </section>
+  </PromoHero>
 
   <section class="container">
     <Clips clips={[clip]} heading={2} />

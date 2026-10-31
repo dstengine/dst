@@ -1,6 +1,7 @@
 ---
 import { siteId } from "../content";
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import NewsList from "@dst/ui/NewsList.astro";
 import { newsBySite } from "@dst/content/news";
@@ -17,14 +18,14 @@ const sectionLinks = sections([...eventsBySite(siteId), ...newsBySite(siteId)]);
   title="News from Palm Jebel Ali"
   description="Updates on Palm Central — pricing changes, release phases, and this site's own updates."
 >
-  <section class="container hero">
+  <PromoHero>
     <p class="eyebrow">News</p>
     <h1>What's changing at Palm Central</h1>
     <p class="lede">
       Pricing and release-phase changes at Palm Central, kept apart from
       the reference pages themselves.
     </p>
-  </section>
+  </PromoHero>
 
   <section class="container">
     <SectionNav sections={sectionLinks} {...NAV} />

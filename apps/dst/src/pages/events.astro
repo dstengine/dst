@@ -2,6 +2,7 @@
 import { siteId } from "../content";
 import { site } from "../site.config";
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import EventsList from "@dst/ui/EventsList.astro";
 import FeedCards from "@dst/ui/FeedCards.astro";
@@ -69,14 +70,14 @@ const networkCards = upcomingEvents(
   title="Dubai tech and business events"
   description="The Dubai events DST turns up to, with a roundup of what's coming up across the network's sites."
 >
-  <section class="container hero">
+  <PromoHero>
     <p class="eyebrow">Events</p>
     <h1>Dubai tech and business events</h1>
     <p class="lede">
       Group-level events, published here once there's something
       scheduled — a vertical's own events live on that vertical's site.
     </p>
-  </section>
+  </PromoHero>
 
   <section class="container">
     <h2>From the group</h2>

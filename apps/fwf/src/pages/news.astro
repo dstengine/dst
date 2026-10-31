@@ -1,6 +1,7 @@
 ---
 import { siteId } from "../content";
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import NewsList from "@dst/ui/NewsList.astro";
 import { newsBySite } from "@dst/content/news";
@@ -17,7 +18,7 @@ const sectionLinks = sections([...eventsBySite(siteId), ...newsBySite(siteId)]);
   title="Smart city and PropTech news"
   description="Dubai smart city, PropTech, fintech and mobility news — the subjects Future World Forum Dubai covers, reported from the bodies that announced them."
 >
-  <section class="container hero">
+  <PromoHero>
     <p class="eyebrow">News</p>
     <h1>Smart city and PropTech news from Dubai</h1>
     <p class="lede">
@@ -26,7 +27,7 @@ const sectionLinks = sections([...eventsBySite(siteId), ...newsBySite(siteId)]);
       item is sourced from the body that announced it, and says what it means
       rather than repeating the press release.
     </p>
-  </section>
+  </PromoHero>
 
   <section class="container">
     <SectionNav sections={sectionLinks} {...NAV} />

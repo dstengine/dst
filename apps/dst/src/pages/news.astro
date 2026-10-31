@@ -1,6 +1,7 @@
 ---
 import { siteId } from "../content";
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
 import NewsList from "@dst/ui/NewsList.astro";
 import FeedCards from "@dst/ui/FeedCards.astro";
@@ -61,7 +62,7 @@ const networkCards = latestNews(
   title="Dubai AI, crypto and property news"
   description="What moves the markets DST works in from Dubai, and what the group is doing in them, with a roundup of what's changing across the network's sites."
 >
-  <section class="container hero">
+  <PromoHero>
     <p class="eyebrow">News</p>
     <h1>What's changing in Dubai</h1>
     {/* Deliberately not "new integrations / how the network's systems
@@ -73,7 +74,7 @@ const networkCards = latestNews(
       them — followed by a roundup of what's changing across the network's
       individual sites.
     </p>
-  </section>
+  </PromoHero>
 
   <section class="container">
     {/* The roundup below carries a heading, so without one here the group's

@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import Callout from "@dst/ui/Callout.astro";
 import PhotoHero from "@dst/ui/district/PhotoHero.astro";
 import InterestForm from "../components/InterestForm.astro";
@@ -9,7 +10,7 @@ import { siteHeaderImage, currentPhase, soldOutPhase, currentUnits } from "../co
   title="The Palm Central payment plan"
   description="Palm Central's payment plan — what's confirmed for the sold-out Phase 1, what's reported but unconfirmed for the current Phase 2, and what to get in writing before booking."
 >
-  <section class="container hero">
+  <PromoHero>
     <PhotoHero
       eyebrow="Payment plan"
       title="What the Palm Central payment plan actually is"
@@ -26,7 +27,7 @@ import { siteHeaderImage, currentPhase, soldOutPhase, currentUnits } from "../co
     <div class="hero-actions">
       <a class="button" href="#interest" title="Register interest in Palm Central">Register interest</a>
     </div>
-  </section>
+  </PromoHero>
 
   <section class="container">
     <h2>{soldOutPhase.label} — confirmed structure (sold out)</h2>

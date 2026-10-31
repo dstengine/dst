@@ -13,6 +13,7 @@ import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
 import ChipNav from "@dst/ui/ChipNav.astro";
 import { ICONS } from "@dst/ui/icons";
 import Layout from "../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
 import RunTable from "./RunTable.astro";
 import { checkedOn, checkedOnFor, cityHasPage, citiesInCountry, formatRun, runsInCountry, showBySlug, spell, statusOf, venuesInCity, type Country, } from "../content";
 
@@ -82,7 +83,7 @@ const glance = [
   title={country.titleSeo}
   description={country.summary}
 >
-  <section class="container hero">
+  <PromoHero>
     <Breadcrumbs crumbs={[]} current={country.name} homeLabel="What's on" />
     <p class="eyebrow">Every city, every date</p>
     <h1>Musicals in {country.in}</h1>
@@ -90,7 +91,7 @@ const glance = [
       {subject} playing {where}, with the theatre, the dates and the seller for each.
     </p>
     <Glance facts={glance} />
-  </section>
+  </PromoHero>
 
   {country.intro && (
     <section class="container prose">
