@@ -469,8 +469,27 @@ const parts = (iso: string) => {
   @keyframes feed-live-pulse {
     50% { opacity: 0.35; }
   }
+  /* In the small hours, an editor's pick that is still open is the place
+     to go now: the card itself takes the live colour and a soft glow, and
+     its pick label turns green. CountdownScript sets `data-late` on a
+     running card between midnight and six in the event's clock; a card
+     that is not a pick keeps the dot alone (Halloween night on tick:
+     Forty44 until 03:00, UFO until 04:00, the owner's word 31 Oct 2026). */
+  .feed-card[data-late]:has(.feed-pick) {
+    border-color: var(--ok);
+    box-shadow: 0 0 0 1px var(--ok), 0 0 1.5rem color-mix(in srgb, var(--ok) 35%, transparent);
+    animation: feed-late-glow 2.4s ease-in-out infinite;
+  }
+  .feed-card[data-late]:has(.feed-pick) .feed-pick {
+    background: var(--ok);
+    color: var(--bg);
+  }
+  @keyframes feed-late-glow {
+    50% { box-shadow: 0 0 0 1px var(--ok), 0 0 0.5rem color-mix(in srgb, var(--ok) 20%, transparent); }
+  }
   @media (prefers-reduced-motion: reduce) {
     .feed-countdown[data-state="running"]::before { animation: none; }
+    .feed-card[data-late]:has(.feed-pick) { animation: none; }
   }
 
   .feed-card h3 {

@@ -57,6 +57,25 @@
       const mins = (m[1] === "-" ? -1 : 1) * (Number(m[2]) * 60 + Number(m[3]));
       return new Date(now.getTime() + mins * 60000).toISOString().slice(0, 10);
     };
+    // The small hours in the event's own clock: midnight to six. A card
+    // still running then is one of the last places open, and the editor's
+    // picks among them glow brighter (FeedCards.astro, `data-late`).
+    const lateAt = (offset) => {
+      const now = new Date();
+      const m = /^([+-])(\d\d):?(\d\d)$/.exec(offset || "");
+      const hour = m
+        ? new Date(now.getTime() + (m[1] === "-" ? -1 : 1) * (Number(m[2]) * 60 + Number(m[3])) * 60000).getUTCHours()
+        : now.getHours();
+      return hour < 6;
+    };
+    // The card takes its chip's state, so the styles can light the whole
+    // card and not only the chip.
+    const markCard = (el, offset) => {
+      const card = el.closest(".feed-card");
+      if (!card) return;
+      if (el.dataset.state) card.dataset.state = el.dataset.state; else delete card.dataset.state;
+      if (el.dataset.state === "running" && lateAt(offset)) card.dataset.late = ""; else delete card.dataset.late;
+    };
     const daysBetween = (from, to) => Math.round((Date.parse(`${to}T00:00:00Z`) - Date.parse(`${from}T00:00:00Z`)) / DAY);
     // A stamp with a clock time is an instant; a bare date is a whole day
     // in the event's calendar, and counting to its UTC midnight would be
@@ -86,6 +105,7 @@
       // always kept its place, empty.
       if (end) el.hidden = !text;
       if (text && text === running) el.dataset.state = "running";
+      markCard(el, offset);
     }
 
     // The live variant, on an event page and on a card with displayHours:
@@ -121,6 +141,7 @@
         // glancing at a page at midnight should see a light, not read a
         // word. "running" between the start and the end, "ended" after.
         el.dataset.state = over(end, offset) ? "ended" : begun ? "running" : "";
+        markCard(el, offset);
       }
     };
     if (live.length) {
