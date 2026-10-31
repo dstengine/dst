@@ -37,7 +37,7 @@ const NAV = NAVS[lang].filter((l) => cityDayAhead[lang] || !l.href.endsWith("yer
 // rather than repeating the label.
 const nav = [
   NAV[0],
-  ...topFor(lang).map((t) => ({ href: t.href, label: t.label, title: t.item.titleSeo ?? t.item.title, icon: t.icon })),
+  ...topFor(lang).filter((t) => t.nav).map((t) => ({ href: t.href, label: t.label, title: t.item.titleSeo ?? t.item.title, icon: t.icon })),
   ...hots.map((hot) => ({ href: `${p}${hot.slug}/`, label: hot.label, title: hot.title, icon: iconOf(hot.slug) })),
   ...NAV.slice(1),
 ];
