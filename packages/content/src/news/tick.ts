@@ -43,6 +43,8 @@ export const items: NewsItem[] = [
     ],
     i18n: {
       en: {
+        // The poster carries words, so each language gets its own (LETTERED in ../types.ts).
+        image: "/news/halloween-yerevan-2026-page-en.svg",
         imageAlt: "A poster on a dark ground: an orange pumpkin before a moon, the words Halloween in Yerevan, 13 events on one page, and the address tick.am/halloween",
         title: "Halloween in Yerevan 2026: 13 events on one page",
         cardTitle: "All 13 Halloween events on one page",

@@ -1,5 +1,6 @@
 import { test, describe } from "node:test";
 import assert from "node:assert/strict";
+import path from "node:path";
 import { allNews, newsBySite } from "../src/news/index.ts";
 import { allEvents, eventsBySite } from "../src/events/index.ts";
 import { runDays, addDays } from "../src/when.ts";
@@ -285,8 +286,10 @@ describe("translations", () => {
   // a fact, and the day the entry's own copy is corrected the English page
   // goes on saying the old one.
   test("a translation carries only translatable fields, and a body where the entry has one", async () => {
-    const { TRANSLATABLE } = await import("../src/types.ts");
-    const allowed = new Set(TRANSLATABLE);
+    const { TRANSLATABLE, LETTERED } = await import("../src/types.ts");
+    // A lettered picture (LETTERED) is a word the translation may carry
+    // and never has to.
+    const allowed = new Set([...TRANSLATABLE, ...LETTERED]);
     for (const { label, all } of kinds) {
       for (const item of all) {
         for (const [lang, words] of Object.entries(item.i18n ?? {})) {
@@ -301,6 +304,14 @@ describe("translations", () => {
           const untranslated = TRANSLATABLE.filter((key) => item[key] !== undefined && words[key] === undefined);
           assert.deepEqual(untranslated, [], `${where}: no translation for ${untranslated.join(", ")}`);
           assert.ok(words.title?.trim() && words.summary?.trim(), `${where}: a translation needs its own title and summary`);
+          // A translated picture is a second file of the same shape: the
+          // entry's own, lettered in another language — so the entry has
+          // one, and the width and height on the entry hold for both.
+          for (const key of LETTERED) {
+            if (words[key] === undefined) continue;
+            assert.ok(item[key], `${where}: "${key}" translated but the entry has none`);
+            assert.equal(path.extname(words[key]), path.extname(item[key]), `${where}: "${key}" is a different kind of file from the entry's`);
+          }
         }
       }
     }

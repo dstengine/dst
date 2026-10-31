@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Halloween in Yerevan 2026: 31 October, 13 events on one page, tick.am/halloween">
+  <style>
+    /* Loaded through an img element, so the picture carries its own colours.
+       A poster, not a photograph: one night, one page, one pumpkin. */
+    .bg { fill: #14101F; }
+    .moon { fill: #F3E6C8; }
+    .pumpkin { fill: #E8711A; }
+    .pumpkin-dark { fill: #C45A10; }
+    .stem { fill: #4C7A3A; }
+    .face { fill: #14101F; }
+    .ink { fill: #F6F1E8; }
+    .muted { fill: #B9AFC2; }
+    .accent { fill: #E8711A; }
+    text { font-family: -apple-system, "Segoe UI", "Noto Sans Armenian", "Noto Sans", Roboto, Arial, sans-serif; }
+    .huge { font-size: 92px; font-weight: 700; letter-spacing: -0.02em; }
+    .big { font-size: 46px; font-weight: 600; }
+    .label { font-size: 30px; }
+    .caps { font-size: 24px; letter-spacing: 0.16em; font-weight: 600; }
+  </style>
+
+  <rect class="bg" width="1200" height="630" />
+
+  <!-- A moon behind the pumpkin -->
+  <circle class="moon" cx="960" cy="230" r="150" />
+
+  <!-- The pumpkin: four lobes, a stem, a cut face -->
+  <rect class="stem" x="942" y="215" width="36" height="60" rx="12" />
+  <ellipse class="pumpkin-dark" cx="960" cy="360" rx="190" ry="140" />
+  <ellipse class="pumpkin" cx="880" cy="360" rx="95" ry="130" />
+  <ellipse class="pumpkin" cx="1040" cy="360" rx="95" ry="130" />
+  <ellipse class="pumpkin" cx="960" cy="360" rx="105" ry="138" />
+  <polygon class="face" points="895,320 935,350 875,350" />
+  <polygon class="face" points="1025,320 1045,350 985,350" />
+  <path class="face" d="M870 395 Q960 470 1050 395 L1030 420 L1005 400 L985 430 L960 405 L935 430 L915 400 L890 420 Z" />
+
+  <!-- The words -->
+  <text class="caps accent" x="80" y="150">31 OCTOBER 2026 · 31 ՀՈԿՏԵՄԲԵՐԻ</text>
+  <text class="huge ink" x="80" y="260">Halloween</text>
+  <text class="huge ink" x="80" y="360">in Yerevan</text>
+  <text class="big ink" x="80" y="440">13 events on one page</text>
+  <text class="label muted" x="80" y="500">Հելոուին Երևանում · 13 միջոցառում մեկ էջում</text>
+  <text class="caps muted" x="80" y="570">TICK.AM/HALLOWEEN</text>
+</svg>

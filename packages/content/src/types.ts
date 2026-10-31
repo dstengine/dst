@@ -210,8 +210,19 @@ export const TRANSLATABLE = [
   "moreEventsText", "audience", "outcome", "ticket",
 ] as const;
 
+/** A picture with words in it is a word too. A poster that says
+    «Հելոուին Երևանում» is the Armenian page's; the English page shows the
+    same poster lettered in English. So a translation may carry its own
+    `image` (and `imageNarrow`), and only then: a photograph, a diagram of
+    figures, a generated scene with no lettering is the same on both pages
+    and is left on the entry. Unlike TRANSLATABLE these are never required
+    — most pictures have no words — and a translation that names one must
+    name a file that exists, same as the entry (tests/images.test.js). The
+    alt text goes with it, in TRANSLATABLE as before. */
+export const LETTERED = ["image", "imageNarrow"] as const;
+
 export type Translation = {
-  [K in (typeof TRANSLATABLE)[number]]?: K extends keyof EventItem ? EventItem[K] : never;
+  [K in (typeof TRANSLATABLE)[number] | (typeof LETTERED)[number]]?: K extends keyof EventItem ? EventItem[K] : never;
 };
 
 /** One person on an event's programme, as their organiser publishes them. */
