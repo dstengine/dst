@@ -1,0 +1,119 @@
+---
+// The share control: a button in the page's action row, a floating mark
+// on a phone, and the "Link copied" toast. The system share sheet where
+// there is one, a copied link where there is not. The button's words are
+// under the `share-label` test (@dst/content/experiments) on the pages
+// that test names; elsewhere it says the control. The floating mark has
+// no words — the box-and-arrow is the sign every phone draws for the act
+// — and is counted apart from the button (`cta_kind`), so the test reads
+// the words and nothing else.
+//
+// Rendered inside whatever row holds the page's actions; the mark and the
+// toast are fixed to the viewport, so where they sit in the markup does
+// not matter. One per page.
+import Variants from "./Variants.astro";
+import { ICONS } from "../icons.ts";
+import { withLabels, type ArticleLabels } from "../labels.ts";
+
+interface Props {
+  /** What is being shared, for the title attribute. */
+  title: string;
+  labels?: Partial<ArticleLabels>;
+}
+const { title, labels } = Astro.props;
+const L = withLabels(labels);
+---
+<button type="button" class="button button-secondary share-button" data-share="button" title={L.shareTitle(title)}>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={ICONS.share} /></svg>
+  <Variants exp="share-label">
+    <Fragment slot="share">{L.share}</Fragment>
+    <Fragment slot="invite">{L.inviteFriends}</Fragment>
+  </Variants>
+</button>
+<button type="button" class="share-fab" data-share="fab" aria-label={L.share} title={L.shareTitle(title)}>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={ICONS.share} /></svg>
+</button>
+<span class="share-toast" role="status" data-share-toast hidden>{L.linkCopied}</span>
+
+<style>
+  /* A <button> among <a>s: it takes the shared .button rule and loses the
+     browser's own font and cursor. */
+  .share-button { font: inherit; cursor: pointer; display: inline-flex; align-items: center; gap: 0.55em; }
+  /* In the event page's action row the other buttons fill their phone line
+     (EventArticle.astro, 480px); this one is rendered by another component,
+     so their scoped rule does not reach it and it sat short under a
+     full-width "Add to calendar". The same rule, here. */
+  @media (max-width: 480px) {
+    .share-button { flex: 1 1 auto; justify-content: center; }
+  }
+  @media (max-width: 360px) {
+    .share-button { padding-inline: 0.9em; }
+  }
+  /* The floating mark: a phone only, bottom right, above the page and
+     under nothing. 56px is the size a thumb lands on without aiming. */
+  .share-fab { display: none; }
+  @media (max-width: 700px) {
+    .share-fab {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      right: var(--space-3);
+      bottom: var(--space-3);
+      width: 56px;
+      height: 56px;
+      border: 0;
+      border-radius: 50%;
+      background: var(--accent);
+      color: white;
+      box-shadow: 0 4px 16px rgb(0 0 0 / 0.3);
+      cursor: pointer;
+      z-index: 20;
+    }
+    .share-fab svg { width: 24px; height: 24px; }
+  }
+  .share-toast {
+    position: fixed;
+    left: 50%;
+    bottom: calc(var(--space-3) + 64px);
+    transform: translateX(-50%);
+    padding: 0.5em 1em;
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--bg);
+    font-size: var(--step--1);
+    white-space: nowrap;
+    z-index: 21;
+  }
+  .share-toast[hidden] { display: none; }
+</style>
+
+<script>
+  import { track } from "../track";
+  // One handler for the button and the floating mark. The click is counted
+  // before the share sheet opens: the test measures the press, and a sheet
+  // dismissed is still a press. The page's own address, without the ?exp=
+  // a forced variant was looked at with.
+  const toast = document.querySelector<HTMLElement>("[data-share-toast]");
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  for (const el of document.querySelectorAll<HTMLElement>("[data-share]")) {
+    el.addEventListener("click", async () => {
+      const url = location.origin + location.pathname;
+      const kind = el.dataset.share;
+      const text = el.innerText.trim();
+      const nav = navigator as Navigator & { share?: (d: { title: string; url: string }) => Promise<void> };
+      track("share_click", { cta_kind: kind, cta_text: text, method: nav.share ? "sheet" : "copy" });
+      try {
+        if (nav.share) await nav.share({ title: document.title, url });
+        else {
+          await navigator.clipboard.writeText(url);
+          if (toast) {
+            toast.hidden = false;
+            clearTimeout(timer);
+            timer = setTimeout(() => { toast.hidden = true; }, 2000);
+          }
+        }
+      } catch { /* a sheet dismissed, a clipboard refused: nothing to do */ }
+    });
+  }
+</script>

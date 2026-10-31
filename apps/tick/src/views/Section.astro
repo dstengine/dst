@@ -21,7 +21,8 @@ import { site } from "../site.config";
 import { LOCALE, eventsBase, newsBase, prefix } from "../i18n";
 import { allSections, NAV, promotedAll, linkFor, ADULT } from "../sections";
 import { guides } from "../guides";
-import PromoHero from "../components/PromoHero.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
+import Share from "@dst/ui/Share.astro";
 
 interface Props { lang: Lang; section: SectionT }
 const { lang, section } = Astro.props;
@@ -81,6 +82,9 @@ const blocks = promotedAll[lang]
   <PromoHero lang={lang}>
     <h1>{section.h1}</h1>
     <p class="lede">{section.lede}</p>
+    {/* A subject page is the one a reader sends on: "where do we go for
+        Halloween" is answered by the list, not by one event. */}
+    <p class="section-share"><Share title={section.h1} labels={labels[lang]} /></p>
   </PromoHero>
   <section class="container">
     <SectionFeed
@@ -118,6 +122,7 @@ const blocks = promotedAll[lang]
 </Layout>
 
 <style>
+  .section-share { margin: var(--space-3) 0 0; }
   .section-ways { margin-top: var(--space-5); }
   .section-promoted { margin-top: var(--space-5); }
   .section-guide { margin-top: var(--space-5); }

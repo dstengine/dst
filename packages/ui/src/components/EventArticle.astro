@@ -23,6 +23,7 @@ import ImageNote from "./ImageNote.astro";
 import CountdownScript from "./CountdownScript.astro";
 import Variants from "./Variants.astro";
 import Glance from "./Glance.astro";
+import Share from "./Share.astro";
 import { ICONS } from "../icons.ts";
 import Icon from "./Icon.astro";
 import { mapEmbedUrl, directionsUrl } from "../maps.ts";
@@ -554,28 +555,8 @@ const relatedItems = (item.related ?? []).map((card) => ({
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={ICONS.events} /></svg>
       {L.addToCalendar}
     </a>
-    {share && (
-      <button type="button" class="button button-secondary share-button" data-share="button" title={L.shareTitle(item.title)}>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={ICONS.share} /></svg>
-        <Variants exp="share-label">
-          <Fragment slot="share">{L.share}</Fragment>
-          <Fragment slot="invite">{L.inviteFriends}</Fragment>
-        </Variants>
-      </button>
-    )}
+    {share && <Share title={item.title} labels={labelOverrides} />}
   </p>
-  {share && (
-    <>
-      {/* The same act within a thumb's reach on a phone, where the actions
-          row has scrolled away by the time a reader decides. No words: the
-          mark is the one every phone draws for it, and the words are
-          tested on the button above. */}
-      <button type="button" class="share-fab" data-share="fab" aria-label={L.share} title={L.shareTitle(item.title)}>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={ICONS.share} /></svg>
-      </button>
-      <span class="share-toast" role="status" data-share-toast hidden>{L.linkCopied}</span>
-    </>
-  )}
 
   {item.image && (
     <figure class:list={["event-article-figure", { "figure-diagram": item.imageKind && item.imageKind !== "photo" }]}>
@@ -782,46 +763,6 @@ const relatedItems = (item.related ?? []).map((card) => ({
   .event-article-organizer { color: var(--ink-faint); }
 
   .event-article-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-3); }
-  /* A <button> in a row of <a>s: it takes the row's rule and loses the
-     browser's own font and cursor. */
-  .share-button { font: inherit; cursor: pointer; }
-  /* The floating mark: a phone only, bottom right, above the page and
-     under nothing. 56px is the size a thumb lands on without aiming. */
-  .share-fab { display: none; }
-  @media (max-width: 700px) {
-    .share-fab {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      position: fixed;
-      right: var(--space-3);
-      bottom: var(--space-3);
-      width: 56px;
-      height: 56px;
-      border: 0;
-      border-radius: 50%;
-      background: var(--accent);
-      color: white;
-      box-shadow: 0 4px 16px rgb(0 0 0 / 0.3);
-      cursor: pointer;
-      z-index: 20;
-    }
-    .share-fab svg { width: 24px; height: 24px; }
-  }
-  .share-toast {
-    position: fixed;
-    left: 50%;
-    bottom: calc(var(--space-3) + 64px);
-    transform: translateX(-50%);
-    padding: 0.5em 1em;
-    border-radius: 999px;
-    background: var(--ink);
-    color: var(--bg);
-    font-size: var(--step--1);
-    white-space: nowrap;
-    z-index: 21;
-  }
-  .share-toast[hidden] { display: none; }
   /* The buttons take the shared .button rule; this only puts the mark beside
      the label without disturbing its padding or height. How the two sit on a
      phone is the next rule. */
@@ -996,32 +937,3 @@ const relatedItems = (item.related ?? []).map((card) => ({
   .article-update dd { margin: 0.25rem 0 0; max-width: 46rem; }
 </style>
 
-<script>
-  import { track } from "../track";
-  // One handler for the button and the floating mark. The click is counted
-  // before the share sheet opens: the test measures the press, and a sheet
-  // dismissed is still a press. The page's own address, without the ?exp=
-  // a forced variant was looked at with.
-  const toast = document.querySelector<HTMLElement>("[data-share-toast]");
-  let timer: ReturnType<typeof setTimeout> | undefined;
-  for (const el of document.querySelectorAll<HTMLElement>("[data-share]")) {
-    el.addEventListener("click", async () => {
-      const url = location.origin + location.pathname;
-      const kind = el.dataset.share;
-      const text = el.innerText.trim();
-      const nav = navigator as Navigator & { share?: (d: { title: string; url: string }) => Promise<void> };
-      track("share_click", { cta_kind: kind, cta_text: text, method: nav.share ? "sheet" : "copy" });
-      try {
-        if (nav.share) await nav.share({ title: document.title, url });
-        else {
-          await navigator.clipboard.writeText(url);
-          if (toast) {
-            toast.hidden = false;
-            clearTimeout(timer);
-            timer = setTimeout(() => { toast.hidden = true; }, 2000);
-          }
-        }
-      } catch { /* a sheet dismissed, a clipboard refused: nothing to do */ }
-    });
-  }
-</script>

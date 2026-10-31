@@ -105,14 +105,15 @@ export const EXPERIMENTS: Experiment[] = [
     id: "share-label",
     unit: "visitor",
     hosts: ["tick.am"],
-    paths: "^/(?:am/)?events/[^/]+/$",
+    // Event pages and the subject pages that carry the control (Section.astro).
+    paths: "^/(?:am/)?(?:events/[^/]+/|(?:classical|concerts|festivals|halloween|new-year|opera-ballet|parties|tech|theatre|wine|yerevan-city-day)/)$",
     variants: ["share", "invite"],
     start: "2026-10-31",
     hypothesis:
       "A share button is pressed more often when it names the people than the act: " +
       "\"Share\" (control) says what the button does, \"Invite friends\" says who it is for and why. " +
       "Expect invite > share, by half or more — anything less is not worth the longer label.",
-    metric: "share_click with cta_kind=button ÷ experience_impression, per variant, on event pages",
+    metric: "share_click with cta_kind=button ÷ experience_impression, per variant, on event and subject pages",
     goal: { event: "share_click", param: "cta_kind", match: "^button$" },
     lift: 0.5,
     sample: 2515,

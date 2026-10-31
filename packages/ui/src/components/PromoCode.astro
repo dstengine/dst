@@ -1,0 +1,82 @@
+---
+// The promo-code card beside a page's intro: the site's own name, said at
+// the door. It is drawn like a feed card — the same surface, border and
+// mono eyebrow — because it sits in the row above the cards and should
+// read as one of the set rather than an advert dropped in. It is not a
+// link: nothing to click, nothing to buy; the reader says the code at the
+// door and the venue hears where they came from. The honest line about
+// guarantees is part of the copy, not small print.
+//
+// Site-wide across the network since 31 Oct 2026: every intro leaves the
+// right half of its row empty. The code is the host, from `Astro.site`.
+interface Props {
+  /** The language of the words around the code. English by default. */
+  lang?: "en" | "es" | "de" | "hy";
+  /** The code itself. Defaults to the site's own hostname. */
+  code?: string;
+}
+const { lang = "en", code = Astro.site ? new URL(Astro.site).hostname : "" } = Astro.props;
+
+const T = {
+  en: {
+    eyebrow: "Promo code",
+    text: `No guarantees: this is a marketing experiment. Just say it at the door, with all respect from ${code}.`,
+  },
+  es: {
+    eyebrow: "Código promocional",
+    text: `Sin garantías: es un experimento de marketing. Solo dilo en la entrada, con todo el respeto de ${code}.`,
+  },
+  de: {
+    eyebrow: "Promo-Code",
+    text: `Ohne Gewähr: ein Marketing-Experiment. Einfach am Eingang nennen, mit besten Grüßen von ${code}.`,
+  },
+  hy: {
+    eyebrow: "Պրոմոկոդ",
+    text: `Երաշխիքներ չկան՝ սա մարքեթինգային փորձ է։ Պարզապես ասեք այն մուտքի մոտ՝ ${code}-ի ամենայն հարգանքով։`,
+  },
+}[lang];
+---
+{code && (
+  <aside class="promo" aria-label={T.eyebrow}>
+    <span class="promo-eyebrow">{T.eyebrow}</span>
+    <span class="promo-code">{code}</span>
+    <p class="promo-text">{T.text}</p>
+  </aside>
+)}
+
+<style>
+  .promo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    padding: var(--space-3);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    max-width: 24rem;
+  }
+  .promo-eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  /* The code is the one thing to remember, so it is set like the day on a
+     date plate: mono, large, tight. Upper case is a style here; the text
+     under it spells the name the way it is written. */
+  .promo-code {
+    font-family: var(--font-mono);
+    font-size: var(--step-3);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+  }
+  .promo-text {
+    margin: 0;
+    font-size: var(--step--1);
+    color: var(--ink-muted);
+  }
+</style>

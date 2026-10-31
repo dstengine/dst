@@ -6,6 +6,7 @@ import { alternates, prefix } from "../i18n";
 import { topFor } from "../top";
 import { portal, type Lang } from "../content";
 import { NAV as NAVS } from "./nav";
+import PumpkinLink from "../components/PumpkinLink.astro";
 import "../styles/theme.css";
 
 interface Props {
@@ -25,8 +26,11 @@ interface Props {
 }
 const { lang, title, description, jsonLd, image, noindex, prose, crumbLabels, crumbCurrent } = Astro.props;
 const site = SITES[lang];
+// The Halloween hub is the one page that does not point at itself.
+const onHalloween = /\/halloween\/$/.test(Astro.url.pathname);
 const p = prefix(lang);
 const hots = promotedAll[lang];
+const pumpkin = { href: `${p}halloween/`, label: lang === "hy" ? "Հելոուին Երևանում" : "Halloween in Yerevan" };
 
 const NAV = NAVS[lang].filter((l) => cityDayAhead[lang] || !l.href.endsWith("yerevan-city-day/"));
 
@@ -58,4 +62,5 @@ const nav = [
   alternates={alternates(Astro.url.pathname)}
 >
   <slot />
+  {!onHalloween && <PumpkinLink {...pumpkin} />}
 </BaseLayout>

@@ -1,0 +1,59 @@
+---
+// The way to the Halloween hub from every other page of the site while the
+// night is near: a jack-o'-lantern fixed to the bottom left, the one sign
+// nobody needs a caption for. It shows itself only inside its window —
+// the site is built once and read for days, so the page carries the dates
+// and the browser does the comparison — and never on the hub itself, where
+// it would point at the page the reader is on. Bottom left, because the
+// share mark owns the bottom right on a phone (Share.astro).
+//
+// The window is the two days the city keeps Halloween: the 31st and the
+// 1st, Yerevan time; parties run past midnight and the morning after is
+// still the morning after.
+import { ICONS } from "@dst/ui/icons";
+
+interface Props {
+  /** The hub, in the page's language. */
+  href: string;
+  /** Its name, for the accessible label and the tooltip. */
+  label: string;
+}
+const { href, label } = Astro.props;
+const FROM = "2026-10-31T00:00:00+04:00";
+const UNTIL = "2026-11-02T00:00:00+04:00";
+---
+<a class="pumpkin-link button" href={href} aria-label={label} title={label} data-pumpkin data-from={FROM} data-until={UNTIL} hidden>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={ICONS.pumpkin} /></svg>
+</a>
+<script is:inline>
+  // Before paint, so the mark never appears and then goes. Inline on
+  // purpose: a bundled script runs after first paint.
+  (function () {
+    var a = document.querySelector("[data-pumpkin]");
+    if (!a) return;
+    var now = Date.now();
+    if (now >= Date.parse(a.dataset.from) && now < Date.parse(a.dataset.until)) a.hidden = false;
+  })();
+</script>
+
+<style>
+  .pumpkin-link {
+    position: fixed;
+    left: var(--space-3);
+    bottom: var(--space-3);
+    z-index: 20;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    border-radius: 50%;
+    background: #e8711a;
+    color: #1a0d05;
+    box-shadow: 0 4px 16px rgb(0 0 0 / 0.3);
+  }
+  .pumpkin-link[hidden] { display: none; }
+  .pumpkin-link svg { width: 28px; height: 28px; }
+  .pumpkin-link:hover { background: #f5862e; }
+</style>

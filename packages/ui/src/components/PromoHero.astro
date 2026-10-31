@@ -1,25 +1,25 @@
 ---
-// A page's intro row with the promo card beside it (../promo.ts). The
+// A page's intro row with the promo card beside it (PromoCode.astro). The
 // intro — breadcrumbs, h1, lede, a search box — keeps the left edge in the
 // slot; the card takes the room to its right that the 34rem lede leaves
-// empty, level with the top of the intro: a venue page keeps its fact table
-// in the same row, and a card aligned to the bottom read as part of that
-// table. On a phone it follows the intro. With no code to show, the row is the plain hero it
-// was before.
+// empty, level with the top of the intro: a venue page keeps its fact
+// table in the same row, and a card aligned to the bottom read as part of
+// that table. On a phone it follows the intro. Every `container hero`
+// section on the network goes through this since 31 Oct 2026; without a
+// code to show (no `Astro.site`), the row is the plain hero it was.
 import PromoCode from "./PromoCode.astro";
-import { promoFor } from "../promo";
-import type { Lang } from "../content";
 
-interface Props { lang: Lang }
-const { lang } = Astro.props;
-const today = new Date().toISOString().slice(0, 10);
-const promo = promoFor(today);
+interface Props {
+  lang?: "en" | "es" | "de" | "hy";
+}
+const { lang = "en" } = Astro.props;
+const code = Astro.site ? new URL(Astro.site).hostname : "";
 ---
-<section class:list={["container", "hero", { "hero-promo": promo }]}>
-  {promo ? (
+<section class:list={["container", "hero", { "hero-promo": code }]}>
+  {code ? (
     <>
       <div><slot /></div>
-      <PromoCode code={promo.code} lang={lang} />
+      <PromoCode lang={lang} code={code} />
     </>
   ) : <slot />}
 </section>
