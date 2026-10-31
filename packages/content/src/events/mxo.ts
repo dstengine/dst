@@ -1351,10 +1351,10 @@ export const items: EventItem[] = [
   {
     slug: "animas-que-si-amanezca-guadalajara-2026",
     createdAt: "2026-10-31T12:00:00+04:00",
-    updatedAt: "2026-10-31T12:00:00+04:00",
+    updatedAt: "2026-10-31T13:34:00+04:00",
     site: "mxo",
     image: "/covers/animas-que-si-amanezca-guadalajara-2026.jpg",
-    imageAlt: "a festival stage cut from paper under strings of papel picado, marigolds in orange and sugar skulls in white along the front, a thin crescent moon and candle flames in the night sky, flat cut-paper shapes",
+    imageAlt: "Un escenario de papel recortado sobre fondo verde oscuro, con una guirnalda de papel picado y tres calaveras de azúcar arriba, cuatro velas encendidas dentro del marco, cempasúchil naranja y margaritas blancas al frente y una luna creciente",
     imageKind: "generated",
     imageWidth: 1024,
     imageHeight: 1024,

@@ -2393,10 +2393,10 @@ export const items: EventItem[] = [
   {
     slug: "secret-ceremony-season-of-the-witch-chelsea-physic-garden-london-2026",
     createdAt: "2026-10-31T12:30:00+04:00",
-    updatedAt: "2026-10-31T12:30:00+04:00",
+    updatedAt: "2026-10-31T13:34:00+04:00",
     site: "ldn",
     image: "/covers/secret-ceremony-season-of-the-witch-chelsea-physic-garden-london-2026.jpg",
-    imageAlt: "Paper-cut walled garden at dusk under a crescent moon, bundles of dried herbs tied with string, a single rose, a steaming teacup and a small film reel among the leaves",
+    imageAlt: "Paper-cut walled garden at dusk, a crescent moon and a setting sun over dark trees, bundles of dried herbs tied with string on the wall, a single red rose and a steaming teapot among the leaves",
     imageKind: "generated",
     imageWidth: 1024,
     imageHeight: 1024,

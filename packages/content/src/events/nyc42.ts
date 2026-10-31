@@ -3429,10 +3429,10 @@ export const items: EventItem[] = [
   {
     slug: "dia-de-muertos-st-marks-church-new-york-2026",
     createdAt: "2026-10-31",
-    updatedAt: "2026-10-31",
+    updatedAt: "2026-10-31T13:34:00+04:00",
     site: "nyc42",
     image: "/covers/dia-de-muertos-st-marks-church-new-york-2026.jpg",
-    imageAlt: "A cut-paper churchyard with a tiered ofrenda of marigolds, candles and sugar skulls under strings of papel picado, bare autumn trees behind",
+    imageAlt: "A cut-paper chapel at night between bare trees, strings of orange and yellow sugar-skull cut-outs hung across the sky, and in front a round ofrenda heaped with marigolds and ringed with lit candles",
     imageKind: "generated",
     imageWidth: 1024,
     imageHeight: 1024,
@@ -3462,7 +3462,7 @@ export const items: EventItem[] = [
       verifiedOn: "2026-10-31",
     },
     body: [
-      "A Day of the Dead that has been in the same East Village churchyard for half a century. <strong>Mano a Mano: Mexican Culture Without Borders</strong> has held its <strong>Día de Muertos</strong> festival on the grounds of <strong>St. Mark's Church in-the-Bowery</strong> since 1974, and the 2026 edition fills Halloween Saturday, <strong>October 31</strong>, from <strong>noon to 5pm</strong>, then carries on into Sunday, November 1.",
+      "A Day of the Dead that has made an East Village churchyard its home for two decades. <strong>Mano a Mano: Mexican Culture Without Borders</strong>, founded in 2000, held its first <strong>Día de Muertos</strong> celebration in Madison Square Park in 2004 and has held it on the grounds of <strong>St. Mark's Church in-the-Bowery</strong> since 2005, and the 2026 edition fills Halloween Saturday, <strong>October 31</strong>, from <strong>noon to 5pm</strong>, then carries on into Sunday, November 1.",
       "## What happens",
       "The <strong>community ofrenda</strong> is open all afternoon, from noon to 5pm: bring copies of photographs, notes or letters for the people you want to remember (copies, not originals). Alongside it a <strong>marketplace</strong> sells Mexican folk art and Mexican food. <strong>Art-making workshops</strong> run from 2pm to 3pm, and at <strong>3pm</strong> there is a <strong>concert</strong> with Guadalupe Peraza, Cheo Pardo and Stefan Paolini, including the Peraza–Paolini duet and a preview of <em>Mexamorphosis</em>.",
       "## When and where",

@@ -1030,10 +1030,10 @@ export const items: EventItem[] = [
   {
     slug: "haunted-timesylvania-times-square-center-dubai-2026",
     createdAt: "2026-10-31T00:30:00+04:00",
-    updatedAt: "2026-10-31T00:30:00+04:00",
+    updatedAt: "2026-10-31T13:34:00+04:00",
     site: "dst",
     image: "/covers/haunted-timesylvania-times-square-center-dubai-2026.jpg",
-    imageAlt: "a paper castle with two towers under a full cut-paper moon, pumpkins and candy in a trail across the foreground, bats cut from black paper, flat shapes on a deep indigo background",
+    imageAlt: "a white paper castle with four spired towers on a hill under a full pale-yellow moon, a trail of orange pumpkins running down the slope, black paper bats, flat shapes on a deep blue background",
     imageKind: "generated",
     imageWidth: 1024,
     imageHeight: 1024,
@@ -1066,11 +1066,11 @@ export const items: EventItem[] = [
     body: [
       "Times Square Center, the community mall on Sheikh Zayed Road in Al Quoz, turns itself into <strong>Haunted Timesylvania</strong> for the Halloween weekend. The mall's own event page gives the run as <strong>October 29 to November 1, 2026</strong>, from <strong>12pm to 7pm</strong> each day, so there is Halloween night itself on Saturday and a full Sunday after it. Everything on the programme is <strong>free</strong>.",
       "## What happens",
-      "Four things are promised on the official page: <strong>trick-or-treating</strong> around the mall, <strong>creepy crafts</strong>, spooky entertainment, and a <strong>stage show with Magic Phil and Friends</strong>. On <strong>Sunday, November 1</strong> there is a <strong>kids' Halloween costume competition</strong> with fun prize bundles to win; the mall's page does not give its time. Gulf News, in its roundup of free Halloween events in Dubai, puts the competition at <strong>5pm</strong>, the Magic Phil show at <strong>6pm daily</strong>, face painting from noon to 6pm, and a <strong>Spooky Sweet Trail</strong> at participating stores on Saturday, October 31, from 2pm to 4pm, with the main stage at <strong>Picnic Square on the first floor</strong>. Those timings are the newspaper's, not the mall's: the official page links a <strong>Halloween Activities</strong> PDF with the detailed schedule, which is the thing to check before setting out.",
+      "Four things are promised on the official page: <strong>trick-or-treating</strong> around the mall, <strong>creepy crafts</strong>, spooky entertainment, and a <strong>stage show with Magic Phil and Friends</strong>. The mall's <strong>Halloween Activities</strong> poster, linked from the event page, gives the timetable. <strong>Face painting</strong> runs from <strong>12pm to 6pm</strong>, there are <strong>stage shows at 4pm and 5pm</strong>, and the <strong>Magic Lab with Magic Phil</strong> is on at <strong>6pm daily</strong>. On <strong>Saturday, October 31</strong> the <strong>Spooky Sweet Trail</strong> runs from <strong>2pm to 4pm</strong> at participating stores. On <strong>Sunday, November 1</strong> the <strong>kids' Halloween costume competition</strong> starts at <strong>5pm</strong> at <strong>Picnic Square on the first floor</strong>, and the top prize is a <strong>Nintendo Switch 2</strong>.",
       "## When and where",
-      "<strong>Times Square Center</strong>, Sheikh Zayed Road, Al Quoz. The Halloween hours are <strong>12pm to 7pm</strong>; the mall itself is open from 10am to 10pm. One caution on the first day: the mall's event page says October 29, while its homepage and social posts say October 30. For tonight and tomorrow it makes no difference: the event is on until <strong>November 1</strong> either way.",
-      "## Free, no ticket",
-      "The official page says <strong>Enjoy FREE!</strong> of the trick-or-treating, the crafts and the stage shows, and mentions no registration and no wristband. Turn up in costume and go.",
+      "<strong>Times Square Center</strong>, Sheikh Zayed Road, Al Quoz. The Halloween hours are <strong>12pm to 7pm</strong>; the mall itself is open from 10am to 10pm. One caution on the first day: the mall's event page says October 29, while its activities poster, homepage and social posts say October 30. The last day is <strong>November 1</strong> on every one of them.",
+      "## Free, with registration for goodie bags",
+      "The official page says <strong>Enjoy FREE!</strong> of the trick-or-treating, the crafts and the stage shows, and nothing needs a ticket. The poster adds one thing to do in advance: <strong>goodie bags go to the first 100 children who register</strong> each day, and are claimed on the day. The registration link is on the poster.",
       "## Who it is for",
       "This is a children's and family Halloween rather than a party: afternoon hours, crafts, sweets and a costume competition for kids. The mall states no minimum age. Adults who want the late version of the night are better served by <a href=\"/events/haunted-town-night-img-worlds-2026/\" title=\"Haunted Town Night 2026 at IMG Worlds of Adventure\">Haunted Town Night at IMG Worlds</a>, which starts at 8pm on Saturday.",
       "## Getting there",
@@ -1085,11 +1085,11 @@ export const items: EventItem[] = [
       },
       {
         q: "Is Haunted Timesylvania free?",
-        a: "Yes. The mall's event page says the trick-or-treating, crafts and stage shows are free, and mentions no registration.",
+        a: "Yes. The trick-or-treating, crafts and stage shows are free and need no ticket. Registering on the mall's activities poster gets a goodie bag for the first 100 children each day.",
       },
       {
         q: "When is the costume competition?",
-        a: "On Sunday, November 1, 2026. The mall's page gives no time; Gulf News reports it at 5pm on the main stage at Picnic Square, first floor.",
+        a: "On Sunday, November 1, 2026, at 5pm at Picnic Square on the first floor, according to the mall's activities poster. The top prize is a Nintendo Switch 2.",
       },
     ],
     related: [
@@ -1113,6 +1113,6 @@ export const items: EventItem[] = [
       },
     ],
     expertise:
-      "For a family on Halloween weekend this is the easy choice: free, in the afternoon, indoors, and it does not end tonight, so a Sunday visit built around the costume competition is as good as a Saturday one. The one thing the mall's own page does not give is a timetable; it hands that to a PDF, and the newspaper's times are the newspaper's. Open the PDF before you drive, and aim for the Picnic Square stage on the first floor.",
+      "For a family on Halloween weekend this is the easy choice: free, in the afternoon and indoors. It runs through Sunday, so a visit built around the 5pm costume competition is as good as a Saturday one. Register for the goodie bags before you drive, and aim for the Picnic Square stage on the first floor.",
   },
 ];

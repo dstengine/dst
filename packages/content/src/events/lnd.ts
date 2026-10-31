@@ -2620,10 +2620,10 @@ export const items: EventItem[] = [
   {
     slug: "organoke-halloween-spooktacular-london-2026",
     createdAt: "2026-10-31",
-    updatedAt: "2026-10-31",
+    updatedAt: "2026-10-31T13:34:00+04:00",
     site: "lnd",
     image: "/covers/organoke-halloween-spooktacular-london-2026.jpg",
-    imageAlt: "a church interior cut from paper: tall organ pipes in cream and gold rising to a pointed arch, three vermilion pumpkins on the steps below, a few small bats in the violet dark above",
+    imageAlt: "a church interior cut from paper: tall pale-gold organ pipes rising to a pointed arch and a cross, five orange pumpkins on the blue steps below, two small orange bats in the navy dark above",
     imageKind: "generated",
     imageWidth: 1024,
     imageHeight: 1024,

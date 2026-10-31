@@ -1996,11 +1996,11 @@ export const items: EventItem[] = [
   {
     slug: "festival-cacao-para-todos-anahuacalli-ciudad-de-mexico-2026",
     createdAt: "2026-10-31",
-    updatedAt: "2026-10-31",
+    updatedAt: "2026-10-31T13:34:00+04:00",
     site: "cmx",
     image: "/covers/festival-cacao-para-todos-anahuacalli-ciudad-de-mexico-2026.jpg",
     imageAlt:
-      "Una pirámide escalonada de piedra volcánica oscura al fondo, y al frente mazorcas de cacao abiertas, jícaras de chocolate espumoso, flores de cempasúchil y panes de muerto, todo en papel recortado sobre fondo crema",
+      "Una pirámide escalonada color granate rematada por una torre almenada, entre palmeras, y al frente tazas y cuencos azules con trozos blancos, una mazorca de cacao abierta, cestas, flores de cempasúchil, panes dorados y galletas en forma de hueso, sobre fondo crema",
     imageKind: "generated",
     imageWidth: 1024,
     imageHeight: 1024,
@@ -2024,10 +2024,11 @@ export const items: EventItem[] = [
     },
     organizer: "Cacao Para Todos (Artefacto México y Nawal Cacao), con el Museo Anahuacalli",
     category: "Festival",
-    tickets: { priceFrom: 0, priceTo: 130, currency: "MXN" },
+    tickets: { priceFrom: 0, currency: "MXN" },
     ticket: {
       url: "https://boletos.museoanahuacalli.org.mx/tickets/es/museo-anahuacalli-cdmx",
       label: "Boletos del museo",
+      sells: false,
     },
     source: {
       name: "Museo Anahuacalli",
