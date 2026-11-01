@@ -37248,6 +37248,38 @@
         ]
       ]
     },
+    "/covers/chaplin-the-kid-live-orchestra-khachaturian-hall-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/chaplin-the-kid-live-orchestra-khachaturian-hall-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/chaplin-the-kid-live-orchestra-khachaturian-hall-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/chaplin-the-kid-live-orchestra-khachaturian-hall-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/chaplin-the-kid-live-orchestra-khachaturian-hall-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/chaplin-the-kid-live-orchestra-khachaturian-hall-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/chaplin-the-kid-live-orchestra-khachaturian-hall-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/ciao-ghaplanyan-theatre-yerevan-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -38517,6 +38549,38 @@
         [
           1024,
           "/covers/hovik-arshakyan-boing-orchestra-tashir-arena-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/i-love-christmas-belinda-davids-yerevan-opera-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/i-love-christmas-belinda-davids-yerevan-opera-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/i-love-christmas-belinda-davids-yerevan-opera-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/i-love-christmas-belinda-davids-yerevan-opera-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/i-love-christmas-belinda-davids-yerevan-opera-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/i-love-christmas-belinda-davids-yerevan-opera-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/i-love-christmas-belinda-davids-yerevan-opera-2027-1024.webp"
         ]
       ]
     },
@@ -40741,6 +40805,38 @@
         [
           1536,
           "/covers/swan-lake-yerevan-opera-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/tagharan-ensemble-45-jubilee-concert-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/tagharan-ensemble-45-jubilee-concert-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/tagharan-ensemble-45-jubilee-concert-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/tagharan-ensemble-45-jubilee-concert-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/tagharan-ensemble-45-jubilee-concert-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/tagharan-ensemble-45-jubilee-concert-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/tagharan-ensemble-45-jubilee-concert-yerevan-2026-1024.webp"
         ]
       ]
     },
