@@ -518,7 +518,7 @@ export const items: EventItem[] = [
   {
     slug: "vienna-halloween-run-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-10-25T22:48:00+04:00",
+    updatedAt: "2026-11-01T09:15:00+01:00",
     site: "vien",
     image: "/covers/vienna-halloween-run-2026.jpg",
     imageAlt: "Eine helle Laufbahn, die in die Bildmitte führt, gesäumt von Bäumen mit rotem Herbstlaub",
@@ -609,6 +609,12 @@ export const items: EventItem[] = [
         title: "Perchtenlauf im Prater 2026",
         text: "Nach dem Lauf in der Hauptallee kommt der nächste Abend im Dunkeln: über 220 Perchten am Riesenradplatz, Eintritt frei.",
       },
+      {
+        href: "/veranstaltungen/perchtenlauf-boehmischer-prater-wien-2026/",
+        eyebrow: "13. Dezember, Böhmischer Prater",
+        title: "Perchtenlauf im Böhmischen Prater 2026",
+        text: "Noch ein Abend im Dunkeln, diesmal im Advent: Perchten und Feuershow am Laaer Wald, 17 bis 18:30 Uhr, Eintritt frei.",
+      },
     ],
     expertise:
       "Zwei Dinge unterscheiden diesen Abend von einem gewöhnlichen Volkslauf. Erstens die Uhrzeit: Ende Oktober ist es um halb sieben bereits dunkel, und die Hauptallee ist keine hell beleuchtete Straße — wer die 5 Kilometer läuft, läuft den größten Teil davon im Halbdunkel. Zweitens das Kostüm, das hier nicht Zierde, sondern Ausrüstung ist: Was beim Fotografieren gut aussieht, wird nach zwei Kilometern schwer und warm. Die praktikable Lösung sind Maske und Umhang, die man im Ziel wieder anzieht, nicht das vollständige Ganzkörperkostüm.",
@@ -617,7 +623,7 @@ export const items: EventItem[] = [
   {
     slug: "kuerbisfest-am-himmel-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-10-25T18:20:00+01:00",
+    updatedAt: "2026-11-01T09:15:00+01:00",
     site: "vien",
     image: "/covers/kuerbisfest-am-himmel-2026.jpg",
     imageAlt: "Ein breiter Haufen runder Papierscheiben in Rot, Grün, Ocker und Creme, in vielen verschiedenen Größen",
@@ -710,6 +716,12 @@ export const items: EventItem[] = [
         eyebrow: "29. November, Prater",
         title: "Perchtenlauf im Prater 2026",
         text: "Über 220 Perchten aus 17 Vereinen am Wintermarkt am Riesenradplatz in Wien, ab 17 Uhr, Eintritt frei.",
+      },
+      {
+        href: "/veranstaltungen/perchtenlauf-boehmischer-prater-wien-2026/",
+        eyebrow: "13. Dezember, Favoriten",
+        title: "Perchtenlauf im Böhmischen Prater 2026",
+        text: "Kinderfreundlicher Perchtenlauf mit Feuershow im Böhmischen Prater am Laaer Wald, 17 bis 18:30 Uhr, Eintritt frei.",
       },
     ],
     expertise:
@@ -2282,7 +2294,7 @@ export const items: EventItem[] = [
   {
     slug: "perchtenlauf-prater-wien-2026",
     createdAt: "2026-10-25T18:20:00+01:00",
-    updatedAt: "2026-10-25T18:20:00+01:00",
+    updatedAt: "2026-11-01T09:15:00+01:00",
     site: "vien",
     title: "Perchtenlauf im Prater 2026",
     cardTitle: "Perchtenlauf im Prater",
@@ -2363,9 +2375,101 @@ export const items: EventItem[] = [
         title: "Halloween im Wurstelprater 2026",
         text: "Das Herbstprogramm am selben Platz, Ende Oktober.",
       },
+      {
+        href: "/veranstaltungen/perchtenlauf-boehmischer-prater-wien-2026/",
+        eyebrow: "13. Dezember, Laaer Wald",
+        title: "Perchtenlauf im Böhmischen Prater 2026",
+        text: "Der zweite Prater, der zweite Lauf: zwei Wochen später, kinderfreundlich und mit Feuershow, 17 bis 18:30 Uhr.",
+      },
     ],
     expertise:
       "Ende November ist es um 17 Uhr schon dunkel, und genau darauf ist der Lauf gebaut: Fell, Hörner und Glocken wirken im Licht der Buden ganz anders als bei Tag. Für kleine Kinder kann das zu viel sein. Hilfreich ist, vorher zu erklären, dass unter jeder Maske ein Mensch aus einem Verein steckt, und sich einen Platz am Zaun mit einem Erwachsenen dahinter zu suchen. Wer danach bleibt, hat den ganzen Abend am Wintermarkt vor sich, der sonntags bis 22 Uhr offen hat.",
+  },
+  {
+    slug: "perchtenlauf-boehmischer-prater-wien-2026",
+    createdAt: "2026-11-01T09:15:00+01:00",
+    updatedAt: "2026-11-01T09:15:00+01:00",
+    site: "vien",
+    title: "Perchtenlauf im Böhmischen Prater 2026",
+    cardTitle: "Perchtenlauf im Böhmischen Prater",
+    titleSeo: "Perchtenlauf Böhmischer Prater Wien 2026: Dezember",
+    summary:
+      "Der Perchtenlauf im Böhmischen Prater in Wien ist am Sonntag, 13. Dezember 2026, von 17 bis 18:30 Uhr: ein kinderfreundlicher Lauf mit Feuershow am Tivoli, Laaer Wald 30C, im 10. Bezirk. Der Eintritt ist frei, die Perchten sammeln Spenden für einen guten Zweck.",
+    start: "2026-12-13",
+    startTime: "17:00",
+    endTime: "18:30",
+    utcOffset: "+01:00",
+    venue: "Böhmischer Prater, Tivoli",
+    city: "Wien",
+    geo: { name: "Böhmischer Prater, Laaer Wald 30C", lat: 48.1611, lng: 16.3931 },
+    organizer: "Böhmischer Prater",
+    category: "Brauchtum",
+    tickets: { priceFrom: 0, currency: "EUR" },
+    ticket: {
+      url: "https://www.boehmischer-prater.com/details-registrierung/winterzauber-perchtenlauf-3",
+      label: "Böhmischer Prater",
+      sells: false,
+    },
+    source: {
+      name: "Böhmischer Prater",
+      url: "https://www.boehmischer-prater.com/details-registrierung/winterzauber-perchtenlauf-3",
+      verifiedOn: "2026-11-01",
+    },
+    body: [
+      "Wien hat zwei Prater, und beide haben im Advent ihren Perchtenlauf. Der im <strong>Böhmischen Prater</strong> am Laaer Wald ist am <strong>Sonntag, 13. Dezember 2026, von 17 bis 18:30 Uhr</strong>, beim <strong>Tivoli, Laaer Wald 30C</strong>, im 10. Bezirk. Der Veranstalter nennt ihn ausdrücklich <strong>kinderfreundlich</strong>, eine <strong>Feuershow</strong> gehört dazu, und der Eintritt ist <strong>frei</strong>.",
+      "## Für einen guten Zweck",
+      "Die Perchten sammeln an diesem Abend <strong>freiwillige Spenden für die Kinder der Waldschule Wiener Neustadt</strong>. Wer etwas geben möchte, gibt es direkt bei den Perchten.",
+      "## Früh kommen",
+      "Der Andrang war laut Veranstalter in den vergangenen Jahren sehr groß. Wer einen guten Platz will, sollte deutlich vor 17 Uhr da sein. Der Böhmische Prater bittet außerdem darum, <strong>kleine Kinder nach vorne zu lassen</strong>, damit auch sie die Perchten und die Feuershow sehen.",
+      "## Der Winterzauber rundherum",
+      "Der Lauf ist Teil des <strong>Winterzaubers im Böhmischen Prater</strong>, der vom <strong>28. November bis 20. Dezember 2026</strong> dauert: weihnachtlich geschmückte Wege, geöffnete Fahrgeschäfte, Weihnachtsmarkt-Hütten und von Freitag bis Sonntag Musik im Tivoli. Am Tag davor, am 12. Dezember, kommen dort Anna und Elsa; der Nikolo ist am 6. Dezember zu Gast. Öffnungszeiten für die einzelnen Tage nennt der Veranstalter noch nicht.",
+      "## Der andere Perchtenlauf",
+      "Zwei Wochen früher, am 29. November, laufen über 220 Perchten am Riesenradplatz: Der <a href=\"/veranstaltungen/perchtenlauf-prater-wien-2026/\" title=\"Perchtenlauf Prater Wien 2026: Riesenradplatz, November\">Perchtenlauf im Wurstelprater</a> ist der große Zug mit 17 Vereinen. Der Lauf am Laaer Wald ist auf Familien zugeschnitten und nach eineinhalb Stunden vorbei — wer mit Kindern zum ersten Mal Perchten sehen will, findet hier den überschaubareren Abend.",
+    ],
+    faq: [
+      {
+        q: "Wann ist der Perchtenlauf im Böhmischen Prater 2026?",
+        a: "Am <strong>Sonntag, 13. Dezember 2026, von 17 bis 18:30 Uhr</strong>, beim Tivoli im Böhmischen Prater.",
+      },
+      {
+        q: "Was kostet der Eintritt?",
+        a: "Nichts, der Eintritt ist <strong>frei</strong>. Karten gibt es keine; die Perchten sammeln freiwillige Spenden für die Kinder der Waldschule Wiener Neustadt.",
+      },
+      {
+        q: "Wo ist der Böhmische Prater?",
+        a: "Am Laaer Wald im 10. Bezirk, Favoriten. Die Adresse des Tivoli ist Laaer Wald 30C, 1100 Wien. Es ist nicht der Wurstelprater beim Riesenrad.",
+      },
+      {
+        q: "Ist der Perchtenlauf für Kinder geeignet?",
+        a: "Der Veranstalter kündigt ihn als kinderfreundlichen Perchtenlauf an und bittet, kleine Kinder nach vorne zu lassen. Mit Feuershow und Masken kann es für die Kleinsten trotzdem laut und unheimlich werden.",
+      },
+      {
+        q: "Wann sollte man da sein?",
+        a: "Früh. Der Andrang war in den letzten Jahren sehr groß, und der Veranstalter rät, rechtzeitig vor 17 Uhr zu kommen.",
+      },
+    ],
+    related: [
+      {
+        href: "/veranstaltungen/perchtenlauf-prater-wien-2026/",
+        eyebrow: "29. November, Riesenradplatz",
+        title: "Perchtenlauf im Prater 2026",
+        text: "Der große Lauf im Wurstelprater: über 220 Perchten aus 17 Vereinen, ab 17 Uhr, Eintritt frei.",
+      },
+      {
+        href: "/veranstaltungen/wiener-christkindlmarkt-2026/",
+        eyebrow: "13. November – 26. Dezember",
+        title: "Wiener Christkindlmarkt am Rathausplatz",
+        text: "Der große Markt vor dem Rathaus.",
+      },
+      {
+        href: "/veranstaltungen/wiener-silvesterpfad-2026/",
+        eyebrow: "Innenstadt und Prater",
+        title: "Wiener Silvesterpfad 2026",
+        text: "Silvester auf den Plätzen der Innenstadt und im Prater, Eintritt frei.",
+      },
+    ],
+    expertise:
+      "Der Böhmische Prater ist der kleine, alte Vergnügungspark am Laaer Berg, und der Lauf passt dazu: eineinhalb Stunden mit klarem Ende, also gut planbar mit Kindern, die um sieben ins Bett sollen. Leer ist es trotzdem nicht, der Veranstalter warnt selbst vor großem Andrang. Mitte Dezember ist es um 17 Uhr längst dunkel, das Feuer wirkt dann am stärksten — und am Waldrand wird es kalt. Warme Schuhe und eine Thermoskanne helfen mehr als jeder Platz in der ersten Reihe.",
   },
   {
     slug: "halloween-party-schiff-donau-wien-2026",
