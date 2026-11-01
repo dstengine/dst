@@ -65,7 +65,7 @@ export function sections(items: FeedItem[]): Section[] {
           headings: {
             events: "Wohin man zu Halloween geht",
             upcoming: "Termine 2026",
-            past: "Frühere Jahre",
+            past: "Schon vorbei",
             news: "Meldungen zu Halloween",
           },
         };
@@ -80,7 +80,7 @@ export function sections(items: FeedItem[]): Section[] {
           headings: {
             events: "Welche Märkte wann offen haben",
             upcoming: "Termine 2026",
-            past: "Frühere Jahre",
+            past: "Schon vorbei",
             news: "Meldungen zu den Weihnachtsmärkten",
           },
         };
@@ -95,7 +95,7 @@ export function sections(items: FeedItem[]): Section[] {
           headings: {
             events: "Wo man Silvester feiert",
             upcoming: "Termine",
-            past: "Frühere Jahre",
+            past: "Schon vorbei",
             news: "Meldungen zu Silvester",
           },
         };

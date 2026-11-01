@@ -49,7 +49,7 @@ export function sections(items: FeedItem[]): Section[] {
           headings: {
             events: "Where to see the New Year in",
             upcoming: "This year's dates",
-            past: "Previous years",
+            past: "Already gone",
             news: "New Year's Eve news",
           },
         };

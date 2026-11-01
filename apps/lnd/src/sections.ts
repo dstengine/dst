@@ -74,7 +74,7 @@ export function sections(items: FeedItem[]): Section[] {
           headings: {
             events: "Where to go for Halloween",
             upcoming: "2026 dates",
-            past: "Previous years",
+            past: "Already gone",
             news: "Halloween news",
           },
         };
@@ -91,7 +91,7 @@ export function sections(items: FeedItem[]): Section[] {
           headings: {
             events: "Where to watch the fireworks",
             upcoming: "2026 displays",
-            past: "Previous years",
+            past: "Already gone",
             news: "Fireworks news",
           },
         };
@@ -106,7 +106,7 @@ export function sections(items: FeedItem[]): Section[] {
           headings: {
             events: "Where to go for Christmas",
             upcoming: "2026 dates",
-            past: "Previous years",
+            past: "Already gone",
             news: "Christmas news",
           },
         };
@@ -121,7 +121,7 @@ export function sections(items: FeedItem[]): Section[] {
           headings: {
             events: "Where to see the New Year in",
             upcoming: "This year's dates",
-            past: "Previous years",
+            past: "Already gone",
             news: "New Year news",
           },
         };
