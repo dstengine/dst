@@ -117,9 +117,9 @@ export function sections(items: FeedItem[]): Section[] {
         return {
           title: "Navidad 2026 en México: dónde vivirla",
           description:
-            "Posadas, pastorelas, ferias y la Rosca de Reyes por todo México, del 16 de diciembre al 6 de enero, con la fecha como la publicó quien organiza.",
+            "Navidad por todo México: la Feria de la Esfera en Tlalpujahua desde octubre, Luztopía en Monterrey desde el 18 de noviembre y Navidalia en Guadalajara desde el 4 de diciembre, con la fecha como la publicó quien organiza.",
           h1: "Navidad en México",
-          lede: "De las posadas del 16 de diciembre al Día de Reyes, lo que hay en cada ciudad para estas fechas — cada fecha como la publicó quien organiza, y de dónde la sacamos.",
+          lede: "De las esferas de Tlalpujahua en octubre a las luces de Fundidora hasta el Día de Reyes, lo que hay en cada ciudad para estas fechas — cada fecha como la publicó quien organiza, y de dónde la sacamos.",
           headings: {
             events: "Dónde vivir la Navidad",
             upcoming: "Fechas de esta temporada",

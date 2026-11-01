@@ -57,6 +57,10 @@ const TAGS: Record<string, Vocabulary> = {
   // York" is one night and where to stand for it.
   Christmas: { slug: "christmas", plural: "Christmas", label: "Christmas" },
   "New Year's Eve": { slug: "new-years-eve", plural: "New Year's Eve", label: "New Year's Eve" },
+  // The week before Christmas starts: the parade, the balloons the evening
+  // before, the morning races. "Thanksgiving in NYC" is one of the few
+  // queries about this city that a visitor and a resident type alike.
+  Thanksgiving: { slug: "thanksgiving", plural: "Thanksgiving", label: "Thanksgiving" },
 };
 
 // The one section cut by a fact rather than a field. "Free things to do in
@@ -136,6 +140,21 @@ export function sections(items: FeedItem[]): Section[] {
           },
         };
       }
+      if (g.key === "Thanksgiving") {
+        return {
+          title: "Thanksgiving in New York 2026: parade, race and the weekend",
+          description:
+            "Thanksgiving in New York 2026: the 100th Macy's parade on Thursday, November 26, the Turkey Trot through Prospect Park the same morning and Gratitude Weekend at Wave Hill — each date and time as the organizer published it.",
+          h1: "Thanksgiving in New York",
+          lede: "The hundredth Macy's parade on Thursday, November 26, and what surrounds it: five miles through Prospect Park the same morning, a garden weekend above the Hudson on the Saturday and Sunday — each date as the organizer gave it, and a link to where we read it.",
+          headings: {
+            events: "Thanksgiving week 2026, date by date",
+            upcoming: "2026 dates",
+            past: "Already gone",
+            news: "Thanksgiving news",
+          },
+        };
+      }
       if (g.key === "Christmas") {
         return {
           title: "Christmas in New York 2026: what is on",
@@ -194,9 +213,13 @@ export const allSections = sections([...eventsBySite(siteId), ...newsBySite(site
 // Boxing Day the one night outranks the season it ends, which is still
 // running — the rink stays open until February.
 const today = new Date().toISOString().slice(0, 10);
+// Thanksgiving before Christmas while it is still ahead: the rink and the
+// Rockettes open in early November, so without the order the season that
+// runs to February would hold the header slot through the one week that
+// has its own query.
 const PROMOTED = today.slice(5) >= "12-26"
   ? ["New Year's Eve", "Christmas"]
-  : ["Halloween", "Christmas", "New Year's Eve"];
+  : ["Halloween", "Thanksgiving", "Christmas", "New Year's Eve"];
 
 export const promoted = promotedFirst(allSections, PROMOTED, today, site.keyword);
 

@@ -6,6 +6,9 @@ import type { EventItem } from "../types.ts";
 // says so (Dinosaurios en Vivo: Ticketmaster sells Saturday only).
 const ARENA = { name: "Arena GNP Seguros", lat: 16.799152, lng: -99.822825 };
 const FORUM = { name: "Forum Mundo Imperial", lat: 16.770351, lng: -99.772804 };
+// Palacio Mundo Imperial: the point eticket.mx publishes for the hotel's
+// Explanada María Bonita (read 2 Nov 2026); the Forum is next door.
+const PALACIO = { name: "Palacio Mundo Imperial", lat: 16.76894, lng: -99.774013 };
 const ARENA_VENUE = "Arena GNP Seguros, Acapulco Diamante";
 const FORUM_VENUE = "Forum Mundo Imperial, Boulevard Barra Vieja, Acapulco Diamante";
 const MI = "https://entretenimiento.mundoimperial.com";
@@ -383,7 +386,7 @@ export const items: EventItem[] = [
   {
     slug: "dinosaurios-en-vivo-acapulco-2026",
     createdAt: "2026-10-21T22:25:00+04:00",
-    updatedAt: "2026-10-21T22:25:00+04:00",
+    updatedAt: "2026-11-02T02:20:00+04:00",
     site: "aca",
     image: "/covers/dinosaurios-en-vivo-acapulco-2026.jpg",
     imageAlt: "Un dinosaurio de cuello largo entre helechos de papel, bajo un sol naranja grande",
@@ -446,12 +449,18 @@ export const items: EventItem[] = [
         title: "Diciembre en Acapulco",
         text: "Todo lo que hay en los dos recintos de Mundo Imperial en diciembre, con fecha.",
       },
+      {
+        href: "/eventos/mega-posada-palacio-mundo-imperial-acapulco-2026/",
+        eyebrow: "Sábado 12 de diciembre",
+        title: "Mega Posada en Palacio Mundo Imperial",
+        text: "El fin de semana siguiente, en el hotel vecino: la posada con Santa, buffet y música en vivo.",
+      },
     ],
   },
   {
     slug: "el-cascanueces-acapulco-2026",
     createdAt: "2026-10-21T22:25:00+04:00",
-    updatedAt: "2026-10-21T22:25:00+04:00",
+    updatedAt: "2026-11-02T02:20:00+04:00",
     site: "aca",
     image: "/covers/el-cascanueces-acapulco-2026.jpg",
     imageAlt: "Un cascanueces de soldado junto a un árbol de Navidad con esferas rojas, frente a un sol poniente sobre la playa, con copos de nieve de papel",
@@ -515,12 +524,24 @@ export const items: EventItem[] = [
         title: "Diciembre en Acapulco",
         text: "Del ballet al fin de año: las fechas de diciembre en Arena GNP Seguros y el Forum.",
       },
+      {
+        href: "/eventos/mega-posada-palacio-mundo-imperial-acapulco-2026/",
+        eyebrow: "Sábado 12 de diciembre",
+        title: "Mega Posada en Palacio Mundo Imperial",
+        text: "La semana siguiente, junto al Forum: buffet navideño, barra, Santa y música en vivo de 19:00 a 24:00 h.",
+      },
+      {
+        href: "/eventos/fiesta-de-navidad-christmas-palacio-acapulco-2026/",
+        eyebrow: "Jueves 24 de diciembre",
+        title: "Navidad en Palacio Mundo Imperial",
+        text: "La Nochebuena con cena, barra libre y Santa para los niños, en el hotel vecino del Forum.",
+      },
     ],
   },
   {
     slug: "la-arrolladora-banda-el-limon-acapulco-2026",
     createdAt: "2026-10-21T22:25:00+04:00",
-    updatedAt: "2026-10-21T22:25:00+04:00",
+    updatedAt: "2026-11-02T02:20:00+04:00",
     site: "aca",
     image: "/covers/la-arrolladora-banda-el-limon-acapulco-2026.jpg",
     imageAlt: "Una tuba, una trompeta y una tarola sobre un escenario redondo bajo una hilera de focos, con mitades de limón alrededor",
@@ -575,6 +596,12 @@ export const items: EventItem[] = [
         eyebrow: "29 de diciembre",
         title: "Emmanuel & Mijares en Acapulco",
         text: "«Two Amigos» en la misma arena, el martes 29 a las 21:00 h.",
+      },
+      {
+        href: "/eventos/fiesta-de-navidad-christmas-palacio-acapulco-2026/",
+        eyebrow: "24 de diciembre",
+        title: "Navidad en Palacio Mundo Imperial",
+        text: "Dos noches antes, en Acapulco Diamante: la cena de Nochebuena con barra libre, Santa y Nova Versátil Band.",
       },
     ],
   },
@@ -1048,5 +1075,173 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Vaya con hambre y lleve efectivo: los platillos de la Montaña o de Tierra Caliente rara vez se encuentran en un restaurante del puerto, y este fin de semana llegan todos juntos. Si puede, vaya el sábado temprano, cuando hay más de todo; los platillos más pedidos suelen acabarse antes del cierre.",
+  },
+  {
+    slug: "mega-posada-palacio-mundo-imperial-acapulco-2026",
+    createdAt: "2026-11-02T02:20:00+04:00",
+    updatedAt: "2026-11-02T02:20:00+04:00",
+    site: "aca",
+    image: "/covers/mega-posada-palacio-mundo-imperial-acapulco-2026.jpg",
+    imageAlt: "Collage de papel recortado: una piñata de estrella sobre una mesa larga de banquete, farolitos de papel y techo abovedado de salón en rojos, dorados y verdes",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Mega Posada en Palacio Mundo Imperial",
+    titleSeo: "Mega Posada en Acapulco: 12 de diciembre de 2026",
+    cardTitle: "Mega Posada en Palacio Mundo Imperial",
+    summary:
+      "La Mega Posada de Palacio Mundo Imperial abre la temporada navideña de Acapulco el sábado 12 de diciembre de 2026, de 19:00 a 24:00 h, en el Salón B: buffet navideño, barra de bebidas, Santa, música en vivo y DJ. Se reserva por teléfono al 744 435 1700.",
+    start: "2026-12-12",
+    startTime: "19:00",
+    utcOffset: "-06:00",
+    venue: "Salón B, Palacio Mundo Imperial, Acapulco Diamante",
+    city: "Acapulco",
+    country: "México",
+    geo: PALACIO,
+    organizer: "Palacio Mundo Imperial",
+    category: "Navidad",
+    ticket: {
+      url: "https://www.mundoimperial.com/palacio/ofertas/mega-posada",
+      label: "Reservar en Mundo Imperial",
+      sells: false,
+    },
+    source: {
+      name: "Mundo Imperial",
+      url: "https://www.mundoimperial.com/palacio/ofertas/mega-posada",
+      verifiedOn: "2026-11-02",
+    },
+    body: [
+      "La posada grande de Acapulco Diamante vuelve con fecha. La <strong>Mega Posada</strong> de <strong>Palacio Mundo Imperial</strong> es el <strong>sábado 12 de diciembre de 2026</strong>, de <strong>19:00 a 24:00 h</strong>, en el <strong>Salón B</strong>. El propio hotel la presenta como el arranque de su temporada navideña, pensada para ir con la familia, con amigos o con el equipo de trabajo.",
+      "## Qué incluye y a qué hora",
+      "El <strong>buffet navideño</strong> se sirve de <strong>19:00 a 23:00 h</strong> y la <strong>barra de bebidas</strong> está abierta de <strong>19:00 a 24:00 h</strong>, ambos a discreción del establecimiento. De <strong>20:00 a 21:00 h</strong> llega <strong>Santa Claus</strong>, con dinámicas y ambientación. La <strong>música en vivo</strong> empieza a las <strong>21:00 h</strong> en tres sets de <strong>45 minutos</strong> (21:00, 22:30 y 24:00 h), y el <strong>DJ</strong> toca en los huecos: de 21:45 a 22:30 y de 23:15 a 24:00 h. Lo que no esté en la barra se paga aparte, en cash bar y a precio de menú.",
+      "## Precio y reservación",
+      "Al <strong>2 de noviembre</strong>, la página del hotel muestra el precio por persona todavía en blanco: la cifra no se ha publicado. Sí dice que será en pesos, por persona y con el <strong>IVA del 16 %</strong> incluido, y que la cancelación es <strong>100 % reembolsable hasta 48 horas antes</strong>; después no hay devolución. Como referencia, la edición de <strong>2025</strong> (sábado 13 de diciembre, en el Salón B de Expo Mundo Imperial) costó <strong>750 pesos</strong> por persona, según la página de la Mega Posada Empresarial 2025 del propio hotel. Se reserva al <strong>744 435 1700</strong>; el hotel advierte que no pide pagos por WhatsApp. El cupo es limitado y las mesas son compartidas según la reserva, sin cambios de lugar.",
+      "## Reglas de la noche",
+      "Las bebidas alcohólicas son solo para <strong>mayores de 18 años</strong>. No se permite entrar con alimentos ni bebidas. La posada <strong>no está incluida en ningún plan de hospedaje</strong>: los huéspedes del hotel también la pagan. Al terminar hay <strong>45 minutos</strong> para salir del salón.",
+      "## Cómo llegar",
+      "Palacio Mundo Imperial está en Acapulco Diamante, en <strong>Plan de los Amates, Boulevard Barra Vieja 3</strong>, a unos minutos del aeropuerto y junto al Forum Mundo Imperial. Desde la Costera se llega en coche o taxi; para una noche que termina a las doce conviene acordar el regreso antes de entrar.",
+      "## Diciembre en el mismo complejo",
+      "La semana anterior, el Forum vecino tiene <a href=\"/eventos/dinosaurios-en-vivo-acapulco-2026/\" title=\"Dinosaurios en Vivo en Acapulco: 5 de diciembre de 2026\">Dinosaurios en Vivo</a> el sábado 5 y <a href=\"/eventos/el-cascanueces-acapulco-2026/\" title=\"El Cascanueces en Acapulco: 6 de diciembre de 2026\">El Cascanueces</a> el domingo 6. El <strong>24 de diciembre</strong>, el mismo Palacio hace su <a href=\"/eventos/fiesta-de-navidad-christmas-palacio-acapulco-2026/\" title=\"Cena de Navidad en Acapulco 2026: Palacio Mundo Imperial\">fiesta de Nochebuena</a>, esa sí ligada al hospedaje.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo es la Mega Posada de Palacio Mundo Imperial 2026?",
+        a: "El <strong>sábado 12 de diciembre de 2026</strong>, de 19:00 a 24:00 h, en el Salón B de Palacio Mundo Imperial, en Acapulco Diamante.",
+      },
+      {
+        q: "¿Cuánto cuesta?",
+        a: "Al 2 de noviembre el hotel no ha publicado el precio por persona de 2026. En 2025 fueron 750 pesos por persona, con IVA, según la página de la Mega Posada Empresarial 2025 del propio hotel (posada.mundoimperial.com). Se reserva al 744 435 1700.",
+      },
+      {
+        q: "¿Pueden ir niños?",
+        a: "Sí: hay visita de Santa Claus, dinámicas y ambientación de 20:00 a 21:00 h. La barra de alcohol es solo para mayores de 18 años.",
+      },
+    ],
+    related: [
+      {
+        href: "/eventos/fiesta-de-navidad-christmas-palacio-acapulco-2026/",
+        eyebrow: "Jueves 24 de diciembre",
+        title: "Navidad en Palacio Mundo Imperial",
+        text: "La Nochebuena en el mismo hotel: cena, barra libre, Santa y Nova Versátil Band, de 20:00 a 1:00 h.",
+      },
+      {
+        href: "/eventos/el-cascanueces-acapulco-2026/",
+        eyebrow: "Domingo 6 de diciembre",
+        title: "El Cascanueces en el Forum",
+        text: "El ballet de Navidad en el Forum vecino, a las 18:00 h, desde los 3 años.",
+      },
+      {
+        href: "/eventos/dinosaurios-en-vivo-acapulco-2026/",
+        eyebrow: "Sábado 5 de diciembre",
+        title: "Dinosaurios en Vivo en Acapulco",
+        text: "El plan familiar del fin de semana anterior, en el Forum Mundo Imperial.",
+      },
+    ],
+    expertise:
+      "Reserve por teléfono en cuanto salga el precio y pida mesa para todo el grupo de una vez: las mesas son compartidas según la reserva y no se cambian al llegar, así que un grupo que reserva en dos llamadas puede acabar en dos mesas. Llegue a las 19:00 h: el buffet cierra a las 23:00, una hora antes que la barra, y Santa pasa entre 20:00 y 21:00 h, que es la franja que importa si va con niños.",
+  },
+  {
+    slug: "fiesta-de-navidad-christmas-palacio-acapulco-2026",
+    createdAt: "2026-11-02T02:20:00+04:00",
+    updatedAt: "2026-11-02T02:20:00+04:00",
+    site: "aca",
+    image: "/covers/fiesta-de-navidad-christmas-palacio-acapulco-2026.jpg",
+    imageAlt: "Collage de papel recortado: un pino navideño con esferas rojas y doradas, mesas de buffet con manteles rojos y una carpa roja junto al mar, bajo palmeras y una luna llena",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Fiesta de Navidad «Christmas Palacio» en Palacio Mundo Imperial",
+    titleSeo: "Cena de Navidad en Acapulco 2026: Palacio Mundo Imperial",
+    cardTitle: "Navidad en Palacio Mundo Imperial",
+    summary:
+      "La Fiesta de Navidad «Christmas Palacio» es la Nochebuena de Palacio Mundo Imperial, en Acapulco Diamante: el jueves 24 de diciembre de 2026, de 20:00 a 1:00 h, en el Promenade, con buffet navideño, barra libre, Santa Claus para los niños y Nova Versátil Band. Va con el paquete de hospedaje de esa noche.",
+    start: "2026-12-24",
+    startTime: "20:00",
+    utcOffset: "-06:00",
+    venue: "Promenade, Palacio Mundo Imperial, Acapulco Diamante",
+    city: "Acapulco",
+    country: "México",
+    geo: PALACIO,
+    organizer: "Palacio Mundo Imperial",
+    category: "Navidad",
+    ticket: {
+      url: "https://www.mundoimperial.com/palacio/ofertas/fiesta-navidad-acapulco",
+      label: "Reservar en Mundo Imperial",
+      sells: false,
+    },
+    source: {
+      name: "Mundo Imperial, sala de prensa",
+      url: "https://www.mundoimperial.com/sala-de-prensa/fiesta-de-navidad-en-palacio-mundo-imperial-2026",
+      verifiedOn: "2026-11-02",
+    },
+    body: [
+      "La Nochebuena de Acapulco Diamante tiene nombre propio. <strong>Christmas Palacio</strong>, la Fiesta de Navidad de <strong>Palacio Mundo Imperial</strong>, es el <strong>jueves 24 de diciembre de 2026</strong>, de <strong>20:00 a 1:00 h</strong>, en el <strong>Promenade</strong> del hotel. Mundo Imperial la anunció en su sala de prensa el <strong>1 de noviembre</strong>.",
+      "## Qué incluye y a qué hora",
+      "El <strong>buffet navideño</strong> se sirve de <strong>20:00 a 24:00 h</strong>, a discreción del chef, y la <strong>barra libre</strong> de bebidas participantes está abierta de <strong>20:00 a 1:00 h</strong>; lo demás se paga en cash bar a precio de menú. La música en vivo es de <strong>Nova Versátil Band</strong>, en <strong>tres sets de 50 minutos</strong>, con pausas entre uno y otro. Para los niños de <strong>5 a 12 años</strong> hay <strong>área infantil</strong> y la <strong>llegada de Santa Claus</strong> de <strong>21:00 a 21:30 h</strong>; no hay servicio de niñera.",
+      "## Cómo se entra",
+      "Al <strong>2 de noviembre</strong> el hotel la ofrece como paquete <strong>hospedaje + Fiesta de Navidad</strong>: quien se hospeda la <strong>noche del 24 de diciembre</strong> en Palacio Mundo Imperial, en plan solo habitación, recibe <strong>un acceso por persona con tarifa pagada</strong> en la habitación, hasta <strong>cuatro personas</strong> por cuarto, con cargo adicional por la tercera y la cuarta. El paquete incluye además acceso a <strong>Scala Ocean Club</strong> con transporte redondo, sujeto a clima y horarios. Según el comunicado del 1 de noviembre, el paquete se reserva del <strong>1 de octubre al 20 de diciembre</strong> en el Call Center <strong>800 090 9900</strong>; la página de la oferta añade el sitio del hotel y Club Imperial. Los lugares son limitados y no se combina con otras promociones. La misma página conserva, más abajo, condiciones de venta por persona para la fiesta sola: con <strong>reservación y pago previo</strong> al <strong>744 435 1700</strong>, cancelación <strong>100 % reembolsable hasta 72 horas antes</strong>, mesas compartidas según la reserva y tarifas por edad (adulto desde <strong>13 años</strong>, niño de <strong>6 a 12</strong>, infante de <strong>3 a 5</strong>), aunque sin precio publicado. Si no piensa hospedarse, confirme por teléfono si hay acceso suelto. Al 2 de noviembre ninguna de las páginas publica el precio del paquete ni el de la fiesta.",
+      "## Las otras dos cenas de Mundo Imperial esa noche",
+      "El grupo celebra la Nochebuena en sus tres hoteles. En <strong>Princess Mundo Imperial</strong> la <strong>Cena Navideña</strong> es en <strong>Playa Chula Vista</strong>, frente al mar, de <strong>20:00 a 1:00 h</strong>, con Santa a las <strong>21:00 h</strong> y regalo para niños de hasta 11 años, y música de <strong>Sinergia</strong>; se reserva sin hospedaje, previa reservación y pago, al <strong>744 469 1000</strong>. En <strong>Pierre Mundo Imperial</strong>, «Una noche mágica de Navidad» es en el <strong>Gran Jardín</strong>, de <strong>20:00 a 24:00 h</strong>, con la <strong>Orquesta Karamba</strong> y Santa de 20:30 a 21:15 h, también como paquete con la noche del 24. Al 2 de noviembre, tampoco esas dos páginas publican precios.",
+      "## Cómo llegar",
+      "Palacio Mundo Imperial está en Acapulco Diamante, en <strong>Plan de los Amates, Boulevard Barra Vieja 3</strong>, junto al Forum Mundo Imperial y a unos minutos del aeropuerto. Como la fiesta va con la habitación, el regreso está resuelto; el <strong>Resort Service</strong> opcional, de <strong>285 pesos</strong> por noche, incluye estacionamiento para un auto, internet para cuatro dispositivos y gimnasio, y se paga en el hotel.",
+      "## Antes y después",
+      "El mismo Palacio abre la temporada con su <a href=\"/eventos/mega-posada-palacio-mundo-imperial-acapulco-2026/\" title=\"Mega Posada en Acapulco: 12 de diciembre de 2026\">Mega Posada</a> el sábado 12 de diciembre, y el Forum vecino tiene <a href=\"/eventos/el-cascanueces-acapulco-2026/\" title=\"El Cascanueces en Acapulco: 6 de diciembre de 2026\">El Cascanueces</a> el domingo 6. Dos noches después de la Nochebuena, el sábado 26, <a href=\"/eventos/la-arrolladora-banda-el-limon-acapulco-2026/\" title=\"La Arrolladora en Acapulco: 26 de diciembre de 2026\">La Arrolladora Banda El Limón</a> toca en Arena GNP Seguros, y el 28 cantan <a href=\"/eventos/yuri-lucero-acapulco-2026/\" title=\"Yuri y Lucero en Acapulco: 28 de diciembre de 2026\">Yuri y Lucero</a>.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo y dónde es la Fiesta de Navidad de Palacio Mundo Imperial 2026?",
+        a: "El <strong>jueves 24 de diciembre de 2026</strong>, de 20:00 a 1:00 h, en el Promenade de Palacio Mundo Imperial, en Acapulco Diamante.",
+      },
+      {
+        q: "¿Se puede ir sin hospedarse en el hotel?",
+        a: "Al 2 de noviembre el hotel la ofrece como paquete hospedaje + Fiesta de Navidad (un acceso por persona con tarifa pagada en la habitación); la misma página conserva condiciones de venta por persona, con reservación y pago previo al 744 435 1700 y cancelación hasta 72 horas antes, sin precio publicado. Si no se hospeda, confirme por teléfono si hay acceso suelto. La Cena Navideña de Princess Mundo Imperial, en Playa Chula Vista, se reserva sin hospedaje, previa reservación y pago, al 744 469 1000.",
+      },
+      {
+        q: "¿Hay programa para niños?",
+        a: "Sí: área infantil para niños de 5 a 12 años y la llegada de Santa Claus de 21:00 a 21:30 h. No hay servicio de niñera.",
+      },
+    ],
+    related: [
+      {
+        href: "/eventos/mega-posada-palacio-mundo-imperial-acapulco-2026/",
+        eyebrow: "Sábado 12 de diciembre",
+        title: "Mega Posada en Palacio Mundo Imperial",
+        text: "La posada del mismo hotel, abierta sin hospedaje: buffet, barra, Santa y música en vivo de 19:00 a 24:00 h.",
+      },
+      {
+        href: "/eventos/el-cascanueces-acapulco-2026/",
+        eyebrow: "Domingo 6 de diciembre",
+        title: "El Cascanueces en el Forum",
+        text: "El ballet de Navidad en el Forum vecino, a las 18:00 h, desde los 3 años.",
+      },
+      {
+        href: "/eventos/la-arrolladora-banda-el-limon-acapulco-2026/",
+        eyebrow: "Sábado 26 de diciembre",
+        title: "La Arrolladora en Arena GNP Seguros",
+        text: "Dos noches después de la Nochebuena: «Si Las Miradas Matan», en la arena de Mundo Imperial.",
+      },
+    ],
+    expertise:
+      "Si va con niños, reserve la habitación pensando en la hora: Santa llega a las 21:00 h y se va a las 21:30, y el buffet cierra a las doce mientras la barra sigue hasta la una, así que la primera mitad de la noche es la de la familia y la segunda la de los adultos. Si no piensa hospedarse, llame primero al 744 435 1700 y pregunte si Palacio vende el acceso suelto, que su página condiciona a reservación y pago previo; si no, la cena de Princess en Playa Chula Vista se reserva sin habitación al 744 469 1000, y conviene pedir el precio por edad (adulto desde 14 años, niño de 6 a 13, infante hasta 5) porque la página aún no lo publica.",
   },
 ];

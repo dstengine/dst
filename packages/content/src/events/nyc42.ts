@@ -2544,7 +2544,7 @@ export const items: EventItem[] = [
   {
     slug: "macys-thanksgiving-day-parade-2026",
     createdAt: "2026-10-14T21:15:00+04:00",
-    updatedAt: "2026-10-14T21:15:00+04:00",
+    updatedAt: "2026-11-02T02:20:00+04:00",
     site: "nyc42",
     image: "/covers/macys-thanksgiving-day-parade-2026.jpg",
     imageAlt: "A giant blue hippopotamus balloon held on ropes above a street between tall buildings",
@@ -2561,7 +2561,7 @@ export const items: EventItem[] = [
     city: "New York",
     country: "United States",
     organizer: "Macy's",
-    category: "Parade",
+    category: "Thanksgiving",
     ticket: {
       url: "https://www.macysinc.com/newsroom/news/news-details/2026/Macys-Kicks-Off-the-100-Day-Countdown-to-the-100th-Macys-Thanksgiving-Day-Parade/default.aspx",
       label: "Macy's announcement",
@@ -2615,6 +2615,18 @@ export const items: EventItem[] = [
         eyebrow: "November 4 – January 4",
         title: "Christmas Spectacular at Radio City",
         text: "The Rockettes' season is already running by Thanksgiving week.",
+      },
+      {
+        href: "/events/pptc-turkey-trot-prospect-park-2026/",
+        eyebrow: "8:15am, November 26",
+        title: "Prospect Park Turkey Trot",
+        text: "Five miles through Prospect Park the same Thanksgiving morning.",
+      },
+      {
+        href: "/events/gratitude-weekend-wave-hill-2026/",
+        eyebrow: "November 28–29",
+        title: "Gratitude Weekend at Wave Hill",
+        text: "Thanksgiving weekend in a garden above the Hudson: a free Family Art Project, paid yoga and felting, admission $10.",
       },
     ],
     expertise:
@@ -2812,7 +2824,7 @@ export const items: EventItem[] = [
   {
     slug: "coney-island-polar-bear-plunge-2027",
     createdAt: "2026-10-21T21:35:00+04:00",
-    updatedAt: "2026-10-21T21:35:00+04:00",
+    updatedAt: "2026-11-02T02:20:00+04:00",
     site: "nyc42",
     image: "/covers/coney-island-polar-bear-plunge-2027.jpg",
     imageAlt:
@@ -2905,6 +2917,12 @@ export const items: EventItem[] = [
         eyebrow: "November 4 – January 4",
         title: "Christmas Spectacular at Radio City",
         text: "The Rockettes play on until three days after the plunge.",
+      },
+      {
+        href: "/events/pptc-turkey-trot-prospect-park-2026/",
+        eyebrow: "November 26",
+        title: "Prospect Park Turkey Trot",
+        text: "Brooklyn's other cold-morning tradition: five miles in Prospect Park on Thanksgiving.",
       },
     ],
     expertise:
@@ -3281,7 +3299,7 @@ export const items: EventItem[] = [
   {
     slug: "nybg-holiday-train-show-2026",
     createdAt: "2026-10-25T02:30:00+04:00",
-    updatedAt: "2026-10-25T02:30:00+04:00",
+    updatedAt: "2026-11-02T02:20:00+04:00",
     site: "nyc42",
     image: "/covers/nybg-holiday-train-show-2026.jpg",
     imageAlt: "A small red model train crossing a bridge under a glasshouse roof, past a palm tree, little pines, pinecones and tiny skyscrapers with lit windows",
@@ -3360,6 +3378,12 @@ export const items: EventItem[] = [
         eyebrow: "Until January 4",
         title: "Christmas Spectacular at Radio City",
         text: "The Rockettes' season, dates and tickets.",
+      },
+      {
+        href: "/events/gratitude-weekend-wave-hill-2026/",
+        eyebrow: "November 28–29",
+        title: "Gratitude Weekend at Wave Hill",
+        text: "The Bronx's other garden on Thanksgiving weekend: a free Family Art Project, paid yoga and felting, admission $10.",
       },
     ],
     expertise:
@@ -3812,5 +3836,196 @@ export const items: EventItem[] = [
     ],
     expertise:
       "A Monday-afternoon event fills after school and after work, so the crafts, which stop when the performances start or the supplies run out, go to whoever comes early. Arrive near four with children, and near six if the performances are the point, but before the 6:30 last entry. Register even though you don't have to: it is the only way to hear about a weather cancellation before you are on the R train.",
+  },
+
+  {
+    slug: "pptc-turkey-trot-prospect-park-2026",
+    createdAt: "2026-11-02T02:20:00+04:00",
+    updatedAt: "2026-11-02T02:20:00+04:00",
+    site: "nyc42",
+    image: "/covers/pptc-turkey-trot-prospect-park-2026.jpg",
+    imageAlt: "Cut-paper shapes of a park road curving between bare trees toward a stone wall, with paper leaves and a round wooden medal on a ribbon",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "PPTC Turkey Trot: Race for Reconciliation 5 Miler 2026",
+    titleSeo: "Prospect Park Turkey Trot 2026, New York: Nov 26, 8:15am",
+    cardTitle: "Prospect Park Turkey Trot",
+    summary:
+      "Thanksgiving morning, Thursday, November 26, 2026, in Prospect Park, Brooklyn, New York: the Prospect Park Track Club's 24th Turkey Trot, five miles in two waves at 8:15am and 9am, from Center Drive to Harry's Wall. Regular bibs are $47 plus fees until they sell out.",
+    start: "2026-11-26",
+    startTime: "08:15",
+    endTime: "10:40",
+    utcOffset: "-05:00",
+    venue: "Prospect Park, Center Drive to Harry's Wall; bag drop at LeFrak Center at Lakeside, 171 East Drive, Brooklyn",
+    city: "Brooklyn",
+    country: "United States",
+    geo: { name: "LeFrak Center at Lakeside, Prospect Park", lat: 40.6594, lng: -73.9652 },
+    organizer: "Prospect Park Track Club",
+    category: "Thanksgiving",
+    tickets: { priceFrom: 47, priceTo: 100, currency: "USD" },
+    ticket: {
+      url: "https://runsignup.com/Race/NY/Brooklyn/PPTCTurkeyTrotRaceforReconciliation5Miler",
+      label: "Register on RunSignUp",
+      sells: true,
+    },
+    source: {
+      name: "Prospect Park Track Club",
+      url: "https://pptc.org/turkey",
+      verifiedOn: "2026-11-02",
+    },
+    body: [
+      "Brooklyn's Thanksgiving starts with a run. On <strong>Thursday, November 26, 2026</strong>, the Prospect Park Track Club holds its <strong>24th annual Turkey Trot</strong>, a <strong>five-mile</strong> race through Prospect Park that the club says draws <strong>over 2,500</strong> runners, volunteers and spectators. Since 2022 it has carried the name <strong>Race for Reconciliation</strong>, a nod to the complexities of the holiday, and for the <strong>fifth year</strong> its charity partner is the American Indian Community House.",
+      "## Start times and the course",
+      "Two waves: <strong>Wave 1 at 8:15am</strong> and <strong>Wave 2 at 9am</strong>, assigned from the finish time you estimate when you register. A Wave 1 runner may drop back to Wave 2 to run with friends; nobody moves up, and only Wave 1 is eligible for the overall prizes. Each wave closes <strong>five minutes</strong> after it starts, and the course closes at <strong>10:40am sharp</strong> so the park can reopen. The start is on <strong>Center Drive</strong>, the finish at <strong>Harry's Wall</strong>. Strollers, pets, unofficial pacers on foot or bike, and unregistered runners are not allowed on the course.",
+      "## Price and registration",
+      "The <strong>$42</strong> early-bird bibs sold out in September. <strong>Regular bibs are $47 plus fees</strong> from September 14 until they sell out, and <strong>charity bibs are $100 plus fees</strong>, with every dollar of the charity bib going to the American Indian Community House. Registration was open on November 2. There are no refunds, no bib transfers, no deferrals and no waitlist: if the regular bibs are gone, the charity bib is the only way in. Every finisher gets a <strong>wooden medal</strong>, every runner the race hat (you can opt out at registration), and the presenting sponsor Brooks gives a pair of running shoes to <strong>five runners in each wave</strong>.",
+      "## Collect your bib before the day",
+      "Packet pickup is at <strong>Brooklyn Running Company, 480 Bergen Street</strong> in Park Slope: <strong>Sunday, November 22, 12pm to 4:30pm</strong>; <strong>Tuesday, November 24, 2pm to 6:30pm</strong>; <strong>Wednesday, November 25, 11am to 3pm</strong>. The slots end exactly on time, and one person may collect for several runners. Race-day pickup runs <strong>7:15am to 8:30am</strong> at the <strong>LeFrak Center at Lakeside, 171 East Drive</strong>, which is also the bag drop; the club strongly prefers you come to Bergen Street.",
+      "## Children",
+      "Children may run. Anyone <strong>under 18</strong> must be registered by a parent or guardian, and the club asks that children <strong>under 10</strong> run with a family member or trusted adult and treat it as fun rather than a race.",
+      "## After the finish",
+      "Bagels, hot chocolate, water and apples wait for runners at the LeFrak Center, and the Duck Island café there gives spectators a race-day discount on food and drink. Results are live on RunSignUp, and you can have yours sent by email or text.",
+      "## Getting there",
+      "The club's advice is the subway. The <strong>Q</strong> and the Franklin Avenue Shuttle stop at <strong>Prospect Park</strong>, the <strong>F</strong> and <strong>G</strong> at <strong>15 St–Prospect Park</strong>, and the Q also at Parkside Av, a longer walk. Buses B16, B43, B44-SBS and B48 stop at Ocean Avenue and Lincoln Road and at Parkside and Ocean. There is no parking lot; a taxi should drop you at 171 East Drive, about five minutes' walk from the LeFrak Center. The race runs <strong>rain or shine</strong>; only dangerous weather cancels it, announced on race morning by email and on the club's channels.",
+      "## The rest of Thanksgiving",
+      "The course closes at 10:40am, which leaves the day. The <a href=\"/events/macys-thanksgiving-day-parade-2026/\" title=\"The 100th Macy's Thanksgiving Day Parade\">100th Macy's Thanksgiving Day Parade</a> is on in Manhattan the same morning, and on Saturday and Sunday <a href=\"/events/gratitude-weekend-wave-hill-2026/\" title=\"Gratitude Weekend at Wave Hill 2026\">Wave Hill</a> in the Bronx holds its Gratitude Weekend. The next cold-morning tradition in Brooklyn is the <a href=\"/events/coney-island-polar-bear-plunge-2027/\" title=\"Coney Island Polar Bear Plunge 2027\">Polar Bear Plunge</a> at Coney Island on January 1.",
+    ],
+    faq: [
+      {
+        q: "When is the Prospect Park Turkey Trot in 2026?",
+        a: "Thanksgiving Day, Thursday, November 26, 2026. Wave 1 starts at 8:15am, Wave 2 at 9am, and the course closes at 10:40am.",
+      },
+      {
+        q: "How much does it cost?",
+        a: "Regular bibs are $47 plus fees until they sell out; the $42 early-bird bibs are gone. Charity bibs are $100 plus fees, all of it to the American Indian Community House. No refunds, transfers or deferrals.",
+      },
+      {
+        q: "Can children run?",
+        a: "Yes. Under-18s must be registered by a parent or guardian, and the club asks children under 10 to run with an adult and not to compete.",
+      },
+      {
+        q: "Where does it start, and how do I get there?",
+        a: "The start is on Center Drive in Prospect Park, the finish at Harry's Wall; bag drop and race-day bib pickup are at the LeFrak Center at Lakeside, 171 East Drive. Take the Q to Prospect Park or the F or G to 15 St–Prospect Park.",
+      },
+      {
+        q: "Can I run if the race is sold out?",
+        a: "Not the race. The park is public, but the club asks unregistered runners to stay off the course and away from its water stations and refreshments.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/macys-thanksgiving-day-parade-2026/",
+        eyebrow: "November 26",
+        title: "Macy's Thanksgiving Day Parade: the 100th",
+        text: "The parade in Manhattan the same morning, with a record 100 inflatables.",
+      },
+      {
+        href: "/events/gratitude-weekend-wave-hill-2026/",
+        eyebrow: "November 28–29",
+        title: "Gratitude Weekend at Wave Hill",
+        text: "Thanksgiving weekend in a garden above the Hudson: a free Family Art Project, paid yoga and felting, admission $10.",
+      },
+      {
+        href: "/events/coney-island-polar-bear-plunge-2027/",
+        eyebrow: "January 1",
+        title: "Coney Island Polar Bear Plunge",
+        text: "Brooklyn's other cold-morning tradition, on the beach at Stillwell Avenue.",
+      },
+    ],
+    expertise:
+      "Pick the bib up at Bergen Street, and not at the last slot: the Wednesday 11am-to-3pm window ends on the minute, and race-morning pickup at the LeFrak Center closes at 8:30, fifteen minutes after Wave 1 has gone. If prizes are not the point, the honest estimate that lands you in Wave 2 is the better morning: it starts at nine, and a Wave 1 runner can always drop back to it. Leave nothing at the start on Center Drive; whatever is still there after Wave 2 goes out is collected for disposal, so the bag drop at Lakeside is the only safe place for a layer.",
+  },
+
+  {
+    slug: "gratitude-weekend-wave-hill-2026",
+    createdAt: "2026-11-02T02:20:00+04:00",
+    updatedAt: "2026-11-02T02:20:00+04:00",
+    site: "nyc42",
+    image: "/covers/gratitude-weekend-wave-hill-2026.jpg",
+    imageAlt: "Cut-paper shapes of a hillside garden terrace over a broad river and cliffs, with a paper tote bag bearing a tree, a rolled mat and a ball of wool",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Gratitude Weekend at Wave Hill 2026",
+    titleSeo: "Gratitude Weekend at Wave Hill, New York: Nov 28–29, 2026",
+    cardTitle: "Gratitude Weekend at Wave Hill",
+    summary:
+      "Saturday and Sunday, November 28 and 29, 2026, Thanksgiving weekend at Wave Hill, the public garden above the Hudson in Riverdale, the Bronx, New York: a free Family Art Project both mornings, and on Sunday a $25 yoga class and a $45 needle-felting workshop that include admission; garden admission is $10, and a food drive for Riverdale Neighborhood House.",
+    start: "2026-11-28",
+    end: "2026-11-29",
+    startTime: "10:00",
+    endTime: "16:30",
+    utcOffset: "-05:00",
+    venue: "Wave Hill, 4900 Independence Avenue, Riverdale, the Bronx",
+    city: "New York",
+    country: "United States",
+    geo: { name: "Wave Hill", lat: 40.8977, lng: -73.9112 },
+    organizer: "Wave Hill",
+    category: "Thanksgiving",
+    tickets: { priceFrom: 4, priceTo: 45, currency: "USD" },
+    ticket: {
+      url: "https://www.wavehill.org/calendar/gratitude-weekend-2026",
+      label: "Wave Hill's event page",
+      sells: false,
+    },
+    source: {
+      name: "Wave Hill",
+      url: "https://www.wavehill.org/calendar/gratitude-weekend-2026",
+      verifiedOn: "2026-11-02",
+    },
+    body: [
+      "The quiet end of Thanksgiving weekend is in the Bronx. On <strong>Saturday and Sunday, November 28 and 29, 2026</strong>, Wave Hill, the public garden and cultural center on the hillside above the Hudson in Riverdale, holds its <strong>Gratitude Weekend</strong>: two days of making, moving and giving, with a family workshop both mornings that is <strong>free with garden admission</strong>, two paid classes on Sunday whose price includes the grounds, and a food drive that runs on into December.",
+      "## The program",
+      "The <strong>Family Art Project: Grateful for Trees Canvas Bags</strong> runs both mornings, <strong>10am to 1pm</strong> on Saturday and again on Sunday: <strong>free with admission</strong> to the grounds, registration not required, and at <strong>11:30am</strong> each day a storytime for all ages in the <strong>Gund Theater</strong>. Sunday adds two paid classes. <strong>Yoga in the Garden</strong>, <strong>10:15am to 11:15am</strong>, costs <strong>$25</strong> including admission, with members saving 10%; advance registration is encouraged, day-of places depend on availability and are not guaranteed, registrants may enter the grounds from 10am, and no refunds are given within <strong>5 days</strong> of the class. <strong>Mindful Needle Felting</strong>, <strong>12pm to 2pm</strong>, costs <strong>$45</strong> including admission, members again saving 10%, and <strong>registration is required</strong>, online or on <strong>718.549.3200 x251</strong>. The Shop takes part in <strong>Museum Store Sunday</strong> with nature-inspired gifts. Sunday is also the last day of two exhibitions in Glyndor Gallery, <em>As far as the ear can hear</em> by Angel Nevarez and Valerie Tevere and Melanie Elyse Brewster's <em>A Metaphysical Quest for the Deepest Backbend</em>, both closing <strong>November 29</strong>.",
+      "## The food drive",
+      "Bring <strong>non-perishable food</strong> and leave it at the garden. Wave Hill collects it through <strong>December 18</strong> for <strong>Riverdale Neighborhood House</strong>, so the drive outlasts the weekend by three weeks.",
+      "## Admission and hours",
+      "Admission, read on the Visit pages of wavehill.org on November 2, is <strong>$10</strong> for adults, <strong>$6</strong> for students and seniors 65 and over, <strong>$4</strong> for children from age 6, and free for members; the page prices no ticket for younger children. Thursdays are free all day, which is no help on a Saturday. From <strong>November 1</strong> the garden keeps winter hours, <strong>10am to 4:30pm</strong> with <strong>last admission at 4pm</strong>. The Conservatory closes daily from noon to 1pm and Glyndor Gallery from noon to 12:30pm.",
+      "## Getting there",
+      "Wave Hill runs a <strong>free shuttle</strong> Thursday to Sunday, so it runs both days of the weekend. From the <strong>1 train</strong>, ride to the last stop, <strong>Van Cortlandt Park–242 St</strong>; the shuttle leaves the northwest corner of Broadway and Manhattan College Parkway at <strong>25 past the hour</strong>, from <strong>10:25am</strong>, last pick-up <strong>4:25pm</strong>. From <strong>Metro-North</strong>, take the Hudson Line to <strong>Riverdale</strong>, where the shuttle comes hourly from <strong>10:05am</strong>, last at <strong>4:05pm</strong>; the walk up from the station takes about <strong>15 minutes</strong>, uphill at first. Buses Bx7 and Bx10, and the BxM1 and BxM2 expresses from Manhattan, stop at West 252nd Street and the Henry Hudson Parkway, six minutes' walk from the gate. Parking on site is limited; when it fills, the Riverdale Park lot two minutes away has its own shuttle at 45 past the hour.",
+      "## The weekend around it",
+      "Thanksgiving itself has the <a href=\"/events/macys-thanksgiving-day-parade-2026/\" title=\"The 100th Macy's Thanksgiving Day Parade\">100th Macy's Thanksgiving Day Parade</a> in Manhattan and the <a href=\"/events/pptc-turkey-trot-prospect-park-2026/\" title=\"Prospect Park Turkey Trot 2026\">Turkey Trot</a> in Prospect Park. Across the Bronx, the <a href=\"/events/nybg-holiday-train-show-2026/\" title=\"Holiday Train Show 2026 at the New York Botanical Garden\">Holiday Train Show</a> at the New York Botanical Garden stays open until 8pm on November 27, 28 and 29, and in Brooklyn <a href=\"/events/lightscape-brooklyn-botanic-garden-2026/\" title=\"Lightscape 2026 at Brooklyn Botanic Garden\">Lightscape</a> lights the Botanic Garden after dark.",
+    ],
+    faq: [
+      {
+        q: "When is Gratitude Weekend at Wave Hill in 2026?",
+        a: "Saturday, November 28 and Sunday, November 29, 2026, during garden hours: 10am to 4:30pm in winter, last admission 4pm. The Family Art Project runs 10am to 1pm both days; yoga and needle felting are on Sunday.",
+      },
+      {
+        q: "How much does it cost?",
+        a: "Garden admission is $10 for adults, $6 for students and seniors 65 and over, $4 for children from age 6 and free for members, as read on wavehill.org on November 2. The Family Art Project is free with admission; Yoga in the Garden is $25 and Mindful Needle Felting $45, each including admission, with members saving 10%.",
+      },
+      {
+        q: "Do I need to register?",
+        a: "Not for the Family Art Project. Mindful Needle Felting ($45) requires registration; Yoga in the Garden ($25) takes advance registration and day-of places are not guaranteed.",
+      },
+      {
+        q: "How do I get to Wave Hill without a car?",
+        a: "Take the 1 train to Van Cortlandt Park–242 St and the free shuttle at 25 past the hour from 10:25am, or Metro-North's Hudson Line to Riverdale and the hourly shuttle from 10:05am. The shuttle runs Thursday to Sunday.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/macys-thanksgiving-day-parade-2026/",
+        eyebrow: "November 26",
+        title: "Macy's Thanksgiving Day Parade: the 100th",
+        text: "The parade two days earlier, with a record 100 inflatables.",
+      },
+      {
+        href: "/events/pptc-turkey-trot-prospect-park-2026/",
+        eyebrow: "8:15am, November 26",
+        title: "Prospect Park Turkey Trot",
+        text: "Five miles through Prospect Park on Thanksgiving morning, $47 plus fees.",
+      },
+      {
+        href: "/events/nybg-holiday-train-show-2026/",
+        eyebrow: "Until January 10",
+        title: "NYBG Holiday Train Show",
+        text: "The Bronx's other garden, open to 8pm on the three nights of this weekend.",
+      },
+    ],
+    expertise:
+      "Take the 10:25 shuttle from 242nd Street on Saturday: it lands you inside the gate for most of the Family Art Project's 10am-to-1pm window, on the day without yoga, felting or Museum Store Sunday to share the garden with. Winter hours make the afternoon short: last admission is 4pm and the last shuttle pick-up 4:25pm, so anyone who wants the two Glyndor Gallery shows before they close on Sunday should be through the gate by three, remembering the gallery's half-hour closure at noon. If the felting workshop is the draw, book it before the day: it requires registration, and the yoga class takes day-of places only when there is room, so a registered Sunday starts at the gate at 10am without a wait. Pack the food donation with the bag you bring anyway; the drive is the one thing here that costs nothing and runs to December 18.",
   },
 ];

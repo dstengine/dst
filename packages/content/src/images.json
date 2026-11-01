@@ -671,6 +671,70 @@
           "/covers/yuri-lucero-acapulco-2026-1024.webp"
         ]
       ]
+    },
+    "/covers/fiesta-de-navidad-christmas-palacio-acapulco-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/fiesta-de-navidad-christmas-palacio-acapulco-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/fiesta-de-navidad-christmas-palacio-acapulco-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/fiesta-de-navidad-christmas-palacio-acapulco-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/fiesta-de-navidad-christmas-palacio-acapulco-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/fiesta-de-navidad-christmas-palacio-acapulco-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/fiesta-de-navidad-christmas-palacio-acapulco-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/mega-posada-palacio-mundo-imperial-acapulco-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/mega-posada-palacio-mundo-imperial-acapulco-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/mega-posada-palacio-mundo-imperial-acapulco-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/mega-posada-palacio-mundo-imperial-acapulco-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/mega-posada-palacio-mundo-imperial-acapulco-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/mega-posada-palacio-mundo-imperial-acapulco-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/mega-posada-palacio-mundo-imperial-acapulco-2026-1024.webp"
+        ]
+      ]
     }
   },
   "aivideo.zone": {
@@ -4129,6 +4193,102 @@
         [
           1024,
           "/covers/zona-maco-2027-1024.webp"
+        ]
+      ]
+    },
+    "/covers/el-cascanueces-auditorio-nacional-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/el-cascanueces-auditorio-nacional-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/el-cascanueces-auditorio-nacional-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/el-cascanueces-auditorio-nacional-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/el-cascanueces-auditorio-nacional-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/el-cascanueces-auditorio-nacional-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/el-cascanueces-auditorio-nacional-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/navidad-sinfonica-mineria-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/navidad-sinfonica-mineria-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/navidad-sinfonica-mineria-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/navidad-sinfonica-mineria-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/navidad-sinfonica-mineria-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/navidad-sinfonica-mineria-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/navidad-sinfonica-mineria-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/the-santa-run-cdmx-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/the-santa-run-cdmx-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/the-santa-run-cdmx-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/the-santa-run-cdmx-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/the-santa-run-cdmx-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/the-santa-run-cdmx-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/the-santa-run-cdmx-2026-1024.webp"
         ]
       ]
     }
@@ -27497,6 +27657,102 @@
           "/covers/xantolo-huasteca-potosina-2026-1536.webp"
         ]
       ]
+    },
+    "/covers/feria-de-la-esfera-tlalpujahua-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/feria-de-la-esfera-tlalpujahua-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/feria-de-la-esfera-tlalpujahua-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/feria-de-la-esfera-tlalpujahua-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/feria-de-la-esfera-tlalpujahua-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/feria-de-la-esfera-tlalpujahua-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/feria-de-la-esfera-tlalpujahua-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/luztopia-monterrey-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/luztopia-monterrey-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/luztopia-monterrey-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/luztopia-monterrey-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/luztopia-monterrey-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/luztopia-monterrey-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/luztopia-monterrey-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/navidalia-guadalajara-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/navidalia-guadalajara-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/navidalia-guadalajara-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/navidalia-guadalajara-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/navidalia-guadalajara-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/navidalia-guadalajara-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/navidalia-guadalajara-2026-1024.webp"
+        ]
+      ]
     }
   },
   "nyc42.lol": {
@@ -31225,6 +31481,70 @@
         [
           1024,
           "/covers/wicked-gluten-free-expo-meadowlands-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/gratitude-weekend-wave-hill-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/gratitude-weekend-wave-hill-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/gratitude-weekend-wave-hill-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/gratitude-weekend-wave-hill-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/gratitude-weekend-wave-hill-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/gratitude-weekend-wave-hill-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/gratitude-weekend-wave-hill-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/pptc-turkey-trot-prospect-park-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/pptc-turkey-trot-prospect-park-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/pptc-turkey-trot-prospect-park-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/pptc-turkey-trot-prospect-park-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/pptc-turkey-trot-prospect-park-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/pptc-turkey-trot-prospect-park-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/pptc-turkey-trot-prospect-park-2026-1024.webp"
         ]
       ]
     }

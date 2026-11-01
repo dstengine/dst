@@ -39,6 +39,24 @@ export function sections(items: FeedItem[]): Section[] {
     tags: TAGS,
     home: "Acapulco",
     copy: (g) => {
+      // La temporada que se busca por su nombre: una página que diga qué
+      // hay en diciembre vale más que "Navidad en Acapulco: con fecha y
+      // fuente", y los tres planes caben en una línea.
+      if (g.key === "Navidad") {
+        return {
+          title: "Navidad 2026 en Acapulco: cenas, posadas y El Cascanueces",
+          description:
+            "Navidad en Acapulco: El Cascanueces el 6 de diciembre, la Mega Posada del Palacio Mundo Imperial el 12 y la cena de Nochebuena en el hotel, con la fecha, el precio y la fuente de cada plan.",
+          h1: "Navidad en Acapulco",
+          lede: "Lo que hay en la bahía para estas fechas — del ballet de principios de diciembre a la Nochebuena en los hoteles de la zona Diamante — cada fecha como la publicó quien organiza, y el nombre de donde la leímos.",
+          headings: {
+            events: "Dónde pasar la Navidad",
+            upcoming: "Fechas de esta temporada",
+            past: "Temporadas pasadas",
+            news: "Noticias de la Navidad",
+          },
+        };
+      }
       const que = g.voc.plural ?? g.key.toLowerCase();
       const Que = `${que[0].toUpperCase()}${que.slice(1)}`;
       return {

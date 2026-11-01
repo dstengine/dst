@@ -84,9 +84,9 @@ export function sections(items: FeedItem[]): Section[] {
         return {
           title: "Navidad 2026 en la CDMX: qué hay",
           description:
-            "Navidad en la Ciudad de México: posadas, pistas de hielo, villancicos y la Rosca de Reyes, con la fecha y la hora como las publicó quien organiza.",
+            "Navidad en la Ciudad de México: El Cascanueces en el Auditorio Nacional, la Navidad Sinfónica de Minería y la carrera de Santas, con la fecha, el precio y la hora como las publicó quien organiza.",
           h1: "Navidad en la Ciudad de México",
-          lede: "De las posadas del 16 de diciembre a la Rosca del 6 de enero, lo que hay en la ciudad para estas fechas — cada fecha como la publicó quien organiza, y el enlace a donde lo leímos.",
+          lede: "De los villancicos de Minería a fines de noviembre a El Cascanueces del Auditorio la semana antes de Nochebuena, lo que hay en la ciudad para estas fechas — cada fecha como la publicó quien organiza, y el enlace a donde lo leímos.",
           headings: {
             events: "Dónde pasar la Navidad",
             upcoming: "Fechas de esta temporada",
