@@ -66,13 +66,13 @@ export function sections(items: FeedItem[]): Section[] {
       // would bury the only word anybody types.
       if (g.key === "Halloween") {
         return {
-          title: "Halloween in London 2026: what is on",
+          title: "Halloween in London 2026: dates across the boroughs",
           description:
-            "Halloween 2026 across the London boroughs — two palaces over half term, ghost tours at the Royal Observatory before it closes, a scare-free week in Barnes. Each date as the organiser published it.",
+            "Halloween 2026 in the London boroughs, date by date: Dark Arts at the studio tour to 8 November, two palaces over half term, a scare-free week in Barnes.",
           h1: "Halloween in London",
-          lede: "Two palaces over half term, ghost tours at the Royal Observatory in its last week before a long closure, a scare-free week of wetland folklore in Barnes, a month of selected dates at the theme park inside the London boundary — and, out past the boroughs in Watford, a hundred pumpkins over the Great Hall for seven weeks. Each date as the organiser gave it, and where we read it.",
+          lede: "The 2026 season, date by date: a hundred pumpkins over the Great Hall at the studio tour in Watford to 8 November, two palaces over half term, ghost tours at the Royal Observatory in its last week before a long closure, a scare-free week of wetland folklore in Barnes and a month of selected dates at the theme park inside the London boundary. Each date as the organiser gave it, and where we read it.",
           headings: {
-            events: "Where to go for Halloween",
+            events: "Halloween 2026 in the boroughs, date by date",
             upcoming: "2026 dates",
             past: "Already gone",
             news: "Halloween news",
@@ -83,13 +83,13 @@ export function sections(items: FeedItem[]): Section[] {
       // the generic "Fireworks in London" heading carries neither.
       if (g.key === "Fireworks") {
         return {
-          title: "Bonfire Night fireworks in London 2026: where to go",
+          title: "Bonfire Night fireworks in London 2026: dates and displays",
           description:
             "Bonfire Night 2026 in the London boroughs: a free display at Coram's Fields and Merton's at Wimbledon Park on the 5th, then Blackheath, Alexandra Palace and Battersea Park on Saturday 7 November.",
           h1: "Bonfire Night fireworks in London",
           lede: "Bonfire Night falls on a Thursday this year, so London has two of them: the fifth itself, with a free display in a Bloomsbury children's park and Merton's two shows at Wimbledon Park, and the Saturday after, when Blackheath, Alexandra Palace, Battersea Park and Morden Park all go up on the same evening. Each date, time and price as the organiser published it.",
           headings: {
-            events: "Where to watch the fireworks",
+            events: "The 2026 displays, date by date",
             upcoming: "2026 displays",
             past: "Already gone",
             news: "Fireworks news",
@@ -102,7 +102,7 @@ export function sections(items: FeedItem[]): Section[] {
           description:
             "Christmas 2026 across the London boroughs: the light trail at Kew from 13 November and the rest of the season out past the centre — each date as the organiser published it.",
           h1: "Christmas in London",
-          lede: "Kew lit up after dark from the middle of November, and the rest of the season out past the West End — markets, rinks and carols in the boroughs. Each date, time and price as the organiser gave it, and where we read it.",
+          lede: "Kew lit up after dark from the middle of November, and the rest of the season out past the West End — rinks at Hampton Court and the Queen's House, a winter garden at Fulham Palace, a makers' fair and Father Christmas at Eltham, and a swim in the Serpentine on Christmas morning. Each date, time and price as the organiser gave it, and where we read it.",
           headings: {
             events: "Where to go for Christmas",
             upcoming: "2026 dates",

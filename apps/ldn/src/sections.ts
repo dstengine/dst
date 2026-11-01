@@ -103,13 +103,13 @@ export function sections(items: FeedItem[]): Section[] {
       // and the generic template would file it as though it were a genre.
       if (g.key === "Halloween") {
         return {
-          title: "Halloween in central London 2026: what is on",
+          title: "Halloween in central London 2026: Kew, the Tower, Leadenhall",
           description:
-            "Halloween in London: Kew after dark, the Tower over half term, a giant beetle at Leadenhall Market and free afternoons in Hyde Park — each date as the organiser published it.",
+            "Halloween in central London 2026, date by date: Kew after dark to 1 November, ghosts at the Tower, the beetle at Leadenhall, free afternoons in Hyde Park.",
           h1: "Halloween in central London",
-          lede: "An illuminated trail through Kew, nine days of ghosts at the Tower, a giant beetle under the roof of Leadenhall Market and three free afternoons in Hyde Park — with the dates the organisers themselves published, not the ones the listings sites repeat.",
+          lede: "The 2026 season, date by date: an illuminated trail through Kew to 1 November, nine days of ghosts at the Tower, a giant beetle under the roof of Leadenhall Market to the same Sunday, three free afternoons in Hyde Park over half term and Day of the Dead at Camden Market on the 1st — with the dates the organisers themselves published, not the ones the listings sites repeat.",
           headings: {
-            events: "Where to go for Halloween",
+            events: "Halloween 2026 in central London, date by date",
             upcoming: "2026 dates",
             past: "Already gone",
             news: "Halloween news",

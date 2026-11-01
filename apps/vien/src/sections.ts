@@ -57,13 +57,13 @@ export function sections(items: FeedItem[]): Section[] {
       // welcher Marke wir es abgelegt haben.
       if (g.key === "Halloween") {
         return {
-          title: "Halloween in Wien 2026: was los ist",
+          title: "Halloween in Wien 2026: alle Termine",
           description:
-            "Halloween in Wien: Gruselführung im Kindermuseum Schönbrunn, Halloween-Show im Planetarium, Laufabend im Prater, Kürbisfest — mit Datum und Quelle.",
+            "Halloween in Wien 2026, Termin für Termin: Kindermuseum Schönbrunn bis 2. November, Planetarium, Laufabend im Prater, Kürbisfest — mit Datum und Quelle.",
           h1: "Halloween in Wien",
-          lede: "Die Wiener Liste ist kurz und das hat einen Grund, der sich beziffern lässt: Halloween wird hier überwiegend zu Hause gefeiert. Was es trotzdem außer Haus gibt, steht hier — mit Datum und Quelle.",
+          lede: "Die Wiener Liste ist kurz und das hat einen Grund, der sich beziffern lässt: Halloween wird hier überwiegend zu Hause gefeiert. Das Programm 2026 außer Haus, vom Kürbisfest am Himmel Ende Oktober bis zum Monsterparcours im Kindermuseum Schönbrunn am 2. November, steht hier — mit Datum und Quelle.",
           headings: {
-            events: "Wohin man zu Halloween geht",
+            events: "Halloween 2026 in Wien, Termin für Termin",
             upcoming: "Termine 2026",
             past: "Schon vorbei",
             news: "Meldungen zu Halloween",

@@ -87,9 +87,9 @@ export function sections(items: FeedItem[]): Section[] {
         return {
           title: "Free things to do in New York",
           description:
-            "Free things to do in New York City: the Village Halloween Parade, the Feast of San Gennaro, the Brooklyn Book Festival and a free Peanuts exhibition — no ticket, no admission.",
+            "Free things to do in New York City: skating in Bryant Park to February 28, the Polar Bear Plunge on January 1, the fall's parades — no ticket, no admission.",
           h1: "Free things to do in New York",
-          lede: "Everything on this site that costs nothing to walk into — a parade you can watch or join, eleven days of Little Italy, eight stages of Brooklyn writers. Not a discount and not a program bundled into a paid ticket: no admission at all.",
+          lede: "Everything on this site that costs nothing to walk into — the rink in Bryant Park until the end of February, the Atlantic at Coney Island on New Year's morning, Day of the Dead at Green-Wood on November 2, and the parades and festivals of the fall, each with its date. Not a discount and not a program bundled into a paid ticket: no admission at all.",
           headings: {
             events: "No ticket, no admission",
             upcoming: "Still to come",
@@ -123,13 +123,13 @@ export function sections(items: FeedItem[]): Section[] {
       // want to know where to stand and on which evening.
       if (g.key === "Halloween") {
         return {
-          title: "Halloween in New York 2026: what is on",
+          title: "Halloween in New York 2026: parade, zoo and pumpkin blaze",
           description:
-            "Halloween in New York: the Village parade up Sixth Avenue, six weekends at the Bronx Zoo and the pumpkin blaze up the Hudson, from late September to 8 November — each date as the organiser published it.",
+            "Halloween in New York 2026, date by date: the pumpkin blaze up the Hudson through November 8, the Village parade on the 31st, six weekends of Boo at the Zoo.",
           h1: "Halloween in New York",
-          lede: "Sixth Avenue on the 31st, the Bronx Zoo for six weekends, and seven thousand carved pumpkins an hour up the river — each date as the organiser gave it, and a link to where we read it.",
+          lede: "Seven thousand carved pumpkins an hour up the river through November 8, the Village parade up Sixth Avenue on the 31st, six weekends at the Bronx Zoo to November 1, Day of the Dead in Brooklyn on the 2nd — the whole 2026 season, each date as the organizer gave it, and a link to where we read it.",
           headings: {
-            events: "Where to go for Halloween",
+            events: "Halloween 2026 in New York, date by date",
             upcoming: "2026 dates",
             past: "Already gone",
             news: "Halloween news",
