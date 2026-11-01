@@ -2,7 +2,7 @@
 // entries a country needs, how many a kind needs, which slugs are already
 // spoken for — live in @dst/content/sections. What is left here is the
 // vocabulary and the wording, which is all a site should have to write.
-import { buildSections, type Section, type Vocabulary } from "@dst/content/sections";
+import { buildSections, type Intent, type Section, type Vocabulary } from "@dst/content/sections";
 import type { EventItem } from "@dst/content/types";
 
 export type { Section };
@@ -55,17 +55,41 @@ export const NAV = {
   label: "Events by country and kind",
 };
 
+// The one section cut by a fact rather than a field. "Breakpoint" is the
+// one word people type for a fortnight that the data files under six
+// different kinds — a hacker house, a demo day, two technical days, the
+// conference and its dinners — so no category could hold it. The fact is a
+// tag written on each entry that belongs to the fortnight, in the same way
+// tick marks its City Day; nothing is read off a title or a date range.
+const INTENTS: Intent<EventItem>[] = [
+  {
+    slug: "breakpoint",
+    label: "Breakpoint week",
+    match: (e) => e.tags?.includes("breakpoint-week") ?? false,
+  },
+];
+
 export function sections(items: EventItem[]): Section<EventItem>[] {
   return buildSections<EventItem, Country>({
     items,
     reserved: RESERVED,
     places: COUNTRIES,
     tags: KINDS,
+    intents: INTENTS,
     // A place page here is a country page. The city is in the data too, but
     // "solana events london" and "solana events uk" are the same reader,
     // and two pages answering one query compete with each other.
     placeOf: (e) => e.country,
     copy: (g) => {
+      if (g.kind === "intent") {
+        return {
+          title: "Solana Breakpoint 2026 week in London: every event",
+          description:
+            "Breakpoint week in London, 1 to 17 November 2026: the Hacker House, Demo Day, 200ms, Scale or Die, the conference at Olympia and the evening side events, with dates, prices and the source on every entry.",
+          h1: "Breakpoint 2026 week in London",
+          lede: "Everything on this calendar that belongs to the Breakpoint fortnight — the Hacker House from 1 November, the technical days on the 13th and 14th, the conference at Olympia from the 15th and the evenings around it — each date as the organiser published it, and a link to where we read it.",
+        };
+      }
       if (g.kind === "place") {
         // "in the UK", "in Serbia" — the article belongs to the country, so
         // it is carried with the country rather than written into each

@@ -11,7 +11,7 @@
 //
 // No place sections: everything here is in Yerevan, and a page /yerevan/
 // would be the front page at a second address. `home` says so.
-import { buildSections, promotedSection, type Section, type Vocabulary } from "@dst/content/sections";
+import { buildSections, promotedSection, type Intent, type Section, type Vocabulary } from "@dst/content/sections";
 import type { FeedItem } from "@dst/content/sections";
 import { type Lang } from "./content";
 import { eventsFor, newsFor, prefix } from "./i18n";
@@ -44,13 +44,26 @@ const KINDS: { slug: string; hy: string; en: string; adult?: boolean; icon?: str
   // runs from the December concerts through the Eve to Christmas on
   // 6 January, and Ամանոր is the word for all of it.
   { slug: "new-year", hy: "Ամանոր", en: "New Year", icon: "tree" },
+  // Four shows with closing dates in two houses; "exhibitions in Yerevan"
+  // is asked by visitors with an afternoon, and the answer is until when.
+  { slug: "exhibitions", hy: "Ցուցահանդեսներ", en: "Exhibitions", icon: "grid" },
+];
+
+// Sections cut by a fact rather than by the category. Jazz is filed under
+// Concerts with everything else that has a stage and a ticket, and a
+// category cannot hold two words; the tag on the entry can. Same mechanism
+// as City Day, and the same rule: the tag is written on the entry, never
+// read off a title.
+const INTENTS: { slug: string; hy: string; en: string; tag: string; icon: string }[] = [
+  { slug: "jazz", hy: "Ջազ", en: "Jazz", tag: "jazz", icon: "mic" },
 ];
 
 /** Section slugs whose page carries the 18+ check. */
 export const ADULT = new Set(KINDS.filter((k) => k.adult).map((k) => k.slug));
 
 /** A section's nav icon; a section without its own gets the star. */
-export const iconOf = (slug: string) => KINDS.find((k) => k.slug === slug)?.icon ?? "star";
+export const iconOf = (slug: string) =>
+  KINDS.find((k) => k.slug === slug)?.icon ?? INTENTS.find((k) => k.slug === slug)?.icon ?? "star";
 
 const tags = (lang: Lang): Record<string, Vocabulary> =>
   Object.fromEntries(KINDS.map((k) => [k[lang], { slug: k.slug, plural: k[lang] }]));
@@ -67,12 +80,19 @@ export function sections(items: FeedItem[], lang: Lang): Section[] {
     items,
     reserved: RESERVED,
     tags: tags(lang),
-    intents: [{
-      slug: "yerevan-city-day",
-      label: lang === "hy" ? "Երևանի օր" : "Yerevan City Day",
-      match: (item) => item.tags?.includes("yerevan-city-day") ?? false,
-      min: 1,
-    }],
+    intents: [
+      {
+        slug: "yerevan-city-day",
+        label: lang === "hy" ? "Երևանի օր" : "Yerevan City Day",
+        match: (item) => item.tags?.includes("yerevan-city-day") ?? false,
+        min: 1,
+      },
+      ...INTENTS.map((k): Intent<FeedItem> => ({
+        slug: k.slug,
+        label: k[lang],
+        match: (item) => item.tags?.includes(k.tag) ?? false,
+      })),
+    ],
     home: HOME[lang],
     copy: (g) => {
       if (g.key === "yerevan-city-day") {
@@ -90,6 +110,46 @@ export function sections(items: FeedItem[], lang: Lang): Section[] {
               h1: "Yerevan City Day 2026",
               lede: "Yerevan City Day concerts and festivals by date and location. Open each event page for the line-up, time, map and source.",
               headings: { events: "Yerevan City Day events", upcoming: "Programme", past: "Past events" },
+            };
+      }
+      if (g.key === "jazz") {
+        return lang === "hy"
+          ? {
+              title: "Ջազ Երևանում․ համերգներ և ամսաթվեր",
+              description:
+                "Ջազ համերգներ Երևանում՝ ամսաթվով․ Հայաստանի պետական ջազ նվագախումբը, հյուր երգիչներ և տրիոներ Արամ Խաչատրյան համերգասրահում և փոքր բեմերում՝ տոմսի գնով և աղբյուրով ամեն գրառման մոտ։",
+              h1: "Ջազ Երևանում",
+              lede: "Ջազ համերգներ Երևանում՝ ամսաթվով․ բիգ-բենդի երեկոներ Խաչատրյան դահլիճում, տրիոներ և հյուր երգիչներ, տոմսի գինը և հղումն այնտեղ, որտեղ կարդացել ենք։",
+              headings: { events: "Ջազ համերգներ՝ ամսաթվով", upcoming: "Առաջիկայում", past: "Անցած համերգներ" },
+            }
+          : {
+              title: "Jazz in Yerevan: concerts and dates",
+              description:
+                "Jazz concerts in Yerevan by date: the Armenian State Jazz Orchestra, visiting singers and trios at the Aram Khachaturian Concert Hall and the city's smaller stages, with ticket prices and the source on every entry.",
+              h1: "Jazz in Yerevan",
+              lede: "Jazz concerts in Yerevan with a date — big-band evenings at the Khachaturian Hall, trios and visiting singers — the price of a ticket, and a link to where we read it.",
+              headings: { events: "Jazz concerts with a date", upcoming: "Coming up", past: "Past concerts" },
+            };
+      }
+      // Named for the closing date, because that is the question: a visitor
+      // with an afternoon asks what is open now and until when.
+      if (g.key === "Ցուցահանդեսներ" || g.key === "Exhibitions") {
+        return lang === "hy"
+          ? {
+              title: "Ցուցահանդեսներ Երևանում․ ի՞նչ է բաց և մինչև ե՞րբ",
+              description:
+                "Ցուցահանդեսներ Երևանում՝ փակման ամսաթվերով․ Գաֆէսճեան կենտրոնը Կասկադում և Ազգային պատկերասրահը՝ մուտքի գնով և աղբյուրով ամեն գրառման մոտ։",
+              h1: "Ցուցահանդեսներ Երևանում",
+              lede: "Ի՞նչ է ցուցադրվում Երևանում հիմա և մինչև ե՞րբ․ փակման ամսաթիվը՝ ինչպես հրապարակել է պատկերասրահը, մուտքի գինը և հղումն այնտեղ, որտեղ կարդացել ենք։",
+              headings: { events: "Ցուցահանդեսներ՝ փակման ամսաթվով", upcoming: "Բաց են հիմա և առաջիկայում", past: "Փակված" },
+            }
+          : {
+              title: "Exhibitions in Yerevan: what is on and until when",
+              description:
+                "Exhibitions in Yerevan with their closing dates: the Cafesjian Center at the Cascade and the National Gallery of Armenia, with the admission price and the source on every entry.",
+              h1: "Exhibitions in Yerevan",
+              lede: "What is showing in Yerevan now and until when — each closing date as the gallery published it, the admission price, and a link to where we read it.",
+              headings: { events: "Exhibitions with a closing date", upcoming: "On now and coming up", past: "Closed" },
             };
       }
       if (g.key === "Հելոուին" || g.key === "Halloween") {
@@ -248,9 +308,11 @@ export function sectionHref(item: FeedItem, lang: Lang): string | undefined {
 // The tags this site is pushing right now, in order — see `promotedSection`.
 // Each drops out of the nav and the event pages by itself once its last
 // date has gone.
+// An intent is named by its slug — see `promotedSection` — so "jazz" is the
+// same word in both lists.
 const PROMOTED: Record<Lang, string[]> = {
-  hy: ["Հելոուին", "Գինի", "Տեխնոլոգիաներ", "Ամանոր"],
-  en: ["Halloween", "Wine", "Tech", "New Year"],
+  hy: ["Հելոուին", "Գինի", "Տեխնոլոգիաներ", "Ամանոր", "jazz"],
+  en: ["Halloween", "Wine", "Tech", "New Year", "jazz"],
 };
 
 const today = new Date().toISOString().slice(0, 10);
@@ -266,8 +328,8 @@ export const promoted = { hy: promotedAll.hy[0], en: promotedAll.en[0] };
 // because Armenian wants the genitive (Հելոուինի), which no rule over the
 // bare label would get right. A promoted tag with no words here gets no link.
 const PROMOTED_ALL: Record<Lang, Record<string, string>> = {
-  hy: { "Հելոուին": "Հելոուինի բոլոր միջոցառումները", "Գինի": "Գինու բոլոր միջոցառումները", "Տեխնոլոգիաներ": "Տեխնոլոգիական բոլոր միջոցառումները", "Ամանոր": "Ամանորի բոլոր միջոցառումները" },
-  en: { Halloween: "All Halloween events", Wine: "All wine events", Tech: "All tech events", "New Year": "All New Year events" },
+  hy: { "Հելոուին": "Հելոուինի բոլոր միջոցառումները", "Գինի": "Գինու բոլոր միջոցառումները", "Տեխնոլոգիաներ": "Տեխնոլոգիական բոլոր միջոցառումները", "Ամանոր": "Ամանորի բոլոր միջոցառումները", jazz: "Ջազի բոլոր համերգները" },
+  en: { Halloween: "All Halloween events", Wine: "All wine events", Tech: "All tech events", "New Year": "All New Year events", jazz: "All jazz concerts" },
 };
 export const linkFor = (lang: Lang, hot: (typeof promotedAll)["en"][number] | undefined) => {
   const label = hot && PROMOTED_ALL[lang][hot.key];

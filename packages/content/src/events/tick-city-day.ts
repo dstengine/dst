@@ -213,7 +213,7 @@ export const items: EventItem[] = [
     venue: "Գաֆէսճեան քանդակների պարտեզ, Կասկադ",
     geo: { name: "Գաֆէսճեան քանդակների պարտեզ", lat: 40.1893845, lng: 44.5154178 },
     organizer: "Երևանի քաղաքապետարան",
-    tags: ["yerevan-city-day"],
+    tags: ["yerevan-city-day", "jazz"],
     category: "Համերգներ",
     image: "/covers/yerevan-city-day-fkj-2026.jpg",
     imageAlt: "Visit Yerevan-ի ջազի պաստառը՝ FKJ-ի դիմանկարով և հոկտեմբերի 10-ի 20:00 ելույթի նշումով",
