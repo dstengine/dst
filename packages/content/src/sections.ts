@@ -230,7 +230,8 @@ export function sectionHrefFor<T extends FeedItem>(
 
 /** The one section a site is pushing this season, if it has earned it.
  *
- *  A promoted tag is the site saying "this is what people are asking for
+ *  A promoted section — a kind, or since 2 November 2026 an intent too — is
+ *  the site saying "this is what people are asking for
  *  right now" — Halloween in October, Día de Muertos through to the second
  *  of November. Naming it buys three things: a link to it from the header
  *  of every page, the lead position in the tail of every event page, and
@@ -239,8 +240,8 @@ export function sectionHrefFor<T extends FeedItem>(
  *  Three conditions, and all of them are the site's own data rather than a
  *  date in a calendar we would have to maintain:
  *
- *  1. The tag is named in the site's config. Nothing is promoted by
- *     accident.
+ *  1. The tag is named in the site's config — a kind by its key, an intent
+ *     by its slug. Nothing is promoted by accident.
  *  2. It cleared the section threshold, so the link has somewhere to go.
  *  3. **It still has an event that has not ended.** This is the one that
  *     makes the whole thing safe to leave switched on: the header link and
@@ -266,7 +267,12 @@ export function promotedSection<T extends FeedItem>(
   where: string,
 ): Promoted<T> | undefined {
   if (!key) return undefined;
-  const found = all.find((s) => s.kind === "tag" && s.key === key);
+  // A kind or an intent, never a place: a season is a label we chose, and
+  // it can be cut either way — "Halloween" is a category on nyc42, "Yerevan
+  // City Day" a tag read by a predicate on tick. An intent's key is its
+  // slug, so a site names it in PROMOTED by the slug it gave it. A place is
+  // never promoted: it is where the reader already is, not a season.
+  const found = all.find((s) => s.kind !== "place" && s.key === key);
   if (!found) return undefined;
   const ahead = found.items
     .filter((i): i is T & { start: string } => "start" in i && isOn(i, today))
