@@ -518,7 +518,7 @@ export const items: EventItem[] = [
   {
     slug: "vienna-halloween-run-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-11-01T09:15:00+01:00",
+    updatedAt: "2026-11-02T02:30:00+01:00",
     site: "vien",
     image: "/covers/vienna-halloween-run-2026.jpg",
     imageAlt: "Eine helle Laufbahn, die in die Bildmitte führt, gesäumt von Bäumen mit rotem Herbstlaub",
@@ -615,6 +615,12 @@ export const items: EventItem[] = [
         title: "Perchtenlauf im Böhmischen Prater 2026",
         text: "Noch ein Abend im Dunkeln, diesmal im Advent: Perchten und Feuershow am Laaer Wald, 17 bis 18:30 Uhr, Eintritt frei.",
       },
+      {
+        href: "/veranstaltungen/weihnachtsmarkt-am-hof-wien-2026/",
+        eyebrow: "13. November – 23. Dezember",
+        title: "Weihnachtsmarkt am Hof 2026",
+        text: "Punsch unter der Mariensäule im ersten Bezirk: 76 Hütten, täglich bis 21 Uhr, Eintritt frei.",
+      },
     ],
     expertise:
       "Zwei Dinge unterscheiden diesen Abend von einem gewöhnlichen Volkslauf. Erstens die Uhrzeit: Ende Oktober ist es um halb sieben bereits dunkel, und die Hauptallee ist keine hell beleuchtete Straße — wer die 5 Kilometer läuft, läuft den größten Teil davon im Halbdunkel. Zweitens das Kostüm, das hier nicht Zierde, sondern Ausrüstung ist: Was beim Fotografieren gut aussieht, wird nach zwei Kilometern schwer und warm. Die praktikable Lösung sind Maske und Umhang, die man im Ziel wieder anzieht, nicht das vollständige Ganzkörperkostüm.",
@@ -623,7 +629,7 @@ export const items: EventItem[] = [
   {
     slug: "kuerbisfest-am-himmel-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-11-01T09:15:00+01:00",
+    updatedAt: "2026-11-02T02:30:00+01:00",
     site: "vien",
     image: "/covers/kuerbisfest-am-himmel-2026.jpg",
     imageAlt: "Ein breiter Haufen runder Papierscheiben in Rot, Grün, Ocker und Creme, in vielen verschiedenen Größen",
@@ -722,6 +728,12 @@ export const items: EventItem[] = [
         eyebrow: "13. Dezember, Favoriten",
         title: "Perchtenlauf im Böhmischen Prater 2026",
         text: "Kinderfreundlicher Perchtenlauf mit Feuershow im Böhmischen Prater am Laaer Wald, 17 bis 18:30 Uhr, Eintritt frei.",
+      },
+      {
+        href: "/veranstaltungen/weihnachtsmarkt-am-hof-wien-2026/",
+        eyebrow: "13. November – 23. Dezember, Innere Stadt",
+        title: "Weihnachtsmarkt am Hof 2026",
+        text: "Nach dem Kürbis der Advent: Zirbenpunsch und Kunsthandwerk Am Hof in Wien, Montag bis Donnerstag ab 11, am Wochenende ab 10 Uhr.",
       },
     ],
     expertise:
@@ -2114,7 +2126,7 @@ export const items: EventItem[] = [
   {
     slug: "altwiener-christkindlmarkt-freyung-2026",
     createdAt: "2026-10-25T02:30:00+04:00",
-    updatedAt: "2026-10-25T22:10:00+04:00",
+    updatedAt: "2026-11-02T02:30:00+01:00",
     site: "vien",
     image: "/covers/altwiener-christkindlmarkt-freyung-2026.jpg",
     imageAlt: "Kleine Holzbuden mit roten Dächern, ein Lebkuchenherz und Tannenbäumchen auf einem Platz, dahinter eine alte Kirche mit Turm und Sterne",
@@ -2197,6 +2209,12 @@ export const items: EventItem[] = [
         eyebrow: "Karlsplatz",
         title: "Art Advent am Karlsplatz",
         text: "Kunsthandwerk vor der Karlskirche, bis 23. Dezember.",
+      },
+      {
+        href: "/veranstaltungen/weihnachtsmarkt-am-hof-wien-2026/",
+        eyebrow: "Am Hof",
+        title: "Weihnachtsmarkt am Hof",
+        text: "Der Nachbarmarkt unter der Mariensäule, wenige Gehminuten entfernt.",
       },
     ],
     expertise:
@@ -2290,6 +2308,102 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Der Spittelberg ist der Markt in den Gassen, nicht auf einem Platz: Die Stände stehen zwischen den Hausfassaden, und das macht ihn an Wochenendabenden eng. Wer in Ruhe schauen will, kommt unter der Woche kurz nach 14 Uhr. Am Samstag und Sonntag öffnet er schon um 11 Uhr, und der Vormittag ist dann die ruhigste Zeit, um in Ruhe Geschenke zu suchen.",
+  },
+  {
+    slug: "weihnachtsmarkt-am-hof-wien-2026",
+    createdAt: "2026-11-02T02:30:00+01:00",
+    updatedAt: "2026-11-02T02:30:00+01:00",
+    site: "vien",
+    title: "Weihnachtsmarkt am Hof 2026",
+    cardTitle: "Weihnachtsmarkt am Hof",
+    titleSeo: "Weihnachtsmarkt am Hof Wien 2026: November bis Dezember",
+    summary:
+      "Der Weihnachtsmarkt am Hof in der Wiener Innenstadt ist vom 13. November bis 23. Dezember 2026 geöffnet: Montag bis Donnerstag 11 bis 21 Uhr, Freitag bis Sonntag und am 8. Dezember 10 bis 21 Uhr, Gastronomie bis 22 Uhr. 76 Hütten, Eintritt frei.",
+    start: "2026-11-13",
+    end: "2026-12-23",
+    startTime: "11:00",
+    endTime: "21:00",
+    utcOffset: "+01:00",
+    venue: "Am Hof",
+    city: "Wien",
+    country: "Österreich",
+    geo: { name: "Am Hof, 1010 Wien", lat: 48.2109, lng: 16.3678 },
+    organizer: "Weihnachtsmarkt am Hof",
+    category: "Weihnachtsmarkt",
+    tickets: { priceFrom: 0, currency: "EUR" },
+    ticket: {
+      url: "https://www.weihnachtsmarkt-hof.at/",
+      label: "Weihnachtsmarkt am Hof",
+      sells: false,
+    },
+    source: {
+      name: "Weihnachtsmarkt am Hof",
+      url: "https://www.weihnachtsmarkt-hof.at/besuchen/",
+      verifiedOn: "2026-11-02",
+    },
+    body: [
+      "Unter der Mariensäule auf einem der ältesten Plätze der Stadt: Der <strong>Weihnachtsmarkt am Hof</strong> — viele sagen Adventmarkt Am Hof — öffnet am <strong>Freitag, 13. November 2026</strong>, und bleibt bis <strong>Mittwoch, 23. Dezember</strong>. <strong>76 Hütten</strong> stehen auf dem Platz Am Hof im ersten Bezirk, der Eintritt ist frei.",
+      "## Öffnungszeiten",
+      "<strong>Montag bis Donnerstag</strong> von <strong>11 bis 21 Uhr</strong>. <strong>Freitag, Samstag, Sonntag</strong> und am <strong>Feiertag, 8. Dezember</strong>, von <strong>10 bis 21 Uhr</strong>. Die Gastronomie schenkt jeden Tag bis <strong>22 Uhr</strong> aus.",
+      "## Was es gibt",
+      "Über 70 Aussteller:innen mit Kunsthandwerk, Keramik, Schmuck, Lederwaren, Schals, Honig und Weihnachtsdeko; dazu Punsch, Glühwein und Maroni. Aus der Geschichte des Markts kommen die Kunst- und Antiquitätenhändler, die bis heute dazugehören. Bekannt ist der Markt für seinen <strong>Zirbenpunsch</strong>, den es seit 1999 gibt, für ein eigenes <strong>Bockbier „Am Hof“</strong> seit 2014 und für einen Bio-Punsch. Getrunken wird aus <strong>Keramik-Pfandhäferln</strong> statt aus Einwegbechern; das Häferl wechselt jedes Jahr und wird gern gesammelt.",
+      "## Punsch für Licht ins Dunkel",
+      "Beim Stand von <strong>Radio Wien</strong> unter der Mariensäule schenken Moderator:innen Punsch für <strong>Licht ins Dunkel</strong> aus. Laut Veranstalter spendet die Marktgemeinschaft dabei den ganzen gesammelten Betrag, ohne Miete, Personal oder Ware abzuziehen.",
+      "## Anreise",
+      "<strong>U3 Herrengasse</strong>, <strong>U2 Schottentor</strong> oder <strong>U1/U3 Stephansplatz</strong>; die Straßenbahnen 37, 38, 40, 41, 42, 43, 44, 71 und D sowie der Bus 40A fahren bis Schottentor. Mit dem Auto in die Garage Am Hof. Fahrräder und Scooter dürfen nicht auf den Markt, Bügel stehen am Platz und in der Bognergasse. Hunde nur an der Leine und mit Beißkorb.",
+      "## Gut zu wissen",
+      "Der Markt ist <strong>barrierefrei</strong>. Toiletten, auch barrierefrei, sind hinter den Hütten 14 bis 18 links vom Markt; zwei Bankomaten stehen zwischen den Hütten 9 und 10 sowie 66 und 67, bei den meisten Ständen geht auch Karte. Am Platz gibt es kostenloses wien.at-WLAN.",
+      "## Weitere Märkte in der Nähe",
+      "Der <a href=\"/veranstaltungen/altwiener-christkindlmarkt-freyung-2026/\" title=\"Altwiener Christkindlmarkt Wien 2026: Freyung, Zeiten\">Altwiener Christkindlmarkt auf der Freyung</a> liegt wenige Gehminuten entfernt, der <a href=\"/veranstaltungen/wiener-christkindlmarkt-2026/\" title=\"Wiener Christkindlmarkt am Rathausplatz 2026\">Christkindlmarkt am Rathausplatz</a> ist zu Fuß in gut zehn Minuten erreicht. Alle Termine stehen bei den <a href=\"/weihnachtsmaerkte/\" title=\"Weihnachtsmärkte in Wien 2026: Termine und Zeiten\">Weihnachtsmärkten in Wien</a>.",
+    ],
+    faq: [
+      {
+        q: "Wann ist der Weihnachtsmarkt am Hof 2026?",
+        a: "Vom 13. November bis 23. Dezember 2026. Er öffnet am Freitag, 13. November, um 10 Uhr.",
+      },
+      {
+        q: "Wie sind die Öffnungszeiten?",
+        a: "Montag bis Donnerstag 11 bis 21 Uhr, Freitag bis Sonntag und am 8. Dezember 10 bis 21 Uhr. Die Gastronomie hat bis 22 Uhr offen.",
+      },
+      {
+        q: "Kostet der Markt Eintritt?",
+        a: "Nein, der Besuch ist kostenlos.",
+      },
+      {
+        q: "Wie komme ich hin?",
+        a: "Mit der U3 bis Herrengasse, der U2 bis Schottentor oder der U1 und U3 bis Stephansplatz; die Straßenbahnen am Ring halten in Schottentor.",
+      },
+      {
+        q: "Gibt es Toiletten und einen Bankomaten?",
+        a: "Ja. Die Toiletten sind hinter den Hütten 14 bis 18, die zwei Bankomaten zwischen den Hütten 9 und 10 sowie 66 und 67.",
+      },
+      {
+        q: "Ist der Markt barrierefrei?",
+        a: "Ja, der Weihnachtsmarkt am Hof ist barrierefrei zugänglich, auch mit dem Rollstuhl.",
+      },
+    ],
+    related: [
+      {
+        href: "/veranstaltungen/altwiener-christkindlmarkt-freyung-2026/",
+        eyebrow: "Freyung",
+        title: "Altwiener Christkindlmarkt",
+        text: "Handwerk und Adventprogramm auf der Freyung, ein paar Schritte weiter.",
+      },
+      {
+        href: "/veranstaltungen/wiener-christkindlmarkt-2026/",
+        eyebrow: "Rathausplatz",
+        title: "Wiener Christkindlmarkt am Rathausplatz",
+        text: "Der große Markt vor dem Rathaus, bis 26. Dezember.",
+      },
+      {
+        href: "/veranstaltungen/weihnachtsmarkt-spittelberg-2026/",
+        eyebrow: "Spittelberg",
+        title: "Weihnachtsmarkt am Spittelberg",
+        text: "Der Markt in den Gassen von Neubau, ab 14 Uhr.",
+      },
+    ],
+    expertise:
+      "Am Hof ist der Markt, der am Abend vor allem aus der Innenstadt kommt: Nach Büroschluss kommen hier viele auf einen After-Work-Punsch vor der Mariensäule, und dann sind die Wege zwischen den Hütten voll. Wer schauen und kaufen will, kommt am Vormittag eines Wochenendes, wenn der Markt um 10 Uhr öffnet. Das Häferl gibt man zurück und bekommt das Pfand wieder, oder man nimmt es mit — dann ist es das Souvenir des Jahres.",
   },
   {
     slug: "perchtenlauf-prater-wien-2026",
