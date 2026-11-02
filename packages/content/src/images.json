@@ -38808,6 +38808,38 @@
         ]
       ]
     },
+    "/covers/home-alone-in-concert-khachaturian-hall-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/home-alone-in-concert-khachaturian-hall-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/home-alone-in-concert-khachaturian-hall-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/home-alone-in-concert-khachaturian-hall-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/home-alone-in-concert-khachaturian-hall-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/home-alone-in-concert-khachaturian-hall-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/home-alone-in-concert-khachaturian-hall-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/hover-choir-vahagn-hayrapetyan-trio-yerevan-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -40237,6 +40269,38 @@
         [
           1536,
           "/covers/pagliacci-yerevan-opera-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/parg-all-that-remains-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/parg-all-that-remains-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/parg-all-that-remains-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/parg-all-that-remains-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/parg-all-that-remains-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/parg-all-that-remains-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/parg-all-that-remains-yerevan-2026-1024.webp"
         ]
       ]
     },
@@ -42229,6 +42293,38 @@
         [
           1536,
           "/covers/yerevan-fashion-week-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/yerevan-international-flute-festival-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/yerevan-international-flute-festival-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/yerevan-international-flute-festival-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/yerevan-international-flute-festival-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/yerevan-international-flute-festival-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/yerevan-international-flute-festival-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/yerevan-international-flute-festival-2026-1024.webp"
         ]
       ]
     },
