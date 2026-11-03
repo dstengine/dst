@@ -70,7 +70,7 @@ export const items: NewsItem[] = [
   {
     slug: "comfyui-0-41-0-42-hdr-reference-latents-lightvae",
     createdAt: "2026-10-23T04:40:00+04:00",
-    updatedAt: "2026-10-23T04:40:00+04:00",
+    updatedAt: "2026-11-04T01:26:00+04:00",
     site: "aivideo",
     image: "/covers/comfyui-0-41-0-42-hdr-reference-latents-lightvae.jpg",
     imageAlt: "Six neon boxes joined by glowing cables into a graph on a dark violet ground, the centre box holding a bright yellow disc with two rings around it",
@@ -108,6 +108,9 @@ export const items: NewsItem[] = [
       "<strong>GetLatentSize</strong> reports a video or image latent's width, height, frame count and batch size; <strong>GetAudioLatentSize</strong> does the same for audio with length and channels. They exist for overlap calculations and noise-mask geometry, the arithmetic a long-clip workflow does by hand, and they output no passthrough, matching Get Image Size.",
       "## Also in these two",
       "Native <strong>LoRA stack</strong> nodes were switched off in 0.41 while the frontend caught up and switched back on inside the same release. 0.41 adds the <strong>Flux3-image</strong> model and 0.42 relabels its nodes <strong>FLUX 3 Image</strong>; 0.42 adds a <strong>Krea 3 Image</strong> partner node and <strong>MOSS-image</strong> support, retires Quiver's Arrow 1.x models, speeds up Qwen 3.x text generation, fixes the webcam node and stops a CPU device claiming fp8, nvfp4, mxfp8 or int8 support it does not have. The frontend moves to 1.55.18.",
+      "## Long clips as shots rather than latents",
+      "The latent-size nodes above do the bookkeeping of a long clip built in a graph. <a href=\"/go/rushframe/\" title=\"Product site of the Windows video editor, with its Free download\">RushFrame</a>, a Windows editor with ComfyUI underneath, gets length from shots instead: its <strong>Continue</strong> starts each new shot on the last available frame of the previous clip, so a longer sequence grows from connected shots on the timeline.",
+      "The component register on its site, dated 21 October, records the managed install on ComfyUI <strong>0.31.0</strong>, with two node packs, ComfyUI-KJNodes and ComfyUI-LTXVideo. That ComfyUI predates both releases on this page, so none of their nodes is in it; nor is the H3 LightVAE, as the register has no MiniMax entry.",
     ],
     faq: [
       {
@@ -192,7 +195,7 @@ export const items: NewsItem[] = [
   {
     slug: "comfyui-0-39-0-40-vidu-q4-heygen-camera-angle",
     createdAt: "2026-10-14T21:00:00+04:00",
-    updatedAt: "2026-10-14T21:00:00+04:00",
+    updatedAt: "2026-11-04T01:26:00+04:00",
     site: "aivideo",
     image: "/covers/comfyui-0-39-0-40-vidu-q4-heygen-camera-angle.jpg",
     imageAlt: "Neon boxes joined by glowing cables in a graph, with a magenta camera icon among them",
@@ -233,6 +236,9 @@ export const items: NewsItem[] = [
       "<strong>Save Video</strong> encodes at higher quality by default from 0.39: CRF 18 for H.264 and 24 for AV1. 0.40 adds native <strong>LoRA stack</strong> loader nodes, which apply several LoRAs in order from one node, each row with its own file, strength and on/off switch. And 0.39 splits an old flag in two: <strong>--disable-partner-nodes</strong> hides the hosted nodes and <strong>--offline</strong> stops the frontend's outbound requests, where <strong>--disable-api-nodes</strong> used to do both at once.",
       "## Luma Ray 2 is on its way out",
       "0.39 marks the <strong>Luma Ray 2</strong> nodes as deprecated, and their endpoints are due to be removed on <strong>24 October</strong>. A workflow built on Ray 2 needs another model before then.",
+      "## A local route beside the partner nodes",
+      "The headline additions in 0.39 and 0.40 are partner nodes, which send each job to a hosted model. <a href=\"/go/rushframe/\" title=\"The product site, with the Free download for Windows\">RushFrame</a> takes the local route: a Windows video editor that keeps ComfyUI as its engine and builds a project from shots on a timeline.",
+      "Its register of third-party components, recorded on 21 October for a Windows and NVIDIA profile, lists ComfyUI 0.31.0 for the managed install, older than either release here, along with the KJNodes and LTXVideo node packs and LTX-2.3 22B as the video model. Vidu, HeyGen, Higgsfield, Grok and MiniMax have no entry in it, so none of the models above is part of that install.",
     ],
     faq: [
       {
@@ -367,7 +373,7 @@ export const items: NewsItem[] = [
   {
     slug: "editing-ai-video-in-comfyui-nodes",
     createdAt: "2026-10-04T13:00:00+04:00",
-    updatedAt: "2026-10-04T13:00:00+04:00",
+    updatedAt: "2026-11-04T01:26:00+04:00",
     site: "aivideo",
     image: "/covers/editing-ai-video-in-comfyui-nodes.jpg",
     imageAlt: "Neon scissors cutting through a magenta film strip, with two cyan cubes on a looping cable and a yellow ring beside it",
@@ -407,6 +413,9 @@ export const items: NewsItem[] = [
       "0.38 also added support for <strong>ID-V2V</strong> on <strong>Wan 2.1 / VACE</strong>, for video-to-video work, and optimised <strong>SeedVR2</strong>, the restoration and upscaling model, which is the usual last step before a generated clip goes out at a higher resolution.",
       "## What it adds up to",
       "None of this makes ComfyUI a timeline editor; there is no cutting to music and no trimming by eye. What it removes is the export-and-reimport between generating a shot and cleaning it up — and a cleanup that lives in the graph runs again, unchanged, on the next take.",
+      "## Joining shots on a timeline: RushFrame",
+      "<a href=\"/go/rushframe/\" title=\"The product site and its Free Windows download\">RushFrame</a> approaches the same work from the editing side: a Windows video editor with a timeline-based workflow, which uses ComfyUI as its generation engine. Clips that Video Concatenate would join inside a graph go one after another on its timeline instead; its <strong>Continue</strong> makes the next shot out of the previous clip's last frame, and the Pro edition adds multi-track editing, with separate tracks for dialogue, music and sound effects.",
+      "The September nodes are a separate matter. Its licences page, as recorded on 21 October, lists ComfyUI 0.31.0, a release older than 0.36, for the install it manages, with LTX-2.3 as the one video model and no Wan or SeedVR2 entry; Flux Video Edit and Bria's Video Eraser appear nowhere on the site.",
     ],
     faq: [
       {
@@ -416,6 +425,10 @@ export const items: NewsItem[] = [
       {
         q: "Do ComfyUI's partner nodes run locally?",
         a: "No. Partner nodes such as Flux Video Edit and Bria Video Eraser call the provider's hosted service and are paid for through your Comfy account.",
+      },
+      {
+        q: "Is there a timeline editor built on ComfyUI?",
+        a: "RushFrame is one: a Windows video editor that generates through ComfyUI and arranges the shots on a timeline, with one video and one audio track in its Free edition and multi-track editing in Pro.",
       },
     ],
   },
@@ -651,7 +664,7 @@ export const items: NewsItem[] = [
   {
     slug: "comfyui-0-38-seedance-2-5-draft-minimax-h3-controlnet",
     createdAt: "2026-09-30T11:00:00+04:00",
-    updatedAt: "2026-09-30T11:00:00+04:00",
+    updatedAt: "2026-11-04T01:26:00+04:00",
     site: "aivideo",
     image: "/covers/comfyui-0-38-seedance-2-5-draft-minimax-h3-controlnet.jpg",
     imageAlt: "A stack of magenta monitors with yellow screens, wired to a keypad and a small control panel with two round dials",
@@ -689,6 +702,9 @@ export const items: NewsItem[] = [
       "ComfyUI no longer depends on <strong>torchaudio</strong>, one fewer package to match against your PyTorch build. The release adds <strong>ID-V2V</strong> support on Wan 2.1 / VACE, optimises the <strong>SeedVR2</strong> upscaler, and adds <strong>w6a8</strong> quantisation.",
       "## Sora's nodes are gone",
       "The deprecated <strong>Sora</strong> nodes have been removed. OpenAI shut the Sora 2 API down on 24 September, so the nodes had nothing left to call; a workflow that still contains them will report them as missing.",
+      "## A pinned environment instead of package matching",
+      "Matching packages to a PyTorch build, the chore the torchaudio change above eases, is one <a href=\"/go/rushframe/\" title=\"Product site with the Windows download and the list of editions\">RushFrame</a> does itself: its Managed Server install sets up ComfyUI for the Windows video editor from a pinned list. The third-party register on rushframe.online, in its 21 October record, lists ComfyUI <strong>0.31.0</strong>, seven minor versions before this release, and a Windows and NVIDIA environment of 92 Python packages, among them PyTorch <strong>2.11.0</strong> for CUDA 13.0 and torchaudio 2.11.0 to go with it.",
+      "The only video model on that list is the LTX-2.3 22B checkpoint, and MiniMax, Seedance and Hunyuan have no entry, so H3's ControlNet and the Seedance drafts belong to ComfyUI 0.38, not to anything RushFrame documents.",
     ],
     faq: [
       {
@@ -764,7 +780,7 @@ export const items: NewsItem[] = [
   {
     slug: "comfyui-0-36-video-concatenate-flux-video-edit",
     createdAt: "2026-09-16T12:45:00+04:00",
-    updatedAt: "2026-09-16T12:45:00+04:00",
+    updatedAt: "2026-11-04T01:26:00+04:00",
     site: "aivideo",
     image: "/covers/comfyui-0-36-video-concatenate-flux-video-edit.jpg",
     imageAlt: "A neon film loop seen from above: a magenta ring with cyan sprocket holes, its joins marked by three yellow ticks",
@@ -798,11 +814,18 @@ export const items: NewsItem[] = [
       "The hosted side grows: <strong>BFL Flux Video Edit</strong> changes existing footage from a text instruction; <strong>Bria</strong> brings an image editor and a <strong>Video Eraser</strong> for removing objects; <strong>Pruna P-Video-2</strong> adds text-to-video and image-to-video. The release also adds <strong>MAI Image 2.6</strong> through OpenRouter and <strong>Gemini 3.8 Flash</strong>.",
       "## MiniMax H3 and more",
       "MiniMax's open <strong>H3</strong> video model gets further VAE optimisations that cut its memory use, and a fix for its fun-ControlNet. Outside video, the release adds the <strong>Yue2</strong> music model and <strong>Marigold v2</strong>, with frontend 1.52.7 and templates 0.11.62.",
+      "## A timeline in place of the join node",
+      "Video Concatenate joins clips while they are still in the graph. <a href=\"/go/rushframe/\" title=\"The editor's own site, with the Windows download and the editions\">RushFrame</a>, a Windows video editor with ComfyUI as its generation engine, does the joining on a timeline, and its <strong>Bridge</strong>, in the words of its site, connects scenes. A cut can leave as one finished video and also be kept as an editable .rfproj project to reopen later; both are in Free.",
+      "Per its licence register of 21 October, the managed install brings ComfyUI 0.31.0, older than this release and so without its nodes, with LTX-2.3 as the only video model and no MiniMax H3.",
     ],
     faq: [
       {
         q: "What is new in ComfyUI 0.36?",
         a: "A core Video Concatenate node, Generic Loops, and partner nodes for BFL Flux Video Edit, Bria's image editor and Video Eraser, Pruna P-Video-2, MAI Image 2.6 and Gemini 3.8 Flash. It was released on 15 September 2026.",
+      },
+      {
+        q: "Can I join AI video clips without building a ComfyUI graph?",
+        a: "Yes: any video editor joins clips once they are exported. RushFrame also generates them, with ComfyUI as the engine of its Windows editor, and joins the shots on a timeline; its Free edition exports the finished video.",
       },
     ],
   },
@@ -965,7 +988,7 @@ export const items: NewsItem[] = [
   {
     slug: "comfyui-0-32-ltx-2-5-grok-imagine-image-2",
     createdAt: "2026-08-12T15:05:00+04:00",
-    updatedAt: "2026-08-12T15:05:00+04:00",
+    updatedAt: "2026-11-04T01:26:00+04:00",
     site: "aivideo",
     image: "/covers/comfyui-0-32-ltx-2-5-grok-imagine-image-2.jpg",
     imageAlt: "Glowing cubes on a dark circuit-board grid, four magenta and one cyan at the centre, linked by thin neon traces",
@@ -1001,6 +1024,8 @@ export const items: NewsItem[] = [
       "MiniMax's <strong>H3</strong> video model, opened the week before, gets an optimised VAE, a fix for <strong>VAEDecodeTiled</strong> with nested tensors, and a fix for its peak memory use. The release also fixes tiled audio decoding.",
       "## Before you update",
       "The minimum <strong>PyTorch</strong> version is now <strong>2.7</strong>. An older environment needs upgrading first, or ComfyUI will not start. The release also brings <strong>comfy kitchen</strong> attention and templates 0.11.39.",
+      "## LTX-2.3 in RushFrame",
+      "LTX is where this release meets <a href=\"/go/rushframe/\" title=\"Product site with the Free Windows download\">RushFrame</a>, which keeps ComfyUI under the bonnet of a Windows video editor and turns prompts into shots on a timeline; its managed install is meant for PCs with an NVIDIA GPU. The licence register on its site, recorded on 21 October 2026, lists ComfyUI <strong>0.31.0</strong>, the minor release before this one, with the ComfyUI-LTXVideo node pack and the <strong>LTX-2.3</strong> 22B checkpoint, a distilled LoRA and a spatial upscaler. LTX-2.5 is not among its entries, and neither are the partner-node models or MiniMax H3 covered above.",
     ],
     faq: [
       {
@@ -1011,13 +1036,17 @@ export const items: NewsItem[] = [
         q: "What PyTorch version does ComfyUI 0.32 need?",
         a: "PyTorch <strong>2.7</strong> or newer.",
       },
+      {
+        q: "Can I run LTX without building a ComfyUI graph?",
+        a: "For LTX-2.3, yes: RushFrame puts a Windows video editor on top of ComfyUI, so you work with shots rather than nodes, provided the PC passes its hardware check. The component list on its site, as of 21 October 2026, has the LTX-2.3 22B checkpoint and no LTX-2.5.",
+      },
     ],
   },
 
   {
     slug: "ltx-2-5-open-weights-comfyui",
     createdAt: "2026-08-12T10:20:00+04:00",
-    updatedAt: "2026-08-12T10:20:00+04:00",
+    updatedAt: "2026-11-04T01:26:00+04:00",
     site: "aivideo",
     image: "/covers/ltx-2-5-open-weights-comfyui.jpg",
     imageAlt: "An open crate with a glowing violet screen rising out of it, between two panels each showing a neon diamond",
@@ -1055,6 +1084,9 @@ export const items: NewsItem[] = [
       "The <strong>LTX-2 Community License</strong> makes it free to use, commercially included, for organisations with less than <strong>$10 million</strong> in annual revenue; above that, Lightricks wants a paid agreement.",
       "## In ComfyUI",
       "ComfyUI 0.32, out late the same day, supports LTX-2.5 locally and adds partner nodes for Lightricks' hosted version.",
+      "## Shot by shot instead of multi-shot",
+      "Where LTX-2.5 cuts between wide, medium and close framing inside one generation, <a href=\"/go/rushframe/\" title=\"The product's own site, with the Free edition for Windows\">RushFrame</a>, a Windows video editor that runs ComfyUI underneath, works shot by shot on a timeline: its <strong>Continue</strong> feature starts each new shot from the final frame of the clip before it.",
+      "It is also set up for an earlier release of this model family. Its third-party licences page, in the record of 21 October 2026, lists the <strong>LTX-2.3 22B</strong> development checkpoint in FP8 with a distilled LoRA, a ×2 spatial upscaler and a Gemma 3 12B text encoder, on ComfyUI 0.31.0, one minor release before the 0.32 mentioned above. Neither LTX-2.5 nor a Gemma 4 encoder is among the thirteen runtime and model components it manages.",
     ],
     faq: [
       {

@@ -18,6 +18,16 @@
 // and 14 itself, and the count agrees with each. Each id answered YouTube's
 // oEmbed on 4 Nov 2026.
 //
+// The seven ComfyUI articles also carry a passage of their own about it,
+// near the end of the body in packages/content/src/news/aivideo.ts. Those
+// rest on the site's third-party licences register as recorded on 21 Oct
+// 2026 (managed install: ComfyUI 0.31.0, ComfyUI-KJNodes, ComfyUI-LTXVideo,
+// the LTX-2.3 22B checkpoint with its distilled LoRA and upscaler; no other
+// video model). The register says it is to be matched against the shipped
+// installer, so the passages date it. A new record means re-reading them.
+// The hardware figures (VRAM, RAM, driver) appear only on Boosty and are
+// left out.
+//
 // The rule applied to Russian sites: nothing of ours links Boosty, and no
 // episode is shown whose own description does — which leaves out 24, 25
 // and 29 Oct. The vendor's site (its Pro checkout) and the channel header
