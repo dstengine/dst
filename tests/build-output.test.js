@@ -1194,14 +1194,24 @@ describe("sitemap", () => {
         [],
         `${app}: built pages missing from the sitemap`,
       );
-      // The other direction is the weaker claim on purpose: everything the
-      // sitemap names has to exist, but a noindex page being listed is a
-      // separate (and milder) fault than one that was never built.
-      const built = pages.filter((p) => p.app === app).map((p) => p.url);
+      // And the other direction, as two faults because they have two
+      // causes: a listed page that was never built is a 404 we advertise,
+      // and a listed page that is noindex is a sitemap contradicting the
+      // page, which Search Console reports. The second is not milder: the
+      // 3 Nov 2026 indexing check found l0n.uk/news/ listed while its thin
+      // index (one item) marked it noindex, and twenty-six index views on
+      // fourteen sites carry the same rule. tools/sitemap.mjs drops them.
+      const built = new Set(pages.filter((p) => p.app === app).map((p) => p.url));
       assert.deepEqual(
-        [...listed].filter((url) => !built.includes(url)),
+        [...listed].filter((url) => !built.has(url)),
         [],
         `${app}: sitemap lists pages that were not built`,
+      );
+      const isIndexable = new Set(indexable);
+      assert.deepEqual(
+        [...listed].filter((url) => built.has(url) && !isIndexable.has(url)),
+        [],
+        `${app}: sitemap lists pages that are noindex`,
       );
     }
   });

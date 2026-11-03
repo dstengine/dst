@@ -18,7 +18,7 @@
 // the page's own depth and its own lastmod, never hand-assigned — so they go
 // in. lastmod is the field that does the work, and the one the index was
 // missing entirely.
-import { readFileSync, writeFileSync, readdirSync } from "node:fs";
+import { readFileSync, writeFileSync, readdirSync, existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -64,6 +64,83 @@ export function sitemapEntry(lastmod) {
   };
 }
 
+/** True when a page's own <meta name="robots"> asks not to be indexed.
+    Only the head is read: that is the one place the tag counts, and a body
+    is free to quote one. */
+function isNoindex(html) {
+  const end = html.indexOf("</head>");
+  const head = end === -1 ? html : html.slice(0, end);
+  for (const [tag] of head.matchAll(/<meta\s[^>]*>/gi)) {
+    if (!/\bname=["']?robots\b/i.test(tag)) continue;
+    const content = (tag.match(/\bcontent=["']([^"']*)["']/i) || [])[1] ?? "";
+    if (/\b(noindex|none)\b/i.test(content)) return true;
+  }
+  return false;
+}
+
+/** The built file a sitemap <loc> stands for, or null if there is none. */
+function fileOf(outDir, loc) {
+  let pathname;
+  try {
+    pathname = decodeURIComponent(new URL(loc.replace(/&amp;/g, "&")).pathname);
+  } catch {
+    return null;
+  }
+  const candidates = pathname.endsWith("/")
+    ? [path.join(outDir, pathname, "index.html")]
+    : path.extname(pathname)
+      ? [path.join(outDir, pathname)]
+      : [path.join(outDir, pathname, "index.html"), path.join(outDir, `${pathname}.html`)];
+  return candidates.find((f) => existsSync(f)) ?? null;
+}
+
+/** Takes out of every sitemap-N.xml the pages whose built HTML is noindex.
+    A sitemap that lists a page the page itself tells robots to skip is a
+    contradiction Search Console reports, and it is the page that is right.
+    @astrojs/sitemap's `filter` only ever sees a URL, while the decision is
+    made inside the page as it renders — an index with fewer than three
+    entries marks itself noindex as thin, and which index that is changes
+    with the content, not with the config. So the page's own robots tag is
+    read after the build, and it is the one rule: no list of noindex paths
+    kept by hand beside it.
+
+    A <loc> with no built file behind it is left alone; listing a page that
+    was never built is a different fault, and the build test names it.
+    List this integration AFTER sitemap() and BEFORE sitemapIndexLastmod(),
+    so the index is dated by the pages that are left. */
+export function sitemapDropNoindex() {
+  return {
+    name: "dst:sitemap-drop-noindex",
+    hooks: {
+      "astro:build:done": ({ dir, logger }) => {
+        const outDir = fileURLToPath(dir);
+        let names;
+        try {
+          names = readdirSync(outDir).filter((n) => /^sitemap-\d+\.xml$/.test(n));
+        } catch {
+          return;
+        }
+        for (const name of names) {
+          const file = path.join(outDir, name);
+          const xml = readFileSync(file, "utf8");
+          const dropped = [];
+          const out = xml.replace(/<url>([\s\S]*?)<\/url>/g, (whole, body) => {
+            const loc = (body.match(/<loc>([^<]+)<\/loc>/) || [])[1];
+            const page = loc && fileOf(outDir, loc);
+            if (!page || !isNoindex(readFileSync(page, "utf8"))) return whole;
+            dropped.push(new URL(loc.replace(/&amp;/g, "&")).pathname);
+            return "";
+          });
+          if (dropped.length) {
+            writeFileSync(file, out);
+            logger.info(`${name}: left out ${dropped.length} noindex page(s): ${dropped.join(" ")}`);
+          }
+        }
+      },
+    },
+  };
+}
+
 /** Puts a <lastmod> on every <sitemap> in sitemap-index.xml.
     The protocol allows it there and crawlers use it to decide whether a
     child sitemap is worth fetching at all; without it the index says nothing
@@ -74,7 +151,8 @@ export function sitemapEntry(lastmod) {
     @astrojs/sitemap writes the index through the `sitemap` package's
     SitemapAndIndexStream, which emits a bare <loc> per child and gives no
     way to add to it — hence a rewrite after the fact. List this integration
-    AFTER sitemap() so its astro:build:done runs second. */
+    AFTER sitemap() and sitemapDropNoindex(), so its astro:build:done runs
+    last and dates only the pages the children still list. */
 export function sitemapIndexLastmod() {
   return {
     name: "dst:sitemap-index-lastmod",

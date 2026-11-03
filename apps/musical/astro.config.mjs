@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import { readFileSync } from "node:fs";
-import { sitemapEntry, sitemapIndexLastmod } from "../../tools/sitemap.mjs";
+import { sitemapDropNoindex, sitemapEntry, sitemapIndexLastmod } from "../../tools/sitemap.mjs";
 import { stripSvgComments } from "../../tools/svg-comments.mjs";
 
 // When each page's content last changed, generated from git history by
@@ -24,6 +24,10 @@ export default defineConfig({
       // each one is derived from and why.
       serialize: sitemapEntry(lastmod),
     }),
+    // Then out with every page whose built HTML says noindex — a thin
+    // index decides that as it renders, where the filter above cannot look.
+    // Before the index rewrite, so the index is dated by what is left.
+    sitemapDropNoindex(),
     // After sitemap(), so it rewrites the index that one just wrote.
     sitemapIndexLastmod(),
     // Last: the comments in a hand-drawn diagram explain it to whoever

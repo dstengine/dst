@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import { readFileSync } from "node:fs";
-import { sitemapEntry, sitemapIndexLastmod } from "../../tools/sitemap.mjs";
+import { sitemapDropNoindex, sitemapEntry, sitemapIndexLastmod } from "../../tools/sitemap.mjs";
 import { stripSvgComments } from "../../tools/svg-comments.mjs";
 import { legacyTrail } from "./legacy-trail.mjs";
 
@@ -12,14 +12,6 @@ const lastmod = JSON.parse(
   readFileSync(new URL("../../packages/content/src/lastmod.json", import.meta.url), "utf8"),
 );
 
-// Archive pages the old site itself kept out of search (/contacts/): noindex,
-// so out of the sitemap too.
-const noindex = new Set(
-  JSON.parse(readFileSync(new URL("./legacy/pages.json", import.meta.url), "utf8"))
-    .filter((p) => p.noindex)
-    .map((p) => "https://fest.one" + p.path),
-);
-
 // fest.one is this app alone: the hub at /, the guides, and the archive of
 // the old festival site as pages of its own (legacy/pages.json). So this
 // sitemap is the host's only one, named by public/robots.txt, and the old
@@ -28,13 +20,18 @@ export default defineConfig({
   site: "https://fest.one",
   integrations: [
     sitemap({
-      // /go/ hops and noindex archive pages: a sitemap entry would
-      // contradict their robots tag.
-      filter: (page) => !page.includes("/go/") && !noindex.has(page),
+      // /go/ hops: a sitemap entry would contradict their robots tag.
+      filter: (page) => !page.includes("/go/"),
       // loc, lastmod, changefreq and priority: every field the protocol
       // defines for a URL. See tools/sitemap.mjs.
       serialize: sitemapEntry(lastmod),
     }),
+    // Then out with every page whose built HTML says noindex — a thin
+    // index decides that as it renders, where the filter above cannot look,
+    // and so do the archive pages the old site kept out of search
+    // (/contacts/, `noindex` in legacy/pages.json). Before the index
+    // rewrite, so the index is dated by what is left.
+    sitemapDropNoindex(),
     // After sitemap(), so it rewrites the index that one just wrote.
     sitemapIndexLastmod(),
     stripSvgComments(),
