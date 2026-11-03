@@ -44,7 +44,7 @@ Credentials: GA4_KEY or ~/dst/.secrets/ga4-reader.json for the read,
 REPORTS_TELEGRAM_API_KEY / REPORTS_TELEGRAM_CHAT_ID from ~/dst/.env for the
 send. Nothing is printed that would put a secret in a log.
 """
-import os, re, sys, json, urllib.request
+import os, re, sys, json, socket, urllib.request
 from collections import defaultdict
 from datetime import datetime, timedelta, timezone
 from html import escape
@@ -247,6 +247,19 @@ def repo_hosts():
     return re.findall(r':\s*"([^"]+)"', src.split("export const HOSTS = {", 1)[1].split("};", 1)[0])
 
 
+def resolves(host):
+    """False only for a name that does not exist. A host is listed in
+    hosts.mjs before its domain is bought (random.directory, 3 Nov 2026), and
+    a site that is not there yet is not missing from Search Console. By the
+    time this runs Search Console has answered, so the network is up and a
+    failed lookup means the name."""
+    try:
+        socket.getaddrinfo(host, 443)
+        return True
+    except socket.gaierror as e:
+        return e.errno != socket.EAI_NONAME
+
+
 def gsc():
     """A GET, a searchAnalytics POST (the whole answer, metadata and all),
     and the properties this account reads."""
@@ -330,10 +343,13 @@ def search_console():
     utc_now = datetime.now(timezone.utc)
     age = lambda iso: (utc_now - datetime.fromisoformat(iso.replace("Z", "+00:00"))).days
 
-    alerts, waiting, totals, queries = [], 0, {}, []
+    alerts, waiting, totals, queries, offline = [], 0, {}, [], []
     for host in repo_hosts():
         if host not in host_of.values():
-            alerts.append(f"{host} — not in Search Console")
+            if resolves(host):
+                alerts.append(f"{host} — not in Search Console")
+            else:
+                offline.append(host)
     for site in sites:
         host, q = host_of[site], f"/sites/{quote(site, safe='')}"
         maps = get(q + "/sitemaps").get("sitemap", [])
@@ -377,6 +393,8 @@ def search_console():
         out.append(f"<i>All {len(sites)} properties checked: none missing, no sitemap stuck.</i>")
     if waiting:
         out.append(f"<i>{waiting} sitemap{'s' if waiting > 1 else ''} submitted this week, not read yet.</i>")
+    for host in offline:
+        out.append(f"<i>{escape(host)} — not live: domain does not resolve.</i>")
     return out + search_totals(totals) + search_queries(queries)
 
 

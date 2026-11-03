@@ -29,22 +29,30 @@
 // indexed" and the rest. Inspection allows 2,000 calls a day per property,
 // so answers are cached for 20 hours in ~/.cache/dst-idx/. The account is a
 // verified owner of every repo host (its token file is in each
-// apps/*/public/), so a repo host that is not its property, a sitemap named
-// in robots.txt but never submitted, or one Google has not read in a week
-// is a problem; the hosts built elsewhere only get a note.
+// apps/*/public/), so a repo host that is not its property or a sitemap
+// named in robots.txt but never submitted is a problem; the hosts built
+// elsewhere only get a note. A submitted sitemap Google has not read in a
+// week is a problem only when the file fails here too.
+//
+// A host whose domain does not resolve — in hosts.mjs ahead of its
+// purchase, as random.directory was on 3 Nov 2026 — gets one note and
+// nothing else: a sitemap and a property are not missing from a site that
+// is not there yet.
 //
 // Exit 1 when any host has a problem.
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import crypto from "node:crypto";
+import dns from "node:dns/promises";
 import { HOSTS } from "./hosts.mjs";
 
-/** Ours, but not built from this repo: rss.mobi and seedgen.uk
-    (~/dst/seedgen) have their own, and the rest are the restored archives
-    ~/dst/revive builds (fest.vvm.space and concert.vvm.space only 308 to
-    fest.one, so they are not listed). */
-const EXTRA = ["rss.mobi", "seedgen.uk", "fest.one", "vvm.space", "sensation.vvm.space", "placebo.vvm.space", "d8.vvm.space", "maxidrom.vvm.space"];
+/** Ours, but not built from this repo: rss.mobi, seedgen.uk
+    (~/dst/seedgen), fuckingpython.lol (~/dst/fpy) and dmnr.uk (~/dst/dmnr)
+    have their own, and the rest are the restored archives ~/dst/revive
+    builds (fest.vvm.space and concert.vvm.space only 308 to fest.one, so
+    they are not listed). */
+const EXTRA = ["rss.mobi", "seedgen.uk", "fuckingpython.lol", "dmnr.uk", "fest.one", "vvm.space", "sensation.vvm.space", "placebo.vvm.space", "d8.vvm.space", "maxidrom.vvm.space"];
 
 const UA = "Mozilla/5.0 (compatible; dst-idx-check/1.0; +https://dst.llc/)";
 const PER_HOST = 5; // parallel requests to one host
@@ -289,6 +297,18 @@ async function checkHost(host) {
   const add = (bucket, key, item) => (report[bucket][key] ??= []).push(item);
 
   const robotsRes = await get(`https://${host}/robots.txt`, { manual: false });
+  // The system resolver says ENOTFOUND with no network at all, and then every
+  // host would pass as "not live"; asking a DNS server directly tells a name
+  // that does not exist (NXDOMAIN) from a lookup that never got an answer.
+  if (robotsRes.error === "ENOTFOUND" && (await dns.resolve(host).then(() => false, (e) => e.code === "ENOTFOUND"))) {
+    report.offline = "domain does not resolve";
+    report.notes["not live"] = [report.offline];
+    report.rows = [];
+    report.sitemaps = [];
+    report.declared = [];
+    report.counts = { listed: 0, indexable: 0, unlistedIndexable: 0, problems: 0 };
+    return report;
+  }
   const robots = robotsRes.status === 200 ? parseRobots(robotsRes.body) : { rules: [], sitemaps: [] };
   if (robotsRes.status !== 200) add("warnings", "no robots.txt", `https://${host}/robots.txt → ${robotsRes.status || robotsRes.error}`);
   if (robots.rules.some((r) => !r.allow && r.path === "/")) add("problems", "robots.txt disallows the whole site", `https://${host}/robots.txt`);
@@ -425,15 +445,20 @@ async function gscHost(report, auth, properties) {
   const candidates = [`https://${host}/`, ...labels.slice(0, -1).map((_, i) => `sc-domain:${labels.slice(i).join(".")}`)];
   const property = candidates.find((c) => properties.has(c));
   if (!property) return { property: null, note: `not shared with ${auth.email}` };
-  const api = async (p, init) =>
-    fetch(`https://${p}`, { ...init, headers: { authorization: `Bearer ${await bearer(auth)}`, "content-type": "application/json", ...init?.headers } }).then((r) => r.json());
+  // An error page that is not JSON reads as an error with its status, so a
+  // front end's 503 is retried like the API's own.
+  const api = async (p, init) => {
+    const res = await fetch(`https://${p}`, { ...init, headers: { authorization: `Bearer ${await bearer(auth)}`, "content-type": "application/json", ...init?.headers } });
+    return res.json().catch(() => ({ error: { code: res.status, message: `HTTP ${res.status}` } }));
+  };
 
-  const out = { property, sitemaps: [], coverage: {}, notIndexed: [], inspected: 0, cached: 0, errors: [] };
+  // errors: { what, message }, so the print step can count them by message.
+  const out = { property, sitemaps: [], coverage: {}, notIndexed: [], notInspected: [], inspected: 0, cached: 0, errors: [] };
   const maps = await api(`www.googleapis.com/webmasters/v3/sites/${encodeURIComponent(property)}/sitemaps`);
   // A failed read is not an empty list: without this the host would be told
   // its sitemap was never submitted.
   out.sitemapsRead = !maps.error;
-  if (maps.error) out.errors.push(`sitemaps: ${maps.error.message}`);
+  if (maps.error) out.errors.push({ what: "sitemaps", message: maps.error.message });
   for (const s of maps.sitemap ?? []) {
     out.sitemaps.push({ path: s.path, lastSubmitted: s.lastSubmitted, lastDownloaded: s.lastDownloaded, errors: Number(s.errors ?? 0), warnings: Number(s.warnings ?? 0), pending: !!s.isPending });
   }
@@ -443,46 +468,72 @@ async function gscHost(report, auth, properties) {
   const cache = fs.existsSync(cacheFile) ? JSON.parse(fs.readFileSync(cacheFile, "utf8")) : {};
   const fresh = (e) => e && Date.now() - e.at < CACHE_HOURS * 3600_000;
   const urls = report.rows.map((r) => r.url);
+  // Only answers younger than CACHE_HOURS are counted. A failed inspection
+  // used to fall back to whatever the cache held, however old, and the
+  // count then said a page was where it had been: on 3 Nov 2026 entries up
+  // to twelve days old had tick at 337 indexed for 338. The URLs answered now or from a fresh entry are
+  // kept here, as the run goes, so an entry that ages past the limit while
+  // the run is still going is not dropped at the end.
+  const current = new Set();
+  const inspect = (url) =>
+    api("searchconsole.googleapis.com/v1/urlInspection/index:inspect", {
+      method: "POST",
+      body: JSON.stringify({ inspectionUrl: url, siteUrl: property, languageCode: "en-US" }),
+    });
   let quotaHit = false;
   await pool(urls, 3, async (url) => {
     if (fresh(cache[url])) {
       out.cached++;
+      current.add(url);
       return;
     }
     if (quotaHit) return;
-    const body = await api("searchconsole.googleapis.com/v1/urlInspection/index:inspect", {
-      method: "POST",
-      body: JSON.stringify({ inspectionUrl: url, siteUrl: property, languageCode: "en-US" }),
-    });
+    let body = await inspect(url);
+    // A 500 or 503 is Google's passing trouble; one more try after a pause
+    // answers most of them.
+    if (body.error?.code === 500 || body.error?.code === 503) {
+      await new Promise((r) => setTimeout(r, 3000));
+      body = await inspect(url);
+    }
     if (body.error) {
       if (body.error.code === 429) quotaHit = true;
-      out.errors.push(`${url}: ${body.error.message}`);
+      out.errors.push({ what: url, message: body.error.message });
       return;
     }
     const s = body.inspectionResult?.indexStatusResult ?? {};
     cache[url] = { at: Date.now(), verdict: s.verdict, coverage: s.coverageState, lastCrawl: s.lastCrawlTime, googleCanonical: s.googleCanonical };
+    current.add(url);
     out.inspected++;
   });
   fs.writeFileSync(cacheFile, JSON.stringify(cache, null, 1));
   for (const url of urls) {
     const e = cache[url];
-    if (!e) continue;
+    if (!current.has(url)) {
+      out.notInspected.push(e ? `${url} (last known: ${e.coverage ?? "unknown"}, ${new Date(e.at).toISOString().slice(0, 10)})` : `${url} (never inspected)`);
+      continue;
+    }
     const state = e.coverage ?? "unknown";
     out.coverage[state] = (out.coverage[state] ?? 0) + 1;
     if (e.verdict !== "PASS") out.notIndexed.push(`${url} — ${state}`);
   }
-  out.indexed = urls.filter((u) => cache[u]?.verdict === "PASS").length;
-  if (quotaHit) out.errors.unshift("inspection quota reached; the rest is from cache or missing");
+  out.indexed = urls.filter((u) => current.has(u) && cache[u].verdict === "PASS").length;
+  if (quotaHit) out.errors.unshift({ what: null, message: "inspection quota reached; the rest is not inspected" });
   return out;
 }
 
 // A sitemap Google has not read is invisible from the outside: the file
 // answers 200, every check above passes, and nothing gets crawled from it.
-// dst.llc sat like that for five weeks, and eleven hosts were never in
-// Search Console at all, so the property and its sitemap are checked here
-// as problems rather than printed as a note nobody reads. A fresh submission
-// shows as pending with no download for a day or two; a week of that is
-// stuck, not slow.
+// Eleven hosts were never in Search Console at all, so the property and its
+// submissions are checked here as problems rather than printed as a note
+// nobody reads.
+//
+// A submission never read in a week is a different matter. When this run
+// fetched the same file without fault, the decision is Google's, not a
+// defect of ours: on 3 Nov 2026 every .lol host and apex dst.llc had gone
+// unread since 13 Oct, with files that answered Googlebot exactly as the
+// hosts Google reads in seconds, and resubmitting and a flat sitemap had
+// both been tried. That is a warning; it stays a problem only when the
+// file fails here as well.
 const NEVER_READ_DAYS = 7;
 const STALE_READ_DAYS = 21;
 const REPO_HOSTS = new Set(Object.values(HOSTS));
@@ -501,8 +552,11 @@ function gscFindings(r) {
     for (const s of g.sitemaps) {
       if (!r.sitemaps.includes(s.path)) add("problems", "submitted sitemap is no longer served", s.path);
       if (s.errors) add("problems", "Search Console reports sitemap errors", `${s.path}: ${s.errors}`);
-      if (!s.lastDownloaded && s.lastSubmitted && days(s.lastSubmitted) > NEVER_READ_DAYS)
-        add("problems", `sitemap never read by Google, submitted over ${NEVER_READ_DAYS} days ago`, `${s.path} (submitted ${s.lastSubmitted.slice(0, 10)})`);
+      if (!s.lastDownloaded && s.lastSubmitted && days(s.lastSubmitted) > NEVER_READ_DAYS) {
+        const item = `${s.path} (submitted ${s.lastSubmitted.slice(0, 10)})`;
+        if (r.sitemaps.includes(s.path)) add("warnings", `Google has not fetched the sitemap, submitted over ${NEVER_READ_DAYS} days ago; the file serves without fault`, item);
+        else add("problems", `sitemap never read by Google, submitted over ${NEVER_READ_DAYS} days ago, and it fails here too`, item);
+      }
       if (s.lastDownloaded && days(s.lastDownloaded) > STALE_READ_DAYS)
         add("warnings", `Google has not read the sitemap in ${STALE_READ_DAYS} days`, `${s.path} (last read ${s.lastDownloaded.slice(0, 10)})`);
       if (s.warnings) add("warnings", "Search Console reports sitemap warnings", `${s.path}: ${s.warnings}`);
@@ -531,6 +585,7 @@ if (flag("--gsc")) {
     const properties = new Set((list.siteEntry ?? []).filter((e) => e.permissionLevel !== "siteUnverifiedUser").map((e) => e.siteUrl));
     if (!properties.size) gscNote = `Search Console: ${auth.email} has been given no property yet`;
     for (const r of reports) {
+      if (r.offline) continue;
       r.gsc = await gscHost(r, auth, properties);
       gscFindings(r);
     }
@@ -545,7 +600,7 @@ lines.push(`Indexability, ${new Date().toISOString().slice(0, 16).replace("T", "
 lines.push("");
 lines.push(`${pad("host", 24)}${pad("listed", 8, true)}${pad("indexable", 11, true)}${pad("problems", 10, true)}${pad("unlisted", 10, true)}${flag("--gsc") ? pad("google", 10, true) : ""}`);
 for (const r of reports) {
-  const g = r.gsc ? (r.gsc.property ? `${r.gsc.indexed}/${r.counts.listed}` : "—") : "";
+  const g = r.gsc ? (r.gsc.property ? `${r.gsc.indexed}/${r.counts.listed}` : "—") : r.offline ? "—" : "";
   lines.push(`${pad(r.host, 24)}${pad(r.counts.listed, 8, true)}${pad(r.counts.indexable, 11, true)}${pad(r.counts.problems, 10, true)}${pad(r.counts.unlistedIndexable, 10, true)}${flag("--gsc") ? pad(g, 10, true) : ""}`);
 }
 const total = (k) => reports.reduce((n, r) => n + r.counts[k], 0);
@@ -559,6 +614,10 @@ for (const r of reports) {
   const g = r.gsc;
   if (!problemKeys.length && !warningKeys.length && !noteKeys.length && !g?.property) continue;
   lines.push("", `## ${r.host}`);
+  if (r.offline) {
+    lines.push(`◦ not live: ${r.offline}`);
+    continue;
+  }
   for (const [bucket, keys, mark] of [["problems", problemKeys, "✗"], ["warnings", warningKeys, "·"], ["notes", noteKeys, "◦"]]) {
     for (const k of keys) {
       const list = r[bucket][k];
@@ -568,10 +627,25 @@ for (const r of reports) {
     }
   }
   if (g?.property) {
-    lines.push(`◦ Google (${g.property}): ${g.indexed} of ${r.counts.listed} indexed; ${g.inspected} inspected now, ${g.cached} from cache`);
+    lines.push(`◦ Google (${g.property}): ${g.indexed} of ${r.counts.listed} indexed; ${g.inspected} inspected now, ${g.cached} from cache${g.notInspected.length ? `, ${g.notInspected.length} not inspected` : ""}`);
     for (const [state, n] of Object.entries(g.coverage).sort((a, b) => b[1] - a[1])) lines.push(`    ${pad(n, 5, true)}  ${state}`);
+    if (g.notInspected.length) {
+      lines.push(`    ${pad(g.notInspected.length, 5, true)}  not inspected, so not counted`);
+      for (const item of g.notInspected.slice(0, DETAILS)) lines.push(`             ${item}`);
+      if (g.notInspected.length > DETAILS) lines.push(`             …and ${g.notInspected.length - DETAILS} more`);
+    }
     for (const s of g.sitemaps) lines.push(`    sitemap ${s.path}: downloaded ${s.lastDownloaded?.slice(0, 10) ?? "never"}${s.errors ? `, ${s.errors} errors` : ""}${s.pending ? ", pending" : ""}`);
-    for (const e of g.errors.slice(0, 3)) lines.push(`    ! ${e}`);
+    // Counted by message: a bad hour can fail a hundred inspections the same
+    // way, and the first three of them say nothing about the other ninety-seven.
+    const byMessage = new Map();
+    for (const e of g.errors) {
+      if (!byMessage.has(e.message)) byMessage.set(e.message, []);
+      byMessage.get(e.message).push(e.what);
+    }
+    for (const [message, what] of byMessage) {
+      const where = what.length > 1 ? ` — ${what.length} calls, first ${what[0]}` : what[0] ? ` (${what[0]})` : "";
+      lines.push(`    ! ${message}${where}`);
+    }
   } else if (g) lines.push(`◦ Google: ${g.note}`);
 }
 
