@@ -1,0 +1,166 @@
+---
+// The first thing on the ComfyUI pages, under the heading: for the reader
+// who wants the shot rather than the node graph, an editor that runs
+// ComfyUI for them, and four episodes of the series its developer keeps on
+// YouTube — which says more about whether the thing is alive than a
+// download page can. Who, what, why and where each claim was read:
+// ../rushframe.ts.
+//
+// data-nosnippet sits on the inner div, not the aside: Google honours it on
+// span, div and section only. The same words open several pages and none
+// of them is about RushFrame, so a search snippet should never quote them.
+//
+// Its button is secondary: on an article the page's own button, the model
+// card or the release, comes right after it and stays the one to press.
+import { go } from "../outbound";
+import { EPISODES } from "../rushframe";
+
+interface Props {
+  /** The `sizes` of the frames: a card is 11rem at most, narrower in an
+      article column. */
+  sizes?: string;
+}
+const { sizes = "(min-width: 40rem) 9.3rem, 7.5rem" } = Astro.props;
+
+const frame = (id: string, format: string) =>
+  `/rushframe/${id}-160.${format} 160w, /rushframe/${id}-320.${format} 320w`;
+---
+<aside class="rushframe" aria-labelledby="rushframe-heading">
+  <div data-nosnippet>
+    <p class="rushframe-heading" id="rushframe-heading">Rather not build the graph? Try RushFrame</p>
+    <p>
+      A Windows editor built on ComfyUI: if your PC passes its hardware check,
+      it sets up ComfyUI, the LTX nodes and the LTX-2.3 weights itself, and you
+      work in shots, not nodes. Free covers prompt, continue from the last
+      frame, a <span class="rushframe-nowrap">one-video,</span> <span class="rushframe-nowrap">one-audio</span> timeline and export.
+    </p>
+    <p class="rushframe-actions">
+      <a class="button button-secondary" href={go("rushframe")} title="RushFrame's own site: the Windows download and its editions">RushFrame Free</a>
+      <span class="rushframe-note">Windows download; for other platforms, check its site.</span>
+    </p>
+    <p>
+      Its developer runs an animated series on YouTube,
+      <a class="rushframe-nowrap" href={go("rushframe-channel")} title="Every Season Zero episode, on the RushFrame channel on YouTube"><i>Season Zero</i></a>:
+      <span class="rushframe-nowrap">fourteen daily episodes</span>, <span class="rushframe-nowrap">17–30 October</span>, and a Halloween special.
+    </p>
+    <ul class="rushframe-episodes">
+      {EPISODES.map((e) => (
+        <li>
+          {/* The words come first so a screen reader names the episode
+              before it describes the frame; CSS puts the frame on top. */}
+          <a class="rushframe-episode" href={go(`rushframe-${e.slug}`)} title={`On YouTube: “${e.youtube}”, ${e.dayLong}`}>
+            <span class="rushframe-day"><span class="rushframe-nowrap">{e.ep} ·</span> <span class="rushframe-nowrap">{e.day}</span></span>
+            <span class="rushframe-label">{e.label}</span>
+            <picture>
+              <source type="image/avif" srcset={frame(e.id, "avif")} sizes={sizes} />
+              <img
+                src={`/rushframe/${e.id}-320.webp`}
+                srcset={frame(e.id, "webp")}
+                sizes={sizes}
+                width="320"
+                height="427"
+                alt={e.alt}
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</aside>
+
+<style>
+  .rushframe {
+    margin: var(--space-3) 0 var(--space-4);
+    padding: var(--space-2);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+  @media (min-width: 40rem) {
+    .rushframe { padding: var(--space-3); }
+  }
+  .rushframe p {
+    margin: 0 0 var(--space-2);
+    max-width: 65ch;
+    text-wrap: pretty;
+  }
+  .rushframe .rushframe-heading {
+    margin-bottom: var(--space-1);
+    font-family: var(--font-display);
+    font-size: var(--step-1);
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--ink-strong);
+  }
+  .rushframe-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-1) var(--space-2);
+  }
+  .rushframe-note { color: var(--ink-muted); font-size: var(--step--1); }
+  .rushframe-nowrap { white-space: nowrap; }
+
+  /* A row that scrolls sideways on a phone and sits four across above it,
+     never wider than 11rem a card: across the section page's full width
+     the frames grew 400px tall and pushed the news below the fold. */
+  .rushframe-episodes {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 var(--space-1);
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 7.5rem;
+    gap: var(--space-2);
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+  }
+  .rushframe-episodes li { scroll-snap-align: start; }
+  @media (min-width: 40rem) {
+    .rushframe-episodes {
+      grid-auto-flow: row;
+      grid-template-columns: repeat(4, minmax(0, 11rem));
+      overflow: visible;
+    }
+  }
+  .rushframe-episode {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    min-height: 44px;
+    color: inherit;
+    text-decoration: none;
+  }
+  .rushframe-episode picture { order: -1; }
+  .rushframe-episode img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    margin-bottom: 0.3rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface-sunk);
+  }
+  /* The card's hover is its frame, never an underline (DESIGN.md). */
+  .rushframe-episode:where(:hover, :focus-visible) img { border-color: var(--accent); }
+  /* "Ep. 14 · 30 Oct" is wider than a phone card: it breaks after the dot,
+     never inside either half. Held whole, it ran into the next card. */
+  .rushframe-day {
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    color: var(--ink-muted);
+  }
+  .rushframe-label {
+    font-size: var(--step--1);
+    font-weight: 600;
+    line-height: 1.3;
+    text-wrap: pretty;
+  }
+</style>

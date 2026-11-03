@@ -7,6 +7,8 @@ import { siteId, newsBase, publisher } from "../../content";
 import { sections, tagLinks } from "../../sections";
 import { newsBySite } from "@dst/content/news";
 import { go } from "../../outbound";
+import RushFrame from "../../components/RushFrame.astro";
+import { showsRushFrame } from "../../rushframe";
 
 export function getStaticPaths() {
   // No body, no page — the feed card says everything the entry has.
@@ -29,5 +31,7 @@ const all = sections(newsBySite(siteId));
     tagLinks={tagLinks(item, all)}
     tagsLabel="Filed under"
     actionHref={item.action ? go(`${item.slug}-action`) : undefined}
-  />
+  >
+    {showsRushFrame(item) && <RushFrame slot="lead" />}
+  </NewsArticle>
 </Layout>

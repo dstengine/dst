@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import PromoHero from "@dst/ui/PromoHero.astro";
 import NewsList from "@dst/ui/NewsList.astro";
 import SectionNav from "@dst/ui/SectionNav.astro";
+import RushFrame from "../components/RushFrame.astro";
 import { siteId, newsBase } from "../content";
 import { sections, NAV } from "../sections";
 import { newsBySite } from "@dst/content/news";
@@ -20,6 +21,7 @@ const { section, all } = Astro.props;
     <p class="lede">{section.lede}</p>
   </PromoHero>
   <section class="container">
+    {section.slug === "comfyui" && <RushFrame sizes="(min-width: 40rem) 11rem, 7.5rem" />}
     <SectionNav sections={all} current={`/${section.slug}/`} allHref={newsBase} {...NAV} />
     <NewsList items={section.items} newsBase={newsBase} />
   </section>

@@ -4,6 +4,7 @@
 // robots.txt so the hops never get crawled or indexed themselves.
 import { siteId } from "./content";
 import { newsBySite } from "@dst/content/news";
+import { RUSHFRAME_URL, RUSHFRAME_CHANNEL, EPISODES } from "./rushframe";
 
 export const outbound: Record<string, string> = {};
 
@@ -12,6 +13,12 @@ export const outbound: Record<string, string> = {};
 for (const item of newsBySite(siteId)) {
   if (item.action) outbound[`${item.slug}-action`] = item.action.url;
 }
+
+// RushFrame on the ComfyUI pages: its site, its channel, and one hop per
+// episode shown — see ./rushframe.
+outbound.rushframe = RUSHFRAME_URL;
+outbound["rushframe-channel"] = RUSHFRAME_CHANNEL;
+for (const e of EPISODES) outbound[`rushframe-${e.slug}`] = `https://www.youtube.com/shorts/${e.id}`;
 
 /** Path for an outbound link, e.g. go("ltx-2-5-open-weights-action") -> "/go/ltx-2-5-open-weights-action/" */
 export function go(slug: string): string {
