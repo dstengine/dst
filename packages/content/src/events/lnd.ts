@@ -344,7 +344,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-hampton-court-palace-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-11-03T01:35:00+00:00",
     site: "lnd",
     image: "/covers/halloween-hampton-court-palace-2026.jpg",
     imageAlt: "A dark blue crenellated roofline with three towers of different heights rising from it, the tallest carrying a small red flag",
@@ -436,6 +436,12 @@ export const items: EventItem[] = [
     // Same half-term week: the three pages a reader choosing a day out
     // that week is deciding between.
     related: [
+      {
+        href: "/events/father-christmas-morden-hall-park-2026/",
+        eyebrow: "Merton, December",
+        title: "Father Christmas at Morden Hall Park",
+        text: "The National Trust's grotto in Morden: eight days from 5 December, £15 a child.",
+      },
       {
         href: "/events/halloween-eltham-palace-2026/",
         eyebrow: "Greenwich",
@@ -1832,7 +1838,7 @@ export const items: EventItem[] = [
   {
     slug: "merton-fireworks-in-the-park-2026",
     createdAt: "2026-10-13T01:10:00+04:00",
-    updatedAt: "2026-10-25T23:43:00+04:00",
+    updatedAt: "2026-11-03T01:35:00+00:00",
     site: "lnd",
     image: "/covers/merton-fireworks-in-the-park-2026.jpg",
     imageAlt: "A lit observation wheel and a small carousel in a dark park, fireworks bursting above a line of trees and a few tiny figures on the grass",
@@ -1900,6 +1906,12 @@ export const items: EventItem[] = [
       },
     ],
     related: [
+      {
+        href: "/events/father-christmas-morden-hall-park-2026/",
+        eyebrow: "Morden, December",
+        title: "Father Christmas at Morden Hall Park",
+        text: "After the fireworks, Christmas in Merton: the National Trust's grotto at Morden Hall Park, £15 a child.",
+      },
       {
         href: "/events/corams-fields-fireworks-night-2026/",
         eyebrow: "Bloomsbury",
@@ -2532,7 +2544,7 @@ export const items: EventItem[] = [
   {
     slug: "christmas-at-eltham-palace-2026",
     createdAt: "2026-10-25T04:30:00+04:00",
-    updatedAt: "2026-10-25T04:30:00+04:00",
+    updatedAt: "2026-11-03T01:35:00+00:00",
     site: "lnd",
     image: "/covers/christmas-at-eltham-palace-2026.jpg",
     imageAlt: "A medieval great hall with a timber hammer-beam roof, market tables of pottery and jewellery beneath it, and a wreath on the arched doorway",
@@ -2595,6 +2607,12 @@ export const items: EventItem[] = [
       },
     ],
     related: [
+      {
+        href: "/events/father-christmas-morden-hall-park-2026/",
+        eyebrow: "5–22 December",
+        title: "Father Christmas at Morden Hall Park",
+        text: "The same weekends in Merton, in the National Trust's grotto: £15 a child, with a present.",
+      },
       {
         href: "/events/halloween-eltham-palace-2026/",
         eyebrow: "Half-term",
@@ -2701,5 +2719,112 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Come as a party of six if one possibly can: the group price is the only discount there is, and a church pew sings better full. Arrive for the 7pm doors rather than the 8pm start, since the bar, the costumes and the building itself are half the evening, and a Grade II* church is worth looking at before the lights go down. A costume is not compulsory, but one will feel underdressed without it.",
+  },
+  {
+    slug: "father-christmas-morden-hall-park-2026",
+    createdAt: "2026-11-03T01:35:00+00:00",
+    updatedAt: "2026-11-03T01:35:00+00:00",
+    site: "lnd",
+    title: "Father Christmas at Morden Hall Park 2026: the grotto and the sleigh trail",
+    cardTitle: "Father Christmas at Morden Hall Park",
+    titleSeo: "Father Christmas at Morden Hall Park, London: December 2026",
+    summary:
+      "Father Christmas at Morden Hall Park in Merton, south London: grotto visits on 5, 6, 12, 13, 19, 20, 21 and 22 December 2026, from 11am to 4pm, at £15 a child, booking essential. The Save the Sleigh trail runs from 28 November to 3 January, at £3 a sheet.",
+    start: "2026-12-05",
+    end: "2026-12-22",
+    dates: [
+      "2026-12-05",
+      "2026-12-06",
+      "2026-12-12",
+      "2026-12-13",
+      "2026-12-19",
+      "2026-12-20",
+      "2026-12-21",
+      "2026-12-22",
+    ],
+    startTime: "11:00",
+    endTime: "16:00",
+    utcOffset: "+00:00",
+    venue: "Morden Hall Park, Morden Hall Road, SM4 5JD",
+    city: "London",
+    country: "United Kingdom",
+    geo: { name: "Morden Hall Park", lat: 51.4025, lng: -0.1856 },
+    organizer: "National Trust",
+    category: "Christmas",
+    tickets: { priceFrom: 15, currency: "GBP" },
+    ticket: {
+      url: "https://www.nationaltrust.org.uk/visit/london/morden-hall-park/events/bb24c231-f134-4f4c-b4f0-ea5b8638d4b3",
+      label: "Book Father Christmas",
+    },
+    source: {
+      name: "National Trust",
+      url: "https://www.nationaltrust.org.uk/visit/london/morden-hall-park/christmas-at-morden-hall-park",
+      verifiedOn: "2026-11-03",
+    },
+    body: [
+      "Morden Hall Park, the National Trust's riverside park on the Wandle in Merton, gives its <strong>Garden Centre</strong> over to Father Christmas for the last three weekends before Christmas. He is in his grotto on <strong>5, 6, 12, 13, 19 and 20 December 2026</strong>, and on <strong>Monday 21 and Tuesday 22 December</strong> as well.",
+      "## How a visit goes",
+      "It begins under cover, in a new festive space in the outdoor plant area of the Garden Centre. Each child writes a note to Father Christmas, which the \"festive delivery team\" sends ahead to the grotto. Then the family is shown in to meet him, share their wishes and receive a <strong>wrapped present</strong> chosen by the elves.",
+      "## Times and tickets",
+      "Visits are booked in <strong>15-minute slots from 11am to 4pm</strong>, with a break between 12.30 and 1.30pm. They cost <strong>£15 a child</strong>. The grotto is for <strong>babies and children up to eight</strong>, and every child must come with an adult. The Trust expects the visits to sell out and says booking is essential. Tickets are not refundable unless the event is cancelled.",
+      "The <strong>first hour of each day, from 10am</strong>, is a relaxed hour, with fewer bookings and a calmer grotto for families with additional needs. It is booked separately, at the same price.",
+      "Arrive at the welcome desk at the back of the Garden Centre <strong>15 minutes before</strong> your slot, so there is time to write the note. The grotto is accessible.",
+      "## Save the Sleigh trail, 28 November to 3 January",
+      "From <strong>Saturday 28 November to Sunday 3 January</strong>, 10am to 4pm, a trail round the park asks children to find six missing pieces of Father Christmas's sleigh. Trail sheets cost <strong>£3</strong> from the Garden Centre or the cafés, and the prize is collected back at the Garden Centre.",
+      "## The rest of the park's Christmas",
+      "On <strong>Sunday 13 December</strong>, 10am to 4pm, the <strong>Young Makers' Christmas Market</strong> fills the Snuff Mill with gifts made by local makers aged 16 to 30, with the Barnes Concert Band playing. On <strong>Saturday 5 December</strong> the Dulwich Petal Project runs wreath-making workshops in the Stableyard at 10am and 2pm, at £65 a person. The Garden Centre sells UK-grown Christmas trees all season.",
+      "## Getting there",
+      "<strong>Morden</strong>, at the end of the Northern line, is a 500-yard walk along Aberconway Road. The tram stops at <strong>Phipps Bridge</strong> on the edge of the park, and buses 45, 80, 93, 157, 164, 201 and 470 stop on its boundary. The car park is small: the first hour and a half is free, and after that there is an hourly charge.",
+      "## Other Christmases in London",
+      "In south-east London, <a href=\"/events/christmas-at-eltham-palace-2026/\" title=\"Christmas at Eltham Palace 2026, London\">Eltham Palace</a> has Father Christmas on the same weekends. Closer to Morden, <a href=\"/events/santas-winter-garden-fulham-palace-2026/\" title=\"Santa's Winter Garden at Fulham Palace 2026, London\">Fulham Palace</a> turns its walled garden into a Santa trail, and <a href=\"/events/hampton-court-palace-ice-rink-2026/\" title=\"Hampton Court Palace ice rink 2026, London: 20 Nov–3 Jan\">Hampton Court</a> has a rink in front of the palace.",
+    ],
+    faq: [
+      {
+        q: "When is Father Christmas at Morden Hall Park in 2026?",
+        a: "On 5, 6, 12, 13, 19, 20, 21 and 22 December 2026, in 15-minute slots from 11am to 4pm. The first hour, from 10am, is a relaxed hour for families with additional needs.",
+      },
+      {
+        q: "How much does it cost?",
+        a: "£15 a child, with a wrapped present. Every child must come with an adult.",
+      },
+      {
+        q: "Do I need to book?",
+        a: "Yes. Booking is essential and the National Trust expects the visits to sell out. Tickets are not refundable unless the event is cancelled.",
+      },
+      {
+        q: "What age is it for?",
+        a: "Babies and children up to eight years old.",
+      },
+      {
+        q: "What is the Save the Sleigh trail?",
+        a: "A trail round the park from 28 November 2026 to 3 January 2027, 10am to 4pm: find six missing pieces of the sleigh and collect a prize at the Garden Centre. A trail sheet costs £3.",
+      },
+      {
+        q: "How do I get to Morden Hall Park?",
+        a: "Morden station, at the end of the Northern line, is a 500-yard walk. The tram stops at Phipps Bridge, and several buses stop on the park's boundary. Parking is limited, with the first hour and a half free.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/christmas-at-eltham-palace-2026/",
+        eyebrow: "Weekends, 5–20 December",
+        title: "Christmas at Eltham Palace",
+        text: "Father Christmas and a makers' fair in the medieval Great Hall.",
+      },
+      {
+        href: "/events/santas-winter-garden-fulham-palace-2026/",
+        eyebrow: "20 November – 23 December",
+        title: "Santa's Winter Garden at Fulham Palace",
+        text: "A snowy trail through the walled garden, ending with Santa.",
+      },
+      {
+        href: "/events/hampton-court-palace-ice-rink-2026/",
+        eyebrow: "20 November – 3 January",
+        title: "Hampton Court Palace Ice Rink",
+        text: "Skating in front of Henry VIII's palace.",
+      },
+    ],
+    expertise:
+      "One would do well to book the moment one has settled on a date: the Trust expects every slot to go, and the Saturdays go first. A morning slot on the Monday or Tuesday, the 21st or 22nd, is the gentler choice, with the school term over and the weekend crowds elsewhere. Arrive in good time rather than merely on time, since the quarter of an hour before the slot is spent writing the note, and that is rather the point of the thing. Afterwards, buy the sleigh trail sheet and walk it off along the Wandle; the park is at its best on a cold, bright morning.",
   },
 ];
