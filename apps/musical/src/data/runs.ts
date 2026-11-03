@@ -1087,7 +1087,7 @@ export const runs: Run[] = [
   {
     slug: "glasgow",
     createdAt: "2026-09-01T17:13:05+04:00",
-    updatedAt: "2026-09-02T09:36:44+04:00",
+    updatedAt: "2026-11-03T20:54:42+04:00",
     show: "cats",
     city: "glasgow",
     group: "uk",
@@ -1108,7 +1108,7 @@ export const runs: Run[] = [
       },
     ],
     summary:
-      "Twenty nights, from 8 to 27 December — the longest single stay of any run listed on this site, and the only one that plays through Christmas. Chicago comes to Glasgow too, but to the King's, not the Theatre Royal.",
+      "Three weeks at the Theatre Royal, 8 to 27 December: the longest stop of the Cats UK tour, and the only one over Christmas. Chicago comes to Glasgow too, but to the King's, not the Theatre Royal.",
   },
   {
     slug: "nottingham",
@@ -1525,7 +1525,7 @@ export const runs: Run[] = [
   {
     slug: "new-york",
     createdAt: "2026-09-13T06:49:58+04:00",
-    updatedAt: "2026-09-13T06:49:58+04:00",
+    updatedAt: "2026-11-03T20:32:30+04:00",
     show: "wanted",
     city: "new-york",
     venue: "james-earl-jones-theatre",
@@ -1539,7 +1539,7 @@ export const runs: Run[] = [
       },
     ],
     summary:
-      "The first performance is on Thursday 15 October 2026 at 8pm. No closing date has been announced, and the production has group bookings on sale through 31 March 2027.",
+      "The first performance was on Thursday 15 October 2026 at 8pm. No closing date has been announced, and the production has group bookings on sale through 31 March 2027.",
     runningTime: "2 hours 15 minutes, including a 15-minute interval",
     language: "English",
     ageGuidance:
@@ -1563,7 +1563,7 @@ export const runs: Run[] = [
   {
     slug: "new-york",
     createdAt: "2026-09-13T06:49:58+04:00",
-    updatedAt: "2026-09-13T06:49:58+04:00",
+    updatedAt: "2026-11-03T20:54:42+04:00",
     show: "galileo",
     city: "new-york",
     venue: "shubert-theatre",
@@ -1577,7 +1577,7 @@ export const runs: Run[] = [
       },
     ],
     summary:
-      "Previews begin on Tuesday 10 November 2026 at 8pm and opening night is 6 December. No closing date has been announced.",
+      "Previews from Tuesday 10 November 2026; opening night 6 December. No closing date has been announced.",
     language: "English",
     faq: [
       {
@@ -1602,7 +1602,7 @@ export const runs: Run[] = [
   {
     slug: "new-york",
     createdAt: "2026-09-13T06:49:58+04:00",
-    updatedAt: "2026-09-13T06:49:58+04:00",
+    updatedAt: "2026-11-03T20:54:42+04:00",
     show: "fantasticks",
     city: "new-york",
     venue: "hayes-theater",
@@ -1616,7 +1616,7 @@ export const runs: Run[] = [
       },
     ],
     summary:
-      "Previews begin on Thursday 22 October 2026 at 8pm and opening night is 16 November. Sixty-six years after the show first opened, this is its Broadway debut.",
+      "Previews from Thursday 22 October 2026; opening night 16 November. Sixty-six years after the show first opened, this is its Broadway debut.",
     language: "English",
     faq: [
       {
@@ -1641,7 +1641,7 @@ export const runs: Run[] = [
   {
     slug: "new-york",
     createdAt: "2026-09-13T06:49:58+04:00",
-    updatedAt: "2026-09-13T06:49:58+04:00",
+    updatedAt: "2026-11-03T20:54:42+04:00",
     show: "dolly",
     city: "new-york",
     venue: "st-james-theatre",
@@ -1655,7 +1655,7 @@ export const runs: Run[] = [
       },
     ],
     summary:
-      "Previews begin on Monday 7 December 2026 and opening night is 19 January 2027 \u2014 Dolly Parton's eighty-first birthday. Six weeks of previews across the holidays, and no closing date announced.",
+      "Previews from Monday 7 December 2026; opening night 19 January 2027 \u2014 Dolly Parton's eighty-first birthday. Six weeks of previews across the holidays, and no closing date announced.",
     language: "English",
     ageGuidance:
       "The production says the show may be inappropriate for ages 8 and under. That is a recommendation, not a rule at the door.",

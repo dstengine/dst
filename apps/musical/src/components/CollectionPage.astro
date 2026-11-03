@@ -86,6 +86,13 @@ const distinctPlaces = cities.length === runs.length;
     {collection.body.map((paragraph) => <p>{paragraph}</p>)}
   </section>
 
+  {(collection.sections ?? []).map((part) => (
+    <section class="container prose">
+      <h2>{part.heading}</h2>
+      {part.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+    </section>
+  ))}
+
   {runs.length > 0 && (
     <section class="container">
       <h2>{onePlace ? `${collection.name} musicals on sale in ${onePlace}` : `${collection.name} musicals on sale`}</h2>
@@ -118,10 +125,10 @@ const distinctPlaces = cities.length === runs.length;
   )}
 
   <Callout kind="note">
-    <strong>Check the date before you book anything.</strong> Every line here
-    was read from the seller's own calendar on {read};
-    performances sell out and schedules are extended, and the seller's page is
-    the one that is current.
+    <strong>Check the date before you book anything.</strong> Every time here
+    was read from an official calendar on {read};
+    performances sell out and schedules change, and the seller's page is the
+    one that is current.
   </Callout>
 </Layout>
 

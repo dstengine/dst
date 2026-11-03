@@ -324,6 +324,11 @@ export interface Collection extends Dated {
   lede: string;
   /** The page in its own words, above the listings. */
   body: string[];
+  /** Parts of the page a reader looks for by name, each under its own h2,
+      after the body and before the listings: a season answers "what is on
+      on Boxing Day" under a heading that says Boxing Day, which a paragraph
+      in the middle of the body cannot. */
+  sections?: { heading: string; paragraphs: string[] }[];
   /** The runs, in the order they should be read: show slug and run slug,
       the same pair that makes a run's URL. */
   runs: { show: string; run: string }[];
