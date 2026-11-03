@@ -36944,6 +36944,38 @@
         ]
       ]
     },
+    "/covers/alexander-kosemyan-80-komitas-quartet-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/alexander-kosemyan-80-komitas-quartet-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/alexander-kosemyan-80-komitas-quartet-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/alexander-kosemyan-80-komitas-quartet-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/alexander-kosemyan-80-komitas-quartet-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/alexander-kosemyan-80-komitas-quartet-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/alexander-kosemyan-80-komitas-quartet-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/alice-sara-ott-symphonic-europe-yerevan-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -40160,6 +40192,38 @@
         ]
       ]
     },
+    "/covers/one-life-one-word-one-voice-bohem-theatre-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/one-life-one-word-one-voice-bohem-theatre-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/one-life-one-word-one-voice-bohem-theatre-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/one-life-one-word-one-voice-bohem-theatre-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/one-life-one-word-one-voice-bohem-theatre-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/one-life-one-word-one-voice-bohem-theatre-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/one-life-one-word-one-voice-bohem-theatre-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/opera-ball-new-years-eve-yerevan-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -41693,6 +41757,38 @@
         [
           1024,
           "/covers/uru-solo-concert-tonelab-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/varchafest-new-year-gala-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/varchafest-new-year-gala-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/varchafest-new-year-gala-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/varchafest-new-year-gala-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/varchafest-new-year-gala-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/varchafest-new-year-gala-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/varchafest-new-year-gala-yerevan-2026-1024.webp"
         ]
       ]
     },
