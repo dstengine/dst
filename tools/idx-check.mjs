@@ -394,7 +394,26 @@ async function gscToken() {
     body: new URLSearchParams({ grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer", assertion: `${unsigned}.${signature}` }),
   });
   const body = await res.json();
-  return body.access_token ? { token: body.access_token, email: key.client_email } : { error: body.error_description ?? body.error ?? `token ${res.status}` };
+  return body.access_token
+    ? { token: body.access_token, email: key.client_email, expiresAt: Date.now() + (Number(body.expires_in ?? 3600) - 300) * 1000 }
+    : { error: body.error_description ?? body.error ?? `token ${res.status}` };
+}
+
+// The token lives an hour, and a first run of the day can take longer: on
+// 3 Nov 2026 it took 63 minutes, and every call after the hour came back
+// 401, so six hosts read as having no sitemap submitted and their pages as
+// uninspected. The token is minted again five minutes before it runs out,
+// once, however many inspections are waiting on it.
+async function bearer(auth) {
+  if (Date.now() < auth.expiresAt) return auth.token;
+  auth.renewing ??= gscToken()
+    .then((next) => {
+      if (next.error) throw new Error(`Search Console token: ${next.error}`);
+      Object.assign(auth, next);
+    })
+    .finally(() => (auth.renewing = null));
+  await auth.renewing;
+  return auth.token;
 }
 
 const CACHE_DIR = path.join(os.homedir(), ".cache/dst-idx");
@@ -406,11 +425,15 @@ async function gscHost(report, auth, properties) {
   const candidates = [`https://${host}/`, ...labels.slice(0, -1).map((_, i) => `sc-domain:${labels.slice(i).join(".")}`)];
   const property = candidates.find((c) => properties.has(c));
   if (!property) return { property: null, note: `not shared with ${auth.email}` };
-  const api = (p, init) =>
-    fetch(`https://${p}`, { ...init, headers: { authorization: `Bearer ${auth.token}`, "content-type": "application/json", ...init?.headers } }).then((r) => r.json());
+  const api = async (p, init) =>
+    fetch(`https://${p}`, { ...init, headers: { authorization: `Bearer ${await bearer(auth)}`, "content-type": "application/json", ...init?.headers } }).then((r) => r.json());
 
   const out = { property, sitemaps: [], coverage: {}, notIndexed: [], inspected: 0, cached: 0, errors: [] };
   const maps = await api(`www.googleapis.com/webmasters/v3/sites/${encodeURIComponent(property)}/sitemaps`);
+  // A failed read is not an empty list: without this the host would be told
+  // its sitemap was never submitted.
+  out.sitemapsRead = !maps.error;
+  if (maps.error) out.errors.push(`sitemaps: ${maps.error.message}`);
   for (const s of maps.sitemap ?? []) {
     out.sitemaps.push({ path: s.path, lastSubmitted: s.lastSubmitted, lastDownloaded: s.lastDownloaded, errors: Number(s.errors ?? 0), warnings: Number(s.warnings ?? 0), pending: !!s.isPending });
   }
@@ -472,7 +495,7 @@ function gscFindings(r) {
   // can be expected to be its properties; the rest stay a note.
   if (!g.property) {
     if (REPO_HOSTS.has(r.host)) add("problems", "not in Search Console", `${r.host} — add the property and submit the sitemap`);
-  } else {
+  } else if (g.sitemapsRead) {
     const submitted = new Map(g.sitemaps.map((s) => [s.path, s]));
     for (const url of r.declared ?? []) if (!submitted.has(url)) add("problems", "sitemap not submitted to Search Console", url);
     for (const s of g.sitemaps) {
