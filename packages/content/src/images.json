@@ -40464,6 +40464,38 @@
         ]
       ]
     },
+    "/covers/pleyel-fortepiano-trio-khachaturian-house-museum-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/pleyel-fortepiano-trio-khachaturian-house-museum-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/pleyel-fortepiano-trio-khachaturian-house-museum-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/pleyel-fortepiano-trio-khachaturian-house-museum-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/pleyel-fortepiano-trio-khachaturian-house-museum-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/pleyel-fortepiano-trio-khachaturian-house-museum-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/pleyel-fortepiano-trio-khachaturian-house-museum-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/qarpet-cafesjian-yerevan-2026.jpg": {
       "width": 3072,
       "height": 1728,
@@ -40725,6 +40757,38 @@
         [
           1536,
           "/covers/romeo-juliet-deja-vu-2026-1536.webp"
+        ]
+      ]
+    },
+    "/covers/salome-wilde-ghaplanyan-theatre-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/salome-wilde-ghaplanyan-theatre-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/salome-wilde-ghaplanyan-theatre-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/salome-wilde-ghaplanyan-theatre-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/salome-wilde-ghaplanyan-theatre-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/salome-wilde-ghaplanyan-theatre-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/salome-wilde-ghaplanyan-theatre-yerevan-2026-1024.webp"
         ]
       ]
     },
