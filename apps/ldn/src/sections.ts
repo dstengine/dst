@@ -7,7 +7,7 @@
 // place rule would hand us a /london/ page holding precisely what /events/
 // holds; `home` below is what stops it. That is not a limitation of the
 // data, it is what a single-city site is.
-import { buildSections, promotedFirst, type Section, type Vocabulary } from "@dst/content/sections";
+import { buildSections, promotedFirst, type Copy, type Intent, type Section, type Vocabulary } from "@dst/content/sections";
 import { isFree } from "@dst/content/admission";
 import type { FeedItem } from "@dst/content/sections";
 import { eventsBySite } from "@dst/content/events";
@@ -25,9 +25,64 @@ const RESERVED = ["about", "events", "news", "go", "li"];
 // nothing else. Seven entries clear it; four more say "free" somewhere in
 // their copy and mean a members' discount, an included programme or a
 // spectacle that used to be free and is ticketed now.
-const INTENTS = [
-  { slug: "free", label: "Free", match: isFree },
+//
+// The other three are the shapes Christmas takes in central London, each
+// searched on its own: the switch-ons, the markets, the rinks. They stay
+// filed under Christmas, because that is what they are, and the tag on the
+// entry says which of the three — never read off a title. Winter
+// Wonderland carries two, a market and a rink, because it is both.
+const tagged = (tag: string) => (item: FeedItem) => item.tags?.includes(tag) ?? false;
+
+const INTENTS: Intent<FeedItem>[] = [
+  { slug: "free", label: "Free", match: (item) => "tickets" in item && isFree(item) },
+  { slug: "christmas-lights", label: "Christmas lights", match: tagged("christmas-lights") },
+  { slug: "christmas-markets", label: "Christmas markets", match: tagged("christmas-markets") },
+  { slug: "ice-skating", label: "Ice skating", match: tagged("ice-skating") },
 ];
+
+const SEASON: Record<string, Copy> = {
+  "christmas-lights": {
+    title: "London Christmas lights switch-on 2026: dates by street",
+    description:
+      "London Christmas lights switch-on 2026, by street: Regent Street 5 Nov, Oxford Street 9 Nov, Bond Street and Covent Garden 12 Nov, Ludgate Circus 18, Leadenhall 19.",
+    h1: "Christmas lights in central London",
+    lede: "Christmas lights switch-ons in central London for 2026, street by street, among them the angels on Regent Street, Harry Potter on Oxford Street, Bond Street and Covent Garden on the same Thursday, and two evenings in the City, at Ludgate Circus and Leadenhall Market. Every date comes from the organiser's own page, and a time is given only where the organiser has published one.",
+    headings: {
+      events: "Christmas lights switch-ons, street by street",
+      upcoming: "2026 dates",
+      // Not "Already gone": a street that has switched on keeps its lights
+      // up for the season.
+      past: "Already switched on",
+      news: "Christmas lights news",
+    },
+  },
+  "christmas-markets": {
+    title: "Christmas markets in central London 2026: opening dates",
+    description:
+      "Christmas markets in London 2026 by opening date: Leicester Square 31 Oct, Southbank Centre 2 Nov, London Bridge City 10 Nov, Hyde Park 19 Nov, King's Cross 20 Nov.",
+    h1: "Christmas markets in central London",
+    lede: "The 2026 Christmas markets in central London, in the order they open: the stalls at the Leicester Square ice rink, the chalets on Queen's Walk by the Southbank Centre, Winter by the River between London Bridge and Tower Bridge, the Christmas Market at Hyde Park Winter Wonderland, with more than 60 traders, and seven markets at King's Cross, among them a new one on Granary Square. All five run to 3 January. Winter Wonderland is the only one that needs an entry ticket. The dates and hours here are the ones each organiser publishes.",
+    headings: {
+      events: "Christmas markets in central London, by opening date",
+      upcoming: "2026 dates",
+      past: "Already gone",
+      news: "Christmas market news",
+    },
+  },
+  "ice-skating": {
+    title: "Ice skating in London 2026: the rinks and their dates",
+    description:
+      "Ice skating in London 2026: Leicester Square from 31 October, Glide at Battersea from 6 November, Somerset House from 11 November, Winter Wonderland from 19 November.",
+    h1: "Ice skating in central London",
+    lede: "Four rinks in central London for winter 2026: Skate Leicester Square, open since 31 October, Glide by the Thames at Battersea Power Station from 6 November, the courtyard rink at Somerset House from 11 November and the rink inside Hyde Park Winter Wonderland from 19 November. Three of them close on 3 January and Somerset House on 10 January, all four are shut on Christmas Day, and for skating outside the season there is Queens, the indoor rink on Queensway in Bayswater that is open all year round. Each date here is the one the organiser published.",
+    headings: {
+      events: "Where to skate in central London",
+      upcoming: "2026 dates",
+      past: "Already gone",
+      news: "Ice skating news",
+    },
+  },
+};
 
 // A tag earns a page only if it is written down here, because the slug and
 // the heading are both guesses otherwise — "Exhibitions" would be fine and
@@ -84,6 +139,7 @@ export function sections(items: FeedItem[]): Section[] {
     // threshold; four of them cross it.
     home: ["London", "United Kingdom"],
     copy: (g) => {
+      if (g.kind === "intent" && SEASON[g.key]) return SEASON[g.key];
       if (g.kind === "intent") {
         return {
           title: "Free things to do in central London",
