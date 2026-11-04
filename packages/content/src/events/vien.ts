@@ -518,7 +518,7 @@ export const items: EventItem[] = [
   {
     slug: "vienna-halloween-run-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-11-02T02:30:00+01:00",
+    updatedAt: "2026-11-04T02:40:00+01:00",
     site: "vien",
     image: "/covers/vienna-halloween-run-2026.jpg",
     imageAlt: "Eine helle Laufbahn, die in die Bildmitte führt, gesäumt von Bäumen mit rotem Herbstlaub",
@@ -586,6 +586,12 @@ export const items: EventItem[] = [
     ],
     related: [
       {
+        href: "/veranstaltungen/move-for-health-movemberlauf-wien-2026/",
+        eyebrow: "14. November, Otto-Wagner-Areal",
+        title: "Move for Health 2026 (Movemberlauf)",
+        text: "Der nächste Lauf: 2,5 oder 5 Kilometer am Steinhof, Kinderlauf über 750 Meter, Nenngeld bis 13. November 25 Euro.",
+      },
+      {
         href: "/veranstaltungen/kuerbisfest-am-himmel-2026/",
         eyebrow: "Cobenzl",
         title: "Kürbisfest am Himmel 2026",
@@ -629,7 +635,7 @@ export const items: EventItem[] = [
   {
     slug: "kuerbisfest-am-himmel-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-11-02T02:30:00+01:00",
+    updatedAt: "2026-11-04T02:40:00+01:00",
     site: "vien",
     image: "/covers/kuerbisfest-am-himmel-2026.jpg",
     imageAlt: "Ein breiter Haufen runder Papierscheiben in Rot, Grün, Ocker und Creme, in vielen verschiedenen Größen",
@@ -693,6 +699,12 @@ export const items: EventItem[] = [
       },
     ],
     related: [
+      {
+        href: "/veranstaltungen/move-for-health-movemberlauf-wien-2026/",
+        eyebrow: "14. November, Otto-Wagner-Areal",
+        title: "Move for Health 2026 (Movemberlauf)",
+        text: "Im November wieder am Westrand der Stadt: der Movemberlauf am Steinhof, 2,5 oder 5 Kilometer, für Kinder 750 Meter.",
+      },
       {
         href: "/veranstaltungen/halloween-wurstelprater-2026/",
         eyebrow: "Prater",
@@ -2408,7 +2420,7 @@ export const items: EventItem[] = [
   {
     slug: "perchtenlauf-prater-wien-2026",
     createdAt: "2026-10-25T18:20:00+01:00",
-    updatedAt: "2026-11-01T09:15:00+01:00",
+    updatedAt: "2026-11-04T02:40:00+01:00",
     site: "vien",
     title: "Perchtenlauf im Prater 2026",
     cardTitle: "Perchtenlauf im Prater",
@@ -2471,6 +2483,12 @@ export const items: EventItem[] = [
       },
     ],
     related: [
+      {
+        href: "/veranstaltungen/move-for-health-movemberlauf-wien-2026/",
+        eyebrow: "14. November, Otto-Wagner-Areal",
+        title: "Move for Health 2026 (Movemberlauf)",
+        text: "Zwei Wochen davor, am Vormittag: 2,5 oder 5 Kilometer am Steinhof, Spenden für Movember und EndÖ.",
+      },
       {
         href: "/veranstaltungen/wiener-silvesterpfad-2026/",
         eyebrow: "Innenstadt und Prater",
@@ -2680,5 +2698,105 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Eine Themenfahrt hat eine Regel, die kein Lokal kennt: Das Schiff wartet nicht. Die Dreiviertelstunde zum Einschiffen ist großzügig, aber um 19 Uhr sind die Leinen los, und dann gibt es keinen Nebeneingang. Dazu kommen die Getränke, die im Preis nicht enthalten sind, und unter dem Kostüm hilft eine warme Schicht: Ende Oktober ist es auf dem Deck eines Donauschiffs deutlich kälter als am Handelskai.",
+  },
+  {
+    slug: "move-for-health-movemberlauf-wien-2026",
+    createdAt: "2026-11-04T02:40:00+01:00",
+    updatedAt: "2026-11-04T02:40:00+01:00",
+    site: "vien",
+    title: "Move for Health 2026: der Movemberlauf am Otto-Wagner-Areal",
+    cardTitle: "Move for Health (Movemberlauf)",
+    titleSeo: "Movemberlauf Wien 2026: Otto-Wagner-Areal, 14. November",
+    summary:
+      "Der Wiener Movemberlauf heißt jetzt Move for Health und ist am Samstag, 14. November 2026, am Otto-Wagner-Areal in Penzing: Kinderlauf über 750 Meter um 10 Uhr, Lauf über 2,5 oder 5 Kilometer um 10:30 Uhr, Walk um 11:30 Uhr. Das Nenngeld beträgt bis 13. November 25 Euro, für Kinder 7 Euro.",
+    start: "2026-11-14",
+    startTime: "10:00",
+    endTime: "12:30",
+    utcOffset: "+01:00",
+    venue: "Otto-Wagner-Areal",
+    city: "Wien",
+    country: "Österreich",
+    organizer: "ASKÖ WAT Wien (Wienläuft)",
+    category: "Sport",
+    tickets: { priceFrom: 7, priceTo: 30, currency: "EUR" },
+    // Die Anmeldung läuft über Time Now Sports; movemberlauf.at verlinkt
+    // die Jahrgangsseite 2026 direkt.
+    ticket: {
+      url: "https://time-now-sports.at/move-for-health-2026/",
+      label: "Anmeldung bei Time Now Sports",
+    },
+    source: {
+      name: "Move for Health — WAT Wienläuft",
+      url: "https://movemberlauf.at/",
+      verifiedOn: "2026-11-04",
+    },
+    body: [
+      "Wer in Wien nach dem <strong>Movemberlauf</strong> sucht, findet ihn inzwischen unter neuem Namen: <strong>Move for Health</strong>. Veranstalter ist wie bisher Wienläuft, die Laufserie der ASKÖ WAT Wien, gelaufen wird am <strong>Samstag, 14. November 2026</strong>, am <strong>Otto-Wagner-Areal</strong> auf der Baumgartner Höhe im 14. Bezirk. Der Lauf sammelt Spenden für die <strong>Movember Foundation</strong>, die sich um Männergesundheit kümmert, und für <strong>Endometriose Österreich (EndÖ)</strong>.",
+      "## Die Strecke",
+      "Eine Runde misst <strong>2,5 Kilometer</strong> und führt zwischen den Pavillons des ehemaligen Spitals hinauf zu den Steinhofgründen und zur Kirche am Steinhof von Otto Wagner. Wer <strong>5 Kilometer</strong> laufen will, nimmt zwei Runden. Man kann laufen oder walken; für Kinder gibt es einen eigenen Bewerb über <strong>750 Meter</strong>.",
+      "## Der Ablauf",
+      "Die Startnummern gibt es ab <strong>9 Uhr</strong>. Um <strong>10 Uhr</strong> starten die Kinder, um <strong>10:30 Uhr</strong> der Lauf, um <strong>11:30 Uhr</strong> der Walk; die Siegerehrung ist um <strong>12:30 Uhr</strong>. Von 9:30 bis 12:30 Uhr stehen fünf Bewegungsstationen am Gelände, an denen Kraft, Koordination und Geschick gefragt sind: Wer an jeder einen Stempel auf der Startnummer sammelt, kann etwas gewinnen.",
+      "## Was es kostet",
+      "Das Nenngeld beträgt bis <strong>13. November</strong> <strong>25 Euro</strong>, die Nachnennung am Lauftag <strong>30 Euro</strong>, der Kinderlauf <strong>7 Euro</strong>. Spenden für Movember und EndÖ kann man bei der Online-Anmeldung gleich dazugeben.",
+      "## Anreise",
+      "Mit den Bussen <strong>47A</strong> und <strong>48A</strong> bis zur Station Otto Wagner Areal, die wenige Meter vom Startbereich entfernt liegt. Der Veranstalter weist ausdrücklich darauf hin: Auf dem gesamten Areal sind <strong>keine Hunde</strong> erlaubt.",
+      "## Davor und danach",
+      "Zwei Wochen vorher lief der <a href=\"/veranstaltungen/vienna-halloween-run-2026/\" title=\"Vienna Halloween Run 2026: Halloween-Lauf im Prater\">Vienna Halloween Run</a> durch die Prater Hauptallee. Wer nach dem November noch einen Abend im Freien sucht, findet ihn am 29. November beim <a href=\"/veranstaltungen/perchtenlauf-prater-wien-2026/\" title=\"Perchtenlauf Prater Wien 2026: Riesenradplatz, November\">Perchtenlauf im Prater</a>.",
+    ],
+    programme: [
+      { heading: "ab 9:00 Uhr — Startnummernausgabe", text: "Im Startbereich beim Haupteingang des Areals." },
+      { heading: "10:00 Uhr — Kinderlauf", text: "750 Meter, Nenngeld 7 Euro." },
+      { heading: "10:30 Uhr — Lauf", text: "2,5 Kilometer (eine Runde) oder 5 Kilometer (zwei Runden)." },
+      { heading: "11:30 Uhr — Walk", text: "Dieselbe Runde, gewalkt statt gelaufen." },
+      { heading: "12:30 Uhr — Siegerehrung", text: "Bis dahin sind auch die fünf Bewegungsstationen offen." },
+    ],
+    faq: [
+      {
+        q: "Wann ist der Movemberlauf 2026 in Wien?",
+        a: "Am <strong>Samstag, 14. November 2026</strong>. Der Kinderlauf startet um 10 Uhr, der Lauf um 10:30 Uhr und der Walk um 11:30 Uhr. Der Lauf heißt inzwischen Move for Health.",
+      },
+      {
+        q: "Wo wird gelaufen?",
+        a: "Am Otto-Wagner-Areal auf der Baumgartner Höhe im 14. Bezirk, mit den Bussen 47A und 48A bis zur Station Otto Wagner Areal.",
+      },
+      {
+        q: "Welche Distanzen gibt es?",
+        a: "750 Meter für Kinder, 2,5 Kilometer (eine Runde) und 5 Kilometer (zwei Runden), jeweils laufend oder walkend.",
+      },
+      {
+        q: "Was kostet die Anmeldung?",
+        a: "Bis 13. November 25 Euro, die Nachnennung 30 Euro, der Kinderlauf 7 Euro. Angemeldet wird online bei Time Now Sports.",
+      },
+      {
+        q: "Wofür werden Spenden gesammelt?",
+        a: "Für die Movember Foundation, die sich um Männergesundheit kümmert, und für Endometriose Österreich (EndÖ).",
+      },
+      {
+        q: "Darf ich meinen Hund mitnehmen?",
+        a: "Nein. Auf dem gesamten Otto-Wagner-Areal sind keine Hunde erlaubt.",
+      },
+    ],
+    related: [
+      {
+        href: "/veranstaltungen/vienna-halloween-run-2026/",
+        eyebrow: "Prater",
+        title: "Vienna Halloween Run 2026",
+        text: "Der Lauf davor: Kinderläufe, 2,5 und 5 Kilometer in der Prater Hauptallee, im Dunkeln und gern verkleidet.",
+      },
+      {
+        href: "/veranstaltungen/kuerbisfest-am-himmel-2026/",
+        eyebrow: "Cobenzl",
+        title: "Kürbisfest am Himmel 2026",
+        text: "Noch ein Ausflug an den Westrand der Stadt: über 200 Kürbissorten am Cobenzl.",
+      },
+      {
+        href: "/veranstaltungen/perchtenlauf-prater-wien-2026/",
+        eyebrow: "29. November, Prater",
+        title: "Perchtenlauf im Prater 2026",
+        text: "Über 220 Perchten am Riesenradplatz, ab 17 Uhr, Eintritt frei.",
+      },
+    ],
+    expertise:
+      "Der Name täuscht ein wenig: Ein Rundkurs am Steinhof ist kein flacher Stadtlauf. Das Areal liegt am Hang, und die Runde führt hinauf zur Kirche — wer auf der Hauptallee 5 Kilometer in einer bestimmten Zeit läuft, sollte hier ein paar Minuten mehr einplanen und die zweite Runde nicht zu schnell angehen. Mitte November ist es um zehn Uhr vormittags oft noch kühl und am Wienerwaldrand gern feucht; eine Schicht zum Ausziehen und trockene Sachen für nach dem Ziel sind die bessere Wahl als die Laufhose vom Sommer. Und weil Hunde am ganzen Gelände verboten sind, bleibt der Vierbeiner diesmal daheim.",
   },
 ];
