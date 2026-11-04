@@ -37,6 +37,10 @@ const TAGS: Record<string, Vocabulary> = {
   // „Silvester Wien“ ist eine Nacht und die Frage, wo man sie verbringt.
   Weihnachtsmarkt: { slug: "weihnachtsmaerkte", plural: "Weihnachtsmärkte", label: "Weihnachtsmärkte" },
   Silvester: { slug: "silvester", plural: "Silvester", label: "Silvester" },
+  // Ein Format, das wie ein Datum gesucht wird: „Eislaufen Wien“ von
+  // November bis März, und die Antwort ist eine Liste von Plätzen mit
+  // Preisen und Zeiten, kein einzelner Termin.
+  Eislaufen: { slug: "eislaufen", plural: "Eislaufen", label: "Eislaufen" },
 };
 
 export const NAV = {
@@ -97,6 +101,24 @@ export function sections(items: FeedItem[]): Section[] {
             upcoming: "Termine",
             past: "Schon vorbei",
             news: "Meldungen zu Silvester",
+          },
+        };
+      }
+      // Der Heumarkt hat keine Karte, solange der Eislauf-Verein kein
+      // Saisonende nennt: ein Eintrag ohne `end` wäre ein einzelner Tag. Die
+      // Einleitung sagt trotzdem, dass er offen hat.
+      if (g.key === "Eislaufen") {
+        return {
+          title: "Eislaufen in Wien 2026/27: Eislaufplätze, Preise, Zeiten",
+          description:
+            "Eislaufen in Wien 2026/27: Eisring Süd seit 25. Oktober, Engelmann ab 6. November, Wiener Eistraum ab 22. Jänner — Preise und Öffnungszeiten vom Betreiber.",
+          h1: "Eislaufen in Wien",
+          lede: "Wo man in Wien in der Saison 2026/27 eislaufen kann, jeder Platz mit den Daten, Preisen und Öffnungszeiten, wie sein Betreiber sie veröffentlicht hat: der Eisring Süd in Favoriten mit Halle und Freifläche, die Kunsteisbahn Engelmann auf einem Dach in Hernals und ab 22. Jänner der Wiener Eistraum am Rathausplatz. Davor liegt dort von 13. November bis 6. Jänner die Eisfläche des Christkindlmarkts, am 31. Dezember geschlossen. Am Heumarkt läuft der Wiener Eislauf-Verein ab 5. November; ein Saisonende nennt er noch nicht.",
+          headings: {
+            events: "Wo man in Wien eislaufen kann",
+            upcoming: "Saison 2026/27",
+            past: "Schon vorbei",
+            news: "Meldungen zum Eislaufen",
           },
         };
       }
