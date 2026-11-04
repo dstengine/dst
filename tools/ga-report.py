@@ -37,14 +37,15 @@ date ranges. Everything downstream sees the same {current, previous} shape.
 Every period also carries Search Console: clicks, impressions and the
 queries behind them, host by host, and the queries that are shown and not
 clicked. The week and the month put before them any host that is missing
-from Search Console or whose sitemap Google has not read — the failure no
-GA number shows.
+from Search Console or whose sitemap fails — the failure no GA number
+shows — and say in a line which sitemaps Google is not reading although
+they serve without fault.
 
 Credentials: GA4_KEY or ~/dst/.secrets/ga4-reader.json for the read,
 REPORTS_TELEGRAM_API_KEY / REPORTS_TELEGRAM_CHAT_ID from ~/dst/.env for the
 send. Nothing is printed that would put a secret in a log.
 """
-import os, re, sys, json, socket, urllib.request
+import os, re, sys, json, socket, time, urllib.request
 from collections import defaultdict
 from datetime import datetime, timedelta, timezone
 from html import escape
@@ -233,9 +234,18 @@ if seen.get("ticket_click"):
 # quiet week says in one line that they were checked. Thresholds match
 # tools/idx-check.mjs. The day leaves that check to them: a sitemap still
 # waiting would be the same line seven times a week.
+#
+# A sitemap Google has not read is an alert only when the file fails here
+# too, as idx-check words it. On 3 Nov 2026 every .lol host and apex dst.llc
+# had gone unread since 13 Oct with files that answered Googlebot like the
+# hosts Google reads in seconds, and resubmitting and a flat sitemap had
+# both been tried: that is Google's decision, and nine alerts a week that
+# nobody can act on teach the reader to skip the section. Those get one
+# line under it instead, so a host still shows when Google starts reading.
 GSC = "https://www.googleapis.com/webmasters/v3"
 GSC_LAG = 3
 NEVER_READ_DAYS, STALE_READ_DAYS = 7, 21
+UA = "Mozilla/5.0 (compatible; dst-ga-report/1.0; +https://dst.llc/)"
 QUERY_HOSTS = 6
 PER_HOST = 3 if PERIOD == "day" else 5
 
@@ -258,6 +268,20 @@ def resolves(host):
         return True
     except socket.gaierror as e:
         return e.errno != socket.EAI_NONAME
+
+
+def serves(url):
+    """True when the file answers here as a sitemap: 200 and an urlset or a
+    sitemapindex near the top. A second apart, because a burst from one
+    address earns Vercel's challenge page, which would read as a fault of
+    ours."""
+    time.sleep(1)
+    try:
+        with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": UA}), timeout=20) as r:
+            head = r.read(4096).decode("utf-8", "replace")
+            return r.status == 200 and ("<urlset" in head or "<sitemapindex" in head)
+    except (OSError, ValueError):
+        return False
 
 
 def gsc():
@@ -343,7 +367,7 @@ def search_console():
     utc_now = datetime.now(timezone.utc)
     age = lambda iso: (utc_now - datetime.fromisoformat(iso.replace("Z", "+00:00"))).days
 
-    alerts, waiting, totals, queries, offline = [], 0, {}, [], []
+    alerts, waiting, totals, queries, offline, unread = [], 0, {}, [], [], []
     for host in repo_hosts():
         if host not in host_of.values():
             if resolves(host):
@@ -361,11 +385,11 @@ def search_console():
                 alerts.append(f"{host} — {name}: {m['errors']} errors")
             if not m.get("lastDownloaded") and m.get("lastSubmitted"):
                 if age(m["lastSubmitted"]) > NEVER_READ_DAYS:
-                    alerts.append(f"{host} — {name} never read, submitted {m['lastSubmitted'][:10]}")
+                    unread.append(("never", host, m["path"], f"{name} never read, submitted {m['lastSubmitted'][:10]}"))
                 else:
                     waiting += 1
             elif m.get("lastDownloaded") and age(m["lastDownloaded"]) > STALE_READ_DAYS:
-                alerts.append(f"{host} — {name} last read {m['lastDownloaded'][:10]}")
+                unread.append(("stale", host, m["path"], f"{name} last read {m['lastDownloaded'][:10]}"))
 
         query = lambda dims, since, limit: post(site, {
             "startDate": since.isoformat(), "endDate": end.isoformat(),
@@ -385,12 +409,23 @@ def search_console():
             queries += [(int(row["clicks"]), int(row["impressions"]), row["position"], row["keys"][0], host)
                         for row in query(["query"], start, 50)]
 
+    googles = {"never": [], "stale": []}
+    for kind, host, url, said in unread:
+        if not serves(url):
+            alerts.append(f"{host} — {said}, and it fails here too")
+        elif host not in googles[kind]:
+            googles[kind].append(host)
+
     fmt = lambda d: f"{d.day} {d:%b}"
     out = ["", f"<b>Search</b> · {fmt(start)}–{fmt(end)}, vs the {days} days before"]
     if alerts:
         out += ["<b>Needs attention</b>", "<pre>"] + [escape(a) for a in alerts] + ["</pre>"]
     else:
-        out.append(f"<i>All {len(sites)} properties checked: none missing, no sitemap stuck.</i>")
+        out.append(f"<i>All {len(sites)} properties checked: none missing, no sitemap failing.</i>")
+    if googles["never"] or googles["stale"]:
+        said = [f"never: {', '.join(sorted(googles['never']))}"] if googles["never"] else []
+        said += [f"not in {STALE_READ_DAYS} days: {', '.join(sorted(googles['stale']))}"] if googles["stale"] else []
+        out.append(f"<i>Google's side — sitemaps that serve without fault, unread by Google. {escape('; '.join(said))}.</i>")
     if waiting:
         out.append(f"<i>{waiting} sitemap{'s' if waiting > 1 else ''} submitted this week, not read yet.</i>")
     for host in offline:
