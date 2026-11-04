@@ -134,7 +134,17 @@ const L = withLabels(labelOverrides);
 const mapPlace = item.venue ?? item.geo?.name ?? "";
 
 const todayIso = new Date().toISOString().slice(0, 10);
-const moreCards = placedAfter(more
+// A card that names the one before it (`after`) follows it: the tail's
+// Halloween block runs Forty44, UFO, Mut — the order of the night. That
+// order is for a night still to come, so the cards still on and the past
+// ones are placed each among their own, as the listings place only what is
+// on: over the whole list, UFO's page kept Mut first after 31 October, one
+// card from a night that was over ahead of 83 still on.
+const onFirst = (sorted: EventItem[]) => [
+  ...placedAfter(sorted.filter((o) => isOn(o, todayIso)), item.slug),
+  ...placedAfter(sorted.filter((o) => !isOn(o, todayIso)), item.slug),
+];
+const moreCards = onFirst(more
   .filter((other) => other.slug !== item.slug && Array.isArray(other.body) && other.body.length > 0)
   // Four keys in order. Three cards is too few to spend on the coincidence
   // of the calendar when the site knows what the page is about, and too few
@@ -168,9 +178,7 @@ const moreCards = placedAfter(more
     const bSame = b.category === item.category;
     if (aSame !== bSame) return aSame ? -1 : 1;
     return aUp ? (a.start < b.start ? -1 : 1) : (a.start < b.start ? 1 : -1);
-  }), item.slug)
-  // A card that names the one before it (`after`) follows it: the tail's
-  // Halloween block runs Forty44, UFO, Mut — the order of the night.
+  }))
   .map((other) => ({
     href: eventHref(other, eventsBase),
     eyebrow: other.category,
