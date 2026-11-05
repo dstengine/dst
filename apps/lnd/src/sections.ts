@@ -5,7 +5,7 @@
 // No place sections: everything on this site is tagged "London", so the
 // place rule would produce a /london/ page holding the whole site. `home`
 // below is what stops it.
-import { buildSections, promotedFirst, type Section, type Vocabulary } from "@dst/content/sections";
+import { buildSections, promotedFirst, type Intent, type Section, type Vocabulary } from "@dst/content/sections";
 import type { FeedItem } from "@dst/content/sections";
 import { eventsBySite } from "@dst/content/events";
 import { newsBySite } from "@dst/content/news";
@@ -43,6 +43,16 @@ const TAGS: Record<string, Vocabulary> = {
   "New Year": { slug: "new-year", plural: "New Year", label: "New Year" },
 };
 
+// Panto is searched on its own and answered in the boroughs: the Palladium
+// is the West End's, and the rest are in the borough theatres. The shows
+// stay filed under Theatre, because that is what they are, and the tag
+// on the entry puts them here — never a word read off the title.
+const tagged = (tag: string) => (item: FeedItem) => item.tags?.includes(tag) ?? false;
+
+const INTENTS: Intent<FeedItem>[] = [
+  { slug: "panto", label: "Panto", match: tagged("panto") },
+];
+
 export const NAV = {
   allLabel: "All",
   allTitle: "Everything on across London and its boroughs",
@@ -54,6 +64,7 @@ export function sections(items: FeedItem[]): Section[] {
     items,
     reserved: RESERVED,
     tags: TAGS,
+    intents: INTENTS,
     // Both names for the same place. `placeOf` defaults to country before
     // city, so the entries that record "United Kingdom" — and only those —
     // would be filed a second time under a /uk/ page holding an arbitrary
@@ -61,6 +72,24 @@ export function sections(items: FeedItem[]): Section[] {
     // threshold; four of them cross it.
     home: ["London", "United Kingdom"],
     copy: (g) => {
+      // "Panto" is the word people type, with the place and the year; the
+      // theatre names are what they type next, so the description carries
+      // the boroughs rather than an adjective.
+      if (g.kind === "intent" && g.key === "panto") {
+        return {
+          title: "London panto 2026: borough pantos with dates and prices",
+          description:
+            "London pantos 2026, borough by borough: Hackney, Hammersmith, Stratford, Greenwich, Catford and Hornchurch, with dates, prices and accessible shows.",
+          h1: "London panto 2026 in the boroughs",
+          lede: "Six of the 2026 pantos in London's borough theatres, from the first curtain at the Lyric Hammersmith on 14 November to the last at Greenwich Theatre on 10 January: two Jacks and their beanstalks, two Robin Hoods and two Cinderellas. Each with its dates and times, its prices and fees, and whatever relaxed, signed, captioned or audio-described performances the theatre has announced, as the theatre published them and with a link to where we read it.",
+          headings: {
+            events: "The 2026 pantos, theatre by theatre",
+            upcoming: "Panto season 2026–27",
+            past: "Already gone",
+            news: "Panto news",
+          },
+        };
+      }
       // A date rather than a subject, so the generic template is wrong
       // twice over: it would file the week of the year as a genre, and it
       // would bury the only word anybody types.
