@@ -51,6 +51,12 @@ const tagged = (tag: string) => (item: FeedItem) => item.tags?.includes(tag) ?? 
 
 const INTENTS: Intent<FeedItem>[] = [
   { slug: "panto", label: "Panto", match: tagged("panto") },
+  // The season's two other searches with a page of their own. A rink and
+  // a grotto are both filed under Christmas, which is when they happen;
+  // the tag says what they are, so a palace with Father Christmas in its
+  // Great Hall can sit on the grottos page without being renamed one.
+  { slug: "ice-rinks", label: "Ice rinks", match: tagged("ice-rink") },
+  { slug: "grottos", label: "Father Christmas", match: tagged("grotto") },
 ];
 
 export const NAV = {
@@ -87,6 +93,42 @@ export function sections(items: FeedItem[]): Section[] {
             upcoming: "Panto season 2026–27",
             past: "Already gone",
             news: "Panto news",
+          },
+        };
+      }
+      // "Ice skating London" is the query; the rinks people name next are
+      // the palaces, so the title carries two of them and the description
+      // the rest. No section-wide promise about access: one of the five is
+      // not wheelchair accessible this year.
+      if (g.kind === "intent" && g.key === "ice-rinks") {
+        return {
+          title: "Ice rinks in London 2026: Hampton Court, Greenwich and more",
+          description:
+            "Ice skating in London 2026 beyond the West End: Hampton Court Palace, the Queen's House in Greenwich, Alexandra Palace, Wimbledon and Brent Cross, with dates, prices and session times.",
+          h1: "Ice rinks in London 2026",
+          lede: "Five of this winter's rinks out in the boroughs, from the rink in a Brent Cross car park, open since 23 October, to Hampton Court Palace and the Queen's House in Greenwich and the indoor ice at Alexandra Palace and Wimbledon. Each with its dates, its session times and its prices as the rink published them, who may skate and with whom, and a link to where we read it.",
+          headings: {
+            events: "The 2026 rinks, one by one",
+            upcoming: "Winter 2026–27",
+            past: "Already gone",
+            news: "Ice rink news",
+          },
+        };
+      }
+      // "Santa's grotto" is what is typed; "Father Christmas" is what most
+      // of these places call him, and the nav label keeps their word.
+      if (g.kind === "intent" && g.key === "grottos") {
+        return {
+          title: "Santa's grottos in London 2026: Father Christmas by borough",
+          description:
+            "Santa's grottos in London 2026, borough by borough: Morden Hall Park, Fulham Palace, Eltham Palace, Marble Hill, Woolwich Works and London Museum Docklands, with dates, prices and any quiet sessions.",
+          h1: "Santa's grottos in London 2026",
+          lede: "Six places to meet Father Christmas out in the boroughs this December: two palaces, a National Trust park, an English Heritage villa by the Thames, an arts centre in the old Royal Arsenal and a Victorian grotto in a Docklands warehouse. Each with its dates and its price per child as the organiser published them, and a link to where we read it.",
+          headings: {
+            events: "The 2026 grottos, one by one",
+            upcoming: "December 2026",
+            past: "Already gone",
+            news: "Father Christmas news",
           },
         };
       }
