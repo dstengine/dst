@@ -1840,7 +1840,7 @@ export const items: EventItem[] = [
   {
     slug: "boo-at-the-zoo-bronx-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-10-21T04:56:51+04:00",
+    updatedAt: "2026-11-04T20:40:00-05:00",
     site: "nyc42",
     image: "/covers/boo-at-the-zoo-bronx-2026.jpg",
     imageAlt: "An arch of overlapping paper leaves in amber, ochre and cream above a pale band carrying three animal paw prints",
@@ -1899,6 +1899,12 @@ export const items: EventItem[] = [
         eyebrow: "New York Botanical Garden",
         title: "Día de los Muertos at NYBG",
         text: "Across Fordham Road until 2 November: a community ofrenda, giant Catrina puppets and a parade on 1 November, included with the All-Garden Pass.",
+      },
+      {
+        href: "/events/year-in-review-neil-degrasse-tyson-amnh-2027/",
+        eyebrow: "January 7, 2027",
+        title: "Year in Review with Neil deGrasse Tyson",
+        text: "The next family-sized night at one of the city's big institutions: Hayden Planetarium's director on the year in science, at the Natural History Museum, $50.",
       },
     ],
     expertise:
@@ -2734,7 +2740,7 @@ export const items: EventItem[] = [
   {
     slug: "bryant-park-winter-village-2026",
     createdAt: "2026-10-14T21:15:00+04:00",
-    updatedAt: "2026-10-21T21:35:00+04:00",
+    updatedAt: "2026-11-04T20:40:00-05:00",
     site: "nyc42",
     image: "/covers/bryant-park-winter-village-2026.jpg",
     imageAlt: "Skaters on an outdoor rink with two dome kiosks, string lights and a city skyline at dusk",
@@ -2816,6 +2822,12 @@ export const items: EventItem[] = [
         title: "Coney Island Polar Bear Plunge",
         text: "For those who prefer their cold water liquid: the New Year's Day dip at Coney Island.",
       },
+      {
+        href: "/events/year-in-review-neil-degrasse-tyson-amnh-2027/",
+        eyebrow: "January 7, 2027",
+        title: "Year in Review with Neil deGrasse Tyson",
+        text: "A January evening indoors on the Upper West Side: the year in science at the Natural History Museum, tickets from December 9.",
+      },
     ],
     expertise:
       "Free admission means the rink is busiest at the obvious times: December weekends and the holiday weeks. The opening weeks, from October 28 into November, are likely to be the quieter stretch, with the ice and the shops already open. From November 19 the rink runs until midnight, and a late weekday session is the way to get ice with room on it in December. Plan the Holiday Shops first if they are the reason for the trip, since they close on January 3 while the rink runs to the end of February.",
@@ -2824,7 +2836,7 @@ export const items: EventItem[] = [
   {
     slug: "coney-island-polar-bear-plunge-2027",
     createdAt: "2026-10-21T21:35:00+04:00",
-    updatedAt: "2026-11-02T02:20:00+04:00",
+    updatedAt: "2026-11-04T20:40:00-05:00",
     site: "nyc42",
     image: "/covers/coney-island-polar-bear-plunge-2027.jpg",
     imageAlt:
@@ -2923,6 +2935,12 @@ export const items: EventItem[] = [
         eyebrow: "November 26",
         title: "Prospect Park Turkey Trot",
         text: "Brooklyn's other cold-morning tradition: five miles in Prospect Park on Thanksgiving.",
+      },
+      {
+        href: "/events/year-in-review-neil-degrasse-tyson-amnh-2027/",
+        eyebrow: "January 7, 2027",
+        title: "Year in Review with Neil deGrasse Tyson",
+        text: "Six days after the plunge, a warmer start to the year: Neil deGrasse Tyson's recap of 2026 under the blue whale.",
       },
     ],
     expertise:
@@ -4027,5 +4045,93 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Take the 10:25 shuttle from 242nd Street on Saturday: it lands you inside the gate for most of the Family Art Project's 10am-to-1pm window, on the day without yoga, felting or Museum Store Sunday to share the garden with. Winter hours make the afternoon short: last admission is 4pm and the last shuttle pick-up 4:25pm, so anyone who wants the two Glyndor Gallery shows before they close on Sunday should be through the gate by three, remembering the gallery's half-hour closure at noon. If the felting workshop is the draw, book it before the day: it requires registration, and the yoga class takes day-of places only when there is room, so a registered Sunday starts at the gate at 10am without a wait. Pack the food donation with the bag you bring anyway; the drive is the one thing here that costs nothing and runs to December 18.",
+  },
+
+  {
+    slug: "year-in-review-neil-degrasse-tyson-amnh-2027",
+    createdAt: "2026-11-04T20:40:00-05:00",
+    updatedAt: "2026-11-04T20:40:00-05:00",
+    site: "nyc42",
+    title: "Year in Review with Neil deGrasse Tyson 2027",
+    titleSeo: "Neil deGrasse Tyson Year in Review: AMNH, New York, Jan 7",
+    cardTitle: "Year in Review with Neil deGrasse Tyson",
+    summary:
+      "Thursday, January 7, 2027, at 7pm in the Hall of Ocean Life at the American Museum of Natural History, New York: Neil deGrasse Tyson's yearly recap of the biggest science news, this time of 2026. Tickets are $50, $40 for members, online from December 9 at 10:30am, two per order.",
+    start: "2027-01-07",
+    startTime: "19:00",
+    utcOffset: "-05:00",
+    venue: "Hall of Ocean Life, American Museum of Natural History, 200 Central Park West",
+    city: "New York",
+    geo: { name: "American Museum of Natural History", lat: 40.7813, lng: -73.974 },
+    organizer: "American Museum of Natural History",
+    category: "Science",
+    tickets: { priceFrom: 40, priceTo: 50, currency: "USD" },
+    ticket: {
+      url: "https://www.amnh.org/calendar/year-in-review",
+      label: "The museum's event page",
+      sells: false,
+    },
+    source: {
+      name: "American Museum of Natural History",
+      url: "https://www.amnh.org/calendar/year-in-review",
+      verifiedOn: "2026-11-05",
+    },
+    body: [
+      "Every January the director of the Hayden Planetarium stands under the blue whale and goes through the year. On <strong>Thursday, January 7, 2027, at 7pm</strong>, <strong>Neil deGrasse Tyson</strong> gives his annual <strong>Year in Review</strong> in the <strong>Hall of Ocean Life</strong> at the American Museum of Natural History, and this time the year is <strong>2026</strong>: the biggest moments in science, from major space missions and astronomical discoveries to science in popular culture, in the museum's words \"and much more\".",
+      "## Tickets: when they go on sale and what they cost",
+      "Tickets go on sale online on <strong>Wednesday, December 9, 2026, at 10:30am</strong>. They cost <strong>$50</strong> for the general public and <strong>$40</strong> for museum members, and each order is limited to <strong>two tickets</strong>. The museum sells them on its own site; on November 5, when this page was checked, the event page carried the prices and the on-sale date but no booking button yet.",
+      "## Where it is and how to get in",
+      "The talk is in the Hall of Ocean Life, the room where the museum's 94-foot model of a blue whale hangs from the ceiling. The museum is at <strong>200 Central Park West</strong>, New York, NY 10024, and for this evening it asks you to <strong>enter at Central Park West, down the curving driveway from the sidewalk level</strong>, rather than up the main steps.",
+      "## ASL interpretation",
+      "The program has <strong>American Sign Language interpretation</strong>. Seats in the ASL section are reserved by email to <strong>publicprograms@amnh.org</strong>.",
+      "## What the museum does not say",
+      "The event page gives a start time and no end time, and it does not say whether the ticket includes entry to the museum's halls before the talk or whether there is an age limit. The museum's own general hours are 10am to 5:30pm, so a 7pm program is an evening event in a building that has otherwise closed.",
+      "## Around it",
+      "The year starts six days earlier on the beach, with the <a href=\"/events/coney-island-polar-bear-plunge-2027/\" title=\"Coney Island Polar Bear Plunge 2027\">Polar Bear Plunge</a> at Coney Island on January 1. Skating at the <a href=\"/events/bryant-park-winter-village-2026/\" title=\"Winter Village at Bryant Park 2026\">Winter Village in Bryant Park</a> runs until the end of February, and the <a href=\"/events/nybg-holiday-train-show-2026/\" title=\"Holiday Train Show 2026 at the New York Botanical Garden\">Holiday Train Show</a> at the New York Botanical Garden closes on January 10.",
+    ],
+    faq: [
+      {
+        q: "When is Neil deGrasse Tyson's Year in Review in 2027?",
+        a: "Thursday, January 7, 2027, at 7pm, in the Hall of Ocean Life at the American Museum of Natural History in New York. It covers 2026.",
+      },
+      {
+        q: "When do tickets go on sale?",
+        a: "Online on December 9, 2026, at 10:30am, on the museum's site. Each order is limited to two tickets.",
+      },
+      {
+        q: "How much are tickets?",
+        a: "$50 for the general public and $40 for museum members.",
+      },
+      {
+        q: "Where do I go in?",
+        a: "At 200 Central Park West: the museum asks you to enter at Central Park West, down the curving driveway from the sidewalk level.",
+      },
+      {
+        q: "Is there sign language interpretation?",
+        a: "Yes. To sit in the ASL section, email publicprograms@amnh.org to reserve seats.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/coney-island-polar-bear-plunge-2027/",
+        eyebrow: "January 1",
+        title: "Coney Island Polar Bear Plunge",
+        text: "The year's first New York tradition, on the beach at Stillwell Avenue, free to join.",
+      },
+      {
+        href: "/events/bryant-park-winter-village-2026/",
+        eyebrow: "October 28 – February 28",
+        title: "Winter Village at Bryant Park",
+        text: "Free skating in Midtown all winter, still open on the night of the talk.",
+      },
+      {
+        href: "/events/nybg-holiday-train-show-2026/",
+        eyebrow: "Until January 10",
+        title: "NYBG Holiday Train Show",
+        text: "The Bronx's model trains and plant-made landmarks, open until three days after the talk.",
+      },
+    ],
+    expertise:
+      "Set a reminder for 10:30am on December 9 and be signed in before it: it is one evening in one hall at two tickets an order, and on November 5 three of the museum's four overnight dates for January to March already read sold out, which says how quickly its after-hours evenings go. Members pay $10 less a seat, so if anyone in the household is a member, they should be the one who books. On the night, head for the driveway off Central Park West rather than the front steps: that is the entrance the museum names for this program.",
   },
 ];
