@@ -35,6 +35,9 @@ const TAGS: Record<string, Vocabulary> = {
   // The name has been Eid Al Etihad since 2023, and both names are typed,
   // so the label carries the one people know and the copy carries both.
   "UAE National Day": { slug: "uae-national-day", plural: "UAE National Day", label: "National Day" },
+  // The other night of the Dubai year that is searched by date, and the one
+  // the whole world types: where to stand for the fireworks at midnight.
+  "New Year's Eve": { slug: "new-years-eve", plural: "New Year's Eve", label: "New Year's Eve" },
 };
 
 // No "all" chip: the group's feed is two feeds at two addresses, and a
@@ -61,6 +64,25 @@ export function sections(items: FeedItem[]): Section[] {
             upcoming: "2026 dates",
             past: "Already gone",
             news: "National Day news",
+          },
+        };
+      }
+      // The night is searched as "fireworks", and the public displays are the
+      // one thing nobody can list yet: in 2025 the city published its sites
+      // on 26 December (mediaoffice.ae). The lede says so instead of guessing them;
+      // what is listed meanwhile is the ticketed nights with a date.
+      if (g.key === "New Year's Eve") {
+        return {
+          title: "New Year's Eve in Dubai 2026: fireworks views and galas",
+          description:
+            "New Year's Eve in Dubai, 31 December 2026: where to see in 2027, from Katy Perry at Atlantis to Burj Khalifa fireworks views, each with its price.",
+          h1: "New Year's Eve in Dubai",
+          lede: "Where to be at midnight on Thursday, 31 December 2026, and what each place charges, as the organiser published it. Last year Dubai's Event Security Committee published its list of public fireworks sites on 26 December; each site goes on this page once this year's announcement does.",
+          headings: {
+            events: "New Year's Eve 2026 in Dubai, place by place",
+            upcoming: "31 December 2026",
+            past: "Already gone",
+            news: "New Year's Eve news",
           },
         };
       }
