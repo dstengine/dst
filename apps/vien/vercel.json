@@ -1,4 +1,16 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "ignoreCommand": "node ../../tools/vercel-ignore.mjs vien"
+  "ignoreCommand": "node ../../tools/vercel-ignore.mjs vien",
+  "redirects": [
+    {
+      "source": "/osterreich",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/osterreich/",
+      "destination": "/",
+      "statusCode": 301
+    }
+  ]
 }

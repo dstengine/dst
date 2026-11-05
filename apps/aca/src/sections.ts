@@ -4,7 +4,10 @@
 //
 // Sin secciones de lugar: todo lo que se publica aquí está en Acapulco, así
 // que la regla de lugar daría una página /acapulco/ con lo mismo que ya hay
-// en /eventos/. Eso es lo que evita `home`.
+// en /eventos/. Eso es lo que evita `home`. México va con él: una entrada
+// con `country` se agrupa por el país y no por la ciudad, y así salió
+// /mexico/, la portada otra vez. Desde el 5 de noviembre de 2026 esa
+// dirección redirige con 301 a /.
 import { buildSections, promotedFirst, type Section, type Vocabulary } from "@dst/content/sections";
 import type { FeedItem } from "@dst/content/sections";
 import { eventsBySite } from "@dst/content/events";
@@ -37,7 +40,7 @@ export function sections(items: FeedItem[]): Section[] {
     items,
     reserved: RESERVED,
     tags: TAGS,
-    home: "Acapulco",
+    home: ["Acapulco", "México"],
     copy: (g) => {
       // La temporada que se busca por su nombre: una página que diga qué
       // hay en diciembre vale más que "Navidad en Acapulco: con fecha y

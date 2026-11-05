@@ -145,6 +145,30 @@ export const redirects: Record<string, Redirect[]> = {
       why: "The two pages tick pushes hardest took short addresses of their own at the root, the words people type: tick.am/devfest and tick.am/snoop-dogg.",
     })),
   ),
+  vien: [
+    {
+      from: "/osterreich/",
+      to: "/",
+      since: "2026-11-05",
+      why: "The same accident as nyc42\u2019s /united-states/ and riviera\u2019s /united-arab-emirates/: the place rule reads country before city, so the Vienna entries that record a country were filed a second time under Austria, and /osterreich/ was the front page under a second address. The site has no country section to send it to \u2014 everything on it is in Vienna \u2014 so it goes to the front page, and `home` now names both places.",
+    },
+  ],
+  cmx: [
+    {
+      from: "/mexico/",
+      to: "/",
+      since: "2026-11-05",
+      why: "The same accident as vien\u2019s /osterreich/: the place rule reads country before city, so the Mexico City entries that record a country were filed a second time under Mexico, and /mexico/ was the front page under a second address. The site has no country section to send it to \u2014 everything on it is in Mexico City \u2014 so it goes to the front page, and `home` now names both places.",
+    },
+  ],
+  aca: [
+    {
+      from: "/mexico/",
+      to: "/",
+      since: "2026-11-05",
+      why: "The same accident as vien\u2019s /osterreich/: the place rule reads country before city, so the Acapulco entries that record a country were filed a second time under Mexico, and /mexico/ was the front page under a second address. The site has no country section to send it to \u2014 everything on it is in Acapulco \u2014 so it goes to the front page, and `home` now names both places.",
+    },
+  ],
 };
 
 export const redirectsFor = (site: string): Redirect[] => redirects[site] ?? [];

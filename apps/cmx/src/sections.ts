@@ -6,6 +6,9 @@
 // Sin secciones de lugar: todo lo que se publica aquí está en la Ciudad de
 // México, así que la regla de lugar daría una página /ciudad-de-mexico/ con
 // exactamente lo mismo que ya hay en /eventos/. Eso es lo que evita `home`.
+// México va con ella: una entrada con `country` se agrupa por el país y no
+// por la ciudad, y así salió /mexico/, la portada otra vez. Desde el 5 de
+// noviembre de 2026 esa dirección redirige con 301 a /.
 import { buildSections, promotedFirst, type Section, type Vocabulary } from "@dst/content/sections";
 import type { FeedItem } from "@dst/content/sections";
 import { eventsBySite } from "@dst/content/events";
@@ -60,7 +63,7 @@ export function sections(items: FeedItem[]): Section[] {
     items,
     reserved: RESERVED,
     tags: TAGS,
-    home: "Ciudad de México",
+    home: ["Ciudad de México", "México"],
     copy: (g) => {
       // "X en la Ciudad de México" funciona para un formato y no para una
       // fecha: quien busca esto quiere saber dónde pararse y qué día, no

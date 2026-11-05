@@ -8,7 +8,10 @@
 // und niemand muss diese Datei dafür anfassen.
 //
 // Keine Ortsrubriken: alles hier steht in Wien, eine Seite /wien/ wäre die
-// Startseite unter einer zweiten Adresse. Dagegen steht `home`.
+// Startseite unter einer zweiten Adresse. Dagegen steht `home`. Österreich
+// steht mit drin, weil ein Eintrag mit `country` nach dem Land sortiert
+// wird, nicht nach der Stadt: so entstand /osterreich/, dieselbe Startseite
+// noch einmal. Seit 5. November 2026 leitet sie mit 301 auf / um.
 import { buildSections, promotedFirst, type Section, type Vocabulary } from "@dst/content/sections";
 import type { FeedItem } from "@dst/content/sections";
 import { eventsBySite } from "@dst/content/events";
@@ -54,7 +57,7 @@ export function sections(items: FeedItem[]): Section[] {
     items,
     reserved: RESERVED,
     tags: TAGS,
-    home: "Wien",
+    home: ["Wien", "Österreich"],
     copy: (g) => {
       // „X in Wien“ trägt bei einem Format und nicht bei einem Datum: Wer
       // das hier sucht, will wissen, wohin man geht, und nicht, unter
