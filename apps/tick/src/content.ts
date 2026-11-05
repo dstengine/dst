@@ -51,14 +51,17 @@ export const events: Record<Lang, Page> = {
     title: "Միջոցառումներ Երևանում՝ ըստ ամսաթվի",
     description:
       "Երևանի համերգները, ներկայացումները և փառատոները՝ ըստ ամսաթվի։ Ամեն ամսաթիվ ստուգված է կազմակերպչի կամ տոմսարկղի մոտ։",
-    h1: "Երևանը՝ ըստ ամսաթվի",
+    h1: "Միջոցառումներ Երևանում՝ ըստ ամսաթվի",
     lede: "Ամսաթվերը ստուգում ենք կազմակերպչի կամ տոմսարկղի մոտ։ Ինչը չունի հաստատված ամսաթիվ, սպասում է, մինչև ունենա։",
   },
   en: {
-    title: "Events in Yerevan by date",
+    // "events in yerevan" and "yerevan events" land here at position 24
+    // (Search Console, 8 Oct – 4 Nov 2026), and the h1 never said "events":
+    // the title, the description and the h1 now all name the query.
+    title: "Events in Yerevan: concerts, theatre and festivals by date",
     description:
-      "Concerts, plays and festivals in Yerevan in date order, every one confirmed with the organiser or the box office.",
-    h1: "Yerevan by date",
+      "Upcoming events in Yerevan in date order: concerts, opera, plays and festivals, every one confirmed with the organiser or the box office.",
+    h1: "Events in Yerevan by date",
     lede: "Every date here has been confirmed with the organiser or the box office. Anything without a confirmed date waits until it has one — which is rather the point of a calendar.",
   },
 };
