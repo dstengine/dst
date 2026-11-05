@@ -44,6 +44,11 @@ const TAGS: Record<string, Vocabulary> = {
   // November bis März, und die Antwort ist eine Liste von Plätzen mit
   // Preisen und Zeiten, kein einzelner Termin.
   Eislaufen: { slug: "eislaufen", plural: "Eislaufen", label: "Eislaufen" },
+  // Die dritte Wintermarke, und sie heißt in der Adresse anders als in der
+  // Überschrift: gesucht wird „Ballsaison“ und „Ballkalender“, gezählt wird
+  // in Bällen. Fasching bekommt keine eigene Seite — in Wien ist der Fasching
+  // die Ballsaison, und zwei Adressen würden „Bälle Wien 2027“ teilen.
+  Ball: { slug: "ballsaison", plural: "Bälle", label: "Ballsaison" },
 };
 
 export const NAV = {
@@ -125,6 +130,24 @@ export function sections(items: FeedItem[]): Section[] {
           },
         };
       }
+      // Die Seite heißt, wie gesucht wird — „Bälle in Wien“, „Ballkalender“ —
+      // und sagt nur, was jeder Eintrag auch hält: Datum, Saal, Einlass,
+      // Dresscode, Karten. Wer wo in der Loge sitzt, steht hier nicht.
+      if (g.key === "Ball") {
+        return {
+          title: "Bälle in Wien 2027: Ballkalender mit Terminen",
+          description:
+            "Ballkalender Wien 2027: vom Steirerball am 8. Jänner bis zum Opernball am 4. Februar und dem Elmayer-Kränzchen — mit Einlass, Dresscode und Karten.",
+          h1: "Bälle in Wien: der Ballkalender 2027",
+          lede: "In Wien ist der Fasching die Ballsaison: Von Anfang Jänner bis zum Faschingdienstag wird in der Hofburg, im Musikverein, im Rathaus und in der Staatsoper getanzt. Hier steht jeder Ball mit dem Datum, dem Einlass, dem Dresscode und den Karten, wie der Veranstalter sie veröffentlicht hat, und dem Link dorthin, wo wir es gelesen haben.",
+          headings: {
+            events: "Die Bälle der Saison, Termin für Termin",
+            upcoming: "Ballsaison 2027",
+            past: "Schon vorbei",
+            news: "Meldungen zur Ballsaison",
+          },
+        };
+      }
       const was = g.voc.plural ?? g.key;
       // "Welt" ist die eine Rubrik, deren Überschrift allein nicht trägt:
       // eine Seite namens „Welt“ sagt nichts, und interessant ist gerade,
@@ -161,10 +184,16 @@ export const allSections = sections([...eventsBySite(siteId), ...newsBySite(site
 // Die Saisonen in der Reihenfolge, in der sie kommen; siehe `promotedFirst`.
 // Ab dem 27. Dezember geht die eine Nacht der Saison vor, die sie beendet
 // und die noch läuft — die Eisfläche am Rathausplatz bleibt bis Dreikönig.
+// Im Jänner und Februar geht die Ballsaison vor: Die Eisfläche am
+// Rathausplatz läuft zwar bis Dreikönig, gesucht werden ab Neujahr aber die
+// Bälle, und der Opernball liegt Anfang Februar.
 const today = new Date().toISOString().slice(0, 10);
-const PROMOTED = today.slice(5) >= "12-27"
-  ? ["Silvester", "Weihnachtsmarkt"]
-  : ["Halloween", "Weihnachtsmarkt", "Silvester"];
+const md = today.slice(5);
+const PROMOTED = md >= "12-27"
+  ? ["Silvester", "Weihnachtsmarkt", "Ball"]
+  : md < "03-01"
+    ? ["Ball", "Weihnachtsmarkt"]
+    : ["Halloween", "Weihnachtsmarkt", "Silvester", "Ball"];
 
 export const promoted = promotedFirst(allSections, PROMOTED, today, site.keyword);
 
