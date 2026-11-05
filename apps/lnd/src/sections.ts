@@ -121,9 +121,9 @@ export function sections(items: FeedItem[]): Section[] {
         return {
           title: "Santa's grottos in London 2026: Father Christmas by borough",
           description:
-            "Santa's grottos in London 2026, borough by borough: Morden Hall Park, Fulham Palace, Eltham Palace, Marble Hill, Woolwich Works and London Museum Docklands, with dates, prices and any quiet sessions.",
+            "Santa's grottos in London 2026, borough by borough: Alexandra Palace, Battersea Arts Centre, Fulham Palace, Eltham Palace, Danson House and six more, with dates, prices and any quiet sessions.",
           h1: "Santa's grottos in London 2026",
-          lede: "Six places to meet Father Christmas out in the boroughs this December: two palaces, a National Trust park, an English Heritage villa by the Thames, an arts centre in the old Royal Arsenal and a Victorian grotto in a Docklands warehouse. Each with its dates and its price per child as the organiser published them, and a link to where we read it.",
+          lede: "Eleven places to meet Father Christmas out in the boroughs this December: three palaces, in Fulham, in Eltham and on the hill at Alexandra Palace; two National Trust places, the park at Morden and a manor house in Barking; an English Heritage villa by the Thames; Danson House in Bexleyheath; a physic garden in Chelsea; arts centres in Battersea and the old Royal Arsenal; and a Victorian grotto in a Docklands warehouse. Each with its dates and its price per child as the organiser published them, and a link to where we read it.",
           headings: {
             events: "The 2026 grottos, one by one",
             upcoming: "December 2026",
