@@ -362,7 +362,12 @@ export function musicEvent(event: FestEvent, guide: Guide, page: GuidePage, day:
     ...(guide.cover ? { image: `${SITE}${guide.cover}` } : {}),
     startDate: placed(markup.startDate),
     endDate: placed(markup.endDate),
-    eventStatus: "https://schema.org/EventScheduled",
+    // An edition its organiser moved says so, with the day it was to
+    // start (markup.previousStartDate: UNTOLD Dubai, moved from 5 November
+    // 2026 to 19 March 2027), as Google's Event reference asks of a
+    // rescheduled event. Every other event prints what it always did.
+    eventStatus: event.markup.previousStartDate && !page.markup ? "https://schema.org/EventRescheduled" : "https://schema.org/EventScheduled",
+    ...(event.markup.previousStartDate && !page.markup ? { previousStartDate: event.markup.previousStartDate } : {}),
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     location: place,
     // The organiser's site as `sameAs`, not `url`: the network's structured

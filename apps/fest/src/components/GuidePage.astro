@@ -104,7 +104,7 @@ const jumps = ownJumps
 // other pages and the spans that keep a date whole, and as words alone for
 // the FAQPage markup, which is read off the page (Faq.astro, `text`).
 const faq = page.faq
-  .map((row) => ({ q: plain(row.q), a: inline(row.a, ctx), text: inlineText(row.a, ctx), generic: row.generic }))
+  .map((row) => ({ q: plain(row.q), a: inline(row.a, ctx), text: inlineText(row.a, ctx), generic: row.generic, id: row.id }))
   .filter((row) => row.a);
 // A page whose questions are the page (Field Day's FAQ) has them first and
 // under no heading of its own: the h1 already names them. Without the
@@ -132,6 +132,10 @@ const why = whyParas.length ? inline(whyParas.join(" "), ctx) : "";
 // the copy puts it in (`cta: true`), never both.
 const ctaInSection = page.sections.some((s) => s.cta);
 if (ctaInSection && !page.cta) throw new Error(`${path}: a section asks for the ticket button, and the page has none`);
+// The seller's line under the button is copy like the rest: its [key]
+// tags are checked and left out, and it prints as words (UNTOLD Dubai's
+// "Sold by the organiser on untold.ae, or by District by Zomato…").
+const cta = page.cta && { ...page.cta, seller: page.cta.seller === undefined ? undefined : inlineText(page.cta.seller, ctx) };
 // The facts at a glance print as text: a value's [key] tags are checked
 // and left out, as in the copy. The line under them (the reading date they
 // share) is copy like any other.
@@ -192,7 +196,7 @@ const coverStyle = cover ? coverCss(cover, Astro.site?.hostname ?? "") : "";
   )}
 
   {page.badge && <p class="guide-badge">{page.badge.text}</p>}
-  {page.cta && !ctaInSection && <GuideCta cta={page.cta} />}
+  {cta && !ctaInSection && <GuideCta cta={cta} />}
   {glance && (page.glanceHeading ? (
     <section class="guide-glance" aria-labelledby="glance">
       <h2 id="glance">{page.glanceHeading}</h2>
@@ -223,7 +227,7 @@ const coverStyle = cover ? coverCss(cover, Astro.site?.hostname ?? "") : "";
     )
   )}{sections.map((s) => (
     <section class="guide-section" aria-labelledby={s.id}>
-      <h2 id={s.id} set:html={headingHtml(s.heading, guide.lang)} />{s.cta && page.cta && <GuideCta cta={page.cta} />}
+      <h2 id={s.id} set:html={headingHtml(s.heading, guide.lang)} />{s.cta && cta && <GuideCta cta={cta} />}
       <Fragment set:html={s.html} />
     </section>
   ))}

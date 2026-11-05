@@ -100,6 +100,11 @@ export interface FestEvent extends Dated {
         zone ("2027-01-14T19:30", Igloofest). A date alone stays a date. */
     startDate: string;
     endDate: string;
+    /** The day the edition was to start before its organiser moved it
+        (UNTOLD Dubai: 5 November 2026, moved to 19 March 2027), as the
+        sheet's moved edition gives it. Set, the MusicEvent is
+        EventRescheduled and names it; absent, EventScheduled as before. */
+    previousStartDate?: string;
     /** The IANA zone the event's local times are in ("America/Toronto"):
         its offsets and its night cards' set times are computed from it at
         build, never written by hand. */
@@ -198,6 +203,12 @@ export interface FaqRow {
   a: string;
   /** The same answer on more than one page: shown, kept out of FAQPage. */
   generic?: boolean;
+  /** The row's anchor, where another page's link names this one question
+      ("/untold-dubai/faq/#times"): lower case, a letter first, then
+      letters, digits and hyphens, and unique on its page with the
+      sections' ids (copy.ts resolves the link to it, tests/fest.test.js
+      holds both). Absent on every other row, which prints no id. */
+  id?: string;
 }
 
 /** The anchor for an arrow whose sentence has no "the … page" in it: the

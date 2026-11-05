@@ -96,6 +96,9 @@ function strings(guide) {
     // The line under them, and the one under the Sources heading
     // (Primavera Sound São Paulo's): copy like the rest.
     add("glanceNote", page.glanceNote);
+    // The seller's line under the ticket button (UNTOLD Dubai's tickets
+    // page), which prints as words with its tags left out.
+    add("cta.seller", page.cta?.seller);
     page.jumps?.forEach((j, i) => add(`jumps.${i}`, j.label));
     page.sections.forEach((s) => {
       add(`sections.${s.id}.heading`, s.heading);
@@ -196,12 +199,14 @@ describe("the copy and its sheet", () => {
   // Zamna Tulum), which the sign's pattern does not see, or with its sign
   // after it, as Quebec does (« 49,00 $ », « 39 $ », Igloofest), or with
   // its code before it, as Creamfields Chile's English guide writes pesos
-  // ("CLP 98,000").
+  // ("CLP 98,000"), or the dirham, as UNTOLD Dubai's guide writes it
+  // ("AED 350"). Not the cap the organiser's terms put on a cash refund
+  // ("capped at AED 1,500"), which is a rule of the terms and no price.
   test("every price sits in an expiry span", () => {
     const loose = [];
     for (const { where, text, guide } of all) {
       const left = copy.applySpans(text, guide, END_OF_TIME, where);
-      const hit = left.match(/[^\s]*\$\s?\d[\d,.]*|\d[\d,]*\s?\$(?!\s?\d)|\d[\d,]*\s?บาท|\d[\d,.]*\s?(?:USD|MXN|BRL|CLP|THB|CAD|EUR)\b|\bCLP\s?\d[\d,.]*/g);
+      const hit = left.match(/[^\s]*\$\s?\d[\d,.]*|\d[\d,]*\s?\$(?!\s?\d)|\d[\d,]*\s?บาท|\d[\d,.]*\s?(?:USD|MXN|BRL|CLP|THB|CAD|EUR)\b|\bCLP\s?\d[\d,.]*|(?<!capped at )\bAED\s?\d[\d,.]*/g);
       if (hit) loose.push(`${where}: ${hit.join(", ")}`);
     }
     assert.deepEqual(loose, [], "wrap the sentence in {{until prices}}…{{/until}} (or the key its expiry has)");
@@ -690,6 +695,57 @@ describe("where a guide's links lead", () => {
     assert.deepEqual(pt.offers.map((o) => o.seller.name), ["Ingresse", "Bilheteria oficial (Working Title)"]);
   });
 
+  // UNTOLD Dubai's organiser moved the edition from 5 November 2026 to
+  // 19 March 2027 (markup.previousStartDate), so its MusicEvent says so; no
+  // other guide's changes (the SEO lead's gate-1 note 11 on that card). Its
+  // four offers name no priceValidUntil, as no source gives an end of sale
+  // (gate 3, item 13): from the take-down they keep their seller and hop
+  // and lose the price, and after the edition there are none.
+  test("UNTOLD Dubai's MusicEvent is rescheduled from 5 November 2026, every other guide's scheduled, and its offers name no end of sale", () => {
+    const node = (g, day) => rules.musicEvent(events.find((e) => e.slug === g.event), g, rules.mainPage(g), day);
+    for (const g of guides) {
+      const n = node(g, "2026-11-06");
+      if (g.event === "untold-dubai") {
+        assert.equal(n.eventStatus, "https://schema.org/EventRescheduled");
+        assert.equal(n.previousStartDate, "2026-11-05");
+        assert.equal(n.startDate, "2027-03-19T18:00:00+04:00");
+        assert.equal(n.endDate, "2027-03-21");
+        assert.deepEqual(n.offers.map((o) => [o.seller.name, o.price, o.priceCurrency, o.url]), [
+          ["UNTOLD Dubai", 350, "AED", "https://fest.one/go/untold-dubai-tickets/"],
+          ["UNTOLD Dubai", 900, "AED", "https://fest.one/go/untold-dubai-tickets/"],
+          ["District by Zomato", 350, "AED", "https://fest.one/go/untold-dubai-district/"],
+          ["District by Zomato", 900, "AED", "https://fest.one/go/untold-dubai-district/"],
+        ]);
+        for (const o of n.offers) assert.ok(!("priceValidUntil" in o) && !("validFrom" in o), JSON.stringify(o));
+        const down = node(g, "2026-12-18");
+        assert.equal(down.offers.length, 4);
+        for (const o of down.offers) assert.ok(!("price" in o) && !("availability" in o), JSON.stringify(o));
+        assert.ok(!("offers" in node(g, "2027-03-22")));
+      } else {
+        assert.equal(n.eventStatus, "https://schema.org/EventScheduled", `${g.event}/${g.slug}`);
+        assert.ok(!("previousStartDate" in n), `${g.event}/${g.slug}`);
+      }
+    }
+  });
+
+  // A question's own anchor (FaqRow.id) is a slug, and no other target of
+  // its page has its name: not a section, not the template's own ids (the
+  // CTO's gate-3 note 2 on UNTOLD Dubai: an empty id would print id="").
+  test("a FAQ row's id is a slug and names nothing else on its page", () => {
+    const bad = [];
+    for (const g of guides)
+      for (const page of g.pages) {
+        const taken = new Set([...page.sections.map((s) => s.id), "questions", "sources", "glance", "content", "main", ...(page.h1Id ? [page.h1Id] : [])]);
+        const ids = page.faq.filter((r) => r.id !== undefined).map((r) => r.id);
+        for (const id of ids) {
+          if (!/^[a-z][a-z0-9-]*$/.test(id)) bad.push(`${page.slug}: row id "${id}" is not a slug`);
+          if (taken.has(id)) bad.push(`${page.slug}: row id "${id}" is taken on its page`);
+          if (ids.indexOf(id) !== ids.lastIndexOf(id)) bad.push(`${page.slug}: row id "${id}" twice`);
+        }
+      }
+    assert.deepEqual(bad, []);
+  });
+
   // The house's English ("en") keeps its tokens and dates together and
   // glues them in a long run; en-AU, Beyond The Valley's and Field Day's,
   // is set as it was before "en" took them.
@@ -977,7 +1033,17 @@ describe("the built pages", { skip: built ? false : "apps/fest/dist is missing: 
     // The SEO lead's ruling on Beyond The Valley's location page (gate 2,
     // note 6): its title is the entity and the venue, and the year that
     // says the venue is current is in its description.
-    const YEARLESS = { "/beyond-the-valley/location/": "the place outlives the edition; the year is in the description" };
+    // The SEO lead's ruling on UNTOLD Dubai's (gate 3, item 14) is a
+    // second such page, whose description carries no year either: the
+    // query it serves is the place, "where is untold dubai", and a year
+    // would make it compete with the main page's. Its year is held to the
+    // page's first lede paragraph instead ("UNTOLD Dubai 2027 is at Dubai
+    // Parks and Resorts…"), so the entry is no blanket waiver.
+    const YEARLESS = {
+      "/beyond-the-valley/location/": "the place outlives the edition; the year is in the description",
+      "/untold-dubai/location/": "the query is the place, not the edition; the year is in the lede (SEO gate 3, item 14)",
+    };
+    const YEAR_IN_LEDE = new Set(["/untold-dubai/location/"]);
     const bad = [];
     const routesByPath = new Map(routes.guideRoutes().map((r) => [r.path, r]));
     for (const [p, h] of content) {
@@ -988,14 +1054,18 @@ describe("the built pages", { skip: built ? false : "apps/fest/dist is missing: 
       if (!title.toLowerCase().includes(keyword.toLowerCase())) bad.push(`${p}: no "${keyword}"`);
       const r = routesByPath.get(p);
       if (!r) continue;
-      if (!title.includes(r.event.name)) bad.push(`${p}: no "${r.event.name}"`);
+      // Case aside: the organiser writes "UNTOLD Dubai", and the titles
+      // the form people type, "Untold Dubai" (the SEO lead's gate-1 note 2
+      // on that card). Every other guide's title has its name's case.
+      if (!title.toLowerCase().includes(r.event.name.toLowerCase())) bad.push(`${p}: no "${r.event.name}"`);
       // The edition's year as its name carries it: the year it starts, or
       // the year it ends where it runs across New Year and the organiser
       // names it by that (Zamna Tulum 2027, from 31 December 2026; the CTO's
       // Z6). No other year.
       const years = [...new Set([r.event.edition.start, r.event.edition.end ?? r.event.edition.start].map((d) => d.slice(0, 4)))];
       const description = decode(h.match(/<meta name="description" content="([^"]*)"/)?.[1] ?? "");
-      if (!years.some((y) => title.includes(y) || (YEARLESS[p] && description.includes(y)))) bad.push(`${p}: no ${years.join(" or ")}`);
+      const lede = decode(h.match(/<p class="lede">([\s\S]*?)<\/p>/)?.[1] ?? "");
+      if (!years.some((y) => title.includes(y) || (YEARLESS[p] && (YEAR_IN_LEDE.has(p) ? lede : description).includes(y)))) bad.push(`${p}: no ${years.join(" or ")}`);
     }
     assert.deepEqual(bad, []);
     assert.equal(decode(html.get("/").match(/<title>([\s\S]*?)<\/title>/)[1]), hub.title);
@@ -1046,7 +1116,13 @@ describe("the built pages", { skip: built ? false : "apps/fest/dist is missing: 
       for (const a of anchors(html.get(route.path) ?? "").filter((x) => x.href?.startsWith(`/go/${route.event.slug}-`))) {
         const go = route.event.go[a.href.slice(`/go/${route.event.slug}-`.length, -1)];
         const want = route.guide.lang === go.titleLang ? go.title : go.titles?.[route.guide.lang];
-        if (decode(a.title ?? "") !== decode(want ?? "")) bad.push(`${route.path}: ${a.href} titled "${a.title}", not "${want}"`);
+        // The ticket button and its second link carry the titles the copy
+        // gives them (Slots.cta: UNTOLD Dubai's "The organiser's own
+        // checkout for the UNTOLD Dubai 2027 passes"), in the guide's
+        // language as the copy is.
+        const cta = route.page.cta;
+        const own = cta && [[cta.href, cta.title], ...(cta.secondary ? [[cta.secondary.href, cta.secondary.title]] : [])].some(([href, title]) => href === a.href && decode(title) === decode(a.title ?? ""));
+        if (!own && decode(a.title ?? "") !== decode(want ?? "")) bad.push(`${route.path}: ${a.href} titled "${a.title}", not "${want}"`);
       }
     }
     assert.deepEqual(bad, []);
@@ -1160,6 +1236,32 @@ describe("the built pages", { skip: built ? false : "apps/fest/dist is missing: 
       for (const page of g.pages)
         for (const s of page.sections)
           assert.ok(!["questions", "sources", "content", "main"].includes(s.id), `${page.slug}: section id "${s.id}" is the template's`);
+  });
+
+  // The three questions UNTOLD Dubai's other pages link to carry their ids
+  // on its FAQ page, each link titled by its question; no other row on the
+  // site prints an id (Faq.astro prints none where the data gives none),
+  // and no page of the dist, hops included, repeats one.
+  test("UNTOLD Dubai's FAQ rows #age, #times and #items are the links' targets, and no other row has an id", () => {
+    const rowIds = (h) => [...h.matchAll(/<details class="faq-item" id="([^"]*)"/g)].map((m) => m[1]);
+    assert.deepEqual(rowIds(html.get("/untold-dubai/faq/")), ["age", "times", "items"]);
+    const others = [...html].filter(([p, h]) => p !== "/untold-dubai/faq/" && rowIds(h).length).map(([p]) => p);
+    assert.deepEqual(others, []);
+    const faqPage = guides.find((g) => g.event === "untold-dubai").pages.find((p) => p.kind === "faq");
+    const linked = new Map();
+    for (const [p, h] of content)
+      for (const a of anchors(h).filter((x) => x.href?.startsWith("/untold-dubai/faq/#"))) {
+        const id = a.href.split("#")[1];
+        linked.set(id, (linked.get(id) ?? 0) + 1);
+        assert.equal(decode(a.title ?? ""), faqPage.faq.find((r) => r.id === id)?.q, `${p}: ${a.href}`);
+      }
+    assert.deepEqual([...linked.keys()].sort(), ["age", "items", "times"]);
+    const twice = [];
+    for (const [p, h] of html) {
+      const ids = [...h.matchAll(/\sid="([^"]*)"/g)].map((m) => m[1]);
+      ids.filter((id, i) => ids.indexOf(id) !== i).forEach((id) => twice.push(`${p}: #${id}`));
+    }
+    assert.deepEqual(twice, []);
   });
 
   test("the go hops: every one built, none indexable, none in the sitemap", () => {

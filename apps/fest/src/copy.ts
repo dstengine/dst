@@ -419,7 +419,26 @@ const KEEP_EN = new RegExp([KEEP_TOGETHER.source, ...EN_TOKENS].join("|"), "g");
     it. "en-au" is a frozen row: Beyond The Valley's and Field Day's pages
     as they were set before "en" took the tokens, so that a token added for
     a later English guide never re-sets them. */
-const KEEP: Record<string, RegExp> = { en: KEEP_EN, "en-au": KEEP_TOGETHER, es: KEEP_ES, "es-mx": KEEP_ES_MX, pt: KEEP_PT, th: KEEP_TH, fr: KEEP_FR };
+// The UAE's English (UNTOLD Dubai, 6 November 2026) writes the dirham with
+// its code before the sum, as Creamfields Chile's English writes pesos:
+// "AED 350", "AED 1,500". The sum ends on a digit, so a comma or a full
+// stop after it stays outside the span. A row of its own, the house's
+// English and the tokens below, so that no other English guide is set anew.
+// The same guide's line-break sweep (17 widths, 305 to 1280 px) found a
+// count parted from its noun in its paragraphs, "26 | trips" at 340 px
+// and "14 | working days" from 305 to 330, an age from its words, "21 |
+// and over" from 320 to 340, and in its source lines a listing's year
+// from the word, "2027 | listing" from 360 to 390. No other English page
+// prints any of them.
+const EN_AE_TOKENS = [
+  `\\bAED \\d(?:[\\d,]*\\d)?\\b`, // AED 350, AED 1,500 (UNTOLD Dubai)
+  `\\b\\d+ trips\\b`, // 26 trips a day (UNTOLD Dubai)
+  `\\b\\d+ working days\\b`, // 14 working days (UNTOLD Dubai)
+  `\\b21 and over\\b`, // aged 21 and over (UNTOLD Dubai)
+  `\\b\\d{4} listing\\b`, // the UNTOLD Dubai 2027 listing (UNTOLD Dubai)
+];
+const KEEP_EN_AE = new RegExp([KEEP_EN.source, ...EN_AE_TOKENS].join("|"), "g");
+const KEEP: Record<string, RegExp> = { en: KEEP_EN, "en-ae": KEEP_EN_AE, "en-au": KEEP_TOGETHER, es: KEEP_ES, "es-mx": KEEP_ES_MX, pt: KEEP_PT, th: KEEP_TH, fr: KEEP_FR };
 // In a long run a split date is a nicety, but a sign and the number it
 // belongs to are one token wherever they stand: the sweep found "R$ |
 // 765,45", "(11) | 5666-8822", "nº | 12.933" and "Linha | 9-Esmeralda" in
@@ -463,6 +482,12 @@ const GLUE_ES_MX = new RegExp([...ES_MX_TOKENS, `\\b\\d{1,2} de ${MES}(?: de \\d
 // "180 | days" survived to 1280 (QA round 1, 9d). "Years" is capitalised
 // where it quotes a season's name.
 const GLUE_EN = new RegExp([...EN_TOKENS, `\\b\\d{1,2} ${MONTH}\\b`, `\\b\\d[\\d,.]*%? (?:km|mins?|hrs?|hours?|minutes|days?|nights?|people|person|[Yy]ears?|tickets?|passes|artists)\\b`].join("|"), "g");
+const GLUE_EN_AE = new RegExp([GLUE_EN.source, ...EN_AE_TOKENS].join("|"), "g");
+const glueEnglish = (glue: RegExp) => (run: string) =>
+  run
+    .replace(glue, (m) => m.replace(/ /g, "\u00a0"))
+    .replace(/(^|\s)("|&quot;)\(/g, "$1$2\u2060(")
+    .replace(/\be-(?=tickets?\b)/g, "e-\u2060");
 const GLUE: Record<string, (run: string) => string> = {
   // An opening quote is held to a bracket it opens on by a word joiner:
   // Chrome breaks between the two, and the sweep of 24 October 2026 left
@@ -474,11 +499,9 @@ const GLUE: Record<string, (run: string) => string> = {
   // form), a long one breaks it as prose. Only that word, which no "en"
   // page but Igloofest's prints: Zamna Tulum's "e-gates" and "T-shirt"
   // are set as they were. The words unchanged.
-  en: (run) =>
-    run
-      .replace(GLUE_EN, (m) => m.replace(/ /g, "\u00a0"))
-      .replace(/(^|\s)("|&quot;)\(/g, "$1$2\u2060(")
-      .replace(/\be-(?=tickets?\b)/g, "e-\u2060"),
+  en: glueEnglish(GLUE_EN),
+  // The UAE's English, with the dirham's code held to its sum.
+  "en-ae": glueEnglish(GLUE_EN_AE),
   "en-au": (run) => run,
   pt: (run) => run.replace(GLUE_PT, "$1\u00a0"),
   "es-mx": (run) => run.replace(GLUE_ES_MX, (m) => m.replace(/ /g, "\u00a0")),
@@ -614,9 +637,13 @@ const ASTRO_ESCAPES: Record<string, string> = { "&": "&amp;", "<": "&lt;", ">": 
 // counted with neither word). No built h1 moved with it.
 const HEADING_BREAKS = /[ \t\n\u200b\u00ad\u0E00-\u0E7F\u3040-\u30FF\p{Script=Han}]+|(?<=[\u2010\u2013\u2014/]|-(?!\d))(?!\u2060)/u;
 export const longestRun = (text: string) => Math.max(0, ...text.split(HEADING_BREAKS).map((run) => [...run.replace(/\u2060/g, "")].length));
+// The house's English headings and the UAE's (UNTOLD Dubai's "en-AE",
+// whose keep list is the house's with the dirham), not Beyond The Valley's
+// and Field Day's frozen "en-AU".
+const HEADING_EN = new Set(["en", "en-ae"]);
 export const headingHtml = (text: string, lang = "en") => {
   const set = text.replace(/[&<>'"]/g, (c) => ASTRO_ESCAPES[c]).replace(HEADING_KEEP, (m) => `<span class="nowrap">${m}</span>`);
-  const html = lang.toLowerCase() === "en" ? set.replace(HEADING_WIDE_EN, '<span class="keep-date">$1</span>').replace(HEADING_KEEP_EN, (m) => `<span class="nowrap">${m}</span>`) : set;
+  const html = HEADING_EN.has(lang.toLowerCase()) ? set.replace(HEADING_WIDE_EN, '<span class="keep-date">$1</span>').replace(HEADING_KEEP_EN, (m) => `<span class="nowrap">${m}</span>`) : set;
   const keep = HEADING_KEEP_BY[lang.slice(0, 2).toLowerCase()];
   const glue = HEADING_GLUE[lang.slice(0, 2).toLowerCase()] ?? ((m: string) => m);
   return keep ? html.replace(keep, (m) => `<span class="keep-date">${glue(m)}</span>`) : html;
@@ -780,9 +807,15 @@ function marks(text: string, ctx: Ctx, site: string): { html: string; md: string
       if (id === undefined) target = { href, title: page.linkTitle ?? withoutSuffix(page.title) };
       else {
         // A section of a page: named by its heading, as it reads that day.
+        // Or one of its questions, by the row's id (FaqRow.id: UNTOLD
+        // Dubai's "/untold-dubai/faq/#times"), named by the question as the
+        // page prints it. An id that is both is a page with two targets of
+        // one name, and stops the build.
         const section = page.sections.find((s) => s.id === id);
-        if (!section) throw new Error(`${ctx.where}: [${label}](${href}) names no section of ${path}`);
-        target = { href, title: applySpans(section.heading, ctx.guide, ctx.today, ctx.where).trim() };
+        const row = page.faq.find((r) => r.id === id);
+        if (section && row) throw new Error(`${ctx.where}: [${label}](${href}) names both a section and a question of ${path}`);
+        if (!section && !row) throw new Error(`${ctx.where}: [${label}](${href}) names no section of ${path}`);
+        target = { href, title: applySpans((section ? section.heading : row!.q), ctx.guide, ctx.today, ctx.where).trim() };
       }
     }
     if (target.title === label) throw new Error(`${ctx.where}: the title of [${label}] repeats its label`);

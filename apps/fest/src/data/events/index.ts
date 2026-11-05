@@ -10,8 +10,9 @@ import * as primaveraSoundSaoPaulo from "./primavera-sound-sao-paulo";
 import * as wonderfruit from "./wonderfruit";
 import * as zamnaTulum from "./zamna-tulum";
 import * as igloofest from "./igloofest";
+import * as untoldDubai from "./untold-dubai";
 
-const files = [beyondTheValley, fieldDay, creamfieldsChile, primaveraSoundSaoPaulo, wonderfruit, zamnaTulum, igloofest];
+const files = [beyondTheValley, fieldDay, creamfieldsChile, primaveraSoundSaoPaulo, wonderfruit, zamnaTulum, igloofest, untoldDubai];
 const raw: Guide[] = files.flatMap((f) => f.guides);
 
 // Each hop learns the language its `title` is written in: the first guide,
