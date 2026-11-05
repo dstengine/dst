@@ -141,7 +141,10 @@
       "year-in-review-neil-degrasse-tyson-amnh-2027": {
         "subject": "Cut-paper poster: a long pale model of a blue whale hanging high in a tall museum hall at night, rows of small seated paper silhouettes facing a lectern below it, a big round screen above the lectern showing a ringed planet, a rocket trail and a scatter of stars, deep ocean blues with cream and gold",
         "detail": "flat layered cut paper, the audience simple rounded shapes seen from behind, no faces, no portrait of any person, no lettering, no numbers anywhere"
-      }
+      },
+      "times-square-new-years-eve-ball-drop-2026": "A cut-paper crystal ball on a tall flagpole atop a narrow skyscraper, crowded paper street canyon below, confetti shapes in a night sky",
+      "nyrr-midnight-run-central-park-2026": "Paper fireworks bursting over bare winter trees and a curving park road at night, with a row of small paper running shoes along the path",
+      "phish-new-years-eve-madison-square-garden-2026": "a round drum-shaped arena seen from the street at night, its curved wall lit in warm stage colours, confetti shapes drifting in the dark sky above, blank unmarked facade"
     },
     "ldn": {
       "london-design-festival-2026": {
@@ -403,7 +406,16 @@
       "haunted-town-night-img-worlds-2026": "a crooked haunted house front with lit windows standing inside a huge indoor hall under a flat paper ceiling, a small DJ booth before it with two tiny figures, a crowd of small silhouettes and paper bats under the roof",
       "emirates-dubai-7s-2026": "a rugby ball in mid-air above a green pitch, tall white H-shaped rugby posts, seven small rugby player figures running beneath it, a long grandstand of tiny seats behind",
       "dubai-duty-free-tennis-championships-2027": "a yellow tennis ball in mid-air above a blue hard court with white lines, a net across the court and a low curved stand behind",
-      "haunted-timesylvania-times-square-center-dubai-2026": "a paper castle with two towers under a full cut-paper moon, pumpkins and candy in a trail across the foreground, bats cut from black paper, flat shapes on a deep indigo background, no people, no lettering"
+      "haunted-timesylvania-times-square-center-dubai-2026": "a paper castle with two towers under a full cut-paper moon, pumpkins and candy in a trail across the foreground, bats cut from black paper, flat shapes on a deep indigo background, no people, no lettering",
+      "national-month-dubai-2026": "a long row of small cut-paper flags in red, green, white and black on thin poles, stepping across a pale sand-coloured strip under a deep slate blue sky, one small brass crescent of moon above, nothing else",
+      "eid-al-etihad-celebrations-dubai-2026": "four bursts of cut-paper fireworks in red, green, white and brass over a low dark city skyline of simple paper towers, their reflections cut into a band of dark paper water below",
+      "eid-al-etihad-uae-national-day-dubai-2026": "a falcon in flight over rolling desert dunes at dusk, small bursts of fireworks above a low city skyline on the horizon",
+      "atlantis-new-years-eve-katy-perry-dubai-2026": "a large pink resort hotel with a tall central arch on a crescent-shaped island at night, fireworks bursting above and a glowing stage on the beach",
+      "address-downtown-new-years-eve-dubai-2026": "a slim hotel tower beside a very tall needle-like skyscraper at night, fireworks bursting around the spire, a dinner terrace with a set table in the foreground",
+      "janat-al-bahar-new-years-eve-gala-jumeirah-beach-hotel-2026": "a wave-shaped hotel on the shore at night, a long gala table with lanterns on the sand in front of it, fireworks over the sea",
+      "argy-neworld-new-years-eve-ushuaia-dubai-harbour-2026": "a pool deck with a tall stage arch beside a marina at night, laser beams fanning into the sky and confetti falling over the water",
+      "sonny-fodera-new-years-eve-bohemia-five-palm-2026": "a beach club dance floor under palm trees at night, a mirror ball hanging above a DJ booth, fireworks over the sea behind",
+      "address-creek-harbour-new-years-eve-dubai-2026": "a creek waterfront with tall glass towers at night, fireworks reflected in the still water, a table set for dinner on a terrace in the foreground"
     },
     "eco": {
       "wetex-2026": "a large water droplet shape overlapping a sun disc, slim turbine blades and pipe forms in layered paper below them",
@@ -593,7 +605,22 @@
       "zentralfriedhof-bei-nacht-fuehrung-wien-2026": {
         "subject": "a flat side-on band composition: a long cemetery avenue at night lined with bare winter tree shapes and rows of low plain headstones, a large green-domed church at the far end of the avenue, a small group of tiny flat walking figures near a tall wrought-iron gate in the foreground, one figure holding a small round lantern that throws a soft gold pool of light, a thin crescent moon above",
         "detail": "the night sky one unbroken deep flat tone with a few small gold star points, the dome cut from moss green paper and the gate from dark paper with simple vertical bars, headstones as plain rounded slips with no carving, no names, no crosses with text, no faces on the figures, no pumpkins, no lettering, no numerals anywhere"
-      }
+      },
+      "silvesterkonzert-wiener-philharmoniker-2026": "A grand golden concert hall with tiers of balconies and rows of chandeliers, a violin and scattered sheet music in the foreground, cut-paper style",
+      "die-fledermaus-staatsoper-silvester-2026": "An opera house facade at night with arched windows lit up, a bat silhouette and champagne glasses against a starry sky, cut-paper style",
+      "steirerball-2027": "a green tyrolean felt hat with a narrow brim, a dark green band and a tall dark feather tuft, resting on a polished parquet floor beneath a crystal chandelier",
+      "zuckerbaeckerball-2027": "a flat cut-paper illustration of a tall tiered pastry tower in pastel pink, mint and cream paper layers with paper sugar roses, a paper chandelier above, layered paper ballroom walls",
+      "blumenball-rathaus-2027": "a gothic town hall facade with a tall slender central tower and pointed arched windows, every window box overflowing with cut-paper flowers in pink, red and yellow, blank unmarked walls",
+      "ball-der-pharmazie-2027": "a row of old porcelain apothecary jars and a stone mortar holding a single paper rose, a crystal chandelier glowing above",
+      "ball-der-wiener-philharmoniker-2027": "a violin and its bow lying across sheets of music on a gilded stage, tall golden columns and a coffered ceiling behind",
+      "kaffeesiederball-2027": "a coffee cup on a saucer on a round marble cafe table, tall arched palace windows and a crystal chandelier behind",
+      "jaegerball-2027": "a round brass french horn with coiled tubing and a wide flared bell, tied with a dark green ribbon and a sprig of oak leaves and acorns, a tall arched ballroom window behind",
+      "tu-ball-2027": "a large paper gear wheel and a drafting compass arranged like a rosette on a ballroom parquet floor under a crystal chandelier",
+      "wiener-aerzteball-2027": "a white ribbon bow and a corsage of white flowers lying on the steps of a grand marble staircase, a crystal chandelier above",
+      "wiener-opernball-2027": "a grand neo-renaissance palace facade at night with a row of arched loggia windows lit gold, blank unmarked frieze, two white paper hand fans opening in the foreground",
+      "juristenball-2027": "a brass balance scale holding a white rose in each pan, standing on a ballroom floor beneath a crystal chandelier",
+      "rudolfina-redoute-2027": "a black and gold masquerade mask with ribbons lying on red steps of a grand staircase, a crystal chandelier above, plain unmarked corners",
+      "elmayer-kraenzchen-2027": "a flat cut-paper illustration of a pair of black dance shoes seen from the side on a parquet floor, a pair of white gloves laid beside them, curving dance-step footprint shapes around them, no people"
     },
     "tick": {
       "maya-oganyan-khachaturian-festival-piano-recital-yerevan-2026": "a single black grand piano with its lid raised seen from the side, a small grey curlew bird perched on the open lid, a few pale leaves of sheet music drifting in the air above, flat cut-paper style, wide empty ground on both sides, no text, no lettering, no numbers, no logos, no faces anywhere",
@@ -739,7 +766,9 @@
       "three-sisters-ghaplanyan-theatre-yerevan-2026": "three paper women in long dark dresses standing before one tall window, through the window a clock face whose hands run backwards",
       "halloween-artlav-yerevan-2026": "a flat cut-paper illustration of a craft table seen from above: a small clay pot, a felt ghost toy, a loop of beads, a ghost-shaped candle, a round pumpkin-shaped soap and a paper sheet with a black spiderweb splash, all simple paper shapes, wide empty ground on both sides",
       "avetik-isahakyan-birthday-evening-house-museum-yerevan-2026": "a room in an old house seen straight on, three framed landscape paintings of mountains on the wall, an open book, a quill and sheet music on a wooden table in the centre, an upright piano to one side, a plain wooden floor along the bottom",
-      "luca-minnelli-golden-voice-of-venice-yerevan-2027": "a gondola on a night canal under an arched stone bridge, and above the bridge a bright concert stage where a small orchestra plays behind a singer"
+      "luca-minnelli-golden-voice-of-venice-yerevan-2027": "a gondola on a night canal under an arched stone bridge, and above the bridge a bright concert stage where a small orchestra plays behind a singer",
+      "new-year-without-wifi-youth-experimental-theatre-yerevan-2026": "a single small fir tree hung with paper baubles beside a home internet router with its cable unplugged and coiled on the floor, a few paper snowflakes drifting above, flat cut-paper style, wide empty ground on both sides, no text, no lettering anywhere",
+      "now-or-later-childrens-show-demirchyan-complex-yerevan-2026": "a single large round wall clock with a blank face and no numerals above a half-built tower of plain toy blocks, a small mobile phone lying face down beside the blocks, flat cut-paper style, wide empty ground on both sides, no text, no lettering anywhere"
     },
     "l0n": {
       "new-years-eve-fireworks-london-2026": "fireworks bursting in the night sky above a wide river, a large observation wheel on the far bank, the embankment below as a dark paper strip",
@@ -753,7 +782,9 @@
       "philip-glass-at-90-southbank-2027": "twelve narrow vertical paper bars in rising shades of grey and gold repeating across a dark ground like a score, no text, no lettering anywhere",
       "duran-duran-danse-macabre-halloween-o2-2026": "a vast low white tent dome on a river bank at night, thin yellow lattice masts standing straight up out of its roof like pins, beams of stage light rising from inside it, a row of small dancing paper skeletons along the water before it",
       "six-nations-2027-england-at-twickenham": "a rugby ball on an orange kicking tee seen from grass level, a low horizon, a deep evening sky filling most of the frame, rising into it the two tall white uprights and crossbar of rugby posts, a few floodlights glowing on tall masts",
-      "london-book-fair-2027": "tall stacks of colourful books arranged like a city skyline inside a long exhibition hall, a river and cranes beyond a glass wall"
+      "london-book-fair-2027": "tall stacks of colourful books arranged like a city skyline inside a long exhibition hall, a river and cranes beyond a glass wall",
+      "nutcracker-new-years-eve-london-coliseum-2026": "A cut-paper nutcracker soldier and a ballerina in a pirouette beneath a theatre proscenium arch with red paper curtains and falling paper snowflakes",
+      "la-la-land-in-concert-new-years-eve-royal-albert-hall-2026": "A domed round concert hall in cut paper under a purple and gold dusk sky, a grand piano and a dancing couple's silhouettes on a cinema screen above an orchestra"
     },
     "aca": {
       "alejandro-sanz-acapulco-2026": "a Spanish guitar leaning against a microphone stand on an empty stage under a single spotlight, a palm frond at one edge",

@@ -10810,8 +10810,13 @@ export const items: EventItem[] = [
   {
     slug: "new-year-without-wifi-youth-experimental-theatre-yerevan-2026",
     createdAt: "2026-11-05T20:43:04.000Z",
-    updatedAt: "2026-11-05T20:43:04.000Z",
+    updatedAt: "2026-11-05T23:44:51.000Z",
     site: "tick",
+    image: "/covers/new-year-without-wifi-youth-experimental-theatre-yerevan-2026.jpg",
+    imageAlt: "Փոքրիկ եղևնի թղթե խաղալիքներով, կողքին՝ անջատված ինտերնետ սարք՝ հատակին ոլորված լարով, վերևում՝ թղթե ձյան փաթիլներ",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
     tags: ["kids"],
     title: "«Առանց Wi-Fi Նոր Տարի»՝ մանկական ամանորյա ներկայացում Երևանում",
     titleSeo: "«Առանց Wi-Fi Նոր Տարի»՝ մանկական ներկայացում Երևանում",
@@ -10846,6 +10851,7 @@ export const items: EventItem[] = [
     ],
     i18n: {
       en: {
+        imageAlt: "A small fir tree hung with paper baubles beside an unplugged internet router, its cable coiled on the floor, paper snowflakes above",
         ticket: { url: "https://ticketon.am/en/event/aranc-wi-fi-nor-tari", label: "Tickets" },
         title: "A New Year Without Wi-Fi: a children's holiday show in Yerevan",
         titleSeo: "A New Year Without Wi-Fi: children's show in Yerevan",
@@ -10878,8 +10884,13 @@ export const items: EventItem[] = [
   {
     slug: "now-or-later-childrens-show-demirchyan-complex-yerevan-2026",
     createdAt: "2026-11-05T20:43:04.000Z",
-    updatedAt: "2026-11-05T20:43:04.000Z",
+    updatedAt: "2026-11-05T23:44:51.000Z",
     site: "tick",
+    image: "/covers/now-or-later-childrens-show-demirchyan-complex-yerevan-2026.jpg",
+    imageAlt: "Մեծ կլոր ժամացույց՝ առանց թվերի, տակը՝ կիսատ կառուցված խաղալիք խորանարդիկների աշտարակ, կողքին՝ երեսն ի վար դրված հեռախոս",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
     tags: ["kids"],
     title: "«Հիմա՞, թե՞ հետո»՝ մանկական ներկայացում Կարեն Դեմիրճյանի անվան համալիրում",
     titleSeo: "«Հիմա՞, թե՞ հետո» մանկական ներկայացումը Երևանում",
@@ -10913,6 +10924,7 @@ export const items: EventItem[] = [
     ],
     i18n: {
       en: {
+        imageAlt: "A large round clock with a blank face above a half-built tower of toy blocks, a mobile phone lying face down beside it",
         ticket: { url: "https://ticketon.am/en/event/hima-te-heto-nerkayacum", label: "Tickets" },
         title: "Now or Later? A children's show at the Karen Demirchyan Complex",
         titleSeo: "Now or Later? A children's show in Yerevan",

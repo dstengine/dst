@@ -352,6 +352,38 @@
         ]
       ]
     },
+    "/covers/fiesta-de-navidad-christmas-palacio-acapulco-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/fiesta-de-navidad-christmas-palacio-acapulco-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/fiesta-de-navidad-christmas-palacio-acapulco-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/fiesta-de-navidad-christmas-palacio-acapulco-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/fiesta-de-navidad-christmas-palacio-acapulco-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/fiesta-de-navidad-christmas-palacio-acapulco-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/fiesta-de-navidad-christmas-palacio-acapulco-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/gnp-mexico-major-premier-padel-acapulco-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -477,6 +509,38 @@
         [
           1024,
           "/covers/manuel-medrano-acapulco-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/mega-posada-palacio-mundo-imperial-acapulco-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/mega-posada-palacio-mundo-imperial-acapulco-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/mega-posada-palacio-mundo-imperial-acapulco-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/mega-posada-palacio-mundo-imperial-acapulco-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/mega-posada-palacio-mundo-imperial-acapulco-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/mega-posada-palacio-mundo-imperial-acapulco-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/mega-posada-palacio-mundo-imperial-acapulco-2026-1024.webp"
         ]
       ]
     },
@@ -669,70 +733,6 @@
         [
           1024,
           "/covers/yuri-lucero-acapulco-2026-1024.webp"
-        ]
-      ]
-    },
-    "/covers/fiesta-de-navidad-christmas-palacio-acapulco-2026.jpg": {
-      "width": 1024,
-      "height": 1024,
-      "avif": [
-        [
-          480,
-          "/covers/fiesta-de-navidad-christmas-palacio-acapulco-2026-480.avif"
-        ],
-        [
-          768,
-          "/covers/fiesta-de-navidad-christmas-palacio-acapulco-2026-768.avif"
-        ],
-        [
-          1024,
-          "/covers/fiesta-de-navidad-christmas-palacio-acapulco-2026-1024.avif"
-        ]
-      ],
-      "webp": [
-        [
-          480,
-          "/covers/fiesta-de-navidad-christmas-palacio-acapulco-2026-480.webp"
-        ],
-        [
-          768,
-          "/covers/fiesta-de-navidad-christmas-palacio-acapulco-2026-768.webp"
-        ],
-        [
-          1024,
-          "/covers/fiesta-de-navidad-christmas-palacio-acapulco-2026-1024.webp"
-        ]
-      ]
-    },
-    "/covers/mega-posada-palacio-mundo-imperial-acapulco-2026.jpg": {
-      "width": 1024,
-      "height": 1024,
-      "avif": [
-        [
-          480,
-          "/covers/mega-posada-palacio-mundo-imperial-acapulco-2026-480.avif"
-        ],
-        [
-          768,
-          "/covers/mega-posada-palacio-mundo-imperial-acapulco-2026-768.avif"
-        ],
-        [
-          1024,
-          "/covers/mega-posada-palacio-mundo-imperial-acapulco-2026-1024.avif"
-        ]
-      ],
-      "webp": [
-        [
-          480,
-          "/covers/mega-posada-palacio-mundo-imperial-acapulco-2026-480.webp"
-        ],
-        [
-          768,
-          "/covers/mega-posada-palacio-mundo-imperial-acapulco-2026-768.webp"
-        ],
-        [
-          1024,
-          "/covers/mega-posada-palacio-mundo-imperial-acapulco-2026-1024.webp"
         ]
       ]
     }
@@ -2596,6 +2596,38 @@
         ]
       ]
     },
+    "/covers/el-cascanueces-auditorio-nacional-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/el-cascanueces-auditorio-nacional-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/el-cascanueces-auditorio-nacional-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/el-cascanueces-auditorio-nacional-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/el-cascanueces-auditorio-nacional-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/el-cascanueces-auditorio-nacional-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/el-cascanueces-auditorio-nacional-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/el-codice-azcatitlan-en-el-museo-de-antropologia.jpg": {
       "width": 1536,
       "height": 864,
@@ -3700,6 +3732,38 @@
         ]
       ]
     },
+    "/covers/navidad-sinfonica-mineria-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/navidad-sinfonica-mineria-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/navidad-sinfonica-mineria-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/navidad-sinfonica-mineria-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/navidad-sinfonica-mineria-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/navidad-sinfonica-mineria-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/navidad-sinfonica-mineria-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/nayarit-en-los-pinos-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -4004,6 +4068,38 @@
         ]
       ]
     },
+    "/covers/the-santa-run-cdmx-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/the-santa-run-cdmx-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/the-santa-run-cdmx-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/the-santa-run-cdmx-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/the-santa-run-cdmx-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/the-santa-run-cdmx-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/the-santa-run-cdmx-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/turibus-del-terror-cdmx-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -4195,102 +4291,6 @@
           "/covers/zona-maco-2027-1024.webp"
         ]
       ]
-    },
-    "/covers/el-cascanueces-auditorio-nacional-2026.jpg": {
-      "width": 1024,
-      "height": 1024,
-      "avif": [
-        [
-          480,
-          "/covers/el-cascanueces-auditorio-nacional-2026-480.avif"
-        ],
-        [
-          768,
-          "/covers/el-cascanueces-auditorio-nacional-2026-768.avif"
-        ],
-        [
-          1024,
-          "/covers/el-cascanueces-auditorio-nacional-2026-1024.avif"
-        ]
-      ],
-      "webp": [
-        [
-          480,
-          "/covers/el-cascanueces-auditorio-nacional-2026-480.webp"
-        ],
-        [
-          768,
-          "/covers/el-cascanueces-auditorio-nacional-2026-768.webp"
-        ],
-        [
-          1024,
-          "/covers/el-cascanueces-auditorio-nacional-2026-1024.webp"
-        ]
-      ]
-    },
-    "/covers/navidad-sinfonica-mineria-2026.jpg": {
-      "width": 1024,
-      "height": 1024,
-      "avif": [
-        [
-          480,
-          "/covers/navidad-sinfonica-mineria-2026-480.avif"
-        ],
-        [
-          768,
-          "/covers/navidad-sinfonica-mineria-2026-768.avif"
-        ],
-        [
-          1024,
-          "/covers/navidad-sinfonica-mineria-2026-1024.avif"
-        ]
-      ],
-      "webp": [
-        [
-          480,
-          "/covers/navidad-sinfonica-mineria-2026-480.webp"
-        ],
-        [
-          768,
-          "/covers/navidad-sinfonica-mineria-2026-768.webp"
-        ],
-        [
-          1024,
-          "/covers/navidad-sinfonica-mineria-2026-1024.webp"
-        ]
-      ]
-    },
-    "/covers/the-santa-run-cdmx-2026.jpg": {
-      "width": 1024,
-      "height": 1024,
-      "avif": [
-        [
-          480,
-          "/covers/the-santa-run-cdmx-2026-480.avif"
-        ],
-        [
-          768,
-          "/covers/the-santa-run-cdmx-2026-768.avif"
-        ],
-        [
-          1024,
-          "/covers/the-santa-run-cdmx-2026-1024.avif"
-        ]
-      ],
-      "webp": [
-        [
-          480,
-          "/covers/the-santa-run-cdmx-2026-480.webp"
-        ],
-        [
-          768,
-          "/covers/the-santa-run-cdmx-2026-768.webp"
-        ],
-        [
-          1024,
-          "/covers/the-santa-run-cdmx-2026-1024.webp"
-        ]
-      ]
     }
   },
   "dst.llc": {
@@ -4390,6 +4390,70 @@
         ]
       ]
     },
+    "/covers/address-creek-harbour-new-years-eve-dubai-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/address-creek-harbour-new-years-eve-dubai-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/address-creek-harbour-new-years-eve-dubai-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/address-creek-harbour-new-years-eve-dubai-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/address-creek-harbour-new-years-eve-dubai-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/address-creek-harbour-new-years-eve-dubai-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/address-creek-harbour-new-years-eve-dubai-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/address-downtown-new-years-eve-dubai-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/address-downtown-new-years-eve-dubai-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/address-downtown-new-years-eve-dubai-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/address-downtown-new-years-eve-dubai-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/address-downtown-new-years-eve-dubai-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/address-downtown-new-years-eve-dubai-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/address-downtown-new-years-eve-dubai-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/apple-hands-the-company-to-an-engineer.jpg": {
       "width": 1536,
       "height": 864,
@@ -4435,6 +4499,70 @@
         [
           1536,
           "/covers/apple-hands-the-company-to-an-engineer-1536.webp"
+        ]
+      ]
+    },
+    "/covers/argy-neworld-new-years-eve-ushuaia-dubai-harbour-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/argy-neworld-new-years-eve-ushuaia-dubai-harbour-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/argy-neworld-new-years-eve-ushuaia-dubai-harbour-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/argy-neworld-new-years-eve-ushuaia-dubai-harbour-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/argy-neworld-new-years-eve-ushuaia-dubai-harbour-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/argy-neworld-new-years-eve-ushuaia-dubai-harbour-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/argy-neworld-new-years-eve-ushuaia-dubai-harbour-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/atlantis-new-years-eve-katy-perry-dubai-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/atlantis-new-years-eve-katy-perry-dubai-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/atlantis-new-years-eve-katy-perry-dubai-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/atlantis-new-years-eve-katy-perry-dubai-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/atlantis-new-years-eve-katy-perry-dubai-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/atlantis-new-years-eve-katy-perry-dubai-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/atlantis-new-years-eve-katy-perry-dubai-2026-1024.webp"
         ]
       ]
     },
@@ -5070,6 +5198,70 @@
         ]
       ]
     },
+    "/covers/eid-al-etihad-celebrations-dubai-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/eid-al-etihad-celebrations-dubai-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/eid-al-etihad-celebrations-dubai-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/eid-al-etihad-celebrations-dubai-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/eid-al-etihad-celebrations-dubai-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/eid-al-etihad-celebrations-dubai-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/eid-al-etihad-celebrations-dubai-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/eid-al-etihad-uae-national-day-dubai-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/eid-al-etihad-uae-national-day-dubai-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/eid-al-etihad-uae-national-day-dubai-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/eid-al-etihad-uae-national-day-dubai-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/eid-al-etihad-uae-national-day-dubai-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/eid-al-etihad-uae-national-day-dubai-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/eid-al-etihad-uae-national-day-dubai-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/emirates-dubai-7s-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -5638,6 +5830,38 @@
         ]
       ]
     },
+    "/covers/janat-al-bahar-new-years-eve-gala-jumeirah-beach-hotel-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/janat-al-bahar-new-years-eve-gala-jumeirah-beach-hotel-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/janat-al-bahar-new-years-eve-gala-jumeirah-beach-hotel-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/janat-al-bahar-new-years-eve-gala-jumeirah-beach-hotel-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/janat-al-bahar-new-years-eve-gala-jumeirah-beach-hotel-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/janat-al-bahar-new-years-eve-gala-jumeirah-beach-hotel-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/janat-al-bahar-new-years-eve-gala-jumeirah-beach-hotel-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/llc-banking.jpg": {
       "width": 1536,
       "height": 864,
@@ -6115,6 +6339,38 @@
         [
           1536,
           "/covers/moc27-motor-outdoor-camping-festival-dubai-1536.webp"
+        ]
+      ]
+    },
+    "/covers/national-month-dubai-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/national-month-dubai-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/national-month-dubai-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/national-month-dubai-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/national-month-dubai-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/national-month-dubai-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/national-month-dubai-2026-1024.webp"
         ]
       ]
     },
@@ -6675,6 +6931,38 @@
         [
           1536,
           "/covers/rv-rent-1536.webp"
+        ]
+      ]
+    },
+    "/covers/sonny-fodera-new-years-eve-bohemia-five-palm-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/sonny-fodera-new-years-eve-bohemia-five-palm-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/sonny-fodera-new-years-eve-bohemia-five-palm-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/sonny-fodera-new-years-eve-bohemia-five-palm-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/sonny-fodera-new-years-eve-bohemia-five-palm-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/sonny-fodera-new-years-eve-bohemia-five-palm-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/sonny-fodera-new-years-eve-bohemia-five-palm-2026-1024.webp"
         ]
       ]
     },
@@ -11742,6 +12030,38 @@
         ]
       ]
     },
+    "/covers/la-la-land-in-concert-new-years-eve-royal-albert-hall-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/la-la-land-in-concert-new-years-eve-royal-albert-hall-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/la-la-land-in-concert-new-years-eve-royal-albert-hall-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/la-la-land-in-concert-new-years-eve-royal-albert-hall-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/la-la-land-in-concert-new-years-eve-royal-albert-hall-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/la-la-land-in-concert-new-years-eve-royal-albert-hall-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/la-la-land-in-concert-new-years-eve-royal-albert-hall-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/london-big-dates-2027-so-far.jpg": {
       "width": 1024,
       "height": 1024,
@@ -11899,6 +12219,38 @@
         [
           1024,
           "/covers/new-years-eve-fireworks-london-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/nutcracker-new-years-eve-london-coliseum-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/nutcracker-new-years-eve-london-coliseum-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/nutcracker-new-years-eve-london-coliseum-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/nutcracker-new-years-eve-london-coliseum-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/nutcracker-new-years-eve-london-coliseum-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/nutcracker-new-years-eve-london-coliseum-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/nutcracker-new-years-eve-london-coliseum-2026-1024.webp"
         ]
       ]
     },
@@ -26138,6 +26490,38 @@
         ]
       ]
     },
+    "/covers/feria-de-la-esfera-tlalpujahua-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/feria-de-la-esfera-tlalpujahua-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/feria-de-la-esfera-tlalpujahua-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/feria-de-la-esfera-tlalpujahua-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/feria-de-la-esfera-tlalpujahua-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/feria-de-la-esfera-tlalpujahua-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/feria-de-la-esfera-tlalpujahua-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/feria-del-alfenique-toluca-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -27082,6 +27466,38 @@
         ]
       ]
     },
+    "/covers/luztopia-monterrey-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/luztopia-monterrey-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/luztopia-monterrey-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/luztopia-monterrey-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/luztopia-monterrey-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/luztopia-monterrey-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/luztopia-monterrey-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/mariposa-monarca-temporada-2026-2027-cuando-abren-los-santuarios.jpg": {
       "width": 1024,
       "height": 1024,
@@ -27255,6 +27671,38 @@
         [
           1536,
           "/covers/morelia-anuncia-96-peliculas-mexicanas-1536.webp"
+        ]
+      ]
+    },
+    "/covers/navidalia-guadalajara-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/navidalia-guadalajara-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/navidalia-guadalajara-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/navidalia-guadalajara-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/navidalia-guadalajara-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/navidalia-guadalajara-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/navidalia-guadalajara-2026-1024.webp"
         ]
       ]
     },
@@ -27943,102 +28391,6 @@
         [
           1536,
           "/covers/xantolo-huasteca-potosina-2026-1536.webp"
-        ]
-      ]
-    },
-    "/covers/feria-de-la-esfera-tlalpujahua-2026.jpg": {
-      "width": 1024,
-      "height": 1024,
-      "avif": [
-        [
-          480,
-          "/covers/feria-de-la-esfera-tlalpujahua-2026-480.avif"
-        ],
-        [
-          768,
-          "/covers/feria-de-la-esfera-tlalpujahua-2026-768.avif"
-        ],
-        [
-          1024,
-          "/covers/feria-de-la-esfera-tlalpujahua-2026-1024.avif"
-        ]
-      ],
-      "webp": [
-        [
-          480,
-          "/covers/feria-de-la-esfera-tlalpujahua-2026-480.webp"
-        ],
-        [
-          768,
-          "/covers/feria-de-la-esfera-tlalpujahua-2026-768.webp"
-        ],
-        [
-          1024,
-          "/covers/feria-de-la-esfera-tlalpujahua-2026-1024.webp"
-        ]
-      ]
-    },
-    "/covers/luztopia-monterrey-2026.jpg": {
-      "width": 1024,
-      "height": 1024,
-      "avif": [
-        [
-          480,
-          "/covers/luztopia-monterrey-2026-480.avif"
-        ],
-        [
-          768,
-          "/covers/luztopia-monterrey-2026-768.avif"
-        ],
-        [
-          1024,
-          "/covers/luztopia-monterrey-2026-1024.avif"
-        ]
-      ],
-      "webp": [
-        [
-          480,
-          "/covers/luztopia-monterrey-2026-480.webp"
-        ],
-        [
-          768,
-          "/covers/luztopia-monterrey-2026-768.webp"
-        ],
-        [
-          1024,
-          "/covers/luztopia-monterrey-2026-1024.webp"
-        ]
-      ]
-    },
-    "/covers/navidalia-guadalajara-2026.jpg": {
-      "width": 1024,
-      "height": 1024,
-      "avif": [
-        [
-          480,
-          "/covers/navidalia-guadalajara-2026-480.avif"
-        ],
-        [
-          768,
-          "/covers/navidalia-guadalajara-2026-768.avif"
-        ],
-        [
-          1024,
-          "/covers/navidalia-guadalajara-2026-1024.avif"
-        ]
-      ],
-      "webp": [
-        [
-          480,
-          "/covers/navidalia-guadalajara-2026-480.webp"
-        ],
-        [
-          768,
-          "/covers/navidalia-guadalajara-2026-768.webp"
-        ],
-        [
-          1024,
-          "/covers/navidalia-guadalajara-2026-1024.webp"
         ]
       ]
     }
@@ -29788,6 +30140,38 @@
         ]
       ]
     },
+    "/covers/gratitude-weekend-wave-hill-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/gratitude-weekend-wave-hill-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/gratitude-weekend-wave-hill-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/gratitude-weekend-wave-hill-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/gratitude-weekend-wave-hill-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/gratitude-weekend-wave-hill-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/gratitude-weekend-wave-hill-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/great-jack-o-lantern-blaze-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -30748,6 +31132,38 @@
         ]
       ]
     },
+    "/covers/nyrr-midnight-run-central-park-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/nyrr-midnight-run-central-park-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/nyrr-midnight-run-central-park-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/nyrr-midnight-run-central-park-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/nyrr-midnight-run-central-park-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/nyrr-midnight-run-central-park-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/nyrr-midnight-run-central-park-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/off-broadway-week-fall-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -30953,6 +31369,70 @@
         [
           1024,
           "/covers/park-slope-halloween-parade-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/phish-new-years-eve-madison-square-garden-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/phish-new-years-eve-madison-square-garden-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/phish-new-years-eve-madison-square-garden-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/phish-new-years-eve-madison-square-garden-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/phish-new-years-eve-madison-square-garden-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/phish-new-years-eve-madison-square-garden-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/phish-new-years-eve-madison-square-garden-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/pptc-turkey-trot-prospect-park-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/pptc-turkey-trot-prospect-park-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/pptc-turkey-trot-prospect-park-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/pptc-turkey-trot-prospect-park-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/pptc-turkey-trot-prospect-park-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/pptc-turkey-trot-prospect-park-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/pptc-turkey-trot-prospect-park-2026-1024.webp"
         ]
       ]
     },
@@ -31404,6 +31884,38 @@
         ]
       ]
     },
+    "/covers/times-square-new-years-eve-ball-drop-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/times-square-new-years-eve-ball-drop-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/times-square-new-years-eve-ball-drop-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/times-square-new-years-eve-ball-drop-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/times-square-new-years-eve-ball-drop-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/times-square-new-years-eve-ball-drop-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/times-square-new-years-eve-ball-drop-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/tompkins-square-halloween-dog-parade-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -31769,70 +32281,6 @@
         [
           1024,
           "/covers/wicked-gluten-free-expo-meadowlands-2026-1024.webp"
-        ]
-      ]
-    },
-    "/covers/gratitude-weekend-wave-hill-2026.jpg": {
-      "width": 1024,
-      "height": 1024,
-      "avif": [
-        [
-          480,
-          "/covers/gratitude-weekend-wave-hill-2026-480.avif"
-        ],
-        [
-          768,
-          "/covers/gratitude-weekend-wave-hill-2026-768.avif"
-        ],
-        [
-          1024,
-          "/covers/gratitude-weekend-wave-hill-2026-1024.avif"
-        ]
-      ],
-      "webp": [
-        [
-          480,
-          "/covers/gratitude-weekend-wave-hill-2026-480.webp"
-        ],
-        [
-          768,
-          "/covers/gratitude-weekend-wave-hill-2026-768.webp"
-        ],
-        [
-          1024,
-          "/covers/gratitude-weekend-wave-hill-2026-1024.webp"
-        ]
-      ]
-    },
-    "/covers/pptc-turkey-trot-prospect-park-2026.jpg": {
-      "width": 1024,
-      "height": 1024,
-      "avif": [
-        [
-          480,
-          "/covers/pptc-turkey-trot-prospect-park-2026-480.avif"
-        ],
-        [
-          768,
-          "/covers/pptc-turkey-trot-prospect-park-2026-768.avif"
-        ],
-        [
-          1024,
-          "/covers/pptc-turkey-trot-prospect-park-2026-1024.avif"
-        ]
-      ],
-      "webp": [
-        [
-          480,
-          "/covers/pptc-turkey-trot-prospect-park-2026-480.webp"
-        ],
-        [
-          768,
-          "/covers/pptc-turkey-trot-prospect-park-2026-768.webp"
-        ],
-        [
-          1024,
-          "/covers/pptc-turkey-trot-prospect-park-2026-1024.webp"
         ]
       ]
     }
@@ -40672,6 +41120,70 @@
         ]
       ]
     },
+    "/covers/new-year-without-wifi-youth-experimental-theatre-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/new-year-without-wifi-youth-experimental-theatre-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/new-year-without-wifi-youth-experimental-theatre-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/new-year-without-wifi-youth-experimental-theatre-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/new-year-without-wifi-youth-experimental-theatre-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/new-year-without-wifi-youth-experimental-theatre-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/new-year-without-wifi-youth-experimental-theatre-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/now-or-later-childrens-show-demirchyan-complex-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/now-or-later-childrens-show-demirchyan-complex-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/now-or-later-childrens-show-demirchyan-complex-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/now-or-later-childrens-show-demirchyan-complex-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/now-or-later-childrens-show-demirchyan-complex-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/now-or-later-childrens-show-demirchyan-complex-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/now-or-later-childrens-show-demirchyan-complex-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/nutcracker-yerevan-opera-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -43362,6 +43874,102 @@
         ]
       ]
     },
+    "/covers/ball-der-pharmazie-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/ball-der-pharmazie-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/ball-der-pharmazie-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/ball-der-pharmazie-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/ball-der-pharmazie-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/ball-der-pharmazie-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/ball-der-pharmazie-2027-1024.webp"
+        ]
+      ]
+    },
+    "/covers/ball-der-wiener-philharmoniker-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/ball-der-wiener-philharmoniker-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/ball-der-wiener-philharmoniker-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/ball-der-wiener-philharmoniker-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/ball-der-wiener-philharmoniker-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/ball-der-wiener-philharmoniker-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/ball-der-wiener-philharmoniker-2027-1024.webp"
+        ]
+      ]
+    },
+    "/covers/blumenball-rathaus-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/blumenball-rathaus-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/blumenball-rathaus-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/blumenball-rathaus-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/blumenball-rathaus-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/blumenball-rathaus-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/blumenball-rathaus-2027-1024.webp"
+        ]
+      ]
+    },
     "/covers/cosmic-horrors-planetarium-wien-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -43474,6 +44082,38 @@
         ]
       ]
     },
+    "/covers/die-fledermaus-staatsoper-silvester-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/die-fledermaus-staatsoper-silvester-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/die-fledermaus-staatsoper-silvester-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/die-fledermaus-staatsoper-silvester-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/die-fledermaus-staatsoper-silvester-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/die-fledermaus-staatsoper-silvester-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/die-fledermaus-staatsoper-silvester-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/down-syndrom-ueber-uns-mit-uns-wien-museum-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -43503,6 +44143,38 @@
         [
           1024,
           "/covers/down-syndrom-ueber-uns-mit-uns-wien-museum-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/elmayer-kraenzchen-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/elmayer-kraenzchen-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/elmayer-kraenzchen-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/elmayer-kraenzchen-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/elmayer-kraenzchen-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/elmayer-kraenzchen-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/elmayer-kraenzchen-2027-1024.webp"
         ]
       ]
     },
@@ -43810,6 +44482,102 @@
         ]
       ]
     },
+    "/covers/jaegerball-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/jaegerball-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/jaegerball-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/jaegerball-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/jaegerball-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/jaegerball-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/jaegerball-2027-1024.webp"
+        ]
+      ]
+    },
+    "/covers/juristenball-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/juristenball-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/juristenball-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/juristenball-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/juristenball-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/juristenball-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/juristenball-2027-1024.webp"
+        ]
+      ]
+    },
+    "/covers/kaffeesiederball-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/kaffeesiederball-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/kaffeesiederball-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/kaffeesiederball-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/kaffeesiederball-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/kaffeesiederball-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/kaffeesiederball-2027-1024.webp"
+        ]
+      ]
+    },
     "/covers/kuerbisfest-am-himmel-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -43954,6 +44722,102 @@
         ]
       ]
     },
+    "/covers/rudolfina-redoute-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/rudolfina-redoute-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/rudolfina-redoute-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/rudolfina-redoute-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/rudolfina-redoute-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/rudolfina-redoute-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/rudolfina-redoute-2027-1024.webp"
+        ]
+      ]
+    },
+    "/covers/silvesterkonzert-wiener-philharmoniker-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/silvesterkonzert-wiener-philharmoniker-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/silvesterkonzert-wiener-philharmoniker-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/silvesterkonzert-wiener-philharmoniker-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/silvesterkonzert-wiener-philharmoniker-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/silvesterkonzert-wiener-philharmoniker-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/silvesterkonzert-wiener-philharmoniker-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/steirerball-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/steirerball-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/steirerball-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/steirerball-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/steirerball-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/steirerball-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/steirerball-2027-1024.webp"
+        ]
+      ]
+    },
     "/covers/the-nun-halloween-dome-takeover-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -43983,6 +44847,38 @@
         [
           1024,
           "/covers/the-nun-halloween-dome-takeover-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/tu-ball-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/tu-ball-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/tu-ball-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/tu-ball-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/tu-ball-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/tu-ball-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/tu-ball-2027-1024.webp"
         ]
       ]
     },
@@ -44530,6 +45426,38 @@
         ]
       ]
     },
+    "/covers/wiener-aerzteball-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/wiener-aerzteball-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/wiener-aerzteball-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/wiener-aerzteball-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/wiener-aerzteball-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/wiener-aerzteball-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/wiener-aerzteball-2027-1024.webp"
+        ]
+      ]
+    },
     "/covers/wiener-christkindlmarkt-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -44674,6 +45602,38 @@
         ]
       ]
     },
+    "/covers/wiener-opernball-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/wiener-opernball-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/wiener-opernball-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/wiener-opernball-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/wiener-opernball-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/wiener-opernball-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/wiener-opernball-2027-1024.webp"
+        ]
+      ]
+    },
     "/covers/wiener-silvesterpfad-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -44735,6 +45695,38 @@
         [
           1024,
           "/covers/zentralfriedhof-bei-nacht-fuehrung-wien-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/zuckerbaeckerball-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/zuckerbaeckerball-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/zuckerbaeckerball-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/zuckerbaeckerball-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/zuckerbaeckerball-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/zuckerbaeckerball-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/zuckerbaeckerball-2027-1024.webp"
         ]
       ]
     },
