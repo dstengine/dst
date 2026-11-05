@@ -90,6 +90,37 @@ export const hasEnded = (event: Dated, today: string): boolean => lastDay(event)
 /** Still to come or on right now. The complement of `hasEnded`. */
 export const isOn = (event: Dated, today: string): boolean => !hasEnded(event, today);
 
+// The month a list is being read in, and what certainly happens in it.
+//
+// A section page that names its month — "the November programme" — has to
+// name only what is on in November, and a run of dates does not say which
+// days it plays: Swan Lake from 9 October to 30 January may or may not have
+// a night this month. Three days are certain: the first one still to come,
+// the last one, and every day an entry lists in `dates`. An entry is in the
+// month when one of those falls in it, and it is placed by the earliest.
+// The month is the one the next performance falls in — today's while
+// anything is running, the next opening's when nothing is.
+
+type Certain = Dated & Pick<EventItem, "dates" | "slug">;
+
+/** The month ("YYYY-MM") that the entries still on are next on, with the
+    ones certainly on in it, in date order; undefined when nothing is on. */
+export function monthOn<T extends Certain>(events: T[], today: string): { month: string; certain: T[] } | undefined {
+  const on = events.filter((e) => isOn(e, today));
+  if (on.length === 0) return undefined;
+  const month = on.map((e) => (e.start > today ? e.start : today)).sort()[0].slice(0, 7);
+  const certainDay = (e: T): string | undefined =>
+    [...(e.dates ?? []), e.start, lastDay(e)]
+      .filter((d) => d >= today && d.slice(0, 7) === month)
+      .sort()[0];
+  const certain = on
+    .map((e) => ({ e, day: certainDay(e) }))
+    .filter((x): x is { e: T; day: string } => x.day !== undefined)
+    .sort((a, b) => (a.day < b.day ? -1 : a.day > b.day ? 1 : a.e.slug.localeCompare(b.e.slug)))
+    .map((x) => x.e);
+  return { month, certain };
+}
+
 /** A news item still inside its promotion, as of `today`. See `promotedUntil`. */
 export const isPromoted = (item: { promotedUntil?: string }, today: string): boolean =>
   item.promotedUntil !== undefined && today <= item.promotedUntil;

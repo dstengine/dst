@@ -10,7 +10,7 @@
 import { test, describe } from "node:test";
 import assert from "node:assert/strict";
 
-const { lastDay, hasEnded, isOn } = await import("../packages/content/src/when.ts");
+const { lastDay, hasEnded, isOn, monthOn } = await import("../packages/content/src/when.ts");
 const { isFree, ticketAvailability } = await import("../packages/content/src/admission.ts");
 const { cardUntil } = await import("../packages/ui/src/date.ts");
 
@@ -114,5 +114,44 @@ describe("what the ticket link sells", () => {
 
   test("a full run whose link is a waitlist page is sold out, not silent", () => {
     assert.equal(ticketAvailability({ ticket: { url, sells: false, soldOut: true } }), "SoldOut");
+  });
+});
+
+// A section page that says "the November programme" names only what is
+// certainly on in November (monthOn in ../packages/content/src/when.ts):
+// a run from October to January may have no night this month, and the
+// summary must not claim one for it.
+describe("the month a list is read in", () => {
+  const on = (slug, start, end, dates) => ({ slug, start, ...(end ? { end } : {}), ...(dates ? { dates } : {}) });
+  const NOV = "2026-11-06";
+
+  test("names the runs that close this month and the ones that open in it, by date", () => {
+    const got = monthOn(
+      [
+        on("swan-lake", "2026-10-09", "2027-01-30"),
+        on("carmen", "2026-10-10", "2026-11-14"),
+        on("butterfly", "2026-11-25"),
+        on("sasuntsi", "2026-11-07", "2027-01-28"),
+        on("turandot", "2026-10-22"),
+      ],
+      NOV,
+    );
+    assert.equal(got.month, "2026-11");
+    assert.deepEqual(got.certain.map((e) => e.slug), ["sasuntsi", "carmen", "butterfly"]);
+  });
+
+  test("a run that lists its nights is in the month it has a night in", () => {
+    const got = monthOn([on("gayane", "2026-10-11", "2026-12-16", ["2026-10-11", "2026-11-20", "2026-12-16"])], NOV);
+    assert.deepEqual(got.certain.map((e) => e.slug), ["gayane"]);
+  });
+
+  test("with nothing running, the month is the next opening's", () => {
+    const got = monthOn([on("swan-lake", "2027-01-30"), on("nutcracker", "2026-12-05", "2026-12-31")], NOV);
+    assert.equal(got.month, "2026-12");
+    assert.deepEqual(got.certain.map((e) => e.slug), ["nutcracker"]);
+  });
+
+  test("nothing on, no month", () => {
+    assert.equal(monthOn([on("turandot", "2026-10-22")], NOV), undefined);
   });
 });

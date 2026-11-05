@@ -1947,7 +1947,11 @@ describe("how much of each site is the template", () => {
     // tick 36 → 37 the same evening, measured at 36.2, when the promo card
     // went under the fact table of every event page as well (EventArticle
     // `promo`): the card's three lines twice on a page, 146 pages.
-    sol2go: 30, vien: 30, tick: 37, aivideo: 37, tea: 32,
+    // tick 37 → 38 on 6 November 2026, measured at 37.1, when the Yerevan
+    // Opera's runs were dated to their last nights on the theatre's playbill
+    // and February 2027 got a calendar month of its own in both languages: a
+    // page of cards, 77% furniture. No sentence of prose repeats.
+    sol2go: 30, vien: 30, tick: 38, aivideo: 37, tea: 32,
     // Both recorded on 21 October 2026, their first day: l0n measured 16.4
     // with four events and one roundup, aca 23.5 with five and one — small
     // sites, so the chrome is a large share of each page. They fall as
