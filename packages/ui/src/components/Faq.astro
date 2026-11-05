@@ -19,7 +19,13 @@
 // *this* page, and the identical claim repeated across sixty pages is what a
 // search engine reads as a template rather than as an answer. A block whose
 // answers are all generic emits no FAQPage at all.
-interface QA { q: string; a: string; text?: string; generic?: boolean }
+//
+// `id`, when a site gives one, is the row's own anchor: another page can
+// link to one question rather than to the whole block (fest.one's guides
+// point "the questions on age, entry and times" at the row that answers
+// them). Without it the row prints no id attribute at all, so every page
+// that gives none comes out as before, byte for byte.
+interface QA { q: string; a: string; text?: string; generic?: boolean; id?: string }
 interface Props { items: QA[] }
 
 const { items } = Astro.props;
@@ -38,7 +44,7 @@ const jsonLd = specific.length > 0 ? {
 {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
 <div class="faq">
   {items.map((item) => (
-    <details class="faq-item">
+    <details class="faq-item" id={item.id}>
       <summary>{item.q}</summary>
       <p set:html={item.a} />
     </details>
