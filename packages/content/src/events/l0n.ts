@@ -6,7 +6,7 @@ export const items: EventItem[] = [
   {
     slug: "new-years-eve-fireworks-london-2026",
     createdAt: "2026-10-21T21:40:00+04:00",
-    updatedAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-11-05T20:43:04.000Z",
     site: "l0n",
     image: "/covers/new-years-eve-fireworks-london-2026.jpg",
     imageAlt: "Fireworks bursting over a wide river at night, a big observation wheel standing on the far bank",
@@ -16,7 +16,7 @@ export const items: EventItem[] = [
     title: "London New Year's Eve fireworks 2026",
     titleSeo: "London New Year's Eve fireworks 2026: tickets and times",
     summary:
-      "The Mayor of London's New Year's Eve fireworks on the Thames, 31 December 2026: gates 8pm to 10.30pm, tickets from £20 for Londoners, first release at noon on Friday 23 October.",
+      "The Mayor of London's New Year's Eve fireworks on the Thames, 31 December 2026: gates 8pm to 10.30pm, tickets from £20 for Londoners on Ticketmaster.",
     start: "2026-12-31",
     end: "2027-01-01",
     startTime: "20:00",
@@ -31,7 +31,7 @@ export const items: EventItem[] = [
     source: {
       name: "Mayor of London",
       url: "https://www.london.gov.uk/events/london-new-years-eve-2026",
-      verifiedOn: "2026-10-21",
+      verifiedOn: "2026-11-05",
     },
     ticket: {
       url: "https://www.ticketmaster.co.uk/mayor-of-londons-new-years-eve-tickets/artist/5491819",
@@ -42,11 +42,13 @@ export const items: EventItem[] = [
       "Midnight on the Thames is the one London night that takes a ticket to stand outside. The Mayor of London has published the arrangements for <strong>Thursday 31 December 2026</strong>: gates open at <strong>8pm</strong> and close at <strong>10.30pm</strong>, and the event ends at <strong>12.30am</strong> on New Year's Day.",
       "## Tickets",
       "There are two categories. <strong>Category A</strong> costs £55, or <strong>£35</strong> for Londoners. <strong>Category B</strong> costs £40, or <strong>£20</strong> for Londoners.",
-      "The first batch goes on sale at <strong>noon on Friday 23 October</strong>, through <strong>Ticketmaster only</strong>. A second batch is to follow, and its date has not been given yet.",
+      "Tickets are released in two batches. The first is <strong>on sale now</strong>, through <strong>Ticketmaster only</strong>. One buyer can book <strong>up to 4 tickets</strong>. A second batch is to follow, and its date has not been given yet.",
       "## The viewing areas",
       "The areas are named by colour: <strong>blue</strong>, <strong>red</strong>, <strong>pink</strong>, <strong>green</strong>, <strong>white</strong> and <strong>orange</strong>, the last of them the accessible area. Blue covers Victoria Embankment from Westminster Bridge to the Golden Jubilee Footbridge.",
       "## Who it suits",
       "Everyone needs a ticket. Under-16s must be with an adult, and the organiser says the event is not suitable for young children.",
+      "## Earlier on 31 December",
+      "Two shows fill New Year's Eve itself: English National Ballet's <a href=\"/events/nutcracker-new-years-eve-london-coliseum-2026/\" title=\"Nutcracker at the London Coliseum on New Year's Eve 2026\">Nutcracker matinee at the London Coliseum</a>, and <a href=\"/events/la-la-land-in-concert-new-years-eve-royal-albert-hall-2026/\" title=\"La La Land in Concert London: Royal Albert Hall, 31 Dec\">La La Land in Concert at the Royal Albert Hall</a>.",
     ],
     faq: [
       {
@@ -58,8 +60,8 @@ export const items: EventItem[] = [
         a: "Category A is £55, or £35 for Londoners. Category B is £40, or £20 for Londoners.",
       },
       {
-        q: "When do tickets go on sale?",
-        a: "The first batch at <strong>noon on Friday 23 October 2026</strong>, on Ticketmaster only. A second batch follows on a date still to be announced.",
+        q: "Are tickets on sale?",
+        a: "The first batch is <strong>on sale now</strong>, on Ticketmaster only. A second batch follows on a date still to be announced.",
       },
     ],
     related: [
@@ -68,6 +70,24 @@ export const items: EventItem[] = [
         eyebrow: "31 October",
         title: "Duran Duran's Halloween at The O2",
         text: "Duran Duran's Danse Macabre at The O2 on Halloween night.",
+      },
+      {
+        href: "/events/nutcracker-new-years-eve-london-coliseum-2026/",
+        eyebrow: "31 December, 1.30pm",
+        title: "Nutcracker at the London Coliseum",
+        text: "English National Ballet's New Year's Eve matinee, from £27.25.",
+      },
+      {
+        href: "/events/la-la-land-in-concert-new-years-eve-royal-albert-hall-2026/",
+        eyebrow: "31 December",
+        title: "La La Land in Concert",
+        text: "The film with a live orchestra at the Royal Albert Hall, matinee and evening.",
+      },
+    ],
+    updates: [
+      {
+        on: "2026-11-05",
+        text: "The first batch of tickets is on sale now on Ticketmaster, up to 4 per buyer, at the same prices as last year: £20 to £55. The date of the second batch has not been given yet.",
       },
     ],
   },
@@ -441,7 +461,7 @@ export const items: EventItem[] = [
   {
     slug: "philip-glass-at-90-southbank-2027",
     createdAt: "2026-10-24T16:10:00+04:00",
-    updatedAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-11-05T20:43:04.000Z",
     site: "l0n",
     image: "/covers/philip-glass-at-90-southbank-2027.jpg",
     imageAlt: "Twelve narrow vertical paper bars in rising shades of grey and gold, repeating across a dark ground like a score",
@@ -503,6 +523,18 @@ export const items: EventItem[] = [
         eyebrow: "31 October",
         title: "Duran Duran's Halloween at The O2",
         text: "Duran Duran's Danse Macabre at The O2 on Halloween night.",
+      },
+      {
+        href: "/events/nutcracker-new-years-eve-london-coliseum-2026/",
+        eyebrow: "31 December, 1.30pm",
+        title: "Nutcracker at the London Coliseum",
+        text: "English National Ballet's New Year's Eve matinee, from £27.25.",
+      },
+      {
+        href: "/events/la-la-land-in-concert-new-years-eve-royal-albert-hall-2026/",
+        eyebrow: "31 December",
+        title: "La La Land in Concert",
+        text: "The film with a live orchestra at the Royal Albert Hall, matinee and evening.",
       },
     ],
   },
@@ -762,5 +794,149 @@ export const items: EventItem[] = [
     ],
     expertise:
       "ExCeL is at the far east of the city, on the Elizabeth line at Custom House and the DLR at Prince Regent, so treat the fair as a day out rather than an afternoon. For a writer without an agent, the Writers' Summit is the reason to buy a ticket; the stands are where publishers and agents keep appointments made in advance, so a manuscript pitched across a stand rarely gets the hearing it would get through an agent. The Thursday closes an hour and a half earlier, which makes Tuesday or Wednesday the better day for the whole programme.",
+  },
+  {
+    slug: "nutcracker-new-years-eve-london-coliseum-2026",
+    createdAt: "2026-11-05T20:43:04.000Z",
+    updatedAt: "2026-11-05T20:43:04.000Z",
+    site: "l0n",
+    title: "Nutcracker, English National Ballet: the New Year's Eve matinee",
+    titleSeo: "Nutcracker at the London Coliseum on New Year's Eve 2026",
+    cardTitle: "Nutcracker on New Year's Eve",
+    summary:
+      "English National Ballet's Nutcracker plays the London Coliseum at 1.30pm on Thursday 31 December 2026, the one New Year's Eve performance of its London run: two hours with an interval, tickets from £27.25, age 5+.",
+    start: "2026-12-31",
+    startTime: "13:30",
+    utcOffset: "+00:00",
+    city: "London",
+    country: "United Kingdom",
+    venue: "London Coliseum, St Martin's Lane, WC2N 4ES",
+    geo: { name: "London Coliseum", lat: 51.50985, lng: -0.12653 },
+    organizer: "English National Ballet",
+    category: "New Year's Eve",
+    ticket: {
+      url: "https://londoncoliseum.org/events/nutcracker-2026/",
+      label: "Tickets at the London Coliseum",
+      sells: true,
+    },
+    tickets: { priceFrom: 27.25, currency: "GBP" },
+    source: {
+      name: "London Coliseum",
+      url: "https://londoncoliseum.org/events/nutcracker-2026/",
+      verifiedOn: "2026-11-05",
+    },
+    body: [
+      "English National Ballet's <strong>Nutcracker</strong> returns to the London Coliseum from <strong>Thursday 17 December 2026 to Sunday 10 January 2027</strong>, and on New Year's Eve it plays once: a matinee at <strong>1.30pm on Thursday 31 December</strong>. There is no evening show that day.",
+      "## The production",
+      "It is the staging by Aaron S. Watkin and Arielle Smith, with sets and costumes by Dick Bird. Clara's Christmas Eve is set in Edwardian London, in Drosselmeyer's Sweets &amp; Delights Emporium, and the company counts <strong>over 100 dancers and musicians</strong>. English National Ballet Philharmonic plays Tchaikovsky's score live.",
+      "## How long it lasts",
+      "<strong>2 hours</strong>, including one interval, so the New Year's Eve matinee comes down at about half past three.",
+      "## Tickets and ages",
+      "Tickets start at <strong>£27.25</strong>, booking fees included. Children under 16 get <strong>25% off</strong>, up to two per full-price adult, though not in the top-price seats, and every child must sit next to their adult. The age guidance is <strong>5+</strong>: children under 5 are not allowed in the auditorium, except at the family-friendly performance on <strong>Saturday 9 January 2027 at 2pm</strong>.",
+      "## Getting there",
+      "The Coliseum is on St Martin's Lane, WC2N 4ES, between Trafalgar Square and Covent Garden.",
+      "## After the curtain",
+      "The evening belongs to the river: the <a href=\"/events/new-years-eve-fireworks-london-2026/\" title=\"London New Year's Eve fireworks 2026\">Mayor of London's Thames fireworks</a>, gates from 8pm, ticket only. Across town, <a href=\"/events/la-la-land-in-concert-new-years-eve-royal-albert-hall-2026/\" title=\"La La Land in Concert London: Royal Albert Hall, 31 Dec\">La La Land in Concert</a> plays the Royal Albert Hall twice that day.",
+    ],
+    faq: [
+      {
+        q: "What time is the Nutcracker on New Year's Eve at the London Coliseum?",
+        a: "At <strong>1.30pm</strong> on Thursday 31 December 2026. It is the only performance that day, and it runs 2 hours including one interval.",
+      },
+      {
+        q: "How much are the tickets?",
+        a: "From <strong>£27.25</strong>, booking fees included. Under-16s get 25% off, up to two per full-price adult, outside the top-price seats.",
+      },
+      {
+        q: "From what age can children go?",
+        a: "The guidance is 5+. Children under 5 are not allowed in the auditorium except at the family-friendly performance on Saturday 9 January 2027 at 2pm.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/new-years-eve-fireworks-london-2026/",
+        eyebrow: "31 December, 8pm",
+        title: "London New Year's Eve fireworks 2026",
+        text: "The Mayor's Thames fireworks: gates 8pm to 10.30pm, tickets from £20 for Londoners.",
+      },
+      {
+        href: "/events/la-la-land-in-concert-new-years-eve-royal-albert-hall-2026/",
+        eyebrow: "31 December",
+        title: "La La Land in Concert",
+        text: "The film with a live orchestra at the Royal Albert Hall, matinee and evening.",
+      },
+    ],
+    expertise:
+      "The New Year's Eve matinee is the run's only show on the 31st, so it is the one families who want both the ballet and the night out will be after; book it before the Christmas performances, not after. Coming down at about 3.30pm leaves the whole evening clear, but the Coliseum on St Martin's Lane is a few minutes' walk from the river, where the fireworks' areas take their gates later on, so anyone not holding a fireworks ticket is better off heading away from the river rather than towards it. For a child under 5, this is the wrong date: the family-friendly performance on 9 January is the one they are allowed into.",
+  },
+  {
+    slug: "la-la-land-in-concert-new-years-eve-royal-albert-hall-2026",
+    createdAt: "2026-11-05T20:43:04.000Z",
+    updatedAt: "2026-11-05T20:43:04.000Z",
+    site: "l0n",
+    title: "La La Land in Concert at the Royal Albert Hall",
+    titleSeo: "La La Land in Concert London: Royal Albert Hall, 31 Dec",
+    cardTitle: "La La Land in Concert",
+    summary:
+      "La La Land in Concert plays the Royal Albert Hall in London twice on Thursday 31 December 2026, a matinee and an evening show: the film on the big screen with a full orchestra and jazz band playing the score live.",
+    start: "2026-12-31",
+    utcOffset: "+00:00",
+    city: "London",
+    country: "United Kingdom",
+    venue: "Royal Albert Hall",
+    geo: { name: "Royal Albert Hall", lat: 51.50096, lng: -0.17745 },
+    organizer: "Hurwitz Concerts",
+    category: "New Year's Eve",
+    ticket: {
+      url: "https://www.royalalberthall.com/tickets/events/2026/la-la-land-in-concert",
+      label: "Tickets at the Royal Albert Hall",
+      sells: true,
+    },
+    source: {
+      name: "Hurwitz Concerts",
+      url: "https://www.hurwitzconcerts.com/la-la-land-in-concert",
+      verifiedOn: "2026-11-05",
+    },
+    body: [
+      "Damien Chazelle's <strong>La La Land</strong> comes to the Royal Albert Hall on New Year's Eve with its music played live. Hurwitz Concerts, the show's own site, lists two London performances on <strong>Thursday 31 December 2026</strong>: a <strong>matinee</strong> and an evening show.",
+      "## What it is",
+      "The 2016 Academy Award-winning Lionsgate film, with Ryan Gosling and Emma Stone, runs in full on the screen while <strong>a full orchestra and jazz band</strong> plays the soundtrack beneath it, piano solos included.",
+      "## Times and tickets",
+      "The show's page gives the two performances but not their start times or prices; the Royal Albert Hall sells the tickets and its page sets both.",
+      "## Where it fits in the tour",
+      "London is the only UK stop on the show's list of dates. The next date after London is Tampa on <strong>16 January 2027</strong>; the tour reaches France in October 2027.",
+      "## The rest of the night",
+      "Anyone planning the evening show and the <a href=\"/events/new-years-eve-fireworks-london-2026/\" title=\"London New Year's Eve fireworks 2026\">Mayor of London's Thames fireworks</a> should check the Hall's start time first: the fireworks need a ticket booked in advance, and their gates close at 10.30pm. Earlier that day, English National Ballet gives its <a href=\"/events/nutcracker-new-years-eve-london-coliseum-2026/\" title=\"Nutcracker at the London Coliseum on New Year's Eve 2026\">New Year's Eve Nutcracker matinee</a> at the London Coliseum.",
+    ],
+    faq: [
+      {
+        q: "When is La La Land in Concert at the Royal Albert Hall?",
+        a: "On <strong>Thursday 31 December 2026</strong>, twice: a matinee and an evening performance.",
+      },
+      {
+        q: "What time does it start, and how much are tickets?",
+        a: "The show's own site has not published either; both are set on the Royal Albert Hall's booking page, which sells the tickets.",
+      },
+      {
+        q: "Is the whole film shown?",
+        a: "Yes. The film runs in full on the big screen while a full orchestra and jazz band play the soundtrack live, piano solos included.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/new-years-eve-fireworks-london-2026/",
+        eyebrow: "31 December, 8pm",
+        title: "London New Year's Eve fireworks 2026",
+        text: "The Mayor's Thames fireworks: gates 8pm to 10.30pm, tickets from £20 for Londoners.",
+      },
+      {
+        href: "/events/nutcracker-new-years-eve-london-coliseum-2026/",
+        eyebrow: "31 December, 1.30pm",
+        title: "Nutcracker at the London Coliseum",
+        text: "English National Ballet's New Year's Eve matinee, from £27.25.",
+      },
+    ],
+    expertise:
+      "With only two performances in the UK and both on New Year's Eve, this is a one-date show rather than a run, so there is no later night to fall back on. The matinee is the easier one to combine with the rest of the night: the Hall is a long way west of the Embankment and the fireworks gates close at 10.30pm, so anyone holding fireworks tickets should check the evening start time on the Hall's page before choosing it over the matinee.",
   },
 ];

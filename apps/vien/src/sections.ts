@@ -96,9 +96,9 @@ export function sections(items: FeedItem[]): Section[] {
         return {
           title: "Silvester in Wien 2026: was los ist",
           description:
-            "Silvester in Wien: wo man den Jahreswechsel verbringt, mit Uhrzeit, Preis und Quelle bei jedem Eintrag.",
+            "Silvester in Wien 2026: das Silvesterkonzert der Philharmoniker im Musikverein, die Fledermaus in der Staatsoper und der Silvesterpfad in der Innenstadt.",
           h1: "Silvester in Wien",
-          lede: "Wo man in Wien um Mitternacht am 31. Dezember steht und was es kostet, dorthin zu kommen — die Uhrzeit, wie die Veranstalter sie angegeben haben, und der Link dorthin, wo wir es gelesen haben.",
+          lede: "Wie man in Wien den 31. Dezember verbringt, vom Abend in der Oper bis zur Mitternacht in der Innenstadt — die Uhrzeit, wie die Veranstalter sie angegeben haben, und der Link dorthin, wo wir es gelesen haben.",
           headings: {
             events: "Wo man Silvester feiert",
             upcoming: "Termine",

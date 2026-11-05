@@ -2312,7 +2312,7 @@ export const items: EventItem[] = [
   {
     slug: "harry-styles-madison-square-garden-final-night-2026",
     createdAt: "2026-10-12T02:45:00+04:00",
-    updatedAt: "2026-10-12T02:45:00+04:00",
+    updatedAt: "2026-11-05T20:43:04.000Z",
     site: "nyc42",
     image: "/covers/harry-styles-madison-square-garden-final-night-2026.jpg",
     imageAlt: "A round drum-shaped arena at night wrapped in glowing orange bands of light, a dark street leading up to it, a crescent moon and a few bats in the sky",
@@ -2370,6 +2370,12 @@ export const items: EventItem[] = [
         eyebrow: "Brooklyn",
         title: "Rawayana at Barclays Center",
         text: "The other arena show on Halloween night: the Venezuelan band's world tour at 7pm on Atlantic Avenue.",
+      },
+      {
+        href: "/events/phish-new-years-eve-madison-square-garden-2026/",
+        eyebrow: "7:30pm, December 31",
+        title: "Phish on New Year's Eve",
+        text: "The same arena two months later: the band's New Year's Eve at the Garden, doors at 6:30pm, all four nights sold out.",
       },
     ],
     expertise:
@@ -2836,7 +2842,7 @@ export const items: EventItem[] = [
   {
     slug: "coney-island-polar-bear-plunge-2027",
     createdAt: "2026-10-21T21:35:00+04:00",
-    updatedAt: "2026-11-04T20:40:00-05:00",
+    updatedAt: "2026-11-05T20:43:04.000Z",
     site: "nyc42",
     image: "/covers/coney-island-polar-bear-plunge-2027.jpg",
     imageAlt:
@@ -2941,6 +2947,12 @@ export const items: EventItem[] = [
         eyebrow: "January 7, 2027",
         title: "Year in Review with Neil deGrasse Tyson",
         text: "Six days after the plunge, a warmer start to the year: Neil deGrasse Tyson's recap of 2026 under the blue whale.",
+      },
+      {
+        href: "/events/times-square-new-years-eve-ball-drop-2026/",
+        eyebrow: "11:59pm, December 31",
+        title: "Times Square Ball Drop",
+        text: "The night before the plunge: the Ball comes down over Times Square, free and without tickets.",
       },
     ],
     expertise:
@@ -3859,7 +3871,7 @@ export const items: EventItem[] = [
   {
     slug: "pptc-turkey-trot-prospect-park-2026",
     createdAt: "2026-11-02T02:20:00+04:00",
-    updatedAt: "2026-11-02T02:20:00+04:00",
+    updatedAt: "2026-11-05T20:43:04.000Z",
     site: "nyc42",
     image: "/covers/pptc-turkey-trot-prospect-park-2026.jpg",
     imageAlt: "Cut-paper shapes of a park road curving between bare trees toward a stone wall, with paper leaves and a round wooden medal on a ribbon",
@@ -3949,6 +3961,12 @@ export const items: EventItem[] = [
         eyebrow: "January 1",
         title: "Coney Island Polar Bear Plunge",
         text: "Brooklyn's other cold-morning tradition, on the beach at Stillwell Avenue.",
+      },
+      {
+        href: "/events/nyrr-midnight-run-central-park-2026/",
+        eyebrow: "11:59pm, December 31",
+        title: "NYRR Midnight Run",
+        text: "The year's last race: four miles in Central Park, starting at midnight under the fireworks.",
       },
     ],
     expertise:
@@ -4133,5 +4151,253 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Set a reminder for 10:30am on December 9 and be signed in before it: it is one evening in one hall at two tickets an order, and on November 5 three of the museum's four overnight dates for January to March already read sold out, which says how quickly its after-hours evenings go. Members pay $10 less a seat, so if anyone in the household is a member, they should be the one who books. On the night, head for the driveway off Central Park West rather than the front steps: that is the entrance the museum names for this program.",
+  },
+  {
+    slug: "times-square-new-years-eve-ball-drop-2026",
+    createdAt: "2026-11-05T20:43:04.000Z",
+    updatedAt: "2026-11-05T20:43:04.000Z",
+    site: "nyc42",
+    title: "Times Square New Year's Eve 2027: the Ball Drop",
+    cardTitle: "Times Square Ball Drop",
+    titleSeo: "Times Square Ball Drop, New York: Dec 31, 2026",
+    summary:
+      "New York's New Year's Eve in Times Square: the Ball descends from One Times Square at 11:59pm on Thursday, December 31, 2026. Free, with no tickets, on a first-come, first-served basis.",
+    start: "2026-12-31",
+    utcOffset: "-05:00",
+    venue: "Times Square, One Times Square",
+    city: "New York",
+    country: "United States",
+    geo: {
+      name: "One Times Square",
+      lat: 40.7564,
+      lng: -73.9865,
+    },
+    organizer: "Times Square Alliance",
+    category: "New Year's Eve",
+    tickets: { priceFrom: 0, currency: "USD" },
+    ticket: {
+      url: "https://www.timessquarenyc.org/nye/nye-faq",
+      label: "Times Square Alliance: New Year's Eve FAQ",
+      sells: false,
+    },
+    source: {
+      name: "Times Square Alliance",
+      url: "https://www.timessquarenyc.org/times-square-new-years-eve",
+      verifiedOn: "2026-11-05",
+    },
+    body: [
+      "The Times Square Alliance's New Year's Eve page is headed <strong>2027 Times Square New Year's Eve</strong>: the night of <strong>Thursday, December 31, 2026</strong>, when the New Year's Eve Ball descends from the flagpole on top of <strong>One Times Square</strong> as the clock reaches midnight. The celebration in the street is free. In the Alliance's words, no tickets are needed, there are no public viewing spaces for sale, and the viewing areas fill first come, first served.",
+      "## What is announced so far",
+      "The date and the format. The Alliance has not yet published this year's performers or hour-by-hour schedule, and its FAQ and live schedule still describe the last edition. The times and access rules below are the ones that FAQ gives. Until the Alliance updates them they are the best guide there is, so check them again in late December.",
+      "## The times",
+      "The viewing areas officially open at <strong>3pm</strong>, and people start gathering in the afternoon. At about <strong>6pm</strong> the Ball is raised to the top of the pole at One Times Square, at Broadway and 43rd Street. At exactly <strong>11:59pm</strong> it makes its <strong>60-second descent</strong> to midnight. The Alliance says it cannot predict when each viewing area fills: that depends on the year and the weather.",
+      "## Where to stand and how to get in",
+      "The Ball is best seen along <strong>Broadway from 43rd to 50th Street</strong> and along <strong>Seventh Avenue as far north as 59th Street</strong>. The sound system is in the Bowtie, where Broadway and Seventh Avenue cross, and there are screens through the area. You reach the viewing areas only from <strong>Sixth Avenue or Eighth Avenue</strong>, through the access points at <strong>45th, 49th, 52nd and 56th Streets</strong>. Once the streets are closed, nobody crosses Broadway or Seventh Avenue, so pick the side first. From <strong>4pm</strong>, Sixth and Eighth Avenues close to pedestrians and traffic, with crossings at 41st, 44th, 47th, 50th, 54th and 57th Streets.",
+      "## Getting there",
+      "The 1, 2, 3, 7, A, B, C, D, E, F, M, N, Q, R, W and the S shuttle all serve Times Square. The MTA has advised revelers in past years not to use the 42nd Street station on the night: get off at a station nearby and walk in. Based on previous years, the Alliance says to expect the 42nd Street entrances of Times Sq–42 St to close at about 10am, and the 49 St (N, R, W) and 50 St (1) stations to be bypassed from about noon until about 12:15am.",
+      "## Parties and passes",
+      "Restaurants and hotels inside the area hold private parties, and those need a ticket bought in advance from the business. The Alliance warns against \"multiple venue\" or \"all access\" passes, which promise a way past the police lines that does not exist.",
+      "## Other ways to see the year out",
+      "In Central Park the <a href=\"/events/nyrr-midnight-run-central-park-2026/\" title=\"NYRR Midnight Run 2026\">NYRR Midnight Run</a> starts with fireworks at midnight. The morning after, the <a href=\"/events/coney-island-polar-bear-plunge-2027/\" title=\"Coney Island Polar Bear Plunge 2027\">Polar Bear Plunge</a> opens the Atlantic at Coney Island.",
+    ],
+    faq: [
+      {
+        q: "When is the Times Square Ball Drop this year?",
+        a: "On the night of Thursday, December 31, 2026. In the Alliance's FAQ, the Ball is raised at about 6pm and begins its 60-second descent at 11:59pm.",
+      },
+      {
+        q: "Do I need a ticket for Times Square on New Year's Eve?",
+        a: "No. The Times Square Alliance says the outdoor celebration is free and open to everyone, first come, first served, and that no viewing spaces are sold. Only private parties inside the area's restaurants and hotels need tickets.",
+      },
+      {
+        q: "Where do I enter, and when should I get there?",
+        a: "From Sixth or Eighth Avenue, at the access points on 45th, 49th, 52nd and 56th Streets. The viewing areas officially open at 3pm, and the Alliance cannot say when each one fills.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/nyrr-midnight-run-central-park-2026/",
+        eyebrow: "11:59pm, December 31",
+        title: "NYRR Midnight Run",
+        text: "Four miles in Central Park, starting under the fireworks at midnight.",
+      },
+      {
+        href: "/events/coney-island-polar-bear-plunge-2027/",
+        eyebrow: "January 1",
+        title: "Coney Island Polar Bear Plunge",
+        text: "The morning after: a free dip in the Atlantic at Stillwell Avenue.",
+      },
+      {
+        href: "/events/phish-new-years-eve-madison-square-garden-2026/",
+        eyebrow: "7:30pm, December 31",
+        title: "Phish on New Year's Eve",
+        text: "The band's New Year's Eve at Madison Square Garden, doors at 6:30pm, all four nights sold out.",
+      },
+    ],
+    expertise:
+      "Choose your side of Broadway before you set out: once the streets close nobody crosses it, so a destination east of Broadway and Seventh Avenue means entering from Sixth Avenue, and one west means Eighth. The viewing areas open at 3pm and the Alliance cannot say when each one fills, so arriving for midnight means arriving in the afternoon: eat beforehand and dress for nine hours outdoors. Leave the subway a station or two away from 42nd Street and walk in.",
+  },
+  {
+    slug: "nyrr-midnight-run-central-park-2026",
+    createdAt: "2026-11-05T20:43:04.000Z",
+    updatedAt: "2026-11-05T20:43:04.000Z",
+    site: "nyc42",
+    title: "NYRR Midnight Run 2026",
+    cardTitle: "NYRR Midnight Run",
+    titleSeo: "NYRR Midnight Run, Central Park, New York: Dec 31",
+    summary:
+      "New York's New Year's Eve race: four miles in Central Park, starting at midnight under fireworks after the countdown at 11:59pm on Thursday, December 31, 2026. NYRR members $58.16, non-members $74.02, ages 8 and up.",
+    start: "2026-12-31",
+    end: "2027-01-01",
+    startTime: "23:59",
+    utcOffset: "-05:00",
+    venue: "Central Park",
+    city: "New York",
+    country: "United States",
+    geo: {
+      name: "Central Park",
+      lat: 40.7812,
+      lng: -73.9665,
+    },
+    organizer: "New York Road Runners",
+    category: "New Year's Eve",
+    tickets: { priceFrom: 58.16, priceTo: 74.02, currency: "USD" },
+    ticket: {
+      url: "https://www.nyrr.org/races-and-events/2026/nyrr-midnight-run",
+      label: "Register with New York Road Runners",
+      sells: true,
+    },
+    source: {
+      name: "New York Road Runners",
+      url: "https://www.nyrr.org/races-and-events/2026/nyrr-midnight-run",
+      verifiedOn: "2026-11-05",
+    },
+    body: [
+      "New York Road Runners ends its year with a race that starts at midnight. The <strong>NYRR Midnight Run</strong> is on <strong>Thursday, December 31, 2026</strong>, in <strong>Central Park</strong>: the countdown to 2027 starts at <strong>11:59pm</strong>, and as the clock strikes twelve a fireworks display goes up and the <strong>4-mile</strong> race begins.",
+      "## Registration and price",
+      "On November 5 the race page listed two registration options. The one that is <strong>eligible for 9+1 credit</strong> was marked near capacity, at <strong>$58.16</strong> for NYRR members, <strong>$74.02</strong> for non-members, and free for 10K Philanthropic Members. The option without 9+1 credit was sold out. Entry fees are non-refundable and cannot be deferred or transferred. The race is open to runners aged <strong>8 and up</strong>, and runners can register as woman, man or nonbinary.",
+      "## The marathon credit",
+      "This is the last race of the 2026 9+1 program, which earns guaranteed entry to the 2027 TCS New York City Marathon. NYRR reminds runners that their membership must be current on the night for the race to count. The souvenir this year is a winter accessory.",
+      "## Bib pickup: not in the park",
+      "There is <strong>no bib pickup in Central Park on race day</strong>. Numbers, with the timing tag, are collected in advance at the NYRR RUN CENTER at <strong>320 West 57th Street</strong>, between Eighth and Ninth Avenues. On December 31 the last pickup is at <strong>10pm</strong>, and the RUN CENTER holds a New Year's Eve party from <strong>6pm to 10pm</strong>. Every participant gets a wristband for a +1 guest to spectate in the park.",
+      "## Start, course and bags",
+      "NYRR has not yet published the start location or the course: the page says to check back closer to the race. Only clear bags are accepted at bag check, no larger than 17 by 20 by 7 inches. NYRR recommends checking mta.info before you travel.",
+      "## The rest of the night",
+      "If running is not the plan, the Ball drops at 11:59pm in <a href=\"/events/times-square-new-years-eve-ball-drop-2026/\" title=\"Times Square New Year's Eve 2027: the Ball Drop\">Times Square</a>, free and without tickets. Brooklyn runs first: the <a href=\"/events/pptc-turkey-trot-prospect-park-2026/\" title=\"PPTC Turkey Trot: Race for Reconciliation 5 Miler 2026\">Prospect Park Turkey Trot</a> is on Thanksgiving morning, November 26.",
+    ],
+    faq: [
+      {
+        q: "When does the 2026 NYRR Midnight Run start?",
+        a: "The countdown starts at 11:59pm on Thursday, December 31, 2026, and the 4-mile race begins at midnight, with fireworks, in Central Park.",
+      },
+      {
+        q: "How much is the entry fee?",
+        a: "For the option with 9+1 credit, $58.16 for NYRR members and $74.02 for non-members, as listed on November 5, 2026, when it was near capacity. The option without 9+1 credit was sold out. Fees are non-refundable.",
+      },
+      {
+        q: "Is there an age limit, and where do I get my bib?",
+        a: "The race is for ages 8 and up. Bibs are picked up in advance at the NYRR RUN CENTER, 320 West 57th Street; there is no pickup in the park, and the last pickup on December 31 is at 10pm.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/times-square-new-years-eve-ball-drop-2026/",
+        eyebrow: "11:59pm, December 31",
+        title: "Times Square Ball Drop",
+        text: "The free New Year's Eve in Midtown: viewing areas open at 3pm, entry from Sixth or Eighth Avenue.",
+      },
+      {
+        href: "/events/tcs-new-york-city-marathon-2026/",
+        eyebrow: "November 1",
+        title: "TCS New York City Marathon",
+        text: "The race the 9+1 program leads to: the Midnight Run is the last qualifier for 2027.",
+      },
+      {
+        href: "/events/phish-new-years-eve-madison-square-garden-2026/",
+        eyebrow: "7:30pm, December 31",
+        title: "Phish on New Year's Eve",
+        text: "The band's New Year's Eve at Madison Square Garden, doors at 6:30pm, all four nights sold out.",
+      },
+    ],
+    expertise:
+      "Register now rather than in December: on November 5 the one option still open, with 9+1 credit, was already near capacity, and the other was sold out. Collect the bib before New Year's Eve if you can. There is no pickup in the park, and on the 31st the RUN CENTER on West 57th Street closes pickup at 10pm, two hours before the start. A clear bag is the only kind bag check accepts, so pack the dry layer for after the finish in one.",
+  },
+  {
+    slug: "phish-new-years-eve-madison-square-garden-2026",
+    createdAt: "2026-11-05T20:43:04.000Z",
+    updatedAt: "2026-11-05T20:43:04.000Z",
+    site: "nyc42",
+    title: "Phish New Year's Eve at Madison Square Garden 2026",
+    cardTitle: "Phish on New Year's Eve",
+    titleSeo: "Phish New Year's Eve, Madison Square Garden, New York",
+    summary:
+      "New York's New Year's Eve concert at Madison Square Garden: Phish plays the third night of its New Year's Run on Thursday, December 31, 2026. Doors 6:30pm, show 7:30pm.",
+    start: "2026-12-31",
+    startTime: "19:30",
+    utcOffset: "-05:00",
+    venue: "Madison Square Garden, 4 Pennsylvania Plaza",
+    city: "New York",
+    country: "United States",
+    geo: {
+      name: "Madison Square Garden",
+      lat: 40.750513,
+      lng: -73.993516,
+    },
+    organizer: "Phish",
+    category: "New Year's Eve",
+    ticket: {
+      url: "https://phish.com/tours/dates/thu-2026-12-31-madison-square-garden/",
+      label: "Phish: the December 31 show page",
+      sells: false,
+      soldOut: true,
+    },
+    source: {
+      name: "Phish",
+      url: "https://phish.com/tours/dates/thu-2026-12-31-madison-square-garden/",
+      verifiedOn: "2026-11-05",
+    },
+    body: [
+      "Phish spends the turn of the year at Madison Square Garden again. Its <strong>New Year's Run 2026–2027</strong> is four nights at the Garden, <strong>December 30</strong> to <strong>January 2</strong>, and the New Year's Eve show is on <strong>Thursday, December 31, 2026</strong>. The band's page gives <strong>doors at 6:30pm</strong> and <strong>show time at 7:30pm</strong>. The run ends on January 2 with the band's <strong>100th show at the Garden</strong>, which makes New Year's Eve the 98th.",
+      "## Tickets: sold out",
+      "Ticket requests through Phish's own ticketing closed on October 12, and general sale opened on <strong>October 16</strong> at noon. On November 5 the band's tour page marked all <strong>four nights sold out</strong>. Phish's FAQ says seats can still come free closer to the date, as production needs change or limited-view areas are released, and that any it releases are sold through Ticketmaster or Live Nation and never at the Garden box office. The same FAQ warns against scalpers and ticket agencies, whose tickets are often counterfeit.",
+      "## Getting there",
+      "The arena directions the New York Rangers publish for the Garden put it at <strong>4 Pennsylvania Plaza</strong>, on Seventh Avenue between West 31st and West 33rd Streets, directly above Penn Station. The <strong>1, 2, 3, A, C and E</strong> stop at 34 St–Penn Station; the B, D, F, M, N, Q and R stop at 34 St–Herald Square. PATH trains stop at 33rd Street, and the LIRR and NJ Transit run into Penn Station below the arena. The M4, M10, M16, M34 and Q32 buses stop at Seventh Avenue and Penn Station. The <a href=\"/events/times-square-new-years-eve-ball-drop-2026/\" title=\"Times Square New Year's Eve 2027: the Ball Drop\">Times Square</a> viewing areas begin about ten blocks north, so leaving the Garden after midnight, the train underneath is quicker than any walk uptown.",
+    ],
+    faq: [
+      {
+        q: "What time does Phish start on New Year's Eve at Madison Square Garden?",
+        a: "Phish's show page for Thursday, December 31, 2026 gives doors at 6:30pm and show time at 7:30pm.",
+      },
+      {
+        q: "Are there still tickets for Phish on December 31?",
+        a: "On November 5, 2026, all four New Year's Run nights were marked sold out. Phish says any seats released later go through Ticketmaster or Live Nation, never the Garden box office.",
+      },
+      {
+        q: "Which show is Phish's 100th at the Garden?",
+        a: "The last night of the run, January 2, 2027. New Year's Eve is the third of the four nights, the band's 98th at Madison Square Garden.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/times-square-new-years-eve-ball-drop-2026/",
+        eyebrow: "11:59pm, December 31",
+        title: "Times Square Ball Drop",
+        text: "The free New Year's Eve ten blocks north: viewing areas open at 3pm, entry from Sixth or Eighth Avenue.",
+      },
+      {
+        href: "/events/nyrr-midnight-run-central-park-2026/",
+        eyebrow: "11:59pm, December 31",
+        title: "NYRR Midnight Run",
+        text: "Four miles in Central Park, starting under the fireworks at midnight.",
+      },
+      {
+        href: "/events/harry-styles-madison-square-garden-final-night-2026/",
+        eyebrow: "Madison Square Garden",
+        title: "Harry Styles: the final night",
+        text: "The close of the Together, Together residency at the same arena, on Halloween.",
+      },
+    ],
+    expertise:
+      "Don't go to the Garden on the 31st without a ticket in hand: Phish says released seats never reach the box office, so the arena is the worst place to look for one, and the street outside is where the counterfeits are. Check Ticketmaster and Live Nation through the day instead. With a ticket, take the subway to 34 St–Penn Station and come up inside the building. Midtown traffic is heavy on New Year's Eve, and the Times Square closures start about ten blocks north.",
   },
 ];

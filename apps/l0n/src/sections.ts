@@ -43,9 +43,9 @@ export function sections(items: FeedItem[]): Section[] {
         return {
           title: "New Year's Eve in London 2026: fireworks and tickets",
           description:
-            "New Year's Eve in London: the Thames fireworks on 31 December 2026, the ticket release and the viewing areas, as the Mayor of London published them.",
+            "New Year's Eve in London 2026: the Thames fireworks, the Nutcracker matinee at the Coliseum and La La Land at the Royal Albert Hall, each with its source.",
           h1: "New Year's Eve in London",
-          lede: "Where to be at midnight on 31 December and what it takes to get there — the time, the price and the way in, as the organiser gave them.",
+          lede: "How to spend 31 December in London, from an afternoon at the ballet to midnight on the Thames — the date, the way in and where we read it, as the organiser gave them.",
           headings: {
             events: "Where to see the New Year in",
             upcoming: "This year's dates",

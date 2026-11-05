@@ -56,6 +56,11 @@ const KINDS: { slug: string; hy: string; en: string; adult?: boolean; icon?: str
 // read off a title.
 const INTENTS: { slug: string; hy: string; en: string; tag: string; icon: string }[] = [
   { slug: "jazz", hy: "Ջազ", en: "Jazz", tag: "jazz", icon: "mic" },
+  // The tag goes on an entry only where the box office itself says the
+  // show is for children or gives a children's age — never on our own
+  // "suits the family" line, and never on an adult concert that merely
+  // lets a six-year-old in.
+  { slug: "kids", hy: "Երեխաների համար", en: "For children", tag: "kids", icon: "family" },
 ];
 
 /** Section slugs whose page carries the 18+ check. */
@@ -129,6 +134,25 @@ export function sections(items: FeedItem[], lang: Lang): Section[] {
               h1: "Jazz in Yerevan",
               lede: "Jazz concerts in Yerevan with a date — big-band evenings at the Khachaturian Hall, trios and visiting singers — the price of a ticket, and a link to where we read it.",
               headings: { events: "Jazz concerts with a date", upcoming: "Coming up", past: "Past concerts" },
+            };
+      }
+      if (g.key === "kids") {
+        return lang === "hy"
+          ? {
+              title: "Մանկական ներկայացումներ Երևանում 2026",
+              description:
+                "Մանկական ներկայացումներ Երևանում՝ ամսաթվով․ ամանորյա ներկայացումներ և հեքիաթային համերգներ երեխաների համար՝ ժամով և տոմսի գնով, ինչպես հրապարակել է տոմսարկղը։",
+              h1: "Մանկական ներկայացումներ Երևանում",
+              lede: "Ինչ կա Երևանում երեխաների համար՝ ամսաթվով․ ժամը և տոմսի գինը, ինչպես նշել է թատրոնը կամ տոմսարկղը, և հղումն այնտեղ, որտեղ կարդացել ենք։",
+              headings: { events: "Ներկայացումներ երեխաների համար", upcoming: "Առաջիկայում", past: "Անցած" },
+            }
+          : {
+              title: "Children's shows in Yerevan 2026: dates and tickets",
+              description:
+                "Children's shows in Yerevan by date: New Year plays and fairy-tale concerts for children, with the time and the ticket price as the box office published them.",
+              h1: "Children's shows in Yerevan",
+              lede: "What is on in Yerevan for children, by date — the time and the price of a ticket as the theatre or the box office gave them, and a link to where we read it.",
+              headings: { events: "Shows for children", upcoming: "Coming up", past: "Already gone" },
             };
       }
       // Named for the closing date, because that is the question: a visitor

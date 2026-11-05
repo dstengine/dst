@@ -30,6 +30,11 @@ const TAGS: Record<string, Vocabulary> = {
   AI: { slug: "ai", plural: "AI", label: "AI" },
   Crypto: { slug: "crypto", plural: "crypto", label: "Crypto" },
   "Real estate": { slug: "real-estate", plural: "real estate", label: "Real estate" },
+  // A date rather than a subject, and the one date of the Dubai year that
+  // is the country's own: what a resident plans the long weekend around.
+  // The name has been Eid Al Etihad since 2023, and both names are typed,
+  // so the label carries the one people know and the copy carries both.
+  "UAE National Day": { slug: "uae-national-day", plural: "UAE National Day", label: "National Day" },
 };
 
 // No "all" chip: the group's feed is two feeds at two addresses, and a
@@ -44,6 +49,21 @@ export function sections(items: FeedItem[]): Section[] {
     tags: TAGS,
     home: "Dubai",
     copy: (g) => {
+      if (g.key === "UAE National Day") {
+        return {
+          title: "UAE National Day 2026 in Dubai: Eid Al Etihad events",
+          description:
+            "UAE National Day 2026 in Dubai: Brand Dubai's National Month to December 2, the Eid Al Etihad celebrations from November 30 to December 3 and the day itself.",
+          h1: "UAE National Day in Dubai",
+          lede: "Eid Al Etihad, the 55th UAE National Day, falls on December 2, 2026. What is on in Dubai for it — each date as the organiser gave it, and a link to where we read it.",
+          headings: {
+            events: "Eid Al Etihad in Dubai",
+            upcoming: "2026 dates",
+            past: "Already gone",
+            news: "National Day news",
+          },
+        };
+      }
       // A kind has a plural to be talked about with; a place is a proper
       // noun, and lower-casing it wrote "united arab emirates" into the
       // description of /uae/.

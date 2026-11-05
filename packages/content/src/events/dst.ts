@@ -456,7 +456,7 @@ export const items: EventItem[] = [
   {
     slug: "dubai-fitness-challenge-2026",
     createdAt: "2026-10-24T16:00:00+04:00",
-    updatedAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-11-05T20:43:04.000Z",
     site: "dst",
     image: "/covers/dubai-fitness-challenge-2026.jpg",
     imageAlt: "A grid of 42 small paper squares in blue, grey and cream on a navy ground, each with a single running figure, one square carrying a small gold dot",
@@ -510,6 +510,12 @@ export const items: EventItem[] = [
         eyebrow: "October 31",
         title: "Haunted Town Night at IMG Worlds",
         text: "Halloween indoors with DJ Bliss and DJ Badir, 20:00 to 01:00, from AED 220.",
+      },
+      {
+        href: "/events/national-month-dubai-2026/",
+        eyebrow: "November 3 to December 2",
+        title: "National Month in Dubai",
+        text: "Brand Dubai's month of events leading to the 55th Eid Al Etihad, over the same weeks.",
       },
     ],
     expertise:
@@ -693,7 +699,7 @@ export const items: EventItem[] = [
   {
     slug: "global-village-season-31-2026",
     createdAt: "2026-10-24T16:00:00+04:00",
-    updatedAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-11-05T20:43:04.000Z",
     site: "dst",
     image: "/covers/global-village-season-31-2026.jpg",
     imageAlt: "A ring of small pavilions in cut paper, each roof a different shape, around a lit central square",
@@ -757,6 +763,18 @@ export const items: EventItem[] = [
         eyebrow: "October 31",
         title: "Haunted Town Night at IMG Worlds",
         text: "Halloween indoors with DJ Bliss and DJ Badir, 20:00 to 01:00, from AED 220.",
+      },
+      {
+        href: "/events/eid-al-etihad-celebrations-dubai-2026/",
+        eyebrow: "November 30 to December 3",
+        title: "Eid Al Etihad in Dubai",
+        text: "The city's four-day National Day window, with fireworks and cultural shows on the official calendar.",
+      },
+      {
+        href: "/events/eid-al-etihad-uae-national-day-dubai-2026/",
+        eyebrow: "December 2",
+        title: "Eid Al Etihad 2026",
+        text: "The 55th UAE National Day falls on a Wednesday in the middle of the season.",
       },
     ],
     expertise:
@@ -1114,5 +1132,235 @@ export const items: EventItem[] = [
     ],
     expertise:
       "For a family on Halloween weekend this is the easy choice: free, in the afternoon and indoors. It runs through Sunday, so a visit built around the 5pm costume competition is as good as a Saturday one. Register for the goodie bags before you drive, and aim for the Picnic Square stage on the first floor.",
+  },
+  {
+    slug: "national-month-dubai-2026",
+    createdAt: "2026-11-05T20:43:04.000Z",
+    updatedAt: "2026-11-05T20:43:04.000Z",
+    site: "dst",
+    title: "National Month 2026",
+    cardTitle: "National Month in Dubai",
+    titleSeo: "National Month 2026 in Dubai: November 3 to December 2",
+    summary:
+      "Dubai's National Month runs from November 3 to December 2, 2026: Brand Dubai's programme of events across the emirate, from UAE Flag Day to the 55th Eid Al Etihad, with the Flag Garden and the UAE Parade among its initiatives.",
+    start: "2026-11-03",
+    end: "2026-12-02",
+    utcOffset: "+04:00",
+    city: "Dubai",
+    country: "United Arab Emirates",
+    organizer: "Brand Dubai, Government of Dubai Media Office",
+    category: "UAE National Day",
+    ticket: {
+      url: "https://mediaoffice.ae/en/news/2026/novemebr/02-11/brand-dubai-to-organise-national-month",
+      label: "Official announcement",
+      sells: false,
+    },
+    source: {
+      name: "Government of Dubai Media Office",
+      url: "https://mediaoffice.ae/en/news/2026/novemebr/02-11/brand-dubai-to-organise-national-month",
+      verifiedOn: "2026-11-05",
+    },
+    body: [
+      "Dubai gives the run-up to the UAE's national day a whole month. <strong>National Month</strong> runs from <strong>November 3 to December 2, 2026</strong>, from UAE Flag Day to the <strong>55th Eid Al Etihad</strong>, and is organised across the emirate by <strong>Brand Dubai</strong>, the creative arm of the Government of Dubai Media Office, with government, semi-government and private-sector partners.",
+      "## What is on the programme",
+      "UAE Flag Day fell on Tuesday, <strong>November 3</strong>, the first day of the month; the Government of Dubai Media Office marked it in a release that morning. The announcement of <strong>November 2</strong> lists among its key initiatives the <strong>UAE Flag Day</strong> celebrations, the <strong>Eid Al Etihad</strong> festivities, the <strong>Flag Garden</strong>, the <strong>UAE Parade</strong>, and <strong>Stories of Our Determination</strong>, a short-film competition launched by the Dubai Films and Games Commission. The initiative itself was launched by Sheikh Ahmed bin Mohammed bin Rashid Al Maktoum, Second Deputy Ruler of Dubai and Chairman of the Dubai Media Council.",
+      "## Dates and places still to come",
+      "The official release gives the month and the five headings, not the venues. Its own words are that the dates and locations of the events <strong>will be announced progressively</strong>, and that further events by partner organisations will follow. The UAE Parade, the Flag Garden and the Eid Al Etihad festivities each get their place and time in those later announcements; this page will carry them as they are published.",
+      "## Prices",
+      "The release publishes no prices. Brand Dubai's programme is a public celebration rather than a ticketed season, but nothing on the official page says every event will be free, so a price is only given here once an organiser publishes it.",
+      "## How it ends",
+      "The month closes on <strong>Wednesday, December 2</strong>, the national day itself, covered on <a href=\"/events/eid-al-etihad-uae-national-day-dubai-2026/\" title=\"UAE National Day 2026 in Dubai: Eid Al Etihad, December 2\">Eid Al Etihad 2026 in Dubai</a>. The last days overlap with the city's own celebration window, <a href=\"/events/eid-al-etihad-celebrations-dubai-2026/\" title=\"Eid Al Etihad 2026 in Dubai: November 30 to December 3\">Eid Al Etihad in Dubai from November 30 to December 3</a>, with fireworks and cultural shows on the city's retail calendar.",
+      "## The same weeks in Dubai",
+      "The month shares November with the <a href=\"/events/dubai-fitness-challenge-2026/\" title=\"Dubai Fitness Challenge 2026: dates, Dubai Ride, Dubai Run\">Dubai Fitness Challenge</a>, which runs to November 29, and with the <a href=\"/events/emirates-dubai-7s-2026/\" title=\"Emirates Dubai 7s 2026: dates, tickets and line-up\">Emirates Dubai 7s</a> at The Sevens from November 27 to 29.",
+    ],
+    faq: [
+      {
+        q: "When is National Month 2026 in Dubai?",
+        a: "From November 3 to December 2, 2026 — from UAE Flag Day to the 55th Eid Al Etihad.",
+      },
+      {
+        q: "What events are part of National Month?",
+        a: "Brand Dubai names the UAE Flag Day celebrations, the Eid Al Etihad festivities, the Flag Garden, the UAE Parade and the Stories of Our Determination short-film competition. Other events by partner organisations are announced during the month.",
+      },
+      {
+        q: "Where are the National Month events in Dubai?",
+        a: "Across the emirate. The official announcement of November 2 gives no venues yet; Brand Dubai says dates and locations are announced progressively.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/eid-al-etihad-uae-national-day-dubai-2026/",
+        eyebrow: "December 2",
+        title: "Eid Al Etihad 2026",
+        text: "The 55th UAE National Day, the day National Month builds up to.",
+      },
+      {
+        href: "/events/eid-al-etihad-celebrations-dubai-2026/",
+        eyebrow: "November 30 to December 3",
+        title: "Eid Al Etihad in Dubai",
+        text: "Four days of fireworks, cultural shows and family events on Dubai's official calendar.",
+      },
+      {
+        href: "/events/dubai-fitness-challenge-2026/",
+        eyebrow: "To November 29",
+        title: "Dubai Fitness Challenge 2026",
+        text: "Thirty minutes a day for thirty days, running through most of the same month.",
+      },
+    ],
+    expertise:
+      "National Month is announced as a frame first and filled in later: on November 5 the official page has the dates and the key initiatives but not one venue. The parade route and the National Day venues come in the later announcements, so the useful thing to do now is to keep the evening of December 2 free rather than to book anything — a ticket sold today for a 'National Day event' is not one Brand Dubai has announced.",
+  },
+
+  {
+    slug: "eid-al-etihad-celebrations-dubai-2026",
+    createdAt: "2026-11-05T20:43:04.000Z",
+    updatedAt: "2026-11-05T20:43:04.000Z",
+    site: "dst",
+    title: "Eid Al Etihad Celebrations 2026",
+    cardTitle: "Eid Al Etihad in Dubai",
+    titleSeo: "Eid Al Etihad 2026 in Dubai: November 30 to December 3",
+    summary:
+      "Dubai celebrates Eid Al Etihad, UAE National Day, from November 30 to December 3, 2026, with fireworks, cultural showcases and family activities on the city's official 2026 calendar.",
+    start: "2026-11-30",
+    end: "2026-12-03",
+    utcOffset: "+04:00",
+    city: "Dubai",
+    country: "United Arab Emirates",
+    organizer: "Dubai Festivals and Retail Establishment",
+    category: "UAE National Day",
+    ticket: {
+      url: "https://www.mediaoffice.ae/en/news/2025/november/25-11/dubai-launches-2026-retail-calendar-marking-10-years-of-festivals-and-experiences",
+      label: "Official 2026 calendar",
+      sells: false,
+    },
+    source: {
+      name: "Government of Dubai Media Office",
+      url: "https://www.mediaoffice.ae/en/news/2025/november/25-11/dubai-launches-2026-retail-calendar-marking-10-years-of-festivals-and-experiences",
+      verifiedOn: "2026-11-05",
+    },
+    body: [
+      "Dubai marks the UAE's national day over four days. The city's official <strong>2026 Retail Calendar</strong>, published by the Dubai Festivals and Retail Establishment, gives <strong>Eid Al Etihad (UAE National Day)</strong> the window from <strong>Monday, November 30 to Thursday, December 3, 2026</strong>, with <strong>fireworks</strong>, <strong>cultural showcases</strong> and <strong>family activities</strong> across the city.",
+      "## Why four days",
+      "The national day itself is <strong>December 2</strong>, the date of the union in 1971; this year is the <strong>55th</strong> Eid Al Etihad. Dubai's window opens two days earlier and closes the day after, so the celebration takes in the public holiday rather than a single evening. The holiday days are announced by the UAE government, and the government's u.ae portal lists National Day as <strong>2 and 3 December</strong>; the day itself has its own page, <a href=\"/events/eid-al-etihad-uae-national-day-dubai-2026/\" title=\"UAE National Day 2026 in Dubai: Eid Al Etihad, December 2\">Eid Al Etihad 2026 in Dubai</a>.",
+      "## Fireworks: where and when",
+      "The calendar promises fireworks but does not name the sites or the times. Those have not been published yet; this page adds each one once its own official page publishes it.",
+      "## Prices",
+      "No prices are published for the celebrations as a whole. Whether a given fireworks site or show charges entry is a question for that site's own announcement, and a price appears here only once it is published.",
+      "## The rest of the month",
+      "The four days are the end of Brand Dubai's <a href=\"/events/national-month-dubai-2026/\" title=\"National Month 2026 in Dubai: November 3 to December 2\">National Month</a>, which began on November 3. <a href=\"/events/global-village-season-31-2026/\" title=\"Global Village Dubai Season 31: dates, hours, AED 30 tickets\">Global Village</a> is open every evening of the window, and <a href=\"/events/blockchain-life-dubai-2026/\" title=\"Blockchain Life 2026 in Dubai\">Blockchain Life</a> runs on December 1 and 2.",
+    ],
+    faq: [
+      {
+        q: "When are the Eid Al Etihad celebrations in Dubai in 2026?",
+        a: "From Monday, November 30 to Thursday, December 3, 2026, according to Dubai's official 2026 Retail Calendar. National Day itself is Wednesday, December 2.",
+      },
+      {
+        q: "Where are the National Day fireworks in Dubai?",
+        a: "The official calendar promises fireworks over the four days but does not name the sites or times yet; this page adds each one once its official page publishes it.",
+      },
+      {
+        q: "Are the Eid Al Etihad celebrations free?",
+        a: "No price is published for the celebrations as a whole. Each venue states its own entry, so check its official page once it announces its programme.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/eid-al-etihad-uae-national-day-dubai-2026/",
+        eyebrow: "December 2",
+        title: "Eid Al Etihad 2026",
+        text: "The 55th UAE National Day itself, and what the government lists as the holiday.",
+      },
+      {
+        href: "/events/national-month-dubai-2026/",
+        eyebrow: "November 3 to December 2",
+        title: "National Month in Dubai",
+        text: "Brand Dubai's month of events: Flag Garden, UAE Parade and a short-film competition.",
+      },
+      {
+        href: "/events/global-village-season-31-2026/",
+        eyebrow: "All season",
+        title: "Global Village Season 31",
+        text: "The pavilions on Sheikh Mohammed bin Zayed Road, open every evening of the holiday, tickets AED 25 to 30.",
+      },
+    ],
+    expertise:
+      "The four-day window is fixed on the city's calendar; the fireworks sites are not, and they are what people plan around. Until the venues publish their own National Day times, any list of sites is last year's list. Two things follow from the dates alone: Monday, November 30 is a working day for most, while the holiday the u.ae portal lists falls on the Wednesday and Thursday, so the evenings of December 2 and 3 are the ones to keep free; and the Emirates Dubai 7s on Al Ain Road ends on Sunday, November 29, the evening before the window opens.",
+  },
+
+  {
+    slug: "eid-al-etihad-uae-national-day-dubai-2026",
+    createdAt: "2026-11-05T20:43:04.000Z",
+    updatedAt: "2026-11-05T20:43:04.000Z",
+    site: "dst",
+    title: "Eid Al Etihad 2026: the 55th UAE National Day",
+    cardTitle: "Eid Al Etihad 2026",
+    titleSeo: "UAE National Day 2026 in Dubai: Eid Al Etihad, December 2",
+    summary:
+      "Eid Al Etihad, UAE National Day, falls on Wednesday, December 2, 2026 — the 55th anniversary of the union — and Dubai marks it with the close of its National Month and a four-day celebration from November 30.",
+    start: "2026-12-02",
+    utcOffset: "+04:00",
+    city: "Dubai",
+    country: "United Arab Emirates",
+    organizer: "Government of the United Arab Emirates",
+    category: "UAE National Day",
+    ticket: {
+      url: "https://www.nma.gov.ae/en/media-center/events/eid-al-etihad",
+      label: "Official calendar entry",
+      sells: false,
+    },
+    source: {
+      name: "UAE National Media Authority",
+      url: "https://www.nma.gov.ae/en/media-center/events/eid-al-etihad",
+      verifiedOn: "2026-11-05",
+    },
+    body: [
+      "The UAE's national day is <strong>Wednesday, December 2, 2026</strong>. Officially called <strong>Eid Al Etihad</strong>, it marks the union of the emirates on <strong>2 December 1971</strong>, and this year's is the <strong>55th</strong>. The National Media Authority's events calendar lists it for <strong>December 2, 2026</strong>, across the United Arab Emirates.",
+      "## The public holiday",
+      "The holiday days are announced by the UAE government. Its official portal, u.ae, lists National Day among the public holidays as <strong>2 and 3 December (two days)</strong>, for the public and private sectors alike. Any change to those days for 2026 would come in a government announcement, and this page follows it.",
+      "## How Dubai marks it",
+      "In Dubai the day closes <a href=\"/events/national-month-dubai-2026/\" title=\"National Month 2026 in Dubai: November 3 to December 2\">National Month</a>, Brand Dubai's programme that began on November 3 with UAE Flag Day and includes the <strong>UAE Parade</strong> and the <strong>Flag Garden</strong>. It also falls in the middle of the city's <a href=\"/events/eid-al-etihad-celebrations-dubai-2026/\" title=\"Eid Al Etihad 2026 in Dubai: November 30 to December 3\">Eid Al Etihad celebrations, November 30 to December 3</a>, which the official calendar fills with fireworks, cultural showcases and family activities.",
+      "## Times and places",
+      "No official page gives a time or a Dubai venue for December 2 yet: the National Month release says the dates and locations of its events are announced progressively. The parade, the fireworks sites and any public celebration are added here once their organisers publish them.",
+      "## The theme",
+      "The u.ae portal gives <strong>Spirit of the Union</strong> as the standing theme of the national day celebrations, drawn from the vision of the late Sheikh Zayed bin Sultan Al Nahyan, the Founder President, with a logo after the image of the founding fathers' first meeting on 2 December 1971.",
+      "## Also that day",
+      "<a href=\"/events/blockchain-life-dubai-2026/\" title=\"Blockchain Life 2026 in Dubai\">Blockchain Life</a> closes its second day on December 2, and <a href=\"/events/global-village-season-31-2026/\" title=\"Global Village Dubai Season 31: dates, hours, AED 30 tickets\">Global Village</a> is open from 16:00, as on every evening of its season.",
+    ],
+    faq: [
+      {
+        q: "When is UAE National Day 2026?",
+        a: "Wednesday, December 2, 2026. It is the 55th Eid Al Etihad, the anniversary of the union of 2 December 1971.",
+      },
+      {
+        q: "Is December 3 a holiday too?",
+        a: "The holiday days are announced by the UAE government. Its u.ae portal lists National Day as two days, 2 and 3 December, for both the public and private sectors.",
+      },
+      {
+        q: "Where can I celebrate National Day in Dubai?",
+        a: "Dubai's celebrations run from November 30 to December 3 with fireworks and cultural shows, and Brand Dubai's National Month ends on December 2 with events including the UAE Parade. The venues and times are not published yet; this page adds each one once it is.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/eid-al-etihad-celebrations-dubai-2026/",
+        eyebrow: "November 30 to December 3",
+        title: "Eid Al Etihad in Dubai",
+        text: "The city's four-day celebration window, with fireworks and cultural shows.",
+      },
+      {
+        href: "/events/national-month-dubai-2026/",
+        eyebrow: "November 3 to December 2",
+        title: "National Month in Dubai",
+        text: "Brand Dubai's month of events leading to the national day, from Flag Day on.",
+      },
+      {
+        href: "/events/blockchain-life-dubai-2026/",
+        eyebrow: "December 1 and 2",
+        title: "Blockchain Life 2026",
+        text: "The crypto forum's two days fall on the eve of the national day and on the day itself.",
+      },
+    ],
+    expertise:
+      "December 2 is a Wednesday this year, so the two days the u.ae portal lists — Wednesday 2 and Thursday 3 December — leave only the Friday between the holiday and the weekend. The u.ae list, updated on 29 October, already gives those two days, so leave can be planned around Wednesday 2 and Thursday 3 December. For an evening out on the day itself, wait for the parade route and the fireworks sites: on November 5 no official page names a Dubai venue or a time for December 2.",
   },
 ];

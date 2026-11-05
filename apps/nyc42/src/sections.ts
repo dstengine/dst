@@ -174,9 +174,9 @@ export function sections(items: FeedItem[]): Section[] {
         return {
           title: "New Year's Eve in New York 2026: where to go",
           description:
-            "New Year's Eve in New York: where to see the year out, with the time, the price and the way in for each — as the organiser published it.",
+            "New Year's Eve in New York 2026: the Times Square ball drop, the Midnight Run in Central Park and Phish at Madison Square Garden, with the time and the way in.",
           h1: "New Year's Eve in New York",
-          lede: "Where to be at midnight on December 31, and what it takes to get there: the time, the price and the way in for each, as the organiser gave it, with a link to where we read it.",
+          lede: "Where to be at midnight on December 31, and what it takes to get there: the time and the way in for each, as the organiser gave it, with a link to where we read it.",
           headings: {
             events: "Where to see the New Year in",
             upcoming: "This year's dates",

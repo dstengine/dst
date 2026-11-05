@@ -1661,7 +1661,7 @@ export const items: EventItem[] = [
   {
     slug: "wiener-silvesterpfad-2026",
     createdAt: "2026-10-21T21:35:00+04:00",
-    updatedAt: "2026-10-21T21:35:00+04:00",
+    updatedAt: "2026-11-05T20:43:04.000Z",
     site: "vien",
     image: "/covers/wiener-silvesterpfad-2026.jpg",
     imageAlt:
@@ -1750,6 +1750,18 @@ export const items: EventItem[] = [
         eyebrow: "Rathausplatz",
         title: "Wiener Eistraum 2027",
         text: "Ab 22. Jänner wieder über 10.000 Quadratmeter Eis vor dem Rathaus, mit Sky Rink und Eisstockbahnen am Abend.",
+      },
+      {
+        href: "/veranstaltungen/silvesterkonzert-wiener-philharmoniker-2026/",
+        eyebrow: "31. Dezember, Musikverein",
+        title: "Silvesterkonzert der Wiener Philharmoniker",
+        text: "Um 19:30 Uhr unter Tugan Sokhiev, dasselbe Programm wie am Neujahrstag; Karten gab es nur über die Online-Verlosung.",
+      },
+      {
+        href: "/veranstaltungen/die-fledermaus-staatsoper-silvester-2026/",
+        eyebrow: "31. Dezember, Staatsoper",
+        title: "Die Fledermaus an der Staatsoper",
+        text: "Die Silvester-Operette von 18 bis 21:30 Uhr, danach bleibt Zeit für den Pfad.",
       },
     ],
     expertise:
@@ -2041,7 +2053,7 @@ export const items: EventItem[] = [
   {
     slug: "art-advent-karlsplatz-2026",
     createdAt: "2026-10-24T16:00:00+04:00",
-    updatedAt: "2026-10-24T16:00:00+04:00",
+    updatedAt: "2026-11-05T20:43:04.000Z",
     site: "vien",
     image: "/covers/art-advent-karlsplatz-2026.jpg",
     imageAlt:
@@ -2100,6 +2112,20 @@ export const items: EventItem[] = [
       {
         q: "Gibt es ein Kinderprogramm?",
         a: "Ja: Strohlandschaft, Draisinenexpress, Karussell der Fundgegenstände und Drehorgelmusik.",
+      },
+    ],
+    related: [
+      {
+        href: "/veranstaltungen/silvesterkonzert-wiener-philharmoniker-2026/",
+        eyebrow: "31. Dezember, Musikverein",
+        title: "Silvesterkonzert der Wiener Philharmoniker",
+        text: "Gleich neben dem Karlsplatz, um 19:30 Uhr unter Tugan Sokhiev; Karten gab es nur über die Online-Verlosung.",
+      },
+      {
+        href: "/veranstaltungen/die-fledermaus-staatsoper-silvester-2026/",
+        eyebrow: "31. Dezember, Staatsoper",
+        title: "Die Fledermaus an der Staatsoper",
+        text: "Die Silvester-Operette im Haus am Ring, von 18 bis 21:30 Uhr, dirigiert von Franz Welser-Möst.",
       },
     ],
   },
@@ -2978,5 +3004,173 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Der Name täuscht ein wenig: Ein Rundkurs am Steinhof ist kein flacher Stadtlauf. Das Areal liegt am Hang, und die Runde führt hinauf zur Kirche — wer auf der Hauptallee 5 Kilometer in einer bestimmten Zeit läuft, sollte hier ein paar Minuten mehr einplanen und die zweite Runde nicht zu schnell angehen. Mitte November ist es um zehn Uhr vormittags oft noch kühl und am Wienerwaldrand gern feucht; eine Schicht zum Ausziehen und trockene Sachen für nach dem Ziel sind die bessere Wahl als die Laufhose vom Sommer. Und weil Hunde am ganzen Gelände verboten sind, bleibt der Vierbeiner diesmal daheim.",
+  },
+  {
+    slug: "silvesterkonzert-wiener-philharmoniker-2026",
+    createdAt: "2026-11-05T20:43:04.000Z",
+    updatedAt: "2026-11-05T20:43:04.000Z",
+    site: "vien",
+    title: "Silvesterkonzert der Wiener Philharmoniker 2026",
+    titleSeo: "Silvesterkonzert Wien 2026: Philharmoniker im Musikverein",
+    cardTitle: "Silvesterkonzert der Philharmoniker",
+    summary:
+      "Silvester in Wien im Musikverein: Die Wiener Philharmoniker spielen am 31. Dezember 2026 um 19:30 Uhr unter Tugan Sokhiev Walzer und Polkas der Strauß-Familie, dasselbe Programm wie beim Neujahrskonzert. Die Karten von 30 bis 980 Euro wurden über eine Online-Verlosung vergeben, angemeldet wurde im Februar.",
+    start: "2026-12-31",
+    startTime: "19:30",
+    utcOffset: "+01:00",
+    venue: "Musikverein, Großer Saal",
+    city: "Wien",
+    country: "Österreich",
+    geo: {
+      name: "Musikverein, Wien",
+      lat: 48.200556,
+      lng: 16.372778,
+    },
+    organizer: "Wiener Philharmoniker",
+    category: "Silvester",
+    ticket: {
+      url: "https://www.wienerphilharmoniker.at/de/konzerte/silvesterkonzert/10875/",
+      label: "Konzertseite mit Programm",
+      sells: false,
+      soldOut: true,
+    },
+    tickets: { priceFrom: 30, priceTo: 980, currency: "EUR" },
+    source: {
+      name: "Wiener Philharmoniker — Karteninformationen",
+      url: "https://www.wienerphilharmoniker.at/de/neujahrskonzert/karteninformation",
+      verifiedOn: "2026-11-05",
+    },
+    body: [
+      "Am Abend vor dem Neujahrskonzert spielen die Wiener Philharmoniker dasselbe Programm schon einmal: das <strong>Silvesterkonzert</strong> am <strong>Donnerstag, 31. Dezember 2026, um 19:30 Uhr</strong> im <strong>Großen Saal des Musikvereins</strong>. Es dirigiert <strong>Tugan Sokhiev</strong>, mit dabei sind die <strong>Wiener Chormädchen</strong>.",
+      "## Wie man zu Karten kommt",
+      "Karten für die drei Konzerte zum Jahreswechsel verkaufen die Philharmoniker nicht an der Kassa, sondern <strong>verlosen</strong> sie über ihre eigene Website. Angemeldet wurde vom <strong>1. bis 28. Februar 2026</strong>; über den Ausgang der Verlosung wurden die Teilnehmer im März per E-Mail verständigt. Laut Orchester ist das die einzige Möglichkeit, Karten zu bekommen, und es rät ausdrücklich davon ab, auf Ticketplattformen und Zweitmarktbörsen zu stark überhöhten Preisen zu kaufen.",
+      "Für das Silvesterkonzert lagen die Preise zwischen <strong>30 und 980 Euro</strong>, pro Anmeldung gab es höchstens <strong>vier Karten</strong>. Die Registrierung für die Verlosung gilt jeweils nur für ein Jahr.",
+      "## Drei Konzerte, ein Programm",
+      "Das Programm ist bei allen drei Terminen gleich: die <strong>Voraufführung am 30. Dezember um 11 Uhr</strong> (Karten 25 bis 545 Euro), das Silvesterkonzert am 31. Dezember und das <strong>Neujahrskonzert am 1. Jänner 2027 um 11:15 Uhr</strong> (40 bis 1.320 Euro). Das Neujahrskonzert gehört schon zum neuen Jahr; wer an Silvester im Saal sitzen will, hat nur diesen einen Abend.",
+      "Gespielt werden Walzer, Polkas und Märsche, vor allem von <strong>Johann Strauß (Sohn)</strong> und <strong>Josef Strauß</strong>: unter anderem der Künstlerleben-Walzer, die Pizzicato-Polka, das Perpetuum mobile und der Schatz-Walzer, dazu Eduard Strauß, Josef Hellmesberger, Philipp Fahrbach, Cécile Chaminade und der Walzer aus Tschaikowskys Dornröschen.",
+      "## Im Haus",
+      "Das Musikvereinsgebäude öffnet laut Musikverein <strong>eine Stunde vor Beginn</strong>, in den Saal geht es in der Regel <strong>30 Minuten vorher</strong>. Wer zu spät kommt, wird erst in der Pause oder in einer Applauspause eingelassen. Mäntel, Taschen und Rucksäcke dürfen nicht in den Saal, auch nicht auf den Stehplatz; die Garderobe kostet eine Gebühr.",
+      "## Anreise",
+      "Der Musikverein steht am <strong>Musikvereinsplatz 1</strong> im ersten Bezirk. Mit der <strong>U1, U2 oder U4</strong> bis <strong>Karlsplatz</strong> (rund vier bis sieben Minuten zu Fuß), mit den Straßenbahnlinien <strong>1, 2 und 62</strong> bis Oper, Karlsplatz oder mit <strong>71 und D</strong> bis Schwarzenbergplatz (jeweils rund vier Minuten). Ein paar Gassen weiter beginnt um 18 Uhr <a href=\"/veranstaltungen/die-fledermaus-staatsoper-silvester-2026/\" title=\"Die Fledermaus an der Wiener Staatsoper zu Silvester 2026\">die Fledermaus in der Staatsoper</a>, und draußen läuft der <a href=\"/veranstaltungen/wiener-silvesterpfad-2026/\" title=\"Wiener Silvesterpfad 2026\">Wiener Silvesterpfad</a> durch die Innenstadt.",
+    ],
+    faq: [
+      {
+        q: "Wann ist das Silvesterkonzert der Wiener Philharmoniker 2026?",
+        a: "Am Donnerstag, 31. Dezember 2026, um 19:30 Uhr im Großen Saal des Musikvereins. Es dirigiert Tugan Sokhiev.",
+      },
+      {
+        q: "Wie bekommt man Karten für das Silvesterkonzert?",
+        a: "Nur über die Online-Verlosung der Wiener Philharmoniker. Die Anmeldung für 2026 lief vom 1. bis 28. Februar 2026, die Gewinner wurden im März verständigt. Die Preise lagen zwischen 30 und 980 Euro, höchstens vier Karten pro Anmeldung.",
+      },
+      {
+        q: "Ist das Programm dasselbe wie beim Neujahrskonzert?",
+        a: "Ja. Voraufführung am 30. Dezember, Silvesterkonzert am 31. Dezember und Neujahrskonzert am 1. Jänner 2027 haben dasselbe Programm. Auch die Karten für das Neujahrskonzert gibt es nur über die Verlosung.",
+      },
+    ],
+    related: [
+      {
+        href: "/veranstaltungen/die-fledermaus-staatsoper-silvester-2026/",
+        eyebrow: "31. Dezember, Staatsoper",
+        title: "Die Fledermaus an der Staatsoper",
+        text: "Die Silvester-Operette im Haus am Ring, 18 bis 21:30 Uhr, dirigiert von Franz Welser-Möst.",
+      },
+      {
+        href: "/veranstaltungen/wiener-silvesterpfad-2026/",
+        eyebrow: "31. Dezember, Innenstadt",
+        title: "Wiener Silvesterpfad 2026",
+        text: "Bühnen vom Rathausplatz bis zum Prater, Walzerkurse am Graben, Eintritt frei.",
+      },
+      {
+        href: "/veranstaltungen/art-advent-karlsplatz-2026/",
+        eyebrow: "Karlsplatz",
+        title: "Art Advent am Karlsplatz 2026",
+        text: "Der Kunsthandwerksmarkt vor der Karlskirche, ein paar Schritte vom Musikverein, bis 23. Dezember.",
+      },
+    ],
+    expertise:
+      "Wer bei der Verlosung im März keine Zusage bekommen hat, kommt für diesen Abend auf dem offiziellen Weg nicht mehr in den Saal; die Philharmoniker warnen selbst vor überteuerten Karten auf Zweitmarktbörsen. Wer Karten hat, kommt mit der U-Bahn bis Karlsplatz und rechnet mit der Garderobe: Mäntel und Taschen müssen abgegeben werden, und das Haus öffnet erst eine Stunde vor Beginn, um 18:30 Uhr. Wer es beim nächsten Jahreswechsel versuchen will, muss sich neu registrieren, denn die Anmeldung gilt nur ein Jahr; wann innerhalb der Frist man sich einträgt, ändert laut Orchester an den Chancen nichts.",
+  },
+  {
+    slug: "die-fledermaus-staatsoper-silvester-2026",
+    createdAt: "2026-11-05T20:43:04.000Z",
+    updatedAt: "2026-11-05T20:43:04.000Z",
+    site: "vien",
+    title: "Die Fledermaus an der Wiener Staatsoper",
+    titleSeo: "Fledermaus Staatsoper Wien: Silvester, 31. Dezember 2026",
+    cardTitle: "Die Fledermaus zu Silvester",
+    summary:
+      "Silvester in Wien in der Staatsoper: Am 31. Dezember 2026 spielt das Haus am Ring von 18 bis 21:30 Uhr die Fledermaus von Johann Strauß in der Inszenierung von Otto Schenk, dirigiert von Franz Welser-Möst, mit Michael Niavarani als Frosch.",
+    start: "2026-12-31",
+    startTime: "18:00",
+    endTime: "21:30",
+    utcOffset: "+01:00",
+    venue: "Wiener Staatsoper, Großer Saal",
+    city: "Wien",
+    country: "Österreich",
+    geo: {
+      name: "Wiener Staatsoper",
+      lat: 48.202778,
+      lng: 16.369167,
+    },
+    organizer: "Wiener Staatsoper",
+    category: "Silvester",
+    ticket: {
+      url: "https://www.wiener-staatsoper.at/kalender/detail/die-fledermaus/2026-12-31/",
+      label: "Karten bei der Staatsoper",
+      sells: true,
+    },
+    source: {
+      name: "Wiener Staatsoper — Die Fledermaus am 31. Dezember 2026",
+      url: "https://www.wiener-staatsoper.at/kalender/detail/die-fledermaus/2026-12-31/",
+      verifiedOn: "2026-11-05",
+    },
+    body: [
+      "Seit 1900 steht an Silvester fast immer dieselbe Operette auf dem Spielplan der Wiener Staatsoper: <strong>Die Fledermaus</strong> von Johann Strauß. Auch zum Jahreswechsel 2026/27 ist es so — am <strong>Donnerstag, 31. Dezember 2026</strong>, von <strong>18 bis 21:30 Uhr</strong> im Großen Saal, mit <strong>zwei Pausen</strong>.",
+      "## Wer spielt",
+      "Es dirigiert <strong>Franz Welser-Möst</strong>, die Inszenierung ist die von <strong>Otto Schenk</strong> mit dem Bühnenbild von Günther Schneider-Siemssen. Gabriel von Eisenstein singt Ludwig Mittelhammer, Rosalinde Julia Kleiter, Adele Nikola Hillebrand, Prinz Orlofsky Patricia Nolz, Dr. Falke Adrian Eröd. Den nie nüchternen Gerichtsdiener Frosch im dritten Akt spielt <strong>Michael Niavarani</strong>.",
+      "## Wie lang es dauert",
+      "Der erste Akt dauert rund <strong>50 Minuten</strong>, der zweite mit dem Ball beim Prinzen Orlofsky rund <strong>55</strong>, der dritte im Gefängnis wieder rund <strong>50</strong>, dazwischen zwei Pausen zu je etwa <strong>25 Minuten</strong>. Gesungen wird auf Deutsch; an jedem Sitzplatz gibt es Untertitel auf Deutsch, Englisch und weiteren Sprachen. Wer zu spät kommt, wird erst in der Pause eingelassen, nach der Pause gar nicht mehr.",
+      "## Karten und Stehplätze",
+      "Karten verkauft die Staatsoper selbst, online und an den Bundestheaterkassen; einen Preis für diesen Abend nennt die Vorstellungsseite nicht. <strong>Stehplätze</strong> gibt es laut Staatsoper am Vorstellungstag ab <strong>10 Uhr</strong> online und an den Bundestheaterkassen, mit BundestheaterCard schon am Tag davor. Für reguläre Abendvorstellungen hält die Stehplatzkassa am Eingang Operngasse zusätzlich ein fixes Kontingent ab <strong>80 Minuten vor Beginn</strong> bereit; ob das an Silvester gilt, sagt die Seite nicht.",
+      "Dieselbe Besetzung spielt die Fledermaus noch am <strong>1. Jänner 2027</strong>, am <strong>3. Jänner</strong> und am <strong>6. Jänner</strong>, jeweils um <strong>19 Uhr</strong>; am 6. Jänner dirigiert Patrick Lange.",
+      "## Anreise",
+      "Die Staatsoper steht am <strong>Opernring 2</strong>. Die Garderoben neben den Eingängen an der Operngasse sind kostenlos. Zur selben Zeit spielen ein paar Gassen weiter im Musikverein die Philharmoniker ihr <a href=\"/veranstaltungen/silvesterkonzert-wiener-philharmoniker-2026/\" title=\"Silvesterkonzert der Wiener Philharmoniker 2026\">Silvesterkonzert</a> (ab 19:30 Uhr), und in der Innenstadt läuft bis in die Neujahrsnacht der <a href=\"/veranstaltungen/wiener-silvesterpfad-2026/\" title=\"Wiener Silvesterpfad 2026\">Wiener Silvesterpfad</a>.",
+    ],
+    faq: [
+      {
+        q: "Wann spielt die Staatsoper die Fledermaus zu Silvester 2026?",
+        a: "Am Donnerstag, 31. Dezember 2026, von 18 bis 21:30 Uhr, mit zwei Pausen. Weitere Vorstellungen gibt es am 1., 3. und 6. Jänner 2027 um 19 Uhr.",
+      },
+      {
+        q: "Wer dirigiert und wer spielt den Frosch?",
+        a: "Franz Welser-Möst dirigiert, die Inszenierung ist von Otto Schenk. Den Frosch spielt Michael Niavarani.",
+      },
+      {
+        q: "Gibt es Stehplätze für die Silvestervorstellung?",
+        a: "Stehplätze verkauft die Staatsoper am Vorstellungstag ab 10 Uhr online und an den Bundestheaterkassen, mit BundestheaterCard schon am Vortag. Ob an Silvester auch das Kontingent an der Stehplatzkassa an der Operngasse 80 Minuten vor Beginn gilt, nennt die Staatsoper nicht.",
+      },
+    ],
+    related: [
+      {
+        href: "/veranstaltungen/silvesterkonzert-wiener-philharmoniker-2026/",
+        eyebrow: "31. Dezember, Musikverein",
+        title: "Silvesterkonzert der Wiener Philharmoniker",
+        text: "Dasselbe Programm wie am Neujahrstag, um 19:30 Uhr unter Tugan Sokhiev; Karten gab es nur über die Verlosung.",
+      },
+      {
+        href: "/veranstaltungen/wiener-silvesterpfad-2026/",
+        eyebrow: "31. Dezember, Innenstadt",
+        title: "Wiener Silvesterpfad 2026",
+        text: "Nach der Vorstellung hinaus auf die Straße: Bühnen vom Rathausplatz bis zum Prater, Eintritt frei.",
+      },
+      {
+        href: "/veranstaltungen/art-advent-karlsplatz-2026/",
+        eyebrow: "Karlsplatz",
+        title: "Art Advent am Karlsplatz 2026",
+        text: "Der Kunsthandwerksmarkt vor der Karlskirche, gleich hinter der Oper, bis 23. Dezember.",
+      },
+    ],
+    expertise:
+      "Wer einen Sitzplatz will, sieht jetzt im Webshop der Staatsoper nach und nicht erst im Dezember: Es gibt nur diesen einen Silvesterabend, die Jänner-Termine sind ein Ausweichplan mit derselben Besetzung. Wer auf einen Stehplatz setzt, schaut am 31. Dezember um 10 Uhr online nach — mit BundestheaterCard schon am 30. Dezember —, statt sich auf die Stehplatzkassa am Abend zu verlassen, von der die Staatsoper für Silvester nichts verspricht. Pünktlich sein lohnt sich doppelt: Wer den Beginn um 18 Uhr verpasst, sieht den ersten Akt nicht, und nach der Pause kommt niemand mehr hinein.",
   },
 ];
