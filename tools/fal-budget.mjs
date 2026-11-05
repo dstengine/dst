@@ -19,8 +19,9 @@ import path from "node:path";
 
 /** Dollars a day, all fal models together. Deliberately a constant and not
     an environment variable: a ceiling that can be raised by exporting a
-    variable is a suggestion. Changing it is a commit. */
-export const LIMIT = 1;
+    variable is a suggestion. Changing it is a commit. $1 until 6 Nov
+    2026, when the owner raised it to $4.20. */
+export const LIMIT = 4.2;
 
 const KEEP_DAYS = 90;
 // The path is overridable so the test can use a scratch file; the LIMIT is
