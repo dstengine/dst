@@ -877,7 +877,7 @@ export const guides: Guide[] = [
       {
         slug: "untold-dubai/tickets",
         createdAt: "2026-11-06T02:14:00+04:00",
-        updatedAt: "2026-11-06T02:14:00+04:00",
+        updatedAt: "2026-11-06T02:50:00+04:00",
         kind: "tickets",
         label: "Tickets",
         crumb: "Tickets",

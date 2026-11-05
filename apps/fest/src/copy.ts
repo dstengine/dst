@@ -436,6 +436,11 @@ const EN_AE_TOKENS = [
   `\\b\\d+ working days\\b`, // 14 working days (UNTOLD Dubai)
   `\\b21 and over\\b`, // aged 21 and over (UNTOLD Dubai)
   `\\b\\d{4} listing\\b`, // the UNTOLD Dubai 2027 listing (UNTOLD Dubai)
+  // The sellers' tier names keep their count with their capitalised unit,
+  // which GLUE_EN's lower-case "days?" does not reach: QA's sweep of 6
+  // November 2026 left "GA - 3 | Day Pass" and "VIP - 3 | Day Pass" split
+  // at a line's end on the tickets page at 305, 310, 340 and 390 px.
+  `\\b\\d Day Pass\\b`, // "GA - 3 Day Pass" (UNTOLD Dubai)
 ];
 const KEEP_EN_AE = new RegExp([KEEP_EN.source, ...EN_AE_TOKENS].join("|"), "g");
 const KEEP: Record<string, RegExp> = { en: KEEP_EN, "en-ae": KEEP_EN_AE, "en-au": KEEP_TOGETHER, es: KEEP_ES, "es-mx": KEEP_ES_MX, pt: KEEP_PT, th: KEEP_TH, fr: KEEP_FR };
