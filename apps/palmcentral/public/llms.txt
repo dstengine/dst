@@ -17,8 +17,8 @@ Key facts, current as of this site's last deploy:
 - [Location](https://palmcentral.dst.llc/location/): Where the Spine sits in Palm Jebel Ali's master plan, and real drive times to Downtown, the Marina, and both airports.
 - [Golden Visa](https://palmcentral.dst.llc/golden-visa/): Eligibility against the AED 2M threshold and how the property route to residency actually works.
 - [FAQ](https://palmcentral.dst.llc/faq/): Direct answers to the questions buyers ask before booking, including availability.
-- [News](https://palmcentral.dst.llc/news/): Pricing and release-phase changes at Palm Central.
-- [Events](https://palmcentral.dst.llc/events/): Sales launches and viewings, when there are any scheduled.
+- [News](https://palmcentral.dst.llc/news/): Nakheel's releases and build progress on Palm Jebel Ali, and the Dubai market Palm Central is priced against: deals, mortgages, airport works, new homes.
+- [Events](https://palmcentral.dst.llc/events/): Dubai's property shows and summits, its big trade expos and what is on near Palm Jebel Ali, each with why it is on a Palm Central calendar.
 
 ## News & events feed
 

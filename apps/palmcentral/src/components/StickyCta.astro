@@ -2,44 +2,68 @@
 // Keeps "Register interest" reachable without hunting for the nav or
 // scrolling to the bottom of a long page — but only once that's actually
 // true. The header already has its own "Register interest" link, so this
-// button stays hidden while the header is still on screen (it would just be
-// a second copy of the same thing) and appears once the header scrolls past.
-// It hides again near the real form so we're never showing two "Register
-// interest" prompts on screen at once — the form itself is on every page
-// now (InterestForm.astro), so "#interest" is a same-page anchor everywhere,
-// not just a link back to the homepage.
+// button stays hidden until the header's place on the page has scrolled
+// away. That place is a 1px sentinel put right after the header, not the
+// header itself: under 700px the header is sticky (BaseLayout) and never
+// leaves the screen, so watching it kept this button hidden on every phone.
+// The button hides again once the form is on screen or already above it,
+// so we're never showing two "Register interest" prompts at once, and while
+// the footer is in view, so it never sits on the links below the form (a
+// jump to the end can carry the form past without the form's observer
+// firing). Layout says where the form is: "#interest" on the pages that
+// render InterestForm.astro, "/#interest" on the front page's for the rest.
 //
 // Default state is hidden via CSS, not JS, so there's no flash of the
-// button before the header-visibility check runs.
+// button before the first check runs.
+interface Props {
+  href: string;
+}
+const { href } = Astro.props;
 ---
-<a class="sticky-cta button" href="#interest" title="Register interest in Palm Central" data-sticky-cta>
+<a class="sticky-cta button" href={href} title="Register interest in Palm Central" data-sticky-cta>
   Register interest
 </a>
 <script>
   const cta = document.querySelector<HTMLElement>("[data-sticky-cta]");
   const header = document.querySelector(".site-header");
   const interestForm = document.getElementById("interest");
+  const footer = document.querySelector(".site-footer");
 
   if (cta) {
     let pastHeader = false;
-    let nearForm = false;
-    const sync = () => cta.classList.toggle("is-visible", pastHeader && !nearForm);
+    let atFooter = false;
+    // Read from the page on every check rather than kept from the form's
+    // last callback: a jump that carries the form from wholly above the screen
+    // to wholly below it (Back, the skip link, find-in-page) fires nothing on
+    // the form, and a kept flag would hide the button until it next passed.
+    // 0.85 is the form observer's -15% bottom margin.
+    const formReached = () =>
+      !!interestForm && interestForm.getBoundingClientRect().top < innerHeight * 0.85;
+    const sync = () =>
+      cta.classList.toggle("is-visible", pastHeader && !formReached() && !atFooter);
 
     if (header) {
+      // Takes no room: one pixel tall, pulled up over the header's last row.
+      const sentinel = document.createElement("div");
+      sentinel.setAttribute("aria-hidden", "true");
+      sentinel.style.cssText = "height: 1px; margin-top: -1px; pointer-events: none;";
+      header.after(sentinel);
       new IntersectionObserver(([entry]) => {
-        pastHeader = !entry.isIntersecting;
+        pastHeader = !entry.isIntersecting && entry.boundingClientRect.top < 0;
         sync();
-      }).observe(header);
+      }).observe(sentinel);
     }
 
     if (interestForm) {
-      new IntersectionObserver(
-        ([entry]) => {
-          nearForm = entry.isIntersecting;
-          sync();
-        },
-        { rootMargin: "0px 0px -15% 0px" },
-      ).observe(interestForm);
+      // Only a trigger: sync() reads where the form is.
+      new IntersectionObserver(sync, { rootMargin: "0px 0px -15% 0px" }).observe(interestForm);
+    }
+
+    if (footer) {
+      new IntersectionObserver(([entry]) => {
+        atFooter = entry.isIntersecting;
+        sync();
+      }).observe(footer);
     }
   }
 </script>
@@ -54,12 +78,18 @@
     opacity: 0;
     transform: translateY(0.5em);
     pointer-events: none;
-    transition: opacity 0.2s ease, transform 0.2s ease;
+    /* Hidden means out of the tab order and the accessibility tree too, or a
+       keyboard reader tabs onto a button nobody can see. Visibility flips
+       after the fade out and at once on the way in. */
+    visibility: hidden;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s linear 0.2s;
   }
   .sticky-cta.is-visible {
     opacity: 1;
     transform: none;
     pointer-events: auto;
+    visibility: visible;
+    transition-delay: 0s;
   }
   @media (max-width: 640px) {
     .sticky-cta {

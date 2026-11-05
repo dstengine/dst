@@ -11,8 +11,17 @@ interface Props {
   jsonLd?: Record<string, unknown>[];
   /** og:image for this page — see BaseLayout. */
   image?: string;
+  /** The page renders InterestForm, so "Register interest" stays on it. */
+  hasForm?: boolean;
 }
-const { title, description, jsonLd, image } = Astro.props;
+const { title, description, jsonLd, image, hasForm = false } = Astro.props;
+
+// Where "Register interest" goes: the form on this page when it has one,
+// the front page's otherwise. The news, event and subject pages carry no
+// form of their own: on all of them it became the site's most repeated
+// text (tests/build-output.test.js, "how much of each site is the
+// template": 29% to 39%), and the reader is one tap from it anyway.
+const interestHref = hasForm ? "#interest" : "/#interest";
 
 const nav = [
   { href: "/", label: "Overview", title: "Palm Central overview" },
@@ -23,7 +32,7 @@ const nav = [
   { href: "/faq/", label: "FAQ", title: "Palm Central frequently asked questions" },
   { href: "/news/", label: "News", title: "What's changing at Palm Central" },
   { href: "/events/", label: "Events", title: "Palm Central events" },
-  { href: "#interest", label: "Register interest", title: "Register interest in Palm Central" },
+  { href: interestHref, label: "Register interest", title: "Register interest in Palm Central" },
 ];
 ---
 <BaseLayout
@@ -36,5 +45,5 @@ const nav = [
 >
   <LeadTracking slot="tracking" />
   <slot />
-  <StickyCta />
+  <StickyCta href={interestHref} />
 </BaseLayout>

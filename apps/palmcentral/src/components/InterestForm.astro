@@ -1,9 +1,10 @@
 ---
-// The actual lead-capture form, shared by every page rather than living
-// only on the homepage. Every "Register interest" link on the site —
-// header nav, sticky CTA, inline copy — points at "#interest" as a
-// same-page anchor now, so it has to resolve to something real wherever
-// the user happens to be, not just on "/".
+// The actual lead-capture form, shared by the front page and the reference
+// pages rather than living only on the homepage. A page that renders it
+// passes `hasForm` to Layout, which keeps the header nav and the sticky CTA
+// on "#interest"; on every other page Layout points those two at
+// "/#interest", this form on the front page. Inline copy is not rewritten:
+// on a page without the form it must link "/#interest" itself.
 import LeadForm from "@dst/ui/LeadForm.astro";
 import type { UnitType } from "../content";
 
