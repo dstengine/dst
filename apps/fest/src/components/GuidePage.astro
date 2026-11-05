@@ -24,6 +24,7 @@ import { coverStyle as coverCss } from "../cover";
 import { languagesFor } from "../routes";
 import { chrome, langOf, site } from "../site.config";
 import { datedPages } from "../dated";
+import { linksNye, nye } from "../nye";
 
 interface Props {
   event: FestEvent;
@@ -37,6 +38,10 @@ const home = site[langOf(guide.lang)];
 const path = pathOf(page);
 const ctx: Ctx = { event, guide, page, today, where: path };
 const main = mainPage(guide);
+// On the main page of a guide whose edition runs over New Year, one line to
+// the page of the festivals that do (src/nye.ts); in English, since only an
+// English guide is ever one of them.
+const eve = page === main && linksNye(guide, today) ? nye(today) : undefined;
 
 // The trail is the one in the structured data: the hub, then the guide's
 // own page under the event's name as the guide gives it, then this page
@@ -247,5 +252,6 @@ const coverStyle = cover ? coverCss(cover, Astro.site?.hostname ?? "") : "";
     </section>
   )}
 
+  {eve && <p class="guide-collection-line">{eve.line.before}<a href={eve.path} title={eve.title}>{eve.line.label}</a>{eve.line.after}</p>}
   {page.foot && <p class="guide-foot">{page.foot}</p>}
 </article>

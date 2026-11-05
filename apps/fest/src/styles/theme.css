@@ -820,6 +820,10 @@ h2 { overflow-wrap: break-word; }
   text-wrap: pretty;
 }
 :lang(th) .hub-card-blurb { line-height: 1.6; }
+/* One line after the months, and after a guide's sections, to the page of
+   the festivals over New Year (src/nye.ts). */
+.hub-collection-line,
+.guide-collection-line { margin-top: var(--space-4); }
 /* The foot: how the guides are made, then one line to the archive. */
 .hub-about > p { margin-top: var(--space-2); }
 .hub-archive-line {

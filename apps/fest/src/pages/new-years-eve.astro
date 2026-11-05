@@ -1,0 +1,54 @@
+---
+// /new-years-eve/: the festivals with a guide here that a reader can see the
+// new year in at, each on the hub's card (HubEntry, rules.ts hubCard) and in
+// the hub's order; which ones, and the words, are src/nye.ts's. Under the
+// cards, how the guides are made, as on the hub. Its trail is the hub and
+// this page; its Markdown twin is /new-years-eve.md (markdown.ts).
+import Layout from "../layouts/Layout.astro";
+import HubEntry from "../components/HubEntry.astro";
+import Breadcrumbs from "@dst/ui/Breadcrumbs.astro";
+import { events } from "../data/events/index";
+import { assertTitle, eventOf, hubCard, today } from "../rules";
+import { hub } from "../hub";
+import { nye, othersOf } from "../nye";
+import { chrome, site } from "../site.config";
+import { withSuffix } from "@dst/ui/title";
+
+const day = today();
+const page = nye(day);
+const { titleSuffix, keyword, homeHref, homeLabel } = site.en;
+assertTitle(withSuffix(page.title, titleSuffix, keyword, "en"), keyword, page.path);
+const host = Astro.site?.hostname ?? "";
+---
+<Layout
+  title={page.title}
+  description={page.description}
+  alternates={[{ lang: "en", href: page.path, label: "English", title: page.title }]}
+  noindex={!page.current}
+  crumbTrail={[{ name: homeLabel, path: homeHref }, { name: page.h1, path: page.path }]}
+>
+  <div class="container hub">
+    <Breadcrumbs
+      crumbs={[]}
+      current={page.h1}
+      homeHref={homeHref}
+      homeLabel={homeLabel}
+      homeTitle={chrome.en.rootCrumbTitle}
+      label={chrome.en.breadcrumbs}
+    />
+    <header class="hub-head">
+      <h1>{page.h1}</h1>
+      <p class="lede">{page.intro}</p>
+    </header>
+    <section class="hub-month" aria-labelledby="festivals">
+      <h2 id="festivals">{page.heading}</h2>
+      <div class="hub-grid">
+        {page.guides.map((guide) => <HubEntry card={hubCard(eventOf(events, guide), guide, day, host, othersOf(guide))} />)}
+      </div>
+    </section>
+    <section class="hub-about" aria-labelledby="about">
+      <h2 id="about">{hub.aboutHeading}</h2>
+      <p>{hub.about}</p>
+    </section>
+  </div>
+</Layout>

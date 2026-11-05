@@ -12,6 +12,7 @@ import type { Guide } from "./data/types";
 import { applySpans, blocksMd, inlineMd, pathOf, SITE, sourcesMd, type Ctx } from "./copy";
 import { eventOf, firstGuides, hubCard, hubOrder, hubSections, mainPage, today, twinsOf } from "./rules";
 import { hub } from "./hub";
+import { linksNye, nye, othersOf } from "./nye";
 import { chrome, site } from "./site.config";
 
 export const abs = (path: string) => `${SITE}${path}`;
@@ -25,6 +26,15 @@ export interface Doc {
 }
 
 const join = (parts: (string | undefined | false)[]) => parts.filter((p) => p !== undefined && p !== false).join("\n");
+
+/** The line to the New Year page, as the hub and a member guide's main
+    page print it (src/nye.ts). */
+function nyeMd(day: string): string[] {
+  const eve = nye(day);
+  return eve.current ? [`${eve.line.before}[${eve.line.label}](${abs(mdPath(eve.path))})${eve.line.after}`, ""] : [];
+}
+const nyeLine = (guide: Guide, page: Guide["pages"][number], day: string): string[] =>
+  page === mainPage(guide) && linksNye(guide, day) ? nyeMd(day) : [];
 
 function guideDocs(guide: Guide, day: string): Doc[] {
   const event = eventOf(events, guide);
@@ -72,6 +82,7 @@ function guideDocs(guide: Guide, day: string): Doc[] {
         page.sources !== undefined && "",
         page.links !== undefined && inlineMd(page.links, ctx),
         page.links !== undefined && "",
+        ...nyeLine(guide, page, day),
         page.foot,
         "",
         `Page: ${abs(pathOf(page))}`,
@@ -112,7 +123,36 @@ function hubDoc(day: string): Doc {
     path: hub.path,
     title: hub.title,
     summary: hub.description,
-    markdown: join([`# ${hub.h1}`, "", `> ${hub.description}`, "", hub.intro, "", ...months, `## ${hub.aboutHeading}`, "", hub.about, "", ...archiveMd()]),
+    markdown: join([`# ${hub.h1}`, "", `> ${hub.description}`, "", hub.intro, "", ...months, ...nyeMd(day), `## ${hub.aboutHeading}`, "", hub.about, "", ...archiveMd()]),
+  };
+}
+
+/** The New Year's Eve page: its cards as the hub's twin gives them, then
+    how the guides are made. */
+function nyeDoc(day: string): Doc {
+  const page = nye(day);
+  const cards = page.guides.flatMap((guide) => {
+    const event = eventOf(events, guide);
+    const main = mainPage(guide);
+    const card = hubCard(event, guide, day, "", othersOf(guide));
+    const ctx: Ctx = { event, guide, today: day, where: `${page.path} (Markdown)` };
+    return [
+      `### [${card.name}](${abs(mdPath(guide.path))}) (${guide.hubLabel})`,
+      "",
+      `${card.dates.text} · ${card.place}`,
+      "",
+      inlineMd(guide.hubBlurb, ctx),
+      "",
+      ...guide.pages.filter((p) => p !== main).map((p) => `- [${p.label}](${abs(`/${p.slug}.md`)}): ${p.description}`),
+      ...card.twins.map((t) => `- [${t.label}](${abs(mdPath(t.href))}): ${t.description}`),
+      "",
+    ];
+  });
+  return {
+    path: page.path,
+    title: page.title,
+    summary: page.description,
+    markdown: join([`# ${page.h1}`, "", `> ${page.description}`, "", page.intro, "", `## ${page.heading}`, "", ...cards, `## ${hub.aboutHeading}`, "", hub.about, ""]),
   };
 }
 
@@ -135,7 +175,7 @@ export const mdPath = (path: string) => (path === "/" ? "/index.md" : `${path.re
 
 export function docs(): Doc[] {
   const day = today();
-  return [hubDoc(day), ...guides.flatMap((g) => guideDocs(g, day))];
+  return [hubDoc(day), nyeDoc(day), ...guides.flatMap((g) => guideDocs(g, day))];
 }
 
 /** /llms.txt: the site's map, every guide and its pages, each linked to its
@@ -143,6 +183,7 @@ export function docs(): Doc[] {
     its further languages (Zamna Tulum's English after its Spanish). */
 export function llms(): string {
   const day = today();
+  const eve = nye(day);
   const lines = [
     `# ${chrome.en.llmsHeading}`,
     "",
@@ -155,6 +196,7 @@ export function llms(): string {
     hub.about,
     "",
     `- [${hub.h1}](${abs(mdPath(hub.path))}): ${site.en.homeTitle}`,
+    ...(eve.current ? [`- [${eve.title}](${abs(mdPath(eve.path))}): ${eve.description}`] : []),
     "",
   ];
   for (const first of hubOrder(firstGuides(guides), events, day)) {

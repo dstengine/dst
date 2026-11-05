@@ -15,6 +15,7 @@ import type { FestEvent, Guide, GuidePage } from "./data/types";
 import { pathOf, withoutSuffix } from "./copy";
 import { eventOf, mainPage } from "./rules";
 import { legacyPages, type LegacyPage } from "./legacy";
+import { NYE_PATH } from "./nye";
 
 /** First segments the app keeps for itself. */
 export const RESERVED = ["festivals", "go", "fonts", "_astro", "_assets", "sitemap-index.xml", "sitemap-0.xml", "llms.txt"];
@@ -63,6 +64,8 @@ export function assertRoutesAreUnique() {
   for (const name of RESERVED) claim(`/${name}`, "the app");
   claim("/", "the hub");
   claim("/index.md", "the hub's Markdown twin");
+  claim(NYE_PATH, "the New Year's Eve page");
+  claim(`${NYE_PATH.replace(/\/$/, "")}.md`, "the New Year's Eve page's Markdown twin");
   // The archive's pages first: they had their addresses before any guide.
   for (const { path } of legacyRoutes()) {
     const first = path.split("/").filter(Boolean)[0];

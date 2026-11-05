@@ -17,6 +17,7 @@ import OnThisPage from "@dst/ui/OnThisPage.astro";
 import { events, guides } from "../data/events/index";
 import { assertTitle, eventOf, hubCard, hubJumps, hubSections, today, twinsOf } from "../rules";
 import { hub } from "../hub";
+import { nye } from "../nye";
 import { site } from "../site.config";
 import { withSuffix } from "@dst/ui/title";
 
@@ -26,6 +27,8 @@ assertTitle(withSuffix(hub.title, titleSuffix, keyword, "en"), keyword, hub.path
 const sections = hubSections(guides, events, day);
 const host = Astro.site?.hostname ?? "";
 const { line } = hub.archive;
+// The New Year's Eve page, one line after the months (src/nye.ts).
+const eve = nye(day);
 ---
 <Layout
   title={hub.title}
@@ -46,6 +49,7 @@ const { line } = hub.archive;
         </div>
       </section>
     ))}
+    {eve.current && <p class="hub-collection-line">{eve.line.before}<a href={eve.path} title={eve.title}>{eve.line.label}</a>{eve.line.after}</p>}
     <section class="hub-about" aria-labelledby="about">
       <h2 id="about">{hub.aboutHeading}</h2>
       <p>{hub.about}</p>

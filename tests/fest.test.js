@@ -43,6 +43,7 @@ const routes = await import("../apps/fest/src/routes.ts");
 const { chrome, keywords, langOf } = await import("../apps/fest/src/site.config.ts");
 const { hub } = await import("../apps/fest/src/hub.ts");
 const { legacyPages } = await import("../apps/fest/src/legacy.ts");
+const nyeMod = await import("../apps/fest/src/nye.ts");
 const { wordsOf } = await import("../tools/text-dupes.mjs");
 
 const DAY = 86_400_000;
@@ -517,6 +518,35 @@ function assertTraced(event, key, go) {
   assert.equal(hostOf(go.url), hostOf(source.url), `go.${key}: leads to another host than its source ${go.source}`);
 }
 
+// /new-years-eve/ (apps/fest/src/nye.ts): its words name the festivals the
+// data puts over New Year, and a day after the season never stops a build.
+describe("the New Year page", () => {
+  test("the copy names the English guides the data puts over New Year, today", () => {
+    const page = nyeMod.nye(rules.today());
+    assert.ok(page.current, `${page.path}: the data gives ${page.guides.map((g) => g.event).join(", ")}, the copy names ${page.events.join(", ")}; rewrite the copy in src/nye.ts`);
+  });
+  test("every member is an English guide, and the line goes on its main page only", () => {
+    const day = rules.today();
+    for (const g of nyeMod.nye(day).guides) assert.match(g.lang, /^en\b/, g.slug);
+    for (const g of guides) if (!/^en\b/.test(g.lang)) assert.equal(nyeMod.linksNye(g, day), false, `${g.event}/${g.slug}`);
+  });
+  test("a build after New Year, or in the next season, still has the page", () => {
+    for (const day of ["2026-12-31", "2027-01-01", "2027-01-02", "2027-01-11", "2027-03-01", "2027-06-30", "2027-07-01", "2027-12-01"]) {
+      const page = nyeMod.nye(day);
+      assert.equal(page.year, 2026, day);
+      assert.deepEqual(page.guides.map((g) => g.event).sort(), [...page.events].sort(), day);
+    }
+  });
+  test("an edition counts when it runs over the night of 31 December or on 1 January", () => {
+    const over = (start, end) => nyeMod.overNewYear({ start, end }, 2026);
+    assert.equal(over("2026-12-28T08:00:00+11:00", "2027-01-01T18:00:00+11:00"), true);
+    assert.equal(over("2027-01-01T12:00:00+11:00", "2027-01-01T23:00:00+11:00"), true);
+    assert.equal(over("2026-12-31T22:00:00-05:00", "2027-01-10"), true);
+    assert.equal(over("2026-12-03T16:00:00+07:00", "2026-12-07T12:00:00+07:00"), false);
+    assert.equal(over("2027-01-14T19:30", "2027-02-07T00:30"), false);
+  });
+});
+
 describe("where a guide's links lead", () => {
   const KINDS = ["organiser", "seller", "resale", "venue", "public-body", "press", "seller-document", "maps"];
 
@@ -954,8 +984,10 @@ describe("the built pages", { skip: built ? false : "apps/fest/dist is missing: 
   // is, which was built for the guides.
   const LEGACY = new Set(legacyPages.map((p) => p.path));
 
-  test("the hub and every guide page, and no other content page", () => {
-    const expected = ["/", ...guides.flatMap((g) => g.pages.map((p) => `/${p.slug}/`)), ...LEGACY].sort();
+  // The New Year's Eve page (apps/fest/src/nye.ts) is the one page that is
+  // neither the hub, a guide's nor the archive's.
+  test("the hub, the New Year's Eve page and every guide page, and no other content page", () => {
+    const expected = ["/", "/new-years-eve/", ...guides.flatMap((g) => g.pages.map((p) => `/${p.slug}/`)), ...LEGACY].sort();
     assert.deepEqual(content.map(([p]) => p).sort(), expected);
   });
 
