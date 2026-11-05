@@ -28,7 +28,7 @@ export const runs: Run[] = [
         price: {
           from: 25,
           currency: "GBP",
-          checkedOn: "2026-09-22",
+          checkedOn: "2026-11-05",
           note: "the standard bottom of the range; individual performances price separately",
         },
       },
