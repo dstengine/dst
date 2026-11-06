@@ -371,4 +371,81 @@ export const items: NewsItem[] = [
     expertise:
       "For a Riviera resident the bus is only worth it on a Friday or Saturday night, when the car park is the problem, and then only route 103 from Union, because the Red Line from Business Bay reaches Union in twenty minutes and the bus is the shortest of the four. On a weekday evening drive, use the Al Ain Road entrance and park at the far end, where the queue to leave is half the length.",
   },
+  {
+    slug: "the-square-nad-al-sheba-opens-its-permanent-home-on-23-november",
+    createdAt: "2026-11-06T04:00:00+04:00",
+    updatedAt: "2026-11-06T04:00:00+04:00",
+    site: "riviera",
+    image: "/covers/the-square-nad-al-sheba-opens-its-permanent-home-on-23-november.jpg",
+    imageAlt: "A wide paper square of pale sand laid on a green ground, ringed by small white canopies and tiny palm trees, a round open stage at one end under an evening blue sky",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "The Square opens its permanent home in Nad Al Sheba on 23 November",
+    cardTitle: "The Square's new home opens 23 Nov",
+    titleSeo: "The Square Nad Al Sheba opens 23 Nov, from Azizi Riviera",
+    summary:
+      "The Square, Shamal's open-air dining and events destination, opens its permanent Nad Al Sheba home on 23 November 2026, free to enter and a short drive from Azizi Riviera.",
+    date: "2026-11-06",
+    promotedUntil: "2026-11-30",
+    category: "Nearby",
+    source: {
+      name: "Shamal Holding",
+      url: "https://www.shamal.com/press-releases/shamal-gives-the-square-a-permanent-year-round-home-in-nad-al-sheba",
+      verifiedOn: "2026-11-06",
+    },
+    body: [
+      "<strong>The Square</strong>, the open-air dining and events destination, is moving after two record seasons to a <strong>permanent, year-round home</strong> in <strong>Nad Al Sheba</strong>. Its owner, <strong>Shamal Holding</strong>, opens it to the public on <strong>Monday 23 November 2026</strong>.",
+      "## The first weekend belongs to Porsche",
+      "The new site opens with the sixth <a href=\"/events/icons-of-porsche-2026/\" title=\"Icons of Porsche 2026: 21–22 Nov, from Azizi Riviera\">Icons of Porsche</a> on <strong>21 and 22 November</strong>. On those two days only Icons of Porsche ticket holders get in; everyone else comes from the Monday.",
+      "## Bigger, and off Al Ain Road",
+      "The new home is <strong>off Al Ain Road</strong> and covers <strong>350,000 sq ft</strong>, more than twice the <strong>171,000 sq ft</strong> of the old site. It has <strong>more than 3,000 parking spaces</strong>, landscaped outdoor dining, larger public and family areas and a bigger children's play space. More restaurants, more events, family space, parking and valet were what visitors asked for over the first two seasons.",
+      "## A 24,000 sq m arena",
+      "The largest addition is an <strong>events arena of 24,000 sq m</strong>. Shamal's year-round programme covers live music, art and film, cars, food, wellness, markets, workshops and family days. Entry stays <strong>free</strong>; some programme elements are ticketed. <a href=\"/events/sole-dxb-2026/\" title=\"Sole DXB 2026: 11–13 December, from Azizi Riviera\">Sole DXB</a>, from 11 to 13 December, also comes to The Square.",
+      "## Twenty places to eat",
+      "There are <strong>20 restaurants, cafes and experiences</strong>. <strong>Cipriani</strong>, <strong>Public</strong> and <strong>Omar Odali</strong> return; new are <strong>Hikiniku</strong>, a concept by Home Bakery, <strong>The Espresso Lab</strong> and <strong>Shalwa</strong>, with <strong>Five Guys</strong> and <strong>Rowley's</strong>. The kitchens run from Italian, French and Japanese to live-fire cooking and Khaleeji food, with more names still to be announced.",
+      "## Why it moved",
+      "Shamal counts <strong>718,000 visitors</strong> last season, <strong>33% more</strong> than the season before. Its chief executive, <strong>Abdulla Binhabtoor</strong>, says the destination began as a seasonal idea that Dubai turned into a habit.",
+    ],
+    faq: [
+      {
+        q: "When does The Square open at its new home in Nad Al Sheba?",
+        a: "To the general public on Monday 23 November 2026. On 21 and 22 November entry is for Icons of Porsche ticket holders only.",
+      },
+      {
+        q: "Where is the new Square?",
+        a: "In Nad Al Sheba, off Al Ain Road, on a 350,000 sq ft site with more than 3,000 parking spaces.",
+      },
+      {
+        q: "Is entry free?",
+        a: "Yes. The Square stays free to enter; selected events in its programme are ticketed.",
+      },
+      {
+        q: "Which restaurants are at The Square?",
+        a: "Twenty in all, among them Cipriani, Public, Omar Odali, Hikiniku by Home Bakery, The Espresso Lab, Shalwa, Five Guys and Rowley's, with more to be announced.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/icons-of-porsche-2026/",
+        eyebrow: "21–22 November",
+        title: "Icons of Porsche 2026",
+        text: "The first weekend on the new square, for ticket holders only.",
+      },
+      {
+        href: "/events/sole-dxb-2026/",
+        eyebrow: "11–13 December",
+        title: "Sole DXB 2026",
+        text: "Music, sneakers and street culture on the same square.",
+      },
+      {
+        href: "/events/meydan-racing-season-2026-27/",
+        eyebrow: "Nad Al Sheba",
+        title: "Meydan racing season 2026–27",
+        text: "Race nights at the course in the same district all winter.",
+      },
+    ],
+    expertise:
+      "For Azizi Riviera the move changes the evening out more than the address does. A square that is open all year and free to walk into becomes the nearest place for a weeknight dinner outdoors without crossing into Downtown, and more than 3,000 parking spaces answer what visitors asked for most on busy nights. Go on the opening Monday or any weekday evening: ticketed weekends such as Icons of Porsche and Sole DXB are the nights to expect a crowd, and the nights to book a table rather than walk up.",
+  },
 ];
