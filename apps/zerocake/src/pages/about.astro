@@ -10,7 +10,8 @@ import PageHero from "@dst/ui/PageHero.astro";
 
   <section class="container">
     <h2>What this is</h2>
-    <p set:html={`<strong>zerocake.org</strong> publishes Monzero: guides to Monero written for someone starting from zero. Each guide takes one question a newcomer has and answers it from the source — the Monero project's own documentation, its code, or whoever published the figure — in plain words, with the date it was checked.`} />
+    <p set:html={`<strong>zerocake.org</strong> explains one piece of work: the patch that adds <strong>Monzero (XMZ)</strong>, a fork of Monero with a chain of its own, to Cake Wallet, the open-source wallet. The guides cover what the patch adds, how it handles seeds and nodes, how it was built and tested, and where its pull request stands, with the date each fact was checked.`} />
+    <p set:html={`The guides are written by the people who prepared the patch. Cake Wallet has not reviewed or accepted it, and neither Cake Wallet nor the Monzero project runs, reviews or endorses this site. Where a guide says “we”, it means us, and what follows is our own build, test or query.`} />
   </section>
 
   <section class="container">
@@ -18,15 +19,19 @@ import PageHero from "@dst/ui/PageHero.astro";
     <ol class="rules">
       <li>
         <h3>Every figure names where it came from</h3>
-        <p>A figure, a date or a version number comes from the project or the organisation that published it, and the guide says which and when it was checked. Where two sources disagree, the guide gives both.</p>
+        <p>A figure about the patch comes from the patch and its pull request text. A figure about Monzero comes from its own specification and README. Each guide names its source and the date it was checked.</p>
       </li>
       <li>
-        <h3>No price talk, no promise of returns</h3>
-        <p>What a coin is worth changes by the hour and is not this site's subject. The guides explain how Monero works and how to use it, not whether to buy it.</p>
+        <h3>Our builds and tests are marked as ours</h3>
+        <p>When a guide reports a build, a test or a query of a node, it says it was ours and names the machine and the toolchain. What was not tested is listed as plainly as what was.</p>
       </li>
       <li>
-        <h3>Nothing here is paid for</h3>
-        <p>No project, exchange or company pays to be mentioned, ranked or linked. A name in a guide is there because it is the source of the fact.</p>
+        <h3>Nothing to download</h3>
+        <p>The site describes the patch and the build; it does not distribute them. Cake Wallet's code is on its own repository, and Monzero's on its own.</p>
+      </li>
+      <li>
+        <h3>No price talk, and nothing paid for</h3>
+        <p>What XMZ is worth is not this site's subject, and no project, exchange or company pays to be mentioned or linked. A name in a guide is there because it is the source of the fact.</p>
       </li>
     </ol>
   </section>
