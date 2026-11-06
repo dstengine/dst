@@ -26,6 +26,7 @@ export const site = {
   partnerDisclosure: false,
   footerLinks: [
     { href: "/guides/", label: "Guides" },
+    { href: "/wallet/", label: "Wallet", title: "Random Wallet: our macOS wallet for RandomX coins, not released yet" },
     { href: "/about/", label: "About" },
   ],
   /** Turns on the RSS autodiscovery link in the head. */

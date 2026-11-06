@@ -1,0 +1,114 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { wallet } from "../content";
+import { go } from "../outbound";
+import PageHero from "@dst/ui/PageHero.astro";
+
+// Each coin the wallet holds, with what mines it and where that is written.
+// The algorithm is the project's own word for it: Monzero and Salvium say
+// RandomX and nothing more, so neither is given a variant name here.
+// Checked 6 November 2026.
+const coins = [
+  {
+    name: "Monero",
+    ticker: "XMR",
+    pow: "RandomX, rx/0",
+    note: "The coin RandomX was built for. It comes with Cake Wallet; nothing is added for it.",
+    sources: [{ label: "the coins guide", href: "/guides/coins-mined-with-randomx/", title: "Coins mined with RandomX and the variant each one runs" }],
+  },
+  {
+    name: "Wownero",
+    ticker: "WOW",
+    pow: "RandomWOW (rx/wow in XMRig)",
+    note: "A block every 300 seconds. Cake Wallet no longer offers Wownero for new wallets; this build still does.",
+    sources: [
+      { label: "Wownero's repository", href: go("wallet-wownero"), title: "Wownero source code on Codeberg" },
+      { label: "Cake Wallet pull request #3186", href: go("wallet-cake-wownero"), title: "Cake Wallet change that hides Wownero for new wallets" },
+    ],
+  },
+  {
+    name: "Monzero",
+    ticker: "XMZ",
+    pow: "RandomX",
+    note: "A network of its own built from Monero's code, with a block every 120 seconds and LWMA-1 difficulty from hard fork 17 at block 21,000.",
+    sources: [{ label: "Monzero's source repository", href: go("wallet-monzero"), title: "Monzero source code on GitHub" }],
+  },
+  {
+    name: "Salvium",
+    ticker: "SAL / SAL1",
+    pow: "RandomX",
+    note: "A block every 120 seconds, 8 decimal places. Since the Carrot upgrade (hard fork 10, block 334,750, October 2025) new coins and transfers use the SAL1 asset, and this wallet sends and receives SAL1 only. New wallets get a 25-word Legacy seed.",
+    sources: [
+      { label: "Salvium's repository", href: go("wallet-salvium"), title: "Salvium source code on GitHub" },
+      { label: "Salvium's documentation", href: go("wallet-salvium-docs"), title: "Salvium documentation: Salvium One and the Carrot upgrade" },
+    ],
+  },
+  {
+    name: "Minotari",
+    ticker: "XTM",
+    pow: "RandomX merge-mined with Monero (RxM), RandomX for Tari alone (RxT), Sha-3x and Cuckaroo 29",
+    note: "Tari's coin. Two of its four algorithms are RandomX. The wallet runs Tari's own Rust wallet code, from the Tari project's Minotari integration for Cake Wallet, which Cake Wallet has not merged.",
+    sources: [
+      { label: "Tari's mining RFC, RFC-0131", href: go("wallet-tari-rfc"), title: "Tari RFC-0131: mining and its four proof-of-work algorithms" },
+      { label: "Cake Wallet pull request #2862", href: go("wallet-cake-tari-pr"), title: "The Minotari integration for Cake Wallet, not merged" },
+    ],
+  },
+];
+---
+<Layout prose title={wallet.title} description={wallet.description}>
+  <PageHero title={wallet.h1}>
+    <p class="lede">{wallet.lede}</p>
+  </PageHero>
+
+  <section class="container">
+    <h2>Ours, and said so</h2>
+    <p>Random Wallet is made by the people who write this site. Elsewhere on random.directory a project is named because it is the source of a fact; this page is about a project of our own, and it says so first. Nobody pays for it to be here, and it is not offered for sale.</p>
+  </section>
+
+  <section class="container">
+    <h2>What it is</h2>
+    <p set:html={`Random Wallet is a build of <a href="${go("wallet-cake")}" title="Cake Wallet's source code, MIT licence">Cake Wallet</a>, the open-source wallet published by Cake Labs under the MIT licence, with more RandomX coins added to it. It keeps Cake Wallet's model: the keys and the seed are meant to stay with whoever holds the wallet, and nobody else is meant to be able to freeze or recover it. What is added is Monzero, Salvium and Minotari, and Wownero is kept on for new wallets.`} />
+  </section>
+
+  <section class="container">
+    <h2>The RandomX coins it holds</h2>
+    <ul class="coins">
+      {coins.map((c) => (
+        <li>
+          <h3>{c.name} <span class="ticker">{c.ticker}</span></h3>
+          <p class="pow"><span class="label">Mined with</span> {c.pow}</p>
+          <p>{c.note} <span class="src">{c.sources.length > 1 ? "Sources" : "Source"}: {c.sources.map((x, i) => (<>{i > 0 && " and "}<a href={x.href} title={x.title}>{x.label}</a></>))}.</span></p>
+        </li>
+      ))}
+    </ul>
+    <p>The wallet holds coins; it does not mine them. For that, see the <a href="/guides/xmrig/" title="XMRig, the RandomX miner most people run">XMRig guide</a> and the <a href="/guides/p2pool/" title="P2Pool: mining RandomX without a pool operator">P2Pool guide</a>; for the Macs it runs on, see <a href="/guides/randomx-on-apple-silicon/" title="RandomX on Apple Silicon: what an M-series Mac does">RandomX on Apple Silicon</a>.</p>
+  </section>
+
+  <section class="container">
+    <h2>Where it stands</h2>
+    <ul class="status">
+      <li><strong>Not released.</strong> There is no download and no published source.</li>
+      <li><strong>macOS on Apple Silicon only.</strong> No iPhone, Android, Linux or Windows build.</li>
+      <li><strong>Not notarised.</strong> The app is signed ad hoc, not with an Apple developer certificate, and macOS will warn before opening it.</li>
+      <li><strong>Not audited.</strong> Nobody outside has reviewed this build. Monero and Wownero are Cake Wallet's code; Minotari comes from a Tari integration Cake Wallet has not merged; Salvium uses Salvium's own bindings; and the build as a whole has run only on our own Macs.</li>
+      <li><strong>No date.</strong> No release date is set.</li>
+    </ul>
+  </section>
+</Layout>
+
+<style>
+  .coins {
+    margin: var(--space-3) 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: var(--space-3);
+  }
+  .coins h3 { margin: 0; font-size: var(--step-0); }
+  .coins .ticker { color: var(--ink-muted); font-weight: 400; }
+  .coins p { margin: 0.25em 0 0; max-width: 62ch; }
+  .coins .pow .label { color: var(--accent); font-weight: 700; }
+  .coins .src { color: var(--ink-muted); }
+  .status { padding-left: 1.2em; }
+  .status li { margin: 0.4em 0; max-width: 62ch; }
+</style>

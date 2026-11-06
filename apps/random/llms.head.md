@@ -7,13 +7,14 @@ How this site works, in four rules:
 - **Every figure names where it came from.** A memory size, a parameter or a release date is the specification's, the source code's or the publishing project's, and the guide says which and when it was checked.
 - **Our own measurements say they are ours.** Figures from machines we run are marked as such, with the machine and the conditions.
 - **No price talk, no promise of earnings.** The guides are about the algorithm and the software, not what a coin is worth or what a miner will make.
-- **Nothing here is paid for.** No pool, coin or software project pays to be mentioned, ranked or linked.
+- **Nothing here is paid for.** No pool, coin or software project pays to be mentioned, ranked or linked. The one project of our own, Random Wallet, is on its own page and says so.
 
 ## What a reader finds here
 
 - [Guides](https://random.directory/guides/): what RandomX is, RandomX v2, memory requirements, the variants (rx/0, rx/2, rx/wow, rx/arq and others), the coins that use it, P2Pool, XMRig, and RandomX on Apple Silicon.
 - One page per subject once it has two guides: [algorithm](https://random.directory/algorithm/), [hardware](https://random.directory/hardware/) and [mining](https://random.directory/mining/).
 - [About](https://random.directory/about/): the rules above, written out at length.
+- [Random Wallet](https://random.directory/wallet/): our own macOS wallet for RandomX coins (Monero, Wownero, Monzero, Salvium, Minotari), built on Cake Wallet. Not released: no download, no published source, not audited.
 - [Everything in one file](https://random.directory/llms-full.txt): every page as Markdown. Each page is also at its own address with `.md` appended.
 
 ## Where the figures come from

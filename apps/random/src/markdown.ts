@@ -10,7 +10,7 @@
 import type { NewsItem } from "@dst/content/types";
 import { newsBySite } from "@dst/content/news";
 import { newsHref } from "@dst/content/paths";
-import { about, guides, home, siteId } from "./content";
+import { about, guides, home, siteId, wallet } from "./content";
 import { sections } from "./sections";
 
 export const SITE = "https://random.directory";
@@ -96,6 +96,7 @@ export function docs(): Doc[] {
     { path: "/guides/", markdown: join([`# ${guides.h1}`, "", `> ${guides.lede}`, "", ...nwList]) },
     ...sectionDocs,
     { path: "/about/", markdown: join([`# ${about.h1}`, "", `> ${about.lede}`]) },
+    { path: "/wallet/", markdown: join([`# ${wallet.h1}`, "", `> ${wallet.lede}`]) },
     ...nw.map((n) => ({ path: newsHref(n, "/guides/"), markdown: newsMarkdown(n) })),
   ];
 }

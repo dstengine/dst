@@ -8,7 +8,7 @@ import type { NewsItem } from "@dst/content/types";
 export type { Section };
 
 // Slugs the site already spends on pages of its own.
-const RESERVED = ["about", "guides", "go", "li"];
+const RESERVED = ["about", "guides", "go", "li", "wallet"];
 
 /** A subject, and how its page talks about it. */
 interface Subject {

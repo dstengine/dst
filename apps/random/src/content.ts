@@ -38,6 +38,16 @@ export const about = {
   lede: `An independent reference to RandomX: the algorithm, the variants, the coins and the software. Nobody pays to be in it, and every figure on it names where it came from.`,
 };
 
+// Random Wallet is ours, which is why this page says so in its first lines:
+// the rule that nothing here is paid for covers what we make ourselves too.
+// It is not released, and the page says that as plainly as what it holds.
+export const wallet = {
+  title: "Our own macOS wallet for RandomX coins: Random Wallet",
+  description: "Our macOS wallet for coins mined with RandomX and its variants: Monero, Wownero, Monzero, Salvium and Tari's Minotari, built on Cake Wallet. Not released yet.",
+  h1: "Random Wallet, our wallet for RandomX coins",
+  lede: `A wallet for the coins a RandomX miner ends up holding, in one app: Monero and Wownero from Cake Wallet, with Monzero, Salvium and Minotari added. We make it, it runs on our own Macs, and it is not released yet.`,
+};
+
 /**
  * The site's RSS channel. It lives here rather than in the route because
  * site.config.ts needs the title too — the head's autodiscovery link is
