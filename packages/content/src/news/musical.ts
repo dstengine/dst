@@ -496,4 +496,91 @@ export const items: NewsItem[] = [
     expertise:
       "Pride is a West End-sized show in a theatre that is not in the West End: the Bridge is on the south bank by Tower Bridge, a short walk from London Bridge station. The group rate is the one to act on now: it closes on 6 November, six days before the first performance, and it does not cover half-term week in February or the Easter holidays. With a 12+ guidance and a 7.30pm curtain that comes down after ten, this is a show for teenagers and adults rather than for a family Christmas trip.",
   },
+  {
+    slug: "mrs-doubtfire-musical-plays-dublin-for-christmas",
+    createdAt: "2026-11-06T04:00:00+04:00",
+    updatedAt: "2026-11-06T04:00:00+04:00",
+    site: "musical",
+    image: "/covers/mrs-doubtfire-musical-plays-dublin-for-christmas.jpg",
+    imageAlt: "A red paper cardigan and a cream paper apron hanging from one peg on a dusk blue ground, a small green paper Christmas tree and a row of cut-paper Georgian doorways beneath them",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Mrs Doubtfire, the musical, is Dublin's Christmas show at the Bord Gáis, 2 December to 3 January",
+    cardTitle: "Mrs Doubtfire in Dublin for Christmas",
+    titleSeo: "Mrs Doubtfire musical Dublin: 2 Dec to 3 Jan, tickets",
+    summary:
+      "The comedy musical of Mrs Doubtfire plays the Bord Gáis Energy Theatre in Dublin from 2 December 2026 to 3 January 2027, the tour's one stop in the Republic of Ireland: Gabriel Vick as Daniel, tickets from €29.80, 2 hours 30 minutes with an interval.",
+    date: "2026-11-06",
+    until: "2027-01-03",
+    category: "Runs",
+    source: {
+      name: "Bord Gáis Energy Theatre",
+      url: "https://www.bordgaisenergytheatre.ie/show/mrs-doubtfire/",
+      verifiedOn: "2026-11-06",
+    },
+    action: {
+      url: "https://www.ticketmaster.ie/mrs-doubtfire-touring-tickets/artist/5416671",
+      label: "Tickets on Ticketmaster",
+      title: "Mrs Doubtfire musical in Dublin: tickets for the Bord Gáis Energy Theatre",
+    },
+    body: [
+      "The Christmas show at Dublin's biggest theatre this year is <strong>Mrs. Doubtfire</strong>, the West End comedy musical. It plays the <strong>Bord Gáis Energy Theatre</strong> on Grand Canal Square from <strong>Wednesday 2 December 2026</strong> to <strong>Sunday 3 January 2027</strong>, its only stop in the Republic of Ireland on a tour that runs on to the Grand Opera House in Belfast in April 2028.",
+      "Daniel Hillard will do anything for his children. After losing custody in a messy divorce he invents a Scottish nanny, <strong>Euphegenia Doubtfire</strong>, to stay in their lives, and the nanny teaches him more about being a father than he bargained for. The show is based on the Twentieth Century Studios film and on Anne Fine's novel <em>Madame Doubtfire</em>.",
+      "## The cast and the makers",
+      "<strong>Gabriel Vick</strong>, from the original London company, plays Daniel, with <strong>Adam Colbeck-Dunn</strong> as the alternate. <strong>Kara Lily Hayworth</strong> is Miranda Hillard, <strong>Aaliya Mai</strong> is Lydia, and the two younger children, Christopher and Natalie, are each shared by four young performers.",
+      "Music and lyrics are by <strong>Wayne and Karey Kirkpatrick</strong>, the book by <strong>Karey Kirkpatrick and John O'Farrell</strong>. <strong>Jerry Zaks</strong> directs and <strong>Lorin Latarro</strong> choreographs; the producers are Kevin McCollum and Jamie Wilson Productions.",
+      "## The Christmas schedule",
+      "Evenings are at <strong>7.30pm</strong> and matinees at <strong>2.30pm</strong>. There are two shows on most Thursdays and Saturdays, and on <strong>20, 22 and 23 December</strong> and <strong>28 to 30 December</strong>. The theatre is dark from <strong>24 to 26 December</strong> and on <strong>1 January</strong>; the first show after Christmas is <strong>Sunday 27 December at 4pm</strong>, and <strong>New Year's Eve</strong> has a 2.30pm matinee only. The last performance is the <strong>3 January</strong> matinee.",
+      "## Tickets and the practical part",
+      "Tickets start at <strong>€29.80</strong>, sold through Ticketmaster, the theatre's seller. The show runs <strong>2 hours 30 minutes</strong> including one interval, and doors open an hour before curtain. Under-16s must be with a parent or guardian aged 18 or over, and under-3s are not admitted to the auditorium. The production uses strobe and flashing lights, smoke and haze.",
+      "The signed performance is on <strong>Wednesday 9 December at 7.30pm</strong>. Some seats in the theatre are reached only by stairs; for step-free seating the venue asks you to contact its groups team.",
+      "## Before and after Dublin",
+      "The tour comes to Dublin from the <strong>Leeds Grand Theatre</strong> (10 to 29 November) and goes on to the <strong>King's Theatre, Glasgow</strong> (12 to 31 January). The same stage has <a href=\"/cats/dublin/\" title=\"Cats in Dublin at Bord Gáis Energy Theatre\">Cats for five nights in March</a>; the rest of the city's year is on <a href=\"/dublin/\" title=\"Musicals in Dublin\">our Dublin musicals page</a>.",
+    ],
+    faq: [
+      {
+        q: "When is Mrs Doubtfire the musical on in Dublin?",
+        a: "At the Bord Gáis Energy Theatre from Wednesday 2 December 2026 to Sunday 3 January 2027. There are no performances from 24 to 26 December or on 1 January.",
+      },
+      {
+        q: "How much are tickets for Mrs Doubtfire in Dublin?",
+        a: "From €29.80, sold through Ticketmaster, which the theatre's own page links to.",
+      },
+      {
+        q: "How long is Mrs Doubtfire the musical?",
+        a: "2 hours 30 minutes including one interval. Evening shows start at 7.30pm, so they finish around 10pm.",
+      },
+      {
+        q: "Is Mrs Doubtfire suitable for children?",
+        a: "Children aged 3 and over are admitted, and under-16s must be accompanied by a parent or guardian aged 18 or over. The show uses strobe lighting, smoke and haze.",
+      },
+      {
+        q: "Is there a signed performance?",
+        a: "Yes, on Wednesday 9 December 2026 at 7.30pm.",
+      },
+    ],
+    related: [
+      {
+        href: "/dublin/",
+        eyebrow: "Dublin",
+        title: "Musicals in Dublin",
+        text: "Every musical this site lists in Dublin, with dates and the theatres' own sellers.",
+      },
+      {
+        href: "/cats/dublin/",
+        eyebrow: "Bord Gáis Energy Theatre",
+        title: "Cats in Dublin at Bord Gáis Energy Theatre",
+        text: "Five nights, 16 to 20 March 2027, on the same stage.",
+      },
+      {
+        href: "/christmas/",
+        eyebrow: "London",
+        title: "Christmas musical show times in London 2026: Boxing Day, NYE",
+        text: "Which West End musicals play Christmas Eve, Boxing Day and New Year's Eve.",
+      },
+    ],
+    expertise:
+      "A five-week run over Christmas in what the theatre calls Ireland's largest theatre is the family booking of the Dublin winter, and the calendar is uneven. On 6 November Ticketmaster already rated the matinees of 3, 5 and 6 December and the evening of Saturday 5 December as low availability, while the Christmas-week dates from 27 to 30 December still read good. There are no Monday shows before Christmas, but Monday 28 December has two. The age line is the one to read before paying: nobody under 3 is let in at all, and every under-16 needs an adult with them. If 27 December is the plan, note it is a 4pm curtain rather than the usual 2.30pm.",
+  },
 ];
