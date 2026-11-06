@@ -44599,6 +44599,38 @@
           "/covers/zayon-halloween-house-party-2026-1536.webp"
         ]
       ]
+    },
+    "/covers/fontania-water-circus-tashir-arena-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/fontania-water-circus-tashir-arena-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/fontania-water-circus-tashir-arena-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/fontania-water-circus-tashir-arena-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/fontania-water-circus-tashir-arena-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/fontania-water-circus-tashir-arena-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/fontania-water-circus-tashir-arena-yerevan-2026-1024.webp"
+        ]
+      ]
     }
   },
   "vien.lol": {
