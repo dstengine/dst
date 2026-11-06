@@ -21,6 +21,21 @@
       "source": "/schedule/four-twenty-night-tea.ics",
       "destination": "/schedule/four-twenty-high-tea.ics",
       "statusCode": 301
+    },
+    {
+      "source": "/guides/how-to-make-azerbaijani-tea",
+      "destination": "/guides/",
+      "statusCode": 301
+    },
+    {
+      "source": "/guides/how-to-make-azerbaijani-tea/",
+      "destination": "/guides/",
+      "statusCode": 301
+    },
+    {
+      "source": "/guides/how-to-make-azerbaijani-tea.md",
+      "destination": "/guides/",
+      "statusCode": 301
     }
   ]
 }
