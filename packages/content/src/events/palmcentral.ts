@@ -345,4 +345,96 @@ export const items: EventItem[] = [
     expertise:
       "Big 5 is the week the contractors, consultants and suppliers behind every master plan in Dubai are in one building, which makes it the best place to hear what is actually being built and on what timetable. For anyone weighing a purchase on Palm Jebel Ali, the useful sessions are the Leaders' Summit and LiveableCitiesX, where developers and authorities speak in public; the show floor is for trade buyers. The World Trade Centre is at the far end of Sheikh Zayed Road from Palm Central, with its own stop on the Red Line, so the metro is a fair alternative to a long drive in show-week traffic.",
   },
+  {
+    slug: "gitex-global-2026-expo-city",
+    createdAt: "2026-11-06T04:00:00+04:00",
+    updatedAt: "2026-11-06T04:00:00+04:00",
+    site: "palmcentral",
+    image: "/covers/gitex-global-2026-expo-city.jpg",
+    imageAlt: "A vast exhibition hall under a curved steel roof, rows of glowing screens and small robots on stands, small visitors arriving from a metro train on the left",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "GITEX Global 2026 at the Dubai Exhibition Centre, Expo City",
+    cardTitle: "GITEX Global 2026 at Expo City",
+    titleSeo: "GITEX 2026 at Expo City: metro, parking, from Palm Central",
+    summary:
+      "GITEX Global moves to the Dubai Exhibition Centre at Expo City for 2026: the summit is at Dubai World Trade Centre on December 7, the expo at Expo City from December 8 to 11, 10:00 to 17:00. From Palm Central, what its organisers call the world's largest tech, AI and startup show is now at the near end of the city.",
+    start: "2026-12-07",
+    end: "2026-12-11",
+    utcOffset: "+04:00",
+    venue: "Dubai Exhibition Centre, Expo City Dubai, and Dubai World Trade Centre",
+    city: "Dubai",
+    geo: { name: "Dubai Exhibition Centre, Expo City Dubai", lat: 24.959572, lng: 55.145022 },
+    organizer: "Dubai World Trade Centre",
+    category: "Expo",
+    ticket: {
+      url: "https://visit.gitex.com/",
+      label: "Tickets and registration",
+    },
+    source: {
+      name: "GITEX Global",
+      url: "https://www.gitex.com/plan-your-visit-2026",
+      verifiedOn: "2026-11-06",
+    },
+    body: [
+      "In 2026 <strong>GITEX Global</strong> moves from the Dubai International Convention &amp; Exhibition Centre at the Trade Centre to a new home. The 2026 edition runs from <strong>December 7 to 11, 2026</strong>, and its exhibition floor is at the <strong>Dubai Exhibition Centre (DEC) at Expo City Dubai</strong>, on the Jebel Ali side of the city, much closer to Palm Jebel Ali than the Trade Centre.",
+      "## Two venues, two parts",
+      "The <strong>GITEX Summit</strong> opens the week on <strong>Monday, December 7</strong>, at <strong>Dubai World Trade Centre</strong>, from <strong>9:30 to 17:00</strong>. The <strong>GITEX Global Expo</strong> follows from <strong>Tuesday, December 8, to Friday, December 11</strong>, at the Dubai Exhibition Centre, from <strong>10:00 to 17:00</strong>; conference sessions run from <strong>11:00 to 16:00</strong>. Direct event shuttles run between the two venues.",
+      "## Why Expo City",
+      "Dubai World Trade Centre, which organises GITEX and Gulfood, announced the move in October 2025; its venue chief called it a new era for Dubai's event economy, and the announcement points to the venue's closeness to the upcoming <strong>Al Maktoum International Airport</strong>. The Dubai Exhibition Centre is undergoing a <strong>US$2.7 billion expansion</strong> to become what DWTC calls the region's largest purpose-built indoor events venue.",
+      "## What is on the floor",
+      "Alongside the main show run <strong>GITEX Agentix</strong>, <strong>GITEX World Robotix</strong>, <strong>GITEX MOBX Mobility</strong>, <strong>GITEX Super Computex</strong> for data centres, <strong>GITEX New Energyx</strong>, <strong>GITEX Quantum Expo</strong>, <strong>GITEX Retailx</strong>, <strong>GITEX Marketing Intelligence</strong> and <strong>LivX</strong>. The summit carries the <strong>LIVX World Longevity Forum</strong> and the <strong>GITEX Capital Forum</strong>.",
+      "## By metro",
+      "For the expo, take the Red Line to <strong>Expo 2020 Metro Station</strong>, five to ten minutes' walk from the halls. The organisers warn that two Red Line trains can arrive at the same platform: board the one marked Expo 2020. For the summit, the stop is <strong>World Trade Centre</strong>. A Silver or Gold Nol card suits several days; a Red Ticket suits a single trip.",
+      "## By car and taxi",
+      "Visitor parking at the Dubai Exhibition Centre is in lots <strong>P1 to P5</strong>, with Mobility Parking and Airshow Overflow Parking linked by event shuttle where available. Private cars drop off only at designated points, including the <strong>South Drop-Off</strong>. Park and Ride runs from the Centrepoint, e&amp;, National Paints and Al Kifaf (via Max) metro stations. Careem and Uber work 24 hours at both venues, and the code <strong>GITEX2026</strong> gives 20% off, up to AED 20, on two trips per user between December 7 and 11.",
+      "## From Palm Central",
+      "Until 2025, GITEX week meant the Trade Centre, the long drive up Sheikh Zayed Road. In 2026 the expo days are at the Expo City end of the city, the side <a href=\"/location/\" title=\"Where Palm Central is on Palm Jebel Ali: the Spine\">Palm Central faces</a>; only the summit day is downtown. The same hall holds half of <a href=\"/events/gulfood-2027/\" title=\"Gulfood 2027 from Palm Central: dates, hours, Expo City\">Gulfood 2027</a> in March, and the construction trade has its own week at <a href=\"/events/big-5-global-2026/\" title=\"Big 5 Global 2026 from Palm Central: 23–26 November\">Big 5 Global</a> in November.",
+    ],
+    faq: [
+      {
+        q: "When is GITEX Global 2026?",
+        a: "From December 7 to 11, 2026: the summit on December 7 and the expo from December 8 to 11.",
+      },
+      {
+        q: "Where is GITEX Global 2026?",
+        a: "The expo is at the Dubai Exhibition Centre in Expo City Dubai; the summit on December 7 is at Dubai World Trade Centre.",
+      },
+      {
+        q: "What are the GITEX 2026 opening hours?",
+        a: "The summit runs 9:30 to 17:00 and the expo 10:00 to 17:00.",
+      },
+      {
+        q: "Which metro station is closest to GITEX 2026?",
+        a: "Expo 2020 on the Red Line, five to ten minutes' walk from the Dubai Exhibition Centre. Take the train marked Expo 2020, since two Red Line branches share some platforms.",
+      },
+      {
+        q: "Where do you park for GITEX at Expo City?",
+        a: "In visitor lots P1 to P5 at the Dubai Exhibition Centre, with overflow parking linked by shuttle where available, or at a Park and Ride metro station on the Red Line.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/big-5-global-2026/",
+        eyebrow: "November 23–26",
+        title: "Big 5 Global 2026",
+        text: "The construction trade show at Dubai World Trade Centre.",
+      },
+      {
+        href: "/events/gulfood-2027/",
+        eyebrow: "March 15–19, 2027",
+        title: "Gulfood 2027",
+        text: "The food and drink trade show, half of it at Expo City.",
+      },
+      {
+        href: "/location/",
+        eyebrow: "Palm Jebel Ali",
+        title: "Where Palm Central sits",
+        text: "Closer to Jebel Ali and Expo City than to Downtown: the real drive times.",
+      },
+    ],
+    expertise:
+      "Advice from past years about getting to GITEX at the Trade Centre now holds for one day of the five. From Palm Jebel Ali, drive the expo days and aim to arrive before the 10:00 opening rather than after it: the organisers say parking access, routes and drop-off points may change on operational grounds, so follow the official parking links and the signs on the day. Save the metro for the summit day at the Trade Centre, or use the DWTC–DEC shuttle if you need both venues on December 7 and 8. The one trap the organisers flag is real: on the Red Line, check the train is going to Expo 2020 before boarding.",
+  },
 ];
