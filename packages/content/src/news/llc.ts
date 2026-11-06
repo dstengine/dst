@@ -593,4 +593,88 @@ export const items: NewsItem[] = [
     expertise:
       "A foundation is not a trading company, and the two answer different questions. A DMCC company with a licence is how a founder does business in Dubai; a foundation is how the shares of that company, a property or a portfolio are held and passed on. The useful sequence for a family business is the trading company first, then the holding structure above it once there is something worth holding. Until the guidance is published, the fee schedule and the annual filing obligations are the two things to ask a registered agent before committing.",
   },
+  {
+    slug: "emiratisation-targets-due-31-december-2026",
+    createdAt: "2026-11-06T04:00:00+04:00",
+    updatedAt: "2026-11-06T04:00:00+04:00",
+    site: "llc",
+    image: "/covers/emiratisation-targets-due-31-december-2026.jpg",
+    imageAlt: "A cut-paper office floor seen from above, rows of small desks with a few chairs picked out in green, a paper calendar page folded at its last corner",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Emiratisation targets for 2026 fall due on 31 December",
+    cardTitle: "Emiratisation: 2026 targets due",
+    titleSeo: "Emiratisation deadline 31 December 2026: a Dubai guide",
+    summary:
+      "The second half of the 2026 Emiratisation target closes on 31 December: Dubai and other UAE private companies with 50 or more workers owe a further 1 per cent of skilled jobs to Emiratis, on a programme that aims at 10 per cent by 2026. The rates, the contribution for a missed post, and where companies with 20 to 49 workers stand.",
+    date: "2026-11-06",
+    category: "Regulation",
+    source: {
+      name: "UAE Government official portal (text provided by MoHRE)",
+      url: "https://u.ae/en/information-and-services/jobs/Sector-of-employment/employment-in-the-private-sector/emiratis-employment-in-private-sector",
+      verifiedOn: "2026-11-06",
+    },
+    body: [
+      "Every private company in Dubai that has grown past 50 people runs on a calendar with two Emiratisation dates in it. The first, <strong>30 June 2026</strong>, has passed. The second is the last day of the year: by <strong>31 December 2026</strong> a targeted company has to have completed its Emiratisation growth for 2026.",
+      "## The rule for companies with 50 or more workers",
+      "The UAE Cabinet set the rate at <strong>2 per cent a year</strong> in <strong>skilled jobs</strong> in private establishments with <strong>50 or more employees</strong>, building to an overall increase of <strong>10 per cent by 2026</strong>. The <strong>Ministry of Human Resources and Emiratisation</strong> splits each year in two: <strong>1 per cent</strong> in the first half, and <strong>the remaining 1 per cent in the second half</strong>, which ends on 31 December.",
+      "## What a missed post costs",
+      "The official portal describes the contribution as it began: <strong>AED 6,000 a month</strong> for every citizen not employed against the target, rising by <strong>AED 1,000 a year until 2026</strong>. On <strong>22 June 2026</strong> the ministry, through the Emirates News Agency, gave the current figure: from <strong>1 July 2026</strong>, <strong>AED 10,000 a month</strong>, or <strong>AED 120,000 a year</strong>, for each position not filled with an Emirati.",
+      "## Companies with 20 to 49 workers",
+      "Since 2024 the target has also reached smaller companies in <strong>14 sectors</strong>, among them information and communications, financial and insurance activities, real estate, professional, scientific and technical activities, construction, wholesale and retail trade, and hospitality. They had to hire <strong>one Emirati by the end of 2024</strong> and <strong>one more by the end of 2025</strong>, with contributions of <strong>AED 96,000</strong> in January 2025 and <strong>AED 108,000</strong> in January 2026 for those that did not. The rule is <strong>Ministerial Resolution No. 455 of 2023</strong>. The portal's page, last updated on 15 October 2026, sets out those two hires and names no third one for 2026.",
+      "## What counts as a hire",
+      "The hire has to be real. The employer obtains a <strong>UAE national work permit</strong> from the ministry, signs a contract under its rules, pays through the <strong>Wages Protection System</strong>, and registers the employee for pensions within a month of the permit. The minimum monthly wage for an Emirati in the private sector has been <strong>AED 6,000 since 1 January 2026</strong>. Pension contributions total 20 per cent of salary: <strong>12.5 per cent</strong> from the employer, 5 per cent from the employee and 2.5 per cent from the government.",
+      "## Fake Emiratisation",
+      "The ministry treats fake Emiratisation as a serious labour market violation. Penalties are set by <strong>Cabinet Resolution No. 95 of 2022</strong>, and <strong>Cabinet Resolution No. 44 of 2023</strong> added further ones for companies that get round the targets by cutting staff or reclassifying employees. Violations can be reported to its call centre on <strong>600590000</strong>, through its app or its website.",
+      "## The incentive side",
+      "Companies with strong results can join the <strong>Emiratisation Partners Club</strong>, which the ministry says brings discounts of <strong>up to 80 per cent</strong> on its service fees and priority access to government procurement. Candidates are found through <strong>Nafis</strong>, the federal programme that aims to place <strong>75,000 Emiratis</strong> in the private sector over five years.",
+      "## Where this sits in setting up a company",
+      "The rate is counted on headcount, so it is a growth question rather than a licence one: a new <a href=\"/mainland/\" title=\"Mainland company setup in Dubai\">mainland company in Dubai</a> meets it the year it hires its fiftieth person, or its twentieth in one of the 14 sectors. That is worth knowing at <a href=\"/registration/\" title=\"Registering a company in Dubai, step by step\">registration</a>, when the activity on the licence decides which list a company is on.",
+    ],
+    faq: [
+      {
+        q: "What is the Emiratisation deadline in December 2026?",
+        a: "31 December 2026. Private companies with 50 or more workers must complete the second 1 per cent of their 2 per cent annual increase in Emiratis in skilled jobs by the end of the second half of the year.",
+      },
+      {
+        q: "How much is the fine for missing the Emiratisation target?",
+        a: "The ministry calls it a financial contribution. From 1 July 2026 it was AED 10,000 a month, AED 120,000 a year, for each position not filled with an Emirati citizen.",
+      },
+      {
+        q: "Do companies with 20 to 49 employees have to hire Emiratis?",
+        a: "Those in 14 named sectors had to hire one Emirati by the end of 2024 and another by the end of 2025, under Ministerial Resolution No. 455 of 2023. The official portal's page, updated 15 October 2026, names no further hire for 2026.",
+      },
+      {
+        q: "What is the minimum salary for an Emirati in the private sector?",
+        a: "AED 6,000 a month, effective 1 January 2026.",
+      },
+    ],
+    related: [
+      {
+        href: "/mainland/",
+        image: "/covers/mainland.jpg",
+        imageAlt: "Cut-paper illustration: a flat shoreline of layered strips meeting a cluster of towers.",
+        title: "Mainland company setup",
+        text: "When a mainland licence is genuinely required, and what comes with it as the company grows.",
+        eyebrow: "Mainland",
+      },
+      {
+        href: "/registration/",
+        title: "Registering a company in Dubai, step by step",
+        text: "From the activity on the licence to the first visa, in the order it actually happens.",
+        eyebrow: "Registration",
+      },
+      {
+        href: "/zones/",
+        image: "/covers/zones.jpg",
+        imageAlt: "Cut-paper illustration: a grid of walled enclosures seen from above, one corner left open.",
+        title: "Dubai free zone comparison",
+        text: "Which free zone actually fits an activity, compared by fit rather than ranked into a top-10.",
+        eyebrow: "Free zones",
+      },
+    ],
+    expertise:
+      "Do the arithmetic in November, not in the last week of December. The target is a share of skilled jobs, so a company that has added skilled roles this year has a larger base than in January; count it again on today's headcount before assuming you are clear. The hire that counts is one with a work permit, a WPS salary of at least AED 6,000 and a pension registration in place, and each of those takes days, not hours, so an offer accepted on 28 December may not be a hire on 31 December. Free zone companies should not assume either way: the official page does not mention free zones, so a company whose staff hold free zone permits should ask its own authority in writing whether it is targeted. At AED 120,000 a year per missed post, a salaried role is usually the cheaper answer, and the Partners Club discount makes it cheaper still.",
+  },
 ];
