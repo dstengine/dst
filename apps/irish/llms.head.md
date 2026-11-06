@@ -1,6 +1,6 @@
-# sensation.irish — Dance festivals Ireland: dates, venues and tickets
+# sensation.irish — Dance music festivals Ireland: dates, venues and tickets
 
-> An independent guide to dance music festivals in Ireland: one page per festival, with its dates, venue, line-up as announced and how tickets are sold. Written in Irish English. Every detail names where it came from. Not run by, or affiliated with, any festival, promoter or ticket seller.
+> An independent guide to dance music festivals in Ireland, the Republic and Northern Ireland: one page per festival, with its dates, venue, line-up as announced, how tickets are sold, how to get there by public transport and the age rules at the gate. Written in Irish English. Every detail names where it came from. Not run by, or affiliated with, any festival, promoter or ticket seller.
 
 How this site works, in three rules:
 
@@ -11,9 +11,12 @@ How this site works, in three rules:
 ## What a reader finds here
 
 - [Guides](https://sensation.irish/guides/): every festival guide, newest first.
+- [Camping](https://sensation.irish/camping/): the festivals where the ticket includes a pitch for a tent.
+- [Day festivals](https://sensation.irish/day-festivals/): one or two days in or near a city, no tent.
+- [Belfast](https://sensation.irish/belfast/): the open-air festivals in Belfast, priced in pounds.
 - [About](https://sensation.irish/about/): the rules above, written out at length.
 - [Everything in one file](https://sensation.irish/llms-full.txt): every page as Markdown. Each page is also at its own address with `.md` appended.
 
 ## Where the figures come from
 
-The festivals' own sites and announcements, and the ticket sellers they name. Each guide names its source and the date it was checked.
+The festivals' own sites and announcements, the ticket sellers they name, the venues, and the transport operators — Irish Rail, Translink, Bus Éireann, Dublin Bus and Luas — for the way there. Each guide names its source and the date it was checked. A ticket link goes to the seller the organiser names, never to a reseller.

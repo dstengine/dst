@@ -18,24 +18,24 @@ export const newsBase = "/guides/";
 // in a title or a summary.
 
 export const home = {
-  title: "Dance festivals Ireland: dates, venues and tickets",
-  description: "A guide to the dance festivals Ireland hosts: dates, venues, line-ups and tickets, every detail taken from the organiser and dated.",
-  h1: "The dance festivals Ireland hosts, one guide each",
-  lede: `Dance music festivals in Ireland: when each one is, where, who is on the line-up and how to get a ticket — every detail from the organiser, with the date it was checked.`,
+  title: "Dance music festivals Ireland: dates, venues and tickets",
+  description: "A guide to the dance music festivals Ireland hosts: dates, venues, line-ups, tickets and the bus or train there, every detail from the organiser and dated.",
+  h1: "The dance music festivals Ireland hosts, one guide each",
+  lede: `When each festival is, where, who the organiser has announced, how the tickets are sold and how to get there without a car — every detail from the organiser, with the date it was checked.`,
 };
 
 export const guides = {
-  title: "Dance festivals Ireland: every festival guide",
-  description: "Every guide to the dance festivals Ireland hosts, newest first: dates, venues, line-ups and tickets, each taken from the organiser.",
-  h1: "Guides to the dance festivals Ireland hosts",
+  title: "Dance music festivals Ireland: every festival guide",
+  description: "Every guide to the dance music festivals Ireland hosts, newest first: dates, venues, line-ups and tickets, each taken from the organiser.",
+  h1: "Guides to the dance music festivals Ireland hosts",
   lede: `Every guide on the site, newest first. Each one names its source and the date it was checked against it.`,
 };
 
 export const about = {
-  title: "About sensation.irish",
-  description: "sensation.irish is an independent guide to the dance festivals Ireland hosts, with every date and price taken from the organiser and nothing paid for.",
-  h1: "About sensation.irish and the dance festivals Ireland hosts",
-  lede: `An independent guide to dance music festivals in Ireland. No festival, promoter or ticket seller runs it or pays to be in it, and every detail names where it came from.`,
+  title: "Who writes this guide to dance music festivals Ireland",
+  description: "An independent guide to the dance music festivals Ireland hosts, with every date and price taken from the organiser and nothing paid for.",
+  h1: "About this guide to the dance music festivals Ireland hosts",
+  lede: `sensation.irish is an independent guide to dance music festivals in Ireland. No festival, promoter or ticket seller runs it or pays to be in it, and every detail names where it came from.`,
 };
 
 /**
@@ -45,8 +45,8 @@ export const about = {
  * out twice is a title that drifts.
  */
 export const feed = {
-  title: "sensation.irish — dance festivals Ireland",
-  description: "Guides to the dance festivals Ireland hosts: dates, venues, line-ups and tickets, from the organisers.",
+  title: "sensation.irish — dance music festivals Ireland",
+  description: "Guides to the dance music festivals Ireland hosts: dates, venues, line-ups, tickets and getting there, from the organisers.",
   /** RFC 5646. Without it an aggregator files this site under the wrong language. */
   language: "en-IE",
 };

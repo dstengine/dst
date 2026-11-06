@@ -13,6 +13,28 @@ for (const item of newsBySite(siteId)) {
   if (item.action) outbound[`${item.slug}-action`] = item.action.url;
 }
 
+/**
+ * A guide's ticket link, where the organiser names one seller and the sale
+ * is open: the hop is `/go/<slug>-ticket/`, and the button carries
+ * `data-ticket` so the click counts as a ticket click, not a generic hop.
+ * Only the seller the organiser names, never a reseller; a festival whose
+ * sale has not opened has no entry here, and its guide says so instead.
+ */
+export const tickets: Record<string, { url: string; label: string; title: string }> = {
+  "beyond-the-pale": {
+    url: "https://www.ticketmaster.ie/beyond-the-pale-tickets/artist/1475979",
+    label: "Tickets on Ticketmaster",
+    title: "Beyond The Pale 2027 tickets on Ticketmaster Ireland, the festival's ticket seller",
+  },
+  "fuinneamh": {
+    url: "https://fuinneamh.ticketr.events/2027",
+    label: "Tickets on Ticketr",
+    title: "Fuinneamh 2027 tickets on Ticketr, the festival's own ticket shop",
+  },
+};
+
+for (const [slug, ticket] of Object.entries(tickets)) outbound[`${slug}-ticket`] = ticket.url;
+
 /** Path for an outbound link, e.g. go("<slug>-action") -> "/go/<slug>-action/" */
 export function go(slug: string): string {
   return `/go/${slug}/`;

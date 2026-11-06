@@ -9,14 +9,19 @@ export const site = {
   siteName: "sensation.irish",
   // The tooltip on the wordmark: the link's own text is the name, so a
   // title repeating it would say nothing twice.
-  homeTitle: "Dance festivals Ireland: dates, venues and tickets",
+  homeTitle: "Dance music festivals Ireland: dates, venues and tickets",
   // Nobody searches for "sensation.irish", so the suffix slot carries the
   // subject. BaseLayout drops a suffix the title has already said.
-  titleSuffix: "Dance festivals Ireland",
+  //
+  // "music" is in it on purpose. Searched on 6 November 2026, "dance
+  // festivals Ireland" is answered with contemporary and Irish dance — the
+  // Dublin Dance Festival, feiseanna — while "dance music festivals Ireland"
+  // is answered with the electronic festivals this site is about.
+  titleSuffix: "Dance music festivals Ireland",
   // What this site is about, for tools/seo-check.mjs: the phrase that has
   // to appear in the title, the h1 and the description of every page a
   // reader could arrive on from a search.
-  keyword: "dance festivals Ireland",
+  keyword: "dance music festivals Ireland",
   lang: "en-IE",
   publisher,
   // Independent of the DST group: no footer link to the network, and the

@@ -4,12 +4,13 @@
 // route.
 import Layout from "../layouts/Layout.astro";
 import NewsArticle from "@dst/ui/NewsArticle.astro";
+import Icon from "@dst/ui/Icon.astro";
 import { sectionHrefFor } from "@dst/content/sections";
 import type { NewsItem } from "@dst/content/types";
 import { siteId, newsBase, publisher } from "../content";
 import { sections, tagLinks } from "../sections";
 import { newsBySite } from "@dst/content/news";
-import { go } from "../outbound";
+import { go, tickets } from "../outbound";
 
 interface Props {
   item: NewsItem;
@@ -17,6 +18,11 @@ interface Props {
 }
 const { item, more } = Astro.props;
 const all = sections(newsBySite(siteId));
+const ticket = tickets[item.slug];
+// The row is drawn here rather than by NewsArticle's own action button, so
+// a festival with an open sale shows its ticket first and the organiser's
+// page beside it, in one row, instead of two primary buttons stacked.
+const action = item.action;
 ---
 <Layout title={item.titleSeo ?? item.title} description={item.summary} image={item.image}>
   <NewsArticle
@@ -26,10 +32,33 @@ const all = sections(newsBySite(siteId));
     newsBase={newsBase}
     publisher={publisher}
     locale="en-IE"
-    labels={{ moreNews: () => "More dance festivals in Ireland" }}
+    labels={{ moreNews: () => "More dance music festivals in Ireland" }}
     categoryHref={sectionHrefFor(item, all)}
     tagLinks={tagLinks(item, all)}
     tagsLabel="More on"
-    actionHref={item.action ? go(`${item.slug}-action`) : undefined}
-  />
+  >
+    {(ticket || action) && (
+      <p class="guide-actions" slot="lead">
+        {/* data-ticket makes the click a ticket_click rather than a generic
+            outbound hop — see the delegated listener in @dst/ui
+            Analytics.astro. Only the seller's link carries it. */}
+        {ticket && (
+          <a class="button" href={go(`${item.slug}-ticket`)} rel="nofollow" data-ticket title={ticket.title}><Icon name="ticket" />{ticket.label}</a>
+        )}
+        {action && (
+          <a
+            class:list={["button", ticket && "button-secondary"]}
+            href={go(`${item.slug}-action`)}
+            rel="nofollow"
+            title={action.title ?? `${action.label} — ${item.title}`}
+          ><Icon name={action.icon ?? "link"} />{action.label}</a>
+        )}
+      </p>
+    )}
+  </NewsArticle>
 </Layout>
+
+<style>
+  .guide-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-3) 0 0; }
+  .guide-actions .button { display: inline-flex; align-items: center; gap: 0.55em; }
+</style>
