@@ -531,4 +531,82 @@ export const items: NewsItem[] = [
     expertise:
       "The AED 2 million is the value that matters, and on an off-plan purchase the question of when a property counts is the one to ask before signing: what has been paid, what the title deed or the developer's documents show, and whether a mortgage reduces the qualifying amount. A sales desk that handles the visa is convenient, but it is still the developer's desk; ask the accredited provider, in writing, which documents it will file and what the government fees come to before you rely on the visa in your plans.",
   },
+  {
+    slug: "extending-a-relatives-visit-visa-in-dubai",
+    createdAt: "2026-11-06T04:00:00+04:00",
+    updatedAt: "2026-11-06T04:00:00+04:00",
+    site: "visas",
+    image: "/covers/extending-a-relatives-visit-visa-in-dubai.jpg",
+    imageAlt: "A tobacco-brown paper passport on a sand ground, a cream paper calendar page folded out from it and a second page being added beside the first",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Extending a relative's visit visa in Dubai: AED 630 from abroad, AED 1,150 from inside",
+    cardTitle: "Extending a relative's visit visa",
+    titleSeo: "UAE visit visa extension for a relative: AED 1,150",
+    summary:
+      "A UAE resident whose parent or friend is staying the winter in Dubai can extend that visit visa through GDRFA: AED 600 plus VAT, with AED 520 more while the visitor is inside the country, about AED 1,150 in all. A passport copy is the only document, and GDRFA expects to finish in 48 hours.",
+    date: "2026-11-06",
+    category: "Visit visas",
+    source: {
+      name: "GDRFA Dubai, Extend friend or relative's visit visa (Single-Multi Trips)",
+      url: "https://gdrfad.gov.ae/en/node/13871",
+      verifiedOn: "2026-11-06",
+    },
+    body: [
+      "Winter is when families stretch a visit. A mother who came for a month in November wants to stay for the school holidays and New Year; a friend's trip runs on. For a visitor sponsored by a Dubai resident, the <strong>General Directorate of Residency and Foreigners Affairs</strong> has a service for exactly this: <strong>Extend friend or relative's visit visa</strong>, for single-trip and multi-trip visas alike.",
+      "## What it costs",
+      "The extension fee is <strong>AED 600</strong>, plus <strong>5% VAT</strong>: <strong>AED 630</strong>. When the visitor is <strong>inside the UAE</strong>, which is the usual case for an extension, three more fees are added: the <strong>AED 10</strong> Knowledge Dirham, the <strong>AED 10</strong> Innovation Dirham and an <strong>AED 500</strong> inside-the-country fee. That brings the total to about <strong>AED 1,150</strong>. GDRFA notes that the final amount can vary with the visitor's circumstances.",
+      "## What to send",
+      "One document: a <strong>copy of the visitor's passport</strong>.",
+      "## Where to apply",
+      "Online, on the GDRFA website or smart app, signing in with <strong>UAE Pass</strong> or a username, around the clock: search for the service, fill in the form and pay. Or in person at an <strong>Amer centre</strong>, during its normal hours: take a queue ticket, hand in the application and pay at the counter.",
+      "## How long it takes",
+      "GDRFA gives an expected completion time of <strong>48 hours</strong>. The service extends a visa that is still running, so apply before the current one ends: a stay past expiry is an overstay, which on <a href=\"/news/entry-visa-opens-to-six-more-nationalities/\" title=\"UAE visa on arrival: six more nationalities\">entry visas issued on arrival</a> is fined by the day.",
+      "## How far it can go",
+      "The extension can be granted <strong>once or more than once</strong>, by a decision of the authority, up to <strong>180 days</strong> in total. That ceiling sits alongside the rules the sponsor met when the visa was first issued, including the <a href=\"/news/what-a-dubai-visit-visa-asks-of-the-person-sponsoring-it/\" title=\"UAE visit visa: what a sponsor must earn\">salary floor for each kind of relative</a>.",
+      "## When it is the wrong service",
+      "The service is for a visitor whom a resident sponsored as a friend or relative; for a business visit visa GDRFA lists a separate extension service. A visitor who has started looking for work has a GDRFA service of its own, <strong>Extending Visit Visa to Explore Job opportunities</strong>, at the same AED 600 plus VAT and the same inside-country fees. A frequent visitor may do better with the <a href=\"/news/dubais-five-year-tourist-visa-what-it-costs/\" title=\"UAE 5-year tourist visa from Dubai: cost, conditions\">five-year tourist visa</a>.",
+    ],
+    faq: [
+      {
+        q: "How much does it cost to extend a relative's visit visa in Dubai?",
+        a: "AED 600 plus 5% VAT, which is AED 630. If the visitor is inside the UAE, add AED 10 Knowledge Dirham, AED 10 Innovation Dirham and an AED 500 inside-the-country fee: about AED 1,150 in total, according to GDRFA Dubai.",
+      },
+      {
+        q: "What documents are needed to extend a UAE visit visa?",
+        a: "GDRFA Dubai asks for a copy of the visitor's passport. The application goes in online, signing in with UAE Pass or a username, or at an Amer centre.",
+      },
+      {
+        q: "How long does a visit visa extension take in Dubai?",
+        a: "GDRFA gives an expected completion time of 48 hours. Apply before the current visa expires; a stay past expiry is an overstay.",
+      },
+      {
+        q: "How many times can a UAE visit visa be extended?",
+        a: "One or more times, by decision of the authority, for a total of no more than 180 days.",
+      },
+    ],
+    related: [
+      {
+        href: "/news/what-a-dubai-visit-visa-asks-of-the-person-sponsoring-it/",
+        eyebrow: "Visit visas",
+        title: "UAE visit visa: what a sponsor must earn",
+        text: "Dh4,000 a month for a parent or child, Dh8,000 for a sibling, Dh15,000 for a friend.",
+      },
+      {
+        href: "/news/dubais-five-year-tourist-visa-what-it-costs/",
+        eyebrow: "Visit visas",
+        title: "UAE 5-year tourist visa from Dubai: cost, conditions",
+        text: "About Dh3,713 in fees and a $4,000 bank balance, for 90-day stays over five years.",
+      },
+      {
+        href: "/news/visa-on-arrival-for-residents-abroad-what-it-costs-at-the-airport/",
+        eyebrow: "Visit visas",
+        title: "UAE visa on arrival for residents abroad: fees",
+        text: "14 days for Dh172.50 or 60 days for Dh422.50, for holders of a listed country's residence permit.",
+      },
+    ],
+    expertise:
+      "The AED 500 inside-the-country fee is most of the decision. An extension from inside costs about AED 1,150; a visitor who leaves on time and comes back on a new visa pays only the new visa's price, which for a short single-entry visit can be lower, and a nearby return flight sometimes costs less than the difference. Do that sum first. If the extension still wins, file it a week before the visa ends rather than on the last day: 48 hours is the expected time, not a promise.",
+  },
 ];
