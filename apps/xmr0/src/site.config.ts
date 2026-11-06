@@ -9,7 +9,7 @@ export const site = {
   siteName: "xmr0.uk",
   // The tooltip on the wordmark: the link's own text is the name, so a
   // title repeating it would say nothing twice.
-  homeTitle: "Monero privacy guides: how a Monero payment stays private",
+  homeTitle: "Monero privacy on the chain, the network and in the wallet",
   // Nobody searches for "xmr0.uk", so the suffix slot carries the
   // subject. BaseLayout drops a suffix the title has already said.
   titleSuffix: "Monero privacy guides",

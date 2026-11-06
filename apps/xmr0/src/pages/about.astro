@@ -10,7 +10,13 @@ import PageHero from "@dst/ui/PageHero.astro";
 
   <section class="container">
     <h2>What this is</h2>
-    <p set:html={`<strong>xmr0.uk</strong> is a set of guides to Monero privacy: how the protocol hides who paid, who was paid and how much, and where that protection ends. It is written in British English for readers who want the mechanism explained rather than the slogan repeated.`} />
+    <p set:html={`<strong>xmr0.uk</strong> is a set of guides to Monero privacy: how the protocol hides who paid, who was paid and how much, and where that protection ends. It is written in British English for readers who know security and want the mechanism explained rather than the slogan repeated.`} />
+  </section>
+
+  <section class="container">
+    <h2>What it covers</h2>
+    <p set:html={`Monero first, and around it the rest of the subject: other privacy coins and how their models compare, the peer-to-peer algorithms that keep a node's address out of a transaction, and the security of the wallets and software that hold the keys. The guides are grouped by where a payment can give itself away — <a href="/protocol/" title="The Monero privacy protocol: rings, one-time addresses, RingCT and FCMP++">the protocol</a>, <a href="/network/" title="Monero privacy on the network: Dandelion++, Tor and I2P">the network</a> and <a href="/wallets/" title="Monero privacy in the wallet: view keys, proofs, seeds and signed downloads">the wallet</a> — with a guide to <a href="/guides/privacy-coins-eu-uk-rules/" title="What the EU's AMLR and MiCA and the UK's cryptoasset rules say about privacy coins">the rules on privacy coins</a> in the EU and the UK.`} />
+    <p set:html={`Mining is not covered here. Monero's proof of work, RandomX, has a site of its own: <a href="https://random.directory/" title="random.directory: guides to RandomX, the proof of work Monero runs">random.directory</a>.`} />
   </section>
 
   <section class="container">
@@ -23,6 +29,10 @@ import PageHero from "@dst/ui/PageHero.astro";
       <li>
         <h3>No price talk, no trading advice</h3>
         <p>What a coin is worth changes by the hour and is not this site's subject. The guides are about how the privacy works, not about buying or selling.</p>
+      </li>
+      <li>
+        <h3>Privacy is a security property</h3>
+        <p>The guides treat what Monero hides the way a security engineer treats encryption: a property of the system, with a threat model, a mechanism and limits. They explain how it works and where it fails, and how a holder can disclose a payment on purpose; they are not a guide to getting round anyone's rules.</p>
       </li>
       <li>
         <h3>Nothing here is paid for</h3>

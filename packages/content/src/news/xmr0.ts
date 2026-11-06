@@ -4,10 +4,483 @@ import type { NewsItem } from "../types.ts";
 // and how much, and where that protection ends. Guides rather than news, filed
 // under /guides/. A subject page (apps/xmr0/src/sections.ts) is built from
 // `tags` once two guides share one, so a tag here is a promise that the piece
-// is about that subject.
+// is about that subject: Protocol, Network or Wallets. "Rules" has no page of
+// its own until a second guide joins it.
 //
-// The voice is British English. Every figure comes from the Monero project,
-// its code or whoever published it, and the guide names which in `source`,
-// with the date it was checked. No prices and no trading advice.
+// The voice is British English, written for readers who know security.
+// Every figure comes from the Monero project, its code, a specification or
+// a paper, and the guide names which in `source`, with the date it was
+// checked. Privacy is treated as a security property, like encryption. No
+// prices, no trading advice, and mining is random.directory's subject.
 
-export const items: NewsItem[] = [];
+export const items: NewsItem[] = [
+
+  {
+    slug: "how-monero-privacy-works",
+    createdAt: "2026-11-06T06:35:00+04:00",
+    updatedAt: "2026-11-06T06:35:00+04:00",
+    site: "xmr0",
+    featured: 1,
+    title: "How Monero privacy works: sender, receiver and amount",
+    cardTitle: "How Monero privacy works",
+    summary:
+      "Monero privacy rests on three mechanisms: ring signatures hide which output paid, one-time addresses hide who was paid, and RingCT hides how much. How each one works, and what a transaction still shows.",
+    date: "2026-11-06",
+    category: "Guide",
+    tags: ["Protocol"],
+    action: {
+      url: "https://www.getmonero.org/library/Zero-to-Monero-2-0-0.pdf",
+      label: "Zero to Monero 2.0 (PDF)",
+      title: "Zero to Monero, second edition: the technical description of Monero's cryptography by koe, Kurt M. Alonso and Sarang Noether",
+      icon: "document",
+    },
+    source: {
+      name: "The Monero source code and its network-upgrade table (monero-project/monero on GitHub), with Zero to Monero 2.0",
+      url: "https://github.com/monero-project/monero",
+      verifiedOn: "2026-11-06",
+    },
+    body: [
+      "A Bitcoin transaction names the output it spends, the address it pays and the amount. A Monero transaction hides all three, each with its own mechanism: <strong>ring signatures</strong> for the output being spent, <strong>one-time addresses</strong> for the recipient, and <strong>RingCT</strong> for the amount. None of them can be switched off. Since the network upgrade of <span class=\"nowrap\">16 September 2017</span>, every transaction has had to use RingCT, with a ring of at least five members, according to the upgrade table in the Monero README.",
+      "## Who sent it: ring signatures",
+      "Every input in a Monero transaction points not at one earlier output but at a <strong>ring</strong> of them: the one really being spent and decoys taken from the chain. The signature proves that the signer holds the key to one member of the ring without saying which. Since the upgrade of <span class=\"nowrap\">13 August 2022</span> the ring has had a fixed size of <strong><span class=\"nowrap\">16 members</span></strong>: the real output and <span class=\"nowrap\">15 decoys</span>.",
+      "The ring has grown with the upgrades: at least 5 members from <span class=\"nowrap\">September 2017</span>, at least 7 from <span class=\"nowrap\">April 2018</span>, exactly 11 from <span class=\"nowrap\">October 2018</span> and 16 since <span class=\"nowrap\">August 2022</span>. The signature scheme changed as well. MLSAG gave way to <strong>CLSAG</strong> in <span class=\"nowrap\">October 2020</span>, which the v0.17.0.0 release notes say improves verification speed and reduces transaction size.",
+      "What stops the same output being spent twice is the <strong>key image</strong>: a value derived from an output's private key, of which each output has exactly one, published with the input that spends it. A node rejects any transaction whose key image it has already seen. The key image proves that <em>some</em> output was spent; it does not say which member of the ring it was.",
+      "A ring is only as good as its decoys. Picked uniformly from the whole chain, they would make the real output — usually a recent one — stand out. Monero's wallet instead draws an age for each decoy from a gamma distribution, shape 19.28 and scale 1/1.61, over the logarithm of the age in seconds (wallet2.cpp). The code takes that distribution from the study of how old spent outputs really are by Malte Möser, Andrew Miller and their co-authors (arXiv 1704.04299). It then finds roughly where on the chain an output of that age sits, and takes a random output from that block.",
+      "The same study measured the weakness it set out to fix. On the chain as it then stood, it found that about 62% of transaction inputs with one or more decoys could be deduced, and that guessing the newest member of a ring was right about 80% of the time. Both findings describe the chain before the minimum ring sizes and the age-matched decoys that wallets use now.",
+      "## Who received it: one-time addresses",
+      "A Monero address is never written on the chain. For each payment the sender picks a random transaction key, <em>r</em>, and from it and the recipient's public view and spend keys works out a fresh <strong>one-time public key</strong> for the output. Only the holder of the private view key can recognise the output as theirs, and only the holder of the private spend key can spend it. Two payments to the same address land on two unrelated keys, and subaddresses let one wallet hand a different address to every payer without anyone else being able to tell that they belong together.",
+      "Finding those outputs means testing every new output on the chain. Since <span class=\"nowrap\">August 2022</span> each output carries a one-byte <strong>view tag</strong>, the first byte of a hash of the shared secret, so a wallet can discard all but about 1 in 256 of the outputs that are not its own before doing the expensive part. In its author's tests that cut scanning time by 30 to 40% (pull request #8061).",
+      "## How much: RingCT",
+      "Amounts are hidden by <strong>Ring Confidential Transactions</strong>, allowed from <span class=\"nowrap\">5 January 2017</span> and required from <span class=\"nowrap\">16 September 2017</span>. Each amount is replaced by a Pedersen commitment, which hides the value but still lets anyone check that the inputs equal the outputs plus the fee. A <strong>range proof</strong> shows that each committed amount is not negative; without one, a negative output could create coins nobody would see.",
+      "Range proofs are where Monero transactions lost most of their weight. Bulletproofs, enabled in <span class=\"nowrap\">October 2018</span>, cut transaction size by at least 80%, according to Moneropedia's entry on them, and <strong>Bulletproofs+</strong> replaced them in <span class=\"nowrap\">August 2022</span>.",
+      "## What a transaction still shows",
+      "Hidden is not the same as invisible. Every Monero transaction still shows when it entered a block, how many inputs and outputs it has, the fee it paid and the members of each ring. Since <span class=\"nowrap\">November 2019</span> every transaction has needed at least two outputs, so a lone output no longer stands out. A new output can only be spent after <span class=\"nowrap\">10 blocks</span> — CRYPTONOTE_DEFAULT_TX_SPENDABLE_AGE in the code — and the decoy picker skips outputs younger than that, since no real spend could use them.",
+      "The protocol also says nothing about the network. The node that first broadcasts a transaction can be seen by its peers, which is what <a href=\"/guides/dandelion-plus-plus/\" title=\"Dandelion++: how Monero hides which node a transaction started from\">Dandelion++</a> and <a href=\"/guides/monero-node-over-tor-i2p/\" title=\"Running a Monero node over Tor or I2P: the options and the leaks that remain\">a node over Tor or I2P</a> are for. And the keys that unlock all of this can be shared on purpose: a <a href=\"/guides/monero-view-key/\" title=\"What a Monero view key reveals, and the proofs that disclose less\">view key</a> shows every incoming payment to whoever holds it.",
+      "Mining plays no part in any of this. The proof of work, RandomX, decides who adds the next block, not what a transaction hides; <a href=\"https://random.directory/\" title=\"random.directory: guides to RandomX, the proof of work Monero runs\">random.directory</a> covers it.",
+      "## What comes next",
+      "The ring is the part of the design most often questioned, because its anonymity set is 16. The <a href=\"/guides/fcmp-plus-plus/\" title=\"FCMP++: how full-chain membership proofs replace Monero's rings\">FCMP++ guide</a> covers the upgrade that replaces it with a proof over every output on the chain, and <a href=\"/guides/monero-vs-zcash/\" title=\"Monero vs Zcash: rings that are always on against shielded pools that are opt-in\">Monero vs Zcash</a> compares Monero's approach with the shielded pools of Zcash.",
+    ],
+    faq: [
+      {
+        q: "Is every Monero transaction private?",
+        a: "Every transaction uses ring signatures, one-time addresses and hidden amounts, and none of the three can be turned off. What a transaction does not hide is its timing, its number of inputs and outputs, and its fee; the IP address that broadcast it is a question for the network layer, not the protocol.",
+      },
+      {
+        q: "How many decoys does a Monero transaction use?",
+        a: "Each input sits in a ring of 16: the real output and 15 decoys. The ring size has been fixed at 16 since the network upgrade of 13 August 2022; before that it was 11 from October 2018.",
+      },
+      {
+        q: "Can someone see my Monero balance from my address?",
+        a: "No. An address is never written on the chain: each payment goes to a one-time key that only the wallet's private view key can link back to it. Anyone given that view key can see incoming payments, so it should be shared only on purpose.",
+      },
+    ],
+  },
+
+  {
+    slug: "fcmp-plus-plus",
+    createdAt: "2026-11-06T06:30:00+04:00",
+    updatedAt: "2026-11-06T06:30:00+04:00",
+    site: "xmr0",
+    featured: 2,
+    title: "FCMP++: how full-chain membership proofs replace rings",
+    cardTitle: "FCMP++: full-chain membership proofs",
+    titleSeo: "FCMP++ and Monero privacy: full-chain membership proofs",
+    summary:
+      "FCMP++ replaces Monero's 16-member rings with a proof that the output spent is one of every output on the chain. How the proof works, the Carrot address scheme that comes with it, and what Monero privacy gains.",
+    date: "2026-11-06",
+    category: "Guide",
+    tags: ["Protocol"],
+    action: {
+      url: "https://github.com/seraphis-migration/monero/releases",
+      label: "Stressnet releases on GitHub",
+      title: "The seraphis-migration/monero releases, where the FCMP++ stressnet builds and their notes are published",
+      icon: "code",
+    },
+    source: {
+      name: "The Monero project's FCMP++ post of 27 April 2024 and the FCMP++ stressnet release notes (seraphis-migration/monero)",
+      url: "https://www.getmonero.org/2024/04/27/fcmps.html",
+      verifiedOn: "2026-11-06",
+    },
+    body: [
+      "Today a Monero input hides among <span class=\"nowrap\">16 outputs</span>: the one really spent and <span class=\"nowrap\">15 decoys</span> chosen by the wallet. <strong>FCMP++</strong> — full-chain membership proofs — replaces the ring with a zero-knowledge proof that the output being spent is <em>one of every output on the chain</em>, without saying which. The Monero project's post introducing it, of <span class=\"nowrap\">27 April 2024</span>, put the anonymity set at about 100,000,000 outputs against 16. The stressnet release notes of 2026 speak of more than 150 million.",
+      "That ends the statistics of decoy selection described in <a href=\"/guides/how-monero-privacy-works/\" title=\"How Monero privacy works: ring signatures, one-time addresses and RingCT\">how Monero privacy works</a>. With every output in the set, there is no ring to analyse, and no question of whether the decoys look like real spends.",
+      "## How the proof works",
+      "The outputs are kept in a <strong>curve tree</strong>, the construction published as Curve Trees (IACR ePrint 2022/756): a Merkle-style tree whose layers alternate between two elliptic curves that form a cycle, so that each layer's commitments can be proved over efficiently in the next. Monero's pair of curves, Helios and Selene, was proposed by tevador. The proofs are Generalized Bulletproofs, and they use Eagen's elliptic-curve divisors (ePrint 2022/596) for the curve arithmetic inside the proof.",
+      "The <strong>++</strong> is the other half. A membership proof alone says only that an output is in the tree. <strong>SA+L</strong> — spend authorisation and linkability — proves that the spender holds the output's key and ties the input to its key image, so the double-spend check works as it does now. The post notes that this design is independent of Seraphis.",
+      "Beyond the size of the set, the post lists three gains: <strong>transaction chaining</strong>, signing a transaction that spends an output before that output is on the chain; <strong>outgoing view keys</strong>, so a wallet can show what it sent as well as what it received; and <strong>forward secrecy</strong>, so that an adversary who can solve the discrete logarithm problem — with a quantum computer, say — still cannot tell which output a past input spent.",
+      "## Carrot: the addresses that come with it",
+      "FCMP++ arrives with a new addressing protocol, <strong>Carrot</strong>, specified by jeffro256. Existing addresses keep working, since the specification is backward compatible, but wallets created under it get a new key hierarchy: a prove-spend key, a view-balance secret that finds both received and outgoing enotes, a generate-image key, an incoming view key and a generate-address secret. The <a href=\"/guides/monero-view-key/\" title=\"What a Monero view key reveals, and what Carrot changes for view-only wallets\">view key guide</a> has what that split means for view-only wallets. Each enote carries a <span class=\"nowrap\">3-byte</span> view tag.",
+      "The specification also names what it defends against: the Janus attack, in which a sender crafts an output to test whether two addresses belong to one wallet; and the burning bug, in which two outputs sent to the same one-time key leave only one spendable, which Carrot mitigates without the wallet having to keep state. It adds address-conditional forward secrecy and confirmation of payment IDs.",
+      "## The reviews",
+      "The cryptography has been reviewed piece by piece, and the monero-oxide repository lists each review. Veridise reviewed the Helios and Selene curves, including the security of their twists, and audited the fcmps crate; Cypher Stack wrote security proofs for Generalized Bulletproofs and reviewed Veridise's proofs for the divisors; and parts of the circuits were formally verified with Picus. The research and the reviews were paid for through the Community Crowdfunding System, the CCS.",
+      "## The stressnet",
+      "FCMP++ is tested on a network of its own, the <strong>stressnet</strong>, built from the seraphis-migration/monero repository. Its alpha releases ran from 1.2 on <span class=\"nowrap\">15 October 2025</span> to 1.6 on <span class=\"nowrap\">4 February 2026</span>. Beta 1.0 followed on <span class=\"nowrap\">28 April 2026</span>, 2.0 on <span class=\"nowrap\">27 May 2026</span> and 3.0 on <span class=\"nowrap\">25 September 2026</span>, and the beta 3 network forked from testnet on <span class=\"nowrap\">5 October 2026</span> at block 3,102,800.",
+      "Beta 3.1, of <span class=\"nowrap\">26 October 2026</span>, is the latest as of <span class=\"nowrap\">6 November 2026</span>. Its notes record a change that completely prevents Carrot outputs from appearing in ring signatures, closing what they call a detectable inflation vulnerability, exposed for the 24 hours after the network's initial hard fork — the kind of fault a stress network is there to find. The same notes list what does not work yet: hardware wallets, multisig and transaction proofs. And they are plain about the network's own privacy: its anonymity set is in the dozens at best, so it is for testing, not for anything that needs hiding.",
+      "## On the main network",
+      "In the main repository, monero-project/monero, the work is arriving in parts. The curve tree builder was merged on <span class=\"nowrap\">24 September 2026</span> (#10724) and tree building in the database on <span class=\"nowrap\">2 November 2026</span> (#11425); consensus verification (#11440) is still open. The README already lists Rust 1.85 as a dependency for the FCMP++ cryptography, and its network-upgrade table has a row for the next upgrade with no height and no date. No date has been announced. The release the project recommends, v0.18.5.4 of <span class=\"nowrap\">17 October 2026</span>, does not include FCMP++.",
+    ],
+    faq: [
+      {
+        q: "What does FCMP++ stand for?",
+        a: "Full-chain membership proofs, plus SA+L: spend authorisation and linkability. The membership proof shows that the output spent is one of every output on the chain; SA+L shows that the spender holds its key and links the input to its key image, so a double spend is still caught.",
+      },
+      {
+        q: "When will FCMP++ be on the Monero network?",
+        a: "No date has been announced. As of 6 November 2026 it runs on a test network, the stressnet, whose latest release is beta 3.1 of 26 October 2026, and the main repository is merging it in parts. The network-upgrade table in the Monero README has a row for the next upgrade with no height or date.",
+      },
+      {
+        q: "Will my Monero address change with FCMP++?",
+        a: "No. Carrot, the addressing protocol that comes with FCMP++, is backward compatible with existing addresses. Wallets created under Carrot get a new key hierarchy with more tiers of view-only access.",
+      },
+    ],
+  },
+
+  {
+    slug: "monero-vs-zcash",
+    createdAt: "2026-11-06T06:25:00+04:00",
+    updatedAt: "2026-11-06T06:25:00+04:00",
+    site: "xmr0",
+    featured: 3,
+    title: "Monero vs Zcash: two privacy models compared",
+    titleSeo: "Monero vs Zcash privacy models",
+    summary:
+      "Monero privacy is on for every transaction, with 16-member rings; Zcash hides only shielded transactions, but hides them among every note in their pool. How the two models differ, from proofs and keys to the turnstile.",
+    date: "2026-11-06",
+    category: "Guide",
+    tags: ["Protocol"],
+    action: {
+      url: "https://zips.z.cash/zip-0224",
+      label: "ZIP 224: Orchard",
+      title: "ZIP 224, the specification of the Orchard shielded protocol in Zcash",
+      icon: "document",
+    },
+    source: {
+      name: "Zcash Improvement Proposals 205, 209, 224, 252 and 316, the Zebra release notes, and the Monero README",
+      url: "https://zips.z.cash/",
+      verifiedOn: "2026-11-06",
+    },
+    body: [
+      "Monero and Zcash both hide payments, but they start from opposite ends. Monero makes privacy a property of every transaction and hides each input among a small set of decoys. Zcash keeps a transparent ledger much like Bitcoin's and adds <strong>shielded pools</strong>, in which a zero-knowledge proof hides an input among every note the pool has ever held. One has a small set that everybody is in; the other has a large set that only some payments enter.",
+      "## Monero: small sets, always on",
+      "Every Monero input sits in a ring of <span class=\"nowrap\">16 outputs</span>, every output goes to a one-time address and every amount is a commitment; <a href=\"/guides/how-monero-privacy-works/\" title=\"How Monero privacy works: ring signatures, one-time addresses and RingCT\">how Monero privacy works</a> has the detail. Nobody can send a transparent Monero transaction, so the decoys are real outputs of real users. The weakness is the size of the set and the statistics of choosing it: decoys have to be picked to look like the way people actually spend.",
+      "## Zcash: large sets, opt in",
+      "Zcash has had three shielded pools. Sprout came first; <strong>Sapling</strong> activated at block 419,200 (ZIP 205) and <strong>Orchard</strong> with the NU5 upgrade at block 1,687,104 (ZIP 252). In a shielded transaction a zk-SNARK proves that the note being spent exists in the pool's note commitment tree and that the values balance, without saying which note or how much. The anonymity set is the whole pool.",
+      "Orchard's proofs use <strong>Halo 2</strong> on the Pallas and Vesta curves. ZIP 224 notes that Halo 2 does not require a structured reference string, replacing the Groth16 proofs of Sapling, whose parameters came from a setup ceremony. It also notes that a new pool is a separate anonymity set: Orchard started at zero notes, and its set grew only as people moved into it.",
+      "The other half of Zcash is the transparent pool. ZIP 316, which defines unified addresses that bundle Orchard, Sapling and transparent receivers into one string, says plainly that transparent addresses do not provide any privacy protection. A payment from a transparent address into a shielded pool, or back out, shows its amount and its transparent end. A 2018 study by George Kappos, Haaroon Yousaf, Mary Maller and Sarah Meiklejohn (arXiv 1805.03180) found that simple heuristics about how coins entered and left the shielded pool could shrink its anonymity set considerably.",
+      "## Keys and disclosure",
+      "Both coins let a holder show their history on purpose. A Monero <a href=\"/guides/monero-view-key/\" title=\"What a Monero view key reveals, and the proofs that disclose less\">view key</a> shows incoming payments, and FCMP++ adds outgoing view keys. ZIP 316 separates a full viewing key, which shows payments in both directions, from an incoming viewing key, which shows only incoming payments and not change.",
+      "## When the cryptography fails",
+      "A hidden amount has a cost: if the proof system has a flaw, coins could be counterfeited without the chain showing it. Zcash answers that with ZIP 209, often called the turnstile: a node rejects any block that would make the total value in a shielded pool negative, so no more can leave a pool than went in.",
+      "In 2026 Orchard needed that kind of care. Zebra 4.5.3, published on <span class=\"nowrap\">2 June 2026</span>, carried a soft fork that temporarily disabled Orchard actions (advisory GHSA-jfw5-j458-pfv6), and Zebra 5.0.0 activates the NU6.2 upgrade at block 3,364,600 and re-enables Orchard with a fixed Orchard Action circuit; its notes describe the fix as one for a critical bug in the Orchard pool. Monero has no separate pool to wall off: every output is a commitment, so its supply rests on its range proofs and on review of the code, which is the same question FCMP++ raises for its new proofs, and the reason for its audits.",
+      "## Side by side",
+      "<strong>Default.</strong> Monero: every transaction is private. Zcash: a transaction is shielded when its sender chooses a shielded pool; transparent transactions stay open.",
+      "<strong>Anonymity set.</strong> Monero: <span class=\"nowrap\">16 outputs</span> per input, picked by the wallet. Zcash: every note in the pool, proved in zero knowledge, with each pool a set of its own.",
+      "<strong>Amounts.</strong> Monero: always hidden. Zcash: hidden inside a pool, visible where coins cross between transparent and shielded.",
+      "<strong>Setup.</strong> Monero's rings and Bulletproofs+ need no trusted setup, and neither does Orchard's Halo 2; Sapling's Groth16 parameters came from a ceremony.",
+      "<strong>Next.</strong> The <a href=\"/guides/fcmp-plus-plus/\" title=\"FCMP++: how full-chain membership proofs replace Monero's rings\">FCMP++ upgrade</a> gives Monero an anonymity set the size of its chain, as a shielded pool has, while keeping privacy on for every transaction.",
+    ],
+    faq: [
+      {
+        q: "Is Monero more private than Zcash?",
+        a: "They hide different things by default. Every Monero transaction is private, but each input hides among 16 outputs. A Zcash shielded transaction hides among every note in its pool, but a transparent Zcash transaction hides nothing, and coins crossing between the two show their amounts.",
+      },
+      {
+        q: "Does Zcash need a trusted setup?",
+        a: "Orchard, the pool added with NU5 at block 1,687,104, uses Halo 2, which ZIP 224 says does not require a structured reference string. Sapling's Groth16 proofs use parameters that came from a setup ceremony.",
+      },
+    ],
+  },
+
+  {
+    slug: "dandelion-plus-plus",
+    createdAt: "2026-11-06T06:20:00+04:00",
+    updatedAt: "2026-11-06T06:20:00+04:00",
+    site: "xmr0",
+    title: "Dandelion++: how Monero hides where a transaction began",
+    cardTitle: "Dandelion++: where a transaction began",
+    titleSeo: "Dandelion++ and Monero privacy on the network",
+    summary:
+      "Ring signatures hide the sender on the chain, not the node that first broadcast the transaction. How Dandelion++ protects Monero privacy on the network: the stem, the fluff, the embargo and the parameters Monero uses.",
+    date: "2026-11-06",
+    category: "Guide",
+    tags: ["Network"],
+    action: {
+      url: "https://arxiv.org/abs/1805.11060",
+      label: "The Dandelion++ paper",
+      title: "Dandelion++: Lightweight Cryptocurrency Networking with Formal Anonymity Guarantees, on arXiv",
+      icon: "document",
+    },
+    source: {
+      name: "The Dandelion++ paper (arXiv 1805.11060) and Monero's cryptonote_config.h and levin_notify.cpp",
+      url: "https://github.com/monero-project/monero/blob/master/src/cryptonote_config.h",
+      verifiedOn: "2026-11-06",
+    },
+    body: [
+      "Everything in <a href=\"/guides/how-monero-privacy-works/\" title=\"How Monero privacy works: ring signatures, one-time addresses and RingCT\">how Monero privacy works</a> happens on the chain. Before a transaction gets there it has to cross the peer-to-peer network, and in a plain broadcast the node that created it is the first to tell its neighbours. The Dandelion++ paper's abstract states the problem: broadcast lets third-party observers link transactions to the IP addresses that sent them. A well-connected observer that hears a transaction first from one address has a good guess at where it came from.",
+      "## Stem and fluff",
+      "Dandelion++, by Giulia Fanti, Shaileshh Bojja Venkatakrishnan, Surya Bakshi, Bradley Denby, Shruti Bhargava, Andrew Miller and Pramod Viswanath, submitted to arXiv on <span class=\"nowrap\">28 May 2018</span>, splits propagation in two. In the <strong>stem</strong> phase the transaction passes from node to node along a single line; at each hop the node decides at random whether to keep passing it on or to switch to the <strong>fluff</strong> phase, an ordinary broadcast. An observer who hears the fluff learns where the stem ended, not where it began. The paper claims near-optimal information-theoretic guarantees against an adversary who runs some of the nodes.",
+      "Monero added Dandelion++ in v0.16.0.0, Nitrogen Nebula, released on <span class=\"nowrap\">28 May 2020</span> (pull request #6314). Pull request #7025, merged on <span class=\"nowrap\">1 December 2020</span>, set the fluff probability and the embargo it uses today.",
+      "## The parameters",
+      "They are in cryptonote_config.h, with the reasoning in levin_notify.cpp and tx_pool.cpp.",
+      "<strong>Fluff probability: 20%.</strong> At every hop there is one chance in five that the stem ends, so a stem is on average about five hops long. The five is our arithmetic from the 20%, not a figure the code states.",
+      "<strong>Two stems per epoch.</strong> Each node picks <span class=\"nowrap\">2 outgoing peers</span> to stem through and keeps them for an epoch of ten minutes plus a random amount of up to <span class=\"nowrap\">30 seconds</span>, so that the stem path does not change with every transaction and give itself away by comparison.",
+      "<strong>Fluff delays.</strong> A node that fluffs does not send at once. It flushes transactions after a Poisson-distributed delay that averages <span class=\"nowrap\">5 seconds</span> towards inbound peers and half that towards outbound ones, as Bitcoin Core does.",
+      "<strong>The embargo: 39 seconds on average.</strong> A node that passes a transaction along the stem starts a timer. If the transaction has not come back to it as a fluff when the timer runs out, it fluffs the transaction itself, which stops a malicious node from swallowing stems. The average comes from the paper's formula, worked out in tx_pool.cpp with k = 5, ε = 0.10 and a hop time of 175 ms.",
+      "<strong>Your own transactions always stem.</strong> A transaction the node created itself is never fluffed by it directly.",
+      "## Over Tor and I2P",
+      "A node that relays its transactions through Tor or I2P, as in <a href=\"/guides/monero-node-over-tor-i2p/\" title=\"Running a Monero node over Tor or I2P: the options and the leaks that remain\">running a node over Tor or I2P</a>, works differently. By default it sends them inside <strong>noise</strong>: on two channels it sends a fixed-size <span class=\"nowrap\">3 KiB</span> packet every 10 to <span class=\"nowrap\">15 seconds</span>, whether or not it has anything to carry, and a transaction rides inside them in up to <span class=\"nowrap\">20 fragments</span>. A peer that receives a transaction over Tor or I2P forwards it to the public network after a randomised delay, which the v0.17.0.0 release notes announced and the code sets at <span class=\"nowrap\">22 seconds</span> on average, so that, in the code's words, two or more incoming connections could have sent it.",
+      "With noise turned off, the node sends with the fluff flag set and the receiving hidden service fluffs at once. A comment in levin_notify.cpp says what that trade means: the anonymity network is then replacing the sybil protection of Dandelion++.",
+      "## What it does not do",
+      "Dandelion++ is a defence against spy nodes: peers that log what they hear and when. It does nothing against an observer of your own connection. Your internet provider still sees a node sending a transaction to its stem peer, which is what Tor and I2P are for. Nor does it hide anything from a remote node that a wallet sends through, since that node receives the transaction from the wallet directly; Moneropedia's entry on remote nodes says their operators can link transactions to IP addresses.",
+    ],
+    faq: [
+      {
+        q: "Does Monero use Dandelion++?",
+        a: "Yes, since v0.16.0.0, released on 28 May 2020. A node stems each transaction along a line of peers, with a 20% chance at every hop of switching to an ordinary broadcast, and fluffs a stemmed transaction itself if it has not seen it broadcast within an embargo of 39 seconds on average.",
+      },
+      {
+        q: "Is Dandelion++ enough to hide my IP address?",
+        a: "It hides which node started a transaction from the other nodes on the network, but not from someone watching your own connection, such as your internet provider, and not from a remote node your wallet sends through. For those, run your own node and relay transactions over Tor or I2P.",
+      },
+    ],
+  },
+
+  {
+    slug: "monero-node-over-tor-i2p",
+    createdAt: "2026-11-06T06:15:00+04:00",
+    updatedAt: "2026-11-06T06:15:00+04:00",
+    site: "xmr0",
+    title: "Running a Monero node over Tor or I2P",
+    titleSeo: "Monero node over Tor or I2P",
+    summary:
+      "Monero privacy on the chain does not cover the IP address that sent a transaction. How to run monerod over Tor or I2P — --proxy, --tx-proxy, a hidden service for the wallet — and the leaks the project's own documentation lists.",
+    date: "2026-11-06",
+    category: "Guide",
+    tags: ["Network"],
+    action: {
+      url: "https://github.com/monero-project/monero/blob/master/docs/ANONYMITY_NETWORKS.md",
+      label: "ANONYMITY_NETWORKS.md",
+      title: "The Monero project's document on running monerod and the wallet over Tor and I2P",
+      icon: "document",
+    },
+    source: {
+      name: "ANONYMITY_NETWORKS.md in monero-project/monero, the monerod reference and the v0.18.5.0 release notes",
+      url: "https://github.com/monero-project/monero/blob/master/docs/ANONYMITY_NETWORKS.md",
+      verifiedOn: "2026-11-06",
+    },
+    body: [
+      "Ring signatures and one-time addresses protect what is on the chain. They do nothing for the IP address that hands a transaction to the network, and that address is what a peer, a spy node or a remote node sees first. Moneropedia's entry on remote nodes is direct about the last of these: node operators can link transactions to IP addresses. Its advice is to run your own node, and where the address matters, to run it over Tor or I2P.",
+      "## Two options, two jobs",
+      "<code>--proxy</code> sends all of monerod's external traffic — syncing, peer connections, update checks — through a SOCKS proxy, but treats the proxy as the ordinary internet: it does not connect to hidden services through it. <code>--tx-proxy</code> is the anonymity-network mode. Once it is set, transactions the node creates are sent only to peers on Tor or I2P; if none is connected, the node logs an error and keeps the transaction rather than falling back to the public network.",
+      "The chain itself cannot be synced over hidden services: they carry handshakes, timed syncs and transaction broadcasts only. Running exclusively over hidden services is not supported either, because monerod relies on IPv4 to sync the blockchain and make sybil attacks more difficult. Syncing over Tor therefore means syncing from IPv4 peers through Tor with <code>--proxy</code>.",
+      "## Four ways to run it",
+      "The documentation gives four configurations, and what your internet provider sees in each.",
+      "<strong>Clearnet sync, transactions over Tor.</strong> <code>monerod --tx-proxy tor,127.0.0.1:9050,10</code> syncs over the ordinary internet, so your provider sees a Monero node, but sends your transactions over Tor to up to ten hidden-service peers.",
+      "<strong>Everything over Tor, no hidden services.</strong> <code>monerod --proxy 127.0.0.1:9050 --p2p-bind-ip 127.0.0.1</code>. Your provider sees Tor, not monerod. The node accepts no incoming connections and does not reach hidden services.",
+      "<strong>Tor for syncing, hidden services for transactions.</strong> Add <code>--tx-proxy tor,127.0.0.1:9050,10 --tx-proxy i2p,127.0.0.1:4447,10</code> to the line above. Your provider sees Tor and I2P, your transactions go to hidden services, and the node still accepts no incoming connections.",
+      "<strong>Publishing your own hidden services.</strong> With Tor and I2P set up to forward to the node, <code>--anonymous-inbound youronionaddress.onion:18084,127.0.0.1:18084</code>, and the same for a .b32.i2p address on another local port, lets other nodes send their transactions to yours. The port must be unique, not 18080, and the inbound address carries transactions only, never the chain.",
+      "Since v0.18.5.0, of <span class=\"nowrap\">12 May 2026</span>, the proxy in a <code>--tx-proxy</code> line can be SOCKS v5 with a user name and password, written <code>socks5://user:pass@127.0.0.1:9050</code>; the same release removed UPnP port mapping from monerod.",
+      "## A wallet over Tor",
+      "A wallet on another machine talks to the node's RPC, which needs a hidden service of its own, separate from the P2P one; the documentation's Tor configuration puts it on port 18089. The wallet then connects with <code>monero-wallet-cli --proxy 127.0.0.1:9050 --daemon-address youronionaddress.onion:18089</code>. The proxy must match the address type: a Tor proxy will not reach an I2P address. An onion or b32.i2p address on its own authenticates and encrypts the connection from end to end.",
+      "## Noise and padding",
+      "By default, a node sending over Tor or I2P hides its transactions in <strong>noise</strong>: fixed-size <span class=\"nowrap\">3 KiB</span> packets sent on two channels every 10 to <span class=\"nowrap\">15 seconds</span> whether or not there is a transaction to carry, so a watcher of the encrypted link cannot tell when one was sent. Adding <code>disable_noise</code> at the end of a <code>--tx-proxy</code> line turns it off; the <a href=\"/guides/dandelion-plus-plus/\" title=\"Dandelion++: the stem, the fluff and the parameters Monero uses\">Dandelion++ guide</a> has what changes when it does. Two more options help: <code>--pad-transactions</code> pads relayed transactions to a multiple of 1024 bytes against traffic-volume analysis, and <code>--hide-my-port</code> stops the node advertising its port to peers.",
+      "## Tor or I2P",
+      "I2P's own comparison page draws the difference. Tor builds bidirectional three-hop circuits and keeps its directory with nine directory authorities; I2P uses one-way tunnels, packet switching and garlic routing, with a distributed database kept by floodfill routers. Tor has millions of daily users against I2P's roughly 55,000 routers, by I2P's count for 2025. Monero's documentation weighs that for one attack in particular: against active bandwidth shaping I2P protects better, because its connections are not circuit-based, but it has a smaller set of users, so less cover traffic, and fewer academic reviews. monerod can use both at once.",
+      "## What still leaks",
+      "The documentation lists four ways the machine behind an anonymity-network connection could still be identified.",
+      "<strong>Timestamps.</strong> The periodic timed-sync message carries the node's clock. A peer that sees the same slightly wrong time on a Tor connection and an IPv4 one could link the two. Keep the system clock accurate.",
+      "<strong>Intermittent syncing.</strong> A node started only to send a transaction and then stopped tells your provider when you transacted. Run monerod as often as you can.",
+      "<strong>Active bandwidth shaping.</strong> An attacker could shape traffic to find the source of a Tor or I2P connection. There is no strong mitigation; I2P resists it better.",
+      "<strong>The same stream used twice.</strong> If two transactions travel over the same hidden-service connection, its operator can conclude that they came from one source, and if the second spends change from the first, which ring member was real. monerod picks two outgoing connections every five minutes, change is locked for about 20 minutes and Tor rotates circuits about every ten, so connections usually change in between; the documentation still warns of a decent probability of reuse.",
+    ],
+    faq: [
+      {
+        q: "Can I sync the Monero blockchain over Tor?",
+        a: "Yes, through Tor with --proxy 127.0.0.1:9050, which syncs from ordinary IPv4 nodes. What monerod cannot do is sync over hidden services: onion and I2P peers carry transactions, handshakes and timed syncs only.",
+      },
+      {
+        q: "Is a remote node over Tor as good as my own node?",
+        a: "Tor hides your IP address from the remote node, but the node still sees your wallet's requests and the transactions it sends. Moneropedia's advice is to run your own node.",
+      },
+      {
+        q: "Should I use Tor or I2P for Monero?",
+        a: "Either keeps your IP address from the peers that receive your transactions. Monero's documentation says I2P resists bandwidth-shaping attacks better because its connections are not circuits, but has fewer users and fewer academic reviews than Tor. monerod can use both at once.",
+      },
+    ],
+  },
+
+  {
+    slug: "monero-view-key",
+    createdAt: "2026-11-06T06:10:00+04:00",
+    updatedAt: "2026-11-06T06:10:00+04:00",
+    site: "xmr0",
+    title: "What a Monero view key reveals",
+    summary:
+      "A Monero view key shows every payment a wallet receives, but not reliably what it spends. What the private view key reveals, what the payment, spend and reserve proofs disclose instead, and how Carrot changes Monero privacy for view-only wallets.",
+    date: "2026-11-06",
+    category: "Guide",
+    tags: ["Wallets"],
+    action: {
+      url: "https://github.com/jeffro256/carrot/blob/master/carrot.md",
+      label: "The Carrot specification",
+      title: "Carrot, the addressing protocol that comes with FCMP++, and its new tiers of view-only access",
+      icon: "document",
+    },
+    source: {
+      name: "Monero's simplewallet.cpp, wallet2.cpp and account.cpp, Moneropedia's entry on the view key, and the Carrot specification",
+      url: "https://github.com/monero-project/monero/blob/master/src/simplewallet/simplewallet.cpp",
+      verifiedOn: "2026-11-06",
+    },
+    body: [
+      "A Monero wallet has two key pairs. The <strong>spend key</strong> signs transactions; the <strong>view key</strong> finds them. In a wallet made from the standard <span class=\"nowrap\">25-word</span> seed the private view key is not chosen separately: account.cpp derives it as the Keccak hash of the private spend key, which is why one seed restores both.",
+      "## What the view key shows",
+      "The private view key and the address are enough to recognise every output sent to the wallet, with its amount: the view key reproduces the shared secret the sender used to make the one-time address and to encrypt the amount, as <a href=\"/guides/how-monero-privacy-works/\" title=\"How Monero privacy works: ring signatures, one-time addresses and RingCT\">how Monero privacy works</a> describes. That covers the wallet's subaddresses too, since they are derived from the same keys. In the CLI wallet, <code>viewkey</code> displays it.",
+      "What it does not show reliably is spending. A spend is marked on the chain only by a key image, and a key image is made with the private spend key, so a view-only wallet cannot tell which of its outputs have gone. Moneropedia says as much: outgoing transactions cannot be reliably viewed, and the balance a view-only wallet shows should not be relied upon.",
+      "The remedy is to hand the view-only wallet its key images. The full wallet's <code>export_key_images</code> writes a signed set of them, and the view-only wallet's <code>import_key_images</code> reads it. After that the view-only wallet can show spends and a true balance, for the outputs it was told about, as of the moment of export.",
+      "## Proofs instead of keys",
+      "Handing over a view key shows a wallet's whole incoming history. Usually the question is narrower, and the CLI wallet has a proof for each.",
+      "<strong>One payment, with the transaction key.</strong> <code>get_tx_key</code> prints a sent transaction's secret key, <em>r</em>; with it, <code>check_tx_key</code> lets anyone check the amount going to an address in that transaction. Only the sender has <em>r</em>, so this is how a sender shows they paid.",
+      "<strong>One payment, without disclosing a key.</strong> <code>get_tx_proof</code> makes a signature from either the transaction secret key or the view secret key, and its help text notes that this does not disclose the secret key; <code>check_tx_proof</code> verifies it. A recipient can make one with their view key to show they were paid.",
+      "<strong>That you made a transaction.</strong> <code>get_spend_proof</code> makes a signature with the spend secret key showing that you created a given transaction; <code>check_spend_proof</code> verifies it.",
+      "<strong>That you hold at least an amount.</strong> <code>get_reserve_proof</code> proves you own at least a given amount, or with <code>all</code>, your whole balance. It needs the full wallet, and it does not stay private over time: the proof carries the transaction id, output index and key image of every output it covers, and <code>check_reserve_proof</code> asks the node whether those key images are spent. Whoever holds the proof can later see when each of those outputs is spent.",
+      "## Who should hold one",
+      "A view key is for someone who needs the whole incoming history and is trusted with it: an accountant, an auditor, a watch-only wallet on a phone that should not hold the spend key. For a single question — did this payment arrive, did you pay this invoice — a proof discloses less. A view key cannot move funds. It does disclose every incoming payment, past and future, for as long as the wallet is used.",
+      "## What Carrot changes",
+      "Carrot, the addressing protocol that comes with <a href=\"/guides/fcmp-plus-plus/\" title=\"FCMP++: how full-chain membership proofs replace Monero's rings\">FCMP++</a>, splits the view key's job. In a wallet created under it, an incoming view key finds incoming payments, while a separate view-balance secret finds received and outgoing enotes alike, so a full view-only wallet can identify spent outputs. Between them sits a payment-validator tier that sees incoming payments but, unlike a view-only wallet today, cannot see the wallet's internal change; below it, an address-generator tier, meant for point-of-sale terminals, can make new addresses but cannot recognise any payment. The tiers apply only to wallets made under the new key hierarchy; existing wallets keep today's two keys, though the specification says they still gain its protection against the burning bug without migrating.",
+    ],
+    faq: [
+      {
+        q: "Can someone steal my Monero with my view key?",
+        a: "No. The private view key can find and read payments to the wallet, but it cannot sign a transaction; only the private spend key can. It does reveal every incoming payment, past and future, so share it only with someone who should see them.",
+      },
+      {
+        q: "Why does my view-only Monero wallet show the wrong balance?",
+        a: "A view-only wallet sees incoming payments but cannot work out the key images that mark spends without the spend key. Export the key images from the full wallet with export_key_images and import them into the view-only wallet with import_key_images to see spends.",
+      },
+      {
+        q: "How do I prove I paid someone in Monero?",
+        a: "With the transaction key: get_tx_key gives the secret key r of a transaction you sent, and anyone can run check_tx_key with it, the transaction id and the address to see the amount. get_tx_proof gives a signature that proves the same without disclosing a key.",
+      },
+    ],
+  },
+
+  {
+    slug: "monero-wallet-security",
+    createdAt: "2026-11-06T06:05:00+04:00",
+    updatedAt: "2026-11-06T06:05:00+04:00",
+    site: "xmr0",
+    title: "Securing a Monero wallet: seeds, signed downloads and hardware",
+    cardTitle: "Securing a Monero wallet",
+    titleSeo: "Monero wallet security checklist",
+    summary:
+      "Monero privacy is only as good as the wallet holding the keys. How the 25-word seed and Polyseed encode them, how to check a download against the signed hashes, and which hardware wallets the Monero project lists.",
+    date: "2026-11-06",
+    category: "Guide",
+    tags: ["Wallets"],
+    action: {
+      url: "https://www.getmonero.org/downloads/",
+      label: "Monero downloads",
+      title: "The Monero project's downloads page, with the signed hashes for every release file",
+      icon: "download",
+    },
+    source: {
+      name: "The Monero project's verification guide and downloads page, electrum-words.cpp, and the Polyseed specification (tevador/polyseed)",
+      url: "https://www.getmonero.org/resources/user-guides/verification-allos-advanced.html",
+      verifiedOn: "2026-11-06",
+    },
+    body: [
+      "Everything a Monero wallet hides depends on two secrets: the private spend key, which moves funds, and the private view key, which reads them. This guide covers where those keys come from, how to check the software that holds them, and the hardware that keeps the spend key off the computer.",
+      "## The 25-word seed",
+      "A standard Monero wallet is one <span class=\"nowrap\">256-bit</span> secret, the private spend key; the view key is derived from it, as the <a href=\"/guides/monero-view-key/\" title=\"What a Monero view key reveals, and the proofs that disclose less\">view key guide</a> explains. The seed writes that secret as <strong><span class=\"nowrap\">25 words</span></strong> from a list of 1626. The first 24 carry the key, three words to every 32 bits. The 25th is a checksum: electrum-words.cpp takes a CRC32 over the first letters of the 24 words and repeats the word it points to. A mistyped word is caught; the right words in the right order are the wallet.",
+      "## Polyseed",
+      "<strong>Polyseed</strong>, a newer format by tevador, writes a wallet in <span class=\"nowrap\">16 words</span> of 11 bits each: a 150-bit secret, plus the wallet's birthday and a few flags. The birthday matters for restoring: a wallet that knows when it was made does not have to scan the chain from the beginning. The specification gives the range of birthdays as <span class=\"nowrap\">November 2021</span> to <span class=\"nowrap\">February 2107</span> and the security level as 128 bits. The key is derived with PBKDF2-HMAC-SHA256 over 10,000 iterations, a seed can be encrypted with a passphrase, and a coin flag mixed in by XOR keeps a seed for one coin from restoring a wallet of another.",
+      "In Monero's own software, Polyseed support for wallet2, the wallet API, the CLI wallet and the wallet RPC server was merged into the master branch on <span class=\"nowrap\">20 September 2026</span> (pull request #10765). It is not in the v0.18 releases.",
+      "## Checking a download",
+      "The Monero project publishes a file, hashes.txt, with the SHA-256 hash of every release file, signed with the GPG key of binaryFate. The verification guide's steps are these:",
+      "<strong>1. Import the key</strong> with <code>gpg --import binaryfate.asc</code>, and check that its fingerprint is <code>81AC 591F E9C4 B65C 5806 AFC3 F0AF 4D46 2A0B DF92</code>. The same key is in the repository under utils/gpg_keys.",
+      "<strong>2. Verify the file</strong> with <code>gpg --verify hashes.txt</code> and look for a good signature. The warning that the key is not certified with a trusted signature is expected: it says you have not signed binaryFate's key yourself, not that the signature is bad. The fingerprint is the check that matters.",
+      "<strong>3. Hash the download</strong> with <code>shasum -a 256</code> on macOS and Linux, or <code>certUtil -hashfile</code> on Windows, and compare the result with the line for that file in hashes.txt.",
+      "The downloads page notes that mobile and light wallets are not managed by the Monero core team, so each comes with its own project's way of checking it.",
+      "## Hardware wallets",
+      "The downloads page lists the hardware wallets that support Monero: Ledger Nano S with firmware 2.1.0 or later, Nano S Plus with 1.0.3 or later and Nano X with 2.0.2 or later, and Trezor Model T, Safe 3 and Safe 5 with firmware 2.5.2 or later. A hardware wallet keeps the private spend key on the device and signs there, so a compromised computer cannot spend without it.",
+      "## The rest of the checklist",
+      "<strong>Run the recommended release.</strong> As of <span class=\"nowrap\">6 November 2026</span> that is v0.18.5.4, of <span class=\"nowrap\">17 October 2026</span>, whose notes list a fix for DNSSEC.",
+      "<strong>Use your own node.</strong> A wallet connected to someone else's node gives that node its IP address and the transactions it sends. The <a href=\"/guides/monero-node-over-tor-i2p/\" title=\"Running a Monero node over Tor or I2P: the options and the leaks that remain\">node guide</a> has how to run one over Tor or I2P.",
+      "<strong>Treat multisig as experimental.</strong> Since v0.18.0.0, of <span class=\"nowrap\">20 July 2022</span>, multisig has been off by default and is turned on with <code>--enable-multisig-experimental</code>.",
+      "<strong>Share proofs, not keys.</strong> A view key discloses every incoming payment; a transaction proof discloses one. The view key guide has what each proof reveals.",
+    ],
+    faq: [
+      {
+        q: "How many words is a Monero seed?",
+        a: "The standard seed is 25 words: 24 encode the 256-bit private spend key and the 25th repeats one of them as a checksum. Polyseed, a newer format, uses 16 words and records the wallet's birthday.",
+      },
+      {
+        q: "How do I check that a Monero download is genuine?",
+        a: "Import binaryFate's GPG key and check that its fingerprint is 81AC 591F E9C4 B65C 5806 AFC3 F0AF 4D46 2A0B DF92, verify hashes.txt with gpg --verify, then compare the SHA-256 of your download with the line for it in hashes.txt.",
+      },
+      {
+        q: "Which hardware wallets support Monero?",
+        a: "The Monero downloads page lists Ledger Nano S, Nano S Plus and Nano X, and Trezor Model T, Safe 3 and Safe 5, each from a minimum firmware version.",
+      },
+    ],
+  },
+
+  {
+    slug: "privacy-coins-eu-uk-rules",
+    createdAt: "2026-11-06T06:00:00+04:00",
+    updatedAt: "2026-11-06T06:00:00+04:00",
+    site: "xmr0",
+    title: "Privacy coins and the rules in the EU and the UK",
+    cardTitle: "Privacy coins: EU and UK rules",
+    titleSeo: "EU and UK rules on privacy coins",
+    summary:
+      "What the EU's AMLR and MiCA and the UK's cryptoasset rules say about privacy coins: whom they bind, from which date, and how Monero privacy tools such as view keys and payment proofs sit beside them.",
+    date: "2026-11-06",
+    category: "Guide",
+    tags: ["Rules"],
+    action: {
+      url: "https://eur-lex.europa.eu/eli/reg/2024/1624/oj",
+      label: "Regulation (EU) 2024/1624",
+      title: "Regulation (EU) 2024/1624 on EUR-Lex, with Article 79 on anonymity-enhancing coins",
+      icon: "document",
+    },
+    source: {
+      name: "Regulations (EU) 2024/1624, 2023/1114 and 2023/1113 on EUR-Lex, and the Financial Conduct Authority's cryptoasset pages",
+      url: "https://eur-lex.europa.eu/eli/reg/2024/1624/oj",
+      verifiedOn: "2026-11-06",
+    },
+    body: [
+      "This guide sets out what the texts themselves say, for the European Union and the United Kingdom. It is not legal advice.",
+      "## The EU: AMLR, Article 79",
+      "The text most often cited is Regulation (EU) 2024/1624 of <span class=\"nowrap\">31 May 2024</span>, the Anti-Money Laundering Regulation. Its Article 79(1) prohibits credit institutions, financial institutions and crypto-asset service providers from keeping anonymous crypto-asset accounts, or any account that allows the anonymisation of the account holder or the anonymisation or increased obfuscation of transactions, including through anonymity-enhancing coins.",
+      "Article 2 defines those coins:",
+      "> 'anonymity-enhancing coins' means crypto-assets that have built-in features designed to make crypto-asset transfer information anonymous, either systematically or optionally",
+      "On its face the definition covers a coin like Monero, where the features are on for every transaction, and a coin where they are optional.",
+      "The prohibition is addressed to institutions and providers. Recital 160 adds that it does not apply to providers of hardware and software or of self-hosted wallets, insofar as they do not possess access to or control over those wallets. Article 90 sets the date from which the regulation applies: <span class=\"nowrap\">10 July 2027</span>. Transfers between a provider and a self-hosted address are a separate matter, under Article 40, on which the EU's new Anti-Money Laundering Authority, AMLA, is to issue guidelines by the same date.",
+      "## The EU: MiCA and the travel rule",
+      "The Markets in Crypto-Assets Regulation, Regulation (EU) 2023/1114, has applied since <span class=\"nowrap\">30 December 2024</span>. Its Article 76(3) requires the operating rules of a trading platform to prevent the admission to trading of crypto-assets with an inbuilt anonymisation function, unless their holders and transaction history can be identified by the provider running the platform.",
+      "The Transfer of Funds Regulation, Regulation (EU) 2023/1113, applies from the same date and carries the travel rule for crypto-assets: Article 14 sets out the information on the originator that must accompany a transfer between providers.",
+      "## The UK",
+      "In the UK the Financial Conduct Authority has supervised cryptoasset businesses for anti-money laundering purposes since <span class=\"nowrap\">10 January 2020</span>: exchange providers and custodian wallet providers must register with it under the Money Laundering Regulations. The travel rule has applied since <span class=\"nowrap\">1 September 2023</span>, under Part 7A of the Money Laundering Regulations 2017.",
+      "A wider regime follows. The Financial Services and Markets Act 2000 (Cryptoassets) Regulations 2026 were made on <span class=\"nowrap\">4 February 2026</span>, and the FCA expects the new regime to come into force on <span class=\"nowrap\">25 October 2027</span>. The FCA pages on the regime read for this guide do not single out privacy coins, and this guide makes no claim about how the detailed rules will treat them.",
+      "## Where Monero's own tools come in",
+      "These texts address providers, not protocols, and what they ask of a provider is to know its customer and the transfer. Monero already gives a holder ways to disclose on purpose without giving up the rest: a transaction key or a payment proof shows one payment to one party, and a view key shows a wallet's incoming history to an auditor. The <a href=\"/guides/monero-view-key/\" title=\"What a Monero view key reveals, and the proofs that disclose less\">view key guide</a> has what each one discloses. Privacy in this sense is a property of the protocol, as encryption is of a connection; disclosure is the holder's choice.",
+      "Whether a particular provider can support a coin under these rules is a question for that provider and its regulator, and outside what this site covers.",
+    ],
+    faq: [
+      {
+        q: "Does the EU's AMLR ban Monero?",
+        a: "Its prohibition is addressed to providers, not to people who hold coins. Article 79 of Regulation (EU) 2024/1624 prohibits credit institutions, financial institutions and crypto-asset service providers from keeping accounts that allow anonymisation, including through anonymity-enhancing coins, from 10 July 2027. Recital 160 says it does not apply to providers of self-hosted wallets that have no access to or control over them.",
+      },
+      {
+        q: "When does the EU rule on anonymity-enhancing coins apply?",
+        a: "Regulation (EU) 2024/1624 applies from 10 July 2027, under its Article 90. MiCA's rule on admitting crypto-assets with an inbuilt anonymisation function to trading, Article 76(3), has applied since 30 December 2024.",
+      },
+      {
+        q: "What are the UK rules on privacy coins?",
+        a: "The FCA has supervised cryptoasset businesses for anti-money laundering purposes since 10 January 2020, and the travel rule has applied since 1 September 2023. A new regime under the Financial Services and Markets Act is expected to come into force on 25 October 2027. The FCA pages read for this guide do not single out privacy coins.",
+      },
+    ],
+  },
+
+];

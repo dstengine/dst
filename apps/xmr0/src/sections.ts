@@ -3,9 +3,10 @@
 // already spoken for — live in @dst/content/sections. What is left here is
 // the vocabulary and the wording.
 //
-// No subjects yet: a subject is added here when the guides that will fill
-// it are written, with a tag the entries carry in `tags` and a title, a
-// description and an h1 that say "Monero privacy".
+// Three subjects, one for each place a payment can give itself away: the
+// protocol, the network and the wallet. Each tag is one the entries carry
+// in `tags`, and each page's title, description and h1 say "Monero privacy".
+// "Rules" is a tag without a page until a second guide carries it.
 import { buildSections, type Intent, type Section } from "@dst/content/sections";
 import type { NewsItem } from "@dst/content/types";
 
@@ -28,7 +29,35 @@ interface Subject {
   lede: string;
 }
 
-const SUBJECTS: Subject[] = [];
+const SUBJECTS: Subject[] = [
+  {
+    tag: "Protocol",
+    slug: "protocol",
+    label: "Protocol",
+    title: "Monero privacy protocol: rings, addresses and FCMP++",
+    description: "How the Monero privacy protocol hides sender, receiver and amount: ring signatures, one-time addresses and RingCT, the FCMP++ upgrade, and how it compares with Zcash.",
+    h1: "The Monero privacy protocol",
+    lede: "What the chain hides and how: rings and key images, one-time addresses and view tags, commitments and range proofs, and the full-chain proofs meant to replace the ring.",
+  },
+  {
+    tag: "Network",
+    slug: "network",
+    label: "Network",
+    title: "Monero privacy on the network: Dandelion++, Tor, I2P",
+    description: "Monero privacy on the peer-to-peer network: how Dandelion++ hides which node a transaction started from, and how to run monerod over Tor or I2P.",
+    h1: "Monero privacy on the network",
+    lede: "The chain hides the sender; the network can still give away the IP address. Dandelion++, Tor and I2P, with the parameters from the code and the leaks the documentation lists.",
+  },
+  {
+    tag: "Wallets",
+    slug: "wallets",
+    label: "Wallets",
+    title: "Monero privacy in the wallet: keys, seeds and proofs",
+    description: "Monero privacy in the wallet: what the view key reveals, the proofs that disclose less, seeds and Polyseed, checking a download and the hardware wallets that support Monero.",
+    h1: "Monero privacy in the wallet",
+    lede: "The keys that hold everything the protocol hides: what each one discloses, how the seed encodes them, and how to check the software and hardware that keep them.",
+  },
+];
 
 // Two guides make a page: one alone is a link to itself with a heading on
 // top, and the guides index already lists it.
