@@ -32,7 +32,7 @@ const SUBJECTS: Subject[] = [
     tag: "Cake Wallet",
     slug: "cake-wallet",
     label: "Cake Wallet",
-    title: "Monzero in Cake Wallet: integration, build and pull request",
+    title: "Guides to the Monzero patch: build, seeds, pull request",
     description: "The Monzero guides about Cake Wallet: what the XMZ integration patch adds, how its seeds work, how it was built and tested, and where its pull request stands.",
     h1: "The Monzero patch for Cake Wallet",
     lede: `What the patch that adds Monzero to Cake Wallet does, how it was built and tested, and what has to happen before Cake Wallet could ship it.`,

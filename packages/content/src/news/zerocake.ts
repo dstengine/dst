@@ -22,9 +22,9 @@ export const items: NewsItem[] = [
     updatedAt: "2026-11-06T06:05:00+04:00",
     site: "zerocake",
     featured: 1,
-    title: "Monzero in Cake Wallet: what the integration adds",
+    title: "What the Monzero patch adds to Cake Wallet",
     summary:
-      "A six-commit patch adds Monzero (XMZ) to Cake Wallet as a new wallet type, built file for file on the Wownero integration: a wallet package, an XMZ currency with 11 decimals, a default node and Monzero in every screen Wownero reaches. What it adds, and where it follows Monero instead.",
+      "A six-commit patch adds Monzero (XMZ) to Cake Wallet as a new wallet type: a copy of the Wownero integration that follows Monero where Wownero falls short.",
     date: "2026-11-06",
     category: "Guide",
     tags: ["Cake Wallet"],
@@ -54,7 +54,7 @@ export const items: NewsItem[] = [
       "Copying Wownero brought three things that are right for Wownero and wrong for a coin people are meant to keep using. Three of the six commits replace them with what Cake Wallet does for Monero.",
       "<strong>Opening a wallet.</strong> Wownero is deprecated in Cake Wallet, so its code throws a deprecation error every time a wallet is opened. Copied as it was, a Monzero wallet could be created and never opened again. Dart's static analysis found it. The second commit opens Monzero wallets normally and, if that fails, retries the way the Monero code does — restore the cache files, then remove the cache, then give up — instead of Wownero's retry with no limit.",
       "<strong>The end of a sync.</strong> The sync listener copied from Wownero lacks two fixes the Monero code received, Cake Wallet pull requests 2377 and 3575. In the app, a Monzero wallet reopened after a full sync could stay at “Attempting sync”. The fifth commit ports the Monero logic: wait while the node's height still reads 0, take the higher of the node's height and the wallet's, and report again every five ticks even when nothing has changed.",
-      "<strong>Seeds.</strong> Cake Wallet has no BIP39 for Wownero; it has BIP39 for Monero. The sixth commit gives Monzero the Monero BIP39 code unchanged, so a new Monzero wallet can have a classic <span class=\"nowrap\">25-word</span> seed or a BIP39 phrase. Polyseed is not offered for new Monzero wallets, though restoring one still works. That choice has a consequence for anyone who also holds Monero, and the <a href=\"/guides/monzero-bip39-seeds/\" title=\"Why one BIP39 phrase gives the same keys on Monero and Monzero, and what to do about it\">BIP39 guide</a> explains it.",
+      "<strong>Seeds.</strong> Cake Wallet has no BIP39 for Wownero; it has BIP39 for Monero. The sixth commit gives Monzero the Monero BIP39 code unchanged, so a new Monzero wallet can have a classic <span class=\"nowrap\">25-word</span> seed or a BIP39 phrase. Polyseed is not offered for new Monzero wallets; the restore screen still accepts a Polyseed, as before, though restoring one has not been tested. That choice has a consequence for anyone who also holds Monero, and the <a href=\"/guides/monzero-bip39-seeds/\" title=\"Why one BIP39 phrase gives the same keys on Monero and Monzero, and what to do about it\">BIP39 guide</a> explains it.",
     ],
     faq: [
       {
@@ -80,7 +80,7 @@ export const items: NewsItem[] = [
     featured: 2,
     title: "Monzero BIP39 seeds: one phrase, the same keys as Monero",
     summary:
-      "In Cake Wallet's Monzero patch a BIP39 phrase is derived on Monero's own path, m/44'/128'/0'/0/0, so one phrase gives the same keys on Monero and on Monzero. What that means for privacy and for funds, and why a Monzero wallet wants a phrase of its own.",
+      "In Cake Wallet's Monzero patch a BIP39 phrase uses Monero's path, m/44'/128'/0'/0/0, so one phrase gives the same keys on both coins. Why Monzero needs its own.",
     date: "2026-11-06",
     category: "Guide",
     tags: ["Security", "Cake Wallet"],
@@ -98,7 +98,7 @@ export const items: NewsItem[] = [
       "The same is true of a classic <span class=\"nowrap\">25-word</span> Monero seed, since Monzero uses Monero's word lists and derives its keys from them in the same way. The patch's tests depend on it. They restore Cake Wallet's own Monero test phrases as Monzero wallets and expect Monero's test addresses back, re-encoded for Monzero: decode the address, change the network prefix from 18 to 86, recompute the Keccak checksum.",
       "## What that means",
       "<strong>One address gives the other away.</strong> A Monero address and a Monzero address made from the same phrase carry the same two public keys; only the prefix and the checksum differ. Anyone who has one can compute the other, exactly as the test does, and tie the Monzero wallet to the Monero one.",
-      "<strong>One secret guards both.</strong> Whoever learns the phrase controls the funds on both networks. Typing a Monero phrase into Monzero software puts the Monero funds behind software that Monzero's own README calls pre-release and unaudited.",
+      "<strong>One secret guards both.</strong> Whoever learns the phrase controls the funds on both networks. Typing a Monero phrase into Monzero software puts the Monero funds behind software that, by Monzero's own README, has not been independently audited.",
       "<strong>Monzero says not to.</strong> Its README asks users never to reuse a Monero wallet file, private key or recovery seed with Monzero, and not to import a seed used on another CryptoNote-derived network.",
       "So the safe way to use the feature is the way it was built to be used: a <strong>new</strong> phrase for a Monzero wallet, written down and kept for that wallet alone. What the shared derivation buys is portability — a Monzero phrase made this way can be restored by any Monzero wallet that derives BIP39 the way Monero wallets do — not a licence to reuse a Monero phrase.",
       "A BIP39 passphrase does change the keys; the tests check that it changes the address. It does not separate the two wallets, though. The phrase itself still has to be typed into the Monzero app, and a Monero wallet made from that phrase without a passphrase is open to whoever learns it.",
@@ -110,7 +110,7 @@ export const items: NewsItem[] = [
     faq: [
       {
         q: "Can I use my Monero seed for Monzero?",
-        a: "It would work — Monzero uses Monero's word lists and, in the Cake Wallet patch, Monero's BIP39 path, so the seed gives the same keys — but Monzero's own README says never to do it. The software is pre-release and unaudited, and the shared keys let anyone link the two wallets' addresses. Make a new seed for Monzero.",
+        a: "It would work — Monzero uses Monero's word lists and, in the Cake Wallet patch, Monero's BIP39 path, so the seed gives the same keys — but Monzero's own README says never to do it. The software has not been independently audited, and the shared keys let anyone link the two wallets' addresses. Make a new seed for Monzero.",
       },
       {
         q: "Which BIP39 derivation path does Monzero use in Cake Wallet?",
@@ -118,7 +118,7 @@ export const items: NewsItem[] = [
       },
       {
         q: "Does a Monzero wallet in Cake Wallet support Polyseed?",
-        a: "Not for new wallets: in the patch, a new Monzero wallet gets either the classic 25-word seed or a BIP39 phrase. Restoring a Polyseed still works as it did before the BIP39 commit.",
+        a: "Not for new wallets: in the patch, a new Monzero wallet gets either the classic 25-word seed or a BIP39 phrase. The restore screen still accepts a Polyseed, as it did before the BIP39 commit, but a Polyseed restore has not been tested.",
       },
     ],
   },
@@ -132,7 +132,7 @@ export const items: NewsItem[] = [
     title: "What is Monzero (XMZ)? The Monero fork, in figures",
     cardTitle: "What is Monzero (XMZ)?",
     summary:
-      "Monzero (XMZ) is an experimental fork of Monero v0.18.5.x on a chain of its own, started in August 2026: RandomX mining, 11 decimal places, addresses that start with F and a public node on port 6175. Its figures, and the warning its own README gives.",
+      "Monzero (XMZ) is a fork of Monero v0.18.5.x with a chain of its own, started in August 2026: RandomX, 11 decimals, addresses that start with F, port 6175.",
     date: "2026-11-06",
     category: "Guide",
     tags: ["Network"],
@@ -148,7 +148,7 @@ export const items: NewsItem[] = [
       verifiedOn: "2026-11-06",
     },
     body: [
-      "Monzero is a cryptocurrency built from the Monero codebase, with the ticker <strong>XMZ</strong>. The Cake Wallet patch this site describes calls it a fork of Monero <span class=\"nowrap\">v0.18.5.x</span>. Its own README calls it an independent, experimental network derived from Monero, with its own genesis block, network identity, ports, address prefixes and monetary policy, and says it is not affiliated with or endorsed by the Monero Project. Its first block is dated <span class=\"nowrap\">25 August 2026</span>: Monzero is a new chain that starts from a block of its own, not a copy of Monero's history.",
+      "Monzero is a cryptocurrency built from the Monero codebase, with the ticker <strong>XMZ</strong>. The Cake Wallet patch this site describes calls it a fork of Monero <span class=\"nowrap\">v0.18.5.x</span>. Its own README calls it an independent privacy-coin network derived from Monero, with its own genesis block, network identity, ports, address prefixes and monetary policy, and says it is not affiliated with or endorsed by the Monero Project. Its first block is dated <span class=\"nowrap\">25 August 2026</span>: Monzero is a new chain that starts from a block of its own, not a copy of Monero's history.",
       "## The figures",
       "<strong>Decimals.</strong> <span class=\"nowrap\">11 decimal places</span>: one XMZ is 100,000,000,000 atomic units. The chain specification says eleven is the most that a <span class=\"nowrap\">100-million-coin</span> emission allows in the <span class=\"nowrap\">64-bit</span> amount type the code uses; twelve would overflow it.",
       "<strong>Addresses.</strong> Network prefixes 86 for standard addresses, 87 for integrated addresses and 88 for subaddresses. A standard address or a subaddress starts with <strong>F</strong> and is <span class=\"nowrap\">95 characters</span> long; an integrated address is <span class=\"nowrap\">106 characters</span>.",
@@ -157,9 +157,9 @@ export const items: NewsItem[] = [
       "<strong>Ports.</strong> <span class=\"nowrap\">6174</span> for nodes talking to each other, <span class=\"nowrap\">6175</span> for the RPC that wallets talk to, and <span class=\"nowrap\">6176</span> for ZMQ. The public node is <code>node.monzero.org</code>, and its RPC is restricted and reached over plain HTTP; the <a href=\"/guides/monzero-nodes/\" title=\"Monzero nodes: the ports, the default node and what plain-HTTP RPC exposes\">nodes guide</a> has what that means.",
       "<strong>Seeds.</strong> The standard <span class=\"nowrap\">25-word</span> Monero mnemonic; the English list is the same <span class=\"nowrap\">1626 words</span>. Because the words and the keys behind them are Monero's, a Monero seed would open a Monzero wallet with the same keys — which is exactly what not to do, as the next section says.",
       "## Its own warning",
-      "Monzero's README says the software is pre-release and unaudited, not to use it for funds one cannot afford to lose, and never to reuse a Monero wallet file, private key or recovery seed with it. The last of those matters in Cake Wallet in particular, where a BIP39 phrase is derived the way Monero's is; the <a href=\"/guides/monzero-bip39-seeds/\" title=\"Why one BIP39 phrase gives the same keys on Monero and Monzero, and what to do about it\">BIP39 guide</a> explains why.",
+      "Monzero's README calls v1.0.0 its current stable release, and adds that it has not been independently audited. It says not to use it for funds one cannot afford to lose, and never to reuse a Monero wallet file, private key or recovery seed with it. The last of those matters in Cake Wallet in particular, where a BIP39 phrase is derived the way Monero's is; the <a href=\"/guides/monzero-bip39-seeds/\" title=\"Why one BIP39 phrase gives the same keys on Monero and Monzero, and what to do about it\">BIP39 guide</a> explains why.",
       "## Versions, and where the code lives",
-      "Monzero's <strong>v1.0.0</strong> release line moved the network to hard fork 17, with the LWMA-1 difficulty algorithm, at <span class=\"nowrap\">block 21,000</span>, and its README says every node and wallet must run v1.0.0 or later. The repository the Cake Wallet patch links to, Nightglass-Protocol1/monzero, showed as archived on GitHub on <span class=\"nowrap\">6 November 2026</span>. monzero.org points to Nightglass-Protocol1/Monzero-source instead, which holds the node, the command-line and desktop wallets, an Android wallet and an Android miner.",
+      "Monzero's <strong>v1.0.0</strong> release line moved the network to hard fork 17, with the LWMA-1 difficulty algorithm, at <span class=\"nowrap\">block 21,000</span>, and the README of its source repository says every node and wallet must run v1.0.0 or later. The repository the Cake Wallet patch links to, Nightglass-Protocol1/monzero, showed as archived on GitHub on <span class=\"nowrap\">6 November 2026</span>. monzero.org points to Nightglass-Protocol1/Monzero-source instead, which holds the node, the command-line and desktop wallets, an Android wallet and an Android miner.",
       "## In Cake Wallet",
       "No released version of Cake Wallet supports Monzero, and on <span class=\"nowrap\">6 November 2026</span> a search of Cake Wallet's code on GitHub found no mention of it. Support exists as a patch, prepared as a pull request and described on this site: what it adds is in the <a href=\"/guides/monzero-in-cake-wallet/\" title=\"What the Monzero integration adds to Cake Wallet, and where it follows Monero instead of Wownero\">integration guide</a>, and where it stands in the <a href=\"/guides/monzero-cake-wallet-pull-request/\" title=\"The Monzero pull request to Cake Wallet: the six commits and the monero_c change it waits on\">pull request guide</a>.",
     ],
@@ -187,7 +187,7 @@ export const items: NewsItem[] = [
     title: "Monzero nodes: node.monzero.org and the plain-HTTP RPC",
     cardTitle: "Monzero nodes and the plain-HTTP RPC",
     summary:
-      "Cake Wallet's Monzero patch ships one default node, node.monzero.org on port 6175, reached over plain HTTP with SSL off. The ports, what plain HTTP exposes, how a restore height is estimated from a date, and what we saw when we queried the node.",
+      "Cake Wallet's Monzero patch connects to one default node, node.monzero.org on port 6175, over plain HTTP. The ports, what that exposes, and the restore height.",
     date: "2026-11-06",
     category: "Guide",
     tags: ["Network", "Security"],
@@ -203,7 +203,7 @@ export const items: NewsItem[] = [
       verifiedOn: "2026-11-06",
     },
     body: [
-      "A Cake Wallet wallet for a Monero-family coin does not keep the whole blockchain on the phone or the computer. It connects to a node — a machine that does — to fetch blocks and to send its transactions on. The Monzero patch gives Monzero wallets one node to start with.",
+      "The Monzero patch for Cake Wallet connects every Monzero wallet to one default node, <code>node.monzero.org</code> on <span class=\"nowrap\">port 6175</span>, over plain HTTP. A wallet for a Monero-family coin does not keep the whole blockchain on the phone or the computer: it asks a node — a machine that does — for blocks and hands it transactions to send on. Over plain HTTP, that conversation is unencrypted.",
       "## The ports",
       "Monzero's chain specification sets three: <strong><span class=\"nowrap\">6174</span></strong> for peer-to-peer traffic between nodes, <strong><span class=\"nowrap\">6175</span></strong> for the RPC that wallets connect to, and <strong><span class=\"nowrap\">6176</span></strong> for ZMQ. The project's README lists <code>node.monzero.org:6174</code> as its bootstrap node for other nodes and <code>node.monzero.org:6175</code> as its restricted public RPC.",
       "## The default node in the patch",
@@ -243,7 +243,7 @@ export const items: NewsItem[] = [
     title: "Building Cake Wallet with Monzero on macOS: what was tested",
     cardTitle: "Building Cake Wallet with Monzero on macOS",
     summary:
-      "Our build of Cake Wallet with the Monzero patch: a macOS Release app on an Apple Silicon M1 Mac with Xcode 27.1 and Flutter 3.47.8, Dart analysis, 13 passing tests and a check inside the app — and the platforms and flows it did not cover.",
+      "Our build of Cake Wallet with the Monzero patch on an M1 Mac: a macOS Release app, Dart analysis, 13 passing tests, an in-app check, and what is not tested.",
     date: "2026-11-06",
     category: "Guide",
     tags: ["Cake Wallet"],
@@ -255,7 +255,7 @@ export const items: NewsItem[] = [
     body: [
       "Everything on this page is ours. We built and tested the Monzero patch on our own machine, an Apple Silicon Mac with an M1 chip running macOS 27, and the results below are the ones the pull request text records. None of the build is published here — not the app and not the libraries. This page describes it; it does not distribute it.",
       "## The native library",
-      "Cake Wallet's Monero-family coins run on C libraries that monero_c builds from each coin's wallet code. For Monzero that library is <code>libmonzero_wallet2_api_c</code>. We built it from a local monero_c checkout that has the Monzero target, with Apple clang 21, Homebrew's Boost 1.92 and OpenSSL 3, and Trezor support switched off. Its wrapper exports <span class=\"nowrap\">354 functions</span> with a <code>MONZERO_</code> prefix, and their checksums match the ones generated for the Dart side. On the M1, with other work running, the build took about an hour.",
+      "Cake Wallet's Monero-family coins run on C libraries that monero_c builds from each coin's wallet code. For Monzero that library is <code>libmonzero_wallet2_api_c</code>. We built it from a local monero_c checkout that has the Monzero target, with Apple clang 21, Homebrew's Boost 1.92 and OpenSSL 3, and Trezor support switched off. Its wrapper exports <span class=\"nowrap\">354 symbols</span> with a <code>MONZERO_</code> prefix, and the checksums embedded in the library match the ones generated for the Dart side. On the M1, with other work running, the build took about an hour.",
       "A smoke test through the Dart bindings used a throwaway wallet: a <span class=\"nowrap\">95-character</span> address starting with F, a <span class=\"nowrap\">25-word</span> seed, a connection to node.monzero.org on <span class=\"nowrap\">port 6175</span>, a sync to the chain tip at <span class=\"nowrap\">height 15,704</span> within <span class=\"nowrap\">three seconds</span>, a balance of 0, and then the wallet closed and deleted.",
       "Because the library was linked against Homebrew's libraries, the app has to carry them: <span class=\"nowrap\">21 libraries</span>, <span class=\"nowrap\">28 MB</span>, rewritten to load from beside the Monzero library with nothing pointing back into Homebrew. Cake Wallet's own build makes monero_c's libraries with its static toolchain, where none of that is needed, and our notes for the pull request say the maintainers may prefer to drop the bundling step.",
       "## Dart analysis",
@@ -296,7 +296,7 @@ export const items: NewsItem[] = [
     title: "The Monzero pull request to Cake Wallet, and monero_c",
     cardTitle: "The Monzero pull request to Cake Wallet",
     summary:
-      "Monzero support for Cake Wallet is six commits prepared as one pull request, resting on a second change to monero_c, the library Cake Wallet builds its Monero-family wallets on. The six commits, what has to land first, and what Cake Wallet's maintainers can be expected to ask.",
+      "Monzero support for Cake Wallet is a six-commit pull request that rests on a separate monero_c change: the six commits, what has to land first, what is open.",
     date: "2026-11-06",
     category: "Guide",
     tags: ["Cake Wallet"],
@@ -334,7 +334,7 @@ export const items: NewsItem[] = [
       "<strong>The bundling step.</strong> The script and the Xcode build phase that carry Homebrew's libraries into the macOS app exist only because our library was linked against them. Cake Wallet builds monero_c statically, so the maintainers may prefer to drop both; the pull request should say so, or remove them first.",
       "Two more turned up when we checked the public pages on <span class=\"nowrap\">6 November 2026</span>.",
       "<strong>The upstream link.</strong> The pull request text links Monzero's repository as Nightglass-Protocol1/monzero, which GitHub showed as archived that day; monzero.org now points to Nightglass-Protocol1/Monzero-source.",
-      "<strong>The Monzero version.</strong> Monzero's v1.0.0 moved its network to hard fork 17 at <span class=\"nowrap\">block 21,000</span>, and its README says every node and wallet must run v1.0.0 or later. The tests in the pull request text ran at <span class=\"nowrap\">height 15,704</span>, before that block.",
+      "<strong>The Monzero version.</strong> Monzero's v1.0.0 moved its network to hard fork 17 at <span class=\"nowrap\">block 21,000</span>, and the README of its source repository says every node and wallet must run v1.0.0 or later. The tests in the pull request text ran at <span class=\"nowrap\">height 15,704</span>, before that block.",
       "## What Cake Wallet's maintainers will decide",
       "Whether Cake Wallet adds a coin is a product decision, not a question of whether the code works: Cake Wallet adds coins selectively. The pull request is written as a proposal, and our notes expect questions about the coin, its node infrastructure and who maintains the integration. Today the patch ships a single default node, node.monzero.org; the <a href=\"/guides/monzero-nodes/\" title=\"Monzero nodes: the ports, the default node and what plain-HTTP RPC exposes\">nodes guide</a> has what that connection is.",
     ],

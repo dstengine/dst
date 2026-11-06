@@ -34,7 +34,7 @@ export const guides = {
 
 export const about = {
   title: "About zerocake.org and its Monzero guides",
-  description: "zerocake.org explains the patch that adds Monzero (XMZ) to Cake Wallet. It is written by the people who prepared the patch, and is run by neither Cake Wallet nor Monzero.",
+  description: "zerocake.org explains the patch that adds Monzero (XMZ) to Cake Wallet. Written by the people who prepared it; run by neither Cake Wallet nor Monzero.",
   h1: "About zerocake.org and its Monzero guides",
   lede: `The guides here are written by the people who prepared the Monzero patch for Cake Wallet. Cake Wallet and the Monzero project neither run them nor endorse them, and nothing on the site is for sale.`,
 };

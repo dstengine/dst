@@ -24,8 +24,8 @@ export const site = {
   networkFooter: false,
   partnerDisclosure: false,
   footerLinks: [
-    { href: "/guides/", label: "Guides" },
-    { href: "/about/", label: "About" },
+    { href: "/guides/", label: "Guides", title: "Every Monzero guide, newest first: the coin, seeds, nodes, the build and the pull request" },
+    { href: "/about/", label: "About", title: "Who writes the Monzero guides, and the rules they follow" },
   ],
   /** Turns on the RSS autodiscovery link in the head. */
   feedTitle: feed.title,
