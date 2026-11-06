@@ -61,11 +61,24 @@ export const NAV = {
 // conference and its dinners — so no category could hold it. The fact is a
 // tag written on each entry that belongs to the fortnight, in the same way
 // tick marks its City Day; nothing is read off a title or a date range.
+//
+// The second is an organiser. Superteam is the name builders type, and its
+// chapters run a large share of what this calendar holds — summits, the
+// Friday co-working days, a residency, a monthly call — under a dozen kinds
+// and four countries, so neither a kind nor a place page gathers them. The
+// fact is the recorded `organizer` field, which names the chapter
+// ("Superteam UK", "Anodos Labs and Superteam Balkan"); never a title or
+// the prose of a body.
 const INTENTS: Intent<EventItem>[] = [
   {
     slug: "breakpoint",
     label: "Breakpoint week",
     match: (e) => e.tags?.includes("breakpoint-week") ?? false,
+  },
+  {
+    slug: "superteam",
+    label: "Superteam",
+    match: (e) => /\bSuperteam\b/.test(e.organizer ?? ""),
   },
 ];
 
@@ -81,12 +94,23 @@ export function sections(items: EventItem[]): Section<EventItem>[] {
     // and two pages answering one query compete with each other.
     placeOf: (e) => e.country,
     copy: (g) => {
+      // Written to stay true as the dates pass: what the chapters run and
+      // where, not which of it is next — the list below says that.
+      if (g.kind === "intent" && g.key === "superteam") {
+        return {
+          title: "Superteam events: Solana summits, meetups and calls",
+          description:
+            "Superteam events on a Solana calendar: chapter summits in Toronto, Belgrade and Mumbai, coworking Fridays in London and Belgrade, Superteam Canada's monthly call — dates from each chapter.",
+          h1: "Superteam's Solana events",
+          lede: "Superteam calls itself the talent layer of Solana, and its country chapters organise a good part of what this calendar holds: the Solana summits in Toronto, Belgrade and Mumbai, coworking Fridays in London and Belgrade, Buildstation in Belgrade, a demo day in London and Superteam Canada's community call once a month. Every date is the one the chapter published, with a link to where we read it.",
+        };
+      }
       if (g.kind === "intent") {
         return {
           title: "Solana Breakpoint 2026 week in London: every event",
           description:
-            "Breakpoint week in London, 1 to 17 November 2026: the Hacker House, Demo Day, 200ms, Scale or Die, the conference at Olympia and the evening side events, with dates, prices and the source on every entry.",
-          h1: "Breakpoint 2026 week in London",
+            "Solana Breakpoint week in London, 1 to 17 November 2026: the Hacker House, Demo Day, 200ms, Scale or Die, the conference at Olympia and the evening side events, with dates, prices and the source on every entry.",
+          h1: "Solana Breakpoint 2026 week in London",
           lede: "Everything on this calendar that belongs to the Breakpoint fortnight — the Hacker House from 1 November, the technical days on the 13th and 14th, the conference at Olympia from the 15th and the evenings around it — each date as the organiser published it, and a link to where we read it.",
         };
       }
