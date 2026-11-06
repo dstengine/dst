@@ -2434,4 +2434,97 @@ export const items: EventItem[] = [
     expertise:
       "Three days and six performances is a short run, and the weekend dates are the ones families go for, so book once the date is fixed rather than in December. The 11:00 show leaves the afternoon free; the 15:00 one leads straight into the evening. Mina Rashid is reached by car or taxi.",
   },
+  {
+    slug: "dubai-marathon-2027",
+    createdAt: "2026-11-06T04:00:00+04:00",
+    updatedAt: "2026-11-06T04:00:00+04:00",
+    site: "dst",
+    image: "/covers/dubai-marathon-2027.jpg",
+    imageAlt: "A stream of small paper runners in orange, blue and white along a coastal road at dawn, a sail-shaped tower and pale sea behind, a low sun in coral paper",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Dubai Marathon 2027",
+    cardTitle: "Dubai Marathon 2027",
+    titleSeo: "Dubai Marathon 2027: 17 January, entry fees, start times",
+    summary:
+      "The 26th Dubai Marathon runs on Sunday 17 January 2027 along Jumeirah: the marathon from 06:30 at USD 150, a 10km road race at 08:00 for USD 85 and a 4km fun run at 10:00 for USD 50.",
+    start: "2027-01-17",
+    startTime: "06:30",
+    utcOffset: "+04:00",
+    venue: "Al Sufouh and Jumeirah Beach Road",
+    city: "Dubai",
+    country: "United Arab Emirates",
+    organizer: "Dubai Marathon",
+    category: "Sport",
+    tickets: { priceFrom: 50, currency: "USD", refundPolicy: "Entries are not refundable or transferable." },
+    ticket: {
+      url: "https://reg.mikatiming.com/dubaimarathon/2027",
+      label: "Register",
+    },
+    source: {
+      name: "Dubai Marathon",
+      url: "https://www.dubaimarathon.org/race-info/general-info/",
+      verifiedOn: "2026-11-06",
+    },
+    body: [
+      "The Dubai Marathon reaches its <strong>26th edition</strong> on <strong>Sunday 17 January 2027</strong>. Registration is open, and the race day carries three distances: the full <strong>42.195km marathon</strong>, a <strong>10km Road Race</strong> and a <strong>4km Fun Run</strong>.",
+      "## Start times",
+      "The elite marathon field goes first at <strong>05:45</strong>, the mass marathon start follows at <strong>06:30</strong>, the 10km at <strong>08:00</strong> and the 4km Fun Run at <strong>10:00</strong>. The organisers ask runners to be at their start at least an hour before the gun.",
+      "## Entry fees and age limits",
+      "Entry is priced in US dollars: <strong>USD 150</strong> for the marathon (18 and over), <strong>USD 85</strong> for the 10km (15 and over) and <strong>USD 50</strong> for the 4km Fun Run, which is open to all ages. Registration is online only, through the Mika Timing page linked from the official site. Entries are not refundable or transferable, and running on someone else's number means disqualification.",
+      "## The course",
+      "The marathon starts beside the Police Academy, off Umm Suqeim Road, and the shorter races on Al Sufouh, just past Madinat Jumeirah, below the Burj Al Arab. The marathon route map on the official site runs along Al Sufouh to Dubai Media City and back, then out and back twice on Jumeirah Beach Road, finishing at the Police Academy parade ground. There is a <strong>six-hour</strong> limit at the finish, with roads reopening in phases behind the field.",
+      "## Race pack collection",
+      "Numbers are collected in person at <strong>The Agenda, Dubai Media City</strong>: Wednesday 13 January, 12:00 to 22:00; Thursday 14 and Friday 15 January, 10:00 to 22:00; Saturday 16 January, 10:00 to 17:00. Bring the final confirmation email and photo ID. Collection closes at 17:00 on the Saturday, and no numbers are issued on race day.",
+      "## On the day",
+      "Water comes every 2.5km from 5km to 40km on the marathon, with hydration drinks at 15, 20, 25, 30, 35 and 40km. Baggage drop is for marathon and 10km runners, using the bag in the race pack. There is no public parking near the finish, so take the metro or a taxi. Spectators get free grandstand seats at the finish, first come, first served, and a tracking link appears on the homepage on race day.",
+      "## Before and after",
+      "November's <a href=\"/events/dubai-fitness-challenge-2026/\" title=\"Dubai Fitness Challenge 2026: dates, Dubai Ride, Dubai Run\">Dubai Fitness Challenge</a> and its free Dubai Run make a good first outing on the city's roads. A month after the marathon, the <a href=\"/events/dubai-duty-free-tennis-championships-2027/\" title=\"Dubai Duty Free Tennis 2027: 14–27 February\">Dubai Duty Free Tennis Championships</a> take the city's sport calendar into February.",
+    ],
+    faq: [
+      {
+        q: "When is the Dubai Marathon 2027?",
+        a: "Sunday 17 January 2027, the 26th edition. The mass marathon starts at 06:30, the elites at 05:45.",
+      },
+      {
+        q: "How much does it cost to enter the Dubai Marathon 2027?",
+        a: "USD 150 for the marathon, USD 85 for the 10km Road Race and USD 50 for the 4km Fun Run, paid online. Entries are not refundable or transferable.",
+      },
+      {
+        q: "What is the minimum age for the Dubai Marathon?",
+        a: "18 for the marathon and 15 for the 10km; the 4km Fun Run is open to all ages.",
+      },
+      {
+        q: "Where do I collect my Dubai Marathon race number?",
+        a: "At The Agenda, Dubai Media City, from 13 to 16 January 2027. Collection closes at 17:00 on Saturday 16 January, and there is no race-day collection.",
+      },
+      {
+        q: "What is the time limit for the Dubai Marathon?",
+        a: "Six hours at the finish line. Slower runners may be moved onto footpaths for the last section as roads reopen.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/dubai-fitness-challenge-2026/",
+        eyebrow: "October 31 to November 29",
+        title: "Dubai Fitness Challenge",
+        text: "Thirty days of activity and the free Dubai Run on Sheikh Zayed Road.",
+      },
+      {
+        href: "/events/emirates-dubai-7s-2026/",
+        eyebrow: "November 27 to 29",
+        title: "Emirates Dubai 7s",
+        text: "Three days of rugby and music at The Sevens Stadium.",
+      },
+      {
+        href: "/events/dubai-duty-free-tennis-championships-2027/",
+        eyebrow: "14–27 February",
+        title: "Dubai Duty Free Tennis",
+        text: "The WTA and ATP weeks at the tennis stadium in Garhoud.",
+      },
+    ],
+    expertise:
+      "A January start at 06:30 on a coastal road is about as kind as Dubai gets to distance runners, but the sun is up within the first hour, so a target time needs to bank its pace early. The one trap is the race pack: collection ends at 17:00 on the Saturday and there is none on race day, so anyone flying in should land by Friday. With no parking at the finish, plan the trip home before the trip out.",
+  },
 ];
