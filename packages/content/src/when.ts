@@ -90,31 +90,87 @@ export const hasEnded = (event: Dated, today: string): boolean => lastDay(event)
 /** Still to come or on right now. The complement of `hasEnded`. */
 export const isOn = (event: Dated, today: string): boolean => !hasEnded(event, today);
 
+/** The clock time a timed entry starts on `day`: the night's own hour
+    from `times`, else `startTime`. See `times` in types.ts. */
+export const timeOn = (event: Pick<EventItem, "startTime" | "times">, day: string): string | undefined =>
+  event.times?.[day] ?? event.startTime;
+
+/** The day an event is next on, as of `today`, or undefined once it is
+    over. A run that lists its nights is next on the first of them still to
+    come — not today, which may be a gap between two — and any other entry
+    on today while it runs, or on its first day before it opens. */
+export function nextDay(event: Dated & Pick<EventItem, "dates">, today: string): string | undefined {
+  if (hasEnded(event, today)) return undefined;
+  if (event.dates) return event.dates.find((d) => d >= today);
+  return event.start > today ? event.start : today;
+}
+
+// Which group a card goes in, and the day it is dated by. A span plays
+// every day from its first to its last, so once it has opened it is on:
+// its card goes under "On now", dated by the day it closes. A run that
+// lists its nights plays only on them, and reading it as a span said what
+// was not so: on 6 November Yerevan Opera's Pagliacci, which plays 8
+// October, 17 November and 17 February, sat among the things on now as
+// "8 Oct · until 17 Feb", as if it played every night of four months, and
+// the January page gave Carmen "until 6 Feb" instead of its night in
+// January. A listed run is never running. It is still to come while it has
+// a night left, and its card is dated by that night, at that night's hour.
+type Listed = Dated & Pick<EventItem, "dates">;
+
+/** The day an entry's card is dated by, as of `asOf`: a listed run's next
+    night (`nextDay`), or its first once none is left; any other entry's
+    first day. */
+export const cardDay = (event: Listed, asOf: string): string =>
+  (event.dates && nextDay(event, asOf)) || event.start;
+
+/** A run's last listed night on or before `until`; undefined for an
+    entry without listed nights, or with none by then. A list about the
+    days up to `until` — a month's page — dates the run's past card by
+    it, whether the run is over or only done there (`lastNightBy`). */
+export const lastNightIn = (event: Listed, until: string): string | undefined =>
+  event.dates?.filter((d) => d <= until).sort().at(-1);
+
+/** A run that lists its nights and has none left by `until`, as of
+    `asOf`: on, but done as far as a list about the days up to `until`
+    goes. Its last night by then (`lastNightIn`); undefined for anything
+    else. On the October page, read on 6 November, Tamar (17 and
+    18 October, 21 November) is October's 18th, not a card dated
+    21 November. */
+export const lastNightBy = (event: Listed, asOf: string, until: string): string | undefined =>
+  event.dates && isOn(event, asOf) && cardDay(event, asOf) > until ? lastNightIn(event, until) : undefined;
+
+/** Opened before `asOf` and not over: a span under way, filed under "On
+    now" and dated by its last day. Never a run that lists its nights. */
+export const isRunning = (event: Listed, asOf: string): boolean =>
+  !event.dates && event.start < asOf && isOn(event, asOf);
+
 // The month a list is being read in, and what certainly happens in it.
 //
 // A section page that names its month — "the November programme" — has to
-// name only what is on in November, and a run of dates does not say which
-// days it plays: Swan Lake from 9 October to 30 January may or may not have
-// a night this month. Three days are certain: the first one still to come,
-// the last one, and every day an entry lists in `dates`. An entry is in the
-// month when one of those falls in it, and it is placed by the earliest.
-// The month is the one the next performance falls in — today's while
-// anything is running, the next opening's when nothing is.
+// name only what is on in that month, and a span alone does not say which
+// days it plays: Swan Lake from 9 October to 20 February may or may not
+// have a night in December. The certain days are the ones an entry states:
+// every day it lists in `dates`, its first day and its last. An entry is in
+// a month when one of those still to come falls in it, and is placed by
+// the earliest. The month is the one the soonest certain day falls in. It
+// is not today's month just because some run spans today: on 30 November a
+// span with no night left that month named November in the title of a page
+// that had nothing on in it, and so did the last week of December.
 
 type Certain = Dated & Pick<EventItem, "dates" | "slug">;
 
-/** The month ("YYYY-MM") that the entries still on are next on, with the
-    ones certainly on in it, in date order; undefined when nothing is on. */
+/** The certain days of an entry still to come, as of `today`, in order. */
+const certainDays = (event: Certain, today: string): string[] =>
+  [...new Set([...(event.dates ?? []), event.start, lastDay(event)])].filter((d) => d >= today).sort();
+
+/** The month ("YYYY-MM") of the soonest certain day still to come, with the
+    entries certainly on in it, in date order; undefined when none is left. */
 export function monthOn<T extends Certain>(events: T[], today: string): { month: string; certain: T[] } | undefined {
-  const on = events.filter((e) => isOn(e, today));
-  if (on.length === 0) return undefined;
-  const month = on.map((e) => (e.start > today ? e.start : today)).sort()[0].slice(0, 7);
-  const certainDay = (e: T): string | undefined =>
-    [...(e.dates ?? []), e.start, lastDay(e)]
-      .filter((d) => d >= today && d.slice(0, 7) === month)
-      .sort()[0];
-  const certain = on
-    .map((e) => ({ e, day: certainDay(e) }))
+  const ahead = events.map((e) => ({ e, days: certainDays(e, today) })).filter((x) => x.days.length > 0);
+  if (ahead.length === 0) return undefined;
+  const month = ahead.map((x) => x.days[0]).sort()[0].slice(0, 7);
+  const certain = ahead
+    .map((x) => ({ e: x.e, day: x.days.find((d) => d.slice(0, 7) === month) }))
     .filter((x): x is { e: T; day: string } => x.day !== undefined)
     .sort((a, b) => (a.day < b.day ? -1 : a.day > b.day ? 1 : a.e.slug.localeCompare(b.e.slug)))
     .map((x) => x.e);

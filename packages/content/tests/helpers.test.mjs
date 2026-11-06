@@ -73,6 +73,16 @@ describe("upcomingEvents / pastEvents", () => {
     assert.equal(out.length, 2, `expected 2 items, got ${out.length}`);
   });
 
+  test("upcomingEvents places a run that lists its nights by the next of them", () => {
+    const runs = [
+      event({ slug: "opera", start: "2026-05-08", end: "2026-09-17", dates: ["2026-05-08", "2026-06-17", "2026-09-17"] }),
+      event({ slug: "later", start: "2026-06-16" }),
+      event({ slug: "span", start: "2026-05-01", end: "2026-07-01" }),
+    ];
+    // The span keeps its first day; the listed run goes by 17 June, not 8 May.
+    assert.deepEqual(upcomingEvents(runs, 10, now).map((i) => i.slug), ["span", "later", "opera"]);
+  });
+
   test("pastEvents excludes upcoming (and today), descending (most recent past first)", () => {
     const out = pastEvents(input, now);
     console.log("now:", now.toISOString(), "-> past:", out.map((i) => i.slug));

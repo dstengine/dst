@@ -57,6 +57,6 @@ const chips = [
   </PromoHero>
   <section class="container">
     <ChipNav items={chips} current={monthHref(month.key, lang)} label={w.months} />
-    <EventsList locale={LOCALE[lang]} items={month.items} eventsBase={eventsBase(lang)} labels={labels[lang]} where={where} from={month.first} />
+    <EventsList locale={LOCALE[lang]} items={month.items} eventsBase={eventsBase(lang)} labels={labels[lang]} where={where} from={month.first} until={month.last} />
   </section>
 </Layout>

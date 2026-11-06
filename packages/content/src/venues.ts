@@ -23,7 +23,7 @@
 // 3. **The words are the site's.** Names, addresses and kinds are written
 //    per language by the site; this file holds only the grouping.
 import type { EventItem } from "./types.ts";
-import { hasEnded, isOn } from "./when.ts";
+import { hasEnded, isOn, nextDay, timeOn } from "./when.ts";
 
 export interface VenueSpec {
   /** The address segment: /venues/<slug>/. One per place, in every language. */
@@ -58,11 +58,13 @@ export interface VenueSpec {
 export interface Venue extends VenueSpec {
   /** Every entry held for the place, soonest first. */
   items: EventItem[];
-  /** Still to come or on now, soonest first. */
+  /** Still to come or on now, by the day each is next on (`nextDay`),
+      soonest first. */
   upcoming: EventItem[];
   /** Over, most recent first. */
   past: EventItem[];
-  /** The next date, if any: the first of `upcoming`. */
+  /** The next date, if any: the first of `upcoming`. Dated by
+      `nextDay(next, today)`, never by its start. */
   next?: EventItem;
 }
 
@@ -79,6 +81,22 @@ export function venueOf<V extends VenueSpec>(item: Pick<EventItem, "venue">, ven
 
 const byStart = (a: EventItem, b: EventItem) => (a.start < b.start ? -1 : a.start > b.start ? 1 : a.slug.localeCompare(b.slug));
 
+// What is next at a room is the night a reader can go to next, not the
+// entry that opened first. A repertoire run is one entry with gaps in it,
+// and ordered by its start, Pagliacci (from 8 October) was the Opera's
+// "next" on 5 November, dated that day, when its next night was the 17th.
+// `nextDay` reads a listed run's nights, and any other entry as on every
+// day it runs. Two on the same day go by the hour each starts that day
+// (`times` before `startTime`), an entry with no hour first, as a
+// calendar puts an all-day line above the timed ones; then the earlier
+// start, then the slug.
+const byNextDay = (today: string) => (a: EventItem, b: EventItem) => {
+  const [x, y] = [nextDay(a, today) ?? "9999", nextDay(b, today) ?? "9999"];
+  if (x !== y) return x < y ? -1 : 1;
+  const [s, t] = [timeOn(a, x) ?? "", timeOn(b, y) ?? ""];
+  return s < t ? -1 : s > t ? 1 : byStart(a, b);
+};
+
 export interface VenuesInput<V extends VenueSpec> {
   items: EventItem[];
   venues: readonly V[];
@@ -94,7 +112,7 @@ export function buildVenues<V extends VenueSpec>({ items, venues, today, min = E
   for (const spec of venues) {
     const mine = items.filter((i) => spec.match.some((m) => starts(i.venue, m)));
     if (mine.length < min) continue;
-    const upcoming = mine.filter((i) => isOn(i, today)).sort(byStart);
+    const upcoming = mine.filter((i) => isOn(i, today)).sort(byNextDay(today));
     const past = mine.filter((i) => hasEnded(i, today)).sort((a, b) => -byStart(a, b));
     out.push({ ...spec, items: [...mine].sort(byStart), upcoming, past, next: upcoming[0] });
   }

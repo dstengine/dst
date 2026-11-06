@@ -15,6 +15,7 @@ import { site } from "../site.config";
 import { allVenues, venuesBase } from "../venues";
 import { cardCountdown } from "@dst/ui/date";
 import { eventHref, newsHref } from "@dst/content/paths";
+import { nextDay, cardDay } from "@dst/content/when";
 import { home, words, labels, type Lang } from "../content";
 import { LOCALE, eventsFor, newsFor, eventsBase, newsBase, prefix } from "../i18n";
 import { allSections, NAV } from "../sections";
@@ -26,7 +27,10 @@ const page = home[lang];
 const w = words[lang];
 
 // The spotlight: ../top.ts, as cards, ahead of the date-ordered blocks —
-// and left out of those blocks, so no card shows twice on the page.
+// and left out of those blocks, so no card shows twice on the page. An
+// event's card is dated by the day it is next on when it lists its nights
+// (`cardDay`), as in the blocks.
+const today = new Date().toISOString().slice(0, 10);
 const events = eventsFor(lang);
 const news = newsFor(lang);
 const top = topFor(lang).map((t) =>
@@ -34,7 +38,7 @@ const top = topFor(lang).map((t) =>
     ? {
         href: t.href,
         eyebrow: t.item.category,
-        date: t.item.start,
+        date: cardDay(t.item, today),
         title: t.item.title,
         short: t.item.cardTitle,
         text: [t.item.venue, t.item.city].filter(Boolean).join(" · ") || t.item.summary,
@@ -42,7 +46,7 @@ const top = topFor(lang).map((t) =>
         imageAlt: t.item.imageAlt,
         imageFit: "cover" as const,
         event: true,
-        countdown: cardCountdown(t.item),
+        countdown: cardCountdown(t.item, cardDay(t.item, today)),
         dateInImage: t.item.dateInImage,
         editorsChoice: t.item.editorsChoice,
       }
@@ -61,7 +65,6 @@ const top = topFor(lang).map((t) =>
 const shown = new Set(top.map((c) => c.href));
 const p = prefix(lang);
 const L = withLabels(labels[lang]);
-const today = new Date().toISOString().slice(0, 10);
 // The rooms with the most still to come, four of them: the venues page
 // has the rest.
 const venues = allVenues[lang].slice(0, 4).map((v) => ({
@@ -69,7 +72,8 @@ const venues = allVenues[lang].slice(0, 4).map((v) => ({
   name: v.name,
   kind: v.kind,
   address: v.address,
-  next: v.next ? (v.next.start < today ? today : v.next.start) : undefined,
+  // The day a reader can next go, as on the venues page (`nextDay`).
+  next: v.next ? nextDay(v.next, today) : undefined,
   count: v.items.length,
 }));
 ---

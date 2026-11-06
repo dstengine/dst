@@ -1,4 +1,5 @@
 import type { EventItem } from "../types.ts";
+import { cardDay } from "../when.ts";
 import { items as dst } from "./dst.ts";
 import { items as llc } from "./llc.ts";
 import { items as visas } from "./visas.ts";
@@ -31,12 +32,14 @@ export function eventsBySite(site: string): EventItem[] {
   return BY_SITE[site] ?? [];
 }
 
-/** Ascending by start date; include events still running, capped at n. */
+/** Ascending by the day each card is dated by (`cardDay`: the start, or a
+    listed run's next night); include events still running, capped at n. */
 export function upcomingEvents(items: EventItem[], n: number, now: Date = new Date()): EventItem[] {
   const cutoff = now.toISOString().slice(0, 10);
+  const day = (e: EventItem) => cardDay(e, cutoff);
   return items
     .filter((e) => (e.end ?? e.start) >= cutoff)
-    .sort((a, b) => (a.start < b.start ? -1 : a.start > b.start ? 1 : 0))
+    .sort((a, b) => (day(a) < day(b) ? -1 : day(a) > day(b) ? 1 : 0))
     .slice(0, n);
 }
 

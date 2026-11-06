@@ -1,5 +1,5 @@
 import type { EventItem } from "./types.ts";
-import { endDay, eachDay, runDays } from "./when.ts";
+import { endDay, eachDay, runDays, timeOn } from "./when.ts";
 
 // iCalendar file for a single event, so "add to calendar" works without
 // the visitor holding an account anywhere. Ticketing platforms treat this
@@ -96,7 +96,9 @@ export function crossesClockChange(item: EventItem, days: string[]): boolean {
   const offset = item.utcOffset ?? "+04:00";
   const { startTime, endTime } = item;
   return days.some((day) => {
-    const instants = [new Date(`${day}T${startTime}:00${offset}`)];
+    // Each night at its own hour: a night listed in `times` is checked at
+    // the clock it starts by, not at `startTime`.
+    const instants = [new Date(`${day}T${timeOn(item, day) ?? startTime}:00${offset}`)];
     if (endTime) instants.push(new Date(`${endDay({ start: day, startTime, endTime })}T${endTime}:00${offset}`));
     return instants.some((at) => zoneOffset(zone, at) !== offset);
   });
@@ -113,26 +115,33 @@ function dayAfter(iso: string): string {
 }
 
 /**
- * The VEVENT block for one entry, without the calendar wrapper around it.
- * Both outputs below are the same event data — a single download and a
- * subscribable calendar — so the mapping from an EventItem to iCalendar
- * lives here once.
+ * The VEVENT blocks for one entry, without the calendar wrapper around
+ * them: one, or a series followed by the nights of it that start at their
+ * own hour. Both outputs below are the same event data — a single download
+ * and a subscribable calendar — so the mapping from an EventItem to
+ * iCalendar lives here once.
  */
 function vevent(item: EventItem, pageUrl: string, now: Date): string[] {
   const offset = item.utcOffset ?? "+04:00";
   const timed = Boolean(item.startTime);
 
-  const lines: string[] = [
+  const head: string[] = [
     "BEGIN:VEVENT",
     // The UID's domain part has to be a host we actually own, and not every
     // site is a *.dst.llc vertical — fwf.lol is its own domain.
     `UID:${item.slug}@${UID_HOSTS[item.site] ?? `${item.site}.dst.llc`}`,
     `DTSTAMP:${stampUtc(now)}`,
   ];
+  const lines: string[] = [];
+  // Nights of a series moved off its usual hour, each written as its own
+  // VEVENT after the series (RFC 5545 §3.8.4.4).
+  const moved: string[][] = [];
 
   if (timed) {
     const startTime = item.startTime as string;
     const at = (day: string, time: string) => stampUtc(new Date(`${day}T${time}:00${offset}`));
+    // The hour a night starts: its own from `times`, else `startTime`.
+    const hour = (day: string) => timeOn(item, day) ?? startTime;
     const days = runDays(item);
     if (days && !crossesClockChange(item, days)) {
       // A run: the first occurrence, repeated daily until the last one
@@ -148,14 +157,34 @@ function vevent(item: EventItem, pageUrl: string, now: Date): string[] {
       const runs = new Set(days);
       const skipped = eachDay(first, last).filter((day) => !runs.has(day));
       if (skipped.length > 0) lines.push(`EXDATE:${skipped.map((day) => at(day, startTime)).join(",")}`);
+      // A run whose nights start at different hours — a theatre's 18:00 at
+      // the weekend and 19:00 on weekdays — is still that series, at
+      // `startTime`, and each night `times` moves is the series' own
+      // occurrence moved: a VEVENT with the same UID, RECURRENCE-ID at the
+      // hour the series puts it (§3.8.4.4), DTSTART at the hour it starts.
+      // RDATE would say the same in one line, but Google Calendar and
+      // Outlook import a series with RDATE as its first night alone, which
+      // on a run that opened in October is a night already past. The
+      // moved night keeps the series' length, when there is one.
+      const length = item.endTime
+        ? new Date(`${endDay({ start: first, startTime, endTime: item.endTime })}T${item.endTime}:00${offset}`).getTime() -
+          new Date(`${first}T${startTime}:00${offset}`).getTime()
+        : 0;
+      for (const day of days) {
+        if (hour(day) === startTime) continue;
+        const begins = new Date(`${day}T${hour(day)}:00${offset}`);
+        const block = [`RECURRENCE-ID:${at(day, startTime)}`, `DTSTART:${stampUtc(begins)}`];
+        if (length > 0) block.push(`DTEND:${stampUtc(new Date(begins.getTime() + length))}`);
+        moved.push(block);
+      }
     } else {
-      lines.push(`DTSTART:${at(item.start, startTime)}`);
+      lines.push(`DTSTART:${at(item.start, hour(item.start))}`);
       // A single day with a start and nothing published about its end has
       // no DTEND at all. DTEND equal to DTSTART breaks RFC 5545 §3.8.2.2,
       // which wants it later; without one, §3.6.1 reads the event as
       // ending when it starts, which is all the entry knows.
       if (item.endTime || (item.end && item.end !== item.start)) {
-        lines.push(`DTEND:${at(endDay(item), item.endTime ?? startTime)}`);
+        lines.push(`DTEND:${at(endDay(item), item.endTime ?? hour(endDay(item)))}`);
       }
     }
   } else {
@@ -165,14 +194,12 @@ function vevent(item: EventItem, pageUrl: string, now: Date): string[] {
     lines.push(`DTEND;VALUE=DATE:${dayAfter(item.end ?? item.start)}`);
   }
 
-  lines.push(`SUMMARY:${escapeText(item.title)}`);
-  lines.push(`DESCRIPTION:${escapeText(item.summary)}`);
+  const tail: string[] = [`SUMMARY:${escapeText(item.title)}`, `DESCRIPTION:${escapeText(item.summary)}`];
   const location = [item.venue, item.city].filter(Boolean).join(", ");
-  if (location) lines.push(`LOCATION:${escapeText(location)}`);
-  if (item.geo) lines.push(`GEO:${item.geo.lat};${item.geo.lng}`);
-  lines.push(`URL:${pageUrl}`);
-  lines.push("END:VEVENT");
-  return lines;
+  if (location) tail.push(`LOCATION:${escapeText(location)}`);
+  if (item.geo) tail.push(`GEO:${item.geo.lat};${item.geo.lng}`);
+  tail.push(`URL:${pageUrl}`, "END:VEVENT");
+  return [...head, ...lines, ...tail, ...moved.flatMap((block) => [...head, ...block, ...tail])];
 }
 
 /** CRLF throughout — Outlook rejects bare LF. */

@@ -28,7 +28,7 @@ import { formatDate, cardHours, cardCountdown, cardClock } from "../date.ts";
 import { caps } from "../caps.ts";
 import { withLabels, type ArticleLabels } from "../labels.ts";
 import { readingMinutes } from "@dst/content/reading";
-import { isOn, isCurrent, withPromoted } from "@dst/content/when";
+import { isOn, isCurrent, withPromoted, cardDay } from "@dst/content/when";
 
 interface Props {
   item: NewsItem;
@@ -125,34 +125,38 @@ const eventCards = moreEvents
   .filter((e) => isOn(e, todayIso) && Array.isArray(e.body) && e.body.length > 0)
   // The promoted tag first, then the calendar — the same order as the tail
   // of an event page, so the two do not disagree about what the site is
-  // pushing this month.
+  // pushing this month. The calendar's day is the one the card is dated
+  // by: a run that lists its nights goes by the next of them (`cardDay`).
   .sort((a, b) => {
     if (promoted) {
       const aHot = a.category === promoted.key;
       const bHot = b.category === promoted.key;
       if (aHot !== bHot) return aHot ? -1 : 1;
     }
-    return a.start < b.start ? -1 : 1;
+    return cardDay(a, todayIso) < cardDay(b, todayIso) ? -1 : 1;
   })
-  .map((e) => ({
-    href: eventHref(e, eventsBase),
-    eyebrow: e.category,
-    date: e.start,
-    title: e.title,
-    short: e.cardTitle,
-    text: [e.venue, e.city].filter(Boolean).join(" · ") || e.summary,
-    image: e.image,
-    imageAlt: e.imageAlt,
-    imageFit: "cover" as const,
-    event: true,
-    // No hours on a promoted card: the same block closes every story on
-    // the site — see the tail of EventArticle.
-    hours: promoted && e.category === promoted.key ? undefined : cardHours(e),
-    countdown: cardCountdown(e),
-    ...cardClock(e),
-    dateInImage: e.dateInImage,
-    editorsChoice: e.editorsChoice,
-  }));
+  .map((e) => {
+    const day = cardDay(e, todayIso);
+    return {
+      href: eventHref(e, eventsBase),
+      eyebrow: e.category,
+      date: day,
+      title: e.title,
+      short: e.cardTitle,
+      text: [e.venue, e.city].filter(Boolean).join(" · ") || e.summary,
+      image: e.image,
+      imageAlt: e.imageAlt,
+      imageFit: "cover" as const,
+      event: true,
+      // No hours on a promoted card: the same block closes every story on
+      // the site — see the tail of EventArticle.
+      hours: promoted && e.category === promoted.key ? undefined : cardHours(e, day),
+      countdown: cardCountdown(e, day),
+      ...cardClock(e),
+      dateInImage: e.dateInImage,
+      editorsChoice: e.editorsChoice,
+    };
+  });
 
 // Same trade as the tail of an event page: when the promoted tag leads,
 // the block is the tag's and the heading names it, so nothing else is

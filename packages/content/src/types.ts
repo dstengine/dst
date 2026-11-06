@@ -281,6 +281,13 @@ export interface EventItem extends ItemBase {
   // fits a listed run in English and Spanish; German "täglich" claims every
   // day, so a weekend-only list on vien wants its own word first.
   dates?: string[];
+  // The nights of a listed run that start at another hour than `startTime`,
+  // by ISO day: { "2027-02-21": "18:00" }. A theatre's season puts the same
+  // work on at 18:00 at weekends and 19:00 on weekdays, and without this the
+  // run could not list its nights at all. Needs `dates` and `startTime`;
+  // every key is one of `dates`; never with `endTime`, whose daily window
+  // has one clock. Read a night's hour through `timeOn` in ./when.ts.
+  times?: Record<string, string>;
   // Days inside a daily run when it is shut: ISO dates strictly between
   // `start` and the last night. Needs `startTime` and `end`; never together
   // with `dates` — use whichever list is shorter.

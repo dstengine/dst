@@ -355,6 +355,30 @@ describe("run days", () => {
     }
   });
 
+  // `times` gives the nights of a listed run that start at another hour
+  // (see EventItem). The calendar file lists each night at its own hour and
+  // the page prints every hour, so a key that is not one of the nights
+  // would put a night in nobody's calendar, and a value equal to
+  // `startTime` would print one hour twice.
+  test("`times` belongs to a listed run: its keys are nights, its values other hours", () => {
+    const HHMM = /^([01]\d|2[0-3]):[0-5]\d$/;
+    const timed = allEvents.filter((e) => e.times !== undefined);
+    for (const e of timed) {
+      const where = `events/${e.site}/${e.slug}`;
+      assert.ok(e.dates, `${where}: times without dates`);
+      assert.ok(e.startTime, `${where}: times without a startTime`);
+      assert.ok(!e.endTime, `${where}: times with an endTime — a daily window has one clock`);
+      const entries = Object.entries(e.times);
+      assert.ok(entries.length > 0, `${where}: an empty times`);
+      for (const [day, time] of entries) {
+        assert.ok(e.dates?.includes(day), `${where}: times names "${day}", which is not one of its dates`);
+        assert.match(time, HHMM, `${where}: times["${day}"] = "${time}" is not HH:MM`);
+        assert.notEqual(time, e.startTime, `${where}: times["${day}"] repeats startTime ${e.startTime}`);
+      }
+    }
+    console.log(`${timed.length} runs with nights at another hour`);
+  });
+
   test("`closedDates` fall strictly inside the run", () => {
     for (const e of listed.filter((x) => x.closedDates)) {
       const where = `events/${e.site}/${e.slug}`;

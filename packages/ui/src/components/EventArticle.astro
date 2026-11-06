@@ -11,7 +11,7 @@ import type { Publisher } from '../schema';
 // under it while intent is still fresh.
 import type { EventItem, NewsItem } from "@dst/content/types";
 import { isFree, ticketAvailability } from "@dst/content/admission";
-import { endDay, runDays, placedAfter } from "@dst/content/when";
+import { endDay, runDays, placedAfter, timeOn } from "@dst/content/when";
 import LeadForm from "./LeadForm.astro";
 import VentureGrid from "./VentureGrid.astro";
 import FeedCards from "./FeedCards.astro";
@@ -28,11 +28,11 @@ import Share from "./Share.astro";
 import { ICONS } from "../icons.ts";
 import Icon from "./Icon.astro";
 import { mapEmbedUrl, directionsUrl } from "../maps.ts";
-import { formatDate, cardHours, cardCountdown, cardUntil, cardClock } from "../date.ts";
+import { formatDate, cardHours, cardCountdown, cardUntil, cardClock, nightHours } from "../date.ts";
 import { caps } from "../caps.ts";
 import PromoCode from "./PromoCode.astro";
 import { headingWord, withLabels, type ArticleLabels } from "../labels.ts";
-import { isOn, isCurrent, hasEnded, withPromoted } from "@dst/content/when";
+import { isOn, isCurrent, hasEnded, withPromoted, cardDay } from "@dst/content/when";
 
 interface Props {
   item: EventItem;
@@ -164,7 +164,8 @@ const moreCards = onFirst(more
   // and that stays impossible while anything of the page's subject is on.
   //
   // Then the date: soonest first for what is on or to come, most recent
-  // first for the past.
+  // first for the past. What is on goes by the day its card is dated by,
+  // which for a run that lists its nights is the next of them (`cardDay`).
   .sort((a, b) => {
     if (promoted) {
       const aHot = a.category === promoted.key && isOn(a, todayIso);
@@ -177,34 +178,38 @@ const moreCards = onFirst(more
     const aSame = a.category === item.category;
     const bSame = b.category === item.category;
     if (aSame !== bSame) return aSame ? -1 : 1;
-    return aUp ? (a.start < b.start ? -1 : 1) : (a.start < b.start ? 1 : -1);
+    return aUp ? (cardDay(a, todayIso) < cardDay(b, todayIso) ? -1 : 1) : (a.start < b.start ? 1 : -1);
   }))
-  .map((other) => ({
-    href: eventHref(other, eventsBase),
-    eyebrow: other.category,
-    date: other.start,
-    title: other.title,
-    short: other.cardTitle,
-    text: [other.venue, other.city].filter(Boolean).join(" · ") || other.summary,
-    image: other.image,
-    imageAlt: other.imageAlt,
-    imageFit: "cover" as const,
-    event: true,
-    // No hours on a promoted card under a page of another subject: that
-    // block is the same three cards on every page of the site, and their
-    // hours were fifty more copies of one phrase. They stay on the tag's own
-    // pages, in the listings, and on the event itself.
-    hours: promoted && other.category === promoted.key && item.category !== promoted.key ? undefined : cardHours(other),
-    countdown: cardCountdown(other),
-    ...cardClock(other),
-    dateInImage: other.dateInImage,
-    editorsChoice: other.editorsChoice,
-    past: hasEnded(other, todayIso),
-    // A run that opened on an earlier day is dated by the day it closes, as
-    // on the events index and the front page's block: its first day is one
-    // the reader has already missed.
-    until: cardUntil(other, todayIso),
-  }));
+  .map((other) => {
+    const day = cardDay(other, todayIso);
+    return {
+      href: eventHref(other, eventsBase),
+      eyebrow: other.category,
+      date: day,
+      title: other.title,
+      short: other.cardTitle,
+      text: [other.venue, other.city].filter(Boolean).join(" · ") || other.summary,
+      image: other.image,
+      imageAlt: other.imageAlt,
+      imageFit: "cover" as const,
+      event: true,
+      // No hours on a promoted card under a page of another subject: that
+      // block is the same three cards on every page of the site, and their
+      // hours were fifty more copies of one phrase. They stay on the tag's own
+      // pages, in the listings, and on the event itself.
+      hours: promoted && other.category === promoted.key && item.category !== promoted.key ? undefined : cardHours(other, day),
+      countdown: cardCountdown(other, day),
+      ...cardClock(other),
+      dateInImage: other.dateInImage,
+      editorsChoice: other.editorsChoice,
+      past: hasEnded(other, todayIso),
+      // A run that opened on an earlier day is dated by the day it closes, as
+      // on the events index and the front page's block: its first day is one
+      // the reader has already missed. Not one that lists its nights, which
+      // is dated by the next of them above.
+      until: cardUntil(other, todayIso),
+    };
+  });
 
 // If the promoted tag got to the front, the block belongs to it: the
 // heading below will say so by name, and a third card about a flea market
@@ -279,7 +284,14 @@ const tail = tailCards.length > 0
 // rich results lean on the hour.
 const offset = item.utcOffset ?? "+04:00";
 const stamp = (day: string, time?: string) => (time ? `${day}T${time}:00${offset}` : day);
-const startStamp = stamp(item.start, item.startTime);
+// The first night at its own hour: a run whose nights start at different
+// hours (`times`) may open on one that is not `startTime`'s.
+const startStamp = stamp(item.start, timeOn(item, item.start));
+// The hours the nights start at, as the page prints them: `startTime`
+// alone, or for a run with `times` each of its hours, "18:00 / 19:00" —
+// either one alone is wrong for some night, and "From 18:00" reads as a
+// door time rather than two curtain-ups.
+const hours = nightHours(item);
 const endStamp = item.end || item.endTime ? stamp(endDay(item), item.endTime) : undefined;
 // The "ended" badge goes by the event's own day, as its cards do: counted
 // from UTC it came up at 20:30 on the night of nyc42's parade. A night that
@@ -359,7 +371,7 @@ const glance: { label: string; value: string; icon: string }[] = [
   },
   item.startTime && {
     label: L.time,
-    value: item.endTime ? `${item.startTime} – ${item.endTime}` : L.timeFrom(item.startTime),
+    value: item.endTime ? `${item.startTime} – ${item.endTime}` : hours.length > 1 ? hours.join(" / ") : L.timeFrom(hours[0]),
     icon: ICONS.clock,
   },
   duration && { label: L.duration, value: duration, icon: ICONS.hourglass },
@@ -555,7 +567,7 @@ const relatedItems = (item.related ?? []).map((card) => ({
       {item.end && <span>&ndash; <time datetime={endStamp}>{formatDate(item.end, locale)}</time></span>}
       {item.startTime && (
         <span class="event-article-time">
-          {item.startTime}{item.endTime && <>&ndash;{item.endTime}</>}
+          {hours.join(" / ")}{item.endTime && <>&ndash;{item.endTime}</>}
         </span>
       )}
       {/* Revealed client-side once the last day has passed — a static build

@@ -17,6 +17,7 @@ import { ICONS } from "@dst/ui/icons";
 import { withLabels } from "@dst/ui/labels";
 import { formatCardDate } from "@dst/ui/date";
 import { eventHref } from "@dst/content/paths";
+import { nextDay } from "@dst/content/when";
 import type { Venue, VenueSpec } from "@dst/content/venues";
 import { venuesPage, portal, labels, type Lang } from "../content";
 import { site } from "../site.config";
@@ -33,9 +34,11 @@ const city = site[lang].keyword;
 const today = new Date().toISOString().slice(0, 10);
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 
+// The day a reader can next go: a listed run's next night, not today in a
+// gap between two (see `nextDay` in @dst/content/when).
 const next = venue.next;
-const nextDay = next ? (next.start < today ? today : next.start) : undefined;
-const nextDate = nextDay ? formatCardDate(nextDay, LOCALE[lang]) : undefined;
+const nextOn = next ? nextDay(next, today) : undefined;
+const nextDate = nextOn ? formatCardDate(nextOn, LOCALE[lang]) : undefined;
 const count = venue.items.length;
 
 // The head: the room and the city in the first words, then what the search

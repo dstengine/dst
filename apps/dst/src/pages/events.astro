@@ -7,6 +7,7 @@ import SectionNav from "@dst/ui/SectionNav.astro";
 import EventsList from "@dst/ui/EventsList.astro";
 import FeedCards from "@dst/ui/FeedCards.astro";
 import { cardHours, cardCountdown } from "@dst/ui/date";
+import { cardDay } from "@dst/content/when";
 import CountdownScript from "@dst/ui/CountdownScript.astro";
 import { eventsBySite, allEvents, upcomingEvents } from "@dst/content/events";
 import { newsBySite } from "@dst/content/news";
@@ -35,7 +36,9 @@ const sectionLinks = sections([...items, ...newsBySite(siteId)]);
 // Same hub roundup the news page carries, so the two pages behave alike —
 // only upcoming ones, since a hub listing something that already happened
 // is worse than listing nothing. Cross-siteId detail pages live on their own
-// host, which is why this isn't EventsList.
+// host, which is why this isn't EventsList. A run that lists its nights is
+// dated by the next of them (`cardDay`), as in EventsList.
+const today = new Date().toISOString().slice(0, 10);
 const networkCards = upcomingEvents(
   // The group's verticals only. The .lol sites, tick, musical and aivideo
   // are independent sites: they share code with the hub, never a footprint,
@@ -45,10 +48,11 @@ const networkCards = upcomingEvents(
 ).map((item) => {
   const host = SITE_HOSTS[item.site];
   const hasPage = Array.isArray(item.body) && item.body.length > 0;
+  const day = cardDay(item, today);
   return {
     href: hasPage && host ? `https://${host}/events/${item.slug}/` : undefined,
     eyebrow: SITE_LABELS[item.site] ?? item.site,
-    date: item.start,
+    date: day,
     title: item.title,
     short: item.cardTitle,
     text: [item.venue, item.city].filter(Boolean).join(" · ") || item.summary,
@@ -59,8 +63,8 @@ const networkCards = upcomingEvents(
     imageAlt: item.imageAlt,
     imageFit: "cover" as const,
     event: true,
-    hours: cardHours(item),
-    countdown: cardCountdown(item),
+    hours: cardHours(item, day),
+    countdown: cardCountdown(item, day),
     dateInImage: item.dateInImage,
     editorsChoice: item.editorsChoice,
   };

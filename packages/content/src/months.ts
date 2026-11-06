@@ -11,6 +11,15 @@
 // November too, and a reader who opens November's page is asking what they
 // can go to in November, not what starts then.
 //
+// "On for a day" is the run's own days when it lists them. A theatre's
+// repertoire is a span with gaps in it: Carmen at the Opera from 10 October
+// to 6 February plays four nights — one each in October, November, January
+// and February — and read as a span it sat on December's page, counted in
+// "39 events in Yerevan in December 2026", with no December night at all.
+// A run with `dates` is in the months its nights fall in and no other; a
+// run without them is still read as every day from start to end, which is
+// what an exhibition or a festival is.
+//
 // Past months stay. The page for a month that has gone is the record of
 // it — what the city had on — and a record is what a search engine can
 // still send a reader to a year later. The threshold is a kind's
@@ -45,10 +54,27 @@ export function monthBounds(key: string): { first: string; last: string } {
   return { first: `${key}-01`, last: `${key}-${String(last).padStart(2, "0")}` };
 }
 
-/** Whether an event is on for at least one day of the month. */
-export function inMonth(event: Pick<EventItem, "start" | "end">, key: string): boolean {
+/** Whether an event is on for at least one day of the month: one of its
+    listed nights when it has `dates`, else any day of its span. */
+export function inMonth(event: Pick<EventItem, "start" | "end" | "dates">, key: string): boolean {
   const { first, last } = monthBounds(key);
+  if (event.dates) return event.dates.some((d) => d >= first && d <= last);
   return event.start <= last && lastDay(event) >= first;
+}
+
+/** The month after "YYYY-MM". */
+export function nextMonth(key: string): string {
+  const [y, m] = key.split("-").map(Number);
+  return `${m === 12 ? y + 1 : y}-${String(m === 12 ? 1 : m + 1).padStart(2, "0")}`;
+}
+
+/** Every month an event is on in, in order: the months of its listed
+    nights, or every month its span touches, not only the one it starts in. */
+function monthsOf(event: Pick<EventItem, "start" | "end" | "dates">): string[] {
+  if (event.dates) return [...new Set(event.dates.map(monthOf))];
+  const out: string[] = [];
+  for (let cursor = monthOf(event.start); cursor <= monthOf(lastDay(event)); cursor = nextMonth(cursor)) out.push(cursor);
+  return out;
 }
 
 export interface MonthsInput {
@@ -60,17 +86,7 @@ export interface MonthsInput {
 
 /** The months that have earned a page, in calendar order. */
 export function buildMonths({ items, today, min = ENOUGH_TAG }: MonthsInput): Month[] {
-  const keys = new Set<string>();
-  for (const e of items) {
-    // Every month the run touches, not only the one it starts in.
-    let cursor = monthOf(e.start);
-    const end = monthOf(lastDay(e));
-    while (cursor <= end) {
-      keys.add(cursor);
-      const [y, m] = cursor.split("-").map(Number);
-      cursor = `${m === 12 ? y + 1 : y}-${String(m === 12 ? 1 : m + 1).padStart(2, "0")}`;
-    }
-  }
+  const keys = new Set(items.flatMap(monthsOf));
   const out: Month[] = [];
   for (const key of [...keys].sort()) {
     const mine = items.filter((e) => inMonth(e, key)).sort((a, b) => (a.start < b.start ? -1 : a.start > b.start ? 1 : a.slug.localeCompare(b.slug)));

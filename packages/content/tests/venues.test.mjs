@@ -42,6 +42,43 @@ describe("buildVenues", () => {
     assert.equal(v.next.slug, "soon");
   });
 
+  test("next is the entry on soonest by its next night, not the one that opened first", () => {
+    // Pagliacci opened in October and plays 17 November; Carmen plays the
+    // 14th. On 10 November the Opera is next at Carmen, on the 14th.
+    const items = [
+      event({ slug: "pagliacci", venue: "Spendiaryan Opera", start: "2026-10-08", end: "2027-02-17", startTime: "19:00", dates: ["2026-10-08", "2026-11-17", "2027-01-31", "2027-02-17"], times: { "2027-01-31": "18:00" } }),
+      event({ slug: "carmen", venue: "Spendiaryan Opera", start: "2026-10-10", end: "2027-02-06", startTime: "18:00", dates: ["2026-10-10", "2026-11-14", "2027-01-10", "2027-02-06"] }),
+      event({ slug: "gala", venue: "Spendiaryan Opera", start: "2026-11-20" }),
+      // A run without a list is on every day it runs, so it is next today.
+      event({ slug: "exhibition", venue: "Spendiaryan Opera", start: "2026-11-01", end: "2026-11-30" }),
+    ];
+    const [v] = buildVenues({ items, venues: [opera], today });
+    console.log("next nights 17, 14, 20 Nov and a run on today ->", v.upcoming.map((i) => i.slug));
+    assert.deepEqual(v.upcoming.map((i) => i.slug), ["exhibition", "carmen", "pagliacci", "gala"]);
+    const [w] = buildVenues({ items: items.slice(0, 3), venues: [opera], today });
+    assert.equal(w.next.slug, "carmen");
+    // The whole list stays in start order.
+    assert.deepEqual(w.items.map((i) => i.slug), ["pagliacci", "carmen", "gala"]);
+  });
+
+  test("two entries next on the same day go by that day's hour, then start, then slug", () => {
+    const run = { slug: "run", venue: "Tonelab", start: "2026-11-01", end: "2026-11-12", startTime: "20:00", dates: ["2026-11-01", "2026-11-12"] };
+    const items = [
+      event({ slug: "b", venue: "Tonelab", start: "2026-11-12" }),
+      event(run),
+      event({ slug: "a", venue: "Tonelab", start: "2026-11-12" }),
+      event({ slug: "matinee", venue: "Tonelab", start: "2026-11-12", startTime: "13:00" }),
+    ];
+    const [v] = buildVenues({ items, venues: [club], today });
+    console.log("12 Nov: two with no hour, one at 13:00, a run at 20:00 ->", v.upcoming.map((i) => i.slug));
+    assert.deepEqual(v.upcoming.map((i) => i.slug), ["a", "b", "matinee", "run"]);
+    assert.equal(v.next.slug, "a");
+    // A run's hour that night comes from `times`, not its usual startTime.
+    items[1] = event({ ...run, times: { "2026-11-12": "12:00" } });
+    const [w] = buildVenues({ items, venues: [club], today });
+    assert.deepEqual(w.upcoming.map((i) => i.slug), ["a", "b", "run", "matinee"]);
+  });
+
   test("rooms with dates still to come rank first, by how many; then by how much we hold", () => {
     const items = [
       event({ slug: "a", venue: "Spendiaryan Opera", start: "2026-09-01" }),

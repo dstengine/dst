@@ -1,6 +1,6 @@
 import { test, describe } from "node:test";
 import assert from "node:assert/strict";
-import { buildMonths, inMonth, monthBounds, monthOf, monthHref } from "../src/months.ts";
+import { buildMonths, inMonth, monthBounds, monthOf, monthHref, nextMonth } from "../src/months.ts";
 import { ENOUGH_TAG } from "../src/sections.ts";
 
 const event = (over) => ({ slug: "s", site: "x", title: "t", summary: "s", start: "2026-11-01", ...over });
@@ -21,6 +21,22 @@ describe("monthBounds and inMonth", () => {
     assert.equal(inMonth(run, "2026-12"), true);
     assert.equal(inMonth(run, "2027-01"), false);
     assert.equal(inMonth({ start: "2026-11-30" }, "2026-12"), false);
+  });
+
+  test("a run that lists its nights is in the months it has a night in, and no other", () => {
+    // Carmen at the Opera: four nights from October to February, none in December.
+    const carmen = { start: "2026-10-10", end: "2027-02-06", dates: ["2026-10-10", "2026-11-14", "2027-01-10", "2027-02-06"] };
+    assert.equal(inMonth(carmen, "2026-11"), true);
+    assert.equal(inMonth(carmen, "2026-12"), false);
+    assert.equal(inMonth(carmen, "2027-01"), true);
+    assert.equal(inMonth(carmen, "2027-03"), false);
+    // The same span without the list is every month it touches, as before.
+    assert.equal(inMonth({ start: carmen.start, end: carmen.end }, "2026-12"), true);
+  });
+
+  test("nextMonth crosses the year end", () => {
+    assert.equal(nextMonth("2026-11"), "2026-12");
+    assert.equal(nextMonth("2026-12"), "2027-01");
   });
 });
 
@@ -50,6 +66,19 @@ describe("buildMonths", () => {
     const out = buildMonths({ items: [1, 2, 3].map((n) => event({ slug: `n${n}`, start: `2026-11-0${n}` })), today: "2026-11-30" });
     assert.equal(out[0].ahead, true);
     assert.equal(buildMonths({ items: out[0].items, today: "2026-12-01" })[0].ahead, false);
+  });
+
+  test("a listed run gives a page only to the months of its nights, and is counted only there", () => {
+    // Turandot: 22 October and 21 February, nothing in between. Read as a
+    // span it would make November, December and January pages of their own
+    // and sit on each of them.
+    const turandot = event({ slug: "turandot", start: "2026-10-22", end: "2027-02-21", startTime: "19:00", dates: ["2026-10-22", "2027-02-21"], times: { "2027-02-21": "18:00" } });
+    const out = buildMonths({ items: [turandot], today, min: 1 });
+    assert.deepEqual(out.map((m) => m.key), ["2026-10", "2027-02"]);
+    const december = [1, 2, 3].map((n) => event({ slug: `dec-${n}`, start: `2026-12-0${n}` }));
+    const withDec = buildMonths({ items: [turandot, ...december], today });
+    const dec = withDec.find((m) => m.key === "2026-12");
+    assert.deepEqual(dec.items.map((i) => i.slug), ["dec-1", "dec-2", "dec-3"]);
   });
 
   test("monthHref joins base and key", () => {

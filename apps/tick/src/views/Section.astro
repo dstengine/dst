@@ -14,7 +14,7 @@ import type { Section as SectionT } from "@dst/content/sections";
 import type { EventItem } from "@dst/content/types";
 import { withLabels } from "@dst/ui/labels";
 import { cardCountdown } from "@dst/ui/date";
-import { isOn, placedAfter } from "@dst/content/when";
+import { isOn, placedAfter, cardDay } from "@dst/content/when";
 import { eventHref } from "@dst/content/paths";
 import { labels, type Lang } from "../content";
 import { site } from "../site.config";
@@ -53,18 +53,19 @@ const AGE = {
 // with, gone by itself once its last date has passed. Not on the tag's own
 // page, which is that list. No hours on these cards, for the reason
 // EventArticle gives: the block repeats on every page, and its hours were
-// the same phrase a hundred times. They stay on the Halloween pages.
+// the same phrase a hundred times. They stay on the Halloween pages. A run
+// that lists its nights is dated and sorted by the next of them (`cardDay`).
 const today = new Date().toISOString().slice(0, 10);
 const blocks = promotedAll[lang]
   .filter((hot) => hot.slug !== section.slug)
   .map((hot) => ({ hot, cards: placedAfter(hot.items
       .filter((i): i is EventItem => "start" in i && isOn(i, today))
-      .sort((a, b) => (b.editorsChoice ? 1 : 0) - (a.editorsChoice ? 1 : 0) || (a.start < b.start ? -1 : 1)))
+      .sort((a, b) => (b.editorsChoice ? 1 : 0) - (a.editorsChoice ? 1 : 0) || (cardDay(a, today) < cardDay(b, today) ? -1 : 1)))
       .slice(0, 3)
       .map((e) => ({
         href: eventHref(e, eventsBase(lang)),
         eyebrow: e.category,
-        date: e.start,
+        date: cardDay(e, today),
         title: e.title,
         short: e.cardTitle,
         text: [e.venue, e.city].filter(Boolean).join(" · ") || e.summary,
@@ -72,7 +73,7 @@ const blocks = promotedAll[lang]
         imageAlt: e.imageAlt,
         imageFit: "cover" as const,
         event: true,
-        countdown: cardCountdown(e),
+        countdown: cardCountdown(e, cardDay(e, today)),
         dateInImage: e.dateInImage,
         editorsChoice: e.editorsChoice,
       })) }))

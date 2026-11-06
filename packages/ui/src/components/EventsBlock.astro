@@ -19,7 +19,7 @@ import { eventHref } from "@dst/content/paths";
 import FeedCards from "./FeedCards.astro";
 import { cardHours, cardCountdown, cardUntil, cardClock } from "../date.ts";
 import CountdownScript from "./CountdownScript.astro";
-import { hasEnded, lastDay } from "@dst/content/when";
+import { isOn, isRunning, lastDay, cardDay } from "@dst/content/when";
 import { withLabels, type ArticleLabels } from "../labels.ts";
 
 interface Props {
@@ -54,18 +54,20 @@ const todayIso = new Date().toISOString().slice(0, 10);
 // EventsList for why the `featured` rank stopped moving events.
 //
 // An event that starts today belongs to what is coming: its card counts the
-// hours to it. Running means it opened on an earlier day.
+// hours to it. Running means it opened on an earlier day, and is a span: a
+// run that lists its nights is to come while it has one left, dated and
+// sorted by it (`isRunning`, `cardDay` in @dst/content/when).
 const byKey = (key: (e: EventItem) => string) => (a: EventItem, b: EventItem) => {
   const x = key(a);
   const y = key(b);
   return x < y ? -1 : x > y ? 1 : 0;
 };
 const upcoming = items
-  .filter((e) => e.start >= todayIso)
-  .sort(byKey((e) => e.start))
+  .filter((e) => isOn(e, todayIso) && !isRunning(e, todayIso))
+  .sort(byKey((e) => cardDay(e, todayIso)))
   .slice(0, limit);
 const running = items
-  .filter((e) => e.start < todayIso && !hasEnded(e, todayIso))
+  .filter((e) => isRunning(e, todayIso))
   .sort(byKey((e) => `${lastDay(e)} ${e.start}`))
   .slice(0, limit);
 
@@ -73,10 +75,11 @@ const L = withLabels(labels);
 
 const card = (item: EventItem) => {
   const hasPage = Array.isArray(item.body) && item.body.length > 0;
+  const day = cardDay(item, todayIso);
   return {
     href: hasPage ? eventHref(item, eventsBase) : undefined,
     eyebrow: item.category,
-    date: item.start,
+    date: day,
     title: item.title,
     short: item.cardTitle,
     text: [item.venue, item.city].filter(Boolean).join(" · ") || item.summary,
@@ -86,8 +89,8 @@ const card = (item: EventItem) => {
     imageAlt: item.imageAlt,
     imageFit: "cover" as const,
     event: true,
-    hours: cardHours(item),
-    countdown: cardCountdown(item),
+    hours: cardHours(item, day),
+    countdown: cardCountdown(item, day),
     ...cardClock(item),
     dateInImage: item.dateInImage,
     editorsChoice: item.editorsChoice,

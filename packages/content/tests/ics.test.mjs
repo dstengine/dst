@@ -2,7 +2,7 @@ import { test, describe } from "node:test";
 import assert from "node:assert/strict";
 import { toIcs, toIcsCalendar, crossesClockChange } from "../src/ics.ts";
 import { allEvents, eventsBySite } from "../src/events/index.ts";
-import { runDays } from "../src/when.ts";
+import { runDays, timeOn } from "../src/when.ts";
 
 const NOW = new Date("2026-08-25T12:00:00Z");
 const base = {
@@ -15,6 +15,8 @@ const base = {
 
 const lines = (ics) => ics.split("\r\n");
 const field = (ics, name) => lines(ics).find((l) => l.startsWith(`${name}:`) || l.startsWith(`${name};`));
+// Each VEVENT as its own text, so a field can be read from one of them.
+const vevents = (ics) => ics.replace(/\r\n[ \t]/g, "").split("BEGIN:VEVENT\r\n").slice(1).map((b) => "BEGIN:VEVENT\r\n" + b.slice(0, b.indexOf("END:VEVENT") + 10));
 
 describe("ics: timed events", () => {
   test("clock time is converted to UTC using the event's offset", () => {
@@ -120,6 +122,44 @@ describe("ics: runs and single days", () => {
     assert.equal(rule(ics), "RRULE:FREQ=DAILY;UNTIL=20261031T183000Z");
   });
 
+  test("`times` keeps the series at startTime and moves each such night in a VEVENT of its own", () => {
+    // Turandot at the Yerevan Opera: 22 October at 19:00, 21 February at 18:00.
+    const run = { ...base, site: "tick", start: "2026-10-22", end: "2027-02-21", dates: ["2026-10-22", "2027-02-21"], startTime: "19:00", times: { "2027-02-21": "18:00" }, utcOffset: "+04:00" };
+    const ics = toIcs(run, "https://tick.am/x/", NOW);
+    const [series, moved, extra] = vevents(ics);
+    console.log("  22 Oct 19:00, 21 Feb 18:00 ->", field(series, "DTSTART"), rule(series), "|", field(moved, "RECURRENCE-ID"), field(moved, "DTSTART"));
+    assert.equal(field(series, "DTSTART"), "DTSTART:20261022T150000Z");
+    assert.equal(rule(series), "RRULE:FREQ=DAILY;UNTIL=20270221T150000Z");
+    assert.equal(exdates(series).length, 121, "every day between the two nights (23 Oct to 20 Feb) is taken out");
+    assert.equal(field(series, "RDATE"), undefined);
+    assert.equal(field(series, "DTEND"), undefined);
+    // 21 February is the series' occurrence at 19:00, moved to 18:00.
+    assert.equal(field(moved, "UID"), field(series, "UID"));
+    assert.equal(field(moved, "RECURRENCE-ID"), "RECURRENCE-ID:20270221T150000Z");
+    assert.equal(field(moved, "DTSTART"), "DTSTART:20270221T140000Z");
+    assert.equal(field(moved, "RRULE"), undefined);
+    assert.equal(field(moved, "SUMMARY"), field(series, "SUMMARY"));
+    assert.equal(extra, undefined);
+  });
+
+  test("`times` on the first night moves that occurrence, not the series", () => {
+    const run = { ...base, start: "2026-11-15", end: "2026-11-26", dates: ["2026-11-15", "2026-11-19", "2026-11-26"], startTime: "19:00", times: { "2026-11-15": "18:00" } };
+    const [series, moved, extra] = vevents(toIcs(run, "https://tick.am/x/", NOW));
+    assert.equal(field(series, "DTSTART"), "DTSTART:20261115T150000Z");
+    assert.equal(rule(series), "RRULE:FREQ=DAILY;UNTIL=20261126T150000Z");
+    assert.equal(field(moved, "RECURRENCE-ID"), "RECURRENCE-ID:20261115T150000Z");
+    assert.equal(field(moved, "DTSTART"), "DTSTART:20261115T140000Z");
+    assert.equal(extra, undefined, "the nights at startTime are not moved");
+  });
+
+  test("a moved night keeps the series' length", () => {
+    const run = { ...base, start: "2026-11-15", end: "2026-11-19", dates: ["2026-11-15", "2026-11-19"], startTime: "19:00", endTime: "21:30", times: { "2026-11-19": "13:00" } };
+    const [series, moved] = vevents(toIcs(run, "https://tick.am/x/", NOW));
+    assert.equal(field(series, "DTEND"), "DTEND:20261115T173000Z");
+    assert.equal(field(moved, "DTSTART"), "DTSTART:20261119T090000Z");
+    assert.equal(field(moved, "DTEND"), "DTEND:20261119T113000Z");
+  });
+
   test("`closedDates` takes days out of a daily run", () => {
     const ics = toIcs({ ...ldn, start: "2026-11-20", end: "2027-01-03", closedDates: ["2026-12-25"], startTime: "10:00", endTime: "20:00" }, "https://lnd.lol/x/", NOW);
     assert.equal(rule(ics), "RRULE:FREQ=DAILY;UNTIL=20270103T100000Z");
@@ -154,9 +194,11 @@ describe("ics: runs and single days", () => {
 describe("ics: every series in the data", () => {
   const stamp = (line) => line.slice(line.indexOf(":") + 1);
   const toDate = (s) => new Date(s.replace(/^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})Z$/, "$1-$2-$3T$4:$5:$6Z"));
-  const series = allEvents
-    .map((e) => ({ e, ics: toIcs(e, "https://example.test/x/", NOW).replace(/\r\n[ \t]/g, "") }))
-    .filter(({ ics }) => field(ics, "RRULE"));
+  const written = allEvents.map((e) => ({ e, ics: toIcs(e, "https://example.test/x/", NOW).replace(/\r\n[ \t]/g, "") }));
+  const series = written.filter(({ ics }) => field(ics, "RRULE"));
+  // A run whose nights start at different hours (`times`): the series, and
+  // after it a VEVENT for each night moved off its hour.
+  const moving = written.filter(({ ics }) => field(ics, "RECURRENCE-ID"));
 
   test("there are series to check", () => {
     console.log(`  ${series.length} entries written as a daily series`);
@@ -201,6 +243,32 @@ describe("ics: every series in the data", () => {
       }
       assert.equal(count, runDays(e).length, `${e.site}/${e.slug}: ${count} occurrences, ${runDays(e).length} run days`);
     }
+  });
+
+  test("a run with `times` expands to exactly its nights, each at its own hour", () => {
+    const utc = (day, e) => new Date(`${day}T${timeOn(e, day)}:00${e.utcOffset ?? "+04:00"}`).toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
+    assert.equal(written.filter(({ ics }) => field(ics, "RDATE")).length, 0, "RDATE is written, which Google and Outlook drop");
+    for (const { e, ics } of moving) {
+      const where = `${e.site}/${e.slug}`;
+      assert.ok(e.times, `${where}: RECURRENCE-ID without \`times\``);
+      const [master, ...moves] = vevents(ics);
+      // What a client shows: the series' occurrences, less EXDATE, each one
+      // a RECURRENCE-ID names replaced by that VEVENT's DTSTART.
+      const ex = new Set(field(master, "EXDATE") ? stamp(field(master, "EXDATE")).split(",") : []);
+      const until = toDate(/UNTIL=([0-9TZ]+)/.exec(field(master, "RRULE"))[1]);
+      const swap = new Map(moves.map((m) => [stamp(field(m, "RECURRENCE-ID")), stamp(field(m, "DTSTART"))]));
+      const shown = [];
+      for (let t = toDate(stamp(field(master, "DTSTART"))); t <= until; t = new Date(t.getTime() + 86_400_000)) {
+        const at = t.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
+        if (!ex.has(at)) shown.push(swap.get(at) ?? at);
+      }
+      assert.equal(swap.size, moves.length, `${where}: two VEVENTs move one night`);
+      for (const at of swap.keys()) assert.ok(!ex.has(at), `${where}: a moved night ${at} is also taken out`);
+      for (const m of moves) assert.equal(field(m, "UID"), field(master, "UID"), `${where}: a moved night under another UID`);
+      assert.deepEqual(shown, runDays(e).map((day) => utc(day, e)), `${where}: the nights a calendar shows are not the entry's`);
+    }
+    console.log(`  ${moving.length} series with nights at their own hour`);
+    assert.ok(moving.length > 0);
   });
 
   test("every run that can repeat does, and nothing else does", (t) => {
@@ -323,11 +391,16 @@ describe("ics: the subscribable calendar", () => {
       const over = lines(ics).filter((l) => Buffer.byteLength(l, "utf8") > 75);
       assert.deepEqual(over, [], `${site}: unfolded lines`);
       assert.ok(ics.endsWith("END:VCALENDAR\r\n"), `${site}: file does not close the calendar`);
-      assert.equal(lines(ics).filter((l) => l === "BEGIN:VEVENT").length, items.length, `${site}: event count`);
+      // One VEVENT per entry, plus one per night a series moves off its hour.
+      const blocks = vevents(ics);
+      const masters = blocks.filter((b) => !field(b, "RECURRENCE-ID"));
+      assert.equal(masters.length, items.length, `${site}: event count`);
       // A UID has to be unique inside one calendar or a client will treat
-      // two entries as edits of the same appointment.
-      const uids = lines(ics).filter((l) => l.startsWith("UID:"));
+      // two entries as edits of the same appointment; a moved night shares
+      // its series' UID, which is how a client knows whose night it is.
+      const uids = masters.map((b) => field(b, "UID"));
       assert.equal(new Set(uids).size, uids.length, `${site}: duplicate UID in one calendar`);
+      for (const b of blocks.filter((b) => field(b, "RECURRENCE-ID"))) assert.ok(uids.includes(field(b, "UID")), `${site}: a moved night with no series`);
       console.log(`  ${site.padEnd(12)} ${String(items.length).padStart(2)} events, ${lines(ics).length} lines`);
     }
   });

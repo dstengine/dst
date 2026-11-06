@@ -5,6 +5,7 @@ import Layout from "../layouts/Layout.astro";
 import PromoHero from "@dst/ui/PromoHero.astro";
 import VenueCards from "@dst/ui/VenueCards.astro";
 import { venuesPage, labels, type Lang } from "../content";
+import { nextDay } from "@dst/content/when";
 import { LOCALE } from "../i18n";
 import { allVenues, venuesBase } from "../venues";
 
@@ -18,8 +19,9 @@ const items = allVenues[lang].map((v) => ({
   kind: v.kind,
   address: v.address,
   // A run that opened last week is on today: "next" is the first day a
-  // reader can still go, not the day it began.
-  next: v.next ? (v.next.start < today ? today : v.next.start) : undefined,
+  // reader can still go, not the day it began — and for a run that lists
+  // its nights, the next of them, not today in a gap between two.
+  next: v.next ? nextDay(v.next, today) : undefined,
   count: v.items.length,
 }));
 // As /events/: an index of fewer than three is thinner than its pages.
