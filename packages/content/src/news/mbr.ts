@@ -411,4 +411,61 @@ export const items: NewsItem[] = [
     expertise:
       "The Meydan exit is the part of this that touches the district directly: a smoother exit from Financial Centre Street towards Meydan is a quicker evening drive from Downtown and DIFC to the northern edge of MBR City. The two extra lanes help the through traffic that passes the district on the way to Al Khail and Abu Dhabi. Neither changes the junctions inside the district itself.",
   },
+  {
+    slug: "ras-al-khor-flamingo-hides-winter-2026",
+    createdAt: "2026-11-06T04:00:00+04:00",
+    updatedAt: "2026-11-06T04:00:00+04:00",
+    site: "mbr",
+    image: "/covers/ras-al-khor-flamingo-hides-winter-2026.jpg",
+    imageAlt: "Pink cut-paper flamingos wading in a pale aqua lagoon on a deep teal ground, a low sand-coloured wooden hide on the shore and dark green mangrove shapes behind it",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Ras Al Khor's flamingo hides this winter, and the rebuild due by the end of 2026",
+    cardTitle: "Ras Al Khor flamingos this winter",
+    titleSeo: "Ras Al Khor flamingo hides near MBR City: winter 2026",
+    summary:
+      "Thousands of flamingos live year-round at Ras Al Khor Wildlife Sanctuary, a short drive from MBR City. Families walk in to the bird hides after registering, and a Dh650m rebuild aims to finish its first phase by the end of 2026.",
+    date: "2026-11-06",
+    category: "Infrastructure",
+    source: {
+      name: "Dubai Municipality",
+      url: "https://www.dm.gov.ae/dubai-protected-areas/book-a-visit/",
+      verifiedOn: "2026-11-06",
+    },
+    body: [
+      "A short drive from Mohammed Bin Rashid City, <strong>Ras Al Khor Wildlife Sanctuary</strong>, at the head of Dubai Creek, covers about <strong>6.4 square kilometres</strong>, holds <strong>47 hectares of mangroves</strong> and, in 2007, became the <strong>first site in the UAE listed under the Ramsar Convention</strong>. Dubai Municipality counts nearly <strong>450 species</strong> of plants and animals there and about <strong>20,000 migratory birds</strong> a year.",
+      "## The three hides",
+      "Visitors watch from wooden hides on the edge of the reserve. The <strong>Flamingo Hide</strong> (Makani <strong>29772 87328</strong>) looks over the flock, which Dubai Municipality describes as thousands of flamingos, there all year round. The <strong>Lagoon Hide</strong> (Makani <strong>30487 87923</strong>) faces the creek, with birds from waders to raptors.",
+      "The <strong>Mangrove Hide</strong> (Makani <strong>31623 86559</strong>), the one for ducks, snipes, shanks, great cormorants, Eurasian spoonbills and, in some winters, storks, is listed by Dubai Municipality as <strong>temporarily closed</strong>.",
+      "## How to visit",
+      "Families, individuals and photographers walk in during opening hours; <strong>walk-in registration is required</strong>, and a security officer may ask to see an <strong>Emirates ID</strong>. Schools, universities and tour companies book ahead on Dubai Municipality's portal under <strong>service code 3503</strong>. Commercial photography and filming need a no-objection certificate from the Natural Reserves Section.",
+      "The visitor page does not print the hours. The last schedule Dubai Municipality published, when the Flamingo Hide reopened in December 2020, was <strong>7:30am to 5:30pm, Sunday to Thursday</strong>, closed on Friday and Saturday. Treat it as a guide rather than a promise, and ask the Natural Reserves Section at nrs@dm.gov.ae before a long trip.",
+      "## The rebuild",
+      "On <strong>30 June 2025</strong> Dubai Municipality awarded the first contract of an <strong>AED 650 million</strong> development of the sanctuary. The first phase, about <strong>AED 100 million</strong>, is due to finish by the <strong>end of 2026</strong>. It raises mangrove cover from <strong>40 to 65 hectares</strong>, grows the water bodies by <strong>144 per cent to 74 hectares</strong>, adds <strong>10 hectares of mudflats</strong>, and creates a mangrove lake, North Edge Lake, reed ponds and a planted Green Spine.",
+      "The second phase brings the visitor side: a visitor centre, <strong>birdwatching towers</strong>, restaurants and kiosks, education centres, <strong>5.6 km of cycle track</strong> and <strong>3 km of walking trails</strong>. Dubai Municipality expects visitors to rise six-fold, to <strong>250,000–300,000 a year</strong>. It has not given that phase a date.",
+      "## From MBR City",
+      "The sanctuary is a short drive north-east of Meydan along Ras Al Khor Road, which has just <a href=\"/news/ras-al-khor-and-al-khail-roads-gain-a-lane/\" title=\"MBR City roads: a fourth lane on Ras Al Khor and Al Khail\">gained a fourth lane</a> towards Al Khail. A morning at the hides pairs easily with Meydan the same weekend, when the <a href=\"/events/well-b-festival-meydan-2026/\" title=\"Well B Festival 2026, Meydan: 14–15 Nov, from MBR City\">Well B Festival</a> takes over the racecourse on 14 and 15 November.",
+    ],
+    faq: [
+      {
+        q: "Can I see flamingos at Ras Al Khor in winter?",
+        a: "Yes. Dubai Municipality describes thousands of flamingos at the Flamingo Hide all year round; winter adds the migratory birds, about 20,000 a year across the sanctuary.",
+      },
+      {
+        q: "Do I need to book a visit to the Ras Al Khor hides?",
+        a: "Not as a family, individual or photographer: you walk in during opening hours and register on arrival, and may be asked for an Emirates ID. Schools, universities and tour companies book ahead on Dubai Municipality's portal, service code 3503.",
+      },
+      {
+        q: "Which hides are open?",
+        a: "Dubai Municipality lists the Flamingo Hide and the Lagoon Hide for visitors; the Mangrove Hide is marked temporarily closed.",
+      },
+      {
+        q: "When will the Ras Al Khor rebuild finish?",
+        a: "The first phase, about AED 100 million of mangroves, lakes and mudflats, is due by the end of 2026. The second phase, with the visitor centre, towers, cycle track and trails, has no date yet.",
+      },
+    ],
+    expertise:
+      "Go early in the morning and start at the Flamingo Hide: the flock is there whatever the month, and check the days before you set out, since the last published schedule closed the hides on Friday and Saturday. Take binoculars: a hide is a view across water, and the birds choose their own distance. With the Mangrove Hide closed and the first phase of works due to finish around the turn of the year, this is a winter for the flamingos rather than for a full tour of the reserve; the towers and trails that would make it a half-day outing belong to the second phase, which has no date.",
+  },
 ];
