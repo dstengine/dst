@@ -1948,4 +1948,93 @@ export const items: EventItem[] = [
     expertise:
       "Octubre y noviembre son el momento para comprar con calma: la feria lleva abierta desde el 7 de octubre y los talleres tienen el surtido completo antes de que diciembre, con los puentes y las vacaciones, llene el pueblo y la carretera de Maravatío. Al elegir una pieza, la constancia de la Indicación Geográfica, que en octubre recibieron 54 talleres, es lo que distingue a la esfera soplada aquí y como se hizo siempre; y una caja rígida para el regreso vale lo que cuesta, porque el vidrio soplado no perdona una cajuela.",
   },
+  {
+    slug: "noche-de-rabanos-oaxaca-2026",
+    createdAt: "2026-11-06T04:00:00+04:00",
+    updatedAt: "2026-11-06T04:00:00+04:00",
+    site: "mxo",
+    image: "/covers/noche-de-rabanos-oaxaca-2026.jpg",
+    imageAlt: "Rábanos rojos de papel recortado convertidos en figuritas de un nacimiento, sobre mesas en una plaza de papel con kiosco y fuegos artificiales de papel en el cielo nocturno",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Noche de Rábanos 2026 en el Zócalo de Oaxaca",
+    titleSeo: "Noche de Rábanos 2026, Oaxaca, México: fecha y concurso",
+    cardTitle: "Noche de Rábanos 2026",
+    summary:
+      "La Noche de Rábanos, una de las tradiciones navideñas más populares de Oaxaca, en el sur de México, vuelve al Zócalo de Oaxaca de Juárez el miércoles 23 de diciembre de 2026: un concurso de arte efímero con figuras talladas en rábanos gigantes, totomoxtle y flor inmortal, con música, buñuelos y fuegos artificiales.",
+    start: "2026-12-23",
+    end: "2026-12-23",
+    utcOffset: "-06:00",
+    venue: "Plaza de la Constitución (Zócalo de Oaxaca), Centro Histórico",
+    city: "Oaxaca de Juárez",
+    country: "México",
+    geo: { name: "Zócalo de Oaxaca", lat: 17.0607, lng: -96.7253 },
+    category: "Navidad",
+    ticket: {
+      url: "https://visitmexico.com/actividad/832/-",
+      label: "Ficha oficial en Visit México",
+      sells: false,
+    },
+    source: {
+      name: "Visit México — Secretaría de Turismo (fichas 2026 y 2025)",
+      url: "https://visitmexico.com/actividad/832/-",
+      verifiedOn: "2026-11-06",
+    },
+    body: [
+      "Cada 23 de diciembre el Zócalo de Oaxaca se llena de mesas con figuras talladas en rábanos: escenas del nacimiento, bailes de la Guelaguetza, arquitectura colonial y leyendas locales, arte efímero que se ve una sola noche. La <strong>Noche de Rábanos 2026</strong> es el <strong>miércoles 23 de diciembre</strong>, en la <strong>Plaza de la Constitución</strong>, Centro Histórico, C.P. 68000, Oaxaca de Juárez, según la ficha de Visit México, el portal de la Secretaría de Turismo federal.",
+      "## Qué es",
+      "La tradición nació a finales del siglo XIX como un concurso entre hortelanos para atraer compradores en los mercados navideños, y con los años se volvió un certamen de <strong>arte efímero</strong> conocido en todo el mundo. Visit México presentó la edición de 2025 como la <strong>128ª</strong>.",
+      "## Tres materiales",
+      "Las piezas se hacen con tres materiales, y vale la pena distinguirlos al recorrer las mesas: los <strong>rábanos</strong> gigantes, tallados; el <strong>totomoxtle</strong>, la hoja seca del maíz; y la <strong>flor inmortal</strong>, una flor seca. Los rábanos son los que dan nombre a la noche.",
+      "## Qué se ve en el Zócalo",
+      "Según la Secretaría de Turismo, las mesas muestran escenas del nacimiento, bailes tradicionales como la Guelaguetza, arquitectura colonial y leyendas locales, hechas por artesanos, campesinos y jardineros. Todo va acompañado de música en vivo, <strong>buñuelos</strong> tradicionales y una verbena, y de un espectáculo de <strong>fuegos artificiales</strong> sobre el Zócalo.",
+      "## Horario",
+      "En 2025 la exhibición empezó a las <strong>15:00</strong>, según la ficha de ese año. Al 6 de noviembre la ficha de 2026 publica la fecha y el lugar, pero todavía no la hora de apertura ni el programa; esta página lo recogerá cuando el municipio de Oaxaca de Juárez lo publique.",
+      "## Cómo llegar",
+      "El Zócalo, la Plaza de la Constitución, está en el corazón del Centro Histórico de Oaxaca de Juárez; desde un hotel del centro se llega caminando, y en una noche de fiesta así conviene dejar el coche lejos de la plaza.",
+      "## Otras navidades en México",
+      "Si el viaje de diciembre no es a Oaxaca, Monterrey tiene <a href=\"/eventos/luztopia-monterrey-2026/\" title=\"Luztopía 2026 en Parque Fundidora\">Luztopía</a> desde el 18 de noviembre, Guadalajara abre <a href=\"/eventos/navidalia-guadalajara-2026/\" title=\"Navidalia 2026 en el Parque Ávila Camacho\">Navidalia</a> el 4 de diciembre y en Michoacán la <a href=\"/eventos/feria-de-la-esfera-tlalpujahua-2026/\" title=\"Feria de la Esfera 2026 en Tlalpujahua\">Feria de la Esfera de Tlalpujahua</a> sigue hasta el 18 de diciembre, otra Navidad hecha a mano.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo es la Noche de Rábanos 2026?",
+        a: "El miércoles 23 de diciembre de 2026, en el Zócalo de Oaxaca de Juárez, como cada año, según la ficha de Visit México.",
+      },
+      {
+        q: "¿A qué hora empieza la Noche de Rábanos?",
+        a: "En 2025 la exhibición empezó a las 15:00. La hora de 2026 todavía no está publicada; esta página la recogerá cuando salga el programa.",
+      },
+      {
+        q: "¿Dónde es la Noche de Rábanos?",
+        a: "En la Plaza de la Constitución, el Zócalo de Oaxaca, Centro Histórico, C.P. 68000, Oaxaca de Juárez.",
+      },
+      {
+        q: "¿Con qué se hacen las figuras?",
+        a: "Con rábanos gigantes tallados, totomoxtle (hoja seca de maíz) y flor inmortal; las escenas más comunes son nacimientos, la Guelaguetza, arquitectura colonial y leyendas de Oaxaca.",
+      },
+    ],
+    related: [
+      {
+        href: "/eventos/feria-de-la-esfera-tlalpujahua-2026/",
+        eyebrow: "Hasta el 18 de diciembre",
+        title: "Feria de la Esfera de Tlalpujahua",
+        text: "Más de 650 talleres de esferas de vidrio soplado abiertos al público en el Pueblo Mágico de Michoacán.",
+      },
+      {
+        href: "/eventos/luztopia-monterrey-2026/",
+        eyebrow: "Del 18 de noviembre al 6 de enero",
+        title: "Luztopía 2026",
+        text: "El festival de luces navideñas de Monterrey, en Parque Fundidora, de 17:00 a 23:00 todas las noches salvo el 24 y el 31 de diciembre.",
+      },
+      {
+        href: "/eventos/navidalia-guadalajara-2026/",
+        eyebrow: "Desde el 4 de diciembre",
+        title: "Navidalia 2026",
+        text: "El parque navideño de Guadalajara, en el Parque Ávila Camacho: cuatro mundos y preventa desde $378.",
+      },
+    ],
+    expertise:
+      "Son piezas de arte efímero, hechas con rábanos frescos para una sola fecha, así que conviene llegar temprano: en 2025 la exhibición empezó a las 15:00, y llegar a esa hora es recorrer las mesas con luz de día; quedarse hasta la noche es ver la plaza con música y los fuegos artificiales. Como es una de las fechas navideñas más populares de Oaxaca, un hotel en el Centro Histórico, reservado con tiempo, permite ir y volver a pie y evita buscar estacionamiento cerca del Zócalo esa noche.",
+  },
 ];
