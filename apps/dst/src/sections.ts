@@ -38,6 +38,9 @@ const TAGS: Record<string, Vocabulary> = {
   // The other night of the Dubai year that is searched by date, and the one
   // the whole world types: where to stand for the fireworks at midnight.
   "New Year's Eve": { slug: "new-years-eve", plural: "New Year's Eve", label: "New Year's Eve" },
+  // The season the city's malls, hotels and markets call "festive": the
+  // word people type is Christmas, so the page carries both.
+  Christmas: { slug: "christmas", plural: "Christmas", label: "Christmas" },
 };
 
 // No "all" chip: the group's feed is two feeds at two addresses, and a
@@ -83,6 +86,25 @@ export function sections(items: FeedItem[]): Section[] {
             upcoming: "31 December 2026",
             past: "Already gone",
             news: "New Year's Eve news",
+          },
+        };
+      }
+      // Searched as "Christmas in Dubai" and "Christmas market Dubai"; the
+      // malls and hotels say "festive", so the lede carries that word too.
+      // The one market is Madinat Jumeirah's, and the copy says so rather
+      // than pluralising it: Winter City is a winter village, JLT a park.
+      if (g.key === "Christmas") {
+        return {
+          title: "Christmas in Dubai 2026: festive market, shows and Santa",
+          description:
+            "Christmas in Dubai 2026: the Madinat Jumeirah Christmas market from 4 December, Winter City at Expo City, JLT Winterfest, Santa and festive concerts.",
+          h1: "Christmas in Dubai",
+          lede: "The festive season in Dubai, December 2026: a free Christmas market on Fort Island, a winter village at Expo City, a tree lighting in JLT, Santa and Christmas concerts — each date and price as the organiser published it, with a link to where we read it.",
+          headings: {
+            events: "Christmas 2026 in Dubai",
+            upcoming: "Festive dates, November to December 2026",
+            past: "Already gone",
+            news: "Christmas news",
           },
         };
       }
