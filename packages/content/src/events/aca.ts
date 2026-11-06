@@ -1244,4 +1244,88 @@ export const items: EventItem[] = [
     expertise:
       "Si va con niños, reserve la habitación pensando en la hora: Santa llega a las 21:00 h y se va a las 21:30, y el buffet cierra a las doce mientras la barra sigue hasta la una, así que la primera mitad de la noche es la de la familia y la segunda la de los adultos. Si no piensa hospedarse, llame primero al 744 435 1700 y pregunte si Palacio vende el acceso suelto, que su página condiciona a reservación y pago previo; si no, la cena de Princess en Playa Chula Vista se reserva sin habitación al 744 469 1000, y conviene pedir el precio por edad (adulto desde 14 años, niño de 6 a 13, infante hasta 5) porque la página aún no lo publica.",
   },
+  {
+    slug: "daniel-boaventura-gala-fin-de-ano-acapulco-2026",
+    createdAt: "2026-11-06T04:00:00+04:00",
+    updatedAt: "2026-11-06T04:00:00+04:00",
+    site: "aca",
+    image: "/covers/daniel-boaventura-gala-fin-de-ano-acapulco-2026.jpg",
+    imageAlt: "Collage de papel recortado: un micrófono antiguo plateado sobre un escenario de terciopelo vino, una copa de champaña, serpentinas doradas y una luna sobre el mar entre palmeras",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Daniel Boaventura: Gala de Fin de Año en el Forum Mundo Imperial",
+    cardTitle: "Daniel Boaventura en el Forum",
+    titleSeo: "Daniel Boaventura en Acapulco: 27 de diciembre de 2026",
+    summary:
+      "Daniel Boaventura cierra el año en Acapulco con su Gala de Fin de Año: el domingo 27 de diciembre de 2026 a las 21:00 h en el Forum Mundo Imperial, con clásicos románticos, éxitos internacionales y temas navideños. Boletos en Top Tickets desde 600 pesos.",
+    start: "2026-12-27",
+    startTime: "21:00",
+    utcOffset: "-06:00",
+    city: "Acapulco",
+    country: "México",
+    venue: FORUM_VENUE,
+    geo: FORUM,
+    category: "Música",
+    source: {
+      name: "Mundo Imperial",
+      url: `${MI}/daniel-boaventura-concierto-acapulco-boletos/`,
+      verifiedOn: "2026-11-06",
+    },
+    ticket: { url: "https://ventas.toptickets.com.mx/event/daniel-boaventura-27-12-2026-8r1vi8", label: "Boletos en Top Tickets" },
+    body: [
+      "El cantante y actor brasileño <strong>Daniel Boaventura</strong> despide 2026 en Acapulco con su <strong>Gala de Fin de Año</strong>: el <strong>domingo 27 de diciembre de 2026</strong> a las <strong>21:00 h</strong>, en el <strong>Forum Mundo Imperial</strong>, en Acapulco Diamante.",
+      "## Qué va a cantar",
+      "La página del concierto lo presenta como parte de sus presentaciones especiales de cierre de año: <strong>clásicos románticos</strong>, los <strong>éxitos internacionales</strong> que lo hicieron conocido y <strong>temas navideños</strong> de su repertorio más reciente.",
+      "## Precios por zona",
+      "Al 6 de noviembre, Top Tickets vende nueve niveles de precio en once zonas, en pesos: <strong>VIP 2,800</strong>; <strong>Preferente 1</strong> y <strong>Orquesta Lateral 1</strong>, <strong>2,700</strong>; <strong>Preferente 2</strong> y <strong>Orquesta Lateral 2</strong>, <strong>2,600</strong>; <strong>Club 1</strong>, <strong>2,500</strong>; <strong>Club 2</strong>, <strong>2,300</strong>; <strong>Club 3</strong>, <strong>2,100</strong>; <strong>Balcón 1</strong>, <strong>1,600</strong>; <strong>Balcón 2</strong>, <strong>1,100</strong>, y <strong>Balcón 3</strong>, <strong>600</strong>. Cada zona tiene una segunda tarifa, al mismo precio, que se vende solo en puntos de venta. La boletera avisa que al pagar pueden sumarse cargos adicionales.",
+      "## Dónde comprar",
+      "En línea, en <strong>Top Tickets</strong>, que puso los boletos a la venta el <strong>27 de octubre</strong>, y en los puntos de venta autorizados. Las <a href=\"/noticias/taquillas-arena-gnp-seguros-forum-mundo-imperial/\" title=\"Taquilla de Arena GNP Seguros en Acapulco: horario y pagos\">taquillas del Forum y de Arena GNP Seguros</a> abren de 11:00 a 19:00 h, según la cartelera de Mundo Imperial.",
+      "## Edad, acceso y cómo llegar",
+      "Es un evento de <strong>edad libre</strong>: todos los asistentes, también los niños, necesitan boleto de la zona a la que entran, y los menores deben ir acompañados y bajo la responsabilidad de un adulto. Mundo Imperial da al Forum una capacidad de <strong>4,000 asientos</strong>.",
+      "El Forum Mundo Imperial está en el <strong>Boulevard de las Naciones, entre el Boulevard Barra Vieja y el aeropuerto</strong>, en Acapulco Diamante. Un domingo a las 21:00 h conviene acordar el regreso antes de entrar.",
+      "## Cuatro noches seguidas de concierto",
+      "La gala cae en medio de la semana más cargada del año en Mundo Imperial. La noche anterior, el sábado 26, <a href=\"/eventos/la-arrolladora-banda-el-limon-acapulco-2026/\" title=\"La Arrolladora en Acapulco: 26 de diciembre de 2026\">La Arrolladora Banda El Limón</a> toca en Arena GNP Seguros; el lunes 28 cantan <a href=\"/eventos/yuri-lucero-acapulco-2026/\" title=\"Yuri y Lucero en Acapulco: 28 de diciembre de 2026\">Yuri y Lucero</a>, y el martes 29, <a href=\"/eventos/emmanuel-mijares-two-amigos-acapulco-2026/\" title=\"Emmanuel y Mijares en Acapulco: 29 de diciembre de 2026\">Emmanuel y Mijares</a>. El mes completo está en <a href=\"/noticias/conciertos-y-shows-en-acapulco-diciembre-2026/\" title=\"Conciertos en Acapulco en diciembre de 2026\">conciertos en Acapulco en diciembre</a>.",
+    ],
+    faq: [
+      {
+        q: "¿Cuándo es el concierto de Daniel Boaventura en Acapulco?",
+        a: "El <strong>domingo 27 de diciembre de 2026</strong> a las 21:00 h, en el Forum Mundo Imperial, en Acapulco Diamante. Es su Gala de Fin de Año.",
+      },
+      {
+        q: "¿Cuánto cuestan los boletos de Daniel Boaventura en Acapulco?",
+        a: "Al 6 de noviembre, de <strong>600 pesos</strong> (Balcón 3) a <strong>2,800 pesos</strong> (VIP) en Top Tickets, a lo que pueden sumarse cargos al pagar. En medio están Balcón 2 (1,100), Balcón 1 (1,600), Club 3 a Club 1 (2,100 a 2,500), Preferente 2 y Orquesta Lateral 2 (2,600) y Preferente 1 y Orquesta Lateral 1 (2,700).",
+      },
+      {
+        q: "¿Dónde compro boletos?",
+        a: "En línea en Top Tickets, que es adonde lleva el botón de compra de la página oficial del concierto, y en los puntos de venta autorizados.",
+      },
+      {
+        q: "¿Pueden entrar niños?",
+        a: "Sí: es de edad libre. Cada niño necesita su propio boleto de la zona y debe ir con un adulto responsable.",
+      },
+    ],
+    related: [
+      {
+        href: "/eventos/yuri-lucero-acapulco-2026/",
+        eyebrow: "Lunes 28 de diciembre",
+        title: "Yuri & Lucero en Arena GNP Seguros",
+        text: "La noche siguiente: «Entre Amigas Tour», en la arena de Mundo Imperial.",
+      },
+      {
+        href: "/eventos/emmanuel-mijares-two-amigos-acapulco-2026/",
+        eyebrow: "Martes 29 de diciembre",
+        title: "Emmanuel & Mijares en Acapulco",
+        text: "Dos noches después: «Two Amigos», el último concierto de diciembre en Arena GNP Seguros.",
+      },
+      {
+        href: "/eventos/la-arrolladora-banda-el-limon-acapulco-2026/",
+        eyebrow: "Sábado 26 de diciembre",
+        title: "La Arrolladora en Arena GNP Seguros",
+        text: "La víspera: «Si Las Miradas Matan», en Arena GNP Seguros.",
+      },
+    ],
+    expertise:
+      "Entre Preferente 1 y VIP hay solo 100 pesos, y entre Preferente 2 y Club 1 otros 100: si ya va a pagar más de 2,500, la diferencia para subir de zona es pequeña. Para un concierto de baladas en un recinto de 4,000 asientos, Balcón 2 (1,100) es la compra más razonable si el presupuesto manda; Balcón 3, a 600, es para quien va por la voz más que por la vista. Si viene a pasar el fin de año, el 27 encaja con La Arrolladora el 26 y Yuri y Lucero el 28 en la misma estancia: compre primero los del Forum, que tiene 4,000 asientos.",
+  },
 ];
