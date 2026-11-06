@@ -57,7 +57,7 @@ export const events: FestEvent[] = [
   {
     slug: "creamfields-chile",
     createdAt: "2026-10-22T17:00:00+04:00",
-    updatedAt: "2026-10-24T08:25:00+04:00",
+    updatedAt: "2026-11-06T04:17:00+04:00",
     name: "Creamfields Chile",
     edition: { start: "2026-11-14", end: "2026-11-15" },
     // These keys carry no readOn of their own. The scout's round 1 read them
@@ -81,10 +81,11 @@ export const events: FestEvent[] = [
     // the seller's pair about 100 m south (venue.lat, venue.lon). The
     // organiser is the company the seller names (event.organiser), which has
     // no site of its own to give as sameAs. One offer (the session's X2):
-    // the lowest figure the tables print in the normal-price column, $98.000
-    // for Day Ticket sábado General, Venta 2 (prices_v2.lowest_unstruck_
-    // normal), without the 12,5% charge, since no source prints a total;
-    // the cell it names moves only when the scout re-reads the tables. Valid
+    // the lowest figure the tables print in the normal-price column, $106.000
+    // for Day Ticket sábado General, Venta 3 (prices_v3.lowest_unstruck_
+    // normal; Venta 2's $98.000 was struck on the table of 5 November 2026),
+    // without the 12,5% charge, since no source prints a total; the cell it
+    // names moves only when the tables are re-read. Valid
     // from the general sale, 8 May 2026 at 12:00 (tickets.general_sale.from,
     // s7), Santiago time, UTC-4 in May.
     markup: {
@@ -93,7 +94,7 @@ export const events: FestEvent[] = [
       address: { streetAddress: "Av. Blanco Encalada 2540", addressLocality: "Santiago", addressCountry: "CL" },
       geo: "venue.geo_venue",
       organizer: { name: "Street Machine Producciones" },
-      offers: { price: { key: "prices_v2.lowest_unstruck_normal", currency: "CLP" }, go: "tickets", seller: "Punto Ticket", validFrom: "2026-05-08T12:00:00-04:00" },
+      offers: { price: { key: "prices_v3.lowest_unstruck_normal", currency: "CLP" }, go: "tickets", seller: "Punto Ticket", validFrom: "2026-05-08T12:00:00-04:00" },
     },
     sheet: {
       event: {
@@ -147,13 +148,15 @@ export const events: FestEvent[] = [
         phone: "+56 2 2693 9600",
         email: "contacto@clubhipico.cl",
         source: "s3",
-        readOn: "2026-10-21",
+        readOn: "2026-11-06",
+        reread: "2026-11-06: unchanged; s3's footer still reads 'Av. Blanco Encalada 2540, Santiago - Chile | Teléfono (+56-2) 2693 9600 | Contacto@clubhipico.cl', s1's JSON-LD still gives -33.4594231 / -70.6707, Santiago Centro, and s4 still lists Sector Polo at 'Capacidad: 50000 / personas'",
         coords_source: "s1",
         geo_venue: {
           lat: -33.458531,
           lon: -70.6707622,
           source: "s3",
-          readOn: "2026-10-22",
+          readOn: "2026-11-06",
+          reread: "2026-11-06: marker 0 and the other access markers unchanged in s3's script",
           note: "added by the executor, not the scout: marker 0, 'Avda. Blanco Encalada #2540', in the markers list of the club's contact page script, read by curl on 2026-10-22 (fest director, gate 3, ruling 7)",
         },
         note: "address and contact from the venue; coordinates from the seller's JSON-LD; the venue's outdoor 'Sector Polo' is listed at 50,000 capacity on s4, not stated as the festival's capacity",
@@ -201,7 +204,8 @@ export const events: FestEvent[] = [
         general_sale: {
           from: "2026-05-08 12:00",
           source: "s7",
-          readOn: "2026-10-21",
+          readOn: "2026-11-06",
+          reread: "2026-11-06: s7 still reads 'La venta general comenzará el mismo viernes 8 de mayo a las 12:00 hrs'",
         },
         includes: {
           general: [
@@ -612,7 +616,8 @@ export const events: FestEvent[] = [
         {
           how: "Centre to the venue: Club Hípico is at Av. Blanco Encalada 2540, Santiago Centro; neither the organiser nor the venue names a Metro station, and metro.cl stays unread (session's ruling), so 'Cómo llegar' is the venue's address and an 'abrir en mapas' link through /go/, with no station named",
           source: "s3",
-          readOn: "2026-10-21",
+          readOn: "2026-11-06",
+          reread: "2026-11-06: neither s3 nor s1 names a Metro station ('metro' only inside 'Región Metropolitana'); the one official word on Metro and buses is Red Movilidad's notice for 2024 (transport_2024)",
           status: "partial",
         },
         {
@@ -947,6 +952,28 @@ export const events: FestEvent[] = [
           url: "https://www.centropuerto.cl/centro-faq",
           kind: "transport operator",
           readOn: "2026-10-24",
+        },
+        // Read by the session on 6 November 2026, logged out: a post's
+        // caption from its og:description, its images from the carousel's
+        // full-size files.
+        s41: {
+          label: "Creamfields Chile on Instagram, 'SET TIMES CONFIRMADOS', 5 Nov 2026: the timetable by day and stage, two images",
+          url: "https://www.instagram.com/creamfields_cl/p/DfXT-jgle3J/",
+          kind: "organiser",
+          readOn: "2026-11-06",
+        },
+        s42: {
+          label: "Red Movilidad, 'Red Movilidad refuerza recorridos para Creamfields en el Club Hípico', 14 Nov 2024",
+          url: "https://www.red.cl/red-comunica/red-movilidad-refuerza-recorridos-para-creamfields-en-el-club-hipico/",
+          kind: "public body",
+          note: "Santiago's public transport system (buses and Metro); the notice is for the 2024 edition",
+          readOn: "2026-11-06",
+        },
+        s43: {
+          label: "Creamfields Chile on Instagram, 'WEEKEND TICKET Y DOMINGO AGOTADO', 3 Nov 2026",
+          url: "https://www.instagram.com/creamfields_cl/p/DfSXfrgxY6c/",
+          kind: "organiser",
+          readOn: "2026-11-06",
         },
       },
       not_found: [
@@ -1423,7 +1450,8 @@ export const events: FestEvent[] = [
           also_per_s7: "for Banco de Chile clients and people registered on creamfields.cl, no format named",
           status: "ended by its own end time",
           source: ["s1", "s7"],
-          readOn: "2026-10-22",
+          readOn: "2026-11-06",
+          reread: "2026-11-06: s1 and s7 unchanged, the window and the cap word for word",
         },
         instalments: {
           text: "copago con Dólares-Premio y 3, 9 o 12 cuotas sin interés, exclusivo para clientes titulares de Tarjetas de Crédito emitidas por Banco de Chile, incluye Banco Edwards",
@@ -1435,16 +1463,18 @@ export const events: FestEvent[] = [
         },
       },
       reserve_plan_v2: {
-        readOn: "2026-10-22",
+        readOn: "2026-11-06",
+        reread: "2026-11-06: s5 and s6 answer with the Last-Modified, ETag and size of the 22 Oct reading (s5 Tue, 05 May 2026 18:23:04 GMT, b06f3f4cbca5200dde5f755b3a830371, 99,095 bytes; s6 Wed, 26 Aug 2026 18:21:40 GMT, 464b8382332ab02c4ba1a74624094306, 36,736 bytes), so every clause read from them stands, and s1 still links both; the seller's own box is still gone, so seller_page keeps its 22 Oct reading",
         seller_page: {
+          readOn: "2026-10-22",
           text: "ABONA $40.000 y paga el resto en 2 cuotas sin interés con cualquier medio de pago",
           applies_to: "General, The Village, Sky Lounge & Diamond Lounge",
           not_combinable: "No acumulable con dcto. Banco de Chile",
           links: "the plan box links s6 ('Revisa términos y condiciones aquí'); s5 is linked separately as 'Revisa términos y condiciones Weekend Ticket aquí'",
           status: {
-            text: "not on s1 since at least 2026-10-24: the box with 'ABONA $40.000…' and 'No acumulable con dcto. Banco de Chile' is gone (curl HTML and pane DOM); its slot now holds the Cashless block; s1 still links s5 and s6 under 'Revisa términos y condiciones Weekend Ticket / Day ticket aquí'; no source says the plan has closed or is still sold",
+            text: "not on s1 since at least 2026-10-24: the box with 'ABONA $40.000…' and 'No acumulable con dcto. Banco de Chile' is gone (curl HTML and pane DOM); its slot now holds the Cashless block; s1 still links s5 and s6 under 'Revisa términos y condiciones Weekend Ticket / Day ticket aquí'; no source says the plan has closed or is still sold; still so on 2026-11-06, when s1's HTML has no 'ABONA', 'acumulable' or 'plan de reserva'",
             source: "s1",
-            readOn: "2026-10-24",
+            readOn: "2026-11-06",
           },
           source: "s1",
         },
@@ -1465,7 +1495,7 @@ export const events: FestEvent[] = [
           read_how: "the file's font carries no usable ToUnicode map; I decoded it by glyph alignment against the Weekend file's identical preamble, which leaves a few characters unresolved but every sentence above legible; the fact-checker read the same with PDFKit (S3)",
           computed_on: "al precio de la categoría seleccionada (cargo por servicio incluido) se le descontará el monto del Abono Inicial, y el monto resultante de dicha operación se dividirá en 2 abonos posteriores",
           computed_on_note: "clause 2 of s6, decoded today as described in read_how; same words as s5 with '2 abonos' for '3 abonos'; the copy's calculation sentence may cite s5 and s6 together",
-          readOn: "2026-10-22",
+          readOn: "2026-11-06",
         },
         informed: {
           text: "Al usuario se le informará el correspondiente plan de abonos, los montos de cada uno y las fechas de vencimiento para cada uno de ellos.",
@@ -1491,7 +1521,8 @@ export const events: FestEvent[] = [
         chileans_wording: "the seller's condition is 'Si tienes cédula chilena', which includes resident foreigners; the original `entry.chileans` key name is narrower than the seller's words (W14)",
       },
       claims: {
-        readOn: "2026-10-22",
+        readOn: "2026-11-06",
+        reread: "2026-11-06: s7's lead heading and its 'líder en la región' sentence, and s18's headline and quote, unchanged",
         items: [
           {
             text: "¡Prepárense para la celebración más grande de la música electrónica!",
@@ -1515,7 +1546,8 @@ export const events: FestEvent[] = [
         ],
       },
       editions_v2: {
-        readOn: "2026-10-22",
+        readOn: "2026-11-06",
+        reread: "2026-11-06: every quote and date line unchanged on s1, s8, s9, s10, s12, s13, s18, s21, s22 and s23",
         items: [
           {
             year: 2026,
@@ -1612,10 +1644,11 @@ export const events: FestEvent[] = [
         replaces: "`sellers[1]` and source s2 are dropped as a seller row and as a link target; s2 stays in `sources` only as an alias of s1 (its JSON-LD was read from s1's HTML anyway); `/go/creamfields-chile-puntoticket/` is not needed",
       },
       venue_v2: {
-        readOn: "2026-10-22",
+        readOn: "2026-11-06",
+        reread: "2026-11-06: markers, labels, the directions button and the commented-out iframe unchanged; still no Metro, bus, parking or festival on the page",
         source: "s3",
         como_llegar: {
-          heading: "TE AYUDAMOS A LLEGAR / CÓMO LLEGAR (upper-case headings on the page)",
+          heading: "TE AYUDAMOS A LLEGAR (the page's one heading, upper case); 'COMO LLEGAR', unaccented, is the label of the directions button, not a heading (re-read 2026-11-06)",
           map: "drawn by the Google Maps JavaScript API from a markers list in the page's script (the Google Maps iframe in the HTML is commented out); plus a directions button that opens Google Maps to 'Club Hípico - Blanco Encalada 2540, Santiago'",
           access_points: [
             {
@@ -1645,7 +1678,7 @@ export const events: FestEvent[] = [
           not_named: "no Metro station, bus line or parking on the page",
           mentions_festival: false,
           access_points_0_label: "Avda. Blanco Encalada #2540 (marker 0's label in the list; the page's address line reads 'Av. Blanco Encalada 2540, Santiago - Chile')",
-          readOn: "2026-10-22",
+          readOn: "2026-11-06",
         },
         replaces: "`transport[2]` 'its Cómo llegar section is empty': wrong; the row's rest stands (no station, bus or parking named). Any sentence that the club 'says' where the festival is: wrong, s3, s4 and the club's home page never mention Creamfields (0 matches today); the venue gives the address, the seller gives the festival",
       },
@@ -1659,14 +1692,15 @@ export const events: FestEvent[] = [
         replaces: "the original `prices` last row's note 'from Sernatur's listing written in the April presale window': wrong; say only that it is Chile Travel's 'desde' figure for the early bird, matching the Early Bird day cell now struck in the seller's tables",
       },
       lineup_size_v2: {
-        readOn: "2026-10-22",
+        readOn: "2026-11-06",
+        reread: "2026-11-06: both quotes, both dates and the s13 headline unchanged",
         figure: "85 artistas, 39 internacionales y 46 nacionales",
         s12_quote: "reunirá a 85 artistas, de los cuales 39 son internacionales y 46 nacionales",
         s12_date: "07 ag. 2026 - 11:01 hrs.",
         s13_quote: "contará con un cartel de 85 artistas —39 internacionales y 46 nacionales—",
         s13_date: "Viernes 7 de agosto de 2026",
         s13_headline: "Creamfields Chile 2026 revela cartel: Calvin Harris, Charlotte de Witte y Hardwell encabezan",
-        note: "both report the festival's announcement; neither quotes the organiser for the split; 'según Meganoticias y 24horas.cl' is exact. The seller's image counts 44 names Saturday and 42 Sunday with 'Artist TBC' and each B2B as one entry (fact-checker), which does not reconcile with 85; print the media figure attributed, never both as one count",
+        note: "both report the festival's announcement; neither quotes the organiser for the split; 'según Meganoticias y 24horas.cl' is exact. The seller's image counted 44 names Saturday and 42 Sunday with 'Artist TBC' and each B2B as one entry (fact-checker, 22 Oct); its version of 30 Oct (lineup_v3) counts 44 and 41, Lost Frequencies in the TBC slot and The Blessed Madonna gone (re-read 6 Nov). Neither reconciles with 85; print the media figure attributed, never both as one count",
       },
       includes_v2: {
         readOn: "2026-10-24",
@@ -1679,9 +1713,10 @@ export const events: FestEvent[] = [
         replaces: "`tickets.includes.village` and `.diamond_lounge` by addition only (S10)",
       },
       labels_v2: {
-        readOn: "2026-10-22",
+        readOn: "2026-11-06",
+        reread: "2026-11-06: both headlines and the s15 quote word for word",
         s10_headline: "Vuelve Creamfields Chile: Cuándo es la edición 2026 en Santiago y cómo inscribirse para la preventa",
-        s10_date: "none shown on the page (only '© 2025 CNN Chile'); the URL slug carries 20260319",
+        s10_date: "none shown on the page (only '© 2025 CNN Chile'); the sheet's s10 URL, whose slug carries 20260319, answers 301 on 2026-11-06 to a canonical URL without the date; the page's JSON-LD datePublished is 2026-03-19T11:16:17-03:00",
         s15_headline: "Creamfields Chile crece: Suma una nueva zona de 5.000 m² y estrena anfiteatro en Club Hípico",
         s15_quote: "incluirá un anfiteatro con capacidad para 3.000 personas sentadas y 5.000 de pie",
         replaces: "the labels of s10 and s15 in `sources` (S11)",
@@ -1693,6 +1728,134 @@ export const events: FestEvent[] = [
         doors: "none",
         precedent_2025: "the line-up by day was published on 4 Aug 2025 (s23); the sheet says nothing about 2025 set times",
         replaces: "`schedule.precedent` in full (S6)",
+      },
+      // The organiser's timetable, read by the session on 6 November 2026
+      // (Search Console: "creamfields chile 2026 horarios", "horarios
+      // creamfields 2026"). Two images in one Instagram post of 5 November,
+      // one per day, each stage a column of acts with the start and end of
+      // each set, 24-hour; transcribed here as printed, earliest first.
+      // `schedule_v2.set_times` ("none") is history from this day.
+      set_times: {
+        source: "s41",
+        readOn: "2026-11-06",
+        posted: "5 de noviembre de 2026",
+        caption: "SET TIMES CONFIRMADOS",
+        header: "Banco de Chile presenta Creamfields Chile 2026, 14–15 noviembre, Club Hípico Santiago",
+        first_set: "13:00 on every stage, both days",
+        last_set: "the Main Stage plays until 23:00 on both days: Hardwell 21:30–23:00 on Saturday, Calvin Harris 21:30–23:00 on Sunday",
+        show_ending: "Sunday's Main Stage column ends on a block marked 'SHOW ENDING' after Calvin Harris, with no time printed",
+        doors: "no gate or doors time on either image or in the caption",
+        by_day: [
+          {
+            day: "sábado 14 de noviembre",
+            stages: [
+              { name: "Main Stage", sets: ["13:00–13:55 DJ Arloz", "13:55–14:50 Carla Valenti", "14:50–15:45 Aerobica", "15:45–16:40 LP Giobbi", "16:45–18:00 Morten", "18:05–19:20 Lost Frequencies", "19:30–21:15 Boris Brejcha", "21:30–23:00 Hardwell"] },
+              { name: "A Stage", sets: ["13:00–14:00 Javica", "14:00–15:00 Alexander Robledo", "15:00–16:00 Groovearth", "16:00–17:15 Bruno Martini", "17:15–18:30 MATTN", "18:30–20:00 Two Friends", "20:00–21:30 Jonas Blue", "21:30–23:00 Don Diablo"] },
+              { name: "Alternative", sets: ["13:00–14:00 Jokerz", "14:00–15:00 Rebelnoise", "15:00–16:00 STMZ", "16:00–17:00 Virtual Riot", "17:00–18:00 Bass Modulators", "18:00–19:00 Mutilator", "19:00–20:00 The Straikerz", "20:00–21:00 Brennan Heart", "21:00–22:00 Warface"] },
+              { name: "HE.SHE.THEY", sets: ["13:00–14:30 Superqueer B2B Giullian", "14:30–15:25 EM11", "15:30–17:00 Yanamaste", "17:00–18:30 Clara Cuvé", "18:30–20:00 Charlie Sparks", "20:00–21:30 Cristobal Pesce", "21:30–23:00 AZYR"] },
+              { name: "Radio Carolina", sets: ["13:00–14:00 Arayko", "14:00–15:00 Gaby Yavar", "15:00–16:00 Turbangirll", "16:00–17:00 Bruno Bona", "17:00–18:00 Osvaldo Solorza", "18:00–19:00 Nico Ferrada", "19:00–20:00 Saulo", "20:00–21:00 Gonzalo Vallejo B2B Natalia Pastor"] },
+              { name: "Grieta x Panal Records", sets: ["13:00–15:00 Bele Cox", "15:00–16:30 Nara Back", "16:30–18:00 Fantasna", "18:00–19:30 F600", "19:30–21:30 Elias Deepman"] },
+            ],
+          },
+          {
+            day: "domingo 15 de noviembre",
+            stages: [
+              { name: "Main Stage", sets: ["13:00–13:55 O-Sessions", "13:55–14:55 Miss Javi", "14:55–16:15 Innellea", "16:20–17:50 Hugel", "18:00–19:30 Fisher", "19:40–21:10 Charlotte de Witte", "21:30–23:00 Calvin Harris"] },
+              { name: "A Stage", sets: ["13:00–13:50 Ania", "13:50–14:45 Colayuta", "14:45–16:00 Aaron Hibell", "16:00–17:15 Jaden Bojsen", "17:15–18:30 Bassjackers", "18:30–20:00 Loud Luxury", "20:00–21:30 Morten"] },
+              { name: "Cream", sets: ["13:00–14:00 Tweeter", "14:00–15:30 Gianni B2B Fco Martinez", "15:30–16:30 Camilo Gil", "16:30–18:00 Sosa", "18:00–19:30 Nic Fanciulli", "19:30–20:55 Kölsch", "21:00–22:00 Faithless Sound System"] },
+              { name: "Feral", sets: ["13:00–14:20 Marcelo Antonio", "14:20–15:40 NPLNSSS", "15:40–17:05 Anfisa Letyago", "17:10–18:10 Âme Live", "18:10–19:40 Enrico Sangiuliano", "19:40–21:10 Delia", "21:15–22:45 Yanamaste Live"] },
+              { name: "Radio Carolina", sets: ["13:00–14:00 Syntrovert", "14:00–15:00 Urubmara", "15:00–16:00 Alex Brugnara", "16:00–17:00 Fanvel", "17:00–18:00 ICA DJ", "18:00–19:00 Josefina", "19:00–20:00 Luka Kuhnow", "20:00–21:00 Juan Hinrichsen"] },
+              { name: "Grieta x Panal Records", sets: ["13:00–15:00 Dupøuy", "15:00–16:30 Weisser", "16:30–18:00 Alisú", "18:00–20:00 Fuzzler", "20:00–21:30 Potenciómetro"] },
+            ],
+          },
+        ],
+        // Against the seller's line-up image as Punto Ticket shows it today
+        // (lineup_v3), the timetable adds one act and swaps two days.
+        against_image: {
+          added: "DJ Arloz opens Saturday's Main Stage (13:00–13:55); the image has no DJ Arloz",
+          swapped: "Grieta x Panal Records: the timetable puts Elias Deepman on Saturday (19:30–21:30) and Potenciómetro on Sunday (20:00–21:30); the image has them the other way round",
+          rule: "the organiser's later timetable is the one the page prints, with the difference said in the text",
+        },
+      },
+      // The seller's line-up image as Punto Ticket shows it today: a new file
+      // beside the one `lineup.by_day` was read from (s20's image).
+      lineup_v3: {
+        source: "s20",
+        image: "https://static.ptocdn.net/especiales/sm0194_creamfields-2026/img/line-up-x-dia-v3.png",
+        last_modified: "Fri, 30 Oct 2026 14:32:25 GMT",
+        etag: "9c2ff7fa6342daac0cbd3681c0230bb6",
+        bytes: 780417,
+        readOn: "2026-11-06",
+        changes: [
+          "Saturday's Main Stage: Lost Frequencies where `lineup.by_day` has 'Artist TBC'",
+          "Sunday's Cream: The Blessed Madonna is no longer on it",
+        ],
+        unchanged: "every other stage and name of `lineup.by_day`",
+        replaces: "`not_found.2` (the 'Artist TBC') from this day: the slot is Lost Frequencies, 18:05–19:20 on the timetable",
+      },
+      // The organiser's post of 3 November 2026 on what is left to sell.
+      sales_status: {
+        source: "s43",
+        readOn: "2026-11-06",
+        posted: "3 de noviembre de 2026",
+        text: "¡WEEKEND TICKET Y DOMINGO AGOTADO! SOLO QUEDAN 1.000 DAY TICKET SÁBADO.",
+        note: "the caption's first two lines, set in bold letters, as plain text; it names no tier, so it says nothing of General against The Village, Sky Lounge or Diamond Lounge",
+      },
+      // Getting home: the city's bus and Metro operators' notice for the
+      // 2024 edition, the only one any official source has published for
+      // this festival at this club. Nothing for 2026 on red.cl on 6 Nov.
+      transport_2024: {
+        source: "s42",
+        readOn: "2026-11-06",
+        published: "14 de noviembre de 2024",
+        for: "Creamfields at the Club Hípico, Saturday 16 and Sunday 17 November 2024",
+        buses: "between 23:00 and 00:30 on both days: routes 119x to Lo Espejo (stop PA277, Blanco Encalada con Abate Molina) and 121x to Mapocho (PA291, Avenida República esq. Gay); route 506 to Peñalolén (PA433, Blanco Encalada con Av. Beaucheff) and to Maipú (PA453, Blanco Encalada con Av. España)",
+        metro: "República (línea 1) open for entry until 00:30; Las Rejas, Baquedano, Tobalaba and Escuela Militar open for exit only",
+        status_2026: "red.cl's news list on 6 Nov 2026 has no notice for the 2026 edition",
+      },
+      // Parking: what each source says on 6 November 2026.
+      parking: {
+        readOn: "2026-11-06",
+        diamond_lounge: "Un estacionamiento para el titular de la compra (s1, among the Diamond Lounge benefits)",
+        general: "nothing on parking for any other ticket: on s1 'estacionamiento' appears once, in the Diamond Lounge list, and the organiser's Instagram captions of 3, 4 and 5 November 2026 (s43, s41 and the lockers and The Village posts) do not mention it",
+        source: ["s1", "s19"],
+      },
+      // The two Saturday tables the seller replaced on 5 November 2026, read
+      // on 6 November, and what they move. prices_v2 stays the 24 October
+      // record the English twin cites; the Spanish pages and the markup cite
+      // this from that day.
+      prices_v3: {
+        source: "s20",
+        readOn: "2026-11-06",
+        replaced: "s1 now links sabado-ticketgeneral-v3.png and sabado-skylonge-v2.png in its sm0194_creamfields-2026 folder, which answer 403, so on 6 Nov the seller's page shows both as broken images; the same file names in the seller's ptt018_creamfields-2026 folder answer 200, Last-Modified Thu, 05 Nov 2026 15:39:46 GMT (General: ETag dae8ee4eb7276b56dd73f59e518ff7c5, 23,677 bytes; Sky Lounge: ETag 7047293bece03b59026c7084f74af83e, 25,028 bytes), and are read here",
+        unchanged: "the other ten tables: their files on s1 are dated 23 Oct 2026 or earlier, the files prices_v2 transcribed on 24 Oct",
+        sabado_general: {
+          type: "General",
+          format: "Day Ticket sábado",
+          rows: [
+            { phase: "Early Bird", normal: 92000, normal_s: "s", bank: 73600, bank_s: "s" },
+            { phase: "Venta 2", normal: 98000, normal_s: "s", bank: 78400, bank_s: "s" },
+            { phase: "Venta 3", normal: 106000, normal_s: "o", bank: 84800, bank_s: "s" },
+            { phase: "Venta 4", normal: 120000, normal_s: "o", bank: 96000, bank_s: "o" },
+          ],
+          change: "Venta 2's normal cell struck; it was open on 24 Oct",
+        },
+        sabado_sky_lounge: {
+          type: "Sky Lounge",
+          format: "Day Ticket sábado",
+          rows: [
+            { phase: "Early Bird", normal: 196000, normal_s: "s", bank: 156800, bank_s: "s" },
+            { phase: "Venta 2", normal: 206000, normal_s: "o", bank: 164800, bank_s: "s" },
+            { phase: "Venta 3", normal: 216000, normal_s: "o", bank: 172800, bank_s: "s" },
+            { phase: "Venta 4", normal: 250000, normal_s: "o", bank: 200000, bank_s: "o" },
+          ],
+          change: "Early Bird's normal cell and Venta 3's bank cell struck; both were open on 24 Oct",
+        },
+        lowest_unstruck_normal: { amount: 106000, cell: "Day Ticket sábado General, Venta 3, precio normal" },
+        lowest_unstruck_any_column: { amount: 96000, cell: "Day Ticket sábado General, Venta 4, Banco de Chile (unchanged)" },
+        highest_unstruck_normal: { amount: 850000, cell: "Weekend Ticket Diamond Lounge, Venta 4, precio normal (prices_v2.tables.9, unchanged)" },
+        against_sales_status: "the organiser's post of 3 Nov (sales_status) calls the Weekend Ticket and Sunday sold out; on 6 Nov the seller's tables still show an open normal price on every Weekend Ticket and on Sunday's Diamond Lounge day ticket, and the post names no tier",
+        replaces: "prices_v2.tables.1, prices_v2.tables.7 and prices_v2.lowest_unstruck_normal, on the Spanish pages and in the markup, from this day",
       },
       // The twin scout's round 1 additions (24 October 2026), values verbatim:
       // a block new on s1, the cashless wristband; the sheet had no word on
@@ -1889,6 +2052,24 @@ export const events: FestEvent[] = [
         title: "Cuenta de Instagram de Creamfields Chile, con los anuncios de la organización",
         titles: { en: "Creamfields Chile on Instagram, where the organiser posts its announcements" },
       },
+      horarios: {
+        url: "https://www.instagram.com/creamfields_cl/p/DfXT-jgle3J/",
+        source: "s41",
+        kind: "organiser",
+        title: "La publicación de la organización con los horarios de los dos días, en dos imágenes",
+      },
+      agotado: {
+        url: "https://www.instagram.com/creamfields_cl/p/DfSXfrgxY6c/",
+        source: "s43",
+        kind: "organiser",
+        title: "El aviso de la organización del 3 de noviembre de 2026 sobre las entradas que quedan",
+      },
+      "red-2024": {
+        url: "https://www.red.cl/red-comunica/red-movilidad-refuerza-recorridos-para-creamfields-en-el-club-hipico/",
+        source: "s42",
+        kind: "public-body",
+        title: "Los buses y el Metro de refuerzo para Creamfields 2024, según Red Movilidad",
+      },
       "reserva-weekend": {
         url: "https://static-puntoticket.s3.amazonaws.com/especiales/sm0194_creamfields-2026/CREAMFIELDS%202026%20-%20T%C3%89RMINOS%20Y%20CONDICIONES%20SISTEMA%20DE%20RESERVA%20Y%20ABONOS.pdf",
         source: "s5",
@@ -1949,23 +2130,25 @@ export const guides: Guide[] = [
       {
         slug: "creamfields-chile",
         createdAt: "2026-10-22T17:00:00+04:00",
-        updatedAt: "2026-10-24T08:25:00+04:00",
+        updatedAt: "2026-11-06T04:17:00+04:00",
         kind: "main",
         label: "Guía",
-        title: "Creamfields Chile 2026: fechas, entradas — guía del festival",
-        description: "Creamfields Chile 2026: 14 y 15 de noviembre, Club Hípico, entradas en Punto Ticket. Guía del festival: precios, line-up por día y dudas frecuentes.",
+        title: "Creamfields Chile 2026: fecha y estacionamiento del festival",
+        description: "Creamfields Chile 2026: 14 y 15 de noviembre en el Club Hípico de Santiago. Estacionamiento, transporte, horarios y entradas en la guía del festival.",
         h1: "Creamfields Chile 2026",
-        lede: "Creamfields Chile 2026 se hace el sábado 14 y el domingo 15 de noviembre de 2026 en el Club Hípico de Santiago, Av. Blanco Encalada 2540, Santiago Centro [editions_v2.items.0.dates] [venue.address]. {{until sale}}Las entradas se venden en [Punto Ticket, la ticketera oficial](/go/creamfields-chile-tickets/); la dirección creamfields.cl lleva directo a su página [sellers_v2.items.0] [sellers.0.kind].{{/until}} El domingo en el Main Stage tocan Calvin Harris, Charlotte de Witte, Fisher y Hugel; el sábado, Hardwell y Boris Brejcha [lineup.by_day.1.stages.0.acts] [lineup.by_day.0.stages.0.acts]. La marca Creamfields nació en el Reino Unido y su edición original se remonta a 1998, según CNN Chile [editions_v2.brand]; la edición chilena de 2025 fue, según La Tercera, la de los 20 años del festival en Chile [editions_v2.items.1.dates_source]. {{until prices}}Los precios, en las cuatro fases del vendedor, están en la página de entradas. → /creamfields-chile/entradas/ {{/until}}\n\nPunto Ticket, la ticketera oficial, publica el line-up por día y las tablas de precios como imágenes; en esta guía están en texto, con la fecha en que se leyó cada dato [sources.s20].",
+        lede: "Creamfields Chile 2026 se hace el sábado 14 y el domingo 15 de noviembre de 2026 en el Club Hípico de Santiago, Av. Blanco Encalada 2540, Santiago Centro [editions_v2.items.0.dates] [venue.address]. {{until sale}}Las entradas se venden en [Punto Ticket, la ticketera oficial](/go/creamfields-chile-tickets/); la dirección creamfields.cl lleva directo a su página [sellers_v2.items.0] [sellers.0.kind].{{/until}} Según los horarios que la organización publicó el 5 de noviembre de 2026, la música empieza a las 13:00 los dos días y el Main Stage cierra a las 23:00, con Hardwell el sábado y Calvin Harris el domingo [set_times.posted] [set_times.first_set] [set_times.last_set]. La marca Creamfields nació en el Reino Unido y su edición original se remonta a 1998, según CNN Chile [editions_v2.brand]; la edición chilena de 2025 fue, según La Tercera, la de los 20 años del festival en Chile [editions_v2.items.1.dates_source]. {{until prices}}Los precios, en las cuatro fases del vendedor, están en la página de entradas. → /creamfields-chile/entradas/ {{/until}}\n\nPunto Ticket, la ticketera oficial, publica el line-up por día y las tablas de precios como imágenes; en esta guía están en texto, con la fecha en que se leyó cada dato [sources.s20].",
         glanceHeading: "De un vistazo",
         glance: [
           { label: "Fechas", value: "sábado 14 y domingo 15\u00a0de\u00a0noviembre\u00a0de\u00a02026 [editions_v2.items.0.dates]" },
           { label: "Lugar", value: "Club Hípico de Santiago, Av. Blanco Encalada 2540, Santiago Centro [venue.name] [venue.address]" },
+          { label: "Horario", value: "desde las 13:00; el Main Stage, hasta las 23:00 [set_times.first_set] [set_times.last_set]" },
           { label: "Entradas", value: "Punto Ticket, ticketera oficial [sellers_v2.items.0]" },
           { label: "Edad", value: "mayores de 18 años [age.min]" },
         ],
         jumps: [
           { id: "fechas", label: "Fechas" },
           { id: "lugar", label: "Lugar" },
+          { id: "estacionamiento", label: "Estacionamiento" },
           { id: "entradas", label: "Entradas" },
           { id: "line-up", label: "Line-up" },
           { id: "questions", label: "Preguntas" },
@@ -1979,32 +2162,41 @@ export const guides: Guide[] = [
           {
             id: "lugar",
             heading: "El Club Hípico de Santiago y cómo llegar",
-            body: "El Club Hípico de Santiago está en Av. Blanco Encalada 2540, Santiago Centro [venue.address]. El teléfono del club es +56 2 2693 9600 y su correo, contacto@clubhipico.cl; son los contactos del club, no del festival [venue.phone] [venue.email]. [Ver en el mapa](/go/creamfields-chile-map/).\n\nEl club publica en su sitio un mapa con sus accesos y un botón de indicaciones de Google Maps [venue_v2.como_llegar]; ni la organización ni el club nombran una estación de Metro, un recorrido de micros ni un estacionamiento para el festival [transport.1] [venue_v2.como_llegar.not_named]. Lo único que el vendedor publica sobre estacionamiento es un beneficio del Diamond Lounge: un estacionamiento para el comprador [tickets.includes.diamond_lounge]. Para 2026 la organización anuncia una zona nueva de 5.000 m² con anfiteatro en el Club Hípico [labels_v2.s15_headline]; el detalle está en la página del line-up. → /creamfields-chile/line-up/",
+            body: "El Club Hípico de Santiago está en Av. Blanco Encalada 2540, Santiago Centro [venue.address]. El teléfono del club es +56 2 2693 9600 y su correo, contacto@clubhipico.cl; son los contactos del club, no del festival [venue.phone] [venue.email]. [Ver en el mapa](/go/creamfields-chile-map/).\n\nEl club publica en su sitio un mapa con sus accesos y un botón de indicaciones de Google Maps [venue_v2.como_llegar]; ni el club ni la organización nombran una estación de Metro o un recorrido de micros para el festival [transport.1] [venue_v2.como_llegar.not_named]. Para 2026 la organización anuncia una zona nueva de 5.000 m² con anfiteatro en el Club Hípico [labels_v2.s15_headline]; el detalle está en la página del line-up. → /creamfields-chile/line-up/",
+          },
+          {
+            id: "estacionamiento",
+            heading: "Estacionamiento y transporte público",
+            body: "De los cuatro tipos de ticket, el que incluye estacionamiento es el Diamond Lounge: uno, para el titular de la compra, según Punto Ticket [parking.diamond_lounge] [tickets.includes.diamond_lounge]. Para General, The Village y Sky Lounge, al 6 de noviembre de 2026 ni el vendedor ni la organización publican un estacionamiento [parking.general] [parking.readOn].\n\nPara la edición de 2024, en el mismo Club Hípico, [Red Movilidad](/go/creamfields-chile-red-2024/) reforzó tres recorridos de buses a la salida, entre las 23:00 y las 00:30, y dejó abierta para entrar hasta las 00:30 la estación República, de la línea 1 del Metro [transport_2024.for] [transport_2024.buses] [transport_2024.metro] [sources.s42]. Para 2026 aún no publica un aviso, al 6 de noviembre [transport_2024.status_2026]. Los recorridos de 2024, junto a la hora de cierre de cada escenario, están en la página del line-up. → /creamfields-chile/line-up/",
           },
           {
             id: "entradas",
             heading: "Entradas: cuatro tipos y tres formatos",
-            body: "Hay cuatro tipos de ticket, General, The Village, Sky Lounge y Diamond Lounge [tickets.tiers], y cada uno en tres formatos: Weekend Ticket para los dos días, Day Ticket sábado y Day Ticket domingo [tickets.formats]. {{until prices}}Los precios de las tablas de Punto Ticket no incluyen el cargo por servicio del 12,5% [tickets.service_charge]. Cada tabla tiene cuatro fases y dos columnas: el precio normal y el precio con 20% de descuento para clientes de Banco de Chile [prices_v2.note]. Al 24 de octubre de 2026 ya no aparece en la página del vendedor el Plan de reserva que mostraba antes: \"abona $40.000 y paga el resto en 2 cuotas sin interés con cualquier medio de pago\" [reserve_plan_v2.seller_page.text] [reserve_plan_v2.seller_page.status]. Las doce tablas, tal como las publica el vendedor, lo que incluye cada ticket y las reglas de ingreso están en la página de entradas. → /creamfields-chile/entradas/ {{/until}}",
+            body: "Hay cuatro tipos de ticket, General, The Village, Sky Lounge y Diamond Lounge [tickets.tiers], y cada uno en tres formatos: Weekend Ticket para los dos días, Day Ticket sábado y Day Ticket domingo [tickets.formats]. {{until sale}}La organización avisó el 3 de noviembre de 2026, en [Instagram](/go/creamfields-chile-agotado/), que el Weekend Ticket y el domingo estaban agotados y que quedaban 1.000 Day Ticket del sábado, sin decir de qué tipo de ticket [sales_status.text] [sales_status.note].{{/until}} {{until prices}}Los precios de las tablas de Punto Ticket no incluyen el cargo por servicio del 12,5% [tickets.service_charge]. Cada tabla tiene cuatro fases y dos columnas: el precio normal y el precio con 20% de descuento para clientes de Banco de Chile [prices_v2.note]. Las doce tablas, tal como las publica el vendedor, lo que incluye cada ticket y las reglas de ingreso están en la página de entradas. → /creamfields-chile/entradas/ {{/until}}",
           },
           {
             id: "line-up",
-            heading: "Line-up: quién toca cada día",
-            body: "El line-up llegó el viernes 7 de agosto de 2026, según Meganoticias y 24horas.cl [editions_v2.items.0.in_press.2]. Punto Ticket lo publica por día y por escenario, sin horarios [lineup.by_day_source] [schedule_v2.set_times]. El sábado 14 hay seis escenarios: Main Stage, A Stage, Alternative, HE.SHE.THEY, Radio Carolina y Grieta x Panal Records; el domingo 15, otros seis: Main Stage, A Stage, Cream, Feral, Radio Carolina y Grieta x Panal Records [lineup.by_day.0.stages] [lineup.by_day.1.stages]. Morten toca los dos días, y en el Main Stage del sábado el vendedor publica un cupo como \"Artist TBC\", sin nombre [lineup.by_day_source] [not_found.2]. La lista completa, escenario por escenario, está en la página del line-up. → /creamfields-chile/line-up/",
+            heading: "Line-up y horarios: quién toca cada día",
+            body: "El line-up llegó el viernes 7 de agosto de 2026, según Meganoticias y 24horas.cl [editions_v2.items.0.in_press.2], y los horarios, el 5 de noviembre, en [la cuenta de Instagram de la organización](/go/creamfields-chile-horarios/) [set_times.posted] [sources.s41]. Cada día hay seis escenarios: el sábado 14, Main Stage, A Stage, Alternative, HE.SHE.THEY, Radio Carolina y Grieta x Panal Records; el domingo 15, Main Stage, A Stage, Cream, Feral, Radio Carolina y Grieta x Panal Records [set_times.by_day.0.stages] [set_times.by_day.1.stages]. En el Main Stage del sábado tocan, entre otros, Lost Frequencies, Boris Brejcha y Hardwell, que cierra de 21:30 a 23:00; en el del domingo, Hugel, Fisher, Charlotte de Witte y Calvin Harris, que cierra a la misma hora [set_times.by_day.0.stages.0.sets] [set_times.by_day.1.stages.0.sets]. Morten toca los dos días [set_times.by_day.0.stages.0.sets] [set_times.by_day.1.stages.1.sets]. Todos los horarios, escenario por escenario, están en la página del line-up. → /creamfields-chile/line-up/",
           },
         ],
         faqHeading: "Preguntas frecuentes",
         faq: [
           {
             q: "¿Dónde será Creamfields en 2026?",
-            a: "En el Club Hípico de Santiago, Av. Blanco Encalada 2540, Santiago Centro, el sábado 14 y el domingo 15 de noviembre de 2026 [editions_v2.items.0.dates] [venue.address]. Lo dice la página oficial de venta en Punto Ticket, leída el 24 de octubre de 2026; la dirección es la del club [sources.s1] [sources.s3].",
+            a: "En el Club Hípico de Santiago, Av. Blanco Encalada 2540, Santiago Centro, el sábado 14 y el domingo 15 de noviembre de 2026 [editions_v2.items.0.dates] [venue.address]. Lo dice la página oficial de venta en Punto Ticket, leída el 6 de noviembre de 2026; la dirección es la del club [sources.s1] [sources.s3] [editions_v2.readOn].",
+          },
+          {
+            q: "¿Hay estacionamiento en Creamfields Chile 2026?",
+            a: "Con el ticket Diamond Lounge, sí: Punto Ticket incluye un estacionamiento para el titular de la compra [parking.diamond_lounge]. Para General, The Village y Sky Lounge, ni el vendedor ni la organización publican estacionamiento, según lo leído el 6 de noviembre de 2026 [parking.general] [parking.readOn]. Para la vuelta en transporte público, el antecedente oficial es el de 2024, cuando Red Movilidad reforzó buses a la salida y dejó abierta la estación República del Metro hasta las 00:30 [transport_2024.buses] [transport_2024.metro].",
           },
           {
             q: "¿Cuánto cuestan las entradas para Creamfields Chile en 2026?",
-            a: "{{until prices}}Depende del tipo y del formato. En las doce tablas de Punto Ticket, leídas el 24 de octubre de 2026, la cifra no tachada más baja en la columna de precio normal es $98.000 (Day Ticket sábado General, Venta 2) y la más alta, $850.000 (Weekend Ticket Diamond Lounge, Venta 4), sin el cargo por servicio del 12,5% [prices_v2.lowest_unstruck_normal] [prices_v2.highest_unstruck_normal] [tickets.service_charge]. La tabla no indica cuál fase está abierta: vale el precio que Punto Ticket muestra al comprar [prices_v2.note]. Las doce tablas están en la página de entradas. → /creamfields-chile/entradas/ {{/until}}",
+            a: "{{until sale}}El 3 de noviembre de 2026 la organización dio por agotados el Weekend Ticket y el domingo [sales_status.text].{{/until}} {{until prices}}Depende del tipo y del formato. En las doce tablas de Punto Ticket, leídas el 6 de noviembre de 2026, la cifra no tachada más baja en la columna de precio normal es $106.000 (Day Ticket sábado General, Venta 3) y la más alta, $850.000 (Weekend Ticket Diamond Lounge, Venta 4), sin el cargo por servicio del 12,5% [prices_v3.lowest_unstruck_normal] [prices_v3.highest_unstruck_normal] [tickets.service_charge]. La tabla no indica cuál fase está abierta: vale el precio que Punto Ticket muestra al comprar [prices_v2.note]. Las doce tablas están en la página de entradas. → /creamfields-chile/entradas/ {{/until}}",
           },
           {
             q: "¿Qué artistas se presentarán en Creamfields Chile 2026?",
-            a: "Calvin Harris, Charlotte de Witte, Fisher y Hugel en el Main Stage del domingo 15; Hardwell y Boris Brejcha en el del sábado 14 [lineup.by_day.1.stages.0.acts] [lineup.by_day.0.stages.0.acts]. También Don Diablo, Jonas Blue, The Blessed Madonna, Kölsch, Faithless Sound System, Enrico Sangiuliano y Âme Live, entre otros, según el line-up por día de Punto Ticket, leído el 24 de octubre de 2026 [lineup.by_day.0.stages.1.acts] [lineup.by_day.1.stages.2.acts] [lineup.by_day.1.stages.3.acts]. La lista completa, escenario por escenario, está en la página del line-up. → /creamfields-chile/line-up/",
+            a: "Calvin Harris cierra el Main Stage el domingo 15 de noviembre, de 21:30 a 23:00, después de Hugel, Fisher y Charlotte de Witte; Hardwell lo cierra el sábado 14, a la misma hora, después de Lost Frequencies y Boris Brejcha [set_times.by_day.1.stages.0.sets] [set_times.by_day.0.stages.0.sets]. También tocan Don Diablo, Jonas Blue, Kölsch, Faithless Sound System, Enrico Sangiuliano y Âme Live, entre otros, según los horarios de la organización, leídos el 6 de noviembre de 2026 [set_times.by_day.0.stages.1.sets] [set_times.by_day.1.stages.2.sets] [set_times.by_day.1.stages.3.sets] [set_times.readOn]. Todos los horarios, escenario por escenario, están en la página del line-up. → /creamfields-chile/line-up/",
           },
           {
             q: "¿Hay algún festival de electrónica en Chile?",
@@ -2028,7 +2220,7 @@ export const guides: Guide[] = [
           },
         ],
         sourcesHeading: "Fuentes",
-        sources: "- [Punto Ticket, página oficial de Creamfields Chile 2026 (creamfields.cl redirige aquí)](/go/creamfields-chile-tickets/), leída el 24 de octubre de 2026 [sources.s1]\n- Line-up por día, imagen en la página de Punto Ticket, leída el 24 de octubre de 2026{{until prices}}; tablas de precios, leídas el 24 de octubre de 2026{{/until}} [sources.s20]\n- Punto Ticket, \"Creamfields Chile 2026: ¡Prepárense para la celebración más grande de la música electrónica!\", comunicado de la organización, leído el 22 de octubre de 2026 [sources.s7]\n- Punto Ticket, \"Creamfields Chile crece: Suma una nueva zona de 5.000 m² y estrena anfiteatro en Club Hípico\", leído el 22 de octubre de 2026 [sources.s15] [labels_v2.s15_headline]\n- [Club Hípico de Santiago, contacto](/go/creamfields-chile-venue/), leído el 22 de octubre de 2026 [sources.s3]\n- Prensa, citada en el texto: Radio Agricultura, 23 de mayo de 2025 y 17 de marzo de 2026 [sources.s21] [sources.s9]; La Tercera Culto, 26 de mayo de 2025 y 28 de abril de 2026 [sources.s8] [sources.s18]; CNN Chile, \"Vuelve Creamfields Chile: Cuándo es la edición 2026 en Santiago y cómo inscribirse para la preventa\" [sources.s10] [labels_v2.s10_headline]; Meganoticias y 24horas.cl, 7 de agosto de 2026 [sources.s12] [sources.s13]\n- [Creamfields Chile en Instagram, canal de la organización](/go/creamfields-chile-instagram/) [sources.s19]",
+        sources: "- [Punto Ticket, página oficial de Creamfields Chile 2026 (creamfields.cl redirige aquí)](/go/creamfields-chile-tickets/), leída el 6 de noviembre de 2026 [sources.s1] [parking.readOn]\n- Line-up por día, imagen en la página de Punto Ticket en su versión del 30 de octubre de 2026, leída el 6 de noviembre de 2026{{until prices}}; tablas de precios, leídas el 6 de noviembre de 2026{{/until}} [sources.s20] [lineup_v3.readOn]\n- [Creamfields Chile en Instagram, \"SET TIMES CONFIRMADOS\"](/go/creamfields-chile-horarios/), horarios publicados el 5 de noviembre de 2026{{until sale}}, y el aviso del 3 de noviembre sobre las entradas{{/until}}, leídos el 6 de noviembre de 2026 [sources.s41] [sources.s43] [set_times.readOn]\n- [Red Movilidad, \"Red Movilidad refuerza recorridos para Creamfields en el Club Hípico\"](/go/creamfields-chile-red-2024/), 14 de noviembre de 2024, leído el 6 de noviembre de 2026 [sources.s42] [transport_2024.readOn]\n- Punto Ticket, \"Creamfields Chile 2026: ¡Prepárense para la celebración más grande de la música electrónica!\", comunicado de la organización, leído el 6 de noviembre de 2026 [sources.s7] [claims.readOn]\n- Punto Ticket, \"Creamfields Chile crece: Suma una nueva zona de 5.000 m² y estrena anfiteatro en Club Hípico\", leído el 6 de noviembre de 2026 [sources.s15] [labels_v2.s15_headline]\n- [Club Hípico de Santiago, contacto](/go/creamfields-chile-venue/), leído el 6 de noviembre de 2026 [sources.s3] [venue_v2.readOn]\n- Prensa, citada en el texto: Radio Agricultura, 23 de mayo de 2025 y 17 de marzo de 2026 [sources.s21] [sources.s9]; La Tercera Culto, 26 de mayo de 2025 y 28 de abril de 2026 [sources.s8] [sources.s18]; CNN Chile, \"Vuelve Creamfields Chile: Cuándo es la edición 2026 en Santiago y cómo inscribirse para la preventa\" [sources.s10] [labels_v2.s10_headline]; Meganoticias y 24horas.cl, 7 de agosto de 2026 [sources.s12] [sources.s13]\n- [Creamfields Chile en Instagram, canal de la organización](/go/creamfields-chile-instagram/) [sources.s19]",
         anchors: [
           { target: "/creamfields-chile/entradas/", text: "página de entradas" },
           { target: "/creamfields-chile/line-up/", text: "página del line-up" },
@@ -2037,13 +2229,13 @@ export const guides: Guide[] = [
       {
         slug: "creamfields-chile/entradas",
         createdAt: "2026-10-22T17:00:00+04:00",
-        updatedAt: "2026-10-24T08:25:00+04:00",
+        updatedAt: "2026-11-06T04:17:00+04:00",
         kind: "tickets",
         label: "Entradas",
-        title: "Entradas Creamfields Chile 2026: precios — guía del festival",
-        description: "Entradas de Creamfields Chile 2026 en Punto Ticket: General, The Village, Sky Lounge y Diamond Lounge, las cuatro fases de precio en texto. Guía del festival.",
+        title: "Entradas festival Creamfields Chile 2026: precios y cashless",
+        description: "Entradas de Creamfields Chile 2026 en Punto Ticket: cuatro tipos, Weekend y Day Ticket, precios por fase en texto y la pulsera cashless. Guía del festival.",
         h1: "Entradas Creamfields Chile 2026",
-        lede: "{{until sale}}Las entradas de Creamfields Chile 2026 se venden en [Punto Ticket, la ticketera oficial](/go/creamfields-chile-tickets/): creamfields.cl redirige a su página [sellers_v2.items.0] [sellers.0.kind].{{/until}} Hay cuatro tipos, General, The Village, Sky Lounge y Diamond Lounge, y cada uno como Weekend Ticket para los dos días o como Day Ticket para el sábado 14 o el domingo 15 de noviembre de 2026 [tickets.tiers] [tickets.formats] [editions_v2.items.0.dates]. {{until prices}}El vendedor publica sus precios en doce imágenes; aquí están las doce tablas en texto, leídas el 24 de octubre de 2026, con cada fase tachada marcada como tachada [prices_v2].{{/until}} Quién toca cada día está en la página del line-up; → /creamfields-chile/line-up/ fechas, lugar y el resto de la guía, en la página de Creamfields Chile 2026. → /creamfields-chile/",
+        lede: "{{until sale}}Las entradas de Creamfields Chile 2026 se venden en [Punto Ticket, la ticketera oficial](/go/creamfields-chile-tickets/): creamfields.cl redirige a su página [sellers_v2.items.0] [sellers.0.kind].{{/until}} Hay cuatro tipos, General, The Village, Sky Lounge y Diamond Lounge, y cada uno como Weekend Ticket para los dos días o como Day Ticket para el sábado 14 o el domingo 15 de noviembre de 2026 [tickets.tiers] [tickets.formats] [editions_v2.items.0.dates]. {{until prices}}El vendedor publica sus precios en doce imágenes; aquí están las doce tablas en texto, leídas el 6 de noviembre de 2026, con cada fase tachada marcada como tachada [prices_v2] [prices_v3].{{/until}} {{until sale}}El 3 de noviembre de 2026 la organización anunció en [Instagram](/go/creamfields-chile-agotado/) el Weekend Ticket y el domingo agotados, y que solo quedaban 1.000 Day Ticket del sábado [sales_status.text]. El aviso no dice de qué tipo de ticket habla, y al 6 de noviembre las tablas de Punto Ticket aún muestran un precio sin tachar en cada Weekend Ticket y en el Day Ticket domingo Diamond Lounge: vale lo que Punto Ticket ofrezca al comprar [sales_status.note] [prices_v3.against_sales_status] [prices_v2.note].{{/until}} Quién toca cada día está en la página del line-up; → /creamfields-chile/line-up/ fechas, lugar y el resto de la guía, en la página de Creamfields Chile 2026. → /creamfields-chile/",
         sections: [
           {
             id: "donde-comprar",
@@ -2054,7 +2246,7 @@ export const guides: Guide[] = [
             id: "precios",
             kind: "table",
             heading: "Precios por tipo de ticket, en las cuatro fases",
-            body: "{{until prices}}Cada tabla de Punto Ticket tiene cuatro fases en el orden del vendedor, Early Bird, Venta 2, Venta 3 y Venta 4, y dos columnas: el precio normal y el precio con 20% de descuento, que es solo para clientes de Banco de Chile y se aplica sobre la entrada, no sobre el cargo por servicio [prices_v2.note] [bank_offer.conditions]. El vendedor tacha las fases cerradas; la tabla no indica cuál fase está abierta; vale el precio que Punto Ticket muestra al comprar [prices_v2.note]. Precios en pesos chilenos (CLP), sin el cargo por servicio del 12,5% [tickets.service_charge], leídos el 24 de octubre de 2026 [prices_v2.readOn].\n\n**Ticket General**\n\nWeekend Ticket General [prices_v2.tables.0]\n\n| Fase | Precio normal | Con 20% dcto Banco de Chile |\n|---|---|---|\n| Early Bird | $128.000 (tachado) | $102.400 (tachado) |\n| Venta 2 | $138.000 (tachado) | $110.400 (tachado) |\n| Venta 3 | $146.000 (tachado) | $116.800 (tachado) |\n| Venta 4 | $160.000 | $128.000 (tachado) |\n\nDay Ticket sábado General [prices_v2.tables.1]\n\n| Fase | Precio normal | Con 20% dcto Banco de Chile |\n|---|---|---|\n| Early Bird | $92.000 (tachado) | $73.600 (tachado) |\n| Venta 2 | $98.000 | $78.400 (tachado) |\n| Venta 3 | $106.000 | $84.800 (tachado) |\n| Venta 4 | $120.000 | $96.000 |\n\nDay Ticket domingo General [prices_v2.tables.2]\n\n| Fase | Precio normal | Con 20% dcto Banco de Chile |\n|---|---|---|\n| Early Bird | $92.000 (tachado) | $73.600 (tachado) |\n| Venta 2 | $98.000 (tachado) | $78.400 (tachado) |\n| Venta 3 | $106.000 (tachado) | $84.800 (tachado) |\n| Venta 4 | $120.000 (tachado) | $96.000 (tachado) |\n\nDay Ticket domingo General: la tabla del vendedor muestra las ocho celdas tachadas [prices_v2.tables.2.note].\n\n**Ticket The Village**\n\nWeekend Ticket The Village [prices_v2.tables.3]\n\n| Fase | Precio normal | Con 20% dcto Banco de Chile |\n|---|---|---|\n| Early Bird | $206.000 (tachado) | $164.800 (tachado) |\n| Venta 2 | $216.000 (tachado) | $172.800 (tachado) |\n| Venta 3 | $226.000 (tachado) | $180.800 (tachado) |\n| Venta 4 | $240.000 | $192.000 (tachado) |\n\nDay Ticket sábado The Village [prices_v2.tables.4]\n\n| Fase | Precio normal | Con 20% dcto Banco de Chile |\n|---|---|---|\n| Early Bird | $134.000 (tachado) | $107.200 (tachado) |\n| Venta 2 | $144.000 | $115.200 (tachado) |\n| Venta 3 | $154.000 | $123.200 (tachado) |\n| Venta 4 | $170.000 | $136.000 |\n\nDay Ticket domingo The Village [prices_v2.tables.5]\n\n| Fase | Precio normal | Con 20% dcto Banco de Chile |\n|---|---|---|\n| Early Bird | $134.000 (tachado) | $107.200 (tachado) |\n| Venta 2 | $144.000 (tachado) | $115.200 (tachado) |\n| Venta 3 | $154.000 (tachado) | $123.200 (tachado) |\n| Venta 4 | $170.000 (tachado) | $136.000 (tachado) |\n\nDay Ticket domingo The Village: la tabla del vendedor muestra las ocho celdas tachadas [prices_v2.tables.5.rows.3.normal_s] [prices_v2.tables.5.note].\n\n**Ticket Sky Lounge**\n\nWeekend Ticket Sky Lounge [prices_v2.tables.6]\n\n| Fase | Precio normal | Con 20% dcto Banco de Chile |\n|---|---|---|\n| Early Bird | $276.000 (tachado) | $220.800 (tachado) |\n| Venta 2 | $286.000 (tachado) | $228.800 (tachado) |\n| Venta 3 | $296.000 (tachado) | $236.800 (tachado) |\n| Venta 4 | $320.000 | $256.000 (tachado) |\n\nDay Ticket sábado Sky Lounge [prices_v2.tables.7]\n\n| Fase | Precio normal | Con 20% dcto Banco de Chile |\n|---|---|---|\n| Early Bird | $196.000 | $156.800 (tachado) |\n| Venta 2 | $206.000 | $164.800 (tachado) |\n| Venta 3 | $216.000 | $172.800 |\n| Venta 4 | $250.000 | $200.000 |\n\nDay Ticket domingo Sky Lounge [prices_v2.tables.8]\n\n| Fase | Precio normal | Con 20% dcto Banco de Chile |\n|---|---|---|\n| Early Bird | $196.000 (tachado) | $156.800 (tachado) |\n| Venta 2 | $206.000 (tachado) | $164.800 (tachado) |\n| Venta 3 | $216.000 (tachado) | $172.800 (tachado) |\n| Venta 4 | $250.000 (tachado) | $200.000 (tachado) |\n\nDay Ticket domingo Sky Lounge: la tabla del vendedor muestra las ocho celdas tachadas [prices_v2.tables.8.rows.2.normal_s] [prices_v2.tables.8.rows.3.normal_s] [prices_v2.tables.8.note].\n\n**Ticket Diamond Lounge**\n\nWeekend Ticket Diamond Lounge [prices_v2.tables.9]\n\n| Fase | Precio normal | Con 20% dcto Banco de Chile |\n|---|---|---|\n| Early Bird | $700.000 (tachado) | $560.000 (tachado) |\n| Venta 2 | $750.000 (tachado) | $600.000 (tachado) |\n| Venta 3 | $800.000 | $640.000 (tachado) |\n| Venta 4 | $850.000 | $680.000 (tachado) |\n\nDay Ticket sábado Diamond Lounge [prices_v2.tables.10]\n\n| Fase | Precio normal | Con 20% dcto Banco de Chile |\n|---|---|---|\n| Early Bird | $450.000 | $360.000 (tachado) |\n| Venta 2 | $500.000 | $400.000 (tachado) |\n| Venta 3 | $550.000 | $440.000 |\n| Venta 4 | $600.000 | $480.000 |\n\nDay Ticket domingo Diamond Lounge [prices_v2.tables.11]\n\n| Fase | Precio normal | Con 20% dcto Banco de Chile |\n|---|---|---|\n| Early Bird | $450.000 (tachado) | $360.000 (tachado) |\n| Venta 2 | $500.000 (tachado) | $400.000 (tachado) |\n| Venta 3 | $550.000 | $440.000 (tachado) |\n| Venta 4 | $600.000 | $480.000 (tachado) |\n\nEl ticket de movilidad reducida existe solo en las tablas General y es solo para personas con credencial de discapacidad, que se pedirá para acceder al evento [reduced_mobility.text] [reduced_mobility.applies_to].{{/until}}",
+            body: "{{until prices}}Cada tabla de Punto Ticket tiene cuatro fases en el orden del vendedor, Early Bird, Venta 2, Venta 3 y Venta 4, y dos columnas: el precio normal y el precio con 20% de descuento, que es solo para clientes de Banco de Chile y se aplica sobre la entrada, no sobre el cargo por servicio [prices_v2.note] [bank_offer.conditions]. El vendedor tacha las fases cerradas; la tabla no indica cuál fase está abierta; vale el precio que Punto Ticket muestra al comprar [prices_v2.note]. Precios en pesos chilenos (CLP), sin el cargo por servicio del 12,5% [tickets.service_charge], leídos el 6 de noviembre de 2026 [prices_v3.readOn]. El 5 de noviembre el vendedor cambió dos tablas, Day Ticket sábado General y Day Ticket sábado Sky Lounge, y tachó celdas que el 24 de octubre estaban abiertas [prices_v3.sabado_general.change] [prices_v3.sabado_sky_lounge.change]; las otras diez siguen como entonces [prices_v3.unchanged].\n\n**Ticket General**\n\nWeekend Ticket General [prices_v2.tables.0]\n\n| Fase | Precio normal | Con 20% dcto Banco de Chile |\n|---|---|---|\n| Early Bird | $128.000 (tachado) | $102.400 (tachado) |\n| Venta 2 | $138.000 (tachado) | $110.400 (tachado) |\n| Venta 3 | $146.000 (tachado) | $116.800 (tachado) |\n| Venta 4 | $160.000 | $128.000 (tachado) |\n\nDay Ticket sábado General [prices_v3.sabado_general]\n\n| Fase | Precio normal | Con 20% dcto Banco de Chile |\n|---|---|---|\n| Early Bird | $92.000 (tachado) | $73.600 (tachado) |\n| Venta 2 | $98.000 (tachado) | $78.400 (tachado) |\n| Venta 3 | $106.000 | $84.800 (tachado) |\n| Venta 4 | $120.000 | $96.000 |\n\nDay Ticket domingo General [prices_v2.tables.2]\n\n| Fase | Precio normal | Con 20% dcto Banco de Chile |\n|---|---|---|\n| Early Bird | $92.000 (tachado) | $73.600 (tachado) |\n| Venta 2 | $98.000 (tachado) | $78.400 (tachado) |\n| Venta 3 | $106.000 (tachado) | $84.800 (tachado) |\n| Venta 4 | $120.000 (tachado) | $96.000 (tachado) |\n\nDay Ticket domingo General: la tabla del vendedor muestra las ocho celdas tachadas [prices_v2.tables.2.note].\n\n**Ticket The Village**\n\nWeekend Ticket The Village [prices_v2.tables.3]\n\n| Fase | Precio normal | Con 20% dcto Banco de Chile |\n|---|---|---|\n| Early Bird | $206.000 (tachado) | $164.800 (tachado) |\n| Venta 2 | $216.000 (tachado) | $172.800 (tachado) |\n| Venta 3 | $226.000 (tachado) | $180.800 (tachado) |\n| Venta 4 | $240.000 | $192.000 (tachado) |\n\nDay Ticket sábado The Village [prices_v2.tables.4]\n\n| Fase | Precio normal | Con 20% dcto Banco de Chile |\n|---|---|---|\n| Early Bird | $134.000 (tachado) | $107.200 (tachado) |\n| Venta 2 | $144.000 | $115.200 (tachado) |\n| Venta 3 | $154.000 | $123.200 (tachado) |\n| Venta 4 | $170.000 | $136.000 |\n\nDay Ticket domingo The Village [prices_v2.tables.5]\n\n| Fase | Precio normal | Con 20% dcto Banco de Chile |\n|---|---|---|\n| Early Bird | $134.000 (tachado) | $107.200 (tachado) |\n| Venta 2 | $144.000 (tachado) | $115.200 (tachado) |\n| Venta 3 | $154.000 (tachado) | $123.200 (tachado) |\n| Venta 4 | $170.000 (tachado) | $136.000 (tachado) |\n\nDay Ticket domingo The Village: la tabla del vendedor muestra las ocho celdas tachadas [prices_v2.tables.5.rows.3.normal_s] [prices_v2.tables.5.note].\n\n**Ticket Sky Lounge**\n\nWeekend Ticket Sky Lounge [prices_v2.tables.6]\n\n| Fase | Precio normal | Con 20% dcto Banco de Chile |\n|---|---|---|\n| Early Bird | $276.000 (tachado) | $220.800 (tachado) |\n| Venta 2 | $286.000 (tachado) | $228.800 (tachado) |\n| Venta 3 | $296.000 (tachado) | $236.800 (tachado) |\n| Venta 4 | $320.000 | $256.000 (tachado) |\n\nDay Ticket sábado Sky Lounge [prices_v3.sabado_sky_lounge]\n\n| Fase | Precio normal | Con 20% dcto Banco de Chile |\n|---|---|---|\n| Early Bird | $196.000 (tachado) | $156.800 (tachado) |\n| Venta 2 | $206.000 | $164.800 (tachado) |\n| Venta 3 | $216.000 | $172.800 (tachado) |\n| Venta 4 | $250.000 | $200.000 |\n\nDay Ticket domingo Sky Lounge [prices_v2.tables.8]\n\n| Fase | Precio normal | Con 20% dcto Banco de Chile |\n|---|---|---|\n| Early Bird | $196.000 (tachado) | $156.800 (tachado) |\n| Venta 2 | $206.000 (tachado) | $164.800 (tachado) |\n| Venta 3 | $216.000 (tachado) | $172.800 (tachado) |\n| Venta 4 | $250.000 (tachado) | $200.000 (tachado) |\n\nDay Ticket domingo Sky Lounge: la tabla del vendedor muestra las ocho celdas tachadas [prices_v2.tables.8.rows.2.normal_s] [prices_v2.tables.8.rows.3.normal_s] [prices_v2.tables.8.note].\n\n**Ticket Diamond Lounge**\n\nWeekend Ticket Diamond Lounge [prices_v2.tables.9]\n\n| Fase | Precio normal | Con 20% dcto Banco de Chile |\n|---|---|---|\n| Early Bird | $700.000 (tachado) | $560.000 (tachado) |\n| Venta 2 | $750.000 (tachado) | $600.000 (tachado) |\n| Venta 3 | $800.000 | $640.000 (tachado) |\n| Venta 4 | $850.000 | $680.000 (tachado) |\n\nDay Ticket sábado Diamond Lounge [prices_v2.tables.10]\n\n| Fase | Precio normal | Con 20% dcto Banco de Chile |\n|---|---|---|\n| Early Bird | $450.000 | $360.000 (tachado) |\n| Venta 2 | $500.000 | $400.000 (tachado) |\n| Venta 3 | $550.000 | $440.000 |\n| Venta 4 | $600.000 | $480.000 |\n\nDay Ticket domingo Diamond Lounge [prices_v2.tables.11]\n\n| Fase | Precio normal | Con 20% dcto Banco de Chile |\n|---|---|---|\n| Early Bird | $450.000 (tachado) | $360.000 (tachado) |\n| Venta 2 | $500.000 (tachado) | $400.000 (tachado) |\n| Venta 3 | $550.000 | $440.000 (tachado) |\n| Venta 4 | $600.000 | $480.000 (tachado) |\n\nEl ticket de movilidad reducida existe solo en las tablas General y es solo para personas con credencial de discapacidad, que se pedirá para acceder al evento [reduced_mobility.text] [reduced_mobility.applies_to].{{/until}}",
           },
           {
             id: "banco-de-chile",
@@ -2064,7 +2256,7 @@ export const guides: Guide[] = [
           {
             id: "plan-de-reserva",
             heading: "Plan de reserva: ya no figura en la página del vendedor",
-            body: "{{until prices}}El 22 de octubre de 2026 el vendedor lo describía así: \"abona $40.000 y paga el resto en 2 cuotas sin interés con cualquier medio de pago\" [reserve_plan_v2.seller_page.text].{{/until}} Al 24 de octubre de 2026 el plan ya no aparece en la página del vendedor, y ningún texto de Punto Ticket dice si se cerró o si sigue disponible [reserve_plan_v2.seller_page.status]. Según esa misma página, el 22 de octubre de 2026 aplicaba a General, The Village, Sky Lounge y Diamond Lounge [reserve_plan_v2.seller_page.applies_to] y no se combinaba con el 20% de Banco de Chile [reserve_plan_v2.seller_page.not_combinable].\n\n{{until prices}}Los dos PDF de términos y condiciones no dicen lo mismo: el del Weekend Ticket habla de un abono inicial de $40.000 más tres cuotas iguales y el del Day Ticket, de dos [reserve_plan_v2.weekend_pdf.instalments] [reserve_plan_v2.day_pdf.instalments].{{/until}} Según los términos del vendedor, al comprador se le informa el plan de abonos, el monto de cada uno y sus fechas de vencimiento [reserve_plan_v2.informed], y el plan se calcula sobre el precio con el cargo por servicio incluido: a ese total se le descuenta el abono inicial y el resto se divide en cuotas iguales [reserve_plan_v2.weekend_pdf.computed_on] [reserve_plan_v2.day_pdf.computed_on].\n\n{{until prices}}Según los mismos términos, si una cuota no se paga a su vencimiento el pedido queda sin efecto, Punto Ticket retiene los $40.000 del abono inicial, las cuotas ya pagadas se convierten en una Giftcard StreetMachine, con validez de 12 meses, para una entrada de otro evento musical de Street Machine, hay 10 días de gracia si un cargo es rechazado y el comprador no puede dejar sin efecto la reserva por su cuenta [reserve_plan_v2.caution_clause_3].{{/until}} Al 24 de octubre de 2026 los PDF seguían enlazados desde la página del vendedor: [términos del Weekend Ticket](/go/creamfields-chile-reserva-weekend/) [sources.s5] y [términos del Day Ticket](/go/creamfields-chile-reserva-day/) [sources.s6]. Todas las fechas de vencimiento que fijan ya pasaron [reserve_plan_v2.seller_page.status] [reserve_plan_v2.governs_today].",
+            body: "{{until prices}}El 22 de octubre de 2026 el vendedor lo describía así: \"abona $40.000 y paga el resto en 2 cuotas sin interés con cualquier medio de pago\" [reserve_plan_v2.seller_page.text].{{/until}} Desde el 24 de octubre de 2026 el plan no aparece en la página del vendedor, y el 6 de noviembre seguía sin aparecer; ningún texto de Punto Ticket dice si se cerró o si sigue disponible [reserve_plan_v2.seller_page.status]. {{until sale}}Según esa misma página, el 22 de octubre de 2026 aplicaba a General, The Village, Sky Lounge y Diamond Lounge [reserve_plan_v2.seller_page.applies_to] y no se combinaba con el 20% de Banco de Chile [reserve_plan_v2.seller_page.not_combinable].{{/until}}\n\n{{until prices}}Los dos PDF de términos y condiciones no dicen lo mismo: el del Weekend Ticket habla de un abono inicial de $40.000 más tres cuotas iguales y el del Day Ticket, de dos [reserve_plan_v2.weekend_pdf.instalments] [reserve_plan_v2.day_pdf.instalments].{{/until}} Según los términos del vendedor, al comprador se le informa el plan de abonos, el monto de cada uno y sus fechas de vencimiento [reserve_plan_v2.informed], y el plan se calcula sobre el precio con el cargo por servicio incluido: a ese total se le descuenta el abono inicial y el resto se divide en cuotas iguales [reserve_plan_v2.weekend_pdf.computed_on] [reserve_plan_v2.day_pdf.computed_on].\n\n{{until prices}}Según los mismos términos, si una cuota no se paga a su vencimiento el pedido queda sin efecto, Punto Ticket retiene los $40.000 del abono inicial, las cuotas ya pagadas se convierten en una Giftcard StreetMachine, con validez de 12 meses, para una entrada de otro evento musical de Street Machine, hay 10 días de gracia si un cargo es rechazado y el comprador no puede dejar sin efecto la reserva por su cuenta [reserve_plan_v2.caution_clause_3].{{/until}} Al 6 de noviembre de 2026 los PDF siguen enlazados desde la página del vendedor: [términos del Weekend Ticket](/go/creamfields-chile-reserva-weekend/) [sources.s5] y [términos del Day Ticket](/go/creamfields-chile-reserva-day/) [sources.s6]. Todas las fechas de vencimiento que fijan ya pasaron [reserve_plan_v2.seller_page.status] [reserve_plan_v2.governs_today].",
           },
           {
             id: "que-incluye",
@@ -2080,12 +2272,16 @@ export const guides: Guide[] = [
         faqHeading: "Preguntas frecuentes",
         faq: [
           {
+            q: "¿Quedan entradas para Creamfields Chile 2026?",
+            a: "{{until sale}}Según la organización, el 3 de noviembre de 2026 se agotaron el Weekend Ticket y el domingo, y quedaban 1.000 Day Ticket del sábado [sales_status.text] [sales_status.posted]. El aviso no nombra el tipo de ticket, y las tablas de Punto Ticket, leídas el 6 de noviembre, todavía muestran un precio sin tachar en cada Weekend Ticket y en el domingo Diamond Lounge [sales_status.note] [prices_v3.against_sales_status]. Lo que vale es lo que Punto Ticket ofrezca al comprar [prices_v2.note].{{/until}}",
+          },
+          {
             q: "¿Cómo funciona la preventa Banco de Chile para Creamfields?",
             a: "Punto Ticket publica un precio con 20% de descuento sobre la entrada, no sobre el cargo por servicio, para titulares de tarjetas de crédito o débito de Banco de Chile, hasta 4 entradas por cliente [bank_offer.conditions]. La preventa Banco de Chile fue del 6 al 8 de mayo de 2026; la venta Day Ticket Banco de Chile partió el 28 de agosto de 2026 y el vendedor no informa su término [bank_offer.presale_may] [bank_offer.day] [bank_offer.seller_labels]. {{until prices}}Ese precio es la segunda columna de cada tabla de arriba.{{/until}}",
           },
           {
             q: "¿Qué es el Plan de Reserva de Creamfields?",
-            a: "Un sistema de abono del vendedor. {{until prices}}El 22 de octubre de 2026 su página lo describía así: \"abona $40.000 y paga el resto en 2 cuotas sin interés con cualquier medio de pago\" [reserve_plan_v2.seller_page.text].{{/until}} Al 24 de octubre de 2026 el plan ya no aparece en la página de Punto Ticket, y ningún texto dice si se cerró [reserve_plan_v2.seller_page.status]. Aplicaba a General, The Village, Sky Lounge y Diamond Lounge y no se combinaba con el 20% de Banco de Chile. Los términos completos están en los dos PDF del vendedor enlazados arriba, con todas sus fechas de vencimiento ya pasadas [reserve_plan_v2.seller_page.applies_to] [reserve_plan_v2.seller_page.not_combinable] [sources.s5] [sources.s6] [reserve_plan_v2.governs_today].",
+            a: "Un sistema de abono del vendedor. {{until prices}}El 22 de octubre de 2026 su página lo describía así: \"abona $40.000 y paga el resto en 2 cuotas sin interés con cualquier medio de pago\" [reserve_plan_v2.seller_page.text].{{/until}} Desde el 24 de octubre de 2026 el plan no aparece en la página de Punto Ticket, tampoco el 6 de noviembre, y ningún texto dice si se cerró [reserve_plan_v2.seller_page.status]. {{until sale}}Aplicaba a General, The Village, Sky Lounge y Diamond Lounge y no se combinaba con el 20% de Banco de Chile [reserve_plan_v2.seller_page.applies_to] [reserve_plan_v2.seller_page.not_combinable].{{/until}} Los términos completos están en los dos PDF del vendedor enlazados arriba, con todas sus fechas de vencimiento ya pasadas [sources.s5] [sources.s6] [reserve_plan_v2.governs_today].",
           },
           {
             q: "¿Qué incluye The Village, Sky Lounge y Diamond Lounge?",
@@ -2096,12 +2292,16 @@ export const guides: Guide[] = [
             a: "Sí. El vendedor lo dice en las condiciones de ingreso: \"Evento para mayores de 18 años\" [age.text]. Para entrar, quienes tienen cédula chilena muestran la cédula o un pasaporte chileno vigente, en original, y el nombre debe coincidir exactamente con el de la entrada [entry.chileans] [entry.originals_only] [entry_v2.name_match].",
           },
           {
+            q: "¿Cómo funciona el cashless de Creamfields 2026?",
+            a: "Dentro del festival se paga solo con la Pulsera Cashless, y la misma pulsera sirve el sábado y el domingo [cashless.text] [cashless.what]. {{until prices}}Se puede precargar online, desde $10.000 y en múltiplos de $5.000, y las precargas de $50.000 o más hechas hasta el jueves 12 de noviembre a las 23:59 suman un bono [cashless.online_preload] [cashless.bonus]. En el festival la pulsera tiene un cargo de activación de $1.000 [cashless.on_site].{{/until}} El detalle está en la sección de ingreso, arriba.",
+          },
+          {
             q: "¿Puedo entrar con pasaporte extranjero?",
             a: "Sí, y es el único documento que vale para extranjeros: pasaporte extranjero vigente, en original, revisado en un punto de verificación exclusivo en el acceso [entry.foreigners] [entry.originals_only]. El evento es para mayores de 18 años [age.min].",
           },
         ],
         sourcesHeading: "Fuentes",
-        sources: "- [Punto Ticket, página oficial de Creamfields Chile 2026, texto, condiciones de ingreso, Banco de Chile y Pulsera Cashless](/go/creamfields-chile-tickets/), leída el 24 de octubre de 2026 [sources.s1]\n- {{until prices}}Las doce tablas de precios, imágenes en la página de Punto Ticket, leídas el 24 de octubre de 2026 [sources.s20]{{/until}}\n- Términos y condiciones del Sistema de Reserva y Abonos, [Weekend Ticket](/go/creamfields-chile-reserva-weekend/) y [Day Ticket](/go/creamfields-chile-reserva-day/), PDF del vendedor, leídos el 22 de octubre de 2026 [sources.s5] [sources.s6]\n- Punto Ticket, \"Anuncio fecha venta de entradas\", comunicado de la organización, leído el 22 de octubre de 2026 [sources.s7]",
+        sources: "- [Punto Ticket, página oficial de Creamfields Chile 2026, texto, condiciones de ingreso, Banco de Chile y Pulsera Cashless](/go/creamfields-chile-tickets/), leída el 6 de noviembre de 2026 [sources.s1]\n- {{until prices}}Las doce tablas de precios, imágenes en la página de Punto Ticket, leídas el 6 de noviembre de 2026 [sources.s20] [prices_v3.readOn]{{/until}}\n- {{until sale}}[Creamfields Chile en Instagram, aviso del 3 de noviembre de 2026 sobre las entradas](/go/creamfields-chile-agotado/), leído el 6 de noviembre de 2026 [sources.s43] [sales_status.readOn]{{/until}}\n- Términos y condiciones del Sistema de Reserva y Abonos, [Weekend Ticket](/go/creamfields-chile-reserva-weekend/) y [Day Ticket](/go/creamfields-chile-reserva-day/), PDF del vendedor, leídos el 22 de octubre de 2026 y sin cambios al 6 de noviembre de 2026 [sources.s5] [sources.s6] [reserve_plan_v2.readOn]\n- Punto Ticket, \"Anuncio fecha venta de entradas\", comunicado de la organización, leído el 6 de noviembre de 2026 [sources.s7]",
         anchors: [
           { target: "/creamfields-chile/line-up/", text: "página del line-up" },
           { target: "/creamfields-chile/", text: "página de Creamfields Chile 2026" },
@@ -2110,48 +2310,63 @@ export const guides: Guide[] = [
       {
         slug: "creamfields-chile/line-up",
         createdAt: "2026-10-22T17:00:00+04:00",
-        updatedAt: "2026-10-24T08:25:00+04:00",
+        updatedAt: "2026-11-06T04:17:00+04:00",
         kind: "lineup",
         label: "Line-up",
-        title: "Creamfields Chile 2026: line-up por día — guía del festival",
-        description: "Line-up de Creamfields Chile 2026 por día y escenario: Calvin Harris, Hardwell, Charlotte de Witte, Fisher y Hugel en el Main Stage. Guía del festival.",
-        h1: "Line-up de Creamfields Chile 2026 por día",
-        lede: "El line-up de Creamfields Chile 2026 llegó el viernes 7 de agosto de 2026, según Meganoticias y 24horas.cl [editions_v2.items.0.in_press.2], y Punto Ticket, la ticketera oficial, lo publica por día y por escenario en una sola imagen; aquí está en texto, leído el 24 de octubre de 2026 [lineup.by_day_source] [sources.s20] [lineup.readOn]. El sábado 14 de noviembre en el Main Stage tocan Hardwell y Boris Brejcha; el domingo 15, Calvin Harris, Charlotte de Witte, Fisher y Hugel [lineup.by_day.0.stages.0.acts] [lineup.by_day.1.stages.0.acts]. Son seis escenarios cada día [lineup.by_day]. Los horarios por artista no están publicados [schedule_v2.set_times].",
+        title: "Creamfields Chile 2026: horarios y line-up del festival",
+        description: "Horarios de Creamfields Chile 2026 por escenario, de 13:00 a 23:00: Hardwell cierra el sábado y Calvin Harris el domingo. Line-up por día. Guía del festival.",
+        h1: "Horarios y line-up de Creamfields Chile 2026",
+        lede: "La organización publicó los horarios de Creamfields Chile 2026 el 5 de noviembre de 2026 en [su cuenta de Instagram](/go/creamfields-chile-horarios/), bajo el título \"SET TIMES CONFIRMADOS\": cada escenario de cada día, con la hora en que empieza y termina cada set [set_times.posted] [set_times.caption] [sources.s41]. Aquí están en texto, leídos el 6 de noviembre de 2026 [set_times.readOn]. Los dos días la música parte a las 13:00 en todos los escenarios y el Main Stage termina a las 23:00: el sábado 14 de noviembre cierra Hardwell, de 21:30 a 23:00, y el domingo 15, Calvin Harris, a la misma hora [set_times.first_set] [set_times.last_set]. La hora de apertura de puertas no está publicada [set_times.doors].",
         sections: [
           {
             id: "sabado",
-            heading: "Sábado 14 de noviembre: seis escenarios",
-            body: "El sábado tiene a Hardwell y Boris Brejcha en el Main Stage y a Don Diablo y Jonas Blue en el A Stage; en Alternative van Warface, Brennan Heart y Virtual Riot, y HE.SHE.THEY trae a AZYR, Charlie Sparks y Clara Cuvé [lineup.by_day.0.stages]. El orden de los nombres es el de la imagen del vendedor; la imagen no indica horarios ni en qué orden tocan [lineup.by_day_source] [schedule_v2.set_times].\n\n- Main Stage: Hardwell, Boris Brejcha, Artist TBC, Morten, LP Giobbi, Aerobica, Carla Valenti [lineup.by_day.0.stages.0.acts]\n- A Stage: Don Diablo, Jonas Blue, Two Friends, MATTN, Bruno Martini, Groovearth, Alexander Robledo, Javica [lineup.by_day.0.stages.1.acts]\n- Alternative: Warface, Brennan Heart, The Straikerz, Mutilator, Bass Modulators, Virtual Riot, STMZ, Rebelnoise, Jokerz [lineup.by_day.0.stages.2.acts]\n- HE.SHE.THEY: AZYR, Cristobal Pesce, Charlie Sparks, Clara Cuvé, Yanamaste, EM11, Superqueer B2B Giullian [lineup.by_day.0.stages.3.acts]\n- Radio Carolina: Gonzalo Vallejo B2B Natalia Pastor, Saulo, Nico Ferrada, Bruno Bona, Turbangirll, Gaby Yavar, Arayko, Osvaldo Solorza [lineup.by_day.0.stages.4.acts]\n- Grieta x Panal Records: Potenciómetro, F600, Fantasna, Bele Cox, Nara Back [lineup.by_day.0.stages.5.acts]\n\nEn el Main Stage el vendedor publica un cupo como \"Artist TBC\", sin nombre [not_found.2].",
+            kind: "table",
+            heading: "Sábado 14 de noviembre: horarios por escenario",
+            body: "El sábado hay seis escenarios: Main Stage, A Stage, Alternative, HE.SHE.THEY, Radio Carolina y Grieta x Panal Records [set_times.by_day.0.stages]. En el Main Stage, Lost Frequencies toca de 18:05 a 19:20, Boris Brejcha de 19:30 a 21:15 y Hardwell de 21:30 a 23:00; en el A Stage cierran Jonas Blue, de 20:00 a 21:30, y Don Diablo, de 21:30 a 23:00 [set_times.by_day.0.stages.0.sets] [set_times.by_day.0.stages.1.sets]. Alternative termina a las 22:00, con Warface, y Radio Carolina a las 21:00 [set_times.by_day.0.stages.2.sets] [set_times.by_day.0.stages.4.sets].\n\nMain Stage [set_times.by_day.0.stages.0.sets]\n\n| Horario | Artista |\n|---|---|\n| 13:00–13:55 | DJ Arloz |\n| 13:55–14:50 | Carla Valenti |\n| 14:50–15:45 | Aerobica |\n| 15:45–16:40 | LP Giobbi |\n| 16:45–18:00 | Morten |\n| 18:05–19:20 | Lost Frequencies |\n| 19:30–21:15 | Boris Brejcha |\n| 21:30–23:00 | Hardwell |\n\nA Stage [set_times.by_day.0.stages.1.sets]\n\n| Horario | Artista |\n|---|---|\n| 13:00–14:00 | Javica |\n| 14:00–15:00 | Alexander Robledo |\n| 15:00–16:00 | Groovearth |\n| 16:00–17:15 | Bruno Martini |\n| 17:15–18:30 | MATTN |\n| 18:30–20:00 | Two Friends |\n| 20:00–21:30 | Jonas Blue |\n| 21:30–23:00 | Don Diablo |\n\nAlternative [set_times.by_day.0.stages.2.sets]\n\n| Horario | Artista |\n|---|---|\n| 13:00–14:00 | Jokerz |\n| 14:00–15:00 | Rebelnoise |\n| 15:00–16:00 | STMZ |\n| 16:00–17:00 | Virtual Riot |\n| 17:00–18:00 | Bass Modulators |\n| 18:00–19:00 | Mutilator |\n| 19:00–20:00 | The Straikerz |\n| 20:00–21:00 | Brennan Heart |\n| 21:00–22:00 | Warface |\n\nHE.SHE.THEY [set_times.by_day.0.stages.3.sets]\n\n| Horario | Artista |\n|---|---|\n| 13:00–14:30 | Superqueer B2B Giullian |\n| 14:30–15:25 | EM11 |\n| 15:30–17:00 | Yanamaste |\n| 17:00–18:30 | Clara Cuvé |\n| 18:30–20:00 | Charlie Sparks |\n| 20:00–21:30 | Cristobal Pesce |\n| 21:30–23:00 | AZYR |\n\nRadio Carolina [set_times.by_day.0.stages.4.sets]\n\n| Horario | Artista |\n|---|---|\n| 13:00–14:00 | Arayko |\n| 14:00–15:00 | Gaby Yavar |\n| 15:00–16:00 | Turbangirll |\n| 16:00–17:00 | Bruno Bona |\n| 17:00–18:00 | Osvaldo Solorza |\n| 18:00–19:00 | Nico Ferrada |\n| 19:00–20:00 | Saulo |\n| 20:00–21:00 | Gonzalo Vallejo B2B Natalia Pastor |\n\nGrieta x Panal Records [set_times.by_day.0.stages.5.sets]\n\n| Horario | Artista |\n|---|---|\n| 13:00–15:00 | Bele Cox |\n| 15:00–16:30 | Nara Back |\n| 16:30–18:00 | Fantasna |\n| 18:00–19:30 | F600 |\n| 19:30–21:30 | Elias Deepman |",
           },
           {
             id: "domingo",
-            heading: "Domingo 15 de noviembre: seis escenarios",
-            body: "El domingo, Calvin Harris, Charlotte de Witte, Fisher y Hugel tocan en el Main Stage; Morten repite, esta vez en el A Stage junto a Loud Luxury y Bassjackers [lineup.by_day.1.stages.0.acts] [lineup.by_day.1.stages.1.acts]. El domingo hay dos escenarios que el sábado no están: Cream, con Faithless Sound System, The Blessed Madonna y Kölsch, y Feral, con Enrico Sangiuliano, Âme Live y Anfisa Letyago [lineup.by_day.1.stages.2.acts] [lineup.by_day.1.stages.3.acts].\n\n- Main Stage: Calvin Harris, Charlotte de Witte, Fisher, Hugel, Innellea, Miss Javi, O-Sessions [lineup.by_day.1.stages.0.acts]\n- A Stage: Morten, Loud Luxury, Bassjackers, Jaden Bojsen, Aaron Hibell, Colayuta, Ania [lineup.by_day.1.stages.1.acts]\n- Cream: Faithless Sound System, The Blessed Madonna, Kölsch, Nic Fanciulli, Sosa, Camilo Gil, Gianni B2B Francisco Martinez, Tweeter [lineup.by_day.1.stages.2.acts]\n- Feral: Yanamaste Live, Delia, Enrico Sangiuliano, Âme Live, Anfisa Letyago, NPLNSSS, Marcelo Antonio [lineup.by_day.1.stages.3.acts]\n- Radio Carolina: Juan Hinrichsen, Luka Kuhnow, Josefina, Fanvel, Alex Brugnara, Urubmara, Syntrovert, ICA DJ [lineup.by_day.1.stages.4.acts]\n- Grieta x Panal Records: Alisú, Dupøuy, Weisser, Elias Deepman, Fuzzler [lineup.by_day.1.stages.5.acts]",
+            kind: "table",
+            heading: "Domingo 15 de noviembre: horarios por escenario",
+            body: "El domingo también hay seis escenarios, con Cream y Feral en lugar de Alternative y HE.SHE.THEY [set_times.by_day.1.stages]. En el Main Stage tocan Hugel de 16:20 a 17:50, Fisher de 18:00 a 19:30, Charlotte de Witte de 19:40 a 21:10 y Calvin Harris de 21:30 a 23:00; la imagen de la organización pone después un cierre, \"SHOW ENDING\", sin hora [set_times.by_day.1.stages.0.sets] [set_times.show_ending]. Morten toca los dos días: el sábado en el Main Stage, de 16:45 a 18:00, y el domingo cierra el A Stage, de 20:00 a 21:30 [set_times.by_day.0.stages.0.sets] [set_times.by_day.1.stages.1.sets]. En Cream, Faithless Sound System toca de 21:00 a 22:00, y Feral cierra con Yanamaste Live, de 21:15 a 22:45 [set_times.by_day.1.stages.2.sets] [set_times.by_day.1.stages.3.sets].\n\nMain Stage [set_times.by_day.1.stages.0.sets]\n\n| Horario | Artista |\n|---|---|\n| 13:00–13:55 | O-Sessions |\n| 13:55–14:55 | Miss Javi |\n| 14:55–16:15 | Innellea |\n| 16:20–17:50 | Hugel |\n| 18:00–19:30 | Fisher |\n| 19:40–21:10 | Charlotte de Witte |\n| 21:30–23:00 | Calvin Harris |\n\nA Stage [set_times.by_day.1.stages.1.sets]\n\n| Horario | Artista |\n|---|---|\n| 13:00–13:50 | Ania |\n| 13:50–14:45 | Colayuta |\n| 14:45–16:00 | Aaron Hibell |\n| 16:00–17:15 | Jaden Bojsen |\n| 17:15–18:30 | Bassjackers |\n| 18:30–20:00 | Loud Luxury |\n| 20:00–21:30 | Morten |\n\nCream [set_times.by_day.1.stages.2.sets]\n\n| Horario | Artista |\n|---|---|\n| 13:00–14:00 | Tweeter |\n| 14:00–15:30 | Gianni B2B Fco Martinez |\n| 15:30–16:30 | Camilo Gil |\n| 16:30–18:00 | Sosa |\n| 18:00–19:30 | Nic Fanciulli |\n| 19:30–20:55 | Kölsch |\n| 21:00–22:00 | Faithless Sound System |\n\nFeral [set_times.by_day.1.stages.3.sets]\n\n| Horario | Artista |\n|---|---|\n| 13:00–14:20 | Marcelo Antonio |\n| 14:20–15:40 | NPLNSSS |\n| 15:40–17:05 | Anfisa Letyago |\n| 17:10–18:10 | Âme Live |\n| 18:10–19:40 | Enrico Sangiuliano |\n| 19:40–21:10 | Delia |\n| 21:15–22:45 | Yanamaste Live |\n\nRadio Carolina [set_times.by_day.1.stages.4.sets]\n\n| Horario | Artista |\n|---|---|\n| 13:00–14:00 | Syntrovert |\n| 14:00–15:00 | Urubmara |\n| 15:00–16:00 | Alex Brugnara |\n| 16:00–17:00 | Fanvel |\n| 17:00–18:00 | ICA DJ |\n| 18:00–19:00 | Josefina |\n| 19:00–20:00 | Luka Kuhnow |\n| 20:00–21:00 | Juan Hinrichsen |\n\nGrieta x Panal Records [set_times.by_day.1.stages.5.sets]\n\n| Horario | Artista |\n|---|---|\n| 13:00–15:00 | Dupøuy |\n| 15:00–16:30 | Weisser |\n| 16:30–18:00 | Alisú |\n| 18:00–20:00 | Fuzzler |\n| 20:00–21:30 | Potenciómetro |",
           },
           {
-            id: "horarios",
-            heading: "Horarios",
-            body: "Al 24 de octubre de 2026 la organización ha publicado el día y el escenario de cada artista, pero no la hora de cada set ni la hora de apertura de puertas [schedule_v2.set_times] [schedule_v2.doors]. En 2025 el line-up por día se publicó el 4 de agosto, según Meganoticias [editions_v2.items.1.day_split_in_press] [sources.s23]. {{until prices}}Lo que sí está decidido: el Weekend Ticket cubre los dos días, y el Day Ticket es solo para el sábado o solo para el domingo [tickets.formats]; si vas por un artista, su día está en las listas de arriba, y los precios del Day Ticket de ese día están en la página de entradas. → /creamfields-chile/entradas/ {{/until}}Fechas y lugar están en la página de Creamfields Chile 2026. → /creamfields-chile/",
+            id: "cambios",
+            heading: "Qué cambió respecto del line-up",
+            body: "Punto Ticket, la ticketera oficial, publica el line-up por día y escenario en una imagen, y la versión que muestra hoy es del 30 de octubre de 2026 [lineup_v3.last_modified] [sources.s20]. Respecto de la anterior, en el Main Stage del sábado el cupo que decía \"Artist TBC\" es ahora Lost Frequencies, y The Blessed Madonna ya no aparece en el escenario Cream del domingo [lineup_v3.changes]. Los horarios de la organización, del 5 de noviembre, se apartan de esa imagen en dos puntos: suman a DJ Arloz, que abre el Main Stage del sábado de 13:00 a 13:55, y cambian de día a dos artistas de Grieta x Panal Records, con Elias Deepman el sábado, de 19:30 a 21:30, y Potenciómetro el domingo, de 20:00 a 21:30 [set_times.against_image.added] [set_times.against_image.swapped]. Esta página sigue los horarios de la organización, que son lo último que ha publicado [set_times.against_image.rule].\n\n{{until sale}}El 3 de noviembre de 2026 la organización anunció en [Instagram](/go/creamfields-chile-agotado/) el Weekend Ticket y el domingo agotados, y que quedaban 1.000 Day Ticket del sábado [sales_status.text] [sources.s43]. Lo que vende Punto Ticket, con sus precios, está en la página de entradas. → /creamfields-chile/entradas/{{/until}}",
+          },
+          {
+            id: "estacionamiento",
+            heading: "Estacionamiento y transporte de vuelta",
+            body: "El único estacionamiento que menciona Punto Ticket es un beneficio del Diamond Lounge: \"un estacionamiento para el titular de la compra\" [parking.diamond_lounge]. Para los demás tickets, al 6 de noviembre de 2026 ni el vendedor ni la organización dicen si hay estacionamiento ni dónde estacionar [parking.general] [parking.readOn].\n\nPara la vuelta, el antecedente es la edición de 2024, también en el Club Hípico: ese año [Red Movilidad](/go/creamfields-chile-red-2024/), el sistema de transporte público de Santiago, anunció refuerzos entre las 23:00 y las 00:30 en los recorridos 119x hacia Lo Espejo, 121x hacia Mapocho y 506 hacia Peñalolén y Maipú, y la estación República, de la línea 1 del Metro, abierta para entrar hasta las 00:30 [transport_2024.for] [transport_2024.buses] [transport_2024.metro] [sources.s42]. Al 6 de noviembre de 2026 Red Movilidad no ha publicado un aviso para esta edición [transport_2024.status_2026]. La dirección del club y cómo llegar están en la página de Creamfields Chile 2026. → /creamfields-chile/",
           },
           {
             id: "escenarios",
             heading: "Los escenarios",
-            body: "Cuatro escenarios repiten nombre los dos días: Main Stage, A Stage, Radio Carolina y Grieta x Panal Records; el sábado se suman Alternative y HE.SHE.THEY, y el domingo, Cream y Feral [lineup.by_day.0.stages] [lineup.by_day.1.stages]. El Main Stage es el que el vendedor nombra en su página [lineup.stages.0]: el PIT exclusivo de The Village está frente a él, la estructura en altura del Sky Lounge tiene vista hacia él y el Diamond Lounge incluye una visita a su backstage [tickets.includes.village] [tickets.includes.sky_lounge] [tickets.includes.diamond_lounge]. Para 2026 la organización anuncia en su página oficial en Punto Ticket, en la noticia \"Creamfields Chile crece\", una zona nueva de 5.000 m² que \"incluirá un anfiteatro con capacidad para 3.000 personas sentadas y 5.000 de pie\", donde va uno de los escenarios principales [lineup.stages.1] [labels_v2.s15_quote] [sources.s15]. Según Meganoticias y 24horas.cl, el cartel reúne 85 artistas, 39 internacionales y 46 nacionales [lineup_size_v2].",
+            body: "Cuatro escenarios repiten nombre los dos días: Main Stage, A Stage, Radio Carolina y Grieta x Panal Records; el sábado se suman Alternative y HE.SHE.THEY, y el domingo, Cream y Feral [set_times.by_day.0.stages] [set_times.by_day.1.stages]. El Main Stage es el que el vendedor nombra en su página [lineup.stages.0]: el PIT exclusivo de The Village está frente a él, la estructura en altura del Sky Lounge tiene vista hacia él y el Diamond Lounge incluye una visita a su backstage [tickets.includes.village] [tickets.includes.sky_lounge] [tickets.includes.diamond_lounge]. Para 2026 la organización anuncia en su página oficial en Punto Ticket, en la noticia \"Creamfields Chile crece\", una zona nueva de 5.000 m² que \"incluirá un anfiteatro con capacidad para 3.000 personas sentadas y 5.000 de pie\", donde va uno de los escenarios principales [lineup.stages.1] [labels_v2.s15_quote] [sources.s15]. Según Meganoticias y 24horas.cl, el cartel reúne 85 artistas, 39 internacionales y 46 nacionales [lineup_size_v2].",
           },
         ],
         faqHeading: "Preguntas frecuentes",
         faq: [
           {
-            q: "¿Cuál es el line-up por día de Creamfields 2026?",
-            a: "El sábado 14 de noviembre, en el Main Stage, Hardwell, Boris Brejcha, Morten, LP Giobbi, Aerobica y Carla Valenti, más un cupo que el vendedor publica como \"Artist TBC\" [lineup.by_day.0.stages.0.acts]; el domingo 15, Calvin Harris, Charlotte de Witte, Fisher, Hugel, Innellea, Miss Javi y O-Sessions [lineup.by_day.1.stages.0.acts]. Los seis escenarios de cada día, con todos sus nombres, están arriba, según la imagen de Punto Ticket leída el 24 de octubre de 2026 [sources.s20] [lineup.readOn].",
+            q: "¿Cuál es el horario de Creamfields 2026?",
+            a: "La organización publicó los horarios el 5 de noviembre de 2026: los dos días la música empieza a las 13:00 en todos los escenarios y el Main Stage termina a las 23:00 [set_times.posted] [set_times.first_set] [set_times.last_set]. La hora de apertura de puertas no está publicada [set_times.doors]. Dato leído el 6 de noviembre de 2026 en la cuenta de Instagram de la organización [set_times.readOn] [sources.s41].",
           },
           {
-            q: "¿Cuál es el horario de Creamfields 2026?",
-            a: "Al 24 de octubre de 2026 no hay horarios publicados: la organización ha dado el día y el escenario de cada artista, no la hora de cada set ni la apertura de puertas [schedule_v2.set_times] [schedule_v2.doors]. En 2025 el line-up por día salió el 4 de agosto, según Meganoticias [editions_v2.items.1.day_split_in_press].",
+            q: "¿A qué hora tocan Hardwell y Calvin Harris en Creamfields 2026?",
+            a: "Hardwell cierra el Main Stage el sábado 14 de noviembre, de 21:30 a 23:00, después de Boris Brejcha, de 19:30 a 21:15 [set_times.by_day.0.stages.0.sets]. Calvin Harris lo cierra el domingo 15, también de 21:30 a 23:00, después de Fisher, de 18:00 a 19:30, y de Charlotte de Witte, de 19:40 a 21:10 [set_times.by_day.1.stages.0.sets]. Son los horarios de la organización, leídos el 6 de noviembre de 2026 [set_times.readOn].",
+          },
+          {
+            q: "¿Cuál es el line-up por día de Creamfields 2026?",
+            a: "En el Main Stage del sábado 14 tocan, en este orden, DJ Arloz, Carla Valenti, Aerobica, LP Giobbi, Morten, Lost Frequencies, Boris Brejcha y Hardwell [set_times.by_day.0.stages.0.sets]; en el del domingo 15, O-Sessions, Miss Javi, Innellea, Hugel, Fisher, Charlotte de Witte y Calvin Harris [set_times.by_day.1.stages.0.sets]. Los seis escenarios de cada día, con todos sus horarios, están arriba.",
+          },
+          {
+            q: "¿Cómo volver de Creamfields 2026 en transporte público?",
+            a: "El Main Stage termina a las 23:00 los dos días [set_times.last_set]. Para la edición de 2024, también en el Club Hípico, Red Movilidad reforzó entre las 23:00 y las 00:30 los recorridos 119x, 121x y 506, y dejó abierta para entrar hasta las 00:30 la estación República, de la línea 1 del Metro [transport_2024.buses] [transport_2024.metro]. Para esta edición no había publicado un aviso al 6 de noviembre de 2026 [transport_2024.status_2026] [transport_2024.readOn]. El único estacionamiento que publica Punto Ticket es el del Diamond Lounge [parking.diamond_lounge].",
           },
         ],
         sourcesHeading: "Fuentes",
-        sources: "- [Line-up por día y escenario, imagen en la página de Punto Ticket](/go/creamfields-chile-tickets/), leída el 24 de octubre de 2026; sin horarios en la página ni en la imagen al 24 de octubre de 2026 [sources.s20] [schedule_v2]\n- Punto Ticket, página oficial de Creamfields Chile 2026 (Main Stage nombrado en el texto), leída el 24 de octubre de 2026 [sources.s1]\n- Punto Ticket, \"Creamfields Chile crece: Suma una nueva zona de 5.000 m² y estrena anfiteatro en Club Hípico\", leído el 22 de octubre de 2026 [sources.s15]\n- Prensa, citada en el texto: Meganoticias y 24horas.cl, 7 de agosto de 2026 [sources.s12] [sources.s13]; Meganoticias, 4 de agosto de 2025 [sources.s23]",
+        sources: "- [Creamfields Chile en Instagram, \"SET TIMES CONFIRMADOS\", horarios por día y escenario](/go/creamfields-chile-horarios/), publicado el 5 de noviembre de 2026 y leído el 6 de noviembre de 2026 [sources.s41] [set_times.readOn]\n- [Creamfields Chile en Instagram, aviso del 3 de noviembre de 2026 sobre las entradas](/go/creamfields-chile-agotado/), leído el 6 de noviembre de 2026 [sources.s43] [sales_status.readOn]\n- [Punto Ticket, página oficial de Creamfields Chile 2026](/go/creamfields-chile-tickets/): el Main Stage nombrado en el texto, el estacionamiento del Diamond Lounge y la imagen del line-up por día en su versión del 30 de octubre de 2026, leída el 6 de noviembre de 2026 [sources.s1] [sources.s20] [lineup_v3] [parking.readOn]\n- [Red Movilidad, \"Red Movilidad refuerza recorridos para Creamfields en el Club Hípico\"](/go/creamfields-chile-red-2024/), 14 de noviembre de 2024, leído el 6 de noviembre de 2026 [sources.s42] [transport_2024.readOn]\n- Punto Ticket, \"Creamfields Chile crece: Suma una nueva zona de 5.000 m² y estrena anfiteatro en Club Hípico\", leído el 6 de noviembre de 2026 [sources.s15] [labels_v2.readOn]\n- Prensa, citada en el texto: Meganoticias y 24horas.cl, 7 de agosto de 2026 [sources.s12] [sources.s13] [lineup_size_v2.readOn]",
         anchors: [
           { target: "/creamfields-chile/entradas/", text: "página de entradas" },
           { target: "/creamfields-chile/", text: "página de Creamfields Chile 2026" },
