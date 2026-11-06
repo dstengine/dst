@@ -18,8 +18,10 @@
 // gate-3 condition 5). Both are a thumb's target on a phone, inline, since
 // the hop has no stylesheet (the fest director's gate-3 condition 7).
 // Every other hop, a language with no hop row (en, es) among them, is
-// Redirect's English page, byte for byte as before.
+// Redirect's English page, byte for byte as before but for a box office's
+// UTM tags.
 import Redirect from "@dst/ui/Redirect.astro";
+import { isTicketHop, tagTicketUrl } from "@dst/ui/utm";
 import { outbound } from "../../outbound";
 import { events, guides } from "../../data/events/index";
 import { mainPage } from "../../rules";
@@ -29,11 +31,21 @@ import { chrome, langOf } from "../../site.config";
 export function getStaticPaths() {
   return Object.entries(outbound).map(([slug, hop]) => ({
     params: { slug },
-    props: { to: hop.url, event: hop.event, titleLang: hop.titleLang },
+    props: { to: hop.url, event: hop.event, titleLang: hop.titleLang, kind: hop.kind },
   }));
 }
 
-const { to, event, titleLang } = Astro.props;
+const { to: target, event, titleLang, kind } = Astro.props;
+// A hop to a box office leaves with UTM tags, so the seller sees the guide
+// that sent the buyer (@dst/ui/utm). That is a seller or the official
+// resale by its kind, whatever its slug (Igloofest's `-shop`), and an
+// organiser's own ticket page by its slug, in the guides' languages too
+// (UNTOLD Dubai's `-tickets`, Igloofest's `-billets`).
+// The tagged URL is passed on as `to`, so Redirect's refresh, script and
+// link and this page's own link all carry the same one.
+const TICKETS = /(?:^|-)(?:billets|boletos|ingressos|entradas)(?:-|$)/;
+const ticket = kind === "seller" || kind === "resale" || isTicketHop(Astro.params.slug) || TICKETS.test(Astro.params.slug ?? "");
+const to = ticket ? tagTicketUrl(target, { campaign: Astro.params.slug, host: Astro.site?.hostname }) : target;
 const guide = guides.find((g) => g.event === event && g.lang === titleLang && chrome[langOf(g.lang)].hop);
 const words = guide ? chrome[langOf(guide.lang)].hop : undefined;
 const name = events.find((e) => e.slug === event)?.name ?? event;
@@ -41,12 +53,12 @@ const name = events.find((e) => e.slug === event)?.name ?? event;
 // expressions ("pourigloofest.ca", the first build).
 // A maps search is named by its service, not its host (« … pour Google
 // Maps. »: the fr-CA native reader's swap 1 on the executor's strings).
-const host = to.startsWith("https://www.google.com/maps/") ? "Google Maps" : new URL(to).host.replace(/^www\./, "");
+const host = target.startsWith("https://www.google.com/maps/") ? "Google Maps" : new URL(target).host.replace(/^www\./, "");
 const back = guide ? { href: guide.path, title: withoutSuffix(mainPage(guide).title) } : undefined;
 const tap = "display:inline-block;min-height:44px;line-height:44px";
 ---
 {guide && words && back ? (
-  <Redirect to={to} lang={guide.lang} title={`${words.title} ${name}`}><p>{`${words.leaving} ${host}.`}</p><p><a href={to} rel="nofollow noopener external" title={host} style={tap}>{words.go}</a> · <a href={back.href} title={back.title} style={tap}>{words.back}</a></p></Redirect>
+  <Redirect to={to} ticket={false} lang={guide.lang} title={`${words.title} ${name}`}><p>{`${words.leaving} ${host}.`}</p><p><a href={to} rel="nofollow noopener external" title={host} style={tap}>{words.go}</a> · <a href={back.href} title={back.title} style={tap}>{words.back}</a></p></Redirect>
 ) : (
-  <Redirect to={to} />
+  <Redirect to={to} ticket={false} />
 )}

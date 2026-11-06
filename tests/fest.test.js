@@ -1809,7 +1809,9 @@ describe("a French guide's built pages", { skip: built ? false : "apps/fest/dist
         assert.ok(!/@|^mailto:/.test(a.href ?? ""), `${p}: a link to ${a.href}`);
         if (/billets\.igloofest\.ca/.test(a.href ?? "")) linking.push([p, a.href.replace(/&amp;/g, "&"), /nofollow/.test(a.rel)]);
       }
-    assert.deepEqual(linking, [["/go/igloofest-shop/", shop, true]]);
+    // The hop leaves with the UTM tags every box office's hop carries (@dst/ui/utm).
+    const tagged = `${shop}${shop.includes("?") ? "&" : "?"}utm_source=fest.one&utm_medium=referral&utm_campaign=igloofest-shop`;
+    assert.deepEqual(linking, [["/go/igloofest-shop/", tagged, true]]);
     assert.match(html.get("/go/igloofest-shop/"), /<meta name="robots" content="noindex, ?nofollow"/);
   });
 

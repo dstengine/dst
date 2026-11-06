@@ -59,6 +59,7 @@
     "./Breadcrumbs.astro": "./src/components/Breadcrumbs.astro",
     "./MapEmbed.astro": "./src/components/MapEmbed.astro",
     "./maps": "./src/maps.ts",
+    "./utm": "./src/utm.ts",
     "./OnThisPage.astro": "./src/components/OnThisPage.astro",
     "./labels": "./src/labels.ts",
     "./VenueCards.astro": "./src/components/VenueCards.astro",

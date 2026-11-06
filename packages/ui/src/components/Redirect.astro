@@ -16,15 +16,27 @@
 // it is, since rel="nofollow noopener external" is what
 // tests/outbound-links.test.js holds every hop to. The slot hugs its
 // paragraph: whitespace around it would print into every hop's bytes.
+//
+// A hop to a box office leaves with UTM tags (../utm.ts), so the seller
+// sees which site and event sent the buyer. Which hops those are is read
+// off the slug unless the page says: `ticket` overrides it, and a page that
+// writes its own slot tags its own link with tagTicketUrl and passes the
+// tagged `to` (fest's hops, which know their kind).
+import { isTicketHop, tagTicketUrl } from "../utm";
+
 interface Props {
   to: string;
   /** `<html lang>`. Defaults to "en". */
   lang?: string;
   /** The tab's title while the hop runs. Defaults to "Redirecting". */
   title?: string;
+  /** Whether the hop leads to a box office. Defaults to its slug's shape. */
+  ticket?: boolean;
 }
 
-const { to, lang = "en", title = "Redirecting" } = Astro.props;
+const { to: target, lang = "en", title = "Redirecting", ticket } = Astro.props;
+const slug = Astro.params.slug;
+const to = (ticket ?? isTicketHop(slug)) ? tagTicketUrl(target, { campaign: slug, host: Astro.site?.hostname }) : target;
 ---
 <!doctype html>
 <html lang={lang}>
