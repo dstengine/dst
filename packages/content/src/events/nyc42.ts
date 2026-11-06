@@ -4415,4 +4415,97 @@ export const items: EventItem[] = [
     expertise:
       "Don't go to the Garden on the 31st without a ticket in hand: Phish says released seats never reach the box office, so the arena is the worst place to look for one, and the street outside is where the counterfeits are. Check Ticketmaster and Live Nation through the day instead. With a ticket, take the subway to 34 St–Penn Station and come up inside the building. Midtown traffic is heavy on New Year's Eve, and the Times Square closures start about ten blocks north.",
   },
+  {
+    slug: "union-square-holiday-market-2026",
+    createdAt: "2026-11-06T04:00:00+04:00",
+    updatedAt: "2026-11-06T04:00:00+04:00",
+    site: "nyc42",
+    image: "/covers/union-square-holiday-market-2026.jpg",
+    imageAlt:
+      "Rows of small red-and-white paper market stalls strung with warm lights under bare trees, a bronze horse-and-rider statue and a tall clock building behind them, on a deep green ground",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Union Square Holiday Market 2026",
+    cardTitle: "Union Square Holiday Market",
+    titleSeo: "Union Square Holiday Market 2026, New York: hours",
+    summary:
+      "New York's Union Square Holiday Market runs from Thursday, November 12 to Thursday, December 24, 2026: nearly 200 vendors of gifts by local makers, artists and small brands, open from 10 or 11am to 8 or 9pm by day of the week.",
+    start: "2026-11-12",
+    end: "2026-12-24",
+    utcOffset: "-05:00",
+    venue: "Union Square Park",
+    city: "New York",
+    country: "United States",
+    geo: {
+      name: "Union Square Park",
+      lat: 40.7359,
+      lng: -73.9911,
+    },
+    organizer: "Urbanspace Markets",
+    category: "Christmas",
+    ticket: {
+      url: "https://urbanspacemarkets.com/pages/union-square",
+      label: "Urbanspace: the Union Square market page",
+      sells: false,
+    },
+    source: {
+      name: "Urbanspace Markets",
+      url: "https://urbanspacemarkets.com/pages/union-square",
+      verifiedOn: "2026-11-06",
+    },
+    body: [
+      "The downtown holiday market opens a week from today. Urbanspace sets up the <strong>Union Square Holiday Market</strong> in the park from <strong>Thursday, November 12</strong> to <strong>Thursday, December 24, 2026</strong>: six weeks of stalls with <strong>nearly 200 vendors</strong>, selling gifts made by local craftspeople, artists and entrepreneurs. Urbanspace notes it was named the best holiday market in America in 2023.",
+      "## Hours by day",
+      "The hours change across the week, and the late nights are Thursday and Friday: <strong>Sunday to Wednesday 11am to 8pm</strong>, <strong>Thursday and Friday 11am to 9pm</strong>, <strong>Saturday 10am to 9pm</strong>. Saturday is the only day it opens at 10.",
+      "## Getting there",
+      "The market is in the heart of Union Square, with the <strong>4, 5, 6, L, N, Q, R and W</strong> trains all stopping at Union Square. Urbanspace sells no tickets for it and lists no entry fee: you walk in from the park, and you pay the vendors for what you buy.",
+      "## The other Urbanspace markets this season",
+      "Union Square is one of four. The Holiday Shops in <a href=\"/events/bryant-park-winter-village-2026/\" title=\"Bryant Park Winter Village 2026: free skating\">Bryant Park</a> opened on <strong>October 28</strong> and run to <strong>January 3, 2027</strong>, Monday to Friday 11am to 8pm and weekends 10am to 8pm.",
+      "The <strong>Columbus Circle Holiday Market</strong>, in the heart of Columbus Circle, runs <strong>December 1 to 31, 2026</strong>: Monday to Thursday 11am to 7pm, Friday to Sunday 10am to 8pm, with the 1, A, B, C and D trains at Columbus Circle.",
+      "The <strong>Herald Holiday Market</strong>, which Urbanspace bills as Macy's Holiday Square Outdoor Market, is new: it stretches along Broadway from 32nd to 36th Street, <strong>December 3, 2026 to January 2, 2027</strong>, Monday to Saturday 11am to 8pm and Sunday 11am to 7pm, near the B, D, F, M, N, Q, R and W, and the 1, 2 and 3 trains.",
+      "## Pairing it with the season",
+      "Union Square opens before the city lights its big tree: the <a href=\"/events/rockefeller-center-christmas-tree-lighting-2026/\" title=\"Rockefeller Center Tree Lighting: Dec 2, 2026\">Rockefeller Center tree</a> is lit on December 2, and only from December 3 are all four Urbanspace markets open at once, until Union Square closes on Christmas Eve.",
+    ],
+    faq: [
+      {
+        q: "When is the Union Square Holiday Market 2026?",
+        a: "From Thursday, November 12 to Thursday, December 24, 2026, in Union Square Park.",
+      },
+      {
+        q: "What are the Union Square Holiday Market hours?",
+        a: "Sunday to Wednesday 11am to 8pm, Thursday and Friday 11am to 9pm, Saturday 10am to 9pm, according to Urbanspace.",
+      },
+      {
+        q: "How many vendors are there?",
+        a: "Urbanspace says nearly 200, with gifts made by local craftspeople, artists and entrepreneurs.",
+      },
+      {
+        q: "Which subway goes to the Union Square Holiday Market?",
+        a: "The 4, 5, 6, L, N, Q, R and W trains, all of which stop at Union Square.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/bryant-park-winter-village-2026/",
+        eyebrow: "October 28 – February 28",
+        title: "Winter Village at Bryant Park",
+        text: "The midtown market with free skating beside it; its Holiday Shops stay open to January 3.",
+      },
+      {
+        href: "/events/rockefeller-center-christmas-tree-lighting-2026/",
+        eyebrow: "December 2",
+        title: "Rockefeller Center Tree Lighting",
+        text: "The tree is lit three weeks after the Union Square stalls open.",
+      },
+      {
+        href: "/events/nybg-holiday-train-show-2026/",
+        eyebrow: "November 14 – January 10",
+        title: "NYBG Holiday Train Show",
+        text: "Model trains past New York landmarks built from pinecones and palm fronds, two days after Union Square opens.",
+      },
+    ],
+    expertise:
+      "Go in the first two weeks if you want to shop rather than queue: from November 12 to Thanksgiving week the market is open while the December crowds are still to come. In December, a weekday at the 11am opening is the time to aim for, and a Thursday or Friday evening gives you the extra hour to 9pm. If you only have one December weekend, Saturday is the day to pick, since it opens at 10am, an hour before any other day. Keep Union Square for the gifts made by local makers, and leave Bryant Park and Columbus Circle for when the skating or the park is the point.",
+  },
 ];
