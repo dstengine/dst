@@ -14,7 +14,7 @@
 //
 // The borough is the other interesting geography here and the data does not
 // carry it yet — when it does, this is where it goes.
-import { buildSections, promotedFirst, type Section, type Vocabulary } from "@dst/content/sections";
+import { buildSections, promotedFirst, type Intent, type Section, type Vocabulary } from "@dst/content/sections";
 import type { FeedItem } from "@dst/content/sections";
 import { isFree } from "@dst/content/admission";
 import { eventsBySite } from "@dst/content/events";
@@ -69,8 +69,23 @@ const TAGS: Record<string, Vocabulary> = {
 // lands on it is `tickets.priceFrom: 0`, recorded where the organizer says
 // admission costs nothing, and nothing else. Four entries clear it; the zoo
 // at Halloween says "free with zoo admission", which is a paid ticket.
-const INTENTS = [
+//
+// /ice-skating/ is a tag in the data and not a category, because the
+// question "where can I skate in New York" crosses the filing: the rinks
+// that are a season of skating and nothing else are filed under "Ice
+// skating", but the rink at Bryant Park is one part of the Winter Village
+// and stays under Christmas with the Holiday Shops it sits among. A
+// category section would lose it, and Bryant Park is the free rink people
+// come to the page for. "Ice skating" therefore has no row in TAGS — its
+// own page would take the same address first and leave Bryant Park off
+// it — and a rink's category chip is plain text. ldn is the other way
+// round: all four of its rinks are filed under Christmas, so their chips
+// link to that section, and only the tag gathers them.
+const tagged = (tag: string) => (item: FeedItem) => item.tags?.includes(tag) ?? false;
+
+const INTENTS: Intent<FeedItem>[] = [
   { slug: "free", label: "Free", match: isFree },
+  { slug: "ice-skating", label: "Ice skating", match: tagged("ice-skating") },
 ];
 
 export const NAV = {
@@ -87,7 +102,26 @@ export function sections(items: FeedItem[]): Section[] {
     intents: INTENTS,
     placeOf: (i) => (NEW_YORK.has(i.city ?? "") ? undefined : i.country ?? i.city),
     copy: (g) => {
-      if (g.kind === "intent") {
+      // A rink with no end date yet is in the lede by name and not on the
+      // page as an entry: a season recorded without its `end` would show
+      // as a single day. LeFrak Center at Lakeside is the one waiting on
+      // that, and Brookfield Place has given only a month.
+      if (g.kind === "intent" && g.key === "ice-skating") {
+        return {
+          title: "Ice skating in New York 2026/27: rinks, prices, hours",
+          description:
+            "Ice skating in New York 2026/27: Rockefeller Center to March 27, Wollman to March 16, free at Bryant Park to February 28 — dates, hours and posted prices.",
+          h1: "Ice skating in New York",
+          lede: "Eight New York rinks and their 2026/27 seasons, from Rockefeller Center to Roebling Rink under the Brooklyn Bridge, with their dates and hours, and admission prices for all but Domino Park, which has not posted them yet; at Bryant Park admission is free. LeFrak Center in Prospect Park opened on October 31 with no end date yet, and Brookfield Place says only November.",
+          headings: {
+            events: "Where to skate in New York",
+            upcoming: "Opening soon",
+            past: "Already gone",
+            news: "Ice skating news",
+          },
+        };
+      }
+      if (g.kind === "intent" && g.key === "free") {
         return {
           title: "Free things to do in New York",
           description:
