@@ -518,7 +518,7 @@ export const items: EventItem[] = [
   {
     slug: "vienna-halloween-run-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-11-04T02:40:00+01:00",
+    updatedAt: "2026-11-06T02:35:00+01:00",
     site: "vien",
     image: "/covers/vienna-halloween-run-2026.jpg",
     imageAlt: "Eine helle Laufbahn, die in die Bildmitte führt, gesäumt von Bäumen mit rotem Herbstlaub",
@@ -586,6 +586,12 @@ export const items: EventItem[] = [
     ],
     related: [
       {
+        href: "/veranstaltungen/vienna-vintage-photo-fair-westlicht-2026/",
+        eyebrow: "13. Dezember, WestLicht",
+        title: "Vienna Vintage Photo Fair 2026",
+        text: "Ein Wintersonntag drinnen: über 20 Händler mit Originalfotografien aus drei Jahrhunderten, 11 bis 18 Uhr, Eintritt frei.",
+      },
+      {
         href: "/veranstaltungen/move-for-health-movemberlauf-wien-2026/",
         eyebrow: "14. November, Otto-Wagner-Areal",
         title: "Move for Health 2026 (Movemberlauf)",
@@ -635,7 +641,7 @@ export const items: EventItem[] = [
   {
     slug: "kuerbisfest-am-himmel-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-11-04T02:40:00+01:00",
+    updatedAt: "2026-11-06T02:35:00+01:00",
     site: "vien",
     image: "/covers/kuerbisfest-am-himmel-2026.jpg",
     imageAlt: "Ein breiter Haufen runder Papierscheiben in Rot, Grün, Ocker und Creme, in vielen verschiedenen Größen",
@@ -699,6 +705,12 @@ export const items: EventItem[] = [
       },
     ],
     related: [
+      {
+        href: "/veranstaltungen/vienna-vintage-photo-fair-westlicht-2026/",
+        eyebrow: "13. Dezember, WestLicht",
+        title: "Vienna Vintage Photo Fair 2026",
+        text: "Im Advent ein Sonntag für Fotografie: Originalabzüge aus drei Jahrhunderten im WestLicht, 11 bis 18 Uhr, Eintritt frei.",
+      },
       {
         href: "/veranstaltungen/move-for-health-movemberlauf-wien-2026/",
         eyebrow: "14. November, Otto-Wagner-Areal",
@@ -2053,7 +2065,7 @@ export const items: EventItem[] = [
   {
     slug: "art-advent-karlsplatz-2026",
     createdAt: "2026-10-24T16:00:00+04:00",
-    updatedAt: "2026-11-05T20:43:04.000Z",
+    updatedAt: "2026-11-06T02:35:00+01:00",
     site: "vien",
     image: "/covers/art-advent-karlsplatz-2026.jpg",
     imageAlt:
@@ -2115,6 +2127,12 @@ export const items: EventItem[] = [
       },
     ],
     related: [
+      {
+        href: "/veranstaltungen/vienna-vintage-photo-fair-westlicht-2026/",
+        eyebrow: "13. Dezember, WestLicht",
+        title: "Vienna Vintage Photo Fair 2026",
+        text: "Noch ein Markt für Geschenke, die es nur einmal gibt: Originalfotografien aus drei Jahrhunderten, 11 bis 18 Uhr, Eintritt frei.",
+      },
       {
         href: "/veranstaltungen/silvesterkonzert-wiener-philharmoniker-2026/",
         eyebrow: "31. Dezember, Musikverein",
@@ -3004,6 +3022,93 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Der Name täuscht ein wenig: Ein Rundkurs am Steinhof ist kein flacher Stadtlauf. Das Areal liegt am Hang, und die Runde führt hinauf zur Kirche — wer auf der Hauptallee 5 Kilometer in einer bestimmten Zeit läuft, sollte hier ein paar Minuten mehr einplanen und die zweite Runde nicht zu schnell angehen. Mitte November ist es um zehn Uhr vormittags oft noch kühl und am Wienerwaldrand gern feucht; eine Schicht zum Ausziehen und trockene Sachen für nach dem Ziel sind die bessere Wahl als die Laufhose vom Sommer. Und weil Hunde am ganzen Gelände verboten sind, bleibt der Vierbeiner diesmal daheim.",
+  },
+  {
+    slug: "vienna-vintage-photo-fair-westlicht-2026",
+    createdAt: "2026-11-06T02:35:00+01:00",
+    updatedAt: "2026-11-06T02:35:00+01:00",
+    site: "vien",
+    title: "Vienna Vintage Photo Fair 2026: die X-Mas Edition im WestLicht",
+    cardTitle: "Vienna Vintage Photo Fair (X-Mas Edition)",
+    titleSeo: "Vienna Vintage Photo Fair: WestLicht, Dezember 2026",
+    summary:
+      "Die Vienna Vintage Photo Fair ist am Sonntag, 13. Dezember 2026, von 11 bis 18 Uhr im WestLicht in Wien, Westbahnstraße 40: Über 20 Händler, Sammler und Fotoexperten verkaufen Originalfotografien aus drei Jahrhunderten, von der Daguerreotypie bis zum Schnappschuss. Der Eintritt ist frei.",
+    start: "2026-12-13",
+    startTime: "11:00",
+    endTime: "18:00",
+    utcOffset: "+01:00",
+    venue: "WestLicht, Westbahnstraße 40",
+    city: "Wien",
+    organizer: "Vienna Vintage Photo Fair",
+    category: "Messe",
+    tickets: { priceFrom: 0, currency: "EUR" },
+    ticket: {
+      url: "https://photofairwien.com/",
+      label: "Vienna Vintage Photo Fair",
+      sells: false,
+    },
+    source: {
+      name: "Vienna Vintage Photo Fair",
+      url: "https://photofairwien.com/",
+      verifiedOn: "2026-11-06",
+    },
+    body: [
+      "Einmal im Jahr wird das <strong>WestLicht</strong>, der Schauplatz für Fotografie in der Westbahnstraße, für einen Tag zum Markt: Die <strong>Vienna Vintage Photo Fair X-Mas Edition</strong> ist am <strong>Sonntag, 13. Dezember 2026</strong>, von <strong>11 bis 18 Uhr</strong>, und der Eintritt ist <strong>frei</strong>. Es ist die dritte Weihnachtsausgabe der Messe im WestLicht.",
+      "## Was es zu kaufen gibt",
+      "Angeboten werden <strong>Originalfotografien aus drei Jahrhunderten</strong>: Daguerreotypien und Albuminabzüge aus dem 19. Jahrhundert, Kunstfotografie und Alltagsbilder bis zu den Schnappschüssen der Jahrtausendwende. Viele Stücke sind Unikate oder wurden nur in sehr kleiner Auflage abgezogen. Der Veranstalter verspricht dafür ausdrücklich erschwingliche Preise — eine Messe also nicht nur für Sammler, sondern auch für alle, die ein Weihnachtsgeschenk suchen, das es kein zweites Mal gibt.",
+      "## Wer ausstellt",
+      "Mehr als <strong>20 Händler, Sammler und Fotografie-Experten</strong> aus Österreich und anderen europäischen Ländern stellen aus. Eine Ausstellerliste steht auf der Seite des Veranstalters; ob sie schon die Dezemberausgabe meint, sagt sie nicht. Mit über 1.200 Besucherinnen und Besuchern zählt die Weihnachtsausgabe nach eigenen Angaben zu den wichtigsten Treffpunkten für historische Fotografie in Europa; mitgetragen wird sie von <strong>Vintage Photo Fairs Europe</strong>, einer Initiative, die ähnliche Messen in Paris, London, Amsterdam, Antwerpen und Senigallia unterstützt.",
+      "## Der Ort",
+      "Das WestLicht liegt in der <strong>Westbahnstraße 40</strong> im 7. Bezirk und zeigt sonst Fotoausstellungen; im Haus ist auch ein Kameramuseum. Ob am Messetag zusätzlich eine Ausstellung offen ist, sagt der Veranstalter nicht — der freie Eintritt gilt für die Messe.",
+      "## Die nächste Messe",
+      "Die große Frühjahrsausgabe hat der Veranstalter schon angekündigt: die <strong>Vienna Vintage Photo Fair 2027</strong> am <strong>10. und 11. April 2027</strong>. Den Ort für 2027 nennt die Ankündigung noch nicht.",
+      "## Am selben Tag",
+      "Wer den Sonntag verlängern will: Am Abend des 13. Dezember zieht ab 17 Uhr der <a href=\"/veranstaltungen/perchtenlauf-boehmischer-prater-wien-2026/\" title=\"Perchtenlauf Böhmischer Prater Wien 2026: Dezember\">Perchtenlauf im Böhmischen Prater</a> durch den Laaer Wald. Kunst in der Adventzeit gibt es täglich bis 23. Dezember beim <a href=\"/veranstaltungen/art-advent-karlsplatz-2026/\" title=\"Art Advent Karlsplatz Wien 2026: Termine, Öffnungszeiten\">Art Advent am Karlsplatz</a>.",
+    ],
+    faq: [
+      {
+        q: "Wann ist die Vienna Vintage Photo Fair 2026?",
+        a: "Die X-Mas Edition ist am <strong>Sonntag, 13. Dezember 2026</strong>, von 11 bis 18 Uhr. Die nächste Frühjahrsmesse folgt am 10. und 11. April 2027.",
+      },
+      {
+        q: "Wo findet die Messe statt?",
+        a: "Im WestLicht, Schauplatz für Fotografie, Westbahnstraße 40, 1070 Wien.",
+      },
+      {
+        q: "Was kostet der Eintritt?",
+        a: "Nichts. Der Eintritt zur Vienna Vintage Photo Fair X-Mas Edition ist frei.",
+      },
+      {
+        q: "Was kann man dort kaufen?",
+        a: "Originalfotografien aus drei Jahrhunderten, von Daguerreotypien und Albuminabzügen des 19. Jahrhunderts bis zu Kunst- und Alltagsfotografie der Jahrtausendwende, viele davon Unikate.",
+      },
+      {
+        q: "Wer stellt aus?",
+        a: "Über 20 Händler, Sammler und Fotografie-Experten aus Österreich und anderen Ländern Europas. Eine Ausstellerliste steht auf photofairwien.com.",
+      },
+    ],
+    related: [
+      {
+        href: "/veranstaltungen/perchtenlauf-boehmischer-prater-wien-2026/",
+        eyebrow: "13. Dezember, Böhmischer Prater",
+        title: "Perchtenlauf im Böhmischen Prater 2026",
+        text: "Am Abend desselben Sonntags: Perchten und Feuershow am Laaer Wald, 17 bis 18:30 Uhr, Eintritt frei.",
+      },
+      {
+        href: "/veranstaltungen/art-advent-karlsplatz-2026/",
+        eyebrow: "13. November – 23. Dezember, Karlsplatz",
+        title: "Art Advent am Karlsplatz 2026",
+        text: "Kunsthandwerk vor der Karlskirche, täglich 12 bis 20 Uhr.",
+      },
+      {
+        href: "/veranstaltungen/kuerbisfest-am-himmel-2026/",
+        eyebrow: "Cobenzl",
+        title: "Kürbisfest am Himmel 2026",
+        text: "Der Herbst davor: über 200 Kürbissorten am Cobenzl, Eintritt frei.",
+      },
+    ],
+    expertise:
+      "Eine Fotomesse belohnt die, die früh kommen und Fragen stellen. Die Unikate sind bis Mittag oft schon in anderen Händen, und die Händler erzählen gern, was ein Bild ist und woher es kommt — ob Albuminabzug, Silbergelatine oder ein späterer Abzug vom alten Negativ, macht für den Wert mehr aus als das Motiv. Wer ein Geschenk sucht, nimmt einen festen Umschlag oder eine Mappe mit: Ein hundertjähriges Papier übersteht die Straßenbahn im Dezember in der Manteltasche schlecht. Und weil der Eintritt frei ist, darf man auch einfach nur schauen.",
   },
   {
     slug: "silvesterkonzert-wiener-philharmoniker-2026",
