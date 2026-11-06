@@ -721,4 +721,101 @@ export const items: EventItem[] = [
     expertise:
       "Two days and a crowded programme means choosing before arriving. For a founder raising money, the investor count and the FinTech Launchpad are the reason to buy a pass; for anyone setting up a licensed business, the twenty-odd regulators in the building are the rarer opportunity, since a hallway conversation with a supervisor is worth more than any panel. The move from May to November puts the summit a month before Abu Dhabi Finance Week, so for many visitors the two now make one trip.",
   },
+  {
+    slug: "ai-future-forum-dubai-2026",
+    createdAt: "2026-11-06T04:00:00+04:00",
+    updatedAt: "2026-11-06T04:00:00+04:00",
+    site: "fwf",
+    image: "/covers/ai-future-forum-dubai-2026.jpg",
+    imageAlt: "A paper-collage hall over still water, a stage at its far end lit with a circuit-board pattern and small figures gathered in front of it",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "AI Future Forum 2026 at Blockchain Life, Dubai",
+    cardTitle: "AI Future Forum Dubai 2026",
+    titleSeo: "AI Future Forum Dubai 2026: 1–2 December, Festival Arena",
+    summary:
+      "The AI Future Forum runs on 1 and 2 December 2026 at Festival Arena in Dubai Festival City, inside the seventeenth Blockchain Life: its own AI Future Stage on agents, AI tools and AI jobs, one ticket for both events, from $189.",
+    start: "2026-12-01",
+    end: "2026-12-02",
+    startTime: "08:00",
+    endTime: "18:00",
+    utcOffset: "+04:00",
+    venue: "Festival Arena, Dubai Festival City",
+    city: "Dubai",
+    organizer: "Blockchain Life (Jets Capital Events Organizing and Managing Est.)",
+    category: "Conference",
+    tickets: {
+      priceFrom: 189,
+      priceTo: 2099,
+      currency: "USD",
+    },
+    ticket: {
+      url: "https://blockchain-life.com/#tickets",
+      label: "Tickets on the official site",
+    },
+    source: {
+      name: "Blockchain Life and AI Future Forum, the organiser's official sites",
+      url: "https://ai-future.com/",
+      verifiedOn: "2026-11-06",
+    },
+    body: [
+      "Dubai has an AI conference in the first week of December. The <strong>AI Future Forum</strong> runs on <strong>Tuesday 1 and Wednesday 2 December 2026</strong> at <strong>Festival Arena</strong>, Al Badia Boulevard, <strong>Dubai Festival City</strong>. It is co-located with <strong>Blockchain Life</strong>, the crypto forum the same team has run since 2017 and now holds for the seventeenth time, and the organisers describe it as their dedicated event on artificial intelligence, emerging technologies and Web3.",
+      "## Dates and hours",
+      "On 1 December registration and the expo open at <strong>08:00</strong>, the opening ceremony starts the stage programme at <strong>10:00</strong> and the stages and expo close at <strong>18:00</strong>. On 2 December the doors open at <strong>08:30</strong> and the day again ends at <strong>18:00</strong>. The published agenda is marked preliminary.",
+      "## What is on the AI Future Stage",
+      "The forum has its own stage, the <strong>AI Future Stage by MEXC</strong>, in a separate AI Future zone of the arena, beside the main Space Stage and the MEXC Stage. The questions the organisers list for it are practical ones: what AI agents can do for you, how to build your own agent, which jobs AI will change next, which AI tools are worth it, how to fix AI coding errors, whether you can make a film with AI, what a small team can do with it, which AI skills to learn, and whether robots are ready to work with us.",
+      "Across the two co-located events the organisers claim more than <strong>15,000 attendees</strong>, <strong>200 speakers</strong>, <strong>200 sponsors</strong> and visitors from more than <strong>130 countries</strong>, with an expo of over <strong>200 booths</strong>, which the venue page describes as crypto companies, so expect the AI zone to be one part of a crypto-heavy floor rather than a standalone AI show.",
+      "## Tickets",
+      "One ticket covers both forums. On 6 November the prices on the official site were <strong>$189</strong> for Standard (expo, conference halls and the networking app), <strong>$329</strong> for Business (adds a chef's lunch on both days and a year of recordings from the Space, MEXC and AI Future stages) and <strong>$999</strong> for VIP (adds VIP registration desks, the VIP and speaker lounge and the afterparty on 2 December from 21:00 to 02:00). Each tier steps up twice before the event, to $399, $729 and $2,099 at the last-chance price, and payment is taken in UAE dirhams. The organisers say tickets sold out before the event dates in each of the past two years.",
+      "Festival Arena is on Al Badia Boulevard in Dubai Festival City. Parking is free for attendees and staff direct cars on arrival; taxi apps take Festival Arena as a destination. The e-ticket arrives by email and has to be scanned on every entry and exit, or re-entry is refused. Access to the networking app opens on 10 November.",
+      "The forum anchors Blockchain Life & AI Future Week, more than 300 independently organised side events, from <strong>27 November to 6 December</strong>, listed on the week's page; some are free, some free for ticket holders, some for VIP holders only.",
+      "## The rest of Dubai's tech calendar",
+      "It sits between two bigger dates. <a href=\"/\" title=\"Future World Forum Dubai 2026\">Future World Forum Dubai</a> is on 16 November and <a href=\"/events/dubai-future-week-2026/\" title=\"Dubai Future Week & Dubai Future Forum 2026: 18–21 November\">Dubai Future Week</a> follows from 18 to 21 November; <a href=\"/events/gitex-global-2026/\" title=\"GITEX Global 2026\">GITEX Global</a> opens five days after this forum closes, on 7 December.",
+    ],
+    faq: [
+      {
+        q: "When is the AI Future Forum Dubai 2026?",
+        a: "On Tuesday 1 and Wednesday 2 December 2026, from 08:00 on the first day and 08:30 on the second, until 18:00 both days.",
+      },
+      {
+        q: "Where is it held?",
+        a: "At Festival Arena, Al Badia Boulevard, Dubai Festival City, together with Blockchain Life 2026. Parking is free for attendees.",
+      },
+      {
+        q: "Do I need a separate ticket for the AI Future Forum?",
+        a: "No. Every Blockchain Life 2026 ticket, Standard, Business or VIP, includes the AI Future Forum and its stage.",
+      },
+      {
+        q: "How much does a ticket cost?",
+        a: "On 6 November the official site listed Standard at $189, Business at $329 and VIP at $999, each rising in two steps before the event, to $399, $729 and $2,099.",
+      },
+      {
+        q: "What topics does the AI Future Forum cover?",
+        a: "AI agents and how to build them, AI tools for business, AI and jobs, AI coding, AI film-making and robotics, on the AI Future Stage by MEXC.",
+      },
+    ],
+    related: [
+      {
+        href: "/",
+        eyebrow: "16 November",
+        title: "Future World Forum Dubai 2026",
+        text: "The forum this site is named after, two weeks earlier.",
+      },
+      {
+        href: "/events/dubai-future-week-2026/",
+        eyebrow: "18–21 November",
+        title: "Dubai Future Week 2026",
+        text: "The Dubai Future Foundation's week, with the Dubai Future Forum inside it.",
+      },
+      {
+        href: "/events/gitex-global-2026/",
+        eyebrow: "7–11 December",
+        title: "GITEX Global 2026",
+        text: "The big technology show, five days after this one.",
+      },
+    ],
+    expertise:
+      "Buy for the room, not the stage. An AI forum born inside a crypto conference will draw investors, exchange people and founders who want to bolt AI onto a token or a trading product; if that is your market, the Standard ticket at the current price is cheap access to 15,000 of them, and the side-event week is where the meetings happen. If you build or buy AI for an ordinary business, the AI Future Stage's topics are introductory, and Dubai Future Week or GITEX will give you more per hour. Either way, buy early: the price only goes up, and by the last-chance step it is more than double today's.",
+  },
 ];
