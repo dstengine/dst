@@ -1599,4 +1599,71 @@ export const items: NewsItem[] = [
     expertise:
       "The separate audio track is the detail that matters. A video model that generates sound with the picture gives you a mix that is hard to fix; an effects track on its own can be levelled, cut and replaced in the edit like any recorded foley. Put that together with a scripted voiceover from the same agent and the rough cut of a short spot, picture, effects and voice, can come out of one conversation, with every layer still editable. Check the credit cost per generation on your plan before letting an agent loop on sound, since an agent will happily ask for take after take.",
   },
+  {
+    slug: "ltx-2-5-vram-requirements-file-sizes",
+    createdAt: "2026-11-06T04:00:00+04:00",
+    updatedAt: "2026-11-06T04:00:00+04:00",
+    site: "aivideo",
+    image: "/covers/ltx-2-5-vram-requirements-file-sizes.jpg",
+    imageAlt: "A neon graphics card on a dark violet ground, with stacked glowing blocks of three different heights rising out of it like a bar chart, cyan, magenta and amber",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "LTX-2.5 system requirements: VRAM, RAM and the size of every file",
+    cardTitle: "LTX-2.5: VRAM and file sizes",
+    titleSeo: "LTX-2.5 VRAM and model size: AI video specs",
+    summary:
+      "What Lightricks asks for to run the LTX-2.5 AI video model locally: 32 GB of VRAM, 32 GB of RAM and 100 GB of disk, and why. Every checkpoint's size from the Hugging Face repository, and which set fits which GPU.",
+    date: "2026-11-06",
+    category: "Guide",
+    tags: ["LTX", "ComfyUI"],
+    action: {
+      url: "https://huggingface.co/Lightricks/LTX-2.5",
+      label: "Model files",
+      title: "LTX-2.5 checkpoints and model card on Hugging Face",
+      icon: "download",
+    },
+    source: {
+      name: "LTX documentation: system requirements",
+      url: "https://docs.ltx.io/open-source-model/getting-started/system-requirements",
+      verifiedOn: "2026-11-06",
+    },
+    body: [
+      "Lightricks' documentation gives one set of numbers for running <a href=\"/news/ltx-2-5-open-weights-comfyui/\" title=\"LTX-2.5: open AI video model with multi-shot\">LTX-2.5</a> on your own machine. The minimum is an <strong>NVIDIA GPU with 32 GB of VRAM</strong> (“more is better”), <strong>32 GB of system RAM</strong>, <strong>100 GB of free storage</strong>, <strong>CUDA 12.7</strong> or newer and <strong>Python 3.12</strong> or newer. The recommended setup is an <strong>A100 with 80 GB</strong> or an <strong>H100</strong>, <strong>64 GB</strong> of RAM or more, and <strong>200 GB</strong> or more on an SSD.",
+      "## Why the numbers are that high",
+      "The model is a <strong>22-billion-parameter</strong> transformer, and in bf16 its file alone weighs <strong>42.02 GB</strong>, more than the 32 GB minimum. The text encoder that reads your prompt, a Gemma 4 12B with LTX's projections, is another <strong>26.26 GB</strong> in bf16. At full precision the transformer alone is larger than a 32 GB card, and the two together come to about 68 GB, which is why the routes below for cards near the minimum either compress the weights or move part of them to system RAM.",
+      "## The size of every file",
+      "From the file listing of the Hugging Face repository, as checked on 6 November. Transformers: the <strong>dev</strong> and the <strong>distilled</strong> checkpoints are <strong>42.02 GB</strong> each in bf16 and <strong>21.50 GB</strong> each in ComfyUI's int8 format; the distilled one in <strong>NVFP4</strong> is <strong>18.72 GB</strong>. Text encoder: <strong>26.26 GB</strong> in bf16, <strong>15.37 GB</strong> in int8. The two video VAEs are <strong>1.47 GB</strong> (the heavier, higher-quality DiffVAE) and <strong>1.45 GB</strong> (the faster Conv VAE); the audio VAE is <strong>0.36 GB</strong>, the ×2 spatial upscaler <strong>1.00 GB</strong>, the ×2 temporal upscaler <strong>0.26 GB</strong>, the distilled LoRA for dev workflows <strong>8.90 GB</strong>, and the duration head, which picks a clip length from the prompt, about <strong>4 MB</strong>.",
+      "## Three sets to download, not the whole repository",
+      "The repository holds about <strong>201 GB</strong> in all, close to the 200 GB the documentation recommends, but nobody needs all of it. It is gated: you sign in to Hugging Face and accept the LTX-2.x Community License on the model page before any file downloads, which is why the card's download command starts with <code>hf auth login</code>. The <strong>bf16 distilled set</strong> that the model card's own download command fetches (transformer, text encoder, video and audio VAEs, duration head, spatial upscaler) comes to about <strong>71 GB</strong>. The <strong>ComfyUI int8 set</strong>, with the int8 transformer and int8 text encoder in their place, is about <strong>40 GB</strong>. In ComfyUI with the <strong>NVFP4</strong> transformer instead of the int8 one it is about <strong>37 GB</strong>.",
+      "## Which set for which GPU",
+      "The <strong>int8 files</strong> are ComfyUI only: the model card says Lightricks' own PyTorch package, ltx-pipelines, does not load them. The <strong>NVFP4</strong> transformer works in ComfyUI or in ltx-pipelines with <code>--quantization nvfp4-prequant</code>, and for that ltx-pipelines route the card names <strong>Blackwell</strong> GPUs and the ltx-kernels package, so check your card's generation before you download it. For ltx-pipelines the card's low-VRAM advice is to keep the bf16 files and add <code>--quantization fp8-cast --offload cpu</code>: the bf16 transformer is downcast to fp8 on the fly and parts of the model are offloaded to the CPU, into system RAM.",
+      "## In ComfyUI",
+      "Official LTX-2.5 workflow templates ship with ComfyUI, which has run the model since <a href=\"/news/comfyui-0-32-ltx-2-5-grok-imagine-image-2/\" title=\"ComfyUI 0.32: LTX-2.5 and Grok Imagine Image 2.0\">version 0.32</a>. There the int8 transformer and int8 text encoder are the smaller pair to start from on a card at the 32 GB minimum, and the model card describes the Conv VAE as faster and lighter than the higher-quality DiffVAE. The Diffusers pack, Lightricks/LTX-2.5-Diffusers, is a third route; LTX-2.5 support is not yet in a Diffusers release, so the card installs Diffusers from its main branch, and its example turns on model CPU offload and VAE tiling, noting that the second stage decodes at twice the size.",
+      "## Smaller community builds",
+      "Third-party GGUF conversions of the distilled model on Hugging Face shrink the transformer further: one such repository lists files from <strong>12.65 GB</strong> at Q3_K_S to <strong>23.60 GB</strong> at Q8_0. They are not Lightricks' releases and Lightricks publishes no requirements for them, so treat their VRAM claims as their authors', and expect quality to fall with the bit count.",
+      "## Without a GPU of your own",
+      "Lightricks runs LTX-2.5 in its API Playground at console.ltx.video, which needs no download at all, and ComfyUI has partner nodes for the hosted version. For comparing it with the other open model that generates sound with the picture, see <a href=\"/news/ltx-2-5-vs-minimax-h3-open-video-models/\" title=\"LTX-2.5 vs MiniMax H3: open AI video models\">LTX-2.5 against MiniMax H3</a>.",
+    ],
+    faq: [
+      {
+        q: "How much VRAM does LTX-2.5 need?",
+        a: "Lightricks' documentation sets the minimum at an NVIDIA GPU with <strong>32 GB of VRAM</strong> and recommends an <strong>A100 80 GB</strong> or an <strong>H100</strong>. It also asks for 32 GB of system RAM, 100 GB of free storage, CUDA 12.7+ and Python 3.12+.",
+      },
+      {
+        q: "How big is the LTX-2.5 model?",
+        a: "The 22B transformer is <strong>42.02 GB</strong> in bf16, <strong>21.50 GB</strong> in ComfyUI int8 and <strong>18.72 GB</strong> in NVFP4 (distilled only). With the Gemma 4 text encoder, VAEs and upscaler, a working set is about <strong>71 GB</strong> in bf16, about <strong>40 GB</strong> in int8 and about <strong>37 GB</strong> with NVFP4.",
+      },
+      {
+        q: "Can I run LTX-2.5 on a GPU with less than 32 GB?",
+        a: "Not within Lightricks' stated minimum. The model card's low-VRAM tip for ltx-pipelines is fp8 casting with CPU offload, and community GGUF builds go smaller, but Lightricks publishes no requirements below 32 GB.",
+      },
+      {
+        q: "Which LTX-2.5 files work in ComfyUI only?",
+        a: "The <strong>comfy-int8-convrot</strong> transformers and text encoder. The NVFP4 transformer works in ComfyUI, or in ltx-pipelines with --quantization nvfp4-prequant on Blackwell GPUs; the model card tells ltx-pipelines users to use the bf16 files.",
+      },
+    ],
+    expertise:
+      "Plan by disk and system RAM as much as by VRAM. The 32 GB card is the number people quote, but the bf16 set is 71 GB to download, Lightricks asks for 32 GB of system RAM even at the minimum, and the offload route for smaller cards moves model weights into that memory, so do not pair a big GPU with too little RAM. On a 32 GB card start with the ComfyUI int8 pair and the distilled transformer, which needs only eight steps; reach for NVFP4 only on a Blackwell card; and keep the dev checkpoint and its 8.9 GB distilled LoRA for when you mean to train, since the dev transformer is the same 42 GB again.",
+  },
 ];
