@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PromoHero from "@dst/ui/PromoHero.astro";
+import NewsBlock from "@dst/ui/NewsBlock.astro";
+import SectionNav from "@dst/ui/SectionNav.astro";
+import { home, siteId, newsBase } from "../content";
+import { sections, NAV } from "../sections";
+import { newsBySite } from "@dst/content/news";
+
+const items = newsBySite(siteId);
+const sectionLinks = sections(items);
+---
+<Layout title={home.title} description={home.description}>
+  <PromoHero>
+    <h1>{home.h1}</h1>
+    <p class="lede">{home.lede}</p>
+  </PromoHero>
+  <section class="container">
+    <SectionNav sections={sectionLinks} allHref={newsBase} {...NAV} />
+  </section>
+  <NewsBlock items={items} limit={12} heading="Dance festival guides" newsBase={newsBase} allLabel="All dance festival guides" locale="en-IE" />
+</Layout>

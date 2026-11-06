@@ -28,6 +28,12 @@ export const HOSTS = {
   aca: "acapulco.world",
   // RandomX guides, independent of the group.
   random: "random.directory",
+  // Monzero, plain guides to Monero from zero, independent of the group.
+  zerocake: "zerocake.org",
+  // Monero privacy guides in British English, independent of the group.
+  xmr0: "xmr0.uk",
+  // Dance festivals in Ireland, independent of the group.
+  irish: "sensation.irish",
   // Festival guides, served under fest.one through the archive's rewrite
   // (~/.claude/skills/event-page/BOOTSTRAP.md); the archive keeps / itself.
   fest: "fest.one",

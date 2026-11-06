@@ -1,0 +1,37 @@
+---
+import BaseLayout from "@dst/ui/BaseLayout.astro";
+import { site } from "../site.config";
+import "../styles/theme.css";
+
+interface Props {
+  /** Forwarded to BaseLayout: see its `prose` prop. */
+  prose?: boolean;
+  title: string;
+  description: string;
+  jsonLd?: Record<string, unknown>[];
+  image?: string;
+  noindex?: boolean;
+}
+const { title, description, jsonLd, image, noindex, prose } = Astro.props;
+
+// The label is what fits in the bar; the title is what the link is about.
+// A title attribute that repeats its own label spends a slot on nothing —
+// here every one of them says what the site is about.
+const nav = [
+  { href: "/", label: "Home", title: "Monzero: plain guides to Monero from zero", icon: "home" },
+  { href: "/guides/", label: "Guides", title: "Every Monzero guide, newest first", icon: "list" },
+  { href: "/about/", label: "About", title: "About zerocake.org and its Monzero guides", icon: "id" },
+];
+---
+<BaseLayout
+  {...site}
+  prose={prose}
+  title={title}
+  description={description}
+  nav={nav}
+  jsonLd={jsonLd}
+  image={image}
+  noindex={noindex}
+>
+  <slot />
+</BaseLayout>

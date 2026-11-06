@@ -72,6 +72,14 @@ const PAGES = [
   { site: "random", path: "/guides/randomx-variants/" },
   { site: "random", path: "/guides/p2pool/" },
   { site: "random", path: "/algorithm/" },
+  // Three sites from the random template, with no guides yet: the front
+  // page and about, the two pages every one of them has from its first day.
+  { site: "zerocake", path: "/" },
+  { site: "zerocake", path: "/about/" },
+  { site: "xmr0", path: "/" },
+  { site: "xmr0", path: "/about/" },
+  { site: "irish", path: "/" },
+  { site: "irish", path: "/about/" },
   // fest.one has no menu and a row of a guide's pages under every h1; the
   // tickets page carries the longest lists and the most links in a line.
   { site: "fest", path: "/" },

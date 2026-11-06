@@ -1,0 +1,16 @@
+/* zerocake.org — a berry red on paper, a soft pink on the dark ground: the
+   icing and the jam of the name, kept to the type. There are no covers yet;
+   when there are, they take their colours from these two. */
+:root {
+  --accent-light: #9B1B4D;
+  --accent-ink-light: #6B1034;
+  --accent-tint-light: #F7E6ED;
+  --accent-dark: #F58BB4;
+  --accent-ink-dark: #FAC4D9;
+  --accent-tint-dark: #2B1520;
+}
+
+/* A count stays with its word and a date stays whole: the guides wrap
+   them in a span of this class. A class rather than &nbsp;, so copied text,
+   the feed and the Markdown copies keep plain spaces. */
+.nowrap { white-space: nowrap; }

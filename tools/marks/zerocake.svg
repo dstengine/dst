@@ -1,0 +1,9 @@
+<!-- zerocake.org's mark: the letters z and 0 in white, bold, on the berry red of the light theme. A plain
+     typographic mark, drawn here rather than generated; centred, with the
+     margin inside the crop, so a circle keeps the whole of it. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <rect width="1024" height="1024" fill="#9B1B4D"/>
+  <text x="512" y="512" dy="0.35em" text-anchor="middle" fill="#FFFFFF"
+        font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
+        font-size="400" font-weight="700" letter-spacing="-12">z0</text>
+</svg>

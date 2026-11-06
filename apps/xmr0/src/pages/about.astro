@@ -1,0 +1,59 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { about } from "../content";
+import PageHero from "@dst/ui/PageHero.astro";
+---
+<Layout prose title={about.title} description={about.description}>
+  <PageHero title={about.h1}>
+    <p class="lede">{about.lede}</p>
+  </PageHero>
+
+  <section class="container">
+    <h2>What this is</h2>
+    <p set:html={`<strong>xmr0.uk</strong> is a set of guides to Monero privacy: how the protocol hides who paid, who was paid and how much, and where that protection ends. It is written in British English for readers who want the mechanism explained rather than the slogan repeated.`} />
+  </section>
+
+  <section class="container">
+    <h2>The rules</h2>
+    <ol class="rules">
+      <li>
+        <h3>Every figure names where it came from</h3>
+        <p>A parameter, a date or a version number comes from the Monero project, its code or whoever published it, and the guide says which and when it was checked. Where the code and the documentation disagree, the guide says so.</p>
+      </li>
+      <li>
+        <h3>No price talk, no trading advice</h3>
+        <p>What a coin is worth changes by the hour and is not this site's subject. The guides are about how the privacy works, not about buying or selling.</p>
+      </li>
+      <li>
+        <h3>Nothing here is paid for</h3>
+        <p>No project, exchange or company pays to be mentioned, ranked or linked. A name in a guide is there because it is the source of the fact.</p>
+      </li>
+    </ol>
+  </section>
+</Layout>
+
+<style>
+  .rules {
+    margin: var(--space-3) 0 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: rule;
+    display: grid;
+    gap: var(--space-3);
+  }
+  .rules li {
+    counter-increment: rule;
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 0 var(--space-2);
+    align-items: baseline;
+  }
+  .rules li::before {
+    content: counter(rule);
+    color: var(--accent);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+  .rules h3 { margin: 0; font-size: var(--step-0); }
+  .rules p { margin: 0.25em 0 0; grid-column: 2; max-width: 62ch; color: var(--ink-muted); }
+</style>

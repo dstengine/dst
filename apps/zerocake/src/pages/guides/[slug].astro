@@ -1,0 +1,14 @@
+---
+import Guide from "../../components/Guide.astro";
+import { siteId } from "../../content";
+import { newsBySite } from "@dst/content/news";
+
+export function getStaticPaths() {
+  // No body, no page — the card says everything the entry has.
+  const items = newsBySite(siteId).filter((i) => Array.isArray(i.body) && i.body.length > 0);
+  return items.map((item) => ({ params: { slug: item.slug }, props: { item, more: items } }));
+}
+
+const { item, more } = Astro.props;
+---
+<Guide item={item} more={more} />

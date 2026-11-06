@@ -24,6 +24,8 @@ const APPS = ["dst", "llc", "visas", "riviera", "mbr", "palmcentral", "eco", "fw
   "tea",
   // RandomX guides, which publishes itself.
   "random",
+  // Monzero, Monero privacy and Irish dance festivals, each publishing itself.
+  "zerocake", "xmr0", "irish",
   // The London calendar, which names GB7; and Acapulco, which publishes itself.
   "l0n", "aca",
   // A tour archive on its own vvm.space host, tied to neither the group nor
@@ -52,6 +54,9 @@ const PUBLISHER = {
   aivideo: "https://aivideo.zone/#organization",
   tea: "https://tea.ceo/#organization",
   random: "https://random.directory/#organization",
+  zerocake: "https://zerocake.org/#organization",
+  xmr0: "https://xmr0.uk/#organization",
+  irish: "https://sensation.irish/#organization",
   // gb7.uk names l0n.uk among its own sites and declares this @id.
   l0n: "https://gb7.uk/#organization",
   aca: "https://acapulco.world/#organization",

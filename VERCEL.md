@@ -123,4 +123,6 @@ CLI upload carries no `.git`, so the script always builds it.
 an independent site like the .lol ones, no links to the network and none
 from it. `tea` (tea.ceo, tea guides and tea times, 11 October 2026) was
 created the same way, and so was `random` (random.directory, RandomX
-guides, 25 October 2026).
+guides, 25 October 2026). `zerocake` (zerocake.org, Monero from zero),
+`xmr0` (xmr0.uk, Monero privacy) and `irish` (sensation.irish, dance
+festivals in Ireland) followed on 6 November 2026, independent in the same way.
