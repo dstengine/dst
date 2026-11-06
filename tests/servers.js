@@ -24,6 +24,12 @@ export const PORTS = {
   aca: 4352,
   fest: 4353,
   random: 4354,
+  // 4356, 4357 and 4359 were held by other sessions' ad-hoc preview servers
+  // on 6 Nov 2026; a port in use here is reused by Playwright as it stands,
+  // so a busy one would test someone else's site.
+  zerocake: 4355,
+  xmr0: 4358,
+  irish: 4360,
 };
 
 /** Where a site's server is ready to be asked, when that is not "/".

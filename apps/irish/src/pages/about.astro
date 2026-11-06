@@ -1,0 +1,59 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { about } from "../content";
+import PageHero from "@dst/ui/PageHero.astro";
+---
+<Layout prose title={about.title} description={about.description}>
+  <PageHero title={about.h1}>
+    <p class="lede">{about.lede}</p>
+  </PageHero>
+
+  <section class="container">
+    <h2>What this is</h2>
+    <p set:html={`<strong>sensation.irish</strong> is a guide to dance music festivals in Ireland, in the Republic and in Northern Ireland: one page per festival, with its dates, its venue, its line-up as announced, how tickets are sold, how to get there by bus, train or ferry, and the age rules at the gate. It is independent: it is not run by, or affiliated with, any festival, promoter or ticket seller.`} />
+  </section>
+
+  <section class="container">
+    <h2>The rules</h2>
+    <ol class="rules">
+      <li>
+        <h3>Every detail comes from the organiser</h3>
+        <p>A date, a venue, a set time or a price is the organiser's or the ticket seller's, and the guide says which and when it was checked. A timetable comes from the transport operator or the organiser's travel page. What the organiser has not announced, the guide does not guess.</p>
+      </li>
+      <li>
+        <h3>Independent of every festival</h3>
+        <p>The site is not run by, or affiliated with, any festival, promoter or ticket seller. A festival's name on a page is the subject of the page, not its publisher.</p>
+      </li>
+      <li>
+        <h3>Nothing here is paid for</h3>
+        <p>No festival, promoter or ticket seller pays to be listed, ranked or linked. A ticket link goes to the seller the organiser names, never to a reseller.</p>
+      </li>
+    </ol>
+  </section>
+</Layout>
+
+<style>
+  .rules {
+    margin: var(--space-3) 0 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: rule;
+    display: grid;
+    gap: var(--space-3);
+  }
+  .rules li {
+    counter-increment: rule;
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 0 var(--space-2);
+    align-items: baseline;
+  }
+  .rules li::before {
+    content: counter(rule);
+    color: var(--accent);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+  .rules h3 { margin: 0; font-size: var(--step-0); }
+  .rules p { margin: 0.25em 0 0; grid-column: 2; max-width: 62ch; color: var(--ink-muted); }
+</style>

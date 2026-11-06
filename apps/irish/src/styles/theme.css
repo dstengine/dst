@@ -1,0 +1,16 @@
+/* sensation.irish — a field green on paper, a bright mint on the dark ground,
+   where most of a night out is spent. There are no covers yet; when there
+   are, they take their colours from these two. */
+:root {
+  --accent-light: #1D6B3A;
+  --accent-ink-light: #124526;
+  --accent-tint-light: #E3F1E7;
+  --accent-dark: #6CCF8A;
+  --accent-ink-dark: #B3EAC3;
+  --accent-tint-dark: #12261A;
+}
+
+/* A count stays with its word and a date stays whole: the guides wrap
+   them in a span of this class. A class rather than &nbsp;, so copied text,
+   the feed and the Markdown copies keep plain spaces. */
+.nowrap { white-space: nowrap; }

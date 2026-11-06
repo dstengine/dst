@@ -28,6 +28,8 @@ const APPS = ["dst", "llc", "visas", "riviera", "mbr", "palmcentral", "eco", "fw
   "tea",
   // RandomX guides, independent of the group.
   "random",
+  // Monzero, Monero privacy and Irish dance festivals, each independent.
+  "zerocake", "xmr0", "irish",
   // London's big dates, published by GB7; and Acapulco, which publishes itself.
   "l0n", "aca",
   // A tour archive on its own vvm.space host, tied to neither the group nor
@@ -53,6 +55,8 @@ const OWN_DOMAINS = ["fwf.lol", "musical.today",
   "tea.ceo",
   // RandomX guides.
   "random.directory",
+  // Monzero, Monero privacy and Irish dance festivals.
+  "zerocake.org", "xmr0.uk", "sensation.irish",
   // GB7, the free-tools publisher, and the London calendar it publishes.
   "gb7.uk", "l0n.uk",
   // Acapulco.

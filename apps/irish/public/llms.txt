@@ -1,0 +1,33 @@
+# sensation.irish — Dance music festivals Ireland: dates, venues and tickets
+
+> An independent guide to dance music festivals in Ireland, the Republic and Northern Ireland: one page per festival, with its dates, venue, line-up as announced, how tickets are sold, how to get there by public transport and the age rules at the gate. Written in Irish English. Every detail names where it came from. Not run by, or affiliated with, any festival, promoter or ticket seller.
+
+How this site works, in three rules:
+
+- **Every detail comes from the organiser.** A date, a venue or a price is the organiser's or the ticket seller's, and the guide says which and when it was checked.
+- **Independent of every festival.** Not run by, or affiliated with, any festival, promoter or ticket seller.
+- **Nothing here is paid for.** No festival, promoter or ticket seller pays to be listed, ranked or linked.
+
+## What a reader finds here
+
+- [Guides](https://sensation.irish/guides/): every festival guide, newest first.
+- [Camping](https://sensation.irish/camping/): the festivals where the ticket includes a pitch for a tent.
+- [Day festivals](https://sensation.irish/day-festivals/): one or two days in or near a city, no tent.
+- [Belfast](https://sensation.irish/belfast/): the open-air festivals in Belfast, priced in pounds.
+- [About](https://sensation.irish/about/): the rules above, written out at length.
+- [Everything in one file](https://sensation.irish/llms-full.txt): every page as Markdown. Each page is also at its own address with `.md` appended.
+
+## Where the figures come from
+
+The festivals' own sites and announcements, the ticket sellers they name, the venues, and the transport operators — Irish Rail, Translink, Bus Éireann, Dublin Bus and Luas — for the way there. Each guide names its source and the date it was checked. A ticket link goes to the seller the organiser names, never to a reseller.
+
+## Guides
+
+- [Forbidden Fruit: Dublin's June festival at Kilmainham](https://sensation.irish/guides/forbidden-fruit/): Forbidden Fruit, the June bank holiday weekend at Kilmainham, Dublin, among the dance music festivals Ireland hosts: over-18s, Ticketmaster, near Heuston.
+- [AVA Festival Belfast: electronic music on the Titanic Slipways](https://sensation.irish/guides/ava-festival-belfast/): AVA Festival Belfast: two days of electronic music on the Titanic Slipways, among the dance music festivals Ireland hosts. Strictly 18+, tickets on RA.
+- [District X: a one-day festival at Palmerstown House](https://sensation.irish/guides/district-x/): District X: a one-day September festival at Palmerstown House, Co. Kildare, among the dance music festivals Ireland hosts. Over-18s, festival buses.
+- [Beyond The Pale 2027: three days at Glendalough Estate](https://sensation.irish/guides/beyond-the-pale/): Beyond The Pale 2027 is on 11–13 June at Glendalough Estate, Wicklow: a camping weekend among the dance music festivals Ireland hosts. Over-21s, Ticketmaster.
+- [All Together Now 2027: the August weekend at Curraghmore](https://sensation.irish/guides/all-together-now/): All Together Now 2027 is on 29 July – 1 August at Curraghmore, Co. Waterford: a camping weekend among the dance music festivals Ireland hosts. Over-21s only.
+- [Open Ear: a weekend of electronic music on Sherkin Island](https://sensation.irish/guides/open-ear/): Open Ear: electronic music on Sherkin Island, West Cork, by ferry from Baltimore: an island weekend among the dance music festivals Ireland hosts.
+- [Fuinneamh 2027: a September weekend in Bellurgan Park](https://sensation.irish/guides/fuinneamh/): Fuinneamh 2027 is from 11 September at Bellurgan Park near Dundalk: a camping weekend among the dance music festivals Ireland hosts, with tickets on Ticketr.
+- [Emerge Music Festival: Belfast's open-air dance weekend](https://sensation.irish/guides/emerge-belfast/): Emerge: two days of open-air dance music in Belfast at the end of August, among the dance music festivals Ireland hosts. Dates, line-up, tickets, Translink.

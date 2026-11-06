@@ -1,0 +1,64 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { about } from "../content";
+import PageHero from "@dst/ui/PageHero.astro";
+---
+<Layout prose title={about.title} description={about.description}>
+  <PageHero title={about.h1}>
+    <p class="lede">{about.lede}</p>
+  </PageHero>
+
+  <section class="container">
+    <h2>What this is</h2>
+    <p set:html={`<strong>zerocake.org</strong> explains one piece of work: the patch that adds <strong>Monzero (XMZ)</strong>, a fork of Monero with a chain of its own, to Cake Wallet, the open-source wallet. The guides cover what the patch adds, how it handles seeds and nodes, how it was built and tested, and where its pull request stands, with the date each fact was checked.`} />
+    <p set:html={`The guides are written by the people who prepared the patch. Cake Wallet has not reviewed or accepted it, and neither Cake Wallet nor the Monzero project runs, reviews or endorses this site. Where a guide says “we”, it means us, and what follows is our own build, test or query.`} />
+  </section>
+
+  <section class="container">
+    <h2>The rules</h2>
+    <ol class="rules">
+      <li>
+        <h3>Every figure names where it came from</h3>
+        <p>A figure about the patch comes from the patch and its pull request text. A figure about Monzero comes from its own specification and README. Each guide names its source and the date it was checked.</p>
+      </li>
+      <li>
+        <h3>Our builds and tests are marked as ours</h3>
+        <p>When a guide reports a build, a test or a query of a node, it says it was ours and names the machine and the toolchain. What was not tested is listed as plainly as what was.</p>
+      </li>
+      <li>
+        <h3>Nothing to download</h3>
+        <p>The site describes the patch and the build; it does not distribute them. Cake Wallet's code is on its own repository, and Monzero's on its own.</p>
+      </li>
+      <li>
+        <h3>No price talk, and nothing paid for</h3>
+        <p>What XMZ is worth is not this site's subject, and no project, exchange or company pays to be mentioned or linked. A name in a guide is there because it is the source of the fact.</p>
+      </li>
+    </ol>
+  </section>
+</Layout>
+
+<style>
+  .rules {
+    margin: var(--space-3) 0 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: rule;
+    display: grid;
+    gap: var(--space-3);
+  }
+  .rules li {
+    counter-increment: rule;
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 0 var(--space-2);
+    align-items: baseline;
+  }
+  .rules li::before {
+    content: counter(rule);
+    color: var(--accent);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+  .rules h3 { margin: 0; font-size: var(--step-0); }
+  .rules p { margin: 0.25em 0 0; grid-column: 2; max-width: 62ch; color: var(--ink-muted); }
+</style>

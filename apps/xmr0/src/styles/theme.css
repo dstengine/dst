@@ -1,0 +1,16 @@
+/* xmr0.uk — a deep sea teal on paper, a pale aqua on the dark ground: cool,
+   quiet colours for a site about what is not shown. There are no covers yet;
+   when there are, they take their colours from these two. */
+:root {
+  --accent-light: #0F5C63;
+  --accent-ink-light: #0A3F44;
+  --accent-tint-light: #E2EFF0;
+  --accent-dark: #5CCFC4;
+  --accent-ink-dark: #A6EAE3;
+  --accent-tint-dark: #0F2728;
+}
+
+/* A count stays with its word and a date stays whole: the guides wrap
+   them in a span of this class. A class rather than &nbsp;, so copied text,
+   the feed and the Markdown copies keep plain spaces. */
+.nowrap { white-space: nowrap; }

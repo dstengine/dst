@@ -221,6 +221,45 @@
         "4354"
       ],
       "port": 4354
+    },
+    {
+      "name": "zerocake",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "astro",
+        "dev",
+        "--root",
+        "apps/zerocake",
+        "--port",
+        "4355"
+      ],
+      "port": 4355
+    },
+    {
+      "name": "xmr0",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "astro",
+        "dev",
+        "--root",
+        "apps/xmr0",
+        "--port",
+        "4358"
+      ],
+      "port": 4358
+    },
+    {
+      "name": "irish",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "astro",
+        "dev",
+        "--root",
+        "apps/irish",
+        "--port",
+        "4360"
+      ],
+      "port": 4360
     }
   ]
 }

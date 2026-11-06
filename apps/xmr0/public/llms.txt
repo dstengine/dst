@@ -1,0 +1,36 @@
+# xmr0.uk — Monero privacy, explained: the protocol, the network and the wallet
+
+> Independent guides to Monero privacy for readers who know security: how ring signatures, one-time addresses and RingCT hide who paid, who was paid and how much; how Dandelion++, Tor and I2P keep a node's address out of a transaction; what view keys, proofs and seeds disclose; and where each protection ends. Written in British English. Every figure names the code, specification or paper it came from and the date it was checked.
+
+How this site works, in four rules:
+
+- **Every figure names where it came from.** A parameter, a date or a version number is the Monero project's, its code's, a specification's or a paper's, and the guide says which and when it was checked.
+- **No price talk, no trading advice.** The guides are about how the privacy works, not about buying or selling.
+- **Privacy is a security property.** It is explained like encryption: a mechanism, a threat model and limits, and how a holder can disclose a payment on purpose.
+- **Nothing here is paid for.** No project, exchange or company pays to be mentioned, ranked or linked.
+
+## What a reader finds here
+
+- [Guides](https://xmr0.uk/guides/): every Monero privacy guide, newest first.
+- [The protocol](https://xmr0.uk/protocol/): ring signatures, one-time addresses, RingCT, FCMP++ and the comparison with Zcash.
+- [The network](https://xmr0.uk/network/): Dandelion++, and running monerod over Tor or I2P.
+- [The wallet](https://xmr0.uk/wallets/): view keys and payment proofs, seeds and Polyseed, signed downloads and hardware wallets.
+- [About](https://xmr0.uk/about/): what the site covers and the rules above, written out at length.
+- [Everything in one file](https://xmr0.uk/llms-full.txt): every page as Markdown. Each page is also at its own address with `.md` appended.
+
+Mining is not covered here: Monero's proof of work, RandomX, is the subject of [random.directory](https://random.directory/).
+
+## Where the figures come from
+
+The Monero source code (monero-project/monero) and its documentation, Moneropedia, the FCMP++ stressnet release notes, the Carrot and Polyseed specifications, the Dandelion++ paper, the Zcash Improvement Proposals, EUR-Lex for EU law and the Financial Conduct Authority for the UK. Each guide names its source and the date it was checked.
+
+## Guides
+
+- [How Monero privacy works: sender, receiver and amount](https://xmr0.uk/guides/how-monero-privacy-works/): Monero privacy rests on three mechanisms: ring signatures hide the output spent, one-time addresses the recipient and RingCT the amount. How each one works.
+- [FCMP++: how full-chain membership proofs replace rings](https://xmr0.uk/guides/fcmp-plus-plus/): FCMP++ replaces Monero's 16-member rings with a proof over every output on the chain. How the proof works, what Carrot adds, and what Monero privacy gains.
+- [Monero vs Zcash: two privacy models compared](https://xmr0.uk/guides/monero-vs-zcash/): Monero privacy is on for every transaction, in 16-member rings; Zcash hides only shielded transactions, but among every note in the pool. How the two compare.
+- [Dandelion++: how Monero hides where a transaction began](https://xmr0.uk/guides/dandelion-plus-plus/): Rings hide the sender on the chain, not the node that first broadcast the payment. How Dandelion++ adds Monero privacy on the network: stem, fluff and embargo.
+- [Running a Monero node over Tor or I2P](https://xmr0.uk/guides/monero-node-over-tor-i2p/): Monero privacy on the chain does not hide the IP address that sent a transaction. How to run monerod over Tor or I2P, and the leaks its documentation lists.
+- [What a Monero view key reveals](https://xmr0.uk/guides/monero-view-key/): A Monero view key shows every payment a wallet receives, not reliably what it spends. The proofs that disclose less, and what Carrot changes for Monero privacy.
+- [Securing a Monero wallet: seeds, signed downloads and hardware](https://xmr0.uk/guides/monero-wallet-security/): Monero privacy is only as good as the wallet holding the keys: the 25-word seed and Polyseed, checking a download against signed hashes, and hardware wallets.
+- [Privacy coins and the rules in the EU and the UK](https://xmr0.uk/guides/privacy-coins-eu-uk-rules/): What the EU's AMLR and MiCA and the UK's cryptoasset rules say about privacy coins, whom they bind and from when, and where Monero privacy tools fit.

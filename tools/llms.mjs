@@ -31,6 +31,10 @@ const SITES = {
   tea: { host: "tea.ceo", news: "guides", events: "events", newsLabel: "Guides", eventsLabel: "Events" },
   // RandomX guides, the same shape as tea.
   random: { host: "random.directory", news: "guides", events: "events", newsLabel: "Guides", eventsLabel: "Events" },
+  // Three more in the same shape, from the same template.
+  zerocake: { host: "zerocake.org", news: "guides", events: "events", newsLabel: "Guides", eventsLabel: "Events" },
+  xmr0: { host: "xmr0.uk", news: "guides", events: "events", newsLabel: "Guides", eventsLabel: "Events" },
+  irish: { host: "sensation.irish", news: "guides", events: "events", newsLabel: "Guides", eventsLabel: "Events" },
   vien: { host: "vien.lol", news: "nachrichten", events: "veranstaltungen", newsLabel: "Nachrichten", eventsLabel: "Termine" },
   ldn: { host: "ldn.lol", news: "news", events: "events", newsLabel: "News", eventsLabel: "Events" },
   lnd: { host: "lnd.lol", news: "news", events: "events", newsLabel: "News", eventsLabel: "Events" },
