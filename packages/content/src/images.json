@@ -38030,6 +38030,38 @@
         ]
       ]
     },
+    "/covers/how-to-brew-korean-green-tea.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/how-to-brew-korean-green-tea-480.avif"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-korean-green-tea-768.avif"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-korean-green-tea-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/how-to-brew-korean-green-tea-480.webp"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-korean-green-tea-768.webp"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-korean-green-tea-1024.webp"
+        ]
+      ]
+    },
     "/covers/how-to-brew-lapsang-souchong.jpg": {
       "width": 1024,
       "height": 1024,
@@ -38059,6 +38091,38 @@
         [
           1024,
           "/covers/how-to-brew-lapsang-souchong-1024.webp"
+        ]
+      ]
+    },
+    "/covers/how-to-brew-milk-oolong.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/how-to-brew-milk-oolong-480.avif"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-milk-oolong-768.avif"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-milk-oolong-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/how-to-brew-milk-oolong-480.webp"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-milk-oolong-768.webp"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-milk-oolong-1024.webp"
         ]
       ]
     },
@@ -38187,6 +38251,38 @@
         [
           1024,
           "/covers/how-to-brew-pu-erh-tea-1024.webp"
+        ]
+      ]
+    },
+    "/covers/how-to-brew-scottish-breakfast-tea.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/how-to-brew-scottish-breakfast-tea-480.avif"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-scottish-breakfast-tea-768.avif"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-scottish-breakfast-tea-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/how-to-brew-scottish-breakfast-tea-480.webp"
+        ],
+        [
+          768,
+          "/covers/how-to-brew-scottish-breakfast-tea-768.webp"
+        ],
+        [
+          1024,
+          "/covers/how-to-brew-scottish-breakfast-tea-1024.webp"
         ]
       ]
     },
@@ -38382,6 +38478,38 @@
         ]
       ]
     },
+    "/covers/how-to-make-azerbaijani-tea.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/how-to-make-azerbaijani-tea-480.avif"
+        ],
+        [
+          768,
+          "/covers/how-to-make-azerbaijani-tea-768.avif"
+        ],
+        [
+          1024,
+          "/covers/how-to-make-azerbaijani-tea-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/how-to-make-azerbaijani-tea-480.webp"
+        ],
+        [
+          768,
+          "/covers/how-to-make-azerbaijani-tea-768.webp"
+        ],
+        [
+          1024,
+          "/covers/how-to-make-azerbaijani-tea-1024.webp"
+        ]
+      ]
+    },
     "/covers/how-to-make-earl-grey-tea.jpg": {
       "width": 1024,
       "height": 1024,
@@ -38539,38 +38667,6 @@
         [
           1024,
           "/covers/how-to-make-turkish-tea-1024.webp"
-        ]
-      ]
-    },
-    "/covers/how-to-make-azerbaijani-tea.jpg": {
-      "width": 1024,
-      "height": 1024,
-      "avif": [
-        [
-          480,
-          "/covers/how-to-make-azerbaijani-tea-480.avif"
-        ],
-        [
-          768,
-          "/covers/how-to-make-azerbaijani-tea-768.avif"
-        ],
-        [
-          1024,
-          "/covers/how-to-make-azerbaijani-tea-1024.avif"
-        ]
-      ],
-      "webp": [
-        [
-          480,
-          "/covers/how-to-make-azerbaijani-tea-480.webp"
-        ],
-        [
-          768,
-          "/covers/how-to-make-azerbaijani-tea-768.webp"
-        ],
-        [
-          1024,
-          "/covers/how-to-make-azerbaijani-tea-1024.webp"
         ]
       ]
     }
