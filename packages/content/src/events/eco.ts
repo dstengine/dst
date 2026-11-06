@@ -587,4 +587,89 @@ export const items: EventItem[] = [
     expertise:
       "For a Gulf audience the subject is not abstract. The UAE draws most of its drinking water from desalination, so the questions the dialogues on investment and the planet will press, energy per cubic metre and what happens to the brine, are the local ones. If you are an NGO or company that wants to be in the room, the date that matters is 6 November, not 8 December.",
   },
+  {
+    slug: "clean-uae-2026",
+    createdAt: "2026-11-06T04:00:00+04:00",
+    updatedAt: "2026-11-06T04:00:00+04:00",
+    site: "eco",
+    image: "/covers/clean-uae-2026.jpg",
+    imageAlt: "Cut-paper volunteers in sage and cream carrying sacks along a curved strip of beach, dunes and a row of mountains behind them, on a deep forest green ground",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Clean UAE 2026, the 25th cycle of the national clean-up",
+    cardTitle: "Clean UAE 2026",
+    titleSeo: "Clean UAE 2026: 5–15 December, how to join",
+    summary:
+      "Clean UAE 2026, the Emirates Environmental Group's 25th national clean-up, runs from 5 to 15 December 2026 across all seven emirates, with volunteers clearing waste from cities, deserts, beaches and mountains and sorting it for recycling. Organisations register through EEG's form and choose their emirate.",
+    start: "2026-12-05",
+    end: "2026-12-15",
+    utcOffset: "+04:00",
+    country: "United Arab Emirates",
+    organizer: "Emirates Environmental Group",
+    category: "Environment",
+    ticket: {
+      url: "https://forms.gle/ZwCpJSTjGd3cyA5s8",
+      label: "Register to take part",
+      sells: false,
+    },
+    source: {
+      name: "Emirates Environmental Group, Clean Up UAE",
+      url: "https://www.eeg-uae.org/projects/clean-up-uae/",
+      verifiedOn: "2026-11-06",
+    },
+    body: [
+      "One of the UAE's longest-running environmental campaigns comes round for the twenty-fifth time. <strong>Clean UAE 2026</strong>, the <strong>25th cycle</strong> of the <strong>Emirates Environmental Group</strong>'s flagship campaign, runs from <strong>Saturday 5 to Tuesday 15 December 2026</strong>, with activities in <strong>all seven emirates</strong>.",
+      "## Who runs it",
+      "The <strong>Emirates Environmental Group</strong> (EEG), a Dubai-based environmental working group founded in 1991. The campaign is held under the patronage of the <strong>Ministry of Climate Change and Environment</strong> and is endorsed by the <strong>UAE Cabinet</strong>.",
+      "## What volunteers do",
+      "Teams collect waste from cities, deserts, beaches and mountains, and the collection is segregated so that most of it goes to recycling. In <strong>2025</strong> more than <strong>84,000 participants</strong> removed over <strong>45,000 kilograms</strong> of waste.",
+      "## Twenty-five years in figures",
+      "Since the first campaign in <strong>2002</strong>, EEG counts more than <strong>one million volunteers</strong>, over <strong>1.75 million kilograms</strong> of waste collected and more than <strong>1,288 square kilometres</strong> of land restored.",
+      "## How to take part",
+      "EEG invites organisations to take part: participation is confirmed through the registration form on the Clean Up UAE page, and each organisation joins in the emirate of its choice, depending on its availability. Over the years the campaign has drawn government entities, companies, schools and community groups. The schedule for each emirate is not on the organiser's page yet. Questions go to EEG on <strong>+971 4 344 8622</strong> or eeg@emirates.net.ae.",
+      "## The same fortnight",
+      "The campaign's first week overlaps the <a href=\"/events/un-2026-water-conference-abu-dhabi/\" title=\"UN 2026 Water Conference: 8–10 December, Abu Dhabi\">UN 2026 Water Conference</a> at ADNEC, 8–10 December, and a month later Abu Dhabi hosts <a href=\"/events/abu-dhabi-sustainability-week-2027/\" title=\"Abu Dhabi Sustainability Week 2027: 10–14 January\">Abu Dhabi Sustainability Week</a>.",
+    ],
+    faq: [
+      {
+        q: "When is Clean UAE 2026?",
+        a: "From 5 to 15 December 2026, with clean-up activities scheduled across all seven emirates.",
+      },
+      {
+        q: "Who organises Clean UAE?",
+        a: "The Emirates Environmental Group, under the patronage of the Ministry of Climate Change and Environment and with the endorsement of the UAE Cabinet. 2026 is the campaign's 25th cycle; the first was in 2002.",
+      },
+      {
+        q: "How do I register for Clean UAE 2026?",
+        a: "Organisations confirm participation through the registration form linked from EEG's Clean Up UAE page and choose the emirate they want to join. Questions go to EEG on +971 4 344 8622 or eeg@emirates.net.ae.",
+      },
+      {
+        q: "How big was the last campaign?",
+        a: "In 2025 more than 84,000 participants removed over 45,000 kilograms of waste, most of it sorted for recycling.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/un-2026-water-conference-abu-dhabi/",
+        eyebrow: "8–10 December",
+        title: "UN 2026 Water Conference",
+        text: "The UN conference on clean water and sanitation, at ADNEC in the same week.",
+      },
+      {
+        href: "/events/abu-dhabi-sustainability-week-2027/",
+        eyebrow: "10–14 January",
+        title: "Abu Dhabi Sustainability Week 2027",
+        text: "Abu Dhabi's week of sustainability summits, a month after the clean-up.",
+      },
+      {
+        href: "/news/uae-mangroves-halfway-to-100-million/",
+        eyebrow: "Mangroves",
+        title: "The UAE is halfway to 100 million mangroves",
+        text: "Roughly 51 million planted against a 2030 target of 100 million.",
+      },
+    ],
+    expertise:
+      "Register early and register as a group. Participation is confirmed by organisation and by emirate, so an office, school or residents' committee that confirms in November has the most room to choose where it goes. Pick the stop by the kind of ground rather than by the drive: a beach or a city site suits families and first-timers, while desert and mountain stops mean uneven ground and longer walks, so bring closed shoes, a hat and more water than seems necessary even in December. The figure worth watching afterwards is not the volunteer count but kilograms per participant: 2025's 45,000 kilograms across 84,000 people is about half a kilogram each, which says the campaign's value now lies as much in teaching sorting and recycling as in the weight it lifts.",
+  },
 ];
