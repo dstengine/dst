@@ -19,21 +19,21 @@ export const newsBase = "/guides/";
 
 export const home = {
   title: "Monero privacy, explained: protocol, network and wallet",
-  description: "Monero privacy guides for readers who know security: rings and FCMP++, Dandelion++ and Tor, view keys and seeds, each figure from the code or the paper that states it.",
+  description: "Monero privacy guides for readers who know security: rings and FCMP++, Dandelion++ and Tor, view keys and seeds, each figure from its code or paper.",
   h1: "Monero privacy, explained",
   lede: `How Monero hides who paid, who was paid and how much — on the chain, on the network and in the wallet — and where each protection ends. Every figure comes from the code, the specification or the paper, with the date it was checked.`,
 };
 
 export const guides = {
-  title: "Monero privacy guides: protocol, network and wallet",
-  description: "Every Monero privacy guide on xmr0.uk, newest first: the protocol, the network, the wallet and the rules on privacy coins, each naming the source of its figures.",
+  title: "All Monero privacy guides, newest first",
+  description: "Every Monero privacy guide on xmr0.uk, newest first: the protocol, the network, the wallet and the rules on privacy coins, each naming its sources.",
   h1: "Monero privacy guides",
   lede: `Every guide on the site, newest first: the protocol, the network, the wallet and the rules. Each one names the source of its figures and the date they were checked against it.`,
 };
 
 export const about = {
   title: "About xmr0.uk and its Monero privacy guides",
-  description: "xmr0.uk writes independent Monero privacy guides in British English: privacy coins, peer-to-peer privacy and wallet security, every figure sourced and nothing paid for.",
+  description: "xmr0.uk writes independent Monero privacy guides in British English: privacy coins, peer-to-peer privacy and wallet security, every figure sourced.",
   h1: "About xmr0.uk and its Monero privacy guides",
   lede: `Independent guides to Monero privacy and the security around it: what the protocol hides, how it hides it, and where it stops. Nobody pays to be in them, and every figure names where it came from.`,
 };
