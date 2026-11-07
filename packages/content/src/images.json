@@ -39040,6 +39040,70 @@
         ]
       ]
     },
+    "/covers/aram-mp3-tashir-arena-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/aram-mp3-tashir-arena-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/aram-mp3-tashir-arena-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/aram-mp3-tashir-arena-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/aram-mp3-tashir-arena-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/aram-mp3-tashir-arena-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/aram-mp3-tashir-arena-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/aram-satyan-evening-khachaturian-hall-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/aram-satyan-evening-khachaturian-hall-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/aram-satyan-evening-khachaturian-hall-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/aram-satyan-evening-khachaturian-hall-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/aram-satyan-evening-khachaturian-hall-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/aram-satyan-evening-khachaturian-hall-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/aram-satyan-evening-khachaturian-hall-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/ararat-armenia-az-alkmaar-europa-league-yerevan-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -39517,6 +39581,38 @@
         [
           1024,
           "/covers/collector-way-of-life-isabella-stewart-gardner-sardi-gallery-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/conrad-tao-topchyan-yerkanyan-symphony-6-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/conrad-tao-topchyan-yerkanyan-symphony-6-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/conrad-tao-topchyan-yerkanyan-symphony-6-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/conrad-tao-topchyan-yerkanyan-symphony-6-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/conrad-tao-topchyan-yerkanyan-symphony-6-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/conrad-tao-topchyan-yerkanyan-symphony-6-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/conrad-tao-topchyan-yerkanyan-symphony-6-yerevan-2026-1024.webp"
         ]
       ]
     },
@@ -40085,6 +40181,38 @@
         [
           1024,
           "/covers/flyconnect-global-ai-startup-creator-summit-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/fontania-water-circus-tashir-arena-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/fontania-water-circus-tashir-arena-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/fontania-water-circus-tashir-arena-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/fontania-water-circus-tashir-arena-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/fontania-water-circus-tashir-arena-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/fontania-water-circus-tashir-arena-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/fontania-water-circus-tashir-arena-yerevan-2026-1024.webp"
         ]
       ]
     },
@@ -44597,38 +44725,6 @@
         [
           1536,
           "/covers/zayon-halloween-house-party-2026-1536.webp"
-        ]
-      ]
-    },
-    "/covers/fontania-water-circus-tashir-arena-yerevan-2026.jpg": {
-      "width": 1024,
-      "height": 1024,
-      "avif": [
-        [
-          480,
-          "/covers/fontania-water-circus-tashir-arena-yerevan-2026-480.avif"
-        ],
-        [
-          768,
-          "/covers/fontania-water-circus-tashir-arena-yerevan-2026-768.avif"
-        ],
-        [
-          1024,
-          "/covers/fontania-water-circus-tashir-arena-yerevan-2026-1024.avif"
-        ]
-      ],
-      "webp": [
-        [
-          480,
-          "/covers/fontania-water-circus-tashir-arena-yerevan-2026-480.webp"
-        ],
-        [
-          768,
-          "/covers/fontania-water-circus-tashir-arena-yerevan-2026-768.webp"
-        ],
-        [
-          1024,
-          "/covers/fontania-water-circus-tashir-arena-yerevan-2026-1024.webp"
         ]
       ]
     }
