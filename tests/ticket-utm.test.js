@@ -10,6 +10,10 @@ import { fileURLToPath } from "node:url";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const { isTicketHop, tagTicketUrl } = await import("../packages/ui/src/utm.ts");
+// A site whose slugs name the seller rather than say "ticket" passes its own
+// list to the hop; there that list decides, both ways.
+const { isSellerHop: tokiohotelSeller } = await import("../apps/tokiohotel/src/outbound.ts");
+const ownRule = { tokiohotel: tokiohotelSeller };
 
 describe("tagTicketUrl", () => {
   const tag = { campaign: "swan-lake-ticket", host: "tick.am" };
@@ -76,8 +80,9 @@ describe("built /go/ hops", () => {
         const has = /[?&]utm_campaign=/.test(refresh);
         if (has) tagged++;
         if (has && !refresh.includes(`utm_campaign=${encodeURIComponent(slug)}`)) bad.push(`${slug}: campaign is not the slug`);
-        if (isTicketHop(slug) && !has) bad.push(`${slug}: a box office's hop without UTM`);
-        if (app !== "fest" && !isTicketHop(slug) && has) bad.push(`${slug}: UTM on a hop that is not a box office's`);
+        const seller = ownRule[app] ? ownRule[app](slug) : isTicketHop(slug);
+        if (seller && !has) bad.push(`${slug}: a box office's hop without UTM`);
+        if (app !== "fest" && !seller && has) bad.push(`${slug}: UTM on a hop that is not a box office's`);
         if (refresh.startsWith("https://www.google.com/maps/") && has) bad.push(`${slug}: UTM on a map`);
       }
       assert.deepEqual(bad, []);

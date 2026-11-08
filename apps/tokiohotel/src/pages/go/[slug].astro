@@ -1,6 +1,6 @@
 ---
 import Redirect from "@dst/ui/Redirect.astro";
-import { outbound } from "../../outbound";
+import { isSellerHop, outbound } from "../../outbound";
 
 export function getStaticPaths() {
   return Object.entries(outbound).map(([slug, to]) => ({
@@ -10,5 +10,6 @@ export function getStaticPaths() {
 }
 
 const { to } = Astro.props;
+const { slug } = Astro.params;
 ---
-<Redirect to={to} />
+<Redirect to={to} ticket={isSellerHop(slug)} />

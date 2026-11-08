@@ -47,6 +47,17 @@ export const outbound: Record<string, string> = {
   "eventim-hanover": "https://www.eventim.de/event/22055219/",
 };
 
+// The hops that lead to a seller, so they carry UTM tags (@dst/ui utm.ts).
+// The network reads a box office off `-ticket` in a slug; these slugs name
+// the seller and the city instead, so the site says which they are. The band's
+// own site, the venue's events page and Wikipedia stay untagged.
+const SELLER = /^(axs|bit|eventim|vivaticket|ebilet|frequency)-/;
+
+/** Whether /go/<slug>/ leads to a seller, e.g. "eventim-berlin" -> true */
+export function isSellerHop(slug: string): boolean {
+  return SELLER.test(slug) && slug in outbound;
+}
+
 /** Path for an outbound link, e.g. go("axs-wembley") -> "/go/axs-wembley/" */
 export function go(slug: string): string {
   return `/go/${slug}/`;
