@@ -518,7 +518,7 @@ export const items: EventItem[] = [
   {
     slug: "vienna-halloween-run-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-11-06T02:35:00+01:00",
+    updatedAt: "2026-11-08T02:35:00+01:00",
     site: "vien",
     image: "/covers/vienna-halloween-run-2026.jpg",
     imageAlt: "Eine helle Laufbahn, die in die Bildmitte führt, gesäumt von Bäumen mit rotem Herbstlaub",
@@ -586,6 +586,12 @@ export const items: EventItem[] = [
     ],
     related: [
       {
+        href: "/veranstaltungen/wiener-silvesterlauf-2026/",
+        eyebrow: "31. Dezember, Ringstraße",
+        title: "Wiener Silvesterlauf 2026",
+        text: "Der Lauf zum Jahresende: 5.350 Meter auf dem Ring, Start um 11 Uhr, gern verkleidet, Nenngeld derzeit 38 Euro.",
+      },
+      {
         href: "/veranstaltungen/vienna-vintage-photo-fair-westlicht-2026/",
         eyebrow: "13. Dezember, WestLicht",
         title: "Vienna Vintage Photo Fair 2026",
@@ -641,7 +647,7 @@ export const items: EventItem[] = [
   {
     slug: "kuerbisfest-am-himmel-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-11-06T02:35:00+01:00",
+    updatedAt: "2026-11-08T02:35:00+01:00",
     site: "vien",
     image: "/covers/kuerbisfest-am-himmel-2026.jpg",
     imageAlt: "Ein breiter Haufen runder Papierscheiben in Rot, Grün, Ocker und Creme, in vielen verschiedenen Größen",
@@ -705,6 +711,12 @@ export const items: EventItem[] = [
       },
     ],
     related: [
+      {
+        href: "/veranstaltungen/wiener-silvesterlauf-2026/",
+        eyebrow: "31. Dezember, Ringstraße",
+        title: "Wiener Silvesterlauf 2026",
+        text: "Zum Jahresende hinunter in die Stadt: der 50. Silvesterlauf, 5.350 Meter auf der Ringstraße, Start um 11 Uhr.",
+      },
       {
         href: "/veranstaltungen/vienna-vintage-photo-fair-westlicht-2026/",
         eyebrow: "13. Dezember, WestLicht",
@@ -1673,7 +1685,7 @@ export const items: EventItem[] = [
   {
     slug: "wiener-silvesterpfad-2026",
     createdAt: "2026-10-21T21:35:00+04:00",
-    updatedAt: "2026-11-05T20:43:04.000Z",
+    updatedAt: "2026-11-08T02:35:00+01:00",
     site: "vien",
     image: "/covers/wiener-silvesterpfad-2026.jpg",
     imageAlt:
@@ -1724,7 +1736,7 @@ export const items: EventItem[] = [
       "## Essen, Trinken und Pfand",
       "Gastronomie gibt es entlang des ganzen Pfads, Essen muss man nicht mitbringen. Getränke kommen in Mehrwegbechern und Tassen: zuletzt <strong>2 Euro Pfand für den Becher</strong> und <strong>5 Euro für das Häferl</strong>, das es mit Glücksmotiven gibt und das viele als Andenken behalten.",
       "## Anreise",
-      "Mit den Öffis: <strong>Alle U-Bahn-Linien</strong> und viele Bus- und Straßenbahnlinien fahren die ganze Nacht. Wer mit dem Auto aus den Bundesländern kommt, stellt es an einer Park-and-Ride-Anlage an der U-Bahn ab. Im Veranstaltungsgebiet gilt Fahrverbot, und schon am <strong>Vormittag des 31. Dezember</strong> ist die <strong>Ringstraße</strong> wegen des Silvesterlaufs gesperrt.",
+      "Mit den Öffis: <strong>Alle U-Bahn-Linien</strong> und viele Bus- und Straßenbahnlinien fahren die ganze Nacht. Wer mit dem Auto aus den Bundesländern kommt, stellt es an einer Park-and-Ride-Anlage an der U-Bahn ab. Im Veranstaltungsgebiet gilt Fahrverbot, und schon am <strong>Vormittag des 31. Dezember</strong> ist die <strong>Ringstraße</strong> wegen des <a href=\"/veranstaltungen/wiener-silvesterlauf-2026/\" title=\"Silvesterlauf Wien 2026: Ringstraße, 31. Dezember\">Silvesterlaufs</a> gesperrt.",
       "## Davor in Wien",
       "Bis zum 26. Dezember steht am Rathausplatz der <a href=\"/veranstaltungen/wiener-christkindlmarkt-2026/\" title=\"Wiener Christkindlmarkt am Rathausplatz 2026\">Wiener Christkindlmarkt</a>. Die Eisfläche davor bleibt bis 6. Jänner, ist aber genau am 31. Dezember geschlossen. Am 22. Jänner kommt dann der <a href=\"/veranstaltungen/wiener-eistraum-2027/\" title=\"Wiener Eistraum 2027\">Wiener Eistraum</a> auf den Platz zurück.",
     ],
@@ -1751,6 +1763,12 @@ export const items: EventItem[] = [
       },
     ],
     related: [
+      {
+        href: "/veranstaltungen/wiener-silvesterlauf-2026/",
+        eyebrow: "31. Dezember, 11 Uhr, Ringstraße",
+        title: "Wiener Silvesterlauf 2026",
+        text: "Am Vormittag desselben Tages: 5.350 Meter auf dem Ring, der Grund, warum er gesperrt ist.",
+      },
       {
         href: "/veranstaltungen/wiener-christkindlmarkt-2026/",
         eyebrow: "Rathausplatz",
@@ -3109,6 +3127,109 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Eine Fotomesse belohnt die, die früh kommen und Fragen stellen. Die Unikate sind bis Mittag oft schon in anderen Händen, und die Händler erzählen gern, was ein Bild ist und woher es kommt — ob Albuminabzug, Silbergelatine oder ein späterer Abzug vom alten Negativ, macht für den Wert mehr aus als das Motiv. Wer ein Geschenk sucht, nimmt einen festen Umschlag oder eine Mappe mit: Ein hundertjähriges Papier übersteht die Straßenbahn im Dezember in der Manteltasche schlecht. Und weil der Eintritt frei ist, darf man auch einfach nur schauen.",
+  },
+  {
+    slug: "wiener-silvesterlauf-2026",
+    createdAt: "2026-11-08T02:35:00+01:00",
+    updatedAt: "2026-11-08T02:35:00+01:00",
+    site: "vien",
+    title: "50. Wiener Silvesterlauf 2026: 5,35 Kilometer über die Ringstraße",
+    cardTitle: "Wiener Silvesterlauf",
+    titleSeo: "Silvesterlauf Wien 2026: Ringstraße, 31. Dezember",
+    summary:
+      "Der 50. Wiener Silvesterlauf ist am Donnerstag, 31. Dezember 2026, auf der Ringstraße: Start des Laufs über 5.350 Meter um 11 Uhr, der Walk folgt um 11:10 Uhr. Das Nenngeld beträgt derzeit 38 Euro, virtuell 24 Euro; veranstaltet wird der Lauf vom LCC Wien.",
+    start: "2026-12-31",
+    startTime: "11:00",
+    utcOffset: "+01:00",
+    venue: "Ringstraße",
+    city: "Wien",
+    country: "Österreich",
+    organizer: "LCC Wien",
+    category: "Silvester",
+    tickets: { priceFrom: 24, priceTo: 38, currency: "EUR" },
+    // Die Anmeldung läuft über Pentek Payment, das Portal des Zeitnehmers
+    // Pentek Timing, im Auftrag des LCC Wien.
+    ticket: {
+      url: "https://www.pentek-payment.at/ppay.php?p=1694&s_p=1",
+      label: "Anmeldung bei Pentek",
+    },
+    source: {
+      name: "LCC Wien — Lauftermine und Anmeldung",
+      url: "https://www.lcc-wien.at/index.php?option=com_content&view=article&id=55&Itemid=27",
+      verifiedOn: "2026-11-08",
+    },
+    body: [
+      "Am Vormittag des letzten Tages im Jahr gehört die <strong>Ringstraße</strong> den Läufern: Der <strong>Internationale Wiener Silvesterlauf</strong> des <strong>LCC Wien</strong> wird am <strong>Donnerstag, 31. Dezember 2026</strong>, zum <strong>50. Mal</strong> gelaufen. Die Strecke misst <strong>5.350 Meter</strong>, gestartet wird um <strong>11 Uhr</strong>, die Walker folgen um <strong>11:10 Uhr</strong>.",
+      "## Die Strecke",
+      "Gelaufen wird auf der Wiener Ringstraße, dem Boulevard rund um die Innere Stadt; beim Leichtathletikverband meldet der Veranstalter die Strecke mit 5,3 Kilometern. Wo genau Start und Ziel 2026 liegen, hat der LCC Wien noch nicht veröffentlicht.",
+      "## Was es kostet",
+      "Laufen und Walken kosten derzeit je <strong>38 Euro</strong>; laut Anmeldeportal gilt dieser Preis noch bis Ende November, danach folgt eine neue Preisstufe, die der Veranstalter noch nicht nennt. Wer nicht nach Wien kommt, kann <strong>virtuell</strong> mitlaufen oder -walken, um <strong>24 Euro</strong>: Die eigene Zeit über 5.350 Meter wird zwischen 31. Dezember, 6 Uhr, und 1. Jänner um Mitternacht online eingetragen; eine Startnummer gibt es dafür nicht. Die Online-Anmeldung schließt Ende Dezember, wenige Tage vor dem Lauf.",
+      "## Walker im richtigen Block",
+      "Nordic Walker starten zehn Minuten nach den Läufern. Der Veranstalter ist dabei streng: Wer als Walker schon im Block um 11 Uhr losgeht, wird automatisch als Läufer gewertet.",
+      "## Wie es zuletzt war",
+      "Zum 49. Lauf am 31. Dezember 2025 meldeten sich laut LCC Wien rund <strong>6.000</strong> Teilnehmer an, so viele wie nie zuvor. Den Startschuss gab Bürgermeister Michael Ludwig, viele liefen kostümiert, und jeder, der ins Ziel kam, bekam eine Finisher-Medaille. Gewonnen haben Mario Bauernfeind in 15:31 Minuten und Julia Mayer in 17:48 Minuten, bei starkem, böigem Wind. Ein Jahr davor gab der Verein die Startunterlagen am 30. Dezember im Wemove Running Store in Wien Mitte aus, nachmelden konnte man am Lauftag in der Universität Wien; wo das 2026 geschieht, steht noch nicht fest.",
+      "## Danach",
+      "Wer am Abend in der Stadt bleibt, geht vom Ring direkt in den <a href=\"/veranstaltungen/wiener-silvesterpfad-2026/\" title=\"Wiener Silvesterpfad 2026: Silvester in Wien, Eintritt frei\">Wiener Silvesterpfad</a>: Silvester auf den Plätzen der Innenstadt und im Prater, Eintritt frei. Den letzten Lauf davor im Prater gab es Ende Oktober beim <a href=\"/veranstaltungen/vienna-halloween-run-2026/\" title=\"Vienna Halloween Run 2026: Halloween-Lauf im Prater\">Vienna Halloween Run</a>.",
+    ],
+    programme: [
+      { heading: "11:00 Uhr — Silvesterlauf", text: "5.350 Meter auf der Ringstraße, Nenngeld derzeit 38 Euro." },
+      { heading: "11:10 Uhr — Silvesterwalk", text: "Dieselbe Strecke für Nordic Walker; wer früher startet, wird als Läufer gewertet." },
+      { heading: "31. Dezember, 6 Uhr, bis 1. Jänner, 24 Uhr — virtueller Lauf", text: "5.350 Meter, wo man will, die Zeit wird online eingetragen; 24 Euro, ohne Startnummer." },
+    ],
+    faq: [
+      {
+        q: "Wann ist der Silvesterlauf 2026 in Wien?",
+        a: "Am <strong>Donnerstag, 31. Dezember 2026</strong>. Der Lauf startet um 11 Uhr, der Walk um 11:10 Uhr. Es ist der 50. Internationale Wiener Silvesterlauf.",
+      },
+      {
+        q: "Wie lang ist die Strecke?",
+        a: "5.350 Meter auf der Ringstraße. Start und Ziel für 2026 hat der Veranstalter noch nicht veröffentlicht.",
+      },
+      {
+        q: "Was kostet die Anmeldung?",
+        a: "Derzeit 38 Euro für Lauf oder Walk, laut Anmeldeportal noch bis Ende November; danach gilt eine neue Preisstufe. Der virtuelle Lauf kostet 24 Euro. Angemeldet wird online bei Pentek Payment.",
+      },
+      {
+        q: "Kann ich den Silvesterlauf walken?",
+        a: "Ja, als Silvesterwalk mit Start um 11:10 Uhr. Wer im Block der Läufer um 11 Uhr startet, wird als Läufer gewertet.",
+      },
+      {
+        q: "Gibt es eine Medaille?",
+        a: "Beim Lauf 2025 bekamen alle Finisher eine Silvesterlauf-Medaille, das war auch in den Jahren davor so.",
+      },
+      {
+        q: "Ist die Ringstraße am 31. Dezember gesperrt?",
+        a: "Ja, am Vormittag wegen des Laufs. Wer mit dem Auto in die Innenstadt will, plant das für den Nachmittag oder nimmt gleich die Öffis.",
+      },
+    ],
+    related: [
+      {
+        href: "/veranstaltungen/wiener-silvesterpfad-2026/",
+        eyebrow: "31. Dezember, Innenstadt",
+        title: "Wiener Silvesterpfad 2026",
+        text: "Am Abend nach dem Lauf: Silvester auf den Plätzen der Innenstadt und im Prater, Eintritt frei.",
+      },
+      {
+        href: "/veranstaltungen/vienna-halloween-run-2026/",
+        eyebrow: "Prater",
+        title: "Vienna Halloween Run 2026",
+        text: "Der Herbstlauf in der Prater Hauptallee: im Dunkeln, gern verkleidet, 2,5 oder 5 Kilometer.",
+      },
+      {
+        href: "/veranstaltungen/move-for-health-movemberlauf-wien-2026/",
+        eyebrow: "14. November, Otto-Wagner-Areal",
+        title: "Move for Health 2026 (Movemberlauf)",
+        text: "Vor Silvester noch ein Lauf: 2,5 oder 5 Kilometer am Steinhof, Kinderlauf über 750 Meter.",
+      },
+      {
+        href: "/veranstaltungen/kuerbisfest-am-himmel-2026/",
+        eyebrow: "Cobenzl",
+        title: "Kürbisfest am Himmel 2026",
+        text: "Der Herbst am Westrand der Stadt: über 200 Kürbissorten am Cobenzl.",
+      },
+    ],
+    expertise:
+      "Ein Silvesterlauf über fünf Kilometer ist kurz, aber er ist kein Sommerlauf. Um 11 Uhr Ende Dezember hat es auf dem Ring oft knapp über null Grad, und zwischen den Häuserzeilen pfeift der Wind — 2025 hat er die schnellen Zeiten verhindert. Wer verkleidet läuft, zieht das Kostüm über die Laufkleidung, nicht statt ihr, und sollte vorher einmal damit gejoggt sein. Bei 6.000 Startern lohnt es sich, eine halbe Stunde früher da zu sein und im Startblock nicht ganz vorn zu stehen, wenn man nicht auf Zeit läuft. Und weil um diese Uhrzeit die Ringstraße gesperrt ist, kommt man am besten mit der U-Bahn: Von der U2 Schottentor oder Rathaus sind es wenige Schritte auf den Ring.",
   },
   {
     slug: "silvesterkonzert-wiener-philharmoniker-2026",
