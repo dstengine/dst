@@ -564,6 +564,14 @@ main.prose .lede {
 
 ::selection { background: var(--accent-tint, #E9F0EC); }
 
+/* A run that must not break where a line ends: a date ("November 2",
+   "2 November 2026"), a count and its word ("40 posts"). A class rather
+   than &nbsp;, so copied text, feeds and API output keep plain spaces
+   (visual-qa, DESIGN.md). holdDates in ../nowrap.ts writes it into the
+   section ledes. Five sites had their own copy of this rule and the rest
+   had none, so a span written by shared code held nothing on them. */
+.nowrap { white-space: nowrap; }
+
 /* "To be announced", as a value in its own right rather than an empty cell.
    Reads as a status and not a link — the first draft had it underlined in
    the accent, which is the one thing on a listings page nobody should be

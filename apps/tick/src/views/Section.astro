@@ -23,6 +23,7 @@ import { allSections, NAV, promotedAll, linkFor, ADULT } from "../sections";
 import { guides } from "../guides";
 import PromoHero from "@dst/ui/PromoHero.astro";
 import Share from "@dst/ui/Share.astro";
+import { holdDates } from "@dst/ui/nowrap";
 
 interface Props { lang: Lang; section: SectionT }
 const { lang, section } = Astro.props;
@@ -86,7 +87,7 @@ const blocks = promotedAll[lang]
         a quiet link under the lede; on a phone the floating mark
         (Share.astro) is the control instead. */}
     <h1>{section.h1}</h1>
-    <p class="lede">{section.lede}</p>
+    <p class="lede" set:html={holdDates(section.lede)} />
     <div class="section-share">
       <Share title={section.h1} labels={labels[lang]} />
     </div>

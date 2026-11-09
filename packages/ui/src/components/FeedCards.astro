@@ -22,6 +22,7 @@
 import Photo from "./Photo.astro";
 import { formatDate, formatCardDate } from "../date.ts";
 import { caps } from "../caps.ts";
+import { holdDates } from "../nowrap.ts";
 import { EN, type ArticleLabels } from "../labels.ts";
 
 export interface FeedCardItem {
@@ -176,8 +177,11 @@ const parts = (iso: string) => {
                 : <span class="feed-countdown" data-countdown datetime={item.date} data-end={item.end} data-offset={item.utcOffset} data-now={item.end && !item.gaps ? L.underway : undefined} data-ended={item.end ? L.ended : undefined}></span>)}
             {item.past && <span class="feed-past">{L.past}</span>}
           </p>
-          <h3>{item.short ?? item.title}</h3>
-          {item.text && <p class="feed-text">{item.text}</p>}
+          {/* A date in a card's title or summary stays whole, as it does in
+              a section's lede (../nowrap.ts): aca's "Diciembre de | 2026"
+              and irish's "11–13 | June" broke there at 320. */}
+          <h3 set:html={holdDates(item.short ?? item.title)} />
+          {item.text && <p class="feed-text" set:html={holdDates(item.text)} />}
         </div>
       </Tag>
     );

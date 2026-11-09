@@ -62,6 +62,7 @@
     "./utm": "./src/utm.ts",
     "./OnThisPage.astro": "./src/components/OnThisPage.astro",
     "./labels": "./src/labels.ts",
+    "./nowrap": "./src/nowrap.ts",
     "./VenueCards.astro": "./src/components/VenueCards.astro",
     "./SiteSearch.astro": "./src/components/SiteSearch.astro"
   }

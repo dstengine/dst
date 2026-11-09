@@ -8,6 +8,9 @@
 import BaseLayout from "./BaseLayout.astro";
 import LeadTracking from "../components/LeadTracking.astro";
 import PhotoHero from "../components/district/PhotoHero.astro";
+// The lede is HTML here (set:html), so only the text between its tags is
+// searched for dates: see ../nowrap.ts.
+import { holdDatesInHtml } from "../nowrap";
 
 interface Props {
   /** Forwarded to BaseLayout: see its `prose` prop. */
@@ -85,7 +88,7 @@ const nav = [
           <h1>{h1}</h1>
         </>
       )}
-      {lede && <p class="lede" style={ledeWidth ? `max-width: ${ledeWidth}` : undefined} set:html={lede} />}
+      {lede && <p class="lede" style={ledeWidth ? `max-width: ${ledeWidth}` : undefined} set:html={holdDatesInHtml(lede)} />}
     </header>
   )}
   <slot />

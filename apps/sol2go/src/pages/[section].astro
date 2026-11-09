@@ -7,6 +7,7 @@ import SectionNav from "@dst/ui/SectionNav.astro";
 import { siteId, eventsBase } from "../content";
 import { sections, NAV } from "../sections";
 import { eventsBySite } from "@dst/content/events";
+import { holdDates } from "@dst/ui/nowrap";
 
 export function getStaticPaths() {
   const all = sections(eventsBySite(siteId));
@@ -18,7 +19,7 @@ const { section, all } = Astro.props;
 <Layout title={section.title} description={section.description}>
   <PromoHero>
     <h1>{section.h1}</h1>
-    <p class="lede">{section.lede}</p>
+    <p class="lede" set:html={holdDates(section.lede)} />
   </PromoHero>
   <section class="container">
     <SectionNav sections={all} current={`/${section.slug}/`} allHref={eventsBase} {...NAV} />

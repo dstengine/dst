@@ -162,3 +162,78 @@ describe("app conventions", () => {
     assert.deepEqual(clashes, [], `two different things called \`site\` in one file:\n  ${clashes.join("\n  ")}`);
   });
 });
+
+// The chip on an event or news page links to its subject page, and its
+// title puts the category mid-sentence: "Everything on this site filed
+// under theatre", "… filed under Day of the Dead". Whether the capital
+// stays is `inSentence` in packages/ui/src/labels.ts, and each site's
+// vocabulary in sections.ts has already answered the same question in the
+// plural its section heading is built from (plural: "Halloween", plural:
+// "theatre"). The two must agree, or a new holiday tag titles its chip in
+// lower case on the day it earns a page. German keeps every noun's capital
+// and the Armenian title quotes the name as it stands, so only the English
+// and Spanish sites are held to it; tick's plurals are its menu labels,
+// capitals and all, and say nothing about a sentence.
+describe("category titles", async () => {
+  const { inSentence } = await import("../packages/ui/src/labels.ts");
+  const TAG = /^[ \t]*("[^"]+"|[\p{L}]+): \{[^}]*?\bplural: "([^"]+)"/gmu;
+
+  test("a name keeps its capital mid-sentence, a kind of thing loses it", () => {
+    const wrong = [];
+    for (const app of APPS) {
+      if (app === "tick") continue;
+      const config = path.join(REPO, "apps", app, "src", "site.config.ts");
+      const sections = path.join(REPO, "apps", app, "src", "sections.ts");
+      if (!existsSync(config) || !existsSync(sections)) continue;
+      const lang = (readFileSync(config, "utf8").match(/\blang: "([a-z]{2})/) ?? [])[1] ?? "en";
+      if (lang !== "en" && lang !== "es") continue;
+      for (const [, quoted, plural] of readFileSync(sections, "utf8").matchAll(TAG)) {
+        const key = quoted.replace(/^"|"$/g, "");
+        const name = /^\p{Lu}/u.test(plural);
+        const kept = inSentence(key, lang)[0] === key[0];
+        if (name !== kept) wrong.push(`${app}: "${key}" → "${inSentence(key, lang)}", but its plural is "${plural}"`);
+      }
+    }
+    assert.deepEqual(wrong, [], `a category the title cases differently from the site's own vocabulary:\n  ${wrong.join("\n  ")}`);
+  });
+
+  test("the cases that were wrong on 9 Nov 2026", () => {
+    assert.equal(inSentence("Day of the Dead"), "Day of the Dead");
+    assert.equal(inSentence("New Year's Eve"), "New Year's Eve");
+    assert.equal(inSentence("UAE National Day"), "UAE National Day");
+    assert.equal(inSentence("AI"), "AI");
+    assert.equal(inSentence("Navidad", "es"), "Navidad");
+    assert.equal(inSentence("Día de Muertos", "es"), "Día de Muertos");
+    assert.equal(inSentence("Theatre"), "theatre");
+    assert.equal(inSentence("Hacker House"), "hacker house");
+    assert.equal(inSentence("Fiestas patrias", "es"), "fiestas patrias");
+  });
+});
+
+// Section ledes go out through holdDates (packages/ui/src/nowrap.ts), which
+// holds every date in a <span class="nowrap"> so a phone never ends a line
+// on "November" and starts the next on "2".
+describe("dates held in ledes", async () => {
+  const { holdDates, holdDatesInHtml } = await import("../packages/ui/src/nowrap.ts");
+  const held = (text) => [...holdDates(text).matchAll(/<span class="nowrap">([^<]*)<\/span>/g)].map((m) => m[1]);
+
+  test("every date form the network writes, in its four languages", () => {
+    assert.deepEqual(held("on Monday, November 1, and Tuesday, November 2, in 2027"), ["November 1", "November 2"]);
+    assert.deepEqual(held("Nov 1–2 and Nov. 8"), ["Nov 1–2", "Nov. 8"]);
+    assert.deepEqual(held("falls on December 2, 2026."), ["December 2, 2026"]);
+    assert.deepEqual(held("Thursday, 31 December 2026; 1–2 November; 3 January."), ["31 December 2026", "1–2 November", "3 January"]);
+    assert.deepEqual(held("December 2026"), ["December 2026"]);
+    assert.deepEqual(held("el 2 de noviembre de 2026 y el 6 de enero"), ["2 de noviembre de 2026", "6 de enero"]);
+    assert.deepEqual(held("von 13. November bis 6. Jänner, am 31. Dezember 2026"), ["13. November", "6. Jänner", "31. Dezember 2026"]);
+    assert.deepEqual(held("հոկտեմբերի 31-ը և հունվարի 6-ի"), ["հոկտեմբերի 31-ը", "հունվարի 6-ի"]);
+  });
+
+  test("nothing that is not a date, and the text otherwise as Astro would set it", () => {
+    assert.equal(holdDates("New York's 2026 celebrations, the 31st, the Mayor 20"), "New York&#39;s 2026 celebrations, the 31st, the Mayor 20");
+    assert.equal(holdDates("a <b> & \"c\""), "a &lt;b&gt; &amp; &quot;c&quot;");
+    assert.equal(
+      holdDatesInHtml('<a href="/november-2/" title="November 2">on November 2</a>'),
+      '<a href="/november-2/" title="November 2">on <span class="nowrap">November 2</span></a>',
+    );
+  });
+});

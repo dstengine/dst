@@ -208,6 +208,34 @@ export interface ArticleLabels {
   imageKinds: { photo: string; diagram: string; illustration: string; render: string };
 }
 
+// A category as it reads in the middle of an English or Spanish sentence.
+// The data writes every category with a capital because it is a label
+// ("Theatre", "Day of the Dead"), and a kind of thing loses that capital
+// mid-sentence: "filed under theatre". A name does not. Lowercasing the
+// lot titled the chip on nyc42's four Day of the Dead pages "Everything on
+// this site filed under day of the dead" until 9 Nov 2026, and "navidad",
+// "año nuevo" and "new year's eve" on the sites around it.
+//
+// A name is either written the way only a name is — a capital inside the
+// first word, as in "AI", "UAE National Day", "PropTech" — or it is one of
+// NAMES: the holidays and seasons the network files events under. A
+// holiday's name is a sentence like any other, so no pattern can tell
+// "Christmas" from "Concerts"; the list can, and
+// tests/source-conventions.test.js holds it to the sites' own vocabularies
+// in sections.ts, which already spell the plural of each tag with or
+// without its capital (plural: "Halloween", plural: "theatre"). A new
+// holiday tag fails that test until it is added here.
+export const NAMES = new Set([
+  "Halloween", "Day of the Dead", "Thanksgiving", "Christmas", "New Year", "New Year's Eve", "UAE National Day",
+  "Navidad", "Año Nuevo", "Día de Muertos",
+]);
+
+export function inSentence(what: string, locale = "en"): string {
+  const first = what.split(" ")[0];
+  if (NAMES.has(what) || /\p{Lu}/u.test(first.slice(1))) return what;
+  return what.toLocaleLowerCase(locale);
+}
+
 export const EN: ArticleLabels = {
   ended: "Ended",
   underway: "Under way",
@@ -252,7 +280,7 @@ export const EN: ArticleLabels = {
   speakers: "Speakers",
   whoItsFor: "Who it's for",
   locate: (place) => (place ? `${place} on the map` : "Locate"),
-  categoryTitle: (what) => `Everything on this site filed under ${what.toLowerCase()}`,
+  categoryTitle: (what) => `Everything on this site filed under ${inSentence(what)}`,
   related: "Related",
   moreEvents: (where, what = "events") => (where ? `More ${where} ${what}` : `More ${what}`),
   moreTagged: (what, where, year) => `${what} in ${where} ${year}`,
@@ -371,7 +399,7 @@ export const ES: Partial<ArticleLabels> = {
   speakers: "Ponentes",
   whoItsFor: "Para quién es",
   locate: (place) => (place ? `${place} en el mapa` : "Ubicación"),
-  categoryTitle: (what) => `Todo lo que hay en este sitio bajo ${what.toLowerCase()}`,
+  categoryTitle: (what) => `Todo lo que hay en este sitio bajo ${inSentence(what, "es")}`,
   related: "Relacionado",
   moreEvents: (where, what = "eventos") => (where ? `Más ${what} en ${where}` : `Más ${what}`),
   moreTagged: (what, where, year) => `${what} en ${where} ${year}`,

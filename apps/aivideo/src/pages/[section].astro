@@ -7,6 +7,7 @@ import RushFrame from "../components/RushFrame.astro";
 import { siteId, newsBase } from "../content";
 import { sections, NAV } from "../sections";
 import { newsBySite } from "@dst/content/news";
+import { holdDates } from "@dst/ui/nowrap";
 
 export function getStaticPaths() {
   const all = sections(newsBySite(siteId));
@@ -18,7 +19,7 @@ const { section, all } = Astro.props;
 <Layout title={section.title} description={section.description}>
   <PromoHero>
     <h1>{section.h1}</h1>
-    <p class="lede">{section.lede}</p>
+    <p class="lede" set:html={holdDates(section.lede)} />
   </PromoHero>
   <section class="container">
     {section.slug === "comfyui" && <RushFrame sizes="(min-width: 40rem) 11rem, 7.5rem" />}
