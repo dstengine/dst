@@ -201,13 +201,16 @@ describe("the copy and its sheet", () => {
   // after it, as Quebec does (« 49,00 $ », « 39 $ », Igloofest), or with
   // its code before it, as Creamfields Chile's English guide writes pesos
   // ("CLP 98,000"), or the dirham, as UNTOLD Dubai's guide writes it
-  // ("AED 350"). Not the cap the organiser's terms put on a cash refund
-  // ("capped at AED 1,500"), which is a rule of the terms and no price.
+  // ("AED 350"), or the rupee, as Lollapalooza India's writes it ("₹4,499",
+  // or with its code). Not the cap the organiser's terms put on a cash
+  // refund ("capped at AED 1,500"), which is a rule of the terms and no
+  // price. The stylised "¥ØU$UK€ ¥UK1MAT$U", an act's name, has no digit
+  // after its signs and is none either.
   test("every price sits in an expiry span", () => {
     const loose = [];
     for (const { where, text, guide } of all) {
       const left = copy.applySpans(text, guide, END_OF_TIME, where);
-      const hit = left.match(/[^\s]*\$\s?\d[\d,.]*|\d[\d,]*\s?\$(?!\s?\d)|\d[\d,]*\s?บาท|\d[\d,.]*\s?(?:USD|MXN|BRL|CLP|THB|CAD|EUR)\b|\bCLP\s?\d[\d,.]*|(?<!capped at )\bAED\s?\d[\d,.]*/g);
+      const hit = left.match(/[^\s]*\$\s?\d[\d,.]*|\d[\d,]*\s?\$(?!\s?\d)|\d[\d,]*\s?บาท|\d[\d,.]*\s?(?:USD|MXN|BRL|CLP|THB|CAD|EUR)\b|\bCLP\s?\d[\d,.]*|(?<!capped at )\bAED\s?\d[\d,.]*|₹\s?\d[\d,]*|\bINR\s?\d[\d,]*|\d[\d,]*\s?INR\b/g);
       if (hit) loose.push(`${where}: ${hit.join(", ")}`);
     }
     assert.deepEqual(loose, [], "wrap the sentence in {{until prices}}…{{/until}} (or the key its expiry has)");
@@ -758,6 +761,48 @@ describe("where a guide's links lead", () => {
     }
   });
 
+  // Lollapalooza India's MusicEvent (the SEO lead's gate-1 note 9 and gate-3
+  // notes 4 and 5): the organiser's dates, days only, scheduled, its three
+  // organisers, the fourteen acts of the organiser's own text in order as
+  // PerformingGroups, and one offer, BookMyShow's floor from the general
+  // sale, InStock as read, with no tier name and no end of sale. From the
+  // take-down it keeps its seller and hop and loses price and availability,
+  // and after the edition there is none. No other guide's root event names
+  // a performer: the line-ups by day print theirs inside each subEvent (the
+  // CTO's gate-3 note 2), so the pin reads the root node only.
+  test("Lollapalooza India's MusicEvent names its organisers, its fourteen acts and BookMyShow's floor, and no other root event a performer", () => {
+    const node = (g, day) => rules.musicEvent(events.find((e) => e.slug === g.event), g, rules.mainPage(g), day);
+    for (const g of guides) {
+      const n = node(g, "2026-11-09");
+      if (g.event !== "lollapalooza-india") {
+        assert.ok(!("performer" in n), `${g.event}/${g.slug}`);
+        continue;
+      }
+      assert.equal(n.eventStatus, "https://schema.org/EventScheduled");
+      assert.equal(n.startDate, "2027-01-23");
+      assert.equal(n.endDate, "2027-01-24");
+      assert.deepEqual(n.organizer, [
+        { "@type": "Organization", name: "Lollapalooza, LLC", sameAs: "https://www.lollaindia.com/" },
+        { "@type": "Organization", name: "C3 Presents" },
+        { "@type": "Organization", name: "BookMyShow Live" },
+      ]);
+      assert.deepEqual(n.performer.map((p) => [p["@type"], p.name]), [
+        "Olivia Dean", "Limp Bizkit", "KATSEYE", "Fontaines D.C.",
+        "5 Seconds of Summer", "St. Vincent", "Steve Angello", "¥ØU$UK€ ¥UK1MAT$U", "Stewart Copeland and Ricky Kej", "Rachel Chinouriri", "Ecca Vandal", "Alain Johannes",
+        "Scribe", "Noni-Mouse",
+      ].map((name) => ["PerformingGroup", name]));
+      assert.deepEqual(n.offers, [{
+        "@type": "Offer", price: 4499, priceCurrency: "INR", availability: "https://schema.org/InStock", validFrom: "2026-09-03",
+        url: "https://fest.one/go/lollapalooza-india-tickets/", seller: { "@type": "Organization", name: "BookMyShow" },
+      }]);
+      assert.deepEqual(node(g, "2026-12-21").offers, [{
+        "@type": "Offer", validFrom: "2026-09-03",
+        url: "https://fest.one/go/lollapalooza-india-tickets/", seller: { "@type": "Organization", name: "BookMyShow" },
+      }]);
+      assert.ok(!("offers" in node(g, "2027-01-25")));
+    }
+  });
+
   // A question's own anchor (FaqRow.id) is a slug, and no other target of
   // its page has its name: not a section, not the template's own ids (the
   // CTO's gate-3 note 2 on UNTOLD Dubai: an empty id would print id="").
@@ -994,10 +1039,12 @@ describe("the built pages", { skip: built ? false : "apps/fest/dist is missing: 
   // An h1 whose longest run is over 11 characters carries .long-run and
   // its run, and theme.css holds it to that run on a phone, never below
   // --step-2, hyphenated below it (the fest director's ruling at QA, 24
-  // October 2026). These are the pages that carry it: a third is a title
-  // edit that changed a page's h1 size, and must be seen. No h2 carries it
-  // yet: the h2s' hyphenation moves eight pages and is a card of its own.
-  test("exactly two h1s carry long-run, each with its own run, and no h2 does", () => {
+  // October 2026). These are the pages that carry it: one more is a title
+  // edit that changed a page's h1 size, and must be seen. Lollapalooza
+  // India's five h1s open on "Lollapalooza", twelve letters, from the day
+  // the guide was built (9 November 2026). No h2 carries it yet: the h2s'
+  // hyphenation moves eight pages and is a card of its own.
+  test("exactly seven h1s carry long-run, each with its own run, and no h2 does", () => {
     const raw = (s) => s.replace(/<[^>]+>/g, "").replace(/&nbsp;/g, "\u00a0").replace(/&quot;/g, '"').replace(/&#39;|&#x27;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&");
     const h1s = {}, h2s = [], missed = [];
     for (const [p, h] of content) {
@@ -1010,7 +1057,15 @@ describe("the built pages", { skip: built ? false : "apps/fest/dist is missing: 
       }
       for (const m of h.matchAll(/<h2\b([^>]*)>/g)) if (/\blong-run\b/.test(m[1])) h2s.push(p);
     }
-    assert.deepEqual(h1s, { "/igloofest/programmation/": 13, "/wonderfruit/en/stay/": 13 });
+    assert.deepEqual(h1s, {
+      "/igloofest/programmation/": 13,
+      "/lollapalooza-india/": 12,
+      "/lollapalooza-india/faq/": 12,
+      "/lollapalooza-india/lineup/": 12,
+      "/lollapalooza-india/location/": 12,
+      "/lollapalooza-india/tickets/": 12,
+      "/wonderfruit/en/stay/": 13,
+    });
     assert.deepEqual(missed, []);
     assert.deepEqual(h2s, []);
   });
@@ -1270,24 +1325,31 @@ describe("the built pages", { skip: built ? false : "apps/fest/dist is missing: 
           assert.ok(!["questions", "sources", "content", "main"].includes(s.id), `${page.slug}: section id "${s.id}" is the template's`);
   });
 
-  // The three questions UNTOLD Dubai's other pages link to carry their ids
-  // on its FAQ page, each link titled by its question; no other row on the
-  // site prints an id (Faq.astro prints none where the data gives none),
-  // and no page of the dist, hops included, repeats one.
-  test("UNTOLD Dubai's FAQ rows #age, #times and #items are the links' targets, and no other row has an id", () => {
+  // The questions UNTOLD Dubai's other pages link to carry their ids on its
+  // FAQ page, and Lollapalooza India's FAQ page carries the four its copy
+  // gives (#age, which its tickets page links, and #bags, #reentry and
+  // #access, which no link names yet): each link titled by its question, and
+  // landing on a row of its own guide. No other row on the site prints an id
+  // (Faq.astro prints none where the data gives none), and no page of the
+  // dist, hops included, repeats one.
+  test("the FAQ rows with ids are UNTOLD Dubai's and Lollapalooza India's, each link titled by its question", () => {
     const rowIds = (h) => [...h.matchAll(/<details class="faq-item" id="([^"]*)"/g)].map((m) => m[1]);
-    assert.deepEqual(rowIds(html.get("/untold-dubai/faq/")), ["age", "times", "items"]);
-    const others = [...html].filter(([p, h]) => p !== "/untold-dubai/faq/" && rowIds(h).length).map(([p]) => p);
+    const ROWS = { "/untold-dubai/faq/": ["age", "times", "items"], "/lollapalooza-india/faq/": ["age", "bags", "reentry", "access"] };
+    const LINKED = { "/untold-dubai/faq/": ["age", "items", "times"], "/lollapalooza-india/faq/": ["age"] };
+    for (const [path, ids] of Object.entries(ROWS)) assert.deepEqual(rowIds(html.get(path)), ids, path);
+    const others = [...html].filter(([p, h]) => !(p in ROWS) && rowIds(h).length).map(([p]) => p);
     assert.deepEqual(others, []);
-    const faqPage = guides.find((g) => g.event === "untold-dubai").pages.find((p) => p.kind === "faq");
-    const linked = new Map();
-    for (const [p, h] of content)
-      for (const a of anchors(h).filter((x) => x.href?.startsWith("/untold-dubai/faq/#"))) {
-        const id = a.href.split("#")[1];
-        linked.set(id, (linked.get(id) ?? 0) + 1);
-        assert.equal(decode(a.title ?? ""), faqPage.faq.find((r) => r.id === id)?.q, `${p}: ${a.href}`);
-      }
-    assert.deepEqual([...linked.keys()].sort(), ["age", "items", "times"]);
+    for (const [path, ids] of Object.entries(LINKED)) {
+      const faqPage = guides.flatMap((g) => g.pages).find((p) => `/${p.slug}/` === path);
+      const linked = new Map();
+      for (const [p, h] of content)
+        for (const a of anchors(h).filter((x) => x.href?.startsWith(`${path}#`))) {
+          const id = a.href.split("#")[1];
+          linked.set(id, (linked.get(id) ?? 0) + 1);
+          assert.equal(decode(a.title ?? ""), faqPage.faq.find((r) => r.id === id)?.q, `${p}: ${a.href}`);
+        }
+      assert.deepEqual([...linked.keys()].sort(), ids, path);
+    }
     const twice = [];
     for (const [p, h] of html) {
       const ids = [...h.matchAll(/\sid="([^"]*)"/g)].map((m) => m[1]);
@@ -1310,7 +1372,7 @@ describe("the built pages", { skip: built ? false : "apps/fest/dist is missing: 
   // the same words: each answer in the markup equals its accordion answer
   // with the tags taken out.
   test("an FAQPage answer is plain text, and the accordion's words", () => {
-    const fold = (s) => s.replace(/\s+/g, " ").trim();
+    const fold = (s) => s.replace(/\u2060/g, "").replace(/\s+/g, " ").trim();
     const bad = [];
     let answers = 0;
     for (const [p, h] of content) {
@@ -1333,7 +1395,9 @@ describe("the built pages", { skip: built ? false : "apps/fest/dist is missing: 
           // break ones French typography puts before « : » and inside « 19 h »
           // included, so the markup's text is folded the same way here. The
           // markup keeps its no-break spaces; the typography walk of the
-          // French guide reads them there.
+          // French guide reads them there. The word joiner that holds
+          // "single-\u2060day" whole in Lollapalooza India's question goes
+          // too, as decode() drops it from the accordion: no width, no sound.
           else if (printed.get(fold(q.name)) !== fold(text)) bad.push(`${p}: the answer to "${q.name}" is not the accordion's`);
         }
       }

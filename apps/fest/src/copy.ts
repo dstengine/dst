@@ -443,7 +443,36 @@ const EN_AE_TOKENS = [
   `\\b\\d Day Pass\\b`, // "GA - 3 Day Pass" (UNTOLD Dubai)
 ];
 const KEEP_EN_AE = new RegExp([KEEP_EN.source, ...EN_AE_TOKENS].join("|"), "g");
-const KEEP: Record<string, RegExp> = { en: KEEP_EN, "en-ae": KEEP_EN_AE, "en-au": KEEP_TOGETHER, es: KEEP_ES, "es-mx": KEEP_ES_MX, pt: KEEP_PT, th: KEEP_TH, fr: KEEP_FR };
+// India's English (Lollapalooza India, 9 November 2026): a row of its own,
+// the house's English and the tokens below, so that no other English guide
+// is set anew. The rupee's sign is a prefix in line breaking and never
+// parts from its digits ("₹4,499"), so it needs none. The guide's
+// line-break sweep (17 widths, 305 to 1280 px) found each of these split at
+// a line's end: in its source lines a year from its word, "2027 | listing"
+// from 360 to 390 px and "2026 | edition" from 305 to 340; in its pass list
+// a count from its noun, "4 | stages" at 480 and "40+ | performances" from
+// 315 to 1280, an age range, "5 | to 25" at 375, and two short hyphenated
+// words, "sold- | out" at 360 and, in a question, "single- | day" from 305
+// to 340; a pass's name from its age, "Under | 25" from 315 to 340, and
+// "under | 5." at 340; a stage, a line and a terminal from their numbers,
+// "Main | Stage 1", "Stage | 3", "Day | 2" (305 to 600), "CSMI |
+// Airport-T2" (305 to 390); a time from its "am", "5:55 | am", "11 | am
+// IST", "am | IST", "10:30 | pm"; the venue's postcode from its city,
+// "Mumbai | 400034" from 310 to 1280, and two abbreviations from their
+// names, "K.K. | Marg" and "St. | Vincent", whose full stop at a line's end
+// reads as a sentence's.
+const EN_IN_TOKENS = [
+  `\\b\\d{4} (?:listing|edition)\\b`, // the Lollapalooza India 2027 listing, the 2026 edition (Lollapalooza India)
+  `\\b\\d+\\+? (?:stages|performances)\\b`, // 4 stages, 40+ performances (Lollapalooza India)
+  `\\b\\d{1,2} to \\d{1,2}\\b`, // aged 5 to 25 (Lollapalooza India)
+  `\\b(?:sold-out|single-day)\\b`, // the sold-out notice, single-day tickets (Lollapalooza India)
+  `\\b[Uu]nder \\d{1,2}\\b`, // Under 25, under 5 (Lollapalooza India)
+  `\\b(?:Main )?Stages? \\d\\b|\\bDay \\d\\b|\\bCSMI Airport-T[12]\\b`, // Main Stage 1, Stage 3, Day 2, CSMI Airport-T2 (Lollapalooza India)
+  `\\b\\d{1,2}(?::\\d{2})? [ap]m(?: IST)?\\b`, // 5:55 am, 11 am IST, 10:30 pm (Lollapalooza India)
+  `\\bMumbai \\d{6}\\b|\\bK\\.K\\. Marg\\b|\\bSt\\. Vincent\\b`, // Mumbai 400034, K.K. Marg, St. Vincent (Lollapalooza India)
+];
+const KEEP_EN_IN = new RegExp([KEEP_EN.source, ...EN_IN_TOKENS].join("|"), "g");
+const KEEP: Record<string, RegExp> = { en: KEEP_EN, "en-ae": KEEP_EN_AE, "en-in": KEEP_EN_IN, "en-au": KEEP_TOGETHER, es: KEEP_ES, "es-mx": KEEP_ES_MX, pt: KEEP_PT, th: KEEP_TH, fr: KEEP_FR };
 // In a long run a split date is a nicety, but a sign and the number it
 // belongs to are one token wherever they stand: the sweep found "R$ |
 // 765,45", "(11) | 5666-8822", "nº | 12.933" and "Linha | 9-Esmeralda" in
@@ -488,6 +517,7 @@ const GLUE_ES_MX = new RegExp([...ES_MX_TOKENS, `\\b\\d{1,2} de ${MES}(?: de \\d
 // where it quotes a season's name.
 const GLUE_EN = new RegExp([...EN_TOKENS, `\\b\\d{1,2} ${MONTH}\\b`, `\\b\\d[\\d,.]*%? (?:km|mins?|hrs?|hours?|minutes|days?|nights?|people|person|[Yy]ears?|tickets?|passes|artists)\\b`].join("|"), "g");
 const GLUE_EN_AE = new RegExp([GLUE_EN.source, ...EN_AE_TOKENS].join("|"), "g");
+const GLUE_EN_IN = new RegExp([GLUE_EN.source, ...EN_IN_TOKENS].join("|"), "g");
 const glueEnglish = (glue: RegExp) => (run: string) =>
   run
     .replace(glue, (m) => m.replace(/ /g, "\u00a0"))
@@ -507,6 +537,8 @@ const GLUE: Record<string, (run: string) => string> = {
   en: glueEnglish(GLUE_EN),
   // The UAE's English, with the dirham's code held to its sum.
   "en-ae": glueEnglish(GLUE_EN_AE),
+  // India's English, with its stages, times and postcode held.
+  "en-in": glueEnglish(GLUE_EN_IN),
   "en-au": (run) => run,
   pt: (run) => run.replace(GLUE_PT, "$1\u00a0"),
   "es-mx": (run) => run.replace(GLUE_ES_MX, (m) => m.replace(/ /g, "\u00a0")),
@@ -608,7 +640,11 @@ const HEADING_KEEP_FR = new RegExp(`(?:^${JOUR}[ \\u00a0])?${FR_DATE}[:,.;]?|${F
 // goes in one span and "came out" in another: the three words in one are
 // wider than the column at 320, and with the word alone held the heading
 // set "When the | line-up came | out" from 305 to 340 px.
-const HEADING_KEEP_EN = new RegExp(`\\b\\d{1,2} ${MONTH}\\b(?! \\d)[:,.;]?|\\b\\d+% off\\b|\\bno line-up\\b|\\bline-up(?= came out\\b)|(?<=\\bline-up )came out\\b`, "g");
+// Lollapalooza India's tickets page (9 November 2026) set "The six two- |
+// day passes" from 305 to 480 px and "Children and the Under | 25 pass"
+// from 305 to 330: the hyphenated word and the pass's name each in a span.
+// No other English heading has either.
+const HEADING_KEEP_EN = new RegExp(`\\b\\d{1,2} ${MONTH}\\b(?! \\d)[:,.;]?|\\b\\d+% off\\b|\\bno line-up\\b|\\bline-up(?= came out\\b)|(?<=\\bline-up )came out\\b|\\btwo-day\\b|\\bUnder 25\\b`, "g");
 // A month with its year that is wider than the column: at the heading's
 // 24 px "September 2026" is 322 px, "December 2026" 311 and "November 2026"
 // 308, against the 292 px column at 320, so the nowrap of HEADING_KEEP held
@@ -642,10 +678,10 @@ const ASTRO_ESCAPES: Record<string, string> = { "&": "&amp;", "<": "&lt;", ">": 
 // counted with neither word). No built h1 moved with it.
 const HEADING_BREAKS = /[ \t\n\u200b\u00ad\u0E00-\u0E7F\u3040-\u30FF\p{Script=Han}]+|(?<=[\u2010\u2013\u2014/]|-(?!\d))(?!\u2060)/u;
 export const longestRun = (text: string) => Math.max(0, ...text.split(HEADING_BREAKS).map((run) => [...run.replace(/\u2060/g, "")].length));
-// The house's English headings and the UAE's (UNTOLD Dubai's "en-AE",
-// whose keep list is the house's with the dirham), not Beyond The Valley's
-// and Field Day's frozen "en-AU".
-const HEADING_EN = new Set(["en", "en-ae"]);
+// The house's English headings, the UAE's (UNTOLD Dubai's "en-AE", whose
+// keep list is the house's with the dirham) and India's (Lollapalooza
+// India's "en-IN"), not Beyond The Valley's and Field Day's frozen "en-AU".
+const HEADING_EN = new Set(["en", "en-ae", "en-in"]);
 export const headingHtml = (text: string, lang = "en") => {
   const set = text.replace(/[&<>'"]/g, (c) => ASTRO_ESCAPES[c]).replace(HEADING_KEEP, (m) => `<span class="nowrap">${m}</span>`);
   const html = HEADING_EN.has(lang.toLowerCase()) ? set.replace(HEADING_WIDE_EN, '<span class="keep-date">$1</span>').replace(HEADING_KEEP_EN, (m) => `<span class="nowrap">${m}</span>`) : set;

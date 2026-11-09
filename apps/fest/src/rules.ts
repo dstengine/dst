@@ -249,7 +249,9 @@ interface Venue { name: string; address: string; lat: number; lon: number; count
     last day of a sale (Wonderfruit's November Sale, which its organiser
     ends on 9 November), the offer prints it, and from the next day is left
     out; with every offer gone, the event has none (the SEO lead's gate-3
-    condition 4 on Wonderfruit). No performer (the organiser ranks no act).
+    condition 4 on Wonderfruit). No performer unless the markup names the
+    sheet's act lists (markup.performers: Lollapalooza India's written bill,
+    the SEO lead's gate-2 note 11), each act a PerformingGroup.
     The image is the guide's cover, the abstract picture its main page
     shows (Google's Event reference recommends one), and none where the
     guide has no cover. Where the sheet splits the line-up
@@ -352,6 +354,23 @@ export function musicEvent(event: FestEvent, guide: Guide, page: GuidePage, day:
       ...(own.length ? { offers: own } : {}),
     };
   });
+  // The event's own performers, from the sheet's lists the markup names, in
+  // order: an act is a name, or an object's `act` (Lollapalooza India's
+  // also_named_by_organiser carries its post and note beside the name). A
+  // name twice across the lists stops the build, so a later sheet edit
+  // cannot print a headliner twice (the CTO's gate-3 note 8). The root
+  // event's only: a subpage's edition names none.
+  const performers = page.markup ? undefined : event.markup.performers?.flatMap((k) => {
+    const list = resolve(event.sheet, k);
+    if (!Array.isArray(list)) throw new Error(`${event.slug}: markup.performers names "${k}", which is not a list in the sheet`);
+    return list.map((a) => {
+      const name = typeof a === "string" ? a : (a as { act?: unknown })?.act;
+      if (typeof name !== "string") throw new Error(`${event.slug}: an item of "${k}" is neither an act's name nor an object with one`);
+      return name;
+    });
+  });
+  if (performers && new Set(performers).size !== performers.length)
+    throw new Error(`${event.slug}: markup.performers names an act twice (${performers.filter((n, i) => performers.indexOf(n) !== i).join(", ")})`);
   return {
     "@type": "MusicEvent",
     additionalType: "https://schema.org/Festival",
@@ -370,6 +389,7 @@ export function musicEvent(event: FestEvent, guide: Guide, page: GuidePage, day:
     ...(event.markup.previousStartDate && !page.markup ? { previousStartDate: event.markup.previousStartDate } : {}),
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     location: place,
+    ...(performers?.length ? { performer: performers.map((name) => ({ "@type": "PerformingGroup", name })) } : {}),
     // The organiser's site as `sameAs`, not `url`: the network's structured
     // data names a third party only as an identity (tests/outbound-links).
     // None where the organiser has no site of its own (Creamfields Chile's

@@ -134,8 +134,11 @@ export interface FestEvent extends Dated {
     /** The sheet key of the coordinates the markup prints ({ lat, lon }),
         where they are not the scout's venue.lat and venue.lon. */
     geo?: string;
-    /** The organiser's site, where it has one, goes out as `sameAs`. */
-    organizer: { name: string; url?: string };
+    /** The organiser's site, where it has one, goes out as `sameAs`. Several
+        where the sheet and the page name several (Lollapalooza India: the
+        brand's owner, C3 Presents and BookMyShow Live, the SEO lead's
+        gate-3 note 5), as a subpage's markup may. */
+    organizer: { name: string; url?: string } | { name: string; url?: string }[];
     /** Either price rows of the sheet, one offer each, at the seller's
         price with its fee (Moshtix prints it), or one offer at one sheet
         figure (`price.key`, an { amount }), where the seller prints its
@@ -158,6 +161,12 @@ export interface FestEvent extends Dated {
         own words through the day's perGuide, keyed as Offer.perGuide is:
         Primavera Sound São Paulo's English twin, "Saturday 5 December". */
     subEvents?: { name: string; startDate: string; acts: string | string[]; offers?: Offer[]; perGuide?: Record<string, { name?: string }> }[];
+    /** The sheet keys of the act lists the event's own `performer` names,
+        in order, where the organiser's text names its bill but not by day
+        (Lollapalooza India: the release's headliners and acts, then the
+        two its captions add). An item is an act's name or an object whose
+        `act` is one. Absent, the event names no performer. */
+    performers?: string[];
   };
   /** Section 1 of the card, verbatim with every repair. Free-form on
       purpose: it is the scout's document, and copy.ts resolves the copy's
@@ -207,7 +216,9 @@ export interface FaqRow {
       ("/untold-dubai/faq/#times"): lower case, a letter first, then
       letters, digits and hyphens, and unique on its page with the
       sections' ids (copy.ts resolves the link to it, tests/fest.test.js
-      holds both). Absent on every other row, which prints no id. */
+      holds both). A row may carry the anchor its copy gives it before any
+      link names it (Lollapalooza India's #bags, #reentry, #access). Absent
+      on every other row, which prints no id. */
   id?: string;
 }
 
