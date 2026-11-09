@@ -518,7 +518,7 @@ export const items: EventItem[] = [
   {
     slug: "vienna-halloween-run-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-11-08T02:35:00+01:00",
+    updatedAt: "2026-11-09T02:35:00+01:00",
     site: "vien",
     image: "/covers/vienna-halloween-run-2026.jpg",
     imageAlt: "Eine helle Laufbahn, die in die Bildmitte führt, gesäumt von Bäumen mit rotem Herbstlaub",
@@ -586,6 +586,12 @@ export const items: EventItem[] = [
     ],
     related: [
       {
+        href: "/veranstaltungen/adventlauf-lcc-wien-prater-2026/",
+        eyebrow: "6. Dezember, Prater Hauptallee",
+        title: "Adventlauf des LCC Wien 2026",
+        text: "Zurück in die Hauptallee im Advent: 3 oder 10 Kilometer am 6. Dezember um 10 Uhr, Nenngeld 28 Euro, Medaille für jeden.",
+      },
+      {
         href: "/veranstaltungen/wiener-silvesterlauf-2026/",
         eyebrow: "31. Dezember, Ringstraße",
         title: "Wiener Silvesterlauf 2026",
@@ -647,7 +653,7 @@ export const items: EventItem[] = [
   {
     slug: "kuerbisfest-am-himmel-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-11-08T02:35:00+01:00",
+    updatedAt: "2026-11-09T02:35:00+01:00",
     site: "vien",
     image: "/covers/kuerbisfest-am-himmel-2026.jpg",
     imageAlt: "Ein breiter Haufen runder Papierscheiben in Rot, Grün, Ocker und Creme, in vielen verschiedenen Größen",
@@ -711,6 +717,12 @@ export const items: EventItem[] = [
       },
     ],
     related: [
+      {
+        href: "/veranstaltungen/adventlauf-lcc-wien-prater-2026/",
+        eyebrow: "6. Dezember, Prater Hauptallee",
+        title: "Adventlauf des LCC Wien 2026",
+        text: "Im Advent ein Vormittag im Prater: 3 oder 10 Kilometer Lauf, 3 Kilometer Walking, Start am 6. Dezember um 10 Uhr.",
+      },
       {
         href: "/veranstaltungen/wiener-silvesterlauf-2026/",
         eyebrow: "31. Dezember, Ringstraße",
@@ -3131,7 +3143,7 @@ export const items: EventItem[] = [
   {
     slug: "wiener-silvesterlauf-2026",
     createdAt: "2026-11-08T02:35:00+01:00",
-    updatedAt: "2026-11-08T02:35:00+01:00",
+    updatedAt: "2026-11-09T02:35:00+01:00",
     site: "vien",
     title: "50. Wiener Silvesterlauf 2026: 5,35 Kilometer über die Ringstraße",
     cardTitle: "Wiener Silvesterlauf",
@@ -3169,7 +3181,7 @@ export const items: EventItem[] = [
       "## Wie es zuletzt war",
       "Zum 49. Lauf am 31. Dezember 2025 meldeten sich laut LCC Wien rund <strong>6.000</strong> Teilnehmer an, so viele wie nie zuvor. Den Startschuss gab Bürgermeister Michael Ludwig, viele liefen kostümiert, und jeder, der ins Ziel kam, bekam eine Finisher-Medaille. Gewonnen haben Mario Bauernfeind in 15:31 Minuten und Julia Mayer in 17:48 Minuten, bei starkem, böigem Wind. Ein Jahr davor gab der Verein die Startunterlagen am 30. Dezember im Wemove Running Store in Wien Mitte aus, nachmelden konnte man am Lauftag in der Universität Wien; wo das 2026 geschieht, steht noch nicht fest.",
       "## Danach",
-      "Wer am Abend in der Stadt bleibt, geht vom Ring direkt in den <a href=\"/veranstaltungen/wiener-silvesterpfad-2026/\" title=\"Wiener Silvesterpfad 2026: Silvester in Wien, Eintritt frei\">Wiener Silvesterpfad</a>: Silvester auf den Plätzen der Innenstadt und im Prater, Eintritt frei. Den letzten Lauf davor im Prater gab es Ende Oktober beim <a href=\"/veranstaltungen/vienna-halloween-run-2026/\" title=\"Vienna Halloween Run 2026: Halloween-Lauf im Prater\">Vienna Halloween Run</a>.",
+      "Wer am Abend in der Stadt bleibt, geht vom Ring direkt in den <a href=\"/veranstaltungen/wiener-silvesterpfad-2026/\" title=\"Wiener Silvesterpfad 2026: Silvester in Wien, Eintritt frei\">Wiener Silvesterpfad</a>: Silvester auf den Plätzen der Innenstadt und im Prater, Eintritt frei. Den letzten Lauf davor im Prater hat der LCC Wien am 6. Dezember: den <a href=\"/veranstaltungen/adventlauf-lcc-wien-prater-2026/\" title=\"Adventlauf Wien 2026: Prater Hauptallee, 6. Dezember\">Adventlauf</a> über 3 oder 10 Kilometer in der Hauptallee, auf der Ende Oktober schon der <a href=\"/veranstaltungen/vienna-halloween-run-2026/\" title=\"Vienna Halloween Run 2026: Halloween-Lauf im Prater\">Vienna Halloween Run</a> lief.",
     ],
     programme: [
       { heading: "11:00 Uhr — Silvesterlauf", text: "5.350 Meter auf der Ringstraße, Nenngeld derzeit 38 Euro." },
@@ -3204,6 +3216,12 @@ export const items: EventItem[] = [
     ],
     related: [
       {
+        href: "/veranstaltungen/adventlauf-lcc-wien-prater-2026/",
+        eyebrow: "6. Dezember, Prater Hauptallee",
+        title: "Adventlauf des LCC Wien 2026",
+        text: "Der Lauf des LCC davor: 3 oder 10 Kilometer in der Prater Hauptallee am 6. Dezember, Nenngeld 28 Euro.",
+      },
+      {
         href: "/veranstaltungen/wiener-silvesterpfad-2026/",
         eyebrow: "31. Dezember, Innenstadt",
         title: "Wiener Silvesterpfad 2026",
@@ -3230,6 +3248,111 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Ein Silvesterlauf über fünf Kilometer ist kurz, aber er ist kein Sommerlauf. Um 11 Uhr Ende Dezember hat es auf dem Ring oft knapp über null Grad, und zwischen den Häuserzeilen pfeift der Wind — 2025 hat er die schnellen Zeiten verhindert. Wer verkleidet läuft, zieht das Kostüm über die Laufkleidung, nicht statt ihr, und sollte vorher einmal damit gejoggt sein. Bei 6.000 Startern lohnt es sich, eine halbe Stunde früher da zu sein und im Startblock nicht ganz vorn zu stehen, wenn man nicht auf Zeit läuft. Und weil um diese Uhrzeit die Ringstraße gesperrt ist, kommt man am besten mit der U-Bahn: Von der U2 Schottentor oder Rathaus sind es wenige Schritte auf den Ring.",
+  },
+  {
+    slug: "adventlauf-lcc-wien-prater-2026",
+    createdAt: "2026-11-09T02:35:00+01:00",
+    updatedAt: "2026-11-09T02:35:00+01:00",
+    site: "vien",
+    title: "Adventlauf des LCC Wien 2026: 3 und 10 Kilometer im Prater",
+    cardTitle: "Adventlauf des LCC Wien",
+    titleSeo: "Adventlauf Wien 2026: Prater Hauptallee, 6. Dezember",
+    summary:
+      "Der Adventlauf des LCC Wien ist am Sonntag, 6. Dezember 2026, um 10 Uhr in der Prater Hauptallee: 3 oder 10 Kilometer Lauf und 3 Kilometer Walking. Das Nenngeld beträgt 28 Euro bei Online-Anmeldung bis 2. Dezember, am Renntag 30 Euro; jeder Läufer bekommt eine Erinnerungsmedaille.",
+    start: "2026-12-06",
+    startTime: "10:00",
+    utcOffset: "+01:00",
+    venue: "Prater Hauptallee",
+    city: "Wien",
+    country: "Österreich",
+    organizer: "LCC Wien",
+    category: "Sport",
+    tickets: { priceFrom: 24, priceTo: 30, currency: "EUR" },
+    // Die Anmeldung läuft über Pentek Payment, das Portal des Zeitnehmers
+    // Pentek Timing, im Auftrag des LCC Wien.
+    ticket: {
+      url: "https://www.pentek-payment.at/ppay.php?p=1693&s_p=1",
+      label: "Anmeldung bei Pentek",
+    },
+    source: {
+      name: "LCC Wien — Ausschreibung Adventlauf 2026",
+      url: "https://www.lcc-wien.at/index.php?option=com_content&view=article&id=823",
+      verifiedOn: "2026-11-09",
+    },
+    body: [
+      "Am Nikolaustag, zugleich dem zweiten Adventsonntag, läuft der <strong>LCC Wien</strong> in den Prater: Der <strong>Adventlauf des LCC-Wien</strong> ist am <strong>Sonntag, 6. Dezember 2026</strong>, um <strong>10 Uhr</strong> in der <strong>Prater Hauptallee</strong>. Zur Wahl stehen ein Lauf über <strong>3</strong> oder <strong>10 Kilometer</strong> und <strong>3 Kilometer Walking</strong>; es ist der 679. Lauf in der Geschichte des Vereins.",
+      "## Die Strecke",
+      "Start und Ziel liegen auf der Prater Hauptallee auf Höhe des Marathonwegs. Gelaufen wird auf der 3-Kilometer-Runde um das <strong>Heustadlwasser</strong>; wer die 10 Kilometer gewählt hat, hängt nach dem Durchlauf bei Start und Ziel noch die traditionelle 7-Kilometer-Runde an. Die Strecke ist laut Veranstalter völlig eben, frei von Autoverkehr, exakt vermessen und mit Kilometertafeln und blauen Bodenmarkierungen gekennzeichnet. Zielschluss ist um <strong>11:30 Uhr</strong>, für die 10 Kilometer bleiben also anderthalb Stunden.",
+      "## Was es kostet",
+      "Das Nenngeld beträgt für alle drei Bewerbe <strong>28 Euro</strong>. Wer sich erst am Renntag nachmeldet, zahlt <strong>30 Euro</strong>, und das nur, solange noch Startplätze frei sind. Wer nicht in den Prater kommt, kann <strong>virtuell</strong> 3 oder 10 Kilometer laufen oder 3 Kilometer walken, um <strong>24 Euro</strong>: Die eigene Zeit wird zwischen 5. Dezember, 6 Uhr, und 6. Dezember um Mitternacht online eingetragen, eine Startnummer gibt es dafür nicht. Das Nenngeld wird bei Nichtteilnahme nicht zurückerstattet.",
+      "Gemessen wird netto mit Chip. Wer keinen eigenen Champion Chip hat, mietet bei der Startnummernausgabe einen Green Chip um 4 Euro oder kauft einen gelben um 33 Euro, beides nur gegen Bargeld; andersfarbige Chips lesen die Messanlagen nicht.",
+      "## Anmeldung und Startnummern",
+      "Online meldet man sich bis <strong>Mittwoch, 2. Dezember 2026, 24 Uhr</strong> bei Pentek Payment an. Persönlich anmelden und die Startnummer holen kann man am <strong>Donnerstag, 3. Dezember</strong>, von 16 bis 21 Uhr im <strong>LCC-Laufsportzentrum</strong> im Ernst-Happel-Stadion (Meiereistraße 7, Sektor C/D) und am <strong>Freitag, 4. Dezember</strong>, von 13 bis 16 Uhr im WeMove Running Store Wien Mitte (The Mall, Landstraßer Hauptstraße 1b, 2. Stock). Am Renntag gibt es Startnummern und Nachmeldungen von <strong>8 bis 9:30 Uhr</strong> im Laufsportzentrum. Die Nummer gehört auf die Brust, sichtbar und nicht unter der Windjacke.",
+      "## Im Ziel",
+      "Im Ziel gibt es Tee, Wasser, Gatorade, Almdudler, klare Suppe, Obst und Schnitten, an der Strecke Gatorade und Wasser. Umkleiden und Duschen im Laufsportzentrum sind gratis, die Sammelgarderobe auch, ein Kästchen kostet 3,50 Euro. <strong>Jeder Läufer bekommt eine Erinnerungsmedaille</strong>. Um <strong>12 Uhr</strong> ist Siegerehrung: Pokale für die Ersten jeder Altersklasse über 3 und 10 Kilometer und für die drei Ersten im Walking, aber nur für die, die dann noch da sind.",
+      "## Davor und danach",
+      "Dieselbe Hauptallee war Ende Oktober die Strecke des <a href=\"/veranstaltungen/vienna-halloween-run-2026/\" title=\"Vienna Halloween Run 2026: Halloween-Lauf im Prater\">Vienna Halloween Run</a>. Der nächste Lauf des LCC Wien ist der <a href=\"/veranstaltungen/wiener-silvesterlauf-2026/\" title=\"Silvesterlauf Wien 2026: Ringstraße, 31. Dezember\">Wiener Silvesterlauf</a> am 31. Dezember, zum 50. Mal auf der Ringstraße.",
+    ],
+    programme: [
+      { heading: "8:00 bis 9:30 Uhr — Startnummern und Nachmeldung", text: "Im LCC-Laufsportzentrum im Ernst-Happel-Stadion; Nachmeldung 30 Euro, solange Plätze frei sind." },
+      { heading: "10:00 Uhr — Start", text: "3 und 10 Kilometer Lauf und 3 Kilometer Walking, Start und Ziel auf der Prater Hauptallee auf Höhe des Marathonwegs." },
+      { heading: "11:30 Uhr — Zielschluss", text: "Bis dahin müssen auch die 10-Kilometer-Läufer im Ziel sein." },
+      { heading: "12:00 Uhr — Siegerehrung", text: "Pokale nach Altersklassen, nur an Anwesende; eine Erinnerungsmedaille bekommt jeder Läufer." },
+    ],
+    faq: [
+      {
+        q: "Wann ist der Adventlauf 2026 in Wien?",
+        a: "Am <strong>Sonntag, 6. Dezember 2026</strong>, Start um 10 Uhr in der Prater Hauptallee. Zielschluss ist um 11:30 Uhr, die Siegerehrung um 12 Uhr.",
+      },
+      {
+        q: "Welche Distanzen gibt es beim Adventlauf?",
+        a: "3 und 10 Kilometer Lauf und 3 Kilometer Walking. Die 3 Kilometer führen um das Heustadlwasser, für die 10 Kilometer kommt die 7-Kilometer-Runde dazu.",
+      },
+      {
+        q: "Was kostet die Anmeldung?",
+        a: "28 Euro bei Online-Anmeldung bis 2. Dezember 2026 oder persönlich am 3. und 4. Dezember, 30 Euro bei Nachmeldung am Renntag. Virtuell kostet es 24 Euro. Einen Leih-Chip gibt es um 4 Euro, nur bar.",
+      },
+      {
+        q: "Wo starte ich und wo hole ich die Startnummer?",
+        a: "Start und Ziel sind auf der Prater Hauptallee auf Höhe des Marathonwegs. Die Startnummer gibt es am 3. Dezember von 16 bis 21 Uhr und am Renntag von 8 bis 9:30 Uhr im LCC-Laufsportzentrum im Ernst-Happel-Stadion, am 4. Dezember von 13 bis 16 Uhr im WeMove Running Store Wien Mitte.",
+      },
+      {
+        q: "Kann man sich am Renntag noch nachmelden?",
+        a: "Ja, von 8 bis 9:30 Uhr im LCC-Laufsportzentrum, um 30 Euro und nur, solange noch Startplätze frei sind. Der Veranstalter rät dringend, sich früher anzumelden.",
+      },
+      {
+        q: "Muss ich Vereinsmitglied sein?",
+        a: "Nein. Teilnehmen darf jede und jeder, auch ohne Vereinszugehörigkeit.",
+      },
+    ],
+    related: [
+      {
+        href: "/veranstaltungen/wiener-silvesterlauf-2026/",
+        eyebrow: "31. Dezember, Ringstraße",
+        title: "Wiener Silvesterlauf 2026",
+        text: "Der nächste Lauf des LCC Wien: 5.350 Meter auf der Ringstraße, Start um 11 Uhr, zum 50. Mal.",
+      },
+      {
+        href: "/veranstaltungen/vienna-halloween-run-2026/",
+        eyebrow: "Prater Hauptallee",
+        title: "Vienna Halloween Run 2026",
+        text: "Dieselbe Hauptallee im Herbst: im Dunkeln, gern verkleidet, 2,5 oder 5 Kilometer.",
+      },
+      {
+        href: "/veranstaltungen/move-for-health-movemberlauf-wien-2026/",
+        eyebrow: "14. November, Otto-Wagner-Areal",
+        title: "Move for Health 2026 (Movemberlauf)",
+        text: "Der Lauf im November davor: 2,5 oder 5 Kilometer am Steinhof, Kinderlauf über 750 Meter.",
+      },
+      {
+        href: "/veranstaltungen/kuerbisfest-am-himmel-2026/",
+        eyebrow: "Cobenzl",
+        title: "Kürbisfest am Himmel 2026",
+        text: "Der Herbst am Westrand der Stadt: über 200 Kürbissorten am Cobenzl.",
+      },
+    ],
+    expertise:
+      "Ein Lauf um 10 Uhr Anfang Dezember heißt in Wien meistens wenige Grad über null, und auf der langen, geraden Hauptallee gibt es kaum Schutz vor Wind. Wer sich am Renntag nachmelden will, sollte bald nach 8 Uhr da sein, denn um 9:30 Uhr ist Schluss und Plätze gibt es nur, solange welche frei sind; Bargeld für den Leih-Chip nicht vergessen. Das Laufsportzentrum liegt im Ernst-Happel-Stadion, gleich bei der U2-Station Stadion, dort zieht man sich um und kann danach gratis duschen. Für die 10 Kilometer sind 90 Minuten bis zum Zielschluss großzügig; Walking gibt es nur über 3 Kilometer.",
   },
   {
     slug: "silvesterkonzert-wiener-philharmoniker-2026",
