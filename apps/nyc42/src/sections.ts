@@ -52,6 +52,14 @@ const TAGS: Record<string, Vocabulary> = {
   // of carved pumpkins have nothing in common as formats — it says which
   // week of the year they belong to, and it is exactly what gets typed.
   Halloween: { slug: "halloween", plural: "Halloween", label: "Halloween" },
+  // The two days after it, and not part of it. Día de Muertos is a Mexican
+  // remembrance of the dead with altars and marigolds, and the organizers
+  // here — Mano a Mano, the Botanical Garden, Green-Wood — describe it in
+  // those words and never as Halloween; until 9 November 2026 three of the
+  // four entries were filed under Halloween all the same. It is searched
+  // apart, in both languages, and a year ahead: the page exists from the
+  // week after the 2026 season so that it is indexed before the 2027 one.
+  "Day of the Dead": { slug: "day-of-the-dead", plural: "Day of the Dead", label: "Day of the Dead" },
   // Two more dates, and two because they are searched apart: "Christmas in
   // New York" is a season of rinks, trees and shows, "New Year's Eve in New
   // York" is one night and where to stand for it.
@@ -165,12 +173,33 @@ export function sections(items: FeedItem[]): Section[] {
           description:
             "Halloween in New York 2026, date by date: the pumpkin blaze up the Hudson through November 8, the Village parade on the 31st, six weekends of Boo at the Zoo.",
           h1: "Halloween in New York",
-          lede: "Seven thousand carved pumpkins an hour up the river through November 8, the Village parade up Sixth Avenue on the 31st, six weekends at the Bronx Zoo to November 1, Day of the Dead in Brooklyn on the 2nd — the whole 2026 season, each date as the organizer gave it, and a link to where we read it.",
+          lede: "Seven thousand carved pumpkins an hour up the river through November 8, the Village parade up Sixth Avenue on the 31st, six weekends at the Bronx Zoo to November 1 — the whole 2026 season, each date as the organizer gave it, and a link to where we read it.",
           headings: {
             events: "Halloween 2026 in New York, date by date",
             upcoming: "2026 dates",
             past: "Already gone",
             news: "Halloween news",
+          },
+        };
+      }
+      // A page published after the day, for the next one: the title names
+      // 2027 because that is the year anyone searching it from here on is
+      // planning for, and the body says plainly that what it lists is how
+      // the city kept 2026. The weekdays are the calendar's, not anyone's
+      // announcement; the 2027 programmes are added when the organizers
+      // publish them.
+      if (g.key === "Day of the Dead") {
+        return {
+          title: "Day of the Dead NYC 2027: Día de los Muertos in New York",
+          description:
+            "Day of the Dead in New York: Monday and Tuesday, November 1–2, 2027. Four places the city kept it in 2026: St. Mark's Church, Lincoln Center, Green-Wood, NYBG.",
+          h1: "Day of the Dead in New York (Día de Muertos)",
+          lede: "Día de Muertos falls on Monday, November 1, and Tuesday, November 2, in 2027. Four of New York's 2026 celebrations are below, each with its date and where we read it: a community ofrenda for a month at the Botanical Garden in the Bronx, Mano a Mano's festival in the churchyard of St. Mark's Church on October 31, an evening at Lincoln Center on November 1 and a family afternoon at Green-Wood Cemetery on the 2nd — the last three free. The 2027 dates go up here as the organizers publish them.",
+          headings: {
+            events: "Day of the Dead in New York, date by date",
+            upcoming: "The next dates",
+            past: "Already gone",
+            news: "Day of the Dead news",
           },
         };
       }

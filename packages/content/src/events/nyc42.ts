@@ -2458,7 +2458,7 @@ export const items: EventItem[] = [
   {
     slug: "dia-de-los-muertos-nybg-2026",
     createdAt: "2026-10-13T00:40:00+04:00",
-    updatedAt: "2026-10-31T23:20:00+04:00",
+    updatedAt: "2026-11-09T04:53:00+04:00",
     site: "nyc42",
     image: "/covers/dia-de-los-muertos-nybg-2026.jpg",
     imageAlt: "A paper skeleton in a long orange skirt and a flower-trimmed hat walking a curving path between marigolds, with orange bunting strung through dark trees",
@@ -3512,7 +3512,7 @@ export const items: EventItem[] = [
   {
     slug: "dia-de-muertos-st-marks-church-new-york-2026",
     createdAt: "2026-10-31",
-    updatedAt: "2026-10-31T23:20:00+04:00",
+    updatedAt: "2026-11-09T04:53:00+04:00",
     site: "nyc42",
     image: "/covers/dia-de-muertos-st-marks-church-new-york-2026.jpg",
     imageAlt: "A cut-paper chapel at night between bare trees, strings of orange and yellow sugar-skull cut-outs hung across the sky, and in front a round ofrenda heaped with marigolds and ringed with lit candles",
@@ -3533,7 +3533,7 @@ export const items: EventItem[] = [
     country: "United States",
     geo: { name: "St. Mark's Church in-the-Bowery", lat: 40.730341, lng: -73.9871194 },
     organizer: "Mano a Mano: Mexican Culture Without Borders",
-    category: "Halloween",
+    category: "Day of the Dead",
     tickets: { priceFrom: 0, currency: "USD" },
     ticket: {
       url: "https://www.manoamano.nyc/event-details/day-of-the-dead-dia-de-muertos-nyc-2026-10-31",
@@ -3692,7 +3692,7 @@ export const items: EventItem[] = [
   {
     slug: "dia-de-muertos-lincoln-center-2026",
     createdAt: "2026-10-31T23:20:00+04:00",
-    updatedAt: "2026-10-31T23:20:00+04:00",
+    updatedAt: "2026-11-09T04:53:00+04:00",
     site: "nyc42",
     image: "/covers/dia-de-muertos-lincoln-center-2026.jpg",
     imageAlt: "A tiered ofrenda of marigolds, candles and small empty frames inside a tall glass-walled hall at night, a guitar resting at its foot",
@@ -3712,7 +3712,7 @@ export const items: EventItem[] = [
     country: "United States",
     geo: { name: "David Rubenstein Atrium, Lincoln Center", lat: 40.772, lng: -73.9822 },
     organizer: "Lincoln Center Presents",
-    category: "Halloween",
+    category: "Day of the Dead",
     tickets: { priceFrom: 0, currency: "USD" },
     ticket: {
       url: "https://www.lincolncenter.org/series/lincoln-center-presents/dandiacutea-de-muertos-celebration-740",
@@ -3782,7 +3782,7 @@ export const items: EventItem[] = [
   {
     slug: "day-of-the-dead-green-wood-cemetery-2026",
     createdAt: "2026-10-31T23:20:00+04:00",
-    updatedAt: "2026-10-31T23:20:00+04:00",
+    updatedAt: "2026-11-09T04:53:00+04:00",
     site: "nyc42",
     image: "/covers/day-of-the-dead-green-wood-cemetery-2026.jpg",
     imageAlt: "A cut-paper cemetery chapel with twin towers between two bare trees, a small ofrenda of marigolds and candles at its door and a winding path in front",
@@ -3803,7 +3803,7 @@ export const items: EventItem[] = [
     country: "United States",
     geo: { name: "The Green-Wood Cemetery, Main Entrance", lat: 40.6585, lng: -73.9947 },
     organizer: "The Green-Wood Cemetery",
-    category: "Halloween",
+    category: "Day of the Dead",
     tickets: { priceFrom: 0, currency: "USD" },
     ticket: {
       url: "https://www.green-wood.com/event/day-of-the-dead-family-celebration-3/",
