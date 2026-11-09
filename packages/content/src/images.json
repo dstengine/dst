@@ -41176,6 +41176,38 @@
         ]
       ]
     },
+    "/covers/khachaturian-festival-dialogue-flute-piano-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/khachaturian-festival-dialogue-flute-piano-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/khachaturian-festival-dialogue-flute-piano-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/khachaturian-festival-dialogue-flute-piano-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/khachaturian-festival-dialogue-flute-piano-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/khachaturian-festival-dialogue-flute-piano-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/khachaturian-festival-dialogue-flute-piano-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/khachaturian-symphony-with-bells-ridout-yerevan-2026.jpg": {
       "width": 1536,
       "height": 864,
@@ -43768,6 +43800,38 @@
         ]
       ]
     },
+    "/covers/thomas-anders-modern-talking-yerevan-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/thomas-anders-modern-talking-yerevan-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/thomas-anders-modern-talking-yerevan-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/thomas-anders-modern-talking-yerevan-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/thomas-anders-modern-talking-yerevan-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/thomas-anders-modern-talking-yerevan-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/thomas-anders-modern-talking-yerevan-2027-1024.webp"
+        ]
+      ]
+    },
     "/covers/three-sisters-ghaplanyan-theatre-yerevan-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -44773,6 +44837,38 @@
         [
           1024,
           "/covers/yervand-yerkanyan-75-jubilee-concert-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/zartonk-35-jubilee-evening-khachaturian-hall-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/zartonk-35-jubilee-evening-khachaturian-hall-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/zartonk-35-jubilee-evening-khachaturian-hall-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/zartonk-35-jubilee-evening-khachaturian-hall-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/zartonk-35-jubilee-evening-khachaturian-hall-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/zartonk-35-jubilee-evening-khachaturian-hall-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/zartonk-35-jubilee-evening-khachaturian-hall-yerevan-2026-1024.webp"
         ]
       ]
     },
