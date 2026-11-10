@@ -344,7 +344,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-hampton-court-palace-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-11-03T01:35:00+00:00",
+    updatedAt: "2026-11-10T01:35:00+00:00",
     site: "lnd",
     image: "/covers/halloween-hampton-court-palace-2026.jpg",
     imageAlt: "A dark blue crenellated roofline with three towers of different heights rising from it, the tallest carrying a small red flag",
@@ -436,6 +436,12 @@ export const items: EventItem[] = [
     // Same half-term week: the three pages a reader choosing a day out
     // that week is deciding between.
     related: [
+      {
+        href: "/events/origin-weekend-down-house-2026/",
+        eyebrow: "Bromley, 21–22 November",
+        title: "Origin Weekend at Down House",
+        text: "Talks and tours at Charles Darwin's home for the anniversary of On the Origin of Species, included with admission.",
+      },
       {
         href: "/events/father-christmas-morden-hall-park-2026/",
         eyebrow: "Merton, December",
@@ -573,7 +579,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-eltham-palace-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-10-24T19:00:00+04:00",
+    updatedAt: "2026-11-10T01:35:00+00:00",
     site: "lnd",
     image: "/covers/halloween-eltham-palace-2026.jpg",
     imageAlt: "A large circular window divided into panes, lit pale, above a stepped pale block on a deep blue ground",
@@ -624,6 +630,12 @@ export const items: EventItem[] = [
     // Same half-term week: the three pages a reader choosing a day out
     // that week is deciding between.
     related: [
+      {
+        href: "/events/origin-weekend-down-house-2026/",
+        eyebrow: "Next at English Heritage",
+        title: "Origin Weekend at Down House",
+        text: "Origin Weekend at Darwin's Down House, 21–22 November: talks and tours, free for members.",
+      },
       {
         href: "/events/halloween-hampton-court-palace-2026/",
         eyebrow: "Richmond upon Thames",
@@ -3271,7 +3283,7 @@ export const items: EventItem[] = [
   {
     slug: "christmas-at-eltham-palace-2026",
     createdAt: "2026-10-25T04:30:00+04:00",
-    updatedAt: "2026-11-06T00:30:00+04:00",
+    updatedAt: "2026-11-10T01:35:00+00:00",
     site: "lnd",
     image: "/covers/christmas-at-eltham-palace-2026.jpg",
     imageAlt: "A medieval great hall with a timber hammer-beam roof, market tables of pottery and jewellery beneath it, and a wreath on the arched doorway",
@@ -3335,6 +3347,12 @@ export const items: EventItem[] = [
       },
     ],
     related: [
+      {
+        href: "/events/origin-weekend-down-house-2026/",
+        eyebrow: "21–22 November",
+        title: "Origin Weekend at Down House",
+        text: "English Heritage's other house in south-east London: talks and tours at Darwin's home in Downe.",
+      },
       {
         href: "/events/father-christmas-morden-hall-park-2026/",
         eyebrow: "5–22 December",
@@ -4384,5 +4402,101 @@ export const items: EventItem[] = [
     ],
     expertise:
       "As the Winter Palace comes with the palace ticket, one is really deciding which day to go rather than whether to pay extra. The cleverest choice is a Festive Fayre weekend: beasts indoors and more than a hundred stalls in the gardens, all for the one admission. Families who would like the halls after dark should take a late-opening date and book a late slot, while noting that the gardens shut at half past four. Allow a good two hours for the beasts; skating is a second ticket, so keep it for the end of the day.",
+  },
+  {
+    slug: "origin-weekend-down-house-2026",
+    createdAt: "2026-11-10T01:35:00+00:00",
+    updatedAt: "2026-11-10T01:35:00+00:00",
+    site: "lnd",
+    title: "Origin Weekend at Down House 2026: Darwin's home marks On the Origin of Species",
+    cardTitle: "Origin Weekend at Down House",
+    titleSeo: "Origin Weekend at Down House, London: November 2026",
+    summary:
+      "Origin Weekend at Down House, Charles Darwin's home in Downe, south-east London: Saturday 21 and Sunday 22 November 2026, 10am to 3pm, talks and tours for the anniversary of On the Origin of Species. Free for English Heritage members; adults £17 booked ahead, £20 on the day.",
+    start: "2026-11-21",
+    end: "2026-11-22",
+    dates: ["2026-11-21", "2026-11-22"],
+    startTime: "10:00",
+    endTime: "15:00",
+    utcOffset: "+00:00",
+    venue: "Home of Charles Darwin – Down House, Luxted Road, Downe, BR6 7JT",
+    geo: { name: "Down House", lat: 51.333148, lng: 0.054262 },
+    city: "London",
+    country: "United Kingdom",
+    organizer: "English Heritage",
+    category: "Heritage",
+    tickets: { priceFrom: 17, currency: "GBP" },
+    ticket: {
+      url: "https://www.english-heritage.org.uk/visit/places/home-of-charles-darwin-down-house/prices-and-opening-times/",
+      label: "Book a visit",
+    },
+    source: {
+      name: "English Heritage",
+      url: "https://www.english-heritage.org.uk/visit/whats-on/down-house-origin-weekend/",
+      verifiedOn: "2026-11-10",
+    },
+    body: [
+      "Charles Darwin lived at Down House for forty years, from 1842 until his death in 1882, and it was here that he wrote <strong>On the Origin of Species by Means of Natural Selection</strong>, published in 1859. On <strong>Saturday 21 and Sunday 22 November 2026</strong>, from <strong>10am to 3pm</strong>, English Heritage gives the house a weekend in the book's honour, with a programme of <strong>talks and tours</strong> on both days.",
+      "The house stands in the village of Downe, in the London Borough of Bromley, on the far south-eastern edge of the capital; English Heritage's own address still gives it as Kent.",
+      "## What is on",
+      "English Heritage describes the weekend as a celebration of the anniversary of Darwin's best-known book, with talks and tours running across both days. It has not yet published the speakers, the subjects or the times of the individual sessions, so it is worth checking the event page in the days before you go.",
+      "The rest of the house is open as usual: Charles and Emma's bedroom, the family rooms, the exhibition, the greenhouse, and the gardens that Darwin used as an open-air laboratory, and the <strong>Sandwalk</strong>. A handheld tour, narrated by David Attenborough, takes you round at your own pace. The café is in the old kitchen where the Darwins' meals were cooked, and serves soup from November.",
+      "## Tickets and opening times",
+      "The weekend comes with ordinary admission to the house; the event page lists no separate charge for the talks. English Heritage <strong>members go free</strong>, and can claim their tickets online or show their card on arrival.",
+      "For 21 and 22 November, advance online tickets, booked by midnight the day before, are <strong>£17 for adults</strong>, £8.50 for children aged 5 to 17, £15.30 for concessions and £42.50 for a family of two adults and up to three children (these prices include a voluntary donation; without it an adult pays £15.38). On the day, an adult ticket is <strong>£20</strong>, a child's £10 and a family's £50.",
+      "In November Down House opens at weekends only, <strong>10am to 4pm</strong>, with last entry at 3pm. The weekend's programme runs until 3pm.",
+      "## Getting there",
+      "From <strong>Bromley South</strong>, 5½ miles away, the 146 bus runs to Downe village, which leaves half a mile on foot. From <strong>Orpington</strong>, 3¾ miles, the R8 bus passes the house, but not on Sundays, so on the 22nd the 146 is the one to take. By car, Down House is on Luxted Road off the A21 or A233, within the Ultra Low Emission Zone, with free parking 50 metres from the house.",
+      "## More in south-east London",
+      "In the neighbouring borough of Greenwich, about eight miles away, English Heritage's <a href=\"/events/christmas-at-eltham-palace-2026/\" title=\"Christmas at Eltham Palace, London: 5–20 December 2026\">Eltham Palace</a> has its Christmas weekends from 5 December. Back at Down House, a community Christmas wreath trail runs from 7 December, and members can book a watercolour Christmas-card workshop on Saturday 28 November.",
+    ],
+    faq: [
+      {
+        q: "When is Origin Weekend at Down House in 2026?",
+        a: "On Saturday 21 and Sunday 22 November 2026, from 10am to 3pm. The house itself is open from 10am to 4pm, with last entry at 3pm.",
+      },
+      {
+        q: "How much does it cost?",
+        a: "The weekend is included in ordinary admission. English Heritage members go free. Booked online by midnight the day before, an adult ticket is £17 and a child's (5–17) £8.50, including a voluntary donation; on the day an adult pays £20.",
+      },
+      {
+        q: "What happens at Origin Weekend?",
+        a: "Talks and tours on both days marking the anniversary of On the Origin of Species, which Darwin wrote at Down House and published in 1859. English Heritage has not yet published the speakers or session times.",
+      },
+      {
+        q: "Is Down House in London?",
+        a: "Yes. Downe is in the London Borough of Bromley, on the south-eastern edge of Greater London, although English Heritage's address still gives the county as Kent.",
+      },
+      {
+        q: "How do I get to Down House by public transport?",
+        a: "Take a train to Bromley South and the 146 bus to Downe village, then walk half a mile. From Orpington the R8 bus passes the house, except on Sundays.",
+      },
+      {
+        q: "Is there parking at Down House?",
+        a: "Yes, free parking 50 metres from the house. Downe is inside the Ultra Low Emission Zone.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/christmas-at-eltham-palace-2026/",
+        eyebrow: "Weekends, 5–20 December",
+        title: "Christmas at Eltham Palace",
+        text: "English Heritage's palace in Greenwich, with a makers' fair and Father Christmas.",
+      },
+      {
+        href: "/events/winter-palace-hampton-court-2026/",
+        eyebrow: "28 November – 3 January",
+        title: "Winter Palace at Hampton Court",
+        text: "The Christmas Beast Ball: mythical beasts and puppets in Henry VIII's palace, included with admission.",
+      },
+      {
+        href: "/events/hampton-court-palace-ice-rink-2026/",
+        eyebrow: "20 November – 3 January",
+        title: "Hampton Court Palace Ice Rink",
+        text: "Skating in front of Henry VIII's palace, opening the night before Origin Weekend.",
+      },
+    ],
+    expertise:
+      "One might treat this as the excuse one has been waiting for to make the journey to Downe, which is further than most Londoners suppose and rather prettier. Go on the Saturday if one can: the R8 from Orpington passes the house, whereas on the Sunday it is the 146 and a half-mile walk from the village. Arrive at ten, and take the Sandwalk before lunch while the light lasts; in late November it does not last long, and the programme itself ends at three. Book online the night before rather than paying at the door, which saves three pounds an adult, and leave room for a bowl of soup in Darwin's old kitchen.",
   },
 ];
