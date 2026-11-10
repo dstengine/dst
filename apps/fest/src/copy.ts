@@ -298,8 +298,15 @@ const KEEP_TH = new RegExp(
 // release", "4.º release"), a phone number ("+52 55 7200 0052") and the
 // seller's three-word name, "Mr Nice VIP", which a 264 px card would
 // otherwise break after its "Mr" (the fest director's gate-3 condition 4).
-// A row of its own, so Chile's pages come out as they were.
+// A row of its own, so Chile's pages come out as they were. EDC México's
+// (10 November 2026) adds a sum in dollars, as its prices give the peso's
+// rough worth ("unos 284 dólares"), and a size with its unit ("30 × 30
+// cm"): the line-break sweep found "284 | dólares." from 305 to 600 px and
+// "30 | cm" at 305 to 360 on its prices page. No Zamna Tulum page prints
+// either, so its bytes stand.
 const ES_MX_TOKENS = [
+  `\\b\\d[\\d,]* dólares\\b`, // 284 dólares
+  `\\b\\d+ × \\d+ cm\\b`, // 30 × 30 cm
   `\\b\\d[\\d,]*(?:\\.\\d+)? USD\\b`, // 90 USD, 1,403.01 USD
   `\\b\\d{1,2}:\\d{2} [ap]\\. m\\.`, // 3:00 a. m.
   `\\b\\d\\.(?:er|º|ª|o) release\\b`, // 1.er release, 4.º release
@@ -541,7 +548,11 @@ const GLUE: Record<string, (run: string) => string> = {
   "en-in": glueEnglish(GLUE_EN_IN),
   "en-au": (run) => run,
   pt: (run) => run.replace(GLUE_PT, "$1\u00a0"),
-  "es-mx": (run) => run.replace(GLUE_ES_MX, (m) => m.replace(/ /g, "\u00a0")),
+  // A one-letter prefix keeps its name by a word joiner: EDC México's
+  // lineup (10 November 2026) broke "D- | Sturb" at 320 px, leaving the
+  // scrap the rule on short hyphenated words forbids (DESIGN.md). No
+  // Zamna Tulum page prints such a name.
+  "es-mx": (run) => run.replace(GLUE_ES_MX, (m) => m.replace(/ /g, "\u00a0")).replace(/\b(\p{Lu})-(?=\p{Lu})/gu, "$1-\u2060"),
   th: (run) => run.replace(KEEP_TH, (m) => m.replace(/ /g, "\u00a0").replace(/–/g, "–\u2060")),
   fr: (run) => run.replace(KEEP_FR, (m) => m.replace(/ /g, "\u00a0")),
 };

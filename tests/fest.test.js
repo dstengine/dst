@@ -775,7 +775,8 @@ describe("where a guide's links lead", () => {
     for (const g of guides) {
       const n = node(g, "2026-11-09");
       if (g.event !== "lollapalooza-india") {
-        assert.ok(!("performer" in n), `${g.event}/${g.slug}`);
+        // EDC México names its own three, pinned in the test below.
+        if (g.event !== "edc-mexico") assert.ok(!("performer" in n), `${g.event}/${g.slug}`);
         continue;
       }
       assert.equal(n.eventStatus, "https://schema.org/EventScheduled");
@@ -801,6 +802,40 @@ describe("where a guide's links lead", () => {
       }]);
       assert.ok(!("offers" in node(g, "2027-01-25")));
     }
+  });
+
+  // EDC México's MusicEvent (the SEO lead's gate-1 note 5 and gate-3 notes 2
+  // and 3; the fest director's gate-3 term 4): Friday's doors to Monday's
+  // 02:00 close, Mexico City time with the offset its zone gives in
+  // February, scheduled; its two organisers; the three acts the press put
+  // at the front, each in the organiser's own list; and two offers with no
+  // price, availability or end of sale, Ticketmaster's from its general
+  // sale. The markup never carries a price: on 10 November nothing could be
+  // bought, and from 12 November the Wise Owl figure may be a closed
+  // phase's. The take-down of the prices changes nothing, and after the
+  // edition there is no offer.
+  test("EDC México's MusicEvent names its organisers and three headliners, and offers Ticketmaster and Front Gate with no price", () => {
+    const ev = events.find((e) => e.slug === "edc-mexico");
+    const g = guides.find((x) => x.event === "edc-mexico");
+    const node = (day) => rules.musicEvent(ev, g, rules.mainPage(g), day);
+    const n = node("2026-11-10");
+    assert.equal(n.eventStatus, "https://schema.org/EventScheduled");
+    assert.equal(n.startDate, "2027-02-19T16:00:00-06:00");
+    assert.equal(n.endDate, "2027-02-22T02:00:00-06:00");
+    assert.deepEqual(n.organizer, [
+      { "@type": "Organization", name: "Insomniac Events", sameAs: "https://mexico.edc.com/" },
+      { "@type": "Organization", name: "OCESA" },
+    ]);
+    const acts = ev.sheet.lineup.acts;
+    assert.deepEqual(n.performer.map((p) => [p["@type"], p.name]), ["Martin Garrix", "Tiësto", "Fatboy Slim"].map((name) => ["PerformingGroup", name]));
+    for (const p of n.performer) assert.ok(acts.includes(p.name), `${p.name} is not in the organiser's list`);
+    const offers = [
+      { "@type": "Offer", validFrom: "2026-11-13T14:00:00-06:00", url: "https://fest.one/go/edc-mexico-ticketmaster/", seller: { "@type": "Organization", name: "Ticketmaster México" } },
+      { "@type": "Offer", url: "https://fest.one/go/edc-mexico-frontgate/", seller: { "@type": "Organization", name: "Front Gate Tickets" } },
+    ];
+    assert.deepEqual(n.offers, offers);
+    assert.deepEqual(node("2026-12-22").offers, offers);
+    assert.ok(!("offers" in node("2027-02-22")));
   });
 
   // A question's own anchor (FaqRow.id) is a slug, and no other target of
