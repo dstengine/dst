@@ -143,6 +143,15 @@ describe("the copy and its sheet", () => {
     assert.ok(!copy.inline("The door price is THB 20,000 [prices.1].", ctx).includes("["));
   });
 
+  // A card separates its copy blocks with a "---" line, and EDC México's
+  // four Fuentes strings shipped with it as their last line: it printed as
+  // a lone "---" on the page and in its .md twin, and no other suite saw it
+  // (QA round 1, case 18).
+  test("no guide string carries a card's '---' separator line", () => {
+    const strays = all.filter(({ text }) => /(^|\n)[ \t]*-{3,}[ \t]*(\n|$)/.test(text)).map(({ guide, where }) => `${guide.event}/${guide.slug}: ${where}`);
+    assert.deepEqual(strays, [], "a '---' line is the card's, not the page's");
+  });
+
   test("every cited fact has a read date", () => {
     const undated = [];
     for (const { where, text, event } of all)
