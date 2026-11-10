@@ -40064,6 +40064,38 @@
         ]
       ]
     },
+    "/covers/fabi-oganyan-cello-piano-khachaturian-festival-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/fabi-oganyan-cello-piano-khachaturian-festival-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/fabi-oganyan-cello-piano-khachaturian-festival-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/fabi-oganyan-cello-piano-khachaturian-festival-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/fabi-oganyan-cello-piano-khachaturian-festival-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/fabi-oganyan-cello-piano-khachaturian-festival-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/fabi-oganyan-cello-piano-khachaturian-festival-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/face-of-humanity-surenyants-yerevan-2026.jpg": {
       "width": 3072,
       "height": 1728,
@@ -40389,6 +40421,70 @@
         [
           1024,
           "/covers/ghoosh-armenian-ethnic-fusion-philharmonia-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/gift-for-santa-claus-bohem-theatre-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/gift-for-santa-claus-bohem-theatre-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/gift-for-santa-claus-bohem-theatre-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/gift-for-santa-claus-bohem-theatre-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/gift-for-santa-claus-bohem-theatre-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/gift-for-santa-claus-bohem-theatre-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/gift-for-santa-claus-bohem-theatre-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/gor-sujyan-one-man-band-beer-academy-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/gor-sujyan-one-man-band-beer-academy-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/gor-sujyan-one-man-band-beer-academy-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/gor-sujyan-one-man-band-beer-academy-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/gor-sujyan-one-man-band-beer-academy-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/gor-sujyan-one-man-band-beer-academy-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/gor-sujyan-one-man-band-beer-academy-yerevan-2026-1024.webp"
         ]
       ]
     },
