@@ -518,7 +518,7 @@ export const items: EventItem[] = [
   {
     slug: "vienna-halloween-run-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-11-09T02:35:00+01:00",
+    updatedAt: "2026-11-11T02:35:00+01:00",
     site: "vien",
     image: "/covers/vienna-halloween-run-2026.jpg",
     imageAlt: "Eine helle Laufbahn, die in die Bildmitte führt, gesäumt von Bäumen mit rotem Herbstlaub",
@@ -585,6 +585,12 @@ export const items: EventItem[] = [
       },
     ],
     related: [
+      {
+        href: "/veranstaltungen/vinyl-cd-boerse-moses-records-wien-2026/",
+        eyebrow: "5.–6. Dezember, VHS Längenfeldgasse",
+        title: "Vinyl- und CD-Börse Wien 2026",
+        text: "Im Advent auf Plattensuche: rund 100 Aussteller mit LPs, Singles und CDs, 10 bis 17 Uhr, Tageskarte 8 Euro.",
+      },
       {
         href: "/veranstaltungen/adventlauf-lcc-wien-prater-2026/",
         eyebrow: "6. Dezember, Prater Hauptallee",
@@ -653,7 +659,7 @@ export const items: EventItem[] = [
   {
     slug: "kuerbisfest-am-himmel-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-11-09T02:35:00+01:00",
+    updatedAt: "2026-11-11T02:35:00+01:00",
     site: "vien",
     image: "/covers/kuerbisfest-am-himmel-2026.jpg",
     imageAlt: "Ein breiter Haufen runder Papierscheiben in Rot, Grün, Ocker und Creme, in vielen verschiedenen Größen",
@@ -717,6 +723,12 @@ export const items: EventItem[] = [
       },
     ],
     related: [
+      {
+        href: "/veranstaltungen/vinyl-cd-boerse-moses-records-wien-2026/",
+        eyebrow: "5.–6. Dezember, VHS Längenfeldgasse",
+        title: "Vinyl- und CD-Börse Wien 2026",
+        text: "Ein Wochenende drinnen im Advent: die Schallplattenbörse von Moses-Records, rund 100 Aussteller, Tageskarte 8 Euro.",
+      },
       {
         href: "/veranstaltungen/adventlauf-lcc-wien-prater-2026/",
         eyebrow: "6. Dezember, Prater Hauptallee",
@@ -3056,7 +3068,7 @@ export const items: EventItem[] = [
   {
     slug: "vienna-vintage-photo-fair-westlicht-2026",
     createdAt: "2026-11-06T02:35:00+01:00",
-    updatedAt: "2026-11-06T02:35:00+01:00",
+    updatedAt: "2026-11-11T02:35:00+01:00",
     site: "vien",
     title: "Vienna Vintage Photo Fair 2026: die X-Mas Edition im WestLicht",
     cardTitle: "Vienna Vintage Photo Fair (X-Mas Edition)",
@@ -3118,6 +3130,12 @@ export const items: EventItem[] = [
       },
     ],
     related: [
+      {
+        href: "/veranstaltungen/vinyl-cd-boerse-moses-records-wien-2026/",
+        eyebrow: "5.–6. Dezember, VHS Längenfeldgasse",
+        title: "Vinyl- und CD-Börse Wien 2026",
+        text: "Die Sammlerbörse eine Woche davor: LPs, Singles und CDs von rund 100 Ausstellern, Tageskarte 8 Euro.",
+      },
       {
         href: "/veranstaltungen/perchtenlauf-boehmischer-prater-wien-2026/",
         eyebrow: "13. Dezember, Böhmischer Prater",
@@ -3353,6 +3371,94 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Ein Lauf um 10 Uhr Anfang Dezember heißt in Wien meistens wenige Grad über null, und auf der langen, geraden Hauptallee gibt es kaum Schutz vor Wind. Wer sich am Renntag nachmelden will, sollte bald nach 8 Uhr da sein, denn um 9:30 Uhr ist Schluss und Plätze gibt es nur, solange welche frei sind; Bargeld für den Leih-Chip nicht vergessen. Das Laufsportzentrum liegt im Ernst-Happel-Stadion, gleich bei der U2-Station Stadion, dort zieht man sich um und kann danach gratis duschen. Für die 10 Kilometer sind 90 Minuten bis zum Zielschluss großzügig; Walking gibt es nur über 3 Kilometer.",
+  },
+  {
+    slug: "vinyl-cd-boerse-moses-records-wien-2026",
+    createdAt: "2026-11-11T02:35:00+01:00",
+    updatedAt: "2026-11-11T02:35:00+01:00",
+    site: "vien",
+    title: "Vinyl- und CD-Börse Wien 2026: Schallplatten in der VHS Längenfeldgasse",
+    cardTitle: "Vinyl- und CD-Börse (Moses-Records)",
+    titleSeo: "Schallplattenbörse Wien: Längenfeldgasse, Dezember 2026",
+    summary:
+      "Die Schallplattenbörse von Moses-Records ist am Samstag und Sonntag, 5. und 6. Dezember 2026, jeweils von 10 bis 17 Uhr in der VHS Längenfeldgasse 13 in Wien-Meidling: Rund 100 Aussteller aus halb Europa verkaufen LPs, Singles und CDs. Die Tageskarte kostet 8 Euro.",
+    start: "2026-12-05",
+    end: "2026-12-06",
+    startTime: "10:00",
+    endTime: "17:00",
+    utcOffset: "+01:00",
+    venue: "VHS Längenfeldgasse, Längenfeldgasse 13",
+    city: "Wien",
+    country: "Österreich",
+    organizer: "Moses-Records",
+    category: "Messe",
+    tickets: { priceFrom: 8, currency: "EUR" },
+    ticket: {
+      url: "https://www.schallplattenboerse.at/",
+      label: "Moses-Records Vinyl und CD-Börse",
+      sells: false,
+    },
+    source: {
+      name: "Moses-Records — Internationale Vinyl und CD-Börse",
+      url: "https://www.schallplattenboerse.at/",
+      verifiedOn: "2026-11-11",
+    },
+    body: [
+      "Viermal im Jahr wird ein Saal der Volkshochschule in Meidling zum Plattenladen mit hundert Kisten: Die <strong>Vinyl- und CD-Börse von Moses-Records</strong> ist am <strong>Samstag, 5., und Sonntag, 6. Dezember 2026</strong>, an beiden Tagen von <strong>10 bis 17 Uhr</strong> in der <strong>VHS Längenfeldgasse 13</strong> im 12. Bezirk. Die <strong>Tageskarte kostet 8 Euro</strong>, am Samstag wie am Sonntag. Veranstaltet wird die Börse seit 2009 vom Wiener Plattenladen Moses-Records.",
+      "## Was es zu kaufen gibt",
+      "Verkauft wird alles, was sich abspielen lässt, und vieles rund um die Musik: <strong>LPs, Singles, CDs</strong> und DVDs, dazu Musikbücher und Zeitschriften, Poster und Band- oder Musikerfiguren. Rund <strong>100 Aussteller</strong> stehen auf etwa 1.200 Quadratmetern, nach Angaben des Veranstalters Händler und Sammler aus Österreich, Deutschland, den Niederlanden, Frankreich, der Slowakei, Ungarn und Großbritannien. Ausstellen darf jeder, privat oder gewerblich, der seinen Stand rechtzeitig reserviert hat.",
+      "Bootlegs, Raubkopien und Raubpressungen sind auf der Börse ausdrücklich verboten, ebenso Tonträger mit rassistischem oder rechtsextremem Inhalt; der Veranstalter kündigt Stichproben an. Verkaufen dürfen nur die Aussteller — wer selbst Platten loswerden will, bringt sie nicht in die Halle, sondern ins Geschäft von Moses-Records in der Lerchenfelder Straße 33 im 7. Bezirk.",
+      "## Anfahrt",
+      "Die Volkshochschule liegt direkt an der <strong>U4/U6-Station Längenfeldgasse</strong>; in der Nähe halten auch die Buslinien 15A, 59A und 63A. In der Halle gibt es den ganzen Tag ein Buffet, geraucht wird nicht.",
+      "## Die nächsten Termine",
+      "Moses-Records hat die Börsen des kommenden Jahres schon angekündigt, alle in der VHS Längenfeldgasse: <strong>20. und 21. März</strong>, <strong>22. und 23. Mai</strong>, <strong>25. und 26. September</strong> und <strong>4. und 5. Dezember 2027</strong>.",
+      "## Am selben Wochenende",
+      "Wer am Sonntagvormittag noch laufen will, bevor er Platten sucht: Um 10 Uhr startet in der Prater Hauptallee der <a href=\"/veranstaltungen/adventlauf-lcc-wien-prater-2026/\" title=\"Adventlauf Wien 2026: Prater Hauptallee, 6. Dezember\">Adventlauf des LCC Wien</a>, 3 oder 10 Kilometer im Prater. Eine Woche später, am 13. Dezember, sind Originalfotografien dran: die <a href=\"/veranstaltungen/vienna-vintage-photo-fair-westlicht-2026/\" title=\"Vienna Vintage Photo Fair: WestLicht, Dezember 2026\">Vienna Vintage Photo Fair im WestLicht</a>, bei freiem Eintritt.",
+    ],
+    faq: [
+      {
+        q: "Wann ist die nächste Schallplattenbörse in Wien?",
+        a: "Die Vinyl- und CD-Börse von Moses-Records ist am <strong>5. und 6. Dezember 2026</strong>, jeweils von 10 bis 17 Uhr. 2027 folgen der 20./21. März, der 22./23. Mai, der 25./26. September und der 4./5. Dezember.",
+      },
+      {
+        q: "Wo findet die Börse statt?",
+        a: "In der VHS Längenfeldgasse, Längenfeldgasse 13, 1120 Wien, direkt an der U4/U6-Station Längenfeldgasse.",
+      },
+      {
+        q: "Was kostet der Eintritt?",
+        a: "Die Tageskarte kostet 8 Euro, am Samstag und am Sonntag gleich.",
+      },
+      {
+        q: "Was wird dort verkauft?",
+        a: "LPs, Singles, CDs und DVDs sowie Musikbücher, Poster und Musikerfiguren, von rund 100 Ausstellern aus Österreich und anderen Ländern Europas. Bootlegs und Raubpressungen sind verboten.",
+      },
+      {
+        q: "Kann ich dort meine eigenen Platten verkaufen?",
+        a: "Nur mit einem reservierten Stand: Ausstellen darf jeder, privat oder gewerblich, nach Anmeldung beim Veranstalter per E-Mail oder Telefon. Besuchern ist der Verkauf in der Halle untersagt; ankaufen lässt Moses-Records im Geschäft in der Lerchenfelder Straße 33.",
+      },
+    ],
+    related: [
+      {
+        href: "/veranstaltungen/adventlauf-lcc-wien-prater-2026/",
+        eyebrow: "6. Dezember, Prater Hauptallee",
+        title: "Adventlauf des LCC Wien 2026",
+        text: "Am Sonntagvormittag desselben Wochenendes: 3 oder 10 Kilometer im Prater, Start um 10 Uhr.",
+      },
+      {
+        href: "/veranstaltungen/vienna-vintage-photo-fair-westlicht-2026/",
+        eyebrow: "13. Dezember, WestLicht",
+        title: "Vienna Vintage Photo Fair 2026",
+        text: "Die Sammlermesse eine Woche später: Originalfotografien aus drei Jahrhunderten, Eintritt frei.",
+      },
+      {
+        href: "/veranstaltungen/kuerbisfest-am-himmel-2026/",
+        eyebrow: "Cobenzl",
+        title: "Kürbisfest am Himmel 2026",
+        text: "Der Herbst davor: über 200 Kürbissorten am Cobenzl, Eintritt frei.",
+      },
+    ],
+    expertise:
+      "Auf einer Plattenbörse gehört der Samstagvormittag den Sammlern: Um 10 Uhr stehen die Händler mit frisch aufgefüllten Kisten da, und die gesuchten Pressungen sind bald weg. Der Sonntag ist ruhiger, und gegen Ende lässt mancher Aussteller lieber mit sich reden, als die Kisten wieder ins Auto zu tragen. Eine eigene Tasche mit festem Boden ist mehr wert als jede Plastiktüte, denn zehn LPs wiegen gut zwei Kilo. Bargeld mitzunehmen schadet nicht: Kartenzahlung ist an Börsenständen keine Selbstverständlichkeit. Und wer eine bestimmte Pressung sucht, schaut vorher auf Matrixnummer und Labelvariante, nicht nur auf das Cover.",
   },
   {
     slug: "silvesterkonzert-wiener-philharmoniker-2026",
