@@ -23,6 +23,11 @@ interface Props {
   /** Set when the layout crops the picture (object-fit: cover) and the
       intrinsic ratio would otherwise reserve the wrong height. */
   sized?: boolean;
+  /** The entry's declared size: printed only where the manifest has no
+      measurement of its own (an SVG, a picture not yet run through
+      `npm run images`) or where `sized` is off. */
+  width?: number | string;
+  height?: number | string;
   [key: string]: unknown;
 }
 
@@ -35,11 +40,17 @@ const {
   class: className,
   narrow,
   sized = true,
+  width,
+  height,
   ...rest
 } = Astro.props;
 
 const sources = imageSources(Astro.site?.hostname, src);
-const dimensions = sized && sources ? { width: sources.width, height: sources.height } : {};
+// One pair of dimensions per tag. The manifest's measured size wins when it
+// has the file; the caller's (an entry's imageWidth/imageHeight) stands in
+// when it does not, or when `sized` is off. Spreading both used to print
+// width and height twice on every cover.
+const dimensions = sized && sources ? { width: sources.width, height: sources.height } : { width, height };
 ---
 {sources ? (
   <picture>
@@ -59,10 +70,10 @@ const dimensions = sized && sources ? { width: sources.width, height: sources.he
 ) : narrow ? (
   <picture>
     <source media="(max-width: 640px)" srcset={narrow} />
-    <img src={src} alt={alt} loading={loading} fetchpriority={fetchpriority} class={className} {...rest} />
+    <img src={src} alt={alt} loading={loading} fetchpriority={fetchpriority} class={className} {...dimensions} {...rest} />
   </picture>
 ) : (
-  <img src={src} alt={alt} loading={loading} fetchpriority={fetchpriority} class={className} {...rest} />
+  <img src={src} alt={alt} loading={loading} fetchpriority={fetchpriority} class={className} {...dimensions} {...rest} />
 )}
 
 <style>

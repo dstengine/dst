@@ -134,6 +134,16 @@ describe("built pages serve them", () => {
         const html = readFileSync(file, "utf8");
         for (const tag of html.match(/<img[^>]*>/g) ?? []) {
           const src = tag.match(/src="([^"]+)"/)?.[1] ?? "";
+          // Never twice, on any picture, SVG included. Photo.astro spread the
+          // manifest's size and the caller's both, and every cover on the
+          // network said its width and height twice (11 Nov 2026) — invalid
+          // HTML that renders the same, so nothing but a test would have
+          // noticed. Its other two branches, the ones that print the entry's
+          // own size, render only SVG covers today.
+          for (const name of ["width", "height"]) {
+            const count = tag.match(new RegExp(`\\s${name}="`, "g"))?.length ?? 0;
+            assert.ok(count <= 1, `${app} ${path.relative(REPO, file)}: ${name} ${count} times on ${src}`);
+          }
           // SVG has its own viewBox and needs no attributes to hold space.
           if (!/\.(jpe?g|png)/i.test(src)) continue;
           assert.match(tag, /width="\d+"/, `${app} ${path.relative(REPO, file)}: no width on ${src}`);
