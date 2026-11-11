@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="New Year in Yerevan: 31 December – 6 January, concerts, opera, Christmas, tick.am/new-year">
+  <style>
+    /* Loaded through an img element, so the picture carries its own colours.
+       A poster, not a photograph: one season, one page, one fir tree. */
+    .bg { fill: #0F1A2E; }
+    .glow { fill: #18294A; }
+    .tree { fill: #2E7D5B; }
+    .tree-dark { fill: #22604A; }
+    .trunk { fill: #6B4A2F; }
+    .star { fill: #F2C14E; }
+    .bauble-red { fill: #E2574C; }
+    .bauble-gold { fill: #F2C14E; }
+    .snow { fill: #DDE6F3; }
+    .ink { fill: #F6F1E8; }
+    .muted { fill: #AEB9CC; }
+    .accent { fill: #F2C14E; }
+    text { font-family: -apple-system, "Segoe UI", "Noto Sans Armenian", "Noto Sans", Roboto, Arial, sans-serif; }
+    .huge { font-size: 92px; font-weight: 700; letter-spacing: -0.02em; }
+    .big { font-size: 46px; font-weight: 600; }
+    .label { font-size: 30px; }
+    .caps { font-size: 24px; letter-spacing: 0.16em; font-weight: 600; }
+  </style>
+
+  <rect class="bg" width="1200" height="630" />
+
+  <!-- A pale disc of light behind the tree -->
+  <circle class="glow" cx="985" cy="330" r="200" />
+
+  <!-- Stars scattered over the night -->
+  <circle class="snow" cx="1180" cy="30" r="4" />
+  <circle class="snow" cx="1120" cy="70" r="3" />
+  <circle class="snow" cx="1150" cy="200" r="4" />
+  <circle class="snow" cx="1170" cy="300" r="3" />
+  <circle class="snow" cx="1140" cy="470" r="3" />
+  <circle class="snow" cx="1170" cy="590" r="4" />
+  <circle class="snow" cx="830" cy="150" r="2.5" />
+  <circle class="snow" cx="1080" cy="140" r="2.5" />
+
+  <!-- The fir tree: three tiers, a trunk, a star, baubles -->
+  <rect class="trunk" x="963" y="520" width="44" height="56" rx="6" />
+  <polygon class="tree-dark" points="985,330 1124,540 846,540" />
+  <polygon class="tree" points="985,330 1124,540 985,540" />
+  <polygon class="tree-dark" points="985,230 1092,410 878,410" />
+  <polygon class="tree" points="985,230 1092,410 985,410" />
+  <polygon class="tree-dark" points="985,140 1059,290 911,290" />
+  <polygon class="tree" points="985,140 1059,290 985,290" />
+  <polygon class="star" points="985,82 996,118 1027,118 1001,140 1011,176 985,154 959,176 969,140 943,118 974,118" />
+  <circle class="bauble-red" cx="956" cy="262" r="11" />
+  <circle class="bauble-gold" cx="1022" cy="270" r="10" />
+  <circle class="bauble-gold" cx="919" cy="390" r="12" />
+  <circle class="bauble-red" cx="1006" cy="372" r="12" />
+  <circle class="bauble-red" cx="1067" cy="395" r="10" />
+  <circle class="bauble-gold" cx="887" cy="520" r="12" />
+  <circle class="bauble-red" cx="960" cy="490" r="13" />
+  <circle class="bauble-gold" cx="1042" cy="505" r="12" />
+  <circle class="bauble-red" cx="1100" cy="525" r="10" />
+
+  <!-- The words -->
+  <text class="caps accent" x="80" y="150">31 DECEMBER – 6 JANUARY</text>
+  <text class="huge ink" x="80" y="260">New Year</text>
+  <text class="huge ink" x="80" y="360">in Yerevan</text>
+  <text class="big ink" x="80" y="440">Concerts, opera, Christmas</text>
+  <text class="label muted" x="80" y="500" style="font-size: 25px">Ամանորը Երևանում · համերգներ, օպերա, Սուրբ Ծնունդ</text>
+  <text class="caps muted" x="80" y="570">TICK.AM/NEW-YEAR</text>
+</svg>

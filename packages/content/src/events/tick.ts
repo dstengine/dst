@@ -8693,7 +8693,7 @@ export const items: EventItem[] = [
   {
     slug: "winter-tales-mystery-ensemble-komitas-house-2026",
     createdAt: "2026-10-20T18:50:00+04:00",
-    updatedAt: "2026-11-05T20:43:04.000Z",
+    updatedAt: "2026-11-11T20:36:00+04:00",
     site: "tick",
     tags: ["kids"],
     title: "«Ձմեռային հեքիաթներ». Չայկովսկու բալետները Mystery Ensemble-ի կատարմամբ Երևանում",
@@ -8703,6 +8703,7 @@ export const items: EventItem[] = [
       "«Մարդուկ-Ջարդուկի», «Կարապի լճի» և «Քնած գեղեցկուհու» երաժշտությունը կամերային կազմով՝ Երևանի Կամերային երաժշտության տանը, դեկտեմբերի 11-ին և 18-ին, ժամը 19:00-ին. տոմսերը՝ 8300-ից 10500 դրամ։",
     start: "2026-12-11",
     end: "2026-12-18",
+    dates: ["2026-12-11", "2026-12-18"],
     startTime: "19:00",
     utcOffset: "+04:00",
     city: "Երևան",
@@ -8718,7 +8719,7 @@ export const items: EventItem[] = [
     category: "Ամանոր",
     tickets: { priceFrom: 8300, priceTo: 10500, currency: "AMD" },
     ticket: { url: "https://eventhub.am/am/for-kids/event/winter-tales-d76dff0f-74a9-4fa0-921c-a93355cc3fa9", label: "Տոմսեր" },
-    source: { name: "EventHub", url: "https://eventhub.am/en/for-kids/event/winter-tales-d76dff0f-74a9-4fa0-921c-a93355cc3fa9", verifiedOn: "2026-10-20" },
+    source: { name: "EventHub", url: "https://eventhub.am/en/for-kids/event/winter-tales-d76dff0f-74a9-4fa0-921c-a93355cc3fa9", verifiedOn: "2026-11-11" },
     body: [
       "Mystery Ensemble-ը՝ լարային գործիքների, դաշնամուրի և հարվածայինների կազմը, որը Երևանում կինոերաժշտության համերգներ է տալիս, դեկտեմբերին Չայկովսկու երեք բալետին է անդրադառնում Կամերային երաժշտության տան կամարների տակ։ Կազմակերպիչը նույն Red Events-ն է, որ հոկտեմբերին բերում էր <a href=\"/events/tim-burton-mystery-ensemble-yerevan-2026/\" title=\"Թիմ Բարթոնի ֆիլմերի երաժշտությունը Երևանում\">Թիմ Բարթոնի երեկոն</a>։",
       "## Ծրագիր",
@@ -9551,7 +9552,7 @@ export const items: EventItem[] = [
   {
     slug: "candlenight-christmas-concert-red-hall-yerevan-2026",
     createdAt: "2026-10-21T15:45:00+04:00",
-    updatedAt: "2026-10-21T15:45:00+04:00",
+    updatedAt: "2026-11-11T20:36:00+04:00",
     site: "tick",
     title: "Candlenight. ամանորյա համերգ հինգ հազար մոմի լույսի ներքո Red Hall-ում",
     titleSeo: "Candlenight ամանորյա համերգ Երևանում՝ դեկտեմբերի 27",
@@ -9574,7 +9575,7 @@ export const items: EventItem[] = [
     category: "Ամանոր",
     tickets: { priceFrom: 4000, priceTo: 14000, currency: "AMD" },
     ticket: { url: "https://eventhub.am/am/classical/event/candlenight-concerts-illuminated-by-thousands-of-candles-6994bd8e-9e1e-4f03-b7fb-d89cde1f7df7", label: "Տոմսեր" },
-    source: { name: "EventHub", url: "https://eventhub.am/en/classical/event/candlenight-concerts-illuminated-by-thousands-of-candles-6994bd8e-9e1e-4f03-b7fb-d89cde1f7df7", verifiedOn: "2026-10-21" },
+    source: { name: "EventHub", url: "https://eventhub.am/en/classical/event/candlenight-concerts-illuminated-by-thousands-of-candles-6994bd8e-9e1e-4f03-b7fb-d89cde1f7df7", verifiedOn: "2026-11-11" },
     speakersHeading: "Կատարողներ",
     speakers: [{ name: "Candlenight Ensemble", note: "Հրավիրյալ երաժիշտների հետ՝ դաշնամուր և հարվածայիններ" }],
     body: [
@@ -9771,7 +9772,7 @@ export const items: EventItem[] = [
   {
     slug: "tri-legend-pre-holiday-evening-khachaturian-hall-yerevan-2026",
     createdAt: "2026-10-22T15:30:00+04:00",
-    updatedAt: "2026-10-22T15:30:00+04:00",
+    updatedAt: "2026-11-11T20:36:00+04:00",
     site: "tick",
     title: "Նախատոնական «Եռալեգենդ» երեկո Արամ Խաչատրյան համերգասրահում",
     titleSeo: "«Եռալեգենդ» նախատոնական երեկո Երևանում՝ դեկտեմբերի 13",
@@ -9794,7 +9795,7 @@ export const items: EventItem[] = [
     category: "Ամանոր",
     tickets: { priceFrom: 6000, priceTo: 12000, currency: "AMD" },
     ticket: { url: "https://khachaturianhall.am/am/orchestra/event/cd421767-4f14-4f7f-8865-93503796fa63", label: "Տոմսեր" },
-    source: { name: "Արամ Խաչատրյան համերգասրահ", url: "https://khachaturianhall.am/en/orchestra/event/cd421767-4f14-4f7f-8865-93503796fa63", verifiedOn: "2026-10-22" },
+    source: { name: "Արամ Խաչատրյան համերգասրահ", url: "https://khachaturianhall.am/en/orchestra/event/cd421767-4f14-4f7f-8865-93503796fa63", verifiedOn: "2026-11-11" },
     body: [
       "Դեկտեմբերի 13-ին, կիրակի, Արամ Խաչատրյան համերգասրահում մեկ բեմում կհնչեն համաշխարհային երաժշտության երեք լեգենդների՝ Ֆրենկ Սինատրայի, Սթիվի Ուանդերի և Մայքլ Բուբլեի ամենահայտնի ու սիրված երգերը՝ հայկական շոու բիզնեսի հայտնի երգիչների կատարմամբ։ Սկիզբը ժամը 20:00-ին է։",
       "Բեմում են Pop Symphony Orchestra-ի երաժիշտները՝ կենդանի հնչողությամբ, Pop Symphony Production-ի պարուհիները և Pop Symphony երգչախումբը։ Կազմակերպիչները խոստանում են նաև երաժշտական անակնկալներ, որոնք կբացահայտվեն միայն համերգի ընթացքում. երգիչների անունները դեռ հայտարարված չեն։",
@@ -11410,7 +11411,7 @@ export const items: EventItem[] = [
   {
     slug: "home-alone-in-concert-khachaturian-hall-yerevan-2026",
     createdAt: "2026-11-02T15:45:00+04:00",
-    updatedAt: "2026-11-02T15:45:00+04:00",
+    updatedAt: "2026-11-11T20:36:00+04:00",
     site: "tick",
     title: "«Տանը մենակ»՝ սիմֆոնիկ նվագախմբի կենդանի կատարմամբ",
     titleSeo: "«Տանը մենակ» նվագախմբով Երևանում՝ դեկտեմբերի 27",
@@ -11442,7 +11443,7 @@ export const items: EventItem[] = [
       "Քևինի զվարճալի արկածները, ծանոթ մեղեդիներն ու ֆիլմի ամենազվարճալի դրվագները՝ մեկ երեկոյում, մեծ էկրանի և սիմֆոնիկ նվագախմբի հետ։ Ցերեկային ժամը՝ 16:00-ը, հարմար է ընտանիքով գալու համար։",
       "## Երբ և որքան",
       "Դեկտեմբերի 27-ին, կիրակի, ժամը 16:00-ին, Մաշտոցի պողոտա 46։ Տոմսերը 3000-ից 15000 դրամ են, EventHub-ում, որտեղ կա նաև 300000 դրամանոց մեկ տոմս։ Կազմակերպիչը Հայաստանի ազգային ֆիլհարմոնիկ նվագախումբն է։",
-      "Նույն դահլիճում և նույն նվագախմբով նոյեմբերի 24-ին <a href=\"/events/chaplin-the-kid-live-orchestra-khachaturian-hall-yerevan-2026/\" title=\"Չապլինի «Փոքրիկը» նվագախմբով Երևանում՝ նոյեմբերի 24\">Չապլինի «Փոքրիկն» է</a>, իսկ դեկտեմբերի 5-ից Օպերայում <a href=\"/events/nutcracker-yerevan-opera-2026/\" title=\"«Մարդուկ-Ջարդուկը» Երևանում՝ դեկտեմբերի 5-ից հունվարի 24\">«Մարդուկ-Ջարդուկն» է</a>։",
+      "Նույն դահլիճում և նույն նվագախմբով նոյեմբերի 24-ին <a href=\"/events/chaplin-the-kid-live-orchestra-khachaturian-hall-yerevan-2026/\" title=\"Չապլինի «Փոքրիկը» նվագախմբով Երևանում՝ նոյեմբերի 24\">Չապլինի «Փոքրիկն» է</a>, իսկ դեկտեմբերի 5-ից Օպերայում <a href=\"/events/nutcracker-yerevan-opera-2026/\" title=\"«Մարդուկ-Ջարդուկը» Երևանում՝ դեկտեմբերի 5-ից փետրվարի 12\">«Մարդուկ-Ջարդուկն» է</a>։",
     ],
     faq: [
       { q: "Ե՞րբ և որտե՞ղ է համերգը", a: "Դեկտեմբերի 27-ին, ժամը 16:00-ին, Արամ Խաչատրյան համերգասրահում՝ Մաշտոցի պողոտա 46, Երևան։" },
@@ -11471,7 +11472,7 @@ export const items: EventItem[] = [
           "Kevin's adventures, the familiar tunes and the funniest moments of the film in a single afternoon, with a big screen and a full symphony orchestra. The 16:00 start suits one rather well if one is bringing the family.",
           "## Date and tickets",
           "Sunday 27 December at 16:00, at 46 Mashtots Avenue. Tickets cost 3,000 to 15,000 drams on EventHub, which also lists one ticket at 300,000. The Armenian National Philharmonic Orchestra organises it.",
-          "The same orchestra and hall show <a href=\"/events/chaplin-the-kid-live-orchestra-khachaturian-hall-yerevan-2026/\" title=\"Chaplin's The Kid with live orchestra, Yerevan, 24 Nov\">Chaplin's The Kid</a> on 24 November, and from 5 December the Opera has <a href=\"/events/nutcracker-yerevan-opera-2026/\" title=\"The Nutcracker in Yerevan, 5 December to 24 January\">The Nutcracker</a>.",
+          "The same orchestra and hall show <a href=\"/events/chaplin-the-kid-live-orchestra-khachaturian-hall-yerevan-2026/\" title=\"Chaplin's The Kid with live orchestra, Yerevan, 24 Nov\">Chaplin's The Kid</a> on 24 November, and from 5 December the Opera has <a href=\"/events/nutcracker-yerevan-opera-2026/\" title=\"The Nutcracker in Yerevan, 5 December to 12 February\">The Nutcracker</a>.",
         ],
         faq: [
           { q: "When and where is it?", a: "On 27 December at 16:00, at the Aram Khachaturian Concert Hall, 46 Mashtots Avenue, Yerevan." },
@@ -11748,7 +11749,7 @@ export const items: EventItem[] = [
   {
     slug: "new-year-without-wifi-youth-experimental-theatre-yerevan-2026",
     createdAt: "2026-11-05T20:43:04.000Z",
-    updatedAt: "2026-11-05T23:44:51.000Z",
+    updatedAt: "2026-11-11T20:36:00+04:00",
     site: "tick",
     image: "/covers/new-year-without-wifi-youth-experimental-theatre-yerevan-2026.jpg",
     imageAlt: "Փոքրիկ եղևնի թղթե խաղալիքներով, կողքին՝ անջատված ինտերնետ սարք՝ հատակին ոլորված լարով, վերևում՝ թղթե ձյան փաթիլներ",
@@ -11763,6 +11764,7 @@ export const items: EventItem[] = [
       "«Առանց Wi-Fi Նոր Տարի» մանկական ամանորյա ներկայացումը Երևանի Երիտասարդական էքսպերիմենտալ թատրոնում՝ դեկտեմբերի 20-ից հունվարի 7, օրական մինչև չորս ներկայացում. տոմսերը՝ 2000-ից 6000 դրամ։",
     start: "2026-12-20",
     end: "2027-01-07",
+    dates: ["2026-12-20", "2026-12-21", "2027-01-03", "2027-01-04", "2027-01-07"],
     startTime: "11:00",
     utcOffset: "+04:00",
     city: "Երևան",
@@ -11772,7 +11774,7 @@ export const items: EventItem[] = [
     category: "Ամանոր",
     tickets: { priceFrom: 2000, priceTo: 6000, currency: "AMD" },
     ticket: { url: "https://ticketon.am/hy/event/aranc-wi-fi-nor-tari", label: "Տոմսեր" },
-    source: { name: "TicketOn", url: "https://ticketon.am/en/event/aranc-wi-fi-nor-tari", verifiedOn: "2026-11-05" },
+    source: { name: "TicketOn", url: "https://ticketon.am/en/event/aranc-wi-fi-nor-tari", verifiedOn: "2026-11-11" },
     body: [
       "Ամանորն առանց Wi-Fi-ի այսօր անհնար է թվում, և հենց դրանից է սկսվում այս մանկական ներկայացման արկածը. ծիծաղ, անակնկալներ և ամանորյա հրաշքներ, որոնք պետք է ապացուցեն, որ տոնին ինտերնետ պետք չէ։ Տոմսարկղը այն ներկայացնում է որպես մանկական ներկայացում։",
       "## Երբ",
