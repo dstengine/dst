@@ -1840,7 +1840,7 @@ export const items: EventItem[] = [
   {
     slug: "boo-at-the-zoo-bronx-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-11-04T20:40:00-05:00",
+    updatedAt: "2026-11-11T20:43:00-05:00",
     site: "nyc42",
     image: "/covers/boo-at-the-zoo-bronx-2026.jpg",
     imageAlt: "An arch of overlapping paper leaves in amber, ochre and cream above a pale band carrying three animal paw prints",
@@ -1894,6 +1894,12 @@ export const items: EventItem[] = [
       },
     ],
     related: [
+      {
+        href: "/events/new-york-boat-show-javits-2027/",
+        eyebrow: "January 20–24",
+        title: "New York Boat Show",
+        text: "Hundreds of boats to climb aboard at the Javits Center, $20 for adults and free for children 12 and under: a winter day out for the same families.",
+      },
       {
         href: "/events/dia-de-los-muertos-nybg-2026/",
         eyebrow: "New York Botanical Garden",
@@ -2845,7 +2851,7 @@ export const items: EventItem[] = [
   {
     slug: "coney-island-polar-bear-plunge-2027",
     createdAt: "2026-10-21T21:35:00+04:00",
-    updatedAt: "2026-11-05T20:43:04.000Z",
+    updatedAt: "2026-11-11T20:43:00-05:00",
     site: "nyc42",
     image: "/covers/coney-island-polar-bear-plunge-2027.jpg",
     imageAlt:
@@ -2921,6 +2927,12 @@ export const items: EventItem[] = [
       },
     ],
     related: [
+      {
+        href: "/events/new-york-boat-show-javits-2027/",
+        eyebrow: "January 20–24",
+        title: "New York Boat Show",
+        text: "Three weeks after the plunge, the warmer way to think about the water: hundreds of boats indoors at the Javits Center, $20.",
+      },
       {
         href: "/events/bryant-park-winter-village-2026/",
         eyebrow: "October 28 – February 28",
@@ -4071,7 +4083,7 @@ export const items: EventItem[] = [
   {
     slug: "year-in-review-neil-degrasse-tyson-amnh-2027",
     createdAt: "2026-11-04T20:40:00-05:00",
-    updatedAt: "2026-11-04T20:40:00-05:00",
+    updatedAt: "2026-11-11T20:43:00-05:00",
     site: "nyc42",
     title: "Year in Review with Neil deGrasse Tyson 2027",
     titleSeo: "Neil deGrasse Tyson Year in Review: AMNH, New York, Jan 7",
@@ -4133,6 +4145,12 @@ export const items: EventItem[] = [
       },
     ],
     related: [
+      {
+        href: "/events/new-york-boat-show-javits-2027/",
+        eyebrow: "January 20–24",
+        title: "New York Boat Show",
+        text: "Two weeks after the talk, hundreds of boats at the Javits Center, held since 1905; adults $20, children 12 and under free.",
+      },
       {
         href: "/events/coney-island-polar-bear-plunge-2027/",
         eyebrow: "January 1",
@@ -5108,5 +5126,99 @@ export const items: EventItem[] = [
     ],
     expertise:
       "For most of the season weekday skating starts at 2:30pm, so a morning on the ice means a weekend, the holiday stretch from December 23 to January 3, the season's final days from February 16 to 21, or November 26 and 27 and January 18: on all of them the rink opens at 10:30am. The rink is outdoors and operates rain or shine, but tickets are final sale, so look at the forecast before buying rather than after.",
+  },
+  {
+    slug: "new-york-boat-show-javits-2027",
+    createdAt: "2026-11-11T20:43:00-05:00",
+    updatedAt: "2026-11-11T20:43:00-05:00",
+    site: "nyc42",
+    title: "New York Boat Show 2027 at the Javits Center",
+    titleSeo: "New York Boat Show 2027: Javits Center, January 20–24",
+    cardTitle: "New York Boat Show",
+    summary:
+      "Wednesday to Sunday, January 20–24, 2027, at the Javits Center in New York: the New York Boat Show, held since 1905. Adults $20, children 12 and under free with a paid adult; open noon to 8pm Wednesday to Friday, 10am to 8pm Saturday and 10am to 4pm Sunday.",
+    start: "2027-01-20",
+    end: "2027-01-24",
+    startTime: "12:00",
+    utcOffset: "-05:00",
+    venue: "Javits Center, 655 West 34th Street",
+    city: "New York",
+    geo: { name: "Javits Center", lat: 40.7577, lng: -74.0023 },
+    organizer: "National Marine Manufacturers Association (Discover Boating)",
+    category: "Convention",
+    tickets: { priceFrom: 20, currency: "USD" },
+    ticket: {
+      url: "https://www.nyboatshow.com/about",
+      label: "The show's dates, hours and tickets page",
+      sells: false,
+    },
+    source: {
+      name: "Discover Boating New York Boat Show",
+      url: "https://www.nyboatshow.com/about",
+      verifiedOn: "2026-11-12",
+    },
+    body: [
+      "The boat show that started them all comes back to the West Side in the middle of winter. The <strong>Discover Boating New York Boat Show</strong> runs from <strong>Wednesday, January 20</strong> to <strong>Sunday, January 24, 2027</strong>, at the <strong>Javits Center</strong>, 655 West 34th Street. Its organizers call it the world's first and longest-running boat show, a New York tradition since <strong>1905</strong>: hundreds of boats on the floor, from kayaks, fishing boats and pontoons to wake boats and yachts, most of them open to climb aboard and all of them for sale.",
+      "## Hours",
+      "The show keeps long weekday hours and a short Sunday: <strong>Wednesday to Friday noon to 8pm</strong>, <strong>Saturday 10am to 8pm</strong> and <strong>Sunday 10am to 4pm</strong>. Those are the hours on the show's information page under the 2027 dates; they are the same as last January's, when a snowstorm cut the final Sunday to 3pm.",
+      "## Tickets",
+      "Adult admission is <strong>$20</strong>, and <strong>children 12 and under get in free</strong> with a paid adult. A ticket is good for one specific day and entry time, you can re-enter on the same day, and the ticket lives on your phone; there is no need to print it. At the door the show takes cards only, no cash. The show's own site is the only one it authorises to sell tickets, and it warns that tickets bought anywhere else will not get you in. On November 12, when this page was checked, the 2027 dates and prices were up but the site had no buy button yet; the show announces pre-show discounts through its newsletter and social accounts.",
+      "## Getting there",
+      "The <strong>7 train</strong> stops at <strong>34th Street–Hudson Yards</strong>, a five-minute walk from the Javits Center and one stop west of Times Square; the venue calls it the fastest way in during big events. There is no parking at the Javits Center itself. The show's page puts nearby lots at around $40 to $60 for a Saturday, more for SUVs, and from New Jersey there are ferries: Seastreak from Belford, Highlands and Atlantic Highlands, and NY Waterway. Will Call and the show office are in the <strong>Crystal Palace lobby</strong>, by the entrance at 36th Street and Eleventh Avenue.",
+      "## On the floor",
+      "Most boats can be boarded, though a dealer may limit access to some or ask for an appointment, so book ahead with the dealer if you have a particular model in mind. Expect to take your shoes off before stepping aboard. Strollers are allowed, backpacks are searched at the entrance and can be left at the bag check downstairs, and pets are not allowed, service animals excepted. Food and beer are sold on site.",
+      "## What is not announced yet",
+      "The 2027 attractions list. The show's features page still describes last January's program — the Discover Boating Beach Club, the Fred's Shed how-to center, toy-boat building for children and free admission for military and first responders on opening day — and the 2027 version has not been published. The show's page does already list discounted room blocks for 2027 at three hotels near the Javits Center, with booking cutoffs between December 18 and 21.",
+      "## Around it",
+      "January in New York starts with the <a href=\"/events/coney-island-polar-bear-plunge-2027/\" title=\"Coney Island Polar Bear Plunge 2027\">Polar Bear Plunge</a> at Coney Island, for anyone who prefers the water itself. Two weeks before the show, <a href=\"/events/year-in-review-neil-degrasse-tyson-amnh-2027/\" title=\"Year in Review with Neil deGrasse Tyson 2027\">Neil deGrasse Tyson's Year in Review</a> fills the Hall of Ocean Life at the Natural History Museum, and skating at the <a href=\"/events/bryant-park-winter-village-2026/\" title=\"Winter Village at Bryant Park 2026\">Winter Village in Bryant Park</a>, two stops east on the 7 train at Fifth Avenue, runs all through show week.",
+    ],
+    faq: [
+      {
+        q: "When is the New York Boat Show 2027?",
+        a: "Wednesday, January 20 to Sunday, January 24, 2027, at the Javits Center, 655 West 34th Street, New York.",
+      },
+      {
+        q: "What are the hours?",
+        a: "Wednesday to Friday noon to 8pm, Saturday 10am to 8pm, Sunday 10am to 4pm.",
+      },
+      {
+        q: "How much are tickets?",
+        a: "$20 for adults. Children 12 and under are free with a paid adult admission. Tickets are for a specific day and entry time, and at the show they are sold by card only, no cash.",
+      },
+      {
+        q: "Are tickets on sale yet?",
+        a: "Not on November 12, 2026: the show's site lists the 2027 dates and prices but has no buy button yet. Buy only on nyboatshow.com; the show says tickets from other sites are not valid.",
+      },
+      {
+        q: "How do I get to the Javits Center?",
+        a: "Take the 7 train to 34th Street–Hudson Yards, a five-minute walk away. There is no parking at the Javits Center; nearby lots cost around $40 to $60 on a Saturday. Ferries run from New Jersey.",
+      },
+      {
+        q: "Can I get on the boats?",
+        a: "Most boats on display can be boarded, usually with your shoes off; some dealers limit access or ask for an appointment.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/coney-island-polar-bear-plunge-2027/",
+        eyebrow: "January 1",
+        title: "Coney Island Polar Bear Plunge",
+        text: "The year's first New York tradition, in the Atlantic at Coney Island, free to join.",
+      },
+      {
+        href: "/events/year-in-review-neil-degrasse-tyson-amnh-2027/",
+        eyebrow: "January 7",
+        title: "Year in Review with Neil deGrasse Tyson",
+        text: "The year in science under the blue whale at the Natural History Museum, two weeks before the show.",
+      },
+      {
+        href: "/events/bryant-park-winter-village-2026/",
+        eyebrow: "October 28 – February 28",
+        title: "Winter Village at Bryant Park",
+        text: "Free skating in Midtown, still open in show week, two stops east on the 7 train.",
+      },
+    ],
+    expertise:
+      "Go on a weekday afternoon if you mean to talk to dealers: Saturday is the long day everyone else picks, and Sunday closes at four. If there is one boat you came for, ring its dealer before the show and book a time aboard, because the busiest boats are the ones with a queue or an appointment list. Bring slip-on shoes, since you will take them off at almost every boarding step, and leave the car at home: the 7 train puts you five minutes from the door and the show has no parking of its own.",
   },
 ];
