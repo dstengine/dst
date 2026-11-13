@@ -518,7 +518,7 @@ export const items: EventItem[] = [
   {
     slug: "vienna-halloween-run-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-11-11T02:35:00+01:00",
+    updatedAt: "2026-11-13T02:35:00+01:00",
     site: "vien",
     image: "/covers/vienna-halloween-run-2026.jpg",
     imageAlt: "Eine helle Laufbahn, die in die Bildmitte führt, gesäumt von Bäumen mit rotem Herbstlaub",
@@ -585,6 +585,12 @@ export const items: EventItem[] = [
       },
     ],
     related: [
+      {
+        href: "/veranstaltungen/schmuck-mineralienboerse-floridsdorf-wien-2026/",
+        eyebrow: "19.–20. Dezember, Floridsdorf",
+        title: "Schmuck- und Mineralienbörse Wien 2026",
+        text: "Kurz vor Weihnachten drinnen: Mineralien, Schmucksteine, Fossilien und Meteorite im Haus der Begegnung Floridsdorf, Eintritt frei.",
+      },
       {
         href: "/veranstaltungen/vinyl-cd-boerse-moses-records-wien-2026/",
         eyebrow: "5.–6. Dezember, VHS Längenfeldgasse",
@@ -659,7 +665,7 @@ export const items: EventItem[] = [
   {
     slug: "kuerbisfest-am-himmel-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-11-11T02:35:00+01:00",
+    updatedAt: "2026-11-13T02:35:00+01:00",
     site: "vien",
     image: "/covers/kuerbisfest-am-himmel-2026.jpg",
     imageAlt: "Ein breiter Haufen runder Papierscheiben in Rot, Grün, Ocker und Creme, in vielen verschiedenen Größen",
@@ -723,6 +729,12 @@ export const items: EventItem[] = [
       },
     ],
     related: [
+      {
+        href: "/veranstaltungen/schmuck-mineralienboerse-floridsdorf-wien-2026/",
+        eyebrow: "19.–20. Dezember, Floridsdorf",
+        title: "Schmuck- und Mineralienbörse Wien 2026",
+        text: "Ein Adventwochenende für Sammler: Mineralien, Schmuck und Fossilien im Haus der Begegnung Floridsdorf, Samstag und Sonntag, Eintritt frei.",
+      },
       {
         href: "/veranstaltungen/vinyl-cd-boerse-moses-records-wien-2026/",
         eyebrow: "5.–6. Dezember, VHS Längenfeldgasse",
@@ -3375,7 +3387,7 @@ export const items: EventItem[] = [
   {
     slug: "vinyl-cd-boerse-moses-records-wien-2026",
     createdAt: "2026-11-11T02:35:00+01:00",
-    updatedAt: "2026-11-11T02:35:00+01:00",
+    updatedAt: "2026-11-13T02:35:00+01:00",
     site: "vien",
     title: "Vinyl- und CD-Börse Wien 2026: Schallplatten in der VHS Längenfeldgasse",
     cardTitle: "Vinyl- und CD-Börse (Moses-Records)",
@@ -3439,6 +3451,12 @@ export const items: EventItem[] = [
     ],
     related: [
       {
+        href: "/veranstaltungen/schmuck-mineralienboerse-floridsdorf-wien-2026/",
+        eyebrow: "19.–20. Dezember, Floridsdorf",
+        title: "Schmuck- und Mineralienbörse Wien 2026",
+        text: "Die nächste Sammlerbörse zwei Wochen später: Mineralien, Schmucksteine, Fossilien und Meteorite in Floridsdorf, Eintritt frei.",
+      },
+      {
         href: "/veranstaltungen/adventlauf-lcc-wien-prater-2026/",
         eyebrow: "6. Dezember, Prater Hauptallee",
         title: "Adventlauf des LCC Wien 2026",
@@ -3459,6 +3477,92 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Auf einer Plattenbörse gehört der Samstagvormittag den Sammlern: Um 10 Uhr stehen die Händler mit frisch aufgefüllten Kisten da, und die gesuchten Pressungen sind bald weg. Der Sonntag ist ruhiger, und gegen Ende lässt mancher Aussteller lieber mit sich reden, als die Kisten wieder ins Auto zu tragen. Eine eigene Tasche mit festem Boden ist mehr wert als jede Plastiktüte, denn zehn LPs wiegen gut zwei Kilo. Bargeld mitzunehmen schadet nicht: Kartenzahlung ist an Börsenständen keine Selbstverständlichkeit. Und wer eine bestimmte Pressung sucht, schaut vorher auf Matrixnummer und Labelvariante, nicht nur auf das Cover.",
+  },
+  {
+    slug: "schmuck-mineralienboerse-floridsdorf-wien-2026",
+    createdAt: "2026-11-13T02:35:00+01:00",
+    updatedAt: "2026-11-13T02:35:00+01:00",
+    site: "vien",
+    title: "Mineralienbörse Wien 2026: Schmuck- und Mineralientage im Haus der Begegnung Floridsdorf",
+    cardTitle: "Schmuck- & Mineralienbörse Floridsdorf",
+    titleSeo: "Mineralienbörse Wien: Floridsdorf, Dezember 2026",
+    summary:
+      "Die Schmuck- und Mineralienbörse von Lothar Zanaschka ist am 19. und 20. Dezember 2026 im Haus der Begegnung Floridsdorf, Angerer Straße 14, in Wien: Samstag 10 bis 18 Uhr, Sonntag 10 bis 17 Uhr, Eintritt frei. Angeboten werden Sammlermineralien, Schmucksteine, Perlen, Fossilien und Meteorite.",
+    start: "2026-12-19",
+    end: "2026-12-20",
+    startTime: "10:00",
+    utcOffset: "+01:00",
+    venue: "Haus der Begegnung Floridsdorf, Angerer Straße 14",
+    city: "Wien",
+    country: "Österreich",
+    organizer: "Lothar Zanaschka",
+    category: "Messe",
+    tickets: { priceFrom: 0, currency: "EUR" },
+    ticket: {
+      url: "https://www.zanaschkamineralien.com/messen.html",
+      label: "Zanaschka Mineralien: Schmuck- und Mineralienbörsen",
+      sells: false,
+    },
+    source: {
+      name: "Zanaschka Mineralien — Schmuck- & Mineralientage in Österreich 2026",
+      url: "https://www.zanaschkamineralien.com/",
+      verifiedOn: "2026-11-13",
+    },
+    body: [
+      "Zum letzten Mal in diesem Jahr kommt die Wanderbörse der Familie Zanaschka nach Wien: Die <strong>Schmuck- und Mineralienbörse</strong> ist am <strong>Samstag, 19., und Sonntag, 20. Dezember 2026</strong>, im <strong>Haus der Begegnung Floridsdorf</strong>, Angerer Straße 14 im 21. Bezirk. Geöffnet ist am <strong>Samstag von 10 bis 18 Uhr</strong> und am <strong>Sonntag von 10 bis 17 Uhr</strong>, der <strong>Eintritt ist frei</strong>.",
+      "## Was es zu kaufen gibt",
+      "Nach Angaben des Veranstalters kommen Aussteller aus der ganzen Welt. Auf den Tischen liegen <strong>Sammlermineralien</strong> für Kinder wie für erfahrene Sammler, <strong>Schmucksteine</strong> und fertiger Schmuck, Steinstränge, Ketten und Kettenzubehör, Süßwasserperlen, Edelsteine zum Weiterverarbeiten für Gold- und Silberschmiede sowie <strong>Fossilien und Meteorite</strong>. Einen großen Teil des Angebots machen außerdem Steine aus, die als Heilsteine verkauft werden.",
+      "## Wer dahintersteht",
+      "Veranstalter ist <strong>Lothar Zanaschka</strong>, dessen Familie in Wien drei Geschäfte für Mineralien, Schmuck und Edelsteine führt, darunter seit 2018 den Goldschmiede- und Schleifbedarf Baiers Enkel in der Westbahnstraße. Die Börsen ziehen das ganze Jahr durch Österreich: für 2026 hat er 29 Termine angesetzt, in Wien, Klosterneuburg, Gleisdorf, Hart bei Graz, Klagenfurt, Linz, Anif und Innsbruck.",
+      "## Die Wiener Termine",
+      "In Wien wechselt die Börse zwischen zwei Häusern: dem Festsaal der Volkshochschule in der Längenfeldgasse 13–15 im 12. Bezirk und dem Haus der Begegnung in Floridsdorf. 2026 war sie siebenmal in der Stadt, zuletzt am 31. Oktober und 1. November in der Längenfeldgasse. Der Dezembertermin in Floridsdorf ist der letzte des Jahres. Die Termine für 2027 hat der Veranstalter noch nicht veröffentlicht.",
+      "## Sammlerbörsen im Advent",
+      "In der Volkshochschule Längenfeldgasse, dem anderen Wiener Haus der Mineralienbörse, ist schon am 5. und 6. Dezember die <a href=\"/veranstaltungen/vinyl-cd-boerse-moses-records-wien-2026/\" title=\"Schallplattenbörse Wien: Längenfeldgasse, Dezember 2026\">Vinyl- und CD-Börse von Moses-Records</a>. Am 13. Dezember gibt es Originalfotografien aus drei Jahrhunderten auf der <a href=\"/veranstaltungen/vienna-vintage-photo-fair-westlicht-2026/\" title=\"Vienna Vintage Photo Fair: WestLicht, Dezember 2026\">Vienna Vintage Photo Fair im WestLicht</a>, ebenfalls bei freiem Eintritt.",
+    ],
+    faq: [
+      {
+        q: "Wann ist die nächste Mineralienbörse in Wien?",
+        a: "Am <strong>19. und 20. Dezember 2026</strong> im Haus der Begegnung Floridsdorf: Samstag von 10 bis 18 Uhr, Sonntag von 10 bis 17 Uhr. Es ist der letzte Wiener Termin des Jahres; die Daten für 2027 sind noch nicht veröffentlicht.",
+      },
+      {
+        q: "Was kostet der Eintritt?",
+        a: "Nichts: Der Eintritt zu den Schmuck- und Mineralientagen ist laut Veranstalter immer frei.",
+      },
+      {
+        q: "Wo findet die Börse statt?",
+        a: "Im Haus der Begegnung Floridsdorf, Angerer Straße 14, 1210 Wien.",
+      },
+      {
+        q: "Was wird auf der Börse angeboten?",
+        a: "Sammlermineralien, Schmucksteine und Schmuck, Ketten und Zubehör, Süßwasserperlen, Edelsteine für Gold- und Silberschmiede, Fossilien und Meteorite, außerdem Steine, die als Heilsteine verkauft werden.",
+      },
+      {
+        q: "Kann ich selbst als Aussteller teilnehmen?",
+        a: "Ja, neue Aussteller sind laut Veranstalter willkommen. Das Anmeldeformular für 2026 steht auf zanaschkamineralien.com; Auskunft gibt Lothar Zanaschka per E-Mail oder Telefon.",
+      },
+    ],
+    related: [
+      {
+        href: "/veranstaltungen/vinyl-cd-boerse-moses-records-wien-2026/",
+        eyebrow: "5.–6. Dezember, VHS Längenfeldgasse",
+        title: "Vinyl- und CD-Börse Wien 2026",
+        text: "Die Sammlerbörse zwei Wochen davor: LPs, Singles und CDs von rund 100 Ausstellern, Tageskarte 8 Euro.",
+      },
+      {
+        href: "/veranstaltungen/vienna-vintage-photo-fair-westlicht-2026/",
+        eyebrow: "13. Dezember, WestLicht",
+        title: "Vienna Vintage Photo Fair 2026",
+        text: "Eine Woche davor: Originalfotografien aus drei Jahrhunderten, Eintritt frei.",
+      },
+      {
+        href: "/veranstaltungen/kuerbisfest-am-himmel-2026/",
+        eyebrow: "Cobenzl",
+        title: "Kürbisfest am Himmel 2026",
+        text: "Der Herbst davor: über 200 Kürbissorten am Cobenzl, Eintritt frei.",
+      },
+    ],
+    expertise:
+      "Auf Mineralienbörsen lohnt der Blick auf das Etikett mehr als der auf die Farbe: Ein gutes Sammlerstück trägt den Fundort, und wer nach ihm fragt, merkt schnell, wer seine Steine kennt. Ebenso berechtigt ist die Frage, ob ein Stein gefärbt, gebrannt oder anders behandelt ist; seriöse Händler sagen es von selbst. Eine kleine Lupe hilft bei Kristallspitzen und Fossilien, und für Zerbrechliches nimmt man Schachteln oder Zeitungspapier mit. Wer im Dezember Geschenke sucht, sollte an den Sonntag denken: Da schließt die Börse schon um 17 Uhr.",
   },
   {
     slug: "silvesterkonzert-wiener-philharmoniker-2026",
