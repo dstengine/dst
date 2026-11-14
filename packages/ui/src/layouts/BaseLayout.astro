@@ -2,6 +2,8 @@
 import ThemeToggle from "../components/ThemeToggle.astro";
 import '../styles/tokens.css';
 import Analytics from '../components/Analytics.astro';
+import ConsentBanner from '../components/ConsentBanner.astro';
+import { needsConsent, consentCopy, consentPage, CONSENT_CSS, CONSENT_NOSCRIPT_CSS } from '../consent';
 import { ICONS, navIconFor } from '../icons';
 import { pageGraph } from '../schema';
 import type { Publisher } from '../schema';
@@ -214,6 +216,12 @@ const CHROME: Record<string, { skip: string; menu: string }> = {
 };
 // A site's own words, where it passes them, win over the table's.
 const chromeRow = CHROME[lang.slice(0, 2)] ?? CHROME.en;
+
+// A site that asks before it measures carries the question, its styles and
+// a way back to it; every other site carries none of the three.
+const consentHost = Astro.site?.hostname ?? "";
+const consent = analytics && needsConsent(consentHost);
+const consentWords = consent ? consentCopy(lang) : null;
 const chrome = {
   skip: chromeOverride?.skip ?? chromeRow.skip,
   menu: chromeOverride?.menu ?? chromeRow.menu,
@@ -450,7 +458,7 @@ const wordmark = siteName.replaceAll(" · ", "\u00A0·\u00A0");
         )}
       />
     ))}
-    {analytics && <Analytics id={gaId} networkFooter={networkFooter} />}
+    {analytics && <Analytics id={gaId} networkFooter={networkFooter} />}{consent && <><style is:inline set:html={CONSENT_CSS} /><noscript><style is:inline set:html={CONSENT_NOSCRIPT_CSS} /></noscript></>}
     {/* The lead pipeline is DST's, not every site's: it writes dst_ cookies
         and talks to api.dst.llc, so the layout no longer decides who is on
         it. A site hands it in — musical.today, which is not presented as
@@ -464,8 +472,14 @@ const wordmark = siteName.replaceAll(" · ", "\u00A0·\u00A0");
     {/* First tab stop on every page. The header carries a nav of eight or
         more links plus the network menu, and without this a keyboard or
         switch user tabs through all of it again on each page before
-        reaching a word of the content. Off-screen until focused. */}
-    <a class="skip-link" href="#content">{chrome.skip}</a>
+        reaching a word of the content. Off-screen until focused.
+
+        The consent bar follows it on the same line, as its styles follow
+        <Analytics> in the head and its footer control follows the footer
+        links: an expression on a line of its own leaves a space in the
+        HTML even when it renders nothing, and a site that does not ask
+        (consent.ts) is not to change by a byte. */}
+    <a class="skip-link" href="#content">{chrome.skip}</a>{consent && <ConsentBanner lang={lang} href={consentPage(consentHost)} />}
     <header class="site-header">
       <div class:list={["container", "header-inner", navBar && "header-inner-bar"]}>
         {/* No `title` unless the site wrote one. The fallback used to be
@@ -590,6 +604,10 @@ const wordmark = siteName.replaceAll(" · ", "\u00A0·\u00A0");
                 <a href={link.href} title={link.title ?? link.label} rel={link.rel}>{link.label}</a>
               </>
             ))}
+          </p>
+        )}{consentWords && (
+          <p class="footer-consent">
+            <button class="consent-open-link" type="button" data-consent-open title={consentWords.settingsTitle}>{consentWords.settings}</button>
           </p>
         )}
       </div>

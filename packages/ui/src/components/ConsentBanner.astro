@@ -1,0 +1,135 @@
+---
+// The question a site asks before it measures — consent.ts says which sites
+// ask and why, Analytics.astro holds the tag back until the answer.
+//
+// A bar along the foot of the window, not a dialog. The page under it is
+// whole and usable: nothing is blocked, dimmed or trapped, so a reader who
+// came for an opening time gets it without answering, and a crawler reads
+// the page it would have read anyway. Leaving the bar unanswered is a no
+// for as long as it stays unanswered.
+//
+// It sits right after the skip link in the document, though it is drawn at
+// the bottom: a keyboard or screen-reader user meets the question second,
+// not after every link on the page, and "skip to content" still skips it.
+//
+// Rendered hidden and shown by the script below, in the same pass as the
+// markup, only when there is no standing answer. A reader with scripts off
+// never sees it and is never measured: the tag needs the same script.
+//
+// data-nosnippet keeps these words out of a search result's description.
+// It is honoured on div, span and section, hence the inner wrapper.
+//
+// The script, in the order it reads (its comments live here so that they
+// are not shipped in every page):
+//   - `opener` is the control that reopened the bar, so focus can go back
+//     to it. A bar reopened over a standing answer says what that answer
+//     is, on a line both buttons are described by, and Escape puts it away
+//     with nothing changed. The first ask has neither: there is no answer
+//     to state, and no way to dismiss the question but to answer it or
+//     leave it.
+//   - fit(): the page grows by the bar's height while the bar is open, so
+//     the footer can be scrolled clear of it; see CONSENT_CSS.
+//   - answer(): the button that was pressed is gone. Reopened from the
+//     footer, focus returns there, scrolling to it if the bar was at the
+//     top of a short window; answered from the keyboard on arrival, it goes
+//     to the content without moving the page. A mouse needs neither.
+//   - Any control that carries data-consent-open brings the question back:
+//     the footer has one on every page, the about page a second. In a short
+//     window, where the bar is a block at the top, focusing a button centres
+//     it and can leave the line above the question cut off; the bar is
+//     brought whole into view when it fits.
+//   - follow(): an answer given in another tab, or on a later page before
+//     Back restored this one, is this page's answer too. If the bar had the
+//     keyboard when it went, focus goes where an answer here would have
+//     sent it; if the answer was cleared, the bar is the first ask again.
+import { consentCopy, CONSENT_KEY } from "../consent";
+
+interface Props {
+  /** The page's language, as BaseLayout has it. */
+  lang: string;
+  /** Where the site says what is counted and how to change the answer. */
+  href: string;
+}
+const { lang, href } = Astro.props;
+const copy = consentCopy(lang);
+---
+<aside class="consent" data-consent hidden aria-labelledby="consent-title">
+  <div class="container consent-inner" data-nosnippet>
+    <div class="consent-copy">
+      <p class="consent-state" id="consent-state" data-yes={copy.saidYes} data-no={copy.saidNo} hidden></p>
+      <p class="consent-title" id="consent-title">{copy.title}</p>
+      <p class="consent-text">{copy.text} <a href={href} title={copy.moreTitle}>{copy.more}</a></p>
+    </div>
+    <div class="consent-actions">
+      <button class="button button-secondary" type="button" data-consent-no aria-describedby="consent-state">{copy.no}</button>
+      <button class="button button-secondary" type="button" data-consent-yes aria-describedby="consent-state">{copy.yes}</button>
+    </div>
+  </div>
+</aside>
+
+<script is:inline data-consent-key={CONSENT_KEY}>
+  (() => {
+    const api = window.analyticsConsent;
+    const bar = document.querySelector("[data-consent]");
+    if (!api || !bar) return;
+    const KEY = document.currentScript.getAttribute("data-consent-key");
+    const root = document.documentElement;
+    const said = bar.querySelector("#consent-state");
+    let opener = null;
+
+    const fit = () => root.style.setProperty("--consent-h", bar.offsetHeight + "px");
+    const show = (from) => {
+      opener = from || null;
+      const standing = api.state();
+      said.textContent = standing ? said.getAttribute("data-" + standing) : "";
+      said.hidden = !standing;
+      bar.hidden = false;
+      root.classList.add("consent-open");
+      fit();
+    };
+    const hide = () => {
+      bar.hidden = true;
+      root.classList.remove("consent-open");
+      root.style.removeProperty("--consent-h");
+    };
+    const back = (event) => {
+      if (opener && opener.isConnected) opener.focus();
+      else if (event.detail === 0) document.getElementById("content")?.focus({ preventScroll: true });
+      opener = null;
+    };
+    const answer = (yes, event) => {
+      hide();
+      back(event);
+      if (yes) api.grant();
+      else api.deny();
+    };
+    const follow = () => {
+      if (!api.state()) return show();
+      const had = bar.contains(document.activeElement);
+      hide();
+      if (had) back({ detail: 0 });
+      opener = null;
+    };
+
+    bar.querySelector("[data-consent-yes]").addEventListener("click", (e) => answer(true, e));
+    bar.querySelector("[data-consent-no]").addEventListener("click", (e) => answer(false, e));
+    bar.addEventListener("keydown", (e) => {
+      if (e.key !== "Escape" || !opener || !api.state()) return;
+      e.stopPropagation();
+      hide();
+      back(e);
+    });
+    addEventListener("click", (e) => {
+      const control = e.target instanceof Element ? e.target.closest("[data-consent-open]") : null;
+      if (!control) return;
+      show(control);
+      bar.querySelector("[data-consent-no]").focus();
+      bar.scrollIntoView({ block: "nearest" });
+    });
+    addEventListener("storage", (e) => { if (e.key === KEY || e.key === null) follow(); });
+    addEventListener("pageshow", (e) => { if (e.persisted) follow(); });
+    if ("ResizeObserver" in window) new ResizeObserver(() => { if (!bar.hidden) fit(); }).observe(bar);
+
+    if (!api.state()) show();
+  })();
+</script>

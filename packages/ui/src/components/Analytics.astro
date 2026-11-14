@@ -14,6 +14,7 @@
 //     gtag('config', 'G-…') — with a variable there it reports finding no
 //     Analytics code at all.
 import { getMeasurementId } from "../analytics";
+import { needsConsent, CONSENT_KEY, CONSENT_MAX_AGE_MS } from "../consent";
 
 interface Props {
   id?: string;
@@ -48,8 +49,118 @@ const snippet = `window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', '${id}', { cookie_domain: ${cookieDomain} });`;
+
+// A site that asks first (consent.ts) gets none of the above in its HTML:
+// no preconnect, no loader, no gtag. It gets this instead, which does the
+// same three calls and fetches the same loader — once the reader has said
+// yes, on this visit or an earlier one, and not before.
+//
+//   - No answer yet: `gtag` is a stand-in that keeps what the page would
+//     have reported in a short list in memory. Nothing is stored, nothing
+//     is fetched, nothing leaves the page. A yes sends the list after the
+//     config call, so the page view that was asked the question is counted
+//     like any other — and with it the impression of a running A/B test,
+//     which is reported at load and would otherwise be lost for every
+//     reader who agrees. A no throws the list away and removes `gtag`.
+//   - An earlier no: there is no `gtag` at all, and track() does nothing.
+//   - A no after a yes: the property is switched off, its cookies are
+//     deleted, and the page reloads into the state above. Google documents
+//     the switch as one to set before the first gtag() call, and the tests
+//     answer for Google with a stub, so what the real tag does with a
+//     switch thrown late is not proven here. Whatever it does, the page
+//     that follows deletes the cookies again and never loads the tag.
+//   - The answer is read again when it changes in another tab and when
+//     Back restores this page from the browser's cache: a page that was
+//     loaded under a yes must not go on measuring after a no given
+//     elsewhere.
+//
+// forget() takes every cookie named _ga or _ga_…, not this property's two:
+// a reader who came before 24 Oct 2026 also holds those of the two ids the
+// sites reported to earlier. It runs on a stored no and on an answer that
+// has lapsed — not on a reader who has never been asked, whose cookie from
+// before the question existed is left unread until they answer: deleting
+// it would turn every returning reader who agrees into a new one.
+//
+// A page that stop() reloaded says so to the page it becomes, through
+// sessionStorage: the tag it is leaving may write its cookies once more on
+// the way out, and if the answer itself has gone by then — cleared in
+// another tab — nothing else would tell the new page to delete them.
+//
+// An answer dated more than a day ahead of the clock is no answer; without
+// that bound a wrong date would be a yes that never lapses.
+//
+// Advertising is off whatever the answer: nobody is asked about it. The
+// consent defaults deny it, and the config call turns off Google signals
+// and ad personalisation by Google's own switches, which override whatever
+// the property is set to.
+//
+// The config call still carries the id as a literal, as it does above.
+const gated = needsConsent(host);
+const gate = `(function () {
+  var KEY = '${CONSENT_KEY}', MAX = ${CONSENT_MAX_AGE_MS}, on = false, held = [];
+  function raw() { try { return localStorage.getItem(KEY) || ''; } catch (e) { return ''; } }
+  function read() {
+    var v = raw().split(':'), age = Date.now() - Number(v[1]);
+    return (v[0] === 'yes' || v[0] === 'no') && age > -864e5 && age < MAX ? v[0] : '';
+  }
+  function write(v) { try { localStorage.setItem(KEY, v + ':' + Date.now()); } catch (e) {} }
+  function load() {
+    if (on) return;
+    on = true;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function gtag(){dataLayer.push(arguments);};
+    gtag('consent', 'default', { analytics_storage: 'granted', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+    gtag('js', new Date());
+    gtag('config', '${id}', { cookie_domain: ${cookieDomain}, allow_google_signals: false, allow_ad_personalization_signals: false });
+    for (var i = 0; i < held.length; i++) dataLayer.push(held[i]);
+    held = [];
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=${id}';
+    document.head.appendChild(s);
+  }
+  function forget() {
+    try {
+      var parts = location.hostname.split('.'), domains = [''];
+      for (var i = 0; i < parts.length - 1; i++) domains.push('; domain=.' + parts.slice(i).join('.'));
+      document.cookie.split(';').forEach(function (c) {
+        var n = c.split('=')[0].trim();
+        if (n !== '_ga' && n.indexOf('_ga_') !== 0) return;
+        domains.forEach(function (d) { document.cookie = n + '=; Max-Age=0; path=/' + d; });
+      });
+    } catch (e) {}
+  }
+  function stop() {
+    held = [];
+    if (on) window['ga-disable-${id}'] = true;
+    forget();
+    if (on) { try { sessionStorage.setItem(KEY, '1'); } catch (e) {} location.reload(); }
+    else { try { delete window.gtag; } catch (e) { window.gtag = undefined; } }
+  }
+  function sync() {
+    var s = read();
+    if (on) { if (s !== 'yes') stop(); }
+    else if (s === 'yes') load();
+    else if (s === 'no') stop();
+  }
+  var state = read(), again = false;
+  try { again = !!sessionStorage.getItem(KEY); sessionStorage.removeItem(KEY); } catch (e) {}
+  if (state === 'yes') load();
+  else {
+    if (raw() || again) forget();
+    if (!state) window.gtag = function () { if (held.length < 20) held.push(arguments); };
+  }
+  window.analyticsConsent = {
+    state: read,
+    grant: function () { write('yes'); load(); },
+    deny: function () { write('no'); stop(); }
+  };
+  addEventListener('storage', function (e) { if (e.key === KEY || e.key === null) sync(); });
+  addEventListener('pageshow', function (e) { if (e.persisted) sync(); });
+})();`;
 ---
-{valid && (
+{valid && gated && <script is:inline set:html={gate} />}
+{valid && !gated && (
   <>
     {/* The tag is fetched from a second origin on every page. Opening the
         connection while the HTML is still parsing takes the DNS, TCP and

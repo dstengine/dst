@@ -15,6 +15,7 @@ import { ticketAvailability } from "../packages/content/src/admission.ts";
 import { runDays } from "../packages/content/src/when.ts";
 import { redirects } from "../packages/content/src/redirects.ts";
 import { liveExperiments } from "../packages/content/src/experiments.ts";
+import { CONSENT_HOSTS } from "../packages/ui/src/consent.ts";
 import { verticalPaths } from "../apps/dst/src/verticals.ts";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -1494,6 +1495,122 @@ describe("analytics", () => {
     for (const hop of pages.filter((p) => p.url.startsWith("/go/"))) {
       assert.doesNotMatch(hop.html, /googletagmanager/, `${hop.app}${hop.url}: analytics on a redirect hop`);
     }
+  });
+});
+
+describe("consent", () => {
+  // A site named in CONSENT_HOSTS asks before it measures: until the reader
+  // says yes, nothing on its pages may reach Google's analytics hosts. The
+  // browser suite (consent.spec.js) watches the requests a page makes; this
+  // reads what is in the HTML, on every page rather than on a sample, since
+  // one page with the old tag in its head measures everyone who lands on it.
+  //
+  // The other half is held just as hard: none of this reaches a site that
+  // does not ask. The bar, its styles and its script are inline for that
+  // reason, and a site that gained them by accident would be asking a
+  // question nobody decided to ask.
+  const asks = (app) => CONSENT_HOSTS.includes(SITES.find((s) => s.app === app).host);
+  const GOOGLE = /googletagmanager\.com|google-analytics\.com|analytics\.google\.com|doubleclick\.net/;
+  // Any element that makes the browser open a connection or fetch a file.
+  const FETCHES = /<(?:script|link|img|iframe|source|video|audio|embed|object)\b[^>]*>/g;
+
+  test("every host that asks is a site of the network, and a measured one", () => {
+    for (const host of CONSENT_HOSTS) {
+      const site = SITES.find((s) => s.host === host);
+      assert.ok(site, `consent.ts names ${host}, which is not a site in this file`);
+      assert.notEqual(site.analytics, false, `${host} asks for consent to a tag it does not carry`);
+    }
+  });
+
+  test("a site that asks puts nothing in its HTML that reaches Google's tag", () => {
+    const reaching = [];
+    for (const p of pages.filter((p) => asks(p.app))) {
+      for (const [tag] of p.html.matchAll(FETCHES)) {
+        if (GOOGLE.test(tag)) reaching.push(`${p.app}${p.url}: ${tag.slice(0, 120)}`);
+      }
+    }
+    assert.deepEqual(reaching, [], "the tag is fetched or preconnected before any answer");
+  });
+
+  test("every page of a site that asks carries the gate, the question, both answers and the way back", () => {
+    const missing = [];
+    const sites = SITES.filter((s) => asks(s.app));
+    assert.ok(sites.length === CONSENT_HOSTS.length);
+    for (const p of contentPages().filter((p) => asks(p.app))) {
+      const gate = p.html.indexOf("window.analyticsConsent =");
+      const bar = p.html.search(/<aside[^>]*\bdata-consent\b/);
+      const lacks = [
+        gate < 0 && "the gate",
+        bar < 0 && "the bar",
+        // The bar's script reads what the gate defined, so the gate is first.
+        gate >= 0 && bar >= 0 && gate > bar && "the gate before the bar",
+        !/<aside[^>]*\bdata-consent\b[^>]*\bhidden\b/.test(p.html) && "a bar that starts hidden",
+        !/<button[^>]*\bdata-consent-no\b/.test(p.html) && "the no",
+        !/<button[^>]*\bdata-consent-yes\b/.test(p.html) && "the yes",
+        !/<footer[\s\S]*<button[^>]*\bdata-consent-open\b/.test(p.html) && "the footer control",
+        !/<aside[^>]*\bdata-consent\b[^>]*>\s*<div[^>]*\bdata-nosnippet\b/.test(p.html) && "data-nosnippet on the bar's words",
+        // With scripts off the reopening controls would do nothing.
+        !/<noscript><style>[^<]*\[data-consent-open\]\{display:none!important\}<\/style><\/noscript>/.test(p.html) && "the rule that hides the controls without scripts",
+      ].filter(Boolean);
+      if (lacks.length) missing.push(`${p.app}${p.url}: no ${lacks.join(", no ")}`);
+    }
+    assert.deepEqual(missing.slice(0, 20), [], `${missing.length} page(s) of a site that asks are incomplete`);
+  });
+
+  // Declining has to be exactly as easy to see and to hit as allowing: the
+  // two answers are the same element with the same classes, and differ only
+  // in the attribute that says which is which.
+  test("the two answers are the same button", () => {
+    for (const { app, home = "/" } of SITES.filter((s) => asks(s.app))) {
+      const html = pages.find((p) => p.app === app && p.url === home).html;
+      const shape = (name) => {
+        const tag = html.match(new RegExp(`<button[^>]*\\bdata-consent-${name}\\b[^>]*>`));
+        assert.ok(tag, `${app}: no ${name} button on its home`);
+        return tag[0].replace(` data-consent-${name}`, "");
+      };
+      assert.equal(shape("no"), shape("yes"), `${app}: the two answers are marked up differently`);
+    }
+  });
+
+  // The bar says where the site explains itself. That address has to be a
+  // page that was built, with the section the link names, and the section
+  // has to hold a control that brings the question back.
+  test("the bar's link lands on a section that exists and can reopen the question", () => {
+    for (const { app, home = "/" } of SITES.filter((s) => asks(s.app))) {
+      const html = pages.find((p) => p.app === app && p.url === home).html;
+      const href = (html.match(/class="consent-text"[^>]*>[\s\S]*?<a\s[^>]*href="([^"]+)"/) || [])[1];
+      assert.ok(href, `${app}: the bar carries no link`);
+      const [url, id] = href.split("#");
+      const target = pages.find((p) => p.app === app && p.url === url);
+      assert.ok(target, `${app}: the bar links ${href}, and ${url} was not built`);
+      assert.ok(id, `${app}: the bar's link names no section`);
+      const section = target.html.match(new RegExp(`<section[^>]*\\bid="${id}"[\\s\\S]*?</section>`));
+      assert.ok(section, `${app}: ${url} has no section with id="${id}"`);
+      assert.match(section[0], /<button[^>]*\bdata-consent-open\b/, `${app}: ${href} cannot reopen the question`);
+    }
+  });
+
+  test("a site that does not ask carries none of it", () => {
+    const carrying = pages
+      .filter((p) => !asks(p.app))
+      .filter((p) => /data-consent|analyticsConsent|consent-open|class="consent\b/.test(p.html))
+      .map((p) => `${p.app}${p.url}`);
+    assert.deepEqual(carrying.slice(0, 20), [], `${carrying.length} page(s) of a site that does not ask carry the consent bar or its gate`);
+  });
+
+  // The stylesheets, too: a component's <style> would have reached every
+  // site's bundle, which is why the bar's rules are an inline string.
+  test("no site's stylesheet or bundled script carries the bar", () => {
+    const carrying = [];
+    for (const { app } of SITES) {
+      const dir = path.join(REPO, "apps", app, "dist", "_astro");
+      if (!existsSync(dir)) continue;
+      for (const name of readdirSync(dir)) {
+        if (!/\.(css|js)$/.test(name)) continue;
+        if (/consent/i.test(readFileSync(path.join(dir, name), "utf8"))) carrying.push(`${app}/_astro/${name}`);
+      }
+    }
+    assert.deepEqual(carrying, [], "the consent bar leaked into a shared bundle");
   });
 });
 
