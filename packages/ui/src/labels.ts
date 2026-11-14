@@ -25,8 +25,10 @@ export interface ArticleLabels {
       the page is about. A bare "Questions" is a heading nobody searches and
       nobody can place: the same word sits over fifty different pages in
       this network. The subject is passed because the component knows the
-      item and the language does not — and it goes in with a colon in all
-      three languages, which is the one join that needs no article. */
+      item and the language does not. It goes in whole, after it and with a
+      colon where it can, which is the one join that needs no article — and
+      with another join where the subject already has a colon or ends its own
+      sentence (see `enFaq` and its siblings below). */
   faq: (subject?: string) => string;
   organizedBy: string;
   minRead: (n: number) => string;
@@ -236,10 +238,133 @@ export function inSentence(what: string, locale = "en"): string {
   return what.toLocaleLowerCase(locale);
 }
 
+// The FAQ heading, when the subject brings punctuation of its own.
+//
+// "Yerevan Jazz Fest: questions" is the heading `faq` describes, and on a
+// plain name it is the right one. But a page's name is often split already
+// — by a colon ("New Year in Yerevan 2026–2027: New Year's Eve and
+// Christmas"), by a full stop in an Armenian title ("Պուչչինի. «Տուրանդոտ»")
+// — or ends in its own mark ("Which coins use RandomX?"). Until 14 November
+// 2026 the colon then went in anyway, and 241 of the network's 891 FAQ
+// headings read "X: Y: questions", "X?: questions" or "X.: questions".
+//
+// So each language keeps its plain join and adds one for a subject that has
+// a separator of its own and one for a subject that ends its own sentence.
+// The subject is trimmed and nothing else. Cutting it at its colon was the
+// obvious alternative and the wrong one: the head is often only a
+// composer's name ("Rachmaninov: …" titles two different concerts), and the
+// tail is where the city's name usually is. The joins were chosen by a
+// native reader of each language and checked by a second against every
+// subject live that day; a subject's own wording that reads badly with any
+// join is fixed in the content, not here.
+//
+// The space before a joining dash is a no-break space, so that the dash
+// never opens a line.
+
+/** Closing quotes that may follow a subject's final mark, the German “ and
+    ‘ among them („Alles Walzer!“). Brackets are not: the mark inside
+    "Kling 4.0 (finally!)" ends the aside, not the name, which still takes
+    its colon. Spanish lets only a full stop end before them (see ES_ENDS),
+    since there the stop goes after the closing quote («¿Y ahora qué?».). */
+const QUOTES = String.raw`["'”’»«›‹“‘]*`;
+const SPACED_DASH = /\s[–—-]\s/u;
+const NBSP = " ";
+
+// English. A full stop after an initial or a common abbreviation ends no
+// sentence: "Warner Bros. Studio Tour", "St. Mark's", "J.P. Morgan" keep
+// the colon. A stop inside the name splits it where a capital, a figure or
+// a brand follows ("What is RandomX? The …", "… need? 2 GB, or 256 MB",
+// "… cost? $0.10 a second", "… ? iPhone", "… ? x402", "… ? pump.fun"), not
+// where the name runs on in lower case ("Who Do I Look Like? at the …").
+const EN_ABBR = String.raw`(?:(?<![\p{L}\p{N}])\p{L}|\b(?:St|Bros|Mr|Mrs|Ms|Dr|Jr|Sr|vs|No|Nos|Vol|Op|Inc|Ltd|Co|Corp|Mt|Ft|Ave|Rd|feat|ft|etc|approx))`;
+const EN_ENDS = new RegExp(String.raw`(?:[?!…]|(?<!${EN_ABBR})\.)${QUOTES}$`, "u");
+const EN_SPLIT = new RegExp(
+  String.raw`:\s|(?:[?!…]|(?<!${EN_ABBR})\.)${QUOTES}\s+["“‘«(]?(?:[\p{Lu}\p{N}\p{Sc}#+~±−]|\p{Ll}[\p{Ll}-]*[\p{Lu}\p{N}]|\p{Ll}+\.\p{Ll}{2,})|${EN_ABBR}\.${QUOTES}$`,
+  "u",
+);
+
+function enFaq(subject?: string): string {
+  const s = subject?.trim();
+  if (!s) return "Questions";
+  // A question or a slogan closes itself; the heading starts again after it.
+  if (EN_ENDS.test(s)) return `${s} Questions and answers`;
+  if (EN_SPLIT.test(s)) {
+    // A second dash would turn the middle of "X – Y: Z" into an aside; a
+    // label in front ("Questions about …") cannot take a name that is a
+    // question or a clause, as guides and news titles often are; and one in
+    // brackets reads as billing on a talk or a screening ("… (with Q&A)").
+    // So the name is closed as a sentence and the heading starts again.
+    if (SPACED_DASH.test(s)) return `${s}${/\.["'”’»›]*$/u.test(s) ? "" : "."} Questions and answers`;
+    return `${s}${NBSP}– questions`;
+  }
+  return `${s}: questions`;
+}
+
+// Mexican Spanish: one name for the block in every branch, and the
+// title-full-stop-subtitle order where the subject has a colon already.
+// A full stop inside a closing quote («Hamlet.», English-style) has closed
+// the name already and takes no second one; after an ellipsis it has not
+// («Y entonces...».).
+const ES_ENDS = /(?:[?!.…]|(?<!\.)\.["'”’»›]+)$/u;
+
+function esFaq(subject?: string): string {
+  const s = subject?.trim();
+  if (!s) return "Preguntas";
+  if (ES_ENDS.test(s)) return `${s} Preguntas frecuentes`;
+  if (/[:;]|\.\s/u.test(s)) return `${s}. Preguntas frecuentes`;
+  return `${s}: preguntas frecuentes`;
+}
+
+// Austrian German: one name for the block, nothing before the subject that
+// would have to agree with it. A final stop that ends no sentence takes the
+// dash: an ordinal ("im 3.", "Franz Joseph I."), an abbreviation ("Strauss
+// & Co.") or an ellipsis ("Warten auf…"). Glued on, every German noun's
+// capital would let "3. Fragen" read as "the third questions" and "auf…
+// Fragen" as the end of the title. A stop inside a title ("124.
+// ZuckerBäckerball", the Albertina's "HER STORY. Künstlerinnen …") is part
+// of the name. A mark inside a closing quote ends the subject only when the
+// whole subject is the quotation („Alles Walzer!“); after a quoted work at
+// the end of a longer name German keeps its own colon ("Raimund Theater:
+// „Mamma Mia!“" takes the dash, "Musical „Mamma Mia!“" the colon), except
+// after a full stop, which a colon would stack on: "Kabarett „Passt scho.“"
+// takes the dash.
+const DE_ENDS = new RegExp(String.raw`[?!.]$|^[„‚»›"'“‘«‹].*[?!.]${QUOTES}$`, "u");
+const DE_OPEN_END = new RegExp(
+  String.raw`(?:…|\.\.|\.\s\.\s\.|(?:\d|(?<![\p{L}\p{N}])(?:[IVXLCDM]+|\p{L})|\b(?:Co|Str|Nr|St|Dr|Prof|Mag|Ing|Hl|bzw|usw|etc|ca|inkl|ggf|Jh|Bd|Hrsg|Op|feat))\.)${QUOTES}$`,
+  "u",
+);
+
+function deFaq(subject?: string): string {
+  const s = subject?.trim();
+  if (!s) return "Fragen";
+  const open = DE_OPEN_END.test(s);
+  if (!open && DE_ENDS.test(s)) return `${s} Fragen und Antworten`;
+  if (open || s.includes(":") || /\.["'”’»«›‹“‘]+$/u.test(s)) {
+    return SPACED_DASH.test(s) && !/[)\]]$/u.test(s) ? `${s} (Fragen und Antworten)` : `${s}${NBSP}– Fragen und Antworten`;
+  }
+  return `${s}: Fragen und Antworten`;
+}
+
+// Armenian. Titles here type the mijaket (U+2024) or an ASCII full stop
+// between name and subtitle, and the verjaket (U+0589) or ASCII colon too;
+// a stop followed by a space is a separator, one glued to a character
+// ("4:20", "3.0", "yellowheart.՝") is not. The tone marks U+055B–U+055E
+// only count at the very end, where they close the last word.
+const HY_ENDS = /[.!?:;…։․՛-՞]$/u;
+const HY_SPLIT = /[.!?:;…։․](?=\s)/u;
+
+function hyFaq(subject?: string): string {
+  const s = subject?.trim();
+  if (!s) return "Հարցեր և պատասխաններ";
+  if (HY_ENDS.test(s)) return `Հարցեր և պատասխաններ${NBSP}— ${s}`;
+  if (HY_SPLIT.test(s)) return `${s}${NBSP}— հարցեր և պատասխաններ`;
+  return `${s}․ հարցեր և պատասխաններ`;
+}
+
 export const EN: ArticleLabels = {
   ended: "Ended",
   underway: "Under way",
-  faq: (subject) => (subject ? `${subject}: questions` : "Questions"),
+  faq: enFaq,
   organizedBy: "Organized by",
   minRead: (n) => `${n} min read`,
 
@@ -359,7 +484,7 @@ export const EN_GB: ArticleLabels = {
 export const ES: Partial<ArticleLabels> = {
   ended: "Finalizado",
   underway: "En curso",
-  faq: (subject) => (subject ? `${subject}: preguntas` : "Preguntas"),
+  faq: esFaq,
   organizedBy: "Organiza",
   minRead: (n) => `${n} min de lectura`,
 
@@ -457,7 +582,7 @@ export const ES: Partial<ArticleLabels> = {
 export const DE: Partial<ArticleLabels> = {
   ended: "Vorbei",
   underway: "Läuft gerade",
-  faq: (subject) => (subject ? `${subject}: Fragen` : "Fragen"),
+  faq: deFaq,
   organizedBy: "Veranstaltet von",
   minRead: (n) => `${n} Min. Lesezeit`,
 
@@ -568,7 +693,7 @@ export const HY: Partial<ArticleLabels> = {
   ended: "Ավարտված է",
   underway: "Ընթացքում է",
   // The Armenian colon is the mijaket, a raised dot, not ":".
-  faq: (subject) => (subject ? `${subject}\u2024 հարցեր և պատասխաններ` : "Հարցեր և պատասխաններ"),
+  faq: hyFaq,
   organizedBy: "Կազմակերպիչ՝",
   minRead: (n) => `${n} րոպե ընթերցանություն`,
 

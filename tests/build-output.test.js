@@ -191,6 +191,32 @@ describe("page metadata", () => {
   });
 });
 
+// The FAQ block's h2 joins the page's name to a label. Until 14 Nov 2026
+// the join was a colon whatever the name held, and 241 of 891 headings read
+// "New Year in Yerevan 2026–2027: New Year's Eve and Christmas: questions"
+// or "Which coins use RandomX?: questions". The rule is `faq` in
+// packages/ui/src/labels.ts and its cases are pinned in source-conventions;
+// this checks what was built. A closing guillemet in Armenian ends the name,
+// not a sentence ("«Mamma Mia!»․ հարցեր"), so only a bare stop counts there.
+describe("FAQ headings", () => {
+  const FAQ_H2 = /<section class="(?:news|event)-article-faq"[^>]*>\s*<h2[^>]*>([\s\S]*?)<\/h2>/;
+  const JOINS = [": questions", ": preguntas frecuentes", ": Fragen und Antworten", "․ հարցեր և պատասխաններ"];
+  test("no FAQ heading stacks a stop on its join or carries a second colon", () => {
+    const bad = [];
+    for (const p of contentPages()) {
+      const m = p.html.match(FAQ_H2);
+      if (!m) continue;
+      const h = decode(m[1].replace(/<[^>]+>/g, "")).replace(/\s+/g, " ").trim();
+      const join = JOINS.find((j) => h.endsWith(j));
+      if (!join) continue;
+      const head = h.slice(0, -join.length);
+      const stacked = join.startsWith("․") ? /[:;.?!…։․]$/u : /[:;.?!…]["'”’»)\]]*$/u;
+      if (stacked.test(head) || /[:․]\s/u.test(head)) bad.push(`${p.app}${p.url}: ${h}`);
+    }
+    assert.deepEqual(bad, [], `FAQ headings that stack punctuation:\n  ${bad.join("\n  ")}`);
+  });
+});
+
 describe("navigation", () => {
   /** The header nav, both halves of it: the inline row and the drawer that
       replaces it on a phone. Everything else on a page that is marked up as
