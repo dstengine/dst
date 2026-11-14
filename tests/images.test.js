@@ -11,6 +11,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { imagesByHost } from "../packages/content/src/images.ts";
 import { allEvents } from "../packages/content/src/events/index.ts";
+import { allNews } from "../packages/content/src/news/index.ts";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -175,5 +176,62 @@ describe("built pages serve them", () => {
       checked += 1;
     }
     console.log(`${checked} event pictures, every declared size matching its file`);
+  });
+
+  // A narrow variant is another shape from the cover it stands in for, and
+  // a phone reserves the box its <source> declares. dst.llc's H1 chart is
+  // 1200×1500 under an <img> of 1200×600: with no size of its own the
+  // <source> left the phone a 2:1 box, and the page dropped 219–272px when
+  // the chart arrived (CLS up to 0.125, 11 Nov 2026). A translation may
+  // carry its own lettered variant (LETTERED in types.ts) but not its own
+  // size, so its file is held to the entry's.
+  test("a narrow variant declares its own size, and it is the file's", () => {
+    const hostOf = Object.fromEntries(SITES.map((s) => [s.app, s.host]));
+    const sizeOf = (site, src) => {
+      const measured = imagesByHost[hostOf[site]]?.[src];
+      if (measured) return [measured.width, measured.height];
+      const file = path.join(REPO, "apps", site, "public", src);
+      assert.ok(existsSync(file), `${site}: ${src} is not in apps/${site}/public`);
+      const head = readFileSync(file, "utf8").slice(0, 2000);
+      const box = head.match(/viewBox="\s*[\d.-]+[\s,]+[\d.-]+[\s,]+([\d.]+)[\s,]+([\d.]+)\s*"/);
+      assert.ok(box, `${site}: ${src} has no viewBox to measure`);
+      return [Number(box[1]), Number(box[2])];
+    };
+    let checked = 0;
+    for (const e of [...allEvents, ...allNews]) {
+      const variants = [e.imageNarrow, ...Object.values(e.i18n ?? {}).map((t) => t.imageNarrow)].filter(Boolean);
+      if (!variants.length) continue;
+      assert.ok(
+        e.imageNarrowWidth && e.imageNarrowHeight,
+        `${e.site}/${e.slug}: imageNarrow without imageNarrowWidth/imageNarrowHeight — a phone would reserve the cover's box`,
+      );
+      for (const src of variants) {
+        assert.deepEqual(
+          [e.imageNarrowWidth, e.imageNarrowHeight],
+          sizeOf(e.site, src),
+          `${e.site}/${e.slug}: declares a ${e.imageNarrowWidth}×${e.imageNarrowHeight} narrow variant, ${src} is another size`,
+        );
+        checked += 1;
+      }
+    }
+    assert.ok(checked > 0, "no narrow variant in the network to check");
+    console.log(`${checked} narrow variants, every declared size matching its file`);
+  });
+
+  // The built <source> carries that size, so the box a phone reserves is the
+  // shape of the picture it is about to get.
+  test("a narrow <source> prints its own width and height", () => {
+    let checked = 0;
+    for (const { app } of SITES) {
+      for (const file of htmlPages(app)) {
+        const html = readFileSync(file, "utf8");
+        for (const [tag] of html.matchAll(/<source[^>]*media="\(max-width: 640px\)"[^>]*>/g)) {
+          assert.match(tag, /\swidth="\d+"/, `${path.relative(REPO, file)}: ${tag}`);
+          assert.match(tag, /\sheight="\d+"/, `${path.relative(REPO, file)}: ${tag}`);
+          checked += 1;
+        }
+      }
+    }
+    console.log(`${checked} narrow <source> tags, each with its own size`);
   });
 });

@@ -635,7 +635,7 @@ export const items: NewsItem[] = [
   {
     slug: "dubai-property-sales-h1-2026",
     createdAt: "2026-08-25T18:18:34+04:00",
-    updatedAt: "2026-08-26T04:47:11+04:00",
+    updatedAt: "2026-11-14T15:44:43+04:00",
     site: "dst",
     title: "Dubai property sales reach Dh286b in H1",
     summary:
@@ -650,6 +650,8 @@ export const items: NewsItem[] = [
     imageWidth: 1200,
     imageHeight: 600,
     imageNarrow: "/news/dubai-property-h1-2026-narrow.svg",
+    imageNarrowWidth: 1200,
+    imageNarrowHeight: 1500,
     source: {
       name: "Khaleej Times",
       url: "https://www.khaleejtimes.com/business/dubai-property-sales-hit-dh286b-as-market-momentum-stays-strong-in-h1-2026",

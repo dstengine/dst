@@ -141,6 +141,13 @@ interface ItemBase {
   // desktop is unreadable scaled into a phone column, and a landscape
   // viewBox has no room for type large enough to fix that.
   imageNarrow?: string;
+  // The narrow variant's own size — its viewBox, for an SVG. It is another
+  // shape from `image`, and a phone reserves the box its <source> declares:
+  // without these it reserved the landscape one and the page jumped when
+  // the portrait chart arrived. Required with `imageNarrow`
+  // (tests/images.test.js).
+  imageNarrowWidth?: number;
+  imageNarrowHeight?: number;
   // A YouTube video that tells the piece another way, played on the page in
   // the no-cookie player in place of the cover — which stays the piece's
   // picture on cards and in share previews. Check the id through YouTube's

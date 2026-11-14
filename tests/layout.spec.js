@@ -828,6 +828,63 @@ test.describe("feed cards", () => {
   });
 });
 
+test.describe("hero cover", () => {
+  // A photograph's cover is cropped only where it would run past 60vh, on a
+  // short, wide window. The rule said max-height and object-fit but never
+  // height: auto, so the height attribute (864 or 1280) became the CSS
+  // height: every phone drew a 60vh box and `cover` showed the middle 40%
+  // of a 16:9 photo at 390px (11 Nov 2026). These are the network's only
+  // photograph covers; an illustration is fitted whole by .figure-diagram.
+  for (const [site, path] of [["ldn", "/events/anastacia-ovo-arena-2026/"], ["eco", "/news/eco-dst-llc-launched/"]]) {
+    test(`${site}${path}: a photograph cover keeps its shape on a phone`, async ({ page }) => {
+      for (const [width, height] of [[320, 568], [360, 740], [390, 844]]) {
+        await page.setViewportSize({ width, height });
+        await page.goto(url(site, path));
+        const img = page.locator(".event-article-figure img, .news-article-figure img").first();
+        await expect(img).toHaveJSProperty("complete", true);
+        const m = await img.evaluate((el) => {
+          const b = el.getBoundingClientRect();
+          return { w: b.width, h: b.height, nw: el.naturalWidth, nh: el.naturalHeight, cap: innerHeight * 0.6 };
+        });
+        const whole = (m.w * m.nh) / m.nw;
+        expect(
+          Math.abs(m.h - Math.min(whole, m.cap)),
+          `${width}px: a ${m.nw}×${m.nh} picture in a ${m.w.toFixed(0)}×${m.h.toFixed(0)} box`,
+        ).toBeLessThan(1.5);
+      }
+    });
+  }
+
+  // dst.llc's H1 chart has a portrait variant for phones (imageNarrow,
+  // 1200×1500) under an <img> of 1200×600. A phone reserved the 2:1 box,
+  // and the text under it dropped 219–272px when the chart arrived. The
+  // narrow <source> carries its own size, so the box is the chart's before
+  // a byte of it lands — and the wide one still is on a desktop.
+  for (const [width, height, ratio] of [[320, 568, 1500 / 1200], [390, 844, 1500 / 1200], [1280, 800, 600 / 1200]]) {
+    test(`dst: the H1 chart reserves its own box at ${width}px before it loads`, async ({ page }) => {
+      let release;
+      const held = new Promise((r) => (release = r));
+      await page.route(/dubai-property-h1-2026(-narrow)?\.svg$/, async (route) => {
+        await held;
+        await route.continue();
+      });
+      await page.setViewportSize({ width, height });
+      await page.goto(url("dst", "/news/dubai-property-sales-h1-2026/"), { waitUntil: "domcontentloaded" });
+      const img = page.locator(".news-article-figure img");
+      // DOMContentLoaded does not wait for the stylesheet; measured before
+      // it applies, the box is the bare attributes' and "grows" when it does.
+      await expect(img).toHaveCSS("object-fit", "contain");
+      const box = () => img.evaluate((el) => { const b = el.getBoundingClientRect(); return { w: b.width, h: b.height, top: b.top }; });
+      const before = await box();
+      release();
+      await expect(img).toHaveJSProperty("complete", true);
+      const after = await box();
+      expect(Math.abs(before.h - before.w * ratio), `reserved ${before.w.toFixed(0)}×${before.h.toFixed(0)}`).toBeLessThan(1.5);
+      expect(Math.abs(after.h - before.h), `the box grew from ${before.h.toFixed(0)} to ${after.h.toFixed(0)}px when the chart arrived`).toBeLessThan(1.5);
+    });
+  }
+});
+
 test.describe("skip link", () => {
   // The header carries a nav of eight or more links plus the network menu.
   // Without a skip link a keyboard user tabs through all of it on every

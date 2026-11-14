@@ -283,6 +283,8 @@ const relatedItems = (item.related ?? []).map((card) => ({
         src={item.image}
         alt={item.imageAlt ?? ""}
         narrow={item.imageNarrow}
+        narrowWidth={item.imageNarrowWidth}
+        narrowHeight={item.imageNarrowHeight}
         loading="eager"
         fetchpriority="high"
         sizes="(max-width: 46rem) 100vw, 46rem"
@@ -437,8 +439,14 @@ const relatedItems = (item.related ?? []).map((card) => ({
   .news-article-actions .button { display: inline-flex; align-items: center; gap: 0.55em; }
 
   .news-article-figure { margin: var(--space-4) 0 0; }
-  .news-article-figure img { display: block; width: 100%; max-height: 60vh; object-fit: cover; object-position: var(--cover-focus, 50% 50%); background: var(--surface-sunk); border-radius: var(--radius); }
-  /* Cropping a photograph loses scenery; cropping a diagram loses data. On
+  .news-article-figure img { display: block; width: 100%; height: auto; max-height: 60vh; object-fit: cover; object-position: var(--cover-focus, 50% 50%); background: var(--surface-sunk); border-radius: var(--radius); }
+  /* A photograph keeps its own shape and is cropped only where it would
+     run past 60vh, on a short, wide window. `height: auto` is what makes
+     the cap a cap: without it the height attribute became the CSS height,
+     every phone drew a 60vh box, and `cover` cut a 16:9 photo down to the
+     middle 40% of its width at 390px.
+
+     Cropping a photograph loses scenery; cropping a diagram loses data. On
      a wide, short window `cover` was cutting 71px off a chart — enough to
      take a whole line of it — so anything that isn't a photograph is
      fitted whole instead.

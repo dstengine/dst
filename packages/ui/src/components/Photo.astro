@@ -20,6 +20,11 @@ interface Props {
   class?: string;
   /** Portrait variant for narrow screens, as in NewsArticle's figures. */
   narrow?: string;
+  /** The narrow variant's own size (an entry's imageNarrowWidth/Height),
+      printed on its <source> so a phone reserves the portrait box rather
+      than the landscape one the <img> describes. */
+  narrowWidth?: number | string;
+  narrowHeight?: number | string;
   /** Set when the layout crops the picture (object-fit: cover) and the
       intrinsic ratio would otherwise reserve the wrong height. */
   sized?: boolean;
@@ -39,6 +44,8 @@ const {
   fetchpriority,
   class: className,
   narrow,
+  narrowWidth,
+  narrowHeight,
   sized = true,
   width,
   height,
@@ -51,10 +58,20 @@ const sources = imageSources(Astro.site?.hostname, src);
 // when it does not, or when `sized` is off. Spreading both used to print
 // width and height twice on every cover.
 const dimensions = sized && sources ? { width: sources.width, height: sources.height } : { width, height };
+// The narrow variant is another shape, so its <source> carries its own size:
+// the browser reserves the box from the source it picks, and without these it
+// fell back to the <img>'s. dst.llc's H1 chart is 1200×1500 under an
+// <img> that says 1200×600, so a phone held a 2:1 box and the text under it
+// dropped 219–272px when the chart arrived. Measured where the manifest has
+// the file, declared on the entry where it does not (an SVG).
+const narrowSources = narrow ? imageSources(Astro.site?.hostname, narrow) : undefined;
+const narrowDimensions = narrowSources
+  ? { width: narrowSources.width, height: narrowSources.height }
+  : { width: narrowWidth, height: narrowHeight };
 ---
 {sources ? (
   <picture>
-    {narrow && <source media="(max-width: 640px)" srcset={narrow} />}
+    {narrow && <source media="(max-width: 640px)" srcset={narrow} {...narrowDimensions} />}
     <source type="image/avif" srcset={sources.avif} sizes={sizes} />
     <source type="image/webp" srcset={sources.webp} sizes={sizes} />
     <img
@@ -69,7 +86,7 @@ const dimensions = sized && sources ? { width: sources.width, height: sources.he
   </picture>
 ) : narrow ? (
   <picture>
-    <source media="(max-width: 640px)" srcset={narrow} />
+    <source media="(max-width: 640px)" srcset={narrow} {...narrowDimensions} />
     <img src={src} alt={alt} loading={loading} fetchpriority={fetchpriority} class={className} {...dimensions} {...rest} />
   </picture>
 ) : (

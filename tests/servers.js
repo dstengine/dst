@@ -8,6 +8,9 @@ export const PORTS = {
   riviera: 4334,
   mbr: 4335,
   palmcentral: 4336,
+  // eco carries the network's one photograph cover on a news page, which
+  // the hero-cover test in layout.spec.js measures (14 Nov 2026).
+  eco: 4337,
   fwf: 4338,
   musical: 4339,
   nyc42: 4341,
