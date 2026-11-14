@@ -344,7 +344,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-hampton-court-palace-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-11-10T01:35:00+00:00",
+    updatedAt: "2026-11-14T11:40:00+00:00",
     site: "lnd",
     image: "/covers/halloween-hampton-court-palace-2026.jpg",
     imageAlt: "A dark blue crenellated roofline with three towers of different heights rising from it, the tallest carrying a small red flag",
@@ -436,6 +436,12 @@ export const items: EventItem[] = [
     // Same half-term week: the three pages a reader choosing a day out
     // that week is deciding between.
     related: [
+      {
+        href: "/events/wassail-day-dulwich-village-orchard-2027/",
+        eyebrow: "Dulwich, 9 January",
+        title: "Wassail Day at Dulwich Village Orchard",
+        text: "London Wildlife Trust wakes the apple trees: toast on the branches, crafts and folk music, free.",
+      },
       {
         href: "/events/origin-weekend-down-house-2026/",
         eyebrow: "Bromley, 21–22 November",
@@ -1424,7 +1430,7 @@ export const items: EventItem[] = [
   {
     slug: "london-parade-new-years-day-2027",
     createdAt: "2026-10-09T06:00:00+04:00",
-    updatedAt: "2026-10-21T21:35:00+04:00",
+    updatedAt: "2026-11-14T11:40:00+00:00",
     site: "lnd",
     image: "/covers/london-parade-2027.jpg",
     imageAlt: "A paper parade float passes London buildings beneath confetti and stars, with a pale clock tower in the background",
@@ -1473,6 +1479,12 @@ export const items: EventItem[] = [
       { q: "Where does the parade go?", a: "It starts by The Ritz on Piccadilly, passes Regent Street St James's, Pall Mall, Trafalgar Square and Whitehall, and finishes by Parliament Square." },
     ],
     related: [
+      {
+        href: "/events/wassail-day-dulwich-village-orchard-2027/",
+        eyebrow: "Saturday 9 January",
+        title: "Wassail Day at Dulwich Village Orchard",
+        text: "A week later in Dulwich: a free wassail to wake the apple trees, with a folk band.",
+      },
       {
         href: "/events/lord-mayors-show-2026-london-boroughs/",
         eyebrow: "Saturday 14 November",
@@ -1574,7 +1586,7 @@ export const items: EventItem[] = [
   {
     slug: "herne-hill-velodrome-halloween-fireworks-2026",
     createdAt: "2026-10-12T02:45:00+04:00",
-    updatedAt: "2026-10-12T02:45:00+04:00",
+    updatedAt: "2026-11-14T11:40:00+00:00",
     site: "lnd",
     image: "/covers/herne-hill-velodrome-halloween-fireworks-2026.jpg",
     imageAlt: "A banked oval cycle track at night with a bonfire burning in the middle, fireworks bursting above it, and a yellow racing bicycle and a pumpkin in the foreground",
@@ -1642,6 +1654,12 @@ export const items: EventItem[] = [
       },
     ],
     related: [
+      {
+        href: "/events/wassail-day-dulwich-village-orchard-2027/",
+        eyebrow: "Burbage Road, 9 January",
+        title: "Wassail Day at Dulwich Village Orchard",
+        text: "Along the road from the velodrome: the orchard's free wassail, with crafts and a folk band.",
+      },
       {
         href: "/events/day-of-the-dead-horniman-2026/",
         eyebrow: "Forest Hill",
@@ -4498,5 +4516,97 @@ export const items: EventItem[] = [
     ],
     expertise:
       "One might treat this as the excuse one has been waiting for to make the journey to Downe, which is further than most Londoners suppose and rather prettier. Go on the Saturday if one can: the R8 from Orpington passes the house, whereas on the Sunday it is the 146 and a half-mile walk from the village. Arrive at ten, and take the Sandwalk before lunch while the light lasts; in late November it does not last long, and the programme itself ends at three. Book online the night before rather than paying at the door, which saves three pounds an adult, and leave room for a bowl of soup in Darwin's old kitchen.",
+  },
+  {
+    slug: "wassail-day-dulwich-village-orchard-2027",
+    createdAt: "2026-11-14T11:40:00+00:00",
+    updatedAt: "2026-11-14T11:40:00+00:00",
+    site: "lnd",
+    title: "Wassail Day at the Village Orchard Dulwich 2027: waking the apple trees",
+    cardTitle: "Wassail Day at Dulwich Village Orchard",
+    titleSeo: "Wassail Day at Dulwich Orchard, London: January 2027",
+    summary:
+      "Wassail Day at the Village Orchard Dulwich, south London: Saturday 9 January 2027, noon to 3.30pm, free with donations welcome. London Wildlife Trust wakes the apple trees with crafts, toast pinned to the branches and the folk band Larkin' the Woods.",
+    start: "2027-01-09",
+    startTime: "12:00",
+    endTime: "15:30",
+    utcOffset: "+00:00",
+    venue: "Dulwich Village Orchard, Burbage Road and Gallery Road, Dulwich, SE21 7AE",
+    geo: { name: "Dulwich Village Orchard", lat: 51.447226, lng: -0.08655 },
+    city: "London",
+    country: "United Kingdom",
+    organizer: "London Wildlife Trust",
+    category: "Heritage",
+    tickets: { priceFrom: 0, currency: "GBP" },
+    ticket: {
+      url: "https://www.wildlondon.org.uk/events/2027-01-09-wassail-day-village-orchard-dulwich",
+      label: "Event details from London Wildlife Trust",
+    },
+    source: {
+      name: "London Wildlife Trust",
+      url: "https://www.wildlondon.org.uk/events/2027-01-09-wassail-day-village-orchard-dulwich",
+      verifiedOn: "2026-11-14",
+    },
+    body: [
+      "Wassailing is the old English custom of going out to the orchard in the depths of winter to wake the apple trees, so that they bear well in the autumn. In Dulwich it is done in the <strong>Village Orchard</strong>, where Burbage Road meets Gallery Road, and in 2027 it falls on <strong>Saturday 9 January</strong>, from <strong>noon to 3.30pm</strong>. <strong>London Wildlife Trust</strong> runs the day as a free open day for the neighbourhood.",
+      "## What happens on the day",
+      "The Trust lists apple-inspired crafts, making bird feeders, warming bread over the fire if the weather allows, and the custom at the heart of the thing: <strong>pinning toast to the trees</strong>, which is said to help the harvest along. The local folk band <strong>Larkin' the Woods</strong> plays from <strong>1.30pm to 2.30pm</strong>, so that is the hour to be there if the music is the point.",
+      "Refreshments are on sale. The Trust has not published a running order for the rest of the afternoon, so the crafts and the fire should be taken as running through the day rather than at set times.",
+      "## Tickets and what to bring",
+      "The day is <strong>free</strong>, with no booking mentioned, and donations are welcome; the Trust puts what it raises into its conservation and education work and the care of its nature reserves. Children must be with a responsible adult throughout, and dogs are welcome on a lead.",
+      "The orchard is grass and earth. If January has been wet, the Trust advises <strong>wellies or sturdy footwear</strong>, and warns in capitals that the ground can get very muddy.",
+      "## Where it is",
+      "The Village Orchard is on the corner of Burbage Road and Gallery Road, SE21 7AE, in the London Borough of Southwark. It sits at the Dulwich end of Burbage Road, the same road as <a href=\"/events/herne-hill-velodrome-halloween-fireworks-2026/\" title=\"Herne Hill Velodrome Halloween Fireworks 2026, London\">Herne Hill Velodrome</a>, whose bonfire night this site covered in October.",
+      "## The rest of the holiday season",
+      "Wassail Day comes the Saturday after Twelfth Night, when London's Christmas is otherwise packing itself away. The week before, the <a href=\"/events/london-parade-new-years-day-2027/\" title=\"London Parade 2027: New Year's Day in Westminster\">London Parade</a> opens the year in Westminster, and the light trail at <a href=\"/events/christmas-at-kew-2026/\" title=\"Christmas at Kew 2026: dates and tickets\">Kew</a> runs until 3 January.",
+    ],
+    faq: [
+      {
+        q: "When is Wassail Day at Dulwich Village Orchard in 2027?",
+        a: "On Saturday 9 January 2027, from 12pm to 3.30pm. The folk band Larkin' the Woods plays from 1.30pm to 2.30pm.",
+      },
+      {
+        q: "Is the Dulwich wassail free?",
+        a: "Yes. London Wildlife Trust runs it as a free open day; donations are welcome, and refreshments are on sale.",
+      },
+      {
+        q: "What is a wassail?",
+        a: "An old English winter custom of waking the apple trees for a good harvest. In Dulwich that means pinning toast to the branches, warming bread on the fire, apple crafts and folk music.",
+      },
+      {
+        q: "Where is the Village Orchard in Dulwich?",
+        a: "On the corner of Burbage Road and Gallery Road, Dulwich, SE21 7AE, in the London Borough of Southwark.",
+      },
+      {
+        q: "Can I bring my dog, and what should I wear?",
+        a: "Dogs are welcome on a lead. After a wet spell the orchard gets very muddy, so wear wellies or sturdy shoes.",
+      },
+      {
+        q: "Is it suitable for children?",
+        a: "Yes, it is a family day, with crafts and bird-feeder making. Children must be accompanied by a responsible adult at all times.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/london-parade-new-years-day-2027/",
+        eyebrow: "1 January",
+        title: "London Parade on New Year's Day",
+        text: "Marching bands and borough floats from Piccadilly to Parliament Square, free to watch.",
+      },
+      {
+        href: "/events/herne-hill-velodrome-halloween-fireworks-2026/",
+        eyebrow: "Burbage Road",
+        title: "Herne Hill Velodrome",
+        text: "The 1948 Olympic track along the same road, and its Halloween bonfire night.",
+      },
+      {
+        href: "/events/christmas-at-kew-2026/",
+        eyebrow: "Until 3 January",
+        title: "Christmas at Kew",
+        text: "The light trail's last nights, the week before the orchard wakes.",
+      },
+    ],
+    expertise:
+      "One goes to a wassail for the toast and the folk music rather than for any expectation of apples, and Dulwich does the thing with a pleasing lack of fuss. Aim to arrive a little after one: the band plays from half past, the fire will be going by then, and there is still daylight enough for the small members of the party to do their pinning. Wellies are not an affectation here but a necessity after any wet week, and a few coins for the Trust's bucket are the proper form for a day that asks nothing at the gate.",
   },
 ];
