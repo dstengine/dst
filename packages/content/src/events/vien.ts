@@ -518,7 +518,7 @@ export const items: EventItem[] = [
   {
     slug: "vienna-halloween-run-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-11-13T02:35:00+01:00",
+    updatedAt: "2026-11-15T02:34:00+01:00",
     site: "vien",
     image: "/covers/vienna-halloween-run-2026.jpg",
     imageAlt: "Eine helle Laufbahn, die in die Bildmitte führt, gesäumt von Bäumen mit rotem Herbstlaub",
@@ -585,6 +585,12 @@ export const items: EventItem[] = [
       },
     ],
     related: [
+      {
+        href: "/veranstaltungen/modelleisenbahn-spielzeugboerse-liesing-wien-2026/",
+        eyebrow: "6. Dezember, Liesing",
+        title: "Modelleisenbahn- und Spielzeugbörse Wien 2026",
+        text: "Ein Adventsonntag drinnen: über 40 Aussteller mit Modellbahnen, Modellautos und Bausätzen im Haus der Begegnung Liesing, 8 bis 12 Uhr.",
+      },
       {
         href: "/veranstaltungen/schmuck-mineralienboerse-floridsdorf-wien-2026/",
         eyebrow: "19.–20. Dezember, Floridsdorf",
@@ -665,7 +671,7 @@ export const items: EventItem[] = [
   {
     slug: "kuerbisfest-am-himmel-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-11-13T02:35:00+01:00",
+    updatedAt: "2026-11-15T02:34:00+01:00",
     site: "vien",
     image: "/covers/kuerbisfest-am-himmel-2026.jpg",
     imageAlt: "Ein breiter Haufen runder Papierscheiben in Rot, Grün, Ocker und Creme, in vielen verschiedenen Größen",
@@ -729,6 +735,12 @@ export const items: EventItem[] = [
       },
     ],
     related: [
+      {
+        href: "/veranstaltungen/modelleisenbahn-spielzeugboerse-liesing-wien-2026/",
+        eyebrow: "6. Dezember, Liesing",
+        title: "Modelleisenbahn- und Spielzeugbörse Wien 2026",
+        text: "Für Sammler am Nikolaustag: Märklin, Roco und Fleischmann aus zweiter Hand, Modellautos und Figuren in Liesing, 8 bis 12 Uhr.",
+      },
       {
         href: "/veranstaltungen/schmuck-mineralienboerse-floridsdorf-wien-2026/",
         eyebrow: "19.–20. Dezember, Floridsdorf",
@@ -3387,7 +3399,7 @@ export const items: EventItem[] = [
   {
     slug: "vinyl-cd-boerse-moses-records-wien-2026",
     createdAt: "2026-11-11T02:35:00+01:00",
-    updatedAt: "2026-11-13T02:35:00+01:00",
+    updatedAt: "2026-11-15T02:34:00+01:00",
     site: "vien",
     title: "Vinyl- und CD-Börse Wien 2026: Schallplatten in der VHS Längenfeldgasse",
     cardTitle: "Vinyl- und CD-Börse (Moses-Records)",
@@ -3450,6 +3462,12 @@ export const items: EventItem[] = [
       },
     ],
     related: [
+      {
+        href: "/veranstaltungen/modelleisenbahn-spielzeugboerse-liesing-wien-2026/",
+        eyebrow: "6. Dezember, Liesing",
+        title: "Modelleisenbahn- und Spielzeugbörse Wien 2026",
+        text: "Am Sonntagvormittag, 6. Dezember: Modellbahnen, Modellautos und Bausätze von über 40 Ausstellern in Liesing, 8 bis 12 Uhr.",
+      },
       {
         href: "/veranstaltungen/schmuck-mineralienboerse-floridsdorf-wien-2026/",
         eyebrow: "19.–20. Dezember, Floridsdorf",
@@ -3563,6 +3581,104 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Auf Mineralienbörsen lohnt der Blick auf das Etikett mehr als der auf die Farbe: Ein gutes Sammlerstück trägt den Fundort, und wer nach ihm fragt, merkt schnell, wer seine Steine kennt. Ebenso berechtigt ist die Frage, ob ein Stein gefärbt, gebrannt oder anders behandelt ist; seriöse Händler sagen es von selbst. Eine kleine Lupe hilft bei Kristallspitzen und Fossilien, und für Zerbrechliches nimmt man Schachteln oder Zeitungspapier mit. Wer im Dezember Geschenke sucht, sollte an den Sonntag denken: Da schließt die Börse schon um 17 Uhr.",
+  },
+  {
+    slug: "modelleisenbahn-spielzeugboerse-liesing-wien-2026",
+    createdAt: "2026-11-15T02:34:00+01:00",
+    updatedAt: "2026-11-15T02:34:00+01:00",
+    site: "vien",
+    title: "Modelleisenbahnbörse Wien 2026: Modellbahnen und Spielzeug im Haus der Begegnung Liesing",
+    cardTitle: "Modelleisenbahn- & Spielzeugbörse Liesing",
+    titleSeo: "Modelleisenbahnbörse Wien: Liesing, Dezember 2026",
+    summary:
+      "Die Wiener Modelleisenbahn- und Spielzeugbörse ist am Sonntag, 6. Dezember 2026, von 8 bis 12 Uhr im Haus der Begegnung Liesing, Liesinger Platz 3, 1230 Wien. Über 40 Aussteller bieten auf rund 1.000 m² Modellbahnen von Märklin, Roco und Fleischmann, Modellautos, Bausätze und Figuren an.",
+    start: "2026-12-06",
+    startTime: "08:00",
+    endTime: "12:00",
+    utcOffset: "+01:00",
+    venue: "Haus der Begegnung Liesing, Liesinger Platz 3",
+    city: "Wien",
+    country: "Österreich",
+    organizer: "Arnold KG",
+    category: "Messe",
+    ticket: {
+      url: "https://www.modelleisenbahnboerse-wien.at/termine/",
+      label: "Wiener Modelleisenbahn- & Spielzeugbörse: alle Termine",
+      sells: false,
+    },
+    source: {
+      name: "Wiener Modelleisenbahn- & Spielzeugbörse — Startseite, Termine und Kontakt",
+      url: "https://www.modelleisenbahnboerse-wien.at/",
+      verifiedOn: "2026-11-15",
+    },
+    body: [
+      "Am Nikolaustag wird in Liesing gekauft, getauscht und verkauft: Die <strong>Wiener Modelleisenbahn- und Spielzeugbörse</strong> ist am <strong>Sonntag, 6. Dezember 2026</strong>, im <strong>Haus der Begegnung Liesing</strong>, Liesinger Platz 3 im 23. Bezirk. Für Besucher geöffnet ist von <strong>8 bis 12 Uhr</strong>. Es ist der letzte Termin des Jahres.",
+      "## Was auf den Tischen steht",
+      "Auf rund <strong>1.000 m²</strong> stellen nach Angaben des Veranstalters <strong>über 40 Aussteller</strong> aus. Den Kern bilden <strong>Modelleisenbahnen</strong> von Märklin, Roco, Trix, Fleischmann, Piko, Kleinbahn, Klein Modellbahn und Trix Express, in den Spurweiten G, 1, 0, H0, H0e, N und Z. Ein Teil der Ware kommt von Privatleuten, die ihre Sammlung verkleinern oder auflösen, dazu kommen Händler für sammelbare Spielwaren und einige Neuwarenhändler.",
+      "Daneben gibt es <strong>Modellautos</strong> von 1:160 bis 1:10, die größte Auswahl passend zur Modellbahn in 1:87, etwa von Wiking, Herpa, Rietze, Bburago und Kyosho, außerdem <strong>Bausätze</strong> für Autos, Lkw, Flugzeuge, Schiffe und Militärfahrzeuge von Dragon, ESCI, Italeri, Revell, Tamiya und Artitec sowie <strong>Figuren</strong>, Tiere und Dioramen von Elastolin, Lineol und Hausser.",
+      "## Eintritt",
+      "Einen Eintrittspreis nennt der Veranstalter auf seiner Website nicht. Wer es genau wissen will, fragt vorab per E-Mail oder Telefon nach; die Kontaktdaten stehen auf modelleisenbahnboerse-wien.at.",
+      "## Wer dahintersteht",
+      "Veranstalter ist seit 2024 die <strong>Arnold KG</strong> aus Graz, ein Händler, der sammelbare Spielwaren an- und verkauft. Wer eine ganze Modellbahnsammlung loswerden will, kann sie dem Veranstalter auch direkt anbieten: dafür verweist er auf seine eigene Ankaufseite.",
+      "## Die Termine 2027",
+      "Die Börse findet neunmal im Jahr statt, immer an einem Sonntag. Für 2027 stehen der <strong>14. Februar</strong>, der <strong>21. März</strong>, der <strong>11. April</strong>, der <strong>23. Mai</strong>, der <strong>20. Juni</strong>, der <strong>12. September</strong>, der <strong>3. Oktober</strong> und der <strong>7. November</strong> fest. Als Dezembertermin nennt der Veranstalter den „Sonntag, 6. Dezember 2027“; der 6. Dezember 2027 ist allerdings ein Montag, das genaue Datum sollte man deshalb vorher auf der Website prüfen.",
+      "## Danach weiter",
+      "Um 12 Uhr ist in Liesing Schluss, der Sonntag ist damit noch lang: In der Volkshochschule Längenfeldgasse hat an diesem Tag bis 17 Uhr die <a href=\"/veranstaltungen/vinyl-cd-boerse-moses-records-wien-2026/\" title=\"Schallplattenbörse Wien: Längenfeldgasse, Dezember 2026\">Vinyl- und CD-Börse von Moses-Records</a> geöffnet, und im Prater läuft am Vormittag der <a href=\"/veranstaltungen/adventlauf-lcc-wien-prater-2026/\" title=\"Adventlauf Wien 2026: Prater Hauptallee, 6. Dezember\">Adventlauf des LCC Wien</a>. Zwei Wochen später kommen Sammler auf der <a href=\"/veranstaltungen/schmuck-mineralienboerse-floridsdorf-wien-2026/\" title=\"Mineralienbörse Wien: Floridsdorf, Dezember 2026\">Schmuck- und Mineralienbörse in Floridsdorf</a> auf ihre Kosten.",
+    ],
+    faq: [
+      {
+        q: "Wann ist die nächste Modelleisenbahnbörse in Wien?",
+        a: "Am <strong>Sonntag, 6. Dezember 2026</strong>, von 8 bis 12 Uhr im Haus der Begegnung Liesing. Danach geht es am 14. Februar 2027 weiter.",
+      },
+      {
+        q: "Wo findet die Börse statt?",
+        a: "Im Haus der Begegnung Liesing, Liesinger Platz 3, 1230 Wien.",
+      },
+      {
+        q: "Was kostet der Eintritt?",
+        a: "Der Veranstalter nennt auf seiner Website keinen Eintrittspreis. Auskunft gibt die Arnold KG per E-Mail oder Telefon, die Kontaktdaten stehen auf modelleisenbahnboerse-wien.at.",
+      },
+      {
+        q: "Was wird auf der Börse angeboten?",
+        a: "Modelleisenbahnen in den Spurweiten G, 1, 0, H0, H0e, N und Z, Modellautos von 1:160 bis 1:10, Modellbausätze, Figuren und Dioramen, teils aus privaten Sammlungen, teils von Händlern.",
+      },
+      {
+        q: "Wann sind die Börsentermine 2027?",
+        a: "Am 14. Februar, 21. März, 11. April, 23. Mai, 20. Juni, 12. September, 3. Oktober und 7. November 2027, jeweils sonntags. Der Dezembertermin ist auf der Website als „Sonntag, 6. Dezember 2027“ angegeben, ein Datum, das auf einen Montag fällt; vorher nachsehen lohnt sich.",
+      },
+      {
+        q: "Kann ich meine Modelleisenbahn-Sammlung verkaufen?",
+        a: "Ja: Der Veranstalter kauft selbst an und verweist dafür auf seine Ankaufseite modellbahnankauf.at.",
+      },
+    ],
+    related: [
+      {
+        href: "/veranstaltungen/vinyl-cd-boerse-moses-records-wien-2026/",
+        eyebrow: "5.–6. Dezember, VHS Längenfeldgasse",
+        title: "Vinyl- und CD-Börse Wien 2026",
+        text: "Am selben Sonntag bis 17 Uhr: LPs, Singles und CDs von rund 100 Ausstellern, Tageskarte 8 Euro.",
+      },
+      {
+        href: "/veranstaltungen/schmuck-mineralienboerse-floridsdorf-wien-2026/",
+        eyebrow: "19.–20. Dezember, Floridsdorf",
+        title: "Schmuck- und Mineralienbörse Wien 2026",
+        text: "Zwei Wochen später: Mineralien, Schmucksteine, Fossilien und Meteorite, Eintritt frei.",
+      },
+      {
+        href: "/veranstaltungen/adventlauf-lcc-wien-prater-2026/",
+        eyebrow: "6. Dezember, Prater",
+        title: "Adventlauf des LCC Wien 2026",
+        text: "Am selben Vormittag: 3 und 10 Kilometer auf der Prater Hauptallee.",
+      },
+      {
+        href: "/veranstaltungen/kuerbisfest-am-himmel-2026/",
+        eyebrow: "Cobenzl",
+        title: "Kürbisfest am Himmel 2026",
+        text: "Der Herbst davor: über 200 Kürbissorten am Cobenzl, Eintritt frei.",
+      },
+    ],
+    expertise:
+      "Auf einer Modellbahnbörse entscheidet zuerst das System, dann der Preis: Märklin fährt mit Wechselstrom auf dem Mittelleiter, Roco, Fleischmann und die meisten anderen in H0 mit Gleichstrom auf zwei Schienen, und eine Lok, die nicht zur eigenen Anlage passt, ist kein Schnäppchen. Ob eine Lok digital oder analog ist, steht selten groß am Karton, eine Frage danach spart Ärger. Bei Sammlerstücken zählt die Originalverpackung oft so viel wie das Modell, ein zerdrückter Karton drückt auch den Preis. Weil die Börse schon um 12 Uhr schließt und die gesuchten Stücke früh weg sind, lohnt das Kommen um acht; Bargeld und eine feste Tasche mit etwas Polstermaterial gehören dazu.",
   },
   {
     slug: "silvesterkonzert-wiener-philharmoniker-2026",
