@@ -518,7 +518,7 @@ export const items: EventItem[] = [
   {
     slug: "vienna-halloween-run-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-11-15T02:34:00+01:00",
+    updatedAt: "2026-11-16T02:35:00+01:00",
     site: "vien",
     image: "/covers/vienna-halloween-run-2026.jpg",
     imageAlt: "Eine helle Laufbahn, die in die Bildmitte führt, gesäumt von Bäumen mit rotem Herbstlaub",
@@ -585,6 +585,12 @@ export const items: EventItem[] = [
       },
     ],
     related: [
+      {
+        href: "/veranstaltungen/buechersonntag-wohnung-loewenbach-wien-2027/",
+        eyebrow: "17. Jänner, Innere Stadt",
+        title: "Büchersonntag Wien 2027",
+        text: "Ein Wintersonntag zwischen Büchern: Raritäten, Ansichtskarten und Vintage-Fotos auf einer Antiquariatsbörse, zuletzt in der Wohnung Löwenbach von Adolf Loos.",
+      },
       {
         href: "/veranstaltungen/modelleisenbahn-spielzeugboerse-liesing-wien-2026/",
         eyebrow: "6. Dezember, Liesing",
@@ -671,7 +677,7 @@ export const items: EventItem[] = [
   {
     slug: "kuerbisfest-am-himmel-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-11-15T02:34:00+01:00",
+    updatedAt: "2026-11-16T02:35:00+01:00",
     site: "vien",
     image: "/covers/kuerbisfest-am-himmel-2026.jpg",
     imageAlt: "Ein breiter Haufen runder Papierscheiben in Rot, Grün, Ocker und Creme, in vielen verschiedenen Größen",
@@ -735,6 +741,12 @@ export const items: EventItem[] = [
       },
     ],
     related: [
+      {
+        href: "/veranstaltungen/buechersonntag-wohnung-loewenbach-wien-2027/",
+        eyebrow: "17. Jänner, Innere Stadt",
+        title: "Büchersonntag Wien 2027",
+        text: "Für den Jänner: antiquarische Bücher, alte Koch- und Kinderbücher und Grafik, zuletzt in einer Wohnung von Adolf Loos nahe der Urania.",
+      },
       {
         href: "/veranstaltungen/modelleisenbahn-spielzeugboerse-liesing-wien-2026/",
         eyebrow: "6. Dezember, Liesing",
@@ -3092,7 +3104,7 @@ export const items: EventItem[] = [
   {
     slug: "vienna-vintage-photo-fair-westlicht-2026",
     createdAt: "2026-11-06T02:35:00+01:00",
-    updatedAt: "2026-11-11T02:35:00+01:00",
+    updatedAt: "2026-11-16T02:35:00+01:00",
     site: "vien",
     title: "Vienna Vintage Photo Fair 2026: die X-Mas Edition im WestLicht",
     cardTitle: "Vienna Vintage Photo Fair (X-Mas Edition)",
@@ -3154,6 +3166,12 @@ export const items: EventItem[] = [
       },
     ],
     related: [
+      {
+        href: "/veranstaltungen/buechersonntag-wohnung-loewenbach-wien-2027/",
+        eyebrow: "17. Jänner, Innere Stadt",
+        title: "Büchersonntag Wien 2027",
+        text: "Fünf Wochen später: Vintage-Fotos, Ansichtskarten und antiquarische Bücher zu Fotografie, Kunst und Architektur auf der Wiener Antiquariatsbörse.",
+      },
       {
         href: "/veranstaltungen/vinyl-cd-boerse-moses-records-wien-2026/",
         eyebrow: "5.–6. Dezember, VHS Längenfeldgasse",
@@ -3679,6 +3697,101 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Auf einer Modellbahnbörse entscheidet zuerst das System, dann der Preis: Märklin fährt mit Wechselstrom auf dem Mittelleiter, Roco, Fleischmann und die meisten anderen in H0 mit Gleichstrom auf zwei Schienen, und eine Lok, die nicht zur eigenen Anlage passt, ist kein Schnäppchen. Ob eine Lok digital oder analog ist, steht selten groß am Karton, eine Frage danach spart Ärger. Bei Sammlerstücken zählt die Originalverpackung oft so viel wie das Modell, ein zerdrückter Karton drückt auch den Preis. Weil die Börse schon um 12 Uhr schließt und die gesuchten Stücke früh weg sind, lohnt das Kommen um acht; Bargeld und eine feste Tasche mit etwas Polstermaterial gehören dazu.",
+  },
+  {
+    slug: "buechersonntag-wohnung-loewenbach-wien-2027",
+    createdAt: "2026-11-16T02:35:00+01:00",
+    updatedAt: "2026-11-16T02:35:00+01:00",
+    site: "vien",
+    title: "Büchersonntag Wien 2027: antiquarische Bücher in der Wohnung Löwenbach von Adolf Loos",
+    cardTitle: "Büchersonntag (Börse für antiquarische Bücher)",
+    titleSeo: "Büchersonntag Wien: Wohnung Löwenbach, Jänner 2027",
+    summary:
+      "Der nächste Büchersonntag, die Börse für antiquarische Bücher in Wien, ist am Sonntag, 17. Jänner 2027. Zuletzt fand er in der von Adolf Loos eingerichteten Wohnung Emil Löwenbach statt, Reischachstraße 3 im 1. Bezirk, von 10 bis 17 Uhr: Raritäten, vergriffene Bücher, Ansichtskarten, Grafik und Vintage-Fotos.",
+    start: "2027-01-17",
+    utcOffset: "+01:00",
+    venue: "Wohnung Emil Löwenbach, Reischachstraße 3",
+    city: "Wien",
+    country: "Österreich",
+    organizer: "Herbert Bauer (Büchersonntag)",
+    category: "Messe",
+    ticket: {
+      url: "http://buechersonntag.blogspot.com/",
+      label: "Büchersonntag: Termin und Kontakt",
+      sells: false,
+    },
+    source: {
+      name: "Büchersonntag — Blog des Veranstalters und Instagram @buechersonntag",
+      url: "http://buechersonntag.blogspot.com/",
+      verifiedOn: "2026-11-16",
+    },
+    body: [
+      "Viermal im Jahr wird ein Wiener Sonntag zum Bücherstöbern: Der <strong>Büchersonntag</strong>, in Veranstaltungskalendern auch „Büchersonntag Deluxe“, ist eine <strong>Börse für antiquarische Bücher</strong>. Den nächsten Termin hat der Veranstalter für <strong>Sonntag, 17. Jänner 2027</strong>, angekündigt. Es ist der erste Büchersonntag des neuen Jahres.",
+      "## Wo und wann",
+      "Die Novemberausgabe fand in der <strong>Wohnung Emil Löwenbach</strong> statt, <strong>Reischachstraße 3, 1010 Wien</strong>, von <strong>10 bis 17 Uhr</strong>. Für den 17. Jänner nennt der Veranstalter bisher nur das Datum, Ort und Uhrzeit hat er noch nicht eigens bestätigt. Wer sichergehen will, schaut kurz vorher auf den Blog oder fragt per E-Mail nach.",
+      "## Was die Aussteller mitbringen",
+      "Die Aussteller zeigen nach Angaben des Veranstalters <strong>Raritäten, Einzelstücke, Vergriffenes und Bibliophiles</strong>: gehobene Literatur und Bücher zu Geschichte, Monarchie, Reisen, Kunst, Fotografie und Architektur, dazu alte Kinder- und Kochbücher. Neben den Büchern liegen <strong>Ansichtskarten, Grafik, Vintage-Fotos und Papierantiquitäten</strong> auf den Tischen.",
+      "## Der Ort: eine Wohnung von Adolf Loos",
+      "Allein die Räume lohnen den Weg. Für den Industriellen Emil Löwenbach richtete <strong>Adolf Loos</strong> eine ganze Etage eines Eckhauses am Wienfluss ein, nahe der Urania. Von der rund 500 Quadratmeter großen Wohnung sind Esszimmer, Wohnsalon und eine kleine Bibliothek gut erhalten; ein Teil wurde nach Kriegsschäden verändert. Heute spielt hier ein Bridgeclub, und an Büchersonntagen stehen antiquarische Bücher in den Loos-Räumen.",
+      "## Eintritt und Bücherankauf",
+      "Einen Eintrittspreis nennt der Veranstalter nicht. Wer selbst Bücher abgeben will, kann sie ihm anbieten: Der Organisator, Herbert Bauer, kauft nach eigener Angabe auch an; die E-Mail-Adresse steht auf dem Blog.",
+      "## Davor und danach",
+      "Wer bis Jänner nicht warten will, findet im Dezember andere Sammlertische: die <a href=\"/veranstaltungen/vienna-vintage-photo-fair-westlicht-2026/\" title=\"Vienna Vintage Photo Fair: WestLicht, Dezember 2026\">Vienna Vintage Photo Fair im WestLicht</a> am 13. Dezember mit Originalfotografien aus drei Jahrhunderten und die <a href=\"/veranstaltungen/vinyl-cd-boerse-moses-records-wien-2026/\" title=\"Schallplattenbörse Wien: Längenfeldgasse, Dezember 2026\">Vinyl- und CD-Börse in der Längenfeldgasse</a> am 5. und 6. Dezember.",
+    ],
+    faq: [
+      {
+        q: "Wann ist der nächste Büchersonntag in Wien?",
+        a: "Am <strong>Sonntag, 17. Jänner 2027</strong>. Der Büchersonntag findet viermal im Jahr statt.",
+      },
+      {
+        q: "Wo findet der Büchersonntag statt?",
+        a: "Zuletzt, im November 2026, in der Wohnung Emil Löwenbach von Adolf Loos, Reischachstraße 3, 1010 Wien. Für Jänner hat der Veranstalter bisher nur das Datum genannt.",
+      },
+      {
+        q: "Wie lange hat der Büchersonntag geöffnet?",
+        a: "Die Novemberausgabe war von 10 bis 17 Uhr geöffnet. Die Zeiten für den 17. Jänner hat der Veranstalter noch nicht eigens angegeben.",
+      },
+      {
+        q: "Was kostet der Eintritt?",
+        a: "Der Veranstalter nennt keinen Eintrittspreis. Fragen beantwortet er per E-Mail, die Adresse steht auf buechersonntag.blogspot.com.",
+      },
+      {
+        q: "Was gibt es auf dem Büchersonntag?",
+        a: "Antiquarische Bücher, Raritäten und Vergriffenes, Bücher zu Geschichte, Monarchie, Reisen, Kunst, Fotografie und Architektur, alte Kinder- und Kochbücher, dazu Ansichtskarten, Grafik, Vintage-Fotos und Papierantiquitäten.",
+      },
+      {
+        q: "Kann ich auf dem Büchersonntag Bücher verkaufen?",
+        a: "Der Organisator kauft nach eigener Angabe auch Bücher an; wer eine Bibliothek auflösen will, schreibt ihm vorab.",
+      },
+    ],
+    related: [
+      {
+        href: "/veranstaltungen/vienna-vintage-photo-fair-westlicht-2026/",
+        eyebrow: "13. Dezember, WestLicht",
+        title: "Vienna Vintage Photo Fair 2026",
+        text: "Originalfotografien aus drei Jahrhunderten von über 20 Händlern und Sammlern, Eintritt frei.",
+      },
+      {
+        href: "/veranstaltungen/vinyl-cd-boerse-moses-records-wien-2026/",
+        eyebrow: "5.–6. Dezember, VHS Längenfeldgasse",
+        title: "Vinyl- und CD-Börse Wien 2026",
+        text: "LPs, Singles und CDs von rund 100 Ausstellern, Tageskarte 8 Euro.",
+      },
+      {
+        href: "/veranstaltungen/modelleisenbahn-spielzeugboerse-liesing-wien-2026/",
+        eyebrow: "6. Dezember, Liesing",
+        title: "Modelleisenbahn- und Spielzeugbörse Wien 2026",
+        text: "Modellbahnen, Modellautos und Bausätze von über 40 Ausstellern, 8 bis 12 Uhr.",
+      },
+      {
+        href: "/veranstaltungen/kuerbisfest-am-himmel-2026/",
+        eyebrow: "Cobenzl",
+        title: "Kürbisfest am Himmel 2026",
+        text: "Der Herbst davor: über 200 Kürbissorten am Cobenzl, Eintritt frei.",
+      },
+    ],
+    expertise:
+      "Auf einer Antiquariatsbörse lohnt sich der Blick ins Buch mehr als der auf den Rücken: Ob eine Erstausgabe wirklich eine ist, verrät das Impressum, und ob Tafeln, Karten oder ein Schutzumschlag fehlen, sieht man erst beim Durchblättern. Fragen nach dem Zustand sind auf Börsen üblich, und gute Händler nennen Mängel von selbst. Alte Ansichtskarten sind beschrieben oft mehr wert als unbeschrieben, wenn Stempel und Marke erhalten sind. Bargeld, eine stabile Tasche und etwas Zeit gehören dazu; die schönsten Stücke liegen selten ganz oben.",
   },
   {
     slug: "silvesterkonzert-wiener-philharmoniker-2026",
