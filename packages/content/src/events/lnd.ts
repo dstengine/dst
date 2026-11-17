@@ -344,7 +344,7 @@ export const items: EventItem[] = [
   {
     slug: "halloween-hampton-court-palace-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-11-14T11:40:00+00:00",
+    updatedAt: "2026-11-17T01:40:00+00:00",
     site: "lnd",
     image: "/covers/halloween-hampton-court-palace-2026.jpg",
     imageAlt: "A dark blue crenellated roofline with three towers of different heights rising from it, the tallest carrying a small red flag",
@@ -436,6 +436,12 @@ export const items: EventItem[] = [
     // Same half-term week: the three pages a reader choosing a day out
     // that week is deciding between.
     related: [
+      {
+        href: "/events/winter-at-the-wetlands-walthamstow-2026/",
+        eyebrow: "Walthamstow, December",
+        title: "Winter at the Wetlands",
+        text: "London Wildlife Trust's Christmas show with Santa at Walthamstow Wetlands, nine days from 5 December, £40 for an adult and a child.",
+      },
       {
         href: "/events/wassail-day-dulwich-village-orchard-2027/",
         eyebrow: "Dulwich, 9 January",
@@ -3487,7 +3493,7 @@ export const items: EventItem[] = [
   {
     slug: "father-christmas-morden-hall-park-2026",
     createdAt: "2026-11-03T01:35:00+00:00",
-    updatedAt: "2026-11-06T01:10:00+04:00",
+    updatedAt: "2026-11-17T01:40:00+00:00",
     site: "lnd",
     title: "Father Christmas at Morden Hall Park 2026: the grotto and the sleigh trail",
     cardTitle: "Father Christmas at Morden Hall Park",
@@ -3570,6 +3576,12 @@ export const items: EventItem[] = [
       },
     ],
     related: [
+      {
+        href: "/events/winter-at-the-wetlands-walthamstow-2026/",
+        eyebrow: "Walthamstow, December",
+        title: "Winter at the Wetlands",
+        text: "London Wildlife Trust's Christmas show with Santa at Walthamstow Wetlands, nine days from 5 December, £40 for an adult and a child.",
+      },
       {
         href: "/events/christmas-at-eltham-palace-2026/",
         eyebrow: "Weekends, 5–20 December",
@@ -3858,7 +3870,7 @@ export const items: EventItem[] = [
   {
     slug: "santas-grotto-alexandra-palace-2026",
     createdAt: "2026-11-06T00:58:00+04:00",
-    updatedAt: "2026-11-06T00:58:00+04:00",
+    updatedAt: "2026-11-17T01:40:00+00:00",
     site: "lnd",
     title: "Santa's Grotto at Alexandra Palace 2026",
     cardTitle: "Santa's Grotto at Alexandra Palace",
@@ -3931,6 +3943,12 @@ export const items: EventItem[] = [
       },
     ],
     related: [
+      {
+        href: "/events/winter-at-the-wetlands-walthamstow-2026/",
+        eyebrow: "Walthamstow, December",
+        title: "Winter at the Wetlands",
+        text: "London Wildlife Trust's Christmas show with Santa at Walthamstow Wetlands, nine days from 5 December, £40 for an adult and a child.",
+      },
       {
         href: "/events/alexandra-palace-festive-skate-2026/",
         eyebrow: "9 December – 4 January",
@@ -4608,5 +4626,113 @@ export const items: EventItem[] = [
     ],
     expertise:
       "One goes to a wassail for the toast and the folk music rather than for any expectation of apples, and Dulwich does the thing with a pleasing lack of fuss. Aim to arrive a little after one: the band plays from half past, the fire will be going by then, and there is still daylight enough for the small members of the party to do their pinning. Wellies are not an affectation here but a necessity after any wet week, and a few coins for the Trust's bucket are the proper form for a day that asks nothing at the gate.",
+  },
+  {
+    slug: "winter-at-the-wetlands-walthamstow-2026",
+    createdAt: "2026-11-17T01:40:00+00:00",
+    updatedAt: "2026-11-17T01:40:00+00:00",
+    site: "lnd",
+    title: "Winter at the Wetlands 2026: Santa and Operation Redwing at Walthamstow Wetlands",
+    cardTitle: "Winter at the Wetlands, Walthamstow",
+    titleSeo: "Winter at the Wetlands, Walthamstow, London: December 2026",
+    summary:
+      "Winter at the Wetlands, London Wildlife Trust's Christmas show with Santa at Walthamstow Wetlands: nine days, 5, 6, 12, 13 and 19–23 December 2026, 45-minute sessions from 9.45am to 3.30pm. £40 for one adult and one child with a gift; each extra child £23, each extra adult £20.",
+    start: "2026-12-05",
+    end: "2026-12-23",
+    dates: [
+      "2026-12-05",
+      "2026-12-06",
+      "2026-12-12",
+      "2026-12-13",
+      "2026-12-19",
+      "2026-12-20",
+      "2026-12-21",
+      "2026-12-22",
+      "2026-12-23",
+    ],
+    startTime: "09:35",
+    endTime: "15:30",
+    utcOffset: "+00:00",
+    venue: "Engine House Visitor Centre, Walthamstow Wetlands, 2 Forest Road, London N17 9NH",
+    geo: { name: "Walthamstow Wetlands", lat: 51.5855, lng: -0.054 },
+    city: "London",
+    country: "United Kingdom",
+    organizer: "London Wildlife Trust",
+    category: "Christmas",
+    tags: ["grotto"],
+    tickets: { priceFrom: 40, currency: "GBP" },
+    ticket: {
+      url: "https://www.wildlondon.org.uk/events/2026-12-05-winter-wetlands",
+      label: "Book Winter at the Wetlands",
+    },
+    source: {
+      name: "London Wildlife Trust",
+      url: "https://www.wildlondon.org.uk/events/2026-12-05-winter-wetlands",
+      verifiedOn: "2026-11-17",
+    },
+    body: [
+      "<strong>Winter at the Wetlands</strong> is a new Christmas show from <strong>London Wildlife Trust</strong>, staged in the <strong>Engine House Visitor Centre</strong> at Walthamstow Wetlands, the Trust's huge reservoir reserve on Forest Road. It runs on nine days in December 2026: the weekends of <strong>5–6 and 12–13 December</strong>, then every day from <strong>Saturday 19 to Wednesday 23 December</strong>.",
+      "## What happens in the show",
+      "The story is called <strong>Operation Redwing</strong>. Santa needs help, and two characters, <strong>Norm and Nesbit, The Navigators</strong>, take the family into a top-secret hide to meet what the Trust calls nature's superheroes, then set the children to designing Santa's ultimate Super Sleigh. At the end comes <strong>Santa himself</strong>, with his story of the clever squirrel who once saved Christmas Eve, and every child with a ticket takes home a <strong>gift</strong>.",
+      "Each session lasts <strong>45 minutes</strong> and is played by professional actors; the Trust wrote the show for this reserve. Part of it takes place on the mezzanine of the Engine House, which has a lift as well as stairs.",
+      "## Times and tickets",
+      "Sessions start every quarter of an hour or so from <strong>9.45am</strong>, with the last one finishing at <strong>3.30pm</strong>, and a gap over lunch. Tickets are sold by the session through the Trust's own booking page. The <strong>Adult & Child Bundle costs £40</strong> and admits one adult and one child, with a gift for the child; an <strong>additional child is £23</strong>, also with a gift, and an <strong>additional adult £20</strong>, without one.",
+      "Children under 12 months go free but do not receive a gift; to have one, buy them a child ticket. Children cannot attend without a supervising adult. The Trust sells through Zeffy so that there is no booking fee; the checkout adds an optional tip for Zeffy by default, which one may remove. Every ticket goes to the Trust's work on London's wild spaces. When this page was checked, a number of sessions, mostly late morning and on the first weekend, were already sold out.",
+      "## Relaxed sessions",
+      "The <strong>first session on 6, 12, 21 and 22 December</strong>, at <strong>9.35am</strong>, is a relaxed session. It runs at half capacity, so it is less crowded, and the actors play it more gently while keeping it interactive. Anyone may book one, and the Trust asks for no extra information when you buy or on the day.",
+      "## Getting there",
+      "Walthamstow Wetlands is at <strong>2 Forest Road, London N17 9NH</strong>. <strong>Tottenham Hale</strong> (Victoria line and mainline trains) and <strong>Blackhorse Road</strong> (Victoria line and Overground) are both within a ten-minute walk, and buses <strong>123 and 230</strong> stop on Forest Road on either side of the entrance. There is paid parking at the reserve, four free blue-badge bays and bike parking beside the Engine House. The meeting point is the Engine House itself, a few minutes' walk from the entrance; its what3words is water.stud.solid.",
+      "Only <strong>assistance dogs</strong> are allowed on the reserve, which also supplies London's drinking water. The Engine House has ramped access, an accessible toilet, baby changing, a café and a shop. The reserve itself is free to visit and opens from <strong>9.30am to 4pm</strong> in winter, so there is time for a walk round the reservoirs before or after the show.",
+      "## Other Christmases in London",
+      "The nearest grotto on this site is at <a href=\"/events/santas-grotto-alexandra-palace-2026/\" title=\"Alexandra Palace Santa's grotto 2026, London: 4–23 Dec\">Alexandra Palace</a>, a short ride west. In south London, the National Trust has <a href=\"/events/father-christmas-morden-hall-park-2026/\" title=\"Father Christmas at Morden Hall Park, London: December 2026\">Father Christmas at Morden Hall Park</a> on the same December weekends, and after Christmas London Wildlife Trust is back with its free <a href=\"/events/wassail-day-dulwich-village-orchard-2027/\" title=\"Wassail Day at Dulwich Orchard, London: January 2027\">Wassail Day</a> in Dulwich on 9 January.",
+    ],
+    faq: [
+      {
+        q: "When is Winter at the Wetlands 2026?",
+        a: "On 5, 6, 12, 13, 19, 20, 21, 22 and 23 December 2026, at Walthamstow Wetlands. 45-minute sessions run from 9.45am, with the last ending at 3.30pm.",
+      },
+      {
+        q: "How much are tickets for Santa at Walthamstow Wetlands?",
+        a: "£40 for one adult and one child, including a gift for the child. Each additional child is £23 with a gift, and each additional adult £20. Children under 12 months go free, without a gift.",
+      },
+      {
+        q: "What is Operation Redwing?",
+        a: "The story of the show: Norm and Nesbit, The Navigators, lead families into a secret hide to meet nature's superheroes, help design Santa's Super Sleigh, then meet Santa, who tells the tale of a squirrel who saved Christmas Eve.",
+      },
+      {
+        q: "Are there relaxed sessions?",
+        a: "Yes, the first session (9.35am) on 6, 12, 21 and 22 December. They run at half capacity with a gentler performance, and anyone may book them.",
+      },
+      {
+        q: "Where does it take place and how do I get there?",
+        a: "In the Engine House Visitor Centre at Walthamstow Wetlands, 2 Forest Road, N17 9NH. Tottenham Hale and Blackhorse Road stations are within a ten-minute walk, and buses 123 and 230 stop on Forest Road. Parking is paid.",
+      },
+      {
+        q: "Can I bring my dog?",
+        a: "No. Only assistance dogs are allowed on the reserve, to protect the wildlife and the drinking-water supply.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/santas-grotto-alexandra-palace-2026/",
+        eyebrow: "Haringey, 4–23 December",
+        title: "Santa's Grotto at Alexandra Palace",
+        text: "Five-minute visits in the East Court, £14 a child, a short ride west.",
+      },
+      {
+        href: "/events/father-christmas-morden-hall-park-2026/",
+        eyebrow: "Merton, December",
+        title: "Father Christmas at Morden Hall Park",
+        text: "The National Trust's grotto in Morden: eight days from 5 December, £15 a child.",
+      },
+      {
+        href: "/events/wassail-day-dulwich-village-orchard-2027/",
+        eyebrow: "Dulwich, 9 January",
+        title: "Wassail Day at Dulwich Village Orchard",
+        text: "London Wildlife Trust wakes the apple trees: toast on the branches, crafts and folk music, free.",
+      },
+    ],
+    expertise:
+      "One might choose this over a department-store grotto precisely because it is not one: forty-five minutes of a proper little play, a hide to creep into and a reserve full of herons outside the door. Book a session on the Monday or Tuesday before Christmas if the diary allows, when the weekend crowds are elsewhere, and take the relaxed nine thirty-five if the small members of the party prefer a quieter room. Arrive half an hour early and walk out along the reservoirs first; the light goes by four, and the reserve shuts with it.",
   },
 ];
